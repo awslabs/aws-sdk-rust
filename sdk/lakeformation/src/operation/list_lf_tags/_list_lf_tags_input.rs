@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListLfTagsInput  {
+pub struct ListLfTagsInput {
     /// <p>The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your Lake Formation environment. </p>
     #[doc(hidden)]
     pub catalog_id: std::option::Option<std::string::String>,
@@ -18,11 +18,11 @@ pub struct ListLfTagsInput  {
 }
 impl ListLfTagsInput {
     /// <p>The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your Lake Formation environment. </p>
-    pub fn catalog_id(&self) -> std::option::Option<& str> {
+    pub fn catalog_id(&self) -> std::option::Option<&str> {
         self.catalog_id.as_deref()
     }
     /// <p>If resource share type is <code>ALL</code>, returns both in-account LF-tags and shared LF-tags that the requester has permission to view. If resource share type is <code>FOREIGN</code>, returns all share LF-tags that the requester can view. If no resource share type is passed, lists LF-tags in the given catalog ID that the requester has permission to view.</p>
-    pub fn resource_share_type(&self) -> std::option::Option<& crate::types::ResourceShareType> {
+    pub fn resource_share_type(&self) -> std::option::Option<&crate::types::ResourceShareType> {
         self.resource_share_type.as_ref()
     }
     /// <p>The maximum number of results to return.</p>
@@ -30,7 +30,7 @@ impl ListLfTagsInput {
         self.max_results
     }
     /// <p>A continuation token, if this is not the first call to retrieve this list.</p>
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
 }
@@ -58,7 +58,8 @@ impl ListLfTagsInputBuilder {
     }
     /// <p>The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your Lake Formation environment. </p>
     pub fn set_catalog_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.catalog_id = input; self
+        self.catalog_id = input;
+        self
     }
     /// <p>If resource share type is <code>ALL</code>, returns both in-account LF-tags and shared LF-tags that the requester has permission to view. If resource share type is <code>FOREIGN</code>, returns all share LF-tags that the requester can view. If no resource share type is passed, lists LF-tags in the given catalog ID that the requester has permission to view.</p>
     pub fn resource_share_type(mut self, input: crate::types::ResourceShareType) -> Self {
@@ -66,8 +67,12 @@ impl ListLfTagsInputBuilder {
         self
     }
     /// <p>If resource share type is <code>ALL</code>, returns both in-account LF-tags and shared LF-tags that the requester has permission to view. If resource share type is <code>FOREIGN</code>, returns all share LF-tags that the requester can view. If no resource share type is passed, lists LF-tags in the given catalog ID that the requester has permission to view.</p>
-    pub fn set_resource_share_type(mut self, input: std::option::Option<crate::types::ResourceShareType>) -> Self {
-        self.resource_share_type = input; self
+    pub fn set_resource_share_type(
+        mut self,
+        input: std::option::Option<crate::types::ResourceShareType>,
+    ) -> Self {
+        self.resource_share_type = input;
+        self
     }
     /// <p>The maximum number of results to return.</p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -76,7 +81,8 @@ impl ListLfTagsInputBuilder {
     }
     /// <p>The maximum number of results to return.</p>
     pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_results = input; self
+        self.max_results = input;
+        self
     }
     /// <p>A continuation token, if this is not the first call to retrieve this list.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -85,22 +91,21 @@ impl ListLfTagsInputBuilder {
     }
     /// <p>A continuation token, if this is not the first call to retrieve this list.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input; self
+        self.next_token = input;
+        self
     }
     /// Consumes the builder and constructs a [`ListLfTagsInput`](crate::operation::list_lf_tags::ListLfTagsInput).
-    pub fn build(self) -> Result<crate::operation::list_lf_tags::ListLfTagsInput, aws_smithy_http::operation::error::BuildError> {
-        Ok(
-            crate::operation::list_lf_tags::ListLfTagsInput {
-                catalog_id: self.catalog_id
-                ,
-                resource_share_type: self.resource_share_type
-                ,
-                max_results: self.max_results
-                ,
-                next_token: self.next_token
-                ,
-            }
-        )
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::list_lf_tags::ListLfTagsInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        Ok(crate::operation::list_lf_tags::ListLfTagsInput {
+            catalog_id: self.catalog_id,
+            resource_share_type: self.resource_share_type,
+            max_results: self.max_results,
+            next_token: self.next_token,
+        })
     }
 }
-

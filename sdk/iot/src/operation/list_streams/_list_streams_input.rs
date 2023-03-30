@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListStreamsInput  {
+pub struct ListStreamsInput {
     /// <p>The maximum number of results to return at a time.</p>
     #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
@@ -19,7 +19,7 @@ impl ListStreamsInput {
         self.max_results
     }
     /// <p>A token used to get the next set of results.</p>
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
     /// <p>Set to true to return the list of streams in ascending order.</p>
@@ -50,7 +50,8 @@ impl ListStreamsInputBuilder {
     }
     /// <p>The maximum number of results to return at a time.</p>
     pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_results = input; self
+        self.max_results = input;
+        self
     }
     /// <p>A token used to get the next set of results.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -59,7 +60,8 @@ impl ListStreamsInputBuilder {
     }
     /// <p>A token used to get the next set of results.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input; self
+        self.next_token = input;
+        self
     }
     /// <p>Set to true to return the list of streams in ascending order.</p>
     pub fn ascending_order(mut self, input: bool) -> Self {
@@ -68,21 +70,20 @@ impl ListStreamsInputBuilder {
     }
     /// <p>Set to true to return the list of streams in ascending order.</p>
     pub fn set_ascending_order(mut self, input: std::option::Option<bool>) -> Self {
-        self.ascending_order = input; self
+        self.ascending_order = input;
+        self
     }
     /// Consumes the builder and constructs a [`ListStreamsInput`](crate::operation::list_streams::ListStreamsInput).
-    pub fn build(self) -> Result<crate::operation::list_streams::ListStreamsInput, aws_smithy_http::operation::error::BuildError> {
-        Ok(
-            crate::operation::list_streams::ListStreamsInput {
-                max_results: self.max_results
-                ,
-                next_token: self.next_token
-                ,
-                ascending_order: self.ascending_order
-                    .unwrap_or_default()
-                ,
-            }
-        )
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::list_streams::ListStreamsInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        Ok(crate::operation::list_streams::ListStreamsInput {
+            max_results: self.max_results,
+            next_token: self.next_token,
+            ascending_order: self.ascending_order.unwrap_or_default(),
+        })
     }
 }
-

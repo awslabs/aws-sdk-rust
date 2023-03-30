@@ -2,20 +2,21 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetContactChannelInput  {
+pub struct GetContactChannelInput {
     /// <p>The Amazon Resource Name (ARN) of the contact channel you want information about.</p>
     #[doc(hidden)]
     pub contact_channel_id: std::option::Option<std::string::String>,
 }
 impl GetContactChannelInput {
     /// <p>The Amazon Resource Name (ARN) of the contact channel you want information about.</p>
-    pub fn contact_channel_id(&self) -> std::option::Option<& str> {
+    pub fn contact_channel_id(&self) -> std::option::Option<&str> {
         self.contact_channel_id.as_deref()
     }
 }
 impl GetContactChannelInput {
     /// Creates a new builder-style object to manufacture [`GetContactChannelInput`](crate::operation::get_contact_channel::GetContactChannelInput).
-    pub fn builder() -> crate::operation::get_contact_channel::builders::GetContactChannelInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::get_contact_channel::builders::GetContactChannelInputBuilder {
         crate::operation::get_contact_channel::builders::GetContactChannelInputBuilder::default()
     }
 }
@@ -33,17 +34,24 @@ impl GetContactChannelInputBuilder {
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the contact channel you want information about.</p>
-    pub fn set_contact_channel_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.contact_channel_id = input; self
+    pub fn set_contact_channel_id(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.contact_channel_id = input;
+        self
     }
     /// Consumes the builder and constructs a [`GetContactChannelInput`](crate::operation::get_contact_channel::GetContactChannelInput).
-    pub fn build(self) -> Result<crate::operation::get_contact_channel::GetContactChannelInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::get_contact_channel::GetContactChannelInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::get_contact_channel::GetContactChannelInput {
-                contact_channel_id: self.contact_channel_id
-                ,
-            }
+                contact_channel_id: self.contact_channel_id,
+            },
         )
     }
 }
-

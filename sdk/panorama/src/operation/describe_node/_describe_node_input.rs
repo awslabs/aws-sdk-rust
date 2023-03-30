@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeNodeInput  {
+pub struct DescribeNodeInput {
     /// <p>The node's ID.</p>
     #[doc(hidden)]
     pub node_id: std::option::Option<std::string::String>,
@@ -12,11 +12,11 @@ pub struct DescribeNodeInput  {
 }
 impl DescribeNodeInput {
     /// <p>The node's ID.</p>
-    pub fn node_id(&self) -> std::option::Option<& str> {
+    pub fn node_id(&self) -> std::option::Option<&str> {
         self.node_id.as_deref()
     }
     /// <p>The account ID of the node's owner.</p>
-    pub fn owner_account(&self) -> std::option::Option<& str> {
+    pub fn owner_account(&self) -> std::option::Option<&str> {
         self.owner_account.as_deref()
     }
 }
@@ -42,7 +42,8 @@ impl DescribeNodeInputBuilder {
     }
     /// <p>The node's ID.</p>
     pub fn set_node_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.node_id = input; self
+        self.node_id = input;
+        self
     }
     /// <p>The account ID of the node's owner.</p>
     pub fn owner_account(mut self, input: impl Into<std::string::String>) -> Self {
@@ -51,18 +52,19 @@ impl DescribeNodeInputBuilder {
     }
     /// <p>The account ID of the node's owner.</p>
     pub fn set_owner_account(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.owner_account = input; self
+        self.owner_account = input;
+        self
     }
     /// Consumes the builder and constructs a [`DescribeNodeInput`](crate::operation::describe_node::DescribeNodeInput).
-    pub fn build(self) -> Result<crate::operation::describe_node::DescribeNodeInput, aws_smithy_http::operation::error::BuildError> {
-        Ok(
-            crate::operation::describe_node::DescribeNodeInput {
-                node_id: self.node_id
-                ,
-                owner_account: self.owner_account
-                ,
-            }
-        )
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::describe_node::DescribeNodeInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        Ok(crate::operation::describe_node::DescribeNodeInput {
+            node_id: self.node_id,
+            owner_account: self.owner_account,
+        })
     }
 }
-

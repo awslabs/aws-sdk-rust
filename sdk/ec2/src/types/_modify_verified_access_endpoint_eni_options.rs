@@ -3,7 +3,7 @@
 /// <p>Options for a network-interface type Verified Access endpoint.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ModifyVerifiedAccessEndpointEniOptions  {
+pub struct ModifyVerifiedAccessEndpointEniOptions {
     /// <p>The IP protocol.</p>
     #[doc(hidden)]
     pub protocol: std::option::Option<crate::types::VerifiedAccessEndpointProtocol>,
@@ -13,7 +13,7 @@ pub struct ModifyVerifiedAccessEndpointEniOptions  {
 }
 impl ModifyVerifiedAccessEndpointEniOptions {
     /// <p>The IP protocol.</p>
-    pub fn protocol(&self) -> std::option::Option<& crate::types::VerifiedAccessEndpointProtocol> {
+    pub fn protocol(&self) -> std::option::Option<&crate::types::VerifiedAccessEndpointProtocol> {
         self.protocol.as_ref()
     }
     /// <p>The IP port number.</p>
@@ -42,8 +42,12 @@ impl ModifyVerifiedAccessEndpointEniOptionsBuilder {
         self
     }
     /// <p>The IP protocol.</p>
-    pub fn set_protocol(mut self, input: std::option::Option<crate::types::VerifiedAccessEndpointProtocol>) -> Self {
-        self.protocol = input; self
+    pub fn set_protocol(
+        mut self,
+        input: std::option::Option<crate::types::VerifiedAccessEndpointProtocol>,
+    ) -> Self {
+        self.protocol = input;
+        self
     }
     /// <p>The IP port number.</p>
     pub fn port(mut self, input: i32) -> Self {
@@ -52,16 +56,14 @@ impl ModifyVerifiedAccessEndpointEniOptionsBuilder {
     }
     /// <p>The IP port number.</p>
     pub fn set_port(mut self, input: std::option::Option<i32>) -> Self {
-        self.port = input; self
+        self.port = input;
+        self
     }
     /// Consumes the builder and constructs a [`ModifyVerifiedAccessEndpointEniOptions`](crate::types::ModifyVerifiedAccessEndpointEniOptions).
     pub fn build(self) -> crate::types::ModifyVerifiedAccessEndpointEniOptions {
         crate::types::ModifyVerifiedAccessEndpointEniOptions {
-            protocol: self.protocol
-            ,
-            port: self.port
-            ,
+            protocol: self.protocol,
+            port: self.port,
         }
     }
 }
-

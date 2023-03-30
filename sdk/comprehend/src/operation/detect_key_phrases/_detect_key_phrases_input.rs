@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct DetectKeyPhrasesInput  {
+pub struct DetectKeyPhrasesInput {
     /// <p>A UTF-8 text string. The string must contain less than 100 KB of UTF-8 encoded characters.</p>
     #[doc(hidden)]
     pub text: std::option::Option<std::string::String>,
@@ -12,15 +12,15 @@ pub struct DetectKeyPhrasesInput  {
 }
 impl DetectKeyPhrasesInput {
     /// <p>A UTF-8 text string. The string must contain less than 100 KB of UTF-8 encoded characters.</p>
-    pub fn text(&self) -> std::option::Option<& str> {
+    pub fn text(&self) -> std::option::Option<&str> {
         self.text.as_deref()
     }
     /// <p>The language of the input documents. You can specify any of the primary languages supported by Amazon Comprehend. All documents must be in the same language.</p>
-    pub fn language_code(&self) -> std::option::Option<& crate::types::LanguageCode> {
+    pub fn language_code(&self) -> std::option::Option<&crate::types::LanguageCode> {
         self.language_code.as_ref()
     }
 }
-impl  std::fmt::Debug for DetectKeyPhrasesInput  {
+impl std::fmt::Debug for DetectKeyPhrasesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DetectKeyPhrasesInput");
         formatter.field("text", &"*** Sensitive Data Redacted ***");
@@ -30,7 +30,8 @@ impl  std::fmt::Debug for DetectKeyPhrasesInput  {
 }
 impl DetectKeyPhrasesInput {
     /// Creates a new builder-style object to manufacture [`DetectKeyPhrasesInput`](crate::operation::detect_key_phrases::DetectKeyPhrasesInput).
-    pub fn builder() -> crate::operation::detect_key_phrases::builders::DetectKeyPhrasesInputBuilder {
+    pub fn builder() -> crate::operation::detect_key_phrases::builders::DetectKeyPhrasesInputBuilder
+    {
         crate::operation::detect_key_phrases::builders::DetectKeyPhrasesInputBuilder::default()
     }
 }
@@ -50,7 +51,8 @@ impl DetectKeyPhrasesInputBuilder {
     }
     /// <p>A UTF-8 text string. The string must contain less than 100 KB of UTF-8 encoded characters.</p>
     pub fn set_text(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.text = input; self
+        self.text = input;
+        self
     }
     /// <p>The language of the input documents. You can specify any of the primary languages supported by Amazon Comprehend. All documents must be in the same language.</p>
     pub fn language_code(mut self, input: crate::types::LanguageCode) -> Self {
@@ -58,18 +60,25 @@ impl DetectKeyPhrasesInputBuilder {
         self
     }
     /// <p>The language of the input documents. You can specify any of the primary languages supported by Amazon Comprehend. All documents must be in the same language.</p>
-    pub fn set_language_code(mut self, input: std::option::Option<crate::types::LanguageCode>) -> Self {
-        self.language_code = input; self
+    pub fn set_language_code(
+        mut self,
+        input: std::option::Option<crate::types::LanguageCode>,
+    ) -> Self {
+        self.language_code = input;
+        self
     }
     /// Consumes the builder and constructs a [`DetectKeyPhrasesInput`](crate::operation::detect_key_phrases::DetectKeyPhrasesInput).
-    pub fn build(self) -> Result<crate::operation::detect_key_phrases::DetectKeyPhrasesInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::detect_key_phrases::DetectKeyPhrasesInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::detect_key_phrases::DetectKeyPhrasesInput {
-                text: self.text
-                ,
-                language_code: self.language_code
-                ,
-            }
+                text: self.text,
+                language_code: self.language_code,
+            },
         )
     }
 }
@@ -81,4 +90,3 @@ impl std::fmt::Debug for DetectKeyPhrasesInputBuilder {
         formatter.finish()
     }
 }
-

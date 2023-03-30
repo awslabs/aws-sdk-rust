@@ -3,7 +3,7 @@
 /// <p>Contains information about an event that was returned by a lookup request. The result includes a representation of a CloudTrail event.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Event  {
+pub struct Event {
     /// <p>The CloudTrail ID of the event returned.</p>
     #[doc(hidden)]
     pub event_id: std::option::Option<std::string::String>,
@@ -34,39 +34,39 @@ pub struct Event  {
 }
 impl Event {
     /// <p>The CloudTrail ID of the event returned.</p>
-    pub fn event_id(&self) -> std::option::Option<& str> {
+    pub fn event_id(&self) -> std::option::Option<&str> {
         self.event_id.as_deref()
     }
     /// <p>The name of the event returned.</p>
-    pub fn event_name(&self) -> std::option::Option<& str> {
+    pub fn event_name(&self) -> std::option::Option<&str> {
         self.event_name.as_deref()
     }
     /// <p>Information about whether the event is a write event or a read event. </p>
-    pub fn read_only(&self) -> std::option::Option<& str> {
+    pub fn read_only(&self) -> std::option::Option<&str> {
         self.read_only.as_deref()
     }
     /// <p>The Amazon Web Services access key ID that was used to sign the request. If the request was made with temporary security credentials, this is the access key ID of the temporary credentials.</p>
-    pub fn access_key_id(&self) -> std::option::Option<& str> {
+    pub fn access_key_id(&self) -> std::option::Option<&str> {
         self.access_key_id.as_deref()
     }
     /// <p>The date and time of the event returned.</p>
-    pub fn event_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
+    pub fn event_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.event_time.as_ref()
     }
     /// <p>The Amazon Web Services service to which the request was made.</p>
-    pub fn event_source(&self) -> std::option::Option<& str> {
+    pub fn event_source(&self) -> std::option::Option<&str> {
         self.event_source.as_deref()
     }
     /// <p>A user name or role name of the requester that called the API in the event returned.</p>
-    pub fn username(&self) -> std::option::Option<& str> {
+    pub fn username(&self) -> std::option::Option<&str> {
         self.username.as_deref()
     }
     /// <p>A list of resources referenced by the event returned.</p>
-    pub fn resources(&self) -> std::option::Option<& [crate::types::Resource]> {
+    pub fn resources(&self) -> std::option::Option<&[crate::types::Resource]> {
         self.resources.as_deref()
     }
     /// <p>A JSON string that contains a representation of the event returned.</p>
-    pub fn cloud_trail_event(&self) -> std::option::Option<& str> {
+    pub fn cloud_trail_event(&self) -> std::option::Option<&str> {
         self.cloud_trail_event.as_deref()
     }
 }
@@ -99,7 +99,8 @@ impl EventBuilder {
     }
     /// <p>The CloudTrail ID of the event returned.</p>
     pub fn set_event_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.event_id = input; self
+        self.event_id = input;
+        self
     }
     /// <p>The name of the event returned.</p>
     pub fn event_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -108,7 +109,8 @@ impl EventBuilder {
     }
     /// <p>The name of the event returned.</p>
     pub fn set_event_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.event_name = input; self
+        self.event_name = input;
+        self
     }
     /// <p>Information about whether the event is a write event or a read event. </p>
     pub fn read_only(mut self, input: impl Into<std::string::String>) -> Self {
@@ -117,7 +119,8 @@ impl EventBuilder {
     }
     /// <p>Information about whether the event is a write event or a read event. </p>
     pub fn set_read_only(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.read_only = input; self
+        self.read_only = input;
+        self
     }
     /// <p>The Amazon Web Services access key ID that was used to sign the request. If the request was made with temporary security credentials, this is the access key ID of the temporary credentials.</p>
     pub fn access_key_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -126,7 +129,8 @@ impl EventBuilder {
     }
     /// <p>The Amazon Web Services access key ID that was used to sign the request. If the request was made with temporary security credentials, this is the access key ID of the temporary credentials.</p>
     pub fn set_access_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.access_key_id = input; self
+        self.access_key_id = input;
+        self
     }
     /// <p>The date and time of the event returned.</p>
     pub fn event_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -134,8 +138,12 @@ impl EventBuilder {
         self
     }
     /// <p>The date and time of the event returned.</p>
-    pub fn set_event_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.event_time = input; self
+    pub fn set_event_time(
+        mut self,
+        input: std::option::Option<aws_smithy_types::DateTime>,
+    ) -> Self {
+        self.event_time = input;
+        self
     }
     /// <p>The Amazon Web Services service to which the request was made.</p>
     pub fn event_source(mut self, input: impl Into<std::string::String>) -> Self {
@@ -144,7 +152,8 @@ impl EventBuilder {
     }
     /// <p>The Amazon Web Services service to which the request was made.</p>
     pub fn set_event_source(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.event_source = input; self
+        self.event_source = input;
+        self
     }
     /// <p>A user name or role name of the requester that called the API in the event returned.</p>
     pub fn username(mut self, input: impl Into<std::string::String>) -> Self {
@@ -153,7 +162,8 @@ impl EventBuilder {
     }
     /// <p>A user name or role name of the requester that called the API in the event returned.</p>
     pub fn set_username(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.username = input; self
+        self.username = input;
+        self
     }
     /// Appends an item to `resources`.
     ///
@@ -162,13 +172,17 @@ impl EventBuilder {
     /// <p>A list of resources referenced by the event returned.</p>
     pub fn resources(mut self, input: crate::types::Resource) -> Self {
         let mut v = self.resources.unwrap_or_default();
-                        v.push(input);
-                        self.resources = Some(v);
-                        self
+        v.push(input);
+        self.resources = Some(v);
+        self
     }
     /// <p>A list of resources referenced by the event returned.</p>
-    pub fn set_resources(mut self, input: std::option::Option<std::vec::Vec<crate::types::Resource>>) -> Self {
-        self.resources = input; self
+    pub fn set_resources(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::Resource>>,
+    ) -> Self {
+        self.resources = input;
+        self
     }
     /// <p>A JSON string that contains a representation of the event returned.</p>
     pub fn cloud_trail_event(mut self, input: impl Into<std::string::String>) -> Self {
@@ -176,31 +190,25 @@ impl EventBuilder {
         self
     }
     /// <p>A JSON string that contains a representation of the event returned.</p>
-    pub fn set_cloud_trail_event(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.cloud_trail_event = input; self
+    pub fn set_cloud_trail_event(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.cloud_trail_event = input;
+        self
     }
     /// Consumes the builder and constructs a [`Event`](crate::types::Event).
     pub fn build(self) -> crate::types::Event {
         crate::types::Event {
-            event_id: self.event_id
-            ,
-            event_name: self.event_name
-            ,
-            read_only: self.read_only
-            ,
-            access_key_id: self.access_key_id
-            ,
-            event_time: self.event_time
-            ,
-            event_source: self.event_source
-            ,
-            username: self.username
-            ,
-            resources: self.resources
-            ,
-            cloud_trail_event: self.cloud_trail_event
-            ,
+            event_id: self.event_id,
+            event_name: self.event_name,
+            read_only: self.read_only,
+            access_key_id: self.access_key_id,
+            event_time: self.event_time,
+            event_source: self.event_source,
+            username: self.username,
+            resources: self.resources,
+            cloud_trail_event: self.cloud_trail_event,
         }
     }
 }
-

@@ -3,7 +3,7 @@
 /// <p>An object that represents the action to take if a match is determined.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct HttpGatewayRouteAction  {
+pub struct HttpGatewayRouteAction {
     /// <p>An object that represents the target that traffic is routed to when a request matches the gateway route.</p>
     #[doc(hidden)]
     pub target: std::option::Option<crate::types::GatewayRouteTarget>,
@@ -13,11 +13,11 @@ pub struct HttpGatewayRouteAction  {
 }
 impl HttpGatewayRouteAction {
     /// <p>An object that represents the target that traffic is routed to when a request matches the gateway route.</p>
-    pub fn target(&self) -> std::option::Option<& crate::types::GatewayRouteTarget> {
+    pub fn target(&self) -> std::option::Option<&crate::types::GatewayRouteTarget> {
         self.target.as_ref()
     }
     /// <p>The gateway route action to rewrite.</p>
-    pub fn rewrite(&self) -> std::option::Option<& crate::types::HttpGatewayRouteRewrite> {
+    pub fn rewrite(&self) -> std::option::Option<&crate::types::HttpGatewayRouteRewrite> {
         self.rewrite.as_ref()
     }
 }
@@ -42,8 +42,12 @@ impl HttpGatewayRouteActionBuilder {
         self
     }
     /// <p>An object that represents the target that traffic is routed to when a request matches the gateway route.</p>
-    pub fn set_target(mut self, input: std::option::Option<crate::types::GatewayRouteTarget>) -> Self {
-        self.target = input; self
+    pub fn set_target(
+        mut self,
+        input: std::option::Option<crate::types::GatewayRouteTarget>,
+    ) -> Self {
+        self.target = input;
+        self
     }
     /// <p>The gateway route action to rewrite.</p>
     pub fn rewrite(mut self, input: crate::types::HttpGatewayRouteRewrite) -> Self {
@@ -51,17 +55,18 @@ impl HttpGatewayRouteActionBuilder {
         self
     }
     /// <p>The gateway route action to rewrite.</p>
-    pub fn set_rewrite(mut self, input: std::option::Option<crate::types::HttpGatewayRouteRewrite>) -> Self {
-        self.rewrite = input; self
+    pub fn set_rewrite(
+        mut self,
+        input: std::option::Option<crate::types::HttpGatewayRouteRewrite>,
+    ) -> Self {
+        self.rewrite = input;
+        self
     }
     /// Consumes the builder and constructs a [`HttpGatewayRouteAction`](crate::types::HttpGatewayRouteAction).
     pub fn build(self) -> crate::types::HttpGatewayRouteAction {
         crate::types::HttpGatewayRouteAction {
-            target: self.target
-            ,
-            rewrite: self.rewrite
-            ,
+            target: self.target,
+            rewrite: self.rewrite,
         }
     }
 }
-

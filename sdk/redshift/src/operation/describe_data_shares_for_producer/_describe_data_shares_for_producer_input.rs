@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeDataSharesForProducerInput  {
+pub struct DescribeDataSharesForProducerInput {
     /// <p>The Amazon Resource Name (ARN) of the producer that returns in the list of datashares.</p>
     #[doc(hidden)]
     pub producer_arn: std::option::Option<std::string::String>,
@@ -18,11 +18,11 @@ pub struct DescribeDataSharesForProducerInput  {
 }
 impl DescribeDataSharesForProducerInput {
     /// <p>The Amazon Resource Name (ARN) of the producer that returns in the list of datashares.</p>
-    pub fn producer_arn(&self) -> std::option::Option<& str> {
+    pub fn producer_arn(&self) -> std::option::Option<&str> {
         self.producer_arn.as_deref()
     }
     /// <p>An identifier giving the status of a datashare in the producer. If this field is specified, Amazon Redshift returns the list of datashares that have the specified status.</p>
-    pub fn status(&self) -> std::option::Option<& crate::types::DataShareStatusForProducer> {
+    pub fn status(&self) -> std::option::Option<&crate::types::DataShareStatusForProducer> {
         self.status.as_ref()
     }
     /// <p>The maximum number of response records to return in each call. If the number of remaining response records exceeds the specified <code>MaxRecords</code> value, a value is returned in a <code>marker</code> field of the response. You can retrieve the next set of records by retrying the command with the returned marker value. </p>
@@ -30,13 +30,13 @@ impl DescribeDataSharesForProducerInput {
         self.max_records
     }
     /// <p>An optional parameter that specifies the starting point to return a set of response records. When the results of a <code>DescribeDataSharesForProducer</code> request exceed the value specified in <code>MaxRecords</code>, Amazon Web Services returns a value in the <code>Marker</code> field of the response. You can retrieve the next set of response records by providing the returned marker value in the <code>Marker</code> parameter and retrying the request. </p>
-    pub fn marker(&self) -> std::option::Option<& str> {
+    pub fn marker(&self) -> std::option::Option<&str> {
         self.marker.as_deref()
     }
 }
 impl DescribeDataSharesForProducerInput {
     /// Creates a new builder-style object to manufacture [`DescribeDataSharesForProducerInput`](crate::operation::describe_data_shares_for_producer::DescribeDataSharesForProducerInput).
-    pub fn builder() -> crate::operation::describe_data_shares_for_producer::builders::DescribeDataSharesForProducerInputBuilder {
+    pub fn builder() -> crate::operation::describe_data_shares_for_producer::builders::DescribeDataSharesForProducerInputBuilder{
         crate::operation::describe_data_shares_for_producer::builders::DescribeDataSharesForProducerInputBuilder::default()
     }
 }
@@ -58,7 +58,8 @@ impl DescribeDataSharesForProducerInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the producer that returns in the list of datashares.</p>
     pub fn set_producer_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.producer_arn = input; self
+        self.producer_arn = input;
+        self
     }
     /// <p>An identifier giving the status of a datashare in the producer. If this field is specified, Amazon Redshift returns the list of datashares that have the specified status.</p>
     pub fn status(mut self, input: crate::types::DataShareStatusForProducer) -> Self {
@@ -66,8 +67,12 @@ impl DescribeDataSharesForProducerInputBuilder {
         self
     }
     /// <p>An identifier giving the status of a datashare in the producer. If this field is specified, Amazon Redshift returns the list of datashares that have the specified status.</p>
-    pub fn set_status(mut self, input: std::option::Option<crate::types::DataShareStatusForProducer>) -> Self {
-        self.status = input; self
+    pub fn set_status(
+        mut self,
+        input: std::option::Option<crate::types::DataShareStatusForProducer>,
+    ) -> Self {
+        self.status = input;
+        self
     }
     /// <p>The maximum number of response records to return in each call. If the number of remaining response records exceeds the specified <code>MaxRecords</code> value, a value is returned in a <code>marker</code> field of the response. You can retrieve the next set of records by retrying the command with the returned marker value. </p>
     pub fn max_records(mut self, input: i32) -> Self {
@@ -76,7 +81,8 @@ impl DescribeDataSharesForProducerInputBuilder {
     }
     /// <p>The maximum number of response records to return in each call. If the number of remaining response records exceeds the specified <code>MaxRecords</code> value, a value is returned in a <code>marker</code> field of the response. You can retrieve the next set of records by retrying the command with the returned marker value. </p>
     pub fn set_max_records(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_records = input; self
+        self.max_records = input;
+        self
     }
     /// <p>An optional parameter that specifies the starting point to return a set of response records. When the results of a <code>DescribeDataSharesForProducer</code> request exceed the value specified in <code>MaxRecords</code>, Amazon Web Services returns a value in the <code>Marker</code> field of the response. You can retrieve the next set of response records by providing the returned marker value in the <code>Marker</code> parameter and retrying the request. </p>
     pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
@@ -85,10 +91,16 @@ impl DescribeDataSharesForProducerInputBuilder {
     }
     /// <p>An optional parameter that specifies the starting point to return a set of response records. When the results of a <code>DescribeDataSharesForProducer</code> request exceed the value specified in <code>MaxRecords</code>, Amazon Web Services returns a value in the <code>Marker</code> field of the response. You can retrieve the next set of response records by providing the returned marker value in the <code>Marker</code> parameter and retrying the request. </p>
     pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.marker = input; self
+        self.marker = input;
+        self
     }
     /// Consumes the builder and constructs a [`DescribeDataSharesForProducerInput`](crate::operation::describe_data_shares_for_producer::DescribeDataSharesForProducerInput).
-    pub fn build(self) -> Result<crate::operation::describe_data_shares_for_producer::DescribeDataSharesForProducerInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::describe_data_shares_for_producer::DescribeDataSharesForProducerInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::describe_data_shares_for_producer::DescribeDataSharesForProducerInput {
                 producer_arn: self.producer_arn
@@ -103,4 +115,3 @@ impl DescribeDataSharesForProducerInputBuilder {
         )
     }
 }
-

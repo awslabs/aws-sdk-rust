@@ -3,7 +3,7 @@
 /// <p>Represents information about an artifact that is worked on by actions in the pipeline.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Artifact  {
+pub struct Artifact {
     /// <p>The artifact's name.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -16,15 +16,15 @@ pub struct Artifact  {
 }
 impl Artifact {
     /// <p>The artifact's name.</p>
-    pub fn name(&self) -> std::option::Option<& str> {
+    pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>The artifact's revision ID. Depending on the type of object, this could be a commit ID (GitHub) or a revision ID (Amazon S3).</p>
-    pub fn revision(&self) -> std::option::Option<& str> {
+    pub fn revision(&self) -> std::option::Option<&str> {
         self.revision.as_deref()
     }
     /// <p>The location of an artifact.</p>
-    pub fn location(&self) -> std::option::Option<& crate::types::ArtifactLocation> {
+    pub fn location(&self) -> std::option::Option<&crate::types::ArtifactLocation> {
         self.location.as_ref()
     }
 }
@@ -51,7 +51,8 @@ impl ArtifactBuilder {
     }
     /// <p>The artifact's name.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input; self
+        self.name = input;
+        self
     }
     /// <p>The artifact's revision ID. Depending on the type of object, this could be a commit ID (GitHub) or a revision ID (Amazon S3).</p>
     pub fn revision(mut self, input: impl Into<std::string::String>) -> Self {
@@ -60,7 +61,8 @@ impl ArtifactBuilder {
     }
     /// <p>The artifact's revision ID. Depending on the type of object, this could be a commit ID (GitHub) or a revision ID (Amazon S3).</p>
     pub fn set_revision(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.revision = input; self
+        self.revision = input;
+        self
     }
     /// <p>The location of an artifact.</p>
     pub fn location(mut self, input: crate::types::ArtifactLocation) -> Self {
@@ -68,19 +70,19 @@ impl ArtifactBuilder {
         self
     }
     /// <p>The location of an artifact.</p>
-    pub fn set_location(mut self, input: std::option::Option<crate::types::ArtifactLocation>) -> Self {
-        self.location = input; self
+    pub fn set_location(
+        mut self,
+        input: std::option::Option<crate::types::ArtifactLocation>,
+    ) -> Self {
+        self.location = input;
+        self
     }
     /// Consumes the builder and constructs a [`Artifact`](crate::types::Artifact).
     pub fn build(self) -> crate::types::Artifact {
         crate::types::Artifact {
-            name: self.name
-            ,
-            revision: self.revision
-            ,
-            location: self.location
-            ,
+            name: self.name,
+            revision: self.revision,
+            location: self.location,
         }
     }
 }
-

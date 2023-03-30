@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct CreateSipMediaApplicationCallInput  {
+pub struct CreateSipMediaApplicationCallInput {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub from_phone_number: std::option::Option<std::string::String>,
@@ -14,34 +14,42 @@ pub struct CreateSipMediaApplicationCallInput  {
     pub sip_media_application_id: std::option::Option<std::string::String>,
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
-    pub sip_headers: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub sip_headers:
+        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
-    pub arguments_map: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub arguments_map:
+        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl CreateSipMediaApplicationCallInput {
     #[allow(missing_docs)] // documentation missing in model
-    pub fn from_phone_number(&self) -> std::option::Option<& str> {
+    pub fn from_phone_number(&self) -> std::option::Option<&str> {
         self.from_phone_number.as_deref()
     }
     #[allow(missing_docs)] // documentation missing in model
-    pub fn to_phone_number(&self) -> std::option::Option<& str> {
+    pub fn to_phone_number(&self) -> std::option::Option<&str> {
         self.to_phone_number.as_deref()
     }
     #[allow(missing_docs)] // documentation missing in model
-    pub fn sip_media_application_id(&self) -> std::option::Option<& str> {
+    pub fn sip_media_application_id(&self) -> std::option::Option<&str> {
         self.sip_media_application_id.as_deref()
     }
     #[allow(missing_docs)] // documentation missing in model
-    pub fn sip_headers(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
+    pub fn sip_headers(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
         self.sip_headers.as_ref()
     }
     #[allow(missing_docs)] // documentation missing in model
-    pub fn arguments_map(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
+    pub fn arguments_map(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
         self.arguments_map.as_ref()
     }
 }
-impl  std::fmt::Debug for CreateSipMediaApplicationCallInput  {
+impl std::fmt::Debug for CreateSipMediaApplicationCallInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateSipMediaApplicationCallInput");
         formatter.field("from_phone_number", &"*** Sensitive Data Redacted ***");
@@ -54,7 +62,7 @@ impl  std::fmt::Debug for CreateSipMediaApplicationCallInput  {
 }
 impl CreateSipMediaApplicationCallInput {
     /// Creates a new builder-style object to manufacture [`CreateSipMediaApplicationCallInput`](crate::operation::create_sip_media_application_call::CreateSipMediaApplicationCallInput).
-    pub fn builder() -> crate::operation::create_sip_media_application_call::builders::CreateSipMediaApplicationCallInputBuilder {
+    pub fn builder() -> crate::operation::create_sip_media_application_call::builders::CreateSipMediaApplicationCallInputBuilder{
         crate::operation::create_sip_media_application_call::builders::CreateSipMediaApplicationCallInputBuilder::default()
     }
 }
@@ -66,8 +74,10 @@ pub struct CreateSipMediaApplicationCallInputBuilder {
     pub(crate) from_phone_number: std::option::Option<std::string::String>,
     pub(crate) to_phone_number: std::option::Option<std::string::String>,
     pub(crate) sip_media_application_id: std::option::Option<std::string::String>,
-    pub(crate) sip_headers: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
-    pub(crate) arguments_map: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub(crate) sip_headers:
+        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub(crate) arguments_map:
+        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl CreateSipMediaApplicationCallInputBuilder {
     #[allow(missing_docs)] // documentation missing in model
@@ -76,8 +86,12 @@ impl CreateSipMediaApplicationCallInputBuilder {
         self
     }
     #[allow(missing_docs)] // documentation missing in model
-    pub fn set_from_phone_number(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.from_phone_number = input; self
+    pub fn set_from_phone_number(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.from_phone_number = input;
+        self
     }
     #[allow(missing_docs)] // documentation missing in model
     pub fn to_phone_number(mut self, input: impl Into<std::string::String>) -> Self {
@@ -86,7 +100,8 @@ impl CreateSipMediaApplicationCallInputBuilder {
     }
     #[allow(missing_docs)] // documentation missing in model
     pub fn set_to_phone_number(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.to_phone_number = input; self
+        self.to_phone_number = input;
+        self
     }
     #[allow(missing_docs)] // documentation missing in model
     pub fn sip_media_application_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -94,39 +109,68 @@ impl CreateSipMediaApplicationCallInputBuilder {
         self
     }
     #[allow(missing_docs)] // documentation missing in model
-    pub fn set_sip_media_application_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.sip_media_application_id = input; self
+    pub fn set_sip_media_application_id(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.sip_media_application_id = input;
+        self
     }
     /// Adds a key-value pair to `sip_headers`.
     ///
     /// To override the contents of this collection use [`set_sip_headers`](Self::set_sip_headers).
     ///
-    pub fn sip_headers(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
+    pub fn sip_headers(
+        mut self,
+        k: impl Into<std::string::String>,
+        v: impl Into<std::string::String>,
+    ) -> Self {
         let mut hash_map = self.sip_headers.unwrap_or_default();
-                        hash_map.insert(k.into(), v.into());
-                        self.sip_headers = Some(hash_map);
-                        self
+        hash_map.insert(k.into(), v.into());
+        self.sip_headers = Some(hash_map);
+        self
     }
     #[allow(missing_docs)] // documentation missing in model
-    pub fn set_sip_headers(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
-        self.sip_headers = input; self
+    pub fn set_sip_headers(
+        mut self,
+        input: std::option::Option<
+            std::collections::HashMap<std::string::String, std::string::String>,
+        >,
+    ) -> Self {
+        self.sip_headers = input;
+        self
     }
     /// Adds a key-value pair to `arguments_map`.
     ///
     /// To override the contents of this collection use [`set_arguments_map`](Self::set_arguments_map).
     ///
-    pub fn arguments_map(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
+    pub fn arguments_map(
+        mut self,
+        k: impl Into<std::string::String>,
+        v: impl Into<std::string::String>,
+    ) -> Self {
         let mut hash_map = self.arguments_map.unwrap_or_default();
-                        hash_map.insert(k.into(), v.into());
-                        self.arguments_map = Some(hash_map);
-                        self
+        hash_map.insert(k.into(), v.into());
+        self.arguments_map = Some(hash_map);
+        self
     }
     #[allow(missing_docs)] // documentation missing in model
-    pub fn set_arguments_map(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
-        self.arguments_map = input; self
+    pub fn set_arguments_map(
+        mut self,
+        input: std::option::Option<
+            std::collections::HashMap<std::string::String, std::string::String>,
+        >,
+    ) -> Self {
+        self.arguments_map = input;
+        self
     }
     /// Consumes the builder and constructs a [`CreateSipMediaApplicationCallInput`](crate::operation::create_sip_media_application_call::CreateSipMediaApplicationCallInput).
-    pub fn build(self) -> Result<crate::operation::create_sip_media_application_call::CreateSipMediaApplicationCallInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::create_sip_media_application_call::CreateSipMediaApplicationCallInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::create_sip_media_application_call::CreateSipMediaApplicationCallInput {
                 from_phone_number: self.from_phone_number
@@ -154,4 +198,3 @@ impl std::fmt::Debug for CreateSipMediaApplicationCallInputBuilder {
         formatter.finish()
     }
 }
-

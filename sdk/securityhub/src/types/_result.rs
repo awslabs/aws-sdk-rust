@@ -3,7 +3,7 @@
 /// <p>Details about the account that was not processed.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Result  {
+pub struct Result {
     /// <p>An Amazon Web Services account ID of the account that was not processed.</p>
     #[doc(hidden)]
     pub account_id: std::option::Option<std::string::String>,
@@ -13,11 +13,11 @@ pub struct Result  {
 }
 impl Result {
     /// <p>An Amazon Web Services account ID of the account that was not processed.</p>
-    pub fn account_id(&self) -> std::option::Option<& str> {
+    pub fn account_id(&self) -> std::option::Option<&str> {
         self.account_id.as_deref()
     }
     /// <p>The reason that the account was not processed.</p>
-    pub fn processing_result(&self) -> std::option::Option<& str> {
+    pub fn processing_result(&self) -> std::option::Option<&str> {
         self.processing_result.as_deref()
     }
 }
@@ -43,7 +43,8 @@ impl ResultBuilder {
     }
     /// <p>An Amazon Web Services account ID of the account that was not processed.</p>
     pub fn set_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.account_id = input; self
+        self.account_id = input;
+        self
     }
     /// <p>The reason that the account was not processed.</p>
     pub fn processing_result(mut self, input: impl Into<std::string::String>) -> Self {
@@ -51,17 +52,18 @@ impl ResultBuilder {
         self
     }
     /// <p>The reason that the account was not processed.</p>
-    pub fn set_processing_result(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.processing_result = input; self
+    pub fn set_processing_result(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.processing_result = input;
+        self
     }
     /// Consumes the builder and constructs a [`Result`](crate::types::Result).
     pub fn build(self) -> crate::types::Result {
         crate::types::Result {
-            account_id: self.account_id
-            ,
-            processing_result: self.processing_result
-            ,
+            account_id: self.account_id,
+            processing_result: self.processing_result,
         }
     }
 }
-

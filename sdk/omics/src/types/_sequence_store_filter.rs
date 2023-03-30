@@ -3,7 +3,7 @@
 /// <p>A filter for a sequence store.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SequenceStoreFilter  {
+pub struct SequenceStoreFilter {
     /// <p>A name to filter on.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -16,15 +16,15 @@ pub struct SequenceStoreFilter  {
 }
 impl SequenceStoreFilter {
     /// <p>A name to filter on.</p>
-    pub fn name(&self) -> std::option::Option<& str> {
+    pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>The filter's start date.</p>
-    pub fn created_after(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
+    pub fn created_after(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created_after.as_ref()
     }
     /// <p>The filter's end date.</p>
-    pub fn created_before(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
+    pub fn created_before(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created_before.as_ref()
     }
 }
@@ -51,7 +51,8 @@ impl SequenceStoreFilterBuilder {
     }
     /// <p>A name to filter on.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input; self
+        self.name = input;
+        self
     }
     /// <p>The filter's start date.</p>
     pub fn created_after(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -59,8 +60,12 @@ impl SequenceStoreFilterBuilder {
         self
     }
     /// <p>The filter's start date.</p>
-    pub fn set_created_after(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.created_after = input; self
+    pub fn set_created_after(
+        mut self,
+        input: std::option::Option<aws_smithy_types::DateTime>,
+    ) -> Self {
+        self.created_after = input;
+        self
     }
     /// <p>The filter's end date.</p>
     pub fn created_before(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -68,19 +73,19 @@ impl SequenceStoreFilterBuilder {
         self
     }
     /// <p>The filter's end date.</p>
-    pub fn set_created_before(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.created_before = input; self
+    pub fn set_created_before(
+        mut self,
+        input: std::option::Option<aws_smithy_types::DateTime>,
+    ) -> Self {
+        self.created_before = input;
+        self
     }
     /// Consumes the builder and constructs a [`SequenceStoreFilter`](crate::types::SequenceStoreFilter).
     pub fn build(self) -> crate::types::SequenceStoreFilter {
         crate::types::SequenceStoreFilter {
-            name: self.name
-            ,
-            created_after: self.created_after
-            ,
-            created_before: self.created_before
-            ,
+            name: self.name,
+            created_after: self.created_after,
+            created_before: self.created_before,
         }
     }
 }
-

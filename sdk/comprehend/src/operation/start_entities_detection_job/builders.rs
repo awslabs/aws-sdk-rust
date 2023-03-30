@@ -4,57 +4,82 @@ pub use crate::operation::start_entities_detection_job::_start_entities_detectio
 pub use crate::operation::start_entities_detection_job::_start_entities_detection_job_input::StartEntitiesDetectionJobInputBuilder;
 
 /// Fluent builder constructing a request to `StartEntitiesDetectionJob`.
-/// 
-/// <p>Starts an asynchronous entity detection job for a collection of documents. Use the operation to track the status of a job.</p> 
+///
+/// <p>Starts an asynchronous entity detection job for a collection of documents. Use the operation to track the status of a job.</p>
 /// <p>This API can be used for either standard entity detection or custom entity recognition. In order to be used for custom entity recognition, the optional <code>EntityRecognizerArn</code> must be used in order to provide access to the recognizer being used to detect the custom entity.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct StartEntitiesDetectionJobFluentBuilder {
                 handle: std::sync::Arc<crate::client::Handle>,
                 inner: crate::operation::start_entities_detection_job::builders::StartEntitiesDetectionJobInputBuilder
             }
-impl StartEntitiesDetectionJobFluentBuilder  {
+impl StartEntitiesDetectionJobFluentBuilder {
     /// Creates a new `StartEntitiesDetectionJob`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
-                    /// sent. The operation's inner [http::Request] can be modified as well.
-                    pub async fn customize(self) -> std::result::Result<
-                        crate::client::customize::CustomizableOperation<crate::operation::start_entities_detection_job::StartEntitiesDetectionJob, aws_http::retry::AwsResponseRetryClassifier,>,
-                        aws_smithy_http::result::SdkError<crate::operation::start_entities_detection_job::StartEntitiesDetectionJobError>
-                    >  {
-                        let handle = self.handle.clone();
-                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-                    }
-    
-                    /// Sends the request and returns the response.
-                    ///
-                    /// If an error occurs, an `SdkError` will be returned with additional details that
-                    /// can be matched against.
-                    ///
-                    /// By default, any retryable failures will be retried twice. Retry behavior
-                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                    /// set when configuring the client.
-                    pub async fn send(self) -> std::result::Result<crate::operation::start_entities_detection_job::StartEntitiesDetectionJobOutput, aws_smithy_http::result::SdkError<crate::operation::start_entities_detection_job::StartEntitiesDetectionJobError>>
-                     {
-                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&self.handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        self.handle.client.call(op).await
-                    }
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle,
+            inner: Default::default(),
+        }
+    }
+
+    /// Consume this builder, creating a customizable operation that can be modified before being
+    /// sent. The operation's inner [http::Request] can be modified as well.
+    pub async fn customize(
+        self,
+    ) -> std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::start_entities_detection_job::StartEntitiesDetectionJob,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::result::SdkError<
+            crate::operation::start_entities_detection_job::StartEntitiesDetectionJobError,
+        >,
+    > {
+        let handle = self.handle.clone();
+        let operation = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+    }
+
+    /// Sends the request and returns the response.
+    ///
+    /// If an error occurs, an `SdkError` will be returned with additional details that
+    /// can be matched against.
+    ///
+    /// By default, any retryable failures will be retried twice. Retry behavior
+    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+    /// set when configuring the client.
+    pub async fn send(
+        self,
+    ) -> std::result::Result<
+        crate::operation::start_entities_detection_job::StartEntitiesDetectionJobOutput,
+        aws_smithy_http::result::SdkError<
+            crate::operation::start_entities_detection_job::StartEntitiesDetectionJobError,
+        >,
+    > {
+        let op = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&self.handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        self.handle.client.call(op).await
+    }
     /// <p>Specifies the format and location of the input data for the job.</p>
     pub fn input_data_config(mut self, input: crate::types::InputDataConfig) -> Self {
         self.inner = self.inner.input_data_config(input);
         self
     }
     /// <p>Specifies the format and location of the input data for the job.</p>
-    pub fn set_input_data_config(mut self, input: std::option::Option<crate::types::InputDataConfig>) -> Self {
+    pub fn set_input_data_config(
+        mut self,
+        input: std::option::Option<crate::types::InputDataConfig>,
+    ) -> Self {
         self.inner = self.inner.set_input_data_config(input);
         self
     }
@@ -64,7 +89,10 @@ impl StartEntitiesDetectionJobFluentBuilder  {
         self
     }
     /// <p>Specifies where to send the output files.</p>
-    pub fn set_output_data_config(mut self, input: std::option::Option<crate::types::OutputDataConfig>) -> Self {
+    pub fn set_output_data_config(
+        mut self,
+        input: std::option::Option<crate::types::OutputDataConfig>,
+    ) -> Self {
         self.inner = self.inner.set_output_data_config(input);
         self
     }
@@ -74,7 +102,10 @@ impl StartEntitiesDetectionJobFluentBuilder  {
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role that grants Amazon Comprehend read access to your input data. For more information, see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/access-control-managing-permissions.html#auth-role-permissions">https://docs.aws.amazon.com/comprehend/latest/dg/access-control-managing-permissions.html#auth-role-permissions</a>.</p>
-    pub fn set_data_access_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_data_access_role_arn(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_data_access_role_arn(input);
         self
     }
@@ -94,7 +125,10 @@ impl StartEntitiesDetectionJobFluentBuilder  {
         self
     }
     /// <p>The Amazon Resource Name (ARN) that identifies the specific entity recognizer to be used by the <code>StartEntitiesDetectionJob</code>. This ARN is optional and is only used for a custom entity recognition job.</p>
-    pub fn set_entity_recognizer_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_entity_recognizer_arn(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_entity_recognizer_arn(input);
         self
     }
@@ -104,7 +138,10 @@ impl StartEntitiesDetectionJobFluentBuilder  {
         self
     }
     /// <p>The language of the input documents. All documents must be in the same language. You can specify any of the languages supported by Amazon Comprehend. If custom entities recognition is used, this parameter is ignored and the language used for training the model is used instead.</p>
-    pub fn set_language_code(mut self, input: std::option::Option<crate::types::LanguageCode>) -> Self {
+    pub fn set_language_code(
+        mut self,
+        input: std::option::Option<crate::types::LanguageCode>,
+    ) -> Self {
         self.inner = self.inner.set_language_code(input);
         self
     }
@@ -114,25 +151,31 @@ impl StartEntitiesDetectionJobFluentBuilder  {
         self
     }
     /// <p>A unique identifier for the request. If you don't set the client request token, Amazon Comprehend generates one.</p>
-    pub fn set_client_request_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_client_request_token(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_client_request_token(input);
         self
     }
-    /// <p>ID for the AWS Key Management Service (KMS) key that Amazon Comprehend uses to encrypt data on the storage volume attached to the ML compute instance(s) that process the analysis job. The VolumeKmsKeyId can be either of the following formats:</p> 
-    /// <ul> 
-    /// <li> <p>KMS Key ID: <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li> 
-    /// <li> <p>Amazon Resource Name (ARN) of a KMS Key: <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li> 
+    /// <p>ID for the AWS Key Management Service (KMS) key that Amazon Comprehend uses to encrypt data on the storage volume attached to the ML compute instance(s) that process the analysis job. The VolumeKmsKeyId can be either of the following formats:</p>
+    /// <ul>
+    /// <li> <p>KMS Key ID: <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li>
+    /// <li> <p>Amazon Resource Name (ARN) of a KMS Key: <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li>
     /// </ul>
     pub fn volume_kms_key_id(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.volume_kms_key_id(input.into());
         self
     }
-    /// <p>ID for the AWS Key Management Service (KMS) key that Amazon Comprehend uses to encrypt data on the storage volume attached to the ML compute instance(s) that process the analysis job. The VolumeKmsKeyId can be either of the following formats:</p> 
-    /// <ul> 
-    /// <li> <p>KMS Key ID: <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li> 
-    /// <li> <p>Amazon Resource Name (ARN) of a KMS Key: <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li> 
+    /// <p>ID for the AWS Key Management Service (KMS) key that Amazon Comprehend uses to encrypt data on the storage volume attached to the ML compute instance(s) that process the analysis job. The VolumeKmsKeyId can be either of the following formats:</p>
+    /// <ul>
+    /// <li> <p>KMS Key ID: <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li>
+    /// <li> <p>Amazon Resource Name (ARN) of a KMS Key: <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li>
     /// </ul>
-    pub fn set_volume_kms_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_volume_kms_key_id(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_volume_kms_key_id(input);
         self
     }
@@ -156,9 +199,11 @@ impl StartEntitiesDetectionJobFluentBuilder  {
         self
     }
     /// <p>Tags to be associated with the entities detection job. A tag is a key-value pair that adds metadata to a resource used by Amazon Comprehend. For example, a tag with "Sales" as the key might be added to a resource to indicate its use by the sales department.</p>
-    pub fn set_tags(mut self, input: std::option::Option<std::vec::Vec<crate::types::Tag>>) -> Self {
+    pub fn set_tags(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::Tag>>,
+    ) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }
 }
-

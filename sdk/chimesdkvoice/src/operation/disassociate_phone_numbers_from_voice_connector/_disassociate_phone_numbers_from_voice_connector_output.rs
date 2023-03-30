@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DisassociatePhoneNumbersFromVoiceConnectorOutput  {
+pub struct DisassociatePhoneNumbersFromVoiceConnectorOutput {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub phone_number_errors: std::option::Option<std::vec::Vec<crate::types::PhoneNumberError>>,
@@ -10,18 +10,18 @@ pub struct DisassociatePhoneNumbersFromVoiceConnectorOutput  {
 }
 impl DisassociatePhoneNumbersFromVoiceConnectorOutput {
     #[allow(missing_docs)] // documentation missing in model
-    pub fn phone_number_errors(&self) -> std::option::Option<& [crate::types::PhoneNumberError]> {
+    pub fn phone_number_errors(&self) -> std::option::Option<&[crate::types::PhoneNumberError]> {
         self.phone_number_errors.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for DisassociatePhoneNumbersFromVoiceConnectorOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl DisassociatePhoneNumbersFromVoiceConnectorOutput {
     /// Creates a new builder-style object to manufacture [`DisassociatePhoneNumbersFromVoiceConnectorOutput`](crate::operation::disassociate_phone_numbers_from_voice_connector::DisassociatePhoneNumbersFromVoiceConnectorOutput).
-    pub fn builder() -> crate::operation::disassociate_phone_numbers_from_voice_connector::builders::DisassociatePhoneNumbersFromVoiceConnectorOutputBuilder {
+    pub fn builder() -> crate::operation::disassociate_phone_numbers_from_voice_connector::builders::DisassociatePhoneNumbersFromVoiceConnectorOutputBuilder{
         crate::operation::disassociate_phone_numbers_from_voice_connector::builders::DisassociatePhoneNumbersFromVoiceConnectorOutputBuilder::default()
     }
 }
@@ -30,7 +30,8 @@ impl DisassociatePhoneNumbersFromVoiceConnectorOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct DisassociatePhoneNumbersFromVoiceConnectorOutputBuilder {
-    pub(crate) phone_number_errors: std::option::Option<std::vec::Vec<crate::types::PhoneNumberError>>,
+    pub(crate) phone_number_errors:
+        std::option::Option<std::vec::Vec<crate::types::PhoneNumberError>>,
     _request_id: Option<String>,
 }
 impl DisassociatePhoneNumbersFromVoiceConnectorOutputBuilder {
@@ -40,25 +41,29 @@ impl DisassociatePhoneNumbersFromVoiceConnectorOutputBuilder {
     ///
     pub fn phone_number_errors(mut self, input: crate::types::PhoneNumberError) -> Self {
         let mut v = self.phone_number_errors.unwrap_or_default();
-                        v.push(input);
-                        self.phone_number_errors = Some(v);
-                        self
+        v.push(input);
+        self.phone_number_errors = Some(v);
+        self
     }
     #[allow(missing_docs)] // documentation missing in model
-    pub fn set_phone_number_errors(mut self, input: std::option::Option<std::vec::Vec<crate::types::PhoneNumberError>>) -> Self {
-        self.phone_number_errors = input; self
+    pub fn set_phone_number_errors(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::PhoneNumberError>>,
+    ) -> Self {
+        self.phone_number_errors = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`DisassociatePhoneNumbersFromVoiceConnectorOutput`](crate::operation::disassociate_phone_numbers_from_voice_connector::DisassociatePhoneNumbersFromVoiceConnectorOutput).
-    pub fn build(self) -> crate::operation::disassociate_phone_numbers_from_voice_connector::DisassociatePhoneNumbersFromVoiceConnectorOutput {
+    pub fn build(self) -> crate::operation::disassociate_phone_numbers_from_voice_connector::DisassociatePhoneNumbersFromVoiceConnectorOutput{
         crate::operation::disassociate_phone_numbers_from_voice_connector::DisassociatePhoneNumbersFromVoiceConnectorOutput {
             phone_number_errors: self.phone_number_errors
             ,
@@ -66,4 +71,3 @@ impl DisassociatePhoneNumbersFromVoiceConnectorOutputBuilder {
         }
     }
 }
-

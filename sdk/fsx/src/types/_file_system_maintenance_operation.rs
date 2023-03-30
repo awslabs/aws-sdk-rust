@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-/// 
+///
 /// Here is an example of how you can make a match expression forward-compatible:
-/// 
+///
 /// ```text
 /// # let filesystemmaintenanceoperation = unimplemented!();
 /// match filesystemmaintenanceoperation {
@@ -30,55 +30,64 @@
 /// Specifically, when `filesystemmaintenanceoperation` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `FileSystemMaintenanceOperation::NewFeature` also yielding `"NewFeature"`.
-/// 
+///
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 /// <p>An enumeration specifying the currently ongoing maintenance operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
 pub enum FileSystemMaintenanceOperation {
     #[allow(missing_docs)] // documentation missing in model
     BackingUp,
     #[allow(missing_docs)] // documentation missing in model
     Patching,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::primitives::UnknownVariantValue)
+    Unknown(crate::primitives::UnknownVariantValue),
 }
 impl std::convert::From<&str> for FileSystemMaintenanceOperation {
-                fn from(s: &str) -> Self {
-                    match s {
-                        "BACKING_UP" => FileSystemMaintenanceOperation::BackingUp,
-"PATCHING" => FileSystemMaintenanceOperation::Patching,
-other => FileSystemMaintenanceOperation::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
-                    }
-                }
-            }
-impl std::str::FromStr for FileSystemMaintenanceOperation {
-                type Err = std::convert::Infallible;
-
-                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-                    Ok(FileSystemMaintenanceOperation::from(s))
-                }
-            }
-impl FileSystemMaintenanceOperation {
-                /// Returns the `&str` value of the enum member.
-                pub fn as_str(&self) -> &str {
-                    match self {
-    FileSystemMaintenanceOperation::BackingUp => "BACKING_UP",
-    FileSystemMaintenanceOperation::Patching => "PATCHING",
-    FileSystemMaintenanceOperation::Unknown(value) => value.as_str()
+    fn from(s: &str) -> Self {
+        match s {
+            "BACKING_UP" => FileSystemMaintenanceOperation::BackingUp,
+            "PATCHING" => FileSystemMaintenanceOperation::Patching,
+            other => FileSystemMaintenanceOperation::Unknown(
+                crate::primitives::UnknownVariantValue(other.to_owned()),
+            ),
+        }
+    }
 }
-                }
-                /// Returns all the `&str` representations of the enum members.
-                pub const fn values() -> &'static [&'static str] {
-                    &["BACKING_UP", "PATCHING"]
-                }
-            }
-impl AsRef<str> for FileSystemMaintenanceOperation {
-                fn as_ref(&self) -> &str {
-                    self.as_str()
-                }
-            }
+impl std::str::FromStr for FileSystemMaintenanceOperation {
+    type Err = std::convert::Infallible;
 
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(FileSystemMaintenanceOperation::from(s))
+    }
+}
+impl FileSystemMaintenanceOperation {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            FileSystemMaintenanceOperation::BackingUp => "BACKING_UP",
+            FileSystemMaintenanceOperation::Patching => "PATCHING",
+            FileSystemMaintenanceOperation::Unknown(value) => value.as_str(),
+        }
+    }
+    /// Returns all the `&str` representations of the enum members.
+    pub const fn values() -> &'static [&'static str] {
+        &["BACKING_UP", "PATCHING"]
+    }
+}
+impl AsRef<str> for FileSystemMaintenanceOperation {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}

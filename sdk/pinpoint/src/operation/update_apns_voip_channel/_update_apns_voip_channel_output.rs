@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateApnsVoipChannelOutput  {
+pub struct UpdateApnsVoipChannelOutput {
     /// <p>Provides information about the status and settings of the APNs (Apple Push Notification service) VoIP channel for an application.</p>
     #[doc(hidden)]
     pub apns_voip_channel_response: std::option::Option<crate::types::ApnsVoipChannelResponse>,
@@ -10,18 +10,22 @@ pub struct UpdateApnsVoipChannelOutput  {
 }
 impl UpdateApnsVoipChannelOutput {
     /// <p>Provides information about the status and settings of the APNs (Apple Push Notification service) VoIP channel for an application.</p>
-    pub fn apns_voip_channel_response(&self) -> std::option::Option<& crate::types::ApnsVoipChannelResponse> {
+    pub fn apns_voip_channel_response(
+        &self,
+    ) -> std::option::Option<&crate::types::ApnsVoipChannelResponse> {
         self.apns_voip_channel_response.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for UpdateApnsVoipChannelOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl UpdateApnsVoipChannelOutput {
     /// Creates a new builder-style object to manufacture [`UpdateApnsVoipChannelOutput`](crate::operation::update_apns_voip_channel::UpdateApnsVoipChannelOutput).
-    pub fn builder() -> crate::operation::update_apns_voip_channel::builders::UpdateApnsVoipChannelOutputBuilder {
+    pub fn builder(
+    ) -> crate::operation::update_apns_voip_channel::builders::UpdateApnsVoipChannelOutputBuilder
+    {
         crate::operation::update_apns_voip_channel::builders::UpdateApnsVoipChannelOutputBuilder::default()
     }
 }
@@ -30,35 +34,41 @@ impl UpdateApnsVoipChannelOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct UpdateApnsVoipChannelOutputBuilder {
-    pub(crate) apns_voip_channel_response: std::option::Option<crate::types::ApnsVoipChannelResponse>,
+    pub(crate) apns_voip_channel_response:
+        std::option::Option<crate::types::ApnsVoipChannelResponse>,
     _request_id: Option<String>,
 }
 impl UpdateApnsVoipChannelOutputBuilder {
     /// <p>Provides information about the status and settings of the APNs (Apple Push Notification service) VoIP channel for an application.</p>
-    pub fn apns_voip_channel_response(mut self, input: crate::types::ApnsVoipChannelResponse) -> Self {
+    pub fn apns_voip_channel_response(
+        mut self,
+        input: crate::types::ApnsVoipChannelResponse,
+    ) -> Self {
         self.apns_voip_channel_response = Some(input);
         self
     }
     /// <p>Provides information about the status and settings of the APNs (Apple Push Notification service) VoIP channel for an application.</p>
-    pub fn set_apns_voip_channel_response(mut self, input: std::option::Option<crate::types::ApnsVoipChannelResponse>) -> Self {
-        self.apns_voip_channel_response = input; self
+    pub fn set_apns_voip_channel_response(
+        mut self,
+        input: std::option::Option<crate::types::ApnsVoipChannelResponse>,
+    ) -> Self {
+        self.apns_voip_channel_response = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`UpdateApnsVoipChannelOutput`](crate::operation::update_apns_voip_channel::UpdateApnsVoipChannelOutput).
     pub fn build(self) -> crate::operation::update_apns_voip_channel::UpdateApnsVoipChannelOutput {
         crate::operation::update_apns_voip_channel::UpdateApnsVoipChannelOutput {
-            apns_voip_channel_response: self.apns_voip_channel_response
-            ,
+            apns_voip_channel_response: self.apns_voip_channel_response,
             _request_id: self._request_id,
         }
     }
 }
-

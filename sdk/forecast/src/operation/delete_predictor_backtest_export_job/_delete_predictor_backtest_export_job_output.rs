@@ -2,17 +2,17 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeletePredictorBacktestExportJobOutput  {
+pub struct DeletePredictorBacktestExportJobOutput {
     _request_id: Option<String>,
 }
 impl aws_http::request_id::RequestId for DeletePredictorBacktestExportJobOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl DeletePredictorBacktestExportJobOutput {
     /// Creates a new builder-style object to manufacture [`DeletePredictorBacktestExportJobOutput`](crate::operation::delete_predictor_backtest_export_job::DeletePredictorBacktestExportJobOutput).
-    pub fn builder() -> crate::operation::delete_predictor_backtest_export_job::builders::DeletePredictorBacktestExportJobOutputBuilder {
+    pub fn builder() -> crate::operation::delete_predictor_backtest_export_job::builders::DeletePredictorBacktestExportJobOutputBuilder{
         crate::operation::delete_predictor_backtest_export_job::builders::DeletePredictorBacktestExportJobOutputBuilder::default()
     }
 }
@@ -25,19 +25,18 @@ pub struct DeletePredictorBacktestExportJobOutputBuilder {
 }
 impl DeletePredictorBacktestExportJobOutputBuilder {
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`DeletePredictorBacktestExportJobOutput`](crate::operation::delete_predictor_backtest_export_job::DeletePredictorBacktestExportJobOutput).
-    pub fn build(self) -> crate::operation::delete_predictor_backtest_export_job::DeletePredictorBacktestExportJobOutput {
+    pub fn build(self) -> crate::operation::delete_predictor_backtest_export_job::DeletePredictorBacktestExportJobOutput{
         crate::operation::delete_predictor_backtest_export_job::DeletePredictorBacktestExportJobOutput {
             _request_id: self._request_id,
         }
     }
 }
-

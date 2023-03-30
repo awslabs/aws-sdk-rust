@@ -16,4 +16,3 @@ pub use crate::types::_credential_summary::CredentialSummaryBuilder;
 pub use crate::types::_profile_detail::ProfileDetailBuilder;
 
 pub use crate::types::_crl_detail::CrlDetailBuilder;
-

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeUserInput  {
+pub struct DescribeUserInput {
     /// <p>The identifier for the organization under which the user exists.</p>
     #[doc(hidden)]
     pub organization_id: std::option::Option<std::string::String>,
@@ -12,11 +12,11 @@ pub struct DescribeUserInput  {
 }
 impl DescribeUserInput {
     /// <p>The identifier for the organization under which the user exists.</p>
-    pub fn organization_id(&self) -> std::option::Option<& str> {
+    pub fn organization_id(&self) -> std::option::Option<&str> {
         self.organization_id.as_deref()
     }
     /// <p>The identifier for the user to be described.</p>
-    pub fn user_id(&self) -> std::option::Option<& str> {
+    pub fn user_id(&self) -> std::option::Option<&str> {
         self.user_id.as_deref()
     }
 }
@@ -42,7 +42,8 @@ impl DescribeUserInputBuilder {
     }
     /// <p>The identifier for the organization under which the user exists.</p>
     pub fn set_organization_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.organization_id = input; self
+        self.organization_id = input;
+        self
     }
     /// <p>The identifier for the user to be described.</p>
     pub fn user_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -51,18 +52,19 @@ impl DescribeUserInputBuilder {
     }
     /// <p>The identifier for the user to be described.</p>
     pub fn set_user_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.user_id = input; self
+        self.user_id = input;
+        self
     }
     /// Consumes the builder and constructs a [`DescribeUserInput`](crate::operation::describe_user::DescribeUserInput).
-    pub fn build(self) -> Result<crate::operation::describe_user::DescribeUserInput, aws_smithy_http::operation::error::BuildError> {
-        Ok(
-            crate::operation::describe_user::DescribeUserInput {
-                organization_id: self.organization_id
-                ,
-                user_id: self.user_id
-                ,
-            }
-        )
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::describe_user::DescribeUserInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        Ok(crate::operation::describe_user::DescribeUserInput {
+            organization_id: self.organization_id,
+            user_id: self.user_id,
+        })
     }
 }
-

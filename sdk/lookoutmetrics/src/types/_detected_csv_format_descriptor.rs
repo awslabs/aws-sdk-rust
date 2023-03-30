@@ -3,7 +3,7 @@
 /// <p>Properties of an inferred CSV format.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DetectedCsvFormatDescriptor  {
+pub struct DetectedCsvFormatDescriptor {
     /// <p>The format's file compression.</p>
     #[doc(hidden)]
     pub file_compression: std::option::Option<crate::types::DetectedField>,
@@ -25,27 +25,27 @@ pub struct DetectedCsvFormatDescriptor  {
 }
 impl DetectedCsvFormatDescriptor {
     /// <p>The format's file compression.</p>
-    pub fn file_compression(&self) -> std::option::Option<& crate::types::DetectedField> {
+    pub fn file_compression(&self) -> std::option::Option<&crate::types::DetectedField> {
         self.file_compression.as_ref()
     }
     /// <p>The format's charset.</p>
-    pub fn charset(&self) -> std::option::Option<& crate::types::DetectedField> {
+    pub fn charset(&self) -> std::option::Option<&crate::types::DetectedField> {
         self.charset.as_ref()
     }
     /// <p>Whether the format includes a header.</p>
-    pub fn contains_header(&self) -> std::option::Option<& crate::types::DetectedField> {
+    pub fn contains_header(&self) -> std::option::Option<&crate::types::DetectedField> {
         self.contains_header.as_ref()
     }
     /// <p>The format's delimiter.</p>
-    pub fn delimiter(&self) -> std::option::Option<& crate::types::DetectedField> {
+    pub fn delimiter(&self) -> std::option::Option<&crate::types::DetectedField> {
         self.delimiter.as_ref()
     }
     /// <p>The format's header list.</p>
-    pub fn header_list(&self) -> std::option::Option<& crate::types::DetectedField> {
+    pub fn header_list(&self) -> std::option::Option<&crate::types::DetectedField> {
         self.header_list.as_ref()
     }
     /// <p>The format's quote symbol.</p>
-    pub fn quote_symbol(&self) -> std::option::Option<& crate::types::DetectedField> {
+    pub fn quote_symbol(&self) -> std::option::Option<&crate::types::DetectedField> {
         self.quote_symbol.as_ref()
     }
 }
@@ -74,8 +74,12 @@ impl DetectedCsvFormatDescriptorBuilder {
         self
     }
     /// <p>The format's file compression.</p>
-    pub fn set_file_compression(mut self, input: std::option::Option<crate::types::DetectedField>) -> Self {
-        self.file_compression = input; self
+    pub fn set_file_compression(
+        mut self,
+        input: std::option::Option<crate::types::DetectedField>,
+    ) -> Self {
+        self.file_compression = input;
+        self
     }
     /// <p>The format's charset.</p>
     pub fn charset(mut self, input: crate::types::DetectedField) -> Self {
@@ -84,7 +88,8 @@ impl DetectedCsvFormatDescriptorBuilder {
     }
     /// <p>The format's charset.</p>
     pub fn set_charset(mut self, input: std::option::Option<crate::types::DetectedField>) -> Self {
-        self.charset = input; self
+        self.charset = input;
+        self
     }
     /// <p>Whether the format includes a header.</p>
     pub fn contains_header(mut self, input: crate::types::DetectedField) -> Self {
@@ -92,8 +97,12 @@ impl DetectedCsvFormatDescriptorBuilder {
         self
     }
     /// <p>Whether the format includes a header.</p>
-    pub fn set_contains_header(mut self, input: std::option::Option<crate::types::DetectedField>) -> Self {
-        self.contains_header = input; self
+    pub fn set_contains_header(
+        mut self,
+        input: std::option::Option<crate::types::DetectedField>,
+    ) -> Self {
+        self.contains_header = input;
+        self
     }
     /// <p>The format's delimiter.</p>
     pub fn delimiter(mut self, input: crate::types::DetectedField) -> Self {
@@ -101,8 +110,12 @@ impl DetectedCsvFormatDescriptorBuilder {
         self
     }
     /// <p>The format's delimiter.</p>
-    pub fn set_delimiter(mut self, input: std::option::Option<crate::types::DetectedField>) -> Self {
-        self.delimiter = input; self
+    pub fn set_delimiter(
+        mut self,
+        input: std::option::Option<crate::types::DetectedField>,
+    ) -> Self {
+        self.delimiter = input;
+        self
     }
     /// <p>The format's header list.</p>
     pub fn header_list(mut self, input: crate::types::DetectedField) -> Self {
@@ -110,8 +123,12 @@ impl DetectedCsvFormatDescriptorBuilder {
         self
     }
     /// <p>The format's header list.</p>
-    pub fn set_header_list(mut self, input: std::option::Option<crate::types::DetectedField>) -> Self {
-        self.header_list = input; self
+    pub fn set_header_list(
+        mut self,
+        input: std::option::Option<crate::types::DetectedField>,
+    ) -> Self {
+        self.header_list = input;
+        self
     }
     /// <p>The format's quote symbol.</p>
     pub fn quote_symbol(mut self, input: crate::types::DetectedField) -> Self {
@@ -119,25 +136,22 @@ impl DetectedCsvFormatDescriptorBuilder {
         self
     }
     /// <p>The format's quote symbol.</p>
-    pub fn set_quote_symbol(mut self, input: std::option::Option<crate::types::DetectedField>) -> Self {
-        self.quote_symbol = input; self
+    pub fn set_quote_symbol(
+        mut self,
+        input: std::option::Option<crate::types::DetectedField>,
+    ) -> Self {
+        self.quote_symbol = input;
+        self
     }
     /// Consumes the builder and constructs a [`DetectedCsvFormatDescriptor`](crate::types::DetectedCsvFormatDescriptor).
     pub fn build(self) -> crate::types::DetectedCsvFormatDescriptor {
         crate::types::DetectedCsvFormatDescriptor {
-            file_compression: self.file_compression
-            ,
-            charset: self.charset
-            ,
-            contains_header: self.contains_header
-            ,
-            delimiter: self.delimiter
-            ,
-            header_list: self.header_list
-            ,
-            quote_symbol: self.quote_symbol
-            ,
+            file_compression: self.file_compression,
+            charset: self.charset,
+            contains_header: self.contains_header,
+            delimiter: self.delimiter,
+            header_list: self.header_list,
+            quote_symbol: self.quote_symbol,
         }
     }
 }
-

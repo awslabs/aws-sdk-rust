@@ -123,4 +123,3 @@ pub mod update_storage_virtual_machine;
 
 /// Types for the `UpdateVolume` operation.
 pub mod update_volume;
-

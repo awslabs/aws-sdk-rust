@@ -3,7 +3,7 @@
 /// <p>A uniquely identified group of data records in a Kinesis data stream.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Shard  {
+pub struct Shard {
     /// <p>The unique identifier of the shard within the stream.</p>
     #[doc(hidden)]
     pub shard_id: std::option::Option<std::string::String>,
@@ -22,23 +22,23 @@ pub struct Shard  {
 }
 impl Shard {
     /// <p>The unique identifier of the shard within the stream.</p>
-    pub fn shard_id(&self) -> std::option::Option<& str> {
+    pub fn shard_id(&self) -> std::option::Option<&str> {
         self.shard_id.as_deref()
     }
     /// <p>The shard ID of the shard's parent.</p>
-    pub fn parent_shard_id(&self) -> std::option::Option<& str> {
+    pub fn parent_shard_id(&self) -> std::option::Option<&str> {
         self.parent_shard_id.as_deref()
     }
     /// <p>The shard ID of the shard adjacent to the shard's parent.</p>
-    pub fn adjacent_parent_shard_id(&self) -> std::option::Option<& str> {
+    pub fn adjacent_parent_shard_id(&self) -> std::option::Option<&str> {
         self.adjacent_parent_shard_id.as_deref()
     }
     /// <p>The range of possible hash key values for the shard, which is a set of ordered contiguous positive integers.</p>
-    pub fn hash_key_range(&self) -> std::option::Option<& crate::types::HashKeyRange> {
+    pub fn hash_key_range(&self) -> std::option::Option<&crate::types::HashKeyRange> {
         self.hash_key_range.as_ref()
     }
     /// <p>The range of possible sequence numbers for the shard.</p>
-    pub fn sequence_number_range(&self) -> std::option::Option<& crate::types::SequenceNumberRange> {
+    pub fn sequence_number_range(&self) -> std::option::Option<&crate::types::SequenceNumberRange> {
         self.sequence_number_range.as_ref()
     }
 }
@@ -67,7 +67,8 @@ impl ShardBuilder {
     }
     /// <p>The unique identifier of the shard within the stream.</p>
     pub fn set_shard_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.shard_id = input; self
+        self.shard_id = input;
+        self
     }
     /// <p>The shard ID of the shard's parent.</p>
     pub fn parent_shard_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -76,7 +77,8 @@ impl ShardBuilder {
     }
     /// <p>The shard ID of the shard's parent.</p>
     pub fn set_parent_shard_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.parent_shard_id = input; self
+        self.parent_shard_id = input;
+        self
     }
     /// <p>The shard ID of the shard adjacent to the shard's parent.</p>
     pub fn adjacent_parent_shard_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -84,8 +86,12 @@ impl ShardBuilder {
         self
     }
     /// <p>The shard ID of the shard adjacent to the shard's parent.</p>
-    pub fn set_adjacent_parent_shard_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.adjacent_parent_shard_id = input; self
+    pub fn set_adjacent_parent_shard_id(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.adjacent_parent_shard_id = input;
+        self
     }
     /// <p>The range of possible hash key values for the shard, which is a set of ordered contiguous positive integers.</p>
     pub fn hash_key_range(mut self, input: crate::types::HashKeyRange) -> Self {
@@ -93,8 +99,12 @@ impl ShardBuilder {
         self
     }
     /// <p>The range of possible hash key values for the shard, which is a set of ordered contiguous positive integers.</p>
-    pub fn set_hash_key_range(mut self, input: std::option::Option<crate::types::HashKeyRange>) -> Self {
-        self.hash_key_range = input; self
+    pub fn set_hash_key_range(
+        mut self,
+        input: std::option::Option<crate::types::HashKeyRange>,
+    ) -> Self {
+        self.hash_key_range = input;
+        self
     }
     /// <p>The range of possible sequence numbers for the shard.</p>
     pub fn sequence_number_range(mut self, input: crate::types::SequenceNumberRange) -> Self {
@@ -102,23 +112,21 @@ impl ShardBuilder {
         self
     }
     /// <p>The range of possible sequence numbers for the shard.</p>
-    pub fn set_sequence_number_range(mut self, input: std::option::Option<crate::types::SequenceNumberRange>) -> Self {
-        self.sequence_number_range = input; self
+    pub fn set_sequence_number_range(
+        mut self,
+        input: std::option::Option<crate::types::SequenceNumberRange>,
+    ) -> Self {
+        self.sequence_number_range = input;
+        self
     }
     /// Consumes the builder and constructs a [`Shard`](crate::types::Shard).
     pub fn build(self) -> crate::types::Shard {
         crate::types::Shard {
-            shard_id: self.shard_id
-            ,
-            parent_shard_id: self.parent_shard_id
-            ,
-            adjacent_parent_shard_id: self.adjacent_parent_shard_id
-            ,
-            hash_key_range: self.hash_key_range
-            ,
-            sequence_number_range: self.sequence_number_range
-            ,
+            shard_id: self.shard_id,
+            parent_shard_id: self.parent_shard_id,
+            adjacent_parent_shard_id: self.adjacent_parent_shard_id,
+            hash_key_range: self.hash_key_range,
+            sequence_number_range: self.sequence_number_range,
         }
     }
 }
-

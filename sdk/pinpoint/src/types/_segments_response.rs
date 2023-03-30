@@ -3,7 +3,7 @@
 /// <p>Provides information about all the segments that are associated with an application.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SegmentsResponse  {
+pub struct SegmentsResponse {
     /// <p>An array of responses, one for each segment that's associated with the application (Segments resource) or each version of a segment that's associated with the application (Segment Versions resource).</p>
     #[doc(hidden)]
     pub item: std::option::Option<std::vec::Vec<crate::types::SegmentResponse>>,
@@ -13,11 +13,11 @@ pub struct SegmentsResponse  {
 }
 impl SegmentsResponse {
     /// <p>An array of responses, one for each segment that's associated with the application (Segments resource) or each version of a segment that's associated with the application (Segment Versions resource).</p>
-    pub fn item(&self) -> std::option::Option<& [crate::types::SegmentResponse]> {
+    pub fn item(&self) -> std::option::Option<&[crate::types::SegmentResponse]> {
         self.item.as_deref()
     }
     /// <p>The string to use in a subsequent request to get the next page of results in a paginated response. This value is null if there are no additional pages.</p>
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
 }
@@ -43,13 +43,17 @@ impl SegmentsResponseBuilder {
     /// <p>An array of responses, one for each segment that's associated with the application (Segments resource) or each version of a segment that's associated with the application (Segment Versions resource).</p>
     pub fn item(mut self, input: crate::types::SegmentResponse) -> Self {
         let mut v = self.item.unwrap_or_default();
-                        v.push(input);
-                        self.item = Some(v);
-                        self
+        v.push(input);
+        self.item = Some(v);
+        self
     }
     /// <p>An array of responses, one for each segment that's associated with the application (Segments resource) or each version of a segment that's associated with the application (Segment Versions resource).</p>
-    pub fn set_item(mut self, input: std::option::Option<std::vec::Vec<crate::types::SegmentResponse>>) -> Self {
-        self.item = input; self
+    pub fn set_item(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::SegmentResponse>>,
+    ) -> Self {
+        self.item = input;
+        self
     }
     /// <p>The string to use in a subsequent request to get the next page of results in a paginated response. This value is null if there are no additional pages.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -58,16 +62,14 @@ impl SegmentsResponseBuilder {
     }
     /// <p>The string to use in a subsequent request to get the next page of results in a paginated response. This value is null if there are no additional pages.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input; self
+        self.next_token = input;
+        self
     }
     /// Consumes the builder and constructs a [`SegmentsResponse`](crate::types::SegmentsResponse).
     pub fn build(self) -> crate::types::SegmentsResponse {
         crate::types::SegmentsResponse {
-            item: self.item
-            ,
-            next_token: self.next_token
-            ,
+            item: self.item,
+            next_token: self.next_token,
         }
     }
 }
-

@@ -102,4 +102,3 @@ pub mod update_membership;
 
 /// Types for the `UpdateProtectedQuery` operation.
 pub mod update_protected_query;
-

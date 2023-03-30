@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetWorkspaceOutput  {
+pub struct GetWorkspaceOutput {
     /// <p>The ID of the workspace.</p>
     #[doc(hidden)]
     pub workspace_id: std::option::Option<std::string::String>,
@@ -28,39 +28,39 @@ pub struct GetWorkspaceOutput  {
 }
 impl GetWorkspaceOutput {
     /// <p>The ID of the workspace.</p>
-    pub fn workspace_id(&self) -> std::option::Option<& str> {
+    pub fn workspace_id(&self) -> std::option::Option<&str> {
         self.workspace_id.as_deref()
     }
     /// <p>The ARN of the workspace.</p>
-    pub fn arn(&self) -> std::option::Option<& str> {
+    pub fn arn(&self) -> std::option::Option<&str> {
         self.arn.as_deref()
     }
     /// <p>The description of the workspace.</p>
-    pub fn description(&self) -> std::option::Option<& str> {
+    pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
     /// <p>The ARN of the S3 bucket where resources associated with the workspace are stored.</p>
-    pub fn s3_location(&self) -> std::option::Option<& str> {
+    pub fn s3_location(&self) -> std::option::Option<&str> {
         self.s3_location.as_deref()
     }
     /// <p>The ARN of the execution role associated with the workspace.</p>
-    pub fn role(&self) -> std::option::Option<& str> {
+    pub fn role(&self) -> std::option::Option<&str> {
         self.role.as_deref()
     }
     /// <p>The date and time when the workspace was created.</p>
-    pub fn creation_date_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
+    pub fn creation_date_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.creation_date_time.as_ref()
     }
     /// <p>The date and time when the workspace was last updated.</p>
-    pub fn update_date_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
+    pub fn update_date_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.update_date_time.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for GetWorkspaceOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl GetWorkspaceOutput {
     /// Creates a new builder-style object to manufacture [`GetWorkspaceOutput`](crate::operation::get_workspace::GetWorkspaceOutput).
     pub fn builder() -> crate::operation::get_workspace::builders::GetWorkspaceOutputBuilder {
@@ -89,7 +89,8 @@ impl GetWorkspaceOutputBuilder {
     }
     /// <p>The ID of the workspace.</p>
     pub fn set_workspace_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.workspace_id = input; self
+        self.workspace_id = input;
+        self
     }
     /// <p>The ARN of the workspace.</p>
     pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -98,7 +99,8 @@ impl GetWorkspaceOutputBuilder {
     }
     /// <p>The ARN of the workspace.</p>
     pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.arn = input; self
+        self.arn = input;
+        self
     }
     /// <p>The description of the workspace.</p>
     pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -107,7 +109,8 @@ impl GetWorkspaceOutputBuilder {
     }
     /// <p>The description of the workspace.</p>
     pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.description = input; self
+        self.description = input;
+        self
     }
     /// <p>The ARN of the S3 bucket where resources associated with the workspace are stored.</p>
     pub fn s3_location(mut self, input: impl Into<std::string::String>) -> Self {
@@ -116,7 +119,8 @@ impl GetWorkspaceOutputBuilder {
     }
     /// <p>The ARN of the S3 bucket where resources associated with the workspace are stored.</p>
     pub fn set_s3_location(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.s3_location = input; self
+        self.s3_location = input;
+        self
     }
     /// <p>The ARN of the execution role associated with the workspace.</p>
     pub fn role(mut self, input: impl Into<std::string::String>) -> Self {
@@ -125,7 +129,8 @@ impl GetWorkspaceOutputBuilder {
     }
     /// <p>The ARN of the execution role associated with the workspace.</p>
     pub fn set_role(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.role = input; self
+        self.role = input;
+        self
     }
     /// <p>The date and time when the workspace was created.</p>
     pub fn creation_date_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -133,8 +138,12 @@ impl GetWorkspaceOutputBuilder {
         self
     }
     /// <p>The date and time when the workspace was created.</p>
-    pub fn set_creation_date_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.creation_date_time = input; self
+    pub fn set_creation_date_time(
+        mut self,
+        input: std::option::Option<aws_smithy_types::DateTime>,
+    ) -> Self {
+        self.creation_date_time = input;
+        self
     }
     /// <p>The date and time when the workspace was last updated.</p>
     pub fn update_date_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -142,37 +151,33 @@ impl GetWorkspaceOutputBuilder {
         self
     }
     /// <p>The date and time when the workspace was last updated.</p>
-    pub fn set_update_date_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.update_date_time = input; self
+    pub fn set_update_date_time(
+        mut self,
+        input: std::option::Option<aws_smithy_types::DateTime>,
+    ) -> Self {
+        self.update_date_time = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`GetWorkspaceOutput`](crate::operation::get_workspace::GetWorkspaceOutput).
     pub fn build(self) -> crate::operation::get_workspace::GetWorkspaceOutput {
         crate::operation::get_workspace::GetWorkspaceOutput {
-            workspace_id: self.workspace_id
-            ,
-            arn: self.arn
-            ,
-            description: self.description
-            ,
-            s3_location: self.s3_location
-            ,
-            role: self.role
-            ,
-            creation_date_time: self.creation_date_time
-            ,
-            update_date_time: self.update_date_time
-            ,
+            workspace_id: self.workspace_id,
+            arn: self.arn,
+            description: self.description,
+            s3_location: self.s3_location,
+            role: self.role,
+            creation_date_time: self.creation_date_time,
+            update_date_time: self.update_date_time,
             _request_id: self._request_id,
         }
     }
 }
-

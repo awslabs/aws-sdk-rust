@@ -4,55 +4,80 @@ pub use crate::operation::create_sip_media_application_call::_create_sip_media_a
 pub use crate::operation::create_sip_media_application_call::_create_sip_media_application_call_input::CreateSipMediaApplicationCallInputBuilder;
 
 /// Fluent builder constructing a request to `CreateSipMediaApplicationCall`.
-/// 
+///
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct CreateSipMediaApplicationCallFluentBuilder {
                 handle: std::sync::Arc<crate::client::Handle>,
                 inner: crate::operation::create_sip_media_application_call::builders::CreateSipMediaApplicationCallInputBuilder
             }
-impl CreateSipMediaApplicationCallFluentBuilder  {
+impl CreateSipMediaApplicationCallFluentBuilder {
     /// Creates a new `CreateSipMediaApplicationCall`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
-                    /// sent. The operation's inner [http::Request] can be modified as well.
-                    pub async fn customize(self) -> std::result::Result<
-                        crate::client::customize::CustomizableOperation<crate::operation::create_sip_media_application_call::CreateSipMediaApplicationCall, aws_http::retry::AwsResponseRetryClassifier,>,
-                        aws_smithy_http::result::SdkError<crate::operation::create_sip_media_application_call::CreateSipMediaApplicationCallError>
-                    >  {
-                        let handle = self.handle.clone();
-                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-                    }
-    
-                    /// Sends the request and returns the response.
-                    ///
-                    /// If an error occurs, an `SdkError` will be returned with additional details that
-                    /// can be matched against.
-                    ///
-                    /// By default, any retryable failures will be retried twice. Retry behavior
-                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                    /// set when configuring the client.
-                    pub async fn send(self) -> std::result::Result<crate::operation::create_sip_media_application_call::CreateSipMediaApplicationCallOutput, aws_smithy_http::result::SdkError<crate::operation::create_sip_media_application_call::CreateSipMediaApplicationCallError>>
-                     {
-                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&self.handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        self.handle.client.call(op).await
-                    }
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle,
+            inner: Default::default(),
+        }
+    }
+
+    /// Consume this builder, creating a customizable operation that can be modified before being
+    /// sent. The operation's inner [http::Request] can be modified as well.
+    pub async fn customize(
+        self,
+    ) -> std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::create_sip_media_application_call::CreateSipMediaApplicationCall,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::result::SdkError<
+            crate::operation::create_sip_media_application_call::CreateSipMediaApplicationCallError,
+        >,
+    > {
+        let handle = self.handle.clone();
+        let operation = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+    }
+
+    /// Sends the request and returns the response.
+    ///
+    /// If an error occurs, an `SdkError` will be returned with additional details that
+    /// can be matched against.
+    ///
+    /// By default, any retryable failures will be retried twice. Retry behavior
+    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+    /// set when configuring the client.
+    pub async fn send(
+        self,
+    ) -> std::result::Result<
+        crate::operation::create_sip_media_application_call::CreateSipMediaApplicationCallOutput,
+        aws_smithy_http::result::SdkError<
+            crate::operation::create_sip_media_application_call::CreateSipMediaApplicationCallError,
+        >,
+    > {
+        let op = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&self.handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        self.handle.client.call(op).await
+    }
     #[allow(missing_docs)] // documentation missing in model
     pub fn from_phone_number(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.from_phone_number(input.into());
         self
     }
     #[allow(missing_docs)] // documentation missing in model
-    pub fn set_from_phone_number(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_from_phone_number(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_from_phone_number(input);
         self
     }
@@ -72,7 +97,10 @@ impl CreateSipMediaApplicationCallFluentBuilder  {
         self
     }
     #[allow(missing_docs)] // documentation missing in model
-    pub fn set_sip_media_application_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_sip_media_application_id(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_sip_media_application_id(input);
         self
     }
@@ -81,12 +109,21 @@ impl CreateSipMediaApplicationCallFluentBuilder  {
     /// To override the contents of this collection use [`set_sip_headers`](Self::set_sip_headers).
     ///
     #[allow(missing_docs)] // documentation missing in model
-    pub fn sip_headers(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
+    pub fn sip_headers(
+        mut self,
+        k: impl Into<std::string::String>,
+        v: impl Into<std::string::String>,
+    ) -> Self {
         self.inner = self.inner.sip_headers(k.into(), v.into());
         self
     }
     #[allow(missing_docs)] // documentation missing in model
-    pub fn set_sip_headers(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+    pub fn set_sip_headers(
+        mut self,
+        input: std::option::Option<
+            std::collections::HashMap<std::string::String, std::string::String>,
+        >,
+    ) -> Self {
         self.inner = self.inner.set_sip_headers(input);
         self
     }
@@ -95,14 +132,22 @@ impl CreateSipMediaApplicationCallFluentBuilder  {
     /// To override the contents of this collection use [`set_arguments_map`](Self::set_arguments_map).
     ///
     #[allow(missing_docs)] // documentation missing in model
-    pub fn arguments_map(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
+    pub fn arguments_map(
+        mut self,
+        k: impl Into<std::string::String>,
+        v: impl Into<std::string::String>,
+    ) -> Self {
         self.inner = self.inner.arguments_map(k.into(), v.into());
         self
     }
     #[allow(missing_docs)] // documentation missing in model
-    pub fn set_arguments_map(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+    pub fn set_arguments_map(
+        mut self,
+        input: std::option::Option<
+            std::collections::HashMap<std::string::String, std::string::String>,
+        >,
+    ) -> Self {
         self.inner = self.inner.set_arguments_map(input);
         self
     }
 }
-

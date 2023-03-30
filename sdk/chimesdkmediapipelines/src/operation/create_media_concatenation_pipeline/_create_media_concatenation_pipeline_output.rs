@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateMediaConcatenationPipelineOutput  {
+pub struct CreateMediaConcatenationPipelineOutput {
     /// <p>A media concatenation pipeline object, the ID, source type, <code>MediaPipelineARN</code>, and sink of a media concatenation pipeline object.</p>
     #[doc(hidden)]
     pub media_concatenation_pipeline: std::option::Option<crate::types::MediaConcatenationPipeline>,
@@ -10,18 +10,20 @@ pub struct CreateMediaConcatenationPipelineOutput  {
 }
 impl CreateMediaConcatenationPipelineOutput {
     /// <p>A media concatenation pipeline object, the ID, source type, <code>MediaPipelineARN</code>, and sink of a media concatenation pipeline object.</p>
-    pub fn media_concatenation_pipeline(&self) -> std::option::Option<& crate::types::MediaConcatenationPipeline> {
+    pub fn media_concatenation_pipeline(
+        &self,
+    ) -> std::option::Option<&crate::types::MediaConcatenationPipeline> {
         self.media_concatenation_pipeline.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for CreateMediaConcatenationPipelineOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl CreateMediaConcatenationPipelineOutput {
     /// Creates a new builder-style object to manufacture [`CreateMediaConcatenationPipelineOutput`](crate::operation::create_media_concatenation_pipeline::CreateMediaConcatenationPipelineOutput).
-    pub fn builder() -> crate::operation::create_media_concatenation_pipeline::builders::CreateMediaConcatenationPipelineOutputBuilder {
+    pub fn builder() -> crate::operation::create_media_concatenation_pipeline::builders::CreateMediaConcatenationPipelineOutputBuilder{
         crate::operation::create_media_concatenation_pipeline::builders::CreateMediaConcatenationPipelineOutputBuilder::default()
     }
 }
@@ -30,30 +32,41 @@ impl CreateMediaConcatenationPipelineOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct CreateMediaConcatenationPipelineOutputBuilder {
-    pub(crate) media_concatenation_pipeline: std::option::Option<crate::types::MediaConcatenationPipeline>,
+    pub(crate) media_concatenation_pipeline:
+        std::option::Option<crate::types::MediaConcatenationPipeline>,
     _request_id: Option<String>,
 }
 impl CreateMediaConcatenationPipelineOutputBuilder {
     /// <p>A media concatenation pipeline object, the ID, source type, <code>MediaPipelineARN</code>, and sink of a media concatenation pipeline object.</p>
-    pub fn media_concatenation_pipeline(mut self, input: crate::types::MediaConcatenationPipeline) -> Self {
+    pub fn media_concatenation_pipeline(
+        mut self,
+        input: crate::types::MediaConcatenationPipeline,
+    ) -> Self {
         self.media_concatenation_pipeline = Some(input);
         self
     }
     /// <p>A media concatenation pipeline object, the ID, source type, <code>MediaPipelineARN</code>, and sink of a media concatenation pipeline object.</p>
-    pub fn set_media_concatenation_pipeline(mut self, input: std::option::Option<crate::types::MediaConcatenationPipeline>) -> Self {
-        self.media_concatenation_pipeline = input; self
+    pub fn set_media_concatenation_pipeline(
+        mut self,
+        input: std::option::Option<crate::types::MediaConcatenationPipeline>,
+    ) -> Self {
+        self.media_concatenation_pipeline = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`CreateMediaConcatenationPipelineOutput`](crate::operation::create_media_concatenation_pipeline::CreateMediaConcatenationPipelineOutput).
-    pub fn build(self) -> crate::operation::create_media_concatenation_pipeline::CreateMediaConcatenationPipelineOutput {
+    pub fn build(
+        self,
+    ) -> crate::operation::create_media_concatenation_pipeline::CreateMediaConcatenationPipelineOutput
+    {
         crate::operation::create_media_concatenation_pipeline::CreateMediaConcatenationPipelineOutput {
             media_concatenation_pipeline: self.media_concatenation_pipeline
             ,
@@ -61,4 +74,3 @@ impl CreateMediaConcatenationPipelineOutputBuilder {
         }
     }
 }
-

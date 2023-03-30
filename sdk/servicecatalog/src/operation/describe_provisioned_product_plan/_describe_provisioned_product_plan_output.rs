@@ -2,10 +2,11 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeProvisionedProductPlanOutput  {
+pub struct DescribeProvisionedProductPlanOutput {
     /// <p>Information about the plan.</p>
     #[doc(hidden)]
-    pub provisioned_product_plan_details: std::option::Option<crate::types::ProvisionedProductPlanDetails>,
+    pub provisioned_product_plan_details:
+        std::option::Option<crate::types::ProvisionedProductPlanDetails>,
     /// <p>Information about the resource changes that will occur when the plan is executed.</p>
     #[doc(hidden)]
     pub resource_changes: std::option::Option<std::vec::Vec<crate::types::ResourceChange>>,
@@ -16,26 +17,28 @@ pub struct DescribeProvisionedProductPlanOutput  {
 }
 impl DescribeProvisionedProductPlanOutput {
     /// <p>Information about the plan.</p>
-    pub fn provisioned_product_plan_details(&self) -> std::option::Option<& crate::types::ProvisionedProductPlanDetails> {
+    pub fn provisioned_product_plan_details(
+        &self,
+    ) -> std::option::Option<&crate::types::ProvisionedProductPlanDetails> {
         self.provisioned_product_plan_details.as_ref()
     }
     /// <p>Information about the resource changes that will occur when the plan is executed.</p>
-    pub fn resource_changes(&self) -> std::option::Option<& [crate::types::ResourceChange]> {
+    pub fn resource_changes(&self) -> std::option::Option<&[crate::types::ResourceChange]> {
         self.resource_changes.as_deref()
     }
     /// <p>The page token to use to retrieve the next set of results. If there are no additional results, this value is null.</p>
-    pub fn next_page_token(&self) -> std::option::Option<& str> {
+    pub fn next_page_token(&self) -> std::option::Option<&str> {
         self.next_page_token.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for DescribeProvisionedProductPlanOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl DescribeProvisionedProductPlanOutput {
     /// Creates a new builder-style object to manufacture [`DescribeProvisionedProductPlanOutput`](crate::operation::describe_provisioned_product_plan::DescribeProvisionedProductPlanOutput).
-    pub fn builder() -> crate::operation::describe_provisioned_product_plan::builders::DescribeProvisionedProductPlanOutputBuilder {
+    pub fn builder() -> crate::operation::describe_provisioned_product_plan::builders::DescribeProvisionedProductPlanOutputBuilder{
         crate::operation::describe_provisioned_product_plan::builders::DescribeProvisionedProductPlanOutputBuilder::default()
     }
 }
@@ -44,20 +47,28 @@ impl DescribeProvisionedProductPlanOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct DescribeProvisionedProductPlanOutputBuilder {
-    pub(crate) provisioned_product_plan_details: std::option::Option<crate::types::ProvisionedProductPlanDetails>,
+    pub(crate) provisioned_product_plan_details:
+        std::option::Option<crate::types::ProvisionedProductPlanDetails>,
     pub(crate) resource_changes: std::option::Option<std::vec::Vec<crate::types::ResourceChange>>,
     pub(crate) next_page_token: std::option::Option<std::string::String>,
     _request_id: Option<String>,
 }
 impl DescribeProvisionedProductPlanOutputBuilder {
     /// <p>Information about the plan.</p>
-    pub fn provisioned_product_plan_details(mut self, input: crate::types::ProvisionedProductPlanDetails) -> Self {
+    pub fn provisioned_product_plan_details(
+        mut self,
+        input: crate::types::ProvisionedProductPlanDetails,
+    ) -> Self {
         self.provisioned_product_plan_details = Some(input);
         self
     }
     /// <p>Information about the plan.</p>
-    pub fn set_provisioned_product_plan_details(mut self, input: std::option::Option<crate::types::ProvisionedProductPlanDetails>) -> Self {
-        self.provisioned_product_plan_details = input; self
+    pub fn set_provisioned_product_plan_details(
+        mut self,
+        input: std::option::Option<crate::types::ProvisionedProductPlanDetails>,
+    ) -> Self {
+        self.provisioned_product_plan_details = input;
+        self
     }
     /// Appends an item to `resource_changes`.
     ///
@@ -66,13 +77,17 @@ impl DescribeProvisionedProductPlanOutputBuilder {
     /// <p>Information about the resource changes that will occur when the plan is executed.</p>
     pub fn resource_changes(mut self, input: crate::types::ResourceChange) -> Self {
         let mut v = self.resource_changes.unwrap_or_default();
-                        v.push(input);
-                        self.resource_changes = Some(v);
-                        self
+        v.push(input);
+        self.resource_changes = Some(v);
+        self
     }
     /// <p>Information about the resource changes that will occur when the plan is executed.</p>
-    pub fn set_resource_changes(mut self, input: std::option::Option<std::vec::Vec<crate::types::ResourceChange>>) -> Self {
-        self.resource_changes = input; self
+    pub fn set_resource_changes(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::ResourceChange>>,
+    ) -> Self {
+        self.resource_changes = input;
+        self
     }
     /// <p>The page token to use to retrieve the next set of results. If there are no additional results, this value is null.</p>
     pub fn next_page_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -81,28 +96,28 @@ impl DescribeProvisionedProductPlanOutputBuilder {
     }
     /// <p>The page token to use to retrieve the next set of results. If there are no additional results, this value is null.</p>
     pub fn set_next_page_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_page_token = input; self
+        self.next_page_token = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`DescribeProvisionedProductPlanOutput`](crate::operation::describe_provisioned_product_plan::DescribeProvisionedProductPlanOutput).
-    pub fn build(self) -> crate::operation::describe_provisioned_product_plan::DescribeProvisionedProductPlanOutput {
+    pub fn build(
+        self,
+    ) -> crate::operation::describe_provisioned_product_plan::DescribeProvisionedProductPlanOutput
+    {
         crate::operation::describe_provisioned_product_plan::DescribeProvisionedProductPlanOutput {
-            provisioned_product_plan_details: self.provisioned_product_plan_details
-            ,
-            resource_changes: self.resource_changes
-            ,
-            next_page_token: self.next_page_token
-            ,
+            provisioned_product_plan_details: self.provisioned_product_plan_details,
+            resource_changes: self.resource_changes,
+            next_page_token: self.next_page_token,
             _request_id: self._request_id,
         }
     }
 }
-

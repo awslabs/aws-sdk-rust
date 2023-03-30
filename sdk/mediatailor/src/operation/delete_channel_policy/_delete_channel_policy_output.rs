@@ -2,18 +2,20 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteChannelPolicyOutput  {
+pub struct DeleteChannelPolicyOutput {
     _request_id: Option<String>,
 }
 impl aws_http::request_id::RequestId for DeleteChannelPolicyOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl DeleteChannelPolicyOutput {
     /// Creates a new builder-style object to manufacture [`DeleteChannelPolicyOutput`](crate::operation::delete_channel_policy::DeleteChannelPolicyOutput).
-    pub fn builder() -> crate::operation::delete_channel_policy::builders::DeleteChannelPolicyOutputBuilder {
-        crate::operation::delete_channel_policy::builders::DeleteChannelPolicyOutputBuilder::default()
+    pub fn builder(
+    ) -> crate::operation::delete_channel_policy::builders::DeleteChannelPolicyOutputBuilder {
+        crate::operation::delete_channel_policy::builders::DeleteChannelPolicyOutputBuilder::default(
+        )
     }
 }
 
@@ -25,14 +27,14 @@ pub struct DeleteChannelPolicyOutputBuilder {
 }
 impl DeleteChannelPolicyOutputBuilder {
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`DeleteChannelPolicyOutput`](crate::operation::delete_channel_policy::DeleteChannelPolicyOutput).
     pub fn build(self) -> crate::operation::delete_channel_policy::DeleteChannelPolicyOutput {
         crate::operation::delete_channel_policy::DeleteChannelPolicyOutput {
@@ -40,4 +42,3 @@ impl DeleteChannelPolicyOutputBuilder {
         }
     }
 }
-

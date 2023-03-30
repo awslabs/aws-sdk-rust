@@ -2,20 +2,25 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct BatchUpdatePhoneNumberInput  {
+pub struct BatchUpdatePhoneNumberInput {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
-    pub update_phone_number_request_items: std::option::Option<std::vec::Vec<crate::types::UpdatePhoneNumberRequestItem>>,
+    pub update_phone_number_request_items:
+        std::option::Option<std::vec::Vec<crate::types::UpdatePhoneNumberRequestItem>>,
 }
 impl BatchUpdatePhoneNumberInput {
     #[allow(missing_docs)] // documentation missing in model
-    pub fn update_phone_number_request_items(&self) -> std::option::Option<& [crate::types::UpdatePhoneNumberRequestItem]> {
+    pub fn update_phone_number_request_items(
+        &self,
+    ) -> std::option::Option<&[crate::types::UpdatePhoneNumberRequestItem]> {
         self.update_phone_number_request_items.as_deref()
     }
 }
 impl BatchUpdatePhoneNumberInput {
     /// Creates a new builder-style object to manufacture [`BatchUpdatePhoneNumberInput`](crate::operation::batch_update_phone_number::BatchUpdatePhoneNumberInput).
-    pub fn builder() -> crate::operation::batch_update_phone_number::builders::BatchUpdatePhoneNumberInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::batch_update_phone_number::builders::BatchUpdatePhoneNumberInputBuilder
+    {
         crate::operation::batch_update_phone_number::builders::BatchUpdatePhoneNumberInputBuilder::default()
     }
 }
@@ -24,31 +29,42 @@ impl BatchUpdatePhoneNumberInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct BatchUpdatePhoneNumberInputBuilder {
-    pub(crate) update_phone_number_request_items: std::option::Option<std::vec::Vec<crate::types::UpdatePhoneNumberRequestItem>>,
+    pub(crate) update_phone_number_request_items:
+        std::option::Option<std::vec::Vec<crate::types::UpdatePhoneNumberRequestItem>>,
 }
 impl BatchUpdatePhoneNumberInputBuilder {
     /// Appends an item to `update_phone_number_request_items`.
     ///
     /// To override the contents of this collection use [`set_update_phone_number_request_items`](Self::set_update_phone_number_request_items).
     ///
-    pub fn update_phone_number_request_items(mut self, input: crate::types::UpdatePhoneNumberRequestItem) -> Self {
+    pub fn update_phone_number_request_items(
+        mut self,
+        input: crate::types::UpdatePhoneNumberRequestItem,
+    ) -> Self {
         let mut v = self.update_phone_number_request_items.unwrap_or_default();
-                        v.push(input);
-                        self.update_phone_number_request_items = Some(v);
-                        self
+        v.push(input);
+        self.update_phone_number_request_items = Some(v);
+        self
     }
     #[allow(missing_docs)] // documentation missing in model
-    pub fn set_update_phone_number_request_items(mut self, input: std::option::Option<std::vec::Vec<crate::types::UpdatePhoneNumberRequestItem>>) -> Self {
-        self.update_phone_number_request_items = input; self
+    pub fn set_update_phone_number_request_items(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::UpdatePhoneNumberRequestItem>>,
+    ) -> Self {
+        self.update_phone_number_request_items = input;
+        self
     }
     /// Consumes the builder and constructs a [`BatchUpdatePhoneNumberInput`](crate::operation::batch_update_phone_number::BatchUpdatePhoneNumberInput).
-    pub fn build(self) -> Result<crate::operation::batch_update_phone_number::BatchUpdatePhoneNumberInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::batch_update_phone_number::BatchUpdatePhoneNumberInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::batch_update_phone_number::BatchUpdatePhoneNumberInput {
-                update_phone_number_request_items: self.update_phone_number_request_items
-                ,
-            }
+                update_phone_number_request_items: self.update_phone_number_request_items,
+            },
         )
     }
 }
-

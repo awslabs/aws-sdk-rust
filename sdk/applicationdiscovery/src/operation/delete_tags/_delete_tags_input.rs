@@ -2,23 +2,23 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteTagsInput  {
+pub struct DeleteTagsInput {
     /// <p>A list of configuration items with tags that you want to delete.</p>
     #[doc(hidden)]
     pub configuration_ids: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>Tags that you want to delete from one or more configuration items. Specify the tags that you want to delete in a <i>key</i>-<i>value</i> format. For example:</p> 
+    /// <p>Tags that you want to delete from one or more configuration items. Specify the tags that you want to delete in a <i>key</i>-<i>value</i> format. For example:</p>
     /// <p> <code>{"key": "serverType", "value": "webServer"}</code> </p>
     #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::types::Tag>>,
 }
 impl DeleteTagsInput {
     /// <p>A list of configuration items with tags that you want to delete.</p>
-    pub fn configuration_ids(&self) -> std::option::Option<& [std::string::String]> {
+    pub fn configuration_ids(&self) -> std::option::Option<&[std::string::String]> {
         self.configuration_ids.as_deref()
     }
-    /// <p>Tags that you want to delete from one or more configuration items. Specify the tags that you want to delete in a <i>key</i>-<i>value</i> format. For example:</p> 
+    /// <p>Tags that you want to delete from one or more configuration items. Specify the tags that you want to delete in a <i>key</i>-<i>value</i> format. For example:</p>
     /// <p> <code>{"key": "serverType", "value": "webServer"}</code> </p>
-    pub fn tags(&self) -> std::option::Option<& [crate::types::Tag]> {
+    pub fn tags(&self) -> std::option::Option<&[crate::types::Tag]> {
         self.tags.as_deref()
     }
 }
@@ -44,41 +44,49 @@ impl DeleteTagsInputBuilder {
     /// <p>A list of configuration items with tags that you want to delete.</p>
     pub fn configuration_ids(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.configuration_ids.unwrap_or_default();
-                        v.push(input.into());
-                        self.configuration_ids = Some(v);
-                        self
+        v.push(input.into());
+        self.configuration_ids = Some(v);
+        self
     }
     /// <p>A list of configuration items with tags that you want to delete.</p>
-    pub fn set_configuration_ids(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-        self.configuration_ids = input; self
+    pub fn set_configuration_ids(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
+        self.configuration_ids = input;
+        self
     }
     /// Appends an item to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
-    /// <p>Tags that you want to delete from one or more configuration items. Specify the tags that you want to delete in a <i>key</i>-<i>value</i> format. For example:</p> 
+    /// <p>Tags that you want to delete from one or more configuration items. Specify the tags that you want to delete in a <i>key</i>-<i>value</i> format. For example:</p>
     /// <p> <code>{"key": "serverType", "value": "webServer"}</code> </p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
-                        v.push(input);
-                        self.tags = Some(v);
-                        self
+        v.push(input);
+        self.tags = Some(v);
+        self
     }
-    /// <p>Tags that you want to delete from one or more configuration items. Specify the tags that you want to delete in a <i>key</i>-<i>value</i> format. For example:</p> 
+    /// <p>Tags that you want to delete from one or more configuration items. Specify the tags that you want to delete in a <i>key</i>-<i>value</i> format. For example:</p>
     /// <p> <code>{"key": "serverType", "value": "webServer"}</code> </p>
-    pub fn set_tags(mut self, input: std::option::Option<std::vec::Vec<crate::types::Tag>>) -> Self {
-        self.tags = input; self
+    pub fn set_tags(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::Tag>>,
+    ) -> Self {
+        self.tags = input;
+        self
     }
     /// Consumes the builder and constructs a [`DeleteTagsInput`](crate::operation::delete_tags::DeleteTagsInput).
-    pub fn build(self) -> Result<crate::operation::delete_tags::DeleteTagsInput, aws_smithy_http::operation::error::BuildError> {
-        Ok(
-            crate::operation::delete_tags::DeleteTagsInput {
-                configuration_ids: self.configuration_ids
-                ,
-                tags: self.tags
-                ,
-            }
-        )
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::delete_tags::DeleteTagsInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        Ok(crate::operation::delete_tags::DeleteTagsInput {
+            configuration_ids: self.configuration_ids,
+            tags: self.tags,
+        })
     }
 }
-

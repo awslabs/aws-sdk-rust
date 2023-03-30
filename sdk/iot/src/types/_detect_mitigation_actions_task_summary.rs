@@ -3,7 +3,7 @@
 /// <p> The summary of the mitigation action tasks. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DetectMitigationActionsTaskSummary  {
+pub struct DetectMitigationActionsTaskSummary {
     /// <p> The unique identifier of the task. </p>
     #[doc(hidden)]
     pub task_id: std::option::Option<std::string::String>,
@@ -21,7 +21,8 @@ pub struct DetectMitigationActionsTaskSummary  {
     pub target: std::option::Option<crate::types::DetectMitigationActionsTaskTarget>,
     /// <p> Specifies the time period of which violation events occurred between. </p>
     #[doc(hidden)]
-    pub violation_event_occurrence_range: std::option::Option<crate::types::ViolationEventOccurrenceRange>,
+    pub violation_event_occurrence_range:
+        std::option::Option<crate::types::ViolationEventOccurrenceRange>,
     /// <p> Includes only active violations. </p>
     #[doc(hidden)]
     pub only_active_violations_included: bool,
@@ -37,27 +38,31 @@ pub struct DetectMitigationActionsTaskSummary  {
 }
 impl DetectMitigationActionsTaskSummary {
     /// <p> The unique identifier of the task. </p>
-    pub fn task_id(&self) -> std::option::Option<& str> {
+    pub fn task_id(&self) -> std::option::Option<&str> {
         self.task_id.as_deref()
     }
     /// <p> The status of the task. </p>
-    pub fn task_status(&self) -> std::option::Option<& crate::types::DetectMitigationActionsTaskStatus> {
+    pub fn task_status(
+        &self,
+    ) -> std::option::Option<&crate::types::DetectMitigationActionsTaskStatus> {
         self.task_status.as_ref()
     }
     /// <p> The date the task started. </p>
-    pub fn task_start_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
+    pub fn task_start_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.task_start_time.as_ref()
     }
     /// <p> The date the task ended. </p>
-    pub fn task_end_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
+    pub fn task_end_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.task_end_time.as_ref()
     }
     /// <p> Specifies the ML Detect findings to which the mitigation actions are applied. </p>
-    pub fn target(&self) -> std::option::Option<& crate::types::DetectMitigationActionsTaskTarget> {
+    pub fn target(&self) -> std::option::Option<&crate::types::DetectMitigationActionsTaskTarget> {
         self.target.as_ref()
     }
     /// <p> Specifies the time period of which violation events occurred between. </p>
-    pub fn violation_event_occurrence_range(&self) -> std::option::Option<& crate::types::ViolationEventOccurrenceRange> {
+    pub fn violation_event_occurrence_range(
+        &self,
+    ) -> std::option::Option<&crate::types::ViolationEventOccurrenceRange> {
         self.violation_event_occurrence_range.as_ref()
     }
     /// <p> Includes only active violations. </p>
@@ -69,11 +74,13 @@ impl DetectMitigationActionsTaskSummary {
         self.suppressed_alerts_included
     }
     /// <p> The definition of the actions. </p>
-    pub fn actions_definition(&self) -> std::option::Option<& [crate::types::MitigationAction]> {
+    pub fn actions_definition(&self) -> std::option::Option<&[crate::types::MitigationAction]> {
         self.actions_definition.as_deref()
     }
     /// <p> The statistics of a mitigation action task. </p>
-    pub fn task_statistics(&self) -> std::option::Option<& crate::types::DetectMitigationActionsTaskStatistics> {
+    pub fn task_statistics(
+        &self,
+    ) -> std::option::Option<&crate::types::DetectMitigationActionsTaskStatistics> {
         self.task_statistics.as_ref()
     }
 }
@@ -93,11 +100,14 @@ pub struct DetectMitigationActionsTaskSummaryBuilder {
     pub(crate) task_start_time: std::option::Option<aws_smithy_types::DateTime>,
     pub(crate) task_end_time: std::option::Option<aws_smithy_types::DateTime>,
     pub(crate) target: std::option::Option<crate::types::DetectMitigationActionsTaskTarget>,
-    pub(crate) violation_event_occurrence_range: std::option::Option<crate::types::ViolationEventOccurrenceRange>,
+    pub(crate) violation_event_occurrence_range:
+        std::option::Option<crate::types::ViolationEventOccurrenceRange>,
     pub(crate) only_active_violations_included: std::option::Option<bool>,
     pub(crate) suppressed_alerts_included: std::option::Option<bool>,
-    pub(crate) actions_definition: std::option::Option<std::vec::Vec<crate::types::MitigationAction>>,
-    pub(crate) task_statistics: std::option::Option<crate::types::DetectMitigationActionsTaskStatistics>,
+    pub(crate) actions_definition:
+        std::option::Option<std::vec::Vec<crate::types::MitigationAction>>,
+    pub(crate) task_statistics:
+        std::option::Option<crate::types::DetectMitigationActionsTaskStatistics>,
 }
 impl DetectMitigationActionsTaskSummaryBuilder {
     /// <p> The unique identifier of the task. </p>
@@ -107,7 +117,8 @@ impl DetectMitigationActionsTaskSummaryBuilder {
     }
     /// <p> The unique identifier of the task. </p>
     pub fn set_task_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.task_id = input; self
+        self.task_id = input;
+        self
     }
     /// <p> The status of the task. </p>
     pub fn task_status(mut self, input: crate::types::DetectMitigationActionsTaskStatus) -> Self {
@@ -115,8 +126,12 @@ impl DetectMitigationActionsTaskSummaryBuilder {
         self
     }
     /// <p> The status of the task. </p>
-    pub fn set_task_status(mut self, input: std::option::Option<crate::types::DetectMitigationActionsTaskStatus>) -> Self {
-        self.task_status = input; self
+    pub fn set_task_status(
+        mut self,
+        input: std::option::Option<crate::types::DetectMitigationActionsTaskStatus>,
+    ) -> Self {
+        self.task_status = input;
+        self
     }
     /// <p> The date the task started. </p>
     pub fn task_start_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -124,8 +139,12 @@ impl DetectMitigationActionsTaskSummaryBuilder {
         self
     }
     /// <p> The date the task started. </p>
-    pub fn set_task_start_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.task_start_time = input; self
+    pub fn set_task_start_time(
+        mut self,
+        input: std::option::Option<aws_smithy_types::DateTime>,
+    ) -> Self {
+        self.task_start_time = input;
+        self
     }
     /// <p> The date the task ended. </p>
     pub fn task_end_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -133,8 +152,12 @@ impl DetectMitigationActionsTaskSummaryBuilder {
         self
     }
     /// <p> The date the task ended. </p>
-    pub fn set_task_end_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.task_end_time = input; self
+    pub fn set_task_end_time(
+        mut self,
+        input: std::option::Option<aws_smithy_types::DateTime>,
+    ) -> Self {
+        self.task_end_time = input;
+        self
     }
     /// <p> Specifies the ML Detect findings to which the mitigation actions are applied. </p>
     pub fn target(mut self, input: crate::types::DetectMitigationActionsTaskTarget) -> Self {
@@ -142,17 +165,28 @@ impl DetectMitigationActionsTaskSummaryBuilder {
         self
     }
     /// <p> Specifies the ML Detect findings to which the mitigation actions are applied. </p>
-    pub fn set_target(mut self, input: std::option::Option<crate::types::DetectMitigationActionsTaskTarget>) -> Self {
-        self.target = input; self
+    pub fn set_target(
+        mut self,
+        input: std::option::Option<crate::types::DetectMitigationActionsTaskTarget>,
+    ) -> Self {
+        self.target = input;
+        self
     }
     /// <p> Specifies the time period of which violation events occurred between. </p>
-    pub fn violation_event_occurrence_range(mut self, input: crate::types::ViolationEventOccurrenceRange) -> Self {
+    pub fn violation_event_occurrence_range(
+        mut self,
+        input: crate::types::ViolationEventOccurrenceRange,
+    ) -> Self {
         self.violation_event_occurrence_range = Some(input);
         self
     }
     /// <p> Specifies the time period of which violation events occurred between. </p>
-    pub fn set_violation_event_occurrence_range(mut self, input: std::option::Option<crate::types::ViolationEventOccurrenceRange>) -> Self {
-        self.violation_event_occurrence_range = input; self
+    pub fn set_violation_event_occurrence_range(
+        mut self,
+        input: std::option::Option<crate::types::ViolationEventOccurrenceRange>,
+    ) -> Self {
+        self.violation_event_occurrence_range = input;
+        self
     }
     /// <p> Includes only active violations. </p>
     pub fn only_active_violations_included(mut self, input: bool) -> Self {
@@ -161,7 +195,8 @@ impl DetectMitigationActionsTaskSummaryBuilder {
     }
     /// <p> Includes only active violations. </p>
     pub fn set_only_active_violations_included(mut self, input: std::option::Option<bool>) -> Self {
-        self.only_active_violations_included = input; self
+        self.only_active_violations_included = input;
+        self
     }
     /// <p> Includes suppressed alerts. </p>
     pub fn suppressed_alerts_included(mut self, input: bool) -> Self {
@@ -170,7 +205,8 @@ impl DetectMitigationActionsTaskSummaryBuilder {
     }
     /// <p> Includes suppressed alerts. </p>
     pub fn set_suppressed_alerts_included(mut self, input: std::option::Option<bool>) -> Self {
-        self.suppressed_alerts_included = input; self
+        self.suppressed_alerts_included = input;
+        self
     }
     /// Appends an item to `actions_definition`.
     ///
@@ -179,49 +215,49 @@ impl DetectMitigationActionsTaskSummaryBuilder {
     /// <p> The definition of the actions. </p>
     pub fn actions_definition(mut self, input: crate::types::MitigationAction) -> Self {
         let mut v = self.actions_definition.unwrap_or_default();
-                        v.push(input);
-                        self.actions_definition = Some(v);
-                        self
+        v.push(input);
+        self.actions_definition = Some(v);
+        self
     }
     /// <p> The definition of the actions. </p>
-    pub fn set_actions_definition(mut self, input: std::option::Option<std::vec::Vec<crate::types::MitigationAction>>) -> Self {
-        self.actions_definition = input; self
+    pub fn set_actions_definition(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::MitigationAction>>,
+    ) -> Self {
+        self.actions_definition = input;
+        self
     }
     /// <p> The statistics of a mitigation action task. </p>
-    pub fn task_statistics(mut self, input: crate::types::DetectMitigationActionsTaskStatistics) -> Self {
+    pub fn task_statistics(
+        mut self,
+        input: crate::types::DetectMitigationActionsTaskStatistics,
+    ) -> Self {
         self.task_statistics = Some(input);
         self
     }
     /// <p> The statistics of a mitigation action task. </p>
-    pub fn set_task_statistics(mut self, input: std::option::Option<crate::types::DetectMitigationActionsTaskStatistics>) -> Self {
-        self.task_statistics = input; self
+    pub fn set_task_statistics(
+        mut self,
+        input: std::option::Option<crate::types::DetectMitigationActionsTaskStatistics>,
+    ) -> Self {
+        self.task_statistics = input;
+        self
     }
     /// Consumes the builder and constructs a [`DetectMitigationActionsTaskSummary`](crate::types::DetectMitigationActionsTaskSummary).
     pub fn build(self) -> crate::types::DetectMitigationActionsTaskSummary {
         crate::types::DetectMitigationActionsTaskSummary {
-            task_id: self.task_id
-            ,
-            task_status: self.task_status
-            ,
-            task_start_time: self.task_start_time
-            ,
-            task_end_time: self.task_end_time
-            ,
-            target: self.target
-            ,
-            violation_event_occurrence_range: self.violation_event_occurrence_range
-            ,
-            only_active_violations_included: self.only_active_violations_included
-                .unwrap_or_default()
-            ,
-            suppressed_alerts_included: self.suppressed_alerts_included
-                .unwrap_or_default()
-            ,
-            actions_definition: self.actions_definition
-            ,
-            task_statistics: self.task_statistics
-            ,
+            task_id: self.task_id,
+            task_status: self.task_status,
+            task_start_time: self.task_start_time,
+            task_end_time: self.task_end_time,
+            target: self.target,
+            violation_event_occurrence_range: self.violation_event_occurrence_range,
+            only_active_violations_included: self
+                .only_active_violations_included
+                .unwrap_or_default(),
+            suppressed_alerts_included: self.suppressed_alerts_included.unwrap_or_default(),
+            actions_definition: self.actions_definition,
+            task_statistics: self.task_statistics,
         }
     }
 }
-

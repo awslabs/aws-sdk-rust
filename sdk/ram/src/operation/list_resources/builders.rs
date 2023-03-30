@@ -4,70 +4,96 @@ pub use crate::operation::list_resources::_list_resources_output::ListResourcesO
 pub use crate::operation::list_resources::_list_resources_input::ListResourcesInputBuilder;
 
 /// Fluent builder constructing a request to `ListResources`.
-/// 
+///
 /// <p>Lists the resources that you added to a resource share or the resources that are shared with you.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListResourcesFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::list_resources::builders::ListResourcesInputBuilder
-            }
-impl ListResourcesFluentBuilder  {
+    handle: std::sync::Arc<crate::client::Handle>,
+    inner: crate::operation::list_resources::builders::ListResourcesInputBuilder,
+}
+impl ListResourcesFluentBuilder {
     /// Creates a new `ListResources`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
-                    /// sent. The operation's inner [http::Request] can be modified as well.
-                    pub async fn customize(self) -> std::result::Result<
-                        crate::client::customize::CustomizableOperation<crate::operation::list_resources::ListResources, aws_http::retry::AwsResponseRetryClassifier,>,
-                        aws_smithy_http::result::SdkError<crate::operation::list_resources::ListResourcesError>
-                    >  {
-                        let handle = self.handle.clone();
-                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-                    }
-    
-                    /// Sends the request and returns the response.
-                    ///
-                    /// If an error occurs, an `SdkError` will be returned with additional details that
-                    /// can be matched against.
-                    ///
-                    /// By default, any retryable failures will be retried twice. Retry behavior
-                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                    /// set when configuring the client.
-                    pub async fn send(self) -> std::result::Result<crate::operation::list_resources::ListResourcesOutput, aws_smithy_http::result::SdkError<crate::operation::list_resources::ListResourcesError>>
-                     {
-                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&self.handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        self.handle.client.call(op).await
-                    }
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle,
+            inner: Default::default(),
+        }
+    }
+
+    /// Consume this builder, creating a customizable operation that can be modified before being
+    /// sent. The operation's inner [http::Request] can be modified as well.
+    pub async fn customize(
+        self,
+    ) -> std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::list_resources::ListResources,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::result::SdkError<crate::operation::list_resources::ListResourcesError>,
+    > {
+        let handle = self.handle.clone();
+        let operation = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+    }
+
+    /// Sends the request and returns the response.
+    ///
+    /// If an error occurs, an `SdkError` will be returned with additional details that
+    /// can be matched against.
+    ///
+    /// By default, any retryable failures will be retried twice. Retry behavior
+    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+    /// set when configuring the client.
+    pub async fn send(
+        self,
+    ) -> std::result::Result<
+        crate::operation::list_resources::ListResourcesOutput,
+        aws_smithy_http::result::SdkError<crate::operation::list_resources::ListResourcesError>,
+    > {
+        let op = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&self.handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        self.handle.client.call(op).await
+    }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::list_resources::paginator::ListResourcesPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::list_resources::paginator::ListResourcesPaginator {
-                            crate::operation::list_resources::paginator::ListResourcesPaginator::new(self.handle, self.inner)
-                        }
-    /// <p>Specifies that you want to list only the resource shares that match the following:</p> 
-    /// <ul> 
-    /// <li> <p> <b> <code>SELF</code> </b> – resources that your account shares with other accounts</p> </li> 
-    /// <li> <p> <b> <code>OTHER-ACCOUNTS</code> </b> – resources that other accounts share with your account</p> </li> 
+    ///
+    /// Paginators are used by calling [`send().await`](crate::operation::list_resources::paginator::ListResourcesPaginator::send) which returns a `Stream`.
+    pub fn into_paginator(
+        self,
+    ) -> crate::operation::list_resources::paginator::ListResourcesPaginator {
+        crate::operation::list_resources::paginator::ListResourcesPaginator::new(
+            self.handle,
+            self.inner,
+        )
+    }
+    /// <p>Specifies that you want to list only the resource shares that match the following:</p>
+    /// <ul>
+    /// <li> <p> <b> <code>SELF</code> </b> – resources that your account shares with other accounts</p> </li>
+    /// <li> <p> <b> <code>OTHER-ACCOUNTS</code> </b> – resources that other accounts share with your account</p> </li>
     /// </ul>
     pub fn resource_owner(mut self, input: crate::types::ResourceOwner) -> Self {
         self.inner = self.inner.resource_owner(input);
         self
     }
-    /// <p>Specifies that you want to list only the resource shares that match the following:</p> 
-    /// <ul> 
-    /// <li> <p> <b> <code>SELF</code> </b> – resources that your account shares with other accounts</p> </li> 
-    /// <li> <p> <b> <code>OTHER-ACCOUNTS</code> </b> – resources that other accounts share with your account</p> </li> 
+    /// <p>Specifies that you want to list only the resource shares that match the following:</p>
+    /// <ul>
+    /// <li> <p> <b> <code>SELF</code> </b> – resources that your account shares with other accounts</p> </li>
+    /// <li> <p> <b> <code>OTHER-ACCOUNTS</code> </b> – resources that other accounts share with your account</p> </li>
     /// </ul>
-    pub fn set_resource_owner(mut self, input: std::option::Option<crate::types::ResourceOwner>) -> Self {
+    pub fn set_resource_owner(
+        mut self,
+        input: std::option::Option<crate::types::ResourceOwner>,
+    ) -> Self {
         self.inner = self.inner.set_resource_owner(input);
         self
     }
@@ -81,13 +107,13 @@ impl ListResourcesFluentBuilder  {
         self.inner = self.inner.set_principal(input);
         self
     }
-    /// <p>Specifies that you want to list only the resource shares that include resources of the specified resource type.</p> 
+    /// <p>Specifies that you want to list only the resource shares that include resources of the specified resource type.</p>
     /// <p>For valid values, query the <code>ListResourceTypes</code> operation.</p>
     pub fn resource_type(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.resource_type(input.into());
         self
     }
-    /// <p>Specifies that you want to list only the resource shares that include resources of the specified resource type.</p> 
+    /// <p>Specifies that you want to list only the resource shares that include resources of the specified resource type.</p>
     /// <p>For valid values, query the <code>ListResourceTypes</code> operation.</p>
     pub fn set_resource_type(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.inner = self.inner.set_resource_type(input);
@@ -103,7 +129,10 @@ impl ListResourcesFluentBuilder  {
         self
     }
     /// <p>Specifies that you want to list only the resource shares that include resources with the specified <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a>.</p>
-    pub fn set_resource_arns(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+    pub fn set_resource_arns(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
         self.inner = self.inner.set_resource_arns(input);
         self
     }
@@ -117,7 +146,10 @@ impl ListResourcesFluentBuilder  {
         self
     }
     /// <p>Specifies that you want to list only resources in the resource shares identified by the specified <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a>.</p>
-    pub fn set_resource_share_arns(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+    pub fn set_resource_share_arns(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
         self.inner = self.inner.set_resource_share_arns(input);
         self
     }
@@ -141,27 +173,29 @@ impl ListResourcesFluentBuilder  {
         self.inner = self.inner.set_max_results(input);
         self
     }
-    /// <p>Specifies that you want the results to include only resources that have the specified scope.</p> 
-    /// <ul> 
-    /// <li> <p> <code>ALL</code> – the results include both global and regional resources or resource types.</p> </li> 
-    /// <li> <p> <code>GLOBAL</code> – the results include only global resources or resource types.</p> </li> 
-    /// <li> <p> <code>REGIONAL</code> – the results include only regional resources or resource types.</p> </li> 
-    /// </ul> 
+    /// <p>Specifies that you want the results to include only resources that have the specified scope.</p>
+    /// <ul>
+    /// <li> <p> <code>ALL</code> – the results include both global and regional resources or resource types.</p> </li>
+    /// <li> <p> <code>GLOBAL</code> – the results include only global resources or resource types.</p> </li>
+    /// <li> <p> <code>REGIONAL</code> – the results include only regional resources or resource types.</p> </li>
+    /// </ul>
     /// <p>The default value is <code>ALL</code>.</p>
     pub fn resource_region_scope(mut self, input: crate::types::ResourceRegionScopeFilter) -> Self {
         self.inner = self.inner.resource_region_scope(input);
         self
     }
-    /// <p>Specifies that you want the results to include only resources that have the specified scope.</p> 
-    /// <ul> 
-    /// <li> <p> <code>ALL</code> – the results include both global and regional resources or resource types.</p> </li> 
-    /// <li> <p> <code>GLOBAL</code> – the results include only global resources or resource types.</p> </li> 
-    /// <li> <p> <code>REGIONAL</code> – the results include only regional resources or resource types.</p> </li> 
-    /// </ul> 
+    /// <p>Specifies that you want the results to include only resources that have the specified scope.</p>
+    /// <ul>
+    /// <li> <p> <code>ALL</code> – the results include both global and regional resources or resource types.</p> </li>
+    /// <li> <p> <code>GLOBAL</code> – the results include only global resources or resource types.</p> </li>
+    /// <li> <p> <code>REGIONAL</code> – the results include only regional resources or resource types.</p> </li>
+    /// </ul>
     /// <p>The default value is <code>ALL</code>.</p>
-    pub fn set_resource_region_scope(mut self, input: std::option::Option<crate::types::ResourceRegionScopeFilter>) -> Self {
+    pub fn set_resource_region_scope(
+        mut self,
+        input: std::option::Option<crate::types::ResourceRegionScopeFilter>,
+    ) -> Self {
         self.inner = self.inner.set_resource_region_scope(input);
         self
     }
 }
-

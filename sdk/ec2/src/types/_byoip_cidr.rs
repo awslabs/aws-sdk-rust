@@ -3,7 +3,7 @@
 /// <p>Information about an address range that is provisioned for use with your Amazon Web Services resources through bring your own IP addresses (BYOIP).</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ByoipCidr  {
+pub struct ByoipCidr {
     /// <p>The address range, in CIDR notation.</p>
     #[doc(hidden)]
     pub cidr: std::option::Option<std::string::String>,
@@ -19,19 +19,19 @@ pub struct ByoipCidr  {
 }
 impl ByoipCidr {
     /// <p>The address range, in CIDR notation.</p>
-    pub fn cidr(&self) -> std::option::Option<& str> {
+    pub fn cidr(&self) -> std::option::Option<&str> {
         self.cidr.as_deref()
     }
     /// <p>The description of the address range.</p>
-    pub fn description(&self) -> std::option::Option<& str> {
+    pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
     /// <p>Upon success, contains the ID of the address pool. Otherwise, contains an error message.</p>
-    pub fn status_message(&self) -> std::option::Option<& str> {
+    pub fn status_message(&self) -> std::option::Option<&str> {
         self.status_message.as_deref()
     }
     /// <p>The state of the address pool.</p>
-    pub fn state(&self) -> std::option::Option<& crate::types::ByoipCidrState> {
+    pub fn state(&self) -> std::option::Option<&crate::types::ByoipCidrState> {
         self.state.as_ref()
     }
 }
@@ -59,7 +59,8 @@ impl ByoipCidrBuilder {
     }
     /// <p>The address range, in CIDR notation.</p>
     pub fn set_cidr(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.cidr = input; self
+        self.cidr = input;
+        self
     }
     /// <p>The description of the address range.</p>
     pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -68,7 +69,8 @@ impl ByoipCidrBuilder {
     }
     /// <p>The description of the address range.</p>
     pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.description = input; self
+        self.description = input;
+        self
     }
     /// <p>Upon success, contains the ID of the address pool. Otherwise, contains an error message.</p>
     pub fn status_message(mut self, input: impl Into<std::string::String>) -> Self {
@@ -77,7 +79,8 @@ impl ByoipCidrBuilder {
     }
     /// <p>Upon success, contains the ID of the address pool. Otherwise, contains an error message.</p>
     pub fn set_status_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.status_message = input; self
+        self.status_message = input;
+        self
     }
     /// <p>The state of the address pool.</p>
     pub fn state(mut self, input: crate::types::ByoipCidrState) -> Self {
@@ -86,20 +89,16 @@ impl ByoipCidrBuilder {
     }
     /// <p>The state of the address pool.</p>
     pub fn set_state(mut self, input: std::option::Option<crate::types::ByoipCidrState>) -> Self {
-        self.state = input; self
+        self.state = input;
+        self
     }
     /// Consumes the builder and constructs a [`ByoipCidr`](crate::types::ByoipCidr).
     pub fn build(self) -> crate::types::ByoipCidr {
         crate::types::ByoipCidr {
-            cidr: self.cidr
-            ,
-            description: self.description
-            ,
-            status_message: self.status_message
-            ,
-            state: self.state
-            ,
+            cidr: self.cidr,
+            description: self.description,
+            status_message: self.status_message,
+            state: self.state,
         }
     }
 }
-

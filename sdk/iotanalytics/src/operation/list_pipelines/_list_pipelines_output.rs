@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListPipelinesOutput  {
+pub struct ListPipelinesOutput {
     /// <p>A list of <code>PipelineSummary</code> objects.</p>
     #[doc(hidden)]
     pub pipeline_summaries: std::option::Option<std::vec::Vec<crate::types::PipelineSummary>>,
@@ -13,19 +13,19 @@ pub struct ListPipelinesOutput  {
 }
 impl ListPipelinesOutput {
     /// <p>A list of <code>PipelineSummary</code> objects.</p>
-    pub fn pipeline_summaries(&self) -> std::option::Option<& [crate::types::PipelineSummary]> {
+    pub fn pipeline_summaries(&self) -> std::option::Option<&[crate::types::PipelineSummary]> {
         self.pipeline_summaries.as_deref()
     }
     /// <p>The token to retrieve the next set of results, or <code>null</code> if there are no more results.</p>
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for ListPipelinesOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl ListPipelinesOutput {
     /// Creates a new builder-style object to manufacture [`ListPipelinesOutput`](crate::operation::list_pipelines::ListPipelinesOutput).
     pub fn builder() -> crate::operation::list_pipelines::builders::ListPipelinesOutputBuilder {
@@ -37,7 +37,8 @@ impl ListPipelinesOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct ListPipelinesOutputBuilder {
-    pub(crate) pipeline_summaries: std::option::Option<std::vec::Vec<crate::types::PipelineSummary>>,
+    pub(crate) pipeline_summaries:
+        std::option::Option<std::vec::Vec<crate::types::PipelineSummary>>,
     pub(crate) next_token: std::option::Option<std::string::String>,
     _request_id: Option<String>,
 }
@@ -49,13 +50,17 @@ impl ListPipelinesOutputBuilder {
     /// <p>A list of <code>PipelineSummary</code> objects.</p>
     pub fn pipeline_summaries(mut self, input: crate::types::PipelineSummary) -> Self {
         let mut v = self.pipeline_summaries.unwrap_or_default();
-                        v.push(input);
-                        self.pipeline_summaries = Some(v);
-                        self
+        v.push(input);
+        self.pipeline_summaries = Some(v);
+        self
     }
     /// <p>A list of <code>PipelineSummary</code> objects.</p>
-    pub fn set_pipeline_summaries(mut self, input: std::option::Option<std::vec::Vec<crate::types::PipelineSummary>>) -> Self {
-        self.pipeline_summaries = input; self
+    pub fn set_pipeline_summaries(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::PipelineSummary>>,
+    ) -> Self {
+        self.pipeline_summaries = input;
+        self
     }
     /// <p>The token to retrieve the next set of results, or <code>null</code> if there are no more results.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -64,26 +69,24 @@ impl ListPipelinesOutputBuilder {
     }
     /// <p>The token to retrieve the next set of results, or <code>null</code> if there are no more results.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input; self
+        self.next_token = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`ListPipelinesOutput`](crate::operation::list_pipelines::ListPipelinesOutput).
     pub fn build(self) -> crate::operation::list_pipelines::ListPipelinesOutput {
         crate::operation::list_pipelines::ListPipelinesOutput {
-            pipeline_summaries: self.pipeline_summaries
-            ,
-            next_token: self.next_token
-            ,
+            pipeline_summaries: self.pipeline_summaries,
+            next_token: self.next_token,
             _request_id: self._request_id,
         }
     }
 }
-

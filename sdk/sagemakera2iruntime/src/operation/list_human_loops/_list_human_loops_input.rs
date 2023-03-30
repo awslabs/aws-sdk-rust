@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListHumanLoopsInput  {
+pub struct ListHumanLoopsInput {
     /// <p>(Optional) The timestamp of the date when you want the human loops to begin in ISO 8601 format. For example, <code>2020-02-24</code>.</p>
     #[doc(hidden)]
     pub creation_time_after: std::option::Option<aws_smithy_types::DateTime>,
@@ -24,23 +24,23 @@ pub struct ListHumanLoopsInput  {
 }
 impl ListHumanLoopsInput {
     /// <p>(Optional) The timestamp of the date when you want the human loops to begin in ISO 8601 format. For example, <code>2020-02-24</code>.</p>
-    pub fn creation_time_after(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
+    pub fn creation_time_after(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.creation_time_after.as_ref()
     }
     /// <p>(Optional) The timestamp of the date before which you want the human loops to begin in ISO 8601 format. For example, <code>2020-02-24</code>.</p>
-    pub fn creation_time_before(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
+    pub fn creation_time_before(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.creation_time_before.as_ref()
     }
     /// <p>The Amazon Resource Name (ARN) of a flow definition.</p>
-    pub fn flow_definition_arn(&self) -> std::option::Option<& str> {
+    pub fn flow_definition_arn(&self) -> std::option::Option<&str> {
         self.flow_definition_arn.as_deref()
     }
     /// <p>Optional. The order for displaying results. Valid values: <code>Ascending</code> and <code>Descending</code>.</p>
-    pub fn sort_order(&self) -> std::option::Option<& crate::types::SortOrder> {
+    pub fn sort_order(&self) -> std::option::Option<&crate::types::SortOrder> {
         self.sort_order.as_ref()
     }
     /// <p>A token to display the next page of results.</p>
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
     /// <p>The total number of items to return. If the total number of available items is more than the value specified in <code>MaxResults</code>, then a <code>NextToken</code> is returned in the output. You can use this token to display the next page of results. </p>
@@ -73,8 +73,12 @@ impl ListHumanLoopsInputBuilder {
         self
     }
     /// <p>(Optional) The timestamp of the date when you want the human loops to begin in ISO 8601 format. For example, <code>2020-02-24</code>.</p>
-    pub fn set_creation_time_after(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.creation_time_after = input; self
+    pub fn set_creation_time_after(
+        mut self,
+        input: std::option::Option<aws_smithy_types::DateTime>,
+    ) -> Self {
+        self.creation_time_after = input;
+        self
     }
     /// <p>(Optional) The timestamp of the date before which you want the human loops to begin in ISO 8601 format. For example, <code>2020-02-24</code>.</p>
     pub fn creation_time_before(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -82,8 +86,12 @@ impl ListHumanLoopsInputBuilder {
         self
     }
     /// <p>(Optional) The timestamp of the date before which you want the human loops to begin in ISO 8601 format. For example, <code>2020-02-24</code>.</p>
-    pub fn set_creation_time_before(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.creation_time_before = input; self
+    pub fn set_creation_time_before(
+        mut self,
+        input: std::option::Option<aws_smithy_types::DateTime>,
+    ) -> Self {
+        self.creation_time_before = input;
+        self
     }
     /// <p>The Amazon Resource Name (ARN) of a flow definition.</p>
     pub fn flow_definition_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -91,8 +99,12 @@ impl ListHumanLoopsInputBuilder {
         self
     }
     /// <p>The Amazon Resource Name (ARN) of a flow definition.</p>
-    pub fn set_flow_definition_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.flow_definition_arn = input; self
+    pub fn set_flow_definition_arn(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.flow_definition_arn = input;
+        self
     }
     /// <p>Optional. The order for displaying results. Valid values: <code>Ascending</code> and <code>Descending</code>.</p>
     pub fn sort_order(mut self, input: crate::types::SortOrder) -> Self {
@@ -101,7 +113,8 @@ impl ListHumanLoopsInputBuilder {
     }
     /// <p>Optional. The order for displaying results. Valid values: <code>Ascending</code> and <code>Descending</code>.</p>
     pub fn set_sort_order(mut self, input: std::option::Option<crate::types::SortOrder>) -> Self {
-        self.sort_order = input; self
+        self.sort_order = input;
+        self
     }
     /// <p>A token to display the next page of results.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -110,7 +123,8 @@ impl ListHumanLoopsInputBuilder {
     }
     /// <p>A token to display the next page of results.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input; self
+        self.next_token = input;
+        self
     }
     /// <p>The total number of items to return. If the total number of available items is more than the value specified in <code>MaxResults</code>, then a <code>NextToken</code> is returned in the output. You can use this token to display the next page of results. </p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -119,26 +133,23 @@ impl ListHumanLoopsInputBuilder {
     }
     /// <p>The total number of items to return. If the total number of available items is more than the value specified in <code>MaxResults</code>, then a <code>NextToken</code> is returned in the output. You can use this token to display the next page of results. </p>
     pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_results = input; self
+        self.max_results = input;
+        self
     }
     /// Consumes the builder and constructs a [`ListHumanLoopsInput`](crate::operation::list_human_loops::ListHumanLoopsInput).
-    pub fn build(self) -> Result<crate::operation::list_human_loops::ListHumanLoopsInput, aws_smithy_http::operation::error::BuildError> {
-        Ok(
-            crate::operation::list_human_loops::ListHumanLoopsInput {
-                creation_time_after: self.creation_time_after
-                ,
-                creation_time_before: self.creation_time_before
-                ,
-                flow_definition_arn: self.flow_definition_arn
-                ,
-                sort_order: self.sort_order
-                ,
-                next_token: self.next_token
-                ,
-                max_results: self.max_results
-                ,
-            }
-        )
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::list_human_loops::ListHumanLoopsInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        Ok(crate::operation::list_human_loops::ListHumanLoopsInput {
+            creation_time_after: self.creation_time_after,
+            creation_time_before: self.creation_time_before,
+            flow_definition_arn: self.flow_definition_arn,
+            sort_order: self.sort_order,
+            next_token: self.next_token,
+            max_results: self.max_results,
+        })
     }
 }
-

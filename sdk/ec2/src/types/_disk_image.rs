@@ -3,7 +3,7 @@
 /// <p>Describes a disk image.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DiskImage  {
+pub struct DiskImage {
     /// <p>A description of the disk image.</p>
     #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
@@ -16,15 +16,15 @@ pub struct DiskImage  {
 }
 impl DiskImage {
     /// <p>A description of the disk image.</p>
-    pub fn description(&self) -> std::option::Option<& str> {
+    pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
     /// <p>Information about the disk image.</p>
-    pub fn image(&self) -> std::option::Option<& crate::types::DiskImageDetail> {
+    pub fn image(&self) -> std::option::Option<&crate::types::DiskImageDetail> {
         self.image.as_ref()
     }
     /// <p>Information about the volume.</p>
-    pub fn volume(&self) -> std::option::Option<& crate::types::VolumeDetail> {
+    pub fn volume(&self) -> std::option::Option<&crate::types::VolumeDetail> {
         self.volume.as_ref()
     }
 }
@@ -51,7 +51,8 @@ impl DiskImageBuilder {
     }
     /// <p>A description of the disk image.</p>
     pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.description = input; self
+        self.description = input;
+        self
     }
     /// <p>Information about the disk image.</p>
     pub fn image(mut self, input: crate::types::DiskImageDetail) -> Self {
@@ -60,7 +61,8 @@ impl DiskImageBuilder {
     }
     /// <p>Information about the disk image.</p>
     pub fn set_image(mut self, input: std::option::Option<crate::types::DiskImageDetail>) -> Self {
-        self.image = input; self
+        self.image = input;
+        self
     }
     /// <p>Information about the volume.</p>
     pub fn volume(mut self, input: crate::types::VolumeDetail) -> Self {
@@ -69,18 +71,15 @@ impl DiskImageBuilder {
     }
     /// <p>Information about the volume.</p>
     pub fn set_volume(mut self, input: std::option::Option<crate::types::VolumeDetail>) -> Self {
-        self.volume = input; self
+        self.volume = input;
+        self
     }
     /// Consumes the builder and constructs a [`DiskImage`](crate::types::DiskImage).
     pub fn build(self) -> crate::types::DiskImage {
         crate::types::DiskImage {
-            description: self.description
-            ,
-            image: self.image
-            ,
-            volume: self.volume
-            ,
+            description: self.description,
+            image: self.image,
+            volume: self.volume,
         }
     }
 }
-

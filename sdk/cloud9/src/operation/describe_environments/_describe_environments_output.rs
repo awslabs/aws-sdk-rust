@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeEnvironmentsOutput  {
+pub struct DescribeEnvironmentsOutput {
     /// <p>Information about the environments that are returned.</p>
     #[doc(hidden)]
     pub environments: std::option::Option<std::vec::Vec<crate::types::Environment>>,
@@ -10,18 +10,19 @@ pub struct DescribeEnvironmentsOutput  {
 }
 impl DescribeEnvironmentsOutput {
     /// <p>Information about the environments that are returned.</p>
-    pub fn environments(&self) -> std::option::Option<& [crate::types::Environment]> {
+    pub fn environments(&self) -> std::option::Option<&[crate::types::Environment]> {
         self.environments.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for DescribeEnvironmentsOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl DescribeEnvironmentsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeEnvironmentsOutput`](crate::operation::describe_environments::DescribeEnvironmentsOutput).
-    pub fn builder() -> crate::operation::describe_environments::builders::DescribeEnvironmentsOutputBuilder {
+    pub fn builder(
+    ) -> crate::operation::describe_environments::builders::DescribeEnvironmentsOutputBuilder {
         crate::operation::describe_environments::builders::DescribeEnvironmentsOutputBuilder::default()
     }
 }
@@ -41,30 +42,32 @@ impl DescribeEnvironmentsOutputBuilder {
     /// <p>Information about the environments that are returned.</p>
     pub fn environments(mut self, input: crate::types::Environment) -> Self {
         let mut v = self.environments.unwrap_or_default();
-                        v.push(input);
-                        self.environments = Some(v);
-                        self
+        v.push(input);
+        self.environments = Some(v);
+        self
     }
     /// <p>Information about the environments that are returned.</p>
-    pub fn set_environments(mut self, input: std::option::Option<std::vec::Vec<crate::types::Environment>>) -> Self {
-        self.environments = input; self
+    pub fn set_environments(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::Environment>>,
+    ) -> Self {
+        self.environments = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`DescribeEnvironmentsOutput`](crate::operation::describe_environments::DescribeEnvironmentsOutput).
     pub fn build(self) -> crate::operation::describe_environments::DescribeEnvironmentsOutput {
         crate::operation::describe_environments::DescribeEnvironmentsOutput {
-            environments: self.environments
-            ,
+            environments: self.environments,
             _request_id: self._request_id,
         }
     }
 }
-

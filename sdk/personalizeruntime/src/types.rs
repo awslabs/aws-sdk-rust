@@ -12,4 +12,3 @@ pub mod builders;
 
 /// Error types that Amazon Personalize Runtime can respond with.
 pub mod error;
-

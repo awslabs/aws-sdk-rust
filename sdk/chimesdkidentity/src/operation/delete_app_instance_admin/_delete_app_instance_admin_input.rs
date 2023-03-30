@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteAppInstanceAdminInput  {
+pub struct DeleteAppInstanceAdminInput {
     /// <p>The ARN of the <code>AppInstance</code>'s administrator.</p>
     #[doc(hidden)]
     pub app_instance_admin_arn: std::option::Option<std::string::String>,
@@ -12,17 +12,19 @@ pub struct DeleteAppInstanceAdminInput  {
 }
 impl DeleteAppInstanceAdminInput {
     /// <p>The ARN of the <code>AppInstance</code>'s administrator.</p>
-    pub fn app_instance_admin_arn(&self) -> std::option::Option<& str> {
+    pub fn app_instance_admin_arn(&self) -> std::option::Option<&str> {
         self.app_instance_admin_arn.as_deref()
     }
     /// <p>The ARN of the <code>AppInstance</code>.</p>
-    pub fn app_instance_arn(&self) -> std::option::Option<& str> {
+    pub fn app_instance_arn(&self) -> std::option::Option<&str> {
         self.app_instance_arn.as_deref()
     }
 }
 impl DeleteAppInstanceAdminInput {
     /// Creates a new builder-style object to manufacture [`DeleteAppInstanceAdminInput`](crate::operation::delete_app_instance_admin::DeleteAppInstanceAdminInput).
-    pub fn builder() -> crate::operation::delete_app_instance_admin::builders::DeleteAppInstanceAdminInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::delete_app_instance_admin::builders::DeleteAppInstanceAdminInputBuilder
+    {
         crate::operation::delete_app_instance_admin::builders::DeleteAppInstanceAdminInputBuilder::default()
     }
 }
@@ -41,8 +43,12 @@ impl DeleteAppInstanceAdminInputBuilder {
         self
     }
     /// <p>The ARN of the <code>AppInstance</code>'s administrator.</p>
-    pub fn set_app_instance_admin_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.app_instance_admin_arn = input; self
+    pub fn set_app_instance_admin_arn(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.app_instance_admin_arn = input;
+        self
     }
     /// <p>The ARN of the <code>AppInstance</code>.</p>
     pub fn app_instance_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -51,18 +57,21 @@ impl DeleteAppInstanceAdminInputBuilder {
     }
     /// <p>The ARN of the <code>AppInstance</code>.</p>
     pub fn set_app_instance_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.app_instance_arn = input; self
+        self.app_instance_arn = input;
+        self
     }
     /// Consumes the builder and constructs a [`DeleteAppInstanceAdminInput`](crate::operation::delete_app_instance_admin::DeleteAppInstanceAdminInput).
-    pub fn build(self) -> Result<crate::operation::delete_app_instance_admin::DeleteAppInstanceAdminInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::delete_app_instance_admin::DeleteAppInstanceAdminInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::delete_app_instance_admin::DeleteAppInstanceAdminInput {
-                app_instance_admin_arn: self.app_instance_admin_arn
-                ,
-                app_instance_arn: self.app_instance_arn
-                ,
-            }
+                app_instance_admin_arn: self.app_instance_admin_arn,
+                app_instance_arn: self.app_instance_arn,
+            },
         )
     }
 }
-

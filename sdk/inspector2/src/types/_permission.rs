@@ -3,7 +3,7 @@
 /// <p>Contains information on the permissions an account has within Amazon Inspector.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Permission  {
+pub struct Permission {
     /// <p>The services that the permissions allow an account to perform the given operations for.</p>
     #[doc(hidden)]
     pub service: std::option::Option<crate::types::Service>,
@@ -13,11 +13,11 @@ pub struct Permission  {
 }
 impl Permission {
     /// <p>The services that the permissions allow an account to perform the given operations for.</p>
-    pub fn service(&self) -> std::option::Option<& crate::types::Service> {
+    pub fn service(&self) -> std::option::Option<&crate::types::Service> {
         self.service.as_ref()
     }
     /// <p>The operations that can be performed with the given permissions.</p>
-    pub fn operation(&self) -> std::option::Option<& crate::types::Operation> {
+    pub fn operation(&self) -> std::option::Option<&crate::types::Operation> {
         self.operation.as_ref()
     }
 }
@@ -43,7 +43,8 @@ impl PermissionBuilder {
     }
     /// <p>The services that the permissions allow an account to perform the given operations for.</p>
     pub fn set_service(mut self, input: std::option::Option<crate::types::Service>) -> Self {
-        self.service = input; self
+        self.service = input;
+        self
     }
     /// <p>The operations that can be performed with the given permissions.</p>
     pub fn operation(mut self, input: crate::types::Operation) -> Self {
@@ -52,16 +53,14 @@ impl PermissionBuilder {
     }
     /// <p>The operations that can be performed with the given permissions.</p>
     pub fn set_operation(mut self, input: std::option::Option<crate::types::Operation>) -> Self {
-        self.operation = input; self
+        self.operation = input;
+        self
     }
     /// Consumes the builder and constructs a [`Permission`](crate::types::Permission).
     pub fn build(self) -> crate::types::Permission {
         crate::types::Permission {
-            service: self.service
-            ,
-            operation: self.operation
-            ,
+            service: self.service,
+            operation: self.operation,
         }
     }
 }
-

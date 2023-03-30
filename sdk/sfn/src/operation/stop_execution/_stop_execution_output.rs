@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct StopExecutionOutput  {
+pub struct StopExecutionOutput {
     /// <p>The date the execution is stopped.</p>
     #[doc(hidden)]
     pub stop_date: std::option::Option<aws_smithy_types::DateTime>,
@@ -10,15 +10,15 @@ pub struct StopExecutionOutput  {
 }
 impl StopExecutionOutput {
     /// <p>The date the execution is stopped.</p>
-    pub fn stop_date(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
+    pub fn stop_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.stop_date.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for StopExecutionOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl StopExecutionOutput {
     /// Creates a new builder-style object to manufacture [`StopExecutionOutput`](crate::operation::stop_execution::StopExecutionOutput).
     pub fn builder() -> crate::operation::stop_execution::builders::StopExecutionOutputBuilder {
@@ -41,24 +41,23 @@ impl StopExecutionOutputBuilder {
     }
     /// <p>The date the execution is stopped.</p>
     pub fn set_stop_date(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.stop_date = input; self
+        self.stop_date = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`StopExecutionOutput`](crate::operation::stop_execution::StopExecutionOutput).
     pub fn build(self) -> crate::operation::stop_execution::StopExecutionOutput {
         crate::operation::stop_execution::StopExecutionOutput {
-            stop_date: self.stop_date
-            ,
+            stop_date: self.stop_date,
             _request_id: self._request_id,
         }
     }
 }
-

@@ -3,7 +3,7 @@
 /// UntagResourceRequest
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UntagResourceInput  {
+pub struct UntagResourceInput {
     /// Arn
     #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
@@ -13,11 +13,11 @@ pub struct UntagResourceInput  {
 }
 impl UntagResourceInput {
     /// Arn
-    pub fn arn(&self) -> std::option::Option<& str> {
+    pub fn arn(&self) -> std::option::Option<&str> {
         self.arn.as_deref()
     }
     /// List of tag keys.
-    pub fn tag_keys(&self) -> std::option::Option<& [std::string::String]> {
+    pub fn tag_keys(&self) -> std::option::Option<&[std::string::String]> {
         self.tag_keys.as_deref()
     }
 }
@@ -43,7 +43,8 @@ impl UntagResourceInputBuilder {
     }
     /// Arn
     pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.arn = input; self
+        self.arn = input;
+        self
     }
     /// Appends an item to `tag_keys`.
     ///
@@ -52,24 +53,28 @@ impl UntagResourceInputBuilder {
     /// List of tag keys.
     pub fn tag_keys(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.tag_keys.unwrap_or_default();
-                        v.push(input.into());
-                        self.tag_keys = Some(v);
-                        self
+        v.push(input.into());
+        self.tag_keys = Some(v);
+        self
     }
     /// List of tag keys.
-    pub fn set_tag_keys(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-        self.tag_keys = input; self
+    pub fn set_tag_keys(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
+        self.tag_keys = input;
+        self
     }
     /// Consumes the builder and constructs a [`UntagResourceInput`](crate::operation::untag_resource::UntagResourceInput).
-    pub fn build(self) -> Result<crate::operation::untag_resource::UntagResourceInput, aws_smithy_http::operation::error::BuildError> {
-        Ok(
-            crate::operation::untag_resource::UntagResourceInput {
-                arn: self.arn
-                ,
-                tag_keys: self.tag_keys
-                ,
-            }
-        )
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::untag_resource::UntagResourceInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        Ok(crate::operation::untag_resource::UntagResourceInput {
+            arn: self.arn,
+            tag_keys: self.tag_keys,
+        })
     }
 }
-

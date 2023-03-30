@@ -3,7 +3,7 @@
 /// <p>Defines a parameter that is used to provide configuration details for the component.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ComponentParameterDetail  {
+pub struct ComponentParameterDetail {
     /// <p>The name of this input parameter.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -19,19 +19,19 @@ pub struct ComponentParameterDetail  {
 }
 impl ComponentParameterDetail {
     /// <p>The name of this input parameter.</p>
-    pub fn name(&self) -> std::option::Option<& str> {
+    pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>The type of input this parameter provides. The currently supported value is "string".</p>
-    pub fn r#type(&self) -> std::option::Option<& str> {
+    pub fn r#type(&self) -> std::option::Option<&str> {
         self.r#type.as_deref()
     }
     /// <p>The default value of this parameter if no input is provided.</p>
-    pub fn default_value(&self) -> std::option::Option<& [std::string::String]> {
+    pub fn default_value(&self) -> std::option::Option<&[std::string::String]> {
         self.default_value.as_deref()
     }
     /// <p>Describes this parameter.</p>
-    pub fn description(&self) -> std::option::Option<& str> {
+    pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
 }
@@ -59,7 +59,8 @@ impl ComponentParameterDetailBuilder {
     }
     /// <p>The name of this input parameter.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input; self
+        self.name = input;
+        self
     }
     /// <p>The type of input this parameter provides. The currently supported value is "string".</p>
     pub fn r#type(mut self, input: impl Into<std::string::String>) -> Self {
@@ -68,7 +69,8 @@ impl ComponentParameterDetailBuilder {
     }
     /// <p>The type of input this parameter provides. The currently supported value is "string".</p>
     pub fn set_type(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.r#type = input; self
+        self.r#type = input;
+        self
     }
     /// Appends an item to `default_value`.
     ///
@@ -77,13 +79,17 @@ impl ComponentParameterDetailBuilder {
     /// <p>The default value of this parameter if no input is provided.</p>
     pub fn default_value(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.default_value.unwrap_or_default();
-                        v.push(input.into());
-                        self.default_value = Some(v);
-                        self
+        v.push(input.into());
+        self.default_value = Some(v);
+        self
     }
     /// <p>The default value of this parameter if no input is provided.</p>
-    pub fn set_default_value(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-        self.default_value = input; self
+    pub fn set_default_value(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
+        self.default_value = input;
+        self
     }
     /// <p>Describes this parameter.</p>
     pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -92,20 +98,16 @@ impl ComponentParameterDetailBuilder {
     }
     /// <p>Describes this parameter.</p>
     pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.description = input; self
+        self.description = input;
+        self
     }
     /// Consumes the builder and constructs a [`ComponentParameterDetail`](crate::types::ComponentParameterDetail).
     pub fn build(self) -> crate::types::ComponentParameterDetail {
         crate::types::ComponentParameterDetail {
-            name: self.name
-            ,
-            r#type: self.r#type
-            ,
-            default_value: self.default_value
-            ,
-            description: self.description
-            ,
+            name: self.name,
+            r#type: self.r#type,
+            default_value: self.default_value,
+            description: self.description,
         }
     }
 }
-

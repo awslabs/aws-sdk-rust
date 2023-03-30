@@ -2,20 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct BatchDeleteImportDataInput  {
+pub struct BatchDeleteImportDataInput {
     /// <p>The IDs for the import tasks that you want to delete.</p>
     #[doc(hidden)]
     pub import_task_ids: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl BatchDeleteImportDataInput {
     /// <p>The IDs for the import tasks that you want to delete.</p>
-    pub fn import_task_ids(&self) -> std::option::Option<& [std::string::String]> {
+    pub fn import_task_ids(&self) -> std::option::Option<&[std::string::String]> {
         self.import_task_ids.as_deref()
     }
 }
 impl BatchDeleteImportDataInput {
     /// Creates a new builder-style object to manufacture [`BatchDeleteImportDataInput`](crate::operation::batch_delete_import_data::BatchDeleteImportDataInput).
-    pub fn builder() -> crate::operation::batch_delete_import_data::builders::BatchDeleteImportDataInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::batch_delete_import_data::builders::BatchDeleteImportDataInputBuilder
+    {
         crate::operation::batch_delete_import_data::builders::BatchDeleteImportDataInputBuilder::default()
     }
 }
@@ -34,22 +36,29 @@ impl BatchDeleteImportDataInputBuilder {
     /// <p>The IDs for the import tasks that you want to delete.</p>
     pub fn import_task_ids(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.import_task_ids.unwrap_or_default();
-                        v.push(input.into());
-                        self.import_task_ids = Some(v);
-                        self
+        v.push(input.into());
+        self.import_task_ids = Some(v);
+        self
     }
     /// <p>The IDs for the import tasks that you want to delete.</p>
-    pub fn set_import_task_ids(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-        self.import_task_ids = input; self
+    pub fn set_import_task_ids(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
+        self.import_task_ids = input;
+        self
     }
     /// Consumes the builder and constructs a [`BatchDeleteImportDataInput`](crate::operation::batch_delete_import_data::BatchDeleteImportDataInput).
-    pub fn build(self) -> Result<crate::operation::batch_delete_import_data::BatchDeleteImportDataInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::batch_delete_import_data::BatchDeleteImportDataInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::batch_delete_import_data::BatchDeleteImportDataInput {
-                import_task_ids: self.import_task_ids
-                ,
-            }
+                import_task_ids: self.import_task_ids,
+            },
         )
     }
 }
-

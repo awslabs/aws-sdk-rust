@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListConfigurationHistoryOutput  {
+pub struct ListConfigurationHistoryOutput {
     /// <p> The list of configuration events and their corresponding details. </p>
     #[doc(hidden)]
     pub event_list: std::option::Option<std::vec::Vec<crate::types::ConfigurationEvent>>,
@@ -13,22 +13,24 @@ pub struct ListConfigurationHistoryOutput  {
 }
 impl ListConfigurationHistoryOutput {
     /// <p> The list of configuration events and their corresponding details. </p>
-    pub fn event_list(&self) -> std::option::Option<& [crate::types::ConfigurationEvent]> {
+    pub fn event_list(&self) -> std::option::Option<&[crate::types::ConfigurationEvent]> {
         self.event_list.as_deref()
     }
     /// <p>The <code>NextToken</code> value to include in a future <code>ListConfigurationHistory</code> request. When the results of a <code>ListConfigurationHistory</code> request exceed <code>MaxResults</code>, this value can be used to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for ListConfigurationHistoryOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl ListConfigurationHistoryOutput {
     /// Creates a new builder-style object to manufacture [`ListConfigurationHistoryOutput`](crate::operation::list_configuration_history::ListConfigurationHistoryOutput).
-    pub fn builder() -> crate::operation::list_configuration_history::builders::ListConfigurationHistoryOutputBuilder {
+    pub fn builder(
+    ) -> crate::operation::list_configuration_history::builders::ListConfigurationHistoryOutputBuilder
+    {
         crate::operation::list_configuration_history::builders::ListConfigurationHistoryOutputBuilder::default()
     }
 }
@@ -49,13 +51,17 @@ impl ListConfigurationHistoryOutputBuilder {
     /// <p> The list of configuration events and their corresponding details. </p>
     pub fn event_list(mut self, input: crate::types::ConfigurationEvent) -> Self {
         let mut v = self.event_list.unwrap_or_default();
-                        v.push(input);
-                        self.event_list = Some(v);
-                        self
+        v.push(input);
+        self.event_list = Some(v);
+        self
     }
     /// <p> The list of configuration events and their corresponding details. </p>
-    pub fn set_event_list(mut self, input: std::option::Option<std::vec::Vec<crate::types::ConfigurationEvent>>) -> Self {
-        self.event_list = input; self
+    pub fn set_event_list(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::ConfigurationEvent>>,
+    ) -> Self {
+        self.event_list = input;
+        self
     }
     /// <p>The <code>NextToken</code> value to include in a future <code>ListConfigurationHistory</code> request. When the results of a <code>ListConfigurationHistory</code> request exceed <code>MaxResults</code>, this value can be used to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -64,26 +70,26 @@ impl ListConfigurationHistoryOutputBuilder {
     }
     /// <p>The <code>NextToken</code> value to include in a future <code>ListConfigurationHistory</code> request. When the results of a <code>ListConfigurationHistory</code> request exceed <code>MaxResults</code>, this value can be used to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input; self
+        self.next_token = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`ListConfigurationHistoryOutput`](crate::operation::list_configuration_history::ListConfigurationHistoryOutput).
-    pub fn build(self) -> crate::operation::list_configuration_history::ListConfigurationHistoryOutput {
+    pub fn build(
+        self,
+    ) -> crate::operation::list_configuration_history::ListConfigurationHistoryOutput {
         crate::operation::list_configuration_history::ListConfigurationHistoryOutput {
-            event_list: self.event_list
-            ,
-            next_token: self.next_token
-            ,
+            event_list: self.event_list,
+            next_token: self.next_token,
             _request_id: self._request_id,
         }
     }
 }
-

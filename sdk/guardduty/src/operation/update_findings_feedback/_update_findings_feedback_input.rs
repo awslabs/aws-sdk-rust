@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateFindingsFeedbackInput  {
+pub struct UpdateFindingsFeedbackInput {
     /// <p>The ID of the detector associated with the findings to update feedback for.</p>
     #[doc(hidden)]
     pub detector_id: std::option::Option<std::string::String>,
@@ -18,25 +18,27 @@ pub struct UpdateFindingsFeedbackInput  {
 }
 impl UpdateFindingsFeedbackInput {
     /// <p>The ID of the detector associated with the findings to update feedback for.</p>
-    pub fn detector_id(&self) -> std::option::Option<& str> {
+    pub fn detector_id(&self) -> std::option::Option<&str> {
         self.detector_id.as_deref()
     }
     /// <p>The IDs of the findings that you want to mark as useful or not useful.</p>
-    pub fn finding_ids(&self) -> std::option::Option<& [std::string::String]> {
+    pub fn finding_ids(&self) -> std::option::Option<&[std::string::String]> {
         self.finding_ids.as_deref()
     }
     /// <p>The feedback for the finding.</p>
-    pub fn feedback(&self) -> std::option::Option<& crate::types::Feedback> {
+    pub fn feedback(&self) -> std::option::Option<&crate::types::Feedback> {
         self.feedback.as_ref()
     }
     /// <p>Additional feedback about the GuardDuty findings.</p>
-    pub fn comments(&self) -> std::option::Option<& str> {
+    pub fn comments(&self) -> std::option::Option<&str> {
         self.comments.as_deref()
     }
 }
 impl UpdateFindingsFeedbackInput {
     /// Creates a new builder-style object to manufacture [`UpdateFindingsFeedbackInput`](crate::operation::update_findings_feedback::UpdateFindingsFeedbackInput).
-    pub fn builder() -> crate::operation::update_findings_feedback::builders::UpdateFindingsFeedbackInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::update_findings_feedback::builders::UpdateFindingsFeedbackInputBuilder
+    {
         crate::operation::update_findings_feedback::builders::UpdateFindingsFeedbackInputBuilder::default()
     }
 }
@@ -58,7 +60,8 @@ impl UpdateFindingsFeedbackInputBuilder {
     }
     /// <p>The ID of the detector associated with the findings to update feedback for.</p>
     pub fn set_detector_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.detector_id = input; self
+        self.detector_id = input;
+        self
     }
     /// Appends an item to `finding_ids`.
     ///
@@ -67,13 +70,17 @@ impl UpdateFindingsFeedbackInputBuilder {
     /// <p>The IDs of the findings that you want to mark as useful or not useful.</p>
     pub fn finding_ids(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.finding_ids.unwrap_or_default();
-                        v.push(input.into());
-                        self.finding_ids = Some(v);
-                        self
+        v.push(input.into());
+        self.finding_ids = Some(v);
+        self
     }
     /// <p>The IDs of the findings that you want to mark as useful or not useful.</p>
-    pub fn set_finding_ids(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-        self.finding_ids = input; self
+    pub fn set_finding_ids(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
+        self.finding_ids = input;
+        self
     }
     /// <p>The feedback for the finding.</p>
     pub fn feedback(mut self, input: crate::types::Feedback) -> Self {
@@ -82,7 +89,8 @@ impl UpdateFindingsFeedbackInputBuilder {
     }
     /// <p>The feedback for the finding.</p>
     pub fn set_feedback(mut self, input: std::option::Option<crate::types::Feedback>) -> Self {
-        self.feedback = input; self
+        self.feedback = input;
+        self
     }
     /// <p>Additional feedback about the GuardDuty findings.</p>
     pub fn comments(mut self, input: impl Into<std::string::String>) -> Self {
@@ -91,22 +99,23 @@ impl UpdateFindingsFeedbackInputBuilder {
     }
     /// <p>Additional feedback about the GuardDuty findings.</p>
     pub fn set_comments(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.comments = input; self
+        self.comments = input;
+        self
     }
     /// Consumes the builder and constructs a [`UpdateFindingsFeedbackInput`](crate::operation::update_findings_feedback::UpdateFindingsFeedbackInput).
-    pub fn build(self) -> Result<crate::operation::update_findings_feedback::UpdateFindingsFeedbackInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::update_findings_feedback::UpdateFindingsFeedbackInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::update_findings_feedback::UpdateFindingsFeedbackInput {
-                detector_id: self.detector_id
-                ,
-                finding_ids: self.finding_ids
-                ,
-                feedback: self.feedback
-                ,
-                comments: self.comments
-                ,
-            }
+                detector_id: self.detector_id,
+                finding_ids: self.finding_ids,
+                feedback: self.feedback,
+                comments: self.comments,
+            },
         )
     }
 }
-

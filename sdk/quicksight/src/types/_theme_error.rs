@@ -3,7 +3,7 @@
 /// <p>Theme error.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ThemeError  {
+pub struct ThemeError {
     /// <p>The type of error.</p>
     #[doc(hidden)]
     pub r#type: std::option::Option<crate::types::ThemeErrorType>,
@@ -13,11 +13,11 @@ pub struct ThemeError  {
 }
 impl ThemeError {
     /// <p>The type of error.</p>
-    pub fn r#type(&self) -> std::option::Option<& crate::types::ThemeErrorType> {
+    pub fn r#type(&self) -> std::option::Option<&crate::types::ThemeErrorType> {
         self.r#type.as_ref()
     }
     /// <p>The error message.</p>
-    pub fn message(&self) -> std::option::Option<& str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -43,7 +43,8 @@ impl ThemeErrorBuilder {
     }
     /// <p>The type of error.</p>
     pub fn set_type(mut self, input: std::option::Option<crate::types::ThemeErrorType>) -> Self {
-        self.r#type = input; self
+        self.r#type = input;
+        self
     }
     /// <p>The error message.</p>
     pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
@@ -52,16 +53,14 @@ impl ThemeErrorBuilder {
     }
     /// <p>The error message.</p>
     pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.message = input; self
+        self.message = input;
+        self
     }
     /// Consumes the builder and constructs a [`ThemeError`](crate::types::ThemeError).
     pub fn build(self) -> crate::types::ThemeError {
         crate::types::ThemeError {
-            r#type: self.r#type
-            ,
-            message: self.message
-            ,
+            r#type: self.r#type,
+            message: self.message,
         }
     }
 }
-

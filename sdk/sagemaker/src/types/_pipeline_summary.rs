@@ -3,7 +3,7 @@
 /// <p>A summary of a pipeline.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PipelineSummary  {
+pub struct PipelineSummary {
     /// <p> The Amazon Resource Name (ARN) of the pipeline.</p>
     #[doc(hidden)]
     pub pipeline_arn: std::option::Option<std::string::String>,
@@ -31,35 +31,35 @@ pub struct PipelineSummary  {
 }
 impl PipelineSummary {
     /// <p> The Amazon Resource Name (ARN) of the pipeline.</p>
-    pub fn pipeline_arn(&self) -> std::option::Option<& str> {
+    pub fn pipeline_arn(&self) -> std::option::Option<&str> {
         self.pipeline_arn.as_deref()
     }
     /// <p>The name of the pipeline.</p>
-    pub fn pipeline_name(&self) -> std::option::Option<& str> {
+    pub fn pipeline_name(&self) -> std::option::Option<&str> {
         self.pipeline_name.as_deref()
     }
     /// <p>The display name of the pipeline.</p>
-    pub fn pipeline_display_name(&self) -> std::option::Option<& str> {
+    pub fn pipeline_display_name(&self) -> std::option::Option<&str> {
         self.pipeline_display_name.as_deref()
     }
     /// <p>The description of the pipeline.</p>
-    pub fn pipeline_description(&self) -> std::option::Option<& str> {
+    pub fn pipeline_description(&self) -> std::option::Option<&str> {
         self.pipeline_description.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) that the pipeline used to execute.</p>
-    pub fn role_arn(&self) -> std::option::Option<& str> {
+    pub fn role_arn(&self) -> std::option::Option<&str> {
         self.role_arn.as_deref()
     }
     /// <p>The creation time of the pipeline.</p>
-    pub fn creation_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
+    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
     /// <p>The time that the pipeline was last modified.</p>
-    pub fn last_modified_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
+    pub fn last_modified_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_modified_time.as_ref()
     }
     /// <p>The last time that a pipeline execution began.</p>
-    pub fn last_execution_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
+    pub fn last_execution_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_execution_time.as_ref()
     }
 }
@@ -91,7 +91,8 @@ impl PipelineSummaryBuilder {
     }
     /// <p> The Amazon Resource Name (ARN) of the pipeline.</p>
     pub fn set_pipeline_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.pipeline_arn = input; self
+        self.pipeline_arn = input;
+        self
     }
     /// <p>The name of the pipeline.</p>
     pub fn pipeline_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -100,7 +101,8 @@ impl PipelineSummaryBuilder {
     }
     /// <p>The name of the pipeline.</p>
     pub fn set_pipeline_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.pipeline_name = input; self
+        self.pipeline_name = input;
+        self
     }
     /// <p>The display name of the pipeline.</p>
     pub fn pipeline_display_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -108,8 +110,12 @@ impl PipelineSummaryBuilder {
         self
     }
     /// <p>The display name of the pipeline.</p>
-    pub fn set_pipeline_display_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.pipeline_display_name = input; self
+    pub fn set_pipeline_display_name(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.pipeline_display_name = input;
+        self
     }
     /// <p>The description of the pipeline.</p>
     pub fn pipeline_description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -117,8 +123,12 @@ impl PipelineSummaryBuilder {
         self
     }
     /// <p>The description of the pipeline.</p>
-    pub fn set_pipeline_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.pipeline_description = input; self
+    pub fn set_pipeline_description(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.pipeline_description = input;
+        self
     }
     /// <p>The Amazon Resource Name (ARN) that the pipeline used to execute.</p>
     pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -127,7 +137,8 @@ impl PipelineSummaryBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) that the pipeline used to execute.</p>
     pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.role_arn = input; self
+        self.role_arn = input;
+        self
     }
     /// <p>The creation time of the pipeline.</p>
     pub fn creation_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -135,8 +146,12 @@ impl PipelineSummaryBuilder {
         self
     }
     /// <p>The creation time of the pipeline.</p>
-    pub fn set_creation_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.creation_time = input; self
+    pub fn set_creation_time(
+        mut self,
+        input: std::option::Option<aws_smithy_types::DateTime>,
+    ) -> Self {
+        self.creation_time = input;
+        self
     }
     /// <p>The time that the pipeline was last modified.</p>
     pub fn last_modified_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -144,8 +159,12 @@ impl PipelineSummaryBuilder {
         self
     }
     /// <p>The time that the pipeline was last modified.</p>
-    pub fn set_last_modified_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.last_modified_time = input; self
+    pub fn set_last_modified_time(
+        mut self,
+        input: std::option::Option<aws_smithy_types::DateTime>,
+    ) -> Self {
+        self.last_modified_time = input;
+        self
     }
     /// <p>The last time that a pipeline execution began.</p>
     pub fn last_execution_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -153,29 +172,24 @@ impl PipelineSummaryBuilder {
         self
     }
     /// <p>The last time that a pipeline execution began.</p>
-    pub fn set_last_execution_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.last_execution_time = input; self
+    pub fn set_last_execution_time(
+        mut self,
+        input: std::option::Option<aws_smithy_types::DateTime>,
+    ) -> Self {
+        self.last_execution_time = input;
+        self
     }
     /// Consumes the builder and constructs a [`PipelineSummary`](crate::types::PipelineSummary).
     pub fn build(self) -> crate::types::PipelineSummary {
         crate::types::PipelineSummary {
-            pipeline_arn: self.pipeline_arn
-            ,
-            pipeline_name: self.pipeline_name
-            ,
-            pipeline_display_name: self.pipeline_display_name
-            ,
-            pipeline_description: self.pipeline_description
-            ,
-            role_arn: self.role_arn
-            ,
-            creation_time: self.creation_time
-            ,
-            last_modified_time: self.last_modified_time
-            ,
-            last_execution_time: self.last_execution_time
-            ,
+            pipeline_arn: self.pipeline_arn,
+            pipeline_name: self.pipeline_name,
+            pipeline_display_name: self.pipeline_display_name,
+            pipeline_description: self.pipeline_description,
+            role_arn: self.role_arn,
+            creation_time: self.creation_time,
+            last_modified_time: self.last_modified_time,
+            last_execution_time: self.last_execution_time,
         }
     }
 }
-

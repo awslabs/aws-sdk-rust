@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListChannelsInput  {
+pub struct ListChannelsInput {
     /// <p>Filters the channel list to match the specified name.</p>
     #[doc(hidden)]
     pub filter_by_name: std::option::Option<std::string::String>,
@@ -18,15 +18,15 @@ pub struct ListChannelsInput  {
 }
 impl ListChannelsInput {
     /// <p>Filters the channel list to match the specified name.</p>
-    pub fn filter_by_name(&self) -> std::option::Option<& str> {
+    pub fn filter_by_name(&self) -> std::option::Option<&str> {
         self.filter_by_name.as_deref()
     }
     /// <p>Filters the channel list to match the specified recording-configuration ARN.</p>
-    pub fn filter_by_recording_configuration_arn(&self) -> std::option::Option<& str> {
+    pub fn filter_by_recording_configuration_arn(&self) -> std::option::Option<&str> {
         self.filter_by_recording_configuration_arn.as_deref()
     }
     /// <p>The first channel to retrieve. This is used for pagination; see the <code>nextToken</code> response field.</p>
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
     /// <p>Maximum number of channels to return. Default: 100.</p>
@@ -58,16 +58,24 @@ impl ListChannelsInputBuilder {
     }
     /// <p>Filters the channel list to match the specified name.</p>
     pub fn set_filter_by_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.filter_by_name = input; self
+        self.filter_by_name = input;
+        self
     }
     /// <p>Filters the channel list to match the specified recording-configuration ARN.</p>
-    pub fn filter_by_recording_configuration_arn(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn filter_by_recording_configuration_arn(
+        mut self,
+        input: impl Into<std::string::String>,
+    ) -> Self {
         self.filter_by_recording_configuration_arn = Some(input.into());
         self
     }
     /// <p>Filters the channel list to match the specified recording-configuration ARN.</p>
-    pub fn set_filter_by_recording_configuration_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.filter_by_recording_configuration_arn = input; self
+    pub fn set_filter_by_recording_configuration_arn(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.filter_by_recording_configuration_arn = input;
+        self
     }
     /// <p>The first channel to retrieve. This is used for pagination; see the <code>nextToken</code> response field.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -76,7 +84,8 @@ impl ListChannelsInputBuilder {
     }
     /// <p>The first channel to retrieve. This is used for pagination; see the <code>nextToken</code> response field.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input; self
+        self.next_token = input;
+        self
     }
     /// <p>Maximum number of channels to return. Default: 100.</p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -85,23 +94,21 @@ impl ListChannelsInputBuilder {
     }
     /// <p>Maximum number of channels to return. Default: 100.</p>
     pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_results = input; self
+        self.max_results = input;
+        self
     }
     /// Consumes the builder and constructs a [`ListChannelsInput`](crate::operation::list_channels::ListChannelsInput).
-    pub fn build(self) -> Result<crate::operation::list_channels::ListChannelsInput, aws_smithy_http::operation::error::BuildError> {
-        Ok(
-            crate::operation::list_channels::ListChannelsInput {
-                filter_by_name: self.filter_by_name
-                ,
-                filter_by_recording_configuration_arn: self.filter_by_recording_configuration_arn
-                ,
-                next_token: self.next_token
-                ,
-                max_results: self.max_results
-                    .unwrap_or_default()
-                ,
-            }
-        )
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::list_channels::ListChannelsInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        Ok(crate::operation::list_channels::ListChannelsInput {
+            filter_by_name: self.filter_by_name,
+            filter_by_recording_configuration_arn: self.filter_by_recording_configuration_arn,
+            next_token: self.next_token,
+            max_results: self.max_results.unwrap_or_default(),
+        })
     }
 }
-

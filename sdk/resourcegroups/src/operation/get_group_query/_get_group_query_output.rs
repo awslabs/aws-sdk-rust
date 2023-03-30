@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetGroupQueryOutput  {
+pub struct GetGroupQueryOutput {
     /// <p>The resource query associated with the specified group. For more information about resource queries, see <a href="https://docs.aws.amazon.com/ARG/latest/userguide/gettingstarted-query.html#gettingstarted-query-cli-tag">Create a tag-based group in Resource Groups</a>.</p>
     #[doc(hidden)]
     pub group_query: std::option::Option<crate::types::GroupQuery>,
@@ -10,15 +10,15 @@ pub struct GetGroupQueryOutput  {
 }
 impl GetGroupQueryOutput {
     /// <p>The resource query associated with the specified group. For more information about resource queries, see <a href="https://docs.aws.amazon.com/ARG/latest/userguide/gettingstarted-query.html#gettingstarted-query-cli-tag">Create a tag-based group in Resource Groups</a>.</p>
-    pub fn group_query(&self) -> std::option::Option<& crate::types::GroupQuery> {
+    pub fn group_query(&self) -> std::option::Option<&crate::types::GroupQuery> {
         self.group_query.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for GetGroupQueryOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl GetGroupQueryOutput {
     /// Creates a new builder-style object to manufacture [`GetGroupQueryOutput`](crate::operation::get_group_query::GetGroupQueryOutput).
     pub fn builder() -> crate::operation::get_group_query::builders::GetGroupQueryOutputBuilder {
@@ -41,24 +41,23 @@ impl GetGroupQueryOutputBuilder {
     }
     /// <p>The resource query associated with the specified group. For more information about resource queries, see <a href="https://docs.aws.amazon.com/ARG/latest/userguide/gettingstarted-query.html#gettingstarted-query-cli-tag">Create a tag-based group in Resource Groups</a>.</p>
     pub fn set_group_query(mut self, input: std::option::Option<crate::types::GroupQuery>) -> Self {
-        self.group_query = input; self
+        self.group_query = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`GetGroupQueryOutput`](crate::operation::get_group_query::GetGroupQueryOutput).
     pub fn build(self) -> crate::operation::get_group_query::GetGroupQueryOutput {
         crate::operation::get_group_query::GetGroupQueryOutput {
-            group_query: self.group_query
-            ,
+            group_query: self.group_query,
             _request_id: self._request_id,
         }
     }
 }
-

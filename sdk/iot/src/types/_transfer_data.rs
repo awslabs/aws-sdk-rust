@@ -3,7 +3,7 @@
 /// <p>Data used to transfer a certificate to an Amazon Web Services account.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct TransferData  {
+pub struct TransferData {
     /// <p>The transfer message.</p>
     #[doc(hidden)]
     pub transfer_message: std::option::Option<std::string::String>,
@@ -22,23 +22,23 @@ pub struct TransferData  {
 }
 impl TransferData {
     /// <p>The transfer message.</p>
-    pub fn transfer_message(&self) -> std::option::Option<& str> {
+    pub fn transfer_message(&self) -> std::option::Option<&str> {
         self.transfer_message.as_deref()
     }
     /// <p>The reason why the transfer was rejected.</p>
-    pub fn reject_reason(&self) -> std::option::Option<& str> {
+    pub fn reject_reason(&self) -> std::option::Option<&str> {
         self.reject_reason.as_deref()
     }
     /// <p>The date the transfer took place.</p>
-    pub fn transfer_date(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
+    pub fn transfer_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.transfer_date.as_ref()
     }
     /// <p>The date the transfer was accepted.</p>
-    pub fn accept_date(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
+    pub fn accept_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.accept_date.as_ref()
     }
     /// <p>The date the transfer was rejected.</p>
-    pub fn reject_date(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
+    pub fn reject_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.reject_date.as_ref()
     }
 }
@@ -67,7 +67,8 @@ impl TransferDataBuilder {
     }
     /// <p>The transfer message.</p>
     pub fn set_transfer_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.transfer_message = input; self
+        self.transfer_message = input;
+        self
     }
     /// <p>The reason why the transfer was rejected.</p>
     pub fn reject_reason(mut self, input: impl Into<std::string::String>) -> Self {
@@ -76,7 +77,8 @@ impl TransferDataBuilder {
     }
     /// <p>The reason why the transfer was rejected.</p>
     pub fn set_reject_reason(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.reject_reason = input; self
+        self.reject_reason = input;
+        self
     }
     /// <p>The date the transfer took place.</p>
     pub fn transfer_date(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -84,8 +86,12 @@ impl TransferDataBuilder {
         self
     }
     /// <p>The date the transfer took place.</p>
-    pub fn set_transfer_date(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.transfer_date = input; self
+    pub fn set_transfer_date(
+        mut self,
+        input: std::option::Option<aws_smithy_types::DateTime>,
+    ) -> Self {
+        self.transfer_date = input;
+        self
     }
     /// <p>The date the transfer was accepted.</p>
     pub fn accept_date(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -93,8 +99,12 @@ impl TransferDataBuilder {
         self
     }
     /// <p>The date the transfer was accepted.</p>
-    pub fn set_accept_date(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.accept_date = input; self
+    pub fn set_accept_date(
+        mut self,
+        input: std::option::Option<aws_smithy_types::DateTime>,
+    ) -> Self {
+        self.accept_date = input;
+        self
     }
     /// <p>The date the transfer was rejected.</p>
     pub fn reject_date(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -102,23 +112,21 @@ impl TransferDataBuilder {
         self
     }
     /// <p>The date the transfer was rejected.</p>
-    pub fn set_reject_date(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.reject_date = input; self
+    pub fn set_reject_date(
+        mut self,
+        input: std::option::Option<aws_smithy_types::DateTime>,
+    ) -> Self {
+        self.reject_date = input;
+        self
     }
     /// Consumes the builder and constructs a [`TransferData`](crate::types::TransferData).
     pub fn build(self) -> crate::types::TransferData {
         crate::types::TransferData {
-            transfer_message: self.transfer_message
-            ,
-            reject_reason: self.reject_reason
-            ,
-            transfer_date: self.transfer_date
-            ,
-            accept_date: self.accept_date
-            ,
-            reject_date: self.reject_date
-            ,
+            transfer_message: self.transfer_message,
+            reject_reason: self.reject_reason,
+            transfer_date: self.transfer_date,
+            accept_date: self.accept_date,
+            reject_date: self.reject_date,
         }
     }
 }
-

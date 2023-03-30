@@ -3,14 +3,14 @@
 /// <p>The parameters for ServiceNow.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ServiceNowParameters  {
+pub struct ServiceNowParameters {
     /// <p>URL of the base site.</p>
     #[doc(hidden)]
     pub site_base_url: std::option::Option<std::string::String>,
 }
 impl ServiceNowParameters {
     /// <p>URL of the base site.</p>
-    pub fn site_base_url(&self) -> std::option::Option<& str> {
+    pub fn site_base_url(&self) -> std::option::Option<&str> {
         self.site_base_url.as_deref()
     }
 }
@@ -35,14 +35,13 @@ impl ServiceNowParametersBuilder {
     }
     /// <p>URL of the base site.</p>
     pub fn set_site_base_url(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.site_base_url = input; self
+        self.site_base_url = input;
+        self
     }
     /// Consumes the builder and constructs a [`ServiceNowParameters`](crate::types::ServiceNowParameters).
     pub fn build(self) -> crate::types::ServiceNowParameters {
         crate::types::ServiceNowParameters {
-            site_base_url: self.site_base_url
-            ,
+            site_base_url: self.site_base_url,
         }
     }
 }
-

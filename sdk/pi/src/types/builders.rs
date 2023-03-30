@@ -24,4 +24,3 @@ pub use crate::types::_dimension_key_detail::DimensionKeyDetailBuilder;
 pub use crate::types::_dimension_key_description::DimensionKeyDescriptionBuilder;
 
 pub use crate::types::_response_partition_key::ResponsePartitionKeyBuilder;
-

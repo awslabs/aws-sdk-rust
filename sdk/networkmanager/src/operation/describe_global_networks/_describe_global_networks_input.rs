@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeGlobalNetworksInput  {
+pub struct DescribeGlobalNetworksInput {
     /// <p>The IDs of one or more global networks. The maximum is 10.</p>
     #[doc(hidden)]
     pub global_network_ids: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -15,7 +15,7 @@ pub struct DescribeGlobalNetworksInput  {
 }
 impl DescribeGlobalNetworksInput {
     /// <p>The IDs of one or more global networks. The maximum is 10.</p>
-    pub fn global_network_ids(&self) -> std::option::Option<& [std::string::String]> {
+    pub fn global_network_ids(&self) -> std::option::Option<&[std::string::String]> {
         self.global_network_ids.as_deref()
     }
     /// <p>The maximum number of results to return.</p>
@@ -23,13 +23,15 @@ impl DescribeGlobalNetworksInput {
         self.max_results
     }
     /// <p>The token for the next page of results.</p>
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
 }
 impl DescribeGlobalNetworksInput {
     /// Creates a new builder-style object to manufacture [`DescribeGlobalNetworksInput`](crate::operation::describe_global_networks::DescribeGlobalNetworksInput).
-    pub fn builder() -> crate::operation::describe_global_networks::builders::DescribeGlobalNetworksInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::describe_global_networks::builders::DescribeGlobalNetworksInputBuilder
+    {
         crate::operation::describe_global_networks::builders::DescribeGlobalNetworksInputBuilder::default()
     }
 }
@@ -50,13 +52,17 @@ impl DescribeGlobalNetworksInputBuilder {
     /// <p>The IDs of one or more global networks. The maximum is 10.</p>
     pub fn global_network_ids(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.global_network_ids.unwrap_or_default();
-                        v.push(input.into());
-                        self.global_network_ids = Some(v);
-                        self
+        v.push(input.into());
+        self.global_network_ids = Some(v);
+        self
     }
     /// <p>The IDs of one or more global networks. The maximum is 10.</p>
-    pub fn set_global_network_ids(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-        self.global_network_ids = input; self
+    pub fn set_global_network_ids(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
+        self.global_network_ids = input;
+        self
     }
     /// <p>The maximum number of results to return.</p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -65,7 +71,8 @@ impl DescribeGlobalNetworksInputBuilder {
     }
     /// <p>The maximum number of results to return.</p>
     pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_results = input; self
+        self.max_results = input;
+        self
     }
     /// <p>The token for the next page of results.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -74,20 +81,22 @@ impl DescribeGlobalNetworksInputBuilder {
     }
     /// <p>The token for the next page of results.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input; self
+        self.next_token = input;
+        self
     }
     /// Consumes the builder and constructs a [`DescribeGlobalNetworksInput`](crate::operation::describe_global_networks::DescribeGlobalNetworksInput).
-    pub fn build(self) -> Result<crate::operation::describe_global_networks::DescribeGlobalNetworksInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::describe_global_networks::DescribeGlobalNetworksInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::describe_global_networks::DescribeGlobalNetworksInput {
-                global_network_ids: self.global_network_ids
-                ,
-                max_results: self.max_results
-                ,
-                next_token: self.next_token
-                ,
-            }
+                global_network_ids: self.global_network_ids,
+                max_results: self.max_results,
+                next_token: self.next_token,
+            },
         )
     }
 }
-

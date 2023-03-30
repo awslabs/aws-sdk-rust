@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct RegisterJobDefinitionOutput  {
+pub struct RegisterJobDefinitionOutput {
     /// <p>The name of the job definition.</p>
     #[doc(hidden)]
     pub job_definition_name: std::option::Option<std::string::String>,
@@ -16,11 +16,11 @@ pub struct RegisterJobDefinitionOutput  {
 }
 impl RegisterJobDefinitionOutput {
     /// <p>The name of the job definition.</p>
-    pub fn job_definition_name(&self) -> std::option::Option<& str> {
+    pub fn job_definition_name(&self) -> std::option::Option<&str> {
         self.job_definition_name.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the job definition.</p>
-    pub fn job_definition_arn(&self) -> std::option::Option<& str> {
+    pub fn job_definition_arn(&self) -> std::option::Option<&str> {
         self.job_definition_arn.as_deref()
     }
     /// <p>The revision of the job definition.</p>
@@ -29,13 +29,15 @@ impl RegisterJobDefinitionOutput {
     }
 }
 impl aws_http::request_id::RequestId for RegisterJobDefinitionOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl RegisterJobDefinitionOutput {
     /// Creates a new builder-style object to manufacture [`RegisterJobDefinitionOutput`](crate::operation::register_job_definition::RegisterJobDefinitionOutput).
-    pub fn builder() -> crate::operation::register_job_definition::builders::RegisterJobDefinitionOutputBuilder {
+    pub fn builder(
+    ) -> crate::operation::register_job_definition::builders::RegisterJobDefinitionOutputBuilder
+    {
         crate::operation::register_job_definition::builders::RegisterJobDefinitionOutputBuilder::default()
     }
 }
@@ -56,8 +58,12 @@ impl RegisterJobDefinitionOutputBuilder {
         self
     }
     /// <p>The name of the job definition.</p>
-    pub fn set_job_definition_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.job_definition_name = input; self
+    pub fn set_job_definition_name(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.job_definition_name = input;
+        self
     }
     /// <p>The Amazon Resource Name (ARN) of the job definition.</p>
     pub fn job_definition_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -65,8 +71,12 @@ impl RegisterJobDefinitionOutputBuilder {
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the job definition.</p>
-    pub fn set_job_definition_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.job_definition_arn = input; self
+    pub fn set_job_definition_arn(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.job_definition_arn = input;
+        self
     }
     /// <p>The revision of the job definition.</p>
     pub fn revision(mut self, input: i32) -> Self {
@@ -75,28 +85,25 @@ impl RegisterJobDefinitionOutputBuilder {
     }
     /// <p>The revision of the job definition.</p>
     pub fn set_revision(mut self, input: std::option::Option<i32>) -> Self {
-        self.revision = input; self
+        self.revision = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`RegisterJobDefinitionOutput`](crate::operation::register_job_definition::RegisterJobDefinitionOutput).
     pub fn build(self) -> crate::operation::register_job_definition::RegisterJobDefinitionOutput {
         crate::operation::register_job_definition::RegisterJobDefinitionOutput {
-            job_definition_name: self.job_definition_name
-            ,
-            job_definition_arn: self.job_definition_arn
-            ,
-            revision: self.revision
-            ,
+            job_definition_name: self.job_definition_name,
+            job_definition_arn: self.job_definition_arn,
+            revision: self.revision,
             _request_id: self._request_id,
         }
     }
 }
-

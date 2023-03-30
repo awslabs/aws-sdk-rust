@@ -170,7 +170,7 @@ impl<'a> StartEl<'a> {
     }
 
     /// Returns true of `el` at `depth` is a match for this `start_el`
-    fn end_el(&self, el: ElementEnd, depth: Depth) -> bool {
+    fn end_el(&self, el: ElementEnd<'_>, depth: Depth) -> bool {
         if depth != self.depth {
             return false;
         }
@@ -428,7 +428,7 @@ fn next_start_element<'a, 'inp>(
 
 /// Returns the data element at the current position
 ///
-/// If the current position is not a data element (and is instead a <startelement>) an error
+/// If the current position is not a data element (and is instead a `<start-element>`) an error
 /// will be returned
 pub fn try_data<'a, 'inp>(
     tokens: &'a mut impl Iterator<Item = Result<(Token<'inp>, Depth), XmlDecodeError>>,

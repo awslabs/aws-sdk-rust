@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetBucketsAggregationInput  {
+pub struct GetBucketsAggregationInput {
     /// <p>The name of the index to search.</p>
     #[doc(hidden)]
     pub index_name: std::option::Option<std::string::String>,
@@ -21,29 +21,33 @@ pub struct GetBucketsAggregationInput  {
 }
 impl GetBucketsAggregationInput {
     /// <p>The name of the index to search.</p>
-    pub fn index_name(&self) -> std::option::Option<& str> {
+    pub fn index_name(&self) -> std::option::Option<&str> {
         self.index_name.as_deref()
     }
     /// <p>The search query string.</p>
-    pub fn query_string(&self) -> std::option::Option<& str> {
+    pub fn query_string(&self) -> std::option::Option<&str> {
         self.query_string.as_deref()
     }
     /// <p>The aggregation field.</p>
-    pub fn aggregation_field(&self) -> std::option::Option<& str> {
+    pub fn aggregation_field(&self) -> std::option::Option<&str> {
         self.aggregation_field.as_deref()
     }
     /// <p>The version of the query.</p>
-    pub fn query_version(&self) -> std::option::Option<& str> {
+    pub fn query_version(&self) -> std::option::Option<&str> {
         self.query_version.as_deref()
     }
     /// <p>The basic control of the response shape and the bucket aggregation type to perform. </p>
-    pub fn buckets_aggregation_type(&self) -> std::option::Option<& crate::types::BucketsAggregationType> {
+    pub fn buckets_aggregation_type(
+        &self,
+    ) -> std::option::Option<&crate::types::BucketsAggregationType> {
         self.buckets_aggregation_type.as_ref()
     }
 }
 impl GetBucketsAggregationInput {
     /// Creates a new builder-style object to manufacture [`GetBucketsAggregationInput`](crate::operation::get_buckets_aggregation::GetBucketsAggregationInput).
-    pub fn builder() -> crate::operation::get_buckets_aggregation::builders::GetBucketsAggregationInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::get_buckets_aggregation::builders::GetBucketsAggregationInputBuilder
+    {
         crate::operation::get_buckets_aggregation::builders::GetBucketsAggregationInputBuilder::default()
     }
 }
@@ -66,7 +70,8 @@ impl GetBucketsAggregationInputBuilder {
     }
     /// <p>The name of the index to search.</p>
     pub fn set_index_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.index_name = input; self
+        self.index_name = input;
+        self
     }
     /// <p>The search query string.</p>
     pub fn query_string(mut self, input: impl Into<std::string::String>) -> Self {
@@ -75,7 +80,8 @@ impl GetBucketsAggregationInputBuilder {
     }
     /// <p>The search query string.</p>
     pub fn set_query_string(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.query_string = input; self
+        self.query_string = input;
+        self
     }
     /// <p>The aggregation field.</p>
     pub fn aggregation_field(mut self, input: impl Into<std::string::String>) -> Self {
@@ -83,8 +89,12 @@ impl GetBucketsAggregationInputBuilder {
         self
     }
     /// <p>The aggregation field.</p>
-    pub fn set_aggregation_field(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.aggregation_field = input; self
+    pub fn set_aggregation_field(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.aggregation_field = input;
+        self
     }
     /// <p>The version of the query.</p>
     pub fn query_version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -93,7 +103,8 @@ impl GetBucketsAggregationInputBuilder {
     }
     /// <p>The version of the query.</p>
     pub fn set_query_version(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.query_version = input; self
+        self.query_version = input;
+        self
     }
     /// <p>The basic control of the response shape and the bucket aggregation type to perform. </p>
     pub fn buckets_aggregation_type(mut self, input: crate::types::BucketsAggregationType) -> Self {
@@ -101,25 +112,28 @@ impl GetBucketsAggregationInputBuilder {
         self
     }
     /// <p>The basic control of the response shape and the bucket aggregation type to perform. </p>
-    pub fn set_buckets_aggregation_type(mut self, input: std::option::Option<crate::types::BucketsAggregationType>) -> Self {
-        self.buckets_aggregation_type = input; self
+    pub fn set_buckets_aggregation_type(
+        mut self,
+        input: std::option::Option<crate::types::BucketsAggregationType>,
+    ) -> Self {
+        self.buckets_aggregation_type = input;
+        self
     }
     /// Consumes the builder and constructs a [`GetBucketsAggregationInput`](crate::operation::get_buckets_aggregation::GetBucketsAggregationInput).
-    pub fn build(self) -> Result<crate::operation::get_buckets_aggregation::GetBucketsAggregationInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::get_buckets_aggregation::GetBucketsAggregationInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::get_buckets_aggregation::GetBucketsAggregationInput {
-                index_name: self.index_name
-                ,
-                query_string: self.query_string
-                ,
-                aggregation_field: self.aggregation_field
-                ,
-                query_version: self.query_version
-                ,
-                buckets_aggregation_type: self.buckets_aggregation_type
-                ,
-            }
+                index_name: self.index_name,
+                query_string: self.query_string,
+                aggregation_field: self.aggregation_field,
+                query_version: self.query_version,
+                buckets_aggregation_type: self.buckets_aggregation_type,
+            },
         )
     }
 }
-

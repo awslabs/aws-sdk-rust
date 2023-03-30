@@ -3,14 +3,14 @@
 /// <p> The details related to the resource. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ResourceDetails  {
+pub struct ResourceDetails {
     /// <p>The value of the tag.</p>
     #[doc(hidden)]
     pub tag_value: std::option::Option<std::string::String>,
 }
 impl ResourceDetails {
     /// <p>The value of the tag.</p>
-    pub fn tag_value(&self) -> std::option::Option<& str> {
+    pub fn tag_value(&self) -> std::option::Option<&str> {
         self.tag_value.as_deref()
     }
 }
@@ -35,14 +35,13 @@ impl ResourceDetailsBuilder {
     }
     /// <p>The value of the tag.</p>
     pub fn set_tag_value(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.tag_value = input; self
+        self.tag_value = input;
+        self
     }
     /// Consumes the builder and constructs a [`ResourceDetails`](crate::types::ResourceDetails).
     pub fn build(self) -> crate::types::ResourceDetails {
         crate::types::ResourceDetails {
-            tag_value: self.tag_value
-            ,
+            tag_value: self.tag_value,
         }
     }
 }
-

@@ -24,7 +24,11 @@ impl FieldPosition {
     /// Tries to convert the enum instance into [`Below`](crate::types::FieldPosition::Below), extracting the inner [`String`](std::string::String).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_below(&self) -> std::result::Result<&std::string::String, &Self> {
-        if let FieldPosition::Below(val) = &self { Ok(val) } else { Err(self) }
+        if let FieldPosition::Below(val) = &self {
+            Ok(val)
+        } else {
+            Err(self)
+        }
     }
     /// Returns true if this is a [`Below`](crate::types::FieldPosition::Below).
     pub fn is_below(&self) -> bool {
@@ -33,7 +37,11 @@ impl FieldPosition {
     /// Tries to convert the enum instance into [`Fixed`](crate::types::FieldPosition::Fixed), extracting the inner [`FixedPosition`](crate::types::FixedPosition).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_fixed(&self) -> std::result::Result<&crate::types::FixedPosition, &Self> {
-        if let FieldPosition::Fixed(val) = &self { Ok(val) } else { Err(self) }
+        if let FieldPosition::Fixed(val) = &self {
+            Ok(val)
+        } else {
+            Err(self)
+        }
     }
     /// Returns true if this is a [`Fixed`](crate::types::FieldPosition::Fixed).
     pub fn is_fixed(&self) -> bool {
@@ -42,7 +50,11 @@ impl FieldPosition {
     /// Tries to convert the enum instance into [`RightOf`](crate::types::FieldPosition::RightOf), extracting the inner [`String`](std::string::String).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_right_of(&self) -> std::result::Result<&std::string::String, &Self> {
-        if let FieldPosition::RightOf(val) = &self { Ok(val) } else { Err(self) }
+        if let FieldPosition::RightOf(val) = &self {
+            Ok(val)
+        } else {
+            Err(self)
+        }
     }
     /// Returns true if this is a [`RightOf`](crate::types::FieldPosition::RightOf).
     pub fn is_right_of(&self) -> bool {
@@ -53,4 +65,3 @@ impl FieldPosition {
         matches!(self, Self::Unknown)
     }
 }
-

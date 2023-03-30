@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-/// 
+///
 /// Here is an example of how you can make a match expression forward-compatible:
-/// 
+///
 /// ```text
 /// # let connectionpropertykey = unimplemented!();
 /// match connectionpropertykey {
@@ -58,14 +58,22 @@
 /// Specifically, when `connectionpropertykey` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `ConnectionPropertyKey::NewFeature` also yielding `"NewFeature"`.
-/// 
+///
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
 pub enum ConnectionPropertyKey {
     #[allow(missing_docs)] // documentation missing in model
     ConfigFiles,
@@ -128,97 +136,145 @@ pub enum ConnectionPropertyKey {
     #[allow(missing_docs)] // documentation missing in model
     UserName,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::primitives::UnknownVariantValue)
+    Unknown(crate::primitives::UnknownVariantValue),
 }
 impl std::convert::From<&str> for ConnectionPropertyKey {
-                fn from(s: &str) -> Self {
-                    match s {
-                        "CONFIG_FILES" => ConnectionPropertyKey::ConfigFiles,
-"CONNECTION_URL" => ConnectionPropertyKey::ConnectionUrl,
-"CONNECTOR_CLASS_NAME" => ConnectionPropertyKey::ConnectorClassName,
-"CONNECTOR_TYPE" => ConnectionPropertyKey::ConnectorType,
-"CONNECTOR_URL" => ConnectionPropertyKey::ConnectorUrl,
-"CUSTOM_JDBC_CERT" => ConnectionPropertyKey::CustomJdbcCert,
-"CUSTOM_JDBC_CERT_STRING" => ConnectionPropertyKey::CustomJdbcCertString,
-"ENCRYPTED_KAFKA_CLIENT_KEYSTORE_PASSWORD" => ConnectionPropertyKey::EncryptedKafkaClientKeystorePassword,
-"ENCRYPTED_KAFKA_CLIENT_KEY_PASSWORD" => ConnectionPropertyKey::EncryptedKafkaClientKeyPassword,
-"ENCRYPTED_PASSWORD" => ConnectionPropertyKey::EncryptedPassword,
-"HOST" => ConnectionPropertyKey::Host,
-"INSTANCE_ID" => ConnectionPropertyKey::InstanceId,
-"JDBC_CONNECTION_URL" => ConnectionPropertyKey::JdbcConnectionUrl,
-"JDBC_DRIVER_CLASS_NAME" => ConnectionPropertyKey::JdbcDriverClassName,
-"JDBC_DRIVER_JAR_URI" => ConnectionPropertyKey::JdbcDriverJarUri,
-"JDBC_ENFORCE_SSL" => ConnectionPropertyKey::JdbcEnforceSsl,
-"JDBC_ENGINE" => ConnectionPropertyKey::JdbcEngine,
-"JDBC_ENGINE_VERSION" => ConnectionPropertyKey::JdbcEngineVersion,
-"KAFKA_BOOTSTRAP_SERVERS" => ConnectionPropertyKey::KafkaBootstrapServers,
-"KAFKA_CLIENT_KEYSTORE" => ConnectionPropertyKey::KafkaClientKeystore,
-"KAFKA_CLIENT_KEYSTORE_PASSWORD" => ConnectionPropertyKey::KafkaClientKeystorePassword,
-"KAFKA_CLIENT_KEY_PASSWORD" => ConnectionPropertyKey::KafkaClientKeyPassword,
-"KAFKA_CUSTOM_CERT" => ConnectionPropertyKey::KafkaCustomCert,
-"KAFKA_SKIP_CUSTOM_CERT_VALIDATION" => ConnectionPropertyKey::KafkaSkipCustomCertValidation,
-"KAFKA_SSL_ENABLED" => ConnectionPropertyKey::KafkaSslEnabled,
-"PASSWORD" => ConnectionPropertyKey::Password,
-"PORT" => ConnectionPropertyKey::Port,
-"SECRET_ID" => ConnectionPropertyKey::SecretId,
-"SKIP_CUSTOM_JDBC_CERT_VALIDATION" => ConnectionPropertyKey::SkipCustomJdbcCertValidation,
-"USERNAME" => ConnectionPropertyKey::UserName,
-other => ConnectionPropertyKey::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
-                    }
-                }
+    fn from(s: &str) -> Self {
+        match s {
+            "CONFIG_FILES" => ConnectionPropertyKey::ConfigFiles,
+            "CONNECTION_URL" => ConnectionPropertyKey::ConnectionUrl,
+            "CONNECTOR_CLASS_NAME" => ConnectionPropertyKey::ConnectorClassName,
+            "CONNECTOR_TYPE" => ConnectionPropertyKey::ConnectorType,
+            "CONNECTOR_URL" => ConnectionPropertyKey::ConnectorUrl,
+            "CUSTOM_JDBC_CERT" => ConnectionPropertyKey::CustomJdbcCert,
+            "CUSTOM_JDBC_CERT_STRING" => ConnectionPropertyKey::CustomJdbcCertString,
+            "ENCRYPTED_KAFKA_CLIENT_KEYSTORE_PASSWORD" => {
+                ConnectionPropertyKey::EncryptedKafkaClientKeystorePassword
             }
-impl std::str::FromStr for ConnectionPropertyKey {
-                type Err = std::convert::Infallible;
-
-                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-                    Ok(ConnectionPropertyKey::from(s))
-                }
+            "ENCRYPTED_KAFKA_CLIENT_KEY_PASSWORD" => {
+                ConnectionPropertyKey::EncryptedKafkaClientKeyPassword
             }
-impl ConnectionPropertyKey {
-                /// Returns the `&str` value of the enum member.
-                pub fn as_str(&self) -> &str {
-                    match self {
-    ConnectionPropertyKey::ConfigFiles => "CONFIG_FILES",
-    ConnectionPropertyKey::ConnectionUrl => "CONNECTION_URL",
-    ConnectionPropertyKey::ConnectorClassName => "CONNECTOR_CLASS_NAME",
-    ConnectionPropertyKey::ConnectorType => "CONNECTOR_TYPE",
-    ConnectionPropertyKey::ConnectorUrl => "CONNECTOR_URL",
-    ConnectionPropertyKey::CustomJdbcCert => "CUSTOM_JDBC_CERT",
-    ConnectionPropertyKey::CustomJdbcCertString => "CUSTOM_JDBC_CERT_STRING",
-    ConnectionPropertyKey::EncryptedKafkaClientKeystorePassword => "ENCRYPTED_KAFKA_CLIENT_KEYSTORE_PASSWORD",
-    ConnectionPropertyKey::EncryptedKafkaClientKeyPassword => "ENCRYPTED_KAFKA_CLIENT_KEY_PASSWORD",
-    ConnectionPropertyKey::EncryptedPassword => "ENCRYPTED_PASSWORD",
-    ConnectionPropertyKey::Host => "HOST",
-    ConnectionPropertyKey::InstanceId => "INSTANCE_ID",
-    ConnectionPropertyKey::JdbcConnectionUrl => "JDBC_CONNECTION_URL",
-    ConnectionPropertyKey::JdbcDriverClassName => "JDBC_DRIVER_CLASS_NAME",
-    ConnectionPropertyKey::JdbcDriverJarUri => "JDBC_DRIVER_JAR_URI",
-    ConnectionPropertyKey::JdbcEnforceSsl => "JDBC_ENFORCE_SSL",
-    ConnectionPropertyKey::JdbcEngine => "JDBC_ENGINE",
-    ConnectionPropertyKey::JdbcEngineVersion => "JDBC_ENGINE_VERSION",
-    ConnectionPropertyKey::KafkaBootstrapServers => "KAFKA_BOOTSTRAP_SERVERS",
-    ConnectionPropertyKey::KafkaClientKeystore => "KAFKA_CLIENT_KEYSTORE",
-    ConnectionPropertyKey::KafkaClientKeystorePassword => "KAFKA_CLIENT_KEYSTORE_PASSWORD",
-    ConnectionPropertyKey::KafkaClientKeyPassword => "KAFKA_CLIENT_KEY_PASSWORD",
-    ConnectionPropertyKey::KafkaCustomCert => "KAFKA_CUSTOM_CERT",
-    ConnectionPropertyKey::KafkaSkipCustomCertValidation => "KAFKA_SKIP_CUSTOM_CERT_VALIDATION",
-    ConnectionPropertyKey::KafkaSslEnabled => "KAFKA_SSL_ENABLED",
-    ConnectionPropertyKey::Password => "PASSWORD",
-    ConnectionPropertyKey::Port => "PORT",
-    ConnectionPropertyKey::SecretId => "SECRET_ID",
-    ConnectionPropertyKey::SkipCustomJdbcCertValidation => "SKIP_CUSTOM_JDBC_CERT_VALIDATION",
-    ConnectionPropertyKey::UserName => "USERNAME",
-    ConnectionPropertyKey::Unknown(value) => value.as_str()
+            "ENCRYPTED_PASSWORD" => ConnectionPropertyKey::EncryptedPassword,
+            "HOST" => ConnectionPropertyKey::Host,
+            "INSTANCE_ID" => ConnectionPropertyKey::InstanceId,
+            "JDBC_CONNECTION_URL" => ConnectionPropertyKey::JdbcConnectionUrl,
+            "JDBC_DRIVER_CLASS_NAME" => ConnectionPropertyKey::JdbcDriverClassName,
+            "JDBC_DRIVER_JAR_URI" => ConnectionPropertyKey::JdbcDriverJarUri,
+            "JDBC_ENFORCE_SSL" => ConnectionPropertyKey::JdbcEnforceSsl,
+            "JDBC_ENGINE" => ConnectionPropertyKey::JdbcEngine,
+            "JDBC_ENGINE_VERSION" => ConnectionPropertyKey::JdbcEngineVersion,
+            "KAFKA_BOOTSTRAP_SERVERS" => ConnectionPropertyKey::KafkaBootstrapServers,
+            "KAFKA_CLIENT_KEYSTORE" => ConnectionPropertyKey::KafkaClientKeystore,
+            "KAFKA_CLIENT_KEYSTORE_PASSWORD" => ConnectionPropertyKey::KafkaClientKeystorePassword,
+            "KAFKA_CLIENT_KEY_PASSWORD" => ConnectionPropertyKey::KafkaClientKeyPassword,
+            "KAFKA_CUSTOM_CERT" => ConnectionPropertyKey::KafkaCustomCert,
+            "KAFKA_SKIP_CUSTOM_CERT_VALIDATION" => {
+                ConnectionPropertyKey::KafkaSkipCustomCertValidation
+            }
+            "KAFKA_SSL_ENABLED" => ConnectionPropertyKey::KafkaSslEnabled,
+            "PASSWORD" => ConnectionPropertyKey::Password,
+            "PORT" => ConnectionPropertyKey::Port,
+            "SECRET_ID" => ConnectionPropertyKey::SecretId,
+            "SKIP_CUSTOM_JDBC_CERT_VALIDATION" => {
+                ConnectionPropertyKey::SkipCustomJdbcCertValidation
+            }
+            "USERNAME" => ConnectionPropertyKey::UserName,
+            other => ConnectionPropertyKey::Unknown(crate::primitives::UnknownVariantValue(
+                other.to_owned(),
+            )),
+        }
+    }
 }
-                }
-                /// Returns all the `&str` representations of the enum members.
-                pub const fn values() -> &'static [&'static str] {
-                    &["CONFIG_FILES", "CONNECTION_URL", "CONNECTOR_CLASS_NAME", "CONNECTOR_TYPE", "CONNECTOR_URL", "CUSTOM_JDBC_CERT", "CUSTOM_JDBC_CERT_STRING", "ENCRYPTED_KAFKA_CLIENT_KEYSTORE_PASSWORD", "ENCRYPTED_KAFKA_CLIENT_KEY_PASSWORD", "ENCRYPTED_PASSWORD", "HOST", "INSTANCE_ID", "JDBC_CONNECTION_URL", "JDBC_DRIVER_CLASS_NAME", "JDBC_DRIVER_JAR_URI", "JDBC_ENFORCE_SSL", "JDBC_ENGINE", "JDBC_ENGINE_VERSION", "KAFKA_BOOTSTRAP_SERVERS", "KAFKA_CLIENT_KEYSTORE", "KAFKA_CLIENT_KEYSTORE_PASSWORD", "KAFKA_CLIENT_KEY_PASSWORD", "KAFKA_CUSTOM_CERT", "KAFKA_SKIP_CUSTOM_CERT_VALIDATION", "KAFKA_SSL_ENABLED", "PASSWORD", "PORT", "SECRET_ID", "SKIP_CUSTOM_JDBC_CERT_VALIDATION", "USERNAME"]
-                }
-            }
-impl AsRef<str> for ConnectionPropertyKey {
-                fn as_ref(&self) -> &str {
-                    self.as_str()
-                }
-            }
+impl std::str::FromStr for ConnectionPropertyKey {
+    type Err = std::convert::Infallible;
 
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(ConnectionPropertyKey::from(s))
+    }
+}
+impl ConnectionPropertyKey {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            ConnectionPropertyKey::ConfigFiles => "CONFIG_FILES",
+            ConnectionPropertyKey::ConnectionUrl => "CONNECTION_URL",
+            ConnectionPropertyKey::ConnectorClassName => "CONNECTOR_CLASS_NAME",
+            ConnectionPropertyKey::ConnectorType => "CONNECTOR_TYPE",
+            ConnectionPropertyKey::ConnectorUrl => "CONNECTOR_URL",
+            ConnectionPropertyKey::CustomJdbcCert => "CUSTOM_JDBC_CERT",
+            ConnectionPropertyKey::CustomJdbcCertString => "CUSTOM_JDBC_CERT_STRING",
+            ConnectionPropertyKey::EncryptedKafkaClientKeystorePassword => {
+                "ENCRYPTED_KAFKA_CLIENT_KEYSTORE_PASSWORD"
+            }
+            ConnectionPropertyKey::EncryptedKafkaClientKeyPassword => {
+                "ENCRYPTED_KAFKA_CLIENT_KEY_PASSWORD"
+            }
+            ConnectionPropertyKey::EncryptedPassword => "ENCRYPTED_PASSWORD",
+            ConnectionPropertyKey::Host => "HOST",
+            ConnectionPropertyKey::InstanceId => "INSTANCE_ID",
+            ConnectionPropertyKey::JdbcConnectionUrl => "JDBC_CONNECTION_URL",
+            ConnectionPropertyKey::JdbcDriverClassName => "JDBC_DRIVER_CLASS_NAME",
+            ConnectionPropertyKey::JdbcDriverJarUri => "JDBC_DRIVER_JAR_URI",
+            ConnectionPropertyKey::JdbcEnforceSsl => "JDBC_ENFORCE_SSL",
+            ConnectionPropertyKey::JdbcEngine => "JDBC_ENGINE",
+            ConnectionPropertyKey::JdbcEngineVersion => "JDBC_ENGINE_VERSION",
+            ConnectionPropertyKey::KafkaBootstrapServers => "KAFKA_BOOTSTRAP_SERVERS",
+            ConnectionPropertyKey::KafkaClientKeystore => "KAFKA_CLIENT_KEYSTORE",
+            ConnectionPropertyKey::KafkaClientKeystorePassword => "KAFKA_CLIENT_KEYSTORE_PASSWORD",
+            ConnectionPropertyKey::KafkaClientKeyPassword => "KAFKA_CLIENT_KEY_PASSWORD",
+            ConnectionPropertyKey::KafkaCustomCert => "KAFKA_CUSTOM_CERT",
+            ConnectionPropertyKey::KafkaSkipCustomCertValidation => {
+                "KAFKA_SKIP_CUSTOM_CERT_VALIDATION"
+            }
+            ConnectionPropertyKey::KafkaSslEnabled => "KAFKA_SSL_ENABLED",
+            ConnectionPropertyKey::Password => "PASSWORD",
+            ConnectionPropertyKey::Port => "PORT",
+            ConnectionPropertyKey::SecretId => "SECRET_ID",
+            ConnectionPropertyKey::SkipCustomJdbcCertValidation => {
+                "SKIP_CUSTOM_JDBC_CERT_VALIDATION"
+            }
+            ConnectionPropertyKey::UserName => "USERNAME",
+            ConnectionPropertyKey::Unknown(value) => value.as_str(),
+        }
+    }
+    /// Returns all the `&str` representations of the enum members.
+    pub const fn values() -> &'static [&'static str] {
+        &[
+            "CONFIG_FILES",
+            "CONNECTION_URL",
+            "CONNECTOR_CLASS_NAME",
+            "CONNECTOR_TYPE",
+            "CONNECTOR_URL",
+            "CUSTOM_JDBC_CERT",
+            "CUSTOM_JDBC_CERT_STRING",
+            "ENCRYPTED_KAFKA_CLIENT_KEYSTORE_PASSWORD",
+            "ENCRYPTED_KAFKA_CLIENT_KEY_PASSWORD",
+            "ENCRYPTED_PASSWORD",
+            "HOST",
+            "INSTANCE_ID",
+            "JDBC_CONNECTION_URL",
+            "JDBC_DRIVER_CLASS_NAME",
+            "JDBC_DRIVER_JAR_URI",
+            "JDBC_ENFORCE_SSL",
+            "JDBC_ENGINE",
+            "JDBC_ENGINE_VERSION",
+            "KAFKA_BOOTSTRAP_SERVERS",
+            "KAFKA_CLIENT_KEYSTORE",
+            "KAFKA_CLIENT_KEYSTORE_PASSWORD",
+            "KAFKA_CLIENT_KEY_PASSWORD",
+            "KAFKA_CUSTOM_CERT",
+            "KAFKA_SKIP_CUSTOM_CERT_VALIDATION",
+            "KAFKA_SSL_ENABLED",
+            "PASSWORD",
+            "PORT",
+            "SECRET_ID",
+            "SKIP_CUSTOM_JDBC_CERT_VALIDATION",
+            "USERNAME",
+        ]
+    }
+}
+impl AsRef<str> for ConnectionPropertyKey {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}

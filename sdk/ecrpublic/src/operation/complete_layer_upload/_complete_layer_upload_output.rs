@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CompleteLayerUploadOutput  {
+pub struct CompleteLayerUploadOutput {
     /// <p>The public registry ID that's associated with the request.</p>
     #[doc(hidden)]
     pub registry_id: std::option::Option<std::string::String>,
@@ -19,31 +19,33 @@ pub struct CompleteLayerUploadOutput  {
 }
 impl CompleteLayerUploadOutput {
     /// <p>The public registry ID that's associated with the request.</p>
-    pub fn registry_id(&self) -> std::option::Option<& str> {
+    pub fn registry_id(&self) -> std::option::Option<&str> {
         self.registry_id.as_deref()
     }
     /// <p>The repository name that's associated with the request.</p>
-    pub fn repository_name(&self) -> std::option::Option<& str> {
+    pub fn repository_name(&self) -> std::option::Option<&str> {
         self.repository_name.as_deref()
     }
     /// <p>The upload ID that's associated with the layer.</p>
-    pub fn upload_id(&self) -> std::option::Option<& str> {
+    pub fn upload_id(&self) -> std::option::Option<&str> {
         self.upload_id.as_deref()
     }
     /// <p>The <code>sha256</code> digest of the image layer.</p>
-    pub fn layer_digest(&self) -> std::option::Option<& str> {
+    pub fn layer_digest(&self) -> std::option::Option<&str> {
         self.layer_digest.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for CompleteLayerUploadOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl CompleteLayerUploadOutput {
     /// Creates a new builder-style object to manufacture [`CompleteLayerUploadOutput`](crate::operation::complete_layer_upload::CompleteLayerUploadOutput).
-    pub fn builder() -> crate::operation::complete_layer_upload::builders::CompleteLayerUploadOutputBuilder {
-        crate::operation::complete_layer_upload::builders::CompleteLayerUploadOutputBuilder::default()
+    pub fn builder(
+    ) -> crate::operation::complete_layer_upload::builders::CompleteLayerUploadOutputBuilder {
+        crate::operation::complete_layer_upload::builders::CompleteLayerUploadOutputBuilder::default(
+        )
     }
 }
 
@@ -65,7 +67,8 @@ impl CompleteLayerUploadOutputBuilder {
     }
     /// <p>The public registry ID that's associated with the request.</p>
     pub fn set_registry_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.registry_id = input; self
+        self.registry_id = input;
+        self
     }
     /// <p>The repository name that's associated with the request.</p>
     pub fn repository_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -74,7 +77,8 @@ impl CompleteLayerUploadOutputBuilder {
     }
     /// <p>The repository name that's associated with the request.</p>
     pub fn set_repository_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.repository_name = input; self
+        self.repository_name = input;
+        self
     }
     /// <p>The upload ID that's associated with the layer.</p>
     pub fn upload_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -83,7 +87,8 @@ impl CompleteLayerUploadOutputBuilder {
     }
     /// <p>The upload ID that's associated with the layer.</p>
     pub fn set_upload_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.upload_id = input; self
+        self.upload_id = input;
+        self
     }
     /// <p>The <code>sha256</code> digest of the image layer.</p>
     pub fn layer_digest(mut self, input: impl Into<std::string::String>) -> Self {
@@ -92,30 +97,26 @@ impl CompleteLayerUploadOutputBuilder {
     }
     /// <p>The <code>sha256</code> digest of the image layer.</p>
     pub fn set_layer_digest(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.layer_digest = input; self
+        self.layer_digest = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`CompleteLayerUploadOutput`](crate::operation::complete_layer_upload::CompleteLayerUploadOutput).
     pub fn build(self) -> crate::operation::complete_layer_upload::CompleteLayerUploadOutput {
         crate::operation::complete_layer_upload::CompleteLayerUploadOutput {
-            registry_id: self.registry_id
-            ,
-            repository_name: self.repository_name
-            ,
-            upload_id: self.upload_id
-            ,
-            layer_digest: self.layer_digest
-            ,
+            registry_id: self.registry_id,
+            repository_name: self.repository_name,
+            upload_id: self.upload_id,
+            layer_digest: self.layer_digest,
             _request_id: self._request_id,
         }
     }
 }
-

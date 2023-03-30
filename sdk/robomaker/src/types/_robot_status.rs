@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-/// 
+///
 /// Here is an example of how you can make a match expression forward-compatible:
-/// 
+///
 /// ```text
 /// # let robotstatus = unimplemented!();
 /// match robotstatus {
@@ -35,14 +35,22 @@
 /// Specifically, when `robotstatus` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `RobotStatus::NewFeature` also yielding `"NewFeature"`.
-/// 
+///
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
 pub enum RobotStatus {
     #[allow(missing_docs)] // documentation missing in model
     Available,
@@ -59,51 +67,58 @@ pub enum RobotStatus {
     #[allow(missing_docs)] // documentation missing in model
     Registered,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::primitives::UnknownVariantValue)
+    Unknown(crate::primitives::UnknownVariantValue),
 }
 impl std::convert::From<&str> for RobotStatus {
-                fn from(s: &str) -> Self {
-                    match s {
-                        "Available" => RobotStatus::Available,
-"Deploying" => RobotStatus::Deploying,
-"Failed" => RobotStatus::Failed,
-"InSync" => RobotStatus::InSync,
-"NoResponse" => RobotStatus::NoResponse,
-"PendingNewDeployment" => RobotStatus::PendingNewDeployment,
-"Registered" => RobotStatus::Registered,
-other => RobotStatus::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
-                    }
-                }
-            }
-impl std::str::FromStr for RobotStatus {
-                type Err = std::convert::Infallible;
-
-                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-                    Ok(RobotStatus::from(s))
-                }
-            }
-impl RobotStatus {
-                /// Returns the `&str` value of the enum member.
-                pub fn as_str(&self) -> &str {
-                    match self {
-    RobotStatus::Available => "Available",
-    RobotStatus::Deploying => "Deploying",
-    RobotStatus::Failed => "Failed",
-    RobotStatus::InSync => "InSync",
-    RobotStatus::NoResponse => "NoResponse",
-    RobotStatus::PendingNewDeployment => "PendingNewDeployment",
-    RobotStatus::Registered => "Registered",
-    RobotStatus::Unknown(value) => value.as_str()
+    fn from(s: &str) -> Self {
+        match s {
+            "Available" => RobotStatus::Available,
+            "Deploying" => RobotStatus::Deploying,
+            "Failed" => RobotStatus::Failed,
+            "InSync" => RobotStatus::InSync,
+            "NoResponse" => RobotStatus::NoResponse,
+            "PendingNewDeployment" => RobotStatus::PendingNewDeployment,
+            "Registered" => RobotStatus::Registered,
+            other => RobotStatus::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
+        }
+    }
 }
-                }
-                /// Returns all the `&str` representations of the enum members.
-                pub const fn values() -> &'static [&'static str] {
-                    &["Available", "Deploying", "Failed", "InSync", "NoResponse", "PendingNewDeployment", "Registered"]
-                }
-            }
-impl AsRef<str> for RobotStatus {
-                fn as_ref(&self) -> &str {
-                    self.as_str()
-                }
-            }
+impl std::str::FromStr for RobotStatus {
+    type Err = std::convert::Infallible;
 
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(RobotStatus::from(s))
+    }
+}
+impl RobotStatus {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            RobotStatus::Available => "Available",
+            RobotStatus::Deploying => "Deploying",
+            RobotStatus::Failed => "Failed",
+            RobotStatus::InSync => "InSync",
+            RobotStatus::NoResponse => "NoResponse",
+            RobotStatus::PendingNewDeployment => "PendingNewDeployment",
+            RobotStatus::Registered => "Registered",
+            RobotStatus::Unknown(value) => value.as_str(),
+        }
+    }
+    /// Returns all the `&str` representations of the enum members.
+    pub const fn values() -> &'static [&'static str] {
+        &[
+            "Available",
+            "Deploying",
+            "Failed",
+            "InSync",
+            "NoResponse",
+            "PendingNewDeployment",
+            "Registered",
+        ]
+    }
+}
+impl AsRef<str> for RobotStatus {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}

@@ -3,7 +3,7 @@
 /// <p>A structure that defines one treatment in an experiment. A treatment is a variation of the feature that you are including in the experiment.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct TreatmentConfig  {
+pub struct TreatmentConfig {
     /// <p>A name for this treatment.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -19,19 +19,19 @@ pub struct TreatmentConfig  {
 }
 impl TreatmentConfig {
     /// <p>A name for this treatment.</p>
-    pub fn name(&self) -> std::option::Option<& str> {
+    pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>A description for this treatment.</p>
-    pub fn description(&self) -> std::option::Option<& str> {
+    pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
     /// <p>The feature that this experiment is testing.</p>
-    pub fn feature(&self) -> std::option::Option<& str> {
+    pub fn feature(&self) -> std::option::Option<&str> {
         self.feature.as_deref()
     }
     /// <p>The name of the variation to use as this treatment in the experiment.</p>
-    pub fn variation(&self) -> std::option::Option<& str> {
+    pub fn variation(&self) -> std::option::Option<&str> {
         self.variation.as_deref()
     }
 }
@@ -59,7 +59,8 @@ impl TreatmentConfigBuilder {
     }
     /// <p>A name for this treatment.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input; self
+        self.name = input;
+        self
     }
     /// <p>A description for this treatment.</p>
     pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -68,7 +69,8 @@ impl TreatmentConfigBuilder {
     }
     /// <p>A description for this treatment.</p>
     pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.description = input; self
+        self.description = input;
+        self
     }
     /// <p>The feature that this experiment is testing.</p>
     pub fn feature(mut self, input: impl Into<std::string::String>) -> Self {
@@ -77,7 +79,8 @@ impl TreatmentConfigBuilder {
     }
     /// <p>The feature that this experiment is testing.</p>
     pub fn set_feature(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.feature = input; self
+        self.feature = input;
+        self
     }
     /// <p>The name of the variation to use as this treatment in the experiment.</p>
     pub fn variation(mut self, input: impl Into<std::string::String>) -> Self {
@@ -86,20 +89,16 @@ impl TreatmentConfigBuilder {
     }
     /// <p>The name of the variation to use as this treatment in the experiment.</p>
     pub fn set_variation(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.variation = input; self
+        self.variation = input;
+        self
     }
     /// Consumes the builder and constructs a [`TreatmentConfig`](crate::types::TreatmentConfig).
     pub fn build(self) -> crate::types::TreatmentConfig {
         crate::types::TreatmentConfig {
-            name: self.name
-            ,
-            description: self.description
-            ,
-            feature: self.feature
-            ,
-            variation: self.variation
-            ,
+            name: self.name,
+            description: self.description,
+            feature: self.feature,
+            variation: self.variation,
         }
     }
 }
-

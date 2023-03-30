@@ -3,33 +3,33 @@
 /// <p>Information about a virtual private gateway for a private virtual interface.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct VirtualGateway  {
+pub struct VirtualGateway {
     /// <p>The ID of the virtual private gateway.</p>
     #[doc(hidden)]
     pub virtual_gateway_id: std::option::Option<std::string::String>,
-    /// <p>The state of the virtual private gateway. The following are the possible values:</p> 
-    /// <ul> 
-    /// <li> <p> <code>pending</code>: Initial state after creating the virtual private gateway.</p> </li> 
-    /// <li> <p> <code>available</code>: Ready for use by a private virtual interface.</p> </li> 
-    /// <li> <p> <code>deleting</code>: Initial state after deleting the virtual private gateway.</p> </li> 
-    /// <li> <p> <code>deleted</code>: The virtual private gateway is deleted. The private virtual interface is unable to send traffic over this gateway.</p> </li> 
+    /// <p>The state of the virtual private gateway. The following are the possible values:</p>
+    /// <ul>
+    /// <li> <p> <code>pending</code>: Initial state after creating the virtual private gateway.</p> </li>
+    /// <li> <p> <code>available</code>: Ready for use by a private virtual interface.</p> </li>
+    /// <li> <p> <code>deleting</code>: Initial state after deleting the virtual private gateway.</p> </li>
+    /// <li> <p> <code>deleted</code>: The virtual private gateway is deleted. The private virtual interface is unable to send traffic over this gateway.</p> </li>
     /// </ul>
     #[doc(hidden)]
     pub virtual_gateway_state: std::option::Option<std::string::String>,
 }
 impl VirtualGateway {
     /// <p>The ID of the virtual private gateway.</p>
-    pub fn virtual_gateway_id(&self) -> std::option::Option<& str> {
+    pub fn virtual_gateway_id(&self) -> std::option::Option<&str> {
         self.virtual_gateway_id.as_deref()
     }
-    /// <p>The state of the virtual private gateway. The following are the possible values:</p> 
-    /// <ul> 
-    /// <li> <p> <code>pending</code>: Initial state after creating the virtual private gateway.</p> </li> 
-    /// <li> <p> <code>available</code>: Ready for use by a private virtual interface.</p> </li> 
-    /// <li> <p> <code>deleting</code>: Initial state after deleting the virtual private gateway.</p> </li> 
-    /// <li> <p> <code>deleted</code>: The virtual private gateway is deleted. The private virtual interface is unable to send traffic over this gateway.</p> </li> 
+    /// <p>The state of the virtual private gateway. The following are the possible values:</p>
+    /// <ul>
+    /// <li> <p> <code>pending</code>: Initial state after creating the virtual private gateway.</p> </li>
+    /// <li> <p> <code>available</code>: Ready for use by a private virtual interface.</p> </li>
+    /// <li> <p> <code>deleting</code>: Initial state after deleting the virtual private gateway.</p> </li>
+    /// <li> <p> <code>deleted</code>: The virtual private gateway is deleted. The private virtual interface is unable to send traffic over this gateway.</p> </li>
     /// </ul>
-    pub fn virtual_gateway_state(&self) -> std::option::Option<& str> {
+    pub fn virtual_gateway_state(&self) -> std::option::Option<&str> {
         self.virtual_gateway_state.as_deref()
     }
 }
@@ -54,38 +54,43 @@ impl VirtualGatewayBuilder {
         self
     }
     /// <p>The ID of the virtual private gateway.</p>
-    pub fn set_virtual_gateway_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.virtual_gateway_id = input; self
+    pub fn set_virtual_gateway_id(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.virtual_gateway_id = input;
+        self
     }
-    /// <p>The state of the virtual private gateway. The following are the possible values:</p> 
-    /// <ul> 
-    /// <li> <p> <code>pending</code>: Initial state after creating the virtual private gateway.</p> </li> 
-    /// <li> <p> <code>available</code>: Ready for use by a private virtual interface.</p> </li> 
-    /// <li> <p> <code>deleting</code>: Initial state after deleting the virtual private gateway.</p> </li> 
-    /// <li> <p> <code>deleted</code>: The virtual private gateway is deleted. The private virtual interface is unable to send traffic over this gateway.</p> </li> 
+    /// <p>The state of the virtual private gateway. The following are the possible values:</p>
+    /// <ul>
+    /// <li> <p> <code>pending</code>: Initial state after creating the virtual private gateway.</p> </li>
+    /// <li> <p> <code>available</code>: Ready for use by a private virtual interface.</p> </li>
+    /// <li> <p> <code>deleting</code>: Initial state after deleting the virtual private gateway.</p> </li>
+    /// <li> <p> <code>deleted</code>: The virtual private gateway is deleted. The private virtual interface is unable to send traffic over this gateway.</p> </li>
     /// </ul>
     pub fn virtual_gateway_state(mut self, input: impl Into<std::string::String>) -> Self {
         self.virtual_gateway_state = Some(input.into());
         self
     }
-    /// <p>The state of the virtual private gateway. The following are the possible values:</p> 
-    /// <ul> 
-    /// <li> <p> <code>pending</code>: Initial state after creating the virtual private gateway.</p> </li> 
-    /// <li> <p> <code>available</code>: Ready for use by a private virtual interface.</p> </li> 
-    /// <li> <p> <code>deleting</code>: Initial state after deleting the virtual private gateway.</p> </li> 
-    /// <li> <p> <code>deleted</code>: The virtual private gateway is deleted. The private virtual interface is unable to send traffic over this gateway.</p> </li> 
+    /// <p>The state of the virtual private gateway. The following are the possible values:</p>
+    /// <ul>
+    /// <li> <p> <code>pending</code>: Initial state after creating the virtual private gateway.</p> </li>
+    /// <li> <p> <code>available</code>: Ready for use by a private virtual interface.</p> </li>
+    /// <li> <p> <code>deleting</code>: Initial state after deleting the virtual private gateway.</p> </li>
+    /// <li> <p> <code>deleted</code>: The virtual private gateway is deleted. The private virtual interface is unable to send traffic over this gateway.</p> </li>
     /// </ul>
-    pub fn set_virtual_gateway_state(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.virtual_gateway_state = input; self
+    pub fn set_virtual_gateway_state(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.virtual_gateway_state = input;
+        self
     }
     /// Consumes the builder and constructs a [`VirtualGateway`](crate::types::VirtualGateway).
     pub fn build(self) -> crate::types::VirtualGateway {
         crate::types::VirtualGateway {
-            virtual_gateway_id: self.virtual_gateway_id
-            ,
-            virtual_gateway_state: self.virtual_gateway_state
-            ,
+            virtual_gateway_id: self.virtual_gateway_id,
+            virtual_gateway_state: self.virtual_gateway_state,
         }
     }
 }
-

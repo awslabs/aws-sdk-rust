@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeMetricFiltersInput  {
+pub struct DescribeMetricFiltersInput {
     /// <p>The name of the log group.</p>
     #[doc(hidden)]
     pub log_group_name: std::option::Option<std::string::String>,
@@ -24,15 +24,15 @@ pub struct DescribeMetricFiltersInput  {
 }
 impl DescribeMetricFiltersInput {
     /// <p>The name of the log group.</p>
-    pub fn log_group_name(&self) -> std::option::Option<& str> {
+    pub fn log_group_name(&self) -> std::option::Option<&str> {
         self.log_group_name.as_deref()
     }
     /// <p>The prefix to match. CloudWatch Logs uses the value that you set here only if you also include the <code>logGroupName</code> parameter in your request.</p>
-    pub fn filter_name_prefix(&self) -> std::option::Option<& str> {
+    pub fn filter_name_prefix(&self) -> std::option::Option<&str> {
         self.filter_name_prefix.as_deref()
     }
     /// <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
     /// <p>The maximum number of items returned. If you don't specify a value, the default is up to 50 items.</p>
@@ -40,17 +40,19 @@ impl DescribeMetricFiltersInput {
         self.limit
     }
     /// <p>Filters results to include only those with the specified metric name. If you include this parameter in your request, you must also include the <code>metricNamespace</code> parameter.</p>
-    pub fn metric_name(&self) -> std::option::Option<& str> {
+    pub fn metric_name(&self) -> std::option::Option<&str> {
         self.metric_name.as_deref()
     }
     /// <p>Filters results to include only those in the specified namespace. If you include this parameter in your request, you must also include the <code>metricName</code> parameter.</p>
-    pub fn metric_namespace(&self) -> std::option::Option<& str> {
+    pub fn metric_namespace(&self) -> std::option::Option<&str> {
         self.metric_namespace.as_deref()
     }
 }
 impl DescribeMetricFiltersInput {
     /// Creates a new builder-style object to manufacture [`DescribeMetricFiltersInput`](crate::operation::describe_metric_filters::DescribeMetricFiltersInput).
-    pub fn builder() -> crate::operation::describe_metric_filters::builders::DescribeMetricFiltersInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::describe_metric_filters::builders::DescribeMetricFiltersInputBuilder
+    {
         crate::operation::describe_metric_filters::builders::DescribeMetricFiltersInputBuilder::default()
     }
 }
@@ -74,7 +76,8 @@ impl DescribeMetricFiltersInputBuilder {
     }
     /// <p>The name of the log group.</p>
     pub fn set_log_group_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.log_group_name = input; self
+        self.log_group_name = input;
+        self
     }
     /// <p>The prefix to match. CloudWatch Logs uses the value that you set here only if you also include the <code>logGroupName</code> parameter in your request.</p>
     pub fn filter_name_prefix(mut self, input: impl Into<std::string::String>) -> Self {
@@ -82,8 +85,12 @@ impl DescribeMetricFiltersInputBuilder {
         self
     }
     /// <p>The prefix to match. CloudWatch Logs uses the value that you set here only if you also include the <code>logGroupName</code> parameter in your request.</p>
-    pub fn set_filter_name_prefix(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.filter_name_prefix = input; self
+    pub fn set_filter_name_prefix(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.filter_name_prefix = input;
+        self
     }
     /// <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -92,7 +99,8 @@ impl DescribeMetricFiltersInputBuilder {
     }
     /// <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input; self
+        self.next_token = input;
+        self
     }
     /// <p>The maximum number of items returned. If you don't specify a value, the default is up to 50 items.</p>
     pub fn limit(mut self, input: i32) -> Self {
@@ -101,7 +109,8 @@ impl DescribeMetricFiltersInputBuilder {
     }
     /// <p>The maximum number of items returned. If you don't specify a value, the default is up to 50 items.</p>
     pub fn set_limit(mut self, input: std::option::Option<i32>) -> Self {
-        self.limit = input; self
+        self.limit = input;
+        self
     }
     /// <p>Filters results to include only those with the specified metric name. If you include this parameter in your request, you must also include the <code>metricNamespace</code> parameter.</p>
     pub fn metric_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -110,7 +119,8 @@ impl DescribeMetricFiltersInputBuilder {
     }
     /// <p>Filters results to include only those with the specified metric name. If you include this parameter in your request, you must also include the <code>metricNamespace</code> parameter.</p>
     pub fn set_metric_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.metric_name = input; self
+        self.metric_name = input;
+        self
     }
     /// <p>Filters results to include only those in the specified namespace. If you include this parameter in your request, you must also include the <code>metricName</code> parameter.</p>
     pub fn metric_namespace(mut self, input: impl Into<std::string::String>) -> Self {
@@ -119,26 +129,25 @@ impl DescribeMetricFiltersInputBuilder {
     }
     /// <p>Filters results to include only those in the specified namespace. If you include this parameter in your request, you must also include the <code>metricName</code> parameter.</p>
     pub fn set_metric_namespace(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.metric_namespace = input; self
+        self.metric_namespace = input;
+        self
     }
     /// Consumes the builder and constructs a [`DescribeMetricFiltersInput`](crate::operation::describe_metric_filters::DescribeMetricFiltersInput).
-    pub fn build(self) -> Result<crate::operation::describe_metric_filters::DescribeMetricFiltersInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::describe_metric_filters::DescribeMetricFiltersInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::describe_metric_filters::DescribeMetricFiltersInput {
-                log_group_name: self.log_group_name
-                ,
-                filter_name_prefix: self.filter_name_prefix
-                ,
-                next_token: self.next_token
-                ,
-                limit: self.limit
-                ,
-                metric_name: self.metric_name
-                ,
-                metric_namespace: self.metric_namespace
-                ,
-            }
+                log_group_name: self.log_group_name,
+                filter_name_prefix: self.filter_name_prefix,
+                next_token: self.next_token,
+                limit: self.limit,
+                metric_name: self.metric_name,
+                metric_namespace: self.metric_namespace,
+            },
         )
     }
 }
-

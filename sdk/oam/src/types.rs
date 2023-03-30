@@ -20,4 +20,3 @@ pub mod builders;
 
 /// Error types that CloudWatch Observability Access Manager can respond with.
 pub mod error;
-

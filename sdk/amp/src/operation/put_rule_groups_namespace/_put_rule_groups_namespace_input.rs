@@ -3,7 +3,7 @@
 /// Represents the input of a PutRuleGroupsNamespace operation.
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PutRuleGroupsNamespaceInput  {
+pub struct PutRuleGroupsNamespaceInput {
     /// The ID of the workspace in which to update the rule group namespace.
     #[doc(hidden)]
     pub workspace_id: std::option::Option<std::string::String>,
@@ -19,25 +19,27 @@ pub struct PutRuleGroupsNamespaceInput  {
 }
 impl PutRuleGroupsNamespaceInput {
     /// The ID of the workspace in which to update the rule group namespace.
-    pub fn workspace_id(&self) -> std::option::Option<& str> {
+    pub fn workspace_id(&self) -> std::option::Option<&str> {
         self.workspace_id.as_deref()
     }
     /// The rule groups namespace name.
-    pub fn name(&self) -> std::option::Option<& str> {
+    pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
     /// The namespace data that define the rule groups.
-    pub fn data(&self) -> std::option::Option<& aws_smithy_types::Blob> {
+    pub fn data(&self) -> std::option::Option<&aws_smithy_types::Blob> {
         self.data.as_ref()
     }
     /// Optional, unique, case-sensitive, user-provided identifier to ensure the idempotency of the request.
-    pub fn client_token(&self) -> std::option::Option<& str> {
+    pub fn client_token(&self) -> std::option::Option<&str> {
         self.client_token.as_deref()
     }
 }
 impl PutRuleGroupsNamespaceInput {
     /// Creates a new builder-style object to manufacture [`PutRuleGroupsNamespaceInput`](crate::operation::put_rule_groups_namespace::PutRuleGroupsNamespaceInput).
-    pub fn builder() -> crate::operation::put_rule_groups_namespace::builders::PutRuleGroupsNamespaceInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::put_rule_groups_namespace::builders::PutRuleGroupsNamespaceInputBuilder
+    {
         crate::operation::put_rule_groups_namespace::builders::PutRuleGroupsNamespaceInputBuilder::default()
     }
 }
@@ -59,7 +61,8 @@ impl PutRuleGroupsNamespaceInputBuilder {
     }
     /// The ID of the workspace in which to update the rule group namespace.
     pub fn set_workspace_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.workspace_id = input; self
+        self.workspace_id = input;
+        self
     }
     /// The rule groups namespace name.
     pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -68,7 +71,8 @@ impl PutRuleGroupsNamespaceInputBuilder {
     }
     /// The rule groups namespace name.
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input; self
+        self.name = input;
+        self
     }
     /// The namespace data that define the rule groups.
     pub fn data(mut self, input: aws_smithy_types::Blob) -> Self {
@@ -77,7 +81,8 @@ impl PutRuleGroupsNamespaceInputBuilder {
     }
     /// The namespace data that define the rule groups.
     pub fn set_data(mut self, input: std::option::Option<aws_smithy_types::Blob>) -> Self {
-        self.data = input; self
+        self.data = input;
+        self
     }
     /// Optional, unique, case-sensitive, user-provided identifier to ensure the idempotency of the request.
     pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -86,22 +91,23 @@ impl PutRuleGroupsNamespaceInputBuilder {
     }
     /// Optional, unique, case-sensitive, user-provided identifier to ensure the idempotency of the request.
     pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.client_token = input; self
+        self.client_token = input;
+        self
     }
     /// Consumes the builder and constructs a [`PutRuleGroupsNamespaceInput`](crate::operation::put_rule_groups_namespace::PutRuleGroupsNamespaceInput).
-    pub fn build(self) -> Result<crate::operation::put_rule_groups_namespace::PutRuleGroupsNamespaceInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::put_rule_groups_namespace::PutRuleGroupsNamespaceInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::put_rule_groups_namespace::PutRuleGroupsNamespaceInput {
-                workspace_id: self.workspace_id
-                ,
-                name: self.name
-                ,
-                data: self.data
-                ,
-                client_token: self.client_token
-                ,
-            }
+                workspace_id: self.workspace_id,
+                name: self.name,
+                data: self.data,
+                client_token: self.client_token,
+            },
         )
     }
 }
-

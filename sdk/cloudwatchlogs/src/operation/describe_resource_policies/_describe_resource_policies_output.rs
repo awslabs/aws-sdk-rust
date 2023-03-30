@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeResourcePoliciesOutput  {
+pub struct DescribeResourcePoliciesOutput {
     /// <p>The resource policies that exist in this account.</p>
     #[doc(hidden)]
     pub resource_policies: std::option::Option<std::vec::Vec<crate::types::ResourcePolicy>>,
@@ -13,22 +13,24 @@ pub struct DescribeResourcePoliciesOutput  {
 }
 impl DescribeResourcePoliciesOutput {
     /// <p>The resource policies that exist in this account.</p>
-    pub fn resource_policies(&self) -> std::option::Option<& [crate::types::ResourcePolicy]> {
+    pub fn resource_policies(&self) -> std::option::Option<&[crate::types::ResourcePolicy]> {
         self.resource_policies.as_deref()
     }
     /// <p>The token for the next set of items to return. The token expires after 24 hours.</p>
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for DescribeResourcePoliciesOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl DescribeResourcePoliciesOutput {
     /// Creates a new builder-style object to manufacture [`DescribeResourcePoliciesOutput`](crate::operation::describe_resource_policies::DescribeResourcePoliciesOutput).
-    pub fn builder() -> crate::operation::describe_resource_policies::builders::DescribeResourcePoliciesOutputBuilder {
+    pub fn builder(
+    ) -> crate::operation::describe_resource_policies::builders::DescribeResourcePoliciesOutputBuilder
+    {
         crate::operation::describe_resource_policies::builders::DescribeResourcePoliciesOutputBuilder::default()
     }
 }
@@ -49,13 +51,17 @@ impl DescribeResourcePoliciesOutputBuilder {
     /// <p>The resource policies that exist in this account.</p>
     pub fn resource_policies(mut self, input: crate::types::ResourcePolicy) -> Self {
         let mut v = self.resource_policies.unwrap_or_default();
-                        v.push(input);
-                        self.resource_policies = Some(v);
-                        self
+        v.push(input);
+        self.resource_policies = Some(v);
+        self
     }
     /// <p>The resource policies that exist in this account.</p>
-    pub fn set_resource_policies(mut self, input: std::option::Option<std::vec::Vec<crate::types::ResourcePolicy>>) -> Self {
-        self.resource_policies = input; self
+    pub fn set_resource_policies(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::ResourcePolicy>>,
+    ) -> Self {
+        self.resource_policies = input;
+        self
     }
     /// <p>The token for the next set of items to return. The token expires after 24 hours.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -64,26 +70,26 @@ impl DescribeResourcePoliciesOutputBuilder {
     }
     /// <p>The token for the next set of items to return. The token expires after 24 hours.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input; self
+        self.next_token = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`DescribeResourcePoliciesOutput`](crate::operation::describe_resource_policies::DescribeResourcePoliciesOutput).
-    pub fn build(self) -> crate::operation::describe_resource_policies::DescribeResourcePoliciesOutput {
+    pub fn build(
+        self,
+    ) -> crate::operation::describe_resource_policies::DescribeResourcePoliciesOutput {
         crate::operation::describe_resource_policies::DescribeResourcePoliciesOutput {
-            resource_policies: self.resource_policies
-            ,
-            next_token: self.next_token
-            ,
+            resource_policies: self.resource_policies,
+            next_token: self.next_token,
             _request_id: self._request_id,
         }
     }
 }
-

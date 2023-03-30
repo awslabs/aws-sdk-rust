@@ -3,7 +3,7 @@
 /// Represents the status of a namespace.
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct RuleGroupsNamespaceStatus  {
+pub struct RuleGroupsNamespaceStatus {
     /// Status code of this namespace.
     #[doc(hidden)]
     pub status_code: std::option::Option<crate::types::RuleGroupsNamespaceStatusCode>,
@@ -13,11 +13,11 @@ pub struct RuleGroupsNamespaceStatus  {
 }
 impl RuleGroupsNamespaceStatus {
     /// Status code of this namespace.
-    pub fn status_code(&self) -> std::option::Option<& crate::types::RuleGroupsNamespaceStatusCode> {
+    pub fn status_code(&self) -> std::option::Option<&crate::types::RuleGroupsNamespaceStatusCode> {
         self.status_code.as_ref()
     }
     /// The reason for failure if any.
-    pub fn status_reason(&self) -> std::option::Option<& str> {
+    pub fn status_reason(&self) -> std::option::Option<&str> {
         self.status_reason.as_deref()
     }
 }
@@ -42,8 +42,12 @@ impl RuleGroupsNamespaceStatusBuilder {
         self
     }
     /// Status code of this namespace.
-    pub fn set_status_code(mut self, input: std::option::Option<crate::types::RuleGroupsNamespaceStatusCode>) -> Self {
-        self.status_code = input; self
+    pub fn set_status_code(
+        mut self,
+        input: std::option::Option<crate::types::RuleGroupsNamespaceStatusCode>,
+    ) -> Self {
+        self.status_code = input;
+        self
     }
     /// The reason for failure if any.
     pub fn status_reason(mut self, input: impl Into<std::string::String>) -> Self {
@@ -52,16 +56,14 @@ impl RuleGroupsNamespaceStatusBuilder {
     }
     /// The reason for failure if any.
     pub fn set_status_reason(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.status_reason = input; self
+        self.status_reason = input;
+        self
     }
     /// Consumes the builder and constructs a [`RuleGroupsNamespaceStatus`](crate::types::RuleGroupsNamespaceStatus).
     pub fn build(self) -> crate::types::RuleGroupsNamespaceStatus {
         crate::types::RuleGroupsNamespaceStatus {
-            status_code: self.status_code
-            ,
-            status_reason: self.status_reason
-            ,
+            status_code: self.status_code,
+            status_reason: self.status_reason,
         }
     }
 }
-

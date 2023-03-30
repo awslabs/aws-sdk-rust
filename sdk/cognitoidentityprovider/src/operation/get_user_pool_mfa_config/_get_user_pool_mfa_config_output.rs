@@ -2,18 +2,19 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetUserPoolMfaConfigOutput  {
+pub struct GetUserPoolMfaConfigOutput {
     /// <p>The SMS text message multi-factor authentication (MFA) configuration.</p>
     #[doc(hidden)]
     pub sms_mfa_configuration: std::option::Option<crate::types::SmsMfaConfigType>,
     /// <p>The software token multi-factor authentication (MFA) configuration.</p>
     #[doc(hidden)]
-    pub software_token_mfa_configuration: std::option::Option<crate::types::SoftwareTokenMfaConfigType>,
-    /// <p>The multi-factor authentication (MFA) configuration. Valid values include:</p> 
-    /// <ul> 
-    /// <li> <p> <code>OFF</code> MFA won't be used for any users.</p> </li> 
-    /// <li> <p> <code>ON</code> MFA is required for all users to sign in.</p> </li> 
-    /// <li> <p> <code>OPTIONAL</code> MFA will be required only for individual users who have an MFA factor activated.</p> </li> 
+    pub software_token_mfa_configuration:
+        std::option::Option<crate::types::SoftwareTokenMfaConfigType>,
+    /// <p>The multi-factor authentication (MFA) configuration. Valid values include:</p>
+    /// <ul>
+    /// <li> <p> <code>OFF</code> MFA won't be used for any users.</p> </li>
+    /// <li> <p> <code>ON</code> MFA is required for all users to sign in.</p> </li>
+    /// <li> <p> <code>OPTIONAL</code> MFA will be required only for individual users who have an MFA factor activated.</p> </li>
     /// </ul>
     #[doc(hidden)]
     pub mfa_configuration: std::option::Option<crate::types::UserPoolMfaType>,
@@ -21,31 +22,35 @@ pub struct GetUserPoolMfaConfigOutput  {
 }
 impl GetUserPoolMfaConfigOutput {
     /// <p>The SMS text message multi-factor authentication (MFA) configuration.</p>
-    pub fn sms_mfa_configuration(&self) -> std::option::Option<& crate::types::SmsMfaConfigType> {
+    pub fn sms_mfa_configuration(&self) -> std::option::Option<&crate::types::SmsMfaConfigType> {
         self.sms_mfa_configuration.as_ref()
     }
     /// <p>The software token multi-factor authentication (MFA) configuration.</p>
-    pub fn software_token_mfa_configuration(&self) -> std::option::Option<& crate::types::SoftwareTokenMfaConfigType> {
+    pub fn software_token_mfa_configuration(
+        &self,
+    ) -> std::option::Option<&crate::types::SoftwareTokenMfaConfigType> {
         self.software_token_mfa_configuration.as_ref()
     }
-    /// <p>The multi-factor authentication (MFA) configuration. Valid values include:</p> 
-    /// <ul> 
-    /// <li> <p> <code>OFF</code> MFA won't be used for any users.</p> </li> 
-    /// <li> <p> <code>ON</code> MFA is required for all users to sign in.</p> </li> 
-    /// <li> <p> <code>OPTIONAL</code> MFA will be required only for individual users who have an MFA factor activated.</p> </li> 
+    /// <p>The multi-factor authentication (MFA) configuration. Valid values include:</p>
+    /// <ul>
+    /// <li> <p> <code>OFF</code> MFA won't be used for any users.</p> </li>
+    /// <li> <p> <code>ON</code> MFA is required for all users to sign in.</p> </li>
+    /// <li> <p> <code>OPTIONAL</code> MFA will be required only for individual users who have an MFA factor activated.</p> </li>
     /// </ul>
-    pub fn mfa_configuration(&self) -> std::option::Option<& crate::types::UserPoolMfaType> {
+    pub fn mfa_configuration(&self) -> std::option::Option<&crate::types::UserPoolMfaType> {
         self.mfa_configuration.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for GetUserPoolMfaConfigOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl GetUserPoolMfaConfigOutput {
     /// Creates a new builder-style object to manufacture [`GetUserPoolMfaConfigOutput`](crate::operation::get_user_pool_mfa_config::GetUserPoolMfaConfigOutput).
-    pub fn builder() -> crate::operation::get_user_pool_mfa_config::builders::GetUserPoolMfaConfigOutputBuilder {
+    pub fn builder(
+    ) -> crate::operation::get_user_pool_mfa_config::builders::GetUserPoolMfaConfigOutputBuilder
+    {
         crate::operation::get_user_pool_mfa_config::builders::GetUserPoolMfaConfigOutputBuilder::default()
     }
 }
@@ -55,7 +60,8 @@ impl GetUserPoolMfaConfigOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct GetUserPoolMfaConfigOutputBuilder {
     pub(crate) sms_mfa_configuration: std::option::Option<crate::types::SmsMfaConfigType>,
-    pub(crate) software_token_mfa_configuration: std::option::Option<crate::types::SoftwareTokenMfaConfigType>,
+    pub(crate) software_token_mfa_configuration:
+        std::option::Option<crate::types::SoftwareTokenMfaConfigType>,
     pub(crate) mfa_configuration: std::option::Option<crate::types::UserPoolMfaType>,
     _request_id: Option<String>,
 }
@@ -66,57 +72,68 @@ impl GetUserPoolMfaConfigOutputBuilder {
         self
     }
     /// <p>The SMS text message multi-factor authentication (MFA) configuration.</p>
-    pub fn set_sms_mfa_configuration(mut self, input: std::option::Option<crate::types::SmsMfaConfigType>) -> Self {
-        self.sms_mfa_configuration = input; self
+    pub fn set_sms_mfa_configuration(
+        mut self,
+        input: std::option::Option<crate::types::SmsMfaConfigType>,
+    ) -> Self {
+        self.sms_mfa_configuration = input;
+        self
     }
     /// <p>The software token multi-factor authentication (MFA) configuration.</p>
-    pub fn software_token_mfa_configuration(mut self, input: crate::types::SoftwareTokenMfaConfigType) -> Self {
+    pub fn software_token_mfa_configuration(
+        mut self,
+        input: crate::types::SoftwareTokenMfaConfigType,
+    ) -> Self {
         self.software_token_mfa_configuration = Some(input);
         self
     }
     /// <p>The software token multi-factor authentication (MFA) configuration.</p>
-    pub fn set_software_token_mfa_configuration(mut self, input: std::option::Option<crate::types::SoftwareTokenMfaConfigType>) -> Self {
-        self.software_token_mfa_configuration = input; self
+    pub fn set_software_token_mfa_configuration(
+        mut self,
+        input: std::option::Option<crate::types::SoftwareTokenMfaConfigType>,
+    ) -> Self {
+        self.software_token_mfa_configuration = input;
+        self
     }
-    /// <p>The multi-factor authentication (MFA) configuration. Valid values include:</p> 
-    /// <ul> 
-    /// <li> <p> <code>OFF</code> MFA won't be used for any users.</p> </li> 
-    /// <li> <p> <code>ON</code> MFA is required for all users to sign in.</p> </li> 
-    /// <li> <p> <code>OPTIONAL</code> MFA will be required only for individual users who have an MFA factor activated.</p> </li> 
+    /// <p>The multi-factor authentication (MFA) configuration. Valid values include:</p>
+    /// <ul>
+    /// <li> <p> <code>OFF</code> MFA won't be used for any users.</p> </li>
+    /// <li> <p> <code>ON</code> MFA is required for all users to sign in.</p> </li>
+    /// <li> <p> <code>OPTIONAL</code> MFA will be required only for individual users who have an MFA factor activated.</p> </li>
     /// </ul>
     pub fn mfa_configuration(mut self, input: crate::types::UserPoolMfaType) -> Self {
         self.mfa_configuration = Some(input);
         self
     }
-    /// <p>The multi-factor authentication (MFA) configuration. Valid values include:</p> 
-    /// <ul> 
-    /// <li> <p> <code>OFF</code> MFA won't be used for any users.</p> </li> 
-    /// <li> <p> <code>ON</code> MFA is required for all users to sign in.</p> </li> 
-    /// <li> <p> <code>OPTIONAL</code> MFA will be required only for individual users who have an MFA factor activated.</p> </li> 
+    /// <p>The multi-factor authentication (MFA) configuration. Valid values include:</p>
+    /// <ul>
+    /// <li> <p> <code>OFF</code> MFA won't be used for any users.</p> </li>
+    /// <li> <p> <code>ON</code> MFA is required for all users to sign in.</p> </li>
+    /// <li> <p> <code>OPTIONAL</code> MFA will be required only for individual users who have an MFA factor activated.</p> </li>
     /// </ul>
-    pub fn set_mfa_configuration(mut self, input: std::option::Option<crate::types::UserPoolMfaType>) -> Self {
-        self.mfa_configuration = input; self
+    pub fn set_mfa_configuration(
+        mut self,
+        input: std::option::Option<crate::types::UserPoolMfaType>,
+    ) -> Self {
+        self.mfa_configuration = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`GetUserPoolMfaConfigOutput`](crate::operation::get_user_pool_mfa_config::GetUserPoolMfaConfigOutput).
     pub fn build(self) -> crate::operation::get_user_pool_mfa_config::GetUserPoolMfaConfigOutput {
         crate::operation::get_user_pool_mfa_config::GetUserPoolMfaConfigOutput {
-            sms_mfa_configuration: self.sms_mfa_configuration
-            ,
-            software_token_mfa_configuration: self.software_token_mfa_configuration
-            ,
-            mfa_configuration: self.mfa_configuration
-            ,
+            sms_mfa_configuration: self.sms_mfa_configuration,
+            software_token_mfa_configuration: self.software_token_mfa_configuration,
+            mfa_configuration: self.mfa_configuration,
             _request_id: self._request_id,
         }
     }
 }
-

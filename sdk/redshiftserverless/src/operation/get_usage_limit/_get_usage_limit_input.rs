@@ -2,14 +2,14 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetUsageLimitInput  {
+pub struct GetUsageLimitInput {
     /// <p>The unique identifier of the usage limit to return information for.</p>
     #[doc(hidden)]
     pub usage_limit_id: std::option::Option<std::string::String>,
 }
 impl GetUsageLimitInput {
     /// <p>The unique identifier of the usage limit to return information for.</p>
-    pub fn usage_limit_id(&self) -> std::option::Option<& str> {
+    pub fn usage_limit_id(&self) -> std::option::Option<&str> {
         self.usage_limit_id.as_deref()
     }
 }
@@ -34,16 +34,18 @@ impl GetUsageLimitInputBuilder {
     }
     /// <p>The unique identifier of the usage limit to return information for.</p>
     pub fn set_usage_limit_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.usage_limit_id = input; self
+        self.usage_limit_id = input;
+        self
     }
     /// Consumes the builder and constructs a [`GetUsageLimitInput`](crate::operation::get_usage_limit::GetUsageLimitInput).
-    pub fn build(self) -> Result<crate::operation::get_usage_limit::GetUsageLimitInput, aws_smithy_http::operation::error::BuildError> {
-        Ok(
-            crate::operation::get_usage_limit::GetUsageLimitInput {
-                usage_limit_id: self.usage_limit_id
-                ,
-            }
-        )
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::get_usage_limit::GetUsageLimitInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        Ok(crate::operation::get_usage_limit::GetUsageLimitInput {
+            usage_limit_id: self.usage_limit_id,
+        })
     }
 }
-

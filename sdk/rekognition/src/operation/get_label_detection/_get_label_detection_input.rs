@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetLabelDetectionInput  {
+pub struct GetLabelDetectionInput {
     /// <p>Job identifier for the label detection operation for which you want results returned. You get the job identifer from an initial call to <code>StartlabelDetection</code>.</p>
     #[doc(hidden)]
     pub job_id: std::option::Option<std::string::String>,
@@ -21,7 +21,7 @@ pub struct GetLabelDetectionInput  {
 }
 impl GetLabelDetectionInput {
     /// <p>Job identifier for the label detection operation for which you want results returned. You get the job identifer from an initial call to <code>StartlabelDetection</code>.</p>
-    pub fn job_id(&self) -> std::option::Option<& str> {
+    pub fn job_id(&self) -> std::option::Option<&str> {
         self.job_id.as_deref()
     }
     /// <p>Maximum number of results to return per paginated call. The largest value you can specify is 1000. If you specify a value greater than 1000, a maximum of 1000 results is returned. The default value is 1000.</p>
@@ -29,21 +29,22 @@ impl GetLabelDetectionInput {
         self.max_results
     }
     /// <p>If the previous response was incomplete (because there are more labels to retrieve), Amazon Rekognition Video returns a pagination token in the response. You can use this pagination token to retrieve the next set of labels. </p>
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
     /// <p>Sort to use for elements in the <code>Labels</code> array. Use <code>TIMESTAMP</code> to sort array elements by the time labels are detected. Use <code>NAME</code> to alphabetically group elements for a label together. Within each label group, the array element are sorted by detection confidence. The default sort is by <code>TIMESTAMP</code>.</p>
-    pub fn sort_by(&self) -> std::option::Option<& crate::types::LabelDetectionSortBy> {
+    pub fn sort_by(&self) -> std::option::Option<&crate::types::LabelDetectionSortBy> {
         self.sort_by.as_ref()
     }
     /// <p>Defines how to aggregate the returned results. Results can be aggregated by timestamps or segments.</p>
-    pub fn aggregate_by(&self) -> std::option::Option<& crate::types::LabelDetectionAggregateBy> {
+    pub fn aggregate_by(&self) -> std::option::Option<&crate::types::LabelDetectionAggregateBy> {
         self.aggregate_by.as_ref()
     }
 }
 impl GetLabelDetectionInput {
     /// Creates a new builder-style object to manufacture [`GetLabelDetectionInput`](crate::operation::get_label_detection::GetLabelDetectionInput).
-    pub fn builder() -> crate::operation::get_label_detection::builders::GetLabelDetectionInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::get_label_detection::builders::GetLabelDetectionInputBuilder {
         crate::operation::get_label_detection::builders::GetLabelDetectionInputBuilder::default()
     }
 }
@@ -66,7 +67,8 @@ impl GetLabelDetectionInputBuilder {
     }
     /// <p>Job identifier for the label detection operation for which you want results returned. You get the job identifer from an initial call to <code>StartlabelDetection</code>.</p>
     pub fn set_job_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.job_id = input; self
+        self.job_id = input;
+        self
     }
     /// <p>Maximum number of results to return per paginated call. The largest value you can specify is 1000. If you specify a value greater than 1000, a maximum of 1000 results is returned. The default value is 1000.</p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -75,7 +77,8 @@ impl GetLabelDetectionInputBuilder {
     }
     /// <p>Maximum number of results to return per paginated call. The largest value you can specify is 1000. If you specify a value greater than 1000, a maximum of 1000 results is returned. The default value is 1000.</p>
     pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_results = input; self
+        self.max_results = input;
+        self
     }
     /// <p>If the previous response was incomplete (because there are more labels to retrieve), Amazon Rekognition Video returns a pagination token in the response. You can use this pagination token to retrieve the next set of labels. </p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -84,7 +87,8 @@ impl GetLabelDetectionInputBuilder {
     }
     /// <p>If the previous response was incomplete (because there are more labels to retrieve), Amazon Rekognition Video returns a pagination token in the response. You can use this pagination token to retrieve the next set of labels. </p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input; self
+        self.next_token = input;
+        self
     }
     /// <p>Sort to use for elements in the <code>Labels</code> array. Use <code>TIMESTAMP</code> to sort array elements by the time labels are detected. Use <code>NAME</code> to alphabetically group elements for a label together. Within each label group, the array element are sorted by detection confidence. The default sort is by <code>TIMESTAMP</code>.</p>
     pub fn sort_by(mut self, input: crate::types::LabelDetectionSortBy) -> Self {
@@ -92,8 +96,12 @@ impl GetLabelDetectionInputBuilder {
         self
     }
     /// <p>Sort to use for elements in the <code>Labels</code> array. Use <code>TIMESTAMP</code> to sort array elements by the time labels are detected. Use <code>NAME</code> to alphabetically group elements for a label together. Within each label group, the array element are sorted by detection confidence. The default sort is by <code>TIMESTAMP</code>.</p>
-    pub fn set_sort_by(mut self, input: std::option::Option<crate::types::LabelDetectionSortBy>) -> Self {
-        self.sort_by = input; self
+    pub fn set_sort_by(
+        mut self,
+        input: std::option::Option<crate::types::LabelDetectionSortBy>,
+    ) -> Self {
+        self.sort_by = input;
+        self
     }
     /// <p>Defines how to aggregate the returned results. Results can be aggregated by timestamps or segments.</p>
     pub fn aggregate_by(mut self, input: crate::types::LabelDetectionAggregateBy) -> Self {
@@ -101,25 +109,28 @@ impl GetLabelDetectionInputBuilder {
         self
     }
     /// <p>Defines how to aggregate the returned results. Results can be aggregated by timestamps or segments.</p>
-    pub fn set_aggregate_by(mut self, input: std::option::Option<crate::types::LabelDetectionAggregateBy>) -> Self {
-        self.aggregate_by = input; self
+    pub fn set_aggregate_by(
+        mut self,
+        input: std::option::Option<crate::types::LabelDetectionAggregateBy>,
+    ) -> Self {
+        self.aggregate_by = input;
+        self
     }
     /// Consumes the builder and constructs a [`GetLabelDetectionInput`](crate::operation::get_label_detection::GetLabelDetectionInput).
-    pub fn build(self) -> Result<crate::operation::get_label_detection::GetLabelDetectionInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::get_label_detection::GetLabelDetectionInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::get_label_detection::GetLabelDetectionInput {
-                job_id: self.job_id
-                ,
-                max_results: self.max_results
-                ,
-                next_token: self.next_token
-                ,
-                sort_by: self.sort_by
-                ,
-                aggregate_by: self.aggregate_by
-                ,
-            }
+                job_id: self.job_id,
+                max_results: self.max_results,
+                next_token: self.next_token,
+                sort_by: self.sort_by,
+                aggregate_by: self.aggregate_by,
+            },
         )
     }
 }
-

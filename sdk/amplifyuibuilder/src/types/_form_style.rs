@@ -3,7 +3,7 @@
 /// <p>Describes the configuration for the form's style.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct FormStyle  {
+pub struct FormStyle {
     /// <p>The spacing for the horizontal gap.</p>
     #[doc(hidden)]
     pub horizontal_gap: std::option::Option<crate::types::FormStyleConfig>,
@@ -16,15 +16,15 @@ pub struct FormStyle  {
 }
 impl FormStyle {
     /// <p>The spacing for the horizontal gap.</p>
-    pub fn horizontal_gap(&self) -> std::option::Option<& crate::types::FormStyleConfig> {
+    pub fn horizontal_gap(&self) -> std::option::Option<&crate::types::FormStyleConfig> {
         self.horizontal_gap.as_ref()
     }
     /// <p>The spacing for the vertical gap.</p>
-    pub fn vertical_gap(&self) -> std::option::Option<& crate::types::FormStyleConfig> {
+    pub fn vertical_gap(&self) -> std::option::Option<&crate::types::FormStyleConfig> {
         self.vertical_gap.as_ref()
     }
     /// <p>The size of the outer padding for the form.</p>
-    pub fn outer_padding(&self) -> std::option::Option<& crate::types::FormStyleConfig> {
+    pub fn outer_padding(&self) -> std::option::Option<&crate::types::FormStyleConfig> {
         self.outer_padding.as_ref()
     }
 }
@@ -50,8 +50,12 @@ impl FormStyleBuilder {
         self
     }
     /// <p>The spacing for the horizontal gap.</p>
-    pub fn set_horizontal_gap(mut self, input: std::option::Option<crate::types::FormStyleConfig>) -> Self {
-        self.horizontal_gap = input; self
+    pub fn set_horizontal_gap(
+        mut self,
+        input: std::option::Option<crate::types::FormStyleConfig>,
+    ) -> Self {
+        self.horizontal_gap = input;
+        self
     }
     /// <p>The spacing for the vertical gap.</p>
     pub fn vertical_gap(mut self, input: crate::types::FormStyleConfig) -> Self {
@@ -59,8 +63,12 @@ impl FormStyleBuilder {
         self
     }
     /// <p>The spacing for the vertical gap.</p>
-    pub fn set_vertical_gap(mut self, input: std::option::Option<crate::types::FormStyleConfig>) -> Self {
-        self.vertical_gap = input; self
+    pub fn set_vertical_gap(
+        mut self,
+        input: std::option::Option<crate::types::FormStyleConfig>,
+    ) -> Self {
+        self.vertical_gap = input;
+        self
     }
     /// <p>The size of the outer padding for the form.</p>
     pub fn outer_padding(mut self, input: crate::types::FormStyleConfig) -> Self {
@@ -68,19 +76,19 @@ impl FormStyleBuilder {
         self
     }
     /// <p>The size of the outer padding for the form.</p>
-    pub fn set_outer_padding(mut self, input: std::option::Option<crate::types::FormStyleConfig>) -> Self {
-        self.outer_padding = input; self
+    pub fn set_outer_padding(
+        mut self,
+        input: std::option::Option<crate::types::FormStyleConfig>,
+    ) -> Self {
+        self.outer_padding = input;
+        self
     }
     /// Consumes the builder and constructs a [`FormStyle`](crate::types::FormStyle).
     pub fn build(self) -> crate::types::FormStyle {
         crate::types::FormStyle {
-            horizontal_gap: self.horizontal_gap
-            ,
-            vertical_gap: self.vertical_gap
-            ,
-            outer_padding: self.outer_padding
-            ,
+            horizontal_gap: self.horizontal_gap,
+            vertical_gap: self.vertical_gap,
+            outer_padding: self.outer_padding,
         }
     }
 }
-

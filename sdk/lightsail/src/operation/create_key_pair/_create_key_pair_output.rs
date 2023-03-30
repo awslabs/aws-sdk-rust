@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateKeyPairOutput  {
+pub struct CreateKeyPairOutput {
     /// <p>An array of key-value pairs containing information about the new key pair you just created.</p>
     #[doc(hidden)]
     pub key_pair: std::option::Option<crate::types::KeyPair>,
@@ -19,27 +19,27 @@ pub struct CreateKeyPairOutput  {
 }
 impl CreateKeyPairOutput {
     /// <p>An array of key-value pairs containing information about the new key pair you just created.</p>
-    pub fn key_pair(&self) -> std::option::Option<& crate::types::KeyPair> {
+    pub fn key_pair(&self) -> std::option::Option<&crate::types::KeyPair> {
         self.key_pair.as_ref()
     }
     /// <p>A base64-encoded public key of the <code>ssh-rsa</code> type.</p>
-    pub fn public_key_base64(&self) -> std::option::Option<& str> {
+    pub fn public_key_base64(&self) -> std::option::Option<&str> {
         self.public_key_base64.as_deref()
     }
     /// <p>A base64-encoded RSA private key.</p>
-    pub fn private_key_base64(&self) -> std::option::Option<& str> {
+    pub fn private_key_base64(&self) -> std::option::Option<&str> {
         self.private_key_base64.as_deref()
     }
     /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
-    pub fn operation(&self) -> std::option::Option<& crate::types::Operation> {
+    pub fn operation(&self) -> std::option::Option<&crate::types::Operation> {
         self.operation.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for CreateKeyPairOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl CreateKeyPairOutput {
     /// Creates a new builder-style object to manufacture [`CreateKeyPairOutput`](crate::operation::create_key_pair::CreateKeyPairOutput).
     pub fn builder() -> crate::operation::create_key_pair::builders::CreateKeyPairOutputBuilder {
@@ -65,7 +65,8 @@ impl CreateKeyPairOutputBuilder {
     }
     /// <p>An array of key-value pairs containing information about the new key pair you just created.</p>
     pub fn set_key_pair(mut self, input: std::option::Option<crate::types::KeyPair>) -> Self {
-        self.key_pair = input; self
+        self.key_pair = input;
+        self
     }
     /// <p>A base64-encoded public key of the <code>ssh-rsa</code> type.</p>
     pub fn public_key_base64(mut self, input: impl Into<std::string::String>) -> Self {
@@ -73,8 +74,12 @@ impl CreateKeyPairOutputBuilder {
         self
     }
     /// <p>A base64-encoded public key of the <code>ssh-rsa</code> type.</p>
-    pub fn set_public_key_base64(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.public_key_base64 = input; self
+    pub fn set_public_key_base64(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.public_key_base64 = input;
+        self
     }
     /// <p>A base64-encoded RSA private key.</p>
     pub fn private_key_base64(mut self, input: impl Into<std::string::String>) -> Self {
@@ -82,8 +87,12 @@ impl CreateKeyPairOutputBuilder {
         self
     }
     /// <p>A base64-encoded RSA private key.</p>
-    pub fn set_private_key_base64(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.private_key_base64 = input; self
+    pub fn set_private_key_base64(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.private_key_base64 = input;
+        self
     }
     /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
     pub fn operation(mut self, input: crate::types::Operation) -> Self {
@@ -92,30 +101,26 @@ impl CreateKeyPairOutputBuilder {
     }
     /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
     pub fn set_operation(mut self, input: std::option::Option<crate::types::Operation>) -> Self {
-        self.operation = input; self
+        self.operation = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`CreateKeyPairOutput`](crate::operation::create_key_pair::CreateKeyPairOutput).
     pub fn build(self) -> crate::operation::create_key_pair::CreateKeyPairOutput {
         crate::operation::create_key_pair::CreateKeyPairOutput {
-            key_pair: self.key_pair
-            ,
-            public_key_base64: self.public_key_base64
-            ,
-            private_key_base64: self.private_key_base64
-            ,
-            operation: self.operation
-            ,
+            key_pair: self.key_pair,
+            public_key_base64: self.public_key_base64,
+            private_key_base64: self.private_key_base64,
+            operation: self.operation,
             _request_id: self._request_id,
         }
     }
 }
-

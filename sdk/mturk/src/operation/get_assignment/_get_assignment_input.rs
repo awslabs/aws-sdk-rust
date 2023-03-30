@@ -2,14 +2,14 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetAssignmentInput  {
+pub struct GetAssignmentInput {
     /// <p>The ID of the Assignment to be retrieved.</p>
     #[doc(hidden)]
     pub assignment_id: std::option::Option<std::string::String>,
 }
 impl GetAssignmentInput {
     /// <p>The ID of the Assignment to be retrieved.</p>
-    pub fn assignment_id(&self) -> std::option::Option<& str> {
+    pub fn assignment_id(&self) -> std::option::Option<&str> {
         self.assignment_id.as_deref()
     }
 }
@@ -34,16 +34,18 @@ impl GetAssignmentInputBuilder {
     }
     /// <p>The ID of the Assignment to be retrieved.</p>
     pub fn set_assignment_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.assignment_id = input; self
+        self.assignment_id = input;
+        self
     }
     /// Consumes the builder and constructs a [`GetAssignmentInput`](crate::operation::get_assignment::GetAssignmentInput).
-    pub fn build(self) -> Result<crate::operation::get_assignment::GetAssignmentInput, aws_smithy_http::operation::error::BuildError> {
-        Ok(
-            crate::operation::get_assignment::GetAssignmentInput {
-                assignment_id: self.assignment_id
-                ,
-            }
-        )
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::get_assignment::GetAssignmentInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        Ok(crate::operation::get_assignment::GetAssignmentInput {
+            assignment_id: self.assignment_id,
+        })
     }
 }
-

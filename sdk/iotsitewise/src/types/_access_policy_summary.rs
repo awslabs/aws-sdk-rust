@@ -3,7 +3,7 @@
 /// <p>Contains an access policy that defines an identity's access to an IoT SiteWise Monitor resource.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AccessPolicySummary  {
+pub struct AccessPolicySummary {
     /// <p>The ID of the access policy.</p>
     #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
@@ -25,27 +25,27 @@ pub struct AccessPolicySummary  {
 }
 impl AccessPolicySummary {
     /// <p>The ID of the access policy.</p>
-    pub fn id(&self) -> std::option::Option<& str> {
+    pub fn id(&self) -> std::option::Option<&str> {
         self.id.as_deref()
     }
     /// <p>The identity (an IAM Identity Center user, an IAM Identity Center group, or an IAM user).</p>
-    pub fn identity(&self) -> std::option::Option<& crate::types::Identity> {
+    pub fn identity(&self) -> std::option::Option<&crate::types::Identity> {
         self.identity.as_ref()
     }
     /// <p>The IoT SiteWise Monitor resource (a portal or project).</p>
-    pub fn resource(&self) -> std::option::Option<& crate::types::Resource> {
+    pub fn resource(&self) -> std::option::Option<&crate::types::Resource> {
         self.resource.as_ref()
     }
     /// <p>The permissions for the access policy. Note that a project <code>ADMINISTRATOR</code> is also known as a project owner.</p>
-    pub fn permission(&self) -> std::option::Option<& crate::types::Permission> {
+    pub fn permission(&self) -> std::option::Option<&crate::types::Permission> {
         self.permission.as_ref()
     }
     /// <p>The date the access policy was created, in Unix epoch time.</p>
-    pub fn creation_date(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
+    pub fn creation_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.creation_date.as_ref()
     }
     /// <p>The date the access policy was last updated, in Unix epoch time.</p>
-    pub fn last_update_date(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
+    pub fn last_update_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_update_date.as_ref()
     }
 }
@@ -75,7 +75,8 @@ impl AccessPolicySummaryBuilder {
     }
     /// <p>The ID of the access policy.</p>
     pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.id = input; self
+        self.id = input;
+        self
     }
     /// <p>The identity (an IAM Identity Center user, an IAM Identity Center group, or an IAM user).</p>
     pub fn identity(mut self, input: crate::types::Identity) -> Self {
@@ -84,7 +85,8 @@ impl AccessPolicySummaryBuilder {
     }
     /// <p>The identity (an IAM Identity Center user, an IAM Identity Center group, or an IAM user).</p>
     pub fn set_identity(mut self, input: std::option::Option<crate::types::Identity>) -> Self {
-        self.identity = input; self
+        self.identity = input;
+        self
     }
     /// <p>The IoT SiteWise Monitor resource (a portal or project).</p>
     pub fn resource(mut self, input: crate::types::Resource) -> Self {
@@ -93,7 +95,8 @@ impl AccessPolicySummaryBuilder {
     }
     /// <p>The IoT SiteWise Monitor resource (a portal or project).</p>
     pub fn set_resource(mut self, input: std::option::Option<crate::types::Resource>) -> Self {
-        self.resource = input; self
+        self.resource = input;
+        self
     }
     /// <p>The permissions for the access policy. Note that a project <code>ADMINISTRATOR</code> is also known as a project owner.</p>
     pub fn permission(mut self, input: crate::types::Permission) -> Self {
@@ -102,7 +105,8 @@ impl AccessPolicySummaryBuilder {
     }
     /// <p>The permissions for the access policy. Note that a project <code>ADMINISTRATOR</code> is also known as a project owner.</p>
     pub fn set_permission(mut self, input: std::option::Option<crate::types::Permission>) -> Self {
-        self.permission = input; self
+        self.permission = input;
+        self
     }
     /// <p>The date the access policy was created, in Unix epoch time.</p>
     pub fn creation_date(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -110,8 +114,12 @@ impl AccessPolicySummaryBuilder {
         self
     }
     /// <p>The date the access policy was created, in Unix epoch time.</p>
-    pub fn set_creation_date(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.creation_date = input; self
+    pub fn set_creation_date(
+        mut self,
+        input: std::option::Option<aws_smithy_types::DateTime>,
+    ) -> Self {
+        self.creation_date = input;
+        self
     }
     /// <p>The date the access policy was last updated, in Unix epoch time.</p>
     pub fn last_update_date(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -119,25 +127,22 @@ impl AccessPolicySummaryBuilder {
         self
     }
     /// <p>The date the access policy was last updated, in Unix epoch time.</p>
-    pub fn set_last_update_date(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.last_update_date = input; self
+    pub fn set_last_update_date(
+        mut self,
+        input: std::option::Option<aws_smithy_types::DateTime>,
+    ) -> Self {
+        self.last_update_date = input;
+        self
     }
     /// Consumes the builder and constructs a [`AccessPolicySummary`](crate::types::AccessPolicySummary).
     pub fn build(self) -> crate::types::AccessPolicySummary {
         crate::types::AccessPolicySummary {
-            id: self.id
-            ,
-            identity: self.identity
-            ,
-            resource: self.resource
-            ,
-            permission: self.permission
-            ,
-            creation_date: self.creation_date
-            ,
-            last_update_date: self.last_update_date
-            ,
+            id: self.id,
+            identity: self.identity,
+            resource: self.resource,
+            permission: self.permission,
+            creation_date: self.creation_date,
+            last_update_date: self.last_update_date,
         }
     }
 }
-

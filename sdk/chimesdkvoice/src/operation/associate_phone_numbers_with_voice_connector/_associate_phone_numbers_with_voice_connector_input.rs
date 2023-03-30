@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AssociatePhoneNumbersWithVoiceConnectorInput  {
+pub struct AssociatePhoneNumbersWithVoiceConnectorInput {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub voice_connector_id: std::option::Option<std::string::String>,
@@ -15,11 +15,11 @@ pub struct AssociatePhoneNumbersWithVoiceConnectorInput  {
 }
 impl AssociatePhoneNumbersWithVoiceConnectorInput {
     #[allow(missing_docs)] // documentation missing in model
-    pub fn voice_connector_id(&self) -> std::option::Option<& str> {
+    pub fn voice_connector_id(&self) -> std::option::Option<&str> {
         self.voice_connector_id.as_deref()
     }
     #[allow(missing_docs)] // documentation missing in model
-    pub fn e164_phone_numbers(&self) -> std::option::Option<& [std::string::String]> {
+    pub fn e164_phone_numbers(&self) -> std::option::Option<&[std::string::String]> {
         self.e164_phone_numbers.as_deref()
     }
     #[allow(missing_docs)] // documentation missing in model
@@ -29,7 +29,7 @@ impl AssociatePhoneNumbersWithVoiceConnectorInput {
 }
 impl AssociatePhoneNumbersWithVoiceConnectorInput {
     /// Creates a new builder-style object to manufacture [`AssociatePhoneNumbersWithVoiceConnectorInput`](crate::operation::associate_phone_numbers_with_voice_connector::AssociatePhoneNumbersWithVoiceConnectorInput).
-    pub fn builder() -> crate::operation::associate_phone_numbers_with_voice_connector::builders::AssociatePhoneNumbersWithVoiceConnectorInputBuilder {
+    pub fn builder() -> crate::operation::associate_phone_numbers_with_voice_connector::builders::AssociatePhoneNumbersWithVoiceConnectorInputBuilder{
         crate::operation::associate_phone_numbers_with_voice_connector::builders::AssociatePhoneNumbersWithVoiceConnectorInputBuilder::default()
     }
 }
@@ -49,8 +49,12 @@ impl AssociatePhoneNumbersWithVoiceConnectorInputBuilder {
         self
     }
     #[allow(missing_docs)] // documentation missing in model
-    pub fn set_voice_connector_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.voice_connector_id = input; self
+    pub fn set_voice_connector_id(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.voice_connector_id = input;
+        self
     }
     /// Appends an item to `e164_phone_numbers`.
     ///
@@ -58,13 +62,17 @@ impl AssociatePhoneNumbersWithVoiceConnectorInputBuilder {
     ///
     pub fn e164_phone_numbers(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.e164_phone_numbers.unwrap_or_default();
-                        v.push(input.into());
-                        self.e164_phone_numbers = Some(v);
-                        self
+        v.push(input.into());
+        self.e164_phone_numbers = Some(v);
+        self
     }
     #[allow(missing_docs)] // documentation missing in model
-    pub fn set_e164_phone_numbers(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-        self.e164_phone_numbers = input; self
+    pub fn set_e164_phone_numbers(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
+        self.e164_phone_numbers = input;
+        self
     }
     #[allow(missing_docs)] // documentation missing in model
     pub fn force_associate(mut self, input: bool) -> Self {
@@ -73,10 +81,11 @@ impl AssociatePhoneNumbersWithVoiceConnectorInputBuilder {
     }
     #[allow(missing_docs)] // documentation missing in model
     pub fn set_force_associate(mut self, input: std::option::Option<bool>) -> Self {
-        self.force_associate = input; self
+        self.force_associate = input;
+        self
     }
     /// Consumes the builder and constructs a [`AssociatePhoneNumbersWithVoiceConnectorInput`](crate::operation::associate_phone_numbers_with_voice_connector::AssociatePhoneNumbersWithVoiceConnectorInput).
-    pub fn build(self) -> Result<crate::operation::associate_phone_numbers_with_voice_connector::AssociatePhoneNumbersWithVoiceConnectorInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> Result<crate::operation::associate_phone_numbers_with_voice_connector::AssociatePhoneNumbersWithVoiceConnectorInput, aws_smithy_http::operation::error::BuildError>{
         Ok(
             crate::operation::associate_phone_numbers_with_voice_connector::AssociatePhoneNumbersWithVoiceConnectorInput {
                 voice_connector_id: self.voice_connector_id
@@ -89,4 +98,3 @@ impl AssociatePhoneNumbersWithVoiceConnectorInputBuilder {
         )
     }
 }
-

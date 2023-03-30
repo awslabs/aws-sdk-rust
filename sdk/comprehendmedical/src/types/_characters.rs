@@ -3,7 +3,7 @@
 /// <p> The number of characters in the input text to be analyzed. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Characters  {
+pub struct Characters {
     /// <p> The number of characters present in the input text document as processed by Comprehend Medical. </p>
     #[doc(hidden)]
     pub original_text_characters: std::option::Option<i32>,
@@ -35,14 +35,13 @@ impl CharactersBuilder {
     }
     /// <p> The number of characters present in the input text document as processed by Comprehend Medical. </p>
     pub fn set_original_text_characters(mut self, input: std::option::Option<i32>) -> Self {
-        self.original_text_characters = input; self
+        self.original_text_characters = input;
+        self
     }
     /// Consumes the builder and constructs a [`Characters`](crate::types::Characters).
     pub fn build(self) -> crate::types::Characters {
         crate::types::Characters {
-            original_text_characters: self.original_text_characters
-            ,
+            original_text_characters: self.original_text_characters,
         }
     }
 }
-

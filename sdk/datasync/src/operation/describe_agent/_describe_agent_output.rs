@@ -3,7 +3,7 @@
 /// <p>DescribeAgentResponse</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeAgentOutput  {
+pub struct DescribeAgentOutput {
     /// <p>The Amazon Resource Name (ARN) of the agent.</p>
     #[doc(hidden)]
     pub agent_arn: std::option::Option<std::string::String>,
@@ -29,39 +29,39 @@ pub struct DescribeAgentOutput  {
 }
 impl DescribeAgentOutput {
     /// <p>The Amazon Resource Name (ARN) of the agent.</p>
-    pub fn agent_arn(&self) -> std::option::Option<& str> {
+    pub fn agent_arn(&self) -> std::option::Option<&str> {
         self.agent_arn.as_deref()
     }
     /// <p>The name of the agent.</p>
-    pub fn name(&self) -> std::option::Option<& str> {
+    pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>The status of the agent. If the status is ONLINE, then the agent is configured properly and is available to use. The Running status is the normal running status for an agent. If the status is OFFLINE, the agent's VM is turned off or the agent is in an unhealthy state. When the issue that caused the unhealthy state is resolved, the agent returns to ONLINE status.</p>
-    pub fn status(&self) -> std::option::Option<& crate::types::AgentStatus> {
+    pub fn status(&self) -> std::option::Option<&crate::types::AgentStatus> {
         self.status.as_ref()
     }
     /// <p>The time that the agent last connected to DataSync.</p>
-    pub fn last_connection_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
+    pub fn last_connection_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_connection_time.as_ref()
     }
     /// <p>The time that the agent was activated (that is, created in your account).</p>
-    pub fn creation_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
+    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
     /// <p>The type of endpoint that your agent is connected to. If the endpoint is a VPC endpoint, the agent is not accessible over the public internet. </p>
-    pub fn endpoint_type(&self) -> std::option::Option<& crate::types::EndpointType> {
+    pub fn endpoint_type(&self) -> std::option::Option<&crate::types::EndpointType> {
         self.endpoint_type.as_ref()
     }
     /// <p>The subnet and the security group that DataSync used to access a VPC endpoint.</p>
-    pub fn private_link_config(&self) -> std::option::Option<& crate::types::PrivateLinkConfig> {
+    pub fn private_link_config(&self) -> std::option::Option<&crate::types::PrivateLinkConfig> {
         self.private_link_config.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for DescribeAgentOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl DescribeAgentOutput {
     /// Creates a new builder-style object to manufacture [`DescribeAgentOutput`](crate::operation::describe_agent::DescribeAgentOutput).
     pub fn builder() -> crate::operation::describe_agent::builders::DescribeAgentOutputBuilder {
@@ -90,7 +90,8 @@ impl DescribeAgentOutputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the agent.</p>
     pub fn set_agent_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.agent_arn = input; self
+        self.agent_arn = input;
+        self
     }
     /// <p>The name of the agent.</p>
     pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -99,7 +100,8 @@ impl DescribeAgentOutputBuilder {
     }
     /// <p>The name of the agent.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input; self
+        self.name = input;
+        self
     }
     /// <p>The status of the agent. If the status is ONLINE, then the agent is configured properly and is available to use. The Running status is the normal running status for an agent. If the status is OFFLINE, the agent's VM is turned off or the agent is in an unhealthy state. When the issue that caused the unhealthy state is resolved, the agent returns to ONLINE status.</p>
     pub fn status(mut self, input: crate::types::AgentStatus) -> Self {
@@ -108,7 +110,8 @@ impl DescribeAgentOutputBuilder {
     }
     /// <p>The status of the agent. If the status is ONLINE, then the agent is configured properly and is available to use. The Running status is the normal running status for an agent. If the status is OFFLINE, the agent's VM is turned off or the agent is in an unhealthy state. When the issue that caused the unhealthy state is resolved, the agent returns to ONLINE status.</p>
     pub fn set_status(mut self, input: std::option::Option<crate::types::AgentStatus>) -> Self {
-        self.status = input; self
+        self.status = input;
+        self
     }
     /// <p>The time that the agent last connected to DataSync.</p>
     pub fn last_connection_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -116,8 +119,12 @@ impl DescribeAgentOutputBuilder {
         self
     }
     /// <p>The time that the agent last connected to DataSync.</p>
-    pub fn set_last_connection_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.last_connection_time = input; self
+    pub fn set_last_connection_time(
+        mut self,
+        input: std::option::Option<aws_smithy_types::DateTime>,
+    ) -> Self {
+        self.last_connection_time = input;
+        self
     }
     /// <p>The time that the agent was activated (that is, created in your account).</p>
     pub fn creation_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -125,8 +132,12 @@ impl DescribeAgentOutputBuilder {
         self
     }
     /// <p>The time that the agent was activated (that is, created in your account).</p>
-    pub fn set_creation_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.creation_time = input; self
+    pub fn set_creation_time(
+        mut self,
+        input: std::option::Option<aws_smithy_types::DateTime>,
+    ) -> Self {
+        self.creation_time = input;
+        self
     }
     /// <p>The type of endpoint that your agent is connected to. If the endpoint is a VPC endpoint, the agent is not accessible over the public internet. </p>
     pub fn endpoint_type(mut self, input: crate::types::EndpointType) -> Self {
@@ -134,8 +145,12 @@ impl DescribeAgentOutputBuilder {
         self
     }
     /// <p>The type of endpoint that your agent is connected to. If the endpoint is a VPC endpoint, the agent is not accessible over the public internet. </p>
-    pub fn set_endpoint_type(mut self, input: std::option::Option<crate::types::EndpointType>) -> Self {
-        self.endpoint_type = input; self
+    pub fn set_endpoint_type(
+        mut self,
+        input: std::option::Option<crate::types::EndpointType>,
+    ) -> Self {
+        self.endpoint_type = input;
+        self
     }
     /// <p>The subnet and the security group that DataSync used to access a VPC endpoint.</p>
     pub fn private_link_config(mut self, input: crate::types::PrivateLinkConfig) -> Self {
@@ -143,37 +158,33 @@ impl DescribeAgentOutputBuilder {
         self
     }
     /// <p>The subnet and the security group that DataSync used to access a VPC endpoint.</p>
-    pub fn set_private_link_config(mut self, input: std::option::Option<crate::types::PrivateLinkConfig>) -> Self {
-        self.private_link_config = input; self
+    pub fn set_private_link_config(
+        mut self,
+        input: std::option::Option<crate::types::PrivateLinkConfig>,
+    ) -> Self {
+        self.private_link_config = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`DescribeAgentOutput`](crate::operation::describe_agent::DescribeAgentOutput).
     pub fn build(self) -> crate::operation::describe_agent::DescribeAgentOutput {
         crate::operation::describe_agent::DescribeAgentOutput {
-            agent_arn: self.agent_arn
-            ,
-            name: self.name
-            ,
-            status: self.status
-            ,
-            last_connection_time: self.last_connection_time
-            ,
-            creation_time: self.creation_time
-            ,
-            endpoint_type: self.endpoint_type
-            ,
-            private_link_config: self.private_link_config
-            ,
+            agent_arn: self.agent_arn,
+            name: self.name,
+            status: self.status,
+            last_connection_time: self.last_connection_time,
+            creation_time: self.creation_time,
+            endpoint_type: self.endpoint_type,
+            private_link_config: self.private_link_config,
             _request_id: self._request_id,
         }
     }
 }
-

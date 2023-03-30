@@ -3,7 +3,7 @@
 /// <p>ListAgentsRequest</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListAgentsInput  {
+pub struct ListAgentsInput {
     /// <p>The maximum number of agents to list.</p>
     #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
@@ -17,7 +17,7 @@ impl ListAgentsInput {
         self.max_results
     }
     /// <p>An opaque string that indicates the position at which to begin the next list of agents.</p>
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
 }
@@ -43,7 +43,8 @@ impl ListAgentsInputBuilder {
     }
     /// <p>The maximum number of agents to list.</p>
     pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_results = input; self
+        self.max_results = input;
+        self
     }
     /// <p>An opaque string that indicates the position at which to begin the next list of agents.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -52,18 +53,19 @@ impl ListAgentsInputBuilder {
     }
     /// <p>An opaque string that indicates the position at which to begin the next list of agents.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input; self
+        self.next_token = input;
+        self
     }
     /// Consumes the builder and constructs a [`ListAgentsInput`](crate::operation::list_agents::ListAgentsInput).
-    pub fn build(self) -> Result<crate::operation::list_agents::ListAgentsInput, aws_smithy_http::operation::error::BuildError> {
-        Ok(
-            crate::operation::list_agents::ListAgentsInput {
-                max_results: self.max_results
-                ,
-                next_token: self.next_token
-                ,
-            }
-        )
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::list_agents::ListAgentsInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        Ok(crate::operation::list_agents::ListAgentsInput {
+            max_results: self.max_results,
+            next_token: self.next_token,
+        })
     }
 }
-

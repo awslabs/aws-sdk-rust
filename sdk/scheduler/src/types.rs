@@ -112,4 +112,3 @@ pub mod builders;
 
 /// Error types that Amazon EventBridge Scheduler can respond with.
 pub mod error;
-

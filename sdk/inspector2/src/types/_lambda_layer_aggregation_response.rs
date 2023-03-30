@@ -3,7 +3,7 @@
 /// <p>A response that contains the results of an AWS Lambda function layer finding aggregation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct LambdaLayerAggregationResponse  {
+pub struct LambdaLayerAggregationResponse {
     /// <p>The names of the AWS Lambda functions associated with the layers.</p>
     #[doc(hidden)]
     pub function_name: std::option::Option<std::string::String>,
@@ -22,23 +22,23 @@ pub struct LambdaLayerAggregationResponse  {
 }
 impl LambdaLayerAggregationResponse {
     /// <p>The names of the AWS Lambda functions associated with the layers.</p>
-    pub fn function_name(&self) -> std::option::Option<& str> {
+    pub fn function_name(&self) -> std::option::Option<&str> {
         self.function_name.as_deref()
     }
     /// <p>The Resource ID of the AWS Lambda function layer.</p>
-    pub fn resource_id(&self) -> std::option::Option<& str> {
+    pub fn resource_id(&self) -> std::option::Option<&str> {
         self.resource_id.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the AWS Lambda function layer.</p>
-    pub fn layer_arn(&self) -> std::option::Option<& str> {
+    pub fn layer_arn(&self) -> std::option::Option<&str> {
         self.layer_arn.as_deref()
     }
     /// <p>The account ID of the AWS Lambda function layer.</p>
-    pub fn account_id(&self) -> std::option::Option<& str> {
+    pub fn account_id(&self) -> std::option::Option<&str> {
         self.account_id.as_deref()
     }
     /// <p>An object that contains the counts of aggregated finding per severity.</p>
-    pub fn severity_counts(&self) -> std::option::Option<& crate::types::SeverityCounts> {
+    pub fn severity_counts(&self) -> std::option::Option<&crate::types::SeverityCounts> {
         self.severity_counts.as_ref()
     }
 }
@@ -67,7 +67,8 @@ impl LambdaLayerAggregationResponseBuilder {
     }
     /// <p>The names of the AWS Lambda functions associated with the layers.</p>
     pub fn set_function_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.function_name = input; self
+        self.function_name = input;
+        self
     }
     /// <p>The Resource ID of the AWS Lambda function layer.</p>
     pub fn resource_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -76,7 +77,8 @@ impl LambdaLayerAggregationResponseBuilder {
     }
     /// <p>The Resource ID of the AWS Lambda function layer.</p>
     pub fn set_resource_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.resource_id = input; self
+        self.resource_id = input;
+        self
     }
     /// <p>The Amazon Resource Name (ARN) of the AWS Lambda function layer.</p>
     pub fn layer_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -85,7 +87,8 @@ impl LambdaLayerAggregationResponseBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the AWS Lambda function layer.</p>
     pub fn set_layer_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.layer_arn = input; self
+        self.layer_arn = input;
+        self
     }
     /// <p>The account ID of the AWS Lambda function layer.</p>
     pub fn account_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -94,7 +97,8 @@ impl LambdaLayerAggregationResponseBuilder {
     }
     /// <p>The account ID of the AWS Lambda function layer.</p>
     pub fn set_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.account_id = input; self
+        self.account_id = input;
+        self
     }
     /// <p>An object that contains the counts of aggregated finding per severity.</p>
     pub fn severity_counts(mut self, input: crate::types::SeverityCounts) -> Self {
@@ -102,23 +106,21 @@ impl LambdaLayerAggregationResponseBuilder {
         self
     }
     /// <p>An object that contains the counts of aggregated finding per severity.</p>
-    pub fn set_severity_counts(mut self, input: std::option::Option<crate::types::SeverityCounts>) -> Self {
-        self.severity_counts = input; self
+    pub fn set_severity_counts(
+        mut self,
+        input: std::option::Option<crate::types::SeverityCounts>,
+    ) -> Self {
+        self.severity_counts = input;
+        self
     }
     /// Consumes the builder and constructs a [`LambdaLayerAggregationResponse`](crate::types::LambdaLayerAggregationResponse).
     pub fn build(self) -> crate::types::LambdaLayerAggregationResponse {
         crate::types::LambdaLayerAggregationResponse {
-            function_name: self.function_name
-            ,
-            resource_id: self.resource_id
-            ,
-            layer_arn: self.layer_arn
-            ,
-            account_id: self.account_id
-            ,
-            severity_counts: self.severity_counts
-            ,
+            function_name: self.function_name,
+            resource_id: self.resource_id,
+            layer_arn: self.layer_arn,
+            account_id: self.account_id,
+            severity_counts: self.severity_counts,
         }
     }
 }
-

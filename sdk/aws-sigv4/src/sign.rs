@@ -84,7 +84,7 @@ mod tests {
     #[test]
     fn sign_payload_empty_string() {
         let expected = "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855";
-        let actual = sha256_hex_string(&[]);
+        let actual = sha256_hex_string([]);
         assert_eq!(expected, actual);
     }
 }

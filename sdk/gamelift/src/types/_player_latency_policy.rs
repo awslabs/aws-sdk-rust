@@ -3,7 +3,7 @@
 /// <p>Sets a latency cap for individual players when placing a game session. With a latency policy in force, a game session cannot be placed in a fleet location where a player reports latency higher than the cap. Latency policies are used only with placement request that provide player latency information. Player latency policies can be stacked to gradually relax latency requirements over time. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PlayerLatencyPolicy  {
+pub struct PlayerLatencyPolicy {
     /// <p>The maximum latency value that is allowed for any player, in milliseconds. All policies must have a value set for this property.</p>
     #[doc(hidden)]
     pub maximum_individual_player_latency_milliseconds: std::option::Option<i32>,
@@ -42,8 +42,12 @@ impl PlayerLatencyPolicyBuilder {
         self
     }
     /// <p>The maximum latency value that is allowed for any player, in milliseconds. All policies must have a value set for this property.</p>
-    pub fn set_maximum_individual_player_latency_milliseconds(mut self, input: std::option::Option<i32>) -> Self {
-        self.maximum_individual_player_latency_milliseconds = input; self
+    pub fn set_maximum_individual_player_latency_milliseconds(
+        mut self,
+        input: std::option::Option<i32>,
+    ) -> Self {
+        self.maximum_individual_player_latency_milliseconds = input;
+        self
     }
     /// <p>The length of time, in seconds, that the policy is enforced while placing a new game session. A null value for this property means that the policy is enforced until the queue times out.</p>
     pub fn policy_duration_seconds(mut self, input: i32) -> Self {
@@ -52,16 +56,15 @@ impl PlayerLatencyPolicyBuilder {
     }
     /// <p>The length of time, in seconds, that the policy is enforced while placing a new game session. A null value for this property means that the policy is enforced until the queue times out.</p>
     pub fn set_policy_duration_seconds(mut self, input: std::option::Option<i32>) -> Self {
-        self.policy_duration_seconds = input; self
+        self.policy_duration_seconds = input;
+        self
     }
     /// Consumes the builder and constructs a [`PlayerLatencyPolicy`](crate::types::PlayerLatencyPolicy).
     pub fn build(self) -> crate::types::PlayerLatencyPolicy {
         crate::types::PlayerLatencyPolicy {
-            maximum_individual_player_latency_milliseconds: self.maximum_individual_player_latency_milliseconds
-            ,
-            policy_duration_seconds: self.policy_duration_seconds
-            ,
+            maximum_individual_player_latency_milliseconds: self
+                .maximum_individual_player_latency_milliseconds,
+            policy_duration_seconds: self.policy_duration_seconds,
         }
     }
 }
-

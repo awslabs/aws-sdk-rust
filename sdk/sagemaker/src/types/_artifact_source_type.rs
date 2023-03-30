@@ -3,7 +3,7 @@
 /// <p>The ID and ID type of an artifact source.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ArtifactSourceType  {
+pub struct ArtifactSourceType {
     /// <p>The type of ID.</p>
     #[doc(hidden)]
     pub source_id_type: std::option::Option<crate::types::ArtifactSourceIdType>,
@@ -13,11 +13,11 @@ pub struct ArtifactSourceType  {
 }
 impl ArtifactSourceType {
     /// <p>The type of ID.</p>
-    pub fn source_id_type(&self) -> std::option::Option<& crate::types::ArtifactSourceIdType> {
+    pub fn source_id_type(&self) -> std::option::Option<&crate::types::ArtifactSourceIdType> {
         self.source_id_type.as_ref()
     }
     /// <p>The ID.</p>
-    pub fn value(&self) -> std::option::Option<& str> {
+    pub fn value(&self) -> std::option::Option<&str> {
         self.value.as_deref()
     }
 }
@@ -42,8 +42,12 @@ impl ArtifactSourceTypeBuilder {
         self
     }
     /// <p>The type of ID.</p>
-    pub fn set_source_id_type(mut self, input: std::option::Option<crate::types::ArtifactSourceIdType>) -> Self {
-        self.source_id_type = input; self
+    pub fn set_source_id_type(
+        mut self,
+        input: std::option::Option<crate::types::ArtifactSourceIdType>,
+    ) -> Self {
+        self.source_id_type = input;
+        self
     }
     /// <p>The ID.</p>
     pub fn value(mut self, input: impl Into<std::string::String>) -> Self {
@@ -52,16 +56,14 @@ impl ArtifactSourceTypeBuilder {
     }
     /// <p>The ID.</p>
     pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.value = input; self
+        self.value = input;
+        self
     }
     /// Consumes the builder and constructs a [`ArtifactSourceType`](crate::types::ArtifactSourceType).
     pub fn build(self) -> crate::types::ArtifactSourceType {
         crate::types::ArtifactSourceType {
-            source_id_type: self.source_id_type
-            ,
-            value: self.value
-            ,
+            source_id_type: self.source_id_type,
+            value: self.value,
         }
     }
 }
-

@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-/// 
+///
 /// Here is an example of how you can make a match expression forward-compatible:
-/// 
+///
 /// ```text
 /// # let proresinterlacemode = unimplemented!();
 /// match proresinterlacemode {
@@ -33,14 +33,22 @@
 /// Specifically, when `proresinterlacemode` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `ProresInterlaceMode::NewFeature` also yielding `"NewFeature"`.
-/// 
+///
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 /// Choose the scan line type for the output. Keep the default value, Progressive (PROGRESSIVE) to create a progressive output, regardless of the scan type of your input. Use Top field first (TOP_FIELD) or Bottom field first (BOTTOM_FIELD) to create an output that's interlaced with the same field polarity throughout. Use Follow, default top (FOLLOW_TOP_FIELD) or Follow, default bottom (FOLLOW_BOTTOM_FIELD) to produce outputs with the same field polarity as the source. For jobs that have multiple inputs, the output field polarity might change over the course of the output. Follow behavior depends on the input scan type. If the source is interlaced, the output will be interlaced with the same polarity as the source. If the source is progressive, the output will be interlaced with top field bottom field first, depending on which of the Follow options you choose.
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
 pub enum ProresInterlaceMode {
     #[allow(missing_docs)] // documentation missing in model
     BottomField,
@@ -53,47 +61,54 @@ pub enum ProresInterlaceMode {
     #[allow(missing_docs)] // documentation missing in model
     TopField,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::primitives::UnknownVariantValue)
+    Unknown(crate::primitives::UnknownVariantValue),
 }
 impl std::convert::From<&str> for ProresInterlaceMode {
-                fn from(s: &str) -> Self {
-                    match s {
-                        "BOTTOM_FIELD" => ProresInterlaceMode::BottomField,
-"FOLLOW_BOTTOM_FIELD" => ProresInterlaceMode::FollowBottomField,
-"FOLLOW_TOP_FIELD" => ProresInterlaceMode::FollowTopField,
-"PROGRESSIVE" => ProresInterlaceMode::Progressive,
-"TOP_FIELD" => ProresInterlaceMode::TopField,
-other => ProresInterlaceMode::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
-                    }
-                }
-            }
-impl std::str::FromStr for ProresInterlaceMode {
-                type Err = std::convert::Infallible;
-
-                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-                    Ok(ProresInterlaceMode::from(s))
-                }
-            }
-impl ProresInterlaceMode {
-                /// Returns the `&str` value of the enum member.
-                pub fn as_str(&self) -> &str {
-                    match self {
-    ProresInterlaceMode::BottomField => "BOTTOM_FIELD",
-    ProresInterlaceMode::FollowBottomField => "FOLLOW_BOTTOM_FIELD",
-    ProresInterlaceMode::FollowTopField => "FOLLOW_TOP_FIELD",
-    ProresInterlaceMode::Progressive => "PROGRESSIVE",
-    ProresInterlaceMode::TopField => "TOP_FIELD",
-    ProresInterlaceMode::Unknown(value) => value.as_str()
+    fn from(s: &str) -> Self {
+        match s {
+            "BOTTOM_FIELD" => ProresInterlaceMode::BottomField,
+            "FOLLOW_BOTTOM_FIELD" => ProresInterlaceMode::FollowBottomField,
+            "FOLLOW_TOP_FIELD" => ProresInterlaceMode::FollowTopField,
+            "PROGRESSIVE" => ProresInterlaceMode::Progressive,
+            "TOP_FIELD" => ProresInterlaceMode::TopField,
+            other => ProresInterlaceMode::Unknown(crate::primitives::UnknownVariantValue(
+                other.to_owned(),
+            )),
+        }
+    }
 }
-                }
-                /// Returns all the `&str` representations of the enum members.
-                pub const fn values() -> &'static [&'static str] {
-                    &["BOTTOM_FIELD", "FOLLOW_BOTTOM_FIELD", "FOLLOW_TOP_FIELD", "PROGRESSIVE", "TOP_FIELD"]
-                }
-            }
-impl AsRef<str> for ProresInterlaceMode {
-                fn as_ref(&self) -> &str {
-                    self.as_str()
-                }
-            }
+impl std::str::FromStr for ProresInterlaceMode {
+    type Err = std::convert::Infallible;
 
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(ProresInterlaceMode::from(s))
+    }
+}
+impl ProresInterlaceMode {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            ProresInterlaceMode::BottomField => "BOTTOM_FIELD",
+            ProresInterlaceMode::FollowBottomField => "FOLLOW_BOTTOM_FIELD",
+            ProresInterlaceMode::FollowTopField => "FOLLOW_TOP_FIELD",
+            ProresInterlaceMode::Progressive => "PROGRESSIVE",
+            ProresInterlaceMode::TopField => "TOP_FIELD",
+            ProresInterlaceMode::Unknown(value) => value.as_str(),
+        }
+    }
+    /// Returns all the `&str` representations of the enum members.
+    pub const fn values() -> &'static [&'static str] {
+        &[
+            "BOTTOM_FIELD",
+            "FOLLOW_BOTTOM_FIELD",
+            "FOLLOW_TOP_FIELD",
+            "PROGRESSIVE",
+            "TOP_FIELD",
+        ]
+    }
+}
+impl AsRef<str> for ProresInterlaceMode {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}

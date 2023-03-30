@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetManagedScalingPolicyOutput  {
+pub struct GetManagedScalingPolicyOutput {
     /// <p>Specifies the managed scaling policy that is attached to an Amazon EMR cluster. </p>
     #[doc(hidden)]
     pub managed_scaling_policy: std::option::Option<crate::types::ManagedScalingPolicy>,
@@ -10,18 +10,22 @@ pub struct GetManagedScalingPolicyOutput  {
 }
 impl GetManagedScalingPolicyOutput {
     /// <p>Specifies the managed scaling policy that is attached to an Amazon EMR cluster. </p>
-    pub fn managed_scaling_policy(&self) -> std::option::Option<& crate::types::ManagedScalingPolicy> {
+    pub fn managed_scaling_policy(
+        &self,
+    ) -> std::option::Option<&crate::types::ManagedScalingPolicy> {
         self.managed_scaling_policy.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for GetManagedScalingPolicyOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl GetManagedScalingPolicyOutput {
     /// Creates a new builder-style object to manufacture [`GetManagedScalingPolicyOutput`](crate::operation::get_managed_scaling_policy::GetManagedScalingPolicyOutput).
-    pub fn builder() -> crate::operation::get_managed_scaling_policy::builders::GetManagedScalingPolicyOutputBuilder {
+    pub fn builder(
+    ) -> crate::operation::get_managed_scaling_policy::builders::GetManagedScalingPolicyOutputBuilder
+    {
         crate::operation::get_managed_scaling_policy::builders::GetManagedScalingPolicyOutputBuilder::default()
     }
 }
@@ -40,25 +44,29 @@ impl GetManagedScalingPolicyOutputBuilder {
         self
     }
     /// <p>Specifies the managed scaling policy that is attached to an Amazon EMR cluster. </p>
-    pub fn set_managed_scaling_policy(mut self, input: std::option::Option<crate::types::ManagedScalingPolicy>) -> Self {
-        self.managed_scaling_policy = input; self
+    pub fn set_managed_scaling_policy(
+        mut self,
+        input: std::option::Option<crate::types::ManagedScalingPolicy>,
+    ) -> Self {
+        self.managed_scaling_policy = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`GetManagedScalingPolicyOutput`](crate::operation::get_managed_scaling_policy::GetManagedScalingPolicyOutput).
-    pub fn build(self) -> crate::operation::get_managed_scaling_policy::GetManagedScalingPolicyOutput {
+    pub fn build(
+        self,
+    ) -> crate::operation::get_managed_scaling_policy::GetManagedScalingPolicyOutput {
         crate::operation::get_managed_scaling_policy::GetManagedScalingPolicyOutput {
-            managed_scaling_policy: self.managed_scaling_policy
-            ,
+            managed_scaling_policy: self.managed_scaling_policy,
             _request_id: self._request_id,
         }
     }
 }
-

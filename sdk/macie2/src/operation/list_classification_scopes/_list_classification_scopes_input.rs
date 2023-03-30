@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListClassificationScopesInput  {
+pub struct ListClassificationScopesInput {
     /// <p>The name of the classification scope to retrieve the unique identifier for.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -12,17 +12,19 @@ pub struct ListClassificationScopesInput  {
 }
 impl ListClassificationScopesInput {
     /// <p>The name of the classification scope to retrieve the unique identifier for.</p>
-    pub fn name(&self) -> std::option::Option<& str> {
+    pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>The nextToken string that specifies which page of results to return in a paginated response.</p>
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
 }
 impl ListClassificationScopesInput {
     /// Creates a new builder-style object to manufacture [`ListClassificationScopesInput`](crate::operation::list_classification_scopes::ListClassificationScopesInput).
-    pub fn builder() -> crate::operation::list_classification_scopes::builders::ListClassificationScopesInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::list_classification_scopes::builders::ListClassificationScopesInputBuilder
+    {
         crate::operation::list_classification_scopes::builders::ListClassificationScopesInputBuilder::default()
     }
 }
@@ -42,7 +44,8 @@ impl ListClassificationScopesInputBuilder {
     }
     /// <p>The name of the classification scope to retrieve the unique identifier for.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input; self
+        self.name = input;
+        self
     }
     /// <p>The nextToken string that specifies which page of results to return in a paginated response.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -51,18 +54,21 @@ impl ListClassificationScopesInputBuilder {
     }
     /// <p>The nextToken string that specifies which page of results to return in a paginated response.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input; self
+        self.next_token = input;
+        self
     }
     /// Consumes the builder and constructs a [`ListClassificationScopesInput`](crate::operation::list_classification_scopes::ListClassificationScopesInput).
-    pub fn build(self) -> Result<crate::operation::list_classification_scopes::ListClassificationScopesInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::list_classification_scopes::ListClassificationScopesInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::list_classification_scopes::ListClassificationScopesInput {
-                name: self.name
-                ,
-                next_token: self.next_token
-                ,
-            }
+                name: self.name,
+                next_token: self.next_token,
+            },
         )
     }
 }
-

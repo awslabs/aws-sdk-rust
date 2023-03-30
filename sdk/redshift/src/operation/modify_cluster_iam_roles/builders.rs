@@ -4,57 +4,82 @@ pub use crate::operation::modify_cluster_iam_roles::_modify_cluster_iam_roles_ou
 pub use crate::operation::modify_cluster_iam_roles::_modify_cluster_iam_roles_input::ModifyClusterIamRolesInputBuilder;
 
 /// Fluent builder constructing a request to `ModifyClusterIamRoles`.
-/// 
-/// <p>Modifies the list of Identity and Access Management (IAM) roles that can be used by the cluster to access other Amazon Web Services services.</p> 
+///
+/// <p>Modifies the list of Identity and Access Management (IAM) roles that can be used by the cluster to access other Amazon Web Services services.</p>
 /// <p>The maximum number of IAM roles that you can associate is subject to a quota. For more information, go to <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/amazon-redshift-limits.html">Quotas and limits</a> in the <i>Amazon Redshift Cluster Management Guide</i>.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ModifyClusterIamRolesFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::modify_cluster_iam_roles::builders::ModifyClusterIamRolesInputBuilder
-            }
-impl ModifyClusterIamRolesFluentBuilder  {
+    handle: std::sync::Arc<crate::client::Handle>,
+    inner: crate::operation::modify_cluster_iam_roles::builders::ModifyClusterIamRolesInputBuilder,
+}
+impl ModifyClusterIamRolesFluentBuilder {
     /// Creates a new `ModifyClusterIamRoles`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
-                    /// sent. The operation's inner [http::Request] can be modified as well.
-                    pub async fn customize(self) -> std::result::Result<
-                        crate::client::customize::CustomizableOperation<crate::operation::modify_cluster_iam_roles::ModifyClusterIamRoles, aws_http::retry::AwsResponseRetryClassifier,>,
-                        aws_smithy_http::result::SdkError<crate::operation::modify_cluster_iam_roles::ModifyClusterIamRolesError>
-                    >  {
-                        let handle = self.handle.clone();
-                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-                    }
-    
-                    /// Sends the request and returns the response.
-                    ///
-                    /// If an error occurs, an `SdkError` will be returned with additional details that
-                    /// can be matched against.
-                    ///
-                    /// By default, any retryable failures will be retried twice. Retry behavior
-                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                    /// set when configuring the client.
-                    pub async fn send(self) -> std::result::Result<crate::operation::modify_cluster_iam_roles::ModifyClusterIamRolesOutput, aws_smithy_http::result::SdkError<crate::operation::modify_cluster_iam_roles::ModifyClusterIamRolesError>>
-                     {
-                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&self.handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        self.handle.client.call(op).await
-                    }
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle,
+            inner: Default::default(),
+        }
+    }
+
+    /// Consume this builder, creating a customizable operation that can be modified before being
+    /// sent. The operation's inner [http::Request] can be modified as well.
+    pub async fn customize(
+        self,
+    ) -> std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::modify_cluster_iam_roles::ModifyClusterIamRoles,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::result::SdkError<
+            crate::operation::modify_cluster_iam_roles::ModifyClusterIamRolesError,
+        >,
+    > {
+        let handle = self.handle.clone();
+        let operation = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+    }
+
+    /// Sends the request and returns the response.
+    ///
+    /// If an error occurs, an `SdkError` will be returned with additional details that
+    /// can be matched against.
+    ///
+    /// By default, any retryable failures will be retried twice. Retry behavior
+    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+    /// set when configuring the client.
+    pub async fn send(
+        self,
+    ) -> std::result::Result<
+        crate::operation::modify_cluster_iam_roles::ModifyClusterIamRolesOutput,
+        aws_smithy_http::result::SdkError<
+            crate::operation::modify_cluster_iam_roles::ModifyClusterIamRolesError,
+        >,
+    > {
+        let op = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&self.handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        self.handle.client.call(op).await
+    }
     /// <p>The unique identifier of the cluster for which you want to associate or disassociate IAM roles.</p>
     pub fn cluster_identifier(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.cluster_identifier(input.into());
         self
     }
     /// <p>The unique identifier of the cluster for which you want to associate or disassociate IAM roles.</p>
-    pub fn set_cluster_identifier(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_cluster_identifier(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_cluster_identifier(input);
         self
     }
@@ -68,7 +93,10 @@ impl ModifyClusterIamRolesFluentBuilder  {
         self
     }
     /// <p>Zero or more IAM roles to associate with the cluster. The roles must be in their Amazon Resource Name (ARN) format. </p>
-    pub fn set_add_iam_roles(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+    pub fn set_add_iam_roles(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
         self.inner = self.inner.set_add_iam_roles(input);
         self
     }
@@ -82,7 +110,10 @@ impl ModifyClusterIamRolesFluentBuilder  {
         self
     }
     /// <p>Zero or more IAM roles in ARN format to disassociate from the cluster. </p>
-    pub fn set_remove_iam_roles(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+    pub fn set_remove_iam_roles(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
         self.inner = self.inner.set_remove_iam_roles(input);
         self
     }
@@ -92,9 +123,11 @@ impl ModifyClusterIamRolesFluentBuilder  {
         self
     }
     /// <p>The Amazon Resource Name (ARN) for the IAM role that was set as default for the cluster when the cluster was last modified.</p>
-    pub fn set_default_iam_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_default_iam_role_arn(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_default_iam_role_arn(input);
         self
     }
 }
-

@@ -112,4 +112,3 @@ pub use crate::types::_anomaly_detector_config_summary::AnomalyDetectorConfigSum
 pub use crate::types::_execution_status::ExecutionStatusBuilder;
 
 pub use crate::types::_alert::AlertBuilder;
-

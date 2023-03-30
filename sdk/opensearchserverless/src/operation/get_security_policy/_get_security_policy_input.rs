@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetSecurityPolicyInput  {
+pub struct GetSecurityPolicyInput {
     /// <p>The type of security policy.</p>
     #[doc(hidden)]
     pub r#type: std::option::Option<crate::types::SecurityPolicyType>,
@@ -12,17 +12,18 @@ pub struct GetSecurityPolicyInput  {
 }
 impl GetSecurityPolicyInput {
     /// <p>The type of security policy.</p>
-    pub fn r#type(&self) -> std::option::Option<& crate::types::SecurityPolicyType> {
+    pub fn r#type(&self) -> std::option::Option<&crate::types::SecurityPolicyType> {
         self.r#type.as_ref()
     }
     /// <p>The name of the security policy.</p>
-    pub fn name(&self) -> std::option::Option<& str> {
+    pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
 }
 impl GetSecurityPolicyInput {
     /// Creates a new builder-style object to manufacture [`GetSecurityPolicyInput`](crate::operation::get_security_policy::GetSecurityPolicyInput).
-    pub fn builder() -> crate::operation::get_security_policy::builders::GetSecurityPolicyInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::get_security_policy::builders::GetSecurityPolicyInputBuilder {
         crate::operation::get_security_policy::builders::GetSecurityPolicyInputBuilder::default()
     }
 }
@@ -41,8 +42,12 @@ impl GetSecurityPolicyInputBuilder {
         self
     }
     /// <p>The type of security policy.</p>
-    pub fn set_type(mut self, input: std::option::Option<crate::types::SecurityPolicyType>) -> Self {
-        self.r#type = input; self
+    pub fn set_type(
+        mut self,
+        input: std::option::Option<crate::types::SecurityPolicyType>,
+    ) -> Self {
+        self.r#type = input;
+        self
     }
     /// <p>The name of the security policy.</p>
     pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -51,18 +56,21 @@ impl GetSecurityPolicyInputBuilder {
     }
     /// <p>The name of the security policy.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input; self
+        self.name = input;
+        self
     }
     /// Consumes the builder and constructs a [`GetSecurityPolicyInput`](crate::operation::get_security_policy::GetSecurityPolicyInput).
-    pub fn build(self) -> Result<crate::operation::get_security_policy::GetSecurityPolicyInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::get_security_policy::GetSecurityPolicyInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::get_security_policy::GetSecurityPolicyInput {
-                r#type: self.r#type
-                ,
-                name: self.name
-                ,
-            }
+                r#type: self.r#type,
+                name: self.name,
+            },
         )
     }
 }
-

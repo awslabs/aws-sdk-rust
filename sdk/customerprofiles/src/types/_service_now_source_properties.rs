@@ -3,14 +3,14 @@
 /// <p>The properties that are applied when ServiceNow is being used as a source.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ServiceNowSourceProperties  {
+pub struct ServiceNowSourceProperties {
     /// <p>The object specified in the ServiceNow flow source.</p>
     #[doc(hidden)]
     pub object: std::option::Option<std::string::String>,
 }
 impl ServiceNowSourceProperties {
     /// <p>The object specified in the ServiceNow flow source.</p>
-    pub fn object(&self) -> std::option::Option<& str> {
+    pub fn object(&self) -> std::option::Option<&str> {
         self.object.as_deref()
     }
 }
@@ -35,14 +35,13 @@ impl ServiceNowSourcePropertiesBuilder {
     }
     /// <p>The object specified in the ServiceNow flow source.</p>
     pub fn set_object(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.object = input; self
+        self.object = input;
+        self
     }
     /// Consumes the builder and constructs a [`ServiceNowSourceProperties`](crate::types::ServiceNowSourceProperties).
     pub fn build(self) -> crate::types::ServiceNowSourceProperties {
         crate::types::ServiceNowSourceProperties {
-            object: self.object
-            ,
+            object: self.object,
         }
     }
 }
-

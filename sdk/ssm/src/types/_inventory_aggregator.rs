@@ -3,7 +3,7 @@
 /// <p>Specifies the inventory type and attribute for the aggregation execution.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct InventoryAggregator  {
+pub struct InventoryAggregator {
     /// <p>The inventory type and attribute name for aggregation.</p>
     #[doc(hidden)]
     pub expression: std::option::Option<std::string::String>,
@@ -16,15 +16,15 @@ pub struct InventoryAggregator  {
 }
 impl InventoryAggregator {
     /// <p>The inventory type and attribute name for aggregation.</p>
-    pub fn expression(&self) -> std::option::Option<& str> {
+    pub fn expression(&self) -> std::option::Option<&str> {
         self.expression.as_deref()
     }
     /// <p>Nested aggregators to further refine aggregation for an inventory type.</p>
-    pub fn aggregators(&self) -> std::option::Option<& [crate::types::InventoryAggregator]> {
+    pub fn aggregators(&self) -> std::option::Option<&[crate::types::InventoryAggregator]> {
         self.aggregators.as_deref()
     }
     /// <p>A user-defined set of one or more filters on which to aggregate inventory data. Groups return a count of resources that match and don't match the specified criteria.</p>
-    pub fn groups(&self) -> std::option::Option<& [crate::types::InventoryGroup]> {
+    pub fn groups(&self) -> std::option::Option<&[crate::types::InventoryGroup]> {
         self.groups.as_deref()
     }
 }
@@ -51,7 +51,8 @@ impl InventoryAggregatorBuilder {
     }
     /// <p>The inventory type and attribute name for aggregation.</p>
     pub fn set_expression(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.expression = input; self
+        self.expression = input;
+        self
     }
     /// Appends an item to `aggregators`.
     ///
@@ -60,13 +61,17 @@ impl InventoryAggregatorBuilder {
     /// <p>Nested aggregators to further refine aggregation for an inventory type.</p>
     pub fn aggregators(mut self, input: crate::types::InventoryAggregator) -> Self {
         let mut v = self.aggregators.unwrap_or_default();
-                        v.push(input);
-                        self.aggregators = Some(v);
-                        self
+        v.push(input);
+        self.aggregators = Some(v);
+        self
     }
     /// <p>Nested aggregators to further refine aggregation for an inventory type.</p>
-    pub fn set_aggregators(mut self, input: std::option::Option<std::vec::Vec<crate::types::InventoryAggregator>>) -> Self {
-        self.aggregators = input; self
+    pub fn set_aggregators(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::InventoryAggregator>>,
+    ) -> Self {
+        self.aggregators = input;
+        self
     }
     /// Appends an item to `groups`.
     ///
@@ -75,24 +80,24 @@ impl InventoryAggregatorBuilder {
     /// <p>A user-defined set of one or more filters on which to aggregate inventory data. Groups return a count of resources that match and don't match the specified criteria.</p>
     pub fn groups(mut self, input: crate::types::InventoryGroup) -> Self {
         let mut v = self.groups.unwrap_or_default();
-                        v.push(input);
-                        self.groups = Some(v);
-                        self
+        v.push(input);
+        self.groups = Some(v);
+        self
     }
     /// <p>A user-defined set of one or more filters on which to aggregate inventory data. Groups return a count of resources that match and don't match the specified criteria.</p>
-    pub fn set_groups(mut self, input: std::option::Option<std::vec::Vec<crate::types::InventoryGroup>>) -> Self {
-        self.groups = input; self
+    pub fn set_groups(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::InventoryGroup>>,
+    ) -> Self {
+        self.groups = input;
+        self
     }
     /// Consumes the builder and constructs a [`InventoryAggregator`](crate::types::InventoryAggregator).
     pub fn build(self) -> crate::types::InventoryAggregator {
         crate::types::InventoryAggregator {
-            expression: self.expression
-            ,
-            aggregators: self.aggregators
-            ,
-            groups: self.groups
-            ,
+            expression: self.expression,
+            aggregators: self.aggregators,
+            groups: self.groups,
         }
     }
 }
-

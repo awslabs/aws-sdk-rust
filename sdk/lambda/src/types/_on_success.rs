@@ -3,14 +3,14 @@
 /// <p>A destination for events that were processed successfully.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct OnSuccess  {
+pub struct OnSuccess {
     /// <p>The Amazon Resource Name (ARN) of the destination resource.</p>
     #[doc(hidden)]
     pub destination: std::option::Option<std::string::String>,
 }
 impl OnSuccess {
     /// <p>The Amazon Resource Name (ARN) of the destination resource.</p>
-    pub fn destination(&self) -> std::option::Option<& str> {
+    pub fn destination(&self) -> std::option::Option<&str> {
         self.destination.as_deref()
     }
 }
@@ -35,14 +35,13 @@ impl OnSuccessBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the destination resource.</p>
     pub fn set_destination(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.destination = input; self
+        self.destination = input;
+        self
     }
     /// Consumes the builder and constructs a [`OnSuccess`](crate::types::OnSuccess).
     pub fn build(self) -> crate::types::OnSuccess {
         crate::types::OnSuccess {
-            destination: self.destination
-            ,
+            destination: self.destination,
         }
     }
 }
-

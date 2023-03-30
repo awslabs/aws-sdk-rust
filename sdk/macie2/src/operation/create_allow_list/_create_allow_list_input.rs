@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateAllowListInput  {
+pub struct CreateAllowListInput {
     /// <p>A unique, case-sensitive token that you provide to ensure the idempotency of the request.</p>
     #[doc(hidden)]
     pub client_token: std::option::Option<std::string::String>,
@@ -15,31 +15,35 @@ pub struct CreateAllowListInput  {
     /// <p>A custom name for the allow list. The name can contain as many as 128 characters.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
-    /// <p>A map of key-value pairs that specifies the tags to associate with the allow list.</p> 
+    /// <p>A map of key-value pairs that specifies the tags to associate with the allow list.</p>
     /// <p>An allow list can have a maximum of 50 tags. Each tag consists of a tag key and an associated tag value. The maximum length of a tag key is 128 characters. The maximum length of a tag value is 256 characters.</p>
     #[doc(hidden)]
-    pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub tags:
+        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl CreateAllowListInput {
     /// <p>A unique, case-sensitive token that you provide to ensure the idempotency of the request.</p>
-    pub fn client_token(&self) -> std::option::Option<& str> {
+    pub fn client_token(&self) -> std::option::Option<&str> {
         self.client_token.as_deref()
     }
     /// <p>The criteria that specify the text or text pattern to ignore. The criteria can be the location and name of an S3 object that lists specific text to ignore (s3WordsList), or a regular expression (regex) that defines a text pattern to ignore.</p>
-    pub fn criteria(&self) -> std::option::Option<& crate::types::AllowListCriteria> {
+    pub fn criteria(&self) -> std::option::Option<&crate::types::AllowListCriteria> {
         self.criteria.as_ref()
     }
     /// <p>A custom description of the allow list. The description can contain as many as 512 characters.</p>
-    pub fn description(&self) -> std::option::Option<& str> {
+    pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
     /// <p>A custom name for the allow list. The name can contain as many as 128 characters.</p>
-    pub fn name(&self) -> std::option::Option<& str> {
+    pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
-    /// <p>A map of key-value pairs that specifies the tags to associate with the allow list.</p> 
+    /// <p>A map of key-value pairs that specifies the tags to associate with the allow list.</p>
     /// <p>An allow list can have a maximum of 50 tags. Each tag consists of a tag key and an associated tag value. The maximum length of a tag key is 128 characters. The maximum length of a tag value is 256 characters.</p>
-    pub fn tags(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
         self.tags.as_ref()
     }
 }
@@ -58,7 +62,8 @@ pub struct CreateAllowListInputBuilder {
     pub(crate) criteria: std::option::Option<crate::types::AllowListCriteria>,
     pub(crate) description: std::option::Option<std::string::String>,
     pub(crate) name: std::option::Option<std::string::String>,
-    pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub(crate) tags:
+        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl CreateAllowListInputBuilder {
     /// <p>A unique, case-sensitive token that you provide to ensure the idempotency of the request.</p>
@@ -68,7 +73,8 @@ impl CreateAllowListInputBuilder {
     }
     /// <p>A unique, case-sensitive token that you provide to ensure the idempotency of the request.</p>
     pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.client_token = input; self
+        self.client_token = input;
+        self
     }
     /// <p>The criteria that specify the text or text pattern to ignore. The criteria can be the location and name of an S3 object that lists specific text to ignore (s3WordsList), or a regular expression (regex) that defines a text pattern to ignore.</p>
     pub fn criteria(mut self, input: crate::types::AllowListCriteria) -> Self {
@@ -76,8 +82,12 @@ impl CreateAllowListInputBuilder {
         self
     }
     /// <p>The criteria that specify the text or text pattern to ignore. The criteria can be the location and name of an S3 object that lists specific text to ignore (s3WordsList), or a regular expression (regex) that defines a text pattern to ignore.</p>
-    pub fn set_criteria(mut self, input: std::option::Option<crate::types::AllowListCriteria>) -> Self {
-        self.criteria = input; self
+    pub fn set_criteria(
+        mut self,
+        input: std::option::Option<crate::types::AllowListCriteria>,
+    ) -> Self {
+        self.criteria = input;
+        self
     }
     /// <p>A custom description of the allow list. The description can contain as many as 512 characters.</p>
     pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -86,7 +96,8 @@ impl CreateAllowListInputBuilder {
     }
     /// <p>A custom description of the allow list. The description can contain as many as 512 characters.</p>
     pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.description = input; self
+        self.description = input;
+        self
     }
     /// <p>A custom name for the allow list. The name can contain as many as 128 characters.</p>
     pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -95,41 +106,49 @@ impl CreateAllowListInputBuilder {
     }
     /// <p>A custom name for the allow list. The name can contain as many as 128 characters.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input; self
+        self.name = input;
+        self
     }
     /// Adds a key-value pair to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
-    /// <p>A map of key-value pairs that specifies the tags to associate with the allow list.</p> 
+    /// <p>A map of key-value pairs that specifies the tags to associate with the allow list.</p>
     /// <p>An allow list can have a maximum of 50 tags. Each tag consists of a tag key and an associated tag value. The maximum length of a tag key is 128 characters. The maximum length of a tag value is 256 characters.</p>
-    pub fn tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
+    pub fn tags(
+        mut self,
+        k: impl Into<std::string::String>,
+        v: impl Into<std::string::String>,
+    ) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
-                        hash_map.insert(k.into(), v.into());
-                        self.tags = Some(hash_map);
-                        self
+        hash_map.insert(k.into(), v.into());
+        self.tags = Some(hash_map);
+        self
     }
-    /// <p>A map of key-value pairs that specifies the tags to associate with the allow list.</p> 
+    /// <p>A map of key-value pairs that specifies the tags to associate with the allow list.</p>
     /// <p>An allow list can have a maximum of 50 tags. Each tag consists of a tag key and an associated tag value. The maximum length of a tag key is 128 characters. The maximum length of a tag value is 256 characters.</p>
-    pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
-        self.tags = input; self
+    pub fn set_tags(
+        mut self,
+        input: std::option::Option<
+            std::collections::HashMap<std::string::String, std::string::String>,
+        >,
+    ) -> Self {
+        self.tags = input;
+        self
     }
     /// Consumes the builder and constructs a [`CreateAllowListInput`](crate::operation::create_allow_list::CreateAllowListInput).
-    pub fn build(self) -> Result<crate::operation::create_allow_list::CreateAllowListInput, aws_smithy_http::operation::error::BuildError> {
-        Ok(
-            crate::operation::create_allow_list::CreateAllowListInput {
-                client_token: self.client_token
-                ,
-                criteria: self.criteria
-                ,
-                description: self.description
-                ,
-                name: self.name
-                ,
-                tags: self.tags
-                ,
-            }
-        )
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::create_allow_list::CreateAllowListInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        Ok(crate::operation::create_allow_list::CreateAllowListInput {
+            client_token: self.client_token,
+            criteria: self.criteria,
+            description: self.description,
+            name: self.name,
+            tags: self.tags,
+        })
     }
 }
-

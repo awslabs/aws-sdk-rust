@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeBrokerEngineTypesInput  {
+pub struct DescribeBrokerEngineTypesInput {
     /// <p>Filter response by engine type.</p>
     #[doc(hidden)]
     pub engine_type: std::option::Option<std::string::String>,
@@ -15,7 +15,7 @@ pub struct DescribeBrokerEngineTypesInput  {
 }
 impl DescribeBrokerEngineTypesInput {
     /// <p>Filter response by engine type.</p>
-    pub fn engine_type(&self) -> std::option::Option<& str> {
+    pub fn engine_type(&self) -> std::option::Option<&str> {
         self.engine_type.as_deref()
     }
     /// <p>The maximum number of brokers that Amazon MQ can return per page (20 by default). This value must be an integer from 5 to 100.</p>
@@ -23,13 +23,13 @@ impl DescribeBrokerEngineTypesInput {
         self.max_results
     }
     /// <p>The token that specifies the next page of results Amazon MQ should return. To request the first page, leave nextToken empty.</p>
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
 }
 impl DescribeBrokerEngineTypesInput {
     /// Creates a new builder-style object to manufacture [`DescribeBrokerEngineTypesInput`](crate::operation::describe_broker_engine_types::DescribeBrokerEngineTypesInput).
-    pub fn builder() -> crate::operation::describe_broker_engine_types::builders::DescribeBrokerEngineTypesInputBuilder {
+    pub fn builder() -> crate::operation::describe_broker_engine_types::builders::DescribeBrokerEngineTypesInputBuilder{
         crate::operation::describe_broker_engine_types::builders::DescribeBrokerEngineTypesInputBuilder::default()
     }
 }
@@ -50,7 +50,8 @@ impl DescribeBrokerEngineTypesInputBuilder {
     }
     /// <p>Filter response by engine type.</p>
     pub fn set_engine_type(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.engine_type = input; self
+        self.engine_type = input;
+        self
     }
     /// <p>The maximum number of brokers that Amazon MQ can return per page (20 by default). This value must be an integer from 5 to 100.</p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -59,7 +60,8 @@ impl DescribeBrokerEngineTypesInputBuilder {
     }
     /// <p>The maximum number of brokers that Amazon MQ can return per page (20 by default). This value must be an integer from 5 to 100.</p>
     pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_results = input; self
+        self.max_results = input;
+        self
     }
     /// <p>The token that specifies the next page of results Amazon MQ should return. To request the first page, leave nextToken empty.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -68,21 +70,22 @@ impl DescribeBrokerEngineTypesInputBuilder {
     }
     /// <p>The token that specifies the next page of results Amazon MQ should return. To request the first page, leave nextToken empty.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input; self
+        self.next_token = input;
+        self
     }
     /// Consumes the builder and constructs a [`DescribeBrokerEngineTypesInput`](crate::operation::describe_broker_engine_types::DescribeBrokerEngineTypesInput).
-    pub fn build(self) -> Result<crate::operation::describe_broker_engine_types::DescribeBrokerEngineTypesInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::describe_broker_engine_types::DescribeBrokerEngineTypesInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::describe_broker_engine_types::DescribeBrokerEngineTypesInput {
-                engine_type: self.engine_type
-                ,
-                max_results: self.max_results
-                    .unwrap_or_default()
-                ,
-                next_token: self.next_token
-                ,
-            }
+                engine_type: self.engine_type,
+                max_results: self.max_results.unwrap_or_default(),
+                next_token: self.next_token,
+            },
         )
     }
 }
-

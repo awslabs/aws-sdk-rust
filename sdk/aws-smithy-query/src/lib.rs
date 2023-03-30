@@ -4,6 +4,12 @@
  */
 
 #![allow(clippy::derive_partial_eq_without_eq)]
+#![warn(
+    // missing_docs,
+    rustdoc::missing_crate_level_docs,
+    unreachable_pub,
+    rust_2018_idioms
+)]
 
 //! Abstractions for the Smithy AWS Query protocol
 
@@ -27,7 +33,7 @@ impl<'a> QueryWriter<'a> {
         QueryWriter { output }
     }
 
-    pub fn prefix(&mut self, prefix: &'a str) -> QueryValueWriter {
+    pub fn prefix(&mut self, prefix: &'a str) -> QueryValueWriter<'_> {
         QueryValueWriter::new(self.output, Cow::Borrowed(prefix))
     }
 
@@ -64,7 +70,7 @@ impl<'a> QueryMapWriter<'a> {
         }
     }
 
-    pub fn entry(&mut self, key: &str) -> QueryValueWriter {
+    pub fn entry(&mut self, key: &str) -> QueryValueWriter<'_> {
         let entry = if self.flatten { "" } else { ".entry" };
         write!(
             &mut self.output,
@@ -117,7 +123,7 @@ impl<'a> QueryListWriter<'a> {
         }
     }
 
-    pub fn entry(&mut self) -> QueryValueWriter {
+    pub fn entry(&mut self) -> QueryValueWriter<'_> {
         let value_name = if self.flatten {
             format!("{}.{}", self.prefix, self.next_index)
         } else if self.member_override.is_some() {
@@ -156,7 +162,7 @@ impl<'a> QueryValueWriter<'a> {
     }
 
     /// Starts a new prefix.
-    pub fn prefix(&mut self, prefix: &'a str) -> QueryValueWriter {
+    pub fn prefix(&mut self, prefix: &'a str) -> QueryValueWriter<'_> {
         QueryValueWriter::new(
             self.output,
             Cow::Owned(format!("{}.{}", self.prefix, prefix)),

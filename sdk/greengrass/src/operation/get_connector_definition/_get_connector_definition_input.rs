@@ -2,20 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetConnectorDefinitionInput  {
+pub struct GetConnectorDefinitionInput {
     /// The ID of the connector definition.
     #[doc(hidden)]
     pub connector_definition_id: std::option::Option<std::string::String>,
 }
 impl GetConnectorDefinitionInput {
     /// The ID of the connector definition.
-    pub fn connector_definition_id(&self) -> std::option::Option<& str> {
+    pub fn connector_definition_id(&self) -> std::option::Option<&str> {
         self.connector_definition_id.as_deref()
     }
 }
 impl GetConnectorDefinitionInput {
     /// Creates a new builder-style object to manufacture [`GetConnectorDefinitionInput`](crate::operation::get_connector_definition::GetConnectorDefinitionInput).
-    pub fn builder() -> crate::operation::get_connector_definition::builders::GetConnectorDefinitionInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::get_connector_definition::builders::GetConnectorDefinitionInputBuilder
+    {
         crate::operation::get_connector_definition::builders::GetConnectorDefinitionInputBuilder::default()
     }
 }
@@ -33,17 +35,24 @@ impl GetConnectorDefinitionInputBuilder {
         self
     }
     /// The ID of the connector definition.
-    pub fn set_connector_definition_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.connector_definition_id = input; self
+    pub fn set_connector_definition_id(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.connector_definition_id = input;
+        self
     }
     /// Consumes the builder and constructs a [`GetConnectorDefinitionInput`](crate::operation::get_connector_definition::GetConnectorDefinitionInput).
-    pub fn build(self) -> Result<crate::operation::get_connector_definition::GetConnectorDefinitionInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::get_connector_definition::GetConnectorDefinitionInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::get_connector_definition::GetConnectorDefinitionInput {
-                connector_definition_id: self.connector_definition_id
-                ,
-            }
+                connector_definition_id: self.connector_definition_id,
+            },
         )
     }
 }
-

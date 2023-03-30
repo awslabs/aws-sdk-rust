@@ -3,7 +3,7 @@
 /// <p>Describes an HTTP data source configuration.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct HttpDataSourceConfig  {
+pub struct HttpDataSourceConfig {
     /// <p>The HTTP URL endpoint. You can specify either the domain name or IP, and port combination, and the URL scheme must be HTTP or HTTPS. If you don't specify the port, AppSync uses the default port 80 for the HTTP endpoint and port 443 for HTTPS endpoints.</p>
     #[doc(hidden)]
     pub endpoint: std::option::Option<std::string::String>,
@@ -13,11 +13,11 @@ pub struct HttpDataSourceConfig  {
 }
 impl HttpDataSourceConfig {
     /// <p>The HTTP URL endpoint. You can specify either the domain name or IP, and port combination, and the URL scheme must be HTTP or HTTPS. If you don't specify the port, AppSync uses the default port 80 for the HTTP endpoint and port 443 for HTTPS endpoints.</p>
-    pub fn endpoint(&self) -> std::option::Option<& str> {
+    pub fn endpoint(&self) -> std::option::Option<&str> {
         self.endpoint.as_deref()
     }
     /// <p>The authorization configuration in case the HTTP endpoint requires authorization.</p>
-    pub fn authorization_config(&self) -> std::option::Option<& crate::types::AuthorizationConfig> {
+    pub fn authorization_config(&self) -> std::option::Option<&crate::types::AuthorizationConfig> {
         self.authorization_config.as_ref()
     }
 }
@@ -43,7 +43,8 @@ impl HttpDataSourceConfigBuilder {
     }
     /// <p>The HTTP URL endpoint. You can specify either the domain name or IP, and port combination, and the URL scheme must be HTTP or HTTPS. If you don't specify the port, AppSync uses the default port 80 for the HTTP endpoint and port 443 for HTTPS endpoints.</p>
     pub fn set_endpoint(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.endpoint = input; self
+        self.endpoint = input;
+        self
     }
     /// <p>The authorization configuration in case the HTTP endpoint requires authorization.</p>
     pub fn authorization_config(mut self, input: crate::types::AuthorizationConfig) -> Self {
@@ -51,17 +52,18 @@ impl HttpDataSourceConfigBuilder {
         self
     }
     /// <p>The authorization configuration in case the HTTP endpoint requires authorization.</p>
-    pub fn set_authorization_config(mut self, input: std::option::Option<crate::types::AuthorizationConfig>) -> Self {
-        self.authorization_config = input; self
+    pub fn set_authorization_config(
+        mut self,
+        input: std::option::Option<crate::types::AuthorizationConfig>,
+    ) -> Self {
+        self.authorization_config = input;
+        self
     }
     /// Consumes the builder and constructs a [`HttpDataSourceConfig`](crate::types::HttpDataSourceConfig).
     pub fn build(self) -> crate::types::HttpDataSourceConfig {
         crate::types::HttpDataSourceConfig {
-            endpoint: self.endpoint
-            ,
-            authorization_config: self.authorization_config
-            ,
+            endpoint: self.endpoint,
+            authorization_config: self.authorization_config,
         }
     }
 }
-

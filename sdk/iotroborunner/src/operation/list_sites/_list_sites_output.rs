@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListSitesOutput  {
+pub struct ListSitesOutput {
     /// Pagination token returned when another page of data exists. Provide it in your next call to the API to receive the next page.
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
@@ -13,19 +13,19 @@ pub struct ListSitesOutput  {
 }
 impl ListSitesOutput {
     /// Pagination token returned when another page of data exists. Provide it in your next call to the API to receive the next page.
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
     /// List of facilities.
-    pub fn sites(&self) -> std::option::Option<& [crate::types::Site]> {
+    pub fn sites(&self) -> std::option::Option<&[crate::types::Site]> {
         self.sites.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for ListSitesOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl ListSitesOutput {
     /// Creates a new builder-style object to manufacture [`ListSitesOutput`](crate::operation::list_sites::ListSitesOutput).
     pub fn builder() -> crate::operation::list_sites::builders::ListSitesOutputBuilder {
@@ -49,7 +49,8 @@ impl ListSitesOutputBuilder {
     }
     /// Pagination token returned when another page of data exists. Provide it in your next call to the API to receive the next page.
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input; self
+        self.next_token = input;
+        self
     }
     /// Appends an item to `sites`.
     ///
@@ -58,32 +59,33 @@ impl ListSitesOutputBuilder {
     /// List of facilities.
     pub fn sites(mut self, input: crate::types::Site) -> Self {
         let mut v = self.sites.unwrap_or_default();
-                        v.push(input);
-                        self.sites = Some(v);
-                        self
+        v.push(input);
+        self.sites = Some(v);
+        self
     }
     /// List of facilities.
-    pub fn set_sites(mut self, input: std::option::Option<std::vec::Vec<crate::types::Site>>) -> Self {
-        self.sites = input; self
+    pub fn set_sites(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::Site>>,
+    ) -> Self {
+        self.sites = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`ListSitesOutput`](crate::operation::list_sites::ListSitesOutput).
     pub fn build(self) -> crate::operation::list_sites::ListSitesOutput {
         crate::operation::list_sites::ListSitesOutput {
-            next_token: self.next_token
-            ,
-            sites: self.sites
-            ,
+            next_token: self.next_token,
+            sites: self.sites,
             _request_id: self._request_id,
         }
     }
 }
-

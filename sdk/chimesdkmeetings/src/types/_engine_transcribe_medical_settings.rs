@@ -3,7 +3,7 @@
 /// <p>Settings specific to the Amazon Transcribe Medical engine.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct EngineTranscribeMedicalSettings  {
+pub struct EngineTranscribeMedicalSettings {
     /// <p>The language code specified for the Amazon Transcribe Medical engine.</p>
     #[doc(hidden)]
     pub language_code: std::option::Option<crate::types::TranscribeMedicalLanguageCode>,
@@ -21,31 +21,36 @@ pub struct EngineTranscribeMedicalSettings  {
     pub region: std::option::Option<crate::types::TranscribeMedicalRegion>,
     /// <p>Set this field to <code>PHI</code> to identify personal health information in the transcription output.</p>
     #[doc(hidden)]
-    pub content_identification_type: std::option::Option<crate::types::TranscribeMedicalContentIdentificationType>,
+    pub content_identification_type:
+        std::option::Option<crate::types::TranscribeMedicalContentIdentificationType>,
 }
 impl EngineTranscribeMedicalSettings {
     /// <p>The language code specified for the Amazon Transcribe Medical engine.</p>
-    pub fn language_code(&self) -> std::option::Option<& crate::types::TranscribeMedicalLanguageCode> {
+    pub fn language_code(
+        &self,
+    ) -> std::option::Option<&crate::types::TranscribeMedicalLanguageCode> {
         self.language_code.as_ref()
     }
     /// <p>The specialty specified for the Amazon Transcribe Medical engine.</p>
-    pub fn specialty(&self) -> std::option::Option<& crate::types::TranscribeMedicalSpecialty> {
+    pub fn specialty(&self) -> std::option::Option<&crate::types::TranscribeMedicalSpecialty> {
         self.specialty.as_ref()
     }
     /// <p>The type of transcription.</p>
-    pub fn r#type(&self) -> std::option::Option<& crate::types::TranscribeMedicalType> {
+    pub fn r#type(&self) -> std::option::Option<&crate::types::TranscribeMedicalType> {
         self.r#type.as_ref()
     }
     /// <p>The name of the vocabulary passed to Amazon Transcribe Medical.</p>
-    pub fn vocabulary_name(&self) -> std::option::Option<& str> {
+    pub fn vocabulary_name(&self) -> std::option::Option<&str> {
         self.vocabulary_name.as_deref()
     }
     /// <p>The AWS Region passed to Amazon Transcribe Medical. If you don't specify a Region, Amazon Chime uses the meeting's Region. </p>
-    pub fn region(&self) -> std::option::Option<& crate::types::TranscribeMedicalRegion> {
+    pub fn region(&self) -> std::option::Option<&crate::types::TranscribeMedicalRegion> {
         self.region.as_ref()
     }
     /// <p>Set this field to <code>PHI</code> to identify personal health information in the transcription output.</p>
-    pub fn content_identification_type(&self) -> std::option::Option<& crate::types::TranscribeMedicalContentIdentificationType> {
+    pub fn content_identification_type(
+        &self,
+    ) -> std::option::Option<&crate::types::TranscribeMedicalContentIdentificationType> {
         self.content_identification_type.as_ref()
     }
 }
@@ -65,7 +70,8 @@ pub struct EngineTranscribeMedicalSettingsBuilder {
     pub(crate) r#type: std::option::Option<crate::types::TranscribeMedicalType>,
     pub(crate) vocabulary_name: std::option::Option<std::string::String>,
     pub(crate) region: std::option::Option<crate::types::TranscribeMedicalRegion>,
-    pub(crate) content_identification_type: std::option::Option<crate::types::TranscribeMedicalContentIdentificationType>,
+    pub(crate) content_identification_type:
+        std::option::Option<crate::types::TranscribeMedicalContentIdentificationType>,
 }
 impl EngineTranscribeMedicalSettingsBuilder {
     /// <p>The language code specified for the Amazon Transcribe Medical engine.</p>
@@ -74,8 +80,12 @@ impl EngineTranscribeMedicalSettingsBuilder {
         self
     }
     /// <p>The language code specified for the Amazon Transcribe Medical engine.</p>
-    pub fn set_language_code(mut self, input: std::option::Option<crate::types::TranscribeMedicalLanguageCode>) -> Self {
-        self.language_code = input; self
+    pub fn set_language_code(
+        mut self,
+        input: std::option::Option<crate::types::TranscribeMedicalLanguageCode>,
+    ) -> Self {
+        self.language_code = input;
+        self
     }
     /// <p>The specialty specified for the Amazon Transcribe Medical engine.</p>
     pub fn specialty(mut self, input: crate::types::TranscribeMedicalSpecialty) -> Self {
@@ -83,8 +93,12 @@ impl EngineTranscribeMedicalSettingsBuilder {
         self
     }
     /// <p>The specialty specified for the Amazon Transcribe Medical engine.</p>
-    pub fn set_specialty(mut self, input: std::option::Option<crate::types::TranscribeMedicalSpecialty>) -> Self {
-        self.specialty = input; self
+    pub fn set_specialty(
+        mut self,
+        input: std::option::Option<crate::types::TranscribeMedicalSpecialty>,
+    ) -> Self {
+        self.specialty = input;
+        self
     }
     /// <p>The type of transcription.</p>
     pub fn r#type(mut self, input: crate::types::TranscribeMedicalType) -> Self {
@@ -92,8 +106,12 @@ impl EngineTranscribeMedicalSettingsBuilder {
         self
     }
     /// <p>The type of transcription.</p>
-    pub fn set_type(mut self, input: std::option::Option<crate::types::TranscribeMedicalType>) -> Self {
-        self.r#type = input; self
+    pub fn set_type(
+        mut self,
+        input: std::option::Option<crate::types::TranscribeMedicalType>,
+    ) -> Self {
+        self.r#type = input;
+        self
     }
     /// <p>The name of the vocabulary passed to Amazon Transcribe Medical.</p>
     pub fn vocabulary_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -102,7 +120,8 @@ impl EngineTranscribeMedicalSettingsBuilder {
     }
     /// <p>The name of the vocabulary passed to Amazon Transcribe Medical.</p>
     pub fn set_vocabulary_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.vocabulary_name = input; self
+        self.vocabulary_name = input;
+        self
     }
     /// <p>The AWS Region passed to Amazon Transcribe Medical. If you don't specify a Region, Amazon Chime uses the meeting's Region. </p>
     pub fn region(mut self, input: crate::types::TranscribeMedicalRegion) -> Self {
@@ -110,34 +129,38 @@ impl EngineTranscribeMedicalSettingsBuilder {
         self
     }
     /// <p>The AWS Region passed to Amazon Transcribe Medical. If you don't specify a Region, Amazon Chime uses the meeting's Region. </p>
-    pub fn set_region(mut self, input: std::option::Option<crate::types::TranscribeMedicalRegion>) -> Self {
-        self.region = input; self
+    pub fn set_region(
+        mut self,
+        input: std::option::Option<crate::types::TranscribeMedicalRegion>,
+    ) -> Self {
+        self.region = input;
+        self
     }
     /// <p>Set this field to <code>PHI</code> to identify personal health information in the transcription output.</p>
-    pub fn content_identification_type(mut self, input: crate::types::TranscribeMedicalContentIdentificationType) -> Self {
+    pub fn content_identification_type(
+        mut self,
+        input: crate::types::TranscribeMedicalContentIdentificationType,
+    ) -> Self {
         self.content_identification_type = Some(input);
         self
     }
     /// <p>Set this field to <code>PHI</code> to identify personal health information in the transcription output.</p>
-    pub fn set_content_identification_type(mut self, input: std::option::Option<crate::types::TranscribeMedicalContentIdentificationType>) -> Self {
-        self.content_identification_type = input; self
+    pub fn set_content_identification_type(
+        mut self,
+        input: std::option::Option<crate::types::TranscribeMedicalContentIdentificationType>,
+    ) -> Self {
+        self.content_identification_type = input;
+        self
     }
     /// Consumes the builder and constructs a [`EngineTranscribeMedicalSettings`](crate::types::EngineTranscribeMedicalSettings).
     pub fn build(self) -> crate::types::EngineTranscribeMedicalSettings {
         crate::types::EngineTranscribeMedicalSettings {
-            language_code: self.language_code
-            ,
-            specialty: self.specialty
-            ,
-            r#type: self.r#type
-            ,
-            vocabulary_name: self.vocabulary_name
-            ,
-            region: self.region
-            ,
-            content_identification_type: self.content_identification_type
-            ,
+            language_code: self.language_code,
+            specialty: self.specialty,
+            r#type: self.r#type,
+            vocabulary_name: self.vocabulary_name,
+            region: self.region,
+            content_identification_type: self.content_identification_type,
         }
     }
 }
-

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct CreateUserInput  {
+pub struct CreateUserInput {
     /// <p>The ID of the organization.</p>
     #[doc(hidden)]
     pub organization_id: std::option::Option<std::string::String>,
@@ -33,43 +33,43 @@ pub struct CreateUserInput  {
 }
 impl CreateUserInput {
     /// <p>The ID of the organization.</p>
-    pub fn organization_id(&self) -> std::option::Option<& str> {
+    pub fn organization_id(&self) -> std::option::Option<&str> {
         self.organization_id.as_deref()
     }
     /// <p>The login name of the user.</p>
-    pub fn username(&self) -> std::option::Option<& str> {
+    pub fn username(&self) -> std::option::Option<&str> {
         self.username.as_deref()
     }
     /// <p>The email address of the user.</p>
-    pub fn email_address(&self) -> std::option::Option<& str> {
+    pub fn email_address(&self) -> std::option::Option<&str> {
         self.email_address.as_deref()
     }
     /// <p>The given name of the user.</p>
-    pub fn given_name(&self) -> std::option::Option<& str> {
+    pub fn given_name(&self) -> std::option::Option<&str> {
         self.given_name.as_deref()
     }
     /// <p>The surname of the user.</p>
-    pub fn surname(&self) -> std::option::Option<& str> {
+    pub fn surname(&self) -> std::option::Option<&str> {
         self.surname.as_deref()
     }
     /// <p>The password of the user.</p>
-    pub fn password(&self) -> std::option::Option<& str> {
+    pub fn password(&self) -> std::option::Option<&str> {
         self.password.as_deref()
     }
     /// <p>The time zone ID of the user.</p>
-    pub fn time_zone_id(&self) -> std::option::Option<& str> {
+    pub fn time_zone_id(&self) -> std::option::Option<&str> {
         self.time_zone_id.as_deref()
     }
     /// <p>The amount of storage for the user.</p>
-    pub fn storage_rule(&self) -> std::option::Option<& crate::types::StorageRuleType> {
+    pub fn storage_rule(&self) -> std::option::Option<&crate::types::StorageRuleType> {
         self.storage_rule.as_ref()
     }
     /// <p>Amazon WorkDocs authentication token. Not required when using AWS administrator credentials to access the API.</p>
-    pub fn authentication_token(&self) -> std::option::Option<& str> {
+    pub fn authentication_token(&self) -> std::option::Option<&str> {
         self.authentication_token.as_deref()
     }
 }
-impl  std::fmt::Debug for CreateUserInput  {
+impl std::fmt::Debug for CreateUserInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateUserInput");
         formatter.field("organization_id", &self.organization_id);
@@ -113,7 +113,8 @@ impl CreateUserInputBuilder {
     }
     /// <p>The ID of the organization.</p>
     pub fn set_organization_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.organization_id = input; self
+        self.organization_id = input;
+        self
     }
     /// <p>The login name of the user.</p>
     pub fn username(mut self, input: impl Into<std::string::String>) -> Self {
@@ -122,7 +123,8 @@ impl CreateUserInputBuilder {
     }
     /// <p>The login name of the user.</p>
     pub fn set_username(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.username = input; self
+        self.username = input;
+        self
     }
     /// <p>The email address of the user.</p>
     pub fn email_address(mut self, input: impl Into<std::string::String>) -> Self {
@@ -131,7 +133,8 @@ impl CreateUserInputBuilder {
     }
     /// <p>The email address of the user.</p>
     pub fn set_email_address(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.email_address = input; self
+        self.email_address = input;
+        self
     }
     /// <p>The given name of the user.</p>
     pub fn given_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -140,7 +143,8 @@ impl CreateUserInputBuilder {
     }
     /// <p>The given name of the user.</p>
     pub fn set_given_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.given_name = input; self
+        self.given_name = input;
+        self
     }
     /// <p>The surname of the user.</p>
     pub fn surname(mut self, input: impl Into<std::string::String>) -> Self {
@@ -149,7 +153,8 @@ impl CreateUserInputBuilder {
     }
     /// <p>The surname of the user.</p>
     pub fn set_surname(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.surname = input; self
+        self.surname = input;
+        self
     }
     /// <p>The password of the user.</p>
     pub fn password(mut self, input: impl Into<std::string::String>) -> Self {
@@ -158,7 +163,8 @@ impl CreateUserInputBuilder {
     }
     /// <p>The password of the user.</p>
     pub fn set_password(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.password = input; self
+        self.password = input;
+        self
     }
     /// <p>The time zone ID of the user.</p>
     pub fn time_zone_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -167,7 +173,8 @@ impl CreateUserInputBuilder {
     }
     /// <p>The time zone ID of the user.</p>
     pub fn set_time_zone_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.time_zone_id = input; self
+        self.time_zone_id = input;
+        self
     }
     /// <p>The amount of storage for the user.</p>
     pub fn storage_rule(mut self, input: crate::types::StorageRuleType) -> Self {
@@ -175,8 +182,12 @@ impl CreateUserInputBuilder {
         self
     }
     /// <p>The amount of storage for the user.</p>
-    pub fn set_storage_rule(mut self, input: std::option::Option<crate::types::StorageRuleType>) -> Self {
-        self.storage_rule = input; self
+    pub fn set_storage_rule(
+        mut self,
+        input: std::option::Option<crate::types::StorageRuleType>,
+    ) -> Self {
+        self.storage_rule = input;
+        self
     }
     /// <p>Amazon WorkDocs authentication token. Not required when using AWS administrator credentials to access the API.</p>
     pub fn authentication_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -184,33 +195,31 @@ impl CreateUserInputBuilder {
         self
     }
     /// <p>Amazon WorkDocs authentication token. Not required when using AWS administrator credentials to access the API.</p>
-    pub fn set_authentication_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.authentication_token = input; self
+    pub fn set_authentication_token(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.authentication_token = input;
+        self
     }
     /// Consumes the builder and constructs a [`CreateUserInput`](crate::operation::create_user::CreateUserInput).
-    pub fn build(self) -> Result<crate::operation::create_user::CreateUserInput, aws_smithy_http::operation::error::BuildError> {
-        Ok(
-            crate::operation::create_user::CreateUserInput {
-                organization_id: self.organization_id
-                ,
-                username: self.username
-                ,
-                email_address: self.email_address
-                ,
-                given_name: self.given_name
-                ,
-                surname: self.surname
-                ,
-                password: self.password
-                ,
-                time_zone_id: self.time_zone_id
-                ,
-                storage_rule: self.storage_rule
-                ,
-                authentication_token: self.authentication_token
-                ,
-            }
-        )
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::create_user::CreateUserInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        Ok(crate::operation::create_user::CreateUserInput {
+            organization_id: self.organization_id,
+            username: self.username,
+            email_address: self.email_address,
+            given_name: self.given_name,
+            surname: self.surname,
+            password: self.password,
+            time_zone_id: self.time_zone_id,
+            storage_rule: self.storage_rule,
+            authentication_token: self.authentication_token,
+        })
     }
 }
 impl std::fmt::Debug for CreateUserInputBuilder {
@@ -228,4 +237,3 @@ impl std::fmt::Debug for CreateUserInputBuilder {
         formatter.finish()
     }
 }
-

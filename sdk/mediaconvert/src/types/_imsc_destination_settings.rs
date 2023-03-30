@@ -3,7 +3,7 @@
 /// Settings related to IMSC captions. IMSC is a sidecar format that holds captions in a file that is separate from the video container. Set up sidecar captions in the same output group, but different output from your video. For more information, see https://docs.aws.amazon.com/mediaconvert/latest/ug/ttml-and-webvtt-output-captions.html. When you work directly in your JSON job specification, include this object and any required children when you set destinationType to IMSC.
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ImscDestinationSettings  {
+pub struct ImscDestinationSettings {
     /// Set Accessibility subtitles to Enabled if the ISMC or WebVTT captions track is intended to provide accessibility for people who are deaf or hard of hearing. When you enable this feature, MediaConvert adds the following attributes under EXT-X-MEDIA in the HLS or CMAF manifest for this track: CHARACTERISTICS="public.accessibility.describes-spoken-dialog,public.accessibility.describes-music-and-sound" and AUTOSELECT="YES". Keep the default value, Disabled, if the captions track is not intended to provide such accessibility. MediaConvert will not add the above attributes.
     #[doc(hidden)]
     pub accessibility: std::option::Option<crate::types::ImscAccessibilitySubs>,
@@ -13,11 +13,11 @@ pub struct ImscDestinationSettings  {
 }
 impl ImscDestinationSettings {
     /// Set Accessibility subtitles to Enabled if the ISMC or WebVTT captions track is intended to provide accessibility for people who are deaf or hard of hearing. When you enable this feature, MediaConvert adds the following attributes under EXT-X-MEDIA in the HLS or CMAF manifest for this track: CHARACTERISTICS="public.accessibility.describes-spoken-dialog,public.accessibility.describes-music-and-sound" and AUTOSELECT="YES". Keep the default value, Disabled, if the captions track is not intended to provide such accessibility. MediaConvert will not add the above attributes.
-    pub fn accessibility(&self) -> std::option::Option<& crate::types::ImscAccessibilitySubs> {
+    pub fn accessibility(&self) -> std::option::Option<&crate::types::ImscAccessibilitySubs> {
         self.accessibility.as_ref()
     }
     /// Keep this setting enabled to have MediaConvert use the font style and position information from the captions source in the output. This option is available only when your input captions are IMSC, SMPTE-TT, or TTML. Disable this setting for simplified output captions.
-    pub fn style_passthrough(&self) -> std::option::Option<& crate::types::ImscStylePassthrough> {
+    pub fn style_passthrough(&self) -> std::option::Option<&crate::types::ImscStylePassthrough> {
         self.style_passthrough.as_ref()
     }
 }
@@ -42,8 +42,12 @@ impl ImscDestinationSettingsBuilder {
         self
     }
     /// Set Accessibility subtitles to Enabled if the ISMC or WebVTT captions track is intended to provide accessibility for people who are deaf or hard of hearing. When you enable this feature, MediaConvert adds the following attributes under EXT-X-MEDIA in the HLS or CMAF manifest for this track: CHARACTERISTICS="public.accessibility.describes-spoken-dialog,public.accessibility.describes-music-and-sound" and AUTOSELECT="YES". Keep the default value, Disabled, if the captions track is not intended to provide such accessibility. MediaConvert will not add the above attributes.
-    pub fn set_accessibility(mut self, input: std::option::Option<crate::types::ImscAccessibilitySubs>) -> Self {
-        self.accessibility = input; self
+    pub fn set_accessibility(
+        mut self,
+        input: std::option::Option<crate::types::ImscAccessibilitySubs>,
+    ) -> Self {
+        self.accessibility = input;
+        self
     }
     /// Keep this setting enabled to have MediaConvert use the font style and position information from the captions source in the output. This option is available only when your input captions are IMSC, SMPTE-TT, or TTML. Disable this setting for simplified output captions.
     pub fn style_passthrough(mut self, input: crate::types::ImscStylePassthrough) -> Self {
@@ -51,17 +55,18 @@ impl ImscDestinationSettingsBuilder {
         self
     }
     /// Keep this setting enabled to have MediaConvert use the font style and position information from the captions source in the output. This option is available only when your input captions are IMSC, SMPTE-TT, or TTML. Disable this setting for simplified output captions.
-    pub fn set_style_passthrough(mut self, input: std::option::Option<crate::types::ImscStylePassthrough>) -> Self {
-        self.style_passthrough = input; self
+    pub fn set_style_passthrough(
+        mut self,
+        input: std::option::Option<crate::types::ImscStylePassthrough>,
+    ) -> Self {
+        self.style_passthrough = input;
+        self
     }
     /// Consumes the builder and constructs a [`ImscDestinationSettings`](crate::types::ImscDestinationSettings).
     pub fn build(self) -> crate::types::ImscDestinationSettings {
         crate::types::ImscDestinationSettings {
-            accessibility: self.accessibility
-            ,
-            style_passthrough: self.style_passthrough
-            ,
+            accessibility: self.accessibility,
+            style_passthrough: self.style_passthrough,
         }
     }
 }
-

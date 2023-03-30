@@ -3,7 +3,7 @@
 /// <p> The Amazon S3 bucket location to which Amazon Rekognition publishes the detailed inference results of a video analysis operation. These results include the name of the stream processor resource, the session ID of the stream processing session, and labeled timestamps and bounding boxes for detected labels. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct S3Destination  {
+pub struct S3Destination {
     /// <p> The name of the Amazon S3 bucket you want to associate with the streaming video project. You must be the owner of the Amazon S3 bucket. </p>
     #[doc(hidden)]
     pub bucket: std::option::Option<std::string::String>,
@@ -13,11 +13,11 @@ pub struct S3Destination  {
 }
 impl S3Destination {
     /// <p> The name of the Amazon S3 bucket you want to associate with the streaming video project. You must be the owner of the Amazon S3 bucket. </p>
-    pub fn bucket(&self) -> std::option::Option<& str> {
+    pub fn bucket(&self) -> std::option::Option<&str> {
         self.bucket.as_deref()
     }
     /// <p> The prefix value of the location within the bucket that you want the information to be published to. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-prefixes.html">Using prefixes</a>. </p>
-    pub fn key_prefix(&self) -> std::option::Option<& str> {
+    pub fn key_prefix(&self) -> std::option::Option<&str> {
         self.key_prefix.as_deref()
     }
 }
@@ -43,7 +43,8 @@ impl S3DestinationBuilder {
     }
     /// <p> The name of the Amazon S3 bucket you want to associate with the streaming video project. You must be the owner of the Amazon S3 bucket. </p>
     pub fn set_bucket(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.bucket = input; self
+        self.bucket = input;
+        self
     }
     /// <p> The prefix value of the location within the bucket that you want the information to be published to. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-prefixes.html">Using prefixes</a>. </p>
     pub fn key_prefix(mut self, input: impl Into<std::string::String>) -> Self {
@@ -52,16 +53,14 @@ impl S3DestinationBuilder {
     }
     /// <p> The prefix value of the location within the bucket that you want the information to be published to. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-prefixes.html">Using prefixes</a>. </p>
     pub fn set_key_prefix(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.key_prefix = input; self
+        self.key_prefix = input;
+        self
     }
     /// Consumes the builder and constructs a [`S3Destination`](crate::types::S3Destination).
     pub fn build(self) -> crate::types::S3Destination {
         crate::types::S3Destination {
-            bucket: self.bucket
-            ,
-            key_prefix: self.key_prefix
-            ,
+            bucket: self.bucket,
+            key_prefix: self.key_prefix,
         }
     }
 }
-

@@ -72,4 +72,3 @@ pub mod update_app_instance_user;
 
 /// Types for the `UpdateAppInstanceUserEndpoint` operation.
 pub mod update_app_instance_user_endpoint;
-

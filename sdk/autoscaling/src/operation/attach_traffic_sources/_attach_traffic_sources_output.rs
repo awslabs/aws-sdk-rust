@@ -2,17 +2,18 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AttachTrafficSourcesOutput  {
+pub struct AttachTrafficSourcesOutput {
     _request_id: Option<String>,
 }
 impl aws_http::request_id::RequestId for AttachTrafficSourcesOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl AttachTrafficSourcesOutput {
     /// Creates a new builder-style object to manufacture [`AttachTrafficSourcesOutput`](crate::operation::attach_traffic_sources::AttachTrafficSourcesOutput).
-    pub fn builder() -> crate::operation::attach_traffic_sources::builders::AttachTrafficSourcesOutputBuilder {
+    pub fn builder(
+    ) -> crate::operation::attach_traffic_sources::builders::AttachTrafficSourcesOutputBuilder {
         crate::operation::attach_traffic_sources::builders::AttachTrafficSourcesOutputBuilder::default()
     }
 }
@@ -25,14 +26,14 @@ pub struct AttachTrafficSourcesOutputBuilder {
 }
 impl AttachTrafficSourcesOutputBuilder {
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`AttachTrafficSourcesOutput`](crate::operation::attach_traffic_sources::AttachTrafficSourcesOutput).
     pub fn build(self) -> crate::operation::attach_traffic_sources::AttachTrafficSourcesOutput {
         crate::operation::attach_traffic_sources::AttachTrafficSourcesOutput {
@@ -40,4 +41,3 @@ impl AttachTrafficSourcesOutputBuilder {
         }
     }
 }
-

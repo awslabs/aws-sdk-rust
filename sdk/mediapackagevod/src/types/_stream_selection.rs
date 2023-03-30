@@ -3,7 +3,7 @@
 /// A StreamSelection configuration.
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct StreamSelection  {
+pub struct StreamSelection {
     /// The maximum video bitrate (bps) to include in output.
     #[doc(hidden)]
     pub max_video_bits_per_second: i32,
@@ -24,7 +24,7 @@ impl StreamSelection {
         self.min_video_bits_per_second
     }
     /// A directive that determines the order of streams in the output.
-    pub fn stream_order(&self) -> std::option::Option<& crate::types::StreamOrder> {
+    pub fn stream_order(&self) -> std::option::Option<&crate::types::StreamOrder> {
         self.stream_order.as_ref()
     }
 }
@@ -51,7 +51,8 @@ impl StreamSelectionBuilder {
     }
     /// The maximum video bitrate (bps) to include in output.
     pub fn set_max_video_bits_per_second(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_video_bits_per_second = input; self
+        self.max_video_bits_per_second = input;
+        self
     }
     /// The minimum video bitrate (bps) to include in output.
     pub fn min_video_bits_per_second(mut self, input: i32) -> Self {
@@ -60,7 +61,8 @@ impl StreamSelectionBuilder {
     }
     /// The minimum video bitrate (bps) to include in output.
     pub fn set_min_video_bits_per_second(mut self, input: std::option::Option<i32>) -> Self {
-        self.min_video_bits_per_second = input; self
+        self.min_video_bits_per_second = input;
+        self
     }
     /// A directive that determines the order of streams in the output.
     pub fn stream_order(mut self, input: crate::types::StreamOrder) -> Self {
@@ -68,21 +70,19 @@ impl StreamSelectionBuilder {
         self
     }
     /// A directive that determines the order of streams in the output.
-    pub fn set_stream_order(mut self, input: std::option::Option<crate::types::StreamOrder>) -> Self {
-        self.stream_order = input; self
+    pub fn set_stream_order(
+        mut self,
+        input: std::option::Option<crate::types::StreamOrder>,
+    ) -> Self {
+        self.stream_order = input;
+        self
     }
     /// Consumes the builder and constructs a [`StreamSelection`](crate::types::StreamSelection).
     pub fn build(self) -> crate::types::StreamSelection {
         crate::types::StreamSelection {
-            max_video_bits_per_second: self.max_video_bits_per_second
-                .unwrap_or_default()
-            ,
-            min_video_bits_per_second: self.min_video_bits_per_second
-                .unwrap_or_default()
-            ,
-            stream_order: self.stream_order
-            ,
+            max_video_bits_per_second: self.max_video_bits_per_second.unwrap_or_default(),
+            min_video_bits_per_second: self.min_video_bits_per_second.unwrap_or_default(),
+            stream_order: self.stream_order,
         }
     }
 }
-

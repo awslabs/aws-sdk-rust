@@ -6,38 +6,67 @@ impl DescribeMergeConflictsInput {
     #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::describe_merge_conflicts::DescribeMergeConflicts, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::error::BuildError> {
-        let params_result = crate::endpoint::Params::builder().set_region(_config.region.as_ref().map(|r|r.as_ref().to_owned()))
-        .set_use_dual_stack(_config.use_dual_stack)
-        .set_use_fips(_config.use_fips)
-        .set_endpoint(_config.endpoint_url
-        .clone()).build()
-                                    .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
-                                let (endpoint_result, params) = match params_result {
-                                    Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
-                                    Err(e) => (Err(e), None)
-                                };
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::describe_merge_conflicts::DescribeMergeConflicts,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        let params_result = crate::endpoint::Params::builder()
+            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
+            .set_use_dual_stack(_config.use_dual_stack)
+            .set_use_fips(_config.use_fips)
+            .set_endpoint(_config.endpoint_url.clone())
+            .build()
+            .map_err(|err| {
+                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
+                    "could not construct endpoint parameters",
+                    err,
+                )
+            });
+        let (endpoint_result, params) = match params_result {
+            Ok(params) => (
+                _config.endpoint_resolver.resolve_endpoint(&params),
+                Some(params),
+            ),
+            Err(e) => (Err(e), None),
+        };
         let mut request = {
-            fn uri_base(_input: &crate::operation::describe_merge_conflicts::DescribeMergeConflictsInput, output: &mut String) -> std::result::Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_base(
+                _input: &crate::operation::describe_merge_conflicts::DescribeMergeConflictsInput,
+                output: &mut String,
+            ) -> std::result::Result<(), aws_smithy_http::operation::error::BuildError>
+            {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
-                            input: &crate::operation::describe_merge_conflicts::DescribeMergeConflictsInput,
-                            builder: http::request::Builder
-                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
+                input: &crate::operation::describe_merge_conflicts::DescribeMergeConflictsInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-amz-json-1.1");
             builder = aws_smithy_http::header::set_request_header_if_absent(
-                                builder,
-                                http::header::HeaderName::from_static("x-amz-target"),
-                                "CodeCommit_20150413.DescribeMergeConflicts"
-                            );
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/x-amz-json-1.1",
+            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "CodeCommit_20150413.DescribeMergeConflicts",
+            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
@@ -46,33 +75,56 @@ impl DescribeMergeConflictsInput {
             crate::protocol_serde::shape_describe_merge_conflicts::ser_describe_merge_conflicts_input(&self)?
         );
         if let Some(content_length) = body.content_length() {
-                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
-                            }
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request.properties_mut().insert(endpoint_result);
-        if let Some(params) = params { request.properties_mut().insert(params); }
-        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        if let Some(params) = params {
+            request.properties_mut().insert(params);
+        }
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-                                aws_types::os_shim_internal::Env::real(),
-                                crate::meta::API_METADATA.clone(),
-                            );
-                            if let Some(app_name) = _config.app_name() {
-                                user_agent = user_agent.with_app_name(app_name.clone());
-                            }
-                            request.properties_mut().insert(user_agent);
+            aws_types::os_shim_internal::Env::real(),
+            crate::meta::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
-                            if let Some(region) = &_config.region {
-                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
-                            }
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
         if let Some(region) = &_config.region {
-                                request.properties_mut().insert(region.clone());
-                            }
-        aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
-        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::describe_merge_conflicts::DescribeMergeConflicts::new())
-                            .with_metadata(aws_smithy_http::operation::Metadata::new("DescribeMergeConflicts", "codecommit"));
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_credentials_cache(
+            &mut request.properties_mut(),
+            _config.credentials_cache.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::describe_merge_conflicts::DescribeMergeConflicts::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "DescribeMergeConflicts",
+            "codecommit",
+        ));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -89,22 +141,27 @@ impl DescribeMergeConflicts {
     }
 }
 impl aws_smithy_http::response::ParseStrictResponse for DescribeMergeConflicts {
-                type Output = std::result::Result<crate::operation::describe_merge_conflicts::DescribeMergeConflictsOutput, crate::operation::describe_merge_conflicts::DescribeMergeConflictsError>;
-                fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
-                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
-                     if !response.status().is_success() && response.status().as_u16() != 200 {
-                        crate::protocol_serde::shape_describe_merge_conflicts::de_describe_merge_conflicts_http_error(response)
-                     } else {
-                        crate::protocol_serde::shape_describe_merge_conflicts::de_describe_merge_conflicts_http_response(response)
-                     }
-                }
-            }
+    type Output = std::result::Result<
+        crate::operation::describe_merge_conflicts::DescribeMergeConflictsOutput,
+        crate::operation::describe_merge_conflicts::DescribeMergeConflictsError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::protocol_serde::shape_describe_merge_conflicts::de_describe_merge_conflicts_http_error(response)
+        } else {
+            crate::protocol_serde::shape_describe_merge_conflicts::de_describe_merge_conflicts_http_response(response)
+        }
+    }
+}
 
 /// Do not use this.
-            ///
-            /// Operation `*Error/*ErrorKind` types were combined into a single `*Error` enum. The `.kind` field on `*Error` no longer exists and isn't needed anymore (you can just match on the error directly since it's an enum now).
-            #[deprecated(note = "Operation `*Error/*ErrorKind` types were combined into a single `*Error` enum. The `.kind` field on `*Error` no longer exists and isn't needed anymore (you can just match on the error directly since it's an enum now).")]
-            pub type DescribeMergeConflictsErrorKind = DescribeMergeConflictsError;
+///
+/// Operation `*Error/*ErrorKind` types were combined into a single `*Error` enum. The `.kind` field on `*Error` no longer exists and isn't needed anymore (you can just match on the error directly since it's an enum now).
+#[deprecated(
+    note = "Operation `*Error/*ErrorKind` types were combined into a single `*Error` enum. The `.kind` field on `*Error` no longer exists and isn't needed anymore (you can just match on the error directly since it's an enum now)."
+)]
+pub type DescribeMergeConflictsErrorKind = DescribeMergeConflictsError;
 /// Error type for the `DescribeMergeConflictsError` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -114,7 +171,9 @@ pub enum DescribeMergeConflictsError {
     /// <p>A commit was not specified.</p>
     CommitRequiredException(crate::types::error::CommitRequiredException),
     /// <p>An encryption integrity check failed.</p>
-    EncryptionIntegrityChecksFailedException(crate::types::error::EncryptionIntegrityChecksFailedException),
+    EncryptionIntegrityChecksFailedException(
+        crate::types::error::EncryptionIntegrityChecksFailedException,
+    ),
     /// <p>An encryption key could not be accessed.</p>
     EncryptionKeyAccessDeniedException(crate::types::error::EncryptionKeyAccessDeniedException),
     /// <p>The encryption key is disabled.</p>
@@ -130,7 +189,9 @@ pub enum DescribeMergeConflictsError {
     /// <p>The specified conflict detail level is not valid.</p>
     InvalidConflictDetailLevelException(crate::types::error::InvalidConflictDetailLevelException),
     /// <p>The specified conflict resolution strategy is not valid.</p>
-    InvalidConflictResolutionStrategyException(crate::types::error::InvalidConflictResolutionStrategyException),
+    InvalidConflictResolutionStrategyException(
+        crate::types::error::InvalidConflictResolutionStrategyException,
+    ),
     /// <p>The specified continuation token is not valid.</p>
     InvalidContinuationTokenException(crate::types::error::InvalidContinuationTokenException),
     /// <p>The specified value for the number of merge hunks to return is not valid.</p>
@@ -139,14 +200,18 @@ pub enum DescribeMergeConflictsError {
     InvalidMergeOptionException(crate::types::error::InvalidMergeOptionException),
     /// <p>The specified path is not valid.</p>
     InvalidPathException(crate::types::error::InvalidPathException),
-    /// <p>A specified repository name is not valid.</p> <note> 
-    /// <p>This exception occurs only when a specified repository name is not valid. Other exceptions occur when a required repository parameter is missing, or when a specified repository does not exist.</p> 
+    /// <p>A specified repository name is not valid.</p> <note>
+    /// <p>This exception occurs only when a specified repository name is not valid. Other exceptions occur when a required repository parameter is missing, or when a specified repository does not exist.</p>
     /// </note>
     InvalidRepositoryNameException(crate::types::error::InvalidRepositoryNameException),
     /// <p>The number of files to load exceeds the allowed limit.</p>
-    MaximumFileContentToLoadExceededException(crate::types::error::MaximumFileContentToLoadExceededException),
+    MaximumFileContentToLoadExceededException(
+        crate::types::error::MaximumFileContentToLoadExceededException,
+    ),
     /// <p>The number of items to compare between the source or destination branches and the merge base has exceeded the maximum allowed.</p>
-    MaximumItemsToCompareExceededException(crate::types::error::MaximumItemsToCompareExceededException),
+    MaximumItemsToCompareExceededException(
+        crate::types::error::MaximumItemsToCompareExceededException,
+    ),
     /// <p>A merge option or stategy is required, and none was provided.</p>
     MergeOptionRequiredException(crate::types::error::MergeOptionRequiredException),
     /// <p>The folderPath for a location cannot be null.</p>
@@ -158,183 +223,135 @@ pub enum DescribeMergeConflictsError {
     /// <p>The divergence between the tips of the provided commit specifiers is too great to determine whether there might be any merge conflicts. Locally compare the specifiers using <code>git diff</code> or a diff tool.</p>
     TipsDivergenceExceededException(crate::types::error::TipsDivergenceExceededException),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-                    Unhandled(aws_smithy_types::error::Unhandled),
+    Unhandled(aws_smithy_types::error::Unhandled),
 }
 impl aws_smithy_http::result::CreateUnhandledError for DescribeMergeConflictsError {
-    
-                    fn create_unhandled_error(
-                        source: Box<dyn std::error::Error + Send + Sync + 'static>,
-                        meta: std::option::Option<aws_smithy_types::error::ErrorMetadata>
-                    ) -> Self
-                     {
+    fn create_unhandled_error(
+        source: Box<dyn std::error::Error + Send + Sync + 'static>,
+        meta: std::option::Option<aws_smithy_types::error::ErrorMetadata>,
+    ) -> Self {
         Self::Unhandled({
-                                let mut builder = aws_smithy_types::error::Unhandled::builder().source(source);
-                                builder.set_meta(meta);
-                                builder.build()
-                            })
+            let mut builder = aws_smithy_types::error::Unhandled::builder().source(source);
+            builder.set_meta(meta);
+            builder.build()
+        })
     }
 }
 impl std::fmt::Display for DescribeMergeConflictsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match self {
-            Self::CommitDoesNotExistException(_inner) =>
-            _inner.fmt(f)
-            ,
-            Self::CommitRequiredException(_inner) =>
-            _inner.fmt(f)
-            ,
-            Self::EncryptionIntegrityChecksFailedException(_inner) =>
-            _inner.fmt(f)
-            ,
-            Self::EncryptionKeyAccessDeniedException(_inner) =>
-            _inner.fmt(f)
-            ,
-            Self::EncryptionKeyDisabledException(_inner) =>
-            _inner.fmt(f)
-            ,
-            Self::EncryptionKeyNotFoundException(_inner) =>
-            _inner.fmt(f)
-            ,
-            Self::EncryptionKeyUnavailableException(_inner) =>
-            _inner.fmt(f)
-            ,
-            Self::FileDoesNotExistException(_inner) =>
-            _inner.fmt(f)
-            ,
-            Self::InvalidCommitException(_inner) =>
-            _inner.fmt(f)
-            ,
-            Self::InvalidConflictDetailLevelException(_inner) =>
-            _inner.fmt(f)
-            ,
-            Self::InvalidConflictResolutionStrategyException(_inner) =>
-            _inner.fmt(f)
-            ,
-            Self::InvalidContinuationTokenException(_inner) =>
-            _inner.fmt(f)
-            ,
-            Self::InvalidMaxMergeHunksException(_inner) =>
-            _inner.fmt(f)
-            ,
-            Self::InvalidMergeOptionException(_inner) =>
-            _inner.fmt(f)
-            ,
-            Self::InvalidPathException(_inner) =>
-            _inner.fmt(f)
-            ,
-            Self::InvalidRepositoryNameException(_inner) =>
-            _inner.fmt(f)
-            ,
-            Self::MaximumFileContentToLoadExceededException(_inner) =>
-            _inner.fmt(f)
-            ,
-            Self::MaximumItemsToCompareExceededException(_inner) =>
-            _inner.fmt(f)
-            ,
-            Self::MergeOptionRequiredException(_inner) =>
-            _inner.fmt(f)
-            ,
-            Self::PathRequiredException(_inner) =>
-            _inner.fmt(f)
-            ,
-            Self::RepositoryDoesNotExistException(_inner) =>
-            _inner.fmt(f)
-            ,
-            Self::RepositoryNameRequiredException(_inner) =>
-            _inner.fmt(f)
-            ,
-            Self::TipsDivergenceExceededException(_inner) =>
-            _inner.fmt(f)
-            ,
-            Self::Unhandled(_inner) => {
-                _inner.fmt(f)
-            }
+            Self::CommitDoesNotExistException(_inner) => _inner.fmt(f),
+            Self::CommitRequiredException(_inner) => _inner.fmt(f),
+            Self::EncryptionIntegrityChecksFailedException(_inner) => _inner.fmt(f),
+            Self::EncryptionKeyAccessDeniedException(_inner) => _inner.fmt(f),
+            Self::EncryptionKeyDisabledException(_inner) => _inner.fmt(f),
+            Self::EncryptionKeyNotFoundException(_inner) => _inner.fmt(f),
+            Self::EncryptionKeyUnavailableException(_inner) => _inner.fmt(f),
+            Self::FileDoesNotExistException(_inner) => _inner.fmt(f),
+            Self::InvalidCommitException(_inner) => _inner.fmt(f),
+            Self::InvalidConflictDetailLevelException(_inner) => _inner.fmt(f),
+            Self::InvalidConflictResolutionStrategyException(_inner) => _inner.fmt(f),
+            Self::InvalidContinuationTokenException(_inner) => _inner.fmt(f),
+            Self::InvalidMaxMergeHunksException(_inner) => _inner.fmt(f),
+            Self::InvalidMergeOptionException(_inner) => _inner.fmt(f),
+            Self::InvalidPathException(_inner) => _inner.fmt(f),
+            Self::InvalidRepositoryNameException(_inner) => _inner.fmt(f),
+            Self::MaximumFileContentToLoadExceededException(_inner) => _inner.fmt(f),
+            Self::MaximumItemsToCompareExceededException(_inner) => _inner.fmt(f),
+            Self::MergeOptionRequiredException(_inner) => _inner.fmt(f),
+            Self::PathRequiredException(_inner) => _inner.fmt(f),
+            Self::RepositoryDoesNotExistException(_inner) => _inner.fmt(f),
+            Self::RepositoryNameRequiredException(_inner) => _inner.fmt(f),
+            Self::TipsDivergenceExceededException(_inner) => _inner.fmt(f),
+            Self::Unhandled(_inner) => _inner.fmt(f),
         }
     }
 }
 impl aws_smithy_types::error::metadata::ProvideErrorMetadata for DescribeMergeConflictsError {
     fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
         match self {
-            Self::CommitDoesNotExistException(_inner) =>
-            aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
-            ,
-            Self::CommitRequiredException(_inner) =>
-            aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
-            ,
-            Self::EncryptionIntegrityChecksFailedException(_inner) =>
-            aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
-            ,
-            Self::EncryptionKeyAccessDeniedException(_inner) =>
-            aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
-            ,
-            Self::EncryptionKeyDisabledException(_inner) =>
-            aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
-            ,
-            Self::EncryptionKeyNotFoundException(_inner) =>
-            aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
-            ,
-            Self::EncryptionKeyUnavailableException(_inner) =>
-            aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
-            ,
-            Self::FileDoesNotExistException(_inner) =>
-            aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
-            ,
-            Self::InvalidCommitException(_inner) =>
-            aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
-            ,
-            Self::InvalidConflictDetailLevelException(_inner) =>
-            aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
-            ,
-            Self::InvalidConflictResolutionStrategyException(_inner) =>
-            aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
-            ,
-            Self::InvalidContinuationTokenException(_inner) =>
-            aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
-            ,
-            Self::InvalidMaxMergeHunksException(_inner) =>
-            aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
-            ,
-            Self::InvalidMergeOptionException(_inner) =>
-            aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
-            ,
-            Self::InvalidPathException(_inner) =>
-            aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
-            ,
-            Self::InvalidRepositoryNameException(_inner) =>
-            aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
-            ,
-            Self::MaximumFileContentToLoadExceededException(_inner) =>
-            aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
-            ,
-            Self::MaximumItemsToCompareExceededException(_inner) =>
-            aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
-            ,
-            Self::MergeOptionRequiredException(_inner) =>
-            aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
-            ,
-            Self::PathRequiredException(_inner) =>
-            aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
-            ,
-            Self::RepositoryDoesNotExistException(_inner) =>
-            aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
-            ,
-            Self::RepositoryNameRequiredException(_inner) =>
-            aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
-            ,
-            Self::TipsDivergenceExceededException(_inner) =>
-            aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
-            ,
+            Self::CommitDoesNotExistException(_inner) => {
+                aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
+            }
+            Self::CommitRequiredException(_inner) => {
+                aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
+            }
+            Self::EncryptionIntegrityChecksFailedException(_inner) => {
+                aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
+            }
+            Self::EncryptionKeyAccessDeniedException(_inner) => {
+                aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
+            }
+            Self::EncryptionKeyDisabledException(_inner) => {
+                aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
+            }
+            Self::EncryptionKeyNotFoundException(_inner) => {
+                aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
+            }
+            Self::EncryptionKeyUnavailableException(_inner) => {
+                aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
+            }
+            Self::FileDoesNotExistException(_inner) => {
+                aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
+            }
+            Self::InvalidCommitException(_inner) => {
+                aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
+            }
+            Self::InvalidConflictDetailLevelException(_inner) => {
+                aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
+            }
+            Self::InvalidConflictResolutionStrategyException(_inner) => {
+                aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
+            }
+            Self::InvalidContinuationTokenException(_inner) => {
+                aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
+            }
+            Self::InvalidMaxMergeHunksException(_inner) => {
+                aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
+            }
+            Self::InvalidMergeOptionException(_inner) => {
+                aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
+            }
+            Self::InvalidPathException(_inner) => {
+                aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
+            }
+            Self::InvalidRepositoryNameException(_inner) => {
+                aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
+            }
+            Self::MaximumFileContentToLoadExceededException(_inner) => {
+                aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
+            }
+            Self::MaximumItemsToCompareExceededException(_inner) => {
+                aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
+            }
+            Self::MergeOptionRequiredException(_inner) => {
+                aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
+            }
+            Self::PathRequiredException(_inner) => {
+                aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
+            }
+            Self::RepositoryDoesNotExistException(_inner) => {
+                aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
+            }
+            Self::RepositoryNameRequiredException(_inner) => {
+                aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
+            }
+            Self::TipsDivergenceExceededException(_inner) => {
+                aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
+            }
             Self::Unhandled(_inner) => {
                 aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
             }
         }
     }
 }
-impl aws_http::request_id::RequestId for crate::operation::describe_merge_conflicts::DescribeMergeConflictsError {
-                            fn request_id(&self) -> Option<&str> {
-                                self.meta().request_id()
-                            }
-                        }
+impl aws_http::request_id::RequestId
+    for crate::operation::describe_merge_conflicts::DescribeMergeConflictsError
+{
+    fn request_id(&self) -> Option<&str> {
+        self.meta().request_id()
+    }
+}
 impl aws_smithy_types::retry::ProvideErrorKind for DescribeMergeConflictsError {
     fn code(&self) -> std::option::Option<&str> {
         aws_smithy_types::error::metadata::ProvideErrorMetadata::code(self)
@@ -345,18 +362,27 @@ impl aws_smithy_types::retry::ProvideErrorKind for DescribeMergeConflictsError {
 }
 impl DescribeMergeConflictsError {
     /// Creates the `DescribeMergeConflictsError::Unhandled` variant from any error type.
-                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-                        Self::Unhandled(aws_smithy_types::error::Unhandled::builder().source(err).build())
-                    }
-    
-                    /// Creates the `DescribeMergeConflictsError::Unhandled` variant from a `aws_smithy_types::error::ErrorMetadata`.
-                    pub fn generic(err: aws_smithy_types::error::ErrorMetadata) -> Self {
-                        Self::Unhandled(aws_smithy_types::error::Unhandled::builder().source(err.clone()).meta(err).build())
-                    }
-    /// 
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self::Unhandled(
+            aws_smithy_types::error::Unhandled::builder()
+                .source(err)
+                .build(),
+        )
+    }
+
+    /// Creates the `DescribeMergeConflictsError::Unhandled` variant from a `aws_smithy_types::error::ErrorMetadata`.
+    pub fn generic(err: aws_smithy_types::error::ErrorMetadata) -> Self {
+        Self::Unhandled(
+            aws_smithy_types::error::Unhandled::builder()
+                .source(err.clone())
+                .meta(err)
+                .build(),
+        )
+    }
+    ///
     /// Returns error metadata, which includes the error code, message,
     /// request ID, and potentially additional information.
-    /// 
+    ///
     pub fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
         use aws_smithy_types::error::metadata::ProvideErrorMetadata;
         match self {
@@ -482,78 +508,30 @@ impl DescribeMergeConflictsError {
 impl std::error::Error for DescribeMergeConflictsError {
     fn source(&self) -> std::option::Option<&(dyn std::error::Error + 'static)> {
         match self {
-            Self::CommitDoesNotExistException(_inner) =>
-            Some(_inner)
-            ,
-            Self::CommitRequiredException(_inner) =>
-            Some(_inner)
-            ,
-            Self::EncryptionIntegrityChecksFailedException(_inner) =>
-            Some(_inner)
-            ,
-            Self::EncryptionKeyAccessDeniedException(_inner) =>
-            Some(_inner)
-            ,
-            Self::EncryptionKeyDisabledException(_inner) =>
-            Some(_inner)
-            ,
-            Self::EncryptionKeyNotFoundException(_inner) =>
-            Some(_inner)
-            ,
-            Self::EncryptionKeyUnavailableException(_inner) =>
-            Some(_inner)
-            ,
-            Self::FileDoesNotExistException(_inner) =>
-            Some(_inner)
-            ,
-            Self::InvalidCommitException(_inner) =>
-            Some(_inner)
-            ,
-            Self::InvalidConflictDetailLevelException(_inner) =>
-            Some(_inner)
-            ,
-            Self::InvalidConflictResolutionStrategyException(_inner) =>
-            Some(_inner)
-            ,
-            Self::InvalidContinuationTokenException(_inner) =>
-            Some(_inner)
-            ,
-            Self::InvalidMaxMergeHunksException(_inner) =>
-            Some(_inner)
-            ,
-            Self::InvalidMergeOptionException(_inner) =>
-            Some(_inner)
-            ,
-            Self::InvalidPathException(_inner) =>
-            Some(_inner)
-            ,
-            Self::InvalidRepositoryNameException(_inner) =>
-            Some(_inner)
-            ,
-            Self::MaximumFileContentToLoadExceededException(_inner) =>
-            Some(_inner)
-            ,
-            Self::MaximumItemsToCompareExceededException(_inner) =>
-            Some(_inner)
-            ,
-            Self::MergeOptionRequiredException(_inner) =>
-            Some(_inner)
-            ,
-            Self::PathRequiredException(_inner) =>
-            Some(_inner)
-            ,
-            Self::RepositoryDoesNotExistException(_inner) =>
-            Some(_inner)
-            ,
-            Self::RepositoryNameRequiredException(_inner) =>
-            Some(_inner)
-            ,
-            Self::TipsDivergenceExceededException(_inner) =>
-            Some(_inner)
-            ,
-            Self::Unhandled(_inner) => {
-                Some(_inner)
-            }
+            Self::CommitDoesNotExistException(_inner) => Some(_inner),
+            Self::CommitRequiredException(_inner) => Some(_inner),
+            Self::EncryptionIntegrityChecksFailedException(_inner) => Some(_inner),
+            Self::EncryptionKeyAccessDeniedException(_inner) => Some(_inner),
+            Self::EncryptionKeyDisabledException(_inner) => Some(_inner),
+            Self::EncryptionKeyNotFoundException(_inner) => Some(_inner),
+            Self::EncryptionKeyUnavailableException(_inner) => Some(_inner),
+            Self::FileDoesNotExistException(_inner) => Some(_inner),
+            Self::InvalidCommitException(_inner) => Some(_inner),
+            Self::InvalidConflictDetailLevelException(_inner) => Some(_inner),
+            Self::InvalidConflictResolutionStrategyException(_inner) => Some(_inner),
+            Self::InvalidContinuationTokenException(_inner) => Some(_inner),
+            Self::InvalidMaxMergeHunksException(_inner) => Some(_inner),
+            Self::InvalidMergeOptionException(_inner) => Some(_inner),
+            Self::InvalidPathException(_inner) => Some(_inner),
+            Self::InvalidRepositoryNameException(_inner) => Some(_inner),
+            Self::MaximumFileContentToLoadExceededException(_inner) => Some(_inner),
+            Self::MaximumItemsToCompareExceededException(_inner) => Some(_inner),
+            Self::MergeOptionRequiredException(_inner) => Some(_inner),
+            Self::PathRequiredException(_inner) => Some(_inner),
+            Self::RepositoryDoesNotExistException(_inner) => Some(_inner),
+            Self::RepositoryNameRequiredException(_inner) => Some(_inner),
+            Self::TipsDivergenceExceededException(_inner) => Some(_inner),
+            Self::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -571,4 +549,3 @@ pub mod builders;
 
 /// Paginator for this operation
 pub mod paginator;
-

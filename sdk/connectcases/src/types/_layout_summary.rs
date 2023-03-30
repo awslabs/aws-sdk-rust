@@ -3,7 +3,7 @@
 /// <p>Object for the summarized details of the layout.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct LayoutSummary  {
+pub struct LayoutSummary {
     /// <p>The unique identifier for of the layout.</p>
     #[doc(hidden)]
     pub layout_id: std::option::Option<std::string::String>,
@@ -16,15 +16,15 @@ pub struct LayoutSummary  {
 }
 impl LayoutSummary {
     /// <p>The unique identifier for of the layout.</p>
-    pub fn layout_id(&self) -> std::option::Option<& str> {
+    pub fn layout_id(&self) -> std::option::Option<&str> {
         self.layout_id.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the layout.</p>
-    pub fn layout_arn(&self) -> std::option::Option<& str> {
+    pub fn layout_arn(&self) -> std::option::Option<&str> {
         self.layout_arn.as_deref()
     }
     /// <p>The name of the layout.</p>
-    pub fn name(&self) -> std::option::Option<& str> {
+    pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
 }
@@ -51,7 +51,8 @@ impl LayoutSummaryBuilder {
     }
     /// <p>The unique identifier for of the layout.</p>
     pub fn set_layout_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.layout_id = input; self
+        self.layout_id = input;
+        self
     }
     /// <p>The Amazon Resource Name (ARN) of the layout.</p>
     pub fn layout_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -60,7 +61,8 @@ impl LayoutSummaryBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the layout.</p>
     pub fn set_layout_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.layout_arn = input; self
+        self.layout_arn = input;
+        self
     }
     /// <p>The name of the layout.</p>
     pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -69,18 +71,15 @@ impl LayoutSummaryBuilder {
     }
     /// <p>The name of the layout.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input; self
+        self.name = input;
+        self
     }
     /// Consumes the builder and constructs a [`LayoutSummary`](crate::types::LayoutSummary).
     pub fn build(self) -> crate::types::LayoutSummary {
         crate::types::LayoutSummary {
-            layout_id: self.layout_id
-            ,
-            layout_arn: self.layout_arn
-            ,
-            name: self.name
-            ,
+            layout_id: self.layout_id,
+            layout_arn: self.layout_arn,
+            name: self.name,
         }
     }
 }
-

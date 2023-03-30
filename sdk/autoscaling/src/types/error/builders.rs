@@ -16,4 +16,3 @@ pub use crate::types::error::_already_exists_fault::AlreadyExistsFaultBuilder;
 pub use crate::types::error::_invalid_next_token::InvalidNextTokenBuilder;
 
 pub use crate::types::error::_active_instance_refresh_not_found_fault::ActiveInstanceRefreshNotFoundFaultBuilder;
-

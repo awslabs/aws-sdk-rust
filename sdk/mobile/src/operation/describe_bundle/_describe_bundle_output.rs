@@ -3,7 +3,7 @@
 /// <p> Result structure contains the details of the bundle. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeBundleOutput  {
+pub struct DescribeBundleOutput {
     /// <p> The details of the bundle. </p>
     #[doc(hidden)]
     pub details: std::option::Option<crate::types::BundleDetails>,
@@ -11,15 +11,15 @@ pub struct DescribeBundleOutput  {
 }
 impl DescribeBundleOutput {
     /// <p> The details of the bundle. </p>
-    pub fn details(&self) -> std::option::Option<& crate::types::BundleDetails> {
+    pub fn details(&self) -> std::option::Option<&crate::types::BundleDetails> {
         self.details.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for DescribeBundleOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl DescribeBundleOutput {
     /// Creates a new builder-style object to manufacture [`DescribeBundleOutput`](crate::operation::describe_bundle::DescribeBundleOutput).
     pub fn builder() -> crate::operation::describe_bundle::builders::DescribeBundleOutputBuilder {
@@ -42,24 +42,23 @@ impl DescribeBundleOutputBuilder {
     }
     /// <p> The details of the bundle. </p>
     pub fn set_details(mut self, input: std::option::Option<crate::types::BundleDetails>) -> Self {
-        self.details = input; self
+        self.details = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`DescribeBundleOutput`](crate::operation::describe_bundle::DescribeBundleOutput).
     pub fn build(self) -> crate::operation::describe_bundle::DescribeBundleOutput {
         crate::operation::describe_bundle::DescribeBundleOutput {
-            details: self.details
-            ,
+            details: self.details,
             _request_id: self._request_id,
         }
     }
 }
-

@@ -3,14 +3,14 @@
 /// Avail Configuration
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AvailConfiguration  {
+pub struct AvailConfiguration {
     /// Ad avail settings.
     #[doc(hidden)]
     pub avail_settings: std::option::Option<crate::types::AvailSettings>,
 }
 impl AvailConfiguration {
     /// Ad avail settings.
-    pub fn avail_settings(&self) -> std::option::Option<& crate::types::AvailSettings> {
+    pub fn avail_settings(&self) -> std::option::Option<&crate::types::AvailSettings> {
         self.avail_settings.as_ref()
     }
 }
@@ -34,15 +34,17 @@ impl AvailConfigurationBuilder {
         self
     }
     /// Ad avail settings.
-    pub fn set_avail_settings(mut self, input: std::option::Option<crate::types::AvailSettings>) -> Self {
-        self.avail_settings = input; self
+    pub fn set_avail_settings(
+        mut self,
+        input: std::option::Option<crate::types::AvailSettings>,
+    ) -> Self {
+        self.avail_settings = input;
+        self
     }
     /// Consumes the builder and constructs a [`AvailConfiguration`](crate::types::AvailConfiguration).
     pub fn build(self) -> crate::types::AvailConfiguration {
         crate::types::AvailConfiguration {
-            avail_settings: self.avail_settings
-            ,
+            avail_settings: self.avail_settings,
         }
     }
 }
-

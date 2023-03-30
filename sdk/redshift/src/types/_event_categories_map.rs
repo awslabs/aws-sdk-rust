@@ -3,7 +3,7 @@
 /// <p>Describes event categories.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct EventCategoriesMap  {
+pub struct EventCategoriesMap {
     /// <p>The source type, such as cluster or cluster-snapshot, that the returned categories belong to.</p>
     #[doc(hidden)]
     pub source_type: std::option::Option<std::string::String>,
@@ -13,11 +13,11 @@ pub struct EventCategoriesMap  {
 }
 impl EventCategoriesMap {
     /// <p>The source type, such as cluster or cluster-snapshot, that the returned categories belong to.</p>
-    pub fn source_type(&self) -> std::option::Option<& str> {
+    pub fn source_type(&self) -> std::option::Option<&str> {
         self.source_type.as_deref()
     }
     /// <p>The events in the event category.</p>
-    pub fn events(&self) -> std::option::Option<& [crate::types::EventInfoMap]> {
+    pub fn events(&self) -> std::option::Option<&[crate::types::EventInfoMap]> {
         self.events.as_deref()
     }
 }
@@ -43,7 +43,8 @@ impl EventCategoriesMapBuilder {
     }
     /// <p>The source type, such as cluster or cluster-snapshot, that the returned categories belong to.</p>
     pub fn set_source_type(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.source_type = input; self
+        self.source_type = input;
+        self
     }
     /// Appends an item to `events`.
     ///
@@ -52,22 +53,23 @@ impl EventCategoriesMapBuilder {
     /// <p>The events in the event category.</p>
     pub fn events(mut self, input: crate::types::EventInfoMap) -> Self {
         let mut v = self.events.unwrap_or_default();
-                        v.push(input);
-                        self.events = Some(v);
-                        self
+        v.push(input);
+        self.events = Some(v);
+        self
     }
     /// <p>The events in the event category.</p>
-    pub fn set_events(mut self, input: std::option::Option<std::vec::Vec<crate::types::EventInfoMap>>) -> Self {
-        self.events = input; self
+    pub fn set_events(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::EventInfoMap>>,
+    ) -> Self {
+        self.events = input;
+        self
     }
     /// Consumes the builder and constructs a [`EventCategoriesMap`](crate::types::EventCategoriesMap).
     pub fn build(self) -> crate::types::EventCategoriesMap {
         crate::types::EventCategoriesMap {
-            source_type: self.source_type
-            ,
-            events: self.events
-            ,
+            source_type: self.source_type,
+            events: self.events,
         }
     }
 }
-

@@ -6,73 +6,125 @@ impl CreateDeploymentInput {
     #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::create_deployment::CreateDeployment, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::error::BuildError> {
-        let params_result = crate::endpoint::Params::builder().set_region(_config.region.as_ref().map(|r|r.as_ref().to_owned()))
-        .set_use_dual_stack(_config.use_dual_stack)
-        .set_use_fips(_config.use_fips)
-        .set_endpoint(_config.endpoint_url
-        .clone()).build()
-                                    .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
-                                let (endpoint_result, params) = match params_result {
-                                    Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
-                                    Err(e) => (Err(e), None)
-                                };
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::create_deployment::CreateDeployment,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        let params_result = crate::endpoint::Params::builder()
+            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
+            .set_use_dual_stack(_config.use_dual_stack)
+            .set_use_fips(_config.use_fips)
+            .set_endpoint(_config.endpoint_url.clone())
+            .build()
+            .map_err(|err| {
+                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
+                    "could not construct endpoint parameters",
+                    err,
+                )
+            });
+        let (endpoint_result, params) = match params_result {
+            Ok(params) => (
+                _config.endpoint_resolver.resolve_endpoint(&params),
+                Some(params),
+            ),
+            Err(e) => (Err(e), None),
+        };
         let mut request = {
-            fn uri_base(_input: &crate::operation::create_deployment::CreateDeploymentInput, output: &mut String) -> std::result::Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_base(
+                _input: &crate::operation::create_deployment::CreateDeploymentInput,
+                output: &mut String,
+            ) -> std::result::Result<(), aws_smithy_http::operation::error::BuildError>
+            {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
-                            input: &crate::operation::create_deployment::CreateDeploymentInput,
-                            builder: http::request::Builder
-                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
+                input: &crate::operation::create_deployment::CreateDeploymentInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-amz-json-1.1");
             builder = aws_smithy_http::header::set_request_header_if_absent(
-                                builder,
-                                http::header::HeaderName::from_static("x-amz-target"),
-                                "CodeDeploy_20141006.CreateDeployment"
-                            );
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/x-amz-json-1.1",
+            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "CodeDeploy_20141006.CreateDeployment",
+            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::protocol_serde::shape_create_deployment::ser_create_deployment_input(&self)?
+            crate::protocol_serde::shape_create_deployment::ser_create_deployment_input(&self)?,
         );
         if let Some(content_length) = body.content_length() {
-                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
-                            }
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request.properties_mut().insert(endpoint_result);
-        if let Some(params) = params { request.properties_mut().insert(params); }
-        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        if let Some(params) = params {
+            request.properties_mut().insert(params);
+        }
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-                                aws_types::os_shim_internal::Env::real(),
-                                crate::meta::API_METADATA.clone(),
-                            );
-                            if let Some(app_name) = _config.app_name() {
-                                user_agent = user_agent.with_app_name(app_name.clone());
-                            }
-                            request.properties_mut().insert(user_agent);
+            aws_types::os_shim_internal::Env::real(),
+            crate::meta::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
-                            if let Some(region) = &_config.region {
-                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
-                            }
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
         if let Some(region) = &_config.region {
-                                request.properties_mut().insert(region.clone());
-                            }
-        aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
-        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::create_deployment::CreateDeployment::new())
-                            .with_metadata(aws_smithy_http::operation::Metadata::new("CreateDeployment", "codedeploy"));
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_credentials_cache(
+            &mut request.properties_mut(),
+            _config.credentials_cache.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::create_deployment::CreateDeployment::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "CreateDeployment",
+            "codedeploy",
+        ));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -89,22 +141,31 @@ impl CreateDeployment {
     }
 }
 impl aws_smithy_http::response::ParseStrictResponse for CreateDeployment {
-                type Output = std::result::Result<crate::operation::create_deployment::CreateDeploymentOutput, crate::operation::create_deployment::CreateDeploymentError>;
-                fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
-                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
-                     if !response.status().is_success() && response.status().as_u16() != 200 {
-                        crate::protocol_serde::shape_create_deployment::de_create_deployment_http_error(response)
-                     } else {
-                        crate::protocol_serde::shape_create_deployment::de_create_deployment_http_response(response)
-                     }
-                }
-            }
+    type Output = std::result::Result<
+        crate::operation::create_deployment::CreateDeploymentOutput,
+        crate::operation::create_deployment::CreateDeploymentError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::protocol_serde::shape_create_deployment::de_create_deployment_http_error(
+                response,
+            )
+        } else {
+            crate::protocol_serde::shape_create_deployment::de_create_deployment_http_response(
+                response,
+            )
+        }
+    }
+}
 
 /// Do not use this.
-            ///
-            /// Operation `*Error/*ErrorKind` types were combined into a single `*Error` enum. The `.kind` field on `*Error` no longer exists and isn't needed anymore (you can just match on the error directly since it's an enum now).
-            #[deprecated(note = "Operation `*Error/*ErrorKind` types were combined into a single `*Error` enum. The `.kind` field on `*Error` no longer exists and isn't needed anymore (you can just match on the error directly since it's an enum now).")]
-            pub type CreateDeploymentErrorKind = CreateDeploymentError;
+///
+/// Operation `*Error/*ErrorKind` types were combined into a single `*Error` enum. The `.kind` field on `*Error` no longer exists and isn't needed anymore (you can just match on the error directly since it's an enum now).
+#[deprecated(
+    note = "Operation `*Error/*ErrorKind` types were combined into a single `*Error` enum. The `.kind` field on `*Error` no longer exists and isn't needed anymore (you can just match on the error directly since it's an enum now)."
+)]
+pub type CreateDeploymentErrorKind = CreateDeploymentError;
 /// Error type for the `CreateDeploymentError` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -116,7 +177,9 @@ pub enum CreateDeploymentError {
     /// <p>The minimum number of required application names was not specified.</p>
     ApplicationNameRequiredException(crate::types::error::ApplicationNameRequiredException),
     /// <p>The deployment configuration does not exist with the IAM user or Amazon Web Services account.</p>
-    DeploymentConfigDoesNotExistException(crate::types::error::DeploymentConfigDoesNotExistException),
+    DeploymentConfigDoesNotExistException(
+        crate::types::error::DeploymentConfigDoesNotExistException,
+    ),
     /// <p>The named deployment group with the IAM user or Amazon Web Services account does not exist.</p>
     DeploymentGroupDoesNotExistException(crate::types::error::DeploymentGroupDoesNotExistException),
     /// <p>The deployment group name was not specified.</p>
@@ -125,13 +188,13 @@ pub enum CreateDeploymentError {
     DeploymentLimitExceededException(crate::types::error::DeploymentLimitExceededException),
     /// <p>The description is too long.</p>
     DescriptionTooLongException(crate::types::error::DescriptionTooLongException),
-    /// <p>The format of the alarm configuration is invalid. Possible causes include:</p> 
-    /// <ul> 
-    /// <li> <p>The alarm list is null.</p> </li> 
-    /// <li> <p>The alarm object is null.</p> </li> 
-    /// <li> <p>The alarm name is empty or null or exceeds the limit of 255 characters.</p> </li> 
-    /// <li> <p>Two alarms with the same name have been specified.</p> </li> 
-    /// <li> <p>The alarm configuration is enabled, but the alarm list is empty.</p> </li> 
+    /// <p>The format of the alarm configuration is invalid. Possible causes include:</p>
+    /// <ul>
+    /// <li> <p>The alarm list is null.</p> </li>
+    /// <li> <p>The alarm object is null.</p> </li>
+    /// <li> <p>The alarm name is empty or null or exceeds the limit of 255 characters.</p> </li>
+    /// <li> <p>Two alarms with the same name have been specified.</p> </li>
+    /// <li> <p>The alarm configuration is enabled, but the alarm list is empty.</p> </li>
     /// </ul>
     InvalidAlarmConfigException(crate::types::error::InvalidAlarmConfigException),
     /// <p>The application name was specified in an invalid format.</p>
@@ -149,25 +212,31 @@ pub enum CreateDeploymentError {
     /// <p>The GitHub token is not valid.</p>
     InvalidGitHubAccountTokenException(crate::types::error::InvalidGitHubAccountTokenException),
     /// <p>The IgnoreApplicationStopFailures value is invalid. For Lambda deployments, <code>false</code> is expected. For EC2/On-premises deployments, <code>true</code> or <code>false</code> is expected.</p>
-    InvalidIgnoreApplicationStopFailuresValueException(crate::types::error::InvalidIgnoreApplicationStopFailuresValueException),
+    InvalidIgnoreApplicationStopFailuresValueException(
+        crate::types::error::InvalidIgnoreApplicationStopFailuresValueException,
+    ),
     /// <p>An invalid load balancer name, or no load balancer name, was specified.</p>
     InvalidLoadBalancerInfoException(crate::types::error::InvalidLoadBalancerInfoException),
     /// <p>The revision was specified in an invalid format.</p>
     InvalidRevisionException(crate::types::error::InvalidRevisionException),
     /// <p>The service role ARN was specified in an invalid format. Or, if an Auto Scaling group was specified, the specified service role does not grant the appropriate permissions to Amazon EC2 Auto Scaling.</p>
     InvalidRoleException(crate::types::error::InvalidRoleException),
-    /// <p>The target instance configuration is invalid. Possible causes include:</p> 
-    /// <ul> 
-    /// <li> <p>Configuration data for target instances was entered for an in-place deployment.</p> </li> 
-    /// <li> <p>The limit of 10 tags for a tag type was exceeded.</p> </li> 
-    /// <li> <p>The combined length of the tag names exceeded the limit. </p> </li> 
-    /// <li> <p>A specified tag is not currently applied to any instances.</p> </li> 
+    /// <p>The target instance configuration is invalid. Possible causes include:</p>
+    /// <ul>
+    /// <li> <p>Configuration data for target instances was entered for an in-place deployment.</p> </li>
+    /// <li> <p>The limit of 10 tags for a tag type was exceeded.</p> </li>
+    /// <li> <p>The combined length of the tag names exceeded the limit. </p> </li>
+    /// <li> <p>A specified tag is not currently applied to any instances.</p> </li>
     /// </ul>
     InvalidTargetInstancesException(crate::types::error::InvalidTargetInstancesException),
     /// <p> The configuration that specifies how traffic is routed during a deployment is invalid.</p>
-    InvalidTrafficRoutingConfigurationException(crate::types::error::InvalidTrafficRoutingConfigurationException),
+    InvalidTrafficRoutingConfigurationException(
+        crate::types::error::InvalidTrafficRoutingConfigurationException,
+    ),
     /// <p>The UpdateOutdatedInstancesOnly value is invalid. For Lambda deployments, <code>false</code> is expected. For EC2/On-premises deployments, <code>true</code> or <code>false</code> is expected.</p>
-    InvalidUpdateOutdatedInstancesOnlyValueException(crate::types::error::InvalidUpdateOutdatedInstancesOnlyValueException),
+    InvalidUpdateOutdatedInstancesOnlyValueException(
+        crate::types::error::InvalidUpdateOutdatedInstancesOnlyValueException,
+    ),
     /// <p>The named revision does not exist with the IAM user or Amazon Web Services account.</p>
     RevisionDoesNotExistException(crate::types::error::RevisionDoesNotExistException),
     /// <p>The revision ID was not specified.</p>
@@ -175,201 +244,147 @@ pub enum CreateDeploymentError {
     /// <p>An API function was called too frequently.</p>
     ThrottlingException(crate::types::error::ThrottlingException),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-                    Unhandled(aws_smithy_types::error::Unhandled),
+    Unhandled(aws_smithy_types::error::Unhandled),
 }
 impl aws_smithy_http::result::CreateUnhandledError for CreateDeploymentError {
-    
-                    fn create_unhandled_error(
-                        source: Box<dyn std::error::Error + Send + Sync + 'static>,
-                        meta: std::option::Option<aws_smithy_types::error::ErrorMetadata>
-                    ) -> Self
-                     {
+    fn create_unhandled_error(
+        source: Box<dyn std::error::Error + Send + Sync + 'static>,
+        meta: std::option::Option<aws_smithy_types::error::ErrorMetadata>,
+    ) -> Self {
         Self::Unhandled({
-                                let mut builder = aws_smithy_types::error::Unhandled::builder().source(source);
-                                builder.set_meta(meta);
-                                builder.build()
-                            })
+            let mut builder = aws_smithy_types::error::Unhandled::builder().source(source);
+            builder.set_meta(meta);
+            builder.build()
+        })
     }
 }
 impl std::fmt::Display for CreateDeploymentError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match self {
-            Self::AlarmsLimitExceededException(_inner) =>
-            _inner.fmt(f)
-            ,
-            Self::ApplicationDoesNotExistException(_inner) =>
-            _inner.fmt(f)
-            ,
-            Self::ApplicationNameRequiredException(_inner) =>
-            _inner.fmt(f)
-            ,
-            Self::DeploymentConfigDoesNotExistException(_inner) =>
-            _inner.fmt(f)
-            ,
-            Self::DeploymentGroupDoesNotExistException(_inner) =>
-            _inner.fmt(f)
-            ,
-            Self::DeploymentGroupNameRequiredException(_inner) =>
-            _inner.fmt(f)
-            ,
-            Self::DeploymentLimitExceededException(_inner) =>
-            _inner.fmt(f)
-            ,
-            Self::DescriptionTooLongException(_inner) =>
-            _inner.fmt(f)
-            ,
-            Self::InvalidAlarmConfigException(_inner) =>
-            _inner.fmt(f)
-            ,
-            Self::InvalidApplicationNameException(_inner) =>
-            _inner.fmt(f)
-            ,
-            Self::InvalidAutoRollbackConfigException(_inner) =>
-            _inner.fmt(f)
-            ,
-            Self::InvalidAutoScalingGroupException(_inner) =>
-            _inner.fmt(f)
-            ,
-            Self::InvalidDeploymentConfigNameException(_inner) =>
-            _inner.fmt(f)
-            ,
-            Self::InvalidDeploymentGroupNameException(_inner) =>
-            _inner.fmt(f)
-            ,
-            Self::InvalidFileExistsBehaviorException(_inner) =>
-            _inner.fmt(f)
-            ,
-            Self::InvalidGitHubAccountTokenException(_inner) =>
-            _inner.fmt(f)
-            ,
-            Self::InvalidIgnoreApplicationStopFailuresValueException(_inner) =>
-            _inner.fmt(f)
-            ,
-            Self::InvalidLoadBalancerInfoException(_inner) =>
-            _inner.fmt(f)
-            ,
-            Self::InvalidRevisionException(_inner) =>
-            _inner.fmt(f)
-            ,
-            Self::InvalidRoleException(_inner) =>
-            _inner.fmt(f)
-            ,
-            Self::InvalidTargetInstancesException(_inner) =>
-            _inner.fmt(f)
-            ,
-            Self::InvalidTrafficRoutingConfigurationException(_inner) =>
-            _inner.fmt(f)
-            ,
-            Self::InvalidUpdateOutdatedInstancesOnlyValueException(_inner) =>
-            _inner.fmt(f)
-            ,
-            Self::RevisionDoesNotExistException(_inner) =>
-            _inner.fmt(f)
-            ,
-            Self::RevisionRequiredException(_inner) =>
-            _inner.fmt(f)
-            ,
-            Self::ThrottlingException(_inner) =>
-            _inner.fmt(f)
-            ,
-            Self::Unhandled(_inner) => {
-                _inner.fmt(f)
-            }
+            Self::AlarmsLimitExceededException(_inner) => _inner.fmt(f),
+            Self::ApplicationDoesNotExistException(_inner) => _inner.fmt(f),
+            Self::ApplicationNameRequiredException(_inner) => _inner.fmt(f),
+            Self::DeploymentConfigDoesNotExistException(_inner) => _inner.fmt(f),
+            Self::DeploymentGroupDoesNotExistException(_inner) => _inner.fmt(f),
+            Self::DeploymentGroupNameRequiredException(_inner) => _inner.fmt(f),
+            Self::DeploymentLimitExceededException(_inner) => _inner.fmt(f),
+            Self::DescriptionTooLongException(_inner) => _inner.fmt(f),
+            Self::InvalidAlarmConfigException(_inner) => _inner.fmt(f),
+            Self::InvalidApplicationNameException(_inner) => _inner.fmt(f),
+            Self::InvalidAutoRollbackConfigException(_inner) => _inner.fmt(f),
+            Self::InvalidAutoScalingGroupException(_inner) => _inner.fmt(f),
+            Self::InvalidDeploymentConfigNameException(_inner) => _inner.fmt(f),
+            Self::InvalidDeploymentGroupNameException(_inner) => _inner.fmt(f),
+            Self::InvalidFileExistsBehaviorException(_inner) => _inner.fmt(f),
+            Self::InvalidGitHubAccountTokenException(_inner) => _inner.fmt(f),
+            Self::InvalidIgnoreApplicationStopFailuresValueException(_inner) => _inner.fmt(f),
+            Self::InvalidLoadBalancerInfoException(_inner) => _inner.fmt(f),
+            Self::InvalidRevisionException(_inner) => _inner.fmt(f),
+            Self::InvalidRoleException(_inner) => _inner.fmt(f),
+            Self::InvalidTargetInstancesException(_inner) => _inner.fmt(f),
+            Self::InvalidTrafficRoutingConfigurationException(_inner) => _inner.fmt(f),
+            Self::InvalidUpdateOutdatedInstancesOnlyValueException(_inner) => _inner.fmt(f),
+            Self::RevisionDoesNotExistException(_inner) => _inner.fmt(f),
+            Self::RevisionRequiredException(_inner) => _inner.fmt(f),
+            Self::ThrottlingException(_inner) => _inner.fmt(f),
+            Self::Unhandled(_inner) => _inner.fmt(f),
         }
     }
 }
 impl aws_smithy_types::error::metadata::ProvideErrorMetadata for CreateDeploymentError {
     fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
         match self {
-            Self::AlarmsLimitExceededException(_inner) =>
-            aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
-            ,
-            Self::ApplicationDoesNotExistException(_inner) =>
-            aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
-            ,
-            Self::ApplicationNameRequiredException(_inner) =>
-            aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
-            ,
-            Self::DeploymentConfigDoesNotExistException(_inner) =>
-            aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
-            ,
-            Self::DeploymentGroupDoesNotExistException(_inner) =>
-            aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
-            ,
-            Self::DeploymentGroupNameRequiredException(_inner) =>
-            aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
-            ,
-            Self::DeploymentLimitExceededException(_inner) =>
-            aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
-            ,
-            Self::DescriptionTooLongException(_inner) =>
-            aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
-            ,
-            Self::InvalidAlarmConfigException(_inner) =>
-            aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
-            ,
-            Self::InvalidApplicationNameException(_inner) =>
-            aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
-            ,
-            Self::InvalidAutoRollbackConfigException(_inner) =>
-            aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
-            ,
-            Self::InvalidAutoScalingGroupException(_inner) =>
-            aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
-            ,
-            Self::InvalidDeploymentConfigNameException(_inner) =>
-            aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
-            ,
-            Self::InvalidDeploymentGroupNameException(_inner) =>
-            aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
-            ,
-            Self::InvalidFileExistsBehaviorException(_inner) =>
-            aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
-            ,
-            Self::InvalidGitHubAccountTokenException(_inner) =>
-            aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
-            ,
-            Self::InvalidIgnoreApplicationStopFailuresValueException(_inner) =>
-            aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
-            ,
-            Self::InvalidLoadBalancerInfoException(_inner) =>
-            aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
-            ,
-            Self::InvalidRevisionException(_inner) =>
-            aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
-            ,
-            Self::InvalidRoleException(_inner) =>
-            aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
-            ,
-            Self::InvalidTargetInstancesException(_inner) =>
-            aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
-            ,
-            Self::InvalidTrafficRoutingConfigurationException(_inner) =>
-            aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
-            ,
-            Self::InvalidUpdateOutdatedInstancesOnlyValueException(_inner) =>
-            aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
-            ,
-            Self::RevisionDoesNotExistException(_inner) =>
-            aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
-            ,
-            Self::RevisionRequiredException(_inner) =>
-            aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
-            ,
-            Self::ThrottlingException(_inner) =>
-            aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
-            ,
+            Self::AlarmsLimitExceededException(_inner) => {
+                aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
+            }
+            Self::ApplicationDoesNotExistException(_inner) => {
+                aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
+            }
+            Self::ApplicationNameRequiredException(_inner) => {
+                aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
+            }
+            Self::DeploymentConfigDoesNotExistException(_inner) => {
+                aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
+            }
+            Self::DeploymentGroupDoesNotExistException(_inner) => {
+                aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
+            }
+            Self::DeploymentGroupNameRequiredException(_inner) => {
+                aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
+            }
+            Self::DeploymentLimitExceededException(_inner) => {
+                aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
+            }
+            Self::DescriptionTooLongException(_inner) => {
+                aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
+            }
+            Self::InvalidAlarmConfigException(_inner) => {
+                aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
+            }
+            Self::InvalidApplicationNameException(_inner) => {
+                aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
+            }
+            Self::InvalidAutoRollbackConfigException(_inner) => {
+                aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
+            }
+            Self::InvalidAutoScalingGroupException(_inner) => {
+                aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
+            }
+            Self::InvalidDeploymentConfigNameException(_inner) => {
+                aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
+            }
+            Self::InvalidDeploymentGroupNameException(_inner) => {
+                aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
+            }
+            Self::InvalidFileExistsBehaviorException(_inner) => {
+                aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
+            }
+            Self::InvalidGitHubAccountTokenException(_inner) => {
+                aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
+            }
+            Self::InvalidIgnoreApplicationStopFailuresValueException(_inner) => {
+                aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
+            }
+            Self::InvalidLoadBalancerInfoException(_inner) => {
+                aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
+            }
+            Self::InvalidRevisionException(_inner) => {
+                aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
+            }
+            Self::InvalidRoleException(_inner) => {
+                aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
+            }
+            Self::InvalidTargetInstancesException(_inner) => {
+                aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
+            }
+            Self::InvalidTrafficRoutingConfigurationException(_inner) => {
+                aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
+            }
+            Self::InvalidUpdateOutdatedInstancesOnlyValueException(_inner) => {
+                aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
+            }
+            Self::RevisionDoesNotExistException(_inner) => {
+                aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
+            }
+            Self::RevisionRequiredException(_inner) => {
+                aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
+            }
+            Self::ThrottlingException(_inner) => {
+                aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
+            }
             Self::Unhandled(_inner) => {
                 aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
             }
         }
     }
 }
-impl aws_http::request_id::RequestId for crate::operation::create_deployment::CreateDeploymentError {
-                            fn request_id(&self) -> Option<&str> {
-                                self.meta().request_id()
-                            }
-                        }
+impl aws_http::request_id::RequestId
+    for crate::operation::create_deployment::CreateDeploymentError
+{
+    fn request_id(&self) -> Option<&str> {
+        self.meta().request_id()
+    }
+}
 impl aws_smithy_types::retry::ProvideErrorKind for CreateDeploymentError {
     fn code(&self) -> std::option::Option<&str> {
         aws_smithy_types::error::metadata::ProvideErrorMetadata::code(self)
@@ -380,18 +395,27 @@ impl aws_smithy_types::retry::ProvideErrorKind for CreateDeploymentError {
 }
 impl CreateDeploymentError {
     /// Creates the `CreateDeploymentError::Unhandled` variant from any error type.
-                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-                        Self::Unhandled(aws_smithy_types::error::Unhandled::builder().source(err).build())
-                    }
-    
-                    /// Creates the `CreateDeploymentError::Unhandled` variant from a `aws_smithy_types::error::ErrorMetadata`.
-                    pub fn generic(err: aws_smithy_types::error::ErrorMetadata) -> Self {
-                        Self::Unhandled(aws_smithy_types::error::Unhandled::builder().source(err.clone()).meta(err).build())
-                    }
-    /// 
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self::Unhandled(
+            aws_smithy_types::error::Unhandled::builder()
+                .source(err)
+                .build(),
+        )
+    }
+
+    /// Creates the `CreateDeploymentError::Unhandled` variant from a `aws_smithy_types::error::ErrorMetadata`.
+    pub fn generic(err: aws_smithy_types::error::ErrorMetadata) -> Self {
+        Self::Unhandled(
+            aws_smithy_types::error::Unhandled::builder()
+                .source(err.clone())
+                .meta(err)
+                .build(),
+        )
+    }
+    ///
     /// Returns error metadata, which includes the error code, message,
     /// request ID, and potentially additional information.
-    /// 
+    ///
     pub fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
         use aws_smithy_types::error::metadata::ProvideErrorMetadata;
         match self {
@@ -490,7 +514,10 @@ impl CreateDeploymentError {
     }
     /// Returns `true` if the error kind is `CreateDeploymentError::InvalidIgnoreApplicationStopFailuresValueException`.
     pub fn is_invalid_ignore_application_stop_failures_value_exception(&self) -> bool {
-        matches!(self, Self::InvalidIgnoreApplicationStopFailuresValueException(_))
+        matches!(
+            self,
+            Self::InvalidIgnoreApplicationStopFailuresValueException(_)
+        )
     }
     /// Returns `true` if the error kind is `CreateDeploymentError::InvalidLoadBalancerInfoException`.
     pub fn is_invalid_load_balancer_info_exception(&self) -> bool {
@@ -514,7 +541,10 @@ impl CreateDeploymentError {
     }
     /// Returns `true` if the error kind is `CreateDeploymentError::InvalidUpdateOutdatedInstancesOnlyValueException`.
     pub fn is_invalid_update_outdated_instances_only_value_exception(&self) -> bool {
-        matches!(self, Self::InvalidUpdateOutdatedInstancesOnlyValueException(_))
+        matches!(
+            self,
+            Self::InvalidUpdateOutdatedInstancesOnlyValueException(_)
+        )
     }
     /// Returns `true` if the error kind is `CreateDeploymentError::RevisionDoesNotExistException`.
     pub fn is_revision_does_not_exist_exception(&self) -> bool {
@@ -532,87 +562,33 @@ impl CreateDeploymentError {
 impl std::error::Error for CreateDeploymentError {
     fn source(&self) -> std::option::Option<&(dyn std::error::Error + 'static)> {
         match self {
-            Self::AlarmsLimitExceededException(_inner) =>
-            Some(_inner)
-            ,
-            Self::ApplicationDoesNotExistException(_inner) =>
-            Some(_inner)
-            ,
-            Self::ApplicationNameRequiredException(_inner) =>
-            Some(_inner)
-            ,
-            Self::DeploymentConfigDoesNotExistException(_inner) =>
-            Some(_inner)
-            ,
-            Self::DeploymentGroupDoesNotExistException(_inner) =>
-            Some(_inner)
-            ,
-            Self::DeploymentGroupNameRequiredException(_inner) =>
-            Some(_inner)
-            ,
-            Self::DeploymentLimitExceededException(_inner) =>
-            Some(_inner)
-            ,
-            Self::DescriptionTooLongException(_inner) =>
-            Some(_inner)
-            ,
-            Self::InvalidAlarmConfigException(_inner) =>
-            Some(_inner)
-            ,
-            Self::InvalidApplicationNameException(_inner) =>
-            Some(_inner)
-            ,
-            Self::InvalidAutoRollbackConfigException(_inner) =>
-            Some(_inner)
-            ,
-            Self::InvalidAutoScalingGroupException(_inner) =>
-            Some(_inner)
-            ,
-            Self::InvalidDeploymentConfigNameException(_inner) =>
-            Some(_inner)
-            ,
-            Self::InvalidDeploymentGroupNameException(_inner) =>
-            Some(_inner)
-            ,
-            Self::InvalidFileExistsBehaviorException(_inner) =>
-            Some(_inner)
-            ,
-            Self::InvalidGitHubAccountTokenException(_inner) =>
-            Some(_inner)
-            ,
-            Self::InvalidIgnoreApplicationStopFailuresValueException(_inner) =>
-            Some(_inner)
-            ,
-            Self::InvalidLoadBalancerInfoException(_inner) =>
-            Some(_inner)
-            ,
-            Self::InvalidRevisionException(_inner) =>
-            Some(_inner)
-            ,
-            Self::InvalidRoleException(_inner) =>
-            Some(_inner)
-            ,
-            Self::InvalidTargetInstancesException(_inner) =>
-            Some(_inner)
-            ,
-            Self::InvalidTrafficRoutingConfigurationException(_inner) =>
-            Some(_inner)
-            ,
-            Self::InvalidUpdateOutdatedInstancesOnlyValueException(_inner) =>
-            Some(_inner)
-            ,
-            Self::RevisionDoesNotExistException(_inner) =>
-            Some(_inner)
-            ,
-            Self::RevisionRequiredException(_inner) =>
-            Some(_inner)
-            ,
-            Self::ThrottlingException(_inner) =>
-            Some(_inner)
-            ,
-            Self::Unhandled(_inner) => {
-                Some(_inner)
-            }
+            Self::AlarmsLimitExceededException(_inner) => Some(_inner),
+            Self::ApplicationDoesNotExistException(_inner) => Some(_inner),
+            Self::ApplicationNameRequiredException(_inner) => Some(_inner),
+            Self::DeploymentConfigDoesNotExistException(_inner) => Some(_inner),
+            Self::DeploymentGroupDoesNotExistException(_inner) => Some(_inner),
+            Self::DeploymentGroupNameRequiredException(_inner) => Some(_inner),
+            Self::DeploymentLimitExceededException(_inner) => Some(_inner),
+            Self::DescriptionTooLongException(_inner) => Some(_inner),
+            Self::InvalidAlarmConfigException(_inner) => Some(_inner),
+            Self::InvalidApplicationNameException(_inner) => Some(_inner),
+            Self::InvalidAutoRollbackConfigException(_inner) => Some(_inner),
+            Self::InvalidAutoScalingGroupException(_inner) => Some(_inner),
+            Self::InvalidDeploymentConfigNameException(_inner) => Some(_inner),
+            Self::InvalidDeploymentGroupNameException(_inner) => Some(_inner),
+            Self::InvalidFileExistsBehaviorException(_inner) => Some(_inner),
+            Self::InvalidGitHubAccountTokenException(_inner) => Some(_inner),
+            Self::InvalidIgnoreApplicationStopFailuresValueException(_inner) => Some(_inner),
+            Self::InvalidLoadBalancerInfoException(_inner) => Some(_inner),
+            Self::InvalidRevisionException(_inner) => Some(_inner),
+            Self::InvalidRoleException(_inner) => Some(_inner),
+            Self::InvalidTargetInstancesException(_inner) => Some(_inner),
+            Self::InvalidTrafficRoutingConfigurationException(_inner) => Some(_inner),
+            Self::InvalidUpdateOutdatedInstancesOnlyValueException(_inner) => Some(_inner),
+            Self::RevisionDoesNotExistException(_inner) => Some(_inner),
+            Self::RevisionRequiredException(_inner) => Some(_inner),
+            Self::ThrottlingException(_inner) => Some(_inner),
+            Self::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -627,4 +603,3 @@ mod _create_deployment_output;
 
 /// Builders
 pub mod builders;
-

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeFlowExecutionRecordsInput  {
+pub struct DescribeFlowExecutionRecordsInput {
     /// <p> The specified name of the flow. Spaces are not allowed. Use underscores (_) or hyphens (-) only. </p>
     #[doc(hidden)]
     pub flow_name: std::option::Option<std::string::String>,
@@ -15,7 +15,7 @@ pub struct DescribeFlowExecutionRecordsInput  {
 }
 impl DescribeFlowExecutionRecordsInput {
     /// <p> The specified name of the flow. Spaces are not allowed. Use underscores (_) or hyphens (-) only. </p>
-    pub fn flow_name(&self) -> std::option::Option<& str> {
+    pub fn flow_name(&self) -> std::option::Option<&str> {
         self.flow_name.as_deref()
     }
     /// <p> Specifies the maximum number of items that should be returned in the result set. The default for <code>maxResults</code> is 20 (for all paginated API operations). </p>
@@ -23,13 +23,13 @@ impl DescribeFlowExecutionRecordsInput {
         self.max_results
     }
     /// <p> The pagination token for the next page of data. </p>
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
 }
 impl DescribeFlowExecutionRecordsInput {
     /// Creates a new builder-style object to manufacture [`DescribeFlowExecutionRecordsInput`](crate::operation::describe_flow_execution_records::DescribeFlowExecutionRecordsInput).
-    pub fn builder() -> crate::operation::describe_flow_execution_records::builders::DescribeFlowExecutionRecordsInputBuilder {
+    pub fn builder() -> crate::operation::describe_flow_execution_records::builders::DescribeFlowExecutionRecordsInputBuilder{
         crate::operation::describe_flow_execution_records::builders::DescribeFlowExecutionRecordsInputBuilder::default()
     }
 }
@@ -50,7 +50,8 @@ impl DescribeFlowExecutionRecordsInputBuilder {
     }
     /// <p> The specified name of the flow. Spaces are not allowed. Use underscores (_) or hyphens (-) only. </p>
     pub fn set_flow_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.flow_name = input; self
+        self.flow_name = input;
+        self
     }
     /// <p> Specifies the maximum number of items that should be returned in the result set. The default for <code>maxResults</code> is 20 (for all paginated API operations). </p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -59,7 +60,8 @@ impl DescribeFlowExecutionRecordsInputBuilder {
     }
     /// <p> Specifies the maximum number of items that should be returned in the result set. The default for <code>maxResults</code> is 20 (for all paginated API operations). </p>
     pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_results = input; self
+        self.max_results = input;
+        self
     }
     /// <p> The pagination token for the next page of data. </p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -68,20 +70,22 @@ impl DescribeFlowExecutionRecordsInputBuilder {
     }
     /// <p> The pagination token for the next page of data. </p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input; self
+        self.next_token = input;
+        self
     }
     /// Consumes the builder and constructs a [`DescribeFlowExecutionRecordsInput`](crate::operation::describe_flow_execution_records::DescribeFlowExecutionRecordsInput).
-    pub fn build(self) -> Result<crate::operation::describe_flow_execution_records::DescribeFlowExecutionRecordsInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::describe_flow_execution_records::DescribeFlowExecutionRecordsInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::describe_flow_execution_records::DescribeFlowExecutionRecordsInput {
-                flow_name: self.flow_name
-                ,
-                max_results: self.max_results
-                ,
-                next_token: self.next_token
-                ,
-            }
+                flow_name: self.flow_name,
+                max_results: self.max_results,
+                next_token: self.next_token,
+            },
         )
     }
 }
-

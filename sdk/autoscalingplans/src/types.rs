@@ -104,4 +104,3 @@ pub mod builders;
 
 /// Error types that AWS Auto Scaling Plans can respond with.
 pub mod error;
-

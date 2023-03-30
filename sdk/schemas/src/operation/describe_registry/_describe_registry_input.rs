@@ -2,20 +2,21 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeRegistryInput  {
+pub struct DescribeRegistryInput {
     /// <p>The name of the registry.</p>
     #[doc(hidden)]
     pub registry_name: std::option::Option<std::string::String>,
 }
 impl DescribeRegistryInput {
     /// <p>The name of the registry.</p>
-    pub fn registry_name(&self) -> std::option::Option<& str> {
+    pub fn registry_name(&self) -> std::option::Option<&str> {
         self.registry_name.as_deref()
     }
 }
 impl DescribeRegistryInput {
     /// Creates a new builder-style object to manufacture [`DescribeRegistryInput`](crate::operation::describe_registry::DescribeRegistryInput).
-    pub fn builder() -> crate::operation::describe_registry::builders::DescribeRegistryInputBuilder {
+    pub fn builder() -> crate::operation::describe_registry::builders::DescribeRegistryInputBuilder
+    {
         crate::operation::describe_registry::builders::DescribeRegistryInputBuilder::default()
     }
 }
@@ -34,16 +35,18 @@ impl DescribeRegistryInputBuilder {
     }
     /// <p>The name of the registry.</p>
     pub fn set_registry_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.registry_name = input; self
+        self.registry_name = input;
+        self
     }
     /// Consumes the builder and constructs a [`DescribeRegistryInput`](crate::operation::describe_registry::DescribeRegistryInput).
-    pub fn build(self) -> Result<crate::operation::describe_registry::DescribeRegistryInput, aws_smithy_http::operation::error::BuildError> {
-        Ok(
-            crate::operation::describe_registry::DescribeRegistryInput {
-                registry_name: self.registry_name
-                ,
-            }
-        )
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::describe_registry::DescribeRegistryInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        Ok(crate::operation::describe_registry::DescribeRegistryInput {
+            registry_name: self.registry_name,
+        })
     }
 }
-

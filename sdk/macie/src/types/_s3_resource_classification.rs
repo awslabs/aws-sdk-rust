@@ -3,7 +3,7 @@
 /// <p>(Discontinued) The S3 resources that you want to associate with Amazon Macie Classic for monitoring and data classification. This data type is used as a request parameter in the <code>AssociateS3Resources</code> action and a response parameter in the <code>ListS3Resources</code> action. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct S3ResourceClassification  {
+pub struct S3ResourceClassification {
     /// <p>(Discontinued) The name of the S3 bucket that you want to associate with Amazon Macie Classic.</p>
     #[doc(hidden)]
     pub bucket_name: std::option::Option<std::string::String>,
@@ -16,15 +16,15 @@ pub struct S3ResourceClassification  {
 }
 impl S3ResourceClassification {
     /// <p>(Discontinued) The name of the S3 bucket that you want to associate with Amazon Macie Classic.</p>
-    pub fn bucket_name(&self) -> std::option::Option<& str> {
+    pub fn bucket_name(&self) -> std::option::Option<&str> {
         self.bucket_name.as_deref()
     }
     /// <p>(Discontinued) The prefix of the S3 bucket that you want to associate with Amazon Macie Classic.</p>
-    pub fn prefix(&self) -> std::option::Option<& str> {
+    pub fn prefix(&self) -> std::option::Option<&str> {
         self.prefix.as_deref()
     }
     /// <p>(Discontinued) The classification type that you want to specify for the resource associated with Amazon Macie Classic. </p>
-    pub fn classification_type(&self) -> std::option::Option<& crate::types::ClassificationType> {
+    pub fn classification_type(&self) -> std::option::Option<&crate::types::ClassificationType> {
         self.classification_type.as_ref()
     }
 }
@@ -51,7 +51,8 @@ impl S3ResourceClassificationBuilder {
     }
     /// <p>(Discontinued) The name of the S3 bucket that you want to associate with Amazon Macie Classic.</p>
     pub fn set_bucket_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.bucket_name = input; self
+        self.bucket_name = input;
+        self
     }
     /// <p>(Discontinued) The prefix of the S3 bucket that you want to associate with Amazon Macie Classic.</p>
     pub fn prefix(mut self, input: impl Into<std::string::String>) -> Self {
@@ -60,7 +61,8 @@ impl S3ResourceClassificationBuilder {
     }
     /// <p>(Discontinued) The prefix of the S3 bucket that you want to associate with Amazon Macie Classic.</p>
     pub fn set_prefix(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.prefix = input; self
+        self.prefix = input;
+        self
     }
     /// <p>(Discontinued) The classification type that you want to specify for the resource associated with Amazon Macie Classic. </p>
     pub fn classification_type(mut self, input: crate::types::ClassificationType) -> Self {
@@ -68,19 +70,19 @@ impl S3ResourceClassificationBuilder {
         self
     }
     /// <p>(Discontinued) The classification type that you want to specify for the resource associated with Amazon Macie Classic. </p>
-    pub fn set_classification_type(mut self, input: std::option::Option<crate::types::ClassificationType>) -> Self {
-        self.classification_type = input; self
+    pub fn set_classification_type(
+        mut self,
+        input: std::option::Option<crate::types::ClassificationType>,
+    ) -> Self {
+        self.classification_type = input;
+        self
     }
     /// Consumes the builder and constructs a [`S3ResourceClassification`](crate::types::S3ResourceClassification).
     pub fn build(self) -> crate::types::S3ResourceClassification {
         crate::types::S3ResourceClassification {
-            bucket_name: self.bucket_name
-            ,
-            prefix: self.prefix
-            ,
-            classification_type: self.classification_type
-            ,
+            bucket_name: self.bucket_name,
+            prefix: self.prefix,
+            classification_type: self.classification_type,
         }
     }
 }
-

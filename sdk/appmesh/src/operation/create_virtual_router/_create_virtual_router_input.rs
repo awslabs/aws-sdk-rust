@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateVirtualRouterInput  {
+pub struct CreateVirtualRouterInput {
     /// <p>The name to use for the virtual router.</p>
     #[doc(hidden)]
     pub virtual_router_name: std::option::Option<std::string::String>,
@@ -24,34 +24,36 @@ pub struct CreateVirtualRouterInput  {
 }
 impl CreateVirtualRouterInput {
     /// <p>The name to use for the virtual router.</p>
-    pub fn virtual_router_name(&self) -> std::option::Option<& str> {
+    pub fn virtual_router_name(&self) -> std::option::Option<&str> {
         self.virtual_router_name.as_deref()
     }
     /// <p>The name of the service mesh to create the virtual router in.</p>
-    pub fn mesh_name(&self) -> std::option::Option<& str> {
+    pub fn mesh_name(&self) -> std::option::Option<&str> {
         self.mesh_name.as_deref()
     }
     /// <p>The virtual router specification to apply.</p>
-    pub fn spec(&self) -> std::option::Option<& crate::types::VirtualRouterSpec> {
+    pub fn spec(&self) -> std::option::Option<&crate::types::VirtualRouterSpec> {
         self.spec.as_ref()
     }
     /// <p>Optional metadata that you can apply to the virtual router to assist with categorization and organization. Each tag consists of a key and an optional value, both of which you define. Tag keys can have a maximum character length of 128 characters, and tag values can have a maximum length of 256 characters.</p>
-    pub fn tags(&self) -> std::option::Option<& [crate::types::TagRef]> {
+    pub fn tags(&self) -> std::option::Option<&[crate::types::TagRef]> {
         self.tags.as_deref()
     }
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. Up to 36 letters, numbers, hyphens, and underscores are allowed.</p>
-    pub fn client_token(&self) -> std::option::Option<& str> {
+    pub fn client_token(&self) -> std::option::Option<&str> {
         self.client_token.as_deref()
     }
     /// <p>The Amazon Web Services IAM account ID of the service mesh owner. If the account ID is not your own, then the account that you specify must share the mesh with your account before you can create the resource in the service mesh. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
-    pub fn mesh_owner(&self) -> std::option::Option<& str> {
+    pub fn mesh_owner(&self) -> std::option::Option<&str> {
         self.mesh_owner.as_deref()
     }
 }
 impl CreateVirtualRouterInput {
     /// Creates a new builder-style object to manufacture [`CreateVirtualRouterInput`](crate::operation::create_virtual_router::CreateVirtualRouterInput).
-    pub fn builder() -> crate::operation::create_virtual_router::builders::CreateVirtualRouterInputBuilder {
-        crate::operation::create_virtual_router::builders::CreateVirtualRouterInputBuilder::default()
+    pub fn builder(
+    ) -> crate::operation::create_virtual_router::builders::CreateVirtualRouterInputBuilder {
+        crate::operation::create_virtual_router::builders::CreateVirtualRouterInputBuilder::default(
+        )
     }
 }
 
@@ -73,8 +75,12 @@ impl CreateVirtualRouterInputBuilder {
         self
     }
     /// <p>The name to use for the virtual router.</p>
-    pub fn set_virtual_router_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.virtual_router_name = input; self
+    pub fn set_virtual_router_name(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.virtual_router_name = input;
+        self
     }
     /// <p>The name of the service mesh to create the virtual router in.</p>
     pub fn mesh_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -83,7 +89,8 @@ impl CreateVirtualRouterInputBuilder {
     }
     /// <p>The name of the service mesh to create the virtual router in.</p>
     pub fn set_mesh_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.mesh_name = input; self
+        self.mesh_name = input;
+        self
     }
     /// <p>The virtual router specification to apply.</p>
     pub fn spec(mut self, input: crate::types::VirtualRouterSpec) -> Self {
@@ -92,7 +99,8 @@ impl CreateVirtualRouterInputBuilder {
     }
     /// <p>The virtual router specification to apply.</p>
     pub fn set_spec(mut self, input: std::option::Option<crate::types::VirtualRouterSpec>) -> Self {
-        self.spec = input; self
+        self.spec = input;
+        self
     }
     /// Appends an item to `tags`.
     ///
@@ -101,13 +109,17 @@ impl CreateVirtualRouterInputBuilder {
     /// <p>Optional metadata that you can apply to the virtual router to assist with categorization and organization. Each tag consists of a key and an optional value, both of which you define. Tag keys can have a maximum character length of 128 characters, and tag values can have a maximum length of 256 characters.</p>
     pub fn tags(mut self, input: crate::types::TagRef) -> Self {
         let mut v = self.tags.unwrap_or_default();
-                        v.push(input);
-                        self.tags = Some(v);
-                        self
+        v.push(input);
+        self.tags = Some(v);
+        self
     }
     /// <p>Optional metadata that you can apply to the virtual router to assist with categorization and organization. Each tag consists of a key and an optional value, both of which you define. Tag keys can have a maximum character length of 128 characters, and tag values can have a maximum length of 256 characters.</p>
-    pub fn set_tags(mut self, input: std::option::Option<std::vec::Vec<crate::types::TagRef>>) -> Self {
-        self.tags = input; self
+    pub fn set_tags(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::TagRef>>,
+    ) -> Self {
+        self.tags = input;
+        self
     }
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. Up to 36 letters, numbers, hyphens, and underscores are allowed.</p>
     pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -116,7 +128,8 @@ impl CreateVirtualRouterInputBuilder {
     }
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. Up to 36 letters, numbers, hyphens, and underscores are allowed.</p>
     pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.client_token = input; self
+        self.client_token = input;
+        self
     }
     /// <p>The Amazon Web Services IAM account ID of the service mesh owner. If the account ID is not your own, then the account that you specify must share the mesh with your account before you can create the resource in the service mesh. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
     pub fn mesh_owner(mut self, input: impl Into<std::string::String>) -> Self {
@@ -125,26 +138,25 @@ impl CreateVirtualRouterInputBuilder {
     }
     /// <p>The Amazon Web Services IAM account ID of the service mesh owner. If the account ID is not your own, then the account that you specify must share the mesh with your account before you can create the resource in the service mesh. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
     pub fn set_mesh_owner(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.mesh_owner = input; self
+        self.mesh_owner = input;
+        self
     }
     /// Consumes the builder and constructs a [`CreateVirtualRouterInput`](crate::operation::create_virtual_router::CreateVirtualRouterInput).
-    pub fn build(self) -> Result<crate::operation::create_virtual_router::CreateVirtualRouterInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::create_virtual_router::CreateVirtualRouterInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::create_virtual_router::CreateVirtualRouterInput {
-                virtual_router_name: self.virtual_router_name
-                ,
-                mesh_name: self.mesh_name
-                ,
-                spec: self.spec
-                ,
-                tags: self.tags
-                ,
-                client_token: self.client_token
-                ,
-                mesh_owner: self.mesh_owner
-                ,
-            }
+                virtual_router_name: self.virtual_router_name,
+                mesh_name: self.mesh_name,
+                spec: self.spec,
+                tags: self.tags,
+                client_token: self.client_token,
+                mesh_owner: self.mesh_owner,
+            },
         )
     }
 }
-

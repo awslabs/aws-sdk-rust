@@ -2,20 +2,20 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ValidateMatchmakingRuleSetInput  {
+pub struct ValidateMatchmakingRuleSetInput {
     /// <p>A collection of matchmaking rules to validate, formatted as a JSON string.</p>
     #[doc(hidden)]
     pub rule_set_body: std::option::Option<std::string::String>,
 }
 impl ValidateMatchmakingRuleSetInput {
     /// <p>A collection of matchmaking rules to validate, formatted as a JSON string.</p>
-    pub fn rule_set_body(&self) -> std::option::Option<& str> {
+    pub fn rule_set_body(&self) -> std::option::Option<&str> {
         self.rule_set_body.as_deref()
     }
 }
 impl ValidateMatchmakingRuleSetInput {
     /// Creates a new builder-style object to manufacture [`ValidateMatchmakingRuleSetInput`](crate::operation::validate_matchmaking_rule_set::ValidateMatchmakingRuleSetInput).
-    pub fn builder() -> crate::operation::validate_matchmaking_rule_set::builders::ValidateMatchmakingRuleSetInputBuilder {
+    pub fn builder() -> crate::operation::validate_matchmaking_rule_set::builders::ValidateMatchmakingRuleSetInputBuilder{
         crate::operation::validate_matchmaking_rule_set::builders::ValidateMatchmakingRuleSetInputBuilder::default()
     }
 }
@@ -34,16 +34,20 @@ impl ValidateMatchmakingRuleSetInputBuilder {
     }
     /// <p>A collection of matchmaking rules to validate, formatted as a JSON string.</p>
     pub fn set_rule_set_body(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.rule_set_body = input; self
+        self.rule_set_body = input;
+        self
     }
     /// Consumes the builder and constructs a [`ValidateMatchmakingRuleSetInput`](crate::operation::validate_matchmaking_rule_set::ValidateMatchmakingRuleSetInput).
-    pub fn build(self) -> Result<crate::operation::validate_matchmaking_rule_set::ValidateMatchmakingRuleSetInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::validate_matchmaking_rule_set::ValidateMatchmakingRuleSetInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::validate_matchmaking_rule_set::ValidateMatchmakingRuleSetInput {
-                rule_set_body: self.rule_set_body
-                ,
-            }
+                rule_set_body: self.rule_set_body,
+            },
         )
     }
 }
-

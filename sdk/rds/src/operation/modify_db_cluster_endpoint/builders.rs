@@ -4,58 +4,84 @@ pub use crate::operation::modify_db_cluster_endpoint::_modify_db_cluster_endpoin
 pub use crate::operation::modify_db_cluster_endpoint::_modify_db_cluster_endpoint_input::ModifyDbClusterEndpointInputBuilder;
 
 /// Fluent builder constructing a request to `ModifyDBClusterEndpoint`.
-/// 
-/// <p>Modifies the properties of an endpoint in an Amazon Aurora DB cluster.</p> <note> 
-/// <p>This action only applies to Aurora DB clusters.</p> 
+///
+/// <p>Modifies the properties of an endpoint in an Amazon Aurora DB cluster.</p> <note>
+/// <p>This action only applies to Aurora DB clusters.</p>
 /// </note>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ModifyDBClusterEndpointFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::modify_db_cluster_endpoint::builders::ModifyDbClusterEndpointInputBuilder
-            }
-impl ModifyDBClusterEndpointFluentBuilder  {
+    handle: std::sync::Arc<crate::client::Handle>,
+    inner:
+        crate::operation::modify_db_cluster_endpoint::builders::ModifyDbClusterEndpointInputBuilder,
+}
+impl ModifyDBClusterEndpointFluentBuilder {
     /// Creates a new `ModifyDBClusterEndpoint`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
-                    /// sent. The operation's inner [http::Request] can be modified as well.
-                    pub async fn customize(self) -> std::result::Result<
-                        crate::client::customize::CustomizableOperation<crate::operation::modify_db_cluster_endpoint::ModifyDBClusterEndpoint, aws_http::retry::AwsResponseRetryClassifier,>,
-                        aws_smithy_http::result::SdkError<crate::operation::modify_db_cluster_endpoint::ModifyDBClusterEndpointError>
-                    >  {
-                        let handle = self.handle.clone();
-                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-                    }
-    
-                    /// Sends the request and returns the response.
-                    ///
-                    /// If an error occurs, an `SdkError` will be returned with additional details that
-                    /// can be matched against.
-                    ///
-                    /// By default, any retryable failures will be retried twice. Retry behavior
-                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                    /// set when configuring the client.
-                    pub async fn send(self) -> std::result::Result<crate::operation::modify_db_cluster_endpoint::ModifyDbClusterEndpointOutput, aws_smithy_http::result::SdkError<crate::operation::modify_db_cluster_endpoint::ModifyDBClusterEndpointError>>
-                     {
-                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&self.handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        self.handle.client.call(op).await
-                    }
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle,
+            inner: Default::default(),
+        }
+    }
+
+    /// Consume this builder, creating a customizable operation that can be modified before being
+    /// sent. The operation's inner [http::Request] can be modified as well.
+    pub async fn customize(
+        self,
+    ) -> std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::modify_db_cluster_endpoint::ModifyDBClusterEndpoint,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::result::SdkError<
+            crate::operation::modify_db_cluster_endpoint::ModifyDBClusterEndpointError,
+        >,
+    > {
+        let handle = self.handle.clone();
+        let operation = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+    }
+
+    /// Sends the request and returns the response.
+    ///
+    /// If an error occurs, an `SdkError` will be returned with additional details that
+    /// can be matched against.
+    ///
+    /// By default, any retryable failures will be retried twice. Retry behavior
+    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+    /// set when configuring the client.
+    pub async fn send(
+        self,
+    ) -> std::result::Result<
+        crate::operation::modify_db_cluster_endpoint::ModifyDbClusterEndpointOutput,
+        aws_smithy_http::result::SdkError<
+            crate::operation::modify_db_cluster_endpoint::ModifyDBClusterEndpointError,
+        >,
+    > {
+        let op = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&self.handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        self.handle.client.call(op).await
+    }
     /// <p>The identifier of the endpoint to modify. This parameter is stored as a lowercase string.</p>
     pub fn db_cluster_endpoint_identifier(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.db_cluster_endpoint_identifier(input.into());
         self
     }
     /// <p>The identifier of the endpoint to modify. This parameter is stored as a lowercase string.</p>
-    pub fn set_db_cluster_endpoint_identifier(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_db_cluster_endpoint_identifier(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_db_cluster_endpoint_identifier(input);
         self
     }
@@ -79,7 +105,10 @@ impl ModifyDBClusterEndpointFluentBuilder  {
         self
     }
     /// <p>List of DB instance identifiers that are part of the custom endpoint group.</p>
-    pub fn set_static_members(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+    pub fn set_static_members(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
         self.inner = self.inner.set_static_members(input);
         self
     }
@@ -93,9 +122,11 @@ impl ModifyDBClusterEndpointFluentBuilder  {
         self
     }
     /// <p>List of DB instance identifiers that aren't part of the custom endpoint group. All other eligible instances are reachable through the custom endpoint. Only relevant if the list of static members is empty.</p>
-    pub fn set_excluded_members(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+    pub fn set_excluded_members(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
         self.inner = self.inner.set_excluded_members(input);
         self
     }
 }
-

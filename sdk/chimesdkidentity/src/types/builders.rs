@@ -26,4 +26,3 @@ pub use crate::types::_app_instance_user::AppInstanceUserBuilder;
 pub use crate::types::_app_instance_admin::AppInstanceAdminBuilder;
 
 pub use crate::types::_app_instance::AppInstanceBuilder;
-

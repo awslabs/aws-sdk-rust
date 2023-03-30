@@ -3,7 +3,7 @@
 /// <p>An object that represents metadata for a resource.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ResourceMetadata  {
+pub struct ResourceMetadata {
     /// <p>The full Amazon Resource Name (ARN) for the resource.</p>
     #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
@@ -28,7 +28,7 @@ pub struct ResourceMetadata  {
 }
 impl ResourceMetadata {
     /// <p>The full Amazon Resource Name (ARN) for the resource.</p>
-    pub fn arn(&self) -> std::option::Option<& str> {
+    pub fn arn(&self) -> std::option::Option<&str> {
         self.arn.as_deref()
     }
     /// <p>The version of the resource. Resources are created at version 1, and this version is incremented each time that they're updated.</p>
@@ -36,23 +36,23 @@ impl ResourceMetadata {
         self.version
     }
     /// <p>The unique identifier for the resource.</p>
-    pub fn uid(&self) -> std::option::Option<& str> {
+    pub fn uid(&self) -> std::option::Option<&str> {
         self.uid.as_deref()
     }
     /// <p>The Unix epoch timestamp in seconds for when the resource was created.</p>
-    pub fn created_at(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
+    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
     /// <p>The Unix epoch timestamp in seconds for when the resource was last updated.</p>
-    pub fn last_updated_at(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
+    pub fn last_updated_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_updated_at.as_ref()
     }
     /// <p>The Amazon Web Services IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
-    pub fn mesh_owner(&self) -> std::option::Option<& str> {
+    pub fn mesh_owner(&self) -> std::option::Option<&str> {
         self.mesh_owner.as_deref()
     }
     /// <p>The Amazon Web Services IAM account ID of the resource owner. If the account ID is not your own, then it's the ID of the mesh owner or of another account that the mesh is shared with. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
-    pub fn resource_owner(&self) -> std::option::Option<& str> {
+    pub fn resource_owner(&self) -> std::option::Option<&str> {
         self.resource_owner.as_deref()
     }
 }
@@ -83,7 +83,8 @@ impl ResourceMetadataBuilder {
     }
     /// <p>The full Amazon Resource Name (ARN) for the resource.</p>
     pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.arn = input; self
+        self.arn = input;
+        self
     }
     /// <p>The version of the resource. Resources are created at version 1, and this version is incremented each time that they're updated.</p>
     pub fn version(mut self, input: i64) -> Self {
@@ -92,7 +93,8 @@ impl ResourceMetadataBuilder {
     }
     /// <p>The version of the resource. Resources are created at version 1, and this version is incremented each time that they're updated.</p>
     pub fn set_version(mut self, input: std::option::Option<i64>) -> Self {
-        self.version = input; self
+        self.version = input;
+        self
     }
     /// <p>The unique identifier for the resource.</p>
     pub fn uid(mut self, input: impl Into<std::string::String>) -> Self {
@@ -101,7 +103,8 @@ impl ResourceMetadataBuilder {
     }
     /// <p>The unique identifier for the resource.</p>
     pub fn set_uid(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.uid = input; self
+        self.uid = input;
+        self
     }
     /// <p>The Unix epoch timestamp in seconds for when the resource was created.</p>
     pub fn created_at(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -109,8 +112,12 @@ impl ResourceMetadataBuilder {
         self
     }
     /// <p>The Unix epoch timestamp in seconds for when the resource was created.</p>
-    pub fn set_created_at(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.created_at = input; self
+    pub fn set_created_at(
+        mut self,
+        input: std::option::Option<aws_smithy_types::DateTime>,
+    ) -> Self {
+        self.created_at = input;
+        self
     }
     /// <p>The Unix epoch timestamp in seconds for when the resource was last updated.</p>
     pub fn last_updated_at(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -118,8 +125,12 @@ impl ResourceMetadataBuilder {
         self
     }
     /// <p>The Unix epoch timestamp in seconds for when the resource was last updated.</p>
-    pub fn set_last_updated_at(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.last_updated_at = input; self
+    pub fn set_last_updated_at(
+        mut self,
+        input: std::option::Option<aws_smithy_types::DateTime>,
+    ) -> Self {
+        self.last_updated_at = input;
+        self
     }
     /// <p>The Amazon Web Services IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
     pub fn mesh_owner(mut self, input: impl Into<std::string::String>) -> Self {
@@ -128,7 +139,8 @@ impl ResourceMetadataBuilder {
     }
     /// <p>The Amazon Web Services IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
     pub fn set_mesh_owner(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.mesh_owner = input; self
+        self.mesh_owner = input;
+        self
     }
     /// <p>The Amazon Web Services IAM account ID of the resource owner. If the account ID is not your own, then it's the ID of the mesh owner or of another account that the mesh is shared with. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
     pub fn resource_owner(mut self, input: impl Into<std::string::String>) -> Self {
@@ -137,26 +149,19 @@ impl ResourceMetadataBuilder {
     }
     /// <p>The Amazon Web Services IAM account ID of the resource owner. If the account ID is not your own, then it's the ID of the mesh owner or of another account that the mesh is shared with. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
     pub fn set_resource_owner(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.resource_owner = input; self
+        self.resource_owner = input;
+        self
     }
     /// Consumes the builder and constructs a [`ResourceMetadata`](crate::types::ResourceMetadata).
     pub fn build(self) -> crate::types::ResourceMetadata {
         crate::types::ResourceMetadata {
-            arn: self.arn
-            ,
-            version: self.version
-            ,
-            uid: self.uid
-            ,
-            created_at: self.created_at
-            ,
-            last_updated_at: self.last_updated_at
-            ,
-            mesh_owner: self.mesh_owner
-            ,
-            resource_owner: self.resource_owner
-            ,
+            arn: self.arn,
+            version: self.version,
+            uid: self.uid,
+            created_at: self.created_at,
+            last_updated_at: self.last_updated_at,
+            mesh_owner: self.mesh_owner,
+            resource_owner: self.resource_owner,
         }
     }
 }
-

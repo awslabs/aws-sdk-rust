@@ -2,27 +2,30 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct StartDeliveryStreamEncryptionInput  {
+pub struct StartDeliveryStreamEncryptionInput {
     /// <p>The name of the delivery stream for which you want to enable server-side encryption (SSE).</p>
     #[doc(hidden)]
     pub delivery_stream_name: std::option::Option<std::string::String>,
     /// <p>Used to specify the type and Amazon Resource Name (ARN) of the KMS key needed for Server-Side Encryption (SSE).</p>
     #[doc(hidden)]
-    pub delivery_stream_encryption_configuration_input: std::option::Option<crate::types::DeliveryStreamEncryptionConfigurationInput>,
+    pub delivery_stream_encryption_configuration_input:
+        std::option::Option<crate::types::DeliveryStreamEncryptionConfigurationInput>,
 }
 impl StartDeliveryStreamEncryptionInput {
     /// <p>The name of the delivery stream for which you want to enable server-side encryption (SSE).</p>
-    pub fn delivery_stream_name(&self) -> std::option::Option<& str> {
+    pub fn delivery_stream_name(&self) -> std::option::Option<&str> {
         self.delivery_stream_name.as_deref()
     }
     /// <p>Used to specify the type and Amazon Resource Name (ARN) of the KMS key needed for Server-Side Encryption (SSE).</p>
-    pub fn delivery_stream_encryption_configuration_input(&self) -> std::option::Option<& crate::types::DeliveryStreamEncryptionConfigurationInput> {
+    pub fn delivery_stream_encryption_configuration_input(
+        &self,
+    ) -> std::option::Option<&crate::types::DeliveryStreamEncryptionConfigurationInput> {
         self.delivery_stream_encryption_configuration_input.as_ref()
     }
 }
 impl StartDeliveryStreamEncryptionInput {
     /// Creates a new builder-style object to manufacture [`StartDeliveryStreamEncryptionInput`](crate::operation::start_delivery_stream_encryption::StartDeliveryStreamEncryptionInput).
-    pub fn builder() -> crate::operation::start_delivery_stream_encryption::builders::StartDeliveryStreamEncryptionInputBuilder {
+    pub fn builder() -> crate::operation::start_delivery_stream_encryption::builders::StartDeliveryStreamEncryptionInputBuilder{
         crate::operation::start_delivery_stream_encryption::builders::StartDeliveryStreamEncryptionInputBuilder::default()
     }
 }
@@ -32,7 +35,8 @@ impl StartDeliveryStreamEncryptionInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct StartDeliveryStreamEncryptionInputBuilder {
     pub(crate) delivery_stream_name: std::option::Option<std::string::String>,
-    pub(crate) delivery_stream_encryption_configuration_input: std::option::Option<crate::types::DeliveryStreamEncryptionConfigurationInput>,
+    pub(crate) delivery_stream_encryption_configuration_input:
+        std::option::Option<crate::types::DeliveryStreamEncryptionConfigurationInput>,
 }
 impl StartDeliveryStreamEncryptionInputBuilder {
     /// <p>The name of the delivery stream for which you want to enable server-side encryption (SSE).</p>
@@ -41,20 +45,36 @@ impl StartDeliveryStreamEncryptionInputBuilder {
         self
     }
     /// <p>The name of the delivery stream for which you want to enable server-side encryption (SSE).</p>
-    pub fn set_delivery_stream_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.delivery_stream_name = input; self
+    pub fn set_delivery_stream_name(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.delivery_stream_name = input;
+        self
     }
     /// <p>Used to specify the type and Amazon Resource Name (ARN) of the KMS key needed for Server-Side Encryption (SSE).</p>
-    pub fn delivery_stream_encryption_configuration_input(mut self, input: crate::types::DeliveryStreamEncryptionConfigurationInput) -> Self {
+    pub fn delivery_stream_encryption_configuration_input(
+        mut self,
+        input: crate::types::DeliveryStreamEncryptionConfigurationInput,
+    ) -> Self {
         self.delivery_stream_encryption_configuration_input = Some(input);
         self
     }
     /// <p>Used to specify the type and Amazon Resource Name (ARN) of the KMS key needed for Server-Side Encryption (SSE).</p>
-    pub fn set_delivery_stream_encryption_configuration_input(mut self, input: std::option::Option<crate::types::DeliveryStreamEncryptionConfigurationInput>) -> Self {
-        self.delivery_stream_encryption_configuration_input = input; self
+    pub fn set_delivery_stream_encryption_configuration_input(
+        mut self,
+        input: std::option::Option<crate::types::DeliveryStreamEncryptionConfigurationInput>,
+    ) -> Self {
+        self.delivery_stream_encryption_configuration_input = input;
+        self
     }
     /// Consumes the builder and constructs a [`StartDeliveryStreamEncryptionInput`](crate::operation::start_delivery_stream_encryption::StartDeliveryStreamEncryptionInput).
-    pub fn build(self) -> Result<crate::operation::start_delivery_stream_encryption::StartDeliveryStreamEncryptionInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::start_delivery_stream_encryption::StartDeliveryStreamEncryptionInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::start_delivery_stream_encryption::StartDeliveryStreamEncryptionInput {
                 delivery_stream_name: self.delivery_stream_name
@@ -65,4 +85,3 @@ impl StartDeliveryStreamEncryptionInputBuilder {
         )
     }
 }
-

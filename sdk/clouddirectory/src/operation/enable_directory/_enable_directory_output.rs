@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct EnableDirectoryOutput  {
+pub struct EnableDirectoryOutput {
     /// <p>The ARN of the enabled directory.</p>
     #[doc(hidden)]
     pub directory_arn: std::option::Option<std::string::String>,
@@ -10,15 +10,15 @@ pub struct EnableDirectoryOutput  {
 }
 impl EnableDirectoryOutput {
     /// <p>The ARN of the enabled directory.</p>
-    pub fn directory_arn(&self) -> std::option::Option<& str> {
+    pub fn directory_arn(&self) -> std::option::Option<&str> {
         self.directory_arn.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for EnableDirectoryOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl EnableDirectoryOutput {
     /// Creates a new builder-style object to manufacture [`EnableDirectoryOutput`](crate::operation::enable_directory::EnableDirectoryOutput).
     pub fn builder() -> crate::operation::enable_directory::builders::EnableDirectoryOutputBuilder {
@@ -41,24 +41,23 @@ impl EnableDirectoryOutputBuilder {
     }
     /// <p>The ARN of the enabled directory.</p>
     pub fn set_directory_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.directory_arn = input; self
+        self.directory_arn = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`EnableDirectoryOutput`](crate::operation::enable_directory::EnableDirectoryOutput).
     pub fn build(self) -> crate::operation::enable_directory::EnableDirectoryOutput {
         crate::operation::enable_directory::EnableDirectoryOutput {
-            directory_arn: self.directory_arn
-            ,
+            directory_arn: self.directory_arn,
             _request_id: self._request_id,
         }
     }
 }
-

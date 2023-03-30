@@ -2,13 +2,14 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeImagePermissionsOutput  {
+pub struct DescribeImagePermissionsOutput {
     /// <p>The name of the private image.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The permissions for a private image that you own. </p>
     #[doc(hidden)]
-    pub shared_image_permissions_list: std::option::Option<std::vec::Vec<crate::types::SharedImagePermissions>>,
+    pub shared_image_permissions_list:
+        std::option::Option<std::vec::Vec<crate::types::SharedImagePermissions>>,
     /// <p>The pagination token to use to retrieve the next page of results for this operation. If there are no more pages, this value is null.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
@@ -16,26 +17,30 @@ pub struct DescribeImagePermissionsOutput  {
 }
 impl DescribeImagePermissionsOutput {
     /// <p>The name of the private image.</p>
-    pub fn name(&self) -> std::option::Option<& str> {
+    pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>The permissions for a private image that you own. </p>
-    pub fn shared_image_permissions_list(&self) -> std::option::Option<& [crate::types::SharedImagePermissions]> {
+    pub fn shared_image_permissions_list(
+        &self,
+    ) -> std::option::Option<&[crate::types::SharedImagePermissions]> {
         self.shared_image_permissions_list.as_deref()
     }
     /// <p>The pagination token to use to retrieve the next page of results for this operation. If there are no more pages, this value is null.</p>
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for DescribeImagePermissionsOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl DescribeImagePermissionsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeImagePermissionsOutput`](crate::operation::describe_image_permissions::DescribeImagePermissionsOutput).
-    pub fn builder() -> crate::operation::describe_image_permissions::builders::DescribeImagePermissionsOutputBuilder {
+    pub fn builder(
+    ) -> crate::operation::describe_image_permissions::builders::DescribeImagePermissionsOutputBuilder
+    {
         crate::operation::describe_image_permissions::builders::DescribeImagePermissionsOutputBuilder::default()
     }
 }
@@ -45,7 +50,8 @@ impl DescribeImagePermissionsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct DescribeImagePermissionsOutputBuilder {
     pub(crate) name: std::option::Option<std::string::String>,
-    pub(crate) shared_image_permissions_list: std::option::Option<std::vec::Vec<crate::types::SharedImagePermissions>>,
+    pub(crate) shared_image_permissions_list:
+        std::option::Option<std::vec::Vec<crate::types::SharedImagePermissions>>,
     pub(crate) next_token: std::option::Option<std::string::String>,
     _request_id: Option<String>,
 }
@@ -57,22 +63,30 @@ impl DescribeImagePermissionsOutputBuilder {
     }
     /// <p>The name of the private image.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input; self
+        self.name = input;
+        self
     }
     /// Appends an item to `shared_image_permissions_list`.
     ///
     /// To override the contents of this collection use [`set_shared_image_permissions_list`](Self::set_shared_image_permissions_list).
     ///
     /// <p>The permissions for a private image that you own. </p>
-    pub fn shared_image_permissions_list(mut self, input: crate::types::SharedImagePermissions) -> Self {
+    pub fn shared_image_permissions_list(
+        mut self,
+        input: crate::types::SharedImagePermissions,
+    ) -> Self {
         let mut v = self.shared_image_permissions_list.unwrap_or_default();
-                        v.push(input);
-                        self.shared_image_permissions_list = Some(v);
-                        self
+        v.push(input);
+        self.shared_image_permissions_list = Some(v);
+        self
     }
     /// <p>The permissions for a private image that you own. </p>
-    pub fn set_shared_image_permissions_list(mut self, input: std::option::Option<std::vec::Vec<crate::types::SharedImagePermissions>>) -> Self {
-        self.shared_image_permissions_list = input; self
+    pub fn set_shared_image_permissions_list(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::SharedImagePermissions>>,
+    ) -> Self {
+        self.shared_image_permissions_list = input;
+        self
     }
     /// <p>The pagination token to use to retrieve the next page of results for this operation. If there are no more pages, this value is null.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -81,28 +95,27 @@ impl DescribeImagePermissionsOutputBuilder {
     }
     /// <p>The pagination token to use to retrieve the next page of results for this operation. If there are no more pages, this value is null.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input; self
+        self.next_token = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`DescribeImagePermissionsOutput`](crate::operation::describe_image_permissions::DescribeImagePermissionsOutput).
-    pub fn build(self) -> crate::operation::describe_image_permissions::DescribeImagePermissionsOutput {
+    pub fn build(
+        self,
+    ) -> crate::operation::describe_image_permissions::DescribeImagePermissionsOutput {
         crate::operation::describe_image_permissions::DescribeImagePermissionsOutput {
-            name: self.name
-            ,
-            shared_image_permissions_list: self.shared_image_permissions_list
-            ,
-            next_token: self.next_token
-            ,
+            name: self.name,
+            shared_image_permissions_list: self.shared_image_permissions_list,
+            next_token: self.next_token,
             _request_id: self._request_id,
         }
     }
 }
-

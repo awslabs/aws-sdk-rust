@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ProvisionIpamPoolCidrInput  {
+pub struct ProvisionIpamPoolCidrInput {
     /// <p>A check for whether you have the required permissions for the action without actually making the request and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     #[doc(hidden)]
     pub dry_run: std::option::Option<bool>,
@@ -22,21 +22,25 @@ impl ProvisionIpamPoolCidrInput {
         self.dry_run
     }
     /// <p>The ID of the IPAM pool to which you want to assign a CIDR.</p>
-    pub fn ipam_pool_id(&self) -> std::option::Option<& str> {
+    pub fn ipam_pool_id(&self) -> std::option::Option<&str> {
         self.ipam_pool_id.as_deref()
     }
     /// <p>The CIDR you want to assign to the IPAM pool.</p>
-    pub fn cidr(&self) -> std::option::Option<& str> {
+    pub fn cidr(&self) -> std::option::Option<&str> {
         self.cidr.as_deref()
     }
     /// <p>A signed document that proves that you are authorized to bring a specified IP address range to Amazon using BYOIP. This option applies to public pools only.</p>
-    pub fn cidr_authorization_context(&self) -> std::option::Option<& crate::types::IpamCidrAuthorizationContext> {
+    pub fn cidr_authorization_context(
+        &self,
+    ) -> std::option::Option<&crate::types::IpamCidrAuthorizationContext> {
         self.cidr_authorization_context.as_ref()
     }
 }
 impl ProvisionIpamPoolCidrInput {
     /// Creates a new builder-style object to manufacture [`ProvisionIpamPoolCidrInput`](crate::operation::provision_ipam_pool_cidr::ProvisionIpamPoolCidrInput).
-    pub fn builder() -> crate::operation::provision_ipam_pool_cidr::builders::ProvisionIpamPoolCidrInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::provision_ipam_pool_cidr::builders::ProvisionIpamPoolCidrInputBuilder
+    {
         crate::operation::provision_ipam_pool_cidr::builders::ProvisionIpamPoolCidrInputBuilder::default()
     }
 }
@@ -48,7 +52,8 @@ pub struct ProvisionIpamPoolCidrInputBuilder {
     pub(crate) dry_run: std::option::Option<bool>,
     pub(crate) ipam_pool_id: std::option::Option<std::string::String>,
     pub(crate) cidr: std::option::Option<std::string::String>,
-    pub(crate) cidr_authorization_context: std::option::Option<crate::types::IpamCidrAuthorizationContext>,
+    pub(crate) cidr_authorization_context:
+        std::option::Option<crate::types::IpamCidrAuthorizationContext>,
 }
 impl ProvisionIpamPoolCidrInputBuilder {
     /// <p>A check for whether you have the required permissions for the action without actually making the request and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
@@ -58,7 +63,8 @@ impl ProvisionIpamPoolCidrInputBuilder {
     }
     /// <p>A check for whether you have the required permissions for the action without actually making the request and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn set_dry_run(mut self, input: std::option::Option<bool>) -> Self {
-        self.dry_run = input; self
+        self.dry_run = input;
+        self
     }
     /// <p>The ID of the IPAM pool to which you want to assign a CIDR.</p>
     pub fn ipam_pool_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -67,7 +73,8 @@ impl ProvisionIpamPoolCidrInputBuilder {
     }
     /// <p>The ID of the IPAM pool to which you want to assign a CIDR.</p>
     pub fn set_ipam_pool_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.ipam_pool_id = input; self
+        self.ipam_pool_id = input;
+        self
     }
     /// <p>The CIDR you want to assign to the IPAM pool.</p>
     pub fn cidr(mut self, input: impl Into<std::string::String>) -> Self {
@@ -76,31 +83,39 @@ impl ProvisionIpamPoolCidrInputBuilder {
     }
     /// <p>The CIDR you want to assign to the IPAM pool.</p>
     pub fn set_cidr(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.cidr = input; self
+        self.cidr = input;
+        self
     }
     /// <p>A signed document that proves that you are authorized to bring a specified IP address range to Amazon using BYOIP. This option applies to public pools only.</p>
-    pub fn cidr_authorization_context(mut self, input: crate::types::IpamCidrAuthorizationContext) -> Self {
+    pub fn cidr_authorization_context(
+        mut self,
+        input: crate::types::IpamCidrAuthorizationContext,
+    ) -> Self {
         self.cidr_authorization_context = Some(input);
         self
     }
     /// <p>A signed document that proves that you are authorized to bring a specified IP address range to Amazon using BYOIP. This option applies to public pools only.</p>
-    pub fn set_cidr_authorization_context(mut self, input: std::option::Option<crate::types::IpamCidrAuthorizationContext>) -> Self {
-        self.cidr_authorization_context = input; self
+    pub fn set_cidr_authorization_context(
+        mut self,
+        input: std::option::Option<crate::types::IpamCidrAuthorizationContext>,
+    ) -> Self {
+        self.cidr_authorization_context = input;
+        self
     }
     /// Consumes the builder and constructs a [`ProvisionIpamPoolCidrInput`](crate::operation::provision_ipam_pool_cidr::ProvisionIpamPoolCidrInput).
-    pub fn build(self) -> Result<crate::operation::provision_ipam_pool_cidr::ProvisionIpamPoolCidrInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::provision_ipam_pool_cidr::ProvisionIpamPoolCidrInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::provision_ipam_pool_cidr::ProvisionIpamPoolCidrInput {
-                dry_run: self.dry_run
-                ,
-                ipam_pool_id: self.ipam_pool_id
-                ,
-                cidr: self.cidr
-                ,
-                cidr_authorization_context: self.cidr_authorization_context
-                ,
-            }
+                dry_run: self.dry_run,
+                ipam_pool_id: self.ipam_pool_id,
+                cidr: self.cidr,
+                cidr_authorization_context: self.cidr_authorization_context,
+            },
         )
     }
 }
-

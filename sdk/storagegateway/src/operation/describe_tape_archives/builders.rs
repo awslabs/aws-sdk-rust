@@ -4,56 +4,83 @@ pub use crate::operation::describe_tape_archives::_describe_tape_archives_output
 pub use crate::operation::describe_tape_archives::_describe_tape_archives_input::DescribeTapeArchivesInputBuilder;
 
 /// Fluent builder constructing a request to `DescribeTapeArchives`.
-/// 
-/// <p>Returns a description of specified virtual tapes in the virtual tape shelf (VTS). This operation is only supported in the tape gateway type.</p> 
+///
+/// <p>Returns a description of specified virtual tapes in the virtual tape shelf (VTS). This operation is only supported in the tape gateway type.</p>
 /// <p>If a specific <code>TapeARN</code> is not specified, Storage Gateway returns a description of all virtual tapes found in the VTS associated with your account.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeTapeArchivesFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::describe_tape_archives::builders::DescribeTapeArchivesInputBuilder
-            }
-impl DescribeTapeArchivesFluentBuilder  {
+    handle: std::sync::Arc<crate::client::Handle>,
+    inner: crate::operation::describe_tape_archives::builders::DescribeTapeArchivesInputBuilder,
+}
+impl DescribeTapeArchivesFluentBuilder {
     /// Creates a new `DescribeTapeArchives`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
-                    /// sent. The operation's inner [http::Request] can be modified as well.
-                    pub async fn customize(self) -> std::result::Result<
-                        crate::client::customize::CustomizableOperation<crate::operation::describe_tape_archives::DescribeTapeArchives, aws_http::retry::AwsResponseRetryClassifier,>,
-                        aws_smithy_http::result::SdkError<crate::operation::describe_tape_archives::DescribeTapeArchivesError>
-                    >  {
-                        let handle = self.handle.clone();
-                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-                    }
-    
-                    /// Sends the request and returns the response.
-                    ///
-                    /// If an error occurs, an `SdkError` will be returned with additional details that
-                    /// can be matched against.
-                    ///
-                    /// By default, any retryable failures will be retried twice. Retry behavior
-                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                    /// set when configuring the client.
-                    pub async fn send(self) -> std::result::Result<crate::operation::describe_tape_archives::DescribeTapeArchivesOutput, aws_smithy_http::result::SdkError<crate::operation::describe_tape_archives::DescribeTapeArchivesError>>
-                     {
-                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&self.handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        self.handle.client.call(op).await
-                    }
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle,
+            inner: Default::default(),
+        }
+    }
+
+    /// Consume this builder, creating a customizable operation that can be modified before being
+    /// sent. The operation's inner [http::Request] can be modified as well.
+    pub async fn customize(
+        self,
+    ) -> std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::describe_tape_archives::DescribeTapeArchives,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::result::SdkError<
+            crate::operation::describe_tape_archives::DescribeTapeArchivesError,
+        >,
+    > {
+        let handle = self.handle.clone();
+        let operation = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+    }
+
+    /// Sends the request and returns the response.
+    ///
+    /// If an error occurs, an `SdkError` will be returned with additional details that
+    /// can be matched against.
+    ///
+    /// By default, any retryable failures will be retried twice. Retry behavior
+    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+    /// set when configuring the client.
+    pub async fn send(
+        self,
+    ) -> std::result::Result<
+        crate::operation::describe_tape_archives::DescribeTapeArchivesOutput,
+        aws_smithy_http::result::SdkError<
+            crate::operation::describe_tape_archives::DescribeTapeArchivesError,
+        >,
+    > {
+        let op = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&self.handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        self.handle.client.call(op).await
+    }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::describe_tape_archives::paginator::DescribeTapeArchivesPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::describe_tape_archives::paginator::DescribeTapeArchivesPaginator {
-                            crate::operation::describe_tape_archives::paginator::DescribeTapeArchivesPaginator::new(self.handle, self.inner)
-                        }
+    ///
+    /// Paginators are used by calling [`send().await`](crate::operation::describe_tape_archives::paginator::DescribeTapeArchivesPaginator::send) which returns a `Stream`.
+    pub fn into_paginator(
+        self,
+    ) -> crate::operation::describe_tape_archives::paginator::DescribeTapeArchivesPaginator {
+        crate::operation::describe_tape_archives::paginator::DescribeTapeArchivesPaginator::new(
+            self.handle,
+            self.inner,
+        )
+    }
     /// Appends an item to `TapeARNs`.
     ///
     /// To override the contents of this collection use [`set_tape_ar_ns`](Self::set_tape_ar_ns).
@@ -64,7 +91,10 @@ impl DescribeTapeArchivesFluentBuilder  {
         self
     }
     /// <p>Specifies one or more unique Amazon Resource Names (ARNs) that represent the virtual tapes you want to describe.</p>
-    pub fn set_tape_ar_ns(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+    pub fn set_tape_ar_ns(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
         self.inner = self.inner.set_tape_ar_ns(input);
         self
     }
@@ -89,4 +119,3 @@ impl DescribeTapeArchivesFluentBuilder  {
         self
     }
 }
-

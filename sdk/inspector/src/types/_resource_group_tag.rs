@@ -3,7 +3,7 @@
 /// <p>This data type is used as one of the elements of the <code>ResourceGroup</code> data type.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ResourceGroupTag  {
+pub struct ResourceGroupTag {
     /// <p>A tag key.</p>
     #[doc(hidden)]
     pub key: std::option::Option<std::string::String>,
@@ -13,11 +13,11 @@ pub struct ResourceGroupTag  {
 }
 impl ResourceGroupTag {
     /// <p>A tag key.</p>
-    pub fn key(&self) -> std::option::Option<& str> {
+    pub fn key(&self) -> std::option::Option<&str> {
         self.key.as_deref()
     }
     /// <p>The value assigned to a tag key.</p>
-    pub fn value(&self) -> std::option::Option<& str> {
+    pub fn value(&self) -> std::option::Option<&str> {
         self.value.as_deref()
     }
 }
@@ -43,7 +43,8 @@ impl ResourceGroupTagBuilder {
     }
     /// <p>A tag key.</p>
     pub fn set_key(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.key = input; self
+        self.key = input;
+        self
     }
     /// <p>The value assigned to a tag key.</p>
     pub fn value(mut self, input: impl Into<std::string::String>) -> Self {
@@ -52,16 +53,14 @@ impl ResourceGroupTagBuilder {
     }
     /// <p>The value assigned to a tag key.</p>
     pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.value = input; self
+        self.value = input;
+        self
     }
     /// Consumes the builder and constructs a [`ResourceGroupTag`](crate::types::ResourceGroupTag).
     pub fn build(self) -> crate::types::ResourceGroupTag {
         crate::types::ResourceGroupTag {
-            key: self.key
-            ,
-            value: self.value
-            ,
+            key: self.key,
+            value: self.value,
         }
     }
 }
-

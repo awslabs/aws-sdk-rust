@@ -3,20 +3,20 @@
 /// <p>A container recipe.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ContainerRecipe  {
-    /// <p>The Amazon Resource Name (ARN) of the container recipe.</p> <note> 
-    /// <p>Semantic versioning is included in each object's Amazon Resource Name (ARN), at the level that applies to that object as follows:</p> 
-    /// <ol> 
-    /// <li> <p>Versionless ARNs and Name ARNs do not include specific values in any of the nodes. The nodes are either left off entirely, or they are specified as wildcards, for example: x.x.x.</p> </li> 
+pub struct ContainerRecipe {
+    /// <p>The Amazon Resource Name (ARN) of the container recipe.</p> <note>
+    /// <p>Semantic versioning is included in each object's Amazon Resource Name (ARN), at the level that applies to that object as follows:</p>
+    /// <ol>
+    /// <li> <p>Versionless ARNs and Name ARNs do not include specific values in any of the nodes. The nodes are either left off entirely, or they are specified as wildcards, for example: x.x.x.</p> </li>
     /// <li> <p>Version ARNs have only the first three nodes: <major>
     /// .
     /// <minor>
     /// .
     /// <patch></patch>
     /// </minor>
-    /// </major></p> </li> 
-    /// <li> <p>Build version ARNs have all four nodes, and point to a specific build for a specific version of an object.</p> </li> 
-    /// </ol> 
+    /// </major></p> </li>
+    /// <li> <p>Build version ARNs have all four nodes, and point to a specific build for a specific version of an object.</p> </li>
+    /// </ol>
     /// </note>
     #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
@@ -35,7 +35,7 @@ pub struct ContainerRecipe  {
     /// <p>The owner of the container recipe.</p>
     #[doc(hidden)]
     pub owner: std::option::Option<std::string::String>,
-    /// <p>The semantic version of the container recipe.</p> <note> 
+    /// <p>The semantic version of the container recipe.</p> <note>
     /// <p>The semantic version has four nodes: <major>
     /// .
     /// <minor>
@@ -47,10 +47,10 @@ pub struct ContainerRecipe  {
     /// </build>
     /// </patch>
     /// </minor>
-    /// </major></p> 
-    /// <p> <b>Assignment:</b> For the first three nodes you can assign any positive integer value, including zero, with an upper limit of 2^30-1, or 1073741823 for each node. Image Builder automatically assigns the build number to the fourth node.</p> 
-    /// <p> <b>Patterns:</b> You can use any numeric pattern that adheres to the assignment requirements for the nodes that you can assign. For example, you might choose a software version pattern, such as 1.0.0, or a date, such as 2021.01.01.</p> 
-    /// <p> <b>Filtering:</b> With semantic versioning, you have the flexibility to use wildcards (x) to specify the most recent versions or nodes when selecting the base image or components for your recipe. When you use a wildcard in any node, all nodes to the right of the first wildcard must also be wildcards.</p> 
+    /// </major></p>
+    /// <p> <b>Assignment:</b> For the first three nodes you can assign any positive integer value, including zero, with an upper limit of 2^30-1, or 1073741823 for each node. Image Builder automatically assigns the build number to the fourth node.</p>
+    /// <p> <b>Patterns:</b> You can use any numeric pattern that adheres to the assignment requirements for the nodes that you can assign. For example, you might choose a software version pattern, such as 1.0.0, or a date, such as 2021.01.01.</p>
+    /// <p> <b>Filtering:</b> With semantic versioning, you have the flexibility to use wildcards (x) to specify the most recent versions or nodes when selecting the base image or components for your recipe. When you use a wildcard in any node, all nodes to the right of the first wildcard must also be wildcards.</p>
     /// </note>
     #[doc(hidden)]
     pub version: std::option::Option<std::string::String>,
@@ -77,7 +77,8 @@ pub struct ContainerRecipe  {
     pub date_created: std::option::Option<std::string::String>,
     /// <p>Tags that are attached to the container recipe.</p>
     #[doc(hidden)]
-    pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub tags:
+        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The working directory for use during build and test workflows.</p>
     #[doc(hidden)]
     pub working_directory: std::option::Option<std::string::String>,
@@ -86,44 +87,44 @@ pub struct ContainerRecipe  {
     pub target_repository: std::option::Option<crate::types::TargetContainerRepository>,
 }
 impl ContainerRecipe {
-    /// <p>The Amazon Resource Name (ARN) of the container recipe.</p> <note> 
-    /// <p>Semantic versioning is included in each object's Amazon Resource Name (ARN), at the level that applies to that object as follows:</p> 
-    /// <ol> 
-    /// <li> <p>Versionless ARNs and Name ARNs do not include specific values in any of the nodes. The nodes are either left off entirely, or they are specified as wildcards, for example: x.x.x.</p> </li> 
+    /// <p>The Amazon Resource Name (ARN) of the container recipe.</p> <note>
+    /// <p>Semantic versioning is included in each object's Amazon Resource Name (ARN), at the level that applies to that object as follows:</p>
+    /// <ol>
+    /// <li> <p>Versionless ARNs and Name ARNs do not include specific values in any of the nodes. The nodes are either left off entirely, or they are specified as wildcards, for example: x.x.x.</p> </li>
     /// <li> <p>Version ARNs have only the first three nodes: <major>
     /// .
     /// <minor>
     /// .
     /// <patch></patch>
     /// </minor>
-    /// </major></p> </li> 
-    /// <li> <p>Build version ARNs have all four nodes, and point to a specific build for a specific version of an object.</p> </li> 
-    /// </ol> 
+    /// </major></p> </li>
+    /// <li> <p>Build version ARNs have all four nodes, and point to a specific build for a specific version of an object.</p> </li>
+    /// </ol>
     /// </note>
-    pub fn arn(&self) -> std::option::Option<& str> {
+    pub fn arn(&self) -> std::option::Option<&str> {
         self.arn.as_deref()
     }
     /// <p>Specifies the type of container, such as Docker.</p>
-    pub fn container_type(&self) -> std::option::Option<& crate::types::ContainerType> {
+    pub fn container_type(&self) -> std::option::Option<&crate::types::ContainerType> {
         self.container_type.as_ref()
     }
     /// <p>The name of the container recipe.</p>
-    pub fn name(&self) -> std::option::Option<& str> {
+    pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>The description of the container recipe.</p>
-    pub fn description(&self) -> std::option::Option<& str> {
+    pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
     /// <p>The system platform for the container, such as Windows or Linux.</p>
-    pub fn platform(&self) -> std::option::Option<& crate::types::Platform> {
+    pub fn platform(&self) -> std::option::Option<&crate::types::Platform> {
         self.platform.as_ref()
     }
     /// <p>The owner of the container recipe.</p>
-    pub fn owner(&self) -> std::option::Option<& str> {
+    pub fn owner(&self) -> std::option::Option<&str> {
         self.owner.as_deref()
     }
-    /// <p>The semantic version of the container recipe.</p> <note> 
+    /// <p>The semantic version of the container recipe.</p> <note>
     /// <p>The semantic version has four nodes: <major>
     /// .
     /// <minor>
@@ -135,28 +136,30 @@ impl ContainerRecipe {
     /// </build>
     /// </patch>
     /// </minor>
-    /// </major></p> 
-    /// <p> <b>Assignment:</b> For the first three nodes you can assign any positive integer value, including zero, with an upper limit of 2^30-1, or 1073741823 for each node. Image Builder automatically assigns the build number to the fourth node.</p> 
-    /// <p> <b>Patterns:</b> You can use any numeric pattern that adheres to the assignment requirements for the nodes that you can assign. For example, you might choose a software version pattern, such as 1.0.0, or a date, such as 2021.01.01.</p> 
-    /// <p> <b>Filtering:</b> With semantic versioning, you have the flexibility to use wildcards (x) to specify the most recent versions or nodes when selecting the base image or components for your recipe. When you use a wildcard in any node, all nodes to the right of the first wildcard must also be wildcards.</p> 
+    /// </major></p>
+    /// <p> <b>Assignment:</b> For the first three nodes you can assign any positive integer value, including zero, with an upper limit of 2^30-1, or 1073741823 for each node. Image Builder automatically assigns the build number to the fourth node.</p>
+    /// <p> <b>Patterns:</b> You can use any numeric pattern that adheres to the assignment requirements for the nodes that you can assign. For example, you might choose a software version pattern, such as 1.0.0, or a date, such as 2021.01.01.</p>
+    /// <p> <b>Filtering:</b> With semantic versioning, you have the flexibility to use wildcards (x) to specify the most recent versions or nodes when selecting the base image or components for your recipe. When you use a wildcard in any node, all nodes to the right of the first wildcard must also be wildcards.</p>
     /// </note>
-    pub fn version(&self) -> std::option::Option<& str> {
+    pub fn version(&self) -> std::option::Option<&str> {
         self.version.as_deref()
     }
     /// <p>Build and test components that are included in the container recipe. Recipes require a minimum of one build component, and can have a maximum of 20 build and test components in any combination.</p>
-    pub fn components(&self) -> std::option::Option<& [crate::types::ComponentConfiguration]> {
+    pub fn components(&self) -> std::option::Option<&[crate::types::ComponentConfiguration]> {
         self.components.as_deref()
     }
     /// <p>A group of options that can be used to configure an instance for building and testing container images.</p>
-    pub fn instance_configuration(&self) -> std::option::Option<& crate::types::InstanceConfiguration> {
+    pub fn instance_configuration(
+        &self,
+    ) -> std::option::Option<&crate::types::InstanceConfiguration> {
         self.instance_configuration.as_ref()
     }
     /// <p>Dockerfiles are text documents that are used to build Docker containers, and ensure that they contain all of the elements required by the application running inside. The template data consists of contextual variables where Image Builder places build information or scripts, based on your container image recipe.</p>
-    pub fn dockerfile_template_data(&self) -> std::option::Option<& str> {
+    pub fn dockerfile_template_data(&self) -> std::option::Option<&str> {
         self.dockerfile_template_data.as_deref()
     }
     /// <p>Identifies which KMS key is used to encrypt the container image for distribution to the target Region.</p>
-    pub fn kms_key_id(&self) -> std::option::Option<& str> {
+    pub fn kms_key_id(&self) -> std::option::Option<&str> {
         self.kms_key_id.as_deref()
     }
     /// <p>A flag that indicates if the target container is encrypted.</p>
@@ -164,23 +167,28 @@ impl ContainerRecipe {
         self.encrypted
     }
     /// <p>The base image for the container recipe.</p>
-    pub fn parent_image(&self) -> std::option::Option<& str> {
+    pub fn parent_image(&self) -> std::option::Option<&str> {
         self.parent_image.as_deref()
     }
     /// <p>The date when this container recipe was created.</p>
-    pub fn date_created(&self) -> std::option::Option<& str> {
+    pub fn date_created(&self) -> std::option::Option<&str> {
         self.date_created.as_deref()
     }
     /// <p>Tags that are attached to the container recipe.</p>
-    pub fn tags(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
         self.tags.as_ref()
     }
     /// <p>The working directory for use during build and test workflows.</p>
-    pub fn working_directory(&self) -> std::option::Option<& str> {
+    pub fn working_directory(&self) -> std::option::Option<&str> {
         self.working_directory.as_deref()
     }
     /// <p>The destination repository for the container image.</p>
-    pub fn target_repository(&self) -> std::option::Option<& crate::types::TargetContainerRepository> {
+    pub fn target_repository(
+        &self,
+    ) -> std::option::Option<&crate::types::TargetContainerRepository> {
         self.target_repository.as_ref()
     }
 }
@@ -209,45 +217,47 @@ pub struct ContainerRecipeBuilder {
     pub(crate) encrypted: std::option::Option<bool>,
     pub(crate) parent_image: std::option::Option<std::string::String>,
     pub(crate) date_created: std::option::Option<std::string::String>,
-    pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub(crate) tags:
+        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     pub(crate) working_directory: std::option::Option<std::string::String>,
     pub(crate) target_repository: std::option::Option<crate::types::TargetContainerRepository>,
 }
 impl ContainerRecipeBuilder {
-    /// <p>The Amazon Resource Name (ARN) of the container recipe.</p> <note> 
-    /// <p>Semantic versioning is included in each object's Amazon Resource Name (ARN), at the level that applies to that object as follows:</p> 
-    /// <ol> 
-    /// <li> <p>Versionless ARNs and Name ARNs do not include specific values in any of the nodes. The nodes are either left off entirely, or they are specified as wildcards, for example: x.x.x.</p> </li> 
+    /// <p>The Amazon Resource Name (ARN) of the container recipe.</p> <note>
+    /// <p>Semantic versioning is included in each object's Amazon Resource Name (ARN), at the level that applies to that object as follows:</p>
+    /// <ol>
+    /// <li> <p>Versionless ARNs and Name ARNs do not include specific values in any of the nodes. The nodes are either left off entirely, or they are specified as wildcards, for example: x.x.x.</p> </li>
     /// <li> <p>Version ARNs have only the first three nodes: <major>
     /// .
     /// <minor>
     /// .
     /// <patch></patch>
     /// </minor>
-    /// </major></p> </li> 
-    /// <li> <p>Build version ARNs have all four nodes, and point to a specific build for a specific version of an object.</p> </li> 
-    /// </ol> 
+    /// </major></p> </li>
+    /// <li> <p>Build version ARNs have all four nodes, and point to a specific build for a specific version of an object.</p> </li>
+    /// </ol>
     /// </note>
     pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
         self.arn = Some(input.into());
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the container recipe.</p> <note> 
-    /// <p>Semantic versioning is included in each object's Amazon Resource Name (ARN), at the level that applies to that object as follows:</p> 
-    /// <ol> 
-    /// <li> <p>Versionless ARNs and Name ARNs do not include specific values in any of the nodes. The nodes are either left off entirely, or they are specified as wildcards, for example: x.x.x.</p> </li> 
+    /// <p>The Amazon Resource Name (ARN) of the container recipe.</p> <note>
+    /// <p>Semantic versioning is included in each object's Amazon Resource Name (ARN), at the level that applies to that object as follows:</p>
+    /// <ol>
+    /// <li> <p>Versionless ARNs and Name ARNs do not include specific values in any of the nodes. The nodes are either left off entirely, or they are specified as wildcards, for example: x.x.x.</p> </li>
     /// <li> <p>Version ARNs have only the first three nodes: <major>
     /// .
     /// <minor>
     /// .
     /// <patch></patch>
     /// </minor>
-    /// </major></p> </li> 
-    /// <li> <p>Build version ARNs have all four nodes, and point to a specific build for a specific version of an object.</p> </li> 
-    /// </ol> 
+    /// </major></p> </li>
+    /// <li> <p>Build version ARNs have all four nodes, and point to a specific build for a specific version of an object.</p> </li>
+    /// </ol>
     /// </note>
     pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.arn = input; self
+        self.arn = input;
+        self
     }
     /// <p>Specifies the type of container, such as Docker.</p>
     pub fn container_type(mut self, input: crate::types::ContainerType) -> Self {
@@ -255,8 +265,12 @@ impl ContainerRecipeBuilder {
         self
     }
     /// <p>Specifies the type of container, such as Docker.</p>
-    pub fn set_container_type(mut self, input: std::option::Option<crate::types::ContainerType>) -> Self {
-        self.container_type = input; self
+    pub fn set_container_type(
+        mut self,
+        input: std::option::Option<crate::types::ContainerType>,
+    ) -> Self {
+        self.container_type = input;
+        self
     }
     /// <p>The name of the container recipe.</p>
     pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -265,7 +279,8 @@ impl ContainerRecipeBuilder {
     }
     /// <p>The name of the container recipe.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input; self
+        self.name = input;
+        self
     }
     /// <p>The description of the container recipe.</p>
     pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -274,7 +289,8 @@ impl ContainerRecipeBuilder {
     }
     /// <p>The description of the container recipe.</p>
     pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.description = input; self
+        self.description = input;
+        self
     }
     /// <p>The system platform for the container, such as Windows or Linux.</p>
     pub fn platform(mut self, input: crate::types::Platform) -> Self {
@@ -283,7 +299,8 @@ impl ContainerRecipeBuilder {
     }
     /// <p>The system platform for the container, such as Windows or Linux.</p>
     pub fn set_platform(mut self, input: std::option::Option<crate::types::Platform>) -> Self {
-        self.platform = input; self
+        self.platform = input;
+        self
     }
     /// <p>The owner of the container recipe.</p>
     pub fn owner(mut self, input: impl Into<std::string::String>) -> Self {
@@ -292,9 +309,10 @@ impl ContainerRecipeBuilder {
     }
     /// <p>The owner of the container recipe.</p>
     pub fn set_owner(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.owner = input; self
+        self.owner = input;
+        self
     }
-    /// <p>The semantic version of the container recipe.</p> <note> 
+    /// <p>The semantic version of the container recipe.</p> <note>
     /// <p>The semantic version has four nodes: <major>
     /// .
     /// <minor>
@@ -306,16 +324,16 @@ impl ContainerRecipeBuilder {
     /// </build>
     /// </patch>
     /// </minor>
-    /// </major></p> 
-    /// <p> <b>Assignment:</b> For the first three nodes you can assign any positive integer value, including zero, with an upper limit of 2^30-1, or 1073741823 for each node. Image Builder automatically assigns the build number to the fourth node.</p> 
-    /// <p> <b>Patterns:</b> You can use any numeric pattern that adheres to the assignment requirements for the nodes that you can assign. For example, you might choose a software version pattern, such as 1.0.0, or a date, such as 2021.01.01.</p> 
-    /// <p> <b>Filtering:</b> With semantic versioning, you have the flexibility to use wildcards (x) to specify the most recent versions or nodes when selecting the base image or components for your recipe. When you use a wildcard in any node, all nodes to the right of the first wildcard must also be wildcards.</p> 
+    /// </major></p>
+    /// <p> <b>Assignment:</b> For the first three nodes you can assign any positive integer value, including zero, with an upper limit of 2^30-1, or 1073741823 for each node. Image Builder automatically assigns the build number to the fourth node.</p>
+    /// <p> <b>Patterns:</b> You can use any numeric pattern that adheres to the assignment requirements for the nodes that you can assign. For example, you might choose a software version pattern, such as 1.0.0, or a date, such as 2021.01.01.</p>
+    /// <p> <b>Filtering:</b> With semantic versioning, you have the flexibility to use wildcards (x) to specify the most recent versions or nodes when selecting the base image or components for your recipe. When you use a wildcard in any node, all nodes to the right of the first wildcard must also be wildcards.</p>
     /// </note>
     pub fn version(mut self, input: impl Into<std::string::String>) -> Self {
         self.version = Some(input.into());
         self
     }
-    /// <p>The semantic version of the container recipe.</p> <note> 
+    /// <p>The semantic version of the container recipe.</p> <note>
     /// <p>The semantic version has four nodes: <major>
     /// .
     /// <minor>
@@ -327,13 +345,14 @@ impl ContainerRecipeBuilder {
     /// </build>
     /// </patch>
     /// </minor>
-    /// </major></p> 
-    /// <p> <b>Assignment:</b> For the first three nodes you can assign any positive integer value, including zero, with an upper limit of 2^30-1, or 1073741823 for each node. Image Builder automatically assigns the build number to the fourth node.</p> 
-    /// <p> <b>Patterns:</b> You can use any numeric pattern that adheres to the assignment requirements for the nodes that you can assign. For example, you might choose a software version pattern, such as 1.0.0, or a date, such as 2021.01.01.</p> 
-    /// <p> <b>Filtering:</b> With semantic versioning, you have the flexibility to use wildcards (x) to specify the most recent versions or nodes when selecting the base image or components for your recipe. When you use a wildcard in any node, all nodes to the right of the first wildcard must also be wildcards.</p> 
+    /// </major></p>
+    /// <p> <b>Assignment:</b> For the first three nodes you can assign any positive integer value, including zero, with an upper limit of 2^30-1, or 1073741823 for each node. Image Builder automatically assigns the build number to the fourth node.</p>
+    /// <p> <b>Patterns:</b> You can use any numeric pattern that adheres to the assignment requirements for the nodes that you can assign. For example, you might choose a software version pattern, such as 1.0.0, or a date, such as 2021.01.01.</p>
+    /// <p> <b>Filtering:</b> With semantic versioning, you have the flexibility to use wildcards (x) to specify the most recent versions or nodes when selecting the base image or components for your recipe. When you use a wildcard in any node, all nodes to the right of the first wildcard must also be wildcards.</p>
     /// </note>
     pub fn set_version(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.version = input; self
+        self.version = input;
+        self
     }
     /// Appends an item to `components`.
     ///
@@ -342,13 +361,17 @@ impl ContainerRecipeBuilder {
     /// <p>Build and test components that are included in the container recipe. Recipes require a minimum of one build component, and can have a maximum of 20 build and test components in any combination.</p>
     pub fn components(mut self, input: crate::types::ComponentConfiguration) -> Self {
         let mut v = self.components.unwrap_or_default();
-                        v.push(input);
-                        self.components = Some(v);
-                        self
+        v.push(input);
+        self.components = Some(v);
+        self
     }
     /// <p>Build and test components that are included in the container recipe. Recipes require a minimum of one build component, and can have a maximum of 20 build and test components in any combination.</p>
-    pub fn set_components(mut self, input: std::option::Option<std::vec::Vec<crate::types::ComponentConfiguration>>) -> Self {
-        self.components = input; self
+    pub fn set_components(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::ComponentConfiguration>>,
+    ) -> Self {
+        self.components = input;
+        self
     }
     /// <p>A group of options that can be used to configure an instance for building and testing container images.</p>
     pub fn instance_configuration(mut self, input: crate::types::InstanceConfiguration) -> Self {
@@ -356,8 +379,12 @@ impl ContainerRecipeBuilder {
         self
     }
     /// <p>A group of options that can be used to configure an instance for building and testing container images.</p>
-    pub fn set_instance_configuration(mut self, input: std::option::Option<crate::types::InstanceConfiguration>) -> Self {
-        self.instance_configuration = input; self
+    pub fn set_instance_configuration(
+        mut self,
+        input: std::option::Option<crate::types::InstanceConfiguration>,
+    ) -> Self {
+        self.instance_configuration = input;
+        self
     }
     /// <p>Dockerfiles are text documents that are used to build Docker containers, and ensure that they contain all of the elements required by the application running inside. The template data consists of contextual variables where Image Builder places build information or scripts, based on your container image recipe.</p>
     pub fn dockerfile_template_data(mut self, input: impl Into<std::string::String>) -> Self {
@@ -365,8 +392,12 @@ impl ContainerRecipeBuilder {
         self
     }
     /// <p>Dockerfiles are text documents that are used to build Docker containers, and ensure that they contain all of the elements required by the application running inside. The template data consists of contextual variables where Image Builder places build information or scripts, based on your container image recipe.</p>
-    pub fn set_dockerfile_template_data(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.dockerfile_template_data = input; self
+    pub fn set_dockerfile_template_data(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.dockerfile_template_data = input;
+        self
     }
     /// <p>Identifies which KMS key is used to encrypt the container image for distribution to the target Region.</p>
     pub fn kms_key_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -375,7 +406,8 @@ impl ContainerRecipeBuilder {
     }
     /// <p>Identifies which KMS key is used to encrypt the container image for distribution to the target Region.</p>
     pub fn set_kms_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.kms_key_id = input; self
+        self.kms_key_id = input;
+        self
     }
     /// <p>A flag that indicates if the target container is encrypted.</p>
     pub fn encrypted(mut self, input: bool) -> Self {
@@ -384,7 +416,8 @@ impl ContainerRecipeBuilder {
     }
     /// <p>A flag that indicates if the target container is encrypted.</p>
     pub fn set_encrypted(mut self, input: std::option::Option<bool>) -> Self {
-        self.encrypted = input; self
+        self.encrypted = input;
+        self
     }
     /// <p>The base image for the container recipe.</p>
     pub fn parent_image(mut self, input: impl Into<std::string::String>) -> Self {
@@ -393,7 +426,8 @@ impl ContainerRecipeBuilder {
     }
     /// <p>The base image for the container recipe.</p>
     pub fn set_parent_image(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.parent_image = input; self
+        self.parent_image = input;
+        self
     }
     /// <p>The date when this container recipe was created.</p>
     pub fn date_created(mut self, input: impl Into<std::string::String>) -> Self {
@@ -402,22 +436,33 @@ impl ContainerRecipeBuilder {
     }
     /// <p>The date when this container recipe was created.</p>
     pub fn set_date_created(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.date_created = input; self
+        self.date_created = input;
+        self
     }
     /// Adds a key-value pair to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// <p>Tags that are attached to the container recipe.</p>
-    pub fn tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
+    pub fn tags(
+        mut self,
+        k: impl Into<std::string::String>,
+        v: impl Into<std::string::String>,
+    ) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
-                        hash_map.insert(k.into(), v.into());
-                        self.tags = Some(hash_map);
-                        self
+        hash_map.insert(k.into(), v.into());
+        self.tags = Some(hash_map);
+        self
     }
     /// <p>Tags that are attached to the container recipe.</p>
-    pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
-        self.tags = input; self
+    pub fn set_tags(
+        mut self,
+        input: std::option::Option<
+            std::collections::HashMap<std::string::String, std::string::String>,
+        >,
+    ) -> Self {
+        self.tags = input;
+        self
     }
     /// <p>The working directory for use during build and test workflows.</p>
     pub fn working_directory(mut self, input: impl Into<std::string::String>) -> Self {
@@ -425,8 +470,12 @@ impl ContainerRecipeBuilder {
         self
     }
     /// <p>The working directory for use during build and test workflows.</p>
-    pub fn set_working_directory(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.working_directory = input; self
+    pub fn set_working_directory(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.working_directory = input;
+        self
     }
     /// <p>The destination repository for the container image.</p>
     pub fn target_repository(mut self, input: crate::types::TargetContainerRepository) -> Self {
@@ -434,47 +483,33 @@ impl ContainerRecipeBuilder {
         self
     }
     /// <p>The destination repository for the container image.</p>
-    pub fn set_target_repository(mut self, input: std::option::Option<crate::types::TargetContainerRepository>) -> Self {
-        self.target_repository = input; self
+    pub fn set_target_repository(
+        mut self,
+        input: std::option::Option<crate::types::TargetContainerRepository>,
+    ) -> Self {
+        self.target_repository = input;
+        self
     }
     /// Consumes the builder and constructs a [`ContainerRecipe`](crate::types::ContainerRecipe).
     pub fn build(self) -> crate::types::ContainerRecipe {
         crate::types::ContainerRecipe {
-            arn: self.arn
-            ,
-            container_type: self.container_type
-            ,
-            name: self.name
-            ,
-            description: self.description
-            ,
-            platform: self.platform
-            ,
-            owner: self.owner
-            ,
-            version: self.version
-            ,
-            components: self.components
-            ,
-            instance_configuration: self.instance_configuration
-            ,
-            dockerfile_template_data: self.dockerfile_template_data
-            ,
-            kms_key_id: self.kms_key_id
-            ,
-            encrypted: self.encrypted
-            ,
-            parent_image: self.parent_image
-            ,
-            date_created: self.date_created
-            ,
-            tags: self.tags
-            ,
-            working_directory: self.working_directory
-            ,
-            target_repository: self.target_repository
-            ,
+            arn: self.arn,
+            container_type: self.container_type,
+            name: self.name,
+            description: self.description,
+            platform: self.platform,
+            owner: self.owner,
+            version: self.version,
+            components: self.components,
+            instance_configuration: self.instance_configuration,
+            dockerfile_template_data: self.dockerfile_template_data,
+            kms_key_id: self.kms_key_id,
+            encrypted: self.encrypted,
+            parent_image: self.parent_image,
+            date_created: self.date_created,
+            tags: self.tags,
+            working_directory: self.working_directory,
+            target_repository: self.target_repository,
         }
     }
 }
-

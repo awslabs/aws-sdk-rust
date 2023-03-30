@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteNetworkInsightsAccessScopeAnalysisOutput  {
+pub struct DeleteNetworkInsightsAccessScopeAnalysisOutput {
     /// <p>The ID of the Network Access Scope analysis.</p>
     #[doc(hidden)]
     pub network_insights_access_scope_analysis_id: std::option::Option<std::string::String>,
@@ -10,18 +10,18 @@ pub struct DeleteNetworkInsightsAccessScopeAnalysisOutput  {
 }
 impl DeleteNetworkInsightsAccessScopeAnalysisOutput {
     /// <p>The ID of the Network Access Scope analysis.</p>
-    pub fn network_insights_access_scope_analysis_id(&self) -> std::option::Option<& str> {
+    pub fn network_insights_access_scope_analysis_id(&self) -> std::option::Option<&str> {
         self.network_insights_access_scope_analysis_id.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for DeleteNetworkInsightsAccessScopeAnalysisOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl DeleteNetworkInsightsAccessScopeAnalysisOutput {
     /// Creates a new builder-style object to manufacture [`DeleteNetworkInsightsAccessScopeAnalysisOutput`](crate::operation::delete_network_insights_access_scope_analysis::DeleteNetworkInsightsAccessScopeAnalysisOutput).
-    pub fn builder() -> crate::operation::delete_network_insights_access_scope_analysis::builders::DeleteNetworkInsightsAccessScopeAnalysisOutputBuilder {
+    pub fn builder() -> crate::operation::delete_network_insights_access_scope_analysis::builders::DeleteNetworkInsightsAccessScopeAnalysisOutputBuilder{
         crate::operation::delete_network_insights_access_scope_analysis::builders::DeleteNetworkInsightsAccessScopeAnalysisOutputBuilder::default()
     }
 }
@@ -35,25 +35,32 @@ pub struct DeleteNetworkInsightsAccessScopeAnalysisOutputBuilder {
 }
 impl DeleteNetworkInsightsAccessScopeAnalysisOutputBuilder {
     /// <p>The ID of the Network Access Scope analysis.</p>
-    pub fn network_insights_access_scope_analysis_id(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn network_insights_access_scope_analysis_id(
+        mut self,
+        input: impl Into<std::string::String>,
+    ) -> Self {
         self.network_insights_access_scope_analysis_id = Some(input.into());
         self
     }
     /// <p>The ID of the Network Access Scope analysis.</p>
-    pub fn set_network_insights_access_scope_analysis_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.network_insights_access_scope_analysis_id = input; self
+    pub fn set_network_insights_access_scope_analysis_id(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.network_insights_access_scope_analysis_id = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`DeleteNetworkInsightsAccessScopeAnalysisOutput`](crate::operation::delete_network_insights_access_scope_analysis::DeleteNetworkInsightsAccessScopeAnalysisOutput).
-    pub fn build(self) -> crate::operation::delete_network_insights_access_scope_analysis::DeleteNetworkInsightsAccessScopeAnalysisOutput {
+    pub fn build(self) -> crate::operation::delete_network_insights_access_scope_analysis::DeleteNetworkInsightsAccessScopeAnalysisOutput{
         crate::operation::delete_network_insights_access_scope_analysis::DeleteNetworkInsightsAccessScopeAnalysisOutput {
             network_insights_access_scope_analysis_id: self.network_insights_access_scope_analysis_id
             ,
@@ -61,4 +68,3 @@ impl DeleteNetworkInsightsAccessScopeAnalysisOutputBuilder {
         }
     }
 }
-

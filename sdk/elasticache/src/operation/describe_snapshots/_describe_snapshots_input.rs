@@ -3,7 +3,7 @@
 /// <p>Represents the input of a <code>DescribeSnapshotsMessage</code> operation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeSnapshotsInput  {
+pub struct DescribeSnapshotsInput {
     /// <p>A user-supplied replication group identifier. If this parameter is specified, only snapshots associated with that specific replication group are described.</p>
     #[doc(hidden)]
     pub replication_group_id: std::option::Option<std::string::String>,
@@ -19,8 +19,8 @@ pub struct DescribeSnapshotsInput  {
     /// <p>An optional marker returned from a prior request. Use this marker for pagination of results from this operation. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
     #[doc(hidden)]
     pub marker: std::option::Option<std::string::String>,
-    /// <p>The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a marker is included in the response so that the remaining results can be retrieved.</p> 
-    /// <p>Default: 50</p> 
+    /// <p>The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a marker is included in the response so that the remaining results can be retrieved.</p>
+    /// <p>Default: 50</p>
     /// <p>Constraints: minimum 20; maximum 50.</p>
     #[doc(hidden)]
     pub max_records: std::option::Option<i32>,
@@ -30,27 +30,27 @@ pub struct DescribeSnapshotsInput  {
 }
 impl DescribeSnapshotsInput {
     /// <p>A user-supplied replication group identifier. If this parameter is specified, only snapshots associated with that specific replication group are described.</p>
-    pub fn replication_group_id(&self) -> std::option::Option<& str> {
+    pub fn replication_group_id(&self) -> std::option::Option<&str> {
         self.replication_group_id.as_deref()
     }
     /// <p>A user-supplied cluster identifier. If this parameter is specified, only snapshots associated with that specific cluster are described.</p>
-    pub fn cache_cluster_id(&self) -> std::option::Option<& str> {
+    pub fn cache_cluster_id(&self) -> std::option::Option<&str> {
         self.cache_cluster_id.as_deref()
     }
     /// <p>A user-supplied name of the snapshot. If this parameter is specified, only this snapshot are described.</p>
-    pub fn snapshot_name(&self) -> std::option::Option<& str> {
+    pub fn snapshot_name(&self) -> std::option::Option<&str> {
         self.snapshot_name.as_deref()
     }
     /// <p>If set to <code>system</code>, the output shows snapshots that were automatically created by ElastiCache. If set to <code>user</code> the output shows snapshots that were manually created. If omitted, the output shows both automatically and manually created snapshots.</p>
-    pub fn snapshot_source(&self) -> std::option::Option<& str> {
+    pub fn snapshot_source(&self) -> std::option::Option<&str> {
         self.snapshot_source.as_deref()
     }
     /// <p>An optional marker returned from a prior request. Use this marker for pagination of results from this operation. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
-    pub fn marker(&self) -> std::option::Option<& str> {
+    pub fn marker(&self) -> std::option::Option<&str> {
         self.marker.as_deref()
     }
-    /// <p>The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a marker is included in the response so that the remaining results can be retrieved.</p> 
-    /// <p>Default: 50</p> 
+    /// <p>The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a marker is included in the response so that the remaining results can be retrieved.</p>
+    /// <p>Default: 50</p>
     /// <p>Constraints: minimum 20; maximum 50.</p>
     pub fn max_records(&self) -> std::option::Option<i32> {
         self.max_records
@@ -62,7 +62,8 @@ impl DescribeSnapshotsInput {
 }
 impl DescribeSnapshotsInput {
     /// Creates a new builder-style object to manufacture [`DescribeSnapshotsInput`](crate::operation::describe_snapshots::DescribeSnapshotsInput).
-    pub fn builder() -> crate::operation::describe_snapshots::builders::DescribeSnapshotsInputBuilder {
+    pub fn builder() -> crate::operation::describe_snapshots::builders::DescribeSnapshotsInputBuilder
+    {
         crate::operation::describe_snapshots::builders::DescribeSnapshotsInputBuilder::default()
     }
 }
@@ -86,8 +87,12 @@ impl DescribeSnapshotsInputBuilder {
         self
     }
     /// <p>A user-supplied replication group identifier. If this parameter is specified, only snapshots associated with that specific replication group are described.</p>
-    pub fn set_replication_group_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.replication_group_id = input; self
+    pub fn set_replication_group_id(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.replication_group_id = input;
+        self
     }
     /// <p>A user-supplied cluster identifier. If this parameter is specified, only snapshots associated with that specific cluster are described.</p>
     pub fn cache_cluster_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -96,7 +101,8 @@ impl DescribeSnapshotsInputBuilder {
     }
     /// <p>A user-supplied cluster identifier. If this parameter is specified, only snapshots associated with that specific cluster are described.</p>
     pub fn set_cache_cluster_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.cache_cluster_id = input; self
+        self.cache_cluster_id = input;
+        self
     }
     /// <p>A user-supplied name of the snapshot. If this parameter is specified, only this snapshot are described.</p>
     pub fn snapshot_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -105,7 +111,8 @@ impl DescribeSnapshotsInputBuilder {
     }
     /// <p>A user-supplied name of the snapshot. If this parameter is specified, only this snapshot are described.</p>
     pub fn set_snapshot_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.snapshot_name = input; self
+        self.snapshot_name = input;
+        self
     }
     /// <p>If set to <code>system</code>, the output shows snapshots that were automatically created by ElastiCache. If set to <code>user</code> the output shows snapshots that were manually created. If omitted, the output shows both automatically and manually created snapshots.</p>
     pub fn snapshot_source(mut self, input: impl Into<std::string::String>) -> Self {
@@ -114,7 +121,8 @@ impl DescribeSnapshotsInputBuilder {
     }
     /// <p>If set to <code>system</code>, the output shows snapshots that were automatically created by ElastiCache. If set to <code>user</code> the output shows snapshots that were manually created. If omitted, the output shows both automatically and manually created snapshots.</p>
     pub fn set_snapshot_source(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.snapshot_source = input; self
+        self.snapshot_source = input;
+        self
     }
     /// <p>An optional marker returned from a prior request. Use this marker for pagination of results from this operation. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
     pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
@@ -123,20 +131,22 @@ impl DescribeSnapshotsInputBuilder {
     }
     /// <p>An optional marker returned from a prior request. Use this marker for pagination of results from this operation. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
     pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.marker = input; self
+        self.marker = input;
+        self
     }
-    /// <p>The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a marker is included in the response so that the remaining results can be retrieved.</p> 
-    /// <p>Default: 50</p> 
+    /// <p>The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a marker is included in the response so that the remaining results can be retrieved.</p>
+    /// <p>Default: 50</p>
     /// <p>Constraints: minimum 20; maximum 50.</p>
     pub fn max_records(mut self, input: i32) -> Self {
         self.max_records = Some(input);
         self
     }
-    /// <p>The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a marker is included in the response so that the remaining results can be retrieved.</p> 
-    /// <p>Default: 50</p> 
+    /// <p>The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a marker is included in the response so that the remaining results can be retrieved.</p>
+    /// <p>Default: 50</p>
     /// <p>Constraints: minimum 20; maximum 50.</p>
     pub fn set_max_records(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_records = input; self
+        self.max_records = input;
+        self
     }
     /// <p>A Boolean value which if true, the node group (shard) configuration is included in the snapshot description.</p>
     pub fn show_node_group_config(mut self, input: bool) -> Self {
@@ -145,28 +155,26 @@ impl DescribeSnapshotsInputBuilder {
     }
     /// <p>A Boolean value which if true, the node group (shard) configuration is included in the snapshot description.</p>
     pub fn set_show_node_group_config(mut self, input: std::option::Option<bool>) -> Self {
-        self.show_node_group_config = input; self
+        self.show_node_group_config = input;
+        self
     }
     /// Consumes the builder and constructs a [`DescribeSnapshotsInput`](crate::operation::describe_snapshots::DescribeSnapshotsInput).
-    pub fn build(self) -> Result<crate::operation::describe_snapshots::DescribeSnapshotsInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::describe_snapshots::DescribeSnapshotsInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::describe_snapshots::DescribeSnapshotsInput {
-                replication_group_id: self.replication_group_id
-                ,
-                cache_cluster_id: self.cache_cluster_id
-                ,
-                snapshot_name: self.snapshot_name
-                ,
-                snapshot_source: self.snapshot_source
-                ,
-                marker: self.marker
-                ,
-                max_records: self.max_records
-                ,
-                show_node_group_config: self.show_node_group_config
-                ,
-            }
+                replication_group_id: self.replication_group_id,
+                cache_cluster_id: self.cache_cluster_id,
+                snapshot_name: self.snapshot_name,
+                snapshot_source: self.snapshot_source,
+                marker: self.marker,
+                max_records: self.max_records,
+                show_node_group_config: self.show_node_group_config,
+            },
         )
     }
 }
-

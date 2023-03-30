@@ -3,7 +3,7 @@
 /// <p>The details that define an aggregation based on container image layers.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ImageLayerAggregation  {
+pub struct ImageLayerAggregation {
     /// <p>The repository associated with the container image hosting the layers.</p>
     #[doc(hidden)]
     pub repositories: std::option::Option<std::vec::Vec<crate::types::StringFilter>>,
@@ -22,23 +22,23 @@ pub struct ImageLayerAggregation  {
 }
 impl ImageLayerAggregation {
     /// <p>The repository associated with the container image hosting the layers.</p>
-    pub fn repositories(&self) -> std::option::Option<& [crate::types::StringFilter]> {
+    pub fn repositories(&self) -> std::option::Option<&[crate::types::StringFilter]> {
         self.repositories.as_deref()
     }
     /// <p>The ID of the container image layer.</p>
-    pub fn resource_ids(&self) -> std::option::Option<& [crate::types::StringFilter]> {
+    pub fn resource_ids(&self) -> std::option::Option<&[crate::types::StringFilter]> {
         self.resource_ids.as_deref()
     }
     /// <p>The hashes associated with the layers.</p>
-    pub fn layer_hashes(&self) -> std::option::Option<& [crate::types::StringFilter]> {
+    pub fn layer_hashes(&self) -> std::option::Option<&[crate::types::StringFilter]> {
         self.layer_hashes.as_deref()
     }
     /// <p>The order to sort results by.</p>
-    pub fn sort_order(&self) -> std::option::Option<& crate::types::SortOrder> {
+    pub fn sort_order(&self) -> std::option::Option<&crate::types::SortOrder> {
         self.sort_order.as_ref()
     }
     /// <p>The value to sort results by.</p>
-    pub fn sort_by(&self) -> std::option::Option<& crate::types::ImageLayerSortBy> {
+    pub fn sort_by(&self) -> std::option::Option<&crate::types::ImageLayerSortBy> {
         self.sort_by.as_ref()
     }
 }
@@ -67,13 +67,17 @@ impl ImageLayerAggregationBuilder {
     /// <p>The repository associated with the container image hosting the layers.</p>
     pub fn repositories(mut self, input: crate::types::StringFilter) -> Self {
         let mut v = self.repositories.unwrap_or_default();
-                        v.push(input);
-                        self.repositories = Some(v);
-                        self
+        v.push(input);
+        self.repositories = Some(v);
+        self
     }
     /// <p>The repository associated with the container image hosting the layers.</p>
-    pub fn set_repositories(mut self, input: std::option::Option<std::vec::Vec<crate::types::StringFilter>>) -> Self {
-        self.repositories = input; self
+    pub fn set_repositories(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::StringFilter>>,
+    ) -> Self {
+        self.repositories = input;
+        self
     }
     /// Appends an item to `resource_ids`.
     ///
@@ -82,13 +86,17 @@ impl ImageLayerAggregationBuilder {
     /// <p>The ID of the container image layer.</p>
     pub fn resource_ids(mut self, input: crate::types::StringFilter) -> Self {
         let mut v = self.resource_ids.unwrap_or_default();
-                        v.push(input);
-                        self.resource_ids = Some(v);
-                        self
+        v.push(input);
+        self.resource_ids = Some(v);
+        self
     }
     /// <p>The ID of the container image layer.</p>
-    pub fn set_resource_ids(mut self, input: std::option::Option<std::vec::Vec<crate::types::StringFilter>>) -> Self {
-        self.resource_ids = input; self
+    pub fn set_resource_ids(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::StringFilter>>,
+    ) -> Self {
+        self.resource_ids = input;
+        self
     }
     /// Appends an item to `layer_hashes`.
     ///
@@ -97,13 +105,17 @@ impl ImageLayerAggregationBuilder {
     /// <p>The hashes associated with the layers.</p>
     pub fn layer_hashes(mut self, input: crate::types::StringFilter) -> Self {
         let mut v = self.layer_hashes.unwrap_or_default();
-                        v.push(input);
-                        self.layer_hashes = Some(v);
-                        self
+        v.push(input);
+        self.layer_hashes = Some(v);
+        self
     }
     /// <p>The hashes associated with the layers.</p>
-    pub fn set_layer_hashes(mut self, input: std::option::Option<std::vec::Vec<crate::types::StringFilter>>) -> Self {
-        self.layer_hashes = input; self
+    pub fn set_layer_hashes(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::StringFilter>>,
+    ) -> Self {
+        self.layer_hashes = input;
+        self
     }
     /// <p>The order to sort results by.</p>
     pub fn sort_order(mut self, input: crate::types::SortOrder) -> Self {
@@ -112,7 +124,8 @@ impl ImageLayerAggregationBuilder {
     }
     /// <p>The order to sort results by.</p>
     pub fn set_sort_order(mut self, input: std::option::Option<crate::types::SortOrder>) -> Self {
-        self.sort_order = input; self
+        self.sort_order = input;
+        self
     }
     /// <p>The value to sort results by.</p>
     pub fn sort_by(mut self, input: crate::types::ImageLayerSortBy) -> Self {
@@ -120,23 +133,21 @@ impl ImageLayerAggregationBuilder {
         self
     }
     /// <p>The value to sort results by.</p>
-    pub fn set_sort_by(mut self, input: std::option::Option<crate::types::ImageLayerSortBy>) -> Self {
-        self.sort_by = input; self
+    pub fn set_sort_by(
+        mut self,
+        input: std::option::Option<crate::types::ImageLayerSortBy>,
+    ) -> Self {
+        self.sort_by = input;
+        self
     }
     /// Consumes the builder and constructs a [`ImageLayerAggregation`](crate::types::ImageLayerAggregation).
     pub fn build(self) -> crate::types::ImageLayerAggregation {
         crate::types::ImageLayerAggregation {
-            repositories: self.repositories
-            ,
-            resource_ids: self.resource_ids
-            ,
-            layer_hashes: self.layer_hashes
-            ,
-            sort_order: self.sort_order
-            ,
-            sort_by: self.sort_by
-            ,
+            repositories: self.repositories,
+            resource_ids: self.resource_ids,
+            layer_hashes: self.layer_hashes,
+            sort_order: self.sort_order,
+            sort_by: self.sort_by,
         }
     }
 }
-

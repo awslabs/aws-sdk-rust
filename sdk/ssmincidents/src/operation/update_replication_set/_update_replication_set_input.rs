@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateReplicationSetInput  {
+pub struct UpdateReplicationSetInput {
     /// <p>The Amazon Resource Name (ARN) of the replication set you're updating.</p>
     #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
@@ -15,21 +15,22 @@ pub struct UpdateReplicationSetInput  {
 }
 impl UpdateReplicationSetInput {
     /// <p>The Amazon Resource Name (ARN) of the replication set you're updating.</p>
-    pub fn arn(&self) -> std::option::Option<& str> {
+    pub fn arn(&self) -> std::option::Option<&str> {
         self.arn.as_deref()
     }
     /// <p>An action to add or delete a Region.</p>
-    pub fn actions(&self) -> std::option::Option<& [crate::types::UpdateReplicationSetAction]> {
+    pub fn actions(&self) -> std::option::Option<&[crate::types::UpdateReplicationSetAction]> {
         self.actions.as_deref()
     }
     /// <p>A token that ensures that the operation is called only once with the specified details.</p>
-    pub fn client_token(&self) -> std::option::Option<& str> {
+    pub fn client_token(&self) -> std::option::Option<&str> {
         self.client_token.as_deref()
     }
 }
 impl UpdateReplicationSetInput {
     /// Creates a new builder-style object to manufacture [`UpdateReplicationSetInput`](crate::operation::update_replication_set::UpdateReplicationSetInput).
-    pub fn builder() -> crate::operation::update_replication_set::builders::UpdateReplicationSetInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::update_replication_set::builders::UpdateReplicationSetInputBuilder {
         crate::operation::update_replication_set::builders::UpdateReplicationSetInputBuilder::default()
     }
 }
@@ -39,7 +40,8 @@ impl UpdateReplicationSetInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct UpdateReplicationSetInputBuilder {
     pub(crate) arn: std::option::Option<std::string::String>,
-    pub(crate) actions: std::option::Option<std::vec::Vec<crate::types::UpdateReplicationSetAction>>,
+    pub(crate) actions:
+        std::option::Option<std::vec::Vec<crate::types::UpdateReplicationSetAction>>,
     pub(crate) client_token: std::option::Option<std::string::String>,
 }
 impl UpdateReplicationSetInputBuilder {
@@ -50,7 +52,8 @@ impl UpdateReplicationSetInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the replication set you're updating.</p>
     pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.arn = input; self
+        self.arn = input;
+        self
     }
     /// Appends an item to `actions`.
     ///
@@ -59,13 +62,17 @@ impl UpdateReplicationSetInputBuilder {
     /// <p>An action to add or delete a Region.</p>
     pub fn actions(mut self, input: crate::types::UpdateReplicationSetAction) -> Self {
         let mut v = self.actions.unwrap_or_default();
-                        v.push(input);
-                        self.actions = Some(v);
-                        self
+        v.push(input);
+        self.actions = Some(v);
+        self
     }
     /// <p>An action to add or delete a Region.</p>
-    pub fn set_actions(mut self, input: std::option::Option<std::vec::Vec<crate::types::UpdateReplicationSetAction>>) -> Self {
-        self.actions = input; self
+    pub fn set_actions(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::UpdateReplicationSetAction>>,
+    ) -> Self {
+        self.actions = input;
+        self
     }
     /// <p>A token that ensures that the operation is called only once with the specified details.</p>
     pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -74,20 +81,22 @@ impl UpdateReplicationSetInputBuilder {
     }
     /// <p>A token that ensures that the operation is called only once with the specified details.</p>
     pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.client_token = input; self
+        self.client_token = input;
+        self
     }
     /// Consumes the builder and constructs a [`UpdateReplicationSetInput`](crate::operation::update_replication_set::UpdateReplicationSetInput).
-    pub fn build(self) -> Result<crate::operation::update_replication_set::UpdateReplicationSetInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::update_replication_set::UpdateReplicationSetInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::update_replication_set::UpdateReplicationSetInput {
-                arn: self.arn
-                ,
-                actions: self.actions
-                ,
-                client_token: self.client_token
-                ,
-            }
+                arn: self.arn,
+                actions: self.actions,
+                client_token: self.client_token,
+            },
         )
     }
 }
-

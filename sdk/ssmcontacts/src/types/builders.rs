@@ -26,4 +26,3 @@ pub use crate::types::_time_range::TimeRangeBuilder;
 pub use crate::types::_contact::ContactBuilder;
 
 pub use crate::types::_contact_channel::ContactChannelBuilder;
-

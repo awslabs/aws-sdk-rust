@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeInboundDmarcSettingsOutput  {
+pub struct DescribeInboundDmarcSettingsOutput {
     /// <p>Lists the enforcement setting of the applied policy.</p>
     #[doc(hidden)]
     pub enforced: bool,
@@ -15,13 +15,13 @@ impl DescribeInboundDmarcSettingsOutput {
     }
 }
 impl aws_http::request_id::RequestId for DescribeInboundDmarcSettingsOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl DescribeInboundDmarcSettingsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeInboundDmarcSettingsOutput`](crate::operation::describe_inbound_dmarc_settings::DescribeInboundDmarcSettingsOutput).
-    pub fn builder() -> crate::operation::describe_inbound_dmarc_settings::builders::DescribeInboundDmarcSettingsOutputBuilder {
+    pub fn builder() -> crate::operation::describe_inbound_dmarc_settings::builders::DescribeInboundDmarcSettingsOutputBuilder{
         crate::operation::describe_inbound_dmarc_settings::builders::DescribeInboundDmarcSettingsOutputBuilder::default()
     }
 }
@@ -41,25 +41,25 @@ impl DescribeInboundDmarcSettingsOutputBuilder {
     }
     /// <p>Lists the enforcement setting of the applied policy.</p>
     pub fn set_enforced(mut self, input: std::option::Option<bool>) -> Self {
-        self.enforced = input; self
+        self.enforced = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`DescribeInboundDmarcSettingsOutput`](crate::operation::describe_inbound_dmarc_settings::DescribeInboundDmarcSettingsOutput).
-    pub fn build(self) -> crate::operation::describe_inbound_dmarc_settings::DescribeInboundDmarcSettingsOutput {
+    pub fn build(
+        self,
+    ) -> crate::operation::describe_inbound_dmarc_settings::DescribeInboundDmarcSettingsOutput {
         crate::operation::describe_inbound_dmarc_settings::DescribeInboundDmarcSettingsOutput {
-            enforced: self.enforced
-                .unwrap_or_default()
-            ,
+            enforced: self.enforced.unwrap_or_default(),
             _request_id: self._request_id,
         }
     }
 }
-

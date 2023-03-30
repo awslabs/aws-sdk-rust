@@ -3,7 +3,7 @@
 /// <p>The GameLift service limits for an Amazon EC2 instance type and current utilization. GameLift allows Amazon Web Services accounts a maximum number of instances, per instance type, per Amazon Web Services Region or location, for use with GameLift. You can request an limit increase for your account by using the <b>Service limits</b> page in the GameLift console.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Ec2InstanceLimit  {
+pub struct Ec2InstanceLimit {
     /// <p>The name of an Amazon EC2 instance type. See <a href="http://aws.amazon.com/ec2/instance-types/">Amazon Elastic Compute Cloud Instance Types</a> for detailed descriptions. </p>
     #[doc(hidden)]
     pub ec2_instance_type: std::option::Option<crate::types::Ec2InstanceType>,
@@ -19,7 +19,7 @@ pub struct Ec2InstanceLimit  {
 }
 impl Ec2InstanceLimit {
     /// <p>The name of an Amazon EC2 instance type. See <a href="http://aws.amazon.com/ec2/instance-types/">Amazon Elastic Compute Cloud Instance Types</a> for detailed descriptions. </p>
-    pub fn ec2_instance_type(&self) -> std::option::Option<& crate::types::Ec2InstanceType> {
+    pub fn ec2_instance_type(&self) -> std::option::Option<&crate::types::Ec2InstanceType> {
         self.ec2_instance_type.as_ref()
     }
     /// <p>The number of instances for the specified type and location that are currently being used by the Amazon Web Services account. </p>
@@ -31,7 +31,7 @@ impl Ec2InstanceLimit {
         self.instance_limit
     }
     /// <p>An Amazon Web Services Region code, such as <code>us-west-2</code>. </p>
-    pub fn location(&self) -> std::option::Option<& str> {
+    pub fn location(&self) -> std::option::Option<&str> {
         self.location.as_deref()
     }
 }
@@ -58,8 +58,12 @@ impl Ec2InstanceLimitBuilder {
         self
     }
     /// <p>The name of an Amazon EC2 instance type. See <a href="http://aws.amazon.com/ec2/instance-types/">Amazon Elastic Compute Cloud Instance Types</a> for detailed descriptions. </p>
-    pub fn set_ec2_instance_type(mut self, input: std::option::Option<crate::types::Ec2InstanceType>) -> Self {
-        self.ec2_instance_type = input; self
+    pub fn set_ec2_instance_type(
+        mut self,
+        input: std::option::Option<crate::types::Ec2InstanceType>,
+    ) -> Self {
+        self.ec2_instance_type = input;
+        self
     }
     /// <p>The number of instances for the specified type and location that are currently being used by the Amazon Web Services account. </p>
     pub fn current_instances(mut self, input: i32) -> Self {
@@ -68,7 +72,8 @@ impl Ec2InstanceLimitBuilder {
     }
     /// <p>The number of instances for the specified type and location that are currently being used by the Amazon Web Services account. </p>
     pub fn set_current_instances(mut self, input: std::option::Option<i32>) -> Self {
-        self.current_instances = input; self
+        self.current_instances = input;
+        self
     }
     /// <p>The number of instances that is allowed for the specified instance type and location.</p>
     pub fn instance_limit(mut self, input: i32) -> Self {
@@ -77,7 +82,8 @@ impl Ec2InstanceLimitBuilder {
     }
     /// <p>The number of instances that is allowed for the specified instance type and location.</p>
     pub fn set_instance_limit(mut self, input: std::option::Option<i32>) -> Self {
-        self.instance_limit = input; self
+        self.instance_limit = input;
+        self
     }
     /// <p>An Amazon Web Services Region code, such as <code>us-west-2</code>. </p>
     pub fn location(mut self, input: impl Into<std::string::String>) -> Self {
@@ -86,20 +92,16 @@ impl Ec2InstanceLimitBuilder {
     }
     /// <p>An Amazon Web Services Region code, such as <code>us-west-2</code>. </p>
     pub fn set_location(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.location = input; self
+        self.location = input;
+        self
     }
     /// Consumes the builder and constructs a [`Ec2InstanceLimit`](crate::types::Ec2InstanceLimit).
     pub fn build(self) -> crate::types::Ec2InstanceLimit {
         crate::types::Ec2InstanceLimit {
-            ec2_instance_type: self.ec2_instance_type
-            ,
-            current_instances: self.current_instances
-            ,
-            instance_limit: self.instance_limit
-            ,
-            location: self.location
-            ,
+            ec2_instance_type: self.ec2_instance_type,
+            current_instances: self.current_instances,
+            instance_limit: self.instance_limit,
+            location: self.location,
         }
     }
 }
-

@@ -3,7 +3,7 @@
 /// <p>Contains the output of EnableAvailabilityZonesForLoadBalancer.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct EnableAvailabilityZonesForLoadBalancerOutput  {
+pub struct EnableAvailabilityZonesForLoadBalancerOutput {
     /// <p>The updated list of Availability Zones for the load balancer.</p>
     #[doc(hidden)]
     pub availability_zones: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -11,18 +11,18 @@ pub struct EnableAvailabilityZonesForLoadBalancerOutput  {
 }
 impl EnableAvailabilityZonesForLoadBalancerOutput {
     /// <p>The updated list of Availability Zones for the load balancer.</p>
-    pub fn availability_zones(&self) -> std::option::Option<& [std::string::String]> {
+    pub fn availability_zones(&self) -> std::option::Option<&[std::string::String]> {
         self.availability_zones.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for EnableAvailabilityZonesForLoadBalancerOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl EnableAvailabilityZonesForLoadBalancerOutput {
     /// Creates a new builder-style object to manufacture [`EnableAvailabilityZonesForLoadBalancerOutput`](crate::operation::enable_availability_zones_for_load_balancer::EnableAvailabilityZonesForLoadBalancerOutput).
-    pub fn builder() -> crate::operation::enable_availability_zones_for_load_balancer::builders::EnableAvailabilityZonesForLoadBalancerOutputBuilder {
+    pub fn builder() -> crate::operation::enable_availability_zones_for_load_balancer::builders::EnableAvailabilityZonesForLoadBalancerOutputBuilder{
         crate::operation::enable_availability_zones_for_load_balancer::builders::EnableAvailabilityZonesForLoadBalancerOutputBuilder::default()
     }
 }
@@ -42,25 +42,29 @@ impl EnableAvailabilityZonesForLoadBalancerOutputBuilder {
     /// <p>The updated list of Availability Zones for the load balancer.</p>
     pub fn availability_zones(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.availability_zones.unwrap_or_default();
-                        v.push(input.into());
-                        self.availability_zones = Some(v);
-                        self
+        v.push(input.into());
+        self.availability_zones = Some(v);
+        self
     }
     /// <p>The updated list of Availability Zones for the load balancer.</p>
-    pub fn set_availability_zones(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-        self.availability_zones = input; self
+    pub fn set_availability_zones(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
+        self.availability_zones = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`EnableAvailabilityZonesForLoadBalancerOutput`](crate::operation::enable_availability_zones_for_load_balancer::EnableAvailabilityZonesForLoadBalancerOutput).
-    pub fn build(self) -> crate::operation::enable_availability_zones_for_load_balancer::EnableAvailabilityZonesForLoadBalancerOutput {
+    pub fn build(self) -> crate::operation::enable_availability_zones_for_load_balancer::EnableAvailabilityZonesForLoadBalancerOutput{
         crate::operation::enable_availability_zones_for_load_balancer::EnableAvailabilityZonesForLoadBalancerOutput {
             availability_zones: self.availability_zones
             ,
@@ -68,4 +72,3 @@ impl EnableAvailabilityZonesForLoadBalancerOutputBuilder {
         }
     }
 }
-

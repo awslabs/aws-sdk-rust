@@ -3,14 +3,17 @@
 /// <p></p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct MultiPolygonGeometryInput  {
+pub struct MultiPolygonGeometryInput {
     /// <p>The coordinates of the multipolygon geometry.</p>
     #[doc(hidden)]
-    pub coordinates: std::option::Option<std::vec::Vec<std::vec::Vec<std::vec::Vec<std::vec::Vec<f64>>>>>,
+    pub coordinates:
+        std::option::Option<std::vec::Vec<std::vec::Vec<std::vec::Vec<std::vec::Vec<f64>>>>>,
 }
 impl MultiPolygonGeometryInput {
     /// <p>The coordinates of the multipolygon geometry.</p>
-    pub fn coordinates(&self) -> std::option::Option<& [std::vec::Vec<std::vec::Vec<std::vec::Vec<f64>>>]> {
+    pub fn coordinates(
+        &self,
+    ) -> std::option::Option<&[std::vec::Vec<std::vec::Vec<std::vec::Vec<f64>>>]> {
         self.coordinates.as_deref()
     }
 }
@@ -25,7 +28,8 @@ impl MultiPolygonGeometryInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct MultiPolygonGeometryInputBuilder {
-    pub(crate) coordinates: std::option::Option<std::vec::Vec<std::vec::Vec<std::vec::Vec<std::vec::Vec<f64>>>>>,
+    pub(crate) coordinates:
+        std::option::Option<std::vec::Vec<std::vec::Vec<std::vec::Vec<std::vec::Vec<f64>>>>>,
 }
 impl MultiPolygonGeometryInputBuilder {
     /// Appends an item to `coordinates`.
@@ -35,20 +39,22 @@ impl MultiPolygonGeometryInputBuilder {
     /// <p>The coordinates of the multipolygon geometry.</p>
     pub fn coordinates(mut self, input: std::vec::Vec<std::vec::Vec<std::vec::Vec<f64>>>) -> Self {
         let mut v = self.coordinates.unwrap_or_default();
-                        v.push(input);
-                        self.coordinates = Some(v);
-                        self
+        v.push(input);
+        self.coordinates = Some(v);
+        self
     }
     /// <p>The coordinates of the multipolygon geometry.</p>
-    pub fn set_coordinates(mut self, input: std::option::Option<std::vec::Vec<std::vec::Vec<std::vec::Vec<std::vec::Vec<f64>>>>>) -> Self {
-        self.coordinates = input; self
+    pub fn set_coordinates(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::vec::Vec<std::vec::Vec<std::vec::Vec<f64>>>>>,
+    ) -> Self {
+        self.coordinates = input;
+        self
     }
     /// Consumes the builder and constructs a [`MultiPolygonGeometryInput`](crate::types::MultiPolygonGeometryInput).
     pub fn build(self) -> crate::types::MultiPolygonGeometryInput {
         crate::types::MultiPolygonGeometryInput {
-            coordinates: self.coordinates
-            ,
+            coordinates: self.coordinates,
         }
     }
 }
-

@@ -93,4 +93,3 @@ pub mod update_registry;
 
 /// Types for the `UpdateSchema` operation.
 pub mod update_schema;
-

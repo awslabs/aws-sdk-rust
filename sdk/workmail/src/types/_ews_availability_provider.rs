@@ -3,7 +3,7 @@
 /// <p>Describes an EWS based availability provider. This is only used as input to the service.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct EwsAvailabilityProvider  {
+pub struct EwsAvailabilityProvider {
     /// <p>The endpoint of the remote EWS server.</p>
     #[doc(hidden)]
     pub ews_endpoint: std::option::Option<std::string::String>,
@@ -16,19 +16,19 @@ pub struct EwsAvailabilityProvider  {
 }
 impl EwsAvailabilityProvider {
     /// <p>The endpoint of the remote EWS server.</p>
-    pub fn ews_endpoint(&self) -> std::option::Option<& str> {
+    pub fn ews_endpoint(&self) -> std::option::Option<&str> {
         self.ews_endpoint.as_deref()
     }
     /// <p>The username used to authenticate the remote EWS server.</p>
-    pub fn ews_username(&self) -> std::option::Option<& str> {
+    pub fn ews_username(&self) -> std::option::Option<&str> {
         self.ews_username.as_deref()
     }
     /// <p>The password used to authenticate the remote EWS server.</p>
-    pub fn ews_password(&self) -> std::option::Option<& str> {
+    pub fn ews_password(&self) -> std::option::Option<&str> {
         self.ews_password.as_deref()
     }
 }
-impl  std::fmt::Debug for EwsAvailabilityProvider  {
+impl std::fmt::Debug for EwsAvailabilityProvider {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("EwsAvailabilityProvider");
         formatter.field("ews_endpoint", &self.ews_endpoint);
@@ -60,7 +60,8 @@ impl EwsAvailabilityProviderBuilder {
     }
     /// <p>The endpoint of the remote EWS server.</p>
     pub fn set_ews_endpoint(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.ews_endpoint = input; self
+        self.ews_endpoint = input;
+        self
     }
     /// <p>The username used to authenticate the remote EWS server.</p>
     pub fn ews_username(mut self, input: impl Into<std::string::String>) -> Self {
@@ -69,7 +70,8 @@ impl EwsAvailabilityProviderBuilder {
     }
     /// <p>The username used to authenticate the remote EWS server.</p>
     pub fn set_ews_username(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.ews_username = input; self
+        self.ews_username = input;
+        self
     }
     /// <p>The password used to authenticate the remote EWS server.</p>
     pub fn ews_password(mut self, input: impl Into<std::string::String>) -> Self {
@@ -78,17 +80,15 @@ impl EwsAvailabilityProviderBuilder {
     }
     /// <p>The password used to authenticate the remote EWS server.</p>
     pub fn set_ews_password(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.ews_password = input; self
+        self.ews_password = input;
+        self
     }
     /// Consumes the builder and constructs a [`EwsAvailabilityProvider`](crate::types::EwsAvailabilityProvider).
     pub fn build(self) -> crate::types::EwsAvailabilityProvider {
         crate::types::EwsAvailabilityProvider {
-            ews_endpoint: self.ews_endpoint
-            ,
-            ews_username: self.ews_username
-            ,
-            ews_password: self.ews_password
-            ,
+            ews_endpoint: self.ews_endpoint,
+            ews_username: self.ews_username,
+            ews_password: self.ews_password,
         }
     }
 }
@@ -101,4 +101,3 @@ impl std::fmt::Debug for EwsAvailabilityProviderBuilder {
         formatter.finish()
     }
 }
-

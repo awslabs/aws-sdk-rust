@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PutAccountPreferencesOutput  {
+pub struct PutAccountPreferencesOutput {
     /// <p>Describes the resource type and its ID preference for the user's Amazon Web Services account, in the current Amazon Web Services Region.</p>
     #[doc(hidden)]
     pub resource_id_preference: std::option::Option<crate::types::ResourceIdPreference>,
@@ -10,18 +10,22 @@ pub struct PutAccountPreferencesOutput  {
 }
 impl PutAccountPreferencesOutput {
     /// <p>Describes the resource type and its ID preference for the user's Amazon Web Services account, in the current Amazon Web Services Region.</p>
-    pub fn resource_id_preference(&self) -> std::option::Option<& crate::types::ResourceIdPreference> {
+    pub fn resource_id_preference(
+        &self,
+    ) -> std::option::Option<&crate::types::ResourceIdPreference> {
         self.resource_id_preference.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for PutAccountPreferencesOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl PutAccountPreferencesOutput {
     /// Creates a new builder-style object to manufacture [`PutAccountPreferencesOutput`](crate::operation::put_account_preferences::PutAccountPreferencesOutput).
-    pub fn builder() -> crate::operation::put_account_preferences::builders::PutAccountPreferencesOutputBuilder {
+    pub fn builder(
+    ) -> crate::operation::put_account_preferences::builders::PutAccountPreferencesOutputBuilder
+    {
         crate::operation::put_account_preferences::builders::PutAccountPreferencesOutputBuilder::default()
     }
 }
@@ -40,25 +44,27 @@ impl PutAccountPreferencesOutputBuilder {
         self
     }
     /// <p>Describes the resource type and its ID preference for the user's Amazon Web Services account, in the current Amazon Web Services Region.</p>
-    pub fn set_resource_id_preference(mut self, input: std::option::Option<crate::types::ResourceIdPreference>) -> Self {
-        self.resource_id_preference = input; self
+    pub fn set_resource_id_preference(
+        mut self,
+        input: std::option::Option<crate::types::ResourceIdPreference>,
+    ) -> Self {
+        self.resource_id_preference = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`PutAccountPreferencesOutput`](crate::operation::put_account_preferences::PutAccountPreferencesOutput).
     pub fn build(self) -> crate::operation::put_account_preferences::PutAccountPreferencesOutput {
         crate::operation::put_account_preferences::PutAccountPreferencesOutput {
-            resource_id_preference: self.resource_id_preference
-            ,
+            resource_id_preference: self.resource_id_preference,
             _request_id: self._request_id,
         }
     }
 }
-

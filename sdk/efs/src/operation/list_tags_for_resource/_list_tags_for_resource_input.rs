@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListTagsForResourceInput  {
+pub struct ListTagsForResourceInput {
     /// <p>Specifies the EFS resource you want to retrieve tags for. You can retrieve tags for EFS file systems and access points using this API endpoint.</p>
     #[doc(hidden)]
     pub resource_id: std::option::Option<std::string::String>,
@@ -15,7 +15,7 @@ pub struct ListTagsForResourceInput  {
 }
 impl ListTagsForResourceInput {
     /// <p>Specifies the EFS resource you want to retrieve tags for. You can retrieve tags for EFS file systems and access points using this API endpoint.</p>
-    pub fn resource_id(&self) -> std::option::Option<& str> {
+    pub fn resource_id(&self) -> std::option::Option<&str> {
         self.resource_id.as_deref()
     }
     /// <p>(Optional) Specifies the maximum number of tag objects to return in the response. The default value is 100.</p>
@@ -23,14 +23,16 @@ impl ListTagsForResourceInput {
         self.max_results
     }
     /// <p>(Optional) You can use <code>NextToken</code> in a subsequent request to fetch the next page of access point descriptions if the response payload was paginated.</p>
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
 }
 impl ListTagsForResourceInput {
     /// Creates a new builder-style object to manufacture [`ListTagsForResourceInput`](crate::operation::list_tags_for_resource::ListTagsForResourceInput).
-    pub fn builder() -> crate::operation::list_tags_for_resource::builders::ListTagsForResourceInputBuilder {
-        crate::operation::list_tags_for_resource::builders::ListTagsForResourceInputBuilder::default()
+    pub fn builder(
+    ) -> crate::operation::list_tags_for_resource::builders::ListTagsForResourceInputBuilder {
+        crate::operation::list_tags_for_resource::builders::ListTagsForResourceInputBuilder::default(
+        )
     }
 }
 
@@ -50,7 +52,8 @@ impl ListTagsForResourceInputBuilder {
     }
     /// <p>Specifies the EFS resource you want to retrieve tags for. You can retrieve tags for EFS file systems and access points using this API endpoint.</p>
     pub fn set_resource_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.resource_id = input; self
+        self.resource_id = input;
+        self
     }
     /// <p>(Optional) Specifies the maximum number of tag objects to return in the response. The default value is 100.</p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -59,7 +62,8 @@ impl ListTagsForResourceInputBuilder {
     }
     /// <p>(Optional) Specifies the maximum number of tag objects to return in the response. The default value is 100.</p>
     pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_results = input; self
+        self.max_results = input;
+        self
     }
     /// <p>(Optional) You can use <code>NextToken</code> in a subsequent request to fetch the next page of access point descriptions if the response payload was paginated.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -68,20 +72,22 @@ impl ListTagsForResourceInputBuilder {
     }
     /// <p>(Optional) You can use <code>NextToken</code> in a subsequent request to fetch the next page of access point descriptions if the response payload was paginated.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input; self
+        self.next_token = input;
+        self
     }
     /// Consumes the builder and constructs a [`ListTagsForResourceInput`](crate::operation::list_tags_for_resource::ListTagsForResourceInput).
-    pub fn build(self) -> Result<crate::operation::list_tags_for_resource::ListTagsForResourceInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::list_tags_for_resource::ListTagsForResourceInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::list_tags_for_resource::ListTagsForResourceInput {
-                resource_id: self.resource_id
-                ,
-                max_results: self.max_results
-                ,
-                next_token: self.next_token
-                ,
-            }
+                resource_id: self.resource_id,
+                max_results: self.max_results,
+                next_token: self.next_token,
+            },
         )
     }
 }
-

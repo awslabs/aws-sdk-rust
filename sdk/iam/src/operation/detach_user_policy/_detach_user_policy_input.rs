@@ -2,31 +2,32 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DetachUserPolicyInput  {
-    /// <p>The name (friendly name, not ARN) of the IAM user to detach the policy from.</p> 
+pub struct DetachUserPolicyInput {
+    /// <p>The name (friendly name, not ARN) of the IAM user to detach the policy from.</p>
     /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
     #[doc(hidden)]
     pub user_name: std::option::Option<std::string::String>,
-    /// <p>The Amazon Resource Name (ARN) of the IAM policy you want to detach.</p> 
+    /// <p>The Amazon Resource Name (ARN) of the IAM policy you want to detach.</p>
     /// <p>For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i>.</p>
     #[doc(hidden)]
     pub policy_arn: std::option::Option<std::string::String>,
 }
 impl DetachUserPolicyInput {
-    /// <p>The name (friendly name, not ARN) of the IAM user to detach the policy from.</p> 
+    /// <p>The name (friendly name, not ARN) of the IAM user to detach the policy from.</p>
     /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
-    pub fn user_name(&self) -> std::option::Option<& str> {
+    pub fn user_name(&self) -> std::option::Option<&str> {
         self.user_name.as_deref()
     }
-    /// <p>The Amazon Resource Name (ARN) of the IAM policy you want to detach.</p> 
+    /// <p>The Amazon Resource Name (ARN) of the IAM policy you want to detach.</p>
     /// <p>For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i>.</p>
-    pub fn policy_arn(&self) -> std::option::Option<& str> {
+    pub fn policy_arn(&self) -> std::option::Option<&str> {
         self.policy_arn.as_deref()
     }
 }
 impl DetachUserPolicyInput {
     /// Creates a new builder-style object to manufacture [`DetachUserPolicyInput`](crate::operation::detach_user_policy::DetachUserPolicyInput).
-    pub fn builder() -> crate::operation::detach_user_policy::builders::DetachUserPolicyInputBuilder {
+    pub fn builder() -> crate::operation::detach_user_policy::builders::DetachUserPolicyInputBuilder
+    {
         crate::operation::detach_user_policy::builders::DetachUserPolicyInputBuilder::default()
     }
 }
@@ -39,38 +40,42 @@ pub struct DetachUserPolicyInputBuilder {
     pub(crate) policy_arn: std::option::Option<std::string::String>,
 }
 impl DetachUserPolicyInputBuilder {
-    /// <p>The name (friendly name, not ARN) of the IAM user to detach the policy from.</p> 
+    /// <p>The name (friendly name, not ARN) of the IAM user to detach the policy from.</p>
     /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
     pub fn user_name(mut self, input: impl Into<std::string::String>) -> Self {
         self.user_name = Some(input.into());
         self
     }
-    /// <p>The name (friendly name, not ARN) of the IAM user to detach the policy from.</p> 
+    /// <p>The name (friendly name, not ARN) of the IAM user to detach the policy from.</p>
     /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
     pub fn set_user_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.user_name = input; self
+        self.user_name = input;
+        self
     }
-    /// <p>The Amazon Resource Name (ARN) of the IAM policy you want to detach.</p> 
+    /// <p>The Amazon Resource Name (ARN) of the IAM policy you want to detach.</p>
     /// <p>For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i>.</p>
     pub fn policy_arn(mut self, input: impl Into<std::string::String>) -> Self {
         self.policy_arn = Some(input.into());
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the IAM policy you want to detach.</p> 
+    /// <p>The Amazon Resource Name (ARN) of the IAM policy you want to detach.</p>
     /// <p>For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i>.</p>
     pub fn set_policy_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.policy_arn = input; self
+        self.policy_arn = input;
+        self
     }
     /// Consumes the builder and constructs a [`DetachUserPolicyInput`](crate::operation::detach_user_policy::DetachUserPolicyInput).
-    pub fn build(self) -> Result<crate::operation::detach_user_policy::DetachUserPolicyInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::detach_user_policy::DetachUserPolicyInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::detach_user_policy::DetachUserPolicyInput {
-                user_name: self.user_name
-                ,
-                policy_arn: self.policy_arn
-                ,
-            }
+                user_name: self.user_name,
+                policy_arn: self.policy_arn,
+            },
         )
     }
 }
-

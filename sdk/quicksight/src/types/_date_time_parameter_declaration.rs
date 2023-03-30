@@ -3,7 +3,7 @@
 /// <p>A parameter declaration for the <code>DateTime</code> data type.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DateTimeParameterDeclaration  {
+pub struct DateTimeParameterDeclaration {
     /// <p>The name of the parameter that is being declared.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -19,19 +19,21 @@ pub struct DateTimeParameterDeclaration  {
 }
 impl DateTimeParameterDeclaration {
     /// <p>The name of the parameter that is being declared.</p>
-    pub fn name(&self) -> std::option::Option<& str> {
+    pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>The default values of a parameter. If the parameter is a single-value parameter, a maximum of one default value can be provided.</p>
-    pub fn default_values(&self) -> std::option::Option<& crate::types::DateTimeDefaultValues> {
+    pub fn default_values(&self) -> std::option::Option<&crate::types::DateTimeDefaultValues> {
         self.default_values.as_ref()
     }
     /// <p>The level of time precision that is used to aggregate <code>DateTime</code> values.</p>
-    pub fn time_granularity(&self) -> std::option::Option<& crate::types::TimeGranularity> {
+    pub fn time_granularity(&self) -> std::option::Option<&crate::types::TimeGranularity> {
         self.time_granularity.as_ref()
     }
     /// <p>The configuration that defines the default value of a <code>DateTime</code> parameter when a value has not been set.</p>
-    pub fn value_when_unset(&self) -> std::option::Option<& crate::types::DateTimeValueWhenUnsetConfiguration> {
+    pub fn value_when_unset(
+        &self,
+    ) -> std::option::Option<&crate::types::DateTimeValueWhenUnsetConfiguration> {
         self.value_when_unset.as_ref()
     }
 }
@@ -49,7 +51,8 @@ pub struct DateTimeParameterDeclarationBuilder {
     pub(crate) name: std::option::Option<std::string::String>,
     pub(crate) default_values: std::option::Option<crate::types::DateTimeDefaultValues>,
     pub(crate) time_granularity: std::option::Option<crate::types::TimeGranularity>,
-    pub(crate) value_when_unset: std::option::Option<crate::types::DateTimeValueWhenUnsetConfiguration>,
+    pub(crate) value_when_unset:
+        std::option::Option<crate::types::DateTimeValueWhenUnsetConfiguration>,
 }
 impl DateTimeParameterDeclarationBuilder {
     /// <p>The name of the parameter that is being declared.</p>
@@ -59,7 +62,8 @@ impl DateTimeParameterDeclarationBuilder {
     }
     /// <p>The name of the parameter that is being declared.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input; self
+        self.name = input;
+        self
     }
     /// <p>The default values of a parameter. If the parameter is a single-value parameter, a maximum of one default value can be provided.</p>
     pub fn default_values(mut self, input: crate::types::DateTimeDefaultValues) -> Self {
@@ -67,8 +71,12 @@ impl DateTimeParameterDeclarationBuilder {
         self
     }
     /// <p>The default values of a parameter. If the parameter is a single-value parameter, a maximum of one default value can be provided.</p>
-    pub fn set_default_values(mut self, input: std::option::Option<crate::types::DateTimeDefaultValues>) -> Self {
-        self.default_values = input; self
+    pub fn set_default_values(
+        mut self,
+        input: std::option::Option<crate::types::DateTimeDefaultValues>,
+    ) -> Self {
+        self.default_values = input;
+        self
     }
     /// <p>The level of time precision that is used to aggregate <code>DateTime</code> values.</p>
     pub fn time_granularity(mut self, input: crate::types::TimeGranularity) -> Self {
@@ -76,30 +84,36 @@ impl DateTimeParameterDeclarationBuilder {
         self
     }
     /// <p>The level of time precision that is used to aggregate <code>DateTime</code> values.</p>
-    pub fn set_time_granularity(mut self, input: std::option::Option<crate::types::TimeGranularity>) -> Self {
-        self.time_granularity = input; self
+    pub fn set_time_granularity(
+        mut self,
+        input: std::option::Option<crate::types::TimeGranularity>,
+    ) -> Self {
+        self.time_granularity = input;
+        self
     }
     /// <p>The configuration that defines the default value of a <code>DateTime</code> parameter when a value has not been set.</p>
-    pub fn value_when_unset(mut self, input: crate::types::DateTimeValueWhenUnsetConfiguration) -> Self {
+    pub fn value_when_unset(
+        mut self,
+        input: crate::types::DateTimeValueWhenUnsetConfiguration,
+    ) -> Self {
         self.value_when_unset = Some(input);
         self
     }
     /// <p>The configuration that defines the default value of a <code>DateTime</code> parameter when a value has not been set.</p>
-    pub fn set_value_when_unset(mut self, input: std::option::Option<crate::types::DateTimeValueWhenUnsetConfiguration>) -> Self {
-        self.value_when_unset = input; self
+    pub fn set_value_when_unset(
+        mut self,
+        input: std::option::Option<crate::types::DateTimeValueWhenUnsetConfiguration>,
+    ) -> Self {
+        self.value_when_unset = input;
+        self
     }
     /// Consumes the builder and constructs a [`DateTimeParameterDeclaration`](crate::types::DateTimeParameterDeclaration).
     pub fn build(self) -> crate::types::DateTimeParameterDeclaration {
         crate::types::DateTimeParameterDeclaration {
-            name: self.name
-            ,
-            default_values: self.default_values
-            ,
-            time_granularity: self.time_granularity
-            ,
-            value_when_unset: self.value_when_unset
-            ,
+            name: self.name,
+            default_values: self.default_values,
+            time_granularity: self.time_granularity,
+            value_when_unset: self.value_when_unset,
         }
     }
 }
-

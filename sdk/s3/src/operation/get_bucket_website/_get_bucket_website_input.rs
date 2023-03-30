@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetBucketWebsiteInput  {
+pub struct GetBucketWebsiteInput {
     /// <p>The bucket name for which to get the website configuration.</p>
     #[doc(hidden)]
     pub bucket: std::option::Option<std::string::String>,
@@ -12,17 +12,18 @@ pub struct GetBucketWebsiteInput  {
 }
 impl GetBucketWebsiteInput {
     /// <p>The bucket name for which to get the website configuration.</p>
-    pub fn bucket(&self) -> std::option::Option<& str> {
+    pub fn bucket(&self) -> std::option::Option<&str> {
         self.bucket.as_deref()
     }
     /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
-    pub fn expected_bucket_owner(&self) -> std::option::Option<& str> {
+    pub fn expected_bucket_owner(&self) -> std::option::Option<&str> {
         self.expected_bucket_owner.as_deref()
     }
 }
 impl GetBucketWebsiteInput {
     /// Creates a new builder-style object to manufacture [`GetBucketWebsiteInput`](crate::operation::get_bucket_website::GetBucketWebsiteInput).
-    pub fn builder() -> crate::operation::get_bucket_website::builders::GetBucketWebsiteInputBuilder {
+    pub fn builder() -> crate::operation::get_bucket_website::builders::GetBucketWebsiteInputBuilder
+    {
         crate::operation::get_bucket_website::builders::GetBucketWebsiteInputBuilder::default()
     }
 }
@@ -42,7 +43,8 @@ impl GetBucketWebsiteInputBuilder {
     }
     /// <p>The bucket name for which to get the website configuration.</p>
     pub fn set_bucket(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.bucket = input; self
+        self.bucket = input;
+        self
     }
     /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
     pub fn expected_bucket_owner(mut self, input: impl Into<std::string::String>) -> Self {
@@ -50,19 +52,25 @@ impl GetBucketWebsiteInputBuilder {
         self
     }
     /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
-    pub fn set_expected_bucket_owner(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.expected_bucket_owner = input; self
+    pub fn set_expected_bucket_owner(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.expected_bucket_owner = input;
+        self
     }
     /// Consumes the builder and constructs a [`GetBucketWebsiteInput`](crate::operation::get_bucket_website::GetBucketWebsiteInput).
-    pub fn build(self) -> Result<crate::operation::get_bucket_website::GetBucketWebsiteInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::get_bucket_website::GetBucketWebsiteInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::get_bucket_website::GetBucketWebsiteInput {
-                bucket: self.bucket
-                ,
-                expected_bucket_owner: self.expected_bucket_owner
-                ,
-            }
+                bucket: self.bucket,
+                expected_bucket_owner: self.expected_bucket_owner,
+            },
         )
     }
 }
-

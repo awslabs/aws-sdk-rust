@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteWorkspaceApiKeyOutput  {
+pub struct DeleteWorkspaceApiKeyOutput {
     /// <p>The name of the key that was deleted.</p>
     #[doc(hidden)]
     pub key_name: std::option::Option<std::string::String>,
@@ -13,22 +13,24 @@ pub struct DeleteWorkspaceApiKeyOutput  {
 }
 impl DeleteWorkspaceApiKeyOutput {
     /// <p>The name of the key that was deleted.</p>
-    pub fn key_name(&self) -> std::option::Option<& str> {
+    pub fn key_name(&self) -> std::option::Option<&str> {
         self.key_name.as_deref()
     }
     /// <p>The ID of the workspace where the key was deleted.</p>
-    pub fn workspace_id(&self) -> std::option::Option<& str> {
+    pub fn workspace_id(&self) -> std::option::Option<&str> {
         self.workspace_id.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for DeleteWorkspaceApiKeyOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl DeleteWorkspaceApiKeyOutput {
     /// Creates a new builder-style object to manufacture [`DeleteWorkspaceApiKeyOutput`](crate::operation::delete_workspace_api_key::DeleteWorkspaceApiKeyOutput).
-    pub fn builder() -> crate::operation::delete_workspace_api_key::builders::DeleteWorkspaceApiKeyOutputBuilder {
+    pub fn builder(
+    ) -> crate::operation::delete_workspace_api_key::builders::DeleteWorkspaceApiKeyOutputBuilder
+    {
         crate::operation::delete_workspace_api_key::builders::DeleteWorkspaceApiKeyOutputBuilder::default()
     }
 }
@@ -49,7 +51,8 @@ impl DeleteWorkspaceApiKeyOutputBuilder {
     }
     /// <p>The name of the key that was deleted.</p>
     pub fn set_key_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.key_name = input; self
+        self.key_name = input;
+        self
     }
     /// <p>The ID of the workspace where the key was deleted.</p>
     pub fn workspace_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -58,26 +61,24 @@ impl DeleteWorkspaceApiKeyOutputBuilder {
     }
     /// <p>The ID of the workspace where the key was deleted.</p>
     pub fn set_workspace_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.workspace_id = input; self
+        self.workspace_id = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`DeleteWorkspaceApiKeyOutput`](crate::operation::delete_workspace_api_key::DeleteWorkspaceApiKeyOutput).
     pub fn build(self) -> crate::operation::delete_workspace_api_key::DeleteWorkspaceApiKeyOutput {
         crate::operation::delete_workspace_api_key::DeleteWorkspaceApiKeyOutput {
-            key_name: self.key_name
-            ,
-            workspace_id: self.workspace_id
-            ,
+            key_name: self.key_name,
+            workspace_id: self.workspace_id,
             _request_id: self._request_id,
         }
     }
 }
-

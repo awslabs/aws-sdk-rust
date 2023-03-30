@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeGameSessionQueuesInput  {
+pub struct DescribeGameSessionQueuesInput {
     /// <p>A list of queue names to retrieve information for. You can use either the queue ID or ARN value. To request settings for all queues, leave this parameter empty. </p>
     #[doc(hidden)]
     pub names: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -15,7 +15,7 @@ pub struct DescribeGameSessionQueuesInput  {
 }
 impl DescribeGameSessionQueuesInput {
     /// <p>A list of queue names to retrieve information for. You can use either the queue ID or ARN value. To request settings for all queues, leave this parameter empty. </p>
-    pub fn names(&self) -> std::option::Option<& [std::string::String]> {
+    pub fn names(&self) -> std::option::Option<&[std::string::String]> {
         self.names.as_deref()
     }
     /// <p>The maximum number of results to return. Use this parameter with <code>NextToken</code> to get results as a set of sequential pages. You can request up to 50 results.</p>
@@ -23,13 +23,13 @@ impl DescribeGameSessionQueuesInput {
         self.limit
     }
     /// <p>A token that indicates the start of the next sequential page of results. Use the token that is returned with a previous call to this operation. To start at the beginning of the result set, do not specify a value.</p>
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
 }
 impl DescribeGameSessionQueuesInput {
     /// Creates a new builder-style object to manufacture [`DescribeGameSessionQueuesInput`](crate::operation::describe_game_session_queues::DescribeGameSessionQueuesInput).
-    pub fn builder() -> crate::operation::describe_game_session_queues::builders::DescribeGameSessionQueuesInputBuilder {
+    pub fn builder() -> crate::operation::describe_game_session_queues::builders::DescribeGameSessionQueuesInputBuilder{
         crate::operation::describe_game_session_queues::builders::DescribeGameSessionQueuesInputBuilder::default()
     }
 }
@@ -50,13 +50,17 @@ impl DescribeGameSessionQueuesInputBuilder {
     /// <p>A list of queue names to retrieve information for. You can use either the queue ID or ARN value. To request settings for all queues, leave this parameter empty. </p>
     pub fn names(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.names.unwrap_or_default();
-                        v.push(input.into());
-                        self.names = Some(v);
-                        self
+        v.push(input.into());
+        self.names = Some(v);
+        self
     }
     /// <p>A list of queue names to retrieve information for. You can use either the queue ID or ARN value. To request settings for all queues, leave this parameter empty. </p>
-    pub fn set_names(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-        self.names = input; self
+    pub fn set_names(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
+        self.names = input;
+        self
     }
     /// <p>The maximum number of results to return. Use this parameter with <code>NextToken</code> to get results as a set of sequential pages. You can request up to 50 results.</p>
     pub fn limit(mut self, input: i32) -> Self {
@@ -65,7 +69,8 @@ impl DescribeGameSessionQueuesInputBuilder {
     }
     /// <p>The maximum number of results to return. Use this parameter with <code>NextToken</code> to get results as a set of sequential pages. You can request up to 50 results.</p>
     pub fn set_limit(mut self, input: std::option::Option<i32>) -> Self {
-        self.limit = input; self
+        self.limit = input;
+        self
     }
     /// <p>A token that indicates the start of the next sequential page of results. Use the token that is returned with a previous call to this operation. To start at the beginning of the result set, do not specify a value.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -74,20 +79,22 @@ impl DescribeGameSessionQueuesInputBuilder {
     }
     /// <p>A token that indicates the start of the next sequential page of results. Use the token that is returned with a previous call to this operation. To start at the beginning of the result set, do not specify a value.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input; self
+        self.next_token = input;
+        self
     }
     /// Consumes the builder and constructs a [`DescribeGameSessionQueuesInput`](crate::operation::describe_game_session_queues::DescribeGameSessionQueuesInput).
-    pub fn build(self) -> Result<crate::operation::describe_game_session_queues::DescribeGameSessionQueuesInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::describe_game_session_queues::DescribeGameSessionQueuesInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::describe_game_session_queues::DescribeGameSessionQueuesInput {
-                names: self.names
-                ,
-                limit: self.limit
-                ,
-                next_token: self.next_token
-                ,
-            }
+                names: self.names,
+                limit: self.limit,
+                next_token: self.next_token,
+            },
         )
     }
 }
-

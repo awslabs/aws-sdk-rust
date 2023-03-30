@@ -3,14 +3,14 @@
 /// <p>A remote location where a multi-location fleet can deploy EC2 instances for game hosting. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct LocationConfiguration  {
+pub struct LocationConfiguration {
     /// <p>An Amazon Web Services Region code, such as <code>us-west-2</code>. </p>
     #[doc(hidden)]
     pub location: std::option::Option<std::string::String>,
 }
 impl LocationConfiguration {
     /// <p>An Amazon Web Services Region code, such as <code>us-west-2</code>. </p>
-    pub fn location(&self) -> std::option::Option<& str> {
+    pub fn location(&self) -> std::option::Option<&str> {
         self.location.as_deref()
     }
 }
@@ -35,14 +35,13 @@ impl LocationConfigurationBuilder {
     }
     /// <p>An Amazon Web Services Region code, such as <code>us-west-2</code>. </p>
     pub fn set_location(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.location = input; self
+        self.location = input;
+        self
     }
     /// Consumes the builder and constructs a [`LocationConfiguration`](crate::types::LocationConfiguration).
     pub fn build(self) -> crate::types::LocationConfiguration {
         crate::types::LocationConfiguration {
-            location: self.location
-            ,
+            location: self.location,
         }
     }
 }
-

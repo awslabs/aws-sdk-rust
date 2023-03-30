@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct GetCredentialsOutput  {
+pub struct GetCredentialsOutput {
     /// <p>A database user name that is authorized to log on to the database <code>DbName</code> using the password <code>DbPassword</code>. If the specified <code>DbUser</code> exists in the database, the new user name has the same database privileges as the the user named in <code>DbUser</code>. By default, the user is added to PUBLIC.</p>
     #[doc(hidden)]
     pub db_user: std::option::Option<std::string::String>,
@@ -19,23 +19,23 @@ pub struct GetCredentialsOutput  {
 }
 impl GetCredentialsOutput {
     /// <p>A database user name that is authorized to log on to the database <code>DbName</code> using the password <code>DbPassword</code>. If the specified <code>DbUser</code> exists in the database, the new user name has the same database privileges as the the user named in <code>DbUser</code>. By default, the user is added to PUBLIC.</p>
-    pub fn db_user(&self) -> std::option::Option<& str> {
+    pub fn db_user(&self) -> std::option::Option<&str> {
         self.db_user.as_deref()
     }
     /// <p>A temporary password that authorizes the user name returned by <code>DbUser</code> to log on to the database <code>DbName</code>.</p>
-    pub fn db_password(&self) -> std::option::Option<& str> {
+    pub fn db_password(&self) -> std::option::Option<&str> {
         self.db_password.as_deref()
     }
     /// <p>The date and time the password in <code>DbPassword</code> expires.</p>
-    pub fn expiration(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
+    pub fn expiration(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.expiration.as_ref()
     }
     /// <p>The date and time of when the <code>DbUser</code> and <code>DbPassword</code> authorization refreshes.</p>
-    pub fn next_refresh_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
+    pub fn next_refresh_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.next_refresh_time.as_ref()
     }
 }
-impl  std::fmt::Debug for GetCredentialsOutput  {
+impl std::fmt::Debug for GetCredentialsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetCredentialsOutput");
         formatter.field("db_user", &"*** Sensitive Data Redacted ***");
@@ -47,10 +47,10 @@ impl  std::fmt::Debug for GetCredentialsOutput  {
     }
 }
 impl aws_http::request_id::RequestId for GetCredentialsOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl GetCredentialsOutput {
     /// Creates a new builder-style object to manufacture [`GetCredentialsOutput`](crate::operation::get_credentials::GetCredentialsOutput).
     pub fn builder() -> crate::operation::get_credentials::builders::GetCredentialsOutputBuilder {
@@ -76,7 +76,8 @@ impl GetCredentialsOutputBuilder {
     }
     /// <p>A database user name that is authorized to log on to the database <code>DbName</code> using the password <code>DbPassword</code>. If the specified <code>DbUser</code> exists in the database, the new user name has the same database privileges as the the user named in <code>DbUser</code>. By default, the user is added to PUBLIC.</p>
     pub fn set_db_user(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.db_user = input; self
+        self.db_user = input;
+        self
     }
     /// <p>A temporary password that authorizes the user name returned by <code>DbUser</code> to log on to the database <code>DbName</code>.</p>
     pub fn db_password(mut self, input: impl Into<std::string::String>) -> Self {
@@ -85,7 +86,8 @@ impl GetCredentialsOutputBuilder {
     }
     /// <p>A temporary password that authorizes the user name returned by <code>DbUser</code> to log on to the database <code>DbName</code>.</p>
     pub fn set_db_password(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.db_password = input; self
+        self.db_password = input;
+        self
     }
     /// <p>The date and time the password in <code>DbPassword</code> expires.</p>
     pub fn expiration(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -93,8 +95,12 @@ impl GetCredentialsOutputBuilder {
         self
     }
     /// <p>The date and time the password in <code>DbPassword</code> expires.</p>
-    pub fn set_expiration(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.expiration = input; self
+    pub fn set_expiration(
+        mut self,
+        input: std::option::Option<aws_smithy_types::DateTime>,
+    ) -> Self {
+        self.expiration = input;
+        self
     }
     /// <p>The date and time of when the <code>DbUser</code> and <code>DbPassword</code> authorization refreshes.</p>
     pub fn next_refresh_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -102,29 +108,29 @@ impl GetCredentialsOutputBuilder {
         self
     }
     /// <p>The date and time of when the <code>DbUser</code> and <code>DbPassword</code> authorization refreshes.</p>
-    pub fn set_next_refresh_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.next_refresh_time = input; self
+    pub fn set_next_refresh_time(
+        mut self,
+        input: std::option::Option<aws_smithy_types::DateTime>,
+    ) -> Self {
+        self.next_refresh_time = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`GetCredentialsOutput`](crate::operation::get_credentials::GetCredentialsOutput).
     pub fn build(self) -> crate::operation::get_credentials::GetCredentialsOutput {
         crate::operation::get_credentials::GetCredentialsOutput {
-            db_user: self.db_user
-            ,
-            db_password: self.db_password
-            ,
-            expiration: self.expiration
-            ,
-            next_refresh_time: self.next_refresh_time
-            ,
+            db_user: self.db_user,
+            db_password: self.db_password,
+            expiration: self.expiration,
+            next_refresh_time: self.next_refresh_time,
             _request_id: self._request_id,
         }
     }
@@ -140,4 +146,3 @@ impl std::fmt::Debug for GetCredentialsOutputBuilder {
         formatter.finish()
     }
 }
-

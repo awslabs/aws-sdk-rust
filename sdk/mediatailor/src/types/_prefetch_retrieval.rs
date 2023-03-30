@@ -3,11 +3,12 @@
 /// <p>A complex type that contains settings governing when MediaTailor prefetches ads, and which dynamic variables that MediaTailor includes in the request to the ad decision server.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PrefetchRetrieval  {
-    /// <p>The dynamic variables to use for substitution during prefetch requests to the ad decision server (ADS).</p> 
+pub struct PrefetchRetrieval {
+    /// <p>The dynamic variables to use for substitution during prefetch requests to the ad decision server (ADS).</p>
     /// <p>You initially configure <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/variables.html">dynamic variables</a> for the ADS URL when you set up your playback configuration. When you specify <code>DynamicVariables</code> for prefetch retrieval, MediaTailor includes the dynamic variables in the request to the ADS.</p>
     #[doc(hidden)]
-    pub dynamic_variables: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub dynamic_variables:
+        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The time when prefetch retrieval ends for the ad break. Prefetching will be attempted for manifest requests that occur at or before this time.</p>
     #[doc(hidden)]
     pub end_time: std::option::Option<aws_smithy_types::DateTime>,
@@ -16,17 +17,20 @@ pub struct PrefetchRetrieval  {
     pub start_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl PrefetchRetrieval {
-    /// <p>The dynamic variables to use for substitution during prefetch requests to the ad decision server (ADS).</p> 
+    /// <p>The dynamic variables to use for substitution during prefetch requests to the ad decision server (ADS).</p>
     /// <p>You initially configure <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/variables.html">dynamic variables</a> for the ADS URL when you set up your playback configuration. When you specify <code>DynamicVariables</code> for prefetch retrieval, MediaTailor includes the dynamic variables in the request to the ADS.</p>
-    pub fn dynamic_variables(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
+    pub fn dynamic_variables(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
         self.dynamic_variables.as_ref()
     }
     /// <p>The time when prefetch retrieval ends for the ad break. Prefetching will be attempted for manifest requests that occur at or before this time.</p>
-    pub fn end_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
+    pub fn end_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.end_time.as_ref()
     }
     /// <p>The time when prefetch retrievals can start for this break. Ad prefetching will be attempted for manifest requests that occur at or after this time. Defaults to the current time. If not specified, the prefetch retrieval starts as soon as possible.</p>
-    pub fn start_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
+    pub fn start_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.start_time.as_ref()
     }
 }
@@ -41,7 +45,8 @@ impl PrefetchRetrieval {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct PrefetchRetrievalBuilder {
-    pub(crate) dynamic_variables: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub(crate) dynamic_variables:
+        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     pub(crate) end_time: std::option::Option<aws_smithy_types::DateTime>,
     pub(crate) start_time: std::option::Option<aws_smithy_types::DateTime>,
 }
@@ -50,18 +55,28 @@ impl PrefetchRetrievalBuilder {
     ///
     /// To override the contents of this collection use [`set_dynamic_variables`](Self::set_dynamic_variables).
     ///
-    /// <p>The dynamic variables to use for substitution during prefetch requests to the ad decision server (ADS).</p> 
+    /// <p>The dynamic variables to use for substitution during prefetch requests to the ad decision server (ADS).</p>
     /// <p>You initially configure <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/variables.html">dynamic variables</a> for the ADS URL when you set up your playback configuration. When you specify <code>DynamicVariables</code> for prefetch retrieval, MediaTailor includes the dynamic variables in the request to the ADS.</p>
-    pub fn dynamic_variables(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
+    pub fn dynamic_variables(
+        mut self,
+        k: impl Into<std::string::String>,
+        v: impl Into<std::string::String>,
+    ) -> Self {
         let mut hash_map = self.dynamic_variables.unwrap_or_default();
-                        hash_map.insert(k.into(), v.into());
-                        self.dynamic_variables = Some(hash_map);
-                        self
+        hash_map.insert(k.into(), v.into());
+        self.dynamic_variables = Some(hash_map);
+        self
     }
-    /// <p>The dynamic variables to use for substitution during prefetch requests to the ad decision server (ADS).</p> 
+    /// <p>The dynamic variables to use for substitution during prefetch requests to the ad decision server (ADS).</p>
     /// <p>You initially configure <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/variables.html">dynamic variables</a> for the ADS URL when you set up your playback configuration. When you specify <code>DynamicVariables</code> for prefetch retrieval, MediaTailor includes the dynamic variables in the request to the ADS.</p>
-    pub fn set_dynamic_variables(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
-        self.dynamic_variables = input; self
+    pub fn set_dynamic_variables(
+        mut self,
+        input: std::option::Option<
+            std::collections::HashMap<std::string::String, std::string::String>,
+        >,
+    ) -> Self {
+        self.dynamic_variables = input;
+        self
     }
     /// <p>The time when prefetch retrieval ends for the ad break. Prefetching will be attempted for manifest requests that occur at or before this time.</p>
     pub fn end_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -70,7 +85,8 @@ impl PrefetchRetrievalBuilder {
     }
     /// <p>The time when prefetch retrieval ends for the ad break. Prefetching will be attempted for manifest requests that occur at or before this time.</p>
     pub fn set_end_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.end_time = input; self
+        self.end_time = input;
+        self
     }
     /// <p>The time when prefetch retrievals can start for this break. Ad prefetching will be attempted for manifest requests that occur at or after this time. Defaults to the current time. If not specified, the prefetch retrieval starts as soon as possible.</p>
     pub fn start_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -78,19 +94,19 @@ impl PrefetchRetrievalBuilder {
         self
     }
     /// <p>The time when prefetch retrievals can start for this break. Ad prefetching will be attempted for manifest requests that occur at or after this time. Defaults to the current time. If not specified, the prefetch retrieval starts as soon as possible.</p>
-    pub fn set_start_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.start_time = input; self
+    pub fn set_start_time(
+        mut self,
+        input: std::option::Option<aws_smithy_types::DateTime>,
+    ) -> Self {
+        self.start_time = input;
+        self
     }
     /// Consumes the builder and constructs a [`PrefetchRetrieval`](crate::types::PrefetchRetrieval).
     pub fn build(self) -> crate::types::PrefetchRetrieval {
         crate::types::PrefetchRetrieval {
-            dynamic_variables: self.dynamic_variables
-            ,
-            end_time: self.end_time
-            ,
-            start_time: self.start_time
-            ,
+            dynamic_variables: self.dynamic_variables,
+            end_time: self.end_time,
+            start_time: self.start_time,
         }
     }
 }
-

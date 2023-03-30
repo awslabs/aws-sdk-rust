@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateResourceDefinitionVersionInput  {
+pub struct CreateResourceDefinitionVersionInput {
     /// A client token used to correlate requests and responses.
     #[doc(hidden)]
     pub amzn_client_token: std::option::Option<std::string::String>,
@@ -15,21 +15,21 @@ pub struct CreateResourceDefinitionVersionInput  {
 }
 impl CreateResourceDefinitionVersionInput {
     /// A client token used to correlate requests and responses.
-    pub fn amzn_client_token(&self) -> std::option::Option<& str> {
+    pub fn amzn_client_token(&self) -> std::option::Option<&str> {
         self.amzn_client_token.as_deref()
     }
     /// The ID of the resource definition.
-    pub fn resource_definition_id(&self) -> std::option::Option<& str> {
+    pub fn resource_definition_id(&self) -> std::option::Option<&str> {
         self.resource_definition_id.as_deref()
     }
     /// A list of resources.
-    pub fn resources(&self) -> std::option::Option<& [crate::types::Resource]> {
+    pub fn resources(&self) -> std::option::Option<&[crate::types::Resource]> {
         self.resources.as_deref()
     }
 }
 impl CreateResourceDefinitionVersionInput {
     /// Creates a new builder-style object to manufacture [`CreateResourceDefinitionVersionInput`](crate::operation::create_resource_definition_version::CreateResourceDefinitionVersionInput).
-    pub fn builder() -> crate::operation::create_resource_definition_version::builders::CreateResourceDefinitionVersionInputBuilder {
+    pub fn builder() -> crate::operation::create_resource_definition_version::builders::CreateResourceDefinitionVersionInputBuilder{
         crate::operation::create_resource_definition_version::builders::CreateResourceDefinitionVersionInputBuilder::default()
     }
 }
@@ -49,8 +49,12 @@ impl CreateResourceDefinitionVersionInputBuilder {
         self
     }
     /// A client token used to correlate requests and responses.
-    pub fn set_amzn_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.amzn_client_token = input; self
+    pub fn set_amzn_client_token(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.amzn_client_token = input;
+        self
     }
     /// The ID of the resource definition.
     pub fn resource_definition_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -58,8 +62,12 @@ impl CreateResourceDefinitionVersionInputBuilder {
         self
     }
     /// The ID of the resource definition.
-    pub fn set_resource_definition_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.resource_definition_id = input; self
+    pub fn set_resource_definition_id(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.resource_definition_id = input;
+        self
     }
     /// Appends an item to `resources`.
     ///
@@ -68,16 +76,25 @@ impl CreateResourceDefinitionVersionInputBuilder {
     /// A list of resources.
     pub fn resources(mut self, input: crate::types::Resource) -> Self {
         let mut v = self.resources.unwrap_or_default();
-                        v.push(input);
-                        self.resources = Some(v);
-                        self
+        v.push(input);
+        self.resources = Some(v);
+        self
     }
     /// A list of resources.
-    pub fn set_resources(mut self, input: std::option::Option<std::vec::Vec<crate::types::Resource>>) -> Self {
-        self.resources = input; self
+    pub fn set_resources(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::Resource>>,
+    ) -> Self {
+        self.resources = input;
+        self
     }
     /// Consumes the builder and constructs a [`CreateResourceDefinitionVersionInput`](crate::operation::create_resource_definition_version::CreateResourceDefinitionVersionInput).
-    pub fn build(self) -> Result<crate::operation::create_resource_definition_version::CreateResourceDefinitionVersionInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::create_resource_definition_version::CreateResourceDefinitionVersionInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::create_resource_definition_version::CreateResourceDefinitionVersionInput {
                 amzn_client_token: self.amzn_client_token
@@ -90,4 +107,3 @@ impl CreateResourceDefinitionVersionInputBuilder {
         )
     }
 }
-

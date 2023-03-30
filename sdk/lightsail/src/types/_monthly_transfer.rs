@@ -3,7 +3,7 @@
 /// <p>Describes the monthly data transfer in and out of your virtual private server (or <i>instance</i>).</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct MonthlyTransfer  {
+pub struct MonthlyTransfer {
     /// <p>The amount allocated per month (in GB).</p>
     #[doc(hidden)]
     pub gb_per_month_allocated: std::option::Option<i32>,
@@ -35,14 +35,13 @@ impl MonthlyTransferBuilder {
     }
     /// <p>The amount allocated per month (in GB).</p>
     pub fn set_gb_per_month_allocated(mut self, input: std::option::Option<i32>) -> Self {
-        self.gb_per_month_allocated = input; self
+        self.gb_per_month_allocated = input;
+        self
     }
     /// Consumes the builder and constructs a [`MonthlyTransfer`](crate::types::MonthlyTransfer).
     pub fn build(self) -> crate::types::MonthlyTransfer {
         crate::types::MonthlyTransfer {
-            gb_per_month_allocated: self.gb_per_month_allocated
-            ,
+            gb_per_month_allocated: self.gb_per_month_allocated,
         }
     }
 }
-

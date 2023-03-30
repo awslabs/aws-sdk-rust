@@ -3,25 +3,25 @@
 /// <p>The encryption configuration.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct EncryptionConfig  {
+pub struct EncryptionConfig {
     /// <p>The type of encryption.</p>
     #[doc(hidden)]
     pub encryption_type: std::option::Option<crate::types::EncryptionType>,
-    /// <p>The full ARN of the encryption key. </p> <note> 
-    /// <p>Be sure to provide the full ARN of the encryption key, not just the ID.</p> 
+    /// <p>The full ARN of the encryption key. </p> <note>
+    /// <p>Be sure to provide the full ARN of the encryption key, not just the ID.</p>
     /// </note>
     #[doc(hidden)]
     pub key_id: std::option::Option<std::string::String>,
 }
 impl EncryptionConfig {
     /// <p>The type of encryption.</p>
-    pub fn encryption_type(&self) -> std::option::Option<& crate::types::EncryptionType> {
+    pub fn encryption_type(&self) -> std::option::Option<&crate::types::EncryptionType> {
         self.encryption_type.as_ref()
     }
-    /// <p>The full ARN of the encryption key. </p> <note> 
-    /// <p>Be sure to provide the full ARN of the encryption key, not just the ID.</p> 
+    /// <p>The full ARN of the encryption key. </p> <note>
+    /// <p>Be sure to provide the full ARN of the encryption key, not just the ID.</p>
     /// </note>
-    pub fn key_id(&self) -> std::option::Option<& str> {
+    pub fn key_id(&self) -> std::option::Option<&str> {
         self.key_id.as_deref()
     }
 }
@@ -46,30 +46,32 @@ impl EncryptionConfigBuilder {
         self
     }
     /// <p>The type of encryption.</p>
-    pub fn set_encryption_type(mut self, input: std::option::Option<crate::types::EncryptionType>) -> Self {
-        self.encryption_type = input; self
+    pub fn set_encryption_type(
+        mut self,
+        input: std::option::Option<crate::types::EncryptionType>,
+    ) -> Self {
+        self.encryption_type = input;
+        self
     }
-    /// <p>The full ARN of the encryption key. </p> <note> 
-    /// <p>Be sure to provide the full ARN of the encryption key, not just the ID.</p> 
+    /// <p>The full ARN of the encryption key. </p> <note>
+    /// <p>Be sure to provide the full ARN of the encryption key, not just the ID.</p>
     /// </note>
     pub fn key_id(mut self, input: impl Into<std::string::String>) -> Self {
         self.key_id = Some(input.into());
         self
     }
-    /// <p>The full ARN of the encryption key. </p> <note> 
-    /// <p>Be sure to provide the full ARN of the encryption key, not just the ID.</p> 
+    /// <p>The full ARN of the encryption key. </p> <note>
+    /// <p>Be sure to provide the full ARN of the encryption key, not just the ID.</p>
     /// </note>
     pub fn set_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.key_id = input; self
+        self.key_id = input;
+        self
     }
     /// Consumes the builder and constructs a [`EncryptionConfig`](crate::types::EncryptionConfig).
     pub fn build(self) -> crate::types::EncryptionConfig {
         crate::types::EncryptionConfig {
-            encryption_type: self.encryption_type
-            ,
-            key_id: self.key_id
-            ,
+            encryption_type: self.encryption_type,
+            key_id: self.key_id,
         }
     }
 }
-

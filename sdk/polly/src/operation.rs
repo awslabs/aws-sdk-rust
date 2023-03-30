@@ -27,4 +27,3 @@ pub mod start_speech_synthesis_task;
 
 /// Types for the `SynthesizeSpeech` operation.
 pub mod synthesize_speech;
-

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateParallelDataOutput  {
+pub struct UpdateParallelDataOutput {
     /// <p>The name of the parallel data resource being updated.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -19,30 +19,33 @@ pub struct UpdateParallelDataOutput  {
 }
 impl UpdateParallelDataOutput {
     /// <p>The name of the parallel data resource being updated.</p>
-    pub fn name(&self) -> std::option::Option<& str> {
+    pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>The status of the parallel data resource that you are attempting to update. Your update request is accepted only if this status is either <code>ACTIVE</code> or <code>FAILED</code>.</p>
-    pub fn status(&self) -> std::option::Option<& crate::types::ParallelDataStatus> {
+    pub fn status(&self) -> std::option::Option<&crate::types::ParallelDataStatus> {
         self.status.as_ref()
     }
     /// <p>The status of the parallel data update attempt. When the updated parallel data resource is ready for you to use, the status is <code>ACTIVE</code>.</p>
-    pub fn latest_update_attempt_status(&self) -> std::option::Option<& crate::types::ParallelDataStatus> {
+    pub fn latest_update_attempt_status(
+        &self,
+    ) -> std::option::Option<&crate::types::ParallelDataStatus> {
         self.latest_update_attempt_status.as_ref()
     }
     /// <p>The time that the most recent update was attempted.</p>
-    pub fn latest_update_attempt_at(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
+    pub fn latest_update_attempt_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.latest_update_attempt_at.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for UpdateParallelDataOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl UpdateParallelDataOutput {
     /// Creates a new builder-style object to manufacture [`UpdateParallelDataOutput`](crate::operation::update_parallel_data::UpdateParallelDataOutput).
-    pub fn builder() -> crate::operation::update_parallel_data::builders::UpdateParallelDataOutputBuilder {
+    pub fn builder(
+    ) -> crate::operation::update_parallel_data::builders::UpdateParallelDataOutputBuilder {
         crate::operation::update_parallel_data::builders::UpdateParallelDataOutputBuilder::default()
     }
 }
@@ -65,7 +68,8 @@ impl UpdateParallelDataOutputBuilder {
     }
     /// <p>The name of the parallel data resource being updated.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input; self
+        self.name = input;
+        self
     }
     /// <p>The status of the parallel data resource that you are attempting to update. Your update request is accepted only if this status is either <code>ACTIVE</code> or <code>FAILED</code>.</p>
     pub fn status(mut self, input: crate::types::ParallelDataStatus) -> Self {
@@ -73,8 +77,12 @@ impl UpdateParallelDataOutputBuilder {
         self
     }
     /// <p>The status of the parallel data resource that you are attempting to update. Your update request is accepted only if this status is either <code>ACTIVE</code> or <code>FAILED</code>.</p>
-    pub fn set_status(mut self, input: std::option::Option<crate::types::ParallelDataStatus>) -> Self {
-        self.status = input; self
+    pub fn set_status(
+        mut self,
+        input: std::option::Option<crate::types::ParallelDataStatus>,
+    ) -> Self {
+        self.status = input;
+        self
     }
     /// <p>The status of the parallel data update attempt. When the updated parallel data resource is ready for you to use, the status is <code>ACTIVE</code>.</p>
     pub fn latest_update_attempt_status(mut self, input: crate::types::ParallelDataStatus) -> Self {
@@ -82,8 +90,12 @@ impl UpdateParallelDataOutputBuilder {
         self
     }
     /// <p>The status of the parallel data update attempt. When the updated parallel data resource is ready for you to use, the status is <code>ACTIVE</code>.</p>
-    pub fn set_latest_update_attempt_status(mut self, input: std::option::Option<crate::types::ParallelDataStatus>) -> Self {
-        self.latest_update_attempt_status = input; self
+    pub fn set_latest_update_attempt_status(
+        mut self,
+        input: std::option::Option<crate::types::ParallelDataStatus>,
+    ) -> Self {
+        self.latest_update_attempt_status = input;
+        self
     }
     /// <p>The time that the most recent update was attempted.</p>
     pub fn latest_update_attempt_at(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -91,31 +103,30 @@ impl UpdateParallelDataOutputBuilder {
         self
     }
     /// <p>The time that the most recent update was attempted.</p>
-    pub fn set_latest_update_attempt_at(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.latest_update_attempt_at = input; self
+    pub fn set_latest_update_attempt_at(
+        mut self,
+        input: std::option::Option<aws_smithy_types::DateTime>,
+    ) -> Self {
+        self.latest_update_attempt_at = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`UpdateParallelDataOutput`](crate::operation::update_parallel_data::UpdateParallelDataOutput).
     pub fn build(self) -> crate::operation::update_parallel_data::UpdateParallelDataOutput {
         crate::operation::update_parallel_data::UpdateParallelDataOutput {
-            name: self.name
-            ,
-            status: self.status
-            ,
-            latest_update_attempt_status: self.latest_update_attempt_status
-            ,
-            latest_update_attempt_at: self.latest_update_attempt_at
-            ,
+            name: self.name,
+            status: self.status,
+            latest_update_attempt_status: self.latest_update_attempt_status,
+            latest_update_attempt_at: self.latest_update_attempt_at,
             _request_id: self._request_id,
         }
     }
 }
-

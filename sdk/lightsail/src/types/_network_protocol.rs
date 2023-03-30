@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-/// 
+///
 /// Here is an example of how you can make a match expression forward-compatible:
-/// 
+///
 /// ```text
 /// # let networkprotocol = unimplemented!();
 /// match networkprotocol {
@@ -32,14 +32,22 @@
 /// Specifically, when `networkprotocol` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `NetworkProtocol::NewFeature` also yielding `"NewFeature"`.
-/// 
+///
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
 pub enum NetworkProtocol {
     #[allow(missing_docs)] // documentation missing in model
     All,
@@ -50,45 +58,46 @@ pub enum NetworkProtocol {
     #[allow(missing_docs)] // documentation missing in model
     Udp,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::primitives::UnknownVariantValue)
+    Unknown(crate::primitives::UnknownVariantValue),
 }
 impl std::convert::From<&str> for NetworkProtocol {
-                fn from(s: &str) -> Self {
-                    match s {
-                        "all" => NetworkProtocol::All,
-"icmp" => NetworkProtocol::Icmp,
-"tcp" => NetworkProtocol::Tcp,
-"udp" => NetworkProtocol::Udp,
-other => NetworkProtocol::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
-                    }
-                }
+    fn from(s: &str) -> Self {
+        match s {
+            "all" => NetworkProtocol::All,
+            "icmp" => NetworkProtocol::Icmp,
+            "tcp" => NetworkProtocol::Tcp,
+            "udp" => NetworkProtocol::Udp,
+            other => {
+                NetworkProtocol::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
             }
-impl std::str::FromStr for NetworkProtocol {
-                type Err = std::convert::Infallible;
-
-                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-                    Ok(NetworkProtocol::from(s))
-                }
-            }
-impl NetworkProtocol {
-                /// Returns the `&str` value of the enum member.
-                pub fn as_str(&self) -> &str {
-                    match self {
-    NetworkProtocol::All => "all",
-    NetworkProtocol::Icmp => "icmp",
-    NetworkProtocol::Tcp => "tcp",
-    NetworkProtocol::Udp => "udp",
-    NetworkProtocol::Unknown(value) => value.as_str()
+        }
+    }
 }
-                }
-                /// Returns all the `&str` representations of the enum members.
-                pub const fn values() -> &'static [&'static str] {
-                    &["all", "icmp", "tcp", "udp"]
-                }
-            }
-impl AsRef<str> for NetworkProtocol {
-                fn as_ref(&self) -> &str {
-                    self.as_str()
-                }
-            }
+impl std::str::FromStr for NetworkProtocol {
+    type Err = std::convert::Infallible;
 
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(NetworkProtocol::from(s))
+    }
+}
+impl NetworkProtocol {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            NetworkProtocol::All => "all",
+            NetworkProtocol::Icmp => "icmp",
+            NetworkProtocol::Tcp => "tcp",
+            NetworkProtocol::Udp => "udp",
+            NetworkProtocol::Unknown(value) => value.as_str(),
+        }
+    }
+    /// Returns all the `&str` representations of the enum members.
+    pub const fn values() -> &'static [&'static str] {
+        &["all", "icmp", "tcp", "udp"]
+    }
+}
+impl AsRef<str> for NetworkProtocol {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}

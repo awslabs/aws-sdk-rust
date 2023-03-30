@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListBucketMetricsConfigurationsInput  {
+pub struct ListBucketMetricsConfigurationsInput {
     /// <p>The name of the bucket containing the metrics configurations to retrieve.</p>
     #[doc(hidden)]
     pub bucket: std::option::Option<std::string::String>,
@@ -15,21 +15,21 @@ pub struct ListBucketMetricsConfigurationsInput  {
 }
 impl ListBucketMetricsConfigurationsInput {
     /// <p>The name of the bucket containing the metrics configurations to retrieve.</p>
-    pub fn bucket(&self) -> std::option::Option<& str> {
+    pub fn bucket(&self) -> std::option::Option<&str> {
         self.bucket.as_deref()
     }
     /// <p>The marker that is used to continue a metrics configuration listing that has been truncated. Use the NextContinuationToken from a previously truncated list response to continue the listing. The continuation token is an opaque value that Amazon S3 understands.</p>
-    pub fn continuation_token(&self) -> std::option::Option<& str> {
+    pub fn continuation_token(&self) -> std::option::Option<&str> {
         self.continuation_token.as_deref()
     }
     /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
-    pub fn expected_bucket_owner(&self) -> std::option::Option<& str> {
+    pub fn expected_bucket_owner(&self) -> std::option::Option<&str> {
         self.expected_bucket_owner.as_deref()
     }
 }
 impl ListBucketMetricsConfigurationsInput {
     /// Creates a new builder-style object to manufacture [`ListBucketMetricsConfigurationsInput`](crate::operation::list_bucket_metrics_configurations::ListBucketMetricsConfigurationsInput).
-    pub fn builder() -> crate::operation::list_bucket_metrics_configurations::builders::ListBucketMetricsConfigurationsInputBuilder {
+    pub fn builder() -> crate::operation::list_bucket_metrics_configurations::builders::ListBucketMetricsConfigurationsInputBuilder{
         crate::operation::list_bucket_metrics_configurations::builders::ListBucketMetricsConfigurationsInputBuilder::default()
     }
 }
@@ -50,7 +50,8 @@ impl ListBucketMetricsConfigurationsInputBuilder {
     }
     /// <p>The name of the bucket containing the metrics configurations to retrieve.</p>
     pub fn set_bucket(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.bucket = input; self
+        self.bucket = input;
+        self
     }
     /// <p>The marker that is used to continue a metrics configuration listing that has been truncated. Use the NextContinuationToken from a previously truncated list response to continue the listing. The continuation token is an opaque value that Amazon S3 understands.</p>
     pub fn continuation_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -58,8 +59,12 @@ impl ListBucketMetricsConfigurationsInputBuilder {
         self
     }
     /// <p>The marker that is used to continue a metrics configuration listing that has been truncated. Use the NextContinuationToken from a previously truncated list response to continue the listing. The continuation token is an opaque value that Amazon S3 understands.</p>
-    pub fn set_continuation_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.continuation_token = input; self
+    pub fn set_continuation_token(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.continuation_token = input;
+        self
     }
     /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
     pub fn expected_bucket_owner(mut self, input: impl Into<std::string::String>) -> Self {
@@ -67,11 +72,20 @@ impl ListBucketMetricsConfigurationsInputBuilder {
         self
     }
     /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
-    pub fn set_expected_bucket_owner(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.expected_bucket_owner = input; self
+    pub fn set_expected_bucket_owner(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.expected_bucket_owner = input;
+        self
     }
     /// Consumes the builder and constructs a [`ListBucketMetricsConfigurationsInput`](crate::operation::list_bucket_metrics_configurations::ListBucketMetricsConfigurationsInput).
-    pub fn build(self) -> Result<crate::operation::list_bucket_metrics_configurations::ListBucketMetricsConfigurationsInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::list_bucket_metrics_configurations::ListBucketMetricsConfigurationsInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::list_bucket_metrics_configurations::ListBucketMetricsConfigurationsInput {
                 bucket: self.bucket
@@ -84,4 +98,3 @@ impl ListBucketMetricsConfigurationsInputBuilder {
         )
     }
 }
-

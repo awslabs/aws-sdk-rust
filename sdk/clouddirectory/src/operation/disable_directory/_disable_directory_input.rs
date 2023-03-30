@@ -2,20 +2,21 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DisableDirectoryInput  {
+pub struct DisableDirectoryInput {
     /// <p>The ARN of the directory to disable.</p>
     #[doc(hidden)]
     pub directory_arn: std::option::Option<std::string::String>,
 }
 impl DisableDirectoryInput {
     /// <p>The ARN of the directory to disable.</p>
-    pub fn directory_arn(&self) -> std::option::Option<& str> {
+    pub fn directory_arn(&self) -> std::option::Option<&str> {
         self.directory_arn.as_deref()
     }
 }
 impl DisableDirectoryInput {
     /// Creates a new builder-style object to manufacture [`DisableDirectoryInput`](crate::operation::disable_directory::DisableDirectoryInput).
-    pub fn builder() -> crate::operation::disable_directory::builders::DisableDirectoryInputBuilder {
+    pub fn builder() -> crate::operation::disable_directory::builders::DisableDirectoryInputBuilder
+    {
         crate::operation::disable_directory::builders::DisableDirectoryInputBuilder::default()
     }
 }
@@ -34,16 +35,18 @@ impl DisableDirectoryInputBuilder {
     }
     /// <p>The ARN of the directory to disable.</p>
     pub fn set_directory_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.directory_arn = input; self
+        self.directory_arn = input;
+        self
     }
     /// Consumes the builder and constructs a [`DisableDirectoryInput`](crate::operation::disable_directory::DisableDirectoryInput).
-    pub fn build(self) -> Result<crate::operation::disable_directory::DisableDirectoryInput, aws_smithy_http::operation::error::BuildError> {
-        Ok(
-            crate::operation::disable_directory::DisableDirectoryInput {
-                directory_arn: self.directory_arn
-                ,
-            }
-        )
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::disable_directory::DisableDirectoryInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        Ok(crate::operation::disable_directory::DisableDirectoryInput {
+            directory_arn: self.directory_arn,
+        })
     }
 }
-

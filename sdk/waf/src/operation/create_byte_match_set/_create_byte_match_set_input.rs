@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateByteMatchSetInput  {
+pub struct CreateByteMatchSetInput {
     /// <p>A friendly name or description of the <code>ByteMatchSet</code>. You can't change <code>Name</code> after you create a <code>ByteMatchSet</code>.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -12,17 +12,18 @@ pub struct CreateByteMatchSetInput  {
 }
 impl CreateByteMatchSetInput {
     /// <p>A friendly name or description of the <code>ByteMatchSet</code>. You can't change <code>Name</code> after you create a <code>ByteMatchSet</code>.</p>
-    pub fn name(&self) -> std::option::Option<& str> {
+    pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>The value returned by the most recent call to <code>GetChangeToken</code>.</p>
-    pub fn change_token(&self) -> std::option::Option<& str> {
+    pub fn change_token(&self) -> std::option::Option<&str> {
         self.change_token.as_deref()
     }
 }
 impl CreateByteMatchSetInput {
     /// Creates a new builder-style object to manufacture [`CreateByteMatchSetInput`](crate::operation::create_byte_match_set::CreateByteMatchSetInput).
-    pub fn builder() -> crate::operation::create_byte_match_set::builders::CreateByteMatchSetInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::create_byte_match_set::builders::CreateByteMatchSetInputBuilder {
         crate::operation::create_byte_match_set::builders::CreateByteMatchSetInputBuilder::default()
     }
 }
@@ -42,7 +43,8 @@ impl CreateByteMatchSetInputBuilder {
     }
     /// <p>A friendly name or description of the <code>ByteMatchSet</code>. You can't change <code>Name</code> after you create a <code>ByteMatchSet</code>.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input; self
+        self.name = input;
+        self
     }
     /// <p>The value returned by the most recent call to <code>GetChangeToken</code>.</p>
     pub fn change_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -51,18 +53,21 @@ impl CreateByteMatchSetInputBuilder {
     }
     /// <p>The value returned by the most recent call to <code>GetChangeToken</code>.</p>
     pub fn set_change_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.change_token = input; self
+        self.change_token = input;
+        self
     }
     /// Consumes the builder and constructs a [`CreateByteMatchSetInput`](crate::operation::create_byte_match_set::CreateByteMatchSetInput).
-    pub fn build(self) -> Result<crate::operation::create_byte_match_set::CreateByteMatchSetInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::create_byte_match_set::CreateByteMatchSetInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::create_byte_match_set::CreateByteMatchSetInput {
-                name: self.name
-                ,
-                change_token: self.change_token
-                ,
-            }
+                name: self.name,
+                change_token: self.change_token,
+            },
         )
     }
 }
-

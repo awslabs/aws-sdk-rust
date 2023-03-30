@@ -4,58 +4,70 @@ pub use crate::operation::authorize_cache_security_group_ingress::_authorize_cac
 pub use crate::operation::authorize_cache_security_group_ingress::_authorize_cache_security_group_ingress_input::AuthorizeCacheSecurityGroupIngressInputBuilder;
 
 /// Fluent builder constructing a request to `AuthorizeCacheSecurityGroupIngress`.
-/// 
-/// <p>Allows network ingress to a cache security group. Applications using ElastiCache must be running on Amazon EC2, and Amazon EC2 security groups are used as the authorization mechanism.</p> <note> 
-/// <p>You cannot authorize ingress from an Amazon EC2 security group in one region to an ElastiCache cluster in another region.</p> 
+///
+/// <p>Allows network ingress to a cache security group. Applications using ElastiCache must be running on Amazon EC2, and Amazon EC2 security groups are used as the authorization mechanism.</p> <note>
+/// <p>You cannot authorize ingress from an Amazon EC2 security group in one region to an ElastiCache cluster in another region.</p>
 /// </note>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct AuthorizeCacheSecurityGroupIngressFluentBuilder {
                 handle: std::sync::Arc<crate::client::Handle>,
                 inner: crate::operation::authorize_cache_security_group_ingress::builders::AuthorizeCacheSecurityGroupIngressInputBuilder
             }
-impl AuthorizeCacheSecurityGroupIngressFluentBuilder  {
+impl AuthorizeCacheSecurityGroupIngressFluentBuilder {
     /// Creates a new `AuthorizeCacheSecurityGroupIngress`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
-                    /// sent. The operation's inner [http::Request] can be modified as well.
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle,
+            inner: Default::default(),
+        }
+    }
+
+    /// Consume this builder, creating a customizable operation that can be modified before being
+    /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::authorize_cache_security_group_ingress::AuthorizeCacheSecurityGroupIngress, aws_http::retry::AwsResponseRetryClassifier,>,
                         aws_smithy_http::result::SdkError<crate::operation::authorize_cache_security_group_ingress::AuthorizeCacheSecurityGroupIngressError>
-                    >  {
-                        let handle = self.handle.clone();
-                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-                    }
-    
-                    /// Sends the request and returns the response.
-                    ///
-                    /// If an error occurs, an `SdkError` will be returned with additional details that
-                    /// can be matched against.
-                    ///
-                    /// By default, any retryable failures will be retried twice. Retry behavior
-                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                    /// set when configuring the client.
+    >{
+        let handle = self.handle.clone();
+        let operation = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+    }
+
+    /// Sends the request and returns the response.
+    ///
+    /// If an error occurs, an `SdkError` will be returned with additional details that
+    /// can be matched against.
+    ///
+    /// By default, any retryable failures will be retried twice. Retry behavior
+    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+    /// set when configuring the client.
                     pub async fn send(self) -> std::result::Result<crate::operation::authorize_cache_security_group_ingress::AuthorizeCacheSecurityGroupIngressOutput, aws_smithy_http::result::SdkError<crate::operation::authorize_cache_security_group_ingress::AuthorizeCacheSecurityGroupIngressError>>
                      {
-                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&self.handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        self.handle.client.call(op).await
-                    }
+        let op = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&self.handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        self.handle.client.call(op).await
+    }
     /// <p>The cache security group that allows network ingress.</p>
     pub fn cache_security_group_name(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.cache_security_group_name(input.into());
         self
     }
     /// <p>The cache security group that allows network ingress.</p>
-    pub fn set_cache_security_group_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_cache_security_group_name(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_cache_security_group_name(input);
         self
     }
@@ -65,7 +77,10 @@ impl AuthorizeCacheSecurityGroupIngressFluentBuilder  {
         self
     }
     /// <p>The Amazon EC2 security group to be authorized for ingress to the cache security group.</p>
-    pub fn set_ec2_security_group_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_ec2_security_group_name(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_ec2_security_group_name(input);
         self
     }
@@ -75,9 +90,11 @@ impl AuthorizeCacheSecurityGroupIngressFluentBuilder  {
         self
     }
     /// <p>The Amazon account number of the Amazon EC2 security group owner. Note that this is not the same thing as an Amazon access key ID - you must provide a valid Amazon account number for this parameter.</p>
-    pub fn set_ec2_security_group_owner_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_ec2_security_group_owner_id(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_ec2_security_group_owner_id(input);
         self
     }
 }
-

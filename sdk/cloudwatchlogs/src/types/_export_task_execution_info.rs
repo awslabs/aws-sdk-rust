@@ -3,7 +3,7 @@
 /// <p>Represents the status of an export task.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ExportTaskExecutionInfo  {
+pub struct ExportTaskExecutionInfo {
     /// <p>The creation time of the export task, expressed as the number of milliseconds after <code>Jan 1, 1970 00:00:00 UTC</code>.</p>
     #[doc(hidden)]
     pub creation_time: std::option::Option<i64>,
@@ -43,7 +43,8 @@ impl ExportTaskExecutionInfoBuilder {
     }
     /// <p>The creation time of the export task, expressed as the number of milliseconds after <code>Jan 1, 1970 00:00:00 UTC</code>.</p>
     pub fn set_creation_time(mut self, input: std::option::Option<i64>) -> Self {
-        self.creation_time = input; self
+        self.creation_time = input;
+        self
     }
     /// <p>The completion time of the export task, expressed as the number of milliseconds after <code>Jan 1, 1970 00:00:00 UTC</code>.</p>
     pub fn completion_time(mut self, input: i64) -> Self {
@@ -52,16 +53,14 @@ impl ExportTaskExecutionInfoBuilder {
     }
     /// <p>The completion time of the export task, expressed as the number of milliseconds after <code>Jan 1, 1970 00:00:00 UTC</code>.</p>
     pub fn set_completion_time(mut self, input: std::option::Option<i64>) -> Self {
-        self.completion_time = input; self
+        self.completion_time = input;
+        self
     }
     /// Consumes the builder and constructs a [`ExportTaskExecutionInfo`](crate::types::ExportTaskExecutionInfo).
     pub fn build(self) -> crate::types::ExportTaskExecutionInfo {
         crate::types::ExportTaskExecutionInfo {
-            creation_time: self.creation_time
-            ,
-            completion_time: self.completion_time
-            ,
+            creation_time: self.creation_time,
+            completion_time: self.completion_time,
         }
     }
 }
-

@@ -3,20 +3,21 @@
 /// <p>A public subnet that Network Firewall uses for the firewall.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AwsNetworkFirewallFirewallSubnetMappingsDetails  {
+pub struct AwsNetworkFirewallFirewallSubnetMappingsDetails {
     /// <p>The identifier of the subnet</p>
     #[doc(hidden)]
     pub subnet_id: std::option::Option<std::string::String>,
 }
 impl AwsNetworkFirewallFirewallSubnetMappingsDetails {
     /// <p>The identifier of the subnet</p>
-    pub fn subnet_id(&self) -> std::option::Option<& str> {
+    pub fn subnet_id(&self) -> std::option::Option<&str> {
         self.subnet_id.as_deref()
     }
 }
 impl AwsNetworkFirewallFirewallSubnetMappingsDetails {
     /// Creates a new builder-style object to manufacture [`AwsNetworkFirewallFirewallSubnetMappingsDetails`](crate::types::AwsNetworkFirewallFirewallSubnetMappingsDetails).
-    pub fn builder() -> crate::types::builders::AwsNetworkFirewallFirewallSubnetMappingsDetailsBuilder {
+    pub fn builder(
+    ) -> crate::types::builders::AwsNetworkFirewallFirewallSubnetMappingsDetailsBuilder {
         crate::types::builders::AwsNetworkFirewallFirewallSubnetMappingsDetailsBuilder::default()
     }
 }
@@ -35,14 +36,13 @@ impl AwsNetworkFirewallFirewallSubnetMappingsDetailsBuilder {
     }
     /// <p>The identifier of the subnet</p>
     pub fn set_subnet_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.subnet_id = input; self
+        self.subnet_id = input;
+        self
     }
     /// Consumes the builder and constructs a [`AwsNetworkFirewallFirewallSubnetMappingsDetails`](crate::types::AwsNetworkFirewallFirewallSubnetMappingsDetails).
     pub fn build(self) -> crate::types::AwsNetworkFirewallFirewallSubnetMappingsDetails {
         crate::types::AwsNetworkFirewallFirewallSubnetMappingsDetails {
-            subnet_id: self.subnet_id
-            ,
+            subnet_id: self.subnet_id,
         }
     }
 }
-

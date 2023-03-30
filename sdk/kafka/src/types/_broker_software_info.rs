@@ -3,7 +3,7 @@
 /// <p>Information about the current software installed on the cluster.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct BrokerSoftwareInfo  {
+pub struct BrokerSoftwareInfo {
     /// <p>The Amazon Resource Name (ARN) of the configuration used for the cluster. This field isn't visible in this preview release.</p>
     #[doc(hidden)]
     pub configuration_arn: std::option::Option<std::string::String>,
@@ -16,7 +16,7 @@ pub struct BrokerSoftwareInfo  {
 }
 impl BrokerSoftwareInfo {
     /// <p>The Amazon Resource Name (ARN) of the configuration used for the cluster. This field isn't visible in this preview release.</p>
-    pub fn configuration_arn(&self) -> std::option::Option<& str> {
+    pub fn configuration_arn(&self) -> std::option::Option<&str> {
         self.configuration_arn.as_deref()
     }
     /// <p>The revision of the configuration to use. This field isn't visible in this preview release.</p>
@@ -24,7 +24,7 @@ impl BrokerSoftwareInfo {
         self.configuration_revision
     }
     /// <p>The version of Apache Kafka.</p>
-    pub fn kafka_version(&self) -> std::option::Option<& str> {
+    pub fn kafka_version(&self) -> std::option::Option<&str> {
         self.kafka_version.as_deref()
     }
 }
@@ -50,8 +50,12 @@ impl BrokerSoftwareInfoBuilder {
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the configuration used for the cluster. This field isn't visible in this preview release.</p>
-    pub fn set_configuration_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.configuration_arn = input; self
+    pub fn set_configuration_arn(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.configuration_arn = input;
+        self
     }
     /// <p>The revision of the configuration to use. This field isn't visible in this preview release.</p>
     pub fn configuration_revision(mut self, input: i64) -> Self {
@@ -60,7 +64,8 @@ impl BrokerSoftwareInfoBuilder {
     }
     /// <p>The revision of the configuration to use. This field isn't visible in this preview release.</p>
     pub fn set_configuration_revision(mut self, input: std::option::Option<i64>) -> Self {
-        self.configuration_revision = input; self
+        self.configuration_revision = input;
+        self
     }
     /// <p>The version of Apache Kafka.</p>
     pub fn kafka_version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -69,19 +74,15 @@ impl BrokerSoftwareInfoBuilder {
     }
     /// <p>The version of Apache Kafka.</p>
     pub fn set_kafka_version(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.kafka_version = input; self
+        self.kafka_version = input;
+        self
     }
     /// Consumes the builder and constructs a [`BrokerSoftwareInfo`](crate::types::BrokerSoftwareInfo).
     pub fn build(self) -> crate::types::BrokerSoftwareInfo {
         crate::types::BrokerSoftwareInfo {
-            configuration_arn: self.configuration_arn
-            ,
-            configuration_revision: self.configuration_revision
-                .unwrap_or_default()
-            ,
-            kafka_version: self.kafka_version
-            ,
+            configuration_arn: self.configuration_arn,
+            configuration_revision: self.configuration_revision.unwrap_or_default(),
+            kafka_version: self.kafka_version,
         }
     }
 }
-

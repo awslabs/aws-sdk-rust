@@ -2,20 +2,20 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteExtensionAssociationInput  {
+pub struct DeleteExtensionAssociationInput {
     /// <p>The ID of the extension association to delete.</p>
     #[doc(hidden)]
     pub extension_association_id: std::option::Option<std::string::String>,
 }
 impl DeleteExtensionAssociationInput {
     /// <p>The ID of the extension association to delete.</p>
-    pub fn extension_association_id(&self) -> std::option::Option<& str> {
+    pub fn extension_association_id(&self) -> std::option::Option<&str> {
         self.extension_association_id.as_deref()
     }
 }
 impl DeleteExtensionAssociationInput {
     /// Creates a new builder-style object to manufacture [`DeleteExtensionAssociationInput`](crate::operation::delete_extension_association::DeleteExtensionAssociationInput).
-    pub fn builder() -> crate::operation::delete_extension_association::builders::DeleteExtensionAssociationInputBuilder {
+    pub fn builder() -> crate::operation::delete_extension_association::builders::DeleteExtensionAssociationInputBuilder{
         crate::operation::delete_extension_association::builders::DeleteExtensionAssociationInputBuilder::default()
     }
 }
@@ -33,17 +33,24 @@ impl DeleteExtensionAssociationInputBuilder {
         self
     }
     /// <p>The ID of the extension association to delete.</p>
-    pub fn set_extension_association_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.extension_association_id = input; self
+    pub fn set_extension_association_id(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.extension_association_id = input;
+        self
     }
     /// Consumes the builder and constructs a [`DeleteExtensionAssociationInput`](crate::operation::delete_extension_association::DeleteExtensionAssociationInput).
-    pub fn build(self) -> Result<crate::operation::delete_extension_association::DeleteExtensionAssociationInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::delete_extension_association::DeleteExtensionAssociationInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::delete_extension_association::DeleteExtensionAssociationInput {
-                extension_association_id: self.extension_association_id
-                ,
-            }
+                extension_association_id: self.extension_association_id,
+            },
         )
     }
 }
-

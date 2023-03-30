@@ -3,7 +3,7 @@
 /// <p>Information that describes an insight.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct InsightSummary  {
+pub struct InsightSummary {
     /// <p>The insights unique identifier. </p>
     #[doc(hidden)]
     pub insight_id: std::option::Option<std::string::String>,
@@ -33,10 +33,12 @@ pub struct InsightSummary  {
     pub summary: std::option::Option<std::string::String>,
     /// <p>The impact statistics of the client side service. This includes the number of requests to the client service and whether the requests were faults or okay. </p>
     #[doc(hidden)]
-    pub client_request_impact_statistics: std::option::Option<crate::types::RequestImpactStatistics>,
+    pub client_request_impact_statistics:
+        std::option::Option<crate::types::RequestImpactStatistics>,
     /// <p>The impact statistics of the root cause service. This includes the number of requests to the client service and whether the requests were faults or okay. </p>
     #[doc(hidden)]
-    pub root_cause_service_request_impact_statistics: std::option::Option<crate::types::RequestImpactStatistics>,
+    pub root_cause_service_request_impact_statistics:
+        std::option::Option<crate::types::RequestImpactStatistics>,
     /// <p>The service within the insight that is most impacted by the incident.</p>
     #[doc(hidden)]
     pub top_anomalous_services: std::option::Option<std::vec::Vec<crate::types::AnomalousService>>,
@@ -46,55 +48,59 @@ pub struct InsightSummary  {
 }
 impl InsightSummary {
     /// <p>The insights unique identifier. </p>
-    pub fn insight_id(&self) -> std::option::Option<& str> {
+    pub fn insight_id(&self) -> std::option::Option<&str> {
         self.insight_id.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the group that the insight belongs to.</p>
-    pub fn group_arn(&self) -> std::option::Option<& str> {
+    pub fn group_arn(&self) -> std::option::Option<&str> {
         self.group_arn.as_deref()
     }
     /// <p>The name of the group that the insight belongs to.</p>
-    pub fn group_name(&self) -> std::option::Option<& str> {
+    pub fn group_name(&self) -> std::option::Option<&str> {
         self.group_name.as_deref()
     }
     /// <p></p>
-    pub fn root_cause_service_id(&self) -> std::option::Option<& crate::types::ServiceId> {
+    pub fn root_cause_service_id(&self) -> std::option::Option<&crate::types::ServiceId> {
         self.root_cause_service_id.as_ref()
     }
     /// <p> Categories The categories that label and describe the type of insight.</p>
-    pub fn categories(&self) -> std::option::Option<& [crate::types::InsightCategory]> {
+    pub fn categories(&self) -> std::option::Option<&[crate::types::InsightCategory]> {
         self.categories.as_deref()
     }
     /// <p>The current state of the insight.</p>
-    pub fn state(&self) -> std::option::Option<& crate::types::InsightState> {
+    pub fn state(&self) -> std::option::Option<&crate::types::InsightState> {
         self.state.as_ref()
     }
     /// <p>The time, in Unix seconds, at which the insight began.</p>
-    pub fn start_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
+    pub fn start_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.start_time.as_ref()
     }
     /// <p>The time, in Unix seconds, at which the insight ended.</p>
-    pub fn end_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
+    pub fn end_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.end_time.as_ref()
     }
     /// <p>A brief description of the insight.</p>
-    pub fn summary(&self) -> std::option::Option<& str> {
+    pub fn summary(&self) -> std::option::Option<&str> {
         self.summary.as_deref()
     }
     /// <p>The impact statistics of the client side service. This includes the number of requests to the client service and whether the requests were faults or okay. </p>
-    pub fn client_request_impact_statistics(&self) -> std::option::Option<& crate::types::RequestImpactStatistics> {
+    pub fn client_request_impact_statistics(
+        &self,
+    ) -> std::option::Option<&crate::types::RequestImpactStatistics> {
         self.client_request_impact_statistics.as_ref()
     }
     /// <p>The impact statistics of the root cause service. This includes the number of requests to the client service and whether the requests were faults or okay. </p>
-    pub fn root_cause_service_request_impact_statistics(&self) -> std::option::Option<& crate::types::RequestImpactStatistics> {
+    pub fn root_cause_service_request_impact_statistics(
+        &self,
+    ) -> std::option::Option<&crate::types::RequestImpactStatistics> {
         self.root_cause_service_request_impact_statistics.as_ref()
     }
     /// <p>The service within the insight that is most impacted by the incident.</p>
-    pub fn top_anomalous_services(&self) -> std::option::Option<& [crate::types::AnomalousService]> {
+    pub fn top_anomalous_services(&self) -> std::option::Option<&[crate::types::AnomalousService]> {
         self.top_anomalous_services.as_deref()
     }
     /// <p>The time, in Unix seconds, that the insight was last updated.</p>
-    pub fn last_update_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
+    pub fn last_update_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_update_time.as_ref()
     }
 }
@@ -118,9 +124,12 @@ pub struct InsightSummaryBuilder {
     pub(crate) start_time: std::option::Option<aws_smithy_types::DateTime>,
     pub(crate) end_time: std::option::Option<aws_smithy_types::DateTime>,
     pub(crate) summary: std::option::Option<std::string::String>,
-    pub(crate) client_request_impact_statistics: std::option::Option<crate::types::RequestImpactStatistics>,
-    pub(crate) root_cause_service_request_impact_statistics: std::option::Option<crate::types::RequestImpactStatistics>,
-    pub(crate) top_anomalous_services: std::option::Option<std::vec::Vec<crate::types::AnomalousService>>,
+    pub(crate) client_request_impact_statistics:
+        std::option::Option<crate::types::RequestImpactStatistics>,
+    pub(crate) root_cause_service_request_impact_statistics:
+        std::option::Option<crate::types::RequestImpactStatistics>,
+    pub(crate) top_anomalous_services:
+        std::option::Option<std::vec::Vec<crate::types::AnomalousService>>,
     pub(crate) last_update_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl InsightSummaryBuilder {
@@ -131,7 +140,8 @@ impl InsightSummaryBuilder {
     }
     /// <p>The insights unique identifier. </p>
     pub fn set_insight_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.insight_id = input; self
+        self.insight_id = input;
+        self
     }
     /// <p>The Amazon Resource Name (ARN) of the group that the insight belongs to.</p>
     pub fn group_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -140,7 +150,8 @@ impl InsightSummaryBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the group that the insight belongs to.</p>
     pub fn set_group_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.group_arn = input; self
+        self.group_arn = input;
+        self
     }
     /// <p>The name of the group that the insight belongs to.</p>
     pub fn group_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -149,7 +160,8 @@ impl InsightSummaryBuilder {
     }
     /// <p>The name of the group that the insight belongs to.</p>
     pub fn set_group_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.group_name = input; self
+        self.group_name = input;
+        self
     }
     /// <p></p>
     pub fn root_cause_service_id(mut self, input: crate::types::ServiceId) -> Self {
@@ -157,8 +169,12 @@ impl InsightSummaryBuilder {
         self
     }
     /// <p></p>
-    pub fn set_root_cause_service_id(mut self, input: std::option::Option<crate::types::ServiceId>) -> Self {
-        self.root_cause_service_id = input; self
+    pub fn set_root_cause_service_id(
+        mut self,
+        input: std::option::Option<crate::types::ServiceId>,
+    ) -> Self {
+        self.root_cause_service_id = input;
+        self
     }
     /// Appends an item to `categories`.
     ///
@@ -167,13 +183,17 @@ impl InsightSummaryBuilder {
     /// <p> Categories The categories that label and describe the type of insight.</p>
     pub fn categories(mut self, input: crate::types::InsightCategory) -> Self {
         let mut v = self.categories.unwrap_or_default();
-                        v.push(input);
-                        self.categories = Some(v);
-                        self
+        v.push(input);
+        self.categories = Some(v);
+        self
     }
     /// <p> Categories The categories that label and describe the type of insight.</p>
-    pub fn set_categories(mut self, input: std::option::Option<std::vec::Vec<crate::types::InsightCategory>>) -> Self {
-        self.categories = input; self
+    pub fn set_categories(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::InsightCategory>>,
+    ) -> Self {
+        self.categories = input;
+        self
     }
     /// <p>The current state of the insight.</p>
     pub fn state(mut self, input: crate::types::InsightState) -> Self {
@@ -182,7 +202,8 @@ impl InsightSummaryBuilder {
     }
     /// <p>The current state of the insight.</p>
     pub fn set_state(mut self, input: std::option::Option<crate::types::InsightState>) -> Self {
-        self.state = input; self
+        self.state = input;
+        self
     }
     /// <p>The time, in Unix seconds, at which the insight began.</p>
     pub fn start_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -190,8 +211,12 @@ impl InsightSummaryBuilder {
         self
     }
     /// <p>The time, in Unix seconds, at which the insight began.</p>
-    pub fn set_start_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.start_time = input; self
+    pub fn set_start_time(
+        mut self,
+        input: std::option::Option<aws_smithy_types::DateTime>,
+    ) -> Self {
+        self.start_time = input;
+        self
     }
     /// <p>The time, in Unix seconds, at which the insight ended.</p>
     pub fn end_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -200,7 +225,8 @@ impl InsightSummaryBuilder {
     }
     /// <p>The time, in Unix seconds, at which the insight ended.</p>
     pub fn set_end_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.end_time = input; self
+        self.end_time = input;
+        self
     }
     /// <p>A brief description of the insight.</p>
     pub fn summary(mut self, input: impl Into<std::string::String>) -> Self {
@@ -209,25 +235,40 @@ impl InsightSummaryBuilder {
     }
     /// <p>A brief description of the insight.</p>
     pub fn set_summary(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.summary = input; self
+        self.summary = input;
+        self
     }
     /// <p>The impact statistics of the client side service. This includes the number of requests to the client service and whether the requests were faults or okay. </p>
-    pub fn client_request_impact_statistics(mut self, input: crate::types::RequestImpactStatistics) -> Self {
+    pub fn client_request_impact_statistics(
+        mut self,
+        input: crate::types::RequestImpactStatistics,
+    ) -> Self {
         self.client_request_impact_statistics = Some(input);
         self
     }
     /// <p>The impact statistics of the client side service. This includes the number of requests to the client service and whether the requests were faults or okay. </p>
-    pub fn set_client_request_impact_statistics(mut self, input: std::option::Option<crate::types::RequestImpactStatistics>) -> Self {
-        self.client_request_impact_statistics = input; self
+    pub fn set_client_request_impact_statistics(
+        mut self,
+        input: std::option::Option<crate::types::RequestImpactStatistics>,
+    ) -> Self {
+        self.client_request_impact_statistics = input;
+        self
     }
     /// <p>The impact statistics of the root cause service. This includes the number of requests to the client service and whether the requests were faults or okay. </p>
-    pub fn root_cause_service_request_impact_statistics(mut self, input: crate::types::RequestImpactStatistics) -> Self {
+    pub fn root_cause_service_request_impact_statistics(
+        mut self,
+        input: crate::types::RequestImpactStatistics,
+    ) -> Self {
         self.root_cause_service_request_impact_statistics = Some(input);
         self
     }
     /// <p>The impact statistics of the root cause service. This includes the number of requests to the client service and whether the requests were faults or okay. </p>
-    pub fn set_root_cause_service_request_impact_statistics(mut self, input: std::option::Option<crate::types::RequestImpactStatistics>) -> Self {
-        self.root_cause_service_request_impact_statistics = input; self
+    pub fn set_root_cause_service_request_impact_statistics(
+        mut self,
+        input: std::option::Option<crate::types::RequestImpactStatistics>,
+    ) -> Self {
+        self.root_cause_service_request_impact_statistics = input;
+        self
     }
     /// Appends an item to `top_anomalous_services`.
     ///
@@ -236,13 +277,17 @@ impl InsightSummaryBuilder {
     /// <p>The service within the insight that is most impacted by the incident.</p>
     pub fn top_anomalous_services(mut self, input: crate::types::AnomalousService) -> Self {
         let mut v = self.top_anomalous_services.unwrap_or_default();
-                        v.push(input);
-                        self.top_anomalous_services = Some(v);
-                        self
+        v.push(input);
+        self.top_anomalous_services = Some(v);
+        self
     }
     /// <p>The service within the insight that is most impacted by the incident.</p>
-    pub fn set_top_anomalous_services(mut self, input: std::option::Option<std::vec::Vec<crate::types::AnomalousService>>) -> Self {
-        self.top_anomalous_services = input; self
+    pub fn set_top_anomalous_services(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::AnomalousService>>,
+    ) -> Self {
+        self.top_anomalous_services = input;
+        self
     }
     /// <p>The time, in Unix seconds, that the insight was last updated.</p>
     pub fn last_update_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -250,39 +295,30 @@ impl InsightSummaryBuilder {
         self
     }
     /// <p>The time, in Unix seconds, that the insight was last updated.</p>
-    pub fn set_last_update_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.last_update_time = input; self
+    pub fn set_last_update_time(
+        mut self,
+        input: std::option::Option<aws_smithy_types::DateTime>,
+    ) -> Self {
+        self.last_update_time = input;
+        self
     }
     /// Consumes the builder and constructs a [`InsightSummary`](crate::types::InsightSummary).
     pub fn build(self) -> crate::types::InsightSummary {
         crate::types::InsightSummary {
-            insight_id: self.insight_id
-            ,
-            group_arn: self.group_arn
-            ,
-            group_name: self.group_name
-            ,
-            root_cause_service_id: self.root_cause_service_id
-            ,
-            categories: self.categories
-            ,
-            state: self.state
-            ,
-            start_time: self.start_time
-            ,
-            end_time: self.end_time
-            ,
-            summary: self.summary
-            ,
-            client_request_impact_statistics: self.client_request_impact_statistics
-            ,
-            root_cause_service_request_impact_statistics: self.root_cause_service_request_impact_statistics
-            ,
-            top_anomalous_services: self.top_anomalous_services
-            ,
-            last_update_time: self.last_update_time
-            ,
+            insight_id: self.insight_id,
+            group_arn: self.group_arn,
+            group_name: self.group_name,
+            root_cause_service_id: self.root_cause_service_id,
+            categories: self.categories,
+            state: self.state,
+            start_time: self.start_time,
+            end_time: self.end_time,
+            summary: self.summary,
+            client_request_impact_statistics: self.client_request_impact_statistics,
+            root_cause_service_request_impact_statistics: self
+                .root_cause_service_request_impact_statistics,
+            top_anomalous_services: self.top_anomalous_services,
+            last_update_time: self.last_update_time,
         }
     }
 }
-

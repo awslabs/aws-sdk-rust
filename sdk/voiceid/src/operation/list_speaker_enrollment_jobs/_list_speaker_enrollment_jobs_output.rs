@@ -2,10 +2,11 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListSpeakerEnrollmentJobsOutput  {
+pub struct ListSpeakerEnrollmentJobsOutput {
     /// <p>A list containing details about each specified speaker enrollment job.</p>
     #[doc(hidden)]
-    pub job_summaries: std::option::Option<std::vec::Vec<crate::types::SpeakerEnrollmentJobSummary>>,
+    pub job_summaries:
+        std::option::Option<std::vec::Vec<crate::types::SpeakerEnrollmentJobSummary>>,
     /// <p>If <code>NextToken</code> is returned, there are more results available. The value of <code>NextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours. </p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
@@ -13,22 +14,24 @@ pub struct ListSpeakerEnrollmentJobsOutput  {
 }
 impl ListSpeakerEnrollmentJobsOutput {
     /// <p>A list containing details about each specified speaker enrollment job.</p>
-    pub fn job_summaries(&self) -> std::option::Option<& [crate::types::SpeakerEnrollmentJobSummary]> {
+    pub fn job_summaries(
+        &self,
+    ) -> std::option::Option<&[crate::types::SpeakerEnrollmentJobSummary]> {
         self.job_summaries.as_deref()
     }
     /// <p>If <code>NextToken</code> is returned, there are more results available. The value of <code>NextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours. </p>
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for ListSpeakerEnrollmentJobsOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl ListSpeakerEnrollmentJobsOutput {
     /// Creates a new builder-style object to manufacture [`ListSpeakerEnrollmentJobsOutput`](crate::operation::list_speaker_enrollment_jobs::ListSpeakerEnrollmentJobsOutput).
-    pub fn builder() -> crate::operation::list_speaker_enrollment_jobs::builders::ListSpeakerEnrollmentJobsOutputBuilder {
+    pub fn builder() -> crate::operation::list_speaker_enrollment_jobs::builders::ListSpeakerEnrollmentJobsOutputBuilder{
         crate::operation::list_speaker_enrollment_jobs::builders::ListSpeakerEnrollmentJobsOutputBuilder::default()
     }
 }
@@ -37,7 +40,8 @@ impl ListSpeakerEnrollmentJobsOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct ListSpeakerEnrollmentJobsOutputBuilder {
-    pub(crate) job_summaries: std::option::Option<std::vec::Vec<crate::types::SpeakerEnrollmentJobSummary>>,
+    pub(crate) job_summaries:
+        std::option::Option<std::vec::Vec<crate::types::SpeakerEnrollmentJobSummary>>,
     pub(crate) next_token: std::option::Option<std::string::String>,
     _request_id: Option<String>,
 }
@@ -49,13 +53,17 @@ impl ListSpeakerEnrollmentJobsOutputBuilder {
     /// <p>A list containing details about each specified speaker enrollment job.</p>
     pub fn job_summaries(mut self, input: crate::types::SpeakerEnrollmentJobSummary) -> Self {
         let mut v = self.job_summaries.unwrap_or_default();
-                        v.push(input);
-                        self.job_summaries = Some(v);
-                        self
+        v.push(input);
+        self.job_summaries = Some(v);
+        self
     }
     /// <p>A list containing details about each specified speaker enrollment job.</p>
-    pub fn set_job_summaries(mut self, input: std::option::Option<std::vec::Vec<crate::types::SpeakerEnrollmentJobSummary>>) -> Self {
-        self.job_summaries = input; self
+    pub fn set_job_summaries(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::SpeakerEnrollmentJobSummary>>,
+    ) -> Self {
+        self.job_summaries = input;
+        self
     }
     /// <p>If <code>NextToken</code> is returned, there are more results available. The value of <code>NextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours. </p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -64,26 +72,26 @@ impl ListSpeakerEnrollmentJobsOutputBuilder {
     }
     /// <p>If <code>NextToken</code> is returned, there are more results available. The value of <code>NextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours. </p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input; self
+        self.next_token = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`ListSpeakerEnrollmentJobsOutput`](crate::operation::list_speaker_enrollment_jobs::ListSpeakerEnrollmentJobsOutput).
-    pub fn build(self) -> crate::operation::list_speaker_enrollment_jobs::ListSpeakerEnrollmentJobsOutput {
+    pub fn build(
+        self,
+    ) -> crate::operation::list_speaker_enrollment_jobs::ListSpeakerEnrollmentJobsOutput {
         crate::operation::list_speaker_enrollment_jobs::ListSpeakerEnrollmentJobsOutput {
-            job_summaries: self.job_summaries
-            ,
-            next_token: self.next_token
-            ,
+            job_summaries: self.job_summaries,
+            next_token: self.next_token,
             _request_id: self._request_id,
         }
     }
 }
-

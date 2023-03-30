@@ -3,7 +3,7 @@
 /// <p>A reference to a block. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct BlockReference  {
+pub struct BlockReference {
     /// <p>Unique identifier for the block.</p>
     #[doc(hidden)]
     pub block_id: std::option::Option<std::string::String>,
@@ -19,7 +19,7 @@ pub struct BlockReference  {
 }
 impl BlockReference {
     /// <p>Unique identifier for the block.</p>
-    pub fn block_id(&self) -> std::option::Option<& str> {
+    pub fn block_id(&self) -> std::option::Option<&str> {
         self.block_id.as_deref()
     }
     /// <p>Offset of the start of the block within its parent block.</p>
@@ -31,7 +31,7 @@ impl BlockReference {
         self.end_offset
     }
     /// <p>List of child blocks within this block.</p>
-    pub fn child_blocks(&self) -> std::option::Option<& [crate::types::ChildBlock]> {
+    pub fn child_blocks(&self) -> std::option::Option<&[crate::types::ChildBlock]> {
         self.child_blocks.as_deref()
     }
 }
@@ -59,7 +59,8 @@ impl BlockReferenceBuilder {
     }
     /// <p>Unique identifier for the block.</p>
     pub fn set_block_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.block_id = input; self
+        self.block_id = input;
+        self
     }
     /// <p>Offset of the start of the block within its parent block.</p>
     pub fn begin_offset(mut self, input: i32) -> Self {
@@ -68,7 +69,8 @@ impl BlockReferenceBuilder {
     }
     /// <p>Offset of the start of the block within its parent block.</p>
     pub fn set_begin_offset(mut self, input: std::option::Option<i32>) -> Self {
-        self.begin_offset = input; self
+        self.begin_offset = input;
+        self
     }
     /// <p>Offset of the end of the block within its parent block.</p>
     pub fn end_offset(mut self, input: i32) -> Self {
@@ -77,7 +79,8 @@ impl BlockReferenceBuilder {
     }
     /// <p>Offset of the end of the block within its parent block.</p>
     pub fn set_end_offset(mut self, input: std::option::Option<i32>) -> Self {
-        self.end_offset = input; self
+        self.end_offset = input;
+        self
     }
     /// Appends an item to `child_blocks`.
     ///
@@ -86,26 +89,25 @@ impl BlockReferenceBuilder {
     /// <p>List of child blocks within this block.</p>
     pub fn child_blocks(mut self, input: crate::types::ChildBlock) -> Self {
         let mut v = self.child_blocks.unwrap_or_default();
-                        v.push(input);
-                        self.child_blocks = Some(v);
-                        self
+        v.push(input);
+        self.child_blocks = Some(v);
+        self
     }
     /// <p>List of child blocks within this block.</p>
-    pub fn set_child_blocks(mut self, input: std::option::Option<std::vec::Vec<crate::types::ChildBlock>>) -> Self {
-        self.child_blocks = input; self
+    pub fn set_child_blocks(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::ChildBlock>>,
+    ) -> Self {
+        self.child_blocks = input;
+        self
     }
     /// Consumes the builder and constructs a [`BlockReference`](crate::types::BlockReference).
     pub fn build(self) -> crate::types::BlockReference {
         crate::types::BlockReference {
-            block_id: self.block_id
-            ,
-            begin_offset: self.begin_offset
-            ,
-            end_offset: self.end_offset
-            ,
-            child_blocks: self.child_blocks
-            ,
+            block_id: self.block_id,
+            begin_offset: self.begin_offset,
+            end_offset: self.end_offset,
+            child_blocks: self.child_blocks,
         }
     }
 }
-

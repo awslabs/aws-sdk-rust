@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListExportsOutput  {
+pub struct ListExportsOutput {
     /// <p>The unique identifier assigned to the bot by Amazon Lex.</p>
     #[doc(hidden)]
     pub bot_id: std::option::Option<std::string::String>,
@@ -22,31 +22,31 @@ pub struct ListExportsOutput  {
 }
 impl ListExportsOutput {
     /// <p>The unique identifier assigned to the bot by Amazon Lex.</p>
-    pub fn bot_id(&self) -> std::option::Option<& str> {
+    pub fn bot_id(&self) -> std::option::Option<&str> {
         self.bot_id.as_deref()
     }
     /// <p>The version of the bot that was exported.</p>
-    pub fn bot_version(&self) -> std::option::Option<& str> {
+    pub fn bot_version(&self) -> std::option::Option<&str> {
         self.bot_version.as_deref()
     }
     /// <p>Summary information for the exports that meet the filter criteria specified in the request. The length of the list is specified in the <code>maxResults</code> parameter. If there are more exports available, the <code>nextToken</code> field contains a token to get the next page of results.</p>
-    pub fn export_summaries(&self) -> std::option::Option<& [crate::types::ExportSummary]> {
+    pub fn export_summaries(&self) -> std::option::Option<&[crate::types::ExportSummary]> {
         self.export_summaries.as_deref()
     }
     /// <p>A token that indicates whether there are more results to return in a response to the <code>ListExports</code> operation. If the <code>nextToken</code> field is present, you send the contents as the <code>nextToken</code> parameter of a <code>ListExports</code> operation request to get the next page of results.</p>
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
     /// <p>The locale specified in the request.</p>
-    pub fn locale_id(&self) -> std::option::Option<& str> {
+    pub fn locale_id(&self) -> std::option::Option<&str> {
         self.locale_id.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for ListExportsOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl ListExportsOutput {
     /// Creates a new builder-style object to manufacture [`ListExportsOutput`](crate::operation::list_exports::ListExportsOutput).
     pub fn builder() -> crate::operation::list_exports::builders::ListExportsOutputBuilder {
@@ -73,7 +73,8 @@ impl ListExportsOutputBuilder {
     }
     /// <p>The unique identifier assigned to the bot by Amazon Lex.</p>
     pub fn set_bot_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.bot_id = input; self
+        self.bot_id = input;
+        self
     }
     /// <p>The version of the bot that was exported.</p>
     pub fn bot_version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -82,7 +83,8 @@ impl ListExportsOutputBuilder {
     }
     /// <p>The version of the bot that was exported.</p>
     pub fn set_bot_version(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.bot_version = input; self
+        self.bot_version = input;
+        self
     }
     /// Appends an item to `export_summaries`.
     ///
@@ -91,13 +93,17 @@ impl ListExportsOutputBuilder {
     /// <p>Summary information for the exports that meet the filter criteria specified in the request. The length of the list is specified in the <code>maxResults</code> parameter. If there are more exports available, the <code>nextToken</code> field contains a token to get the next page of results.</p>
     pub fn export_summaries(mut self, input: crate::types::ExportSummary) -> Self {
         let mut v = self.export_summaries.unwrap_or_default();
-                        v.push(input);
-                        self.export_summaries = Some(v);
-                        self
+        v.push(input);
+        self.export_summaries = Some(v);
+        self
     }
     /// <p>Summary information for the exports that meet the filter criteria specified in the request. The length of the list is specified in the <code>maxResults</code> parameter. If there are more exports available, the <code>nextToken</code> field contains a token to get the next page of results.</p>
-    pub fn set_export_summaries(mut self, input: std::option::Option<std::vec::Vec<crate::types::ExportSummary>>) -> Self {
-        self.export_summaries = input; self
+    pub fn set_export_summaries(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::ExportSummary>>,
+    ) -> Self {
+        self.export_summaries = input;
+        self
     }
     /// <p>A token that indicates whether there are more results to return in a response to the <code>ListExports</code> operation. If the <code>nextToken</code> field is present, you send the contents as the <code>nextToken</code> parameter of a <code>ListExports</code> operation request to get the next page of results.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -106,7 +112,8 @@ impl ListExportsOutputBuilder {
     }
     /// <p>A token that indicates whether there are more results to return in a response to the <code>ListExports</code> operation. If the <code>nextToken</code> field is present, you send the contents as the <code>nextToken</code> parameter of a <code>ListExports</code> operation request to get the next page of results.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input; self
+        self.next_token = input;
+        self
     }
     /// <p>The locale specified in the request.</p>
     pub fn locale_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -115,32 +122,27 @@ impl ListExportsOutputBuilder {
     }
     /// <p>The locale specified in the request.</p>
     pub fn set_locale_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.locale_id = input; self
+        self.locale_id = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`ListExportsOutput`](crate::operation::list_exports::ListExportsOutput).
     pub fn build(self) -> crate::operation::list_exports::ListExportsOutput {
         crate::operation::list_exports::ListExportsOutput {
-            bot_id: self.bot_id
-            ,
-            bot_version: self.bot_version
-            ,
-            export_summaries: self.export_summaries
-            ,
-            next_token: self.next_token
-            ,
-            locale_id: self.locale_id
-            ,
+            bot_id: self.bot_id,
+            bot_version: self.bot_version,
+            export_summaries: self.export_summaries,
+            next_token: self.next_token,
+            locale_id: self.locale_id,
             _request_id: self._request_id,
         }
     }
 }
-

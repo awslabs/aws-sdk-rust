@@ -2,14 +2,14 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DetachStaticIpInput  {
+pub struct DetachStaticIpInput {
     /// <p>The name of the static IP to detach from the instance.</p>
     #[doc(hidden)]
     pub static_ip_name: std::option::Option<std::string::String>,
 }
 impl DetachStaticIpInput {
     /// <p>The name of the static IP to detach from the instance.</p>
-    pub fn static_ip_name(&self) -> std::option::Option<& str> {
+    pub fn static_ip_name(&self) -> std::option::Option<&str> {
         self.static_ip_name.as_deref()
     }
 }
@@ -34,16 +34,18 @@ impl DetachStaticIpInputBuilder {
     }
     /// <p>The name of the static IP to detach from the instance.</p>
     pub fn set_static_ip_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.static_ip_name = input; self
+        self.static_ip_name = input;
+        self
     }
     /// Consumes the builder and constructs a [`DetachStaticIpInput`](crate::operation::detach_static_ip::DetachStaticIpInput).
-    pub fn build(self) -> Result<crate::operation::detach_static_ip::DetachStaticIpInput, aws_smithy_http::operation::error::BuildError> {
-        Ok(
-            crate::operation::detach_static_ip::DetachStaticIpInput {
-                static_ip_name: self.static_ip_name
-                ,
-            }
-        )
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::detach_static_ip::DetachStaticIpInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        Ok(crate::operation::detach_static_ip::DetachStaticIpInput {
+            static_ip_name: self.static_ip_name,
+        })
     }
 }
-

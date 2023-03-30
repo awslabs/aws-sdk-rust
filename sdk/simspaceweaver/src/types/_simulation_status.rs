@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-/// 
+///
 /// Here is an example of how you can make a match expression forward-compatible:
-/// 
+///
 /// ```text
 /// # let simulationstatus = unimplemented!();
 /// match simulationstatus {
@@ -36,14 +36,22 @@
 /// Specifically, when `simulationstatus` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `SimulationStatus::NewFeature` also yielding `"NewFeature"`.
-/// 
+///
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 /// _Note: `SimulationStatus::Unknown` has been renamed to `::UnknownValue`._
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
 pub enum SimulationStatus {
     #[allow(missing_docs)] // documentation missing in model
     Deleted,
@@ -62,53 +70,57 @@ pub enum SimulationStatus {
     /// _Note: `::Unknown` has been renamed to `::UnknownValue`._
     UnknownValue,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::primitives::UnknownVariantValue)
+    Unknown(crate::primitives::UnknownVariantValue),
 }
 impl std::convert::From<&str> for SimulationStatus {
-                fn from(s: &str) -> Self {
-                    match s {
-                        "DELETED" => SimulationStatus::Deleted,
-"DELETING" => SimulationStatus::Deleting,
-"FAILED" => SimulationStatus::Failed,
-"STARTED" => SimulationStatus::Started,
-"STARTING" => SimulationStatus::Starting,
-"STOPPED" => SimulationStatus::Stopped,
-"STOPPING" => SimulationStatus::Stopping,
-"UNKNOWN" => SimulationStatus::UnknownValue,
-other => SimulationStatus::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
-                    }
-                }
+    fn from(s: &str) -> Self {
+        match s {
+            "DELETED" => SimulationStatus::Deleted,
+            "DELETING" => SimulationStatus::Deleting,
+            "FAILED" => SimulationStatus::Failed,
+            "STARTED" => SimulationStatus::Started,
+            "STARTING" => SimulationStatus::Starting,
+            "STOPPED" => SimulationStatus::Stopped,
+            "STOPPING" => SimulationStatus::Stopping,
+            "UNKNOWN" => SimulationStatus::UnknownValue,
+            other => {
+                SimulationStatus::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
             }
-impl std::str::FromStr for SimulationStatus {
-                type Err = std::convert::Infallible;
-
-                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-                    Ok(SimulationStatus::from(s))
-                }
-            }
-impl SimulationStatus {
-                /// Returns the `&str` value of the enum member.
-                pub fn as_str(&self) -> &str {
-                    match self {
-    SimulationStatus::Deleted => "DELETED",
-    SimulationStatus::Deleting => "DELETING",
-    SimulationStatus::Failed => "FAILED",
-    SimulationStatus::Started => "STARTED",
-    SimulationStatus::Starting => "STARTING",
-    SimulationStatus::Stopped => "STOPPED",
-    SimulationStatus::Stopping => "STOPPING",
-    SimulationStatus::UnknownValue => "UNKNOWN",
-    SimulationStatus::Unknown(value) => value.as_str()
+        }
+    }
 }
-                }
-                /// Returns all the `&str` representations of the enum members.
-                pub const fn values() -> &'static [&'static str] {
-                    &["DELETED", "DELETING", "FAILED", "STARTED", "STARTING", "STOPPED", "STOPPING", "UNKNOWN"]
-                }
-            }
-impl AsRef<str> for SimulationStatus {
-                fn as_ref(&self) -> &str {
-                    self.as_str()
-                }
-            }
+impl std::str::FromStr for SimulationStatus {
+    type Err = std::convert::Infallible;
 
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(SimulationStatus::from(s))
+    }
+}
+impl SimulationStatus {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            SimulationStatus::Deleted => "DELETED",
+            SimulationStatus::Deleting => "DELETING",
+            SimulationStatus::Failed => "FAILED",
+            SimulationStatus::Started => "STARTED",
+            SimulationStatus::Starting => "STARTING",
+            SimulationStatus::Stopped => "STOPPED",
+            SimulationStatus::Stopping => "STOPPING",
+            SimulationStatus::UnknownValue => "UNKNOWN",
+            SimulationStatus::Unknown(value) => value.as_str(),
+        }
+    }
+    /// Returns all the `&str` representations of the enum members.
+    pub const fn values() -> &'static [&'static str] {
+        &[
+            "DELETED", "DELETING", "FAILED", "STARTED", "STARTING", "STOPPED", "STOPPING",
+            "UNKNOWN",
+        ]
+    }
+}
+impl AsRef<str> for SimulationStatus {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}

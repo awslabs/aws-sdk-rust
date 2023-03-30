@@ -2,9 +2,9 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct GetConfigurationOutput  {
-    /// <p>The content of the configuration or the configuration data.</p> <important> 
-    /// <p>The <code>Content</code> attribute only contains data if the system finds new or updated configuration data. If there is no new or updated data and <code>ClientConfigurationVersion</code> matches the version of the current configuration, AppConfig returns a <code>204 No Content</code> HTTP response code and the <code>Content</code> value will be empty.</p> 
+pub struct GetConfigurationOutput {
+    /// <p>The content of the configuration or the configuration data.</p> <important>
+    /// <p>The <code>Content</code> attribute only contains data if the system finds new or updated configuration data. If there is no new or updated data and <code>ClientConfigurationVersion</code> matches the version of the current configuration, AppConfig returns a <code>204 No Content</code> HTTP response code and the <code>Content</code> value will be empty.</p>
     /// </important>
     #[doc(hidden)]
     pub content: std::option::Option<aws_smithy_types::Blob>,
@@ -17,22 +17,22 @@ pub struct GetConfigurationOutput  {
     _request_id: Option<String>,
 }
 impl GetConfigurationOutput {
-    /// <p>The content of the configuration or the configuration data.</p> <important> 
-    /// <p>The <code>Content</code> attribute only contains data if the system finds new or updated configuration data. If there is no new or updated data and <code>ClientConfigurationVersion</code> matches the version of the current configuration, AppConfig returns a <code>204 No Content</code> HTTP response code and the <code>Content</code> value will be empty.</p> 
+    /// <p>The content of the configuration or the configuration data.</p> <important>
+    /// <p>The <code>Content</code> attribute only contains data if the system finds new or updated configuration data. If there is no new or updated data and <code>ClientConfigurationVersion</code> matches the version of the current configuration, AppConfig returns a <code>204 No Content</code> HTTP response code and the <code>Content</code> value will be empty.</p>
     /// </important>
-    pub fn content(&self) -> std::option::Option<& aws_smithy_types::Blob> {
+    pub fn content(&self) -> std::option::Option<&aws_smithy_types::Blob> {
         self.content.as_ref()
     }
     /// <p>The configuration version.</p>
-    pub fn configuration_version(&self) -> std::option::Option<& str> {
+    pub fn configuration_version(&self) -> std::option::Option<&str> {
         self.configuration_version.as_deref()
     }
     /// <p>A standard MIME type describing the format of the configuration content. For more information, see <a href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.17">Content-Type</a>.</p>
-    pub fn content_type(&self) -> std::option::Option<& str> {
+    pub fn content_type(&self) -> std::option::Option<&str> {
         self.content_type.as_deref()
     }
 }
-impl  std::fmt::Debug for GetConfigurationOutput  {
+impl std::fmt::Debug for GetConfigurationOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetConfigurationOutput");
         formatter.field("content", &"*** Sensitive Data Redacted ***");
@@ -43,13 +43,14 @@ impl  std::fmt::Debug for GetConfigurationOutput  {
     }
 }
 impl aws_http::request_id::RequestId for GetConfigurationOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl GetConfigurationOutput {
     /// Creates a new builder-style object to manufacture [`GetConfigurationOutput`](crate::operation::get_configuration::GetConfigurationOutput).
-    pub fn builder() -> crate::operation::get_configuration::builders::GetConfigurationOutputBuilder {
+    pub fn builder() -> crate::operation::get_configuration::builders::GetConfigurationOutputBuilder
+    {
         crate::operation::get_configuration::builders::GetConfigurationOutputBuilder::default()
     }
 }
@@ -64,18 +65,19 @@ pub struct GetConfigurationOutputBuilder {
     _request_id: Option<String>,
 }
 impl GetConfigurationOutputBuilder {
-    /// <p>The content of the configuration or the configuration data.</p> <important> 
-    /// <p>The <code>Content</code> attribute only contains data if the system finds new or updated configuration data. If there is no new or updated data and <code>ClientConfigurationVersion</code> matches the version of the current configuration, AppConfig returns a <code>204 No Content</code> HTTP response code and the <code>Content</code> value will be empty.</p> 
+    /// <p>The content of the configuration or the configuration data.</p> <important>
+    /// <p>The <code>Content</code> attribute only contains data if the system finds new or updated configuration data. If there is no new or updated data and <code>ClientConfigurationVersion</code> matches the version of the current configuration, AppConfig returns a <code>204 No Content</code> HTTP response code and the <code>Content</code> value will be empty.</p>
     /// </important>
     pub fn content(mut self, input: aws_smithy_types::Blob) -> Self {
         self.content = Some(input);
         self
     }
-    /// <p>The content of the configuration or the configuration data.</p> <important> 
-    /// <p>The <code>Content</code> attribute only contains data if the system finds new or updated configuration data. If there is no new or updated data and <code>ClientConfigurationVersion</code> matches the version of the current configuration, AppConfig returns a <code>204 No Content</code> HTTP response code and the <code>Content</code> value will be empty.</p> 
+    /// <p>The content of the configuration or the configuration data.</p> <important>
+    /// <p>The <code>Content</code> attribute only contains data if the system finds new or updated configuration data. If there is no new or updated data and <code>ClientConfigurationVersion</code> matches the version of the current configuration, AppConfig returns a <code>204 No Content</code> HTTP response code and the <code>Content</code> value will be empty.</p>
     /// </important>
     pub fn set_content(mut self, input: std::option::Option<aws_smithy_types::Blob>) -> Self {
-        self.content = input; self
+        self.content = input;
+        self
     }
     /// <p>The configuration version.</p>
     pub fn configuration_version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -83,8 +85,12 @@ impl GetConfigurationOutputBuilder {
         self
     }
     /// <p>The configuration version.</p>
-    pub fn set_configuration_version(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.configuration_version = input; self
+    pub fn set_configuration_version(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.configuration_version = input;
+        self
     }
     /// <p>A standard MIME type describing the format of the configuration content. For more information, see <a href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.17">Content-Type</a>.</p>
     pub fn content_type(mut self, input: impl Into<std::string::String>) -> Self {
@@ -93,26 +99,24 @@ impl GetConfigurationOutputBuilder {
     }
     /// <p>A standard MIME type describing the format of the configuration content. For more information, see <a href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.17">Content-Type</a>.</p>
     pub fn set_content_type(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.content_type = input; self
+        self.content_type = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`GetConfigurationOutput`](crate::operation::get_configuration::GetConfigurationOutput).
     pub fn build(self) -> crate::operation::get_configuration::GetConfigurationOutput {
         crate::operation::get_configuration::GetConfigurationOutput {
-            content: self.content
-            ,
-            configuration_version: self.configuration_version
-            ,
-            content_type: self.content_type
-            ,
+            content: self.content,
+            configuration_version: self.configuration_version,
+            content_type: self.content_type,
             _request_id: self._request_id,
         }
     }
@@ -127,4 +131,3 @@ impl std::fmt::Debug for GetConfigurationOutputBuilder {
         formatter.finish()
     }
 }
-

@@ -44,7 +44,7 @@ fn deserialize_xml_attribute(inp: &str) -> Result<XmlAttribute, XmlDecodeError> 
     let mut doc = Document::new(inp);
     let mut root = doc.root_element()?;
     #[allow(unused_assignments)]
-    #[allow(clippy::blacklisted_name)]
+    #[allow(clippy::disallowed_names)]
     let mut foo: Option<String> = None;
     let mut bar: Option<String> = None;
     foo = root.start_el().attr("foo").map(|attr| attr.to_string());

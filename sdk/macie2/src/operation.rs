@@ -237,4 +237,3 @@ pub mod update_reveal_configuration;
 
 /// Types for the `UpdateSensitivityInspectionTemplate` operation.
 pub mod update_sensitivity_inspection_template;
-

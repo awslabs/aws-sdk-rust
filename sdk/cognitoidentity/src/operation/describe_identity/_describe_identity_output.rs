@@ -3,7 +3,7 @@
 /// <p>A description of the identity.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeIdentityOutput  {
+pub struct DescribeIdentityOutput {
     /// <p>A unique identifier in the format REGION:GUID.</p>
     #[doc(hidden)]
     pub identity_id: std::option::Option<std::string::String>,
@@ -20,30 +20,31 @@ pub struct DescribeIdentityOutput  {
 }
 impl DescribeIdentityOutput {
     /// <p>A unique identifier in the format REGION:GUID.</p>
-    pub fn identity_id(&self) -> std::option::Option<& str> {
+    pub fn identity_id(&self) -> std::option::Option<&str> {
         self.identity_id.as_deref()
     }
     /// <p>The provider names.</p>
-    pub fn logins(&self) -> std::option::Option<& [std::string::String]> {
+    pub fn logins(&self) -> std::option::Option<&[std::string::String]> {
         self.logins.as_deref()
     }
     /// <p>Date on which the identity was created.</p>
-    pub fn creation_date(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
+    pub fn creation_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.creation_date.as_ref()
     }
     /// <p>Date on which the identity was last modified.</p>
-    pub fn last_modified_date(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
+    pub fn last_modified_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_modified_date.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for DescribeIdentityOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl DescribeIdentityOutput {
     /// Creates a new builder-style object to manufacture [`DescribeIdentityOutput`](crate::operation::describe_identity::DescribeIdentityOutput).
-    pub fn builder() -> crate::operation::describe_identity::builders::DescribeIdentityOutputBuilder {
+    pub fn builder() -> crate::operation::describe_identity::builders::DescribeIdentityOutputBuilder
+    {
         crate::operation::describe_identity::builders::DescribeIdentityOutputBuilder::default()
     }
 }
@@ -66,7 +67,8 @@ impl DescribeIdentityOutputBuilder {
     }
     /// <p>A unique identifier in the format REGION:GUID.</p>
     pub fn set_identity_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.identity_id = input; self
+        self.identity_id = input;
+        self
     }
     /// Appends an item to `logins`.
     ///
@@ -75,13 +77,17 @@ impl DescribeIdentityOutputBuilder {
     /// <p>The provider names.</p>
     pub fn logins(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.logins.unwrap_or_default();
-                        v.push(input.into());
-                        self.logins = Some(v);
-                        self
+        v.push(input.into());
+        self.logins = Some(v);
+        self
     }
     /// <p>The provider names.</p>
-    pub fn set_logins(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-        self.logins = input; self
+    pub fn set_logins(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
+        self.logins = input;
+        self
     }
     /// <p>Date on which the identity was created.</p>
     pub fn creation_date(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -89,8 +95,12 @@ impl DescribeIdentityOutputBuilder {
         self
     }
     /// <p>Date on which the identity was created.</p>
-    pub fn set_creation_date(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.creation_date = input; self
+    pub fn set_creation_date(
+        mut self,
+        input: std::option::Option<aws_smithy_types::DateTime>,
+    ) -> Self {
+        self.creation_date = input;
+        self
     }
     /// <p>Date on which the identity was last modified.</p>
     pub fn last_modified_date(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -98,31 +108,30 @@ impl DescribeIdentityOutputBuilder {
         self
     }
     /// <p>Date on which the identity was last modified.</p>
-    pub fn set_last_modified_date(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.last_modified_date = input; self
+    pub fn set_last_modified_date(
+        mut self,
+        input: std::option::Option<aws_smithy_types::DateTime>,
+    ) -> Self {
+        self.last_modified_date = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`DescribeIdentityOutput`](crate::operation::describe_identity::DescribeIdentityOutput).
     pub fn build(self) -> crate::operation::describe_identity::DescribeIdentityOutput {
         crate::operation::describe_identity::DescribeIdentityOutput {
-            identity_id: self.identity_id
-            ,
-            logins: self.logins
-            ,
-            creation_date: self.creation_date
-            ,
-            last_modified_date: self.last_modified_date
-            ,
+            identity_id: self.identity_id,
+            logins: self.logins,
+            creation_date: self.creation_date,
+            last_modified_date: self.last_modified_date,
             _request_id: self._request_id,
         }
     }
 }
-

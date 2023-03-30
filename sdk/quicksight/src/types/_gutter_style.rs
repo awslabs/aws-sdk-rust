@@ -3,7 +3,7 @@
 /// <p>The display options for gutter spacing between tiles on a sheet.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GutterStyle  {
+pub struct GutterStyle {
     /// <p>This Boolean value controls whether to display a gutter space between sheet tiles. </p>
     #[doc(hidden)]
     pub show: std::option::Option<bool>,
@@ -35,14 +35,11 @@ impl GutterStyleBuilder {
     }
     /// <p>This Boolean value controls whether to display a gutter space between sheet tiles. </p>
     pub fn set_show(mut self, input: std::option::Option<bool>) -> Self {
-        self.show = input; self
+        self.show = input;
+        self
     }
     /// Consumes the builder and constructs a [`GutterStyle`](crate::types::GutterStyle).
     pub fn build(self) -> crate::types::GutterStyle {
-        crate::types::GutterStyle {
-            show: self.show
-            ,
-        }
+        crate::types::GutterStyle { show: self.show }
     }
 }
-

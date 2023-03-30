@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct StartSuiteRunInput  {
+pub struct StartSuiteRunInput {
     /// <p>Suite definition ID of the test suite.</p>
     #[doc(hidden)]
     pub suite_definition_id: std::option::Option<std::string::String>,
@@ -14,23 +14,29 @@ pub struct StartSuiteRunInput  {
     pub suite_run_configuration: std::option::Option<crate::types::SuiteRunConfiguration>,
     /// <p>The tags to be attached to the suite run.</p>
     #[doc(hidden)]
-    pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub tags:
+        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl StartSuiteRunInput {
     /// <p>Suite definition ID of the test suite.</p>
-    pub fn suite_definition_id(&self) -> std::option::Option<& str> {
+    pub fn suite_definition_id(&self) -> std::option::Option<&str> {
         self.suite_definition_id.as_deref()
     }
     /// <p>Suite definition version of the test suite.</p>
-    pub fn suite_definition_version(&self) -> std::option::Option<& str> {
+    pub fn suite_definition_version(&self) -> std::option::Option<&str> {
         self.suite_definition_version.as_deref()
     }
     /// <p>Suite run configuration.</p>
-    pub fn suite_run_configuration(&self) -> std::option::Option<& crate::types::SuiteRunConfiguration> {
+    pub fn suite_run_configuration(
+        &self,
+    ) -> std::option::Option<&crate::types::SuiteRunConfiguration> {
         self.suite_run_configuration.as_ref()
     }
     /// <p>The tags to be attached to the suite run.</p>
-    pub fn tags(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
         self.tags.as_ref()
     }
 }
@@ -48,7 +54,8 @@ pub struct StartSuiteRunInputBuilder {
     pub(crate) suite_definition_id: std::option::Option<std::string::String>,
     pub(crate) suite_definition_version: std::option::Option<std::string::String>,
     pub(crate) suite_run_configuration: std::option::Option<crate::types::SuiteRunConfiguration>,
-    pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub(crate) tags:
+        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl StartSuiteRunInputBuilder {
     /// <p>Suite definition ID of the test suite.</p>
@@ -57,8 +64,12 @@ impl StartSuiteRunInputBuilder {
         self
     }
     /// <p>Suite definition ID of the test suite.</p>
-    pub fn set_suite_definition_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.suite_definition_id = input; self
+    pub fn set_suite_definition_id(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.suite_definition_id = input;
+        self
     }
     /// <p>Suite definition version of the test suite.</p>
     pub fn suite_definition_version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -66,8 +77,12 @@ impl StartSuiteRunInputBuilder {
         self
     }
     /// <p>Suite definition version of the test suite.</p>
-    pub fn set_suite_definition_version(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.suite_definition_version = input; self
+    pub fn set_suite_definition_version(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.suite_definition_version = input;
+        self
     }
     /// <p>Suite run configuration.</p>
     pub fn suite_run_configuration(mut self, input: crate::types::SuiteRunConfiguration) -> Self {
@@ -75,38 +90,50 @@ impl StartSuiteRunInputBuilder {
         self
     }
     /// <p>Suite run configuration.</p>
-    pub fn set_suite_run_configuration(mut self, input: std::option::Option<crate::types::SuiteRunConfiguration>) -> Self {
-        self.suite_run_configuration = input; self
+    pub fn set_suite_run_configuration(
+        mut self,
+        input: std::option::Option<crate::types::SuiteRunConfiguration>,
+    ) -> Self {
+        self.suite_run_configuration = input;
+        self
     }
     /// Adds a key-value pair to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// <p>The tags to be attached to the suite run.</p>
-    pub fn tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
+    pub fn tags(
+        mut self,
+        k: impl Into<std::string::String>,
+        v: impl Into<std::string::String>,
+    ) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
-                        hash_map.insert(k.into(), v.into());
-                        self.tags = Some(hash_map);
-                        self
+        hash_map.insert(k.into(), v.into());
+        self.tags = Some(hash_map);
+        self
     }
     /// <p>The tags to be attached to the suite run.</p>
-    pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
-        self.tags = input; self
+    pub fn set_tags(
+        mut self,
+        input: std::option::Option<
+            std::collections::HashMap<std::string::String, std::string::String>,
+        >,
+    ) -> Self {
+        self.tags = input;
+        self
     }
     /// Consumes the builder and constructs a [`StartSuiteRunInput`](crate::operation::start_suite_run::StartSuiteRunInput).
-    pub fn build(self) -> Result<crate::operation::start_suite_run::StartSuiteRunInput, aws_smithy_http::operation::error::BuildError> {
-        Ok(
-            crate::operation::start_suite_run::StartSuiteRunInput {
-                suite_definition_id: self.suite_definition_id
-                ,
-                suite_definition_version: self.suite_definition_version
-                ,
-                suite_run_configuration: self.suite_run_configuration
-                ,
-                tags: self.tags
-                ,
-            }
-        )
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::start_suite_run::StartSuiteRunInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        Ok(crate::operation::start_suite_run::StartSuiteRunInput {
+            suite_definition_id: self.suite_definition_id,
+            suite_definition_version: self.suite_definition_version,
+            suite_run_configuration: self.suite_run_configuration,
+            tags: self.tags,
+        })
     }
 }
-

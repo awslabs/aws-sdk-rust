@@ -2,21 +2,23 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteProtocolsListInput  {
+pub struct DeleteProtocolsListInput {
     /// <p>The ID of the protocols list that you want to delete. You can retrieve this ID from <code>PutProtocolsList</code>, <code>ListProtocolsLists</code>, and <code>GetProtocolsLost</code>.</p>
     #[doc(hidden)]
     pub list_id: std::option::Option<std::string::String>,
 }
 impl DeleteProtocolsListInput {
     /// <p>The ID of the protocols list that you want to delete. You can retrieve this ID from <code>PutProtocolsList</code>, <code>ListProtocolsLists</code>, and <code>GetProtocolsLost</code>.</p>
-    pub fn list_id(&self) -> std::option::Option<& str> {
+    pub fn list_id(&self) -> std::option::Option<&str> {
         self.list_id.as_deref()
     }
 }
 impl DeleteProtocolsListInput {
     /// Creates a new builder-style object to manufacture [`DeleteProtocolsListInput`](crate::operation::delete_protocols_list::DeleteProtocolsListInput).
-    pub fn builder() -> crate::operation::delete_protocols_list::builders::DeleteProtocolsListInputBuilder {
-        crate::operation::delete_protocols_list::builders::DeleteProtocolsListInputBuilder::default()
+    pub fn builder(
+    ) -> crate::operation::delete_protocols_list::builders::DeleteProtocolsListInputBuilder {
+        crate::operation::delete_protocols_list::builders::DeleteProtocolsListInputBuilder::default(
+        )
     }
 }
 
@@ -34,16 +36,20 @@ impl DeleteProtocolsListInputBuilder {
     }
     /// <p>The ID of the protocols list that you want to delete. You can retrieve this ID from <code>PutProtocolsList</code>, <code>ListProtocolsLists</code>, and <code>GetProtocolsLost</code>.</p>
     pub fn set_list_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.list_id = input; self
+        self.list_id = input;
+        self
     }
     /// Consumes the builder and constructs a [`DeleteProtocolsListInput`](crate::operation::delete_protocols_list::DeleteProtocolsListInput).
-    pub fn build(self) -> Result<crate::operation::delete_protocols_list::DeleteProtocolsListInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::delete_protocols_list::DeleteProtocolsListInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::delete_protocols_list::DeleteProtocolsListInput {
-                list_id: self.list_id
-                ,
-            }
+                list_id: self.list_id,
+            },
         )
     }
 }
-

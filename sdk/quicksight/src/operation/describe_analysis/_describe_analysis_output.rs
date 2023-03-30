@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeAnalysisOutput  {
+pub struct DescribeAnalysisOutput {
     /// <p>A metadata structure that contains summary information for the analysis that you're describing.</p>
     #[doc(hidden)]
     pub analysis: std::option::Option<crate::types::Analysis>,
@@ -16,7 +16,7 @@ pub struct DescribeAnalysisOutput  {
 }
 impl DescribeAnalysisOutput {
     /// <p>A metadata structure that contains summary information for the analysis that you're describing.</p>
-    pub fn analysis(&self) -> std::option::Option<& crate::types::Analysis> {
+    pub fn analysis(&self) -> std::option::Option<&crate::types::Analysis> {
         self.analysis.as_ref()
     }
     /// <p>The HTTP status of the request.</p>
@@ -24,18 +24,19 @@ impl DescribeAnalysisOutput {
         self.status
     }
     /// <p>The Amazon Web Services request ID for this operation.</p>
-    pub fn request_id(&self) -> std::option::Option<& str> {
+    pub fn request_id(&self) -> std::option::Option<&str> {
         self.request_id.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for DescribeAnalysisOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl DescribeAnalysisOutput {
     /// Creates a new builder-style object to manufacture [`DescribeAnalysisOutput`](crate::operation::describe_analysis::DescribeAnalysisOutput).
-    pub fn builder() -> crate::operation::describe_analysis::builders::DescribeAnalysisOutputBuilder {
+    pub fn builder() -> crate::operation::describe_analysis::builders::DescribeAnalysisOutputBuilder
+    {
         crate::operation::describe_analysis::builders::DescribeAnalysisOutputBuilder::default()
     }
 }
@@ -57,7 +58,8 @@ impl DescribeAnalysisOutputBuilder {
     }
     /// <p>A metadata structure that contains summary information for the analysis that you're describing.</p>
     pub fn set_analysis(mut self, input: std::option::Option<crate::types::Analysis>) -> Self {
-        self.analysis = input; self
+        self.analysis = input;
+        self
     }
     /// <p>The HTTP status of the request.</p>
     pub fn status(mut self, input: i32) -> Self {
@@ -66,7 +68,8 @@ impl DescribeAnalysisOutputBuilder {
     }
     /// <p>The HTTP status of the request.</p>
     pub fn set_status(mut self, input: std::option::Option<i32>) -> Self {
-        self.status = input; self
+        self.status = input;
+        self
     }
     /// <p>The Amazon Web Services request ID for this operation.</p>
     pub fn request_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -75,29 +78,25 @@ impl DescribeAnalysisOutputBuilder {
     }
     /// <p>The Amazon Web Services request ID for this operation.</p>
     pub fn set_request_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.request_id = input; self
+        self.request_id = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`DescribeAnalysisOutput`](crate::operation::describe_analysis::DescribeAnalysisOutput).
     pub fn build(self) -> crate::operation::describe_analysis::DescribeAnalysisOutput {
         crate::operation::describe_analysis::DescribeAnalysisOutput {
-            analysis: self.analysis
-            ,
-            status: self.status
-                .unwrap_or_default()
-            ,
-            request_id: self.request_id
-            ,
+            analysis: self.analysis,
+            status: self.status.unwrap_or_default(),
+            request_id: self.request_id,
             _request_id: self._request_id,
         }
     }
 }
-

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetFuotaTaskOutput  {
+pub struct GetFuotaTaskOutput {
     /// <p>The arn of a FUOTA task.</p>
     #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
@@ -34,47 +34,47 @@ pub struct GetFuotaTaskOutput  {
 }
 impl GetFuotaTaskOutput {
     /// <p>The arn of a FUOTA task.</p>
-    pub fn arn(&self) -> std::option::Option<& str> {
+    pub fn arn(&self) -> std::option::Option<&str> {
         self.arn.as_deref()
     }
     /// <p>The ID of a FUOTA task.</p>
-    pub fn id(&self) -> std::option::Option<& str> {
+    pub fn id(&self) -> std::option::Option<&str> {
         self.id.as_deref()
     }
     /// <p>The status of a FUOTA task.</p>
-    pub fn status(&self) -> std::option::Option<& crate::types::FuotaTaskStatus> {
+    pub fn status(&self) -> std::option::Option<&crate::types::FuotaTaskStatus> {
         self.status.as_ref()
     }
     /// <p>The name of a FUOTA task.</p>
-    pub fn name(&self) -> std::option::Option<& str> {
+    pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>The description of the new resource.</p>
-    pub fn description(&self) -> std::option::Option<& str> {
+    pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
     /// <p>The LoRaWAN information returned from getting a FUOTA task.</p>
-    pub fn lo_ra_wan(&self) -> std::option::Option<& crate::types::LoRaWanFuotaTaskGetInfo> {
+    pub fn lo_ra_wan(&self) -> std::option::Option<&crate::types::LoRaWanFuotaTaskGetInfo> {
         self.lo_ra_wan.as_ref()
     }
     /// <p>The S3 URI points to a firmware update image that is to be used with a FUOTA task.</p>
-    pub fn firmware_update_image(&self) -> std::option::Option<& str> {
+    pub fn firmware_update_image(&self) -> std::option::Option<&str> {
         self.firmware_update_image.as_deref()
     }
     /// <p>The firmware update role that is to be used with a FUOTA task.</p>
-    pub fn firmware_update_role(&self) -> std::option::Option<& str> {
+    pub fn firmware_update_role(&self) -> std::option::Option<&str> {
         self.firmware_update_role.as_deref()
     }
     /// <p>Created at timestamp for the resource.</p>
-    pub fn created_at(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
+    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for GetFuotaTaskOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl GetFuotaTaskOutput {
     /// Creates a new builder-style object to manufacture [`GetFuotaTaskOutput`](crate::operation::get_fuota_task::GetFuotaTaskOutput).
     pub fn builder() -> crate::operation::get_fuota_task::builders::GetFuotaTaskOutputBuilder {
@@ -105,7 +105,8 @@ impl GetFuotaTaskOutputBuilder {
     }
     /// <p>The arn of a FUOTA task.</p>
     pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.arn = input; self
+        self.arn = input;
+        self
     }
     /// <p>The ID of a FUOTA task.</p>
     pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -114,7 +115,8 @@ impl GetFuotaTaskOutputBuilder {
     }
     /// <p>The ID of a FUOTA task.</p>
     pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.id = input; self
+        self.id = input;
+        self
     }
     /// <p>The status of a FUOTA task.</p>
     pub fn status(mut self, input: crate::types::FuotaTaskStatus) -> Self {
@@ -123,7 +125,8 @@ impl GetFuotaTaskOutputBuilder {
     }
     /// <p>The status of a FUOTA task.</p>
     pub fn set_status(mut self, input: std::option::Option<crate::types::FuotaTaskStatus>) -> Self {
-        self.status = input; self
+        self.status = input;
+        self
     }
     /// <p>The name of a FUOTA task.</p>
     pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -132,7 +135,8 @@ impl GetFuotaTaskOutputBuilder {
     }
     /// <p>The name of a FUOTA task.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input; self
+        self.name = input;
+        self
     }
     /// <p>The description of the new resource.</p>
     pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -141,7 +145,8 @@ impl GetFuotaTaskOutputBuilder {
     }
     /// <p>The description of the new resource.</p>
     pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.description = input; self
+        self.description = input;
+        self
     }
     /// <p>The LoRaWAN information returned from getting a FUOTA task.</p>
     pub fn lo_ra_wan(mut self, input: crate::types::LoRaWanFuotaTaskGetInfo) -> Self {
@@ -149,8 +154,12 @@ impl GetFuotaTaskOutputBuilder {
         self
     }
     /// <p>The LoRaWAN information returned from getting a FUOTA task.</p>
-    pub fn set_lo_ra_wan(mut self, input: std::option::Option<crate::types::LoRaWanFuotaTaskGetInfo>) -> Self {
-        self.lo_ra_wan = input; self
+    pub fn set_lo_ra_wan(
+        mut self,
+        input: std::option::Option<crate::types::LoRaWanFuotaTaskGetInfo>,
+    ) -> Self {
+        self.lo_ra_wan = input;
+        self
     }
     /// <p>The S3 URI points to a firmware update image that is to be used with a FUOTA task.</p>
     pub fn firmware_update_image(mut self, input: impl Into<std::string::String>) -> Self {
@@ -158,8 +167,12 @@ impl GetFuotaTaskOutputBuilder {
         self
     }
     /// <p>The S3 URI points to a firmware update image that is to be used with a FUOTA task.</p>
-    pub fn set_firmware_update_image(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.firmware_update_image = input; self
+    pub fn set_firmware_update_image(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.firmware_update_image = input;
+        self
     }
     /// <p>The firmware update role that is to be used with a FUOTA task.</p>
     pub fn firmware_update_role(mut self, input: impl Into<std::string::String>) -> Self {
@@ -167,8 +180,12 @@ impl GetFuotaTaskOutputBuilder {
         self
     }
     /// <p>The firmware update role that is to be used with a FUOTA task.</p>
-    pub fn set_firmware_update_role(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.firmware_update_role = input; self
+    pub fn set_firmware_update_role(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.firmware_update_role = input;
+        self
     }
     /// <p>Created at timestamp for the resource.</p>
     pub fn created_at(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -176,41 +193,35 @@ impl GetFuotaTaskOutputBuilder {
         self
     }
     /// <p>Created at timestamp for the resource.</p>
-    pub fn set_created_at(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.created_at = input; self
+    pub fn set_created_at(
+        mut self,
+        input: std::option::Option<aws_smithy_types::DateTime>,
+    ) -> Self {
+        self.created_at = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`GetFuotaTaskOutput`](crate::operation::get_fuota_task::GetFuotaTaskOutput).
     pub fn build(self) -> crate::operation::get_fuota_task::GetFuotaTaskOutput {
         crate::operation::get_fuota_task::GetFuotaTaskOutput {
-            arn: self.arn
-            ,
-            id: self.id
-            ,
-            status: self.status
-            ,
-            name: self.name
-            ,
-            description: self.description
-            ,
-            lo_ra_wan: self.lo_ra_wan
-            ,
-            firmware_update_image: self.firmware_update_image
-            ,
-            firmware_update_role: self.firmware_update_role
-            ,
-            created_at: self.created_at
-            ,
+            arn: self.arn,
+            id: self.id,
+            status: self.status,
+            name: self.name,
+            description: self.description,
+            lo_ra_wan: self.lo_ra_wan,
+            firmware_update_image: self.firmware_update_image,
+            firmware_update_role: self.firmware_update_role,
+            created_at: self.created_at,
             _request_id: self._request_id,
         }
     }
 }
-

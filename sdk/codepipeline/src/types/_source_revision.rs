@@ -3,7 +3,7 @@
 /// <p>Information about the version (or revision) of a source artifact that initiated a pipeline execution.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SourceRevision  {
+pub struct SourceRevision {
     /// <p>The name of the action that processed the revision to the source artifact.</p>
     #[doc(hidden)]
     pub action_name: std::option::Option<std::string::String>,
@@ -19,19 +19,19 @@ pub struct SourceRevision  {
 }
 impl SourceRevision {
     /// <p>The name of the action that processed the revision to the source artifact.</p>
-    pub fn action_name(&self) -> std::option::Option<& str> {
+    pub fn action_name(&self) -> std::option::Option<&str> {
         self.action_name.as_deref()
     }
     /// <p>The system-generated unique ID that identifies the revision number of the artifact.</p>
-    pub fn revision_id(&self) -> std::option::Option<& str> {
+    pub fn revision_id(&self) -> std::option::Option<&str> {
         self.revision_id.as_deref()
     }
     /// <p>Summary information about the most recent revision of the artifact. For GitHub and AWS CodeCommit repositories, the commit message. For Amazon S3 buckets or actions, the user-provided content of a <code>codepipeline-artifact-revision-summary</code> key specified in the object metadata.</p>
-    pub fn revision_summary(&self) -> std::option::Option<& str> {
+    pub fn revision_summary(&self) -> std::option::Option<&str> {
         self.revision_summary.as_deref()
     }
     /// <p>The commit ID for the artifact revision. For artifacts stored in GitHub or AWS CodeCommit repositories, the commit ID is linked to a commit details page.</p>
-    pub fn revision_url(&self) -> std::option::Option<& str> {
+    pub fn revision_url(&self) -> std::option::Option<&str> {
         self.revision_url.as_deref()
     }
 }
@@ -59,7 +59,8 @@ impl SourceRevisionBuilder {
     }
     /// <p>The name of the action that processed the revision to the source artifact.</p>
     pub fn set_action_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.action_name = input; self
+        self.action_name = input;
+        self
     }
     /// <p>The system-generated unique ID that identifies the revision number of the artifact.</p>
     pub fn revision_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -68,7 +69,8 @@ impl SourceRevisionBuilder {
     }
     /// <p>The system-generated unique ID that identifies the revision number of the artifact.</p>
     pub fn set_revision_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.revision_id = input; self
+        self.revision_id = input;
+        self
     }
     /// <p>Summary information about the most recent revision of the artifact. For GitHub and AWS CodeCommit repositories, the commit message. For Amazon S3 buckets or actions, the user-provided content of a <code>codepipeline-artifact-revision-summary</code> key specified in the object metadata.</p>
     pub fn revision_summary(mut self, input: impl Into<std::string::String>) -> Self {
@@ -77,7 +79,8 @@ impl SourceRevisionBuilder {
     }
     /// <p>Summary information about the most recent revision of the artifact. For GitHub and AWS CodeCommit repositories, the commit message. For Amazon S3 buckets or actions, the user-provided content of a <code>codepipeline-artifact-revision-summary</code> key specified in the object metadata.</p>
     pub fn set_revision_summary(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.revision_summary = input; self
+        self.revision_summary = input;
+        self
     }
     /// <p>The commit ID for the artifact revision. For artifacts stored in GitHub or AWS CodeCommit repositories, the commit ID is linked to a commit details page.</p>
     pub fn revision_url(mut self, input: impl Into<std::string::String>) -> Self {
@@ -86,20 +89,16 @@ impl SourceRevisionBuilder {
     }
     /// <p>The commit ID for the artifact revision. For artifacts stored in GitHub or AWS CodeCommit repositories, the commit ID is linked to a commit details page.</p>
     pub fn set_revision_url(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.revision_url = input; self
+        self.revision_url = input;
+        self
     }
     /// Consumes the builder and constructs a [`SourceRevision`](crate::types::SourceRevision).
     pub fn build(self) -> crate::types::SourceRevision {
         crate::types::SourceRevision {
-            action_name: self.action_name
-            ,
-            revision_id: self.revision_id
-            ,
-            revision_summary: self.revision_summary
-            ,
-            revision_url: self.revision_url
-            ,
+            action_name: self.action_name,
+            revision_id: self.revision_id,
+            revision_summary: self.revision_summary,
+            revision_url: self.revision_url,
         }
     }
 }
-

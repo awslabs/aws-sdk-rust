@@ -3,7 +3,7 @@
 /// <p>Describes the location of an application's code stored in an S3 bucket.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct S3ApplicationCodeLocationDescription  {
+pub struct S3ApplicationCodeLocationDescription {
     /// <p>The Amazon Resource Name (ARN) for the S3 bucket containing the application code.</p>
     #[doc(hidden)]
     pub bucket_arn: std::option::Option<std::string::String>,
@@ -16,15 +16,15 @@ pub struct S3ApplicationCodeLocationDescription  {
 }
 impl S3ApplicationCodeLocationDescription {
     /// <p>The Amazon Resource Name (ARN) for the S3 bucket containing the application code.</p>
-    pub fn bucket_arn(&self) -> std::option::Option<& str> {
+    pub fn bucket_arn(&self) -> std::option::Option<&str> {
         self.bucket_arn.as_deref()
     }
     /// <p>The file key for the object containing the application code.</p>
-    pub fn file_key(&self) -> std::option::Option<& str> {
+    pub fn file_key(&self) -> std::option::Option<&str> {
         self.file_key.as_deref()
     }
     /// <p>The version of the object containing the application code.</p>
-    pub fn object_version(&self) -> std::option::Option<& str> {
+    pub fn object_version(&self) -> std::option::Option<&str> {
         self.object_version.as_deref()
     }
 }
@@ -51,7 +51,8 @@ impl S3ApplicationCodeLocationDescriptionBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) for the S3 bucket containing the application code.</p>
     pub fn set_bucket_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.bucket_arn = input; self
+        self.bucket_arn = input;
+        self
     }
     /// <p>The file key for the object containing the application code.</p>
     pub fn file_key(mut self, input: impl Into<std::string::String>) -> Self {
@@ -60,7 +61,8 @@ impl S3ApplicationCodeLocationDescriptionBuilder {
     }
     /// <p>The file key for the object containing the application code.</p>
     pub fn set_file_key(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.file_key = input; self
+        self.file_key = input;
+        self
     }
     /// <p>The version of the object containing the application code.</p>
     pub fn object_version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -69,18 +71,15 @@ impl S3ApplicationCodeLocationDescriptionBuilder {
     }
     /// <p>The version of the object containing the application code.</p>
     pub fn set_object_version(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.object_version = input; self
+        self.object_version = input;
+        self
     }
     /// Consumes the builder and constructs a [`S3ApplicationCodeLocationDescription`](crate::types::S3ApplicationCodeLocationDescription).
     pub fn build(self) -> crate::types::S3ApplicationCodeLocationDescription {
         crate::types::S3ApplicationCodeLocationDescription {
-            bucket_arn: self.bucket_arn
-            ,
-            file_key: self.file_key
-            ,
-            object_version: self.object_version
-            ,
+            bucket_arn: self.bucket_arn,
+            file_key: self.file_key,
+            object_version: self.object_version,
         }
     }
 }
-

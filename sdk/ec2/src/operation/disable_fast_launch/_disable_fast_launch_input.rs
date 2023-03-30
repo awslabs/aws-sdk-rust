@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DisableFastLaunchInput  {
+pub struct DisableFastLaunchInput {
     /// <p>The ID of the image for which you’re turning off faster launching, and removing pre-provisioned snapshots.</p>
     #[doc(hidden)]
     pub image_id: std::option::Option<std::string::String>,
@@ -15,7 +15,7 @@ pub struct DisableFastLaunchInput  {
 }
 impl DisableFastLaunchInput {
     /// <p>The ID of the image for which you’re turning off faster launching, and removing pre-provisioned snapshots.</p>
-    pub fn image_id(&self) -> std::option::Option<& str> {
+    pub fn image_id(&self) -> std::option::Option<&str> {
         self.image_id.as_deref()
     }
     /// <p>Forces the image settings to turn off faster launching for your Windows AMI. This parameter overrides any errors that are encountered while cleaning up resources in your account.</p>
@@ -29,7 +29,8 @@ impl DisableFastLaunchInput {
 }
 impl DisableFastLaunchInput {
     /// Creates a new builder-style object to manufacture [`DisableFastLaunchInput`](crate::operation::disable_fast_launch::DisableFastLaunchInput).
-    pub fn builder() -> crate::operation::disable_fast_launch::builders::DisableFastLaunchInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::disable_fast_launch::builders::DisableFastLaunchInputBuilder {
         crate::operation::disable_fast_launch::builders::DisableFastLaunchInputBuilder::default()
     }
 }
@@ -50,7 +51,8 @@ impl DisableFastLaunchInputBuilder {
     }
     /// <p>The ID of the image for which you’re turning off faster launching, and removing pre-provisioned snapshots.</p>
     pub fn set_image_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.image_id = input; self
+        self.image_id = input;
+        self
     }
     /// <p>Forces the image settings to turn off faster launching for your Windows AMI. This parameter overrides any errors that are encountered while cleaning up resources in your account.</p>
     pub fn force(mut self, input: bool) -> Self {
@@ -59,7 +61,8 @@ impl DisableFastLaunchInputBuilder {
     }
     /// <p>Forces the image settings to turn off faster launching for your Windows AMI. This parameter overrides any errors that are encountered while cleaning up resources in your account.</p>
     pub fn set_force(mut self, input: std::option::Option<bool>) -> Self {
-        self.force = input; self
+        self.force = input;
+        self
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn dry_run(mut self, input: bool) -> Self {
@@ -68,20 +71,22 @@ impl DisableFastLaunchInputBuilder {
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn set_dry_run(mut self, input: std::option::Option<bool>) -> Self {
-        self.dry_run = input; self
+        self.dry_run = input;
+        self
     }
     /// Consumes the builder and constructs a [`DisableFastLaunchInput`](crate::operation::disable_fast_launch::DisableFastLaunchInput).
-    pub fn build(self) -> Result<crate::operation::disable_fast_launch::DisableFastLaunchInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::disable_fast_launch::DisableFastLaunchInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::disable_fast_launch::DisableFastLaunchInput {
-                image_id: self.image_id
-                ,
-                force: self.force
-                ,
-                dry_run: self.dry_run
-                ,
-            }
+                image_id: self.image_id,
+                force: self.force,
+                dry_run: self.dry_run,
+            },
         )
     }
 }
-

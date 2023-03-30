@@ -2,17 +2,19 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct InvalidateProjectCacheOutput  {
+pub struct InvalidateProjectCacheOutput {
     _request_id: Option<String>,
 }
 impl aws_http::request_id::RequestId for InvalidateProjectCacheOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl InvalidateProjectCacheOutput {
     /// Creates a new builder-style object to manufacture [`InvalidateProjectCacheOutput`](crate::operation::invalidate_project_cache::InvalidateProjectCacheOutput).
-    pub fn builder() -> crate::operation::invalidate_project_cache::builders::InvalidateProjectCacheOutputBuilder {
+    pub fn builder(
+    ) -> crate::operation::invalidate_project_cache::builders::InvalidateProjectCacheOutputBuilder
+    {
         crate::operation::invalidate_project_cache::builders::InvalidateProjectCacheOutputBuilder::default()
     }
 }
@@ -25,14 +27,14 @@ pub struct InvalidateProjectCacheOutputBuilder {
 }
 impl InvalidateProjectCacheOutputBuilder {
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`InvalidateProjectCacheOutput`](crate::operation::invalidate_project_cache::InvalidateProjectCacheOutput).
     pub fn build(self) -> crate::operation::invalidate_project_cache::InvalidateProjectCacheOutput {
         crate::operation::invalidate_project_cache::InvalidateProjectCacheOutput {
@@ -40,4 +42,3 @@ impl InvalidateProjectCacheOutputBuilder {
         }
     }
 }
-

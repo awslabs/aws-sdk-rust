@@ -3,7 +3,7 @@
 /// <p>Revision detail data for a commit and push that activates a sync attempt</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Revision  {
+pub struct Revision {
     /// <p>The repository name.</p>
     #[doc(hidden)]
     pub repository_name: std::option::Option<std::string::String>,
@@ -22,23 +22,23 @@ pub struct Revision  {
 }
 impl Revision {
     /// <p>The repository name.</p>
-    pub fn repository_name(&self) -> std::option::Option<& str> {
+    pub fn repository_name(&self) -> std::option::Option<&str> {
         self.repository_name.as_deref()
     }
     /// <p>The repository provider.</p>
-    pub fn repository_provider(&self) -> std::option::Option<& crate::types::RepositoryProvider> {
+    pub fn repository_provider(&self) -> std::option::Option<&crate::types::RepositoryProvider> {
         self.repository_provider.as_ref()
     }
     /// <p>The secure hash algorithm (SHA) hash for the revision.</p>
-    pub fn sha(&self) -> std::option::Option<& str> {
+    pub fn sha(&self) -> std::option::Option<&str> {
         self.sha.as_deref()
     }
     /// <p>The repository directory changed by a commit and push that activated the sync attempt.</p>
-    pub fn directory(&self) -> std::option::Option<& str> {
+    pub fn directory(&self) -> std::option::Option<&str> {
         self.directory.as_deref()
     }
     /// <p>The repository branch.</p>
-    pub fn branch(&self) -> std::option::Option<& str> {
+    pub fn branch(&self) -> std::option::Option<&str> {
         self.branch.as_deref()
     }
 }
@@ -67,7 +67,8 @@ impl RevisionBuilder {
     }
     /// <p>The repository name.</p>
     pub fn set_repository_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.repository_name = input; self
+        self.repository_name = input;
+        self
     }
     /// <p>The repository provider.</p>
     pub fn repository_provider(mut self, input: crate::types::RepositoryProvider) -> Self {
@@ -75,8 +76,12 @@ impl RevisionBuilder {
         self
     }
     /// <p>The repository provider.</p>
-    pub fn set_repository_provider(mut self, input: std::option::Option<crate::types::RepositoryProvider>) -> Self {
-        self.repository_provider = input; self
+    pub fn set_repository_provider(
+        mut self,
+        input: std::option::Option<crate::types::RepositoryProvider>,
+    ) -> Self {
+        self.repository_provider = input;
+        self
     }
     /// <p>The secure hash algorithm (SHA) hash for the revision.</p>
     pub fn sha(mut self, input: impl Into<std::string::String>) -> Self {
@@ -85,7 +90,8 @@ impl RevisionBuilder {
     }
     /// <p>The secure hash algorithm (SHA) hash for the revision.</p>
     pub fn set_sha(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.sha = input; self
+        self.sha = input;
+        self
     }
     /// <p>The repository directory changed by a commit and push that activated the sync attempt.</p>
     pub fn directory(mut self, input: impl Into<std::string::String>) -> Self {
@@ -94,7 +100,8 @@ impl RevisionBuilder {
     }
     /// <p>The repository directory changed by a commit and push that activated the sync attempt.</p>
     pub fn set_directory(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.directory = input; self
+        self.directory = input;
+        self
     }
     /// <p>The repository branch.</p>
     pub fn branch(mut self, input: impl Into<std::string::String>) -> Self {
@@ -103,22 +110,17 @@ impl RevisionBuilder {
     }
     /// <p>The repository branch.</p>
     pub fn set_branch(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.branch = input; self
+        self.branch = input;
+        self
     }
     /// Consumes the builder and constructs a [`Revision`](crate::types::Revision).
     pub fn build(self) -> crate::types::Revision {
         crate::types::Revision {
-            repository_name: self.repository_name
-            ,
-            repository_provider: self.repository_provider
-            ,
-            sha: self.sha
-            ,
-            directory: self.directory
-            ,
-            branch: self.branch
-            ,
+            repository_name: self.repository_name,
+            repository_provider: self.repository_provider,
+            sha: self.sha,
+            directory: self.directory,
+            branch: self.branch,
         }
     }
 }
-

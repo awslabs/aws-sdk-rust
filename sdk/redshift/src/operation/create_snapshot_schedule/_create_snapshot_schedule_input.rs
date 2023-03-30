@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateSnapshotScheduleInput  {
+pub struct CreateSnapshotScheduleInput {
     /// <p>The definition of the snapshot schedule. The definition is made up of schedule expressions, for example "cron(30 12 *)" or "rate(12 hours)". </p>
     #[doc(hidden)]
     pub schedule_definitions: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -24,19 +24,19 @@ pub struct CreateSnapshotScheduleInput  {
 }
 impl CreateSnapshotScheduleInput {
     /// <p>The definition of the snapshot schedule. The definition is made up of schedule expressions, for example "cron(30 12 *)" or "rate(12 hours)". </p>
-    pub fn schedule_definitions(&self) -> std::option::Option<& [std::string::String]> {
+    pub fn schedule_definitions(&self) -> std::option::Option<&[std::string::String]> {
         self.schedule_definitions.as_deref()
     }
     /// <p>A unique identifier for a snapshot schedule. Only alphanumeric characters are allowed for the identifier.</p>
-    pub fn schedule_identifier(&self) -> std::option::Option<& str> {
+    pub fn schedule_identifier(&self) -> std::option::Option<&str> {
         self.schedule_identifier.as_deref()
     }
     /// <p>The description of the snapshot schedule.</p>
-    pub fn schedule_description(&self) -> std::option::Option<& str> {
+    pub fn schedule_description(&self) -> std::option::Option<&str> {
         self.schedule_description.as_deref()
     }
     /// <p>An optional set of tags you can use to search for the schedule.</p>
-    pub fn tags(&self) -> std::option::Option<& [crate::types::Tag]> {
+    pub fn tags(&self) -> std::option::Option<&[crate::types::Tag]> {
         self.tags.as_deref()
     }
     /// <p></p>
@@ -50,7 +50,9 @@ impl CreateSnapshotScheduleInput {
 }
 impl CreateSnapshotScheduleInput {
     /// Creates a new builder-style object to manufacture [`CreateSnapshotScheduleInput`](crate::operation::create_snapshot_schedule::CreateSnapshotScheduleInput).
-    pub fn builder() -> crate::operation::create_snapshot_schedule::builders::CreateSnapshotScheduleInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::create_snapshot_schedule::builders::CreateSnapshotScheduleInputBuilder
+    {
         crate::operation::create_snapshot_schedule::builders::CreateSnapshotScheduleInputBuilder::default()
     }
 }
@@ -74,13 +76,17 @@ impl CreateSnapshotScheduleInputBuilder {
     /// <p>The definition of the snapshot schedule. The definition is made up of schedule expressions, for example "cron(30 12 *)" or "rate(12 hours)". </p>
     pub fn schedule_definitions(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.schedule_definitions.unwrap_or_default();
-                        v.push(input.into());
-                        self.schedule_definitions = Some(v);
-                        self
+        v.push(input.into());
+        self.schedule_definitions = Some(v);
+        self
     }
     /// <p>The definition of the snapshot schedule. The definition is made up of schedule expressions, for example "cron(30 12 *)" or "rate(12 hours)". </p>
-    pub fn set_schedule_definitions(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-        self.schedule_definitions = input; self
+    pub fn set_schedule_definitions(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
+        self.schedule_definitions = input;
+        self
     }
     /// <p>A unique identifier for a snapshot schedule. Only alphanumeric characters are allowed for the identifier.</p>
     pub fn schedule_identifier(mut self, input: impl Into<std::string::String>) -> Self {
@@ -88,8 +94,12 @@ impl CreateSnapshotScheduleInputBuilder {
         self
     }
     /// <p>A unique identifier for a snapshot schedule. Only alphanumeric characters are allowed for the identifier.</p>
-    pub fn set_schedule_identifier(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.schedule_identifier = input; self
+    pub fn set_schedule_identifier(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.schedule_identifier = input;
+        self
     }
     /// <p>The description of the snapshot schedule.</p>
     pub fn schedule_description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -97,8 +107,12 @@ impl CreateSnapshotScheduleInputBuilder {
         self
     }
     /// <p>The description of the snapshot schedule.</p>
-    pub fn set_schedule_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.schedule_description = input; self
+    pub fn set_schedule_description(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.schedule_description = input;
+        self
     }
     /// Appends an item to `tags`.
     ///
@@ -107,13 +121,17 @@ impl CreateSnapshotScheduleInputBuilder {
     /// <p>An optional set of tags you can use to search for the schedule.</p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
-                        v.push(input);
-                        self.tags = Some(v);
-                        self
+        v.push(input);
+        self.tags = Some(v);
+        self
     }
     /// <p>An optional set of tags you can use to search for the schedule.</p>
-    pub fn set_tags(mut self, input: std::option::Option<std::vec::Vec<crate::types::Tag>>) -> Self {
-        self.tags = input; self
+    pub fn set_tags(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::Tag>>,
+    ) -> Self {
+        self.tags = input;
+        self
     }
     /// <p></p>
     pub fn dry_run(mut self, input: bool) -> Self {
@@ -122,7 +140,8 @@ impl CreateSnapshotScheduleInputBuilder {
     }
     /// <p></p>
     pub fn set_dry_run(mut self, input: std::option::Option<bool>) -> Self {
-        self.dry_run = input; self
+        self.dry_run = input;
+        self
     }
     /// <p></p>
     pub fn next_invocations(mut self, input: i32) -> Self {
@@ -131,26 +150,25 @@ impl CreateSnapshotScheduleInputBuilder {
     }
     /// <p></p>
     pub fn set_next_invocations(mut self, input: std::option::Option<i32>) -> Self {
-        self.next_invocations = input; self
+        self.next_invocations = input;
+        self
     }
     /// Consumes the builder and constructs a [`CreateSnapshotScheduleInput`](crate::operation::create_snapshot_schedule::CreateSnapshotScheduleInput).
-    pub fn build(self) -> Result<crate::operation::create_snapshot_schedule::CreateSnapshotScheduleInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::create_snapshot_schedule::CreateSnapshotScheduleInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::create_snapshot_schedule::CreateSnapshotScheduleInput {
-                schedule_definitions: self.schedule_definitions
-                ,
-                schedule_identifier: self.schedule_identifier
-                ,
-                schedule_description: self.schedule_description
-                ,
-                tags: self.tags
-                ,
-                dry_run: self.dry_run
-                ,
-                next_invocations: self.next_invocations
-                ,
-            }
+                schedule_definitions: self.schedule_definitions,
+                schedule_identifier: self.schedule_identifier,
+                schedule_description: self.schedule_description,
+                tags: self.tags,
+                dry_run: self.dry_run,
+                next_invocations: self.next_invocations,
+            },
         )
     }
 }
-

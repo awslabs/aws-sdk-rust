@@ -3,14 +3,17 @@
 /// <p>Discovery configuration associated to the workload.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct WorkloadDiscoveryConfig  {
+pub struct WorkloadDiscoveryConfig {
     /// <p>Discovery integration status in respect to Trusted Advisor for the workload.</p>
     #[doc(hidden)]
-    pub trusted_advisor_integration_status: std::option::Option<crate::types::TrustedAdvisorIntegrationStatus>,
+    pub trusted_advisor_integration_status:
+        std::option::Option<crate::types::TrustedAdvisorIntegrationStatus>,
 }
 impl WorkloadDiscoveryConfig {
     /// <p>Discovery integration status in respect to Trusted Advisor for the workload.</p>
-    pub fn trusted_advisor_integration_status(&self) -> std::option::Option<& crate::types::TrustedAdvisorIntegrationStatus> {
+    pub fn trusted_advisor_integration_status(
+        &self,
+    ) -> std::option::Option<&crate::types::TrustedAdvisorIntegrationStatus> {
         self.trusted_advisor_integration_status.as_ref()
     }
 }
@@ -25,24 +28,30 @@ impl WorkloadDiscoveryConfig {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct WorkloadDiscoveryConfigBuilder {
-    pub(crate) trusted_advisor_integration_status: std::option::Option<crate::types::TrustedAdvisorIntegrationStatus>,
+    pub(crate) trusted_advisor_integration_status:
+        std::option::Option<crate::types::TrustedAdvisorIntegrationStatus>,
 }
 impl WorkloadDiscoveryConfigBuilder {
     /// <p>Discovery integration status in respect to Trusted Advisor for the workload.</p>
-    pub fn trusted_advisor_integration_status(mut self, input: crate::types::TrustedAdvisorIntegrationStatus) -> Self {
+    pub fn trusted_advisor_integration_status(
+        mut self,
+        input: crate::types::TrustedAdvisorIntegrationStatus,
+    ) -> Self {
         self.trusted_advisor_integration_status = Some(input);
         self
     }
     /// <p>Discovery integration status in respect to Trusted Advisor for the workload.</p>
-    pub fn set_trusted_advisor_integration_status(mut self, input: std::option::Option<crate::types::TrustedAdvisorIntegrationStatus>) -> Self {
-        self.trusted_advisor_integration_status = input; self
+    pub fn set_trusted_advisor_integration_status(
+        mut self,
+        input: std::option::Option<crate::types::TrustedAdvisorIntegrationStatus>,
+    ) -> Self {
+        self.trusted_advisor_integration_status = input;
+        self
     }
     /// Consumes the builder and constructs a [`WorkloadDiscoveryConfig`](crate::types::WorkloadDiscoveryConfig).
     pub fn build(self) -> crate::types::WorkloadDiscoveryConfig {
         crate::types::WorkloadDiscoveryConfig {
-            trusted_advisor_integration_status: self.trusted_advisor_integration_status
-            ,
+            trusted_advisor_integration_status: self.trusted_advisor_integration_status,
         }
     }
 }
-

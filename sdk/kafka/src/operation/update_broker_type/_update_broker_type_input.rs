@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateBrokerTypeInput  {
+pub struct UpdateBrokerTypeInput {
     /// <p>The Amazon Resource Name (ARN) that uniquely identifies the cluster.</p>
     #[doc(hidden)]
     pub cluster_arn: std::option::Option<std::string::String>,
@@ -15,21 +15,22 @@ pub struct UpdateBrokerTypeInput  {
 }
 impl UpdateBrokerTypeInput {
     /// <p>The Amazon Resource Name (ARN) that uniquely identifies the cluster.</p>
-    pub fn cluster_arn(&self) -> std::option::Option<& str> {
+    pub fn cluster_arn(&self) -> std::option::Option<&str> {
         self.cluster_arn.as_deref()
     }
     /// <p>The cluster version that you want to change. After this operation completes successfully, the cluster will have a new version.</p>
-    pub fn current_version(&self) -> std::option::Option<& str> {
+    pub fn current_version(&self) -> std::option::Option<&str> {
         self.current_version.as_deref()
     }
     /// <p>The Amazon MSK broker type that you want all of the brokers in this cluster to be.</p>
-    pub fn target_instance_type(&self) -> std::option::Option<& str> {
+    pub fn target_instance_type(&self) -> std::option::Option<&str> {
         self.target_instance_type.as_deref()
     }
 }
 impl UpdateBrokerTypeInput {
     /// Creates a new builder-style object to manufacture [`UpdateBrokerTypeInput`](crate::operation::update_broker_type::UpdateBrokerTypeInput).
-    pub fn builder() -> crate::operation::update_broker_type::builders::UpdateBrokerTypeInputBuilder {
+    pub fn builder() -> crate::operation::update_broker_type::builders::UpdateBrokerTypeInputBuilder
+    {
         crate::operation::update_broker_type::builders::UpdateBrokerTypeInputBuilder::default()
     }
 }
@@ -50,7 +51,8 @@ impl UpdateBrokerTypeInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) that uniquely identifies the cluster.</p>
     pub fn set_cluster_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.cluster_arn = input; self
+        self.cluster_arn = input;
+        self
     }
     /// <p>The cluster version that you want to change. After this operation completes successfully, the cluster will have a new version.</p>
     pub fn current_version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -59,7 +61,8 @@ impl UpdateBrokerTypeInputBuilder {
     }
     /// <p>The cluster version that you want to change. After this operation completes successfully, the cluster will have a new version.</p>
     pub fn set_current_version(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.current_version = input; self
+        self.current_version = input;
+        self
     }
     /// <p>The Amazon MSK broker type that you want all of the brokers in this cluster to be.</p>
     pub fn target_instance_type(mut self, input: impl Into<std::string::String>) -> Self {
@@ -67,21 +70,26 @@ impl UpdateBrokerTypeInputBuilder {
         self
     }
     /// <p>The Amazon MSK broker type that you want all of the brokers in this cluster to be.</p>
-    pub fn set_target_instance_type(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.target_instance_type = input; self
+    pub fn set_target_instance_type(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.target_instance_type = input;
+        self
     }
     /// Consumes the builder and constructs a [`UpdateBrokerTypeInput`](crate::operation::update_broker_type::UpdateBrokerTypeInput).
-    pub fn build(self) -> Result<crate::operation::update_broker_type::UpdateBrokerTypeInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::update_broker_type::UpdateBrokerTypeInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::update_broker_type::UpdateBrokerTypeInput {
-                cluster_arn: self.cluster_arn
-                ,
-                current_version: self.current_version
-                ,
-                target_instance_type: self.target_instance_type
-                ,
-            }
+                cluster_arn: self.cluster_arn,
+                current_version: self.current_version,
+                target_instance_type: self.target_instance_type,
+            },
         )
     }
 }
-

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListModelPackagingJobsInput  {
+pub struct ListModelPackagingJobsInput {
     /// <p> The name of the project for which you want to list the model packaging jobs. </p>
     #[doc(hidden)]
     pub project_name: std::option::Option<std::string::String>,
@@ -15,11 +15,11 @@ pub struct ListModelPackagingJobsInput  {
 }
 impl ListModelPackagingJobsInput {
     /// <p> The name of the project for which you want to list the model packaging jobs. </p>
-    pub fn project_name(&self) -> std::option::Option<& str> {
+    pub fn project_name(&self) -> std::option::Option<&str> {
         self.project_name.as_deref()
     }
     /// <p>If the previous response was incomplete (because there is more results to retrieve), Amazon Lookout for Vision returns a pagination token in the response. You can use this pagination token to retrieve the next set of results. </p>
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
     /// <p>The maximum number of results to return per paginated call. The largest value you can specify is 100. If you specify a value greater than 100, a ValidationException error occurs. The default value is 100. </p>
@@ -29,7 +29,9 @@ impl ListModelPackagingJobsInput {
 }
 impl ListModelPackagingJobsInput {
     /// Creates a new builder-style object to manufacture [`ListModelPackagingJobsInput`](crate::operation::list_model_packaging_jobs::ListModelPackagingJobsInput).
-    pub fn builder() -> crate::operation::list_model_packaging_jobs::builders::ListModelPackagingJobsInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::list_model_packaging_jobs::builders::ListModelPackagingJobsInputBuilder
+    {
         crate::operation::list_model_packaging_jobs::builders::ListModelPackagingJobsInputBuilder::default()
     }
 }
@@ -50,7 +52,8 @@ impl ListModelPackagingJobsInputBuilder {
     }
     /// <p> The name of the project for which you want to list the model packaging jobs. </p>
     pub fn set_project_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.project_name = input; self
+        self.project_name = input;
+        self
     }
     /// <p>If the previous response was incomplete (because there is more results to retrieve), Amazon Lookout for Vision returns a pagination token in the response. You can use this pagination token to retrieve the next set of results. </p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -59,7 +62,8 @@ impl ListModelPackagingJobsInputBuilder {
     }
     /// <p>If the previous response was incomplete (because there is more results to retrieve), Amazon Lookout for Vision returns a pagination token in the response. You can use this pagination token to retrieve the next set of results. </p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input; self
+        self.next_token = input;
+        self
     }
     /// <p>The maximum number of results to return per paginated call. The largest value you can specify is 100. If you specify a value greater than 100, a ValidationException error occurs. The default value is 100. </p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -68,20 +72,22 @@ impl ListModelPackagingJobsInputBuilder {
     }
     /// <p>The maximum number of results to return per paginated call. The largest value you can specify is 100. If you specify a value greater than 100, a ValidationException error occurs. The default value is 100. </p>
     pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_results = input; self
+        self.max_results = input;
+        self
     }
     /// Consumes the builder and constructs a [`ListModelPackagingJobsInput`](crate::operation::list_model_packaging_jobs::ListModelPackagingJobsInput).
-    pub fn build(self) -> Result<crate::operation::list_model_packaging_jobs::ListModelPackagingJobsInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::list_model_packaging_jobs::ListModelPackagingJobsInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::list_model_packaging_jobs::ListModelPackagingJobsInput {
-                project_name: self.project_name
-                ,
-                next_token: self.next_token
-                ,
-                max_results: self.max_results
-                ,
-            }
+                project_name: self.project_name,
+                next_token: self.next_token,
+                max_results: self.max_results,
+            },
         )
     }
 }
-

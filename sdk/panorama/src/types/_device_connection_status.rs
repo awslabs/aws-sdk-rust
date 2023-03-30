@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-/// 
+///
 /// Here is an example of how you can make a match expression forward-compatible:
-/// 
+///
 /// ```text
 /// # let deviceconnectionstatus = unimplemented!();
 /// match deviceconnectionstatus {
@@ -33,14 +33,22 @@
 /// Specifically, when `deviceconnectionstatus` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `DeviceConnectionStatus::NewFeature` also yielding `"NewFeature"`.
-/// 
+///
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
 pub enum DeviceConnectionStatus {
     #[allow(missing_docs)] // documentation missing in model
     AwaitingCredentials,
@@ -53,47 +61,54 @@ pub enum DeviceConnectionStatus {
     #[allow(missing_docs)] // documentation missing in model
     Online,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::primitives::UnknownVariantValue)
+    Unknown(crate::primitives::UnknownVariantValue),
 }
 impl std::convert::From<&str> for DeviceConnectionStatus {
-                fn from(s: &str) -> Self {
-                    match s {
-                        "AWAITING_CREDENTIALS" => DeviceConnectionStatus::AwaitingCredentials,
-"ERROR" => DeviceConnectionStatus::Error,
-"NOT_AVAILABLE" => DeviceConnectionStatus::NotAvailable,
-"OFFLINE" => DeviceConnectionStatus::Offline,
-"ONLINE" => DeviceConnectionStatus::Online,
-other => DeviceConnectionStatus::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
-                    }
-                }
-            }
-impl std::str::FromStr for DeviceConnectionStatus {
-                type Err = std::convert::Infallible;
-
-                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-                    Ok(DeviceConnectionStatus::from(s))
-                }
-            }
-impl DeviceConnectionStatus {
-                /// Returns the `&str` value of the enum member.
-                pub fn as_str(&self) -> &str {
-                    match self {
-    DeviceConnectionStatus::AwaitingCredentials => "AWAITING_CREDENTIALS",
-    DeviceConnectionStatus::Error => "ERROR",
-    DeviceConnectionStatus::NotAvailable => "NOT_AVAILABLE",
-    DeviceConnectionStatus::Offline => "OFFLINE",
-    DeviceConnectionStatus::Online => "ONLINE",
-    DeviceConnectionStatus::Unknown(value) => value.as_str()
+    fn from(s: &str) -> Self {
+        match s {
+            "AWAITING_CREDENTIALS" => DeviceConnectionStatus::AwaitingCredentials,
+            "ERROR" => DeviceConnectionStatus::Error,
+            "NOT_AVAILABLE" => DeviceConnectionStatus::NotAvailable,
+            "OFFLINE" => DeviceConnectionStatus::Offline,
+            "ONLINE" => DeviceConnectionStatus::Online,
+            other => DeviceConnectionStatus::Unknown(crate::primitives::UnknownVariantValue(
+                other.to_owned(),
+            )),
+        }
+    }
 }
-                }
-                /// Returns all the `&str` representations of the enum members.
-                pub const fn values() -> &'static [&'static str] {
-                    &["AWAITING_CREDENTIALS", "ERROR", "NOT_AVAILABLE", "OFFLINE", "ONLINE"]
-                }
-            }
-impl AsRef<str> for DeviceConnectionStatus {
-                fn as_ref(&self) -> &str {
-                    self.as_str()
-                }
-            }
+impl std::str::FromStr for DeviceConnectionStatus {
+    type Err = std::convert::Infallible;
 
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(DeviceConnectionStatus::from(s))
+    }
+}
+impl DeviceConnectionStatus {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            DeviceConnectionStatus::AwaitingCredentials => "AWAITING_CREDENTIALS",
+            DeviceConnectionStatus::Error => "ERROR",
+            DeviceConnectionStatus::NotAvailable => "NOT_AVAILABLE",
+            DeviceConnectionStatus::Offline => "OFFLINE",
+            DeviceConnectionStatus::Online => "ONLINE",
+            DeviceConnectionStatus::Unknown(value) => value.as_str(),
+        }
+    }
+    /// Returns all the `&str` representations of the enum members.
+    pub const fn values() -> &'static [&'static str] {
+        &[
+            "AWAITING_CREDENTIALS",
+            "ERROR",
+            "NOT_AVAILABLE",
+            "OFFLINE",
+            "ONLINE",
+        ]
+    }
+}
+impl AsRef<str> for DeviceConnectionStatus {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}

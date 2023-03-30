@@ -2,27 +2,28 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetInvitationsCountInput  {
-}
+pub struct GetInvitationsCountInput {}
 impl GetInvitationsCountInput {
     /// Creates a new builder-style object to manufacture [`GetInvitationsCountInput`](crate::operation::get_invitations_count::GetInvitationsCountInput).
-    pub fn builder() -> crate::operation::get_invitations_count::builders::GetInvitationsCountInputBuilder {
-        crate::operation::get_invitations_count::builders::GetInvitationsCountInputBuilder::default()
+    pub fn builder(
+    ) -> crate::operation::get_invitations_count::builders::GetInvitationsCountInputBuilder {
+        crate::operation::get_invitations_count::builders::GetInvitationsCountInputBuilder::default(
+        )
     }
 }
 
 /// A builder for [`GetInvitationsCountInput`](crate::operation::get_invitations_count::GetInvitationsCountInput).
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-pub struct GetInvitationsCountInputBuilder {
-}
+pub struct GetInvitationsCountInputBuilder {}
 impl GetInvitationsCountInputBuilder {
     /// Consumes the builder and constructs a [`GetInvitationsCountInput`](crate::operation::get_invitations_count::GetInvitationsCountInput).
-    pub fn build(self) -> Result<crate::operation::get_invitations_count::GetInvitationsCountInput, aws_smithy_http::operation::error::BuildError> {
-        Ok(
-            crate::operation::get_invitations_count::GetInvitationsCountInput {
-            }
-        )
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::get_invitations_count::GetInvitationsCountInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        Ok(crate::operation::get_invitations_count::GetInvitationsCountInput {})
     }
 }
-

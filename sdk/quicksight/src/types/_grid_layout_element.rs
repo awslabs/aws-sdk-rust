@@ -3,7 +3,7 @@
 /// <p>An element within a grid layout.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GridLayoutElement  {
+pub struct GridLayoutElement {
     /// <p>A unique identifier for an element within a grid layout.</p>
     #[doc(hidden)]
     pub element_id: std::option::Option<std::string::String>,
@@ -25,11 +25,11 @@ pub struct GridLayoutElement  {
 }
 impl GridLayoutElement {
     /// <p>A unique identifier for an element within a grid layout.</p>
-    pub fn element_id(&self) -> std::option::Option<& str> {
+    pub fn element_id(&self) -> std::option::Option<&str> {
         self.element_id.as_deref()
     }
     /// <p>The type of element.</p>
-    pub fn element_type(&self) -> std::option::Option<& crate::types::LayoutElementType> {
+    pub fn element_type(&self) -> std::option::Option<&crate::types::LayoutElementType> {
         self.element_type.as_ref()
     }
     /// <p>The column index for the upper left corner of an element.</p>
@@ -75,7 +75,8 @@ impl GridLayoutElementBuilder {
     }
     /// <p>A unique identifier for an element within a grid layout.</p>
     pub fn set_element_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.element_id = input; self
+        self.element_id = input;
+        self
     }
     /// <p>The type of element.</p>
     pub fn element_type(mut self, input: crate::types::LayoutElementType) -> Self {
@@ -83,8 +84,12 @@ impl GridLayoutElementBuilder {
         self
     }
     /// <p>The type of element.</p>
-    pub fn set_element_type(mut self, input: std::option::Option<crate::types::LayoutElementType>) -> Self {
-        self.element_type = input; self
+    pub fn set_element_type(
+        mut self,
+        input: std::option::Option<crate::types::LayoutElementType>,
+    ) -> Self {
+        self.element_type = input;
+        self
     }
     /// <p>The column index for the upper left corner of an element.</p>
     pub fn column_index(mut self, input: i32) -> Self {
@@ -93,7 +98,8 @@ impl GridLayoutElementBuilder {
     }
     /// <p>The column index for the upper left corner of an element.</p>
     pub fn set_column_index(mut self, input: std::option::Option<i32>) -> Self {
-        self.column_index = input; self
+        self.column_index = input;
+        self
     }
     /// <p>The width of a grid element expressed as a number of grid columns.</p>
     pub fn column_span(mut self, input: i32) -> Self {
@@ -102,7 +108,8 @@ impl GridLayoutElementBuilder {
     }
     /// <p>The width of a grid element expressed as a number of grid columns.</p>
     pub fn set_column_span(mut self, input: std::option::Option<i32>) -> Self {
-        self.column_span = input; self
+        self.column_span = input;
+        self
     }
     /// <p>The row index for the upper left corner of an element.</p>
     pub fn row_index(mut self, input: i32) -> Self {
@@ -111,7 +118,8 @@ impl GridLayoutElementBuilder {
     }
     /// <p>The row index for the upper left corner of an element.</p>
     pub fn set_row_index(mut self, input: std::option::Option<i32>) -> Self {
-        self.row_index = input; self
+        self.row_index = input;
+        self
     }
     /// <p>The height of a grid element expressed as a number of grid rows.</p>
     pub fn row_span(mut self, input: i32) -> Self {
@@ -120,24 +128,18 @@ impl GridLayoutElementBuilder {
     }
     /// <p>The height of a grid element expressed as a number of grid rows.</p>
     pub fn set_row_span(mut self, input: std::option::Option<i32>) -> Self {
-        self.row_span = input; self
+        self.row_span = input;
+        self
     }
     /// Consumes the builder and constructs a [`GridLayoutElement`](crate::types::GridLayoutElement).
     pub fn build(self) -> crate::types::GridLayoutElement {
         crate::types::GridLayoutElement {
-            element_id: self.element_id
-            ,
-            element_type: self.element_type
-            ,
-            column_index: self.column_index
-            ,
-            column_span: self.column_span
-            ,
-            row_index: self.row_index
-            ,
-            row_span: self.row_span
-            ,
+            element_id: self.element_id,
+            element_type: self.element_type,
+            column_index: self.column_index,
+            column_span: self.column_span,
+            row_index: self.row_index,
+            row_span: self.row_span,
         }
     }
 }
-

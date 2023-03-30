@@ -36,4 +36,3 @@ pub mod builders;
 
 /// Error types that Amazon Connect Contact Lens can respond with.
 pub mod error;
-

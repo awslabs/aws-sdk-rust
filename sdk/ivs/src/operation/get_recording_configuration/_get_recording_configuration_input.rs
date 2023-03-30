@@ -2,20 +2,20 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetRecordingConfigurationInput  {
+pub struct GetRecordingConfigurationInput {
     /// <p>ARN of the recording configuration to be retrieved.</p>
     #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
 }
 impl GetRecordingConfigurationInput {
     /// <p>ARN of the recording configuration to be retrieved.</p>
-    pub fn arn(&self) -> std::option::Option<& str> {
+    pub fn arn(&self) -> std::option::Option<&str> {
         self.arn.as_deref()
     }
 }
 impl GetRecordingConfigurationInput {
     /// Creates a new builder-style object to manufacture [`GetRecordingConfigurationInput`](crate::operation::get_recording_configuration::GetRecordingConfigurationInput).
-    pub fn builder() -> crate::operation::get_recording_configuration::builders::GetRecordingConfigurationInputBuilder {
+    pub fn builder() -> crate::operation::get_recording_configuration::builders::GetRecordingConfigurationInputBuilder{
         crate::operation::get_recording_configuration::builders::GetRecordingConfigurationInputBuilder::default()
     }
 }
@@ -34,16 +34,20 @@ impl GetRecordingConfigurationInputBuilder {
     }
     /// <p>ARN of the recording configuration to be retrieved.</p>
     pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.arn = input; self
+        self.arn = input;
+        self
     }
     /// Consumes the builder and constructs a [`GetRecordingConfigurationInput`](crate::operation::get_recording_configuration::GetRecordingConfigurationInput).
-    pub fn build(self) -> Result<crate::operation::get_recording_configuration::GetRecordingConfigurationInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::get_recording_configuration::GetRecordingConfigurationInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::get_recording_configuration::GetRecordingConfigurationInput {
-                arn: self.arn
-                ,
-            }
+                arn: self.arn,
+            },
         )
     }
 }
-

@@ -2,11 +2,11 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeEndpointsInput  {
-}
+pub struct DescribeEndpointsInput {}
 impl DescribeEndpointsInput {
     /// Creates a new builder-style object to manufacture [`DescribeEndpointsInput`](crate::operation::describe_endpoints::DescribeEndpointsInput).
-    pub fn builder() -> crate::operation::describe_endpoints::builders::DescribeEndpointsInputBuilder {
+    pub fn builder() -> crate::operation::describe_endpoints::builders::DescribeEndpointsInputBuilder
+    {
         crate::operation::describe_endpoints::builders::DescribeEndpointsInputBuilder::default()
     }
 }
@@ -14,15 +14,15 @@ impl DescribeEndpointsInput {
 /// A builder for [`DescribeEndpointsInput`](crate::operation::describe_endpoints::DescribeEndpointsInput).
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-pub struct DescribeEndpointsInputBuilder {
-}
+pub struct DescribeEndpointsInputBuilder {}
 impl DescribeEndpointsInputBuilder {
     /// Consumes the builder and constructs a [`DescribeEndpointsInput`](crate::operation::describe_endpoints::DescribeEndpointsInput).
-    pub fn build(self) -> Result<crate::operation::describe_endpoints::DescribeEndpointsInput, aws_smithy_http::operation::error::BuildError> {
-        Ok(
-            crate::operation::describe_endpoints::DescribeEndpointsInput {
-            }
-        )
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::describe_endpoints::DescribeEndpointsInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        Ok(crate::operation::describe_endpoints::DescribeEndpointsInput {})
     }
 }
-

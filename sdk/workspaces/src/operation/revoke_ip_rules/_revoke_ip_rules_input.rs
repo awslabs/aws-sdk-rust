@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct RevokeIpRulesInput  {
+pub struct RevokeIpRulesInput {
     /// <p>The identifier of the group.</p>
     #[doc(hidden)]
     pub group_id: std::option::Option<std::string::String>,
@@ -12,11 +12,11 @@ pub struct RevokeIpRulesInput  {
 }
 impl RevokeIpRulesInput {
     /// <p>The identifier of the group.</p>
-    pub fn group_id(&self) -> std::option::Option<& str> {
+    pub fn group_id(&self) -> std::option::Option<&str> {
         self.group_id.as_deref()
     }
     /// <p>The rules to remove from the group.</p>
-    pub fn user_rules(&self) -> std::option::Option<& [std::string::String]> {
+    pub fn user_rules(&self) -> std::option::Option<&[std::string::String]> {
         self.user_rules.as_deref()
     }
 }
@@ -42,7 +42,8 @@ impl RevokeIpRulesInputBuilder {
     }
     /// <p>The identifier of the group.</p>
     pub fn set_group_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.group_id = input; self
+        self.group_id = input;
+        self
     }
     /// Appends an item to `user_rules`.
     ///
@@ -51,24 +52,28 @@ impl RevokeIpRulesInputBuilder {
     /// <p>The rules to remove from the group.</p>
     pub fn user_rules(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.user_rules.unwrap_or_default();
-                        v.push(input.into());
-                        self.user_rules = Some(v);
-                        self
+        v.push(input.into());
+        self.user_rules = Some(v);
+        self
     }
     /// <p>The rules to remove from the group.</p>
-    pub fn set_user_rules(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-        self.user_rules = input; self
+    pub fn set_user_rules(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
+        self.user_rules = input;
+        self
     }
     /// Consumes the builder and constructs a [`RevokeIpRulesInput`](crate::operation::revoke_ip_rules::RevokeIpRulesInput).
-    pub fn build(self) -> Result<crate::operation::revoke_ip_rules::RevokeIpRulesInput, aws_smithy_http::operation::error::BuildError> {
-        Ok(
-            crate::operation::revoke_ip_rules::RevokeIpRulesInput {
-                group_id: self.group_id
-                ,
-                user_rules: self.user_rules
-                ,
-            }
-        )
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::revoke_ip_rules::RevokeIpRulesInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        Ok(crate::operation::revoke_ip_rules::RevokeIpRulesInput {
+            group_id: self.group_id,
+            user_rules: self.user_rules,
+        })
     }
 }
-

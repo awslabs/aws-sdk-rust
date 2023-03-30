@@ -2,10 +2,11 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListLabelingJobsOutput  {
+pub struct ListLabelingJobsOutput {
     /// <p>An array of <code>LabelingJobSummary</code> objects, each describing a labeling job.</p>
     #[doc(hidden)]
-    pub labeling_job_summary_list: std::option::Option<std::vec::Vec<crate::types::LabelingJobSummary>>,
+    pub labeling_job_summary_list:
+        std::option::Option<std::vec::Vec<crate::types::LabelingJobSummary>>,
     /// <p>If the response is truncated, SageMaker returns this token. To retrieve the next set of labeling jobs, use it in the subsequent request.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
@@ -13,22 +14,25 @@ pub struct ListLabelingJobsOutput  {
 }
 impl ListLabelingJobsOutput {
     /// <p>An array of <code>LabelingJobSummary</code> objects, each describing a labeling job.</p>
-    pub fn labeling_job_summary_list(&self) -> std::option::Option<& [crate::types::LabelingJobSummary]> {
+    pub fn labeling_job_summary_list(
+        &self,
+    ) -> std::option::Option<&[crate::types::LabelingJobSummary]> {
         self.labeling_job_summary_list.as_deref()
     }
     /// <p>If the response is truncated, SageMaker returns this token. To retrieve the next set of labeling jobs, use it in the subsequent request.</p>
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for ListLabelingJobsOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl ListLabelingJobsOutput {
     /// Creates a new builder-style object to manufacture [`ListLabelingJobsOutput`](crate::operation::list_labeling_jobs::ListLabelingJobsOutput).
-    pub fn builder() -> crate::operation::list_labeling_jobs::builders::ListLabelingJobsOutputBuilder {
+    pub fn builder() -> crate::operation::list_labeling_jobs::builders::ListLabelingJobsOutputBuilder
+    {
         crate::operation::list_labeling_jobs::builders::ListLabelingJobsOutputBuilder::default()
     }
 }
@@ -37,7 +41,8 @@ impl ListLabelingJobsOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct ListLabelingJobsOutputBuilder {
-    pub(crate) labeling_job_summary_list: std::option::Option<std::vec::Vec<crate::types::LabelingJobSummary>>,
+    pub(crate) labeling_job_summary_list:
+        std::option::Option<std::vec::Vec<crate::types::LabelingJobSummary>>,
     pub(crate) next_token: std::option::Option<std::string::String>,
     _request_id: Option<String>,
 }
@@ -49,13 +54,17 @@ impl ListLabelingJobsOutputBuilder {
     /// <p>An array of <code>LabelingJobSummary</code> objects, each describing a labeling job.</p>
     pub fn labeling_job_summary_list(mut self, input: crate::types::LabelingJobSummary) -> Self {
         let mut v = self.labeling_job_summary_list.unwrap_or_default();
-                        v.push(input);
-                        self.labeling_job_summary_list = Some(v);
-                        self
+        v.push(input);
+        self.labeling_job_summary_list = Some(v);
+        self
     }
     /// <p>An array of <code>LabelingJobSummary</code> objects, each describing a labeling job.</p>
-    pub fn set_labeling_job_summary_list(mut self, input: std::option::Option<std::vec::Vec<crate::types::LabelingJobSummary>>) -> Self {
-        self.labeling_job_summary_list = input; self
+    pub fn set_labeling_job_summary_list(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::LabelingJobSummary>>,
+    ) -> Self {
+        self.labeling_job_summary_list = input;
+        self
     }
     /// <p>If the response is truncated, SageMaker returns this token. To retrieve the next set of labeling jobs, use it in the subsequent request.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -64,26 +73,24 @@ impl ListLabelingJobsOutputBuilder {
     }
     /// <p>If the response is truncated, SageMaker returns this token. To retrieve the next set of labeling jobs, use it in the subsequent request.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input; self
+        self.next_token = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`ListLabelingJobsOutput`](crate::operation::list_labeling_jobs::ListLabelingJobsOutput).
     pub fn build(self) -> crate::operation::list_labeling_jobs::ListLabelingJobsOutput {
         crate::operation::list_labeling_jobs::ListLabelingJobsOutput {
-            labeling_job_summary_list: self.labeling_job_summary_list
-            ,
-            next_token: self.next_token
-            ,
+            labeling_job_summary_list: self.labeling_job_summary_list,
+            next_token: self.next_token,
             _request_id: self._request_id,
         }
     }
 }
-

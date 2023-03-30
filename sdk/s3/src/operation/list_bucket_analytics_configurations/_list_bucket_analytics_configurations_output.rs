@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListBucketAnalyticsConfigurationsOutput  {
+pub struct ListBucketAnalyticsConfigurationsOutput {
     /// <p>Indicates whether the returned list of analytics configurations is complete. A value of true indicates that the list is not complete and the NextContinuationToken will be provided for a subsequent request.</p>
     #[doc(hidden)]
     pub is_truncated: bool,
@@ -14,7 +14,8 @@ pub struct ListBucketAnalyticsConfigurationsOutput  {
     pub next_continuation_token: std::option::Option<std::string::String>,
     /// <p>The list of analytics configurations for a bucket.</p>
     #[doc(hidden)]
-    pub analytics_configuration_list: std::option::Option<std::vec::Vec<crate::types::AnalyticsConfiguration>>,
+    pub analytics_configuration_list:
+        std::option::Option<std::vec::Vec<crate::types::AnalyticsConfiguration>>,
     _extended_request_id: Option<String>,
     _request_id: Option<String>,
 }
@@ -24,31 +25,33 @@ impl ListBucketAnalyticsConfigurationsOutput {
         self.is_truncated
     }
     /// <p>The marker that is used as a starting point for this analytics configuration list response. This value is present if it was sent in the request.</p>
-    pub fn continuation_token(&self) -> std::option::Option<& str> {
+    pub fn continuation_token(&self) -> std::option::Option<&str> {
         self.continuation_token.as_deref()
     }
     /// <p> <code>NextContinuationToken</code> is sent when <code>isTruncated</code> is true, which indicates that there are more analytics configurations to list. The next request must include this <code>NextContinuationToken</code>. The token is obfuscated and is not a usable value.</p>
-    pub fn next_continuation_token(&self) -> std::option::Option<& str> {
+    pub fn next_continuation_token(&self) -> std::option::Option<&str> {
         self.next_continuation_token.as_deref()
     }
     /// <p>The list of analytics configurations for a bucket.</p>
-    pub fn analytics_configuration_list(&self) -> std::option::Option<& [crate::types::AnalyticsConfiguration]> {
+    pub fn analytics_configuration_list(
+        &self,
+    ) -> std::option::Option<&[crate::types::AnalyticsConfiguration]> {
         self.analytics_configuration_list.as_deref()
     }
 }
 impl crate::s3_request_id::RequestIdExt for ListBucketAnalyticsConfigurationsOutput {
-                                fn extended_request_id(&self) -> Option<&str> {
-                                    self._extended_request_id.as_deref()
-                                }
-                            }
+    fn extended_request_id(&self) -> Option<&str> {
+        self._extended_request_id.as_deref()
+    }
+}
 impl aws_http::request_id::RequestId for ListBucketAnalyticsConfigurationsOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl ListBucketAnalyticsConfigurationsOutput {
     /// Creates a new builder-style object to manufacture [`ListBucketAnalyticsConfigurationsOutput`](crate::operation::list_bucket_analytics_configurations::ListBucketAnalyticsConfigurationsOutput).
-    pub fn builder() -> crate::operation::list_bucket_analytics_configurations::builders::ListBucketAnalyticsConfigurationsOutputBuilder {
+    pub fn builder() -> crate::operation::list_bucket_analytics_configurations::builders::ListBucketAnalyticsConfigurationsOutputBuilder{
         crate::operation::list_bucket_analytics_configurations::builders::ListBucketAnalyticsConfigurationsOutputBuilder::default()
     }
 }
@@ -60,7 +63,8 @@ pub struct ListBucketAnalyticsConfigurationsOutputBuilder {
     pub(crate) is_truncated: std::option::Option<bool>,
     pub(crate) continuation_token: std::option::Option<std::string::String>,
     pub(crate) next_continuation_token: std::option::Option<std::string::String>,
-    pub(crate) analytics_configuration_list: std::option::Option<std::vec::Vec<crate::types::AnalyticsConfiguration>>,
+    pub(crate) analytics_configuration_list:
+        std::option::Option<std::vec::Vec<crate::types::AnalyticsConfiguration>>,
     _extended_request_id: Option<String>,
     _request_id: Option<String>,
 }
@@ -72,7 +76,8 @@ impl ListBucketAnalyticsConfigurationsOutputBuilder {
     }
     /// <p>Indicates whether the returned list of analytics configurations is complete. A value of true indicates that the list is not complete and the NextContinuationToken will be provided for a subsequent request.</p>
     pub fn set_is_truncated(mut self, input: std::option::Option<bool>) -> Self {
-        self.is_truncated = input; self
+        self.is_truncated = input;
+        self
     }
     /// <p>The marker that is used as a starting point for this analytics configuration list response. This value is present if it was sent in the request.</p>
     pub fn continuation_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -80,8 +85,12 @@ impl ListBucketAnalyticsConfigurationsOutputBuilder {
         self
     }
     /// <p>The marker that is used as a starting point for this analytics configuration list response. This value is present if it was sent in the request.</p>
-    pub fn set_continuation_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.continuation_token = input; self
+    pub fn set_continuation_token(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.continuation_token = input;
+        self
     }
     /// <p> <code>NextContinuationToken</code> is sent when <code>isTruncated</code> is true, which indicates that there are more analytics configurations to list. The next request must include this <code>NextContinuationToken</code>. The token is obfuscated and is not a usable value.</p>
     pub fn next_continuation_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -89,44 +98,58 @@ impl ListBucketAnalyticsConfigurationsOutputBuilder {
         self
     }
     /// <p> <code>NextContinuationToken</code> is sent when <code>isTruncated</code> is true, which indicates that there are more analytics configurations to list. The next request must include this <code>NextContinuationToken</code>. The token is obfuscated and is not a usable value.</p>
-    pub fn set_next_continuation_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_continuation_token = input; self
+    pub fn set_next_continuation_token(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.next_continuation_token = input;
+        self
     }
     /// Appends an item to `analytics_configuration_list`.
     ///
     /// To override the contents of this collection use [`set_analytics_configuration_list`](Self::set_analytics_configuration_list).
     ///
     /// <p>The list of analytics configurations for a bucket.</p>
-    pub fn analytics_configuration_list(mut self, input: crate::types::AnalyticsConfiguration) -> Self {
+    pub fn analytics_configuration_list(
+        mut self,
+        input: crate::types::AnalyticsConfiguration,
+    ) -> Self {
         let mut v = self.analytics_configuration_list.unwrap_or_default();
-                        v.push(input);
-                        self.analytics_configuration_list = Some(v);
-                        self
+        v.push(input);
+        self.analytics_configuration_list = Some(v);
+        self
     }
     /// <p>The list of analytics configurations for a bucket.</p>
-    pub fn set_analytics_configuration_list(mut self, input: std::option::Option<std::vec::Vec<crate::types::AnalyticsConfiguration>>) -> Self {
-        self.analytics_configuration_list = input; self
+    pub fn set_analytics_configuration_list(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::AnalyticsConfiguration>>,
+    ) -> Self {
+        self.analytics_configuration_list = input;
+        self
     }
     pub(crate) fn _extended_request_id(mut self, extended_request_id: impl Into<String>) -> Self {
-                                    self._extended_request_id = Some(extended_request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_extended_request_id(&mut self, extended_request_id: Option<String>) -> &mut Self {
-                                    self._extended_request_id = extended_request_id;
-                                    self
-                                }
+        self._extended_request_id = Some(extended_request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_extended_request_id(
+        &mut self,
+        extended_request_id: Option<String>,
+    ) -> &mut Self {
+        self._extended_request_id = extended_request_id;
+        self
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`ListBucketAnalyticsConfigurationsOutput`](crate::operation::list_bucket_analytics_configurations::ListBucketAnalyticsConfigurationsOutput).
-    pub fn build(self) -> crate::operation::list_bucket_analytics_configurations::ListBucketAnalyticsConfigurationsOutput {
+    pub fn build(self) -> crate::operation::list_bucket_analytics_configurations::ListBucketAnalyticsConfigurationsOutput{
         crate::operation::list_bucket_analytics_configurations::ListBucketAnalyticsConfigurationsOutput {
             is_truncated: self.is_truncated
                 .unwrap_or_default()
@@ -142,4 +165,3 @@ impl ListBucketAnalyticsConfigurationsOutputBuilder {
         }
     }
 }
-

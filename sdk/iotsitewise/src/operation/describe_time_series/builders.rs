@@ -4,58 +4,80 @@ pub use crate::operation::describe_time_series::_describe_time_series_output::De
 pub use crate::operation::describe_time_series::_describe_time_series_input::DescribeTimeSeriesInputBuilder;
 
 /// Fluent builder constructing a request to `DescribeTimeSeries`.
-/// 
-/// <p>Retrieves information about a time series (data stream).</p> 
-/// <p>To identify a time series, do one of the following:</p> 
-/// <ul> 
-/// <li> <p>If the time series isn't associated with an asset property, specify the <code>alias</code> of the time series.</p> </li> 
-/// <li> <p>If the time series is associated with an asset property, specify one of the following: </p> 
-/// <ul> 
-/// <li> <p>The <code>alias</code> of the time series.</p> </li> 
-/// <li> <p>The <code>assetId</code> and <code>propertyId</code> that identifies the asset property.</p> </li> 
-/// </ul> </li> 
+///
+/// <p>Retrieves information about a time series (data stream).</p>
+/// <p>To identify a time series, do one of the following:</p>
+/// <ul>
+/// <li> <p>If the time series isn't associated with an asset property, specify the <code>alias</code> of the time series.</p> </li>
+/// <li> <p>If the time series is associated with an asset property, specify one of the following: </p>
+/// <ul>
+/// <li> <p>The <code>alias</code> of the time series.</p> </li>
+/// <li> <p>The <code>assetId</code> and <code>propertyId</code> that identifies the asset property.</p> </li>
+/// </ul> </li>
 /// </ul>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeTimeSeriesFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::describe_time_series::builders::DescribeTimeSeriesInputBuilder
-            }
-impl DescribeTimeSeriesFluentBuilder  {
+    handle: std::sync::Arc<crate::client::Handle>,
+    inner: crate::operation::describe_time_series::builders::DescribeTimeSeriesInputBuilder,
+}
+impl DescribeTimeSeriesFluentBuilder {
     /// Creates a new `DescribeTimeSeries`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
-                    /// sent. The operation's inner [http::Request] can be modified as well.
-                    pub async fn customize(self) -> std::result::Result<
-                        crate::client::customize::CustomizableOperation<crate::operation::describe_time_series::DescribeTimeSeries, aws_http::retry::AwsResponseRetryClassifier,>,
-                        aws_smithy_http::result::SdkError<crate::operation::describe_time_series::DescribeTimeSeriesError>
-                    >  {
-                        let handle = self.handle.clone();
-                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-                    }
-    
-                    /// Sends the request and returns the response.
-                    ///
-                    /// If an error occurs, an `SdkError` will be returned with additional details that
-                    /// can be matched against.
-                    ///
-                    /// By default, any retryable failures will be retried twice. Retry behavior
-                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                    /// set when configuring the client.
-                    pub async fn send(self) -> std::result::Result<crate::operation::describe_time_series::DescribeTimeSeriesOutput, aws_smithy_http::result::SdkError<crate::operation::describe_time_series::DescribeTimeSeriesError>>
-                     {
-                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&self.handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        self.handle.client.call(op).await
-                    }
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle,
+            inner: Default::default(),
+        }
+    }
+
+    /// Consume this builder, creating a customizable operation that can be modified before being
+    /// sent. The operation's inner [http::Request] can be modified as well.
+    pub async fn customize(
+        self,
+    ) -> std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::describe_time_series::DescribeTimeSeries,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::result::SdkError<
+            crate::operation::describe_time_series::DescribeTimeSeriesError,
+        >,
+    > {
+        let handle = self.handle.clone();
+        let operation = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+    }
+
+    /// Sends the request and returns the response.
+    ///
+    /// If an error occurs, an `SdkError` will be returned with additional details that
+    /// can be matched against.
+    ///
+    /// By default, any retryable failures will be retried twice. Retry behavior
+    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+    /// set when configuring the client.
+    pub async fn send(
+        self,
+    ) -> std::result::Result<
+        crate::operation::describe_time_series::DescribeTimeSeriesOutput,
+        aws_smithy_http::result::SdkError<
+            crate::operation::describe_time_series::DescribeTimeSeriesError,
+        >,
+    > {
+        let op = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&self.handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        self.handle.client.call(op).await
+    }
     /// <p>The alias that identifies the time series.</p>
     pub fn alias(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.alias(input.into());
@@ -87,4 +109,3 @@ impl DescribeTimeSeriesFluentBuilder  {
         self
     }
 }
-

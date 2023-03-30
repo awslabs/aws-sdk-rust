@@ -3,7 +3,7 @@
 /// <p>Represents the input of a <code>RebootCacheCluster</code> operation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct RebootCacheClusterInput  {
+pub struct RebootCacheClusterInput {
     /// <p>The cluster identifier. This parameter is stored as a lowercase string.</p>
     #[doc(hidden)]
     pub cache_cluster_id: std::option::Option<std::string::String>,
@@ -13,17 +13,18 @@ pub struct RebootCacheClusterInput  {
 }
 impl RebootCacheClusterInput {
     /// <p>The cluster identifier. This parameter is stored as a lowercase string.</p>
-    pub fn cache_cluster_id(&self) -> std::option::Option<& str> {
+    pub fn cache_cluster_id(&self) -> std::option::Option<&str> {
         self.cache_cluster_id.as_deref()
     }
     /// <p>A list of cache node IDs to reboot. A node ID is a numeric identifier (0001, 0002, etc.). To reboot an entire cluster, specify all of the cache node IDs.</p>
-    pub fn cache_node_ids_to_reboot(&self) -> std::option::Option<& [std::string::String]> {
+    pub fn cache_node_ids_to_reboot(&self) -> std::option::Option<&[std::string::String]> {
         self.cache_node_ids_to_reboot.as_deref()
     }
 }
 impl RebootCacheClusterInput {
     /// Creates a new builder-style object to manufacture [`RebootCacheClusterInput`](crate::operation::reboot_cache_cluster::RebootCacheClusterInput).
-    pub fn builder() -> crate::operation::reboot_cache_cluster::builders::RebootCacheClusterInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::reboot_cache_cluster::builders::RebootCacheClusterInputBuilder {
         crate::operation::reboot_cache_cluster::builders::RebootCacheClusterInputBuilder::default()
     }
 }
@@ -43,7 +44,8 @@ impl RebootCacheClusterInputBuilder {
     }
     /// <p>The cluster identifier. This parameter is stored as a lowercase string.</p>
     pub fn set_cache_cluster_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.cache_cluster_id = input; self
+        self.cache_cluster_id = input;
+        self
     }
     /// Appends an item to `cache_node_ids_to_reboot`.
     ///
@@ -52,24 +54,30 @@ impl RebootCacheClusterInputBuilder {
     /// <p>A list of cache node IDs to reboot. A node ID is a numeric identifier (0001, 0002, etc.). To reboot an entire cluster, specify all of the cache node IDs.</p>
     pub fn cache_node_ids_to_reboot(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.cache_node_ids_to_reboot.unwrap_or_default();
-                        v.push(input.into());
-                        self.cache_node_ids_to_reboot = Some(v);
-                        self
+        v.push(input.into());
+        self.cache_node_ids_to_reboot = Some(v);
+        self
     }
     /// <p>A list of cache node IDs to reboot. A node ID is a numeric identifier (0001, 0002, etc.). To reboot an entire cluster, specify all of the cache node IDs.</p>
-    pub fn set_cache_node_ids_to_reboot(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-        self.cache_node_ids_to_reboot = input; self
+    pub fn set_cache_node_ids_to_reboot(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
+        self.cache_node_ids_to_reboot = input;
+        self
     }
     /// Consumes the builder and constructs a [`RebootCacheClusterInput`](crate::operation::reboot_cache_cluster::RebootCacheClusterInput).
-    pub fn build(self) -> Result<crate::operation::reboot_cache_cluster::RebootCacheClusterInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::reboot_cache_cluster::RebootCacheClusterInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::reboot_cache_cluster::RebootCacheClusterInput {
-                cache_cluster_id: self.cache_cluster_id
-                ,
-                cache_node_ids_to_reboot: self.cache_node_ids_to_reboot
-                ,
-            }
+                cache_cluster_id: self.cache_cluster_id,
+                cache_node_ids_to_reboot: self.cache_node_ids_to_reboot,
+            },
         )
     }
 }
-

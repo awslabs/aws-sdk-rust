@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateAclInput  {
+pub struct UpdateAclInput {
     /// <p>The name of the Access Control List</p>
     #[doc(hidden)]
     pub acl_name: std::option::Option<std::string::String>,
@@ -15,15 +15,15 @@ pub struct UpdateAclInput  {
 }
 impl UpdateAclInput {
     /// <p>The name of the Access Control List</p>
-    pub fn acl_name(&self) -> std::option::Option<& str> {
+    pub fn acl_name(&self) -> std::option::Option<&str> {
         self.acl_name.as_deref()
     }
     /// <p>The list of users to add to the Access Control List</p>
-    pub fn user_names_to_add(&self) -> std::option::Option<& [std::string::String]> {
+    pub fn user_names_to_add(&self) -> std::option::Option<&[std::string::String]> {
         self.user_names_to_add.as_deref()
     }
     /// <p>The list of users to remove from the Access Control List</p>
-    pub fn user_names_to_remove(&self) -> std::option::Option<& [std::string::String]> {
+    pub fn user_names_to_remove(&self) -> std::option::Option<&[std::string::String]> {
         self.user_names_to_remove.as_deref()
     }
 }
@@ -50,7 +50,8 @@ impl UpdateAclInputBuilder {
     }
     /// <p>The name of the Access Control List</p>
     pub fn set_acl_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.acl_name = input; self
+        self.acl_name = input;
+        self
     }
     /// Appends an item to `user_names_to_add`.
     ///
@@ -59,13 +60,17 @@ impl UpdateAclInputBuilder {
     /// <p>The list of users to add to the Access Control List</p>
     pub fn user_names_to_add(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.user_names_to_add.unwrap_or_default();
-                        v.push(input.into());
-                        self.user_names_to_add = Some(v);
-                        self
+        v.push(input.into());
+        self.user_names_to_add = Some(v);
+        self
     }
     /// <p>The list of users to add to the Access Control List</p>
-    pub fn set_user_names_to_add(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-        self.user_names_to_add = input; self
+    pub fn set_user_names_to_add(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
+        self.user_names_to_add = input;
+        self
     }
     /// Appends an item to `user_names_to_remove`.
     ///
@@ -74,26 +79,29 @@ impl UpdateAclInputBuilder {
     /// <p>The list of users to remove from the Access Control List</p>
     pub fn user_names_to_remove(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.user_names_to_remove.unwrap_or_default();
-                        v.push(input.into());
-                        self.user_names_to_remove = Some(v);
-                        self
+        v.push(input.into());
+        self.user_names_to_remove = Some(v);
+        self
     }
     /// <p>The list of users to remove from the Access Control List</p>
-    pub fn set_user_names_to_remove(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-        self.user_names_to_remove = input; self
+    pub fn set_user_names_to_remove(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
+        self.user_names_to_remove = input;
+        self
     }
     /// Consumes the builder and constructs a [`UpdateAclInput`](crate::operation::update_acl::UpdateAclInput).
-    pub fn build(self) -> Result<crate::operation::update_acl::UpdateAclInput, aws_smithy_http::operation::error::BuildError> {
-        Ok(
-            crate::operation::update_acl::UpdateAclInput {
-                acl_name: self.acl_name
-                ,
-                user_names_to_add: self.user_names_to_add
-                ,
-                user_names_to_remove: self.user_names_to_remove
-                ,
-            }
-        )
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::update_acl::UpdateAclInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        Ok(crate::operation::update_acl::UpdateAclInput {
+            acl_name: self.acl_name,
+            user_names_to_add: self.user_names_to_add,
+            user_names_to_remove: self.user_names_to_remove,
+        })
     }
 }
-

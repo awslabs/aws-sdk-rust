@@ -3,7 +3,7 @@
 /// <p>Provides information about an intent.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct IntentMetadata  {
+pub struct IntentMetadata {
     /// <p>The name of the intent.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -22,23 +22,23 @@ pub struct IntentMetadata  {
 }
 impl IntentMetadata {
     /// <p>The name of the intent.</p>
-    pub fn name(&self) -> std::option::Option<& str> {
+    pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>A description of the intent.</p>
-    pub fn description(&self) -> std::option::Option<& str> {
+    pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
     /// <p>The date that the intent was updated. When you create an intent, the creation date and last updated date are the same.</p>
-    pub fn last_updated_date(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
+    pub fn last_updated_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_updated_date.as_ref()
     }
     /// <p>The date that the intent was created.</p>
-    pub fn created_date(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
+    pub fn created_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created_date.as_ref()
     }
     /// <p>The version of the intent.</p>
-    pub fn version(&self) -> std::option::Option<& str> {
+    pub fn version(&self) -> std::option::Option<&str> {
         self.version.as_deref()
     }
 }
@@ -67,7 +67,8 @@ impl IntentMetadataBuilder {
     }
     /// <p>The name of the intent.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input; self
+        self.name = input;
+        self
     }
     /// <p>A description of the intent.</p>
     pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -76,7 +77,8 @@ impl IntentMetadataBuilder {
     }
     /// <p>A description of the intent.</p>
     pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.description = input; self
+        self.description = input;
+        self
     }
     /// <p>The date that the intent was updated. When you create an intent, the creation date and last updated date are the same.</p>
     pub fn last_updated_date(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -84,8 +86,12 @@ impl IntentMetadataBuilder {
         self
     }
     /// <p>The date that the intent was updated. When you create an intent, the creation date and last updated date are the same.</p>
-    pub fn set_last_updated_date(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.last_updated_date = input; self
+    pub fn set_last_updated_date(
+        mut self,
+        input: std::option::Option<aws_smithy_types::DateTime>,
+    ) -> Self {
+        self.last_updated_date = input;
+        self
     }
     /// <p>The date that the intent was created.</p>
     pub fn created_date(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -93,8 +99,12 @@ impl IntentMetadataBuilder {
         self
     }
     /// <p>The date that the intent was created.</p>
-    pub fn set_created_date(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.created_date = input; self
+    pub fn set_created_date(
+        mut self,
+        input: std::option::Option<aws_smithy_types::DateTime>,
+    ) -> Self {
+        self.created_date = input;
+        self
     }
     /// <p>The version of the intent.</p>
     pub fn version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -103,22 +113,17 @@ impl IntentMetadataBuilder {
     }
     /// <p>The version of the intent.</p>
     pub fn set_version(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.version = input; self
+        self.version = input;
+        self
     }
     /// Consumes the builder and constructs a [`IntentMetadata`](crate::types::IntentMetadata).
     pub fn build(self) -> crate::types::IntentMetadata {
         crate::types::IntentMetadata {
-            name: self.name
-            ,
-            description: self.description
-            ,
-            last_updated_date: self.last_updated_date
-            ,
-            created_date: self.created_date
-            ,
-            version: self.version
-            ,
+            name: self.name,
+            description: self.description,
+            last_updated_date: self.last_updated_date,
+            created_date: self.created_date,
+            version: self.version,
         }
     }
 }
-

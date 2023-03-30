@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListMailboxExportJobsInput  {
+pub struct ListMailboxExportJobsInput {
     /// <p>The organization ID.</p>
     #[doc(hidden)]
     pub organization_id: std::option::Option<std::string::String>,
@@ -15,11 +15,11 @@ pub struct ListMailboxExportJobsInput  {
 }
 impl ListMailboxExportJobsInput {
     /// <p>The organization ID.</p>
-    pub fn organization_id(&self) -> std::option::Option<& str> {
+    pub fn organization_id(&self) -> std::option::Option<&str> {
         self.organization_id.as_deref()
     }
     /// <p>The token to use to retrieve the next page of results.</p>
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
     /// <p>The maximum number of results to return in a single call.</p>
@@ -29,7 +29,9 @@ impl ListMailboxExportJobsInput {
 }
 impl ListMailboxExportJobsInput {
     /// Creates a new builder-style object to manufacture [`ListMailboxExportJobsInput`](crate::operation::list_mailbox_export_jobs::ListMailboxExportJobsInput).
-    pub fn builder() -> crate::operation::list_mailbox_export_jobs::builders::ListMailboxExportJobsInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::list_mailbox_export_jobs::builders::ListMailboxExportJobsInputBuilder
+    {
         crate::operation::list_mailbox_export_jobs::builders::ListMailboxExportJobsInputBuilder::default()
     }
 }
@@ -50,7 +52,8 @@ impl ListMailboxExportJobsInputBuilder {
     }
     /// <p>The organization ID.</p>
     pub fn set_organization_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.organization_id = input; self
+        self.organization_id = input;
+        self
     }
     /// <p>The token to use to retrieve the next page of results.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -59,7 +62,8 @@ impl ListMailboxExportJobsInputBuilder {
     }
     /// <p>The token to use to retrieve the next page of results.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input; self
+        self.next_token = input;
+        self
     }
     /// <p>The maximum number of results to return in a single call.</p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -68,20 +72,22 @@ impl ListMailboxExportJobsInputBuilder {
     }
     /// <p>The maximum number of results to return in a single call.</p>
     pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_results = input; self
+        self.max_results = input;
+        self
     }
     /// Consumes the builder and constructs a [`ListMailboxExportJobsInput`](crate::operation::list_mailbox_export_jobs::ListMailboxExportJobsInput).
-    pub fn build(self) -> Result<crate::operation::list_mailbox_export_jobs::ListMailboxExportJobsInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::list_mailbox_export_jobs::ListMailboxExportJobsInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::list_mailbox_export_jobs::ListMailboxExportJobsInput {
-                organization_id: self.organization_id
-                ,
-                next_token: self.next_token
-                ,
-                max_results: self.max_results
-                ,
-            }
+                organization_id: self.organization_id,
+                next_token: self.next_token,
+                max_results: self.max_results,
+            },
         )
     }
 }
-

@@ -3,7 +3,7 @@
 /// If your input captions are SCC, SMI, SRT, STL, TTML, WebVTT, or IMSC 1.1 in an xml file, specify the URI of the input caption source file. If your caption source is IMSC in an IMF package, use TrackSourceSettings instead of FileSoureSettings.
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct FileSourceSettings  {
+pub struct FileSourceSettings {
     /// Specify whether this set of input captions appears in your outputs in both 608 and 708 format. If you choose Upconvert (UPCONVERT), MediaConvert includes the captions data in two ways: it passes the 608 data through using the 608 compatibility bytes fields of the 708 wrapper, and it also translates the 608 data into 708.
     #[doc(hidden)]
     pub convert608_to708: std::option::Option<crate::types::FileSourceConvert608To708>,
@@ -22,15 +22,17 @@ pub struct FileSourceSettings  {
 }
 impl FileSourceSettings {
     /// Specify whether this set of input captions appears in your outputs in both 608 and 708 format. If you choose Upconvert (UPCONVERT), MediaConvert includes the captions data in two ways: it passes the 608 data through using the 608 compatibility bytes fields of the 708 wrapper, and it also translates the 608 data into 708.
-    pub fn convert608_to708(&self) -> std::option::Option<& crate::types::FileSourceConvert608To708> {
+    pub fn convert608_to708(
+        &self,
+    ) -> std::option::Option<&crate::types::FileSourceConvert608To708> {
         self.convert608_to708.as_ref()
     }
     /// Ignore this setting unless your input captions format is SCC. To have the service compensate for differing frame rates between your input captions and input video, specify the frame rate of the captions file. Specify this value as a fraction. When you work directly in your JSON job specification, use the settings framerateNumerator and framerateDenominator. For example, you might specify 24 / 1 for 24 fps, 25 / 1 for 25 fps, 24000 / 1001 for 23.976 fps, or 30000 / 1001 for 29.97 fps.
-    pub fn framerate(&self) -> std::option::Option<& crate::types::CaptionSourceFramerate> {
+    pub fn framerate(&self) -> std::option::Option<&crate::types::CaptionSourceFramerate> {
         self.framerate.as_ref()
     }
     /// External caption file used for loading captions. Accepted file extensions are 'scc', 'ttml', 'dfxp', 'stl', 'srt', 'xml', 'smi', 'webvtt', and 'vtt'.
-    pub fn source_file(&self) -> std::option::Option<& str> {
+    pub fn source_file(&self) -> std::option::Option<&str> {
         self.source_file.as_deref()
     }
     /// Optional. Use this setting when you need to adjust the sync between your sidecar captions and your video. For more information, see https://docs.aws.amazon.com/mediaconvert/latest/ug/time-delta-use-cases.html. Enter a positive or negative number to modify the times in the captions file. For example, type 15 to add 15 seconds to all the times in the captions file. Type -5 to subtract 5 seconds from the times in the captions file. You can optionally specify your time delta in milliseconds instead of seconds. When you do so, set the related setting, Time delta units (TimeDeltaUnits) to Milliseconds (MILLISECONDS). Note that, when you specify a time delta for timecode-based caption sources, such as SCC and STL, and your time delta isn't a multiple of the input frame rate, MediaConvert snaps the captions to the nearest frame. For example, when your input video frame rate is 25 fps and you specify 1010ms for time delta, MediaConvert delays your captions by 1000 ms.
@@ -38,7 +40,7 @@ impl FileSourceSettings {
         self.time_delta
     }
     /// When you use the setting Time delta (TimeDelta) to adjust the sync between your sidecar captions and your video, use this setting to specify the units for the delta that you specify. When you don't specify a value for Time delta units (TimeDeltaUnits), MediaConvert uses seconds by default.
-    pub fn time_delta_units(&self) -> std::option::Option<& crate::types::FileSourceTimeDeltaUnits> {
+    pub fn time_delta_units(&self) -> std::option::Option<&crate::types::FileSourceTimeDeltaUnits> {
         self.time_delta_units.as_ref()
     }
 }
@@ -66,8 +68,12 @@ impl FileSourceSettingsBuilder {
         self
     }
     /// Specify whether this set of input captions appears in your outputs in both 608 and 708 format. If you choose Upconvert (UPCONVERT), MediaConvert includes the captions data in two ways: it passes the 608 data through using the 608 compatibility bytes fields of the 708 wrapper, and it also translates the 608 data into 708.
-    pub fn set_convert608_to708(mut self, input: std::option::Option<crate::types::FileSourceConvert608To708>) -> Self {
-        self.convert608_to708 = input; self
+    pub fn set_convert608_to708(
+        mut self,
+        input: std::option::Option<crate::types::FileSourceConvert608To708>,
+    ) -> Self {
+        self.convert608_to708 = input;
+        self
     }
     /// Ignore this setting unless your input captions format is SCC. To have the service compensate for differing frame rates between your input captions and input video, specify the frame rate of the captions file. Specify this value as a fraction. When you work directly in your JSON job specification, use the settings framerateNumerator and framerateDenominator. For example, you might specify 24 / 1 for 24 fps, 25 / 1 for 25 fps, 24000 / 1001 for 23.976 fps, or 30000 / 1001 for 29.97 fps.
     pub fn framerate(mut self, input: crate::types::CaptionSourceFramerate) -> Self {
@@ -75,8 +81,12 @@ impl FileSourceSettingsBuilder {
         self
     }
     /// Ignore this setting unless your input captions format is SCC. To have the service compensate for differing frame rates between your input captions and input video, specify the frame rate of the captions file. Specify this value as a fraction. When you work directly in your JSON job specification, use the settings framerateNumerator and framerateDenominator. For example, you might specify 24 / 1 for 24 fps, 25 / 1 for 25 fps, 24000 / 1001 for 23.976 fps, or 30000 / 1001 for 29.97 fps.
-    pub fn set_framerate(mut self, input: std::option::Option<crate::types::CaptionSourceFramerate>) -> Self {
-        self.framerate = input; self
+    pub fn set_framerate(
+        mut self,
+        input: std::option::Option<crate::types::CaptionSourceFramerate>,
+    ) -> Self {
+        self.framerate = input;
+        self
     }
     /// External caption file used for loading captions. Accepted file extensions are 'scc', 'ttml', 'dfxp', 'stl', 'srt', 'xml', 'smi', 'webvtt', and 'vtt'.
     pub fn source_file(mut self, input: impl Into<std::string::String>) -> Self {
@@ -85,7 +95,8 @@ impl FileSourceSettingsBuilder {
     }
     /// External caption file used for loading captions. Accepted file extensions are 'scc', 'ttml', 'dfxp', 'stl', 'srt', 'xml', 'smi', 'webvtt', and 'vtt'.
     pub fn set_source_file(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.source_file = input; self
+        self.source_file = input;
+        self
     }
     /// Optional. Use this setting when you need to adjust the sync between your sidecar captions and your video. For more information, see https://docs.aws.amazon.com/mediaconvert/latest/ug/time-delta-use-cases.html. Enter a positive or negative number to modify the times in the captions file. For example, type 15 to add 15 seconds to all the times in the captions file. Type -5 to subtract 5 seconds from the times in the captions file. You can optionally specify your time delta in milliseconds instead of seconds. When you do so, set the related setting, Time delta units (TimeDeltaUnits) to Milliseconds (MILLISECONDS). Note that, when you specify a time delta for timecode-based caption sources, such as SCC and STL, and your time delta isn't a multiple of the input frame rate, MediaConvert snaps the captions to the nearest frame. For example, when your input video frame rate is 25 fps and you specify 1010ms for time delta, MediaConvert delays your captions by 1000 ms.
     pub fn time_delta(mut self, input: i32) -> Self {
@@ -94,7 +105,8 @@ impl FileSourceSettingsBuilder {
     }
     /// Optional. Use this setting when you need to adjust the sync between your sidecar captions and your video. For more information, see https://docs.aws.amazon.com/mediaconvert/latest/ug/time-delta-use-cases.html. Enter a positive or negative number to modify the times in the captions file. For example, type 15 to add 15 seconds to all the times in the captions file. Type -5 to subtract 5 seconds from the times in the captions file. You can optionally specify your time delta in milliseconds instead of seconds. When you do so, set the related setting, Time delta units (TimeDeltaUnits) to Milliseconds (MILLISECONDS). Note that, when you specify a time delta for timecode-based caption sources, such as SCC and STL, and your time delta isn't a multiple of the input frame rate, MediaConvert snaps the captions to the nearest frame. For example, when your input video frame rate is 25 fps and you specify 1010ms for time delta, MediaConvert delays your captions by 1000 ms.
     pub fn set_time_delta(mut self, input: std::option::Option<i32>) -> Self {
-        self.time_delta = input; self
+        self.time_delta = input;
+        self
     }
     /// When you use the setting Time delta (TimeDelta) to adjust the sync between your sidecar captions and your video, use this setting to specify the units for the delta that you specify. When you don't specify a value for Time delta units (TimeDeltaUnits), MediaConvert uses seconds by default.
     pub fn time_delta_units(mut self, input: crate::types::FileSourceTimeDeltaUnits) -> Self {
@@ -102,24 +114,21 @@ impl FileSourceSettingsBuilder {
         self
     }
     /// When you use the setting Time delta (TimeDelta) to adjust the sync between your sidecar captions and your video, use this setting to specify the units for the delta that you specify. When you don't specify a value for Time delta units (TimeDeltaUnits), MediaConvert uses seconds by default.
-    pub fn set_time_delta_units(mut self, input: std::option::Option<crate::types::FileSourceTimeDeltaUnits>) -> Self {
-        self.time_delta_units = input; self
+    pub fn set_time_delta_units(
+        mut self,
+        input: std::option::Option<crate::types::FileSourceTimeDeltaUnits>,
+    ) -> Self {
+        self.time_delta_units = input;
+        self
     }
     /// Consumes the builder and constructs a [`FileSourceSettings`](crate::types::FileSourceSettings).
     pub fn build(self) -> crate::types::FileSourceSettings {
         crate::types::FileSourceSettings {
-            convert608_to708: self.convert608_to708
-            ,
-            framerate: self.framerate
-            ,
-            source_file: self.source_file
-            ,
-            time_delta: self.time_delta
-                .unwrap_or_default()
-            ,
-            time_delta_units: self.time_delta_units
-            ,
+            convert608_to708: self.convert608_to708,
+            framerate: self.framerate,
+            source_file: self.source_file,
+            time_delta: self.time_delta.unwrap_or_default(),
+            time_delta_units: self.time_delta_units,
         }
     }
 }
-

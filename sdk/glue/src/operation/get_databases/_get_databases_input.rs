@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetDatabasesInput  {
+pub struct GetDatabasesInput {
     /// <p>The ID of the Data Catalog from which to retrieve <code>Databases</code>. If none is provided, the Amazon Web Services account ID is used by default.</p>
     #[doc(hidden)]
     pub catalog_id: std::option::Option<std::string::String>,
@@ -12,33 +12,33 @@ pub struct GetDatabasesInput  {
     /// <p>The maximum number of databases to return in one response.</p>
     #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
-    /// <p>Allows you to specify that you want to list the databases shared with your account. The allowable values are <code>FOREIGN</code> or <code>ALL</code>. </p> 
-    /// <ul> 
-    /// <li> <p>If set to <code>FOREIGN</code>, will list the databases shared with your account. </p> </li> 
-    /// <li> <p>If set to <code>ALL</code>, will list the databases shared with your account, as well as the databases in yor local account. </p> </li> 
+    /// <p>Allows you to specify that you want to list the databases shared with your account. The allowable values are <code>FOREIGN</code> or <code>ALL</code>. </p>
+    /// <ul>
+    /// <li> <p>If set to <code>FOREIGN</code>, will list the databases shared with your account. </p> </li>
+    /// <li> <p>If set to <code>ALL</code>, will list the databases shared with your account, as well as the databases in yor local account. </p> </li>
     /// </ul>
     #[doc(hidden)]
     pub resource_share_type: std::option::Option<crate::types::ResourceShareType>,
 }
 impl GetDatabasesInput {
     /// <p>The ID of the Data Catalog from which to retrieve <code>Databases</code>. If none is provided, the Amazon Web Services account ID is used by default.</p>
-    pub fn catalog_id(&self) -> std::option::Option<& str> {
+    pub fn catalog_id(&self) -> std::option::Option<&str> {
         self.catalog_id.as_deref()
     }
     /// <p>A continuation token, if this is a continuation call.</p>
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
     /// <p>The maximum number of databases to return in one response.</p>
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
-    /// <p>Allows you to specify that you want to list the databases shared with your account. The allowable values are <code>FOREIGN</code> or <code>ALL</code>. </p> 
-    /// <ul> 
-    /// <li> <p>If set to <code>FOREIGN</code>, will list the databases shared with your account. </p> </li> 
-    /// <li> <p>If set to <code>ALL</code>, will list the databases shared with your account, as well as the databases in yor local account. </p> </li> 
+    /// <p>Allows you to specify that you want to list the databases shared with your account. The allowable values are <code>FOREIGN</code> or <code>ALL</code>. </p>
+    /// <ul>
+    /// <li> <p>If set to <code>FOREIGN</code>, will list the databases shared with your account. </p> </li>
+    /// <li> <p>If set to <code>ALL</code>, will list the databases shared with your account, as well as the databases in yor local account. </p> </li>
     /// </ul>
-    pub fn resource_share_type(&self) -> std::option::Option<& crate::types::ResourceShareType> {
+    pub fn resource_share_type(&self) -> std::option::Option<&crate::types::ResourceShareType> {
         self.resource_share_type.as_ref()
     }
 }
@@ -66,7 +66,8 @@ impl GetDatabasesInputBuilder {
     }
     /// <p>The ID of the Data Catalog from which to retrieve <code>Databases</code>. If none is provided, the Amazon Web Services account ID is used by default.</p>
     pub fn set_catalog_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.catalog_id = input; self
+        self.catalog_id = input;
+        self
     }
     /// <p>A continuation token, if this is a continuation call.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -75,7 +76,8 @@ impl GetDatabasesInputBuilder {
     }
     /// <p>A continuation token, if this is a continuation call.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input; self
+        self.next_token = input;
+        self
     }
     /// <p>The maximum number of databases to return in one response.</p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -84,39 +86,42 @@ impl GetDatabasesInputBuilder {
     }
     /// <p>The maximum number of databases to return in one response.</p>
     pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_results = input; self
+        self.max_results = input;
+        self
     }
-    /// <p>Allows you to specify that you want to list the databases shared with your account. The allowable values are <code>FOREIGN</code> or <code>ALL</code>. </p> 
-    /// <ul> 
-    /// <li> <p>If set to <code>FOREIGN</code>, will list the databases shared with your account. </p> </li> 
-    /// <li> <p>If set to <code>ALL</code>, will list the databases shared with your account, as well as the databases in yor local account. </p> </li> 
+    /// <p>Allows you to specify that you want to list the databases shared with your account. The allowable values are <code>FOREIGN</code> or <code>ALL</code>. </p>
+    /// <ul>
+    /// <li> <p>If set to <code>FOREIGN</code>, will list the databases shared with your account. </p> </li>
+    /// <li> <p>If set to <code>ALL</code>, will list the databases shared with your account, as well as the databases in yor local account. </p> </li>
     /// </ul>
     pub fn resource_share_type(mut self, input: crate::types::ResourceShareType) -> Self {
         self.resource_share_type = Some(input);
         self
     }
-    /// <p>Allows you to specify that you want to list the databases shared with your account. The allowable values are <code>FOREIGN</code> or <code>ALL</code>. </p> 
-    /// <ul> 
-    /// <li> <p>If set to <code>FOREIGN</code>, will list the databases shared with your account. </p> </li> 
-    /// <li> <p>If set to <code>ALL</code>, will list the databases shared with your account, as well as the databases in yor local account. </p> </li> 
+    /// <p>Allows you to specify that you want to list the databases shared with your account. The allowable values are <code>FOREIGN</code> or <code>ALL</code>. </p>
+    /// <ul>
+    /// <li> <p>If set to <code>FOREIGN</code>, will list the databases shared with your account. </p> </li>
+    /// <li> <p>If set to <code>ALL</code>, will list the databases shared with your account, as well as the databases in yor local account. </p> </li>
     /// </ul>
-    pub fn set_resource_share_type(mut self, input: std::option::Option<crate::types::ResourceShareType>) -> Self {
-        self.resource_share_type = input; self
+    pub fn set_resource_share_type(
+        mut self,
+        input: std::option::Option<crate::types::ResourceShareType>,
+    ) -> Self {
+        self.resource_share_type = input;
+        self
     }
     /// Consumes the builder and constructs a [`GetDatabasesInput`](crate::operation::get_databases::GetDatabasesInput).
-    pub fn build(self) -> Result<crate::operation::get_databases::GetDatabasesInput, aws_smithy_http::operation::error::BuildError> {
-        Ok(
-            crate::operation::get_databases::GetDatabasesInput {
-                catalog_id: self.catalog_id
-                ,
-                next_token: self.next_token
-                ,
-                max_results: self.max_results
-                ,
-                resource_share_type: self.resource_share_type
-                ,
-            }
-        )
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::get_databases::GetDatabasesInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        Ok(crate::operation::get_databases::GetDatabasesInput {
+            catalog_id: self.catalog_id,
+            next_token: self.next_token,
+            max_results: self.max_results,
+            resource_share_type: self.resource_share_type,
+        })
     }
 }
-

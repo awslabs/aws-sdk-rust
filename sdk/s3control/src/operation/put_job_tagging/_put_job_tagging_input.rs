@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PutJobTaggingInput  {
+pub struct PutJobTaggingInput {
     /// <p>The Amazon Web Services account ID associated with the S3 Batch Operations job.</p>
     #[doc(hidden)]
     pub account_id: std::option::Option<std::string::String>,
@@ -15,15 +15,15 @@ pub struct PutJobTaggingInput  {
 }
 impl PutJobTaggingInput {
     /// <p>The Amazon Web Services account ID associated with the S3 Batch Operations job.</p>
-    pub fn account_id(&self) -> std::option::Option<& str> {
+    pub fn account_id(&self) -> std::option::Option<&str> {
         self.account_id.as_deref()
     }
     /// <p>The ID for the S3 Batch Operations job whose tags you want to replace.</p>
-    pub fn job_id(&self) -> std::option::Option<& str> {
+    pub fn job_id(&self) -> std::option::Option<&str> {
         self.job_id.as_deref()
     }
     /// <p>The set of tags to associate with the S3 Batch Operations job.</p>
-    pub fn tags(&self) -> std::option::Option<& [crate::types::S3Tag]> {
+    pub fn tags(&self) -> std::option::Option<&[crate::types::S3Tag]> {
         self.tags.as_deref()
     }
 }
@@ -50,7 +50,8 @@ impl PutJobTaggingInputBuilder {
     }
     /// <p>The Amazon Web Services account ID associated with the S3 Batch Operations job.</p>
     pub fn set_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.account_id = input; self
+        self.account_id = input;
+        self
     }
     /// <p>The ID for the S3 Batch Operations job whose tags you want to replace.</p>
     pub fn job_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -59,7 +60,8 @@ impl PutJobTaggingInputBuilder {
     }
     /// <p>The ID for the S3 Batch Operations job whose tags you want to replace.</p>
     pub fn set_job_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.job_id = input; self
+        self.job_id = input;
+        self
     }
     /// Appends an item to `tags`.
     ///
@@ -68,26 +70,29 @@ impl PutJobTaggingInputBuilder {
     /// <p>The set of tags to associate with the S3 Batch Operations job.</p>
     pub fn tags(mut self, input: crate::types::S3Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
-                        v.push(input);
-                        self.tags = Some(v);
-                        self
+        v.push(input);
+        self.tags = Some(v);
+        self
     }
     /// <p>The set of tags to associate with the S3 Batch Operations job.</p>
-    pub fn set_tags(mut self, input: std::option::Option<std::vec::Vec<crate::types::S3Tag>>) -> Self {
-        self.tags = input; self
+    pub fn set_tags(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::S3Tag>>,
+    ) -> Self {
+        self.tags = input;
+        self
     }
     /// Consumes the builder and constructs a [`PutJobTaggingInput`](crate::operation::put_job_tagging::PutJobTaggingInput).
-    pub fn build(self) -> Result<crate::operation::put_job_tagging::PutJobTaggingInput, aws_smithy_http::operation::error::BuildError> {
-        Ok(
-            crate::operation::put_job_tagging::PutJobTaggingInput {
-                account_id: self.account_id
-                ,
-                job_id: self.job_id
-                ,
-                tags: self.tags
-                ,
-            }
-        )
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::put_job_tagging::PutJobTaggingInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        Ok(crate::operation::put_job_tagging::PutJobTaggingInput {
+            account_id: self.account_id,
+            job_id: self.job_id,
+            tags: self.tags,
+        })
     }
 }
-

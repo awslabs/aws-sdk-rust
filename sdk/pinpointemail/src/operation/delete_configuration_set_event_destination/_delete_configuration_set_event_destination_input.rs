@@ -3,7 +3,7 @@
 /// <p>A request to delete an event destination from a configuration set.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteConfigurationSetEventDestinationInput  {
+pub struct DeleteConfigurationSetEventDestinationInput {
     /// <p>The name of the configuration set that contains the event destination that you want to delete.</p>
     #[doc(hidden)]
     pub configuration_set_name: std::option::Option<std::string::String>,
@@ -13,17 +13,17 @@ pub struct DeleteConfigurationSetEventDestinationInput  {
 }
 impl DeleteConfigurationSetEventDestinationInput {
     /// <p>The name of the configuration set that contains the event destination that you want to delete.</p>
-    pub fn configuration_set_name(&self) -> std::option::Option<& str> {
+    pub fn configuration_set_name(&self) -> std::option::Option<&str> {
         self.configuration_set_name.as_deref()
     }
     /// <p>The name of the event destination that you want to delete.</p>
-    pub fn event_destination_name(&self) -> std::option::Option<& str> {
+    pub fn event_destination_name(&self) -> std::option::Option<&str> {
         self.event_destination_name.as_deref()
     }
 }
 impl DeleteConfigurationSetEventDestinationInput {
     /// Creates a new builder-style object to manufacture [`DeleteConfigurationSetEventDestinationInput`](crate::operation::delete_configuration_set_event_destination::DeleteConfigurationSetEventDestinationInput).
-    pub fn builder() -> crate::operation::delete_configuration_set_event_destination::builders::DeleteConfigurationSetEventDestinationInputBuilder {
+    pub fn builder() -> crate::operation::delete_configuration_set_event_destination::builders::DeleteConfigurationSetEventDestinationInputBuilder{
         crate::operation::delete_configuration_set_event_destination::builders::DeleteConfigurationSetEventDestinationInputBuilder::default()
     }
 }
@@ -42,8 +42,12 @@ impl DeleteConfigurationSetEventDestinationInputBuilder {
         self
     }
     /// <p>The name of the configuration set that contains the event destination that you want to delete.</p>
-    pub fn set_configuration_set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.configuration_set_name = input; self
+    pub fn set_configuration_set_name(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.configuration_set_name = input;
+        self
     }
     /// <p>The name of the event destination that you want to delete.</p>
     pub fn event_destination_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -51,11 +55,15 @@ impl DeleteConfigurationSetEventDestinationInputBuilder {
         self
     }
     /// <p>The name of the event destination that you want to delete.</p>
-    pub fn set_event_destination_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.event_destination_name = input; self
+    pub fn set_event_destination_name(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.event_destination_name = input;
+        self
     }
     /// Consumes the builder and constructs a [`DeleteConfigurationSetEventDestinationInput`](crate::operation::delete_configuration_set_event_destination::DeleteConfigurationSetEventDestinationInput).
-    pub fn build(self) -> Result<crate::operation::delete_configuration_set_event_destination::DeleteConfigurationSetEventDestinationInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> Result<crate::operation::delete_configuration_set_event_destination::DeleteConfigurationSetEventDestinationInput, aws_smithy_http::operation::error::BuildError>{
         Ok(
             crate::operation::delete_configuration_set_event_destination::DeleteConfigurationSetEventDestinationInput {
                 configuration_set_name: self.configuration_set_name
@@ -66,4 +74,3 @@ impl DeleteConfigurationSetEventDestinationInputBuilder {
         )
     }
 }
-

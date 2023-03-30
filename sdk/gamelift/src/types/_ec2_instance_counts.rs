@@ -3,7 +3,7 @@
 /// <p>Resource capacity settings. Fleet capacity is measured in Amazon EC2 instances. Pending and terminating counts are non-zero when the fleet capacity is adjusting to a scaling event or if access to resources is temporarily affected.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Ec2InstanceCounts  {
+pub struct Ec2InstanceCounts {
     /// <p>Ideal number of active instances. GameLift will always try to maintain the desired number of instances. Capacity is scaled up or down by changing the desired instances. </p>
     #[doc(hidden)]
     pub desired: std::option::Option<i32>,
@@ -83,7 +83,8 @@ impl Ec2InstanceCountsBuilder {
     }
     /// <p>Ideal number of active instances. GameLift will always try to maintain the desired number of instances. Capacity is scaled up or down by changing the desired instances. </p>
     pub fn set_desired(mut self, input: std::option::Option<i32>) -> Self {
-        self.desired = input; self
+        self.desired = input;
+        self
     }
     /// <p>The minimum instance count value allowed.</p>
     pub fn minimum(mut self, input: i32) -> Self {
@@ -92,7 +93,8 @@ impl Ec2InstanceCountsBuilder {
     }
     /// <p>The minimum instance count value allowed.</p>
     pub fn set_minimum(mut self, input: std::option::Option<i32>) -> Self {
-        self.minimum = input; self
+        self.minimum = input;
+        self
     }
     /// <p>The maximum instance count value allowed.</p>
     pub fn maximum(mut self, input: i32) -> Self {
@@ -101,7 +103,8 @@ impl Ec2InstanceCountsBuilder {
     }
     /// <p>The maximum instance count value allowed.</p>
     pub fn set_maximum(mut self, input: std::option::Option<i32>) -> Self {
-        self.maximum = input; self
+        self.maximum = input;
+        self
     }
     /// <p>Number of instances that are starting but not yet active.</p>
     pub fn pending(mut self, input: i32) -> Self {
@@ -110,7 +113,8 @@ impl Ec2InstanceCountsBuilder {
     }
     /// <p>Number of instances that are starting but not yet active.</p>
     pub fn set_pending(mut self, input: std::option::Option<i32>) -> Self {
-        self.pending = input; self
+        self.pending = input;
+        self
     }
     /// <p>Actual number of instances that are ready to host game sessions.</p>
     pub fn active(mut self, input: i32) -> Self {
@@ -119,7 +123,8 @@ impl Ec2InstanceCountsBuilder {
     }
     /// <p>Actual number of instances that are ready to host game sessions.</p>
     pub fn set_active(mut self, input: std::option::Option<i32>) -> Self {
-        self.active = input; self
+        self.active = input;
+        self
     }
     /// <p>Number of active instances that are not currently hosting a game session.</p>
     pub fn idle(mut self, input: i32) -> Self {
@@ -128,7 +133,8 @@ impl Ec2InstanceCountsBuilder {
     }
     /// <p>Number of active instances that are not currently hosting a game session.</p>
     pub fn set_idle(mut self, input: std::option::Option<i32>) -> Self {
-        self.idle = input; self
+        self.idle = input;
+        self
     }
     /// <p>Number of instances that are no longer active but haven't yet been terminated.</p>
     pub fn terminating(mut self, input: i32) -> Self {
@@ -137,26 +143,19 @@ impl Ec2InstanceCountsBuilder {
     }
     /// <p>Number of instances that are no longer active but haven't yet been terminated.</p>
     pub fn set_terminating(mut self, input: std::option::Option<i32>) -> Self {
-        self.terminating = input; self
+        self.terminating = input;
+        self
     }
     /// Consumes the builder and constructs a [`Ec2InstanceCounts`](crate::types::Ec2InstanceCounts).
     pub fn build(self) -> crate::types::Ec2InstanceCounts {
         crate::types::Ec2InstanceCounts {
-            desired: self.desired
-            ,
-            minimum: self.minimum
-            ,
-            maximum: self.maximum
-            ,
-            pending: self.pending
-            ,
-            active: self.active
-            ,
-            idle: self.idle
-            ,
-            terminating: self.terminating
-            ,
+            desired: self.desired,
+            minimum: self.minimum,
+            maximum: self.maximum,
+            pending: self.pending,
+            active: self.active,
+            idle: self.idle,
+            terminating: self.terminating,
         }
     }
 }
-

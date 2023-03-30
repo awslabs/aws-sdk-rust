@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateSourceServerReplicationTypeInput  {
+pub struct UpdateSourceServerReplicationTypeInput {
     /// <p>ID of source server on which to update replication type.</p>
     #[doc(hidden)]
     pub source_server_id: std::option::Option<std::string::String>,
@@ -12,17 +12,17 @@ pub struct UpdateSourceServerReplicationTypeInput  {
 }
 impl UpdateSourceServerReplicationTypeInput {
     /// <p>ID of source server on which to update replication type.</p>
-    pub fn source_server_id(&self) -> std::option::Option<& str> {
+    pub fn source_server_id(&self) -> std::option::Option<&str> {
         self.source_server_id.as_deref()
     }
     /// <p>Replication type to which to update source server.</p>
-    pub fn replication_type(&self) -> std::option::Option<& crate::types::ReplicationType> {
+    pub fn replication_type(&self) -> std::option::Option<&crate::types::ReplicationType> {
         self.replication_type.as_ref()
     }
 }
 impl UpdateSourceServerReplicationTypeInput {
     /// Creates a new builder-style object to manufacture [`UpdateSourceServerReplicationTypeInput`](crate::operation::update_source_server_replication_type::UpdateSourceServerReplicationTypeInput).
-    pub fn builder() -> crate::operation::update_source_server_replication_type::builders::UpdateSourceServerReplicationTypeInputBuilder {
+    pub fn builder() -> crate::operation::update_source_server_replication_type::builders::UpdateSourceServerReplicationTypeInputBuilder{
         crate::operation::update_source_server_replication_type::builders::UpdateSourceServerReplicationTypeInputBuilder::default()
     }
 }
@@ -42,7 +42,8 @@ impl UpdateSourceServerReplicationTypeInputBuilder {
     }
     /// <p>ID of source server on which to update replication type.</p>
     pub fn set_source_server_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.source_server_id = input; self
+        self.source_server_id = input;
+        self
     }
     /// <p>Replication type to which to update source server.</p>
     pub fn replication_type(mut self, input: crate::types::ReplicationType) -> Self {
@@ -50,11 +51,15 @@ impl UpdateSourceServerReplicationTypeInputBuilder {
         self
     }
     /// <p>Replication type to which to update source server.</p>
-    pub fn set_replication_type(mut self, input: std::option::Option<crate::types::ReplicationType>) -> Self {
-        self.replication_type = input; self
+    pub fn set_replication_type(
+        mut self,
+        input: std::option::Option<crate::types::ReplicationType>,
+    ) -> Self {
+        self.replication_type = input;
+        self
     }
     /// Consumes the builder and constructs a [`UpdateSourceServerReplicationTypeInput`](crate::operation::update_source_server_replication_type::UpdateSourceServerReplicationTypeInput).
-    pub fn build(self) -> Result<crate::operation::update_source_server_replication_type::UpdateSourceServerReplicationTypeInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> Result<crate::operation::update_source_server_replication_type::UpdateSourceServerReplicationTypeInput, aws_smithy_http::operation::error::BuildError>{
         Ok(
             crate::operation::update_source_server_replication_type::UpdateSourceServerReplicationTypeInput {
                 source_server_id: self.source_server_id
@@ -65,4 +70,3 @@ impl UpdateSourceServerReplicationTypeInputBuilder {
         )
     }
 }
-

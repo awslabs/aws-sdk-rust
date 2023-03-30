@@ -3,14 +3,18 @@
 /// <p>If <code>PartitionBy</code> was specified in a <code>DescribeDimensionKeys</code> request, the dimensions are returned in an array. Each element in the array specifies one dimension. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ResponsePartitionKey  {
+pub struct ResponsePartitionKey {
     /// <p>A dimension map that contains the dimensions for this partition.</p>
     #[doc(hidden)]
-    pub dimensions: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub dimensions:
+        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl ResponsePartitionKey {
     /// <p>A dimension map that contains the dimensions for this partition.</p>
-    pub fn dimensions(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
+    pub fn dimensions(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
         self.dimensions.as_ref()
     }
 }
@@ -25,7 +29,8 @@ impl ResponsePartitionKey {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct ResponsePartitionKeyBuilder {
-    pub(crate) dimensions: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub(crate) dimensions:
+        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl ResponsePartitionKeyBuilder {
     /// Adds a key-value pair to `dimensions`.
@@ -33,22 +38,30 @@ impl ResponsePartitionKeyBuilder {
     /// To override the contents of this collection use [`set_dimensions`](Self::set_dimensions).
     ///
     /// <p>A dimension map that contains the dimensions for this partition.</p>
-    pub fn dimensions(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
+    pub fn dimensions(
+        mut self,
+        k: impl Into<std::string::String>,
+        v: impl Into<std::string::String>,
+    ) -> Self {
         let mut hash_map = self.dimensions.unwrap_or_default();
-                        hash_map.insert(k.into(), v.into());
-                        self.dimensions = Some(hash_map);
-                        self
+        hash_map.insert(k.into(), v.into());
+        self.dimensions = Some(hash_map);
+        self
     }
     /// <p>A dimension map that contains the dimensions for this partition.</p>
-    pub fn set_dimensions(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
-        self.dimensions = input; self
+    pub fn set_dimensions(
+        mut self,
+        input: std::option::Option<
+            std::collections::HashMap<std::string::String, std::string::String>,
+        >,
+    ) -> Self {
+        self.dimensions = input;
+        self
     }
     /// Consumes the builder and constructs a [`ResponsePartitionKey`](crate::types::ResponsePartitionKey).
     pub fn build(self) -> crate::types::ResponsePartitionKey {
         crate::types::ResponsePartitionKey {
-            dimensions: self.dimensions
-            ,
+            dimensions: self.dimensions,
         }
     }
 }
-

@@ -3,7 +3,7 @@
 /// <p>Represents the body of the message. You can specify text, HTML, or both. If you use both, then the message should display correctly in the widest variety of email clients.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Body  {
+pub struct Body {
     /// <p>The content of the message, in text format. Use this for text-based email clients, or clients on high-latency networks (such as mobile devices).</p>
     #[doc(hidden)]
     pub text: std::option::Option<crate::types::Content>,
@@ -13,11 +13,11 @@ pub struct Body  {
 }
 impl Body {
     /// <p>The content of the message, in text format. Use this for text-based email clients, or clients on high-latency networks (such as mobile devices).</p>
-    pub fn text(&self) -> std::option::Option<& crate::types::Content> {
+    pub fn text(&self) -> std::option::Option<&crate::types::Content> {
         self.text.as_ref()
     }
     /// <p>The content of the message, in HTML format. Use this for email clients that can process HTML. You can include clickable links, formatted text, and much more in an HTML message.</p>
-    pub fn html(&self) -> std::option::Option<& crate::types::Content> {
+    pub fn html(&self) -> std::option::Option<&crate::types::Content> {
         self.html.as_ref()
     }
 }
@@ -43,7 +43,8 @@ impl BodyBuilder {
     }
     /// <p>The content of the message, in text format. Use this for text-based email clients, or clients on high-latency networks (such as mobile devices).</p>
     pub fn set_text(mut self, input: std::option::Option<crate::types::Content>) -> Self {
-        self.text = input; self
+        self.text = input;
+        self
     }
     /// <p>The content of the message, in HTML format. Use this for email clients that can process HTML. You can include clickable links, formatted text, and much more in an HTML message.</p>
     pub fn html(mut self, input: crate::types::Content) -> Self {
@@ -52,16 +53,14 @@ impl BodyBuilder {
     }
     /// <p>The content of the message, in HTML format. Use this for email clients that can process HTML. You can include clickable links, formatted text, and much more in an HTML message.</p>
     pub fn set_html(mut self, input: std::option::Option<crate::types::Content>) -> Self {
-        self.html = input; self
+        self.html = input;
+        self
     }
     /// Consumes the builder and constructs a [`Body`](crate::types::Body).
     pub fn build(self) -> crate::types::Body {
         crate::types::Body {
-            text: self.text
-            ,
-            html: self.html
-            ,
+            text: self.text,
+            html: self.html,
         }
     }
 }
-

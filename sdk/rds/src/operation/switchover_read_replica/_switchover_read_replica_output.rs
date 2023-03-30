@@ -2,28 +2,30 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SwitchoverReadReplicaOutput  {
-    /// <p>Contains the details of an Amazon RDS DB instance.</p> 
+pub struct SwitchoverReadReplicaOutput {
+    /// <p>Contains the details of an Amazon RDS DB instance.</p>
     /// <p>This data type is used as a response element in the operations <code>CreateDBInstance</code>, <code>CreateDBInstanceReadReplica</code>, <code>DeleteDBInstance</code>, <code>DescribeDBInstances</code>, <code>ModifyDBInstance</code>, <code>PromoteReadReplica</code>, <code>RebootDBInstance</code>, <code>RestoreDBInstanceFromDBSnapshot</code>, <code>RestoreDBInstanceFromS3</code>, <code>RestoreDBInstanceToPointInTime</code>, <code>StartDBInstance</code>, and <code>StopDBInstance</code>.</p>
     #[doc(hidden)]
     pub db_instance: std::option::Option<crate::types::DbInstance>,
     _request_id: Option<String>,
 }
 impl SwitchoverReadReplicaOutput {
-    /// <p>Contains the details of an Amazon RDS DB instance.</p> 
+    /// <p>Contains the details of an Amazon RDS DB instance.</p>
     /// <p>This data type is used as a response element in the operations <code>CreateDBInstance</code>, <code>CreateDBInstanceReadReplica</code>, <code>DeleteDBInstance</code>, <code>DescribeDBInstances</code>, <code>ModifyDBInstance</code>, <code>PromoteReadReplica</code>, <code>RebootDBInstance</code>, <code>RestoreDBInstanceFromDBSnapshot</code>, <code>RestoreDBInstanceFromS3</code>, <code>RestoreDBInstanceToPointInTime</code>, <code>StartDBInstance</code>, and <code>StopDBInstance</code>.</p>
-    pub fn db_instance(&self) -> std::option::Option<& crate::types::DbInstance> {
+    pub fn db_instance(&self) -> std::option::Option<&crate::types::DbInstance> {
         self.db_instance.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for SwitchoverReadReplicaOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl SwitchoverReadReplicaOutput {
     /// Creates a new builder-style object to manufacture [`SwitchoverReadReplicaOutput`](crate::operation::switchover_read_replica::SwitchoverReadReplicaOutput).
-    pub fn builder() -> crate::operation::switchover_read_replica::builders::SwitchoverReadReplicaOutputBuilder {
+    pub fn builder(
+    ) -> crate::operation::switchover_read_replica::builders::SwitchoverReadReplicaOutputBuilder
+    {
         crate::operation::switchover_read_replica::builders::SwitchoverReadReplicaOutputBuilder::default()
     }
 }
@@ -36,33 +38,32 @@ pub struct SwitchoverReadReplicaOutputBuilder {
     _request_id: Option<String>,
 }
 impl SwitchoverReadReplicaOutputBuilder {
-    /// <p>Contains the details of an Amazon RDS DB instance.</p> 
+    /// <p>Contains the details of an Amazon RDS DB instance.</p>
     /// <p>This data type is used as a response element in the operations <code>CreateDBInstance</code>, <code>CreateDBInstanceReadReplica</code>, <code>DeleteDBInstance</code>, <code>DescribeDBInstances</code>, <code>ModifyDBInstance</code>, <code>PromoteReadReplica</code>, <code>RebootDBInstance</code>, <code>RestoreDBInstanceFromDBSnapshot</code>, <code>RestoreDBInstanceFromS3</code>, <code>RestoreDBInstanceToPointInTime</code>, <code>StartDBInstance</code>, and <code>StopDBInstance</code>.</p>
     pub fn db_instance(mut self, input: crate::types::DbInstance) -> Self {
         self.db_instance = Some(input);
         self
     }
-    /// <p>Contains the details of an Amazon RDS DB instance.</p> 
+    /// <p>Contains the details of an Amazon RDS DB instance.</p>
     /// <p>This data type is used as a response element in the operations <code>CreateDBInstance</code>, <code>CreateDBInstanceReadReplica</code>, <code>DeleteDBInstance</code>, <code>DescribeDBInstances</code>, <code>ModifyDBInstance</code>, <code>PromoteReadReplica</code>, <code>RebootDBInstance</code>, <code>RestoreDBInstanceFromDBSnapshot</code>, <code>RestoreDBInstanceFromS3</code>, <code>RestoreDBInstanceToPointInTime</code>, <code>StartDBInstance</code>, and <code>StopDBInstance</code>.</p>
     pub fn set_db_instance(mut self, input: std::option::Option<crate::types::DbInstance>) -> Self {
-        self.db_instance = input; self
+        self.db_instance = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`SwitchoverReadReplicaOutput`](crate::operation::switchover_read_replica::SwitchoverReadReplicaOutput).
     pub fn build(self) -> crate::operation::switchover_read_replica::SwitchoverReadReplicaOutput {
         crate::operation::switchover_read_replica::SwitchoverReadReplicaOutput {
-            db_instance: self.db_instance
-            ,
+            db_instance: self.db_instance,
             _request_id: self._request_id,
         }
     }
 }
-

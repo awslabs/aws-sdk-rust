@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ImportSnapshotOutput  {
+pub struct ImportSnapshotOutput {
     /// <p>A description of the import snapshot task.</p>
     #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
@@ -19,27 +19,27 @@ pub struct ImportSnapshotOutput  {
 }
 impl ImportSnapshotOutput {
     /// <p>A description of the import snapshot task.</p>
-    pub fn description(&self) -> std::option::Option<& str> {
+    pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
     /// <p>The ID of the import snapshot task.</p>
-    pub fn import_task_id(&self) -> std::option::Option<& str> {
+    pub fn import_task_id(&self) -> std::option::Option<&str> {
         self.import_task_id.as_deref()
     }
     /// <p>Information about the import snapshot task.</p>
-    pub fn snapshot_task_detail(&self) -> std::option::Option<& crate::types::SnapshotTaskDetail> {
+    pub fn snapshot_task_detail(&self) -> std::option::Option<&crate::types::SnapshotTaskDetail> {
         self.snapshot_task_detail.as_ref()
     }
     /// <p>Any tags assigned to the import snapshot task.</p>
-    pub fn tags(&self) -> std::option::Option<& [crate::types::Tag]> {
+    pub fn tags(&self) -> std::option::Option<&[crate::types::Tag]> {
         self.tags.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for ImportSnapshotOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl ImportSnapshotOutput {
     /// Creates a new builder-style object to manufacture [`ImportSnapshotOutput`](crate::operation::import_snapshot::ImportSnapshotOutput).
     pub fn builder() -> crate::operation::import_snapshot::builders::ImportSnapshotOutputBuilder {
@@ -65,7 +65,8 @@ impl ImportSnapshotOutputBuilder {
     }
     /// <p>A description of the import snapshot task.</p>
     pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.description = input; self
+        self.description = input;
+        self
     }
     /// <p>The ID of the import snapshot task.</p>
     pub fn import_task_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -74,7 +75,8 @@ impl ImportSnapshotOutputBuilder {
     }
     /// <p>The ID of the import snapshot task.</p>
     pub fn set_import_task_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.import_task_id = input; self
+        self.import_task_id = input;
+        self
     }
     /// <p>Information about the import snapshot task.</p>
     pub fn snapshot_task_detail(mut self, input: crate::types::SnapshotTaskDetail) -> Self {
@@ -82,8 +84,12 @@ impl ImportSnapshotOutputBuilder {
         self
     }
     /// <p>Information about the import snapshot task.</p>
-    pub fn set_snapshot_task_detail(mut self, input: std::option::Option<crate::types::SnapshotTaskDetail>) -> Self {
-        self.snapshot_task_detail = input; self
+    pub fn set_snapshot_task_detail(
+        mut self,
+        input: std::option::Option<crate::types::SnapshotTaskDetail>,
+    ) -> Self {
+        self.snapshot_task_detail = input;
+        self
     }
     /// Appends an item to `tags`.
     ///
@@ -92,36 +98,35 @@ impl ImportSnapshotOutputBuilder {
     /// <p>Any tags assigned to the import snapshot task.</p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
-                        v.push(input);
-                        self.tags = Some(v);
-                        self
+        v.push(input);
+        self.tags = Some(v);
+        self
     }
     /// <p>Any tags assigned to the import snapshot task.</p>
-    pub fn set_tags(mut self, input: std::option::Option<std::vec::Vec<crate::types::Tag>>) -> Self {
-        self.tags = input; self
+    pub fn set_tags(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::Tag>>,
+    ) -> Self {
+        self.tags = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`ImportSnapshotOutput`](crate::operation::import_snapshot::ImportSnapshotOutput).
     pub fn build(self) -> crate::operation::import_snapshot::ImportSnapshotOutput {
         crate::operation::import_snapshot::ImportSnapshotOutput {
-            description: self.description
-            ,
-            import_task_id: self.import_task_id
-            ,
-            snapshot_task_detail: self.snapshot_task_detail
-            ,
-            tags: self.tags
-            ,
+            description: self.description,
+            import_task_id: self.import_task_id,
+            snapshot_task_detail: self.snapshot_task_detail,
+            tags: self.tags,
             _request_id: self._request_id,
         }
     }
 }
-

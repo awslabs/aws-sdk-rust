@@ -2,14 +2,14 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeletePredictorOutput  {
+pub struct DeletePredictorOutput {
     _request_id: Option<String>,
 }
 impl aws_http::request_id::RequestId for DeletePredictorOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl DeletePredictorOutput {
     /// Creates a new builder-style object to manufacture [`DeletePredictorOutput`](crate::operation::delete_predictor::DeletePredictorOutput).
     pub fn builder() -> crate::operation::delete_predictor::builders::DeletePredictorOutputBuilder {
@@ -25,14 +25,14 @@ pub struct DeletePredictorOutputBuilder {
 }
 impl DeletePredictorOutputBuilder {
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`DeletePredictorOutput`](crate::operation::delete_predictor::DeletePredictorOutput).
     pub fn build(self) -> crate::operation::delete_predictor::DeletePredictorOutput {
         crate::operation::delete_predictor::DeletePredictorOutput {
@@ -40,4 +40,3 @@ impl DeletePredictorOutputBuilder {
         }
     }
 }
-

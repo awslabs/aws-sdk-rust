@@ -3,7 +3,7 @@
 /// <p>The storage configuration for the instance.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct InstanceStorageConfig  {
+pub struct InstanceStorageConfig {
     /// <p>The existing association identifier that uniquely identifies the resource type and storage config for the given instance ID.</p>
     #[doc(hidden)]
     pub association_id: std::option::Option<std::string::String>,
@@ -25,27 +25,31 @@ pub struct InstanceStorageConfig  {
 }
 impl InstanceStorageConfig {
     /// <p>The existing association identifier that uniquely identifies the resource type and storage config for the given instance ID.</p>
-    pub fn association_id(&self) -> std::option::Option<& str> {
+    pub fn association_id(&self) -> std::option::Option<&str> {
         self.association_id.as_deref()
     }
     /// <p>A valid storage type.</p>
-    pub fn storage_type(&self) -> std::option::Option<& crate::types::StorageType> {
+    pub fn storage_type(&self) -> std::option::Option<&crate::types::StorageType> {
         self.storage_type.as_ref()
     }
     /// <p>The S3 bucket configuration.</p>
-    pub fn s3_config(&self) -> std::option::Option<& crate::types::S3Config> {
+    pub fn s3_config(&self) -> std::option::Option<&crate::types::S3Config> {
         self.s3_config.as_ref()
     }
     /// <p>The configuration of the Kinesis video stream.</p>
-    pub fn kinesis_video_stream_config(&self) -> std::option::Option<& crate::types::KinesisVideoStreamConfig> {
+    pub fn kinesis_video_stream_config(
+        &self,
+    ) -> std::option::Option<&crate::types::KinesisVideoStreamConfig> {
         self.kinesis_video_stream_config.as_ref()
     }
     /// <p>The configuration of the Kinesis data stream.</p>
-    pub fn kinesis_stream_config(&self) -> std::option::Option<& crate::types::KinesisStreamConfig> {
+    pub fn kinesis_stream_config(&self) -> std::option::Option<&crate::types::KinesisStreamConfig> {
         self.kinesis_stream_config.as_ref()
     }
     /// <p>The configuration of the Kinesis Firehose delivery stream.</p>
-    pub fn kinesis_firehose_config(&self) -> std::option::Option<& crate::types::KinesisFirehoseConfig> {
+    pub fn kinesis_firehose_config(
+        &self,
+    ) -> std::option::Option<&crate::types::KinesisFirehoseConfig> {
         self.kinesis_firehose_config.as_ref()
     }
 }
@@ -63,7 +67,8 @@ pub struct InstanceStorageConfigBuilder {
     pub(crate) association_id: std::option::Option<std::string::String>,
     pub(crate) storage_type: std::option::Option<crate::types::StorageType>,
     pub(crate) s3_config: std::option::Option<crate::types::S3Config>,
-    pub(crate) kinesis_video_stream_config: std::option::Option<crate::types::KinesisVideoStreamConfig>,
+    pub(crate) kinesis_video_stream_config:
+        std::option::Option<crate::types::KinesisVideoStreamConfig>,
     pub(crate) kinesis_stream_config: std::option::Option<crate::types::KinesisStreamConfig>,
     pub(crate) kinesis_firehose_config: std::option::Option<crate::types::KinesisFirehoseConfig>,
 }
@@ -75,7 +80,8 @@ impl InstanceStorageConfigBuilder {
     }
     /// <p>The existing association identifier that uniquely identifies the resource type and storage config for the given instance ID.</p>
     pub fn set_association_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.association_id = input; self
+        self.association_id = input;
+        self
     }
     /// <p>A valid storage type.</p>
     pub fn storage_type(mut self, input: crate::types::StorageType) -> Self {
@@ -83,8 +89,12 @@ impl InstanceStorageConfigBuilder {
         self
     }
     /// <p>A valid storage type.</p>
-    pub fn set_storage_type(mut self, input: std::option::Option<crate::types::StorageType>) -> Self {
-        self.storage_type = input; self
+    pub fn set_storage_type(
+        mut self,
+        input: std::option::Option<crate::types::StorageType>,
+    ) -> Self {
+        self.storage_type = input;
+        self
     }
     /// <p>The S3 bucket configuration.</p>
     pub fn s3_config(mut self, input: crate::types::S3Config) -> Self {
@@ -93,16 +103,24 @@ impl InstanceStorageConfigBuilder {
     }
     /// <p>The S3 bucket configuration.</p>
     pub fn set_s3_config(mut self, input: std::option::Option<crate::types::S3Config>) -> Self {
-        self.s3_config = input; self
+        self.s3_config = input;
+        self
     }
     /// <p>The configuration of the Kinesis video stream.</p>
-    pub fn kinesis_video_stream_config(mut self, input: crate::types::KinesisVideoStreamConfig) -> Self {
+    pub fn kinesis_video_stream_config(
+        mut self,
+        input: crate::types::KinesisVideoStreamConfig,
+    ) -> Self {
         self.kinesis_video_stream_config = Some(input);
         self
     }
     /// <p>The configuration of the Kinesis video stream.</p>
-    pub fn set_kinesis_video_stream_config(mut self, input: std::option::Option<crate::types::KinesisVideoStreamConfig>) -> Self {
-        self.kinesis_video_stream_config = input; self
+    pub fn set_kinesis_video_stream_config(
+        mut self,
+        input: std::option::Option<crate::types::KinesisVideoStreamConfig>,
+    ) -> Self {
+        self.kinesis_video_stream_config = input;
+        self
     }
     /// <p>The configuration of the Kinesis data stream.</p>
     pub fn kinesis_stream_config(mut self, input: crate::types::KinesisStreamConfig) -> Self {
@@ -110,8 +128,12 @@ impl InstanceStorageConfigBuilder {
         self
     }
     /// <p>The configuration of the Kinesis data stream.</p>
-    pub fn set_kinesis_stream_config(mut self, input: std::option::Option<crate::types::KinesisStreamConfig>) -> Self {
-        self.kinesis_stream_config = input; self
+    pub fn set_kinesis_stream_config(
+        mut self,
+        input: std::option::Option<crate::types::KinesisStreamConfig>,
+    ) -> Self {
+        self.kinesis_stream_config = input;
+        self
     }
     /// <p>The configuration of the Kinesis Firehose delivery stream.</p>
     pub fn kinesis_firehose_config(mut self, input: crate::types::KinesisFirehoseConfig) -> Self {
@@ -119,25 +141,22 @@ impl InstanceStorageConfigBuilder {
         self
     }
     /// <p>The configuration of the Kinesis Firehose delivery stream.</p>
-    pub fn set_kinesis_firehose_config(mut self, input: std::option::Option<crate::types::KinesisFirehoseConfig>) -> Self {
-        self.kinesis_firehose_config = input; self
+    pub fn set_kinesis_firehose_config(
+        mut self,
+        input: std::option::Option<crate::types::KinesisFirehoseConfig>,
+    ) -> Self {
+        self.kinesis_firehose_config = input;
+        self
     }
     /// Consumes the builder and constructs a [`InstanceStorageConfig`](crate::types::InstanceStorageConfig).
     pub fn build(self) -> crate::types::InstanceStorageConfig {
         crate::types::InstanceStorageConfig {
-            association_id: self.association_id
-            ,
-            storage_type: self.storage_type
-            ,
-            s3_config: self.s3_config
-            ,
-            kinesis_video_stream_config: self.kinesis_video_stream_config
-            ,
-            kinesis_stream_config: self.kinesis_stream_config
-            ,
-            kinesis_firehose_config: self.kinesis_firehose_config
-            ,
+            association_id: self.association_id,
+            storage_type: self.storage_type,
+            s3_config: self.s3_config,
+            kinesis_video_stream_config: self.kinesis_video_stream_config,
+            kinesis_stream_config: self.kinesis_stream_config,
+            kinesis_firehose_config: self.kinesis_firehose_config,
         }
     }
 }
-

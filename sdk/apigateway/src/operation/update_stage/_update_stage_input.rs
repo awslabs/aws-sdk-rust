@@ -3,7 +3,7 @@
 /// <p>Requests API Gateway to change information about a Stage resource.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateStageInput  {
+pub struct UpdateStageInput {
     /// <p>The string identifier of the associated RestApi.</p>
     #[doc(hidden)]
     pub rest_api_id: std::option::Option<std::string::String>,
@@ -16,15 +16,15 @@ pub struct UpdateStageInput  {
 }
 impl UpdateStageInput {
     /// <p>The string identifier of the associated RestApi.</p>
-    pub fn rest_api_id(&self) -> std::option::Option<& str> {
+    pub fn rest_api_id(&self) -> std::option::Option<&str> {
         self.rest_api_id.as_deref()
     }
     /// <p>The name of the Stage resource to change information about.</p>
-    pub fn stage_name(&self) -> std::option::Option<& str> {
+    pub fn stage_name(&self) -> std::option::Option<&str> {
         self.stage_name.as_deref()
     }
     /// <p>For more information about supported patch operations, see <a href="https://docs.aws.amazon.com/apigateway/latest/api/patch-operations.html">Patch Operations</a>.</p>
-    pub fn patch_operations(&self) -> std::option::Option<& [crate::types::PatchOperation]> {
+    pub fn patch_operations(&self) -> std::option::Option<&[crate::types::PatchOperation]> {
         self.patch_operations.as_deref()
     }
 }
@@ -51,7 +51,8 @@ impl UpdateStageInputBuilder {
     }
     /// <p>The string identifier of the associated RestApi.</p>
     pub fn set_rest_api_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.rest_api_id = input; self
+        self.rest_api_id = input;
+        self
     }
     /// <p>The name of the Stage resource to change information about.</p>
     pub fn stage_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -60,7 +61,8 @@ impl UpdateStageInputBuilder {
     }
     /// <p>The name of the Stage resource to change information about.</p>
     pub fn set_stage_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.stage_name = input; self
+        self.stage_name = input;
+        self
     }
     /// Appends an item to `patch_operations`.
     ///
@@ -69,26 +71,29 @@ impl UpdateStageInputBuilder {
     /// <p>For more information about supported patch operations, see <a href="https://docs.aws.amazon.com/apigateway/latest/api/patch-operations.html">Patch Operations</a>.</p>
     pub fn patch_operations(mut self, input: crate::types::PatchOperation) -> Self {
         let mut v = self.patch_operations.unwrap_or_default();
-                        v.push(input);
-                        self.patch_operations = Some(v);
-                        self
+        v.push(input);
+        self.patch_operations = Some(v);
+        self
     }
     /// <p>For more information about supported patch operations, see <a href="https://docs.aws.amazon.com/apigateway/latest/api/patch-operations.html">Patch Operations</a>.</p>
-    pub fn set_patch_operations(mut self, input: std::option::Option<std::vec::Vec<crate::types::PatchOperation>>) -> Self {
-        self.patch_operations = input; self
+    pub fn set_patch_operations(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::PatchOperation>>,
+    ) -> Self {
+        self.patch_operations = input;
+        self
     }
     /// Consumes the builder and constructs a [`UpdateStageInput`](crate::operation::update_stage::UpdateStageInput).
-    pub fn build(self) -> Result<crate::operation::update_stage::UpdateStageInput, aws_smithy_http::operation::error::BuildError> {
-        Ok(
-            crate::operation::update_stage::UpdateStageInput {
-                rest_api_id: self.rest_api_id
-                ,
-                stage_name: self.stage_name
-                ,
-                patch_operations: self.patch_operations
-                ,
-            }
-        )
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::update_stage::UpdateStageInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        Ok(crate::operation::update_stage::UpdateStageInput {
+            rest_api_id: self.rest_api_id,
+            stage_name: self.stage_name,
+            patch_operations: self.patch_operations,
+        })
     }
 }
-

@@ -2,17 +2,19 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct StopNotebookExecutionOutput  {
+pub struct StopNotebookExecutionOutput {
     _request_id: Option<String>,
 }
 impl aws_http::request_id::RequestId for StopNotebookExecutionOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl StopNotebookExecutionOutput {
     /// Creates a new builder-style object to manufacture [`StopNotebookExecutionOutput`](crate::operation::stop_notebook_execution::StopNotebookExecutionOutput).
-    pub fn builder() -> crate::operation::stop_notebook_execution::builders::StopNotebookExecutionOutputBuilder {
+    pub fn builder(
+    ) -> crate::operation::stop_notebook_execution::builders::StopNotebookExecutionOutputBuilder
+    {
         crate::operation::stop_notebook_execution::builders::StopNotebookExecutionOutputBuilder::default()
     }
 }
@@ -25,14 +27,14 @@ pub struct StopNotebookExecutionOutputBuilder {
 }
 impl StopNotebookExecutionOutputBuilder {
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`StopNotebookExecutionOutput`](crate::operation::stop_notebook_execution::StopNotebookExecutionOutput).
     pub fn build(self) -> crate::operation::stop_notebook_execution::StopNotebookExecutionOutput {
         crate::operation::stop_notebook_execution::StopNotebookExecutionOutput {
@@ -40,4 +42,3 @@ impl StopNotebookExecutionOutputBuilder {
         }
     }
 }
-

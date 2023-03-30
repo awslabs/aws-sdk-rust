@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListSecurityProfilePermissionsInput  {
+pub struct ListSecurityProfilePermissionsInput {
     /// <p>The identifier for the security profle.</p>
     #[doc(hidden)]
     pub security_profile_id: std::option::Option<std::string::String>,
@@ -18,15 +18,15 @@ pub struct ListSecurityProfilePermissionsInput  {
 }
 impl ListSecurityProfilePermissionsInput {
     /// <p>The identifier for the security profle.</p>
-    pub fn security_profile_id(&self) -> std::option::Option<& str> {
+    pub fn security_profile_id(&self) -> std::option::Option<&str> {
         self.security_profile_id.as_deref()
     }
     /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
-    pub fn instance_id(&self) -> std::option::Option<& str> {
+    pub fn instance_id(&self) -> std::option::Option<&str> {
         self.instance_id.as_deref()
     }
     /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
     /// <p>The maximum number of results to return per page.</p>
@@ -36,7 +36,7 @@ impl ListSecurityProfilePermissionsInput {
 }
 impl ListSecurityProfilePermissionsInput {
     /// Creates a new builder-style object to manufacture [`ListSecurityProfilePermissionsInput`](crate::operation::list_security_profile_permissions::ListSecurityProfilePermissionsInput).
-    pub fn builder() -> crate::operation::list_security_profile_permissions::builders::ListSecurityProfilePermissionsInputBuilder {
+    pub fn builder() -> crate::operation::list_security_profile_permissions::builders::ListSecurityProfilePermissionsInputBuilder{
         crate::operation::list_security_profile_permissions::builders::ListSecurityProfilePermissionsInputBuilder::default()
     }
 }
@@ -57,8 +57,12 @@ impl ListSecurityProfilePermissionsInputBuilder {
         self
     }
     /// <p>The identifier for the security profle.</p>
-    pub fn set_security_profile_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.security_profile_id = input; self
+    pub fn set_security_profile_id(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.security_profile_id = input;
+        self
     }
     /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
     pub fn instance_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -67,7 +71,8 @@ impl ListSecurityProfilePermissionsInputBuilder {
     }
     /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
     pub fn set_instance_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.instance_id = input; self
+        self.instance_id = input;
+        self
     }
     /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -76,7 +81,8 @@ impl ListSecurityProfilePermissionsInputBuilder {
     }
     /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input; self
+        self.next_token = input;
+        self
     }
     /// <p>The maximum number of results to return per page.</p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -85,10 +91,16 @@ impl ListSecurityProfilePermissionsInputBuilder {
     }
     /// <p>The maximum number of results to return per page.</p>
     pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_results = input; self
+        self.max_results = input;
+        self
     }
     /// Consumes the builder and constructs a [`ListSecurityProfilePermissionsInput`](crate::operation::list_security_profile_permissions::ListSecurityProfilePermissionsInput).
-    pub fn build(self) -> Result<crate::operation::list_security_profile_permissions::ListSecurityProfilePermissionsInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::list_security_profile_permissions::ListSecurityProfilePermissionsInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::list_security_profile_permissions::ListSecurityProfilePermissionsInput {
                 security_profile_id: self.security_profile_id
@@ -103,4 +115,3 @@ impl ListSecurityProfilePermissionsInputBuilder {
         )
     }
 }
-

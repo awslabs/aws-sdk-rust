@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DisassociateBotInput  {
+pub struct DisassociateBotInput {
     /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
     #[doc(hidden)]
     pub instance_id: std::option::Option<std::string::String>,
@@ -15,15 +15,15 @@ pub struct DisassociateBotInput  {
 }
 impl DisassociateBotInput {
     /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
-    pub fn instance_id(&self) -> std::option::Option<& str> {
+    pub fn instance_id(&self) -> std::option::Option<&str> {
         self.instance_id.as_deref()
     }
     /// <p>Configuration information of an Amazon Lex bot.</p>
-    pub fn lex_bot(&self) -> std::option::Option<& crate::types::LexBot> {
+    pub fn lex_bot(&self) -> std::option::Option<&crate::types::LexBot> {
         self.lex_bot.as_ref()
     }
     /// <p>The Amazon Lex V2 bot to disassociate from the instance.</p>
-    pub fn lex_v2_bot(&self) -> std::option::Option<& crate::types::LexV2Bot> {
+    pub fn lex_v2_bot(&self) -> std::option::Option<&crate::types::LexV2Bot> {
         self.lex_v2_bot.as_ref()
     }
 }
@@ -50,7 +50,8 @@ impl DisassociateBotInputBuilder {
     }
     /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
     pub fn set_instance_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.instance_id = input; self
+        self.instance_id = input;
+        self
     }
     /// <p>Configuration information of an Amazon Lex bot.</p>
     pub fn lex_bot(mut self, input: crate::types::LexBot) -> Self {
@@ -59,7 +60,8 @@ impl DisassociateBotInputBuilder {
     }
     /// <p>Configuration information of an Amazon Lex bot.</p>
     pub fn set_lex_bot(mut self, input: std::option::Option<crate::types::LexBot>) -> Self {
-        self.lex_bot = input; self
+        self.lex_bot = input;
+        self
     }
     /// <p>The Amazon Lex V2 bot to disassociate from the instance.</p>
     pub fn lex_v2_bot(mut self, input: crate::types::LexV2Bot) -> Self {
@@ -68,20 +70,20 @@ impl DisassociateBotInputBuilder {
     }
     /// <p>The Amazon Lex V2 bot to disassociate from the instance.</p>
     pub fn set_lex_v2_bot(mut self, input: std::option::Option<crate::types::LexV2Bot>) -> Self {
-        self.lex_v2_bot = input; self
+        self.lex_v2_bot = input;
+        self
     }
     /// Consumes the builder and constructs a [`DisassociateBotInput`](crate::operation::disassociate_bot::DisassociateBotInput).
-    pub fn build(self) -> Result<crate::operation::disassociate_bot::DisassociateBotInput, aws_smithy_http::operation::error::BuildError> {
-        Ok(
-            crate::operation::disassociate_bot::DisassociateBotInput {
-                instance_id: self.instance_id
-                ,
-                lex_bot: self.lex_bot
-                ,
-                lex_v2_bot: self.lex_v2_bot
-                ,
-            }
-        )
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::disassociate_bot::DisassociateBotInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        Ok(crate::operation::disassociate_bot::DisassociateBotInput {
+            instance_id: self.instance_id,
+            lex_bot: self.lex_bot,
+            lex_v2_bot: self.lex_v2_bot,
+        })
     }
 }
-

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct StartExportLabelsTaskRunOutput  {
+pub struct StartExportLabelsTaskRunOutput {
     /// <p>The unique identifier for the task run.</p>
     #[doc(hidden)]
     pub task_run_id: std::option::Option<std::string::String>,
@@ -10,18 +10,18 @@ pub struct StartExportLabelsTaskRunOutput  {
 }
 impl StartExportLabelsTaskRunOutput {
     /// <p>The unique identifier for the task run.</p>
-    pub fn task_run_id(&self) -> std::option::Option<& str> {
+    pub fn task_run_id(&self) -> std::option::Option<&str> {
         self.task_run_id.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for StartExportLabelsTaskRunOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl StartExportLabelsTaskRunOutput {
     /// Creates a new builder-style object to manufacture [`StartExportLabelsTaskRunOutput`](crate::operation::start_export_labels_task_run::StartExportLabelsTaskRunOutput).
-    pub fn builder() -> crate::operation::start_export_labels_task_run::builders::StartExportLabelsTaskRunOutputBuilder {
+    pub fn builder() -> crate::operation::start_export_labels_task_run::builders::StartExportLabelsTaskRunOutputBuilder{
         crate::operation::start_export_labels_task_run::builders::StartExportLabelsTaskRunOutputBuilder::default()
     }
 }
@@ -41,24 +41,25 @@ impl StartExportLabelsTaskRunOutputBuilder {
     }
     /// <p>The unique identifier for the task run.</p>
     pub fn set_task_run_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.task_run_id = input; self
+        self.task_run_id = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`StartExportLabelsTaskRunOutput`](crate::operation::start_export_labels_task_run::StartExportLabelsTaskRunOutput).
-    pub fn build(self) -> crate::operation::start_export_labels_task_run::StartExportLabelsTaskRunOutput {
+    pub fn build(
+        self,
+    ) -> crate::operation::start_export_labels_task_run::StartExportLabelsTaskRunOutput {
         crate::operation::start_export_labels_task_run::StartExportLabelsTaskRunOutput {
-            task_run_id: self.task_run_id
-            ,
+            task_run_id: self.task_run_id,
             _request_id: self._request_id,
         }
     }
 }
-

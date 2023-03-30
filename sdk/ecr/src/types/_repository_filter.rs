@@ -3,7 +3,7 @@
 /// <p>The filter settings used with image replication. Specifying a repository filter to a replication rule provides a method for controlling which repositories in a private registry are replicated. If no repository filter is specified, all images in the repository are replicated.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct RepositoryFilter  {
+pub struct RepositoryFilter {
     /// <p>The repository filter details. When the <code>PREFIX_MATCH</code> filter type is specified, this value is required and should be the repository name prefix to configure replication for.</p>
     #[doc(hidden)]
     pub filter: std::option::Option<std::string::String>,
@@ -13,11 +13,11 @@ pub struct RepositoryFilter  {
 }
 impl RepositoryFilter {
     /// <p>The repository filter details. When the <code>PREFIX_MATCH</code> filter type is specified, this value is required and should be the repository name prefix to configure replication for.</p>
-    pub fn filter(&self) -> std::option::Option<& str> {
+    pub fn filter(&self) -> std::option::Option<&str> {
         self.filter.as_deref()
     }
     /// <p>The repository filter type. The only supported value is <code>PREFIX_MATCH</code>, which is a repository name prefix specified with the <code>filter</code> parameter.</p>
-    pub fn filter_type(&self) -> std::option::Option<& crate::types::RepositoryFilterType> {
+    pub fn filter_type(&self) -> std::option::Option<&crate::types::RepositoryFilterType> {
         self.filter_type.as_ref()
     }
 }
@@ -43,7 +43,8 @@ impl RepositoryFilterBuilder {
     }
     /// <p>The repository filter details. When the <code>PREFIX_MATCH</code> filter type is specified, this value is required and should be the repository name prefix to configure replication for.</p>
     pub fn set_filter(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.filter = input; self
+        self.filter = input;
+        self
     }
     /// <p>The repository filter type. The only supported value is <code>PREFIX_MATCH</code>, which is a repository name prefix specified with the <code>filter</code> parameter.</p>
     pub fn filter_type(mut self, input: crate::types::RepositoryFilterType) -> Self {
@@ -51,17 +52,18 @@ impl RepositoryFilterBuilder {
         self
     }
     /// <p>The repository filter type. The only supported value is <code>PREFIX_MATCH</code>, which is a repository name prefix specified with the <code>filter</code> parameter.</p>
-    pub fn set_filter_type(mut self, input: std::option::Option<crate::types::RepositoryFilterType>) -> Self {
-        self.filter_type = input; self
+    pub fn set_filter_type(
+        mut self,
+        input: std::option::Option<crate::types::RepositoryFilterType>,
+    ) -> Self {
+        self.filter_type = input;
+        self
     }
     /// Consumes the builder and constructs a [`RepositoryFilter`](crate::types::RepositoryFilter).
     pub fn build(self) -> crate::types::RepositoryFilter {
         crate::types::RepositoryFilter {
-            filter: self.filter
-            ,
-            filter_type: self.filter_type
-            ,
+            filter: self.filter,
+            filter_type: self.filter_type,
         }
     }
 }
-

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeTagsInput  {
+pub struct DescribeTagsInput {
     /// <p>You can filter the list using a <i>key</i>-<i>value</i> format. You can separate these items by using logical operators. Allowed filters include <code>tagKey</code>, <code>tagValue</code>, and <code>configurationId</code>. </p>
     #[doc(hidden)]
     pub filters: std::option::Option<std::vec::Vec<crate::types::TagFilter>>,
@@ -15,7 +15,7 @@ pub struct DescribeTagsInput  {
 }
 impl DescribeTagsInput {
     /// <p>You can filter the list using a <i>key</i>-<i>value</i> format. You can separate these items by using logical operators. Allowed filters include <code>tagKey</code>, <code>tagValue</code>, and <code>configurationId</code>. </p>
-    pub fn filters(&self) -> std::option::Option<& [crate::types::TagFilter]> {
+    pub fn filters(&self) -> std::option::Option<&[crate::types::TagFilter]> {
         self.filters.as_deref()
     }
     /// <p>The total number of items to return in a single page of output. The maximum value is 100.</p>
@@ -23,7 +23,7 @@ impl DescribeTagsInput {
         self.max_results
     }
     /// <p>A token to start the list. Use this token to get the next set of results.</p>
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
 }
@@ -50,13 +50,17 @@ impl DescribeTagsInputBuilder {
     /// <p>You can filter the list using a <i>key</i>-<i>value</i> format. You can separate these items by using logical operators. Allowed filters include <code>tagKey</code>, <code>tagValue</code>, and <code>configurationId</code>. </p>
     pub fn filters(mut self, input: crate::types::TagFilter) -> Self {
         let mut v = self.filters.unwrap_or_default();
-                        v.push(input);
-                        self.filters = Some(v);
-                        self
+        v.push(input);
+        self.filters = Some(v);
+        self
     }
     /// <p>You can filter the list using a <i>key</i>-<i>value</i> format. You can separate these items by using logical operators. Allowed filters include <code>tagKey</code>, <code>tagValue</code>, and <code>configurationId</code>. </p>
-    pub fn set_filters(mut self, input: std::option::Option<std::vec::Vec<crate::types::TagFilter>>) -> Self {
-        self.filters = input; self
+    pub fn set_filters(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::TagFilter>>,
+    ) -> Self {
+        self.filters = input;
+        self
     }
     /// <p>The total number of items to return in a single page of output. The maximum value is 100.</p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -65,7 +69,8 @@ impl DescribeTagsInputBuilder {
     }
     /// <p>The total number of items to return in a single page of output. The maximum value is 100.</p>
     pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_results = input; self
+        self.max_results = input;
+        self
     }
     /// <p>A token to start the list. Use this token to get the next set of results.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -74,21 +79,20 @@ impl DescribeTagsInputBuilder {
     }
     /// <p>A token to start the list. Use this token to get the next set of results.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input; self
+        self.next_token = input;
+        self
     }
     /// Consumes the builder and constructs a [`DescribeTagsInput`](crate::operation::describe_tags::DescribeTagsInput).
-    pub fn build(self) -> Result<crate::operation::describe_tags::DescribeTagsInput, aws_smithy_http::operation::error::BuildError> {
-        Ok(
-            crate::operation::describe_tags::DescribeTagsInput {
-                filters: self.filters
-                ,
-                max_results: self.max_results
-                    .unwrap_or_default()
-                ,
-                next_token: self.next_token
-                ,
-            }
-        )
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::describe_tags::DescribeTagsInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        Ok(crate::operation::describe_tags::DescribeTagsInput {
+            filters: self.filters,
+            max_results: self.max_results.unwrap_or_default(),
+            next_token: self.next_token,
+        })
     }
 }
-

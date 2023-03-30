@@ -3,14 +3,16 @@
 /// <p>The conditional formatting for the progress bar of a KPI visual.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct KpiProgressBarConditionalFormatting  {
+pub struct KpiProgressBarConditionalFormatting {
     /// <p>The conditional formatting of the progress bar's foreground color.</p>
     #[doc(hidden)]
     pub foreground_color: std::option::Option<crate::types::ConditionalFormattingColor>,
 }
 impl KpiProgressBarConditionalFormatting {
     /// <p>The conditional formatting of the progress bar's foreground color.</p>
-    pub fn foreground_color(&self) -> std::option::Option<& crate::types::ConditionalFormattingColor> {
+    pub fn foreground_color(
+        &self,
+    ) -> std::option::Option<&crate::types::ConditionalFormattingColor> {
         self.foreground_color.as_ref()
     }
 }
@@ -34,15 +36,17 @@ impl KpiProgressBarConditionalFormattingBuilder {
         self
     }
     /// <p>The conditional formatting of the progress bar's foreground color.</p>
-    pub fn set_foreground_color(mut self, input: std::option::Option<crate::types::ConditionalFormattingColor>) -> Self {
-        self.foreground_color = input; self
+    pub fn set_foreground_color(
+        mut self,
+        input: std::option::Option<crate::types::ConditionalFormattingColor>,
+    ) -> Self {
+        self.foreground_color = input;
+        self
     }
     /// Consumes the builder and constructs a [`KpiProgressBarConditionalFormatting`](crate::types::KpiProgressBarConditionalFormatting).
     pub fn build(self) -> crate::types::KpiProgressBarConditionalFormatting {
         crate::types::KpiProgressBarConditionalFormatting {
-            foreground_color: self.foreground_color
-            ,
+            foreground_color: self.foreground_color,
         }
     }
 }
-

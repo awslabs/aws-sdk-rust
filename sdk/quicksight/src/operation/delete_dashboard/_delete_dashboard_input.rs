@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteDashboardInput  {
+pub struct DeleteDashboardInput {
     /// <p>The ID of the Amazon Web Services account that contains the dashboard that you're deleting.</p>
     #[doc(hidden)]
     pub aws_account_id: std::option::Option<std::string::String>,
@@ -15,11 +15,11 @@ pub struct DeleteDashboardInput  {
 }
 impl DeleteDashboardInput {
     /// <p>The ID of the Amazon Web Services account that contains the dashboard that you're deleting.</p>
-    pub fn aws_account_id(&self) -> std::option::Option<& str> {
+    pub fn aws_account_id(&self) -> std::option::Option<&str> {
         self.aws_account_id.as_deref()
     }
     /// <p>The ID for the dashboard.</p>
-    pub fn dashboard_id(&self) -> std::option::Option<& str> {
+    pub fn dashboard_id(&self) -> std::option::Option<&str> {
         self.dashboard_id.as_deref()
     }
     /// <p>The version number of the dashboard. If the version number property is provided, only the specified version of the dashboard is deleted.</p>
@@ -50,7 +50,8 @@ impl DeleteDashboardInputBuilder {
     }
     /// <p>The ID of the Amazon Web Services account that contains the dashboard that you're deleting.</p>
     pub fn set_aws_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.aws_account_id = input; self
+        self.aws_account_id = input;
+        self
     }
     /// <p>The ID for the dashboard.</p>
     pub fn dashboard_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -59,7 +60,8 @@ impl DeleteDashboardInputBuilder {
     }
     /// <p>The ID for the dashboard.</p>
     pub fn set_dashboard_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.dashboard_id = input; self
+        self.dashboard_id = input;
+        self
     }
     /// <p>The version number of the dashboard. If the version number property is provided, only the specified version of the dashboard is deleted.</p>
     pub fn version_number(mut self, input: i64) -> Self {
@@ -68,20 +70,20 @@ impl DeleteDashboardInputBuilder {
     }
     /// <p>The version number of the dashboard. If the version number property is provided, only the specified version of the dashboard is deleted.</p>
     pub fn set_version_number(mut self, input: std::option::Option<i64>) -> Self {
-        self.version_number = input; self
+        self.version_number = input;
+        self
     }
     /// Consumes the builder and constructs a [`DeleteDashboardInput`](crate::operation::delete_dashboard::DeleteDashboardInput).
-    pub fn build(self) -> Result<crate::operation::delete_dashboard::DeleteDashboardInput, aws_smithy_http::operation::error::BuildError> {
-        Ok(
-            crate::operation::delete_dashboard::DeleteDashboardInput {
-                aws_account_id: self.aws_account_id
-                ,
-                dashboard_id: self.dashboard_id
-                ,
-                version_number: self.version_number
-                ,
-            }
-        )
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::delete_dashboard::DeleteDashboardInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        Ok(crate::operation::delete_dashboard::DeleteDashboardInput {
+            aws_account_id: self.aws_account_id,
+            dashboard_id: self.dashboard_id,
+            version_number: self.version_number,
+        })
     }
 }
-

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteStorageVirtualMachineOutput  {
+pub struct DeleteStorageVirtualMachineOutput {
     /// <p>The ID of the SVM Amazon FSx is deleting.</p>
     #[doc(hidden)]
     pub storage_virtual_machine_id: std::option::Option<std::string::String>,
@@ -13,22 +13,22 @@ pub struct DeleteStorageVirtualMachineOutput  {
 }
 impl DeleteStorageVirtualMachineOutput {
     /// <p>The ID of the SVM Amazon FSx is deleting.</p>
-    pub fn storage_virtual_machine_id(&self) -> std::option::Option<& str> {
+    pub fn storage_virtual_machine_id(&self) -> std::option::Option<&str> {
         self.storage_virtual_machine_id.as_deref()
     }
     /// <p>Describes the lifecycle state of the SVM being deleted.</p>
-    pub fn lifecycle(&self) -> std::option::Option<& crate::types::StorageVirtualMachineLifecycle> {
+    pub fn lifecycle(&self) -> std::option::Option<&crate::types::StorageVirtualMachineLifecycle> {
         self.lifecycle.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for DeleteStorageVirtualMachineOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl DeleteStorageVirtualMachineOutput {
     /// Creates a new builder-style object to manufacture [`DeleteStorageVirtualMachineOutput`](crate::operation::delete_storage_virtual_machine::DeleteStorageVirtualMachineOutput).
-    pub fn builder() -> crate::operation::delete_storage_virtual_machine::builders::DeleteStorageVirtualMachineOutputBuilder {
+    pub fn builder() -> crate::operation::delete_storage_virtual_machine::builders::DeleteStorageVirtualMachineOutputBuilder{
         crate::operation::delete_storage_virtual_machine::builders::DeleteStorageVirtualMachineOutputBuilder::default()
     }
 }
@@ -48,8 +48,12 @@ impl DeleteStorageVirtualMachineOutputBuilder {
         self
     }
     /// <p>The ID of the SVM Amazon FSx is deleting.</p>
-    pub fn set_storage_virtual_machine_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.storage_virtual_machine_id = input; self
+    pub fn set_storage_virtual_machine_id(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.storage_virtual_machine_id = input;
+        self
     }
     /// <p>Describes the lifecycle state of the SVM being deleted.</p>
     pub fn lifecycle(mut self, input: crate::types::StorageVirtualMachineLifecycle) -> Self {
@@ -57,27 +61,30 @@ impl DeleteStorageVirtualMachineOutputBuilder {
         self
     }
     /// <p>Describes the lifecycle state of the SVM being deleted.</p>
-    pub fn set_lifecycle(mut self, input: std::option::Option<crate::types::StorageVirtualMachineLifecycle>) -> Self {
-        self.lifecycle = input; self
+    pub fn set_lifecycle(
+        mut self,
+        input: std::option::Option<crate::types::StorageVirtualMachineLifecycle>,
+    ) -> Self {
+        self.lifecycle = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`DeleteStorageVirtualMachineOutput`](crate::operation::delete_storage_virtual_machine::DeleteStorageVirtualMachineOutput).
-    pub fn build(self) -> crate::operation::delete_storage_virtual_machine::DeleteStorageVirtualMachineOutput {
+    pub fn build(
+        self,
+    ) -> crate::operation::delete_storage_virtual_machine::DeleteStorageVirtualMachineOutput {
         crate::operation::delete_storage_virtual_machine::DeleteStorageVirtualMachineOutput {
-            storage_virtual_machine_id: self.storage_virtual_machine_id
-            ,
-            lifecycle: self.lifecycle
-            ,
+            storage_virtual_machine_id: self.storage_virtual_machine_id,
+            lifecycle: self.lifecycle,
             _request_id: self._request_id,
         }
     }
 }
-

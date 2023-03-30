@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AddLfTagsToResourceInput  {
+pub struct AddLfTagsToResourceInput {
     /// <p>The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your Lake Formation environment. </p>
     #[doc(hidden)]
     pub catalog_id: std::option::Option<std::string::String>,
@@ -15,21 +15,22 @@ pub struct AddLfTagsToResourceInput  {
 }
 impl AddLfTagsToResourceInput {
     /// <p>The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your Lake Formation environment. </p>
-    pub fn catalog_id(&self) -> std::option::Option<& str> {
+    pub fn catalog_id(&self) -> std::option::Option<&str> {
         self.catalog_id.as_deref()
     }
     /// <p>The database, table, or column resource to which to attach an LF-tag.</p>
-    pub fn resource(&self) -> std::option::Option<& crate::types::Resource> {
+    pub fn resource(&self) -> std::option::Option<&crate::types::Resource> {
         self.resource.as_ref()
     }
     /// <p>The LF-tags to attach to the resource.</p>
-    pub fn lf_tags(&self) -> std::option::Option<& [crate::types::LfTagPair]> {
+    pub fn lf_tags(&self) -> std::option::Option<&[crate::types::LfTagPair]> {
         self.lf_tags.as_deref()
     }
 }
 impl AddLfTagsToResourceInput {
     /// Creates a new builder-style object to manufacture [`AddLfTagsToResourceInput`](crate::operation::add_lf_tags_to_resource::AddLfTagsToResourceInput).
-    pub fn builder() -> crate::operation::add_lf_tags_to_resource::builders::AddLfTagsToResourceInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::add_lf_tags_to_resource::builders::AddLfTagsToResourceInputBuilder {
         crate::operation::add_lf_tags_to_resource::builders::AddLfTagsToResourceInputBuilder::default()
     }
 }
@@ -50,7 +51,8 @@ impl AddLfTagsToResourceInputBuilder {
     }
     /// <p>The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your Lake Formation environment. </p>
     pub fn set_catalog_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.catalog_id = input; self
+        self.catalog_id = input;
+        self
     }
     /// <p>The database, table, or column resource to which to attach an LF-tag.</p>
     pub fn resource(mut self, input: crate::types::Resource) -> Self {
@@ -59,7 +61,8 @@ impl AddLfTagsToResourceInputBuilder {
     }
     /// <p>The database, table, or column resource to which to attach an LF-tag.</p>
     pub fn set_resource(mut self, input: std::option::Option<crate::types::Resource>) -> Self {
-        self.resource = input; self
+        self.resource = input;
+        self
     }
     /// Appends an item to `lf_tags`.
     ///
@@ -68,26 +71,31 @@ impl AddLfTagsToResourceInputBuilder {
     /// <p>The LF-tags to attach to the resource.</p>
     pub fn lf_tags(mut self, input: crate::types::LfTagPair) -> Self {
         let mut v = self.lf_tags.unwrap_or_default();
-                        v.push(input);
-                        self.lf_tags = Some(v);
-                        self
+        v.push(input);
+        self.lf_tags = Some(v);
+        self
     }
     /// <p>The LF-tags to attach to the resource.</p>
-    pub fn set_lf_tags(mut self, input: std::option::Option<std::vec::Vec<crate::types::LfTagPair>>) -> Self {
-        self.lf_tags = input; self
+    pub fn set_lf_tags(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::LfTagPair>>,
+    ) -> Self {
+        self.lf_tags = input;
+        self
     }
     /// Consumes the builder and constructs a [`AddLfTagsToResourceInput`](crate::operation::add_lf_tags_to_resource::AddLfTagsToResourceInput).
-    pub fn build(self) -> Result<crate::operation::add_lf_tags_to_resource::AddLfTagsToResourceInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::add_lf_tags_to_resource::AddLfTagsToResourceInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::add_lf_tags_to_resource::AddLfTagsToResourceInput {
-                catalog_id: self.catalog_id
-                ,
-                resource: self.resource
-                ,
-                lf_tags: self.lf_tags
-                ,
-            }
+                catalog_id: self.catalog_id,
+                resource: self.resource,
+                lf_tags: self.lf_tags,
+            },
         )
     }
 }
-

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct MergePullRequestBySquashOutput  {
+pub struct MergePullRequestBySquashOutput {
     /// <p>Returns information about a pull request.</p>
     #[doc(hidden)]
     pub pull_request: std::option::Option<crate::types::PullRequest>,
@@ -10,18 +10,18 @@ pub struct MergePullRequestBySquashOutput  {
 }
 impl MergePullRequestBySquashOutput {
     /// <p>Returns information about a pull request.</p>
-    pub fn pull_request(&self) -> std::option::Option<& crate::types::PullRequest> {
+    pub fn pull_request(&self) -> std::option::Option<&crate::types::PullRequest> {
         self.pull_request.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for MergePullRequestBySquashOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl MergePullRequestBySquashOutput {
     /// Creates a new builder-style object to manufacture [`MergePullRequestBySquashOutput`](crate::operation::merge_pull_request_by_squash::MergePullRequestBySquashOutput).
-    pub fn builder() -> crate::operation::merge_pull_request_by_squash::builders::MergePullRequestBySquashOutputBuilder {
+    pub fn builder() -> crate::operation::merge_pull_request_by_squash::builders::MergePullRequestBySquashOutputBuilder{
         crate::operation::merge_pull_request_by_squash::builders::MergePullRequestBySquashOutputBuilder::default()
     }
 }
@@ -40,25 +40,29 @@ impl MergePullRequestBySquashOutputBuilder {
         self
     }
     /// <p>Returns information about a pull request.</p>
-    pub fn set_pull_request(mut self, input: std::option::Option<crate::types::PullRequest>) -> Self {
-        self.pull_request = input; self
+    pub fn set_pull_request(
+        mut self,
+        input: std::option::Option<crate::types::PullRequest>,
+    ) -> Self {
+        self.pull_request = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`MergePullRequestBySquashOutput`](crate::operation::merge_pull_request_by_squash::MergePullRequestBySquashOutput).
-    pub fn build(self) -> crate::operation::merge_pull_request_by_squash::MergePullRequestBySquashOutput {
+    pub fn build(
+        self,
+    ) -> crate::operation::merge_pull_request_by_squash::MergePullRequestBySquashOutput {
         crate::operation::merge_pull_request_by_squash::MergePullRequestBySquashOutput {
-            pull_request: self.pull_request
-            ,
+            pull_request: self.pull_request,
             _request_id: self._request_id,
         }
     }
 }
-

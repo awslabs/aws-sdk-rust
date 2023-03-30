@@ -54,4 +54,3 @@ pub mod update_workspace_authentication;
 
 /// Types for the `UpdateWorkspaceConfiguration` operation.
 pub mod update_workspace_configuration;
-

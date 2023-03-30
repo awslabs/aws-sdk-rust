@@ -3,7 +3,7 @@
 /// <p>Specifies a custom CSV classifier to be updated.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateCsvClassifierRequest  {
+pub struct UpdateCsvClassifierRequest {
     /// <p>The name of the classifier.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -34,23 +34,23 @@ pub struct UpdateCsvClassifierRequest  {
 }
 impl UpdateCsvClassifierRequest {
     /// <p>The name of the classifier.</p>
-    pub fn name(&self) -> std::option::Option<& str> {
+    pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>A custom symbol to denote what separates each column entry in the row.</p>
-    pub fn delimiter(&self) -> std::option::Option<& str> {
+    pub fn delimiter(&self) -> std::option::Option<&str> {
         self.delimiter.as_deref()
     }
     /// <p>A custom symbol to denote what combines content into a single column value. It must be different from the column delimiter.</p>
-    pub fn quote_symbol(&self) -> std::option::Option<& str> {
+    pub fn quote_symbol(&self) -> std::option::Option<&str> {
         self.quote_symbol.as_deref()
     }
     /// <p>Indicates whether the CSV file contains a header.</p>
-    pub fn contains_header(&self) -> std::option::Option<& crate::types::CsvHeaderOption> {
+    pub fn contains_header(&self) -> std::option::Option<&crate::types::CsvHeaderOption> {
         self.contains_header.as_ref()
     }
     /// <p>A list of strings representing column names.</p>
-    pub fn header(&self) -> std::option::Option<& [std::string::String]> {
+    pub fn header(&self) -> std::option::Option<&[std::string::String]> {
         self.header.as_deref()
     }
     /// <p>Specifies not to trim values before identifying the type of column values. The default value is true.</p>
@@ -66,7 +66,7 @@ impl UpdateCsvClassifierRequest {
         self.custom_datatype_configured
     }
     /// <p>Specifies a list of supported custom datatypes.</p>
-    pub fn custom_datatypes(&self) -> std::option::Option<& [std::string::String]> {
+    pub fn custom_datatypes(&self) -> std::option::Option<&[std::string::String]> {
         self.custom_datatypes.as_deref()
     }
 }
@@ -99,7 +99,8 @@ impl UpdateCsvClassifierRequestBuilder {
     }
     /// <p>The name of the classifier.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input; self
+        self.name = input;
+        self
     }
     /// <p>A custom symbol to denote what separates each column entry in the row.</p>
     pub fn delimiter(mut self, input: impl Into<std::string::String>) -> Self {
@@ -108,7 +109,8 @@ impl UpdateCsvClassifierRequestBuilder {
     }
     /// <p>A custom symbol to denote what separates each column entry in the row.</p>
     pub fn set_delimiter(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.delimiter = input; self
+        self.delimiter = input;
+        self
     }
     /// <p>A custom symbol to denote what combines content into a single column value. It must be different from the column delimiter.</p>
     pub fn quote_symbol(mut self, input: impl Into<std::string::String>) -> Self {
@@ -117,7 +119,8 @@ impl UpdateCsvClassifierRequestBuilder {
     }
     /// <p>A custom symbol to denote what combines content into a single column value. It must be different from the column delimiter.</p>
     pub fn set_quote_symbol(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.quote_symbol = input; self
+        self.quote_symbol = input;
+        self
     }
     /// <p>Indicates whether the CSV file contains a header.</p>
     pub fn contains_header(mut self, input: crate::types::CsvHeaderOption) -> Self {
@@ -125,8 +128,12 @@ impl UpdateCsvClassifierRequestBuilder {
         self
     }
     /// <p>Indicates whether the CSV file contains a header.</p>
-    pub fn set_contains_header(mut self, input: std::option::Option<crate::types::CsvHeaderOption>) -> Self {
-        self.contains_header = input; self
+    pub fn set_contains_header(
+        mut self,
+        input: std::option::Option<crate::types::CsvHeaderOption>,
+    ) -> Self {
+        self.contains_header = input;
+        self
     }
     /// Appends an item to `header`.
     ///
@@ -135,13 +142,17 @@ impl UpdateCsvClassifierRequestBuilder {
     /// <p>A list of strings representing column names.</p>
     pub fn header(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.header.unwrap_or_default();
-                        v.push(input.into());
-                        self.header = Some(v);
-                        self
+        v.push(input.into());
+        self.header = Some(v);
+        self
     }
     /// <p>A list of strings representing column names.</p>
-    pub fn set_header(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-        self.header = input; self
+    pub fn set_header(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
+        self.header = input;
+        self
     }
     /// <p>Specifies not to trim values before identifying the type of column values. The default value is true.</p>
     pub fn disable_value_trimming(mut self, input: bool) -> Self {
@@ -150,7 +161,8 @@ impl UpdateCsvClassifierRequestBuilder {
     }
     /// <p>Specifies not to trim values before identifying the type of column values. The default value is true.</p>
     pub fn set_disable_value_trimming(mut self, input: std::option::Option<bool>) -> Self {
-        self.disable_value_trimming = input; self
+        self.disable_value_trimming = input;
+        self
     }
     /// <p>Enables the processing of files that contain only one column.</p>
     pub fn allow_single_column(mut self, input: bool) -> Self {
@@ -159,7 +171,8 @@ impl UpdateCsvClassifierRequestBuilder {
     }
     /// <p>Enables the processing of files that contain only one column.</p>
     pub fn set_allow_single_column(mut self, input: std::option::Option<bool>) -> Self {
-        self.allow_single_column = input; self
+        self.allow_single_column = input;
+        self
     }
     /// <p>Specifies the configuration of custom datatypes.</p>
     pub fn custom_datatype_configured(mut self, input: bool) -> Self {
@@ -168,7 +181,8 @@ impl UpdateCsvClassifierRequestBuilder {
     }
     /// <p>Specifies the configuration of custom datatypes.</p>
     pub fn set_custom_datatype_configured(mut self, input: std::option::Option<bool>) -> Self {
-        self.custom_datatype_configured = input; self
+        self.custom_datatype_configured = input;
+        self
     }
     /// Appends an item to `custom_datatypes`.
     ///
@@ -177,36 +191,30 @@ impl UpdateCsvClassifierRequestBuilder {
     /// <p>Specifies a list of supported custom datatypes.</p>
     pub fn custom_datatypes(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.custom_datatypes.unwrap_or_default();
-                        v.push(input.into());
-                        self.custom_datatypes = Some(v);
-                        self
+        v.push(input.into());
+        self.custom_datatypes = Some(v);
+        self
     }
     /// <p>Specifies a list of supported custom datatypes.</p>
-    pub fn set_custom_datatypes(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-        self.custom_datatypes = input; self
+    pub fn set_custom_datatypes(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
+        self.custom_datatypes = input;
+        self
     }
     /// Consumes the builder and constructs a [`UpdateCsvClassifierRequest`](crate::types::UpdateCsvClassifierRequest).
     pub fn build(self) -> crate::types::UpdateCsvClassifierRequest {
         crate::types::UpdateCsvClassifierRequest {
-            name: self.name
-            ,
-            delimiter: self.delimiter
-            ,
-            quote_symbol: self.quote_symbol
-            ,
-            contains_header: self.contains_header
-            ,
-            header: self.header
-            ,
-            disable_value_trimming: self.disable_value_trimming
-            ,
-            allow_single_column: self.allow_single_column
-            ,
-            custom_datatype_configured: self.custom_datatype_configured
-            ,
-            custom_datatypes: self.custom_datatypes
-            ,
+            name: self.name,
+            delimiter: self.delimiter,
+            quote_symbol: self.quote_symbol,
+            contains_header: self.contains_header,
+            header: self.header,
+            disable_value_trimming: self.disable_value_trimming,
+            allow_single_column: self.allow_single_column,
+            custom_datatype_configured: self.custom_datatype_configured,
+            custom_datatypes: self.custom_datatypes,
         }
     }
 }
-

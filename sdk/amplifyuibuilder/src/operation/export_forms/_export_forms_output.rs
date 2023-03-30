@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ExportFormsOutput  {
+pub struct ExportFormsOutput {
     /// <p>Represents the configuration of the exported forms.</p>
     #[doc(hidden)]
     pub entities: std::option::Option<std::vec::Vec<crate::types::Form>>,
@@ -13,19 +13,19 @@ pub struct ExportFormsOutput  {
 }
 impl ExportFormsOutput {
     /// <p>Represents the configuration of the exported forms.</p>
-    pub fn entities(&self) -> std::option::Option<& [crate::types::Form]> {
+    pub fn entities(&self) -> std::option::Option<&[crate::types::Form]> {
         self.entities.as_deref()
     }
     /// <p>The pagination token that's included if more results are available.</p>
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for ExportFormsOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl ExportFormsOutput {
     /// Creates a new builder-style object to manufacture [`ExportFormsOutput`](crate::operation::export_forms::ExportFormsOutput).
     pub fn builder() -> crate::operation::export_forms::builders::ExportFormsOutputBuilder {
@@ -49,13 +49,17 @@ impl ExportFormsOutputBuilder {
     /// <p>Represents the configuration of the exported forms.</p>
     pub fn entities(mut self, input: crate::types::Form) -> Self {
         let mut v = self.entities.unwrap_or_default();
-                        v.push(input);
-                        self.entities = Some(v);
-                        self
+        v.push(input);
+        self.entities = Some(v);
+        self
     }
     /// <p>Represents the configuration of the exported forms.</p>
-    pub fn set_entities(mut self, input: std::option::Option<std::vec::Vec<crate::types::Form>>) -> Self {
-        self.entities = input; self
+    pub fn set_entities(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::Form>>,
+    ) -> Self {
+        self.entities = input;
+        self
     }
     /// <p>The pagination token that's included if more results are available.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -64,26 +68,24 @@ impl ExportFormsOutputBuilder {
     }
     /// <p>The pagination token that's included if more results are available.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input; self
+        self.next_token = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`ExportFormsOutput`](crate::operation::export_forms::ExportFormsOutput).
     pub fn build(self) -> crate::operation::export_forms::ExportFormsOutput {
         crate::operation::export_forms::ExportFormsOutput {
-            entities: self.entities
-            ,
-            next_token: self.next_token
-            ,
+            entities: self.entities,
+            next_token: self.next_token,
             _request_id: self._request_id,
         }
     }
 }
-

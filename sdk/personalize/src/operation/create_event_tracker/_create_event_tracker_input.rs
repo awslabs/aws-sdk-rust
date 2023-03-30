@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateEventTrackerInput  {
+pub struct CreateEventTrackerInput {
     /// <p>The name for the event tracker.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -15,21 +15,22 @@ pub struct CreateEventTrackerInput  {
 }
 impl CreateEventTrackerInput {
     /// <p>The name for the event tracker.</p>
-    pub fn name(&self) -> std::option::Option<& str> {
+    pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the dataset group that receives the event data.</p>
-    pub fn dataset_group_arn(&self) -> std::option::Option<& str> {
+    pub fn dataset_group_arn(&self) -> std::option::Option<&str> {
         self.dataset_group_arn.as_deref()
     }
     /// <p>A list of <a href="https://docs.aws.amazon.com/personalize/latest/dev/tagging-resources.html">tags</a> to apply to the event tracker.</p>
-    pub fn tags(&self) -> std::option::Option<& [crate::types::Tag]> {
+    pub fn tags(&self) -> std::option::Option<&[crate::types::Tag]> {
         self.tags.as_deref()
     }
 }
 impl CreateEventTrackerInput {
     /// Creates a new builder-style object to manufacture [`CreateEventTrackerInput`](crate::operation::create_event_tracker::CreateEventTrackerInput).
-    pub fn builder() -> crate::operation::create_event_tracker::builders::CreateEventTrackerInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::create_event_tracker::builders::CreateEventTrackerInputBuilder {
         crate::operation::create_event_tracker::builders::CreateEventTrackerInputBuilder::default()
     }
 }
@@ -50,7 +51,8 @@ impl CreateEventTrackerInputBuilder {
     }
     /// <p>The name for the event tracker.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input; self
+        self.name = input;
+        self
     }
     /// <p>The Amazon Resource Name (ARN) of the dataset group that receives the event data.</p>
     pub fn dataset_group_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -58,8 +60,12 @@ impl CreateEventTrackerInputBuilder {
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the dataset group that receives the event data.</p>
-    pub fn set_dataset_group_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.dataset_group_arn = input; self
+    pub fn set_dataset_group_arn(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.dataset_group_arn = input;
+        self
     }
     /// Appends an item to `tags`.
     ///
@@ -68,26 +74,31 @@ impl CreateEventTrackerInputBuilder {
     /// <p>A list of <a href="https://docs.aws.amazon.com/personalize/latest/dev/tagging-resources.html">tags</a> to apply to the event tracker.</p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
-                        v.push(input);
-                        self.tags = Some(v);
-                        self
+        v.push(input);
+        self.tags = Some(v);
+        self
     }
     /// <p>A list of <a href="https://docs.aws.amazon.com/personalize/latest/dev/tagging-resources.html">tags</a> to apply to the event tracker.</p>
-    pub fn set_tags(mut self, input: std::option::Option<std::vec::Vec<crate::types::Tag>>) -> Self {
-        self.tags = input; self
+    pub fn set_tags(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::Tag>>,
+    ) -> Self {
+        self.tags = input;
+        self
     }
     /// Consumes the builder and constructs a [`CreateEventTrackerInput`](crate::operation::create_event_tracker::CreateEventTrackerInput).
-    pub fn build(self) -> Result<crate::operation::create_event_tracker::CreateEventTrackerInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::create_event_tracker::CreateEventTrackerInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::create_event_tracker::CreateEventTrackerInput {
-                name: self.name
-                ,
-                dataset_group_arn: self.dataset_group_arn
-                ,
-                tags: self.tags
-                ,
-            }
+                name: self.name,
+                dataset_group_arn: self.dataset_group_arn,
+                tags: self.tags,
+            },
         )
     }
 }
-

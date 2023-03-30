@@ -2,10 +2,11 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListEntitledApplicationsOutput  {
+pub struct ListEntitledApplicationsOutput {
     /// <p>The entitled applications.</p>
     #[doc(hidden)]
-    pub entitled_applications: std::option::Option<std::vec::Vec<crate::types::EntitledApplication>>,
+    pub entitled_applications:
+        std::option::Option<std::vec::Vec<crate::types::EntitledApplication>>,
     /// <p>The pagination token used to retrieve the next page of results for this operation.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
@@ -13,22 +14,26 @@ pub struct ListEntitledApplicationsOutput  {
 }
 impl ListEntitledApplicationsOutput {
     /// <p>The entitled applications.</p>
-    pub fn entitled_applications(&self) -> std::option::Option<& [crate::types::EntitledApplication]> {
+    pub fn entitled_applications(
+        &self,
+    ) -> std::option::Option<&[crate::types::EntitledApplication]> {
         self.entitled_applications.as_deref()
     }
     /// <p>The pagination token used to retrieve the next page of results for this operation.</p>
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for ListEntitledApplicationsOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl ListEntitledApplicationsOutput {
     /// Creates a new builder-style object to manufacture [`ListEntitledApplicationsOutput`](crate::operation::list_entitled_applications::ListEntitledApplicationsOutput).
-    pub fn builder() -> crate::operation::list_entitled_applications::builders::ListEntitledApplicationsOutputBuilder {
+    pub fn builder(
+    ) -> crate::operation::list_entitled_applications::builders::ListEntitledApplicationsOutputBuilder
+    {
         crate::operation::list_entitled_applications::builders::ListEntitledApplicationsOutputBuilder::default()
     }
 }
@@ -37,7 +42,8 @@ impl ListEntitledApplicationsOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct ListEntitledApplicationsOutputBuilder {
-    pub(crate) entitled_applications: std::option::Option<std::vec::Vec<crate::types::EntitledApplication>>,
+    pub(crate) entitled_applications:
+        std::option::Option<std::vec::Vec<crate::types::EntitledApplication>>,
     pub(crate) next_token: std::option::Option<std::string::String>,
     _request_id: Option<String>,
 }
@@ -49,13 +55,17 @@ impl ListEntitledApplicationsOutputBuilder {
     /// <p>The entitled applications.</p>
     pub fn entitled_applications(mut self, input: crate::types::EntitledApplication) -> Self {
         let mut v = self.entitled_applications.unwrap_or_default();
-                        v.push(input);
-                        self.entitled_applications = Some(v);
-                        self
+        v.push(input);
+        self.entitled_applications = Some(v);
+        self
     }
     /// <p>The entitled applications.</p>
-    pub fn set_entitled_applications(mut self, input: std::option::Option<std::vec::Vec<crate::types::EntitledApplication>>) -> Self {
-        self.entitled_applications = input; self
+    pub fn set_entitled_applications(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::EntitledApplication>>,
+    ) -> Self {
+        self.entitled_applications = input;
+        self
     }
     /// <p>The pagination token used to retrieve the next page of results for this operation.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -64,26 +74,26 @@ impl ListEntitledApplicationsOutputBuilder {
     }
     /// <p>The pagination token used to retrieve the next page of results for this operation.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input; self
+        self.next_token = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`ListEntitledApplicationsOutput`](crate::operation::list_entitled_applications::ListEntitledApplicationsOutput).
-    pub fn build(self) -> crate::operation::list_entitled_applications::ListEntitledApplicationsOutput {
+    pub fn build(
+        self,
+    ) -> crate::operation::list_entitled_applications::ListEntitledApplicationsOutput {
         crate::operation::list_entitled_applications::ListEntitledApplicationsOutput {
-            entitled_applications: self.entitled_applications
-            ,
-            next_token: self.next_token
-            ,
+            entitled_applications: self.entitled_applications,
+            next_token: self.next_token,
             _request_id: self._request_id,
         }
     }
 }
-

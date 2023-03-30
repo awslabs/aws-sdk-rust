@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetDeviceDefinitionVersionOutput  {
+pub struct GetDeviceDefinitionVersionOutput {
     /// The ARN of the device definition version.
     #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
@@ -25,38 +25,38 @@ pub struct GetDeviceDefinitionVersionOutput  {
 }
 impl GetDeviceDefinitionVersionOutput {
     /// The ARN of the device definition version.
-    pub fn arn(&self) -> std::option::Option<& str> {
+    pub fn arn(&self) -> std::option::Option<&str> {
         self.arn.as_deref()
     }
     /// The time, in milliseconds since the epoch, when the device definition version was created.
-    pub fn creation_timestamp(&self) -> std::option::Option<& str> {
+    pub fn creation_timestamp(&self) -> std::option::Option<&str> {
         self.creation_timestamp.as_deref()
     }
     /// Information about the device definition version.
-    pub fn definition(&self) -> std::option::Option<& crate::types::DeviceDefinitionVersion> {
+    pub fn definition(&self) -> std::option::Option<&crate::types::DeviceDefinitionVersion> {
         self.definition.as_ref()
     }
     /// The ID of the device definition version.
-    pub fn id(&self) -> std::option::Option<& str> {
+    pub fn id(&self) -> std::option::Option<&str> {
         self.id.as_deref()
     }
     /// The token for the next set of results, or ''null'' if there are no additional results.
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
     /// The version of the device definition version.
-    pub fn version(&self) -> std::option::Option<& str> {
+    pub fn version(&self) -> std::option::Option<&str> {
         self.version.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for GetDeviceDefinitionVersionOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl GetDeviceDefinitionVersionOutput {
     /// Creates a new builder-style object to manufacture [`GetDeviceDefinitionVersionOutput`](crate::operation::get_device_definition_version::GetDeviceDefinitionVersionOutput).
-    pub fn builder() -> crate::operation::get_device_definition_version::builders::GetDeviceDefinitionVersionOutputBuilder {
+    pub fn builder() -> crate::operation::get_device_definition_version::builders::GetDeviceDefinitionVersionOutputBuilder{
         crate::operation::get_device_definition_version::builders::GetDeviceDefinitionVersionOutputBuilder::default()
     }
 }
@@ -81,7 +81,8 @@ impl GetDeviceDefinitionVersionOutputBuilder {
     }
     /// The ARN of the device definition version.
     pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.arn = input; self
+        self.arn = input;
+        self
     }
     /// The time, in milliseconds since the epoch, when the device definition version was created.
     pub fn creation_timestamp(mut self, input: impl Into<std::string::String>) -> Self {
@@ -89,8 +90,12 @@ impl GetDeviceDefinitionVersionOutputBuilder {
         self
     }
     /// The time, in milliseconds since the epoch, when the device definition version was created.
-    pub fn set_creation_timestamp(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.creation_timestamp = input; self
+    pub fn set_creation_timestamp(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.creation_timestamp = input;
+        self
     }
     /// Information about the device definition version.
     pub fn definition(mut self, input: crate::types::DeviceDefinitionVersion) -> Self {
@@ -98,8 +103,12 @@ impl GetDeviceDefinitionVersionOutputBuilder {
         self
     }
     /// Information about the device definition version.
-    pub fn set_definition(mut self, input: std::option::Option<crate::types::DeviceDefinitionVersion>) -> Self {
-        self.definition = input; self
+    pub fn set_definition(
+        mut self,
+        input: std::option::Option<crate::types::DeviceDefinitionVersion>,
+    ) -> Self {
+        self.definition = input;
+        self
     }
     /// The ID of the device definition version.
     pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -108,7 +117,8 @@ impl GetDeviceDefinitionVersionOutputBuilder {
     }
     /// The ID of the device definition version.
     pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.id = input; self
+        self.id = input;
+        self
     }
     /// The token for the next set of results, or ''null'' if there are no additional results.
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -117,7 +127,8 @@ impl GetDeviceDefinitionVersionOutputBuilder {
     }
     /// The token for the next set of results, or ''null'' if there are no additional results.
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input; self
+        self.next_token = input;
+        self
     }
     /// The version of the device definition version.
     pub fn version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -126,34 +137,30 @@ impl GetDeviceDefinitionVersionOutputBuilder {
     }
     /// The version of the device definition version.
     pub fn set_version(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.version = input; self
+        self.version = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`GetDeviceDefinitionVersionOutput`](crate::operation::get_device_definition_version::GetDeviceDefinitionVersionOutput).
-    pub fn build(self) -> crate::operation::get_device_definition_version::GetDeviceDefinitionVersionOutput {
+    pub fn build(
+        self,
+    ) -> crate::operation::get_device_definition_version::GetDeviceDefinitionVersionOutput {
         crate::operation::get_device_definition_version::GetDeviceDefinitionVersionOutput {
-            arn: self.arn
-            ,
-            creation_timestamp: self.creation_timestamp
-            ,
-            definition: self.definition
-            ,
-            id: self.id
-            ,
-            next_token: self.next_token
-            ,
-            version: self.version
-            ,
+            arn: self.arn,
+            creation_timestamp: self.creation_timestamp,
+            definition: self.definition,
+            id: self.id,
+            next_token: self.next_token,
+            version: self.version,
             _request_id: self._request_id,
         }
     }
 }
-

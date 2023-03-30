@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeConfigurationRevisionOutput  {
+pub struct DescribeConfigurationRevisionOutput {
     /// <p>The Amazon Resource Name (ARN) of the configuration.</p>
     #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
@@ -26,15 +26,15 @@ pub struct DescribeConfigurationRevisionOutput  {
 }
 impl DescribeConfigurationRevisionOutput {
     /// <p>The Amazon Resource Name (ARN) of the configuration.</p>
-    pub fn arn(&self) -> std::option::Option<& str> {
+    pub fn arn(&self) -> std::option::Option<&str> {
         self.arn.as_deref()
     }
     /// <p>The time when the configuration was created.</p>
-    pub fn creation_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
+    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
     /// <p>The description of the configuration.</p>
-    pub fn description(&self) -> std::option::Option<& str> {
+    pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
     /// <p>The revision number.</p>
@@ -46,18 +46,18 @@ impl DescribeConfigurationRevisionOutput {
     /// </filename> file. When using the API, you must ensure that the contents of the file are base64 encoded. When using the AWS Management Console, the SDK, or the AWS CLI, the contents of <filename>
     /// server.properties
     /// </filename> can be in plaintext.</p>
-    pub fn server_properties(&self) -> std::option::Option<& aws_smithy_types::Blob> {
+    pub fn server_properties(&self) -> std::option::Option<&aws_smithy_types::Blob> {
         self.server_properties.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for DescribeConfigurationRevisionOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl DescribeConfigurationRevisionOutput {
     /// Creates a new builder-style object to manufacture [`DescribeConfigurationRevisionOutput`](crate::operation::describe_configuration_revision::DescribeConfigurationRevisionOutput).
-    pub fn builder() -> crate::operation::describe_configuration_revision::builders::DescribeConfigurationRevisionOutputBuilder {
+    pub fn builder() -> crate::operation::describe_configuration_revision::builders::DescribeConfigurationRevisionOutputBuilder{
         crate::operation::describe_configuration_revision::builders::DescribeConfigurationRevisionOutputBuilder::default()
     }
 }
@@ -81,7 +81,8 @@ impl DescribeConfigurationRevisionOutputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the configuration.</p>
     pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.arn = input; self
+        self.arn = input;
+        self
     }
     /// <p>The time when the configuration was created.</p>
     pub fn creation_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -89,8 +90,12 @@ impl DescribeConfigurationRevisionOutputBuilder {
         self
     }
     /// <p>The time when the configuration was created.</p>
-    pub fn set_creation_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.creation_time = input; self
+    pub fn set_creation_time(
+        mut self,
+        input: std::option::Option<aws_smithy_types::DateTime>,
+    ) -> Self {
+        self.creation_time = input;
+        self
     }
     /// <p>The description of the configuration.</p>
     pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -99,7 +104,8 @@ impl DescribeConfigurationRevisionOutputBuilder {
     }
     /// <p>The description of the configuration.</p>
     pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.description = input; self
+        self.description = input;
+        self
     }
     /// <p>The revision number.</p>
     pub fn revision(mut self, input: i64) -> Self {
@@ -108,7 +114,8 @@ impl DescribeConfigurationRevisionOutputBuilder {
     }
     /// <p>The revision number.</p>
     pub fn set_revision(mut self, input: std::option::Option<i64>) -> Self {
-        self.revision = input; self
+        self.revision = input;
+        self
     }
     /// <p>Contents of the <filename>
     /// server.properties
@@ -124,34 +131,34 @@ impl DescribeConfigurationRevisionOutputBuilder {
     /// </filename> file. When using the API, you must ensure that the contents of the file are base64 encoded. When using the AWS Management Console, the SDK, or the AWS CLI, the contents of <filename>
     /// server.properties
     /// </filename> can be in plaintext.</p>
-    pub fn set_server_properties(mut self, input: std::option::Option<aws_smithy_types::Blob>) -> Self {
-        self.server_properties = input; self
+    pub fn set_server_properties(
+        mut self,
+        input: std::option::Option<aws_smithy_types::Blob>,
+    ) -> Self {
+        self.server_properties = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`DescribeConfigurationRevisionOutput`](crate::operation::describe_configuration_revision::DescribeConfigurationRevisionOutput).
-    pub fn build(self) -> crate::operation::describe_configuration_revision::DescribeConfigurationRevisionOutput {
+    pub fn build(
+        self,
+    ) -> crate::operation::describe_configuration_revision::DescribeConfigurationRevisionOutput
+    {
         crate::operation::describe_configuration_revision::DescribeConfigurationRevisionOutput {
-            arn: self.arn
-            ,
-            creation_time: self.creation_time
-            ,
-            description: self.description
-            ,
-            revision: self.revision
-                .unwrap_or_default()
-            ,
-            server_properties: self.server_properties
-            ,
+            arn: self.arn,
+            creation_time: self.creation_time,
+            description: self.description,
+            revision: self.revision.unwrap_or_default(),
+            server_properties: self.server_properties,
             _request_id: self._request_id,
         }
     }
 }
-

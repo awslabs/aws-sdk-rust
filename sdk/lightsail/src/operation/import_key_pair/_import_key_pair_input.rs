@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ImportKeyPairInput  {
+pub struct ImportKeyPairInput {
     /// <p>The name of the key pair for which you want to import the public key.</p>
     #[doc(hidden)]
     pub key_pair_name: std::option::Option<std::string::String>,
@@ -12,11 +12,11 @@ pub struct ImportKeyPairInput  {
 }
 impl ImportKeyPairInput {
     /// <p>The name of the key pair for which you want to import the public key.</p>
-    pub fn key_pair_name(&self) -> std::option::Option<& str> {
+    pub fn key_pair_name(&self) -> std::option::Option<&str> {
         self.key_pair_name.as_deref()
     }
     /// <p>A base64-encoded public key of the <code>ssh-rsa</code> type.</p>
-    pub fn public_key_base64(&self) -> std::option::Option<& str> {
+    pub fn public_key_base64(&self) -> std::option::Option<&str> {
         self.public_key_base64.as_deref()
     }
 }
@@ -42,7 +42,8 @@ impl ImportKeyPairInputBuilder {
     }
     /// <p>The name of the key pair for which you want to import the public key.</p>
     pub fn set_key_pair_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.key_pair_name = input; self
+        self.key_pair_name = input;
+        self
     }
     /// <p>A base64-encoded public key of the <code>ssh-rsa</code> type.</p>
     pub fn public_key_base64(mut self, input: impl Into<std::string::String>) -> Self {
@@ -50,19 +51,23 @@ impl ImportKeyPairInputBuilder {
         self
     }
     /// <p>A base64-encoded public key of the <code>ssh-rsa</code> type.</p>
-    pub fn set_public_key_base64(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.public_key_base64 = input; self
+    pub fn set_public_key_base64(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.public_key_base64 = input;
+        self
     }
     /// Consumes the builder and constructs a [`ImportKeyPairInput`](crate::operation::import_key_pair::ImportKeyPairInput).
-    pub fn build(self) -> Result<crate::operation::import_key_pair::ImportKeyPairInput, aws_smithy_http::operation::error::BuildError> {
-        Ok(
-            crate::operation::import_key_pair::ImportKeyPairInput {
-                key_pair_name: self.key_pair_name
-                ,
-                public_key_base64: self.public_key_base64
-                ,
-            }
-        )
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::import_key_pair::ImportKeyPairInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        Ok(crate::operation::import_key_pair::ImportKeyPairInput {
+            key_pair_name: self.key_pair_name,
+            public_key_base64: self.public_key_base64,
+        })
     }
 }
-

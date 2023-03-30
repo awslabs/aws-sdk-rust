@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateDataQualityRulesetInput  {
+pub struct UpdateDataQualityRulesetInput {
     /// <p>The name of the data quality ruleset.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -18,25 +18,27 @@ pub struct UpdateDataQualityRulesetInput  {
 }
 impl UpdateDataQualityRulesetInput {
     /// <p>The name of the data quality ruleset.</p>
-    pub fn name(&self) -> std::option::Option<& str> {
+    pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>The new name of the ruleset, if you are renaming it.</p>
-    pub fn updated_name(&self) -> std::option::Option<& str> {
+    pub fn updated_name(&self) -> std::option::Option<&str> {
         self.updated_name.as_deref()
     }
     /// <p>A description of the ruleset.</p>
-    pub fn description(&self) -> std::option::Option<& str> {
+    pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
     /// <p>A Data Quality Definition Language (DQDL) ruleset. For more information, see the Glue developer guide.</p>
-    pub fn ruleset(&self) -> std::option::Option<& str> {
+    pub fn ruleset(&self) -> std::option::Option<&str> {
         self.ruleset.as_deref()
     }
 }
 impl UpdateDataQualityRulesetInput {
     /// Creates a new builder-style object to manufacture [`UpdateDataQualityRulesetInput`](crate::operation::update_data_quality_ruleset::UpdateDataQualityRulesetInput).
-    pub fn builder() -> crate::operation::update_data_quality_ruleset::builders::UpdateDataQualityRulesetInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::update_data_quality_ruleset::builders::UpdateDataQualityRulesetInputBuilder
+    {
         crate::operation::update_data_quality_ruleset::builders::UpdateDataQualityRulesetInputBuilder::default()
     }
 }
@@ -58,7 +60,8 @@ impl UpdateDataQualityRulesetInputBuilder {
     }
     /// <p>The name of the data quality ruleset.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input; self
+        self.name = input;
+        self
     }
     /// <p>The new name of the ruleset, if you are renaming it.</p>
     pub fn updated_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -67,7 +70,8 @@ impl UpdateDataQualityRulesetInputBuilder {
     }
     /// <p>The new name of the ruleset, if you are renaming it.</p>
     pub fn set_updated_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.updated_name = input; self
+        self.updated_name = input;
+        self
     }
     /// <p>A description of the ruleset.</p>
     pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -76,7 +80,8 @@ impl UpdateDataQualityRulesetInputBuilder {
     }
     /// <p>A description of the ruleset.</p>
     pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.description = input; self
+        self.description = input;
+        self
     }
     /// <p>A Data Quality Definition Language (DQDL) ruleset. For more information, see the Glue developer guide.</p>
     pub fn ruleset(mut self, input: impl Into<std::string::String>) -> Self {
@@ -85,22 +90,23 @@ impl UpdateDataQualityRulesetInputBuilder {
     }
     /// <p>A Data Quality Definition Language (DQDL) ruleset. For more information, see the Glue developer guide.</p>
     pub fn set_ruleset(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.ruleset = input; self
+        self.ruleset = input;
+        self
     }
     /// Consumes the builder and constructs a [`UpdateDataQualityRulesetInput`](crate::operation::update_data_quality_ruleset::UpdateDataQualityRulesetInput).
-    pub fn build(self) -> Result<crate::operation::update_data_quality_ruleset::UpdateDataQualityRulesetInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::update_data_quality_ruleset::UpdateDataQualityRulesetInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::update_data_quality_ruleset::UpdateDataQualityRulesetInput {
-                name: self.name
-                ,
-                updated_name: self.updated_name
-                ,
-                description: self.description
-                ,
-                ruleset: self.ruleset
-                ,
-            }
+                name: self.name,
+                updated_name: self.updated_name,
+                description: self.description,
+                ruleset: self.ruleset,
+            },
         )
     }
 }
-

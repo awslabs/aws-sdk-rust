@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListOrganizationAdminAccountsInput  {
+pub struct ListOrganizationAdminAccountsInput {
     /// <p>The maximum number of items to return in the response.</p>
     #[doc(hidden)]
     pub max_results: i32,
@@ -16,13 +16,13 @@ impl ListOrganizationAdminAccountsInput {
         self.max_results
     }
     /// <p>The token that is required for pagination. On your first call to the <code>ListOrganizationAdminAccounts</code> operation, set the value of this parameter to <code>NULL</code>. For subsequent calls to the operation, to continue listing data, set the value of this parameter to the value returned from the previous response. </p>
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
 }
 impl ListOrganizationAdminAccountsInput {
     /// Creates a new builder-style object to manufacture [`ListOrganizationAdminAccountsInput`](crate::operation::list_organization_admin_accounts::ListOrganizationAdminAccountsInput).
-    pub fn builder() -> crate::operation::list_organization_admin_accounts::builders::ListOrganizationAdminAccountsInputBuilder {
+    pub fn builder() -> crate::operation::list_organization_admin_accounts::builders::ListOrganizationAdminAccountsInputBuilder{
         crate::operation::list_organization_admin_accounts::builders::ListOrganizationAdminAccountsInputBuilder::default()
     }
 }
@@ -42,7 +42,8 @@ impl ListOrganizationAdminAccountsInputBuilder {
     }
     /// <p>The maximum number of items to return in the response.</p>
     pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_results = input; self
+        self.max_results = input;
+        self
     }
     /// <p>The token that is required for pagination. On your first call to the <code>ListOrganizationAdminAccounts</code> operation, set the value of this parameter to <code>NULL</code>. For subsequent calls to the operation, to continue listing data, set the value of this parameter to the value returned from the previous response. </p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -51,10 +52,16 @@ impl ListOrganizationAdminAccountsInputBuilder {
     }
     /// <p>The token that is required for pagination. On your first call to the <code>ListOrganizationAdminAccounts</code> operation, set the value of this parameter to <code>NULL</code>. For subsequent calls to the operation, to continue listing data, set the value of this parameter to the value returned from the previous response. </p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input; self
+        self.next_token = input;
+        self
     }
     /// Consumes the builder and constructs a [`ListOrganizationAdminAccountsInput`](crate::operation::list_organization_admin_accounts::ListOrganizationAdminAccountsInput).
-    pub fn build(self) -> Result<crate::operation::list_organization_admin_accounts::ListOrganizationAdminAccountsInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::list_organization_admin_accounts::ListOrganizationAdminAccountsInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::list_organization_admin_accounts::ListOrganizationAdminAccountsInput {
                 max_results: self.max_results
@@ -66,4 +73,3 @@ impl ListOrganizationAdminAccountsInputBuilder {
         )
     }
 }
-

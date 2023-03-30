@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct Credential  {
+pub struct Credential {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub username: std::option::Option<std::string::String>,
@@ -12,15 +12,15 @@ pub struct Credential  {
 }
 impl Credential {
     #[allow(missing_docs)] // documentation missing in model
-    pub fn username(&self) -> std::option::Option<& str> {
+    pub fn username(&self) -> std::option::Option<&str> {
         self.username.as_deref()
     }
     #[allow(missing_docs)] // documentation missing in model
-    pub fn password(&self) -> std::option::Option<& str> {
+    pub fn password(&self) -> std::option::Option<&str> {
         self.password.as_deref()
     }
 }
-impl  std::fmt::Debug for Credential  {
+impl std::fmt::Debug for Credential {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("Credential");
         formatter.field("username", &"*** Sensitive Data Redacted ***");
@@ -50,7 +50,8 @@ impl CredentialBuilder {
     }
     #[allow(missing_docs)] // documentation missing in model
     pub fn set_username(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.username = input; self
+        self.username = input;
+        self
     }
     #[allow(missing_docs)] // documentation missing in model
     pub fn password(mut self, input: impl Into<std::string::String>) -> Self {
@@ -59,15 +60,14 @@ impl CredentialBuilder {
     }
     #[allow(missing_docs)] // documentation missing in model
     pub fn set_password(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.password = input; self
+        self.password = input;
+        self
     }
     /// Consumes the builder and constructs a [`Credential`](crate::types::Credential).
     pub fn build(self) -> crate::types::Credential {
         crate::types::Credential {
-            username: self.username
-            ,
-            password: self.password
-            ,
+            username: self.username,
+            password: self.password,
         }
     }
 }
@@ -79,4 +79,3 @@ impl std::fmt::Debug for CredentialBuilder {
         formatter.finish()
     }
 }
-

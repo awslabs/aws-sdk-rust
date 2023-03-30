@@ -3,7 +3,7 @@
 /// <p>Result message containing a list of environment descriptions.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeEnvironmentsOutput  {
+pub struct DescribeEnvironmentsOutput {
     /// <p> Returns an <code>EnvironmentDescription</code> list. </p>
     #[doc(hidden)]
     pub environments: std::option::Option<std::vec::Vec<crate::types::EnvironmentDescription>>,
@@ -14,22 +14,23 @@ pub struct DescribeEnvironmentsOutput  {
 }
 impl DescribeEnvironmentsOutput {
     /// <p> Returns an <code>EnvironmentDescription</code> list. </p>
-    pub fn environments(&self) -> std::option::Option<& [crate::types::EnvironmentDescription]> {
+    pub fn environments(&self) -> std::option::Option<&[crate::types::EnvironmentDescription]> {
         self.environments.as_deref()
     }
     /// <p>In a paginated request, the token that you can pass in a subsequent request to get the next response page.</p>
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for DescribeEnvironmentsOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl DescribeEnvironmentsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeEnvironmentsOutput`](crate::operation::describe_environments::DescribeEnvironmentsOutput).
-    pub fn builder() -> crate::operation::describe_environments::builders::DescribeEnvironmentsOutputBuilder {
+    pub fn builder(
+    ) -> crate::operation::describe_environments::builders::DescribeEnvironmentsOutputBuilder {
         crate::operation::describe_environments::builders::DescribeEnvironmentsOutputBuilder::default()
     }
 }
@@ -38,7 +39,8 @@ impl DescribeEnvironmentsOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct DescribeEnvironmentsOutputBuilder {
-    pub(crate) environments: std::option::Option<std::vec::Vec<crate::types::EnvironmentDescription>>,
+    pub(crate) environments:
+        std::option::Option<std::vec::Vec<crate::types::EnvironmentDescription>>,
     pub(crate) next_token: std::option::Option<std::string::String>,
     _request_id: Option<String>,
 }
@@ -50,13 +52,17 @@ impl DescribeEnvironmentsOutputBuilder {
     /// <p> Returns an <code>EnvironmentDescription</code> list. </p>
     pub fn environments(mut self, input: crate::types::EnvironmentDescription) -> Self {
         let mut v = self.environments.unwrap_or_default();
-                        v.push(input);
-                        self.environments = Some(v);
-                        self
+        v.push(input);
+        self.environments = Some(v);
+        self
     }
     /// <p> Returns an <code>EnvironmentDescription</code> list. </p>
-    pub fn set_environments(mut self, input: std::option::Option<std::vec::Vec<crate::types::EnvironmentDescription>>) -> Self {
-        self.environments = input; self
+    pub fn set_environments(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::EnvironmentDescription>>,
+    ) -> Self {
+        self.environments = input;
+        self
     }
     /// <p>In a paginated request, the token that you can pass in a subsequent request to get the next response page.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -65,26 +71,24 @@ impl DescribeEnvironmentsOutputBuilder {
     }
     /// <p>In a paginated request, the token that you can pass in a subsequent request to get the next response page.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input; self
+        self.next_token = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`DescribeEnvironmentsOutput`](crate::operation::describe_environments::DescribeEnvironmentsOutput).
     pub fn build(self) -> crate::operation::describe_environments::DescribeEnvironmentsOutput {
         crate::operation::describe_environments::DescribeEnvironmentsOutput {
-            environments: self.environments
-            ,
-            next_token: self.next_token
-            ,
+            environments: self.environments,
+            next_token: self.next_token,
             _request_id: self._request_id,
         }
     }
 }
-

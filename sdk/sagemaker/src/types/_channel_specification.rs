@@ -3,7 +3,7 @@
 /// <p>Defines a named input source, called a channel, to be used by an algorithm.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ChannelSpecification  {
+pub struct ChannelSpecification {
     /// <p>The name of the channel.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -18,20 +18,21 @@ pub struct ChannelSpecification  {
     pub supported_content_types: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The allowed compression types, if data compression is used.</p>
     #[doc(hidden)]
-    pub supported_compression_types: std::option::Option<std::vec::Vec<crate::types::CompressionType>>,
-    /// <p>The allowed input mode, either FILE or PIPE.</p> 
-    /// <p>In FILE mode, Amazon SageMaker copies the data from the input source onto the local Amazon Elastic Block Store (Amazon EBS) volumes before starting your training algorithm. This is the most commonly used input mode.</p> 
+    pub supported_compression_types:
+        std::option::Option<std::vec::Vec<crate::types::CompressionType>>,
+    /// <p>The allowed input mode, either FILE or PIPE.</p>
+    /// <p>In FILE mode, Amazon SageMaker copies the data from the input source onto the local Amazon Elastic Block Store (Amazon EBS) volumes before starting your training algorithm. This is the most commonly used input mode.</p>
     /// <p>In PIPE mode, Amazon SageMaker streams input data from the source directly to your algorithm without using the EBS volume.</p>
     #[doc(hidden)]
     pub supported_input_modes: std::option::Option<std::vec::Vec<crate::types::TrainingInputMode>>,
 }
 impl ChannelSpecification {
     /// <p>The name of the channel.</p>
-    pub fn name(&self) -> std::option::Option<& str> {
+    pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>A brief description of the channel.</p>
-    pub fn description(&self) -> std::option::Option<& str> {
+    pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
     /// <p>Indicates whether the channel is required by the algorithm.</p>
@@ -39,17 +40,19 @@ impl ChannelSpecification {
         self.is_required
     }
     /// <p>The supported MIME types for the data.</p>
-    pub fn supported_content_types(&self) -> std::option::Option<& [std::string::String]> {
+    pub fn supported_content_types(&self) -> std::option::Option<&[std::string::String]> {
         self.supported_content_types.as_deref()
     }
     /// <p>The allowed compression types, if data compression is used.</p>
-    pub fn supported_compression_types(&self) -> std::option::Option<& [crate::types::CompressionType]> {
+    pub fn supported_compression_types(
+        &self,
+    ) -> std::option::Option<&[crate::types::CompressionType]> {
         self.supported_compression_types.as_deref()
     }
-    /// <p>The allowed input mode, either FILE or PIPE.</p> 
-    /// <p>In FILE mode, Amazon SageMaker copies the data from the input source onto the local Amazon Elastic Block Store (Amazon EBS) volumes before starting your training algorithm. This is the most commonly used input mode.</p> 
+    /// <p>The allowed input mode, either FILE or PIPE.</p>
+    /// <p>In FILE mode, Amazon SageMaker copies the data from the input source onto the local Amazon Elastic Block Store (Amazon EBS) volumes before starting your training algorithm. This is the most commonly used input mode.</p>
     /// <p>In PIPE mode, Amazon SageMaker streams input data from the source directly to your algorithm without using the EBS volume.</p>
-    pub fn supported_input_modes(&self) -> std::option::Option<& [crate::types::TrainingInputMode]> {
+    pub fn supported_input_modes(&self) -> std::option::Option<&[crate::types::TrainingInputMode]> {
         self.supported_input_modes.as_deref()
     }
 }
@@ -68,8 +71,10 @@ pub struct ChannelSpecificationBuilder {
     pub(crate) description: std::option::Option<std::string::String>,
     pub(crate) is_required: std::option::Option<bool>,
     pub(crate) supported_content_types: std::option::Option<std::vec::Vec<std::string::String>>,
-    pub(crate) supported_compression_types: std::option::Option<std::vec::Vec<crate::types::CompressionType>>,
-    pub(crate) supported_input_modes: std::option::Option<std::vec::Vec<crate::types::TrainingInputMode>>,
+    pub(crate) supported_compression_types:
+        std::option::Option<std::vec::Vec<crate::types::CompressionType>>,
+    pub(crate) supported_input_modes:
+        std::option::Option<std::vec::Vec<crate::types::TrainingInputMode>>,
 }
 impl ChannelSpecificationBuilder {
     /// <p>The name of the channel.</p>
@@ -79,7 +84,8 @@ impl ChannelSpecificationBuilder {
     }
     /// <p>The name of the channel.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input; self
+        self.name = input;
+        self
     }
     /// <p>A brief description of the channel.</p>
     pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -88,7 +94,8 @@ impl ChannelSpecificationBuilder {
     }
     /// <p>A brief description of the channel.</p>
     pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.description = input; self
+        self.description = input;
+        self
     }
     /// <p>Indicates whether the channel is required by the algorithm.</p>
     pub fn is_required(mut self, input: bool) -> Self {
@@ -97,7 +104,8 @@ impl ChannelSpecificationBuilder {
     }
     /// <p>Indicates whether the channel is required by the algorithm.</p>
     pub fn set_is_required(mut self, input: std::option::Option<bool>) -> Self {
-        self.is_required = input; self
+        self.is_required = input;
+        self
     }
     /// Appends an item to `supported_content_types`.
     ///
@@ -106,13 +114,17 @@ impl ChannelSpecificationBuilder {
     /// <p>The supported MIME types for the data.</p>
     pub fn supported_content_types(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.supported_content_types.unwrap_or_default();
-                        v.push(input.into());
-                        self.supported_content_types = Some(v);
-                        self
+        v.push(input.into());
+        self.supported_content_types = Some(v);
+        self
     }
     /// <p>The supported MIME types for the data.</p>
-    pub fn set_supported_content_types(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-        self.supported_content_types = input; self
+    pub fn set_supported_content_types(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
+        self.supported_content_types = input;
+        self
     }
     /// Appends an item to `supported_compression_types`.
     ///
@@ -121,50 +133,50 @@ impl ChannelSpecificationBuilder {
     /// <p>The allowed compression types, if data compression is used.</p>
     pub fn supported_compression_types(mut self, input: crate::types::CompressionType) -> Self {
         let mut v = self.supported_compression_types.unwrap_or_default();
-                        v.push(input);
-                        self.supported_compression_types = Some(v);
-                        self
+        v.push(input);
+        self.supported_compression_types = Some(v);
+        self
     }
     /// <p>The allowed compression types, if data compression is used.</p>
-    pub fn set_supported_compression_types(mut self, input: std::option::Option<std::vec::Vec<crate::types::CompressionType>>) -> Self {
-        self.supported_compression_types = input; self
+    pub fn set_supported_compression_types(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::CompressionType>>,
+    ) -> Self {
+        self.supported_compression_types = input;
+        self
     }
     /// Appends an item to `supported_input_modes`.
     ///
     /// To override the contents of this collection use [`set_supported_input_modes`](Self::set_supported_input_modes).
     ///
-    /// <p>The allowed input mode, either FILE or PIPE.</p> 
-    /// <p>In FILE mode, Amazon SageMaker copies the data from the input source onto the local Amazon Elastic Block Store (Amazon EBS) volumes before starting your training algorithm. This is the most commonly used input mode.</p> 
+    /// <p>The allowed input mode, either FILE or PIPE.</p>
+    /// <p>In FILE mode, Amazon SageMaker copies the data from the input source onto the local Amazon Elastic Block Store (Amazon EBS) volumes before starting your training algorithm. This is the most commonly used input mode.</p>
     /// <p>In PIPE mode, Amazon SageMaker streams input data from the source directly to your algorithm without using the EBS volume.</p>
     pub fn supported_input_modes(mut self, input: crate::types::TrainingInputMode) -> Self {
         let mut v = self.supported_input_modes.unwrap_or_default();
-                        v.push(input);
-                        self.supported_input_modes = Some(v);
-                        self
+        v.push(input);
+        self.supported_input_modes = Some(v);
+        self
     }
-    /// <p>The allowed input mode, either FILE or PIPE.</p> 
-    /// <p>In FILE mode, Amazon SageMaker copies the data from the input source onto the local Amazon Elastic Block Store (Amazon EBS) volumes before starting your training algorithm. This is the most commonly used input mode.</p> 
+    /// <p>The allowed input mode, either FILE or PIPE.</p>
+    /// <p>In FILE mode, Amazon SageMaker copies the data from the input source onto the local Amazon Elastic Block Store (Amazon EBS) volumes before starting your training algorithm. This is the most commonly used input mode.</p>
     /// <p>In PIPE mode, Amazon SageMaker streams input data from the source directly to your algorithm without using the EBS volume.</p>
-    pub fn set_supported_input_modes(mut self, input: std::option::Option<std::vec::Vec<crate::types::TrainingInputMode>>) -> Self {
-        self.supported_input_modes = input; self
+    pub fn set_supported_input_modes(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::TrainingInputMode>>,
+    ) -> Self {
+        self.supported_input_modes = input;
+        self
     }
     /// Consumes the builder and constructs a [`ChannelSpecification`](crate::types::ChannelSpecification).
     pub fn build(self) -> crate::types::ChannelSpecification {
         crate::types::ChannelSpecification {
-            name: self.name
-            ,
-            description: self.description
-            ,
-            is_required: self.is_required
-                .unwrap_or_default()
-            ,
-            supported_content_types: self.supported_content_types
-            ,
-            supported_compression_types: self.supported_compression_types
-            ,
-            supported_input_modes: self.supported_input_modes
-            ,
+            name: self.name,
+            description: self.description,
+            is_required: self.is_required.unwrap_or_default(),
+            supported_content_types: self.supported_content_types,
+            supported_compression_types: self.supported_compression_types,
+            supported_input_modes: self.supported_input_modes,
         }
     }
 }
-

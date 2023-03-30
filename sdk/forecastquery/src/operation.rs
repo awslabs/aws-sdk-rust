@@ -6,4 +6,3 @@ pub mod query_forecast;
 
 /// Types for the `QueryWhatIfForecast` operation.
 pub mod query_what_if_forecast;
-

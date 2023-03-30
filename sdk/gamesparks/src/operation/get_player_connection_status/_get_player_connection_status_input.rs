@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetPlayerConnectionStatusInput  {
+pub struct GetPlayerConnectionStatusInput {
     /// <p>The unique identifier representing a player.</p>
     #[doc(hidden)]
     pub player_id: std::option::Option<std::string::String>,
@@ -15,21 +15,21 @@ pub struct GetPlayerConnectionStatusInput  {
 }
 impl GetPlayerConnectionStatusInput {
     /// <p>The unique identifier representing a player.</p>
-    pub fn player_id(&self) -> std::option::Option<& str> {
+    pub fn player_id(&self) -> std::option::Option<&str> {
         self.player_id.as_deref()
     }
     /// <p>The name of the game.</p>
-    pub fn game_name(&self) -> std::option::Option<& str> {
+    pub fn game_name(&self) -> std::option::Option<&str> {
         self.game_name.as_deref()
     }
     /// <p>The name of the stage.</p>
-    pub fn stage_name(&self) -> std::option::Option<& str> {
+    pub fn stage_name(&self) -> std::option::Option<&str> {
         self.stage_name.as_deref()
     }
 }
 impl GetPlayerConnectionStatusInput {
     /// Creates a new builder-style object to manufacture [`GetPlayerConnectionStatusInput`](crate::operation::get_player_connection_status::GetPlayerConnectionStatusInput).
-    pub fn builder() -> crate::operation::get_player_connection_status::builders::GetPlayerConnectionStatusInputBuilder {
+    pub fn builder() -> crate::operation::get_player_connection_status::builders::GetPlayerConnectionStatusInputBuilder{
         crate::operation::get_player_connection_status::builders::GetPlayerConnectionStatusInputBuilder::default()
     }
 }
@@ -50,7 +50,8 @@ impl GetPlayerConnectionStatusInputBuilder {
     }
     /// <p>The unique identifier representing a player.</p>
     pub fn set_player_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.player_id = input; self
+        self.player_id = input;
+        self
     }
     /// <p>The name of the game.</p>
     pub fn game_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -59,7 +60,8 @@ impl GetPlayerConnectionStatusInputBuilder {
     }
     /// <p>The name of the game.</p>
     pub fn set_game_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.game_name = input; self
+        self.game_name = input;
+        self
     }
     /// <p>The name of the stage.</p>
     pub fn stage_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -68,20 +70,22 @@ impl GetPlayerConnectionStatusInputBuilder {
     }
     /// <p>The name of the stage.</p>
     pub fn set_stage_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.stage_name = input; self
+        self.stage_name = input;
+        self
     }
     /// Consumes the builder and constructs a [`GetPlayerConnectionStatusInput`](crate::operation::get_player_connection_status::GetPlayerConnectionStatusInput).
-    pub fn build(self) -> Result<crate::operation::get_player_connection_status::GetPlayerConnectionStatusInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::get_player_connection_status::GetPlayerConnectionStatusInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::get_player_connection_status::GetPlayerConnectionStatusInput {
-                player_id: self.player_id
-                ,
-                game_name: self.game_name
-                ,
-                stage_name: self.stage_name
-                ,
-            }
+                player_id: self.player_id,
+                game_name: self.game_name,
+                stage_name: self.stage_name,
+            },
         )
     }
 }
-

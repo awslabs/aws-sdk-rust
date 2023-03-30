@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SendDataToMulticastGroupInput  {
+pub struct SendDataToMulticastGroupInput {
     /// <p>The ID of the multicast group.</p>
     #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
@@ -15,21 +15,23 @@ pub struct SendDataToMulticastGroupInput  {
 }
 impl SendDataToMulticastGroupInput {
     /// <p>The ID of the multicast group.</p>
-    pub fn id(&self) -> std::option::Option<& str> {
+    pub fn id(&self) -> std::option::Option<&str> {
         self.id.as_deref()
     }
     /// <p>The binary to be sent to the end device, encoded in base64.</p>
-    pub fn payload_data(&self) -> std::option::Option<& str> {
+    pub fn payload_data(&self) -> std::option::Option<&str> {
         self.payload_data.as_deref()
     }
     /// <p>Wireless metadata that is to be sent to multicast group.</p>
-    pub fn wireless_metadata(&self) -> std::option::Option<& crate::types::MulticastWirelessMetadata> {
+    pub fn wireless_metadata(
+        &self,
+    ) -> std::option::Option<&crate::types::MulticastWirelessMetadata> {
         self.wireless_metadata.as_ref()
     }
 }
 impl SendDataToMulticastGroupInput {
     /// Creates a new builder-style object to manufacture [`SendDataToMulticastGroupInput`](crate::operation::send_data_to_multicast_group::SendDataToMulticastGroupInput).
-    pub fn builder() -> crate::operation::send_data_to_multicast_group::builders::SendDataToMulticastGroupInputBuilder {
+    pub fn builder() -> crate::operation::send_data_to_multicast_group::builders::SendDataToMulticastGroupInputBuilder{
         crate::operation::send_data_to_multicast_group::builders::SendDataToMulticastGroupInputBuilder::default()
     }
 }
@@ -50,7 +52,8 @@ impl SendDataToMulticastGroupInputBuilder {
     }
     /// <p>The ID of the multicast group.</p>
     pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.id = input; self
+        self.id = input;
+        self
     }
     /// <p>The binary to be sent to the end device, encoded in base64.</p>
     pub fn payload_data(mut self, input: impl Into<std::string::String>) -> Self {
@@ -59,7 +62,8 @@ impl SendDataToMulticastGroupInputBuilder {
     }
     /// <p>The binary to be sent to the end device, encoded in base64.</p>
     pub fn set_payload_data(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.payload_data = input; self
+        self.payload_data = input;
+        self
     }
     /// <p>Wireless metadata that is to be sent to multicast group.</p>
     pub fn wireless_metadata(mut self, input: crate::types::MulticastWirelessMetadata) -> Self {
@@ -67,21 +71,26 @@ impl SendDataToMulticastGroupInputBuilder {
         self
     }
     /// <p>Wireless metadata that is to be sent to multicast group.</p>
-    pub fn set_wireless_metadata(mut self, input: std::option::Option<crate::types::MulticastWirelessMetadata>) -> Self {
-        self.wireless_metadata = input; self
+    pub fn set_wireless_metadata(
+        mut self,
+        input: std::option::Option<crate::types::MulticastWirelessMetadata>,
+    ) -> Self {
+        self.wireless_metadata = input;
+        self
     }
     /// Consumes the builder and constructs a [`SendDataToMulticastGroupInput`](crate::operation::send_data_to_multicast_group::SendDataToMulticastGroupInput).
-    pub fn build(self) -> Result<crate::operation::send_data_to_multicast_group::SendDataToMulticastGroupInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::send_data_to_multicast_group::SendDataToMulticastGroupInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::send_data_to_multicast_group::SendDataToMulticastGroupInput {
-                id: self.id
-                ,
-                payload_data: self.payload_data
-                ,
-                wireless_metadata: self.wireless_metadata
-                ,
-            }
+                id: self.id,
+                payload_data: self.payload_data,
+                wireless_metadata: self.wireless_metadata,
+            },
         )
     }
 }
-

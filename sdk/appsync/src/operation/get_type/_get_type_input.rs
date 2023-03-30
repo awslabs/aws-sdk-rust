@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetTypeInput  {
+pub struct GetTypeInput {
     /// <p>The API ID.</p>
     #[doc(hidden)]
     pub api_id: std::option::Option<std::string::String>,
@@ -15,15 +15,15 @@ pub struct GetTypeInput  {
 }
 impl GetTypeInput {
     /// <p>The API ID.</p>
-    pub fn api_id(&self) -> std::option::Option<& str> {
+    pub fn api_id(&self) -> std::option::Option<&str> {
         self.api_id.as_deref()
     }
     /// <p>The type name.</p>
-    pub fn type_name(&self) -> std::option::Option<& str> {
+    pub fn type_name(&self) -> std::option::Option<&str> {
         self.type_name.as_deref()
     }
     /// <p>The type format: SDL or JSON.</p>
-    pub fn format(&self) -> std::option::Option<& crate::types::TypeDefinitionFormat> {
+    pub fn format(&self) -> std::option::Option<&crate::types::TypeDefinitionFormat> {
         self.format.as_ref()
     }
 }
@@ -50,7 +50,8 @@ impl GetTypeInputBuilder {
     }
     /// <p>The API ID.</p>
     pub fn set_api_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.api_id = input; self
+        self.api_id = input;
+        self
     }
     /// <p>The type name.</p>
     pub fn type_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -59,7 +60,8 @@ impl GetTypeInputBuilder {
     }
     /// <p>The type name.</p>
     pub fn set_type_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.type_name = input; self
+        self.type_name = input;
+        self
     }
     /// <p>The type format: SDL or JSON.</p>
     pub fn format(mut self, input: crate::types::TypeDefinitionFormat) -> Self {
@@ -67,21 +69,24 @@ impl GetTypeInputBuilder {
         self
     }
     /// <p>The type format: SDL or JSON.</p>
-    pub fn set_format(mut self, input: std::option::Option<crate::types::TypeDefinitionFormat>) -> Self {
-        self.format = input; self
+    pub fn set_format(
+        mut self,
+        input: std::option::Option<crate::types::TypeDefinitionFormat>,
+    ) -> Self {
+        self.format = input;
+        self
     }
     /// Consumes the builder and constructs a [`GetTypeInput`](crate::operation::get_type::GetTypeInput).
-    pub fn build(self) -> Result<crate::operation::get_type::GetTypeInput, aws_smithy_http::operation::error::BuildError> {
-        Ok(
-            crate::operation::get_type::GetTypeInput {
-                api_id: self.api_id
-                ,
-                type_name: self.type_name
-                ,
-                format: self.format
-                ,
-            }
-        )
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::get_type::GetTypeInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        Ok(crate::operation::get_type::GetTypeInput {
+            api_id: self.api_id,
+            type_name: self.type_name,
+            format: self.format,
+        })
     }
 }
-

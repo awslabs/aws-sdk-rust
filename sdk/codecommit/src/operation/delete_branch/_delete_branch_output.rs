@@ -3,7 +3,7 @@
 /// <p>Represents the output of a delete branch operation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteBranchOutput  {
+pub struct DeleteBranchOutput {
     /// <p>Information about the branch deleted by the operation, including the branch name and the commit ID that was the tip of the branch.</p>
     #[doc(hidden)]
     pub deleted_branch: std::option::Option<crate::types::BranchInfo>,
@@ -11,15 +11,15 @@ pub struct DeleteBranchOutput  {
 }
 impl DeleteBranchOutput {
     /// <p>Information about the branch deleted by the operation, including the branch name and the commit ID that was the tip of the branch.</p>
-    pub fn deleted_branch(&self) -> std::option::Option<& crate::types::BranchInfo> {
+    pub fn deleted_branch(&self) -> std::option::Option<&crate::types::BranchInfo> {
         self.deleted_branch.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for DeleteBranchOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl DeleteBranchOutput {
     /// Creates a new builder-style object to manufacture [`DeleteBranchOutput`](crate::operation::delete_branch::DeleteBranchOutput).
     pub fn builder() -> crate::operation::delete_branch::builders::DeleteBranchOutputBuilder {
@@ -41,25 +41,27 @@ impl DeleteBranchOutputBuilder {
         self
     }
     /// <p>Information about the branch deleted by the operation, including the branch name and the commit ID that was the tip of the branch.</p>
-    pub fn set_deleted_branch(mut self, input: std::option::Option<crate::types::BranchInfo>) -> Self {
-        self.deleted_branch = input; self
+    pub fn set_deleted_branch(
+        mut self,
+        input: std::option::Option<crate::types::BranchInfo>,
+    ) -> Self {
+        self.deleted_branch = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`DeleteBranchOutput`](crate::operation::delete_branch::DeleteBranchOutput).
     pub fn build(self) -> crate::operation::delete_branch::DeleteBranchOutput {
         crate::operation::delete_branch::DeleteBranchOutput {
-            deleted_branch: self.deleted_branch
-            ,
+            deleted_branch: self.deleted_branch,
             _request_id: self._request_id,
         }
     }
 }
-

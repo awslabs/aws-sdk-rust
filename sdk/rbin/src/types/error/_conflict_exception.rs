@@ -3,7 +3,7 @@
 /// <p>The specified retention rule lock request can't be completed.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ConflictException  {
+pub struct ConflictException {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
@@ -14,19 +14,21 @@ pub struct ConflictException  {
 }
 impl ConflictException {
     /// <p>The reason for the exception.</p>
-    pub fn reason(&self) -> std::option::Option<& crate::types::ConflictExceptionReason> {
+    pub fn reason(&self) -> std::option::Option<&crate::types::ConflictExceptionReason> {
         self.reason.as_ref()
     }
 }
 impl ConflictException {
     /// Returns the error message.
-                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
+    pub fn message(&self) -> std::option::Option<&str> {
+        self.message.as_deref()
+    }
 }
 impl std::fmt::Display for ConflictException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "ConflictException")?;
         if let Some(inner_1) = &self.message {
-             {
+            {
                 write!(f, ": {}", inner_1)?;
             }
         }
@@ -41,7 +43,9 @@ impl aws_http::request_id::RequestId for crate::types::error::ConflictException 
     }
 }
 impl aws_smithy_types::error::metadata::ProvideErrorMetadata for ConflictException {
-    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata { &self.meta }
+    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
+        &self.meta
+    }
 }
 impl ConflictException {
     /// Creates a new builder-style object to manufacture [`ConflictException`](crate::types::error::ConflictException).
@@ -66,7 +70,8 @@ impl ConflictExceptionBuilder {
     }
     #[allow(missing_docs)] // documentation missing in model
     pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.message = input; self
+        self.message = input;
+        self
     }
     /// <p>The reason for the exception.</p>
     pub fn reason(mut self, input: crate::types::ConflictExceptionReason) -> Self {
@@ -74,29 +79,33 @@ impl ConflictExceptionBuilder {
         self
     }
     /// <p>The reason for the exception.</p>
-    pub fn set_reason(mut self, input: std::option::Option<crate::types::ConflictExceptionReason>) -> Self {
-        self.reason = input; self
+    pub fn set_reason(
+        mut self,
+        input: std::option::Option<crate::types::ConflictExceptionReason>,
+    ) -> Self {
+        self.reason = input;
+        self
     }
     /// Sets error metadata
-                                            pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
-                                                self.meta = Some(meta);
-                                                self
-                                            }
-    
-                                            /// Sets error metadata
-                                            pub fn set_meta(&mut self, meta: std::option::Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
-                                                self.meta = meta;
-                                                self
-                                            }
+    pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
+        self.meta = Some(meta);
+        self
+    }
+
+    /// Sets error metadata
+    pub fn set_meta(
+        &mut self,
+        meta: std::option::Option<aws_smithy_types::error::ErrorMetadata>,
+    ) -> &mut Self {
+        self.meta = meta;
+        self
+    }
     /// Consumes the builder and constructs a [`ConflictException`](crate::types::error::ConflictException).
     pub fn build(self) -> crate::types::error::ConflictException {
         crate::types::error::ConflictException {
-            message: self.message
-            ,
-            reason: self.reason
-            ,
+            message: self.message,
+            reason: self.reason,
             meta: self.meta.unwrap_or_default(),
         }
     }
 }
-

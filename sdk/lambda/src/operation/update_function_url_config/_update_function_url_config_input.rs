@@ -2,14 +2,14 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateFunctionUrlConfigInput  {
-    /// <p>The name of the Lambda function.</p> 
-    /// <p class="title"> <b>Name formats</b> </p> 
-    /// <ul> 
-    /// <li> <p> <b>Function name</b> – <code>my-function</code>.</p> </li> 
-    /// <li> <p> <b>Function ARN</b> – <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.</p> </li> 
-    /// <li> <p> <b>Partial ARN</b> – <code>123456789012:function:my-function</code>.</p> </li> 
-    /// </ul> 
+pub struct UpdateFunctionUrlConfigInput {
+    /// <p>The name of the Lambda function.</p>
+    /// <p class="title"> <b>Name formats</b> </p>
+    /// <ul>
+    /// <li> <p> <b>Function name</b> – <code>my-function</code>.</p> </li>
+    /// <li> <p> <b>Function ARN</b> – <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.</p> </li>
+    /// <li> <p> <b>Partial ARN</b> – <code>123456789012:function:my-function</code>.</p> </li>
+    /// </ul>
     /// <p>The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64 characters in length.</p>
     #[doc(hidden)]
     pub function_name: std::option::Option<std::string::String>,
@@ -24,33 +24,35 @@ pub struct UpdateFunctionUrlConfigInput  {
     pub cors: std::option::Option<crate::types::Cors>,
 }
 impl UpdateFunctionUrlConfigInput {
-    /// <p>The name of the Lambda function.</p> 
-    /// <p class="title"> <b>Name formats</b> </p> 
-    /// <ul> 
-    /// <li> <p> <b>Function name</b> – <code>my-function</code>.</p> </li> 
-    /// <li> <p> <b>Function ARN</b> – <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.</p> </li> 
-    /// <li> <p> <b>Partial ARN</b> – <code>123456789012:function:my-function</code>.</p> </li> 
-    /// </ul> 
+    /// <p>The name of the Lambda function.</p>
+    /// <p class="title"> <b>Name formats</b> </p>
+    /// <ul>
+    /// <li> <p> <b>Function name</b> – <code>my-function</code>.</p> </li>
+    /// <li> <p> <b>Function ARN</b> – <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.</p> </li>
+    /// <li> <p> <b>Partial ARN</b> – <code>123456789012:function:my-function</code>.</p> </li>
+    /// </ul>
     /// <p>The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64 characters in length.</p>
-    pub fn function_name(&self) -> std::option::Option<& str> {
+    pub fn function_name(&self) -> std::option::Option<&str> {
         self.function_name.as_deref()
     }
     /// <p>The alias name.</p>
-    pub fn qualifier(&self) -> std::option::Option<& str> {
+    pub fn qualifier(&self) -> std::option::Option<&str> {
         self.qualifier.as_deref()
     }
     /// <p>The type of authentication that your function URL uses. Set to <code>AWS_IAM</code> if you want to restrict access to authenticated IAM users only. Set to <code>NONE</code> if you want to bypass IAM authentication to create a public endpoint. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/urls-auth.html">Security and auth model for Lambda function URLs</a>.</p>
-    pub fn auth_type(&self) -> std::option::Option<& crate::types::FunctionUrlAuthType> {
+    pub fn auth_type(&self) -> std::option::Option<&crate::types::FunctionUrlAuthType> {
         self.auth_type.as_ref()
     }
     /// <p>The <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS">cross-origin resource sharing (CORS)</a> settings for your function URL.</p>
-    pub fn cors(&self) -> std::option::Option<& crate::types::Cors> {
+    pub fn cors(&self) -> std::option::Option<&crate::types::Cors> {
         self.cors.as_ref()
     }
 }
 impl UpdateFunctionUrlConfigInput {
     /// Creates a new builder-style object to manufacture [`UpdateFunctionUrlConfigInput`](crate::operation::update_function_url_config::UpdateFunctionUrlConfigInput).
-    pub fn builder() -> crate::operation::update_function_url_config::builders::UpdateFunctionUrlConfigInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::update_function_url_config::builders::UpdateFunctionUrlConfigInputBuilder
+    {
         crate::operation::update_function_url_config::builders::UpdateFunctionUrlConfigInputBuilder::default()
     }
 }
@@ -65,28 +67,29 @@ pub struct UpdateFunctionUrlConfigInputBuilder {
     pub(crate) cors: std::option::Option<crate::types::Cors>,
 }
 impl UpdateFunctionUrlConfigInputBuilder {
-    /// <p>The name of the Lambda function.</p> 
-    /// <p class="title"> <b>Name formats</b> </p> 
-    /// <ul> 
-    /// <li> <p> <b>Function name</b> – <code>my-function</code>.</p> </li> 
-    /// <li> <p> <b>Function ARN</b> – <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.</p> </li> 
-    /// <li> <p> <b>Partial ARN</b> – <code>123456789012:function:my-function</code>.</p> </li> 
-    /// </ul> 
+    /// <p>The name of the Lambda function.</p>
+    /// <p class="title"> <b>Name formats</b> </p>
+    /// <ul>
+    /// <li> <p> <b>Function name</b> – <code>my-function</code>.</p> </li>
+    /// <li> <p> <b>Function ARN</b> – <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.</p> </li>
+    /// <li> <p> <b>Partial ARN</b> – <code>123456789012:function:my-function</code>.</p> </li>
+    /// </ul>
     /// <p>The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64 characters in length.</p>
     pub fn function_name(mut self, input: impl Into<std::string::String>) -> Self {
         self.function_name = Some(input.into());
         self
     }
-    /// <p>The name of the Lambda function.</p> 
-    /// <p class="title"> <b>Name formats</b> </p> 
-    /// <ul> 
-    /// <li> <p> <b>Function name</b> – <code>my-function</code>.</p> </li> 
-    /// <li> <p> <b>Function ARN</b> – <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.</p> </li> 
-    /// <li> <p> <b>Partial ARN</b> – <code>123456789012:function:my-function</code>.</p> </li> 
-    /// </ul> 
+    /// <p>The name of the Lambda function.</p>
+    /// <p class="title"> <b>Name formats</b> </p>
+    /// <ul>
+    /// <li> <p> <b>Function name</b> – <code>my-function</code>.</p> </li>
+    /// <li> <p> <b>Function ARN</b> – <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.</p> </li>
+    /// <li> <p> <b>Partial ARN</b> – <code>123456789012:function:my-function</code>.</p> </li>
+    /// </ul>
     /// <p>The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64 characters in length.</p>
     pub fn set_function_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.function_name = input; self
+        self.function_name = input;
+        self
     }
     /// <p>The alias name.</p>
     pub fn qualifier(mut self, input: impl Into<std::string::String>) -> Self {
@@ -95,7 +98,8 @@ impl UpdateFunctionUrlConfigInputBuilder {
     }
     /// <p>The alias name.</p>
     pub fn set_qualifier(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.qualifier = input; self
+        self.qualifier = input;
+        self
     }
     /// <p>The type of authentication that your function URL uses. Set to <code>AWS_IAM</code> if you want to restrict access to authenticated IAM users only. Set to <code>NONE</code> if you want to bypass IAM authentication to create a public endpoint. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/urls-auth.html">Security and auth model for Lambda function URLs</a>.</p>
     pub fn auth_type(mut self, input: crate::types::FunctionUrlAuthType) -> Self {
@@ -103,8 +107,12 @@ impl UpdateFunctionUrlConfigInputBuilder {
         self
     }
     /// <p>The type of authentication that your function URL uses. Set to <code>AWS_IAM</code> if you want to restrict access to authenticated IAM users only. Set to <code>NONE</code> if you want to bypass IAM authentication to create a public endpoint. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/urls-auth.html">Security and auth model for Lambda function URLs</a>.</p>
-    pub fn set_auth_type(mut self, input: std::option::Option<crate::types::FunctionUrlAuthType>) -> Self {
-        self.auth_type = input; self
+    pub fn set_auth_type(
+        mut self,
+        input: std::option::Option<crate::types::FunctionUrlAuthType>,
+    ) -> Self {
+        self.auth_type = input;
+        self
     }
     /// <p>The <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS">cross-origin resource sharing (CORS)</a> settings for your function URL.</p>
     pub fn cors(mut self, input: crate::types::Cors) -> Self {
@@ -113,22 +121,23 @@ impl UpdateFunctionUrlConfigInputBuilder {
     }
     /// <p>The <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS">cross-origin resource sharing (CORS)</a> settings for your function URL.</p>
     pub fn set_cors(mut self, input: std::option::Option<crate::types::Cors>) -> Self {
-        self.cors = input; self
+        self.cors = input;
+        self
     }
     /// Consumes the builder and constructs a [`UpdateFunctionUrlConfigInput`](crate::operation::update_function_url_config::UpdateFunctionUrlConfigInput).
-    pub fn build(self) -> Result<crate::operation::update_function_url_config::UpdateFunctionUrlConfigInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::update_function_url_config::UpdateFunctionUrlConfigInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::update_function_url_config::UpdateFunctionUrlConfigInput {
-                function_name: self.function_name
-                ,
-                qualifier: self.qualifier
-                ,
-                auth_type: self.auth_type
-                ,
-                cors: self.cors
-                ,
-            }
+                function_name: self.function_name,
+                qualifier: self.qualifier,
+                auth_type: self.auth_type,
+                cors: self.cors,
+            },
         )
     }
 }
-

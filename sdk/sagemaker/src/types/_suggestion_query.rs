@@ -3,14 +3,14 @@
 /// <p>Specified in the <code>GetSearchSuggestions</code> request. Limits the property names that are included in the response.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SuggestionQuery  {
+pub struct SuggestionQuery {
     /// <p>Defines a property name hint. Only property names that begin with the specified hint are included in the response.</p>
     #[doc(hidden)]
     pub property_name_query: std::option::Option<crate::types::PropertyNameQuery>,
 }
 impl SuggestionQuery {
     /// <p>Defines a property name hint. Only property names that begin with the specified hint are included in the response.</p>
-    pub fn property_name_query(&self) -> std::option::Option<& crate::types::PropertyNameQuery> {
+    pub fn property_name_query(&self) -> std::option::Option<&crate::types::PropertyNameQuery> {
         self.property_name_query.as_ref()
     }
 }
@@ -34,15 +34,17 @@ impl SuggestionQueryBuilder {
         self
     }
     /// <p>Defines a property name hint. Only property names that begin with the specified hint are included in the response.</p>
-    pub fn set_property_name_query(mut self, input: std::option::Option<crate::types::PropertyNameQuery>) -> Self {
-        self.property_name_query = input; self
+    pub fn set_property_name_query(
+        mut self,
+        input: std::option::Option<crate::types::PropertyNameQuery>,
+    ) -> Self {
+        self.property_name_query = input;
+        self
     }
     /// Consumes the builder and constructs a [`SuggestionQuery`](crate::types::SuggestionQuery).
     pub fn build(self) -> crate::types::SuggestionQuery {
         crate::types::SuggestionQuery {
-            property_name_query: self.property_name_query
-            ,
+            property_name_query: self.property_name_query,
         }
     }
 }
-

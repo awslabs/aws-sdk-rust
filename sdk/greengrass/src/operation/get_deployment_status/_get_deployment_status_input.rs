@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetDeploymentStatusInput  {
+pub struct GetDeploymentStatusInput {
     /// The ID of the deployment.
     #[doc(hidden)]
     pub deployment_id: std::option::Option<std::string::String>,
@@ -12,18 +12,20 @@ pub struct GetDeploymentStatusInput  {
 }
 impl GetDeploymentStatusInput {
     /// The ID of the deployment.
-    pub fn deployment_id(&self) -> std::option::Option<& str> {
+    pub fn deployment_id(&self) -> std::option::Option<&str> {
         self.deployment_id.as_deref()
     }
     /// The ID of the Greengrass group.
-    pub fn group_id(&self) -> std::option::Option<& str> {
+    pub fn group_id(&self) -> std::option::Option<&str> {
         self.group_id.as_deref()
     }
 }
 impl GetDeploymentStatusInput {
     /// Creates a new builder-style object to manufacture [`GetDeploymentStatusInput`](crate::operation::get_deployment_status::GetDeploymentStatusInput).
-    pub fn builder() -> crate::operation::get_deployment_status::builders::GetDeploymentStatusInputBuilder {
-        crate::operation::get_deployment_status::builders::GetDeploymentStatusInputBuilder::default()
+    pub fn builder(
+    ) -> crate::operation::get_deployment_status::builders::GetDeploymentStatusInputBuilder {
+        crate::operation::get_deployment_status::builders::GetDeploymentStatusInputBuilder::default(
+        )
     }
 }
 
@@ -42,7 +44,8 @@ impl GetDeploymentStatusInputBuilder {
     }
     /// The ID of the deployment.
     pub fn set_deployment_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.deployment_id = input; self
+        self.deployment_id = input;
+        self
     }
     /// The ID of the Greengrass group.
     pub fn group_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -51,18 +54,21 @@ impl GetDeploymentStatusInputBuilder {
     }
     /// The ID of the Greengrass group.
     pub fn set_group_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.group_id = input; self
+        self.group_id = input;
+        self
     }
     /// Consumes the builder and constructs a [`GetDeploymentStatusInput`](crate::operation::get_deployment_status::GetDeploymentStatusInput).
-    pub fn build(self) -> Result<crate::operation::get_deployment_status::GetDeploymentStatusInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::get_deployment_status::GetDeploymentStatusInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::get_deployment_status::GetDeploymentStatusInput {
-                deployment_id: self.deployment_id
-                ,
-                group_id: self.group_id
-                ,
-            }
+                deployment_id: self.deployment_id,
+                group_id: self.group_id,
+            },
         )
     }
 }
-

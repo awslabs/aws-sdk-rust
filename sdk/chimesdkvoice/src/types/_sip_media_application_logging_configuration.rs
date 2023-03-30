@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SipMediaApplicationLoggingConfiguration  {
+pub struct SipMediaApplicationLoggingConfiguration {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub enable_sip_media_application_message_logs: std::option::Option<bool>,
@@ -33,15 +33,18 @@ impl SipMediaApplicationLoggingConfigurationBuilder {
         self
     }
     #[allow(missing_docs)] // documentation missing in model
-    pub fn set_enable_sip_media_application_message_logs(mut self, input: std::option::Option<bool>) -> Self {
-        self.enable_sip_media_application_message_logs = input; self
+    pub fn set_enable_sip_media_application_message_logs(
+        mut self,
+        input: std::option::Option<bool>,
+    ) -> Self {
+        self.enable_sip_media_application_message_logs = input;
+        self
     }
     /// Consumes the builder and constructs a [`SipMediaApplicationLoggingConfiguration`](crate::types::SipMediaApplicationLoggingConfiguration).
     pub fn build(self) -> crate::types::SipMediaApplicationLoggingConfiguration {
         crate::types::SipMediaApplicationLoggingConfiguration {
-            enable_sip_media_application_message_logs: self.enable_sip_media_application_message_logs
-            ,
+            enable_sip_media_application_message_logs: self
+                .enable_sip_media_application_message_logs,
         }
     }
 }
-

@@ -3,7 +3,7 @@
 /// <p> For an application output, describes the Amazon Kinesis stream configured as its destination. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct KinesisStreamsOutputDescription  {
+pub struct KinesisStreamsOutputDescription {
     /// <p>Amazon Resource Name (ARN) of the Amazon Kinesis stream.</p>
     #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
@@ -13,11 +13,11 @@ pub struct KinesisStreamsOutputDescription  {
 }
 impl KinesisStreamsOutputDescription {
     /// <p>Amazon Resource Name (ARN) of the Amazon Kinesis stream.</p>
-    pub fn resource_arn(&self) -> std::option::Option<& str> {
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
         self.resource_arn.as_deref()
     }
     /// <p>ARN of the IAM role that Amazon Kinesis Analytics can assume to access the stream.</p>
-    pub fn role_arn(&self) -> std::option::Option<& str> {
+    pub fn role_arn(&self) -> std::option::Option<&str> {
         self.role_arn.as_deref()
     }
 }
@@ -43,7 +43,8 @@ impl KinesisStreamsOutputDescriptionBuilder {
     }
     /// <p>Amazon Resource Name (ARN) of the Amazon Kinesis stream.</p>
     pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.resource_arn = input; self
+        self.resource_arn = input;
+        self
     }
     /// <p>ARN of the IAM role that Amazon Kinesis Analytics can assume to access the stream.</p>
     pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -52,16 +53,14 @@ impl KinesisStreamsOutputDescriptionBuilder {
     }
     /// <p>ARN of the IAM role that Amazon Kinesis Analytics can assume to access the stream.</p>
     pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.role_arn = input; self
+        self.role_arn = input;
+        self
     }
     /// Consumes the builder and constructs a [`KinesisStreamsOutputDescription`](crate::types::KinesisStreamsOutputDescription).
     pub fn build(self) -> crate::types::KinesisStreamsOutputDescription {
         crate::types::KinesisStreamsOutputDescription {
-            resource_arn: self.resource_arn
-            ,
-            role_arn: self.role_arn
-            ,
+            resource_arn: self.resource_arn,
+            role_arn: self.role_arn,
         }
     }
 }
-

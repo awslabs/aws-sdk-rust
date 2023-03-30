@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-/// 
+///
 /// Here is an example of how you can make a match expression forward-compatible:
-/// 
+///
 /// ```text
 /// # let packageversionerrorcode = unimplemented!();
 /// match packageversionerrorcode {
@@ -34,14 +34,22 @@
 /// Specifically, when `packageversionerrorcode` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `PackageVersionErrorCode::NewFeature` also yielding `"NewFeature"`.
-/// 
+///
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
 pub enum PackageVersionErrorCode {
     #[allow(missing_docs)] // documentation missing in model
     AlreadyExists,
@@ -56,49 +64,57 @@ pub enum PackageVersionErrorCode {
     #[allow(missing_docs)] // documentation missing in model
     Skipped,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::primitives::UnknownVariantValue)
+    Unknown(crate::primitives::UnknownVariantValue),
 }
 impl std::convert::From<&str> for PackageVersionErrorCode {
-                fn from(s: &str) -> Self {
-                    match s {
-                        "ALREADY_EXISTS" => PackageVersionErrorCode::AlreadyExists,
-"MISMATCHED_REVISION" => PackageVersionErrorCode::MismatchedRevision,
-"MISMATCHED_STATUS" => PackageVersionErrorCode::MismatchedStatus,
-"NOT_ALLOWED" => PackageVersionErrorCode::NotAllowed,
-"NOT_FOUND" => PackageVersionErrorCode::NotFound,
-"SKIPPED" => PackageVersionErrorCode::Skipped,
-other => PackageVersionErrorCode::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
-                    }
-                }
-            }
-impl std::str::FromStr for PackageVersionErrorCode {
-                type Err = std::convert::Infallible;
-
-                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-                    Ok(PackageVersionErrorCode::from(s))
-                }
-            }
-impl PackageVersionErrorCode {
-                /// Returns the `&str` value of the enum member.
-                pub fn as_str(&self) -> &str {
-                    match self {
-    PackageVersionErrorCode::AlreadyExists => "ALREADY_EXISTS",
-    PackageVersionErrorCode::MismatchedRevision => "MISMATCHED_REVISION",
-    PackageVersionErrorCode::MismatchedStatus => "MISMATCHED_STATUS",
-    PackageVersionErrorCode::NotAllowed => "NOT_ALLOWED",
-    PackageVersionErrorCode::NotFound => "NOT_FOUND",
-    PackageVersionErrorCode::Skipped => "SKIPPED",
-    PackageVersionErrorCode::Unknown(value) => value.as_str()
+    fn from(s: &str) -> Self {
+        match s {
+            "ALREADY_EXISTS" => PackageVersionErrorCode::AlreadyExists,
+            "MISMATCHED_REVISION" => PackageVersionErrorCode::MismatchedRevision,
+            "MISMATCHED_STATUS" => PackageVersionErrorCode::MismatchedStatus,
+            "NOT_ALLOWED" => PackageVersionErrorCode::NotAllowed,
+            "NOT_FOUND" => PackageVersionErrorCode::NotFound,
+            "SKIPPED" => PackageVersionErrorCode::Skipped,
+            other => PackageVersionErrorCode::Unknown(crate::primitives::UnknownVariantValue(
+                other.to_owned(),
+            )),
+        }
+    }
 }
-                }
-                /// Returns all the `&str` representations of the enum members.
-                pub const fn values() -> &'static [&'static str] {
-                    &["ALREADY_EXISTS", "MISMATCHED_REVISION", "MISMATCHED_STATUS", "NOT_ALLOWED", "NOT_FOUND", "SKIPPED"]
-                }
-            }
-impl AsRef<str> for PackageVersionErrorCode {
-                fn as_ref(&self) -> &str {
-                    self.as_str()
-                }
-            }
+impl std::str::FromStr for PackageVersionErrorCode {
+    type Err = std::convert::Infallible;
 
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(PackageVersionErrorCode::from(s))
+    }
+}
+impl PackageVersionErrorCode {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            PackageVersionErrorCode::AlreadyExists => "ALREADY_EXISTS",
+            PackageVersionErrorCode::MismatchedRevision => "MISMATCHED_REVISION",
+            PackageVersionErrorCode::MismatchedStatus => "MISMATCHED_STATUS",
+            PackageVersionErrorCode::NotAllowed => "NOT_ALLOWED",
+            PackageVersionErrorCode::NotFound => "NOT_FOUND",
+            PackageVersionErrorCode::Skipped => "SKIPPED",
+            PackageVersionErrorCode::Unknown(value) => value.as_str(),
+        }
+    }
+    /// Returns all the `&str` representations of the enum members.
+    pub const fn values() -> &'static [&'static str] {
+        &[
+            "ALREADY_EXISTS",
+            "MISMATCHED_REVISION",
+            "MISMATCHED_STATUS",
+            "NOT_ALLOWED",
+            "NOT_FOUND",
+            "SKIPPED",
+        ]
+    }
+}
+impl AsRef<str> for PackageVersionErrorCode {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}

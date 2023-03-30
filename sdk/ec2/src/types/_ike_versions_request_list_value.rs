@@ -3,14 +3,14 @@
 /// <p>The IKE version that is permitted for the VPN tunnel.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct IkeVersionsRequestListValue  {
+pub struct IkeVersionsRequestListValue {
     /// <p>The IKE version.</p>
     #[doc(hidden)]
     pub value: std::option::Option<std::string::String>,
 }
 impl IkeVersionsRequestListValue {
     /// <p>The IKE version.</p>
-    pub fn value(&self) -> std::option::Option<& str> {
+    pub fn value(&self) -> std::option::Option<&str> {
         self.value.as_deref()
     }
 }
@@ -35,14 +35,11 @@ impl IkeVersionsRequestListValueBuilder {
     }
     /// <p>The IKE version.</p>
     pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.value = input; self
+        self.value = input;
+        self
     }
     /// Consumes the builder and constructs a [`IkeVersionsRequestListValue`](crate::types::IkeVersionsRequestListValue).
     pub fn build(self) -> crate::types::IkeVersionsRequestListValue {
-        crate::types::IkeVersionsRequestListValue {
-            value: self.value
-            ,
-        }
+        crate::types::IkeVersionsRequestListValue { value: self.value }
     }
 }
-

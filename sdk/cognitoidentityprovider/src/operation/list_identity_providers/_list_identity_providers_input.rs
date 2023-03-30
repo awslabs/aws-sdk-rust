@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListIdentityProvidersInput  {
+pub struct ListIdentityProvidersInput {
     /// <p>The user pool ID.</p>
     #[doc(hidden)]
     pub user_pool_id: std::option::Option<std::string::String>,
@@ -15,7 +15,7 @@ pub struct ListIdentityProvidersInput  {
 }
 impl ListIdentityProvidersInput {
     /// <p>The user pool ID.</p>
-    pub fn user_pool_id(&self) -> std::option::Option<& str> {
+    pub fn user_pool_id(&self) -> std::option::Option<&str> {
         self.user_pool_id.as_deref()
     }
     /// <p>The maximum number of IdPs to return.</p>
@@ -23,13 +23,15 @@ impl ListIdentityProvidersInput {
         self.max_results
     }
     /// <p>A pagination token.</p>
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
 }
 impl ListIdentityProvidersInput {
     /// Creates a new builder-style object to manufacture [`ListIdentityProvidersInput`](crate::operation::list_identity_providers::ListIdentityProvidersInput).
-    pub fn builder() -> crate::operation::list_identity_providers::builders::ListIdentityProvidersInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::list_identity_providers::builders::ListIdentityProvidersInputBuilder
+    {
         crate::operation::list_identity_providers::builders::ListIdentityProvidersInputBuilder::default()
     }
 }
@@ -50,7 +52,8 @@ impl ListIdentityProvidersInputBuilder {
     }
     /// <p>The user pool ID.</p>
     pub fn set_user_pool_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.user_pool_id = input; self
+        self.user_pool_id = input;
+        self
     }
     /// <p>The maximum number of IdPs to return.</p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -59,7 +62,8 @@ impl ListIdentityProvidersInputBuilder {
     }
     /// <p>The maximum number of IdPs to return.</p>
     pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_results = input; self
+        self.max_results = input;
+        self
     }
     /// <p>A pagination token.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -68,20 +72,22 @@ impl ListIdentityProvidersInputBuilder {
     }
     /// <p>A pagination token.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input; self
+        self.next_token = input;
+        self
     }
     /// Consumes the builder and constructs a [`ListIdentityProvidersInput`](crate::operation::list_identity_providers::ListIdentityProvidersInput).
-    pub fn build(self) -> Result<crate::operation::list_identity_providers::ListIdentityProvidersInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::list_identity_providers::ListIdentityProvidersInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::list_identity_providers::ListIdentityProvidersInput {
-                user_pool_id: self.user_pool_id
-                ,
-                max_results: self.max_results
-                ,
-                next_token: self.next_token
-                ,
-            }
+                user_pool_id: self.user_pool_id,
+                max_results: self.max_results,
+                next_token: self.next_token,
+            },
         )
     }
 }
-

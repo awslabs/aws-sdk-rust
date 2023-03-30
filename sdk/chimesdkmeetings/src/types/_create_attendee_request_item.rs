@@ -3,7 +3,7 @@
 /// <p>The Amazon Chime SDK attendee fields to create, used with the BatchCreateAttendee action.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct CreateAttendeeRequestItem  {
+pub struct CreateAttendeeRequestItem {
     /// <p>The Amazon Chime SDK external user ID. An idempotency token. Links the attendee to an identity managed by a builder application.</p>
     #[doc(hidden)]
     pub external_user_id: std::option::Option<std::string::String>,
@@ -13,15 +13,15 @@ pub struct CreateAttendeeRequestItem  {
 }
 impl CreateAttendeeRequestItem {
     /// <p>The Amazon Chime SDK external user ID. An idempotency token. Links the attendee to an identity managed by a builder application.</p>
-    pub fn external_user_id(&self) -> std::option::Option<& str> {
+    pub fn external_user_id(&self) -> std::option::Option<&str> {
         self.external_user_id.as_deref()
     }
     /// <p>A list of one or more capabilities.</p>
-    pub fn capabilities(&self) -> std::option::Option<& crate::types::AttendeeCapabilities> {
+    pub fn capabilities(&self) -> std::option::Option<&crate::types::AttendeeCapabilities> {
         self.capabilities.as_ref()
     }
 }
-impl  std::fmt::Debug for CreateAttendeeRequestItem  {
+impl std::fmt::Debug for CreateAttendeeRequestItem {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateAttendeeRequestItem");
         formatter.field("external_user_id", &"*** Sensitive Data Redacted ***");
@@ -51,7 +51,8 @@ impl CreateAttendeeRequestItemBuilder {
     }
     /// <p>The Amazon Chime SDK external user ID. An idempotency token. Links the attendee to an identity managed by a builder application.</p>
     pub fn set_external_user_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.external_user_id = input; self
+        self.external_user_id = input;
+        self
     }
     /// <p>A list of one or more capabilities.</p>
     pub fn capabilities(mut self, input: crate::types::AttendeeCapabilities) -> Self {
@@ -59,16 +60,18 @@ impl CreateAttendeeRequestItemBuilder {
         self
     }
     /// <p>A list of one or more capabilities.</p>
-    pub fn set_capabilities(mut self, input: std::option::Option<crate::types::AttendeeCapabilities>) -> Self {
-        self.capabilities = input; self
+    pub fn set_capabilities(
+        mut self,
+        input: std::option::Option<crate::types::AttendeeCapabilities>,
+    ) -> Self {
+        self.capabilities = input;
+        self
     }
     /// Consumes the builder and constructs a [`CreateAttendeeRequestItem`](crate::types::CreateAttendeeRequestItem).
     pub fn build(self) -> crate::types::CreateAttendeeRequestItem {
         crate::types::CreateAttendeeRequestItem {
-            external_user_id: self.external_user_id
-            ,
-            capabilities: self.capabilities
-            ,
+            external_user_id: self.external_user_id,
+            capabilities: self.capabilities,
         }
     }
 }
@@ -80,4 +83,3 @@ impl std::fmt::Debug for CreateAttendeeRequestItemBuilder {
         formatter.finish()
     }
 }
-

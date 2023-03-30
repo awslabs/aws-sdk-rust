@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateAssessmentReportOutput  {
+pub struct CreateAssessmentReportOutput {
     /// <p> The new assessment report that the <code>CreateAssessmentReport</code> API returned. </p>
     #[doc(hidden)]
     pub assessment_report: std::option::Option<crate::types::AssessmentReport>,
@@ -10,18 +10,20 @@ pub struct CreateAssessmentReportOutput  {
 }
 impl CreateAssessmentReportOutput {
     /// <p> The new assessment report that the <code>CreateAssessmentReport</code> API returned. </p>
-    pub fn assessment_report(&self) -> std::option::Option<& crate::types::AssessmentReport> {
+    pub fn assessment_report(&self) -> std::option::Option<&crate::types::AssessmentReport> {
         self.assessment_report.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for CreateAssessmentReportOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl CreateAssessmentReportOutput {
     /// Creates a new builder-style object to manufacture [`CreateAssessmentReportOutput`](crate::operation::create_assessment_report::CreateAssessmentReportOutput).
-    pub fn builder() -> crate::operation::create_assessment_report::builders::CreateAssessmentReportOutputBuilder {
+    pub fn builder(
+    ) -> crate::operation::create_assessment_report::builders::CreateAssessmentReportOutputBuilder
+    {
         crate::operation::create_assessment_report::builders::CreateAssessmentReportOutputBuilder::default()
     }
 }
@@ -40,25 +42,27 @@ impl CreateAssessmentReportOutputBuilder {
         self
     }
     /// <p> The new assessment report that the <code>CreateAssessmentReport</code> API returned. </p>
-    pub fn set_assessment_report(mut self, input: std::option::Option<crate::types::AssessmentReport>) -> Self {
-        self.assessment_report = input; self
+    pub fn set_assessment_report(
+        mut self,
+        input: std::option::Option<crate::types::AssessmentReport>,
+    ) -> Self {
+        self.assessment_report = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`CreateAssessmentReportOutput`](crate::operation::create_assessment_report::CreateAssessmentReportOutput).
     pub fn build(self) -> crate::operation::create_assessment_report::CreateAssessmentReportOutput {
         crate::operation::create_assessment_report::CreateAssessmentReportOutput {
-            assessment_report: self.assessment_report
-            ,
+            assessment_report: self.assessment_report,
             _request_id: self._request_id,
         }
     }
 }
-

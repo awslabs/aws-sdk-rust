@@ -2,20 +2,21 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetAssociatedRoleInput  {
+pub struct GetAssociatedRoleInput {
     /// The ID of the Greengrass group.
     #[doc(hidden)]
     pub group_id: std::option::Option<std::string::String>,
 }
 impl GetAssociatedRoleInput {
     /// The ID of the Greengrass group.
-    pub fn group_id(&self) -> std::option::Option<& str> {
+    pub fn group_id(&self) -> std::option::Option<&str> {
         self.group_id.as_deref()
     }
 }
 impl GetAssociatedRoleInput {
     /// Creates a new builder-style object to manufacture [`GetAssociatedRoleInput`](crate::operation::get_associated_role::GetAssociatedRoleInput).
-    pub fn builder() -> crate::operation::get_associated_role::builders::GetAssociatedRoleInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::get_associated_role::builders::GetAssociatedRoleInputBuilder {
         crate::operation::get_associated_role::builders::GetAssociatedRoleInputBuilder::default()
     }
 }
@@ -34,16 +35,20 @@ impl GetAssociatedRoleInputBuilder {
     }
     /// The ID of the Greengrass group.
     pub fn set_group_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.group_id = input; self
+        self.group_id = input;
+        self
     }
     /// Consumes the builder and constructs a [`GetAssociatedRoleInput`](crate::operation::get_associated_role::GetAssociatedRoleInput).
-    pub fn build(self) -> Result<crate::operation::get_associated_role::GetAssociatedRoleInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::get_associated_role::GetAssociatedRoleInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::get_associated_role::GetAssociatedRoleInput {
-                group_id: self.group_id
-                ,
-            }
+                group_id: self.group_id,
+            },
         )
     }
 }
-

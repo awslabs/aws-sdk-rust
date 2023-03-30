@@ -3,7 +3,7 @@
 /// <p>A summary of a resource available on the device.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ResourceSummary  {
+pub struct ResourceSummary {
     /// <p>The resource type.</p>
     #[doc(hidden)]
     pub resource_type: std::option::Option<std::string::String>,
@@ -16,15 +16,15 @@ pub struct ResourceSummary  {
 }
 impl ResourceSummary {
     /// <p>The resource type.</p>
-    pub fn resource_type(&self) -> std::option::Option<& str> {
+    pub fn resource_type(&self) -> std::option::Option<&str> {
         self.resource_type.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the resource.</p>
-    pub fn arn(&self) -> std::option::Option<& str> {
+    pub fn arn(&self) -> std::option::Option<&str> {
         self.arn.as_deref()
     }
     /// <p>The ID of the resource.</p>
-    pub fn id(&self) -> std::option::Option<& str> {
+    pub fn id(&self) -> std::option::Option<&str> {
         self.id.as_deref()
     }
 }
@@ -51,7 +51,8 @@ impl ResourceSummaryBuilder {
     }
     /// <p>The resource type.</p>
     pub fn set_resource_type(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.resource_type = input; self
+        self.resource_type = input;
+        self
     }
     /// <p>The Amazon Resource Name (ARN) of the resource.</p>
     pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -60,7 +61,8 @@ impl ResourceSummaryBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the resource.</p>
     pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.arn = input; self
+        self.arn = input;
+        self
     }
     /// <p>The ID of the resource.</p>
     pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -69,18 +71,15 @@ impl ResourceSummaryBuilder {
     }
     /// <p>The ID of the resource.</p>
     pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.id = input; self
+        self.id = input;
+        self
     }
     /// Consumes the builder and constructs a [`ResourceSummary`](crate::types::ResourceSummary).
     pub fn build(self) -> crate::types::ResourceSummary {
         crate::types::ResourceSummary {
-            resource_type: self.resource_type
-            ,
-            arn: self.arn
-            ,
-            id: self.id
-            ,
+            resource_type: self.resource_type,
+            arn: self.arn,
+            id: self.id,
         }
     }
 }
-

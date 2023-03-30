@@ -3,7 +3,7 @@
 /// <p> The connector-specific profile properties required when using SAPOData. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SapoDataConnectorProfileProperties  {
+pub struct SapoDataConnectorProfileProperties {
     /// <p> The location of the SAPOData resource. </p>
     #[doc(hidden)]
     pub application_host_url: std::option::Option<std::string::String>,
@@ -28,11 +28,11 @@ pub struct SapoDataConnectorProfileProperties  {
 }
 impl SapoDataConnectorProfileProperties {
     /// <p> The location of the SAPOData resource. </p>
-    pub fn application_host_url(&self) -> std::option::Option<& str> {
+    pub fn application_host_url(&self) -> std::option::Option<&str> {
         self.application_host_url.as_deref()
     }
     /// <p> The application path to catalog service. </p>
-    pub fn application_service_path(&self) -> std::option::Option<& str> {
+    pub fn application_service_path(&self) -> std::option::Option<&str> {
         self.application_service_path.as_deref()
     }
     /// <p> The port number of the SAPOData instance. </p>
@@ -40,19 +40,19 @@ impl SapoDataConnectorProfileProperties {
         self.port_number
     }
     /// <p> The client number for the client creating the connection. </p>
-    pub fn client_number(&self) -> std::option::Option<& str> {
+    pub fn client_number(&self) -> std::option::Option<&str> {
         self.client_number.as_deref()
     }
     /// <p> The logon language of SAPOData instance. </p>
-    pub fn logon_language(&self) -> std::option::Option<& str> {
+    pub fn logon_language(&self) -> std::option::Option<&str> {
         self.logon_language.as_deref()
     }
     /// <p> The SAPOData Private Link service name to be used for private data transfers. </p>
-    pub fn private_link_service_name(&self) -> std::option::Option<& str> {
+    pub fn private_link_service_name(&self) -> std::option::Option<&str> {
         self.private_link_service_name.as_deref()
     }
     /// <p> The SAPOData OAuth properties required for OAuth type authentication. </p>
-    pub fn o_auth_properties(&self) -> std::option::Option<& crate::types::OAuthProperties> {
+    pub fn o_auth_properties(&self) -> std::option::Option<&crate::types::OAuthProperties> {
         self.o_auth_properties.as_ref()
     }
 }
@@ -82,8 +82,12 @@ impl SapoDataConnectorProfilePropertiesBuilder {
         self
     }
     /// <p> The location of the SAPOData resource. </p>
-    pub fn set_application_host_url(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.application_host_url = input; self
+    pub fn set_application_host_url(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.application_host_url = input;
+        self
     }
     /// <p> The application path to catalog service. </p>
     pub fn application_service_path(mut self, input: impl Into<std::string::String>) -> Self {
@@ -91,8 +95,12 @@ impl SapoDataConnectorProfilePropertiesBuilder {
         self
     }
     /// <p> The application path to catalog service. </p>
-    pub fn set_application_service_path(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.application_service_path = input; self
+    pub fn set_application_service_path(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.application_service_path = input;
+        self
     }
     /// <p> The port number of the SAPOData instance. </p>
     pub fn port_number(mut self, input: i32) -> Self {
@@ -101,7 +109,8 @@ impl SapoDataConnectorProfilePropertiesBuilder {
     }
     /// <p> The port number of the SAPOData instance. </p>
     pub fn set_port_number(mut self, input: std::option::Option<i32>) -> Self {
-        self.port_number = input; self
+        self.port_number = input;
+        self
     }
     /// <p> The client number for the client creating the connection. </p>
     pub fn client_number(mut self, input: impl Into<std::string::String>) -> Self {
@@ -110,7 +119,8 @@ impl SapoDataConnectorProfilePropertiesBuilder {
     }
     /// <p> The client number for the client creating the connection. </p>
     pub fn set_client_number(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.client_number = input; self
+        self.client_number = input;
+        self
     }
     /// <p> The logon language of SAPOData instance. </p>
     pub fn logon_language(mut self, input: impl Into<std::string::String>) -> Self {
@@ -119,7 +129,8 @@ impl SapoDataConnectorProfilePropertiesBuilder {
     }
     /// <p> The logon language of SAPOData instance. </p>
     pub fn set_logon_language(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.logon_language = input; self
+        self.logon_language = input;
+        self
     }
     /// <p> The SAPOData Private Link service name to be used for private data transfers. </p>
     pub fn private_link_service_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -127,8 +138,12 @@ impl SapoDataConnectorProfilePropertiesBuilder {
         self
     }
     /// <p> The SAPOData Private Link service name to be used for private data transfers. </p>
-    pub fn set_private_link_service_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.private_link_service_name = input; self
+    pub fn set_private_link_service_name(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.private_link_service_name = input;
+        self
     }
     /// <p> The SAPOData OAuth properties required for OAuth type authentication. </p>
     pub fn o_auth_properties(mut self, input: crate::types::OAuthProperties) -> Self {
@@ -136,27 +151,23 @@ impl SapoDataConnectorProfilePropertiesBuilder {
         self
     }
     /// <p> The SAPOData OAuth properties required for OAuth type authentication. </p>
-    pub fn set_o_auth_properties(mut self, input: std::option::Option<crate::types::OAuthProperties>) -> Self {
-        self.o_auth_properties = input; self
+    pub fn set_o_auth_properties(
+        mut self,
+        input: std::option::Option<crate::types::OAuthProperties>,
+    ) -> Self {
+        self.o_auth_properties = input;
+        self
     }
     /// Consumes the builder and constructs a [`SapoDataConnectorProfileProperties`](crate::types::SapoDataConnectorProfileProperties).
     pub fn build(self) -> crate::types::SapoDataConnectorProfileProperties {
         crate::types::SapoDataConnectorProfileProperties {
-            application_host_url: self.application_host_url
-            ,
-            application_service_path: self.application_service_path
-            ,
-            port_number: self.port_number
-            ,
-            client_number: self.client_number
-            ,
-            logon_language: self.logon_language
-            ,
-            private_link_service_name: self.private_link_service_name
-            ,
-            o_auth_properties: self.o_auth_properties
-            ,
+            application_host_url: self.application_host_url,
+            application_service_path: self.application_service_path,
+            port_number: self.port_number,
+            client_number: self.client_number,
+            logon_language: self.logon_language,
+            private_link_service_name: self.private_link_service_name,
+            o_auth_properties: self.o_auth_properties,
         }
     }
 }
-

@@ -3,7 +3,7 @@
 /// <p>The action to take on a typed link attribute value. Updates are only supported for attributes which don’t contribute to link identity.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct LinkAttributeAction  {
+pub struct LinkAttributeAction {
     /// <p>A type that can be either <code>UPDATE_OR_CREATE</code> or <code>DELETE</code>.</p>
     #[doc(hidden)]
     pub attribute_action_type: std::option::Option<crate::types::UpdateActionType>,
@@ -13,11 +13,13 @@ pub struct LinkAttributeAction  {
 }
 impl LinkAttributeAction {
     /// <p>A type that can be either <code>UPDATE_OR_CREATE</code> or <code>DELETE</code>.</p>
-    pub fn attribute_action_type(&self) -> std::option::Option<& crate::types::UpdateActionType> {
+    pub fn attribute_action_type(&self) -> std::option::Option<&crate::types::UpdateActionType> {
         self.attribute_action_type.as_ref()
     }
     /// <p>The value that you want to update to.</p>
-    pub fn attribute_update_value(&self) -> std::option::Option<& crate::types::TypedAttributeValue> {
+    pub fn attribute_update_value(
+        &self,
+    ) -> std::option::Option<&crate::types::TypedAttributeValue> {
         self.attribute_update_value.as_ref()
     }
 }
@@ -42,8 +44,12 @@ impl LinkAttributeActionBuilder {
         self
     }
     /// <p>A type that can be either <code>UPDATE_OR_CREATE</code> or <code>DELETE</code>.</p>
-    pub fn set_attribute_action_type(mut self, input: std::option::Option<crate::types::UpdateActionType>) -> Self {
-        self.attribute_action_type = input; self
+    pub fn set_attribute_action_type(
+        mut self,
+        input: std::option::Option<crate::types::UpdateActionType>,
+    ) -> Self {
+        self.attribute_action_type = input;
+        self
     }
     /// <p>The value that you want to update to.</p>
     pub fn attribute_update_value(mut self, input: crate::types::TypedAttributeValue) -> Self {
@@ -51,17 +57,18 @@ impl LinkAttributeActionBuilder {
         self
     }
     /// <p>The value that you want to update to.</p>
-    pub fn set_attribute_update_value(mut self, input: std::option::Option<crate::types::TypedAttributeValue>) -> Self {
-        self.attribute_update_value = input; self
+    pub fn set_attribute_update_value(
+        mut self,
+        input: std::option::Option<crate::types::TypedAttributeValue>,
+    ) -> Self {
+        self.attribute_update_value = input;
+        self
     }
     /// Consumes the builder and constructs a [`LinkAttributeAction`](crate::types::LinkAttributeAction).
     pub fn build(self) -> crate::types::LinkAttributeAction {
         crate::types::LinkAttributeAction {
-            attribute_action_type: self.attribute_action_type
-            ,
-            attribute_update_value: self.attribute_update_value
-            ,
+            attribute_action_type: self.attribute_action_type,
+            attribute_update_value: self.attribute_update_value,
         }
     }
 }
-

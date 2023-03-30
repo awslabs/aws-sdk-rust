@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListConfigurationsInput  {
+pub struct ListConfigurationsInput {
     /// <p>The maximum number of results to return in the response. If there are more results, the response includes a NextToken parameter.</p>
     #[doc(hidden)]
     pub max_results: i32,
@@ -16,13 +16,14 @@ impl ListConfigurationsInput {
         self.max_results
     }
     /// <p>The paginated results marker. When the result of the operation is truncated, the call returns NextToken in the response. To get the next batch, provide this token in your next request.</p>
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
 }
 impl ListConfigurationsInput {
     /// Creates a new builder-style object to manufacture [`ListConfigurationsInput`](crate::operation::list_configurations::ListConfigurationsInput).
-    pub fn builder() -> crate::operation::list_configurations::builders::ListConfigurationsInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::list_configurations::builders::ListConfigurationsInputBuilder {
         crate::operation::list_configurations::builders::ListConfigurationsInputBuilder::default()
     }
 }
@@ -42,7 +43,8 @@ impl ListConfigurationsInputBuilder {
     }
     /// <p>The maximum number of results to return in the response. If there are more results, the response includes a NextToken parameter.</p>
     pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_results = input; self
+        self.max_results = input;
+        self
     }
     /// <p>The paginated results marker. When the result of the operation is truncated, the call returns NextToken in the response. To get the next batch, provide this token in your next request.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -51,19 +53,21 @@ impl ListConfigurationsInputBuilder {
     }
     /// <p>The paginated results marker. When the result of the operation is truncated, the call returns NextToken in the response. To get the next batch, provide this token in your next request.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input; self
+        self.next_token = input;
+        self
     }
     /// Consumes the builder and constructs a [`ListConfigurationsInput`](crate::operation::list_configurations::ListConfigurationsInput).
-    pub fn build(self) -> Result<crate::operation::list_configurations::ListConfigurationsInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::list_configurations::ListConfigurationsInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::list_configurations::ListConfigurationsInput {
-                max_results: self.max_results
-                    .unwrap_or_default()
-                ,
-                next_token: self.next_token
-                ,
-            }
+                max_results: self.max_results.unwrap_or_default(),
+                next_token: self.next_token,
+            },
         )
     }
 }
-

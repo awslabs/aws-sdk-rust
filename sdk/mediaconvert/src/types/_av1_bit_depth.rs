@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-/// 
+///
 /// Here is an example of how you can make a match expression forward-compatible:
-/// 
+///
 /// ```text
 /// # let av1bitdepth = unimplemented!();
 /// match av1bitdepth {
@@ -30,55 +30,62 @@
 /// Specifically, when `av1bitdepth` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `Av1BitDepth::NewFeature` also yielding `"NewFeature"`.
-/// 
+///
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 /// Specify the Bit depth (Av1BitDepth). You can choose 8-bit (BIT_8) or 10-bit (BIT_10).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
 pub enum Av1BitDepth {
     #[allow(missing_docs)] // documentation missing in model
     Bit10,
     #[allow(missing_docs)] // documentation missing in model
     Bit8,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::primitives::UnknownVariantValue)
+    Unknown(crate::primitives::UnknownVariantValue),
 }
 impl std::convert::From<&str> for Av1BitDepth {
-                fn from(s: &str) -> Self {
-                    match s {
-                        "BIT_10" => Av1BitDepth::Bit10,
-"BIT_8" => Av1BitDepth::Bit8,
-other => Av1BitDepth::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
-                    }
-                }
-            }
-impl std::str::FromStr for Av1BitDepth {
-                type Err = std::convert::Infallible;
-
-                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-                    Ok(Av1BitDepth::from(s))
-                }
-            }
-impl Av1BitDepth {
-                /// Returns the `&str` value of the enum member.
-                pub fn as_str(&self) -> &str {
-                    match self {
-    Av1BitDepth::Bit10 => "BIT_10",
-    Av1BitDepth::Bit8 => "BIT_8",
-    Av1BitDepth::Unknown(value) => value.as_str()
+    fn from(s: &str) -> Self {
+        match s {
+            "BIT_10" => Av1BitDepth::Bit10,
+            "BIT_8" => Av1BitDepth::Bit8,
+            other => Av1BitDepth::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
+        }
+    }
 }
-                }
-                /// Returns all the `&str` representations of the enum members.
-                pub const fn values() -> &'static [&'static str] {
-                    &["BIT_10", "BIT_8"]
-                }
-            }
-impl AsRef<str> for Av1BitDepth {
-                fn as_ref(&self) -> &str {
-                    self.as_str()
-                }
-            }
+impl std::str::FromStr for Av1BitDepth {
+    type Err = std::convert::Infallible;
 
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(Av1BitDepth::from(s))
+    }
+}
+impl Av1BitDepth {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            Av1BitDepth::Bit10 => "BIT_10",
+            Av1BitDepth::Bit8 => "BIT_8",
+            Av1BitDepth::Unknown(value) => value.as_str(),
+        }
+    }
+    /// Returns all the `&str` representations of the enum members.
+    pub const fn values() -> &'static [&'static str] {
+        &["BIT_10", "BIT_8"]
+    }
+}
+impl AsRef<str> for Av1BitDepth {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}

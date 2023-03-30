@@ -3,7 +3,7 @@
 /// <p>The input failed to meet the constraints specified by the AWS service. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ValidationException  {
+pub struct ValidationException {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
@@ -17,23 +17,25 @@ pub struct ValidationException  {
 }
 impl ValidationException {
     /// <p>A message with the reason for the validation exception error.</p>
-    pub fn reason(&self) -> std::option::Option<& crate::types::ValidationExceptionReason> {
+    pub fn reason(&self) -> std::option::Option<&crate::types::ValidationExceptionReason> {
         self.reason.as_ref()
     }
     /// <p>The field where the invalid entry was detected.</p>
-    pub fn field_list(&self) -> std::option::Option<& [crate::types::ValidationExceptionField]> {
+    pub fn field_list(&self) -> std::option::Option<&[crate::types::ValidationExceptionField]> {
         self.field_list.as_deref()
     }
 }
 impl ValidationException {
     /// Returns the error message.
-                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
+    pub fn message(&self) -> std::option::Option<&str> {
+        self.message.as_deref()
+    }
 }
 impl std::fmt::Display for ValidationException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "ValidationException")?;
         if let Some(inner_1) = &self.message {
-             {
+            {
                 write!(f, ": {}", inner_1)?;
             }
         }
@@ -48,7 +50,9 @@ impl aws_http::request_id::RequestId for crate::types::error::ValidationExceptio
     }
 }
 impl aws_smithy_types::error::metadata::ProvideErrorMetadata for ValidationException {
-    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata { &self.meta }
+    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
+        &self.meta
+    }
 }
 impl ValidationException {
     /// Creates a new builder-style object to manufacture [`ValidationException`](crate::types::error::ValidationException).
@@ -63,7 +67,8 @@ impl ValidationException {
 pub struct ValidationExceptionBuilder {
     pub(crate) message: std::option::Option<std::string::String>,
     pub(crate) reason: std::option::Option<crate::types::ValidationExceptionReason>,
-    pub(crate) field_list: std::option::Option<std::vec::Vec<crate::types::ValidationExceptionField>>,
+    pub(crate) field_list:
+        std::option::Option<std::vec::Vec<crate::types::ValidationExceptionField>>,
     meta: std::option::Option<aws_smithy_types::error::ErrorMetadata>,
 }
 impl ValidationExceptionBuilder {
@@ -74,7 +79,8 @@ impl ValidationExceptionBuilder {
     }
     #[allow(missing_docs)] // documentation missing in model
     pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.message = input; self
+        self.message = input;
+        self
     }
     /// <p>A message with the reason for the validation exception error.</p>
     pub fn reason(mut self, input: crate::types::ValidationExceptionReason) -> Self {
@@ -82,8 +88,12 @@ impl ValidationExceptionBuilder {
         self
     }
     /// <p>A message with the reason for the validation exception error.</p>
-    pub fn set_reason(mut self, input: std::option::Option<crate::types::ValidationExceptionReason>) -> Self {
-        self.reason = input; self
+    pub fn set_reason(
+        mut self,
+        input: std::option::Option<crate::types::ValidationExceptionReason>,
+    ) -> Self {
+        self.reason = input;
+        self
     }
     /// Appends an item to `field_list`.
     ///
@@ -92,36 +102,39 @@ impl ValidationExceptionBuilder {
     /// <p>The field where the invalid entry was detected.</p>
     pub fn field_list(mut self, input: crate::types::ValidationExceptionField) -> Self {
         let mut v = self.field_list.unwrap_or_default();
-                        v.push(input);
-                        self.field_list = Some(v);
-                        self
+        v.push(input);
+        self.field_list = Some(v);
+        self
     }
     /// <p>The field where the invalid entry was detected.</p>
-    pub fn set_field_list(mut self, input: std::option::Option<std::vec::Vec<crate::types::ValidationExceptionField>>) -> Self {
-        self.field_list = input; self
+    pub fn set_field_list(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::ValidationExceptionField>>,
+    ) -> Self {
+        self.field_list = input;
+        self
     }
     /// Sets error metadata
-                                            pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
-                                                self.meta = Some(meta);
-                                                self
-                                            }
-    
-                                            /// Sets error metadata
-                                            pub fn set_meta(&mut self, meta: std::option::Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
-                                                self.meta = meta;
-                                                self
-                                            }
+    pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
+        self.meta = Some(meta);
+        self
+    }
+
+    /// Sets error metadata
+    pub fn set_meta(
+        &mut self,
+        meta: std::option::Option<aws_smithy_types::error::ErrorMetadata>,
+    ) -> &mut Self {
+        self.meta = meta;
+        self
+    }
     /// Consumes the builder and constructs a [`ValidationException`](crate::types::error::ValidationException).
     pub fn build(self) -> crate::types::error::ValidationException {
         crate::types::error::ValidationException {
-            message: self.message
-            ,
-            reason: self.reason
-            ,
-            field_list: self.field_list
-            ,
+            message: self.message,
+            reason: self.reason,
+            field_list: self.field_list,
             meta: self.meta.unwrap_or_default(),
         }
     }
 }
-

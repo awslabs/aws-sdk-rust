@@ -2,14 +2,14 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct EnableVolumeIoOutput  {
+pub struct EnableVolumeIoOutput {
     _request_id: Option<String>,
 }
 impl aws_http::request_id::RequestId for EnableVolumeIoOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl EnableVolumeIoOutput {
     /// Creates a new builder-style object to manufacture [`EnableVolumeIoOutput`](crate::operation::enable_volume_io::EnableVolumeIoOutput).
     pub fn builder() -> crate::operation::enable_volume_io::builders::EnableVolumeIoOutputBuilder {
@@ -25,14 +25,14 @@ pub struct EnableVolumeIoOutputBuilder {
 }
 impl EnableVolumeIoOutputBuilder {
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`EnableVolumeIoOutput`](crate::operation::enable_volume_io::EnableVolumeIoOutput).
     pub fn build(self) -> crate::operation::enable_volume_io::EnableVolumeIoOutput {
         crate::operation::enable_volume_io::EnableVolumeIoOutput {
@@ -40,4 +40,3 @@ impl EnableVolumeIoOutputBuilder {
         }
     }
 }
-

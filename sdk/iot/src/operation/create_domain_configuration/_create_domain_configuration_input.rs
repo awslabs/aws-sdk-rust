@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateDomainConfigurationInput  {
+pub struct CreateDomainConfigurationInput {
     /// <p>The name of the domain configuration. This value must be unique to a region.</p>
     #[doc(hidden)]
     pub domain_configuration_name: std::option::Option<std::string::String>,
@@ -18,58 +18,58 @@ pub struct CreateDomainConfigurationInput  {
     /// <p>An object that specifies the authorization service for a domain.</p>
     #[doc(hidden)]
     pub authorizer_config: std::option::Option<crate::types::AuthorizerConfig>,
-    /// <p>The type of service delivered by the endpoint.</p> <note> 
-    /// <p>Amazon Web Services IoT Core currently supports only the <code>DATA</code> service type.</p> 
+    /// <p>The type of service delivered by the endpoint.</p> <note>
+    /// <p>Amazon Web Services IoT Core currently supports only the <code>DATA</code> service type.</p>
     /// </note>
     #[doc(hidden)]
     pub service_type: std::option::Option<crate::types::ServiceType>,
-    /// <p>Metadata which can be used to manage the domain configuration.</p> <note> 
-    /// <p>For URI Request parameters use format: ...key1=value1&amp;key2=value2...</p> 
-    /// <p>For the CLI command-line parameter use format: &amp;&amp;tags "key1=value1&amp;key2=value2..."</p> 
-    /// <p>For the cli-input-json file use format: "tags": "key1=value1&amp;key2=value2..."</p> 
+    /// <p>Metadata which can be used to manage the domain configuration.</p> <note>
+    /// <p>For URI Request parameters use format: ...key1=value1&amp;key2=value2...</p>
+    /// <p>For the CLI command-line parameter use format: &amp;&amp;tags "key1=value1&amp;key2=value2..."</p>
+    /// <p>For the cli-input-json file use format: "tags": "key1=value1&amp;key2=value2..."</p>
     /// </note>
     #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::types::Tag>>,
 }
 impl CreateDomainConfigurationInput {
     /// <p>The name of the domain configuration. This value must be unique to a region.</p>
-    pub fn domain_configuration_name(&self) -> std::option::Option<& str> {
+    pub fn domain_configuration_name(&self) -> std::option::Option<&str> {
         self.domain_configuration_name.as_deref()
     }
     /// <p>The name of the domain.</p>
-    pub fn domain_name(&self) -> std::option::Option<& str> {
+    pub fn domain_name(&self) -> std::option::Option<&str> {
         self.domain_name.as_deref()
     }
     /// <p>The ARNs of the certificates that IoT passes to the device during the TLS handshake. Currently you can specify only one certificate ARN. This value is not required for Amazon Web Services-managed domains.</p>
-    pub fn server_certificate_arns(&self) -> std::option::Option<& [std::string::String]> {
+    pub fn server_certificate_arns(&self) -> std::option::Option<&[std::string::String]> {
         self.server_certificate_arns.as_deref()
     }
     /// <p>The certificate used to validate the server certificate and prove domain name ownership. This certificate must be signed by a public certificate authority. This value is not required for Amazon Web Services-managed domains.</p>
-    pub fn validation_certificate_arn(&self) -> std::option::Option<& str> {
+    pub fn validation_certificate_arn(&self) -> std::option::Option<&str> {
         self.validation_certificate_arn.as_deref()
     }
     /// <p>An object that specifies the authorization service for a domain.</p>
-    pub fn authorizer_config(&self) -> std::option::Option<& crate::types::AuthorizerConfig> {
+    pub fn authorizer_config(&self) -> std::option::Option<&crate::types::AuthorizerConfig> {
         self.authorizer_config.as_ref()
     }
-    /// <p>The type of service delivered by the endpoint.</p> <note> 
-    /// <p>Amazon Web Services IoT Core currently supports only the <code>DATA</code> service type.</p> 
+    /// <p>The type of service delivered by the endpoint.</p> <note>
+    /// <p>Amazon Web Services IoT Core currently supports only the <code>DATA</code> service type.</p>
     /// </note>
-    pub fn service_type(&self) -> std::option::Option<& crate::types::ServiceType> {
+    pub fn service_type(&self) -> std::option::Option<&crate::types::ServiceType> {
         self.service_type.as_ref()
     }
-    /// <p>Metadata which can be used to manage the domain configuration.</p> <note> 
-    /// <p>For URI Request parameters use format: ...key1=value1&amp;key2=value2...</p> 
-    /// <p>For the CLI command-line parameter use format: &amp;&amp;tags "key1=value1&amp;key2=value2..."</p> 
-    /// <p>For the cli-input-json file use format: "tags": "key1=value1&amp;key2=value2..."</p> 
+    /// <p>Metadata which can be used to manage the domain configuration.</p> <note>
+    /// <p>For URI Request parameters use format: ...key1=value1&amp;key2=value2...</p>
+    /// <p>For the CLI command-line parameter use format: &amp;&amp;tags "key1=value1&amp;key2=value2..."</p>
+    /// <p>For the cli-input-json file use format: "tags": "key1=value1&amp;key2=value2..."</p>
     /// </note>
-    pub fn tags(&self) -> std::option::Option<& [crate::types::Tag]> {
+    pub fn tags(&self) -> std::option::Option<&[crate::types::Tag]> {
         self.tags.as_deref()
     }
 }
 impl CreateDomainConfigurationInput {
     /// Creates a new builder-style object to manufacture [`CreateDomainConfigurationInput`](crate::operation::create_domain_configuration::CreateDomainConfigurationInput).
-    pub fn builder() -> crate::operation::create_domain_configuration::builders::CreateDomainConfigurationInputBuilder {
+    pub fn builder() -> crate::operation::create_domain_configuration::builders::CreateDomainConfigurationInputBuilder{
         crate::operation::create_domain_configuration::builders::CreateDomainConfigurationInputBuilder::default()
     }
 }
@@ -93,8 +93,12 @@ impl CreateDomainConfigurationInputBuilder {
         self
     }
     /// <p>The name of the domain configuration. This value must be unique to a region.</p>
-    pub fn set_domain_configuration_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.domain_configuration_name = input; self
+    pub fn set_domain_configuration_name(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.domain_configuration_name = input;
+        self
     }
     /// <p>The name of the domain.</p>
     pub fn domain_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -103,7 +107,8 @@ impl CreateDomainConfigurationInputBuilder {
     }
     /// <p>The name of the domain.</p>
     pub fn set_domain_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.domain_name = input; self
+        self.domain_name = input;
+        self
     }
     /// Appends an item to `server_certificate_arns`.
     ///
@@ -112,13 +117,17 @@ impl CreateDomainConfigurationInputBuilder {
     /// <p>The ARNs of the certificates that IoT passes to the device during the TLS handshake. Currently you can specify only one certificate ARN. This value is not required for Amazon Web Services-managed domains.</p>
     pub fn server_certificate_arns(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.server_certificate_arns.unwrap_or_default();
-                        v.push(input.into());
-                        self.server_certificate_arns = Some(v);
-                        self
+        v.push(input.into());
+        self.server_certificate_arns = Some(v);
+        self
     }
     /// <p>The ARNs of the certificates that IoT passes to the device during the TLS handshake. Currently you can specify only one certificate ARN. This value is not required for Amazon Web Services-managed domains.</p>
-    pub fn set_server_certificate_arns(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-        self.server_certificate_arns = input; self
+    pub fn set_server_certificate_arns(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
+        self.server_certificate_arns = input;
+        self
     }
     /// <p>The certificate used to validate the server certificate and prove domain name ownership. This certificate must be signed by a public certificate authority. This value is not required for Amazon Web Services-managed domains.</p>
     pub fn validation_certificate_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -126,8 +135,12 @@ impl CreateDomainConfigurationInputBuilder {
         self
     }
     /// <p>The certificate used to validate the server certificate and prove domain name ownership. This certificate must be signed by a public certificate authority. This value is not required for Amazon Web Services-managed domains.</p>
-    pub fn set_validation_certificate_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.validation_certificate_arn = input; self
+    pub fn set_validation_certificate_arn(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.validation_certificate_arn = input;
+        self
     }
     /// <p>An object that specifies the authorization service for a domain.</p>
     pub fn authorizer_config(mut self, input: crate::types::AuthorizerConfig) -> Self {
@@ -135,65 +148,74 @@ impl CreateDomainConfigurationInputBuilder {
         self
     }
     /// <p>An object that specifies the authorization service for a domain.</p>
-    pub fn set_authorizer_config(mut self, input: std::option::Option<crate::types::AuthorizerConfig>) -> Self {
-        self.authorizer_config = input; self
+    pub fn set_authorizer_config(
+        mut self,
+        input: std::option::Option<crate::types::AuthorizerConfig>,
+    ) -> Self {
+        self.authorizer_config = input;
+        self
     }
-    /// <p>The type of service delivered by the endpoint.</p> <note> 
-    /// <p>Amazon Web Services IoT Core currently supports only the <code>DATA</code> service type.</p> 
+    /// <p>The type of service delivered by the endpoint.</p> <note>
+    /// <p>Amazon Web Services IoT Core currently supports only the <code>DATA</code> service type.</p>
     /// </note>
     pub fn service_type(mut self, input: crate::types::ServiceType) -> Self {
         self.service_type = Some(input);
         self
     }
-    /// <p>The type of service delivered by the endpoint.</p> <note> 
-    /// <p>Amazon Web Services IoT Core currently supports only the <code>DATA</code> service type.</p> 
+    /// <p>The type of service delivered by the endpoint.</p> <note>
+    /// <p>Amazon Web Services IoT Core currently supports only the <code>DATA</code> service type.</p>
     /// </note>
-    pub fn set_service_type(mut self, input: std::option::Option<crate::types::ServiceType>) -> Self {
-        self.service_type = input; self
+    pub fn set_service_type(
+        mut self,
+        input: std::option::Option<crate::types::ServiceType>,
+    ) -> Self {
+        self.service_type = input;
+        self
     }
     /// Appends an item to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
-    /// <p>Metadata which can be used to manage the domain configuration.</p> <note> 
-    /// <p>For URI Request parameters use format: ...key1=value1&amp;key2=value2...</p> 
-    /// <p>For the CLI command-line parameter use format: &amp;&amp;tags "key1=value1&amp;key2=value2..."</p> 
-    /// <p>For the cli-input-json file use format: "tags": "key1=value1&amp;key2=value2..."</p> 
+    /// <p>Metadata which can be used to manage the domain configuration.</p> <note>
+    /// <p>For URI Request parameters use format: ...key1=value1&amp;key2=value2...</p>
+    /// <p>For the CLI command-line parameter use format: &amp;&amp;tags "key1=value1&amp;key2=value2..."</p>
+    /// <p>For the cli-input-json file use format: "tags": "key1=value1&amp;key2=value2..."</p>
     /// </note>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
-                        v.push(input);
-                        self.tags = Some(v);
-                        self
+        v.push(input);
+        self.tags = Some(v);
+        self
     }
-    /// <p>Metadata which can be used to manage the domain configuration.</p> <note> 
-    /// <p>For URI Request parameters use format: ...key1=value1&amp;key2=value2...</p> 
-    /// <p>For the CLI command-line parameter use format: &amp;&amp;tags "key1=value1&amp;key2=value2..."</p> 
-    /// <p>For the cli-input-json file use format: "tags": "key1=value1&amp;key2=value2..."</p> 
+    /// <p>Metadata which can be used to manage the domain configuration.</p> <note>
+    /// <p>For URI Request parameters use format: ...key1=value1&amp;key2=value2...</p>
+    /// <p>For the CLI command-line parameter use format: &amp;&amp;tags "key1=value1&amp;key2=value2..."</p>
+    /// <p>For the cli-input-json file use format: "tags": "key1=value1&amp;key2=value2..."</p>
     /// </note>
-    pub fn set_tags(mut self, input: std::option::Option<std::vec::Vec<crate::types::Tag>>) -> Self {
-        self.tags = input; self
+    pub fn set_tags(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::Tag>>,
+    ) -> Self {
+        self.tags = input;
+        self
     }
     /// Consumes the builder and constructs a [`CreateDomainConfigurationInput`](crate::operation::create_domain_configuration::CreateDomainConfigurationInput).
-    pub fn build(self) -> Result<crate::operation::create_domain_configuration::CreateDomainConfigurationInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::create_domain_configuration::CreateDomainConfigurationInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::create_domain_configuration::CreateDomainConfigurationInput {
-                domain_configuration_name: self.domain_configuration_name
-                ,
-                domain_name: self.domain_name
-                ,
-                server_certificate_arns: self.server_certificate_arns
-                ,
-                validation_certificate_arn: self.validation_certificate_arn
-                ,
-                authorizer_config: self.authorizer_config
-                ,
-                service_type: self.service_type
-                ,
-                tags: self.tags
-                ,
-            }
+                domain_configuration_name: self.domain_configuration_name,
+                domain_name: self.domain_name,
+                server_certificate_arns: self.server_certificate_arns,
+                validation_certificate_arn: self.validation_certificate_arn,
+                authorizer_config: self.authorizer_config,
+                service_type: self.service_type,
+                tags: self.tags,
+            },
         )
     }
 }
-

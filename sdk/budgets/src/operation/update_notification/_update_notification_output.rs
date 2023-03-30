@@ -3,17 +3,18 @@
 /// <p> Response of UpdateNotification </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateNotificationOutput  {
+pub struct UpdateNotificationOutput {
     _request_id: Option<String>,
 }
 impl aws_http::request_id::RequestId for UpdateNotificationOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl UpdateNotificationOutput {
     /// Creates a new builder-style object to manufacture [`UpdateNotificationOutput`](crate::operation::update_notification::UpdateNotificationOutput).
-    pub fn builder() -> crate::operation::update_notification::builders::UpdateNotificationOutputBuilder {
+    pub fn builder(
+    ) -> crate::operation::update_notification::builders::UpdateNotificationOutputBuilder {
         crate::operation::update_notification::builders::UpdateNotificationOutputBuilder::default()
     }
 }
@@ -26,14 +27,14 @@ pub struct UpdateNotificationOutputBuilder {
 }
 impl UpdateNotificationOutputBuilder {
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`UpdateNotificationOutput`](crate::operation::update_notification::UpdateNotificationOutput).
     pub fn build(self) -> crate::operation::update_notification::UpdateNotificationOutput {
         crate::operation::update_notification::UpdateNotificationOutput {
@@ -41,4 +42,3 @@ impl UpdateNotificationOutputBuilder {
         }
     }
 }
-

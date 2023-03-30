@@ -3,7 +3,7 @@
 /// <p>Describes an EC2 Fleet that was successfully deleted.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteFleetSuccessItem  {
+pub struct DeleteFleetSuccessItem {
     /// <p>The current state of the EC2 Fleet.</p>
     #[doc(hidden)]
     pub current_fleet_state: std::option::Option<crate::types::FleetStateCode>,
@@ -16,15 +16,15 @@ pub struct DeleteFleetSuccessItem  {
 }
 impl DeleteFleetSuccessItem {
     /// <p>The current state of the EC2 Fleet.</p>
-    pub fn current_fleet_state(&self) -> std::option::Option<& crate::types::FleetStateCode> {
+    pub fn current_fleet_state(&self) -> std::option::Option<&crate::types::FleetStateCode> {
         self.current_fleet_state.as_ref()
     }
     /// <p>The previous state of the EC2 Fleet.</p>
-    pub fn previous_fleet_state(&self) -> std::option::Option<& crate::types::FleetStateCode> {
+    pub fn previous_fleet_state(&self) -> std::option::Option<&crate::types::FleetStateCode> {
         self.previous_fleet_state.as_ref()
     }
     /// <p>The ID of the EC2 Fleet.</p>
-    pub fn fleet_id(&self) -> std::option::Option<& str> {
+    pub fn fleet_id(&self) -> std::option::Option<&str> {
         self.fleet_id.as_deref()
     }
 }
@@ -50,8 +50,12 @@ impl DeleteFleetSuccessItemBuilder {
         self
     }
     /// <p>The current state of the EC2 Fleet.</p>
-    pub fn set_current_fleet_state(mut self, input: std::option::Option<crate::types::FleetStateCode>) -> Self {
-        self.current_fleet_state = input; self
+    pub fn set_current_fleet_state(
+        mut self,
+        input: std::option::Option<crate::types::FleetStateCode>,
+    ) -> Self {
+        self.current_fleet_state = input;
+        self
     }
     /// <p>The previous state of the EC2 Fleet.</p>
     pub fn previous_fleet_state(mut self, input: crate::types::FleetStateCode) -> Self {
@@ -59,8 +63,12 @@ impl DeleteFleetSuccessItemBuilder {
         self
     }
     /// <p>The previous state of the EC2 Fleet.</p>
-    pub fn set_previous_fleet_state(mut self, input: std::option::Option<crate::types::FleetStateCode>) -> Self {
-        self.previous_fleet_state = input; self
+    pub fn set_previous_fleet_state(
+        mut self,
+        input: std::option::Option<crate::types::FleetStateCode>,
+    ) -> Self {
+        self.previous_fleet_state = input;
+        self
     }
     /// <p>The ID of the EC2 Fleet.</p>
     pub fn fleet_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -69,18 +77,15 @@ impl DeleteFleetSuccessItemBuilder {
     }
     /// <p>The ID of the EC2 Fleet.</p>
     pub fn set_fleet_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.fleet_id = input; self
+        self.fleet_id = input;
+        self
     }
     /// Consumes the builder and constructs a [`DeleteFleetSuccessItem`](crate::types::DeleteFleetSuccessItem).
     pub fn build(self) -> crate::types::DeleteFleetSuccessItem {
         crate::types::DeleteFleetSuccessItem {
-            current_fleet_state: self.current_fleet_state
-            ,
-            previous_fleet_state: self.previous_fleet_state
-            ,
-            fleet_id: self.fleet_id
-            ,
+            current_fleet_state: self.current_fleet_state,
+            previous_fleet_state: self.previous_fleet_state,
+            fleet_id: self.fleet_id,
         }
     }
 }
-

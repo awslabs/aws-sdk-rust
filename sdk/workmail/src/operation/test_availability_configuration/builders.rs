@@ -4,51 +4,73 @@ pub use crate::operation::test_availability_configuration::_test_availability_co
 pub use crate::operation::test_availability_configuration::_test_availability_configuration_input::TestAvailabilityConfigurationInputBuilder;
 
 /// Fluent builder constructing a request to `TestAvailabilityConfiguration`.
-/// 
-/// <p>Performs a test on an availability provider to ensure that access is allowed. For EWS, it verifies the provided credentials can be used to successfully log in. For Lambda, it verifies that the Lambda function can be invoked and that the resource access policy was configured to deny anonymous access. An anonymous invocation is one done without providing either a <code>SourceArn</code> or <code>SourceAccount</code> header.</p> <note> 
-/// <p>The request must contain either one provider definition (<code>EwsProvider</code> or <code>LambdaProvider</code>) or the <code>DomainName</code> parameter. If the <code>DomainName</code> parameter is provided, the configuration stored under the <code>DomainName</code> will be tested.</p> 
+///
+/// <p>Performs a test on an availability provider to ensure that access is allowed. For EWS, it verifies the provided credentials can be used to successfully log in. For Lambda, it verifies that the Lambda function can be invoked and that the resource access policy was configured to deny anonymous access. An anonymous invocation is one done without providing either a <code>SourceArn</code> or <code>SourceAccount</code> header.</p> <note>
+/// <p>The request must contain either one provider definition (<code>EwsProvider</code> or <code>LambdaProvider</code>) or the <code>DomainName</code> parameter. If the <code>DomainName</code> parameter is provided, the configuration stored under the <code>DomainName</code> will be tested.</p>
 /// </note>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct TestAvailabilityConfigurationFluentBuilder {
                 handle: std::sync::Arc<crate::client::Handle>,
                 inner: crate::operation::test_availability_configuration::builders::TestAvailabilityConfigurationInputBuilder
             }
-impl TestAvailabilityConfigurationFluentBuilder  {
+impl TestAvailabilityConfigurationFluentBuilder {
     /// Creates a new `TestAvailabilityConfiguration`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
-                    /// sent. The operation's inner [http::Request] can be modified as well.
-                    pub async fn customize(self) -> std::result::Result<
-                        crate::client::customize::CustomizableOperation<crate::operation::test_availability_configuration::TestAvailabilityConfiguration, aws_http::retry::AwsResponseRetryClassifier,>,
-                        aws_smithy_http::result::SdkError<crate::operation::test_availability_configuration::TestAvailabilityConfigurationError>
-                    >  {
-                        let handle = self.handle.clone();
-                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-                    }
-    
-                    /// Sends the request and returns the response.
-                    ///
-                    /// If an error occurs, an `SdkError` will be returned with additional details that
-                    /// can be matched against.
-                    ///
-                    /// By default, any retryable failures will be retried twice. Retry behavior
-                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                    /// set when configuring the client.
-                    pub async fn send(self) -> std::result::Result<crate::operation::test_availability_configuration::TestAvailabilityConfigurationOutput, aws_smithy_http::result::SdkError<crate::operation::test_availability_configuration::TestAvailabilityConfigurationError>>
-                     {
-                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&self.handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        self.handle.client.call(op).await
-                    }
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle,
+            inner: Default::default(),
+        }
+    }
+
+    /// Consume this builder, creating a customizable operation that can be modified before being
+    /// sent. The operation's inner [http::Request] can be modified as well.
+    pub async fn customize(
+        self,
+    ) -> std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::test_availability_configuration::TestAvailabilityConfiguration,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::result::SdkError<
+            crate::operation::test_availability_configuration::TestAvailabilityConfigurationError,
+        >,
+    > {
+        let handle = self.handle.clone();
+        let operation = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+    }
+
+    /// Sends the request and returns the response.
+    ///
+    /// If an error occurs, an `SdkError` will be returned with additional details that
+    /// can be matched against.
+    ///
+    /// By default, any retryable failures will be retried twice. Retry behavior
+    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+    /// set when configuring the client.
+    pub async fn send(
+        self,
+    ) -> std::result::Result<
+        crate::operation::test_availability_configuration::TestAvailabilityConfigurationOutput,
+        aws_smithy_http::result::SdkError<
+            crate::operation::test_availability_configuration::TestAvailabilityConfigurationError,
+        >,
+    > {
+        let op = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&self.handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        self.handle.client.call(op).await
+    }
     /// <p>The WorkMail organization where the availability provider will be tested.</p>
     pub fn organization_id(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.organization_id(input.into());
@@ -75,7 +97,10 @@ impl TestAvailabilityConfigurationFluentBuilder  {
         self
     }
     /// <p>Describes an EWS based availability provider. This is only used as input to the service.</p>
-    pub fn set_ews_provider(mut self, input: std::option::Option<crate::types::EwsAvailabilityProvider>) -> Self {
+    pub fn set_ews_provider(
+        mut self,
+        input: std::option::Option<crate::types::EwsAvailabilityProvider>,
+    ) -> Self {
         self.inner = self.inner.set_ews_provider(input);
         self
     }
@@ -85,9 +110,11 @@ impl TestAvailabilityConfigurationFluentBuilder  {
         self
     }
     /// <p>Describes a Lambda based availability provider.</p>
-    pub fn set_lambda_provider(mut self, input: std::option::Option<crate::types::LambdaAvailabilityProvider>) -> Self {
+    pub fn set_lambda_provider(
+        mut self,
+        input: std::option::Option<crate::types::LambdaAvailabilityProvider>,
+    ) -> Self {
         self.inner = self.inner.set_lambda_provider(input);
         self
     }
 }
-

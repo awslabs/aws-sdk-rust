@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct WithdrawByoipCidrOutput  {
+pub struct WithdrawByoipCidrOutput {
     /// <p>Information about the address pool.</p>
     #[doc(hidden)]
     pub byoip_cidr: std::option::Option<crate::types::ByoipCidr>,
@@ -10,18 +10,19 @@ pub struct WithdrawByoipCidrOutput  {
 }
 impl WithdrawByoipCidrOutput {
     /// <p>Information about the address pool.</p>
-    pub fn byoip_cidr(&self) -> std::option::Option<& crate::types::ByoipCidr> {
+    pub fn byoip_cidr(&self) -> std::option::Option<&crate::types::ByoipCidr> {
         self.byoip_cidr.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for WithdrawByoipCidrOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl WithdrawByoipCidrOutput {
     /// Creates a new builder-style object to manufacture [`WithdrawByoipCidrOutput`](crate::operation::withdraw_byoip_cidr::WithdrawByoipCidrOutput).
-    pub fn builder() -> crate::operation::withdraw_byoip_cidr::builders::WithdrawByoipCidrOutputBuilder {
+    pub fn builder(
+    ) -> crate::operation::withdraw_byoip_cidr::builders::WithdrawByoipCidrOutputBuilder {
         crate::operation::withdraw_byoip_cidr::builders::WithdrawByoipCidrOutputBuilder::default()
     }
 }
@@ -41,24 +42,23 @@ impl WithdrawByoipCidrOutputBuilder {
     }
     /// <p>Information about the address pool.</p>
     pub fn set_byoip_cidr(mut self, input: std::option::Option<crate::types::ByoipCidr>) -> Self {
-        self.byoip_cidr = input; self
+        self.byoip_cidr = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`WithdrawByoipCidrOutput`](crate::operation::withdraw_byoip_cidr::WithdrawByoipCidrOutput).
     pub fn build(self) -> crate::operation::withdraw_byoip_cidr::WithdrawByoipCidrOutput {
         crate::operation::withdraw_byoip_cidr::WithdrawByoipCidrOutput {
-            byoip_cidr: self.byoip_cidr
-            ,
+            byoip_cidr: self.byoip_cidr,
             _request_id: self._request_id,
         }
     }
 }
-

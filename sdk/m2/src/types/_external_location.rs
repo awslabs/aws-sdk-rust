@@ -21,7 +21,11 @@ impl ExternalLocation {
     /// Tries to convert the enum instance into [`S3Location`](crate::types::ExternalLocation::S3Location), extracting the inner [`String`](std::string::String).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_s3_location(&self) -> std::result::Result<&std::string::String, &Self> {
-        if let ExternalLocation::S3Location(val) = &self { Ok(val) } else { Err(self) }
+        if let ExternalLocation::S3Location(val) = &self {
+            Ok(val)
+        } else {
+            Err(self)
+        }
     }
     /// Returns true if this is a [`S3Location`](crate::types::ExternalLocation::S3Location).
     pub fn is_s3_location(&self) -> bool {
@@ -32,4 +36,3 @@ impl ExternalLocation {
         matches!(self, Self::Unknown)
     }
 }
-

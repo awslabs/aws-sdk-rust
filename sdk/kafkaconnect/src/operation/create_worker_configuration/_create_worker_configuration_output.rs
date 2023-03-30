@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateWorkerConfigurationOutput  {
+pub struct CreateWorkerConfigurationOutput {
     /// <p>The time that the worker configuration was created.</p>
     #[doc(hidden)]
     pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
@@ -19,30 +19,32 @@ pub struct CreateWorkerConfigurationOutput  {
 }
 impl CreateWorkerConfigurationOutput {
     /// <p>The time that the worker configuration was created.</p>
-    pub fn creation_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
+    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
     /// <p>The latest revision of the worker configuration.</p>
-    pub fn latest_revision(&self) -> std::option::Option<& crate::types::WorkerConfigurationRevisionSummary> {
+    pub fn latest_revision(
+        &self,
+    ) -> std::option::Option<&crate::types::WorkerConfigurationRevisionSummary> {
         self.latest_revision.as_ref()
     }
     /// <p>The name of the worker configuration.</p>
-    pub fn name(&self) -> std::option::Option<& str> {
+    pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) that Amazon assigned to the worker configuration.</p>
-    pub fn worker_configuration_arn(&self) -> std::option::Option<& str> {
+    pub fn worker_configuration_arn(&self) -> std::option::Option<&str> {
         self.worker_configuration_arn.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for CreateWorkerConfigurationOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl CreateWorkerConfigurationOutput {
     /// Creates a new builder-style object to manufacture [`CreateWorkerConfigurationOutput`](crate::operation::create_worker_configuration::CreateWorkerConfigurationOutput).
-    pub fn builder() -> crate::operation::create_worker_configuration::builders::CreateWorkerConfigurationOutputBuilder {
+    pub fn builder() -> crate::operation::create_worker_configuration::builders::CreateWorkerConfigurationOutputBuilder{
         crate::operation::create_worker_configuration::builders::CreateWorkerConfigurationOutputBuilder::default()
     }
 }
@@ -52,7 +54,8 @@ impl CreateWorkerConfigurationOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct CreateWorkerConfigurationOutputBuilder {
     pub(crate) creation_time: std::option::Option<aws_smithy_types::DateTime>,
-    pub(crate) latest_revision: std::option::Option<crate::types::WorkerConfigurationRevisionSummary>,
+    pub(crate) latest_revision:
+        std::option::Option<crate::types::WorkerConfigurationRevisionSummary>,
     pub(crate) name: std::option::Option<std::string::String>,
     pub(crate) worker_configuration_arn: std::option::Option<std::string::String>,
     _request_id: Option<String>,
@@ -64,17 +67,28 @@ impl CreateWorkerConfigurationOutputBuilder {
         self
     }
     /// <p>The time that the worker configuration was created.</p>
-    pub fn set_creation_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.creation_time = input; self
+    pub fn set_creation_time(
+        mut self,
+        input: std::option::Option<aws_smithy_types::DateTime>,
+    ) -> Self {
+        self.creation_time = input;
+        self
     }
     /// <p>The latest revision of the worker configuration.</p>
-    pub fn latest_revision(mut self, input: crate::types::WorkerConfigurationRevisionSummary) -> Self {
+    pub fn latest_revision(
+        mut self,
+        input: crate::types::WorkerConfigurationRevisionSummary,
+    ) -> Self {
         self.latest_revision = Some(input);
         self
     }
     /// <p>The latest revision of the worker configuration.</p>
-    pub fn set_latest_revision(mut self, input: std::option::Option<crate::types::WorkerConfigurationRevisionSummary>) -> Self {
-        self.latest_revision = input; self
+    pub fn set_latest_revision(
+        mut self,
+        input: std::option::Option<crate::types::WorkerConfigurationRevisionSummary>,
+    ) -> Self {
+        self.latest_revision = input;
+        self
     }
     /// <p>The name of the worker configuration.</p>
     pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -83,7 +97,8 @@ impl CreateWorkerConfigurationOutputBuilder {
     }
     /// <p>The name of the worker configuration.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input; self
+        self.name = input;
+        self
     }
     /// <p>The Amazon Resource Name (ARN) that Amazon assigned to the worker configuration.</p>
     pub fn worker_configuration_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -91,31 +106,32 @@ impl CreateWorkerConfigurationOutputBuilder {
         self
     }
     /// <p>The Amazon Resource Name (ARN) that Amazon assigned to the worker configuration.</p>
-    pub fn set_worker_configuration_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.worker_configuration_arn = input; self
+    pub fn set_worker_configuration_arn(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.worker_configuration_arn = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`CreateWorkerConfigurationOutput`](crate::operation::create_worker_configuration::CreateWorkerConfigurationOutput).
-    pub fn build(self) -> crate::operation::create_worker_configuration::CreateWorkerConfigurationOutput {
+    pub fn build(
+        self,
+    ) -> crate::operation::create_worker_configuration::CreateWorkerConfigurationOutput {
         crate::operation::create_worker_configuration::CreateWorkerConfigurationOutput {
-            creation_time: self.creation_time
-            ,
-            latest_revision: self.latest_revision
-            ,
-            name: self.name
-            ,
-            worker_configuration_arn: self.worker_configuration_arn
-            ,
+            creation_time: self.creation_time,
+            latest_revision: self.latest_revision,
+            name: self.name,
+            worker_configuration_arn: self.worker_configuration_arn,
             _request_id: self._request_id,
         }
     }
 }
-

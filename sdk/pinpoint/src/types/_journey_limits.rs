@@ -3,7 +3,7 @@
 /// <p>Specifies limits on the messages that a journey can send and the number of times participants can enter a journey.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct JourneyLimits  {
+pub struct JourneyLimits {
     /// <p>The maximum number of messages that the journey can send to a single participant during a 24-hour period. The maximum value is 100.</p>
     #[doc(hidden)]
     pub daily_cap: i32,
@@ -31,7 +31,7 @@ impl JourneyLimits {
         self.messages_per_second
     }
     /// <p>Minimum time that must pass before an endpoint can re-enter a given journey. The duration should use an ISO 8601 format, such as PT1H. </p>
-    pub fn endpoint_reentry_interval(&self) -> std::option::Option<& str> {
+    pub fn endpoint_reentry_interval(&self) -> std::option::Option<&str> {
         self.endpoint_reentry_interval.as_deref()
     }
 }
@@ -59,7 +59,8 @@ impl JourneyLimitsBuilder {
     }
     /// <p>The maximum number of messages that the journey can send to a single participant during a 24-hour period. The maximum value is 100.</p>
     pub fn set_daily_cap(mut self, input: std::option::Option<i32>) -> Self {
-        self.daily_cap = input; self
+        self.daily_cap = input;
+        self
     }
     /// <p>The maximum number of times that a participant can enter the journey. The maximum value is 100. To allow participants to enter the journey an unlimited number of times, set this value to 0.</p>
     pub fn endpoint_reentry_cap(mut self, input: i32) -> Self {
@@ -68,7 +69,8 @@ impl JourneyLimitsBuilder {
     }
     /// <p>The maximum number of times that a participant can enter the journey. The maximum value is 100. To allow participants to enter the journey an unlimited number of times, set this value to 0.</p>
     pub fn set_endpoint_reentry_cap(mut self, input: std::option::Option<i32>) -> Self {
-        self.endpoint_reentry_cap = input; self
+        self.endpoint_reentry_cap = input;
+        self
     }
     /// <p>The maximum number of messages that the journey can send each second.</p>
     pub fn messages_per_second(mut self, input: i32) -> Self {
@@ -77,7 +79,8 @@ impl JourneyLimitsBuilder {
     }
     /// <p>The maximum number of messages that the journey can send each second.</p>
     pub fn set_messages_per_second(mut self, input: std::option::Option<i32>) -> Self {
-        self.messages_per_second = input; self
+        self.messages_per_second = input;
+        self
     }
     /// <p>Minimum time that must pass before an endpoint can re-enter a given journey. The duration should use an ISO 8601 format, such as PT1H. </p>
     pub fn endpoint_reentry_interval(mut self, input: impl Into<std::string::String>) -> Self {
@@ -85,24 +88,20 @@ impl JourneyLimitsBuilder {
         self
     }
     /// <p>Minimum time that must pass before an endpoint can re-enter a given journey. The duration should use an ISO 8601 format, such as PT1H. </p>
-    pub fn set_endpoint_reentry_interval(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.endpoint_reentry_interval = input; self
+    pub fn set_endpoint_reentry_interval(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.endpoint_reentry_interval = input;
+        self
     }
     /// Consumes the builder and constructs a [`JourneyLimits`](crate::types::JourneyLimits).
     pub fn build(self) -> crate::types::JourneyLimits {
         crate::types::JourneyLimits {
-            daily_cap: self.daily_cap
-                .unwrap_or_default()
-            ,
-            endpoint_reentry_cap: self.endpoint_reentry_cap
-                .unwrap_or_default()
-            ,
-            messages_per_second: self.messages_per_second
-                .unwrap_or_default()
-            ,
-            endpoint_reentry_interval: self.endpoint_reentry_interval
-            ,
+            daily_cap: self.daily_cap.unwrap_or_default(),
+            endpoint_reentry_cap: self.endpoint_reentry_cap.unwrap_or_default(),
+            messages_per_second: self.messages_per_second.unwrap_or_default(),
+            endpoint_reentry_interval: self.endpoint_reentry_interval,
         }
     }
 }
-

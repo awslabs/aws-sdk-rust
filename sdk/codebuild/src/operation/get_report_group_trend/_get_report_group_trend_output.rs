@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetReportGroupTrendOutput  {
+pub struct GetReportGroupTrendOutput {
     /// <p>Contains the accumulated trend data.</p>
     #[doc(hidden)]
     pub stats: std::option::Option<crate::types::ReportGroupTrendStats>,
@@ -13,22 +13,23 @@ pub struct GetReportGroupTrendOutput  {
 }
 impl GetReportGroupTrendOutput {
     /// <p>Contains the accumulated trend data.</p>
-    pub fn stats(&self) -> std::option::Option<& crate::types::ReportGroupTrendStats> {
+    pub fn stats(&self) -> std::option::Option<&crate::types::ReportGroupTrendStats> {
         self.stats.as_ref()
     }
     /// <p>An array that contains the raw data for each report.</p>
-    pub fn raw_data(&self) -> std::option::Option<& [crate::types::ReportWithRawData]> {
+    pub fn raw_data(&self) -> std::option::Option<&[crate::types::ReportWithRawData]> {
         self.raw_data.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for GetReportGroupTrendOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl GetReportGroupTrendOutput {
     /// Creates a new builder-style object to manufacture [`GetReportGroupTrendOutput`](crate::operation::get_report_group_trend::GetReportGroupTrendOutput).
-    pub fn builder() -> crate::operation::get_report_group_trend::builders::GetReportGroupTrendOutputBuilder {
+    pub fn builder(
+    ) -> crate::operation::get_report_group_trend::builders::GetReportGroupTrendOutputBuilder {
         crate::operation::get_report_group_trend::builders::GetReportGroupTrendOutputBuilder::default()
     }
 }
@@ -48,8 +49,12 @@ impl GetReportGroupTrendOutputBuilder {
         self
     }
     /// <p>Contains the accumulated trend data.</p>
-    pub fn set_stats(mut self, input: std::option::Option<crate::types::ReportGroupTrendStats>) -> Self {
-        self.stats = input; self
+    pub fn set_stats(
+        mut self,
+        input: std::option::Option<crate::types::ReportGroupTrendStats>,
+    ) -> Self {
+        self.stats = input;
+        self
     }
     /// Appends an item to `raw_data`.
     ///
@@ -58,32 +63,33 @@ impl GetReportGroupTrendOutputBuilder {
     /// <p>An array that contains the raw data for each report.</p>
     pub fn raw_data(mut self, input: crate::types::ReportWithRawData) -> Self {
         let mut v = self.raw_data.unwrap_or_default();
-                        v.push(input);
-                        self.raw_data = Some(v);
-                        self
+        v.push(input);
+        self.raw_data = Some(v);
+        self
     }
     /// <p>An array that contains the raw data for each report.</p>
-    pub fn set_raw_data(mut self, input: std::option::Option<std::vec::Vec<crate::types::ReportWithRawData>>) -> Self {
-        self.raw_data = input; self
+    pub fn set_raw_data(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::ReportWithRawData>>,
+    ) -> Self {
+        self.raw_data = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`GetReportGroupTrendOutput`](crate::operation::get_report_group_trend::GetReportGroupTrendOutput).
     pub fn build(self) -> crate::operation::get_report_group_trend::GetReportGroupTrendOutput {
         crate::operation::get_report_group_trend::GetReportGroupTrendOutput {
-            stats: self.stats
-            ,
-            raw_data: self.raw_data
-            ,
+            stats: self.stats,
+            raw_data: self.raw_data,
             _request_id: self._request_id,
         }
     }
 }
-

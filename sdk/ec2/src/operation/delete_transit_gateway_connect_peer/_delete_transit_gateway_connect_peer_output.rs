@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteTransitGatewayConnectPeerOutput  {
+pub struct DeleteTransitGatewayConnectPeerOutput {
     /// <p>Information about the deleted Connect peer.</p>
     #[doc(hidden)]
     pub transit_gateway_connect_peer: std::option::Option<crate::types::TransitGatewayConnectPeer>,
@@ -10,18 +10,20 @@ pub struct DeleteTransitGatewayConnectPeerOutput  {
 }
 impl DeleteTransitGatewayConnectPeerOutput {
     /// <p>Information about the deleted Connect peer.</p>
-    pub fn transit_gateway_connect_peer(&self) -> std::option::Option<& crate::types::TransitGatewayConnectPeer> {
+    pub fn transit_gateway_connect_peer(
+        &self,
+    ) -> std::option::Option<&crate::types::TransitGatewayConnectPeer> {
         self.transit_gateway_connect_peer.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for DeleteTransitGatewayConnectPeerOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl DeleteTransitGatewayConnectPeerOutput {
     /// Creates a new builder-style object to manufacture [`DeleteTransitGatewayConnectPeerOutput`](crate::operation::delete_transit_gateway_connect_peer::DeleteTransitGatewayConnectPeerOutput).
-    pub fn builder() -> crate::operation::delete_transit_gateway_connect_peer::builders::DeleteTransitGatewayConnectPeerOutputBuilder {
+    pub fn builder() -> crate::operation::delete_transit_gateway_connect_peer::builders::DeleteTransitGatewayConnectPeerOutputBuilder{
         crate::operation::delete_transit_gateway_connect_peer::builders::DeleteTransitGatewayConnectPeerOutputBuilder::default()
     }
 }
@@ -30,30 +32,41 @@ impl DeleteTransitGatewayConnectPeerOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct DeleteTransitGatewayConnectPeerOutputBuilder {
-    pub(crate) transit_gateway_connect_peer: std::option::Option<crate::types::TransitGatewayConnectPeer>,
+    pub(crate) transit_gateway_connect_peer:
+        std::option::Option<crate::types::TransitGatewayConnectPeer>,
     _request_id: Option<String>,
 }
 impl DeleteTransitGatewayConnectPeerOutputBuilder {
     /// <p>Information about the deleted Connect peer.</p>
-    pub fn transit_gateway_connect_peer(mut self, input: crate::types::TransitGatewayConnectPeer) -> Self {
+    pub fn transit_gateway_connect_peer(
+        mut self,
+        input: crate::types::TransitGatewayConnectPeer,
+    ) -> Self {
         self.transit_gateway_connect_peer = Some(input);
         self
     }
     /// <p>Information about the deleted Connect peer.</p>
-    pub fn set_transit_gateway_connect_peer(mut self, input: std::option::Option<crate::types::TransitGatewayConnectPeer>) -> Self {
-        self.transit_gateway_connect_peer = input; self
+    pub fn set_transit_gateway_connect_peer(
+        mut self,
+        input: std::option::Option<crate::types::TransitGatewayConnectPeer>,
+    ) -> Self {
+        self.transit_gateway_connect_peer = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`DeleteTransitGatewayConnectPeerOutput`](crate::operation::delete_transit_gateway_connect_peer::DeleteTransitGatewayConnectPeerOutput).
-    pub fn build(self) -> crate::operation::delete_transit_gateway_connect_peer::DeleteTransitGatewayConnectPeerOutput {
+    pub fn build(
+        self,
+    ) -> crate::operation::delete_transit_gateway_connect_peer::DeleteTransitGatewayConnectPeerOutput
+    {
         crate::operation::delete_transit_gateway_connect_peer::DeleteTransitGatewayConnectPeerOutput {
             transit_gateway_connect_peer: self.transit_gateway_connect_peer
             ,
@@ -61,4 +74,3 @@ impl DeleteTransitGatewayConnectPeerOutputBuilder {
         }
     }
 }
-

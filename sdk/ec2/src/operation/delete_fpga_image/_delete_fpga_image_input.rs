@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteFpgaImageInput  {
+pub struct DeleteFpgaImageInput {
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     #[doc(hidden)]
     pub dry_run: std::option::Option<bool>,
@@ -16,7 +16,7 @@ impl DeleteFpgaImageInput {
         self.dry_run
     }
     /// <p>The ID of the AFI.</p>
-    pub fn fpga_image_id(&self) -> std::option::Option<& str> {
+    pub fn fpga_image_id(&self) -> std::option::Option<&str> {
         self.fpga_image_id.as_deref()
     }
 }
@@ -42,7 +42,8 @@ impl DeleteFpgaImageInputBuilder {
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn set_dry_run(mut self, input: std::option::Option<bool>) -> Self {
-        self.dry_run = input; self
+        self.dry_run = input;
+        self
     }
     /// <p>The ID of the AFI.</p>
     pub fn fpga_image_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -51,18 +52,19 @@ impl DeleteFpgaImageInputBuilder {
     }
     /// <p>The ID of the AFI.</p>
     pub fn set_fpga_image_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.fpga_image_id = input; self
+        self.fpga_image_id = input;
+        self
     }
     /// Consumes the builder and constructs a [`DeleteFpgaImageInput`](crate::operation::delete_fpga_image::DeleteFpgaImageInput).
-    pub fn build(self) -> Result<crate::operation::delete_fpga_image::DeleteFpgaImageInput, aws_smithy_http::operation::error::BuildError> {
-        Ok(
-            crate::operation::delete_fpga_image::DeleteFpgaImageInput {
-                dry_run: self.dry_run
-                ,
-                fpga_image_id: self.fpga_image_id
-                ,
-            }
-        )
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::delete_fpga_image::DeleteFpgaImageInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        Ok(crate::operation::delete_fpga_image::DeleteFpgaImageInput {
+            dry_run: self.dry_run,
+            fpga_image_id: self.fpga_image_id,
+        })
     }
 }
-

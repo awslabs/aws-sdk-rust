@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetCurrentUserDataOutput  {
+pub struct GetCurrentUserDataOutput {
     /// <p>If there are additional results, this is the token for the next set of results.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
@@ -16,11 +16,11 @@ pub struct GetCurrentUserDataOutput  {
 }
 impl GetCurrentUserDataOutput {
     /// <p>If there are additional results, this is the token for the next set of results.</p>
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
     /// <p>A list of the user data that is returned.</p>
-    pub fn user_data_list(&self) -> std::option::Option<& [crate::types::UserData]> {
+    pub fn user_data_list(&self) -> std::option::Option<&[crate::types::UserData]> {
         self.user_data_list.as_deref()
     }
     /// <p>The total count of the result, regardless of the current page size.</p>
@@ -29,14 +29,16 @@ impl GetCurrentUserDataOutput {
     }
 }
 impl aws_http::request_id::RequestId for GetCurrentUserDataOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl GetCurrentUserDataOutput {
     /// Creates a new builder-style object to manufacture [`GetCurrentUserDataOutput`](crate::operation::get_current_user_data::GetCurrentUserDataOutput).
-    pub fn builder() -> crate::operation::get_current_user_data::builders::GetCurrentUserDataOutputBuilder {
-        crate::operation::get_current_user_data::builders::GetCurrentUserDataOutputBuilder::default()
+    pub fn builder(
+    ) -> crate::operation::get_current_user_data::builders::GetCurrentUserDataOutputBuilder {
+        crate::operation::get_current_user_data::builders::GetCurrentUserDataOutputBuilder::default(
+        )
     }
 }
 
@@ -57,7 +59,8 @@ impl GetCurrentUserDataOutputBuilder {
     }
     /// <p>If there are additional results, this is the token for the next set of results.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input; self
+        self.next_token = input;
+        self
     }
     /// Appends an item to `user_data_list`.
     ///
@@ -66,13 +69,17 @@ impl GetCurrentUserDataOutputBuilder {
     /// <p>A list of the user data that is returned.</p>
     pub fn user_data_list(mut self, input: crate::types::UserData) -> Self {
         let mut v = self.user_data_list.unwrap_or_default();
-                        v.push(input);
-                        self.user_data_list = Some(v);
-                        self
+        v.push(input);
+        self.user_data_list = Some(v);
+        self
     }
     /// <p>A list of the user data that is returned.</p>
-    pub fn set_user_data_list(mut self, input: std::option::Option<std::vec::Vec<crate::types::UserData>>) -> Self {
-        self.user_data_list = input; self
+    pub fn set_user_data_list(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::UserData>>,
+    ) -> Self {
+        self.user_data_list = input;
+        self
     }
     /// <p>The total count of the result, regardless of the current page size.</p>
     pub fn approximate_total_count(mut self, input: i64) -> Self {
@@ -81,28 +88,25 @@ impl GetCurrentUserDataOutputBuilder {
     }
     /// <p>The total count of the result, regardless of the current page size.</p>
     pub fn set_approximate_total_count(mut self, input: std::option::Option<i64>) -> Self {
-        self.approximate_total_count = input; self
+        self.approximate_total_count = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`GetCurrentUserDataOutput`](crate::operation::get_current_user_data::GetCurrentUserDataOutput).
     pub fn build(self) -> crate::operation::get_current_user_data::GetCurrentUserDataOutput {
         crate::operation::get_current_user_data::GetCurrentUserDataOutput {
-            next_token: self.next_token
-            ,
-            user_data_list: self.user_data_list
-            ,
-            approximate_total_count: self.approximate_total_count
-            ,
+            next_token: self.next_token,
+            user_data_list: self.user_data_list,
+            approximate_total_count: self.approximate_total_count,
             _request_id: self._request_id,
         }
     }
 }
-

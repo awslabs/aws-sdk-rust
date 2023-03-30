@@ -3,16 +3,16 @@
 /// <p>Describes the data source that contains the data to upload to a dataset.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DataSource  {
-    /// <p>The path to the Amazon S3 bucket where the data that you want to upload to your dataset is stored. For example: </p> 
+pub struct DataSource {
+    /// <p>The path to the Amazon S3 bucket where the data that you want to upload to your dataset is stored. For example: </p>
     /// <p> <code>s3://bucket-name/folder-name/</code> </p>
     #[doc(hidden)]
     pub data_location: std::option::Option<std::string::String>,
 }
 impl DataSource {
-    /// <p>The path to the Amazon S3 bucket where the data that you want to upload to your dataset is stored. For example: </p> 
+    /// <p>The path to the Amazon S3 bucket where the data that you want to upload to your dataset is stored. For example: </p>
     /// <p> <code>s3://bucket-name/folder-name/</code> </p>
-    pub fn data_location(&self) -> std::option::Option<& str> {
+    pub fn data_location(&self) -> std::option::Option<&str> {
         self.data_location.as_deref()
     }
 }
@@ -30,23 +30,22 @@ pub struct DataSourceBuilder {
     pub(crate) data_location: std::option::Option<std::string::String>,
 }
 impl DataSourceBuilder {
-    /// <p>The path to the Amazon S3 bucket where the data that you want to upload to your dataset is stored. For example: </p> 
+    /// <p>The path to the Amazon S3 bucket where the data that you want to upload to your dataset is stored. For example: </p>
     /// <p> <code>s3://bucket-name/folder-name/</code> </p>
     pub fn data_location(mut self, input: impl Into<std::string::String>) -> Self {
         self.data_location = Some(input.into());
         self
     }
-    /// <p>The path to the Amazon S3 bucket where the data that you want to upload to your dataset is stored. For example: </p> 
+    /// <p>The path to the Amazon S3 bucket where the data that you want to upload to your dataset is stored. For example: </p>
     /// <p> <code>s3://bucket-name/folder-name/</code> </p>
     pub fn set_data_location(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.data_location = input; self
+        self.data_location = input;
+        self
     }
     /// Consumes the builder and constructs a [`DataSource`](crate::types::DataSource).
     pub fn build(self) -> crate::types::DataSource {
         crate::types::DataSource {
-            data_location: self.data_location
-            ,
+            data_location: self.data_location,
         }
     }
 }
-

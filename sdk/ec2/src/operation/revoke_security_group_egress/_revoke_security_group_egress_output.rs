@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct RevokeSecurityGroupEgressOutput  {
+pub struct RevokeSecurityGroupEgressOutput {
     /// <p>Returns <code>true</code> if the request succeeds; otherwise, returns an error.</p>
     #[doc(hidden)]
     pub r#return: std::option::Option<bool>,
@@ -17,18 +17,18 @@ impl RevokeSecurityGroupEgressOutput {
         self.r#return
     }
     /// <p>The outbound rules that were unknown to the service. In some cases, <code>unknownIpPermissionSet</code> might be in a different format from the request parameter. </p>
-    pub fn unknown_ip_permissions(&self) -> std::option::Option<& [crate::types::IpPermission]> {
+    pub fn unknown_ip_permissions(&self) -> std::option::Option<&[crate::types::IpPermission]> {
         self.unknown_ip_permissions.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for RevokeSecurityGroupEgressOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl RevokeSecurityGroupEgressOutput {
     /// Creates a new builder-style object to manufacture [`RevokeSecurityGroupEgressOutput`](crate::operation::revoke_security_group_egress::RevokeSecurityGroupEgressOutput).
-    pub fn builder() -> crate::operation::revoke_security_group_egress::builders::RevokeSecurityGroupEgressOutputBuilder {
+    pub fn builder() -> crate::operation::revoke_security_group_egress::builders::RevokeSecurityGroupEgressOutputBuilder{
         crate::operation::revoke_security_group_egress::builders::RevokeSecurityGroupEgressOutputBuilder::default()
     }
 }
@@ -38,7 +38,8 @@ impl RevokeSecurityGroupEgressOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct RevokeSecurityGroupEgressOutputBuilder {
     pub(crate) r#return: std::option::Option<bool>,
-    pub(crate) unknown_ip_permissions: std::option::Option<std::vec::Vec<crate::types::IpPermission>>,
+    pub(crate) unknown_ip_permissions:
+        std::option::Option<std::vec::Vec<crate::types::IpPermission>>,
     _request_id: Option<String>,
 }
 impl RevokeSecurityGroupEgressOutputBuilder {
@@ -49,7 +50,8 @@ impl RevokeSecurityGroupEgressOutputBuilder {
     }
     /// <p>Returns <code>true</code> if the request succeeds; otherwise, returns an error.</p>
     pub fn set_return(mut self, input: std::option::Option<bool>) -> Self {
-        self.r#return = input; self
+        self.r#return = input;
+        self
     }
     /// Appends an item to `unknown_ip_permissions`.
     ///
@@ -58,32 +60,35 @@ impl RevokeSecurityGroupEgressOutputBuilder {
     /// <p>The outbound rules that were unknown to the service. In some cases, <code>unknownIpPermissionSet</code> might be in a different format from the request parameter. </p>
     pub fn unknown_ip_permissions(mut self, input: crate::types::IpPermission) -> Self {
         let mut v = self.unknown_ip_permissions.unwrap_or_default();
-                        v.push(input);
-                        self.unknown_ip_permissions = Some(v);
-                        self
+        v.push(input);
+        self.unknown_ip_permissions = Some(v);
+        self
     }
     /// <p>The outbound rules that were unknown to the service. In some cases, <code>unknownIpPermissionSet</code> might be in a different format from the request parameter. </p>
-    pub fn set_unknown_ip_permissions(mut self, input: std::option::Option<std::vec::Vec<crate::types::IpPermission>>) -> Self {
-        self.unknown_ip_permissions = input; self
+    pub fn set_unknown_ip_permissions(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::IpPermission>>,
+    ) -> Self {
+        self.unknown_ip_permissions = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`RevokeSecurityGroupEgressOutput`](crate::operation::revoke_security_group_egress::RevokeSecurityGroupEgressOutput).
-    pub fn build(self) -> crate::operation::revoke_security_group_egress::RevokeSecurityGroupEgressOutput {
+    pub fn build(
+        self,
+    ) -> crate::operation::revoke_security_group_egress::RevokeSecurityGroupEgressOutput {
         crate::operation::revoke_security_group_egress::RevokeSecurityGroupEgressOutput {
-            r#return: self.r#return
-            ,
-            unknown_ip_permissions: self.unknown_ip_permissions
-            ,
+            r#return: self.r#return,
+            unknown_ip_permissions: self.unknown_ip_permissions,
             _request_id: self._request_id,
         }
     }
 }
-

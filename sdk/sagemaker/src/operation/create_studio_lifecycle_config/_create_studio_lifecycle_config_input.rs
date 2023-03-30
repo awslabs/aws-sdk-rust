@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateStudioLifecycleConfigInput  {
+pub struct CreateStudioLifecycleConfigInput {
     /// <p>The name of the Studio Lifecycle Configuration to create.</p>
     #[doc(hidden)]
     pub studio_lifecycle_config_name: std::option::Option<std::string::String>,
@@ -11,32 +11,35 @@ pub struct CreateStudioLifecycleConfigInput  {
     pub studio_lifecycle_config_content: std::option::Option<std::string::String>,
     /// <p>The App type that the Lifecycle Configuration is attached to.</p>
     #[doc(hidden)]
-    pub studio_lifecycle_config_app_type: std::option::Option<crate::types::StudioLifecycleConfigAppType>,
+    pub studio_lifecycle_config_app_type:
+        std::option::Option<crate::types::StudioLifecycleConfigAppType>,
     /// <p>Tags to be associated with the Lifecycle Configuration. Each tag consists of a key and an optional value. Tag keys must be unique per resource. Tags are searchable using the Search API. </p>
     #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::types::Tag>>,
 }
 impl CreateStudioLifecycleConfigInput {
     /// <p>The name of the Studio Lifecycle Configuration to create.</p>
-    pub fn studio_lifecycle_config_name(&self) -> std::option::Option<& str> {
+    pub fn studio_lifecycle_config_name(&self) -> std::option::Option<&str> {
         self.studio_lifecycle_config_name.as_deref()
     }
     /// <p>The content of your Studio Lifecycle Configuration script. This content must be base64 encoded.</p>
-    pub fn studio_lifecycle_config_content(&self) -> std::option::Option<& str> {
+    pub fn studio_lifecycle_config_content(&self) -> std::option::Option<&str> {
         self.studio_lifecycle_config_content.as_deref()
     }
     /// <p>The App type that the Lifecycle Configuration is attached to.</p>
-    pub fn studio_lifecycle_config_app_type(&self) -> std::option::Option<& crate::types::StudioLifecycleConfigAppType> {
+    pub fn studio_lifecycle_config_app_type(
+        &self,
+    ) -> std::option::Option<&crate::types::StudioLifecycleConfigAppType> {
         self.studio_lifecycle_config_app_type.as_ref()
     }
     /// <p>Tags to be associated with the Lifecycle Configuration. Each tag consists of a key and an optional value. Tag keys must be unique per resource. Tags are searchable using the Search API. </p>
-    pub fn tags(&self) -> std::option::Option<& [crate::types::Tag]> {
+    pub fn tags(&self) -> std::option::Option<&[crate::types::Tag]> {
         self.tags.as_deref()
     }
 }
 impl CreateStudioLifecycleConfigInput {
     /// Creates a new builder-style object to manufacture [`CreateStudioLifecycleConfigInput`](crate::operation::create_studio_lifecycle_config::CreateStudioLifecycleConfigInput).
-    pub fn builder() -> crate::operation::create_studio_lifecycle_config::builders::CreateStudioLifecycleConfigInputBuilder {
+    pub fn builder() -> crate::operation::create_studio_lifecycle_config::builders::CreateStudioLifecycleConfigInputBuilder{
         crate::operation::create_studio_lifecycle_config::builders::CreateStudioLifecycleConfigInputBuilder::default()
     }
 }
@@ -47,7 +50,8 @@ impl CreateStudioLifecycleConfigInput {
 pub struct CreateStudioLifecycleConfigInputBuilder {
     pub(crate) studio_lifecycle_config_name: std::option::Option<std::string::String>,
     pub(crate) studio_lifecycle_config_content: std::option::Option<std::string::String>,
-    pub(crate) studio_lifecycle_config_app_type: std::option::Option<crate::types::StudioLifecycleConfigAppType>,
+    pub(crate) studio_lifecycle_config_app_type:
+        std::option::Option<crate::types::StudioLifecycleConfigAppType>,
     pub(crate) tags: std::option::Option<std::vec::Vec<crate::types::Tag>>,
 }
 impl CreateStudioLifecycleConfigInputBuilder {
@@ -57,26 +61,44 @@ impl CreateStudioLifecycleConfigInputBuilder {
         self
     }
     /// <p>The name of the Studio Lifecycle Configuration to create.</p>
-    pub fn set_studio_lifecycle_config_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.studio_lifecycle_config_name = input; self
+    pub fn set_studio_lifecycle_config_name(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.studio_lifecycle_config_name = input;
+        self
     }
     /// <p>The content of your Studio Lifecycle Configuration script. This content must be base64 encoded.</p>
-    pub fn studio_lifecycle_config_content(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn studio_lifecycle_config_content(
+        mut self,
+        input: impl Into<std::string::String>,
+    ) -> Self {
         self.studio_lifecycle_config_content = Some(input.into());
         self
     }
     /// <p>The content of your Studio Lifecycle Configuration script. This content must be base64 encoded.</p>
-    pub fn set_studio_lifecycle_config_content(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.studio_lifecycle_config_content = input; self
+    pub fn set_studio_lifecycle_config_content(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.studio_lifecycle_config_content = input;
+        self
     }
     /// <p>The App type that the Lifecycle Configuration is attached to.</p>
-    pub fn studio_lifecycle_config_app_type(mut self, input: crate::types::StudioLifecycleConfigAppType) -> Self {
+    pub fn studio_lifecycle_config_app_type(
+        mut self,
+        input: crate::types::StudioLifecycleConfigAppType,
+    ) -> Self {
         self.studio_lifecycle_config_app_type = Some(input);
         self
     }
     /// <p>The App type that the Lifecycle Configuration is attached to.</p>
-    pub fn set_studio_lifecycle_config_app_type(mut self, input: std::option::Option<crate::types::StudioLifecycleConfigAppType>) -> Self {
-        self.studio_lifecycle_config_app_type = input; self
+    pub fn set_studio_lifecycle_config_app_type(
+        mut self,
+        input: std::option::Option<crate::types::StudioLifecycleConfigAppType>,
+    ) -> Self {
+        self.studio_lifecycle_config_app_type = input;
+        self
     }
     /// Appends an item to `tags`.
     ///
@@ -85,28 +107,32 @@ impl CreateStudioLifecycleConfigInputBuilder {
     /// <p>Tags to be associated with the Lifecycle Configuration. Each tag consists of a key and an optional value. Tag keys must be unique per resource. Tags are searchable using the Search API. </p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
-                        v.push(input);
-                        self.tags = Some(v);
-                        self
+        v.push(input);
+        self.tags = Some(v);
+        self
     }
     /// <p>Tags to be associated with the Lifecycle Configuration. Each tag consists of a key and an optional value. Tag keys must be unique per resource. Tags are searchable using the Search API. </p>
-    pub fn set_tags(mut self, input: std::option::Option<std::vec::Vec<crate::types::Tag>>) -> Self {
-        self.tags = input; self
+    pub fn set_tags(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::Tag>>,
+    ) -> Self {
+        self.tags = input;
+        self
     }
     /// Consumes the builder and constructs a [`CreateStudioLifecycleConfigInput`](crate::operation::create_studio_lifecycle_config::CreateStudioLifecycleConfigInput).
-    pub fn build(self) -> Result<crate::operation::create_studio_lifecycle_config::CreateStudioLifecycleConfigInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::create_studio_lifecycle_config::CreateStudioLifecycleConfigInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::create_studio_lifecycle_config::CreateStudioLifecycleConfigInput {
-                studio_lifecycle_config_name: self.studio_lifecycle_config_name
-                ,
-                studio_lifecycle_config_content: self.studio_lifecycle_config_content
-                ,
-                studio_lifecycle_config_app_type: self.studio_lifecycle_config_app_type
-                ,
-                tags: self.tags
-                ,
-            }
+                studio_lifecycle_config_name: self.studio_lifecycle_config_name,
+                studio_lifecycle_config_content: self.studio_lifecycle_config_content,
+                studio_lifecycle_config_app_type: self.studio_lifecycle_config_app_type,
+                tags: self.tags,
+            },
         )
     }
 }
-

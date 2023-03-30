@@ -3,7 +3,7 @@
 /// <p>Defines the details of a high availability configuration.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct HighAvailabilityConfig  {
+pub struct HighAvailabilityConfig {
     /// <p>The number of instances in a high availability configuration.</p>
     #[doc(hidden)]
     pub desired_capacity: std::option::Option<i32>,
@@ -35,14 +35,13 @@ impl HighAvailabilityConfigBuilder {
     }
     /// <p>The number of instances in a high availability configuration.</p>
     pub fn set_desired_capacity(mut self, input: std::option::Option<i32>) -> Self {
-        self.desired_capacity = input; self
+        self.desired_capacity = input;
+        self
     }
     /// Consumes the builder and constructs a [`HighAvailabilityConfig`](crate::types::HighAvailabilityConfig).
     pub fn build(self) -> crate::types::HighAvailabilityConfig {
         crate::types::HighAvailabilityConfig {
-            desired_capacity: self.desired_capacity
-            ,
+            desired_capacity: self.desired_capacity,
         }
     }
 }
-

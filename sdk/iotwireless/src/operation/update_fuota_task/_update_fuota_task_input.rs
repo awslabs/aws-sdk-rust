@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateFuotaTaskInput  {
+pub struct UpdateFuotaTaskInput {
     /// <p>The ID of a FUOTA task.</p>
     #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
@@ -24,27 +24,27 @@ pub struct UpdateFuotaTaskInput  {
 }
 impl UpdateFuotaTaskInput {
     /// <p>The ID of a FUOTA task.</p>
-    pub fn id(&self) -> std::option::Option<& str> {
+    pub fn id(&self) -> std::option::Option<&str> {
         self.id.as_deref()
     }
     /// <p>The name of a FUOTA task.</p>
-    pub fn name(&self) -> std::option::Option<& str> {
+    pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>The description of the new resource.</p>
-    pub fn description(&self) -> std::option::Option<& str> {
+    pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
     /// <p>The LoRaWAN information used with a FUOTA task.</p>
-    pub fn lo_ra_wan(&self) -> std::option::Option<& crate::types::LoRaWanFuotaTask> {
+    pub fn lo_ra_wan(&self) -> std::option::Option<&crate::types::LoRaWanFuotaTask> {
         self.lo_ra_wan.as_ref()
     }
     /// <p>The S3 URI points to a firmware update image that is to be used with a FUOTA task.</p>
-    pub fn firmware_update_image(&self) -> std::option::Option<& str> {
+    pub fn firmware_update_image(&self) -> std::option::Option<&str> {
         self.firmware_update_image.as_deref()
     }
     /// <p>The firmware update role that is to be used with a FUOTA task.</p>
-    pub fn firmware_update_role(&self) -> std::option::Option<& str> {
+    pub fn firmware_update_role(&self) -> std::option::Option<&str> {
         self.firmware_update_role.as_deref()
     }
 }
@@ -74,7 +74,8 @@ impl UpdateFuotaTaskInputBuilder {
     }
     /// <p>The ID of a FUOTA task.</p>
     pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.id = input; self
+        self.id = input;
+        self
     }
     /// <p>The name of a FUOTA task.</p>
     pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -83,7 +84,8 @@ impl UpdateFuotaTaskInputBuilder {
     }
     /// <p>The name of a FUOTA task.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input; self
+        self.name = input;
+        self
     }
     /// <p>The description of the new resource.</p>
     pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -92,7 +94,8 @@ impl UpdateFuotaTaskInputBuilder {
     }
     /// <p>The description of the new resource.</p>
     pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.description = input; self
+        self.description = input;
+        self
     }
     /// <p>The LoRaWAN information used with a FUOTA task.</p>
     pub fn lo_ra_wan(mut self, input: crate::types::LoRaWanFuotaTask) -> Self {
@@ -100,8 +103,12 @@ impl UpdateFuotaTaskInputBuilder {
         self
     }
     /// <p>The LoRaWAN information used with a FUOTA task.</p>
-    pub fn set_lo_ra_wan(mut self, input: std::option::Option<crate::types::LoRaWanFuotaTask>) -> Self {
-        self.lo_ra_wan = input; self
+    pub fn set_lo_ra_wan(
+        mut self,
+        input: std::option::Option<crate::types::LoRaWanFuotaTask>,
+    ) -> Self {
+        self.lo_ra_wan = input;
+        self
     }
     /// <p>The S3 URI points to a firmware update image that is to be used with a FUOTA task.</p>
     pub fn firmware_update_image(mut self, input: impl Into<std::string::String>) -> Self {
@@ -109,8 +116,12 @@ impl UpdateFuotaTaskInputBuilder {
         self
     }
     /// <p>The S3 URI points to a firmware update image that is to be used with a FUOTA task.</p>
-    pub fn set_firmware_update_image(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.firmware_update_image = input; self
+    pub fn set_firmware_update_image(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.firmware_update_image = input;
+        self
     }
     /// <p>The firmware update role that is to be used with a FUOTA task.</p>
     pub fn firmware_update_role(mut self, input: impl Into<std::string::String>) -> Self {
@@ -118,27 +129,27 @@ impl UpdateFuotaTaskInputBuilder {
         self
     }
     /// <p>The firmware update role that is to be used with a FUOTA task.</p>
-    pub fn set_firmware_update_role(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.firmware_update_role = input; self
+    pub fn set_firmware_update_role(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.firmware_update_role = input;
+        self
     }
     /// Consumes the builder and constructs a [`UpdateFuotaTaskInput`](crate::operation::update_fuota_task::UpdateFuotaTaskInput).
-    pub fn build(self) -> Result<crate::operation::update_fuota_task::UpdateFuotaTaskInput, aws_smithy_http::operation::error::BuildError> {
-        Ok(
-            crate::operation::update_fuota_task::UpdateFuotaTaskInput {
-                id: self.id
-                ,
-                name: self.name
-                ,
-                description: self.description
-                ,
-                lo_ra_wan: self.lo_ra_wan
-                ,
-                firmware_update_image: self.firmware_update_image
-                ,
-                firmware_update_role: self.firmware_update_role
-                ,
-            }
-        )
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::update_fuota_task::UpdateFuotaTaskInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        Ok(crate::operation::update_fuota_task::UpdateFuotaTaskInput {
+            id: self.id,
+            name: self.name,
+            description: self.description,
+            lo_ra_wan: self.lo_ra_wan,
+            firmware_update_image: self.firmware_update_image,
+            firmware_update_role: self.firmware_update_role,
+        })
     }
 }
-

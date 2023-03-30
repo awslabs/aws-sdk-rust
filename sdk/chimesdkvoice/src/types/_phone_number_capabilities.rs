@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PhoneNumberCapabilities  {
+pub struct PhoneNumberCapabilities {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub inbound_call: std::option::Option<bool>,
@@ -74,7 +74,8 @@ impl PhoneNumberCapabilitiesBuilder {
     }
     #[allow(missing_docs)] // documentation missing in model
     pub fn set_inbound_call(mut self, input: std::option::Option<bool>) -> Self {
-        self.inbound_call = input; self
+        self.inbound_call = input;
+        self
     }
     #[allow(missing_docs)] // documentation missing in model
     pub fn outbound_call(mut self, input: bool) -> Self {
@@ -83,7 +84,8 @@ impl PhoneNumberCapabilitiesBuilder {
     }
     #[allow(missing_docs)] // documentation missing in model
     pub fn set_outbound_call(mut self, input: std::option::Option<bool>) -> Self {
-        self.outbound_call = input; self
+        self.outbound_call = input;
+        self
     }
     #[allow(missing_docs)] // documentation missing in model
     pub fn inbound_sms(mut self, input: bool) -> Self {
@@ -92,7 +94,8 @@ impl PhoneNumberCapabilitiesBuilder {
     }
     #[allow(missing_docs)] // documentation missing in model
     pub fn set_inbound_sms(mut self, input: std::option::Option<bool>) -> Self {
-        self.inbound_sms = input; self
+        self.inbound_sms = input;
+        self
     }
     #[allow(missing_docs)] // documentation missing in model
     pub fn outbound_sms(mut self, input: bool) -> Self {
@@ -101,7 +104,8 @@ impl PhoneNumberCapabilitiesBuilder {
     }
     #[allow(missing_docs)] // documentation missing in model
     pub fn set_outbound_sms(mut self, input: std::option::Option<bool>) -> Self {
-        self.outbound_sms = input; self
+        self.outbound_sms = input;
+        self
     }
     #[allow(missing_docs)] // documentation missing in model
     pub fn inbound_mms(mut self, input: bool) -> Self {
@@ -110,7 +114,8 @@ impl PhoneNumberCapabilitiesBuilder {
     }
     #[allow(missing_docs)] // documentation missing in model
     pub fn set_inbound_mms(mut self, input: std::option::Option<bool>) -> Self {
-        self.inbound_mms = input; self
+        self.inbound_mms = input;
+        self
     }
     #[allow(missing_docs)] // documentation missing in model
     pub fn outbound_mms(mut self, input: bool) -> Self {
@@ -119,24 +124,18 @@ impl PhoneNumberCapabilitiesBuilder {
     }
     #[allow(missing_docs)] // documentation missing in model
     pub fn set_outbound_mms(mut self, input: std::option::Option<bool>) -> Self {
-        self.outbound_mms = input; self
+        self.outbound_mms = input;
+        self
     }
     /// Consumes the builder and constructs a [`PhoneNumberCapabilities`](crate::types::PhoneNumberCapabilities).
     pub fn build(self) -> crate::types::PhoneNumberCapabilities {
         crate::types::PhoneNumberCapabilities {
-            inbound_call: self.inbound_call
-            ,
-            outbound_call: self.outbound_call
-            ,
-            inbound_sms: self.inbound_sms
-            ,
-            outbound_sms: self.outbound_sms
-            ,
-            inbound_mms: self.inbound_mms
-            ,
-            outbound_mms: self.outbound_mms
-            ,
+            inbound_call: self.inbound_call,
+            outbound_call: self.outbound_call,
+            inbound_sms: self.inbound_sms,
+            outbound_sms: self.outbound_sms,
+            inbound_mms: self.inbound_mms,
+            outbound_mms: self.outbound_mms,
         }
     }
 }
-

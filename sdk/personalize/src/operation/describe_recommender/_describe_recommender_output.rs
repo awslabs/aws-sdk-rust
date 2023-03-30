@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeRecommenderOutput  {
+pub struct DescribeRecommenderOutput {
     /// <p>The properties of the recommender.</p>
     #[doc(hidden)]
     pub recommender: std::option::Option<crate::types::Recommender>,
@@ -10,19 +10,21 @@ pub struct DescribeRecommenderOutput  {
 }
 impl DescribeRecommenderOutput {
     /// <p>The properties of the recommender.</p>
-    pub fn recommender(&self) -> std::option::Option<& crate::types::Recommender> {
+    pub fn recommender(&self) -> std::option::Option<&crate::types::Recommender> {
         self.recommender.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for DescribeRecommenderOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl DescribeRecommenderOutput {
     /// Creates a new builder-style object to manufacture [`DescribeRecommenderOutput`](crate::operation::describe_recommender::DescribeRecommenderOutput).
-    pub fn builder() -> crate::operation::describe_recommender::builders::DescribeRecommenderOutputBuilder {
-        crate::operation::describe_recommender::builders::DescribeRecommenderOutputBuilder::default()
+    pub fn builder(
+    ) -> crate::operation::describe_recommender::builders::DescribeRecommenderOutputBuilder {
+        crate::operation::describe_recommender::builders::DescribeRecommenderOutputBuilder::default(
+        )
     }
 }
 
@@ -40,25 +42,27 @@ impl DescribeRecommenderOutputBuilder {
         self
     }
     /// <p>The properties of the recommender.</p>
-    pub fn set_recommender(mut self, input: std::option::Option<crate::types::Recommender>) -> Self {
-        self.recommender = input; self
+    pub fn set_recommender(
+        mut self,
+        input: std::option::Option<crate::types::Recommender>,
+    ) -> Self {
+        self.recommender = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`DescribeRecommenderOutput`](crate::operation::describe_recommender::DescribeRecommenderOutput).
     pub fn build(self) -> crate::operation::describe_recommender::DescribeRecommenderOutput {
         crate::operation::describe_recommender::DescribeRecommenderOutput {
-            recommender: self.recommender
-            ,
+            recommender: self.recommender,
             _request_id: self._request_id,
         }
     }
 }
-

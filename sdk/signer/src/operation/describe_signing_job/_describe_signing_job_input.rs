@@ -2,20 +2,21 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeSigningJobInput  {
+pub struct DescribeSigningJobInput {
     /// <p>The ID of the signing job on input.</p>
     #[doc(hidden)]
     pub job_id: std::option::Option<std::string::String>,
 }
 impl DescribeSigningJobInput {
     /// <p>The ID of the signing job on input.</p>
-    pub fn job_id(&self) -> std::option::Option<& str> {
+    pub fn job_id(&self) -> std::option::Option<&str> {
         self.job_id.as_deref()
     }
 }
 impl DescribeSigningJobInput {
     /// Creates a new builder-style object to manufacture [`DescribeSigningJobInput`](crate::operation::describe_signing_job::DescribeSigningJobInput).
-    pub fn builder() -> crate::operation::describe_signing_job::builders::DescribeSigningJobInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::describe_signing_job::builders::DescribeSigningJobInputBuilder {
         crate::operation::describe_signing_job::builders::DescribeSigningJobInputBuilder::default()
     }
 }
@@ -34,16 +35,20 @@ impl DescribeSigningJobInputBuilder {
     }
     /// <p>The ID of the signing job on input.</p>
     pub fn set_job_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.job_id = input; self
+        self.job_id = input;
+        self
     }
     /// Consumes the builder and constructs a [`DescribeSigningJobInput`](crate::operation::describe_signing_job::DescribeSigningJobInput).
-    pub fn build(self) -> Result<crate::operation::describe_signing_job::DescribeSigningJobInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::describe_signing_job::DescribeSigningJobInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::describe_signing_job::DescribeSigningJobInput {
-                job_id: self.job_id
-                ,
-            }
+                job_id: self.job_id,
+            },
         )
     }
 }
-

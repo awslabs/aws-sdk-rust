@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeImageVersionInput  {
+pub struct DescribeImageVersionInput {
     /// <p>The name of the image.</p>
     #[doc(hidden)]
     pub image_name: std::option::Option<std::string::String>,
@@ -15,7 +15,7 @@ pub struct DescribeImageVersionInput  {
 }
 impl DescribeImageVersionInput {
     /// <p>The name of the image.</p>
-    pub fn image_name(&self) -> std::option::Option<& str> {
+    pub fn image_name(&self) -> std::option::Option<&str> {
         self.image_name.as_deref()
     }
     /// <p>The version of the image. If not specified, the latest version is described.</p>
@@ -23,13 +23,14 @@ impl DescribeImageVersionInput {
         self.version
     }
     /// <p>The alias of the image version.</p>
-    pub fn alias(&self) -> std::option::Option<& str> {
+    pub fn alias(&self) -> std::option::Option<&str> {
         self.alias.as_deref()
     }
 }
 impl DescribeImageVersionInput {
     /// Creates a new builder-style object to manufacture [`DescribeImageVersionInput`](crate::operation::describe_image_version::DescribeImageVersionInput).
-    pub fn builder() -> crate::operation::describe_image_version::builders::DescribeImageVersionInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::describe_image_version::builders::DescribeImageVersionInputBuilder {
         crate::operation::describe_image_version::builders::DescribeImageVersionInputBuilder::default()
     }
 }
@@ -50,7 +51,8 @@ impl DescribeImageVersionInputBuilder {
     }
     /// <p>The name of the image.</p>
     pub fn set_image_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.image_name = input; self
+        self.image_name = input;
+        self
     }
     /// <p>The version of the image. If not specified, the latest version is described.</p>
     pub fn version(mut self, input: i32) -> Self {
@@ -59,7 +61,8 @@ impl DescribeImageVersionInputBuilder {
     }
     /// <p>The version of the image. If not specified, the latest version is described.</p>
     pub fn set_version(mut self, input: std::option::Option<i32>) -> Self {
-        self.version = input; self
+        self.version = input;
+        self
     }
     /// <p>The alias of the image version.</p>
     pub fn alias(mut self, input: impl Into<std::string::String>) -> Self {
@@ -68,20 +71,22 @@ impl DescribeImageVersionInputBuilder {
     }
     /// <p>The alias of the image version.</p>
     pub fn set_alias(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.alias = input; self
+        self.alias = input;
+        self
     }
     /// Consumes the builder and constructs a [`DescribeImageVersionInput`](crate::operation::describe_image_version::DescribeImageVersionInput).
-    pub fn build(self) -> Result<crate::operation::describe_image_version::DescribeImageVersionInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::describe_image_version::DescribeImageVersionInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::describe_image_version::DescribeImageVersionInput {
-                image_name: self.image_name
-                ,
-                version: self.version
-                ,
-                alias: self.alias
-                ,
-            }
+                image_name: self.image_name,
+                version: self.version,
+                alias: self.alias,
+            },
         )
     }
 }
-

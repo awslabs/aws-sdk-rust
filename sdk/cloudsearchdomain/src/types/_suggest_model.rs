@@ -3,7 +3,7 @@
 /// <p>Container for the suggestion information returned in a <code>SuggestResponse</code>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SuggestModel  {
+pub struct SuggestModel {
     /// <p>The query string specified in the suggest request.</p>
     #[doc(hidden)]
     pub query: std::option::Option<std::string::String>,
@@ -16,7 +16,7 @@ pub struct SuggestModel  {
 }
 impl SuggestModel {
     /// <p>The query string specified in the suggest request.</p>
-    pub fn query(&self) -> std::option::Option<& str> {
+    pub fn query(&self) -> std::option::Option<&str> {
         self.query.as_deref()
     }
     /// <p>The number of documents that were found to match the query string.</p>
@@ -24,7 +24,7 @@ impl SuggestModel {
         self.found
     }
     /// <p>The documents that match the query string.</p>
-    pub fn suggestions(&self) -> std::option::Option<& [crate::types::SuggestionMatch]> {
+    pub fn suggestions(&self) -> std::option::Option<&[crate::types::SuggestionMatch]> {
         self.suggestions.as_deref()
     }
 }
@@ -51,7 +51,8 @@ impl SuggestModelBuilder {
     }
     /// <p>The query string specified in the suggest request.</p>
     pub fn set_query(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.query = input; self
+        self.query = input;
+        self
     }
     /// <p>The number of documents that were found to match the query string.</p>
     pub fn found(mut self, input: i64) -> Self {
@@ -60,7 +61,8 @@ impl SuggestModelBuilder {
     }
     /// <p>The number of documents that were found to match the query string.</p>
     pub fn set_found(mut self, input: std::option::Option<i64>) -> Self {
-        self.found = input; self
+        self.found = input;
+        self
     }
     /// Appends an item to `suggestions`.
     ///
@@ -69,25 +71,24 @@ impl SuggestModelBuilder {
     /// <p>The documents that match the query string.</p>
     pub fn suggestions(mut self, input: crate::types::SuggestionMatch) -> Self {
         let mut v = self.suggestions.unwrap_or_default();
-                        v.push(input);
-                        self.suggestions = Some(v);
-                        self
+        v.push(input);
+        self.suggestions = Some(v);
+        self
     }
     /// <p>The documents that match the query string.</p>
-    pub fn set_suggestions(mut self, input: std::option::Option<std::vec::Vec<crate::types::SuggestionMatch>>) -> Self {
-        self.suggestions = input; self
+    pub fn set_suggestions(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::SuggestionMatch>>,
+    ) -> Self {
+        self.suggestions = input;
+        self
     }
     /// Consumes the builder and constructs a [`SuggestModel`](crate::types::SuggestModel).
     pub fn build(self) -> crate::types::SuggestModel {
         crate::types::SuggestModel {
-            query: self.query
-            ,
-            found: self.found
-                .unwrap_or_default()
-            ,
-            suggestions: self.suggestions
-            ,
+            query: self.query,
+            found: self.found.unwrap_or_default(),
+            suggestions: self.suggestions,
         }
     }
 }
-

@@ -3,7 +3,7 @@
 /// <p>For <code>NetworkConnectionAction</code> and <code>PortProbeDetails</code>, <code>LocalPortDetails</code> provides information about the local port that was involved in the action.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ActionLocalPortDetails  {
+pub struct ActionLocalPortDetails {
     /// <p>The number of the port.</p>
     #[doc(hidden)]
     pub port: i32,
@@ -17,7 +17,7 @@ impl ActionLocalPortDetails {
         self.port
     }
     /// <p>The port name of the local connection.</p>
-    pub fn port_name(&self) -> std::option::Option<& str> {
+    pub fn port_name(&self) -> std::option::Option<&str> {
         self.port_name.as_deref()
     }
 }
@@ -43,7 +43,8 @@ impl ActionLocalPortDetailsBuilder {
     }
     /// <p>The number of the port.</p>
     pub fn set_port(mut self, input: std::option::Option<i32>) -> Self {
-        self.port = input; self
+        self.port = input;
+        self
     }
     /// <p>The port name of the local connection.</p>
     pub fn port_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -52,17 +53,14 @@ impl ActionLocalPortDetailsBuilder {
     }
     /// <p>The port name of the local connection.</p>
     pub fn set_port_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.port_name = input; self
+        self.port_name = input;
+        self
     }
     /// Consumes the builder and constructs a [`ActionLocalPortDetails`](crate::types::ActionLocalPortDetails).
     pub fn build(self) -> crate::types::ActionLocalPortDetails {
         crate::types::ActionLocalPortDetails {
-            port: self.port
-                .unwrap_or_default()
-            ,
-            port_name: self.port_name
-            ,
+            port: self.port.unwrap_or_default(),
+            port_name: self.port_name,
         }
     }
 }
-

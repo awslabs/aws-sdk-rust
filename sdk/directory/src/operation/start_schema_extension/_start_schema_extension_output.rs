@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct StartSchemaExtensionOutput  {
+pub struct StartSchemaExtensionOutput {
     /// <p>The identifier of the schema extension that will be applied.</p>
     #[doc(hidden)]
     pub schema_extension_id: std::option::Option<std::string::String>,
@@ -10,18 +10,19 @@ pub struct StartSchemaExtensionOutput  {
 }
 impl StartSchemaExtensionOutput {
     /// <p>The identifier of the schema extension that will be applied.</p>
-    pub fn schema_extension_id(&self) -> std::option::Option<& str> {
+    pub fn schema_extension_id(&self) -> std::option::Option<&str> {
         self.schema_extension_id.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for StartSchemaExtensionOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl StartSchemaExtensionOutput {
     /// Creates a new builder-style object to manufacture [`StartSchemaExtensionOutput`](crate::operation::start_schema_extension::StartSchemaExtensionOutput).
-    pub fn builder() -> crate::operation::start_schema_extension::builders::StartSchemaExtensionOutputBuilder {
+    pub fn builder(
+    ) -> crate::operation::start_schema_extension::builders::StartSchemaExtensionOutputBuilder {
         crate::operation::start_schema_extension::builders::StartSchemaExtensionOutputBuilder::default()
     }
 }
@@ -40,25 +41,27 @@ impl StartSchemaExtensionOutputBuilder {
         self
     }
     /// <p>The identifier of the schema extension that will be applied.</p>
-    pub fn set_schema_extension_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.schema_extension_id = input; self
+    pub fn set_schema_extension_id(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.schema_extension_id = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`StartSchemaExtensionOutput`](crate::operation::start_schema_extension::StartSchemaExtensionOutput).
     pub fn build(self) -> crate::operation::start_schema_extension::StartSchemaExtensionOutput {
         crate::operation::start_schema_extension::StartSchemaExtensionOutput {
-            schema_extension_id: self.schema_extension_id
-            ,
+            schema_extension_id: self.schema_extension_id,
             _request_id: self._request_id,
         }
     }
 }
-

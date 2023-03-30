@@ -3,7 +3,7 @@
 /// <p>Indicates the pose of the face as determined by its pitch, roll, and yaw.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Pose  {
+pub struct Pose {
     /// <p>Value representing the face rotation on the roll axis.</p>
     #[doc(hidden)]
     pub roll: std::option::Option<f32>,
@@ -51,7 +51,8 @@ impl PoseBuilder {
     }
     /// <p>Value representing the face rotation on the roll axis.</p>
     pub fn set_roll(mut self, input: std::option::Option<f32>) -> Self {
-        self.roll = input; self
+        self.roll = input;
+        self
     }
     /// <p>Value representing the face rotation on the yaw axis.</p>
     pub fn yaw(mut self, input: f32) -> Self {
@@ -60,7 +61,8 @@ impl PoseBuilder {
     }
     /// <p>Value representing the face rotation on the yaw axis.</p>
     pub fn set_yaw(mut self, input: std::option::Option<f32>) -> Self {
-        self.yaw = input; self
+        self.yaw = input;
+        self
     }
     /// <p>Value representing the face rotation on the pitch axis.</p>
     pub fn pitch(mut self, input: f32) -> Self {
@@ -69,18 +71,15 @@ impl PoseBuilder {
     }
     /// <p>Value representing the face rotation on the pitch axis.</p>
     pub fn set_pitch(mut self, input: std::option::Option<f32>) -> Self {
-        self.pitch = input; self
+        self.pitch = input;
+        self
     }
     /// Consumes the builder and constructs a [`Pose`](crate::types::Pose).
     pub fn build(self) -> crate::types::Pose {
         crate::types::Pose {
-            roll: self.roll
-            ,
-            yaw: self.yaw
-            ,
-            pitch: self.pitch
-            ,
+            roll: self.roll,
+            yaw: self.yaw,
+            pitch: self.pitch,
         }
     }
 }
-

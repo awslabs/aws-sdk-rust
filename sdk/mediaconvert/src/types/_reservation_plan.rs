@@ -3,7 +3,7 @@
 /// Details about the pricing plan for your reserved queue. Required for reserved queues and not applicable to on-demand queues.
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ReservationPlan  {
+pub struct ReservationPlan {
     /// The length of the term of your reserved queue pricing plan commitment.
     #[doc(hidden)]
     pub commitment: std::option::Option<crate::types::Commitment>,
@@ -25,19 +25,19 @@ pub struct ReservationPlan  {
 }
 impl ReservationPlan {
     /// The length of the term of your reserved queue pricing plan commitment.
-    pub fn commitment(&self) -> std::option::Option<& crate::types::Commitment> {
+    pub fn commitment(&self) -> std::option::Option<&crate::types::Commitment> {
         self.commitment.as_ref()
     }
     /// The timestamp in epoch seconds for when the current pricing plan term for this reserved queue expires.
-    pub fn expires_at(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
+    pub fn expires_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.expires_at.as_ref()
     }
     /// The timestamp in epoch seconds for when you set up the current pricing plan for this reserved queue.
-    pub fn purchased_at(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
+    pub fn purchased_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.purchased_at.as_ref()
     }
     /// Specifies whether the term of your reserved queue pricing plan is automatically extended (AUTO_RENEW) or expires (EXPIRE) at the end of the term.
-    pub fn renewal_type(&self) -> std::option::Option<& crate::types::RenewalType> {
+    pub fn renewal_type(&self) -> std::option::Option<&crate::types::RenewalType> {
         self.renewal_type.as_ref()
     }
     /// Specifies the number of reserved transcode slots (RTS) for this queue. The number of RTS determines how many jobs the queue can process in parallel; each RTS can process one job at a time. When you increase this number, you extend your existing commitment with a new 12-month commitment for a larger number of RTS. The new commitment begins when you purchase the additional capacity. You can't decrease the number of RTS in your reserved queue.
@@ -45,7 +45,7 @@ impl ReservationPlan {
         self.reserved_slots
     }
     /// Specifies whether the pricing plan for your reserved queue is ACTIVE or EXPIRED.
-    pub fn status(&self) -> std::option::Option<& crate::types::ReservationPlanStatus> {
+    pub fn status(&self) -> std::option::Option<&crate::types::ReservationPlanStatus> {
         self.status.as_ref()
     }
 }
@@ -75,7 +75,8 @@ impl ReservationPlanBuilder {
     }
     /// The length of the term of your reserved queue pricing plan commitment.
     pub fn set_commitment(mut self, input: std::option::Option<crate::types::Commitment>) -> Self {
-        self.commitment = input; self
+        self.commitment = input;
+        self
     }
     /// The timestamp in epoch seconds for when the current pricing plan term for this reserved queue expires.
     pub fn expires_at(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -83,8 +84,12 @@ impl ReservationPlanBuilder {
         self
     }
     /// The timestamp in epoch seconds for when the current pricing plan term for this reserved queue expires.
-    pub fn set_expires_at(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.expires_at = input; self
+    pub fn set_expires_at(
+        mut self,
+        input: std::option::Option<aws_smithy_types::DateTime>,
+    ) -> Self {
+        self.expires_at = input;
+        self
     }
     /// The timestamp in epoch seconds for when you set up the current pricing plan for this reserved queue.
     pub fn purchased_at(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -92,8 +97,12 @@ impl ReservationPlanBuilder {
         self
     }
     /// The timestamp in epoch seconds for when you set up the current pricing plan for this reserved queue.
-    pub fn set_purchased_at(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.purchased_at = input; self
+    pub fn set_purchased_at(
+        mut self,
+        input: std::option::Option<aws_smithy_types::DateTime>,
+    ) -> Self {
+        self.purchased_at = input;
+        self
     }
     /// Specifies whether the term of your reserved queue pricing plan is automatically extended (AUTO_RENEW) or expires (EXPIRE) at the end of the term.
     pub fn renewal_type(mut self, input: crate::types::RenewalType) -> Self {
@@ -101,8 +110,12 @@ impl ReservationPlanBuilder {
         self
     }
     /// Specifies whether the term of your reserved queue pricing plan is automatically extended (AUTO_RENEW) or expires (EXPIRE) at the end of the term.
-    pub fn set_renewal_type(mut self, input: std::option::Option<crate::types::RenewalType>) -> Self {
-        self.renewal_type = input; self
+    pub fn set_renewal_type(
+        mut self,
+        input: std::option::Option<crate::types::RenewalType>,
+    ) -> Self {
+        self.renewal_type = input;
+        self
     }
     /// Specifies the number of reserved transcode slots (RTS) for this queue. The number of RTS determines how many jobs the queue can process in parallel; each RTS can process one job at a time. When you increase this number, you extend your existing commitment with a new 12-month commitment for a larger number of RTS. The new commitment begins when you purchase the additional capacity. You can't decrease the number of RTS in your reserved queue.
     pub fn reserved_slots(mut self, input: i32) -> Self {
@@ -111,7 +124,8 @@ impl ReservationPlanBuilder {
     }
     /// Specifies the number of reserved transcode slots (RTS) for this queue. The number of RTS determines how many jobs the queue can process in parallel; each RTS can process one job at a time. When you increase this number, you extend your existing commitment with a new 12-month commitment for a larger number of RTS. The new commitment begins when you purchase the additional capacity. You can't decrease the number of RTS in your reserved queue.
     pub fn set_reserved_slots(mut self, input: std::option::Option<i32>) -> Self {
-        self.reserved_slots = input; self
+        self.reserved_slots = input;
+        self
     }
     /// Specifies whether the pricing plan for your reserved queue is ACTIVE or EXPIRED.
     pub fn status(mut self, input: crate::types::ReservationPlanStatus) -> Self {
@@ -119,26 +133,22 @@ impl ReservationPlanBuilder {
         self
     }
     /// Specifies whether the pricing plan for your reserved queue is ACTIVE or EXPIRED.
-    pub fn set_status(mut self, input: std::option::Option<crate::types::ReservationPlanStatus>) -> Self {
-        self.status = input; self
+    pub fn set_status(
+        mut self,
+        input: std::option::Option<crate::types::ReservationPlanStatus>,
+    ) -> Self {
+        self.status = input;
+        self
     }
     /// Consumes the builder and constructs a [`ReservationPlan`](crate::types::ReservationPlan).
     pub fn build(self) -> crate::types::ReservationPlan {
         crate::types::ReservationPlan {
-            commitment: self.commitment
-            ,
-            expires_at: self.expires_at
-            ,
-            purchased_at: self.purchased_at
-            ,
-            renewal_type: self.renewal_type
-            ,
-            reserved_slots: self.reserved_slots
-                .unwrap_or_default()
-            ,
-            status: self.status
-            ,
+            commitment: self.commitment,
+            expires_at: self.expires_at,
+            purchased_at: self.purchased_at,
+            renewal_type: self.renewal_type,
+            reserved_slots: self.reserved_slots.unwrap_or_default(),
+            status: self.status,
         }
     }
 }
-

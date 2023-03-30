@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetRegionsOutput  {
+pub struct GetRegionsOutput {
     /// <p>An array of key-value pairs containing information about your get regions request.</p>
     #[doc(hidden)]
     pub regions: std::option::Option<std::vec::Vec<crate::types::Region>>,
@@ -10,15 +10,15 @@ pub struct GetRegionsOutput  {
 }
 impl GetRegionsOutput {
     /// <p>An array of key-value pairs containing information about your get regions request.</p>
-    pub fn regions(&self) -> std::option::Option<& [crate::types::Region]> {
+    pub fn regions(&self) -> std::option::Option<&[crate::types::Region]> {
         self.regions.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for GetRegionsOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl GetRegionsOutput {
     /// Creates a new builder-style object to manufacture [`GetRegionsOutput`](crate::operation::get_regions::GetRegionsOutput).
     pub fn builder() -> crate::operation::get_regions::builders::GetRegionsOutputBuilder {
@@ -41,30 +41,32 @@ impl GetRegionsOutputBuilder {
     /// <p>An array of key-value pairs containing information about your get regions request.</p>
     pub fn regions(mut self, input: crate::types::Region) -> Self {
         let mut v = self.regions.unwrap_or_default();
-                        v.push(input);
-                        self.regions = Some(v);
-                        self
+        v.push(input);
+        self.regions = Some(v);
+        self
     }
     /// <p>An array of key-value pairs containing information about your get regions request.</p>
-    pub fn set_regions(mut self, input: std::option::Option<std::vec::Vec<crate::types::Region>>) -> Self {
-        self.regions = input; self
+    pub fn set_regions(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::Region>>,
+    ) -> Self {
+        self.regions = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`GetRegionsOutput`](crate::operation::get_regions::GetRegionsOutput).
     pub fn build(self) -> crate::operation::get_regions::GetRegionsOutput {
         crate::operation::get_regions::GetRegionsOutput {
-            regions: self.regions
-            ,
+            regions: self.regions,
             _request_id: self._request_id,
         }
     }
 }
-

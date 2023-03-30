@@ -4,51 +4,73 @@ pub use crate::operation::create_application::_create_application_output::Create
 pub use crate::operation::create_application::_create_application_input::CreateApplicationInputBuilder;
 
 /// Fluent builder constructing a request to `CreateApplication`.
-/// 
-/// <p>Creates an application.</p> 
-/// <p>Applications are an Amazon AppStream 2.0 resource that stores the details about how to launch applications on Elastic fleet streaming instances. An application consists of the launch details, icon, and display name. Applications are associated with an app block that contains the application binaries and other files. The applications assigned to an Elastic fleet are the applications users can launch. </p> 
+///
+/// <p>Creates an application.</p>
+/// <p>Applications are an Amazon AppStream 2.0 resource that stores the details about how to launch applications on Elastic fleet streaming instances. An application consists of the launch details, icon, and display name. Applications are associated with an app block that contains the application binaries and other files. The applications assigned to an Elastic fleet are the applications users can launch. </p>
 /// <p>This is only supported for Elastic fleets.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct CreateApplicationFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::create_application::builders::CreateApplicationInputBuilder
-            }
-impl CreateApplicationFluentBuilder  {
+    handle: std::sync::Arc<crate::client::Handle>,
+    inner: crate::operation::create_application::builders::CreateApplicationInputBuilder,
+}
+impl CreateApplicationFluentBuilder {
     /// Creates a new `CreateApplication`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
-                    /// sent. The operation's inner [http::Request] can be modified as well.
-                    pub async fn customize(self) -> std::result::Result<
-                        crate::client::customize::CustomizableOperation<crate::operation::create_application::CreateApplication, aws_http::retry::AwsResponseRetryClassifier,>,
-                        aws_smithy_http::result::SdkError<crate::operation::create_application::CreateApplicationError>
-                    >  {
-                        let handle = self.handle.clone();
-                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-                    }
-    
-                    /// Sends the request and returns the response.
-                    ///
-                    /// If an error occurs, an `SdkError` will be returned with additional details that
-                    /// can be matched against.
-                    ///
-                    /// By default, any retryable failures will be retried twice. Retry behavior
-                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                    /// set when configuring the client.
-                    pub async fn send(self) -> std::result::Result<crate::operation::create_application::CreateApplicationOutput, aws_smithy_http::result::SdkError<crate::operation::create_application::CreateApplicationError>>
-                     {
-                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&self.handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        self.handle.client.call(op).await
-                    }
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle,
+            inner: Default::default(),
+        }
+    }
+
+    /// Consume this builder, creating a customizable operation that can be modified before being
+    /// sent. The operation's inner [http::Request] can be modified as well.
+    pub async fn customize(
+        self,
+    ) -> std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::create_application::CreateApplication,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::result::SdkError<
+            crate::operation::create_application::CreateApplicationError,
+        >,
+    > {
+        let handle = self.handle.clone();
+        let operation = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+    }
+
+    /// Sends the request and returns the response.
+    ///
+    /// If an error occurs, an `SdkError` will be returned with additional details that
+    /// can be matched against.
+    ///
+    /// By default, any retryable failures will be retried twice. Retry behavior
+    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+    /// set when configuring the client.
+    pub async fn send(
+        self,
+    ) -> std::result::Result<
+        crate::operation::create_application::CreateApplicationOutput,
+        aws_smithy_http::result::SdkError<
+            crate::operation::create_application::CreateApplicationError,
+        >,
+    > {
+        let op = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&self.handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        self.handle.client.call(op).await
+    }
     /// <p>The name of the application. This name is visible to users when display name is not specified.</p>
     pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.name(input.into());
@@ -85,7 +107,10 @@ impl CreateApplicationFluentBuilder  {
         self
     }
     /// <p>The location in S3 of the application icon.</p>
-    pub fn set_icon_s3_location(mut self, input: std::option::Option<crate::types::S3Location>) -> Self {
+    pub fn set_icon_s3_location(
+        mut self,
+        input: std::option::Option<crate::types::S3Location>,
+    ) -> Self {
         self.inner = self.inner.set_icon_s3_location(input);
         self
     }
@@ -105,7 +130,10 @@ impl CreateApplicationFluentBuilder  {
         self
     }
     /// <p>The working directory of the application.</p>
-    pub fn set_working_directory(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_working_directory(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_working_directory(input);
         self
     }
@@ -115,7 +143,10 @@ impl CreateApplicationFluentBuilder  {
         self
     }
     /// <p>The launch parameters of the application.</p>
-    pub fn set_launch_parameters(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_launch_parameters(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_launch_parameters(input);
         self
     }
@@ -129,7 +160,10 @@ impl CreateApplicationFluentBuilder  {
         self
     }
     /// <p>The platforms the application supports. WINDOWS_SERVER_2019 and AMAZON_LINUX2 are supported for Elastic fleets.</p>
-    pub fn set_platforms(mut self, input: std::option::Option<std::vec::Vec<crate::types::PlatformType>>) -> Self {
+    pub fn set_platforms(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::PlatformType>>,
+    ) -> Self {
         self.inner = self.inner.set_platforms(input);
         self
     }
@@ -143,7 +177,10 @@ impl CreateApplicationFluentBuilder  {
         self
     }
     /// <p>The instance families the application supports. Valid values are GENERAL_PURPOSE and GRAPHICS_G4.</p>
-    pub fn set_instance_families(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+    pub fn set_instance_families(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
         self.inner = self.inner.set_instance_families(input);
         self
     }
@@ -162,14 +199,22 @@ impl CreateApplicationFluentBuilder  {
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// <p>The tags assigned to the application.</p>
-    pub fn tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
+    pub fn tags(
+        mut self,
+        k: impl Into<std::string::String>,
+        v: impl Into<std::string::String>,
+    ) -> Self {
         self.inner = self.inner.tags(k.into(), v.into());
         self
     }
     /// <p>The tags assigned to the application.</p>
-    pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+    pub fn set_tags(
+        mut self,
+        input: std::option::Option<
+            std::collections::HashMap<std::string::String, std::string::String>,
+        >,
+    ) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }
 }
-

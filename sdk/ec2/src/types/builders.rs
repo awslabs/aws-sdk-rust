@@ -1374,4 +1374,3 @@ pub use crate::types::_capacity_reservation_fleet_cancellation_state::CapacityRe
 pub use crate::types::_instance_event_window_association_request::InstanceEventWindowAssociationRequestBuilder;
 
 pub use crate::types::_assigned_private_ip_address::AssignedPrivateIpAddressBuilder;
-

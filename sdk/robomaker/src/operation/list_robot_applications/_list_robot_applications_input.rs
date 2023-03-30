@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListRobotApplicationsInput  {
+pub struct ListRobotApplicationsInput {
     /// <p>The version qualifier of the robot application.</p>
     #[doc(hidden)]
     pub version_qualifier: std::option::Option<std::string::String>,
@@ -12,33 +12,35 @@ pub struct ListRobotApplicationsInput  {
     /// <p>When this parameter is used, <code>ListRobotApplications</code> only returns <code>maxResults</code> results in a single page along with a <code>nextToken</code> response element. The remaining results of the initial request can be seen by sending another <code>ListRobotApplications</code> request with the returned <code>nextToken</code> value. This value can be between 1 and 100. If this parameter is not used, then <code>ListRobotApplications</code> returns up to 100 results and a <code>nextToken</code> value if applicable. </p>
     #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
-    /// <p>Optional filters to limit results.</p> 
+    /// <p>Optional filters to limit results.</p>
     /// <p>The filter name <code>name</code> is supported. When filtering, you must use the complete value of the filtered item. You can use up to three filters.</p>
     #[doc(hidden)]
     pub filters: std::option::Option<std::vec::Vec<crate::types::Filter>>,
 }
 impl ListRobotApplicationsInput {
     /// <p>The version qualifier of the robot application.</p>
-    pub fn version_qualifier(&self) -> std::option::Option<& str> {
+    pub fn version_qualifier(&self) -> std::option::Option<&str> {
         self.version_qualifier.as_deref()
     }
     /// <p>If the previous paginated request did not return all of the remaining results, the response object's <code>nextToken</code> parameter value is set to a token. To retrieve the next set of results, call <code>ListRobotApplications</code> again and assign that token to the request object's <code>nextToken</code> parameter. If there are no remaining results, the previous response object's NextToken parameter is set to null. </p>
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
     /// <p>When this parameter is used, <code>ListRobotApplications</code> only returns <code>maxResults</code> results in a single page along with a <code>nextToken</code> response element. The remaining results of the initial request can be seen by sending another <code>ListRobotApplications</code> request with the returned <code>nextToken</code> value. This value can be between 1 and 100. If this parameter is not used, then <code>ListRobotApplications</code> returns up to 100 results and a <code>nextToken</code> value if applicable. </p>
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
-    /// <p>Optional filters to limit results.</p> 
+    /// <p>Optional filters to limit results.</p>
     /// <p>The filter name <code>name</code> is supported. When filtering, you must use the complete value of the filtered item. You can use up to three filters.</p>
-    pub fn filters(&self) -> std::option::Option<& [crate::types::Filter]> {
+    pub fn filters(&self) -> std::option::Option<&[crate::types::Filter]> {
         self.filters.as_deref()
     }
 }
 impl ListRobotApplicationsInput {
     /// Creates a new builder-style object to manufacture [`ListRobotApplicationsInput`](crate::operation::list_robot_applications::ListRobotApplicationsInput).
-    pub fn builder() -> crate::operation::list_robot_applications::builders::ListRobotApplicationsInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::list_robot_applications::builders::ListRobotApplicationsInputBuilder
+    {
         crate::operation::list_robot_applications::builders::ListRobotApplicationsInputBuilder::default()
     }
 }
@@ -59,8 +61,12 @@ impl ListRobotApplicationsInputBuilder {
         self
     }
     /// <p>The version qualifier of the robot application.</p>
-    pub fn set_version_qualifier(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.version_qualifier = input; self
+    pub fn set_version_qualifier(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.version_qualifier = input;
+        self
     }
     /// <p>If the previous paginated request did not return all of the remaining results, the response object's <code>nextToken</code> parameter value is set to a token. To retrieve the next set of results, call <code>ListRobotApplications</code> again and assign that token to the request object's <code>nextToken</code> parameter. If there are no remaining results, the previous response object's NextToken parameter is set to null. </p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -69,7 +75,8 @@ impl ListRobotApplicationsInputBuilder {
     }
     /// <p>If the previous paginated request did not return all of the remaining results, the response object's <code>nextToken</code> parameter value is set to a token. To retrieve the next set of results, call <code>ListRobotApplications</code> again and assign that token to the request object's <code>nextToken</code> parameter. If there are no remaining results, the previous response object's NextToken parameter is set to null. </p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input; self
+        self.next_token = input;
+        self
     }
     /// <p>When this parameter is used, <code>ListRobotApplications</code> only returns <code>maxResults</code> results in a single page along with a <code>nextToken</code> response element. The remaining results of the initial request can be seen by sending another <code>ListRobotApplications</code> request with the returned <code>nextToken</code> value. This value can be between 1 and 100. If this parameter is not used, then <code>ListRobotApplications</code> returns up to 100 results and a <code>nextToken</code> value if applicable. </p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -78,39 +85,44 @@ impl ListRobotApplicationsInputBuilder {
     }
     /// <p>When this parameter is used, <code>ListRobotApplications</code> only returns <code>maxResults</code> results in a single page along with a <code>nextToken</code> response element. The remaining results of the initial request can be seen by sending another <code>ListRobotApplications</code> request with the returned <code>nextToken</code> value. This value can be between 1 and 100. If this parameter is not used, then <code>ListRobotApplications</code> returns up to 100 results and a <code>nextToken</code> value if applicable. </p>
     pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_results = input; self
+        self.max_results = input;
+        self
     }
     /// Appends an item to `filters`.
     ///
     /// To override the contents of this collection use [`set_filters`](Self::set_filters).
     ///
-    /// <p>Optional filters to limit results.</p> 
+    /// <p>Optional filters to limit results.</p>
     /// <p>The filter name <code>name</code> is supported. When filtering, you must use the complete value of the filtered item. You can use up to three filters.</p>
     pub fn filters(mut self, input: crate::types::Filter) -> Self {
         let mut v = self.filters.unwrap_or_default();
-                        v.push(input);
-                        self.filters = Some(v);
-                        self
+        v.push(input);
+        self.filters = Some(v);
+        self
     }
-    /// <p>Optional filters to limit results.</p> 
+    /// <p>Optional filters to limit results.</p>
     /// <p>The filter name <code>name</code> is supported. When filtering, you must use the complete value of the filtered item. You can use up to three filters.</p>
-    pub fn set_filters(mut self, input: std::option::Option<std::vec::Vec<crate::types::Filter>>) -> Self {
-        self.filters = input; self
+    pub fn set_filters(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::Filter>>,
+    ) -> Self {
+        self.filters = input;
+        self
     }
     /// Consumes the builder and constructs a [`ListRobotApplicationsInput`](crate::operation::list_robot_applications::ListRobotApplicationsInput).
-    pub fn build(self) -> Result<crate::operation::list_robot_applications::ListRobotApplicationsInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::list_robot_applications::ListRobotApplicationsInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::list_robot_applications::ListRobotApplicationsInput {
-                version_qualifier: self.version_qualifier
-                ,
-                next_token: self.next_token
-                ,
-                max_results: self.max_results
-                ,
-                filters: self.filters
-                ,
-            }
+                version_qualifier: self.version_qualifier,
+                next_token: self.next_token,
+                max_results: self.max_results,
+                filters: self.filters,
+            },
         )
     }
 }
-

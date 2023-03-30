@@ -3,7 +3,7 @@
 /// <p>A set of filters by which to return Source Servers.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeSourceServersRequestFilters  {
+pub struct DescribeSourceServersRequestFilters {
     /// <p>An array of Source Servers IDs that should be returned. An empty array means all Source Servers.</p>
     #[doc(hidden)]
     pub source_server_i_ds: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -16,15 +16,15 @@ pub struct DescribeSourceServersRequestFilters  {
 }
 impl DescribeSourceServersRequestFilters {
     /// <p>An array of Source Servers IDs that should be returned. An empty array means all Source Servers.</p>
-    pub fn source_server_i_ds(&self) -> std::option::Option<& [std::string::String]> {
+    pub fn source_server_i_ds(&self) -> std::option::Option<&[std::string::String]> {
         self.source_server_i_ds.as_deref()
     }
     /// <p>An ID that describes the hardware of the Source Server. This is either an EC2 instance id, a VMware uuid or a mac address.</p>
-    pub fn hardware_id(&self) -> std::option::Option<& str> {
+    pub fn hardware_id(&self) -> std::option::Option<&str> {
         self.hardware_id.as_deref()
     }
     /// <p>An array of staging account IDs that extended source servers belong to. An empty array means all source servers will be shown.</p>
-    pub fn staging_account_i_ds(&self) -> std::option::Option<& [std::string::String]> {
+    pub fn staging_account_i_ds(&self) -> std::option::Option<&[std::string::String]> {
         self.staging_account_i_ds.as_deref()
     }
 }
@@ -51,13 +51,17 @@ impl DescribeSourceServersRequestFiltersBuilder {
     /// <p>An array of Source Servers IDs that should be returned. An empty array means all Source Servers.</p>
     pub fn source_server_i_ds(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.source_server_i_ds.unwrap_or_default();
-                        v.push(input.into());
-                        self.source_server_i_ds = Some(v);
-                        self
+        v.push(input.into());
+        self.source_server_i_ds = Some(v);
+        self
     }
     /// <p>An array of Source Servers IDs that should be returned. An empty array means all Source Servers.</p>
-    pub fn set_source_server_i_ds(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-        self.source_server_i_ds = input; self
+    pub fn set_source_server_i_ds(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
+        self.source_server_i_ds = input;
+        self
     }
     /// <p>An ID that describes the hardware of the Source Server. This is either an EC2 instance id, a VMware uuid or a mac address.</p>
     pub fn hardware_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -66,7 +70,8 @@ impl DescribeSourceServersRequestFiltersBuilder {
     }
     /// <p>An ID that describes the hardware of the Source Server. This is either an EC2 instance id, a VMware uuid or a mac address.</p>
     pub fn set_hardware_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.hardware_id = input; self
+        self.hardware_id = input;
+        self
     }
     /// Appends an item to `staging_account_i_ds`.
     ///
@@ -75,24 +80,24 @@ impl DescribeSourceServersRequestFiltersBuilder {
     /// <p>An array of staging account IDs that extended source servers belong to. An empty array means all source servers will be shown.</p>
     pub fn staging_account_i_ds(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.staging_account_i_ds.unwrap_or_default();
-                        v.push(input.into());
-                        self.staging_account_i_ds = Some(v);
-                        self
+        v.push(input.into());
+        self.staging_account_i_ds = Some(v);
+        self
     }
     /// <p>An array of staging account IDs that extended source servers belong to. An empty array means all source servers will be shown.</p>
-    pub fn set_staging_account_i_ds(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-        self.staging_account_i_ds = input; self
+    pub fn set_staging_account_i_ds(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
+        self.staging_account_i_ds = input;
+        self
     }
     /// Consumes the builder and constructs a [`DescribeSourceServersRequestFilters`](crate::types::DescribeSourceServersRequestFilters).
     pub fn build(self) -> crate::types::DescribeSourceServersRequestFilters {
         crate::types::DescribeSourceServersRequestFilters {
-            source_server_i_ds: self.source_server_i_ds
-            ,
-            hardware_id: self.hardware_id
-            ,
-            staging_account_i_ds: self.staging_account_i_ds
-            ,
+            source_server_i_ds: self.source_server_i_ds,
+            hardware_id: self.hardware_id,
+            staging_account_i_ds: self.staging_account_i_ds,
         }
     }
 }
-

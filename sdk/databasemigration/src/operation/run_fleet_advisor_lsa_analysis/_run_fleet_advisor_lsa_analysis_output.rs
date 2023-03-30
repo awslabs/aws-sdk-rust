@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct RunFleetAdvisorLsaAnalysisOutput  {
+pub struct RunFleetAdvisorLsaAnalysisOutput {
     /// <p>The ID of the LSA analysis run.</p>
     #[doc(hidden)]
     pub lsa_analysis_id: std::option::Option<std::string::String>,
@@ -13,22 +13,22 @@ pub struct RunFleetAdvisorLsaAnalysisOutput  {
 }
 impl RunFleetAdvisorLsaAnalysisOutput {
     /// <p>The ID of the LSA analysis run.</p>
-    pub fn lsa_analysis_id(&self) -> std::option::Option<& str> {
+    pub fn lsa_analysis_id(&self) -> std::option::Option<&str> {
         self.lsa_analysis_id.as_deref()
     }
     /// <p>The status of the LSA analysis, for example <code>COMPLETED</code>.</p>
-    pub fn status(&self) -> std::option::Option<& str> {
+    pub fn status(&self) -> std::option::Option<&str> {
         self.status.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for RunFleetAdvisorLsaAnalysisOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl RunFleetAdvisorLsaAnalysisOutput {
     /// Creates a new builder-style object to manufacture [`RunFleetAdvisorLsaAnalysisOutput`](crate::operation::run_fleet_advisor_lsa_analysis::RunFleetAdvisorLsaAnalysisOutput).
-    pub fn builder() -> crate::operation::run_fleet_advisor_lsa_analysis::builders::RunFleetAdvisorLsaAnalysisOutputBuilder {
+    pub fn builder() -> crate::operation::run_fleet_advisor_lsa_analysis::builders::RunFleetAdvisorLsaAnalysisOutputBuilder{
         crate::operation::run_fleet_advisor_lsa_analysis::builders::RunFleetAdvisorLsaAnalysisOutputBuilder::default()
     }
 }
@@ -49,7 +49,8 @@ impl RunFleetAdvisorLsaAnalysisOutputBuilder {
     }
     /// <p>The ID of the LSA analysis run.</p>
     pub fn set_lsa_analysis_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.lsa_analysis_id = input; self
+        self.lsa_analysis_id = input;
+        self
     }
     /// <p>The status of the LSA analysis, for example <code>COMPLETED</code>.</p>
     pub fn status(mut self, input: impl Into<std::string::String>) -> Self {
@@ -58,26 +59,26 @@ impl RunFleetAdvisorLsaAnalysisOutputBuilder {
     }
     /// <p>The status of the LSA analysis, for example <code>COMPLETED</code>.</p>
     pub fn set_status(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.status = input; self
+        self.status = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`RunFleetAdvisorLsaAnalysisOutput`](crate::operation::run_fleet_advisor_lsa_analysis::RunFleetAdvisorLsaAnalysisOutput).
-    pub fn build(self) -> crate::operation::run_fleet_advisor_lsa_analysis::RunFleetAdvisorLsaAnalysisOutput {
+    pub fn build(
+        self,
+    ) -> crate::operation::run_fleet_advisor_lsa_analysis::RunFleetAdvisorLsaAnalysisOutput {
         crate::operation::run_fleet_advisor_lsa_analysis::RunFleetAdvisorLsaAnalysisOutput {
-            lsa_analysis_id: self.lsa_analysis_id
-            ,
-            status: self.status
-            ,
+            lsa_analysis_id: self.lsa_analysis_id,
+            status: self.status,
             _request_id: self._request_id,
         }
     }
 }
-

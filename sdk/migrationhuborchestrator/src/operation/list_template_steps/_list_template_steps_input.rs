@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListTemplateStepsInput  {
+pub struct ListTemplateStepsInput {
     /// <p>The maximum number of results that can be returned.</p>
     #[doc(hidden)]
     pub max_results: i32,
@@ -22,21 +22,22 @@ impl ListTemplateStepsInput {
         self.max_results
     }
     /// <p>The pagination token.</p>
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
     /// <p>The ID of the template.</p>
-    pub fn template_id(&self) -> std::option::Option<& str> {
+    pub fn template_id(&self) -> std::option::Option<&str> {
         self.template_id.as_deref()
     }
     /// <p>The ID of the step group.</p>
-    pub fn step_group_id(&self) -> std::option::Option<& str> {
+    pub fn step_group_id(&self) -> std::option::Option<&str> {
         self.step_group_id.as_deref()
     }
 }
 impl ListTemplateStepsInput {
     /// Creates a new builder-style object to manufacture [`ListTemplateStepsInput`](crate::operation::list_template_steps::ListTemplateStepsInput).
-    pub fn builder() -> crate::operation::list_template_steps::builders::ListTemplateStepsInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::list_template_steps::builders::ListTemplateStepsInputBuilder {
         crate::operation::list_template_steps::builders::ListTemplateStepsInputBuilder::default()
     }
 }
@@ -58,7 +59,8 @@ impl ListTemplateStepsInputBuilder {
     }
     /// <p>The maximum number of results that can be returned.</p>
     pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_results = input; self
+        self.max_results = input;
+        self
     }
     /// <p>The pagination token.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -67,7 +69,8 @@ impl ListTemplateStepsInputBuilder {
     }
     /// <p>The pagination token.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input; self
+        self.next_token = input;
+        self
     }
     /// <p>The ID of the template.</p>
     pub fn template_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -76,7 +79,8 @@ impl ListTemplateStepsInputBuilder {
     }
     /// <p>The ID of the template.</p>
     pub fn set_template_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.template_id = input; self
+        self.template_id = input;
+        self
     }
     /// <p>The ID of the step group.</p>
     pub fn step_group_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -85,23 +89,23 @@ impl ListTemplateStepsInputBuilder {
     }
     /// <p>The ID of the step group.</p>
     pub fn set_step_group_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.step_group_id = input; self
+        self.step_group_id = input;
+        self
     }
     /// Consumes the builder and constructs a [`ListTemplateStepsInput`](crate::operation::list_template_steps::ListTemplateStepsInput).
-    pub fn build(self) -> Result<crate::operation::list_template_steps::ListTemplateStepsInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::list_template_steps::ListTemplateStepsInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::list_template_steps::ListTemplateStepsInput {
-                max_results: self.max_results
-                    .unwrap_or_default()
-                ,
-                next_token: self.next_token
-                ,
-                template_id: self.template_id
-                ,
-                step_group_id: self.step_group_id
-                ,
-            }
+                max_results: self.max_results.unwrap_or_default(),
+                next_token: self.next_token,
+                template_id: self.template_id,
+                step_group_id: self.step_group_id,
+            },
         )
     }
 }
-

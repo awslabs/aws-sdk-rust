@@ -3,14 +3,14 @@
 /// <p>Details about your login page username field, used in a <code>ManagedRuleGroupConfig</code>. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UsernameField  {
+pub struct UsernameField {
     /// <p>The name of the username field. For example <code>/form/username</code>.</p>
     #[doc(hidden)]
     pub identifier: std::option::Option<std::string::String>,
 }
 impl UsernameField {
     /// <p>The name of the username field. For example <code>/form/username</code>.</p>
-    pub fn identifier(&self) -> std::option::Option<& str> {
+    pub fn identifier(&self) -> std::option::Option<&str> {
         self.identifier.as_deref()
     }
 }
@@ -35,14 +35,13 @@ impl UsernameFieldBuilder {
     }
     /// <p>The name of the username field. For example <code>/form/username</code>.</p>
     pub fn set_identifier(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.identifier = input; self
+        self.identifier = input;
+        self
     }
     /// Consumes the builder and constructs a [`UsernameField`](crate::types::UsernameField).
     pub fn build(self) -> crate::types::UsernameField {
         crate::types::UsernameField {
-            identifier: self.identifier
-            ,
+            identifier: self.identifier,
         }
     }
 }
-

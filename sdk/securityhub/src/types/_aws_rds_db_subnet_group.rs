@@ -3,7 +3,7 @@
 /// <p>Information about the subnet group for the database instance.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AwsRdsDbSubnetGroup  {
+pub struct AwsRdsDbSubnetGroup {
     /// <p>The name of the subnet group.</p>
     #[doc(hidden)]
     pub db_subnet_group_name: std::option::Option<std::string::String>,
@@ -25,27 +25,27 @@ pub struct AwsRdsDbSubnetGroup  {
 }
 impl AwsRdsDbSubnetGroup {
     /// <p>The name of the subnet group.</p>
-    pub fn db_subnet_group_name(&self) -> std::option::Option<& str> {
+    pub fn db_subnet_group_name(&self) -> std::option::Option<&str> {
         self.db_subnet_group_name.as_deref()
     }
     /// <p>The description of the subnet group.</p>
-    pub fn db_subnet_group_description(&self) -> std::option::Option<& str> {
+    pub fn db_subnet_group_description(&self) -> std::option::Option<&str> {
         self.db_subnet_group_description.as_deref()
     }
     /// <p>The VPC ID of the subnet group.</p>
-    pub fn vpc_id(&self) -> std::option::Option<& str> {
+    pub fn vpc_id(&self) -> std::option::Option<&str> {
         self.vpc_id.as_deref()
     }
     /// <p>The status of the subnet group.</p>
-    pub fn subnet_group_status(&self) -> std::option::Option<& str> {
+    pub fn subnet_group_status(&self) -> std::option::Option<&str> {
         self.subnet_group_status.as_deref()
     }
     /// <p>A list of subnets in the subnet group.</p>
-    pub fn subnets(&self) -> std::option::Option<& [crate::types::AwsRdsDbSubnetGroupSubnet]> {
+    pub fn subnets(&self) -> std::option::Option<&[crate::types::AwsRdsDbSubnetGroupSubnet]> {
         self.subnets.as_deref()
     }
     /// <p>The ARN of the subnet group.</p>
-    pub fn db_subnet_group_arn(&self) -> std::option::Option<& str> {
+    pub fn db_subnet_group_arn(&self) -> std::option::Option<&str> {
         self.db_subnet_group_arn.as_deref()
     }
 }
@@ -74,8 +74,12 @@ impl AwsRdsDbSubnetGroupBuilder {
         self
     }
     /// <p>The name of the subnet group.</p>
-    pub fn set_db_subnet_group_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.db_subnet_group_name = input; self
+    pub fn set_db_subnet_group_name(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.db_subnet_group_name = input;
+        self
     }
     /// <p>The description of the subnet group.</p>
     pub fn db_subnet_group_description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -83,8 +87,12 @@ impl AwsRdsDbSubnetGroupBuilder {
         self
     }
     /// <p>The description of the subnet group.</p>
-    pub fn set_db_subnet_group_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.db_subnet_group_description = input; self
+    pub fn set_db_subnet_group_description(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.db_subnet_group_description = input;
+        self
     }
     /// <p>The VPC ID of the subnet group.</p>
     pub fn vpc_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -93,7 +101,8 @@ impl AwsRdsDbSubnetGroupBuilder {
     }
     /// <p>The VPC ID of the subnet group.</p>
     pub fn set_vpc_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.vpc_id = input; self
+        self.vpc_id = input;
+        self
     }
     /// <p>The status of the subnet group.</p>
     pub fn subnet_group_status(mut self, input: impl Into<std::string::String>) -> Self {
@@ -101,8 +110,12 @@ impl AwsRdsDbSubnetGroupBuilder {
         self
     }
     /// <p>The status of the subnet group.</p>
-    pub fn set_subnet_group_status(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.subnet_group_status = input; self
+    pub fn set_subnet_group_status(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.subnet_group_status = input;
+        self
     }
     /// Appends an item to `subnets`.
     ///
@@ -111,13 +124,17 @@ impl AwsRdsDbSubnetGroupBuilder {
     /// <p>A list of subnets in the subnet group.</p>
     pub fn subnets(mut self, input: crate::types::AwsRdsDbSubnetGroupSubnet) -> Self {
         let mut v = self.subnets.unwrap_or_default();
-                        v.push(input);
-                        self.subnets = Some(v);
-                        self
+        v.push(input);
+        self.subnets = Some(v);
+        self
     }
     /// <p>A list of subnets in the subnet group.</p>
-    pub fn set_subnets(mut self, input: std::option::Option<std::vec::Vec<crate::types::AwsRdsDbSubnetGroupSubnet>>) -> Self {
-        self.subnets = input; self
+    pub fn set_subnets(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::AwsRdsDbSubnetGroupSubnet>>,
+    ) -> Self {
+        self.subnets = input;
+        self
     }
     /// <p>The ARN of the subnet group.</p>
     pub fn db_subnet_group_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -125,25 +142,22 @@ impl AwsRdsDbSubnetGroupBuilder {
         self
     }
     /// <p>The ARN of the subnet group.</p>
-    pub fn set_db_subnet_group_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.db_subnet_group_arn = input; self
+    pub fn set_db_subnet_group_arn(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.db_subnet_group_arn = input;
+        self
     }
     /// Consumes the builder and constructs a [`AwsRdsDbSubnetGroup`](crate::types::AwsRdsDbSubnetGroup).
     pub fn build(self) -> crate::types::AwsRdsDbSubnetGroup {
         crate::types::AwsRdsDbSubnetGroup {
-            db_subnet_group_name: self.db_subnet_group_name
-            ,
-            db_subnet_group_description: self.db_subnet_group_description
-            ,
-            vpc_id: self.vpc_id
-            ,
-            subnet_group_status: self.subnet_group_status
-            ,
-            subnets: self.subnets
-            ,
-            db_subnet_group_arn: self.db_subnet_group_arn
-            ,
+            db_subnet_group_name: self.db_subnet_group_name,
+            db_subnet_group_description: self.db_subnet_group_description,
+            vpc_id: self.vpc_id,
+            subnet_group_status: self.subnet_group_status,
+            subnets: self.subnets,
+            db_subnet_group_arn: self.db_subnet_group_arn,
         }
     }
 }
-

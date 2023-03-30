@@ -3,7 +3,7 @@
 /// <p>Information about the resource tags used to identify resources that are retained by the retention rule.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ResourceTag  {
+pub struct ResourceTag {
     /// <p>The tag key.</p>
     #[doc(hidden)]
     pub resource_tag_key: std::option::Option<std::string::String>,
@@ -13,11 +13,11 @@ pub struct ResourceTag  {
 }
 impl ResourceTag {
     /// <p>The tag key.</p>
-    pub fn resource_tag_key(&self) -> std::option::Option<& str> {
+    pub fn resource_tag_key(&self) -> std::option::Option<&str> {
         self.resource_tag_key.as_deref()
     }
     /// <p>The tag value.</p>
-    pub fn resource_tag_value(&self) -> std::option::Option<& str> {
+    pub fn resource_tag_value(&self) -> std::option::Option<&str> {
         self.resource_tag_value.as_deref()
     }
 }
@@ -43,7 +43,8 @@ impl ResourceTagBuilder {
     }
     /// <p>The tag key.</p>
     pub fn set_resource_tag_key(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.resource_tag_key = input; self
+        self.resource_tag_key = input;
+        self
     }
     /// <p>The tag value.</p>
     pub fn resource_tag_value(mut self, input: impl Into<std::string::String>) -> Self {
@@ -51,17 +52,18 @@ impl ResourceTagBuilder {
         self
     }
     /// <p>The tag value.</p>
-    pub fn set_resource_tag_value(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.resource_tag_value = input; self
+    pub fn set_resource_tag_value(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.resource_tag_value = input;
+        self
     }
     /// Consumes the builder and constructs a [`ResourceTag`](crate::types::ResourceTag).
     pub fn build(self) -> crate::types::ResourceTag {
         crate::types::ResourceTag {
-            resource_tag_key: self.resource_tag_key
-            ,
-            resource_tag_value: self.resource_tag_value
-            ,
+            resource_tag_key: self.resource_tag_key,
+            resource_tag_value: self.resource_tag_value,
         }
     }
 }
-

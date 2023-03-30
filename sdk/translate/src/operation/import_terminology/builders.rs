@@ -4,50 +4,72 @@ pub use crate::operation::import_terminology::_import_terminology_output::Import
 pub use crate::operation::import_terminology::_import_terminology_input::ImportTerminologyInputBuilder;
 
 /// Fluent builder constructing a request to `ImportTerminology`.
-/// 
-/// <p>Creates or updates a custom terminology, depending on whether one already exists for the given terminology name. Importing a terminology with the same name as an existing one will merge the terminologies based on the chosen merge strategy. The only supported merge strategy is OVERWRITE, where the imported terminology overwrites the existing terminology of the same name.</p> 
+///
+/// <p>Creates or updates a custom terminology, depending on whether one already exists for the given terminology name. Importing a terminology with the same name as an existing one will merge the terminologies based on the chosen merge strategy. The only supported merge strategy is OVERWRITE, where the imported terminology overwrites the existing terminology of the same name.</p>
 /// <p>If you import a terminology that overwrites an existing one, the new terminology takes up to 10 minutes to fully propagate. After that, translations have access to the new terminology.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ImportTerminologyFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::import_terminology::builders::ImportTerminologyInputBuilder
-            }
-impl ImportTerminologyFluentBuilder  {
+    handle: std::sync::Arc<crate::client::Handle>,
+    inner: crate::operation::import_terminology::builders::ImportTerminologyInputBuilder,
+}
+impl ImportTerminologyFluentBuilder {
     /// Creates a new `ImportTerminology`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
-                    /// sent. The operation's inner [http::Request] can be modified as well.
-                    pub async fn customize(self) -> std::result::Result<
-                        crate::client::customize::CustomizableOperation<crate::operation::import_terminology::ImportTerminology, aws_http::retry::AwsResponseRetryClassifier,>,
-                        aws_smithy_http::result::SdkError<crate::operation::import_terminology::ImportTerminologyError>
-                    >  {
-                        let handle = self.handle.clone();
-                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-                    }
-    
-                    /// Sends the request and returns the response.
-                    ///
-                    /// If an error occurs, an `SdkError` will be returned with additional details that
-                    /// can be matched against.
-                    ///
-                    /// By default, any retryable failures will be retried twice. Retry behavior
-                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                    /// set when configuring the client.
-                    pub async fn send(self) -> std::result::Result<crate::operation::import_terminology::ImportTerminologyOutput, aws_smithy_http::result::SdkError<crate::operation::import_terminology::ImportTerminologyError>>
-                     {
-                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&self.handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        self.handle.client.call(op).await
-                    }
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle,
+            inner: Default::default(),
+        }
+    }
+
+    /// Consume this builder, creating a customizable operation that can be modified before being
+    /// sent. The operation's inner [http::Request] can be modified as well.
+    pub async fn customize(
+        self,
+    ) -> std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::import_terminology::ImportTerminology,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::result::SdkError<
+            crate::operation::import_terminology::ImportTerminologyError,
+        >,
+    > {
+        let handle = self.handle.clone();
+        let operation = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+    }
+
+    /// Sends the request and returns the response.
+    ///
+    /// If an error occurs, an `SdkError` will be returned with additional details that
+    /// can be matched against.
+    ///
+    /// By default, any retryable failures will be retried twice. Retry behavior
+    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+    /// set when configuring the client.
+    pub async fn send(
+        self,
+    ) -> std::result::Result<
+        crate::operation::import_terminology::ImportTerminologyOutput,
+        aws_smithy_http::result::SdkError<
+            crate::operation::import_terminology::ImportTerminologyError,
+        >,
+    > {
+        let op = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&self.handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        self.handle.client.call(op).await
+    }
     /// <p>The name of the custom terminology being imported.</p>
     pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.name(input.into());
@@ -64,7 +86,10 @@ impl ImportTerminologyFluentBuilder  {
         self
     }
     /// <p>The merge strategy of the custom terminology being imported. Currently, only the OVERWRITE merge strategy is supported. In this case, the imported terminology will overwrite an existing terminology of the same name.</p>
-    pub fn set_merge_strategy(mut self, input: std::option::Option<crate::types::MergeStrategy>) -> Self {
+    pub fn set_merge_strategy(
+        mut self,
+        input: std::option::Option<crate::types::MergeStrategy>,
+    ) -> Self {
         self.inner = self.inner.set_merge_strategy(input);
         self
     }
@@ -84,7 +109,10 @@ impl ImportTerminologyFluentBuilder  {
         self
     }
     /// <p>The terminology data for the custom terminology being imported.</p>
-    pub fn set_terminology_data(mut self, input: std::option::Option<crate::types::TerminologyData>) -> Self {
+    pub fn set_terminology_data(
+        mut self,
+        input: std::option::Option<crate::types::TerminologyData>,
+    ) -> Self {
         self.inner = self.inner.set_terminology_data(input);
         self
     }
@@ -94,7 +122,10 @@ impl ImportTerminologyFluentBuilder  {
         self
     }
     /// <p>The encryption key for the custom terminology being imported.</p>
-    pub fn set_encryption_key(mut self, input: std::option::Option<crate::types::EncryptionKey>) -> Self {
+    pub fn set_encryption_key(
+        mut self,
+        input: std::option::Option<crate::types::EncryptionKey>,
+    ) -> Self {
         self.inner = self.inner.set_encryption_key(input);
         self
     }
@@ -108,9 +139,11 @@ impl ImportTerminologyFluentBuilder  {
         self
     }
     /// <p>Tags to be associated with this resource. A tag is a key-value pair that adds metadata to a resource. Each tag key for the resource must be unique. For more information, see <a href="https://docs.aws.amazon.com/translate/latest/dg/tagging.html"> Tagging your resources</a>.</p>
-    pub fn set_tags(mut self, input: std::option::Option<std::vec::Vec<crate::types::Tag>>) -> Self {
+    pub fn set_tags(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::Tag>>,
+    ) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }
 }
-

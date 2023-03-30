@@ -2,14 +2,14 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteContactInput  {
+pub struct DeleteContactInput {
     /// <p>The Amazon Resource Name (ARN) of the contact that you're deleting.</p>
     #[doc(hidden)]
     pub contact_id: std::option::Option<std::string::String>,
 }
 impl DeleteContactInput {
     /// <p>The Amazon Resource Name (ARN) of the contact that you're deleting.</p>
-    pub fn contact_id(&self) -> std::option::Option<& str> {
+    pub fn contact_id(&self) -> std::option::Option<&str> {
         self.contact_id.as_deref()
     }
 }
@@ -34,16 +34,18 @@ impl DeleteContactInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the contact that you're deleting.</p>
     pub fn set_contact_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.contact_id = input; self
+        self.contact_id = input;
+        self
     }
     /// Consumes the builder and constructs a [`DeleteContactInput`](crate::operation::delete_contact::DeleteContactInput).
-    pub fn build(self) -> Result<crate::operation::delete_contact::DeleteContactInput, aws_smithy_http::operation::error::BuildError> {
-        Ok(
-            crate::operation::delete_contact::DeleteContactInput {
-                contact_id: self.contact_id
-                ,
-            }
-        )
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::delete_contact::DeleteContactInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        Ok(crate::operation::delete_contact::DeleteContactInput {
+            contact_id: self.contact_id,
+        })
     }
 }
-

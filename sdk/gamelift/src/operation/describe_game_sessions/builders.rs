@@ -4,68 +4,95 @@ pub use crate::operation::describe_game_sessions::_describe_game_sessions_output
 pub use crate::operation::describe_game_sessions::_describe_game_sessions_input::DescribeGameSessionsInputBuilder;
 
 /// Fluent builder constructing a request to `DescribeGameSessions`.
-/// 
-/// <p>Retrieves a set of one or more game sessions in a specific fleet location. You can optionally filter the results by current game session status.</p> 
-/// <p>This operation can be used in the following ways: </p> 
-/// <ul> 
-/// <li> <p>To retrieve all game sessions that are currently running on all locations in a fleet, provide a fleet or alias ID, with an optional status filter. This approach returns all game sessions in the fleet's home Region and all remote locations.</p> </li> 
-/// <li> <p>To retrieve all game sessions that are currently running on a specific fleet location, provide a fleet or alias ID and a location name, with optional status filter. The location can be the fleet's home Region or any remote location.</p> </li> 
-/// <li> <p>To retrieve a specific game session, provide the game session ID. This approach looks for the game session ID in all fleets that reside in the Amazon Web Services Region defined in the request.</p> </li> 
-/// </ul> 
-/// <p>Use the pagination parameters to retrieve results as a set of sequential pages. </p> 
-/// <p>If successful, a <code>GameSession</code> object is returned for each game session that matches the request.</p> 
-/// <p>This operation is not designed to be continually called to track game session status. This practice can cause you to exceed your API limit, which results in errors. Instead, you must configure an Amazon Simple Notification Service (SNS) topic to receive notifications from FlexMatch or queues. Continuously polling with <code>DescribeGameSessions</code> should only be used for games in development with low game session usage. </p> 
-/// <p> <i>Available in Amazon GameLift Local.</i> </p> 
-/// <p> <b>Learn more</b> </p> 
-/// <p> <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-client-api.html#gamelift-sdk-client-api-find">Find a game session</a> </p> 
+///
+/// <p>Retrieves a set of one or more game sessions in a specific fleet location. You can optionally filter the results by current game session status.</p>
+/// <p>This operation can be used in the following ways: </p>
+/// <ul>
+/// <li> <p>To retrieve all game sessions that are currently running on all locations in a fleet, provide a fleet or alias ID, with an optional status filter. This approach returns all game sessions in the fleet's home Region and all remote locations.</p> </li>
+/// <li> <p>To retrieve all game sessions that are currently running on a specific fleet location, provide a fleet or alias ID and a location name, with optional status filter. The location can be the fleet's home Region or any remote location.</p> </li>
+/// <li> <p>To retrieve a specific game session, provide the game session ID. This approach looks for the game session ID in all fleets that reside in the Amazon Web Services Region defined in the request.</p> </li>
+/// </ul>
+/// <p>Use the pagination parameters to retrieve results as a set of sequential pages. </p>
+/// <p>If successful, a <code>GameSession</code> object is returned for each game session that matches the request.</p>
+/// <p>This operation is not designed to be continually called to track game session status. This practice can cause you to exceed your API limit, which results in errors. Instead, you must configure an Amazon Simple Notification Service (SNS) topic to receive notifications from FlexMatch or queues. Continuously polling with <code>DescribeGameSessions</code> should only be used for games in development with low game session usage. </p>
+/// <p> <i>Available in Amazon GameLift Local.</i> </p>
+/// <p> <b>Learn more</b> </p>
+/// <p> <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-client-api.html#gamelift-sdk-client-api-find">Find a game session</a> </p>
 /// <p> <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-awssdk.html#reference-awssdk-resources-fleets">All APIs by task</a> </p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeGameSessionsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::describe_game_sessions::builders::DescribeGameSessionsInputBuilder
-            }
-impl DescribeGameSessionsFluentBuilder  {
+    handle: std::sync::Arc<crate::client::Handle>,
+    inner: crate::operation::describe_game_sessions::builders::DescribeGameSessionsInputBuilder,
+}
+impl DescribeGameSessionsFluentBuilder {
     /// Creates a new `DescribeGameSessions`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
-                    /// sent. The operation's inner [http::Request] can be modified as well.
-                    pub async fn customize(self) -> std::result::Result<
-                        crate::client::customize::CustomizableOperation<crate::operation::describe_game_sessions::DescribeGameSessions, aws_http::retry::AwsResponseRetryClassifier,>,
-                        aws_smithy_http::result::SdkError<crate::operation::describe_game_sessions::DescribeGameSessionsError>
-                    >  {
-                        let handle = self.handle.clone();
-                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-                    }
-    
-                    /// Sends the request and returns the response.
-                    ///
-                    /// If an error occurs, an `SdkError` will be returned with additional details that
-                    /// can be matched against.
-                    ///
-                    /// By default, any retryable failures will be retried twice. Retry behavior
-                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                    /// set when configuring the client.
-                    pub async fn send(self) -> std::result::Result<crate::operation::describe_game_sessions::DescribeGameSessionsOutput, aws_smithy_http::result::SdkError<crate::operation::describe_game_sessions::DescribeGameSessionsError>>
-                     {
-                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&self.handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        self.handle.client.call(op).await
-                    }
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle,
+            inner: Default::default(),
+        }
+    }
+
+    /// Consume this builder, creating a customizable operation that can be modified before being
+    /// sent. The operation's inner [http::Request] can be modified as well.
+    pub async fn customize(
+        self,
+    ) -> std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::describe_game_sessions::DescribeGameSessions,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::result::SdkError<
+            crate::operation::describe_game_sessions::DescribeGameSessionsError,
+        >,
+    > {
+        let handle = self.handle.clone();
+        let operation = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+    }
+
+    /// Sends the request and returns the response.
+    ///
+    /// If an error occurs, an `SdkError` will be returned with additional details that
+    /// can be matched against.
+    ///
+    /// By default, any retryable failures will be retried twice. Retry behavior
+    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+    /// set when configuring the client.
+    pub async fn send(
+        self,
+    ) -> std::result::Result<
+        crate::operation::describe_game_sessions::DescribeGameSessionsOutput,
+        aws_smithy_http::result::SdkError<
+            crate::operation::describe_game_sessions::DescribeGameSessionsError,
+        >,
+    > {
+        let op = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&self.handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        self.handle.client.call(op).await
+    }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::describe_game_sessions::paginator::DescribeGameSessionsPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::describe_game_sessions::paginator::DescribeGameSessionsPaginator {
-                            crate::operation::describe_game_sessions::paginator::DescribeGameSessionsPaginator::new(self.handle, self.inner)
-                        }
+    ///
+    /// Paginators are used by calling [`send().await`](crate::operation::describe_game_sessions::paginator::DescribeGameSessionsPaginator::send) which returns a `Stream`.
+    pub fn into_paginator(
+        self,
+    ) -> crate::operation::describe_game_sessions::paginator::DescribeGameSessionsPaginator {
+        crate::operation::describe_game_sessions::paginator::DescribeGameSessionsPaginator::new(
+            self.handle,
+            self.inner,
+        )
+    }
     /// <p>A unique identifier for the fleet to retrieve game sessions for. You can use either the fleet ID or ARN value. </p>
     pub fn fleet_id(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.fleet_id(input.into());
@@ -137,4 +164,3 @@ impl DescribeGameSessionsFluentBuilder  {
         self
     }
 }
-

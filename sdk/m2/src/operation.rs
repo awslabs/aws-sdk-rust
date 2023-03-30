@@ -96,4 +96,3 @@ pub mod update_application;
 
 /// Types for the `UpdateEnvironment` operation.
 pub mod update_environment;
-

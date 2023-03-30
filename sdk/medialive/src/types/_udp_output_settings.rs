@@ -3,7 +3,7 @@
 /// Udp Output Settings
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UdpOutputSettings  {
+pub struct UdpOutputSettings {
     /// UDP output buffering in milliseconds. Larger values increase latency through the transcoder but simultaneously assist the transcoder in maintaining a constant, low-jitter UDP/RTP output while accommodating clock recovery, input switching, input disruptions, picture reordering, etc.
     #[doc(hidden)]
     pub buffer_msec: i32,
@@ -23,15 +23,15 @@ impl UdpOutputSettings {
         self.buffer_msec
     }
     /// Udp Container Settings
-    pub fn container_settings(&self) -> std::option::Option<& crate::types::UdpContainerSettings> {
+    pub fn container_settings(&self) -> std::option::Option<&crate::types::UdpContainerSettings> {
         self.container_settings.as_ref()
     }
     /// Destination address and port number for RTP or UDP packets. Can be unicast or multicast RTP or UDP (eg. rtp://239.10.10.10:5001 or udp://10.100.100.100:5002).
-    pub fn destination(&self) -> std::option::Option<& crate::types::OutputLocationRef> {
+    pub fn destination(&self) -> std::option::Option<&crate::types::OutputLocationRef> {
         self.destination.as_ref()
     }
     /// Settings for enabling and adjusting Forward Error Correction on UDP outputs.
-    pub fn fec_output_settings(&self) -> std::option::Option<& crate::types::FecOutputSettings> {
+    pub fn fec_output_settings(&self) -> std::option::Option<&crate::types::FecOutputSettings> {
         self.fec_output_settings.as_ref()
     }
 }
@@ -59,7 +59,8 @@ impl UdpOutputSettingsBuilder {
     }
     /// UDP output buffering in milliseconds. Larger values increase latency through the transcoder but simultaneously assist the transcoder in maintaining a constant, low-jitter UDP/RTP output while accommodating clock recovery, input switching, input disruptions, picture reordering, etc.
     pub fn set_buffer_msec(mut self, input: std::option::Option<i32>) -> Self {
-        self.buffer_msec = input; self
+        self.buffer_msec = input;
+        self
     }
     /// Udp Container Settings
     pub fn container_settings(mut self, input: crate::types::UdpContainerSettings) -> Self {
@@ -67,8 +68,12 @@ impl UdpOutputSettingsBuilder {
         self
     }
     /// Udp Container Settings
-    pub fn set_container_settings(mut self, input: std::option::Option<crate::types::UdpContainerSettings>) -> Self {
-        self.container_settings = input; self
+    pub fn set_container_settings(
+        mut self,
+        input: std::option::Option<crate::types::UdpContainerSettings>,
+    ) -> Self {
+        self.container_settings = input;
+        self
     }
     /// Destination address and port number for RTP or UDP packets. Can be unicast or multicast RTP or UDP (eg. rtp://239.10.10.10:5001 or udp://10.100.100.100:5002).
     pub fn destination(mut self, input: crate::types::OutputLocationRef) -> Self {
@@ -76,8 +81,12 @@ impl UdpOutputSettingsBuilder {
         self
     }
     /// Destination address and port number for RTP or UDP packets. Can be unicast or multicast RTP or UDP (eg. rtp://239.10.10.10:5001 or udp://10.100.100.100:5002).
-    pub fn set_destination(mut self, input: std::option::Option<crate::types::OutputLocationRef>) -> Self {
-        self.destination = input; self
+    pub fn set_destination(
+        mut self,
+        input: std::option::Option<crate::types::OutputLocationRef>,
+    ) -> Self {
+        self.destination = input;
+        self
     }
     /// Settings for enabling and adjusting Forward Error Correction on UDP outputs.
     pub fn fec_output_settings(mut self, input: crate::types::FecOutputSettings) -> Self {
@@ -85,22 +94,20 @@ impl UdpOutputSettingsBuilder {
         self
     }
     /// Settings for enabling and adjusting Forward Error Correction on UDP outputs.
-    pub fn set_fec_output_settings(mut self, input: std::option::Option<crate::types::FecOutputSettings>) -> Self {
-        self.fec_output_settings = input; self
+    pub fn set_fec_output_settings(
+        mut self,
+        input: std::option::Option<crate::types::FecOutputSettings>,
+    ) -> Self {
+        self.fec_output_settings = input;
+        self
     }
     /// Consumes the builder and constructs a [`UdpOutputSettings`](crate::types::UdpOutputSettings).
     pub fn build(self) -> crate::types::UdpOutputSettings {
         crate::types::UdpOutputSettings {
-            buffer_msec: self.buffer_msec
-                .unwrap_or_default()
-            ,
-            container_settings: self.container_settings
-            ,
-            destination: self.destination
-            ,
-            fec_output_settings: self.fec_output_settings
-            ,
+            buffer_msec: self.buffer_msec.unwrap_or_default(),
+            container_settings: self.container_settings,
+            destination: self.destination,
+            fec_output_settings: self.fec_output_settings,
         }
     }
 }
-

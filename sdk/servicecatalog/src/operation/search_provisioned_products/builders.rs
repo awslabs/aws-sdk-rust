@@ -4,74 +4,99 @@ pub use crate::operation::search_provisioned_products::_search_provisioned_produ
 pub use crate::operation::search_provisioned_products::_search_provisioned_products_input::SearchProvisionedProductsInputBuilder;
 
 /// Fluent builder constructing a request to `SearchProvisionedProducts`.
-/// 
-/// <p>Gets information about the provisioned products that meet the specified criteria.</p> <note> 
-/// <p>To ensure a complete list of provisioned products and remove duplicate products, use <code>sort-by createdTime</code>. </p> 
-/// <p>Here is a CLI example: <code> </code> </p> 
-/// <p> <code>aws servicecatalog search-provisioned-products --sort-by createdTime </code> </p> 
+///
+/// <p>Gets information about the provisioned products that meet the specified criteria.</p> <note>
+/// <p>To ensure a complete list of provisioned products and remove duplicate products, use <code>sort-by createdTime</code>. </p>
+/// <p>Here is a CLI example: <code> </code> </p>
+/// <p> <code>aws servicecatalog search-provisioned-products --sort-by createdTime </code> </p>
 /// </note>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct SearchProvisionedProductsFluentBuilder {
                 handle: std::sync::Arc<crate::client::Handle>,
                 inner: crate::operation::search_provisioned_products::builders::SearchProvisionedProductsInputBuilder
             }
-impl SearchProvisionedProductsFluentBuilder  {
+impl SearchProvisionedProductsFluentBuilder {
     /// Creates a new `SearchProvisionedProducts`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
-                    /// sent. The operation's inner [http::Request] can be modified as well.
-                    pub async fn customize(self) -> std::result::Result<
-                        crate::client::customize::CustomizableOperation<crate::operation::search_provisioned_products::SearchProvisionedProducts, aws_http::retry::AwsResponseRetryClassifier,>,
-                        aws_smithy_http::result::SdkError<crate::operation::search_provisioned_products::SearchProvisionedProductsError>
-                    >  {
-                        let handle = self.handle.clone();
-                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-                    }
-    
-                    /// Sends the request and returns the response.
-                    ///
-                    /// If an error occurs, an `SdkError` will be returned with additional details that
-                    /// can be matched against.
-                    ///
-                    /// By default, any retryable failures will be retried twice. Retry behavior
-                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                    /// set when configuring the client.
-                    pub async fn send(self) -> std::result::Result<crate::operation::search_provisioned_products::SearchProvisionedProductsOutput, aws_smithy_http::result::SdkError<crate::operation::search_provisioned_products::SearchProvisionedProductsError>>
-                     {
-                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&self.handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        self.handle.client.call(op).await
-                    }
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle,
+            inner: Default::default(),
+        }
+    }
+
+    /// Consume this builder, creating a customizable operation that can be modified before being
+    /// sent. The operation's inner [http::Request] can be modified as well.
+    pub async fn customize(
+        self,
+    ) -> std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::search_provisioned_products::SearchProvisionedProducts,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::result::SdkError<
+            crate::operation::search_provisioned_products::SearchProvisionedProductsError,
+        >,
+    > {
+        let handle = self.handle.clone();
+        let operation = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+    }
+
+    /// Sends the request and returns the response.
+    ///
+    /// If an error occurs, an `SdkError` will be returned with additional details that
+    /// can be matched against.
+    ///
+    /// By default, any retryable failures will be retried twice. Retry behavior
+    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+    /// set when configuring the client.
+    pub async fn send(
+        self,
+    ) -> std::result::Result<
+        crate::operation::search_provisioned_products::SearchProvisionedProductsOutput,
+        aws_smithy_http::result::SdkError<
+            crate::operation::search_provisioned_products::SearchProvisionedProductsError,
+        >,
+    > {
+        let op = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&self.handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        self.handle.client.call(op).await
+    }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::search_provisioned_products::paginator::SearchProvisionedProductsPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::search_provisioned_products::paginator::SearchProvisionedProductsPaginator {
-                            crate::operation::search_provisioned_products::paginator::SearchProvisionedProductsPaginator::new(self.handle, self.inner)
-                        }
-    /// <p>The language code.</p> 
-    /// <ul> 
-    /// <li> <p> <code>en</code> - English (default)</p> </li> 
-    /// <li> <p> <code>jp</code> - Japanese</p> </li> 
-    /// <li> <p> <code>zh</code> - Chinese</p> </li> 
+    ///
+    /// Paginators are used by calling [`send().await`](crate::operation::search_provisioned_products::paginator::SearchProvisionedProductsPaginator::send) which returns a `Stream`.
+    pub fn into_paginator(
+        self,
+    ) -> crate::operation::search_provisioned_products::paginator::SearchProvisionedProductsPaginator
+    {
+        crate::operation::search_provisioned_products::paginator::SearchProvisionedProductsPaginator::new(self.handle, self.inner)
+    }
+    /// <p>The language code.</p>
+    /// <ul>
+    /// <li> <p> <code>en</code> - English (default)</p> </li>
+    /// <li> <p> <code>jp</code> - Japanese</p> </li>
+    /// <li> <p> <code>zh</code> - Chinese</p> </li>
     /// </ul>
     pub fn accept_language(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.accept_language(input.into());
         self
     }
-    /// <p>The language code.</p> 
-    /// <ul> 
-    /// <li> <p> <code>en</code> - English (default)</p> </li> 
-    /// <li> <p> <code>jp</code> - Japanese</p> </li> 
-    /// <li> <p> <code>zh</code> - Chinese</p> </li> 
+    /// <p>The language code.</p>
+    /// <ul>
+    /// <li> <p> <code>en</code> - English (default)</p> </li>
+    /// <li> <p> <code>jp</code> - Japanese</p> </li>
+    /// <li> <p> <code>zh</code> - Chinese</p> </li>
     /// </ul>
     pub fn set_accept_language(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.inner = self.inner.set_accept_language(input);
@@ -83,7 +108,10 @@ impl SearchProvisionedProductsFluentBuilder  {
         self
     }
     /// <p>The access level to use to obtain results. The default is <code>User</code>.</p>
-    pub fn set_access_level_filter(mut self, input: std::option::Option<crate::types::AccessLevelFilter>) -> Self {
+    pub fn set_access_level_filter(
+        mut self,
+        input: std::option::Option<crate::types::AccessLevelFilter>,
+    ) -> Self {
         self.inner = self.inner.set_access_level_filter(input);
         self
     }
@@ -91,17 +119,29 @@ impl SearchProvisionedProductsFluentBuilder  {
     ///
     /// To override the contents of this collection use [`set_filters`](Self::set_filters).
     ///
-    /// <p>The search filters.</p> 
-    /// <p>When the key is <code>SearchQuery</code>, the searchable fields are <code>arn</code>, <code>createdTime</code>, <code>id</code>, <code>lastRecordId</code>, <code>idempotencyToken</code>, <code>name</code>, <code>physicalId</code>, <code>productId</code>, <code>provisioningArtifact</code>, <code>type</code>, <code>status</code>, <code>tags</code>, <code>userArn</code>, <code>userArnSession</code>, <code>lastProvisioningRecordId</code>, <code>lastSuccessfulProvisioningRecordId</code>, <code>productName</code>, and <code>provisioningArtifactName</code>.</p> 
+    /// <p>The search filters.</p>
+    /// <p>When the key is <code>SearchQuery</code>, the searchable fields are <code>arn</code>, <code>createdTime</code>, <code>id</code>, <code>lastRecordId</code>, <code>idempotencyToken</code>, <code>name</code>, <code>physicalId</code>, <code>productId</code>, <code>provisioningArtifact</code>, <code>type</code>, <code>status</code>, <code>tags</code>, <code>userArn</code>, <code>userArnSession</code>, <code>lastProvisioningRecordId</code>, <code>lastSuccessfulProvisioningRecordId</code>, <code>productName</code>, and <code>provisioningArtifactName</code>.</p>
     /// <p>Example: <code>"SearchQuery":["status:AVAILABLE"]</code> </p>
-    pub fn filters(mut self, k: crate::types::ProvisionedProductViewFilterBy, v: std::vec::Vec<std::string::String>) -> Self {
+    pub fn filters(
+        mut self,
+        k: crate::types::ProvisionedProductViewFilterBy,
+        v: std::vec::Vec<std::string::String>,
+    ) -> Self {
         self.inner = self.inner.filters(k, v);
         self
     }
-    /// <p>The search filters.</p> 
-    /// <p>When the key is <code>SearchQuery</code>, the searchable fields are <code>arn</code>, <code>createdTime</code>, <code>id</code>, <code>lastRecordId</code>, <code>idempotencyToken</code>, <code>name</code>, <code>physicalId</code>, <code>productId</code>, <code>provisioningArtifact</code>, <code>type</code>, <code>status</code>, <code>tags</code>, <code>userArn</code>, <code>userArnSession</code>, <code>lastProvisioningRecordId</code>, <code>lastSuccessfulProvisioningRecordId</code>, <code>productName</code>, and <code>provisioningArtifactName</code>.</p> 
+    /// <p>The search filters.</p>
+    /// <p>When the key is <code>SearchQuery</code>, the searchable fields are <code>arn</code>, <code>createdTime</code>, <code>id</code>, <code>lastRecordId</code>, <code>idempotencyToken</code>, <code>name</code>, <code>physicalId</code>, <code>productId</code>, <code>provisioningArtifact</code>, <code>type</code>, <code>status</code>, <code>tags</code>, <code>userArn</code>, <code>userArnSession</code>, <code>lastProvisioningRecordId</code>, <code>lastSuccessfulProvisioningRecordId</code>, <code>productName</code>, and <code>provisioningArtifactName</code>.</p>
     /// <p>Example: <code>"SearchQuery":["status:AVAILABLE"]</code> </p>
-    pub fn set_filters(mut self, input: std::option::Option<std::collections::HashMap<crate::types::ProvisionedProductViewFilterBy, std::vec::Vec<std::string::String>>>) -> Self {
+    pub fn set_filters(
+        mut self,
+        input: std::option::Option<
+            std::collections::HashMap<
+                crate::types::ProvisionedProductViewFilterBy,
+                std::vec::Vec<std::string::String>,
+            >,
+        >,
+    ) -> Self {
         self.inner = self.inner.set_filters(input);
         self
     }
@@ -146,4 +186,3 @@ impl SearchProvisionedProductsFluentBuilder  {
         self
     }
 }
-

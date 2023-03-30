@@ -180,4 +180,3 @@ pub mod builders;
 
 /// Error types that Amazon MemoryDB can respond with.
 pub mod error;
-

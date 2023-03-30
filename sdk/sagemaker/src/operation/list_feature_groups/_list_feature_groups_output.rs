@@ -2,10 +2,11 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListFeatureGroupsOutput  {
+pub struct ListFeatureGroupsOutput {
     /// <p>A summary of feature groups.</p>
     #[doc(hidden)]
-    pub feature_group_summaries: std::option::Option<std::vec::Vec<crate::types::FeatureGroupSummary>>,
+    pub feature_group_summaries:
+        std::option::Option<std::vec::Vec<crate::types::FeatureGroupSummary>>,
     /// <p>A token to resume pagination of <code>ListFeatureGroups</code> results.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
@@ -13,22 +14,25 @@ pub struct ListFeatureGroupsOutput  {
 }
 impl ListFeatureGroupsOutput {
     /// <p>A summary of feature groups.</p>
-    pub fn feature_group_summaries(&self) -> std::option::Option<& [crate::types::FeatureGroupSummary]> {
+    pub fn feature_group_summaries(
+        &self,
+    ) -> std::option::Option<&[crate::types::FeatureGroupSummary]> {
         self.feature_group_summaries.as_deref()
     }
     /// <p>A token to resume pagination of <code>ListFeatureGroups</code> results.</p>
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for ListFeatureGroupsOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl ListFeatureGroupsOutput {
     /// Creates a new builder-style object to manufacture [`ListFeatureGroupsOutput`](crate::operation::list_feature_groups::ListFeatureGroupsOutput).
-    pub fn builder() -> crate::operation::list_feature_groups::builders::ListFeatureGroupsOutputBuilder {
+    pub fn builder(
+    ) -> crate::operation::list_feature_groups::builders::ListFeatureGroupsOutputBuilder {
         crate::operation::list_feature_groups::builders::ListFeatureGroupsOutputBuilder::default()
     }
 }
@@ -37,7 +41,8 @@ impl ListFeatureGroupsOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct ListFeatureGroupsOutputBuilder {
-    pub(crate) feature_group_summaries: std::option::Option<std::vec::Vec<crate::types::FeatureGroupSummary>>,
+    pub(crate) feature_group_summaries:
+        std::option::Option<std::vec::Vec<crate::types::FeatureGroupSummary>>,
     pub(crate) next_token: std::option::Option<std::string::String>,
     _request_id: Option<String>,
 }
@@ -49,13 +54,17 @@ impl ListFeatureGroupsOutputBuilder {
     /// <p>A summary of feature groups.</p>
     pub fn feature_group_summaries(mut self, input: crate::types::FeatureGroupSummary) -> Self {
         let mut v = self.feature_group_summaries.unwrap_or_default();
-                        v.push(input);
-                        self.feature_group_summaries = Some(v);
-                        self
+        v.push(input);
+        self.feature_group_summaries = Some(v);
+        self
     }
     /// <p>A summary of feature groups.</p>
-    pub fn set_feature_group_summaries(mut self, input: std::option::Option<std::vec::Vec<crate::types::FeatureGroupSummary>>) -> Self {
-        self.feature_group_summaries = input; self
+    pub fn set_feature_group_summaries(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::FeatureGroupSummary>>,
+    ) -> Self {
+        self.feature_group_summaries = input;
+        self
     }
     /// <p>A token to resume pagination of <code>ListFeatureGroups</code> results.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -64,26 +73,24 @@ impl ListFeatureGroupsOutputBuilder {
     }
     /// <p>A token to resume pagination of <code>ListFeatureGroups</code> results.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input; self
+        self.next_token = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`ListFeatureGroupsOutput`](crate::operation::list_feature_groups::ListFeatureGroupsOutput).
     pub fn build(self) -> crate::operation::list_feature_groups::ListFeatureGroupsOutput {
         crate::operation::list_feature_groups::ListFeatureGroupsOutput {
-            feature_group_summaries: self.feature_group_summaries
-            ,
-            next_token: self.next_token
-            ,
+            feature_group_summaries: self.feature_group_summaries,
+            next_token: self.next_token,
             _request_id: self._request_id,
         }
     }
 }
-

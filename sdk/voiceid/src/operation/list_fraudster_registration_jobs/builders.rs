@@ -4,55 +4,77 @@ pub use crate::operation::list_fraudster_registration_jobs::_list_fraudster_regi
 pub use crate::operation::list_fraudster_registration_jobs::_list_fraudster_registration_jobs_input::ListFraudsterRegistrationJobsInputBuilder;
 
 /// Fluent builder constructing a request to `ListFraudsterRegistrationJobs`.
-/// 
+///
 /// <p>Lists all the fraudster registration jobs in the domain with the given <code>JobStatus</code>. If <code>JobStatus</code> is not provided, this lists all fraudster registration jobs in the given domain. </p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListFraudsterRegistrationJobsFluentBuilder {
                 handle: std::sync::Arc<crate::client::Handle>,
                 inner: crate::operation::list_fraudster_registration_jobs::builders::ListFraudsterRegistrationJobsInputBuilder
             }
-impl ListFraudsterRegistrationJobsFluentBuilder  {
+impl ListFraudsterRegistrationJobsFluentBuilder {
     /// Creates a new `ListFraudsterRegistrationJobs`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
-                    /// sent. The operation's inner [http::Request] can be modified as well.
-                    pub async fn customize(self) -> std::result::Result<
-                        crate::client::customize::CustomizableOperation<crate::operation::list_fraudster_registration_jobs::ListFraudsterRegistrationJobs, aws_http::retry::AwsResponseRetryClassifier,>,
-                        aws_smithy_http::result::SdkError<crate::operation::list_fraudster_registration_jobs::ListFraudsterRegistrationJobsError>
-                    >  {
-                        let handle = self.handle.clone();
-                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-                    }
-    
-                    /// Sends the request and returns the response.
-                    ///
-                    /// If an error occurs, an `SdkError` will be returned with additional details that
-                    /// can be matched against.
-                    ///
-                    /// By default, any retryable failures will be retried twice. Retry behavior
-                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                    /// set when configuring the client.
-                    pub async fn send(self) -> std::result::Result<crate::operation::list_fraudster_registration_jobs::ListFraudsterRegistrationJobsOutput, aws_smithy_http::result::SdkError<crate::operation::list_fraudster_registration_jobs::ListFraudsterRegistrationJobsError>>
-                     {
-                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&self.handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        self.handle.client.call(op).await
-                    }
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle,
+            inner: Default::default(),
+        }
+    }
+
+    /// Consume this builder, creating a customizable operation that can be modified before being
+    /// sent. The operation's inner [http::Request] can be modified as well.
+    pub async fn customize(
+        self,
+    ) -> std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::list_fraudster_registration_jobs::ListFraudsterRegistrationJobs,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::result::SdkError<
+            crate::operation::list_fraudster_registration_jobs::ListFraudsterRegistrationJobsError,
+        >,
+    > {
+        let handle = self.handle.clone();
+        let operation = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+    }
+
+    /// Sends the request and returns the response.
+    ///
+    /// If an error occurs, an `SdkError` will be returned with additional details that
+    /// can be matched against.
+    ///
+    /// By default, any retryable failures will be retried twice. Retry behavior
+    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+    /// set when configuring the client.
+    pub async fn send(
+        self,
+    ) -> std::result::Result<
+        crate::operation::list_fraudster_registration_jobs::ListFraudsterRegistrationJobsOutput,
+        aws_smithy_http::result::SdkError<
+            crate::operation::list_fraudster_registration_jobs::ListFraudsterRegistrationJobsError,
+        >,
+    > {
+        let op = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&self.handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        self.handle.client.call(op).await
+    }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::list_fraudster_registration_jobs::paginator::ListFraudsterRegistrationJobsPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::list_fraudster_registration_jobs::paginator::ListFraudsterRegistrationJobsPaginator {
-                            crate::operation::list_fraudster_registration_jobs::paginator::ListFraudsterRegistrationJobsPaginator::new(self.handle, self.inner)
-                        }
+    ///
+    /// Paginators are used by calling [`send().await`](crate::operation::list_fraudster_registration_jobs::paginator::ListFraudsterRegistrationJobsPaginator::send) which returns a `Stream`.
+    pub fn into_paginator(self) -> crate::operation::list_fraudster_registration_jobs::paginator::ListFraudsterRegistrationJobsPaginator{
+        crate::operation::list_fraudster_registration_jobs::paginator::ListFraudsterRegistrationJobsPaginator::new(self.handle, self.inner)
+    }
     /// <p>The identifier of the domain containing the fraudster registration Jobs.</p>
     pub fn domain_id(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.domain_id(input.into());
@@ -69,7 +91,10 @@ impl ListFraudsterRegistrationJobsFluentBuilder  {
         self
     }
     /// <p>Provides the status of your fraudster registration job.</p>
-    pub fn set_job_status(mut self, input: std::option::Option<crate::types::FraudsterRegistrationJobStatus>) -> Self {
+    pub fn set_job_status(
+        mut self,
+        input: std::option::Option<crate::types::FraudsterRegistrationJobStatus>,
+    ) -> Self {
         self.inner = self.inner.set_job_status(input);
         self
     }
@@ -94,4 +119,3 @@ impl ListFraudsterRegistrationJobsFluentBuilder  {
         self
     }
 }
-

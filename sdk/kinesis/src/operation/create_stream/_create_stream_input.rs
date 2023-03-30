@@ -3,7 +3,7 @@
 /// <p>Represents the input for <code>CreateStream</code>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateStreamInput  {
+pub struct CreateStreamInput {
     /// <p>A name to identify the stream. The stream name is scoped to the Amazon Web Services account used by the application that creates the stream. It is also scoped by Amazon Web Services Region. That is, two streams in two different Amazon Web Services accounts can have the same name. Two streams in the same Amazon Web Services account but in two different Regions can also have the same name.</p>
     #[doc(hidden)]
     pub stream_name: std::option::Option<std::string::String>,
@@ -16,7 +16,7 @@ pub struct CreateStreamInput  {
 }
 impl CreateStreamInput {
     /// <p>A name to identify the stream. The stream name is scoped to the Amazon Web Services account used by the application that creates the stream. It is also scoped by Amazon Web Services Region. That is, two streams in two different Amazon Web Services accounts can have the same name. Two streams in the same Amazon Web Services account but in two different Regions can also have the same name.</p>
-    pub fn stream_name(&self) -> std::option::Option<& str> {
+    pub fn stream_name(&self) -> std::option::Option<&str> {
         self.stream_name.as_deref()
     }
     /// <p>The number of shards that the stream will use. The throughput of the stream is a function of the number of shards; more shards are required for greater provisioned throughput.</p>
@@ -24,7 +24,7 @@ impl CreateStreamInput {
         self.shard_count
     }
     /// <p> Indicates the capacity mode of the data stream. Currently, in Kinesis Data Streams, you can choose between an <b>on-demand</b> capacity mode and a <b>provisioned</b> capacity mode for your data streams.</p>
-    pub fn stream_mode_details(&self) -> std::option::Option<& crate::types::StreamModeDetails> {
+    pub fn stream_mode_details(&self) -> std::option::Option<&crate::types::StreamModeDetails> {
         self.stream_mode_details.as_ref()
     }
 }
@@ -51,7 +51,8 @@ impl CreateStreamInputBuilder {
     }
     /// <p>A name to identify the stream. The stream name is scoped to the Amazon Web Services account used by the application that creates the stream. It is also scoped by Amazon Web Services Region. That is, two streams in two different Amazon Web Services accounts can have the same name. Two streams in the same Amazon Web Services account but in two different Regions can also have the same name.</p>
     pub fn set_stream_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.stream_name = input; self
+        self.stream_name = input;
+        self
     }
     /// <p>The number of shards that the stream will use. The throughput of the stream is a function of the number of shards; more shards are required for greater provisioned throughput.</p>
     pub fn shard_count(mut self, input: i32) -> Self {
@@ -60,7 +61,8 @@ impl CreateStreamInputBuilder {
     }
     /// <p>The number of shards that the stream will use. The throughput of the stream is a function of the number of shards; more shards are required for greater provisioned throughput.</p>
     pub fn set_shard_count(mut self, input: std::option::Option<i32>) -> Self {
-        self.shard_count = input; self
+        self.shard_count = input;
+        self
     }
     /// <p> Indicates the capacity mode of the data stream. Currently, in Kinesis Data Streams, you can choose between an <b>on-demand</b> capacity mode and a <b>provisioned</b> capacity mode for your data streams.</p>
     pub fn stream_mode_details(mut self, input: crate::types::StreamModeDetails) -> Self {
@@ -68,21 +70,24 @@ impl CreateStreamInputBuilder {
         self
     }
     /// <p> Indicates the capacity mode of the data stream. Currently, in Kinesis Data Streams, you can choose between an <b>on-demand</b> capacity mode and a <b>provisioned</b> capacity mode for your data streams.</p>
-    pub fn set_stream_mode_details(mut self, input: std::option::Option<crate::types::StreamModeDetails>) -> Self {
-        self.stream_mode_details = input; self
+    pub fn set_stream_mode_details(
+        mut self,
+        input: std::option::Option<crate::types::StreamModeDetails>,
+    ) -> Self {
+        self.stream_mode_details = input;
+        self
     }
     /// Consumes the builder and constructs a [`CreateStreamInput`](crate::operation::create_stream::CreateStreamInput).
-    pub fn build(self) -> Result<crate::operation::create_stream::CreateStreamInput, aws_smithy_http::operation::error::BuildError> {
-        Ok(
-            crate::operation::create_stream::CreateStreamInput {
-                stream_name: self.stream_name
-                ,
-                shard_count: self.shard_count
-                ,
-                stream_mode_details: self.stream_mode_details
-                ,
-            }
-        )
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::create_stream::CreateStreamInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        Ok(crate::operation::create_stream::CreateStreamInput {
+            stream_name: self.stream_name,
+            shard_count: self.shard_count,
+            stream_mode_details: self.stream_mode_details,
+        })
     }
 }
-

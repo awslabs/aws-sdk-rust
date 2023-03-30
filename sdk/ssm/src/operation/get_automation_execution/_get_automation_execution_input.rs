@@ -2,20 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetAutomationExecutionInput  {
+pub struct GetAutomationExecutionInput {
     /// <p>The unique identifier for an existing automation execution to examine. The execution ID is returned by StartAutomationExecution when the execution of an Automation runbook is initiated.</p>
     #[doc(hidden)]
     pub automation_execution_id: std::option::Option<std::string::String>,
 }
 impl GetAutomationExecutionInput {
     /// <p>The unique identifier for an existing automation execution to examine. The execution ID is returned by StartAutomationExecution when the execution of an Automation runbook is initiated.</p>
-    pub fn automation_execution_id(&self) -> std::option::Option<& str> {
+    pub fn automation_execution_id(&self) -> std::option::Option<&str> {
         self.automation_execution_id.as_deref()
     }
 }
 impl GetAutomationExecutionInput {
     /// Creates a new builder-style object to manufacture [`GetAutomationExecutionInput`](crate::operation::get_automation_execution::GetAutomationExecutionInput).
-    pub fn builder() -> crate::operation::get_automation_execution::builders::GetAutomationExecutionInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::get_automation_execution::builders::GetAutomationExecutionInputBuilder
+    {
         crate::operation::get_automation_execution::builders::GetAutomationExecutionInputBuilder::default()
     }
 }
@@ -33,17 +35,24 @@ impl GetAutomationExecutionInputBuilder {
         self
     }
     /// <p>The unique identifier for an existing automation execution to examine. The execution ID is returned by StartAutomationExecution when the execution of an Automation runbook is initiated.</p>
-    pub fn set_automation_execution_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.automation_execution_id = input; self
+    pub fn set_automation_execution_id(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.automation_execution_id = input;
+        self
     }
     /// Consumes the builder and constructs a [`GetAutomationExecutionInput`](crate::operation::get_automation_execution::GetAutomationExecutionInput).
-    pub fn build(self) -> Result<crate::operation::get_automation_execution::GetAutomationExecutionInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::get_automation_execution::GetAutomationExecutionInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::get_automation_execution::GetAutomationExecutionInput {
-                automation_execution_id: self.automation_execution_id
-                ,
-            }
+                automation_execution_id: self.automation_execution_id,
+            },
         )
     }
 }
-

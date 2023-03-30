@@ -3,7 +3,7 @@
 /// <p>The request to update the device status, as an administrator.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct AdminUpdateDeviceStatusInput  {
+pub struct AdminUpdateDeviceStatusInput {
     /// <p>The user pool ID.</p>
     #[doc(hidden)]
     pub user_pool_id: std::option::Option<std::string::String>,
@@ -19,23 +19,25 @@ pub struct AdminUpdateDeviceStatusInput  {
 }
 impl AdminUpdateDeviceStatusInput {
     /// <p>The user pool ID.</p>
-    pub fn user_pool_id(&self) -> std::option::Option<& str> {
+    pub fn user_pool_id(&self) -> std::option::Option<&str> {
         self.user_pool_id.as_deref()
     }
     /// <p>The user name.</p>
-    pub fn username(&self) -> std::option::Option<& str> {
+    pub fn username(&self) -> std::option::Option<&str> {
         self.username.as_deref()
     }
     /// <p>The device key.</p>
-    pub fn device_key(&self) -> std::option::Option<& str> {
+    pub fn device_key(&self) -> std::option::Option<&str> {
         self.device_key.as_deref()
     }
     /// <p>The status indicating whether a device has been remembered or not.</p>
-    pub fn device_remembered_status(&self) -> std::option::Option<& crate::types::DeviceRememberedStatusType> {
+    pub fn device_remembered_status(
+        &self,
+    ) -> std::option::Option<&crate::types::DeviceRememberedStatusType> {
         self.device_remembered_status.as_ref()
     }
 }
-impl  std::fmt::Debug for AdminUpdateDeviceStatusInput  {
+impl std::fmt::Debug for AdminUpdateDeviceStatusInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("AdminUpdateDeviceStatusInput");
         formatter.field("user_pool_id", &self.user_pool_id);
@@ -47,7 +49,9 @@ impl  std::fmt::Debug for AdminUpdateDeviceStatusInput  {
 }
 impl AdminUpdateDeviceStatusInput {
     /// Creates a new builder-style object to manufacture [`AdminUpdateDeviceStatusInput`](crate::operation::admin_update_device_status::AdminUpdateDeviceStatusInput).
-    pub fn builder() -> crate::operation::admin_update_device_status::builders::AdminUpdateDeviceStatusInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::admin_update_device_status::builders::AdminUpdateDeviceStatusInputBuilder
+    {
         crate::operation::admin_update_device_status::builders::AdminUpdateDeviceStatusInputBuilder::default()
     }
 }
@@ -59,7 +63,8 @@ pub struct AdminUpdateDeviceStatusInputBuilder {
     pub(crate) user_pool_id: std::option::Option<std::string::String>,
     pub(crate) username: std::option::Option<std::string::String>,
     pub(crate) device_key: std::option::Option<std::string::String>,
-    pub(crate) device_remembered_status: std::option::Option<crate::types::DeviceRememberedStatusType>,
+    pub(crate) device_remembered_status:
+        std::option::Option<crate::types::DeviceRememberedStatusType>,
 }
 impl AdminUpdateDeviceStatusInputBuilder {
     /// <p>The user pool ID.</p>
@@ -69,7 +74,8 @@ impl AdminUpdateDeviceStatusInputBuilder {
     }
     /// <p>The user pool ID.</p>
     pub fn set_user_pool_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.user_pool_id = input; self
+        self.user_pool_id = input;
+        self
     }
     /// <p>The user name.</p>
     pub fn username(mut self, input: impl Into<std::string::String>) -> Self {
@@ -78,7 +84,8 @@ impl AdminUpdateDeviceStatusInputBuilder {
     }
     /// <p>The user name.</p>
     pub fn set_username(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.username = input; self
+        self.username = input;
+        self
     }
     /// <p>The device key.</p>
     pub fn device_key(mut self, input: impl Into<std::string::String>) -> Self {
@@ -87,30 +94,39 @@ impl AdminUpdateDeviceStatusInputBuilder {
     }
     /// <p>The device key.</p>
     pub fn set_device_key(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.device_key = input; self
+        self.device_key = input;
+        self
     }
     /// <p>The status indicating whether a device has been remembered or not.</p>
-    pub fn device_remembered_status(mut self, input: crate::types::DeviceRememberedStatusType) -> Self {
+    pub fn device_remembered_status(
+        mut self,
+        input: crate::types::DeviceRememberedStatusType,
+    ) -> Self {
         self.device_remembered_status = Some(input);
         self
     }
     /// <p>The status indicating whether a device has been remembered or not.</p>
-    pub fn set_device_remembered_status(mut self, input: std::option::Option<crate::types::DeviceRememberedStatusType>) -> Self {
-        self.device_remembered_status = input; self
+    pub fn set_device_remembered_status(
+        mut self,
+        input: std::option::Option<crate::types::DeviceRememberedStatusType>,
+    ) -> Self {
+        self.device_remembered_status = input;
+        self
     }
     /// Consumes the builder and constructs a [`AdminUpdateDeviceStatusInput`](crate::operation::admin_update_device_status::AdminUpdateDeviceStatusInput).
-    pub fn build(self) -> Result<crate::operation::admin_update_device_status::AdminUpdateDeviceStatusInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::admin_update_device_status::AdminUpdateDeviceStatusInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::admin_update_device_status::AdminUpdateDeviceStatusInput {
-                user_pool_id: self.user_pool_id
-                ,
-                username: self.username
-                ,
-                device_key: self.device_key
-                ,
-                device_remembered_status: self.device_remembered_status
-                ,
-            }
+                user_pool_id: self.user_pool_id,
+                username: self.username,
+                device_key: self.device_key,
+                device_remembered_status: self.device_remembered_status,
+            },
         )
     }
 }
@@ -124,4 +140,3 @@ impl std::fmt::Debug for AdminUpdateDeviceStatusInputBuilder {
         formatter.finish()
     }
 }
-

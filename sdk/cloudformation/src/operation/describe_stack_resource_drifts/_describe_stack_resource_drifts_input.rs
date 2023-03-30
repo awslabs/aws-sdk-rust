@@ -2,19 +2,20 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeStackResourceDriftsInput  {
+pub struct DescribeStackResourceDriftsInput {
     /// <p>The name of the stack for which you want drift information.</p>
     #[doc(hidden)]
     pub stack_name: std::option::Option<std::string::String>,
-    /// <p>The resource drift status values to use as filters for the resource drift results returned.</p> 
-    /// <ul> 
-    /// <li> <p> <code>DELETED</code>: The resource differs from its expected template configuration in that the resource has been deleted.</p> </li> 
-    /// <li> <p> <code>MODIFIED</code>: One or more resource properties differ from their expected template values.</p> </li> 
-    /// <li> <p> <code>IN_SYNC</code>: The resource's actual configuration matches its expected template configuration.</p> </li> 
-    /// <li> <p> <code>NOT_CHECKED</code>: CloudFormation doesn't currently return this value.</p> </li> 
+    /// <p>The resource drift status values to use as filters for the resource drift results returned.</p>
+    /// <ul>
+    /// <li> <p> <code>DELETED</code>: The resource differs from its expected template configuration in that the resource has been deleted.</p> </li>
+    /// <li> <p> <code>MODIFIED</code>: One or more resource properties differ from their expected template values.</p> </li>
+    /// <li> <p> <code>IN_SYNC</code>: The resource's actual configuration matches its expected template configuration.</p> </li>
+    /// <li> <p> <code>NOT_CHECKED</code>: CloudFormation doesn't currently return this value.</p> </li>
     /// </ul>
     #[doc(hidden)]
-    pub stack_resource_drift_status_filters: std::option::Option<std::vec::Vec<crate::types::StackResourceDriftStatus>>,
+    pub stack_resource_drift_status_filters:
+        std::option::Option<std::vec::Vec<crate::types::StackResourceDriftStatus>>,
     /// <p>A string that identifies the next page of stack resource drift results.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
@@ -24,21 +25,23 @@ pub struct DescribeStackResourceDriftsInput  {
 }
 impl DescribeStackResourceDriftsInput {
     /// <p>The name of the stack for which you want drift information.</p>
-    pub fn stack_name(&self) -> std::option::Option<& str> {
+    pub fn stack_name(&self) -> std::option::Option<&str> {
         self.stack_name.as_deref()
     }
-    /// <p>The resource drift status values to use as filters for the resource drift results returned.</p> 
-    /// <ul> 
-    /// <li> <p> <code>DELETED</code>: The resource differs from its expected template configuration in that the resource has been deleted.</p> </li> 
-    /// <li> <p> <code>MODIFIED</code>: One or more resource properties differ from their expected template values.</p> </li> 
-    /// <li> <p> <code>IN_SYNC</code>: The resource's actual configuration matches its expected template configuration.</p> </li> 
-    /// <li> <p> <code>NOT_CHECKED</code>: CloudFormation doesn't currently return this value.</p> </li> 
+    /// <p>The resource drift status values to use as filters for the resource drift results returned.</p>
+    /// <ul>
+    /// <li> <p> <code>DELETED</code>: The resource differs from its expected template configuration in that the resource has been deleted.</p> </li>
+    /// <li> <p> <code>MODIFIED</code>: One or more resource properties differ from their expected template values.</p> </li>
+    /// <li> <p> <code>IN_SYNC</code>: The resource's actual configuration matches its expected template configuration.</p> </li>
+    /// <li> <p> <code>NOT_CHECKED</code>: CloudFormation doesn't currently return this value.</p> </li>
     /// </ul>
-    pub fn stack_resource_drift_status_filters(&self) -> std::option::Option<& [crate::types::StackResourceDriftStatus]> {
+    pub fn stack_resource_drift_status_filters(
+        &self,
+    ) -> std::option::Option<&[crate::types::StackResourceDriftStatus]> {
         self.stack_resource_drift_status_filters.as_deref()
     }
     /// <p>A string that identifies the next page of stack resource drift results.</p>
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
     /// <p>The maximum number of results to be returned with a single call. If the number of available results exceeds this maximum, the response includes a <code>NextToken</code> value that you can assign to the <code>NextToken</code> request parameter to get the next set of results.</p>
@@ -48,7 +51,7 @@ impl DescribeStackResourceDriftsInput {
 }
 impl DescribeStackResourceDriftsInput {
     /// Creates a new builder-style object to manufacture [`DescribeStackResourceDriftsInput`](crate::operation::describe_stack_resource_drifts::DescribeStackResourceDriftsInput).
-    pub fn builder() -> crate::operation::describe_stack_resource_drifts::builders::DescribeStackResourceDriftsInputBuilder {
+    pub fn builder() -> crate::operation::describe_stack_resource_drifts::builders::DescribeStackResourceDriftsInputBuilder{
         crate::operation::describe_stack_resource_drifts::builders::DescribeStackResourceDriftsInputBuilder::default()
     }
 }
@@ -58,7 +61,8 @@ impl DescribeStackResourceDriftsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct DescribeStackResourceDriftsInputBuilder {
     pub(crate) stack_name: std::option::Option<std::string::String>,
-    pub(crate) stack_resource_drift_status_filters: std::option::Option<std::vec::Vec<crate::types::StackResourceDriftStatus>>,
+    pub(crate) stack_resource_drift_status_filters:
+        std::option::Option<std::vec::Vec<crate::types::StackResourceDriftStatus>>,
     pub(crate) next_token: std::option::Option<std::string::String>,
     pub(crate) max_results: std::option::Option<i32>,
 }
@@ -70,34 +74,42 @@ impl DescribeStackResourceDriftsInputBuilder {
     }
     /// <p>The name of the stack for which you want drift information.</p>
     pub fn set_stack_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.stack_name = input; self
+        self.stack_name = input;
+        self
     }
     /// Appends an item to `stack_resource_drift_status_filters`.
     ///
     /// To override the contents of this collection use [`set_stack_resource_drift_status_filters`](Self::set_stack_resource_drift_status_filters).
     ///
-    /// <p>The resource drift status values to use as filters for the resource drift results returned.</p> 
-    /// <ul> 
-    /// <li> <p> <code>DELETED</code>: The resource differs from its expected template configuration in that the resource has been deleted.</p> </li> 
-    /// <li> <p> <code>MODIFIED</code>: One or more resource properties differ from their expected template values.</p> </li> 
-    /// <li> <p> <code>IN_SYNC</code>: The resource's actual configuration matches its expected template configuration.</p> </li> 
-    /// <li> <p> <code>NOT_CHECKED</code>: CloudFormation doesn't currently return this value.</p> </li> 
+    /// <p>The resource drift status values to use as filters for the resource drift results returned.</p>
+    /// <ul>
+    /// <li> <p> <code>DELETED</code>: The resource differs from its expected template configuration in that the resource has been deleted.</p> </li>
+    /// <li> <p> <code>MODIFIED</code>: One or more resource properties differ from their expected template values.</p> </li>
+    /// <li> <p> <code>IN_SYNC</code>: The resource's actual configuration matches its expected template configuration.</p> </li>
+    /// <li> <p> <code>NOT_CHECKED</code>: CloudFormation doesn't currently return this value.</p> </li>
     /// </ul>
-    pub fn stack_resource_drift_status_filters(mut self, input: crate::types::StackResourceDriftStatus) -> Self {
+    pub fn stack_resource_drift_status_filters(
+        mut self,
+        input: crate::types::StackResourceDriftStatus,
+    ) -> Self {
         let mut v = self.stack_resource_drift_status_filters.unwrap_or_default();
-                        v.push(input);
-                        self.stack_resource_drift_status_filters = Some(v);
-                        self
+        v.push(input);
+        self.stack_resource_drift_status_filters = Some(v);
+        self
     }
-    /// <p>The resource drift status values to use as filters for the resource drift results returned.</p> 
-    /// <ul> 
-    /// <li> <p> <code>DELETED</code>: The resource differs from its expected template configuration in that the resource has been deleted.</p> </li> 
-    /// <li> <p> <code>MODIFIED</code>: One or more resource properties differ from their expected template values.</p> </li> 
-    /// <li> <p> <code>IN_SYNC</code>: The resource's actual configuration matches its expected template configuration.</p> </li> 
-    /// <li> <p> <code>NOT_CHECKED</code>: CloudFormation doesn't currently return this value.</p> </li> 
+    /// <p>The resource drift status values to use as filters for the resource drift results returned.</p>
+    /// <ul>
+    /// <li> <p> <code>DELETED</code>: The resource differs from its expected template configuration in that the resource has been deleted.</p> </li>
+    /// <li> <p> <code>MODIFIED</code>: One or more resource properties differ from their expected template values.</p> </li>
+    /// <li> <p> <code>IN_SYNC</code>: The resource's actual configuration matches its expected template configuration.</p> </li>
+    /// <li> <p> <code>NOT_CHECKED</code>: CloudFormation doesn't currently return this value.</p> </li>
     /// </ul>
-    pub fn set_stack_resource_drift_status_filters(mut self, input: std::option::Option<std::vec::Vec<crate::types::StackResourceDriftStatus>>) -> Self {
-        self.stack_resource_drift_status_filters = input; self
+    pub fn set_stack_resource_drift_status_filters(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::StackResourceDriftStatus>>,
+    ) -> Self {
+        self.stack_resource_drift_status_filters = input;
+        self
     }
     /// <p>A string that identifies the next page of stack resource drift results.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -106,7 +118,8 @@ impl DescribeStackResourceDriftsInputBuilder {
     }
     /// <p>A string that identifies the next page of stack resource drift results.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input; self
+        self.next_token = input;
+        self
     }
     /// <p>The maximum number of results to be returned with a single call. If the number of available results exceeds this maximum, the response includes a <code>NextToken</code> value that you can assign to the <code>NextToken</code> request parameter to get the next set of results.</p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -115,22 +128,23 @@ impl DescribeStackResourceDriftsInputBuilder {
     }
     /// <p>The maximum number of results to be returned with a single call. If the number of available results exceeds this maximum, the response includes a <code>NextToken</code> value that you can assign to the <code>NextToken</code> request parameter to get the next set of results.</p>
     pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_results = input; self
+        self.max_results = input;
+        self
     }
     /// Consumes the builder and constructs a [`DescribeStackResourceDriftsInput`](crate::operation::describe_stack_resource_drifts::DescribeStackResourceDriftsInput).
-    pub fn build(self) -> Result<crate::operation::describe_stack_resource_drifts::DescribeStackResourceDriftsInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::describe_stack_resource_drifts::DescribeStackResourceDriftsInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::describe_stack_resource_drifts::DescribeStackResourceDriftsInput {
-                stack_name: self.stack_name
-                ,
-                stack_resource_drift_status_filters: self.stack_resource_drift_status_filters
-                ,
-                next_token: self.next_token
-                ,
-                max_results: self.max_results
-                ,
-            }
+                stack_name: self.stack_name,
+                stack_resource_drift_status_filters: self.stack_resource_drift_status_filters,
+                next_token: self.next_token,
+                max_results: self.max_results,
+            },
         )
     }
 }
-

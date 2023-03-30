@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetGroupInput  {
+pub struct GetGroupInput {
     /// <p>The name of the group.</p>
     #[doc(hidden)]
     pub group_name: std::option::Option<std::string::String>,
@@ -12,11 +12,11 @@ pub struct GetGroupInput  {
 }
 impl GetGroupInput {
     /// <p>The name of the group.</p>
-    pub fn group_name(&self) -> std::option::Option<& str> {
+    pub fn group_name(&self) -> std::option::Option<&str> {
         self.group_name.as_deref()
     }
     /// <p>The user pool ID for the user pool.</p>
-    pub fn user_pool_id(&self) -> std::option::Option<& str> {
+    pub fn user_pool_id(&self) -> std::option::Option<&str> {
         self.user_pool_id.as_deref()
     }
 }
@@ -42,7 +42,8 @@ impl GetGroupInputBuilder {
     }
     /// <p>The name of the group.</p>
     pub fn set_group_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.group_name = input; self
+        self.group_name = input;
+        self
     }
     /// <p>The user pool ID for the user pool.</p>
     pub fn user_pool_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -51,18 +52,19 @@ impl GetGroupInputBuilder {
     }
     /// <p>The user pool ID for the user pool.</p>
     pub fn set_user_pool_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.user_pool_id = input; self
+        self.user_pool_id = input;
+        self
     }
     /// Consumes the builder and constructs a [`GetGroupInput`](crate::operation::get_group::GetGroupInput).
-    pub fn build(self) -> Result<crate::operation::get_group::GetGroupInput, aws_smithy_http::operation::error::BuildError> {
-        Ok(
-            crate::operation::get_group::GetGroupInput {
-                group_name: self.group_name
-                ,
-                user_pool_id: self.user_pool_id
-                ,
-            }
-        )
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::get_group::GetGroupInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        Ok(crate::operation::get_group::GetGroupInput {
+            group_name: self.group_name,
+            user_pool_id: self.user_pool_id,
+        })
     }
 }
-

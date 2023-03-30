@@ -3,7 +3,7 @@
 /// <p>Contains the result of a successful invocation of the <code>DescribeDBClusterBacktracks</code> action.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeDbClusterBacktracksOutput  {
+pub struct DescribeDbClusterBacktracksOutput {
     /// <p>A pagination token that can be used in a later <code>DescribeDBClusterBacktracks</code> request.</p>
     #[doc(hidden)]
     pub marker: std::option::Option<std::string::String>,
@@ -14,22 +14,24 @@ pub struct DescribeDbClusterBacktracksOutput  {
 }
 impl DescribeDbClusterBacktracksOutput {
     /// <p>A pagination token that can be used in a later <code>DescribeDBClusterBacktracks</code> request.</p>
-    pub fn marker(&self) -> std::option::Option<& str> {
+    pub fn marker(&self) -> std::option::Option<&str> {
         self.marker.as_deref()
     }
     /// <p>Contains a list of backtracks for the user.</p>
-    pub fn db_cluster_backtracks(&self) -> std::option::Option<& [crate::types::DbClusterBacktrack]> {
+    pub fn db_cluster_backtracks(
+        &self,
+    ) -> std::option::Option<&[crate::types::DbClusterBacktrack]> {
         self.db_cluster_backtracks.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for DescribeDbClusterBacktracksOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl DescribeDbClusterBacktracksOutput {
     /// Creates a new builder-style object to manufacture [`DescribeDbClusterBacktracksOutput`](crate::operation::describe_db_cluster_backtracks::DescribeDbClusterBacktracksOutput).
-    pub fn builder() -> crate::operation::describe_db_cluster_backtracks::builders::DescribeDbClusterBacktracksOutputBuilder {
+    pub fn builder() -> crate::operation::describe_db_cluster_backtracks::builders::DescribeDbClusterBacktracksOutputBuilder{
         crate::operation::describe_db_cluster_backtracks::builders::DescribeDbClusterBacktracksOutputBuilder::default()
     }
 }
@@ -39,7 +41,8 @@ impl DescribeDbClusterBacktracksOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct DescribeDbClusterBacktracksOutputBuilder {
     pub(crate) marker: std::option::Option<std::string::String>,
-    pub(crate) db_cluster_backtracks: std::option::Option<std::vec::Vec<crate::types::DbClusterBacktrack>>,
+    pub(crate) db_cluster_backtracks:
+        std::option::Option<std::vec::Vec<crate::types::DbClusterBacktrack>>,
     _request_id: Option<String>,
 }
 impl DescribeDbClusterBacktracksOutputBuilder {
@@ -50,7 +53,8 @@ impl DescribeDbClusterBacktracksOutputBuilder {
     }
     /// <p>A pagination token that can be used in a later <code>DescribeDBClusterBacktracks</code> request.</p>
     pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.marker = input; self
+        self.marker = input;
+        self
     }
     /// Appends an item to `db_cluster_backtracks`.
     ///
@@ -59,32 +63,35 @@ impl DescribeDbClusterBacktracksOutputBuilder {
     /// <p>Contains a list of backtracks for the user.</p>
     pub fn db_cluster_backtracks(mut self, input: crate::types::DbClusterBacktrack) -> Self {
         let mut v = self.db_cluster_backtracks.unwrap_or_default();
-                        v.push(input);
-                        self.db_cluster_backtracks = Some(v);
-                        self
+        v.push(input);
+        self.db_cluster_backtracks = Some(v);
+        self
     }
     /// <p>Contains a list of backtracks for the user.</p>
-    pub fn set_db_cluster_backtracks(mut self, input: std::option::Option<std::vec::Vec<crate::types::DbClusterBacktrack>>) -> Self {
-        self.db_cluster_backtracks = input; self
+    pub fn set_db_cluster_backtracks(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::DbClusterBacktrack>>,
+    ) -> Self {
+        self.db_cluster_backtracks = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`DescribeDbClusterBacktracksOutput`](crate::operation::describe_db_cluster_backtracks::DescribeDbClusterBacktracksOutput).
-    pub fn build(self) -> crate::operation::describe_db_cluster_backtracks::DescribeDbClusterBacktracksOutput {
+    pub fn build(
+        self,
+    ) -> crate::operation::describe_db_cluster_backtracks::DescribeDbClusterBacktracksOutput {
         crate::operation::describe_db_cluster_backtracks::DescribeDbClusterBacktracksOutput {
-            marker: self.marker
-            ,
-            db_cluster_backtracks: self.db_cluster_backtracks
-            ,
+            marker: self.marker,
+            db_cluster_backtracks: self.db_cluster_backtracks,
             _request_id: self._request_id,
         }
     }
 }
-

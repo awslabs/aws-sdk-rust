@@ -3,7 +3,7 @@
 /// Placeholder documentation for DeleteTagsRequest
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteTagsInput  {
+pub struct DeleteTagsInput {
     /// Placeholder documentation for __string
     #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
@@ -13,11 +13,11 @@ pub struct DeleteTagsInput  {
 }
 impl DeleteTagsInput {
     /// Placeholder documentation for __string
-    pub fn resource_arn(&self) -> std::option::Option<& str> {
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
         self.resource_arn.as_deref()
     }
     /// An array of tag keys to delete
-    pub fn tag_keys(&self) -> std::option::Option<& [std::string::String]> {
+    pub fn tag_keys(&self) -> std::option::Option<&[std::string::String]> {
         self.tag_keys.as_deref()
     }
 }
@@ -43,7 +43,8 @@ impl DeleteTagsInputBuilder {
     }
     /// Placeholder documentation for __string
     pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.resource_arn = input; self
+        self.resource_arn = input;
+        self
     }
     /// Appends an item to `tag_keys`.
     ///
@@ -52,24 +53,28 @@ impl DeleteTagsInputBuilder {
     /// An array of tag keys to delete
     pub fn tag_keys(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.tag_keys.unwrap_or_default();
-                        v.push(input.into());
-                        self.tag_keys = Some(v);
-                        self
+        v.push(input.into());
+        self.tag_keys = Some(v);
+        self
     }
     /// An array of tag keys to delete
-    pub fn set_tag_keys(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-        self.tag_keys = input; self
+    pub fn set_tag_keys(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
+        self.tag_keys = input;
+        self
     }
     /// Consumes the builder and constructs a [`DeleteTagsInput`](crate::operation::delete_tags::DeleteTagsInput).
-    pub fn build(self) -> Result<crate::operation::delete_tags::DeleteTagsInput, aws_smithy_http::operation::error::BuildError> {
-        Ok(
-            crate::operation::delete_tags::DeleteTagsInput {
-                resource_arn: self.resource_arn
-                ,
-                tag_keys: self.tag_keys
-                ,
-            }
-        )
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::delete_tags::DeleteTagsInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        Ok(crate::operation::delete_tags::DeleteTagsInput {
+            resource_arn: self.resource_arn,
+            tag_keys: self.tag_keys,
+        })
     }
 }
-

@@ -2,20 +2,21 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetClusterSnapshotInput  {
+pub struct GetClusterSnapshotInput {
     /// <p>The arn of the Elastic DocumentDB snapshot.</p>
     #[doc(hidden)]
     pub snapshot_arn: std::option::Option<std::string::String>,
 }
 impl GetClusterSnapshotInput {
     /// <p>The arn of the Elastic DocumentDB snapshot.</p>
-    pub fn snapshot_arn(&self) -> std::option::Option<& str> {
+    pub fn snapshot_arn(&self) -> std::option::Option<&str> {
         self.snapshot_arn.as_deref()
     }
 }
 impl GetClusterSnapshotInput {
     /// Creates a new builder-style object to manufacture [`GetClusterSnapshotInput`](crate::operation::get_cluster_snapshot::GetClusterSnapshotInput).
-    pub fn builder() -> crate::operation::get_cluster_snapshot::builders::GetClusterSnapshotInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::get_cluster_snapshot::builders::GetClusterSnapshotInputBuilder {
         crate::operation::get_cluster_snapshot::builders::GetClusterSnapshotInputBuilder::default()
     }
 }
@@ -34,16 +35,20 @@ impl GetClusterSnapshotInputBuilder {
     }
     /// <p>The arn of the Elastic DocumentDB snapshot.</p>
     pub fn set_snapshot_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.snapshot_arn = input; self
+        self.snapshot_arn = input;
+        self
     }
     /// Consumes the builder and constructs a [`GetClusterSnapshotInput`](crate::operation::get_cluster_snapshot::GetClusterSnapshotInput).
-    pub fn build(self) -> Result<crate::operation::get_cluster_snapshot::GetClusterSnapshotInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::get_cluster_snapshot::GetClusterSnapshotInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::get_cluster_snapshot::GetClusterSnapshotInput {
-                snapshot_arn: self.snapshot_arn
-                ,
-            }
+                snapshot_arn: self.snapshot_arn,
+            },
         )
     }
 }
-

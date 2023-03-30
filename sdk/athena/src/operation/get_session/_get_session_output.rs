@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetSessionOutput  {
+pub struct GetSessionOutput {
     /// <p>The session ID.</p>
     #[doc(hidden)]
     pub session_id: std::option::Option<std::string::String>,
@@ -34,47 +34,49 @@ pub struct GetSessionOutput  {
 }
 impl GetSessionOutput {
     /// <p>The session ID.</p>
-    pub fn session_id(&self) -> std::option::Option<& str> {
+    pub fn session_id(&self) -> std::option::Option<&str> {
         self.session_id.as_deref()
     }
     /// <p>The session description.</p>
-    pub fn description(&self) -> std::option::Option<& str> {
+    pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
     /// <p>The workgroup to which the session belongs.</p>
-    pub fn work_group(&self) -> std::option::Option<& str> {
+    pub fn work_group(&self) -> std::option::Option<&str> {
         self.work_group.as_deref()
     }
     /// <p>The engine version used by the session (for example, <code>PySpark engine version 3</code>). You can get a list of engine versions by calling <code>ListEngineVersions</code>.</p>
-    pub fn engine_version(&self) -> std::option::Option<& str> {
+    pub fn engine_version(&self) -> std::option::Option<&str> {
         self.engine_version.as_deref()
     }
     /// <p>Contains engine configuration information like DPU usage.</p>
-    pub fn engine_configuration(&self) -> std::option::Option<& crate::types::EngineConfiguration> {
+    pub fn engine_configuration(&self) -> std::option::Option<&crate::types::EngineConfiguration> {
         self.engine_configuration.as_ref()
     }
     /// <p>The notebook version.</p>
-    pub fn notebook_version(&self) -> std::option::Option<& str> {
+    pub fn notebook_version(&self) -> std::option::Option<&str> {
         self.notebook_version.as_deref()
     }
     /// <p>Contains the workgroup configuration information used by the session.</p>
-    pub fn session_configuration(&self) -> std::option::Option<& crate::types::SessionConfiguration> {
+    pub fn session_configuration(
+        &self,
+    ) -> std::option::Option<&crate::types::SessionConfiguration> {
         self.session_configuration.as_ref()
     }
     /// <p>Contains information about the status of the session.</p>
-    pub fn status(&self) -> std::option::Option<& crate::types::SessionStatus> {
+    pub fn status(&self) -> std::option::Option<&crate::types::SessionStatus> {
         self.status.as_ref()
     }
     /// <p>Contains the DPU execution time.</p>
-    pub fn statistics(&self) -> std::option::Option<& crate::types::SessionStatistics> {
+    pub fn statistics(&self) -> std::option::Option<&crate::types::SessionStatistics> {
         self.statistics.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for GetSessionOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl GetSessionOutput {
     /// Creates a new builder-style object to manufacture [`GetSessionOutput`](crate::operation::get_session::GetSessionOutput).
     pub fn builder() -> crate::operation::get_session::builders::GetSessionOutputBuilder {
@@ -105,7 +107,8 @@ impl GetSessionOutputBuilder {
     }
     /// <p>The session ID.</p>
     pub fn set_session_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.session_id = input; self
+        self.session_id = input;
+        self
     }
     /// <p>The session description.</p>
     pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -114,7 +117,8 @@ impl GetSessionOutputBuilder {
     }
     /// <p>The session description.</p>
     pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.description = input; self
+        self.description = input;
+        self
     }
     /// <p>The workgroup to which the session belongs.</p>
     pub fn work_group(mut self, input: impl Into<std::string::String>) -> Self {
@@ -123,7 +127,8 @@ impl GetSessionOutputBuilder {
     }
     /// <p>The workgroup to which the session belongs.</p>
     pub fn set_work_group(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.work_group = input; self
+        self.work_group = input;
+        self
     }
     /// <p>The engine version used by the session (for example, <code>PySpark engine version 3</code>). You can get a list of engine versions by calling <code>ListEngineVersions</code>.</p>
     pub fn engine_version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -132,7 +137,8 @@ impl GetSessionOutputBuilder {
     }
     /// <p>The engine version used by the session (for example, <code>PySpark engine version 3</code>). You can get a list of engine versions by calling <code>ListEngineVersions</code>.</p>
     pub fn set_engine_version(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.engine_version = input; self
+        self.engine_version = input;
+        self
     }
     /// <p>Contains engine configuration information like DPU usage.</p>
     pub fn engine_configuration(mut self, input: crate::types::EngineConfiguration) -> Self {
@@ -140,8 +146,12 @@ impl GetSessionOutputBuilder {
         self
     }
     /// <p>Contains engine configuration information like DPU usage.</p>
-    pub fn set_engine_configuration(mut self, input: std::option::Option<crate::types::EngineConfiguration>) -> Self {
-        self.engine_configuration = input; self
+    pub fn set_engine_configuration(
+        mut self,
+        input: std::option::Option<crate::types::EngineConfiguration>,
+    ) -> Self {
+        self.engine_configuration = input;
+        self
     }
     /// <p>The notebook version.</p>
     pub fn notebook_version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -150,7 +160,8 @@ impl GetSessionOutputBuilder {
     }
     /// <p>The notebook version.</p>
     pub fn set_notebook_version(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.notebook_version = input; self
+        self.notebook_version = input;
+        self
     }
     /// <p>Contains the workgroup configuration information used by the session.</p>
     pub fn session_configuration(mut self, input: crate::types::SessionConfiguration) -> Self {
@@ -158,8 +169,12 @@ impl GetSessionOutputBuilder {
         self
     }
     /// <p>Contains the workgroup configuration information used by the session.</p>
-    pub fn set_session_configuration(mut self, input: std::option::Option<crate::types::SessionConfiguration>) -> Self {
-        self.session_configuration = input; self
+    pub fn set_session_configuration(
+        mut self,
+        input: std::option::Option<crate::types::SessionConfiguration>,
+    ) -> Self {
+        self.session_configuration = input;
+        self
     }
     /// <p>Contains information about the status of the session.</p>
     pub fn status(mut self, input: crate::types::SessionStatus) -> Self {
@@ -168,7 +183,8 @@ impl GetSessionOutputBuilder {
     }
     /// <p>Contains information about the status of the session.</p>
     pub fn set_status(mut self, input: std::option::Option<crate::types::SessionStatus>) -> Self {
-        self.status = input; self
+        self.status = input;
+        self
     }
     /// <p>Contains the DPU execution time.</p>
     pub fn statistics(mut self, input: crate::types::SessionStatistics) -> Self {
@@ -176,41 +192,35 @@ impl GetSessionOutputBuilder {
         self
     }
     /// <p>Contains the DPU execution time.</p>
-    pub fn set_statistics(mut self, input: std::option::Option<crate::types::SessionStatistics>) -> Self {
-        self.statistics = input; self
+    pub fn set_statistics(
+        mut self,
+        input: std::option::Option<crate::types::SessionStatistics>,
+    ) -> Self {
+        self.statistics = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`GetSessionOutput`](crate::operation::get_session::GetSessionOutput).
     pub fn build(self) -> crate::operation::get_session::GetSessionOutput {
         crate::operation::get_session::GetSessionOutput {
-            session_id: self.session_id
-            ,
-            description: self.description
-            ,
-            work_group: self.work_group
-            ,
-            engine_version: self.engine_version
-            ,
-            engine_configuration: self.engine_configuration
-            ,
-            notebook_version: self.notebook_version
-            ,
-            session_configuration: self.session_configuration
-            ,
-            status: self.status
-            ,
-            statistics: self.statistics
-            ,
+            session_id: self.session_id,
+            description: self.description,
+            work_group: self.work_group,
+            engine_version: self.engine_version,
+            engine_configuration: self.engine_configuration,
+            notebook_version: self.notebook_version,
+            session_configuration: self.session_configuration,
+            status: self.status,
+            statistics: self.statistics,
             _request_id: self._request_id,
         }
     }
 }
-

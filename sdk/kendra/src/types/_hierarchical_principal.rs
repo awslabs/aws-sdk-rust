@@ -3,14 +3,14 @@
 /// <p> Information to define the hierarchy for which documents users should have access to. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct HierarchicalPrincipal  {
+pub struct HierarchicalPrincipal {
     /// <p>A list of <a href="https://docs.aws.amazon.com/kendra/latest/dg/API_Principal.html">principal</a> lists that define the hierarchy for which documents users should have access to. Each hierarchical list specifies which user or group has allow or deny access for each document.</p>
     #[doc(hidden)]
     pub principal_list: std::option::Option<std::vec::Vec<crate::types::Principal>>,
 }
 impl HierarchicalPrincipal {
     /// <p>A list of <a href="https://docs.aws.amazon.com/kendra/latest/dg/API_Principal.html">principal</a> lists that define the hierarchy for which documents users should have access to. Each hierarchical list specifies which user or group has allow or deny access for each document.</p>
-    pub fn principal_list(&self) -> std::option::Option<& [crate::types::Principal]> {
+    pub fn principal_list(&self) -> std::option::Option<&[crate::types::Principal]> {
         self.principal_list.as_deref()
     }
 }
@@ -35,20 +35,22 @@ impl HierarchicalPrincipalBuilder {
     /// <p>A list of <a href="https://docs.aws.amazon.com/kendra/latest/dg/API_Principal.html">principal</a> lists that define the hierarchy for which documents users should have access to. Each hierarchical list specifies which user or group has allow or deny access for each document.</p>
     pub fn principal_list(mut self, input: crate::types::Principal) -> Self {
         let mut v = self.principal_list.unwrap_or_default();
-                        v.push(input);
-                        self.principal_list = Some(v);
-                        self
+        v.push(input);
+        self.principal_list = Some(v);
+        self
     }
     /// <p>A list of <a href="https://docs.aws.amazon.com/kendra/latest/dg/API_Principal.html">principal</a> lists that define the hierarchy for which documents users should have access to. Each hierarchical list specifies which user or group has allow or deny access for each document.</p>
-    pub fn set_principal_list(mut self, input: std::option::Option<std::vec::Vec<crate::types::Principal>>) -> Self {
-        self.principal_list = input; self
+    pub fn set_principal_list(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::Principal>>,
+    ) -> Self {
+        self.principal_list = input;
+        self
     }
     /// Consumes the builder and constructs a [`HierarchicalPrincipal`](crate::types::HierarchicalPrincipal).
     pub fn build(self) -> crate::types::HierarchicalPrincipal {
         crate::types::HierarchicalPrincipal {
-            principal_list: self.principal_list
-            ,
+            principal_list: self.principal_list,
         }
     }
 }
-

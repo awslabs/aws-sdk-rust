@@ -3,7 +3,7 @@
 /// <p>A complex type that contains information about CNAMEs (alternate domain names), if any, for this distribution.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Aliases  {
+pub struct Aliases {
     /// <p>The number of CNAME aliases, if any, that you want to associate with this distribution.</p>
     #[doc(hidden)]
     pub quantity: std::option::Option<i32>,
@@ -17,7 +17,7 @@ impl Aliases {
         self.quantity
     }
     /// <p>A complex type that contains the CNAME aliases, if any, that you want to associate with this distribution.</p>
-    pub fn items(&self) -> std::option::Option<& [std::string::String]> {
+    pub fn items(&self) -> std::option::Option<&[std::string::String]> {
         self.items.as_deref()
     }
 }
@@ -43,7 +43,8 @@ impl AliasesBuilder {
     }
     /// <p>The number of CNAME aliases, if any, that you want to associate with this distribution.</p>
     pub fn set_quantity(mut self, input: std::option::Option<i32>) -> Self {
-        self.quantity = input; self
+        self.quantity = input;
+        self
     }
     /// Appends an item to `items`.
     ///
@@ -52,22 +53,23 @@ impl AliasesBuilder {
     /// <p>A complex type that contains the CNAME aliases, if any, that you want to associate with this distribution.</p>
     pub fn items(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.items.unwrap_or_default();
-                        v.push(input.into());
-                        self.items = Some(v);
-                        self
+        v.push(input.into());
+        self.items = Some(v);
+        self
     }
     /// <p>A complex type that contains the CNAME aliases, if any, that you want to associate with this distribution.</p>
-    pub fn set_items(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-        self.items = input; self
+    pub fn set_items(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
+        self.items = input;
+        self
     }
     /// Consumes the builder and constructs a [`Aliases`](crate::types::Aliases).
     pub fn build(self) -> crate::types::Aliases {
         crate::types::Aliases {
-            quantity: self.quantity
-            ,
-            items: self.items
-            ,
+            quantity: self.quantity,
+            items: self.items,
         }
     }
 }
-

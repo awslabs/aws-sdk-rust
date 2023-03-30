@@ -3,11 +3,11 @@
 /// <p>Compliance information of one or more Config rules within a conformance pack. You can filter using Config rule names and compliance types.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ConformancePackRuleCompliance  {
+pub struct ConformancePackRuleCompliance {
     /// <p>Name of the Config rule.</p>
     #[doc(hidden)]
     pub config_rule_name: std::option::Option<std::string::String>,
-    /// <p>Compliance of the Config rule.</p> 
+    /// <p>Compliance of the Config rule.</p>
     /// <p>The allowed values are <code>COMPLIANT</code>, <code>NON_COMPLIANT</code>, and <code>INSUFFICIENT_DATA</code>.</p>
     #[doc(hidden)]
     pub compliance_type: std::option::Option<crate::types::ConformancePackComplianceType>,
@@ -17,16 +17,18 @@ pub struct ConformancePackRuleCompliance  {
 }
 impl ConformancePackRuleCompliance {
     /// <p>Name of the Config rule.</p>
-    pub fn config_rule_name(&self) -> std::option::Option<& str> {
+    pub fn config_rule_name(&self) -> std::option::Option<&str> {
         self.config_rule_name.as_deref()
     }
-    /// <p>Compliance of the Config rule.</p> 
+    /// <p>Compliance of the Config rule.</p>
     /// <p>The allowed values are <code>COMPLIANT</code>, <code>NON_COMPLIANT</code>, and <code>INSUFFICIENT_DATA</code>.</p>
-    pub fn compliance_type(&self) -> std::option::Option<& crate::types::ConformancePackComplianceType> {
+    pub fn compliance_type(
+        &self,
+    ) -> std::option::Option<&crate::types::ConformancePackComplianceType> {
         self.compliance_type.as_ref()
     }
     /// <p>Controls for the conformance pack. A control is a process to prevent or detect problems while meeting objectives. A control can align with a specific compliance regime or map to internal controls defined by an organization.</p>
-    pub fn controls(&self) -> std::option::Option<& [std::string::String]> {
+    pub fn controls(&self) -> std::option::Option<&[std::string::String]> {
         self.controls.as_deref()
     }
 }
@@ -53,18 +55,23 @@ impl ConformancePackRuleComplianceBuilder {
     }
     /// <p>Name of the Config rule.</p>
     pub fn set_config_rule_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.config_rule_name = input; self
+        self.config_rule_name = input;
+        self
     }
-    /// <p>Compliance of the Config rule.</p> 
+    /// <p>Compliance of the Config rule.</p>
     /// <p>The allowed values are <code>COMPLIANT</code>, <code>NON_COMPLIANT</code>, and <code>INSUFFICIENT_DATA</code>.</p>
     pub fn compliance_type(mut self, input: crate::types::ConformancePackComplianceType) -> Self {
         self.compliance_type = Some(input);
         self
     }
-    /// <p>Compliance of the Config rule.</p> 
+    /// <p>Compliance of the Config rule.</p>
     /// <p>The allowed values are <code>COMPLIANT</code>, <code>NON_COMPLIANT</code>, and <code>INSUFFICIENT_DATA</code>.</p>
-    pub fn set_compliance_type(mut self, input: std::option::Option<crate::types::ConformancePackComplianceType>) -> Self {
-        self.compliance_type = input; self
+    pub fn set_compliance_type(
+        mut self,
+        input: std::option::Option<crate::types::ConformancePackComplianceType>,
+    ) -> Self {
+        self.compliance_type = input;
+        self
     }
     /// Appends an item to `controls`.
     ///
@@ -73,24 +80,24 @@ impl ConformancePackRuleComplianceBuilder {
     /// <p>Controls for the conformance pack. A control is a process to prevent or detect problems while meeting objectives. A control can align with a specific compliance regime or map to internal controls defined by an organization.</p>
     pub fn controls(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.controls.unwrap_or_default();
-                        v.push(input.into());
-                        self.controls = Some(v);
-                        self
+        v.push(input.into());
+        self.controls = Some(v);
+        self
     }
     /// <p>Controls for the conformance pack. A control is a process to prevent or detect problems while meeting objectives. A control can align with a specific compliance regime or map to internal controls defined by an organization.</p>
-    pub fn set_controls(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-        self.controls = input; self
+    pub fn set_controls(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
+        self.controls = input;
+        self
     }
     /// Consumes the builder and constructs a [`ConformancePackRuleCompliance`](crate::types::ConformancePackRuleCompliance).
     pub fn build(self) -> crate::types::ConformancePackRuleCompliance {
         crate::types::ConformancePackRuleCompliance {
-            config_rule_name: self.config_rule_name
-            ,
-            compliance_type: self.compliance_type
-            ,
-            controls: self.controls
-            ,
+            config_rule_name: self.config_rule_name,
+            compliance_type: self.compliance_type,
+            controls: self.controls,
         }
     }
 }
-

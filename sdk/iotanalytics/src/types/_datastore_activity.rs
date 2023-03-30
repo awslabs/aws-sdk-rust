@@ -3,7 +3,7 @@
 /// <p>The datastore activity that specifies where to store the processed data.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DatastoreActivity  {
+pub struct DatastoreActivity {
     /// <p>The name of the datastore activity.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -13,11 +13,11 @@ pub struct DatastoreActivity  {
 }
 impl DatastoreActivity {
     /// <p>The name of the datastore activity.</p>
-    pub fn name(&self) -> std::option::Option<& str> {
+    pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>The name of the data store where processed messages are stored.</p>
-    pub fn datastore_name(&self) -> std::option::Option<& str> {
+    pub fn datastore_name(&self) -> std::option::Option<&str> {
         self.datastore_name.as_deref()
     }
 }
@@ -43,7 +43,8 @@ impl DatastoreActivityBuilder {
     }
     /// <p>The name of the datastore activity.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input; self
+        self.name = input;
+        self
     }
     /// <p>The name of the data store where processed messages are stored.</p>
     pub fn datastore_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -52,16 +53,14 @@ impl DatastoreActivityBuilder {
     }
     /// <p>The name of the data store where processed messages are stored.</p>
     pub fn set_datastore_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.datastore_name = input; self
+        self.datastore_name = input;
+        self
     }
     /// Consumes the builder and constructs a [`DatastoreActivity`](crate::types::DatastoreActivity).
     pub fn build(self) -> crate::types::DatastoreActivity {
         crate::types::DatastoreActivity {
-            name: self.name
-            ,
-            datastore_name: self.datastore_name
-            ,
+            name: self.name,
+            datastore_name: self.datastore_name,
         }
     }
 }
-

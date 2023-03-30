@@ -4,86 +4,108 @@ pub use crate::operation::create_location_smb::_create_location_smb_output::Crea
 pub use crate::operation::create_location_smb::_create_location_smb_input::CreateLocationSmbInputBuilder;
 
 /// Fluent builder constructing a request to `CreateLocationSmb`.
-/// 
+///
 /// <p>Defines a file system on a Server Message Block (SMB) server that can be read from or written to.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct CreateLocationSmbFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::create_location_smb::builders::CreateLocationSmbInputBuilder
-            }
-impl CreateLocationSmbFluentBuilder  {
+    handle: std::sync::Arc<crate::client::Handle>,
+    inner: crate::operation::create_location_smb::builders::CreateLocationSmbInputBuilder,
+}
+impl CreateLocationSmbFluentBuilder {
     /// Creates a new `CreateLocationSmb`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
-                    /// sent. The operation's inner [http::Request] can be modified as well.
-                    pub async fn customize(self) -> std::result::Result<
-                        crate::client::customize::CustomizableOperation<crate::operation::create_location_smb::CreateLocationSmb, aws_http::retry::AwsResponseRetryClassifier,>,
-                        aws_smithy_http::result::SdkError<crate::operation::create_location_smb::CreateLocationSmbError>
-                    >  {
-                        let handle = self.handle.clone();
-                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-                    }
-    
-                    /// Sends the request and returns the response.
-                    ///
-                    /// If an error occurs, an `SdkError` will be returned with additional details that
-                    /// can be matched against.
-                    ///
-                    /// By default, any retryable failures will be retried twice. Retry behavior
-                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                    /// set when configuring the client.
-                    pub async fn send(self) -> std::result::Result<crate::operation::create_location_smb::CreateLocationSmbOutput, aws_smithy_http::result::SdkError<crate::operation::create_location_smb::CreateLocationSmbError>>
-                     {
-                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&self.handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        self.handle.client.call(op).await
-                    }
-    /// <p>The subdirectory in the SMB file system that is used to read data from the SMB source location or write data to the SMB destination. The SMB path should be a path that's exported by the SMB server, or a subdirectory of that path. The path should be such that it can be mounted by other SMB clients in your network.</p> <note> 
-    /// <p> <code>Subdirectory</code> must be specified with forward slashes. For example, <code>/path/to/folder</code>.</p> 
-    /// </note> 
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle,
+            inner: Default::default(),
+        }
+    }
+
+    /// Consume this builder, creating a customizable operation that can be modified before being
+    /// sent. The operation's inner [http::Request] can be modified as well.
+    pub async fn customize(
+        self,
+    ) -> std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::create_location_smb::CreateLocationSmb,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::result::SdkError<
+            crate::operation::create_location_smb::CreateLocationSmbError,
+        >,
+    > {
+        let handle = self.handle.clone();
+        let operation = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+    }
+
+    /// Sends the request and returns the response.
+    ///
+    /// If an error occurs, an `SdkError` will be returned with additional details that
+    /// can be matched against.
+    ///
+    /// By default, any retryable failures will be retried twice. Retry behavior
+    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+    /// set when configuring the client.
+    pub async fn send(
+        self,
+    ) -> std::result::Result<
+        crate::operation::create_location_smb::CreateLocationSmbOutput,
+        aws_smithy_http::result::SdkError<
+            crate::operation::create_location_smb::CreateLocationSmbError,
+        >,
+    > {
+        let op = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&self.handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        self.handle.client.call(op).await
+    }
+    /// <p>The subdirectory in the SMB file system that is used to read data from the SMB source location or write data to the SMB destination. The SMB path should be a path that's exported by the SMB server, or a subdirectory of that path. The path should be such that it can be mounted by other SMB clients in your network.</p> <note>
+    /// <p> <code>Subdirectory</code> must be specified with forward slashes. For example, <code>/path/to/folder</code>.</p>
+    /// </note>
     /// <p>To transfer all the data in the folder you specified, DataSync needs to have permissions to mount the SMB share, as well as to access all the data in that share. To ensure this, either ensure that the user/password specified belongs to the user who can mount the share, and who has the appropriate permissions for all of the files and directories that you want DataSync to access, or use credentials of a member of the Backup Operators group to mount the share. Doing either enables the agent to access the data. For the agent to access directories, you must additionally enable all execute access.</p>
     pub fn subdirectory(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.subdirectory(input.into());
         self
     }
-    /// <p>The subdirectory in the SMB file system that is used to read data from the SMB source location or write data to the SMB destination. The SMB path should be a path that's exported by the SMB server, or a subdirectory of that path. The path should be such that it can be mounted by other SMB clients in your network.</p> <note> 
-    /// <p> <code>Subdirectory</code> must be specified with forward slashes. For example, <code>/path/to/folder</code>.</p> 
-    /// </note> 
+    /// <p>The subdirectory in the SMB file system that is used to read data from the SMB source location or write data to the SMB destination. The SMB path should be a path that's exported by the SMB server, or a subdirectory of that path. The path should be such that it can be mounted by other SMB clients in your network.</p> <note>
+    /// <p> <code>Subdirectory</code> must be specified with forward slashes. For example, <code>/path/to/folder</code>.</p>
+    /// </note>
     /// <p>To transfer all the data in the folder you specified, DataSync needs to have permissions to mount the SMB share, as well as to access all the data in that share. To ensure this, either ensure that the user/password specified belongs to the user who can mount the share, and who has the appropriate permissions for all of the files and directories that you want DataSync to access, or use credentials of a member of the Backup Operators group to mount the share. Doing either enables the agent to access the data. For the agent to access directories, you must additionally enable all execute access.</p>
     pub fn set_subdirectory(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.inner = self.inner.set_subdirectory(input);
         self
     }
-    /// <p>The name of the SMB server. This value is the IP address or Domain Name Service (DNS) name of the SMB server. An agent that is installed on-premises uses this hostname to mount the SMB server in a network.</p> <note> 
-    /// <p>This name must either be DNS-compliant or must be an IP version 4 (IPv4) address.</p> 
+    /// <p>The name of the SMB server. This value is the IP address or Domain Name Service (DNS) name of the SMB server. An agent that is installed on-premises uses this hostname to mount the SMB server in a network.</p> <note>
+    /// <p>This name must either be DNS-compliant or must be an IP version 4 (IPv4) address.</p>
     /// </note>
     pub fn server_hostname(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.server_hostname(input.into());
         self
     }
-    /// <p>The name of the SMB server. This value is the IP address or Domain Name Service (DNS) name of the SMB server. An agent that is installed on-premises uses this hostname to mount the SMB server in a network.</p> <note> 
-    /// <p>This name must either be DNS-compliant or must be an IP version 4 (IPv4) address.</p> 
+    /// <p>The name of the SMB server. This value is the IP address or Domain Name Service (DNS) name of the SMB server. An agent that is installed on-premises uses this hostname to mount the SMB server in a network.</p> <note>
+    /// <p>This name must either be DNS-compliant or must be an IP version 4 (IPv4) address.</p>
     /// </note>
     pub fn set_server_hostname(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.inner = self.inner.set_server_hostname(input);
         self
     }
-    /// <p>The user who can mount the share, has the permissions to access files and folders in the SMB share.</p> 
+    /// <p>The user who can mount the share, has the permissions to access files and folders in the SMB share.</p>
     /// <p>For information about choosing a user name that ensures sufficient permissions to files, folders, and metadata, see the <a href="create-smb-location.html#SMBuser">User setting</a> for SMB locations.</p>
     pub fn user(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.user(input.into());
         self
     }
-    /// <p>The user who can mount the share, has the permissions to access files and folders in the SMB share.</p> 
+    /// <p>The user who can mount the share, has the permissions to access files and folders in the SMB share.</p>
     /// <p>For information about choosing a user name that ensures sufficient permissions to files, folders, and metadata, see the <a href="create-smb-location.html#SMBuser">User setting</a> for SMB locations.</p>
     pub fn set_user(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.inner = self.inner.set_user(input);
@@ -119,7 +141,10 @@ impl CreateLocationSmbFluentBuilder  {
         self
     }
     /// <p>The Amazon Resource Names (ARNs) of agents to use for a Simple Message Block (SMB) location. </p>
-    pub fn set_agent_arns(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+    pub fn set_agent_arns(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
         self.inner = self.inner.set_agent_arns(input);
         self
     }
@@ -129,7 +154,10 @@ impl CreateLocationSmbFluentBuilder  {
         self
     }
     /// <p>The mount options used by DataSync to access the SMB server.</p>
-    pub fn set_mount_options(mut self, input: std::option::Option<crate::types::SmbMountOptions>) -> Self {
+    pub fn set_mount_options(
+        mut self,
+        input: std::option::Option<crate::types::SmbMountOptions>,
+    ) -> Self {
         self.inner = self.inner.set_mount_options(input);
         self
     }
@@ -143,9 +171,11 @@ impl CreateLocationSmbFluentBuilder  {
         self
     }
     /// <p>The key-value pair that represents the tag that you want to add to the location. The value can be an empty string. We recommend using tags to name your resources.</p>
-    pub fn set_tags(mut self, input: std::option::Option<std::vec::Vec<crate::types::TagListEntry>>) -> Self {
+    pub fn set_tags(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::TagListEntry>>,
+    ) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }
 }
-

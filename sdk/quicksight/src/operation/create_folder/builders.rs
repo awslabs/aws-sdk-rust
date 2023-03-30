@@ -4,49 +4,67 @@ pub use crate::operation::create_folder::_create_folder_output::CreateFolderOutp
 pub use crate::operation::create_folder::_create_folder_input::CreateFolderInputBuilder;
 
 /// Fluent builder constructing a request to `CreateFolder`.
-/// 
+///
 /// <p>Creates an empty shared folder.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct CreateFolderFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::create_folder::builders::CreateFolderInputBuilder
-            }
-impl CreateFolderFluentBuilder  {
+    handle: std::sync::Arc<crate::client::Handle>,
+    inner: crate::operation::create_folder::builders::CreateFolderInputBuilder,
+}
+impl CreateFolderFluentBuilder {
     /// Creates a new `CreateFolder`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
-                    /// sent. The operation's inner [http::Request] can be modified as well.
-                    pub async fn customize(self) -> std::result::Result<
-                        crate::client::customize::CustomizableOperation<crate::operation::create_folder::CreateFolder, aws_http::retry::AwsResponseRetryClassifier,>,
-                        aws_smithy_http::result::SdkError<crate::operation::create_folder::CreateFolderError>
-                    >  {
-                        let handle = self.handle.clone();
-                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-                    }
-    
-                    /// Sends the request and returns the response.
-                    ///
-                    /// If an error occurs, an `SdkError` will be returned with additional details that
-                    /// can be matched against.
-                    ///
-                    /// By default, any retryable failures will be retried twice. Retry behavior
-                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                    /// set when configuring the client.
-                    pub async fn send(self) -> std::result::Result<crate::operation::create_folder::CreateFolderOutput, aws_smithy_http::result::SdkError<crate::operation::create_folder::CreateFolderError>>
-                     {
-                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&self.handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        self.handle.client.call(op).await
-                    }
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle,
+            inner: Default::default(),
+        }
+    }
+
+    /// Consume this builder, creating a customizable operation that can be modified before being
+    /// sent. The operation's inner [http::Request] can be modified as well.
+    pub async fn customize(
+        self,
+    ) -> std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::create_folder::CreateFolder,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::result::SdkError<crate::operation::create_folder::CreateFolderError>,
+    > {
+        let handle = self.handle.clone();
+        let operation = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+    }
+
+    /// Sends the request and returns the response.
+    ///
+    /// If an error occurs, an `SdkError` will be returned with additional details that
+    /// can be matched against.
+    ///
+    /// By default, any retryable failures will be retried twice. Retry behavior
+    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+    /// set when configuring the client.
+    pub async fn send(
+        self,
+    ) -> std::result::Result<
+        crate::operation::create_folder::CreateFolderOutput,
+        aws_smithy_http::result::SdkError<crate::operation::create_folder::CreateFolderError>,
+    > {
+        let op = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&self.handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        self.handle.client.call(op).await
+    }
     /// <p>The ID for the Amazon Web Services account where you want to create the folder.</p>
     pub fn aws_account_id(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.aws_account_id(input.into());
@@ -87,15 +105,18 @@ impl CreateFolderFluentBuilder  {
         self.inner = self.inner.set_folder_type(input);
         self
     }
-    /// <p>The Amazon Resource Name (ARN) for the parent folder.</p> 
+    /// <p>The Amazon Resource Name (ARN) for the parent folder.</p>
     /// <p> <code>ParentFolderArn</code> can be null. An empty <code>parentFolderArn</code> creates a root-level folder.</p>
     pub fn parent_folder_arn(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.parent_folder_arn(input.into());
         self
     }
-    /// <p>The Amazon Resource Name (ARN) for the parent folder.</p> 
+    /// <p>The Amazon Resource Name (ARN) for the parent folder.</p>
     /// <p> <code>ParentFolderArn</code> can be null. An empty <code>parentFolderArn</code> creates a root-level folder.</p>
-    pub fn set_parent_folder_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_parent_folder_arn(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_parent_folder_arn(input);
         self
     }
@@ -103,15 +124,18 @@ impl CreateFolderFluentBuilder  {
     ///
     /// To override the contents of this collection use [`set_permissions`](Self::set_permissions).
     ///
-    /// <p>A structure that describes the principals and the resource-level permissions of a folder.</p> 
+    /// <p>A structure that describes the principals and the resource-level permissions of a folder.</p>
     /// <p>To specify no permissions, omit <code>Permissions</code>.</p>
     pub fn permissions(mut self, input: crate::types::ResourcePermission) -> Self {
         self.inner = self.inner.permissions(input);
         self
     }
-    /// <p>A structure that describes the principals and the resource-level permissions of a folder.</p> 
+    /// <p>A structure that describes the principals and the resource-level permissions of a folder.</p>
     /// <p>To specify no permissions, omit <code>Permissions</code>.</p>
-    pub fn set_permissions(mut self, input: std::option::Option<std::vec::Vec<crate::types::ResourcePermission>>) -> Self {
+    pub fn set_permissions(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::ResourcePermission>>,
+    ) -> Self {
         self.inner = self.inner.set_permissions(input);
         self
     }
@@ -125,9 +149,11 @@ impl CreateFolderFluentBuilder  {
         self
     }
     /// <p>Tags for the folder.</p>
-    pub fn set_tags(mut self, input: std::option::Option<std::vec::Vec<crate::types::Tag>>) -> Self {
+    pub fn set_tags(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::Tag>>,
+    ) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }
 }
-

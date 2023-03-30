@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateAttributeGroupInput  {
+pub struct CreateAttributeGroupInput {
     /// <p>The name of the attribute group.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -14,36 +14,41 @@ pub struct CreateAttributeGroupInput  {
     pub attributes: std::option::Option<std::string::String>,
     /// <p>Key-value pairs you can use to associate with the attribute group.</p>
     #[doc(hidden)]
-    pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub tags:
+        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>A unique identifier that you provide to ensure idempotency. If you retry a request that completed successfully using the same client token and the same parameters, the retry succeeds without performing any further actions. If you retry a successful request using the same client token, but one or more of the parameters are different, the retry fails.</p>
     #[doc(hidden)]
     pub client_token: std::option::Option<std::string::String>,
 }
 impl CreateAttributeGroupInput {
     /// <p>The name of the attribute group.</p>
-    pub fn name(&self) -> std::option::Option<& str> {
+    pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>The description of the attribute group that the user provides.</p>
-    pub fn description(&self) -> std::option::Option<& str> {
+    pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
     /// <p>A JSON string in the form of nested key-value pairs that represent the attributes in the group and describes an application and its components.</p>
-    pub fn attributes(&self) -> std::option::Option<& str> {
+    pub fn attributes(&self) -> std::option::Option<&str> {
         self.attributes.as_deref()
     }
     /// <p>Key-value pairs you can use to associate with the attribute group.</p>
-    pub fn tags(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
         self.tags.as_ref()
     }
     /// <p>A unique identifier that you provide to ensure idempotency. If you retry a request that completed successfully using the same client token and the same parameters, the retry succeeds without performing any further actions. If you retry a successful request using the same client token, but one or more of the parameters are different, the retry fails.</p>
-    pub fn client_token(&self) -> std::option::Option<& str> {
+    pub fn client_token(&self) -> std::option::Option<&str> {
         self.client_token.as_deref()
     }
 }
 impl CreateAttributeGroupInput {
     /// Creates a new builder-style object to manufacture [`CreateAttributeGroupInput`](crate::operation::create_attribute_group::CreateAttributeGroupInput).
-    pub fn builder() -> crate::operation::create_attribute_group::builders::CreateAttributeGroupInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::create_attribute_group::builders::CreateAttributeGroupInputBuilder {
         crate::operation::create_attribute_group::builders::CreateAttributeGroupInputBuilder::default()
     }
 }
@@ -55,7 +60,8 @@ pub struct CreateAttributeGroupInputBuilder {
     pub(crate) name: std::option::Option<std::string::String>,
     pub(crate) description: std::option::Option<std::string::String>,
     pub(crate) attributes: std::option::Option<std::string::String>,
-    pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub(crate) tags:
+        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     pub(crate) client_token: std::option::Option<std::string::String>,
 }
 impl CreateAttributeGroupInputBuilder {
@@ -66,7 +72,8 @@ impl CreateAttributeGroupInputBuilder {
     }
     /// <p>The name of the attribute group.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input; self
+        self.name = input;
+        self
     }
     /// <p>The description of the attribute group that the user provides.</p>
     pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -75,7 +82,8 @@ impl CreateAttributeGroupInputBuilder {
     }
     /// <p>The description of the attribute group that the user provides.</p>
     pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.description = input; self
+        self.description = input;
+        self
     }
     /// <p>A JSON string in the form of nested key-value pairs that represent the attributes in the group and describes an application and its components.</p>
     pub fn attributes(mut self, input: impl Into<std::string::String>) -> Self {
@@ -84,22 +92,33 @@ impl CreateAttributeGroupInputBuilder {
     }
     /// <p>A JSON string in the form of nested key-value pairs that represent the attributes in the group and describes an application and its components.</p>
     pub fn set_attributes(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.attributes = input; self
+        self.attributes = input;
+        self
     }
     /// Adds a key-value pair to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// <p>Key-value pairs you can use to associate with the attribute group.</p>
-    pub fn tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
+    pub fn tags(
+        mut self,
+        k: impl Into<std::string::String>,
+        v: impl Into<std::string::String>,
+    ) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
-                        hash_map.insert(k.into(), v.into());
-                        self.tags = Some(hash_map);
-                        self
+        hash_map.insert(k.into(), v.into());
+        self.tags = Some(hash_map);
+        self
     }
     /// <p>Key-value pairs you can use to associate with the attribute group.</p>
-    pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
-        self.tags = input; self
+    pub fn set_tags(
+        mut self,
+        input: std::option::Option<
+            std::collections::HashMap<std::string::String, std::string::String>,
+        >,
+    ) -> Self {
+        self.tags = input;
+        self
     }
     /// <p>A unique identifier that you provide to ensure idempotency. If you retry a request that completed successfully using the same client token and the same parameters, the retry succeeds without performing any further actions. If you retry a successful request using the same client token, but one or more of the parameters are different, the retry fails.</p>
     pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -108,24 +127,24 @@ impl CreateAttributeGroupInputBuilder {
     }
     /// <p>A unique identifier that you provide to ensure idempotency. If you retry a request that completed successfully using the same client token and the same parameters, the retry succeeds without performing any further actions. If you retry a successful request using the same client token, but one or more of the parameters are different, the retry fails.</p>
     pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.client_token = input; self
+        self.client_token = input;
+        self
     }
     /// Consumes the builder and constructs a [`CreateAttributeGroupInput`](crate::operation::create_attribute_group::CreateAttributeGroupInput).
-    pub fn build(self) -> Result<crate::operation::create_attribute_group::CreateAttributeGroupInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::create_attribute_group::CreateAttributeGroupInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::create_attribute_group::CreateAttributeGroupInput {
-                name: self.name
-                ,
-                description: self.description
-                ,
-                attributes: self.attributes
-                ,
-                tags: self.tags
-                ,
-                client_token: self.client_token
-                ,
-            }
+                name: self.name,
+                description: self.description,
+                attributes: self.attributes,
+                tags: self.tags,
+                client_token: self.client_token,
+            },
         )
     }
 }
-

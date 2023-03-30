@@ -26,7 +26,11 @@ impl StepInput {
     /// Tries to convert the enum instance into [`IntegerValue`](crate::types::StepInput::IntegerValue), extracting the inner [`i32`](i32).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_integer_value(&self) -> std::result::Result<&i32, &Self> {
-        if let StepInput::IntegerValue(val) = &self { Ok(val) } else { Err(self) }
+        if let StepInput::IntegerValue(val) = &self {
+            Ok(val)
+        } else {
+            Err(self)
+        }
     }
     /// Returns true if this is a [`IntegerValue`](crate::types::StepInput::IntegerValue).
     pub fn is_integer_value(&self) -> bool {
@@ -34,8 +38,14 @@ impl StepInput {
     }
     /// Tries to convert the enum instance into [`ListOfStringsValue`](crate::types::StepInput::ListOfStringsValue), extracting the inner [`Vec`](std::vec::Vec).
     /// Returns `Err(&Self)` if it can't be converted.
-    pub fn as_list_of_strings_value(&self) -> std::result::Result<&std::vec::Vec<std::string::String>, &Self> {
-        if let StepInput::ListOfStringsValue(val) = &self { Ok(val) } else { Err(self) }
+    pub fn as_list_of_strings_value(
+        &self,
+    ) -> std::result::Result<&std::vec::Vec<std::string::String>, &Self> {
+        if let StepInput::ListOfStringsValue(val) = &self {
+            Ok(val)
+        } else {
+            Err(self)
+        }
     }
     /// Returns true if this is a [`ListOfStringsValue`](crate::types::StepInput::ListOfStringsValue).
     pub fn is_list_of_strings_value(&self) -> bool {
@@ -43,8 +53,17 @@ impl StepInput {
     }
     /// Tries to convert the enum instance into [`MapOfStringValue`](crate::types::StepInput::MapOfStringValue), extracting the inner [`HashMap`](std::collections::HashMap).
     /// Returns `Err(&Self)` if it can't be converted.
-    pub fn as_map_of_string_value(&self) -> std::result::Result<&std::collections::HashMap<std::string::String, std::string::String>, &Self> {
-        if let StepInput::MapOfStringValue(val) = &self { Ok(val) } else { Err(self) }
+    pub fn as_map_of_string_value(
+        &self,
+    ) -> std::result::Result<
+        &std::collections::HashMap<std::string::String, std::string::String>,
+        &Self,
+    > {
+        if let StepInput::MapOfStringValue(val) = &self {
+            Ok(val)
+        } else {
+            Err(self)
+        }
     }
     /// Returns true if this is a [`MapOfStringValue`](crate::types::StepInput::MapOfStringValue).
     pub fn is_map_of_string_value(&self) -> bool {
@@ -53,7 +72,11 @@ impl StepInput {
     /// Tries to convert the enum instance into [`StringValue`](crate::types::StepInput::StringValue), extracting the inner [`String`](std::string::String).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_string_value(&self) -> std::result::Result<&std::string::String, &Self> {
-        if let StepInput::StringValue(val) = &self { Ok(val) } else { Err(self) }
+        if let StepInput::StringValue(val) = &self {
+            Ok(val)
+        } else {
+            Err(self)
+        }
     }
     /// Returns true if this is a [`StringValue`](crate::types::StepInput::StringValue).
     pub fn is_string_value(&self) -> bool {
@@ -64,4 +87,3 @@ impl StepInput {
         matches!(self, Self::Unknown)
     }
 }
-

@@ -3,7 +3,7 @@
 /// <p>Describes the processor used by the instance type.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ProcessorInfo  {
+pub struct ProcessorInfo {
     /// <p>The architectures supported by the instance type.</p>
     #[doc(hidden)]
     pub supported_architectures: std::option::Option<std::vec::Vec<crate::types::ArchitectureType>>,
@@ -13,7 +13,9 @@ pub struct ProcessorInfo  {
 }
 impl ProcessorInfo {
     /// <p>The architectures supported by the instance type.</p>
-    pub fn supported_architectures(&self) -> std::option::Option<& [crate::types::ArchitectureType]> {
+    pub fn supported_architectures(
+        &self,
+    ) -> std::option::Option<&[crate::types::ArchitectureType]> {
         self.supported_architectures.as_deref()
     }
     /// <p>The speed of the processor, in GHz.</p>
@@ -32,7 +34,8 @@ impl ProcessorInfo {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct ProcessorInfoBuilder {
-    pub(crate) supported_architectures: std::option::Option<std::vec::Vec<crate::types::ArchitectureType>>,
+    pub(crate) supported_architectures:
+        std::option::Option<std::vec::Vec<crate::types::ArchitectureType>>,
     pub(crate) sustained_clock_speed_in_ghz: std::option::Option<f64>,
 }
 impl ProcessorInfoBuilder {
@@ -43,13 +46,17 @@ impl ProcessorInfoBuilder {
     /// <p>The architectures supported by the instance type.</p>
     pub fn supported_architectures(mut self, input: crate::types::ArchitectureType) -> Self {
         let mut v = self.supported_architectures.unwrap_or_default();
-                        v.push(input);
-                        self.supported_architectures = Some(v);
-                        self
+        v.push(input);
+        self.supported_architectures = Some(v);
+        self
     }
     /// <p>The architectures supported by the instance type.</p>
-    pub fn set_supported_architectures(mut self, input: std::option::Option<std::vec::Vec<crate::types::ArchitectureType>>) -> Self {
-        self.supported_architectures = input; self
+    pub fn set_supported_architectures(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::ArchitectureType>>,
+    ) -> Self {
+        self.supported_architectures = input;
+        self
     }
     /// <p>The speed of the processor, in GHz.</p>
     pub fn sustained_clock_speed_in_ghz(mut self, input: f64) -> Self {
@@ -58,16 +65,14 @@ impl ProcessorInfoBuilder {
     }
     /// <p>The speed of the processor, in GHz.</p>
     pub fn set_sustained_clock_speed_in_ghz(mut self, input: std::option::Option<f64>) -> Self {
-        self.sustained_clock_speed_in_ghz = input; self
+        self.sustained_clock_speed_in_ghz = input;
+        self
     }
     /// Consumes the builder and constructs a [`ProcessorInfo`](crate::types::ProcessorInfo).
     pub fn build(self) -> crate::types::ProcessorInfo {
         crate::types::ProcessorInfo {
-            supported_architectures: self.supported_architectures
-            ,
-            sustained_clock_speed_in_ghz: self.sustained_clock_speed_in_ghz
-            ,
+            supported_architectures: self.supported_architectures,
+            sustained_clock_speed_in_ghz: self.sustained_clock_speed_in_ghz,
         }
     }
 }
-

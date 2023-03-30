@@ -3,7 +3,7 @@
 /// <p>Used when a regular object exists in a <code>Directory</code> and you want to find all of the policies that are associated with that object and the parent to that object.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PolicyToPath  {
+pub struct PolicyToPath {
     /// <p>The path that is referenced from the root.</p>
     #[doc(hidden)]
     pub path: std::option::Option<std::string::String>,
@@ -13,11 +13,11 @@ pub struct PolicyToPath  {
 }
 impl PolicyToPath {
     /// <p>The path that is referenced from the root.</p>
-    pub fn path(&self) -> std::option::Option<& str> {
+    pub fn path(&self) -> std::option::Option<&str> {
         self.path.as_deref()
     }
     /// <p>List of policy objects.</p>
-    pub fn policies(&self) -> std::option::Option<& [crate::types::PolicyAttachment]> {
+    pub fn policies(&self) -> std::option::Option<&[crate::types::PolicyAttachment]> {
         self.policies.as_deref()
     }
 }
@@ -43,7 +43,8 @@ impl PolicyToPathBuilder {
     }
     /// <p>The path that is referenced from the root.</p>
     pub fn set_path(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.path = input; self
+        self.path = input;
+        self
     }
     /// Appends an item to `policies`.
     ///
@@ -52,22 +53,23 @@ impl PolicyToPathBuilder {
     /// <p>List of policy objects.</p>
     pub fn policies(mut self, input: crate::types::PolicyAttachment) -> Self {
         let mut v = self.policies.unwrap_or_default();
-                        v.push(input);
-                        self.policies = Some(v);
-                        self
+        v.push(input);
+        self.policies = Some(v);
+        self
     }
     /// <p>List of policy objects.</p>
-    pub fn set_policies(mut self, input: std::option::Option<std::vec::Vec<crate::types::PolicyAttachment>>) -> Self {
-        self.policies = input; self
+    pub fn set_policies(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::PolicyAttachment>>,
+    ) -> Self {
+        self.policies = input;
+        self
     }
     /// Consumes the builder and constructs a [`PolicyToPath`](crate::types::PolicyToPath).
     pub fn build(self) -> crate::types::PolicyToPath {
         crate::types::PolicyToPath {
-            path: self.path
-            ,
-            policies: self.policies
-            ,
+            path: self.path,
+            policies: self.policies,
         }
     }
 }
-

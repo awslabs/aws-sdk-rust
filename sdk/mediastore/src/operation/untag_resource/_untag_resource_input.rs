@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UntagResourceInput  {
+pub struct UntagResourceInput {
     /// <p>The Amazon Resource Name (ARN) for the container.</p>
     #[doc(hidden)]
     pub resource: std::option::Option<std::string::String>,
@@ -12,11 +12,11 @@ pub struct UntagResourceInput  {
 }
 impl UntagResourceInput {
     /// <p>The Amazon Resource Name (ARN) for the container.</p>
-    pub fn resource(&self) -> std::option::Option<& str> {
+    pub fn resource(&self) -> std::option::Option<&str> {
         self.resource.as_deref()
     }
     /// <p>A comma-separated list of keys for tags that you want to remove from the container. For example, if your container has two tags (customer:CompanyA and priority:High) and you want to remove one of the tags (priority:High), you specify the key for the tag that you want to remove (priority).</p>
-    pub fn tag_keys(&self) -> std::option::Option<& [std::string::String]> {
+    pub fn tag_keys(&self) -> std::option::Option<&[std::string::String]> {
         self.tag_keys.as_deref()
     }
 }
@@ -42,7 +42,8 @@ impl UntagResourceInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) for the container.</p>
     pub fn set_resource(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.resource = input; self
+        self.resource = input;
+        self
     }
     /// Appends an item to `tag_keys`.
     ///
@@ -51,24 +52,28 @@ impl UntagResourceInputBuilder {
     /// <p>A comma-separated list of keys for tags that you want to remove from the container. For example, if your container has two tags (customer:CompanyA and priority:High) and you want to remove one of the tags (priority:High), you specify the key for the tag that you want to remove (priority).</p>
     pub fn tag_keys(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.tag_keys.unwrap_or_default();
-                        v.push(input.into());
-                        self.tag_keys = Some(v);
-                        self
+        v.push(input.into());
+        self.tag_keys = Some(v);
+        self
     }
     /// <p>A comma-separated list of keys for tags that you want to remove from the container. For example, if your container has two tags (customer:CompanyA and priority:High) and you want to remove one of the tags (priority:High), you specify the key for the tag that you want to remove (priority).</p>
-    pub fn set_tag_keys(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-        self.tag_keys = input; self
+    pub fn set_tag_keys(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
+        self.tag_keys = input;
+        self
     }
     /// Consumes the builder and constructs a [`UntagResourceInput`](crate::operation::untag_resource::UntagResourceInput).
-    pub fn build(self) -> Result<crate::operation::untag_resource::UntagResourceInput, aws_smithy_http::operation::error::BuildError> {
-        Ok(
-            crate::operation::untag_resource::UntagResourceInput {
-                resource: self.resource
-                ,
-                tag_keys: self.tag_keys
-                ,
-            }
-        )
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::untag_resource::UntagResourceInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        Ok(crate::operation::untag_resource::UntagResourceInput {
+            resource: self.resource,
+            tag_keys: self.tag_keys,
+        })
     }
 }
-

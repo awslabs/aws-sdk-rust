@@ -3,7 +3,7 @@
 /// <p>Contains summary information about a routing profile queue.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct RoutingProfileQueueConfigSummary  {
+pub struct RoutingProfileQueueConfigSummary {
     /// <p>The identifier for the queue.</p>
     #[doc(hidden)]
     pub queue_id: std::option::Option<std::string::String>,
@@ -25,15 +25,15 @@ pub struct RoutingProfileQueueConfigSummary  {
 }
 impl RoutingProfileQueueConfigSummary {
     /// <p>The identifier for the queue.</p>
-    pub fn queue_id(&self) -> std::option::Option<& str> {
+    pub fn queue_id(&self) -> std::option::Option<&str> {
         self.queue_id.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the queue.</p>
-    pub fn queue_arn(&self) -> std::option::Option<& str> {
+    pub fn queue_arn(&self) -> std::option::Option<&str> {
         self.queue_arn.as_deref()
     }
     /// <p>The name of the queue.</p>
-    pub fn queue_name(&self) -> std::option::Option<& str> {
+    pub fn queue_name(&self) -> std::option::Option<&str> {
         self.queue_name.as_deref()
     }
     /// <p>The order in which contacts are to be handled for the queue. For more information, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/concepts-routing-profiles-priority.html">Queues: priority and delay</a>.</p>
@@ -45,7 +45,7 @@ impl RoutingProfileQueueConfigSummary {
         self.delay
     }
     /// <p>The channels this queue supports.</p>
-    pub fn channel(&self) -> std::option::Option<& crate::types::Channel> {
+    pub fn channel(&self) -> std::option::Option<&crate::types::Channel> {
         self.channel.as_ref()
     }
 }
@@ -75,7 +75,8 @@ impl RoutingProfileQueueConfigSummaryBuilder {
     }
     /// <p>The identifier for the queue.</p>
     pub fn set_queue_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.queue_id = input; self
+        self.queue_id = input;
+        self
     }
     /// <p>The Amazon Resource Name (ARN) of the queue.</p>
     pub fn queue_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -84,7 +85,8 @@ impl RoutingProfileQueueConfigSummaryBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the queue.</p>
     pub fn set_queue_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.queue_arn = input; self
+        self.queue_arn = input;
+        self
     }
     /// <p>The name of the queue.</p>
     pub fn queue_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -93,7 +95,8 @@ impl RoutingProfileQueueConfigSummaryBuilder {
     }
     /// <p>The name of the queue.</p>
     pub fn set_queue_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.queue_name = input; self
+        self.queue_name = input;
+        self
     }
     /// <p>The order in which contacts are to be handled for the queue. For more information, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/concepts-routing-profiles-priority.html">Queues: priority and delay</a>.</p>
     pub fn priority(mut self, input: i32) -> Self {
@@ -102,7 +105,8 @@ impl RoutingProfileQueueConfigSummaryBuilder {
     }
     /// <p>The order in which contacts are to be handled for the queue. For more information, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/concepts-routing-profiles-priority.html">Queues: priority and delay</a>.</p>
     pub fn set_priority(mut self, input: std::option::Option<i32>) -> Self {
-        self.priority = input; self
+        self.priority = input;
+        self
     }
     /// <p>The delay, in seconds, that a contact should be in the queue before they are routed to an available agent. For more information, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/concepts-routing-profiles-priority.html">Queues: priority and delay</a> in the <i>Amazon Connect Administrator Guide</i>.</p>
     pub fn delay(mut self, input: i32) -> Self {
@@ -111,7 +115,8 @@ impl RoutingProfileQueueConfigSummaryBuilder {
     }
     /// <p>The delay, in seconds, that a contact should be in the queue before they are routed to an available agent. For more information, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/concepts-routing-profiles-priority.html">Queues: priority and delay</a> in the <i>Amazon Connect Administrator Guide</i>.</p>
     pub fn set_delay(mut self, input: std::option::Option<i32>) -> Self {
-        self.delay = input; self
+        self.delay = input;
+        self
     }
     /// <p>The channels this queue supports.</p>
     pub fn channel(mut self, input: crate::types::Channel) -> Self {
@@ -120,26 +125,18 @@ impl RoutingProfileQueueConfigSummaryBuilder {
     }
     /// <p>The channels this queue supports.</p>
     pub fn set_channel(mut self, input: std::option::Option<crate::types::Channel>) -> Self {
-        self.channel = input; self
+        self.channel = input;
+        self
     }
     /// Consumes the builder and constructs a [`RoutingProfileQueueConfigSummary`](crate::types::RoutingProfileQueueConfigSummary).
     pub fn build(self) -> crate::types::RoutingProfileQueueConfigSummary {
         crate::types::RoutingProfileQueueConfigSummary {
-            queue_id: self.queue_id
-            ,
-            queue_arn: self.queue_arn
-            ,
-            queue_name: self.queue_name
-            ,
-            priority: self.priority
-                .unwrap_or_default()
-            ,
-            delay: self.delay
-                .unwrap_or_default()
-            ,
-            channel: self.channel
-            ,
+            queue_id: self.queue_id,
+            queue_arn: self.queue_arn,
+            queue_name: self.queue_name,
+            priority: self.priority.unwrap_or_default(),
+            delay: self.delay.unwrap_or_default(),
+            channel: self.channel,
         }
     }
 }
-

@@ -3,7 +3,7 @@
 /// <p>Contains details about a task that failed to start during an execution.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct TaskStartFailedEventDetails  {
+pub struct TaskStartFailedEventDetails {
     /// <p>The service name of the resource in a task state.</p>
     #[doc(hidden)]
     pub resource_type: std::option::Option<std::string::String>,
@@ -19,23 +19,23 @@ pub struct TaskStartFailedEventDetails  {
 }
 impl TaskStartFailedEventDetails {
     /// <p>The service name of the resource in a task state.</p>
-    pub fn resource_type(&self) -> std::option::Option<& str> {
+    pub fn resource_type(&self) -> std::option::Option<&str> {
         self.resource_type.as_deref()
     }
     /// <p>The action of the resource called by a task state.</p>
-    pub fn resource(&self) -> std::option::Option<& str> {
+    pub fn resource(&self) -> std::option::Option<&str> {
         self.resource.as_deref()
     }
     /// <p>The error code of the failure.</p>
-    pub fn error(&self) -> std::option::Option<& str> {
+    pub fn error(&self) -> std::option::Option<&str> {
         self.error.as_deref()
     }
     /// <p>A more detailed explanation of the cause of the failure.</p>
-    pub fn cause(&self) -> std::option::Option<& str> {
+    pub fn cause(&self) -> std::option::Option<&str> {
         self.cause.as_deref()
     }
 }
-impl  std::fmt::Debug for TaskStartFailedEventDetails  {
+impl std::fmt::Debug for TaskStartFailedEventDetails {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("TaskStartFailedEventDetails");
         formatter.field("resource_type", &self.resource_type);
@@ -69,7 +69,8 @@ impl TaskStartFailedEventDetailsBuilder {
     }
     /// <p>The service name of the resource in a task state.</p>
     pub fn set_resource_type(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.resource_type = input; self
+        self.resource_type = input;
+        self
     }
     /// <p>The action of the resource called by a task state.</p>
     pub fn resource(mut self, input: impl Into<std::string::String>) -> Self {
@@ -78,7 +79,8 @@ impl TaskStartFailedEventDetailsBuilder {
     }
     /// <p>The action of the resource called by a task state.</p>
     pub fn set_resource(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.resource = input; self
+        self.resource = input;
+        self
     }
     /// <p>The error code of the failure.</p>
     pub fn error(mut self, input: impl Into<std::string::String>) -> Self {
@@ -87,7 +89,8 @@ impl TaskStartFailedEventDetailsBuilder {
     }
     /// <p>The error code of the failure.</p>
     pub fn set_error(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.error = input; self
+        self.error = input;
+        self
     }
     /// <p>A more detailed explanation of the cause of the failure.</p>
     pub fn cause(mut self, input: impl Into<std::string::String>) -> Self {
@@ -96,19 +99,16 @@ impl TaskStartFailedEventDetailsBuilder {
     }
     /// <p>A more detailed explanation of the cause of the failure.</p>
     pub fn set_cause(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.cause = input; self
+        self.cause = input;
+        self
     }
     /// Consumes the builder and constructs a [`TaskStartFailedEventDetails`](crate::types::TaskStartFailedEventDetails).
     pub fn build(self) -> crate::types::TaskStartFailedEventDetails {
         crate::types::TaskStartFailedEventDetails {
-            resource_type: self.resource_type
-            ,
-            resource: self.resource
-            ,
-            error: self.error
-            ,
-            cause: self.cause
-            ,
+            resource_type: self.resource_type,
+            resource: self.resource,
+            error: self.error,
+            cause: self.cause,
         }
     }
 }
@@ -122,4 +122,3 @@ impl std::fmt::Debug for TaskStartFailedEventDetailsBuilder {
         formatter.finish()
     }
 }
-

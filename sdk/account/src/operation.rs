@@ -15,4 +15,3 @@ pub mod put_alternate_contact;
 
 /// Types for the `PutContactInformation` operation.
 pub mod put_contact_information;
-

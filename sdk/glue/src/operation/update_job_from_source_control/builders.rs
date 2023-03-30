@@ -4,50 +4,72 @@ pub use crate::operation::update_job_from_source_control::_update_job_from_sourc
 pub use crate::operation::update_job_from_source_control::_update_job_from_source_control_input::UpdateJobFromSourceControlInputBuilder;
 
 /// Fluent builder constructing a request to `UpdateJobFromSourceControl`.
-/// 
-/// <p>Synchronizes a job from the source control repository. This operation takes the job artifacts that are located in the remote repository and updates the Glue internal stores with these artifacts.</p> 
+///
+/// <p>Synchronizes a job from the source control repository. This operation takes the job artifacts that are located in the remote repository and updates the Glue internal stores with these artifacts.</p>
 /// <p>This API supports optional parameters which take in the repository information.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct UpdateJobFromSourceControlFluentBuilder {
                 handle: std::sync::Arc<crate::client::Handle>,
                 inner: crate::operation::update_job_from_source_control::builders::UpdateJobFromSourceControlInputBuilder
             }
-impl UpdateJobFromSourceControlFluentBuilder  {
+impl UpdateJobFromSourceControlFluentBuilder {
     /// Creates a new `UpdateJobFromSourceControl`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
-                    /// sent. The operation's inner [http::Request] can be modified as well.
-                    pub async fn customize(self) -> std::result::Result<
-                        crate::client::customize::CustomizableOperation<crate::operation::update_job_from_source_control::UpdateJobFromSourceControl, aws_http::retry::AwsResponseRetryClassifier,>,
-                        aws_smithy_http::result::SdkError<crate::operation::update_job_from_source_control::UpdateJobFromSourceControlError>
-                    >  {
-                        let handle = self.handle.clone();
-                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-                    }
-    
-                    /// Sends the request and returns the response.
-                    ///
-                    /// If an error occurs, an `SdkError` will be returned with additional details that
-                    /// can be matched against.
-                    ///
-                    /// By default, any retryable failures will be retried twice. Retry behavior
-                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                    /// set when configuring the client.
-                    pub async fn send(self) -> std::result::Result<crate::operation::update_job_from_source_control::UpdateJobFromSourceControlOutput, aws_smithy_http::result::SdkError<crate::operation::update_job_from_source_control::UpdateJobFromSourceControlError>>
-                     {
-                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&self.handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        self.handle.client.call(op).await
-                    }
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle,
+            inner: Default::default(),
+        }
+    }
+
+    /// Consume this builder, creating a customizable operation that can be modified before being
+    /// sent. The operation's inner [http::Request] can be modified as well.
+    pub async fn customize(
+        self,
+    ) -> std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::update_job_from_source_control::UpdateJobFromSourceControl,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::result::SdkError<
+            crate::operation::update_job_from_source_control::UpdateJobFromSourceControlError,
+        >,
+    > {
+        let handle = self.handle.clone();
+        let operation = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+    }
+
+    /// Sends the request and returns the response.
+    ///
+    /// If an error occurs, an `SdkError` will be returned with additional details that
+    /// can be matched against.
+    ///
+    /// By default, any retryable failures will be retried twice. Retry behavior
+    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+    /// set when configuring the client.
+    pub async fn send(
+        self,
+    ) -> std::result::Result<
+        crate::operation::update_job_from_source_control::UpdateJobFromSourceControlOutput,
+        aws_smithy_http::result::SdkError<
+            crate::operation::update_job_from_source_control::UpdateJobFromSourceControlError,
+        >,
+    > {
+        let op = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&self.handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        self.handle.client.call(op).await
+    }
     /// <p>The name of the Glue job to be synchronized to or from the remote repository.</p>
     pub fn job_name(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.job_name(input.into());
@@ -64,7 +86,10 @@ impl UpdateJobFromSourceControlFluentBuilder  {
         self
     }
     /// <p>The provider for the remote repository.</p>
-    pub fn set_provider(mut self, input: std::option::Option<crate::types::SourceControlProvider>) -> Self {
+    pub fn set_provider(
+        mut self,
+        input: std::option::Option<crate::types::SourceControlProvider>,
+    ) -> Self {
         self.inner = self.inner.set_provider(input);
         self
     }
@@ -124,7 +149,10 @@ impl UpdateJobFromSourceControlFluentBuilder  {
         self
     }
     /// <p>The type of authentication, which can be an authentication token stored in Amazon Web Services Secrets Manager, or a personal access token.</p>
-    pub fn set_auth_strategy(mut self, input: std::option::Option<crate::types::SourceControlAuthStrategy>) -> Self {
+    pub fn set_auth_strategy(
+        mut self,
+        input: std::option::Option<crate::types::SourceControlAuthStrategy>,
+    ) -> Self {
         self.inner = self.inner.set_auth_strategy(input);
         self
     }
@@ -139,4 +167,3 @@ impl UpdateJobFromSourceControlFluentBuilder  {
         self
     }
 }
-

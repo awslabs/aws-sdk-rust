@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateUsageLimitInput  {
+pub struct UpdateUsageLimitInput {
     /// <p>The identifier of the usage limit to update.</p>
     #[doc(hidden)]
     pub usage_limit_id: std::option::Option<std::string::String>,
@@ -15,7 +15,7 @@ pub struct UpdateUsageLimitInput  {
 }
 impl UpdateUsageLimitInput {
     /// <p>The identifier of the usage limit to update.</p>
-    pub fn usage_limit_id(&self) -> std::option::Option<& str> {
+    pub fn usage_limit_id(&self) -> std::option::Option<&str> {
         self.usage_limit_id.as_deref()
     }
     /// <p>The new limit amount. If time-based, this amount is in Redshift Processing Units (RPU) consumed per hour. If data-based, this amount is in terabytes (TB) of data transferred between Regions in cross-account sharing. The value must be a positive number.</p>
@@ -23,13 +23,14 @@ impl UpdateUsageLimitInput {
         self.amount
     }
     /// <p>The new action that Amazon Redshift Serverless takes when the limit is reached.</p>
-    pub fn breach_action(&self) -> std::option::Option<& crate::types::UsageLimitBreachAction> {
+    pub fn breach_action(&self) -> std::option::Option<&crate::types::UsageLimitBreachAction> {
         self.breach_action.as_ref()
     }
 }
 impl UpdateUsageLimitInput {
     /// Creates a new builder-style object to manufacture [`UpdateUsageLimitInput`](crate::operation::update_usage_limit::UpdateUsageLimitInput).
-    pub fn builder() -> crate::operation::update_usage_limit::builders::UpdateUsageLimitInputBuilder {
+    pub fn builder() -> crate::operation::update_usage_limit::builders::UpdateUsageLimitInputBuilder
+    {
         crate::operation::update_usage_limit::builders::UpdateUsageLimitInputBuilder::default()
     }
 }
@@ -50,7 +51,8 @@ impl UpdateUsageLimitInputBuilder {
     }
     /// <p>The identifier of the usage limit to update.</p>
     pub fn set_usage_limit_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.usage_limit_id = input; self
+        self.usage_limit_id = input;
+        self
     }
     /// <p>The new limit amount. If time-based, this amount is in Redshift Processing Units (RPU) consumed per hour. If data-based, this amount is in terabytes (TB) of data transferred between Regions in cross-account sharing. The value must be a positive number.</p>
     pub fn amount(mut self, input: i64) -> Self {
@@ -59,7 +61,8 @@ impl UpdateUsageLimitInputBuilder {
     }
     /// <p>The new limit amount. If time-based, this amount is in Redshift Processing Units (RPU) consumed per hour. If data-based, this amount is in terabytes (TB) of data transferred between Regions in cross-account sharing. The value must be a positive number.</p>
     pub fn set_amount(mut self, input: std::option::Option<i64>) -> Self {
-        self.amount = input; self
+        self.amount = input;
+        self
     }
     /// <p>The new action that Amazon Redshift Serverless takes when the limit is reached.</p>
     pub fn breach_action(mut self, input: crate::types::UsageLimitBreachAction) -> Self {
@@ -67,21 +70,26 @@ impl UpdateUsageLimitInputBuilder {
         self
     }
     /// <p>The new action that Amazon Redshift Serverless takes when the limit is reached.</p>
-    pub fn set_breach_action(mut self, input: std::option::Option<crate::types::UsageLimitBreachAction>) -> Self {
-        self.breach_action = input; self
+    pub fn set_breach_action(
+        mut self,
+        input: std::option::Option<crate::types::UsageLimitBreachAction>,
+    ) -> Self {
+        self.breach_action = input;
+        self
     }
     /// Consumes the builder and constructs a [`UpdateUsageLimitInput`](crate::operation::update_usage_limit::UpdateUsageLimitInput).
-    pub fn build(self) -> Result<crate::operation::update_usage_limit::UpdateUsageLimitInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::update_usage_limit::UpdateUsageLimitInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::update_usage_limit::UpdateUsageLimitInput {
-                usage_limit_id: self.usage_limit_id
-                ,
-                amount: self.amount
-                ,
-                breach_action: self.breach_action
-                ,
-            }
+                usage_limit_id: self.usage_limit_id,
+                amount: self.amount,
+                breach_action: self.breach_action,
+            },
         )
     }
 }
-

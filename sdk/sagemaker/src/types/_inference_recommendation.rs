@@ -3,7 +3,7 @@
 /// <p>A list of recommendations made by Amazon SageMaker Inference Recommender.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct InferenceRecommendation  {
+pub struct InferenceRecommendation {
     /// <p>The metrics used to decide what recommendation to make.</p>
     #[doc(hidden)]
     pub metrics: std::option::Option<crate::types::RecommendationMetrics>,
@@ -16,15 +16,17 @@ pub struct InferenceRecommendation  {
 }
 impl InferenceRecommendation {
     /// <p>The metrics used to decide what recommendation to make.</p>
-    pub fn metrics(&self) -> std::option::Option<& crate::types::RecommendationMetrics> {
+    pub fn metrics(&self) -> std::option::Option<&crate::types::RecommendationMetrics> {
         self.metrics.as_ref()
     }
     /// <p>Defines the endpoint configuration parameters.</p>
-    pub fn endpoint_configuration(&self) -> std::option::Option<& crate::types::EndpointOutputConfiguration> {
+    pub fn endpoint_configuration(
+        &self,
+    ) -> std::option::Option<&crate::types::EndpointOutputConfiguration> {
         self.endpoint_configuration.as_ref()
     }
     /// <p>Defines the model configuration.</p>
-    pub fn model_configuration(&self) -> std::option::Option<& crate::types::ModelConfiguration> {
+    pub fn model_configuration(&self) -> std::option::Option<&crate::types::ModelConfiguration> {
         self.model_configuration.as_ref()
     }
 }
@@ -40,7 +42,8 @@ impl InferenceRecommendation {
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct InferenceRecommendationBuilder {
     pub(crate) metrics: std::option::Option<crate::types::RecommendationMetrics>,
-    pub(crate) endpoint_configuration: std::option::Option<crate::types::EndpointOutputConfiguration>,
+    pub(crate) endpoint_configuration:
+        std::option::Option<crate::types::EndpointOutputConfiguration>,
     pub(crate) model_configuration: std::option::Option<crate::types::ModelConfiguration>,
 }
 impl InferenceRecommendationBuilder {
@@ -50,17 +53,28 @@ impl InferenceRecommendationBuilder {
         self
     }
     /// <p>The metrics used to decide what recommendation to make.</p>
-    pub fn set_metrics(mut self, input: std::option::Option<crate::types::RecommendationMetrics>) -> Self {
-        self.metrics = input; self
+    pub fn set_metrics(
+        mut self,
+        input: std::option::Option<crate::types::RecommendationMetrics>,
+    ) -> Self {
+        self.metrics = input;
+        self
     }
     /// <p>Defines the endpoint configuration parameters.</p>
-    pub fn endpoint_configuration(mut self, input: crate::types::EndpointOutputConfiguration) -> Self {
+    pub fn endpoint_configuration(
+        mut self,
+        input: crate::types::EndpointOutputConfiguration,
+    ) -> Self {
         self.endpoint_configuration = Some(input);
         self
     }
     /// <p>Defines the endpoint configuration parameters.</p>
-    pub fn set_endpoint_configuration(mut self, input: std::option::Option<crate::types::EndpointOutputConfiguration>) -> Self {
-        self.endpoint_configuration = input; self
+    pub fn set_endpoint_configuration(
+        mut self,
+        input: std::option::Option<crate::types::EndpointOutputConfiguration>,
+    ) -> Self {
+        self.endpoint_configuration = input;
+        self
     }
     /// <p>Defines the model configuration.</p>
     pub fn model_configuration(mut self, input: crate::types::ModelConfiguration) -> Self {
@@ -68,19 +82,19 @@ impl InferenceRecommendationBuilder {
         self
     }
     /// <p>Defines the model configuration.</p>
-    pub fn set_model_configuration(mut self, input: std::option::Option<crate::types::ModelConfiguration>) -> Self {
-        self.model_configuration = input; self
+    pub fn set_model_configuration(
+        mut self,
+        input: std::option::Option<crate::types::ModelConfiguration>,
+    ) -> Self {
+        self.model_configuration = input;
+        self
     }
     /// Consumes the builder and constructs a [`InferenceRecommendation`](crate::types::InferenceRecommendation).
     pub fn build(self) -> crate::types::InferenceRecommendation {
         crate::types::InferenceRecommendation {
-            metrics: self.metrics
-            ,
-            endpoint_configuration: self.endpoint_configuration
-            ,
-            model_configuration: self.model_configuration
-            ,
+            metrics: self.metrics,
+            endpoint_configuration: self.endpoint_configuration,
+            model_configuration: self.model_configuration,
         }
     }
 }
-

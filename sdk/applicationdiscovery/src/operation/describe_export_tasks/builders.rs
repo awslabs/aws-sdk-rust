@@ -4,49 +4,71 @@ pub use crate::operation::describe_export_tasks::_describe_export_tasks_output::
 pub use crate::operation::describe_export_tasks::_describe_export_tasks_input::DescribeExportTasksInputBuilder;
 
 /// Fluent builder constructing a request to `DescribeExportTasks`.
-/// 
+///
 /// <p>Retrieve status of one or more export tasks. You can retrieve the status of up to 100 export tasks.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeExportTasksFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::describe_export_tasks::builders::DescribeExportTasksInputBuilder
-            }
-impl DescribeExportTasksFluentBuilder  {
+    handle: std::sync::Arc<crate::client::Handle>,
+    inner: crate::operation::describe_export_tasks::builders::DescribeExportTasksInputBuilder,
+}
+impl DescribeExportTasksFluentBuilder {
     /// Creates a new `DescribeExportTasks`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
-                    /// sent. The operation's inner [http::Request] can be modified as well.
-                    pub async fn customize(self) -> std::result::Result<
-                        crate::client::customize::CustomizableOperation<crate::operation::describe_export_tasks::DescribeExportTasks, aws_http::retry::AwsResponseRetryClassifier,>,
-                        aws_smithy_http::result::SdkError<crate::operation::describe_export_tasks::DescribeExportTasksError>
-                    >  {
-                        let handle = self.handle.clone();
-                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-                    }
-    
-                    /// Sends the request and returns the response.
-                    ///
-                    /// If an error occurs, an `SdkError` will be returned with additional details that
-                    /// can be matched against.
-                    ///
-                    /// By default, any retryable failures will be retried twice. Retry behavior
-                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                    /// set when configuring the client.
-                    pub async fn send(self) -> std::result::Result<crate::operation::describe_export_tasks::DescribeExportTasksOutput, aws_smithy_http::result::SdkError<crate::operation::describe_export_tasks::DescribeExportTasksError>>
-                     {
-                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&self.handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        self.handle.client.call(op).await
-                    }
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle,
+            inner: Default::default(),
+        }
+    }
+
+    /// Consume this builder, creating a customizable operation that can be modified before being
+    /// sent. The operation's inner [http::Request] can be modified as well.
+    pub async fn customize(
+        self,
+    ) -> std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::describe_export_tasks::DescribeExportTasks,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::result::SdkError<
+            crate::operation::describe_export_tasks::DescribeExportTasksError,
+        >,
+    > {
+        let handle = self.handle.clone();
+        let operation = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+    }
+
+    /// Sends the request and returns the response.
+    ///
+    /// If an error occurs, an `SdkError` will be returned with additional details that
+    /// can be matched against.
+    ///
+    /// By default, any retryable failures will be retried twice. Retry behavior
+    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+    /// set when configuring the client.
+    pub async fn send(
+        self,
+    ) -> std::result::Result<
+        crate::operation::describe_export_tasks::DescribeExportTasksOutput,
+        aws_smithy_http::result::SdkError<
+            crate::operation::describe_export_tasks::DescribeExportTasksError,
+        >,
+    > {
+        let op = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&self.handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        self.handle.client.call(op).await
+    }
     /// Appends an item to `exportIds`.
     ///
     /// To override the contents of this collection use [`set_export_ids`](Self::set_export_ids).
@@ -57,7 +79,10 @@ impl DescribeExportTasksFluentBuilder  {
         self
     }
     /// <p>One or more unique identifiers used to query the status of an export request.</p>
-    pub fn set_export_ids(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+    pub fn set_export_ids(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
         self.inner = self.inner.set_export_ids(input);
         self
     }
@@ -65,19 +90,22 @@ impl DescribeExportTasksFluentBuilder  {
     ///
     /// To override the contents of this collection use [`set_filters`](Self::set_filters).
     ///
-    /// <p>One or more filters.</p> 
-    /// <ul> 
-    /// <li> <p> <code>AgentId</code> - ID of the agent whose collected data will be exported</p> </li> 
+    /// <p>One or more filters.</p>
+    /// <ul>
+    /// <li> <p> <code>AgentId</code> - ID of the agent whose collected data will be exported</p> </li>
     /// </ul>
     pub fn filters(mut self, input: crate::types::ExportFilter) -> Self {
         self.inner = self.inner.filters(input);
         self
     }
-    /// <p>One or more filters.</p> 
-    /// <ul> 
-    /// <li> <p> <code>AgentId</code> - ID of the agent whose collected data will be exported</p> </li> 
+    /// <p>One or more filters.</p>
+    /// <ul>
+    /// <li> <p> <code>AgentId</code> - ID of the agent whose collected data will be exported</p> </li>
     /// </ul>
-    pub fn set_filters(mut self, input: std::option::Option<std::vec::Vec<crate::types::ExportFilter>>) -> Self {
+    pub fn set_filters(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::ExportFilter>>,
+    ) -> Self {
         self.inner = self.inner.set_filters(input);
         self
     }
@@ -102,4 +130,3 @@ impl DescribeExportTasksFluentBuilder  {
         self
     }
 }
-

@@ -3,7 +3,7 @@
 /// <p>Options for OIDC-based, user-identity type trust provider.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct OidcOptions  {
+pub struct OidcOptions {
     /// <p>The OIDC issuer.</p>
     #[doc(hidden)]
     pub issuer: std::option::Option<std::string::String>,
@@ -28,31 +28,31 @@ pub struct OidcOptions  {
 }
 impl OidcOptions {
     /// <p>The OIDC issuer.</p>
-    pub fn issuer(&self) -> std::option::Option<& str> {
+    pub fn issuer(&self) -> std::option::Option<&str> {
         self.issuer.as_deref()
     }
     /// <p>The OIDC authorization endpoint.</p>
-    pub fn authorization_endpoint(&self) -> std::option::Option<& str> {
+    pub fn authorization_endpoint(&self) -> std::option::Option<&str> {
         self.authorization_endpoint.as_deref()
     }
     /// <p>The OIDC token endpoint.</p>
-    pub fn token_endpoint(&self) -> std::option::Option<& str> {
+    pub fn token_endpoint(&self) -> std::option::Option<&str> {
         self.token_endpoint.as_deref()
     }
     /// <p>The OIDC user info endpoint.</p>
-    pub fn user_info_endpoint(&self) -> std::option::Option<& str> {
+    pub fn user_info_endpoint(&self) -> std::option::Option<&str> {
         self.user_info_endpoint.as_deref()
     }
     /// <p>The client identifier.</p>
-    pub fn client_id(&self) -> std::option::Option<& str> {
+    pub fn client_id(&self) -> std::option::Option<&str> {
         self.client_id.as_deref()
     }
     /// <p>The client secret.</p>
-    pub fn client_secret(&self) -> std::option::Option<& str> {
+    pub fn client_secret(&self) -> std::option::Option<&str> {
         self.client_secret.as_deref()
     }
     /// <p>The OpenID Connect (OIDC) scope specified.</p>
-    pub fn scope(&self) -> std::option::Option<& str> {
+    pub fn scope(&self) -> std::option::Option<&str> {
         self.scope.as_deref()
     }
 }
@@ -83,7 +83,8 @@ impl OidcOptionsBuilder {
     }
     /// <p>The OIDC issuer.</p>
     pub fn set_issuer(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.issuer = input; self
+        self.issuer = input;
+        self
     }
     /// <p>The OIDC authorization endpoint.</p>
     pub fn authorization_endpoint(mut self, input: impl Into<std::string::String>) -> Self {
@@ -91,8 +92,12 @@ impl OidcOptionsBuilder {
         self
     }
     /// <p>The OIDC authorization endpoint.</p>
-    pub fn set_authorization_endpoint(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.authorization_endpoint = input; self
+    pub fn set_authorization_endpoint(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.authorization_endpoint = input;
+        self
     }
     /// <p>The OIDC token endpoint.</p>
     pub fn token_endpoint(mut self, input: impl Into<std::string::String>) -> Self {
@@ -101,7 +106,8 @@ impl OidcOptionsBuilder {
     }
     /// <p>The OIDC token endpoint.</p>
     pub fn set_token_endpoint(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.token_endpoint = input; self
+        self.token_endpoint = input;
+        self
     }
     /// <p>The OIDC user info endpoint.</p>
     pub fn user_info_endpoint(mut self, input: impl Into<std::string::String>) -> Self {
@@ -109,8 +115,12 @@ impl OidcOptionsBuilder {
         self
     }
     /// <p>The OIDC user info endpoint.</p>
-    pub fn set_user_info_endpoint(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.user_info_endpoint = input; self
+    pub fn set_user_info_endpoint(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.user_info_endpoint = input;
+        self
     }
     /// <p>The client identifier.</p>
     pub fn client_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -119,7 +129,8 @@ impl OidcOptionsBuilder {
     }
     /// <p>The client identifier.</p>
     pub fn set_client_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.client_id = input; self
+        self.client_id = input;
+        self
     }
     /// <p>The client secret.</p>
     pub fn client_secret(mut self, input: impl Into<std::string::String>) -> Self {
@@ -128,7 +139,8 @@ impl OidcOptionsBuilder {
     }
     /// <p>The client secret.</p>
     pub fn set_client_secret(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.client_secret = input; self
+        self.client_secret = input;
+        self
     }
     /// <p>The OpenID Connect (OIDC) scope specified.</p>
     pub fn scope(mut self, input: impl Into<std::string::String>) -> Self {
@@ -137,26 +149,19 @@ impl OidcOptionsBuilder {
     }
     /// <p>The OpenID Connect (OIDC) scope specified.</p>
     pub fn set_scope(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.scope = input; self
+        self.scope = input;
+        self
     }
     /// Consumes the builder and constructs a [`OidcOptions`](crate::types::OidcOptions).
     pub fn build(self) -> crate::types::OidcOptions {
         crate::types::OidcOptions {
-            issuer: self.issuer
-            ,
-            authorization_endpoint: self.authorization_endpoint
-            ,
-            token_endpoint: self.token_endpoint
-            ,
-            user_info_endpoint: self.user_info_endpoint
-            ,
-            client_id: self.client_id
-            ,
-            client_secret: self.client_secret
-            ,
-            scope: self.scope
-            ,
+            issuer: self.issuer,
+            authorization_endpoint: self.authorization_endpoint,
+            token_endpoint: self.token_endpoint,
+            user_info_endpoint: self.user_info_endpoint,
+            client_id: self.client_id,
+            client_secret: self.client_secret,
+            scope: self.scope,
         }
     }
 }
-

@@ -4,50 +4,68 @@ pub use crate::operation::put_rum_events::_put_rum_events_output::PutRumEventsOu
 pub use crate::operation::put_rum_events::_put_rum_events_input::PutRumEventsInputBuilder;
 
 /// Fluent builder constructing a request to `PutRumEvents`.
-/// 
-/// <p>Sends telemetry events about your application performance and user behavior to CloudWatch RUM. The code snippet that RUM generates for you to add to your application includes <code>PutRumEvents</code> operations to send this data to RUM.</p> 
+///
+/// <p>Sends telemetry events about your application performance and user behavior to CloudWatch RUM. The code snippet that RUM generates for you to add to your application includes <code>PutRumEvents</code> operations to send this data to RUM.</p>
 /// <p>Each <code>PutRumEvents</code> operation can send a batch of events from one user session.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct PutRumEventsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::put_rum_events::builders::PutRumEventsInputBuilder
-            }
-impl PutRumEventsFluentBuilder  {
+    handle: std::sync::Arc<crate::client::Handle>,
+    inner: crate::operation::put_rum_events::builders::PutRumEventsInputBuilder,
+}
+impl PutRumEventsFluentBuilder {
     /// Creates a new `PutRumEvents`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
-                    /// sent. The operation's inner [http::Request] can be modified as well.
-                    pub async fn customize(self) -> std::result::Result<
-                        crate::client::customize::CustomizableOperation<crate::operation::put_rum_events::PutRumEvents, aws_http::retry::AwsResponseRetryClassifier,>,
-                        aws_smithy_http::result::SdkError<crate::operation::put_rum_events::PutRumEventsError>
-                    >  {
-                        let handle = self.handle.clone();
-                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-                    }
-    
-                    /// Sends the request and returns the response.
-                    ///
-                    /// If an error occurs, an `SdkError` will be returned with additional details that
-                    /// can be matched against.
-                    ///
-                    /// By default, any retryable failures will be retried twice. Retry behavior
-                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                    /// set when configuring the client.
-                    pub async fn send(self) -> std::result::Result<crate::operation::put_rum_events::PutRumEventsOutput, aws_smithy_http::result::SdkError<crate::operation::put_rum_events::PutRumEventsError>>
-                     {
-                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&self.handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        self.handle.client.call(op).await
-                    }
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle,
+            inner: Default::default(),
+        }
+    }
+
+    /// Consume this builder, creating a customizable operation that can be modified before being
+    /// sent. The operation's inner [http::Request] can be modified as well.
+    pub async fn customize(
+        self,
+    ) -> std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::put_rum_events::PutRumEvents,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::result::SdkError<crate::operation::put_rum_events::PutRumEventsError>,
+    > {
+        let handle = self.handle.clone();
+        let operation = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+    }
+
+    /// Sends the request and returns the response.
+    ///
+    /// If an error occurs, an `SdkError` will be returned with additional details that
+    /// can be matched against.
+    ///
+    /// By default, any retryable failures will be retried twice. Retry behavior
+    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+    /// set when configuring the client.
+    pub async fn send(
+        self,
+    ) -> std::result::Result<
+        crate::operation::put_rum_events::PutRumEventsOutput,
+        aws_smithy_http::result::SdkError<crate::operation::put_rum_events::PutRumEventsError>,
+    > {
+        let op = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&self.handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        self.handle.client.call(op).await
+    }
     /// <p>The ID of the app monitor that is sending this data.</p>
     pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.id(input.into());
@@ -74,7 +92,10 @@ impl PutRumEventsFluentBuilder  {
         self
     }
     /// <p>A structure that contains information about the app monitor that collected this telemetry information.</p>
-    pub fn set_app_monitor_details(mut self, input: std::option::Option<crate::types::AppMonitorDetails>) -> Self {
+    pub fn set_app_monitor_details(
+        mut self,
+        input: std::option::Option<crate::types::AppMonitorDetails>,
+    ) -> Self {
         self.inner = self.inner.set_app_monitor_details(input);
         self
     }
@@ -84,7 +105,10 @@ impl PutRumEventsFluentBuilder  {
         self
     }
     /// <p>A structure that contains information about the user session that this batch of events was collected from.</p>
-    pub fn set_user_details(mut self, input: std::option::Option<crate::types::UserDetails>) -> Self {
+    pub fn set_user_details(
+        mut self,
+        input: std::option::Option<crate::types::UserDetails>,
+    ) -> Self {
         self.inner = self.inner.set_user_details(input);
         self
     }
@@ -98,9 +122,11 @@ impl PutRumEventsFluentBuilder  {
         self
     }
     /// <p>An array of structures that contain the telemetry event data.</p>
-    pub fn set_rum_events(mut self, input: std::option::Option<std::vec::Vec<crate::types::RumEvent>>) -> Self {
+    pub fn set_rum_events(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::RumEvent>>,
+    ) -> Self {
         self.inner = self.inner.set_rum_events(input);
         self
     }
 }
-

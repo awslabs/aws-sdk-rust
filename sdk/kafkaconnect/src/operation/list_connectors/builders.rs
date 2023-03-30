@@ -4,62 +4,88 @@ pub use crate::operation::list_connectors::_list_connectors_output::ListConnecto
 pub use crate::operation::list_connectors::_list_connectors_input::ListConnectorsInputBuilder;
 
 /// Fluent builder constructing a request to `ListConnectors`.
-/// 
+///
 /// <p>Returns a list of all the connectors in this account and Region. The list is limited to connectors whose name starts with the specified prefix. The response also includes a description of each of the listed connectors.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListConnectorsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::list_connectors::builders::ListConnectorsInputBuilder
-            }
-impl ListConnectorsFluentBuilder  {
+    handle: std::sync::Arc<crate::client::Handle>,
+    inner: crate::operation::list_connectors::builders::ListConnectorsInputBuilder,
+}
+impl ListConnectorsFluentBuilder {
     /// Creates a new `ListConnectors`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
-                    /// sent. The operation's inner [http::Request] can be modified as well.
-                    pub async fn customize(self) -> std::result::Result<
-                        crate::client::customize::CustomizableOperation<crate::operation::list_connectors::ListConnectors, aws_http::retry::AwsResponseRetryClassifier,>,
-                        aws_smithy_http::result::SdkError<crate::operation::list_connectors::ListConnectorsError>
-                    >  {
-                        let handle = self.handle.clone();
-                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-                    }
-    
-                    /// Sends the request and returns the response.
-                    ///
-                    /// If an error occurs, an `SdkError` will be returned with additional details that
-                    /// can be matched against.
-                    ///
-                    /// By default, any retryable failures will be retried twice. Retry behavior
-                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                    /// set when configuring the client.
-                    pub async fn send(self) -> std::result::Result<crate::operation::list_connectors::ListConnectorsOutput, aws_smithy_http::result::SdkError<crate::operation::list_connectors::ListConnectorsError>>
-                     {
-                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&self.handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        self.handle.client.call(op).await
-                    }
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle,
+            inner: Default::default(),
+        }
+    }
+
+    /// Consume this builder, creating a customizable operation that can be modified before being
+    /// sent. The operation's inner [http::Request] can be modified as well.
+    pub async fn customize(
+        self,
+    ) -> std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::list_connectors::ListConnectors,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::result::SdkError<crate::operation::list_connectors::ListConnectorsError>,
+    > {
+        let handle = self.handle.clone();
+        let operation = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+    }
+
+    /// Sends the request and returns the response.
+    ///
+    /// If an error occurs, an `SdkError` will be returned with additional details that
+    /// can be matched against.
+    ///
+    /// By default, any retryable failures will be retried twice. Retry behavior
+    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+    /// set when configuring the client.
+    pub async fn send(
+        self,
+    ) -> std::result::Result<
+        crate::operation::list_connectors::ListConnectorsOutput,
+        aws_smithy_http::result::SdkError<crate::operation::list_connectors::ListConnectorsError>,
+    > {
+        let op = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&self.handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        self.handle.client.call(op).await
+    }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::list_connectors::paginator::ListConnectorsPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::list_connectors::paginator::ListConnectorsPaginator {
-                            crate::operation::list_connectors::paginator::ListConnectorsPaginator::new(self.handle, self.inner)
-                        }
+    ///
+    /// Paginators are used by calling [`send().await`](crate::operation::list_connectors::paginator::ListConnectorsPaginator::send) which returns a `Stream`.
+    pub fn into_paginator(
+        self,
+    ) -> crate::operation::list_connectors::paginator::ListConnectorsPaginator {
+        crate::operation::list_connectors::paginator::ListConnectorsPaginator::new(
+            self.handle,
+            self.inner,
+        )
+    }
     /// <p>The name prefix that you want to use to search for and list connectors.</p>
     pub fn connector_name_prefix(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.connector_name_prefix(input.into());
         self
     }
     /// <p>The name prefix that you want to use to search for and list connectors.</p>
-    pub fn set_connector_name_prefix(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_connector_name_prefix(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_connector_name_prefix(input);
         self
     }
@@ -84,4 +110,3 @@ impl ListConnectorsFluentBuilder  {
         self
     }
 }
-

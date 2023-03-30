@@ -2,20 +2,21 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateSampleFindingsInput  {
+pub struct CreateSampleFindingsInput {
     /// <p>An array of finding types, one for each type of sample finding to create. To create a sample of every type of finding that Amazon Macie supports, don't include this array in your request.</p>
     #[doc(hidden)]
     pub finding_types: std::option::Option<std::vec::Vec<crate::types::FindingType>>,
 }
 impl CreateSampleFindingsInput {
     /// <p>An array of finding types, one for each type of sample finding to create. To create a sample of every type of finding that Amazon Macie supports, don't include this array in your request.</p>
-    pub fn finding_types(&self) -> std::option::Option<& [crate::types::FindingType]> {
+    pub fn finding_types(&self) -> std::option::Option<&[crate::types::FindingType]> {
         self.finding_types.as_deref()
     }
 }
 impl CreateSampleFindingsInput {
     /// Creates a new builder-style object to manufacture [`CreateSampleFindingsInput`](crate::operation::create_sample_findings::CreateSampleFindingsInput).
-    pub fn builder() -> crate::operation::create_sample_findings::builders::CreateSampleFindingsInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::create_sample_findings::builders::CreateSampleFindingsInputBuilder {
         crate::operation::create_sample_findings::builders::CreateSampleFindingsInputBuilder::default()
     }
 }
@@ -34,22 +35,29 @@ impl CreateSampleFindingsInputBuilder {
     /// <p>An array of finding types, one for each type of sample finding to create. To create a sample of every type of finding that Amazon Macie supports, don't include this array in your request.</p>
     pub fn finding_types(mut self, input: crate::types::FindingType) -> Self {
         let mut v = self.finding_types.unwrap_or_default();
-                        v.push(input);
-                        self.finding_types = Some(v);
-                        self
+        v.push(input);
+        self.finding_types = Some(v);
+        self
     }
     /// <p>An array of finding types, one for each type of sample finding to create. To create a sample of every type of finding that Amazon Macie supports, don't include this array in your request.</p>
-    pub fn set_finding_types(mut self, input: std::option::Option<std::vec::Vec<crate::types::FindingType>>) -> Self {
-        self.finding_types = input; self
+    pub fn set_finding_types(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::FindingType>>,
+    ) -> Self {
+        self.finding_types = input;
+        self
     }
     /// Consumes the builder and constructs a [`CreateSampleFindingsInput`](crate::operation::create_sample_findings::CreateSampleFindingsInput).
-    pub fn build(self) -> Result<crate::operation::create_sample_findings::CreateSampleFindingsInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::create_sample_findings::CreateSampleFindingsInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::create_sample_findings::CreateSampleFindingsInput {
-                finding_types: self.finding_types
-                ,
-            }
+                finding_types: self.finding_types,
+            },
         )
     }
 }
-

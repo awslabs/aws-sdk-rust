@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeLifecycleConfigurationOutput  {
+pub struct DescribeLifecycleConfigurationOutput {
     /// <p>An array of lifecycle management policies. EFS supports a maximum of one policy per file system.</p>
     #[doc(hidden)]
     pub lifecycle_policies: std::option::Option<std::vec::Vec<crate::types::LifecyclePolicy>>,
@@ -10,18 +10,18 @@ pub struct DescribeLifecycleConfigurationOutput  {
 }
 impl DescribeLifecycleConfigurationOutput {
     /// <p>An array of lifecycle management policies. EFS supports a maximum of one policy per file system.</p>
-    pub fn lifecycle_policies(&self) -> std::option::Option<& [crate::types::LifecyclePolicy]> {
+    pub fn lifecycle_policies(&self) -> std::option::Option<&[crate::types::LifecyclePolicy]> {
         self.lifecycle_policies.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for DescribeLifecycleConfigurationOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl DescribeLifecycleConfigurationOutput {
     /// Creates a new builder-style object to manufacture [`DescribeLifecycleConfigurationOutput`](crate::operation::describe_lifecycle_configuration::DescribeLifecycleConfigurationOutput).
-    pub fn builder() -> crate::operation::describe_lifecycle_configuration::builders::DescribeLifecycleConfigurationOutputBuilder {
+    pub fn builder() -> crate::operation::describe_lifecycle_configuration::builders::DescribeLifecycleConfigurationOutputBuilder{
         crate::operation::describe_lifecycle_configuration::builders::DescribeLifecycleConfigurationOutputBuilder::default()
     }
 }
@@ -30,7 +30,8 @@ impl DescribeLifecycleConfigurationOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct DescribeLifecycleConfigurationOutputBuilder {
-    pub(crate) lifecycle_policies: std::option::Option<std::vec::Vec<crate::types::LifecyclePolicy>>,
+    pub(crate) lifecycle_policies:
+        std::option::Option<std::vec::Vec<crate::types::LifecyclePolicy>>,
     _request_id: Option<String>,
 }
 impl DescribeLifecycleConfigurationOutputBuilder {
@@ -41,30 +42,35 @@ impl DescribeLifecycleConfigurationOutputBuilder {
     /// <p>An array of lifecycle management policies. EFS supports a maximum of one policy per file system.</p>
     pub fn lifecycle_policies(mut self, input: crate::types::LifecyclePolicy) -> Self {
         let mut v = self.lifecycle_policies.unwrap_or_default();
-                        v.push(input);
-                        self.lifecycle_policies = Some(v);
-                        self
+        v.push(input);
+        self.lifecycle_policies = Some(v);
+        self
     }
     /// <p>An array of lifecycle management policies. EFS supports a maximum of one policy per file system.</p>
-    pub fn set_lifecycle_policies(mut self, input: std::option::Option<std::vec::Vec<crate::types::LifecyclePolicy>>) -> Self {
-        self.lifecycle_policies = input; self
+    pub fn set_lifecycle_policies(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::LifecyclePolicy>>,
+    ) -> Self {
+        self.lifecycle_policies = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`DescribeLifecycleConfigurationOutput`](crate::operation::describe_lifecycle_configuration::DescribeLifecycleConfigurationOutput).
-    pub fn build(self) -> crate::operation::describe_lifecycle_configuration::DescribeLifecycleConfigurationOutput {
+    pub fn build(
+        self,
+    ) -> crate::operation::describe_lifecycle_configuration::DescribeLifecycleConfigurationOutput
+    {
         crate::operation::describe_lifecycle_configuration::DescribeLifecycleConfigurationOutput {
-            lifecycle_policies: self.lifecycle_policies
-            ,
+            lifecycle_policies: self.lifecycle_policies,
             _request_id: self._request_id,
         }
     }
 }
-

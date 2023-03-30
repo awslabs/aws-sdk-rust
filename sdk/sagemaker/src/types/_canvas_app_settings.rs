@@ -3,14 +3,17 @@
 /// <p>The SageMaker Canvas app settings.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CanvasAppSettings  {
+pub struct CanvasAppSettings {
     /// <p>Time series forecast settings for the Canvas app.</p>
     #[doc(hidden)]
-    pub time_series_forecasting_settings: std::option::Option<crate::types::TimeSeriesForecastingSettings>,
+    pub time_series_forecasting_settings:
+        std::option::Option<crate::types::TimeSeriesForecastingSettings>,
 }
 impl CanvasAppSettings {
     /// <p>Time series forecast settings for the Canvas app.</p>
-    pub fn time_series_forecasting_settings(&self) -> std::option::Option<& crate::types::TimeSeriesForecastingSettings> {
+    pub fn time_series_forecasting_settings(
+        &self,
+    ) -> std::option::Option<&crate::types::TimeSeriesForecastingSettings> {
         self.time_series_forecasting_settings.as_ref()
     }
 }
@@ -25,24 +28,30 @@ impl CanvasAppSettings {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct CanvasAppSettingsBuilder {
-    pub(crate) time_series_forecasting_settings: std::option::Option<crate::types::TimeSeriesForecastingSettings>,
+    pub(crate) time_series_forecasting_settings:
+        std::option::Option<crate::types::TimeSeriesForecastingSettings>,
 }
 impl CanvasAppSettingsBuilder {
     /// <p>Time series forecast settings for the Canvas app.</p>
-    pub fn time_series_forecasting_settings(mut self, input: crate::types::TimeSeriesForecastingSettings) -> Self {
+    pub fn time_series_forecasting_settings(
+        mut self,
+        input: crate::types::TimeSeriesForecastingSettings,
+    ) -> Self {
         self.time_series_forecasting_settings = Some(input);
         self
     }
     /// <p>Time series forecast settings for the Canvas app.</p>
-    pub fn set_time_series_forecasting_settings(mut self, input: std::option::Option<crate::types::TimeSeriesForecastingSettings>) -> Self {
-        self.time_series_forecasting_settings = input; self
+    pub fn set_time_series_forecasting_settings(
+        mut self,
+        input: std::option::Option<crate::types::TimeSeriesForecastingSettings>,
+    ) -> Self {
+        self.time_series_forecasting_settings = input;
+        self
     }
     /// Consumes the builder and constructs a [`CanvasAppSettings`](crate::types::CanvasAppSettings).
     pub fn build(self) -> crate::types::CanvasAppSettings {
         crate::types::CanvasAppSettings {
-            time_series_forecasting_settings: self.time_series_forecasting_settings
-            ,
+            time_series_forecasting_settings: self.time_series_forecasting_settings,
         }
     }
 }
-

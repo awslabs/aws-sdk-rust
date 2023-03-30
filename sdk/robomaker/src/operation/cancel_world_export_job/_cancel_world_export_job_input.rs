@@ -2,20 +2,21 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CancelWorldExportJobInput  {
+pub struct CancelWorldExportJobInput {
     /// <p>The Amazon Resource Name (arn) of the world export job to cancel.</p>
     #[doc(hidden)]
     pub job: std::option::Option<std::string::String>,
 }
 impl CancelWorldExportJobInput {
     /// <p>The Amazon Resource Name (arn) of the world export job to cancel.</p>
-    pub fn job(&self) -> std::option::Option<& str> {
+    pub fn job(&self) -> std::option::Option<&str> {
         self.job.as_deref()
     }
 }
 impl CancelWorldExportJobInput {
     /// Creates a new builder-style object to manufacture [`CancelWorldExportJobInput`](crate::operation::cancel_world_export_job::CancelWorldExportJobInput).
-    pub fn builder() -> crate::operation::cancel_world_export_job::builders::CancelWorldExportJobInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::cancel_world_export_job::builders::CancelWorldExportJobInputBuilder {
         crate::operation::cancel_world_export_job::builders::CancelWorldExportJobInputBuilder::default()
     }
 }
@@ -34,16 +35,16 @@ impl CancelWorldExportJobInputBuilder {
     }
     /// <p>The Amazon Resource Name (arn) of the world export job to cancel.</p>
     pub fn set_job(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.job = input; self
+        self.job = input;
+        self
     }
     /// Consumes the builder and constructs a [`CancelWorldExportJobInput`](crate::operation::cancel_world_export_job::CancelWorldExportJobInput).
-    pub fn build(self) -> Result<crate::operation::cancel_world_export_job::CancelWorldExportJobInput, aws_smithy_http::operation::error::BuildError> {
-        Ok(
-            crate::operation::cancel_world_export_job::CancelWorldExportJobInput {
-                job: self.job
-                ,
-            }
-        )
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::cancel_world_export_job::CancelWorldExportJobInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        Ok(crate::operation::cancel_world_export_job::CancelWorldExportJobInput { job: self.job })
     }
 }
-

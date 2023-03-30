@@ -3,7 +3,7 @@
 /// <p>Represents the output of a <code>DescribeCacheParameters</code> operation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeCacheParametersOutput  {
+pub struct DescribeCacheParametersOutput {
     /// <p>Provides an identifier to allow retrieval of paginated results.</p>
     #[doc(hidden)]
     pub marker: std::option::Option<std::string::String>,
@@ -12,31 +12,36 @@ pub struct DescribeCacheParametersOutput  {
     pub parameters: std::option::Option<std::vec::Vec<crate::types::Parameter>>,
     /// <p>A list of parameters specific to a particular cache node type. Each element in the list contains detailed information about one parameter.</p>
     #[doc(hidden)]
-    pub cache_node_type_specific_parameters: std::option::Option<std::vec::Vec<crate::types::CacheNodeTypeSpecificParameter>>,
+    pub cache_node_type_specific_parameters:
+        std::option::Option<std::vec::Vec<crate::types::CacheNodeTypeSpecificParameter>>,
     _request_id: Option<String>,
 }
 impl DescribeCacheParametersOutput {
     /// <p>Provides an identifier to allow retrieval of paginated results.</p>
-    pub fn marker(&self) -> std::option::Option<& str> {
+    pub fn marker(&self) -> std::option::Option<&str> {
         self.marker.as_deref()
     }
     /// <p>A list of <code>Parameter</code> instances.</p>
-    pub fn parameters(&self) -> std::option::Option<& [crate::types::Parameter]> {
+    pub fn parameters(&self) -> std::option::Option<&[crate::types::Parameter]> {
         self.parameters.as_deref()
     }
     /// <p>A list of parameters specific to a particular cache node type. Each element in the list contains detailed information about one parameter.</p>
-    pub fn cache_node_type_specific_parameters(&self) -> std::option::Option<& [crate::types::CacheNodeTypeSpecificParameter]> {
+    pub fn cache_node_type_specific_parameters(
+        &self,
+    ) -> std::option::Option<&[crate::types::CacheNodeTypeSpecificParameter]> {
         self.cache_node_type_specific_parameters.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for DescribeCacheParametersOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl DescribeCacheParametersOutput {
     /// Creates a new builder-style object to manufacture [`DescribeCacheParametersOutput`](crate::operation::describe_cache_parameters::DescribeCacheParametersOutput).
-    pub fn builder() -> crate::operation::describe_cache_parameters::builders::DescribeCacheParametersOutputBuilder {
+    pub fn builder(
+    ) -> crate::operation::describe_cache_parameters::builders::DescribeCacheParametersOutputBuilder
+    {
         crate::operation::describe_cache_parameters::builders::DescribeCacheParametersOutputBuilder::default()
     }
 }
@@ -47,7 +52,8 @@ impl DescribeCacheParametersOutput {
 pub struct DescribeCacheParametersOutputBuilder {
     pub(crate) marker: std::option::Option<std::string::String>,
     pub(crate) parameters: std::option::Option<std::vec::Vec<crate::types::Parameter>>,
-    pub(crate) cache_node_type_specific_parameters: std::option::Option<std::vec::Vec<crate::types::CacheNodeTypeSpecificParameter>>,
+    pub(crate) cache_node_type_specific_parameters:
+        std::option::Option<std::vec::Vec<crate::types::CacheNodeTypeSpecificParameter>>,
     _request_id: Option<String>,
 }
 impl DescribeCacheParametersOutputBuilder {
@@ -58,7 +64,8 @@ impl DescribeCacheParametersOutputBuilder {
     }
     /// <p>Provides an identifier to allow retrieval of paginated results.</p>
     pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.marker = input; self
+        self.marker = input;
+        self
     }
     /// Appends an item to `parameters`.
     ///
@@ -67,49 +74,58 @@ impl DescribeCacheParametersOutputBuilder {
     /// <p>A list of <code>Parameter</code> instances.</p>
     pub fn parameters(mut self, input: crate::types::Parameter) -> Self {
         let mut v = self.parameters.unwrap_or_default();
-                        v.push(input);
-                        self.parameters = Some(v);
-                        self
+        v.push(input);
+        self.parameters = Some(v);
+        self
     }
     /// <p>A list of <code>Parameter</code> instances.</p>
-    pub fn set_parameters(mut self, input: std::option::Option<std::vec::Vec<crate::types::Parameter>>) -> Self {
-        self.parameters = input; self
+    pub fn set_parameters(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::Parameter>>,
+    ) -> Self {
+        self.parameters = input;
+        self
     }
     /// Appends an item to `cache_node_type_specific_parameters`.
     ///
     /// To override the contents of this collection use [`set_cache_node_type_specific_parameters`](Self::set_cache_node_type_specific_parameters).
     ///
     /// <p>A list of parameters specific to a particular cache node type. Each element in the list contains detailed information about one parameter.</p>
-    pub fn cache_node_type_specific_parameters(mut self, input: crate::types::CacheNodeTypeSpecificParameter) -> Self {
+    pub fn cache_node_type_specific_parameters(
+        mut self,
+        input: crate::types::CacheNodeTypeSpecificParameter,
+    ) -> Self {
         let mut v = self.cache_node_type_specific_parameters.unwrap_or_default();
-                        v.push(input);
-                        self.cache_node_type_specific_parameters = Some(v);
-                        self
+        v.push(input);
+        self.cache_node_type_specific_parameters = Some(v);
+        self
     }
     /// <p>A list of parameters specific to a particular cache node type. Each element in the list contains detailed information about one parameter.</p>
-    pub fn set_cache_node_type_specific_parameters(mut self, input: std::option::Option<std::vec::Vec<crate::types::CacheNodeTypeSpecificParameter>>) -> Self {
-        self.cache_node_type_specific_parameters = input; self
+    pub fn set_cache_node_type_specific_parameters(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::CacheNodeTypeSpecificParameter>>,
+    ) -> Self {
+        self.cache_node_type_specific_parameters = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`DescribeCacheParametersOutput`](crate::operation::describe_cache_parameters::DescribeCacheParametersOutput).
-    pub fn build(self) -> crate::operation::describe_cache_parameters::DescribeCacheParametersOutput {
+    pub fn build(
+        self,
+    ) -> crate::operation::describe_cache_parameters::DescribeCacheParametersOutput {
         crate::operation::describe_cache_parameters::DescribeCacheParametersOutput {
-            marker: self.marker
-            ,
-            parameters: self.parameters
-            ,
-            cache_node_type_specific_parameters: self.cache_node_type_specific_parameters
-            ,
+            marker: self.marker,
+            parameters: self.parameters,
+            cache_node_type_specific_parameters: self.cache_node_type_specific_parameters,
             _request_id: self._request_id,
         }
     }
 }
-

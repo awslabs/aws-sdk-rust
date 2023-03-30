@@ -2,20 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteNotificationRuleInput  {
+pub struct DeleteNotificationRuleInput {
     /// <p>The Amazon Resource Name (ARN) of the notification rule you want to delete.</p>
     #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
 }
 impl DeleteNotificationRuleInput {
     /// <p>The Amazon Resource Name (ARN) of the notification rule you want to delete.</p>
-    pub fn arn(&self) -> std::option::Option<& str> {
+    pub fn arn(&self) -> std::option::Option<&str> {
         self.arn.as_deref()
     }
 }
 impl DeleteNotificationRuleInput {
     /// Creates a new builder-style object to manufacture [`DeleteNotificationRuleInput`](crate::operation::delete_notification_rule::DeleteNotificationRuleInput).
-    pub fn builder() -> crate::operation::delete_notification_rule::builders::DeleteNotificationRuleInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::delete_notification_rule::builders::DeleteNotificationRuleInputBuilder
+    {
         crate::operation::delete_notification_rule::builders::DeleteNotificationRuleInputBuilder::default()
     }
 }
@@ -34,16 +36,20 @@ impl DeleteNotificationRuleInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the notification rule you want to delete.</p>
     pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.arn = input; self
+        self.arn = input;
+        self
     }
     /// Consumes the builder and constructs a [`DeleteNotificationRuleInput`](crate::operation::delete_notification_rule::DeleteNotificationRuleInput).
-    pub fn build(self) -> Result<crate::operation::delete_notification_rule::DeleteNotificationRuleInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::delete_notification_rule::DeleteNotificationRuleInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::delete_notification_rule::DeleteNotificationRuleInput {
-                arn: self.arn
-                ,
-            }
+                arn: self.arn,
+            },
         )
     }
 }
-

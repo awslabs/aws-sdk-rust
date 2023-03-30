@@ -4,56 +4,81 @@ pub use crate::operation::create_pull_through_cache_rule::_create_pull_through_c
 pub use crate::operation::create_pull_through_cache_rule::_create_pull_through_cache_rule_input::CreatePullThroughCacheRuleInputBuilder;
 
 /// Fluent builder constructing a request to `CreatePullThroughCacheRule`.
-/// 
+///
 /// <p>Creates a pull through cache rule. A pull through cache rule provides a way to cache images from an external public registry in your Amazon ECR private registry.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct CreatePullThroughCacheRuleFluentBuilder {
                 handle: std::sync::Arc<crate::client::Handle>,
                 inner: crate::operation::create_pull_through_cache_rule::builders::CreatePullThroughCacheRuleInputBuilder
             }
-impl CreatePullThroughCacheRuleFluentBuilder  {
+impl CreatePullThroughCacheRuleFluentBuilder {
     /// Creates a new `CreatePullThroughCacheRule`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
-                    /// sent. The operation's inner [http::Request] can be modified as well.
-                    pub async fn customize(self) -> std::result::Result<
-                        crate::client::customize::CustomizableOperation<crate::operation::create_pull_through_cache_rule::CreatePullThroughCacheRule, aws_http::retry::AwsResponseRetryClassifier,>,
-                        aws_smithy_http::result::SdkError<crate::operation::create_pull_through_cache_rule::CreatePullThroughCacheRuleError>
-                    >  {
-                        let handle = self.handle.clone();
-                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-                    }
-    
-                    /// Sends the request and returns the response.
-                    ///
-                    /// If an error occurs, an `SdkError` will be returned with additional details that
-                    /// can be matched against.
-                    ///
-                    /// By default, any retryable failures will be retried twice. Retry behavior
-                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                    /// set when configuring the client.
-                    pub async fn send(self) -> std::result::Result<crate::operation::create_pull_through_cache_rule::CreatePullThroughCacheRuleOutput, aws_smithy_http::result::SdkError<crate::operation::create_pull_through_cache_rule::CreatePullThroughCacheRuleError>>
-                     {
-                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&self.handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        self.handle.client.call(op).await
-                    }
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle,
+            inner: Default::default(),
+        }
+    }
+
+    /// Consume this builder, creating a customizable operation that can be modified before being
+    /// sent. The operation's inner [http::Request] can be modified as well.
+    pub async fn customize(
+        self,
+    ) -> std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::create_pull_through_cache_rule::CreatePullThroughCacheRule,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::result::SdkError<
+            crate::operation::create_pull_through_cache_rule::CreatePullThroughCacheRuleError,
+        >,
+    > {
+        let handle = self.handle.clone();
+        let operation = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+    }
+
+    /// Sends the request and returns the response.
+    ///
+    /// If an error occurs, an `SdkError` will be returned with additional details that
+    /// can be matched against.
+    ///
+    /// By default, any retryable failures will be retried twice. Retry behavior
+    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+    /// set when configuring the client.
+    pub async fn send(
+        self,
+    ) -> std::result::Result<
+        crate::operation::create_pull_through_cache_rule::CreatePullThroughCacheRuleOutput,
+        aws_smithy_http::result::SdkError<
+            crate::operation::create_pull_through_cache_rule::CreatePullThroughCacheRuleError,
+        >,
+    > {
+        let op = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&self.handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        self.handle.client.call(op).await
+    }
     /// <p>The repository name prefix to use when caching images from the source registry.</p>
     pub fn ecr_repository_prefix(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.ecr_repository_prefix(input.into());
         self
     }
     /// <p>The repository name prefix to use when caching images from the source registry.</p>
-    pub fn set_ecr_repository_prefix(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_ecr_repository_prefix(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_ecr_repository_prefix(input);
         self
     }
@@ -63,7 +88,10 @@ impl CreatePullThroughCacheRuleFluentBuilder  {
         self
     }
     /// <p>The registry URL of the upstream public registry to use as the source for the pull through cache rule.</p>
-    pub fn set_upstream_registry_url(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_upstream_registry_url(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_upstream_registry_url(input);
         self
     }
@@ -78,4 +106,3 @@ impl CreatePullThroughCacheRuleFluentBuilder  {
         self
     }
 }
-

@@ -3,7 +3,7 @@
 /// <p>The summary of the domain.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DomainSummary  {
+pub struct DomainSummary {
     /// <p>The name of the domain.</p>
     #[doc(hidden)]
     pub domain_name: std::option::Option<std::string::String>,
@@ -19,19 +19,19 @@ pub struct DomainSummary  {
 }
 impl DomainSummary {
     /// <p>The name of the domain.</p>
-    pub fn domain_name(&self) -> std::option::Option<& str> {
+    pub fn domain_name(&self) -> std::option::Option<&str> {
         self.domain_name.as_deref()
     }
     /// <p>The name to display.</p>
-    pub fn display_name(&self) -> std::option::Option<& str> {
+    pub fn display_name(&self) -> std::option::Option<&str> {
         self.display_name.as_deref()
     }
     /// <p>The time that the domain was created.</p>
-    pub fn created_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
+    pub fn created_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created_time.as_ref()
     }
     /// <p>The status of the domain.</p>
-    pub fn domain_status(&self) -> std::option::Option<& crate::types::DomainStatus> {
+    pub fn domain_status(&self) -> std::option::Option<&crate::types::DomainStatus> {
         self.domain_status.as_ref()
     }
 }
@@ -59,7 +59,8 @@ impl DomainSummaryBuilder {
     }
     /// <p>The name of the domain.</p>
     pub fn set_domain_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.domain_name = input; self
+        self.domain_name = input;
+        self
     }
     /// <p>The name to display.</p>
     pub fn display_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -68,7 +69,8 @@ impl DomainSummaryBuilder {
     }
     /// <p>The name to display.</p>
     pub fn set_display_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.display_name = input; self
+        self.display_name = input;
+        self
     }
     /// <p>The time that the domain was created.</p>
     pub fn created_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -76,8 +78,12 @@ impl DomainSummaryBuilder {
         self
     }
     /// <p>The time that the domain was created.</p>
-    pub fn set_created_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.created_time = input; self
+    pub fn set_created_time(
+        mut self,
+        input: std::option::Option<aws_smithy_types::DateTime>,
+    ) -> Self {
+        self.created_time = input;
+        self
     }
     /// <p>The status of the domain.</p>
     pub fn domain_status(mut self, input: crate::types::DomainStatus) -> Self {
@@ -85,21 +91,20 @@ impl DomainSummaryBuilder {
         self
     }
     /// <p>The status of the domain.</p>
-    pub fn set_domain_status(mut self, input: std::option::Option<crate::types::DomainStatus>) -> Self {
-        self.domain_status = input; self
+    pub fn set_domain_status(
+        mut self,
+        input: std::option::Option<crate::types::DomainStatus>,
+    ) -> Self {
+        self.domain_status = input;
+        self
     }
     /// Consumes the builder and constructs a [`DomainSummary`](crate::types::DomainSummary).
     pub fn build(self) -> crate::types::DomainSummary {
         crate::types::DomainSummary {
-            domain_name: self.domain_name
-            ,
-            display_name: self.display_name
-            ,
-            created_time: self.created_time
-            ,
-            domain_status: self.domain_status
-            ,
+            domain_name: self.domain_name,
+            display_name: self.display_name,
+            created_time: self.created_time,
+            domain_status: self.domain_status,
         }
     }
 }
-

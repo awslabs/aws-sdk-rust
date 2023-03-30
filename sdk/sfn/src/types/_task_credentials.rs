@@ -3,14 +3,14 @@
 /// <p>Contains details about the credentials that Step Functions uses for a task.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct TaskCredentials  {
+pub struct TaskCredentials {
     /// <p>The ARN of an IAM role that Step Functions assumes for the task. The role can allow cross-account access to resources.</p>
     #[doc(hidden)]
     pub role_arn: std::option::Option<std::string::String>,
 }
 impl TaskCredentials {
     /// <p>The ARN of an IAM role that Step Functions assumes for the task. The role can allow cross-account access to resources.</p>
-    pub fn role_arn(&self) -> std::option::Option<& str> {
+    pub fn role_arn(&self) -> std::option::Option<&str> {
         self.role_arn.as_deref()
     }
 }
@@ -35,14 +35,13 @@ impl TaskCredentialsBuilder {
     }
     /// <p>The ARN of an IAM role that Step Functions assumes for the task. The role can allow cross-account access to resources.</p>
     pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.role_arn = input; self
+        self.role_arn = input;
+        self
     }
     /// Consumes the builder and constructs a [`TaskCredentials`](crate::types::TaskCredentials).
     pub fn build(self) -> crate::types::TaskCredentials {
         crate::types::TaskCredentials {
-            role_arn: self.role_arn
-            ,
+            role_arn: self.role_arn,
         }
     }
 }
-

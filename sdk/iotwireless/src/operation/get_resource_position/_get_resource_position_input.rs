@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetResourcePositionInput  {
+pub struct GetResourcePositionInput {
     /// <p>The identifier of the resource for which position information is retrieved. It can be the wireless device ID or the wireless gateway ID depending on the resource type.</p>
     #[doc(hidden)]
     pub resource_identifier: std::option::Option<std::string::String>,
@@ -12,18 +12,20 @@ pub struct GetResourcePositionInput  {
 }
 impl GetResourcePositionInput {
     /// <p>The identifier of the resource for which position information is retrieved. It can be the wireless device ID or the wireless gateway ID depending on the resource type.</p>
-    pub fn resource_identifier(&self) -> std::option::Option<& str> {
+    pub fn resource_identifier(&self) -> std::option::Option<&str> {
         self.resource_identifier.as_deref()
     }
     /// <p>The type of resource for which position information is retrieved, which can be a wireless device or a wireless gateway.</p>
-    pub fn resource_type(&self) -> std::option::Option<& crate::types::PositionResourceType> {
+    pub fn resource_type(&self) -> std::option::Option<&crate::types::PositionResourceType> {
         self.resource_type.as_ref()
     }
 }
 impl GetResourcePositionInput {
     /// Creates a new builder-style object to manufacture [`GetResourcePositionInput`](crate::operation::get_resource_position::GetResourcePositionInput).
-    pub fn builder() -> crate::operation::get_resource_position::builders::GetResourcePositionInputBuilder {
-        crate::operation::get_resource_position::builders::GetResourcePositionInputBuilder::default()
+    pub fn builder(
+    ) -> crate::operation::get_resource_position::builders::GetResourcePositionInputBuilder {
+        crate::operation::get_resource_position::builders::GetResourcePositionInputBuilder::default(
+        )
     }
 }
 
@@ -41,8 +43,12 @@ impl GetResourcePositionInputBuilder {
         self
     }
     /// <p>The identifier of the resource for which position information is retrieved. It can be the wireless device ID or the wireless gateway ID depending on the resource type.</p>
-    pub fn set_resource_identifier(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.resource_identifier = input; self
+    pub fn set_resource_identifier(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.resource_identifier = input;
+        self
     }
     /// <p>The type of resource for which position information is retrieved, which can be a wireless device or a wireless gateway.</p>
     pub fn resource_type(mut self, input: crate::types::PositionResourceType) -> Self {
@@ -50,19 +56,25 @@ impl GetResourcePositionInputBuilder {
         self
     }
     /// <p>The type of resource for which position information is retrieved, which can be a wireless device or a wireless gateway.</p>
-    pub fn set_resource_type(mut self, input: std::option::Option<crate::types::PositionResourceType>) -> Self {
-        self.resource_type = input; self
+    pub fn set_resource_type(
+        mut self,
+        input: std::option::Option<crate::types::PositionResourceType>,
+    ) -> Self {
+        self.resource_type = input;
+        self
     }
     /// Consumes the builder and constructs a [`GetResourcePositionInput`](crate::operation::get_resource_position::GetResourcePositionInput).
-    pub fn build(self) -> Result<crate::operation::get_resource_position::GetResourcePositionInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::get_resource_position::GetResourcePositionInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::get_resource_position::GetResourcePositionInput {
-                resource_identifier: self.resource_identifier
-                ,
-                resource_type: self.resource_type
-                ,
-            }
+                resource_identifier: self.resource_identifier,
+                resource_type: self.resource_type,
+            },
         )
     }
 }
-

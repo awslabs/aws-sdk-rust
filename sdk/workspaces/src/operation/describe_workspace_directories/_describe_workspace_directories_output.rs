@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeWorkspaceDirectoriesOutput  {
+pub struct DescribeWorkspaceDirectoriesOutput {
     /// <p>Information about the directories.</p>
     #[doc(hidden)]
     pub directories: std::option::Option<std::vec::Vec<crate::types::WorkspaceDirectory>>,
@@ -13,22 +13,22 @@ pub struct DescribeWorkspaceDirectoriesOutput  {
 }
 impl DescribeWorkspaceDirectoriesOutput {
     /// <p>Information about the directories.</p>
-    pub fn directories(&self) -> std::option::Option<& [crate::types::WorkspaceDirectory]> {
+    pub fn directories(&self) -> std::option::Option<&[crate::types::WorkspaceDirectory]> {
         self.directories.as_deref()
     }
     /// <p>The token to use to retrieve the next page of results. This value is null when there are no more results to return. </p>
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for DescribeWorkspaceDirectoriesOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl DescribeWorkspaceDirectoriesOutput {
     /// Creates a new builder-style object to manufacture [`DescribeWorkspaceDirectoriesOutput`](crate::operation::describe_workspace_directories::DescribeWorkspaceDirectoriesOutput).
-    pub fn builder() -> crate::operation::describe_workspace_directories::builders::DescribeWorkspaceDirectoriesOutputBuilder {
+    pub fn builder() -> crate::operation::describe_workspace_directories::builders::DescribeWorkspaceDirectoriesOutputBuilder{
         crate::operation::describe_workspace_directories::builders::DescribeWorkspaceDirectoriesOutputBuilder::default()
     }
 }
@@ -49,13 +49,17 @@ impl DescribeWorkspaceDirectoriesOutputBuilder {
     /// <p>Information about the directories.</p>
     pub fn directories(mut self, input: crate::types::WorkspaceDirectory) -> Self {
         let mut v = self.directories.unwrap_or_default();
-                        v.push(input);
-                        self.directories = Some(v);
-                        self
+        v.push(input);
+        self.directories = Some(v);
+        self
     }
     /// <p>Information about the directories.</p>
-    pub fn set_directories(mut self, input: std::option::Option<std::vec::Vec<crate::types::WorkspaceDirectory>>) -> Self {
-        self.directories = input; self
+    pub fn set_directories(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::WorkspaceDirectory>>,
+    ) -> Self {
+        self.directories = input;
+        self
     }
     /// <p>The token to use to retrieve the next page of results. This value is null when there are no more results to return. </p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -64,26 +68,26 @@ impl DescribeWorkspaceDirectoriesOutputBuilder {
     }
     /// <p>The token to use to retrieve the next page of results. This value is null when there are no more results to return. </p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input; self
+        self.next_token = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`DescribeWorkspaceDirectoriesOutput`](crate::operation::describe_workspace_directories::DescribeWorkspaceDirectoriesOutput).
-    pub fn build(self) -> crate::operation::describe_workspace_directories::DescribeWorkspaceDirectoriesOutput {
+    pub fn build(
+        self,
+    ) -> crate::operation::describe_workspace_directories::DescribeWorkspaceDirectoriesOutput {
         crate::operation::describe_workspace_directories::DescribeWorkspaceDirectoriesOutput {
-            directories: self.directories
-            ,
-            next_token: self.next_token
-            ,
+            directories: self.directories,
+            next_token: self.next_token,
             _request_id: self._request_id,
         }
     }
 }
-

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AssociateUserToPermissionGroupOutput  {
+pub struct AssociateUserToPermissionGroupOutput {
     /// <p>The returned status code of the response.</p>
     #[doc(hidden)]
     pub status_code: i32,
@@ -15,13 +15,13 @@ impl AssociateUserToPermissionGroupOutput {
     }
 }
 impl aws_http::request_id::RequestId for AssociateUserToPermissionGroupOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl AssociateUserToPermissionGroupOutput {
     /// Creates a new builder-style object to manufacture [`AssociateUserToPermissionGroupOutput`](crate::operation::associate_user_to_permission_group::AssociateUserToPermissionGroupOutput).
-    pub fn builder() -> crate::operation::associate_user_to_permission_group::builders::AssociateUserToPermissionGroupOutputBuilder {
+    pub fn builder() -> crate::operation::associate_user_to_permission_group::builders::AssociateUserToPermissionGroupOutputBuilder{
         crate::operation::associate_user_to_permission_group::builders::AssociateUserToPermissionGroupOutputBuilder::default()
     }
 }
@@ -41,25 +41,26 @@ impl AssociateUserToPermissionGroupOutputBuilder {
     }
     /// <p>The returned status code of the response.</p>
     pub fn set_status_code(mut self, input: std::option::Option<i32>) -> Self {
-        self.status_code = input; self
+        self.status_code = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`AssociateUserToPermissionGroupOutput`](crate::operation::associate_user_to_permission_group::AssociateUserToPermissionGroupOutput).
-    pub fn build(self) -> crate::operation::associate_user_to_permission_group::AssociateUserToPermissionGroupOutput {
+    pub fn build(
+        self,
+    ) -> crate::operation::associate_user_to_permission_group::AssociateUserToPermissionGroupOutput
+    {
         crate::operation::associate_user_to_permission_group::AssociateUserToPermissionGroupOutput {
-            status_code: self.status_code
-                .unwrap_or_default()
-            ,
+            status_code: self.status_code.unwrap_or_default(),
             _request_id: self._request_id,
         }
     }
 }
-

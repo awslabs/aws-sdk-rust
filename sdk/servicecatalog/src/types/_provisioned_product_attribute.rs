@@ -3,7 +3,7 @@
 /// <p>Information about a provisioned product.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ProvisionedProductAttribute  {
+pub struct ProvisionedProductAttribute {
     /// <p>The user-friendly name of the provisioned product.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -16,13 +16,13 @@ pub struct ProvisionedProductAttribute  {
     /// <p>The identifier of the provisioned product.</p>
     #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
-    /// <p>The current status of the provisioned product.</p> 
-    /// <ul> 
-    /// <li> <p> <code>AVAILABLE</code> - Stable state, ready to perform any operation. The most recent operation succeeded and completed.</p> </li> 
-    /// <li> <p> <code>UNDER_CHANGE</code> - Transitive state. Operations performed might not have valid results. Wait for an <code>AVAILABLE</code> status before performing operations.</p> </li> 
-    /// <li> <p> <code>TAINTED</code> - Stable state, ready to perform any operation. The stack has completed the requested operation but is not exactly what was requested. For example, a request to update to a new version failed and the stack rolled back to the current version.</p> </li> 
-    /// <li> <p> <code>ERROR</code> - An unexpected error occurred. The provisioned product exists but the stack is not running. For example, CloudFormation received a parameter value that was not valid and could not launch the stack.</p> </li> 
-    /// <li> <p> <code>PLAN_IN_PROGRESS</code> - Transitive state. The plan operations were performed to provision a new product, but resources have not yet been created. After reviewing the list of resources to be created, execute the plan. Wait for an <code>AVAILABLE</code> status before performing operations.</p> </li> 
+    /// <p>The current status of the provisioned product.</p>
+    /// <ul>
+    /// <li> <p> <code>AVAILABLE</code> - Stable state, ready to perform any operation. The most recent operation succeeded and completed.</p> </li>
+    /// <li> <p> <code>UNDER_CHANGE</code> - Transitive state. Operations performed might not have valid results. Wait for an <code>AVAILABLE</code> status before performing operations.</p> </li>
+    /// <li> <p> <code>TAINTED</code> - Stable state, ready to perform any operation. The stack has completed the requested operation but is not exactly what was requested. For example, a request to update to a new version failed and the stack rolled back to the current version.</p> </li>
+    /// <li> <p> <code>ERROR</code> - An unexpected error occurred. The provisioned product exists but the stack is not running. For example, CloudFormation received a parameter value that was not valid and could not launch the stack.</p> </li>
+    /// <li> <p> <code>PLAN_IN_PROGRESS</code> - Transitive state. The plan operations were performed to provision a new product, but resources have not yet been created. After reviewing the list of resources to be created, execute the plan. Wait for an <code>AVAILABLE</code> status before performing operations.</p> </li>
     /// </ul>
     #[doc(hidden)]
     pub status: std::option::Option<crate::types::ProvisionedProductStatus>,
@@ -38,21 +38,21 @@ pub struct ProvisionedProductAttribute  {
     /// <p>The record identifier of the last request performed on this provisioned product.</p>
     #[doc(hidden)]
     pub last_record_id: std::option::Option<std::string::String>,
-    /// <p>The record identifier of the last request performed on this provisioned product of the following types:</p> 
-    /// <ul> 
-    /// <li> <p> ProvisionedProduct </p> </li> 
-    /// <li> <p> UpdateProvisionedProduct </p> </li> 
-    /// <li> <p> ExecuteProvisionedProductPlan </p> </li> 
-    /// <li> <p> TerminateProvisionedProduct </p> </li> 
+    /// <p>The record identifier of the last request performed on this provisioned product of the following types:</p>
+    /// <ul>
+    /// <li> <p> ProvisionedProduct </p> </li>
+    /// <li> <p> UpdateProvisionedProduct </p> </li>
+    /// <li> <p> ExecuteProvisionedProductPlan </p> </li>
+    /// <li> <p> TerminateProvisionedProduct </p> </li>
     /// </ul>
     #[doc(hidden)]
     pub last_provisioning_record_id: std::option::Option<std::string::String>,
-    /// <p>The record identifier of the last successful request performed on this provisioned product of the following types:</p> 
-    /// <ul> 
-    /// <li> <p> ProvisionedProduct </p> </li> 
-    /// <li> <p> UpdateProvisionedProduct </p> </li> 
-    /// <li> <p> ExecuteProvisionedProductPlan </p> </li> 
-    /// <li> <p> TerminateProvisionedProduct </p> </li> 
+    /// <p>The record identifier of the last successful request performed on this provisioned product of the following types:</p>
+    /// <ul>
+    /// <li> <p> ProvisionedProduct </p> </li>
+    /// <li> <p> UpdateProvisionedProduct </p> </li>
+    /// <li> <p> ExecuteProvisionedProductPlan </p> </li>
+    /// <li> <p> TerminateProvisionedProduct </p> </li>
     /// </ul>
     #[doc(hidden)]
     pub last_successful_provisioning_record_id: std::option::Option<std::string::String>,
@@ -83,98 +83,98 @@ pub struct ProvisionedProductAttribute  {
 }
 impl ProvisionedProductAttribute {
     /// <p>The user-friendly name of the provisioned product.</p>
-    pub fn name(&self) -> std::option::Option<& str> {
+    pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>The ARN of the provisioned product.</p>
-    pub fn arn(&self) -> std::option::Option<& str> {
+    pub fn arn(&self) -> std::option::Option<&str> {
         self.arn.as_deref()
     }
     /// <p>The type of provisioned product. The supported values are <code>CFN_STACK</code> and <code>CFN_STACKSET</code>.</p>
-    pub fn r#type(&self) -> std::option::Option<& str> {
+    pub fn r#type(&self) -> std::option::Option<&str> {
         self.r#type.as_deref()
     }
     /// <p>The identifier of the provisioned product.</p>
-    pub fn id(&self) -> std::option::Option<& str> {
+    pub fn id(&self) -> std::option::Option<&str> {
         self.id.as_deref()
     }
-    /// <p>The current status of the provisioned product.</p> 
-    /// <ul> 
-    /// <li> <p> <code>AVAILABLE</code> - Stable state, ready to perform any operation. The most recent operation succeeded and completed.</p> </li> 
-    /// <li> <p> <code>UNDER_CHANGE</code> - Transitive state. Operations performed might not have valid results. Wait for an <code>AVAILABLE</code> status before performing operations.</p> </li> 
-    /// <li> <p> <code>TAINTED</code> - Stable state, ready to perform any operation. The stack has completed the requested operation but is not exactly what was requested. For example, a request to update to a new version failed and the stack rolled back to the current version.</p> </li> 
-    /// <li> <p> <code>ERROR</code> - An unexpected error occurred. The provisioned product exists but the stack is not running. For example, CloudFormation received a parameter value that was not valid and could not launch the stack.</p> </li> 
-    /// <li> <p> <code>PLAN_IN_PROGRESS</code> - Transitive state. The plan operations were performed to provision a new product, but resources have not yet been created. After reviewing the list of resources to be created, execute the plan. Wait for an <code>AVAILABLE</code> status before performing operations.</p> </li> 
+    /// <p>The current status of the provisioned product.</p>
+    /// <ul>
+    /// <li> <p> <code>AVAILABLE</code> - Stable state, ready to perform any operation. The most recent operation succeeded and completed.</p> </li>
+    /// <li> <p> <code>UNDER_CHANGE</code> - Transitive state. Operations performed might not have valid results. Wait for an <code>AVAILABLE</code> status before performing operations.</p> </li>
+    /// <li> <p> <code>TAINTED</code> - Stable state, ready to perform any operation. The stack has completed the requested operation but is not exactly what was requested. For example, a request to update to a new version failed and the stack rolled back to the current version.</p> </li>
+    /// <li> <p> <code>ERROR</code> - An unexpected error occurred. The provisioned product exists but the stack is not running. For example, CloudFormation received a parameter value that was not valid and could not launch the stack.</p> </li>
+    /// <li> <p> <code>PLAN_IN_PROGRESS</code> - Transitive state. The plan operations were performed to provision a new product, but resources have not yet been created. After reviewing the list of resources to be created, execute the plan. Wait for an <code>AVAILABLE</code> status before performing operations.</p> </li>
     /// </ul>
-    pub fn status(&self) -> std::option::Option<& crate::types::ProvisionedProductStatus> {
+    pub fn status(&self) -> std::option::Option<&crate::types::ProvisionedProductStatus> {
         self.status.as_ref()
     }
     /// <p>The current status message of the provisioned product.</p>
-    pub fn status_message(&self) -> std::option::Option<& str> {
+    pub fn status_message(&self) -> std::option::Option<&str> {
         self.status_message.as_deref()
     }
     /// <p>The UTC time stamp of the creation time.</p>
-    pub fn created_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
+    pub fn created_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created_time.as_ref()
     }
     /// <p>A unique identifier that you provide to ensure idempotency. If multiple requests differ only by the idempotency token, the same response is returned for each repeated request.</p>
-    pub fn idempotency_token(&self) -> std::option::Option<& str> {
+    pub fn idempotency_token(&self) -> std::option::Option<&str> {
         self.idempotency_token.as_deref()
     }
     /// <p>The record identifier of the last request performed on this provisioned product.</p>
-    pub fn last_record_id(&self) -> std::option::Option<& str> {
+    pub fn last_record_id(&self) -> std::option::Option<&str> {
         self.last_record_id.as_deref()
     }
-    /// <p>The record identifier of the last request performed on this provisioned product of the following types:</p> 
-    /// <ul> 
-    /// <li> <p> ProvisionedProduct </p> </li> 
-    /// <li> <p> UpdateProvisionedProduct </p> </li> 
-    /// <li> <p> ExecuteProvisionedProductPlan </p> </li> 
-    /// <li> <p> TerminateProvisionedProduct </p> </li> 
+    /// <p>The record identifier of the last request performed on this provisioned product of the following types:</p>
+    /// <ul>
+    /// <li> <p> ProvisionedProduct </p> </li>
+    /// <li> <p> UpdateProvisionedProduct </p> </li>
+    /// <li> <p> ExecuteProvisionedProductPlan </p> </li>
+    /// <li> <p> TerminateProvisionedProduct </p> </li>
     /// </ul>
-    pub fn last_provisioning_record_id(&self) -> std::option::Option<& str> {
+    pub fn last_provisioning_record_id(&self) -> std::option::Option<&str> {
         self.last_provisioning_record_id.as_deref()
     }
-    /// <p>The record identifier of the last successful request performed on this provisioned product of the following types:</p> 
-    /// <ul> 
-    /// <li> <p> ProvisionedProduct </p> </li> 
-    /// <li> <p> UpdateProvisionedProduct </p> </li> 
-    /// <li> <p> ExecuteProvisionedProductPlan </p> </li> 
-    /// <li> <p> TerminateProvisionedProduct </p> </li> 
+    /// <p>The record identifier of the last successful request performed on this provisioned product of the following types:</p>
+    /// <ul>
+    /// <li> <p> ProvisionedProduct </p> </li>
+    /// <li> <p> UpdateProvisionedProduct </p> </li>
+    /// <li> <p> ExecuteProvisionedProductPlan </p> </li>
+    /// <li> <p> TerminateProvisionedProduct </p> </li>
     /// </ul>
-    pub fn last_successful_provisioning_record_id(&self) -> std::option::Option<& str> {
+    pub fn last_successful_provisioning_record_id(&self) -> std::option::Option<&str> {
         self.last_successful_provisioning_record_id.as_deref()
     }
     /// <p>One or more tags.</p>
-    pub fn tags(&self) -> std::option::Option<& [crate::types::Tag]> {
+    pub fn tags(&self) -> std::option::Option<&[crate::types::Tag]> {
         self.tags.as_deref()
     }
     /// <p>The assigned identifier for the resource, such as an EC2 instance ID or an S3 bucket name.</p>
-    pub fn physical_id(&self) -> std::option::Option<& str> {
+    pub fn physical_id(&self) -> std::option::Option<&str> {
         self.physical_id.as_deref()
     }
     /// <p>The product identifier.</p>
-    pub fn product_id(&self) -> std::option::Option<& str> {
+    pub fn product_id(&self) -> std::option::Option<&str> {
         self.product_id.as_deref()
     }
     /// <p>The name of the product.</p>
-    pub fn product_name(&self) -> std::option::Option<& str> {
+    pub fn product_name(&self) -> std::option::Option<&str> {
         self.product_name.as_deref()
     }
     /// <p>The identifier of the provisioning artifact.</p>
-    pub fn provisioning_artifact_id(&self) -> std::option::Option<& str> {
+    pub fn provisioning_artifact_id(&self) -> std::option::Option<&str> {
         self.provisioning_artifact_id.as_deref()
     }
     /// <p>The name of the provisioning artifact.</p>
-    pub fn provisioning_artifact_name(&self) -> std::option::Option<& str> {
+    pub fn provisioning_artifact_name(&self) -> std::option::Option<&str> {
         self.provisioning_artifact_name.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the IAM user.</p>
-    pub fn user_arn(&self) -> std::option::Option<& str> {
+    pub fn user_arn(&self) -> std::option::Option<&str> {
         self.user_arn.as_deref()
     }
     /// <p>The ARN of the IAM user in the session. This ARN might contain a session ID.</p>
-    pub fn user_arn_session(&self) -> std::option::Option<& str> {
+    pub fn user_arn_session(&self) -> std::option::Option<&str> {
         self.user_arn_session.as_deref()
     }
 }
@@ -217,7 +217,8 @@ impl ProvisionedProductAttributeBuilder {
     }
     /// <p>The user-friendly name of the provisioned product.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input; self
+        self.name = input;
+        self
     }
     /// <p>The ARN of the provisioned product.</p>
     pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -226,7 +227,8 @@ impl ProvisionedProductAttributeBuilder {
     }
     /// <p>The ARN of the provisioned product.</p>
     pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.arn = input; self
+        self.arn = input;
+        self
     }
     /// <p>The type of provisioned product. The supported values are <code>CFN_STACK</code> and <code>CFN_STACKSET</code>.</p>
     pub fn r#type(mut self, input: impl Into<std::string::String>) -> Self {
@@ -235,7 +237,8 @@ impl ProvisionedProductAttributeBuilder {
     }
     /// <p>The type of provisioned product. The supported values are <code>CFN_STACK</code> and <code>CFN_STACKSET</code>.</p>
     pub fn set_type(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.r#type = input; self
+        self.r#type = input;
+        self
     }
     /// <p>The identifier of the provisioned product.</p>
     pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -244,30 +247,35 @@ impl ProvisionedProductAttributeBuilder {
     }
     /// <p>The identifier of the provisioned product.</p>
     pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.id = input; self
+        self.id = input;
+        self
     }
-    /// <p>The current status of the provisioned product.</p> 
-    /// <ul> 
-    /// <li> <p> <code>AVAILABLE</code> - Stable state, ready to perform any operation. The most recent operation succeeded and completed.</p> </li> 
-    /// <li> <p> <code>UNDER_CHANGE</code> - Transitive state. Operations performed might not have valid results. Wait for an <code>AVAILABLE</code> status before performing operations.</p> </li> 
-    /// <li> <p> <code>TAINTED</code> - Stable state, ready to perform any operation. The stack has completed the requested operation but is not exactly what was requested. For example, a request to update to a new version failed and the stack rolled back to the current version.</p> </li> 
-    /// <li> <p> <code>ERROR</code> - An unexpected error occurred. The provisioned product exists but the stack is not running. For example, CloudFormation received a parameter value that was not valid and could not launch the stack.</p> </li> 
-    /// <li> <p> <code>PLAN_IN_PROGRESS</code> - Transitive state. The plan operations were performed to provision a new product, but resources have not yet been created. After reviewing the list of resources to be created, execute the plan. Wait for an <code>AVAILABLE</code> status before performing operations.</p> </li> 
+    /// <p>The current status of the provisioned product.</p>
+    /// <ul>
+    /// <li> <p> <code>AVAILABLE</code> - Stable state, ready to perform any operation. The most recent operation succeeded and completed.</p> </li>
+    /// <li> <p> <code>UNDER_CHANGE</code> - Transitive state. Operations performed might not have valid results. Wait for an <code>AVAILABLE</code> status before performing operations.</p> </li>
+    /// <li> <p> <code>TAINTED</code> - Stable state, ready to perform any operation. The stack has completed the requested operation but is not exactly what was requested. For example, a request to update to a new version failed and the stack rolled back to the current version.</p> </li>
+    /// <li> <p> <code>ERROR</code> - An unexpected error occurred. The provisioned product exists but the stack is not running. For example, CloudFormation received a parameter value that was not valid and could not launch the stack.</p> </li>
+    /// <li> <p> <code>PLAN_IN_PROGRESS</code> - Transitive state. The plan operations were performed to provision a new product, but resources have not yet been created. After reviewing the list of resources to be created, execute the plan. Wait for an <code>AVAILABLE</code> status before performing operations.</p> </li>
     /// </ul>
     pub fn status(mut self, input: crate::types::ProvisionedProductStatus) -> Self {
         self.status = Some(input);
         self
     }
-    /// <p>The current status of the provisioned product.</p> 
-    /// <ul> 
-    /// <li> <p> <code>AVAILABLE</code> - Stable state, ready to perform any operation. The most recent operation succeeded and completed.</p> </li> 
-    /// <li> <p> <code>UNDER_CHANGE</code> - Transitive state. Operations performed might not have valid results. Wait for an <code>AVAILABLE</code> status before performing operations.</p> </li> 
-    /// <li> <p> <code>TAINTED</code> - Stable state, ready to perform any operation. The stack has completed the requested operation but is not exactly what was requested. For example, a request to update to a new version failed and the stack rolled back to the current version.</p> </li> 
-    /// <li> <p> <code>ERROR</code> - An unexpected error occurred. The provisioned product exists but the stack is not running. For example, CloudFormation received a parameter value that was not valid and could not launch the stack.</p> </li> 
-    /// <li> <p> <code>PLAN_IN_PROGRESS</code> - Transitive state. The plan operations were performed to provision a new product, but resources have not yet been created. After reviewing the list of resources to be created, execute the plan. Wait for an <code>AVAILABLE</code> status before performing operations.</p> </li> 
+    /// <p>The current status of the provisioned product.</p>
+    /// <ul>
+    /// <li> <p> <code>AVAILABLE</code> - Stable state, ready to perform any operation. The most recent operation succeeded and completed.</p> </li>
+    /// <li> <p> <code>UNDER_CHANGE</code> - Transitive state. Operations performed might not have valid results. Wait for an <code>AVAILABLE</code> status before performing operations.</p> </li>
+    /// <li> <p> <code>TAINTED</code> - Stable state, ready to perform any operation. The stack has completed the requested operation but is not exactly what was requested. For example, a request to update to a new version failed and the stack rolled back to the current version.</p> </li>
+    /// <li> <p> <code>ERROR</code> - An unexpected error occurred. The provisioned product exists but the stack is not running. For example, CloudFormation received a parameter value that was not valid and could not launch the stack.</p> </li>
+    /// <li> <p> <code>PLAN_IN_PROGRESS</code> - Transitive state. The plan operations were performed to provision a new product, but resources have not yet been created. After reviewing the list of resources to be created, execute the plan. Wait for an <code>AVAILABLE</code> status before performing operations.</p> </li>
     /// </ul>
-    pub fn set_status(mut self, input: std::option::Option<crate::types::ProvisionedProductStatus>) -> Self {
-        self.status = input; self
+    pub fn set_status(
+        mut self,
+        input: std::option::Option<crate::types::ProvisionedProductStatus>,
+    ) -> Self {
+        self.status = input;
+        self
     }
     /// <p>The current status message of the provisioned product.</p>
     pub fn status_message(mut self, input: impl Into<std::string::String>) -> Self {
@@ -276,7 +284,8 @@ impl ProvisionedProductAttributeBuilder {
     }
     /// <p>The current status message of the provisioned product.</p>
     pub fn set_status_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.status_message = input; self
+        self.status_message = input;
+        self
     }
     /// <p>The UTC time stamp of the creation time.</p>
     pub fn created_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -284,8 +293,12 @@ impl ProvisionedProductAttributeBuilder {
         self
     }
     /// <p>The UTC time stamp of the creation time.</p>
-    pub fn set_created_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.created_time = input; self
+    pub fn set_created_time(
+        mut self,
+        input: std::option::Option<aws_smithy_types::DateTime>,
+    ) -> Self {
+        self.created_time = input;
+        self
     }
     /// <p>A unique identifier that you provide to ensure idempotency. If multiple requests differ only by the idempotency token, the same response is returned for each repeated request.</p>
     pub fn idempotency_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -293,8 +306,12 @@ impl ProvisionedProductAttributeBuilder {
         self
     }
     /// <p>A unique identifier that you provide to ensure idempotency. If multiple requests differ only by the idempotency token, the same response is returned for each repeated request.</p>
-    pub fn set_idempotency_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.idempotency_token = input; self
+    pub fn set_idempotency_token(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.idempotency_token = input;
+        self
     }
     /// <p>The record identifier of the last request performed on this provisioned product.</p>
     pub fn last_record_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -303,49 +320,61 @@ impl ProvisionedProductAttributeBuilder {
     }
     /// <p>The record identifier of the last request performed on this provisioned product.</p>
     pub fn set_last_record_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.last_record_id = input; self
+        self.last_record_id = input;
+        self
     }
-    /// <p>The record identifier of the last request performed on this provisioned product of the following types:</p> 
-    /// <ul> 
-    /// <li> <p> ProvisionedProduct </p> </li> 
-    /// <li> <p> UpdateProvisionedProduct </p> </li> 
-    /// <li> <p> ExecuteProvisionedProductPlan </p> </li> 
-    /// <li> <p> TerminateProvisionedProduct </p> </li> 
+    /// <p>The record identifier of the last request performed on this provisioned product of the following types:</p>
+    /// <ul>
+    /// <li> <p> ProvisionedProduct </p> </li>
+    /// <li> <p> UpdateProvisionedProduct </p> </li>
+    /// <li> <p> ExecuteProvisionedProductPlan </p> </li>
+    /// <li> <p> TerminateProvisionedProduct </p> </li>
     /// </ul>
     pub fn last_provisioning_record_id(mut self, input: impl Into<std::string::String>) -> Self {
         self.last_provisioning_record_id = Some(input.into());
         self
     }
-    /// <p>The record identifier of the last request performed on this provisioned product of the following types:</p> 
-    /// <ul> 
-    /// <li> <p> ProvisionedProduct </p> </li> 
-    /// <li> <p> UpdateProvisionedProduct </p> </li> 
-    /// <li> <p> ExecuteProvisionedProductPlan </p> </li> 
-    /// <li> <p> TerminateProvisionedProduct </p> </li> 
+    /// <p>The record identifier of the last request performed on this provisioned product of the following types:</p>
+    /// <ul>
+    /// <li> <p> ProvisionedProduct </p> </li>
+    /// <li> <p> UpdateProvisionedProduct </p> </li>
+    /// <li> <p> ExecuteProvisionedProductPlan </p> </li>
+    /// <li> <p> TerminateProvisionedProduct </p> </li>
     /// </ul>
-    pub fn set_last_provisioning_record_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.last_provisioning_record_id = input; self
+    pub fn set_last_provisioning_record_id(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.last_provisioning_record_id = input;
+        self
     }
-    /// <p>The record identifier of the last successful request performed on this provisioned product of the following types:</p> 
-    /// <ul> 
-    /// <li> <p> ProvisionedProduct </p> </li> 
-    /// <li> <p> UpdateProvisionedProduct </p> </li> 
-    /// <li> <p> ExecuteProvisionedProductPlan </p> </li> 
-    /// <li> <p> TerminateProvisionedProduct </p> </li> 
+    /// <p>The record identifier of the last successful request performed on this provisioned product of the following types:</p>
+    /// <ul>
+    /// <li> <p> ProvisionedProduct </p> </li>
+    /// <li> <p> UpdateProvisionedProduct </p> </li>
+    /// <li> <p> ExecuteProvisionedProductPlan </p> </li>
+    /// <li> <p> TerminateProvisionedProduct </p> </li>
     /// </ul>
-    pub fn last_successful_provisioning_record_id(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn last_successful_provisioning_record_id(
+        mut self,
+        input: impl Into<std::string::String>,
+    ) -> Self {
         self.last_successful_provisioning_record_id = Some(input.into());
         self
     }
-    /// <p>The record identifier of the last successful request performed on this provisioned product of the following types:</p> 
-    /// <ul> 
-    /// <li> <p> ProvisionedProduct </p> </li> 
-    /// <li> <p> UpdateProvisionedProduct </p> </li> 
-    /// <li> <p> ExecuteProvisionedProductPlan </p> </li> 
-    /// <li> <p> TerminateProvisionedProduct </p> </li> 
+    /// <p>The record identifier of the last successful request performed on this provisioned product of the following types:</p>
+    /// <ul>
+    /// <li> <p> ProvisionedProduct </p> </li>
+    /// <li> <p> UpdateProvisionedProduct </p> </li>
+    /// <li> <p> ExecuteProvisionedProductPlan </p> </li>
+    /// <li> <p> TerminateProvisionedProduct </p> </li>
     /// </ul>
-    pub fn set_last_successful_provisioning_record_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.last_successful_provisioning_record_id = input; self
+    pub fn set_last_successful_provisioning_record_id(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.last_successful_provisioning_record_id = input;
+        self
     }
     /// Appends an item to `tags`.
     ///
@@ -354,13 +383,17 @@ impl ProvisionedProductAttributeBuilder {
     /// <p>One or more tags.</p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
-                        v.push(input);
-                        self.tags = Some(v);
-                        self
+        v.push(input);
+        self.tags = Some(v);
+        self
     }
     /// <p>One or more tags.</p>
-    pub fn set_tags(mut self, input: std::option::Option<std::vec::Vec<crate::types::Tag>>) -> Self {
-        self.tags = input; self
+    pub fn set_tags(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::Tag>>,
+    ) -> Self {
+        self.tags = input;
+        self
     }
     /// <p>The assigned identifier for the resource, such as an EC2 instance ID or an S3 bucket name.</p>
     pub fn physical_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -369,7 +402,8 @@ impl ProvisionedProductAttributeBuilder {
     }
     /// <p>The assigned identifier for the resource, such as an EC2 instance ID or an S3 bucket name.</p>
     pub fn set_physical_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.physical_id = input; self
+        self.physical_id = input;
+        self
     }
     /// <p>The product identifier.</p>
     pub fn product_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -378,7 +412,8 @@ impl ProvisionedProductAttributeBuilder {
     }
     /// <p>The product identifier.</p>
     pub fn set_product_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.product_id = input; self
+        self.product_id = input;
+        self
     }
     /// <p>The name of the product.</p>
     pub fn product_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -387,7 +422,8 @@ impl ProvisionedProductAttributeBuilder {
     }
     /// <p>The name of the product.</p>
     pub fn set_product_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.product_name = input; self
+        self.product_name = input;
+        self
     }
     /// <p>The identifier of the provisioning artifact.</p>
     pub fn provisioning_artifact_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -395,8 +431,12 @@ impl ProvisionedProductAttributeBuilder {
         self
     }
     /// <p>The identifier of the provisioning artifact.</p>
-    pub fn set_provisioning_artifact_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.provisioning_artifact_id = input; self
+    pub fn set_provisioning_artifact_id(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.provisioning_artifact_id = input;
+        self
     }
     /// <p>The name of the provisioning artifact.</p>
     pub fn provisioning_artifact_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -404,8 +444,12 @@ impl ProvisionedProductAttributeBuilder {
         self
     }
     /// <p>The name of the provisioning artifact.</p>
-    pub fn set_provisioning_artifact_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.provisioning_artifact_name = input; self
+    pub fn set_provisioning_artifact_name(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.provisioning_artifact_name = input;
+        self
     }
     /// <p>The Amazon Resource Name (ARN) of the IAM user.</p>
     pub fn user_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -414,7 +458,8 @@ impl ProvisionedProductAttributeBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the IAM user.</p>
     pub fn set_user_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.user_arn = input; self
+        self.user_arn = input;
+        self
     }
     /// <p>The ARN of the IAM user in the session. This ARN might contain a session ID.</p>
     pub fn user_arn_session(mut self, input: impl Into<std::string::String>) -> Self {
@@ -423,50 +468,31 @@ impl ProvisionedProductAttributeBuilder {
     }
     /// <p>The ARN of the IAM user in the session. This ARN might contain a session ID.</p>
     pub fn set_user_arn_session(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.user_arn_session = input; self
+        self.user_arn_session = input;
+        self
     }
     /// Consumes the builder and constructs a [`ProvisionedProductAttribute`](crate::types::ProvisionedProductAttribute).
     pub fn build(self) -> crate::types::ProvisionedProductAttribute {
         crate::types::ProvisionedProductAttribute {
-            name: self.name
-            ,
-            arn: self.arn
-            ,
-            r#type: self.r#type
-            ,
-            id: self.id
-            ,
-            status: self.status
-            ,
-            status_message: self.status_message
-            ,
-            created_time: self.created_time
-            ,
-            idempotency_token: self.idempotency_token
-            ,
-            last_record_id: self.last_record_id
-            ,
-            last_provisioning_record_id: self.last_provisioning_record_id
-            ,
-            last_successful_provisioning_record_id: self.last_successful_provisioning_record_id
-            ,
-            tags: self.tags
-            ,
-            physical_id: self.physical_id
-            ,
-            product_id: self.product_id
-            ,
-            product_name: self.product_name
-            ,
-            provisioning_artifact_id: self.provisioning_artifact_id
-            ,
-            provisioning_artifact_name: self.provisioning_artifact_name
-            ,
-            user_arn: self.user_arn
-            ,
-            user_arn_session: self.user_arn_session
-            ,
+            name: self.name,
+            arn: self.arn,
+            r#type: self.r#type,
+            id: self.id,
+            status: self.status,
+            status_message: self.status_message,
+            created_time: self.created_time,
+            idempotency_token: self.idempotency_token,
+            last_record_id: self.last_record_id,
+            last_provisioning_record_id: self.last_provisioning_record_id,
+            last_successful_provisioning_record_id: self.last_successful_provisioning_record_id,
+            tags: self.tags,
+            physical_id: self.physical_id,
+            product_id: self.product_id,
+            product_name: self.product_name,
+            provisioning_artifact_id: self.provisioning_artifact_id,
+            provisioning_artifact_name: self.provisioning_artifact_name,
+            user_arn: self.user_arn,
+            user_arn_session: self.user_arn_session,
         }
     }
 }
-

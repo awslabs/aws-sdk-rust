@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetConnectAttachmentOutput  {
+pub struct GetConnectAttachmentOutput {
     /// <p>Details about the Connect attachment.</p>
     #[doc(hidden)]
     pub connect_attachment: std::option::Option<crate::types::ConnectAttachment>,
@@ -10,18 +10,19 @@ pub struct GetConnectAttachmentOutput  {
 }
 impl GetConnectAttachmentOutput {
     /// <p>Details about the Connect attachment.</p>
-    pub fn connect_attachment(&self) -> std::option::Option<& crate::types::ConnectAttachment> {
+    pub fn connect_attachment(&self) -> std::option::Option<&crate::types::ConnectAttachment> {
         self.connect_attachment.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for GetConnectAttachmentOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl GetConnectAttachmentOutput {
     /// Creates a new builder-style object to manufacture [`GetConnectAttachmentOutput`](crate::operation::get_connect_attachment::GetConnectAttachmentOutput).
-    pub fn builder() -> crate::operation::get_connect_attachment::builders::GetConnectAttachmentOutputBuilder {
+    pub fn builder(
+    ) -> crate::operation::get_connect_attachment::builders::GetConnectAttachmentOutputBuilder {
         crate::operation::get_connect_attachment::builders::GetConnectAttachmentOutputBuilder::default()
     }
 }
@@ -40,25 +41,27 @@ impl GetConnectAttachmentOutputBuilder {
         self
     }
     /// <p>Details about the Connect attachment.</p>
-    pub fn set_connect_attachment(mut self, input: std::option::Option<crate::types::ConnectAttachment>) -> Self {
-        self.connect_attachment = input; self
+    pub fn set_connect_attachment(
+        mut self,
+        input: std::option::Option<crate::types::ConnectAttachment>,
+    ) -> Self {
+        self.connect_attachment = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`GetConnectAttachmentOutput`](crate::operation::get_connect_attachment::GetConnectAttachmentOutput).
     pub fn build(self) -> crate::operation::get_connect_attachment::GetConnectAttachmentOutput {
         crate::operation::get_connect_attachment::GetConnectAttachmentOutput {
-            connect_attachment: self.connect_attachment
-            ,
+            connect_attachment: self.connect_attachment,
             _request_id: self._request_id,
         }
     }
 }
-

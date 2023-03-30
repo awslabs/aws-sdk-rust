@@ -3,15 +3,15 @@
 /// <p>Represents the input of a <code>CopySnapshotMessage</code> operation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CopySnapshotInput  {
+pub struct CopySnapshotInput {
     /// <p>The name of an existing snapshot from which to make a copy.</p>
     #[doc(hidden)]
     pub source_snapshot_name: std::option::Option<std::string::String>,
     /// <p>A name for the snapshot copy. ElastiCache does not permit overwriting a snapshot, therefore this name must be unique within its context - ElastiCache or an Amazon S3 bucket if exporting.</p>
     #[doc(hidden)]
     pub target_snapshot_name: std::option::Option<std::string::String>,
-    /// <p>The Amazon S3 bucket to which the snapshot is exported. This parameter is used only when exporting a snapshot for external access.</p> 
-    /// <p>When using this parameter to export a snapshot, be sure Amazon ElastiCache has the needed permissions to this S3 bucket. For more information, see <a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/backups-exporting.html#backups-exporting-grant-access">Step 2: Grant ElastiCache Access to Your Amazon S3 Bucket</a> in the <i>Amazon ElastiCache User Guide</i>.</p> 
+    /// <p>The Amazon S3 bucket to which the snapshot is exported. This parameter is used only when exporting a snapshot for external access.</p>
+    /// <p>When using this parameter to export a snapshot, be sure Amazon ElastiCache has the needed permissions to this S3 bucket. For more information, see <a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/backups-exporting.html#backups-exporting-grant-access">Step 2: Grant ElastiCache Access to Your Amazon S3 Bucket</a> in the <i>Amazon ElastiCache User Guide</i>.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/backups-exporting.html">Exporting a Snapshot</a> in the <i>Amazon ElastiCache User Guide</i>.</p>
     #[doc(hidden)]
     pub target_bucket: std::option::Option<std::string::String>,
@@ -24,25 +24,25 @@ pub struct CopySnapshotInput  {
 }
 impl CopySnapshotInput {
     /// <p>The name of an existing snapshot from which to make a copy.</p>
-    pub fn source_snapshot_name(&self) -> std::option::Option<& str> {
+    pub fn source_snapshot_name(&self) -> std::option::Option<&str> {
         self.source_snapshot_name.as_deref()
     }
     /// <p>A name for the snapshot copy. ElastiCache does not permit overwriting a snapshot, therefore this name must be unique within its context - ElastiCache or an Amazon S3 bucket if exporting.</p>
-    pub fn target_snapshot_name(&self) -> std::option::Option<& str> {
+    pub fn target_snapshot_name(&self) -> std::option::Option<&str> {
         self.target_snapshot_name.as_deref()
     }
-    /// <p>The Amazon S3 bucket to which the snapshot is exported. This parameter is used only when exporting a snapshot for external access.</p> 
-    /// <p>When using this parameter to export a snapshot, be sure Amazon ElastiCache has the needed permissions to this S3 bucket. For more information, see <a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/backups-exporting.html#backups-exporting-grant-access">Step 2: Grant ElastiCache Access to Your Amazon S3 Bucket</a> in the <i>Amazon ElastiCache User Guide</i>.</p> 
+    /// <p>The Amazon S3 bucket to which the snapshot is exported. This parameter is used only when exporting a snapshot for external access.</p>
+    /// <p>When using this parameter to export a snapshot, be sure Amazon ElastiCache has the needed permissions to this S3 bucket. For more information, see <a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/backups-exporting.html#backups-exporting-grant-access">Step 2: Grant ElastiCache Access to Your Amazon S3 Bucket</a> in the <i>Amazon ElastiCache User Guide</i>.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/backups-exporting.html">Exporting a Snapshot</a> in the <i>Amazon ElastiCache User Guide</i>.</p>
-    pub fn target_bucket(&self) -> std::option::Option<& str> {
+    pub fn target_bucket(&self) -> std::option::Option<&str> {
         self.target_bucket.as_deref()
     }
     /// <p>The ID of the KMS key used to encrypt the target snapshot.</p>
-    pub fn kms_key_id(&self) -> std::option::Option<& str> {
+    pub fn kms_key_id(&self) -> std::option::Option<&str> {
         self.kms_key_id.as_deref()
     }
     /// <p>A list of tags to be added to this resource. A tag is a key-value pair. A tag key must be accompanied by a tag value, although null is accepted.</p>
-    pub fn tags(&self) -> std::option::Option<& [crate::types::Tag]> {
+    pub fn tags(&self) -> std::option::Option<&[crate::types::Tag]> {
         self.tags.as_deref()
     }
 }
@@ -70,8 +70,12 @@ impl CopySnapshotInputBuilder {
         self
     }
     /// <p>The name of an existing snapshot from which to make a copy.</p>
-    pub fn set_source_snapshot_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.source_snapshot_name = input; self
+    pub fn set_source_snapshot_name(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.source_snapshot_name = input;
+        self
     }
     /// <p>A name for the snapshot copy. ElastiCache does not permit overwriting a snapshot, therefore this name must be unique within its context - ElastiCache or an Amazon S3 bucket if exporting.</p>
     pub fn target_snapshot_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -79,21 +83,26 @@ impl CopySnapshotInputBuilder {
         self
     }
     /// <p>A name for the snapshot copy. ElastiCache does not permit overwriting a snapshot, therefore this name must be unique within its context - ElastiCache or an Amazon S3 bucket if exporting.</p>
-    pub fn set_target_snapshot_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.target_snapshot_name = input; self
+    pub fn set_target_snapshot_name(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.target_snapshot_name = input;
+        self
     }
-    /// <p>The Amazon S3 bucket to which the snapshot is exported. This parameter is used only when exporting a snapshot for external access.</p> 
-    /// <p>When using this parameter to export a snapshot, be sure Amazon ElastiCache has the needed permissions to this S3 bucket. For more information, see <a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/backups-exporting.html#backups-exporting-grant-access">Step 2: Grant ElastiCache Access to Your Amazon S3 Bucket</a> in the <i>Amazon ElastiCache User Guide</i>.</p> 
+    /// <p>The Amazon S3 bucket to which the snapshot is exported. This parameter is used only when exporting a snapshot for external access.</p>
+    /// <p>When using this parameter to export a snapshot, be sure Amazon ElastiCache has the needed permissions to this S3 bucket. For more information, see <a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/backups-exporting.html#backups-exporting-grant-access">Step 2: Grant ElastiCache Access to Your Amazon S3 Bucket</a> in the <i>Amazon ElastiCache User Guide</i>.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/backups-exporting.html">Exporting a Snapshot</a> in the <i>Amazon ElastiCache User Guide</i>.</p>
     pub fn target_bucket(mut self, input: impl Into<std::string::String>) -> Self {
         self.target_bucket = Some(input.into());
         self
     }
-    /// <p>The Amazon S3 bucket to which the snapshot is exported. This parameter is used only when exporting a snapshot for external access.</p> 
-    /// <p>When using this parameter to export a snapshot, be sure Amazon ElastiCache has the needed permissions to this S3 bucket. For more information, see <a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/backups-exporting.html#backups-exporting-grant-access">Step 2: Grant ElastiCache Access to Your Amazon S3 Bucket</a> in the <i>Amazon ElastiCache User Guide</i>.</p> 
+    /// <p>The Amazon S3 bucket to which the snapshot is exported. This parameter is used only when exporting a snapshot for external access.</p>
+    /// <p>When using this parameter to export a snapshot, be sure Amazon ElastiCache has the needed permissions to this S3 bucket. For more information, see <a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/backups-exporting.html#backups-exporting-grant-access">Step 2: Grant ElastiCache Access to Your Amazon S3 Bucket</a> in the <i>Amazon ElastiCache User Guide</i>.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/backups-exporting.html">Exporting a Snapshot</a> in the <i>Amazon ElastiCache User Guide</i>.</p>
     pub fn set_target_bucket(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.target_bucket = input; self
+        self.target_bucket = input;
+        self
     }
     /// <p>The ID of the KMS key used to encrypt the target snapshot.</p>
     pub fn kms_key_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -102,7 +111,8 @@ impl CopySnapshotInputBuilder {
     }
     /// <p>The ID of the KMS key used to encrypt the target snapshot.</p>
     pub fn set_kms_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.kms_key_id = input; self
+        self.kms_key_id = input;
+        self
     }
     /// Appends an item to `tags`.
     ///
@@ -111,30 +121,31 @@ impl CopySnapshotInputBuilder {
     /// <p>A list of tags to be added to this resource. A tag is a key-value pair. A tag key must be accompanied by a tag value, although null is accepted.</p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
-                        v.push(input);
-                        self.tags = Some(v);
-                        self
+        v.push(input);
+        self.tags = Some(v);
+        self
     }
     /// <p>A list of tags to be added to this resource. A tag is a key-value pair. A tag key must be accompanied by a tag value, although null is accepted.</p>
-    pub fn set_tags(mut self, input: std::option::Option<std::vec::Vec<crate::types::Tag>>) -> Self {
-        self.tags = input; self
+    pub fn set_tags(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::Tag>>,
+    ) -> Self {
+        self.tags = input;
+        self
     }
     /// Consumes the builder and constructs a [`CopySnapshotInput`](crate::operation::copy_snapshot::CopySnapshotInput).
-    pub fn build(self) -> Result<crate::operation::copy_snapshot::CopySnapshotInput, aws_smithy_http::operation::error::BuildError> {
-        Ok(
-            crate::operation::copy_snapshot::CopySnapshotInput {
-                source_snapshot_name: self.source_snapshot_name
-                ,
-                target_snapshot_name: self.target_snapshot_name
-                ,
-                target_bucket: self.target_bucket
-                ,
-                kms_key_id: self.kms_key_id
-                ,
-                tags: self.tags
-                ,
-            }
-        )
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::copy_snapshot::CopySnapshotInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        Ok(crate::operation::copy_snapshot::CopySnapshotInput {
+            source_snapshot_name: self.source_snapshot_name,
+            target_snapshot_name: self.target_snapshot_name,
+            target_bucket: self.target_bucket,
+            kms_key_id: self.kms_key_id,
+            tags: self.tags,
+        })
     }
 }
-

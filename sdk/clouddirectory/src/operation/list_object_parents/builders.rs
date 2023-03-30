@@ -4,55 +4,82 @@ pub use crate::operation::list_object_parents::_list_object_parents_output::List
 pub use crate::operation::list_object_parents::_list_object_parents_input::ListObjectParentsInputBuilder;
 
 /// Fluent builder constructing a request to `ListObjectParents`.
-/// 
+///
 /// <p>Lists parent objects that are associated with a given object in pagination fashion.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListObjectParentsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::list_object_parents::builders::ListObjectParentsInputBuilder
-            }
-impl ListObjectParentsFluentBuilder  {
+    handle: std::sync::Arc<crate::client::Handle>,
+    inner: crate::operation::list_object_parents::builders::ListObjectParentsInputBuilder,
+}
+impl ListObjectParentsFluentBuilder {
     /// Creates a new `ListObjectParents`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
-                    /// sent. The operation's inner [http::Request] can be modified as well.
-                    pub async fn customize(self) -> std::result::Result<
-                        crate::client::customize::CustomizableOperation<crate::operation::list_object_parents::ListObjectParents, aws_http::retry::AwsResponseRetryClassifier,>,
-                        aws_smithy_http::result::SdkError<crate::operation::list_object_parents::ListObjectParentsError>
-                    >  {
-                        let handle = self.handle.clone();
-                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-                    }
-    
-                    /// Sends the request and returns the response.
-                    ///
-                    /// If an error occurs, an `SdkError` will be returned with additional details that
-                    /// can be matched against.
-                    ///
-                    /// By default, any retryable failures will be retried twice. Retry behavior
-                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                    /// set when configuring the client.
-                    pub async fn send(self) -> std::result::Result<crate::operation::list_object_parents::ListObjectParentsOutput, aws_smithy_http::result::SdkError<crate::operation::list_object_parents::ListObjectParentsError>>
-                     {
-                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&self.handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        self.handle.client.call(op).await
-                    }
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle,
+            inner: Default::default(),
+        }
+    }
+
+    /// Consume this builder, creating a customizable operation that can be modified before being
+    /// sent. The operation's inner [http::Request] can be modified as well.
+    pub async fn customize(
+        self,
+    ) -> std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::list_object_parents::ListObjectParents,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::result::SdkError<
+            crate::operation::list_object_parents::ListObjectParentsError,
+        >,
+    > {
+        let handle = self.handle.clone();
+        let operation = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+    }
+
+    /// Sends the request and returns the response.
+    ///
+    /// If an error occurs, an `SdkError` will be returned with additional details that
+    /// can be matched against.
+    ///
+    /// By default, any retryable failures will be retried twice. Retry behavior
+    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+    /// set when configuring the client.
+    pub async fn send(
+        self,
+    ) -> std::result::Result<
+        crate::operation::list_object_parents::ListObjectParentsOutput,
+        aws_smithy_http::result::SdkError<
+            crate::operation::list_object_parents::ListObjectParentsError,
+        >,
+    > {
+        let op = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&self.handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        self.handle.client.call(op).await
+    }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::list_object_parents::paginator::ListObjectParentsPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::list_object_parents::paginator::ListObjectParentsPaginator {
-                            crate::operation::list_object_parents::paginator::ListObjectParentsPaginator::new(self.handle, self.inner)
-                        }
+    ///
+    /// Paginators are used by calling [`send().await`](crate::operation::list_object_parents::paginator::ListObjectParentsPaginator::send) which returns a `Stream`.
+    pub fn into_paginator(
+        self,
+    ) -> crate::operation::list_object_parents::paginator::ListObjectParentsPaginator {
+        crate::operation::list_object_parents::paginator::ListObjectParentsPaginator::new(
+            self.handle,
+            self.inner,
+        )
+    }
     /// <p>The Amazon Resource Name (ARN) that is associated with the <code>Directory</code> where the object resides. For more information, see <code>arns</code>.</p>
     pub fn directory_arn(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.directory_arn(input.into());
@@ -69,7 +96,10 @@ impl ListObjectParentsFluentBuilder  {
         self
     }
     /// <p>The reference that identifies the object for which parent objects are being listed.</p>
-    pub fn set_object_reference(mut self, input: std::option::Option<crate::types::ObjectReference>) -> Self {
+    pub fn set_object_reference(
+        mut self,
+        input: std::option::Option<crate::types::ObjectReference>,
+    ) -> Self {
         self.inner = self.inner.set_object_reference(input);
         self
     }
@@ -99,7 +129,10 @@ impl ListObjectParentsFluentBuilder  {
         self
     }
     /// <p>Represents the manner and timing in which the successful write or update of an object is reflected in a subsequent read operation of that same object.</p>
-    pub fn set_consistency_level(mut self, input: std::option::Option<crate::types::ConsistencyLevel>) -> Self {
+    pub fn set_consistency_level(
+        mut self,
+        input: std::option::Option<crate::types::ConsistencyLevel>,
+    ) -> Self {
         self.inner = self.inner.set_consistency_level(input);
         self
     }
@@ -109,9 +142,11 @@ impl ListObjectParentsFluentBuilder  {
         self
     }
     /// <p>When set to True, returns all <code>ListObjectParentsResponse$ParentLinks</code>. There could be multiple links between a parent-child pair.</p>
-    pub fn set_include_all_links_to_each_parent(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_include_all_links_to_each_parent(
+        mut self,
+        input: std::option::Option<bool>,
+    ) -> Self {
         self.inner = self.inner.set_include_all_links_to_each_parent(input);
         self
     }
 }
-

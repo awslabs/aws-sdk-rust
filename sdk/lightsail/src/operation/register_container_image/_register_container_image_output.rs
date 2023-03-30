@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct RegisterContainerImageOutput  {
+pub struct RegisterContainerImageOutput {
     /// <p>An object that describes a container image that is registered to a Lightsail container service</p>
     #[doc(hidden)]
     pub container_image: std::option::Option<crate::types::ContainerImage>,
@@ -10,18 +10,20 @@ pub struct RegisterContainerImageOutput  {
 }
 impl RegisterContainerImageOutput {
     /// <p>An object that describes a container image that is registered to a Lightsail container service</p>
-    pub fn container_image(&self) -> std::option::Option<& crate::types::ContainerImage> {
+    pub fn container_image(&self) -> std::option::Option<&crate::types::ContainerImage> {
         self.container_image.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for RegisterContainerImageOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl RegisterContainerImageOutput {
     /// Creates a new builder-style object to manufacture [`RegisterContainerImageOutput`](crate::operation::register_container_image::RegisterContainerImageOutput).
-    pub fn builder() -> crate::operation::register_container_image::builders::RegisterContainerImageOutputBuilder {
+    pub fn builder(
+    ) -> crate::operation::register_container_image::builders::RegisterContainerImageOutputBuilder
+    {
         crate::operation::register_container_image::builders::RegisterContainerImageOutputBuilder::default()
     }
 }
@@ -40,25 +42,27 @@ impl RegisterContainerImageOutputBuilder {
         self
     }
     /// <p>An object that describes a container image that is registered to a Lightsail container service</p>
-    pub fn set_container_image(mut self, input: std::option::Option<crate::types::ContainerImage>) -> Self {
-        self.container_image = input; self
+    pub fn set_container_image(
+        mut self,
+        input: std::option::Option<crate::types::ContainerImage>,
+    ) -> Self {
+        self.container_image = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`RegisterContainerImageOutput`](crate::operation::register_container_image::RegisterContainerImageOutput).
     pub fn build(self) -> crate::operation::register_container_image::RegisterContainerImageOutput {
         crate::operation::register_container_image::RegisterContainerImageOutput {
-            container_image: self.container_image
-            ,
+            container_image: self.container_image,
             _request_id: self._request_id,
         }
     }
 }
-

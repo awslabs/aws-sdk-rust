@@ -4,50 +4,72 @@ pub use crate::operation::create_mission_profile::_create_mission_profile_output
 pub use crate::operation::create_mission_profile::_create_mission_profile_input::CreateMissionProfileInputBuilder;
 
 /// Fluent builder constructing a request to `CreateMissionProfile`.
-/// 
-/// <p>Creates a mission profile.</p> 
+///
+/// <p>Creates a mission profile.</p>
 /// <p> <code>dataflowEdges</code> is a list of lists of strings. Each lower level list of strings has two elements: a <i>from</i> ARN and a <i>to</i> ARN.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct CreateMissionProfileFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::create_mission_profile::builders::CreateMissionProfileInputBuilder
-            }
-impl CreateMissionProfileFluentBuilder  {
+    handle: std::sync::Arc<crate::client::Handle>,
+    inner: crate::operation::create_mission_profile::builders::CreateMissionProfileInputBuilder,
+}
+impl CreateMissionProfileFluentBuilder {
     /// Creates a new `CreateMissionProfile`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
-                    /// sent. The operation's inner [http::Request] can be modified as well.
-                    pub async fn customize(self) -> std::result::Result<
-                        crate::client::customize::CustomizableOperation<crate::operation::create_mission_profile::CreateMissionProfile, aws_http::retry::AwsResponseRetryClassifier,>,
-                        aws_smithy_http::result::SdkError<crate::operation::create_mission_profile::CreateMissionProfileError>
-                    >  {
-                        let handle = self.handle.clone();
-                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-                    }
-    
-                    /// Sends the request and returns the response.
-                    ///
-                    /// If an error occurs, an `SdkError` will be returned with additional details that
-                    /// can be matched against.
-                    ///
-                    /// By default, any retryable failures will be retried twice. Retry behavior
-                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                    /// set when configuring the client.
-                    pub async fn send(self) -> std::result::Result<crate::operation::create_mission_profile::CreateMissionProfileOutput, aws_smithy_http::result::SdkError<crate::operation::create_mission_profile::CreateMissionProfileError>>
-                     {
-                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&self.handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        self.handle.client.call(op).await
-                    }
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle,
+            inner: Default::default(),
+        }
+    }
+
+    /// Consume this builder, creating a customizable operation that can be modified before being
+    /// sent. The operation's inner [http::Request] can be modified as well.
+    pub async fn customize(
+        self,
+    ) -> std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::create_mission_profile::CreateMissionProfile,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::result::SdkError<
+            crate::operation::create_mission_profile::CreateMissionProfileError,
+        >,
+    > {
+        let handle = self.handle.clone();
+        let operation = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+    }
+
+    /// Sends the request and returns the response.
+    ///
+    /// If an error occurs, an `SdkError` will be returned with additional details that
+    /// can be matched against.
+    ///
+    /// By default, any retryable failures will be retried twice. Retry behavior
+    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+    /// set when configuring the client.
+    pub async fn send(
+        self,
+    ) -> std::result::Result<
+        crate::operation::create_mission_profile::CreateMissionProfileOutput,
+        aws_smithy_http::result::SdkError<
+            crate::operation::create_mission_profile::CreateMissionProfileError,
+        >,
+    > {
+        let op = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&self.handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        self.handle.client.call(op).await
+    }
     /// <p>Name of a mission profile.</p>
     pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.name(input.into());
@@ -64,7 +86,10 @@ impl CreateMissionProfileFluentBuilder  {
         self
     }
     /// <p>Amount of time prior to contact start you’d like to receive a CloudWatch event indicating an upcoming pass.</p>
-    pub fn set_contact_pre_pass_duration_seconds(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_contact_pre_pass_duration_seconds(
+        mut self,
+        input: std::option::Option<i32>,
+    ) -> Self {
         self.inner = self.inner.set_contact_pre_pass_duration_seconds(input);
         self
     }
@@ -74,7 +99,10 @@ impl CreateMissionProfileFluentBuilder  {
         self
     }
     /// <p>Amount of time after a contact ends that you’d like to receive a CloudWatch event indicating the pass has finished.</p>
-    pub fn set_contact_post_pass_duration_seconds(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_contact_post_pass_duration_seconds(
+        mut self,
+        input: std::option::Option<i32>,
+    ) -> Self {
         self.inner = self.inner.set_contact_post_pass_duration_seconds(input);
         self
     }
@@ -84,8 +112,13 @@ impl CreateMissionProfileFluentBuilder  {
         self
     }
     /// <p>Smallest amount of time in seconds that you’d like to see for an available contact. AWS Ground Station will not present you with contacts shorter than this duration.</p>
-    pub fn set_minimum_viable_contact_duration_seconds(mut self, input: std::option::Option<i32>) -> Self {
-        self.inner = self.inner.set_minimum_viable_contact_duration_seconds(input);
+    pub fn set_minimum_viable_contact_duration_seconds(
+        mut self,
+        input: std::option::Option<i32>,
+    ) -> Self {
+        self.inner = self
+            .inner
+            .set_minimum_viable_contact_duration_seconds(input);
         self
     }
     /// Appends an item to `dataflowEdges`.
@@ -98,7 +131,10 @@ impl CreateMissionProfileFluentBuilder  {
         self
     }
     /// <p>A list of lists of ARNs. Each list of ARNs is an edge, with a <i>from</i> <code>Config</code> and a <i>to</i> <code>Config</code>.</p>
-    pub fn set_dataflow_edges(mut self, input: std::option::Option<std::vec::Vec<std::vec::Vec<std::string::String>>>) -> Self {
+    pub fn set_dataflow_edges(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::vec::Vec<std::string::String>>>,
+    ) -> Self {
         self.inner = self.inner.set_dataflow_edges(input);
         self
     }
@@ -108,7 +144,10 @@ impl CreateMissionProfileFluentBuilder  {
         self
     }
     /// <p>ARN of a tracking <code>Config</code>.</p>
-    pub fn set_tracking_config_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_tracking_config_arn(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_tracking_config_arn(input);
         self
     }
@@ -117,14 +156,22 @@ impl CreateMissionProfileFluentBuilder  {
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// <p>Tags assigned to a mission profile.</p>
-    pub fn tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
+    pub fn tags(
+        mut self,
+        k: impl Into<std::string::String>,
+        v: impl Into<std::string::String>,
+    ) -> Self {
         self.inner = self.inner.tags(k.into(), v.into());
         self
     }
     /// <p>Tags assigned to a mission profile.</p>
-    pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+    pub fn set_tags(
+        mut self,
+        input: std::option::Option<
+            std::collections::HashMap<std::string::String, std::string::String>,
+        >,
+    ) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }
 }
-

@@ -4,55 +4,82 @@ pub use crate::operation::list_device_events::_list_device_events_output::ListDe
 pub use crate::operation::list_device_events::_list_device_events_input::ListDeviceEventsInputBuilder;
 
 /// Fluent builder constructing a request to `ListDeviceEvents`.
-/// 
+///
 /// <p>Lists the device event history, including device connection status, for up to 30 days.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListDeviceEventsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::list_device_events::builders::ListDeviceEventsInputBuilder
-            }
-impl ListDeviceEventsFluentBuilder  {
+    handle: std::sync::Arc<crate::client::Handle>,
+    inner: crate::operation::list_device_events::builders::ListDeviceEventsInputBuilder,
+}
+impl ListDeviceEventsFluentBuilder {
     /// Creates a new `ListDeviceEvents`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
-                    /// sent. The operation's inner [http::Request] can be modified as well.
-                    pub async fn customize(self) -> std::result::Result<
-                        crate::client::customize::CustomizableOperation<crate::operation::list_device_events::ListDeviceEvents, aws_http::retry::AwsResponseRetryClassifier,>,
-                        aws_smithy_http::result::SdkError<crate::operation::list_device_events::ListDeviceEventsError>
-                    >  {
-                        let handle = self.handle.clone();
-                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-                    }
-    
-                    /// Sends the request and returns the response.
-                    ///
-                    /// If an error occurs, an `SdkError` will be returned with additional details that
-                    /// can be matched against.
-                    ///
-                    /// By default, any retryable failures will be retried twice. Retry behavior
-                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                    /// set when configuring the client.
-                    pub async fn send(self) -> std::result::Result<crate::operation::list_device_events::ListDeviceEventsOutput, aws_smithy_http::result::SdkError<crate::operation::list_device_events::ListDeviceEventsError>>
-                     {
-                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&self.handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        self.handle.client.call(op).await
-                    }
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle,
+            inner: Default::default(),
+        }
+    }
+
+    /// Consume this builder, creating a customizable operation that can be modified before being
+    /// sent. The operation's inner [http::Request] can be modified as well.
+    pub async fn customize(
+        self,
+    ) -> std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::list_device_events::ListDeviceEvents,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::result::SdkError<
+            crate::operation::list_device_events::ListDeviceEventsError,
+        >,
+    > {
+        let handle = self.handle.clone();
+        let operation = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+    }
+
+    /// Sends the request and returns the response.
+    ///
+    /// If an error occurs, an `SdkError` will be returned with additional details that
+    /// can be matched against.
+    ///
+    /// By default, any retryable failures will be retried twice. Retry behavior
+    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+    /// set when configuring the client.
+    pub async fn send(
+        self,
+    ) -> std::result::Result<
+        crate::operation::list_device_events::ListDeviceEventsOutput,
+        aws_smithy_http::result::SdkError<
+            crate::operation::list_device_events::ListDeviceEventsError,
+        >,
+    > {
+        let op = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&self.handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        self.handle.client.call(op).await
+    }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::list_device_events::paginator::ListDeviceEventsPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::list_device_events::paginator::ListDeviceEventsPaginator {
-                            crate::operation::list_device_events::paginator::ListDeviceEventsPaginator::new(self.handle, self.inner)
-                        }
+    ///
+    /// Paginators are used by calling [`send().await`](crate::operation::list_device_events::paginator::ListDeviceEventsPaginator::send) which returns a `Stream`.
+    pub fn into_paginator(
+        self,
+    ) -> crate::operation::list_device_events::paginator::ListDeviceEventsPaginator {
+        crate::operation::list_device_events::paginator::ListDeviceEventsPaginator::new(
+            self.handle,
+            self.inner,
+        )
+    }
     /// <p>The ARN of a device.</p>
     pub fn device_arn(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.device_arn(input.into());
@@ -69,7 +96,10 @@ impl ListDeviceEventsFluentBuilder  {
         self
     }
     /// <p>The event type to filter device events. If EventType isn't specified, this returns a list of all device events in reverse chronological order. If EventType is specified, this returns a list of device events for that EventType in reverse chronological order. </p>
-    pub fn set_event_type(mut self, input: std::option::Option<crate::types::DeviceEventType>) -> Self {
+    pub fn set_event_type(
+        mut self,
+        input: std::option::Option<crate::types::DeviceEventType>,
+    ) -> Self {
         self.inner = self.inner.set_event_type(input);
         self
     }
@@ -94,4 +124,3 @@ impl ListDeviceEventsFluentBuilder  {
         self
     }
 }
-

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteWorkflowOutput  {
+pub struct DeleteWorkflowOutput {
     /// <p>The ID of the migration workflow.</p>
     #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
@@ -16,23 +16,23 @@ pub struct DeleteWorkflowOutput  {
 }
 impl DeleteWorkflowOutput {
     /// <p>The ID of the migration workflow.</p>
-    pub fn id(&self) -> std::option::Option<& str> {
+    pub fn id(&self) -> std::option::Option<&str> {
         self.id.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the migration workflow.</p>
-    pub fn arn(&self) -> std::option::Option<& str> {
+    pub fn arn(&self) -> std::option::Option<&str> {
         self.arn.as_deref()
     }
     /// <p>The status of the migration workflow.</p>
-    pub fn status(&self) -> std::option::Option<& crate::types::MigrationWorkflowStatusEnum> {
+    pub fn status(&self) -> std::option::Option<&crate::types::MigrationWorkflowStatusEnum> {
         self.status.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for DeleteWorkflowOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl DeleteWorkflowOutput {
     /// Creates a new builder-style object to manufacture [`DeleteWorkflowOutput`](crate::operation::delete_workflow::DeleteWorkflowOutput).
     pub fn builder() -> crate::operation::delete_workflow::builders::DeleteWorkflowOutputBuilder {
@@ -57,7 +57,8 @@ impl DeleteWorkflowOutputBuilder {
     }
     /// <p>The ID of the migration workflow.</p>
     pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.id = input; self
+        self.id = input;
+        self
     }
     /// <p>The Amazon Resource Name (ARN) of the migration workflow.</p>
     pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -66,7 +67,8 @@ impl DeleteWorkflowOutputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the migration workflow.</p>
     pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.arn = input; self
+        self.arn = input;
+        self
     }
     /// <p>The status of the migration workflow.</p>
     pub fn status(mut self, input: crate::types::MigrationWorkflowStatusEnum) -> Self {
@@ -74,29 +76,29 @@ impl DeleteWorkflowOutputBuilder {
         self
     }
     /// <p>The status of the migration workflow.</p>
-    pub fn set_status(mut self, input: std::option::Option<crate::types::MigrationWorkflowStatusEnum>) -> Self {
-        self.status = input; self
+    pub fn set_status(
+        mut self,
+        input: std::option::Option<crate::types::MigrationWorkflowStatusEnum>,
+    ) -> Self {
+        self.status = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`DeleteWorkflowOutput`](crate::operation::delete_workflow::DeleteWorkflowOutput).
     pub fn build(self) -> crate::operation::delete_workflow::DeleteWorkflowOutput {
         crate::operation::delete_workflow::DeleteWorkflowOutput {
-            id: self.id
-            ,
-            arn: self.arn
-            ,
-            status: self.status
-            ,
+            id: self.id,
+            arn: self.arn,
+            status: self.status,
             _request_id: self._request_id,
         }
     }
 }
-

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeGroupsOutput  {
+pub struct DescribeGroupsOutput {
     /// <p>The list of groups.</p>
     #[doc(hidden)]
     pub groups: std::option::Option<std::vec::Vec<crate::types::GroupMetadata>>,
@@ -13,19 +13,19 @@ pub struct DescribeGroupsOutput  {
 }
 impl DescribeGroupsOutput {
     /// <p>The list of groups.</p>
-    pub fn groups(&self) -> std::option::Option<& [crate::types::GroupMetadata]> {
+    pub fn groups(&self) -> std::option::Option<&[crate::types::GroupMetadata]> {
         self.groups.as_deref()
     }
     /// <p>The marker to use when requesting the next set of results. If there are no additional results, the string is empty.</p>
-    pub fn marker(&self) -> std::option::Option<& str> {
+    pub fn marker(&self) -> std::option::Option<&str> {
         self.marker.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for DescribeGroupsOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl DescribeGroupsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeGroupsOutput`](crate::operation::describe_groups::DescribeGroupsOutput).
     pub fn builder() -> crate::operation::describe_groups::builders::DescribeGroupsOutputBuilder {
@@ -49,13 +49,17 @@ impl DescribeGroupsOutputBuilder {
     /// <p>The list of groups.</p>
     pub fn groups(mut self, input: crate::types::GroupMetadata) -> Self {
         let mut v = self.groups.unwrap_or_default();
-                        v.push(input);
-                        self.groups = Some(v);
-                        self
+        v.push(input);
+        self.groups = Some(v);
+        self
     }
     /// <p>The list of groups.</p>
-    pub fn set_groups(mut self, input: std::option::Option<std::vec::Vec<crate::types::GroupMetadata>>) -> Self {
-        self.groups = input; self
+    pub fn set_groups(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::GroupMetadata>>,
+    ) -> Self {
+        self.groups = input;
+        self
     }
     /// <p>The marker to use when requesting the next set of results. If there are no additional results, the string is empty.</p>
     pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
@@ -64,26 +68,24 @@ impl DescribeGroupsOutputBuilder {
     }
     /// <p>The marker to use when requesting the next set of results. If there are no additional results, the string is empty.</p>
     pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.marker = input; self
+        self.marker = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`DescribeGroupsOutput`](crate::operation::describe_groups::DescribeGroupsOutput).
     pub fn build(self) -> crate::operation::describe_groups::DescribeGroupsOutput {
         crate::operation::describe_groups::DescribeGroupsOutput {
-            groups: self.groups
-            ,
-            marker: self.marker
-            ,
+            groups: self.groups,
+            marker: self.marker,
             _request_id: self._request_id,
         }
     }
 }
-

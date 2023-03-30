@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct StartDeploymentInput  {
+pub struct StartDeploymentInput {
     /// <p>The application ID.</p>
     #[doc(hidden)]
     pub application_id: std::option::Option<std::string::String>,
@@ -23,35 +23,39 @@ pub struct StartDeploymentInput  {
     pub description: std::option::Option<std::string::String>,
     /// <p>Metadata to assign to the deployment. Tags help organize and categorize your AppConfig resources. Each tag consists of a key and an optional value, both of which you define.</p>
     #[doc(hidden)]
-    pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub tags:
+        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl StartDeploymentInput {
     /// <p>The application ID.</p>
-    pub fn application_id(&self) -> std::option::Option<& str> {
+    pub fn application_id(&self) -> std::option::Option<&str> {
         self.application_id.as_deref()
     }
     /// <p>The environment ID.</p>
-    pub fn environment_id(&self) -> std::option::Option<& str> {
+    pub fn environment_id(&self) -> std::option::Option<&str> {
         self.environment_id.as_deref()
     }
     /// <p>The deployment strategy ID.</p>
-    pub fn deployment_strategy_id(&self) -> std::option::Option<& str> {
+    pub fn deployment_strategy_id(&self) -> std::option::Option<&str> {
         self.deployment_strategy_id.as_deref()
     }
     /// <p>The configuration profile ID.</p>
-    pub fn configuration_profile_id(&self) -> std::option::Option<& str> {
+    pub fn configuration_profile_id(&self) -> std::option::Option<&str> {
         self.configuration_profile_id.as_deref()
     }
     /// <p>The configuration version to deploy.</p>
-    pub fn configuration_version(&self) -> std::option::Option<& str> {
+    pub fn configuration_version(&self) -> std::option::Option<&str> {
         self.configuration_version.as_deref()
     }
     /// <p>A description of the deployment.</p>
-    pub fn description(&self) -> std::option::Option<& str> {
+    pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
     /// <p>Metadata to assign to the deployment. Tags help organize and categorize your AppConfig resources. Each tag consists of a key and an optional value, both of which you define.</p>
-    pub fn tags(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
         self.tags.as_ref()
     }
 }
@@ -72,7 +76,8 @@ pub struct StartDeploymentInputBuilder {
     pub(crate) configuration_profile_id: std::option::Option<std::string::String>,
     pub(crate) configuration_version: std::option::Option<std::string::String>,
     pub(crate) description: std::option::Option<std::string::String>,
-    pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub(crate) tags:
+        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl StartDeploymentInputBuilder {
     /// <p>The application ID.</p>
@@ -82,7 +87,8 @@ impl StartDeploymentInputBuilder {
     }
     /// <p>The application ID.</p>
     pub fn set_application_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.application_id = input; self
+        self.application_id = input;
+        self
     }
     /// <p>The environment ID.</p>
     pub fn environment_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -91,7 +97,8 @@ impl StartDeploymentInputBuilder {
     }
     /// <p>The environment ID.</p>
     pub fn set_environment_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.environment_id = input; self
+        self.environment_id = input;
+        self
     }
     /// <p>The deployment strategy ID.</p>
     pub fn deployment_strategy_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -99,8 +106,12 @@ impl StartDeploymentInputBuilder {
         self
     }
     /// <p>The deployment strategy ID.</p>
-    pub fn set_deployment_strategy_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.deployment_strategy_id = input; self
+    pub fn set_deployment_strategy_id(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.deployment_strategy_id = input;
+        self
     }
     /// <p>The configuration profile ID.</p>
     pub fn configuration_profile_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -108,8 +119,12 @@ impl StartDeploymentInputBuilder {
         self
     }
     /// <p>The configuration profile ID.</p>
-    pub fn set_configuration_profile_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.configuration_profile_id = input; self
+    pub fn set_configuration_profile_id(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.configuration_profile_id = input;
+        self
     }
     /// <p>The configuration version to deploy.</p>
     pub fn configuration_version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -117,8 +132,12 @@ impl StartDeploymentInputBuilder {
         self
     }
     /// <p>The configuration version to deploy.</p>
-    pub fn set_configuration_version(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.configuration_version = input; self
+    pub fn set_configuration_version(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.configuration_version = input;
+        self
     }
     /// <p>A description of the deployment.</p>
     pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -127,43 +146,49 @@ impl StartDeploymentInputBuilder {
     }
     /// <p>A description of the deployment.</p>
     pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.description = input; self
+        self.description = input;
+        self
     }
     /// Adds a key-value pair to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// <p>Metadata to assign to the deployment. Tags help organize and categorize your AppConfig resources. Each tag consists of a key and an optional value, both of which you define.</p>
-    pub fn tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
+    pub fn tags(
+        mut self,
+        k: impl Into<std::string::String>,
+        v: impl Into<std::string::String>,
+    ) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
-                        hash_map.insert(k.into(), v.into());
-                        self.tags = Some(hash_map);
-                        self
+        hash_map.insert(k.into(), v.into());
+        self.tags = Some(hash_map);
+        self
     }
     /// <p>Metadata to assign to the deployment. Tags help organize and categorize your AppConfig resources. Each tag consists of a key and an optional value, both of which you define.</p>
-    pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
-        self.tags = input; self
+    pub fn set_tags(
+        mut self,
+        input: std::option::Option<
+            std::collections::HashMap<std::string::String, std::string::String>,
+        >,
+    ) -> Self {
+        self.tags = input;
+        self
     }
     /// Consumes the builder and constructs a [`StartDeploymentInput`](crate::operation::start_deployment::StartDeploymentInput).
-    pub fn build(self) -> Result<crate::operation::start_deployment::StartDeploymentInput, aws_smithy_http::operation::error::BuildError> {
-        Ok(
-            crate::operation::start_deployment::StartDeploymentInput {
-                application_id: self.application_id
-                ,
-                environment_id: self.environment_id
-                ,
-                deployment_strategy_id: self.deployment_strategy_id
-                ,
-                configuration_profile_id: self.configuration_profile_id
-                ,
-                configuration_version: self.configuration_version
-                ,
-                description: self.description
-                ,
-                tags: self.tags
-                ,
-            }
-        )
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::start_deployment::StartDeploymentInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        Ok(crate::operation::start_deployment::StartDeploymentInput {
+            application_id: self.application_id,
+            environment_id: self.environment_id,
+            deployment_strategy_id: self.deployment_strategy_id,
+            configuration_profile_id: self.configuration_profile_id,
+            configuration_version: self.configuration_version,
+            description: self.description,
+            tags: self.tags,
+        })
     }
 }
-

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateCustomRoutingListenerOutput  {
+pub struct UpdateCustomRoutingListenerOutput {
     /// <p>Information for the updated listener for a custom routing accelerator.</p>
     #[doc(hidden)]
     pub listener: std::option::Option<crate::types::CustomRoutingListener>,
@@ -10,18 +10,18 @@ pub struct UpdateCustomRoutingListenerOutput  {
 }
 impl UpdateCustomRoutingListenerOutput {
     /// <p>Information for the updated listener for a custom routing accelerator.</p>
-    pub fn listener(&self) -> std::option::Option<& crate::types::CustomRoutingListener> {
+    pub fn listener(&self) -> std::option::Option<&crate::types::CustomRoutingListener> {
         self.listener.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for UpdateCustomRoutingListenerOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl UpdateCustomRoutingListenerOutput {
     /// Creates a new builder-style object to manufacture [`UpdateCustomRoutingListenerOutput`](crate::operation::update_custom_routing_listener::UpdateCustomRoutingListenerOutput).
-    pub fn builder() -> crate::operation::update_custom_routing_listener::builders::UpdateCustomRoutingListenerOutputBuilder {
+    pub fn builder() -> crate::operation::update_custom_routing_listener::builders::UpdateCustomRoutingListenerOutputBuilder{
         crate::operation::update_custom_routing_listener::builders::UpdateCustomRoutingListenerOutputBuilder::default()
     }
 }
@@ -40,25 +40,29 @@ impl UpdateCustomRoutingListenerOutputBuilder {
         self
     }
     /// <p>Information for the updated listener for a custom routing accelerator.</p>
-    pub fn set_listener(mut self, input: std::option::Option<crate::types::CustomRoutingListener>) -> Self {
-        self.listener = input; self
+    pub fn set_listener(
+        mut self,
+        input: std::option::Option<crate::types::CustomRoutingListener>,
+    ) -> Self {
+        self.listener = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`UpdateCustomRoutingListenerOutput`](crate::operation::update_custom_routing_listener::UpdateCustomRoutingListenerOutput).
-    pub fn build(self) -> crate::operation::update_custom_routing_listener::UpdateCustomRoutingListenerOutput {
+    pub fn build(
+        self,
+    ) -> crate::operation::update_custom_routing_listener::UpdateCustomRoutingListenerOutput {
         crate::operation::update_custom_routing_listener::UpdateCustomRoutingListenerOutput {
-            listener: self.listener
-            ,
+            listener: self.listener,
             _request_id: self._request_id,
         }
     }
 }
-

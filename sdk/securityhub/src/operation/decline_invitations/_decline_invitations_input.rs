@@ -2,20 +2,21 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeclineInvitationsInput  {
+pub struct DeclineInvitationsInput {
     /// <p>The list of account IDs for the accounts from which to decline the invitations to Security Hub.</p>
     #[doc(hidden)]
     pub account_ids: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl DeclineInvitationsInput {
     /// <p>The list of account IDs for the accounts from which to decline the invitations to Security Hub.</p>
-    pub fn account_ids(&self) -> std::option::Option<& [std::string::String]> {
+    pub fn account_ids(&self) -> std::option::Option<&[std::string::String]> {
         self.account_ids.as_deref()
     }
 }
 impl DeclineInvitationsInput {
     /// Creates a new builder-style object to manufacture [`DeclineInvitationsInput`](crate::operation::decline_invitations::DeclineInvitationsInput).
-    pub fn builder() -> crate::operation::decline_invitations::builders::DeclineInvitationsInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::decline_invitations::builders::DeclineInvitationsInputBuilder {
         crate::operation::decline_invitations::builders::DeclineInvitationsInputBuilder::default()
     }
 }
@@ -34,22 +35,29 @@ impl DeclineInvitationsInputBuilder {
     /// <p>The list of account IDs for the accounts from which to decline the invitations to Security Hub.</p>
     pub fn account_ids(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.account_ids.unwrap_or_default();
-                        v.push(input.into());
-                        self.account_ids = Some(v);
-                        self
+        v.push(input.into());
+        self.account_ids = Some(v);
+        self
     }
     /// <p>The list of account IDs for the accounts from which to decline the invitations to Security Hub.</p>
-    pub fn set_account_ids(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-        self.account_ids = input; self
+    pub fn set_account_ids(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
+        self.account_ids = input;
+        self
     }
     /// Consumes the builder and constructs a [`DeclineInvitationsInput`](crate::operation::decline_invitations::DeclineInvitationsInput).
-    pub fn build(self) -> Result<crate::operation::decline_invitations::DeclineInvitationsInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::decline_invitations::DeclineInvitationsInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::decline_invitations::DeclineInvitationsInput {
-                account_ids: self.account_ids
-                ,
-            }
+                account_ids: self.account_ids,
+            },
         )
     }
 }
-

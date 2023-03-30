@@ -3,7 +3,7 @@
 /// <p>The configured access rules for the domain's document and search endpoints, and the current status of those rules.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AccessPoliciesStatus  {
+pub struct AccessPoliciesStatus {
     /// <p>The access policy configured for the Elasticsearch domain. Access policies may be resource-based, IP-based, or IAM-based. See <a href="http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-createupdatedomains.html#es-createdomain-configure-access-policies" target="_blank"> Configuring Access Policies</a>for more information.</p>
     #[doc(hidden)]
     pub options: std::option::Option<std::string::String>,
@@ -13,11 +13,11 @@ pub struct AccessPoliciesStatus  {
 }
 impl AccessPoliciesStatus {
     /// <p>The access policy configured for the Elasticsearch domain. Access policies may be resource-based, IP-based, or IAM-based. See <a href="http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-createupdatedomains.html#es-createdomain-configure-access-policies" target="_blank"> Configuring Access Policies</a>for more information.</p>
-    pub fn options(&self) -> std::option::Option<& str> {
+    pub fn options(&self) -> std::option::Option<&str> {
         self.options.as_deref()
     }
     /// <p>The status of the access policy for the Elasticsearch domain. See <code>OptionStatus</code> for the status information that's included. </p>
-    pub fn status(&self) -> std::option::Option<& crate::types::OptionStatus> {
+    pub fn status(&self) -> std::option::Option<&crate::types::OptionStatus> {
         self.status.as_ref()
     }
 }
@@ -43,7 +43,8 @@ impl AccessPoliciesStatusBuilder {
     }
     /// <p>The access policy configured for the Elasticsearch domain. Access policies may be resource-based, IP-based, or IAM-based. See <a href="http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-createupdatedomains.html#es-createdomain-configure-access-policies" target="_blank"> Configuring Access Policies</a>for more information.</p>
     pub fn set_options(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.options = input; self
+        self.options = input;
+        self
     }
     /// <p>The status of the access policy for the Elasticsearch domain. See <code>OptionStatus</code> for the status information that's included. </p>
     pub fn status(mut self, input: crate::types::OptionStatus) -> Self {
@@ -52,16 +53,14 @@ impl AccessPoliciesStatusBuilder {
     }
     /// <p>The status of the access policy for the Elasticsearch domain. See <code>OptionStatus</code> for the status information that's included. </p>
     pub fn set_status(mut self, input: std::option::Option<crate::types::OptionStatus>) -> Self {
-        self.status = input; self
+        self.status = input;
+        self
     }
     /// Consumes the builder and constructs a [`AccessPoliciesStatus`](crate::types::AccessPoliciesStatus).
     pub fn build(self) -> crate::types::AccessPoliciesStatus {
         crate::types::AccessPoliciesStatus {
-            options: self.options
-            ,
-            status: self.status
-            ,
+            options: self.options,
+            status: self.status,
         }
     }
 }
-

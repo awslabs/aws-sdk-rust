@@ -4,49 +4,71 @@ pub use crate::operation::start_fraudster_registration_job::_start_fraudster_reg
 pub use crate::operation::start_fraudster_registration_job::_start_fraudster_registration_job_input::StartFraudsterRegistrationJobInputBuilder;
 
 /// Fluent builder constructing a request to `StartFraudsterRegistrationJob`.
-/// 
+///
 /// <p>Starts a new batch fraudster registration job using provided details.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct StartFraudsterRegistrationJobFluentBuilder {
                 handle: std::sync::Arc<crate::client::Handle>,
                 inner: crate::operation::start_fraudster_registration_job::builders::StartFraudsterRegistrationJobInputBuilder
             }
-impl StartFraudsterRegistrationJobFluentBuilder  {
+impl StartFraudsterRegistrationJobFluentBuilder {
     /// Creates a new `StartFraudsterRegistrationJob`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
-                    /// sent. The operation's inner [http::Request] can be modified as well.
-                    pub async fn customize(self) -> std::result::Result<
-                        crate::client::customize::CustomizableOperation<crate::operation::start_fraudster_registration_job::StartFraudsterRegistrationJob, aws_http::retry::AwsResponseRetryClassifier,>,
-                        aws_smithy_http::result::SdkError<crate::operation::start_fraudster_registration_job::StartFraudsterRegistrationJobError>
-                    >  {
-                        let handle = self.handle.clone();
-                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-                    }
-    
-                    /// Sends the request and returns the response.
-                    ///
-                    /// If an error occurs, an `SdkError` will be returned with additional details that
-                    /// can be matched against.
-                    ///
-                    /// By default, any retryable failures will be retried twice. Retry behavior
-                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                    /// set when configuring the client.
-                    pub async fn send(self) -> std::result::Result<crate::operation::start_fraudster_registration_job::StartFraudsterRegistrationJobOutput, aws_smithy_http::result::SdkError<crate::operation::start_fraudster_registration_job::StartFraudsterRegistrationJobError>>
-                     {
-                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&self.handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        self.handle.client.call(op).await
-                    }
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle,
+            inner: Default::default(),
+        }
+    }
+
+    /// Consume this builder, creating a customizable operation that can be modified before being
+    /// sent. The operation's inner [http::Request] can be modified as well.
+    pub async fn customize(
+        self,
+    ) -> std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::start_fraudster_registration_job::StartFraudsterRegistrationJob,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::result::SdkError<
+            crate::operation::start_fraudster_registration_job::StartFraudsterRegistrationJobError,
+        >,
+    > {
+        let handle = self.handle.clone();
+        let operation = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+    }
+
+    /// Sends the request and returns the response.
+    ///
+    /// If an error occurs, an `SdkError` will be returned with additional details that
+    /// can be matched against.
+    ///
+    /// By default, any retryable failures will be retried twice. Retry behavior
+    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+    /// set when configuring the client.
+    pub async fn send(
+        self,
+    ) -> std::result::Result<
+        crate::operation::start_fraudster_registration_job::StartFraudsterRegistrationJobOutput,
+        aws_smithy_http::result::SdkError<
+            crate::operation::start_fraudster_registration_job::StartFraudsterRegistrationJobError,
+        >,
+    > {
+        let op = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&self.handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        self.handle.client.call(op).await
+    }
     /// <p>The idempotency token for starting a new fraudster registration job. If not provided, Amazon Web Services SDK populates this field.</p>
     pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.client_token(input.into());
@@ -83,7 +105,10 @@ impl StartFraudsterRegistrationJobFluentBuilder  {
         self
     }
     /// <p>The IAM role Amazon Resource Name (ARN) that grants Voice ID permissions to access customer's buckets to read the input manifest file and write the Job output file. Refer to the <a href="https://docs.aws.amazon.com/connect/latest/adminguide/voiceid-fraudster-watchlist.html">Create and edit a fraudster watchlist</a> documentation for the permissions needed in this role.</p>
-    pub fn set_data_access_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_data_access_role_arn(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_data_access_role_arn(input);
         self
     }
@@ -93,7 +118,10 @@ impl StartFraudsterRegistrationJobFluentBuilder  {
         self
     }
     /// <p>The registration config containing details such as the action to take when a duplicate fraudster is detected, and the similarity threshold to use for detecting a duplicate fraudster. </p>
-    pub fn set_registration_config(mut self, input: std::option::Option<crate::types::RegistrationConfig>) -> Self {
+    pub fn set_registration_config(
+        mut self,
+        input: std::option::Option<crate::types::RegistrationConfig>,
+    ) -> Self {
         self.inner = self.inner.set_registration_config(input);
         self
     }
@@ -103,7 +131,10 @@ impl StartFraudsterRegistrationJobFluentBuilder  {
         self
     }
     /// <p>The input data config containing an S3 URI for the input manifest file that contains the list of fraudster registration requests.</p>
-    pub fn set_input_data_config(mut self, input: std::option::Option<crate::types::InputDataConfig>) -> Self {
+    pub fn set_input_data_config(
+        mut self,
+        input: std::option::Option<crate::types::InputDataConfig>,
+    ) -> Self {
         self.inner = self.inner.set_input_data_config(input);
         self
     }
@@ -113,9 +144,11 @@ impl StartFraudsterRegistrationJobFluentBuilder  {
         self
     }
     /// <p>The output data config containing the S3 location where Voice ID writes the job output file; you must also include a KMS key ID to encrypt the file.</p>
-    pub fn set_output_data_config(mut self, input: std::option::Option<crate::types::OutputDataConfig>) -> Self {
+    pub fn set_output_data_config(
+        mut self,
+        input: std::option::Option<crate::types::OutputDataConfig>,
+    ) -> Self {
         self.inner = self.inner.set_output_data_config(input);
         self
     }
 }
-

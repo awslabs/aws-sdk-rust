@@ -3,7 +3,7 @@
 /// <p> A representation of the charge details that are associated with a flat custom line item. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListCustomLineItemFlatChargeDetails  {
+pub struct ListCustomLineItemFlatChargeDetails {
     /// <p> The custom line item's fixed charge value in USD. </p>
     #[doc(hidden)]
     pub charge_value: std::option::Option<f64>,
@@ -35,14 +35,13 @@ impl ListCustomLineItemFlatChargeDetailsBuilder {
     }
     /// <p> The custom line item's fixed charge value in USD. </p>
     pub fn set_charge_value(mut self, input: std::option::Option<f64>) -> Self {
-        self.charge_value = input; self
+        self.charge_value = input;
+        self
     }
     /// Consumes the builder and constructs a [`ListCustomLineItemFlatChargeDetails`](crate::types::ListCustomLineItemFlatChargeDetails).
     pub fn build(self) -> crate::types::ListCustomLineItemFlatChargeDetails {
         crate::types::ListCustomLineItemFlatChargeDetails {
-            charge_value: self.charge_value
-            ,
+            charge_value: self.charge_value,
         }
     }
 }
-

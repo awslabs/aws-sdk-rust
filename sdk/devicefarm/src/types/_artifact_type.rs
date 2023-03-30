@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-/// 
+///
 /// Here is an example of how you can make a match expression forward-compatible:
-/// 
+///
 /// ```text
 /// # let artifacttype = unimplemented!();
 /// match artifacttype {
@@ -56,14 +56,22 @@
 /// Specifically, when `artifacttype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `ArtifactType::NewFeature` also yielding `"NewFeature"`.
-/// 
+///
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 /// _Note: `ArtifactType::Unknown` has been renamed to `::UnknownValue`._
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
 pub enum ArtifactType {
     #[allow(missing_docs)] // documentation missing in model
     AppiumJavaOutput,
@@ -122,93 +130,123 @@ pub enum ArtifactType {
     #[allow(missing_docs)] // documentation missing in model
     XctestLog,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::primitives::UnknownVariantValue)
+    Unknown(crate::primitives::UnknownVariantValue),
 }
 impl std::convert::From<&str> for ArtifactType {
-                fn from(s: &str) -> Self {
-                    match s {
-                        "APPIUM_JAVA_OUTPUT" => ArtifactType::AppiumJavaOutput,
-"APPIUM_JAVA_XML_OUTPUT" => ArtifactType::AppiumJavaXmlOutput,
-"APPIUM_PYTHON_OUTPUT" => ArtifactType::AppiumPythonOutput,
-"APPIUM_PYTHON_XML_OUTPUT" => ArtifactType::AppiumPythonXmlOutput,
-"APPIUM_SERVER_OUTPUT" => ArtifactType::AppiumServerOutput,
-"APPLICATION_CRASH_REPORT" => ArtifactType::ApplicationCrashReport,
-"AUTOMATION_OUTPUT" => ArtifactType::AutomationOutput,
-"CALABASH_JAVA_XML_OUTPUT" => ArtifactType::CalabashJavaXmlOutput,
-"CALABASH_JSON_OUTPUT" => ArtifactType::CalabashJsonOutput,
-"CALABASH_PRETTY_OUTPUT" => ArtifactType::CalabashPrettyOutput,
-"CALABASH_STANDARD_OUTPUT" => ArtifactType::CalabashStandardOutput,
-"CUSTOMER_ARTIFACT" => ArtifactType::CustomerArtifact,
-"CUSTOMER_ARTIFACT_LOG" => ArtifactType::CustomerArtifactLog,
-"DEVICE_LOG" => ArtifactType::DeviceLog,
-"EXERCISER_MONKEY_OUTPUT" => ArtifactType::ExerciserMonkeyOutput,
-"EXPLORER_EVENT_LOG" => ArtifactType::ExplorerEventLog,
-"EXPLORER_SUMMARY_LOG" => ArtifactType::ExplorerSummaryLog,
-"INSTRUMENTATION_OUTPUT" => ArtifactType::InstrumentationOutput,
-"MESSAGE_LOG" => ArtifactType::MessageLog,
-"RESULT_LOG" => ArtifactType::ResultLog,
-"SCREENSHOT" => ArtifactType::Screenshot,
-"SERVICE_LOG" => ArtifactType::ServiceLog,
-"TESTSPEC_OUTPUT" => ArtifactType::TestspecOutput,
-"UNKNOWN" => ArtifactType::UnknownValue,
-"VIDEO" => ArtifactType::Video,
-"VIDEO_LOG" => ArtifactType::VideoLog,
-"WEBKIT_LOG" => ArtifactType::WebkitLog,
-"XCTEST_LOG" => ArtifactType::XctestLog,
-other => ArtifactType::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
-                    }
-                }
+    fn from(s: &str) -> Self {
+        match s {
+            "APPIUM_JAVA_OUTPUT" => ArtifactType::AppiumJavaOutput,
+            "APPIUM_JAVA_XML_OUTPUT" => ArtifactType::AppiumJavaXmlOutput,
+            "APPIUM_PYTHON_OUTPUT" => ArtifactType::AppiumPythonOutput,
+            "APPIUM_PYTHON_XML_OUTPUT" => ArtifactType::AppiumPythonXmlOutput,
+            "APPIUM_SERVER_OUTPUT" => ArtifactType::AppiumServerOutput,
+            "APPLICATION_CRASH_REPORT" => ArtifactType::ApplicationCrashReport,
+            "AUTOMATION_OUTPUT" => ArtifactType::AutomationOutput,
+            "CALABASH_JAVA_XML_OUTPUT" => ArtifactType::CalabashJavaXmlOutput,
+            "CALABASH_JSON_OUTPUT" => ArtifactType::CalabashJsonOutput,
+            "CALABASH_PRETTY_OUTPUT" => ArtifactType::CalabashPrettyOutput,
+            "CALABASH_STANDARD_OUTPUT" => ArtifactType::CalabashStandardOutput,
+            "CUSTOMER_ARTIFACT" => ArtifactType::CustomerArtifact,
+            "CUSTOMER_ARTIFACT_LOG" => ArtifactType::CustomerArtifactLog,
+            "DEVICE_LOG" => ArtifactType::DeviceLog,
+            "EXERCISER_MONKEY_OUTPUT" => ArtifactType::ExerciserMonkeyOutput,
+            "EXPLORER_EVENT_LOG" => ArtifactType::ExplorerEventLog,
+            "EXPLORER_SUMMARY_LOG" => ArtifactType::ExplorerSummaryLog,
+            "INSTRUMENTATION_OUTPUT" => ArtifactType::InstrumentationOutput,
+            "MESSAGE_LOG" => ArtifactType::MessageLog,
+            "RESULT_LOG" => ArtifactType::ResultLog,
+            "SCREENSHOT" => ArtifactType::Screenshot,
+            "SERVICE_LOG" => ArtifactType::ServiceLog,
+            "TESTSPEC_OUTPUT" => ArtifactType::TestspecOutput,
+            "UNKNOWN" => ArtifactType::UnknownValue,
+            "VIDEO" => ArtifactType::Video,
+            "VIDEO_LOG" => ArtifactType::VideoLog,
+            "WEBKIT_LOG" => ArtifactType::WebkitLog,
+            "XCTEST_LOG" => ArtifactType::XctestLog,
+            other => {
+                ArtifactType::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
             }
-impl std::str::FromStr for ArtifactType {
-                type Err = std::convert::Infallible;
-
-                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-                    Ok(ArtifactType::from(s))
-                }
-            }
-impl ArtifactType {
-                /// Returns the `&str` value of the enum member.
-                pub fn as_str(&self) -> &str {
-                    match self {
-    ArtifactType::AppiumJavaOutput => "APPIUM_JAVA_OUTPUT",
-    ArtifactType::AppiumJavaXmlOutput => "APPIUM_JAVA_XML_OUTPUT",
-    ArtifactType::AppiumPythonOutput => "APPIUM_PYTHON_OUTPUT",
-    ArtifactType::AppiumPythonXmlOutput => "APPIUM_PYTHON_XML_OUTPUT",
-    ArtifactType::AppiumServerOutput => "APPIUM_SERVER_OUTPUT",
-    ArtifactType::ApplicationCrashReport => "APPLICATION_CRASH_REPORT",
-    ArtifactType::AutomationOutput => "AUTOMATION_OUTPUT",
-    ArtifactType::CalabashJavaXmlOutput => "CALABASH_JAVA_XML_OUTPUT",
-    ArtifactType::CalabashJsonOutput => "CALABASH_JSON_OUTPUT",
-    ArtifactType::CalabashPrettyOutput => "CALABASH_PRETTY_OUTPUT",
-    ArtifactType::CalabashStandardOutput => "CALABASH_STANDARD_OUTPUT",
-    ArtifactType::CustomerArtifact => "CUSTOMER_ARTIFACT",
-    ArtifactType::CustomerArtifactLog => "CUSTOMER_ARTIFACT_LOG",
-    ArtifactType::DeviceLog => "DEVICE_LOG",
-    ArtifactType::ExerciserMonkeyOutput => "EXERCISER_MONKEY_OUTPUT",
-    ArtifactType::ExplorerEventLog => "EXPLORER_EVENT_LOG",
-    ArtifactType::ExplorerSummaryLog => "EXPLORER_SUMMARY_LOG",
-    ArtifactType::InstrumentationOutput => "INSTRUMENTATION_OUTPUT",
-    ArtifactType::MessageLog => "MESSAGE_LOG",
-    ArtifactType::ResultLog => "RESULT_LOG",
-    ArtifactType::Screenshot => "SCREENSHOT",
-    ArtifactType::ServiceLog => "SERVICE_LOG",
-    ArtifactType::TestspecOutput => "TESTSPEC_OUTPUT",
-    ArtifactType::UnknownValue => "UNKNOWN",
-    ArtifactType::Video => "VIDEO",
-    ArtifactType::VideoLog => "VIDEO_LOG",
-    ArtifactType::WebkitLog => "WEBKIT_LOG",
-    ArtifactType::XctestLog => "XCTEST_LOG",
-    ArtifactType::Unknown(value) => value.as_str()
+        }
+    }
 }
-                }
-                /// Returns all the `&str` representations of the enum members.
-                pub const fn values() -> &'static [&'static str] {
-                    &["APPIUM_JAVA_OUTPUT", "APPIUM_JAVA_XML_OUTPUT", "APPIUM_PYTHON_OUTPUT", "APPIUM_PYTHON_XML_OUTPUT", "APPIUM_SERVER_OUTPUT", "APPLICATION_CRASH_REPORT", "AUTOMATION_OUTPUT", "CALABASH_JAVA_XML_OUTPUT", "CALABASH_JSON_OUTPUT", "CALABASH_PRETTY_OUTPUT", "CALABASH_STANDARD_OUTPUT", "CUSTOMER_ARTIFACT", "CUSTOMER_ARTIFACT_LOG", "DEVICE_LOG", "EXERCISER_MONKEY_OUTPUT", "EXPLORER_EVENT_LOG", "EXPLORER_SUMMARY_LOG", "INSTRUMENTATION_OUTPUT", "MESSAGE_LOG", "RESULT_LOG", "SCREENSHOT", "SERVICE_LOG", "TESTSPEC_OUTPUT", "UNKNOWN", "VIDEO", "VIDEO_LOG", "WEBKIT_LOG", "XCTEST_LOG"]
-                }
-            }
-impl AsRef<str> for ArtifactType {
-                fn as_ref(&self) -> &str {
-                    self.as_str()
-                }
-            }
+impl std::str::FromStr for ArtifactType {
+    type Err = std::convert::Infallible;
 
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(ArtifactType::from(s))
+    }
+}
+impl ArtifactType {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            ArtifactType::AppiumJavaOutput => "APPIUM_JAVA_OUTPUT",
+            ArtifactType::AppiumJavaXmlOutput => "APPIUM_JAVA_XML_OUTPUT",
+            ArtifactType::AppiumPythonOutput => "APPIUM_PYTHON_OUTPUT",
+            ArtifactType::AppiumPythonXmlOutput => "APPIUM_PYTHON_XML_OUTPUT",
+            ArtifactType::AppiumServerOutput => "APPIUM_SERVER_OUTPUT",
+            ArtifactType::ApplicationCrashReport => "APPLICATION_CRASH_REPORT",
+            ArtifactType::AutomationOutput => "AUTOMATION_OUTPUT",
+            ArtifactType::CalabashJavaXmlOutput => "CALABASH_JAVA_XML_OUTPUT",
+            ArtifactType::CalabashJsonOutput => "CALABASH_JSON_OUTPUT",
+            ArtifactType::CalabashPrettyOutput => "CALABASH_PRETTY_OUTPUT",
+            ArtifactType::CalabashStandardOutput => "CALABASH_STANDARD_OUTPUT",
+            ArtifactType::CustomerArtifact => "CUSTOMER_ARTIFACT",
+            ArtifactType::CustomerArtifactLog => "CUSTOMER_ARTIFACT_LOG",
+            ArtifactType::DeviceLog => "DEVICE_LOG",
+            ArtifactType::ExerciserMonkeyOutput => "EXERCISER_MONKEY_OUTPUT",
+            ArtifactType::ExplorerEventLog => "EXPLORER_EVENT_LOG",
+            ArtifactType::ExplorerSummaryLog => "EXPLORER_SUMMARY_LOG",
+            ArtifactType::InstrumentationOutput => "INSTRUMENTATION_OUTPUT",
+            ArtifactType::MessageLog => "MESSAGE_LOG",
+            ArtifactType::ResultLog => "RESULT_LOG",
+            ArtifactType::Screenshot => "SCREENSHOT",
+            ArtifactType::ServiceLog => "SERVICE_LOG",
+            ArtifactType::TestspecOutput => "TESTSPEC_OUTPUT",
+            ArtifactType::UnknownValue => "UNKNOWN",
+            ArtifactType::Video => "VIDEO",
+            ArtifactType::VideoLog => "VIDEO_LOG",
+            ArtifactType::WebkitLog => "WEBKIT_LOG",
+            ArtifactType::XctestLog => "XCTEST_LOG",
+            ArtifactType::Unknown(value) => value.as_str(),
+        }
+    }
+    /// Returns all the `&str` representations of the enum members.
+    pub const fn values() -> &'static [&'static str] {
+        &[
+            "APPIUM_JAVA_OUTPUT",
+            "APPIUM_JAVA_XML_OUTPUT",
+            "APPIUM_PYTHON_OUTPUT",
+            "APPIUM_PYTHON_XML_OUTPUT",
+            "APPIUM_SERVER_OUTPUT",
+            "APPLICATION_CRASH_REPORT",
+            "AUTOMATION_OUTPUT",
+            "CALABASH_JAVA_XML_OUTPUT",
+            "CALABASH_JSON_OUTPUT",
+            "CALABASH_PRETTY_OUTPUT",
+            "CALABASH_STANDARD_OUTPUT",
+            "CUSTOMER_ARTIFACT",
+            "CUSTOMER_ARTIFACT_LOG",
+            "DEVICE_LOG",
+            "EXERCISER_MONKEY_OUTPUT",
+            "EXPLORER_EVENT_LOG",
+            "EXPLORER_SUMMARY_LOG",
+            "INSTRUMENTATION_OUTPUT",
+            "MESSAGE_LOG",
+            "RESULT_LOG",
+            "SCREENSHOT",
+            "SERVICE_LOG",
+            "TESTSPEC_OUTPUT",
+            "UNKNOWN",
+            "VIDEO",
+            "VIDEO_LOG",
+            "WEBKIT_LOG",
+            "XCTEST_LOG",
+        ]
+    }
+}
+impl AsRef<str> for ArtifactType {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}

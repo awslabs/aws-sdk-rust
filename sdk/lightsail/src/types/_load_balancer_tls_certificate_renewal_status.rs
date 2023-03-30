@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-/// 
+///
 /// Here is an example of how you can make a match expression forward-compatible:
-/// 
+///
 /// ```text
 /// # let loadbalancertlscertificaterenewalstatus = unimplemented!();
 /// match loadbalancertlscertificaterenewalstatus {
@@ -32,14 +32,22 @@
 /// Specifically, when `loadbalancertlscertificaterenewalstatus` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `LoadBalancerTlsCertificateRenewalStatus::NewFeature` also yielding `"NewFeature"`.
-/// 
+///
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
 pub enum LoadBalancerTlsCertificateRenewalStatus {
     #[allow(missing_docs)] // documentation missing in model
     Failed,
@@ -50,45 +58,51 @@ pub enum LoadBalancerTlsCertificateRenewalStatus {
     #[allow(missing_docs)] // documentation missing in model
     Success,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::primitives::UnknownVariantValue)
+    Unknown(crate::primitives::UnknownVariantValue),
 }
 impl std::convert::From<&str> for LoadBalancerTlsCertificateRenewalStatus {
-                fn from(s: &str) -> Self {
-                    match s {
-                        "FAILED" => LoadBalancerTlsCertificateRenewalStatus::Failed,
-"PENDING_AUTO_RENEWAL" => LoadBalancerTlsCertificateRenewalStatus::PendingAutoRenewal,
-"PENDING_VALIDATION" => LoadBalancerTlsCertificateRenewalStatus::PendingValidation,
-"SUCCESS" => LoadBalancerTlsCertificateRenewalStatus::Success,
-other => LoadBalancerTlsCertificateRenewalStatus::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
-                    }
-                }
-            }
-impl std::str::FromStr for LoadBalancerTlsCertificateRenewalStatus {
-                type Err = std::convert::Infallible;
-
-                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-                    Ok(LoadBalancerTlsCertificateRenewalStatus::from(s))
-                }
-            }
-impl LoadBalancerTlsCertificateRenewalStatus {
-                /// Returns the `&str` value of the enum member.
-                pub fn as_str(&self) -> &str {
-                    match self {
-    LoadBalancerTlsCertificateRenewalStatus::Failed => "FAILED",
-    LoadBalancerTlsCertificateRenewalStatus::PendingAutoRenewal => "PENDING_AUTO_RENEWAL",
-    LoadBalancerTlsCertificateRenewalStatus::PendingValidation => "PENDING_VALIDATION",
-    LoadBalancerTlsCertificateRenewalStatus::Success => "SUCCESS",
-    LoadBalancerTlsCertificateRenewalStatus::Unknown(value) => value.as_str()
+    fn from(s: &str) -> Self {
+        match s {
+            "FAILED" => LoadBalancerTlsCertificateRenewalStatus::Failed,
+            "PENDING_AUTO_RENEWAL" => LoadBalancerTlsCertificateRenewalStatus::PendingAutoRenewal,
+            "PENDING_VALIDATION" => LoadBalancerTlsCertificateRenewalStatus::PendingValidation,
+            "SUCCESS" => LoadBalancerTlsCertificateRenewalStatus::Success,
+            other => LoadBalancerTlsCertificateRenewalStatus::Unknown(
+                crate::primitives::UnknownVariantValue(other.to_owned()),
+            ),
+        }
+    }
 }
-                }
-                /// Returns all the `&str` representations of the enum members.
-                pub const fn values() -> &'static [&'static str] {
-                    &["FAILED", "PENDING_AUTO_RENEWAL", "PENDING_VALIDATION", "SUCCESS"]
-                }
-            }
-impl AsRef<str> for LoadBalancerTlsCertificateRenewalStatus {
-                fn as_ref(&self) -> &str {
-                    self.as_str()
-                }
-            }
+impl std::str::FromStr for LoadBalancerTlsCertificateRenewalStatus {
+    type Err = std::convert::Infallible;
 
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(LoadBalancerTlsCertificateRenewalStatus::from(s))
+    }
+}
+impl LoadBalancerTlsCertificateRenewalStatus {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            LoadBalancerTlsCertificateRenewalStatus::Failed => "FAILED",
+            LoadBalancerTlsCertificateRenewalStatus::PendingAutoRenewal => "PENDING_AUTO_RENEWAL",
+            LoadBalancerTlsCertificateRenewalStatus::PendingValidation => "PENDING_VALIDATION",
+            LoadBalancerTlsCertificateRenewalStatus::Success => "SUCCESS",
+            LoadBalancerTlsCertificateRenewalStatus::Unknown(value) => value.as_str(),
+        }
+    }
+    /// Returns all the `&str` representations of the enum members.
+    pub const fn values() -> &'static [&'static str] {
+        &[
+            "FAILED",
+            "PENDING_AUTO_RENEWAL",
+            "PENDING_VALIDATION",
+            "SUCCESS",
+        ]
+    }
+}
+impl AsRef<str> for LoadBalancerTlsCertificateRenewalStatus {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}

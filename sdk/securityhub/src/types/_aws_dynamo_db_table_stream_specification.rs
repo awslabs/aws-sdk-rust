@@ -3,7 +3,7 @@
 /// <p>The current DynamoDB Streams configuration for the table.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AwsDynamoDbTableStreamSpecification  {
+pub struct AwsDynamoDbTableStreamSpecification {
     /// <p>Indicates whether DynamoDB Streams is enabled on the table.</p>
     #[doc(hidden)]
     pub stream_enabled: bool,
@@ -17,7 +17,7 @@ impl AwsDynamoDbTableStreamSpecification {
         self.stream_enabled
     }
     /// <p>Determines the information that is written to the table.</p>
-    pub fn stream_view_type(&self) -> std::option::Option<& str> {
+    pub fn stream_view_type(&self) -> std::option::Option<&str> {
         self.stream_view_type.as_deref()
     }
 }
@@ -43,7 +43,8 @@ impl AwsDynamoDbTableStreamSpecificationBuilder {
     }
     /// <p>Indicates whether DynamoDB Streams is enabled on the table.</p>
     pub fn set_stream_enabled(mut self, input: std::option::Option<bool>) -> Self {
-        self.stream_enabled = input; self
+        self.stream_enabled = input;
+        self
     }
     /// <p>Determines the information that is written to the table.</p>
     pub fn stream_view_type(mut self, input: impl Into<std::string::String>) -> Self {
@@ -52,17 +53,14 @@ impl AwsDynamoDbTableStreamSpecificationBuilder {
     }
     /// <p>Determines the information that is written to the table.</p>
     pub fn set_stream_view_type(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.stream_view_type = input; self
+        self.stream_view_type = input;
+        self
     }
     /// Consumes the builder and constructs a [`AwsDynamoDbTableStreamSpecification`](crate::types::AwsDynamoDbTableStreamSpecification).
     pub fn build(self) -> crate::types::AwsDynamoDbTableStreamSpecification {
         crate::types::AwsDynamoDbTableStreamSpecification {
-            stream_enabled: self.stream_enabled
-                .unwrap_or_default()
-            ,
-            stream_view_type: self.stream_view_type
-            ,
+            stream_enabled: self.stream_enabled.unwrap_or_default(),
+            stream_view_type: self.stream_view_type,
         }
     }
 }
-

@@ -3,7 +3,7 @@
 /// <p>The target resource that the Route 53 record points to.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct TargetResource  {
+pub struct TargetResource {
     /// <p>The Network Load Balancer Resource.</p>
     #[doc(hidden)]
     pub nlb_resource: std::option::Option<crate::types::NlbResource>,
@@ -13,11 +13,11 @@ pub struct TargetResource  {
 }
 impl TargetResource {
     /// <p>The Network Load Balancer Resource.</p>
-    pub fn nlb_resource(&self) -> std::option::Option<& crate::types::NlbResource> {
+    pub fn nlb_resource(&self) -> std::option::Option<&crate::types::NlbResource> {
         self.nlb_resource.as_ref()
     }
     /// <p>The Route 53 resource.</p>
-    pub fn r53_resource(&self) -> std::option::Option<& crate::types::R53ResourceRecord> {
+    pub fn r53_resource(&self) -> std::option::Option<&crate::types::R53ResourceRecord> {
         self.r53_resource.as_ref()
     }
 }
@@ -42,8 +42,12 @@ impl TargetResourceBuilder {
         self
     }
     /// <p>The Network Load Balancer Resource.</p>
-    pub fn set_nlb_resource(mut self, input: std::option::Option<crate::types::NlbResource>) -> Self {
-        self.nlb_resource = input; self
+    pub fn set_nlb_resource(
+        mut self,
+        input: std::option::Option<crate::types::NlbResource>,
+    ) -> Self {
+        self.nlb_resource = input;
+        self
     }
     /// <p>The Route 53 resource.</p>
     pub fn r53_resource(mut self, input: crate::types::R53ResourceRecord) -> Self {
@@ -51,17 +55,18 @@ impl TargetResourceBuilder {
         self
     }
     /// <p>The Route 53 resource.</p>
-    pub fn set_r53_resource(mut self, input: std::option::Option<crate::types::R53ResourceRecord>) -> Self {
-        self.r53_resource = input; self
+    pub fn set_r53_resource(
+        mut self,
+        input: std::option::Option<crate::types::R53ResourceRecord>,
+    ) -> Self {
+        self.r53_resource = input;
+        self
     }
     /// Consumes the builder and constructs a [`TargetResource`](crate::types::TargetResource).
     pub fn build(self) -> crate::types::TargetResource {
         crate::types::TargetResource {
-            nlb_resource: self.nlb_resource
-            ,
-            r53_resource: self.r53_resource
-            ,
+            nlb_resource: self.nlb_resource,
+            r53_resource: self.r53_resource,
         }
     }
 }
-

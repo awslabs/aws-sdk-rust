@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeFhirExportJobOutput  {
+pub struct DescribeFhirExportJobOutput {
     /// <p>Displays the properties of the export job, including the ID, Arn, Name, and the status of the job. </p>
     #[doc(hidden)]
     pub export_job_properties: std::option::Option<crate::types::ExportJobProperties>,
@@ -10,18 +10,20 @@ pub struct DescribeFhirExportJobOutput  {
 }
 impl DescribeFhirExportJobOutput {
     /// <p>Displays the properties of the export job, including the ID, Arn, Name, and the status of the job. </p>
-    pub fn export_job_properties(&self) -> std::option::Option<& crate::types::ExportJobProperties> {
+    pub fn export_job_properties(&self) -> std::option::Option<&crate::types::ExportJobProperties> {
         self.export_job_properties.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for DescribeFhirExportJobOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl DescribeFhirExportJobOutput {
     /// Creates a new builder-style object to manufacture [`DescribeFhirExportJobOutput`](crate::operation::describe_fhir_export_job::DescribeFhirExportJobOutput).
-    pub fn builder() -> crate::operation::describe_fhir_export_job::builders::DescribeFhirExportJobOutputBuilder {
+    pub fn builder(
+    ) -> crate::operation::describe_fhir_export_job::builders::DescribeFhirExportJobOutputBuilder
+    {
         crate::operation::describe_fhir_export_job::builders::DescribeFhirExportJobOutputBuilder::default()
     }
 }
@@ -40,25 +42,27 @@ impl DescribeFhirExportJobOutputBuilder {
         self
     }
     /// <p>Displays the properties of the export job, including the ID, Arn, Name, and the status of the job. </p>
-    pub fn set_export_job_properties(mut self, input: std::option::Option<crate::types::ExportJobProperties>) -> Self {
-        self.export_job_properties = input; self
+    pub fn set_export_job_properties(
+        mut self,
+        input: std::option::Option<crate::types::ExportJobProperties>,
+    ) -> Self {
+        self.export_job_properties = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`DescribeFhirExportJobOutput`](crate::operation::describe_fhir_export_job::DescribeFhirExportJobOutput).
     pub fn build(self) -> crate::operation::describe_fhir_export_job::DescribeFhirExportJobOutput {
         crate::operation::describe_fhir_export_job::DescribeFhirExportJobOutput {
-            export_job_properties: self.export_job_properties
-            ,
+            export_job_properties: self.export_job_properties,
             _request_id: self._request_id,
         }
     }
 }
-

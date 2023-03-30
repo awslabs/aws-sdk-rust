@@ -3,7 +3,7 @@
 /// <p>Information that shows whether a resource is compliant with the effective tag policy, including details on any noncompliant tag keys.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ComplianceDetails  {
+pub struct ComplianceDetails {
     /// <p>These tag keys on the resource are noncompliant with the effective tag policy.</p>
     #[doc(hidden)]
     pub noncompliant_keys: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -16,11 +16,11 @@ pub struct ComplianceDetails  {
 }
 impl ComplianceDetails {
     /// <p>These tag keys on the resource are noncompliant with the effective tag policy.</p>
-    pub fn noncompliant_keys(&self) -> std::option::Option<& [std::string::String]> {
+    pub fn noncompliant_keys(&self) -> std::option::Option<&[std::string::String]> {
         self.noncompliant_keys.as_deref()
     }
     /// <p>These are keys defined in the effective policy that are on the resource with either incorrect case treatment or noncompliant values. </p>
-    pub fn keys_with_noncompliant_values(&self) -> std::option::Option<& [std::string::String]> {
+    pub fn keys_with_noncompliant_values(&self) -> std::option::Option<&[std::string::String]> {
         self.keys_with_noncompliant_values.as_deref()
     }
     /// <p>Whether a resource is compliant with the effective tag policy.</p>
@@ -40,7 +40,8 @@ impl ComplianceDetails {
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct ComplianceDetailsBuilder {
     pub(crate) noncompliant_keys: std::option::Option<std::vec::Vec<std::string::String>>,
-    pub(crate) keys_with_noncompliant_values: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub(crate) keys_with_noncompliant_values:
+        std::option::Option<std::vec::Vec<std::string::String>>,
     pub(crate) compliance_status: std::option::Option<bool>,
 }
 impl ComplianceDetailsBuilder {
@@ -51,13 +52,17 @@ impl ComplianceDetailsBuilder {
     /// <p>These tag keys on the resource are noncompliant with the effective tag policy.</p>
     pub fn noncompliant_keys(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.noncompliant_keys.unwrap_or_default();
-                        v.push(input.into());
-                        self.noncompliant_keys = Some(v);
-                        self
+        v.push(input.into());
+        self.noncompliant_keys = Some(v);
+        self
     }
     /// <p>These tag keys on the resource are noncompliant with the effective tag policy.</p>
-    pub fn set_noncompliant_keys(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-        self.noncompliant_keys = input; self
+    pub fn set_noncompliant_keys(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
+        self.noncompliant_keys = input;
+        self
     }
     /// Appends an item to `keys_with_noncompliant_values`.
     ///
@@ -66,13 +71,17 @@ impl ComplianceDetailsBuilder {
     /// <p>These are keys defined in the effective policy that are on the resource with either incorrect case treatment or noncompliant values. </p>
     pub fn keys_with_noncompliant_values(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.keys_with_noncompliant_values.unwrap_or_default();
-                        v.push(input.into());
-                        self.keys_with_noncompliant_values = Some(v);
-                        self
+        v.push(input.into());
+        self.keys_with_noncompliant_values = Some(v);
+        self
     }
     /// <p>These are keys defined in the effective policy that are on the resource with either incorrect case treatment or noncompliant values. </p>
-    pub fn set_keys_with_noncompliant_values(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-        self.keys_with_noncompliant_values = input; self
+    pub fn set_keys_with_noncompliant_values(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
+        self.keys_with_noncompliant_values = input;
+        self
     }
     /// <p>Whether a resource is compliant with the effective tag policy.</p>
     pub fn compliance_status(mut self, input: bool) -> Self {
@@ -81,18 +90,15 @@ impl ComplianceDetailsBuilder {
     }
     /// <p>Whether a resource is compliant with the effective tag policy.</p>
     pub fn set_compliance_status(mut self, input: std::option::Option<bool>) -> Self {
-        self.compliance_status = input; self
+        self.compliance_status = input;
+        self
     }
     /// Consumes the builder and constructs a [`ComplianceDetails`](crate::types::ComplianceDetails).
     pub fn build(self) -> crate::types::ComplianceDetails {
         crate::types::ComplianceDetails {
-            noncompliant_keys: self.noncompliant_keys
-            ,
-            keys_with_noncompliant_values: self.keys_with_noncompliant_values
-            ,
-            compliance_status: self.compliance_status
-            ,
+            noncompliant_keys: self.noncompliant_keys,
+            keys_with_noncompliant_values: self.keys_with_noncompliant_values,
+            compliance_status: self.compliance_status,
         }
     }
 }
-

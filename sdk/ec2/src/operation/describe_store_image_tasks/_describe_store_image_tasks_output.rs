@@ -2,10 +2,11 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeStoreImageTasksOutput  {
+pub struct DescribeStoreImageTasksOutput {
     /// <p>The information about the AMI store tasks.</p>
     #[doc(hidden)]
-    pub store_image_task_results: std::option::Option<std::vec::Vec<crate::types::StoreImageTaskResult>>,
+    pub store_image_task_results:
+        std::option::Option<std::vec::Vec<crate::types::StoreImageTaskResult>>,
     /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
@@ -13,22 +14,26 @@ pub struct DescribeStoreImageTasksOutput  {
 }
 impl DescribeStoreImageTasksOutput {
     /// <p>The information about the AMI store tasks.</p>
-    pub fn store_image_task_results(&self) -> std::option::Option<& [crate::types::StoreImageTaskResult]> {
+    pub fn store_image_task_results(
+        &self,
+    ) -> std::option::Option<&[crate::types::StoreImageTaskResult]> {
         self.store_image_task_results.as_deref()
     }
     /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for DescribeStoreImageTasksOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl DescribeStoreImageTasksOutput {
     /// Creates a new builder-style object to manufacture [`DescribeStoreImageTasksOutput`](crate::operation::describe_store_image_tasks::DescribeStoreImageTasksOutput).
-    pub fn builder() -> crate::operation::describe_store_image_tasks::builders::DescribeStoreImageTasksOutputBuilder {
+    pub fn builder(
+    ) -> crate::operation::describe_store_image_tasks::builders::DescribeStoreImageTasksOutputBuilder
+    {
         crate::operation::describe_store_image_tasks::builders::DescribeStoreImageTasksOutputBuilder::default()
     }
 }
@@ -37,7 +42,8 @@ impl DescribeStoreImageTasksOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct DescribeStoreImageTasksOutputBuilder {
-    pub(crate) store_image_task_results: std::option::Option<std::vec::Vec<crate::types::StoreImageTaskResult>>,
+    pub(crate) store_image_task_results:
+        std::option::Option<std::vec::Vec<crate::types::StoreImageTaskResult>>,
     pub(crate) next_token: std::option::Option<std::string::String>,
     _request_id: Option<String>,
 }
@@ -49,13 +55,17 @@ impl DescribeStoreImageTasksOutputBuilder {
     /// <p>The information about the AMI store tasks.</p>
     pub fn store_image_task_results(mut self, input: crate::types::StoreImageTaskResult) -> Self {
         let mut v = self.store_image_task_results.unwrap_or_default();
-                        v.push(input);
-                        self.store_image_task_results = Some(v);
-                        self
+        v.push(input);
+        self.store_image_task_results = Some(v);
+        self
     }
     /// <p>The information about the AMI store tasks.</p>
-    pub fn set_store_image_task_results(mut self, input: std::option::Option<std::vec::Vec<crate::types::StoreImageTaskResult>>) -> Self {
-        self.store_image_task_results = input; self
+    pub fn set_store_image_task_results(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::StoreImageTaskResult>>,
+    ) -> Self {
+        self.store_image_task_results = input;
+        self
     }
     /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -64,26 +74,26 @@ impl DescribeStoreImageTasksOutputBuilder {
     }
     /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input; self
+        self.next_token = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`DescribeStoreImageTasksOutput`](crate::operation::describe_store_image_tasks::DescribeStoreImageTasksOutput).
-    pub fn build(self) -> crate::operation::describe_store_image_tasks::DescribeStoreImageTasksOutput {
+    pub fn build(
+        self,
+    ) -> crate::operation::describe_store_image_tasks::DescribeStoreImageTasksOutput {
         crate::operation::describe_store_image_tasks::DescribeStoreImageTasksOutput {
-            store_image_task_results: self.store_image_task_results
-            ,
-            next_token: self.next_token
-            ,
+            store_image_task_results: self.store_image_task_results,
+            next_token: self.next_token,
             _request_id: self._request_id,
         }
     }
 }
-

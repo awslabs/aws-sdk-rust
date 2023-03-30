@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-/// 
+///
 /// Here is an example of how you can make a match expression forward-compatible:
-/// 
+///
 /// ```text
 /// # let colorspaceconversion = unimplemented!();
 /// match colorspaceconversion {
@@ -35,14 +35,22 @@
 /// Specifically, when `colorspaceconversion` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `ColorSpaceConversion::NewFeature` also yielding `"NewFeature"`.
-/// 
+///
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 /// Specify the color space you want for this output. The service supports conversion between HDR formats, between SDR formats, from SDR to HDR, and from HDR to SDR. SDR to HDR conversion doesn't upgrade the dynamic range. The converted video has an HDR format, but visually appears the same as an unconverted output. HDR to SDR conversion uses Elemental tone mapping technology to approximate the outcome of manually regrading from HDR to SDR. Select Force P3D65 (SDR) to set the output color space metadata to the following: * Color primaries: Display P3 * Transfer characteristics: SMPTE 428M * Matrix coefficients: BT.709
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
 pub enum ColorSpaceConversion {
     #[allow(missing_docs)] // documentation missing in model
     Force601,
@@ -59,51 +67,60 @@ pub enum ColorSpaceConversion {
     #[allow(missing_docs)] // documentation missing in model
     None,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::primitives::UnknownVariantValue)
+    Unknown(crate::primitives::UnknownVariantValue),
 }
 impl std::convert::From<&str> for ColorSpaceConversion {
-                fn from(s: &str) -> Self {
-                    match s {
-                        "FORCE_601" => ColorSpaceConversion::Force601,
-"FORCE_709" => ColorSpaceConversion::Force709,
-"FORCE_HDR10" => ColorSpaceConversion::ForceHdr10,
-"FORCE_HLG_2020" => ColorSpaceConversion::ForceHlg2020,
-"FORCE_P3D65_SDR" => ColorSpaceConversion::ForceP3D65Sdr,
-"FORCE_P3DCI" => ColorSpaceConversion::ForceP3Dci,
-"NONE" => ColorSpaceConversion::None,
-other => ColorSpaceConversion::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
-                    }
-                }
-            }
-impl std::str::FromStr for ColorSpaceConversion {
-                type Err = std::convert::Infallible;
-
-                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-                    Ok(ColorSpaceConversion::from(s))
-                }
-            }
-impl ColorSpaceConversion {
-                /// Returns the `&str` value of the enum member.
-                pub fn as_str(&self) -> &str {
-                    match self {
-    ColorSpaceConversion::Force601 => "FORCE_601",
-    ColorSpaceConversion::Force709 => "FORCE_709",
-    ColorSpaceConversion::ForceHdr10 => "FORCE_HDR10",
-    ColorSpaceConversion::ForceHlg2020 => "FORCE_HLG_2020",
-    ColorSpaceConversion::ForceP3D65Sdr => "FORCE_P3D65_SDR",
-    ColorSpaceConversion::ForceP3Dci => "FORCE_P3DCI",
-    ColorSpaceConversion::None => "NONE",
-    ColorSpaceConversion::Unknown(value) => value.as_str()
+    fn from(s: &str) -> Self {
+        match s {
+            "FORCE_601" => ColorSpaceConversion::Force601,
+            "FORCE_709" => ColorSpaceConversion::Force709,
+            "FORCE_HDR10" => ColorSpaceConversion::ForceHdr10,
+            "FORCE_HLG_2020" => ColorSpaceConversion::ForceHlg2020,
+            "FORCE_P3D65_SDR" => ColorSpaceConversion::ForceP3D65Sdr,
+            "FORCE_P3DCI" => ColorSpaceConversion::ForceP3Dci,
+            "NONE" => ColorSpaceConversion::None,
+            other => ColorSpaceConversion::Unknown(crate::primitives::UnknownVariantValue(
+                other.to_owned(),
+            )),
+        }
+    }
 }
-                }
-                /// Returns all the `&str` representations of the enum members.
-                pub const fn values() -> &'static [&'static str] {
-                    &["FORCE_601", "FORCE_709", "FORCE_HDR10", "FORCE_HLG_2020", "FORCE_P3D65_SDR", "FORCE_P3DCI", "NONE"]
-                }
-            }
-impl AsRef<str> for ColorSpaceConversion {
-                fn as_ref(&self) -> &str {
-                    self.as_str()
-                }
-            }
+impl std::str::FromStr for ColorSpaceConversion {
+    type Err = std::convert::Infallible;
 
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(ColorSpaceConversion::from(s))
+    }
+}
+impl ColorSpaceConversion {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            ColorSpaceConversion::Force601 => "FORCE_601",
+            ColorSpaceConversion::Force709 => "FORCE_709",
+            ColorSpaceConversion::ForceHdr10 => "FORCE_HDR10",
+            ColorSpaceConversion::ForceHlg2020 => "FORCE_HLG_2020",
+            ColorSpaceConversion::ForceP3D65Sdr => "FORCE_P3D65_SDR",
+            ColorSpaceConversion::ForceP3Dci => "FORCE_P3DCI",
+            ColorSpaceConversion::None => "NONE",
+            ColorSpaceConversion::Unknown(value) => value.as_str(),
+        }
+    }
+    /// Returns all the `&str` representations of the enum members.
+    pub const fn values() -> &'static [&'static str] {
+        &[
+            "FORCE_601",
+            "FORCE_709",
+            "FORCE_HDR10",
+            "FORCE_HLG_2020",
+            "FORCE_P3D65_SDR",
+            "FORCE_P3DCI",
+            "NONE",
+        ]
+    }
+}
+impl AsRef<str> for ColorSpaceConversion {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}

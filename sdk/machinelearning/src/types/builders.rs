@@ -32,4 +32,3 @@ pub use crate::types::_redshift_database_credentials::RedshiftDatabaseCredential
 pub use crate::types::_rds_data_spec::RdsDataSpecBuilder;
 
 pub use crate::types::_rds_database_credentials::RdsDatabaseCredentialsBuilder;
-

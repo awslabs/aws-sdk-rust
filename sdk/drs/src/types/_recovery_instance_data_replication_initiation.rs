@@ -3,21 +3,25 @@
 /// <p>Data replication initiation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct RecoveryInstanceDataReplicationInitiation  {
+pub struct RecoveryInstanceDataReplicationInitiation {
     /// <p>The date and time of the current attempt to initiate data replication.</p>
     #[doc(hidden)]
     pub start_date_time: std::option::Option<std::string::String>,
     /// <p>The steps of the current attempt to initiate data replication.</p>
     #[doc(hidden)]
-    pub steps: std::option::Option<std::vec::Vec<crate::types::RecoveryInstanceDataReplicationInitiationStep>>,
+    pub steps: std::option::Option<
+        std::vec::Vec<crate::types::RecoveryInstanceDataReplicationInitiationStep>,
+    >,
 }
 impl RecoveryInstanceDataReplicationInitiation {
     /// <p>The date and time of the current attempt to initiate data replication.</p>
-    pub fn start_date_time(&self) -> std::option::Option<& str> {
+    pub fn start_date_time(&self) -> std::option::Option<&str> {
         self.start_date_time.as_deref()
     }
     /// <p>The steps of the current attempt to initiate data replication.</p>
-    pub fn steps(&self) -> std::option::Option<& [crate::types::RecoveryInstanceDataReplicationInitiationStep]> {
+    pub fn steps(
+        &self,
+    ) -> std::option::Option<&[crate::types::RecoveryInstanceDataReplicationInitiationStep]> {
         self.steps.as_deref()
     }
 }
@@ -33,7 +37,9 @@ impl RecoveryInstanceDataReplicationInitiation {
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct RecoveryInstanceDataReplicationInitiationBuilder {
     pub(crate) start_date_time: std::option::Option<std::string::String>,
-    pub(crate) steps: std::option::Option<std::vec::Vec<crate::types::RecoveryInstanceDataReplicationInitiationStep>>,
+    pub(crate) steps: std::option::Option<
+        std::vec::Vec<crate::types::RecoveryInstanceDataReplicationInitiationStep>,
+    >,
 }
 impl RecoveryInstanceDataReplicationInitiationBuilder {
     /// <p>The date and time of the current attempt to initiate data replication.</p>
@@ -43,31 +49,38 @@ impl RecoveryInstanceDataReplicationInitiationBuilder {
     }
     /// <p>The date and time of the current attempt to initiate data replication.</p>
     pub fn set_start_date_time(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.start_date_time = input; self
+        self.start_date_time = input;
+        self
     }
     /// Appends an item to `steps`.
     ///
     /// To override the contents of this collection use [`set_steps`](Self::set_steps).
     ///
     /// <p>The steps of the current attempt to initiate data replication.</p>
-    pub fn steps(mut self, input: crate::types::RecoveryInstanceDataReplicationInitiationStep) -> Self {
+    pub fn steps(
+        mut self,
+        input: crate::types::RecoveryInstanceDataReplicationInitiationStep,
+    ) -> Self {
         let mut v = self.steps.unwrap_or_default();
-                        v.push(input);
-                        self.steps = Some(v);
-                        self
+        v.push(input);
+        self.steps = Some(v);
+        self
     }
     /// <p>The steps of the current attempt to initiate data replication.</p>
-    pub fn set_steps(mut self, input: std::option::Option<std::vec::Vec<crate::types::RecoveryInstanceDataReplicationInitiationStep>>) -> Self {
-        self.steps = input; self
+    pub fn set_steps(
+        mut self,
+        input: std::option::Option<
+            std::vec::Vec<crate::types::RecoveryInstanceDataReplicationInitiationStep>,
+        >,
+    ) -> Self {
+        self.steps = input;
+        self
     }
     /// Consumes the builder and constructs a [`RecoveryInstanceDataReplicationInitiation`](crate::types::RecoveryInstanceDataReplicationInitiation).
     pub fn build(self) -> crate::types::RecoveryInstanceDataReplicationInitiation {
         crate::types::RecoveryInstanceDataReplicationInitiation {
-            start_date_time: self.start_date_time
-            ,
-            steps: self.steps
-            ,
+            start_date_time: self.start_date_time,
+            steps: self.steps,
         }
     }
 }
-

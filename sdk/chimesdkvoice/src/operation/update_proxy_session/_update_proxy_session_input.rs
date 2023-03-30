@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateProxySessionInput  {
+pub struct UpdateProxySessionInput {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub voice_connector_id: std::option::Option<std::string::String>,
@@ -18,15 +18,15 @@ pub struct UpdateProxySessionInput  {
 }
 impl UpdateProxySessionInput {
     #[allow(missing_docs)] // documentation missing in model
-    pub fn voice_connector_id(&self) -> std::option::Option<& str> {
+    pub fn voice_connector_id(&self) -> std::option::Option<&str> {
         self.voice_connector_id.as_deref()
     }
     #[allow(missing_docs)] // documentation missing in model
-    pub fn proxy_session_id(&self) -> std::option::Option<& str> {
+    pub fn proxy_session_id(&self) -> std::option::Option<&str> {
         self.proxy_session_id.as_deref()
     }
     #[allow(missing_docs)] // documentation missing in model
-    pub fn capabilities(&self) -> std::option::Option<& [crate::types::Capability]> {
+    pub fn capabilities(&self) -> std::option::Option<&[crate::types::Capability]> {
         self.capabilities.as_deref()
     }
     #[allow(missing_docs)] // documentation missing in model
@@ -36,7 +36,8 @@ impl UpdateProxySessionInput {
 }
 impl UpdateProxySessionInput {
     /// Creates a new builder-style object to manufacture [`UpdateProxySessionInput`](crate::operation::update_proxy_session::UpdateProxySessionInput).
-    pub fn builder() -> crate::operation::update_proxy_session::builders::UpdateProxySessionInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::update_proxy_session::builders::UpdateProxySessionInputBuilder {
         crate::operation::update_proxy_session::builders::UpdateProxySessionInputBuilder::default()
     }
 }
@@ -57,8 +58,12 @@ impl UpdateProxySessionInputBuilder {
         self
     }
     #[allow(missing_docs)] // documentation missing in model
-    pub fn set_voice_connector_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.voice_connector_id = input; self
+    pub fn set_voice_connector_id(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.voice_connector_id = input;
+        self
     }
     #[allow(missing_docs)] // documentation missing in model
     pub fn proxy_session_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -67,7 +72,8 @@ impl UpdateProxySessionInputBuilder {
     }
     #[allow(missing_docs)] // documentation missing in model
     pub fn set_proxy_session_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.proxy_session_id = input; self
+        self.proxy_session_id = input;
+        self
     }
     /// Appends an item to `capabilities`.
     ///
@@ -75,13 +81,17 @@ impl UpdateProxySessionInputBuilder {
     ///
     pub fn capabilities(mut self, input: crate::types::Capability) -> Self {
         let mut v = self.capabilities.unwrap_or_default();
-                        v.push(input);
-                        self.capabilities = Some(v);
-                        self
+        v.push(input);
+        self.capabilities = Some(v);
+        self
     }
     #[allow(missing_docs)] // documentation missing in model
-    pub fn set_capabilities(mut self, input: std::option::Option<std::vec::Vec<crate::types::Capability>>) -> Self {
-        self.capabilities = input; self
+    pub fn set_capabilities(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::Capability>>,
+    ) -> Self {
+        self.capabilities = input;
+        self
     }
     #[allow(missing_docs)] // documentation missing in model
     pub fn expiry_minutes(mut self, input: i32) -> Self {
@@ -90,22 +100,23 @@ impl UpdateProxySessionInputBuilder {
     }
     #[allow(missing_docs)] // documentation missing in model
     pub fn set_expiry_minutes(mut self, input: std::option::Option<i32>) -> Self {
-        self.expiry_minutes = input; self
+        self.expiry_minutes = input;
+        self
     }
     /// Consumes the builder and constructs a [`UpdateProxySessionInput`](crate::operation::update_proxy_session::UpdateProxySessionInput).
-    pub fn build(self) -> Result<crate::operation::update_proxy_session::UpdateProxySessionInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::update_proxy_session::UpdateProxySessionInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::update_proxy_session::UpdateProxySessionInput {
-                voice_connector_id: self.voice_connector_id
-                ,
-                proxy_session_id: self.proxy_session_id
-                ,
-                capabilities: self.capabilities
-                ,
-                expiry_minutes: self.expiry_minutes
-                ,
-            }
+                voice_connector_id: self.voice_connector_id,
+                proxy_session_id: self.proxy_session_id,
+                capabilities: self.capabilities,
+                expiry_minutes: self.expiry_minutes,
+            },
         )
     }
 }
-

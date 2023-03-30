@@ -3,7 +3,7 @@
 /// <p>The display options of a control.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DropDownControlDisplayOptions  {
+pub struct DropDownControlDisplayOptions {
     /// <p>The configuration of the <code>Select all</code> options in a dropdown control.</p>
     #[doc(hidden)]
     pub select_all_options: std::option::Option<crate::types::ListControlSelectAllOptions>,
@@ -13,11 +13,13 @@ pub struct DropDownControlDisplayOptions  {
 }
 impl DropDownControlDisplayOptions {
     /// <p>The configuration of the <code>Select all</code> options in a dropdown control.</p>
-    pub fn select_all_options(&self) -> std::option::Option<& crate::types::ListControlSelectAllOptions> {
+    pub fn select_all_options(
+        &self,
+    ) -> std::option::Option<&crate::types::ListControlSelectAllOptions> {
         self.select_all_options.as_ref()
     }
     /// <p>The options to configure the title visibility, name, and font size.</p>
-    pub fn title_options(&self) -> std::option::Option<& crate::types::LabelOptions> {
+    pub fn title_options(&self) -> std::option::Option<&crate::types::LabelOptions> {
         self.title_options.as_ref()
     }
 }
@@ -42,8 +44,12 @@ impl DropDownControlDisplayOptionsBuilder {
         self
     }
     /// <p>The configuration of the <code>Select all</code> options in a dropdown control.</p>
-    pub fn set_select_all_options(mut self, input: std::option::Option<crate::types::ListControlSelectAllOptions>) -> Self {
-        self.select_all_options = input; self
+    pub fn set_select_all_options(
+        mut self,
+        input: std::option::Option<crate::types::ListControlSelectAllOptions>,
+    ) -> Self {
+        self.select_all_options = input;
+        self
     }
     /// <p>The options to configure the title visibility, name, and font size.</p>
     pub fn title_options(mut self, input: crate::types::LabelOptions) -> Self {
@@ -51,17 +57,18 @@ impl DropDownControlDisplayOptionsBuilder {
         self
     }
     /// <p>The options to configure the title visibility, name, and font size.</p>
-    pub fn set_title_options(mut self, input: std::option::Option<crate::types::LabelOptions>) -> Self {
-        self.title_options = input; self
+    pub fn set_title_options(
+        mut self,
+        input: std::option::Option<crate::types::LabelOptions>,
+    ) -> Self {
+        self.title_options = input;
+        self
     }
     /// Consumes the builder and constructs a [`DropDownControlDisplayOptions`](crate::types::DropDownControlDisplayOptions).
     pub fn build(self) -> crate::types::DropDownControlDisplayOptions {
         crate::types::DropDownControlDisplayOptions {
-            select_all_options: self.select_all_options
-            ,
-            title_options: self.title_options
-            ,
+            select_all_options: self.select_all_options,
+            title_options: self.title_options,
         }
     }
 }
-

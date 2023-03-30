@@ -3,15 +3,15 @@
 /// <p>This data type is used as a response element for the <code>DescribeDBSubnetGroups</code> operation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Subnet  {
+pub struct Subnet {
     /// <p>The identifier of the subnet.</p>
     #[doc(hidden)]
     pub subnet_identifier: std::option::Option<std::string::String>,
-    /// <p>Contains Availability Zone information.</p> 
+    /// <p>Contains Availability Zone information.</p>
     /// <p>This data type is used as an element in the <code>OrderableDBInstanceOption</code> data type.</p>
     #[doc(hidden)]
     pub subnet_availability_zone: std::option::Option<crate::types::AvailabilityZone>,
-    /// <p>If the subnet is associated with an Outpost, this value specifies the Outpost.</p> 
+    /// <p>If the subnet is associated with an Outpost, this value specifies the Outpost.</p>
     /// <p>For more information about RDS on Outposts, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-on-outposts.html">Amazon RDS on Amazon Web Services Outposts</a> in the <i>Amazon RDS User Guide.</i> </p>
     #[doc(hidden)]
     pub subnet_outpost: std::option::Option<crate::types::Outpost>,
@@ -21,21 +21,21 @@ pub struct Subnet  {
 }
 impl Subnet {
     /// <p>The identifier of the subnet.</p>
-    pub fn subnet_identifier(&self) -> std::option::Option<& str> {
+    pub fn subnet_identifier(&self) -> std::option::Option<&str> {
         self.subnet_identifier.as_deref()
     }
-    /// <p>Contains Availability Zone information.</p> 
+    /// <p>Contains Availability Zone information.</p>
     /// <p>This data type is used as an element in the <code>OrderableDBInstanceOption</code> data type.</p>
-    pub fn subnet_availability_zone(&self) -> std::option::Option<& crate::types::AvailabilityZone> {
+    pub fn subnet_availability_zone(&self) -> std::option::Option<&crate::types::AvailabilityZone> {
         self.subnet_availability_zone.as_ref()
     }
-    /// <p>If the subnet is associated with an Outpost, this value specifies the Outpost.</p> 
+    /// <p>If the subnet is associated with an Outpost, this value specifies the Outpost.</p>
     /// <p>For more information about RDS on Outposts, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-on-outposts.html">Amazon RDS on Amazon Web Services Outposts</a> in the <i>Amazon RDS User Guide.</i> </p>
-    pub fn subnet_outpost(&self) -> std::option::Option<& crate::types::Outpost> {
+    pub fn subnet_outpost(&self) -> std::option::Option<&crate::types::Outpost> {
         self.subnet_outpost.as_ref()
     }
     /// <p>The status of the subnet.</p>
-    pub fn subnet_status(&self) -> std::option::Option<& str> {
+    pub fn subnet_status(&self) -> std::option::Option<&str> {
         self.subnet_status.as_deref()
     }
 }
@@ -62,30 +62,39 @@ impl SubnetBuilder {
         self
     }
     /// <p>The identifier of the subnet.</p>
-    pub fn set_subnet_identifier(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.subnet_identifier = input; self
+    pub fn set_subnet_identifier(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.subnet_identifier = input;
+        self
     }
-    /// <p>Contains Availability Zone information.</p> 
+    /// <p>Contains Availability Zone information.</p>
     /// <p>This data type is used as an element in the <code>OrderableDBInstanceOption</code> data type.</p>
     pub fn subnet_availability_zone(mut self, input: crate::types::AvailabilityZone) -> Self {
         self.subnet_availability_zone = Some(input);
         self
     }
-    /// <p>Contains Availability Zone information.</p> 
+    /// <p>Contains Availability Zone information.</p>
     /// <p>This data type is used as an element in the <code>OrderableDBInstanceOption</code> data type.</p>
-    pub fn set_subnet_availability_zone(mut self, input: std::option::Option<crate::types::AvailabilityZone>) -> Self {
-        self.subnet_availability_zone = input; self
+    pub fn set_subnet_availability_zone(
+        mut self,
+        input: std::option::Option<crate::types::AvailabilityZone>,
+    ) -> Self {
+        self.subnet_availability_zone = input;
+        self
     }
-    /// <p>If the subnet is associated with an Outpost, this value specifies the Outpost.</p> 
+    /// <p>If the subnet is associated with an Outpost, this value specifies the Outpost.</p>
     /// <p>For more information about RDS on Outposts, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-on-outposts.html">Amazon RDS on Amazon Web Services Outposts</a> in the <i>Amazon RDS User Guide.</i> </p>
     pub fn subnet_outpost(mut self, input: crate::types::Outpost) -> Self {
         self.subnet_outpost = Some(input);
         self
     }
-    /// <p>If the subnet is associated with an Outpost, this value specifies the Outpost.</p> 
+    /// <p>If the subnet is associated with an Outpost, this value specifies the Outpost.</p>
     /// <p>For more information about RDS on Outposts, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-on-outposts.html">Amazon RDS on Amazon Web Services Outposts</a> in the <i>Amazon RDS User Guide.</i> </p>
     pub fn set_subnet_outpost(mut self, input: std::option::Option<crate::types::Outpost>) -> Self {
-        self.subnet_outpost = input; self
+        self.subnet_outpost = input;
+        self
     }
     /// <p>The status of the subnet.</p>
     pub fn subnet_status(mut self, input: impl Into<std::string::String>) -> Self {
@@ -94,20 +103,16 @@ impl SubnetBuilder {
     }
     /// <p>The status of the subnet.</p>
     pub fn set_subnet_status(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.subnet_status = input; self
+        self.subnet_status = input;
+        self
     }
     /// Consumes the builder and constructs a [`Subnet`](crate::types::Subnet).
     pub fn build(self) -> crate::types::Subnet {
         crate::types::Subnet {
-            subnet_identifier: self.subnet_identifier
-            ,
-            subnet_availability_zone: self.subnet_availability_zone
-            ,
-            subnet_outpost: self.subnet_outpost
-            ,
-            subnet_status: self.subnet_status
-            ,
+            subnet_identifier: self.subnet_identifier,
+            subnet_availability_zone: self.subnet_availability_zone,
+            subnet_outpost: self.subnet_outpost,
+            subnet_status: self.subnet_status,
         }
     }
 }
-

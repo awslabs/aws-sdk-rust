@@ -3,7 +3,7 @@
 /// <p>Requests API Gateway to get information about one or more Stage resources.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetStagesInput  {
+pub struct GetStagesInput {
     /// <p>The string identifier of the associated RestApi.</p>
     #[doc(hidden)]
     pub rest_api_id: std::option::Option<std::string::String>,
@@ -13,11 +13,11 @@ pub struct GetStagesInput  {
 }
 impl GetStagesInput {
     /// <p>The string identifier of the associated RestApi.</p>
-    pub fn rest_api_id(&self) -> std::option::Option<& str> {
+    pub fn rest_api_id(&self) -> std::option::Option<&str> {
         self.rest_api_id.as_deref()
     }
     /// <p>The stages' deployment identifiers.</p>
-    pub fn deployment_id(&self) -> std::option::Option<& str> {
+    pub fn deployment_id(&self) -> std::option::Option<&str> {
         self.deployment_id.as_deref()
     }
 }
@@ -43,7 +43,8 @@ impl GetStagesInputBuilder {
     }
     /// <p>The string identifier of the associated RestApi.</p>
     pub fn set_rest_api_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.rest_api_id = input; self
+        self.rest_api_id = input;
+        self
     }
     /// <p>The stages' deployment identifiers.</p>
     pub fn deployment_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -52,18 +53,19 @@ impl GetStagesInputBuilder {
     }
     /// <p>The stages' deployment identifiers.</p>
     pub fn set_deployment_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.deployment_id = input; self
+        self.deployment_id = input;
+        self
     }
     /// Consumes the builder and constructs a [`GetStagesInput`](crate::operation::get_stages::GetStagesInput).
-    pub fn build(self) -> Result<crate::operation::get_stages::GetStagesInput, aws_smithy_http::operation::error::BuildError> {
-        Ok(
-            crate::operation::get_stages::GetStagesInput {
-                rest_api_id: self.rest_api_id
-                ,
-                deployment_id: self.deployment_id
-                ,
-            }
-        )
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::get_stages::GetStagesInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        Ok(crate::operation::get_stages::GetStagesInput {
+            rest_api_id: self.rest_api_id,
+            deployment_id: self.deployment_id,
+        })
     }
 }
-

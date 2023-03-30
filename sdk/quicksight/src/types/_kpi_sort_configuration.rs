@@ -3,14 +3,14 @@
 /// <p>The sort configuration of a KPI visual.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct KpiSortConfiguration  {
+pub struct KpiSortConfiguration {
     /// <p>The sort configuration of the trend group fields.</p>
     #[doc(hidden)]
     pub trend_group_sort: std::option::Option<std::vec::Vec<crate::types::FieldSortOptions>>,
 }
 impl KpiSortConfiguration {
     /// <p>The sort configuration of the trend group fields.</p>
-    pub fn trend_group_sort(&self) -> std::option::Option<& [crate::types::FieldSortOptions]> {
+    pub fn trend_group_sort(&self) -> std::option::Option<&[crate::types::FieldSortOptions]> {
         self.trend_group_sort.as_deref()
     }
 }
@@ -35,20 +35,22 @@ impl KpiSortConfigurationBuilder {
     /// <p>The sort configuration of the trend group fields.</p>
     pub fn trend_group_sort(mut self, input: crate::types::FieldSortOptions) -> Self {
         let mut v = self.trend_group_sort.unwrap_or_default();
-                        v.push(input);
-                        self.trend_group_sort = Some(v);
-                        self
+        v.push(input);
+        self.trend_group_sort = Some(v);
+        self
     }
     /// <p>The sort configuration of the trend group fields.</p>
-    pub fn set_trend_group_sort(mut self, input: std::option::Option<std::vec::Vec<crate::types::FieldSortOptions>>) -> Self {
-        self.trend_group_sort = input; self
+    pub fn set_trend_group_sort(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::FieldSortOptions>>,
+    ) -> Self {
+        self.trend_group_sort = input;
+        self
     }
     /// Consumes the builder and constructs a [`KpiSortConfiguration`](crate::types::KpiSortConfiguration).
     pub fn build(self) -> crate::types::KpiSortConfiguration {
         crate::types::KpiSortConfiguration {
-            trend_group_sort: self.trend_group_sort
-            ,
+            trend_group_sort: self.trend_group_sort,
         }
     }
 }
-

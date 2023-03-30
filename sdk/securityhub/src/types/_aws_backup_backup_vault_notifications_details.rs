@@ -3,13 +3,13 @@
 /// <p>Provides details about the Amazon SNS event notifications for the specified backup vault. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AwsBackupBackupVaultNotificationsDetails  {
-    /// <p>An array of events that indicate the status of jobs to back up resources to the backup vault. The following events are supported:</p> 
-    /// <ul> 
-    /// <li> <p> <code>BACKUP_JOB_STARTED | BACKUP_JOB_COMPLETED</code> </p> </li> 
-    /// <li> <p> <code>COPY_JOB_STARTED | COPY_JOB_SUCCESSFUL | COPY_JOB_FAILED</code> </p> </li> 
-    /// <li> <p> <code>RESTORE_JOB_STARTED | RESTORE_JOB_COMPLETED | RECOVERY_POINT_MODIFIED</code> </p> </li> 
-    /// <li> <p> <code>S3_BACKUP_OBJECT_FAILED | S3_RESTORE_OBJECT_FAILED</code> </p> </li> 
+pub struct AwsBackupBackupVaultNotificationsDetails {
+    /// <p>An array of events that indicate the status of jobs to back up resources to the backup vault. The following events are supported:</p>
+    /// <ul>
+    /// <li> <p> <code>BACKUP_JOB_STARTED | BACKUP_JOB_COMPLETED</code> </p> </li>
+    /// <li> <p> <code>COPY_JOB_STARTED | COPY_JOB_SUCCESSFUL | COPY_JOB_FAILED</code> </p> </li>
+    /// <li> <p> <code>RESTORE_JOB_STARTED | RESTORE_JOB_COMPLETED | RECOVERY_POINT_MODIFIED</code> </p> </li>
+    /// <li> <p> <code>S3_BACKUP_OBJECT_FAILED | S3_RESTORE_OBJECT_FAILED</code> </p> </li>
     /// </ul>
     #[doc(hidden)]
     pub backup_vault_events: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -18,18 +18,18 @@ pub struct AwsBackupBackupVaultNotificationsDetails  {
     pub sns_topic_arn: std::option::Option<std::string::String>,
 }
 impl AwsBackupBackupVaultNotificationsDetails {
-    /// <p>An array of events that indicate the status of jobs to back up resources to the backup vault. The following events are supported:</p> 
-    /// <ul> 
-    /// <li> <p> <code>BACKUP_JOB_STARTED | BACKUP_JOB_COMPLETED</code> </p> </li> 
-    /// <li> <p> <code>COPY_JOB_STARTED | COPY_JOB_SUCCESSFUL | COPY_JOB_FAILED</code> </p> </li> 
-    /// <li> <p> <code>RESTORE_JOB_STARTED | RESTORE_JOB_COMPLETED | RECOVERY_POINT_MODIFIED</code> </p> </li> 
-    /// <li> <p> <code>S3_BACKUP_OBJECT_FAILED | S3_RESTORE_OBJECT_FAILED</code> </p> </li> 
+    /// <p>An array of events that indicate the status of jobs to back up resources to the backup vault. The following events are supported:</p>
+    /// <ul>
+    /// <li> <p> <code>BACKUP_JOB_STARTED | BACKUP_JOB_COMPLETED</code> </p> </li>
+    /// <li> <p> <code>COPY_JOB_STARTED | COPY_JOB_SUCCESSFUL | COPY_JOB_FAILED</code> </p> </li>
+    /// <li> <p> <code>RESTORE_JOB_STARTED | RESTORE_JOB_COMPLETED | RECOVERY_POINT_MODIFIED</code> </p> </li>
+    /// <li> <p> <code>S3_BACKUP_OBJECT_FAILED | S3_RESTORE_OBJECT_FAILED</code> </p> </li>
     /// </ul>
-    pub fn backup_vault_events(&self) -> std::option::Option<& [std::string::String]> {
+    pub fn backup_vault_events(&self) -> std::option::Option<&[std::string::String]> {
         self.backup_vault_events.as_deref()
     }
     /// <p>An ARN that uniquely identifies the Amazon SNS topic for a backup vault’s events. </p>
-    pub fn sns_topic_arn(&self) -> std::option::Option<& str> {
+    pub fn sns_topic_arn(&self) -> std::option::Option<&str> {
         self.sns_topic_arn.as_deref()
     }
 }
@@ -52,28 +52,32 @@ impl AwsBackupBackupVaultNotificationsDetailsBuilder {
     ///
     /// To override the contents of this collection use [`set_backup_vault_events`](Self::set_backup_vault_events).
     ///
-    /// <p>An array of events that indicate the status of jobs to back up resources to the backup vault. The following events are supported:</p> 
-    /// <ul> 
-    /// <li> <p> <code>BACKUP_JOB_STARTED | BACKUP_JOB_COMPLETED</code> </p> </li> 
-    /// <li> <p> <code>COPY_JOB_STARTED | COPY_JOB_SUCCESSFUL | COPY_JOB_FAILED</code> </p> </li> 
-    /// <li> <p> <code>RESTORE_JOB_STARTED | RESTORE_JOB_COMPLETED | RECOVERY_POINT_MODIFIED</code> </p> </li> 
-    /// <li> <p> <code>S3_BACKUP_OBJECT_FAILED | S3_RESTORE_OBJECT_FAILED</code> </p> </li> 
+    /// <p>An array of events that indicate the status of jobs to back up resources to the backup vault. The following events are supported:</p>
+    /// <ul>
+    /// <li> <p> <code>BACKUP_JOB_STARTED | BACKUP_JOB_COMPLETED</code> </p> </li>
+    /// <li> <p> <code>COPY_JOB_STARTED | COPY_JOB_SUCCESSFUL | COPY_JOB_FAILED</code> </p> </li>
+    /// <li> <p> <code>RESTORE_JOB_STARTED | RESTORE_JOB_COMPLETED | RECOVERY_POINT_MODIFIED</code> </p> </li>
+    /// <li> <p> <code>S3_BACKUP_OBJECT_FAILED | S3_RESTORE_OBJECT_FAILED</code> </p> </li>
     /// </ul>
     pub fn backup_vault_events(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.backup_vault_events.unwrap_or_default();
-                        v.push(input.into());
-                        self.backup_vault_events = Some(v);
-                        self
+        v.push(input.into());
+        self.backup_vault_events = Some(v);
+        self
     }
-    /// <p>An array of events that indicate the status of jobs to back up resources to the backup vault. The following events are supported:</p> 
-    /// <ul> 
-    /// <li> <p> <code>BACKUP_JOB_STARTED | BACKUP_JOB_COMPLETED</code> </p> </li> 
-    /// <li> <p> <code>COPY_JOB_STARTED | COPY_JOB_SUCCESSFUL | COPY_JOB_FAILED</code> </p> </li> 
-    /// <li> <p> <code>RESTORE_JOB_STARTED | RESTORE_JOB_COMPLETED | RECOVERY_POINT_MODIFIED</code> </p> </li> 
-    /// <li> <p> <code>S3_BACKUP_OBJECT_FAILED | S3_RESTORE_OBJECT_FAILED</code> </p> </li> 
+    /// <p>An array of events that indicate the status of jobs to back up resources to the backup vault. The following events are supported:</p>
+    /// <ul>
+    /// <li> <p> <code>BACKUP_JOB_STARTED | BACKUP_JOB_COMPLETED</code> </p> </li>
+    /// <li> <p> <code>COPY_JOB_STARTED | COPY_JOB_SUCCESSFUL | COPY_JOB_FAILED</code> </p> </li>
+    /// <li> <p> <code>RESTORE_JOB_STARTED | RESTORE_JOB_COMPLETED | RECOVERY_POINT_MODIFIED</code> </p> </li>
+    /// <li> <p> <code>S3_BACKUP_OBJECT_FAILED | S3_RESTORE_OBJECT_FAILED</code> </p> </li>
     /// </ul>
-    pub fn set_backup_vault_events(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-        self.backup_vault_events = input; self
+    pub fn set_backup_vault_events(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
+        self.backup_vault_events = input;
+        self
     }
     /// <p>An ARN that uniquely identifies the Amazon SNS topic for a backup vault’s events. </p>
     pub fn sns_topic_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -82,16 +86,14 @@ impl AwsBackupBackupVaultNotificationsDetailsBuilder {
     }
     /// <p>An ARN that uniquely identifies the Amazon SNS topic for a backup vault’s events. </p>
     pub fn set_sns_topic_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.sns_topic_arn = input; self
+        self.sns_topic_arn = input;
+        self
     }
     /// Consumes the builder and constructs a [`AwsBackupBackupVaultNotificationsDetails`](crate::types::AwsBackupBackupVaultNotificationsDetails).
     pub fn build(self) -> crate::types::AwsBackupBackupVaultNotificationsDetails {
         crate::types::AwsBackupBackupVaultNotificationsDetails {
-            backup_vault_events: self.backup_vault_events
-            ,
-            sns_topic_arn: self.sns_topic_arn
-            ,
+            backup_vault_events: self.backup_vault_events,
+            sns_topic_arn: self.sns_topic_arn,
         }
     }
 }
-

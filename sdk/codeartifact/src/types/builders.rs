@@ -42,4 +42,3 @@ pub use crate::types::_license_info::LicenseInfoBuilder;
 pub use crate::types::_package_description::PackageDescriptionBuilder;
 
 pub use crate::types::_domain_description::DomainDescriptionBuilder;
-

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetAccessPointPolicyOutput  {
+pub struct GetAccessPointPolicyOutput {
     /// <p>The access point policy associated with the specified access point.</p>
     #[doc(hidden)]
     pub policy: std::option::Option<std::string::String>,
@@ -10,18 +10,20 @@ pub struct GetAccessPointPolicyOutput  {
 }
 impl GetAccessPointPolicyOutput {
     /// <p>The access point policy associated with the specified access point.</p>
-    pub fn policy(&self) -> std::option::Option<& str> {
+    pub fn policy(&self) -> std::option::Option<&str> {
         self.policy.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for GetAccessPointPolicyOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl GetAccessPointPolicyOutput {
     /// Creates a new builder-style object to manufacture [`GetAccessPointPolicyOutput`](crate::operation::get_access_point_policy::GetAccessPointPolicyOutput).
-    pub fn builder() -> crate::operation::get_access_point_policy::builders::GetAccessPointPolicyOutputBuilder {
+    pub fn builder(
+    ) -> crate::operation::get_access_point_policy::builders::GetAccessPointPolicyOutputBuilder
+    {
         crate::operation::get_access_point_policy::builders::GetAccessPointPolicyOutputBuilder::default()
     }
 }
@@ -41,24 +43,23 @@ impl GetAccessPointPolicyOutputBuilder {
     }
     /// <p>The access point policy associated with the specified access point.</p>
     pub fn set_policy(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.policy = input; self
+        self.policy = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`GetAccessPointPolicyOutput`](crate::operation::get_access_point_policy::GetAccessPointPolicyOutput).
     pub fn build(self) -> crate::operation::get_access_point_policy::GetAccessPointPolicyOutput {
         crate::operation::get_access_point_policy::GetAccessPointPolicyOutput {
-            policy: self.policy
-            ,
+            policy: self.policy,
             _request_id: self._request_id,
         }
     }
 }
-

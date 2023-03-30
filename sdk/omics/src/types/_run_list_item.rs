@@ -3,7 +3,7 @@
 /// <p>A workflow run.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct RunListItem  {
+pub struct RunListItem {
     /// <p>The run's ARN.</p>
     #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
@@ -37,23 +37,23 @@ pub struct RunListItem  {
 }
 impl RunListItem {
     /// <p>The run's ARN.</p>
-    pub fn arn(&self) -> std::option::Option<& str> {
+    pub fn arn(&self) -> std::option::Option<&str> {
         self.arn.as_deref()
     }
     /// <p>The run's ID.</p>
-    pub fn id(&self) -> std::option::Option<& str> {
+    pub fn id(&self) -> std::option::Option<&str> {
         self.id.as_deref()
     }
     /// <p>The run's status.</p>
-    pub fn status(&self) -> std::option::Option<& crate::types::RunStatus> {
+    pub fn status(&self) -> std::option::Option<&crate::types::RunStatus> {
         self.status.as_ref()
     }
     /// <p>The run's workflow ID.</p>
-    pub fn workflow_id(&self) -> std::option::Option<& str> {
+    pub fn workflow_id(&self) -> std::option::Option<&str> {
         self.workflow_id.as_deref()
     }
     /// <p>The run's name.</p>
-    pub fn name(&self) -> std::option::Option<& str> {
+    pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>The run's priority.</p>
@@ -65,15 +65,15 @@ impl RunListItem {
         self.storage_capacity
     }
     /// <p>When the run was created.</p>
-    pub fn creation_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
+    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
     /// <p>When the run started.</p>
-    pub fn start_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
+    pub fn start_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.start_time.as_ref()
     }
     /// <p>When the run stopped.</p>
-    pub fn stop_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
+    pub fn stop_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.stop_time.as_ref()
     }
 }
@@ -107,7 +107,8 @@ impl RunListItemBuilder {
     }
     /// <p>The run's ARN.</p>
     pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.arn = input; self
+        self.arn = input;
+        self
     }
     /// <p>The run's ID.</p>
     pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -116,7 +117,8 @@ impl RunListItemBuilder {
     }
     /// <p>The run's ID.</p>
     pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.id = input; self
+        self.id = input;
+        self
     }
     /// <p>The run's status.</p>
     pub fn status(mut self, input: crate::types::RunStatus) -> Self {
@@ -125,7 +127,8 @@ impl RunListItemBuilder {
     }
     /// <p>The run's status.</p>
     pub fn set_status(mut self, input: std::option::Option<crate::types::RunStatus>) -> Self {
-        self.status = input; self
+        self.status = input;
+        self
     }
     /// <p>The run's workflow ID.</p>
     pub fn workflow_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -134,7 +137,8 @@ impl RunListItemBuilder {
     }
     /// <p>The run's workflow ID.</p>
     pub fn set_workflow_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.workflow_id = input; self
+        self.workflow_id = input;
+        self
     }
     /// <p>The run's name.</p>
     pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -143,7 +147,8 @@ impl RunListItemBuilder {
     }
     /// <p>The run's name.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input; self
+        self.name = input;
+        self
     }
     /// <p>The run's priority.</p>
     pub fn priority(mut self, input: i32) -> Self {
@@ -152,7 +157,8 @@ impl RunListItemBuilder {
     }
     /// <p>The run's priority.</p>
     pub fn set_priority(mut self, input: std::option::Option<i32>) -> Self {
-        self.priority = input; self
+        self.priority = input;
+        self
     }
     /// <p>The run's storage capacity.</p>
     pub fn storage_capacity(mut self, input: i32) -> Self {
@@ -161,7 +167,8 @@ impl RunListItemBuilder {
     }
     /// <p>The run's storage capacity.</p>
     pub fn set_storage_capacity(mut self, input: std::option::Option<i32>) -> Self {
-        self.storage_capacity = input; self
+        self.storage_capacity = input;
+        self
     }
     /// <p>When the run was created.</p>
     pub fn creation_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -169,8 +176,12 @@ impl RunListItemBuilder {
         self
     }
     /// <p>When the run was created.</p>
-    pub fn set_creation_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.creation_time = input; self
+    pub fn set_creation_time(
+        mut self,
+        input: std::option::Option<aws_smithy_types::DateTime>,
+    ) -> Self {
+        self.creation_time = input;
+        self
     }
     /// <p>When the run started.</p>
     pub fn start_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -178,8 +189,12 @@ impl RunListItemBuilder {
         self
     }
     /// <p>When the run started.</p>
-    pub fn set_start_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.start_time = input; self
+    pub fn set_start_time(
+        mut self,
+        input: std::option::Option<aws_smithy_types::DateTime>,
+    ) -> Self {
+        self.start_time = input;
+        self
     }
     /// <p>When the run stopped.</p>
     pub fn stop_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -188,32 +203,22 @@ impl RunListItemBuilder {
     }
     /// <p>When the run stopped.</p>
     pub fn set_stop_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.stop_time = input; self
+        self.stop_time = input;
+        self
     }
     /// Consumes the builder and constructs a [`RunListItem`](crate::types::RunListItem).
     pub fn build(self) -> crate::types::RunListItem {
         crate::types::RunListItem {
-            arn: self.arn
-            ,
-            id: self.id
-            ,
-            status: self.status
-            ,
-            workflow_id: self.workflow_id
-            ,
-            name: self.name
-            ,
-            priority: self.priority
-            ,
-            storage_capacity: self.storage_capacity
-            ,
-            creation_time: self.creation_time
-            ,
-            start_time: self.start_time
-            ,
-            stop_time: self.stop_time
-            ,
+            arn: self.arn,
+            id: self.id,
+            status: self.status,
+            workflow_id: self.workflow_id,
+            name: self.name,
+            priority: self.priority,
+            storage_capacity: self.storage_capacity,
+            creation_time: self.creation_time,
+            start_time: self.start_time,
+            stop_time: self.stop_time,
         }
     }
 }
-

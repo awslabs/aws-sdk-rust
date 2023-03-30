@@ -2,15 +2,15 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateRegexPatternSetInput  {
+pub struct UpdateRegexPatternSetInput {
     /// <p>The name of the set. You cannot change the name after you create the set.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
-    /// <p>Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, an AppSync GraphQL API, or an Amazon Cognito user pool. </p> 
-    /// <p>To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows: </p> 
-    /// <ul> 
-    /// <li> <p>CLI - Specify the Region when you use the CloudFront scope: <code>--scope=CLOUDFRONT --region=us-east-1</code>. </p> </li> 
-    /// <li> <p>API and SDKs - For all calls, use the Region endpoint us-east-1. </p> </li> 
+    /// <p>Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, an AppSync GraphQL API, or an Amazon Cognito user pool. </p>
+    /// <p>To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows: </p>
+    /// <ul>
+    /// <li> <p>CLI - Specify the Region when you use the CloudFront scope: <code>--scope=CLOUDFRONT --region=us-east-1</code>. </p> </li>
+    /// <li> <p>API and SDKs - For all calls, use the Region endpoint us-east-1. </p> </li>
     /// </ul>
     #[doc(hidden)]
     pub scope: std::option::Option<crate::types::Scope>,
@@ -29,38 +29,40 @@ pub struct UpdateRegexPatternSetInput  {
 }
 impl UpdateRegexPatternSetInput {
     /// <p>The name of the set. You cannot change the name after you create the set.</p>
-    pub fn name(&self) -> std::option::Option<& str> {
+    pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
-    /// <p>Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, an AppSync GraphQL API, or an Amazon Cognito user pool. </p> 
-    /// <p>To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows: </p> 
-    /// <ul> 
-    /// <li> <p>CLI - Specify the Region when you use the CloudFront scope: <code>--scope=CLOUDFRONT --region=us-east-1</code>. </p> </li> 
-    /// <li> <p>API and SDKs - For all calls, use the Region endpoint us-east-1. </p> </li> 
+    /// <p>Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, an AppSync GraphQL API, or an Amazon Cognito user pool. </p>
+    /// <p>To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows: </p>
+    /// <ul>
+    /// <li> <p>CLI - Specify the Region when you use the CloudFront scope: <code>--scope=CLOUDFRONT --region=us-east-1</code>. </p> </li>
+    /// <li> <p>API and SDKs - For all calls, use the Region endpoint us-east-1. </p> </li>
     /// </ul>
-    pub fn scope(&self) -> std::option::Option<& crate::types::Scope> {
+    pub fn scope(&self) -> std::option::Option<&crate::types::Scope> {
         self.scope.as_ref()
     }
     /// <p>A unique identifier for the set. This ID is returned in the responses to create and list commands. You provide it to operations like update and delete.</p>
-    pub fn id(&self) -> std::option::Option<& str> {
+    pub fn id(&self) -> std::option::Option<&str> {
         self.id.as_deref()
     }
     /// <p>A description of the set that helps with identification. </p>
-    pub fn description(&self) -> std::option::Option<& str> {
+    pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
     /// <p></p>
-    pub fn regular_expression_list(&self) -> std::option::Option<& [crate::types::Regex]> {
+    pub fn regular_expression_list(&self) -> std::option::Option<&[crate::types::Regex]> {
         self.regular_expression_list.as_deref()
     }
     /// <p>A token used for optimistic locking. WAF returns a token to your <code>get</code> and <code>list</code> requests, to mark the state of the entity at the time of the request. To make changes to the entity associated with the token, you provide the token to operations like <code>update</code> and <code>delete</code>. WAF uses the token to ensure that no changes have been made to the entity since you last retrieved it. If a change has been made, the update fails with a <code>WAFOptimisticLockException</code>. If this happens, perform another <code>get</code>, and use the new token returned by that operation. </p>
-    pub fn lock_token(&self) -> std::option::Option<& str> {
+    pub fn lock_token(&self) -> std::option::Option<&str> {
         self.lock_token.as_deref()
     }
 }
 impl UpdateRegexPatternSetInput {
     /// Creates a new builder-style object to manufacture [`UpdateRegexPatternSetInput`](crate::operation::update_regex_pattern_set::UpdateRegexPatternSetInput).
-    pub fn builder() -> crate::operation::update_regex_pattern_set::builders::UpdateRegexPatternSetInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::update_regex_pattern_set::builders::UpdateRegexPatternSetInputBuilder
+    {
         crate::operation::update_regex_pattern_set::builders::UpdateRegexPatternSetInputBuilder::default()
     }
 }
@@ -84,26 +86,28 @@ impl UpdateRegexPatternSetInputBuilder {
     }
     /// <p>The name of the set. You cannot change the name after you create the set.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input; self
+        self.name = input;
+        self
     }
-    /// <p>Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, an AppSync GraphQL API, or an Amazon Cognito user pool. </p> 
-    /// <p>To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows: </p> 
-    /// <ul> 
-    /// <li> <p>CLI - Specify the Region when you use the CloudFront scope: <code>--scope=CLOUDFRONT --region=us-east-1</code>. </p> </li> 
-    /// <li> <p>API and SDKs - For all calls, use the Region endpoint us-east-1. </p> </li> 
+    /// <p>Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, an AppSync GraphQL API, or an Amazon Cognito user pool. </p>
+    /// <p>To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows: </p>
+    /// <ul>
+    /// <li> <p>CLI - Specify the Region when you use the CloudFront scope: <code>--scope=CLOUDFRONT --region=us-east-1</code>. </p> </li>
+    /// <li> <p>API and SDKs - For all calls, use the Region endpoint us-east-1. </p> </li>
     /// </ul>
     pub fn scope(mut self, input: crate::types::Scope) -> Self {
         self.scope = Some(input);
         self
     }
-    /// <p>Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, an AppSync GraphQL API, or an Amazon Cognito user pool. </p> 
-    /// <p>To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows: </p> 
-    /// <ul> 
-    /// <li> <p>CLI - Specify the Region when you use the CloudFront scope: <code>--scope=CLOUDFRONT --region=us-east-1</code>. </p> </li> 
-    /// <li> <p>API and SDKs - For all calls, use the Region endpoint us-east-1. </p> </li> 
+    /// <p>Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, an AppSync GraphQL API, or an Amazon Cognito user pool. </p>
+    /// <p>To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows: </p>
+    /// <ul>
+    /// <li> <p>CLI - Specify the Region when you use the CloudFront scope: <code>--scope=CLOUDFRONT --region=us-east-1</code>. </p> </li>
+    /// <li> <p>API and SDKs - For all calls, use the Region endpoint us-east-1. </p> </li>
     /// </ul>
     pub fn set_scope(mut self, input: std::option::Option<crate::types::Scope>) -> Self {
-        self.scope = input; self
+        self.scope = input;
+        self
     }
     /// <p>A unique identifier for the set. This ID is returned in the responses to create and list commands. You provide it to operations like update and delete.</p>
     pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -112,7 +116,8 @@ impl UpdateRegexPatternSetInputBuilder {
     }
     /// <p>A unique identifier for the set. This ID is returned in the responses to create and list commands. You provide it to operations like update and delete.</p>
     pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.id = input; self
+        self.id = input;
+        self
     }
     /// <p>A description of the set that helps with identification. </p>
     pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -121,7 +126,8 @@ impl UpdateRegexPatternSetInputBuilder {
     }
     /// <p>A description of the set that helps with identification. </p>
     pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.description = input; self
+        self.description = input;
+        self
     }
     /// Appends an item to `regular_expression_list`.
     ///
@@ -130,13 +136,17 @@ impl UpdateRegexPatternSetInputBuilder {
     /// <p></p>
     pub fn regular_expression_list(mut self, input: crate::types::Regex) -> Self {
         let mut v = self.regular_expression_list.unwrap_or_default();
-                        v.push(input);
-                        self.regular_expression_list = Some(v);
-                        self
+        v.push(input);
+        self.regular_expression_list = Some(v);
+        self
     }
     /// <p></p>
-    pub fn set_regular_expression_list(mut self, input: std::option::Option<std::vec::Vec<crate::types::Regex>>) -> Self {
-        self.regular_expression_list = input; self
+    pub fn set_regular_expression_list(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::Regex>>,
+    ) -> Self {
+        self.regular_expression_list = input;
+        self
     }
     /// <p>A token used for optimistic locking. WAF returns a token to your <code>get</code> and <code>list</code> requests, to mark the state of the entity at the time of the request. To make changes to the entity associated with the token, you provide the token to operations like <code>update</code> and <code>delete</code>. WAF uses the token to ensure that no changes have been made to the entity since you last retrieved it. If a change has been made, the update fails with a <code>WAFOptimisticLockException</code>. If this happens, perform another <code>get</code>, and use the new token returned by that operation. </p>
     pub fn lock_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -145,26 +155,25 @@ impl UpdateRegexPatternSetInputBuilder {
     }
     /// <p>A token used for optimistic locking. WAF returns a token to your <code>get</code> and <code>list</code> requests, to mark the state of the entity at the time of the request. To make changes to the entity associated with the token, you provide the token to operations like <code>update</code> and <code>delete</code>. WAF uses the token to ensure that no changes have been made to the entity since you last retrieved it. If a change has been made, the update fails with a <code>WAFOptimisticLockException</code>. If this happens, perform another <code>get</code>, and use the new token returned by that operation. </p>
     pub fn set_lock_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.lock_token = input; self
+        self.lock_token = input;
+        self
     }
     /// Consumes the builder and constructs a [`UpdateRegexPatternSetInput`](crate::operation::update_regex_pattern_set::UpdateRegexPatternSetInput).
-    pub fn build(self) -> Result<crate::operation::update_regex_pattern_set::UpdateRegexPatternSetInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::update_regex_pattern_set::UpdateRegexPatternSetInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::update_regex_pattern_set::UpdateRegexPatternSetInput {
-                name: self.name
-                ,
-                scope: self.scope
-                ,
-                id: self.id
-                ,
-                description: self.description
-                ,
-                regular_expression_list: self.regular_expression_list
-                ,
-                lock_token: self.lock_token
-                ,
-            }
+                name: self.name,
+                scope: self.scope,
+                id: self.id,
+                description: self.description,
+                regular_expression_list: self.regular_expression_list,
+                lock_token: self.lock_token,
+            },
         )
     }
 }
-

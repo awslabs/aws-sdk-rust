@@ -4,56 +4,81 @@ pub use crate::operation::delete_client_vpn_route::_delete_client_vpn_route_outp
 pub use crate::operation::delete_client_vpn_route::_delete_client_vpn_route_input::DeleteClientVpnRouteInputBuilder;
 
 /// Fluent builder constructing a request to `DeleteClientVpnRoute`.
-/// 
+///
 /// <p>Deletes a route from a Client VPN endpoint. You can only delete routes that you manually added using the <b>CreateClientVpnRoute</b> action. You cannot delete routes that were automatically added when associating a subnet. To remove routes that have been automatically added, disassociate the target subnet from the Client VPN endpoint.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DeleteClientVpnRouteFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::delete_client_vpn_route::builders::DeleteClientVpnRouteInputBuilder
-            }
-impl DeleteClientVpnRouteFluentBuilder  {
+    handle: std::sync::Arc<crate::client::Handle>,
+    inner: crate::operation::delete_client_vpn_route::builders::DeleteClientVpnRouteInputBuilder,
+}
+impl DeleteClientVpnRouteFluentBuilder {
     /// Creates a new `DeleteClientVpnRoute`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
-                    /// sent. The operation's inner [http::Request] can be modified as well.
-                    pub async fn customize(self) -> std::result::Result<
-                        crate::client::customize::CustomizableOperation<crate::operation::delete_client_vpn_route::DeleteClientVpnRoute, aws_http::retry::AwsResponseRetryClassifier,>,
-                        aws_smithy_http::result::SdkError<crate::operation::delete_client_vpn_route::DeleteClientVpnRouteError>
-                    >  {
-                        let handle = self.handle.clone();
-                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-                    }
-    
-                    /// Sends the request and returns the response.
-                    ///
-                    /// If an error occurs, an `SdkError` will be returned with additional details that
-                    /// can be matched against.
-                    ///
-                    /// By default, any retryable failures will be retried twice. Retry behavior
-                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                    /// set when configuring the client.
-                    pub async fn send(self) -> std::result::Result<crate::operation::delete_client_vpn_route::DeleteClientVpnRouteOutput, aws_smithy_http::result::SdkError<crate::operation::delete_client_vpn_route::DeleteClientVpnRouteError>>
-                     {
-                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&self.handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        self.handle.client.call(op).await
-                    }
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle,
+            inner: Default::default(),
+        }
+    }
+
+    /// Consume this builder, creating a customizable operation that can be modified before being
+    /// sent. The operation's inner [http::Request] can be modified as well.
+    pub async fn customize(
+        self,
+    ) -> std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::delete_client_vpn_route::DeleteClientVpnRoute,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::result::SdkError<
+            crate::operation::delete_client_vpn_route::DeleteClientVpnRouteError,
+        >,
+    > {
+        let handle = self.handle.clone();
+        let operation = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+    }
+
+    /// Sends the request and returns the response.
+    ///
+    /// If an error occurs, an `SdkError` will be returned with additional details that
+    /// can be matched against.
+    ///
+    /// By default, any retryable failures will be retried twice. Retry behavior
+    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+    /// set when configuring the client.
+    pub async fn send(
+        self,
+    ) -> std::result::Result<
+        crate::operation::delete_client_vpn_route::DeleteClientVpnRouteOutput,
+        aws_smithy_http::result::SdkError<
+            crate::operation::delete_client_vpn_route::DeleteClientVpnRouteError,
+        >,
+    > {
+        let op = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&self.handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        self.handle.client.call(op).await
+    }
     /// <p>The ID of the Client VPN endpoint from which the route is to be deleted.</p>
     pub fn client_vpn_endpoint_id(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.client_vpn_endpoint_id(input.into());
         self
     }
     /// <p>The ID of the Client VPN endpoint from which the route is to be deleted.</p>
-    pub fn set_client_vpn_endpoint_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_client_vpn_endpoint_id(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_client_vpn_endpoint_id(input);
         self
     }
@@ -63,7 +88,10 @@ impl DeleteClientVpnRouteFluentBuilder  {
         self
     }
     /// <p>The ID of the target subnet used by the route.</p>
-    pub fn set_target_vpc_subnet_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_target_vpc_subnet_id(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_target_vpc_subnet_id(input);
         self
     }
@@ -73,7 +101,10 @@ impl DeleteClientVpnRouteFluentBuilder  {
         self
     }
     /// <p>The IPv4 address range, in CIDR notation, of the route to be deleted.</p>
-    pub fn set_destination_cidr_block(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_destination_cidr_block(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_destination_cidr_block(input);
         self
     }
@@ -88,4 +119,3 @@ impl DeleteClientVpnRouteFluentBuilder  {
         self
     }
 }
-

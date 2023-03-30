@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct DetectDominantLanguageOutput  {
+pub struct DetectDominantLanguageOutput {
     /// <p>The languages that Amazon Comprehend detected in the input text. For each language, the response returns the RFC 5646 language code and the level of confidence that Amazon Comprehend has in the accuracy of its inference. For more information about RFC 5646, see <a href="https://tools.ietf.org/html/rfc5646">Tags for Identifying Languages</a> on the <i>IETF Tools</i> web site.</p>
     #[doc(hidden)]
     pub languages: std::option::Option<std::vec::Vec<crate::types::DominantLanguage>>,
@@ -10,11 +10,11 @@ pub struct DetectDominantLanguageOutput  {
 }
 impl DetectDominantLanguageOutput {
     /// <p>The languages that Amazon Comprehend detected in the input text. For each language, the response returns the RFC 5646 language code and the level of confidence that Amazon Comprehend has in the accuracy of its inference. For more information about RFC 5646, see <a href="https://tools.ietf.org/html/rfc5646">Tags for Identifying Languages</a> on the <i>IETF Tools</i> web site.</p>
-    pub fn languages(&self) -> std::option::Option<& [crate::types::DominantLanguage]> {
+    pub fn languages(&self) -> std::option::Option<&[crate::types::DominantLanguage]> {
         self.languages.as_deref()
     }
 }
-impl  std::fmt::Debug for DetectDominantLanguageOutput  {
+impl std::fmt::Debug for DetectDominantLanguageOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DetectDominantLanguageOutput");
         formatter.field("languages", &"*** Sensitive Data Redacted ***");
@@ -23,13 +23,15 @@ impl  std::fmt::Debug for DetectDominantLanguageOutput  {
     }
 }
 impl aws_http::request_id::RequestId for DetectDominantLanguageOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl DetectDominantLanguageOutput {
     /// Creates a new builder-style object to manufacture [`DetectDominantLanguageOutput`](crate::operation::detect_dominant_language::DetectDominantLanguageOutput).
-    pub fn builder() -> crate::operation::detect_dominant_language::builders::DetectDominantLanguageOutputBuilder {
+    pub fn builder(
+    ) -> crate::operation::detect_dominant_language::builders::DetectDominantLanguageOutputBuilder
+    {
         crate::operation::detect_dominant_language::builders::DetectDominantLanguageOutputBuilder::default()
     }
 }
@@ -49,28 +51,31 @@ impl DetectDominantLanguageOutputBuilder {
     /// <p>The languages that Amazon Comprehend detected in the input text. For each language, the response returns the RFC 5646 language code and the level of confidence that Amazon Comprehend has in the accuracy of its inference. For more information about RFC 5646, see <a href="https://tools.ietf.org/html/rfc5646">Tags for Identifying Languages</a> on the <i>IETF Tools</i> web site.</p>
     pub fn languages(mut self, input: crate::types::DominantLanguage) -> Self {
         let mut v = self.languages.unwrap_or_default();
-                        v.push(input);
-                        self.languages = Some(v);
-                        self
+        v.push(input);
+        self.languages = Some(v);
+        self
     }
     /// <p>The languages that Amazon Comprehend detected in the input text. For each language, the response returns the RFC 5646 language code and the level of confidence that Amazon Comprehend has in the accuracy of its inference. For more information about RFC 5646, see <a href="https://tools.ietf.org/html/rfc5646">Tags for Identifying Languages</a> on the <i>IETF Tools</i> web site.</p>
-    pub fn set_languages(mut self, input: std::option::Option<std::vec::Vec<crate::types::DominantLanguage>>) -> Self {
-        self.languages = input; self
+    pub fn set_languages(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::DominantLanguage>>,
+    ) -> Self {
+        self.languages = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`DetectDominantLanguageOutput`](crate::operation::detect_dominant_language::DetectDominantLanguageOutput).
     pub fn build(self) -> crate::operation::detect_dominant_language::DetectDominantLanguageOutput {
         crate::operation::detect_dominant_language::DetectDominantLanguageOutput {
-            languages: self.languages
-            ,
+            languages: self.languages,
             _request_id: self._request_id,
         }
     }
@@ -83,4 +88,3 @@ impl std::fmt::Debug for DetectDominantLanguageOutputBuilder {
         formatter.finish()
     }
 }
-

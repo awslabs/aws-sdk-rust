@@ -52,4 +52,3 @@ pub mod builders;
 
 /// Error types that AWS CloudHSM V2 can respond with.
 pub mod error;
-

@@ -3,7 +3,7 @@
 /// <p>The number of minutes specified for the lifetime of a session isn't valid. The session lifetime must be 15-600 minutes.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SessionLifetimeInMinutesInvalidException  {
+pub struct SessionLifetimeInMinutesInvalidException {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
@@ -14,19 +14,21 @@ pub struct SessionLifetimeInMinutesInvalidException  {
 }
 impl SessionLifetimeInMinutesInvalidException {
     /// <p>The Amazon Web Services request ID for this request.</p>
-    pub fn request_id(&self) -> std::option::Option<& str> {
+    pub fn request_id(&self) -> std::option::Option<&str> {
         self.request_id.as_deref()
     }
 }
 impl SessionLifetimeInMinutesInvalidException {
     /// Returns the error message.
-                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
+    pub fn message(&self) -> std::option::Option<&str> {
+        self.message.as_deref()
+    }
 }
 impl std::fmt::Display for SessionLifetimeInMinutesInvalidException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "SessionLifetimeInMinutesInvalidException")?;
         if let Some(inner_1) = &self.message {
-             {
+            {
                 write!(f, ": {}", inner_1)?;
             }
         }
@@ -34,18 +36,25 @@ impl std::fmt::Display for SessionLifetimeInMinutesInvalidException {
     }
 }
 impl std::error::Error for SessionLifetimeInMinutesInvalidException {}
-impl aws_http::request_id::RequestId for crate::types::error::SessionLifetimeInMinutesInvalidException {
+impl aws_http::request_id::RequestId
+    for crate::types::error::SessionLifetimeInMinutesInvalidException
+{
     fn request_id(&self) -> Option<&str> {
         use aws_smithy_types::error::metadata::ProvideErrorMetadata;
         self.meta().request_id()
     }
 }
-impl aws_smithy_types::error::metadata::ProvideErrorMetadata for SessionLifetimeInMinutesInvalidException {
-    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata { &self.meta }
+impl aws_smithy_types::error::metadata::ProvideErrorMetadata
+    for SessionLifetimeInMinutesInvalidException
+{
+    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
+        &self.meta
+    }
 }
 impl SessionLifetimeInMinutesInvalidException {
     /// Creates a new builder-style object to manufacture [`SessionLifetimeInMinutesInvalidException`](crate::types::error::SessionLifetimeInMinutesInvalidException).
-    pub fn builder() -> crate::types::error::builders::SessionLifetimeInMinutesInvalidExceptionBuilder {
+    pub fn builder(
+    ) -> crate::types::error::builders::SessionLifetimeInMinutesInvalidExceptionBuilder {
         crate::types::error::builders::SessionLifetimeInMinutesInvalidExceptionBuilder::default()
     }
 }
@@ -66,7 +75,8 @@ impl SessionLifetimeInMinutesInvalidExceptionBuilder {
     }
     #[allow(missing_docs)] // documentation missing in model
     pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.message = input; self
+        self.message = input;
+        self
     }
     /// <p>The Amazon Web Services request ID for this request.</p>
     pub fn request_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -75,28 +85,29 @@ impl SessionLifetimeInMinutesInvalidExceptionBuilder {
     }
     /// <p>The Amazon Web Services request ID for this request.</p>
     pub fn set_request_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.request_id = input; self
+        self.request_id = input;
+        self
     }
     /// Sets error metadata
-                                            pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
-                                                self.meta = Some(meta);
-                                                self
-                                            }
-    
-                                            /// Sets error metadata
-                                            pub fn set_meta(&mut self, meta: std::option::Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
-                                                self.meta = meta;
-                                                self
-                                            }
+    pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
+        self.meta = Some(meta);
+        self
+    }
+
+    /// Sets error metadata
+    pub fn set_meta(
+        &mut self,
+        meta: std::option::Option<aws_smithy_types::error::ErrorMetadata>,
+    ) -> &mut Self {
+        self.meta = meta;
+        self
+    }
     /// Consumes the builder and constructs a [`SessionLifetimeInMinutesInvalidException`](crate::types::error::SessionLifetimeInMinutesInvalidException).
     pub fn build(self) -> crate::types::error::SessionLifetimeInMinutesInvalidException {
         crate::types::error::SessionLifetimeInMinutesInvalidException {
-            message: self.message
-            ,
-            request_id: self.request_id
-            ,
+            message: self.message,
+            request_id: self.request_id,
             meta: self.meta.unwrap_or_default(),
         }
     }
 }
-

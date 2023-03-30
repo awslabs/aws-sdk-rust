@@ -3,7 +3,7 @@
 /// <p>Dashboard publish options.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DashboardPublishOptions  {
+pub struct DashboardPublishOptions {
     /// <p>Ad hoc (one-time) filtering option.</p>
     #[doc(hidden)]
     pub ad_hoc_filtering_option: std::option::Option<crate::types::AdHocFilteringOption>,
@@ -19,19 +19,23 @@ pub struct DashboardPublishOptions  {
 }
 impl DashboardPublishOptions {
     /// <p>Ad hoc (one-time) filtering option.</p>
-    pub fn ad_hoc_filtering_option(&self) -> std::option::Option<& crate::types::AdHocFilteringOption> {
+    pub fn ad_hoc_filtering_option(
+        &self,
+    ) -> std::option::Option<&crate::types::AdHocFilteringOption> {
         self.ad_hoc_filtering_option.as_ref()
     }
     /// <p>Export to .csv option.</p>
-    pub fn export_to_csv_option(&self) -> std::option::Option<& crate::types::ExportToCsvOption> {
+    pub fn export_to_csv_option(&self) -> std::option::Option<&crate::types::ExportToCsvOption> {
         self.export_to_csv_option.as_ref()
     }
     /// <p>Sheet controls option.</p>
-    pub fn sheet_controls_option(&self) -> std::option::Option<& crate::types::SheetControlsOption> {
+    pub fn sheet_controls_option(&self) -> std::option::Option<&crate::types::SheetControlsOption> {
         self.sheet_controls_option.as_ref()
     }
     /// <p></p>
-    pub fn visual_publish_options(&self) -> std::option::Option<& crate::types::DashboardVisualPublishOptions> {
+    pub fn visual_publish_options(
+        &self,
+    ) -> std::option::Option<&crate::types::DashboardVisualPublishOptions> {
         self.visual_publish_options.as_ref()
     }
 }
@@ -49,7 +53,8 @@ pub struct DashboardPublishOptionsBuilder {
     pub(crate) ad_hoc_filtering_option: std::option::Option<crate::types::AdHocFilteringOption>,
     pub(crate) export_to_csv_option: std::option::Option<crate::types::ExportToCsvOption>,
     pub(crate) sheet_controls_option: std::option::Option<crate::types::SheetControlsOption>,
-    pub(crate) visual_publish_options: std::option::Option<crate::types::DashboardVisualPublishOptions>,
+    pub(crate) visual_publish_options:
+        std::option::Option<crate::types::DashboardVisualPublishOptions>,
 }
 impl DashboardPublishOptionsBuilder {
     /// <p>Ad hoc (one-time) filtering option.</p>
@@ -58,8 +63,12 @@ impl DashboardPublishOptionsBuilder {
         self
     }
     /// <p>Ad hoc (one-time) filtering option.</p>
-    pub fn set_ad_hoc_filtering_option(mut self, input: std::option::Option<crate::types::AdHocFilteringOption>) -> Self {
-        self.ad_hoc_filtering_option = input; self
+    pub fn set_ad_hoc_filtering_option(
+        mut self,
+        input: std::option::Option<crate::types::AdHocFilteringOption>,
+    ) -> Self {
+        self.ad_hoc_filtering_option = input;
+        self
     }
     /// <p>Export to .csv option.</p>
     pub fn export_to_csv_option(mut self, input: crate::types::ExportToCsvOption) -> Self {
@@ -67,8 +76,12 @@ impl DashboardPublishOptionsBuilder {
         self
     }
     /// <p>Export to .csv option.</p>
-    pub fn set_export_to_csv_option(mut self, input: std::option::Option<crate::types::ExportToCsvOption>) -> Self {
-        self.export_to_csv_option = input; self
+    pub fn set_export_to_csv_option(
+        mut self,
+        input: std::option::Option<crate::types::ExportToCsvOption>,
+    ) -> Self {
+        self.export_to_csv_option = input;
+        self
     }
     /// <p>Sheet controls option.</p>
     pub fn sheet_controls_option(mut self, input: crate::types::SheetControlsOption) -> Self {
@@ -76,30 +89,36 @@ impl DashboardPublishOptionsBuilder {
         self
     }
     /// <p>Sheet controls option.</p>
-    pub fn set_sheet_controls_option(mut self, input: std::option::Option<crate::types::SheetControlsOption>) -> Self {
-        self.sheet_controls_option = input; self
+    pub fn set_sheet_controls_option(
+        mut self,
+        input: std::option::Option<crate::types::SheetControlsOption>,
+    ) -> Self {
+        self.sheet_controls_option = input;
+        self
     }
     /// <p></p>
-    pub fn visual_publish_options(mut self, input: crate::types::DashboardVisualPublishOptions) -> Self {
+    pub fn visual_publish_options(
+        mut self,
+        input: crate::types::DashboardVisualPublishOptions,
+    ) -> Self {
         self.visual_publish_options = Some(input);
         self
     }
     /// <p></p>
-    pub fn set_visual_publish_options(mut self, input: std::option::Option<crate::types::DashboardVisualPublishOptions>) -> Self {
-        self.visual_publish_options = input; self
+    pub fn set_visual_publish_options(
+        mut self,
+        input: std::option::Option<crate::types::DashboardVisualPublishOptions>,
+    ) -> Self {
+        self.visual_publish_options = input;
+        self
     }
     /// Consumes the builder and constructs a [`DashboardPublishOptions`](crate::types::DashboardPublishOptions).
     pub fn build(self) -> crate::types::DashboardPublishOptions {
         crate::types::DashboardPublishOptions {
-            ad_hoc_filtering_option: self.ad_hoc_filtering_option
-            ,
-            export_to_csv_option: self.export_to_csv_option
-            ,
-            sheet_controls_option: self.sheet_controls_option
-            ,
-            visual_publish_options: self.visual_publish_options
-            ,
+            ad_hoc_filtering_option: self.ad_hoc_filtering_option,
+            export_to_csv_option: self.export_to_csv_option,
+            sheet_controls_option: self.sheet_controls_option,
+            visual_publish_options: self.visual_publish_options,
         }
     }
 }
-

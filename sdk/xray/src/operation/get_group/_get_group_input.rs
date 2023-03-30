@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetGroupInput  {
+pub struct GetGroupInput {
     /// <p>The case-sensitive name of the group.</p>
     #[doc(hidden)]
     pub group_name: std::option::Option<std::string::String>,
@@ -12,11 +12,11 @@ pub struct GetGroupInput  {
 }
 impl GetGroupInput {
     /// <p>The case-sensitive name of the group.</p>
-    pub fn group_name(&self) -> std::option::Option<& str> {
+    pub fn group_name(&self) -> std::option::Option<&str> {
         self.group_name.as_deref()
     }
     /// <p>The ARN of the group that was generated on creation.</p>
-    pub fn group_arn(&self) -> std::option::Option<& str> {
+    pub fn group_arn(&self) -> std::option::Option<&str> {
         self.group_arn.as_deref()
     }
 }
@@ -42,7 +42,8 @@ impl GetGroupInputBuilder {
     }
     /// <p>The case-sensitive name of the group.</p>
     pub fn set_group_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.group_name = input; self
+        self.group_name = input;
+        self
     }
     /// <p>The ARN of the group that was generated on creation.</p>
     pub fn group_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -51,18 +52,19 @@ impl GetGroupInputBuilder {
     }
     /// <p>The ARN of the group that was generated on creation.</p>
     pub fn set_group_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.group_arn = input; self
+        self.group_arn = input;
+        self
     }
     /// Consumes the builder and constructs a [`GetGroupInput`](crate::operation::get_group::GetGroupInput).
-    pub fn build(self) -> Result<crate::operation::get_group::GetGroupInput, aws_smithy_http::operation::error::BuildError> {
-        Ok(
-            crate::operation::get_group::GetGroupInput {
-                group_name: self.group_name
-                ,
-                group_arn: self.group_arn
-                ,
-            }
-        )
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::get_group::GetGroupInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        Ok(crate::operation::get_group::GetGroupInput {
+            group_name: self.group_name,
+            group_arn: self.group_arn,
+        })
     }
 }
-

@@ -33,4 +33,3 @@ pub mod stop_product_subscription;
 
 /// Types for the `UpdateIdentityProviderSettings` operation.
 pub mod update_identity_provider_settings;
-

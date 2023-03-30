@@ -2,61 +2,64 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct CreatePermissionGroupInput  {
+pub struct CreatePermissionGroupInput {
     /// <p>The name of the permission group.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>A brief description for the permission group.</p>
     #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
-    /// <p>The option to indicate FinSpace application permissions that are granted to a specific group.</p> <important> 
-    /// <p>When assigning application permissions, be aware that the permission <code>ManageUsersAndGroups</code> allows users to grant themselves or others access to any functionality in their FinSpace environment's application. It should only be granted to trusted users.</p> 
-    /// </important> 
-    /// <ul> 
-    /// <li> <p> <code>CreateDataset</code> – Group members can create new datasets.</p> </li> 
-    /// <li> <p> <code>ManageClusters</code> – Group members can manage Apache Spark clusters from FinSpace notebooks.</p> </li> 
-    /// <li> <p> <code>ManageUsersAndGroups</code> – Group members can manage users and permission groups. This is a privileged permission that allows users to grant themselves or others access to any functionality in the application. It should only be granted to trusted users.</p> </li> 
-    /// <li> <p> <code>ManageAttributeSets</code> – Group members can manage attribute sets.</p> </li> 
-    /// <li> <p> <code>ViewAuditData</code> – Group members can view audit data.</p> </li> 
-    /// <li> <p> <code>AccessNotebooks</code> – Group members will have access to FinSpace notebooks.</p> </li> 
-    /// <li> <p> <code>GetTemporaryCredentials</code> – Group members can get temporary API credentials.</p> </li> 
+    /// <p>The option to indicate FinSpace application permissions that are granted to a specific group.</p> <important>
+    /// <p>When assigning application permissions, be aware that the permission <code>ManageUsersAndGroups</code> allows users to grant themselves or others access to any functionality in their FinSpace environment's application. It should only be granted to trusted users.</p>
+    /// </important>
+    /// <ul>
+    /// <li> <p> <code>CreateDataset</code> – Group members can create new datasets.</p> </li>
+    /// <li> <p> <code>ManageClusters</code> – Group members can manage Apache Spark clusters from FinSpace notebooks.</p> </li>
+    /// <li> <p> <code>ManageUsersAndGroups</code> – Group members can manage users and permission groups. This is a privileged permission that allows users to grant themselves or others access to any functionality in the application. It should only be granted to trusted users.</p> </li>
+    /// <li> <p> <code>ManageAttributeSets</code> – Group members can manage attribute sets.</p> </li>
+    /// <li> <p> <code>ViewAuditData</code> – Group members can view audit data.</p> </li>
+    /// <li> <p> <code>AccessNotebooks</code> – Group members will have access to FinSpace notebooks.</p> </li>
+    /// <li> <p> <code>GetTemporaryCredentials</code> – Group members can get temporary API credentials.</p> </li>
     /// </ul>
     #[doc(hidden)]
-    pub application_permissions: std::option::Option<std::vec::Vec<crate::types::ApplicationPermission>>,
+    pub application_permissions:
+        std::option::Option<std::vec::Vec<crate::types::ApplicationPermission>>,
     /// <p>A token that ensures idempotency. This token expires in 10 minutes.</p>
     #[doc(hidden)]
     pub client_token: std::option::Option<std::string::String>,
 }
 impl CreatePermissionGroupInput {
     /// <p>The name of the permission group.</p>
-    pub fn name(&self) -> std::option::Option<& str> {
+    pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>A brief description for the permission group.</p>
-    pub fn description(&self) -> std::option::Option<& str> {
+    pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
-    /// <p>The option to indicate FinSpace application permissions that are granted to a specific group.</p> <important> 
-    /// <p>When assigning application permissions, be aware that the permission <code>ManageUsersAndGroups</code> allows users to grant themselves or others access to any functionality in their FinSpace environment's application. It should only be granted to trusted users.</p> 
-    /// </important> 
-    /// <ul> 
-    /// <li> <p> <code>CreateDataset</code> – Group members can create new datasets.</p> </li> 
-    /// <li> <p> <code>ManageClusters</code> – Group members can manage Apache Spark clusters from FinSpace notebooks.</p> </li> 
-    /// <li> <p> <code>ManageUsersAndGroups</code> – Group members can manage users and permission groups. This is a privileged permission that allows users to grant themselves or others access to any functionality in the application. It should only be granted to trusted users.</p> </li> 
-    /// <li> <p> <code>ManageAttributeSets</code> – Group members can manage attribute sets.</p> </li> 
-    /// <li> <p> <code>ViewAuditData</code> – Group members can view audit data.</p> </li> 
-    /// <li> <p> <code>AccessNotebooks</code> – Group members will have access to FinSpace notebooks.</p> </li> 
-    /// <li> <p> <code>GetTemporaryCredentials</code> – Group members can get temporary API credentials.</p> </li> 
+    /// <p>The option to indicate FinSpace application permissions that are granted to a specific group.</p> <important>
+    /// <p>When assigning application permissions, be aware that the permission <code>ManageUsersAndGroups</code> allows users to grant themselves or others access to any functionality in their FinSpace environment's application. It should only be granted to trusted users.</p>
+    /// </important>
+    /// <ul>
+    /// <li> <p> <code>CreateDataset</code> – Group members can create new datasets.</p> </li>
+    /// <li> <p> <code>ManageClusters</code> – Group members can manage Apache Spark clusters from FinSpace notebooks.</p> </li>
+    /// <li> <p> <code>ManageUsersAndGroups</code> – Group members can manage users and permission groups. This is a privileged permission that allows users to grant themselves or others access to any functionality in the application. It should only be granted to trusted users.</p> </li>
+    /// <li> <p> <code>ManageAttributeSets</code> – Group members can manage attribute sets.</p> </li>
+    /// <li> <p> <code>ViewAuditData</code> – Group members can view audit data.</p> </li>
+    /// <li> <p> <code>AccessNotebooks</code> – Group members will have access to FinSpace notebooks.</p> </li>
+    /// <li> <p> <code>GetTemporaryCredentials</code> – Group members can get temporary API credentials.</p> </li>
     /// </ul>
-    pub fn application_permissions(&self) -> std::option::Option<& [crate::types::ApplicationPermission]> {
+    pub fn application_permissions(
+        &self,
+    ) -> std::option::Option<&[crate::types::ApplicationPermission]> {
         self.application_permissions.as_deref()
     }
     /// <p>A token that ensures idempotency. This token expires in 10 minutes.</p>
-    pub fn client_token(&self) -> std::option::Option<& str> {
+    pub fn client_token(&self) -> std::option::Option<&str> {
         self.client_token.as_deref()
     }
 }
-impl  std::fmt::Debug for CreatePermissionGroupInput  {
+impl std::fmt::Debug for CreatePermissionGroupInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreatePermissionGroupInput");
         formatter.field("name", &"*** Sensitive Data Redacted ***");
@@ -68,7 +71,9 @@ impl  std::fmt::Debug for CreatePermissionGroupInput  {
 }
 impl CreatePermissionGroupInput {
     /// Creates a new builder-style object to manufacture [`CreatePermissionGroupInput`](crate::operation::create_permission_group::CreatePermissionGroupInput).
-    pub fn builder() -> crate::operation::create_permission_group::builders::CreatePermissionGroupInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::create_permission_group::builders::CreatePermissionGroupInputBuilder
+    {
         crate::operation::create_permission_group::builders::CreatePermissionGroupInputBuilder::default()
     }
 }
@@ -79,7 +84,8 @@ impl CreatePermissionGroupInput {
 pub struct CreatePermissionGroupInputBuilder {
     pub(crate) name: std::option::Option<std::string::String>,
     pub(crate) description: std::option::Option<std::string::String>,
-    pub(crate) application_permissions: std::option::Option<std::vec::Vec<crate::types::ApplicationPermission>>,
+    pub(crate) application_permissions:
+        std::option::Option<std::vec::Vec<crate::types::ApplicationPermission>>,
     pub(crate) client_token: std::option::Option<std::string::String>,
 }
 impl CreatePermissionGroupInputBuilder {
@@ -90,7 +96,8 @@ impl CreatePermissionGroupInputBuilder {
     }
     /// <p>The name of the permission group.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input; self
+        self.name = input;
+        self
     }
     /// <p>A brief description for the permission group.</p>
     pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -99,44 +106,49 @@ impl CreatePermissionGroupInputBuilder {
     }
     /// <p>A brief description for the permission group.</p>
     pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.description = input; self
+        self.description = input;
+        self
     }
     /// Appends an item to `application_permissions`.
     ///
     /// To override the contents of this collection use [`set_application_permissions`](Self::set_application_permissions).
     ///
-    /// <p>The option to indicate FinSpace application permissions that are granted to a specific group.</p> <important> 
-    /// <p>When assigning application permissions, be aware that the permission <code>ManageUsersAndGroups</code> allows users to grant themselves or others access to any functionality in their FinSpace environment's application. It should only be granted to trusted users.</p> 
-    /// </important> 
-    /// <ul> 
-    /// <li> <p> <code>CreateDataset</code> – Group members can create new datasets.</p> </li> 
-    /// <li> <p> <code>ManageClusters</code> – Group members can manage Apache Spark clusters from FinSpace notebooks.</p> </li> 
-    /// <li> <p> <code>ManageUsersAndGroups</code> – Group members can manage users and permission groups. This is a privileged permission that allows users to grant themselves or others access to any functionality in the application. It should only be granted to trusted users.</p> </li> 
-    /// <li> <p> <code>ManageAttributeSets</code> – Group members can manage attribute sets.</p> </li> 
-    /// <li> <p> <code>ViewAuditData</code> – Group members can view audit data.</p> </li> 
-    /// <li> <p> <code>AccessNotebooks</code> – Group members will have access to FinSpace notebooks.</p> </li> 
-    /// <li> <p> <code>GetTemporaryCredentials</code> – Group members can get temporary API credentials.</p> </li> 
+    /// <p>The option to indicate FinSpace application permissions that are granted to a specific group.</p> <important>
+    /// <p>When assigning application permissions, be aware that the permission <code>ManageUsersAndGroups</code> allows users to grant themselves or others access to any functionality in their FinSpace environment's application. It should only be granted to trusted users.</p>
+    /// </important>
+    /// <ul>
+    /// <li> <p> <code>CreateDataset</code> – Group members can create new datasets.</p> </li>
+    /// <li> <p> <code>ManageClusters</code> – Group members can manage Apache Spark clusters from FinSpace notebooks.</p> </li>
+    /// <li> <p> <code>ManageUsersAndGroups</code> – Group members can manage users and permission groups. This is a privileged permission that allows users to grant themselves or others access to any functionality in the application. It should only be granted to trusted users.</p> </li>
+    /// <li> <p> <code>ManageAttributeSets</code> – Group members can manage attribute sets.</p> </li>
+    /// <li> <p> <code>ViewAuditData</code> – Group members can view audit data.</p> </li>
+    /// <li> <p> <code>AccessNotebooks</code> – Group members will have access to FinSpace notebooks.</p> </li>
+    /// <li> <p> <code>GetTemporaryCredentials</code> – Group members can get temporary API credentials.</p> </li>
     /// </ul>
     pub fn application_permissions(mut self, input: crate::types::ApplicationPermission) -> Self {
         let mut v = self.application_permissions.unwrap_or_default();
-                        v.push(input);
-                        self.application_permissions = Some(v);
-                        self
+        v.push(input);
+        self.application_permissions = Some(v);
+        self
     }
-    /// <p>The option to indicate FinSpace application permissions that are granted to a specific group.</p> <important> 
-    /// <p>When assigning application permissions, be aware that the permission <code>ManageUsersAndGroups</code> allows users to grant themselves or others access to any functionality in their FinSpace environment's application. It should only be granted to trusted users.</p> 
-    /// </important> 
-    /// <ul> 
-    /// <li> <p> <code>CreateDataset</code> – Group members can create new datasets.</p> </li> 
-    /// <li> <p> <code>ManageClusters</code> – Group members can manage Apache Spark clusters from FinSpace notebooks.</p> </li> 
-    /// <li> <p> <code>ManageUsersAndGroups</code> – Group members can manage users and permission groups. This is a privileged permission that allows users to grant themselves or others access to any functionality in the application. It should only be granted to trusted users.</p> </li> 
-    /// <li> <p> <code>ManageAttributeSets</code> – Group members can manage attribute sets.</p> </li> 
-    /// <li> <p> <code>ViewAuditData</code> – Group members can view audit data.</p> </li> 
-    /// <li> <p> <code>AccessNotebooks</code> – Group members will have access to FinSpace notebooks.</p> </li> 
-    /// <li> <p> <code>GetTemporaryCredentials</code> – Group members can get temporary API credentials.</p> </li> 
+    /// <p>The option to indicate FinSpace application permissions that are granted to a specific group.</p> <important>
+    /// <p>When assigning application permissions, be aware that the permission <code>ManageUsersAndGroups</code> allows users to grant themselves or others access to any functionality in their FinSpace environment's application. It should only be granted to trusted users.</p>
+    /// </important>
+    /// <ul>
+    /// <li> <p> <code>CreateDataset</code> – Group members can create new datasets.</p> </li>
+    /// <li> <p> <code>ManageClusters</code> – Group members can manage Apache Spark clusters from FinSpace notebooks.</p> </li>
+    /// <li> <p> <code>ManageUsersAndGroups</code> – Group members can manage users and permission groups. This is a privileged permission that allows users to grant themselves or others access to any functionality in the application. It should only be granted to trusted users.</p> </li>
+    /// <li> <p> <code>ManageAttributeSets</code> – Group members can manage attribute sets.</p> </li>
+    /// <li> <p> <code>ViewAuditData</code> – Group members can view audit data.</p> </li>
+    /// <li> <p> <code>AccessNotebooks</code> – Group members will have access to FinSpace notebooks.</p> </li>
+    /// <li> <p> <code>GetTemporaryCredentials</code> – Group members can get temporary API credentials.</p> </li>
     /// </ul>
-    pub fn set_application_permissions(mut self, input: std::option::Option<std::vec::Vec<crate::types::ApplicationPermission>>) -> Self {
-        self.application_permissions = input; self
+    pub fn set_application_permissions(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::ApplicationPermission>>,
+    ) -> Self {
+        self.application_permissions = input;
+        self
     }
     /// <p>A token that ensures idempotency. This token expires in 10 minutes.</p>
     pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -145,21 +157,23 @@ impl CreatePermissionGroupInputBuilder {
     }
     /// <p>A token that ensures idempotency. This token expires in 10 minutes.</p>
     pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.client_token = input; self
+        self.client_token = input;
+        self
     }
     /// Consumes the builder and constructs a [`CreatePermissionGroupInput`](crate::operation::create_permission_group::CreatePermissionGroupInput).
-    pub fn build(self) -> Result<crate::operation::create_permission_group::CreatePermissionGroupInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::create_permission_group::CreatePermissionGroupInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::create_permission_group::CreatePermissionGroupInput {
-                name: self.name
-                ,
-                description: self.description
-                ,
-                application_permissions: self.application_permissions
-                ,
-                client_token: self.client_token
-                ,
-            }
+                name: self.name,
+                description: self.description,
+                application_permissions: self.application_permissions,
+                client_token: self.client_token,
+            },
         )
     }
 }
@@ -173,4 +187,3 @@ impl std::fmt::Debug for CreatePermissionGroupInputBuilder {
         formatter.finish()
     }
 }
-

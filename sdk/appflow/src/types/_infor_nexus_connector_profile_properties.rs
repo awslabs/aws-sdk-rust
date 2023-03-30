@@ -3,14 +3,14 @@
 /// <p> The connector-specific profile properties required by Infor Nexus. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct InforNexusConnectorProfileProperties  {
+pub struct InforNexusConnectorProfileProperties {
     /// <p> The location of the Infor Nexus resource. </p>
     #[doc(hidden)]
     pub instance_url: std::option::Option<std::string::String>,
 }
 impl InforNexusConnectorProfileProperties {
     /// <p> The location of the Infor Nexus resource. </p>
-    pub fn instance_url(&self) -> std::option::Option<& str> {
+    pub fn instance_url(&self) -> std::option::Option<&str> {
         self.instance_url.as_deref()
     }
 }
@@ -35,14 +35,13 @@ impl InforNexusConnectorProfilePropertiesBuilder {
     }
     /// <p> The location of the Infor Nexus resource. </p>
     pub fn set_instance_url(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.instance_url = input; self
+        self.instance_url = input;
+        self
     }
     /// Consumes the builder and constructs a [`InforNexusConnectorProfileProperties`](crate::types::InforNexusConnectorProfileProperties).
     pub fn build(self) -> crate::types::InforNexusConnectorProfileProperties {
         crate::types::InforNexusConnectorProfileProperties {
-            instance_url: self.instance_url
-            ,
+            instance_url: self.instance_url,
         }
     }
 }
-

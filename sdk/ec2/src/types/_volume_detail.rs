@@ -3,7 +3,7 @@
 /// <p>Describes an EBS volume.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct VolumeDetail  {
+pub struct VolumeDetail {
     /// <p>The size of the volume, in GiB.</p>
     #[doc(hidden)]
     pub size: std::option::Option<i64>,
@@ -35,14 +35,11 @@ impl VolumeDetailBuilder {
     }
     /// <p>The size of the volume, in GiB.</p>
     pub fn set_size(mut self, input: std::option::Option<i64>) -> Self {
-        self.size = input; self
+        self.size = input;
+        self
     }
     /// Consumes the builder and constructs a [`VolumeDetail`](crate::types::VolumeDetail).
     pub fn build(self) -> crate::types::VolumeDetail {
-        crate::types::VolumeDetail {
-            size: self.size
-            ,
-        }
+        crate::types::VolumeDetail { size: self.size }
     }
 }
-

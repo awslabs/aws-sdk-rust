@@ -3,7 +3,7 @@
 /// <p>The <code>ReadJobResponse</code> structure.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ReadJobOutput  {
+pub struct ReadJobOutput {
     /// <p>A section of the response body that provides information about the job.</p>
     #[doc(hidden)]
     pub job: std::option::Option<crate::types::Job>,
@@ -11,15 +11,15 @@ pub struct ReadJobOutput  {
 }
 impl ReadJobOutput {
     /// <p>A section of the response body that provides information about the job.</p>
-    pub fn job(&self) -> std::option::Option<& crate::types::Job> {
+    pub fn job(&self) -> std::option::Option<&crate::types::Job> {
         self.job.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for ReadJobOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl ReadJobOutput {
     /// Creates a new builder-style object to manufacture [`ReadJobOutput`](crate::operation::read_job::ReadJobOutput).
     pub fn builder() -> crate::operation::read_job::builders::ReadJobOutputBuilder {
@@ -42,24 +42,23 @@ impl ReadJobOutputBuilder {
     }
     /// <p>A section of the response body that provides information about the job.</p>
     pub fn set_job(mut self, input: std::option::Option<crate::types::Job>) -> Self {
-        self.job = input; self
+        self.job = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`ReadJobOutput`](crate::operation::read_job::ReadJobOutput).
     pub fn build(self) -> crate::operation::read_job::ReadJobOutput {
         crate::operation::read_job::ReadJobOutput {
-            job: self.job
-            ,
+            job: self.job,
             _request_id: self._request_id,
         }
     }
 }
-

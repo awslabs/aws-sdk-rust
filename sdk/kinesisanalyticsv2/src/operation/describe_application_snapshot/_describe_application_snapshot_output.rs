@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeApplicationSnapshotOutput  {
+pub struct DescribeApplicationSnapshotOutput {
     /// <p>An object containing information about the application snapshot.</p>
     #[doc(hidden)]
     pub snapshot_details: std::option::Option<crate::types::SnapshotDetails>,
@@ -10,18 +10,18 @@ pub struct DescribeApplicationSnapshotOutput  {
 }
 impl DescribeApplicationSnapshotOutput {
     /// <p>An object containing information about the application snapshot.</p>
-    pub fn snapshot_details(&self) -> std::option::Option<& crate::types::SnapshotDetails> {
+    pub fn snapshot_details(&self) -> std::option::Option<&crate::types::SnapshotDetails> {
         self.snapshot_details.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for DescribeApplicationSnapshotOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl DescribeApplicationSnapshotOutput {
     /// Creates a new builder-style object to manufacture [`DescribeApplicationSnapshotOutput`](crate::operation::describe_application_snapshot::DescribeApplicationSnapshotOutput).
-    pub fn builder() -> crate::operation::describe_application_snapshot::builders::DescribeApplicationSnapshotOutputBuilder {
+    pub fn builder() -> crate::operation::describe_application_snapshot::builders::DescribeApplicationSnapshotOutputBuilder{
         crate::operation::describe_application_snapshot::builders::DescribeApplicationSnapshotOutputBuilder::default()
     }
 }
@@ -40,25 +40,29 @@ impl DescribeApplicationSnapshotOutputBuilder {
         self
     }
     /// <p>An object containing information about the application snapshot.</p>
-    pub fn set_snapshot_details(mut self, input: std::option::Option<crate::types::SnapshotDetails>) -> Self {
-        self.snapshot_details = input; self
+    pub fn set_snapshot_details(
+        mut self,
+        input: std::option::Option<crate::types::SnapshotDetails>,
+    ) -> Self {
+        self.snapshot_details = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`DescribeApplicationSnapshotOutput`](crate::operation::describe_application_snapshot::DescribeApplicationSnapshotOutput).
-    pub fn build(self) -> crate::operation::describe_application_snapshot::DescribeApplicationSnapshotOutput {
+    pub fn build(
+        self,
+    ) -> crate::operation::describe_application_snapshot::DescribeApplicationSnapshotOutput {
         crate::operation::describe_application_snapshot::DescribeApplicationSnapshotOutput {
-            snapshot_details: self.snapshot_details
-            ,
+            snapshot_details: self.snapshot_details,
             _request_id: self._request_id,
         }
     }
 }
-

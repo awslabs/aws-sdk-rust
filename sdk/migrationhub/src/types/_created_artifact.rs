@@ -3,7 +3,7 @@
 /// <p>An ARN of the AWS cloud resource target receiving the migration (e.g., AMI, EC2 instance, RDS instance, etc.).</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreatedArtifact  {
+pub struct CreatedArtifact {
     /// <p>An ARN that uniquely identifies the result of a migration task.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -13,11 +13,11 @@ pub struct CreatedArtifact  {
 }
 impl CreatedArtifact {
     /// <p>An ARN that uniquely identifies the result of a migration task.</p>
-    pub fn name(&self) -> std::option::Option<& str> {
+    pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>A description that can be free-form text to record additional detail about the artifact for clarity or for later reference.</p>
-    pub fn description(&self) -> std::option::Option<& str> {
+    pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
 }
@@ -43,7 +43,8 @@ impl CreatedArtifactBuilder {
     }
     /// <p>An ARN that uniquely identifies the result of a migration task.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input; self
+        self.name = input;
+        self
     }
     /// <p>A description that can be free-form text to record additional detail about the artifact for clarity or for later reference.</p>
     pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -52,16 +53,14 @@ impl CreatedArtifactBuilder {
     }
     /// <p>A description that can be free-form text to record additional detail about the artifact for clarity or for later reference.</p>
     pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.description = input; self
+        self.description = input;
+        self
     }
     /// Consumes the builder and constructs a [`CreatedArtifact`](crate::types::CreatedArtifact).
     pub fn build(self) -> crate::types::CreatedArtifact {
         crate::types::CreatedArtifact {
-            name: self.name
-            ,
-            description: self.description
-            ,
+            name: self.name,
+            description: self.description,
         }
     }
 }
-

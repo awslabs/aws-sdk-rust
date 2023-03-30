@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetRouteInput  {
+pub struct GetRouteInput {
     /// <p>The API identifier.</p>
     #[doc(hidden)]
     pub api_id: std::option::Option<std::string::String>,
@@ -12,11 +12,11 @@ pub struct GetRouteInput  {
 }
 impl GetRouteInput {
     /// <p>The API identifier.</p>
-    pub fn api_id(&self) -> std::option::Option<& str> {
+    pub fn api_id(&self) -> std::option::Option<&str> {
         self.api_id.as_deref()
     }
     /// <p>The route ID.</p>
-    pub fn route_id(&self) -> std::option::Option<& str> {
+    pub fn route_id(&self) -> std::option::Option<&str> {
         self.route_id.as_deref()
     }
 }
@@ -42,7 +42,8 @@ impl GetRouteInputBuilder {
     }
     /// <p>The API identifier.</p>
     pub fn set_api_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.api_id = input; self
+        self.api_id = input;
+        self
     }
     /// <p>The route ID.</p>
     pub fn route_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -51,18 +52,19 @@ impl GetRouteInputBuilder {
     }
     /// <p>The route ID.</p>
     pub fn set_route_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.route_id = input; self
+        self.route_id = input;
+        self
     }
     /// Consumes the builder and constructs a [`GetRouteInput`](crate::operation::get_route::GetRouteInput).
-    pub fn build(self) -> Result<crate::operation::get_route::GetRouteInput, aws_smithy_http::operation::error::BuildError> {
-        Ok(
-            crate::operation::get_route::GetRouteInput {
-                api_id: self.api_id
-                ,
-                route_id: self.route_id
-                ,
-            }
-        )
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::get_route::GetRouteInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        Ok(crate::operation::get_route::GetRouteInput {
+            api_id: self.api_id,
+            route_id: self.route_id,
+        })
     }
 }
-

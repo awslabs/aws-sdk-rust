@@ -69,4 +69,3 @@ pub mod untag_resource;
 
 /// Types for the `UpdateProfilingGroup` operation.
 pub mod update_profiling_group;
-

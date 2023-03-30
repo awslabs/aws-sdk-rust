@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct InviteUsersOutput  {
+pub struct InviteUsersOutput {
     /// <p>The email invitation details.</p>
     #[doc(hidden)]
     pub invites: std::option::Option<std::vec::Vec<crate::types::Invite>>,
@@ -10,15 +10,15 @@ pub struct InviteUsersOutput  {
 }
 impl InviteUsersOutput {
     /// <p>The email invitation details.</p>
-    pub fn invites(&self) -> std::option::Option<& [crate::types::Invite]> {
+    pub fn invites(&self) -> std::option::Option<&[crate::types::Invite]> {
         self.invites.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for InviteUsersOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl InviteUsersOutput {
     /// Creates a new builder-style object to manufacture [`InviteUsersOutput`](crate::operation::invite_users::InviteUsersOutput).
     pub fn builder() -> crate::operation::invite_users::builders::InviteUsersOutputBuilder {
@@ -41,30 +41,32 @@ impl InviteUsersOutputBuilder {
     /// <p>The email invitation details.</p>
     pub fn invites(mut self, input: crate::types::Invite) -> Self {
         let mut v = self.invites.unwrap_or_default();
-                        v.push(input);
-                        self.invites = Some(v);
-                        self
+        v.push(input);
+        self.invites = Some(v);
+        self
     }
     /// <p>The email invitation details.</p>
-    pub fn set_invites(mut self, input: std::option::Option<std::vec::Vec<crate::types::Invite>>) -> Self {
-        self.invites = input; self
+    pub fn set_invites(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::Invite>>,
+    ) -> Self {
+        self.invites = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`InviteUsersOutput`](crate::operation::invite_users::InviteUsersOutput).
     pub fn build(self) -> crate::operation::invite_users::InviteUsersOutput {
         crate::operation::invite_users::InviteUsersOutput {
-            invites: self.invites
-            ,
+            invites: self.invites,
             _request_id: self._request_id,
         }
     }
 }
-

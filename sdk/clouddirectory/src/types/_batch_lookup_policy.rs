@@ -3,7 +3,7 @@
 /// <p>Lists all policies from the root of the Directory to the object specified inside a <code>BatchRead</code> operation. For more information, see <code>LookupPolicy</code> and <code>BatchReadRequest$Operations</code>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct BatchLookupPolicy  {
+pub struct BatchLookupPolicy {
     /// <p>Reference that identifies the object whose policies will be looked up.</p>
     #[doc(hidden)]
     pub object_reference: std::option::Option<crate::types::ObjectReference>,
@@ -16,11 +16,11 @@ pub struct BatchLookupPolicy  {
 }
 impl BatchLookupPolicy {
     /// <p>Reference that identifies the object whose policies will be looked up.</p>
-    pub fn object_reference(&self) -> std::option::Option<& crate::types::ObjectReference> {
+    pub fn object_reference(&self) -> std::option::Option<&crate::types::ObjectReference> {
         self.object_reference.as_ref()
     }
     /// <p>The pagination token.</p>
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
     /// <p>The maximum number of results to retrieve.</p>
@@ -50,8 +50,12 @@ impl BatchLookupPolicyBuilder {
         self
     }
     /// <p>Reference that identifies the object whose policies will be looked up.</p>
-    pub fn set_object_reference(mut self, input: std::option::Option<crate::types::ObjectReference>) -> Self {
-        self.object_reference = input; self
+    pub fn set_object_reference(
+        mut self,
+        input: std::option::Option<crate::types::ObjectReference>,
+    ) -> Self {
+        self.object_reference = input;
+        self
     }
     /// <p>The pagination token.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -60,7 +64,8 @@ impl BatchLookupPolicyBuilder {
     }
     /// <p>The pagination token.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input; self
+        self.next_token = input;
+        self
     }
     /// <p>The maximum number of results to retrieve.</p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -69,18 +74,15 @@ impl BatchLookupPolicyBuilder {
     }
     /// <p>The maximum number of results to retrieve.</p>
     pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_results = input; self
+        self.max_results = input;
+        self
     }
     /// Consumes the builder and constructs a [`BatchLookupPolicy`](crate::types::BatchLookupPolicy).
     pub fn build(self) -> crate::types::BatchLookupPolicy {
         crate::types::BatchLookupPolicy {
-            object_reference: self.object_reference
-            ,
-            next_token: self.next_token
-            ,
-            max_results: self.max_results
-            ,
+            object_reference: self.object_reference,
+            next_token: self.next_token,
+            max_results: self.max_results,
         }
     }
 }
-

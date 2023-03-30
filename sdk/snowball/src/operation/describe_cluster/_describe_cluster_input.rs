@@ -2,14 +2,14 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeClusterInput  {
+pub struct DescribeClusterInput {
     /// <p>The automatically generated ID for a cluster.</p>
     #[doc(hidden)]
     pub cluster_id: std::option::Option<std::string::String>,
 }
 impl DescribeClusterInput {
     /// <p>The automatically generated ID for a cluster.</p>
-    pub fn cluster_id(&self) -> std::option::Option<& str> {
+    pub fn cluster_id(&self) -> std::option::Option<&str> {
         self.cluster_id.as_deref()
     }
 }
@@ -34,16 +34,18 @@ impl DescribeClusterInputBuilder {
     }
     /// <p>The automatically generated ID for a cluster.</p>
     pub fn set_cluster_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.cluster_id = input; self
+        self.cluster_id = input;
+        self
     }
     /// Consumes the builder and constructs a [`DescribeClusterInput`](crate::operation::describe_cluster::DescribeClusterInput).
-    pub fn build(self) -> Result<crate::operation::describe_cluster::DescribeClusterInput, aws_smithy_http::operation::error::BuildError> {
-        Ok(
-            crate::operation::describe_cluster::DescribeClusterInput {
-                cluster_id: self.cluster_id
-                ,
-            }
-        )
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::describe_cluster::DescribeClusterInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        Ok(crate::operation::describe_cluster::DescribeClusterInput {
+            cluster_id: self.cluster_id,
+        })
     }
 }
-

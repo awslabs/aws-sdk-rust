@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeProtectionOutput  {
+pub struct DescribeProtectionOutput {
     /// <p>The <code>Protection</code> that you requested. </p>
     #[doc(hidden)]
     pub protection: std::option::Option<crate::types::Protection>,
@@ -10,18 +10,19 @@ pub struct DescribeProtectionOutput  {
 }
 impl DescribeProtectionOutput {
     /// <p>The <code>Protection</code> that you requested. </p>
-    pub fn protection(&self) -> std::option::Option<& crate::types::Protection> {
+    pub fn protection(&self) -> std::option::Option<&crate::types::Protection> {
         self.protection.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for DescribeProtectionOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl DescribeProtectionOutput {
     /// Creates a new builder-style object to manufacture [`DescribeProtectionOutput`](crate::operation::describe_protection::DescribeProtectionOutput).
-    pub fn builder() -> crate::operation::describe_protection::builders::DescribeProtectionOutputBuilder {
+    pub fn builder(
+    ) -> crate::operation::describe_protection::builders::DescribeProtectionOutputBuilder {
         crate::operation::describe_protection::builders::DescribeProtectionOutputBuilder::default()
     }
 }
@@ -41,24 +42,23 @@ impl DescribeProtectionOutputBuilder {
     }
     /// <p>The <code>Protection</code> that you requested. </p>
     pub fn set_protection(mut self, input: std::option::Option<crate::types::Protection>) -> Self {
-        self.protection = input; self
+        self.protection = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`DescribeProtectionOutput`](crate::operation::describe_protection::DescribeProtectionOutput).
     pub fn build(self) -> crate::operation::describe_protection::DescribeProtectionOutput {
         crate::operation::describe_protection::DescribeProtectionOutput {
-            protection: self.protection
-            ,
+            protection: self.protection,
             _request_id: self._request_id,
         }
     }
 }
-

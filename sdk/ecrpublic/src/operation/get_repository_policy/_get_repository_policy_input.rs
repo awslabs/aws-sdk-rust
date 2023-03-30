@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetRepositoryPolicyInput  {
+pub struct GetRepositoryPolicyInput {
     /// <p>The Amazon Web Services account ID that's associated with the public registry that contains the repository. If you do not specify a registry, the default public registry is assumed.</p>
     #[doc(hidden)]
     pub registry_id: std::option::Option<std::string::String>,
@@ -12,18 +12,20 @@ pub struct GetRepositoryPolicyInput  {
 }
 impl GetRepositoryPolicyInput {
     /// <p>The Amazon Web Services account ID that's associated with the public registry that contains the repository. If you do not specify a registry, the default public registry is assumed.</p>
-    pub fn registry_id(&self) -> std::option::Option<& str> {
+    pub fn registry_id(&self) -> std::option::Option<&str> {
         self.registry_id.as_deref()
     }
     /// <p>The name of the repository with the policy to retrieve.</p>
-    pub fn repository_name(&self) -> std::option::Option<& str> {
+    pub fn repository_name(&self) -> std::option::Option<&str> {
         self.repository_name.as_deref()
     }
 }
 impl GetRepositoryPolicyInput {
     /// Creates a new builder-style object to manufacture [`GetRepositoryPolicyInput`](crate::operation::get_repository_policy::GetRepositoryPolicyInput).
-    pub fn builder() -> crate::operation::get_repository_policy::builders::GetRepositoryPolicyInputBuilder {
-        crate::operation::get_repository_policy::builders::GetRepositoryPolicyInputBuilder::default()
+    pub fn builder(
+    ) -> crate::operation::get_repository_policy::builders::GetRepositoryPolicyInputBuilder {
+        crate::operation::get_repository_policy::builders::GetRepositoryPolicyInputBuilder::default(
+        )
     }
 }
 
@@ -42,7 +44,8 @@ impl GetRepositoryPolicyInputBuilder {
     }
     /// <p>The Amazon Web Services account ID that's associated with the public registry that contains the repository. If you do not specify a registry, the default public registry is assumed.</p>
     pub fn set_registry_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.registry_id = input; self
+        self.registry_id = input;
+        self
     }
     /// <p>The name of the repository with the policy to retrieve.</p>
     pub fn repository_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -51,18 +54,21 @@ impl GetRepositoryPolicyInputBuilder {
     }
     /// <p>The name of the repository with the policy to retrieve.</p>
     pub fn set_repository_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.repository_name = input; self
+        self.repository_name = input;
+        self
     }
     /// Consumes the builder and constructs a [`GetRepositoryPolicyInput`](crate::operation::get_repository_policy::GetRepositoryPolicyInput).
-    pub fn build(self) -> Result<crate::operation::get_repository_policy::GetRepositoryPolicyInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::get_repository_policy::GetRepositoryPolicyInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::get_repository_policy::GetRepositoryPolicyInput {
-                registry_id: self.registry_id
-                ,
-                repository_name: self.repository_name
-                ,
-            }
+                registry_id: self.registry_id,
+                repository_name: self.repository_name,
+            },
         )
     }
 }
-

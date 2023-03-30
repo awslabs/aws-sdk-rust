@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateGroupInput  {
+pub struct UpdateGroupInput {
     /// <p>Don't use this parameter. Use <code>Group</code> instead.</p>
     #[deprecated(note = "This field is deprecated, use Group instead.")]
     #[doc(hidden)]
@@ -17,15 +17,15 @@ pub struct UpdateGroupInput  {
 impl UpdateGroupInput {
     /// <p>Don't use this parameter. Use <code>Group</code> instead.</p>
     #[deprecated(note = "This field is deprecated, use Group instead.")]
-    pub fn group_name(&self) -> std::option::Option<& str> {
+    pub fn group_name(&self) -> std::option::Option<&str> {
         self.group_name.as_deref()
     }
     /// <p>The name or the ARN of the resource group to modify.</p>
-    pub fn group(&self) -> std::option::Option<& str> {
+    pub fn group(&self) -> std::option::Option<&str> {
         self.group.as_deref()
     }
     /// <p>The new description that you want to update the resource group with. Descriptions can contain letters, numbers, hyphens, underscores, periods, and spaces.</p>
-    pub fn description(&self) -> std::option::Option<& str> {
+    pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
 }
@@ -54,7 +54,8 @@ impl UpdateGroupInputBuilder {
     /// <p>Don't use this parameter. Use <code>Group</code> instead.</p>
     #[deprecated(note = "This field is deprecated, use Group instead.")]
     pub fn set_group_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.group_name = input; self
+        self.group_name = input;
+        self
     }
     /// <p>The name or the ARN of the resource group to modify.</p>
     pub fn group(mut self, input: impl Into<std::string::String>) -> Self {
@@ -63,7 +64,8 @@ impl UpdateGroupInputBuilder {
     }
     /// <p>The name or the ARN of the resource group to modify.</p>
     pub fn set_group(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.group = input; self
+        self.group = input;
+        self
     }
     /// <p>The new description that you want to update the resource group with. Descriptions can contain letters, numbers, hyphens, underscores, periods, and spaces.</p>
     pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -72,20 +74,20 @@ impl UpdateGroupInputBuilder {
     }
     /// <p>The new description that you want to update the resource group with. Descriptions can contain letters, numbers, hyphens, underscores, periods, and spaces.</p>
     pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.description = input; self
+        self.description = input;
+        self
     }
     /// Consumes the builder and constructs a [`UpdateGroupInput`](crate::operation::update_group::UpdateGroupInput).
-    pub fn build(self) -> Result<crate::operation::update_group::UpdateGroupInput, aws_smithy_http::operation::error::BuildError> {
-        Ok(
-            crate::operation::update_group::UpdateGroupInput {
-                group_name: self.group_name
-                ,
-                group: self.group
-                ,
-                description: self.description
-                ,
-            }
-        )
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::update_group::UpdateGroupInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        Ok(crate::operation::update_group::UpdateGroupInput {
+            group_name: self.group_name,
+            group: self.group,
+            description: self.description,
+        })
     }
 }
-

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteRepositoryInput  {
+pub struct DeleteRepositoryInput {
     /// <p>The Amazon Web Services account ID associated with the registry that contains the repository to delete. If you do not specify a registry, the default registry is assumed.</p>
     #[doc(hidden)]
     pub registry_id: std::option::Option<std::string::String>,
@@ -15,11 +15,11 @@ pub struct DeleteRepositoryInput  {
 }
 impl DeleteRepositoryInput {
     /// <p>The Amazon Web Services account ID associated with the registry that contains the repository to delete. If you do not specify a registry, the default registry is assumed.</p>
-    pub fn registry_id(&self) -> std::option::Option<& str> {
+    pub fn registry_id(&self) -> std::option::Option<&str> {
         self.registry_id.as_deref()
     }
     /// <p>The name of the repository to delete.</p>
-    pub fn repository_name(&self) -> std::option::Option<& str> {
+    pub fn repository_name(&self) -> std::option::Option<&str> {
         self.repository_name.as_deref()
     }
     /// <p> If a repository contains images, forces the deletion.</p>
@@ -29,7 +29,8 @@ impl DeleteRepositoryInput {
 }
 impl DeleteRepositoryInput {
     /// Creates a new builder-style object to manufacture [`DeleteRepositoryInput`](crate::operation::delete_repository::DeleteRepositoryInput).
-    pub fn builder() -> crate::operation::delete_repository::builders::DeleteRepositoryInputBuilder {
+    pub fn builder() -> crate::operation::delete_repository::builders::DeleteRepositoryInputBuilder
+    {
         crate::operation::delete_repository::builders::DeleteRepositoryInputBuilder::default()
     }
 }
@@ -50,7 +51,8 @@ impl DeleteRepositoryInputBuilder {
     }
     /// <p>The Amazon Web Services account ID associated with the registry that contains the repository to delete. If you do not specify a registry, the default registry is assumed.</p>
     pub fn set_registry_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.registry_id = input; self
+        self.registry_id = input;
+        self
     }
     /// <p>The name of the repository to delete.</p>
     pub fn repository_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -59,7 +61,8 @@ impl DeleteRepositoryInputBuilder {
     }
     /// <p>The name of the repository to delete.</p>
     pub fn set_repository_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.repository_name = input; self
+        self.repository_name = input;
+        self
     }
     /// <p> If a repository contains images, forces the deletion.</p>
     pub fn force(mut self, input: bool) -> Self {
@@ -68,21 +71,20 @@ impl DeleteRepositoryInputBuilder {
     }
     /// <p> If a repository contains images, forces the deletion.</p>
     pub fn set_force(mut self, input: std::option::Option<bool>) -> Self {
-        self.force = input; self
+        self.force = input;
+        self
     }
     /// Consumes the builder and constructs a [`DeleteRepositoryInput`](crate::operation::delete_repository::DeleteRepositoryInput).
-    pub fn build(self) -> Result<crate::operation::delete_repository::DeleteRepositoryInput, aws_smithy_http::operation::error::BuildError> {
-        Ok(
-            crate::operation::delete_repository::DeleteRepositoryInput {
-                registry_id: self.registry_id
-                ,
-                repository_name: self.repository_name
-                ,
-                force: self.force
-                    .unwrap_or_default()
-                ,
-            }
-        )
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::delete_repository::DeleteRepositoryInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        Ok(crate::operation::delete_repository::DeleteRepositoryInput {
+            registry_id: self.registry_id,
+            repository_name: self.repository_name,
+            force: self.force.unwrap_or_default(),
+        })
     }
 }
-

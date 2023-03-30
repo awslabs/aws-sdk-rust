@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateSipMediaApplicationInput  {
+pub struct CreateSipMediaApplicationInput {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub aws_region: std::option::Option<std::string::String>,
@@ -15,21 +15,21 @@ pub struct CreateSipMediaApplicationInput  {
 }
 impl CreateSipMediaApplicationInput {
     #[allow(missing_docs)] // documentation missing in model
-    pub fn aws_region(&self) -> std::option::Option<& str> {
+    pub fn aws_region(&self) -> std::option::Option<&str> {
         self.aws_region.as_deref()
     }
     #[allow(missing_docs)] // documentation missing in model
-    pub fn name(&self) -> std::option::Option<& str> {
+    pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
     #[allow(missing_docs)] // documentation missing in model
-    pub fn endpoints(&self) -> std::option::Option<& [crate::types::SipMediaApplicationEndpoint]> {
+    pub fn endpoints(&self) -> std::option::Option<&[crate::types::SipMediaApplicationEndpoint]> {
         self.endpoints.as_deref()
     }
 }
 impl CreateSipMediaApplicationInput {
     /// Creates a new builder-style object to manufacture [`CreateSipMediaApplicationInput`](crate::operation::create_sip_media_application::CreateSipMediaApplicationInput).
-    pub fn builder() -> crate::operation::create_sip_media_application::builders::CreateSipMediaApplicationInputBuilder {
+    pub fn builder() -> crate::operation::create_sip_media_application::builders::CreateSipMediaApplicationInputBuilder{
         crate::operation::create_sip_media_application::builders::CreateSipMediaApplicationInputBuilder::default()
     }
 }
@@ -40,7 +40,8 @@ impl CreateSipMediaApplicationInput {
 pub struct CreateSipMediaApplicationInputBuilder {
     pub(crate) aws_region: std::option::Option<std::string::String>,
     pub(crate) name: std::option::Option<std::string::String>,
-    pub(crate) endpoints: std::option::Option<std::vec::Vec<crate::types::SipMediaApplicationEndpoint>>,
+    pub(crate) endpoints:
+        std::option::Option<std::vec::Vec<crate::types::SipMediaApplicationEndpoint>>,
 }
 impl CreateSipMediaApplicationInputBuilder {
     #[allow(missing_docs)] // documentation missing in model
@@ -50,7 +51,8 @@ impl CreateSipMediaApplicationInputBuilder {
     }
     #[allow(missing_docs)] // documentation missing in model
     pub fn set_aws_region(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.aws_region = input; self
+        self.aws_region = input;
+        self
     }
     #[allow(missing_docs)] // documentation missing in model
     pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -59,7 +61,8 @@ impl CreateSipMediaApplicationInputBuilder {
     }
     #[allow(missing_docs)] // documentation missing in model
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input; self
+        self.name = input;
+        self
     }
     /// Appends an item to `endpoints`.
     ///
@@ -67,26 +70,31 @@ impl CreateSipMediaApplicationInputBuilder {
     ///
     pub fn endpoints(mut self, input: crate::types::SipMediaApplicationEndpoint) -> Self {
         let mut v = self.endpoints.unwrap_or_default();
-                        v.push(input);
-                        self.endpoints = Some(v);
-                        self
+        v.push(input);
+        self.endpoints = Some(v);
+        self
     }
     #[allow(missing_docs)] // documentation missing in model
-    pub fn set_endpoints(mut self, input: std::option::Option<std::vec::Vec<crate::types::SipMediaApplicationEndpoint>>) -> Self {
-        self.endpoints = input; self
+    pub fn set_endpoints(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::SipMediaApplicationEndpoint>>,
+    ) -> Self {
+        self.endpoints = input;
+        self
     }
     /// Consumes the builder and constructs a [`CreateSipMediaApplicationInput`](crate::operation::create_sip_media_application::CreateSipMediaApplicationInput).
-    pub fn build(self) -> Result<crate::operation::create_sip_media_application::CreateSipMediaApplicationInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::create_sip_media_application::CreateSipMediaApplicationInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::create_sip_media_application::CreateSipMediaApplicationInput {
-                aws_region: self.aws_region
-                ,
-                name: self.name
-                ,
-                endpoints: self.endpoints
-                ,
-            }
+                aws_region: self.aws_region,
+                name: self.name,
+                endpoints: self.endpoints,
+            },
         )
     }
 }
-

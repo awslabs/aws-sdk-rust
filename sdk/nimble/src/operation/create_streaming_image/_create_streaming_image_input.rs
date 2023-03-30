@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct CreateStreamingImageInput  {
+pub struct CreateStreamingImageInput {
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the Amazon Web Services SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
     #[doc(hidden)]
     pub client_token: std::option::Option<std::string::String>,
@@ -20,35 +20,39 @@ pub struct CreateStreamingImageInput  {
     pub studio_id: std::option::Option<std::string::String>,
     /// <p>A collection of labels, in the form of key-value pairs, that apply to this resource.</p>
     #[doc(hidden)]
-    pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub tags:
+        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl CreateStreamingImageInput {
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the Amazon Web Services SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
-    pub fn client_token(&self) -> std::option::Option<& str> {
+    pub fn client_token(&self) -> std::option::Option<&str> {
         self.client_token.as_deref()
     }
     /// <p>A human-readable description of the streaming image.</p>
-    pub fn description(&self) -> std::option::Option<& str> {
+    pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
     /// <p>The ID of an EC2 machine image with which to create this streaming image.</p>
-    pub fn ec2_image_id(&self) -> std::option::Option<& str> {
+    pub fn ec2_image_id(&self) -> std::option::Option<&str> {
         self.ec2_image_id.as_deref()
     }
     /// <p>A friendly name for a streaming image resource.</p>
-    pub fn name(&self) -> std::option::Option<& str> {
+    pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>The studio ID. </p>
-    pub fn studio_id(&self) -> std::option::Option<& str> {
+    pub fn studio_id(&self) -> std::option::Option<&str> {
         self.studio_id.as_deref()
     }
     /// <p>A collection of labels, in the form of key-value pairs, that apply to this resource.</p>
-    pub fn tags(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
         self.tags.as_ref()
     }
 }
-impl  std::fmt::Debug for CreateStreamingImageInput  {
+impl std::fmt::Debug for CreateStreamingImageInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateStreamingImageInput");
         formatter.field("client_token", &self.client_token);
@@ -62,7 +66,8 @@ impl  std::fmt::Debug for CreateStreamingImageInput  {
 }
 impl CreateStreamingImageInput {
     /// Creates a new builder-style object to manufacture [`CreateStreamingImageInput`](crate::operation::create_streaming_image::CreateStreamingImageInput).
-    pub fn builder() -> crate::operation::create_streaming_image::builders::CreateStreamingImageInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::create_streaming_image::builders::CreateStreamingImageInputBuilder {
         crate::operation::create_streaming_image::builders::CreateStreamingImageInputBuilder::default()
     }
 }
@@ -76,7 +81,8 @@ pub struct CreateStreamingImageInputBuilder {
     pub(crate) ec2_image_id: std::option::Option<std::string::String>,
     pub(crate) name: std::option::Option<std::string::String>,
     pub(crate) studio_id: std::option::Option<std::string::String>,
-    pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub(crate) tags:
+        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl CreateStreamingImageInputBuilder {
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the Amazon Web Services SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
@@ -86,7 +92,8 @@ impl CreateStreamingImageInputBuilder {
     }
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the Amazon Web Services SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
     pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.client_token = input; self
+        self.client_token = input;
+        self
     }
     /// <p>A human-readable description of the streaming image.</p>
     pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -95,7 +102,8 @@ impl CreateStreamingImageInputBuilder {
     }
     /// <p>A human-readable description of the streaming image.</p>
     pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.description = input; self
+        self.description = input;
+        self
     }
     /// <p>The ID of an EC2 machine image with which to create this streaming image.</p>
     pub fn ec2_image_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -104,7 +112,8 @@ impl CreateStreamingImageInputBuilder {
     }
     /// <p>The ID of an EC2 machine image with which to create this streaming image.</p>
     pub fn set_ec2_image_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.ec2_image_id = input; self
+        self.ec2_image_id = input;
+        self
     }
     /// <p>A friendly name for a streaming image resource.</p>
     pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -113,7 +122,8 @@ impl CreateStreamingImageInputBuilder {
     }
     /// <p>A friendly name for a streaming image resource.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input; self
+        self.name = input;
+        self
     }
     /// <p>The studio ID. </p>
     pub fn studio_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -122,40 +132,50 @@ impl CreateStreamingImageInputBuilder {
     }
     /// <p>The studio ID. </p>
     pub fn set_studio_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.studio_id = input; self
+        self.studio_id = input;
+        self
     }
     /// Adds a key-value pair to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// <p>A collection of labels, in the form of key-value pairs, that apply to this resource.</p>
-    pub fn tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
+    pub fn tags(
+        mut self,
+        k: impl Into<std::string::String>,
+        v: impl Into<std::string::String>,
+    ) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
-                        hash_map.insert(k.into(), v.into());
-                        self.tags = Some(hash_map);
-                        self
+        hash_map.insert(k.into(), v.into());
+        self.tags = Some(hash_map);
+        self
     }
     /// <p>A collection of labels, in the form of key-value pairs, that apply to this resource.</p>
-    pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
-        self.tags = input; self
+    pub fn set_tags(
+        mut self,
+        input: std::option::Option<
+            std::collections::HashMap<std::string::String, std::string::String>,
+        >,
+    ) -> Self {
+        self.tags = input;
+        self
     }
     /// Consumes the builder and constructs a [`CreateStreamingImageInput`](crate::operation::create_streaming_image::CreateStreamingImageInput).
-    pub fn build(self) -> Result<crate::operation::create_streaming_image::CreateStreamingImageInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::create_streaming_image::CreateStreamingImageInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::create_streaming_image::CreateStreamingImageInput {
-                client_token: self.client_token
-                ,
-                description: self.description
-                ,
-                ec2_image_id: self.ec2_image_id
-                ,
-                name: self.name
-                ,
-                studio_id: self.studio_id
-                ,
-                tags: self.tags
-                ,
-            }
+                client_token: self.client_token,
+                description: self.description,
+                ec2_image_id: self.ec2_image_id,
+                name: self.name,
+                studio_id: self.studio_id,
+                tags: self.tags,
+            },
         )
     }
 }
@@ -171,4 +191,3 @@ impl std::fmt::Debug for CreateStreamingImageInputBuilder {
         formatter.finish()
     }
 }
-

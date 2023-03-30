@@ -2,20 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeactivateEventSourceInput  {
+pub struct DeactivateEventSourceInput {
     /// <p>The name of the partner event source to deactivate.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
 }
 impl DeactivateEventSourceInput {
     /// <p>The name of the partner event source to deactivate.</p>
-    pub fn name(&self) -> std::option::Option<& str> {
+    pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
 }
 impl DeactivateEventSourceInput {
     /// Creates a new builder-style object to manufacture [`DeactivateEventSourceInput`](crate::operation::deactivate_event_source::DeactivateEventSourceInput).
-    pub fn builder() -> crate::operation::deactivate_event_source::builders::DeactivateEventSourceInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::deactivate_event_source::builders::DeactivateEventSourceInputBuilder
+    {
         crate::operation::deactivate_event_source::builders::DeactivateEventSourceInputBuilder::default()
     }
 }
@@ -34,16 +36,20 @@ impl DeactivateEventSourceInputBuilder {
     }
     /// <p>The name of the partner event source to deactivate.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input; self
+        self.name = input;
+        self
     }
     /// Consumes the builder and constructs a [`DeactivateEventSourceInput`](crate::operation::deactivate_event_source::DeactivateEventSourceInput).
-    pub fn build(self) -> Result<crate::operation::deactivate_event_source::DeactivateEventSourceInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::deactivate_event_source::DeactivateEventSourceInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::deactivate_event_source::DeactivateEventSourceInput {
-                name: self.name
-                ,
-            }
+                name: self.name,
+            },
         )
     }
 }
-

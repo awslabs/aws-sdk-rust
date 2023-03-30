@@ -2,11 +2,11 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetBlueprintsInput  {
+pub struct GetBlueprintsInput {
     /// <p>A Boolean value that indicates whether to include inactive (unavailable) blueprints in the response of your request.</p>
     #[doc(hidden)]
     pub include_inactive: std::option::Option<bool>,
-    /// <p>The token to advance to the next page of results from your request.</p> 
+    /// <p>The token to advance to the next page of results from your request.</p>
     /// <p>To get a page token, perform an initial <code>GetBlueprints</code> request. If your results are paginated, the response will return a next page token that you can specify as the page token in a subsequent request.</p>
     #[doc(hidden)]
     pub page_token: std::option::Option<std::string::String>,
@@ -16,9 +16,9 @@ impl GetBlueprintsInput {
     pub fn include_inactive(&self) -> std::option::Option<bool> {
         self.include_inactive
     }
-    /// <p>The token to advance to the next page of results from your request.</p> 
+    /// <p>The token to advance to the next page of results from your request.</p>
     /// <p>To get a page token, perform an initial <code>GetBlueprints</code> request. If your results are paginated, the response will return a next page token that you can specify as the page token in a subsequent request.</p>
-    pub fn page_token(&self) -> std::option::Option<& str> {
+    pub fn page_token(&self) -> std::option::Option<&str> {
         self.page_token.as_deref()
     }
 }
@@ -44,29 +44,31 @@ impl GetBlueprintsInputBuilder {
     }
     /// <p>A Boolean value that indicates whether to include inactive (unavailable) blueprints in the response of your request.</p>
     pub fn set_include_inactive(mut self, input: std::option::Option<bool>) -> Self {
-        self.include_inactive = input; self
+        self.include_inactive = input;
+        self
     }
-    /// <p>The token to advance to the next page of results from your request.</p> 
+    /// <p>The token to advance to the next page of results from your request.</p>
     /// <p>To get a page token, perform an initial <code>GetBlueprints</code> request. If your results are paginated, the response will return a next page token that you can specify as the page token in a subsequent request.</p>
     pub fn page_token(mut self, input: impl Into<std::string::String>) -> Self {
         self.page_token = Some(input.into());
         self
     }
-    /// <p>The token to advance to the next page of results from your request.</p> 
+    /// <p>The token to advance to the next page of results from your request.</p>
     /// <p>To get a page token, perform an initial <code>GetBlueprints</code> request. If your results are paginated, the response will return a next page token that you can specify as the page token in a subsequent request.</p>
     pub fn set_page_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.page_token = input; self
+        self.page_token = input;
+        self
     }
     /// Consumes the builder and constructs a [`GetBlueprintsInput`](crate::operation::get_blueprints::GetBlueprintsInput).
-    pub fn build(self) -> Result<crate::operation::get_blueprints::GetBlueprintsInput, aws_smithy_http::operation::error::BuildError> {
-        Ok(
-            crate::operation::get_blueprints::GetBlueprintsInput {
-                include_inactive: self.include_inactive
-                ,
-                page_token: self.page_token
-                ,
-            }
-        )
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::get_blueprints::GetBlueprintsInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        Ok(crate::operation::get_blueprints::GetBlueprintsInput {
+            include_inactive: self.include_inactive,
+            page_token: self.page_token,
+        })
     }
 }
-

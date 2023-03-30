@@ -136,4 +136,3 @@ pub mod builders;
 
 /// Error types that FinSpace Public API can respond with.
 pub mod error;
-

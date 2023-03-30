@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ClaimGameServerInput  {
+pub struct ClaimGameServerInput {
     /// <p>A unique identifier for the game server group where the game server is running. If you are not specifying a game server to claim, this value identifies where you want GameLift FleetIQ to look for an available game server to claim. </p>
     #[doc(hidden)]
     pub game_server_group_name: std::option::Option<std::string::String>,
@@ -15,15 +15,15 @@ pub struct ClaimGameServerInput  {
 }
 impl ClaimGameServerInput {
     /// <p>A unique identifier for the game server group where the game server is running. If you are not specifying a game server to claim, this value identifies where you want GameLift FleetIQ to look for an available game server to claim. </p>
-    pub fn game_server_group_name(&self) -> std::option::Option<& str> {
+    pub fn game_server_group_name(&self) -> std::option::Option<&str> {
         self.game_server_group_name.as_deref()
     }
     /// <p>A custom string that uniquely identifies the game server to claim. If this parameter is left empty, GameLift FleetIQ searches for an available game server in the specified game server group.</p>
-    pub fn game_server_id(&self) -> std::option::Option<& str> {
+    pub fn game_server_id(&self) -> std::option::Option<&str> {
         self.game_server_id.as_deref()
     }
     /// <p>A set of custom game server properties, formatted as a single string value. This data is passed to a game client or service when it requests information on game servers. </p>
-    pub fn game_server_data(&self) -> std::option::Option<& str> {
+    pub fn game_server_data(&self) -> std::option::Option<&str> {
         self.game_server_data.as_deref()
     }
 }
@@ -49,8 +49,12 @@ impl ClaimGameServerInputBuilder {
         self
     }
     /// <p>A unique identifier for the game server group where the game server is running. If you are not specifying a game server to claim, this value identifies where you want GameLift FleetIQ to look for an available game server to claim. </p>
-    pub fn set_game_server_group_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.game_server_group_name = input; self
+    pub fn set_game_server_group_name(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.game_server_group_name = input;
+        self
     }
     /// <p>A custom string that uniquely identifies the game server to claim. If this parameter is left empty, GameLift FleetIQ searches for an available game server in the specified game server group.</p>
     pub fn game_server_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -59,7 +63,8 @@ impl ClaimGameServerInputBuilder {
     }
     /// <p>A custom string that uniquely identifies the game server to claim. If this parameter is left empty, GameLift FleetIQ searches for an available game server in the specified game server group.</p>
     pub fn set_game_server_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.game_server_id = input; self
+        self.game_server_id = input;
+        self
     }
     /// <p>A set of custom game server properties, formatted as a single string value. This data is passed to a game client or service when it requests information on game servers. </p>
     pub fn game_server_data(mut self, input: impl Into<std::string::String>) -> Self {
@@ -68,20 +73,20 @@ impl ClaimGameServerInputBuilder {
     }
     /// <p>A set of custom game server properties, formatted as a single string value. This data is passed to a game client or service when it requests information on game servers. </p>
     pub fn set_game_server_data(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.game_server_data = input; self
+        self.game_server_data = input;
+        self
     }
     /// Consumes the builder and constructs a [`ClaimGameServerInput`](crate::operation::claim_game_server::ClaimGameServerInput).
-    pub fn build(self) -> Result<crate::operation::claim_game_server::ClaimGameServerInput, aws_smithy_http::operation::error::BuildError> {
-        Ok(
-            crate::operation::claim_game_server::ClaimGameServerInput {
-                game_server_group_name: self.game_server_group_name
-                ,
-                game_server_id: self.game_server_id
-                ,
-                game_server_data: self.game_server_data
-                ,
-            }
-        )
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::claim_game_server::ClaimGameServerInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        Ok(crate::operation::claim_game_server::ClaimGameServerInput {
+            game_server_group_name: self.game_server_group_name,
+            game_server_id: self.game_server_id,
+            game_server_data: self.game_server_data,
+        })
     }
 }
-

@@ -100,4 +100,3 @@ pub mod builders;
 
 /// Error types that AmazonConnectCampaignService can respond with.
 pub mod error;
-

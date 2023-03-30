@@ -2,14 +2,14 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListSpacesInput  {
+pub struct ListSpacesInput {
     /// <p>A token returned from a call to this API to indicate the next batch of results to return, if any.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListSpacesInput {
     /// <p>A token returned from a call to this API to indicate the next batch of results to return, if any.</p>
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
 }
@@ -34,16 +34,18 @@ impl ListSpacesInputBuilder {
     }
     /// <p>A token returned from a call to this API to indicate the next batch of results to return, if any.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input; self
+        self.next_token = input;
+        self
     }
     /// Consumes the builder and constructs a [`ListSpacesInput`](crate::operation::list_spaces::ListSpacesInput).
-    pub fn build(self) -> Result<crate::operation::list_spaces::ListSpacesInput, aws_smithy_http::operation::error::BuildError> {
-        Ok(
-            crate::operation::list_spaces::ListSpacesInput {
-                next_token: self.next_token
-                ,
-            }
-        )
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::list_spaces::ListSpacesInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        Ok(crate::operation::list_spaces::ListSpacesInput {
+            next_token: self.next_token,
+        })
     }
 }
-

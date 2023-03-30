@@ -3,7 +3,7 @@
 /// <p>The version for an option. Option group option versions are returned by the <code>DescribeOptionGroupOptions</code> action.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct OptionVersion  {
+pub struct OptionVersion {
     /// <p>The version of the option.</p>
     #[doc(hidden)]
     pub version: std::option::Option<std::string::String>,
@@ -13,7 +13,7 @@ pub struct OptionVersion  {
 }
 impl OptionVersion {
     /// <p>The version of the option.</p>
-    pub fn version(&self) -> std::option::Option<& str> {
+    pub fn version(&self) -> std::option::Option<&str> {
         self.version.as_deref()
     }
     /// <p>True if the version is the default version of the option, and otherwise false.</p>
@@ -43,7 +43,8 @@ impl OptionVersionBuilder {
     }
     /// <p>The version of the option.</p>
     pub fn set_version(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.version = input; self
+        self.version = input;
+        self
     }
     /// <p>True if the version is the default version of the option, and otherwise false.</p>
     pub fn is_default(mut self, input: bool) -> Self {
@@ -52,17 +53,14 @@ impl OptionVersionBuilder {
     }
     /// <p>True if the version is the default version of the option, and otherwise false.</p>
     pub fn set_is_default(mut self, input: std::option::Option<bool>) -> Self {
-        self.is_default = input; self
+        self.is_default = input;
+        self
     }
     /// Consumes the builder and constructs a [`OptionVersion`](crate::types::OptionVersion).
     pub fn build(self) -> crate::types::OptionVersion {
         crate::types::OptionVersion {
-            version: self.version
-            ,
-            is_default: self.is_default
-                .unwrap_or_default()
-            ,
+            version: self.version,
+            is_default: self.is_default.unwrap_or_default(),
         }
     }
 }
-

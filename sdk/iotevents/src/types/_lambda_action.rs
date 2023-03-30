@@ -3,7 +3,7 @@
 /// <p>Calls a Lambda function, passing in information about the detector model instance and the event that triggered the action.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct LambdaAction  {
+pub struct LambdaAction {
     /// <p>The ARN of the Lambda function that is executed.</p>
     #[doc(hidden)]
     pub function_arn: std::option::Option<std::string::String>,
@@ -13,11 +13,11 @@ pub struct LambdaAction  {
 }
 impl LambdaAction {
     /// <p>The ARN of the Lambda function that is executed.</p>
-    pub fn function_arn(&self) -> std::option::Option<& str> {
+    pub fn function_arn(&self) -> std::option::Option<&str> {
         self.function_arn.as_deref()
     }
     /// <p>You can configure the action payload when you send a message to a Lambda function.</p>
-    pub fn payload(&self) -> std::option::Option<& crate::types::Payload> {
+    pub fn payload(&self) -> std::option::Option<&crate::types::Payload> {
         self.payload.as_ref()
     }
 }
@@ -43,7 +43,8 @@ impl LambdaActionBuilder {
     }
     /// <p>The ARN of the Lambda function that is executed.</p>
     pub fn set_function_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.function_arn = input; self
+        self.function_arn = input;
+        self
     }
     /// <p>You can configure the action payload when you send a message to a Lambda function.</p>
     pub fn payload(mut self, input: crate::types::Payload) -> Self {
@@ -52,16 +53,14 @@ impl LambdaActionBuilder {
     }
     /// <p>You can configure the action payload when you send a message to a Lambda function.</p>
     pub fn set_payload(mut self, input: std::option::Option<crate::types::Payload>) -> Self {
-        self.payload = input; self
+        self.payload = input;
+        self
     }
     /// Consumes the builder and constructs a [`LambdaAction`](crate::types::LambdaAction).
     pub fn build(self) -> crate::types::LambdaAction {
         crate::types::LambdaAction {
-            function_arn: self.function_arn
-            ,
-            payload: self.payload
-            ,
+            function_arn: self.function_arn,
+            payload: self.payload,
         }
     }
 }
-

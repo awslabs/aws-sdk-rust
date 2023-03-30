@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetInsightEventsInput  {
+pub struct GetInsightEventsInput {
     /// <p>The insight's unique identifier. Use the GetInsightSummaries action to retrieve an InsightId.</p>
     #[doc(hidden)]
     pub insight_id: std::option::Option<std::string::String>,
@@ -15,7 +15,7 @@ pub struct GetInsightEventsInput  {
 }
 impl GetInsightEventsInput {
     /// <p>The insight's unique identifier. Use the GetInsightSummaries action to retrieve an InsightId.</p>
-    pub fn insight_id(&self) -> std::option::Option<& str> {
+    pub fn insight_id(&self) -> std::option::Option<&str> {
         self.insight_id.as_deref()
     }
     /// <p>Used to retrieve at most the specified value of events.</p>
@@ -23,13 +23,14 @@ impl GetInsightEventsInput {
         self.max_results
     }
     /// <p>Specify the pagination token returned by a previous request to retrieve the next page of events. </p>
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
 }
 impl GetInsightEventsInput {
     /// Creates a new builder-style object to manufacture [`GetInsightEventsInput`](crate::operation::get_insight_events::GetInsightEventsInput).
-    pub fn builder() -> crate::operation::get_insight_events::builders::GetInsightEventsInputBuilder {
+    pub fn builder() -> crate::operation::get_insight_events::builders::GetInsightEventsInputBuilder
+    {
         crate::operation::get_insight_events::builders::GetInsightEventsInputBuilder::default()
     }
 }
@@ -50,7 +51,8 @@ impl GetInsightEventsInputBuilder {
     }
     /// <p>The insight's unique identifier. Use the GetInsightSummaries action to retrieve an InsightId.</p>
     pub fn set_insight_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.insight_id = input; self
+        self.insight_id = input;
+        self
     }
     /// <p>Used to retrieve at most the specified value of events.</p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -59,7 +61,8 @@ impl GetInsightEventsInputBuilder {
     }
     /// <p>Used to retrieve at most the specified value of events.</p>
     pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_results = input; self
+        self.max_results = input;
+        self
     }
     /// <p>Specify the pagination token returned by a previous request to retrieve the next page of events. </p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -68,20 +71,22 @@ impl GetInsightEventsInputBuilder {
     }
     /// <p>Specify the pagination token returned by a previous request to retrieve the next page of events. </p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input; self
+        self.next_token = input;
+        self
     }
     /// Consumes the builder and constructs a [`GetInsightEventsInput`](crate::operation::get_insight_events::GetInsightEventsInput).
-    pub fn build(self) -> Result<crate::operation::get_insight_events::GetInsightEventsInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::get_insight_events::GetInsightEventsInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::get_insight_events::GetInsightEventsInput {
-                insight_id: self.insight_id
-                ,
-                max_results: self.max_results
-                ,
-                next_token: self.next_token
-                ,
-            }
+                insight_id: self.insight_id,
+                max_results: self.max_results,
+                next_token: self.next_token,
+            },
         )
     }
 }
-

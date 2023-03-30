@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateDatalakeExceptionsSubscriptionInput  {
+pub struct UpdateDatalakeExceptionsSubscriptionInput {
     /// <p>The subscription protocol to which exception messages are posted. </p>
     #[doc(hidden)]
     pub subscription_protocol: std::option::Option<crate::types::SubscriptionProtocolType>,
@@ -12,17 +12,19 @@ pub struct UpdateDatalakeExceptionsSubscriptionInput  {
 }
 impl UpdateDatalakeExceptionsSubscriptionInput {
     /// <p>The subscription protocol to which exception messages are posted. </p>
-    pub fn subscription_protocol(&self) -> std::option::Option<& crate::types::SubscriptionProtocolType> {
+    pub fn subscription_protocol(
+        &self,
+    ) -> std::option::Option<&crate::types::SubscriptionProtocolType> {
         self.subscription_protocol.as_ref()
     }
     /// <p>The account that is subscribed to receive exception notifications.</p>
-    pub fn notification_endpoint(&self) -> std::option::Option<& str> {
+    pub fn notification_endpoint(&self) -> std::option::Option<&str> {
         self.notification_endpoint.as_deref()
     }
 }
 impl UpdateDatalakeExceptionsSubscriptionInput {
     /// Creates a new builder-style object to manufacture [`UpdateDatalakeExceptionsSubscriptionInput`](crate::operation::update_datalake_exceptions_subscription::UpdateDatalakeExceptionsSubscriptionInput).
-    pub fn builder() -> crate::operation::update_datalake_exceptions_subscription::builders::UpdateDatalakeExceptionsSubscriptionInputBuilder {
+    pub fn builder() -> crate::operation::update_datalake_exceptions_subscription::builders::UpdateDatalakeExceptionsSubscriptionInputBuilder{
         crate::operation::update_datalake_exceptions_subscription::builders::UpdateDatalakeExceptionsSubscriptionInputBuilder::default()
     }
 }
@@ -41,8 +43,12 @@ impl UpdateDatalakeExceptionsSubscriptionInputBuilder {
         self
     }
     /// <p>The subscription protocol to which exception messages are posted. </p>
-    pub fn set_subscription_protocol(mut self, input: std::option::Option<crate::types::SubscriptionProtocolType>) -> Self {
-        self.subscription_protocol = input; self
+    pub fn set_subscription_protocol(
+        mut self,
+        input: std::option::Option<crate::types::SubscriptionProtocolType>,
+    ) -> Self {
+        self.subscription_protocol = input;
+        self
     }
     /// <p>The account that is subscribed to receive exception notifications.</p>
     pub fn notification_endpoint(mut self, input: impl Into<std::string::String>) -> Self {
@@ -50,11 +56,15 @@ impl UpdateDatalakeExceptionsSubscriptionInputBuilder {
         self
     }
     /// <p>The account that is subscribed to receive exception notifications.</p>
-    pub fn set_notification_endpoint(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.notification_endpoint = input; self
+    pub fn set_notification_endpoint(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.notification_endpoint = input;
+        self
     }
     /// Consumes the builder and constructs a [`UpdateDatalakeExceptionsSubscriptionInput`](crate::operation::update_datalake_exceptions_subscription::UpdateDatalakeExceptionsSubscriptionInput).
-    pub fn build(self) -> Result<crate::operation::update_datalake_exceptions_subscription::UpdateDatalakeExceptionsSubscriptionInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> Result<crate::operation::update_datalake_exceptions_subscription::UpdateDatalakeExceptionsSubscriptionInput, aws_smithy_http::operation::error::BuildError>{
         Ok(
             crate::operation::update_datalake_exceptions_subscription::UpdateDatalakeExceptionsSubscriptionInput {
                 subscription_protocol: self.subscription_protocol
@@ -65,4 +75,3 @@ impl UpdateDatalakeExceptionsSubscriptionInputBuilder {
         )
     }
 }
-

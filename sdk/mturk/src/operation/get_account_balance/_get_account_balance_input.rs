@@ -2,11 +2,11 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetAccountBalanceInput  {
-}
+pub struct GetAccountBalanceInput {}
 impl GetAccountBalanceInput {
     /// Creates a new builder-style object to manufacture [`GetAccountBalanceInput`](crate::operation::get_account_balance::GetAccountBalanceInput).
-    pub fn builder() -> crate::operation::get_account_balance::builders::GetAccountBalanceInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::get_account_balance::builders::GetAccountBalanceInputBuilder {
         crate::operation::get_account_balance::builders::GetAccountBalanceInputBuilder::default()
     }
 }
@@ -14,15 +14,15 @@ impl GetAccountBalanceInput {
 /// A builder for [`GetAccountBalanceInput`](crate::operation::get_account_balance::GetAccountBalanceInput).
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-pub struct GetAccountBalanceInputBuilder {
-}
+pub struct GetAccountBalanceInputBuilder {}
 impl GetAccountBalanceInputBuilder {
     /// Consumes the builder and constructs a [`GetAccountBalanceInput`](crate::operation::get_account_balance::GetAccountBalanceInput).
-    pub fn build(self) -> Result<crate::operation::get_account_balance::GetAccountBalanceInput, aws_smithy_http::operation::error::BuildError> {
-        Ok(
-            crate::operation::get_account_balance::GetAccountBalanceInput {
-            }
-        )
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::get_account_balance::GetAccountBalanceInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        Ok(crate::operation::get_account_balance::GetAccountBalanceInput {})
     }
 }
-

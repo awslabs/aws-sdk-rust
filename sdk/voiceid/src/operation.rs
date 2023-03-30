@@ -63,4 +63,3 @@ pub mod untag_resource;
 
 /// Types for the `UpdateDomain` operation.
 pub mod update_domain;
-

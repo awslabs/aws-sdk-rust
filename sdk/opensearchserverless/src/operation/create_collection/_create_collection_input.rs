@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateCollectionInput  {
+pub struct CreateCollectionInput {
     /// <p>Name of the collection.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -21,29 +21,30 @@ pub struct CreateCollectionInput  {
 }
 impl CreateCollectionInput {
     /// <p>Name of the collection.</p>
-    pub fn name(&self) -> std::option::Option<& str> {
+    pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>The type of collection.</p>
-    pub fn r#type(&self) -> std::option::Option<& crate::types::CollectionType> {
+    pub fn r#type(&self) -> std::option::Option<&crate::types::CollectionType> {
         self.r#type.as_ref()
     }
     /// <p>Description of the collection.</p>
-    pub fn description(&self) -> std::option::Option<& str> {
+    pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
     /// <p>An arbitrary set of tags (key–value pairs) to associate with the OpenSearch Serverless collection.</p>
-    pub fn tags(&self) -> std::option::Option<& [crate::types::Tag]> {
+    pub fn tags(&self) -> std::option::Option<&[crate::types::Tag]> {
         self.tags.as_deref()
     }
     /// <p>Unique, case-sensitive identifier to ensure idempotency of the request.</p>
-    pub fn client_token(&self) -> std::option::Option<& str> {
+    pub fn client_token(&self) -> std::option::Option<&str> {
         self.client_token.as_deref()
     }
 }
 impl CreateCollectionInput {
     /// Creates a new builder-style object to manufacture [`CreateCollectionInput`](crate::operation::create_collection::CreateCollectionInput).
-    pub fn builder() -> crate::operation::create_collection::builders::CreateCollectionInputBuilder {
+    pub fn builder() -> crate::operation::create_collection::builders::CreateCollectionInputBuilder
+    {
         crate::operation::create_collection::builders::CreateCollectionInputBuilder::default()
     }
 }
@@ -66,7 +67,8 @@ impl CreateCollectionInputBuilder {
     }
     /// <p>Name of the collection.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input; self
+        self.name = input;
+        self
     }
     /// <p>The type of collection.</p>
     pub fn r#type(mut self, input: crate::types::CollectionType) -> Self {
@@ -75,7 +77,8 @@ impl CreateCollectionInputBuilder {
     }
     /// <p>The type of collection.</p>
     pub fn set_type(mut self, input: std::option::Option<crate::types::CollectionType>) -> Self {
-        self.r#type = input; self
+        self.r#type = input;
+        self
     }
     /// <p>Description of the collection.</p>
     pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -84,7 +87,8 @@ impl CreateCollectionInputBuilder {
     }
     /// <p>Description of the collection.</p>
     pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.description = input; self
+        self.description = input;
+        self
     }
     /// Appends an item to `tags`.
     ///
@@ -93,13 +97,17 @@ impl CreateCollectionInputBuilder {
     /// <p>An arbitrary set of tags (key–value pairs) to associate with the OpenSearch Serverless collection.</p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
-                        v.push(input);
-                        self.tags = Some(v);
-                        self
+        v.push(input);
+        self.tags = Some(v);
+        self
     }
     /// <p>An arbitrary set of tags (key–value pairs) to associate with the OpenSearch Serverless collection.</p>
-    pub fn set_tags(mut self, input: std::option::Option<std::vec::Vec<crate::types::Tag>>) -> Self {
-        self.tags = input; self
+    pub fn set_tags(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::Tag>>,
+    ) -> Self {
+        self.tags = input;
+        self
     }
     /// <p>Unique, case-sensitive identifier to ensure idempotency of the request.</p>
     pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -108,24 +116,22 @@ impl CreateCollectionInputBuilder {
     }
     /// <p>Unique, case-sensitive identifier to ensure idempotency of the request.</p>
     pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.client_token = input; self
+        self.client_token = input;
+        self
     }
     /// Consumes the builder and constructs a [`CreateCollectionInput`](crate::operation::create_collection::CreateCollectionInput).
-    pub fn build(self) -> Result<crate::operation::create_collection::CreateCollectionInput, aws_smithy_http::operation::error::BuildError> {
-        Ok(
-            crate::operation::create_collection::CreateCollectionInput {
-                name: self.name
-                ,
-                r#type: self.r#type
-                ,
-                description: self.description
-                ,
-                tags: self.tags
-                ,
-                client_token: self.client_token
-                ,
-            }
-        )
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::create_collection::CreateCollectionInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        Ok(crate::operation::create_collection::CreateCollectionInput {
+            name: self.name,
+            r#type: self.r#type,
+            description: self.description,
+            tags: self.tags,
+            client_token: self.client_token,
+        })
     }
 }
-

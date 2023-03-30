@@ -3,7 +3,7 @@
 /// <p>Determines the row alternate color options.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct RowAlternateColorOptions  {
+pub struct RowAlternateColorOptions {
     /// <p>Determines the widget status.</p>
     #[doc(hidden)]
     pub status: std::option::Option<crate::types::WidgetStatus>,
@@ -13,11 +13,11 @@ pub struct RowAlternateColorOptions  {
 }
 impl RowAlternateColorOptions {
     /// <p>Determines the widget status.</p>
-    pub fn status(&self) -> std::option::Option<& crate::types::WidgetStatus> {
+    pub fn status(&self) -> std::option::Option<&crate::types::WidgetStatus> {
         self.status.as_ref()
     }
     /// <p>Determines the list of row alternate colors.</p>
-    pub fn row_alternate_colors(&self) -> std::option::Option<& [std::string::String]> {
+    pub fn row_alternate_colors(&self) -> std::option::Option<&[std::string::String]> {
         self.row_alternate_colors.as_deref()
     }
 }
@@ -43,7 +43,8 @@ impl RowAlternateColorOptionsBuilder {
     }
     /// <p>Determines the widget status.</p>
     pub fn set_status(mut self, input: std::option::Option<crate::types::WidgetStatus>) -> Self {
-        self.status = input; self
+        self.status = input;
+        self
     }
     /// Appends an item to `row_alternate_colors`.
     ///
@@ -52,22 +53,23 @@ impl RowAlternateColorOptionsBuilder {
     /// <p>Determines the list of row alternate colors.</p>
     pub fn row_alternate_colors(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.row_alternate_colors.unwrap_or_default();
-                        v.push(input.into());
-                        self.row_alternate_colors = Some(v);
-                        self
+        v.push(input.into());
+        self.row_alternate_colors = Some(v);
+        self
     }
     /// <p>Determines the list of row alternate colors.</p>
-    pub fn set_row_alternate_colors(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-        self.row_alternate_colors = input; self
+    pub fn set_row_alternate_colors(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
+        self.row_alternate_colors = input;
+        self
     }
     /// Consumes the builder and constructs a [`RowAlternateColorOptions`](crate::types::RowAlternateColorOptions).
     pub fn build(self) -> crate::types::RowAlternateColorOptions {
         crate::types::RowAlternateColorOptions {
-            status: self.status
-            ,
-            row_alternate_colors: self.row_alternate_colors
-            ,
+            status: self.status,
+            row_alternate_colors: self.row_alternate_colors,
         }
     }
 }
-

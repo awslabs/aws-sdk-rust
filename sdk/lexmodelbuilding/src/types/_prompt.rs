@@ -3,7 +3,7 @@
 /// <p>Obtains information from the user. To define a prompt, provide one or more messages and specify the number of attempts to get information from the user. If you provide more than one message, Amazon Lex chooses one of the messages to use to prompt the user. For more information, see <code>how-it-works</code>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Prompt  {
+pub struct Prompt {
     /// <p>An array of objects, each of which provides a message string and its type. You can specify the message string in plain text or in Speech Synthesis Markup Language (SSML).</p>
     #[doc(hidden)]
     pub messages: std::option::Option<std::vec::Vec<crate::types::Message>>,
@@ -16,7 +16,7 @@ pub struct Prompt  {
 }
 impl Prompt {
     /// <p>An array of objects, each of which provides a message string and its type. You can specify the message string in plain text or in Speech Synthesis Markup Language (SSML).</p>
-    pub fn messages(&self) -> std::option::Option<& [crate::types::Message]> {
+    pub fn messages(&self) -> std::option::Option<&[crate::types::Message]> {
         self.messages.as_deref()
     }
     /// <p>The number of times to prompt the user for information.</p>
@@ -24,7 +24,7 @@ impl Prompt {
         self.max_attempts
     }
     /// <p>A response card. Amazon Lex uses this prompt at runtime, in the <code>PostText</code> API response. It substitutes session attributes and slot values for placeholders in the response card. For more information, see <code>ex-resp-card</code>. </p>
-    pub fn response_card(&self) -> std::option::Option<& str> {
+    pub fn response_card(&self) -> std::option::Option<&str> {
         self.response_card.as_deref()
     }
 }
@@ -51,13 +51,17 @@ impl PromptBuilder {
     /// <p>An array of objects, each of which provides a message string and its type. You can specify the message string in plain text or in Speech Synthesis Markup Language (SSML).</p>
     pub fn messages(mut self, input: crate::types::Message) -> Self {
         let mut v = self.messages.unwrap_or_default();
-                        v.push(input);
-                        self.messages = Some(v);
-                        self
+        v.push(input);
+        self.messages = Some(v);
+        self
     }
     /// <p>An array of objects, each of which provides a message string and its type. You can specify the message string in plain text or in Speech Synthesis Markup Language (SSML).</p>
-    pub fn set_messages(mut self, input: std::option::Option<std::vec::Vec<crate::types::Message>>) -> Self {
-        self.messages = input; self
+    pub fn set_messages(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::Message>>,
+    ) -> Self {
+        self.messages = input;
+        self
     }
     /// <p>The number of times to prompt the user for information.</p>
     pub fn max_attempts(mut self, input: i32) -> Self {
@@ -66,7 +70,8 @@ impl PromptBuilder {
     }
     /// <p>The number of times to prompt the user for information.</p>
     pub fn set_max_attempts(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_attempts = input; self
+        self.max_attempts = input;
+        self
     }
     /// <p>A response card. Amazon Lex uses this prompt at runtime, in the <code>PostText</code> API response. It substitutes session attributes and slot values for placeholders in the response card. For more information, see <code>ex-resp-card</code>. </p>
     pub fn response_card(mut self, input: impl Into<std::string::String>) -> Self {
@@ -75,18 +80,15 @@ impl PromptBuilder {
     }
     /// <p>A response card. Amazon Lex uses this prompt at runtime, in the <code>PostText</code> API response. It substitutes session attributes and slot values for placeholders in the response card. For more information, see <code>ex-resp-card</code>. </p>
     pub fn set_response_card(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.response_card = input; self
+        self.response_card = input;
+        self
     }
     /// Consumes the builder and constructs a [`Prompt`](crate::types::Prompt).
     pub fn build(self) -> crate::types::Prompt {
         crate::types::Prompt {
-            messages: self.messages
-            ,
-            max_attempts: self.max_attempts
-            ,
-            response_card: self.response_card
-            ,
+            messages: self.messages,
+            max_attempts: self.max_attempts,
+            response_card: self.response_card,
         }
     }
 }
-

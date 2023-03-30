@@ -3,16 +3,16 @@
 /// <p>Contains information about a policy, but does not include the content. To see the content of a policy, see <code>DescribePolicy</code>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PolicySummary  {
-    /// <p>The unique identifier (ID) of the policy.</p> 
+pub struct PolicySummary {
+    /// <p>The unique identifier (ID) of the policy.</p>
     /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for a policy ID string requires "p-" followed by from 8 to 128 lowercase or uppercase letters, digits, or the underscore character (_).</p>
     #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
-    /// <p>The Amazon Resource Name (ARN) of the policy.</p> 
+    /// <p>The Amazon Resource Name (ARN) of the policy.</p>
     /// <p>For more information about ARNs in Organizations, see <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsorganizations.html#awsorganizations-resources-for-iam-policies">ARN Formats Supported by Organizations</a> in the <i>Amazon Web Services Service Authorization Reference</i>.</p>
     #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
-    /// <p>The friendly name of the policy.</p> 
+    /// <p>The friendly name of the policy.</p>
     /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> that is used to validate this parameter is a string of any of the characters in the ASCII character range.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -27,27 +27,27 @@ pub struct PolicySummary  {
     pub aws_managed: bool,
 }
 impl PolicySummary {
-    /// <p>The unique identifier (ID) of the policy.</p> 
+    /// <p>The unique identifier (ID) of the policy.</p>
     /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for a policy ID string requires "p-" followed by from 8 to 128 lowercase or uppercase letters, digits, or the underscore character (_).</p>
-    pub fn id(&self) -> std::option::Option<& str> {
+    pub fn id(&self) -> std::option::Option<&str> {
         self.id.as_deref()
     }
-    /// <p>The Amazon Resource Name (ARN) of the policy.</p> 
+    /// <p>The Amazon Resource Name (ARN) of the policy.</p>
     /// <p>For more information about ARNs in Organizations, see <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsorganizations.html#awsorganizations-resources-for-iam-policies">ARN Formats Supported by Organizations</a> in the <i>Amazon Web Services Service Authorization Reference</i>.</p>
-    pub fn arn(&self) -> std::option::Option<& str> {
+    pub fn arn(&self) -> std::option::Option<&str> {
         self.arn.as_deref()
     }
-    /// <p>The friendly name of the policy.</p> 
+    /// <p>The friendly name of the policy.</p>
     /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> that is used to validate this parameter is a string of any of the characters in the ASCII character range.</p>
-    pub fn name(&self) -> std::option::Option<& str> {
+    pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>The description of the policy.</p>
-    pub fn description(&self) -> std::option::Option<& str> {
+    pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
     /// <p>The type of policy.</p>
-    pub fn r#type(&self) -> std::option::Option<& crate::types::PolicyType> {
+    pub fn r#type(&self) -> std::option::Option<&crate::types::PolicyType> {
         self.r#type.as_ref()
     }
     /// <p>A boolean value that indicates whether the specified policy is an Amazon Web Services managed policy. If true, then you can attach the policy to roots, OUs, or accounts, but you cannot edit it.</p>
@@ -74,38 +74,41 @@ pub struct PolicySummaryBuilder {
     pub(crate) aws_managed: std::option::Option<bool>,
 }
 impl PolicySummaryBuilder {
-    /// <p>The unique identifier (ID) of the policy.</p> 
+    /// <p>The unique identifier (ID) of the policy.</p>
     /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for a policy ID string requires "p-" followed by from 8 to 128 lowercase or uppercase letters, digits, or the underscore character (_).</p>
     pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
         self.id = Some(input.into());
         self
     }
-    /// <p>The unique identifier (ID) of the policy.</p> 
+    /// <p>The unique identifier (ID) of the policy.</p>
     /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for a policy ID string requires "p-" followed by from 8 to 128 lowercase or uppercase letters, digits, or the underscore character (_).</p>
     pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.id = input; self
+        self.id = input;
+        self
     }
-    /// <p>The Amazon Resource Name (ARN) of the policy.</p> 
+    /// <p>The Amazon Resource Name (ARN) of the policy.</p>
     /// <p>For more information about ARNs in Organizations, see <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsorganizations.html#awsorganizations-resources-for-iam-policies">ARN Formats Supported by Organizations</a> in the <i>Amazon Web Services Service Authorization Reference</i>.</p>
     pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
         self.arn = Some(input.into());
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the policy.</p> 
+    /// <p>The Amazon Resource Name (ARN) of the policy.</p>
     /// <p>For more information about ARNs in Organizations, see <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsorganizations.html#awsorganizations-resources-for-iam-policies">ARN Formats Supported by Organizations</a> in the <i>Amazon Web Services Service Authorization Reference</i>.</p>
     pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.arn = input; self
+        self.arn = input;
+        self
     }
-    /// <p>The friendly name of the policy.</p> 
+    /// <p>The friendly name of the policy.</p>
     /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> that is used to validate this parameter is a string of any of the characters in the ASCII character range.</p>
     pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
         self.name = Some(input.into());
         self
     }
-    /// <p>The friendly name of the policy.</p> 
+    /// <p>The friendly name of the policy.</p>
     /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> that is used to validate this parameter is a string of any of the characters in the ASCII character range.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input; self
+        self.name = input;
+        self
     }
     /// <p>The description of the policy.</p>
     pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -114,7 +117,8 @@ impl PolicySummaryBuilder {
     }
     /// <p>The description of the policy.</p>
     pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.description = input; self
+        self.description = input;
+        self
     }
     /// <p>The type of policy.</p>
     pub fn r#type(mut self, input: crate::types::PolicyType) -> Self {
@@ -123,7 +127,8 @@ impl PolicySummaryBuilder {
     }
     /// <p>The type of policy.</p>
     pub fn set_type(mut self, input: std::option::Option<crate::types::PolicyType>) -> Self {
-        self.r#type = input; self
+        self.r#type = input;
+        self
     }
     /// <p>A boolean value that indicates whether the specified policy is an Amazon Web Services managed policy. If true, then you can attach the policy to roots, OUs, or accounts, but you cannot edit it.</p>
     pub fn aws_managed(mut self, input: bool) -> Self {
@@ -132,25 +137,18 @@ impl PolicySummaryBuilder {
     }
     /// <p>A boolean value that indicates whether the specified policy is an Amazon Web Services managed policy. If true, then you can attach the policy to roots, OUs, or accounts, but you cannot edit it.</p>
     pub fn set_aws_managed(mut self, input: std::option::Option<bool>) -> Self {
-        self.aws_managed = input; self
+        self.aws_managed = input;
+        self
     }
     /// Consumes the builder and constructs a [`PolicySummary`](crate::types::PolicySummary).
     pub fn build(self) -> crate::types::PolicySummary {
         crate::types::PolicySummary {
-            id: self.id
-            ,
-            arn: self.arn
-            ,
-            name: self.name
-            ,
-            description: self.description
-            ,
-            r#type: self.r#type
-            ,
-            aws_managed: self.aws_managed
-                .unwrap_or_default()
-            ,
+            id: self.id,
+            arn: self.arn,
+            name: self.name,
+            description: self.description,
+            r#type: self.r#type,
+            aws_managed: self.aws_managed.unwrap_or_default(),
         }
     }
 }
-

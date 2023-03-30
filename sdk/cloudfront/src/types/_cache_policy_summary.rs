@@ -3,7 +3,7 @@
 /// <p>Contains a cache policy.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CachePolicySummary  {
+pub struct CachePolicySummary {
     /// <p>The type of cache policy, either <code>managed</code> (created by Amazon Web Services) or <code>custom</code> (created in this Amazon Web Services account).</p>
     #[doc(hidden)]
     pub r#type: std::option::Option<crate::types::CachePolicyType>,
@@ -13,11 +13,11 @@ pub struct CachePolicySummary  {
 }
 impl CachePolicySummary {
     /// <p>The type of cache policy, either <code>managed</code> (created by Amazon Web Services) or <code>custom</code> (created in this Amazon Web Services account).</p>
-    pub fn r#type(&self) -> std::option::Option<& crate::types::CachePolicyType> {
+    pub fn r#type(&self) -> std::option::Option<&crate::types::CachePolicyType> {
         self.r#type.as_ref()
     }
     /// <p>The cache policy.</p>
-    pub fn cache_policy(&self) -> std::option::Option<& crate::types::CachePolicy> {
+    pub fn cache_policy(&self) -> std::option::Option<&crate::types::CachePolicy> {
         self.cache_policy.as_ref()
     }
 }
@@ -43,7 +43,8 @@ impl CachePolicySummaryBuilder {
     }
     /// <p>The type of cache policy, either <code>managed</code> (created by Amazon Web Services) or <code>custom</code> (created in this Amazon Web Services account).</p>
     pub fn set_type(mut self, input: std::option::Option<crate::types::CachePolicyType>) -> Self {
-        self.r#type = input; self
+        self.r#type = input;
+        self
     }
     /// <p>The cache policy.</p>
     pub fn cache_policy(mut self, input: crate::types::CachePolicy) -> Self {
@@ -51,17 +52,18 @@ impl CachePolicySummaryBuilder {
         self
     }
     /// <p>The cache policy.</p>
-    pub fn set_cache_policy(mut self, input: std::option::Option<crate::types::CachePolicy>) -> Self {
-        self.cache_policy = input; self
+    pub fn set_cache_policy(
+        mut self,
+        input: std::option::Option<crate::types::CachePolicy>,
+    ) -> Self {
+        self.cache_policy = input;
+        self
     }
     /// Consumes the builder and constructs a [`CachePolicySummary`](crate::types::CachePolicySummary).
     pub fn build(self) -> crate::types::CachePolicySummary {
         crate::types::CachePolicySummary {
-            r#type: self.r#type
-            ,
-            cache_policy: self.cache_policy
-            ,
+            r#type: self.r#type,
+            cache_policy: self.cache_policy,
         }
     }
 }
-

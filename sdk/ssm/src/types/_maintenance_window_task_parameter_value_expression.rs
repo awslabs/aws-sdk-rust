@@ -3,18 +3,18 @@
 /// <p>Defines the values for a task parameter.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct MaintenanceWindowTaskParameterValueExpression  {
+pub struct MaintenanceWindowTaskParameterValueExpression {
     /// <p>This field contains an array of 0 or more strings, each 1 to 255 characters in length.</p>
     #[doc(hidden)]
     pub values: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl MaintenanceWindowTaskParameterValueExpression {
     /// <p>This field contains an array of 0 or more strings, each 1 to 255 characters in length.</p>
-    pub fn values(&self) -> std::option::Option<& [std::string::String]> {
+    pub fn values(&self) -> std::option::Option<&[std::string::String]> {
         self.values.as_deref()
     }
 }
-impl  std::fmt::Debug for MaintenanceWindowTaskParameterValueExpression  {
+impl std::fmt::Debug for MaintenanceWindowTaskParameterValueExpression {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("MaintenanceWindowTaskParameterValueExpression");
         formatter.field("values", &"*** Sensitive Data Redacted ***");
@@ -23,7 +23,8 @@ impl  std::fmt::Debug for MaintenanceWindowTaskParameterValueExpression  {
 }
 impl MaintenanceWindowTaskParameterValueExpression {
     /// Creates a new builder-style object to manufacture [`MaintenanceWindowTaskParameterValueExpression`](crate::types::MaintenanceWindowTaskParameterValueExpression).
-    pub fn builder() -> crate::types::builders::MaintenanceWindowTaskParameterValueExpressionBuilder {
+    pub fn builder() -> crate::types::builders::MaintenanceWindowTaskParameterValueExpressionBuilder
+    {
         crate::types::builders::MaintenanceWindowTaskParameterValueExpressionBuilder::default()
     }
 }
@@ -42,19 +43,22 @@ impl MaintenanceWindowTaskParameterValueExpressionBuilder {
     /// <p>This field contains an array of 0 or more strings, each 1 to 255 characters in length.</p>
     pub fn values(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.values.unwrap_or_default();
-                        v.push(input.into());
-                        self.values = Some(v);
-                        self
+        v.push(input.into());
+        self.values = Some(v);
+        self
     }
     /// <p>This field contains an array of 0 or more strings, each 1 to 255 characters in length.</p>
-    pub fn set_values(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-        self.values = input; self
+    pub fn set_values(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
+        self.values = input;
+        self
     }
     /// Consumes the builder and constructs a [`MaintenanceWindowTaskParameterValueExpression`](crate::types::MaintenanceWindowTaskParameterValueExpression).
     pub fn build(self) -> crate::types::MaintenanceWindowTaskParameterValueExpression {
         crate::types::MaintenanceWindowTaskParameterValueExpression {
-            values: self.values
-            ,
+            values: self.values,
         }
     }
 }
@@ -65,4 +69,3 @@ impl std::fmt::Debug for MaintenanceWindowTaskParameterValueExpressionBuilder {
         formatter.finish()
     }
 }
-

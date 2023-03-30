@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CancelResourceRequestOutput  {
+pub struct CancelResourceRequestOutput {
     /// <p>Represents the current status of a resource operation request. For more information, see <a href="https://docs.aws.amazon.com/cloudcontrolapi/latest/userguide/resource-operations-manage-requests.html">Managing resource operation requests</a> in the <i>Amazon Web Services Cloud Control API User Guide</i>.</p>
     #[doc(hidden)]
     pub progress_event: std::option::Option<crate::types::ProgressEvent>,
@@ -10,18 +10,20 @@ pub struct CancelResourceRequestOutput  {
 }
 impl CancelResourceRequestOutput {
     /// <p>Represents the current status of a resource operation request. For more information, see <a href="https://docs.aws.amazon.com/cloudcontrolapi/latest/userguide/resource-operations-manage-requests.html">Managing resource operation requests</a> in the <i>Amazon Web Services Cloud Control API User Guide</i>.</p>
-    pub fn progress_event(&self) -> std::option::Option<& crate::types::ProgressEvent> {
+    pub fn progress_event(&self) -> std::option::Option<&crate::types::ProgressEvent> {
         self.progress_event.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for CancelResourceRequestOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl CancelResourceRequestOutput {
     /// Creates a new builder-style object to manufacture [`CancelResourceRequestOutput`](crate::operation::cancel_resource_request::CancelResourceRequestOutput).
-    pub fn builder() -> crate::operation::cancel_resource_request::builders::CancelResourceRequestOutputBuilder {
+    pub fn builder(
+    ) -> crate::operation::cancel_resource_request::builders::CancelResourceRequestOutputBuilder
+    {
         crate::operation::cancel_resource_request::builders::CancelResourceRequestOutputBuilder::default()
     }
 }
@@ -40,25 +42,27 @@ impl CancelResourceRequestOutputBuilder {
         self
     }
     /// <p>Represents the current status of a resource operation request. For more information, see <a href="https://docs.aws.amazon.com/cloudcontrolapi/latest/userguide/resource-operations-manage-requests.html">Managing resource operation requests</a> in the <i>Amazon Web Services Cloud Control API User Guide</i>.</p>
-    pub fn set_progress_event(mut self, input: std::option::Option<crate::types::ProgressEvent>) -> Self {
-        self.progress_event = input; self
+    pub fn set_progress_event(
+        mut self,
+        input: std::option::Option<crate::types::ProgressEvent>,
+    ) -> Self {
+        self.progress_event = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`CancelResourceRequestOutput`](crate::operation::cancel_resource_request::CancelResourceRequestOutput).
     pub fn build(self) -> crate::operation::cancel_resource_request::CancelResourceRequestOutput {
         crate::operation::cancel_resource_request::CancelResourceRequestOutput {
-            progress_event: self.progress_event
-            ,
+            progress_event: self.progress_event,
             _request_id: self._request_id,
         }
     }
 }
-

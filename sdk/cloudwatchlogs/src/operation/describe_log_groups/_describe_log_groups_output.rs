@@ -2,8 +2,8 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeLogGroupsOutput  {
-    /// <p>The log groups.</p> 
+pub struct DescribeLogGroupsOutput {
+    /// <p>The log groups.</p>
     /// <p>If the <code>retentionInDays</code> value is not included for a log group, then that log group's events do not expire.</p>
     #[doc(hidden)]
     pub log_groups: std::option::Option<std::vec::Vec<crate::types::LogGroup>>,
@@ -13,24 +13,25 @@ pub struct DescribeLogGroupsOutput  {
     _request_id: Option<String>,
 }
 impl DescribeLogGroupsOutput {
-    /// <p>The log groups.</p> 
+    /// <p>The log groups.</p>
     /// <p>If the <code>retentionInDays</code> value is not included for a log group, then that log group's events do not expire.</p>
-    pub fn log_groups(&self) -> std::option::Option<& [crate::types::LogGroup]> {
+    pub fn log_groups(&self) -> std::option::Option<&[crate::types::LogGroup]> {
         self.log_groups.as_deref()
     }
     /// <p>The token for the next set of items to return. The token expires after 24 hours.</p>
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for DescribeLogGroupsOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl DescribeLogGroupsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeLogGroupsOutput`](crate::operation::describe_log_groups::DescribeLogGroupsOutput).
-    pub fn builder() -> crate::operation::describe_log_groups::builders::DescribeLogGroupsOutputBuilder {
+    pub fn builder(
+    ) -> crate::operation::describe_log_groups::builders::DescribeLogGroupsOutputBuilder {
         crate::operation::describe_log_groups::builders::DescribeLogGroupsOutputBuilder::default()
     }
 }
@@ -48,18 +49,22 @@ impl DescribeLogGroupsOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_log_groups`](Self::set_log_groups).
     ///
-    /// <p>The log groups.</p> 
+    /// <p>The log groups.</p>
     /// <p>If the <code>retentionInDays</code> value is not included for a log group, then that log group's events do not expire.</p>
     pub fn log_groups(mut self, input: crate::types::LogGroup) -> Self {
         let mut v = self.log_groups.unwrap_or_default();
-                        v.push(input);
-                        self.log_groups = Some(v);
-                        self
+        v.push(input);
+        self.log_groups = Some(v);
+        self
     }
-    /// <p>The log groups.</p> 
+    /// <p>The log groups.</p>
     /// <p>If the <code>retentionInDays</code> value is not included for a log group, then that log group's events do not expire.</p>
-    pub fn set_log_groups(mut self, input: std::option::Option<std::vec::Vec<crate::types::LogGroup>>) -> Self {
-        self.log_groups = input; self
+    pub fn set_log_groups(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::LogGroup>>,
+    ) -> Self {
+        self.log_groups = input;
+        self
     }
     /// <p>The token for the next set of items to return. The token expires after 24 hours.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -68,26 +73,24 @@ impl DescribeLogGroupsOutputBuilder {
     }
     /// <p>The token for the next set of items to return. The token expires after 24 hours.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input; self
+        self.next_token = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`DescribeLogGroupsOutput`](crate::operation::describe_log_groups::DescribeLogGroupsOutput).
     pub fn build(self) -> crate::operation::describe_log_groups::DescribeLogGroupsOutput {
         crate::operation::describe_log_groups::DescribeLogGroupsOutput {
-            log_groups: self.log_groups
-            ,
-            next_token: self.next_token
-            ,
+            log_groups: self.log_groups,
+            next_token: self.next_token,
             _request_id: self._request_id,
         }
     }
 }
-

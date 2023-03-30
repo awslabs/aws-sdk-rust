@@ -3,7 +3,7 @@
 /// <p>The browser settings resource that can be associated with a web portal. Once associated with a web portal, browser settings control how the browser will behave once a user starts a streaming session for the web portal. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct BrowserSettings  {
+pub struct BrowserSettings {
     /// <p>The ARN of the browser settings.</p>
     #[doc(hidden)]
     pub browser_settings_arn: std::option::Option<std::string::String>,
@@ -16,19 +16,19 @@ pub struct BrowserSettings  {
 }
 impl BrowserSettings {
     /// <p>The ARN of the browser settings.</p>
-    pub fn browser_settings_arn(&self) -> std::option::Option<& str> {
+    pub fn browser_settings_arn(&self) -> std::option::Option<&str> {
         self.browser_settings_arn.as_deref()
     }
     /// <p>A list of web portal ARNs that this browser settings is associated with.</p>
-    pub fn associated_portal_arns(&self) -> std::option::Option<& [std::string::String]> {
+    pub fn associated_portal_arns(&self) -> std::option::Option<&[std::string::String]> {
         self.associated_portal_arns.as_deref()
     }
     /// <p>A JSON string containing Chrome Enterprise policies that will be applied to all streaming sessions.</p>
-    pub fn browser_policy(&self) -> std::option::Option<& str> {
+    pub fn browser_policy(&self) -> std::option::Option<&str> {
         self.browser_policy.as_deref()
     }
 }
-impl  std::fmt::Debug for BrowserSettings  {
+impl std::fmt::Debug for BrowserSettings {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("BrowserSettings");
         formatter.field("browser_settings_arn", &self.browser_settings_arn);
@@ -59,8 +59,12 @@ impl BrowserSettingsBuilder {
         self
     }
     /// <p>The ARN of the browser settings.</p>
-    pub fn set_browser_settings_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.browser_settings_arn = input; self
+    pub fn set_browser_settings_arn(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.browser_settings_arn = input;
+        self
     }
     /// Appends an item to `associated_portal_arns`.
     ///
@@ -69,13 +73,17 @@ impl BrowserSettingsBuilder {
     /// <p>A list of web portal ARNs that this browser settings is associated with.</p>
     pub fn associated_portal_arns(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.associated_portal_arns.unwrap_or_default();
-                        v.push(input.into());
-                        self.associated_portal_arns = Some(v);
-                        self
+        v.push(input.into());
+        self.associated_portal_arns = Some(v);
+        self
     }
     /// <p>A list of web portal ARNs that this browser settings is associated with.</p>
-    pub fn set_associated_portal_arns(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-        self.associated_portal_arns = input; self
+    pub fn set_associated_portal_arns(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
+        self.associated_portal_arns = input;
+        self
     }
     /// <p>A JSON string containing Chrome Enterprise policies that will be applied to all streaming sessions.</p>
     pub fn browser_policy(mut self, input: impl Into<std::string::String>) -> Self {
@@ -84,17 +92,15 @@ impl BrowserSettingsBuilder {
     }
     /// <p>A JSON string containing Chrome Enterprise policies that will be applied to all streaming sessions.</p>
     pub fn set_browser_policy(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.browser_policy = input; self
+        self.browser_policy = input;
+        self
     }
     /// Consumes the builder and constructs a [`BrowserSettings`](crate::types::BrowserSettings).
     pub fn build(self) -> crate::types::BrowserSettings {
         crate::types::BrowserSettings {
-            browser_settings_arn: self.browser_settings_arn
-            ,
-            associated_portal_arns: self.associated_portal_arns
-            ,
-            browser_policy: self.browser_policy
-            ,
+            browser_settings_arn: self.browser_settings_arn,
+            associated_portal_arns: self.associated_portal_arns,
+            browser_policy: self.browser_policy,
         }
     }
 }
@@ -107,4 +113,3 @@ impl std::fmt::Debug for BrowserSettingsBuilder {
         formatter.finish()
     }
 }
-

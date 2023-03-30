@@ -3,7 +3,7 @@
 /// Specify the offset between the upper-left corner of the video frame and the top left corner of the overlay.
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct MotionImageInsertionOffset  {
+pub struct MotionImageInsertionOffset {
     /// Set the distance, in pixels, between the overlay and the left edge of the video frame.
     #[doc(hidden)]
     pub image_x: i32,
@@ -43,7 +43,8 @@ impl MotionImageInsertionOffsetBuilder {
     }
     /// Set the distance, in pixels, between the overlay and the left edge of the video frame.
     pub fn set_image_x(mut self, input: std::option::Option<i32>) -> Self {
-        self.image_x = input; self
+        self.image_x = input;
+        self
     }
     /// Set the distance, in pixels, between the overlay and the top edge of the video frame.
     pub fn image_y(mut self, input: i32) -> Self {
@@ -52,18 +53,14 @@ impl MotionImageInsertionOffsetBuilder {
     }
     /// Set the distance, in pixels, between the overlay and the top edge of the video frame.
     pub fn set_image_y(mut self, input: std::option::Option<i32>) -> Self {
-        self.image_y = input; self
+        self.image_y = input;
+        self
     }
     /// Consumes the builder and constructs a [`MotionImageInsertionOffset`](crate::types::MotionImageInsertionOffset).
     pub fn build(self) -> crate::types::MotionImageInsertionOffset {
         crate::types::MotionImageInsertionOffset {
-            image_x: self.image_x
-                .unwrap_or_default()
-            ,
-            image_y: self.image_y
-                .unwrap_or_default()
-            ,
+            image_x: self.image_x.unwrap_or_default(),
+            image_y: self.image_y.unwrap_or_default(),
         }
     }
 }
-

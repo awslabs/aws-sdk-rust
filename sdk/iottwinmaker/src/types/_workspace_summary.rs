@@ -3,7 +3,7 @@
 /// <p>An object that contains information about a workspace.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct WorkspaceSummary  {
+pub struct WorkspaceSummary {
     /// <p>The ID of the workspace.</p>
     #[doc(hidden)]
     pub workspace_id: std::option::Option<std::string::String>,
@@ -22,23 +22,23 @@ pub struct WorkspaceSummary  {
 }
 impl WorkspaceSummary {
     /// <p>The ID of the workspace.</p>
-    pub fn workspace_id(&self) -> std::option::Option<& str> {
+    pub fn workspace_id(&self) -> std::option::Option<&str> {
         self.workspace_id.as_deref()
     }
     /// <p>The ARN of the workspace.</p>
-    pub fn arn(&self) -> std::option::Option<& str> {
+    pub fn arn(&self) -> std::option::Option<&str> {
         self.arn.as_deref()
     }
     /// <p>The description of the workspace.</p>
-    pub fn description(&self) -> std::option::Option<& str> {
+    pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
     /// <p>The date and time when the workspace was created.</p>
-    pub fn creation_date_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
+    pub fn creation_date_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.creation_date_time.as_ref()
     }
     /// <p>The date and time when the workspace was last updated.</p>
-    pub fn update_date_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
+    pub fn update_date_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.update_date_time.as_ref()
     }
 }
@@ -67,7 +67,8 @@ impl WorkspaceSummaryBuilder {
     }
     /// <p>The ID of the workspace.</p>
     pub fn set_workspace_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.workspace_id = input; self
+        self.workspace_id = input;
+        self
     }
     /// <p>The ARN of the workspace.</p>
     pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -76,7 +77,8 @@ impl WorkspaceSummaryBuilder {
     }
     /// <p>The ARN of the workspace.</p>
     pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.arn = input; self
+        self.arn = input;
+        self
     }
     /// <p>The description of the workspace.</p>
     pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -85,7 +87,8 @@ impl WorkspaceSummaryBuilder {
     }
     /// <p>The description of the workspace.</p>
     pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.description = input; self
+        self.description = input;
+        self
     }
     /// <p>The date and time when the workspace was created.</p>
     pub fn creation_date_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -93,8 +96,12 @@ impl WorkspaceSummaryBuilder {
         self
     }
     /// <p>The date and time when the workspace was created.</p>
-    pub fn set_creation_date_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.creation_date_time = input; self
+    pub fn set_creation_date_time(
+        mut self,
+        input: std::option::Option<aws_smithy_types::DateTime>,
+    ) -> Self {
+        self.creation_date_time = input;
+        self
     }
     /// <p>The date and time when the workspace was last updated.</p>
     pub fn update_date_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -102,23 +109,21 @@ impl WorkspaceSummaryBuilder {
         self
     }
     /// <p>The date and time when the workspace was last updated.</p>
-    pub fn set_update_date_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.update_date_time = input; self
+    pub fn set_update_date_time(
+        mut self,
+        input: std::option::Option<aws_smithy_types::DateTime>,
+    ) -> Self {
+        self.update_date_time = input;
+        self
     }
     /// Consumes the builder and constructs a [`WorkspaceSummary`](crate::types::WorkspaceSummary).
     pub fn build(self) -> crate::types::WorkspaceSummary {
         crate::types::WorkspaceSummary {
-            workspace_id: self.workspace_id
-            ,
-            arn: self.arn
-            ,
-            description: self.description
-            ,
-            creation_date_time: self.creation_date_time
-            ,
-            update_date_time: self.update_date_time
-            ,
+            workspace_id: self.workspace_id,
+            arn: self.arn,
+            description: self.description,
+            creation_date_time: self.creation_date_time,
+            update_date_time: self.update_date_time,
         }
     }
 }
-

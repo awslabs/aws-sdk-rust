@@ -3,7 +3,7 @@
 /// <p>Describes the configuration manager.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct StackConfigurationManager  {
+pub struct StackConfigurationManager {
     /// <p>The name. This parameter must be set to "Chef".</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -13,11 +13,11 @@ pub struct StackConfigurationManager  {
 }
 impl StackConfigurationManager {
     /// <p>The name. This parameter must be set to "Chef".</p>
-    pub fn name(&self) -> std::option::Option<& str> {
+    pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>The Chef version. This parameter must be set to 12, 11.10, or 11.4 for Linux stacks, and to 12.2 for Windows stacks. The default value for Linux stacks is 11.4.</p>
-    pub fn version(&self) -> std::option::Option<& str> {
+    pub fn version(&self) -> std::option::Option<&str> {
         self.version.as_deref()
     }
 }
@@ -43,7 +43,8 @@ impl StackConfigurationManagerBuilder {
     }
     /// <p>The name. This parameter must be set to "Chef".</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input; self
+        self.name = input;
+        self
     }
     /// <p>The Chef version. This parameter must be set to 12, 11.10, or 11.4 for Linux stacks, and to 12.2 for Windows stacks. The default value for Linux stacks is 11.4.</p>
     pub fn version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -52,16 +53,14 @@ impl StackConfigurationManagerBuilder {
     }
     /// <p>The Chef version. This parameter must be set to 12, 11.10, or 11.4 for Linux stacks, and to 12.2 for Windows stacks. The default value for Linux stacks is 11.4.</p>
     pub fn set_version(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.version = input; self
+        self.version = input;
+        self
     }
     /// Consumes the builder and constructs a [`StackConfigurationManager`](crate::types::StackConfigurationManager).
     pub fn build(self) -> crate::types::StackConfigurationManager {
         crate::types::StackConfigurationManager {
-            name: self.name
-            ,
-            version: self.version
-            ,
+            name: self.name,
+            version: self.version,
         }
     }
 }
-

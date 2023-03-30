@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct PhoneNumberError  {
+pub struct PhoneNumberError {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub phone_number_id: std::option::Option<std::string::String>,
@@ -15,19 +15,19 @@ pub struct PhoneNumberError  {
 }
 impl PhoneNumberError {
     #[allow(missing_docs)] // documentation missing in model
-    pub fn phone_number_id(&self) -> std::option::Option<& str> {
+    pub fn phone_number_id(&self) -> std::option::Option<&str> {
         self.phone_number_id.as_deref()
     }
     #[allow(missing_docs)] // documentation missing in model
-    pub fn error_code(&self) -> std::option::Option<& crate::types::ErrorCode> {
+    pub fn error_code(&self) -> std::option::Option<&crate::types::ErrorCode> {
         self.error_code.as_ref()
     }
     #[allow(missing_docs)] // documentation missing in model
-    pub fn error_message(&self) -> std::option::Option<& str> {
+    pub fn error_message(&self) -> std::option::Option<&str> {
         self.error_message.as_deref()
     }
 }
-impl  std::fmt::Debug for PhoneNumberError  {
+impl std::fmt::Debug for PhoneNumberError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("PhoneNumberError");
         formatter.field("phone_number_id", &"*** Sensitive Data Redacted ***");
@@ -59,7 +59,8 @@ impl PhoneNumberErrorBuilder {
     }
     #[allow(missing_docs)] // documentation missing in model
     pub fn set_phone_number_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.phone_number_id = input; self
+        self.phone_number_id = input;
+        self
     }
     #[allow(missing_docs)] // documentation missing in model
     pub fn error_code(mut self, input: crate::types::ErrorCode) -> Self {
@@ -68,7 +69,8 @@ impl PhoneNumberErrorBuilder {
     }
     #[allow(missing_docs)] // documentation missing in model
     pub fn set_error_code(mut self, input: std::option::Option<crate::types::ErrorCode>) -> Self {
-        self.error_code = input; self
+        self.error_code = input;
+        self
     }
     #[allow(missing_docs)] // documentation missing in model
     pub fn error_message(mut self, input: impl Into<std::string::String>) -> Self {
@@ -77,17 +79,15 @@ impl PhoneNumberErrorBuilder {
     }
     #[allow(missing_docs)] // documentation missing in model
     pub fn set_error_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.error_message = input; self
+        self.error_message = input;
+        self
     }
     /// Consumes the builder and constructs a [`PhoneNumberError`](crate::types::PhoneNumberError).
     pub fn build(self) -> crate::types::PhoneNumberError {
         crate::types::PhoneNumberError {
-            phone_number_id: self.phone_number_id
-            ,
-            error_code: self.error_code
-            ,
-            error_message: self.error_message
-            ,
+            phone_number_id: self.phone_number_id,
+            error_code: self.error_code,
+            error_message: self.error_message,
         }
     }
 }
@@ -100,4 +100,3 @@ impl std::fmt::Debug for PhoneNumberErrorBuilder {
         formatter.finish()
     }
 }
-

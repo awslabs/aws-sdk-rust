@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListConfigurationRevisionsInput  {
+pub struct ListConfigurationRevisionsInput {
     /// <p>The unique ID that Amazon MQ generates for the configuration.</p>
     #[doc(hidden)]
     pub configuration_id: std::option::Option<std::string::String>,
@@ -15,7 +15,7 @@ pub struct ListConfigurationRevisionsInput  {
 }
 impl ListConfigurationRevisionsInput {
     /// <p>The unique ID that Amazon MQ generates for the configuration.</p>
-    pub fn configuration_id(&self) -> std::option::Option<& str> {
+    pub fn configuration_id(&self) -> std::option::Option<&str> {
         self.configuration_id.as_deref()
     }
     /// <p>The maximum number of brokers that Amazon MQ can return per page (20 by default). This value must be an integer from 5 to 100.</p>
@@ -23,13 +23,13 @@ impl ListConfigurationRevisionsInput {
         self.max_results
     }
     /// <p>The token that specifies the next page of results Amazon MQ should return. To request the first page, leave nextToken empty.</p>
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
 }
 impl ListConfigurationRevisionsInput {
     /// Creates a new builder-style object to manufacture [`ListConfigurationRevisionsInput`](crate::operation::list_configuration_revisions::ListConfigurationRevisionsInput).
-    pub fn builder() -> crate::operation::list_configuration_revisions::builders::ListConfigurationRevisionsInputBuilder {
+    pub fn builder() -> crate::operation::list_configuration_revisions::builders::ListConfigurationRevisionsInputBuilder{
         crate::operation::list_configuration_revisions::builders::ListConfigurationRevisionsInputBuilder::default()
     }
 }
@@ -50,7 +50,8 @@ impl ListConfigurationRevisionsInputBuilder {
     }
     /// <p>The unique ID that Amazon MQ generates for the configuration.</p>
     pub fn set_configuration_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.configuration_id = input; self
+        self.configuration_id = input;
+        self
     }
     /// <p>The maximum number of brokers that Amazon MQ can return per page (20 by default). This value must be an integer from 5 to 100.</p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -59,7 +60,8 @@ impl ListConfigurationRevisionsInputBuilder {
     }
     /// <p>The maximum number of brokers that Amazon MQ can return per page (20 by default). This value must be an integer from 5 to 100.</p>
     pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_results = input; self
+        self.max_results = input;
+        self
     }
     /// <p>The token that specifies the next page of results Amazon MQ should return. To request the first page, leave nextToken empty.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -68,21 +70,22 @@ impl ListConfigurationRevisionsInputBuilder {
     }
     /// <p>The token that specifies the next page of results Amazon MQ should return. To request the first page, leave nextToken empty.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input; self
+        self.next_token = input;
+        self
     }
     /// Consumes the builder and constructs a [`ListConfigurationRevisionsInput`](crate::operation::list_configuration_revisions::ListConfigurationRevisionsInput).
-    pub fn build(self) -> Result<crate::operation::list_configuration_revisions::ListConfigurationRevisionsInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::list_configuration_revisions::ListConfigurationRevisionsInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::list_configuration_revisions::ListConfigurationRevisionsInput {
-                configuration_id: self.configuration_id
-                ,
-                max_results: self.max_results
-                    .unwrap_or_default()
-                ,
-                next_token: self.next_token
-                ,
-            }
+                configuration_id: self.configuration_id,
+                max_results: self.max_results.unwrap_or_default(),
+                next_token: self.next_token,
+            },
         )
     }
 }
-

@@ -4,64 +4,86 @@ pub use crate::operation::list_dead_letter_source_queues::_list_dead_letter_sour
 pub use crate::operation::list_dead_letter_source_queues::_list_dead_letter_source_queues_input::ListDeadLetterSourceQueuesInputBuilder;
 
 /// Fluent builder constructing a request to `ListDeadLetterSourceQueues`.
-/// 
-/// <p>Returns a list of your queues that have the <code>RedrivePolicy</code> queue attribute configured with a dead-letter queue.</p> 
-/// <p> The <code>ListDeadLetterSourceQueues</code> methods supports pagination. Set parameter <code>MaxResults</code> in the request to specify the maximum number of results to be returned in the response. If you do not set <code>MaxResults</code>, the response includes a maximum of 1,000 results. If you set <code>MaxResults</code> and there are additional results to display, the response includes a value for <code>NextToken</code>. Use <code>NextToken</code> as a parameter in your next request to <code>ListDeadLetterSourceQueues</code> to receive the next page of results. </p> 
+///
+/// <p>Returns a list of your queues that have the <code>RedrivePolicy</code> queue attribute configured with a dead-letter queue.</p>
+/// <p> The <code>ListDeadLetterSourceQueues</code> methods supports pagination. Set parameter <code>MaxResults</code> in the request to specify the maximum number of results to be returned in the response. If you do not set <code>MaxResults</code>, the response includes a maximum of 1,000 results. If you set <code>MaxResults</code> and there are additional results to display, the response includes a value for <code>NextToken</code>. Use <code>NextToken</code> as a parameter in your next request to <code>ListDeadLetterSourceQueues</code> to receive the next page of results. </p>
 /// <p>For more information about using dead-letter queues, see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-dead-letter-queues.html">Using Amazon SQS Dead-Letter Queues</a> in the <i>Amazon SQS Developer Guide</i>.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListDeadLetterSourceQueuesFluentBuilder {
                 handle: std::sync::Arc<crate::client::Handle>,
                 inner: crate::operation::list_dead_letter_source_queues::builders::ListDeadLetterSourceQueuesInputBuilder
             }
-impl ListDeadLetterSourceQueuesFluentBuilder  {
+impl ListDeadLetterSourceQueuesFluentBuilder {
     /// Creates a new `ListDeadLetterSourceQueues`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
-                    /// sent. The operation's inner [http::Request] can be modified as well.
-                    pub async fn customize(self) -> std::result::Result<
-                        crate::client::customize::CustomizableOperation<crate::operation::list_dead_letter_source_queues::ListDeadLetterSourceQueues, aws_http::retry::AwsResponseRetryClassifier,>,
-                        aws_smithy_http::result::SdkError<crate::operation::list_dead_letter_source_queues::ListDeadLetterSourceQueuesError>
-                    >  {
-                        let handle = self.handle.clone();
-                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-                    }
-    
-                    /// Sends the request and returns the response.
-                    ///
-                    /// If an error occurs, an `SdkError` will be returned with additional details that
-                    /// can be matched against.
-                    ///
-                    /// By default, any retryable failures will be retried twice. Retry behavior
-                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                    /// set when configuring the client.
-                    pub async fn send(self) -> std::result::Result<crate::operation::list_dead_letter_source_queues::ListDeadLetterSourceQueuesOutput, aws_smithy_http::result::SdkError<crate::operation::list_dead_letter_source_queues::ListDeadLetterSourceQueuesError>>
-                     {
-                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&self.handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        self.handle.client.call(op).await
-                    }
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle,
+            inner: Default::default(),
+        }
+    }
+
+    /// Consume this builder, creating a customizable operation that can be modified before being
+    /// sent. The operation's inner [http::Request] can be modified as well.
+    pub async fn customize(
+        self,
+    ) -> std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::list_dead_letter_source_queues::ListDeadLetterSourceQueues,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::result::SdkError<
+            crate::operation::list_dead_letter_source_queues::ListDeadLetterSourceQueuesError,
+        >,
+    > {
+        let handle = self.handle.clone();
+        let operation = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+    }
+
+    /// Sends the request and returns the response.
+    ///
+    /// If an error occurs, an `SdkError` will be returned with additional details that
+    /// can be matched against.
+    ///
+    /// By default, any retryable failures will be retried twice. Retry behavior
+    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+    /// set when configuring the client.
+    pub async fn send(
+        self,
+    ) -> std::result::Result<
+        crate::operation::list_dead_letter_source_queues::ListDeadLetterSourceQueuesOutput,
+        aws_smithy_http::result::SdkError<
+            crate::operation::list_dead_letter_source_queues::ListDeadLetterSourceQueuesError,
+        >,
+    > {
+        let op = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&self.handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        self.handle.client.call(op).await
+    }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::list_dead_letter_source_queues::paginator::ListDeadLetterSourceQueuesPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::list_dead_letter_source_queues::paginator::ListDeadLetterSourceQueuesPaginator {
-                            crate::operation::list_dead_letter_source_queues::paginator::ListDeadLetterSourceQueuesPaginator::new(self.handle, self.inner)
-                        }
-    /// <p>The URL of a dead-letter queue.</p> 
+    ///
+    /// Paginators are used by calling [`send().await`](crate::operation::list_dead_letter_source_queues::paginator::ListDeadLetterSourceQueuesPaginator::send) which returns a `Stream`.
+    pub fn into_paginator(self) -> crate::operation::list_dead_letter_source_queues::paginator::ListDeadLetterSourceQueuesPaginator{
+        crate::operation::list_dead_letter_source_queues::paginator::ListDeadLetterSourceQueuesPaginator::new(self.handle, self.inner)
+    }
+    /// <p>The URL of a dead-letter queue.</p>
     /// <p>Queue URLs and names are case-sensitive.</p>
     pub fn queue_url(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.queue_url(input.into());
         self
     }
-    /// <p>The URL of a dead-letter queue.</p> 
+    /// <p>The URL of a dead-letter queue.</p>
     /// <p>Queue URLs and names are case-sensitive.</p>
     pub fn set_queue_url(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.inner = self.inner.set_queue_url(input);
@@ -88,4 +110,3 @@ impl ListDeadLetterSourceQueuesFluentBuilder  {
         self
     }
 }
-

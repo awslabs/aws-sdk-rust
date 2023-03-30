@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct StopSentimentDetectionJobOutput  {
+pub struct StopSentimentDetectionJobOutput {
     /// <p>The identifier of the sentiment detection job to stop.</p>
     #[doc(hidden)]
     pub job_id: std::option::Option<std::string::String>,
@@ -13,22 +13,22 @@ pub struct StopSentimentDetectionJobOutput  {
 }
 impl StopSentimentDetectionJobOutput {
     /// <p>The identifier of the sentiment detection job to stop.</p>
-    pub fn job_id(&self) -> std::option::Option<& str> {
+    pub fn job_id(&self) -> std::option::Option<&str> {
         self.job_id.as_deref()
     }
     /// <p>Either <code>STOP_REQUESTED</code> if the job is currently running, or <code>STOPPED</code> if the job was previously stopped with the <code>StopSentimentDetectionJob</code> operation.</p>
-    pub fn job_status(&self) -> std::option::Option<& crate::types::JobStatus> {
+    pub fn job_status(&self) -> std::option::Option<&crate::types::JobStatus> {
         self.job_status.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for StopSentimentDetectionJobOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl StopSentimentDetectionJobOutput {
     /// Creates a new builder-style object to manufacture [`StopSentimentDetectionJobOutput`](crate::operation::stop_sentiment_detection_job::StopSentimentDetectionJobOutput).
-    pub fn builder() -> crate::operation::stop_sentiment_detection_job::builders::StopSentimentDetectionJobOutputBuilder {
+    pub fn builder() -> crate::operation::stop_sentiment_detection_job::builders::StopSentimentDetectionJobOutputBuilder{
         crate::operation::stop_sentiment_detection_job::builders::StopSentimentDetectionJobOutputBuilder::default()
     }
 }
@@ -49,7 +49,8 @@ impl StopSentimentDetectionJobOutputBuilder {
     }
     /// <p>The identifier of the sentiment detection job to stop.</p>
     pub fn set_job_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.job_id = input; self
+        self.job_id = input;
+        self
     }
     /// <p>Either <code>STOP_REQUESTED</code> if the job is currently running, or <code>STOPPED</code> if the job was previously stopped with the <code>StopSentimentDetectionJob</code> operation.</p>
     pub fn job_status(mut self, input: crate::types::JobStatus) -> Self {
@@ -58,26 +59,26 @@ impl StopSentimentDetectionJobOutputBuilder {
     }
     /// <p>Either <code>STOP_REQUESTED</code> if the job is currently running, or <code>STOPPED</code> if the job was previously stopped with the <code>StopSentimentDetectionJob</code> operation.</p>
     pub fn set_job_status(mut self, input: std::option::Option<crate::types::JobStatus>) -> Self {
-        self.job_status = input; self
+        self.job_status = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`StopSentimentDetectionJobOutput`](crate::operation::stop_sentiment_detection_job::StopSentimentDetectionJobOutput).
-    pub fn build(self) -> crate::operation::stop_sentiment_detection_job::StopSentimentDetectionJobOutput {
+    pub fn build(
+        self,
+    ) -> crate::operation::stop_sentiment_detection_job::StopSentimentDetectionJobOutput {
         crate::operation::stop_sentiment_detection_job::StopSentimentDetectionJobOutput {
-            job_id: self.job_id
-            ,
-            job_status: self.job_status
-            ,
+            job_id: self.job_id,
+            job_status: self.job_status,
             _request_id: self._request_id,
         }
     }
 }
-

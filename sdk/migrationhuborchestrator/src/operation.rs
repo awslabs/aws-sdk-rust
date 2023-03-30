@@ -84,4 +84,3 @@ pub mod update_workflow_step;
 
 /// Types for the `UpdateWorkflowStepGroup` operation.
 pub mod update_workflow_step_group;
-

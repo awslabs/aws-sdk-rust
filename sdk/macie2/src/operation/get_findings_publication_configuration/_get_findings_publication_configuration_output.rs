@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetFindingsPublicationConfigurationOutput  {
+pub struct GetFindingsPublicationConfigurationOutput {
     /// <p>The configuration settings that determine which findings are published to Security Hub.</p>
     #[doc(hidden)]
     pub security_hub_configuration: std::option::Option<crate::types::SecurityHubConfiguration>,
@@ -10,18 +10,20 @@ pub struct GetFindingsPublicationConfigurationOutput  {
 }
 impl GetFindingsPublicationConfigurationOutput {
     /// <p>The configuration settings that determine which findings are published to Security Hub.</p>
-    pub fn security_hub_configuration(&self) -> std::option::Option<& crate::types::SecurityHubConfiguration> {
+    pub fn security_hub_configuration(
+        &self,
+    ) -> std::option::Option<&crate::types::SecurityHubConfiguration> {
         self.security_hub_configuration.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for GetFindingsPublicationConfigurationOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl GetFindingsPublicationConfigurationOutput {
     /// Creates a new builder-style object to manufacture [`GetFindingsPublicationConfigurationOutput`](crate::operation::get_findings_publication_configuration::GetFindingsPublicationConfigurationOutput).
-    pub fn builder() -> crate::operation::get_findings_publication_configuration::builders::GetFindingsPublicationConfigurationOutputBuilder {
+    pub fn builder() -> crate::operation::get_findings_publication_configuration::builders::GetFindingsPublicationConfigurationOutputBuilder{
         crate::operation::get_findings_publication_configuration::builders::GetFindingsPublicationConfigurationOutputBuilder::default()
     }
 }
@@ -30,30 +32,38 @@ impl GetFindingsPublicationConfigurationOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct GetFindingsPublicationConfigurationOutputBuilder {
-    pub(crate) security_hub_configuration: std::option::Option<crate::types::SecurityHubConfiguration>,
+    pub(crate) security_hub_configuration:
+        std::option::Option<crate::types::SecurityHubConfiguration>,
     _request_id: Option<String>,
 }
 impl GetFindingsPublicationConfigurationOutputBuilder {
     /// <p>The configuration settings that determine which findings are published to Security Hub.</p>
-    pub fn security_hub_configuration(mut self, input: crate::types::SecurityHubConfiguration) -> Self {
+    pub fn security_hub_configuration(
+        mut self,
+        input: crate::types::SecurityHubConfiguration,
+    ) -> Self {
         self.security_hub_configuration = Some(input);
         self
     }
     /// <p>The configuration settings that determine which findings are published to Security Hub.</p>
-    pub fn set_security_hub_configuration(mut self, input: std::option::Option<crate::types::SecurityHubConfiguration>) -> Self {
-        self.security_hub_configuration = input; self
+    pub fn set_security_hub_configuration(
+        mut self,
+        input: std::option::Option<crate::types::SecurityHubConfiguration>,
+    ) -> Self {
+        self.security_hub_configuration = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`GetFindingsPublicationConfigurationOutput`](crate::operation::get_findings_publication_configuration::GetFindingsPublicationConfigurationOutput).
-    pub fn build(self) -> crate::operation::get_findings_publication_configuration::GetFindingsPublicationConfigurationOutput {
+    pub fn build(self) -> crate::operation::get_findings_publication_configuration::GetFindingsPublicationConfigurationOutput{
         crate::operation::get_findings_publication_configuration::GetFindingsPublicationConfigurationOutput {
             security_hub_configuration: self.security_hub_configuration
             ,
@@ -61,4 +71,3 @@ impl GetFindingsPublicationConfigurationOutputBuilder {
         }
     }
 }
-

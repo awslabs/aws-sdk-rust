@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeInstanceTypesOutput  {
+pub struct DescribeInstanceTypesOutput {
     /// <p>The instance type. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance types</a> in the <i>Amazon EC2 User Guide</i>.</p>
     #[doc(hidden)]
     pub instance_types: std::option::Option<std::vec::Vec<crate::types::InstanceTypeInfo>>,
@@ -13,22 +13,24 @@ pub struct DescribeInstanceTypesOutput  {
 }
 impl DescribeInstanceTypesOutput {
     /// <p>The instance type. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance types</a> in the <i>Amazon EC2 User Guide</i>.</p>
-    pub fn instance_types(&self) -> std::option::Option<& [crate::types::InstanceTypeInfo]> {
+    pub fn instance_types(&self) -> std::option::Option<&[crate::types::InstanceTypeInfo]> {
         self.instance_types.as_deref()
     }
     /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for DescribeInstanceTypesOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl DescribeInstanceTypesOutput {
     /// Creates a new builder-style object to manufacture [`DescribeInstanceTypesOutput`](crate::operation::describe_instance_types::DescribeInstanceTypesOutput).
-    pub fn builder() -> crate::operation::describe_instance_types::builders::DescribeInstanceTypesOutputBuilder {
+    pub fn builder(
+    ) -> crate::operation::describe_instance_types::builders::DescribeInstanceTypesOutputBuilder
+    {
         crate::operation::describe_instance_types::builders::DescribeInstanceTypesOutputBuilder::default()
     }
 }
@@ -49,13 +51,17 @@ impl DescribeInstanceTypesOutputBuilder {
     /// <p>The instance type. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance types</a> in the <i>Amazon EC2 User Guide</i>.</p>
     pub fn instance_types(mut self, input: crate::types::InstanceTypeInfo) -> Self {
         let mut v = self.instance_types.unwrap_or_default();
-                        v.push(input);
-                        self.instance_types = Some(v);
-                        self
+        v.push(input);
+        self.instance_types = Some(v);
+        self
     }
     /// <p>The instance type. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance types</a> in the <i>Amazon EC2 User Guide</i>.</p>
-    pub fn set_instance_types(mut self, input: std::option::Option<std::vec::Vec<crate::types::InstanceTypeInfo>>) -> Self {
-        self.instance_types = input; self
+    pub fn set_instance_types(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::InstanceTypeInfo>>,
+    ) -> Self {
+        self.instance_types = input;
+        self
     }
     /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -64,26 +70,24 @@ impl DescribeInstanceTypesOutputBuilder {
     }
     /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input; self
+        self.next_token = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`DescribeInstanceTypesOutput`](crate::operation::describe_instance_types::DescribeInstanceTypesOutput).
     pub fn build(self) -> crate::operation::describe_instance_types::DescribeInstanceTypesOutput {
         crate::operation::describe_instance_types::DescribeInstanceTypesOutput {
-            instance_types: self.instance_types
-            ,
-            next_token: self.next_token
-            ,
+            instance_types: self.instance_types,
+            next_token: self.next_token,
             _request_id: self._request_id,
         }
     }
 }
-

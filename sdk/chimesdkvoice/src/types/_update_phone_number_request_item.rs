@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct UpdatePhoneNumberRequestItem  {
+pub struct UpdatePhoneNumberRequestItem {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub phone_number_id: std::option::Option<std::string::String>,
@@ -15,19 +15,19 @@ pub struct UpdatePhoneNumberRequestItem  {
 }
 impl UpdatePhoneNumberRequestItem {
     #[allow(missing_docs)] // documentation missing in model
-    pub fn phone_number_id(&self) -> std::option::Option<& str> {
+    pub fn phone_number_id(&self) -> std::option::Option<&str> {
         self.phone_number_id.as_deref()
     }
     #[allow(missing_docs)] // documentation missing in model
-    pub fn product_type(&self) -> std::option::Option<& crate::types::PhoneNumberProductType> {
+    pub fn product_type(&self) -> std::option::Option<&crate::types::PhoneNumberProductType> {
         self.product_type.as_ref()
     }
     #[allow(missing_docs)] // documentation missing in model
-    pub fn calling_name(&self) -> std::option::Option<& str> {
+    pub fn calling_name(&self) -> std::option::Option<&str> {
         self.calling_name.as_deref()
     }
 }
-impl  std::fmt::Debug for UpdatePhoneNumberRequestItem  {
+impl std::fmt::Debug for UpdatePhoneNumberRequestItem {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdatePhoneNumberRequestItem");
         formatter.field("phone_number_id", &"*** Sensitive Data Redacted ***");
@@ -59,7 +59,8 @@ impl UpdatePhoneNumberRequestItemBuilder {
     }
     #[allow(missing_docs)] // documentation missing in model
     pub fn set_phone_number_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.phone_number_id = input; self
+        self.phone_number_id = input;
+        self
     }
     #[allow(missing_docs)] // documentation missing in model
     pub fn product_type(mut self, input: crate::types::PhoneNumberProductType) -> Self {
@@ -67,8 +68,12 @@ impl UpdatePhoneNumberRequestItemBuilder {
         self
     }
     #[allow(missing_docs)] // documentation missing in model
-    pub fn set_product_type(mut self, input: std::option::Option<crate::types::PhoneNumberProductType>) -> Self {
-        self.product_type = input; self
+    pub fn set_product_type(
+        mut self,
+        input: std::option::Option<crate::types::PhoneNumberProductType>,
+    ) -> Self {
+        self.product_type = input;
+        self
     }
     #[allow(missing_docs)] // documentation missing in model
     pub fn calling_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -77,17 +82,15 @@ impl UpdatePhoneNumberRequestItemBuilder {
     }
     #[allow(missing_docs)] // documentation missing in model
     pub fn set_calling_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.calling_name = input; self
+        self.calling_name = input;
+        self
     }
     /// Consumes the builder and constructs a [`UpdatePhoneNumberRequestItem`](crate::types::UpdatePhoneNumberRequestItem).
     pub fn build(self) -> crate::types::UpdatePhoneNumberRequestItem {
         crate::types::UpdatePhoneNumberRequestItem {
-            phone_number_id: self.phone_number_id
-            ,
-            product_type: self.product_type
-            ,
-            calling_name: self.calling_name
-            ,
+            phone_number_id: self.phone_number_id,
+            product_type: self.product_type,
+            calling_name: self.calling_name,
         }
     }
 }
@@ -100,4 +103,3 @@ impl std::fmt::Debug for UpdatePhoneNumberRequestItemBuilder {
         formatter.finish()
     }
 }
-

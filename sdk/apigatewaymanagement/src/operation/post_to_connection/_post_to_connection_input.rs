@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PostToConnectionInput  {
+pub struct PostToConnectionInput {
     /// <p>The data to be sent to the client specified by its connection id.</p>
     #[doc(hidden)]
     pub data: std::option::Option<aws_smithy_types::Blob>,
@@ -12,17 +12,18 @@ pub struct PostToConnectionInput  {
 }
 impl PostToConnectionInput {
     /// <p>The data to be sent to the client specified by its connection id.</p>
-    pub fn data(&self) -> std::option::Option<& aws_smithy_types::Blob> {
+    pub fn data(&self) -> std::option::Option<&aws_smithy_types::Blob> {
         self.data.as_ref()
     }
     /// <p>The identifier of the connection that a specific client is using.</p>
-    pub fn connection_id(&self) -> std::option::Option<& str> {
+    pub fn connection_id(&self) -> std::option::Option<&str> {
         self.connection_id.as_deref()
     }
 }
 impl PostToConnectionInput {
     /// Creates a new builder-style object to manufacture [`PostToConnectionInput`](crate::operation::post_to_connection::PostToConnectionInput).
-    pub fn builder() -> crate::operation::post_to_connection::builders::PostToConnectionInputBuilder {
+    pub fn builder() -> crate::operation::post_to_connection::builders::PostToConnectionInputBuilder
+    {
         crate::operation::post_to_connection::builders::PostToConnectionInputBuilder::default()
     }
 }
@@ -42,7 +43,8 @@ impl PostToConnectionInputBuilder {
     }
     /// <p>The data to be sent to the client specified by its connection id.</p>
     pub fn set_data(mut self, input: std::option::Option<aws_smithy_types::Blob>) -> Self {
-        self.data = input; self
+        self.data = input;
+        self
     }
     /// <p>The identifier of the connection that a specific client is using.</p>
     pub fn connection_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -51,18 +53,21 @@ impl PostToConnectionInputBuilder {
     }
     /// <p>The identifier of the connection that a specific client is using.</p>
     pub fn set_connection_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.connection_id = input; self
+        self.connection_id = input;
+        self
     }
     /// Consumes the builder and constructs a [`PostToConnectionInput`](crate::operation::post_to_connection::PostToConnectionInput).
-    pub fn build(self) -> Result<crate::operation::post_to_connection::PostToConnectionInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::post_to_connection::PostToConnectionInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::post_to_connection::PostToConnectionInput {
-                data: self.data
-                ,
-                connection_id: self.connection_id
-                ,
-            }
+                data: self.data,
+                connection_id: self.connection_id,
+            },
         )
     }
 }
-

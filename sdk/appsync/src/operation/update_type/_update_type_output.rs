@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateTypeOutput  {
+pub struct UpdateTypeOutput {
     /// <p>The updated <code>Type</code> object.</p>
     #[doc(hidden)]
     pub r#type: std::option::Option<crate::types::Type>,
@@ -10,15 +10,15 @@ pub struct UpdateTypeOutput  {
 }
 impl UpdateTypeOutput {
     /// <p>The updated <code>Type</code> object.</p>
-    pub fn r#type(&self) -> std::option::Option<& crate::types::Type> {
+    pub fn r#type(&self) -> std::option::Option<&crate::types::Type> {
         self.r#type.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for UpdateTypeOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl UpdateTypeOutput {
     /// Creates a new builder-style object to manufacture [`UpdateTypeOutput`](crate::operation::update_type::UpdateTypeOutput).
     pub fn builder() -> crate::operation::update_type::builders::UpdateTypeOutputBuilder {
@@ -41,24 +41,23 @@ impl UpdateTypeOutputBuilder {
     }
     /// <p>The updated <code>Type</code> object.</p>
     pub fn set_type(mut self, input: std::option::Option<crate::types::Type>) -> Self {
-        self.r#type = input; self
+        self.r#type = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`UpdateTypeOutput`](crate::operation::update_type::UpdateTypeOutput).
     pub fn build(self) -> crate::operation::update_type::UpdateTypeOutput {
         crate::operation::update_type::UpdateTypeOutput {
-            r#type: self.r#type
-            ,
+            r#type: self.r#type,
             _request_id: self._request_id,
         }
     }
 }
-

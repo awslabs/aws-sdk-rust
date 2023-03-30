@@ -3,7 +3,7 @@
 /// <p> The location where Audit Manager saves assessment reports for the given assessment. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AssessmentReportsDestination  {
+pub struct AssessmentReportsDestination {
     /// <p> The destination type, such as Amazon S3. </p>
     #[doc(hidden)]
     pub destination_type: std::option::Option<crate::types::AssessmentReportDestinationType>,
@@ -13,11 +13,13 @@ pub struct AssessmentReportsDestination  {
 }
 impl AssessmentReportsDestination {
     /// <p> The destination type, such as Amazon S3. </p>
-    pub fn destination_type(&self) -> std::option::Option<& crate::types::AssessmentReportDestinationType> {
+    pub fn destination_type(
+        &self,
+    ) -> std::option::Option<&crate::types::AssessmentReportDestinationType> {
         self.destination_type.as_ref()
     }
     /// <p> The destination of the assessment report. </p>
-    pub fn destination(&self) -> std::option::Option<& str> {
+    pub fn destination(&self) -> std::option::Option<&str> {
         self.destination.as_deref()
     }
 }
@@ -37,13 +39,20 @@ pub struct AssessmentReportsDestinationBuilder {
 }
 impl AssessmentReportsDestinationBuilder {
     /// <p> The destination type, such as Amazon S3. </p>
-    pub fn destination_type(mut self, input: crate::types::AssessmentReportDestinationType) -> Self {
+    pub fn destination_type(
+        mut self,
+        input: crate::types::AssessmentReportDestinationType,
+    ) -> Self {
         self.destination_type = Some(input);
         self
     }
     /// <p> The destination type, such as Amazon S3. </p>
-    pub fn set_destination_type(mut self, input: std::option::Option<crate::types::AssessmentReportDestinationType>) -> Self {
-        self.destination_type = input; self
+    pub fn set_destination_type(
+        mut self,
+        input: std::option::Option<crate::types::AssessmentReportDestinationType>,
+    ) -> Self {
+        self.destination_type = input;
+        self
     }
     /// <p> The destination of the assessment report. </p>
     pub fn destination(mut self, input: impl Into<std::string::String>) -> Self {
@@ -52,16 +61,14 @@ impl AssessmentReportsDestinationBuilder {
     }
     /// <p> The destination of the assessment report. </p>
     pub fn set_destination(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.destination = input; self
+        self.destination = input;
+        self
     }
     /// Consumes the builder and constructs a [`AssessmentReportsDestination`](crate::types::AssessmentReportsDestination).
     pub fn build(self) -> crate::types::AssessmentReportsDestination {
         crate::types::AssessmentReportsDestination {
-            destination_type: self.destination_type
-            ,
-            destination: self.destination
-            ,
+            destination_type: self.destination_type,
+            destination: self.destination,
         }
     }
 }
-

@@ -2,18 +2,18 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeMlModelsInput  {
-    /// <p>Use one of the following variables to filter a list of <code>MLModel</code>:</p> 
-    /// <ul> 
-    /// <li> <p> <code>CreatedAt</code> - Sets the search criteria to <code>MLModel</code> creation date.</p> </li> 
-    /// <li> <p> <code>Status</code> - Sets the search criteria to <code>MLModel</code> status.</p> </li> 
-    /// <li> <p> <code>Name</code> - Sets the search criteria to the contents of <code>MLModel</code> <b> </b> <code>Name</code>.</p> </li> 
-    /// <li> <p> <code>IAMUser</code> - Sets the search criteria to the user account that invoked the <code>MLModel</code> creation.</p> </li> 
-    /// <li> <p> <code>TrainingDataSourceId</code> - Sets the search criteria to the <code>DataSource</code> used to train one or more <code>MLModel</code>.</p> </li> 
-    /// <li> <p> <code>RealtimeEndpointStatus</code> - Sets the search criteria to the <code>MLModel</code> real-time endpoint status.</p> </li> 
-    /// <li> <p> <code>MLModelType</code> - Sets the search criteria to <code>MLModel</code> type: binary, regression, or multi-class.</p> </li> 
-    /// <li> <p> <code>Algorithm</code> - Sets the search criteria to the algorithm that the <code>MLModel</code> uses.</p> </li> 
-    /// <li> <p> <code>TrainingDataURI</code> - Sets the search criteria to the data file(s) used in training a <code>MLModel</code>. The URL can identify either a file or an Amazon Simple Storage Service (Amazon S3) bucket or directory.</p> </li> 
+pub struct DescribeMlModelsInput {
+    /// <p>Use one of the following variables to filter a list of <code>MLModel</code>:</p>
+    /// <ul>
+    /// <li> <p> <code>CreatedAt</code> - Sets the search criteria to <code>MLModel</code> creation date.</p> </li>
+    /// <li> <p> <code>Status</code> - Sets the search criteria to <code>MLModel</code> status.</p> </li>
+    /// <li> <p> <code>Name</code> - Sets the search criteria to the contents of <code>MLModel</code> <b> </b> <code>Name</code>.</p> </li>
+    /// <li> <p> <code>IAMUser</code> - Sets the search criteria to the user account that invoked the <code>MLModel</code> creation.</p> </li>
+    /// <li> <p> <code>TrainingDataSourceId</code> - Sets the search criteria to the <code>DataSource</code> used to train one or more <code>MLModel</code>.</p> </li>
+    /// <li> <p> <code>RealtimeEndpointStatus</code> - Sets the search criteria to the <code>MLModel</code> real-time endpoint status.</p> </li>
+    /// <li> <p> <code>MLModelType</code> - Sets the search criteria to <code>MLModel</code> type: binary, regression, or multi-class.</p> </li>
+    /// <li> <p> <code>Algorithm</code> - Sets the search criteria to the algorithm that the <code>MLModel</code> uses.</p> </li>
+    /// <li> <p> <code>TrainingDataURI</code> - Sets the search criteria to the data file(s) used in training a <code>MLModel</code>. The URL can identify either a file or an Amazon Simple Storage Service (Amazon S3) bucket or directory.</p> </li>
     /// </ul>
     #[doc(hidden)]
     pub filter_variable: std::option::Option<crate::types::MlModelFilterVariable>,
@@ -35,20 +35,20 @@ pub struct DescribeMlModelsInput  {
     /// <p>The not equal to operator. The <code>MLModel</code> results will have <code>FilterVariable</code> values not equal to the value specified with <code>NE</code>.</p>
     #[doc(hidden)]
     pub ne: std::option::Option<std::string::String>,
-    /// <p>A string that is found at the beginning of a variable, such as <code>Name</code> or <code>Id</code>.</p> 
-    /// <p>For example, an <code>MLModel</code> could have the <code>Name</code> <code>2014-09-09-HolidayGiftMailer</code>. To search for this <code>MLModel</code>, select <code>Name</code> for the <code>FilterVariable</code> and any of the following strings for the <code>Prefix</code>: </p> 
-    /// <ul> 
-    /// <li> <p>2014-09</p> </li> 
-    /// <li> <p>2014-09-09</p> </li> 
-    /// <li> <p>2014-09-09-Holiday</p> </li> 
+    /// <p>A string that is found at the beginning of a variable, such as <code>Name</code> or <code>Id</code>.</p>
+    /// <p>For example, an <code>MLModel</code> could have the <code>Name</code> <code>2014-09-09-HolidayGiftMailer</code>. To search for this <code>MLModel</code>, select <code>Name</code> for the <code>FilterVariable</code> and any of the following strings for the <code>Prefix</code>: </p>
+    /// <ul>
+    /// <li> <p>2014-09</p> </li>
+    /// <li> <p>2014-09-09</p> </li>
+    /// <li> <p>2014-09-09-Holiday</p> </li>
     /// </ul>
     #[doc(hidden)]
     pub prefix: std::option::Option<std::string::String>,
-    /// <p>A two-value parameter that determines the sequence of the resulting list of <code>MLModel</code>.</p> 
-    /// <ul> 
-    /// <li> <p> <code>asc</code> - Arranges the list in ascending order (A-Z, 0-9).</p> </li> 
-    /// <li> <p> <code>dsc</code> - Arranges the list in descending order (Z-A, 9-0).</p> </li> 
-    /// </ul> 
+    /// <p>A two-value parameter that determines the sequence of the resulting list of <code>MLModel</code>.</p>
+    /// <ul>
+    /// <li> <p> <code>asc</code> - Arranges the list in ascending order (A-Z, 0-9).</p> </li>
+    /// <li> <p> <code>dsc</code> - Arranges the list in descending order (Z-A, 9-0).</p> </li>
+    /// </ul>
     /// <p>Results are sorted by <code>FilterVariable</code>.</p>
     #[doc(hidden)]
     pub sort_order: std::option::Option<crate::types::SortOrder>,
@@ -60,66 +60,66 @@ pub struct DescribeMlModelsInput  {
     pub limit: std::option::Option<i32>,
 }
 impl DescribeMlModelsInput {
-    /// <p>Use one of the following variables to filter a list of <code>MLModel</code>:</p> 
-    /// <ul> 
-    /// <li> <p> <code>CreatedAt</code> - Sets the search criteria to <code>MLModel</code> creation date.</p> </li> 
-    /// <li> <p> <code>Status</code> - Sets the search criteria to <code>MLModel</code> status.</p> </li> 
-    /// <li> <p> <code>Name</code> - Sets the search criteria to the contents of <code>MLModel</code> <b> </b> <code>Name</code>.</p> </li> 
-    /// <li> <p> <code>IAMUser</code> - Sets the search criteria to the user account that invoked the <code>MLModel</code> creation.</p> </li> 
-    /// <li> <p> <code>TrainingDataSourceId</code> - Sets the search criteria to the <code>DataSource</code> used to train one or more <code>MLModel</code>.</p> </li> 
-    /// <li> <p> <code>RealtimeEndpointStatus</code> - Sets the search criteria to the <code>MLModel</code> real-time endpoint status.</p> </li> 
-    /// <li> <p> <code>MLModelType</code> - Sets the search criteria to <code>MLModel</code> type: binary, regression, or multi-class.</p> </li> 
-    /// <li> <p> <code>Algorithm</code> - Sets the search criteria to the algorithm that the <code>MLModel</code> uses.</p> </li> 
-    /// <li> <p> <code>TrainingDataURI</code> - Sets the search criteria to the data file(s) used in training a <code>MLModel</code>. The URL can identify either a file or an Amazon Simple Storage Service (Amazon S3) bucket or directory.</p> </li> 
+    /// <p>Use one of the following variables to filter a list of <code>MLModel</code>:</p>
+    /// <ul>
+    /// <li> <p> <code>CreatedAt</code> - Sets the search criteria to <code>MLModel</code> creation date.</p> </li>
+    /// <li> <p> <code>Status</code> - Sets the search criteria to <code>MLModel</code> status.</p> </li>
+    /// <li> <p> <code>Name</code> - Sets the search criteria to the contents of <code>MLModel</code> <b> </b> <code>Name</code>.</p> </li>
+    /// <li> <p> <code>IAMUser</code> - Sets the search criteria to the user account that invoked the <code>MLModel</code> creation.</p> </li>
+    /// <li> <p> <code>TrainingDataSourceId</code> - Sets the search criteria to the <code>DataSource</code> used to train one or more <code>MLModel</code>.</p> </li>
+    /// <li> <p> <code>RealtimeEndpointStatus</code> - Sets the search criteria to the <code>MLModel</code> real-time endpoint status.</p> </li>
+    /// <li> <p> <code>MLModelType</code> - Sets the search criteria to <code>MLModel</code> type: binary, regression, or multi-class.</p> </li>
+    /// <li> <p> <code>Algorithm</code> - Sets the search criteria to the algorithm that the <code>MLModel</code> uses.</p> </li>
+    /// <li> <p> <code>TrainingDataURI</code> - Sets the search criteria to the data file(s) used in training a <code>MLModel</code>. The URL can identify either a file or an Amazon Simple Storage Service (Amazon S3) bucket or directory.</p> </li>
     /// </ul>
-    pub fn filter_variable(&self) -> std::option::Option<& crate::types::MlModelFilterVariable> {
+    pub fn filter_variable(&self) -> std::option::Option<&crate::types::MlModelFilterVariable> {
         self.filter_variable.as_ref()
     }
     /// <p>The equal to operator. The <code>MLModel</code> results will have <code>FilterVariable</code> values that exactly match the value specified with <code>EQ</code>.</p>
-    pub fn eq(&self) -> std::option::Option<& str> {
+    pub fn eq(&self) -> std::option::Option<&str> {
         self.eq.as_deref()
     }
     /// <p>The greater than operator. The <code>MLModel</code> results will have <code>FilterVariable</code> values that are greater than the value specified with <code>GT</code>.</p>
-    pub fn gt(&self) -> std::option::Option<& str> {
+    pub fn gt(&self) -> std::option::Option<&str> {
         self.gt.as_deref()
     }
     /// <p>The less than operator. The <code>MLModel</code> results will have <code>FilterVariable</code> values that are less than the value specified with <code>LT</code>.</p>
-    pub fn lt(&self) -> std::option::Option<& str> {
+    pub fn lt(&self) -> std::option::Option<&str> {
         self.lt.as_deref()
     }
     /// <p>The greater than or equal to operator. The <code>MLModel</code> results will have <code>FilterVariable</code> values that are greater than or equal to the value specified with <code>GE</code>. </p>
-    pub fn ge(&self) -> std::option::Option<& str> {
+    pub fn ge(&self) -> std::option::Option<&str> {
         self.ge.as_deref()
     }
     /// <p>The less than or equal to operator. The <code>MLModel</code> results will have <code>FilterVariable</code> values that are less than or equal to the value specified with <code>LE</code>.</p>
-    pub fn le(&self) -> std::option::Option<& str> {
+    pub fn le(&self) -> std::option::Option<&str> {
         self.le.as_deref()
     }
     /// <p>The not equal to operator. The <code>MLModel</code> results will have <code>FilterVariable</code> values not equal to the value specified with <code>NE</code>.</p>
-    pub fn ne(&self) -> std::option::Option<& str> {
+    pub fn ne(&self) -> std::option::Option<&str> {
         self.ne.as_deref()
     }
-    /// <p>A string that is found at the beginning of a variable, such as <code>Name</code> or <code>Id</code>.</p> 
-    /// <p>For example, an <code>MLModel</code> could have the <code>Name</code> <code>2014-09-09-HolidayGiftMailer</code>. To search for this <code>MLModel</code>, select <code>Name</code> for the <code>FilterVariable</code> and any of the following strings for the <code>Prefix</code>: </p> 
-    /// <ul> 
-    /// <li> <p>2014-09</p> </li> 
-    /// <li> <p>2014-09-09</p> </li> 
-    /// <li> <p>2014-09-09-Holiday</p> </li> 
+    /// <p>A string that is found at the beginning of a variable, such as <code>Name</code> or <code>Id</code>.</p>
+    /// <p>For example, an <code>MLModel</code> could have the <code>Name</code> <code>2014-09-09-HolidayGiftMailer</code>. To search for this <code>MLModel</code>, select <code>Name</code> for the <code>FilterVariable</code> and any of the following strings for the <code>Prefix</code>: </p>
+    /// <ul>
+    /// <li> <p>2014-09</p> </li>
+    /// <li> <p>2014-09-09</p> </li>
+    /// <li> <p>2014-09-09-Holiday</p> </li>
     /// </ul>
-    pub fn prefix(&self) -> std::option::Option<& str> {
+    pub fn prefix(&self) -> std::option::Option<&str> {
         self.prefix.as_deref()
     }
-    /// <p>A two-value parameter that determines the sequence of the resulting list of <code>MLModel</code>.</p> 
-    /// <ul> 
-    /// <li> <p> <code>asc</code> - Arranges the list in ascending order (A-Z, 0-9).</p> </li> 
-    /// <li> <p> <code>dsc</code> - Arranges the list in descending order (Z-A, 9-0).</p> </li> 
-    /// </ul> 
+    /// <p>A two-value parameter that determines the sequence of the resulting list of <code>MLModel</code>.</p>
+    /// <ul>
+    /// <li> <p> <code>asc</code> - Arranges the list in ascending order (A-Z, 0-9).</p> </li>
+    /// <li> <p> <code>dsc</code> - Arranges the list in descending order (Z-A, 9-0).</p> </li>
+    /// </ul>
     /// <p>Results are sorted by <code>FilterVariable</code>.</p>
-    pub fn sort_order(&self) -> std::option::Option<& crate::types::SortOrder> {
+    pub fn sort_order(&self) -> std::option::Option<&crate::types::SortOrder> {
         self.sort_order.as_ref()
     }
     /// <p>The ID of the page in the paginated results.</p>
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
     /// <p>The number of pages of information to include in the result. The range of acceptable values is <code>1</code> through <code>100</code>. The default value is <code>100</code>.</p>
@@ -129,7 +129,8 @@ impl DescribeMlModelsInput {
 }
 impl DescribeMlModelsInput {
     /// Creates a new builder-style object to manufacture [`DescribeMlModelsInput`](crate::operation::describe_ml_models::DescribeMlModelsInput).
-    pub fn builder() -> crate::operation::describe_ml_models::builders::DescribeMlModelsInputBuilder {
+    pub fn builder() -> crate::operation::describe_ml_models::builders::DescribeMlModelsInputBuilder
+    {
         crate::operation::describe_ml_models::builders::DescribeMlModelsInputBuilder::default()
     }
 }
@@ -151,36 +152,40 @@ pub struct DescribeMlModelsInputBuilder {
     pub(crate) limit: std::option::Option<i32>,
 }
 impl DescribeMlModelsInputBuilder {
-    /// <p>Use one of the following variables to filter a list of <code>MLModel</code>:</p> 
-    /// <ul> 
-    /// <li> <p> <code>CreatedAt</code> - Sets the search criteria to <code>MLModel</code> creation date.</p> </li> 
-    /// <li> <p> <code>Status</code> - Sets the search criteria to <code>MLModel</code> status.</p> </li> 
-    /// <li> <p> <code>Name</code> - Sets the search criteria to the contents of <code>MLModel</code> <b> </b> <code>Name</code>.</p> </li> 
-    /// <li> <p> <code>IAMUser</code> - Sets the search criteria to the user account that invoked the <code>MLModel</code> creation.</p> </li> 
-    /// <li> <p> <code>TrainingDataSourceId</code> - Sets the search criteria to the <code>DataSource</code> used to train one or more <code>MLModel</code>.</p> </li> 
-    /// <li> <p> <code>RealtimeEndpointStatus</code> - Sets the search criteria to the <code>MLModel</code> real-time endpoint status.</p> </li> 
-    /// <li> <p> <code>MLModelType</code> - Sets the search criteria to <code>MLModel</code> type: binary, regression, or multi-class.</p> </li> 
-    /// <li> <p> <code>Algorithm</code> - Sets the search criteria to the algorithm that the <code>MLModel</code> uses.</p> </li> 
-    /// <li> <p> <code>TrainingDataURI</code> - Sets the search criteria to the data file(s) used in training a <code>MLModel</code>. The URL can identify either a file or an Amazon Simple Storage Service (Amazon S3) bucket or directory.</p> </li> 
+    /// <p>Use one of the following variables to filter a list of <code>MLModel</code>:</p>
+    /// <ul>
+    /// <li> <p> <code>CreatedAt</code> - Sets the search criteria to <code>MLModel</code> creation date.</p> </li>
+    /// <li> <p> <code>Status</code> - Sets the search criteria to <code>MLModel</code> status.</p> </li>
+    /// <li> <p> <code>Name</code> - Sets the search criteria to the contents of <code>MLModel</code> <b> </b> <code>Name</code>.</p> </li>
+    /// <li> <p> <code>IAMUser</code> - Sets the search criteria to the user account that invoked the <code>MLModel</code> creation.</p> </li>
+    /// <li> <p> <code>TrainingDataSourceId</code> - Sets the search criteria to the <code>DataSource</code> used to train one or more <code>MLModel</code>.</p> </li>
+    /// <li> <p> <code>RealtimeEndpointStatus</code> - Sets the search criteria to the <code>MLModel</code> real-time endpoint status.</p> </li>
+    /// <li> <p> <code>MLModelType</code> - Sets the search criteria to <code>MLModel</code> type: binary, regression, or multi-class.</p> </li>
+    /// <li> <p> <code>Algorithm</code> - Sets the search criteria to the algorithm that the <code>MLModel</code> uses.</p> </li>
+    /// <li> <p> <code>TrainingDataURI</code> - Sets the search criteria to the data file(s) used in training a <code>MLModel</code>. The URL can identify either a file or an Amazon Simple Storage Service (Amazon S3) bucket or directory.</p> </li>
     /// </ul>
     pub fn filter_variable(mut self, input: crate::types::MlModelFilterVariable) -> Self {
         self.filter_variable = Some(input);
         self
     }
-    /// <p>Use one of the following variables to filter a list of <code>MLModel</code>:</p> 
-    /// <ul> 
-    /// <li> <p> <code>CreatedAt</code> - Sets the search criteria to <code>MLModel</code> creation date.</p> </li> 
-    /// <li> <p> <code>Status</code> - Sets the search criteria to <code>MLModel</code> status.</p> </li> 
-    /// <li> <p> <code>Name</code> - Sets the search criteria to the contents of <code>MLModel</code> <b> </b> <code>Name</code>.</p> </li> 
-    /// <li> <p> <code>IAMUser</code> - Sets the search criteria to the user account that invoked the <code>MLModel</code> creation.</p> </li> 
-    /// <li> <p> <code>TrainingDataSourceId</code> - Sets the search criteria to the <code>DataSource</code> used to train one or more <code>MLModel</code>.</p> </li> 
-    /// <li> <p> <code>RealtimeEndpointStatus</code> - Sets the search criteria to the <code>MLModel</code> real-time endpoint status.</p> </li> 
-    /// <li> <p> <code>MLModelType</code> - Sets the search criteria to <code>MLModel</code> type: binary, regression, or multi-class.</p> </li> 
-    /// <li> <p> <code>Algorithm</code> - Sets the search criteria to the algorithm that the <code>MLModel</code> uses.</p> </li> 
-    /// <li> <p> <code>TrainingDataURI</code> - Sets the search criteria to the data file(s) used in training a <code>MLModel</code>. The URL can identify either a file or an Amazon Simple Storage Service (Amazon S3) bucket or directory.</p> </li> 
+    /// <p>Use one of the following variables to filter a list of <code>MLModel</code>:</p>
+    /// <ul>
+    /// <li> <p> <code>CreatedAt</code> - Sets the search criteria to <code>MLModel</code> creation date.</p> </li>
+    /// <li> <p> <code>Status</code> - Sets the search criteria to <code>MLModel</code> status.</p> </li>
+    /// <li> <p> <code>Name</code> - Sets the search criteria to the contents of <code>MLModel</code> <b> </b> <code>Name</code>.</p> </li>
+    /// <li> <p> <code>IAMUser</code> - Sets the search criteria to the user account that invoked the <code>MLModel</code> creation.</p> </li>
+    /// <li> <p> <code>TrainingDataSourceId</code> - Sets the search criteria to the <code>DataSource</code> used to train one or more <code>MLModel</code>.</p> </li>
+    /// <li> <p> <code>RealtimeEndpointStatus</code> - Sets the search criteria to the <code>MLModel</code> real-time endpoint status.</p> </li>
+    /// <li> <p> <code>MLModelType</code> - Sets the search criteria to <code>MLModel</code> type: binary, regression, or multi-class.</p> </li>
+    /// <li> <p> <code>Algorithm</code> - Sets the search criteria to the algorithm that the <code>MLModel</code> uses.</p> </li>
+    /// <li> <p> <code>TrainingDataURI</code> - Sets the search criteria to the data file(s) used in training a <code>MLModel</code>. The URL can identify either a file or an Amazon Simple Storage Service (Amazon S3) bucket or directory.</p> </li>
     /// </ul>
-    pub fn set_filter_variable(mut self, input: std::option::Option<crate::types::MlModelFilterVariable>) -> Self {
-        self.filter_variable = input; self
+    pub fn set_filter_variable(
+        mut self,
+        input: std::option::Option<crate::types::MlModelFilterVariable>,
+    ) -> Self {
+        self.filter_variable = input;
+        self
     }
     /// <p>The equal to operator. The <code>MLModel</code> results will have <code>FilterVariable</code> values that exactly match the value specified with <code>EQ</code>.</p>
     pub fn eq(mut self, input: impl Into<std::string::String>) -> Self {
@@ -189,7 +194,8 @@ impl DescribeMlModelsInputBuilder {
     }
     /// <p>The equal to operator. The <code>MLModel</code> results will have <code>FilterVariable</code> values that exactly match the value specified with <code>EQ</code>.</p>
     pub fn set_eq(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.eq = input; self
+        self.eq = input;
+        self
     }
     /// <p>The greater than operator. The <code>MLModel</code> results will have <code>FilterVariable</code> values that are greater than the value specified with <code>GT</code>.</p>
     pub fn gt(mut self, input: impl Into<std::string::String>) -> Self {
@@ -198,7 +204,8 @@ impl DescribeMlModelsInputBuilder {
     }
     /// <p>The greater than operator. The <code>MLModel</code> results will have <code>FilterVariable</code> values that are greater than the value specified with <code>GT</code>.</p>
     pub fn set_gt(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.gt = input; self
+        self.gt = input;
+        self
     }
     /// <p>The less than operator. The <code>MLModel</code> results will have <code>FilterVariable</code> values that are less than the value specified with <code>LT</code>.</p>
     pub fn lt(mut self, input: impl Into<std::string::String>) -> Self {
@@ -207,7 +214,8 @@ impl DescribeMlModelsInputBuilder {
     }
     /// <p>The less than operator. The <code>MLModel</code> results will have <code>FilterVariable</code> values that are less than the value specified with <code>LT</code>.</p>
     pub fn set_lt(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.lt = input; self
+        self.lt = input;
+        self
     }
     /// <p>The greater than or equal to operator. The <code>MLModel</code> results will have <code>FilterVariable</code> values that are greater than or equal to the value specified with <code>GE</code>. </p>
     pub fn ge(mut self, input: impl Into<std::string::String>) -> Self {
@@ -216,7 +224,8 @@ impl DescribeMlModelsInputBuilder {
     }
     /// <p>The greater than or equal to operator. The <code>MLModel</code> results will have <code>FilterVariable</code> values that are greater than or equal to the value specified with <code>GE</code>. </p>
     pub fn set_ge(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.ge = input; self
+        self.ge = input;
+        self
     }
     /// <p>The less than or equal to operator. The <code>MLModel</code> results will have <code>FilterVariable</code> values that are less than or equal to the value specified with <code>LE</code>.</p>
     pub fn le(mut self, input: impl Into<std::string::String>) -> Self {
@@ -225,7 +234,8 @@ impl DescribeMlModelsInputBuilder {
     }
     /// <p>The less than or equal to operator. The <code>MLModel</code> results will have <code>FilterVariable</code> values that are less than or equal to the value specified with <code>LE</code>.</p>
     pub fn set_le(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.le = input; self
+        self.le = input;
+        self
     }
     /// <p>The not equal to operator. The <code>MLModel</code> results will have <code>FilterVariable</code> values not equal to the value specified with <code>NE</code>.</p>
     pub fn ne(mut self, input: impl Into<std::string::String>) -> Self {
@@ -234,47 +244,50 @@ impl DescribeMlModelsInputBuilder {
     }
     /// <p>The not equal to operator. The <code>MLModel</code> results will have <code>FilterVariable</code> values not equal to the value specified with <code>NE</code>.</p>
     pub fn set_ne(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.ne = input; self
+        self.ne = input;
+        self
     }
-    /// <p>A string that is found at the beginning of a variable, such as <code>Name</code> or <code>Id</code>.</p> 
-    /// <p>For example, an <code>MLModel</code> could have the <code>Name</code> <code>2014-09-09-HolidayGiftMailer</code>. To search for this <code>MLModel</code>, select <code>Name</code> for the <code>FilterVariable</code> and any of the following strings for the <code>Prefix</code>: </p> 
-    /// <ul> 
-    /// <li> <p>2014-09</p> </li> 
-    /// <li> <p>2014-09-09</p> </li> 
-    /// <li> <p>2014-09-09-Holiday</p> </li> 
+    /// <p>A string that is found at the beginning of a variable, such as <code>Name</code> or <code>Id</code>.</p>
+    /// <p>For example, an <code>MLModel</code> could have the <code>Name</code> <code>2014-09-09-HolidayGiftMailer</code>. To search for this <code>MLModel</code>, select <code>Name</code> for the <code>FilterVariable</code> and any of the following strings for the <code>Prefix</code>: </p>
+    /// <ul>
+    /// <li> <p>2014-09</p> </li>
+    /// <li> <p>2014-09-09</p> </li>
+    /// <li> <p>2014-09-09-Holiday</p> </li>
     /// </ul>
     pub fn prefix(mut self, input: impl Into<std::string::String>) -> Self {
         self.prefix = Some(input.into());
         self
     }
-    /// <p>A string that is found at the beginning of a variable, such as <code>Name</code> or <code>Id</code>.</p> 
-    /// <p>For example, an <code>MLModel</code> could have the <code>Name</code> <code>2014-09-09-HolidayGiftMailer</code>. To search for this <code>MLModel</code>, select <code>Name</code> for the <code>FilterVariable</code> and any of the following strings for the <code>Prefix</code>: </p> 
-    /// <ul> 
-    /// <li> <p>2014-09</p> </li> 
-    /// <li> <p>2014-09-09</p> </li> 
-    /// <li> <p>2014-09-09-Holiday</p> </li> 
+    /// <p>A string that is found at the beginning of a variable, such as <code>Name</code> or <code>Id</code>.</p>
+    /// <p>For example, an <code>MLModel</code> could have the <code>Name</code> <code>2014-09-09-HolidayGiftMailer</code>. To search for this <code>MLModel</code>, select <code>Name</code> for the <code>FilterVariable</code> and any of the following strings for the <code>Prefix</code>: </p>
+    /// <ul>
+    /// <li> <p>2014-09</p> </li>
+    /// <li> <p>2014-09-09</p> </li>
+    /// <li> <p>2014-09-09-Holiday</p> </li>
     /// </ul>
     pub fn set_prefix(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.prefix = input; self
+        self.prefix = input;
+        self
     }
-    /// <p>A two-value parameter that determines the sequence of the resulting list of <code>MLModel</code>.</p> 
-    /// <ul> 
-    /// <li> <p> <code>asc</code> - Arranges the list in ascending order (A-Z, 0-9).</p> </li> 
-    /// <li> <p> <code>dsc</code> - Arranges the list in descending order (Z-A, 9-0).</p> </li> 
-    /// </ul> 
+    /// <p>A two-value parameter that determines the sequence of the resulting list of <code>MLModel</code>.</p>
+    /// <ul>
+    /// <li> <p> <code>asc</code> - Arranges the list in ascending order (A-Z, 0-9).</p> </li>
+    /// <li> <p> <code>dsc</code> - Arranges the list in descending order (Z-A, 9-0).</p> </li>
+    /// </ul>
     /// <p>Results are sorted by <code>FilterVariable</code>.</p>
     pub fn sort_order(mut self, input: crate::types::SortOrder) -> Self {
         self.sort_order = Some(input);
         self
     }
-    /// <p>A two-value parameter that determines the sequence of the resulting list of <code>MLModel</code>.</p> 
-    /// <ul> 
-    /// <li> <p> <code>asc</code> - Arranges the list in ascending order (A-Z, 0-9).</p> </li> 
-    /// <li> <p> <code>dsc</code> - Arranges the list in descending order (Z-A, 9-0).</p> </li> 
-    /// </ul> 
+    /// <p>A two-value parameter that determines the sequence of the resulting list of <code>MLModel</code>.</p>
+    /// <ul>
+    /// <li> <p> <code>asc</code> - Arranges the list in ascending order (A-Z, 0-9).</p> </li>
+    /// <li> <p> <code>dsc</code> - Arranges the list in descending order (Z-A, 9-0).</p> </li>
+    /// </ul>
     /// <p>Results are sorted by <code>FilterVariable</code>.</p>
     pub fn set_sort_order(mut self, input: std::option::Option<crate::types::SortOrder>) -> Self {
-        self.sort_order = input; self
+        self.sort_order = input;
+        self
     }
     /// <p>The ID of the page in the paginated results.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -283,7 +296,8 @@ impl DescribeMlModelsInputBuilder {
     }
     /// <p>The ID of the page in the paginated results.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input; self
+        self.next_token = input;
+        self
     }
     /// <p>The number of pages of information to include in the result. The range of acceptable values is <code>1</code> through <code>100</code>. The default value is <code>100</code>.</p>
     pub fn limit(mut self, input: i32) -> Self {
@@ -292,36 +306,30 @@ impl DescribeMlModelsInputBuilder {
     }
     /// <p>The number of pages of information to include in the result. The range of acceptable values is <code>1</code> through <code>100</code>. The default value is <code>100</code>.</p>
     pub fn set_limit(mut self, input: std::option::Option<i32>) -> Self {
-        self.limit = input; self
+        self.limit = input;
+        self
     }
     /// Consumes the builder and constructs a [`DescribeMlModelsInput`](crate::operation::describe_ml_models::DescribeMlModelsInput).
-    pub fn build(self) -> Result<crate::operation::describe_ml_models::DescribeMlModelsInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::describe_ml_models::DescribeMlModelsInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::describe_ml_models::DescribeMlModelsInput {
-                filter_variable: self.filter_variable
-                ,
-                eq: self.eq
-                ,
-                gt: self.gt
-                ,
-                lt: self.lt
-                ,
-                ge: self.ge
-                ,
-                le: self.le
-                ,
-                ne: self.ne
-                ,
-                prefix: self.prefix
-                ,
-                sort_order: self.sort_order
-                ,
-                next_token: self.next_token
-                ,
-                limit: self.limit
-                ,
-            }
+                filter_variable: self.filter_variable,
+                eq: self.eq,
+                gt: self.gt,
+                lt: self.lt,
+                ge: self.ge,
+                le: self.le,
+                ne: self.ne,
+                prefix: self.prefix,
+                sort_order: self.sort_order,
+                next_token: self.next_token,
+                limit: self.limit,
+            },
         )
     }
 }
-

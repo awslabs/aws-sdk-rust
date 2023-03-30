@@ -3,7 +3,7 @@
 /// <p>Usage report with specified parameters.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct BusinessReport  {
+pub struct BusinessReport {
     /// <p>The status of the report generation execution (RUNNING, SUCCEEDED, or FAILED).</p>
     #[doc(hidden)]
     pub status: std::option::Option<crate::types::BusinessReportStatus>,
@@ -22,23 +22,23 @@ pub struct BusinessReport  {
 }
 impl BusinessReport {
     /// <p>The status of the report generation execution (RUNNING, SUCCEEDED, or FAILED).</p>
-    pub fn status(&self) -> std::option::Option<& crate::types::BusinessReportStatus> {
+    pub fn status(&self) -> std::option::Option<&crate::types::BusinessReportStatus> {
         self.status.as_ref()
     }
     /// <p>The failure code.</p>
-    pub fn failure_code(&self) -> std::option::Option<& crate::types::BusinessReportFailureCode> {
+    pub fn failure_code(&self) -> std::option::Option<&crate::types::BusinessReportFailureCode> {
         self.failure_code.as_ref()
     }
     /// <p>The S3 location of the output reports.</p>
-    pub fn s3_location(&self) -> std::option::Option<& crate::types::BusinessReportS3Location> {
+    pub fn s3_location(&self) -> std::option::Option<&crate::types::BusinessReportS3Location> {
         self.s3_location.as_ref()
     }
     /// <p>The time of report delivery.</p>
-    pub fn delivery_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
+    pub fn delivery_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.delivery_time.as_ref()
     }
     /// <p>The download link where a user can download the report.</p>
-    pub fn download_url(&self) -> std::option::Option<& str> {
+    pub fn download_url(&self) -> std::option::Option<&str> {
         self.download_url.as_deref()
     }
 }
@@ -66,8 +66,12 @@ impl BusinessReportBuilder {
         self
     }
     /// <p>The status of the report generation execution (RUNNING, SUCCEEDED, or FAILED).</p>
-    pub fn set_status(mut self, input: std::option::Option<crate::types::BusinessReportStatus>) -> Self {
-        self.status = input; self
+    pub fn set_status(
+        mut self,
+        input: std::option::Option<crate::types::BusinessReportStatus>,
+    ) -> Self {
+        self.status = input;
+        self
     }
     /// <p>The failure code.</p>
     pub fn failure_code(mut self, input: crate::types::BusinessReportFailureCode) -> Self {
@@ -75,8 +79,12 @@ impl BusinessReportBuilder {
         self
     }
     /// <p>The failure code.</p>
-    pub fn set_failure_code(mut self, input: std::option::Option<crate::types::BusinessReportFailureCode>) -> Self {
-        self.failure_code = input; self
+    pub fn set_failure_code(
+        mut self,
+        input: std::option::Option<crate::types::BusinessReportFailureCode>,
+    ) -> Self {
+        self.failure_code = input;
+        self
     }
     /// <p>The S3 location of the output reports.</p>
     pub fn s3_location(mut self, input: crate::types::BusinessReportS3Location) -> Self {
@@ -84,8 +92,12 @@ impl BusinessReportBuilder {
         self
     }
     /// <p>The S3 location of the output reports.</p>
-    pub fn set_s3_location(mut self, input: std::option::Option<crate::types::BusinessReportS3Location>) -> Self {
-        self.s3_location = input; self
+    pub fn set_s3_location(
+        mut self,
+        input: std::option::Option<crate::types::BusinessReportS3Location>,
+    ) -> Self {
+        self.s3_location = input;
+        self
     }
     /// <p>The time of report delivery.</p>
     pub fn delivery_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -93,8 +105,12 @@ impl BusinessReportBuilder {
         self
     }
     /// <p>The time of report delivery.</p>
-    pub fn set_delivery_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.delivery_time = input; self
+    pub fn set_delivery_time(
+        mut self,
+        input: std::option::Option<aws_smithy_types::DateTime>,
+    ) -> Self {
+        self.delivery_time = input;
+        self
     }
     /// <p>The download link where a user can download the report.</p>
     pub fn download_url(mut self, input: impl Into<std::string::String>) -> Self {
@@ -103,22 +119,17 @@ impl BusinessReportBuilder {
     }
     /// <p>The download link where a user can download the report.</p>
     pub fn set_download_url(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.download_url = input; self
+        self.download_url = input;
+        self
     }
     /// Consumes the builder and constructs a [`BusinessReport`](crate::types::BusinessReport).
     pub fn build(self) -> crate::types::BusinessReport {
         crate::types::BusinessReport {
-            status: self.status
-            ,
-            failure_code: self.failure_code
-            ,
-            s3_location: self.s3_location
-            ,
-            delivery_time: self.delivery_time
-            ,
-            download_url: self.download_url
-            ,
+            status: self.status,
+            failure_code: self.failure_code,
+            s3_location: self.s3_location,
+            delivery_time: self.delivery_time,
+            download_url: self.download_url,
         }
     }
 }
-

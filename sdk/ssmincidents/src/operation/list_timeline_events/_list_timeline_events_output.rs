@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListTimelineEventsOutput  {
+pub struct ListTimelineEventsOutput {
     /// <p>Details about each event that occurred during the incident.</p>
     #[doc(hidden)]
     pub event_summaries: std::option::Option<std::vec::Vec<crate::types::EventSummary>>,
@@ -13,22 +13,23 @@ pub struct ListTimelineEventsOutput  {
 }
 impl ListTimelineEventsOutput {
     /// <p>Details about each event that occurred during the incident.</p>
-    pub fn event_summaries(&self) -> std::option::Option<& [crate::types::EventSummary]> {
+    pub fn event_summaries(&self) -> std::option::Option<&[crate::types::EventSummary]> {
         self.event_summaries.as_deref()
     }
     /// <p>The pagination token to continue to the next page of results.</p>
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for ListTimelineEventsOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl ListTimelineEventsOutput {
     /// Creates a new builder-style object to manufacture [`ListTimelineEventsOutput`](crate::operation::list_timeline_events::ListTimelineEventsOutput).
-    pub fn builder() -> crate::operation::list_timeline_events::builders::ListTimelineEventsOutputBuilder {
+    pub fn builder(
+    ) -> crate::operation::list_timeline_events::builders::ListTimelineEventsOutputBuilder {
         crate::operation::list_timeline_events::builders::ListTimelineEventsOutputBuilder::default()
     }
 }
@@ -49,13 +50,17 @@ impl ListTimelineEventsOutputBuilder {
     /// <p>Details about each event that occurred during the incident.</p>
     pub fn event_summaries(mut self, input: crate::types::EventSummary) -> Self {
         let mut v = self.event_summaries.unwrap_or_default();
-                        v.push(input);
-                        self.event_summaries = Some(v);
-                        self
+        v.push(input);
+        self.event_summaries = Some(v);
+        self
     }
     /// <p>Details about each event that occurred during the incident.</p>
-    pub fn set_event_summaries(mut self, input: std::option::Option<std::vec::Vec<crate::types::EventSummary>>) -> Self {
-        self.event_summaries = input; self
+    pub fn set_event_summaries(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::EventSummary>>,
+    ) -> Self {
+        self.event_summaries = input;
+        self
     }
     /// <p>The pagination token to continue to the next page of results.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -64,26 +69,24 @@ impl ListTimelineEventsOutputBuilder {
     }
     /// <p>The pagination token to continue to the next page of results.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input; self
+        self.next_token = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`ListTimelineEventsOutput`](crate::operation::list_timeline_events::ListTimelineEventsOutput).
     pub fn build(self) -> crate::operation::list_timeline_events::ListTimelineEventsOutput {
         crate::operation::list_timeline_events::ListTimelineEventsOutput {
-            event_summaries: self.event_summaries
-            ,
-            next_token: self.next_token
-            ,
+            event_summaries: self.event_summaries,
+            next_token: self.next_token,
             _request_id: self._request_id,
         }
     }
 }
-

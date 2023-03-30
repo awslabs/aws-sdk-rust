@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AssociateTimeSeriesToAssetPropertyInput  {
+pub struct AssociateTimeSeriesToAssetPropertyInput {
     /// <p>The alias that identifies the time series.</p>
     #[doc(hidden)]
     pub alias: std::option::Option<std::string::String>,
@@ -18,25 +18,25 @@ pub struct AssociateTimeSeriesToAssetPropertyInput  {
 }
 impl AssociateTimeSeriesToAssetPropertyInput {
     /// <p>The alias that identifies the time series.</p>
-    pub fn alias(&self) -> std::option::Option<& str> {
+    pub fn alias(&self) -> std::option::Option<&str> {
         self.alias.as_deref()
     }
     /// <p>The ID of the asset in which the asset property was created.</p>
-    pub fn asset_id(&self) -> std::option::Option<& str> {
+    pub fn asset_id(&self) -> std::option::Option<&str> {
         self.asset_id.as_deref()
     }
     /// <p>The ID of the asset property.</p>
-    pub fn property_id(&self) -> std::option::Option<& str> {
+    pub fn property_id(&self) -> std::option::Option<&str> {
         self.property_id.as_deref()
     }
     /// <p>A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.</p>
-    pub fn client_token(&self) -> std::option::Option<& str> {
+    pub fn client_token(&self) -> std::option::Option<&str> {
         self.client_token.as_deref()
     }
 }
 impl AssociateTimeSeriesToAssetPropertyInput {
     /// Creates a new builder-style object to manufacture [`AssociateTimeSeriesToAssetPropertyInput`](crate::operation::associate_time_series_to_asset_property::AssociateTimeSeriesToAssetPropertyInput).
-    pub fn builder() -> crate::operation::associate_time_series_to_asset_property::builders::AssociateTimeSeriesToAssetPropertyInputBuilder {
+    pub fn builder() -> crate::operation::associate_time_series_to_asset_property::builders::AssociateTimeSeriesToAssetPropertyInputBuilder{
         crate::operation::associate_time_series_to_asset_property::builders::AssociateTimeSeriesToAssetPropertyInputBuilder::default()
     }
 }
@@ -58,7 +58,8 @@ impl AssociateTimeSeriesToAssetPropertyInputBuilder {
     }
     /// <p>The alias that identifies the time series.</p>
     pub fn set_alias(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.alias = input; self
+        self.alias = input;
+        self
     }
     /// <p>The ID of the asset in which the asset property was created.</p>
     pub fn asset_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -67,7 +68,8 @@ impl AssociateTimeSeriesToAssetPropertyInputBuilder {
     }
     /// <p>The ID of the asset in which the asset property was created.</p>
     pub fn set_asset_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.asset_id = input; self
+        self.asset_id = input;
+        self
     }
     /// <p>The ID of the asset property.</p>
     pub fn property_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -76,7 +78,8 @@ impl AssociateTimeSeriesToAssetPropertyInputBuilder {
     }
     /// <p>The ID of the asset property.</p>
     pub fn set_property_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.property_id = input; self
+        self.property_id = input;
+        self
     }
     /// <p>A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.</p>
     pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -85,10 +88,11 @@ impl AssociateTimeSeriesToAssetPropertyInputBuilder {
     }
     /// <p>A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.</p>
     pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.client_token = input; self
+        self.client_token = input;
+        self
     }
     /// Consumes the builder and constructs a [`AssociateTimeSeriesToAssetPropertyInput`](crate::operation::associate_time_series_to_asset_property::AssociateTimeSeriesToAssetPropertyInput).
-    pub fn build(self) -> Result<crate::operation::associate_time_series_to_asset_property::AssociateTimeSeriesToAssetPropertyInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> Result<crate::operation::associate_time_series_to_asset_property::AssociateTimeSeriesToAssetPropertyInput, aws_smithy_http::operation::error::BuildError>{
         Ok(
             crate::operation::associate_time_series_to_asset_property::AssociateTimeSeriesToAssetPropertyInput {
                 alias: self.alias
@@ -103,4 +107,3 @@ impl AssociateTimeSeriesToAssetPropertyInputBuilder {
         )
     }
 }
-

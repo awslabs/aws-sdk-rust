@@ -3,7 +3,7 @@
 /// <p>Provides information about a celebrity recognized by the <code>RecognizeCelebrities</code> operation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Celebrity  {
+pub struct Celebrity {
     /// <p>An array of URLs pointing to additional information about the celebrity. If there is no additional information about the celebrity, this list is empty.</p>
     #[doc(hidden)]
     pub urls: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -25,19 +25,19 @@ pub struct Celebrity  {
 }
 impl Celebrity {
     /// <p>An array of URLs pointing to additional information about the celebrity. If there is no additional information about the celebrity, this list is empty.</p>
-    pub fn urls(&self) -> std::option::Option<& [std::string::String]> {
+    pub fn urls(&self) -> std::option::Option<&[std::string::String]> {
         self.urls.as_deref()
     }
     /// <p>The name of the celebrity.</p>
-    pub fn name(&self) -> std::option::Option<& str> {
+    pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>A unique identifier for the celebrity. </p>
-    pub fn id(&self) -> std::option::Option<& str> {
+    pub fn id(&self) -> std::option::Option<&str> {
         self.id.as_deref()
     }
     /// <p>Provides information about the celebrity's face, such as its location on the image.</p>
-    pub fn face(&self) -> std::option::Option<& crate::types::ComparedFace> {
+    pub fn face(&self) -> std::option::Option<&crate::types::ComparedFace> {
         self.face.as_ref()
     }
     /// <p>The confidence, in percentage, that Amazon Rekognition has that the recognized face is the celebrity.</p>
@@ -45,7 +45,7 @@ impl Celebrity {
         self.match_confidence
     }
     /// <p>The known gender identity for the celebrity that matches the provided ID. The known gender identity can be Male, Female, Nonbinary, or Unlisted.</p>
-    pub fn known_gender(&self) -> std::option::Option<& crate::types::KnownGender> {
+    pub fn known_gender(&self) -> std::option::Option<&crate::types::KnownGender> {
         self.known_gender.as_ref()
     }
 }
@@ -75,13 +75,17 @@ impl CelebrityBuilder {
     /// <p>An array of URLs pointing to additional information about the celebrity. If there is no additional information about the celebrity, this list is empty.</p>
     pub fn urls(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.urls.unwrap_or_default();
-                        v.push(input.into());
-                        self.urls = Some(v);
-                        self
+        v.push(input.into());
+        self.urls = Some(v);
+        self
     }
     /// <p>An array of URLs pointing to additional information about the celebrity. If there is no additional information about the celebrity, this list is empty.</p>
-    pub fn set_urls(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-        self.urls = input; self
+    pub fn set_urls(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
+        self.urls = input;
+        self
     }
     /// <p>The name of the celebrity.</p>
     pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -90,7 +94,8 @@ impl CelebrityBuilder {
     }
     /// <p>The name of the celebrity.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input; self
+        self.name = input;
+        self
     }
     /// <p>A unique identifier for the celebrity. </p>
     pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -99,7 +104,8 @@ impl CelebrityBuilder {
     }
     /// <p>A unique identifier for the celebrity. </p>
     pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.id = input; self
+        self.id = input;
+        self
     }
     /// <p>Provides information about the celebrity's face, such as its location on the image.</p>
     pub fn face(mut self, input: crate::types::ComparedFace) -> Self {
@@ -108,7 +114,8 @@ impl CelebrityBuilder {
     }
     /// <p>Provides information about the celebrity's face, such as its location on the image.</p>
     pub fn set_face(mut self, input: std::option::Option<crate::types::ComparedFace>) -> Self {
-        self.face = input; self
+        self.face = input;
+        self
     }
     /// <p>The confidence, in percentage, that Amazon Rekognition has that the recognized face is the celebrity.</p>
     pub fn match_confidence(mut self, input: f32) -> Self {
@@ -117,7 +124,8 @@ impl CelebrityBuilder {
     }
     /// <p>The confidence, in percentage, that Amazon Rekognition has that the recognized face is the celebrity.</p>
     pub fn set_match_confidence(mut self, input: std::option::Option<f32>) -> Self {
-        self.match_confidence = input; self
+        self.match_confidence = input;
+        self
     }
     /// <p>The known gender identity for the celebrity that matches the provided ID. The known gender identity can be Male, Female, Nonbinary, or Unlisted.</p>
     pub fn known_gender(mut self, input: crate::types::KnownGender) -> Self {
@@ -125,25 +133,22 @@ impl CelebrityBuilder {
         self
     }
     /// <p>The known gender identity for the celebrity that matches the provided ID. The known gender identity can be Male, Female, Nonbinary, or Unlisted.</p>
-    pub fn set_known_gender(mut self, input: std::option::Option<crate::types::KnownGender>) -> Self {
-        self.known_gender = input; self
+    pub fn set_known_gender(
+        mut self,
+        input: std::option::Option<crate::types::KnownGender>,
+    ) -> Self {
+        self.known_gender = input;
+        self
     }
     /// Consumes the builder and constructs a [`Celebrity`](crate::types::Celebrity).
     pub fn build(self) -> crate::types::Celebrity {
         crate::types::Celebrity {
-            urls: self.urls
-            ,
-            name: self.name
-            ,
-            id: self.id
-            ,
-            face: self.face
-            ,
-            match_confidence: self.match_confidence
-            ,
-            known_gender: self.known_gender
-            ,
+            urls: self.urls,
+            name: self.name,
+            id: self.id,
+            face: self.face,
+            match_confidence: self.match_confidence,
+            known_gender: self.known_gender,
         }
     }
 }
-

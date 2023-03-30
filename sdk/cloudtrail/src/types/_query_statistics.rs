@@ -3,7 +3,7 @@
 /// <p>Metadata about a query, such as the number of results.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct QueryStatistics  {
+pub struct QueryStatistics {
     /// <p>The number of results returned.</p>
     #[doc(hidden)]
     pub results_count: std::option::Option<i32>,
@@ -51,7 +51,8 @@ impl QueryStatisticsBuilder {
     }
     /// <p>The number of results returned.</p>
     pub fn set_results_count(mut self, input: std::option::Option<i32>) -> Self {
-        self.results_count = input; self
+        self.results_count = input;
+        self
     }
     /// <p>The total number of results returned by a query.</p>
     pub fn total_results_count(mut self, input: i32) -> Self {
@@ -60,7 +61,8 @@ impl QueryStatisticsBuilder {
     }
     /// <p>The total number of results returned by a query.</p>
     pub fn set_total_results_count(mut self, input: std::option::Option<i32>) -> Self {
-        self.total_results_count = input; self
+        self.total_results_count = input;
+        self
     }
     /// <p>The total bytes that the query scanned in the event data store. This value matches the number of bytes for which your account is billed for the query, unless the query is still running.</p>
     pub fn bytes_scanned(mut self, input: i64) -> Self {
@@ -69,18 +71,15 @@ impl QueryStatisticsBuilder {
     }
     /// <p>The total bytes that the query scanned in the event data store. This value matches the number of bytes for which your account is billed for the query, unless the query is still running.</p>
     pub fn set_bytes_scanned(mut self, input: std::option::Option<i64>) -> Self {
-        self.bytes_scanned = input; self
+        self.bytes_scanned = input;
+        self
     }
     /// Consumes the builder and constructs a [`QueryStatistics`](crate::types::QueryStatistics).
     pub fn build(self) -> crate::types::QueryStatistics {
         crate::types::QueryStatistics {
-            results_count: self.results_count
-            ,
-            total_results_count: self.total_results_count
-            ,
-            bytes_scanned: self.bytes_scanned
-            ,
+            results_count: self.results_count,
+            total_results_count: self.total_results_count,
+            bytes_scanned: self.bytes_scanned,
         }
     }
 }
-

@@ -3,7 +3,7 @@
 /// <p>Describes a comment.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct Comment  {
+pub struct Comment {
     /// <p>The ID of the comment.</p>
     #[doc(hidden)]
     pub comment_id: std::option::Option<std::string::String>,
@@ -34,43 +34,43 @@ pub struct Comment  {
 }
 impl Comment {
     /// <p>The ID of the comment.</p>
-    pub fn comment_id(&self) -> std::option::Option<& str> {
+    pub fn comment_id(&self) -> std::option::Option<&str> {
         self.comment_id.as_deref()
     }
     /// <p>The ID of the parent comment.</p>
-    pub fn parent_id(&self) -> std::option::Option<& str> {
+    pub fn parent_id(&self) -> std::option::Option<&str> {
         self.parent_id.as_deref()
     }
     /// <p>The ID of the root comment in the thread.</p>
-    pub fn thread_id(&self) -> std::option::Option<& str> {
+    pub fn thread_id(&self) -> std::option::Option<&str> {
         self.thread_id.as_deref()
     }
     /// <p>The text of the comment.</p>
-    pub fn text(&self) -> std::option::Option<& str> {
+    pub fn text(&self) -> std::option::Option<&str> {
         self.text.as_deref()
     }
     /// <p>The details of the user who made the comment.</p>
-    pub fn contributor(&self) -> std::option::Option<& crate::types::User> {
+    pub fn contributor(&self) -> std::option::Option<&crate::types::User> {
         self.contributor.as_ref()
     }
     /// <p>The time that the comment was created.</p>
-    pub fn created_timestamp(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
+    pub fn created_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created_timestamp.as_ref()
     }
     /// <p>The status of the comment.</p>
-    pub fn status(&self) -> std::option::Option<& crate::types::CommentStatusType> {
+    pub fn status(&self) -> std::option::Option<&crate::types::CommentStatusType> {
         self.status.as_ref()
     }
     /// <p>The visibility of the comment. Options are either PRIVATE, where the comment is visible only to the comment author and document owner and co-owners, or PUBLIC, where the comment is visible to document owners, co-owners, and contributors.</p>
-    pub fn visibility(&self) -> std::option::Option<& crate::types::CommentVisibilityType> {
+    pub fn visibility(&self) -> std::option::Option<&crate::types::CommentVisibilityType> {
         self.visibility.as_ref()
     }
     /// <p>If the comment is a reply to another user's comment, this field contains the user ID of the user being replied to.</p>
-    pub fn recipient_id(&self) -> std::option::Option<& str> {
+    pub fn recipient_id(&self) -> std::option::Option<&str> {
         self.recipient_id.as_deref()
     }
 }
-impl  std::fmt::Debug for Comment  {
+impl std::fmt::Debug for Comment {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("Comment");
         formatter.field("comment_id", &self.comment_id);
@@ -114,7 +114,8 @@ impl CommentBuilder {
     }
     /// <p>The ID of the comment.</p>
     pub fn set_comment_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.comment_id = input; self
+        self.comment_id = input;
+        self
     }
     /// <p>The ID of the parent comment.</p>
     pub fn parent_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -123,7 +124,8 @@ impl CommentBuilder {
     }
     /// <p>The ID of the parent comment.</p>
     pub fn set_parent_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.parent_id = input; self
+        self.parent_id = input;
+        self
     }
     /// <p>The ID of the root comment in the thread.</p>
     pub fn thread_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -132,7 +134,8 @@ impl CommentBuilder {
     }
     /// <p>The ID of the root comment in the thread.</p>
     pub fn set_thread_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.thread_id = input; self
+        self.thread_id = input;
+        self
     }
     /// <p>The text of the comment.</p>
     pub fn text(mut self, input: impl Into<std::string::String>) -> Self {
@@ -141,7 +144,8 @@ impl CommentBuilder {
     }
     /// <p>The text of the comment.</p>
     pub fn set_text(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.text = input; self
+        self.text = input;
+        self
     }
     /// <p>The details of the user who made the comment.</p>
     pub fn contributor(mut self, input: crate::types::User) -> Self {
@@ -150,7 +154,8 @@ impl CommentBuilder {
     }
     /// <p>The details of the user who made the comment.</p>
     pub fn set_contributor(mut self, input: std::option::Option<crate::types::User>) -> Self {
-        self.contributor = input; self
+        self.contributor = input;
+        self
     }
     /// <p>The time that the comment was created.</p>
     pub fn created_timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -158,8 +163,12 @@ impl CommentBuilder {
         self
     }
     /// <p>The time that the comment was created.</p>
-    pub fn set_created_timestamp(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.created_timestamp = input; self
+    pub fn set_created_timestamp(
+        mut self,
+        input: std::option::Option<aws_smithy_types::DateTime>,
+    ) -> Self {
+        self.created_timestamp = input;
+        self
     }
     /// <p>The status of the comment.</p>
     pub fn status(mut self, input: crate::types::CommentStatusType) -> Self {
@@ -167,8 +176,12 @@ impl CommentBuilder {
         self
     }
     /// <p>The status of the comment.</p>
-    pub fn set_status(mut self, input: std::option::Option<crate::types::CommentStatusType>) -> Self {
-        self.status = input; self
+    pub fn set_status(
+        mut self,
+        input: std::option::Option<crate::types::CommentStatusType>,
+    ) -> Self {
+        self.status = input;
+        self
     }
     /// <p>The visibility of the comment. Options are either PRIVATE, where the comment is visible only to the comment author and document owner and co-owners, or PUBLIC, where the comment is visible to document owners, co-owners, and contributors.</p>
     pub fn visibility(mut self, input: crate::types::CommentVisibilityType) -> Self {
@@ -176,8 +189,12 @@ impl CommentBuilder {
         self
     }
     /// <p>The visibility of the comment. Options are either PRIVATE, where the comment is visible only to the comment author and document owner and co-owners, or PUBLIC, where the comment is visible to document owners, co-owners, and contributors.</p>
-    pub fn set_visibility(mut self, input: std::option::Option<crate::types::CommentVisibilityType>) -> Self {
-        self.visibility = input; self
+    pub fn set_visibility(
+        mut self,
+        input: std::option::Option<crate::types::CommentVisibilityType>,
+    ) -> Self {
+        self.visibility = input;
+        self
     }
     /// <p>If the comment is a reply to another user's comment, this field contains the user ID of the user being replied to.</p>
     pub fn recipient_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -186,29 +203,21 @@ impl CommentBuilder {
     }
     /// <p>If the comment is a reply to another user's comment, this field contains the user ID of the user being replied to.</p>
     pub fn set_recipient_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.recipient_id = input; self
+        self.recipient_id = input;
+        self
     }
     /// Consumes the builder and constructs a [`Comment`](crate::types::Comment).
     pub fn build(self) -> crate::types::Comment {
         crate::types::Comment {
-            comment_id: self.comment_id
-            ,
-            parent_id: self.parent_id
-            ,
-            thread_id: self.thread_id
-            ,
-            text: self.text
-            ,
-            contributor: self.contributor
-            ,
-            created_timestamp: self.created_timestamp
-            ,
-            status: self.status
-            ,
-            visibility: self.visibility
-            ,
-            recipient_id: self.recipient_id
-            ,
+            comment_id: self.comment_id,
+            parent_id: self.parent_id,
+            thread_id: self.thread_id,
+            text: self.text,
+            contributor: self.contributor,
+            created_timestamp: self.created_timestamp,
+            status: self.status,
+            visibility: self.visibility,
+            recipient_id: self.recipient_id,
         }
     }
 }
@@ -227,4 +236,3 @@ impl std::fmt::Debug for CommentBuilder {
         formatter.finish()
     }
 }
-

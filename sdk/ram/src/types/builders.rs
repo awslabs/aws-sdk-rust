@@ -18,4 +18,3 @@ pub use crate::types::_principal::PrincipalBuilder;
 pub use crate::types::_tag_filter::TagFilterBuilder;
 
 pub use crate::types::_resource_share_permission_detail::ResourceSharePermissionDetailBuilder;
-

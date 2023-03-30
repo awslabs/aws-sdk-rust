@@ -3,7 +3,7 @@
 /// <p>A representation of a custom line item version.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct CustomLineItemVersionListElement  {
+pub struct CustomLineItemVersionListElement {
     /// <p>The name of the custom line item.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -40,27 +40,29 @@ pub struct CustomLineItemVersionListElement  {
 }
 impl CustomLineItemVersionListElement {
     /// <p>The name of the custom line item.</p>
-    pub fn name(&self) -> std::option::Option<& str> {
+    pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p> A representation of the charge details of a custom line item. </p>
-    pub fn charge_details(&self) -> std::option::Option<& crate::types::ListCustomLineItemChargeDetails> {
+    pub fn charge_details(
+        &self,
+    ) -> std::option::Option<&crate::types::ListCustomLineItemChargeDetails> {
         self.charge_details.as_ref()
     }
     /// <p>The charge value currency of the custom line item.</p>
-    pub fn currency_code(&self) -> std::option::Option<& crate::types::CurrencyCode> {
+    pub fn currency_code(&self) -> std::option::Option<&crate::types::CurrencyCode> {
         self.currency_code.as_ref()
     }
     /// <p>The description of the custom line item.</p>
-    pub fn description(&self) -> std::option::Option<& str> {
+    pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
     /// <p>The product code that’s associated with the custom line item.</p>
-    pub fn product_code(&self) -> std::option::Option<& str> {
+    pub fn product_code(&self) -> std::option::Option<&str> {
         self.product_code.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the billing group that the custom line item applies to.</p>
-    pub fn billing_group_arn(&self) -> std::option::Option<& str> {
+    pub fn billing_group_arn(&self) -> std::option::Option<&str> {
         self.billing_group_arn.as_deref()
     }
     /// <p>The time when the custom line item version was created.</p>
@@ -76,15 +78,15 @@ impl CustomLineItemVersionListElement {
         self.association_size
     }
     /// <p>The start billing period of the custom line item version.</p>
-    pub fn start_billing_period(&self) -> std::option::Option<& str> {
+    pub fn start_billing_period(&self) -> std::option::Option<&str> {
         self.start_billing_period.as_deref()
     }
     /// <p>The end billing period of the custom line item version.</p>
-    pub fn end_billing_period(&self) -> std::option::Option<& str> {
+    pub fn end_billing_period(&self) -> std::option::Option<&str> {
         self.end_billing_period.as_deref()
     }
 }
-impl  std::fmt::Debug for CustomLineItemVersionListElement  {
+impl std::fmt::Debug for CustomLineItemVersionListElement {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CustomLineItemVersionListElement");
         formatter.field("name", &"*** Sensitive Data Redacted ***");
@@ -132,7 +134,8 @@ impl CustomLineItemVersionListElementBuilder {
     }
     /// <p>The name of the custom line item.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input; self
+        self.name = input;
+        self
     }
     /// <p> A representation of the charge details of a custom line item. </p>
     pub fn charge_details(mut self, input: crate::types::ListCustomLineItemChargeDetails) -> Self {
@@ -140,8 +143,12 @@ impl CustomLineItemVersionListElementBuilder {
         self
     }
     /// <p> A representation of the charge details of a custom line item. </p>
-    pub fn set_charge_details(mut self, input: std::option::Option<crate::types::ListCustomLineItemChargeDetails>) -> Self {
-        self.charge_details = input; self
+    pub fn set_charge_details(
+        mut self,
+        input: std::option::Option<crate::types::ListCustomLineItemChargeDetails>,
+    ) -> Self {
+        self.charge_details = input;
+        self
     }
     /// <p>The charge value currency of the custom line item.</p>
     pub fn currency_code(mut self, input: crate::types::CurrencyCode) -> Self {
@@ -149,8 +156,12 @@ impl CustomLineItemVersionListElementBuilder {
         self
     }
     /// <p>The charge value currency of the custom line item.</p>
-    pub fn set_currency_code(mut self, input: std::option::Option<crate::types::CurrencyCode>) -> Self {
-        self.currency_code = input; self
+    pub fn set_currency_code(
+        mut self,
+        input: std::option::Option<crate::types::CurrencyCode>,
+    ) -> Self {
+        self.currency_code = input;
+        self
     }
     /// <p>The description of the custom line item.</p>
     pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -159,7 +170,8 @@ impl CustomLineItemVersionListElementBuilder {
     }
     /// <p>The description of the custom line item.</p>
     pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.description = input; self
+        self.description = input;
+        self
     }
     /// <p>The product code that’s associated with the custom line item.</p>
     pub fn product_code(mut self, input: impl Into<std::string::String>) -> Self {
@@ -168,7 +180,8 @@ impl CustomLineItemVersionListElementBuilder {
     }
     /// <p>The product code that’s associated with the custom line item.</p>
     pub fn set_product_code(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.product_code = input; self
+        self.product_code = input;
+        self
     }
     /// <p>The Amazon Resource Name (ARN) of the billing group that the custom line item applies to.</p>
     pub fn billing_group_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -176,8 +189,12 @@ impl CustomLineItemVersionListElementBuilder {
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the billing group that the custom line item applies to.</p>
-    pub fn set_billing_group_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.billing_group_arn = input; self
+    pub fn set_billing_group_arn(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.billing_group_arn = input;
+        self
     }
     /// <p>The time when the custom line item version was created.</p>
     pub fn creation_time(mut self, input: i64) -> Self {
@@ -186,7 +203,8 @@ impl CustomLineItemVersionListElementBuilder {
     }
     /// <p>The time when the custom line item version was created.</p>
     pub fn set_creation_time(mut self, input: std::option::Option<i64>) -> Self {
-        self.creation_time = input; self
+        self.creation_time = input;
+        self
     }
     /// <p>The most recent time that the custom line item version was modified.</p>
     pub fn last_modified_time(mut self, input: i64) -> Self {
@@ -195,7 +213,8 @@ impl CustomLineItemVersionListElementBuilder {
     }
     /// <p>The most recent time that the custom line item version was modified.</p>
     pub fn set_last_modified_time(mut self, input: std::option::Option<i64>) -> Self {
-        self.last_modified_time = input; self
+        self.last_modified_time = input;
+        self
     }
     /// <p>The number of resources that are associated with the custom line item.</p>
     pub fn association_size(mut self, input: i64) -> Self {
@@ -204,7 +223,8 @@ impl CustomLineItemVersionListElementBuilder {
     }
     /// <p>The number of resources that are associated with the custom line item.</p>
     pub fn set_association_size(mut self, input: std::option::Option<i64>) -> Self {
-        self.association_size = input; self
+        self.association_size = input;
+        self
     }
     /// <p>The start billing period of the custom line item version.</p>
     pub fn start_billing_period(mut self, input: impl Into<std::string::String>) -> Self {
@@ -212,8 +232,12 @@ impl CustomLineItemVersionListElementBuilder {
         self
     }
     /// <p>The start billing period of the custom line item version.</p>
-    pub fn set_start_billing_period(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.start_billing_period = input; self
+    pub fn set_start_billing_period(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.start_billing_period = input;
+        self
     }
     /// <p>The end billing period of the custom line item version.</p>
     pub fn end_billing_period(mut self, input: impl Into<std::string::String>) -> Self {
@@ -221,37 +245,27 @@ impl CustomLineItemVersionListElementBuilder {
         self
     }
     /// <p>The end billing period of the custom line item version.</p>
-    pub fn set_end_billing_period(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.end_billing_period = input; self
+    pub fn set_end_billing_period(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.end_billing_period = input;
+        self
     }
     /// Consumes the builder and constructs a [`CustomLineItemVersionListElement`](crate::types::CustomLineItemVersionListElement).
     pub fn build(self) -> crate::types::CustomLineItemVersionListElement {
         crate::types::CustomLineItemVersionListElement {
-            name: self.name
-            ,
-            charge_details: self.charge_details
-            ,
-            currency_code: self.currency_code
-            ,
-            description: self.description
-            ,
-            product_code: self.product_code
-            ,
-            billing_group_arn: self.billing_group_arn
-            ,
-            creation_time: self.creation_time
-                .unwrap_or_default()
-            ,
-            last_modified_time: self.last_modified_time
-                .unwrap_or_default()
-            ,
-            association_size: self.association_size
-                .unwrap_or_default()
-            ,
-            start_billing_period: self.start_billing_period
-            ,
-            end_billing_period: self.end_billing_period
-            ,
+            name: self.name,
+            charge_details: self.charge_details,
+            currency_code: self.currency_code,
+            description: self.description,
+            product_code: self.product_code,
+            billing_group_arn: self.billing_group_arn,
+            creation_time: self.creation_time.unwrap_or_default(),
+            last_modified_time: self.last_modified_time.unwrap_or_default(),
+            association_size: self.association_size.unwrap_or_default(),
+            start_billing_period: self.start_billing_period,
+            end_billing_period: self.end_billing_period,
         }
     }
 }
@@ -272,4 +286,3 @@ impl std::fmt::Debug for CustomLineItemVersionListElementBuilder {
         formatter.finish()
     }
 }
-

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateResourceInput  {
+pub struct UpdateResourceInput {
     /// <p>The identifier associated with the organization for which the resource is updated.</p>
     #[doc(hidden)]
     pub organization_id: std::option::Option<std::string::String>,
@@ -18,19 +18,19 @@ pub struct UpdateResourceInput  {
 }
 impl UpdateResourceInput {
     /// <p>The identifier associated with the organization for which the resource is updated.</p>
-    pub fn organization_id(&self) -> std::option::Option<& str> {
+    pub fn organization_id(&self) -> std::option::Option<&str> {
         self.organization_id.as_deref()
     }
     /// <p>The identifier of the resource to be updated.</p>
-    pub fn resource_id(&self) -> std::option::Option<& str> {
+    pub fn resource_id(&self) -> std::option::Option<&str> {
         self.resource_id.as_deref()
     }
     /// <p>The name of the resource to be updated.</p>
-    pub fn name(&self) -> std::option::Option<& str> {
+    pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>The resource's booking options to be updated.</p>
-    pub fn booking_options(&self) -> std::option::Option<& crate::types::BookingOptions> {
+    pub fn booking_options(&self) -> std::option::Option<&crate::types::BookingOptions> {
         self.booking_options.as_ref()
     }
 }
@@ -58,7 +58,8 @@ impl UpdateResourceInputBuilder {
     }
     /// <p>The identifier associated with the organization for which the resource is updated.</p>
     pub fn set_organization_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.organization_id = input; self
+        self.organization_id = input;
+        self
     }
     /// <p>The identifier of the resource to be updated.</p>
     pub fn resource_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -67,7 +68,8 @@ impl UpdateResourceInputBuilder {
     }
     /// <p>The identifier of the resource to be updated.</p>
     pub fn set_resource_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.resource_id = input; self
+        self.resource_id = input;
+        self
     }
     /// <p>The name of the resource to be updated.</p>
     pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -76,7 +78,8 @@ impl UpdateResourceInputBuilder {
     }
     /// <p>The name of the resource to be updated.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input; self
+        self.name = input;
+        self
     }
     /// <p>The resource's booking options to be updated.</p>
     pub fn booking_options(mut self, input: crate::types::BookingOptions) -> Self {
@@ -84,23 +87,25 @@ impl UpdateResourceInputBuilder {
         self
     }
     /// <p>The resource's booking options to be updated.</p>
-    pub fn set_booking_options(mut self, input: std::option::Option<crate::types::BookingOptions>) -> Self {
-        self.booking_options = input; self
+    pub fn set_booking_options(
+        mut self,
+        input: std::option::Option<crate::types::BookingOptions>,
+    ) -> Self {
+        self.booking_options = input;
+        self
     }
     /// Consumes the builder and constructs a [`UpdateResourceInput`](crate::operation::update_resource::UpdateResourceInput).
-    pub fn build(self) -> Result<crate::operation::update_resource::UpdateResourceInput, aws_smithy_http::operation::error::BuildError> {
-        Ok(
-            crate::operation::update_resource::UpdateResourceInput {
-                organization_id: self.organization_id
-                ,
-                resource_id: self.resource_id
-                ,
-                name: self.name
-                ,
-                booking_options: self.booking_options
-                ,
-            }
-        )
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::update_resource::UpdateResourceInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        Ok(crate::operation::update_resource::UpdateResourceInput {
+            organization_id: self.organization_id,
+            resource_id: self.resource_id,
+            name: self.name,
+            booking_options: self.booking_options,
+        })
     }
 }
-

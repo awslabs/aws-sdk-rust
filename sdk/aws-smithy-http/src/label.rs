@@ -13,13 +13,17 @@ use percent_encoding::AsciiSet;
 
 const GREEDY: &AsciiSet = &BASE_SET.remove(b'/');
 
+/// The encoding strategy used when parsing an `httpLabel`.
 #[non_exhaustive]
 #[derive(Clone, Debug, Eq, PartialEq)]
 pub enum EncodingStrategy {
+    /// The default strategy when parsing an `httpLabel`. Only one path segment will be matched.
     Default,
+    /// When parsing an `httpLabel`, this strategy will attempt to parse as many path segments as possible.
     Greedy,
 }
 
+/// Format a given `httpLabel` as a string according to an [`EncodingStrategy`]
 pub fn fmt_string<T: AsRef<str>>(t: T, strategy: EncodingStrategy) -> String {
     let uri_set = if strategy == EncodingStrategy::Greedy {
         GREEDY
@@ -29,6 +33,7 @@ pub fn fmt_string<T: AsRef<str>>(t: T, strategy: EncodingStrategy) -> String {
     percent_encoding::utf8_percent_encode(t.as_ref(), uri_set).to_string()
 }
 
+/// Format a given [`DateTime`] as a string according to an [`EncodingStrategy`]
 pub fn fmt_timestamp(t: &DateTime, format: Format) -> Result<String, DateTimeFormatError> {
     Ok(fmt_string(t.fmt(format)?, EncodingStrategy::Default))
 }

@@ -4,49 +4,58 @@ pub use crate::operation::put_verification_state_on_violation::_put_verification
 pub use crate::operation::put_verification_state_on_violation::_put_verification_state_on_violation_input::PutVerificationStateOnViolationInputBuilder;
 
 /// Fluent builder constructing a request to `PutVerificationStateOnViolation`.
-/// 
+///
 /// <p>Set a verification state and provide a description of that verification state on a violation (detect alarm).</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct PutVerificationStateOnViolationFluentBuilder {
                 handle: std::sync::Arc<crate::client::Handle>,
                 inner: crate::operation::put_verification_state_on_violation::builders::PutVerificationStateOnViolationInputBuilder
             }
-impl PutVerificationStateOnViolationFluentBuilder  {
+impl PutVerificationStateOnViolationFluentBuilder {
     /// Creates a new `PutVerificationStateOnViolation`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
-                    /// sent. The operation's inner [http::Request] can be modified as well.
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle,
+            inner: Default::default(),
+        }
+    }
+
+    /// Consume this builder, creating a customizable operation that can be modified before being
+    /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::put_verification_state_on_violation::PutVerificationStateOnViolation, aws_http::retry::AwsResponseRetryClassifier,>,
                         aws_smithy_http::result::SdkError<crate::operation::put_verification_state_on_violation::PutVerificationStateOnViolationError>
-                    >  {
-                        let handle = self.handle.clone();
-                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-                    }
-    
-                    /// Sends the request and returns the response.
-                    ///
-                    /// If an error occurs, an `SdkError` will be returned with additional details that
-                    /// can be matched against.
-                    ///
-                    /// By default, any retryable failures will be retried twice. Retry behavior
-                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                    /// set when configuring the client.
+    >{
+        let handle = self.handle.clone();
+        let operation = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+    }
+
+    /// Sends the request and returns the response.
+    ///
+    /// If an error occurs, an `SdkError` will be returned with additional details that
+    /// can be matched against.
+    ///
+    /// By default, any retryable failures will be retried twice. Retry behavior
+    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+    /// set when configuring the client.
                     pub async fn send(self) -> std::result::Result<crate::operation::put_verification_state_on_violation::PutVerificationStateOnViolationOutput, aws_smithy_http::result::SdkError<crate::operation::put_verification_state_on_violation::PutVerificationStateOnViolationError>>
                      {
-                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&self.handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        self.handle.client.call(op).await
-                    }
+        let op = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&self.handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        self.handle.client.call(op).await
+    }
     /// <p>The violation ID.</p>
     pub fn violation_id(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.violation_id(input.into());
@@ -63,7 +72,10 @@ impl PutVerificationStateOnViolationFluentBuilder  {
         self
     }
     /// <p>The verification state of the violation.</p>
-    pub fn set_verification_state(mut self, input: std::option::Option<crate::types::VerificationState>) -> Self {
+    pub fn set_verification_state(
+        mut self,
+        input: std::option::Option<crate::types::VerificationState>,
+    ) -> Self {
         self.inner = self.inner.set_verification_state(input);
         self
     }
@@ -73,9 +85,11 @@ impl PutVerificationStateOnViolationFluentBuilder  {
         self
     }
     /// <p>The description of the verification state of the violation (detect alarm).</p>
-    pub fn set_verification_state_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_verification_state_description(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_verification_state_description(input);
         self
     }
 }
-

@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateTrackerOutput  {
+pub struct CreateTrackerOutput {
     /// <p>The name of the tracker resource.</p>
     #[doc(hidden)]
     pub tracker_name: std::option::Option<std::string::String>,
-    /// <p>The Amazon Resource Name (ARN) for the tracker resource. Used when you need to specify a resource across all AWS.</p> 
-    /// <ul> 
-    /// <li> <p>Format example: <code>arn:aws:geo:region:account-id:tracker/ExampleTracker</code> </p> </li> 
+    /// <p>The Amazon Resource Name (ARN) for the tracker resource. Used when you need to specify a resource across all AWS.</p>
+    /// <ul>
+    /// <li> <p>Format example: <code>arn:aws:geo:region:account-id:tracker/ExampleTracker</code> </p> </li>
     /// </ul>
     #[doc(hidden)]
     pub tracker_arn: std::option::Option<std::string::String>,
@@ -19,26 +19,26 @@ pub struct CreateTrackerOutput  {
 }
 impl CreateTrackerOutput {
     /// <p>The name of the tracker resource.</p>
-    pub fn tracker_name(&self) -> std::option::Option<& str> {
+    pub fn tracker_name(&self) -> std::option::Option<&str> {
         self.tracker_name.as_deref()
     }
-    /// <p>The Amazon Resource Name (ARN) for the tracker resource. Used when you need to specify a resource across all AWS.</p> 
-    /// <ul> 
-    /// <li> <p>Format example: <code>arn:aws:geo:region:account-id:tracker/ExampleTracker</code> </p> </li> 
+    /// <p>The Amazon Resource Name (ARN) for the tracker resource. Used when you need to specify a resource across all AWS.</p>
+    /// <ul>
+    /// <li> <p>Format example: <code>arn:aws:geo:region:account-id:tracker/ExampleTracker</code> </p> </li>
     /// </ul>
-    pub fn tracker_arn(&self) -> std::option::Option<& str> {
+    pub fn tracker_arn(&self) -> std::option::Option<&str> {
         self.tracker_arn.as_deref()
     }
     /// <p>The timestamp for when the tracker resource was created in <a href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
-    pub fn create_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
+    pub fn create_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.create_time.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for CreateTrackerOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl CreateTrackerOutput {
     /// Creates a new builder-style object to manufacture [`CreateTrackerOutput`](crate::operation::create_tracker::CreateTrackerOutput).
     pub fn builder() -> crate::operation::create_tracker::builders::CreateTrackerOutputBuilder {
@@ -63,22 +63,24 @@ impl CreateTrackerOutputBuilder {
     }
     /// <p>The name of the tracker resource.</p>
     pub fn set_tracker_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.tracker_name = input; self
+        self.tracker_name = input;
+        self
     }
-    /// <p>The Amazon Resource Name (ARN) for the tracker resource. Used when you need to specify a resource across all AWS.</p> 
-    /// <ul> 
-    /// <li> <p>Format example: <code>arn:aws:geo:region:account-id:tracker/ExampleTracker</code> </p> </li> 
+    /// <p>The Amazon Resource Name (ARN) for the tracker resource. Used when you need to specify a resource across all AWS.</p>
+    /// <ul>
+    /// <li> <p>Format example: <code>arn:aws:geo:region:account-id:tracker/ExampleTracker</code> </p> </li>
     /// </ul>
     pub fn tracker_arn(mut self, input: impl Into<std::string::String>) -> Self {
         self.tracker_arn = Some(input.into());
         self
     }
-    /// <p>The Amazon Resource Name (ARN) for the tracker resource. Used when you need to specify a resource across all AWS.</p> 
-    /// <ul> 
-    /// <li> <p>Format example: <code>arn:aws:geo:region:account-id:tracker/ExampleTracker</code> </p> </li> 
+    /// <p>The Amazon Resource Name (ARN) for the tracker resource. Used when you need to specify a resource across all AWS.</p>
+    /// <ul>
+    /// <li> <p>Format example: <code>arn:aws:geo:region:account-id:tracker/ExampleTracker</code> </p> </li>
     /// </ul>
     pub fn set_tracker_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.tracker_arn = input; self
+        self.tracker_arn = input;
+        self
     }
     /// <p>The timestamp for when the tracker resource was created in <a href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
     pub fn create_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -86,29 +88,29 @@ impl CreateTrackerOutputBuilder {
         self
     }
     /// <p>The timestamp for when the tracker resource was created in <a href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
-    pub fn set_create_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.create_time = input; self
+    pub fn set_create_time(
+        mut self,
+        input: std::option::Option<aws_smithy_types::DateTime>,
+    ) -> Self {
+        self.create_time = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`CreateTrackerOutput`](crate::operation::create_tracker::CreateTrackerOutput).
     pub fn build(self) -> crate::operation::create_tracker::CreateTrackerOutput {
         crate::operation::create_tracker::CreateTrackerOutput {
-            tracker_name: self.tracker_name
-            ,
-            tracker_arn: self.tracker_arn
-            ,
-            create_time: self.create_time
-            ,
+            tracker_name: self.tracker_name,
+            tracker_arn: self.tracker_arn,
+            create_time: self.create_time,
             _request_id: self._request_id,
         }
     }
 }
-

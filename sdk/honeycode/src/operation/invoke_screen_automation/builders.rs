@@ -4,49 +4,71 @@ pub use crate::operation::invoke_screen_automation::_invoke_screen_automation_ou
 pub use crate::operation::invoke_screen_automation::_invoke_screen_automation_input::InvokeScreenAutomationInputBuilder;
 
 /// Fluent builder constructing a request to `InvokeScreenAutomation`.
-/// 
+///
 /// <p> The InvokeScreenAutomation API allows invoking an action defined in a screen in a Honeycode app. The API allows setting local variables, which can then be used in the automation being invoked. This allows automating the Honeycode app interactions to write, update or delete data in the workbook. </p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct InvokeScreenAutomationFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::invoke_screen_automation::builders::InvokeScreenAutomationInputBuilder
-            }
-impl InvokeScreenAutomationFluentBuilder  {
+    handle: std::sync::Arc<crate::client::Handle>,
+    inner: crate::operation::invoke_screen_automation::builders::InvokeScreenAutomationInputBuilder,
+}
+impl InvokeScreenAutomationFluentBuilder {
     /// Creates a new `InvokeScreenAutomation`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
-                    /// sent. The operation's inner [http::Request] can be modified as well.
-                    pub async fn customize(self) -> std::result::Result<
-                        crate::client::customize::CustomizableOperation<crate::operation::invoke_screen_automation::InvokeScreenAutomation, aws_http::retry::AwsResponseRetryClassifier,>,
-                        aws_smithy_http::result::SdkError<crate::operation::invoke_screen_automation::InvokeScreenAutomationError>
-                    >  {
-                        let handle = self.handle.clone();
-                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-                    }
-    
-                    /// Sends the request and returns the response.
-                    ///
-                    /// If an error occurs, an `SdkError` will be returned with additional details that
-                    /// can be matched against.
-                    ///
-                    /// By default, any retryable failures will be retried twice. Retry behavior
-                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                    /// set when configuring the client.
-                    pub async fn send(self) -> std::result::Result<crate::operation::invoke_screen_automation::InvokeScreenAutomationOutput, aws_smithy_http::result::SdkError<crate::operation::invoke_screen_automation::InvokeScreenAutomationError>>
-                     {
-                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&self.handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        self.handle.client.call(op).await
-                    }
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle,
+            inner: Default::default(),
+        }
+    }
+
+    /// Consume this builder, creating a customizable operation that can be modified before being
+    /// sent. The operation's inner [http::Request] can be modified as well.
+    pub async fn customize(
+        self,
+    ) -> std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::invoke_screen_automation::InvokeScreenAutomation,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::result::SdkError<
+            crate::operation::invoke_screen_automation::InvokeScreenAutomationError,
+        >,
+    > {
+        let handle = self.handle.clone();
+        let operation = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+    }
+
+    /// Sends the request and returns the response.
+    ///
+    /// If an error occurs, an `SdkError` will be returned with additional details that
+    /// can be matched against.
+    ///
+    /// By default, any retryable failures will be retried twice. Retry behavior
+    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+    /// set when configuring the client.
+    pub async fn send(
+        self,
+    ) -> std::result::Result<
+        crate::operation::invoke_screen_automation::InvokeScreenAutomationOutput,
+        aws_smithy_http::result::SdkError<
+            crate::operation::invoke_screen_automation::InvokeScreenAutomationError,
+        >,
+    > {
+        let op = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&self.handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        self.handle.client.call(op).await
+    }
     /// <p>The ID of the workbook that contains the screen automation.</p>
     pub fn workbook_id(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.workbook_id(input.into());
@@ -83,7 +105,10 @@ impl InvokeScreenAutomationFluentBuilder  {
         self
     }
     /// <p>The ID of the automation action to be performed.</p>
-    pub fn set_screen_automation_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_screen_automation_id(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_screen_automation_id(input);
         self
     }
@@ -92,12 +117,21 @@ impl InvokeScreenAutomationFluentBuilder  {
     /// To override the contents of this collection use [`set_variables`](Self::set_variables).
     ///
     /// <p> Variables are specified as a map where the key is the name of the variable as defined on the screen. The value is an object which currently has only one property, rawValue, which holds the value of the variable to be passed to the screen. Any variables defined in a screen are required to be passed in the call. </p>
-    pub fn variables(mut self, k: impl Into<std::string::String>, v: crate::types::VariableValue) -> Self {
+    pub fn variables(
+        mut self,
+        k: impl Into<std::string::String>,
+        v: crate::types::VariableValue,
+    ) -> Self {
         self.inner = self.inner.variables(k.into(), v);
         self
     }
     /// <p> Variables are specified as a map where the key is the name of the variable as defined on the screen. The value is an object which currently has only one property, rawValue, which holds the value of the variable to be passed to the screen. Any variables defined in a screen are required to be passed in the call. </p>
-    pub fn set_variables(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, crate::types::VariableValue>>) -> Self {
+    pub fn set_variables(
+        mut self,
+        input: std::option::Option<
+            std::collections::HashMap<std::string::String, crate::types::VariableValue>,
+        >,
+    ) -> Self {
         self.inner = self.inner.set_variables(input);
         self
     }
@@ -111,17 +145,19 @@ impl InvokeScreenAutomationFluentBuilder  {
         self.inner = self.inner.set_row_id(input);
         self
     }
-    /// <p> The request token for performing the automation action. Request tokens help to identify duplicate requests. If a call times out or fails due to a transient error like a failed network connection, you can retry the call with the same request token. The service ensures that if the first call using that request token is successfully performed, the second call will return the response of the previous call rather than performing the action again. </p> 
+    /// <p> The request token for performing the automation action. Request tokens help to identify duplicate requests. If a call times out or fails due to a transient error like a failed network connection, you can retry the call with the same request token. The service ensures that if the first call using that request token is successfully performed, the second call will return the response of the previous call rather than performing the action again. </p>
     /// <p> Note that request tokens are valid only for a few minutes. You cannot use request tokens to dedupe requests spanning hours or days. </p>
     pub fn client_request_token(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.client_request_token(input.into());
         self
     }
-    /// <p> The request token for performing the automation action. Request tokens help to identify duplicate requests. If a call times out or fails due to a transient error like a failed network connection, you can retry the call with the same request token. The service ensures that if the first call using that request token is successfully performed, the second call will return the response of the previous call rather than performing the action again. </p> 
+    /// <p> The request token for performing the automation action. Request tokens help to identify duplicate requests. If a call times out or fails due to a transient error like a failed network connection, you can retry the call with the same request token. The service ensures that if the first call using that request token is successfully performed, the second call will return the response of the previous call rather than performing the action again. </p>
     /// <p> Note that request tokens are valid only for a few minutes. You cannot use request tokens to dedupe requests spanning hours or days. </p>
-    pub fn set_client_request_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_client_request_token(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_client_request_token(input);
         self
     }
 }
-

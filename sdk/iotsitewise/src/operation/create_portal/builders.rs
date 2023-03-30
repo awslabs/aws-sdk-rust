@@ -4,51 +4,69 @@ pub use crate::operation::create_portal::_create_portal_output::CreatePortalOutp
 pub use crate::operation::create_portal::_create_portal_input::CreatePortalInputBuilder;
 
 /// Fluent builder constructing a request to `CreatePortal`.
-/// 
-/// <p>Creates a portal, which can contain projects and dashboards. IoT SiteWise Monitor uses IAM Identity Center or IAM to authenticate portal users and manage user permissions.</p> <note> 
-/// <p>Before you can sign in to a new portal, you must add at least one identity to that portal. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/administer-portals.html#portal-change-admins">Adding or removing portal administrators</a> in the <i>IoT SiteWise User Guide</i>.</p> 
+///
+/// <p>Creates a portal, which can contain projects and dashboards. IoT SiteWise Monitor uses IAM Identity Center or IAM to authenticate portal users and manage user permissions.</p> <note>
+/// <p>Before you can sign in to a new portal, you must add at least one identity to that portal. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/administer-portals.html#portal-change-admins">Adding or removing portal administrators</a> in the <i>IoT SiteWise User Guide</i>.</p>
 /// </note>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct CreatePortalFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::create_portal::builders::CreatePortalInputBuilder
-            }
-impl CreatePortalFluentBuilder  {
+    handle: std::sync::Arc<crate::client::Handle>,
+    inner: crate::operation::create_portal::builders::CreatePortalInputBuilder,
+}
+impl CreatePortalFluentBuilder {
     /// Creates a new `CreatePortal`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
-                    /// sent. The operation's inner [http::Request] can be modified as well.
-                    pub async fn customize(self) -> std::result::Result<
-                        crate::client::customize::CustomizableOperation<crate::operation::create_portal::CreatePortal, aws_http::retry::AwsResponseRetryClassifier,>,
-                        aws_smithy_http::result::SdkError<crate::operation::create_portal::CreatePortalError>
-                    >  {
-                        let handle = self.handle.clone();
-                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-                    }
-    
-                    /// Sends the request and returns the response.
-                    ///
-                    /// If an error occurs, an `SdkError` will be returned with additional details that
-                    /// can be matched against.
-                    ///
-                    /// By default, any retryable failures will be retried twice. Retry behavior
-                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                    /// set when configuring the client.
-                    pub async fn send(self) -> std::result::Result<crate::operation::create_portal::CreatePortalOutput, aws_smithy_http::result::SdkError<crate::operation::create_portal::CreatePortalError>>
-                     {
-                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&self.handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        self.handle.client.call(op).await
-                    }
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle,
+            inner: Default::default(),
+        }
+    }
+
+    /// Consume this builder, creating a customizable operation that can be modified before being
+    /// sent. The operation's inner [http::Request] can be modified as well.
+    pub async fn customize(
+        self,
+    ) -> std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::create_portal::CreatePortal,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::result::SdkError<crate::operation::create_portal::CreatePortalError>,
+    > {
+        let handle = self.handle.clone();
+        let operation = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+    }
+
+    /// Sends the request and returns the response.
+    ///
+    /// If an error occurs, an `SdkError` will be returned with additional details that
+    /// can be matched against.
+    ///
+    /// By default, any retryable failures will be retried twice. Retry behavior
+    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+    /// set when configuring the client.
+    pub async fn send(
+        self,
+    ) -> std::result::Result<
+        crate::operation::create_portal::CreatePortalOutput,
+        aws_smithy_http::result::SdkError<crate::operation::create_portal::CreatePortalError>,
+    > {
+        let op = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&self.handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        self.handle.client.call(op).await
+    }
     /// <p>A friendly name for the portal.</p>
     pub fn portal_name(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.portal_name(input.into());
@@ -65,7 +83,10 @@ impl CreatePortalFluentBuilder  {
         self
     }
     /// <p>A description for the portal.</p>
-    pub fn set_portal_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_portal_description(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_portal_description(input);
         self
     }
@@ -75,7 +96,10 @@ impl CreatePortalFluentBuilder  {
         self
     }
     /// <p>The Amazon Web Services administrator's contact email address.</p>
-    pub fn set_portal_contact_email(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_portal_contact_email(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_portal_contact_email(input);
         self
     }
@@ -95,7 +119,10 @@ impl CreatePortalFluentBuilder  {
         self
     }
     /// <p>A logo image to display in the portal. Upload a square, high-resolution image. The image is displayed on a dark background.</p>
-    pub fn set_portal_logo_image_file(mut self, input: std::option::Option<crate::types::ImageFile>) -> Self {
+    pub fn set_portal_logo_image_file(
+        mut self,
+        input: std::option::Option<crate::types::ImageFile>,
+    ) -> Self {
         self.inner = self.inner.set_portal_logo_image_file(input);
         self
     }
@@ -114,48 +141,63 @@ impl CreatePortalFluentBuilder  {
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// <p>A list of key-value pairs that contain metadata for the portal. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/tag-resources.html">Tagging your IoT SiteWise resources</a> in the <i>IoT SiteWise User Guide</i>.</p>
-    pub fn tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
+    pub fn tags(
+        mut self,
+        k: impl Into<std::string::String>,
+        v: impl Into<std::string::String>,
+    ) -> Self {
         self.inner = self.inner.tags(k.into(), v.into());
         self
     }
     /// <p>A list of key-value pairs that contain metadata for the portal. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/tag-resources.html">Tagging your IoT SiteWise resources</a> in the <i>IoT SiteWise User Guide</i>.</p>
-    pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+    pub fn set_tags(
+        mut self,
+        input: std::option::Option<
+            std::collections::HashMap<std::string::String, std::string::String>,
+        >,
+    ) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }
-    /// <p>The service to use to authenticate users to the portal. Choose from the following options:</p> 
-    /// <ul> 
-    /// <li> <p> <code>SSO</code> – The portal uses IAM Identity Center (successor to Single Sign-On) to authenticate users and manage user permissions. Before you can create a portal that uses IAM Identity Center, you must enable IAM Identity Center. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/monitor-get-started.html#mon-gs-sso">Enabling IAM Identity Center</a> in the <i>IoT SiteWise User Guide</i>. This option is only available in Amazon Web Services Regions other than the China Regions.</p> </li> 
-    /// <li> <p> <code>IAM</code> – The portal uses Identity and Access Management to authenticate users and manage user permissions.</p> </li> 
-    /// </ul> 
-    /// <p>You can't change this value after you create a portal.</p> 
+    /// <p>The service to use to authenticate users to the portal. Choose from the following options:</p>
+    /// <ul>
+    /// <li> <p> <code>SSO</code> – The portal uses IAM Identity Center (successor to Single Sign-On) to authenticate users and manage user permissions. Before you can create a portal that uses IAM Identity Center, you must enable IAM Identity Center. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/monitor-get-started.html#mon-gs-sso">Enabling IAM Identity Center</a> in the <i>IoT SiteWise User Guide</i>. This option is only available in Amazon Web Services Regions other than the China Regions.</p> </li>
+    /// <li> <p> <code>IAM</code> – The portal uses Identity and Access Management to authenticate users and manage user permissions.</p> </li>
+    /// </ul>
+    /// <p>You can't change this value after you create a portal.</p>
     /// <p>Default: <code>SSO</code> </p>
     pub fn portal_auth_mode(mut self, input: crate::types::AuthMode) -> Self {
         self.inner = self.inner.portal_auth_mode(input);
         self
     }
-    /// <p>The service to use to authenticate users to the portal. Choose from the following options:</p> 
-    /// <ul> 
-    /// <li> <p> <code>SSO</code> – The portal uses IAM Identity Center (successor to Single Sign-On) to authenticate users and manage user permissions. Before you can create a portal that uses IAM Identity Center, you must enable IAM Identity Center. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/monitor-get-started.html#mon-gs-sso">Enabling IAM Identity Center</a> in the <i>IoT SiteWise User Guide</i>. This option is only available in Amazon Web Services Regions other than the China Regions.</p> </li> 
-    /// <li> <p> <code>IAM</code> – The portal uses Identity and Access Management to authenticate users and manage user permissions.</p> </li> 
-    /// </ul> 
-    /// <p>You can't change this value after you create a portal.</p> 
+    /// <p>The service to use to authenticate users to the portal. Choose from the following options:</p>
+    /// <ul>
+    /// <li> <p> <code>SSO</code> – The portal uses IAM Identity Center (successor to Single Sign-On) to authenticate users and manage user permissions. Before you can create a portal that uses IAM Identity Center, you must enable IAM Identity Center. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/monitor-get-started.html#mon-gs-sso">Enabling IAM Identity Center</a> in the <i>IoT SiteWise User Guide</i>. This option is only available in Amazon Web Services Regions other than the China Regions.</p> </li>
+    /// <li> <p> <code>IAM</code> – The portal uses Identity and Access Management to authenticate users and manage user permissions.</p> </li>
+    /// </ul>
+    /// <p>You can't change this value after you create a portal.</p>
     /// <p>Default: <code>SSO</code> </p>
-    pub fn set_portal_auth_mode(mut self, input: std::option::Option<crate::types::AuthMode>) -> Self {
+    pub fn set_portal_auth_mode(
+        mut self,
+        input: std::option::Option<crate::types::AuthMode>,
+    ) -> Self {
         self.inner = self.inner.set_portal_auth_mode(input);
         self
     }
-    /// <p>The email address that sends alarm notifications.</p> <important> 
-    /// <p>If you use the <a href="https://docs.aws.amazon.com/iotevents/latest/developerguide/lambda-support.html">IoT Events managed Lambda function</a> to manage your emails, you must <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/verify-email-addresses.html">verify the sender email address in Amazon SES</a>.</p> 
+    /// <p>The email address that sends alarm notifications.</p> <important>
+    /// <p>If you use the <a href="https://docs.aws.amazon.com/iotevents/latest/developerguide/lambda-support.html">IoT Events managed Lambda function</a> to manage your emails, you must <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/verify-email-addresses.html">verify the sender email address in Amazon SES</a>.</p>
     /// </important>
     pub fn notification_sender_email(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.notification_sender_email(input.into());
         self
     }
-    /// <p>The email address that sends alarm notifications.</p> <important> 
-    /// <p>If you use the <a href="https://docs.aws.amazon.com/iotevents/latest/developerguide/lambda-support.html">IoT Events managed Lambda function</a> to manage your emails, you must <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/verify-email-addresses.html">verify the sender email address in Amazon SES</a>.</p> 
+    /// <p>The email address that sends alarm notifications.</p> <important>
+    /// <p>If you use the <a href="https://docs.aws.amazon.com/iotevents/latest/developerguide/lambda-support.html">IoT Events managed Lambda function</a> to manage your emails, you must <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/verify-email-addresses.html">verify the sender email address in Amazon SES</a>.</p>
     /// </important>
-    pub fn set_notification_sender_email(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_notification_sender_email(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_notification_sender_email(input);
         self
     }
@@ -170,4 +212,3 @@ impl CreatePortalFluentBuilder  {
         self
     }
 }
-

@@ -3,14 +3,14 @@
 /// <p>Defines the possible values for a categorical hyperparameter.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CategoricalParameterRangeSpecification  {
+pub struct CategoricalParameterRangeSpecification {
     /// <p>The allowed categories for the hyperparameter.</p>
     #[doc(hidden)]
     pub values: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl CategoricalParameterRangeSpecification {
     /// <p>The allowed categories for the hyperparameter.</p>
-    pub fn values(&self) -> std::option::Option<& [std::string::String]> {
+    pub fn values(&self) -> std::option::Option<&[std::string::String]> {
         self.values.as_deref()
     }
 }
@@ -35,20 +35,22 @@ impl CategoricalParameterRangeSpecificationBuilder {
     /// <p>The allowed categories for the hyperparameter.</p>
     pub fn values(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.values.unwrap_or_default();
-                        v.push(input.into());
-                        self.values = Some(v);
-                        self
+        v.push(input.into());
+        self.values = Some(v);
+        self
     }
     /// <p>The allowed categories for the hyperparameter.</p>
-    pub fn set_values(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-        self.values = input; self
+    pub fn set_values(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
+        self.values = input;
+        self
     }
     /// Consumes the builder and constructs a [`CategoricalParameterRangeSpecification`](crate::types::CategoricalParameterRangeSpecification).
     pub fn build(self) -> crate::types::CategoricalParameterRangeSpecification {
         crate::types::CategoricalParameterRangeSpecification {
-            values: self.values
-            ,
+            values: self.values,
         }
     }
 }
-

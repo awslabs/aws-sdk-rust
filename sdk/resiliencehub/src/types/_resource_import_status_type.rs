@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-/// 
+///
 /// Here is an example of how you can make a match expression forward-compatible:
-/// 
+///
 /// ```text
 /// # let resourceimportstatustype = unimplemented!();
 /// match resourceimportstatustype {
@@ -32,14 +32,22 @@
 /// Specifically, when `resourceimportstatustype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `ResourceImportStatusType::NewFeature` also yielding `"NewFeature"`.
-/// 
+///
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
 pub enum ResourceImportStatusType {
     #[allow(missing_docs)] // documentation missing in model
     Failed,
@@ -50,45 +58,46 @@ pub enum ResourceImportStatusType {
     #[allow(missing_docs)] // documentation missing in model
     Success,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::primitives::UnknownVariantValue)
+    Unknown(crate::primitives::UnknownVariantValue),
 }
 impl std::convert::From<&str> for ResourceImportStatusType {
-                fn from(s: &str) -> Self {
-                    match s {
-                        "Failed" => ResourceImportStatusType::Failed,
-"InProgress" => ResourceImportStatusType::InProgress,
-"Pending" => ResourceImportStatusType::Pending,
-"Success" => ResourceImportStatusType::Success,
-other => ResourceImportStatusType::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
-                    }
-                }
-            }
-impl std::str::FromStr for ResourceImportStatusType {
-                type Err = std::convert::Infallible;
-
-                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-                    Ok(ResourceImportStatusType::from(s))
-                }
-            }
-impl ResourceImportStatusType {
-                /// Returns the `&str` value of the enum member.
-                pub fn as_str(&self) -> &str {
-                    match self {
-    ResourceImportStatusType::Failed => "Failed",
-    ResourceImportStatusType::InProgress => "InProgress",
-    ResourceImportStatusType::Pending => "Pending",
-    ResourceImportStatusType::Success => "Success",
-    ResourceImportStatusType::Unknown(value) => value.as_str()
+    fn from(s: &str) -> Self {
+        match s {
+            "Failed" => ResourceImportStatusType::Failed,
+            "InProgress" => ResourceImportStatusType::InProgress,
+            "Pending" => ResourceImportStatusType::Pending,
+            "Success" => ResourceImportStatusType::Success,
+            other => ResourceImportStatusType::Unknown(crate::primitives::UnknownVariantValue(
+                other.to_owned(),
+            )),
+        }
+    }
 }
-                }
-                /// Returns all the `&str` representations of the enum members.
-                pub const fn values() -> &'static [&'static str] {
-                    &["Failed", "InProgress", "Pending", "Success"]
-                }
-            }
-impl AsRef<str> for ResourceImportStatusType {
-                fn as_ref(&self) -> &str {
-                    self.as_str()
-                }
-            }
+impl std::str::FromStr for ResourceImportStatusType {
+    type Err = std::convert::Infallible;
 
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(ResourceImportStatusType::from(s))
+    }
+}
+impl ResourceImportStatusType {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            ResourceImportStatusType::Failed => "Failed",
+            ResourceImportStatusType::InProgress => "InProgress",
+            ResourceImportStatusType::Pending => "Pending",
+            ResourceImportStatusType::Success => "Success",
+            ResourceImportStatusType::Unknown(value) => value.as_str(),
+        }
+    }
+    /// Returns all the `&str` representations of the enum members.
+    pub const fn values() -> &'static [&'static str] {
+        &["Failed", "InProgress", "Pending", "Success"]
+    }
+}
+impl AsRef<str> for ResourceImportStatusType {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}

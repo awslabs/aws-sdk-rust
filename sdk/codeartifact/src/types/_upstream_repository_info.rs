@@ -3,14 +3,14 @@
 /// <p> Information about an upstream repository. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpstreamRepositoryInfo  {
+pub struct UpstreamRepositoryInfo {
     /// <p> The name of an upstream repository. </p>
     #[doc(hidden)]
     pub repository_name: std::option::Option<std::string::String>,
 }
 impl UpstreamRepositoryInfo {
     /// <p> The name of an upstream repository. </p>
-    pub fn repository_name(&self) -> std::option::Option<& str> {
+    pub fn repository_name(&self) -> std::option::Option<&str> {
         self.repository_name.as_deref()
     }
 }
@@ -35,14 +35,13 @@ impl UpstreamRepositoryInfoBuilder {
     }
     /// <p> The name of an upstream repository. </p>
     pub fn set_repository_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.repository_name = input; self
+        self.repository_name = input;
+        self
     }
     /// Consumes the builder and constructs a [`UpstreamRepositoryInfo`](crate::types::UpstreamRepositoryInfo).
     pub fn build(self) -> crate::types::UpstreamRepositoryInfo {
         crate::types::UpstreamRepositoryInfo {
-            repository_name: self.repository_name
-            ,
+            repository_name: self.repository_name,
         }
     }
 }
-

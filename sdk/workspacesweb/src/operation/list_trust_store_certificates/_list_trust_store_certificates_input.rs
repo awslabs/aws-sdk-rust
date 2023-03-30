@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListTrustStoreCertificatesInput  {
+pub struct ListTrustStoreCertificatesInput {
     /// <p>The ARN of the trust store</p>
     #[doc(hidden)]
     pub trust_store_arn: std::option::Option<std::string::String>,
@@ -15,11 +15,11 @@ pub struct ListTrustStoreCertificatesInput  {
 }
 impl ListTrustStoreCertificatesInput {
     /// <p>The ARN of the trust store</p>
-    pub fn trust_store_arn(&self) -> std::option::Option<& str> {
+    pub fn trust_store_arn(&self) -> std::option::Option<&str> {
         self.trust_store_arn.as_deref()
     }
     /// <p>The pagination token used to retrieve the next page of results for this operation.</p>
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
     /// <p>The maximum number of results to be included in the next page.</p>
@@ -29,7 +29,7 @@ impl ListTrustStoreCertificatesInput {
 }
 impl ListTrustStoreCertificatesInput {
     /// Creates a new builder-style object to manufacture [`ListTrustStoreCertificatesInput`](crate::operation::list_trust_store_certificates::ListTrustStoreCertificatesInput).
-    pub fn builder() -> crate::operation::list_trust_store_certificates::builders::ListTrustStoreCertificatesInputBuilder {
+    pub fn builder() -> crate::operation::list_trust_store_certificates::builders::ListTrustStoreCertificatesInputBuilder{
         crate::operation::list_trust_store_certificates::builders::ListTrustStoreCertificatesInputBuilder::default()
     }
 }
@@ -50,7 +50,8 @@ impl ListTrustStoreCertificatesInputBuilder {
     }
     /// <p>The ARN of the trust store</p>
     pub fn set_trust_store_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.trust_store_arn = input; self
+        self.trust_store_arn = input;
+        self
     }
     /// <p>The pagination token used to retrieve the next page of results for this operation.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -59,7 +60,8 @@ impl ListTrustStoreCertificatesInputBuilder {
     }
     /// <p>The pagination token used to retrieve the next page of results for this operation.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input; self
+        self.next_token = input;
+        self
     }
     /// <p>The maximum number of results to be included in the next page.</p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -68,20 +70,22 @@ impl ListTrustStoreCertificatesInputBuilder {
     }
     /// <p>The maximum number of results to be included in the next page.</p>
     pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_results = input; self
+        self.max_results = input;
+        self
     }
     /// Consumes the builder and constructs a [`ListTrustStoreCertificatesInput`](crate::operation::list_trust_store_certificates::ListTrustStoreCertificatesInput).
-    pub fn build(self) -> Result<crate::operation::list_trust_store_certificates::ListTrustStoreCertificatesInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::list_trust_store_certificates::ListTrustStoreCertificatesInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::list_trust_store_certificates::ListTrustStoreCertificatesInput {
-                trust_store_arn: self.trust_store_arn
-                ,
-                next_token: self.next_token
-                ,
-                max_results: self.max_results
-                ,
-            }
+                trust_store_arn: self.trust_store_arn,
+                next_token: self.next_token,
+                max_results: self.max_results,
+            },
         )
     }
 }
-

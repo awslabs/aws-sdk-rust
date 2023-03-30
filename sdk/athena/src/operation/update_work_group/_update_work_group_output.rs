@@ -2,17 +2,18 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateWorkGroupOutput  {
+pub struct UpdateWorkGroupOutput {
     _request_id: Option<String>,
 }
 impl aws_http::request_id::RequestId for UpdateWorkGroupOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl UpdateWorkGroupOutput {
     /// Creates a new builder-style object to manufacture [`UpdateWorkGroupOutput`](crate::operation::update_work_group::UpdateWorkGroupOutput).
-    pub fn builder() -> crate::operation::update_work_group::builders::UpdateWorkGroupOutputBuilder {
+    pub fn builder() -> crate::operation::update_work_group::builders::UpdateWorkGroupOutputBuilder
+    {
         crate::operation::update_work_group::builders::UpdateWorkGroupOutputBuilder::default()
     }
 }
@@ -25,14 +26,14 @@ pub struct UpdateWorkGroupOutputBuilder {
 }
 impl UpdateWorkGroupOutputBuilder {
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`UpdateWorkGroupOutput`](crate::operation::update_work_group::UpdateWorkGroupOutput).
     pub fn build(self) -> crate::operation::update_work_group::UpdateWorkGroupOutput {
         crate::operation::update_work_group::UpdateWorkGroupOutput {
@@ -40,4 +41,3 @@ impl UpdateWorkGroupOutputBuilder {
         }
     }
 }
-

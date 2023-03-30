@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateProjectDataDeliveryOutput  {
+pub struct UpdateProjectDataDeliveryOutput {
     /// <p>A structure containing details about the project that you updated.</p>
     #[doc(hidden)]
     pub project: std::option::Option<crate::types::Project>,
@@ -10,18 +10,18 @@ pub struct UpdateProjectDataDeliveryOutput  {
 }
 impl UpdateProjectDataDeliveryOutput {
     /// <p>A structure containing details about the project that you updated.</p>
-    pub fn project(&self) -> std::option::Option<& crate::types::Project> {
+    pub fn project(&self) -> std::option::Option<&crate::types::Project> {
         self.project.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for UpdateProjectDataDeliveryOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl UpdateProjectDataDeliveryOutput {
     /// Creates a new builder-style object to manufacture [`UpdateProjectDataDeliveryOutput`](crate::operation::update_project_data_delivery::UpdateProjectDataDeliveryOutput).
-    pub fn builder() -> crate::operation::update_project_data_delivery::builders::UpdateProjectDataDeliveryOutputBuilder {
+    pub fn builder() -> crate::operation::update_project_data_delivery::builders::UpdateProjectDataDeliveryOutputBuilder{
         crate::operation::update_project_data_delivery::builders::UpdateProjectDataDeliveryOutputBuilder::default()
     }
 }
@@ -41,24 +41,25 @@ impl UpdateProjectDataDeliveryOutputBuilder {
     }
     /// <p>A structure containing details about the project that you updated.</p>
     pub fn set_project(mut self, input: std::option::Option<crate::types::Project>) -> Self {
-        self.project = input; self
+        self.project = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`UpdateProjectDataDeliveryOutput`](crate::operation::update_project_data_delivery::UpdateProjectDataDeliveryOutput).
-    pub fn build(self) -> crate::operation::update_project_data_delivery::UpdateProjectDataDeliveryOutput {
+    pub fn build(
+        self,
+    ) -> crate::operation::update_project_data_delivery::UpdateProjectDataDeliveryOutput {
         crate::operation::update_project_data_delivery::UpdateProjectDataDeliveryOutput {
-            project: self.project
-            ,
+            project: self.project,
             _request_id: self._request_id,
         }
     }
 }
-

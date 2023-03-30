@@ -3,7 +3,7 @@
 /// <p>The input for the SetDefaultPolicyVersion operation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SetDefaultPolicyVersionInput  {
+pub struct SetDefaultPolicyVersionInput {
     /// <p>The policy name.</p>
     #[doc(hidden)]
     pub policy_name: std::option::Option<std::string::String>,
@@ -13,17 +13,19 @@ pub struct SetDefaultPolicyVersionInput  {
 }
 impl SetDefaultPolicyVersionInput {
     /// <p>The policy name.</p>
-    pub fn policy_name(&self) -> std::option::Option<& str> {
+    pub fn policy_name(&self) -> std::option::Option<&str> {
         self.policy_name.as_deref()
     }
     /// <p>The policy version ID.</p>
-    pub fn policy_version_id(&self) -> std::option::Option<& str> {
+    pub fn policy_version_id(&self) -> std::option::Option<&str> {
         self.policy_version_id.as_deref()
     }
 }
 impl SetDefaultPolicyVersionInput {
     /// Creates a new builder-style object to manufacture [`SetDefaultPolicyVersionInput`](crate::operation::set_default_policy_version::SetDefaultPolicyVersionInput).
-    pub fn builder() -> crate::operation::set_default_policy_version::builders::SetDefaultPolicyVersionInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::set_default_policy_version::builders::SetDefaultPolicyVersionInputBuilder
+    {
         crate::operation::set_default_policy_version::builders::SetDefaultPolicyVersionInputBuilder::default()
     }
 }
@@ -43,7 +45,8 @@ impl SetDefaultPolicyVersionInputBuilder {
     }
     /// <p>The policy name.</p>
     pub fn set_policy_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.policy_name = input; self
+        self.policy_name = input;
+        self
     }
     /// <p>The policy version ID.</p>
     pub fn policy_version_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -51,19 +54,25 @@ impl SetDefaultPolicyVersionInputBuilder {
         self
     }
     /// <p>The policy version ID.</p>
-    pub fn set_policy_version_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.policy_version_id = input; self
+    pub fn set_policy_version_id(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.policy_version_id = input;
+        self
     }
     /// Consumes the builder and constructs a [`SetDefaultPolicyVersionInput`](crate::operation::set_default_policy_version::SetDefaultPolicyVersionInput).
-    pub fn build(self) -> Result<crate::operation::set_default_policy_version::SetDefaultPolicyVersionInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::set_default_policy_version::SetDefaultPolicyVersionInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::set_default_policy_version::SetDefaultPolicyVersionInput {
-                policy_name: self.policy_name
-                ,
-                policy_version_id: self.policy_version_id
-                ,
-            }
+                policy_name: self.policy_name,
+                policy_version_id: self.policy_version_id,
+            },
         )
     }
 }
-

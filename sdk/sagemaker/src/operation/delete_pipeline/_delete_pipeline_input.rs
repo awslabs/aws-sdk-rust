@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeletePipelineInput  {
+pub struct DeletePipelineInput {
     /// <p>The name of the pipeline to delete.</p>
     #[doc(hidden)]
     pub pipeline_name: std::option::Option<std::string::String>,
@@ -12,11 +12,11 @@ pub struct DeletePipelineInput  {
 }
 impl DeletePipelineInput {
     /// <p>The name of the pipeline to delete.</p>
-    pub fn pipeline_name(&self) -> std::option::Option<& str> {
+    pub fn pipeline_name(&self) -> std::option::Option<&str> {
         self.pipeline_name.as_deref()
     }
     /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the operation. An idempotent operation completes no more than one time.</p>
-    pub fn client_request_token(&self) -> std::option::Option<& str> {
+    pub fn client_request_token(&self) -> std::option::Option<&str> {
         self.client_request_token.as_deref()
     }
 }
@@ -42,7 +42,8 @@ impl DeletePipelineInputBuilder {
     }
     /// <p>The name of the pipeline to delete.</p>
     pub fn set_pipeline_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.pipeline_name = input; self
+        self.pipeline_name = input;
+        self
     }
     /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the operation. An idempotent operation completes no more than one time.</p>
     pub fn client_request_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -50,19 +51,23 @@ impl DeletePipelineInputBuilder {
         self
     }
     /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the operation. An idempotent operation completes no more than one time.</p>
-    pub fn set_client_request_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.client_request_token = input; self
+    pub fn set_client_request_token(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.client_request_token = input;
+        self
     }
     /// Consumes the builder and constructs a [`DeletePipelineInput`](crate::operation::delete_pipeline::DeletePipelineInput).
-    pub fn build(self) -> Result<crate::operation::delete_pipeline::DeletePipelineInput, aws_smithy_http::operation::error::BuildError> {
-        Ok(
-            crate::operation::delete_pipeline::DeletePipelineInput {
-                pipeline_name: self.pipeline_name
-                ,
-                client_request_token: self.client_request_token
-                ,
-            }
-        )
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::delete_pipeline::DeletePipelineInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        Ok(crate::operation::delete_pipeline::DeletePipelineInput {
+            pipeline_name: self.pipeline_name,
+            client_request_token: self.client_request_token,
+        })
     }
 }
-

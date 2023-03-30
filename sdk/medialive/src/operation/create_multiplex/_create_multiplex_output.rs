@@ -3,7 +3,7 @@
 /// Placeholder documentation for CreateMultiplexResponse
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateMultiplexOutput  {
+pub struct CreateMultiplexOutput {
     /// The newly created multiplex.
     #[doc(hidden)]
     pub multiplex: std::option::Option<crate::types::Multiplex>,
@@ -11,15 +11,15 @@ pub struct CreateMultiplexOutput  {
 }
 impl CreateMultiplexOutput {
     /// The newly created multiplex.
-    pub fn multiplex(&self) -> std::option::Option<& crate::types::Multiplex> {
+    pub fn multiplex(&self) -> std::option::Option<&crate::types::Multiplex> {
         self.multiplex.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for CreateMultiplexOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl CreateMultiplexOutput {
     /// Creates a new builder-style object to manufacture [`CreateMultiplexOutput`](crate::operation::create_multiplex::CreateMultiplexOutput).
     pub fn builder() -> crate::operation::create_multiplex::builders::CreateMultiplexOutputBuilder {
@@ -42,24 +42,23 @@ impl CreateMultiplexOutputBuilder {
     }
     /// The newly created multiplex.
     pub fn set_multiplex(mut self, input: std::option::Option<crate::types::Multiplex>) -> Self {
-        self.multiplex = input; self
+        self.multiplex = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`CreateMultiplexOutput`](crate::operation::create_multiplex::CreateMultiplexOutput).
     pub fn build(self) -> crate::operation::create_multiplex::CreateMultiplexOutput {
         crate::operation::create_multiplex::CreateMultiplexOutput {
-            multiplex: self.multiplex
-            ,
+            multiplex: self.multiplex,
             _request_id: self._request_id,
         }
     }
 }
-

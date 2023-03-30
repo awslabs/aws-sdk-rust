@@ -3,7 +3,7 @@
 /// <p>Summary information about bot locales returned by the <a href="https://docs.aws.amazon.com/lexv2/latest/dg/API_ListBotLocales.html">ListBotLocales</a> operation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct BotLocaleSummary  {
+pub struct BotLocaleSummary {
     /// <p>The language and locale of the bot locale.</p>
     #[doc(hidden)]
     pub locale_id: std::option::Option<std::string::String>,
@@ -25,27 +25,29 @@ pub struct BotLocaleSummary  {
 }
 impl BotLocaleSummary {
     /// <p>The language and locale of the bot locale.</p>
-    pub fn locale_id(&self) -> std::option::Option<& str> {
+    pub fn locale_id(&self) -> std::option::Option<&str> {
         self.locale_id.as_deref()
     }
     /// <p>The name of the bot locale.</p>
-    pub fn locale_name(&self) -> std::option::Option<& str> {
+    pub fn locale_name(&self) -> std::option::Option<&str> {
         self.locale_name.as_deref()
     }
     /// <p>The description of the bot locale.</p>
-    pub fn description(&self) -> std::option::Option<& str> {
+    pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
     /// <p>The current status of the bot locale. When the status is <code>Built</code> the locale is ready for use.</p>
-    pub fn bot_locale_status(&self) -> std::option::Option<& crate::types::BotLocaleStatus> {
+    pub fn bot_locale_status(&self) -> std::option::Option<&crate::types::BotLocaleStatus> {
         self.bot_locale_status.as_ref()
     }
     /// <p>A timestamp of the date and time that the bot locale was last updated.</p>
-    pub fn last_updated_date_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
+    pub fn last_updated_date_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_updated_date_time.as_ref()
     }
     /// <p>A timestamp of the date and time that the bot locale was last built.</p>
-    pub fn last_build_submitted_date_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
+    pub fn last_build_submitted_date_time(
+        &self,
+    ) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_build_submitted_date_time.as_ref()
     }
 }
@@ -75,7 +77,8 @@ impl BotLocaleSummaryBuilder {
     }
     /// <p>The language and locale of the bot locale.</p>
     pub fn set_locale_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.locale_id = input; self
+        self.locale_id = input;
+        self
     }
     /// <p>The name of the bot locale.</p>
     pub fn locale_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -84,7 +87,8 @@ impl BotLocaleSummaryBuilder {
     }
     /// <p>The name of the bot locale.</p>
     pub fn set_locale_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.locale_name = input; self
+        self.locale_name = input;
+        self
     }
     /// <p>The description of the bot locale.</p>
     pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -93,7 +97,8 @@ impl BotLocaleSummaryBuilder {
     }
     /// <p>The description of the bot locale.</p>
     pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.description = input; self
+        self.description = input;
+        self
     }
     /// <p>The current status of the bot locale. When the status is <code>Built</code> the locale is ready for use.</p>
     pub fn bot_locale_status(mut self, input: crate::types::BotLocaleStatus) -> Self {
@@ -101,8 +106,12 @@ impl BotLocaleSummaryBuilder {
         self
     }
     /// <p>The current status of the bot locale. When the status is <code>Built</code> the locale is ready for use.</p>
-    pub fn set_bot_locale_status(mut self, input: std::option::Option<crate::types::BotLocaleStatus>) -> Self {
-        self.bot_locale_status = input; self
+    pub fn set_bot_locale_status(
+        mut self,
+        input: std::option::Option<crate::types::BotLocaleStatus>,
+    ) -> Self {
+        self.bot_locale_status = input;
+        self
     }
     /// <p>A timestamp of the date and time that the bot locale was last updated.</p>
     pub fn last_updated_date_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -110,8 +119,12 @@ impl BotLocaleSummaryBuilder {
         self
     }
     /// <p>A timestamp of the date and time that the bot locale was last updated.</p>
-    pub fn set_last_updated_date_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.last_updated_date_time = input; self
+    pub fn set_last_updated_date_time(
+        mut self,
+        input: std::option::Option<aws_smithy_types::DateTime>,
+    ) -> Self {
+        self.last_updated_date_time = input;
+        self
     }
     /// <p>A timestamp of the date and time that the bot locale was last built.</p>
     pub fn last_build_submitted_date_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -119,25 +132,22 @@ impl BotLocaleSummaryBuilder {
         self
     }
     /// <p>A timestamp of the date and time that the bot locale was last built.</p>
-    pub fn set_last_build_submitted_date_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.last_build_submitted_date_time = input; self
+    pub fn set_last_build_submitted_date_time(
+        mut self,
+        input: std::option::Option<aws_smithy_types::DateTime>,
+    ) -> Self {
+        self.last_build_submitted_date_time = input;
+        self
     }
     /// Consumes the builder and constructs a [`BotLocaleSummary`](crate::types::BotLocaleSummary).
     pub fn build(self) -> crate::types::BotLocaleSummary {
         crate::types::BotLocaleSummary {
-            locale_id: self.locale_id
-            ,
-            locale_name: self.locale_name
-            ,
-            description: self.description
-            ,
-            bot_locale_status: self.bot_locale_status
-            ,
-            last_updated_date_time: self.last_updated_date_time
-            ,
-            last_build_submitted_date_time: self.last_build_submitted_date_time
-            ,
+            locale_id: self.locale_id,
+            locale_name: self.locale_name,
+            description: self.description,
+            bot_locale_status: self.bot_locale_status,
+            last_updated_date_time: self.last_updated_date_time,
+            last_build_submitted_date_time: self.last_build_submitted_date_time,
         }
     }
 }
-

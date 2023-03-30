@@ -3,7 +3,7 @@
 /// <p>A static routes associated with the VPN connection.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AwsEc2VpnConnectionRoutesDetails  {
+pub struct AwsEc2VpnConnectionRoutesDetails {
     /// <p>The CIDR block associated with the local subnet of the customer data center.</p>
     #[doc(hidden)]
     pub destination_cidr_block: std::option::Option<std::string::String>,
@@ -13,11 +13,11 @@ pub struct AwsEc2VpnConnectionRoutesDetails  {
 }
 impl AwsEc2VpnConnectionRoutesDetails {
     /// <p>The CIDR block associated with the local subnet of the customer data center.</p>
-    pub fn destination_cidr_block(&self) -> std::option::Option<& str> {
+    pub fn destination_cidr_block(&self) -> std::option::Option<&str> {
         self.destination_cidr_block.as_deref()
     }
     /// <p>The current state of the static route.</p>
-    pub fn state(&self) -> std::option::Option<& str> {
+    pub fn state(&self) -> std::option::Option<&str> {
         self.state.as_deref()
     }
 }
@@ -42,8 +42,12 @@ impl AwsEc2VpnConnectionRoutesDetailsBuilder {
         self
     }
     /// <p>The CIDR block associated with the local subnet of the customer data center.</p>
-    pub fn set_destination_cidr_block(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.destination_cidr_block = input; self
+    pub fn set_destination_cidr_block(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.destination_cidr_block = input;
+        self
     }
     /// <p>The current state of the static route.</p>
     pub fn state(mut self, input: impl Into<std::string::String>) -> Self {
@@ -52,16 +56,14 @@ impl AwsEc2VpnConnectionRoutesDetailsBuilder {
     }
     /// <p>The current state of the static route.</p>
     pub fn set_state(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.state = input; self
+        self.state = input;
+        self
     }
     /// Consumes the builder and constructs a [`AwsEc2VpnConnectionRoutesDetails`](crate::types::AwsEc2VpnConnectionRoutesDetails).
     pub fn build(self) -> crate::types::AwsEc2VpnConnectionRoutesDetails {
         crate::types::AwsEc2VpnConnectionRoutesDetails {
-            destination_cidr_block: self.destination_cidr_block
-            ,
-            state: self.state
-            ,
+            destination_cidr_block: self.destination_cidr_block,
+            state: self.state,
         }
     }
 }
-

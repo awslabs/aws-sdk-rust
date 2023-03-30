@@ -3,14 +3,14 @@
 /// <p>Contains the inputs for the <code>DeleteDirectory</code> operation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteDirectoryInput  {
+pub struct DeleteDirectoryInput {
     /// <p>The identifier of the directory to delete.</p>
     #[doc(hidden)]
     pub directory_id: std::option::Option<std::string::String>,
 }
 impl DeleteDirectoryInput {
     /// <p>The identifier of the directory to delete.</p>
-    pub fn directory_id(&self) -> std::option::Option<& str> {
+    pub fn directory_id(&self) -> std::option::Option<&str> {
         self.directory_id.as_deref()
     }
 }
@@ -35,16 +35,18 @@ impl DeleteDirectoryInputBuilder {
     }
     /// <p>The identifier of the directory to delete.</p>
     pub fn set_directory_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.directory_id = input; self
+        self.directory_id = input;
+        self
     }
     /// Consumes the builder and constructs a [`DeleteDirectoryInput`](crate::operation::delete_directory::DeleteDirectoryInput).
-    pub fn build(self) -> Result<crate::operation::delete_directory::DeleteDirectoryInput, aws_smithy_http::operation::error::BuildError> {
-        Ok(
-            crate::operation::delete_directory::DeleteDirectoryInput {
-                directory_id: self.directory_id
-                ,
-            }
-        )
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::delete_directory::DeleteDirectoryInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        Ok(crate::operation::delete_directory::DeleteDirectoryInput {
+            directory_id: self.directory_id,
+        })
     }
 }
-

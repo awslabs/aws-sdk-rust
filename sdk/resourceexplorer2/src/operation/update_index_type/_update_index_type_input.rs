@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateIndexTypeInput  {
+pub struct UpdateIndexTypeInput {
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon resource name (ARN)</a> of the index that you want to update.</p>
     #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
@@ -12,11 +12,11 @@ pub struct UpdateIndexTypeInput  {
 }
 impl UpdateIndexTypeInput {
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon resource name (ARN)</a> of the index that you want to update.</p>
-    pub fn arn(&self) -> std::option::Option<& str> {
+    pub fn arn(&self) -> std::option::Option<&str> {
         self.arn.as_deref()
     }
     /// <p>The type of the index. To understand the difference between <code>LOCAL</code> and <code>AGGREGATOR</code>, see <a href="https://docs.aws.amazon.com/resource-explorer/latest/userguide/manage-aggregator-region.html">Turning on cross-Region search</a> in the <i>Amazon Web Services Resource Explorer User Guide</i>.</p>
-    pub fn r#type(&self) -> std::option::Option<& crate::types::IndexType> {
+    pub fn r#type(&self) -> std::option::Option<&crate::types::IndexType> {
         self.r#type.as_ref()
     }
 }
@@ -42,7 +42,8 @@ impl UpdateIndexTypeInputBuilder {
     }
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon resource name (ARN)</a> of the index that you want to update.</p>
     pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.arn = input; self
+        self.arn = input;
+        self
     }
     /// <p>The type of the index. To understand the difference between <code>LOCAL</code> and <code>AGGREGATOR</code>, see <a href="https://docs.aws.amazon.com/resource-explorer/latest/userguide/manage-aggregator-region.html">Turning on cross-Region search</a> in the <i>Amazon Web Services Resource Explorer User Guide</i>.</p>
     pub fn r#type(mut self, input: crate::types::IndexType) -> Self {
@@ -51,18 +52,19 @@ impl UpdateIndexTypeInputBuilder {
     }
     /// <p>The type of the index. To understand the difference between <code>LOCAL</code> and <code>AGGREGATOR</code>, see <a href="https://docs.aws.amazon.com/resource-explorer/latest/userguide/manage-aggregator-region.html">Turning on cross-Region search</a> in the <i>Amazon Web Services Resource Explorer User Guide</i>.</p>
     pub fn set_type(mut self, input: std::option::Option<crate::types::IndexType>) -> Self {
-        self.r#type = input; self
+        self.r#type = input;
+        self
     }
     /// Consumes the builder and constructs a [`UpdateIndexTypeInput`](crate::operation::update_index_type::UpdateIndexTypeInput).
-    pub fn build(self) -> Result<crate::operation::update_index_type::UpdateIndexTypeInput, aws_smithy_http::operation::error::BuildError> {
-        Ok(
-            crate::operation::update_index_type::UpdateIndexTypeInput {
-                arn: self.arn
-                ,
-                r#type: self.r#type
-                ,
-            }
-        )
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::update_index_type::UpdateIndexTypeInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        Ok(crate::operation::update_index_type::UpdateIndexTypeInput {
+            arn: self.arn,
+            r#type: self.r#type,
+        })
     }
 }
-

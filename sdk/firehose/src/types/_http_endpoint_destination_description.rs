@@ -3,7 +3,7 @@
 /// <p>Describes the HTTP endpoint destination.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct HttpEndpointDestinationDescription  {
+pub struct HttpEndpointDestinationDescription {
     /// <p>The configuration of the specified HTTP endpoint destination.</p>
     #[doc(hidden)]
     pub endpoint_configuration: std::option::Option<crate::types::HttpEndpointDescription>,
@@ -34,39 +34,51 @@ pub struct HttpEndpointDestinationDescription  {
 }
 impl HttpEndpointDestinationDescription {
     /// <p>The configuration of the specified HTTP endpoint destination.</p>
-    pub fn endpoint_configuration(&self) -> std::option::Option<& crate::types::HttpEndpointDescription> {
+    pub fn endpoint_configuration(
+        &self,
+    ) -> std::option::Option<&crate::types::HttpEndpointDescription> {
         self.endpoint_configuration.as_ref()
     }
     /// <p>Describes buffering options that can be applied to the data before it is delivered to the HTTPS endpoint destination. Kinesis Data Firehose teats these options as hints, and it might choose to use more optimal values. The <code>SizeInMBs</code> and <code>IntervalInSeconds</code> parameters are optional. However, if specify a value for one of them, you must also provide a value for the other. </p>
-    pub fn buffering_hints(&self) -> std::option::Option<& crate::types::HttpEndpointBufferingHints> {
+    pub fn buffering_hints(
+        &self,
+    ) -> std::option::Option<&crate::types::HttpEndpointBufferingHints> {
         self.buffering_hints.as_ref()
     }
     /// <p>Describes the Amazon CloudWatch logging options for your delivery stream.</p>
-    pub fn cloud_watch_logging_options(&self) -> std::option::Option<& crate::types::CloudWatchLoggingOptions> {
+    pub fn cloud_watch_logging_options(
+        &self,
+    ) -> std::option::Option<&crate::types::CloudWatchLoggingOptions> {
         self.cloud_watch_logging_options.as_ref()
     }
     /// <p>The configuration of request sent to the HTTP endpoint specified as the destination.</p>
-    pub fn request_configuration(&self) -> std::option::Option<& crate::types::HttpEndpointRequestConfiguration> {
+    pub fn request_configuration(
+        &self,
+    ) -> std::option::Option<&crate::types::HttpEndpointRequestConfiguration> {
         self.request_configuration.as_ref()
     }
     /// <p>Describes a data processing configuration.</p>
-    pub fn processing_configuration(&self) -> std::option::Option<& crate::types::ProcessingConfiguration> {
+    pub fn processing_configuration(
+        &self,
+    ) -> std::option::Option<&crate::types::ProcessingConfiguration> {
         self.processing_configuration.as_ref()
     }
     /// <p>Kinesis Data Firehose uses this IAM role for all the permissions that the delivery stream needs.</p>
-    pub fn role_arn(&self) -> std::option::Option<& str> {
+    pub fn role_arn(&self) -> std::option::Option<&str> {
         self.role_arn.as_deref()
     }
     /// <p>Describes the retry behavior in case Kinesis Data Firehose is unable to deliver data to the specified HTTP endpoint destination, or if it doesn't receive a valid acknowledgment of receipt from the specified HTTP endpoint destination.</p>
-    pub fn retry_options(&self) -> std::option::Option<& crate::types::HttpEndpointRetryOptions> {
+    pub fn retry_options(&self) -> std::option::Option<&crate::types::HttpEndpointRetryOptions> {
         self.retry_options.as_ref()
     }
     /// <p>Describes the S3 bucket backup options for the data that Kinesis Firehose delivers to the HTTP endpoint destination. You can back up all documents (<code>AllData</code>) or only the documents that Kinesis Data Firehose could not deliver to the specified HTTP endpoint destination (<code>FailedDataOnly</code>).</p>
-    pub fn s3_backup_mode(&self) -> std::option::Option<& crate::types::HttpEndpointS3BackupMode> {
+    pub fn s3_backup_mode(&self) -> std::option::Option<&crate::types::HttpEndpointS3BackupMode> {
         self.s3_backup_mode.as_ref()
     }
     /// <p>Describes a destination in Amazon S3.</p>
-    pub fn s3_destination_description(&self) -> std::option::Option<& crate::types::S3DestinationDescription> {
+    pub fn s3_destination_description(
+        &self,
+    ) -> std::option::Option<&crate::types::S3DestinationDescription> {
         self.s3_destination_description.as_ref()
     }
 }
@@ -83,13 +95,16 @@ impl HttpEndpointDestinationDescription {
 pub struct HttpEndpointDestinationDescriptionBuilder {
     pub(crate) endpoint_configuration: std::option::Option<crate::types::HttpEndpointDescription>,
     pub(crate) buffering_hints: std::option::Option<crate::types::HttpEndpointBufferingHints>,
-    pub(crate) cloud_watch_logging_options: std::option::Option<crate::types::CloudWatchLoggingOptions>,
-    pub(crate) request_configuration: std::option::Option<crate::types::HttpEndpointRequestConfiguration>,
+    pub(crate) cloud_watch_logging_options:
+        std::option::Option<crate::types::CloudWatchLoggingOptions>,
+    pub(crate) request_configuration:
+        std::option::Option<crate::types::HttpEndpointRequestConfiguration>,
     pub(crate) processing_configuration: std::option::Option<crate::types::ProcessingConfiguration>,
     pub(crate) role_arn: std::option::Option<std::string::String>,
     pub(crate) retry_options: std::option::Option<crate::types::HttpEndpointRetryOptions>,
     pub(crate) s3_backup_mode: std::option::Option<crate::types::HttpEndpointS3BackupMode>,
-    pub(crate) s3_destination_description: std::option::Option<crate::types::S3DestinationDescription>,
+    pub(crate) s3_destination_description:
+        std::option::Option<crate::types::S3DestinationDescription>,
 }
 impl HttpEndpointDestinationDescriptionBuilder {
     /// <p>The configuration of the specified HTTP endpoint destination.</p>
@@ -98,8 +113,12 @@ impl HttpEndpointDestinationDescriptionBuilder {
         self
     }
     /// <p>The configuration of the specified HTTP endpoint destination.</p>
-    pub fn set_endpoint_configuration(mut self, input: std::option::Option<crate::types::HttpEndpointDescription>) -> Self {
-        self.endpoint_configuration = input; self
+    pub fn set_endpoint_configuration(
+        mut self,
+        input: std::option::Option<crate::types::HttpEndpointDescription>,
+    ) -> Self {
+        self.endpoint_configuration = input;
+        self
     }
     /// <p>Describes buffering options that can be applied to the data before it is delivered to the HTTPS endpoint destination. Kinesis Data Firehose teats these options as hints, and it might choose to use more optimal values. The <code>SizeInMBs</code> and <code>IntervalInSeconds</code> parameters are optional. However, if specify a value for one of them, you must also provide a value for the other. </p>
     pub fn buffering_hints(mut self, input: crate::types::HttpEndpointBufferingHints) -> Self {
@@ -107,35 +126,60 @@ impl HttpEndpointDestinationDescriptionBuilder {
         self
     }
     /// <p>Describes buffering options that can be applied to the data before it is delivered to the HTTPS endpoint destination. Kinesis Data Firehose teats these options as hints, and it might choose to use more optimal values. The <code>SizeInMBs</code> and <code>IntervalInSeconds</code> parameters are optional. However, if specify a value for one of them, you must also provide a value for the other. </p>
-    pub fn set_buffering_hints(mut self, input: std::option::Option<crate::types::HttpEndpointBufferingHints>) -> Self {
-        self.buffering_hints = input; self
+    pub fn set_buffering_hints(
+        mut self,
+        input: std::option::Option<crate::types::HttpEndpointBufferingHints>,
+    ) -> Self {
+        self.buffering_hints = input;
+        self
     }
     /// <p>Describes the Amazon CloudWatch logging options for your delivery stream.</p>
-    pub fn cloud_watch_logging_options(mut self, input: crate::types::CloudWatchLoggingOptions) -> Self {
+    pub fn cloud_watch_logging_options(
+        mut self,
+        input: crate::types::CloudWatchLoggingOptions,
+    ) -> Self {
         self.cloud_watch_logging_options = Some(input);
         self
     }
     /// <p>Describes the Amazon CloudWatch logging options for your delivery stream.</p>
-    pub fn set_cloud_watch_logging_options(mut self, input: std::option::Option<crate::types::CloudWatchLoggingOptions>) -> Self {
-        self.cloud_watch_logging_options = input; self
+    pub fn set_cloud_watch_logging_options(
+        mut self,
+        input: std::option::Option<crate::types::CloudWatchLoggingOptions>,
+    ) -> Self {
+        self.cloud_watch_logging_options = input;
+        self
     }
     /// <p>The configuration of request sent to the HTTP endpoint specified as the destination.</p>
-    pub fn request_configuration(mut self, input: crate::types::HttpEndpointRequestConfiguration) -> Self {
+    pub fn request_configuration(
+        mut self,
+        input: crate::types::HttpEndpointRequestConfiguration,
+    ) -> Self {
         self.request_configuration = Some(input);
         self
     }
     /// <p>The configuration of request sent to the HTTP endpoint specified as the destination.</p>
-    pub fn set_request_configuration(mut self, input: std::option::Option<crate::types::HttpEndpointRequestConfiguration>) -> Self {
-        self.request_configuration = input; self
+    pub fn set_request_configuration(
+        mut self,
+        input: std::option::Option<crate::types::HttpEndpointRequestConfiguration>,
+    ) -> Self {
+        self.request_configuration = input;
+        self
     }
     /// <p>Describes a data processing configuration.</p>
-    pub fn processing_configuration(mut self, input: crate::types::ProcessingConfiguration) -> Self {
+    pub fn processing_configuration(
+        mut self,
+        input: crate::types::ProcessingConfiguration,
+    ) -> Self {
         self.processing_configuration = Some(input);
         self
     }
     /// <p>Describes a data processing configuration.</p>
-    pub fn set_processing_configuration(mut self, input: std::option::Option<crate::types::ProcessingConfiguration>) -> Self {
-        self.processing_configuration = input; self
+    pub fn set_processing_configuration(
+        mut self,
+        input: std::option::Option<crate::types::ProcessingConfiguration>,
+    ) -> Self {
+        self.processing_configuration = input;
+        self
     }
     /// <p>Kinesis Data Firehose uses this IAM role for all the permissions that the delivery stream needs.</p>
     pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -144,7 +188,8 @@ impl HttpEndpointDestinationDescriptionBuilder {
     }
     /// <p>Kinesis Data Firehose uses this IAM role for all the permissions that the delivery stream needs.</p>
     pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.role_arn = input; self
+        self.role_arn = input;
+        self
     }
     /// <p>Describes the retry behavior in case Kinesis Data Firehose is unable to deliver data to the specified HTTP endpoint destination, or if it doesn't receive a valid acknowledgment of receipt from the specified HTTP endpoint destination.</p>
     pub fn retry_options(mut self, input: crate::types::HttpEndpointRetryOptions) -> Self {
@@ -152,8 +197,12 @@ impl HttpEndpointDestinationDescriptionBuilder {
         self
     }
     /// <p>Describes the retry behavior in case Kinesis Data Firehose is unable to deliver data to the specified HTTP endpoint destination, or if it doesn't receive a valid acknowledgment of receipt from the specified HTTP endpoint destination.</p>
-    pub fn set_retry_options(mut self, input: std::option::Option<crate::types::HttpEndpointRetryOptions>) -> Self {
-        self.retry_options = input; self
+    pub fn set_retry_options(
+        mut self,
+        input: std::option::Option<crate::types::HttpEndpointRetryOptions>,
+    ) -> Self {
+        self.retry_options = input;
+        self
     }
     /// <p>Describes the S3 bucket backup options for the data that Kinesis Firehose delivers to the HTTP endpoint destination. You can back up all documents (<code>AllData</code>) or only the documents that Kinesis Data Firehose could not deliver to the specified HTTP endpoint destination (<code>FailedDataOnly</code>).</p>
     pub fn s3_backup_mode(mut self, input: crate::types::HttpEndpointS3BackupMode) -> Self {
@@ -161,40 +210,41 @@ impl HttpEndpointDestinationDescriptionBuilder {
         self
     }
     /// <p>Describes the S3 bucket backup options for the data that Kinesis Firehose delivers to the HTTP endpoint destination. You can back up all documents (<code>AllData</code>) or only the documents that Kinesis Data Firehose could not deliver to the specified HTTP endpoint destination (<code>FailedDataOnly</code>).</p>
-    pub fn set_s3_backup_mode(mut self, input: std::option::Option<crate::types::HttpEndpointS3BackupMode>) -> Self {
-        self.s3_backup_mode = input; self
+    pub fn set_s3_backup_mode(
+        mut self,
+        input: std::option::Option<crate::types::HttpEndpointS3BackupMode>,
+    ) -> Self {
+        self.s3_backup_mode = input;
+        self
     }
     /// <p>Describes a destination in Amazon S3.</p>
-    pub fn s3_destination_description(mut self, input: crate::types::S3DestinationDescription) -> Self {
+    pub fn s3_destination_description(
+        mut self,
+        input: crate::types::S3DestinationDescription,
+    ) -> Self {
         self.s3_destination_description = Some(input);
         self
     }
     /// <p>Describes a destination in Amazon S3.</p>
-    pub fn set_s3_destination_description(mut self, input: std::option::Option<crate::types::S3DestinationDescription>) -> Self {
-        self.s3_destination_description = input; self
+    pub fn set_s3_destination_description(
+        mut self,
+        input: std::option::Option<crate::types::S3DestinationDescription>,
+    ) -> Self {
+        self.s3_destination_description = input;
+        self
     }
     /// Consumes the builder and constructs a [`HttpEndpointDestinationDescription`](crate::types::HttpEndpointDestinationDescription).
     pub fn build(self) -> crate::types::HttpEndpointDestinationDescription {
         crate::types::HttpEndpointDestinationDescription {
-            endpoint_configuration: self.endpoint_configuration
-            ,
-            buffering_hints: self.buffering_hints
-            ,
-            cloud_watch_logging_options: self.cloud_watch_logging_options
-            ,
-            request_configuration: self.request_configuration
-            ,
-            processing_configuration: self.processing_configuration
-            ,
-            role_arn: self.role_arn
-            ,
-            retry_options: self.retry_options
-            ,
-            s3_backup_mode: self.s3_backup_mode
-            ,
-            s3_destination_description: self.s3_destination_description
-            ,
+            endpoint_configuration: self.endpoint_configuration,
+            buffering_hints: self.buffering_hints,
+            cloud_watch_logging_options: self.cloud_watch_logging_options,
+            request_configuration: self.request_configuration,
+            processing_configuration: self.processing_configuration,
+            role_arn: self.role_arn,
+            retry_options: self.retry_options,
+            s3_backup_mode: self.s3_backup_mode,
+            s3_destination_description: self.s3_destination_description,
         }
     }
 }
-

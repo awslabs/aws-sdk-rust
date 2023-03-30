@@ -3,7 +3,7 @@
 /// <p>The log configuration for the results of the run command actions.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AwsEcsClusterConfigurationExecuteCommandConfigurationLogConfigurationDetails  {
+pub struct AwsEcsClusterConfigurationExecuteCommandConfigurationLogConfigurationDetails {
     /// <p>Whether to enable encryption on the CloudWatch logs.</p>
     #[doc(hidden)]
     pub cloud_watch_encryption_enabled: bool,
@@ -26,11 +26,11 @@ impl AwsEcsClusterConfigurationExecuteCommandConfigurationLogConfigurationDetail
         self.cloud_watch_encryption_enabled
     }
     /// <p>The name of the CloudWatch log group to send the logs to.</p>
-    pub fn cloud_watch_log_group_name(&self) -> std::option::Option<& str> {
+    pub fn cloud_watch_log_group_name(&self) -> std::option::Option<&str> {
         self.cloud_watch_log_group_name.as_deref()
     }
     /// <p>The name of the S3 bucket to send logs to.</p>
-    pub fn s3_bucket_name(&self) -> std::option::Option<& str> {
+    pub fn s3_bucket_name(&self) -> std::option::Option<&str> {
         self.s3_bucket_name.as_deref()
     }
     /// <p>Whether to encrypt the logs that are sent to the S3 bucket.</p>
@@ -38,13 +38,13 @@ impl AwsEcsClusterConfigurationExecuteCommandConfigurationLogConfigurationDetail
         self.s3_encryption_enabled
     }
     /// <p>Identifies the folder in the S3 bucket to send the logs to.</p>
-    pub fn s3_key_prefix(&self) -> std::option::Option<& str> {
+    pub fn s3_key_prefix(&self) -> std::option::Option<&str> {
         self.s3_key_prefix.as_deref()
     }
 }
 impl AwsEcsClusterConfigurationExecuteCommandConfigurationLogConfigurationDetails {
     /// Creates a new builder-style object to manufacture [`AwsEcsClusterConfigurationExecuteCommandConfigurationLogConfigurationDetails`](crate::types::AwsEcsClusterConfigurationExecuteCommandConfigurationLogConfigurationDetails).
-    pub fn builder() -> crate::types::builders::AwsEcsClusterConfigurationExecuteCommandConfigurationLogConfigurationDetailsBuilder {
+    pub fn builder() -> crate::types::builders::AwsEcsClusterConfigurationExecuteCommandConfigurationLogConfigurationDetailsBuilder{
         crate::types::builders::AwsEcsClusterConfigurationExecuteCommandConfigurationLogConfigurationDetailsBuilder::default()
     }
 }
@@ -67,7 +67,8 @@ impl AwsEcsClusterConfigurationExecuteCommandConfigurationLogConfigurationDetail
     }
     /// <p>Whether to enable encryption on the CloudWatch logs.</p>
     pub fn set_cloud_watch_encryption_enabled(mut self, input: std::option::Option<bool>) -> Self {
-        self.cloud_watch_encryption_enabled = input; self
+        self.cloud_watch_encryption_enabled = input;
+        self
     }
     /// <p>The name of the CloudWatch log group to send the logs to.</p>
     pub fn cloud_watch_log_group_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -75,8 +76,12 @@ impl AwsEcsClusterConfigurationExecuteCommandConfigurationLogConfigurationDetail
         self
     }
     /// <p>The name of the CloudWatch log group to send the logs to.</p>
-    pub fn set_cloud_watch_log_group_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.cloud_watch_log_group_name = input; self
+    pub fn set_cloud_watch_log_group_name(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.cloud_watch_log_group_name = input;
+        self
     }
     /// <p>The name of the S3 bucket to send logs to.</p>
     pub fn s3_bucket_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -85,7 +90,8 @@ impl AwsEcsClusterConfigurationExecuteCommandConfigurationLogConfigurationDetail
     }
     /// <p>The name of the S3 bucket to send logs to.</p>
     pub fn set_s3_bucket_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.s3_bucket_name = input; self
+        self.s3_bucket_name = input;
+        self
     }
     /// <p>Whether to encrypt the logs that are sent to the S3 bucket.</p>
     pub fn s3_encryption_enabled(mut self, input: bool) -> Self {
@@ -94,7 +100,8 @@ impl AwsEcsClusterConfigurationExecuteCommandConfigurationLogConfigurationDetail
     }
     /// <p>Whether to encrypt the logs that are sent to the S3 bucket.</p>
     pub fn set_s3_encryption_enabled(mut self, input: std::option::Option<bool>) -> Self {
-        self.s3_encryption_enabled = input; self
+        self.s3_encryption_enabled = input;
+        self
     }
     /// <p>Identifies the folder in the S3 bucket to send the logs to.</p>
     pub fn s3_key_prefix(mut self, input: impl Into<std::string::String>) -> Self {
@@ -103,24 +110,20 @@ impl AwsEcsClusterConfigurationExecuteCommandConfigurationLogConfigurationDetail
     }
     /// <p>Identifies the folder in the S3 bucket to send the logs to.</p>
     pub fn set_s3_key_prefix(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.s3_key_prefix = input; self
+        self.s3_key_prefix = input;
+        self
     }
     /// Consumes the builder and constructs a [`AwsEcsClusterConfigurationExecuteCommandConfigurationLogConfigurationDetails`](crate::types::AwsEcsClusterConfigurationExecuteCommandConfigurationLogConfigurationDetails).
-    pub fn build(self) -> crate::types::AwsEcsClusterConfigurationExecuteCommandConfigurationLogConfigurationDetails {
+    pub fn build(
+        self,
+    ) -> crate::types::AwsEcsClusterConfigurationExecuteCommandConfigurationLogConfigurationDetails
+    {
         crate::types::AwsEcsClusterConfigurationExecuteCommandConfigurationLogConfigurationDetails {
-            cloud_watch_encryption_enabled: self.cloud_watch_encryption_enabled
-                .unwrap_or_default()
-            ,
-            cloud_watch_log_group_name: self.cloud_watch_log_group_name
-            ,
-            s3_bucket_name: self.s3_bucket_name
-            ,
-            s3_encryption_enabled: self.s3_encryption_enabled
-                .unwrap_or_default()
-            ,
-            s3_key_prefix: self.s3_key_prefix
-            ,
+            cloud_watch_encryption_enabled: self.cloud_watch_encryption_enabled.unwrap_or_default(),
+            cloud_watch_log_group_name: self.cloud_watch_log_group_name,
+            s3_bucket_name: self.s3_bucket_name,
+            s3_encryption_enabled: self.s3_encryption_enabled.unwrap_or_default(),
+            s3_key_prefix: self.s3_key_prefix,
         }
     }
 }
-

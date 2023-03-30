@@ -2,20 +2,21 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeregisterInstanceInput  {
+pub struct DeregisterInstanceInput {
     /// <p>The instance ID.</p>
     #[doc(hidden)]
     pub instance_id: std::option::Option<std::string::String>,
 }
 impl DeregisterInstanceInput {
     /// <p>The instance ID.</p>
-    pub fn instance_id(&self) -> std::option::Option<& str> {
+    pub fn instance_id(&self) -> std::option::Option<&str> {
         self.instance_id.as_deref()
     }
 }
 impl DeregisterInstanceInput {
     /// Creates a new builder-style object to manufacture [`DeregisterInstanceInput`](crate::operation::deregister_instance::DeregisterInstanceInput).
-    pub fn builder() -> crate::operation::deregister_instance::builders::DeregisterInstanceInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::deregister_instance::builders::DeregisterInstanceInputBuilder {
         crate::operation::deregister_instance::builders::DeregisterInstanceInputBuilder::default()
     }
 }
@@ -34,16 +35,20 @@ impl DeregisterInstanceInputBuilder {
     }
     /// <p>The instance ID.</p>
     pub fn set_instance_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.instance_id = input; self
+        self.instance_id = input;
+        self
     }
     /// Consumes the builder and constructs a [`DeregisterInstanceInput`](crate::operation::deregister_instance::DeregisterInstanceInput).
-    pub fn build(self) -> Result<crate::operation::deregister_instance::DeregisterInstanceInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::deregister_instance::DeregisterInstanceInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::deregister_instance::DeregisterInstanceInput {
-                instance_id: self.instance_id
-                ,
-            }
+                instance_id: self.instance_id,
+            },
         )
     }
 }
-

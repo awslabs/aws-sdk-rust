@@ -3,14 +3,14 @@
 /// <p>A complex type that identifies ways in which you want to restrict distribution of your content.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Restrictions  {
+pub struct Restrictions {
     /// <p>A complex type that controls the countries in which your content is distributed. CloudFront determines the location of your users using <code>MaxMind</code> GeoIP databases.</p>
     #[doc(hidden)]
     pub geo_restriction: std::option::Option<crate::types::GeoRestriction>,
 }
 impl Restrictions {
     /// <p>A complex type that controls the countries in which your content is distributed. CloudFront determines the location of your users using <code>MaxMind</code> GeoIP databases.</p>
-    pub fn geo_restriction(&self) -> std::option::Option<& crate::types::GeoRestriction> {
+    pub fn geo_restriction(&self) -> std::option::Option<&crate::types::GeoRestriction> {
         self.geo_restriction.as_ref()
     }
 }
@@ -34,15 +34,17 @@ impl RestrictionsBuilder {
         self
     }
     /// <p>A complex type that controls the countries in which your content is distributed. CloudFront determines the location of your users using <code>MaxMind</code> GeoIP databases.</p>
-    pub fn set_geo_restriction(mut self, input: std::option::Option<crate::types::GeoRestriction>) -> Self {
-        self.geo_restriction = input; self
+    pub fn set_geo_restriction(
+        mut self,
+        input: std::option::Option<crate::types::GeoRestriction>,
+    ) -> Self {
+        self.geo_restriction = input;
+        self
     }
     /// Consumes the builder and constructs a [`Restrictions`](crate::types::Restrictions).
     pub fn build(self) -> crate::types::Restrictions {
         crate::types::Restrictions {
-            geo_restriction: self.geo_restriction
-            ,
+            geo_restriction: self.geo_restriction,
         }
     }
 }
-

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListBuildBatchesForProjectOutput  {
+pub struct ListBuildBatchesForProjectOutput {
     /// <p>An array of strings that contains the batch build identifiers.</p>
     #[doc(hidden)]
     pub ids: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -13,22 +13,22 @@ pub struct ListBuildBatchesForProjectOutput  {
 }
 impl ListBuildBatchesForProjectOutput {
     /// <p>An array of strings that contains the batch build identifiers.</p>
-    pub fn ids(&self) -> std::option::Option<& [std::string::String]> {
+    pub fn ids(&self) -> std::option::Option<&[std::string::String]> {
         self.ids.as_deref()
     }
     /// <p>If there are more items to return, this contains a token that is passed to a subsequent call to <code>ListBuildBatchesForProject</code> to retrieve the next set of items.</p>
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for ListBuildBatchesForProjectOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl ListBuildBatchesForProjectOutput {
     /// Creates a new builder-style object to manufacture [`ListBuildBatchesForProjectOutput`](crate::operation::list_build_batches_for_project::ListBuildBatchesForProjectOutput).
-    pub fn builder() -> crate::operation::list_build_batches_for_project::builders::ListBuildBatchesForProjectOutputBuilder {
+    pub fn builder() -> crate::operation::list_build_batches_for_project::builders::ListBuildBatchesForProjectOutputBuilder{
         crate::operation::list_build_batches_for_project::builders::ListBuildBatchesForProjectOutputBuilder::default()
     }
 }
@@ -49,13 +49,17 @@ impl ListBuildBatchesForProjectOutputBuilder {
     /// <p>An array of strings that contains the batch build identifiers.</p>
     pub fn ids(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.ids.unwrap_or_default();
-                        v.push(input.into());
-                        self.ids = Some(v);
-                        self
+        v.push(input.into());
+        self.ids = Some(v);
+        self
     }
     /// <p>An array of strings that contains the batch build identifiers.</p>
-    pub fn set_ids(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-        self.ids = input; self
+    pub fn set_ids(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
+        self.ids = input;
+        self
     }
     /// <p>If there are more items to return, this contains a token that is passed to a subsequent call to <code>ListBuildBatchesForProject</code> to retrieve the next set of items.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -64,26 +68,26 @@ impl ListBuildBatchesForProjectOutputBuilder {
     }
     /// <p>If there are more items to return, this contains a token that is passed to a subsequent call to <code>ListBuildBatchesForProject</code> to retrieve the next set of items.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input; self
+        self.next_token = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`ListBuildBatchesForProjectOutput`](crate::operation::list_build_batches_for_project::ListBuildBatchesForProjectOutput).
-    pub fn build(self) -> crate::operation::list_build_batches_for_project::ListBuildBatchesForProjectOutput {
+    pub fn build(
+        self,
+    ) -> crate::operation::list_build_batches_for_project::ListBuildBatchesForProjectOutput {
         crate::operation::list_build_batches_for_project::ListBuildBatchesForProjectOutput {
-            ids: self.ids
-            ,
-            next_token: self.next_token
-            ,
+            ids: self.ids,
+            next_token: self.next_token,
             _request_id: self._request_id,
         }
     }
 }
-

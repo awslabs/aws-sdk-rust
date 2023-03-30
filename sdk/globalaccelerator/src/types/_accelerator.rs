@@ -3,7 +3,7 @@
 /// <p>An accelerator is a complex type that includes one or more listeners that process inbound connections and then direct traffic to one or more endpoint groups, each of which includes endpoints, such as load balancers.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Accelerator  {
+pub struct Accelerator {
     /// <p>The Amazon Resource Name (ARN) of the accelerator.</p>
     #[doc(hidden)]
     pub accelerator_arn: std::option::Option<std::string::String>,
@@ -13,16 +13,16 @@ pub struct Accelerator  {
     /// <p>The IP address type that an accelerator supports. For a standard accelerator, the value can be IPV4 or DUAL_STACK.</p>
     #[doc(hidden)]
     pub ip_address_type: std::option::Option<crate::types::IpAddressType>,
-    /// <p>Indicates whether the accelerator is enabled. The value is true or false. The default value is true. </p> 
+    /// <p>Indicates whether the accelerator is enabled. The value is true or false. The default value is true. </p>
     /// <p>If the value is set to true, the accelerator cannot be deleted. If set to false, accelerator can be deleted.</p>
     #[doc(hidden)]
     pub enabled: std::option::Option<bool>,
     /// <p>The static IP addresses that Global Accelerator associates with the accelerator.</p>
     #[doc(hidden)]
     pub ip_sets: std::option::Option<std::vec::Vec<crate::types::IpSet>>,
-    /// <p>The Domain Name System (DNS) name that Global Accelerator creates that points to an accelerator's static IPv4 addresses.</p> 
-    /// <p>The naming convention for the DNS name for an accelerator is the following: A lowercase letter a, followed by a 16-bit random hex string, followed by .awsglobalaccelerator.com. For example: a1234567890abcdef.awsglobalaccelerator.com.</p> 
-    /// <p>If you have a dual-stack accelerator, you also have a second DNS name, <code>DualStackDnsName</code>, that points to both the A record and the AAAA record for all four static addresses for the accelerator: two IPv4 addresses and two IPv6 addresses.</p> 
+    /// <p>The Domain Name System (DNS) name that Global Accelerator creates that points to an accelerator's static IPv4 addresses.</p>
+    /// <p>The naming convention for the DNS name for an accelerator is the following: A lowercase letter a, followed by a 16-bit random hex string, followed by .awsglobalaccelerator.com. For example: a1234567890abcdef.awsglobalaccelerator.com.</p>
+    /// <p>If you have a dual-stack accelerator, you also have a second DNS name, <code>DualStackDnsName</code>, that points to both the A record and the AAAA record for all four static addresses for the accelerator: two IPv4 addresses and two IPv6 addresses.</p>
     /// <p>For more information about the default DNS name, see <a href="https://docs.aws.amazon.com/global-accelerator/latest/dg/dns-addressing-custom-domains.dns-addressing.html"> Support for DNS addressing in Global Accelerator</a> in the <i>Global Accelerator Developer Guide</i>.</p>
     #[doc(hidden)]
     pub dns_name: std::option::Option<std::string::String>,
@@ -35,9 +35,9 @@ pub struct Accelerator  {
     /// <p>The date and time that the accelerator was last modified.</p>
     #[doc(hidden)]
     pub last_modified_time: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>The Domain Name System (DNS) name that Global Accelerator creates that points to a dual-stack accelerator's four static IP addresses: two IPv4 addresses and two IPv6 addresses.</p> 
-    /// <p>The naming convention for the dual-stack DNS name is the following: A lowercase letter a, followed by a 16-bit random hex string, followed by .dualstack.awsglobalaccelerator.com. For example: a1234567890abcdef.dualstack.awsglobalaccelerator.com.</p> 
-    /// <p>Note: Global Accelerator also assigns a default DNS name, <code>DnsName</code>, to your accelerator that points just to the static IPv4 addresses. </p> 
+    /// <p>The Domain Name System (DNS) name that Global Accelerator creates that points to a dual-stack accelerator's four static IP addresses: two IPv4 addresses and two IPv6 addresses.</p>
+    /// <p>The naming convention for the dual-stack DNS name is the following: A lowercase letter a, followed by a 16-bit random hex string, followed by .dualstack.awsglobalaccelerator.com. For example: a1234567890abcdef.dualstack.awsglobalaccelerator.com.</p>
+    /// <p>Note: Global Accelerator also assigns a default DNS name, <code>DnsName</code>, to your accelerator that points just to the static IPv4 addresses. </p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/global-accelerator/latest/dg/about-accelerators.html#about-accelerators.dns-addressing"> Support for DNS addressing in Global Accelerator</a> in the <i>Global Accelerator Developer Guide</i>.</p>
     #[doc(hidden)]
     pub dual_stack_dns_name: std::option::Option<std::string::String>,
@@ -47,54 +47,54 @@ pub struct Accelerator  {
 }
 impl Accelerator {
     /// <p>The Amazon Resource Name (ARN) of the accelerator.</p>
-    pub fn accelerator_arn(&self) -> std::option::Option<& str> {
+    pub fn accelerator_arn(&self) -> std::option::Option<&str> {
         self.accelerator_arn.as_deref()
     }
     /// <p>The name of the accelerator. The name must contain only alphanumeric characters or hyphens (-), and must not begin or end with a hyphen.</p>
-    pub fn name(&self) -> std::option::Option<& str> {
+    pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>The IP address type that an accelerator supports. For a standard accelerator, the value can be IPV4 or DUAL_STACK.</p>
-    pub fn ip_address_type(&self) -> std::option::Option<& crate::types::IpAddressType> {
+    pub fn ip_address_type(&self) -> std::option::Option<&crate::types::IpAddressType> {
         self.ip_address_type.as_ref()
     }
-    /// <p>Indicates whether the accelerator is enabled. The value is true or false. The default value is true. </p> 
+    /// <p>Indicates whether the accelerator is enabled. The value is true or false. The default value is true. </p>
     /// <p>If the value is set to true, the accelerator cannot be deleted. If set to false, accelerator can be deleted.</p>
     pub fn enabled(&self) -> std::option::Option<bool> {
         self.enabled
     }
     /// <p>The static IP addresses that Global Accelerator associates with the accelerator.</p>
-    pub fn ip_sets(&self) -> std::option::Option<& [crate::types::IpSet]> {
+    pub fn ip_sets(&self) -> std::option::Option<&[crate::types::IpSet]> {
         self.ip_sets.as_deref()
     }
-    /// <p>The Domain Name System (DNS) name that Global Accelerator creates that points to an accelerator's static IPv4 addresses.</p> 
-    /// <p>The naming convention for the DNS name for an accelerator is the following: A lowercase letter a, followed by a 16-bit random hex string, followed by .awsglobalaccelerator.com. For example: a1234567890abcdef.awsglobalaccelerator.com.</p> 
-    /// <p>If you have a dual-stack accelerator, you also have a second DNS name, <code>DualStackDnsName</code>, that points to both the A record and the AAAA record for all four static addresses for the accelerator: two IPv4 addresses and two IPv6 addresses.</p> 
+    /// <p>The Domain Name System (DNS) name that Global Accelerator creates that points to an accelerator's static IPv4 addresses.</p>
+    /// <p>The naming convention for the DNS name for an accelerator is the following: A lowercase letter a, followed by a 16-bit random hex string, followed by .awsglobalaccelerator.com. For example: a1234567890abcdef.awsglobalaccelerator.com.</p>
+    /// <p>If you have a dual-stack accelerator, you also have a second DNS name, <code>DualStackDnsName</code>, that points to both the A record and the AAAA record for all four static addresses for the accelerator: two IPv4 addresses and two IPv6 addresses.</p>
     /// <p>For more information about the default DNS name, see <a href="https://docs.aws.amazon.com/global-accelerator/latest/dg/dns-addressing-custom-domains.dns-addressing.html"> Support for DNS addressing in Global Accelerator</a> in the <i>Global Accelerator Developer Guide</i>.</p>
-    pub fn dns_name(&self) -> std::option::Option<& str> {
+    pub fn dns_name(&self) -> std::option::Option<&str> {
         self.dns_name.as_deref()
     }
     /// <p>Describes the deployment status of the accelerator.</p>
-    pub fn status(&self) -> std::option::Option<& crate::types::AcceleratorStatus> {
+    pub fn status(&self) -> std::option::Option<&crate::types::AcceleratorStatus> {
         self.status.as_ref()
     }
     /// <p>The date and time that the accelerator was created.</p>
-    pub fn created_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
+    pub fn created_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created_time.as_ref()
     }
     /// <p>The date and time that the accelerator was last modified.</p>
-    pub fn last_modified_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
+    pub fn last_modified_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_modified_time.as_ref()
     }
-    /// <p>The Domain Name System (DNS) name that Global Accelerator creates that points to a dual-stack accelerator's four static IP addresses: two IPv4 addresses and two IPv6 addresses.</p> 
-    /// <p>The naming convention for the dual-stack DNS name is the following: A lowercase letter a, followed by a 16-bit random hex string, followed by .dualstack.awsglobalaccelerator.com. For example: a1234567890abcdef.dualstack.awsglobalaccelerator.com.</p> 
-    /// <p>Note: Global Accelerator also assigns a default DNS name, <code>DnsName</code>, to your accelerator that points just to the static IPv4 addresses. </p> 
+    /// <p>The Domain Name System (DNS) name that Global Accelerator creates that points to a dual-stack accelerator's four static IP addresses: two IPv4 addresses and two IPv6 addresses.</p>
+    /// <p>The naming convention for the dual-stack DNS name is the following: A lowercase letter a, followed by a 16-bit random hex string, followed by .dualstack.awsglobalaccelerator.com. For example: a1234567890abcdef.dualstack.awsglobalaccelerator.com.</p>
+    /// <p>Note: Global Accelerator also assigns a default DNS name, <code>DnsName</code>, to your accelerator that points just to the static IPv4 addresses. </p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/global-accelerator/latest/dg/about-accelerators.html#about-accelerators.dns-addressing"> Support for DNS addressing in Global Accelerator</a> in the <i>Global Accelerator Developer Guide</i>.</p>
-    pub fn dual_stack_dns_name(&self) -> std::option::Option<& str> {
+    pub fn dual_stack_dns_name(&self) -> std::option::Option<&str> {
         self.dual_stack_dns_name.as_deref()
     }
     /// <p>A history of changes that you make to an accelerator in Global Accelerator.</p>
-    pub fn events(&self) -> std::option::Option<& [crate::types::AcceleratorEvent]> {
+    pub fn events(&self) -> std::option::Option<&[crate::types::AcceleratorEvent]> {
         self.events.as_deref()
     }
 }
@@ -129,7 +129,8 @@ impl AcceleratorBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the accelerator.</p>
     pub fn set_accelerator_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.accelerator_arn = input; self
+        self.accelerator_arn = input;
+        self
     }
     /// <p>The name of the accelerator. The name must contain only alphanumeric characters or hyphens (-), and must not begin or end with a hyphen.</p>
     pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -138,7 +139,8 @@ impl AcceleratorBuilder {
     }
     /// <p>The name of the accelerator. The name must contain only alphanumeric characters or hyphens (-), and must not begin or end with a hyphen.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input; self
+        self.name = input;
+        self
     }
     /// <p>The IP address type that an accelerator supports. For a standard accelerator, the value can be IPV4 or DUAL_STACK.</p>
     pub fn ip_address_type(mut self, input: crate::types::IpAddressType) -> Self {
@@ -146,19 +148,24 @@ impl AcceleratorBuilder {
         self
     }
     /// <p>The IP address type that an accelerator supports. For a standard accelerator, the value can be IPV4 or DUAL_STACK.</p>
-    pub fn set_ip_address_type(mut self, input: std::option::Option<crate::types::IpAddressType>) -> Self {
-        self.ip_address_type = input; self
+    pub fn set_ip_address_type(
+        mut self,
+        input: std::option::Option<crate::types::IpAddressType>,
+    ) -> Self {
+        self.ip_address_type = input;
+        self
     }
-    /// <p>Indicates whether the accelerator is enabled. The value is true or false. The default value is true. </p> 
+    /// <p>Indicates whether the accelerator is enabled. The value is true or false. The default value is true. </p>
     /// <p>If the value is set to true, the accelerator cannot be deleted. If set to false, accelerator can be deleted.</p>
     pub fn enabled(mut self, input: bool) -> Self {
         self.enabled = Some(input);
         self
     }
-    /// <p>Indicates whether the accelerator is enabled. The value is true or false. The default value is true. </p> 
+    /// <p>Indicates whether the accelerator is enabled. The value is true or false. The default value is true. </p>
     /// <p>If the value is set to true, the accelerator cannot be deleted. If set to false, accelerator can be deleted.</p>
     pub fn set_enabled(mut self, input: std::option::Option<bool>) -> Self {
-        self.enabled = input; self
+        self.enabled = input;
+        self
     }
     /// Appends an item to `ip_sets`.
     ///
@@ -167,28 +174,33 @@ impl AcceleratorBuilder {
     /// <p>The static IP addresses that Global Accelerator associates with the accelerator.</p>
     pub fn ip_sets(mut self, input: crate::types::IpSet) -> Self {
         let mut v = self.ip_sets.unwrap_or_default();
-                        v.push(input);
-                        self.ip_sets = Some(v);
-                        self
+        v.push(input);
+        self.ip_sets = Some(v);
+        self
     }
     /// <p>The static IP addresses that Global Accelerator associates with the accelerator.</p>
-    pub fn set_ip_sets(mut self, input: std::option::Option<std::vec::Vec<crate::types::IpSet>>) -> Self {
-        self.ip_sets = input; self
+    pub fn set_ip_sets(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::IpSet>>,
+    ) -> Self {
+        self.ip_sets = input;
+        self
     }
-    /// <p>The Domain Name System (DNS) name that Global Accelerator creates that points to an accelerator's static IPv4 addresses.</p> 
-    /// <p>The naming convention for the DNS name for an accelerator is the following: A lowercase letter a, followed by a 16-bit random hex string, followed by .awsglobalaccelerator.com. For example: a1234567890abcdef.awsglobalaccelerator.com.</p> 
-    /// <p>If you have a dual-stack accelerator, you also have a second DNS name, <code>DualStackDnsName</code>, that points to both the A record and the AAAA record for all four static addresses for the accelerator: two IPv4 addresses and two IPv6 addresses.</p> 
+    /// <p>The Domain Name System (DNS) name that Global Accelerator creates that points to an accelerator's static IPv4 addresses.</p>
+    /// <p>The naming convention for the DNS name for an accelerator is the following: A lowercase letter a, followed by a 16-bit random hex string, followed by .awsglobalaccelerator.com. For example: a1234567890abcdef.awsglobalaccelerator.com.</p>
+    /// <p>If you have a dual-stack accelerator, you also have a second DNS name, <code>DualStackDnsName</code>, that points to both the A record and the AAAA record for all four static addresses for the accelerator: two IPv4 addresses and two IPv6 addresses.</p>
     /// <p>For more information about the default DNS name, see <a href="https://docs.aws.amazon.com/global-accelerator/latest/dg/dns-addressing-custom-domains.dns-addressing.html"> Support for DNS addressing in Global Accelerator</a> in the <i>Global Accelerator Developer Guide</i>.</p>
     pub fn dns_name(mut self, input: impl Into<std::string::String>) -> Self {
         self.dns_name = Some(input.into());
         self
     }
-    /// <p>The Domain Name System (DNS) name that Global Accelerator creates that points to an accelerator's static IPv4 addresses.</p> 
-    /// <p>The naming convention for the DNS name for an accelerator is the following: A lowercase letter a, followed by a 16-bit random hex string, followed by .awsglobalaccelerator.com. For example: a1234567890abcdef.awsglobalaccelerator.com.</p> 
-    /// <p>If you have a dual-stack accelerator, you also have a second DNS name, <code>DualStackDnsName</code>, that points to both the A record and the AAAA record for all four static addresses for the accelerator: two IPv4 addresses and two IPv6 addresses.</p> 
+    /// <p>The Domain Name System (DNS) name that Global Accelerator creates that points to an accelerator's static IPv4 addresses.</p>
+    /// <p>The naming convention for the DNS name for an accelerator is the following: A lowercase letter a, followed by a 16-bit random hex string, followed by .awsglobalaccelerator.com. For example: a1234567890abcdef.awsglobalaccelerator.com.</p>
+    /// <p>If you have a dual-stack accelerator, you also have a second DNS name, <code>DualStackDnsName</code>, that points to both the A record and the AAAA record for all four static addresses for the accelerator: two IPv4 addresses and two IPv6 addresses.</p>
     /// <p>For more information about the default DNS name, see <a href="https://docs.aws.amazon.com/global-accelerator/latest/dg/dns-addressing-custom-domains.dns-addressing.html"> Support for DNS addressing in Global Accelerator</a> in the <i>Global Accelerator Developer Guide</i>.</p>
     pub fn set_dns_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.dns_name = input; self
+        self.dns_name = input;
+        self
     }
     /// <p>Describes the deployment status of the accelerator.</p>
     pub fn status(mut self, input: crate::types::AcceleratorStatus) -> Self {
@@ -196,8 +208,12 @@ impl AcceleratorBuilder {
         self
     }
     /// <p>Describes the deployment status of the accelerator.</p>
-    pub fn set_status(mut self, input: std::option::Option<crate::types::AcceleratorStatus>) -> Self {
-        self.status = input; self
+    pub fn set_status(
+        mut self,
+        input: std::option::Option<crate::types::AcceleratorStatus>,
+    ) -> Self {
+        self.status = input;
+        self
     }
     /// <p>The date and time that the accelerator was created.</p>
     pub fn created_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -205,8 +221,12 @@ impl AcceleratorBuilder {
         self
     }
     /// <p>The date and time that the accelerator was created.</p>
-    pub fn set_created_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.created_time = input; self
+    pub fn set_created_time(
+        mut self,
+        input: std::option::Option<aws_smithy_types::DateTime>,
+    ) -> Self {
+        self.created_time = input;
+        self
     }
     /// <p>The date and time that the accelerator was last modified.</p>
     pub fn last_modified_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -214,23 +234,31 @@ impl AcceleratorBuilder {
         self
     }
     /// <p>The date and time that the accelerator was last modified.</p>
-    pub fn set_last_modified_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.last_modified_time = input; self
+    pub fn set_last_modified_time(
+        mut self,
+        input: std::option::Option<aws_smithy_types::DateTime>,
+    ) -> Self {
+        self.last_modified_time = input;
+        self
     }
-    /// <p>The Domain Name System (DNS) name that Global Accelerator creates that points to a dual-stack accelerator's four static IP addresses: two IPv4 addresses and two IPv6 addresses.</p> 
-    /// <p>The naming convention for the dual-stack DNS name is the following: A lowercase letter a, followed by a 16-bit random hex string, followed by .dualstack.awsglobalaccelerator.com. For example: a1234567890abcdef.dualstack.awsglobalaccelerator.com.</p> 
-    /// <p>Note: Global Accelerator also assigns a default DNS name, <code>DnsName</code>, to your accelerator that points just to the static IPv4 addresses. </p> 
+    /// <p>The Domain Name System (DNS) name that Global Accelerator creates that points to a dual-stack accelerator's four static IP addresses: two IPv4 addresses and two IPv6 addresses.</p>
+    /// <p>The naming convention for the dual-stack DNS name is the following: A lowercase letter a, followed by a 16-bit random hex string, followed by .dualstack.awsglobalaccelerator.com. For example: a1234567890abcdef.dualstack.awsglobalaccelerator.com.</p>
+    /// <p>Note: Global Accelerator also assigns a default DNS name, <code>DnsName</code>, to your accelerator that points just to the static IPv4 addresses. </p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/global-accelerator/latest/dg/about-accelerators.html#about-accelerators.dns-addressing"> Support for DNS addressing in Global Accelerator</a> in the <i>Global Accelerator Developer Guide</i>.</p>
     pub fn dual_stack_dns_name(mut self, input: impl Into<std::string::String>) -> Self {
         self.dual_stack_dns_name = Some(input.into());
         self
     }
-    /// <p>The Domain Name System (DNS) name that Global Accelerator creates that points to a dual-stack accelerator's four static IP addresses: two IPv4 addresses and two IPv6 addresses.</p> 
-    /// <p>The naming convention for the dual-stack DNS name is the following: A lowercase letter a, followed by a 16-bit random hex string, followed by .dualstack.awsglobalaccelerator.com. For example: a1234567890abcdef.dualstack.awsglobalaccelerator.com.</p> 
-    /// <p>Note: Global Accelerator also assigns a default DNS name, <code>DnsName</code>, to your accelerator that points just to the static IPv4 addresses. </p> 
+    /// <p>The Domain Name System (DNS) name that Global Accelerator creates that points to a dual-stack accelerator's four static IP addresses: two IPv4 addresses and two IPv6 addresses.</p>
+    /// <p>The naming convention for the dual-stack DNS name is the following: A lowercase letter a, followed by a 16-bit random hex string, followed by .dualstack.awsglobalaccelerator.com. For example: a1234567890abcdef.dualstack.awsglobalaccelerator.com.</p>
+    /// <p>Note: Global Accelerator also assigns a default DNS name, <code>DnsName</code>, to your accelerator that points just to the static IPv4 addresses. </p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/global-accelerator/latest/dg/about-accelerators.html#about-accelerators.dns-addressing"> Support for DNS addressing in Global Accelerator</a> in the <i>Global Accelerator Developer Guide</i>.</p>
-    pub fn set_dual_stack_dns_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.dual_stack_dns_name = input; self
+    pub fn set_dual_stack_dns_name(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.dual_stack_dns_name = input;
+        self
     }
     /// Appends an item to `events`.
     ///
@@ -239,40 +267,32 @@ impl AcceleratorBuilder {
     /// <p>A history of changes that you make to an accelerator in Global Accelerator.</p>
     pub fn events(mut self, input: crate::types::AcceleratorEvent) -> Self {
         let mut v = self.events.unwrap_or_default();
-                        v.push(input);
-                        self.events = Some(v);
-                        self
+        v.push(input);
+        self.events = Some(v);
+        self
     }
     /// <p>A history of changes that you make to an accelerator in Global Accelerator.</p>
-    pub fn set_events(mut self, input: std::option::Option<std::vec::Vec<crate::types::AcceleratorEvent>>) -> Self {
-        self.events = input; self
+    pub fn set_events(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::AcceleratorEvent>>,
+    ) -> Self {
+        self.events = input;
+        self
     }
     /// Consumes the builder and constructs a [`Accelerator`](crate::types::Accelerator).
     pub fn build(self) -> crate::types::Accelerator {
         crate::types::Accelerator {
-            accelerator_arn: self.accelerator_arn
-            ,
-            name: self.name
-            ,
-            ip_address_type: self.ip_address_type
-            ,
-            enabled: self.enabled
-            ,
-            ip_sets: self.ip_sets
-            ,
-            dns_name: self.dns_name
-            ,
-            status: self.status
-            ,
-            created_time: self.created_time
-            ,
-            last_modified_time: self.last_modified_time
-            ,
-            dual_stack_dns_name: self.dual_stack_dns_name
-            ,
-            events: self.events
-            ,
+            accelerator_arn: self.accelerator_arn,
+            name: self.name,
+            ip_address_type: self.ip_address_type,
+            enabled: self.enabled,
+            ip_sets: self.ip_sets,
+            dns_name: self.dns_name,
+            status: self.status,
+            created_time: self.created_time,
+            last_modified_time: self.last_modified_time,
+            dual_stack_dns_name: self.dual_stack_dns_name,
+            events: self.events,
         }
     }
 }
-

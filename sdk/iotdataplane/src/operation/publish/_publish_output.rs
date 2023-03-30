@@ -2,14 +2,14 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PublishOutput  {
+pub struct PublishOutput {
     _request_id: Option<String>,
 }
 impl aws_http::request_id::RequestId for PublishOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl PublishOutput {
     /// Creates a new builder-style object to manufacture [`PublishOutput`](crate::operation::publish::PublishOutput).
     pub fn builder() -> crate::operation::publish::builders::PublishOutputBuilder {
@@ -25,14 +25,14 @@ pub struct PublishOutputBuilder {
 }
 impl PublishOutputBuilder {
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`PublishOutput`](crate::operation::publish::PublishOutput).
     pub fn build(self) -> crate::operation::publish::PublishOutput {
         crate::operation::publish::PublishOutput {
@@ -40,4 +40,3 @@ impl PublishOutputBuilder {
         }
     }
 }
-

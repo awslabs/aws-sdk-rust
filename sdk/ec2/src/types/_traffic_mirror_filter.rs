@@ -3,19 +3,22 @@
 /// <p>Describes the Traffic Mirror filter.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct TrafficMirrorFilter  {
+pub struct TrafficMirrorFilter {
     /// <p>The ID of the Traffic Mirror filter.</p>
     #[doc(hidden)]
     pub traffic_mirror_filter_id: std::option::Option<std::string::String>,
     /// <p>Information about the ingress rules that are associated with the Traffic Mirror filter.</p>
     #[doc(hidden)]
-    pub ingress_filter_rules: std::option::Option<std::vec::Vec<crate::types::TrafficMirrorFilterRule>>,
+    pub ingress_filter_rules:
+        std::option::Option<std::vec::Vec<crate::types::TrafficMirrorFilterRule>>,
     /// <p>Information about the egress rules that are associated with the Traffic Mirror filter.</p>
     #[doc(hidden)]
-    pub egress_filter_rules: std::option::Option<std::vec::Vec<crate::types::TrafficMirrorFilterRule>>,
+    pub egress_filter_rules:
+        std::option::Option<std::vec::Vec<crate::types::TrafficMirrorFilterRule>>,
     /// <p>The network service traffic that is associated with the Traffic Mirror filter.</p>
     #[doc(hidden)]
-    pub network_services: std::option::Option<std::vec::Vec<crate::types::TrafficMirrorNetworkService>>,
+    pub network_services:
+        std::option::Option<std::vec::Vec<crate::types::TrafficMirrorNetworkService>>,
     /// <p>The description of the Traffic Mirror filter.</p>
     #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
@@ -25,27 +28,33 @@ pub struct TrafficMirrorFilter  {
 }
 impl TrafficMirrorFilter {
     /// <p>The ID of the Traffic Mirror filter.</p>
-    pub fn traffic_mirror_filter_id(&self) -> std::option::Option<& str> {
+    pub fn traffic_mirror_filter_id(&self) -> std::option::Option<&str> {
         self.traffic_mirror_filter_id.as_deref()
     }
     /// <p>Information about the ingress rules that are associated with the Traffic Mirror filter.</p>
-    pub fn ingress_filter_rules(&self) -> std::option::Option<& [crate::types::TrafficMirrorFilterRule]> {
+    pub fn ingress_filter_rules(
+        &self,
+    ) -> std::option::Option<&[crate::types::TrafficMirrorFilterRule]> {
         self.ingress_filter_rules.as_deref()
     }
     /// <p>Information about the egress rules that are associated with the Traffic Mirror filter.</p>
-    pub fn egress_filter_rules(&self) -> std::option::Option<& [crate::types::TrafficMirrorFilterRule]> {
+    pub fn egress_filter_rules(
+        &self,
+    ) -> std::option::Option<&[crate::types::TrafficMirrorFilterRule]> {
         self.egress_filter_rules.as_deref()
     }
     /// <p>The network service traffic that is associated with the Traffic Mirror filter.</p>
-    pub fn network_services(&self) -> std::option::Option<& [crate::types::TrafficMirrorNetworkService]> {
+    pub fn network_services(
+        &self,
+    ) -> std::option::Option<&[crate::types::TrafficMirrorNetworkService]> {
         self.network_services.as_deref()
     }
     /// <p>The description of the Traffic Mirror filter.</p>
-    pub fn description(&self) -> std::option::Option<& str> {
+    pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
     /// <p>The tags assigned to the Traffic Mirror filter.</p>
-    pub fn tags(&self) -> std::option::Option<& [crate::types::Tag]> {
+    pub fn tags(&self) -> std::option::Option<&[crate::types::Tag]> {
         self.tags.as_deref()
     }
 }
@@ -61,9 +70,12 @@ impl TrafficMirrorFilter {
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct TrafficMirrorFilterBuilder {
     pub(crate) traffic_mirror_filter_id: std::option::Option<std::string::String>,
-    pub(crate) ingress_filter_rules: std::option::Option<std::vec::Vec<crate::types::TrafficMirrorFilterRule>>,
-    pub(crate) egress_filter_rules: std::option::Option<std::vec::Vec<crate::types::TrafficMirrorFilterRule>>,
-    pub(crate) network_services: std::option::Option<std::vec::Vec<crate::types::TrafficMirrorNetworkService>>,
+    pub(crate) ingress_filter_rules:
+        std::option::Option<std::vec::Vec<crate::types::TrafficMirrorFilterRule>>,
+    pub(crate) egress_filter_rules:
+        std::option::Option<std::vec::Vec<crate::types::TrafficMirrorFilterRule>>,
+    pub(crate) network_services:
+        std::option::Option<std::vec::Vec<crate::types::TrafficMirrorNetworkService>>,
     pub(crate) description: std::option::Option<std::string::String>,
     pub(crate) tags: std::option::Option<std::vec::Vec<crate::types::Tag>>,
 }
@@ -74,8 +86,12 @@ impl TrafficMirrorFilterBuilder {
         self
     }
     /// <p>The ID of the Traffic Mirror filter.</p>
-    pub fn set_traffic_mirror_filter_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.traffic_mirror_filter_id = input; self
+    pub fn set_traffic_mirror_filter_id(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.traffic_mirror_filter_id = input;
+        self
     }
     /// Appends an item to `ingress_filter_rules`.
     ///
@@ -84,13 +100,17 @@ impl TrafficMirrorFilterBuilder {
     /// <p>Information about the ingress rules that are associated with the Traffic Mirror filter.</p>
     pub fn ingress_filter_rules(mut self, input: crate::types::TrafficMirrorFilterRule) -> Self {
         let mut v = self.ingress_filter_rules.unwrap_or_default();
-                        v.push(input);
-                        self.ingress_filter_rules = Some(v);
-                        self
+        v.push(input);
+        self.ingress_filter_rules = Some(v);
+        self
     }
     /// <p>Information about the ingress rules that are associated with the Traffic Mirror filter.</p>
-    pub fn set_ingress_filter_rules(mut self, input: std::option::Option<std::vec::Vec<crate::types::TrafficMirrorFilterRule>>) -> Self {
-        self.ingress_filter_rules = input; self
+    pub fn set_ingress_filter_rules(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::TrafficMirrorFilterRule>>,
+    ) -> Self {
+        self.ingress_filter_rules = input;
+        self
     }
     /// Appends an item to `egress_filter_rules`.
     ///
@@ -99,13 +119,17 @@ impl TrafficMirrorFilterBuilder {
     /// <p>Information about the egress rules that are associated with the Traffic Mirror filter.</p>
     pub fn egress_filter_rules(mut self, input: crate::types::TrafficMirrorFilterRule) -> Self {
         let mut v = self.egress_filter_rules.unwrap_or_default();
-                        v.push(input);
-                        self.egress_filter_rules = Some(v);
-                        self
+        v.push(input);
+        self.egress_filter_rules = Some(v);
+        self
     }
     /// <p>Information about the egress rules that are associated with the Traffic Mirror filter.</p>
-    pub fn set_egress_filter_rules(mut self, input: std::option::Option<std::vec::Vec<crate::types::TrafficMirrorFilterRule>>) -> Self {
-        self.egress_filter_rules = input; self
+    pub fn set_egress_filter_rules(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::TrafficMirrorFilterRule>>,
+    ) -> Self {
+        self.egress_filter_rules = input;
+        self
     }
     /// Appends an item to `network_services`.
     ///
@@ -114,13 +138,17 @@ impl TrafficMirrorFilterBuilder {
     /// <p>The network service traffic that is associated with the Traffic Mirror filter.</p>
     pub fn network_services(mut self, input: crate::types::TrafficMirrorNetworkService) -> Self {
         let mut v = self.network_services.unwrap_or_default();
-                        v.push(input);
-                        self.network_services = Some(v);
-                        self
+        v.push(input);
+        self.network_services = Some(v);
+        self
     }
     /// <p>The network service traffic that is associated with the Traffic Mirror filter.</p>
-    pub fn set_network_services(mut self, input: std::option::Option<std::vec::Vec<crate::types::TrafficMirrorNetworkService>>) -> Self {
-        self.network_services = input; self
+    pub fn set_network_services(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::TrafficMirrorNetworkService>>,
+    ) -> Self {
+        self.network_services = input;
+        self
     }
     /// <p>The description of the Traffic Mirror filter.</p>
     pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -129,7 +157,8 @@ impl TrafficMirrorFilterBuilder {
     }
     /// <p>The description of the Traffic Mirror filter.</p>
     pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.description = input; self
+        self.description = input;
+        self
     }
     /// Appends an item to `tags`.
     ///
@@ -138,30 +167,27 @@ impl TrafficMirrorFilterBuilder {
     /// <p>The tags assigned to the Traffic Mirror filter.</p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
-                        v.push(input);
-                        self.tags = Some(v);
-                        self
+        v.push(input);
+        self.tags = Some(v);
+        self
     }
     /// <p>The tags assigned to the Traffic Mirror filter.</p>
-    pub fn set_tags(mut self, input: std::option::Option<std::vec::Vec<crate::types::Tag>>) -> Self {
-        self.tags = input; self
+    pub fn set_tags(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::Tag>>,
+    ) -> Self {
+        self.tags = input;
+        self
     }
     /// Consumes the builder and constructs a [`TrafficMirrorFilter`](crate::types::TrafficMirrorFilter).
     pub fn build(self) -> crate::types::TrafficMirrorFilter {
         crate::types::TrafficMirrorFilter {
-            traffic_mirror_filter_id: self.traffic_mirror_filter_id
-            ,
-            ingress_filter_rules: self.ingress_filter_rules
-            ,
-            egress_filter_rules: self.egress_filter_rules
-            ,
-            network_services: self.network_services
-            ,
-            description: self.description
-            ,
-            tags: self.tags
-            ,
+            traffic_mirror_filter_id: self.traffic_mirror_filter_id,
+            ingress_filter_rules: self.ingress_filter_rules,
+            egress_filter_rules: self.egress_filter_rules,
+            network_services: self.network_services,
+            description: self.description,
+            tags: self.tags,
         }
     }
 }
-

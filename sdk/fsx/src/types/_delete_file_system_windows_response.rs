@@ -3,7 +3,7 @@
 /// <p>The response object for the Microsoft Windows file system used in the <code>DeleteFileSystem</code> operation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteFileSystemWindowsResponse  {
+pub struct DeleteFileSystemWindowsResponse {
     /// <p>The ID of the final backup for this file system.</p>
     #[doc(hidden)]
     pub final_backup_id: std::option::Option<std::string::String>,
@@ -13,11 +13,11 @@ pub struct DeleteFileSystemWindowsResponse  {
 }
 impl DeleteFileSystemWindowsResponse {
     /// <p>The ID of the final backup for this file system.</p>
-    pub fn final_backup_id(&self) -> std::option::Option<& str> {
+    pub fn final_backup_id(&self) -> std::option::Option<&str> {
         self.final_backup_id.as_deref()
     }
     /// <p>The set of tags applied to the final backup.</p>
-    pub fn final_backup_tags(&self) -> std::option::Option<& [crate::types::Tag]> {
+    pub fn final_backup_tags(&self) -> std::option::Option<&[crate::types::Tag]> {
         self.final_backup_tags.as_deref()
     }
 }
@@ -43,7 +43,8 @@ impl DeleteFileSystemWindowsResponseBuilder {
     }
     /// <p>The ID of the final backup for this file system.</p>
     pub fn set_final_backup_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.final_backup_id = input; self
+        self.final_backup_id = input;
+        self
     }
     /// Appends an item to `final_backup_tags`.
     ///
@@ -52,22 +53,23 @@ impl DeleteFileSystemWindowsResponseBuilder {
     /// <p>The set of tags applied to the final backup.</p>
     pub fn final_backup_tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.final_backup_tags.unwrap_or_default();
-                        v.push(input);
-                        self.final_backup_tags = Some(v);
-                        self
+        v.push(input);
+        self.final_backup_tags = Some(v);
+        self
     }
     /// <p>The set of tags applied to the final backup.</p>
-    pub fn set_final_backup_tags(mut self, input: std::option::Option<std::vec::Vec<crate::types::Tag>>) -> Self {
-        self.final_backup_tags = input; self
+    pub fn set_final_backup_tags(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::Tag>>,
+    ) -> Self {
+        self.final_backup_tags = input;
+        self
     }
     /// Consumes the builder and constructs a [`DeleteFileSystemWindowsResponse`](crate::types::DeleteFileSystemWindowsResponse).
     pub fn build(self) -> crate::types::DeleteFileSystemWindowsResponse {
         crate::types::DeleteFileSystemWindowsResponse {
-            final_backup_id: self.final_backup_id
-            ,
-            final_backup_tags: self.final_backup_tags
-            ,
+            final_backup_id: self.final_backup_id,
+            final_backup_tags: self.final_backup_tags,
         }
     }
 }
-

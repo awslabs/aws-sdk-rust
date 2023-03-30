@@ -3,7 +3,7 @@
 /// <p> The memory information of an Elastic Inference Accelerator type. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct MemoryInfo  {
+pub struct MemoryInfo {
     /// <p> The size in mebibytes of the Elastic Inference Accelerator type. </p>
     #[doc(hidden)]
     pub size_in_mi_b: i32,
@@ -35,15 +35,13 @@ impl MemoryInfoBuilder {
     }
     /// <p> The size in mebibytes of the Elastic Inference Accelerator type. </p>
     pub fn set_size_in_mi_b(mut self, input: std::option::Option<i32>) -> Self {
-        self.size_in_mi_b = input; self
+        self.size_in_mi_b = input;
+        self
     }
     /// Consumes the builder and constructs a [`MemoryInfo`](crate::types::MemoryInfo).
     pub fn build(self) -> crate::types::MemoryInfo {
         crate::types::MemoryInfo {
-            size_in_mi_b: self.size_in_mi_b
-                .unwrap_or_default()
-            ,
+            size_in_mi_b: self.size_in_mi_b.unwrap_or_default(),
         }
     }
 }
-

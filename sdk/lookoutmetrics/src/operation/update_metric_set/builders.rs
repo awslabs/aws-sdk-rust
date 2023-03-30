@@ -4,49 +4,71 @@ pub use crate::operation::update_metric_set::_update_metric_set_output::UpdateMe
 pub use crate::operation::update_metric_set::_update_metric_set_input::UpdateMetricSetInputBuilder;
 
 /// Fluent builder constructing a request to `UpdateMetricSet`.
-/// 
+///
 /// <p>Updates a dataset.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct UpdateMetricSetFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::update_metric_set::builders::UpdateMetricSetInputBuilder
-            }
-impl UpdateMetricSetFluentBuilder  {
+    handle: std::sync::Arc<crate::client::Handle>,
+    inner: crate::operation::update_metric_set::builders::UpdateMetricSetInputBuilder,
+}
+impl UpdateMetricSetFluentBuilder {
     /// Creates a new `UpdateMetricSet`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
-                    /// sent. The operation's inner [http::Request] can be modified as well.
-                    pub async fn customize(self) -> std::result::Result<
-                        crate::client::customize::CustomizableOperation<crate::operation::update_metric_set::UpdateMetricSet, aws_http::retry::AwsResponseRetryClassifier,>,
-                        aws_smithy_http::result::SdkError<crate::operation::update_metric_set::UpdateMetricSetError>
-                    >  {
-                        let handle = self.handle.clone();
-                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-                    }
-    
-                    /// Sends the request and returns the response.
-                    ///
-                    /// If an error occurs, an `SdkError` will be returned with additional details that
-                    /// can be matched against.
-                    ///
-                    /// By default, any retryable failures will be retried twice. Retry behavior
-                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                    /// set when configuring the client.
-                    pub async fn send(self) -> std::result::Result<crate::operation::update_metric_set::UpdateMetricSetOutput, aws_smithy_http::result::SdkError<crate::operation::update_metric_set::UpdateMetricSetError>>
-                     {
-                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&self.handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        self.handle.client.call(op).await
-                    }
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle,
+            inner: Default::default(),
+        }
+    }
+
+    /// Consume this builder, creating a customizable operation that can be modified before being
+    /// sent. The operation's inner [http::Request] can be modified as well.
+    pub async fn customize(
+        self,
+    ) -> std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::update_metric_set::UpdateMetricSet,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::result::SdkError<
+            crate::operation::update_metric_set::UpdateMetricSetError,
+        >,
+    > {
+        let handle = self.handle.clone();
+        let operation = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+    }
+
+    /// Sends the request and returns the response.
+    ///
+    /// If an error occurs, an `SdkError` will be returned with additional details that
+    /// can be matched against.
+    ///
+    /// By default, any retryable failures will be retried twice. Retry behavior
+    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+    /// set when configuring the client.
+    pub async fn send(
+        self,
+    ) -> std::result::Result<
+        crate::operation::update_metric_set::UpdateMetricSetOutput,
+        aws_smithy_http::result::SdkError<
+            crate::operation::update_metric_set::UpdateMetricSetError,
+        >,
+    > {
+        let op = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&self.handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        self.handle.client.call(op).await
+    }
     /// <p>The ARN of the dataset to update.</p>
     pub fn metric_set_arn(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.metric_set_arn(input.into());
@@ -63,7 +85,10 @@ impl UpdateMetricSetFluentBuilder  {
         self
     }
     /// <p>The dataset's description.</p>
-    pub fn set_metric_set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_metric_set_description(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_metric_set_description(input);
         self
     }
@@ -77,7 +102,10 @@ impl UpdateMetricSetFluentBuilder  {
         self
     }
     /// <p>The metric list.</p>
-    pub fn set_metric_list(mut self, input: std::option::Option<std::vec::Vec<crate::types::Metric>>) -> Self {
+    pub fn set_metric_list(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::Metric>>,
+    ) -> Self {
         self.inner = self.inner.set_metric_list(input);
         self
     }
@@ -97,7 +125,10 @@ impl UpdateMetricSetFluentBuilder  {
         self
     }
     /// <p>The timestamp column.</p>
-    pub fn set_timestamp_column(mut self, input: std::option::Option<crate::types::TimestampColumn>) -> Self {
+    pub fn set_timestamp_column(
+        mut self,
+        input: std::option::Option<crate::types::TimestampColumn>,
+    ) -> Self {
         self.inner = self.inner.set_timestamp_column(input);
         self
     }
@@ -111,7 +142,10 @@ impl UpdateMetricSetFluentBuilder  {
         self
     }
     /// <p>The dimension list.</p>
-    pub fn set_dimension_list(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+    pub fn set_dimension_list(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
         self.inner = self.inner.set_dimension_list(input);
         self
     }
@@ -121,7 +155,10 @@ impl UpdateMetricSetFluentBuilder  {
         self
     }
     /// <p>The dataset's interval.</p>
-    pub fn set_metric_set_frequency(mut self, input: std::option::Option<crate::types::Frequency>) -> Self {
+    pub fn set_metric_set_frequency(
+        mut self,
+        input: std::option::Option<crate::types::Frequency>,
+    ) -> Self {
         self.inner = self.inner.set_metric_set_frequency(input);
         self
     }
@@ -131,7 +168,10 @@ impl UpdateMetricSetFluentBuilder  {
         self
     }
     /// <p>Contains information about source data used to generate metrics.</p>
-    pub fn set_metric_source(mut self, input: std::option::Option<crate::types::MetricSource>) -> Self {
+    pub fn set_metric_source(
+        mut self,
+        input: std::option::Option<crate::types::MetricSource>,
+    ) -> Self {
         self.inner = self.inner.set_metric_source(input);
         self
     }
@@ -145,9 +185,11 @@ impl UpdateMetricSetFluentBuilder  {
         self
     }
     /// <p>Describes a list of filters for choosing specific dimensions and specific values. Each filter consists of the dimension and one of its values that you want to include. When multiple dimensions or values are specified, the dimensions are joined with an AND operation and the values are joined with an OR operation.</p>
-    pub fn set_dimension_filter_list(mut self, input: std::option::Option<std::vec::Vec<crate::types::MetricSetDimensionFilter>>) -> Self {
+    pub fn set_dimension_filter_list(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::MetricSetDimensionFilter>>,
+    ) -> Self {
         self.inner = self.inner.set_dimension_filter_list(input);
         self
     }
 }
-

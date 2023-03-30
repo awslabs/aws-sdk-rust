@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListAllowListsInput  {
+pub struct ListAllowListsInput {
     /// <p>The maximum number of items to include in each page of a paginated response.</p>
     #[doc(hidden)]
     pub max_results: i32,
@@ -16,7 +16,7 @@ impl ListAllowListsInput {
         self.max_results
     }
     /// <p>The nextToken string that specifies which page of results to return in a paginated response.</p>
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
 }
@@ -42,7 +42,8 @@ impl ListAllowListsInputBuilder {
     }
     /// <p>The maximum number of items to include in each page of a paginated response.</p>
     pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_results = input; self
+        self.max_results = input;
+        self
     }
     /// <p>The nextToken string that specifies which page of results to return in a paginated response.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -51,19 +52,19 @@ impl ListAllowListsInputBuilder {
     }
     /// <p>The nextToken string that specifies which page of results to return in a paginated response.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input; self
+        self.next_token = input;
+        self
     }
     /// Consumes the builder and constructs a [`ListAllowListsInput`](crate::operation::list_allow_lists::ListAllowListsInput).
-    pub fn build(self) -> Result<crate::operation::list_allow_lists::ListAllowListsInput, aws_smithy_http::operation::error::BuildError> {
-        Ok(
-            crate::operation::list_allow_lists::ListAllowListsInput {
-                max_results: self.max_results
-                    .unwrap_or_default()
-                ,
-                next_token: self.next_token
-                ,
-            }
-        )
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::list_allow_lists::ListAllowListsInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        Ok(crate::operation::list_allow_lists::ListAllowListsInput {
+            max_results: self.max_results.unwrap_or_default(),
+            next_token: self.next_token,
+        })
     }
 }
-

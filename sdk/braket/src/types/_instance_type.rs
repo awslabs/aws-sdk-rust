@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-/// 
+///
 /// Here is an example of how you can make a match expression forward-compatible:
-/// 
+///
 /// ```text
 /// # let instancetype = unimplemented!();
 /// match instancetype {
@@ -67,14 +67,22 @@
 /// Specifically, when `instancetype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `InstanceType::NewFeature` also yielding `"NewFeature"`.
-/// 
+///
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
 pub enum InstanceType {
     #[allow(missing_docs)] // documentation missing in model
     MlC42Xlarge,
@@ -155,115 +163,156 @@ pub enum InstanceType {
     #[allow(missing_docs)] // documentation missing in model
     MlP4D24Xlarge,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::primitives::UnknownVariantValue)
+    Unknown(crate::primitives::UnknownVariantValue),
 }
 impl std::convert::From<&str> for InstanceType {
-                fn from(s: &str) -> Self {
-                    match s {
-                        "ml.c4.2xlarge" => InstanceType::MlC42Xlarge,
-"ml.c4.4xlarge" => InstanceType::MlC44Xlarge,
-"ml.c4.8xlarge" => InstanceType::MlC48Xlarge,
-"ml.c4.xlarge" => InstanceType::MlC4Xlarge,
-"ml.c5.18xlarge" => InstanceType::MlC518Xlarge,
-"ml.c5.2xlarge" => InstanceType::MlC52Xlarge,
-"ml.c5.4xlarge" => InstanceType::MlC54Xlarge,
-"ml.c5.9xlarge" => InstanceType::MlC59Xlarge,
-"ml.c5.xlarge" => InstanceType::MlC5Xlarge,
-"ml.c5n.18xlarge" => InstanceType::MlC5N18Xlarge,
-"ml.c5n.2xlarge" => InstanceType::MlC5N2Xlarge,
-"ml.c5n.4xlarge" => InstanceType::MlC5N4Xlarge,
-"ml.c5n.9xlarge" => InstanceType::MlC5N9Xlarge,
-"ml.c5n.xlarge" => InstanceType::MlC5NXlarge,
-"ml.g4dn.12xlarge" => InstanceType::MlG4Dn12Xlarge,
-"ml.g4dn.16xlarge" => InstanceType::MlG4Dn16Xlarge,
-"ml.g4dn.2xlarge" => InstanceType::MlG4Dn2Xlarge,
-"ml.g4dn.4xlarge" => InstanceType::MlG4Dn4Xlarge,
-"ml.g4dn.8xlarge" => InstanceType::MlG4Dn8Xlarge,
-"ml.g4dn.xlarge" => InstanceType::MlG4DnXlarge,
-"ml.m4.10xlarge" => InstanceType::MlM410Xlarge,
-"ml.m4.16xlarge" => InstanceType::MlM416Xlarge,
-"ml.m4.2xlarge" => InstanceType::MlM42Xlarge,
-"ml.m4.4xlarge" => InstanceType::MlM44Xlarge,
-"ml.m4.xlarge" => InstanceType::MlM4Xlarge,
-"ml.m5.12xlarge" => InstanceType::MlM512Xlarge,
-"ml.m5.24xlarge" => InstanceType::MlM524Xlarge,
-"ml.m5.2xlarge" => InstanceType::MlM52Xlarge,
-"ml.m5.4xlarge" => InstanceType::MlM54Xlarge,
-"ml.m5.large" => InstanceType::MlM5Large,
-"ml.m5.xlarge" => InstanceType::MlM5Xlarge,
-"ml.p2.16xlarge" => InstanceType::MlP216Xlarge,
-"ml.p2.8xlarge" => InstanceType::MlP28Xlarge,
-"ml.p2.xlarge" => InstanceType::MlP2Xlarge,
-"ml.p3.16xlarge" => InstanceType::MlP316Xlarge,
-"ml.p3.2xlarge" => InstanceType::MlP32Xlarge,
-"ml.p3.8xlarge" => InstanceType::MlP38Xlarge,
-"ml.p3dn.24xlarge" => InstanceType::MlP3Dn24Xlarge,
-"ml.p4d.24xlarge" => InstanceType::MlP4D24Xlarge,
-other => InstanceType::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
-                    }
-                }
+    fn from(s: &str) -> Self {
+        match s {
+            "ml.c4.2xlarge" => InstanceType::MlC42Xlarge,
+            "ml.c4.4xlarge" => InstanceType::MlC44Xlarge,
+            "ml.c4.8xlarge" => InstanceType::MlC48Xlarge,
+            "ml.c4.xlarge" => InstanceType::MlC4Xlarge,
+            "ml.c5.18xlarge" => InstanceType::MlC518Xlarge,
+            "ml.c5.2xlarge" => InstanceType::MlC52Xlarge,
+            "ml.c5.4xlarge" => InstanceType::MlC54Xlarge,
+            "ml.c5.9xlarge" => InstanceType::MlC59Xlarge,
+            "ml.c5.xlarge" => InstanceType::MlC5Xlarge,
+            "ml.c5n.18xlarge" => InstanceType::MlC5N18Xlarge,
+            "ml.c5n.2xlarge" => InstanceType::MlC5N2Xlarge,
+            "ml.c5n.4xlarge" => InstanceType::MlC5N4Xlarge,
+            "ml.c5n.9xlarge" => InstanceType::MlC5N9Xlarge,
+            "ml.c5n.xlarge" => InstanceType::MlC5NXlarge,
+            "ml.g4dn.12xlarge" => InstanceType::MlG4Dn12Xlarge,
+            "ml.g4dn.16xlarge" => InstanceType::MlG4Dn16Xlarge,
+            "ml.g4dn.2xlarge" => InstanceType::MlG4Dn2Xlarge,
+            "ml.g4dn.4xlarge" => InstanceType::MlG4Dn4Xlarge,
+            "ml.g4dn.8xlarge" => InstanceType::MlG4Dn8Xlarge,
+            "ml.g4dn.xlarge" => InstanceType::MlG4DnXlarge,
+            "ml.m4.10xlarge" => InstanceType::MlM410Xlarge,
+            "ml.m4.16xlarge" => InstanceType::MlM416Xlarge,
+            "ml.m4.2xlarge" => InstanceType::MlM42Xlarge,
+            "ml.m4.4xlarge" => InstanceType::MlM44Xlarge,
+            "ml.m4.xlarge" => InstanceType::MlM4Xlarge,
+            "ml.m5.12xlarge" => InstanceType::MlM512Xlarge,
+            "ml.m5.24xlarge" => InstanceType::MlM524Xlarge,
+            "ml.m5.2xlarge" => InstanceType::MlM52Xlarge,
+            "ml.m5.4xlarge" => InstanceType::MlM54Xlarge,
+            "ml.m5.large" => InstanceType::MlM5Large,
+            "ml.m5.xlarge" => InstanceType::MlM5Xlarge,
+            "ml.p2.16xlarge" => InstanceType::MlP216Xlarge,
+            "ml.p2.8xlarge" => InstanceType::MlP28Xlarge,
+            "ml.p2.xlarge" => InstanceType::MlP2Xlarge,
+            "ml.p3.16xlarge" => InstanceType::MlP316Xlarge,
+            "ml.p3.2xlarge" => InstanceType::MlP32Xlarge,
+            "ml.p3.8xlarge" => InstanceType::MlP38Xlarge,
+            "ml.p3dn.24xlarge" => InstanceType::MlP3Dn24Xlarge,
+            "ml.p4d.24xlarge" => InstanceType::MlP4D24Xlarge,
+            other => {
+                InstanceType::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
             }
-impl std::str::FromStr for InstanceType {
-                type Err = std::convert::Infallible;
-
-                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-                    Ok(InstanceType::from(s))
-                }
-            }
-impl InstanceType {
-                /// Returns the `&str` value of the enum member.
-                pub fn as_str(&self) -> &str {
-                    match self {
-    InstanceType::MlC42Xlarge => "ml.c4.2xlarge",
-    InstanceType::MlC44Xlarge => "ml.c4.4xlarge",
-    InstanceType::MlC48Xlarge => "ml.c4.8xlarge",
-    InstanceType::MlC4Xlarge => "ml.c4.xlarge",
-    InstanceType::MlC518Xlarge => "ml.c5.18xlarge",
-    InstanceType::MlC52Xlarge => "ml.c5.2xlarge",
-    InstanceType::MlC54Xlarge => "ml.c5.4xlarge",
-    InstanceType::MlC59Xlarge => "ml.c5.9xlarge",
-    InstanceType::MlC5Xlarge => "ml.c5.xlarge",
-    InstanceType::MlC5N18Xlarge => "ml.c5n.18xlarge",
-    InstanceType::MlC5N2Xlarge => "ml.c5n.2xlarge",
-    InstanceType::MlC5N4Xlarge => "ml.c5n.4xlarge",
-    InstanceType::MlC5N9Xlarge => "ml.c5n.9xlarge",
-    InstanceType::MlC5NXlarge => "ml.c5n.xlarge",
-    InstanceType::MlG4Dn12Xlarge => "ml.g4dn.12xlarge",
-    InstanceType::MlG4Dn16Xlarge => "ml.g4dn.16xlarge",
-    InstanceType::MlG4Dn2Xlarge => "ml.g4dn.2xlarge",
-    InstanceType::MlG4Dn4Xlarge => "ml.g4dn.4xlarge",
-    InstanceType::MlG4Dn8Xlarge => "ml.g4dn.8xlarge",
-    InstanceType::MlG4DnXlarge => "ml.g4dn.xlarge",
-    InstanceType::MlM410Xlarge => "ml.m4.10xlarge",
-    InstanceType::MlM416Xlarge => "ml.m4.16xlarge",
-    InstanceType::MlM42Xlarge => "ml.m4.2xlarge",
-    InstanceType::MlM44Xlarge => "ml.m4.4xlarge",
-    InstanceType::MlM4Xlarge => "ml.m4.xlarge",
-    InstanceType::MlM512Xlarge => "ml.m5.12xlarge",
-    InstanceType::MlM524Xlarge => "ml.m5.24xlarge",
-    InstanceType::MlM52Xlarge => "ml.m5.2xlarge",
-    InstanceType::MlM54Xlarge => "ml.m5.4xlarge",
-    InstanceType::MlM5Large => "ml.m5.large",
-    InstanceType::MlM5Xlarge => "ml.m5.xlarge",
-    InstanceType::MlP216Xlarge => "ml.p2.16xlarge",
-    InstanceType::MlP28Xlarge => "ml.p2.8xlarge",
-    InstanceType::MlP2Xlarge => "ml.p2.xlarge",
-    InstanceType::MlP316Xlarge => "ml.p3.16xlarge",
-    InstanceType::MlP32Xlarge => "ml.p3.2xlarge",
-    InstanceType::MlP38Xlarge => "ml.p3.8xlarge",
-    InstanceType::MlP3Dn24Xlarge => "ml.p3dn.24xlarge",
-    InstanceType::MlP4D24Xlarge => "ml.p4d.24xlarge",
-    InstanceType::Unknown(value) => value.as_str()
+        }
+    }
 }
-                }
-                /// Returns all the `&str` representations of the enum members.
-                pub const fn values() -> &'static [&'static str] {
-                    &["ml.c4.2xlarge", "ml.c4.4xlarge", "ml.c4.8xlarge", "ml.c4.xlarge", "ml.c5.18xlarge", "ml.c5.2xlarge", "ml.c5.4xlarge", "ml.c5.9xlarge", "ml.c5.xlarge", "ml.c5n.18xlarge", "ml.c5n.2xlarge", "ml.c5n.4xlarge", "ml.c5n.9xlarge", "ml.c5n.xlarge", "ml.g4dn.12xlarge", "ml.g4dn.16xlarge", "ml.g4dn.2xlarge", "ml.g4dn.4xlarge", "ml.g4dn.8xlarge", "ml.g4dn.xlarge", "ml.m4.10xlarge", "ml.m4.16xlarge", "ml.m4.2xlarge", "ml.m4.4xlarge", "ml.m4.xlarge", "ml.m5.12xlarge", "ml.m5.24xlarge", "ml.m5.2xlarge", "ml.m5.4xlarge", "ml.m5.large", "ml.m5.xlarge", "ml.p2.16xlarge", "ml.p2.8xlarge", "ml.p2.xlarge", "ml.p3.16xlarge", "ml.p3.2xlarge", "ml.p3.8xlarge", "ml.p3dn.24xlarge", "ml.p4d.24xlarge"]
-                }
-            }
-impl AsRef<str> for InstanceType {
-                fn as_ref(&self) -> &str {
-                    self.as_str()
-                }
-            }
+impl std::str::FromStr for InstanceType {
+    type Err = std::convert::Infallible;
 
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(InstanceType::from(s))
+    }
+}
+impl InstanceType {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            InstanceType::MlC42Xlarge => "ml.c4.2xlarge",
+            InstanceType::MlC44Xlarge => "ml.c4.4xlarge",
+            InstanceType::MlC48Xlarge => "ml.c4.8xlarge",
+            InstanceType::MlC4Xlarge => "ml.c4.xlarge",
+            InstanceType::MlC518Xlarge => "ml.c5.18xlarge",
+            InstanceType::MlC52Xlarge => "ml.c5.2xlarge",
+            InstanceType::MlC54Xlarge => "ml.c5.4xlarge",
+            InstanceType::MlC59Xlarge => "ml.c5.9xlarge",
+            InstanceType::MlC5Xlarge => "ml.c5.xlarge",
+            InstanceType::MlC5N18Xlarge => "ml.c5n.18xlarge",
+            InstanceType::MlC5N2Xlarge => "ml.c5n.2xlarge",
+            InstanceType::MlC5N4Xlarge => "ml.c5n.4xlarge",
+            InstanceType::MlC5N9Xlarge => "ml.c5n.9xlarge",
+            InstanceType::MlC5NXlarge => "ml.c5n.xlarge",
+            InstanceType::MlG4Dn12Xlarge => "ml.g4dn.12xlarge",
+            InstanceType::MlG4Dn16Xlarge => "ml.g4dn.16xlarge",
+            InstanceType::MlG4Dn2Xlarge => "ml.g4dn.2xlarge",
+            InstanceType::MlG4Dn4Xlarge => "ml.g4dn.4xlarge",
+            InstanceType::MlG4Dn8Xlarge => "ml.g4dn.8xlarge",
+            InstanceType::MlG4DnXlarge => "ml.g4dn.xlarge",
+            InstanceType::MlM410Xlarge => "ml.m4.10xlarge",
+            InstanceType::MlM416Xlarge => "ml.m4.16xlarge",
+            InstanceType::MlM42Xlarge => "ml.m4.2xlarge",
+            InstanceType::MlM44Xlarge => "ml.m4.4xlarge",
+            InstanceType::MlM4Xlarge => "ml.m4.xlarge",
+            InstanceType::MlM512Xlarge => "ml.m5.12xlarge",
+            InstanceType::MlM524Xlarge => "ml.m5.24xlarge",
+            InstanceType::MlM52Xlarge => "ml.m5.2xlarge",
+            InstanceType::MlM54Xlarge => "ml.m5.4xlarge",
+            InstanceType::MlM5Large => "ml.m5.large",
+            InstanceType::MlM5Xlarge => "ml.m5.xlarge",
+            InstanceType::MlP216Xlarge => "ml.p2.16xlarge",
+            InstanceType::MlP28Xlarge => "ml.p2.8xlarge",
+            InstanceType::MlP2Xlarge => "ml.p2.xlarge",
+            InstanceType::MlP316Xlarge => "ml.p3.16xlarge",
+            InstanceType::MlP32Xlarge => "ml.p3.2xlarge",
+            InstanceType::MlP38Xlarge => "ml.p3.8xlarge",
+            InstanceType::MlP3Dn24Xlarge => "ml.p3dn.24xlarge",
+            InstanceType::MlP4D24Xlarge => "ml.p4d.24xlarge",
+            InstanceType::Unknown(value) => value.as_str(),
+        }
+    }
+    /// Returns all the `&str` representations of the enum members.
+    pub const fn values() -> &'static [&'static str] {
+        &[
+            "ml.c4.2xlarge",
+            "ml.c4.4xlarge",
+            "ml.c4.8xlarge",
+            "ml.c4.xlarge",
+            "ml.c5.18xlarge",
+            "ml.c5.2xlarge",
+            "ml.c5.4xlarge",
+            "ml.c5.9xlarge",
+            "ml.c5.xlarge",
+            "ml.c5n.18xlarge",
+            "ml.c5n.2xlarge",
+            "ml.c5n.4xlarge",
+            "ml.c5n.9xlarge",
+            "ml.c5n.xlarge",
+            "ml.g4dn.12xlarge",
+            "ml.g4dn.16xlarge",
+            "ml.g4dn.2xlarge",
+            "ml.g4dn.4xlarge",
+            "ml.g4dn.8xlarge",
+            "ml.g4dn.xlarge",
+            "ml.m4.10xlarge",
+            "ml.m4.16xlarge",
+            "ml.m4.2xlarge",
+            "ml.m4.4xlarge",
+            "ml.m4.xlarge",
+            "ml.m5.12xlarge",
+            "ml.m5.24xlarge",
+            "ml.m5.2xlarge",
+            "ml.m5.4xlarge",
+            "ml.m5.large",
+            "ml.m5.xlarge",
+            "ml.p2.16xlarge",
+            "ml.p2.8xlarge",
+            "ml.p2.xlarge",
+            "ml.p3.16xlarge",
+            "ml.p3.2xlarge",
+            "ml.p3.8xlarge",
+            "ml.p3dn.24xlarge",
+            "ml.p4d.24xlarge",
+        ]
+    }
+}
+impl AsRef<str> for InstanceType {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}

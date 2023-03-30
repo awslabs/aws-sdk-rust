@@ -3,34 +3,34 @@
 /// <p>Input to get lens review report.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetLensReviewReportInput  {
+pub struct GetLensReviewReportInput {
     /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
     #[doc(hidden)]
     pub workload_id: std::option::Option<std::string::String>,
-    /// <p>The alias of the lens.</p> 
-    /// <p>For Amazon Web Services official lenses, this is either the lens alias, such as <code>serverless</code>, or the lens ARN, such as <code>arn:aws:wellarchitected:us-west-2::lens/serverless</code>.</p> 
-    /// <p>For custom lenses, this is the lens ARN, such as <code>arn:aws:wellarchitected:us-east-1:123456789012:lens/my-lens</code>. </p> 
+    /// <p>The alias of the lens.</p>
+    /// <p>For Amazon Web Services official lenses, this is either the lens alias, such as <code>serverless</code>, or the lens ARN, such as <code>arn:aws:wellarchitected:us-west-2::lens/serverless</code>.</p>
+    /// <p>For custom lenses, this is the lens ARN, such as <code>arn:aws:wellarchitected:us-east-1:123456789012:lens/my-lens</code>. </p>
     /// <p>Each lens is identified by its <code>LensSummary$LensAlias</code>.</p>
     #[doc(hidden)]
     pub lens_alias: std::option::Option<std::string::String>,
-    /// <p>The milestone number.</p> 
+    /// <p>The milestone number.</p>
     /// <p>A workload can have a maximum of 100 milestones.</p>
     #[doc(hidden)]
     pub milestone_number: i32,
 }
 impl GetLensReviewReportInput {
     /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
-    pub fn workload_id(&self) -> std::option::Option<& str> {
+    pub fn workload_id(&self) -> std::option::Option<&str> {
         self.workload_id.as_deref()
     }
-    /// <p>The alias of the lens.</p> 
-    /// <p>For Amazon Web Services official lenses, this is either the lens alias, such as <code>serverless</code>, or the lens ARN, such as <code>arn:aws:wellarchitected:us-west-2::lens/serverless</code>.</p> 
-    /// <p>For custom lenses, this is the lens ARN, such as <code>arn:aws:wellarchitected:us-east-1:123456789012:lens/my-lens</code>. </p> 
+    /// <p>The alias of the lens.</p>
+    /// <p>For Amazon Web Services official lenses, this is either the lens alias, such as <code>serverless</code>, or the lens ARN, such as <code>arn:aws:wellarchitected:us-west-2::lens/serverless</code>.</p>
+    /// <p>For custom lenses, this is the lens ARN, such as <code>arn:aws:wellarchitected:us-east-1:123456789012:lens/my-lens</code>. </p>
     /// <p>Each lens is identified by its <code>LensSummary$LensAlias</code>.</p>
-    pub fn lens_alias(&self) -> std::option::Option<& str> {
+    pub fn lens_alias(&self) -> std::option::Option<&str> {
         self.lens_alias.as_deref()
     }
-    /// <p>The milestone number.</p> 
+    /// <p>The milestone number.</p>
     /// <p>A workload can have a maximum of 100 milestones.</p>
     pub fn milestone_number(&self) -> i32 {
         self.milestone_number
@@ -38,8 +38,10 @@ impl GetLensReviewReportInput {
 }
 impl GetLensReviewReportInput {
     /// Creates a new builder-style object to manufacture [`GetLensReviewReportInput`](crate::operation::get_lens_review_report::GetLensReviewReportInput).
-    pub fn builder() -> crate::operation::get_lens_review_report::builders::GetLensReviewReportInputBuilder {
-        crate::operation::get_lens_review_report::builders::GetLensReviewReportInputBuilder::default()
+    pub fn builder(
+    ) -> crate::operation::get_lens_review_report::builders::GetLensReviewReportInputBuilder {
+        crate::operation::get_lens_review_report::builders::GetLensReviewReportInputBuilder::default(
+        )
     }
 }
 
@@ -59,47 +61,50 @@ impl GetLensReviewReportInputBuilder {
     }
     /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
     pub fn set_workload_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.workload_id = input; self
+        self.workload_id = input;
+        self
     }
-    /// <p>The alias of the lens.</p> 
-    /// <p>For Amazon Web Services official lenses, this is either the lens alias, such as <code>serverless</code>, or the lens ARN, such as <code>arn:aws:wellarchitected:us-west-2::lens/serverless</code>.</p> 
-    /// <p>For custom lenses, this is the lens ARN, such as <code>arn:aws:wellarchitected:us-east-1:123456789012:lens/my-lens</code>. </p> 
+    /// <p>The alias of the lens.</p>
+    /// <p>For Amazon Web Services official lenses, this is either the lens alias, such as <code>serverless</code>, or the lens ARN, such as <code>arn:aws:wellarchitected:us-west-2::lens/serverless</code>.</p>
+    /// <p>For custom lenses, this is the lens ARN, such as <code>arn:aws:wellarchitected:us-east-1:123456789012:lens/my-lens</code>. </p>
     /// <p>Each lens is identified by its <code>LensSummary$LensAlias</code>.</p>
     pub fn lens_alias(mut self, input: impl Into<std::string::String>) -> Self {
         self.lens_alias = Some(input.into());
         self
     }
-    /// <p>The alias of the lens.</p> 
-    /// <p>For Amazon Web Services official lenses, this is either the lens alias, such as <code>serverless</code>, or the lens ARN, such as <code>arn:aws:wellarchitected:us-west-2::lens/serverless</code>.</p> 
-    /// <p>For custom lenses, this is the lens ARN, such as <code>arn:aws:wellarchitected:us-east-1:123456789012:lens/my-lens</code>. </p> 
+    /// <p>The alias of the lens.</p>
+    /// <p>For Amazon Web Services official lenses, this is either the lens alias, such as <code>serverless</code>, or the lens ARN, such as <code>arn:aws:wellarchitected:us-west-2::lens/serverless</code>.</p>
+    /// <p>For custom lenses, this is the lens ARN, such as <code>arn:aws:wellarchitected:us-east-1:123456789012:lens/my-lens</code>. </p>
     /// <p>Each lens is identified by its <code>LensSummary$LensAlias</code>.</p>
     pub fn set_lens_alias(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.lens_alias = input; self
+        self.lens_alias = input;
+        self
     }
-    /// <p>The milestone number.</p> 
+    /// <p>The milestone number.</p>
     /// <p>A workload can have a maximum of 100 milestones.</p>
     pub fn milestone_number(mut self, input: i32) -> Self {
         self.milestone_number = Some(input);
         self
     }
-    /// <p>The milestone number.</p> 
+    /// <p>The milestone number.</p>
     /// <p>A workload can have a maximum of 100 milestones.</p>
     pub fn set_milestone_number(mut self, input: std::option::Option<i32>) -> Self {
-        self.milestone_number = input; self
+        self.milestone_number = input;
+        self
     }
     /// Consumes the builder and constructs a [`GetLensReviewReportInput`](crate::operation::get_lens_review_report::GetLensReviewReportInput).
-    pub fn build(self) -> Result<crate::operation::get_lens_review_report::GetLensReviewReportInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::get_lens_review_report::GetLensReviewReportInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::get_lens_review_report::GetLensReviewReportInput {
-                workload_id: self.workload_id
-                ,
-                lens_alias: self.lens_alias
-                ,
-                milestone_number: self.milestone_number
-                    .unwrap_or_default()
-                ,
-            }
+                workload_id: self.workload_id,
+                lens_alias: self.lens_alias,
+                milestone_number: self.milestone_number.unwrap_or_default(),
+            },
         )
     }
 }
-

@@ -3,7 +3,7 @@
 /// <p>Provides information about the status and settings of the GCM channel for an application. The GCM channel enables Amazon Pinpoint to send push notifications through the Firebase Cloud Messaging (FCM), formerly Google Cloud Messaging (GCM), service.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GcmChannelResponse  {
+pub struct GcmChannelResponse {
     /// <p>The unique identifier for the application that the GCM channel applies to.</p>
     #[doc(hidden)]
     pub application_id: std::option::Option<std::string::String>,
@@ -40,15 +40,15 @@ pub struct GcmChannelResponse  {
 }
 impl GcmChannelResponse {
     /// <p>The unique identifier for the application that the GCM channel applies to.</p>
-    pub fn application_id(&self) -> std::option::Option<& str> {
+    pub fn application_id(&self) -> std::option::Option<&str> {
         self.application_id.as_deref()
     }
     /// <p>The date and time when the GCM channel was enabled.</p>
-    pub fn creation_date(&self) -> std::option::Option<& str> {
+    pub fn creation_date(&self) -> std::option::Option<&str> {
         self.creation_date.as_deref()
     }
     /// <p>The Web API Key, also referred to as an <i>API_KEY</i> or <i>server key</i>, that you received from Google to communicate with Google services.</p>
-    pub fn credential(&self) -> std::option::Option<& str> {
+    pub fn credential(&self) -> std::option::Option<&str> {
         self.credential.as_deref()
     }
     /// <p>Specifies whether the GCM channel is enabled for the application.</p>
@@ -60,7 +60,7 @@ impl GcmChannelResponse {
         self.has_credential
     }
     /// <p>(Deprecated) An identifier for the GCM channel. This property is retained only for backward compatibility.</p>
-    pub fn id(&self) -> std::option::Option<& str> {
+    pub fn id(&self) -> std::option::Option<&str> {
         self.id.as_deref()
     }
     /// <p>Specifies whether the GCM channel is archived.</p>
@@ -68,15 +68,15 @@ impl GcmChannelResponse {
         self.is_archived
     }
     /// <p>The user who last modified the GCM channel.</p>
-    pub fn last_modified_by(&self) -> std::option::Option<& str> {
+    pub fn last_modified_by(&self) -> std::option::Option<&str> {
         self.last_modified_by.as_deref()
     }
     /// <p>The date and time when the GCM channel was last modified.</p>
-    pub fn last_modified_date(&self) -> std::option::Option<& str> {
+    pub fn last_modified_date(&self) -> std::option::Option<&str> {
         self.last_modified_date.as_deref()
     }
     /// <p>The type of messaging or notification platform for the channel. For the GCM channel, this value is GCM.</p>
-    pub fn platform(&self) -> std::option::Option<& str> {
+    pub fn platform(&self) -> std::option::Option<&str> {
         self.platform.as_deref()
     }
     /// <p>The current version of the GCM channel.</p>
@@ -115,7 +115,8 @@ impl GcmChannelResponseBuilder {
     }
     /// <p>The unique identifier for the application that the GCM channel applies to.</p>
     pub fn set_application_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.application_id = input; self
+        self.application_id = input;
+        self
     }
     /// <p>The date and time when the GCM channel was enabled.</p>
     pub fn creation_date(mut self, input: impl Into<std::string::String>) -> Self {
@@ -124,7 +125,8 @@ impl GcmChannelResponseBuilder {
     }
     /// <p>The date and time when the GCM channel was enabled.</p>
     pub fn set_creation_date(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.creation_date = input; self
+        self.creation_date = input;
+        self
     }
     /// <p>The Web API Key, also referred to as an <i>API_KEY</i> or <i>server key</i>, that you received from Google to communicate with Google services.</p>
     pub fn credential(mut self, input: impl Into<std::string::String>) -> Self {
@@ -133,7 +135,8 @@ impl GcmChannelResponseBuilder {
     }
     /// <p>The Web API Key, also referred to as an <i>API_KEY</i> or <i>server key</i>, that you received from Google to communicate with Google services.</p>
     pub fn set_credential(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.credential = input; self
+        self.credential = input;
+        self
     }
     /// <p>Specifies whether the GCM channel is enabled for the application.</p>
     pub fn enabled(mut self, input: bool) -> Self {
@@ -142,7 +145,8 @@ impl GcmChannelResponseBuilder {
     }
     /// <p>Specifies whether the GCM channel is enabled for the application.</p>
     pub fn set_enabled(mut self, input: std::option::Option<bool>) -> Self {
-        self.enabled = input; self
+        self.enabled = input;
+        self
     }
     /// <p>(Not used) This property is retained only for backward compatibility.</p>
     pub fn has_credential(mut self, input: bool) -> Self {
@@ -151,7 +155,8 @@ impl GcmChannelResponseBuilder {
     }
     /// <p>(Not used) This property is retained only for backward compatibility.</p>
     pub fn set_has_credential(mut self, input: std::option::Option<bool>) -> Self {
-        self.has_credential = input; self
+        self.has_credential = input;
+        self
     }
     /// <p>(Deprecated) An identifier for the GCM channel. This property is retained only for backward compatibility.</p>
     pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -160,7 +165,8 @@ impl GcmChannelResponseBuilder {
     }
     /// <p>(Deprecated) An identifier for the GCM channel. This property is retained only for backward compatibility.</p>
     pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.id = input; self
+        self.id = input;
+        self
     }
     /// <p>Specifies whether the GCM channel is archived.</p>
     pub fn is_archived(mut self, input: bool) -> Self {
@@ -169,7 +175,8 @@ impl GcmChannelResponseBuilder {
     }
     /// <p>Specifies whether the GCM channel is archived.</p>
     pub fn set_is_archived(mut self, input: std::option::Option<bool>) -> Self {
-        self.is_archived = input; self
+        self.is_archived = input;
+        self
     }
     /// <p>The user who last modified the GCM channel.</p>
     pub fn last_modified_by(mut self, input: impl Into<std::string::String>) -> Self {
@@ -178,7 +185,8 @@ impl GcmChannelResponseBuilder {
     }
     /// <p>The user who last modified the GCM channel.</p>
     pub fn set_last_modified_by(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.last_modified_by = input; self
+        self.last_modified_by = input;
+        self
     }
     /// <p>The date and time when the GCM channel was last modified.</p>
     pub fn last_modified_date(mut self, input: impl Into<std::string::String>) -> Self {
@@ -186,8 +194,12 @@ impl GcmChannelResponseBuilder {
         self
     }
     /// <p>The date and time when the GCM channel was last modified.</p>
-    pub fn set_last_modified_date(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.last_modified_date = input; self
+    pub fn set_last_modified_date(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.last_modified_date = input;
+        self
     }
     /// <p>The type of messaging or notification platform for the channel. For the GCM channel, this value is GCM.</p>
     pub fn platform(mut self, input: impl Into<std::string::String>) -> Self {
@@ -196,7 +208,8 @@ impl GcmChannelResponseBuilder {
     }
     /// <p>The type of messaging or notification platform for the channel. For the GCM channel, this value is GCM.</p>
     pub fn set_platform(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.platform = input; self
+        self.platform = input;
+        self
     }
     /// <p>The current version of the GCM channel.</p>
     pub fn version(mut self, input: i32) -> Self {
@@ -205,38 +218,23 @@ impl GcmChannelResponseBuilder {
     }
     /// <p>The current version of the GCM channel.</p>
     pub fn set_version(mut self, input: std::option::Option<i32>) -> Self {
-        self.version = input; self
+        self.version = input;
+        self
     }
     /// Consumes the builder and constructs a [`GcmChannelResponse`](crate::types::GcmChannelResponse).
     pub fn build(self) -> crate::types::GcmChannelResponse {
         crate::types::GcmChannelResponse {
-            application_id: self.application_id
-            ,
-            creation_date: self.creation_date
-            ,
-            credential: self.credential
-            ,
-            enabled: self.enabled
-                .unwrap_or_default()
-            ,
-            has_credential: self.has_credential
-                .unwrap_or_default()
-            ,
-            id: self.id
-            ,
-            is_archived: self.is_archived
-                .unwrap_or_default()
-            ,
-            last_modified_by: self.last_modified_by
-            ,
-            last_modified_date: self.last_modified_date
-            ,
-            platform: self.platform
-            ,
-            version: self.version
-                .unwrap_or_default()
-            ,
+            application_id: self.application_id,
+            creation_date: self.creation_date,
+            credential: self.credential,
+            enabled: self.enabled.unwrap_or_default(),
+            has_credential: self.has_credential.unwrap_or_default(),
+            id: self.id,
+            is_archived: self.is_archived.unwrap_or_default(),
+            last_modified_by: self.last_modified_by,
+            last_modified_date: self.last_modified_date,
+            platform: self.platform,
+            version: self.version.unwrap_or_default(),
         }
     }
 }
-

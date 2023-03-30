@@ -2,20 +2,21 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeDashboardInput  {
+pub struct DescribeDashboardInput {
     /// <p>The ID of the dashboard.</p>
     #[doc(hidden)]
     pub dashboard_id: std::option::Option<std::string::String>,
 }
 impl DescribeDashboardInput {
     /// <p>The ID of the dashboard.</p>
-    pub fn dashboard_id(&self) -> std::option::Option<& str> {
+    pub fn dashboard_id(&self) -> std::option::Option<&str> {
         self.dashboard_id.as_deref()
     }
 }
 impl DescribeDashboardInput {
     /// Creates a new builder-style object to manufacture [`DescribeDashboardInput`](crate::operation::describe_dashboard::DescribeDashboardInput).
-    pub fn builder() -> crate::operation::describe_dashboard::builders::DescribeDashboardInputBuilder {
+    pub fn builder() -> crate::operation::describe_dashboard::builders::DescribeDashboardInputBuilder
+    {
         crate::operation::describe_dashboard::builders::DescribeDashboardInputBuilder::default()
     }
 }
@@ -34,16 +35,20 @@ impl DescribeDashboardInputBuilder {
     }
     /// <p>The ID of the dashboard.</p>
     pub fn set_dashboard_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.dashboard_id = input; self
+        self.dashboard_id = input;
+        self
     }
     /// Consumes the builder and constructs a [`DescribeDashboardInput`](crate::operation::describe_dashboard::DescribeDashboardInput).
-    pub fn build(self) -> Result<crate::operation::describe_dashboard::DescribeDashboardInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::describe_dashboard::DescribeDashboardInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::describe_dashboard::DescribeDashboardInput {
-                dashboard_id: self.dashboard_id
-                ,
-            }
+                dashboard_id: self.dashboard_id,
+            },
         )
     }
 }
-

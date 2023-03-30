@@ -93,4 +93,3 @@ pub mod update_rule_group;
 
 /// Types for the `UpdateSubnetChangeProtection` operation.
 pub mod update_subnet_change_protection;
-

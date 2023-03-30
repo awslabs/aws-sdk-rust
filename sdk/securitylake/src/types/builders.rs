@@ -20,4 +20,3 @@ pub use crate::types::_protocol_and_notification_endpoint::ProtocolAndNotificati
 pub use crate::types::_auto_enable_new_region_configuration::AutoEnableNewRegionConfigurationBuilder;
 
 pub use crate::types::_lake_configuration_response::LakeConfigurationResponseBuilder;
-

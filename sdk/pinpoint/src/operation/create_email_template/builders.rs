@@ -4,56 +4,81 @@ pub use crate::operation::create_email_template::_create_email_template_output::
 pub use crate::operation::create_email_template::_create_email_template_input::CreateEmailTemplateInputBuilder;
 
 /// Fluent builder constructing a request to `CreateEmailTemplate`.
-/// 
+///
 /// <p>Creates a message template for messages that are sent through the email channel.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct CreateEmailTemplateFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::create_email_template::builders::CreateEmailTemplateInputBuilder
-            }
-impl CreateEmailTemplateFluentBuilder  {
+    handle: std::sync::Arc<crate::client::Handle>,
+    inner: crate::operation::create_email_template::builders::CreateEmailTemplateInputBuilder,
+}
+impl CreateEmailTemplateFluentBuilder {
     /// Creates a new `CreateEmailTemplate`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
-                    /// sent. The operation's inner [http::Request] can be modified as well.
-                    pub async fn customize(self) -> std::result::Result<
-                        crate::client::customize::CustomizableOperation<crate::operation::create_email_template::CreateEmailTemplate, aws_http::retry::AwsResponseRetryClassifier,>,
-                        aws_smithy_http::result::SdkError<crate::operation::create_email_template::CreateEmailTemplateError>
-                    >  {
-                        let handle = self.handle.clone();
-                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-                    }
-    
-                    /// Sends the request and returns the response.
-                    ///
-                    /// If an error occurs, an `SdkError` will be returned with additional details that
-                    /// can be matched against.
-                    ///
-                    /// By default, any retryable failures will be retried twice. Retry behavior
-                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                    /// set when configuring the client.
-                    pub async fn send(self) -> std::result::Result<crate::operation::create_email_template::CreateEmailTemplateOutput, aws_smithy_http::result::SdkError<crate::operation::create_email_template::CreateEmailTemplateError>>
-                     {
-                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&self.handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        self.handle.client.call(op).await
-                    }
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle,
+            inner: Default::default(),
+        }
+    }
+
+    /// Consume this builder, creating a customizable operation that can be modified before being
+    /// sent. The operation's inner [http::Request] can be modified as well.
+    pub async fn customize(
+        self,
+    ) -> std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::create_email_template::CreateEmailTemplate,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::result::SdkError<
+            crate::operation::create_email_template::CreateEmailTemplateError,
+        >,
+    > {
+        let handle = self.handle.clone();
+        let operation = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+    }
+
+    /// Sends the request and returns the response.
+    ///
+    /// If an error occurs, an `SdkError` will be returned with additional details that
+    /// can be matched against.
+    ///
+    /// By default, any retryable failures will be retried twice. Retry behavior
+    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+    /// set when configuring the client.
+    pub async fn send(
+        self,
+    ) -> std::result::Result<
+        crate::operation::create_email_template::CreateEmailTemplateOutput,
+        aws_smithy_http::result::SdkError<
+            crate::operation::create_email_template::CreateEmailTemplateError,
+        >,
+    > {
+        let op = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&self.handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        self.handle.client.call(op).await
+    }
     /// <p>Specifies the content and settings for a message template that can be used in messages that are sent through the email channel.</p>
     pub fn email_template_request(mut self, input: crate::types::EmailTemplateRequest) -> Self {
         self.inner = self.inner.email_template_request(input);
         self
     }
     /// <p>Specifies the content and settings for a message template that can be used in messages that are sent through the email channel.</p>
-    pub fn set_email_template_request(mut self, input: std::option::Option<crate::types::EmailTemplateRequest>) -> Self {
+    pub fn set_email_template_request(
+        mut self,
+        input: std::option::Option<crate::types::EmailTemplateRequest>,
+    ) -> Self {
         self.inner = self.inner.set_email_template_request(input);
         self
     }
@@ -68,4 +93,3 @@ impl CreateEmailTemplateFluentBuilder  {
         self
     }
 }
-

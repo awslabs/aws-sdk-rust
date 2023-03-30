@@ -4,56 +4,81 @@ pub use crate::operation::create_verified_access_endpoint::_create_verified_acce
 pub use crate::operation::create_verified_access_endpoint::_create_verified_access_endpoint_input::CreateVerifiedAccessEndpointInputBuilder;
 
 /// Fluent builder constructing a request to `CreateVerifiedAccessEndpoint`.
-/// 
+///
 /// <p>An Amazon Web Services Verified Access endpoint is where you define your application along with an optional endpoint-level access policy.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct CreateVerifiedAccessEndpointFluentBuilder {
                 handle: std::sync::Arc<crate::client::Handle>,
                 inner: crate::operation::create_verified_access_endpoint::builders::CreateVerifiedAccessEndpointInputBuilder
             }
-impl CreateVerifiedAccessEndpointFluentBuilder  {
+impl CreateVerifiedAccessEndpointFluentBuilder {
     /// Creates a new `CreateVerifiedAccessEndpoint`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
-                    /// sent. The operation's inner [http::Request] can be modified as well.
-                    pub async fn customize(self) -> std::result::Result<
-                        crate::client::customize::CustomizableOperation<crate::operation::create_verified_access_endpoint::CreateVerifiedAccessEndpoint, aws_http::retry::AwsResponseRetryClassifier,>,
-                        aws_smithy_http::result::SdkError<crate::operation::create_verified_access_endpoint::CreateVerifiedAccessEndpointError>
-                    >  {
-                        let handle = self.handle.clone();
-                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-                    }
-    
-                    /// Sends the request and returns the response.
-                    ///
-                    /// If an error occurs, an `SdkError` will be returned with additional details that
-                    /// can be matched against.
-                    ///
-                    /// By default, any retryable failures will be retried twice. Retry behavior
-                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                    /// set when configuring the client.
-                    pub async fn send(self) -> std::result::Result<crate::operation::create_verified_access_endpoint::CreateVerifiedAccessEndpointOutput, aws_smithy_http::result::SdkError<crate::operation::create_verified_access_endpoint::CreateVerifiedAccessEndpointError>>
-                     {
-                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&self.handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        self.handle.client.call(op).await
-                    }
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle,
+            inner: Default::default(),
+        }
+    }
+
+    /// Consume this builder, creating a customizable operation that can be modified before being
+    /// sent. The operation's inner [http::Request] can be modified as well.
+    pub async fn customize(
+        self,
+    ) -> std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::create_verified_access_endpoint::CreateVerifiedAccessEndpoint,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::result::SdkError<
+            crate::operation::create_verified_access_endpoint::CreateVerifiedAccessEndpointError,
+        >,
+    > {
+        let handle = self.handle.clone();
+        let operation = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+    }
+
+    /// Sends the request and returns the response.
+    ///
+    /// If an error occurs, an `SdkError` will be returned with additional details that
+    /// can be matched against.
+    ///
+    /// By default, any retryable failures will be retried twice. Retry behavior
+    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+    /// set when configuring the client.
+    pub async fn send(
+        self,
+    ) -> std::result::Result<
+        crate::operation::create_verified_access_endpoint::CreateVerifiedAccessEndpointOutput,
+        aws_smithy_http::result::SdkError<
+            crate::operation::create_verified_access_endpoint::CreateVerifiedAccessEndpointError,
+        >,
+    > {
+        let op = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&self.handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        self.handle.client.call(op).await
+    }
     /// <p>The ID of the Verified Access group to associate the endpoint with.</p>
     pub fn verified_access_group_id(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.verified_access_group_id(input.into());
         self
     }
     /// <p>The ID of the Verified Access group to associate the endpoint with.</p>
-    pub fn set_verified_access_group_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_verified_access_group_id(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_verified_access_group_id(input);
         self
     }
@@ -63,17 +88,26 @@ impl CreateVerifiedAccessEndpointFluentBuilder  {
         self
     }
     /// <p>The type of Amazon Web Services Verified Access endpoint to create.</p>
-    pub fn set_endpoint_type(mut self, input: std::option::Option<crate::types::VerifiedAccessEndpointType>) -> Self {
+    pub fn set_endpoint_type(
+        mut self,
+        input: std::option::Option<crate::types::VerifiedAccessEndpointType>,
+    ) -> Self {
         self.inner = self.inner.set_endpoint_type(input);
         self
     }
     /// <p>The Amazon Web Services network component Verified Access attaches to.</p>
-    pub fn attachment_type(mut self, input: crate::types::VerifiedAccessEndpointAttachmentType) -> Self {
+    pub fn attachment_type(
+        mut self,
+        input: crate::types::VerifiedAccessEndpointAttachmentType,
+    ) -> Self {
         self.inner = self.inner.attachment_type(input);
         self
     }
     /// <p>The Amazon Web Services network component Verified Access attaches to.</p>
-    pub fn set_attachment_type(mut self, input: std::option::Option<crate::types::VerifiedAccessEndpointAttachmentType>) -> Self {
+    pub fn set_attachment_type(
+        mut self,
+        input: std::option::Option<crate::types::VerifiedAccessEndpointAttachmentType>,
+    ) -> Self {
         self.inner = self.inner.set_attachment_type(input);
         self
     }
@@ -83,7 +117,10 @@ impl CreateVerifiedAccessEndpointFluentBuilder  {
         self
     }
     /// <p>The ARN of the public TLS/SSL certificate in Amazon Web Services Certificate Manager to associate with the endpoint. The CN in the certificate must match the DNS name your end users will use to reach your application.</p>
-    pub fn set_domain_certificate_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_domain_certificate_arn(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_domain_certificate_arn(input);
         self
     }
@@ -93,7 +130,10 @@ impl CreateVerifiedAccessEndpointFluentBuilder  {
         self
     }
     /// <p>The DNS name for users to reach your application.</p>
-    pub fn set_application_domain(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_application_domain(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_application_domain(input);
         self
     }
@@ -103,7 +143,10 @@ impl CreateVerifiedAccessEndpointFluentBuilder  {
         self
     }
     /// <p>A custom identifier that gets prepended to a DNS name that is generated for the endpoint.</p>
-    pub fn set_endpoint_domain_prefix(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_endpoint_domain_prefix(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_endpoint_domain_prefix(input);
         self
     }
@@ -117,27 +160,42 @@ impl CreateVerifiedAccessEndpointFluentBuilder  {
         self
     }
     /// <p>The Amazon EC2 security groups to associate with the Amazon Web Services Verified Access endpoint.</p>
-    pub fn set_security_group_ids(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+    pub fn set_security_group_ids(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
         self.inner = self.inner.set_security_group_ids(input);
         self
     }
     /// <p>The load balancer details if creating the Amazon Web Services Verified Access endpoint as <code>load-balancer</code>type.</p>
-    pub fn load_balancer_options(mut self, input: crate::types::CreateVerifiedAccessEndpointLoadBalancerOptions) -> Self {
+    pub fn load_balancer_options(
+        mut self,
+        input: crate::types::CreateVerifiedAccessEndpointLoadBalancerOptions,
+    ) -> Self {
         self.inner = self.inner.load_balancer_options(input);
         self
     }
     /// <p>The load balancer details if creating the Amazon Web Services Verified Access endpoint as <code>load-balancer</code>type.</p>
-    pub fn set_load_balancer_options(mut self, input: std::option::Option<crate::types::CreateVerifiedAccessEndpointLoadBalancerOptions>) -> Self {
+    pub fn set_load_balancer_options(
+        mut self,
+        input: std::option::Option<crate::types::CreateVerifiedAccessEndpointLoadBalancerOptions>,
+    ) -> Self {
         self.inner = self.inner.set_load_balancer_options(input);
         self
     }
     /// <p>The network interface details if creating the Amazon Web Services Verified Access endpoint as <code>network-interface</code>type.</p>
-    pub fn network_interface_options(mut self, input: crate::types::CreateVerifiedAccessEndpointEniOptions) -> Self {
+    pub fn network_interface_options(
+        mut self,
+        input: crate::types::CreateVerifiedAccessEndpointEniOptions,
+    ) -> Self {
         self.inner = self.inner.network_interface_options(input);
         self
     }
     /// <p>The network interface details if creating the Amazon Web Services Verified Access endpoint as <code>network-interface</code>type.</p>
-    pub fn set_network_interface_options(mut self, input: std::option::Option<crate::types::CreateVerifiedAccessEndpointEniOptions>) -> Self {
+    pub fn set_network_interface_options(
+        mut self,
+        input: std::option::Option<crate::types::CreateVerifiedAccessEndpointEniOptions>,
+    ) -> Self {
         self.inner = self.inner.set_network_interface_options(input);
         self
     }
@@ -171,7 +229,10 @@ impl CreateVerifiedAccessEndpointFluentBuilder  {
         self
     }
     /// <p>The tags to assign to the Amazon Web Services Verified Access endpoint.</p>
-    pub fn set_tag_specifications(mut self, input: std::option::Option<std::vec::Vec<crate::types::TagSpecification>>) -> Self {
+    pub fn set_tag_specifications(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::TagSpecification>>,
+    ) -> Self {
         self.inner = self.inner.set_tag_specifications(input);
         self
     }
@@ -196,4 +257,3 @@ impl CreateVerifiedAccessEndpointFluentBuilder  {
         self
     }
 }
-

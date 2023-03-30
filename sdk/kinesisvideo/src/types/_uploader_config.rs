@@ -3,14 +3,14 @@
 /// <p>The configuration that consists of the <code>ScheduleExpression</code> and the <code>DurationInMinutesdetails</code>, that specify the scheduling to record from a camera, or local media file, onto the Edge Agent. If the <code>ScheduleExpression</code> is not provided, then the Edge Agent will always be in upload mode. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UploaderConfig  {
+pub struct UploaderConfig {
     /// <p>The configuration that consists of the <code>ScheduleExpression</code> and the <code>DurationInMinutes</code>details that specify the scheduling to record from a camera, or local media file, onto the Edge Agent. If the <code>ScheduleExpression</code> is not provided, then the Edge Agent will always be in recording mode.</p>
     #[doc(hidden)]
     pub schedule_config: std::option::Option<crate::types::ScheduleConfig>,
 }
 impl UploaderConfig {
     /// <p>The configuration that consists of the <code>ScheduleExpression</code> and the <code>DurationInMinutes</code>details that specify the scheduling to record from a camera, or local media file, onto the Edge Agent. If the <code>ScheduleExpression</code> is not provided, then the Edge Agent will always be in recording mode.</p>
-    pub fn schedule_config(&self) -> std::option::Option<& crate::types::ScheduleConfig> {
+    pub fn schedule_config(&self) -> std::option::Option<&crate::types::ScheduleConfig> {
         self.schedule_config.as_ref()
     }
 }
@@ -34,15 +34,17 @@ impl UploaderConfigBuilder {
         self
     }
     /// <p>The configuration that consists of the <code>ScheduleExpression</code> and the <code>DurationInMinutes</code>details that specify the scheduling to record from a camera, or local media file, onto the Edge Agent. If the <code>ScheduleExpression</code> is not provided, then the Edge Agent will always be in recording mode.</p>
-    pub fn set_schedule_config(mut self, input: std::option::Option<crate::types::ScheduleConfig>) -> Self {
-        self.schedule_config = input; self
+    pub fn set_schedule_config(
+        mut self,
+        input: std::option::Option<crate::types::ScheduleConfig>,
+    ) -> Self {
+        self.schedule_config = input;
+        self
     }
     /// Consumes the builder and constructs a [`UploaderConfig`](crate::types::UploaderConfig).
     pub fn build(self) -> crate::types::UploaderConfig {
         crate::types::UploaderConfig {
-            schedule_config: self.schedule_config
-            ,
+            schedule_config: self.schedule_config,
         }
     }
 }
-

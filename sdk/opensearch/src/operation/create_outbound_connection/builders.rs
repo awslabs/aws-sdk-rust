@@ -4,56 +4,81 @@ pub use crate::operation::create_outbound_connection::_create_outbound_connectio
 pub use crate::operation::create_outbound_connection::_create_outbound_connection_input::CreateOutboundConnectionInputBuilder;
 
 /// Fluent builder constructing a request to `CreateOutboundConnection`.
-/// 
+///
 /// <p>Creates a new cross-cluster search connection from a source Amazon OpenSearch Service domain to a destination domain. For more information, see <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/cross-cluster-search.html">Cross-cluster search for Amazon OpenSearch Service</a>.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct CreateOutboundConnectionFluentBuilder {
                 handle: std::sync::Arc<crate::client::Handle>,
                 inner: crate::operation::create_outbound_connection::builders::CreateOutboundConnectionInputBuilder
             }
-impl CreateOutboundConnectionFluentBuilder  {
+impl CreateOutboundConnectionFluentBuilder {
     /// Creates a new `CreateOutboundConnection`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
-                    /// sent. The operation's inner [http::Request] can be modified as well.
-                    pub async fn customize(self) -> std::result::Result<
-                        crate::client::customize::CustomizableOperation<crate::operation::create_outbound_connection::CreateOutboundConnection, aws_http::retry::AwsResponseRetryClassifier,>,
-                        aws_smithy_http::result::SdkError<crate::operation::create_outbound_connection::CreateOutboundConnectionError>
-                    >  {
-                        let handle = self.handle.clone();
-                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-                    }
-    
-                    /// Sends the request and returns the response.
-                    ///
-                    /// If an error occurs, an `SdkError` will be returned with additional details that
-                    /// can be matched against.
-                    ///
-                    /// By default, any retryable failures will be retried twice. Retry behavior
-                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                    /// set when configuring the client.
-                    pub async fn send(self) -> std::result::Result<crate::operation::create_outbound_connection::CreateOutboundConnectionOutput, aws_smithy_http::result::SdkError<crate::operation::create_outbound_connection::CreateOutboundConnectionError>>
-                     {
-                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&self.handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        self.handle.client.call(op).await
-                    }
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle,
+            inner: Default::default(),
+        }
+    }
+
+    /// Consume this builder, creating a customizable operation that can be modified before being
+    /// sent. The operation's inner [http::Request] can be modified as well.
+    pub async fn customize(
+        self,
+    ) -> std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::create_outbound_connection::CreateOutboundConnection,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::result::SdkError<
+            crate::operation::create_outbound_connection::CreateOutboundConnectionError,
+        >,
+    > {
+        let handle = self.handle.clone();
+        let operation = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+    }
+
+    /// Sends the request and returns the response.
+    ///
+    /// If an error occurs, an `SdkError` will be returned with additional details that
+    /// can be matched against.
+    ///
+    /// By default, any retryable failures will be retried twice. Retry behavior
+    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+    /// set when configuring the client.
+    pub async fn send(
+        self,
+    ) -> std::result::Result<
+        crate::operation::create_outbound_connection::CreateOutboundConnectionOutput,
+        aws_smithy_http::result::SdkError<
+            crate::operation::create_outbound_connection::CreateOutboundConnectionError,
+        >,
+    > {
+        let op = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&self.handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        self.handle.client.call(op).await
+    }
     /// <p>Name and Region of the source (local) domain.</p>
     pub fn local_domain_info(mut self, input: crate::types::DomainInformationContainer) -> Self {
         self.inner = self.inner.local_domain_info(input);
         self
     }
     /// <p>Name and Region of the source (local) domain.</p>
-    pub fn set_local_domain_info(mut self, input: std::option::Option<crate::types::DomainInformationContainer>) -> Self {
+    pub fn set_local_domain_info(
+        mut self,
+        input: std::option::Option<crate::types::DomainInformationContainer>,
+    ) -> Self {
         self.inner = self.inner.set_local_domain_info(input);
         self
     }
@@ -63,7 +88,10 @@ impl CreateOutboundConnectionFluentBuilder  {
         self
     }
     /// <p>Name and Region of the destination (remote) domain.</p>
-    pub fn set_remote_domain_info(mut self, input: std::option::Option<crate::types::DomainInformationContainer>) -> Self {
+    pub fn set_remote_domain_info(
+        mut self,
+        input: std::option::Option<crate::types::DomainInformationContainer>,
+    ) -> Self {
         self.inner = self.inner.set_remote_domain_info(input);
         self
     }
@@ -78,4 +106,3 @@ impl CreateOutboundConnectionFluentBuilder  {
         self
     }
 }
-

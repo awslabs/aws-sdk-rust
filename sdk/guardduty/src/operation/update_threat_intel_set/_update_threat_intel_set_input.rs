@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateThreatIntelSetInput  {
+pub struct UpdateThreatIntelSetInput {
     /// <p>The detectorID that specifies the GuardDuty service whose ThreatIntelSet you want to update.</p>
     #[doc(hidden)]
     pub detector_id: std::option::Option<std::string::String>,
@@ -21,19 +21,19 @@ pub struct UpdateThreatIntelSetInput  {
 }
 impl UpdateThreatIntelSetInput {
     /// <p>The detectorID that specifies the GuardDuty service whose ThreatIntelSet you want to update.</p>
-    pub fn detector_id(&self) -> std::option::Option<& str> {
+    pub fn detector_id(&self) -> std::option::Option<&str> {
         self.detector_id.as_deref()
     }
     /// <p>The unique ID that specifies the ThreatIntelSet that you want to update.</p>
-    pub fn threat_intel_set_id(&self) -> std::option::Option<& str> {
+    pub fn threat_intel_set_id(&self) -> std::option::Option<&str> {
         self.threat_intel_set_id.as_deref()
     }
     /// <p>The unique ID that specifies the ThreatIntelSet that you want to update.</p>
-    pub fn name(&self) -> std::option::Option<& str> {
+    pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>The updated URI of the file that contains the ThreateIntelSet.</p>
-    pub fn location(&self) -> std::option::Option<& str> {
+    pub fn location(&self) -> std::option::Option<&str> {
         self.location.as_deref()
     }
     /// <p>The updated Boolean value that specifies whether the ThreateIntelSet is active or not.</p>
@@ -43,7 +43,8 @@ impl UpdateThreatIntelSetInput {
 }
 impl UpdateThreatIntelSetInput {
     /// Creates a new builder-style object to manufacture [`UpdateThreatIntelSetInput`](crate::operation::update_threat_intel_set::UpdateThreatIntelSetInput).
-    pub fn builder() -> crate::operation::update_threat_intel_set::builders::UpdateThreatIntelSetInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::update_threat_intel_set::builders::UpdateThreatIntelSetInputBuilder {
         crate::operation::update_threat_intel_set::builders::UpdateThreatIntelSetInputBuilder::default()
     }
 }
@@ -66,7 +67,8 @@ impl UpdateThreatIntelSetInputBuilder {
     }
     /// <p>The detectorID that specifies the GuardDuty service whose ThreatIntelSet you want to update.</p>
     pub fn set_detector_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.detector_id = input; self
+        self.detector_id = input;
+        self
     }
     /// <p>The unique ID that specifies the ThreatIntelSet that you want to update.</p>
     pub fn threat_intel_set_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -74,8 +76,12 @@ impl UpdateThreatIntelSetInputBuilder {
         self
     }
     /// <p>The unique ID that specifies the ThreatIntelSet that you want to update.</p>
-    pub fn set_threat_intel_set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.threat_intel_set_id = input; self
+    pub fn set_threat_intel_set_id(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.threat_intel_set_id = input;
+        self
     }
     /// <p>The unique ID that specifies the ThreatIntelSet that you want to update.</p>
     pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -84,7 +90,8 @@ impl UpdateThreatIntelSetInputBuilder {
     }
     /// <p>The unique ID that specifies the ThreatIntelSet that you want to update.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input; self
+        self.name = input;
+        self
     }
     /// <p>The updated URI of the file that contains the ThreateIntelSet.</p>
     pub fn location(mut self, input: impl Into<std::string::String>) -> Self {
@@ -93,7 +100,8 @@ impl UpdateThreatIntelSetInputBuilder {
     }
     /// <p>The updated URI of the file that contains the ThreateIntelSet.</p>
     pub fn set_location(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.location = input; self
+        self.location = input;
+        self
     }
     /// <p>The updated Boolean value that specifies whether the ThreateIntelSet is active or not.</p>
     pub fn activate(mut self, input: bool) -> Self {
@@ -102,25 +110,24 @@ impl UpdateThreatIntelSetInputBuilder {
     }
     /// <p>The updated Boolean value that specifies whether the ThreateIntelSet is active or not.</p>
     pub fn set_activate(mut self, input: std::option::Option<bool>) -> Self {
-        self.activate = input; self
+        self.activate = input;
+        self
     }
     /// Consumes the builder and constructs a [`UpdateThreatIntelSetInput`](crate::operation::update_threat_intel_set::UpdateThreatIntelSetInput).
-    pub fn build(self) -> Result<crate::operation::update_threat_intel_set::UpdateThreatIntelSetInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::update_threat_intel_set::UpdateThreatIntelSetInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::update_threat_intel_set::UpdateThreatIntelSetInput {
-                detector_id: self.detector_id
-                ,
-                threat_intel_set_id: self.threat_intel_set_id
-                ,
-                name: self.name
-                ,
-                location: self.location
-                ,
-                activate: self.activate
-                    .unwrap_or_default()
-                ,
-            }
+                detector_id: self.detector_id,
+                threat_intel_set_id: self.threat_intel_set_id,
+                name: self.name,
+                location: self.location,
+                activate: self.activate.unwrap_or_default(),
+            },
         )
     }
 }
-

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListLaunchProfilesInput  {
+pub struct ListLaunchProfilesInput {
     /// <p>The max number of results to return in the response.</p>
     #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
@@ -25,25 +25,26 @@ impl ListLaunchProfilesInput {
         self.max_results
     }
     /// <p>The token for the next set of results, or null if there are no more results.</p>
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
     /// <p>The principal ID. This currently supports a IAM Identity Center UserId. </p>
-    pub fn principal_id(&self) -> std::option::Option<& str> {
+    pub fn principal_id(&self) -> std::option::Option<&str> {
         self.principal_id.as_deref()
     }
     /// <p>Filter this request to launch profiles in any of the given states.</p>
-    pub fn states(&self) -> std::option::Option<& [crate::types::LaunchProfileState]> {
+    pub fn states(&self) -> std::option::Option<&[crate::types::LaunchProfileState]> {
         self.states.as_deref()
     }
     /// <p>The studio ID. </p>
-    pub fn studio_id(&self) -> std::option::Option<& str> {
+    pub fn studio_id(&self) -> std::option::Option<&str> {
         self.studio_id.as_deref()
     }
 }
 impl ListLaunchProfilesInput {
     /// Creates a new builder-style object to manufacture [`ListLaunchProfilesInput`](crate::operation::list_launch_profiles::ListLaunchProfilesInput).
-    pub fn builder() -> crate::operation::list_launch_profiles::builders::ListLaunchProfilesInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::list_launch_profiles::builders::ListLaunchProfilesInputBuilder {
         crate::operation::list_launch_profiles::builders::ListLaunchProfilesInputBuilder::default()
     }
 }
@@ -66,7 +67,8 @@ impl ListLaunchProfilesInputBuilder {
     }
     /// <p>The max number of results to return in the response.</p>
     pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_results = input; self
+        self.max_results = input;
+        self
     }
     /// <p>The token for the next set of results, or null if there are no more results.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -75,7 +77,8 @@ impl ListLaunchProfilesInputBuilder {
     }
     /// <p>The token for the next set of results, or null if there are no more results.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input; self
+        self.next_token = input;
+        self
     }
     /// <p>The principal ID. This currently supports a IAM Identity Center UserId. </p>
     pub fn principal_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -84,7 +87,8 @@ impl ListLaunchProfilesInputBuilder {
     }
     /// <p>The principal ID. This currently supports a IAM Identity Center UserId. </p>
     pub fn set_principal_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.principal_id = input; self
+        self.principal_id = input;
+        self
     }
     /// Appends an item to `states`.
     ///
@@ -93,13 +97,17 @@ impl ListLaunchProfilesInputBuilder {
     /// <p>Filter this request to launch profiles in any of the given states.</p>
     pub fn states(mut self, input: crate::types::LaunchProfileState) -> Self {
         let mut v = self.states.unwrap_or_default();
-                        v.push(input);
-                        self.states = Some(v);
-                        self
+        v.push(input);
+        self.states = Some(v);
+        self
     }
     /// <p>Filter this request to launch profiles in any of the given states.</p>
-    pub fn set_states(mut self, input: std::option::Option<std::vec::Vec<crate::types::LaunchProfileState>>) -> Self {
-        self.states = input; self
+    pub fn set_states(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::LaunchProfileState>>,
+    ) -> Self {
+        self.states = input;
+        self
     }
     /// <p>The studio ID. </p>
     pub fn studio_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -108,24 +116,24 @@ impl ListLaunchProfilesInputBuilder {
     }
     /// <p>The studio ID. </p>
     pub fn set_studio_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.studio_id = input; self
+        self.studio_id = input;
+        self
     }
     /// Consumes the builder and constructs a [`ListLaunchProfilesInput`](crate::operation::list_launch_profiles::ListLaunchProfilesInput).
-    pub fn build(self) -> Result<crate::operation::list_launch_profiles::ListLaunchProfilesInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::list_launch_profiles::ListLaunchProfilesInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::list_launch_profiles::ListLaunchProfilesInput {
-                max_results: self.max_results
-                ,
-                next_token: self.next_token
-                ,
-                principal_id: self.principal_id
-                ,
-                states: self.states
-                ,
-                studio_id: self.studio_id
-                ,
-            }
+                max_results: self.max_results,
+                next_token: self.next_token,
+                principal_id: self.principal_id,
+                states: self.states,
+                studio_id: self.studio_id,
+            },
         )
     }
 }
-

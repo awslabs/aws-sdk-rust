@@ -3,7 +3,7 @@
 /// <p>Describes a data processor.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Processor  {
+pub struct Processor {
     /// <p>The type of processor.</p>
     #[doc(hidden)]
     pub r#type: std::option::Option<crate::types::ProcessorType>,
@@ -13,11 +13,11 @@ pub struct Processor  {
 }
 impl Processor {
     /// <p>The type of processor.</p>
-    pub fn r#type(&self) -> std::option::Option<& crate::types::ProcessorType> {
+    pub fn r#type(&self) -> std::option::Option<&crate::types::ProcessorType> {
         self.r#type.as_ref()
     }
     /// <p>The processor parameters.</p>
-    pub fn parameters(&self) -> std::option::Option<& [crate::types::ProcessorParameter]> {
+    pub fn parameters(&self) -> std::option::Option<&[crate::types::ProcessorParameter]> {
         self.parameters.as_deref()
     }
 }
@@ -43,7 +43,8 @@ impl ProcessorBuilder {
     }
     /// <p>The type of processor.</p>
     pub fn set_type(mut self, input: std::option::Option<crate::types::ProcessorType>) -> Self {
-        self.r#type = input; self
+        self.r#type = input;
+        self
     }
     /// Appends an item to `parameters`.
     ///
@@ -52,22 +53,23 @@ impl ProcessorBuilder {
     /// <p>The processor parameters.</p>
     pub fn parameters(mut self, input: crate::types::ProcessorParameter) -> Self {
         let mut v = self.parameters.unwrap_or_default();
-                        v.push(input);
-                        self.parameters = Some(v);
-                        self
+        v.push(input);
+        self.parameters = Some(v);
+        self
     }
     /// <p>The processor parameters.</p>
-    pub fn set_parameters(mut self, input: std::option::Option<std::vec::Vec<crate::types::ProcessorParameter>>) -> Self {
-        self.parameters = input; self
+    pub fn set_parameters(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::ProcessorParameter>>,
+    ) -> Self {
+        self.parameters = input;
+        self
     }
     /// Consumes the builder and constructs a [`Processor`](crate::types::Processor).
     pub fn build(self) -> crate::types::Processor {
         crate::types::Processor {
-            r#type: self.r#type
-            ,
-            parameters: self.parameters
-            ,
+            r#type: self.r#type,
+            parameters: self.parameters,
         }
     }
 }
-

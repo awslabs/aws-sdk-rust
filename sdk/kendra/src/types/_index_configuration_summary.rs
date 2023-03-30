@@ -3,7 +3,7 @@
 /// <p>Summary information on the configuration of an index.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct IndexConfigurationSummary  {
+pub struct IndexConfigurationSummary {
     /// <p>The name of the index.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -25,27 +25,27 @@ pub struct IndexConfigurationSummary  {
 }
 impl IndexConfigurationSummary {
     /// <p>The name of the index.</p>
-    pub fn name(&self) -> std::option::Option<& str> {
+    pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>A identifier for the index. Use this to identify the index when you are using APIs such as <code>Query</code>, <code>DescribeIndex</code>, <code>UpdateIndex</code>, and <code>DeleteIndex</code>.</p>
-    pub fn id(&self) -> std::option::Option<& str> {
+    pub fn id(&self) -> std::option::Option<&str> {
         self.id.as_deref()
     }
     /// <p>Indicates whether the index is a Enterprise Edition index or a Developer Edition index. </p>
-    pub fn edition(&self) -> std::option::Option<& crate::types::IndexEdition> {
+    pub fn edition(&self) -> std::option::Option<&crate::types::IndexEdition> {
         self.edition.as_ref()
     }
     /// <p>The Unix timestamp when the index was created.</p>
-    pub fn created_at(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
+    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
     /// <p>The Unix timestamp when the index was last updated by the <code>UpdateIndex</code> API.</p>
-    pub fn updated_at(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
+    pub fn updated_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.updated_at.as_ref()
     }
     /// <p>The current status of the index. When the status is <code>ACTIVE</code>, the index is ready to search.</p>
-    pub fn status(&self) -> std::option::Option<& crate::types::IndexStatus> {
+    pub fn status(&self) -> std::option::Option<&crate::types::IndexStatus> {
         self.status.as_ref()
     }
 }
@@ -75,7 +75,8 @@ impl IndexConfigurationSummaryBuilder {
     }
     /// <p>The name of the index.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input; self
+        self.name = input;
+        self
     }
     /// <p>A identifier for the index. Use this to identify the index when you are using APIs such as <code>Query</code>, <code>DescribeIndex</code>, <code>UpdateIndex</code>, and <code>DeleteIndex</code>.</p>
     pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -84,7 +85,8 @@ impl IndexConfigurationSummaryBuilder {
     }
     /// <p>A identifier for the index. Use this to identify the index when you are using APIs such as <code>Query</code>, <code>DescribeIndex</code>, <code>UpdateIndex</code>, and <code>DeleteIndex</code>.</p>
     pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.id = input; self
+        self.id = input;
+        self
     }
     /// <p>Indicates whether the index is a Enterprise Edition index or a Developer Edition index. </p>
     pub fn edition(mut self, input: crate::types::IndexEdition) -> Self {
@@ -93,7 +95,8 @@ impl IndexConfigurationSummaryBuilder {
     }
     /// <p>Indicates whether the index is a Enterprise Edition index or a Developer Edition index. </p>
     pub fn set_edition(mut self, input: std::option::Option<crate::types::IndexEdition>) -> Self {
-        self.edition = input; self
+        self.edition = input;
+        self
     }
     /// <p>The Unix timestamp when the index was created.</p>
     pub fn created_at(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -101,8 +104,12 @@ impl IndexConfigurationSummaryBuilder {
         self
     }
     /// <p>The Unix timestamp when the index was created.</p>
-    pub fn set_created_at(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.created_at = input; self
+    pub fn set_created_at(
+        mut self,
+        input: std::option::Option<aws_smithy_types::DateTime>,
+    ) -> Self {
+        self.created_at = input;
+        self
     }
     /// <p>The Unix timestamp when the index was last updated by the <code>UpdateIndex</code> API.</p>
     pub fn updated_at(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -110,8 +117,12 @@ impl IndexConfigurationSummaryBuilder {
         self
     }
     /// <p>The Unix timestamp when the index was last updated by the <code>UpdateIndex</code> API.</p>
-    pub fn set_updated_at(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.updated_at = input; self
+    pub fn set_updated_at(
+        mut self,
+        input: std::option::Option<aws_smithy_types::DateTime>,
+    ) -> Self {
+        self.updated_at = input;
+        self
     }
     /// <p>The current status of the index. When the status is <code>ACTIVE</code>, the index is ready to search.</p>
     pub fn status(mut self, input: crate::types::IndexStatus) -> Self {
@@ -120,24 +131,18 @@ impl IndexConfigurationSummaryBuilder {
     }
     /// <p>The current status of the index. When the status is <code>ACTIVE</code>, the index is ready to search.</p>
     pub fn set_status(mut self, input: std::option::Option<crate::types::IndexStatus>) -> Self {
-        self.status = input; self
+        self.status = input;
+        self
     }
     /// Consumes the builder and constructs a [`IndexConfigurationSummary`](crate::types::IndexConfigurationSummary).
     pub fn build(self) -> crate::types::IndexConfigurationSummary {
         crate::types::IndexConfigurationSummary {
-            name: self.name
-            ,
-            id: self.id
-            ,
-            edition: self.edition
-            ,
-            created_at: self.created_at
-            ,
-            updated_at: self.updated_at
-            ,
-            status: self.status
-            ,
+            name: self.name,
+            id: self.id,
+            edition: self.edition,
+            created_at: self.created_at,
+            updated_at: self.updated_at,
+            status: self.status,
         }
     }
 }
-

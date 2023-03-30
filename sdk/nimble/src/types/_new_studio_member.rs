@@ -3,7 +3,7 @@
 /// <p>A new studio user's membership.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct NewStudioMember  {
+pub struct NewStudioMember {
     /// <p>The persona.</p>
     #[doc(hidden)]
     pub persona: std::option::Option<crate::types::StudioPersona>,
@@ -13,11 +13,11 @@ pub struct NewStudioMember  {
 }
 impl NewStudioMember {
     /// <p>The persona.</p>
-    pub fn persona(&self) -> std::option::Option<& crate::types::StudioPersona> {
+    pub fn persona(&self) -> std::option::Option<&crate::types::StudioPersona> {
         self.persona.as_ref()
     }
     /// <p>The principal ID.</p>
-    pub fn principal_id(&self) -> std::option::Option<& str> {
+    pub fn principal_id(&self) -> std::option::Option<&str> {
         self.principal_id.as_deref()
     }
 }
@@ -43,7 +43,8 @@ impl NewStudioMemberBuilder {
     }
     /// <p>The persona.</p>
     pub fn set_persona(mut self, input: std::option::Option<crate::types::StudioPersona>) -> Self {
-        self.persona = input; self
+        self.persona = input;
+        self
     }
     /// <p>The principal ID.</p>
     pub fn principal_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -52,16 +53,14 @@ impl NewStudioMemberBuilder {
     }
     /// <p>The principal ID.</p>
     pub fn set_principal_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.principal_id = input; self
+        self.principal_id = input;
+        self
     }
     /// Consumes the builder and constructs a [`NewStudioMember`](crate::types::NewStudioMember).
     pub fn build(self) -> crate::types::NewStudioMember {
         crate::types::NewStudioMember {
-            persona: self.persona
-            ,
-            principal_id: self.principal_id
-            ,
+            persona: self.persona,
+            principal_id: self.principal_id,
         }
     }
 }
-

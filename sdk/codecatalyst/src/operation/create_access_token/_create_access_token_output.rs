@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct CreateAccessTokenOutput  {
+pub struct CreateAccessTokenOutput {
     /// <p>The secret value of the personal access token.</p>
     #[doc(hidden)]
     pub secret: std::option::Option<std::string::String>,
@@ -16,19 +16,19 @@ pub struct CreateAccessTokenOutput  {
 }
 impl CreateAccessTokenOutput {
     /// <p>The secret value of the personal access token.</p>
-    pub fn secret(&self) -> std::option::Option<& str> {
+    pub fn secret(&self) -> std::option::Option<&str> {
         self.secret.as_deref()
     }
     /// <p>The friendly name of the personal access token.</p>
-    pub fn name(&self) -> std::option::Option<& str> {
+    pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>The date and time the personal access token expires, in coordinated universal time (UTC) timestamp format as specified in <a href="https://www.rfc-editor.org/rfc/rfc3339#section-5.6">RFC 3339</a>. If not specified, the default is one year from creation.</p>
-    pub fn expires_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
+    pub fn expires_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.expires_time.as_ref()
     }
 }
-impl  std::fmt::Debug for CreateAccessTokenOutput  {
+impl std::fmt::Debug for CreateAccessTokenOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateAccessTokenOutput");
         formatter.field("secret", &"*** Sensitive Data Redacted ***");
@@ -39,13 +39,14 @@ impl  std::fmt::Debug for CreateAccessTokenOutput  {
     }
 }
 impl aws_http::request_id::RequestId for CreateAccessTokenOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl CreateAccessTokenOutput {
     /// Creates a new builder-style object to manufacture [`CreateAccessTokenOutput`](crate::operation::create_access_token::CreateAccessTokenOutput).
-    pub fn builder() -> crate::operation::create_access_token::builders::CreateAccessTokenOutputBuilder {
+    pub fn builder(
+    ) -> crate::operation::create_access_token::builders::CreateAccessTokenOutputBuilder {
         crate::operation::create_access_token::builders::CreateAccessTokenOutputBuilder::default()
     }
 }
@@ -67,7 +68,8 @@ impl CreateAccessTokenOutputBuilder {
     }
     /// <p>The secret value of the personal access token.</p>
     pub fn set_secret(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.secret = input; self
+        self.secret = input;
+        self
     }
     /// <p>The friendly name of the personal access token.</p>
     pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -76,7 +78,8 @@ impl CreateAccessTokenOutputBuilder {
     }
     /// <p>The friendly name of the personal access token.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input; self
+        self.name = input;
+        self
     }
     /// <p>The date and time the personal access token expires, in coordinated universal time (UTC) timestamp format as specified in <a href="https://www.rfc-editor.org/rfc/rfc3339#section-5.6">RFC 3339</a>. If not specified, the default is one year from creation.</p>
     pub fn expires_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -84,27 +87,28 @@ impl CreateAccessTokenOutputBuilder {
         self
     }
     /// <p>The date and time the personal access token expires, in coordinated universal time (UTC) timestamp format as specified in <a href="https://www.rfc-editor.org/rfc/rfc3339#section-5.6">RFC 3339</a>. If not specified, the default is one year from creation.</p>
-    pub fn set_expires_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.expires_time = input; self
+    pub fn set_expires_time(
+        mut self,
+        input: std::option::Option<aws_smithy_types::DateTime>,
+    ) -> Self {
+        self.expires_time = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`CreateAccessTokenOutput`](crate::operation::create_access_token::CreateAccessTokenOutput).
     pub fn build(self) -> crate::operation::create_access_token::CreateAccessTokenOutput {
         crate::operation::create_access_token::CreateAccessTokenOutput {
-            secret: self.secret
-            ,
-            name: self.name
-            ,
-            expires_time: self.expires_time
-            ,
+            secret: self.secret,
+            name: self.name,
+            expires_time: self.expires_time,
             _request_id: self._request_id,
         }
     }
@@ -119,4 +123,3 @@ impl std::fmt::Debug for CreateAccessTokenOutputBuilder {
         formatter.finish()
     }
 }
-

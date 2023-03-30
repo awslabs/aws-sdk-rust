@@ -2,20 +2,20 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteAssessmentFrameworkInput  {
+pub struct DeleteAssessmentFrameworkInput {
     /// <p> The identifier for the custom framework. </p>
     #[doc(hidden)]
     pub framework_id: std::option::Option<std::string::String>,
 }
 impl DeleteAssessmentFrameworkInput {
     /// <p> The identifier for the custom framework. </p>
-    pub fn framework_id(&self) -> std::option::Option<& str> {
+    pub fn framework_id(&self) -> std::option::Option<&str> {
         self.framework_id.as_deref()
     }
 }
 impl DeleteAssessmentFrameworkInput {
     /// Creates a new builder-style object to manufacture [`DeleteAssessmentFrameworkInput`](crate::operation::delete_assessment_framework::DeleteAssessmentFrameworkInput).
-    pub fn builder() -> crate::operation::delete_assessment_framework::builders::DeleteAssessmentFrameworkInputBuilder {
+    pub fn builder() -> crate::operation::delete_assessment_framework::builders::DeleteAssessmentFrameworkInputBuilder{
         crate::operation::delete_assessment_framework::builders::DeleteAssessmentFrameworkInputBuilder::default()
     }
 }
@@ -34,16 +34,20 @@ impl DeleteAssessmentFrameworkInputBuilder {
     }
     /// <p> The identifier for the custom framework. </p>
     pub fn set_framework_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.framework_id = input; self
+        self.framework_id = input;
+        self
     }
     /// Consumes the builder and constructs a [`DeleteAssessmentFrameworkInput`](crate::operation::delete_assessment_framework::DeleteAssessmentFrameworkInput).
-    pub fn build(self) -> Result<crate::operation::delete_assessment_framework::DeleteAssessmentFrameworkInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::delete_assessment_framework::DeleteAssessmentFrameworkInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::delete_assessment_framework::DeleteAssessmentFrameworkInput {
-                framework_id: self.framework_id
-                ,
-            }
+                framework_id: self.framework_id,
+            },
         )
     }
 }
-

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DisassociateTrialComponentInput  {
+pub struct DisassociateTrialComponentInput {
     /// <p>The name of the component to disassociate from the trial.</p>
     #[doc(hidden)]
     pub trial_component_name: std::option::Option<std::string::String>,
@@ -12,17 +12,17 @@ pub struct DisassociateTrialComponentInput  {
 }
 impl DisassociateTrialComponentInput {
     /// <p>The name of the component to disassociate from the trial.</p>
-    pub fn trial_component_name(&self) -> std::option::Option<& str> {
+    pub fn trial_component_name(&self) -> std::option::Option<&str> {
         self.trial_component_name.as_deref()
     }
     /// <p>The name of the trial to disassociate from.</p>
-    pub fn trial_name(&self) -> std::option::Option<& str> {
+    pub fn trial_name(&self) -> std::option::Option<&str> {
         self.trial_name.as_deref()
     }
 }
 impl DisassociateTrialComponentInput {
     /// Creates a new builder-style object to manufacture [`DisassociateTrialComponentInput`](crate::operation::disassociate_trial_component::DisassociateTrialComponentInput).
-    pub fn builder() -> crate::operation::disassociate_trial_component::builders::DisassociateTrialComponentInputBuilder {
+    pub fn builder() -> crate::operation::disassociate_trial_component::builders::DisassociateTrialComponentInputBuilder{
         crate::operation::disassociate_trial_component::builders::DisassociateTrialComponentInputBuilder::default()
     }
 }
@@ -41,8 +41,12 @@ impl DisassociateTrialComponentInputBuilder {
         self
     }
     /// <p>The name of the component to disassociate from the trial.</p>
-    pub fn set_trial_component_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.trial_component_name = input; self
+    pub fn set_trial_component_name(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.trial_component_name = input;
+        self
     }
     /// <p>The name of the trial to disassociate from.</p>
     pub fn trial_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -51,18 +55,21 @@ impl DisassociateTrialComponentInputBuilder {
     }
     /// <p>The name of the trial to disassociate from.</p>
     pub fn set_trial_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.trial_name = input; self
+        self.trial_name = input;
+        self
     }
     /// Consumes the builder and constructs a [`DisassociateTrialComponentInput`](crate::operation::disassociate_trial_component::DisassociateTrialComponentInput).
-    pub fn build(self) -> Result<crate::operation::disassociate_trial_component::DisassociateTrialComponentInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::disassociate_trial_component::DisassociateTrialComponentInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::disassociate_trial_component::DisassociateTrialComponentInput {
-                trial_component_name: self.trial_component_name
-                ,
-                trial_name: self.trial_name
-                ,
-            }
+                trial_component_name: self.trial_component_name,
+                trial_name: self.trial_name,
+            },
         )
     }
 }
-

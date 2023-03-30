@@ -4,49 +4,58 @@ pub use crate::operation::create_site_to_site_vpn_attachment::_create_site_to_si
 pub use crate::operation::create_site_to_site_vpn_attachment::_create_site_to_site_vpn_attachment_input::CreateSiteToSiteVpnAttachmentInputBuilder;
 
 /// Fluent builder constructing a request to `CreateSiteToSiteVpnAttachment`.
-/// 
+///
 /// <p>Creates an Amazon Web Services site-to-site VPN attachment on an edge location of a core network.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct CreateSiteToSiteVpnAttachmentFluentBuilder {
                 handle: std::sync::Arc<crate::client::Handle>,
                 inner: crate::operation::create_site_to_site_vpn_attachment::builders::CreateSiteToSiteVpnAttachmentInputBuilder
             }
-impl CreateSiteToSiteVpnAttachmentFluentBuilder  {
+impl CreateSiteToSiteVpnAttachmentFluentBuilder {
     /// Creates a new `CreateSiteToSiteVpnAttachment`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
-                    /// sent. The operation's inner [http::Request] can be modified as well.
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle,
+            inner: Default::default(),
+        }
+    }
+
+    /// Consume this builder, creating a customizable operation that can be modified before being
+    /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::create_site_to_site_vpn_attachment::CreateSiteToSiteVpnAttachment, aws_http::retry::AwsResponseRetryClassifier,>,
                         aws_smithy_http::result::SdkError<crate::operation::create_site_to_site_vpn_attachment::CreateSiteToSiteVpnAttachmentError>
-                    >  {
-                        let handle = self.handle.clone();
-                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-                    }
-    
-                    /// Sends the request and returns the response.
-                    ///
-                    /// If an error occurs, an `SdkError` will be returned with additional details that
-                    /// can be matched against.
-                    ///
-                    /// By default, any retryable failures will be retried twice. Retry behavior
-                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                    /// set when configuring the client.
+    >{
+        let handle = self.handle.clone();
+        let operation = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+    }
+
+    /// Sends the request and returns the response.
+    ///
+    /// If an error occurs, an `SdkError` will be returned with additional details that
+    /// can be matched against.
+    ///
+    /// By default, any retryable failures will be retried twice. Retry behavior
+    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+    /// set when configuring the client.
                     pub async fn send(self) -> std::result::Result<crate::operation::create_site_to_site_vpn_attachment::CreateSiteToSiteVpnAttachmentOutput, aws_smithy_http::result::SdkError<crate::operation::create_site_to_site_vpn_attachment::CreateSiteToSiteVpnAttachmentError>>
                      {
-                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&self.handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        self.handle.client.call(op).await
-                    }
+        let op = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&self.handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        self.handle.client.call(op).await
+    }
     /// <p>The ID of a core network where you're creating a site-to-site VPN attachment.</p>
     pub fn core_network_id(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.core_network_id(input.into());
@@ -63,7 +72,10 @@ impl CreateSiteToSiteVpnAttachmentFluentBuilder  {
         self
     }
     /// <p>The ARN identifying the VPN attachment.</p>
-    pub fn set_vpn_connection_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_vpn_connection_arn(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_vpn_connection_arn(input);
         self
     }
@@ -77,7 +89,10 @@ impl CreateSiteToSiteVpnAttachmentFluentBuilder  {
         self
     }
     /// <p>The tags associated with the request.</p>
-    pub fn set_tags(mut self, input: std::option::Option<std::vec::Vec<crate::types::Tag>>) -> Self {
+    pub fn set_tags(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::Tag>>,
+    ) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }
@@ -92,4 +107,3 @@ impl CreateSiteToSiteVpnAttachmentFluentBuilder  {
         self
     }
 }
-

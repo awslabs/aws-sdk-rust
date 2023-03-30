@@ -2,17 +2,18 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteProtectionOutput  {
+pub struct DeleteProtectionOutput {
     _request_id: Option<String>,
 }
 impl aws_http::request_id::RequestId for DeleteProtectionOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl DeleteProtectionOutput {
     /// Creates a new builder-style object to manufacture [`DeleteProtectionOutput`](crate::operation::delete_protection::DeleteProtectionOutput).
-    pub fn builder() -> crate::operation::delete_protection::builders::DeleteProtectionOutputBuilder {
+    pub fn builder() -> crate::operation::delete_protection::builders::DeleteProtectionOutputBuilder
+    {
         crate::operation::delete_protection::builders::DeleteProtectionOutputBuilder::default()
     }
 }
@@ -25,14 +26,14 @@ pub struct DeleteProtectionOutputBuilder {
 }
 impl DeleteProtectionOutputBuilder {
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`DeleteProtectionOutput`](crate::operation::delete_protection::DeleteProtectionOutput).
     pub fn build(self) -> crate::operation::delete_protection::DeleteProtectionOutput {
         crate::operation::delete_protection::DeleteProtectionOutput {
@@ -40,4 +41,3 @@ impl DeleteProtectionOutputBuilder {
         }
     }
 }
-

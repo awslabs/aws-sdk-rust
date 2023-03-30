@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AssociateVirtualInterfaceInput  {
+pub struct AssociateVirtualInterfaceInput {
     /// <p>The ID of the virtual interface.</p>
     #[doc(hidden)]
     pub virtual_interface_id: std::option::Option<std::string::String>,
@@ -12,17 +12,17 @@ pub struct AssociateVirtualInterfaceInput  {
 }
 impl AssociateVirtualInterfaceInput {
     /// <p>The ID of the virtual interface.</p>
-    pub fn virtual_interface_id(&self) -> std::option::Option<& str> {
+    pub fn virtual_interface_id(&self) -> std::option::Option<&str> {
         self.virtual_interface_id.as_deref()
     }
     /// <p>The ID of the LAG or connection.</p>
-    pub fn connection_id(&self) -> std::option::Option<& str> {
+    pub fn connection_id(&self) -> std::option::Option<&str> {
         self.connection_id.as_deref()
     }
 }
 impl AssociateVirtualInterfaceInput {
     /// Creates a new builder-style object to manufacture [`AssociateVirtualInterfaceInput`](crate::operation::associate_virtual_interface::AssociateVirtualInterfaceInput).
-    pub fn builder() -> crate::operation::associate_virtual_interface::builders::AssociateVirtualInterfaceInputBuilder {
+    pub fn builder() -> crate::operation::associate_virtual_interface::builders::AssociateVirtualInterfaceInputBuilder{
         crate::operation::associate_virtual_interface::builders::AssociateVirtualInterfaceInputBuilder::default()
     }
 }
@@ -41,8 +41,12 @@ impl AssociateVirtualInterfaceInputBuilder {
         self
     }
     /// <p>The ID of the virtual interface.</p>
-    pub fn set_virtual_interface_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.virtual_interface_id = input; self
+    pub fn set_virtual_interface_id(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.virtual_interface_id = input;
+        self
     }
     /// <p>The ID of the LAG or connection.</p>
     pub fn connection_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -51,18 +55,21 @@ impl AssociateVirtualInterfaceInputBuilder {
     }
     /// <p>The ID of the LAG or connection.</p>
     pub fn set_connection_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.connection_id = input; self
+        self.connection_id = input;
+        self
     }
     /// Consumes the builder and constructs a [`AssociateVirtualInterfaceInput`](crate::operation::associate_virtual_interface::AssociateVirtualInterfaceInput).
-    pub fn build(self) -> Result<crate::operation::associate_virtual_interface::AssociateVirtualInterfaceInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::associate_virtual_interface::AssociateVirtualInterfaceInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::associate_virtual_interface::AssociateVirtualInterfaceInput {
-                virtual_interface_id: self.virtual_interface_id
-                ,
-                connection_id: self.connection_id
-                ,
-            }
+                virtual_interface_id: self.virtual_interface_id,
+                connection_id: self.connection_id,
+            },
         )
     }
 }
-

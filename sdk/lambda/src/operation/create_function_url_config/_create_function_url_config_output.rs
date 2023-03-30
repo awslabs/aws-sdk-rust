@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateFunctionUrlConfigOutput  {
+pub struct CreateFunctionUrlConfigOutput {
     /// <p>The HTTP URL endpoint for your function.</p>
     #[doc(hidden)]
     pub function_url: std::option::Option<std::string::String>,
@@ -22,34 +22,36 @@ pub struct CreateFunctionUrlConfigOutput  {
 }
 impl CreateFunctionUrlConfigOutput {
     /// <p>The HTTP URL endpoint for your function.</p>
-    pub fn function_url(&self) -> std::option::Option<& str> {
+    pub fn function_url(&self) -> std::option::Option<&str> {
         self.function_url.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of your function.</p>
-    pub fn function_arn(&self) -> std::option::Option<& str> {
+    pub fn function_arn(&self) -> std::option::Option<&str> {
         self.function_arn.as_deref()
     }
     /// <p>The type of authentication that your function URL uses. Set to <code>AWS_IAM</code> if you want to restrict access to authenticated IAM users only. Set to <code>NONE</code> if you want to bypass IAM authentication to create a public endpoint. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/urls-auth.html">Security and auth model for Lambda function URLs</a>.</p>
-    pub fn auth_type(&self) -> std::option::Option<& crate::types::FunctionUrlAuthType> {
+    pub fn auth_type(&self) -> std::option::Option<&crate::types::FunctionUrlAuthType> {
         self.auth_type.as_ref()
     }
     /// <p>The <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS">cross-origin resource sharing (CORS)</a> settings for your function URL.</p>
-    pub fn cors(&self) -> std::option::Option<& crate::types::Cors> {
+    pub fn cors(&self) -> std::option::Option<&crate::types::Cors> {
         self.cors.as_ref()
     }
     /// <p>When the function URL was created, in <a href="https://www.w3.org/TR/NOTE-datetime">ISO-8601 format</a> (YYYY-MM-DDThh:mm:ss.sTZD).</p>
-    pub fn creation_time(&self) -> std::option::Option<& str> {
+    pub fn creation_time(&self) -> std::option::Option<&str> {
         self.creation_time.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for CreateFunctionUrlConfigOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl CreateFunctionUrlConfigOutput {
     /// Creates a new builder-style object to manufacture [`CreateFunctionUrlConfigOutput`](crate::operation::create_function_url_config::CreateFunctionUrlConfigOutput).
-    pub fn builder() -> crate::operation::create_function_url_config::builders::CreateFunctionUrlConfigOutputBuilder {
+    pub fn builder(
+    ) -> crate::operation::create_function_url_config::builders::CreateFunctionUrlConfigOutputBuilder
+    {
         crate::operation::create_function_url_config::builders::CreateFunctionUrlConfigOutputBuilder::default()
     }
 }
@@ -73,7 +75,8 @@ impl CreateFunctionUrlConfigOutputBuilder {
     }
     /// <p>The HTTP URL endpoint for your function.</p>
     pub fn set_function_url(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.function_url = input; self
+        self.function_url = input;
+        self
     }
     /// <p>The Amazon Resource Name (ARN) of your function.</p>
     pub fn function_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -82,7 +85,8 @@ impl CreateFunctionUrlConfigOutputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of your function.</p>
     pub fn set_function_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.function_arn = input; self
+        self.function_arn = input;
+        self
     }
     /// <p>The type of authentication that your function URL uses. Set to <code>AWS_IAM</code> if you want to restrict access to authenticated IAM users only. Set to <code>NONE</code> if you want to bypass IAM authentication to create a public endpoint. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/urls-auth.html">Security and auth model for Lambda function URLs</a>.</p>
     pub fn auth_type(mut self, input: crate::types::FunctionUrlAuthType) -> Self {
@@ -90,8 +94,12 @@ impl CreateFunctionUrlConfigOutputBuilder {
         self
     }
     /// <p>The type of authentication that your function URL uses. Set to <code>AWS_IAM</code> if you want to restrict access to authenticated IAM users only. Set to <code>NONE</code> if you want to bypass IAM authentication to create a public endpoint. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/urls-auth.html">Security and auth model for Lambda function URLs</a>.</p>
-    pub fn set_auth_type(mut self, input: std::option::Option<crate::types::FunctionUrlAuthType>) -> Self {
-        self.auth_type = input; self
+    pub fn set_auth_type(
+        mut self,
+        input: std::option::Option<crate::types::FunctionUrlAuthType>,
+    ) -> Self {
+        self.auth_type = input;
+        self
     }
     /// <p>The <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS">cross-origin resource sharing (CORS)</a> settings for your function URL.</p>
     pub fn cors(mut self, input: crate::types::Cors) -> Self {
@@ -100,7 +108,8 @@ impl CreateFunctionUrlConfigOutputBuilder {
     }
     /// <p>The <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS">cross-origin resource sharing (CORS)</a> settings for your function URL.</p>
     pub fn set_cors(mut self, input: std::option::Option<crate::types::Cors>) -> Self {
-        self.cors = input; self
+        self.cors = input;
+        self
     }
     /// <p>When the function URL was created, in <a href="https://www.w3.org/TR/NOTE-datetime">ISO-8601 format</a> (YYYY-MM-DDThh:mm:ss.sTZD).</p>
     pub fn creation_time(mut self, input: impl Into<std::string::String>) -> Self {
@@ -109,32 +118,29 @@ impl CreateFunctionUrlConfigOutputBuilder {
     }
     /// <p>When the function URL was created, in <a href="https://www.w3.org/TR/NOTE-datetime">ISO-8601 format</a> (YYYY-MM-DDThh:mm:ss.sTZD).</p>
     pub fn set_creation_time(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.creation_time = input; self
+        self.creation_time = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`CreateFunctionUrlConfigOutput`](crate::operation::create_function_url_config::CreateFunctionUrlConfigOutput).
-    pub fn build(self) -> crate::operation::create_function_url_config::CreateFunctionUrlConfigOutput {
+    pub fn build(
+        self,
+    ) -> crate::operation::create_function_url_config::CreateFunctionUrlConfigOutput {
         crate::operation::create_function_url_config::CreateFunctionUrlConfigOutput {
-            function_url: self.function_url
-            ,
-            function_arn: self.function_arn
-            ,
-            auth_type: self.auth_type
-            ,
-            cors: self.cors
-            ,
-            creation_time: self.creation_time
-            ,
+            function_url: self.function_url,
+            function_arn: self.function_arn,
+            auth_type: self.auth_type,
+            cors: self.cors,
+            creation_time: self.creation_time,
             _request_id: self._request_id,
         }
     }
 }
-

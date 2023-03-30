@@ -3,7 +3,7 @@
 /// <p>A custom action defined on a visual.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct VisualCustomAction  {
+pub struct VisualCustomAction {
     /// <p>The ID of the <code>VisualCustomAction</code>.</p>
     #[doc(hidden)]
     pub custom_action_id: std::option::Option<std::string::String>,
@@ -13,44 +13,47 @@ pub struct VisualCustomAction  {
     /// <p>The status of the <code>VisualCustomAction</code>.</p>
     #[doc(hidden)]
     pub status: std::option::Option<crate::types::WidgetStatus>,
-    /// <p>The trigger of the <code>VisualCustomAction</code>.</p> 
-    /// <p>Valid values are defined as follows:</p> 
-    /// <ul> 
-    /// <li> <p> <code>DATA_POINT_CLICK</code>: Initiates a custom action by a left pointer click on a data point.</p> </li> 
-    /// <li> <p> <code>DATA_POINT_MENU</code>: Initiates a custom action by right pointer click from the menu.</p> </li> 
+    /// <p>The trigger of the <code>VisualCustomAction</code>.</p>
+    /// <p>Valid values are defined as follows:</p>
+    /// <ul>
+    /// <li> <p> <code>DATA_POINT_CLICK</code>: Initiates a custom action by a left pointer click on a data point.</p> </li>
+    /// <li> <p> <code>DATA_POINT_MENU</code>: Initiates a custom action by right pointer click from the menu.</p> </li>
     /// </ul>
     #[doc(hidden)]
     pub trigger: std::option::Option<crate::types::VisualCustomActionTrigger>,
-    /// <p>A list of <code>VisualCustomActionOperations</code>.</p> 
+    /// <p>A list of <code>VisualCustomActionOperations</code>.</p>
     /// <p>This is a union type structure. For this structure to be valid, only one of the attributes can be defined.</p>
     #[doc(hidden)]
-    pub action_operations: std::option::Option<std::vec::Vec<crate::types::VisualCustomActionOperation>>,
+    pub action_operations:
+        std::option::Option<std::vec::Vec<crate::types::VisualCustomActionOperation>>,
 }
 impl VisualCustomAction {
     /// <p>The ID of the <code>VisualCustomAction</code>.</p>
-    pub fn custom_action_id(&self) -> std::option::Option<& str> {
+    pub fn custom_action_id(&self) -> std::option::Option<&str> {
         self.custom_action_id.as_deref()
     }
     /// <p>The name of the <code>VisualCustomAction</code>.</p>
-    pub fn name(&self) -> std::option::Option<& str> {
+    pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>The status of the <code>VisualCustomAction</code>.</p>
-    pub fn status(&self) -> std::option::Option<& crate::types::WidgetStatus> {
+    pub fn status(&self) -> std::option::Option<&crate::types::WidgetStatus> {
         self.status.as_ref()
     }
-    /// <p>The trigger of the <code>VisualCustomAction</code>.</p> 
-    /// <p>Valid values are defined as follows:</p> 
-    /// <ul> 
-    /// <li> <p> <code>DATA_POINT_CLICK</code>: Initiates a custom action by a left pointer click on a data point.</p> </li> 
-    /// <li> <p> <code>DATA_POINT_MENU</code>: Initiates a custom action by right pointer click from the menu.</p> </li> 
+    /// <p>The trigger of the <code>VisualCustomAction</code>.</p>
+    /// <p>Valid values are defined as follows:</p>
+    /// <ul>
+    /// <li> <p> <code>DATA_POINT_CLICK</code>: Initiates a custom action by a left pointer click on a data point.</p> </li>
+    /// <li> <p> <code>DATA_POINT_MENU</code>: Initiates a custom action by right pointer click from the menu.</p> </li>
     /// </ul>
-    pub fn trigger(&self) -> std::option::Option<& crate::types::VisualCustomActionTrigger> {
+    pub fn trigger(&self) -> std::option::Option<&crate::types::VisualCustomActionTrigger> {
         self.trigger.as_ref()
     }
-    /// <p>A list of <code>VisualCustomActionOperations</code>.</p> 
+    /// <p>A list of <code>VisualCustomActionOperations</code>.</p>
     /// <p>This is a union type structure. For this structure to be valid, only one of the attributes can be defined.</p>
-    pub fn action_operations(&self) -> std::option::Option<& [crate::types::VisualCustomActionOperation]> {
+    pub fn action_operations(
+        &self,
+    ) -> std::option::Option<&[crate::types::VisualCustomActionOperation]> {
         self.action_operations.as_deref()
     }
 }
@@ -69,7 +72,8 @@ pub struct VisualCustomActionBuilder {
     pub(crate) name: std::option::Option<std::string::String>,
     pub(crate) status: std::option::Option<crate::types::WidgetStatus>,
     pub(crate) trigger: std::option::Option<crate::types::VisualCustomActionTrigger>,
-    pub(crate) action_operations: std::option::Option<std::vec::Vec<crate::types::VisualCustomActionOperation>>,
+    pub(crate) action_operations:
+        std::option::Option<std::vec::Vec<crate::types::VisualCustomActionOperation>>,
 }
 impl VisualCustomActionBuilder {
     /// <p>The ID of the <code>VisualCustomAction</code>.</p>
@@ -79,7 +83,8 @@ impl VisualCustomActionBuilder {
     }
     /// <p>The ID of the <code>VisualCustomAction</code>.</p>
     pub fn set_custom_action_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.custom_action_id = input; self
+        self.custom_action_id = input;
+        self
     }
     /// <p>The name of the <code>VisualCustomAction</code>.</p>
     pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -88,7 +93,8 @@ impl VisualCustomActionBuilder {
     }
     /// <p>The name of the <code>VisualCustomAction</code>.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input; self
+        self.name = input;
+        self
     }
     /// <p>The status of the <code>VisualCustomAction</code>.</p>
     pub fn status(mut self, input: crate::types::WidgetStatus) -> Self {
@@ -97,58 +103,61 @@ impl VisualCustomActionBuilder {
     }
     /// <p>The status of the <code>VisualCustomAction</code>.</p>
     pub fn set_status(mut self, input: std::option::Option<crate::types::WidgetStatus>) -> Self {
-        self.status = input; self
+        self.status = input;
+        self
     }
-    /// <p>The trigger of the <code>VisualCustomAction</code>.</p> 
-    /// <p>Valid values are defined as follows:</p> 
-    /// <ul> 
-    /// <li> <p> <code>DATA_POINT_CLICK</code>: Initiates a custom action by a left pointer click on a data point.</p> </li> 
-    /// <li> <p> <code>DATA_POINT_MENU</code>: Initiates a custom action by right pointer click from the menu.</p> </li> 
+    /// <p>The trigger of the <code>VisualCustomAction</code>.</p>
+    /// <p>Valid values are defined as follows:</p>
+    /// <ul>
+    /// <li> <p> <code>DATA_POINT_CLICK</code>: Initiates a custom action by a left pointer click on a data point.</p> </li>
+    /// <li> <p> <code>DATA_POINT_MENU</code>: Initiates a custom action by right pointer click from the menu.</p> </li>
     /// </ul>
     pub fn trigger(mut self, input: crate::types::VisualCustomActionTrigger) -> Self {
         self.trigger = Some(input);
         self
     }
-    /// <p>The trigger of the <code>VisualCustomAction</code>.</p> 
-    /// <p>Valid values are defined as follows:</p> 
-    /// <ul> 
-    /// <li> <p> <code>DATA_POINT_CLICK</code>: Initiates a custom action by a left pointer click on a data point.</p> </li> 
-    /// <li> <p> <code>DATA_POINT_MENU</code>: Initiates a custom action by right pointer click from the menu.</p> </li> 
+    /// <p>The trigger of the <code>VisualCustomAction</code>.</p>
+    /// <p>Valid values are defined as follows:</p>
+    /// <ul>
+    /// <li> <p> <code>DATA_POINT_CLICK</code>: Initiates a custom action by a left pointer click on a data point.</p> </li>
+    /// <li> <p> <code>DATA_POINT_MENU</code>: Initiates a custom action by right pointer click from the menu.</p> </li>
     /// </ul>
-    pub fn set_trigger(mut self, input: std::option::Option<crate::types::VisualCustomActionTrigger>) -> Self {
-        self.trigger = input; self
+    pub fn set_trigger(
+        mut self,
+        input: std::option::Option<crate::types::VisualCustomActionTrigger>,
+    ) -> Self {
+        self.trigger = input;
+        self
     }
     /// Appends an item to `action_operations`.
     ///
     /// To override the contents of this collection use [`set_action_operations`](Self::set_action_operations).
     ///
-    /// <p>A list of <code>VisualCustomActionOperations</code>.</p> 
+    /// <p>A list of <code>VisualCustomActionOperations</code>.</p>
     /// <p>This is a union type structure. For this structure to be valid, only one of the attributes can be defined.</p>
     pub fn action_operations(mut self, input: crate::types::VisualCustomActionOperation) -> Self {
         let mut v = self.action_operations.unwrap_or_default();
-                        v.push(input);
-                        self.action_operations = Some(v);
-                        self
+        v.push(input);
+        self.action_operations = Some(v);
+        self
     }
-    /// <p>A list of <code>VisualCustomActionOperations</code>.</p> 
+    /// <p>A list of <code>VisualCustomActionOperations</code>.</p>
     /// <p>This is a union type structure. For this structure to be valid, only one of the attributes can be defined.</p>
-    pub fn set_action_operations(mut self, input: std::option::Option<std::vec::Vec<crate::types::VisualCustomActionOperation>>) -> Self {
-        self.action_operations = input; self
+    pub fn set_action_operations(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::VisualCustomActionOperation>>,
+    ) -> Self {
+        self.action_operations = input;
+        self
     }
     /// Consumes the builder and constructs a [`VisualCustomAction`](crate::types::VisualCustomAction).
     pub fn build(self) -> crate::types::VisualCustomAction {
         crate::types::VisualCustomAction {
-            custom_action_id: self.custom_action_id
-            ,
-            name: self.name
-            ,
-            status: self.status
-            ,
-            trigger: self.trigger
-            ,
-            action_operations: self.action_operations
-            ,
+            custom_action_id: self.custom_action_id,
+            name: self.name,
+            status: self.status,
+            trigger: self.trigger,
+            action_operations: self.action_operations,
         }
     }
 }
-

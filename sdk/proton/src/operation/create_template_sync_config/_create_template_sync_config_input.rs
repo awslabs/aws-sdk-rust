@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateTemplateSyncConfigInput  {
+pub struct CreateTemplateSyncConfigInput {
     /// <p>The name of your registered template.</p>
     #[doc(hidden)]
     pub template_name: std::option::Option<std::string::String>,
@@ -24,33 +24,35 @@ pub struct CreateTemplateSyncConfigInput  {
 }
 impl CreateTemplateSyncConfigInput {
     /// <p>The name of your registered template.</p>
-    pub fn template_name(&self) -> std::option::Option<& str> {
+    pub fn template_name(&self) -> std::option::Option<&str> {
         self.template_name.as_deref()
     }
     /// <p>The type of the registered template.</p>
-    pub fn template_type(&self) -> std::option::Option<& crate::types::TemplateType> {
+    pub fn template_type(&self) -> std::option::Option<&crate::types::TemplateType> {
         self.template_type.as_ref()
     }
     /// <p>The provider type for your repository.</p>
-    pub fn repository_provider(&self) -> std::option::Option<& crate::types::RepositoryProvider> {
+    pub fn repository_provider(&self) -> std::option::Option<&crate::types::RepositoryProvider> {
         self.repository_provider.as_ref()
     }
     /// <p>The repository name (for example, <code>myrepos/myrepo</code>).</p>
-    pub fn repository_name(&self) -> std::option::Option<& str> {
+    pub fn repository_name(&self) -> std::option::Option<&str> {
         self.repository_name.as_deref()
     }
     /// <p>The repository branch for your template.</p>
-    pub fn branch(&self) -> std::option::Option<& str> {
+    pub fn branch(&self) -> std::option::Option<&str> {
         self.branch.as_deref()
     }
     /// <p>A repository subdirectory path to your template bundle directory. When included, Proton limits the template bundle search to this repository directory.</p>
-    pub fn subdirectory(&self) -> std::option::Option<& str> {
+    pub fn subdirectory(&self) -> std::option::Option<&str> {
         self.subdirectory.as_deref()
     }
 }
 impl CreateTemplateSyncConfigInput {
     /// Creates a new builder-style object to manufacture [`CreateTemplateSyncConfigInput`](crate::operation::create_template_sync_config::CreateTemplateSyncConfigInput).
-    pub fn builder() -> crate::operation::create_template_sync_config::builders::CreateTemplateSyncConfigInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::create_template_sync_config::builders::CreateTemplateSyncConfigInputBuilder
+    {
         crate::operation::create_template_sync_config::builders::CreateTemplateSyncConfigInputBuilder::default()
     }
 }
@@ -74,7 +76,8 @@ impl CreateTemplateSyncConfigInputBuilder {
     }
     /// <p>The name of your registered template.</p>
     pub fn set_template_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.template_name = input; self
+        self.template_name = input;
+        self
     }
     /// <p>The type of the registered template.</p>
     pub fn template_type(mut self, input: crate::types::TemplateType) -> Self {
@@ -82,8 +85,12 @@ impl CreateTemplateSyncConfigInputBuilder {
         self
     }
     /// <p>The type of the registered template.</p>
-    pub fn set_template_type(mut self, input: std::option::Option<crate::types::TemplateType>) -> Self {
-        self.template_type = input; self
+    pub fn set_template_type(
+        mut self,
+        input: std::option::Option<crate::types::TemplateType>,
+    ) -> Self {
+        self.template_type = input;
+        self
     }
     /// <p>The provider type for your repository.</p>
     pub fn repository_provider(mut self, input: crate::types::RepositoryProvider) -> Self {
@@ -91,8 +98,12 @@ impl CreateTemplateSyncConfigInputBuilder {
         self
     }
     /// <p>The provider type for your repository.</p>
-    pub fn set_repository_provider(mut self, input: std::option::Option<crate::types::RepositoryProvider>) -> Self {
-        self.repository_provider = input; self
+    pub fn set_repository_provider(
+        mut self,
+        input: std::option::Option<crate::types::RepositoryProvider>,
+    ) -> Self {
+        self.repository_provider = input;
+        self
     }
     /// <p>The repository name (for example, <code>myrepos/myrepo</code>).</p>
     pub fn repository_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -101,7 +112,8 @@ impl CreateTemplateSyncConfigInputBuilder {
     }
     /// <p>The repository name (for example, <code>myrepos/myrepo</code>).</p>
     pub fn set_repository_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.repository_name = input; self
+        self.repository_name = input;
+        self
     }
     /// <p>The repository branch for your template.</p>
     pub fn branch(mut self, input: impl Into<std::string::String>) -> Self {
@@ -110,7 +122,8 @@ impl CreateTemplateSyncConfigInputBuilder {
     }
     /// <p>The repository branch for your template.</p>
     pub fn set_branch(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.branch = input; self
+        self.branch = input;
+        self
     }
     /// <p>A repository subdirectory path to your template bundle directory. When included, Proton limits the template bundle search to this repository directory.</p>
     pub fn subdirectory(mut self, input: impl Into<std::string::String>) -> Self {
@@ -119,26 +132,25 @@ impl CreateTemplateSyncConfigInputBuilder {
     }
     /// <p>A repository subdirectory path to your template bundle directory. When included, Proton limits the template bundle search to this repository directory.</p>
     pub fn set_subdirectory(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.subdirectory = input; self
+        self.subdirectory = input;
+        self
     }
     /// Consumes the builder and constructs a [`CreateTemplateSyncConfigInput`](crate::operation::create_template_sync_config::CreateTemplateSyncConfigInput).
-    pub fn build(self) -> Result<crate::operation::create_template_sync_config::CreateTemplateSyncConfigInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::create_template_sync_config::CreateTemplateSyncConfigInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::create_template_sync_config::CreateTemplateSyncConfigInput {
-                template_name: self.template_name
-                ,
-                template_type: self.template_type
-                ,
-                repository_provider: self.repository_provider
-                ,
-                repository_name: self.repository_name
-                ,
-                branch: self.branch
-                ,
-                subdirectory: self.subdirectory
-                ,
-            }
+                template_name: self.template_name,
+                template_type: self.template_type,
+                repository_provider: self.repository_provider,
+                repository_name: self.repository_name,
+                branch: self.branch,
+                subdirectory: self.subdirectory,
+            },
         )
     }
 }
-

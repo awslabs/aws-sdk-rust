@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteRecordInput  {
+pub struct DeleteRecordInput {
     /// <p>The name of the feature group to delete the record from. </p>
     #[doc(hidden)]
     pub feature_group_name: std::option::Option<std::string::String>,
@@ -18,19 +18,19 @@ pub struct DeleteRecordInput  {
 }
 impl DeleteRecordInput {
     /// <p>The name of the feature group to delete the record from. </p>
-    pub fn feature_group_name(&self) -> std::option::Option<& str> {
+    pub fn feature_group_name(&self) -> std::option::Option<&str> {
         self.feature_group_name.as_deref()
     }
     /// <p>The value for the <code>RecordIdentifier</code> that uniquely identifies the record, in string format. </p>
-    pub fn record_identifier_value_as_string(&self) -> std::option::Option<& str> {
+    pub fn record_identifier_value_as_string(&self) -> std::option::Option<&str> {
         self.record_identifier_value_as_string.as_deref()
     }
     /// <p>Timestamp indicating when the deletion event occurred. <code>EventTime</code> can be used to query data at a certain point in time.</p>
-    pub fn event_time(&self) -> std::option::Option<& str> {
+    pub fn event_time(&self) -> std::option::Option<&str> {
         self.event_time.as_deref()
     }
     /// <p>A list of stores from which you're deleting the record. By default, Feature Store deletes the record from all of the stores that you're using for the <code>FeatureGroup</code>.</p>
-    pub fn target_stores(&self) -> std::option::Option<& [crate::types::TargetStore]> {
+    pub fn target_stores(&self) -> std::option::Option<&[crate::types::TargetStore]> {
         self.target_stores.as_deref()
     }
 }
@@ -57,17 +57,28 @@ impl DeleteRecordInputBuilder {
         self
     }
     /// <p>The name of the feature group to delete the record from. </p>
-    pub fn set_feature_group_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.feature_group_name = input; self
+    pub fn set_feature_group_name(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.feature_group_name = input;
+        self
     }
     /// <p>The value for the <code>RecordIdentifier</code> that uniquely identifies the record, in string format. </p>
-    pub fn record_identifier_value_as_string(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn record_identifier_value_as_string(
+        mut self,
+        input: impl Into<std::string::String>,
+    ) -> Self {
         self.record_identifier_value_as_string = Some(input.into());
         self
     }
     /// <p>The value for the <code>RecordIdentifier</code> that uniquely identifies the record, in string format. </p>
-    pub fn set_record_identifier_value_as_string(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.record_identifier_value_as_string = input; self
+    pub fn set_record_identifier_value_as_string(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.record_identifier_value_as_string = input;
+        self
     }
     /// <p>Timestamp indicating when the deletion event occurred. <code>EventTime</code> can be used to query data at a certain point in time.</p>
     pub fn event_time(mut self, input: impl Into<std::string::String>) -> Self {
@@ -76,7 +87,8 @@ impl DeleteRecordInputBuilder {
     }
     /// <p>Timestamp indicating when the deletion event occurred. <code>EventTime</code> can be used to query data at a certain point in time.</p>
     pub fn set_event_time(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.event_time = input; self
+        self.event_time = input;
+        self
     }
     /// Appends an item to `target_stores`.
     ///
@@ -85,28 +97,30 @@ impl DeleteRecordInputBuilder {
     /// <p>A list of stores from which you're deleting the record. By default, Feature Store deletes the record from all of the stores that you're using for the <code>FeatureGroup</code>.</p>
     pub fn target_stores(mut self, input: crate::types::TargetStore) -> Self {
         let mut v = self.target_stores.unwrap_or_default();
-                        v.push(input);
-                        self.target_stores = Some(v);
-                        self
+        v.push(input);
+        self.target_stores = Some(v);
+        self
     }
     /// <p>A list of stores from which you're deleting the record. By default, Feature Store deletes the record from all of the stores that you're using for the <code>FeatureGroup</code>.</p>
-    pub fn set_target_stores(mut self, input: std::option::Option<std::vec::Vec<crate::types::TargetStore>>) -> Self {
-        self.target_stores = input; self
+    pub fn set_target_stores(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::TargetStore>>,
+    ) -> Self {
+        self.target_stores = input;
+        self
     }
     /// Consumes the builder and constructs a [`DeleteRecordInput`](crate::operation::delete_record::DeleteRecordInput).
-    pub fn build(self) -> Result<crate::operation::delete_record::DeleteRecordInput, aws_smithy_http::operation::error::BuildError> {
-        Ok(
-            crate::operation::delete_record::DeleteRecordInput {
-                feature_group_name: self.feature_group_name
-                ,
-                record_identifier_value_as_string: self.record_identifier_value_as_string
-                ,
-                event_time: self.event_time
-                ,
-                target_stores: self.target_stores
-                ,
-            }
-        )
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::delete_record::DeleteRecordInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        Ok(crate::operation::delete_record::DeleteRecordInput {
+            feature_group_name: self.feature_group_name,
+            record_identifier_value_as_string: self.record_identifier_value_as_string,
+            event_time: self.event_time,
+            target_stores: self.target_stores,
+        })
     }
 }
-

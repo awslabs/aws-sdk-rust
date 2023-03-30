@@ -3,20 +3,21 @@
 /// <p>Represents the input of a <code>BatchGetApplications</code> operation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct BatchGetApplicationsInput  {
+pub struct BatchGetApplicationsInput {
     /// <p>A list of application names separated by spaces. The maximum number of application names you can specify is 100.</p>
     #[doc(hidden)]
     pub application_names: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl BatchGetApplicationsInput {
     /// <p>A list of application names separated by spaces. The maximum number of application names you can specify is 100.</p>
-    pub fn application_names(&self) -> std::option::Option<& [std::string::String]> {
+    pub fn application_names(&self) -> std::option::Option<&[std::string::String]> {
         self.application_names.as_deref()
     }
 }
 impl BatchGetApplicationsInput {
     /// Creates a new builder-style object to manufacture [`BatchGetApplicationsInput`](crate::operation::batch_get_applications::BatchGetApplicationsInput).
-    pub fn builder() -> crate::operation::batch_get_applications::builders::BatchGetApplicationsInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::batch_get_applications::builders::BatchGetApplicationsInputBuilder {
         crate::operation::batch_get_applications::builders::BatchGetApplicationsInputBuilder::default()
     }
 }
@@ -35,22 +36,29 @@ impl BatchGetApplicationsInputBuilder {
     /// <p>A list of application names separated by spaces. The maximum number of application names you can specify is 100.</p>
     pub fn application_names(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.application_names.unwrap_or_default();
-                        v.push(input.into());
-                        self.application_names = Some(v);
-                        self
+        v.push(input.into());
+        self.application_names = Some(v);
+        self
     }
     /// <p>A list of application names separated by spaces. The maximum number of application names you can specify is 100.</p>
-    pub fn set_application_names(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-        self.application_names = input; self
+    pub fn set_application_names(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
+        self.application_names = input;
+        self
     }
     /// Consumes the builder and constructs a [`BatchGetApplicationsInput`](crate::operation::batch_get_applications::BatchGetApplicationsInput).
-    pub fn build(self) -> Result<crate::operation::batch_get_applications::BatchGetApplicationsInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::batch_get_applications::BatchGetApplicationsInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::batch_get_applications::BatchGetApplicationsInput {
-                application_names: self.application_names
-                ,
-            }
+                application_names: self.application_names,
+            },
         )
     }
 }
-

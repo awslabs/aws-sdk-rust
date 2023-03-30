@@ -2,20 +2,21 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteCoreDeviceInput  {
+pub struct DeleteCoreDeviceInput {
     /// <p>The name of the core device. This is also the name of the IoT thing.</p>
     #[doc(hidden)]
     pub core_device_thing_name: std::option::Option<std::string::String>,
 }
 impl DeleteCoreDeviceInput {
     /// <p>The name of the core device. This is also the name of the IoT thing.</p>
-    pub fn core_device_thing_name(&self) -> std::option::Option<& str> {
+    pub fn core_device_thing_name(&self) -> std::option::Option<&str> {
         self.core_device_thing_name.as_deref()
     }
 }
 impl DeleteCoreDeviceInput {
     /// Creates a new builder-style object to manufacture [`DeleteCoreDeviceInput`](crate::operation::delete_core_device::DeleteCoreDeviceInput).
-    pub fn builder() -> crate::operation::delete_core_device::builders::DeleteCoreDeviceInputBuilder {
+    pub fn builder() -> crate::operation::delete_core_device::builders::DeleteCoreDeviceInputBuilder
+    {
         crate::operation::delete_core_device::builders::DeleteCoreDeviceInputBuilder::default()
     }
 }
@@ -33,17 +34,24 @@ impl DeleteCoreDeviceInputBuilder {
         self
     }
     /// <p>The name of the core device. This is also the name of the IoT thing.</p>
-    pub fn set_core_device_thing_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.core_device_thing_name = input; self
+    pub fn set_core_device_thing_name(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.core_device_thing_name = input;
+        self
     }
     /// Consumes the builder and constructs a [`DeleteCoreDeviceInput`](crate::operation::delete_core_device::DeleteCoreDeviceInput).
-    pub fn build(self) -> Result<crate::operation::delete_core_device::DeleteCoreDeviceInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::delete_core_device::DeleteCoreDeviceInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::delete_core_device::DeleteCoreDeviceInput {
-                core_device_thing_name: self.core_device_thing_name
-                ,
-            }
+                core_device_thing_name: self.core_device_thing_name,
+            },
         )
     }
 }
-

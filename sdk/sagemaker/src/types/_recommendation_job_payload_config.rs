@@ -3,7 +3,7 @@
 /// <p>The configuration for the payload for a recommendation job.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct RecommendationJobPayloadConfig  {
+pub struct RecommendationJobPayloadConfig {
     /// <p>The Amazon Simple Storage Service (Amazon S3) path where the sample payload is stored. This path must point to a single gzip compressed tar archive (.tar.gz suffix).</p>
     #[doc(hidden)]
     pub sample_payload_url: std::option::Option<std::string::String>,
@@ -13,11 +13,11 @@ pub struct RecommendationJobPayloadConfig  {
 }
 impl RecommendationJobPayloadConfig {
     /// <p>The Amazon Simple Storage Service (Amazon S3) path where the sample payload is stored. This path must point to a single gzip compressed tar archive (.tar.gz suffix).</p>
-    pub fn sample_payload_url(&self) -> std::option::Option<& str> {
+    pub fn sample_payload_url(&self) -> std::option::Option<&str> {
         self.sample_payload_url.as_deref()
     }
     /// <p>The supported MIME types for the input data.</p>
-    pub fn supported_content_types(&self) -> std::option::Option<& [std::string::String]> {
+    pub fn supported_content_types(&self) -> std::option::Option<&[std::string::String]> {
         self.supported_content_types.as_deref()
     }
 }
@@ -42,8 +42,12 @@ impl RecommendationJobPayloadConfigBuilder {
         self
     }
     /// <p>The Amazon Simple Storage Service (Amazon S3) path where the sample payload is stored. This path must point to a single gzip compressed tar archive (.tar.gz suffix).</p>
-    pub fn set_sample_payload_url(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.sample_payload_url = input; self
+    pub fn set_sample_payload_url(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.sample_payload_url = input;
+        self
     }
     /// Appends an item to `supported_content_types`.
     ///
@@ -52,22 +56,23 @@ impl RecommendationJobPayloadConfigBuilder {
     /// <p>The supported MIME types for the input data.</p>
     pub fn supported_content_types(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.supported_content_types.unwrap_or_default();
-                        v.push(input.into());
-                        self.supported_content_types = Some(v);
-                        self
+        v.push(input.into());
+        self.supported_content_types = Some(v);
+        self
     }
     /// <p>The supported MIME types for the input data.</p>
-    pub fn set_supported_content_types(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-        self.supported_content_types = input; self
+    pub fn set_supported_content_types(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
+        self.supported_content_types = input;
+        self
     }
     /// Consumes the builder and constructs a [`RecommendationJobPayloadConfig`](crate::types::RecommendationJobPayloadConfig).
     pub fn build(self) -> crate::types::RecommendationJobPayloadConfig {
         crate::types::RecommendationJobPayloadConfig {
-            sample_payload_url: self.sample_payload_url
-            ,
-            supported_content_types: self.supported_content_types
-            ,
+            sample_payload_url: self.sample_payload_url,
+            supported_content_types: self.supported_content_types,
         }
     }
 }
-

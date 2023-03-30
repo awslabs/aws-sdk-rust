@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateAccountAssignmentInput  {
+pub struct CreateAccountAssignmentInput {
     /// <p>The ARN of the IAM Identity Center instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.</p>
     #[doc(hidden)]
     pub instance_arn: std::option::Option<std::string::String>,
@@ -24,33 +24,35 @@ pub struct CreateAccountAssignmentInput  {
 }
 impl CreateAccountAssignmentInput {
     /// <p>The ARN of the IAM Identity Center instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.</p>
-    pub fn instance_arn(&self) -> std::option::Option<& str> {
+    pub fn instance_arn(&self) -> std::option::Option<&str> {
         self.instance_arn.as_deref()
     }
     /// <p>TargetID is an AWS account identifier, typically a 10-12 digit string (For example, 123456789012).</p>
-    pub fn target_id(&self) -> std::option::Option<& str> {
+    pub fn target_id(&self) -> std::option::Option<&str> {
         self.target_id.as_deref()
     }
     /// <p>The entity type for which the assignment will be created.</p>
-    pub fn target_type(&self) -> std::option::Option<& crate::types::TargetType> {
+    pub fn target_type(&self) -> std::option::Option<&crate::types::TargetType> {
         self.target_type.as_ref()
     }
     /// <p>The ARN of the permission set that the admin wants to grant the principal access to.</p>
-    pub fn permission_set_arn(&self) -> std::option::Option<& str> {
+    pub fn permission_set_arn(&self) -> std::option::Option<&str> {
         self.permission_set_arn.as_deref()
     }
     /// <p>The entity type for which the assignment will be created.</p>
-    pub fn principal_type(&self) -> std::option::Option<& crate::types::PrincipalType> {
+    pub fn principal_type(&self) -> std::option::Option<&crate::types::PrincipalType> {
         self.principal_type.as_ref()
     }
     /// <p>An identifier for an object in IAM Identity Center, such as a user or group. PrincipalIds are GUIDs (For example, f81d4fae-7dec-11d0-a765-00a0c91e6bf6). For more information about PrincipalIds in IAM Identity Center, see the <a href="/singlesignon/latest/IdentityStoreAPIReference/welcome.html">IAM Identity Center Identity Store API Reference</a>.</p>
-    pub fn principal_id(&self) -> std::option::Option<& str> {
+    pub fn principal_id(&self) -> std::option::Option<&str> {
         self.principal_id.as_deref()
     }
 }
 impl CreateAccountAssignmentInput {
     /// Creates a new builder-style object to manufacture [`CreateAccountAssignmentInput`](crate::operation::create_account_assignment::CreateAccountAssignmentInput).
-    pub fn builder() -> crate::operation::create_account_assignment::builders::CreateAccountAssignmentInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::create_account_assignment::builders::CreateAccountAssignmentInputBuilder
+    {
         crate::operation::create_account_assignment::builders::CreateAccountAssignmentInputBuilder::default()
     }
 }
@@ -74,7 +76,8 @@ impl CreateAccountAssignmentInputBuilder {
     }
     /// <p>The ARN of the IAM Identity Center instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.</p>
     pub fn set_instance_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.instance_arn = input; self
+        self.instance_arn = input;
+        self
     }
     /// <p>TargetID is an AWS account identifier, typically a 10-12 digit string (For example, 123456789012).</p>
     pub fn target_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -83,7 +86,8 @@ impl CreateAccountAssignmentInputBuilder {
     }
     /// <p>TargetID is an AWS account identifier, typically a 10-12 digit string (For example, 123456789012).</p>
     pub fn set_target_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.target_id = input; self
+        self.target_id = input;
+        self
     }
     /// <p>The entity type for which the assignment will be created.</p>
     pub fn target_type(mut self, input: crate::types::TargetType) -> Self {
@@ -92,7 +96,8 @@ impl CreateAccountAssignmentInputBuilder {
     }
     /// <p>The entity type for which the assignment will be created.</p>
     pub fn set_target_type(mut self, input: std::option::Option<crate::types::TargetType>) -> Self {
-        self.target_type = input; self
+        self.target_type = input;
+        self
     }
     /// <p>The ARN of the permission set that the admin wants to grant the principal access to.</p>
     pub fn permission_set_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -100,8 +105,12 @@ impl CreateAccountAssignmentInputBuilder {
         self
     }
     /// <p>The ARN of the permission set that the admin wants to grant the principal access to.</p>
-    pub fn set_permission_set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.permission_set_arn = input; self
+    pub fn set_permission_set_arn(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.permission_set_arn = input;
+        self
     }
     /// <p>The entity type for which the assignment will be created.</p>
     pub fn principal_type(mut self, input: crate::types::PrincipalType) -> Self {
@@ -109,8 +118,12 @@ impl CreateAccountAssignmentInputBuilder {
         self
     }
     /// <p>The entity type for which the assignment will be created.</p>
-    pub fn set_principal_type(mut self, input: std::option::Option<crate::types::PrincipalType>) -> Self {
-        self.principal_type = input; self
+    pub fn set_principal_type(
+        mut self,
+        input: std::option::Option<crate::types::PrincipalType>,
+    ) -> Self {
+        self.principal_type = input;
+        self
     }
     /// <p>An identifier for an object in IAM Identity Center, such as a user or group. PrincipalIds are GUIDs (For example, f81d4fae-7dec-11d0-a765-00a0c91e6bf6). For more information about PrincipalIds in IAM Identity Center, see the <a href="/singlesignon/latest/IdentityStoreAPIReference/welcome.html">IAM Identity Center Identity Store API Reference</a>.</p>
     pub fn principal_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -119,26 +132,25 @@ impl CreateAccountAssignmentInputBuilder {
     }
     /// <p>An identifier for an object in IAM Identity Center, such as a user or group. PrincipalIds are GUIDs (For example, f81d4fae-7dec-11d0-a765-00a0c91e6bf6). For more information about PrincipalIds in IAM Identity Center, see the <a href="/singlesignon/latest/IdentityStoreAPIReference/welcome.html">IAM Identity Center Identity Store API Reference</a>.</p>
     pub fn set_principal_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.principal_id = input; self
+        self.principal_id = input;
+        self
     }
     /// Consumes the builder and constructs a [`CreateAccountAssignmentInput`](crate::operation::create_account_assignment::CreateAccountAssignmentInput).
-    pub fn build(self) -> Result<crate::operation::create_account_assignment::CreateAccountAssignmentInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::create_account_assignment::CreateAccountAssignmentInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::create_account_assignment::CreateAccountAssignmentInput {
-                instance_arn: self.instance_arn
-                ,
-                target_id: self.target_id
-                ,
-                target_type: self.target_type
-                ,
-                permission_set_arn: self.permission_set_arn
-                ,
-                principal_type: self.principal_type
-                ,
-                principal_id: self.principal_id
-                ,
-            }
+                instance_arn: self.instance_arn,
+                target_id: self.target_id,
+                target_type: self.target_type,
+                permission_set_arn: self.permission_set_arn,
+                principal_type: self.principal_type,
+                principal_id: self.principal_id,
+            },
         )
     }
 }
-

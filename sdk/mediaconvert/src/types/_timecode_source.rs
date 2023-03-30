@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-/// 
+///
 /// Here is an example of how you can make a match expression forward-compatible:
-/// 
+///
 /// ```text
 /// # let timecodesource = unimplemented!();
 /// match timecodesource {
@@ -31,14 +31,22 @@
 /// Specifically, when `timecodesource` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `TimecodeSource::NewFeature` also yielding `"NewFeature"`.
-/// 
+///
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 /// Use Source (TimecodeSource) to set how timecodes are handled within this job. To make sure that your video, audio, captions, and markers are synchronized and that time-based features, such as image inserter, work correctly, choose the Timecode source option that matches your assets. All timecodes are in a 24-hour format with frame number (HH:MM:SS:FF). * Embedded (EMBEDDED) - Use the timecode that is in the input video. If no embedded timecode is in the source, the service will use Start at 0 (ZEROBASED) instead. * Start at 0 (ZEROBASED) - Set the timecode of the initial frame to 00:00:00:00. * Specified Start (SPECIFIEDSTART) - Set the timecode of the initial frame to a value other than zero. You use Start timecode (Start) to provide this value.
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
 pub enum TimecodeSource {
     #[allow(missing_docs)] // documentation missing in model
     Embedded,
@@ -47,43 +55,44 @@ pub enum TimecodeSource {
     #[allow(missing_docs)] // documentation missing in model
     Zerobased,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::primitives::UnknownVariantValue)
+    Unknown(crate::primitives::UnknownVariantValue),
 }
 impl std::convert::From<&str> for TimecodeSource {
-                fn from(s: &str) -> Self {
-                    match s {
-                        "EMBEDDED" => TimecodeSource::Embedded,
-"SPECIFIEDSTART" => TimecodeSource::Specifiedstart,
-"ZEROBASED" => TimecodeSource::Zerobased,
-other => TimecodeSource::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
-                    }
-                }
+    fn from(s: &str) -> Self {
+        match s {
+            "EMBEDDED" => TimecodeSource::Embedded,
+            "SPECIFIEDSTART" => TimecodeSource::Specifiedstart,
+            "ZEROBASED" => TimecodeSource::Zerobased,
+            other => {
+                TimecodeSource::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
             }
-impl std::str::FromStr for TimecodeSource {
-                type Err = std::convert::Infallible;
-
-                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-                    Ok(TimecodeSource::from(s))
-                }
-            }
-impl TimecodeSource {
-                /// Returns the `&str` value of the enum member.
-                pub fn as_str(&self) -> &str {
-                    match self {
-    TimecodeSource::Embedded => "EMBEDDED",
-    TimecodeSource::Specifiedstart => "SPECIFIEDSTART",
-    TimecodeSource::Zerobased => "ZEROBASED",
-    TimecodeSource::Unknown(value) => value.as_str()
+        }
+    }
 }
-                }
-                /// Returns all the `&str` representations of the enum members.
-                pub const fn values() -> &'static [&'static str] {
-                    &["EMBEDDED", "SPECIFIEDSTART", "ZEROBASED"]
-                }
-            }
-impl AsRef<str> for TimecodeSource {
-                fn as_ref(&self) -> &str {
-                    self.as_str()
-                }
-            }
+impl std::str::FromStr for TimecodeSource {
+    type Err = std::convert::Infallible;
 
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(TimecodeSource::from(s))
+    }
+}
+impl TimecodeSource {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            TimecodeSource::Embedded => "EMBEDDED",
+            TimecodeSource::Specifiedstart => "SPECIFIEDSTART",
+            TimecodeSource::Zerobased => "ZEROBASED",
+            TimecodeSource::Unknown(value) => value.as_str(),
+        }
+    }
+    /// Returns all the `&str` representations of the enum members.
+    pub const fn values() -> &'static [&'static str] {
+        &["EMBEDDED", "SPECIFIEDSTART", "ZEROBASED"]
+    }
+}
+impl AsRef<str> for TimecodeSource {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}

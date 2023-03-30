@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct CreateChannelFlowInput  {
+pub struct CreateChannelFlowInput {
     /// <p>The ARN of the channel flow request.</p>
     #[doc(hidden)]
     pub app_instance_arn: std::option::Option<std::string::String>,
@@ -21,27 +21,27 @@ pub struct CreateChannelFlowInput  {
 }
 impl CreateChannelFlowInput {
     /// <p>The ARN of the channel flow request.</p>
-    pub fn app_instance_arn(&self) -> std::option::Option<& str> {
+    pub fn app_instance_arn(&self) -> std::option::Option<&str> {
         self.app_instance_arn.as_deref()
     }
     /// <p>Information about the processor Lambda functions.</p>
-    pub fn processors(&self) -> std::option::Option<& [crate::types::Processor]> {
+    pub fn processors(&self) -> std::option::Option<&[crate::types::Processor]> {
         self.processors.as_deref()
     }
     /// <p>The name of the channel flow.</p>
-    pub fn name(&self) -> std::option::Option<& str> {
+    pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>The tags for the creation request.</p>
-    pub fn tags(&self) -> std::option::Option<& [crate::types::Tag]> {
+    pub fn tags(&self) -> std::option::Option<&[crate::types::Tag]> {
         self.tags.as_deref()
     }
     /// <p>The client token for the request. An Idempotency token.</p>
-    pub fn client_request_token(&self) -> std::option::Option<& str> {
+    pub fn client_request_token(&self) -> std::option::Option<&str> {
         self.client_request_token.as_deref()
     }
 }
-impl  std::fmt::Debug for CreateChannelFlowInput  {
+impl std::fmt::Debug for CreateChannelFlowInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateChannelFlowInput");
         formatter.field("app_instance_arn", &self.app_instance_arn);
@@ -54,7 +54,8 @@ impl  std::fmt::Debug for CreateChannelFlowInput  {
 }
 impl CreateChannelFlowInput {
     /// Creates a new builder-style object to manufacture [`CreateChannelFlowInput`](crate::operation::create_channel_flow::CreateChannelFlowInput).
-    pub fn builder() -> crate::operation::create_channel_flow::builders::CreateChannelFlowInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::create_channel_flow::builders::CreateChannelFlowInputBuilder {
         crate::operation::create_channel_flow::builders::CreateChannelFlowInputBuilder::default()
     }
 }
@@ -77,7 +78,8 @@ impl CreateChannelFlowInputBuilder {
     }
     /// <p>The ARN of the channel flow request.</p>
     pub fn set_app_instance_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.app_instance_arn = input; self
+        self.app_instance_arn = input;
+        self
     }
     /// Appends an item to `processors`.
     ///
@@ -86,13 +88,17 @@ impl CreateChannelFlowInputBuilder {
     /// <p>Information about the processor Lambda functions.</p>
     pub fn processors(mut self, input: crate::types::Processor) -> Self {
         let mut v = self.processors.unwrap_or_default();
-                        v.push(input);
-                        self.processors = Some(v);
-                        self
+        v.push(input);
+        self.processors = Some(v);
+        self
     }
     /// <p>Information about the processor Lambda functions.</p>
-    pub fn set_processors(mut self, input: std::option::Option<std::vec::Vec<crate::types::Processor>>) -> Self {
-        self.processors = input; self
+    pub fn set_processors(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::Processor>>,
+    ) -> Self {
+        self.processors = input;
+        self
     }
     /// <p>The name of the channel flow.</p>
     pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -101,7 +107,8 @@ impl CreateChannelFlowInputBuilder {
     }
     /// <p>The name of the channel flow.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input; self
+        self.name = input;
+        self
     }
     /// Appends an item to `tags`.
     ///
@@ -110,13 +117,17 @@ impl CreateChannelFlowInputBuilder {
     /// <p>The tags for the creation request.</p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
-                        v.push(input);
-                        self.tags = Some(v);
-                        self
+        v.push(input);
+        self.tags = Some(v);
+        self
     }
     /// <p>The tags for the creation request.</p>
-    pub fn set_tags(mut self, input: std::option::Option<std::vec::Vec<crate::types::Tag>>) -> Self {
-        self.tags = input; self
+    pub fn set_tags(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::Tag>>,
+    ) -> Self {
+        self.tags = input;
+        self
     }
     /// <p>The client token for the request. An Idempotency token.</p>
     pub fn client_request_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -124,24 +135,28 @@ impl CreateChannelFlowInputBuilder {
         self
     }
     /// <p>The client token for the request. An Idempotency token.</p>
-    pub fn set_client_request_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.client_request_token = input; self
+    pub fn set_client_request_token(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.client_request_token = input;
+        self
     }
     /// Consumes the builder and constructs a [`CreateChannelFlowInput`](crate::operation::create_channel_flow::CreateChannelFlowInput).
-    pub fn build(self) -> Result<crate::operation::create_channel_flow::CreateChannelFlowInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::create_channel_flow::CreateChannelFlowInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::create_channel_flow::CreateChannelFlowInput {
-                app_instance_arn: self.app_instance_arn
-                ,
-                processors: self.processors
-                ,
-                name: self.name
-                ,
-                tags: self.tags
-                ,
-                client_request_token: self.client_request_token
-                ,
-            }
+                app_instance_arn: self.app_instance_arn,
+                processors: self.processors,
+                name: self.name,
+                tags: self.tags,
+                client_request_token: self.client_request_token,
+            },
         )
     }
 }
@@ -156,4 +171,3 @@ impl std::fmt::Debug for CreateChannelFlowInputBuilder {
         formatter.finish()
     }
 }
-

@@ -3,7 +3,7 @@
 /// <p>The job completion criteria.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct TuningJobCompletionCriteria  {
+pub struct TuningJobCompletionCriteria {
     /// <p>The value of the objective metric.</p>
     #[doc(hidden)]
     pub target_objective_metric_value: std::option::Option<f32>,
@@ -35,14 +35,13 @@ impl TuningJobCompletionCriteriaBuilder {
     }
     /// <p>The value of the objective metric.</p>
     pub fn set_target_objective_metric_value(mut self, input: std::option::Option<f32>) -> Self {
-        self.target_objective_metric_value = input; self
+        self.target_objective_metric_value = input;
+        self
     }
     /// Consumes the builder and constructs a [`TuningJobCompletionCriteria`](crate::types::TuningJobCompletionCriteria).
     pub fn build(self) -> crate::types::TuningJobCompletionCriteria {
         crate::types::TuningJobCompletionCriteria {
-            target_objective_metric_value: self.target_objective_metric_value
-            ,
+            target_objective_metric_value: self.target_objective_metric_value,
         }
     }
 }
-

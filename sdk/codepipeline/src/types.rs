@@ -348,4 +348,3 @@ pub mod builders;
 
 /// Error types that AWS CodePipeline can respond with.
 pub mod error;
-

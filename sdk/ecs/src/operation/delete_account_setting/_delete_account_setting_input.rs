@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteAccountSettingInput  {
+pub struct DeleteAccountSettingInput {
     /// <p>The resource name to disable the account setting for. If <code>serviceLongArnFormat</code> is specified, the ARN for your Amazon ECS services is affected. If <code>taskLongArnFormat</code> is specified, the ARN and resource ID for your Amazon ECS tasks is affected. If <code>containerInstanceLongArnFormat</code> is specified, the ARN and resource ID for your Amazon ECS container instances is affected. If <code>awsvpcTrunking</code> is specified, the ENI limit for your Amazon ECS container instances is affected.</p>
     #[doc(hidden)]
     pub name: std::option::Option<crate::types::SettingName>,
@@ -12,17 +12,18 @@ pub struct DeleteAccountSettingInput  {
 }
 impl DeleteAccountSettingInput {
     /// <p>The resource name to disable the account setting for. If <code>serviceLongArnFormat</code> is specified, the ARN for your Amazon ECS services is affected. If <code>taskLongArnFormat</code> is specified, the ARN and resource ID for your Amazon ECS tasks is affected. If <code>containerInstanceLongArnFormat</code> is specified, the ARN and resource ID for your Amazon ECS container instances is affected. If <code>awsvpcTrunking</code> is specified, the ENI limit for your Amazon ECS container instances is affected.</p>
-    pub fn name(&self) -> std::option::Option<& crate::types::SettingName> {
+    pub fn name(&self) -> std::option::Option<&crate::types::SettingName> {
         self.name.as_ref()
     }
     /// <p>The Amazon Resource Name (ARN) of the principal. It can be an IAM user, IAM role, or the root user. If you specify the root user, it disables the account setting for all IAM users, IAM roles, and the root user of the account unless an IAM user or role explicitly overrides these settings. If this field is omitted, the setting is changed only for the authenticated user.</p>
-    pub fn principal_arn(&self) -> std::option::Option<& str> {
+    pub fn principal_arn(&self) -> std::option::Option<&str> {
         self.principal_arn.as_deref()
     }
 }
 impl DeleteAccountSettingInput {
     /// Creates a new builder-style object to manufacture [`DeleteAccountSettingInput`](crate::operation::delete_account_setting::DeleteAccountSettingInput).
-    pub fn builder() -> crate::operation::delete_account_setting::builders::DeleteAccountSettingInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::delete_account_setting::builders::DeleteAccountSettingInputBuilder {
         crate::operation::delete_account_setting::builders::DeleteAccountSettingInputBuilder::default()
     }
 }
@@ -42,7 +43,8 @@ impl DeleteAccountSettingInputBuilder {
     }
     /// <p>The resource name to disable the account setting for. If <code>serviceLongArnFormat</code> is specified, the ARN for your Amazon ECS services is affected. If <code>taskLongArnFormat</code> is specified, the ARN and resource ID for your Amazon ECS tasks is affected. If <code>containerInstanceLongArnFormat</code> is specified, the ARN and resource ID for your Amazon ECS container instances is affected. If <code>awsvpcTrunking</code> is specified, the ENI limit for your Amazon ECS container instances is affected.</p>
     pub fn set_name(mut self, input: std::option::Option<crate::types::SettingName>) -> Self {
-        self.name = input; self
+        self.name = input;
+        self
     }
     /// <p>The Amazon Resource Name (ARN) of the principal. It can be an IAM user, IAM role, or the root user. If you specify the root user, it disables the account setting for all IAM users, IAM roles, and the root user of the account unless an IAM user or role explicitly overrides these settings. If this field is omitted, the setting is changed only for the authenticated user.</p>
     pub fn principal_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -51,18 +53,21 @@ impl DeleteAccountSettingInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the principal. It can be an IAM user, IAM role, or the root user. If you specify the root user, it disables the account setting for all IAM users, IAM roles, and the root user of the account unless an IAM user or role explicitly overrides these settings. If this field is omitted, the setting is changed only for the authenticated user.</p>
     pub fn set_principal_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.principal_arn = input; self
+        self.principal_arn = input;
+        self
     }
     /// Consumes the builder and constructs a [`DeleteAccountSettingInput`](crate::operation::delete_account_setting::DeleteAccountSettingInput).
-    pub fn build(self) -> Result<crate::operation::delete_account_setting::DeleteAccountSettingInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::delete_account_setting::DeleteAccountSettingInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::delete_account_setting::DeleteAccountSettingInput {
-                name: self.name
-                ,
-                principal_arn: self.principal_arn
-                ,
-            }
+                name: self.name,
+                principal_arn: self.principal_arn,
+            },
         )
     }
 }
-

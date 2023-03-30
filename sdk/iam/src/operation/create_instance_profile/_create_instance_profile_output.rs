@@ -3,7 +3,7 @@
 /// <p>Contains the response to a successful <code>CreateInstanceProfile</code> request. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateInstanceProfileOutput  {
+pub struct CreateInstanceProfileOutput {
     /// <p>A structure containing details about the new instance profile.</p>
     #[doc(hidden)]
     pub instance_profile: std::option::Option<crate::types::InstanceProfile>,
@@ -11,18 +11,20 @@ pub struct CreateInstanceProfileOutput  {
 }
 impl CreateInstanceProfileOutput {
     /// <p>A structure containing details about the new instance profile.</p>
-    pub fn instance_profile(&self) -> std::option::Option<& crate::types::InstanceProfile> {
+    pub fn instance_profile(&self) -> std::option::Option<&crate::types::InstanceProfile> {
         self.instance_profile.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for CreateInstanceProfileOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl CreateInstanceProfileOutput {
     /// Creates a new builder-style object to manufacture [`CreateInstanceProfileOutput`](crate::operation::create_instance_profile::CreateInstanceProfileOutput).
-    pub fn builder() -> crate::operation::create_instance_profile::builders::CreateInstanceProfileOutputBuilder {
+    pub fn builder(
+    ) -> crate::operation::create_instance_profile::builders::CreateInstanceProfileOutputBuilder
+    {
         crate::operation::create_instance_profile::builders::CreateInstanceProfileOutputBuilder::default()
     }
 }
@@ -41,25 +43,27 @@ impl CreateInstanceProfileOutputBuilder {
         self
     }
     /// <p>A structure containing details about the new instance profile.</p>
-    pub fn set_instance_profile(mut self, input: std::option::Option<crate::types::InstanceProfile>) -> Self {
-        self.instance_profile = input; self
+    pub fn set_instance_profile(
+        mut self,
+        input: std::option::Option<crate::types::InstanceProfile>,
+    ) -> Self {
+        self.instance_profile = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`CreateInstanceProfileOutput`](crate::operation::create_instance_profile::CreateInstanceProfileOutput).
     pub fn build(self) -> crate::operation::create_instance_profile::CreateInstanceProfileOutput {
         crate::operation::create_instance_profile::CreateInstanceProfileOutput {
-            instance_profile: self.instance_profile
-            ,
+            instance_profile: self.instance_profile,
             _request_id: self._request_id,
         }
     }
 }
-

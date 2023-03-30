@@ -4,72 +4,93 @@ pub use crate::operation::create_broker::_create_broker_output::CreateBrokerOutp
 pub use crate::operation::create_broker::_create_broker_input::CreateBrokerInputBuilder;
 
 /// Fluent builder constructing a request to `CreateBroker`.
-/// 
-/// <p>Creates a broker. Note: This API is asynchronous.</p> 
-/// <p>To create a broker, you must either use the AmazonMQFullAccess IAM policy or include the following EC2 permissions in your IAM policy.</p> 
+///
+/// <p>Creates a broker. Note: This API is asynchronous.</p>
+/// <p>To create a broker, you must either use the AmazonMQFullAccess IAM policy or include the following EC2 permissions in your IAM policy.</p>
 /// <ul>
-/// <li><p>ec2:CreateNetworkInterface</p> <p>This permission is required to allow Amazon MQ to create an elastic network interface (ENI) on behalf of your account.</p></li> 
-/// <li><p>ec2:CreateNetworkInterfacePermission</p> <p>This permission is required to attach the ENI to the broker instance.</p></li> 
-/// <li><p>ec2:DeleteNetworkInterface</p></li> 
-/// <li><p>ec2:DeleteNetworkInterfacePermission</p></li> 
-/// <li><p>ec2:DetachNetworkInterface</p></li> 
-/// <li><p>ec2:DescribeInternetGateways</p></li> 
-/// <li><p>ec2:DescribeNetworkInterfaces</p></li> 
-/// <li><p>ec2:DescribeNetworkInterfacePermissions</p></li> 
-/// <li><p>ec2:DescribeRouteTables</p></li> 
-/// <li><p>ec2:DescribeSecurityGroups</p></li> 
-/// <li><p>ec2:DescribeSubnets</p></li> 
+/// <li><p>ec2:CreateNetworkInterface</p> <p>This permission is required to allow Amazon MQ to create an elastic network interface (ENI) on behalf of your account.</p></li>
+/// <li><p>ec2:CreateNetworkInterfacePermission</p> <p>This permission is required to attach the ENI to the broker instance.</p></li>
+/// <li><p>ec2:DeleteNetworkInterface</p></li>
+/// <li><p>ec2:DeleteNetworkInterfacePermission</p></li>
+/// <li><p>ec2:DetachNetworkInterface</p></li>
+/// <li><p>ec2:DescribeInternetGateways</p></li>
+/// <li><p>ec2:DescribeNetworkInterfaces</p></li>
+/// <li><p>ec2:DescribeNetworkInterfacePermissions</p></li>
+/// <li><p>ec2:DescribeRouteTables</p></li>
+/// <li><p>ec2:DescribeSecurityGroups</p></li>
+/// <li><p>ec2:DescribeSubnets</p></li>
 /// <li><p>ec2:DescribeVpcs</p></li>
-/// </ul> 
+/// </ul>
 /// <p>For more information, see <a href="https://docs.aws.amazon.com//amazon-mq/latest/developer-guide/amazon-mq-setting-up.html#create-iam-user">Create an IAM User and Get Your AWS Credentials</a> and <a href="https://docs.aws.amazon.com/amazon-mq/latest/developer-guide/connecting-to-amazon-mq.html#never-modify-delete-elastic-network-interface">Never Modify or Delete the Amazon MQ Elastic Network Interface</a> in the <i>Amazon MQ Developer Guide</i>.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct CreateBrokerFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::create_broker::builders::CreateBrokerInputBuilder
-            }
-impl CreateBrokerFluentBuilder  {
+    handle: std::sync::Arc<crate::client::Handle>,
+    inner: crate::operation::create_broker::builders::CreateBrokerInputBuilder,
+}
+impl CreateBrokerFluentBuilder {
     /// Creates a new `CreateBroker`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
-                    /// sent. The operation's inner [http::Request] can be modified as well.
-                    pub async fn customize(self) -> std::result::Result<
-                        crate::client::customize::CustomizableOperation<crate::operation::create_broker::CreateBroker, aws_http::retry::AwsResponseRetryClassifier,>,
-                        aws_smithy_http::result::SdkError<crate::operation::create_broker::CreateBrokerError>
-                    >  {
-                        let handle = self.handle.clone();
-                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-                    }
-    
-                    /// Sends the request and returns the response.
-                    ///
-                    /// If an error occurs, an `SdkError` will be returned with additional details that
-                    /// can be matched against.
-                    ///
-                    /// By default, any retryable failures will be retried twice. Retry behavior
-                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                    /// set when configuring the client.
-                    pub async fn send(self) -> std::result::Result<crate::operation::create_broker::CreateBrokerOutput, aws_smithy_http::result::SdkError<crate::operation::create_broker::CreateBrokerError>>
-                     {
-                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&self.handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        self.handle.client.call(op).await
-                    }
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle,
+            inner: Default::default(),
+        }
+    }
+
+    /// Consume this builder, creating a customizable operation that can be modified before being
+    /// sent. The operation's inner [http::Request] can be modified as well.
+    pub async fn customize(
+        self,
+    ) -> std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::create_broker::CreateBroker,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::result::SdkError<crate::operation::create_broker::CreateBrokerError>,
+    > {
+        let handle = self.handle.clone();
+        let operation = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+    }
+
+    /// Sends the request and returns the response.
+    ///
+    /// If an error occurs, an `SdkError` will be returned with additional details that
+    /// can be matched against.
+    ///
+    /// By default, any retryable failures will be retried twice. Retry behavior
+    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+    /// set when configuring the client.
+    pub async fn send(
+        self,
+    ) -> std::result::Result<
+        crate::operation::create_broker::CreateBrokerOutput,
+        aws_smithy_http::result::SdkError<crate::operation::create_broker::CreateBrokerError>,
+    > {
+        let op = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&self.handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        self.handle.client.call(op).await
+    }
     /// <p>Optional. The authentication strategy used to secure the broker. The default is SIMPLE.</p>
     pub fn authentication_strategy(mut self, input: crate::types::AuthenticationStrategy) -> Self {
         self.inner = self.inner.authentication_strategy(input);
         self
     }
     /// <p>Optional. The authentication strategy used to secure the broker. The default is SIMPLE.</p>
-    pub fn set_authentication_strategy(mut self, input: std::option::Option<crate::types::AuthenticationStrategy>) -> Self {
+    pub fn set_authentication_strategy(
+        mut self,
+        input: std::option::Option<crate::types::AuthenticationStrategy>,
+    ) -> Self {
         self.inner = self.inner.set_authentication_strategy(input);
         self
     }
@@ -99,7 +120,10 @@ impl CreateBrokerFluentBuilder  {
         self
     }
     /// <p>A list of information about the configuration.</p>
-    pub fn set_configuration(mut self, input: std::option::Option<crate::types::ConfigurationId>) -> Self {
+    pub fn set_configuration(
+        mut self,
+        input: std::option::Option<crate::types::ConfigurationId>,
+    ) -> Self {
         self.inner = self.inner.set_configuration(input);
         self
     }
@@ -109,7 +133,10 @@ impl CreateBrokerFluentBuilder  {
         self
     }
     /// <p>The unique ID that the requester receives for the created broker. Amazon MQ passes your ID with the API action. Note: We recommend using a Universally Unique Identifier (UUID) for the creatorRequestId. You may omit the creatorRequestId if your application doesn't require idempotency.</p>
-    pub fn set_creator_request_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_creator_request_id(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_creator_request_id(input);
         self
     }
@@ -119,7 +146,10 @@ impl CreateBrokerFluentBuilder  {
         self
     }
     /// <p>Required. The broker's deployment mode.</p>
-    pub fn set_deployment_mode(mut self, input: std::option::Option<crate::types::DeploymentMode>) -> Self {
+    pub fn set_deployment_mode(
+        mut self,
+        input: std::option::Option<crate::types::DeploymentMode>,
+    ) -> Self {
         self.inner = self.inner.set_deployment_mode(input);
         self
     }
@@ -129,7 +159,10 @@ impl CreateBrokerFluentBuilder  {
         self
     }
     /// <p>Encryption options for the broker. Does not apply to RabbitMQ brokers.</p>
-    pub fn set_encryption_options(mut self, input: std::option::Option<crate::types::EncryptionOptions>) -> Self {
+    pub fn set_encryption_options(
+        mut self,
+        input: std::option::Option<crate::types::EncryptionOptions>,
+    ) -> Self {
         self.inner = self.inner.set_encryption_options(input);
         self
     }
@@ -159,7 +192,10 @@ impl CreateBrokerFluentBuilder  {
         self
     }
     /// <p>Required. The broker's instance type.</p>
-    pub fn set_host_instance_type(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_host_instance_type(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_host_instance_type(input);
         self
     }
@@ -169,7 +205,10 @@ impl CreateBrokerFluentBuilder  {
         self
     }
     /// <p>Optional. The metadata of the LDAP server used to authenticate and authorize connections to the broker. Does not apply to RabbitMQ brokers.</p>
-    pub fn set_ldap_server_metadata(mut self, input: std::option::Option<crate::types::LdapServerMetadataInput>) -> Self {
+    pub fn set_ldap_server_metadata(
+        mut self,
+        input: std::option::Option<crate::types::LdapServerMetadataInput>,
+    ) -> Self {
         self.inner = self.inner.set_ldap_server_metadata(input);
         self
     }
@@ -189,7 +228,10 @@ impl CreateBrokerFluentBuilder  {
         self
     }
     /// <p>The parameters that determine the WeeklyStartTime.</p>
-    pub fn set_maintenance_window_start_time(mut self, input: std::option::Option<crate::types::WeeklyStartTime>) -> Self {
+    pub fn set_maintenance_window_start_time(
+        mut self,
+        input: std::option::Option<crate::types::WeeklyStartTime>,
+    ) -> Self {
         self.inner = self.inner.set_maintenance_window_start_time(input);
         self
     }
@@ -213,7 +255,10 @@ impl CreateBrokerFluentBuilder  {
         self
     }
     /// <p>The list of rules (1 minimum, 125 maximum) that authorize connections to brokers.</p>
-    pub fn set_security_groups(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+    pub fn set_security_groups(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
         self.inner = self.inner.set_security_groups(input);
         self
     }
@@ -223,7 +268,10 @@ impl CreateBrokerFluentBuilder  {
         self
     }
     /// <p>The broker's storage type.</p>
-    pub fn set_storage_type(mut self, input: std::option::Option<crate::types::BrokerStorageType>) -> Self {
+    pub fn set_storage_type(
+        mut self,
+        input: std::option::Option<crate::types::BrokerStorageType>,
+    ) -> Self {
         self.inner = self.inner.set_storage_type(input);
         self
     }
@@ -241,7 +289,10 @@ impl CreateBrokerFluentBuilder  {
     /// <p>The list of groups that define which subnets and IP ranges the broker can use from different Availability Zones. If you specify more than one subnet, the subnets must be in different Availability Zones. Amazon MQ will not be able to create VPC endpoints for your broker with multiple subnets in the same Availability Zone. A SINGLE_INSTANCE deployment requires one subnet (for example, the default subnet). An ACTIVE_STANDBY_MULTI_AZ Amazon MQ for ActiveMQ deployment requires two subnets. A CLUSTER_MULTI_AZ Amazon MQ for RabbitMQ deployment has no subnet requirements when deployed with public accessibility. Deployment without public accessibility requires at least one subnet.</p> <important>
     /// <p>If you specify subnets in a <a href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-sharing.html">shared VPC</a> for a RabbitMQ broker, the associated VPC to which the specified subnets belong must be owned by your AWS account. Amazon MQ will not be able to create VPC endpoints in VPCs that are not owned by your AWS account.</p>
     /// </important>
-    pub fn set_subnet_ids(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+    pub fn set_subnet_ids(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
         self.inner = self.inner.set_subnet_ids(input);
         self
     }
@@ -250,12 +301,21 @@ impl CreateBrokerFluentBuilder  {
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// <p>Create tags when creating the broker.</p>
-    pub fn tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
+    pub fn tags(
+        mut self,
+        k: impl Into<std::string::String>,
+        v: impl Into<std::string::String>,
+    ) -> Self {
         self.inner = self.inner.tags(k.into(), v.into());
         self
     }
     /// <p>Create tags when creating the broker.</p>
-    pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+    pub fn set_tags(
+        mut self,
+        input: std::option::Option<
+            std::collections::HashMap<std::string::String, std::string::String>,
+        >,
+    ) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }
@@ -264,7 +324,7 @@ impl CreateBrokerFluentBuilder  {
     /// To override the contents of this collection use [`set_users`](Self::set_users).
     ///
     /// <p>Required. The list of broker users (persons or applications) who can access queues and topics. This value can contain only alphanumeric characters, dashes, periods, underscores, and tildes (- . _ ~). This value must be 2-100 characters long.</p> <important>
-    /// <title>Amazon MQ for RabbitMQ</title> 
+    /// <title>Amazon MQ for RabbitMQ</title>
     /// <p>When you create an Amazon MQ for RabbitMQ broker, one and only one administrative user is accepted and created when a broker is first provisioned. All subsequent broker users are created by making RabbitMQ API calls directly to brokers or via the RabbitMQ web console.</p>
     /// </important>
     pub fn users(mut self, input: crate::types::User) -> Self {
@@ -272,12 +332,14 @@ impl CreateBrokerFluentBuilder  {
         self
     }
     /// <p>Required. The list of broker users (persons or applications) who can access queues and topics. This value can contain only alphanumeric characters, dashes, periods, underscores, and tildes (- . _ ~). This value must be 2-100 characters long.</p> <important>
-    /// <title>Amazon MQ for RabbitMQ</title> 
+    /// <title>Amazon MQ for RabbitMQ</title>
     /// <p>When you create an Amazon MQ for RabbitMQ broker, one and only one administrative user is accepted and created when a broker is first provisioned. All subsequent broker users are created by making RabbitMQ API calls directly to brokers or via the RabbitMQ web console.</p>
     /// </important>
-    pub fn set_users(mut self, input: std::option::Option<std::vec::Vec<crate::types::User>>) -> Self {
+    pub fn set_users(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::User>>,
+    ) -> Self {
         self.inner = self.inner.set_users(input);
         self
     }
 }
-

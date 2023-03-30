@@ -3,7 +3,7 @@
 /// <p>An array that describes a data quality metric. Each <code>DataQualityMetric</code> object contains the data quality metric name, its value, a description of the metric, and the affected column.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DataQualityMetric  {
+pub struct DataQualityMetric {
     /// <p>The name of the data quality metric.</p>
     #[doc(hidden)]
     pub metric_type: std::option::Option<crate::types::DataQualityMetricType>,
@@ -19,15 +19,15 @@ pub struct DataQualityMetric  {
 }
 impl DataQualityMetric {
     /// <p>The name of the data quality metric.</p>
-    pub fn metric_type(&self) -> std::option::Option<& crate::types::DataQualityMetricType> {
+    pub fn metric_type(&self) -> std::option::Option<&crate::types::DataQualityMetricType> {
         self.metric_type.as_ref()
     }
     /// <p>A description of the data quality metric.</p>
-    pub fn metric_description(&self) -> std::option::Option<& str> {
+    pub fn metric_description(&self) -> std::option::Option<&str> {
         self.metric_description.as_deref()
     }
     /// <p>The column that is being monitored.</p>
-    pub fn related_column_name(&self) -> std::option::Option<& str> {
+    pub fn related_column_name(&self) -> std::option::Option<&str> {
         self.related_column_name.as_deref()
     }
     /// <p>The value of the data quality metric.</p>
@@ -58,8 +58,12 @@ impl DataQualityMetricBuilder {
         self
     }
     /// <p>The name of the data quality metric.</p>
-    pub fn set_metric_type(mut self, input: std::option::Option<crate::types::DataQualityMetricType>) -> Self {
-        self.metric_type = input; self
+    pub fn set_metric_type(
+        mut self,
+        input: std::option::Option<crate::types::DataQualityMetricType>,
+    ) -> Self {
+        self.metric_type = input;
+        self
     }
     /// <p>A description of the data quality metric.</p>
     pub fn metric_description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -67,8 +71,12 @@ impl DataQualityMetricBuilder {
         self
     }
     /// <p>A description of the data quality metric.</p>
-    pub fn set_metric_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.metric_description = input; self
+    pub fn set_metric_description(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.metric_description = input;
+        self
     }
     /// <p>The column that is being monitored.</p>
     pub fn related_column_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -76,8 +84,12 @@ impl DataQualityMetricBuilder {
         self
     }
     /// <p>The column that is being monitored.</p>
-    pub fn set_related_column_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.related_column_name = input; self
+    pub fn set_related_column_name(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.related_column_name = input;
+        self
     }
     /// <p>The value of the data quality metric.</p>
     pub fn metric_value(mut self, input: f64) -> Self {
@@ -86,20 +98,16 @@ impl DataQualityMetricBuilder {
     }
     /// <p>The value of the data quality metric.</p>
     pub fn set_metric_value(mut self, input: std::option::Option<f64>) -> Self {
-        self.metric_value = input; self
+        self.metric_value = input;
+        self
     }
     /// Consumes the builder and constructs a [`DataQualityMetric`](crate::types::DataQualityMetric).
     pub fn build(self) -> crate::types::DataQualityMetric {
         crate::types::DataQualityMetric {
-            metric_type: self.metric_type
-            ,
-            metric_description: self.metric_description
-            ,
-            related_column_name: self.related_column_name
-            ,
-            metric_value: self.metric_value
-            ,
+            metric_type: self.metric_type,
+            metric_description: self.metric_description,
+            related_column_name: self.related_column_name,
+            metric_value: self.metric_value,
         }
     }
 }
-

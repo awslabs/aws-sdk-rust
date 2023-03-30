@@ -2,20 +2,20 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeCachediScsiVolumesInput  {
+pub struct DescribeCachediScsiVolumesInput {
     /// <p>An array of strings where each string represents the Amazon Resource Name (ARN) of a cached volume. All of the specified cached volumes must be from the same gateway. Use <code>ListVolumes</code> to get volume ARNs for a gateway.</p>
     #[doc(hidden)]
     pub volume_ar_ns: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl DescribeCachediScsiVolumesInput {
     /// <p>An array of strings where each string represents the Amazon Resource Name (ARN) of a cached volume. All of the specified cached volumes must be from the same gateway. Use <code>ListVolumes</code> to get volume ARNs for a gateway.</p>
-    pub fn volume_ar_ns(&self) -> std::option::Option<& [std::string::String]> {
+    pub fn volume_ar_ns(&self) -> std::option::Option<&[std::string::String]> {
         self.volume_ar_ns.as_deref()
     }
 }
 impl DescribeCachediScsiVolumesInput {
     /// Creates a new builder-style object to manufacture [`DescribeCachediScsiVolumesInput`](crate::operation::describe_cachedi_scsi_volumes::DescribeCachediScsiVolumesInput).
-    pub fn builder() -> crate::operation::describe_cachedi_scsi_volumes::builders::DescribeCachediScsiVolumesInputBuilder {
+    pub fn builder() -> crate::operation::describe_cachedi_scsi_volumes::builders::DescribeCachediScsiVolumesInputBuilder{
         crate::operation::describe_cachedi_scsi_volumes::builders::DescribeCachediScsiVolumesInputBuilder::default()
     }
 }
@@ -34,22 +34,29 @@ impl DescribeCachediScsiVolumesInputBuilder {
     /// <p>An array of strings where each string represents the Amazon Resource Name (ARN) of a cached volume. All of the specified cached volumes must be from the same gateway. Use <code>ListVolumes</code> to get volume ARNs for a gateway.</p>
     pub fn volume_ar_ns(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.volume_ar_ns.unwrap_or_default();
-                        v.push(input.into());
-                        self.volume_ar_ns = Some(v);
-                        self
+        v.push(input.into());
+        self.volume_ar_ns = Some(v);
+        self
     }
     /// <p>An array of strings where each string represents the Amazon Resource Name (ARN) of a cached volume. All of the specified cached volumes must be from the same gateway. Use <code>ListVolumes</code> to get volume ARNs for a gateway.</p>
-    pub fn set_volume_ar_ns(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-        self.volume_ar_ns = input; self
+    pub fn set_volume_ar_ns(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
+        self.volume_ar_ns = input;
+        self
     }
     /// Consumes the builder and constructs a [`DescribeCachediScsiVolumesInput`](crate::operation::describe_cachedi_scsi_volumes::DescribeCachediScsiVolumesInput).
-    pub fn build(self) -> Result<crate::operation::describe_cachedi_scsi_volumes::DescribeCachediScsiVolumesInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::describe_cachedi_scsi_volumes::DescribeCachediScsiVolumesInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::describe_cachedi_scsi_volumes::DescribeCachediScsiVolumesInput {
-                volume_ar_ns: self.volume_ar_ns
-                ,
-            }
+                volume_ar_ns: self.volume_ar_ns,
+            },
         )
     }
 }
-

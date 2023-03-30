@@ -2,17 +2,19 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct RemoveFacetFromObjectOutput  {
+pub struct RemoveFacetFromObjectOutput {
     _request_id: Option<String>,
 }
 impl aws_http::request_id::RequestId for RemoveFacetFromObjectOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl RemoveFacetFromObjectOutput {
     /// Creates a new builder-style object to manufacture [`RemoveFacetFromObjectOutput`](crate::operation::remove_facet_from_object::RemoveFacetFromObjectOutput).
-    pub fn builder() -> crate::operation::remove_facet_from_object::builders::RemoveFacetFromObjectOutputBuilder {
+    pub fn builder(
+    ) -> crate::operation::remove_facet_from_object::builders::RemoveFacetFromObjectOutputBuilder
+    {
         crate::operation::remove_facet_from_object::builders::RemoveFacetFromObjectOutputBuilder::default()
     }
 }
@@ -25,14 +27,14 @@ pub struct RemoveFacetFromObjectOutputBuilder {
 }
 impl RemoveFacetFromObjectOutputBuilder {
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`RemoveFacetFromObjectOutput`](crate::operation::remove_facet_from_object::RemoveFacetFromObjectOutput).
     pub fn build(self) -> crate::operation::remove_facet_from_object::RemoveFacetFromObjectOutput {
         crate::operation::remove_facet_from_object::RemoveFacetFromObjectOutput {
@@ -40,4 +42,3 @@ impl RemoveFacetFromObjectOutputBuilder {
         }
     }
 }
-

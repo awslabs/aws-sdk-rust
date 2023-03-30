@@ -2,20 +2,20 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ResendOperationAuthorizationInput  {
+pub struct ResendOperationAuthorizationInput {
     /// <p> Operation ID. </p>
     #[doc(hidden)]
     pub operation_id: std::option::Option<std::string::String>,
 }
 impl ResendOperationAuthorizationInput {
     /// <p> Operation ID. </p>
-    pub fn operation_id(&self) -> std::option::Option<& str> {
+    pub fn operation_id(&self) -> std::option::Option<&str> {
         self.operation_id.as_deref()
     }
 }
 impl ResendOperationAuthorizationInput {
     /// Creates a new builder-style object to manufacture [`ResendOperationAuthorizationInput`](crate::operation::resend_operation_authorization::ResendOperationAuthorizationInput).
-    pub fn builder() -> crate::operation::resend_operation_authorization::builders::ResendOperationAuthorizationInputBuilder {
+    pub fn builder() -> crate::operation::resend_operation_authorization::builders::ResendOperationAuthorizationInputBuilder{
         crate::operation::resend_operation_authorization::builders::ResendOperationAuthorizationInputBuilder::default()
     }
 }
@@ -34,16 +34,20 @@ impl ResendOperationAuthorizationInputBuilder {
     }
     /// <p> Operation ID. </p>
     pub fn set_operation_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.operation_id = input; self
+        self.operation_id = input;
+        self
     }
     /// Consumes the builder and constructs a [`ResendOperationAuthorizationInput`](crate::operation::resend_operation_authorization::ResendOperationAuthorizationInput).
-    pub fn build(self) -> Result<crate::operation::resend_operation_authorization::ResendOperationAuthorizationInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::resend_operation_authorization::ResendOperationAuthorizationInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::resend_operation_authorization::ResendOperationAuthorizationInput {
-                operation_id: self.operation_id
-                ,
-            }
+                operation_id: self.operation_id,
+            },
         )
     }
 }
-

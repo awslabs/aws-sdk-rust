@@ -3,7 +3,7 @@
 /// <p>Contains the response to a successful <code>GenerateCredentialReport</code> request. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GenerateCredentialReportOutput  {
+pub struct GenerateCredentialReportOutput {
     /// <p>Information about the state of the credential report.</p>
     #[doc(hidden)]
     pub state: std::option::Option<crate::types::ReportStateType>,
@@ -14,22 +14,24 @@ pub struct GenerateCredentialReportOutput  {
 }
 impl GenerateCredentialReportOutput {
     /// <p>Information about the state of the credential report.</p>
-    pub fn state(&self) -> std::option::Option<& crate::types::ReportStateType> {
+    pub fn state(&self) -> std::option::Option<&crate::types::ReportStateType> {
         self.state.as_ref()
     }
     /// <p>Information about the credential report.</p>
-    pub fn description(&self) -> std::option::Option<& str> {
+    pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for GenerateCredentialReportOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl GenerateCredentialReportOutput {
     /// Creates a new builder-style object to manufacture [`GenerateCredentialReportOutput`](crate::operation::generate_credential_report::GenerateCredentialReportOutput).
-    pub fn builder() -> crate::operation::generate_credential_report::builders::GenerateCredentialReportOutputBuilder {
+    pub fn builder(
+    ) -> crate::operation::generate_credential_report::builders::GenerateCredentialReportOutputBuilder
+    {
         crate::operation::generate_credential_report::builders::GenerateCredentialReportOutputBuilder::default()
     }
 }
@@ -50,7 +52,8 @@ impl GenerateCredentialReportOutputBuilder {
     }
     /// <p>Information about the state of the credential report.</p>
     pub fn set_state(mut self, input: std::option::Option<crate::types::ReportStateType>) -> Self {
-        self.state = input; self
+        self.state = input;
+        self
     }
     /// <p>Information about the credential report.</p>
     pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -59,26 +62,26 @@ impl GenerateCredentialReportOutputBuilder {
     }
     /// <p>Information about the credential report.</p>
     pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.description = input; self
+        self.description = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`GenerateCredentialReportOutput`](crate::operation::generate_credential_report::GenerateCredentialReportOutput).
-    pub fn build(self) -> crate::operation::generate_credential_report::GenerateCredentialReportOutput {
+    pub fn build(
+        self,
+    ) -> crate::operation::generate_credential_report::GenerateCredentialReportOutput {
         crate::operation::generate_credential_report::GenerateCredentialReportOutput {
-            state: self.state
-            ,
-            description: self.description
-            ,
+            state: self.state,
+            description: self.description,
             _request_id: self._request_id,
         }
     }
 }
-

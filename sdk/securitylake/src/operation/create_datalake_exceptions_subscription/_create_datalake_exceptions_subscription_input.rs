@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateDatalakeExceptionsSubscriptionInput  {
+pub struct CreateDatalakeExceptionsSubscriptionInput {
     /// <p>The subscription protocol to which exception notifications are posted. </p>
     #[doc(hidden)]
     pub subscription_protocol: std::option::Option<crate::types::SubscriptionProtocolType>,
@@ -12,17 +12,19 @@ pub struct CreateDatalakeExceptionsSubscriptionInput  {
 }
 impl CreateDatalakeExceptionsSubscriptionInput {
     /// <p>The subscription protocol to which exception notifications are posted. </p>
-    pub fn subscription_protocol(&self) -> std::option::Option<& crate::types::SubscriptionProtocolType> {
+    pub fn subscription_protocol(
+        &self,
+    ) -> std::option::Option<&crate::types::SubscriptionProtocolType> {
         self.subscription_protocol.as_ref()
     }
     /// <p>The Amazon Web Services account where you want to receive exception notifications.</p>
-    pub fn notification_endpoint(&self) -> std::option::Option<& str> {
+    pub fn notification_endpoint(&self) -> std::option::Option<&str> {
         self.notification_endpoint.as_deref()
     }
 }
 impl CreateDatalakeExceptionsSubscriptionInput {
     /// Creates a new builder-style object to manufacture [`CreateDatalakeExceptionsSubscriptionInput`](crate::operation::create_datalake_exceptions_subscription::CreateDatalakeExceptionsSubscriptionInput).
-    pub fn builder() -> crate::operation::create_datalake_exceptions_subscription::builders::CreateDatalakeExceptionsSubscriptionInputBuilder {
+    pub fn builder() -> crate::operation::create_datalake_exceptions_subscription::builders::CreateDatalakeExceptionsSubscriptionInputBuilder{
         crate::operation::create_datalake_exceptions_subscription::builders::CreateDatalakeExceptionsSubscriptionInputBuilder::default()
     }
 }
@@ -41,8 +43,12 @@ impl CreateDatalakeExceptionsSubscriptionInputBuilder {
         self
     }
     /// <p>The subscription protocol to which exception notifications are posted. </p>
-    pub fn set_subscription_protocol(mut self, input: std::option::Option<crate::types::SubscriptionProtocolType>) -> Self {
-        self.subscription_protocol = input; self
+    pub fn set_subscription_protocol(
+        mut self,
+        input: std::option::Option<crate::types::SubscriptionProtocolType>,
+    ) -> Self {
+        self.subscription_protocol = input;
+        self
     }
     /// <p>The Amazon Web Services account where you want to receive exception notifications.</p>
     pub fn notification_endpoint(mut self, input: impl Into<std::string::String>) -> Self {
@@ -50,11 +56,15 @@ impl CreateDatalakeExceptionsSubscriptionInputBuilder {
         self
     }
     /// <p>The Amazon Web Services account where you want to receive exception notifications.</p>
-    pub fn set_notification_endpoint(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.notification_endpoint = input; self
+    pub fn set_notification_endpoint(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.notification_endpoint = input;
+        self
     }
     /// Consumes the builder and constructs a [`CreateDatalakeExceptionsSubscriptionInput`](crate::operation::create_datalake_exceptions_subscription::CreateDatalakeExceptionsSubscriptionInput).
-    pub fn build(self) -> Result<crate::operation::create_datalake_exceptions_subscription::CreateDatalakeExceptionsSubscriptionInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> Result<crate::operation::create_datalake_exceptions_subscription::CreateDatalakeExceptionsSubscriptionInput, aws_smithy_http::operation::error::BuildError>{
         Ok(
             crate::operation::create_datalake_exceptions_subscription::CreateDatalakeExceptionsSubscriptionInput {
                 subscription_protocol: self.subscription_protocol
@@ -65,4 +75,3 @@ impl CreateDatalakeExceptionsSubscriptionInputBuilder {
         )
     }
 }
-

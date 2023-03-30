@@ -3,7 +3,7 @@
 /// <p>The output of Records that have been retrieved in a batch.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct BatchGetRecordResultDetail  {
+pub struct BatchGetRecordResultDetail {
     /// <p>The <code>FeatureGroupName</code> containing Records you retrieved in a batch.</p>
     #[doc(hidden)]
     pub feature_group_name: std::option::Option<std::string::String>,
@@ -16,15 +16,15 @@ pub struct BatchGetRecordResultDetail  {
 }
 impl BatchGetRecordResultDetail {
     /// <p>The <code>FeatureGroupName</code> containing Records you retrieved in a batch.</p>
-    pub fn feature_group_name(&self) -> std::option::Option<& str> {
+    pub fn feature_group_name(&self) -> std::option::Option<&str> {
         self.feature_group_name.as_deref()
     }
     /// <p>The value of the record identifer in string format.</p>
-    pub fn record_identifier_value_as_string(&self) -> std::option::Option<& str> {
+    pub fn record_identifier_value_as_string(&self) -> std::option::Option<&str> {
         self.record_identifier_value_as_string.as_deref()
     }
     /// <p>The <code>Record</code> retrieved.</p>
-    pub fn record(&self) -> std::option::Option<& [crate::types::FeatureValue]> {
+    pub fn record(&self) -> std::option::Option<&[crate::types::FeatureValue]> {
         self.record.as_deref()
     }
 }
@@ -50,17 +50,28 @@ impl BatchGetRecordResultDetailBuilder {
         self
     }
     /// <p>The <code>FeatureGroupName</code> containing Records you retrieved in a batch.</p>
-    pub fn set_feature_group_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.feature_group_name = input; self
+    pub fn set_feature_group_name(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.feature_group_name = input;
+        self
     }
     /// <p>The value of the record identifer in string format.</p>
-    pub fn record_identifier_value_as_string(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn record_identifier_value_as_string(
+        mut self,
+        input: impl Into<std::string::String>,
+    ) -> Self {
         self.record_identifier_value_as_string = Some(input.into());
         self
     }
     /// <p>The value of the record identifer in string format.</p>
-    pub fn set_record_identifier_value_as_string(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.record_identifier_value_as_string = input; self
+    pub fn set_record_identifier_value_as_string(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.record_identifier_value_as_string = input;
+        self
     }
     /// Appends an item to `record`.
     ///
@@ -69,24 +80,24 @@ impl BatchGetRecordResultDetailBuilder {
     /// <p>The <code>Record</code> retrieved.</p>
     pub fn record(mut self, input: crate::types::FeatureValue) -> Self {
         let mut v = self.record.unwrap_or_default();
-                        v.push(input);
-                        self.record = Some(v);
-                        self
+        v.push(input);
+        self.record = Some(v);
+        self
     }
     /// <p>The <code>Record</code> retrieved.</p>
-    pub fn set_record(mut self, input: std::option::Option<std::vec::Vec<crate::types::FeatureValue>>) -> Self {
-        self.record = input; self
+    pub fn set_record(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::FeatureValue>>,
+    ) -> Self {
+        self.record = input;
+        self
     }
     /// Consumes the builder and constructs a [`BatchGetRecordResultDetail`](crate::types::BatchGetRecordResultDetail).
     pub fn build(self) -> crate::types::BatchGetRecordResultDetail {
         crate::types::BatchGetRecordResultDetail {
-            feature_group_name: self.feature_group_name
-            ,
-            record_identifier_value_as_string: self.record_identifier_value_as_string
-            ,
-            record: self.record
-            ,
+            feature_group_name: self.feature_group_name,
+            record_identifier_value_as_string: self.record_identifier_value_as_string,
+            record: self.record,
         }
     }
 }
-

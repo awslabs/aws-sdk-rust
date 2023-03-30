@@ -22,7 +22,7 @@ async fn list_buckets() -> Result<(), aws_sdk_s3::Error> {
 #[should_panic = "error: package ID specification `rustls` did not match any packages"]
 fn test_rustls_is_not_in_dependency_tree() {
     let cargo_location = std::env::var("CARGO").unwrap();
-    let cargo_command = std::process::Command::new(&cargo_location)
+    let cargo_command = std::process::Command::new(cargo_location)
         .arg("tree")
         .arg("--invert")
         .arg("rustls")

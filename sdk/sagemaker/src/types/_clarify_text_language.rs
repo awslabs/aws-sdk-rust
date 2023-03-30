@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-/// 
+///
 /// Here is an example of how you can make a match expression forward-compatible:
-/// 
+///
 /// ```text
 /// # let clarifytextlanguage = unimplemented!();
 /// match clarifytextlanguage {
@@ -88,14 +88,22 @@
 /// Specifically, when `clarifytextlanguage` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `ClarifyTextLanguage::NewFeature` also yielding `"NewFeature"`.
-/// 
+///
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
 pub enum ClarifyTextLanguage {
     #[allow(missing_docs)] // documentation missing in model
     Afrikaans,
@@ -218,157 +226,164 @@ pub enum ClarifyTextLanguage {
     #[allow(missing_docs)] // documentation missing in model
     Chinese,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::primitives::UnknownVariantValue)
+    Unknown(crate::primitives::UnknownVariantValue),
 }
 impl std::convert::From<&str> for ClarifyTextLanguage {
-                fn from(s: &str) -> Self {
-                    match s {
-                        "af" => ClarifyTextLanguage::Afrikaans,
-"ar" => ClarifyTextLanguage::Arabic,
-"bg" => ClarifyTextLanguage::Bulgarian,
-"bn" => ClarifyTextLanguage::Bengali,
-"ca" => ClarifyTextLanguage::Catalan,
-"cs" => ClarifyTextLanguage::Czech,
-"da" => ClarifyTextLanguage::Danish,
-"de" => ClarifyTextLanguage::German,
-"el" => ClarifyTextLanguage::Greek,
-"en" => ClarifyTextLanguage::English,
-"es" => ClarifyTextLanguage::Spanish,
-"et" => ClarifyTextLanguage::Estonian,
-"eu" => ClarifyTextLanguage::Basque,
-"fa" => ClarifyTextLanguage::Persian,
-"fi" => ClarifyTextLanguage::Finnish,
-"fr" => ClarifyTextLanguage::French,
-"ga" => ClarifyTextLanguage::Irish,
-"gu" => ClarifyTextLanguage::Gujarati,
-"he" => ClarifyTextLanguage::Hebrew,
-"hi" => ClarifyTextLanguage::Hindi,
-"hr" => ClarifyTextLanguage::Croatian,
-"hu" => ClarifyTextLanguage::Hungarian,
-"hy" => ClarifyTextLanguage::Armenian,
-"id" => ClarifyTextLanguage::Indonesian,
-"is" => ClarifyTextLanguage::Icelandic,
-"it" => ClarifyTextLanguage::Italian,
-"kn" => ClarifyTextLanguage::Kannada,
-"ky" => ClarifyTextLanguage::Kyrgyz,
-"lb" => ClarifyTextLanguage::Luxembourgish,
-"lij" => ClarifyTextLanguage::Ligurian,
-"lt" => ClarifyTextLanguage::Lithuanian,
-"lv" => ClarifyTextLanguage::Latvian,
-"mk" => ClarifyTextLanguage::Macedonian,
-"ml" => ClarifyTextLanguage::Malayalam,
-"mr" => ClarifyTextLanguage::Marathi,
-"nb" => ClarifyTextLanguage::NorwegianBokmal,
-"ne" => ClarifyTextLanguage::Nepali,
-"nl" => ClarifyTextLanguage::Dutch,
-"pl" => ClarifyTextLanguage::Polish,
-"pt" => ClarifyTextLanguage::Portuguese,
-"ro" => ClarifyTextLanguage::Romanian,
-"ru" => ClarifyTextLanguage::Russian,
-"sa" => ClarifyTextLanguage::Sanskrit,
-"si" => ClarifyTextLanguage::Sinhala,
-"sk" => ClarifyTextLanguage::Slovak,
-"sl" => ClarifyTextLanguage::Slovenian,
-"sq" => ClarifyTextLanguage::Albanian,
-"sr" => ClarifyTextLanguage::Serbian,
-"sv" => ClarifyTextLanguage::Swedish,
-"ta" => ClarifyTextLanguage::Tamil,
-"te" => ClarifyTextLanguage::Telugu,
-"tl" => ClarifyTextLanguage::Tagalog,
-"tn" => ClarifyTextLanguage::Setswana,
-"tr" => ClarifyTextLanguage::Turkish,
-"tt" => ClarifyTextLanguage::Tatar,
-"uk" => ClarifyTextLanguage::Ukrainian,
-"ur" => ClarifyTextLanguage::Urdu,
-"xx" => ClarifyTextLanguage::MultiLanguage,
-"yo" => ClarifyTextLanguage::Yoruba,
-"zh" => ClarifyTextLanguage::Chinese,
-other => ClarifyTextLanguage::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
-                    }
-                }
-            }
-impl std::str::FromStr for ClarifyTextLanguage {
-                type Err = std::convert::Infallible;
-
-                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-                    Ok(ClarifyTextLanguage::from(s))
-                }
-            }
-impl ClarifyTextLanguage {
-                /// Returns the `&str` value of the enum member.
-                pub fn as_str(&self) -> &str {
-                    match self {
-    ClarifyTextLanguage::Afrikaans => "af",
-    ClarifyTextLanguage::Arabic => "ar",
-    ClarifyTextLanguage::Bulgarian => "bg",
-    ClarifyTextLanguage::Bengali => "bn",
-    ClarifyTextLanguage::Catalan => "ca",
-    ClarifyTextLanguage::Czech => "cs",
-    ClarifyTextLanguage::Danish => "da",
-    ClarifyTextLanguage::German => "de",
-    ClarifyTextLanguage::Greek => "el",
-    ClarifyTextLanguage::English => "en",
-    ClarifyTextLanguage::Spanish => "es",
-    ClarifyTextLanguage::Estonian => "et",
-    ClarifyTextLanguage::Basque => "eu",
-    ClarifyTextLanguage::Persian => "fa",
-    ClarifyTextLanguage::Finnish => "fi",
-    ClarifyTextLanguage::French => "fr",
-    ClarifyTextLanguage::Irish => "ga",
-    ClarifyTextLanguage::Gujarati => "gu",
-    ClarifyTextLanguage::Hebrew => "he",
-    ClarifyTextLanguage::Hindi => "hi",
-    ClarifyTextLanguage::Croatian => "hr",
-    ClarifyTextLanguage::Hungarian => "hu",
-    ClarifyTextLanguage::Armenian => "hy",
-    ClarifyTextLanguage::Indonesian => "id",
-    ClarifyTextLanguage::Icelandic => "is",
-    ClarifyTextLanguage::Italian => "it",
-    ClarifyTextLanguage::Kannada => "kn",
-    ClarifyTextLanguage::Kyrgyz => "ky",
-    ClarifyTextLanguage::Luxembourgish => "lb",
-    ClarifyTextLanguage::Ligurian => "lij",
-    ClarifyTextLanguage::Lithuanian => "lt",
-    ClarifyTextLanguage::Latvian => "lv",
-    ClarifyTextLanguage::Macedonian => "mk",
-    ClarifyTextLanguage::Malayalam => "ml",
-    ClarifyTextLanguage::Marathi => "mr",
-    ClarifyTextLanguage::NorwegianBokmal => "nb",
-    ClarifyTextLanguage::Nepali => "ne",
-    ClarifyTextLanguage::Dutch => "nl",
-    ClarifyTextLanguage::Polish => "pl",
-    ClarifyTextLanguage::Portuguese => "pt",
-    ClarifyTextLanguage::Romanian => "ro",
-    ClarifyTextLanguage::Russian => "ru",
-    ClarifyTextLanguage::Sanskrit => "sa",
-    ClarifyTextLanguage::Sinhala => "si",
-    ClarifyTextLanguage::Slovak => "sk",
-    ClarifyTextLanguage::Slovenian => "sl",
-    ClarifyTextLanguage::Albanian => "sq",
-    ClarifyTextLanguage::Serbian => "sr",
-    ClarifyTextLanguage::Swedish => "sv",
-    ClarifyTextLanguage::Tamil => "ta",
-    ClarifyTextLanguage::Telugu => "te",
-    ClarifyTextLanguage::Tagalog => "tl",
-    ClarifyTextLanguage::Setswana => "tn",
-    ClarifyTextLanguage::Turkish => "tr",
-    ClarifyTextLanguage::Tatar => "tt",
-    ClarifyTextLanguage::Ukrainian => "uk",
-    ClarifyTextLanguage::Urdu => "ur",
-    ClarifyTextLanguage::MultiLanguage => "xx",
-    ClarifyTextLanguage::Yoruba => "yo",
-    ClarifyTextLanguage::Chinese => "zh",
-    ClarifyTextLanguage::Unknown(value) => value.as_str()
+    fn from(s: &str) -> Self {
+        match s {
+            "af" => ClarifyTextLanguage::Afrikaans,
+            "ar" => ClarifyTextLanguage::Arabic,
+            "bg" => ClarifyTextLanguage::Bulgarian,
+            "bn" => ClarifyTextLanguage::Bengali,
+            "ca" => ClarifyTextLanguage::Catalan,
+            "cs" => ClarifyTextLanguage::Czech,
+            "da" => ClarifyTextLanguage::Danish,
+            "de" => ClarifyTextLanguage::German,
+            "el" => ClarifyTextLanguage::Greek,
+            "en" => ClarifyTextLanguage::English,
+            "es" => ClarifyTextLanguage::Spanish,
+            "et" => ClarifyTextLanguage::Estonian,
+            "eu" => ClarifyTextLanguage::Basque,
+            "fa" => ClarifyTextLanguage::Persian,
+            "fi" => ClarifyTextLanguage::Finnish,
+            "fr" => ClarifyTextLanguage::French,
+            "ga" => ClarifyTextLanguage::Irish,
+            "gu" => ClarifyTextLanguage::Gujarati,
+            "he" => ClarifyTextLanguage::Hebrew,
+            "hi" => ClarifyTextLanguage::Hindi,
+            "hr" => ClarifyTextLanguage::Croatian,
+            "hu" => ClarifyTextLanguage::Hungarian,
+            "hy" => ClarifyTextLanguage::Armenian,
+            "id" => ClarifyTextLanguage::Indonesian,
+            "is" => ClarifyTextLanguage::Icelandic,
+            "it" => ClarifyTextLanguage::Italian,
+            "kn" => ClarifyTextLanguage::Kannada,
+            "ky" => ClarifyTextLanguage::Kyrgyz,
+            "lb" => ClarifyTextLanguage::Luxembourgish,
+            "lij" => ClarifyTextLanguage::Ligurian,
+            "lt" => ClarifyTextLanguage::Lithuanian,
+            "lv" => ClarifyTextLanguage::Latvian,
+            "mk" => ClarifyTextLanguage::Macedonian,
+            "ml" => ClarifyTextLanguage::Malayalam,
+            "mr" => ClarifyTextLanguage::Marathi,
+            "nb" => ClarifyTextLanguage::NorwegianBokmal,
+            "ne" => ClarifyTextLanguage::Nepali,
+            "nl" => ClarifyTextLanguage::Dutch,
+            "pl" => ClarifyTextLanguage::Polish,
+            "pt" => ClarifyTextLanguage::Portuguese,
+            "ro" => ClarifyTextLanguage::Romanian,
+            "ru" => ClarifyTextLanguage::Russian,
+            "sa" => ClarifyTextLanguage::Sanskrit,
+            "si" => ClarifyTextLanguage::Sinhala,
+            "sk" => ClarifyTextLanguage::Slovak,
+            "sl" => ClarifyTextLanguage::Slovenian,
+            "sq" => ClarifyTextLanguage::Albanian,
+            "sr" => ClarifyTextLanguage::Serbian,
+            "sv" => ClarifyTextLanguage::Swedish,
+            "ta" => ClarifyTextLanguage::Tamil,
+            "te" => ClarifyTextLanguage::Telugu,
+            "tl" => ClarifyTextLanguage::Tagalog,
+            "tn" => ClarifyTextLanguage::Setswana,
+            "tr" => ClarifyTextLanguage::Turkish,
+            "tt" => ClarifyTextLanguage::Tatar,
+            "uk" => ClarifyTextLanguage::Ukrainian,
+            "ur" => ClarifyTextLanguage::Urdu,
+            "xx" => ClarifyTextLanguage::MultiLanguage,
+            "yo" => ClarifyTextLanguage::Yoruba,
+            "zh" => ClarifyTextLanguage::Chinese,
+            other => ClarifyTextLanguage::Unknown(crate::primitives::UnknownVariantValue(
+                other.to_owned(),
+            )),
+        }
+    }
 }
-                }
-                /// Returns all the `&str` representations of the enum members.
-                pub const fn values() -> &'static [&'static str] {
-                    &["af", "ar", "bg", "bn", "ca", "cs", "da", "de", "el", "en", "es", "et", "eu", "fa", "fi", "fr", "ga", "gu", "he", "hi", "hr", "hu", "hy", "id", "is", "it", "kn", "ky", "lb", "lij", "lt", "lv", "mk", "ml", "mr", "nb", "ne", "nl", "pl", "pt", "ro", "ru", "sa", "si", "sk", "sl", "sq", "sr", "sv", "ta", "te", "tl", "tn", "tr", "tt", "uk", "ur", "xx", "yo", "zh"]
-                }
-            }
-impl AsRef<str> for ClarifyTextLanguage {
-                fn as_ref(&self) -> &str {
-                    self.as_str()
-                }
-            }
+impl std::str::FromStr for ClarifyTextLanguage {
+    type Err = std::convert::Infallible;
 
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(ClarifyTextLanguage::from(s))
+    }
+}
+impl ClarifyTextLanguage {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            ClarifyTextLanguage::Afrikaans => "af",
+            ClarifyTextLanguage::Arabic => "ar",
+            ClarifyTextLanguage::Bulgarian => "bg",
+            ClarifyTextLanguage::Bengali => "bn",
+            ClarifyTextLanguage::Catalan => "ca",
+            ClarifyTextLanguage::Czech => "cs",
+            ClarifyTextLanguage::Danish => "da",
+            ClarifyTextLanguage::German => "de",
+            ClarifyTextLanguage::Greek => "el",
+            ClarifyTextLanguage::English => "en",
+            ClarifyTextLanguage::Spanish => "es",
+            ClarifyTextLanguage::Estonian => "et",
+            ClarifyTextLanguage::Basque => "eu",
+            ClarifyTextLanguage::Persian => "fa",
+            ClarifyTextLanguage::Finnish => "fi",
+            ClarifyTextLanguage::French => "fr",
+            ClarifyTextLanguage::Irish => "ga",
+            ClarifyTextLanguage::Gujarati => "gu",
+            ClarifyTextLanguage::Hebrew => "he",
+            ClarifyTextLanguage::Hindi => "hi",
+            ClarifyTextLanguage::Croatian => "hr",
+            ClarifyTextLanguage::Hungarian => "hu",
+            ClarifyTextLanguage::Armenian => "hy",
+            ClarifyTextLanguage::Indonesian => "id",
+            ClarifyTextLanguage::Icelandic => "is",
+            ClarifyTextLanguage::Italian => "it",
+            ClarifyTextLanguage::Kannada => "kn",
+            ClarifyTextLanguage::Kyrgyz => "ky",
+            ClarifyTextLanguage::Luxembourgish => "lb",
+            ClarifyTextLanguage::Ligurian => "lij",
+            ClarifyTextLanguage::Lithuanian => "lt",
+            ClarifyTextLanguage::Latvian => "lv",
+            ClarifyTextLanguage::Macedonian => "mk",
+            ClarifyTextLanguage::Malayalam => "ml",
+            ClarifyTextLanguage::Marathi => "mr",
+            ClarifyTextLanguage::NorwegianBokmal => "nb",
+            ClarifyTextLanguage::Nepali => "ne",
+            ClarifyTextLanguage::Dutch => "nl",
+            ClarifyTextLanguage::Polish => "pl",
+            ClarifyTextLanguage::Portuguese => "pt",
+            ClarifyTextLanguage::Romanian => "ro",
+            ClarifyTextLanguage::Russian => "ru",
+            ClarifyTextLanguage::Sanskrit => "sa",
+            ClarifyTextLanguage::Sinhala => "si",
+            ClarifyTextLanguage::Slovak => "sk",
+            ClarifyTextLanguage::Slovenian => "sl",
+            ClarifyTextLanguage::Albanian => "sq",
+            ClarifyTextLanguage::Serbian => "sr",
+            ClarifyTextLanguage::Swedish => "sv",
+            ClarifyTextLanguage::Tamil => "ta",
+            ClarifyTextLanguage::Telugu => "te",
+            ClarifyTextLanguage::Tagalog => "tl",
+            ClarifyTextLanguage::Setswana => "tn",
+            ClarifyTextLanguage::Turkish => "tr",
+            ClarifyTextLanguage::Tatar => "tt",
+            ClarifyTextLanguage::Ukrainian => "uk",
+            ClarifyTextLanguage::Urdu => "ur",
+            ClarifyTextLanguage::MultiLanguage => "xx",
+            ClarifyTextLanguage::Yoruba => "yo",
+            ClarifyTextLanguage::Chinese => "zh",
+            ClarifyTextLanguage::Unknown(value) => value.as_str(),
+        }
+    }
+    /// Returns all the `&str` representations of the enum members.
+    pub const fn values() -> &'static [&'static str] {
+        &[
+            "af", "ar", "bg", "bn", "ca", "cs", "da", "de", "el", "en", "es", "et", "eu", "fa",
+            "fi", "fr", "ga", "gu", "he", "hi", "hr", "hu", "hy", "id", "is", "it", "kn", "ky",
+            "lb", "lij", "lt", "lv", "mk", "ml", "mr", "nb", "ne", "nl", "pl", "pt", "ro", "ru",
+            "sa", "si", "sk", "sl", "sq", "sr", "sv", "ta", "te", "tl", "tn", "tr", "tt", "uk",
+            "ur", "xx", "yo", "zh",
+        ]
+    }
+}
+impl AsRef<str> for ClarifyTextLanguage {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}

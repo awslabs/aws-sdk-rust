@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdatePartnerAccountInput  {
+pub struct UpdatePartnerAccountInput {
     /// <p>The Sidewalk account credentials.</p>
     #[doc(hidden)]
     pub sidewalk: std::option::Option<crate::types::SidewalkUpdateAccount>,
@@ -15,21 +15,22 @@ pub struct UpdatePartnerAccountInput  {
 }
 impl UpdatePartnerAccountInput {
     /// <p>The Sidewalk account credentials.</p>
-    pub fn sidewalk(&self) -> std::option::Option<& crate::types::SidewalkUpdateAccount> {
+    pub fn sidewalk(&self) -> std::option::Option<&crate::types::SidewalkUpdateAccount> {
         self.sidewalk.as_ref()
     }
     /// <p>The ID of the partner account to update.</p>
-    pub fn partner_account_id(&self) -> std::option::Option<& str> {
+    pub fn partner_account_id(&self) -> std::option::Option<&str> {
         self.partner_account_id.as_deref()
     }
     /// <p>The partner type.</p>
-    pub fn partner_type(&self) -> std::option::Option<& crate::types::PartnerType> {
+    pub fn partner_type(&self) -> std::option::Option<&crate::types::PartnerType> {
         self.partner_type.as_ref()
     }
 }
 impl UpdatePartnerAccountInput {
     /// Creates a new builder-style object to manufacture [`UpdatePartnerAccountInput`](crate::operation::update_partner_account::UpdatePartnerAccountInput).
-    pub fn builder() -> crate::operation::update_partner_account::builders::UpdatePartnerAccountInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::update_partner_account::builders::UpdatePartnerAccountInputBuilder {
         crate::operation::update_partner_account::builders::UpdatePartnerAccountInputBuilder::default()
     }
 }
@@ -49,8 +50,12 @@ impl UpdatePartnerAccountInputBuilder {
         self
     }
     /// <p>The Sidewalk account credentials.</p>
-    pub fn set_sidewalk(mut self, input: std::option::Option<crate::types::SidewalkUpdateAccount>) -> Self {
-        self.sidewalk = input; self
+    pub fn set_sidewalk(
+        mut self,
+        input: std::option::Option<crate::types::SidewalkUpdateAccount>,
+    ) -> Self {
+        self.sidewalk = input;
+        self
     }
     /// <p>The ID of the partner account to update.</p>
     pub fn partner_account_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -58,8 +63,12 @@ impl UpdatePartnerAccountInputBuilder {
         self
     }
     /// <p>The ID of the partner account to update.</p>
-    pub fn set_partner_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.partner_account_id = input; self
+    pub fn set_partner_account_id(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.partner_account_id = input;
+        self
     }
     /// <p>The partner type.</p>
     pub fn partner_type(mut self, input: crate::types::PartnerType) -> Self {
@@ -67,21 +76,26 @@ impl UpdatePartnerAccountInputBuilder {
         self
     }
     /// <p>The partner type.</p>
-    pub fn set_partner_type(mut self, input: std::option::Option<crate::types::PartnerType>) -> Self {
-        self.partner_type = input; self
+    pub fn set_partner_type(
+        mut self,
+        input: std::option::Option<crate::types::PartnerType>,
+    ) -> Self {
+        self.partner_type = input;
+        self
     }
     /// Consumes the builder and constructs a [`UpdatePartnerAccountInput`](crate::operation::update_partner_account::UpdatePartnerAccountInput).
-    pub fn build(self) -> Result<crate::operation::update_partner_account::UpdatePartnerAccountInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::update_partner_account::UpdatePartnerAccountInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::update_partner_account::UpdatePartnerAccountInput {
-                sidewalk: self.sidewalk
-                ,
-                partner_account_id: self.partner_account_id
-                ,
-                partner_type: self.partner_type
-                ,
-            }
+                sidewalk: self.sidewalk,
+                partner_account_id: self.partner_account_id,
+                partner_type: self.partner_type,
+            },
         )
     }
 }
-

@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-/// 
+///
 /// Here is an example of how you can make a match expression forward-compatible:
-/// 
+///
 /// ```text
 /// # let streamingsessionstatuscode = unimplemented!();
 /// match streamingsessionstatuscode {
@@ -44,14 +44,22 @@
 /// Specifically, when `streamingsessionstatuscode` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `StreamingSessionStatusCode::NewFeature` also yielding `"NewFeature"`.
-/// 
+///
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
 pub enum StreamingSessionStatusCode {
     #[allow(missing_docs)] // documentation missing in model
     ActiveDirectoryDomainJoinError,
@@ -86,69 +94,111 @@ pub enum StreamingSessionStatusCode {
     #[allow(missing_docs)] // documentation missing in model
     StreamingSessionStopInProgress,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::primitives::UnknownVariantValue)
+    Unknown(crate::primitives::UnknownVariantValue),
 }
 impl std::convert::From<&str> for StreamingSessionStatusCode {
-                fn from(s: &str) -> Self {
-                    match s {
-                        "ACTIVE_DIRECTORY_DOMAIN_JOIN_ERROR" => StreamingSessionStatusCode::ActiveDirectoryDomainJoinError,
-"AMI_VALIDATION_ERROR" => StreamingSessionStatusCode::AmiValidationError,
-"DECRYPT_STREAMING_IMAGE_ERROR" => StreamingSessionStatusCode::DecryptStreamingImageError,
-"INITIALIZATION_SCRIPT_ERROR" => StreamingSessionStatusCode::InitializationScriptError,
-"INSUFFICIENT_CAPACITY" => StreamingSessionStatusCode::InsufficientCapacity,
-"INTERNAL_ERROR" => StreamingSessionStatusCode::InternalError,
-"NETWORK_CONNECTION_ERROR" => StreamingSessionStatusCode::NetworkConnectionError,
-"NETWORK_INTERFACE_ERROR" => StreamingSessionStatusCode::NetworkInterfaceError,
-"STREAMING_SESSION_CREATE_IN_PROGRESS" => StreamingSessionStatusCode::StreamingSessionCreateInProgress,
-"STREAMING_SESSION_DELETED" => StreamingSessionStatusCode::StreamingSessionDeleted,
-"STREAMING_SESSION_DELETE_IN_PROGRESS" => StreamingSessionStatusCode::StreamingSessionDeleteInProgress,
-"STREAMING_SESSION_READY" => StreamingSessionStatusCode::StreamingSessionReady,
-"STREAMING_SESSION_STARTED" => StreamingSessionStatusCode::StreamingSessionStarted,
-"STREAMING_SESSION_START_IN_PROGRESS" => StreamingSessionStatusCode::StreamingSessionStartInProgress,
-"STREAMING_SESSION_STOPPED" => StreamingSessionStatusCode::StreamingSessionStopped,
-"STREAMING_SESSION_STOP_IN_PROGRESS" => StreamingSessionStatusCode::StreamingSessionStopInProgress,
-other => StreamingSessionStatusCode::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
-                    }
-                }
+    fn from(s: &str) -> Self {
+        match s {
+            "ACTIVE_DIRECTORY_DOMAIN_JOIN_ERROR" => {
+                StreamingSessionStatusCode::ActiveDirectoryDomainJoinError
             }
-impl std::str::FromStr for StreamingSessionStatusCode {
-                type Err = std::convert::Infallible;
-
-                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-                    Ok(StreamingSessionStatusCode::from(s))
-                }
+            "AMI_VALIDATION_ERROR" => StreamingSessionStatusCode::AmiValidationError,
+            "DECRYPT_STREAMING_IMAGE_ERROR" => {
+                StreamingSessionStatusCode::DecryptStreamingImageError
             }
-impl StreamingSessionStatusCode {
-                /// Returns the `&str` value of the enum member.
-                pub fn as_str(&self) -> &str {
-                    match self {
-    StreamingSessionStatusCode::ActiveDirectoryDomainJoinError => "ACTIVE_DIRECTORY_DOMAIN_JOIN_ERROR",
-    StreamingSessionStatusCode::AmiValidationError => "AMI_VALIDATION_ERROR",
-    StreamingSessionStatusCode::DecryptStreamingImageError => "DECRYPT_STREAMING_IMAGE_ERROR",
-    StreamingSessionStatusCode::InitializationScriptError => "INITIALIZATION_SCRIPT_ERROR",
-    StreamingSessionStatusCode::InsufficientCapacity => "INSUFFICIENT_CAPACITY",
-    StreamingSessionStatusCode::InternalError => "INTERNAL_ERROR",
-    StreamingSessionStatusCode::NetworkConnectionError => "NETWORK_CONNECTION_ERROR",
-    StreamingSessionStatusCode::NetworkInterfaceError => "NETWORK_INTERFACE_ERROR",
-    StreamingSessionStatusCode::StreamingSessionCreateInProgress => "STREAMING_SESSION_CREATE_IN_PROGRESS",
-    StreamingSessionStatusCode::StreamingSessionDeleted => "STREAMING_SESSION_DELETED",
-    StreamingSessionStatusCode::StreamingSessionDeleteInProgress => "STREAMING_SESSION_DELETE_IN_PROGRESS",
-    StreamingSessionStatusCode::StreamingSessionReady => "STREAMING_SESSION_READY",
-    StreamingSessionStatusCode::StreamingSessionStarted => "STREAMING_SESSION_STARTED",
-    StreamingSessionStatusCode::StreamingSessionStartInProgress => "STREAMING_SESSION_START_IN_PROGRESS",
-    StreamingSessionStatusCode::StreamingSessionStopped => "STREAMING_SESSION_STOPPED",
-    StreamingSessionStatusCode::StreamingSessionStopInProgress => "STREAMING_SESSION_STOP_IN_PROGRESS",
-    StreamingSessionStatusCode::Unknown(value) => value.as_str()
+            "INITIALIZATION_SCRIPT_ERROR" => StreamingSessionStatusCode::InitializationScriptError,
+            "INSUFFICIENT_CAPACITY" => StreamingSessionStatusCode::InsufficientCapacity,
+            "INTERNAL_ERROR" => StreamingSessionStatusCode::InternalError,
+            "NETWORK_CONNECTION_ERROR" => StreamingSessionStatusCode::NetworkConnectionError,
+            "NETWORK_INTERFACE_ERROR" => StreamingSessionStatusCode::NetworkInterfaceError,
+            "STREAMING_SESSION_CREATE_IN_PROGRESS" => {
+                StreamingSessionStatusCode::StreamingSessionCreateInProgress
+            }
+            "STREAMING_SESSION_DELETED" => StreamingSessionStatusCode::StreamingSessionDeleted,
+            "STREAMING_SESSION_DELETE_IN_PROGRESS" => {
+                StreamingSessionStatusCode::StreamingSessionDeleteInProgress
+            }
+            "STREAMING_SESSION_READY" => StreamingSessionStatusCode::StreamingSessionReady,
+            "STREAMING_SESSION_STARTED" => StreamingSessionStatusCode::StreamingSessionStarted,
+            "STREAMING_SESSION_START_IN_PROGRESS" => {
+                StreamingSessionStatusCode::StreamingSessionStartInProgress
+            }
+            "STREAMING_SESSION_STOPPED" => StreamingSessionStatusCode::StreamingSessionStopped,
+            "STREAMING_SESSION_STOP_IN_PROGRESS" => {
+                StreamingSessionStatusCode::StreamingSessionStopInProgress
+            }
+            other => StreamingSessionStatusCode::Unknown(crate::primitives::UnknownVariantValue(
+                other.to_owned(),
+            )),
+        }
+    }
 }
-                }
-                /// Returns all the `&str` representations of the enum members.
-                pub const fn values() -> &'static [&'static str] {
-                    &["ACTIVE_DIRECTORY_DOMAIN_JOIN_ERROR", "AMI_VALIDATION_ERROR", "DECRYPT_STREAMING_IMAGE_ERROR", "INITIALIZATION_SCRIPT_ERROR", "INSUFFICIENT_CAPACITY", "INTERNAL_ERROR", "NETWORK_CONNECTION_ERROR", "NETWORK_INTERFACE_ERROR", "STREAMING_SESSION_CREATE_IN_PROGRESS", "STREAMING_SESSION_DELETED", "STREAMING_SESSION_DELETE_IN_PROGRESS", "STREAMING_SESSION_READY", "STREAMING_SESSION_STARTED", "STREAMING_SESSION_START_IN_PROGRESS", "STREAMING_SESSION_STOPPED", "STREAMING_SESSION_STOP_IN_PROGRESS"]
-                }
-            }
-impl AsRef<str> for StreamingSessionStatusCode {
-                fn as_ref(&self) -> &str {
-                    self.as_str()
-                }
-            }
+impl std::str::FromStr for StreamingSessionStatusCode {
+    type Err = std::convert::Infallible;
 
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(StreamingSessionStatusCode::from(s))
+    }
+}
+impl StreamingSessionStatusCode {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            StreamingSessionStatusCode::ActiveDirectoryDomainJoinError => {
+                "ACTIVE_DIRECTORY_DOMAIN_JOIN_ERROR"
+            }
+            StreamingSessionStatusCode::AmiValidationError => "AMI_VALIDATION_ERROR",
+            StreamingSessionStatusCode::DecryptStreamingImageError => {
+                "DECRYPT_STREAMING_IMAGE_ERROR"
+            }
+            StreamingSessionStatusCode::InitializationScriptError => "INITIALIZATION_SCRIPT_ERROR",
+            StreamingSessionStatusCode::InsufficientCapacity => "INSUFFICIENT_CAPACITY",
+            StreamingSessionStatusCode::InternalError => "INTERNAL_ERROR",
+            StreamingSessionStatusCode::NetworkConnectionError => "NETWORK_CONNECTION_ERROR",
+            StreamingSessionStatusCode::NetworkInterfaceError => "NETWORK_INTERFACE_ERROR",
+            StreamingSessionStatusCode::StreamingSessionCreateInProgress => {
+                "STREAMING_SESSION_CREATE_IN_PROGRESS"
+            }
+            StreamingSessionStatusCode::StreamingSessionDeleted => "STREAMING_SESSION_DELETED",
+            StreamingSessionStatusCode::StreamingSessionDeleteInProgress => {
+                "STREAMING_SESSION_DELETE_IN_PROGRESS"
+            }
+            StreamingSessionStatusCode::StreamingSessionReady => "STREAMING_SESSION_READY",
+            StreamingSessionStatusCode::StreamingSessionStarted => "STREAMING_SESSION_STARTED",
+            StreamingSessionStatusCode::StreamingSessionStartInProgress => {
+                "STREAMING_SESSION_START_IN_PROGRESS"
+            }
+            StreamingSessionStatusCode::StreamingSessionStopped => "STREAMING_SESSION_STOPPED",
+            StreamingSessionStatusCode::StreamingSessionStopInProgress => {
+                "STREAMING_SESSION_STOP_IN_PROGRESS"
+            }
+            StreamingSessionStatusCode::Unknown(value) => value.as_str(),
+        }
+    }
+    /// Returns all the `&str` representations of the enum members.
+    pub const fn values() -> &'static [&'static str] {
+        &[
+            "ACTIVE_DIRECTORY_DOMAIN_JOIN_ERROR",
+            "AMI_VALIDATION_ERROR",
+            "DECRYPT_STREAMING_IMAGE_ERROR",
+            "INITIALIZATION_SCRIPT_ERROR",
+            "INSUFFICIENT_CAPACITY",
+            "INTERNAL_ERROR",
+            "NETWORK_CONNECTION_ERROR",
+            "NETWORK_INTERFACE_ERROR",
+            "STREAMING_SESSION_CREATE_IN_PROGRESS",
+            "STREAMING_SESSION_DELETED",
+            "STREAMING_SESSION_DELETE_IN_PROGRESS",
+            "STREAMING_SESSION_READY",
+            "STREAMING_SESSION_STARTED",
+            "STREAMING_SESSION_START_IN_PROGRESS",
+            "STREAMING_SESSION_STOPPED",
+            "STREAMING_SESSION_STOP_IN_PROGRESS",
+        ]
+    }
+}
+impl AsRef<str> for StreamingSessionStatusCode {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}

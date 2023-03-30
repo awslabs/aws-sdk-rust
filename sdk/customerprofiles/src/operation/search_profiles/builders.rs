@@ -4,50 +4,68 @@ pub use crate::operation::search_profiles::_search_profiles_output::SearchProfil
 pub use crate::operation::search_profiles::_search_profiles_input::SearchProfilesInputBuilder;
 
 /// Fluent builder constructing a request to `SearchProfiles`.
-/// 
-/// <p>Searches for profiles within a specific domain using one or more predefined search keys (e.g., _fullName, _phone, _email, _account, etc.) and/or custom-defined search keys. A search key is a data type pair that consists of a <code>KeyName</code> and <code>Values</code> list.</p> 
+///
+/// <p>Searches for profiles within a specific domain using one or more predefined search keys (e.g., _fullName, _phone, _email, _account, etc.) and/or custom-defined search keys. A search key is a data type pair that consists of a <code>KeyName</code> and <code>Values</code> list.</p>
 /// <p>This operation supports searching for profiles with a minimum of 1 key-value(s) pair and up to 5 key-value(s) pairs using either <code>AND</code> or <code>OR</code> logic.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct SearchProfilesFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::search_profiles::builders::SearchProfilesInputBuilder
-            }
-impl SearchProfilesFluentBuilder  {
+    handle: std::sync::Arc<crate::client::Handle>,
+    inner: crate::operation::search_profiles::builders::SearchProfilesInputBuilder,
+}
+impl SearchProfilesFluentBuilder {
     /// Creates a new `SearchProfiles`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
-                    /// sent. The operation's inner [http::Request] can be modified as well.
-                    pub async fn customize(self) -> std::result::Result<
-                        crate::client::customize::CustomizableOperation<crate::operation::search_profiles::SearchProfiles, aws_http::retry::AwsResponseRetryClassifier,>,
-                        aws_smithy_http::result::SdkError<crate::operation::search_profiles::SearchProfilesError>
-                    >  {
-                        let handle = self.handle.clone();
-                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-                    }
-    
-                    /// Sends the request and returns the response.
-                    ///
-                    /// If an error occurs, an `SdkError` will be returned with additional details that
-                    /// can be matched against.
-                    ///
-                    /// By default, any retryable failures will be retried twice. Retry behavior
-                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                    /// set when configuring the client.
-                    pub async fn send(self) -> std::result::Result<crate::operation::search_profiles::SearchProfilesOutput, aws_smithy_http::result::SdkError<crate::operation::search_profiles::SearchProfilesError>>
-                     {
-                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&self.handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        self.handle.client.call(op).await
-                    }
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle,
+            inner: Default::default(),
+        }
+    }
+
+    /// Consume this builder, creating a customizable operation that can be modified before being
+    /// sent. The operation's inner [http::Request] can be modified as well.
+    pub async fn customize(
+        self,
+    ) -> std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::search_profiles::SearchProfiles,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::result::SdkError<crate::operation::search_profiles::SearchProfilesError>,
+    > {
+        let handle = self.handle.clone();
+        let operation = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+    }
+
+    /// Sends the request and returns the response.
+    ///
+    /// If an error occurs, an `SdkError` will be returned with additional details that
+    /// can be matched against.
+    ///
+    /// By default, any retryable failures will be retried twice. Retry behavior
+    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+    /// set when configuring the client.
+    pub async fn send(
+        self,
+    ) -> std::result::Result<
+        crate::operation::search_profiles::SearchProfilesOutput,
+        aws_smithy_http::result::SdkError<crate::operation::search_profiles::SearchProfilesError>,
+    > {
+        let op = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&self.handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        self.handle.client.call(op).await
+    }
     /// <p>The pagination token from the previous SearchProfiles API call.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
@@ -58,13 +76,13 @@ impl SearchProfilesFluentBuilder  {
         self.inner = self.inner.set_next_token(input);
         self
     }
-    /// <p>The maximum number of objects returned per page.</p> 
+    /// <p>The maximum number of objects returned per page.</p>
     /// <p>The default is 20 if this parameter is not included in the request.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.inner = self.inner.max_results(input);
         self
     }
-    /// <p>The maximum number of objects returned per page.</p> 
+    /// <p>The maximum number of objects returned per page.</p>
     /// <p>The default is 20 if this parameter is not included in the request.</p>
     pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_results(input);
@@ -100,7 +118,10 @@ impl SearchProfilesFluentBuilder  {
         self
     }
     /// <p>A list of key values.</p>
-    pub fn set_values(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+    pub fn set_values(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
         self.inner = self.inner.set_values(input);
         self
     }
@@ -114,31 +135,36 @@ impl SearchProfilesFluentBuilder  {
         self
     }
     /// <p>A list of <code>AdditionalSearchKey</code> objects that are each searchable identifiers of a profile. Each <code>AdditionalSearchKey</code> object contains a <code>KeyName</code> and a list of <code>Values</code> associated with that specific key (i.e., a key-value(s) pair). These additional search keys will be used in conjunction with the <code>LogicalOperator</code> and the required <code>KeyName</code> and <code>Values</code> parameters to search for profiles that satisfy the search criteria. </p>
-    pub fn set_additional_search_keys(mut self, input: std::option::Option<std::vec::Vec<crate::types::AdditionalSearchKey>>) -> Self {
+    pub fn set_additional_search_keys(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::AdditionalSearchKey>>,
+    ) -> Self {
         self.inner = self.inner.set_additional_search_keys(input);
         self
     }
-    /// <p>Relationship between all specified search keys that will be used to search for profiles. This includes the required <code>KeyName</code> and <code>Values</code> parameters as well as any key-value(s) pairs specified in the <code>AdditionalSearchKeys</code> list.</p> 
-    /// <p>This parameter influences which profiles will be returned in the response in the following manner:</p> 
-    /// <ul> 
-    /// <li> <p> <code>AND</code> - The response only includes profiles that match all of the search keys.</p> </li> 
-    /// <li> <p> <code>OR</code> - The response includes profiles that match at least one of the search keys.</p> </li> 
-    /// </ul> 
+    /// <p>Relationship between all specified search keys that will be used to search for profiles. This includes the required <code>KeyName</code> and <code>Values</code> parameters as well as any key-value(s) pairs specified in the <code>AdditionalSearchKeys</code> list.</p>
+    /// <p>This parameter influences which profiles will be returned in the response in the following manner:</p>
+    /// <ul>
+    /// <li> <p> <code>AND</code> - The response only includes profiles that match all of the search keys.</p> </li>
+    /// <li> <p> <code>OR</code> - The response includes profiles that match at least one of the search keys.</p> </li>
+    /// </ul>
     /// <p>The <code>OR</code> relationship is the default behavior if this parameter is not included in the request.</p>
     pub fn logical_operator(mut self, input: crate::types::LogicalOperator) -> Self {
         self.inner = self.inner.logical_operator(input);
         self
     }
-    /// <p>Relationship between all specified search keys that will be used to search for profiles. This includes the required <code>KeyName</code> and <code>Values</code> parameters as well as any key-value(s) pairs specified in the <code>AdditionalSearchKeys</code> list.</p> 
-    /// <p>This parameter influences which profiles will be returned in the response in the following manner:</p> 
-    /// <ul> 
-    /// <li> <p> <code>AND</code> - The response only includes profiles that match all of the search keys.</p> </li> 
-    /// <li> <p> <code>OR</code> - The response includes profiles that match at least one of the search keys.</p> </li> 
-    /// </ul> 
+    /// <p>Relationship between all specified search keys that will be used to search for profiles. This includes the required <code>KeyName</code> and <code>Values</code> parameters as well as any key-value(s) pairs specified in the <code>AdditionalSearchKeys</code> list.</p>
+    /// <p>This parameter influences which profiles will be returned in the response in the following manner:</p>
+    /// <ul>
+    /// <li> <p> <code>AND</code> - The response only includes profiles that match all of the search keys.</p> </li>
+    /// <li> <p> <code>OR</code> - The response includes profiles that match at least one of the search keys.</p> </li>
+    /// </ul>
     /// <p>The <code>OR</code> relationship is the default behavior if this parameter is not included in the request.</p>
-    pub fn set_logical_operator(mut self, input: std::option::Option<crate::types::LogicalOperator>) -> Self {
+    pub fn set_logical_operator(
+        mut self,
+        input: std::option::Option<crate::types::LogicalOperator>,
+    ) -> Self {
         self.inner = self.inner.set_logical_operator(input);
         self
     }
 }
-

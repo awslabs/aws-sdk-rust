@@ -3,7 +3,7 @@
 /// <p>The RejectDomainTransferFromAnotherAwsAccount response includes the following element.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct RejectDomainTransferFromAnotherAwsAccountOutput  {
+pub struct RejectDomainTransferFromAnotherAwsAccountOutput {
     /// <p>The identifier that <code>TransferDomainToAnotherAwsAccount</code> returned to track the progress of the request. Because the transfer request was rejected, the value is no longer valid, and you can't use <code>GetOperationDetail</code> to query the operation status.</p>
     #[doc(hidden)]
     pub operation_id: std::option::Option<std::string::String>,
@@ -11,18 +11,18 @@ pub struct RejectDomainTransferFromAnotherAwsAccountOutput  {
 }
 impl RejectDomainTransferFromAnotherAwsAccountOutput {
     /// <p>The identifier that <code>TransferDomainToAnotherAwsAccount</code> returned to track the progress of the request. Because the transfer request was rejected, the value is no longer valid, and you can't use <code>GetOperationDetail</code> to query the operation status.</p>
-    pub fn operation_id(&self) -> std::option::Option<& str> {
+    pub fn operation_id(&self) -> std::option::Option<&str> {
         self.operation_id.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for RejectDomainTransferFromAnotherAwsAccountOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl RejectDomainTransferFromAnotherAwsAccountOutput {
     /// Creates a new builder-style object to manufacture [`RejectDomainTransferFromAnotherAwsAccountOutput`](crate::operation::reject_domain_transfer_from_another_aws_account::RejectDomainTransferFromAnotherAwsAccountOutput).
-    pub fn builder() -> crate::operation::reject_domain_transfer_from_another_aws_account::builders::RejectDomainTransferFromAnotherAwsAccountOutputBuilder {
+    pub fn builder() -> crate::operation::reject_domain_transfer_from_another_aws_account::builders::RejectDomainTransferFromAnotherAwsAccountOutputBuilder{
         crate::operation::reject_domain_transfer_from_another_aws_account::builders::RejectDomainTransferFromAnotherAwsAccountOutputBuilder::default()
     }
 }
@@ -42,19 +42,20 @@ impl RejectDomainTransferFromAnotherAwsAccountOutputBuilder {
     }
     /// <p>The identifier that <code>TransferDomainToAnotherAwsAccount</code> returned to track the progress of the request. Because the transfer request was rejected, the value is no longer valid, and you can't use <code>GetOperationDetail</code> to query the operation status.</p>
     pub fn set_operation_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.operation_id = input; self
+        self.operation_id = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`RejectDomainTransferFromAnotherAwsAccountOutput`](crate::operation::reject_domain_transfer_from_another_aws_account::RejectDomainTransferFromAnotherAwsAccountOutput).
-    pub fn build(self) -> crate::operation::reject_domain_transfer_from_another_aws_account::RejectDomainTransferFromAnotherAwsAccountOutput {
+    pub fn build(self) -> crate::operation::reject_domain_transfer_from_another_aws_account::RejectDomainTransferFromAnotherAwsAccountOutput{
         crate::operation::reject_domain_transfer_from_another_aws_account::RejectDomainTransferFromAnotherAwsAccountOutput {
             operation_id: self.operation_id
             ,
@@ -62,4 +63,3 @@ impl RejectDomainTransferFromAnotherAwsAccountOutputBuilder {
         }
     }
 }
-

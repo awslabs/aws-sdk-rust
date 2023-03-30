@@ -3,7 +3,7 @@
 /// <p>Represents a file to stream.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct StreamFile  {
+pub struct StreamFile {
     /// <p>The file ID.</p>
     #[doc(hidden)]
     pub file_id: std::option::Option<i32>,
@@ -17,7 +17,7 @@ impl StreamFile {
         self.file_id
     }
     /// <p>The location of the file in S3.</p>
-    pub fn s3_location(&self) -> std::option::Option<& crate::types::S3Location> {
+    pub fn s3_location(&self) -> std::option::Option<&crate::types::S3Location> {
         self.s3_location.as_ref()
     }
 }
@@ -43,7 +43,8 @@ impl StreamFileBuilder {
     }
     /// <p>The file ID.</p>
     pub fn set_file_id(mut self, input: std::option::Option<i32>) -> Self {
-        self.file_id = input; self
+        self.file_id = input;
+        self
     }
     /// <p>The location of the file in S3.</p>
     pub fn s3_location(mut self, input: crate::types::S3Location) -> Self {
@@ -52,16 +53,14 @@ impl StreamFileBuilder {
     }
     /// <p>The location of the file in S3.</p>
     pub fn set_s3_location(mut self, input: std::option::Option<crate::types::S3Location>) -> Self {
-        self.s3_location = input; self
+        self.s3_location = input;
+        self
     }
     /// Consumes the builder and constructs a [`StreamFile`](crate::types::StreamFile).
     pub fn build(self) -> crate::types::StreamFile {
         crate::types::StreamFile {
-            file_id: self.file_id
-            ,
-            s3_location: self.s3_location
-            ,
+            file_id: self.file_id,
+            s3_location: self.s3_location,
         }
     }
 }
-

@@ -3,17 +3,17 @@
 /// <p>An empty response that indicates a successful delete.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteConfiguredTableAnalysisRuleOutput  {
+pub struct DeleteConfiguredTableAnalysisRuleOutput {
     _request_id: Option<String>,
 }
 impl aws_http::request_id::RequestId for DeleteConfiguredTableAnalysisRuleOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl DeleteConfiguredTableAnalysisRuleOutput {
     /// Creates a new builder-style object to manufacture [`DeleteConfiguredTableAnalysisRuleOutput`](crate::operation::delete_configured_table_analysis_rule::DeleteConfiguredTableAnalysisRuleOutput).
-    pub fn builder() -> crate::operation::delete_configured_table_analysis_rule::builders::DeleteConfiguredTableAnalysisRuleOutputBuilder {
+    pub fn builder() -> crate::operation::delete_configured_table_analysis_rule::builders::DeleteConfiguredTableAnalysisRuleOutputBuilder{
         crate::operation::delete_configured_table_analysis_rule::builders::DeleteConfiguredTableAnalysisRuleOutputBuilder::default()
     }
 }
@@ -26,19 +26,18 @@ pub struct DeleteConfiguredTableAnalysisRuleOutputBuilder {
 }
 impl DeleteConfiguredTableAnalysisRuleOutputBuilder {
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`DeleteConfiguredTableAnalysisRuleOutput`](crate::operation::delete_configured_table_analysis_rule::DeleteConfiguredTableAnalysisRuleOutput).
-    pub fn build(self) -> crate::operation::delete_configured_table_analysis_rule::DeleteConfiguredTableAnalysisRuleOutput {
+    pub fn build(self) -> crate::operation::delete_configured_table_analysis_rule::DeleteConfiguredTableAnalysisRuleOutput{
         crate::operation::delete_configured_table_analysis_rule::DeleteConfiguredTableAnalysisRuleOutput {
             _request_id: self._request_id,
         }
     }
 }
-

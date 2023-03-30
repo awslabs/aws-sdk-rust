@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateWhatIfForecastInput  {
+pub struct CreateWhatIfForecastInput {
     /// <p>The name of the what-if forecast. Names must be unique within each what-if analysis.</p>
     #[doc(hidden)]
     pub what_if_forecast_name: std::option::Option<std::string::String>,
@@ -11,43 +11,50 @@ pub struct CreateWhatIfForecastInput  {
     pub what_if_analysis_arn: std::option::Option<std::string::String>,
     /// <p>The transformations that are applied to the baseline time series. Each transformation contains an action and a set of conditions. An action is applied only when all conditions are met. If no conditions are provided, the action is applied to all items.</p>
     #[doc(hidden)]
-    pub time_series_transformations: std::option::Option<std::vec::Vec<crate::types::TimeSeriesTransformation>>,
-    /// <p>The replacement time series dataset, which contains the rows that you want to change in the related time series dataset. A replacement time series does not need to contain all rows that are in the baseline related time series. Include only the rows (measure-dimension combinations) that you want to include in the what-if forecast. This dataset is merged with the original time series to create a transformed dataset that is used for the what-if analysis.</p> 
-    /// <p>This dataset should contain the items to modify (such as item_id or workforce_type), any relevant dimensions, the timestamp column, and at least one of the related time series columns. This file should not contain duplicate timestamps for the same time series.</p> 
+    pub time_series_transformations:
+        std::option::Option<std::vec::Vec<crate::types::TimeSeriesTransformation>>,
+    /// <p>The replacement time series dataset, which contains the rows that you want to change in the related time series dataset. A replacement time series does not need to contain all rows that are in the baseline related time series. Include only the rows (measure-dimension combinations) that you want to include in the what-if forecast. This dataset is merged with the original time series to create a transformed dataset that is used for the what-if analysis.</p>
+    /// <p>This dataset should contain the items to modify (such as item_id or workforce_type), any relevant dimensions, the timestamp column, and at least one of the related time series columns. This file should not contain duplicate timestamps for the same time series.</p>
     /// <p>Timestamps and item_ids not included in this dataset are not included in the what-if analysis. </p>
     #[doc(hidden)]
-    pub time_series_replacements_data_source: std::option::Option<crate::types::TimeSeriesReplacementsDataSource>,
+    pub time_series_replacements_data_source:
+        std::option::Option<crate::types::TimeSeriesReplacementsDataSource>,
     /// <p>A list of <a href="https://docs.aws.amazon.com/forecast/latest/dg/tagging-forecast-resources.html">tags</a> to apply to the what if forecast.</p>
     #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::types::Tag>>,
 }
 impl CreateWhatIfForecastInput {
     /// <p>The name of the what-if forecast. Names must be unique within each what-if analysis.</p>
-    pub fn what_if_forecast_name(&self) -> std::option::Option<& str> {
+    pub fn what_if_forecast_name(&self) -> std::option::Option<&str> {
         self.what_if_forecast_name.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the what-if analysis.</p>
-    pub fn what_if_analysis_arn(&self) -> std::option::Option<& str> {
+    pub fn what_if_analysis_arn(&self) -> std::option::Option<&str> {
         self.what_if_analysis_arn.as_deref()
     }
     /// <p>The transformations that are applied to the baseline time series. Each transformation contains an action and a set of conditions. An action is applied only when all conditions are met. If no conditions are provided, the action is applied to all items.</p>
-    pub fn time_series_transformations(&self) -> std::option::Option<& [crate::types::TimeSeriesTransformation]> {
+    pub fn time_series_transformations(
+        &self,
+    ) -> std::option::Option<&[crate::types::TimeSeriesTransformation]> {
         self.time_series_transformations.as_deref()
     }
-    /// <p>The replacement time series dataset, which contains the rows that you want to change in the related time series dataset. A replacement time series does not need to contain all rows that are in the baseline related time series. Include only the rows (measure-dimension combinations) that you want to include in the what-if forecast. This dataset is merged with the original time series to create a transformed dataset that is used for the what-if analysis.</p> 
-    /// <p>This dataset should contain the items to modify (such as item_id or workforce_type), any relevant dimensions, the timestamp column, and at least one of the related time series columns. This file should not contain duplicate timestamps for the same time series.</p> 
+    /// <p>The replacement time series dataset, which contains the rows that you want to change in the related time series dataset. A replacement time series does not need to contain all rows that are in the baseline related time series. Include only the rows (measure-dimension combinations) that you want to include in the what-if forecast. This dataset is merged with the original time series to create a transformed dataset that is used for the what-if analysis.</p>
+    /// <p>This dataset should contain the items to modify (such as item_id or workforce_type), any relevant dimensions, the timestamp column, and at least one of the related time series columns. This file should not contain duplicate timestamps for the same time series.</p>
     /// <p>Timestamps and item_ids not included in this dataset are not included in the what-if analysis. </p>
-    pub fn time_series_replacements_data_source(&self) -> std::option::Option<& crate::types::TimeSeriesReplacementsDataSource> {
+    pub fn time_series_replacements_data_source(
+        &self,
+    ) -> std::option::Option<&crate::types::TimeSeriesReplacementsDataSource> {
         self.time_series_replacements_data_source.as_ref()
     }
     /// <p>A list of <a href="https://docs.aws.amazon.com/forecast/latest/dg/tagging-forecast-resources.html">tags</a> to apply to the what if forecast.</p>
-    pub fn tags(&self) -> std::option::Option<& [crate::types::Tag]> {
+    pub fn tags(&self) -> std::option::Option<&[crate::types::Tag]> {
         self.tags.as_deref()
     }
 }
 impl CreateWhatIfForecastInput {
     /// Creates a new builder-style object to manufacture [`CreateWhatIfForecastInput`](crate::operation::create_what_if_forecast::CreateWhatIfForecastInput).
-    pub fn builder() -> crate::operation::create_what_if_forecast::builders::CreateWhatIfForecastInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::create_what_if_forecast::builders::CreateWhatIfForecastInputBuilder {
         crate::operation::create_what_if_forecast::builders::CreateWhatIfForecastInputBuilder::default()
     }
 }
@@ -58,8 +65,10 @@ impl CreateWhatIfForecastInput {
 pub struct CreateWhatIfForecastInputBuilder {
     pub(crate) what_if_forecast_name: std::option::Option<std::string::String>,
     pub(crate) what_if_analysis_arn: std::option::Option<std::string::String>,
-    pub(crate) time_series_transformations: std::option::Option<std::vec::Vec<crate::types::TimeSeriesTransformation>>,
-    pub(crate) time_series_replacements_data_source: std::option::Option<crate::types::TimeSeriesReplacementsDataSource>,
+    pub(crate) time_series_transformations:
+        std::option::Option<std::vec::Vec<crate::types::TimeSeriesTransformation>>,
+    pub(crate) time_series_replacements_data_source:
+        std::option::Option<crate::types::TimeSeriesReplacementsDataSource>,
     pub(crate) tags: std::option::Option<std::vec::Vec<crate::types::Tag>>,
 }
 impl CreateWhatIfForecastInputBuilder {
@@ -69,8 +78,12 @@ impl CreateWhatIfForecastInputBuilder {
         self
     }
     /// <p>The name of the what-if forecast. Names must be unique within each what-if analysis.</p>
-    pub fn set_what_if_forecast_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.what_if_forecast_name = input; self
+    pub fn set_what_if_forecast_name(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.what_if_forecast_name = input;
+        self
     }
     /// <p>The Amazon Resource Name (ARN) of the what-if analysis.</p>
     pub fn what_if_analysis_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -78,36 +91,54 @@ impl CreateWhatIfForecastInputBuilder {
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the what-if analysis.</p>
-    pub fn set_what_if_analysis_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.what_if_analysis_arn = input; self
+    pub fn set_what_if_analysis_arn(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.what_if_analysis_arn = input;
+        self
     }
     /// Appends an item to `time_series_transformations`.
     ///
     /// To override the contents of this collection use [`set_time_series_transformations`](Self::set_time_series_transformations).
     ///
     /// <p>The transformations that are applied to the baseline time series. Each transformation contains an action and a set of conditions. An action is applied only when all conditions are met. If no conditions are provided, the action is applied to all items.</p>
-    pub fn time_series_transformations(mut self, input: crate::types::TimeSeriesTransformation) -> Self {
+    pub fn time_series_transformations(
+        mut self,
+        input: crate::types::TimeSeriesTransformation,
+    ) -> Self {
         let mut v = self.time_series_transformations.unwrap_or_default();
-                        v.push(input);
-                        self.time_series_transformations = Some(v);
-                        self
+        v.push(input);
+        self.time_series_transformations = Some(v);
+        self
     }
     /// <p>The transformations that are applied to the baseline time series. Each transformation contains an action and a set of conditions. An action is applied only when all conditions are met. If no conditions are provided, the action is applied to all items.</p>
-    pub fn set_time_series_transformations(mut self, input: std::option::Option<std::vec::Vec<crate::types::TimeSeriesTransformation>>) -> Self {
-        self.time_series_transformations = input; self
+    pub fn set_time_series_transformations(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::TimeSeriesTransformation>>,
+    ) -> Self {
+        self.time_series_transformations = input;
+        self
     }
-    /// <p>The replacement time series dataset, which contains the rows that you want to change in the related time series dataset. A replacement time series does not need to contain all rows that are in the baseline related time series. Include only the rows (measure-dimension combinations) that you want to include in the what-if forecast. This dataset is merged with the original time series to create a transformed dataset that is used for the what-if analysis.</p> 
-    /// <p>This dataset should contain the items to modify (such as item_id or workforce_type), any relevant dimensions, the timestamp column, and at least one of the related time series columns. This file should not contain duplicate timestamps for the same time series.</p> 
+    /// <p>The replacement time series dataset, which contains the rows that you want to change in the related time series dataset. A replacement time series does not need to contain all rows that are in the baseline related time series. Include only the rows (measure-dimension combinations) that you want to include in the what-if forecast. This dataset is merged with the original time series to create a transformed dataset that is used for the what-if analysis.</p>
+    /// <p>This dataset should contain the items to modify (such as item_id or workforce_type), any relevant dimensions, the timestamp column, and at least one of the related time series columns. This file should not contain duplicate timestamps for the same time series.</p>
     /// <p>Timestamps and item_ids not included in this dataset are not included in the what-if analysis. </p>
-    pub fn time_series_replacements_data_source(mut self, input: crate::types::TimeSeriesReplacementsDataSource) -> Self {
+    pub fn time_series_replacements_data_source(
+        mut self,
+        input: crate::types::TimeSeriesReplacementsDataSource,
+    ) -> Self {
         self.time_series_replacements_data_source = Some(input);
         self
     }
-    /// <p>The replacement time series dataset, which contains the rows that you want to change in the related time series dataset. A replacement time series does not need to contain all rows that are in the baseline related time series. Include only the rows (measure-dimension combinations) that you want to include in the what-if forecast. This dataset is merged with the original time series to create a transformed dataset that is used for the what-if analysis.</p> 
-    /// <p>This dataset should contain the items to modify (such as item_id or workforce_type), any relevant dimensions, the timestamp column, and at least one of the related time series columns. This file should not contain duplicate timestamps for the same time series.</p> 
+    /// <p>The replacement time series dataset, which contains the rows that you want to change in the related time series dataset. A replacement time series does not need to contain all rows that are in the baseline related time series. Include only the rows (measure-dimension combinations) that you want to include in the what-if forecast. This dataset is merged with the original time series to create a transformed dataset that is used for the what-if analysis.</p>
+    /// <p>This dataset should contain the items to modify (such as item_id or workforce_type), any relevant dimensions, the timestamp column, and at least one of the related time series columns. This file should not contain duplicate timestamps for the same time series.</p>
     /// <p>Timestamps and item_ids not included in this dataset are not included in the what-if analysis. </p>
-    pub fn set_time_series_replacements_data_source(mut self, input: std::option::Option<crate::types::TimeSeriesReplacementsDataSource>) -> Self {
-        self.time_series_replacements_data_source = input; self
+    pub fn set_time_series_replacements_data_source(
+        mut self,
+        input: std::option::Option<crate::types::TimeSeriesReplacementsDataSource>,
+    ) -> Self {
+        self.time_series_replacements_data_source = input;
+        self
     }
     /// Appends an item to `tags`.
     ///
@@ -116,30 +147,33 @@ impl CreateWhatIfForecastInputBuilder {
     /// <p>A list of <a href="https://docs.aws.amazon.com/forecast/latest/dg/tagging-forecast-resources.html">tags</a> to apply to the what if forecast.</p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
-                        v.push(input);
-                        self.tags = Some(v);
-                        self
+        v.push(input);
+        self.tags = Some(v);
+        self
     }
     /// <p>A list of <a href="https://docs.aws.amazon.com/forecast/latest/dg/tagging-forecast-resources.html">tags</a> to apply to the what if forecast.</p>
-    pub fn set_tags(mut self, input: std::option::Option<std::vec::Vec<crate::types::Tag>>) -> Self {
-        self.tags = input; self
+    pub fn set_tags(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::Tag>>,
+    ) -> Self {
+        self.tags = input;
+        self
     }
     /// Consumes the builder and constructs a [`CreateWhatIfForecastInput`](crate::operation::create_what_if_forecast::CreateWhatIfForecastInput).
-    pub fn build(self) -> Result<crate::operation::create_what_if_forecast::CreateWhatIfForecastInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::create_what_if_forecast::CreateWhatIfForecastInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::create_what_if_forecast::CreateWhatIfForecastInput {
-                what_if_forecast_name: self.what_if_forecast_name
-                ,
-                what_if_analysis_arn: self.what_if_analysis_arn
-                ,
-                time_series_transformations: self.time_series_transformations
-                ,
-                time_series_replacements_data_source: self.time_series_replacements_data_source
-                ,
-                tags: self.tags
-                ,
-            }
+                what_if_forecast_name: self.what_if_forecast_name,
+                what_if_analysis_arn: self.what_if_analysis_arn,
+                time_series_transformations: self.time_series_transformations,
+                time_series_replacements_data_source: self.time_series_replacements_data_source,
+                tags: self.tags,
+            },
         )
     }
 }
-

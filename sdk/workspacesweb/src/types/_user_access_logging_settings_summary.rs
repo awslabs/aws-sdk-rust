@@ -3,7 +3,7 @@
 /// <p>The summary of user access logging settings.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UserAccessLoggingSettingsSummary  {
+pub struct UserAccessLoggingSettingsSummary {
     /// <p>The ARN of the user access logging settings.</p>
     #[doc(hidden)]
     pub user_access_logging_settings_arn: std::option::Option<std::string::String>,
@@ -13,11 +13,11 @@ pub struct UserAccessLoggingSettingsSummary  {
 }
 impl UserAccessLoggingSettingsSummary {
     /// <p>The ARN of the user access logging settings.</p>
-    pub fn user_access_logging_settings_arn(&self) -> std::option::Option<& str> {
+    pub fn user_access_logging_settings_arn(&self) -> std::option::Option<&str> {
         self.user_access_logging_settings_arn.as_deref()
     }
     /// <p>The ARN of the Kinesis stream.</p>
-    pub fn kinesis_stream_arn(&self) -> std::option::Option<& str> {
+    pub fn kinesis_stream_arn(&self) -> std::option::Option<&str> {
         self.kinesis_stream_arn.as_deref()
     }
 }
@@ -37,13 +37,20 @@ pub struct UserAccessLoggingSettingsSummaryBuilder {
 }
 impl UserAccessLoggingSettingsSummaryBuilder {
     /// <p>The ARN of the user access logging settings.</p>
-    pub fn user_access_logging_settings_arn(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn user_access_logging_settings_arn(
+        mut self,
+        input: impl Into<std::string::String>,
+    ) -> Self {
         self.user_access_logging_settings_arn = Some(input.into());
         self
     }
     /// <p>The ARN of the user access logging settings.</p>
-    pub fn set_user_access_logging_settings_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.user_access_logging_settings_arn = input; self
+    pub fn set_user_access_logging_settings_arn(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.user_access_logging_settings_arn = input;
+        self
     }
     /// <p>The ARN of the Kinesis stream.</p>
     pub fn kinesis_stream_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -51,17 +58,18 @@ impl UserAccessLoggingSettingsSummaryBuilder {
         self
     }
     /// <p>The ARN of the Kinesis stream.</p>
-    pub fn set_kinesis_stream_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.kinesis_stream_arn = input; self
+    pub fn set_kinesis_stream_arn(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.kinesis_stream_arn = input;
+        self
     }
     /// Consumes the builder and constructs a [`UserAccessLoggingSettingsSummary`](crate::types::UserAccessLoggingSettingsSummary).
     pub fn build(self) -> crate::types::UserAccessLoggingSettingsSummary {
         crate::types::UserAccessLoggingSettingsSummary {
-            user_access_logging_settings_arn: self.user_access_logging_settings_arn
-            ,
-            kinesis_stream_arn: self.kinesis_stream_arn
-            ,
+            user_access_logging_settings_arn: self.user_access_logging_settings_arn,
+            kinesis_stream_arn: self.kinesis_stream_arn,
         }
     }
 }
-

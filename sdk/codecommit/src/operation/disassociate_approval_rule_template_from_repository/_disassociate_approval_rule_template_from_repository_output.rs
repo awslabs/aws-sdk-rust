@@ -2,17 +2,17 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DisassociateApprovalRuleTemplateFromRepositoryOutput  {
+pub struct DisassociateApprovalRuleTemplateFromRepositoryOutput {
     _request_id: Option<String>,
 }
 impl aws_http::request_id::RequestId for DisassociateApprovalRuleTemplateFromRepositoryOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl DisassociateApprovalRuleTemplateFromRepositoryOutput {
     /// Creates a new builder-style object to manufacture [`DisassociateApprovalRuleTemplateFromRepositoryOutput`](crate::operation::disassociate_approval_rule_template_from_repository::DisassociateApprovalRuleTemplateFromRepositoryOutput).
-    pub fn builder() -> crate::operation::disassociate_approval_rule_template_from_repository::builders::DisassociateApprovalRuleTemplateFromRepositoryOutputBuilder {
+    pub fn builder() -> crate::operation::disassociate_approval_rule_template_from_repository::builders::DisassociateApprovalRuleTemplateFromRepositoryOutputBuilder{
         crate::operation::disassociate_approval_rule_template_from_repository::builders::DisassociateApprovalRuleTemplateFromRepositoryOutputBuilder::default()
     }
 }
@@ -25,19 +25,18 @@ pub struct DisassociateApprovalRuleTemplateFromRepositoryOutputBuilder {
 }
 impl DisassociateApprovalRuleTemplateFromRepositoryOutputBuilder {
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`DisassociateApprovalRuleTemplateFromRepositoryOutput`](crate::operation::disassociate_approval_rule_template_from_repository::DisassociateApprovalRuleTemplateFromRepositoryOutput).
-    pub fn build(self) -> crate::operation::disassociate_approval_rule_template_from_repository::DisassociateApprovalRuleTemplateFromRepositoryOutput {
+    pub fn build(self) -> crate::operation::disassociate_approval_rule_template_from_repository::DisassociateApprovalRuleTemplateFromRepositoryOutput{
         crate::operation::disassociate_approval_rule_template_from_repository::DisassociateApprovalRuleTemplateFromRepositoryOutput {
             _request_id: self._request_id,
         }
     }
 }
-

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListMetricValuesInput  {
+pub struct ListMetricValuesInput {
     /// <p>The name of the thing for which security profile metric values are returned.</p>
     #[doc(hidden)]
     pub thing_name: std::option::Option<std::string::String>,
@@ -30,27 +30,29 @@ pub struct ListMetricValuesInput  {
 }
 impl ListMetricValuesInput {
     /// <p>The name of the thing for which security profile metric values are returned.</p>
-    pub fn thing_name(&self) -> std::option::Option<& str> {
+    pub fn thing_name(&self) -> std::option::Option<&str> {
         self.thing_name.as_deref()
     }
     /// <p>The name of the security profile metric for which values are returned.</p>
-    pub fn metric_name(&self) -> std::option::Option<& str> {
+    pub fn metric_name(&self) -> std::option::Option<&str> {
         self.metric_name.as_deref()
     }
     /// <p>The dimension name.</p>
-    pub fn dimension_name(&self) -> std::option::Option<& str> {
+    pub fn dimension_name(&self) -> std::option::Option<&str> {
         self.dimension_name.as_deref()
     }
     /// <p>The dimension value operator.</p>
-    pub fn dimension_value_operator(&self) -> std::option::Option<& crate::types::DimensionValueOperator> {
+    pub fn dimension_value_operator(
+        &self,
+    ) -> std::option::Option<&crate::types::DimensionValueOperator> {
         self.dimension_value_operator.as_ref()
     }
     /// <p>The start of the time period for which metric values are returned.</p>
-    pub fn start_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
+    pub fn start_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.start_time.as_ref()
     }
     /// <p>The end of the time period for which metric values are returned.</p>
-    pub fn end_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
+    pub fn end_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.end_time.as_ref()
     }
     /// <p>The maximum number of results to return at one time.</p>
@@ -58,13 +60,14 @@ impl ListMetricValuesInput {
         self.max_results
     }
     /// <p>The token for the next set of results.</p>
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
 }
 impl ListMetricValuesInput {
     /// Creates a new builder-style object to manufacture [`ListMetricValuesInput`](crate::operation::list_metric_values::ListMetricValuesInput).
-    pub fn builder() -> crate::operation::list_metric_values::builders::ListMetricValuesInputBuilder {
+    pub fn builder() -> crate::operation::list_metric_values::builders::ListMetricValuesInputBuilder
+    {
         crate::operation::list_metric_values::builders::ListMetricValuesInputBuilder::default()
     }
 }
@@ -90,7 +93,8 @@ impl ListMetricValuesInputBuilder {
     }
     /// <p>The name of the thing for which security profile metric values are returned.</p>
     pub fn set_thing_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.thing_name = input; self
+        self.thing_name = input;
+        self
     }
     /// <p>The name of the security profile metric for which values are returned.</p>
     pub fn metric_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -99,7 +103,8 @@ impl ListMetricValuesInputBuilder {
     }
     /// <p>The name of the security profile metric for which values are returned.</p>
     pub fn set_metric_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.metric_name = input; self
+        self.metric_name = input;
+        self
     }
     /// <p>The dimension name.</p>
     pub fn dimension_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -108,7 +113,8 @@ impl ListMetricValuesInputBuilder {
     }
     /// <p>The dimension name.</p>
     pub fn set_dimension_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.dimension_name = input; self
+        self.dimension_name = input;
+        self
     }
     /// <p>The dimension value operator.</p>
     pub fn dimension_value_operator(mut self, input: crate::types::DimensionValueOperator) -> Self {
@@ -116,8 +122,12 @@ impl ListMetricValuesInputBuilder {
         self
     }
     /// <p>The dimension value operator.</p>
-    pub fn set_dimension_value_operator(mut self, input: std::option::Option<crate::types::DimensionValueOperator>) -> Self {
-        self.dimension_value_operator = input; self
+    pub fn set_dimension_value_operator(
+        mut self,
+        input: std::option::Option<crate::types::DimensionValueOperator>,
+    ) -> Self {
+        self.dimension_value_operator = input;
+        self
     }
     /// <p>The start of the time period for which metric values are returned.</p>
     pub fn start_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -125,8 +135,12 @@ impl ListMetricValuesInputBuilder {
         self
     }
     /// <p>The start of the time period for which metric values are returned.</p>
-    pub fn set_start_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.start_time = input; self
+    pub fn set_start_time(
+        mut self,
+        input: std::option::Option<aws_smithy_types::DateTime>,
+    ) -> Self {
+        self.start_time = input;
+        self
     }
     /// <p>The end of the time period for which metric values are returned.</p>
     pub fn end_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -135,7 +149,8 @@ impl ListMetricValuesInputBuilder {
     }
     /// <p>The end of the time period for which metric values are returned.</p>
     pub fn set_end_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.end_time = input; self
+        self.end_time = input;
+        self
     }
     /// <p>The maximum number of results to return at one time.</p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -144,7 +159,8 @@ impl ListMetricValuesInputBuilder {
     }
     /// <p>The maximum number of results to return at one time.</p>
     pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_results = input; self
+        self.max_results = input;
+        self
     }
     /// <p>The token for the next set of results.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -153,30 +169,27 @@ impl ListMetricValuesInputBuilder {
     }
     /// <p>The token for the next set of results.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input; self
+        self.next_token = input;
+        self
     }
     /// Consumes the builder and constructs a [`ListMetricValuesInput`](crate::operation::list_metric_values::ListMetricValuesInput).
-    pub fn build(self) -> Result<crate::operation::list_metric_values::ListMetricValuesInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::list_metric_values::ListMetricValuesInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::list_metric_values::ListMetricValuesInput {
-                thing_name: self.thing_name
-                ,
-                metric_name: self.metric_name
-                ,
-                dimension_name: self.dimension_name
-                ,
-                dimension_value_operator: self.dimension_value_operator
-                ,
-                start_time: self.start_time
-                ,
-                end_time: self.end_time
-                ,
-                max_results: self.max_results
-                ,
-                next_token: self.next_token
-                ,
-            }
+                thing_name: self.thing_name,
+                metric_name: self.metric_name,
+                dimension_name: self.dimension_name,
+                dimension_value_operator: self.dimension_value_operator,
+                start_time: self.start_time,
+                end_time: self.end_time,
+                max_results: self.max_results,
+                next_token: self.next_token,
+            },
         )
     }
 }
-

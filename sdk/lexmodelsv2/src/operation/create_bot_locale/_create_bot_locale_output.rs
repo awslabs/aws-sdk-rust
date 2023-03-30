@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateBotLocaleOutput  {
+pub struct CreateBotLocaleOutput {
     /// <p>The specified bot identifier.</p>
     #[doc(hidden)]
     pub bot_id: std::option::Option<std::string::String>,
@@ -24,9 +24,9 @@ pub struct CreateBotLocaleOutput  {
     /// <p>The Amazon Polly voice ID that Amazon Lex uses for voice interaction with the user.</p>
     #[doc(hidden)]
     pub voice_settings: std::option::Option<crate::types::VoiceSettings>,
-    /// <p>The status of the bot.</p> 
-    /// <p>When the status is <code>Creating</code> the bot locale is being configured. When the status is <code>Building</code> Amazon Lex is building the bot for testing and use.</p> 
-    /// <p>If the status of the bot is <code>ReadyExpressTesting</code>, you can test the bot using the exact utterances specified in the bots' intents. When the bot is ready for full testing or to run, the status is <code>Built</code>.</p> 
+    /// <p>The status of the bot.</p>
+    /// <p>When the status is <code>Creating</code> the bot locale is being configured. When the status is <code>Building</code> Amazon Lex is building the bot for testing and use.</p>
+    /// <p>If the status of the bot is <code>ReadyExpressTesting</code>, you can test the bot using the exact utterances specified in the bots' intents. When the bot is ready for full testing or to run, the status is <code>Built</code>.</p>
     /// <p>If there was a problem with building the bot, the status is <code>Failed</code>. If the bot was saved but not built, the status is <code>NotBuilt</code>.</p>
     #[doc(hidden)]
     pub bot_locale_status: std::option::Option<crate::types::BotLocaleStatus>,
@@ -37,23 +37,23 @@ pub struct CreateBotLocaleOutput  {
 }
 impl CreateBotLocaleOutput {
     /// <p>The specified bot identifier.</p>
-    pub fn bot_id(&self) -> std::option::Option<& str> {
+    pub fn bot_id(&self) -> std::option::Option<&str> {
         self.bot_id.as_deref()
     }
     /// <p>The specified bot version.</p>
-    pub fn bot_version(&self) -> std::option::Option<& str> {
+    pub fn bot_version(&self) -> std::option::Option<&str> {
         self.bot_version.as_deref()
     }
     /// <p>The specified locale name.</p>
-    pub fn locale_name(&self) -> std::option::Option<& str> {
+    pub fn locale_name(&self) -> std::option::Option<&str> {
         self.locale_name.as_deref()
     }
     /// <p>The specified locale identifier.</p>
-    pub fn locale_id(&self) -> std::option::Option<& str> {
+    pub fn locale_id(&self) -> std::option::Option<&str> {
         self.locale_id.as_deref()
     }
     /// <p>The specified description of the bot locale.</p>
-    pub fn description(&self) -> std::option::Option<& str> {
+    pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
     /// <p>The specified confidence threshold for inserting the <code>AMAZON.FallbackIntent</code> and <code>AMAZON.KendraSearchIntent</code> intents.</p>
@@ -61,29 +61,30 @@ impl CreateBotLocaleOutput {
         self.nlu_intent_confidence_threshold
     }
     /// <p>The Amazon Polly voice ID that Amazon Lex uses for voice interaction with the user.</p>
-    pub fn voice_settings(&self) -> std::option::Option<& crate::types::VoiceSettings> {
+    pub fn voice_settings(&self) -> std::option::Option<&crate::types::VoiceSettings> {
         self.voice_settings.as_ref()
     }
-    /// <p>The status of the bot.</p> 
-    /// <p>When the status is <code>Creating</code> the bot locale is being configured. When the status is <code>Building</code> Amazon Lex is building the bot for testing and use.</p> 
-    /// <p>If the status of the bot is <code>ReadyExpressTesting</code>, you can test the bot using the exact utterances specified in the bots' intents. When the bot is ready for full testing or to run, the status is <code>Built</code>.</p> 
+    /// <p>The status of the bot.</p>
+    /// <p>When the status is <code>Creating</code> the bot locale is being configured. When the status is <code>Building</code> Amazon Lex is building the bot for testing and use.</p>
+    /// <p>If the status of the bot is <code>ReadyExpressTesting</code>, you can test the bot using the exact utterances specified in the bots' intents. When the bot is ready for full testing or to run, the status is <code>Built</code>.</p>
     /// <p>If there was a problem with building the bot, the status is <code>Failed</code>. If the bot was saved but not built, the status is <code>NotBuilt</code>.</p>
-    pub fn bot_locale_status(&self) -> std::option::Option<& crate::types::BotLocaleStatus> {
+    pub fn bot_locale_status(&self) -> std::option::Option<&crate::types::BotLocaleStatus> {
         self.bot_locale_status.as_ref()
     }
     /// <p>A timestamp specifying the date and time that the bot locale was created.</p>
-    pub fn creation_date_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
+    pub fn creation_date_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.creation_date_time.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for CreateBotLocaleOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl CreateBotLocaleOutput {
     /// Creates a new builder-style object to manufacture [`CreateBotLocaleOutput`](crate::operation::create_bot_locale::CreateBotLocaleOutput).
-    pub fn builder() -> crate::operation::create_bot_locale::builders::CreateBotLocaleOutputBuilder {
+    pub fn builder() -> crate::operation::create_bot_locale::builders::CreateBotLocaleOutputBuilder
+    {
         crate::operation::create_bot_locale::builders::CreateBotLocaleOutputBuilder::default()
     }
 }
@@ -111,7 +112,8 @@ impl CreateBotLocaleOutputBuilder {
     }
     /// <p>The specified bot identifier.</p>
     pub fn set_bot_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.bot_id = input; self
+        self.bot_id = input;
+        self
     }
     /// <p>The specified bot version.</p>
     pub fn bot_version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -120,7 +122,8 @@ impl CreateBotLocaleOutputBuilder {
     }
     /// <p>The specified bot version.</p>
     pub fn set_bot_version(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.bot_version = input; self
+        self.bot_version = input;
+        self
     }
     /// <p>The specified locale name.</p>
     pub fn locale_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -129,7 +132,8 @@ impl CreateBotLocaleOutputBuilder {
     }
     /// <p>The specified locale name.</p>
     pub fn set_locale_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.locale_name = input; self
+        self.locale_name = input;
+        self
     }
     /// <p>The specified locale identifier.</p>
     pub fn locale_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -138,7 +142,8 @@ impl CreateBotLocaleOutputBuilder {
     }
     /// <p>The specified locale identifier.</p>
     pub fn set_locale_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.locale_id = input; self
+        self.locale_id = input;
+        self
     }
     /// <p>The specified description of the bot locale.</p>
     pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -147,7 +152,8 @@ impl CreateBotLocaleOutputBuilder {
     }
     /// <p>The specified description of the bot locale.</p>
     pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.description = input; self
+        self.description = input;
+        self
     }
     /// <p>The specified confidence threshold for inserting the <code>AMAZON.FallbackIntent</code> and <code>AMAZON.KendraSearchIntent</code> intents.</p>
     pub fn nlu_intent_confidence_threshold(mut self, input: f64) -> Self {
@@ -156,7 +162,8 @@ impl CreateBotLocaleOutputBuilder {
     }
     /// <p>The specified confidence threshold for inserting the <code>AMAZON.FallbackIntent</code> and <code>AMAZON.KendraSearchIntent</code> intents.</p>
     pub fn set_nlu_intent_confidence_threshold(mut self, input: std::option::Option<f64>) -> Self {
-        self.nlu_intent_confidence_threshold = input; self
+        self.nlu_intent_confidence_threshold = input;
+        self
     }
     /// <p>The Amazon Polly voice ID that Amazon Lex uses for voice interaction with the user.</p>
     pub fn voice_settings(mut self, input: crate::types::VoiceSettings) -> Self {
@@ -164,23 +171,31 @@ impl CreateBotLocaleOutputBuilder {
         self
     }
     /// <p>The Amazon Polly voice ID that Amazon Lex uses for voice interaction with the user.</p>
-    pub fn set_voice_settings(mut self, input: std::option::Option<crate::types::VoiceSettings>) -> Self {
-        self.voice_settings = input; self
+    pub fn set_voice_settings(
+        mut self,
+        input: std::option::Option<crate::types::VoiceSettings>,
+    ) -> Self {
+        self.voice_settings = input;
+        self
     }
-    /// <p>The status of the bot.</p> 
-    /// <p>When the status is <code>Creating</code> the bot locale is being configured. When the status is <code>Building</code> Amazon Lex is building the bot for testing and use.</p> 
-    /// <p>If the status of the bot is <code>ReadyExpressTesting</code>, you can test the bot using the exact utterances specified in the bots' intents. When the bot is ready for full testing or to run, the status is <code>Built</code>.</p> 
+    /// <p>The status of the bot.</p>
+    /// <p>When the status is <code>Creating</code> the bot locale is being configured. When the status is <code>Building</code> Amazon Lex is building the bot for testing and use.</p>
+    /// <p>If the status of the bot is <code>ReadyExpressTesting</code>, you can test the bot using the exact utterances specified in the bots' intents. When the bot is ready for full testing or to run, the status is <code>Built</code>.</p>
     /// <p>If there was a problem with building the bot, the status is <code>Failed</code>. If the bot was saved but not built, the status is <code>NotBuilt</code>.</p>
     pub fn bot_locale_status(mut self, input: crate::types::BotLocaleStatus) -> Self {
         self.bot_locale_status = Some(input);
         self
     }
-    /// <p>The status of the bot.</p> 
-    /// <p>When the status is <code>Creating</code> the bot locale is being configured. When the status is <code>Building</code> Amazon Lex is building the bot for testing and use.</p> 
-    /// <p>If the status of the bot is <code>ReadyExpressTesting</code>, you can test the bot using the exact utterances specified in the bots' intents. When the bot is ready for full testing or to run, the status is <code>Built</code>.</p> 
+    /// <p>The status of the bot.</p>
+    /// <p>When the status is <code>Creating</code> the bot locale is being configured. When the status is <code>Building</code> Amazon Lex is building the bot for testing and use.</p>
+    /// <p>If the status of the bot is <code>ReadyExpressTesting</code>, you can test the bot using the exact utterances specified in the bots' intents. When the bot is ready for full testing or to run, the status is <code>Built</code>.</p>
     /// <p>If there was a problem with building the bot, the status is <code>Failed</code>. If the bot was saved but not built, the status is <code>NotBuilt</code>.</p>
-    pub fn set_bot_locale_status(mut self, input: std::option::Option<crate::types::BotLocaleStatus>) -> Self {
-        self.bot_locale_status = input; self
+    pub fn set_bot_locale_status(
+        mut self,
+        input: std::option::Option<crate::types::BotLocaleStatus>,
+    ) -> Self {
+        self.bot_locale_status = input;
+        self
     }
     /// <p>A timestamp specifying the date and time that the bot locale was created.</p>
     pub fn creation_date_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -188,41 +203,35 @@ impl CreateBotLocaleOutputBuilder {
         self
     }
     /// <p>A timestamp specifying the date and time that the bot locale was created.</p>
-    pub fn set_creation_date_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.creation_date_time = input; self
+    pub fn set_creation_date_time(
+        mut self,
+        input: std::option::Option<aws_smithy_types::DateTime>,
+    ) -> Self {
+        self.creation_date_time = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`CreateBotLocaleOutput`](crate::operation::create_bot_locale::CreateBotLocaleOutput).
     pub fn build(self) -> crate::operation::create_bot_locale::CreateBotLocaleOutput {
         crate::operation::create_bot_locale::CreateBotLocaleOutput {
-            bot_id: self.bot_id
-            ,
-            bot_version: self.bot_version
-            ,
-            locale_name: self.locale_name
-            ,
-            locale_id: self.locale_id
-            ,
-            description: self.description
-            ,
-            nlu_intent_confidence_threshold: self.nlu_intent_confidence_threshold
-            ,
-            voice_settings: self.voice_settings
-            ,
-            bot_locale_status: self.bot_locale_status
-            ,
-            creation_date_time: self.creation_date_time
-            ,
+            bot_id: self.bot_id,
+            bot_version: self.bot_version,
+            locale_name: self.locale_name,
+            locale_id: self.locale_id,
+            description: self.description,
+            nlu_intent_confidence_threshold: self.nlu_intent_confidence_threshold,
+            voice_settings: self.voice_settings,
+            bot_locale_status: self.bot_locale_status,
+            creation_date_time: self.creation_date_time,
             _request_id: self._request_id,
         }
     }
 }
-

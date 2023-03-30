@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-/// 
+///
 /// Here is an example of how you can make a match expression forward-compatible:
-/// 
+///
 /// ```text
 /// # let contextkeytypeenum = unimplemented!();
 /// match contextkeytypeenum {
@@ -40,14 +40,22 @@
 /// Specifically, when `contextkeytypeenum` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `ContextKeyTypeEnum::NewFeature` also yielding `"NewFeature"`.
-/// 
+///
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
 pub enum ContextKeyTypeEnum {
     #[allow(missing_docs)] // documentation missing in model
     Binary,
@@ -74,61 +82,75 @@ pub enum ContextKeyTypeEnum {
     #[allow(missing_docs)] // documentation missing in model
     StringList,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::primitives::UnknownVariantValue)
+    Unknown(crate::primitives::UnknownVariantValue),
 }
 impl std::convert::From<&str> for ContextKeyTypeEnum {
-                fn from(s: &str) -> Self {
-                    match s {
-                        "binary" => ContextKeyTypeEnum::Binary,
-"binaryList" => ContextKeyTypeEnum::BinaryList,
-"boolean" => ContextKeyTypeEnum::Boolean,
-"booleanList" => ContextKeyTypeEnum::BooleanList,
-"date" => ContextKeyTypeEnum::Date,
-"dateList" => ContextKeyTypeEnum::DateList,
-"ip" => ContextKeyTypeEnum::Ip,
-"ipList" => ContextKeyTypeEnum::IpList,
-"numeric" => ContextKeyTypeEnum::Numeric,
-"numericList" => ContextKeyTypeEnum::NumericList,
-"string" => ContextKeyTypeEnum::String,
-"stringList" => ContextKeyTypeEnum::StringList,
-other => ContextKeyTypeEnum::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
-                    }
-                }
-            }
-impl std::str::FromStr for ContextKeyTypeEnum {
-                type Err = std::convert::Infallible;
-
-                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-                    Ok(ContextKeyTypeEnum::from(s))
-                }
-            }
-impl ContextKeyTypeEnum {
-                /// Returns the `&str` value of the enum member.
-                pub fn as_str(&self) -> &str {
-                    match self {
-    ContextKeyTypeEnum::Binary => "binary",
-    ContextKeyTypeEnum::BinaryList => "binaryList",
-    ContextKeyTypeEnum::Boolean => "boolean",
-    ContextKeyTypeEnum::BooleanList => "booleanList",
-    ContextKeyTypeEnum::Date => "date",
-    ContextKeyTypeEnum::DateList => "dateList",
-    ContextKeyTypeEnum::Ip => "ip",
-    ContextKeyTypeEnum::IpList => "ipList",
-    ContextKeyTypeEnum::Numeric => "numeric",
-    ContextKeyTypeEnum::NumericList => "numericList",
-    ContextKeyTypeEnum::String => "string",
-    ContextKeyTypeEnum::StringList => "stringList",
-    ContextKeyTypeEnum::Unknown(value) => value.as_str()
+    fn from(s: &str) -> Self {
+        match s {
+            "binary" => ContextKeyTypeEnum::Binary,
+            "binaryList" => ContextKeyTypeEnum::BinaryList,
+            "boolean" => ContextKeyTypeEnum::Boolean,
+            "booleanList" => ContextKeyTypeEnum::BooleanList,
+            "date" => ContextKeyTypeEnum::Date,
+            "dateList" => ContextKeyTypeEnum::DateList,
+            "ip" => ContextKeyTypeEnum::Ip,
+            "ipList" => ContextKeyTypeEnum::IpList,
+            "numeric" => ContextKeyTypeEnum::Numeric,
+            "numericList" => ContextKeyTypeEnum::NumericList,
+            "string" => ContextKeyTypeEnum::String,
+            "stringList" => ContextKeyTypeEnum::StringList,
+            other => ContextKeyTypeEnum::Unknown(crate::primitives::UnknownVariantValue(
+                other.to_owned(),
+            )),
+        }
+    }
 }
-                }
-                /// Returns all the `&str` representations of the enum members.
-                pub const fn values() -> &'static [&'static str] {
-                    &["binary", "binaryList", "boolean", "booleanList", "date", "dateList", "ip", "ipList", "numeric", "numericList", "string", "stringList"]
-                }
-            }
-impl AsRef<str> for ContextKeyTypeEnum {
-                fn as_ref(&self) -> &str {
-                    self.as_str()
-                }
-            }
+impl std::str::FromStr for ContextKeyTypeEnum {
+    type Err = std::convert::Infallible;
 
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(ContextKeyTypeEnum::from(s))
+    }
+}
+impl ContextKeyTypeEnum {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            ContextKeyTypeEnum::Binary => "binary",
+            ContextKeyTypeEnum::BinaryList => "binaryList",
+            ContextKeyTypeEnum::Boolean => "boolean",
+            ContextKeyTypeEnum::BooleanList => "booleanList",
+            ContextKeyTypeEnum::Date => "date",
+            ContextKeyTypeEnum::DateList => "dateList",
+            ContextKeyTypeEnum::Ip => "ip",
+            ContextKeyTypeEnum::IpList => "ipList",
+            ContextKeyTypeEnum::Numeric => "numeric",
+            ContextKeyTypeEnum::NumericList => "numericList",
+            ContextKeyTypeEnum::String => "string",
+            ContextKeyTypeEnum::StringList => "stringList",
+            ContextKeyTypeEnum::Unknown(value) => value.as_str(),
+        }
+    }
+    /// Returns all the `&str` representations of the enum members.
+    pub const fn values() -> &'static [&'static str] {
+        &[
+            "binary",
+            "binaryList",
+            "boolean",
+            "booleanList",
+            "date",
+            "dateList",
+            "ip",
+            "ipList",
+            "numeric",
+            "numericList",
+            "string",
+            "stringList",
+        ]
+    }
+}
+impl AsRef<str> for ContextKeyTypeEnum {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}

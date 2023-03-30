@@ -3,7 +3,7 @@
 /// <p>Information about the <code>ConnectionSettings</code> attribute.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ConnectionSettings  {
+pub struct ConnectionSettings {
     /// <p>The time, in seconds, that the connection is allowed to be idle (no data has been sent over the connection) before it is closed by the load balancer.</p>
     #[doc(hidden)]
     pub idle_timeout: std::option::Option<i32>,
@@ -35,14 +35,13 @@ impl ConnectionSettingsBuilder {
     }
     /// <p>The time, in seconds, that the connection is allowed to be idle (no data has been sent over the connection) before it is closed by the load balancer.</p>
     pub fn set_idle_timeout(mut self, input: std::option::Option<i32>) -> Self {
-        self.idle_timeout = input; self
+        self.idle_timeout = input;
+        self
     }
     /// Consumes the builder and constructs a [`ConnectionSettings`](crate::types::ConnectionSettings).
     pub fn build(self) -> crate::types::ConnectionSettings {
         crate::types::ConnectionSettings {
-            idle_timeout: self.idle_timeout
-            ,
+            idle_timeout: self.idle_timeout,
         }
     }
 }
-

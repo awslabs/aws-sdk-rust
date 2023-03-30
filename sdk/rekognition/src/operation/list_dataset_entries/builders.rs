@@ -4,58 +4,85 @@ pub use crate::operation::list_dataset_entries::_list_dataset_entries_output::Li
 pub use crate::operation::list_dataset_entries::_list_dataset_entries_input::ListDatasetEntriesInputBuilder;
 
 /// Fluent builder constructing a request to `ListDatasetEntries`.
-/// 
-/// <p> Lists the entries (images) within a dataset. An entry is a JSON Line that contains the information for a single image, including the image location, assigned labels, and object location bounding boxes. For more information, see <a href="https://docs.aws.amazon.com/rekognition/latest/customlabels-dg/md-manifest-files.html">Creating a manifest file</a>.</p> 
-/// <p>JSON Lines in the response include information about non-terminal errors found in the dataset. Non terminal errors are reported in <code>errors</code> lists within each JSON Line. The same information is reported in the training and testing validation result manifests that Amazon Rekognition Custom Labels creates during model training. </p> 
-/// <p>You can filter the response in variety of ways, such as choosing which labels to return and returning JSON Lines created after a specific date. </p> 
+///
+/// <p> Lists the entries (images) within a dataset. An entry is a JSON Line that contains the information for a single image, including the image location, assigned labels, and object location bounding boxes. For more information, see <a href="https://docs.aws.amazon.com/rekognition/latest/customlabels-dg/md-manifest-files.html">Creating a manifest file</a>.</p>
+/// <p>JSON Lines in the response include information about non-terminal errors found in the dataset. Non terminal errors are reported in <code>errors</code> lists within each JSON Line. The same information is reported in the training and testing validation result manifests that Amazon Rekognition Custom Labels creates during model training. </p>
+/// <p>You can filter the response in variety of ways, such as choosing which labels to return and returning JSON Lines created after a specific date. </p>
 /// <p>This operation requires permissions to perform the <code>rekognition:ListDatasetEntries</code> action.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListDatasetEntriesFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::list_dataset_entries::builders::ListDatasetEntriesInputBuilder
-            }
-impl ListDatasetEntriesFluentBuilder  {
+    handle: std::sync::Arc<crate::client::Handle>,
+    inner: crate::operation::list_dataset_entries::builders::ListDatasetEntriesInputBuilder,
+}
+impl ListDatasetEntriesFluentBuilder {
     /// Creates a new `ListDatasetEntries`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
-                    /// sent. The operation's inner [http::Request] can be modified as well.
-                    pub async fn customize(self) -> std::result::Result<
-                        crate::client::customize::CustomizableOperation<crate::operation::list_dataset_entries::ListDatasetEntries, aws_http::retry::AwsResponseRetryClassifier,>,
-                        aws_smithy_http::result::SdkError<crate::operation::list_dataset_entries::ListDatasetEntriesError>
-                    >  {
-                        let handle = self.handle.clone();
-                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-                    }
-    
-                    /// Sends the request and returns the response.
-                    ///
-                    /// If an error occurs, an `SdkError` will be returned with additional details that
-                    /// can be matched against.
-                    ///
-                    /// By default, any retryable failures will be retried twice. Retry behavior
-                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                    /// set when configuring the client.
-                    pub async fn send(self) -> std::result::Result<crate::operation::list_dataset_entries::ListDatasetEntriesOutput, aws_smithy_http::result::SdkError<crate::operation::list_dataset_entries::ListDatasetEntriesError>>
-                     {
-                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&self.handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        self.handle.client.call(op).await
-                    }
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle,
+            inner: Default::default(),
+        }
+    }
+
+    /// Consume this builder, creating a customizable operation that can be modified before being
+    /// sent. The operation's inner [http::Request] can be modified as well.
+    pub async fn customize(
+        self,
+    ) -> std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::list_dataset_entries::ListDatasetEntries,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::result::SdkError<
+            crate::operation::list_dataset_entries::ListDatasetEntriesError,
+        >,
+    > {
+        let handle = self.handle.clone();
+        let operation = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+    }
+
+    /// Sends the request and returns the response.
+    ///
+    /// If an error occurs, an `SdkError` will be returned with additional details that
+    /// can be matched against.
+    ///
+    /// By default, any retryable failures will be retried twice. Retry behavior
+    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+    /// set when configuring the client.
+    pub async fn send(
+        self,
+    ) -> std::result::Result<
+        crate::operation::list_dataset_entries::ListDatasetEntriesOutput,
+        aws_smithy_http::result::SdkError<
+            crate::operation::list_dataset_entries::ListDatasetEntriesError,
+        >,
+    > {
+        let op = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&self.handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        self.handle.client.call(op).await
+    }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::list_dataset_entries::paginator::ListDatasetEntriesPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::list_dataset_entries::paginator::ListDatasetEntriesPaginator {
-                            crate::operation::list_dataset_entries::paginator::ListDatasetEntriesPaginator::new(self.handle, self.inner)
-                        }
+    ///
+    /// Paginators are used by calling [`send().await`](crate::operation::list_dataset_entries::paginator::ListDatasetEntriesPaginator::send) which returns a `Stream`.
+    pub fn into_paginator(
+        self,
+    ) -> crate::operation::list_dataset_entries::paginator::ListDatasetEntriesPaginator {
+        crate::operation::list_dataset_entries::paginator::ListDatasetEntriesPaginator::new(
+            self.handle,
+            self.inner,
+        )
+    }
     /// <p> The Amazon Resource Name (ARN) for the dataset that you want to use. </p>
     pub fn dataset_arn(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.dataset_arn(input.into());
@@ -76,7 +103,10 @@ impl ListDatasetEntriesFluentBuilder  {
         self
     }
     /// <p>Specifies a label filter for the response. The response includes an entry only if one or more of the labels in <code>ContainsLabels</code> exist in the entry. </p>
-    pub fn set_contains_labels(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+    pub fn set_contains_labels(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
         self.inner = self.inner.set_contains_labels(input);
         self
     }
@@ -96,7 +126,10 @@ impl ListDatasetEntriesFluentBuilder  {
         self
     }
     /// <p>If specified, <code>ListDatasetEntries</code> only returns JSON Lines where the value of <code>SourceRefContains</code> is part of the <code>source-ref</code> field. The <code>source-ref</code> field contains the Amazon S3 location of the image. You can use <code>SouceRefContains</code> for tasks such as getting the JSON Line for a single image, or gettting JSON Lines for all images within a specific folder.</p>
-    pub fn set_source_ref_contains(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_source_ref_contains(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_source_ref_contains(input);
         self
     }
@@ -131,4 +164,3 @@ impl ListDatasetEntriesFluentBuilder  {
         self
     }
 }
-

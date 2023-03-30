@@ -3,7 +3,7 @@
 /// <p>The registration configuration.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct RegistrationConfig  {
+pub struct RegistrationConfig {
     /// <p>The template body.</p>
     #[doc(hidden)]
     pub template_body: std::option::Option<std::string::String>,
@@ -16,15 +16,15 @@ pub struct RegistrationConfig  {
 }
 impl RegistrationConfig {
     /// <p>The template body.</p>
-    pub fn template_body(&self) -> std::option::Option<& str> {
+    pub fn template_body(&self) -> std::option::Option<&str> {
         self.template_body.as_deref()
     }
     /// <p>The ARN of the role.</p>
-    pub fn role_arn(&self) -> std::option::Option<& str> {
+    pub fn role_arn(&self) -> std::option::Option<&str> {
         self.role_arn.as_deref()
     }
     /// <p>The name of the provisioning template.</p>
-    pub fn template_name(&self) -> std::option::Option<& str> {
+    pub fn template_name(&self) -> std::option::Option<&str> {
         self.template_name.as_deref()
     }
 }
@@ -51,7 +51,8 @@ impl RegistrationConfigBuilder {
     }
     /// <p>The template body.</p>
     pub fn set_template_body(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.template_body = input; self
+        self.template_body = input;
+        self
     }
     /// <p>The ARN of the role.</p>
     pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -60,7 +61,8 @@ impl RegistrationConfigBuilder {
     }
     /// <p>The ARN of the role.</p>
     pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.role_arn = input; self
+        self.role_arn = input;
+        self
     }
     /// <p>The name of the provisioning template.</p>
     pub fn template_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -69,18 +71,15 @@ impl RegistrationConfigBuilder {
     }
     /// <p>The name of the provisioning template.</p>
     pub fn set_template_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.template_name = input; self
+        self.template_name = input;
+        self
     }
     /// Consumes the builder and constructs a [`RegistrationConfig`](crate::types::RegistrationConfig).
     pub fn build(self) -> crate::types::RegistrationConfig {
         crate::types::RegistrationConfig {
-            template_body: self.template_body
-            ,
-            role_arn: self.role_arn
-            ,
-            template_name: self.template_name
-            ,
+            template_body: self.template_body,
+            role_arn: self.role_arn,
+            template_name: self.template_name,
         }
     }
 }
-

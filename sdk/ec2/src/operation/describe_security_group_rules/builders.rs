@@ -4,88 +4,113 @@ pub use crate::operation::describe_security_group_rules::_describe_security_grou
 pub use crate::operation::describe_security_group_rules::_describe_security_group_rules_input::DescribeSecurityGroupRulesInputBuilder;
 
 /// Fluent builder constructing a request to `DescribeSecurityGroupRules`.
-/// 
+///
 /// <p>Describes one or more of your security group rules.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeSecurityGroupRulesFluentBuilder {
                 handle: std::sync::Arc<crate::client::Handle>,
                 inner: crate::operation::describe_security_group_rules::builders::DescribeSecurityGroupRulesInputBuilder
             }
-impl DescribeSecurityGroupRulesFluentBuilder  {
+impl DescribeSecurityGroupRulesFluentBuilder {
     /// Creates a new `DescribeSecurityGroupRules`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
-                    /// sent. The operation's inner [http::Request] can be modified as well.
-                    pub async fn customize(self) -> std::result::Result<
-                        crate::client::customize::CustomizableOperation<crate::operation::describe_security_group_rules::DescribeSecurityGroupRules, aws_http::retry::AwsResponseRetryClassifier,>,
-                        aws_smithy_http::result::SdkError<crate::operation::describe_security_group_rules::DescribeSecurityGroupRulesError>
-                    >  {
-                        let handle = self.handle.clone();
-                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-                    }
-    
-                    /// Sends the request and returns the response.
-                    ///
-                    /// If an error occurs, an `SdkError` will be returned with additional details that
-                    /// can be matched against.
-                    ///
-                    /// By default, any retryable failures will be retried twice. Retry behavior
-                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                    /// set when configuring the client.
-                    pub async fn send(self) -> std::result::Result<crate::operation::describe_security_group_rules::DescribeSecurityGroupRulesOutput, aws_smithy_http::result::SdkError<crate::operation::describe_security_group_rules::DescribeSecurityGroupRulesError>>
-                     {
-                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&self.handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        self.handle.client.call(op).await
-                    }
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle,
+            inner: Default::default(),
+        }
+    }
+
+    /// Consume this builder, creating a customizable operation that can be modified before being
+    /// sent. The operation's inner [http::Request] can be modified as well.
+    pub async fn customize(
+        self,
+    ) -> std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::describe_security_group_rules::DescribeSecurityGroupRules,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::result::SdkError<
+            crate::operation::describe_security_group_rules::DescribeSecurityGroupRulesError,
+        >,
+    > {
+        let handle = self.handle.clone();
+        let operation = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+    }
+
+    /// Sends the request and returns the response.
+    ///
+    /// If an error occurs, an `SdkError` will be returned with additional details that
+    /// can be matched against.
+    ///
+    /// By default, any retryable failures will be retried twice. Retry behavior
+    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+    /// set when configuring the client.
+    pub async fn send(
+        self,
+    ) -> std::result::Result<
+        crate::operation::describe_security_group_rules::DescribeSecurityGroupRulesOutput,
+        aws_smithy_http::result::SdkError<
+            crate::operation::describe_security_group_rules::DescribeSecurityGroupRulesError,
+        >,
+    > {
+        let op = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&self.handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        self.handle.client.call(op).await
+    }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::describe_security_group_rules::paginator::DescribeSecurityGroupRulesPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::describe_security_group_rules::paginator::DescribeSecurityGroupRulesPaginator {
-                            crate::operation::describe_security_group_rules::paginator::DescribeSecurityGroupRulesPaginator::new(self.handle, self.inner)
-                        }
+    ///
+    /// Paginators are used by calling [`send().await`](crate::operation::describe_security_group_rules::paginator::DescribeSecurityGroupRulesPaginator::send) which returns a `Stream`.
+    pub fn into_paginator(self) -> crate::operation::describe_security_group_rules::paginator::DescribeSecurityGroupRulesPaginator{
+        crate::operation::describe_security_group_rules::paginator::DescribeSecurityGroupRulesPaginator::new(self.handle, self.inner)
+    }
     /// Appends an item to `Filters`.
     ///
     /// To override the contents of this collection use [`set_filters`](Self::set_filters).
     ///
-    /// <p>One or more filters.</p> 
-    /// <ul> 
-    /// <li> <p> <code>group-id</code> - The ID of the security group.</p> </li> 
-    /// <li> <p> <code>security-group-rule-id</code> - The ID of the security group rule.</p> </li> 
+    /// <p>One or more filters.</p>
+    /// <ul>
+    /// <li> <p> <code>group-id</code> - The ID of the security group.</p> </li>
+    /// <li> <p> <code>security-group-rule-id</code> - The ID of the security group rule.</p> </li>
     /// <li> <p> <code>tag</code>:<key>
-    /// - The key/value combination of a tag assigned to the resource. Use the tag key in the filter name and the tag value as the filter value. For example, to find all resources that have a tag with the key 
-    /// <code>Owner</code> and the value 
-    /// <code>TeamA</code>, specify 
-    /// <code>tag:Owner</code> for the filter name and 
+    /// - The key/value combination of a tag assigned to the resource. Use the tag key in the filter name and the tag value as the filter value. For example, to find all resources that have a tag with the key
+    /// <code>Owner</code> and the value
+    /// <code>TeamA</code>, specify
+    /// <code>tag:Owner</code> for the filter name and
     /// <code>TeamA</code> for the filter value.
-    /// </key></p> </li> 
+    /// </key></p> </li>
     /// </ul>
     pub fn filters(mut self, input: crate::types::Filter) -> Self {
         self.inner = self.inner.filters(input);
         self
     }
-    /// <p>One or more filters.</p> 
-    /// <ul> 
-    /// <li> <p> <code>group-id</code> - The ID of the security group.</p> </li> 
-    /// <li> <p> <code>security-group-rule-id</code> - The ID of the security group rule.</p> </li> 
+    /// <p>One or more filters.</p>
+    /// <ul>
+    /// <li> <p> <code>group-id</code> - The ID of the security group.</p> </li>
+    /// <li> <p> <code>security-group-rule-id</code> - The ID of the security group rule.</p> </li>
     /// <li> <p> <code>tag</code>:<key>
-    /// - The key/value combination of a tag assigned to the resource. Use the tag key in the filter name and the tag value as the filter value. For example, to find all resources that have a tag with the key 
-    /// <code>Owner</code> and the value 
-    /// <code>TeamA</code>, specify 
-    /// <code>tag:Owner</code> for the filter name and 
+    /// - The key/value combination of a tag assigned to the resource. Use the tag key in the filter name and the tag value as the filter value. For example, to find all resources that have a tag with the key
+    /// <code>Owner</code> and the value
+    /// <code>TeamA</code>, specify
+    /// <code>tag:Owner</code> for the filter name and
     /// <code>TeamA</code> for the filter value.
-    /// </key></p> </li> 
+    /// </key></p> </li>
     /// </ul>
-    pub fn set_filters(mut self, input: std::option::Option<std::vec::Vec<crate::types::Filter>>) -> Self {
+    pub fn set_filters(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::Filter>>,
+    ) -> Self {
         self.inner = self.inner.set_filters(input);
         self
     }
@@ -99,7 +124,10 @@ impl DescribeSecurityGroupRulesFluentBuilder  {
         self
     }
     /// <p>The IDs of the security group rules.</p>
-    pub fn set_security_group_rule_ids(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+    pub fn set_security_group_rule_ids(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
         self.inner = self.inner.set_security_group_rule_ids(input);
         self
     }
@@ -134,4 +162,3 @@ impl DescribeSecurityGroupRulesFluentBuilder  {
         self
     }
 }
-

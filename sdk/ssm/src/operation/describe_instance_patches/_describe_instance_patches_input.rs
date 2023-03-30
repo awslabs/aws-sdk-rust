@@ -2,17 +2,17 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeInstancePatchesInput  {
+pub struct DescribeInstancePatchesInput {
     /// <p>The ID of the managed node whose patch state information should be retrieved.</p>
     #[doc(hidden)]
     pub instance_id: std::option::Option<std::string::String>,
-    /// <p>Each element in the array is a structure containing a key-value pair.</p> 
-    /// <p>Supported keys for <code>DescribeInstancePatches</code>include the following:</p> 
-    /// <ul> 
-    /// <li> <p> <b> <code>Classification</code> </b> </p> <p>Sample values: <code>Security</code> | <code>SecurityUpdates</code> </p> </li> 
-    /// <li> <p> <b> <code>KBId</code> </b> </p> <p>Sample values: <code>KB4480056</code> | <code>java-1.7.0-openjdk.x86_64</code> </p> </li> 
-    /// <li> <p> <b> <code>Severity</code> </b> </p> <p>Sample values: <code>Important</code> | <code>Medium</code> | <code>Low</code> </p> </li> 
-    /// <li> <p> <b> <code>State</code> </b> </p> <p>Sample values: <code>Installed</code> | <code>InstalledOther</code> | <code>InstalledPendingReboot</code> </p> </li> 
+    /// <p>Each element in the array is a structure containing a key-value pair.</p>
+    /// <p>Supported keys for <code>DescribeInstancePatches</code>include the following:</p>
+    /// <ul>
+    /// <li> <p> <b> <code>Classification</code> </b> </p> <p>Sample values: <code>Security</code> | <code>SecurityUpdates</code> </p> </li>
+    /// <li> <p> <b> <code>KBId</code> </b> </p> <p>Sample values: <code>KB4480056</code> | <code>java-1.7.0-openjdk.x86_64</code> </p> </li>
+    /// <li> <p> <b> <code>Severity</code> </b> </p> <p>Sample values: <code>Important</code> | <code>Medium</code> | <code>Low</code> </p> </li>
+    /// <li> <p> <b> <code>State</code> </b> </p> <p>Sample values: <code>Installed</code> | <code>InstalledOther</code> | <code>InstalledPendingReboot</code> </p> </li>
     /// </ul>
     #[doc(hidden)]
     pub filters: std::option::Option<std::vec::Vec<crate::types::PatchOrchestratorFilter>>,
@@ -25,22 +25,22 @@ pub struct DescribeInstancePatchesInput  {
 }
 impl DescribeInstancePatchesInput {
     /// <p>The ID of the managed node whose patch state information should be retrieved.</p>
-    pub fn instance_id(&self) -> std::option::Option<& str> {
+    pub fn instance_id(&self) -> std::option::Option<&str> {
         self.instance_id.as_deref()
     }
-    /// <p>Each element in the array is a structure containing a key-value pair.</p> 
-    /// <p>Supported keys for <code>DescribeInstancePatches</code>include the following:</p> 
-    /// <ul> 
-    /// <li> <p> <b> <code>Classification</code> </b> </p> <p>Sample values: <code>Security</code> | <code>SecurityUpdates</code> </p> </li> 
-    /// <li> <p> <b> <code>KBId</code> </b> </p> <p>Sample values: <code>KB4480056</code> | <code>java-1.7.0-openjdk.x86_64</code> </p> </li> 
-    /// <li> <p> <b> <code>Severity</code> </b> </p> <p>Sample values: <code>Important</code> | <code>Medium</code> | <code>Low</code> </p> </li> 
-    /// <li> <p> <b> <code>State</code> </b> </p> <p>Sample values: <code>Installed</code> | <code>InstalledOther</code> | <code>InstalledPendingReboot</code> </p> </li> 
+    /// <p>Each element in the array is a structure containing a key-value pair.</p>
+    /// <p>Supported keys for <code>DescribeInstancePatches</code>include the following:</p>
+    /// <ul>
+    /// <li> <p> <b> <code>Classification</code> </b> </p> <p>Sample values: <code>Security</code> | <code>SecurityUpdates</code> </p> </li>
+    /// <li> <p> <b> <code>KBId</code> </b> </p> <p>Sample values: <code>KB4480056</code> | <code>java-1.7.0-openjdk.x86_64</code> </p> </li>
+    /// <li> <p> <b> <code>Severity</code> </b> </p> <p>Sample values: <code>Important</code> | <code>Medium</code> | <code>Low</code> </p> </li>
+    /// <li> <p> <b> <code>State</code> </b> </p> <p>Sample values: <code>Installed</code> | <code>InstalledOther</code> | <code>InstalledPendingReboot</code> </p> </li>
     /// </ul>
-    pub fn filters(&self) -> std::option::Option<& [crate::types::PatchOrchestratorFilter]> {
+    pub fn filters(&self) -> std::option::Option<&[crate::types::PatchOrchestratorFilter]> {
         self.filters.as_deref()
     }
     /// <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
     /// <p>The maximum number of patches to return (per page).</p>
@@ -50,7 +50,9 @@ impl DescribeInstancePatchesInput {
 }
 impl DescribeInstancePatchesInput {
     /// Creates a new builder-style object to manufacture [`DescribeInstancePatchesInput`](crate::operation::describe_instance_patches::DescribeInstancePatchesInput).
-    pub fn builder() -> crate::operation::describe_instance_patches::builders::DescribeInstancePatchesInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::describe_instance_patches::builders::DescribeInstancePatchesInputBuilder
+    {
         crate::operation::describe_instance_patches::builders::DescribeInstancePatchesInputBuilder::default()
     }
 }
@@ -72,36 +74,41 @@ impl DescribeInstancePatchesInputBuilder {
     }
     /// <p>The ID of the managed node whose patch state information should be retrieved.</p>
     pub fn set_instance_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.instance_id = input; self
+        self.instance_id = input;
+        self
     }
     /// Appends an item to `filters`.
     ///
     /// To override the contents of this collection use [`set_filters`](Self::set_filters).
     ///
-    /// <p>Each element in the array is a structure containing a key-value pair.</p> 
-    /// <p>Supported keys for <code>DescribeInstancePatches</code>include the following:</p> 
-    /// <ul> 
-    /// <li> <p> <b> <code>Classification</code> </b> </p> <p>Sample values: <code>Security</code> | <code>SecurityUpdates</code> </p> </li> 
-    /// <li> <p> <b> <code>KBId</code> </b> </p> <p>Sample values: <code>KB4480056</code> | <code>java-1.7.0-openjdk.x86_64</code> </p> </li> 
-    /// <li> <p> <b> <code>Severity</code> </b> </p> <p>Sample values: <code>Important</code> | <code>Medium</code> | <code>Low</code> </p> </li> 
-    /// <li> <p> <b> <code>State</code> </b> </p> <p>Sample values: <code>Installed</code> | <code>InstalledOther</code> | <code>InstalledPendingReboot</code> </p> </li> 
+    /// <p>Each element in the array is a structure containing a key-value pair.</p>
+    /// <p>Supported keys for <code>DescribeInstancePatches</code>include the following:</p>
+    /// <ul>
+    /// <li> <p> <b> <code>Classification</code> </b> </p> <p>Sample values: <code>Security</code> | <code>SecurityUpdates</code> </p> </li>
+    /// <li> <p> <b> <code>KBId</code> </b> </p> <p>Sample values: <code>KB4480056</code> | <code>java-1.7.0-openjdk.x86_64</code> </p> </li>
+    /// <li> <p> <b> <code>Severity</code> </b> </p> <p>Sample values: <code>Important</code> | <code>Medium</code> | <code>Low</code> </p> </li>
+    /// <li> <p> <b> <code>State</code> </b> </p> <p>Sample values: <code>Installed</code> | <code>InstalledOther</code> | <code>InstalledPendingReboot</code> </p> </li>
     /// </ul>
     pub fn filters(mut self, input: crate::types::PatchOrchestratorFilter) -> Self {
         let mut v = self.filters.unwrap_or_default();
-                        v.push(input);
-                        self.filters = Some(v);
-                        self
+        v.push(input);
+        self.filters = Some(v);
+        self
     }
-    /// <p>Each element in the array is a structure containing a key-value pair.</p> 
-    /// <p>Supported keys for <code>DescribeInstancePatches</code>include the following:</p> 
-    /// <ul> 
-    /// <li> <p> <b> <code>Classification</code> </b> </p> <p>Sample values: <code>Security</code> | <code>SecurityUpdates</code> </p> </li> 
-    /// <li> <p> <b> <code>KBId</code> </b> </p> <p>Sample values: <code>KB4480056</code> | <code>java-1.7.0-openjdk.x86_64</code> </p> </li> 
-    /// <li> <p> <b> <code>Severity</code> </b> </p> <p>Sample values: <code>Important</code> | <code>Medium</code> | <code>Low</code> </p> </li> 
-    /// <li> <p> <b> <code>State</code> </b> </p> <p>Sample values: <code>Installed</code> | <code>InstalledOther</code> | <code>InstalledPendingReboot</code> </p> </li> 
+    /// <p>Each element in the array is a structure containing a key-value pair.</p>
+    /// <p>Supported keys for <code>DescribeInstancePatches</code>include the following:</p>
+    /// <ul>
+    /// <li> <p> <b> <code>Classification</code> </b> </p> <p>Sample values: <code>Security</code> | <code>SecurityUpdates</code> </p> </li>
+    /// <li> <p> <b> <code>KBId</code> </b> </p> <p>Sample values: <code>KB4480056</code> | <code>java-1.7.0-openjdk.x86_64</code> </p> </li>
+    /// <li> <p> <b> <code>Severity</code> </b> </p> <p>Sample values: <code>Important</code> | <code>Medium</code> | <code>Low</code> </p> </li>
+    /// <li> <p> <b> <code>State</code> </b> </p> <p>Sample values: <code>Installed</code> | <code>InstalledOther</code> | <code>InstalledPendingReboot</code> </p> </li>
     /// </ul>
-    pub fn set_filters(mut self, input: std::option::Option<std::vec::Vec<crate::types::PatchOrchestratorFilter>>) -> Self {
-        self.filters = input; self
+    pub fn set_filters(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::PatchOrchestratorFilter>>,
+    ) -> Self {
+        self.filters = input;
+        self
     }
     /// <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -110,7 +117,8 @@ impl DescribeInstancePatchesInputBuilder {
     }
     /// <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input; self
+        self.next_token = input;
+        self
     }
     /// <p>The maximum number of patches to return (per page).</p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -119,22 +127,23 @@ impl DescribeInstancePatchesInputBuilder {
     }
     /// <p>The maximum number of patches to return (per page).</p>
     pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_results = input; self
+        self.max_results = input;
+        self
     }
     /// Consumes the builder and constructs a [`DescribeInstancePatchesInput`](crate::operation::describe_instance_patches::DescribeInstancePatchesInput).
-    pub fn build(self) -> Result<crate::operation::describe_instance_patches::DescribeInstancePatchesInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::describe_instance_patches::DescribeInstancePatchesInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::describe_instance_patches::DescribeInstancePatchesInput {
-                instance_id: self.instance_id
-                ,
-                filters: self.filters
-                ,
-                next_token: self.next_token
-                ,
-                max_results: self.max_results
-                ,
-            }
+                instance_id: self.instance_id,
+                filters: self.filters,
+                next_token: self.next_token,
+                max_results: self.max_results,
+            },
         )
     }
 }
-

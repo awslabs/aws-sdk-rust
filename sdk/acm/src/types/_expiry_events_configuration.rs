@@ -3,7 +3,7 @@
 /// <p>Object containing expiration events options associated with an Amazon Web Services account.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ExpiryEventsConfiguration  {
+pub struct ExpiryEventsConfiguration {
     /// <p>Specifies the number of days prior to certificate expiration when ACM starts generating <code>EventBridge</code> events. ACM sends one event per day per certificate until the certificate expires. By default, accounts receive events starting 45 days before certificate expiration.</p>
     #[doc(hidden)]
     pub days_before_expiry: std::option::Option<i32>,
@@ -35,14 +35,13 @@ impl ExpiryEventsConfigurationBuilder {
     }
     /// <p>Specifies the number of days prior to certificate expiration when ACM starts generating <code>EventBridge</code> events. ACM sends one event per day per certificate until the certificate expires. By default, accounts receive events starting 45 days before certificate expiration.</p>
     pub fn set_days_before_expiry(mut self, input: std::option::Option<i32>) -> Self {
-        self.days_before_expiry = input; self
+        self.days_before_expiry = input;
+        self
     }
     /// Consumes the builder and constructs a [`ExpiryEventsConfiguration`](crate::types::ExpiryEventsConfiguration).
     pub fn build(self) -> crate::types::ExpiryEventsConfiguration {
         crate::types::ExpiryEventsConfiguration {
-            days_before_expiry: self.days_before_expiry
-            ,
+            days_before_expiry: self.days_before_expiry,
         }
     }
 }
-

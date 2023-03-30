@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateFirewallPolicyInput  {
+pub struct CreateFirewallPolicyInput {
     /// <p>The descriptive name of the firewall policy. You can't change the name of a firewall policy after you create it.</p>
     #[doc(hidden)]
     pub firewall_policy_name: std::option::Option<std::string::String>,
@@ -15,8 +15,8 @@ pub struct CreateFirewallPolicyInput  {
     /// <p>The key:value pairs to associate with the resource.</p>
     #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::types::Tag>>,
-    /// <p>Indicates whether you want Network Firewall to just check the validity of the request, rather than run the request. </p> 
-    /// <p>If set to <code>TRUE</code>, Network Firewall checks whether the request can run successfully, but doesn't actually make the requested changes. The call returns the value that the request would return if you ran it with dry run set to <code>FALSE</code>, but doesn't make additions or changes to your resources. This option allows you to make sure that you have the required permissions to run the request and that your request parameters are valid. </p> 
+    /// <p>Indicates whether you want Network Firewall to just check the validity of the request, rather than run the request. </p>
+    /// <p>If set to <code>TRUE</code>, Network Firewall checks whether the request can run successfully, but doesn't actually make the requested changes. The call returns the value that the request would return if you ran it with dry run set to <code>FALSE</code>, but doesn't make additions or changes to your resources. This option allows you to make sure that you have the required permissions to run the request and that your request parameters are valid. </p>
     /// <p>If set to <code>FALSE</code>, Network Firewall makes the requested changes to your resources. </p>
     #[doc(hidden)]
     pub dry_run: bool,
@@ -26,35 +26,38 @@ pub struct CreateFirewallPolicyInput  {
 }
 impl CreateFirewallPolicyInput {
     /// <p>The descriptive name of the firewall policy. You can't change the name of a firewall policy after you create it.</p>
-    pub fn firewall_policy_name(&self) -> std::option::Option<& str> {
+    pub fn firewall_policy_name(&self) -> std::option::Option<&str> {
         self.firewall_policy_name.as_deref()
     }
     /// <p>The rule groups and policy actions to use in the firewall policy.</p>
-    pub fn firewall_policy(&self) -> std::option::Option<& crate::types::FirewallPolicy> {
+    pub fn firewall_policy(&self) -> std::option::Option<&crate::types::FirewallPolicy> {
         self.firewall_policy.as_ref()
     }
     /// <p>A description of the firewall policy.</p>
-    pub fn description(&self) -> std::option::Option<& str> {
+    pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
     /// <p>The key:value pairs to associate with the resource.</p>
-    pub fn tags(&self) -> std::option::Option<& [crate::types::Tag]> {
+    pub fn tags(&self) -> std::option::Option<&[crate::types::Tag]> {
         self.tags.as_deref()
     }
-    /// <p>Indicates whether you want Network Firewall to just check the validity of the request, rather than run the request. </p> 
-    /// <p>If set to <code>TRUE</code>, Network Firewall checks whether the request can run successfully, but doesn't actually make the requested changes. The call returns the value that the request would return if you ran it with dry run set to <code>FALSE</code>, but doesn't make additions or changes to your resources. This option allows you to make sure that you have the required permissions to run the request and that your request parameters are valid. </p> 
+    /// <p>Indicates whether you want Network Firewall to just check the validity of the request, rather than run the request. </p>
+    /// <p>If set to <code>TRUE</code>, Network Firewall checks whether the request can run successfully, but doesn't actually make the requested changes. The call returns the value that the request would return if you ran it with dry run set to <code>FALSE</code>, but doesn't make additions or changes to your resources. This option allows you to make sure that you have the required permissions to run the request and that your request parameters are valid. </p>
     /// <p>If set to <code>FALSE</code>, Network Firewall makes the requested changes to your resources. </p>
     pub fn dry_run(&self) -> bool {
         self.dry_run
     }
     /// <p>A complex type that contains settings for encryption of your firewall policy resources.</p>
-    pub fn encryption_configuration(&self) -> std::option::Option<& crate::types::EncryptionConfiguration> {
+    pub fn encryption_configuration(
+        &self,
+    ) -> std::option::Option<&crate::types::EncryptionConfiguration> {
         self.encryption_configuration.as_ref()
     }
 }
 impl CreateFirewallPolicyInput {
     /// Creates a new builder-style object to manufacture [`CreateFirewallPolicyInput`](crate::operation::create_firewall_policy::CreateFirewallPolicyInput).
-    pub fn builder() -> crate::operation::create_firewall_policy::builders::CreateFirewallPolicyInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::create_firewall_policy::builders::CreateFirewallPolicyInputBuilder {
         crate::operation::create_firewall_policy::builders::CreateFirewallPolicyInputBuilder::default()
     }
 }
@@ -77,8 +80,12 @@ impl CreateFirewallPolicyInputBuilder {
         self
     }
     /// <p>The descriptive name of the firewall policy. You can't change the name of a firewall policy after you create it.</p>
-    pub fn set_firewall_policy_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.firewall_policy_name = input; self
+    pub fn set_firewall_policy_name(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.firewall_policy_name = input;
+        self
     }
     /// <p>The rule groups and policy actions to use in the firewall policy.</p>
     pub fn firewall_policy(mut self, input: crate::types::FirewallPolicy) -> Self {
@@ -86,8 +93,12 @@ impl CreateFirewallPolicyInputBuilder {
         self
     }
     /// <p>The rule groups and policy actions to use in the firewall policy.</p>
-    pub fn set_firewall_policy(mut self, input: std::option::Option<crate::types::FirewallPolicy>) -> Self {
-        self.firewall_policy = input; self
+    pub fn set_firewall_policy(
+        mut self,
+        input: std::option::Option<crate::types::FirewallPolicy>,
+    ) -> Self {
+        self.firewall_policy = input;
+        self
     }
     /// <p>A description of the firewall policy.</p>
     pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -96,7 +107,8 @@ impl CreateFirewallPolicyInputBuilder {
     }
     /// <p>A description of the firewall policy.</p>
     pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.description = input; self
+        self.description = input;
+        self
     }
     /// Appends an item to `tags`.
     ///
@@ -105,55 +117,64 @@ impl CreateFirewallPolicyInputBuilder {
     /// <p>The key:value pairs to associate with the resource.</p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
-                        v.push(input);
-                        self.tags = Some(v);
-                        self
+        v.push(input);
+        self.tags = Some(v);
+        self
     }
     /// <p>The key:value pairs to associate with the resource.</p>
-    pub fn set_tags(mut self, input: std::option::Option<std::vec::Vec<crate::types::Tag>>) -> Self {
-        self.tags = input; self
+    pub fn set_tags(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::Tag>>,
+    ) -> Self {
+        self.tags = input;
+        self
     }
-    /// <p>Indicates whether you want Network Firewall to just check the validity of the request, rather than run the request. </p> 
-    /// <p>If set to <code>TRUE</code>, Network Firewall checks whether the request can run successfully, but doesn't actually make the requested changes. The call returns the value that the request would return if you ran it with dry run set to <code>FALSE</code>, but doesn't make additions or changes to your resources. This option allows you to make sure that you have the required permissions to run the request and that your request parameters are valid. </p> 
+    /// <p>Indicates whether you want Network Firewall to just check the validity of the request, rather than run the request. </p>
+    /// <p>If set to <code>TRUE</code>, Network Firewall checks whether the request can run successfully, but doesn't actually make the requested changes. The call returns the value that the request would return if you ran it with dry run set to <code>FALSE</code>, but doesn't make additions or changes to your resources. This option allows you to make sure that you have the required permissions to run the request and that your request parameters are valid. </p>
     /// <p>If set to <code>FALSE</code>, Network Firewall makes the requested changes to your resources. </p>
     pub fn dry_run(mut self, input: bool) -> Self {
         self.dry_run = Some(input);
         self
     }
-    /// <p>Indicates whether you want Network Firewall to just check the validity of the request, rather than run the request. </p> 
-    /// <p>If set to <code>TRUE</code>, Network Firewall checks whether the request can run successfully, but doesn't actually make the requested changes. The call returns the value that the request would return if you ran it with dry run set to <code>FALSE</code>, but doesn't make additions or changes to your resources. This option allows you to make sure that you have the required permissions to run the request and that your request parameters are valid. </p> 
+    /// <p>Indicates whether you want Network Firewall to just check the validity of the request, rather than run the request. </p>
+    /// <p>If set to <code>TRUE</code>, Network Firewall checks whether the request can run successfully, but doesn't actually make the requested changes. The call returns the value that the request would return if you ran it with dry run set to <code>FALSE</code>, but doesn't make additions or changes to your resources. This option allows you to make sure that you have the required permissions to run the request and that your request parameters are valid. </p>
     /// <p>If set to <code>FALSE</code>, Network Firewall makes the requested changes to your resources. </p>
     pub fn set_dry_run(mut self, input: std::option::Option<bool>) -> Self {
-        self.dry_run = input; self
+        self.dry_run = input;
+        self
     }
     /// <p>A complex type that contains settings for encryption of your firewall policy resources.</p>
-    pub fn encryption_configuration(mut self, input: crate::types::EncryptionConfiguration) -> Self {
+    pub fn encryption_configuration(
+        mut self,
+        input: crate::types::EncryptionConfiguration,
+    ) -> Self {
         self.encryption_configuration = Some(input);
         self
     }
     /// <p>A complex type that contains settings for encryption of your firewall policy resources.</p>
-    pub fn set_encryption_configuration(mut self, input: std::option::Option<crate::types::EncryptionConfiguration>) -> Self {
-        self.encryption_configuration = input; self
+    pub fn set_encryption_configuration(
+        mut self,
+        input: std::option::Option<crate::types::EncryptionConfiguration>,
+    ) -> Self {
+        self.encryption_configuration = input;
+        self
     }
     /// Consumes the builder and constructs a [`CreateFirewallPolicyInput`](crate::operation::create_firewall_policy::CreateFirewallPolicyInput).
-    pub fn build(self) -> Result<crate::operation::create_firewall_policy::CreateFirewallPolicyInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::create_firewall_policy::CreateFirewallPolicyInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::create_firewall_policy::CreateFirewallPolicyInput {
-                firewall_policy_name: self.firewall_policy_name
-                ,
-                firewall_policy: self.firewall_policy
-                ,
-                description: self.description
-                ,
-                tags: self.tags
-                ,
-                dry_run: self.dry_run
-                    .unwrap_or_default()
-                ,
-                encryption_configuration: self.encryption_configuration
-                ,
-            }
+                firewall_policy_name: self.firewall_policy_name,
+                firewall_policy: self.firewall_policy,
+                description: self.description,
+                tags: self.tags,
+                dry_run: self.dry_run.unwrap_or_default(),
+                encryption_configuration: self.encryption_configuration,
+            },
         )
     }
 }
-

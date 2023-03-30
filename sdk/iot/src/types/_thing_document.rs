@@ -3,7 +3,7 @@
 /// <p>The thing search index document.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ThingDocument  {
+pub struct ThingDocument {
     /// <p>The thing name.</p>
     #[doc(hidden)]
     pub thing_name: std::option::Option<std::string::String>,
@@ -18,12 +18,13 @@ pub struct ThingDocument  {
     pub thing_group_names: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The attributes.</p>
     #[doc(hidden)]
-    pub attributes: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
-    /// <p>The unnamed shadow and named shadow.</p> 
+    pub attributes:
+        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    /// <p>The unnamed shadow and named shadow.</p>
     /// <p>For more information about shadows, see <a href="https://docs.aws.amazon.com/iot/latest/developerguide/iot-device-shadows.html">IoT Device Shadow service.</a> </p>
     #[doc(hidden)]
     pub shadow: std::option::Option<std::string::String>,
-    /// <p>Contains Device Defender data.</p> 
+    /// <p>Contains Device Defender data.</p>
     /// <p>For more information about Device Defender, see <a href="https://docs.aws.amazon.com/iot/latest/developerguide/device-defender.html">Device Defender</a>. </p>
     #[doc(hidden)]
     pub device_defender: std::option::Option<std::string::String>,
@@ -33,37 +34,40 @@ pub struct ThingDocument  {
 }
 impl ThingDocument {
     /// <p>The thing name.</p>
-    pub fn thing_name(&self) -> std::option::Option<& str> {
+    pub fn thing_name(&self) -> std::option::Option<&str> {
         self.thing_name.as_deref()
     }
     /// <p>The thing ID.</p>
-    pub fn thing_id(&self) -> std::option::Option<& str> {
+    pub fn thing_id(&self) -> std::option::Option<&str> {
         self.thing_id.as_deref()
     }
     /// <p>The thing type name.</p>
-    pub fn thing_type_name(&self) -> std::option::Option<& str> {
+    pub fn thing_type_name(&self) -> std::option::Option<&str> {
         self.thing_type_name.as_deref()
     }
     /// <p>Thing group names.</p>
-    pub fn thing_group_names(&self) -> std::option::Option<& [std::string::String]> {
+    pub fn thing_group_names(&self) -> std::option::Option<&[std::string::String]> {
         self.thing_group_names.as_deref()
     }
     /// <p>The attributes.</p>
-    pub fn attributes(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
+    pub fn attributes(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
         self.attributes.as_ref()
     }
-    /// <p>The unnamed shadow and named shadow.</p> 
+    /// <p>The unnamed shadow and named shadow.</p>
     /// <p>For more information about shadows, see <a href="https://docs.aws.amazon.com/iot/latest/developerguide/iot-device-shadows.html">IoT Device Shadow service.</a> </p>
-    pub fn shadow(&self) -> std::option::Option<& str> {
+    pub fn shadow(&self) -> std::option::Option<&str> {
         self.shadow.as_deref()
     }
-    /// <p>Contains Device Defender data.</p> 
+    /// <p>Contains Device Defender data.</p>
     /// <p>For more information about Device Defender, see <a href="https://docs.aws.amazon.com/iot/latest/developerguide/device-defender.html">Device Defender</a>. </p>
-    pub fn device_defender(&self) -> std::option::Option<& str> {
+    pub fn device_defender(&self) -> std::option::Option<&str> {
         self.device_defender.as_deref()
     }
     /// <p>Indicates whether the thing is connected to the Amazon Web Services IoT Core service.</p>
-    pub fn connectivity(&self) -> std::option::Option<& crate::types::ThingConnectivity> {
+    pub fn connectivity(&self) -> std::option::Option<&crate::types::ThingConnectivity> {
         self.connectivity.as_ref()
     }
 }
@@ -82,7 +86,8 @@ pub struct ThingDocumentBuilder {
     pub(crate) thing_id: std::option::Option<std::string::String>,
     pub(crate) thing_type_name: std::option::Option<std::string::String>,
     pub(crate) thing_group_names: std::option::Option<std::vec::Vec<std::string::String>>,
-    pub(crate) attributes: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub(crate) attributes:
+        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     pub(crate) shadow: std::option::Option<std::string::String>,
     pub(crate) device_defender: std::option::Option<std::string::String>,
     pub(crate) connectivity: std::option::Option<crate::types::ThingConnectivity>,
@@ -95,7 +100,8 @@ impl ThingDocumentBuilder {
     }
     /// <p>The thing name.</p>
     pub fn set_thing_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.thing_name = input; self
+        self.thing_name = input;
+        self
     }
     /// <p>The thing ID.</p>
     pub fn thing_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -104,7 +110,8 @@ impl ThingDocumentBuilder {
     }
     /// <p>The thing ID.</p>
     pub fn set_thing_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.thing_id = input; self
+        self.thing_id = input;
+        self
     }
     /// <p>The thing type name.</p>
     pub fn thing_type_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -113,7 +120,8 @@ impl ThingDocumentBuilder {
     }
     /// <p>The thing type name.</p>
     pub fn set_thing_type_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.thing_type_name = input; self
+        self.thing_type_name = input;
+        self
     }
     /// Appends an item to `thing_group_names`.
     ///
@@ -122,50 +130,66 @@ impl ThingDocumentBuilder {
     /// <p>Thing group names.</p>
     pub fn thing_group_names(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.thing_group_names.unwrap_or_default();
-                        v.push(input.into());
-                        self.thing_group_names = Some(v);
-                        self
+        v.push(input.into());
+        self.thing_group_names = Some(v);
+        self
     }
     /// <p>Thing group names.</p>
-    pub fn set_thing_group_names(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-        self.thing_group_names = input; self
+    pub fn set_thing_group_names(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
+        self.thing_group_names = input;
+        self
     }
     /// Adds a key-value pair to `attributes`.
     ///
     /// To override the contents of this collection use [`set_attributes`](Self::set_attributes).
     ///
     /// <p>The attributes.</p>
-    pub fn attributes(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
+    pub fn attributes(
+        mut self,
+        k: impl Into<std::string::String>,
+        v: impl Into<std::string::String>,
+    ) -> Self {
         let mut hash_map = self.attributes.unwrap_or_default();
-                        hash_map.insert(k.into(), v.into());
-                        self.attributes = Some(hash_map);
-                        self
+        hash_map.insert(k.into(), v.into());
+        self.attributes = Some(hash_map);
+        self
     }
     /// <p>The attributes.</p>
-    pub fn set_attributes(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
-        self.attributes = input; self
+    pub fn set_attributes(
+        mut self,
+        input: std::option::Option<
+            std::collections::HashMap<std::string::String, std::string::String>,
+        >,
+    ) -> Self {
+        self.attributes = input;
+        self
     }
-    /// <p>The unnamed shadow and named shadow.</p> 
+    /// <p>The unnamed shadow and named shadow.</p>
     /// <p>For more information about shadows, see <a href="https://docs.aws.amazon.com/iot/latest/developerguide/iot-device-shadows.html">IoT Device Shadow service.</a> </p>
     pub fn shadow(mut self, input: impl Into<std::string::String>) -> Self {
         self.shadow = Some(input.into());
         self
     }
-    /// <p>The unnamed shadow and named shadow.</p> 
+    /// <p>The unnamed shadow and named shadow.</p>
     /// <p>For more information about shadows, see <a href="https://docs.aws.amazon.com/iot/latest/developerguide/iot-device-shadows.html">IoT Device Shadow service.</a> </p>
     pub fn set_shadow(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.shadow = input; self
+        self.shadow = input;
+        self
     }
-    /// <p>Contains Device Defender data.</p> 
+    /// <p>Contains Device Defender data.</p>
     /// <p>For more information about Device Defender, see <a href="https://docs.aws.amazon.com/iot/latest/developerguide/device-defender.html">Device Defender</a>. </p>
     pub fn device_defender(mut self, input: impl Into<std::string::String>) -> Self {
         self.device_defender = Some(input.into());
         self
     }
-    /// <p>Contains Device Defender data.</p> 
+    /// <p>Contains Device Defender data.</p>
     /// <p>For more information about Device Defender, see <a href="https://docs.aws.amazon.com/iot/latest/developerguide/device-defender.html">Device Defender</a>. </p>
     pub fn set_device_defender(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.device_defender = input; self
+        self.device_defender = input;
+        self
     }
     /// <p>Indicates whether the thing is connected to the Amazon Web Services IoT Core service.</p>
     pub fn connectivity(mut self, input: crate::types::ThingConnectivity) -> Self {
@@ -173,29 +197,24 @@ impl ThingDocumentBuilder {
         self
     }
     /// <p>Indicates whether the thing is connected to the Amazon Web Services IoT Core service.</p>
-    pub fn set_connectivity(mut self, input: std::option::Option<crate::types::ThingConnectivity>) -> Self {
-        self.connectivity = input; self
+    pub fn set_connectivity(
+        mut self,
+        input: std::option::Option<crate::types::ThingConnectivity>,
+    ) -> Self {
+        self.connectivity = input;
+        self
     }
     /// Consumes the builder and constructs a [`ThingDocument`](crate::types::ThingDocument).
     pub fn build(self) -> crate::types::ThingDocument {
         crate::types::ThingDocument {
-            thing_name: self.thing_name
-            ,
-            thing_id: self.thing_id
-            ,
-            thing_type_name: self.thing_type_name
-            ,
-            thing_group_names: self.thing_group_names
-            ,
-            attributes: self.attributes
-            ,
-            shadow: self.shadow
-            ,
-            device_defender: self.device_defender
-            ,
-            connectivity: self.connectivity
-            ,
+            thing_name: self.thing_name,
+            thing_id: self.thing_id,
+            thing_type_name: self.thing_type_name,
+            thing_group_names: self.thing_group_names,
+            attributes: self.attributes,
+            shadow: self.shadow,
+            device_defender: self.device_defender,
+            connectivity: self.connectivity,
         }
     }
 }
-

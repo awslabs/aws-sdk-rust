@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct InitiateDocumentVersionUploadInput  {
+pub struct InitiateDocumentVersionUploadInput {
     /// <p>Amazon WorkDocs authentication token. Not required when using AWS administrator credentials to access the API.</p>
     #[doc(hidden)]
     pub authentication_token: std::option::Option<std::string::String>,
@@ -30,27 +30,27 @@ pub struct InitiateDocumentVersionUploadInput  {
 }
 impl InitiateDocumentVersionUploadInput {
     /// <p>Amazon WorkDocs authentication token. Not required when using AWS administrator credentials to access the API.</p>
-    pub fn authentication_token(&self) -> std::option::Option<& str> {
+    pub fn authentication_token(&self) -> std::option::Option<&str> {
         self.authentication_token.as_deref()
     }
     /// <p>The ID of the document.</p>
-    pub fn id(&self) -> std::option::Option<& str> {
+    pub fn id(&self) -> std::option::Option<&str> {
         self.id.as_deref()
     }
     /// <p>The name of the document.</p>
-    pub fn name(&self) -> std::option::Option<& str> {
+    pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>The timestamp when the content of the document was originally created.</p>
-    pub fn content_created_timestamp(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
+    pub fn content_created_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.content_created_timestamp.as_ref()
     }
     /// <p>The timestamp when the content of the document was modified.</p>
-    pub fn content_modified_timestamp(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
+    pub fn content_modified_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.content_modified_timestamp.as_ref()
     }
     /// <p>The content type of the document.</p>
-    pub fn content_type(&self) -> std::option::Option<& str> {
+    pub fn content_type(&self) -> std::option::Option<&str> {
         self.content_type.as_deref()
     }
     /// <p>The size of the document, in bytes.</p>
@@ -58,18 +58,21 @@ impl InitiateDocumentVersionUploadInput {
         self.document_size_in_bytes
     }
     /// <p>The ID of the parent folder.</p>
-    pub fn parent_folder_id(&self) -> std::option::Option<& str> {
+    pub fn parent_folder_id(&self) -> std::option::Option<&str> {
         self.parent_folder_id.as_deref()
     }
 }
-impl  std::fmt::Debug for InitiateDocumentVersionUploadInput  {
+impl std::fmt::Debug for InitiateDocumentVersionUploadInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("InitiateDocumentVersionUploadInput");
         formatter.field("authentication_token", &"*** Sensitive Data Redacted ***");
         formatter.field("id", &self.id);
         formatter.field("name", &self.name);
         formatter.field("content_created_timestamp", &self.content_created_timestamp);
-        formatter.field("content_modified_timestamp", &self.content_modified_timestamp);
+        formatter.field(
+            "content_modified_timestamp",
+            &self.content_modified_timestamp,
+        );
         formatter.field("content_type", &self.content_type);
         formatter.field("document_size_in_bytes", &self.document_size_in_bytes);
         formatter.field("parent_folder_id", &self.parent_folder_id);
@@ -78,7 +81,7 @@ impl  std::fmt::Debug for InitiateDocumentVersionUploadInput  {
 }
 impl InitiateDocumentVersionUploadInput {
     /// Creates a new builder-style object to manufacture [`InitiateDocumentVersionUploadInput`](crate::operation::initiate_document_version_upload::InitiateDocumentVersionUploadInput).
-    pub fn builder() -> crate::operation::initiate_document_version_upload::builders::InitiateDocumentVersionUploadInputBuilder {
+    pub fn builder() -> crate::operation::initiate_document_version_upload::builders::InitiateDocumentVersionUploadInputBuilder{
         crate::operation::initiate_document_version_upload::builders::InitiateDocumentVersionUploadInputBuilder::default()
     }
 }
@@ -103,8 +106,12 @@ impl InitiateDocumentVersionUploadInputBuilder {
         self
     }
     /// <p>Amazon WorkDocs authentication token. Not required when using AWS administrator credentials to access the API.</p>
-    pub fn set_authentication_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.authentication_token = input; self
+    pub fn set_authentication_token(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.authentication_token = input;
+        self
     }
     /// <p>The ID of the document.</p>
     pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -113,7 +120,8 @@ impl InitiateDocumentVersionUploadInputBuilder {
     }
     /// <p>The ID of the document.</p>
     pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.id = input; self
+        self.id = input;
+        self
     }
     /// <p>The name of the document.</p>
     pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -122,7 +130,8 @@ impl InitiateDocumentVersionUploadInputBuilder {
     }
     /// <p>The name of the document.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input; self
+        self.name = input;
+        self
     }
     /// <p>The timestamp when the content of the document was originally created.</p>
     pub fn content_created_timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -130,8 +139,12 @@ impl InitiateDocumentVersionUploadInputBuilder {
         self
     }
     /// <p>The timestamp when the content of the document was originally created.</p>
-    pub fn set_content_created_timestamp(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.content_created_timestamp = input; self
+    pub fn set_content_created_timestamp(
+        mut self,
+        input: std::option::Option<aws_smithy_types::DateTime>,
+    ) -> Self {
+        self.content_created_timestamp = input;
+        self
     }
     /// <p>The timestamp when the content of the document was modified.</p>
     pub fn content_modified_timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -139,8 +152,12 @@ impl InitiateDocumentVersionUploadInputBuilder {
         self
     }
     /// <p>The timestamp when the content of the document was modified.</p>
-    pub fn set_content_modified_timestamp(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.content_modified_timestamp = input; self
+    pub fn set_content_modified_timestamp(
+        mut self,
+        input: std::option::Option<aws_smithy_types::DateTime>,
+    ) -> Self {
+        self.content_modified_timestamp = input;
+        self
     }
     /// <p>The content type of the document.</p>
     pub fn content_type(mut self, input: impl Into<std::string::String>) -> Self {
@@ -149,7 +166,8 @@ impl InitiateDocumentVersionUploadInputBuilder {
     }
     /// <p>The content type of the document.</p>
     pub fn set_content_type(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.content_type = input; self
+        self.content_type = input;
+        self
     }
     /// <p>The size of the document, in bytes.</p>
     pub fn document_size_in_bytes(mut self, input: i64) -> Self {
@@ -158,7 +176,8 @@ impl InitiateDocumentVersionUploadInputBuilder {
     }
     /// <p>The size of the document, in bytes.</p>
     pub fn set_document_size_in_bytes(mut self, input: std::option::Option<i64>) -> Self {
-        self.document_size_in_bytes = input; self
+        self.document_size_in_bytes = input;
+        self
     }
     /// <p>The ID of the parent folder.</p>
     pub fn parent_folder_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -167,10 +186,16 @@ impl InitiateDocumentVersionUploadInputBuilder {
     }
     /// <p>The ID of the parent folder.</p>
     pub fn set_parent_folder_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.parent_folder_id = input; self
+        self.parent_folder_id = input;
+        self
     }
     /// Consumes the builder and constructs a [`InitiateDocumentVersionUploadInput`](crate::operation::initiate_document_version_upload::InitiateDocumentVersionUploadInput).
-    pub fn build(self) -> Result<crate::operation::initiate_document_version_upload::InitiateDocumentVersionUploadInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::initiate_document_version_upload::InitiateDocumentVersionUploadInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::initiate_document_version_upload::InitiateDocumentVersionUploadInput {
                 authentication_token: self.authentication_token
@@ -200,11 +225,13 @@ impl std::fmt::Debug for InitiateDocumentVersionUploadInputBuilder {
         formatter.field("id", &self.id);
         formatter.field("name", &self.name);
         formatter.field("content_created_timestamp", &self.content_created_timestamp);
-        formatter.field("content_modified_timestamp", &self.content_modified_timestamp);
+        formatter.field(
+            "content_modified_timestamp",
+            &self.content_modified_timestamp,
+        );
         formatter.field("content_type", &self.content_type);
         formatter.field("document_size_in_bytes", &self.document_size_in_bytes);
         formatter.field("parent_folder_id", &self.parent_folder_id);
         formatter.finish()
     }
 }
-

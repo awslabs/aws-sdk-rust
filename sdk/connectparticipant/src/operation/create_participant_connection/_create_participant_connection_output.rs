@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateParticipantConnectionOutput  {
+pub struct CreateParticipantConnectionOutput {
     /// <p>Creates the participant's websocket connection.</p>
     #[doc(hidden)]
     pub websocket: std::option::Option<crate::types::Websocket>,
@@ -13,22 +13,24 @@ pub struct CreateParticipantConnectionOutput  {
 }
 impl CreateParticipantConnectionOutput {
     /// <p>Creates the participant's websocket connection.</p>
-    pub fn websocket(&self) -> std::option::Option<& crate::types::Websocket> {
+    pub fn websocket(&self) -> std::option::Option<&crate::types::Websocket> {
         self.websocket.as_ref()
     }
     /// <p>Creates the participant's connection credentials. The authentication token associated with the participant's connection.</p>
-    pub fn connection_credentials(&self) -> std::option::Option<& crate::types::ConnectionCredentials> {
+    pub fn connection_credentials(
+        &self,
+    ) -> std::option::Option<&crate::types::ConnectionCredentials> {
         self.connection_credentials.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for CreateParticipantConnectionOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl CreateParticipantConnectionOutput {
     /// Creates a new builder-style object to manufacture [`CreateParticipantConnectionOutput`](crate::operation::create_participant_connection::CreateParticipantConnectionOutput).
-    pub fn builder() -> crate::operation::create_participant_connection::builders::CreateParticipantConnectionOutputBuilder {
+    pub fn builder() -> crate::operation::create_participant_connection::builders::CreateParticipantConnectionOutputBuilder{
         crate::operation::create_participant_connection::builders::CreateParticipantConnectionOutputBuilder::default()
     }
 }
@@ -49,7 +51,8 @@ impl CreateParticipantConnectionOutputBuilder {
     }
     /// <p>Creates the participant's websocket connection.</p>
     pub fn set_websocket(mut self, input: std::option::Option<crate::types::Websocket>) -> Self {
-        self.websocket = input; self
+        self.websocket = input;
+        self
     }
     /// <p>Creates the participant's connection credentials. The authentication token associated with the participant's connection.</p>
     pub fn connection_credentials(mut self, input: crate::types::ConnectionCredentials) -> Self {
@@ -57,27 +60,30 @@ impl CreateParticipantConnectionOutputBuilder {
         self
     }
     /// <p>Creates the participant's connection credentials. The authentication token associated with the participant's connection.</p>
-    pub fn set_connection_credentials(mut self, input: std::option::Option<crate::types::ConnectionCredentials>) -> Self {
-        self.connection_credentials = input; self
+    pub fn set_connection_credentials(
+        mut self,
+        input: std::option::Option<crate::types::ConnectionCredentials>,
+    ) -> Self {
+        self.connection_credentials = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`CreateParticipantConnectionOutput`](crate::operation::create_participant_connection::CreateParticipantConnectionOutput).
-    pub fn build(self) -> crate::operation::create_participant_connection::CreateParticipantConnectionOutput {
+    pub fn build(
+        self,
+    ) -> crate::operation::create_participant_connection::CreateParticipantConnectionOutput {
         crate::operation::create_participant_connection::CreateParticipantConnectionOutput {
-            websocket: self.websocket
-            ,
-            connection_credentials: self.connection_credentials
-            ,
+            websocket: self.websocket,
+            connection_credentials: self.connection_credentials,
             _request_id: self._request_id,
         }
     }
 }
-

@@ -3,14 +3,14 @@
 /// The settings for attaching a VPC interface to an output.
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct VpcInterfaceAttachment  {
+pub struct VpcInterfaceAttachment {
     /// The name of the VPC interface to use for this output.
     #[doc(hidden)]
     pub vpc_interface_name: std::option::Option<std::string::String>,
 }
 impl VpcInterfaceAttachment {
     /// The name of the VPC interface to use for this output.
-    pub fn vpc_interface_name(&self) -> std::option::Option<& str> {
+    pub fn vpc_interface_name(&self) -> std::option::Option<&str> {
         self.vpc_interface_name.as_deref()
     }
 }
@@ -34,15 +34,17 @@ impl VpcInterfaceAttachmentBuilder {
         self
     }
     /// The name of the VPC interface to use for this output.
-    pub fn set_vpc_interface_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.vpc_interface_name = input; self
+    pub fn set_vpc_interface_name(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.vpc_interface_name = input;
+        self
     }
     /// Consumes the builder and constructs a [`VpcInterfaceAttachment`](crate::types::VpcInterfaceAttachment).
     pub fn build(self) -> crate::types::VpcInterfaceAttachment {
         crate::types::VpcInterfaceAttachment {
-            vpc_interface_name: self.vpc_interface_name
-            ,
+            vpc_interface_name: self.vpc_interface_name,
         }
     }
 }
-

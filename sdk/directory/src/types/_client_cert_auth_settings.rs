@@ -3,14 +3,14 @@
 /// <p>Contains information about the client certificate authentication settings for the <code>RegisterCertificate</code> and <code>DescribeCertificate</code> operations. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ClientCertAuthSettings  {
+pub struct ClientCertAuthSettings {
     /// <p>Specifies the URL of the default OCSP server used to check for revocation status. A secondary value to any OCSP address found in the AIA extension of the user certificate.</p>
     #[doc(hidden)]
     pub ocsp_url: std::option::Option<std::string::String>,
 }
 impl ClientCertAuthSettings {
     /// <p>Specifies the URL of the default OCSP server used to check for revocation status. A secondary value to any OCSP address found in the AIA extension of the user certificate.</p>
-    pub fn ocsp_url(&self) -> std::option::Option<& str> {
+    pub fn ocsp_url(&self) -> std::option::Option<&str> {
         self.ocsp_url.as_deref()
     }
 }
@@ -35,14 +35,13 @@ impl ClientCertAuthSettingsBuilder {
     }
     /// <p>Specifies the URL of the default OCSP server used to check for revocation status. A secondary value to any OCSP address found in the AIA extension of the user certificate.</p>
     pub fn set_ocsp_url(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.ocsp_url = input; self
+        self.ocsp_url = input;
+        self
     }
     /// Consumes the builder and constructs a [`ClientCertAuthSettings`](crate::types::ClientCertAuthSettings).
     pub fn build(self) -> crate::types::ClientCertAuthSettings {
         crate::types::ClientCertAuthSettings {
-            ocsp_url: self.ocsp_url
-            ,
+            ocsp_url: self.ocsp_url,
         }
     }
 }
-

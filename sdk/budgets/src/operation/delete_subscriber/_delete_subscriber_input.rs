@@ -3,7 +3,7 @@
 /// <p> Request of DeleteSubscriber </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteSubscriberInput  {
+pub struct DeleteSubscriberInput {
     /// <p>The <code>accountId</code> that is associated with the budget whose subscriber you want to delete.</p>
     #[doc(hidden)]
     pub account_id: std::option::Option<std::string::String>,
@@ -19,25 +19,26 @@ pub struct DeleteSubscriberInput  {
 }
 impl DeleteSubscriberInput {
     /// <p>The <code>accountId</code> that is associated with the budget whose subscriber you want to delete.</p>
-    pub fn account_id(&self) -> std::option::Option<& str> {
+    pub fn account_id(&self) -> std::option::Option<&str> {
         self.account_id.as_deref()
     }
     /// <p>The name of the budget whose subscriber you want to delete.</p>
-    pub fn budget_name(&self) -> std::option::Option<& str> {
+    pub fn budget_name(&self) -> std::option::Option<&str> {
         self.budget_name.as_deref()
     }
     /// <p>The notification whose subscriber you want to delete.</p>
-    pub fn notification(&self) -> std::option::Option<& crate::types::Notification> {
+    pub fn notification(&self) -> std::option::Option<&crate::types::Notification> {
         self.notification.as_ref()
     }
     /// <p>The subscriber that you want to delete.</p>
-    pub fn subscriber(&self) -> std::option::Option<& crate::types::Subscriber> {
+    pub fn subscriber(&self) -> std::option::Option<&crate::types::Subscriber> {
         self.subscriber.as_ref()
     }
 }
 impl DeleteSubscriberInput {
     /// Creates a new builder-style object to manufacture [`DeleteSubscriberInput`](crate::operation::delete_subscriber::DeleteSubscriberInput).
-    pub fn builder() -> crate::operation::delete_subscriber::builders::DeleteSubscriberInputBuilder {
+    pub fn builder() -> crate::operation::delete_subscriber::builders::DeleteSubscriberInputBuilder
+    {
         crate::operation::delete_subscriber::builders::DeleteSubscriberInputBuilder::default()
     }
 }
@@ -59,7 +60,8 @@ impl DeleteSubscriberInputBuilder {
     }
     /// <p>The <code>accountId</code> that is associated with the budget whose subscriber you want to delete.</p>
     pub fn set_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.account_id = input; self
+        self.account_id = input;
+        self
     }
     /// <p>The name of the budget whose subscriber you want to delete.</p>
     pub fn budget_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -68,7 +70,8 @@ impl DeleteSubscriberInputBuilder {
     }
     /// <p>The name of the budget whose subscriber you want to delete.</p>
     pub fn set_budget_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.budget_name = input; self
+        self.budget_name = input;
+        self
     }
     /// <p>The notification whose subscriber you want to delete.</p>
     pub fn notification(mut self, input: crate::types::Notification) -> Self {
@@ -76,8 +79,12 @@ impl DeleteSubscriberInputBuilder {
         self
     }
     /// <p>The notification whose subscriber you want to delete.</p>
-    pub fn set_notification(mut self, input: std::option::Option<crate::types::Notification>) -> Self {
-        self.notification = input; self
+    pub fn set_notification(
+        mut self,
+        input: std::option::Option<crate::types::Notification>,
+    ) -> Self {
+        self.notification = input;
+        self
     }
     /// <p>The subscriber that you want to delete.</p>
     pub fn subscriber(mut self, input: crate::types::Subscriber) -> Self {
@@ -86,22 +93,21 @@ impl DeleteSubscriberInputBuilder {
     }
     /// <p>The subscriber that you want to delete.</p>
     pub fn set_subscriber(mut self, input: std::option::Option<crate::types::Subscriber>) -> Self {
-        self.subscriber = input; self
+        self.subscriber = input;
+        self
     }
     /// Consumes the builder and constructs a [`DeleteSubscriberInput`](crate::operation::delete_subscriber::DeleteSubscriberInput).
-    pub fn build(self) -> Result<crate::operation::delete_subscriber::DeleteSubscriberInput, aws_smithy_http::operation::error::BuildError> {
-        Ok(
-            crate::operation::delete_subscriber::DeleteSubscriberInput {
-                account_id: self.account_id
-                ,
-                budget_name: self.budget_name
-                ,
-                notification: self.notification
-                ,
-                subscriber: self.subscriber
-                ,
-            }
-        )
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::delete_subscriber::DeleteSubscriberInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        Ok(crate::operation::delete_subscriber::DeleteSubscriberInput {
+            account_id: self.account_id,
+            budget_name: self.budget_name,
+            notification: self.notification,
+            subscriber: self.subscriber,
+        })
     }
 }
-

@@ -2,17 +2,19 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UntagServerCertificateOutput  {
+pub struct UntagServerCertificateOutput {
     _request_id: Option<String>,
 }
 impl aws_http::request_id::RequestId for UntagServerCertificateOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl UntagServerCertificateOutput {
     /// Creates a new builder-style object to manufacture [`UntagServerCertificateOutput`](crate::operation::untag_server_certificate::UntagServerCertificateOutput).
-    pub fn builder() -> crate::operation::untag_server_certificate::builders::UntagServerCertificateOutputBuilder {
+    pub fn builder(
+    ) -> crate::operation::untag_server_certificate::builders::UntagServerCertificateOutputBuilder
+    {
         crate::operation::untag_server_certificate::builders::UntagServerCertificateOutputBuilder::default()
     }
 }
@@ -25,14 +27,14 @@ pub struct UntagServerCertificateOutputBuilder {
 }
 impl UntagServerCertificateOutputBuilder {
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`UntagServerCertificateOutput`](crate::operation::untag_server_certificate::UntagServerCertificateOutput).
     pub fn build(self) -> crate::operation::untag_server_certificate::UntagServerCertificateOutput {
         crate::operation::untag_server_certificate::UntagServerCertificateOutput {
@@ -40,4 +42,3 @@ impl UntagServerCertificateOutputBuilder {
         }
     }
 }
-

@@ -2,17 +2,18 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeregisterResourceOutput  {
+pub struct DeregisterResourceOutput {
     _request_id: Option<String>,
 }
 impl aws_http::request_id::RequestId for DeregisterResourceOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl DeregisterResourceOutput {
     /// Creates a new builder-style object to manufacture [`DeregisterResourceOutput`](crate::operation::deregister_resource::DeregisterResourceOutput).
-    pub fn builder() -> crate::operation::deregister_resource::builders::DeregisterResourceOutputBuilder {
+    pub fn builder(
+    ) -> crate::operation::deregister_resource::builders::DeregisterResourceOutputBuilder {
         crate::operation::deregister_resource::builders::DeregisterResourceOutputBuilder::default()
     }
 }
@@ -25,14 +26,14 @@ pub struct DeregisterResourceOutputBuilder {
 }
 impl DeregisterResourceOutputBuilder {
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`DeregisterResourceOutput`](crate::operation::deregister_resource::DeregisterResourceOutput).
     pub fn build(self) -> crate::operation::deregister_resource::DeregisterResourceOutput {
         crate::operation::deregister_resource::DeregisterResourceOutput {
@@ -40,4 +41,3 @@ impl DeregisterResourceOutputBuilder {
         }
     }
 }
-

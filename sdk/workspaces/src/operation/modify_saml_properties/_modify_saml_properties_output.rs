@@ -2,17 +2,18 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ModifySamlPropertiesOutput  {
+pub struct ModifySamlPropertiesOutput {
     _request_id: Option<String>,
 }
 impl aws_http::request_id::RequestId for ModifySamlPropertiesOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl ModifySamlPropertiesOutput {
     /// Creates a new builder-style object to manufacture [`ModifySamlPropertiesOutput`](crate::operation::modify_saml_properties::ModifySamlPropertiesOutput).
-    pub fn builder() -> crate::operation::modify_saml_properties::builders::ModifySamlPropertiesOutputBuilder {
+    pub fn builder(
+    ) -> crate::operation::modify_saml_properties::builders::ModifySamlPropertiesOutputBuilder {
         crate::operation::modify_saml_properties::builders::ModifySamlPropertiesOutputBuilder::default()
     }
 }
@@ -25,14 +26,14 @@ pub struct ModifySamlPropertiesOutputBuilder {
 }
 impl ModifySamlPropertiesOutputBuilder {
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`ModifySamlPropertiesOutput`](crate::operation::modify_saml_properties::ModifySamlPropertiesOutput).
     pub fn build(self) -> crate::operation::modify_saml_properties::ModifySamlPropertiesOutput {
         crate::operation::modify_saml_properties::ModifySamlPropertiesOutput {
@@ -40,4 +41,3 @@ impl ModifySamlPropertiesOutputBuilder {
         }
     }
 }
-

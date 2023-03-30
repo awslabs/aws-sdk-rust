@@ -2,21 +2,23 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteWorldTemplateInput  {
+pub struct DeleteWorldTemplateInput {
     /// <p>The Amazon Resource Name (arn) of the world template you want to delete.</p>
     #[doc(hidden)]
     pub template: std::option::Option<std::string::String>,
 }
 impl DeleteWorldTemplateInput {
     /// <p>The Amazon Resource Name (arn) of the world template you want to delete.</p>
-    pub fn template(&self) -> std::option::Option<& str> {
+    pub fn template(&self) -> std::option::Option<&str> {
         self.template.as_deref()
     }
 }
 impl DeleteWorldTemplateInput {
     /// Creates a new builder-style object to manufacture [`DeleteWorldTemplateInput`](crate::operation::delete_world_template::DeleteWorldTemplateInput).
-    pub fn builder() -> crate::operation::delete_world_template::builders::DeleteWorldTemplateInputBuilder {
-        crate::operation::delete_world_template::builders::DeleteWorldTemplateInputBuilder::default()
+    pub fn builder(
+    ) -> crate::operation::delete_world_template::builders::DeleteWorldTemplateInputBuilder {
+        crate::operation::delete_world_template::builders::DeleteWorldTemplateInputBuilder::default(
+        )
     }
 }
 
@@ -34,16 +36,20 @@ impl DeleteWorldTemplateInputBuilder {
     }
     /// <p>The Amazon Resource Name (arn) of the world template you want to delete.</p>
     pub fn set_template(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.template = input; self
+        self.template = input;
+        self
     }
     /// Consumes the builder and constructs a [`DeleteWorldTemplateInput`](crate::operation::delete_world_template::DeleteWorldTemplateInput).
-    pub fn build(self) -> Result<crate::operation::delete_world_template::DeleteWorldTemplateInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::delete_world_template::DeleteWorldTemplateInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::delete_world_template::DeleteWorldTemplateInput {
-                template: self.template
-                ,
-            }
+                template: self.template,
+            },
         )
     }
 }
-

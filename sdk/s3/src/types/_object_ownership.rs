@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-/// 
+///
 /// Here is an example of how you can make a match expression forward-compatible:
-/// 
+///
 /// ```text
 /// # let objectownership = unimplemented!();
 /// match objectownership {
@@ -31,7 +31,7 @@
 /// Specifically, when `objectownership` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `ObjectOwnership::NewFeature` also yielding `"NewFeature"`.
-/// 
+///
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
@@ -42,13 +42,21 @@
 /// ACL.</p>
 /// <p>ObjectWriter - The uploading account will own the object if the object is uploaded with
 /// the <code>bucket-owner-full-control</code> canned ACL.</p>
-/// <p>BucketOwnerEnforced - Access control lists (ACLs) are disabled and no longer affect permissions. 
+/// <p>BucketOwnerEnforced - Access control lists (ACLs) are disabled and no longer affect permissions.
 /// The bucket owner automatically owns and has full control over every object in the bucket. The bucket only
 /// accepts PUT requests that don't specify an ACL or bucket owner full control
 /// ACLs, such as the <code>bucket-owner-full-control</code> canned
 /// ACL or an equivalent form of this ACL expressed in the XML format.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
 pub enum ObjectOwnership {
     #[allow(missing_docs)] // documentation missing in model
     BucketOwnerEnforced,
@@ -57,43 +65,48 @@ pub enum ObjectOwnership {
     #[allow(missing_docs)] // documentation missing in model
     ObjectWriter,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::primitives::UnknownVariantValue)
+    Unknown(crate::primitives::UnknownVariantValue),
 }
 impl std::convert::From<&str> for ObjectOwnership {
-                fn from(s: &str) -> Self {
-                    match s {
-                        "BucketOwnerEnforced" => ObjectOwnership::BucketOwnerEnforced,
-"BucketOwnerPreferred" => ObjectOwnership::BucketOwnerPreferred,
-"ObjectWriter" => ObjectOwnership::ObjectWriter,
-other => ObjectOwnership::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
-                    }
-                }
+    fn from(s: &str) -> Self {
+        match s {
+            "BucketOwnerEnforced" => ObjectOwnership::BucketOwnerEnforced,
+            "BucketOwnerPreferred" => ObjectOwnership::BucketOwnerPreferred,
+            "ObjectWriter" => ObjectOwnership::ObjectWriter,
+            other => {
+                ObjectOwnership::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
             }
-impl std::str::FromStr for ObjectOwnership {
-                type Err = std::convert::Infallible;
-
-                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-                    Ok(ObjectOwnership::from(s))
-                }
-            }
-impl ObjectOwnership {
-                /// Returns the `&str` value of the enum member.
-                pub fn as_str(&self) -> &str {
-                    match self {
-    ObjectOwnership::BucketOwnerEnforced => "BucketOwnerEnforced",
-    ObjectOwnership::BucketOwnerPreferred => "BucketOwnerPreferred",
-    ObjectOwnership::ObjectWriter => "ObjectWriter",
-    ObjectOwnership::Unknown(value) => value.as_str()
+        }
+    }
 }
-                }
-                /// Returns all the `&str` representations of the enum members.
-                pub const fn values() -> &'static [&'static str] {
-                    &["BucketOwnerEnforced", "BucketOwnerPreferred", "ObjectWriter"]
-                }
-            }
-impl AsRef<str> for ObjectOwnership {
-                fn as_ref(&self) -> &str {
-                    self.as_str()
-                }
-            }
+impl std::str::FromStr for ObjectOwnership {
+    type Err = std::convert::Infallible;
 
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(ObjectOwnership::from(s))
+    }
+}
+impl ObjectOwnership {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            ObjectOwnership::BucketOwnerEnforced => "BucketOwnerEnforced",
+            ObjectOwnership::BucketOwnerPreferred => "BucketOwnerPreferred",
+            ObjectOwnership::ObjectWriter => "ObjectWriter",
+            ObjectOwnership::Unknown(value) => value.as_str(),
+        }
+    }
+    /// Returns all the `&str` representations of the enum members.
+    pub const fn values() -> &'static [&'static str] {
+        &[
+            "BucketOwnerEnforced",
+            "BucketOwnerPreferred",
+            "ObjectWriter",
+        ]
+    }
+}
+impl AsRef<str> for ObjectOwnership {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}

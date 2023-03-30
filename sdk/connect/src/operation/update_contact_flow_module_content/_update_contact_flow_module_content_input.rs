@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateContactFlowModuleContentInput  {
+pub struct UpdateContactFlowModuleContentInput {
     /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
     #[doc(hidden)]
     pub instance_id: std::option::Option<std::string::String>,
@@ -15,21 +15,21 @@ pub struct UpdateContactFlowModuleContentInput  {
 }
 impl UpdateContactFlowModuleContentInput {
     /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
-    pub fn instance_id(&self) -> std::option::Option<& str> {
+    pub fn instance_id(&self) -> std::option::Option<&str> {
         self.instance_id.as_deref()
     }
     /// <p>The identifier of the flow module.</p>
-    pub fn contact_flow_module_id(&self) -> std::option::Option<& str> {
+    pub fn contact_flow_module_id(&self) -> std::option::Option<&str> {
         self.contact_flow_module_id.as_deref()
     }
     /// <p>The content of the flow module.</p>
-    pub fn content(&self) -> std::option::Option<& str> {
+    pub fn content(&self) -> std::option::Option<&str> {
         self.content.as_deref()
     }
 }
 impl UpdateContactFlowModuleContentInput {
     /// Creates a new builder-style object to manufacture [`UpdateContactFlowModuleContentInput`](crate::operation::update_contact_flow_module_content::UpdateContactFlowModuleContentInput).
-    pub fn builder() -> crate::operation::update_contact_flow_module_content::builders::UpdateContactFlowModuleContentInputBuilder {
+    pub fn builder() -> crate::operation::update_contact_flow_module_content::builders::UpdateContactFlowModuleContentInputBuilder{
         crate::operation::update_contact_flow_module_content::builders::UpdateContactFlowModuleContentInputBuilder::default()
     }
 }
@@ -50,7 +50,8 @@ impl UpdateContactFlowModuleContentInputBuilder {
     }
     /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
     pub fn set_instance_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.instance_id = input; self
+        self.instance_id = input;
+        self
     }
     /// <p>The identifier of the flow module.</p>
     pub fn contact_flow_module_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -58,8 +59,12 @@ impl UpdateContactFlowModuleContentInputBuilder {
         self
     }
     /// <p>The identifier of the flow module.</p>
-    pub fn set_contact_flow_module_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.contact_flow_module_id = input; self
+    pub fn set_contact_flow_module_id(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.contact_flow_module_id = input;
+        self
     }
     /// <p>The content of the flow module.</p>
     pub fn content(mut self, input: impl Into<std::string::String>) -> Self {
@@ -68,10 +73,16 @@ impl UpdateContactFlowModuleContentInputBuilder {
     }
     /// <p>The content of the flow module.</p>
     pub fn set_content(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.content = input; self
+        self.content = input;
+        self
     }
     /// Consumes the builder and constructs a [`UpdateContactFlowModuleContentInput`](crate::operation::update_contact_flow_module_content::UpdateContactFlowModuleContentInput).
-    pub fn build(self) -> Result<crate::operation::update_contact_flow_module_content::UpdateContactFlowModuleContentInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::update_contact_flow_module_content::UpdateContactFlowModuleContentInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::update_contact_flow_module_content::UpdateContactFlowModuleContentInput {
                 instance_id: self.instance_id
@@ -84,4 +95,3 @@ impl UpdateContactFlowModuleContentInputBuilder {
         )
     }
 }
-

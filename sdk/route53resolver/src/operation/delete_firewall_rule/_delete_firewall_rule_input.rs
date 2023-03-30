@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteFirewallRuleInput  {
+pub struct DeleteFirewallRuleInput {
     /// <p>The unique identifier of the firewall rule group that you want to delete the rule from. </p>
     #[doc(hidden)]
     pub firewall_rule_group_id: std::option::Option<std::string::String>,
@@ -12,17 +12,18 @@ pub struct DeleteFirewallRuleInput  {
 }
 impl DeleteFirewallRuleInput {
     /// <p>The unique identifier of the firewall rule group that you want to delete the rule from. </p>
-    pub fn firewall_rule_group_id(&self) -> std::option::Option<& str> {
+    pub fn firewall_rule_group_id(&self) -> std::option::Option<&str> {
         self.firewall_rule_group_id.as_deref()
     }
     /// <p>The ID of the domain list that's used in the rule. </p>
-    pub fn firewall_domain_list_id(&self) -> std::option::Option<& str> {
+    pub fn firewall_domain_list_id(&self) -> std::option::Option<&str> {
         self.firewall_domain_list_id.as_deref()
     }
 }
 impl DeleteFirewallRuleInput {
     /// Creates a new builder-style object to manufacture [`DeleteFirewallRuleInput`](crate::operation::delete_firewall_rule::DeleteFirewallRuleInput).
-    pub fn builder() -> crate::operation::delete_firewall_rule::builders::DeleteFirewallRuleInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::delete_firewall_rule::builders::DeleteFirewallRuleInputBuilder {
         crate::operation::delete_firewall_rule::builders::DeleteFirewallRuleInputBuilder::default()
     }
 }
@@ -41,8 +42,12 @@ impl DeleteFirewallRuleInputBuilder {
         self
     }
     /// <p>The unique identifier of the firewall rule group that you want to delete the rule from. </p>
-    pub fn set_firewall_rule_group_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.firewall_rule_group_id = input; self
+    pub fn set_firewall_rule_group_id(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.firewall_rule_group_id = input;
+        self
     }
     /// <p>The ID of the domain list that's used in the rule. </p>
     pub fn firewall_domain_list_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -50,19 +55,25 @@ impl DeleteFirewallRuleInputBuilder {
         self
     }
     /// <p>The ID of the domain list that's used in the rule. </p>
-    pub fn set_firewall_domain_list_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.firewall_domain_list_id = input; self
+    pub fn set_firewall_domain_list_id(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.firewall_domain_list_id = input;
+        self
     }
     /// Consumes the builder and constructs a [`DeleteFirewallRuleInput`](crate::operation::delete_firewall_rule::DeleteFirewallRuleInput).
-    pub fn build(self) -> Result<crate::operation::delete_firewall_rule::DeleteFirewallRuleInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::delete_firewall_rule::DeleteFirewallRuleInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::delete_firewall_rule::DeleteFirewallRuleInput {
-                firewall_rule_group_id: self.firewall_rule_group_id
-                ,
-                firewall_domain_list_id: self.firewall_domain_list_id
-                ,
-            }
+                firewall_rule_group_id: self.firewall_rule_group_id,
+                firewall_domain_list_id: self.firewall_domain_list_id,
+            },
         )
     }
 }
-

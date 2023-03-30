@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteLaunchTemplateOutput  {
+pub struct DeleteLaunchTemplateOutput {
     /// <p>Information about the launch template.</p>
     #[doc(hidden)]
     pub launch_template: std::option::Option<crate::types::LaunchTemplate>,
@@ -10,18 +10,19 @@ pub struct DeleteLaunchTemplateOutput  {
 }
 impl DeleteLaunchTemplateOutput {
     /// <p>Information about the launch template.</p>
-    pub fn launch_template(&self) -> std::option::Option<& crate::types::LaunchTemplate> {
+    pub fn launch_template(&self) -> std::option::Option<&crate::types::LaunchTemplate> {
         self.launch_template.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for DeleteLaunchTemplateOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl DeleteLaunchTemplateOutput {
     /// Creates a new builder-style object to manufacture [`DeleteLaunchTemplateOutput`](crate::operation::delete_launch_template::DeleteLaunchTemplateOutput).
-    pub fn builder() -> crate::operation::delete_launch_template::builders::DeleteLaunchTemplateOutputBuilder {
+    pub fn builder(
+    ) -> crate::operation::delete_launch_template::builders::DeleteLaunchTemplateOutputBuilder {
         crate::operation::delete_launch_template::builders::DeleteLaunchTemplateOutputBuilder::default()
     }
 }
@@ -40,25 +41,27 @@ impl DeleteLaunchTemplateOutputBuilder {
         self
     }
     /// <p>Information about the launch template.</p>
-    pub fn set_launch_template(mut self, input: std::option::Option<crate::types::LaunchTemplate>) -> Self {
-        self.launch_template = input; self
+    pub fn set_launch_template(
+        mut self,
+        input: std::option::Option<crate::types::LaunchTemplate>,
+    ) -> Self {
+        self.launch_template = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`DeleteLaunchTemplateOutput`](crate::operation::delete_launch_template::DeleteLaunchTemplateOutput).
     pub fn build(self) -> crate::operation::delete_launch_template::DeleteLaunchTemplateOutput {
         crate::operation::delete_launch_template::DeleteLaunchTemplateOutput {
-            launch_template: self.launch_template
-            ,
+            launch_template: self.launch_template,
             _request_id: self._request_id,
         }
     }
 }
-

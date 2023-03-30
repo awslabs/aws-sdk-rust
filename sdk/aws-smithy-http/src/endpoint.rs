@@ -3,6 +3,8 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
+//! Code for resolving an endpoint (URI) that a request should be sent to
+
 use crate::endpoint::error::InvalidEndpointError;
 use crate::operation::error::BuildError;
 use http::uri::{Authority, Uri};
@@ -15,9 +17,13 @@ pub mod middleware;
 
 pub use error::ResolveEndpointError;
 
+/// An endpoint-resolution-specific Result. Contains either an [`Endpoint`](aws_smithy_types::endpoint::Endpoint) or a [`ResolveEndpointError`].
 pub type Result = std::result::Result<aws_smithy_types::endpoint::Endpoint, ResolveEndpointError>;
 
+/// Implementors of this trait can resolve an endpoint that will be applied to a request.
 pub trait ResolveEndpoint<Params>: Send + Sync {
+    /// Given some endpoint parameters, resolve an endpoint or return an error when resolution is
+    /// impossible.
     fn resolve_endpoint(&self, params: &Params) -> Result;
 }
 
@@ -52,9 +58,12 @@ impl<T> ResolveEndpoint<T> for Endpoint {
     }
 }
 
+/// A special type that adds support for services that have special URL-prefixing rules.
 #[derive(Clone, Debug, Eq, PartialEq)]
 pub struct EndpointPrefix(String);
 impl EndpointPrefix {
+    /// Create a new endpoint prefix from an `impl Into<String>`. If the prefix argument is invalid,
+    /// a [`BuildError`] will be returned.
     pub fn new(prefix: impl Into<String>) -> StdResult<Self, BuildError> {
         let prefix = prefix.into();
         match Authority::from_str(&prefix) {
@@ -67,6 +76,7 @@ impl EndpointPrefix {
         }
     }
 
+    /// Get the `str` representation of this `EndpointPrefix`.
     pub fn as_str(&self) -> &str {
         &self.0
     }

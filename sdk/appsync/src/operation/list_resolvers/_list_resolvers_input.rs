@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListResolversInput  {
+pub struct ListResolversInput {
     /// <p>The API ID.</p>
     #[doc(hidden)]
     pub api_id: std::option::Option<std::string::String>,
@@ -18,15 +18,15 @@ pub struct ListResolversInput  {
 }
 impl ListResolversInput {
     /// <p>The API ID.</p>
-    pub fn api_id(&self) -> std::option::Option<& str> {
+    pub fn api_id(&self) -> std::option::Option<&str> {
         self.api_id.as_deref()
     }
     /// <p>The type name.</p>
-    pub fn type_name(&self) -> std::option::Option<& str> {
+    pub fn type_name(&self) -> std::option::Option<&str> {
         self.type_name.as_deref()
     }
     /// <p>An identifier that was returned from the previous call to this operation, which you can use to return the next set of items in the list.</p>
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
     /// <p>The maximum number of results that you want the request to return.</p>
@@ -58,7 +58,8 @@ impl ListResolversInputBuilder {
     }
     /// <p>The API ID.</p>
     pub fn set_api_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.api_id = input; self
+        self.api_id = input;
+        self
     }
     /// <p>The type name.</p>
     pub fn type_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -67,7 +68,8 @@ impl ListResolversInputBuilder {
     }
     /// <p>The type name.</p>
     pub fn set_type_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.type_name = input; self
+        self.type_name = input;
+        self
     }
     /// <p>An identifier that was returned from the previous call to this operation, which you can use to return the next set of items in the list.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -76,7 +78,8 @@ impl ListResolversInputBuilder {
     }
     /// <p>An identifier that was returned from the previous call to this operation, which you can use to return the next set of items in the list.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input; self
+        self.next_token = input;
+        self
     }
     /// <p>The maximum number of results that you want the request to return.</p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -85,23 +88,21 @@ impl ListResolversInputBuilder {
     }
     /// <p>The maximum number of results that you want the request to return.</p>
     pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_results = input; self
+        self.max_results = input;
+        self
     }
     /// Consumes the builder and constructs a [`ListResolversInput`](crate::operation::list_resolvers::ListResolversInput).
-    pub fn build(self) -> Result<crate::operation::list_resolvers::ListResolversInput, aws_smithy_http::operation::error::BuildError> {
-        Ok(
-            crate::operation::list_resolvers::ListResolversInput {
-                api_id: self.api_id
-                ,
-                type_name: self.type_name
-                ,
-                next_token: self.next_token
-                ,
-                max_results: self.max_results
-                    .unwrap_or_default()
-                ,
-            }
-        )
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::list_resolvers::ListResolversInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        Ok(crate::operation::list_resolvers::ListResolversInput {
+            api_id: self.api_id,
+            type_name: self.type_name,
+            next_token: self.next_token,
+            max_results: self.max_results.unwrap_or_default(),
+        })
     }
 }
-

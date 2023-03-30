@@ -3,7 +3,7 @@
 /// <p>Describes an attachment between a resource and a transit gateway.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct TransitGatewayAttachment  {
+pub struct TransitGatewayAttachment {
     /// <p>The ID of the attachment.</p>
     #[doc(hidden)]
     pub transit_gateway_attachment_id: std::option::Option<std::string::String>,
@@ -37,43 +37,47 @@ pub struct TransitGatewayAttachment  {
 }
 impl TransitGatewayAttachment {
     /// <p>The ID of the attachment.</p>
-    pub fn transit_gateway_attachment_id(&self) -> std::option::Option<& str> {
+    pub fn transit_gateway_attachment_id(&self) -> std::option::Option<&str> {
         self.transit_gateway_attachment_id.as_deref()
     }
     /// <p>The ID of the transit gateway.</p>
-    pub fn transit_gateway_id(&self) -> std::option::Option<& str> {
+    pub fn transit_gateway_id(&self) -> std::option::Option<&str> {
         self.transit_gateway_id.as_deref()
     }
     /// <p>The ID of the Amazon Web Services account that owns the transit gateway.</p>
-    pub fn transit_gateway_owner_id(&self) -> std::option::Option<& str> {
+    pub fn transit_gateway_owner_id(&self) -> std::option::Option<&str> {
         self.transit_gateway_owner_id.as_deref()
     }
     /// <p>The ID of the Amazon Web Services account that owns the resource.</p>
-    pub fn resource_owner_id(&self) -> std::option::Option<& str> {
+    pub fn resource_owner_id(&self) -> std::option::Option<&str> {
         self.resource_owner_id.as_deref()
     }
     /// <p>The resource type. Note that the <code>tgw-peering</code> resource type has been deprecated.</p>
-    pub fn resource_type(&self) -> std::option::Option<& crate::types::TransitGatewayAttachmentResourceType> {
+    pub fn resource_type(
+        &self,
+    ) -> std::option::Option<&crate::types::TransitGatewayAttachmentResourceType> {
         self.resource_type.as_ref()
     }
     /// <p>The ID of the resource.</p>
-    pub fn resource_id(&self) -> std::option::Option<& str> {
+    pub fn resource_id(&self) -> std::option::Option<&str> {
         self.resource_id.as_deref()
     }
     /// <p>The attachment state. Note that the <code>initiating</code> state has been deprecated.</p>
-    pub fn state(&self) -> std::option::Option<& crate::types::TransitGatewayAttachmentState> {
+    pub fn state(&self) -> std::option::Option<&crate::types::TransitGatewayAttachmentState> {
         self.state.as_ref()
     }
     /// <p>The association.</p>
-    pub fn association(&self) -> std::option::Option<& crate::types::TransitGatewayAttachmentAssociation> {
+    pub fn association(
+        &self,
+    ) -> std::option::Option<&crate::types::TransitGatewayAttachmentAssociation> {
         self.association.as_ref()
     }
     /// <p>The creation time.</p>
-    pub fn creation_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
+    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
     /// <p>The tags for the attachment.</p>
-    pub fn tags(&self) -> std::option::Option<& [crate::types::Tag]> {
+    pub fn tags(&self) -> std::option::Option<&[crate::types::Tag]> {
         self.tags.as_deref()
     }
 }
@@ -92,7 +96,8 @@ pub struct TransitGatewayAttachmentBuilder {
     pub(crate) transit_gateway_id: std::option::Option<std::string::String>,
     pub(crate) transit_gateway_owner_id: std::option::Option<std::string::String>,
     pub(crate) resource_owner_id: std::option::Option<std::string::String>,
-    pub(crate) resource_type: std::option::Option<crate::types::TransitGatewayAttachmentResourceType>,
+    pub(crate) resource_type:
+        std::option::Option<crate::types::TransitGatewayAttachmentResourceType>,
     pub(crate) resource_id: std::option::Option<std::string::String>,
     pub(crate) state: std::option::Option<crate::types::TransitGatewayAttachmentState>,
     pub(crate) association: std::option::Option<crate::types::TransitGatewayAttachmentAssociation>,
@@ -106,8 +111,12 @@ impl TransitGatewayAttachmentBuilder {
         self
     }
     /// <p>The ID of the attachment.</p>
-    pub fn set_transit_gateway_attachment_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.transit_gateway_attachment_id = input; self
+    pub fn set_transit_gateway_attachment_id(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.transit_gateway_attachment_id = input;
+        self
     }
     /// <p>The ID of the transit gateway.</p>
     pub fn transit_gateway_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -115,8 +124,12 @@ impl TransitGatewayAttachmentBuilder {
         self
     }
     /// <p>The ID of the transit gateway.</p>
-    pub fn set_transit_gateway_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.transit_gateway_id = input; self
+    pub fn set_transit_gateway_id(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.transit_gateway_id = input;
+        self
     }
     /// <p>The ID of the Amazon Web Services account that owns the transit gateway.</p>
     pub fn transit_gateway_owner_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -124,8 +137,12 @@ impl TransitGatewayAttachmentBuilder {
         self
     }
     /// <p>The ID of the Amazon Web Services account that owns the transit gateway.</p>
-    pub fn set_transit_gateway_owner_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.transit_gateway_owner_id = input; self
+    pub fn set_transit_gateway_owner_id(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.transit_gateway_owner_id = input;
+        self
     }
     /// <p>The ID of the Amazon Web Services account that owns the resource.</p>
     pub fn resource_owner_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -133,17 +150,28 @@ impl TransitGatewayAttachmentBuilder {
         self
     }
     /// <p>The ID of the Amazon Web Services account that owns the resource.</p>
-    pub fn set_resource_owner_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.resource_owner_id = input; self
+    pub fn set_resource_owner_id(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.resource_owner_id = input;
+        self
     }
     /// <p>The resource type. Note that the <code>tgw-peering</code> resource type has been deprecated.</p>
-    pub fn resource_type(mut self, input: crate::types::TransitGatewayAttachmentResourceType) -> Self {
+    pub fn resource_type(
+        mut self,
+        input: crate::types::TransitGatewayAttachmentResourceType,
+    ) -> Self {
         self.resource_type = Some(input);
         self
     }
     /// <p>The resource type. Note that the <code>tgw-peering</code> resource type has been deprecated.</p>
-    pub fn set_resource_type(mut self, input: std::option::Option<crate::types::TransitGatewayAttachmentResourceType>) -> Self {
-        self.resource_type = input; self
+    pub fn set_resource_type(
+        mut self,
+        input: std::option::Option<crate::types::TransitGatewayAttachmentResourceType>,
+    ) -> Self {
+        self.resource_type = input;
+        self
     }
     /// <p>The ID of the resource.</p>
     pub fn resource_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -152,7 +180,8 @@ impl TransitGatewayAttachmentBuilder {
     }
     /// <p>The ID of the resource.</p>
     pub fn set_resource_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.resource_id = input; self
+        self.resource_id = input;
+        self
     }
     /// <p>The attachment state. Note that the <code>initiating</code> state has been deprecated.</p>
     pub fn state(mut self, input: crate::types::TransitGatewayAttachmentState) -> Self {
@@ -160,8 +189,12 @@ impl TransitGatewayAttachmentBuilder {
         self
     }
     /// <p>The attachment state. Note that the <code>initiating</code> state has been deprecated.</p>
-    pub fn set_state(mut self, input: std::option::Option<crate::types::TransitGatewayAttachmentState>) -> Self {
-        self.state = input; self
+    pub fn set_state(
+        mut self,
+        input: std::option::Option<crate::types::TransitGatewayAttachmentState>,
+    ) -> Self {
+        self.state = input;
+        self
     }
     /// <p>The association.</p>
     pub fn association(mut self, input: crate::types::TransitGatewayAttachmentAssociation) -> Self {
@@ -169,8 +202,12 @@ impl TransitGatewayAttachmentBuilder {
         self
     }
     /// <p>The association.</p>
-    pub fn set_association(mut self, input: std::option::Option<crate::types::TransitGatewayAttachmentAssociation>) -> Self {
-        self.association = input; self
+    pub fn set_association(
+        mut self,
+        input: std::option::Option<crate::types::TransitGatewayAttachmentAssociation>,
+    ) -> Self {
+        self.association = input;
+        self
     }
     /// <p>The creation time.</p>
     pub fn creation_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -178,8 +215,12 @@ impl TransitGatewayAttachmentBuilder {
         self
     }
     /// <p>The creation time.</p>
-    pub fn set_creation_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.creation_time = input; self
+    pub fn set_creation_time(
+        mut self,
+        input: std::option::Option<aws_smithy_types::DateTime>,
+    ) -> Self {
+        self.creation_time = input;
+        self
     }
     /// Appends an item to `tags`.
     ///
@@ -188,38 +229,31 @@ impl TransitGatewayAttachmentBuilder {
     /// <p>The tags for the attachment.</p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
-                        v.push(input);
-                        self.tags = Some(v);
-                        self
+        v.push(input);
+        self.tags = Some(v);
+        self
     }
     /// <p>The tags for the attachment.</p>
-    pub fn set_tags(mut self, input: std::option::Option<std::vec::Vec<crate::types::Tag>>) -> Self {
-        self.tags = input; self
+    pub fn set_tags(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::Tag>>,
+    ) -> Self {
+        self.tags = input;
+        self
     }
     /// Consumes the builder and constructs a [`TransitGatewayAttachment`](crate::types::TransitGatewayAttachment).
     pub fn build(self) -> crate::types::TransitGatewayAttachment {
         crate::types::TransitGatewayAttachment {
-            transit_gateway_attachment_id: self.transit_gateway_attachment_id
-            ,
-            transit_gateway_id: self.transit_gateway_id
-            ,
-            transit_gateway_owner_id: self.transit_gateway_owner_id
-            ,
-            resource_owner_id: self.resource_owner_id
-            ,
-            resource_type: self.resource_type
-            ,
-            resource_id: self.resource_id
-            ,
-            state: self.state
-            ,
-            association: self.association
-            ,
-            creation_time: self.creation_time
-            ,
-            tags: self.tags
-            ,
+            transit_gateway_attachment_id: self.transit_gateway_attachment_id,
+            transit_gateway_id: self.transit_gateway_id,
+            transit_gateway_owner_id: self.transit_gateway_owner_id,
+            resource_owner_id: self.resource_owner_id,
+            resource_type: self.resource_type,
+            resource_id: self.resource_id,
+            state: self.state,
+            association: self.association,
+            creation_time: self.creation_time,
+            tags: self.tags,
         }
     }
 }
-

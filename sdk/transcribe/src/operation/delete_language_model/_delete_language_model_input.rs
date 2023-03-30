@@ -2,21 +2,23 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteLanguageModelInput  {
+pub struct DeleteLanguageModelInput {
     /// <p>The name of the custom language model you want to delete. Model names are case sensitive.</p>
     #[doc(hidden)]
     pub model_name: std::option::Option<std::string::String>,
 }
 impl DeleteLanguageModelInput {
     /// <p>The name of the custom language model you want to delete. Model names are case sensitive.</p>
-    pub fn model_name(&self) -> std::option::Option<& str> {
+    pub fn model_name(&self) -> std::option::Option<&str> {
         self.model_name.as_deref()
     }
 }
 impl DeleteLanguageModelInput {
     /// Creates a new builder-style object to manufacture [`DeleteLanguageModelInput`](crate::operation::delete_language_model::DeleteLanguageModelInput).
-    pub fn builder() -> crate::operation::delete_language_model::builders::DeleteLanguageModelInputBuilder {
-        crate::operation::delete_language_model::builders::DeleteLanguageModelInputBuilder::default()
+    pub fn builder(
+    ) -> crate::operation::delete_language_model::builders::DeleteLanguageModelInputBuilder {
+        crate::operation::delete_language_model::builders::DeleteLanguageModelInputBuilder::default(
+        )
     }
 }
 
@@ -34,16 +36,20 @@ impl DeleteLanguageModelInputBuilder {
     }
     /// <p>The name of the custom language model you want to delete. Model names are case sensitive.</p>
     pub fn set_model_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.model_name = input; self
+        self.model_name = input;
+        self
     }
     /// Consumes the builder and constructs a [`DeleteLanguageModelInput`](crate::operation::delete_language_model::DeleteLanguageModelInput).
-    pub fn build(self) -> Result<crate::operation::delete_language_model::DeleteLanguageModelInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::delete_language_model::DeleteLanguageModelInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::delete_language_model::DeleteLanguageModelInput {
-                model_name: self.model_name
-                ,
-            }
+                model_name: self.model_name,
+            },
         )
     }
 }
-

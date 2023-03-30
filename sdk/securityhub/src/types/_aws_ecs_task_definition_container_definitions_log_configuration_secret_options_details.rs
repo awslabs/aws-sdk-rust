@@ -3,29 +3,29 @@
 /// <p>A secret to pass to the log configuration.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AwsEcsTaskDefinitionContainerDefinitionsLogConfigurationSecretOptionsDetails  {
+pub struct AwsEcsTaskDefinitionContainerDefinitionsLogConfigurationSecretOptionsDetails {
     /// <p>The name of the secret.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
-    /// <p>The secret to expose to the container.</p> 
+    /// <p>The secret to expose to the container.</p>
     /// <p>The value is either the full ARN of the Secrets Manager secret or the full ARN of the parameter in the Systems Manager Parameter Store.</p>
     #[doc(hidden)]
     pub value_from: std::option::Option<std::string::String>,
 }
 impl AwsEcsTaskDefinitionContainerDefinitionsLogConfigurationSecretOptionsDetails {
     /// <p>The name of the secret.</p>
-    pub fn name(&self) -> std::option::Option<& str> {
+    pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
-    /// <p>The secret to expose to the container.</p> 
+    /// <p>The secret to expose to the container.</p>
     /// <p>The value is either the full ARN of the Secrets Manager secret or the full ARN of the parameter in the Systems Manager Parameter Store.</p>
-    pub fn value_from(&self) -> std::option::Option<& str> {
+    pub fn value_from(&self) -> std::option::Option<&str> {
         self.value_from.as_deref()
     }
 }
 impl AwsEcsTaskDefinitionContainerDefinitionsLogConfigurationSecretOptionsDetails {
     /// Creates a new builder-style object to manufacture [`AwsEcsTaskDefinitionContainerDefinitionsLogConfigurationSecretOptionsDetails`](crate::types::AwsEcsTaskDefinitionContainerDefinitionsLogConfigurationSecretOptionsDetails).
-    pub fn builder() -> crate::types::builders::AwsEcsTaskDefinitionContainerDefinitionsLogConfigurationSecretOptionsDetailsBuilder {
+    pub fn builder() -> crate::types::builders::AwsEcsTaskDefinitionContainerDefinitionsLogConfigurationSecretOptionsDetailsBuilder{
         crate::types::builders::AwsEcsTaskDefinitionContainerDefinitionsLogConfigurationSecretOptionsDetailsBuilder::default()
     }
 }
@@ -45,27 +45,29 @@ impl AwsEcsTaskDefinitionContainerDefinitionsLogConfigurationSecretOptionsDetail
     }
     /// <p>The name of the secret.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input; self
+        self.name = input;
+        self
     }
-    /// <p>The secret to expose to the container.</p> 
+    /// <p>The secret to expose to the container.</p>
     /// <p>The value is either the full ARN of the Secrets Manager secret or the full ARN of the parameter in the Systems Manager Parameter Store.</p>
     pub fn value_from(mut self, input: impl Into<std::string::String>) -> Self {
         self.value_from = Some(input.into());
         self
     }
-    /// <p>The secret to expose to the container.</p> 
+    /// <p>The secret to expose to the container.</p>
     /// <p>The value is either the full ARN of the Secrets Manager secret or the full ARN of the parameter in the Systems Manager Parameter Store.</p>
     pub fn set_value_from(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.value_from = input; self
+        self.value_from = input;
+        self
     }
     /// Consumes the builder and constructs a [`AwsEcsTaskDefinitionContainerDefinitionsLogConfigurationSecretOptionsDetails`](crate::types::AwsEcsTaskDefinitionContainerDefinitionsLogConfigurationSecretOptionsDetails).
-    pub fn build(self) -> crate::types::AwsEcsTaskDefinitionContainerDefinitionsLogConfigurationSecretOptionsDetails {
+    pub fn build(
+        self,
+    ) -> crate::types::AwsEcsTaskDefinitionContainerDefinitionsLogConfigurationSecretOptionsDetails
+    {
         crate::types::AwsEcsTaskDefinitionContainerDefinitionsLogConfigurationSecretOptionsDetails {
-            name: self.name
-            ,
-            value_from: self.value_from
-            ,
+            name: self.name,
+            value_from: self.value_from,
         }
     }
 }
-

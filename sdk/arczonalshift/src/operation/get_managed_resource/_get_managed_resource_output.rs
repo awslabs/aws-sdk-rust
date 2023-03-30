@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetManagedResourceOutput  {
+pub struct GetManagedResourceOutput {
     /// <p>The Amazon Resource Name (ARN) for the resource.</p>
     #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
@@ -19,30 +19,33 @@ pub struct GetManagedResourceOutput  {
 }
 impl GetManagedResourceOutput {
     /// <p>The Amazon Resource Name (ARN) for the resource.</p>
-    pub fn arn(&self) -> std::option::Option<& str> {
+    pub fn arn(&self) -> std::option::Option<&str> {
         self.arn.as_deref()
     }
     /// <p>The name of the resource.</p>
-    pub fn name(&self) -> std::option::Option<& str> {
+    pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>A collection of key-value pairs that indicate whether resources are active in Availability Zones or not. The key name is the Availability Zone where the resource is deployed. The value is 1 or 0.</p>
-    pub fn applied_weights(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, f32>> {
+    pub fn applied_weights(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, f32>> {
         self.applied_weights.as_ref()
     }
     /// <p>The zonal shifts that are currently active for a resource. </p>
-    pub fn zonal_shifts(&self) -> std::option::Option<& [crate::types::ZonalShiftInResource]> {
+    pub fn zonal_shifts(&self) -> std::option::Option<&[crate::types::ZonalShiftInResource]> {
         self.zonal_shifts.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for GetManagedResourceOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl GetManagedResourceOutput {
     /// Creates a new builder-style object to manufacture [`GetManagedResourceOutput`](crate::operation::get_managed_resource::GetManagedResourceOutput).
-    pub fn builder() -> crate::operation::get_managed_resource::builders::GetManagedResourceOutputBuilder {
+    pub fn builder(
+    ) -> crate::operation::get_managed_resource::builders::GetManagedResourceOutputBuilder {
         crate::operation::get_managed_resource::builders::GetManagedResourceOutputBuilder::default()
     }
 }
@@ -53,7 +56,8 @@ impl GetManagedResourceOutput {
 pub struct GetManagedResourceOutputBuilder {
     pub(crate) arn: std::option::Option<std::string::String>,
     pub(crate) name: std::option::Option<std::string::String>,
-    pub(crate) applied_weights: std::option::Option<std::collections::HashMap<std::string::String, f32>>,
+    pub(crate) applied_weights:
+        std::option::Option<std::collections::HashMap<std::string::String, f32>>,
     pub(crate) zonal_shifts: std::option::Option<std::vec::Vec<crate::types::ZonalShiftInResource>>,
     _request_id: Option<String>,
 }
@@ -65,7 +69,8 @@ impl GetManagedResourceOutputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) for the resource.</p>
     pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.arn = input; self
+        self.arn = input;
+        self
     }
     /// <p>The name of the resource.</p>
     pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -74,7 +79,8 @@ impl GetManagedResourceOutputBuilder {
     }
     /// <p>The name of the resource.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input; self
+        self.name = input;
+        self
     }
     /// Adds a key-value pair to `applied_weights`.
     ///
@@ -83,13 +89,17 @@ impl GetManagedResourceOutputBuilder {
     /// <p>A collection of key-value pairs that indicate whether resources are active in Availability Zones or not. The key name is the Availability Zone where the resource is deployed. The value is 1 or 0.</p>
     pub fn applied_weights(mut self, k: impl Into<std::string::String>, v: f32) -> Self {
         let mut hash_map = self.applied_weights.unwrap_or_default();
-                        hash_map.insert(k.into(), v);
-                        self.applied_weights = Some(hash_map);
-                        self
+        hash_map.insert(k.into(), v);
+        self.applied_weights = Some(hash_map);
+        self
     }
     /// <p>A collection of key-value pairs that indicate whether resources are active in Availability Zones or not. The key name is the Availability Zone where the resource is deployed. The value is 1 or 0.</p>
-    pub fn set_applied_weights(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, f32>>) -> Self {
-        self.applied_weights = input; self
+    pub fn set_applied_weights(
+        mut self,
+        input: std::option::Option<std::collections::HashMap<std::string::String, f32>>,
+    ) -> Self {
+        self.applied_weights = input;
+        self
     }
     /// Appends an item to `zonal_shifts`.
     ///
@@ -98,36 +108,35 @@ impl GetManagedResourceOutputBuilder {
     /// <p>The zonal shifts that are currently active for a resource. </p>
     pub fn zonal_shifts(mut self, input: crate::types::ZonalShiftInResource) -> Self {
         let mut v = self.zonal_shifts.unwrap_or_default();
-                        v.push(input);
-                        self.zonal_shifts = Some(v);
-                        self
+        v.push(input);
+        self.zonal_shifts = Some(v);
+        self
     }
     /// <p>The zonal shifts that are currently active for a resource. </p>
-    pub fn set_zonal_shifts(mut self, input: std::option::Option<std::vec::Vec<crate::types::ZonalShiftInResource>>) -> Self {
-        self.zonal_shifts = input; self
+    pub fn set_zonal_shifts(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::ZonalShiftInResource>>,
+    ) -> Self {
+        self.zonal_shifts = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`GetManagedResourceOutput`](crate::operation::get_managed_resource::GetManagedResourceOutput).
     pub fn build(self) -> crate::operation::get_managed_resource::GetManagedResourceOutput {
         crate::operation::get_managed_resource::GetManagedResourceOutput {
-            arn: self.arn
-            ,
-            name: self.name
-            ,
-            applied_weights: self.applied_weights
-            ,
-            zonal_shifts: self.zonal_shifts
-            ,
+            arn: self.arn,
+            name: self.name,
+            applied_weights: self.applied_weights,
+            zonal_shifts: self.zonal_shifts,
             _request_id: self._request_id,
         }
     }
 }
-

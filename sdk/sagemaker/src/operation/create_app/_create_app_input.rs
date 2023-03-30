@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateAppInput  {
+pub struct CreateAppInput {
     /// <p>The domain ID.</p>
     #[doc(hidden)]
     pub domain_id: std::option::Option<std::string::String>,
@@ -18,8 +18,8 @@ pub struct CreateAppInput  {
     /// <p>Each tag consists of a key and an optional value. Tag keys must be unique per resource.</p>
     #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::types::Tag>>,
-    /// <p>The instance type and the Amazon Resource Name (ARN) of the SageMaker image created on the instance.</p> <note> 
-    /// <p>The value of <code>InstanceType</code> passed as part of the <code>ResourceSpec</code> in the <code>CreateApp</code> call overrides the value passed as part of the <code>ResourceSpec</code> configured for the user profile or the domain. If <code>InstanceType</code> is not specified in any of those three <code>ResourceSpec</code> values for a <code>KernelGateway</code> app, the <code>CreateApp</code> call fails with a request validation error.</p> 
+    /// <p>The instance type and the Amazon Resource Name (ARN) of the SageMaker image created on the instance.</p> <note>
+    /// <p>The value of <code>InstanceType</code> passed as part of the <code>ResourceSpec</code> in the <code>CreateApp</code> call overrides the value passed as part of the <code>ResourceSpec</code> configured for the user profile or the domain. If <code>InstanceType</code> is not specified in any of those three <code>ResourceSpec</code> values for a <code>KernelGateway</code> app, the <code>CreateApp</code> call fails with a request validation error.</p>
     /// </note>
     #[doc(hidden)]
     pub resource_spec: std::option::Option<crate::types::ResourceSpec>,
@@ -29,33 +29,33 @@ pub struct CreateAppInput  {
 }
 impl CreateAppInput {
     /// <p>The domain ID.</p>
-    pub fn domain_id(&self) -> std::option::Option<& str> {
+    pub fn domain_id(&self) -> std::option::Option<&str> {
         self.domain_id.as_deref()
     }
     /// <p>The user profile name. If this value is not set, then <code>SpaceName</code> must be set.</p>
-    pub fn user_profile_name(&self) -> std::option::Option<& str> {
+    pub fn user_profile_name(&self) -> std::option::Option<&str> {
         self.user_profile_name.as_deref()
     }
     /// <p>The type of app.</p>
-    pub fn app_type(&self) -> std::option::Option<& crate::types::AppType> {
+    pub fn app_type(&self) -> std::option::Option<&crate::types::AppType> {
         self.app_type.as_ref()
     }
     /// <p>The name of the app.</p>
-    pub fn app_name(&self) -> std::option::Option<& str> {
+    pub fn app_name(&self) -> std::option::Option<&str> {
         self.app_name.as_deref()
     }
     /// <p>Each tag consists of a key and an optional value. Tag keys must be unique per resource.</p>
-    pub fn tags(&self) -> std::option::Option<& [crate::types::Tag]> {
+    pub fn tags(&self) -> std::option::Option<&[crate::types::Tag]> {
         self.tags.as_deref()
     }
-    /// <p>The instance type and the Amazon Resource Name (ARN) of the SageMaker image created on the instance.</p> <note> 
-    /// <p>The value of <code>InstanceType</code> passed as part of the <code>ResourceSpec</code> in the <code>CreateApp</code> call overrides the value passed as part of the <code>ResourceSpec</code> configured for the user profile or the domain. If <code>InstanceType</code> is not specified in any of those three <code>ResourceSpec</code> values for a <code>KernelGateway</code> app, the <code>CreateApp</code> call fails with a request validation error.</p> 
+    /// <p>The instance type and the Amazon Resource Name (ARN) of the SageMaker image created on the instance.</p> <note>
+    /// <p>The value of <code>InstanceType</code> passed as part of the <code>ResourceSpec</code> in the <code>CreateApp</code> call overrides the value passed as part of the <code>ResourceSpec</code> configured for the user profile or the domain. If <code>InstanceType</code> is not specified in any of those three <code>ResourceSpec</code> values for a <code>KernelGateway</code> app, the <code>CreateApp</code> call fails with a request validation error.</p>
     /// </note>
-    pub fn resource_spec(&self) -> std::option::Option<& crate::types::ResourceSpec> {
+    pub fn resource_spec(&self) -> std::option::Option<&crate::types::ResourceSpec> {
         self.resource_spec.as_ref()
     }
     /// <p>The name of the space. If this value is not set, then <code>UserProfileName</code> must be set.</p>
-    pub fn space_name(&self) -> std::option::Option<& str> {
+    pub fn space_name(&self) -> std::option::Option<&str> {
         self.space_name.as_deref()
     }
 }
@@ -86,7 +86,8 @@ impl CreateAppInputBuilder {
     }
     /// <p>The domain ID.</p>
     pub fn set_domain_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.domain_id = input; self
+        self.domain_id = input;
+        self
     }
     /// <p>The user profile name. If this value is not set, then <code>SpaceName</code> must be set.</p>
     pub fn user_profile_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -94,8 +95,12 @@ impl CreateAppInputBuilder {
         self
     }
     /// <p>The user profile name. If this value is not set, then <code>SpaceName</code> must be set.</p>
-    pub fn set_user_profile_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.user_profile_name = input; self
+    pub fn set_user_profile_name(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.user_profile_name = input;
+        self
     }
     /// <p>The type of app.</p>
     pub fn app_type(mut self, input: crate::types::AppType) -> Self {
@@ -104,7 +109,8 @@ impl CreateAppInputBuilder {
     }
     /// <p>The type of app.</p>
     pub fn set_app_type(mut self, input: std::option::Option<crate::types::AppType>) -> Self {
-        self.app_type = input; self
+        self.app_type = input;
+        self
     }
     /// <p>The name of the app.</p>
     pub fn app_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -113,7 +119,8 @@ impl CreateAppInputBuilder {
     }
     /// <p>The name of the app.</p>
     pub fn set_app_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.app_name = input; self
+        self.app_name = input;
+        self
     }
     /// Appends an item to `tags`.
     ///
@@ -122,26 +129,34 @@ impl CreateAppInputBuilder {
     /// <p>Each tag consists of a key and an optional value. Tag keys must be unique per resource.</p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
-                        v.push(input);
-                        self.tags = Some(v);
-                        self
+        v.push(input);
+        self.tags = Some(v);
+        self
     }
     /// <p>Each tag consists of a key and an optional value. Tag keys must be unique per resource.</p>
-    pub fn set_tags(mut self, input: std::option::Option<std::vec::Vec<crate::types::Tag>>) -> Self {
-        self.tags = input; self
+    pub fn set_tags(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::Tag>>,
+    ) -> Self {
+        self.tags = input;
+        self
     }
-    /// <p>The instance type and the Amazon Resource Name (ARN) of the SageMaker image created on the instance.</p> <note> 
-    /// <p>The value of <code>InstanceType</code> passed as part of the <code>ResourceSpec</code> in the <code>CreateApp</code> call overrides the value passed as part of the <code>ResourceSpec</code> configured for the user profile or the domain. If <code>InstanceType</code> is not specified in any of those three <code>ResourceSpec</code> values for a <code>KernelGateway</code> app, the <code>CreateApp</code> call fails with a request validation error.</p> 
+    /// <p>The instance type and the Amazon Resource Name (ARN) of the SageMaker image created on the instance.</p> <note>
+    /// <p>The value of <code>InstanceType</code> passed as part of the <code>ResourceSpec</code> in the <code>CreateApp</code> call overrides the value passed as part of the <code>ResourceSpec</code> configured for the user profile or the domain. If <code>InstanceType</code> is not specified in any of those three <code>ResourceSpec</code> values for a <code>KernelGateway</code> app, the <code>CreateApp</code> call fails with a request validation error.</p>
     /// </note>
     pub fn resource_spec(mut self, input: crate::types::ResourceSpec) -> Self {
         self.resource_spec = Some(input);
         self
     }
-    /// <p>The instance type and the Amazon Resource Name (ARN) of the SageMaker image created on the instance.</p> <note> 
-    /// <p>The value of <code>InstanceType</code> passed as part of the <code>ResourceSpec</code> in the <code>CreateApp</code> call overrides the value passed as part of the <code>ResourceSpec</code> configured for the user profile or the domain. If <code>InstanceType</code> is not specified in any of those three <code>ResourceSpec</code> values for a <code>KernelGateway</code> app, the <code>CreateApp</code> call fails with a request validation error.</p> 
+    /// <p>The instance type and the Amazon Resource Name (ARN) of the SageMaker image created on the instance.</p> <note>
+    /// <p>The value of <code>InstanceType</code> passed as part of the <code>ResourceSpec</code> in the <code>CreateApp</code> call overrides the value passed as part of the <code>ResourceSpec</code> configured for the user profile or the domain. If <code>InstanceType</code> is not specified in any of those three <code>ResourceSpec</code> values for a <code>KernelGateway</code> app, the <code>CreateApp</code> call fails with a request validation error.</p>
     /// </note>
-    pub fn set_resource_spec(mut self, input: std::option::Option<crate::types::ResourceSpec>) -> Self {
-        self.resource_spec = input; self
+    pub fn set_resource_spec(
+        mut self,
+        input: std::option::Option<crate::types::ResourceSpec>,
+    ) -> Self {
+        self.resource_spec = input;
+        self
     }
     /// <p>The name of the space. If this value is not set, then <code>UserProfileName</code> must be set.</p>
     pub fn space_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -150,28 +165,24 @@ impl CreateAppInputBuilder {
     }
     /// <p>The name of the space. If this value is not set, then <code>UserProfileName</code> must be set.</p>
     pub fn set_space_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.space_name = input; self
+        self.space_name = input;
+        self
     }
     /// Consumes the builder and constructs a [`CreateAppInput`](crate::operation::create_app::CreateAppInput).
-    pub fn build(self) -> Result<crate::operation::create_app::CreateAppInput, aws_smithy_http::operation::error::BuildError> {
-        Ok(
-            crate::operation::create_app::CreateAppInput {
-                domain_id: self.domain_id
-                ,
-                user_profile_name: self.user_profile_name
-                ,
-                app_type: self.app_type
-                ,
-                app_name: self.app_name
-                ,
-                tags: self.tags
-                ,
-                resource_spec: self.resource_spec
-                ,
-                space_name: self.space_name
-                ,
-            }
-        )
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::create_app::CreateAppInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        Ok(crate::operation::create_app::CreateAppInput {
+            domain_id: self.domain_id,
+            user_profile_name: self.user_profile_name,
+            app_type: self.app_type,
+            app_name: self.app_name,
+            tags: self.tags,
+            resource_spec: self.resource_spec,
+            space_name: self.space_name,
+        })
     }
 }
-

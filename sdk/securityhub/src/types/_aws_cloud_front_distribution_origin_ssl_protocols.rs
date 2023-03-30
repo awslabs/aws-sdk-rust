@@ -3,7 +3,7 @@
 /// <p>A complex type that contains information about the SSL/TLS protocols that CloudFront can use when establishing an HTTPS connection with your origin. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AwsCloudFrontDistributionOriginSslProtocols  {
+pub struct AwsCloudFrontDistributionOriginSslProtocols {
     /// <p>A list that contains allowed SSL/TLS protocols for this distribution. </p>
     #[doc(hidden)]
     pub items: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -13,7 +13,7 @@ pub struct AwsCloudFrontDistributionOriginSslProtocols  {
 }
 impl AwsCloudFrontDistributionOriginSslProtocols {
     /// <p>A list that contains allowed SSL/TLS protocols for this distribution. </p>
-    pub fn items(&self) -> std::option::Option<& [std::string::String]> {
+    pub fn items(&self) -> std::option::Option<&[std::string::String]> {
         self.items.as_deref()
     }
     /// <p>The number of SSL/TLS protocols that you want to allow CloudFront to use when establishing an HTTPS connection with this origin. </p>
@@ -43,13 +43,17 @@ impl AwsCloudFrontDistributionOriginSslProtocolsBuilder {
     /// <p>A list that contains allowed SSL/TLS protocols for this distribution. </p>
     pub fn items(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.items.unwrap_or_default();
-                        v.push(input.into());
-                        self.items = Some(v);
-                        self
+        v.push(input.into());
+        self.items = Some(v);
+        self
     }
     /// <p>A list that contains allowed SSL/TLS protocols for this distribution. </p>
-    pub fn set_items(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-        self.items = input; self
+    pub fn set_items(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
+        self.items = input;
+        self
     }
     /// <p>The number of SSL/TLS protocols that you want to allow CloudFront to use when establishing an HTTPS connection with this origin. </p>
     pub fn quantity(mut self, input: i32) -> Self {
@@ -58,17 +62,14 @@ impl AwsCloudFrontDistributionOriginSslProtocolsBuilder {
     }
     /// <p>The number of SSL/TLS protocols that you want to allow CloudFront to use when establishing an HTTPS connection with this origin. </p>
     pub fn set_quantity(mut self, input: std::option::Option<i32>) -> Self {
-        self.quantity = input; self
+        self.quantity = input;
+        self
     }
     /// Consumes the builder and constructs a [`AwsCloudFrontDistributionOriginSslProtocols`](crate::types::AwsCloudFrontDistributionOriginSslProtocols).
     pub fn build(self) -> crate::types::AwsCloudFrontDistributionOriginSslProtocols {
         crate::types::AwsCloudFrontDistributionOriginSslProtocols {
-            items: self.items
-            ,
-            quantity: self.quantity
-                .unwrap_or_default()
-            ,
+            items: self.items,
+            quantity: self.quantity.unwrap_or_default(),
         }
     }
 }
-

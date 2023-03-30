@@ -3,13 +3,13 @@
 /// <p>The captions to be created, if any.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Captions  {
-    /// <p>A policy that determines how Elastic Transcoder handles the existence of multiple captions.</p> 
-    /// <ul> 
-    /// <li> <p> <b>MergeOverride:</b> Elastic Transcoder transcodes both embedded and sidecar captions into outputs. If captions for a language are embedded in the input file and also appear in a sidecar file, Elastic Transcoder uses the sidecar captions and ignores the embedded captions for that language.</p> </li> 
-    /// <li> <p> <b>MergeRetain:</b> Elastic Transcoder transcodes both embedded and sidecar captions into outputs. If captions for a language are embedded in the input file and also appear in a sidecar file, Elastic Transcoder uses the embedded captions and ignores the sidecar captions for that language. If <code>CaptionSources</code> is empty, Elastic Transcoder omits all sidecar captions from the output files.</p> </li> 
-    /// <li> <p> <b>Override:</b> Elastic Transcoder transcodes only the sidecar captions that you specify in <code>CaptionSources</code>.</p> </li> 
-    /// </ul> 
+pub struct Captions {
+    /// <p>A policy that determines how Elastic Transcoder handles the existence of multiple captions.</p>
+    /// <ul>
+    /// <li> <p> <b>MergeOverride:</b> Elastic Transcoder transcodes both embedded and sidecar captions into outputs. If captions for a language are embedded in the input file and also appear in a sidecar file, Elastic Transcoder uses the sidecar captions and ignores the embedded captions for that language.</p> </li>
+    /// <li> <p> <b>MergeRetain:</b> Elastic Transcoder transcodes both embedded and sidecar captions into outputs. If captions for a language are embedded in the input file and also appear in a sidecar file, Elastic Transcoder uses the embedded captions and ignores the sidecar captions for that language. If <code>CaptionSources</code> is empty, Elastic Transcoder omits all sidecar captions from the output files.</p> </li>
+    /// <li> <p> <b>Override:</b> Elastic Transcoder transcodes only the sidecar captions that you specify in <code>CaptionSources</code>.</p> </li>
+    /// </ul>
     /// <p> <code>MergePolicy</code> cannot be null.</p>
     #[deprecated]
     #[doc(hidden)]
@@ -23,24 +23,24 @@ pub struct Captions  {
     pub caption_formats: std::option::Option<std::vec::Vec<crate::types::CaptionFormat>>,
 }
 impl Captions {
-    /// <p>A policy that determines how Elastic Transcoder handles the existence of multiple captions.</p> 
-    /// <ul> 
-    /// <li> <p> <b>MergeOverride:</b> Elastic Transcoder transcodes both embedded and sidecar captions into outputs. If captions for a language are embedded in the input file and also appear in a sidecar file, Elastic Transcoder uses the sidecar captions and ignores the embedded captions for that language.</p> </li> 
-    /// <li> <p> <b>MergeRetain:</b> Elastic Transcoder transcodes both embedded and sidecar captions into outputs. If captions for a language are embedded in the input file and also appear in a sidecar file, Elastic Transcoder uses the embedded captions and ignores the sidecar captions for that language. If <code>CaptionSources</code> is empty, Elastic Transcoder omits all sidecar captions from the output files.</p> </li> 
-    /// <li> <p> <b>Override:</b> Elastic Transcoder transcodes only the sidecar captions that you specify in <code>CaptionSources</code>.</p> </li> 
-    /// </ul> 
+    /// <p>A policy that determines how Elastic Transcoder handles the existence of multiple captions.</p>
+    /// <ul>
+    /// <li> <p> <b>MergeOverride:</b> Elastic Transcoder transcodes both embedded and sidecar captions into outputs. If captions for a language are embedded in the input file and also appear in a sidecar file, Elastic Transcoder uses the sidecar captions and ignores the embedded captions for that language.</p> </li>
+    /// <li> <p> <b>MergeRetain:</b> Elastic Transcoder transcodes both embedded and sidecar captions into outputs. If captions for a language are embedded in the input file and also appear in a sidecar file, Elastic Transcoder uses the embedded captions and ignores the sidecar captions for that language. If <code>CaptionSources</code> is empty, Elastic Transcoder omits all sidecar captions from the output files.</p> </li>
+    /// <li> <p> <b>Override:</b> Elastic Transcoder transcodes only the sidecar captions that you specify in <code>CaptionSources</code>.</p> </li>
+    /// </ul>
     /// <p> <code>MergePolicy</code> cannot be null.</p>
     #[deprecated]
-    pub fn merge_policy(&self) -> std::option::Option<& str> {
+    pub fn merge_policy(&self) -> std::option::Option<&str> {
         self.merge_policy.as_deref()
     }
     /// <p>Source files for the input sidecar captions used during the transcoding process. To omit all sidecar captions, leave <code>CaptionSources</code> blank.</p>
     #[deprecated]
-    pub fn caption_sources(&self) -> std::option::Option<& [crate::types::CaptionSource]> {
+    pub fn caption_sources(&self) -> std::option::Option<&[crate::types::CaptionSource]> {
         self.caption_sources.as_deref()
     }
     /// <p>The array of file formats for the output captions. If you leave this value blank, Elastic Transcoder returns an error.</p>
-    pub fn caption_formats(&self) -> std::option::Option<& [crate::types::CaptionFormat]> {
+    pub fn caption_formats(&self) -> std::option::Option<&[crate::types::CaptionFormat]> {
         self.caption_formats.as_deref()
     }
 }
@@ -60,28 +60,29 @@ pub struct CaptionsBuilder {
     pub(crate) caption_formats: std::option::Option<std::vec::Vec<crate::types::CaptionFormat>>,
 }
 impl CaptionsBuilder {
-    /// <p>A policy that determines how Elastic Transcoder handles the existence of multiple captions.</p> 
-    /// <ul> 
-    /// <li> <p> <b>MergeOverride:</b> Elastic Transcoder transcodes both embedded and sidecar captions into outputs. If captions for a language are embedded in the input file and also appear in a sidecar file, Elastic Transcoder uses the sidecar captions and ignores the embedded captions for that language.</p> </li> 
-    /// <li> <p> <b>MergeRetain:</b> Elastic Transcoder transcodes both embedded and sidecar captions into outputs. If captions for a language are embedded in the input file and also appear in a sidecar file, Elastic Transcoder uses the embedded captions and ignores the sidecar captions for that language. If <code>CaptionSources</code> is empty, Elastic Transcoder omits all sidecar captions from the output files.</p> </li> 
-    /// <li> <p> <b>Override:</b> Elastic Transcoder transcodes only the sidecar captions that you specify in <code>CaptionSources</code>.</p> </li> 
-    /// </ul> 
+    /// <p>A policy that determines how Elastic Transcoder handles the existence of multiple captions.</p>
+    /// <ul>
+    /// <li> <p> <b>MergeOverride:</b> Elastic Transcoder transcodes both embedded and sidecar captions into outputs. If captions for a language are embedded in the input file and also appear in a sidecar file, Elastic Transcoder uses the sidecar captions and ignores the embedded captions for that language.</p> </li>
+    /// <li> <p> <b>MergeRetain:</b> Elastic Transcoder transcodes both embedded and sidecar captions into outputs. If captions for a language are embedded in the input file and also appear in a sidecar file, Elastic Transcoder uses the embedded captions and ignores the sidecar captions for that language. If <code>CaptionSources</code> is empty, Elastic Transcoder omits all sidecar captions from the output files.</p> </li>
+    /// <li> <p> <b>Override:</b> Elastic Transcoder transcodes only the sidecar captions that you specify in <code>CaptionSources</code>.</p> </li>
+    /// </ul>
     /// <p> <code>MergePolicy</code> cannot be null.</p>
     #[deprecated]
     pub fn merge_policy(mut self, input: impl Into<std::string::String>) -> Self {
         self.merge_policy = Some(input.into());
         self
     }
-    /// <p>A policy that determines how Elastic Transcoder handles the existence of multiple captions.</p> 
-    /// <ul> 
-    /// <li> <p> <b>MergeOverride:</b> Elastic Transcoder transcodes both embedded and sidecar captions into outputs. If captions for a language are embedded in the input file and also appear in a sidecar file, Elastic Transcoder uses the sidecar captions and ignores the embedded captions for that language.</p> </li> 
-    /// <li> <p> <b>MergeRetain:</b> Elastic Transcoder transcodes both embedded and sidecar captions into outputs. If captions for a language are embedded in the input file and also appear in a sidecar file, Elastic Transcoder uses the embedded captions and ignores the sidecar captions for that language. If <code>CaptionSources</code> is empty, Elastic Transcoder omits all sidecar captions from the output files.</p> </li> 
-    /// <li> <p> <b>Override:</b> Elastic Transcoder transcodes only the sidecar captions that you specify in <code>CaptionSources</code>.</p> </li> 
-    /// </ul> 
+    /// <p>A policy that determines how Elastic Transcoder handles the existence of multiple captions.</p>
+    /// <ul>
+    /// <li> <p> <b>MergeOverride:</b> Elastic Transcoder transcodes both embedded and sidecar captions into outputs. If captions for a language are embedded in the input file and also appear in a sidecar file, Elastic Transcoder uses the sidecar captions and ignores the embedded captions for that language.</p> </li>
+    /// <li> <p> <b>MergeRetain:</b> Elastic Transcoder transcodes both embedded and sidecar captions into outputs. If captions for a language are embedded in the input file and also appear in a sidecar file, Elastic Transcoder uses the embedded captions and ignores the sidecar captions for that language. If <code>CaptionSources</code> is empty, Elastic Transcoder omits all sidecar captions from the output files.</p> </li>
+    /// <li> <p> <b>Override:</b> Elastic Transcoder transcodes only the sidecar captions that you specify in <code>CaptionSources</code>.</p> </li>
+    /// </ul>
     /// <p> <code>MergePolicy</code> cannot be null.</p>
     #[deprecated]
     pub fn set_merge_policy(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.merge_policy = input; self
+        self.merge_policy = input;
+        self
     }
     /// Appends an item to `caption_sources`.
     ///
@@ -91,14 +92,18 @@ impl CaptionsBuilder {
     #[deprecated]
     pub fn caption_sources(mut self, input: crate::types::CaptionSource) -> Self {
         let mut v = self.caption_sources.unwrap_or_default();
-                        v.push(input);
-                        self.caption_sources = Some(v);
-                        self
+        v.push(input);
+        self.caption_sources = Some(v);
+        self
     }
     /// <p>Source files for the input sidecar captions used during the transcoding process. To omit all sidecar captions, leave <code>CaptionSources</code> blank.</p>
     #[deprecated]
-    pub fn set_caption_sources(mut self, input: std::option::Option<std::vec::Vec<crate::types::CaptionSource>>) -> Self {
-        self.caption_sources = input; self
+    pub fn set_caption_sources(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::CaptionSource>>,
+    ) -> Self {
+        self.caption_sources = input;
+        self
     }
     /// Appends an item to `caption_formats`.
     ///
@@ -107,24 +112,24 @@ impl CaptionsBuilder {
     /// <p>The array of file formats for the output captions. If you leave this value blank, Elastic Transcoder returns an error.</p>
     pub fn caption_formats(mut self, input: crate::types::CaptionFormat) -> Self {
         let mut v = self.caption_formats.unwrap_or_default();
-                        v.push(input);
-                        self.caption_formats = Some(v);
-                        self
+        v.push(input);
+        self.caption_formats = Some(v);
+        self
     }
     /// <p>The array of file formats for the output captions. If you leave this value blank, Elastic Transcoder returns an error.</p>
-    pub fn set_caption_formats(mut self, input: std::option::Option<std::vec::Vec<crate::types::CaptionFormat>>) -> Self {
-        self.caption_formats = input; self
+    pub fn set_caption_formats(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::CaptionFormat>>,
+    ) -> Self {
+        self.caption_formats = input;
+        self
     }
     /// Consumes the builder and constructs a [`Captions`](crate::types::Captions).
     pub fn build(self) -> crate::types::Captions {
         crate::types::Captions {
-            merge_policy: self.merge_policy
-            ,
-            caption_sources: self.caption_sources
-            ,
-            caption_formats: self.caption_formats
-            ,
+            merge_policy: self.merge_policy,
+            caption_sources: self.caption_sources,
+            caption_formats: self.caption_formats,
         }
     }
 }
-

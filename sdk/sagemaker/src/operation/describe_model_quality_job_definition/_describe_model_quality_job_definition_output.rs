@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeModelQualityJobDefinitionOutput  {
+pub struct DescribeModelQualityJobDefinitionOutput {
     /// <p>The Amazon Resource Name (ARN) of the model quality job.</p>
     #[doc(hidden)]
     pub job_definition_arn: std::option::Option<std::string::String>,
@@ -14,10 +14,12 @@ pub struct DescribeModelQualityJobDefinitionOutput  {
     pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The baseline configuration for a model quality job.</p>
     #[doc(hidden)]
-    pub model_quality_baseline_config: std::option::Option<crate::types::ModelQualityBaselineConfig>,
+    pub model_quality_baseline_config:
+        std::option::Option<crate::types::ModelQualityBaselineConfig>,
     /// <p>Configures the model quality job to run a specified Docker container image.</p>
     #[doc(hidden)]
-    pub model_quality_app_specification: std::option::Option<crate::types::ModelQualityAppSpecification>,
+    pub model_quality_app_specification:
+        std::option::Option<crate::types::ModelQualityAppSpecification>,
     /// <p>Inputs for the model quality job.</p>
     #[doc(hidden)]
     pub model_quality_job_input: std::option::Option<crate::types::ModelQualityJobInput>,
@@ -40,58 +42,68 @@ pub struct DescribeModelQualityJobDefinitionOutput  {
 }
 impl DescribeModelQualityJobDefinitionOutput {
     /// <p>The Amazon Resource Name (ARN) of the model quality job.</p>
-    pub fn job_definition_arn(&self) -> std::option::Option<& str> {
+    pub fn job_definition_arn(&self) -> std::option::Option<&str> {
         self.job_definition_arn.as_deref()
     }
     /// <p>The name of the quality job definition. The name must be unique within an Amazon Web Services Region in the Amazon Web Services account.</p>
-    pub fn job_definition_name(&self) -> std::option::Option<& str> {
+    pub fn job_definition_name(&self) -> std::option::Option<&str> {
         self.job_definition_name.as_deref()
     }
     /// <p>The time at which the model quality job was created.</p>
-    pub fn creation_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
+    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
     /// <p>The baseline configuration for a model quality job.</p>
-    pub fn model_quality_baseline_config(&self) -> std::option::Option<& crate::types::ModelQualityBaselineConfig> {
+    pub fn model_quality_baseline_config(
+        &self,
+    ) -> std::option::Option<&crate::types::ModelQualityBaselineConfig> {
         self.model_quality_baseline_config.as_ref()
     }
     /// <p>Configures the model quality job to run a specified Docker container image.</p>
-    pub fn model_quality_app_specification(&self) -> std::option::Option<& crate::types::ModelQualityAppSpecification> {
+    pub fn model_quality_app_specification(
+        &self,
+    ) -> std::option::Option<&crate::types::ModelQualityAppSpecification> {
         self.model_quality_app_specification.as_ref()
     }
     /// <p>Inputs for the model quality job.</p>
-    pub fn model_quality_job_input(&self) -> std::option::Option<& crate::types::ModelQualityJobInput> {
+    pub fn model_quality_job_input(
+        &self,
+    ) -> std::option::Option<&crate::types::ModelQualityJobInput> {
         self.model_quality_job_input.as_ref()
     }
     /// <p>The output configuration for monitoring jobs.</p>
-    pub fn model_quality_job_output_config(&self) -> std::option::Option<& crate::types::MonitoringOutputConfig> {
+    pub fn model_quality_job_output_config(
+        &self,
+    ) -> std::option::Option<&crate::types::MonitoringOutputConfig> {
         self.model_quality_job_output_config.as_ref()
     }
     /// <p>Identifies the resources to deploy for a monitoring job.</p>
-    pub fn job_resources(&self) -> std::option::Option<& crate::types::MonitoringResources> {
+    pub fn job_resources(&self) -> std::option::Option<&crate::types::MonitoringResources> {
         self.job_resources.as_ref()
     }
     /// <p>Networking options for a model quality job.</p>
-    pub fn network_config(&self) -> std::option::Option<& crate::types::MonitoringNetworkConfig> {
+    pub fn network_config(&self) -> std::option::Option<&crate::types::MonitoringNetworkConfig> {
         self.network_config.as_ref()
     }
     /// <p>The Amazon Resource Name (ARN) of an IAM role that Amazon SageMaker can assume to perform tasks on your behalf.</p>
-    pub fn role_arn(&self) -> std::option::Option<& str> {
+    pub fn role_arn(&self) -> std::option::Option<&str> {
         self.role_arn.as_deref()
     }
     /// <p>A time limit for how long the monitoring job is allowed to run before stopping.</p>
-    pub fn stopping_condition(&self) -> std::option::Option<& crate::types::MonitoringStoppingCondition> {
+    pub fn stopping_condition(
+        &self,
+    ) -> std::option::Option<&crate::types::MonitoringStoppingCondition> {
         self.stopping_condition.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for DescribeModelQualityJobDefinitionOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl DescribeModelQualityJobDefinitionOutput {
     /// Creates a new builder-style object to manufacture [`DescribeModelQualityJobDefinitionOutput`](crate::operation::describe_model_quality_job_definition::DescribeModelQualityJobDefinitionOutput).
-    pub fn builder() -> crate::operation::describe_model_quality_job_definition::builders::DescribeModelQualityJobDefinitionOutputBuilder {
+    pub fn builder() -> crate::operation::describe_model_quality_job_definition::builders::DescribeModelQualityJobDefinitionOutputBuilder{
         crate::operation::describe_model_quality_job_definition::builders::DescribeModelQualityJobDefinitionOutputBuilder::default()
     }
 }
@@ -103,10 +115,13 @@ pub struct DescribeModelQualityJobDefinitionOutputBuilder {
     pub(crate) job_definition_arn: std::option::Option<std::string::String>,
     pub(crate) job_definition_name: std::option::Option<std::string::String>,
     pub(crate) creation_time: std::option::Option<aws_smithy_types::DateTime>,
-    pub(crate) model_quality_baseline_config: std::option::Option<crate::types::ModelQualityBaselineConfig>,
-    pub(crate) model_quality_app_specification: std::option::Option<crate::types::ModelQualityAppSpecification>,
+    pub(crate) model_quality_baseline_config:
+        std::option::Option<crate::types::ModelQualityBaselineConfig>,
+    pub(crate) model_quality_app_specification:
+        std::option::Option<crate::types::ModelQualityAppSpecification>,
     pub(crate) model_quality_job_input: std::option::Option<crate::types::ModelQualityJobInput>,
-    pub(crate) model_quality_job_output_config: std::option::Option<crate::types::MonitoringOutputConfig>,
+    pub(crate) model_quality_job_output_config:
+        std::option::Option<crate::types::MonitoringOutputConfig>,
     pub(crate) job_resources: std::option::Option<crate::types::MonitoringResources>,
     pub(crate) network_config: std::option::Option<crate::types::MonitoringNetworkConfig>,
     pub(crate) role_arn: std::option::Option<std::string::String>,
@@ -120,8 +135,12 @@ impl DescribeModelQualityJobDefinitionOutputBuilder {
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the model quality job.</p>
-    pub fn set_job_definition_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.job_definition_arn = input; self
+    pub fn set_job_definition_arn(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.job_definition_arn = input;
+        self
     }
     /// <p>The name of the quality job definition. The name must be unique within an Amazon Web Services Region in the Amazon Web Services account.</p>
     pub fn job_definition_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -129,8 +148,12 @@ impl DescribeModelQualityJobDefinitionOutputBuilder {
         self
     }
     /// <p>The name of the quality job definition. The name must be unique within an Amazon Web Services Region in the Amazon Web Services account.</p>
-    pub fn set_job_definition_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.job_definition_name = input; self
+    pub fn set_job_definition_name(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.job_definition_name = input;
+        self
     }
     /// <p>The time at which the model quality job was created.</p>
     pub fn creation_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -138,26 +161,44 @@ impl DescribeModelQualityJobDefinitionOutputBuilder {
         self
     }
     /// <p>The time at which the model quality job was created.</p>
-    pub fn set_creation_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.creation_time = input; self
+    pub fn set_creation_time(
+        mut self,
+        input: std::option::Option<aws_smithy_types::DateTime>,
+    ) -> Self {
+        self.creation_time = input;
+        self
     }
     /// <p>The baseline configuration for a model quality job.</p>
-    pub fn model_quality_baseline_config(mut self, input: crate::types::ModelQualityBaselineConfig) -> Self {
+    pub fn model_quality_baseline_config(
+        mut self,
+        input: crate::types::ModelQualityBaselineConfig,
+    ) -> Self {
         self.model_quality_baseline_config = Some(input);
         self
     }
     /// <p>The baseline configuration for a model quality job.</p>
-    pub fn set_model_quality_baseline_config(mut self, input: std::option::Option<crate::types::ModelQualityBaselineConfig>) -> Self {
-        self.model_quality_baseline_config = input; self
+    pub fn set_model_quality_baseline_config(
+        mut self,
+        input: std::option::Option<crate::types::ModelQualityBaselineConfig>,
+    ) -> Self {
+        self.model_quality_baseline_config = input;
+        self
     }
     /// <p>Configures the model quality job to run a specified Docker container image.</p>
-    pub fn model_quality_app_specification(mut self, input: crate::types::ModelQualityAppSpecification) -> Self {
+    pub fn model_quality_app_specification(
+        mut self,
+        input: crate::types::ModelQualityAppSpecification,
+    ) -> Self {
         self.model_quality_app_specification = Some(input);
         self
     }
     /// <p>Configures the model quality job to run a specified Docker container image.</p>
-    pub fn set_model_quality_app_specification(mut self, input: std::option::Option<crate::types::ModelQualityAppSpecification>) -> Self {
-        self.model_quality_app_specification = input; self
+    pub fn set_model_quality_app_specification(
+        mut self,
+        input: std::option::Option<crate::types::ModelQualityAppSpecification>,
+    ) -> Self {
+        self.model_quality_app_specification = input;
+        self
     }
     /// <p>Inputs for the model quality job.</p>
     pub fn model_quality_job_input(mut self, input: crate::types::ModelQualityJobInput) -> Self {
@@ -165,17 +206,28 @@ impl DescribeModelQualityJobDefinitionOutputBuilder {
         self
     }
     /// <p>Inputs for the model quality job.</p>
-    pub fn set_model_quality_job_input(mut self, input: std::option::Option<crate::types::ModelQualityJobInput>) -> Self {
-        self.model_quality_job_input = input; self
+    pub fn set_model_quality_job_input(
+        mut self,
+        input: std::option::Option<crate::types::ModelQualityJobInput>,
+    ) -> Self {
+        self.model_quality_job_input = input;
+        self
     }
     /// <p>The output configuration for monitoring jobs.</p>
-    pub fn model_quality_job_output_config(mut self, input: crate::types::MonitoringOutputConfig) -> Self {
+    pub fn model_quality_job_output_config(
+        mut self,
+        input: crate::types::MonitoringOutputConfig,
+    ) -> Self {
         self.model_quality_job_output_config = Some(input);
         self
     }
     /// <p>The output configuration for monitoring jobs.</p>
-    pub fn set_model_quality_job_output_config(mut self, input: std::option::Option<crate::types::MonitoringOutputConfig>) -> Self {
-        self.model_quality_job_output_config = input; self
+    pub fn set_model_quality_job_output_config(
+        mut self,
+        input: std::option::Option<crate::types::MonitoringOutputConfig>,
+    ) -> Self {
+        self.model_quality_job_output_config = input;
+        self
     }
     /// <p>Identifies the resources to deploy for a monitoring job.</p>
     pub fn job_resources(mut self, input: crate::types::MonitoringResources) -> Self {
@@ -183,8 +235,12 @@ impl DescribeModelQualityJobDefinitionOutputBuilder {
         self
     }
     /// <p>Identifies the resources to deploy for a monitoring job.</p>
-    pub fn set_job_resources(mut self, input: std::option::Option<crate::types::MonitoringResources>) -> Self {
-        self.job_resources = input; self
+    pub fn set_job_resources(
+        mut self,
+        input: std::option::Option<crate::types::MonitoringResources>,
+    ) -> Self {
+        self.job_resources = input;
+        self
     }
     /// <p>Networking options for a model quality job.</p>
     pub fn network_config(mut self, input: crate::types::MonitoringNetworkConfig) -> Self {
@@ -192,8 +248,12 @@ impl DescribeModelQualityJobDefinitionOutputBuilder {
         self
     }
     /// <p>Networking options for a model quality job.</p>
-    pub fn set_network_config(mut self, input: std::option::Option<crate::types::MonitoringNetworkConfig>) -> Self {
-        self.network_config = input; self
+    pub fn set_network_config(
+        mut self,
+        input: std::option::Option<crate::types::MonitoringNetworkConfig>,
+    ) -> Self {
+        self.network_config = input;
+        self
     }
     /// <p>The Amazon Resource Name (ARN) of an IAM role that Amazon SageMaker can assume to perform tasks on your behalf.</p>
     pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -202,7 +262,8 @@ impl DescribeModelQualityJobDefinitionOutputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of an IAM role that Amazon SageMaker can assume to perform tasks on your behalf.</p>
     pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.role_arn = input; self
+        self.role_arn = input;
+        self
     }
     /// <p>A time limit for how long the monitoring job is allowed to run before stopping.</p>
     pub fn stopping_condition(mut self, input: crate::types::MonitoringStoppingCondition) -> Self {
@@ -210,20 +271,24 @@ impl DescribeModelQualityJobDefinitionOutputBuilder {
         self
     }
     /// <p>A time limit for how long the monitoring job is allowed to run before stopping.</p>
-    pub fn set_stopping_condition(mut self, input: std::option::Option<crate::types::MonitoringStoppingCondition>) -> Self {
-        self.stopping_condition = input; self
+    pub fn set_stopping_condition(
+        mut self,
+        input: std::option::Option<crate::types::MonitoringStoppingCondition>,
+    ) -> Self {
+        self.stopping_condition = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`DescribeModelQualityJobDefinitionOutput`](crate::operation::describe_model_quality_job_definition::DescribeModelQualityJobDefinitionOutput).
-    pub fn build(self) -> crate::operation::describe_model_quality_job_definition::DescribeModelQualityJobDefinitionOutput {
+    pub fn build(self) -> crate::operation::describe_model_quality_job_definition::DescribeModelQualityJobDefinitionOutput{
         crate::operation::describe_model_quality_job_definition::DescribeModelQualityJobDefinitionOutput {
             job_definition_arn: self.job_definition_arn
             ,
@@ -251,4 +316,3 @@ impl DescribeModelQualityJobDefinitionOutputBuilder {
         }
     }
 }
-

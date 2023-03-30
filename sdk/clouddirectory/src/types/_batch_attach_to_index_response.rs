@@ -3,14 +3,14 @@
 /// <p>Represents the output of a <code>AttachToIndex</code> response operation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct BatchAttachToIndexResponse  {
+pub struct BatchAttachToIndexResponse {
     /// <p>The <code>ObjectIdentifier</code> of the object that was attached to the index.</p>
     #[doc(hidden)]
     pub attached_object_identifier: std::option::Option<std::string::String>,
 }
 impl BatchAttachToIndexResponse {
     /// <p>The <code>ObjectIdentifier</code> of the object that was attached to the index.</p>
-    pub fn attached_object_identifier(&self) -> std::option::Option<& str> {
+    pub fn attached_object_identifier(&self) -> std::option::Option<&str> {
         self.attached_object_identifier.as_deref()
     }
 }
@@ -34,15 +34,17 @@ impl BatchAttachToIndexResponseBuilder {
         self
     }
     /// <p>The <code>ObjectIdentifier</code> of the object that was attached to the index.</p>
-    pub fn set_attached_object_identifier(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.attached_object_identifier = input; self
+    pub fn set_attached_object_identifier(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.attached_object_identifier = input;
+        self
     }
     /// Consumes the builder and constructs a [`BatchAttachToIndexResponse`](crate::types::BatchAttachToIndexResponse).
     pub fn build(self) -> crate::types::BatchAttachToIndexResponse {
         crate::types::BatchAttachToIndexResponse {
-            attached_object_identifier: self.attached_object_identifier
-            ,
+            attached_object_identifier: self.attached_object_identifier,
         }
     }
 }
-

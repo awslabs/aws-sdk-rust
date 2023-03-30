@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DisassociateApplicationFromEntitlementInput  {
+pub struct DisassociateApplicationFromEntitlementInput {
     /// <p>The name of the stack with which the entitlement is associated.</p>
     #[doc(hidden)]
     pub stack_name: std::option::Option<std::string::String>,
@@ -15,21 +15,21 @@ pub struct DisassociateApplicationFromEntitlementInput  {
 }
 impl DisassociateApplicationFromEntitlementInput {
     /// <p>The name of the stack with which the entitlement is associated.</p>
-    pub fn stack_name(&self) -> std::option::Option<& str> {
+    pub fn stack_name(&self) -> std::option::Option<&str> {
         self.stack_name.as_deref()
     }
     /// <p>The name of the entitlement.</p>
-    pub fn entitlement_name(&self) -> std::option::Option<& str> {
+    pub fn entitlement_name(&self) -> std::option::Option<&str> {
         self.entitlement_name.as_deref()
     }
     /// <p>The identifier of the application to remove from the entitlement.</p>
-    pub fn application_identifier(&self) -> std::option::Option<& str> {
+    pub fn application_identifier(&self) -> std::option::Option<&str> {
         self.application_identifier.as_deref()
     }
 }
 impl DisassociateApplicationFromEntitlementInput {
     /// Creates a new builder-style object to manufacture [`DisassociateApplicationFromEntitlementInput`](crate::operation::disassociate_application_from_entitlement::DisassociateApplicationFromEntitlementInput).
-    pub fn builder() -> crate::operation::disassociate_application_from_entitlement::builders::DisassociateApplicationFromEntitlementInputBuilder {
+    pub fn builder() -> crate::operation::disassociate_application_from_entitlement::builders::DisassociateApplicationFromEntitlementInputBuilder{
         crate::operation::disassociate_application_from_entitlement::builders::DisassociateApplicationFromEntitlementInputBuilder::default()
     }
 }
@@ -50,7 +50,8 @@ impl DisassociateApplicationFromEntitlementInputBuilder {
     }
     /// <p>The name of the stack with which the entitlement is associated.</p>
     pub fn set_stack_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.stack_name = input; self
+        self.stack_name = input;
+        self
     }
     /// <p>The name of the entitlement.</p>
     pub fn entitlement_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -59,7 +60,8 @@ impl DisassociateApplicationFromEntitlementInputBuilder {
     }
     /// <p>The name of the entitlement.</p>
     pub fn set_entitlement_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.entitlement_name = input; self
+        self.entitlement_name = input;
+        self
     }
     /// <p>The identifier of the application to remove from the entitlement.</p>
     pub fn application_identifier(mut self, input: impl Into<std::string::String>) -> Self {
@@ -67,11 +69,15 @@ impl DisassociateApplicationFromEntitlementInputBuilder {
         self
     }
     /// <p>The identifier of the application to remove from the entitlement.</p>
-    pub fn set_application_identifier(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.application_identifier = input; self
+    pub fn set_application_identifier(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.application_identifier = input;
+        self
     }
     /// Consumes the builder and constructs a [`DisassociateApplicationFromEntitlementInput`](crate::operation::disassociate_application_from_entitlement::DisassociateApplicationFromEntitlementInput).
-    pub fn build(self) -> Result<crate::operation::disassociate_application_from_entitlement::DisassociateApplicationFromEntitlementInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> Result<crate::operation::disassociate_application_from_entitlement::DisassociateApplicationFromEntitlementInput, aws_smithy_http::operation::error::BuildError>{
         Ok(
             crate::operation::disassociate_application_from_entitlement::DisassociateApplicationFromEntitlementInput {
                 stack_name: self.stack_name
@@ -84,4 +90,3 @@ impl DisassociateApplicationFromEntitlementInputBuilder {
         )
     }
 }
-

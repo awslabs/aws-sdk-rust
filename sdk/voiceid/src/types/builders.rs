@@ -50,4 +50,3 @@ pub use crate::types::_authentication_result::AuthenticationResultBuilder;
 pub use crate::types::_authentication_configuration::AuthenticationConfigurationBuilder;
 
 pub use crate::types::_fraudster::FraudsterBuilder;
-

@@ -3,7 +3,7 @@
 /// <p>Summary information about the session.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SessionSummary  {
+pub struct SessionSummary {
     /// <p>The identifier of the session.</p>
     #[doc(hidden)]
     pub session_id: std::option::Option<std::string::String>,
@@ -19,19 +19,19 @@ pub struct SessionSummary  {
 }
 impl SessionSummary {
     /// <p>The identifier of the session.</p>
-    pub fn session_id(&self) -> std::option::Option<& str> {
+    pub fn session_id(&self) -> std::option::Option<&str> {
         self.session_id.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the session.</p>
-    pub fn session_arn(&self) -> std::option::Option<& str> {
+    pub fn session_arn(&self) -> std::option::Option<&str> {
         self.session_arn.as_deref()
     }
     /// <p>The identifier of the Wisdom assistant.</p>
-    pub fn assistant_id(&self) -> std::option::Option<& str> {
+    pub fn assistant_id(&self) -> std::option::Option<&str> {
         self.assistant_id.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the Wisdom assistant.</p>
-    pub fn assistant_arn(&self) -> std::option::Option<& str> {
+    pub fn assistant_arn(&self) -> std::option::Option<&str> {
         self.assistant_arn.as_deref()
     }
 }
@@ -59,7 +59,8 @@ impl SessionSummaryBuilder {
     }
     /// <p>The identifier of the session.</p>
     pub fn set_session_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.session_id = input; self
+        self.session_id = input;
+        self
     }
     /// <p>The Amazon Resource Name (ARN) of the session.</p>
     pub fn session_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -68,7 +69,8 @@ impl SessionSummaryBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the session.</p>
     pub fn set_session_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.session_arn = input; self
+        self.session_arn = input;
+        self
     }
     /// <p>The identifier of the Wisdom assistant.</p>
     pub fn assistant_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -77,7 +79,8 @@ impl SessionSummaryBuilder {
     }
     /// <p>The identifier of the Wisdom assistant.</p>
     pub fn set_assistant_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.assistant_id = input; self
+        self.assistant_id = input;
+        self
     }
     /// <p>The Amazon Resource Name (ARN) of the Wisdom assistant.</p>
     pub fn assistant_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -86,20 +89,16 @@ impl SessionSummaryBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the Wisdom assistant.</p>
     pub fn set_assistant_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.assistant_arn = input; self
+        self.assistant_arn = input;
+        self
     }
     /// Consumes the builder and constructs a [`SessionSummary`](crate::types::SessionSummary).
     pub fn build(self) -> crate::types::SessionSummary {
         crate::types::SessionSummary {
-            session_id: self.session_id
-            ,
-            session_arn: self.session_arn
-            ,
-            assistant_id: self.assistant_id
-            ,
-            assistant_arn: self.assistant_arn
-            ,
+            session_id: self.session_id,
+            session_arn: self.session_arn,
+            assistant_id: self.assistant_id,
+            assistant_arn: self.assistant_arn,
         }
     }
 }
-

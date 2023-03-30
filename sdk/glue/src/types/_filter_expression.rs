@@ -3,7 +3,7 @@
 /// <p>Specifies a filter expression.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct FilterExpression  {
+pub struct FilterExpression {
     /// <p>The type of operation to perform in the expression.</p>
     #[doc(hidden)]
     pub operation: std::option::Option<crate::types::FilterOperation>,
@@ -16,7 +16,7 @@ pub struct FilterExpression  {
 }
 impl FilterExpression {
     /// <p>The type of operation to perform in the expression.</p>
-    pub fn operation(&self) -> std::option::Option<& crate::types::FilterOperation> {
+    pub fn operation(&self) -> std::option::Option<&crate::types::FilterOperation> {
         self.operation.as_ref()
     }
     /// <p>Whether the expression is to be negated.</p>
@@ -24,7 +24,7 @@ impl FilterExpression {
         self.negated
     }
     /// <p>A list of filter values.</p>
-    pub fn values(&self) -> std::option::Option<& [crate::types::FilterValue]> {
+    pub fn values(&self) -> std::option::Option<&[crate::types::FilterValue]> {
         self.values.as_deref()
     }
 }
@@ -50,8 +50,12 @@ impl FilterExpressionBuilder {
         self
     }
     /// <p>The type of operation to perform in the expression.</p>
-    pub fn set_operation(mut self, input: std::option::Option<crate::types::FilterOperation>) -> Self {
-        self.operation = input; self
+    pub fn set_operation(
+        mut self,
+        input: std::option::Option<crate::types::FilterOperation>,
+    ) -> Self {
+        self.operation = input;
+        self
     }
     /// <p>Whether the expression is to be negated.</p>
     pub fn negated(mut self, input: bool) -> Self {
@@ -60,7 +64,8 @@ impl FilterExpressionBuilder {
     }
     /// <p>Whether the expression is to be negated.</p>
     pub fn set_negated(mut self, input: std::option::Option<bool>) -> Self {
-        self.negated = input; self
+        self.negated = input;
+        self
     }
     /// Appends an item to `values`.
     ///
@@ -69,24 +74,24 @@ impl FilterExpressionBuilder {
     /// <p>A list of filter values.</p>
     pub fn values(mut self, input: crate::types::FilterValue) -> Self {
         let mut v = self.values.unwrap_or_default();
-                        v.push(input);
-                        self.values = Some(v);
-                        self
+        v.push(input);
+        self.values = Some(v);
+        self
     }
     /// <p>A list of filter values.</p>
-    pub fn set_values(mut self, input: std::option::Option<std::vec::Vec<crate::types::FilterValue>>) -> Self {
-        self.values = input; self
+    pub fn set_values(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::FilterValue>>,
+    ) -> Self {
+        self.values = input;
+        self
     }
     /// Consumes the builder and constructs a [`FilterExpression`](crate::types::FilterExpression).
     pub fn build(self) -> crate::types::FilterExpression {
         crate::types::FilterExpression {
-            operation: self.operation
-            ,
-            negated: self.negated
-            ,
-            values: self.values
-            ,
+            operation: self.operation,
+            negated: self.negated,
+            values: self.values,
         }
     }
 }
-

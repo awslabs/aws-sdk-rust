@@ -3,7 +3,7 @@
 /// <p>Describes a packet header statement.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PacketHeaderStatementRequest  {
+pub struct PacketHeaderStatementRequest {
     /// <p>The source addresses.</p>
     #[doc(hidden)]
     pub source_addresses: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -28,31 +28,31 @@ pub struct PacketHeaderStatementRequest  {
 }
 impl PacketHeaderStatementRequest {
     /// <p>The source addresses.</p>
-    pub fn source_addresses(&self) -> std::option::Option<& [std::string::String]> {
+    pub fn source_addresses(&self) -> std::option::Option<&[std::string::String]> {
         self.source_addresses.as_deref()
     }
     /// <p>The destination addresses.</p>
-    pub fn destination_addresses(&self) -> std::option::Option<& [std::string::String]> {
+    pub fn destination_addresses(&self) -> std::option::Option<&[std::string::String]> {
         self.destination_addresses.as_deref()
     }
     /// <p>The source ports.</p>
-    pub fn source_ports(&self) -> std::option::Option<& [std::string::String]> {
+    pub fn source_ports(&self) -> std::option::Option<&[std::string::String]> {
         self.source_ports.as_deref()
     }
     /// <p>The destination ports.</p>
-    pub fn destination_ports(&self) -> std::option::Option<& [std::string::String]> {
+    pub fn destination_ports(&self) -> std::option::Option<&[std::string::String]> {
         self.destination_ports.as_deref()
     }
     /// <p>The source prefix lists.</p>
-    pub fn source_prefix_lists(&self) -> std::option::Option<& [std::string::String]> {
+    pub fn source_prefix_lists(&self) -> std::option::Option<&[std::string::String]> {
         self.source_prefix_lists.as_deref()
     }
     /// <p>The destination prefix lists.</p>
-    pub fn destination_prefix_lists(&self) -> std::option::Option<& [std::string::String]> {
+    pub fn destination_prefix_lists(&self) -> std::option::Option<&[std::string::String]> {
         self.destination_prefix_lists.as_deref()
     }
     /// <p>The protocols.</p>
-    pub fn protocols(&self) -> std::option::Option<& [crate::types::Protocol]> {
+    pub fn protocols(&self) -> std::option::Option<&[crate::types::Protocol]> {
         self.protocols.as_deref()
     }
 }
@@ -83,13 +83,17 @@ impl PacketHeaderStatementRequestBuilder {
     /// <p>The source addresses.</p>
     pub fn source_addresses(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.source_addresses.unwrap_or_default();
-                        v.push(input.into());
-                        self.source_addresses = Some(v);
-                        self
+        v.push(input.into());
+        self.source_addresses = Some(v);
+        self
     }
     /// <p>The source addresses.</p>
-    pub fn set_source_addresses(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-        self.source_addresses = input; self
+    pub fn set_source_addresses(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
+        self.source_addresses = input;
+        self
     }
     /// Appends an item to `destination_addresses`.
     ///
@@ -98,13 +102,17 @@ impl PacketHeaderStatementRequestBuilder {
     /// <p>The destination addresses.</p>
     pub fn destination_addresses(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.destination_addresses.unwrap_or_default();
-                        v.push(input.into());
-                        self.destination_addresses = Some(v);
-                        self
+        v.push(input.into());
+        self.destination_addresses = Some(v);
+        self
     }
     /// <p>The destination addresses.</p>
-    pub fn set_destination_addresses(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-        self.destination_addresses = input; self
+    pub fn set_destination_addresses(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
+        self.destination_addresses = input;
+        self
     }
     /// Appends an item to `source_ports`.
     ///
@@ -113,13 +121,17 @@ impl PacketHeaderStatementRequestBuilder {
     /// <p>The source ports.</p>
     pub fn source_ports(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.source_ports.unwrap_or_default();
-                        v.push(input.into());
-                        self.source_ports = Some(v);
-                        self
+        v.push(input.into());
+        self.source_ports = Some(v);
+        self
     }
     /// <p>The source ports.</p>
-    pub fn set_source_ports(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-        self.source_ports = input; self
+    pub fn set_source_ports(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
+        self.source_ports = input;
+        self
     }
     /// Appends an item to `destination_ports`.
     ///
@@ -128,13 +140,17 @@ impl PacketHeaderStatementRequestBuilder {
     /// <p>The destination ports.</p>
     pub fn destination_ports(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.destination_ports.unwrap_or_default();
-                        v.push(input.into());
-                        self.destination_ports = Some(v);
-                        self
+        v.push(input.into());
+        self.destination_ports = Some(v);
+        self
     }
     /// <p>The destination ports.</p>
-    pub fn set_destination_ports(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-        self.destination_ports = input; self
+    pub fn set_destination_ports(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
+        self.destination_ports = input;
+        self
     }
     /// Appends an item to `source_prefix_lists`.
     ///
@@ -143,13 +159,17 @@ impl PacketHeaderStatementRequestBuilder {
     /// <p>The source prefix lists.</p>
     pub fn source_prefix_lists(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.source_prefix_lists.unwrap_or_default();
-                        v.push(input.into());
-                        self.source_prefix_lists = Some(v);
-                        self
+        v.push(input.into());
+        self.source_prefix_lists = Some(v);
+        self
     }
     /// <p>The source prefix lists.</p>
-    pub fn set_source_prefix_lists(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-        self.source_prefix_lists = input; self
+    pub fn set_source_prefix_lists(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
+        self.source_prefix_lists = input;
+        self
     }
     /// Appends an item to `destination_prefix_lists`.
     ///
@@ -158,13 +178,17 @@ impl PacketHeaderStatementRequestBuilder {
     /// <p>The destination prefix lists.</p>
     pub fn destination_prefix_lists(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.destination_prefix_lists.unwrap_or_default();
-                        v.push(input.into());
-                        self.destination_prefix_lists = Some(v);
-                        self
+        v.push(input.into());
+        self.destination_prefix_lists = Some(v);
+        self
     }
     /// <p>The destination prefix lists.</p>
-    pub fn set_destination_prefix_lists(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-        self.destination_prefix_lists = input; self
+    pub fn set_destination_prefix_lists(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
+        self.destination_prefix_lists = input;
+        self
     }
     /// Appends an item to `protocols`.
     ///
@@ -173,32 +197,28 @@ impl PacketHeaderStatementRequestBuilder {
     /// <p>The protocols.</p>
     pub fn protocols(mut self, input: crate::types::Protocol) -> Self {
         let mut v = self.protocols.unwrap_or_default();
-                        v.push(input);
-                        self.protocols = Some(v);
-                        self
+        v.push(input);
+        self.protocols = Some(v);
+        self
     }
     /// <p>The protocols.</p>
-    pub fn set_protocols(mut self, input: std::option::Option<std::vec::Vec<crate::types::Protocol>>) -> Self {
-        self.protocols = input; self
+    pub fn set_protocols(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::Protocol>>,
+    ) -> Self {
+        self.protocols = input;
+        self
     }
     /// Consumes the builder and constructs a [`PacketHeaderStatementRequest`](crate::types::PacketHeaderStatementRequest).
     pub fn build(self) -> crate::types::PacketHeaderStatementRequest {
         crate::types::PacketHeaderStatementRequest {
-            source_addresses: self.source_addresses
-            ,
-            destination_addresses: self.destination_addresses
-            ,
-            source_ports: self.source_ports
-            ,
-            destination_ports: self.destination_ports
-            ,
-            source_prefix_lists: self.source_prefix_lists
-            ,
-            destination_prefix_lists: self.destination_prefix_lists
-            ,
-            protocols: self.protocols
-            ,
+            source_addresses: self.source_addresses,
+            destination_addresses: self.destination_addresses,
+            source_ports: self.source_ports,
+            destination_ports: self.destination_ports,
+            source_prefix_lists: self.source_prefix_lists,
+            destination_prefix_lists: self.destination_prefix_lists,
+            protocols: self.protocols,
         }
     }
 }
-

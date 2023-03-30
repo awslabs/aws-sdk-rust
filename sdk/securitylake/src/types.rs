@@ -104,4 +104,3 @@ pub mod builders;
 
 /// Error types that Amazon Security Lake can respond with.
 pub mod error;
-

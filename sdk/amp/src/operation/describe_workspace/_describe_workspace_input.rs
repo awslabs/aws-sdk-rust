@@ -3,20 +3,21 @@
 /// Represents the input of a DescribeWorkspace operation.
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeWorkspaceInput  {
+pub struct DescribeWorkspaceInput {
     /// The ID of the workspace to describe.
     #[doc(hidden)]
     pub workspace_id: std::option::Option<std::string::String>,
 }
 impl DescribeWorkspaceInput {
     /// The ID of the workspace to describe.
-    pub fn workspace_id(&self) -> std::option::Option<& str> {
+    pub fn workspace_id(&self) -> std::option::Option<&str> {
         self.workspace_id.as_deref()
     }
 }
 impl DescribeWorkspaceInput {
     /// Creates a new builder-style object to manufacture [`DescribeWorkspaceInput`](crate::operation::describe_workspace::DescribeWorkspaceInput).
-    pub fn builder() -> crate::operation::describe_workspace::builders::DescribeWorkspaceInputBuilder {
+    pub fn builder() -> crate::operation::describe_workspace::builders::DescribeWorkspaceInputBuilder
+    {
         crate::operation::describe_workspace::builders::DescribeWorkspaceInputBuilder::default()
     }
 }
@@ -35,16 +36,20 @@ impl DescribeWorkspaceInputBuilder {
     }
     /// The ID of the workspace to describe.
     pub fn set_workspace_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.workspace_id = input; self
+        self.workspace_id = input;
+        self
     }
     /// Consumes the builder and constructs a [`DescribeWorkspaceInput`](crate::operation::describe_workspace::DescribeWorkspaceInput).
-    pub fn build(self) -> Result<crate::operation::describe_workspace::DescribeWorkspaceInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::describe_workspace::DescribeWorkspaceInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::describe_workspace::DescribeWorkspaceInput {
-                workspace_id: self.workspace_id
-                ,
-            }
+                workspace_id: self.workspace_id,
+            },
         )
     }
 }
-

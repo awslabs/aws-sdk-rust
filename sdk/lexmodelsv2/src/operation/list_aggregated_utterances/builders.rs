@@ -4,64 +4,89 @@ pub use crate::operation::list_aggregated_utterances::_list_aggregated_utterance
 pub use crate::operation::list_aggregated_utterances::_list_aggregated_utterances_input::ListAggregatedUtterancesInputBuilder;
 
 /// Fluent builder constructing a request to `ListAggregatedUtterances`.
-/// 
-/// <p>Provides a list of utterances that users have sent to the bot.</p> 
-/// <p>Utterances are aggregated by the text of the utterance. For example, all instances where customers used the phrase "I want to order pizza" are aggregated into the same line in the response.</p> 
-/// <p>You can see both detected utterances and missed utterances. A detected utterance is where the bot properly recognized the utterance and activated the associated intent. A missed utterance was not recognized by the bot and didn't activate an intent.</p> 
-/// <p>Utterances can be aggregated for a bot alias or for a bot version, but not both at the same time.</p> 
-/// <p>Utterances statistics are not generated under the following conditions:</p> 
-/// <ul> 
-/// <li> <p>The <code>childDirected</code> field was set to true when the bot was created.</p> </li> 
-/// <li> <p>You are using slot obfuscation with one or more slots.</p> </li> 
-/// <li> <p>You opted out of participating in improving Amazon Lex.</p> </li> 
+///
+/// <p>Provides a list of utterances that users have sent to the bot.</p>
+/// <p>Utterances are aggregated by the text of the utterance. For example, all instances where customers used the phrase "I want to order pizza" are aggregated into the same line in the response.</p>
+/// <p>You can see both detected utterances and missed utterances. A detected utterance is where the bot properly recognized the utterance and activated the associated intent. A missed utterance was not recognized by the bot and didn't activate an intent.</p>
+/// <p>Utterances can be aggregated for a bot alias or for a bot version, but not both at the same time.</p>
+/// <p>Utterances statistics are not generated under the following conditions:</p>
+/// <ul>
+/// <li> <p>The <code>childDirected</code> field was set to true when the bot was created.</p> </li>
+/// <li> <p>You are using slot obfuscation with one or more slots.</p> </li>
+/// <li> <p>You opted out of participating in improving Amazon Lex.</p> </li>
 /// </ul>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListAggregatedUtterancesFluentBuilder {
                 handle: std::sync::Arc<crate::client::Handle>,
                 inner: crate::operation::list_aggregated_utterances::builders::ListAggregatedUtterancesInputBuilder
             }
-impl ListAggregatedUtterancesFluentBuilder  {
+impl ListAggregatedUtterancesFluentBuilder {
     /// Creates a new `ListAggregatedUtterances`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
-                    /// sent. The operation's inner [http::Request] can be modified as well.
-                    pub async fn customize(self) -> std::result::Result<
-                        crate::client::customize::CustomizableOperation<crate::operation::list_aggregated_utterances::ListAggregatedUtterances, aws_http::retry::AwsResponseRetryClassifier,>,
-                        aws_smithy_http::result::SdkError<crate::operation::list_aggregated_utterances::ListAggregatedUtterancesError>
-                    >  {
-                        let handle = self.handle.clone();
-                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-                    }
-    
-                    /// Sends the request and returns the response.
-                    ///
-                    /// If an error occurs, an `SdkError` will be returned with additional details that
-                    /// can be matched against.
-                    ///
-                    /// By default, any retryable failures will be retried twice. Retry behavior
-                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                    /// set when configuring the client.
-                    pub async fn send(self) -> std::result::Result<crate::operation::list_aggregated_utterances::ListAggregatedUtterancesOutput, aws_smithy_http::result::SdkError<crate::operation::list_aggregated_utterances::ListAggregatedUtterancesError>>
-                     {
-                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&self.handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        self.handle.client.call(op).await
-                    }
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle,
+            inner: Default::default(),
+        }
+    }
+
+    /// Consume this builder, creating a customizable operation that can be modified before being
+    /// sent. The operation's inner [http::Request] can be modified as well.
+    pub async fn customize(
+        self,
+    ) -> std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::list_aggregated_utterances::ListAggregatedUtterances,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::result::SdkError<
+            crate::operation::list_aggregated_utterances::ListAggregatedUtterancesError,
+        >,
+    > {
+        let handle = self.handle.clone();
+        let operation = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+    }
+
+    /// Sends the request and returns the response.
+    ///
+    /// If an error occurs, an `SdkError` will be returned with additional details that
+    /// can be matched against.
+    ///
+    /// By default, any retryable failures will be retried twice. Retry behavior
+    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+    /// set when configuring the client.
+    pub async fn send(
+        self,
+    ) -> std::result::Result<
+        crate::operation::list_aggregated_utterances::ListAggregatedUtterancesOutput,
+        aws_smithy_http::result::SdkError<
+            crate::operation::list_aggregated_utterances::ListAggregatedUtterancesError,
+        >,
+    > {
+        let op = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&self.handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        self.handle.client.call(op).await
+    }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::list_aggregated_utterances::paginator::ListAggregatedUtterancesPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::list_aggregated_utterances::paginator::ListAggregatedUtterancesPaginator {
-                            crate::operation::list_aggregated_utterances::paginator::ListAggregatedUtterancesPaginator::new(self.handle, self.inner)
-                        }
+    ///
+    /// Paginators are used by calling [`send().await`](crate::operation::list_aggregated_utterances::paginator::ListAggregatedUtterancesPaginator::send) which returns a `Stream`.
+    pub fn into_paginator(
+        self,
+    ) -> crate::operation::list_aggregated_utterances::paginator::ListAggregatedUtterancesPaginator
+    {
+        crate::operation::list_aggregated_utterances::paginator::ListAggregatedUtterancesPaginator::new(self.handle, self.inner)
+    }
     /// <p>The unique identifier of the bot associated with this request.</p>
     pub fn bot_id(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.bot_id(input.into());
@@ -103,12 +128,18 @@ impl ListAggregatedUtterancesFluentBuilder  {
         self
     }
     /// <p>The time window for aggregating the utterance information. You can specify a time between one hour and two weeks.</p>
-    pub fn aggregation_duration(mut self, input: crate::types::UtteranceAggregationDuration) -> Self {
+    pub fn aggregation_duration(
+        mut self,
+        input: crate::types::UtteranceAggregationDuration,
+    ) -> Self {
         self.inner = self.inner.aggregation_duration(input);
         self
     }
     /// <p>The time window for aggregating the utterance information. You can specify a time between one hour and two weeks.</p>
-    pub fn set_aggregation_duration(mut self, input: std::option::Option<crate::types::UtteranceAggregationDuration>) -> Self {
+    pub fn set_aggregation_duration(
+        mut self,
+        input: std::option::Option<crate::types::UtteranceAggregationDuration>,
+    ) -> Self {
         self.inner = self.inner.set_aggregation_duration(input);
         self
     }
@@ -118,7 +149,10 @@ impl ListAggregatedUtterancesFluentBuilder  {
         self
     }
     /// <p>Specifies sorting parameters for the list of utterances. You can sort by the hit count, the missed count, or the number of distinct sessions the utterance appeared in.</p>
-    pub fn set_sort_by(mut self, input: std::option::Option<crate::types::AggregatedUtterancesSortBy>) -> Self {
+    pub fn set_sort_by(
+        mut self,
+        input: std::option::Option<crate::types::AggregatedUtterancesSortBy>,
+    ) -> Self {
         self.inner = self.inner.set_sort_by(input);
         self
     }
@@ -132,7 +166,10 @@ impl ListAggregatedUtterancesFluentBuilder  {
         self
     }
     /// <p>Provides the specification of a filter used to limit the utterances in the response to only those that match the filter specification. You can only specify one filter and one string to filter on.</p>
-    pub fn set_filters(mut self, input: std::option::Option<std::vec::Vec<crate::types::AggregatedUtterancesFilter>>) -> Self {
+    pub fn set_filters(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::AggregatedUtterancesFilter>>,
+    ) -> Self {
         self.inner = self.inner.set_filters(input);
         self
     }
@@ -157,4 +194,3 @@ impl ListAggregatedUtterancesFluentBuilder  {
         self
     }
 }
-

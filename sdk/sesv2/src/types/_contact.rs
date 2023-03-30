@@ -3,7 +3,7 @@
 /// <p>A contact is the end-user who is receiving the email.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Contact  {
+pub struct Contact {
     /// <p>The contact's email address.</p>
     #[doc(hidden)]
     pub email_address: std::option::Option<std::string::String>,
@@ -12,7 +12,8 @@ pub struct Contact  {
     pub topic_preferences: std::option::Option<std::vec::Vec<crate::types::TopicPreference>>,
     /// <p>The default topic preferences applied to the contact.</p>
     #[doc(hidden)]
-    pub topic_default_preferences: std::option::Option<std::vec::Vec<crate::types::TopicPreference>>,
+    pub topic_default_preferences:
+        std::option::Option<std::vec::Vec<crate::types::TopicPreference>>,
     /// <p>A boolean value status noting if the contact is unsubscribed from all contact list topics.</p>
     #[doc(hidden)]
     pub unsubscribe_all: bool,
@@ -22,15 +23,17 @@ pub struct Contact  {
 }
 impl Contact {
     /// <p>The contact's email address.</p>
-    pub fn email_address(&self) -> std::option::Option<& str> {
+    pub fn email_address(&self) -> std::option::Option<&str> {
         self.email_address.as_deref()
     }
     /// <p>The contact's preference for being opted-in to or opted-out of a topic.</p>
-    pub fn topic_preferences(&self) -> std::option::Option<& [crate::types::TopicPreference]> {
+    pub fn topic_preferences(&self) -> std::option::Option<&[crate::types::TopicPreference]> {
         self.topic_preferences.as_deref()
     }
     /// <p>The default topic preferences applied to the contact.</p>
-    pub fn topic_default_preferences(&self) -> std::option::Option<& [crate::types::TopicPreference]> {
+    pub fn topic_default_preferences(
+        &self,
+    ) -> std::option::Option<&[crate::types::TopicPreference]> {
         self.topic_default_preferences.as_deref()
     }
     /// <p>A boolean value status noting if the contact is unsubscribed from all contact list topics.</p>
@@ -38,7 +41,7 @@ impl Contact {
         self.unsubscribe_all
     }
     /// <p>A timestamp noting the last time the contact's information was updated.</p>
-    pub fn last_updated_timestamp(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
+    pub fn last_updated_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_updated_timestamp.as_ref()
     }
 }
@@ -55,7 +58,8 @@ impl Contact {
 pub struct ContactBuilder {
     pub(crate) email_address: std::option::Option<std::string::String>,
     pub(crate) topic_preferences: std::option::Option<std::vec::Vec<crate::types::TopicPreference>>,
-    pub(crate) topic_default_preferences: std::option::Option<std::vec::Vec<crate::types::TopicPreference>>,
+    pub(crate) topic_default_preferences:
+        std::option::Option<std::vec::Vec<crate::types::TopicPreference>>,
     pub(crate) unsubscribe_all: std::option::Option<bool>,
     pub(crate) last_updated_timestamp: std::option::Option<aws_smithy_types::DateTime>,
 }
@@ -67,7 +71,8 @@ impl ContactBuilder {
     }
     /// <p>The contact's email address.</p>
     pub fn set_email_address(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.email_address = input; self
+        self.email_address = input;
+        self
     }
     /// Appends an item to `topic_preferences`.
     ///
@@ -76,13 +81,17 @@ impl ContactBuilder {
     /// <p>The contact's preference for being opted-in to or opted-out of a topic.</p>
     pub fn topic_preferences(mut self, input: crate::types::TopicPreference) -> Self {
         let mut v = self.topic_preferences.unwrap_or_default();
-                        v.push(input);
-                        self.topic_preferences = Some(v);
-                        self
+        v.push(input);
+        self.topic_preferences = Some(v);
+        self
     }
     /// <p>The contact's preference for being opted-in to or opted-out of a topic.</p>
-    pub fn set_topic_preferences(mut self, input: std::option::Option<std::vec::Vec<crate::types::TopicPreference>>) -> Self {
-        self.topic_preferences = input; self
+    pub fn set_topic_preferences(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::TopicPreference>>,
+    ) -> Self {
+        self.topic_preferences = input;
+        self
     }
     /// Appends an item to `topic_default_preferences`.
     ///
@@ -91,13 +100,17 @@ impl ContactBuilder {
     /// <p>The default topic preferences applied to the contact.</p>
     pub fn topic_default_preferences(mut self, input: crate::types::TopicPreference) -> Self {
         let mut v = self.topic_default_preferences.unwrap_or_default();
-                        v.push(input);
-                        self.topic_default_preferences = Some(v);
-                        self
+        v.push(input);
+        self.topic_default_preferences = Some(v);
+        self
     }
     /// <p>The default topic preferences applied to the contact.</p>
-    pub fn set_topic_default_preferences(mut self, input: std::option::Option<std::vec::Vec<crate::types::TopicPreference>>) -> Self {
-        self.topic_default_preferences = input; self
+    pub fn set_topic_default_preferences(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::TopicPreference>>,
+    ) -> Self {
+        self.topic_default_preferences = input;
+        self
     }
     /// <p>A boolean value status noting if the contact is unsubscribed from all contact list topics.</p>
     pub fn unsubscribe_all(mut self, input: bool) -> Self {
@@ -106,7 +119,8 @@ impl ContactBuilder {
     }
     /// <p>A boolean value status noting if the contact is unsubscribed from all contact list topics.</p>
     pub fn set_unsubscribe_all(mut self, input: std::option::Option<bool>) -> Self {
-        self.unsubscribe_all = input; self
+        self.unsubscribe_all = input;
+        self
     }
     /// <p>A timestamp noting the last time the contact's information was updated.</p>
     pub fn last_updated_timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -114,24 +128,21 @@ impl ContactBuilder {
         self
     }
     /// <p>A timestamp noting the last time the contact's information was updated.</p>
-    pub fn set_last_updated_timestamp(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.last_updated_timestamp = input; self
+    pub fn set_last_updated_timestamp(
+        mut self,
+        input: std::option::Option<aws_smithy_types::DateTime>,
+    ) -> Self {
+        self.last_updated_timestamp = input;
+        self
     }
     /// Consumes the builder and constructs a [`Contact`](crate::types::Contact).
     pub fn build(self) -> crate::types::Contact {
         crate::types::Contact {
-            email_address: self.email_address
-            ,
-            topic_preferences: self.topic_preferences
-            ,
-            topic_default_preferences: self.topic_default_preferences
-            ,
-            unsubscribe_all: self.unsubscribe_all
-                .unwrap_or_default()
-            ,
-            last_updated_timestamp: self.last_updated_timestamp
-            ,
+            email_address: self.email_address,
+            topic_preferences: self.topic_preferences,
+            topic_default_preferences: self.topic_default_preferences,
+            unsubscribe_all: self.unsubscribe_all.unwrap_or_default(),
+            last_updated_timestamp: self.last_updated_timestamp,
         }
     }
 }
-

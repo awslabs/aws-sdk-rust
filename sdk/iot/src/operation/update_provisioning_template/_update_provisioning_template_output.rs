@@ -2,17 +2,17 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateProvisioningTemplateOutput  {
+pub struct UpdateProvisioningTemplateOutput {
     _request_id: Option<String>,
 }
 impl aws_http::request_id::RequestId for UpdateProvisioningTemplateOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl UpdateProvisioningTemplateOutput {
     /// Creates a new builder-style object to manufacture [`UpdateProvisioningTemplateOutput`](crate::operation::update_provisioning_template::UpdateProvisioningTemplateOutput).
-    pub fn builder() -> crate::operation::update_provisioning_template::builders::UpdateProvisioningTemplateOutputBuilder {
+    pub fn builder() -> crate::operation::update_provisioning_template::builders::UpdateProvisioningTemplateOutputBuilder{
         crate::operation::update_provisioning_template::builders::UpdateProvisioningTemplateOutputBuilder::default()
     }
 }
@@ -25,19 +25,20 @@ pub struct UpdateProvisioningTemplateOutputBuilder {
 }
 impl UpdateProvisioningTemplateOutputBuilder {
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`UpdateProvisioningTemplateOutput`](crate::operation::update_provisioning_template::UpdateProvisioningTemplateOutput).
-    pub fn build(self) -> crate::operation::update_provisioning_template::UpdateProvisioningTemplateOutput {
+    pub fn build(
+        self,
+    ) -> crate::operation::update_provisioning_template::UpdateProvisioningTemplateOutput {
         crate::operation::update_provisioning_template::UpdateProvisioningTemplateOutput {
             _request_id: self._request_id,
         }
     }
 }
-

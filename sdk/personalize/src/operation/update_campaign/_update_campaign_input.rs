@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateCampaignInput  {
+pub struct UpdateCampaignInput {
     /// <p>The Amazon Resource Name (ARN) of the campaign.</p>
     #[doc(hidden)]
     pub campaign_arn: std::option::Option<std::string::String>,
@@ -18,11 +18,11 @@ pub struct UpdateCampaignInput  {
 }
 impl UpdateCampaignInput {
     /// <p>The Amazon Resource Name (ARN) of the campaign.</p>
-    pub fn campaign_arn(&self) -> std::option::Option<& str> {
+    pub fn campaign_arn(&self) -> std::option::Option<&str> {
         self.campaign_arn.as_deref()
     }
     /// <p>The ARN of a new solution version to deploy.</p>
-    pub fn solution_version_arn(&self) -> std::option::Option<& str> {
+    pub fn solution_version_arn(&self) -> std::option::Option<&str> {
         self.solution_version_arn.as_deref()
     }
     /// <p>Specifies the requested minimum provisioned transactions (recommendations) per second that Amazon Personalize will support.</p>
@@ -30,7 +30,7 @@ impl UpdateCampaignInput {
         self.min_provisioned_tps
     }
     /// <p>The configuration details of a campaign.</p>
-    pub fn campaign_config(&self) -> std::option::Option<& crate::types::CampaignConfig> {
+    pub fn campaign_config(&self) -> std::option::Option<&crate::types::CampaignConfig> {
         self.campaign_config.as_ref()
     }
 }
@@ -58,7 +58,8 @@ impl UpdateCampaignInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the campaign.</p>
     pub fn set_campaign_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.campaign_arn = input; self
+        self.campaign_arn = input;
+        self
     }
     /// <p>The ARN of a new solution version to deploy.</p>
     pub fn solution_version_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -66,8 +67,12 @@ impl UpdateCampaignInputBuilder {
         self
     }
     /// <p>The ARN of a new solution version to deploy.</p>
-    pub fn set_solution_version_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.solution_version_arn = input; self
+    pub fn set_solution_version_arn(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.solution_version_arn = input;
+        self
     }
     /// <p>Specifies the requested minimum provisioned transactions (recommendations) per second that Amazon Personalize will support.</p>
     pub fn min_provisioned_tps(mut self, input: i32) -> Self {
@@ -76,7 +81,8 @@ impl UpdateCampaignInputBuilder {
     }
     /// <p>Specifies the requested minimum provisioned transactions (recommendations) per second that Amazon Personalize will support.</p>
     pub fn set_min_provisioned_tps(mut self, input: std::option::Option<i32>) -> Self {
-        self.min_provisioned_tps = input; self
+        self.min_provisioned_tps = input;
+        self
     }
     /// <p>The configuration details of a campaign.</p>
     pub fn campaign_config(mut self, input: crate::types::CampaignConfig) -> Self {
@@ -84,23 +90,25 @@ impl UpdateCampaignInputBuilder {
         self
     }
     /// <p>The configuration details of a campaign.</p>
-    pub fn set_campaign_config(mut self, input: std::option::Option<crate::types::CampaignConfig>) -> Self {
-        self.campaign_config = input; self
+    pub fn set_campaign_config(
+        mut self,
+        input: std::option::Option<crate::types::CampaignConfig>,
+    ) -> Self {
+        self.campaign_config = input;
+        self
     }
     /// Consumes the builder and constructs a [`UpdateCampaignInput`](crate::operation::update_campaign::UpdateCampaignInput).
-    pub fn build(self) -> Result<crate::operation::update_campaign::UpdateCampaignInput, aws_smithy_http::operation::error::BuildError> {
-        Ok(
-            crate::operation::update_campaign::UpdateCampaignInput {
-                campaign_arn: self.campaign_arn
-                ,
-                solution_version_arn: self.solution_version_arn
-                ,
-                min_provisioned_tps: self.min_provisioned_tps
-                ,
-                campaign_config: self.campaign_config
-                ,
-            }
-        )
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::update_campaign::UpdateCampaignInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        Ok(crate::operation::update_campaign::UpdateCampaignInput {
+            campaign_arn: self.campaign_arn,
+            solution_version_arn: self.solution_version_arn,
+            min_provisioned_tps: self.min_provisioned_tps,
+            campaign_config: self.campaign_config,
+        })
     }
 }
-

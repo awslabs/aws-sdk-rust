@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct EnableClientAuthenticationInput  {
+pub struct EnableClientAuthenticationInput {
     /// <p>The identifier of the specified directory. </p>
     #[doc(hidden)]
     pub directory_id: std::option::Option<std::string::String>,
@@ -12,17 +12,17 @@ pub struct EnableClientAuthenticationInput  {
 }
 impl EnableClientAuthenticationInput {
     /// <p>The identifier of the specified directory. </p>
-    pub fn directory_id(&self) -> std::option::Option<& str> {
+    pub fn directory_id(&self) -> std::option::Option<&str> {
         self.directory_id.as_deref()
     }
     /// <p>The type of client authentication to enable. Currently only the value <code>SmartCard</code> is supported. Smart card authentication in AD Connector requires that you enable Kerberos Constrained Delegation for the Service User to the LDAP service in your self-managed AD. </p>
-    pub fn r#type(&self) -> std::option::Option<& crate::types::ClientAuthenticationType> {
+    pub fn r#type(&self) -> std::option::Option<&crate::types::ClientAuthenticationType> {
         self.r#type.as_ref()
     }
 }
 impl EnableClientAuthenticationInput {
     /// Creates a new builder-style object to manufacture [`EnableClientAuthenticationInput`](crate::operation::enable_client_authentication::EnableClientAuthenticationInput).
-    pub fn builder() -> crate::operation::enable_client_authentication::builders::EnableClientAuthenticationInputBuilder {
+    pub fn builder() -> crate::operation::enable_client_authentication::builders::EnableClientAuthenticationInputBuilder{
         crate::operation::enable_client_authentication::builders::EnableClientAuthenticationInputBuilder::default()
     }
 }
@@ -42,7 +42,8 @@ impl EnableClientAuthenticationInputBuilder {
     }
     /// <p>The identifier of the specified directory. </p>
     pub fn set_directory_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.directory_id = input; self
+        self.directory_id = input;
+        self
     }
     /// <p>The type of client authentication to enable. Currently only the value <code>SmartCard</code> is supported. Smart card authentication in AD Connector requires that you enable Kerberos Constrained Delegation for the Service User to the LDAP service in your self-managed AD. </p>
     pub fn r#type(mut self, input: crate::types::ClientAuthenticationType) -> Self {
@@ -50,19 +51,25 @@ impl EnableClientAuthenticationInputBuilder {
         self
     }
     /// <p>The type of client authentication to enable. Currently only the value <code>SmartCard</code> is supported. Smart card authentication in AD Connector requires that you enable Kerberos Constrained Delegation for the Service User to the LDAP service in your self-managed AD. </p>
-    pub fn set_type(mut self, input: std::option::Option<crate::types::ClientAuthenticationType>) -> Self {
-        self.r#type = input; self
+    pub fn set_type(
+        mut self,
+        input: std::option::Option<crate::types::ClientAuthenticationType>,
+    ) -> Self {
+        self.r#type = input;
+        self
     }
     /// Consumes the builder and constructs a [`EnableClientAuthenticationInput`](crate::operation::enable_client_authentication::EnableClientAuthenticationInput).
-    pub fn build(self) -> Result<crate::operation::enable_client_authentication::EnableClientAuthenticationInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::enable_client_authentication::EnableClientAuthenticationInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::enable_client_authentication::EnableClientAuthenticationInput {
-                directory_id: self.directory_id
-                ,
-                r#type: self.r#type
-                ,
-            }
+                directory_id: self.directory_id,
+                r#type: self.r#type,
+            },
         )
     }
 }
-

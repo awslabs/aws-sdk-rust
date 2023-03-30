@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListCodeSigningConfigsOutput  {
+pub struct ListCodeSigningConfigsOutput {
     /// <p>The pagination token that's included if more results are available.</p>
     #[doc(hidden)]
     pub next_marker: std::option::Option<std::string::String>,
@@ -13,22 +13,24 @@ pub struct ListCodeSigningConfigsOutput  {
 }
 impl ListCodeSigningConfigsOutput {
     /// <p>The pagination token that's included if more results are available.</p>
-    pub fn next_marker(&self) -> std::option::Option<& str> {
+    pub fn next_marker(&self) -> std::option::Option<&str> {
         self.next_marker.as_deref()
     }
     /// <p>The code signing configurations</p>
-    pub fn code_signing_configs(&self) -> std::option::Option<& [crate::types::CodeSigningConfig]> {
+    pub fn code_signing_configs(&self) -> std::option::Option<&[crate::types::CodeSigningConfig]> {
         self.code_signing_configs.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for ListCodeSigningConfigsOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl ListCodeSigningConfigsOutput {
     /// Creates a new builder-style object to manufacture [`ListCodeSigningConfigsOutput`](crate::operation::list_code_signing_configs::ListCodeSigningConfigsOutput).
-    pub fn builder() -> crate::operation::list_code_signing_configs::builders::ListCodeSigningConfigsOutputBuilder {
+    pub fn builder(
+    ) -> crate::operation::list_code_signing_configs::builders::ListCodeSigningConfigsOutputBuilder
+    {
         crate::operation::list_code_signing_configs::builders::ListCodeSigningConfigsOutputBuilder::default()
     }
 }
@@ -38,7 +40,8 @@ impl ListCodeSigningConfigsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct ListCodeSigningConfigsOutputBuilder {
     pub(crate) next_marker: std::option::Option<std::string::String>,
-    pub(crate) code_signing_configs: std::option::Option<std::vec::Vec<crate::types::CodeSigningConfig>>,
+    pub(crate) code_signing_configs:
+        std::option::Option<std::vec::Vec<crate::types::CodeSigningConfig>>,
     _request_id: Option<String>,
 }
 impl ListCodeSigningConfigsOutputBuilder {
@@ -49,7 +52,8 @@ impl ListCodeSigningConfigsOutputBuilder {
     }
     /// <p>The pagination token that's included if more results are available.</p>
     pub fn set_next_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_marker = input; self
+        self.next_marker = input;
+        self
     }
     /// Appends an item to `code_signing_configs`.
     ///
@@ -58,32 +62,35 @@ impl ListCodeSigningConfigsOutputBuilder {
     /// <p>The code signing configurations</p>
     pub fn code_signing_configs(mut self, input: crate::types::CodeSigningConfig) -> Self {
         let mut v = self.code_signing_configs.unwrap_or_default();
-                        v.push(input);
-                        self.code_signing_configs = Some(v);
-                        self
+        v.push(input);
+        self.code_signing_configs = Some(v);
+        self
     }
     /// <p>The code signing configurations</p>
-    pub fn set_code_signing_configs(mut self, input: std::option::Option<std::vec::Vec<crate::types::CodeSigningConfig>>) -> Self {
-        self.code_signing_configs = input; self
+    pub fn set_code_signing_configs(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::CodeSigningConfig>>,
+    ) -> Self {
+        self.code_signing_configs = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`ListCodeSigningConfigsOutput`](crate::operation::list_code_signing_configs::ListCodeSigningConfigsOutput).
-    pub fn build(self) -> crate::operation::list_code_signing_configs::ListCodeSigningConfigsOutput {
+    pub fn build(
+        self,
+    ) -> crate::operation::list_code_signing_configs::ListCodeSigningConfigsOutput {
         crate::operation::list_code_signing_configs::ListCodeSigningConfigsOutput {
-            next_marker: self.next_marker
-            ,
-            code_signing_configs: self.code_signing_configs
-            ,
+            next_marker: self.next_marker,
+            code_signing_configs: self.code_signing_configs,
             _request_id: self._request_id,
         }
     }
 }
-

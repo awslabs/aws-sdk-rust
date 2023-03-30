@@ -15,6 +15,7 @@ use std::error::Error;
 use std::fmt;
 use std::str::FromStr;
 
+/// An error was encountered while parsing a header
 #[derive(Debug)]
 pub struct ParseError {
     message: Cow<'static, str>,
@@ -55,7 +56,7 @@ impl Error for ParseError {
 /// This is separate from `read_many` below because we need to invoke `DateTime::read` to take advantage
 /// of comma-aware parsing
 pub fn many_dates(
-    values: ValueIter<HeaderValue>,
+    values: ValueIter<'_, HeaderValue>,
     format: Format,
 ) -> Result<Vec<DateTime>, ParseError> {
     let mut out = vec![];
@@ -87,7 +88,10 @@ pub fn headers_for_prefix<'a>(
         .map(move |h| (&h.as_str()[key.len()..], h))
 }
 
-pub fn read_many_from_str<T: FromStr>(values: ValueIter<HeaderValue>) -> Result<Vec<T>, ParseError>
+/// Convert a `HeaderValue` into a `Vec<T>` where `T: FromStr`
+pub fn read_many_from_str<T: FromStr>(
+    values: ValueIter<'_, HeaderValue>,
+) -> Result<Vec<T>, ParseError>
 where
     T::Err: Error + Send + Sync + 'static,
 {
@@ -98,7 +102,10 @@ where
     })
 }
 
-pub fn read_many_primitive<T: Parse>(values: ValueIter<HeaderValue>) -> Result<Vec<T>, ParseError> {
+/// Convert a `HeaderValue` into a `Vec<T>` where `T: Parse`
+pub fn read_many_primitive<T: Parse>(
+    values: ValueIter<'_, HeaderValue>,
+) -> Result<Vec<T>, ParseError> {
     read_many(values, |v: &str| {
         T::parse_smithy_primitive(v)
             .map_err(|err| ParseError::new("failed reading a list of primitives").with_source(err))
@@ -107,7 +114,7 @@ pub fn read_many_primitive<T: Parse>(values: ValueIter<HeaderValue>) -> Result<V
 
 /// Read many comma / header delimited values from HTTP headers for `FromStr` types
 fn read_many<T>(
-    values: ValueIter<HeaderValue>,
+    values: ValueIter<'_, HeaderValue>,
     f: impl Fn(&str) -> Result<T, ParseError>,
 ) -> Result<Vec<T>, ParseError> {
     let mut out = vec![];
@@ -125,7 +132,9 @@ fn read_many<T>(
 /// Read exactly one or none from a headers iterator
 ///
 /// This function does not perform comma splitting like `read_many`
-pub fn one_or_none<T: FromStr>(mut values: ValueIter<HeaderValue>) -> Result<Option<T>, ParseError>
+pub fn one_or_none<T: FromStr>(
+    mut values: ValueIter<'_, HeaderValue>,
+) -> Result<Option<T>, ParseError>
 where
     T::Err: Error + Send + Sync + 'static,
 {
@@ -145,6 +154,7 @@ where
     }
 }
 
+/// Given an HTTP request, set a request header if that header was not already set.
 pub fn set_request_header_if_absent<V>(
     request: http::request::Builder,
     key: HeaderName,
@@ -165,6 +175,7 @@ where
     }
 }
 
+/// Given an HTTP response, set a response header if that header was not already set.
 pub fn set_response_header_if_absent<V>(
     response: http::response::Builder,
     key: HeaderName,

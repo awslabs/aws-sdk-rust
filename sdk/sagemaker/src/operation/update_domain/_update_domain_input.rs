@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateDomainInput  {
+pub struct UpdateDomainInput {
     /// <p>The ID of the domain to be updated.</p>
     #[doc(hidden)]
     pub domain_id: std::option::Option<std::string::String>,
@@ -17,27 +17,34 @@ pub struct UpdateDomainInput  {
     pub default_space_settings: std::option::Option<crate::types::DefaultSpaceSettings>,
     /// <p>The entity that creates and manages the required security groups for inter-app communication in <code>VPCOnly</code> mode. Required when <code>CreateDomain.AppNetworkAccessType</code> is <code>VPCOnly</code> and <code>DomainSettings.RStudioServerProDomainSettings.DomainExecutionRoleArn</code> is provided.</p>
     #[doc(hidden)]
-    pub app_security_group_management: std::option::Option<crate::types::AppSecurityGroupManagement>,
+    pub app_security_group_management:
+        std::option::Option<crate::types::AppSecurityGroupManagement>,
 }
 impl UpdateDomainInput {
     /// <p>The ID of the domain to be updated.</p>
-    pub fn domain_id(&self) -> std::option::Option<& str> {
+    pub fn domain_id(&self) -> std::option::Option<&str> {
         self.domain_id.as_deref()
     }
     /// <p>A collection of settings.</p>
-    pub fn default_user_settings(&self) -> std::option::Option<& crate::types::UserSettings> {
+    pub fn default_user_settings(&self) -> std::option::Option<&crate::types::UserSettings> {
         self.default_user_settings.as_ref()
     }
     /// <p>A collection of <code>DomainSettings</code> configuration values to update.</p>
-    pub fn domain_settings_for_update(&self) -> std::option::Option<& crate::types::DomainSettingsForUpdate> {
+    pub fn domain_settings_for_update(
+        &self,
+    ) -> std::option::Option<&crate::types::DomainSettingsForUpdate> {
         self.domain_settings_for_update.as_ref()
     }
     /// <p>The default settings used to create a space within the Domain.</p>
-    pub fn default_space_settings(&self) -> std::option::Option<& crate::types::DefaultSpaceSettings> {
+    pub fn default_space_settings(
+        &self,
+    ) -> std::option::Option<&crate::types::DefaultSpaceSettings> {
         self.default_space_settings.as_ref()
     }
     /// <p>The entity that creates and manages the required security groups for inter-app communication in <code>VPCOnly</code> mode. Required when <code>CreateDomain.AppNetworkAccessType</code> is <code>VPCOnly</code> and <code>DomainSettings.RStudioServerProDomainSettings.DomainExecutionRoleArn</code> is provided.</p>
-    pub fn app_security_group_management(&self) -> std::option::Option<& crate::types::AppSecurityGroupManagement> {
+    pub fn app_security_group_management(
+        &self,
+    ) -> std::option::Option<&crate::types::AppSecurityGroupManagement> {
         self.app_security_group_management.as_ref()
     }
 }
@@ -54,9 +61,11 @@ impl UpdateDomainInput {
 pub struct UpdateDomainInputBuilder {
     pub(crate) domain_id: std::option::Option<std::string::String>,
     pub(crate) default_user_settings: std::option::Option<crate::types::UserSettings>,
-    pub(crate) domain_settings_for_update: std::option::Option<crate::types::DomainSettingsForUpdate>,
+    pub(crate) domain_settings_for_update:
+        std::option::Option<crate::types::DomainSettingsForUpdate>,
     pub(crate) default_space_settings: std::option::Option<crate::types::DefaultSpaceSettings>,
-    pub(crate) app_security_group_management: std::option::Option<crate::types::AppSecurityGroupManagement>,
+    pub(crate) app_security_group_management:
+        std::option::Option<crate::types::AppSecurityGroupManagement>,
 }
 impl UpdateDomainInputBuilder {
     /// <p>The ID of the domain to be updated.</p>
@@ -66,7 +75,8 @@ impl UpdateDomainInputBuilder {
     }
     /// <p>The ID of the domain to be updated.</p>
     pub fn set_domain_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.domain_id = input; self
+        self.domain_id = input;
+        self
     }
     /// <p>A collection of settings.</p>
     pub fn default_user_settings(mut self, input: crate::types::UserSettings) -> Self {
@@ -74,17 +84,28 @@ impl UpdateDomainInputBuilder {
         self
     }
     /// <p>A collection of settings.</p>
-    pub fn set_default_user_settings(mut self, input: std::option::Option<crate::types::UserSettings>) -> Self {
-        self.default_user_settings = input; self
+    pub fn set_default_user_settings(
+        mut self,
+        input: std::option::Option<crate::types::UserSettings>,
+    ) -> Self {
+        self.default_user_settings = input;
+        self
     }
     /// <p>A collection of <code>DomainSettings</code> configuration values to update.</p>
-    pub fn domain_settings_for_update(mut self, input: crate::types::DomainSettingsForUpdate) -> Self {
+    pub fn domain_settings_for_update(
+        mut self,
+        input: crate::types::DomainSettingsForUpdate,
+    ) -> Self {
         self.domain_settings_for_update = Some(input);
         self
     }
     /// <p>A collection of <code>DomainSettings</code> configuration values to update.</p>
-    pub fn set_domain_settings_for_update(mut self, input: std::option::Option<crate::types::DomainSettingsForUpdate>) -> Self {
-        self.domain_settings_for_update = input; self
+    pub fn set_domain_settings_for_update(
+        mut self,
+        input: std::option::Option<crate::types::DomainSettingsForUpdate>,
+    ) -> Self {
+        self.domain_settings_for_update = input;
+        self
     }
     /// <p>The default settings used to create a space within the Domain.</p>
     pub fn default_space_settings(mut self, input: crate::types::DefaultSpaceSettings) -> Self {
@@ -92,34 +113,42 @@ impl UpdateDomainInputBuilder {
         self
     }
     /// <p>The default settings used to create a space within the Domain.</p>
-    pub fn set_default_space_settings(mut self, input: std::option::Option<crate::types::DefaultSpaceSettings>) -> Self {
-        self.default_space_settings = input; self
+    pub fn set_default_space_settings(
+        mut self,
+        input: std::option::Option<crate::types::DefaultSpaceSettings>,
+    ) -> Self {
+        self.default_space_settings = input;
+        self
     }
     /// <p>The entity that creates and manages the required security groups for inter-app communication in <code>VPCOnly</code> mode. Required when <code>CreateDomain.AppNetworkAccessType</code> is <code>VPCOnly</code> and <code>DomainSettings.RStudioServerProDomainSettings.DomainExecutionRoleArn</code> is provided.</p>
-    pub fn app_security_group_management(mut self, input: crate::types::AppSecurityGroupManagement) -> Self {
+    pub fn app_security_group_management(
+        mut self,
+        input: crate::types::AppSecurityGroupManagement,
+    ) -> Self {
         self.app_security_group_management = Some(input);
         self
     }
     /// <p>The entity that creates and manages the required security groups for inter-app communication in <code>VPCOnly</code> mode. Required when <code>CreateDomain.AppNetworkAccessType</code> is <code>VPCOnly</code> and <code>DomainSettings.RStudioServerProDomainSettings.DomainExecutionRoleArn</code> is provided.</p>
-    pub fn set_app_security_group_management(mut self, input: std::option::Option<crate::types::AppSecurityGroupManagement>) -> Self {
-        self.app_security_group_management = input; self
+    pub fn set_app_security_group_management(
+        mut self,
+        input: std::option::Option<crate::types::AppSecurityGroupManagement>,
+    ) -> Self {
+        self.app_security_group_management = input;
+        self
     }
     /// Consumes the builder and constructs a [`UpdateDomainInput`](crate::operation::update_domain::UpdateDomainInput).
-    pub fn build(self) -> Result<crate::operation::update_domain::UpdateDomainInput, aws_smithy_http::operation::error::BuildError> {
-        Ok(
-            crate::operation::update_domain::UpdateDomainInput {
-                domain_id: self.domain_id
-                ,
-                default_user_settings: self.default_user_settings
-                ,
-                domain_settings_for_update: self.domain_settings_for_update
-                ,
-                default_space_settings: self.default_space_settings
-                ,
-                app_security_group_management: self.app_security_group_management
-                ,
-            }
-        )
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::update_domain::UpdateDomainInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        Ok(crate::operation::update_domain::UpdateDomainInput {
+            domain_id: self.domain_id,
+            default_user_settings: self.default_user_settings,
+            domain_settings_for_update: self.domain_settings_for_update,
+            default_space_settings: self.default_space_settings,
+            app_security_group_management: self.app_security_group_management,
+        })
     }
 }
-

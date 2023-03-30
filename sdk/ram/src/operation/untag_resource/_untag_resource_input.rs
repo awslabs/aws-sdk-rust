@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UntagResourceInput  {
+pub struct UntagResourceInput {
     /// <p>Specifies the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resoure Name (ARN)</a> of the resource share that you want to remove tags from. The tags are removed from the resource share, not the resources in the resource share.</p>
     #[doc(hidden)]
     pub resource_share_arn: std::option::Option<std::string::String>,
@@ -12,11 +12,11 @@ pub struct UntagResourceInput  {
 }
 impl UntagResourceInput {
     /// <p>Specifies the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resoure Name (ARN)</a> of the resource share that you want to remove tags from. The tags are removed from the resource share, not the resources in the resource share.</p>
-    pub fn resource_share_arn(&self) -> std::option::Option<& str> {
+    pub fn resource_share_arn(&self) -> std::option::Option<&str> {
         self.resource_share_arn.as_deref()
     }
     /// <p>Specifies a list of one or more tag keys that you want to remove.</p>
-    pub fn tag_keys(&self) -> std::option::Option<& [std::string::String]> {
+    pub fn tag_keys(&self) -> std::option::Option<&[std::string::String]> {
         self.tag_keys.as_deref()
     }
 }
@@ -41,8 +41,12 @@ impl UntagResourceInputBuilder {
         self
     }
     /// <p>Specifies the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resoure Name (ARN)</a> of the resource share that you want to remove tags from. The tags are removed from the resource share, not the resources in the resource share.</p>
-    pub fn set_resource_share_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.resource_share_arn = input; self
+    pub fn set_resource_share_arn(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.resource_share_arn = input;
+        self
     }
     /// Appends an item to `tag_keys`.
     ///
@@ -51,24 +55,28 @@ impl UntagResourceInputBuilder {
     /// <p>Specifies a list of one or more tag keys that you want to remove.</p>
     pub fn tag_keys(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.tag_keys.unwrap_or_default();
-                        v.push(input.into());
-                        self.tag_keys = Some(v);
-                        self
+        v.push(input.into());
+        self.tag_keys = Some(v);
+        self
     }
     /// <p>Specifies a list of one or more tag keys that you want to remove.</p>
-    pub fn set_tag_keys(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-        self.tag_keys = input; self
+    pub fn set_tag_keys(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
+        self.tag_keys = input;
+        self
     }
     /// Consumes the builder and constructs a [`UntagResourceInput`](crate::operation::untag_resource::UntagResourceInput).
-    pub fn build(self) -> Result<crate::operation::untag_resource::UntagResourceInput, aws_smithy_http::operation::error::BuildError> {
-        Ok(
-            crate::operation::untag_resource::UntagResourceInput {
-                resource_share_arn: self.resource_share_arn
-                ,
-                tag_keys: self.tag_keys
-                ,
-            }
-        )
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::untag_resource::UntagResourceInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        Ok(crate::operation::untag_resource::UntagResourceInput {
+            resource_share_arn: self.resource_share_arn,
+            tag_keys: self.tag_keys,
+        })
     }
 }
-

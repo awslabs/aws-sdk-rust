@@ -3,7 +3,7 @@
 /// <p>Describes how to bind a component property to form data.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct FormBindingElement  {
+pub struct FormBindingElement {
     /// <p>The name of the component to retrieve a value from.</p>
     #[doc(hidden)]
     pub element: std::option::Option<std::string::String>,
@@ -13,11 +13,11 @@ pub struct FormBindingElement  {
 }
 impl FormBindingElement {
     /// <p>The name of the component to retrieve a value from.</p>
-    pub fn element(&self) -> std::option::Option<& str> {
+    pub fn element(&self) -> std::option::Option<&str> {
         self.element.as_deref()
     }
     /// <p>The property to retrieve a value from.</p>
-    pub fn property(&self) -> std::option::Option<& str> {
+    pub fn property(&self) -> std::option::Option<&str> {
         self.property.as_deref()
     }
 }
@@ -43,7 +43,8 @@ impl FormBindingElementBuilder {
     }
     /// <p>The name of the component to retrieve a value from.</p>
     pub fn set_element(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.element = input; self
+        self.element = input;
+        self
     }
     /// <p>The property to retrieve a value from.</p>
     pub fn property(mut self, input: impl Into<std::string::String>) -> Self {
@@ -52,16 +53,14 @@ impl FormBindingElementBuilder {
     }
     /// <p>The property to retrieve a value from.</p>
     pub fn set_property(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.property = input; self
+        self.property = input;
+        self
     }
     /// Consumes the builder and constructs a [`FormBindingElement`](crate::types::FormBindingElement).
     pub fn build(self) -> crate::types::FormBindingElement {
         crate::types::FormBindingElement {
-            element: self.element
-            ,
-            property: self.property
-            ,
+            element: self.element,
+            property: self.property,
         }
     }
 }
-

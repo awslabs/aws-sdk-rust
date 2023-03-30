@@ -99,4 +99,3 @@ pub mod update_inference_scheduler;
 
 /// Types for the `UpdateLabelGroup` operation.
 pub mod update_label_group;
-

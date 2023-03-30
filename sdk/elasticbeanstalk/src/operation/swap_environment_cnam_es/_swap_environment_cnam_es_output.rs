@@ -2,17 +2,19 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SwapEnvironmentCnamEsOutput  {
+pub struct SwapEnvironmentCnamEsOutput {
     _request_id: Option<String>,
 }
 impl aws_http::request_id::RequestId for SwapEnvironmentCnamEsOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl SwapEnvironmentCnamEsOutput {
     /// Creates a new builder-style object to manufacture [`SwapEnvironmentCnamEsOutput`](crate::operation::swap_environment_cnam_es::SwapEnvironmentCnamEsOutput).
-    pub fn builder() -> crate::operation::swap_environment_cnam_es::builders::SwapEnvironmentCnamEsOutputBuilder {
+    pub fn builder(
+    ) -> crate::operation::swap_environment_cnam_es::builders::SwapEnvironmentCnamEsOutputBuilder
+    {
         crate::operation::swap_environment_cnam_es::builders::SwapEnvironmentCnamEsOutputBuilder::default()
     }
 }
@@ -25,14 +27,14 @@ pub struct SwapEnvironmentCnamEsOutputBuilder {
 }
 impl SwapEnvironmentCnamEsOutputBuilder {
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`SwapEnvironmentCnamEsOutput`](crate::operation::swap_environment_cnam_es::SwapEnvironmentCnamEsOutput).
     pub fn build(self) -> crate::operation::swap_environment_cnam_es::SwapEnvironmentCnamEsOutput {
         crate::operation::swap_environment_cnam_es::SwapEnvironmentCnamEsOutput {
@@ -40,4 +42,3 @@ impl SwapEnvironmentCnamEsOutputBuilder {
         }
     }
 }
-

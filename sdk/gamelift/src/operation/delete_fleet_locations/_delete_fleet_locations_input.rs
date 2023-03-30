@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteFleetLocationsInput  {
+pub struct DeleteFleetLocationsInput {
     /// <p>A unique identifier for the fleet to delete locations for. You can use either the fleet ID or ARN value.</p>
     #[doc(hidden)]
     pub fleet_id: std::option::Option<std::string::String>,
@@ -12,17 +12,18 @@ pub struct DeleteFleetLocationsInput  {
 }
 impl DeleteFleetLocationsInput {
     /// <p>A unique identifier for the fleet to delete locations for. You can use either the fleet ID or ARN value.</p>
-    pub fn fleet_id(&self) -> std::option::Option<& str> {
+    pub fn fleet_id(&self) -> std::option::Option<&str> {
         self.fleet_id.as_deref()
     }
     /// <p>The list of fleet locations to delete. Specify locations in the form of an Amazon Web Services Region code, such as <code>us-west-2</code>.</p>
-    pub fn locations(&self) -> std::option::Option<& [std::string::String]> {
+    pub fn locations(&self) -> std::option::Option<&[std::string::String]> {
         self.locations.as_deref()
     }
 }
 impl DeleteFleetLocationsInput {
     /// Creates a new builder-style object to manufacture [`DeleteFleetLocationsInput`](crate::operation::delete_fleet_locations::DeleteFleetLocationsInput).
-    pub fn builder() -> crate::operation::delete_fleet_locations::builders::DeleteFleetLocationsInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::delete_fleet_locations::builders::DeleteFleetLocationsInputBuilder {
         crate::operation::delete_fleet_locations::builders::DeleteFleetLocationsInputBuilder::default()
     }
 }
@@ -42,7 +43,8 @@ impl DeleteFleetLocationsInputBuilder {
     }
     /// <p>A unique identifier for the fleet to delete locations for. You can use either the fleet ID or ARN value.</p>
     pub fn set_fleet_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.fleet_id = input; self
+        self.fleet_id = input;
+        self
     }
     /// Appends an item to `locations`.
     ///
@@ -51,24 +53,30 @@ impl DeleteFleetLocationsInputBuilder {
     /// <p>The list of fleet locations to delete. Specify locations in the form of an Amazon Web Services Region code, such as <code>us-west-2</code>.</p>
     pub fn locations(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.locations.unwrap_or_default();
-                        v.push(input.into());
-                        self.locations = Some(v);
-                        self
+        v.push(input.into());
+        self.locations = Some(v);
+        self
     }
     /// <p>The list of fleet locations to delete. Specify locations in the form of an Amazon Web Services Region code, such as <code>us-west-2</code>.</p>
-    pub fn set_locations(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-        self.locations = input; self
+    pub fn set_locations(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
+        self.locations = input;
+        self
     }
     /// Consumes the builder and constructs a [`DeleteFleetLocationsInput`](crate::operation::delete_fleet_locations::DeleteFleetLocationsInput).
-    pub fn build(self) -> Result<crate::operation::delete_fleet_locations::DeleteFleetLocationsInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::delete_fleet_locations::DeleteFleetLocationsInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::delete_fleet_locations::DeleteFleetLocationsInput {
-                fleet_id: self.fleet_id
-                ,
-                locations: self.locations
-                ,
-            }
+                fleet_id: self.fleet_id,
+                locations: self.locations,
+            },
         )
     }
 }
-

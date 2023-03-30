@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct LoggingConfiguration  {
+pub struct LoggingConfiguration {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub enable_sip_logs: std::option::Option<bool>,
@@ -34,14 +34,13 @@ impl LoggingConfigurationBuilder {
     }
     #[allow(missing_docs)] // documentation missing in model
     pub fn set_enable_sip_logs(mut self, input: std::option::Option<bool>) -> Self {
-        self.enable_sip_logs = input; self
+        self.enable_sip_logs = input;
+        self
     }
     /// Consumes the builder and constructs a [`LoggingConfiguration`](crate::types::LoggingConfiguration).
     pub fn build(self) -> crate::types::LoggingConfiguration {
         crate::types::LoggingConfiguration {
-            enable_sip_logs: self.enable_sip_logs
-            ,
+            enable_sip_logs: self.enable_sip_logs,
         }
     }
 }
-

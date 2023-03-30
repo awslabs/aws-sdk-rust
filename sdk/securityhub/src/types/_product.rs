@@ -3,7 +3,7 @@
 /// <p>Contains details about a product.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Product  {
+pub struct Product {
     /// <p>The ARN assigned to the product.</p>
     #[doc(hidden)]
     pub product_arn: std::option::Option<std::string::String>,
@@ -19,15 +19,15 @@ pub struct Product  {
     /// <p>The categories assigned to the product.</p>
     #[doc(hidden)]
     pub categories: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>The types of integration that the product supports. Available values are the following.</p> 
-    /// <ul> 
-    /// <li> <p> <code>SEND_FINDINGS_TO_SECURITY_HUB</code> - The integration sends findings to Security Hub.</p> </li> 
-    /// <li> <p> <code>RECEIVE_FINDINGS_FROM_SECURITY_HUB</code> - The integration receives findings from Security Hub.</p> </li> 
-    /// <li> <p> <code>UPDATE_FINDINGS_IN_SECURITY_HUB</code> - The integration does not send new findings to Security Hub, but does make updates to the findings that it receives from Security Hub.</p> </li> 
+    /// <p>The types of integration that the product supports. Available values are the following.</p>
+    /// <ul>
+    /// <li> <p> <code>SEND_FINDINGS_TO_SECURITY_HUB</code> - The integration sends findings to Security Hub.</p> </li>
+    /// <li> <p> <code>RECEIVE_FINDINGS_FROM_SECURITY_HUB</code> - The integration receives findings from Security Hub.</p> </li>
+    /// <li> <p> <code>UPDATE_FINDINGS_IN_SECURITY_HUB</code> - The integration does not send new findings to Security Hub, but does make updates to the findings that it receives from Security Hub.</p> </li>
     /// </ul>
     #[doc(hidden)]
     pub integration_types: std::option::Option<std::vec::Vec<crate::types::IntegrationType>>,
-    /// <p>For integrations with Amazon Web Services services, the Amazon Web Services Console URL from which to activate the service.</p> 
+    /// <p>For integrations with Amazon Web Services services, the Amazon Web Services Console URL from which to activate the service.</p>
     /// <p>For integrations with third-party products, the Amazon Web Services Marketplace URL from which to subscribe to or purchase the product.</p>
     #[doc(hidden)]
     pub marketplace_url: std::option::Option<std::string::String>,
@@ -40,45 +40,45 @@ pub struct Product  {
 }
 impl Product {
     /// <p>The ARN assigned to the product.</p>
-    pub fn product_arn(&self) -> std::option::Option<& str> {
+    pub fn product_arn(&self) -> std::option::Option<&str> {
         self.product_arn.as_deref()
     }
     /// <p>The name of the product.</p>
-    pub fn product_name(&self) -> std::option::Option<& str> {
+    pub fn product_name(&self) -> std::option::Option<&str> {
         self.product_name.as_deref()
     }
     /// <p>The name of the company that provides the product.</p>
-    pub fn company_name(&self) -> std::option::Option<& str> {
+    pub fn company_name(&self) -> std::option::Option<&str> {
         self.company_name.as_deref()
     }
     /// <p>A description of the product.</p>
-    pub fn description(&self) -> std::option::Option<& str> {
+    pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
     /// <p>The categories assigned to the product.</p>
-    pub fn categories(&self) -> std::option::Option<& [std::string::String]> {
+    pub fn categories(&self) -> std::option::Option<&[std::string::String]> {
         self.categories.as_deref()
     }
-    /// <p>The types of integration that the product supports. Available values are the following.</p> 
-    /// <ul> 
-    /// <li> <p> <code>SEND_FINDINGS_TO_SECURITY_HUB</code> - The integration sends findings to Security Hub.</p> </li> 
-    /// <li> <p> <code>RECEIVE_FINDINGS_FROM_SECURITY_HUB</code> - The integration receives findings from Security Hub.</p> </li> 
-    /// <li> <p> <code>UPDATE_FINDINGS_IN_SECURITY_HUB</code> - The integration does not send new findings to Security Hub, but does make updates to the findings that it receives from Security Hub.</p> </li> 
+    /// <p>The types of integration that the product supports. Available values are the following.</p>
+    /// <ul>
+    /// <li> <p> <code>SEND_FINDINGS_TO_SECURITY_HUB</code> - The integration sends findings to Security Hub.</p> </li>
+    /// <li> <p> <code>RECEIVE_FINDINGS_FROM_SECURITY_HUB</code> - The integration receives findings from Security Hub.</p> </li>
+    /// <li> <p> <code>UPDATE_FINDINGS_IN_SECURITY_HUB</code> - The integration does not send new findings to Security Hub, but does make updates to the findings that it receives from Security Hub.</p> </li>
     /// </ul>
-    pub fn integration_types(&self) -> std::option::Option<& [crate::types::IntegrationType]> {
+    pub fn integration_types(&self) -> std::option::Option<&[crate::types::IntegrationType]> {
         self.integration_types.as_deref()
     }
-    /// <p>For integrations with Amazon Web Services services, the Amazon Web Services Console URL from which to activate the service.</p> 
+    /// <p>For integrations with Amazon Web Services services, the Amazon Web Services Console URL from which to activate the service.</p>
     /// <p>For integrations with third-party products, the Amazon Web Services Marketplace URL from which to subscribe to or purchase the product.</p>
-    pub fn marketplace_url(&self) -> std::option::Option<& str> {
+    pub fn marketplace_url(&self) -> std::option::Option<&str> {
         self.marketplace_url.as_deref()
     }
     /// <p>The URL to the service or product documentation about the integration with Security Hub, including how to activate the integration.</p>
-    pub fn activation_url(&self) -> std::option::Option<& str> {
+    pub fn activation_url(&self) -> std::option::Option<&str> {
         self.activation_url.as_deref()
     }
     /// <p>The resource policy associated with the product.</p>
-    pub fn product_subscription_resource_policy(&self) -> std::option::Option<& str> {
+    pub fn product_subscription_resource_policy(&self) -> std::option::Option<&str> {
         self.product_subscription_resource_policy.as_deref()
     }
 }
@@ -111,7 +111,8 @@ impl ProductBuilder {
     }
     /// <p>The ARN assigned to the product.</p>
     pub fn set_product_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.product_arn = input; self
+        self.product_arn = input;
+        self
     }
     /// <p>The name of the product.</p>
     pub fn product_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -120,7 +121,8 @@ impl ProductBuilder {
     }
     /// <p>The name of the product.</p>
     pub fn set_product_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.product_name = input; self
+        self.product_name = input;
+        self
     }
     /// <p>The name of the company that provides the product.</p>
     pub fn company_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -129,7 +131,8 @@ impl ProductBuilder {
     }
     /// <p>The name of the company that provides the product.</p>
     pub fn set_company_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.company_name = input; self
+        self.company_name = input;
+        self
     }
     /// <p>A description of the product.</p>
     pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -138,7 +141,8 @@ impl ProductBuilder {
     }
     /// <p>A description of the product.</p>
     pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.description = input; self
+        self.description = input;
+        self
     }
     /// Appends an item to `categories`.
     ///
@@ -147,49 +151,58 @@ impl ProductBuilder {
     /// <p>The categories assigned to the product.</p>
     pub fn categories(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.categories.unwrap_or_default();
-                        v.push(input.into());
-                        self.categories = Some(v);
-                        self
+        v.push(input.into());
+        self.categories = Some(v);
+        self
     }
     /// <p>The categories assigned to the product.</p>
-    pub fn set_categories(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-        self.categories = input; self
+    pub fn set_categories(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
+        self.categories = input;
+        self
     }
     /// Appends an item to `integration_types`.
     ///
     /// To override the contents of this collection use [`set_integration_types`](Self::set_integration_types).
     ///
-    /// <p>The types of integration that the product supports. Available values are the following.</p> 
-    /// <ul> 
-    /// <li> <p> <code>SEND_FINDINGS_TO_SECURITY_HUB</code> - The integration sends findings to Security Hub.</p> </li> 
-    /// <li> <p> <code>RECEIVE_FINDINGS_FROM_SECURITY_HUB</code> - The integration receives findings from Security Hub.</p> </li> 
-    /// <li> <p> <code>UPDATE_FINDINGS_IN_SECURITY_HUB</code> - The integration does not send new findings to Security Hub, but does make updates to the findings that it receives from Security Hub.</p> </li> 
+    /// <p>The types of integration that the product supports. Available values are the following.</p>
+    /// <ul>
+    /// <li> <p> <code>SEND_FINDINGS_TO_SECURITY_HUB</code> - The integration sends findings to Security Hub.</p> </li>
+    /// <li> <p> <code>RECEIVE_FINDINGS_FROM_SECURITY_HUB</code> - The integration receives findings from Security Hub.</p> </li>
+    /// <li> <p> <code>UPDATE_FINDINGS_IN_SECURITY_HUB</code> - The integration does not send new findings to Security Hub, but does make updates to the findings that it receives from Security Hub.</p> </li>
     /// </ul>
     pub fn integration_types(mut self, input: crate::types::IntegrationType) -> Self {
         let mut v = self.integration_types.unwrap_or_default();
-                        v.push(input);
-                        self.integration_types = Some(v);
-                        self
+        v.push(input);
+        self.integration_types = Some(v);
+        self
     }
-    /// <p>The types of integration that the product supports. Available values are the following.</p> 
-    /// <ul> 
-    /// <li> <p> <code>SEND_FINDINGS_TO_SECURITY_HUB</code> - The integration sends findings to Security Hub.</p> </li> 
-    /// <li> <p> <code>RECEIVE_FINDINGS_FROM_SECURITY_HUB</code> - The integration receives findings from Security Hub.</p> </li> 
-    /// <li> <p> <code>UPDATE_FINDINGS_IN_SECURITY_HUB</code> - The integration does not send new findings to Security Hub, but does make updates to the findings that it receives from Security Hub.</p> </li> 
+    /// <p>The types of integration that the product supports. Available values are the following.</p>
+    /// <ul>
+    /// <li> <p> <code>SEND_FINDINGS_TO_SECURITY_HUB</code> - The integration sends findings to Security Hub.</p> </li>
+    /// <li> <p> <code>RECEIVE_FINDINGS_FROM_SECURITY_HUB</code> - The integration receives findings from Security Hub.</p> </li>
+    /// <li> <p> <code>UPDATE_FINDINGS_IN_SECURITY_HUB</code> - The integration does not send new findings to Security Hub, but does make updates to the findings that it receives from Security Hub.</p> </li>
     /// </ul>
-    pub fn set_integration_types(mut self, input: std::option::Option<std::vec::Vec<crate::types::IntegrationType>>) -> Self {
-        self.integration_types = input; self
+    pub fn set_integration_types(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::IntegrationType>>,
+    ) -> Self {
+        self.integration_types = input;
+        self
     }
-    /// <p>For integrations with Amazon Web Services services, the Amazon Web Services Console URL from which to activate the service.</p> 
+    /// <p>For integrations with Amazon Web Services services, the Amazon Web Services Console URL from which to activate the service.</p>
     /// <p>For integrations with third-party products, the Amazon Web Services Marketplace URL from which to subscribe to or purchase the product.</p>
     pub fn marketplace_url(mut self, input: impl Into<std::string::String>) -> Self {
         self.marketplace_url = Some(input.into());
         self
     }
-    /// <p>For integrations with Amazon Web Services services, the Amazon Web Services Console URL from which to activate the service.</p> 
+    /// <p>For integrations with Amazon Web Services services, the Amazon Web Services Console URL from which to activate the service.</p>
     /// <p>For integrations with third-party products, the Amazon Web Services Marketplace URL from which to subscribe to or purchase the product.</p>
     pub fn set_marketplace_url(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.marketplace_url = input; self
+        self.marketplace_url = input;
+        self
     }
     /// <p>The URL to the service or product documentation about the integration with Security Hub, including how to activate the integration.</p>
     pub fn activation_url(mut self, input: impl Into<std::string::String>) -> Self {
@@ -198,39 +211,37 @@ impl ProductBuilder {
     }
     /// <p>The URL to the service or product documentation about the integration with Security Hub, including how to activate the integration.</p>
     pub fn set_activation_url(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.activation_url = input; self
+        self.activation_url = input;
+        self
     }
     /// <p>The resource policy associated with the product.</p>
-    pub fn product_subscription_resource_policy(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn product_subscription_resource_policy(
+        mut self,
+        input: impl Into<std::string::String>,
+    ) -> Self {
         self.product_subscription_resource_policy = Some(input.into());
         self
     }
     /// <p>The resource policy associated with the product.</p>
-    pub fn set_product_subscription_resource_policy(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.product_subscription_resource_policy = input; self
+    pub fn set_product_subscription_resource_policy(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.product_subscription_resource_policy = input;
+        self
     }
     /// Consumes the builder and constructs a [`Product`](crate::types::Product).
     pub fn build(self) -> crate::types::Product {
         crate::types::Product {
-            product_arn: self.product_arn
-            ,
-            product_name: self.product_name
-            ,
-            company_name: self.company_name
-            ,
-            description: self.description
-            ,
-            categories: self.categories
-            ,
-            integration_types: self.integration_types
-            ,
-            marketplace_url: self.marketplace_url
-            ,
-            activation_url: self.activation_url
-            ,
-            product_subscription_resource_policy: self.product_subscription_resource_policy
-            ,
+            product_arn: self.product_arn,
+            product_name: self.product_name,
+            company_name: self.company_name,
+            description: self.description,
+            categories: self.categories,
+            integration_types: self.integration_types,
+            marketplace_url: self.marketplace_url,
+            activation_url: self.activation_url,
+            product_subscription_resource_policy: self.product_subscription_resource_policy,
         }
     }
 }
-

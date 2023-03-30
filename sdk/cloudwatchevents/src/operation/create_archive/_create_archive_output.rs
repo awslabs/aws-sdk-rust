@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateArchiveOutput  {
+pub struct CreateArchiveOutput {
     /// <p>The ARN of the archive that was created.</p>
     #[doc(hidden)]
     pub archive_arn: std::option::Option<std::string::String>,
@@ -19,27 +19,27 @@ pub struct CreateArchiveOutput  {
 }
 impl CreateArchiveOutput {
     /// <p>The ARN of the archive that was created.</p>
-    pub fn archive_arn(&self) -> std::option::Option<& str> {
+    pub fn archive_arn(&self) -> std::option::Option<&str> {
         self.archive_arn.as_deref()
     }
     /// <p>The state of the archive that was created.</p>
-    pub fn state(&self) -> std::option::Option<& crate::types::ArchiveState> {
+    pub fn state(&self) -> std::option::Option<&crate::types::ArchiveState> {
         self.state.as_ref()
     }
     /// <p>The reason that the archive is in the state.</p>
-    pub fn state_reason(&self) -> std::option::Option<& str> {
+    pub fn state_reason(&self) -> std::option::Option<&str> {
         self.state_reason.as_deref()
     }
     /// <p>The time at which the archive was created.</p>
-    pub fn creation_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
+    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for CreateArchiveOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl CreateArchiveOutput {
     /// Creates a new builder-style object to manufacture [`CreateArchiveOutput`](crate::operation::create_archive::CreateArchiveOutput).
     pub fn builder() -> crate::operation::create_archive::builders::CreateArchiveOutputBuilder {
@@ -65,7 +65,8 @@ impl CreateArchiveOutputBuilder {
     }
     /// <p>The ARN of the archive that was created.</p>
     pub fn set_archive_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.archive_arn = input; self
+        self.archive_arn = input;
+        self
     }
     /// <p>The state of the archive that was created.</p>
     pub fn state(mut self, input: crate::types::ArchiveState) -> Self {
@@ -74,7 +75,8 @@ impl CreateArchiveOutputBuilder {
     }
     /// <p>The state of the archive that was created.</p>
     pub fn set_state(mut self, input: std::option::Option<crate::types::ArchiveState>) -> Self {
-        self.state = input; self
+        self.state = input;
+        self
     }
     /// <p>The reason that the archive is in the state.</p>
     pub fn state_reason(mut self, input: impl Into<std::string::String>) -> Self {
@@ -83,7 +85,8 @@ impl CreateArchiveOutputBuilder {
     }
     /// <p>The reason that the archive is in the state.</p>
     pub fn set_state_reason(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.state_reason = input; self
+        self.state_reason = input;
+        self
     }
     /// <p>The time at which the archive was created.</p>
     pub fn creation_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -91,31 +94,30 @@ impl CreateArchiveOutputBuilder {
         self
     }
     /// <p>The time at which the archive was created.</p>
-    pub fn set_creation_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.creation_time = input; self
+    pub fn set_creation_time(
+        mut self,
+        input: std::option::Option<aws_smithy_types::DateTime>,
+    ) -> Self {
+        self.creation_time = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`CreateArchiveOutput`](crate::operation::create_archive::CreateArchiveOutput).
     pub fn build(self) -> crate::operation::create_archive::CreateArchiveOutput {
         crate::operation::create_archive::CreateArchiveOutput {
-            archive_arn: self.archive_arn
-            ,
-            state: self.state
-            ,
-            state_reason: self.state_reason
-            ,
-            creation_time: self.creation_time
-            ,
+            archive_arn: self.archive_arn,
+            state: self.state,
+            state_reason: self.state_reason,
+            creation_time: self.creation_time,
             _request_id: self._request_id,
         }
     }
 }
-

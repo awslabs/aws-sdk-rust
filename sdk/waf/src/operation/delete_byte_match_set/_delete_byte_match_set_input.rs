@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteByteMatchSetInput  {
+pub struct DeleteByteMatchSetInput {
     /// <p>The <code>ByteMatchSetId</code> of the <code>ByteMatchSet</code> that you want to delete. <code>ByteMatchSetId</code> is returned by <code>CreateByteMatchSet</code> and by <code>ListByteMatchSets</code>.</p>
     #[doc(hidden)]
     pub byte_match_set_id: std::option::Option<std::string::String>,
@@ -12,17 +12,18 @@ pub struct DeleteByteMatchSetInput  {
 }
 impl DeleteByteMatchSetInput {
     /// <p>The <code>ByteMatchSetId</code> of the <code>ByteMatchSet</code> that you want to delete. <code>ByteMatchSetId</code> is returned by <code>CreateByteMatchSet</code> and by <code>ListByteMatchSets</code>.</p>
-    pub fn byte_match_set_id(&self) -> std::option::Option<& str> {
+    pub fn byte_match_set_id(&self) -> std::option::Option<&str> {
         self.byte_match_set_id.as_deref()
     }
     /// <p>The value returned by the most recent call to <code>GetChangeToken</code>.</p>
-    pub fn change_token(&self) -> std::option::Option<& str> {
+    pub fn change_token(&self) -> std::option::Option<&str> {
         self.change_token.as_deref()
     }
 }
 impl DeleteByteMatchSetInput {
     /// Creates a new builder-style object to manufacture [`DeleteByteMatchSetInput`](crate::operation::delete_byte_match_set::DeleteByteMatchSetInput).
-    pub fn builder() -> crate::operation::delete_byte_match_set::builders::DeleteByteMatchSetInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::delete_byte_match_set::builders::DeleteByteMatchSetInputBuilder {
         crate::operation::delete_byte_match_set::builders::DeleteByteMatchSetInputBuilder::default()
     }
 }
@@ -41,8 +42,12 @@ impl DeleteByteMatchSetInputBuilder {
         self
     }
     /// <p>The <code>ByteMatchSetId</code> of the <code>ByteMatchSet</code> that you want to delete. <code>ByteMatchSetId</code> is returned by <code>CreateByteMatchSet</code> and by <code>ListByteMatchSets</code>.</p>
-    pub fn set_byte_match_set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.byte_match_set_id = input; self
+    pub fn set_byte_match_set_id(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.byte_match_set_id = input;
+        self
     }
     /// <p>The value returned by the most recent call to <code>GetChangeToken</code>.</p>
     pub fn change_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -51,18 +56,21 @@ impl DeleteByteMatchSetInputBuilder {
     }
     /// <p>The value returned by the most recent call to <code>GetChangeToken</code>.</p>
     pub fn set_change_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.change_token = input; self
+        self.change_token = input;
+        self
     }
     /// Consumes the builder and constructs a [`DeleteByteMatchSetInput`](crate::operation::delete_byte_match_set::DeleteByteMatchSetInput).
-    pub fn build(self) -> Result<crate::operation::delete_byte_match_set::DeleteByteMatchSetInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::delete_byte_match_set::DeleteByteMatchSetInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::delete_byte_match_set::DeleteByteMatchSetInput {
-                byte_match_set_id: self.byte_match_set_id
-                ,
-                change_token: self.change_token
-                ,
-            }
+                byte_match_set_id: self.byte_match_set_id,
+                change_token: self.change_token,
+            },
         )
     }
 }
-

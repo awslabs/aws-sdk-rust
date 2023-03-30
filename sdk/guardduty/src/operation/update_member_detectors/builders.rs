@@ -4,49 +4,71 @@ pub use crate::operation::update_member_detectors::_update_member_detectors_outp
 pub use crate::operation::update_member_detectors::_update_member_detectors_input::UpdateMemberDetectorsInputBuilder;
 
 /// Fluent builder constructing a request to `UpdateMemberDetectors`.
-/// 
+///
 /// <p>Contains information on member accounts to be updated.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct UpdateMemberDetectorsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::update_member_detectors::builders::UpdateMemberDetectorsInputBuilder
-            }
-impl UpdateMemberDetectorsFluentBuilder  {
+    handle: std::sync::Arc<crate::client::Handle>,
+    inner: crate::operation::update_member_detectors::builders::UpdateMemberDetectorsInputBuilder,
+}
+impl UpdateMemberDetectorsFluentBuilder {
     /// Creates a new `UpdateMemberDetectors`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
-                    /// sent. The operation's inner [http::Request] can be modified as well.
-                    pub async fn customize(self) -> std::result::Result<
-                        crate::client::customize::CustomizableOperation<crate::operation::update_member_detectors::UpdateMemberDetectors, aws_http::retry::AwsResponseRetryClassifier,>,
-                        aws_smithy_http::result::SdkError<crate::operation::update_member_detectors::UpdateMemberDetectorsError>
-                    >  {
-                        let handle = self.handle.clone();
-                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-                    }
-    
-                    /// Sends the request and returns the response.
-                    ///
-                    /// If an error occurs, an `SdkError` will be returned with additional details that
-                    /// can be matched against.
-                    ///
-                    /// By default, any retryable failures will be retried twice. Retry behavior
-                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                    /// set when configuring the client.
-                    pub async fn send(self) -> std::result::Result<crate::operation::update_member_detectors::UpdateMemberDetectorsOutput, aws_smithy_http::result::SdkError<crate::operation::update_member_detectors::UpdateMemberDetectorsError>>
-                     {
-                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&self.handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        self.handle.client.call(op).await
-                    }
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle,
+            inner: Default::default(),
+        }
+    }
+
+    /// Consume this builder, creating a customizable operation that can be modified before being
+    /// sent. The operation's inner [http::Request] can be modified as well.
+    pub async fn customize(
+        self,
+    ) -> std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::update_member_detectors::UpdateMemberDetectors,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::result::SdkError<
+            crate::operation::update_member_detectors::UpdateMemberDetectorsError,
+        >,
+    > {
+        let handle = self.handle.clone();
+        let operation = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+    }
+
+    /// Sends the request and returns the response.
+    ///
+    /// If an error occurs, an `SdkError` will be returned with additional details that
+    /// can be matched against.
+    ///
+    /// By default, any retryable failures will be retried twice. Retry behavior
+    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+    /// set when configuring the client.
+    pub async fn send(
+        self,
+    ) -> std::result::Result<
+        crate::operation::update_member_detectors::UpdateMemberDetectorsOutput,
+        aws_smithy_http::result::SdkError<
+            crate::operation::update_member_detectors::UpdateMemberDetectorsError,
+        >,
+    > {
+        let op = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&self.handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        self.handle.client.call(op).await
+    }
     /// <p>The detector ID of the administrator account.</p>
     pub fn detector_id(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.detector_id(input.into());
@@ -67,7 +89,10 @@ impl UpdateMemberDetectorsFluentBuilder  {
         self
     }
     /// <p>A list of member account IDs to be updated.</p>
-    pub fn set_account_ids(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+    pub fn set_account_ids(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
         self.inner = self.inner.set_account_ids(input);
         self
     }
@@ -77,9 +102,11 @@ impl UpdateMemberDetectorsFluentBuilder  {
         self
     }
     /// <p>Describes which data sources will be updated.</p>
-    pub fn set_data_sources(mut self, input: std::option::Option<crate::types::DataSourceConfigurations>) -> Self {
+    pub fn set_data_sources(
+        mut self,
+        input: std::option::Option<crate::types::DataSourceConfigurations>,
+    ) -> Self {
         self.inner = self.inner.set_data_sources(input);
         self
     }
 }
-

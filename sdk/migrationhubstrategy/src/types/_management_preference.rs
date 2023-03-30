@@ -23,8 +23,14 @@ pub enum ManagementPreference {
 impl ManagementPreference {
     /// Tries to convert the enum instance into [`AwsManagedResources`](crate::types::ManagementPreference::AwsManagedResources), extracting the inner [`AwsManagedResources`](crate::types::AwsManagedResources).
     /// Returns `Err(&Self)` if it can't be converted.
-    pub fn as_aws_managed_resources(&self) -> std::result::Result<&crate::types::AwsManagedResources, &Self> {
-        if let ManagementPreference::AwsManagedResources(val) = &self { Ok(val) } else { Err(self) }
+    pub fn as_aws_managed_resources(
+        &self,
+    ) -> std::result::Result<&crate::types::AwsManagedResources, &Self> {
+        if let ManagementPreference::AwsManagedResources(val) = &self {
+            Ok(val)
+        } else {
+            Err(self)
+        }
     }
     /// Returns true if this is a [`AwsManagedResources`](crate::types::ManagementPreference::AwsManagedResources).
     pub fn is_aws_managed_resources(&self) -> bool {
@@ -32,8 +38,14 @@ impl ManagementPreference {
     }
     /// Tries to convert the enum instance into [`NoPreference`](crate::types::ManagementPreference::NoPreference), extracting the inner [`NoManagementPreference`](crate::types::NoManagementPreference).
     /// Returns `Err(&Self)` if it can't be converted.
-    pub fn as_no_preference(&self) -> std::result::Result<&crate::types::NoManagementPreference, &Self> {
-        if let ManagementPreference::NoPreference(val) = &self { Ok(val) } else { Err(self) }
+    pub fn as_no_preference(
+        &self,
+    ) -> std::result::Result<&crate::types::NoManagementPreference, &Self> {
+        if let ManagementPreference::NoPreference(val) = &self {
+            Ok(val)
+        } else {
+            Err(self)
+        }
     }
     /// Returns true if this is a [`NoPreference`](crate::types::ManagementPreference::NoPreference).
     pub fn is_no_preference(&self) -> bool {
@@ -41,8 +53,14 @@ impl ManagementPreference {
     }
     /// Tries to convert the enum instance into [`SelfManageResources`](crate::types::ManagementPreference::SelfManageResources), extracting the inner [`SelfManageResources`](crate::types::SelfManageResources).
     /// Returns `Err(&Self)` if it can't be converted.
-    pub fn as_self_manage_resources(&self) -> std::result::Result<&crate::types::SelfManageResources, &Self> {
-        if let ManagementPreference::SelfManageResources(val) = &self { Ok(val) } else { Err(self) }
+    pub fn as_self_manage_resources(
+        &self,
+    ) -> std::result::Result<&crate::types::SelfManageResources, &Self> {
+        if let ManagementPreference::SelfManageResources(val) = &self {
+            Ok(val)
+        } else {
+            Err(self)
+        }
     }
     /// Returns true if this is a [`SelfManageResources`](crate::types::ManagementPreference::SelfManageResources).
     pub fn is_self_manage_resources(&self) -> bool {
@@ -53,4 +71,3 @@ impl ManagementPreference {
         matches!(self, Self::Unknown)
     }
 }
-

@@ -3,14 +3,14 @@
 /// <p>Information about a service discovery registry to assign to the service.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AwsEcsServiceServiceRegistriesDetails  {
-    /// <p>The container name value to use for the service discovery service.</p> 
-    /// <p>If the task definition uses the <code>bridge</code> or <code>host</code> network mode, you must specify <code>ContainerName</code> and <code>ContainerPort</code>.</p> 
+pub struct AwsEcsServiceServiceRegistriesDetails {
+    /// <p>The container name value to use for the service discovery service.</p>
+    /// <p>If the task definition uses the <code>bridge</code> or <code>host</code> network mode, you must specify <code>ContainerName</code> and <code>ContainerPort</code>.</p>
     /// <p>If the task definition uses the <code>awsvpc</code> network mode and a type SRV DNS record, you must specify either <code>ContainerName</code> and <code>ContainerPort</code>, or <code>Port</code> , but not both.</p>
     #[doc(hidden)]
     pub container_name: std::option::Option<std::string::String>,
-    /// <p>The port value to use for the service discovery service.</p> 
-    /// <p>If the task definition uses the <code>bridge</code> or <code>host</code> network mode, you must specify <code>ContainerName</code> and <code>ContainerPort</code>.</p> 
+    /// <p>The port value to use for the service discovery service.</p>
+    /// <p>If the task definition uses the <code>bridge</code> or <code>host</code> network mode, you must specify <code>ContainerName</code> and <code>ContainerPort</code>.</p>
     /// <p>If the task definition uses the <code>awsvpc</code> network mode and a type SRV DNS record, you must specify either <code>ContainerName</code> and <code>ContainerPort</code>, or <code>Port</code> , but not both.</p>
     #[doc(hidden)]
     pub container_port: i32,
@@ -22,14 +22,14 @@ pub struct AwsEcsServiceServiceRegistriesDetails  {
     pub registry_arn: std::option::Option<std::string::String>,
 }
 impl AwsEcsServiceServiceRegistriesDetails {
-    /// <p>The container name value to use for the service discovery service.</p> 
-    /// <p>If the task definition uses the <code>bridge</code> or <code>host</code> network mode, you must specify <code>ContainerName</code> and <code>ContainerPort</code>.</p> 
+    /// <p>The container name value to use for the service discovery service.</p>
+    /// <p>If the task definition uses the <code>bridge</code> or <code>host</code> network mode, you must specify <code>ContainerName</code> and <code>ContainerPort</code>.</p>
     /// <p>If the task definition uses the <code>awsvpc</code> network mode and a type SRV DNS record, you must specify either <code>ContainerName</code> and <code>ContainerPort</code>, or <code>Port</code> , but not both.</p>
-    pub fn container_name(&self) -> std::option::Option<& str> {
+    pub fn container_name(&self) -> std::option::Option<&str> {
         self.container_name.as_deref()
     }
-    /// <p>The port value to use for the service discovery service.</p> 
-    /// <p>If the task definition uses the <code>bridge</code> or <code>host</code> network mode, you must specify <code>ContainerName</code> and <code>ContainerPort</code>.</p> 
+    /// <p>The port value to use for the service discovery service.</p>
+    /// <p>If the task definition uses the <code>bridge</code> or <code>host</code> network mode, you must specify <code>ContainerName</code> and <code>ContainerPort</code>.</p>
     /// <p>If the task definition uses the <code>awsvpc</code> network mode and a type SRV DNS record, you must specify either <code>ContainerName</code> and <code>ContainerPort</code>, or <code>Port</code> , but not both.</p>
     pub fn container_port(&self) -> i32 {
         self.container_port
@@ -39,7 +39,7 @@ impl AwsEcsServiceServiceRegistriesDetails {
         self.port
     }
     /// <p>The ARN of the service registry.</p>
-    pub fn registry_arn(&self) -> std::option::Option<& str> {
+    pub fn registry_arn(&self) -> std::option::Option<&str> {
         self.registry_arn.as_deref()
     }
 }
@@ -60,31 +60,33 @@ pub struct AwsEcsServiceServiceRegistriesDetailsBuilder {
     pub(crate) registry_arn: std::option::Option<std::string::String>,
 }
 impl AwsEcsServiceServiceRegistriesDetailsBuilder {
-    /// <p>The container name value to use for the service discovery service.</p> 
-    /// <p>If the task definition uses the <code>bridge</code> or <code>host</code> network mode, you must specify <code>ContainerName</code> and <code>ContainerPort</code>.</p> 
+    /// <p>The container name value to use for the service discovery service.</p>
+    /// <p>If the task definition uses the <code>bridge</code> or <code>host</code> network mode, you must specify <code>ContainerName</code> and <code>ContainerPort</code>.</p>
     /// <p>If the task definition uses the <code>awsvpc</code> network mode and a type SRV DNS record, you must specify either <code>ContainerName</code> and <code>ContainerPort</code>, or <code>Port</code> , but not both.</p>
     pub fn container_name(mut self, input: impl Into<std::string::String>) -> Self {
         self.container_name = Some(input.into());
         self
     }
-    /// <p>The container name value to use for the service discovery service.</p> 
-    /// <p>If the task definition uses the <code>bridge</code> or <code>host</code> network mode, you must specify <code>ContainerName</code> and <code>ContainerPort</code>.</p> 
+    /// <p>The container name value to use for the service discovery service.</p>
+    /// <p>If the task definition uses the <code>bridge</code> or <code>host</code> network mode, you must specify <code>ContainerName</code> and <code>ContainerPort</code>.</p>
     /// <p>If the task definition uses the <code>awsvpc</code> network mode and a type SRV DNS record, you must specify either <code>ContainerName</code> and <code>ContainerPort</code>, or <code>Port</code> , but not both.</p>
     pub fn set_container_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.container_name = input; self
+        self.container_name = input;
+        self
     }
-    /// <p>The port value to use for the service discovery service.</p> 
-    /// <p>If the task definition uses the <code>bridge</code> or <code>host</code> network mode, you must specify <code>ContainerName</code> and <code>ContainerPort</code>.</p> 
+    /// <p>The port value to use for the service discovery service.</p>
+    /// <p>If the task definition uses the <code>bridge</code> or <code>host</code> network mode, you must specify <code>ContainerName</code> and <code>ContainerPort</code>.</p>
     /// <p>If the task definition uses the <code>awsvpc</code> network mode and a type SRV DNS record, you must specify either <code>ContainerName</code> and <code>ContainerPort</code>, or <code>Port</code> , but not both.</p>
     pub fn container_port(mut self, input: i32) -> Self {
         self.container_port = Some(input);
         self
     }
-    /// <p>The port value to use for the service discovery service.</p> 
-    /// <p>If the task definition uses the <code>bridge</code> or <code>host</code> network mode, you must specify <code>ContainerName</code> and <code>ContainerPort</code>.</p> 
+    /// <p>The port value to use for the service discovery service.</p>
+    /// <p>If the task definition uses the <code>bridge</code> or <code>host</code> network mode, you must specify <code>ContainerName</code> and <code>ContainerPort</code>.</p>
     /// <p>If the task definition uses the <code>awsvpc</code> network mode and a type SRV DNS record, you must specify either <code>ContainerName</code> and <code>ContainerPort</code>, or <code>Port</code> , but not both.</p>
     pub fn set_container_port(mut self, input: std::option::Option<i32>) -> Self {
-        self.container_port = input; self
+        self.container_port = input;
+        self
     }
     /// <p>The port value to use for a service discovery service that specifies an SRV record. This field can be used if both the <code>awsvpc</code>awsvpc network mode and SRV records are used.</p>
     pub fn port(mut self, input: i32) -> Self {
@@ -93,7 +95,8 @@ impl AwsEcsServiceServiceRegistriesDetailsBuilder {
     }
     /// <p>The port value to use for a service discovery service that specifies an SRV record. This field can be used if both the <code>awsvpc</code>awsvpc network mode and SRV records are used.</p>
     pub fn set_port(mut self, input: std::option::Option<i32>) -> Self {
-        self.port = input; self
+        self.port = input;
+        self
     }
     /// <p>The ARN of the service registry.</p>
     pub fn registry_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -102,22 +105,16 @@ impl AwsEcsServiceServiceRegistriesDetailsBuilder {
     }
     /// <p>The ARN of the service registry.</p>
     pub fn set_registry_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.registry_arn = input; self
+        self.registry_arn = input;
+        self
     }
     /// Consumes the builder and constructs a [`AwsEcsServiceServiceRegistriesDetails`](crate::types::AwsEcsServiceServiceRegistriesDetails).
     pub fn build(self) -> crate::types::AwsEcsServiceServiceRegistriesDetails {
         crate::types::AwsEcsServiceServiceRegistriesDetails {
-            container_name: self.container_name
-            ,
-            container_port: self.container_port
-                .unwrap_or_default()
-            ,
-            port: self.port
-                .unwrap_or_default()
-            ,
-            registry_arn: self.registry_arn
-            ,
+            container_name: self.container_name,
+            container_port: self.container_port.unwrap_or_default(),
+            port: self.port.unwrap_or_default(),
+            registry_arn: self.registry_arn,
         }
     }
 }
-

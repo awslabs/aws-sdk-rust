@@ -68,4 +68,3 @@ pub mod builders;
 
 /// Error types that AWS Service Catalog App Registry can respond with.
 pub mod error;
-

@@ -3,7 +3,7 @@
 /// <p>Contains information about actions.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Action  {
+pub struct Action {
     /// <p>The GuardDuty finding activity type.</p>
     #[doc(hidden)]
     pub action_type: std::option::Option<std::string::String>,
@@ -25,27 +25,31 @@ pub struct Action  {
 }
 impl Action {
     /// <p>The GuardDuty finding activity type.</p>
-    pub fn action_type(&self) -> std::option::Option<& str> {
+    pub fn action_type(&self) -> std::option::Option<&str> {
         self.action_type.as_deref()
     }
     /// <p>Information about the AWS_API_CALL action described in this finding.</p>
-    pub fn aws_api_call_action(&self) -> std::option::Option<& crate::types::AwsApiCallAction> {
+    pub fn aws_api_call_action(&self) -> std::option::Option<&crate::types::AwsApiCallAction> {
         self.aws_api_call_action.as_ref()
     }
     /// <p>Information about the DNS_REQUEST action described in this finding.</p>
-    pub fn dns_request_action(&self) -> std::option::Option<& crate::types::DnsRequestAction> {
+    pub fn dns_request_action(&self) -> std::option::Option<&crate::types::DnsRequestAction> {
         self.dns_request_action.as_ref()
     }
     /// <p>Information about the NETWORK_CONNECTION action described in this finding.</p>
-    pub fn network_connection_action(&self) -> std::option::Option<& crate::types::NetworkConnectionAction> {
+    pub fn network_connection_action(
+        &self,
+    ) -> std::option::Option<&crate::types::NetworkConnectionAction> {
         self.network_connection_action.as_ref()
     }
     /// <p>Information about the PORT_PROBE action described in this finding.</p>
-    pub fn port_probe_action(&self) -> std::option::Option<& crate::types::PortProbeAction> {
+    pub fn port_probe_action(&self) -> std::option::Option<&crate::types::PortProbeAction> {
         self.port_probe_action.as_ref()
     }
     /// <p>Information about the Kubernetes API call action described in this finding.</p>
-    pub fn kubernetes_api_call_action(&self) -> std::option::Option<& crate::types::KubernetesApiCallAction> {
+    pub fn kubernetes_api_call_action(
+        &self,
+    ) -> std::option::Option<&crate::types::KubernetesApiCallAction> {
         self.kubernetes_api_call_action.as_ref()
     }
 }
@@ -63,9 +67,11 @@ pub struct ActionBuilder {
     pub(crate) action_type: std::option::Option<std::string::String>,
     pub(crate) aws_api_call_action: std::option::Option<crate::types::AwsApiCallAction>,
     pub(crate) dns_request_action: std::option::Option<crate::types::DnsRequestAction>,
-    pub(crate) network_connection_action: std::option::Option<crate::types::NetworkConnectionAction>,
+    pub(crate) network_connection_action:
+        std::option::Option<crate::types::NetworkConnectionAction>,
     pub(crate) port_probe_action: std::option::Option<crate::types::PortProbeAction>,
-    pub(crate) kubernetes_api_call_action: std::option::Option<crate::types::KubernetesApiCallAction>,
+    pub(crate) kubernetes_api_call_action:
+        std::option::Option<crate::types::KubernetesApiCallAction>,
 }
 impl ActionBuilder {
     /// <p>The GuardDuty finding activity type.</p>
@@ -75,7 +81,8 @@ impl ActionBuilder {
     }
     /// <p>The GuardDuty finding activity type.</p>
     pub fn set_action_type(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.action_type = input; self
+        self.action_type = input;
+        self
     }
     /// <p>Information about the AWS_API_CALL action described in this finding.</p>
     pub fn aws_api_call_action(mut self, input: crate::types::AwsApiCallAction) -> Self {
@@ -83,8 +90,12 @@ impl ActionBuilder {
         self
     }
     /// <p>Information about the AWS_API_CALL action described in this finding.</p>
-    pub fn set_aws_api_call_action(mut self, input: std::option::Option<crate::types::AwsApiCallAction>) -> Self {
-        self.aws_api_call_action = input; self
+    pub fn set_aws_api_call_action(
+        mut self,
+        input: std::option::Option<crate::types::AwsApiCallAction>,
+    ) -> Self {
+        self.aws_api_call_action = input;
+        self
     }
     /// <p>Information about the DNS_REQUEST action described in this finding.</p>
     pub fn dns_request_action(mut self, input: crate::types::DnsRequestAction) -> Self {
@@ -92,17 +103,28 @@ impl ActionBuilder {
         self
     }
     /// <p>Information about the DNS_REQUEST action described in this finding.</p>
-    pub fn set_dns_request_action(mut self, input: std::option::Option<crate::types::DnsRequestAction>) -> Self {
-        self.dns_request_action = input; self
+    pub fn set_dns_request_action(
+        mut self,
+        input: std::option::Option<crate::types::DnsRequestAction>,
+    ) -> Self {
+        self.dns_request_action = input;
+        self
     }
     /// <p>Information about the NETWORK_CONNECTION action described in this finding.</p>
-    pub fn network_connection_action(mut self, input: crate::types::NetworkConnectionAction) -> Self {
+    pub fn network_connection_action(
+        mut self,
+        input: crate::types::NetworkConnectionAction,
+    ) -> Self {
         self.network_connection_action = Some(input);
         self
     }
     /// <p>Information about the NETWORK_CONNECTION action described in this finding.</p>
-    pub fn set_network_connection_action(mut self, input: std::option::Option<crate::types::NetworkConnectionAction>) -> Self {
-        self.network_connection_action = input; self
+    pub fn set_network_connection_action(
+        mut self,
+        input: std::option::Option<crate::types::NetworkConnectionAction>,
+    ) -> Self {
+        self.network_connection_action = input;
+        self
     }
     /// <p>Information about the PORT_PROBE action described in this finding.</p>
     pub fn port_probe_action(mut self, input: crate::types::PortProbeAction) -> Self {
@@ -110,34 +132,38 @@ impl ActionBuilder {
         self
     }
     /// <p>Information about the PORT_PROBE action described in this finding.</p>
-    pub fn set_port_probe_action(mut self, input: std::option::Option<crate::types::PortProbeAction>) -> Self {
-        self.port_probe_action = input; self
+    pub fn set_port_probe_action(
+        mut self,
+        input: std::option::Option<crate::types::PortProbeAction>,
+    ) -> Self {
+        self.port_probe_action = input;
+        self
     }
     /// <p>Information about the Kubernetes API call action described in this finding.</p>
-    pub fn kubernetes_api_call_action(mut self, input: crate::types::KubernetesApiCallAction) -> Self {
+    pub fn kubernetes_api_call_action(
+        mut self,
+        input: crate::types::KubernetesApiCallAction,
+    ) -> Self {
         self.kubernetes_api_call_action = Some(input);
         self
     }
     /// <p>Information about the Kubernetes API call action described in this finding.</p>
-    pub fn set_kubernetes_api_call_action(mut self, input: std::option::Option<crate::types::KubernetesApiCallAction>) -> Self {
-        self.kubernetes_api_call_action = input; self
+    pub fn set_kubernetes_api_call_action(
+        mut self,
+        input: std::option::Option<crate::types::KubernetesApiCallAction>,
+    ) -> Self {
+        self.kubernetes_api_call_action = input;
+        self
     }
     /// Consumes the builder and constructs a [`Action`](crate::types::Action).
     pub fn build(self) -> crate::types::Action {
         crate::types::Action {
-            action_type: self.action_type
-            ,
-            aws_api_call_action: self.aws_api_call_action
-            ,
-            dns_request_action: self.dns_request_action
-            ,
-            network_connection_action: self.network_connection_action
-            ,
-            port_probe_action: self.port_probe_action
-            ,
-            kubernetes_api_call_action: self.kubernetes_api_call_action
-            ,
+            action_type: self.action_type,
+            aws_api_call_action: self.aws_api_call_action,
+            dns_request_action: self.dns_request_action,
+            network_connection_action: self.network_connection_action,
+            port_probe_action: self.port_probe_action,
+            kubernetes_api_call_action: self.kubernetes_api_call_action,
         }
     }
 }
-

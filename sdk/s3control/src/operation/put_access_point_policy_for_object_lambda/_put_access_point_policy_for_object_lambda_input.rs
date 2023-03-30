@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PutAccessPointPolicyForObjectLambdaInput  {
+pub struct PutAccessPointPolicyForObjectLambdaInput {
     /// <p>The account ID for the account that owns the specified Object Lambda Access Point.</p>
     #[doc(hidden)]
     pub account_id: std::option::Option<std::string::String>,
@@ -15,21 +15,21 @@ pub struct PutAccessPointPolicyForObjectLambdaInput  {
 }
 impl PutAccessPointPolicyForObjectLambdaInput {
     /// <p>The account ID for the account that owns the specified Object Lambda Access Point.</p>
-    pub fn account_id(&self) -> std::option::Option<& str> {
+    pub fn account_id(&self) -> std::option::Option<&str> {
         self.account_id.as_deref()
     }
     /// <p>The name of the Object Lambda Access Point.</p>
-    pub fn name(&self) -> std::option::Option<& str> {
+    pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>Object Lambda Access Point resource policy document.</p>
-    pub fn policy(&self) -> std::option::Option<& str> {
+    pub fn policy(&self) -> std::option::Option<&str> {
         self.policy.as_deref()
     }
 }
 impl PutAccessPointPolicyForObjectLambdaInput {
     /// Creates a new builder-style object to manufacture [`PutAccessPointPolicyForObjectLambdaInput`](crate::operation::put_access_point_policy_for_object_lambda::PutAccessPointPolicyForObjectLambdaInput).
-    pub fn builder() -> crate::operation::put_access_point_policy_for_object_lambda::builders::PutAccessPointPolicyForObjectLambdaInputBuilder {
+    pub fn builder() -> crate::operation::put_access_point_policy_for_object_lambda::builders::PutAccessPointPolicyForObjectLambdaInputBuilder{
         crate::operation::put_access_point_policy_for_object_lambda::builders::PutAccessPointPolicyForObjectLambdaInputBuilder::default()
     }
 }
@@ -50,7 +50,8 @@ impl PutAccessPointPolicyForObjectLambdaInputBuilder {
     }
     /// <p>The account ID for the account that owns the specified Object Lambda Access Point.</p>
     pub fn set_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.account_id = input; self
+        self.account_id = input;
+        self
     }
     /// <p>The name of the Object Lambda Access Point.</p>
     pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -59,7 +60,8 @@ impl PutAccessPointPolicyForObjectLambdaInputBuilder {
     }
     /// <p>The name of the Object Lambda Access Point.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input; self
+        self.name = input;
+        self
     }
     /// <p>Object Lambda Access Point resource policy document.</p>
     pub fn policy(mut self, input: impl Into<std::string::String>) -> Self {
@@ -68,10 +70,11 @@ impl PutAccessPointPolicyForObjectLambdaInputBuilder {
     }
     /// <p>Object Lambda Access Point resource policy document.</p>
     pub fn set_policy(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.policy = input; self
+        self.policy = input;
+        self
     }
     /// Consumes the builder and constructs a [`PutAccessPointPolicyForObjectLambdaInput`](crate::operation::put_access_point_policy_for_object_lambda::PutAccessPointPolicyForObjectLambdaInput).
-    pub fn build(self) -> Result<crate::operation::put_access_point_policy_for_object_lambda::PutAccessPointPolicyForObjectLambdaInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> Result<crate::operation::put_access_point_policy_for_object_lambda::PutAccessPointPolicyForObjectLambdaInput, aws_smithy_http::operation::error::BuildError>{
         Ok(
             crate::operation::put_access_point_policy_for_object_lambda::PutAccessPointPolicyForObjectLambdaInput {
                 account_id: self.account_id
@@ -84,4 +87,3 @@ impl PutAccessPointPolicyForObjectLambdaInputBuilder {
         )
     }
 }
-

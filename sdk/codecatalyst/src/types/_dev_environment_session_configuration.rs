@@ -3,21 +3,24 @@
 /// <p>Information about the configuration of a Dev Environment session.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DevEnvironmentSessionConfiguration  {
+pub struct DevEnvironmentSessionConfiguration {
     /// <p>The type of the session.</p>
     #[doc(hidden)]
     pub session_type: std::option::Option<crate::types::DevEnvironmentSessionType>,
     /// <p>Information about optional commands that will be run on the Dev Environment when the SSH session begins.</p>
     #[doc(hidden)]
-    pub execute_command_session_configuration: std::option::Option<crate::types::ExecuteCommandSessionConfiguration>,
+    pub execute_command_session_configuration:
+        std::option::Option<crate::types::ExecuteCommandSessionConfiguration>,
 }
 impl DevEnvironmentSessionConfiguration {
     /// <p>The type of the session.</p>
-    pub fn session_type(&self) -> std::option::Option<& crate::types::DevEnvironmentSessionType> {
+    pub fn session_type(&self) -> std::option::Option<&crate::types::DevEnvironmentSessionType> {
         self.session_type.as_ref()
     }
     /// <p>Information about optional commands that will be run on the Dev Environment when the SSH session begins.</p>
-    pub fn execute_command_session_configuration(&self) -> std::option::Option<& crate::types::ExecuteCommandSessionConfiguration> {
+    pub fn execute_command_session_configuration(
+        &self,
+    ) -> std::option::Option<&crate::types::ExecuteCommandSessionConfiguration> {
         self.execute_command_session_configuration.as_ref()
     }
 }
@@ -33,7 +36,8 @@ impl DevEnvironmentSessionConfiguration {
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct DevEnvironmentSessionConfigurationBuilder {
     pub(crate) session_type: std::option::Option<crate::types::DevEnvironmentSessionType>,
-    pub(crate) execute_command_session_configuration: std::option::Option<crate::types::ExecuteCommandSessionConfiguration>,
+    pub(crate) execute_command_session_configuration:
+        std::option::Option<crate::types::ExecuteCommandSessionConfiguration>,
 }
 impl DevEnvironmentSessionConfigurationBuilder {
     /// <p>The type of the session.</p>
@@ -42,26 +46,34 @@ impl DevEnvironmentSessionConfigurationBuilder {
         self
     }
     /// <p>The type of the session.</p>
-    pub fn set_session_type(mut self, input: std::option::Option<crate::types::DevEnvironmentSessionType>) -> Self {
-        self.session_type = input; self
+    pub fn set_session_type(
+        mut self,
+        input: std::option::Option<crate::types::DevEnvironmentSessionType>,
+    ) -> Self {
+        self.session_type = input;
+        self
     }
     /// <p>Information about optional commands that will be run on the Dev Environment when the SSH session begins.</p>
-    pub fn execute_command_session_configuration(mut self, input: crate::types::ExecuteCommandSessionConfiguration) -> Self {
+    pub fn execute_command_session_configuration(
+        mut self,
+        input: crate::types::ExecuteCommandSessionConfiguration,
+    ) -> Self {
         self.execute_command_session_configuration = Some(input);
         self
     }
     /// <p>Information about optional commands that will be run on the Dev Environment when the SSH session begins.</p>
-    pub fn set_execute_command_session_configuration(mut self, input: std::option::Option<crate::types::ExecuteCommandSessionConfiguration>) -> Self {
-        self.execute_command_session_configuration = input; self
+    pub fn set_execute_command_session_configuration(
+        mut self,
+        input: std::option::Option<crate::types::ExecuteCommandSessionConfiguration>,
+    ) -> Self {
+        self.execute_command_session_configuration = input;
+        self
     }
     /// Consumes the builder and constructs a [`DevEnvironmentSessionConfiguration`](crate::types::DevEnvironmentSessionConfiguration).
     pub fn build(self) -> crate::types::DevEnvironmentSessionConfiguration {
         crate::types::DevEnvironmentSessionConfiguration {
-            session_type: self.session_type
-            ,
-            execute_command_session_configuration: self.execute_command_session_configuration
-            ,
+            session_type: self.session_type,
+            execute_command_session_configuration: self.execute_command_session_configuration,
         }
     }
 }
-

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetBucketAclOutput  {
+pub struct GetBucketAclOutput {
     /// <p>Container for the bucket owner's display name and ID.</p>
     #[doc(hidden)]
     pub owner: std::option::Option<crate::types::Owner>,
@@ -14,24 +14,24 @@ pub struct GetBucketAclOutput  {
 }
 impl GetBucketAclOutput {
     /// <p>Container for the bucket owner's display name and ID.</p>
-    pub fn owner(&self) -> std::option::Option<& crate::types::Owner> {
+    pub fn owner(&self) -> std::option::Option<&crate::types::Owner> {
         self.owner.as_ref()
     }
     /// <p>A list of grants.</p>
-    pub fn grants(&self) -> std::option::Option<& [crate::types::Grant]> {
+    pub fn grants(&self) -> std::option::Option<&[crate::types::Grant]> {
         self.grants.as_deref()
     }
 }
 impl crate::s3_request_id::RequestIdExt for GetBucketAclOutput {
-                                fn extended_request_id(&self) -> Option<&str> {
-                                    self._extended_request_id.as_deref()
-                                }
-                            }
+    fn extended_request_id(&self) -> Option<&str> {
+        self._extended_request_id.as_deref()
+    }
+}
 impl aws_http::request_id::RequestId for GetBucketAclOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl GetBucketAclOutput {
     /// Creates a new builder-style object to manufacture [`GetBucketAclOutput`](crate::operation::get_bucket_acl::GetBucketAclOutput).
     pub fn builder() -> crate::operation::get_bucket_acl::builders::GetBucketAclOutputBuilder {
@@ -56,7 +56,8 @@ impl GetBucketAclOutputBuilder {
     }
     /// <p>Container for the bucket owner's display name and ID.</p>
     pub fn set_owner(mut self, input: std::option::Option<crate::types::Owner>) -> Self {
-        self.owner = input; self
+        self.owner = input;
+        self
     }
     /// Appends an item to `grants`.
     ///
@@ -65,42 +66,46 @@ impl GetBucketAclOutputBuilder {
     /// <p>A list of grants.</p>
     pub fn grants(mut self, input: crate::types::Grant) -> Self {
         let mut v = self.grants.unwrap_or_default();
-                        v.push(input);
-                        self.grants = Some(v);
-                        self
+        v.push(input);
+        self.grants = Some(v);
+        self
     }
     /// <p>A list of grants.</p>
-    pub fn set_grants(mut self, input: std::option::Option<std::vec::Vec<crate::types::Grant>>) -> Self {
-        self.grants = input; self
+    pub fn set_grants(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::Grant>>,
+    ) -> Self {
+        self.grants = input;
+        self
     }
     pub(crate) fn _extended_request_id(mut self, extended_request_id: impl Into<String>) -> Self {
-                                    self._extended_request_id = Some(extended_request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_extended_request_id(&mut self, extended_request_id: Option<String>) -> &mut Self {
-                                    self._extended_request_id = extended_request_id;
-                                    self
-                                }
+        self._extended_request_id = Some(extended_request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_extended_request_id(
+        &mut self,
+        extended_request_id: Option<String>,
+    ) -> &mut Self {
+        self._extended_request_id = extended_request_id;
+        self
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`GetBucketAclOutput`](crate::operation::get_bucket_acl::GetBucketAclOutput).
     pub fn build(self) -> crate::operation::get_bucket_acl::GetBucketAclOutput {
         crate::operation::get_bucket_acl::GetBucketAclOutput {
-            owner: self.owner
-            ,
-            grants: self.grants
-            ,
+            owner: self.owner,
+            grants: self.grants,
             _extended_request_id: self._extended_request_id,
             _request_id: self._request_id,
         }
     }
 }
-

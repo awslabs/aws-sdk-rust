@@ -159,4 +159,3 @@ pub mod update_table_replica_auto_scaling;
 
 /// Types for the `UpdateTimeToLive` operation.
 pub mod update_time_to_live;
-

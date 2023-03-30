@@ -3,7 +3,7 @@
 /// <p>Contains a subset of the possible runtime environment attributes. Used in the environment list.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct EnvironmentSummary  {
+pub struct EnvironmentSummary {
     /// <p>The name of the runtime environment.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -31,35 +31,35 @@ pub struct EnvironmentSummary  {
 }
 impl EnvironmentSummary {
     /// <p>The name of the runtime environment.</p>
-    pub fn name(&self) -> std::option::Option<& str> {
+    pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of a particular runtime environment.</p>
-    pub fn environment_arn(&self) -> std::option::Option<& str> {
+    pub fn environment_arn(&self) -> std::option::Option<&str> {
         self.environment_arn.as_deref()
     }
     /// <p>The unique identifier of a particular runtime environment.</p>
-    pub fn environment_id(&self) -> std::option::Option<& str> {
+    pub fn environment_id(&self) -> std::option::Option<&str> {
         self.environment_id.as_deref()
     }
     /// <p>The instance type of the runtime environment.</p>
-    pub fn instance_type(&self) -> std::option::Option<& str> {
+    pub fn instance_type(&self) -> std::option::Option<&str> {
         self.instance_type.as_deref()
     }
     /// <p>The status of the runtime environment</p>
-    pub fn status(&self) -> std::option::Option<& crate::types::EnvironmentLifecycle> {
+    pub fn status(&self) -> std::option::Option<&crate::types::EnvironmentLifecycle> {
         self.status.as_ref()
     }
     /// <p>The target platform for the runtime environment.</p>
-    pub fn engine_type(&self) -> std::option::Option<& crate::types::EngineType> {
+    pub fn engine_type(&self) -> std::option::Option<&crate::types::EngineType> {
         self.engine_type.as_ref()
     }
     /// <p>The version of the runtime engine.</p>
-    pub fn engine_version(&self) -> std::option::Option<& str> {
+    pub fn engine_version(&self) -> std::option::Option<&str> {
         self.engine_version.as_deref()
     }
     /// <p>The timestamp when the runtime environment was created.</p>
-    pub fn creation_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
+    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
 }
@@ -91,7 +91,8 @@ impl EnvironmentSummaryBuilder {
     }
     /// <p>The name of the runtime environment.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input; self
+        self.name = input;
+        self
     }
     /// <p>The Amazon Resource Name (ARN) of a particular runtime environment.</p>
     pub fn environment_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -100,7 +101,8 @@ impl EnvironmentSummaryBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of a particular runtime environment.</p>
     pub fn set_environment_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.environment_arn = input; self
+        self.environment_arn = input;
+        self
     }
     /// <p>The unique identifier of a particular runtime environment.</p>
     pub fn environment_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -109,7 +111,8 @@ impl EnvironmentSummaryBuilder {
     }
     /// <p>The unique identifier of a particular runtime environment.</p>
     pub fn set_environment_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.environment_id = input; self
+        self.environment_id = input;
+        self
     }
     /// <p>The instance type of the runtime environment.</p>
     pub fn instance_type(mut self, input: impl Into<std::string::String>) -> Self {
@@ -118,7 +121,8 @@ impl EnvironmentSummaryBuilder {
     }
     /// <p>The instance type of the runtime environment.</p>
     pub fn set_instance_type(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.instance_type = input; self
+        self.instance_type = input;
+        self
     }
     /// <p>The status of the runtime environment</p>
     pub fn status(mut self, input: crate::types::EnvironmentLifecycle) -> Self {
@@ -126,8 +130,12 @@ impl EnvironmentSummaryBuilder {
         self
     }
     /// <p>The status of the runtime environment</p>
-    pub fn set_status(mut self, input: std::option::Option<crate::types::EnvironmentLifecycle>) -> Self {
-        self.status = input; self
+    pub fn set_status(
+        mut self,
+        input: std::option::Option<crate::types::EnvironmentLifecycle>,
+    ) -> Self {
+        self.status = input;
+        self
     }
     /// <p>The target platform for the runtime environment.</p>
     pub fn engine_type(mut self, input: crate::types::EngineType) -> Self {
@@ -136,7 +144,8 @@ impl EnvironmentSummaryBuilder {
     }
     /// <p>The target platform for the runtime environment.</p>
     pub fn set_engine_type(mut self, input: std::option::Option<crate::types::EngineType>) -> Self {
-        self.engine_type = input; self
+        self.engine_type = input;
+        self
     }
     /// <p>The version of the runtime engine.</p>
     pub fn engine_version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -145,7 +154,8 @@ impl EnvironmentSummaryBuilder {
     }
     /// <p>The version of the runtime engine.</p>
     pub fn set_engine_version(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.engine_version = input; self
+        self.engine_version = input;
+        self
     }
     /// <p>The timestamp when the runtime environment was created.</p>
     pub fn creation_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -153,29 +163,24 @@ impl EnvironmentSummaryBuilder {
         self
     }
     /// <p>The timestamp when the runtime environment was created.</p>
-    pub fn set_creation_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.creation_time = input; self
+    pub fn set_creation_time(
+        mut self,
+        input: std::option::Option<aws_smithy_types::DateTime>,
+    ) -> Self {
+        self.creation_time = input;
+        self
     }
     /// Consumes the builder and constructs a [`EnvironmentSummary`](crate::types::EnvironmentSummary).
     pub fn build(self) -> crate::types::EnvironmentSummary {
         crate::types::EnvironmentSummary {
-            name: self.name
-            ,
-            environment_arn: self.environment_arn
-            ,
-            environment_id: self.environment_id
-            ,
-            instance_type: self.instance_type
-            ,
-            status: self.status
-            ,
-            engine_type: self.engine_type
-            ,
-            engine_version: self.engine_version
-            ,
-            creation_time: self.creation_time
-            ,
+            name: self.name,
+            environment_arn: self.environment_arn,
+            environment_id: self.environment_id,
+            instance_type: self.instance_type,
+            status: self.status,
+            engine_type: self.engine_type,
+            engine_version: self.engine_version,
+            creation_time: self.creation_time,
         }
     }
 }
-

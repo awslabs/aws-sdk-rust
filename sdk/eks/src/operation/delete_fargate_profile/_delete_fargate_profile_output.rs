@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteFargateProfileOutput  {
+pub struct DeleteFargateProfileOutput {
     /// <p>The deleted Fargate profile.</p>
     #[doc(hidden)]
     pub fargate_profile: std::option::Option<crate::types::FargateProfile>,
@@ -10,18 +10,19 @@ pub struct DeleteFargateProfileOutput  {
 }
 impl DeleteFargateProfileOutput {
     /// <p>The deleted Fargate profile.</p>
-    pub fn fargate_profile(&self) -> std::option::Option<& crate::types::FargateProfile> {
+    pub fn fargate_profile(&self) -> std::option::Option<&crate::types::FargateProfile> {
         self.fargate_profile.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for DeleteFargateProfileOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl DeleteFargateProfileOutput {
     /// Creates a new builder-style object to manufacture [`DeleteFargateProfileOutput`](crate::operation::delete_fargate_profile::DeleteFargateProfileOutput).
-    pub fn builder() -> crate::operation::delete_fargate_profile::builders::DeleteFargateProfileOutputBuilder {
+    pub fn builder(
+    ) -> crate::operation::delete_fargate_profile::builders::DeleteFargateProfileOutputBuilder {
         crate::operation::delete_fargate_profile::builders::DeleteFargateProfileOutputBuilder::default()
     }
 }
@@ -40,25 +41,27 @@ impl DeleteFargateProfileOutputBuilder {
         self
     }
     /// <p>The deleted Fargate profile.</p>
-    pub fn set_fargate_profile(mut self, input: std::option::Option<crate::types::FargateProfile>) -> Self {
-        self.fargate_profile = input; self
+    pub fn set_fargate_profile(
+        mut self,
+        input: std::option::Option<crate::types::FargateProfile>,
+    ) -> Self {
+        self.fargate_profile = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`DeleteFargateProfileOutput`](crate::operation::delete_fargate_profile::DeleteFargateProfileOutput).
     pub fn build(self) -> crate::operation::delete_fargate_profile::DeleteFargateProfileOutput {
         crate::operation::delete_fargate_profile::DeleteFargateProfileOutput {
-            fargate_profile: self.fargate_profile
-            ,
+            fargate_profile: self.fargate_profile,
             _request_id: self._request_id,
         }
     }
 }
-

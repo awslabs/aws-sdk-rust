@@ -3,7 +3,7 @@
 /// <p>Contains information on the total of usage based on account IDs.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UsageAccountResult  {
+pub struct UsageAccountResult {
     /// <p>The Account ID that generated usage.</p>
     #[doc(hidden)]
     pub account_id: std::option::Option<std::string::String>,
@@ -13,11 +13,11 @@ pub struct UsageAccountResult  {
 }
 impl UsageAccountResult {
     /// <p>The Account ID that generated usage.</p>
-    pub fn account_id(&self) -> std::option::Option<& str> {
+    pub fn account_id(&self) -> std::option::Option<&str> {
         self.account_id.as_deref()
     }
     /// <p>Represents the total of usage for the Account ID.</p>
-    pub fn total(&self) -> std::option::Option<& crate::types::Total> {
+    pub fn total(&self) -> std::option::Option<&crate::types::Total> {
         self.total.as_ref()
     }
 }
@@ -43,7 +43,8 @@ impl UsageAccountResultBuilder {
     }
     /// <p>The Account ID that generated usage.</p>
     pub fn set_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.account_id = input; self
+        self.account_id = input;
+        self
     }
     /// <p>Represents the total of usage for the Account ID.</p>
     pub fn total(mut self, input: crate::types::Total) -> Self {
@@ -52,16 +53,14 @@ impl UsageAccountResultBuilder {
     }
     /// <p>Represents the total of usage for the Account ID.</p>
     pub fn set_total(mut self, input: std::option::Option<crate::types::Total>) -> Self {
-        self.total = input; self
+        self.total = input;
+        self
     }
     /// Consumes the builder and constructs a [`UsageAccountResult`](crate::types::UsageAccountResult).
     pub fn build(self) -> crate::types::UsageAccountResult {
         crate::types::UsageAccountResult {
-            account_id: self.account_id
-            ,
-            total: self.total
-            ,
+            account_id: self.account_id,
+            total: self.total,
         }
     }
 }
-

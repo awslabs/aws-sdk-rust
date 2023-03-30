@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetPercentilesOutput  {
+pub struct GetPercentilesOutput {
     /// <p>The percentile values of the aggregated fields.</p>
     #[doc(hidden)]
     pub percentiles: std::option::Option<std::vec::Vec<crate::types::PercentPair>>,
@@ -10,15 +10,15 @@ pub struct GetPercentilesOutput  {
 }
 impl GetPercentilesOutput {
     /// <p>The percentile values of the aggregated fields.</p>
-    pub fn percentiles(&self) -> std::option::Option<& [crate::types::PercentPair]> {
+    pub fn percentiles(&self) -> std::option::Option<&[crate::types::PercentPair]> {
         self.percentiles.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for GetPercentilesOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl GetPercentilesOutput {
     /// Creates a new builder-style object to manufacture [`GetPercentilesOutput`](crate::operation::get_percentiles::GetPercentilesOutput).
     pub fn builder() -> crate::operation::get_percentiles::builders::GetPercentilesOutputBuilder {
@@ -41,30 +41,32 @@ impl GetPercentilesOutputBuilder {
     /// <p>The percentile values of the aggregated fields.</p>
     pub fn percentiles(mut self, input: crate::types::PercentPair) -> Self {
         let mut v = self.percentiles.unwrap_or_default();
-                        v.push(input);
-                        self.percentiles = Some(v);
-                        self
+        v.push(input);
+        self.percentiles = Some(v);
+        self
     }
     /// <p>The percentile values of the aggregated fields.</p>
-    pub fn set_percentiles(mut self, input: std::option::Option<std::vec::Vec<crate::types::PercentPair>>) -> Self {
-        self.percentiles = input; self
+    pub fn set_percentiles(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::PercentPair>>,
+    ) -> Self {
+        self.percentiles = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`GetPercentilesOutput`](crate::operation::get_percentiles::GetPercentilesOutput).
     pub fn build(self) -> crate::operation::get_percentiles::GetPercentilesOutput {
         crate::operation::get_percentiles::GetPercentilesOutput {
-            percentiles: self.percentiles
-            ,
+            percentiles: self.percentiles,
             _request_id: self._request_id,
         }
     }
 }
-

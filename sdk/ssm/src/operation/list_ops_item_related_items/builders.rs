@@ -4,55 +4,80 @@ pub use crate::operation::list_ops_item_related_items::_list_ops_item_related_it
 pub use crate::operation::list_ops_item_related_items::_list_ops_item_related_items_input::ListOpsItemRelatedItemsInputBuilder;
 
 /// Fluent builder constructing a request to `ListOpsItemRelatedItems`.
-/// 
+///
 /// <p>Lists all related-item resources associated with a Systems Manager OpsCenter OpsItem. OpsCenter is a capability of Amazon Web Services Systems Manager.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListOpsItemRelatedItemsFluentBuilder {
                 handle: std::sync::Arc<crate::client::Handle>,
                 inner: crate::operation::list_ops_item_related_items::builders::ListOpsItemRelatedItemsInputBuilder
             }
-impl ListOpsItemRelatedItemsFluentBuilder  {
+impl ListOpsItemRelatedItemsFluentBuilder {
     /// Creates a new `ListOpsItemRelatedItems`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
-                    /// sent. The operation's inner [http::Request] can be modified as well.
-                    pub async fn customize(self) -> std::result::Result<
-                        crate::client::customize::CustomizableOperation<crate::operation::list_ops_item_related_items::ListOpsItemRelatedItems, aws_http::retry::AwsResponseRetryClassifier,>,
-                        aws_smithy_http::result::SdkError<crate::operation::list_ops_item_related_items::ListOpsItemRelatedItemsError>
-                    >  {
-                        let handle = self.handle.clone();
-                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-                    }
-    
-                    /// Sends the request and returns the response.
-                    ///
-                    /// If an error occurs, an `SdkError` will be returned with additional details that
-                    /// can be matched against.
-                    ///
-                    /// By default, any retryable failures will be retried twice. Retry behavior
-                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                    /// set when configuring the client.
-                    pub async fn send(self) -> std::result::Result<crate::operation::list_ops_item_related_items::ListOpsItemRelatedItemsOutput, aws_smithy_http::result::SdkError<crate::operation::list_ops_item_related_items::ListOpsItemRelatedItemsError>>
-                     {
-                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&self.handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        self.handle.client.call(op).await
-                    }
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle,
+            inner: Default::default(),
+        }
+    }
+
+    /// Consume this builder, creating a customizable operation that can be modified before being
+    /// sent. The operation's inner [http::Request] can be modified as well.
+    pub async fn customize(
+        self,
+    ) -> std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::list_ops_item_related_items::ListOpsItemRelatedItems,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::result::SdkError<
+            crate::operation::list_ops_item_related_items::ListOpsItemRelatedItemsError,
+        >,
+    > {
+        let handle = self.handle.clone();
+        let operation = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+    }
+
+    /// Sends the request and returns the response.
+    ///
+    /// If an error occurs, an `SdkError` will be returned with additional details that
+    /// can be matched against.
+    ///
+    /// By default, any retryable failures will be retried twice. Retry behavior
+    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+    /// set when configuring the client.
+    pub async fn send(
+        self,
+    ) -> std::result::Result<
+        crate::operation::list_ops_item_related_items::ListOpsItemRelatedItemsOutput,
+        aws_smithy_http::result::SdkError<
+            crate::operation::list_ops_item_related_items::ListOpsItemRelatedItemsError,
+        >,
+    > {
+        let op = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&self.handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        self.handle.client.call(op).await
+    }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::list_ops_item_related_items::paginator::ListOpsItemRelatedItemsPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::list_ops_item_related_items::paginator::ListOpsItemRelatedItemsPaginator {
-                            crate::operation::list_ops_item_related_items::paginator::ListOpsItemRelatedItemsPaginator::new(self.handle, self.inner)
-                        }
+    ///
+    /// Paginators are used by calling [`send().await`](crate::operation::list_ops_item_related_items::paginator::ListOpsItemRelatedItemsPaginator::send) which returns a `Stream`.
+    pub fn into_paginator(
+        self,
+    ) -> crate::operation::list_ops_item_related_items::paginator::ListOpsItemRelatedItemsPaginator
+    {
+        crate::operation::list_ops_item_related_items::paginator::ListOpsItemRelatedItemsPaginator::new(self.handle, self.inner)
+    }
     /// <p>The ID of the OpsItem for which you want to list all related-item resources.</p>
     pub fn ops_item_id(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.ops_item_id(input.into());
@@ -73,7 +98,10 @@ impl ListOpsItemRelatedItemsFluentBuilder  {
         self
     }
     /// <p>One or more OpsItem filters. Use a filter to return a more specific list of results. </p>
-    pub fn set_filters(mut self, input: std::option::Option<std::vec::Vec<crate::types::OpsItemRelatedItemsFilter>>) -> Self {
+    pub fn set_filters(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::OpsItemRelatedItemsFilter>>,
+    ) -> Self {
         self.inner = self.inner.set_filters(input);
         self
     }
@@ -98,4 +126,3 @@ impl ListOpsItemRelatedItemsFluentBuilder  {
         self
     }
 }
-

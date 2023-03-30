@@ -2,21 +2,21 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeVolumeStatusInput  {
-    /// <p>The filters.</p> 
-    /// <ul> 
-    /// <li> <p> <code>action.code</code> - The action code for the event (for example, <code>enable-volume-io</code>).</p> </li> 
-    /// <li> <p> <code>action.description</code> - A description of the action.</p> </li> 
-    /// <li> <p> <code>action.event-id</code> - The event ID associated with the action.</p> </li> 
-    /// <li> <p> <code>availability-zone</code> - The Availability Zone of the instance.</p> </li> 
-    /// <li> <p> <code>event.description</code> - A description of the event.</p> </li> 
-    /// <li> <p> <code>event.event-id</code> - The event ID.</p> </li> 
-    /// <li> <p> <code>event.event-type</code> - The event type (for <code>io-enabled</code>: <code>passed</code> | <code>failed</code>; for <code>io-performance</code>: <code>io-performance:degraded</code> | <code>io-performance:severely-degraded</code> | <code>io-performance:stalled</code>).</p> </li> 
-    /// <li> <p> <code>event.not-after</code> - The latest end time for the event.</p> </li> 
-    /// <li> <p> <code>event.not-before</code> - The earliest start time for the event.</p> </li> 
-    /// <li> <p> <code>volume-status.details-name</code> - The cause for <code>volume-status.status</code> (<code>io-enabled</code> | <code>io-performance</code>).</p> </li> 
-    /// <li> <p> <code>volume-status.details-status</code> - The status of <code>volume-status.details-name</code> (for <code>io-enabled</code>: <code>passed</code> | <code>failed</code>; for <code>io-performance</code>: <code>normal</code> | <code>degraded</code> | <code>severely-degraded</code> | <code>stalled</code>).</p> </li> 
-    /// <li> <p> <code>volume-status.status</code> - The status of the volume (<code>ok</code> | <code>impaired</code> | <code>warning</code> | <code>insufficient-data</code>).</p> </li> 
+pub struct DescribeVolumeStatusInput {
+    /// <p>The filters.</p>
+    /// <ul>
+    /// <li> <p> <code>action.code</code> - The action code for the event (for example, <code>enable-volume-io</code>).</p> </li>
+    /// <li> <p> <code>action.description</code> - A description of the action.</p> </li>
+    /// <li> <p> <code>action.event-id</code> - The event ID associated with the action.</p> </li>
+    /// <li> <p> <code>availability-zone</code> - The Availability Zone of the instance.</p> </li>
+    /// <li> <p> <code>event.description</code> - A description of the event.</p> </li>
+    /// <li> <p> <code>event.event-id</code> - The event ID.</p> </li>
+    /// <li> <p> <code>event.event-type</code> - The event type (for <code>io-enabled</code>: <code>passed</code> | <code>failed</code>; for <code>io-performance</code>: <code>io-performance:degraded</code> | <code>io-performance:severely-degraded</code> | <code>io-performance:stalled</code>).</p> </li>
+    /// <li> <p> <code>event.not-after</code> - The latest end time for the event.</p> </li>
+    /// <li> <p> <code>event.not-before</code> - The earliest start time for the event.</p> </li>
+    /// <li> <p> <code>volume-status.details-name</code> - The cause for <code>volume-status.status</code> (<code>io-enabled</code> | <code>io-performance</code>).</p> </li>
+    /// <li> <p> <code>volume-status.details-status</code> - The status of <code>volume-status.details-name</code> (for <code>io-enabled</code>: <code>passed</code> | <code>failed</code>; for <code>io-performance</code>: <code>normal</code> | <code>degraded</code> | <code>severely-degraded</code> | <code>stalled</code>).</p> </li>
+    /// <li> <p> <code>volume-status.status</code> - The status of the volume (<code>ok</code> | <code>impaired</code> | <code>warning</code> | <code>insufficient-data</code>).</p> </li>
     /// </ul>
     #[doc(hidden)]
     pub filters: std::option::Option<std::vec::Vec<crate::types::Filter>>,
@@ -26,7 +26,7 @@ pub struct DescribeVolumeStatusInput  {
     /// <p>The <code>NextToken</code> value to include in a future <code>DescribeVolumeStatus</code> request. When the results of the request exceed <code>MaxResults</code>, this value can be used to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
-    /// <p>The IDs of the volumes.</p> 
+    /// <p>The IDs of the volumes.</p>
     /// <p>Default: Describes all your volumes.</p>
     #[doc(hidden)]
     pub volume_ids: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -35,22 +35,22 @@ pub struct DescribeVolumeStatusInput  {
     pub dry_run: std::option::Option<bool>,
 }
 impl DescribeVolumeStatusInput {
-    /// <p>The filters.</p> 
-    /// <ul> 
-    /// <li> <p> <code>action.code</code> - The action code for the event (for example, <code>enable-volume-io</code>).</p> </li> 
-    /// <li> <p> <code>action.description</code> - A description of the action.</p> </li> 
-    /// <li> <p> <code>action.event-id</code> - The event ID associated with the action.</p> </li> 
-    /// <li> <p> <code>availability-zone</code> - The Availability Zone of the instance.</p> </li> 
-    /// <li> <p> <code>event.description</code> - A description of the event.</p> </li> 
-    /// <li> <p> <code>event.event-id</code> - The event ID.</p> </li> 
-    /// <li> <p> <code>event.event-type</code> - The event type (for <code>io-enabled</code>: <code>passed</code> | <code>failed</code>; for <code>io-performance</code>: <code>io-performance:degraded</code> | <code>io-performance:severely-degraded</code> | <code>io-performance:stalled</code>).</p> </li> 
-    /// <li> <p> <code>event.not-after</code> - The latest end time for the event.</p> </li> 
-    /// <li> <p> <code>event.not-before</code> - The earliest start time for the event.</p> </li> 
-    /// <li> <p> <code>volume-status.details-name</code> - The cause for <code>volume-status.status</code> (<code>io-enabled</code> | <code>io-performance</code>).</p> </li> 
-    /// <li> <p> <code>volume-status.details-status</code> - The status of <code>volume-status.details-name</code> (for <code>io-enabled</code>: <code>passed</code> | <code>failed</code>; for <code>io-performance</code>: <code>normal</code> | <code>degraded</code> | <code>severely-degraded</code> | <code>stalled</code>).</p> </li> 
-    /// <li> <p> <code>volume-status.status</code> - The status of the volume (<code>ok</code> | <code>impaired</code> | <code>warning</code> | <code>insufficient-data</code>).</p> </li> 
+    /// <p>The filters.</p>
+    /// <ul>
+    /// <li> <p> <code>action.code</code> - The action code for the event (for example, <code>enable-volume-io</code>).</p> </li>
+    /// <li> <p> <code>action.description</code> - A description of the action.</p> </li>
+    /// <li> <p> <code>action.event-id</code> - The event ID associated with the action.</p> </li>
+    /// <li> <p> <code>availability-zone</code> - The Availability Zone of the instance.</p> </li>
+    /// <li> <p> <code>event.description</code> - A description of the event.</p> </li>
+    /// <li> <p> <code>event.event-id</code> - The event ID.</p> </li>
+    /// <li> <p> <code>event.event-type</code> - The event type (for <code>io-enabled</code>: <code>passed</code> | <code>failed</code>; for <code>io-performance</code>: <code>io-performance:degraded</code> | <code>io-performance:severely-degraded</code> | <code>io-performance:stalled</code>).</p> </li>
+    /// <li> <p> <code>event.not-after</code> - The latest end time for the event.</p> </li>
+    /// <li> <p> <code>event.not-before</code> - The earliest start time for the event.</p> </li>
+    /// <li> <p> <code>volume-status.details-name</code> - The cause for <code>volume-status.status</code> (<code>io-enabled</code> | <code>io-performance</code>).</p> </li>
+    /// <li> <p> <code>volume-status.details-status</code> - The status of <code>volume-status.details-name</code> (for <code>io-enabled</code>: <code>passed</code> | <code>failed</code>; for <code>io-performance</code>: <code>normal</code> | <code>degraded</code> | <code>severely-degraded</code> | <code>stalled</code>).</p> </li>
+    /// <li> <p> <code>volume-status.status</code> - The status of the volume (<code>ok</code> | <code>impaired</code> | <code>warning</code> | <code>insufficient-data</code>).</p> </li>
     /// </ul>
-    pub fn filters(&self) -> std::option::Option<& [crate::types::Filter]> {
+    pub fn filters(&self) -> std::option::Option<&[crate::types::Filter]> {
         self.filters.as_deref()
     }
     /// <p>The maximum number of volume results returned by <code>DescribeVolumeStatus</code> in paginated output. When this parameter is used, the request only returns <code>MaxResults</code> results in a single page along with a <code>NextToken</code> response element. The remaining results of the initial request can be seen by sending another request with the returned <code>NextToken</code> value. This value can be between 5 and 1,000; if <code>MaxResults</code> is given a value larger than 1,000, only 1,000 results are returned. If this parameter is not used, then <code>DescribeVolumeStatus</code> returns all results. You cannot specify this parameter and the volume IDs parameter in the same request.</p>
@@ -58,12 +58,12 @@ impl DescribeVolumeStatusInput {
         self.max_results
     }
     /// <p>The <code>NextToken</code> value to include in a future <code>DescribeVolumeStatus</code> request. When the results of the request exceed <code>MaxResults</code>, this value can be used to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// <p>The IDs of the volumes.</p> 
+    /// <p>The IDs of the volumes.</p>
     /// <p>Default: Describes all your volumes.</p>
-    pub fn volume_ids(&self) -> std::option::Option<& [std::string::String]> {
+    pub fn volume_ids(&self) -> std::option::Option<&[std::string::String]> {
         self.volume_ids.as_deref()
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
@@ -73,7 +73,8 @@ impl DescribeVolumeStatusInput {
 }
 impl DescribeVolumeStatusInput {
     /// Creates a new builder-style object to manufacture [`DescribeVolumeStatusInput`](crate::operation::describe_volume_status::DescribeVolumeStatusInput).
-    pub fn builder() -> crate::operation::describe_volume_status::builders::DescribeVolumeStatusInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::describe_volume_status::builders::DescribeVolumeStatusInputBuilder {
         crate::operation::describe_volume_status::builders::DescribeVolumeStatusInputBuilder::default()
     }
 }
@@ -93,44 +94,48 @@ impl DescribeVolumeStatusInputBuilder {
     ///
     /// To override the contents of this collection use [`set_filters`](Self::set_filters).
     ///
-    /// <p>The filters.</p> 
-    /// <ul> 
-    /// <li> <p> <code>action.code</code> - The action code for the event (for example, <code>enable-volume-io</code>).</p> </li> 
-    /// <li> <p> <code>action.description</code> - A description of the action.</p> </li> 
-    /// <li> <p> <code>action.event-id</code> - The event ID associated with the action.</p> </li> 
-    /// <li> <p> <code>availability-zone</code> - The Availability Zone of the instance.</p> </li> 
-    /// <li> <p> <code>event.description</code> - A description of the event.</p> </li> 
-    /// <li> <p> <code>event.event-id</code> - The event ID.</p> </li> 
-    /// <li> <p> <code>event.event-type</code> - The event type (for <code>io-enabled</code>: <code>passed</code> | <code>failed</code>; for <code>io-performance</code>: <code>io-performance:degraded</code> | <code>io-performance:severely-degraded</code> | <code>io-performance:stalled</code>).</p> </li> 
-    /// <li> <p> <code>event.not-after</code> - The latest end time for the event.</p> </li> 
-    /// <li> <p> <code>event.not-before</code> - The earliest start time for the event.</p> </li> 
-    /// <li> <p> <code>volume-status.details-name</code> - The cause for <code>volume-status.status</code> (<code>io-enabled</code> | <code>io-performance</code>).</p> </li> 
-    /// <li> <p> <code>volume-status.details-status</code> - The status of <code>volume-status.details-name</code> (for <code>io-enabled</code>: <code>passed</code> | <code>failed</code>; for <code>io-performance</code>: <code>normal</code> | <code>degraded</code> | <code>severely-degraded</code> | <code>stalled</code>).</p> </li> 
-    /// <li> <p> <code>volume-status.status</code> - The status of the volume (<code>ok</code> | <code>impaired</code> | <code>warning</code> | <code>insufficient-data</code>).</p> </li> 
+    /// <p>The filters.</p>
+    /// <ul>
+    /// <li> <p> <code>action.code</code> - The action code for the event (for example, <code>enable-volume-io</code>).</p> </li>
+    /// <li> <p> <code>action.description</code> - A description of the action.</p> </li>
+    /// <li> <p> <code>action.event-id</code> - The event ID associated with the action.</p> </li>
+    /// <li> <p> <code>availability-zone</code> - The Availability Zone of the instance.</p> </li>
+    /// <li> <p> <code>event.description</code> - A description of the event.</p> </li>
+    /// <li> <p> <code>event.event-id</code> - The event ID.</p> </li>
+    /// <li> <p> <code>event.event-type</code> - The event type (for <code>io-enabled</code>: <code>passed</code> | <code>failed</code>; for <code>io-performance</code>: <code>io-performance:degraded</code> | <code>io-performance:severely-degraded</code> | <code>io-performance:stalled</code>).</p> </li>
+    /// <li> <p> <code>event.not-after</code> - The latest end time for the event.</p> </li>
+    /// <li> <p> <code>event.not-before</code> - The earliest start time for the event.</p> </li>
+    /// <li> <p> <code>volume-status.details-name</code> - The cause for <code>volume-status.status</code> (<code>io-enabled</code> | <code>io-performance</code>).</p> </li>
+    /// <li> <p> <code>volume-status.details-status</code> - The status of <code>volume-status.details-name</code> (for <code>io-enabled</code>: <code>passed</code> | <code>failed</code>; for <code>io-performance</code>: <code>normal</code> | <code>degraded</code> | <code>severely-degraded</code> | <code>stalled</code>).</p> </li>
+    /// <li> <p> <code>volume-status.status</code> - The status of the volume (<code>ok</code> | <code>impaired</code> | <code>warning</code> | <code>insufficient-data</code>).</p> </li>
     /// </ul>
     pub fn filters(mut self, input: crate::types::Filter) -> Self {
         let mut v = self.filters.unwrap_or_default();
-                        v.push(input);
-                        self.filters = Some(v);
-                        self
+        v.push(input);
+        self.filters = Some(v);
+        self
     }
-    /// <p>The filters.</p> 
-    /// <ul> 
-    /// <li> <p> <code>action.code</code> - The action code for the event (for example, <code>enable-volume-io</code>).</p> </li> 
-    /// <li> <p> <code>action.description</code> - A description of the action.</p> </li> 
-    /// <li> <p> <code>action.event-id</code> - The event ID associated with the action.</p> </li> 
-    /// <li> <p> <code>availability-zone</code> - The Availability Zone of the instance.</p> </li> 
-    /// <li> <p> <code>event.description</code> - A description of the event.</p> </li> 
-    /// <li> <p> <code>event.event-id</code> - The event ID.</p> </li> 
-    /// <li> <p> <code>event.event-type</code> - The event type (for <code>io-enabled</code>: <code>passed</code> | <code>failed</code>; for <code>io-performance</code>: <code>io-performance:degraded</code> | <code>io-performance:severely-degraded</code> | <code>io-performance:stalled</code>).</p> </li> 
-    /// <li> <p> <code>event.not-after</code> - The latest end time for the event.</p> </li> 
-    /// <li> <p> <code>event.not-before</code> - The earliest start time for the event.</p> </li> 
-    /// <li> <p> <code>volume-status.details-name</code> - The cause for <code>volume-status.status</code> (<code>io-enabled</code> | <code>io-performance</code>).</p> </li> 
-    /// <li> <p> <code>volume-status.details-status</code> - The status of <code>volume-status.details-name</code> (for <code>io-enabled</code>: <code>passed</code> | <code>failed</code>; for <code>io-performance</code>: <code>normal</code> | <code>degraded</code> | <code>severely-degraded</code> | <code>stalled</code>).</p> </li> 
-    /// <li> <p> <code>volume-status.status</code> - The status of the volume (<code>ok</code> | <code>impaired</code> | <code>warning</code> | <code>insufficient-data</code>).</p> </li> 
+    /// <p>The filters.</p>
+    /// <ul>
+    /// <li> <p> <code>action.code</code> - The action code for the event (for example, <code>enable-volume-io</code>).</p> </li>
+    /// <li> <p> <code>action.description</code> - A description of the action.</p> </li>
+    /// <li> <p> <code>action.event-id</code> - The event ID associated with the action.</p> </li>
+    /// <li> <p> <code>availability-zone</code> - The Availability Zone of the instance.</p> </li>
+    /// <li> <p> <code>event.description</code> - A description of the event.</p> </li>
+    /// <li> <p> <code>event.event-id</code> - The event ID.</p> </li>
+    /// <li> <p> <code>event.event-type</code> - The event type (for <code>io-enabled</code>: <code>passed</code> | <code>failed</code>; for <code>io-performance</code>: <code>io-performance:degraded</code> | <code>io-performance:severely-degraded</code> | <code>io-performance:stalled</code>).</p> </li>
+    /// <li> <p> <code>event.not-after</code> - The latest end time for the event.</p> </li>
+    /// <li> <p> <code>event.not-before</code> - The earliest start time for the event.</p> </li>
+    /// <li> <p> <code>volume-status.details-name</code> - The cause for <code>volume-status.status</code> (<code>io-enabled</code> | <code>io-performance</code>).</p> </li>
+    /// <li> <p> <code>volume-status.details-status</code> - The status of <code>volume-status.details-name</code> (for <code>io-enabled</code>: <code>passed</code> | <code>failed</code>; for <code>io-performance</code>: <code>normal</code> | <code>degraded</code> | <code>severely-degraded</code> | <code>stalled</code>).</p> </li>
+    /// <li> <p> <code>volume-status.status</code> - The status of the volume (<code>ok</code> | <code>impaired</code> | <code>warning</code> | <code>insufficient-data</code>).</p> </li>
     /// </ul>
-    pub fn set_filters(mut self, input: std::option::Option<std::vec::Vec<crate::types::Filter>>) -> Self {
-        self.filters = input; self
+    pub fn set_filters(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::Filter>>,
+    ) -> Self {
+        self.filters = input;
+        self
     }
     /// <p>The maximum number of volume results returned by <code>DescribeVolumeStatus</code> in paginated output. When this parameter is used, the request only returns <code>MaxResults</code> results in a single page along with a <code>NextToken</code> response element. The remaining results of the initial request can be seen by sending another request with the returned <code>NextToken</code> value. This value can be between 5 and 1,000; if <code>MaxResults</code> is given a value larger than 1,000, only 1,000 results are returned. If this parameter is not used, then <code>DescribeVolumeStatus</code> returns all results. You cannot specify this parameter and the volume IDs parameter in the same request.</p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -139,7 +144,8 @@ impl DescribeVolumeStatusInputBuilder {
     }
     /// <p>The maximum number of volume results returned by <code>DescribeVolumeStatus</code> in paginated output. When this parameter is used, the request only returns <code>MaxResults</code> results in a single page along with a <code>NextToken</code> response element. The remaining results of the initial request can be seen by sending another request with the returned <code>NextToken</code> value. This value can be between 5 and 1,000; if <code>MaxResults</code> is given a value larger than 1,000, only 1,000 results are returned. If this parameter is not used, then <code>DescribeVolumeStatus</code> returns all results. You cannot specify this parameter and the volume IDs parameter in the same request.</p>
     pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_results = input; self
+        self.max_results = input;
+        self
     }
     /// <p>The <code>NextToken</code> value to include in a future <code>DescribeVolumeStatus</code> request. When the results of the request exceed <code>MaxResults</code>, this value can be used to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -148,24 +154,29 @@ impl DescribeVolumeStatusInputBuilder {
     }
     /// <p>The <code>NextToken</code> value to include in a future <code>DescribeVolumeStatus</code> request. When the results of the request exceed <code>MaxResults</code>, this value can be used to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input; self
+        self.next_token = input;
+        self
     }
     /// Appends an item to `volume_ids`.
     ///
     /// To override the contents of this collection use [`set_volume_ids`](Self::set_volume_ids).
     ///
-    /// <p>The IDs of the volumes.</p> 
+    /// <p>The IDs of the volumes.</p>
     /// <p>Default: Describes all your volumes.</p>
     pub fn volume_ids(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.volume_ids.unwrap_or_default();
-                        v.push(input.into());
-                        self.volume_ids = Some(v);
-                        self
+        v.push(input.into());
+        self.volume_ids = Some(v);
+        self
     }
-    /// <p>The IDs of the volumes.</p> 
+    /// <p>The IDs of the volumes.</p>
     /// <p>Default: Describes all your volumes.</p>
-    pub fn set_volume_ids(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-        self.volume_ids = input; self
+    pub fn set_volume_ids(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
+        self.volume_ids = input;
+        self
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn dry_run(mut self, input: bool) -> Self {
@@ -174,24 +185,24 @@ impl DescribeVolumeStatusInputBuilder {
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn set_dry_run(mut self, input: std::option::Option<bool>) -> Self {
-        self.dry_run = input; self
+        self.dry_run = input;
+        self
     }
     /// Consumes the builder and constructs a [`DescribeVolumeStatusInput`](crate::operation::describe_volume_status::DescribeVolumeStatusInput).
-    pub fn build(self) -> Result<crate::operation::describe_volume_status::DescribeVolumeStatusInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::describe_volume_status::DescribeVolumeStatusInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::describe_volume_status::DescribeVolumeStatusInput {
-                filters: self.filters
-                ,
-                max_results: self.max_results
-                ,
-                next_token: self.next_token
-                ,
-                volume_ids: self.volume_ids
-                ,
-                dry_run: self.dry_run
-                ,
-            }
+                filters: self.filters,
+                max_results: self.max_results,
+                next_token: self.next_token,
+                volume_ids: self.volume_ids,
+                dry_run: self.dry_run,
+            },
         )
     }
 }
-

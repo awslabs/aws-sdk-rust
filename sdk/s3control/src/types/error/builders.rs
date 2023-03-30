@@ -22,4 +22,3 @@ pub use crate::types::error::_idempotency_exception::IdempotencyExceptionBuilder
 pub use crate::types::error::_bucket_already_owned_by_you::BucketAlreadyOwnedByYouBuilder;
 
 pub use crate::types::error::_bucket_already_exists::BucketAlreadyExistsBuilder;
-

@@ -3,7 +3,7 @@
 /// <p>Information about a repository in an S3 bucket.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct S3Repository  {
+pub struct S3Repository {
     /// <p>The name of the repository in the S3 bucket.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -13,11 +13,11 @@ pub struct S3Repository  {
 }
 impl S3Repository {
     /// <p>The name of the repository in the S3 bucket.</p>
-    pub fn name(&self) -> std::option::Option<& str> {
+    pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>The name of the S3 bucket used for associating a new S3 repository. It must begin with <code>codeguru-reviewer-</code>. </p>
-    pub fn bucket_name(&self) -> std::option::Option<& str> {
+    pub fn bucket_name(&self) -> std::option::Option<&str> {
         self.bucket_name.as_deref()
     }
 }
@@ -43,7 +43,8 @@ impl S3RepositoryBuilder {
     }
     /// <p>The name of the repository in the S3 bucket.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input; self
+        self.name = input;
+        self
     }
     /// <p>The name of the S3 bucket used for associating a new S3 repository. It must begin with <code>codeguru-reviewer-</code>. </p>
     pub fn bucket_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -52,16 +53,14 @@ impl S3RepositoryBuilder {
     }
     /// <p>The name of the S3 bucket used for associating a new S3 repository. It must begin with <code>codeguru-reviewer-</code>. </p>
     pub fn set_bucket_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.bucket_name = input; self
+        self.bucket_name = input;
+        self
     }
     /// Consumes the builder and constructs a [`S3Repository`](crate::types::S3Repository).
     pub fn build(self) -> crate::types::S3Repository {
         crate::types::S3Repository {
-            name: self.name
-            ,
-            bucket_name: self.bucket_name
-            ,
+            name: self.name,
+            bucket_name: self.bucket_name,
         }
     }
 }
-

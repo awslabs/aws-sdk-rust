@@ -4,56 +4,77 @@ pub use crate::operation::submit_feedback::_submit_feedback_output::SubmitFeedba
 pub use crate::operation::submit_feedback::_submit_feedback_input::SubmitFeedbackInputBuilder;
 
 /// Fluent builder constructing a request to `SubmitFeedback`.
-/// 
+///
 /// <p>Sends feedback to CodeGuru Profiler about whether the anomaly detected by the analysis is useful or not.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct SubmitFeedbackFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::submit_feedback::builders::SubmitFeedbackInputBuilder
-            }
-impl SubmitFeedbackFluentBuilder  {
+    handle: std::sync::Arc<crate::client::Handle>,
+    inner: crate::operation::submit_feedback::builders::SubmitFeedbackInputBuilder,
+}
+impl SubmitFeedbackFluentBuilder {
     /// Creates a new `SubmitFeedback`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
-                    /// sent. The operation's inner [http::Request] can be modified as well.
-                    pub async fn customize(self) -> std::result::Result<
-                        crate::client::customize::CustomizableOperation<crate::operation::submit_feedback::SubmitFeedback, aws_http::retry::AwsResponseRetryClassifier,>,
-                        aws_smithy_http::result::SdkError<crate::operation::submit_feedback::SubmitFeedbackError>
-                    >  {
-                        let handle = self.handle.clone();
-                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-                    }
-    
-                    /// Sends the request and returns the response.
-                    ///
-                    /// If an error occurs, an `SdkError` will be returned with additional details that
-                    /// can be matched against.
-                    ///
-                    /// By default, any retryable failures will be retried twice. Retry behavior
-                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                    /// set when configuring the client.
-                    pub async fn send(self) -> std::result::Result<crate::operation::submit_feedback::SubmitFeedbackOutput, aws_smithy_http::result::SdkError<crate::operation::submit_feedback::SubmitFeedbackError>>
-                     {
-                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&self.handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        self.handle.client.call(op).await
-                    }
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle,
+            inner: Default::default(),
+        }
+    }
+
+    /// Consume this builder, creating a customizable operation that can be modified before being
+    /// sent. The operation's inner [http::Request] can be modified as well.
+    pub async fn customize(
+        self,
+    ) -> std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::submit_feedback::SubmitFeedback,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::result::SdkError<crate::operation::submit_feedback::SubmitFeedbackError>,
+    > {
+        let handle = self.handle.clone();
+        let operation = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+    }
+
+    /// Sends the request and returns the response.
+    ///
+    /// If an error occurs, an `SdkError` will be returned with additional details that
+    /// can be matched against.
+    ///
+    /// By default, any retryable failures will be retried twice. Retry behavior
+    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+    /// set when configuring the client.
+    pub async fn send(
+        self,
+    ) -> std::result::Result<
+        crate::operation::submit_feedback::SubmitFeedbackOutput,
+        aws_smithy_http::result::SdkError<crate::operation::submit_feedback::SubmitFeedbackError>,
+    > {
+        let op = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&self.handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        self.handle.client.call(op).await
+    }
     /// <p>The name of the profiling group that is associated with the analysis data.</p>
     pub fn profiling_group_name(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.profiling_group_name(input.into());
         self
     }
     /// <p>The name of the profiling group that is associated with the analysis data.</p>
-    pub fn set_profiling_group_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_profiling_group_name(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_profiling_group_name(input);
         self
     }
@@ -63,7 +84,10 @@ impl SubmitFeedbackFluentBuilder  {
         self
     }
     /// <p>The universally unique identifier (UUID) of the <a href="https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_AnomalyInstance.html"> <code>AnomalyInstance</code> </a> object that is included in the analysis data.</p>
-    pub fn set_anomaly_instance_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_anomaly_instance_id(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_anomaly_instance_id(input);
         self
     }
@@ -88,4 +112,3 @@ impl SubmitFeedbackFluentBuilder  {
         self
     }
 }
-

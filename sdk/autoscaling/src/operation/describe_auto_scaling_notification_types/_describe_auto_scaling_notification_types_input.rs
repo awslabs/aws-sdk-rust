@@ -2,11 +2,10 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeAutoScalingNotificationTypesInput  {
-}
+pub struct DescribeAutoScalingNotificationTypesInput {}
 impl DescribeAutoScalingNotificationTypesInput {
     /// Creates a new builder-style object to manufacture [`DescribeAutoScalingNotificationTypesInput`](crate::operation::describe_auto_scaling_notification_types::DescribeAutoScalingNotificationTypesInput).
-    pub fn builder() -> crate::operation::describe_auto_scaling_notification_types::builders::DescribeAutoScalingNotificationTypesInputBuilder {
+    pub fn builder() -> crate::operation::describe_auto_scaling_notification_types::builders::DescribeAutoScalingNotificationTypesInputBuilder{
         crate::operation::describe_auto_scaling_notification_types::builders::DescribeAutoScalingNotificationTypesInputBuilder::default()
     }
 }
@@ -14,15 +13,13 @@ impl DescribeAutoScalingNotificationTypesInput {
 /// A builder for [`DescribeAutoScalingNotificationTypesInput`](crate::operation::describe_auto_scaling_notification_types::DescribeAutoScalingNotificationTypesInput).
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-pub struct DescribeAutoScalingNotificationTypesInputBuilder {
-}
+pub struct DescribeAutoScalingNotificationTypesInputBuilder {}
 impl DescribeAutoScalingNotificationTypesInputBuilder {
     /// Consumes the builder and constructs a [`DescribeAutoScalingNotificationTypesInput`](crate::operation::describe_auto_scaling_notification_types::DescribeAutoScalingNotificationTypesInput).
-    pub fn build(self) -> Result<crate::operation::describe_auto_scaling_notification_types::DescribeAutoScalingNotificationTypesInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> Result<crate::operation::describe_auto_scaling_notification_types::DescribeAutoScalingNotificationTypesInput, aws_smithy_http::operation::error::BuildError>{
         Ok(
             crate::operation::describe_auto_scaling_notification_types::DescribeAutoScalingNotificationTypesInput {
             }
         )
     }
 }
-

@@ -3,14 +3,14 @@
 /// <p>The configuration of content in a body section.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct BodySectionContent  {
+pub struct BodySectionContent {
     /// <p>The layout configuration of a body section.</p>
     #[doc(hidden)]
     pub layout: std::option::Option<crate::types::SectionLayoutConfiguration>,
 }
 impl BodySectionContent {
     /// <p>The layout configuration of a body section.</p>
-    pub fn layout(&self) -> std::option::Option<& crate::types::SectionLayoutConfiguration> {
+    pub fn layout(&self) -> std::option::Option<&crate::types::SectionLayoutConfiguration> {
         self.layout.as_ref()
     }
 }
@@ -34,15 +34,17 @@ impl BodySectionContentBuilder {
         self
     }
     /// <p>The layout configuration of a body section.</p>
-    pub fn set_layout(mut self, input: std::option::Option<crate::types::SectionLayoutConfiguration>) -> Self {
-        self.layout = input; self
+    pub fn set_layout(
+        mut self,
+        input: std::option::Option<crate::types::SectionLayoutConfiguration>,
+    ) -> Self {
+        self.layout = input;
+        self
     }
     /// Consumes the builder and constructs a [`BodySectionContent`](crate::types::BodySectionContent).
     pub fn build(self) -> crate::types::BodySectionContent {
         crate::types::BodySectionContent {
-            layout: self.layout
-            ,
+            layout: self.layout,
         }
     }
 }
-

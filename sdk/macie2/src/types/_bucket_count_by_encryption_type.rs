@@ -3,7 +3,7 @@
 /// <p>Provides information about the number of S3 buckets that use certain types of server-side encryption by default or don't encrypt new objects by default. For detailed information about these settings, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/bucket-encryption.html">Setting default server-side encryption behavior for Amazon S3 buckets</a> in the <i>Amazon Simple Storage Service User Guide</i>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct BucketCountByEncryptionType  {
+pub struct BucketCountByEncryptionType {
     /// <p>The total number of buckets that use an KMS key to encrypt new objects by default, either an Amazon Web Services managed key or a customer managed key. These buckets use KMS encryption (SSE-KMS) by default.</p>
     #[doc(hidden)]
     pub kms_managed: i64,
@@ -59,7 +59,8 @@ impl BucketCountByEncryptionTypeBuilder {
     }
     /// <p>The total number of buckets that use an KMS key to encrypt new objects by default, either an Amazon Web Services managed key or a customer managed key. These buckets use KMS encryption (SSE-KMS) by default.</p>
     pub fn set_kms_managed(mut self, input: std::option::Option<i64>) -> Self {
-        self.kms_managed = input; self
+        self.kms_managed = input;
+        self
     }
     /// <p>The total number of buckets that use an Amazon S3 managed key to encrypt new objects by default. These buckets use Amazon S3 managed encryption (SSE-S3) by default.</p>
     pub fn s3_managed(mut self, input: i64) -> Self {
@@ -68,7 +69,8 @@ impl BucketCountByEncryptionTypeBuilder {
     }
     /// <p>The total number of buckets that use an Amazon S3 managed key to encrypt new objects by default. These buckets use Amazon S3 managed encryption (SSE-S3) by default.</p>
     pub fn set_s3_managed(mut self, input: std::option::Option<i64>) -> Self {
-        self.s3_managed = input; self
+        self.s3_managed = input;
+        self
     }
     /// <p>The total number of buckets that don't encrypt new objects by default. Default encryption is disabled for these buckets.</p>
     pub fn unencrypted(mut self, input: i64) -> Self {
@@ -77,7 +79,8 @@ impl BucketCountByEncryptionTypeBuilder {
     }
     /// <p>The total number of buckets that don't encrypt new objects by default. Default encryption is disabled for these buckets.</p>
     pub fn set_unencrypted(mut self, input: std::option::Option<i64>) -> Self {
-        self.unencrypted = input; self
+        self.unencrypted = input;
+        self
     }
     /// <p>The total number of buckets that Amazon Macie doesn't have current encryption metadata for. Macie can't provide current data about the default encryption settings for these buckets.</p>
     pub fn unknown(mut self, input: i64) -> Self {
@@ -86,24 +89,16 @@ impl BucketCountByEncryptionTypeBuilder {
     }
     /// <p>The total number of buckets that Amazon Macie doesn't have current encryption metadata for. Macie can't provide current data about the default encryption settings for these buckets.</p>
     pub fn set_unknown(mut self, input: std::option::Option<i64>) -> Self {
-        self.unknown = input; self
+        self.unknown = input;
+        self
     }
     /// Consumes the builder and constructs a [`BucketCountByEncryptionType`](crate::types::BucketCountByEncryptionType).
     pub fn build(self) -> crate::types::BucketCountByEncryptionType {
         crate::types::BucketCountByEncryptionType {
-            kms_managed: self.kms_managed
-                .unwrap_or_default()
-            ,
-            s3_managed: self.s3_managed
-                .unwrap_or_default()
-            ,
-            unencrypted: self.unencrypted
-                .unwrap_or_default()
-            ,
-            unknown: self.unknown
-                .unwrap_or_default()
-            ,
+            kms_managed: self.kms_managed.unwrap_or_default(),
+            s3_managed: self.s3_managed.unwrap_or_default(),
+            unencrypted: self.unencrypted.unwrap_or_default(),
+            unknown: self.unknown.unwrap_or_default(),
         }
     }
 }
-

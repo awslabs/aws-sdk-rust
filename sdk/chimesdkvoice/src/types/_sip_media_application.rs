@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SipMediaApplication  {
+pub struct SipMediaApplication {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub sip_media_application_id: std::option::Option<std::string::String>,
@@ -24,27 +24,27 @@ pub struct SipMediaApplication  {
 }
 impl SipMediaApplication {
     #[allow(missing_docs)] // documentation missing in model
-    pub fn sip_media_application_id(&self) -> std::option::Option<& str> {
+    pub fn sip_media_application_id(&self) -> std::option::Option<&str> {
         self.sip_media_application_id.as_deref()
     }
     #[allow(missing_docs)] // documentation missing in model
-    pub fn aws_region(&self) -> std::option::Option<& str> {
+    pub fn aws_region(&self) -> std::option::Option<&str> {
         self.aws_region.as_deref()
     }
     #[allow(missing_docs)] // documentation missing in model
-    pub fn name(&self) -> std::option::Option<& str> {
+    pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
     #[allow(missing_docs)] // documentation missing in model
-    pub fn endpoints(&self) -> std::option::Option<& [crate::types::SipMediaApplicationEndpoint]> {
+    pub fn endpoints(&self) -> std::option::Option<&[crate::types::SipMediaApplicationEndpoint]> {
         self.endpoints.as_deref()
     }
     #[allow(missing_docs)] // documentation missing in model
-    pub fn created_timestamp(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
+    pub fn created_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created_timestamp.as_ref()
     }
     #[allow(missing_docs)] // documentation missing in model
-    pub fn updated_timestamp(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
+    pub fn updated_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.updated_timestamp.as_ref()
     }
 }
@@ -62,7 +62,8 @@ pub struct SipMediaApplicationBuilder {
     pub(crate) sip_media_application_id: std::option::Option<std::string::String>,
     pub(crate) aws_region: std::option::Option<std::string::String>,
     pub(crate) name: std::option::Option<std::string::String>,
-    pub(crate) endpoints: std::option::Option<std::vec::Vec<crate::types::SipMediaApplicationEndpoint>>,
+    pub(crate) endpoints:
+        std::option::Option<std::vec::Vec<crate::types::SipMediaApplicationEndpoint>>,
     pub(crate) created_timestamp: std::option::Option<aws_smithy_types::DateTime>,
     pub(crate) updated_timestamp: std::option::Option<aws_smithy_types::DateTime>,
 }
@@ -73,8 +74,12 @@ impl SipMediaApplicationBuilder {
         self
     }
     #[allow(missing_docs)] // documentation missing in model
-    pub fn set_sip_media_application_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.sip_media_application_id = input; self
+    pub fn set_sip_media_application_id(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.sip_media_application_id = input;
+        self
     }
     #[allow(missing_docs)] // documentation missing in model
     pub fn aws_region(mut self, input: impl Into<std::string::String>) -> Self {
@@ -83,7 +88,8 @@ impl SipMediaApplicationBuilder {
     }
     #[allow(missing_docs)] // documentation missing in model
     pub fn set_aws_region(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.aws_region = input; self
+        self.aws_region = input;
+        self
     }
     #[allow(missing_docs)] // documentation missing in model
     pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -92,7 +98,8 @@ impl SipMediaApplicationBuilder {
     }
     #[allow(missing_docs)] // documentation missing in model
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input; self
+        self.name = input;
+        self
     }
     /// Appends an item to `endpoints`.
     ///
@@ -100,13 +107,17 @@ impl SipMediaApplicationBuilder {
     ///
     pub fn endpoints(mut self, input: crate::types::SipMediaApplicationEndpoint) -> Self {
         let mut v = self.endpoints.unwrap_or_default();
-                        v.push(input);
-                        self.endpoints = Some(v);
-                        self
+        v.push(input);
+        self.endpoints = Some(v);
+        self
     }
     #[allow(missing_docs)] // documentation missing in model
-    pub fn set_endpoints(mut self, input: std::option::Option<std::vec::Vec<crate::types::SipMediaApplicationEndpoint>>) -> Self {
-        self.endpoints = input; self
+    pub fn set_endpoints(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::SipMediaApplicationEndpoint>>,
+    ) -> Self {
+        self.endpoints = input;
+        self
     }
     #[allow(missing_docs)] // documentation missing in model
     pub fn created_timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -114,8 +125,12 @@ impl SipMediaApplicationBuilder {
         self
     }
     #[allow(missing_docs)] // documentation missing in model
-    pub fn set_created_timestamp(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.created_timestamp = input; self
+    pub fn set_created_timestamp(
+        mut self,
+        input: std::option::Option<aws_smithy_types::DateTime>,
+    ) -> Self {
+        self.created_timestamp = input;
+        self
     }
     #[allow(missing_docs)] // documentation missing in model
     pub fn updated_timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -123,25 +138,22 @@ impl SipMediaApplicationBuilder {
         self
     }
     #[allow(missing_docs)] // documentation missing in model
-    pub fn set_updated_timestamp(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.updated_timestamp = input; self
+    pub fn set_updated_timestamp(
+        mut self,
+        input: std::option::Option<aws_smithy_types::DateTime>,
+    ) -> Self {
+        self.updated_timestamp = input;
+        self
     }
     /// Consumes the builder and constructs a [`SipMediaApplication`](crate::types::SipMediaApplication).
     pub fn build(self) -> crate::types::SipMediaApplication {
         crate::types::SipMediaApplication {
-            sip_media_application_id: self.sip_media_application_id
-            ,
-            aws_region: self.aws_region
-            ,
-            name: self.name
-            ,
-            endpoints: self.endpoints
-            ,
-            created_timestamp: self.created_timestamp
-            ,
-            updated_timestamp: self.updated_timestamp
-            ,
+            sip_media_application_id: self.sip_media_application_id,
+            aws_region: self.aws_region,
+            name: self.name,
+            endpoints: self.endpoints,
+            created_timestamp: self.created_timestamp,
+            updated_timestamp: self.updated_timestamp,
         }
     }
 }
-

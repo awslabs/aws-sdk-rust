@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct RestoreAnalysisInput  {
+pub struct RestoreAnalysisInput {
     /// <p>The ID of the Amazon Web Services account that contains the analysis.</p>
     #[doc(hidden)]
     pub aws_account_id: std::option::Option<std::string::String>,
@@ -12,11 +12,11 @@ pub struct RestoreAnalysisInput  {
 }
 impl RestoreAnalysisInput {
     /// <p>The ID of the Amazon Web Services account that contains the analysis.</p>
-    pub fn aws_account_id(&self) -> std::option::Option<& str> {
+    pub fn aws_account_id(&self) -> std::option::Option<&str> {
         self.aws_account_id.as_deref()
     }
     /// <p>The ID of the analysis that you're restoring.</p>
-    pub fn analysis_id(&self) -> std::option::Option<& str> {
+    pub fn analysis_id(&self) -> std::option::Option<&str> {
         self.analysis_id.as_deref()
     }
 }
@@ -42,7 +42,8 @@ impl RestoreAnalysisInputBuilder {
     }
     /// <p>The ID of the Amazon Web Services account that contains the analysis.</p>
     pub fn set_aws_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.aws_account_id = input; self
+        self.aws_account_id = input;
+        self
     }
     /// <p>The ID of the analysis that you're restoring.</p>
     pub fn analysis_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -51,18 +52,19 @@ impl RestoreAnalysisInputBuilder {
     }
     /// <p>The ID of the analysis that you're restoring.</p>
     pub fn set_analysis_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.analysis_id = input; self
+        self.analysis_id = input;
+        self
     }
     /// Consumes the builder and constructs a [`RestoreAnalysisInput`](crate::operation::restore_analysis::RestoreAnalysisInput).
-    pub fn build(self) -> Result<crate::operation::restore_analysis::RestoreAnalysisInput, aws_smithy_http::operation::error::BuildError> {
-        Ok(
-            crate::operation::restore_analysis::RestoreAnalysisInput {
-                aws_account_id: self.aws_account_id
-                ,
-                analysis_id: self.analysis_id
-                ,
-            }
-        )
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::restore_analysis::RestoreAnalysisInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        Ok(crate::operation::restore_analysis::RestoreAnalysisInput {
+            aws_account_id: self.aws_account_id,
+            analysis_id: self.analysis_id,
+        })
     }
 }
-

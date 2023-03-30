@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateFlowInput  {
+pub struct CreateFlowInput {
     /// <p> The specified name of the flow. Spaces are not allowed. Use underscores (_) or hyphens (-) only. </p>
     #[doc(hidden)]
     pub flow_name: std::option::Option<std::string::String>,
@@ -20,52 +20,61 @@ pub struct CreateFlowInput  {
     pub source_flow_config: std::option::Option<crate::types::SourceFlowConfig>,
     /// <p> The configuration that controls how Amazon AppFlow places data in the destination connector. </p>
     #[doc(hidden)]
-    pub destination_flow_config_list: std::option::Option<std::vec::Vec<crate::types::DestinationFlowConfig>>,
+    pub destination_flow_config_list:
+        std::option::Option<std::vec::Vec<crate::types::DestinationFlowConfig>>,
     /// <p> A list of tasks that Amazon AppFlow performs while transferring the data in the flow run. </p>
     #[doc(hidden)]
     pub tasks: std::option::Option<std::vec::Vec<crate::types::Task>>,
     /// <p> The tags used to organize, track, or control access for your flow. </p>
     #[doc(hidden)]
-    pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub tags:
+        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>Specifies the configuration that Amazon AppFlow uses when it catalogs the data that's transferred by the associated flow. When Amazon AppFlow catalogs the data from a flow, it stores metadata in a data catalog.</p>
     #[doc(hidden)]
     pub metadata_catalog_config: std::option::Option<crate::types::MetadataCatalogConfig>,
 }
 impl CreateFlowInput {
     /// <p> The specified name of the flow. Spaces are not allowed. Use underscores (_) or hyphens (-) only. </p>
-    pub fn flow_name(&self) -> std::option::Option<& str> {
+    pub fn flow_name(&self) -> std::option::Option<&str> {
         self.flow_name.as_deref()
     }
     /// <p> A description of the flow you want to create. </p>
-    pub fn description(&self) -> std::option::Option<& str> {
+    pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
     /// <p> The ARN (Amazon Resource Name) of the Key Management Service (KMS) key you provide for encryption. This is required if you do not want to use the Amazon AppFlow-managed KMS key. If you don't provide anything here, Amazon AppFlow uses the Amazon AppFlow-managed KMS key. </p>
-    pub fn kms_arn(&self) -> std::option::Option<& str> {
+    pub fn kms_arn(&self) -> std::option::Option<&str> {
         self.kms_arn.as_deref()
     }
     /// <p> The trigger settings that determine how and when the flow runs. </p>
-    pub fn trigger_config(&self) -> std::option::Option<& crate::types::TriggerConfig> {
+    pub fn trigger_config(&self) -> std::option::Option<&crate::types::TriggerConfig> {
         self.trigger_config.as_ref()
     }
     /// <p> The configuration that controls how Amazon AppFlow retrieves data from the source connector. </p>
-    pub fn source_flow_config(&self) -> std::option::Option<& crate::types::SourceFlowConfig> {
+    pub fn source_flow_config(&self) -> std::option::Option<&crate::types::SourceFlowConfig> {
         self.source_flow_config.as_ref()
     }
     /// <p> The configuration that controls how Amazon AppFlow places data in the destination connector. </p>
-    pub fn destination_flow_config_list(&self) -> std::option::Option<& [crate::types::DestinationFlowConfig]> {
+    pub fn destination_flow_config_list(
+        &self,
+    ) -> std::option::Option<&[crate::types::DestinationFlowConfig]> {
         self.destination_flow_config_list.as_deref()
     }
     /// <p> A list of tasks that Amazon AppFlow performs while transferring the data in the flow run. </p>
-    pub fn tasks(&self) -> std::option::Option<& [crate::types::Task]> {
+    pub fn tasks(&self) -> std::option::Option<&[crate::types::Task]> {
         self.tasks.as_deref()
     }
     /// <p> The tags used to organize, track, or control access for your flow. </p>
-    pub fn tags(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
         self.tags.as_ref()
     }
     /// <p>Specifies the configuration that Amazon AppFlow uses when it catalogs the data that's transferred by the associated flow. When Amazon AppFlow catalogs the data from a flow, it stores metadata in a data catalog.</p>
-    pub fn metadata_catalog_config(&self) -> std::option::Option<& crate::types::MetadataCatalogConfig> {
+    pub fn metadata_catalog_config(
+        &self,
+    ) -> std::option::Option<&crate::types::MetadataCatalogConfig> {
         self.metadata_catalog_config.as_ref()
     }
 }
@@ -85,9 +94,11 @@ pub struct CreateFlowInputBuilder {
     pub(crate) kms_arn: std::option::Option<std::string::String>,
     pub(crate) trigger_config: std::option::Option<crate::types::TriggerConfig>,
     pub(crate) source_flow_config: std::option::Option<crate::types::SourceFlowConfig>,
-    pub(crate) destination_flow_config_list: std::option::Option<std::vec::Vec<crate::types::DestinationFlowConfig>>,
+    pub(crate) destination_flow_config_list:
+        std::option::Option<std::vec::Vec<crate::types::DestinationFlowConfig>>,
     pub(crate) tasks: std::option::Option<std::vec::Vec<crate::types::Task>>,
-    pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub(crate) tags:
+        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     pub(crate) metadata_catalog_config: std::option::Option<crate::types::MetadataCatalogConfig>,
 }
 impl CreateFlowInputBuilder {
@@ -98,7 +109,8 @@ impl CreateFlowInputBuilder {
     }
     /// <p> The specified name of the flow. Spaces are not allowed. Use underscores (_) or hyphens (-) only. </p>
     pub fn set_flow_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.flow_name = input; self
+        self.flow_name = input;
+        self
     }
     /// <p> A description of the flow you want to create. </p>
     pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -107,7 +119,8 @@ impl CreateFlowInputBuilder {
     }
     /// <p> A description of the flow you want to create. </p>
     pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.description = input; self
+        self.description = input;
+        self
     }
     /// <p> The ARN (Amazon Resource Name) of the Key Management Service (KMS) key you provide for encryption. This is required if you do not want to use the Amazon AppFlow-managed KMS key. If you don't provide anything here, Amazon AppFlow uses the Amazon AppFlow-managed KMS key. </p>
     pub fn kms_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -116,7 +129,8 @@ impl CreateFlowInputBuilder {
     }
     /// <p> The ARN (Amazon Resource Name) of the Key Management Service (KMS) key you provide for encryption. This is required if you do not want to use the Amazon AppFlow-managed KMS key. If you don't provide anything here, Amazon AppFlow uses the Amazon AppFlow-managed KMS key. </p>
     pub fn set_kms_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.kms_arn = input; self
+        self.kms_arn = input;
+        self
     }
     /// <p> The trigger settings that determine how and when the flow runs. </p>
     pub fn trigger_config(mut self, input: crate::types::TriggerConfig) -> Self {
@@ -124,8 +138,12 @@ impl CreateFlowInputBuilder {
         self
     }
     /// <p> The trigger settings that determine how and when the flow runs. </p>
-    pub fn set_trigger_config(mut self, input: std::option::Option<crate::types::TriggerConfig>) -> Self {
-        self.trigger_config = input; self
+    pub fn set_trigger_config(
+        mut self,
+        input: std::option::Option<crate::types::TriggerConfig>,
+    ) -> Self {
+        self.trigger_config = input;
+        self
     }
     /// <p> The configuration that controls how Amazon AppFlow retrieves data from the source connector. </p>
     pub fn source_flow_config(mut self, input: crate::types::SourceFlowConfig) -> Self {
@@ -133,23 +151,34 @@ impl CreateFlowInputBuilder {
         self
     }
     /// <p> The configuration that controls how Amazon AppFlow retrieves data from the source connector. </p>
-    pub fn set_source_flow_config(mut self, input: std::option::Option<crate::types::SourceFlowConfig>) -> Self {
-        self.source_flow_config = input; self
+    pub fn set_source_flow_config(
+        mut self,
+        input: std::option::Option<crate::types::SourceFlowConfig>,
+    ) -> Self {
+        self.source_flow_config = input;
+        self
     }
     /// Appends an item to `destination_flow_config_list`.
     ///
     /// To override the contents of this collection use [`set_destination_flow_config_list`](Self::set_destination_flow_config_list).
     ///
     /// <p> The configuration that controls how Amazon AppFlow places data in the destination connector. </p>
-    pub fn destination_flow_config_list(mut self, input: crate::types::DestinationFlowConfig) -> Self {
+    pub fn destination_flow_config_list(
+        mut self,
+        input: crate::types::DestinationFlowConfig,
+    ) -> Self {
         let mut v = self.destination_flow_config_list.unwrap_or_default();
-                        v.push(input);
-                        self.destination_flow_config_list = Some(v);
-                        self
+        v.push(input);
+        self.destination_flow_config_list = Some(v);
+        self
     }
     /// <p> The configuration that controls how Amazon AppFlow places data in the destination connector. </p>
-    pub fn set_destination_flow_config_list(mut self, input: std::option::Option<std::vec::Vec<crate::types::DestinationFlowConfig>>) -> Self {
-        self.destination_flow_config_list = input; self
+    pub fn set_destination_flow_config_list(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::DestinationFlowConfig>>,
+    ) -> Self {
+        self.destination_flow_config_list = input;
+        self
     }
     /// Appends an item to `tasks`.
     ///
@@ -158,28 +187,42 @@ impl CreateFlowInputBuilder {
     /// <p> A list of tasks that Amazon AppFlow performs while transferring the data in the flow run. </p>
     pub fn tasks(mut self, input: crate::types::Task) -> Self {
         let mut v = self.tasks.unwrap_or_default();
-                        v.push(input);
-                        self.tasks = Some(v);
-                        self
+        v.push(input);
+        self.tasks = Some(v);
+        self
     }
     /// <p> A list of tasks that Amazon AppFlow performs while transferring the data in the flow run. </p>
-    pub fn set_tasks(mut self, input: std::option::Option<std::vec::Vec<crate::types::Task>>) -> Self {
-        self.tasks = input; self
+    pub fn set_tasks(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::Task>>,
+    ) -> Self {
+        self.tasks = input;
+        self
     }
     /// Adds a key-value pair to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// <p> The tags used to organize, track, or control access for your flow. </p>
-    pub fn tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
+    pub fn tags(
+        mut self,
+        k: impl Into<std::string::String>,
+        v: impl Into<std::string::String>,
+    ) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
-                        hash_map.insert(k.into(), v.into());
-                        self.tags = Some(hash_map);
-                        self
+        hash_map.insert(k.into(), v.into());
+        self.tags = Some(hash_map);
+        self
     }
     /// <p> The tags used to organize, track, or control access for your flow. </p>
-    pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
-        self.tags = input; self
+    pub fn set_tags(
+        mut self,
+        input: std::option::Option<
+            std::collections::HashMap<std::string::String, std::string::String>,
+        >,
+    ) -> Self {
+        self.tags = input;
+        self
     }
     /// <p>Specifies the configuration that Amazon AppFlow uses when it catalogs the data that's transferred by the associated flow. When Amazon AppFlow catalogs the data from a flow, it stores metadata in a data catalog.</p>
     pub fn metadata_catalog_config(mut self, input: crate::types::MetadataCatalogConfig) -> Self {
@@ -187,33 +230,30 @@ impl CreateFlowInputBuilder {
         self
     }
     /// <p>Specifies the configuration that Amazon AppFlow uses when it catalogs the data that's transferred by the associated flow. When Amazon AppFlow catalogs the data from a flow, it stores metadata in a data catalog.</p>
-    pub fn set_metadata_catalog_config(mut self, input: std::option::Option<crate::types::MetadataCatalogConfig>) -> Self {
-        self.metadata_catalog_config = input; self
+    pub fn set_metadata_catalog_config(
+        mut self,
+        input: std::option::Option<crate::types::MetadataCatalogConfig>,
+    ) -> Self {
+        self.metadata_catalog_config = input;
+        self
     }
     /// Consumes the builder and constructs a [`CreateFlowInput`](crate::operation::create_flow::CreateFlowInput).
-    pub fn build(self) -> Result<crate::operation::create_flow::CreateFlowInput, aws_smithy_http::operation::error::BuildError> {
-        Ok(
-            crate::operation::create_flow::CreateFlowInput {
-                flow_name: self.flow_name
-                ,
-                description: self.description
-                ,
-                kms_arn: self.kms_arn
-                ,
-                trigger_config: self.trigger_config
-                ,
-                source_flow_config: self.source_flow_config
-                ,
-                destination_flow_config_list: self.destination_flow_config_list
-                ,
-                tasks: self.tasks
-                ,
-                tags: self.tags
-                ,
-                metadata_catalog_config: self.metadata_catalog_config
-                ,
-            }
-        )
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::create_flow::CreateFlowInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        Ok(crate::operation::create_flow::CreateFlowInput {
+            flow_name: self.flow_name,
+            description: self.description,
+            kms_arn: self.kms_arn,
+            trigger_config: self.trigger_config,
+            source_flow_config: self.source_flow_config,
+            destination_flow_config_list: self.destination_flow_config_list,
+            tasks: self.tasks,
+            tags: self.tags,
+            metadata_catalog_config: self.metadata_catalog_config,
+        })
     }
 }
-

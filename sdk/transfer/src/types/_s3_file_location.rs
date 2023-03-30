@@ -3,7 +3,7 @@
 /// <p>Specifies the details for the file location for the file that's being used in the workflow. Only applicable if you are using S3 storage.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct S3FileLocation  {
+pub struct S3FileLocation {
     /// <p>Specifies the S3 bucket that contains the file being used.</p>
     #[doc(hidden)]
     pub bucket: std::option::Option<std::string::String>,
@@ -19,19 +19,19 @@ pub struct S3FileLocation  {
 }
 impl S3FileLocation {
     /// <p>Specifies the S3 bucket that contains the file being used.</p>
-    pub fn bucket(&self) -> std::option::Option<& str> {
+    pub fn bucket(&self) -> std::option::Option<&str> {
         self.bucket.as_deref()
     }
     /// <p>The name assigned to the file when it was created in Amazon S3. You use the object key to retrieve the object.</p>
-    pub fn key(&self) -> std::option::Option<& str> {
+    pub fn key(&self) -> std::option::Option<&str> {
         self.key.as_deref()
     }
     /// <p>Specifies the file version.</p>
-    pub fn version_id(&self) -> std::option::Option<& str> {
+    pub fn version_id(&self) -> std::option::Option<&str> {
         self.version_id.as_deref()
     }
     /// <p>The entity tag is a hash of the object. The ETag reflects changes only to the contents of an object, not its metadata.</p>
-    pub fn etag(&self) -> std::option::Option<& str> {
+    pub fn etag(&self) -> std::option::Option<&str> {
         self.etag.as_deref()
     }
 }
@@ -59,7 +59,8 @@ impl S3FileLocationBuilder {
     }
     /// <p>Specifies the S3 bucket that contains the file being used.</p>
     pub fn set_bucket(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.bucket = input; self
+        self.bucket = input;
+        self
     }
     /// <p>The name assigned to the file when it was created in Amazon S3. You use the object key to retrieve the object.</p>
     pub fn key(mut self, input: impl Into<std::string::String>) -> Self {
@@ -68,7 +69,8 @@ impl S3FileLocationBuilder {
     }
     /// <p>The name assigned to the file when it was created in Amazon S3. You use the object key to retrieve the object.</p>
     pub fn set_key(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.key = input; self
+        self.key = input;
+        self
     }
     /// <p>Specifies the file version.</p>
     pub fn version_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -77,7 +79,8 @@ impl S3FileLocationBuilder {
     }
     /// <p>Specifies the file version.</p>
     pub fn set_version_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.version_id = input; self
+        self.version_id = input;
+        self
     }
     /// <p>The entity tag is a hash of the object. The ETag reflects changes only to the contents of an object, not its metadata.</p>
     pub fn etag(mut self, input: impl Into<std::string::String>) -> Self {
@@ -86,20 +89,16 @@ impl S3FileLocationBuilder {
     }
     /// <p>The entity tag is a hash of the object. The ETag reflects changes only to the contents of an object, not its metadata.</p>
     pub fn set_etag(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.etag = input; self
+        self.etag = input;
+        self
     }
     /// Consumes the builder and constructs a [`S3FileLocation`](crate::types::S3FileLocation).
     pub fn build(self) -> crate::types::S3FileLocation {
         crate::types::S3FileLocation {
-            bucket: self.bucket
-            ,
-            key: self.key
-            ,
-            version_id: self.version_id
-            ,
-            etag: self.etag
-            ,
+            bucket: self.bucket,
+            key: self.key,
+            version_id: self.version_id,
+            etag: self.etag,
         }
     }
 }
-

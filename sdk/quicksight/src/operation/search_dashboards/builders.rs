@@ -4,57 +4,84 @@ pub use crate::operation::search_dashboards::_search_dashboards_output::SearchDa
 pub use crate::operation::search_dashboards::_search_dashboards_input::SearchDashboardsInputBuilder;
 
 /// Fluent builder constructing a request to `SearchDashboards`.
-/// 
-/// <p>Searches for dashboards that belong to a user. </p> <note> 
-/// <p>This operation is eventually consistent. The results are best effort and may not reflect very recent updates and changes.</p> 
+///
+/// <p>Searches for dashboards that belong to a user. </p> <note>
+/// <p>This operation is eventually consistent. The results are best effort and may not reflect very recent updates and changes.</p>
 /// </note>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct SearchDashboardsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::search_dashboards::builders::SearchDashboardsInputBuilder
-            }
-impl SearchDashboardsFluentBuilder  {
+    handle: std::sync::Arc<crate::client::Handle>,
+    inner: crate::operation::search_dashboards::builders::SearchDashboardsInputBuilder,
+}
+impl SearchDashboardsFluentBuilder {
     /// Creates a new `SearchDashboards`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
-                    /// sent. The operation's inner [http::Request] can be modified as well.
-                    pub async fn customize(self) -> std::result::Result<
-                        crate::client::customize::CustomizableOperation<crate::operation::search_dashboards::SearchDashboards, aws_http::retry::AwsResponseRetryClassifier,>,
-                        aws_smithy_http::result::SdkError<crate::operation::search_dashboards::SearchDashboardsError>
-                    >  {
-                        let handle = self.handle.clone();
-                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-                    }
-    
-                    /// Sends the request and returns the response.
-                    ///
-                    /// If an error occurs, an `SdkError` will be returned with additional details that
-                    /// can be matched against.
-                    ///
-                    /// By default, any retryable failures will be retried twice. Retry behavior
-                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                    /// set when configuring the client.
-                    pub async fn send(self) -> std::result::Result<crate::operation::search_dashboards::SearchDashboardsOutput, aws_smithy_http::result::SdkError<crate::operation::search_dashboards::SearchDashboardsError>>
-                     {
-                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&self.handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        self.handle.client.call(op).await
-                    }
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle,
+            inner: Default::default(),
+        }
+    }
+
+    /// Consume this builder, creating a customizable operation that can be modified before being
+    /// sent. The operation's inner [http::Request] can be modified as well.
+    pub async fn customize(
+        self,
+    ) -> std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::search_dashboards::SearchDashboards,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::result::SdkError<
+            crate::operation::search_dashboards::SearchDashboardsError,
+        >,
+    > {
+        let handle = self.handle.clone();
+        let operation = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+    }
+
+    /// Sends the request and returns the response.
+    ///
+    /// If an error occurs, an `SdkError` will be returned with additional details that
+    /// can be matched against.
+    ///
+    /// By default, any retryable failures will be retried twice. Retry behavior
+    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+    /// set when configuring the client.
+    pub async fn send(
+        self,
+    ) -> std::result::Result<
+        crate::operation::search_dashboards::SearchDashboardsOutput,
+        aws_smithy_http::result::SdkError<
+            crate::operation::search_dashboards::SearchDashboardsError,
+        >,
+    > {
+        let op = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&self.handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        self.handle.client.call(op).await
+    }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::search_dashboards::paginator::SearchDashboardsPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::search_dashboards::paginator::SearchDashboardsPaginator {
-                            crate::operation::search_dashboards::paginator::SearchDashboardsPaginator::new(self.handle, self.inner)
-                        }
+    ///
+    /// Paginators are used by calling [`send().await`](crate::operation::search_dashboards::paginator::SearchDashboardsPaginator::send) which returns a `Stream`.
+    pub fn into_paginator(
+        self,
+    ) -> crate::operation::search_dashboards::paginator::SearchDashboardsPaginator {
+        crate::operation::search_dashboards::paginator::SearchDashboardsPaginator::new(
+            self.handle,
+            self.inner,
+        )
+    }
     /// <p>The ID of the Amazon Web Services account that contains the user whose dashboards you're searching for. </p>
     pub fn aws_account_id(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.aws_account_id(input.into());
@@ -75,7 +102,10 @@ impl SearchDashboardsFluentBuilder  {
         self
     }
     /// <p>The filters to apply to the search. Currently, you can search only by user name, for example, <code>"Filters": [ { "Name": "QUICKSIGHT_USER", "Operator": "StringEquals", "Value": "arn:aws:quicksight:us-east-1:1:user/default/UserName1" } ]</code> </p>
-    pub fn set_filters(mut self, input: std::option::Option<std::vec::Vec<crate::types::DashboardSearchFilter>>) -> Self {
+    pub fn set_filters(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::DashboardSearchFilter>>,
+    ) -> Self {
         self.inner = self.inner.set_filters(input);
         self
     }
@@ -100,4 +130,3 @@ impl SearchDashboardsFluentBuilder  {
         self
     }
 }
-

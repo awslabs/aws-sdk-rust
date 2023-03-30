@@ -3,7 +3,7 @@
 /// <p>Deletion details for an OpenSearch Serverless-managed interface endpoint.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteVpcEndpointDetail  {
+pub struct DeleteVpcEndpointDetail {
     /// <p>The unique identifier of the endpoint.</p>
     #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
@@ -16,15 +16,15 @@ pub struct DeleteVpcEndpointDetail  {
 }
 impl DeleteVpcEndpointDetail {
     /// <p>The unique identifier of the endpoint.</p>
-    pub fn id(&self) -> std::option::Option<& str> {
+    pub fn id(&self) -> std::option::Option<&str> {
         self.id.as_deref()
     }
     /// <p>The name of the endpoint.</p>
-    pub fn name(&self) -> std::option::Option<& str> {
+    pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>The current status of the endpoint deletion process.</p>
-    pub fn status(&self) -> std::option::Option<& crate::types::VpcEndpointStatus> {
+    pub fn status(&self) -> std::option::Option<&crate::types::VpcEndpointStatus> {
         self.status.as_ref()
     }
 }
@@ -51,7 +51,8 @@ impl DeleteVpcEndpointDetailBuilder {
     }
     /// <p>The unique identifier of the endpoint.</p>
     pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.id = input; self
+        self.id = input;
+        self
     }
     /// <p>The name of the endpoint.</p>
     pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -60,7 +61,8 @@ impl DeleteVpcEndpointDetailBuilder {
     }
     /// <p>The name of the endpoint.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input; self
+        self.name = input;
+        self
     }
     /// <p>The current status of the endpoint deletion process.</p>
     pub fn status(mut self, input: crate::types::VpcEndpointStatus) -> Self {
@@ -68,19 +70,19 @@ impl DeleteVpcEndpointDetailBuilder {
         self
     }
     /// <p>The current status of the endpoint deletion process.</p>
-    pub fn set_status(mut self, input: std::option::Option<crate::types::VpcEndpointStatus>) -> Self {
-        self.status = input; self
+    pub fn set_status(
+        mut self,
+        input: std::option::Option<crate::types::VpcEndpointStatus>,
+    ) -> Self {
+        self.status = input;
+        self
     }
     /// Consumes the builder and constructs a [`DeleteVpcEndpointDetail`](crate::types::DeleteVpcEndpointDetail).
     pub fn build(self) -> crate::types::DeleteVpcEndpointDetail {
         crate::types::DeleteVpcEndpointDetail {
-            id: self.id
-            ,
-            name: self.name
-            ,
-            status: self.status
-            ,
+            id: self.id,
+            name: self.name,
+            status: self.status,
         }
     }
 }
-

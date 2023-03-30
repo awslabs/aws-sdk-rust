@@ -3,15 +3,15 @@
 /// <p>Contains an asset model property definition. This property definition is applied to all assets created from the asset model.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AssetModelPropertyDefinition  {
+pub struct AssetModelPropertyDefinition {
     /// <p>The name of the property definition.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
-    /// <p>The data type of the property definition.</p> 
+    /// <p>The data type of the property definition.</p>
     /// <p>If you specify <code>STRUCT</code>, you must also specify <code>dataTypeSpec</code> to identify the type of the structure for this property.</p>
     #[doc(hidden)]
     pub data_type: std::option::Option<crate::types::PropertyDataType>,
-    /// <p>The data type of the structure for this property. This parameter is required on properties that have the <code>STRUCT</code> data type.</p> 
+    /// <p>The data type of the structure for this property. This parameter is required on properties that have the <code>STRUCT</code> data type.</p>
     /// <p>The options for this parameter depend on the type of the composite model in which you define this property. Use <code>AWS/ALARM_STATE</code> for alarm state in alarm composite models.</p>
     #[doc(hidden)]
     pub data_type_spec: std::option::Option<std::string::String>,
@@ -24,25 +24,25 @@ pub struct AssetModelPropertyDefinition  {
 }
 impl AssetModelPropertyDefinition {
     /// <p>The name of the property definition.</p>
-    pub fn name(&self) -> std::option::Option<& str> {
+    pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
-    /// <p>The data type of the property definition.</p> 
+    /// <p>The data type of the property definition.</p>
     /// <p>If you specify <code>STRUCT</code>, you must also specify <code>dataTypeSpec</code> to identify the type of the structure for this property.</p>
-    pub fn data_type(&self) -> std::option::Option<& crate::types::PropertyDataType> {
+    pub fn data_type(&self) -> std::option::Option<&crate::types::PropertyDataType> {
         self.data_type.as_ref()
     }
-    /// <p>The data type of the structure for this property. This parameter is required on properties that have the <code>STRUCT</code> data type.</p> 
+    /// <p>The data type of the structure for this property. This parameter is required on properties that have the <code>STRUCT</code> data type.</p>
     /// <p>The options for this parameter depend on the type of the composite model in which you define this property. Use <code>AWS/ALARM_STATE</code> for alarm state in alarm composite models.</p>
-    pub fn data_type_spec(&self) -> std::option::Option<& str> {
+    pub fn data_type_spec(&self) -> std::option::Option<&str> {
         self.data_type_spec.as_deref()
     }
     /// <p>The unit of the property definition, such as <code>Newtons</code> or <code>RPM</code>.</p>
-    pub fn unit(&self) -> std::option::Option<& str> {
+    pub fn unit(&self) -> std::option::Option<&str> {
         self.unit.as_deref()
     }
     /// <p>The property definition type (see <code>PropertyType</code>). You can only specify one type in a property definition.</p>
-    pub fn r#type(&self) -> std::option::Option<& crate::types::PropertyType> {
+    pub fn r#type(&self) -> std::option::Option<&crate::types::PropertyType> {
         self.r#type.as_ref()
     }
 }
@@ -71,29 +71,35 @@ impl AssetModelPropertyDefinitionBuilder {
     }
     /// <p>The name of the property definition.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input; self
+        self.name = input;
+        self
     }
-    /// <p>The data type of the property definition.</p> 
+    /// <p>The data type of the property definition.</p>
     /// <p>If you specify <code>STRUCT</code>, you must also specify <code>dataTypeSpec</code> to identify the type of the structure for this property.</p>
     pub fn data_type(mut self, input: crate::types::PropertyDataType) -> Self {
         self.data_type = Some(input);
         self
     }
-    /// <p>The data type of the property definition.</p> 
+    /// <p>The data type of the property definition.</p>
     /// <p>If you specify <code>STRUCT</code>, you must also specify <code>dataTypeSpec</code> to identify the type of the structure for this property.</p>
-    pub fn set_data_type(mut self, input: std::option::Option<crate::types::PropertyDataType>) -> Self {
-        self.data_type = input; self
+    pub fn set_data_type(
+        mut self,
+        input: std::option::Option<crate::types::PropertyDataType>,
+    ) -> Self {
+        self.data_type = input;
+        self
     }
-    /// <p>The data type of the structure for this property. This parameter is required on properties that have the <code>STRUCT</code> data type.</p> 
+    /// <p>The data type of the structure for this property. This parameter is required on properties that have the <code>STRUCT</code> data type.</p>
     /// <p>The options for this parameter depend on the type of the composite model in which you define this property. Use <code>AWS/ALARM_STATE</code> for alarm state in alarm composite models.</p>
     pub fn data_type_spec(mut self, input: impl Into<std::string::String>) -> Self {
         self.data_type_spec = Some(input.into());
         self
     }
-    /// <p>The data type of the structure for this property. This parameter is required on properties that have the <code>STRUCT</code> data type.</p> 
+    /// <p>The data type of the structure for this property. This parameter is required on properties that have the <code>STRUCT</code> data type.</p>
     /// <p>The options for this parameter depend on the type of the composite model in which you define this property. Use <code>AWS/ALARM_STATE</code> for alarm state in alarm composite models.</p>
     pub fn set_data_type_spec(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.data_type_spec = input; self
+        self.data_type_spec = input;
+        self
     }
     /// <p>The unit of the property definition, such as <code>Newtons</code> or <code>RPM</code>.</p>
     pub fn unit(mut self, input: impl Into<std::string::String>) -> Self {
@@ -102,7 +108,8 @@ impl AssetModelPropertyDefinitionBuilder {
     }
     /// <p>The unit of the property definition, such as <code>Newtons</code> or <code>RPM</code>.</p>
     pub fn set_unit(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.unit = input; self
+        self.unit = input;
+        self
     }
     /// <p>The property definition type (see <code>PropertyType</code>). You can only specify one type in a property definition.</p>
     pub fn r#type(mut self, input: crate::types::PropertyType) -> Self {
@@ -111,22 +118,17 @@ impl AssetModelPropertyDefinitionBuilder {
     }
     /// <p>The property definition type (see <code>PropertyType</code>). You can only specify one type in a property definition.</p>
     pub fn set_type(mut self, input: std::option::Option<crate::types::PropertyType>) -> Self {
-        self.r#type = input; self
+        self.r#type = input;
+        self
     }
     /// Consumes the builder and constructs a [`AssetModelPropertyDefinition`](crate::types::AssetModelPropertyDefinition).
     pub fn build(self) -> crate::types::AssetModelPropertyDefinition {
         crate::types::AssetModelPropertyDefinition {
-            name: self.name
-            ,
-            data_type: self.data_type
-            ,
-            data_type_spec: self.data_type_spec
-            ,
-            unit: self.unit
-            ,
-            r#type: self.r#type
-            ,
+            name: self.name,
+            data_type: self.data_type,
+            data_type_spec: self.data_type_spec,
+            unit: self.unit,
+            r#type: self.r#type,
         }
     }
 }
-

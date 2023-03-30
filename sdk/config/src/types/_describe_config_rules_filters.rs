@@ -3,14 +3,14 @@
 /// <p>Returns a filtered list of Detective or Proactive Config rules. By default, if the filter is not defined, this API returns an unfiltered list.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeConfigRulesFilters  {
+pub struct DescribeConfigRulesFilters {
     /// <p>The mode of an evaluation. The valid values are Detective or Proactive.</p>
     #[doc(hidden)]
     pub evaluation_mode: std::option::Option<crate::types::EvaluationMode>,
 }
 impl DescribeConfigRulesFilters {
     /// <p>The mode of an evaluation. The valid values are Detective or Proactive.</p>
-    pub fn evaluation_mode(&self) -> std::option::Option<& crate::types::EvaluationMode> {
+    pub fn evaluation_mode(&self) -> std::option::Option<&crate::types::EvaluationMode> {
         self.evaluation_mode.as_ref()
     }
 }
@@ -34,15 +34,17 @@ impl DescribeConfigRulesFiltersBuilder {
         self
     }
     /// <p>The mode of an evaluation. The valid values are Detective or Proactive.</p>
-    pub fn set_evaluation_mode(mut self, input: std::option::Option<crate::types::EvaluationMode>) -> Self {
-        self.evaluation_mode = input; self
+    pub fn set_evaluation_mode(
+        mut self,
+        input: std::option::Option<crate::types::EvaluationMode>,
+    ) -> Self {
+        self.evaluation_mode = input;
+        self
     }
     /// Consumes the builder and constructs a [`DescribeConfigRulesFilters`](crate::types::DescribeConfigRulesFilters).
     pub fn build(self) -> crate::types::DescribeConfigRulesFilters {
         crate::types::DescribeConfigRulesFilters {
-            evaluation_mode: self.evaluation_mode
-            ,
+            evaluation_mode: self.evaluation_mode,
         }
     }
 }
-

@@ -3,9 +3,9 @@
 /// <p>The options for Spot Instances.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct LaunchTemplateSpotMarketOptions  {
-    /// <p>The maximum hourly price you're willing to pay for the Spot Instances. We do not recommend using this parameter because it can lead to increased interruptions. If you do not specify this parameter, you will pay the current Spot price.</p> <important> 
-    /// <p>If you specify a maximum price, your Spot Instances will be interrupted more frequently than if you do not specify this parameter.</p> 
+pub struct LaunchTemplateSpotMarketOptions {
+    /// <p>The maximum hourly price you're willing to pay for the Spot Instances. We do not recommend using this parameter because it can lead to increased interruptions. If you do not specify this parameter, you will pay the current Spot price.</p> <important>
+    /// <p>If you specify a maximum price, your Spot Instances will be interrupted more frequently than if you do not specify this parameter.</p>
     /// </important>
     #[doc(hidden)]
     pub max_price: std::option::Option<std::string::String>,
@@ -20,17 +20,18 @@ pub struct LaunchTemplateSpotMarketOptions  {
     pub valid_until: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The behavior when a Spot Instance is interrupted.</p>
     #[doc(hidden)]
-    pub instance_interruption_behavior: std::option::Option<crate::types::InstanceInterruptionBehavior>,
+    pub instance_interruption_behavior:
+        std::option::Option<crate::types::InstanceInterruptionBehavior>,
 }
 impl LaunchTemplateSpotMarketOptions {
-    /// <p>The maximum hourly price you're willing to pay for the Spot Instances. We do not recommend using this parameter because it can lead to increased interruptions. If you do not specify this parameter, you will pay the current Spot price.</p> <important> 
-    /// <p>If you specify a maximum price, your Spot Instances will be interrupted more frequently than if you do not specify this parameter.</p> 
+    /// <p>The maximum hourly price you're willing to pay for the Spot Instances. We do not recommend using this parameter because it can lead to increased interruptions. If you do not specify this parameter, you will pay the current Spot price.</p> <important>
+    /// <p>If you specify a maximum price, your Spot Instances will be interrupted more frequently than if you do not specify this parameter.</p>
     /// </important>
-    pub fn max_price(&self) -> std::option::Option<& str> {
+    pub fn max_price(&self) -> std::option::Option<&str> {
         self.max_price.as_deref()
     }
     /// <p>The Spot Instance request type.</p>
-    pub fn spot_instance_type(&self) -> std::option::Option<& crate::types::SpotInstanceType> {
+    pub fn spot_instance_type(&self) -> std::option::Option<&crate::types::SpotInstanceType> {
         self.spot_instance_type.as_ref()
     }
     /// <p>The required duration for the Spot Instances (also known as Spot blocks), in minutes. This value must be a multiple of 60 (60, 120, 180, 240, 300, or 360).</p>
@@ -38,11 +39,13 @@ impl LaunchTemplateSpotMarketOptions {
         self.block_duration_minutes
     }
     /// <p>The end date of the request. For a one-time request, the request remains active until all instances launch, the request is canceled, or this date is reached. If the request is persistent, it remains active until it is canceled or this date and time is reached.</p>
-    pub fn valid_until(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
+    pub fn valid_until(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.valid_until.as_ref()
     }
     /// <p>The behavior when a Spot Instance is interrupted.</p>
-    pub fn instance_interruption_behavior(&self) -> std::option::Option<& crate::types::InstanceInterruptionBehavior> {
+    pub fn instance_interruption_behavior(
+        &self,
+    ) -> std::option::Option<&crate::types::InstanceInterruptionBehavior> {
         self.instance_interruption_behavior.as_ref()
     }
 }
@@ -61,21 +64,23 @@ pub struct LaunchTemplateSpotMarketOptionsBuilder {
     pub(crate) spot_instance_type: std::option::Option<crate::types::SpotInstanceType>,
     pub(crate) block_duration_minutes: std::option::Option<i32>,
     pub(crate) valid_until: std::option::Option<aws_smithy_types::DateTime>,
-    pub(crate) instance_interruption_behavior: std::option::Option<crate::types::InstanceInterruptionBehavior>,
+    pub(crate) instance_interruption_behavior:
+        std::option::Option<crate::types::InstanceInterruptionBehavior>,
 }
 impl LaunchTemplateSpotMarketOptionsBuilder {
-    /// <p>The maximum hourly price you're willing to pay for the Spot Instances. We do not recommend using this parameter because it can lead to increased interruptions. If you do not specify this parameter, you will pay the current Spot price.</p> <important> 
-    /// <p>If you specify a maximum price, your Spot Instances will be interrupted more frequently than if you do not specify this parameter.</p> 
+    /// <p>The maximum hourly price you're willing to pay for the Spot Instances. We do not recommend using this parameter because it can lead to increased interruptions. If you do not specify this parameter, you will pay the current Spot price.</p> <important>
+    /// <p>If you specify a maximum price, your Spot Instances will be interrupted more frequently than if you do not specify this parameter.</p>
     /// </important>
     pub fn max_price(mut self, input: impl Into<std::string::String>) -> Self {
         self.max_price = Some(input.into());
         self
     }
-    /// <p>The maximum hourly price you're willing to pay for the Spot Instances. We do not recommend using this parameter because it can lead to increased interruptions. If you do not specify this parameter, you will pay the current Spot price.</p> <important> 
-    /// <p>If you specify a maximum price, your Spot Instances will be interrupted more frequently than if you do not specify this parameter.</p> 
+    /// <p>The maximum hourly price you're willing to pay for the Spot Instances. We do not recommend using this parameter because it can lead to increased interruptions. If you do not specify this parameter, you will pay the current Spot price.</p> <important>
+    /// <p>If you specify a maximum price, your Spot Instances will be interrupted more frequently than if you do not specify this parameter.</p>
     /// </important>
     pub fn set_max_price(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.max_price = input; self
+        self.max_price = input;
+        self
     }
     /// <p>The Spot Instance request type.</p>
     pub fn spot_instance_type(mut self, input: crate::types::SpotInstanceType) -> Self {
@@ -83,8 +88,12 @@ impl LaunchTemplateSpotMarketOptionsBuilder {
         self
     }
     /// <p>The Spot Instance request type.</p>
-    pub fn set_spot_instance_type(mut self, input: std::option::Option<crate::types::SpotInstanceType>) -> Self {
-        self.spot_instance_type = input; self
+    pub fn set_spot_instance_type(
+        mut self,
+        input: std::option::Option<crate::types::SpotInstanceType>,
+    ) -> Self {
+        self.spot_instance_type = input;
+        self
     }
     /// <p>The required duration for the Spot Instances (also known as Spot blocks), in minutes. This value must be a multiple of 60 (60, 120, 180, 240, 300, or 360).</p>
     pub fn block_duration_minutes(mut self, input: i32) -> Self {
@@ -93,7 +102,8 @@ impl LaunchTemplateSpotMarketOptionsBuilder {
     }
     /// <p>The required duration for the Spot Instances (also known as Spot blocks), in minutes. This value must be a multiple of 60 (60, 120, 180, 240, 300, or 360).</p>
     pub fn set_block_duration_minutes(mut self, input: std::option::Option<i32>) -> Self {
-        self.block_duration_minutes = input; self
+        self.block_duration_minutes = input;
+        self
     }
     /// <p>The end date of the request. For a one-time request, the request remains active until all instances launch, the request is canceled, or this date is reached. If the request is persistent, it remains active until it is canceled or this date and time is reached.</p>
     pub fn valid_until(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -101,32 +111,37 @@ impl LaunchTemplateSpotMarketOptionsBuilder {
         self
     }
     /// <p>The end date of the request. For a one-time request, the request remains active until all instances launch, the request is canceled, or this date is reached. If the request is persistent, it remains active until it is canceled or this date and time is reached.</p>
-    pub fn set_valid_until(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.valid_until = input; self
+    pub fn set_valid_until(
+        mut self,
+        input: std::option::Option<aws_smithy_types::DateTime>,
+    ) -> Self {
+        self.valid_until = input;
+        self
     }
     /// <p>The behavior when a Spot Instance is interrupted.</p>
-    pub fn instance_interruption_behavior(mut self, input: crate::types::InstanceInterruptionBehavior) -> Self {
+    pub fn instance_interruption_behavior(
+        mut self,
+        input: crate::types::InstanceInterruptionBehavior,
+    ) -> Self {
         self.instance_interruption_behavior = Some(input);
         self
     }
     /// <p>The behavior when a Spot Instance is interrupted.</p>
-    pub fn set_instance_interruption_behavior(mut self, input: std::option::Option<crate::types::InstanceInterruptionBehavior>) -> Self {
-        self.instance_interruption_behavior = input; self
+    pub fn set_instance_interruption_behavior(
+        mut self,
+        input: std::option::Option<crate::types::InstanceInterruptionBehavior>,
+    ) -> Self {
+        self.instance_interruption_behavior = input;
+        self
     }
     /// Consumes the builder and constructs a [`LaunchTemplateSpotMarketOptions`](crate::types::LaunchTemplateSpotMarketOptions).
     pub fn build(self) -> crate::types::LaunchTemplateSpotMarketOptions {
         crate::types::LaunchTemplateSpotMarketOptions {
-            max_price: self.max_price
-            ,
-            spot_instance_type: self.spot_instance_type
-            ,
-            block_duration_minutes: self.block_duration_minutes
-            ,
-            valid_until: self.valid_until
-            ,
-            instance_interruption_behavior: self.instance_interruption_behavior
-            ,
+            max_price: self.max_price,
+            spot_instance_type: self.spot_instance_type,
+            block_duration_minutes: self.block_duration_minutes,
+            valid_until: self.valid_until,
+            instance_interruption_behavior: self.instance_interruption_behavior,
         }
     }
 }
-

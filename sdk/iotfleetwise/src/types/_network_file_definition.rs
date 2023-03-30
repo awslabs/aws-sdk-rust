@@ -21,7 +21,11 @@ impl NetworkFileDefinition {
     /// Tries to convert the enum instance into [`CanDbc`](crate::types::NetworkFileDefinition::CanDbc), extracting the inner [`CanDbcDefinition`](crate::types::CanDbcDefinition).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_can_dbc(&self) -> std::result::Result<&crate::types::CanDbcDefinition, &Self> {
-        if let NetworkFileDefinition::CanDbc(val) = &self { Ok(val) } else { Err(self) }
+        if let NetworkFileDefinition::CanDbc(val) = &self {
+            Ok(val)
+        } else {
+            Err(self)
+        }
     }
     /// Returns true if this is a [`CanDbc`](crate::types::NetworkFileDefinition::CanDbc).
     pub fn is_can_dbc(&self) -> bool {
@@ -32,4 +36,3 @@ impl NetworkFileDefinition {
         matches!(self, Self::Unknown)
     }
 }
-

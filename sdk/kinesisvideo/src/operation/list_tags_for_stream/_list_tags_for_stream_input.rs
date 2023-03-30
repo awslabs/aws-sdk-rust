@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListTagsForStreamInput  {
+pub struct ListTagsForStreamInput {
     /// <p>If you specify this parameter and the result of a <code>ListTagsForStream</code> call is truncated, the response includes a token that you can use in the next request to fetch the next batch of tags.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
@@ -15,21 +15,22 @@ pub struct ListTagsForStreamInput  {
 }
 impl ListTagsForStreamInput {
     /// <p>If you specify this parameter and the result of a <code>ListTagsForStream</code> call is truncated, the response includes a token that you can use in the next request to fetch the next batch of tags.</p>
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the stream that you want to list tags for.</p>
-    pub fn stream_arn(&self) -> std::option::Option<& str> {
+    pub fn stream_arn(&self) -> std::option::Option<&str> {
         self.stream_arn.as_deref()
     }
     /// <p>The name of the stream that you want to list tags for.</p>
-    pub fn stream_name(&self) -> std::option::Option<& str> {
+    pub fn stream_name(&self) -> std::option::Option<&str> {
         self.stream_name.as_deref()
     }
 }
 impl ListTagsForStreamInput {
     /// Creates a new builder-style object to manufacture [`ListTagsForStreamInput`](crate::operation::list_tags_for_stream::ListTagsForStreamInput).
-    pub fn builder() -> crate::operation::list_tags_for_stream::builders::ListTagsForStreamInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::list_tags_for_stream::builders::ListTagsForStreamInputBuilder {
         crate::operation::list_tags_for_stream::builders::ListTagsForStreamInputBuilder::default()
     }
 }
@@ -50,7 +51,8 @@ impl ListTagsForStreamInputBuilder {
     }
     /// <p>If you specify this parameter and the result of a <code>ListTagsForStream</code> call is truncated, the response includes a token that you can use in the next request to fetch the next batch of tags.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input; self
+        self.next_token = input;
+        self
     }
     /// <p>The Amazon Resource Name (ARN) of the stream that you want to list tags for.</p>
     pub fn stream_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -59,7 +61,8 @@ impl ListTagsForStreamInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the stream that you want to list tags for.</p>
     pub fn set_stream_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.stream_arn = input; self
+        self.stream_arn = input;
+        self
     }
     /// <p>The name of the stream that you want to list tags for.</p>
     pub fn stream_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -68,20 +71,22 @@ impl ListTagsForStreamInputBuilder {
     }
     /// <p>The name of the stream that you want to list tags for.</p>
     pub fn set_stream_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.stream_name = input; self
+        self.stream_name = input;
+        self
     }
     /// Consumes the builder and constructs a [`ListTagsForStreamInput`](crate::operation::list_tags_for_stream::ListTagsForStreamInput).
-    pub fn build(self) -> Result<crate::operation::list_tags_for_stream::ListTagsForStreamInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::list_tags_for_stream::ListTagsForStreamInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::list_tags_for_stream::ListTagsForStreamInput {
-                next_token: self.next_token
-                ,
-                stream_arn: self.stream_arn
-                ,
-                stream_name: self.stream_name
-                ,
-            }
+                next_token: self.next_token,
+                stream_arn: self.stream_arn,
+                stream_name: self.stream_name,
+            },
         )
     }
 }
-

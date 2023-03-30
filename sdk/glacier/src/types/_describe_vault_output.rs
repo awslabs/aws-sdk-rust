@@ -3,7 +3,7 @@
 /// <p>Contains the Amazon S3 Glacier response to your request.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeVaultOutput  {
+pub struct DescribeVaultOutput {
     /// <p>The Amazon Resource Name (ARN) of the vault.</p>
     #[doc(hidden)]
     pub vault_arn: std::option::Option<std::string::String>,
@@ -25,19 +25,19 @@ pub struct DescribeVaultOutput  {
 }
 impl DescribeVaultOutput {
     /// <p>The Amazon Resource Name (ARN) of the vault.</p>
-    pub fn vault_arn(&self) -> std::option::Option<& str> {
+    pub fn vault_arn(&self) -> std::option::Option<&str> {
         self.vault_arn.as_deref()
     }
     /// <p>The name of the vault.</p>
-    pub fn vault_name(&self) -> std::option::Option<& str> {
+    pub fn vault_name(&self) -> std::option::Option<&str> {
         self.vault_name.as_deref()
     }
     /// <p>The Universal Coordinated Time (UTC) date when the vault was created. This value should be a string in the ISO 8601 date format, for example <code>2012-03-20T17:03:43.221Z</code>.</p>
-    pub fn creation_date(&self) -> std::option::Option<& str> {
+    pub fn creation_date(&self) -> std::option::Option<&str> {
         self.creation_date.as_deref()
     }
     /// <p>The Universal Coordinated Time (UTC) date when Amazon S3 Glacier completed the last vault inventory. This value should be a string in the ISO 8601 date format, for example <code>2012-03-20T17:03:43.221Z</code>.</p>
-    pub fn last_inventory_date(&self) -> std::option::Option<& str> {
+    pub fn last_inventory_date(&self) -> std::option::Option<&str> {
         self.last_inventory_date.as_deref()
     }
     /// <p>The number of archives in the vault as of the last inventory date. This field will return <code>null</code> if an inventory has not yet run on the vault, for example if you just created the vault.</p>
@@ -75,7 +75,8 @@ impl DescribeVaultOutputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the vault.</p>
     pub fn set_vault_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.vault_arn = input; self
+        self.vault_arn = input;
+        self
     }
     /// <p>The name of the vault.</p>
     pub fn vault_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -84,7 +85,8 @@ impl DescribeVaultOutputBuilder {
     }
     /// <p>The name of the vault.</p>
     pub fn set_vault_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.vault_name = input; self
+        self.vault_name = input;
+        self
     }
     /// <p>The Universal Coordinated Time (UTC) date when the vault was created. This value should be a string in the ISO 8601 date format, for example <code>2012-03-20T17:03:43.221Z</code>.</p>
     pub fn creation_date(mut self, input: impl Into<std::string::String>) -> Self {
@@ -93,7 +95,8 @@ impl DescribeVaultOutputBuilder {
     }
     /// <p>The Universal Coordinated Time (UTC) date when the vault was created. This value should be a string in the ISO 8601 date format, for example <code>2012-03-20T17:03:43.221Z</code>.</p>
     pub fn set_creation_date(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.creation_date = input; self
+        self.creation_date = input;
+        self
     }
     /// <p>The Universal Coordinated Time (UTC) date when Amazon S3 Glacier completed the last vault inventory. This value should be a string in the ISO 8601 date format, for example <code>2012-03-20T17:03:43.221Z</code>.</p>
     pub fn last_inventory_date(mut self, input: impl Into<std::string::String>) -> Self {
@@ -101,8 +104,12 @@ impl DescribeVaultOutputBuilder {
         self
     }
     /// <p>The Universal Coordinated Time (UTC) date when Amazon S3 Glacier completed the last vault inventory. This value should be a string in the ISO 8601 date format, for example <code>2012-03-20T17:03:43.221Z</code>.</p>
-    pub fn set_last_inventory_date(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.last_inventory_date = input; self
+    pub fn set_last_inventory_date(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.last_inventory_date = input;
+        self
     }
     /// <p>The number of archives in the vault as of the last inventory date. This field will return <code>null</code> if an inventory has not yet run on the vault, for example if you just created the vault.</p>
     pub fn number_of_archives(mut self, input: i64) -> Self {
@@ -111,7 +118,8 @@ impl DescribeVaultOutputBuilder {
     }
     /// <p>The number of archives in the vault as of the last inventory date. This field will return <code>null</code> if an inventory has not yet run on the vault, for example if you just created the vault.</p>
     pub fn set_number_of_archives(mut self, input: std::option::Option<i64>) -> Self {
-        self.number_of_archives = input; self
+        self.number_of_archives = input;
+        self
     }
     /// <p>Total size, in bytes, of the archives in the vault as of the last inventory date. This field will return null if an inventory has not yet run on the vault, for example if you just created the vault.</p>
     pub fn size_in_bytes(mut self, input: i64) -> Self {
@@ -120,26 +128,18 @@ impl DescribeVaultOutputBuilder {
     }
     /// <p>Total size, in bytes, of the archives in the vault as of the last inventory date. This field will return null if an inventory has not yet run on the vault, for example if you just created the vault.</p>
     pub fn set_size_in_bytes(mut self, input: std::option::Option<i64>) -> Self {
-        self.size_in_bytes = input; self
+        self.size_in_bytes = input;
+        self
     }
     /// Consumes the builder and constructs a [`DescribeVaultOutput`](crate::types::DescribeVaultOutput).
     pub fn build(self) -> crate::types::DescribeVaultOutput {
         crate::types::DescribeVaultOutput {
-            vault_arn: self.vault_arn
-            ,
-            vault_name: self.vault_name
-            ,
-            creation_date: self.creation_date
-            ,
-            last_inventory_date: self.last_inventory_date
-            ,
-            number_of_archives: self.number_of_archives
-                .unwrap_or_default()
-            ,
-            size_in_bytes: self.size_in_bytes
-                .unwrap_or_default()
-            ,
+            vault_arn: self.vault_arn,
+            vault_name: self.vault_name,
+            creation_date: self.creation_date,
+            last_inventory_date: self.last_inventory_date,
+            number_of_archives: self.number_of_archives.unwrap_or_default(),
+            size_in_bytes: self.size_in_bytes.unwrap_or_default(),
         }
     }
 }
-

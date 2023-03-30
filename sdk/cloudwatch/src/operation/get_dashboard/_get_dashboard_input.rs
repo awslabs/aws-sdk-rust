@@ -2,14 +2,14 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetDashboardInput  {
+pub struct GetDashboardInput {
     /// <p>The name of the dashboard to be described.</p>
     #[doc(hidden)]
     pub dashboard_name: std::option::Option<std::string::String>,
 }
 impl GetDashboardInput {
     /// <p>The name of the dashboard to be described.</p>
-    pub fn dashboard_name(&self) -> std::option::Option<& str> {
+    pub fn dashboard_name(&self) -> std::option::Option<&str> {
         self.dashboard_name.as_deref()
     }
 }
@@ -34,16 +34,18 @@ impl GetDashboardInputBuilder {
     }
     /// <p>The name of the dashboard to be described.</p>
     pub fn set_dashboard_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.dashboard_name = input; self
+        self.dashboard_name = input;
+        self
     }
     /// Consumes the builder and constructs a [`GetDashboardInput`](crate::operation::get_dashboard::GetDashboardInput).
-    pub fn build(self) -> Result<crate::operation::get_dashboard::GetDashboardInput, aws_smithy_http::operation::error::BuildError> {
-        Ok(
-            crate::operation::get_dashboard::GetDashboardInput {
-                dashboard_name: self.dashboard_name
-                ,
-            }
-        )
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::get_dashboard::GetDashboardInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        Ok(crate::operation::get_dashboard::GetDashboardInput {
+            dashboard_name: self.dashboard_name,
+        })
     }
 }
-

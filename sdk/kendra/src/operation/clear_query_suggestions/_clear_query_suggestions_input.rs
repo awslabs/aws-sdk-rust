@@ -2,20 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ClearQuerySuggestionsInput  {
+pub struct ClearQuerySuggestionsInput {
     /// <p>The identifier of the index you want to clear query suggestions from.</p>
     #[doc(hidden)]
     pub index_id: std::option::Option<std::string::String>,
 }
 impl ClearQuerySuggestionsInput {
     /// <p>The identifier of the index you want to clear query suggestions from.</p>
-    pub fn index_id(&self) -> std::option::Option<& str> {
+    pub fn index_id(&self) -> std::option::Option<&str> {
         self.index_id.as_deref()
     }
 }
 impl ClearQuerySuggestionsInput {
     /// Creates a new builder-style object to manufacture [`ClearQuerySuggestionsInput`](crate::operation::clear_query_suggestions::ClearQuerySuggestionsInput).
-    pub fn builder() -> crate::operation::clear_query_suggestions::builders::ClearQuerySuggestionsInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::clear_query_suggestions::builders::ClearQuerySuggestionsInputBuilder
+    {
         crate::operation::clear_query_suggestions::builders::ClearQuerySuggestionsInputBuilder::default()
     }
 }
@@ -34,16 +36,20 @@ impl ClearQuerySuggestionsInputBuilder {
     }
     /// <p>The identifier of the index you want to clear query suggestions from.</p>
     pub fn set_index_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.index_id = input; self
+        self.index_id = input;
+        self
     }
     /// Consumes the builder and constructs a [`ClearQuerySuggestionsInput`](crate::operation::clear_query_suggestions::ClearQuerySuggestionsInput).
-    pub fn build(self) -> Result<crate::operation::clear_query_suggestions::ClearQuerySuggestionsInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::clear_query_suggestions::ClearQuerySuggestionsInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::clear_query_suggestions::ClearQuerySuggestionsInput {
-                index_id: self.index_id
-                ,
-            }
+                index_id: self.index_id,
+            },
         )
     }
 }
-

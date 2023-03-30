@@ -4,50 +4,61 @@ pub use crate::operation::associate_website_certificate_authority::_associate_we
 pub use crate::operation::associate_website_certificate_authority::_associate_website_certificate_authority_input::AssociateWebsiteCertificateAuthorityInputBuilder;
 
 /// Fluent builder constructing a request to `AssociateWebsiteCertificateAuthority`.
-/// 
+///
 /// <p>Imports the root certificate of a certificate authority (CA) used to obtain TLS certificates used by associated websites within the company network.</p>
-#[deprecated(note = "Amazon WorkLink is no longer supported. This will be removed in a future version of the SDK.")]
+#[deprecated(
+    note = "Amazon WorkLink is no longer supported. This will be removed in a future version of the SDK."
+)]
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct AssociateWebsiteCertificateAuthorityFluentBuilder {
                 handle: std::sync::Arc<crate::client::Handle>,
                 inner: crate::operation::associate_website_certificate_authority::builders::AssociateWebsiteCertificateAuthorityInputBuilder
             }
-impl AssociateWebsiteCertificateAuthorityFluentBuilder  {
+impl AssociateWebsiteCertificateAuthorityFluentBuilder {
     /// Creates a new `AssociateWebsiteCertificateAuthority`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
-                    /// sent. The operation's inner [http::Request] can be modified as well.
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle,
+            inner: Default::default(),
+        }
+    }
+
+    /// Consume this builder, creating a customizable operation that can be modified before being
+    /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::associate_website_certificate_authority::AssociateWebsiteCertificateAuthority, aws_http::retry::AwsResponseRetryClassifier,>,
                         aws_smithy_http::result::SdkError<crate::operation::associate_website_certificate_authority::AssociateWebsiteCertificateAuthorityError>
-                    >  {
-                        let handle = self.handle.clone();
-                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-                    }
-    
-                    /// Sends the request and returns the response.
-                    ///
-                    /// If an error occurs, an `SdkError` will be returned with additional details that
-                    /// can be matched against.
-                    ///
-                    /// By default, any retryable failures will be retried twice. Retry behavior
-                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                    /// set when configuring the client.
+    >{
+        let handle = self.handle.clone();
+        let operation = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+    }
+
+    /// Sends the request and returns the response.
+    ///
+    /// If an error occurs, an `SdkError` will be returned with additional details that
+    /// can be matched against.
+    ///
+    /// By default, any retryable failures will be retried twice. Retry behavior
+    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+    /// set when configuring the client.
                     pub async fn send(self) -> std::result::Result<crate::operation::associate_website_certificate_authority::AssociateWebsiteCertificateAuthorityOutput, aws_smithy_http::result::SdkError<crate::operation::associate_website_certificate_authority::AssociateWebsiteCertificateAuthorityError>>
                      {
-                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&self.handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        self.handle.client.call(op).await
-                    }
+        let op = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&self.handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        self.handle.client.call(op).await
+    }
     /// <p>The ARN of the fleet.</p>
     pub fn fleet_arn(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.fleet_arn(input.into());
@@ -79,4 +90,3 @@ impl AssociateWebsiteCertificateAuthorityFluentBuilder  {
         self
     }
 }
-

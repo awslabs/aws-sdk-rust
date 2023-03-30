@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListQueuesInput  {
+pub struct ListQueuesInput {
     /// Optional. When you request a list of queues, you can choose to list them alphabetically by NAME or chronologically by CREATION_DATE. If you don't specify, the service will list them by creation date.
     #[doc(hidden)]
     pub list_by: std::option::Option<crate::types::QueueListBy>,
@@ -18,7 +18,7 @@ pub struct ListQueuesInput  {
 }
 impl ListQueuesInput {
     /// Optional. When you request a list of queues, you can choose to list them alphabetically by NAME or chronologically by CREATION_DATE. If you don't specify, the service will list them by creation date.
-    pub fn list_by(&self) -> std::option::Option<& crate::types::QueueListBy> {
+    pub fn list_by(&self) -> std::option::Option<&crate::types::QueueListBy> {
         self.list_by.as_ref()
     }
     /// Optional. Number of queues, up to twenty, that will be returned at one time.
@@ -26,11 +26,11 @@ impl ListQueuesInput {
         self.max_results
     }
     /// Use this string, provided with the response to a previous request, to request the next batch of queues.
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
     /// Optional. When you request lists of resources, you can specify whether they are sorted in ASCENDING or DESCENDING order. Default varies by resource.
-    pub fn order(&self) -> std::option::Option<& crate::types::Order> {
+    pub fn order(&self) -> std::option::Option<&crate::types::Order> {
         self.order.as_ref()
     }
 }
@@ -58,7 +58,8 @@ impl ListQueuesInputBuilder {
     }
     /// Optional. When you request a list of queues, you can choose to list them alphabetically by NAME or chronologically by CREATION_DATE. If you don't specify, the service will list them by creation date.
     pub fn set_list_by(mut self, input: std::option::Option<crate::types::QueueListBy>) -> Self {
-        self.list_by = input; self
+        self.list_by = input;
+        self
     }
     /// Optional. Number of queues, up to twenty, that will be returned at one time.
     pub fn max_results(mut self, input: i32) -> Self {
@@ -67,7 +68,8 @@ impl ListQueuesInputBuilder {
     }
     /// Optional. Number of queues, up to twenty, that will be returned at one time.
     pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_results = input; self
+        self.max_results = input;
+        self
     }
     /// Use this string, provided with the response to a previous request, to request the next batch of queues.
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -76,7 +78,8 @@ impl ListQueuesInputBuilder {
     }
     /// Use this string, provided with the response to a previous request, to request the next batch of queues.
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input; self
+        self.next_token = input;
+        self
     }
     /// Optional. When you request lists of resources, you can specify whether they are sorted in ASCENDING or DESCENDING order. Default varies by resource.
     pub fn order(mut self, input: crate::types::Order) -> Self {
@@ -85,23 +88,21 @@ impl ListQueuesInputBuilder {
     }
     /// Optional. When you request lists of resources, you can specify whether they are sorted in ASCENDING or DESCENDING order. Default varies by resource.
     pub fn set_order(mut self, input: std::option::Option<crate::types::Order>) -> Self {
-        self.order = input; self
+        self.order = input;
+        self
     }
     /// Consumes the builder and constructs a [`ListQueuesInput`](crate::operation::list_queues::ListQueuesInput).
-    pub fn build(self) -> Result<crate::operation::list_queues::ListQueuesInput, aws_smithy_http::operation::error::BuildError> {
-        Ok(
-            crate::operation::list_queues::ListQueuesInput {
-                list_by: self.list_by
-                ,
-                max_results: self.max_results
-                    .unwrap_or_default()
-                ,
-                next_token: self.next_token
-                ,
-                order: self.order
-                ,
-            }
-        )
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::list_queues::ListQueuesInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        Ok(crate::operation::list_queues::ListQueuesInput {
+            list_by: self.list_by,
+            max_results: self.max_results.unwrap_or_default(),
+            next_token: self.next_token,
+            order: self.order,
+        })
     }
 }
-

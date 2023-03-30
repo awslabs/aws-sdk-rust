@@ -3,7 +3,7 @@
 /// <p>A single product view aggregation value/count pair, containing metadata about each product to which the calling user has access.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ProductViewAggregationValue  {
+pub struct ProductViewAggregationValue {
     /// <p>The value of the product view aggregation.</p>
     #[doc(hidden)]
     pub value: std::option::Option<std::string::String>,
@@ -13,7 +13,7 @@ pub struct ProductViewAggregationValue  {
 }
 impl ProductViewAggregationValue {
     /// <p>The value of the product view aggregation.</p>
-    pub fn value(&self) -> std::option::Option<& str> {
+    pub fn value(&self) -> std::option::Option<&str> {
         self.value.as_deref()
     }
     /// <p>An approximate count of the products that match the value.</p>
@@ -43,7 +43,8 @@ impl ProductViewAggregationValueBuilder {
     }
     /// <p>The value of the product view aggregation.</p>
     pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.value = input; self
+        self.value = input;
+        self
     }
     /// <p>An approximate count of the products that match the value.</p>
     pub fn approximate_count(mut self, input: i32) -> Self {
@@ -52,17 +53,14 @@ impl ProductViewAggregationValueBuilder {
     }
     /// <p>An approximate count of the products that match the value.</p>
     pub fn set_approximate_count(mut self, input: std::option::Option<i32>) -> Self {
-        self.approximate_count = input; self
+        self.approximate_count = input;
+        self
     }
     /// Consumes the builder and constructs a [`ProductViewAggregationValue`](crate::types::ProductViewAggregationValue).
     pub fn build(self) -> crate::types::ProductViewAggregationValue {
         crate::types::ProductViewAggregationValue {
-            value: self.value
-            ,
-            approximate_count: self.approximate_count
-                .unwrap_or_default()
-            ,
+            value: self.value,
+            approximate_count: self.approximate_count.unwrap_or_default(),
         }
     }
 }
-

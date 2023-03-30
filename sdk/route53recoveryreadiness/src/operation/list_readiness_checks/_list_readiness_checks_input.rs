@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListReadinessChecksInput  {
+pub struct ListReadinessChecksInput {
     /// <p>The number of objects that you want to return with this call.</p>
     #[doc(hidden)]
     pub max_results: i32,
@@ -16,14 +16,16 @@ impl ListReadinessChecksInput {
         self.max_results
     }
     /// <p>The token that identifies which batch of results you want to see.</p>
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
 }
 impl ListReadinessChecksInput {
     /// Creates a new builder-style object to manufacture [`ListReadinessChecksInput`](crate::operation::list_readiness_checks::ListReadinessChecksInput).
-    pub fn builder() -> crate::operation::list_readiness_checks::builders::ListReadinessChecksInputBuilder {
-        crate::operation::list_readiness_checks::builders::ListReadinessChecksInputBuilder::default()
+    pub fn builder(
+    ) -> crate::operation::list_readiness_checks::builders::ListReadinessChecksInputBuilder {
+        crate::operation::list_readiness_checks::builders::ListReadinessChecksInputBuilder::default(
+        )
     }
 }
 
@@ -42,7 +44,8 @@ impl ListReadinessChecksInputBuilder {
     }
     /// <p>The number of objects that you want to return with this call.</p>
     pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_results = input; self
+        self.max_results = input;
+        self
     }
     /// <p>The token that identifies which batch of results you want to see.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -51,19 +54,21 @@ impl ListReadinessChecksInputBuilder {
     }
     /// <p>The token that identifies which batch of results you want to see.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input; self
+        self.next_token = input;
+        self
     }
     /// Consumes the builder and constructs a [`ListReadinessChecksInput`](crate::operation::list_readiness_checks::ListReadinessChecksInput).
-    pub fn build(self) -> Result<crate::operation::list_readiness_checks::ListReadinessChecksInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::list_readiness_checks::ListReadinessChecksInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::list_readiness_checks::ListReadinessChecksInput {
-                max_results: self.max_results
-                    .unwrap_or_default()
-                ,
-                next_token: self.next_token
-                ,
-            }
+                max_results: self.max_results.unwrap_or_default(),
+                next_token: self.next_token,
+            },
         )
     }
 }
-

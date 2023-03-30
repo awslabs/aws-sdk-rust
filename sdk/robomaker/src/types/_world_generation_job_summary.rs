@@ -3,7 +3,7 @@
 /// <p>Information about a world generator job.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct WorldGenerationJobSummary  {
+pub struct WorldGenerationJobSummary {
     /// <p>The Amazon Resource Name (ARN) of the world generator job.</p>
     #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
@@ -13,50 +13,50 @@ pub struct WorldGenerationJobSummary  {
     /// <p>The time, in milliseconds since the epoch, when the world generator job was created.</p>
     #[doc(hidden)]
     pub created_at: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>The status of the world generator job:</p> 
-    /// <dl> 
+    /// <p>The status of the world generator job:</p>
+    /// <dl>
     /// <dt>
     /// Pending
-    /// </dt> 
-    /// <dd> 
-    /// <p>The world generator job request is pending.</p> 
-    /// </dd> 
+    /// </dt>
+    /// <dd>
+    /// <p>The world generator job request is pending.</p>
+    /// </dd>
     /// <dt>
     /// Running
-    /// </dt> 
-    /// <dd> 
-    /// <p>The world generator job is running. </p> 
-    /// </dd> 
+    /// </dt>
+    /// <dd>
+    /// <p>The world generator job is running. </p>
+    /// </dd>
     /// <dt>
     /// Completed
-    /// </dt> 
-    /// <dd> 
-    /// <p>The world generator job completed. </p> 
-    /// </dd> 
+    /// </dt>
+    /// <dd>
+    /// <p>The world generator job completed. </p>
+    /// </dd>
     /// <dt>
     /// Failed
-    /// </dt> 
-    /// <dd> 
-    /// <p>The world generator job failed. See <code>failureCode</code> for more information. </p> 
-    /// </dd> 
+    /// </dt>
+    /// <dd>
+    /// <p>The world generator job failed. See <code>failureCode</code> for more information. </p>
+    /// </dd>
     /// <dt>
     /// PartialFailed
-    /// </dt> 
-    /// <dd> 
-    /// <p>Some worlds did not generate.</p> 
-    /// </dd> 
+    /// </dt>
+    /// <dd>
+    /// <p>Some worlds did not generate.</p>
+    /// </dd>
     /// <dt>
     /// Canceled
-    /// </dt> 
-    /// <dd> 
-    /// <p>The world generator job was cancelled.</p> 
-    /// </dd> 
+    /// </dt>
+    /// <dd>
+    /// <p>The world generator job was cancelled.</p>
+    /// </dd>
     /// <dt>
     /// Canceling
-    /// </dt> 
-    /// <dd> 
-    /// <p>The world generator job is being cancelled.</p> 
-    /// </dd> 
+    /// </dt>
+    /// <dd>
+    /// <p>The world generator job is being cancelled.</p>
+    /// </dd>
     /// </dl>
     #[doc(hidden)]
     pub status: std::option::Option<crate::types::WorldGenerationJobStatus>,
@@ -72,67 +72,67 @@ pub struct WorldGenerationJobSummary  {
 }
 impl WorldGenerationJobSummary {
     /// <p>The Amazon Resource Name (ARN) of the world generator job.</p>
-    pub fn arn(&self) -> std::option::Option<& str> {
+    pub fn arn(&self) -> std::option::Option<&str> {
         self.arn.as_deref()
     }
     /// <p>The Amazon Resource Name (arn) of the world template.</p>
-    pub fn template(&self) -> std::option::Option<& str> {
+    pub fn template(&self) -> std::option::Option<&str> {
         self.template.as_deref()
     }
     /// <p>The time, in milliseconds since the epoch, when the world generator job was created.</p>
-    pub fn created_at(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
+    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
-    /// <p>The status of the world generator job:</p> 
-    /// <dl> 
+    /// <p>The status of the world generator job:</p>
+    /// <dl>
     /// <dt>
     /// Pending
-    /// </dt> 
-    /// <dd> 
-    /// <p>The world generator job request is pending.</p> 
-    /// </dd> 
+    /// </dt>
+    /// <dd>
+    /// <p>The world generator job request is pending.</p>
+    /// </dd>
     /// <dt>
     /// Running
-    /// </dt> 
-    /// <dd> 
-    /// <p>The world generator job is running. </p> 
-    /// </dd> 
+    /// </dt>
+    /// <dd>
+    /// <p>The world generator job is running. </p>
+    /// </dd>
     /// <dt>
     /// Completed
-    /// </dt> 
-    /// <dd> 
-    /// <p>The world generator job completed. </p> 
-    /// </dd> 
+    /// </dt>
+    /// <dd>
+    /// <p>The world generator job completed. </p>
+    /// </dd>
     /// <dt>
     /// Failed
-    /// </dt> 
-    /// <dd> 
-    /// <p>The world generator job failed. See <code>failureCode</code> for more information. </p> 
-    /// </dd> 
+    /// </dt>
+    /// <dd>
+    /// <p>The world generator job failed. See <code>failureCode</code> for more information. </p>
+    /// </dd>
     /// <dt>
     /// PartialFailed
-    /// </dt> 
-    /// <dd> 
-    /// <p>Some worlds did not generate.</p> 
-    /// </dd> 
+    /// </dt>
+    /// <dd>
+    /// <p>Some worlds did not generate.</p>
+    /// </dd>
     /// <dt>
     /// Canceled
-    /// </dt> 
-    /// <dd> 
-    /// <p>The world generator job was cancelled.</p> 
-    /// </dd> 
+    /// </dt>
+    /// <dd>
+    /// <p>The world generator job was cancelled.</p>
+    /// </dd>
     /// <dt>
     /// Canceling
-    /// </dt> 
-    /// <dd> 
-    /// <p>The world generator job is being cancelled.</p> 
-    /// </dd> 
+    /// </dt>
+    /// <dd>
+    /// <p>The world generator job is being cancelled.</p>
+    /// </dd>
     /// </dl>
-    pub fn status(&self) -> std::option::Option<& crate::types::WorldGenerationJobStatus> {
+    pub fn status(&self) -> std::option::Option<&crate::types::WorldGenerationJobStatus> {
         self.status.as_ref()
     }
     /// <p>Information about the world count.</p>
-    pub fn world_count(&self) -> std::option::Option<& crate::types::WorldCount> {
+    pub fn world_count(&self) -> std::option::Option<&crate::types::WorldCount> {
         self.world_count.as_ref()
     }
     /// <p>The number of worlds that were generated.</p>
@@ -171,7 +171,8 @@ impl WorldGenerationJobSummaryBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the world generator job.</p>
     pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.arn = input; self
+        self.arn = input;
+        self
     }
     /// <p>The Amazon Resource Name (arn) of the world template.</p>
     pub fn template(mut self, input: impl Into<std::string::String>) -> Self {
@@ -180,7 +181,8 @@ impl WorldGenerationJobSummaryBuilder {
     }
     /// <p>The Amazon Resource Name (arn) of the world template.</p>
     pub fn set_template(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.template = input; self
+        self.template = input;
+        self
     }
     /// <p>The time, in milliseconds since the epoch, when the world generator job was created.</p>
     pub fn created_at(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -188,105 +190,113 @@ impl WorldGenerationJobSummaryBuilder {
         self
     }
     /// <p>The time, in milliseconds since the epoch, when the world generator job was created.</p>
-    pub fn set_created_at(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.created_at = input; self
+    pub fn set_created_at(
+        mut self,
+        input: std::option::Option<aws_smithy_types::DateTime>,
+    ) -> Self {
+        self.created_at = input;
+        self
     }
-    /// <p>The status of the world generator job:</p> 
-    /// <dl> 
+    /// <p>The status of the world generator job:</p>
+    /// <dl>
     /// <dt>
     /// Pending
-    /// </dt> 
-    /// <dd> 
-    /// <p>The world generator job request is pending.</p> 
-    /// </dd> 
+    /// </dt>
+    /// <dd>
+    /// <p>The world generator job request is pending.</p>
+    /// </dd>
     /// <dt>
     /// Running
-    /// </dt> 
-    /// <dd> 
-    /// <p>The world generator job is running. </p> 
-    /// </dd> 
+    /// </dt>
+    /// <dd>
+    /// <p>The world generator job is running. </p>
+    /// </dd>
     /// <dt>
     /// Completed
-    /// </dt> 
-    /// <dd> 
-    /// <p>The world generator job completed. </p> 
-    /// </dd> 
+    /// </dt>
+    /// <dd>
+    /// <p>The world generator job completed. </p>
+    /// </dd>
     /// <dt>
     /// Failed
-    /// </dt> 
-    /// <dd> 
-    /// <p>The world generator job failed. See <code>failureCode</code> for more information. </p> 
-    /// </dd> 
+    /// </dt>
+    /// <dd>
+    /// <p>The world generator job failed. See <code>failureCode</code> for more information. </p>
+    /// </dd>
     /// <dt>
     /// PartialFailed
-    /// </dt> 
-    /// <dd> 
-    /// <p>Some worlds did not generate.</p> 
-    /// </dd> 
+    /// </dt>
+    /// <dd>
+    /// <p>Some worlds did not generate.</p>
+    /// </dd>
     /// <dt>
     /// Canceled
-    /// </dt> 
-    /// <dd> 
-    /// <p>The world generator job was cancelled.</p> 
-    /// </dd> 
+    /// </dt>
+    /// <dd>
+    /// <p>The world generator job was cancelled.</p>
+    /// </dd>
     /// <dt>
     /// Canceling
-    /// </dt> 
-    /// <dd> 
-    /// <p>The world generator job is being cancelled.</p> 
-    /// </dd> 
+    /// </dt>
+    /// <dd>
+    /// <p>The world generator job is being cancelled.</p>
+    /// </dd>
     /// </dl>
     pub fn status(mut self, input: crate::types::WorldGenerationJobStatus) -> Self {
         self.status = Some(input);
         self
     }
-    /// <p>The status of the world generator job:</p> 
-    /// <dl> 
+    /// <p>The status of the world generator job:</p>
+    /// <dl>
     /// <dt>
     /// Pending
-    /// </dt> 
-    /// <dd> 
-    /// <p>The world generator job request is pending.</p> 
-    /// </dd> 
+    /// </dt>
+    /// <dd>
+    /// <p>The world generator job request is pending.</p>
+    /// </dd>
     /// <dt>
     /// Running
-    /// </dt> 
-    /// <dd> 
-    /// <p>The world generator job is running. </p> 
-    /// </dd> 
+    /// </dt>
+    /// <dd>
+    /// <p>The world generator job is running. </p>
+    /// </dd>
     /// <dt>
     /// Completed
-    /// </dt> 
-    /// <dd> 
-    /// <p>The world generator job completed. </p> 
-    /// </dd> 
+    /// </dt>
+    /// <dd>
+    /// <p>The world generator job completed. </p>
+    /// </dd>
     /// <dt>
     /// Failed
-    /// </dt> 
-    /// <dd> 
-    /// <p>The world generator job failed. See <code>failureCode</code> for more information. </p> 
-    /// </dd> 
+    /// </dt>
+    /// <dd>
+    /// <p>The world generator job failed. See <code>failureCode</code> for more information. </p>
+    /// </dd>
     /// <dt>
     /// PartialFailed
-    /// </dt> 
-    /// <dd> 
-    /// <p>Some worlds did not generate.</p> 
-    /// </dd> 
+    /// </dt>
+    /// <dd>
+    /// <p>Some worlds did not generate.</p>
+    /// </dd>
     /// <dt>
     /// Canceled
-    /// </dt> 
-    /// <dd> 
-    /// <p>The world generator job was cancelled.</p> 
-    /// </dd> 
+    /// </dt>
+    /// <dd>
+    /// <p>The world generator job was cancelled.</p>
+    /// </dd>
     /// <dt>
     /// Canceling
-    /// </dt> 
-    /// <dd> 
-    /// <p>The world generator job is being cancelled.</p> 
-    /// </dd> 
+    /// </dt>
+    /// <dd>
+    /// <p>The world generator job is being cancelled.</p>
+    /// </dd>
     /// </dl>
-    pub fn set_status(mut self, input: std::option::Option<crate::types::WorldGenerationJobStatus>) -> Self {
-        self.status = input; self
+    pub fn set_status(
+        mut self,
+        input: std::option::Option<crate::types::WorldGenerationJobStatus>,
+    ) -> Self {
+        self.status = input;
+        self
     }
     /// <p>Information about the world count.</p>
     pub fn world_count(mut self, input: crate::types::WorldCount) -> Self {
@@ -295,7 +305,8 @@ impl WorldGenerationJobSummaryBuilder {
     }
     /// <p>Information about the world count.</p>
     pub fn set_world_count(mut self, input: std::option::Option<crate::types::WorldCount>) -> Self {
-        self.world_count = input; self
+        self.world_count = input;
+        self
     }
     /// <p>The number of worlds that were generated.</p>
     pub fn succeeded_world_count(mut self, input: i32) -> Self {
@@ -304,7 +315,8 @@ impl WorldGenerationJobSummaryBuilder {
     }
     /// <p>The number of worlds that were generated.</p>
     pub fn set_succeeded_world_count(mut self, input: std::option::Option<i32>) -> Self {
-        self.succeeded_world_count = input; self
+        self.succeeded_world_count = input;
+        self
     }
     /// <p>The number of worlds that failed.</p>
     pub fn failed_world_count(mut self, input: i32) -> Self {
@@ -313,28 +325,19 @@ impl WorldGenerationJobSummaryBuilder {
     }
     /// <p>The number of worlds that failed.</p>
     pub fn set_failed_world_count(mut self, input: std::option::Option<i32>) -> Self {
-        self.failed_world_count = input; self
+        self.failed_world_count = input;
+        self
     }
     /// Consumes the builder and constructs a [`WorldGenerationJobSummary`](crate::types::WorldGenerationJobSummary).
     pub fn build(self) -> crate::types::WorldGenerationJobSummary {
         crate::types::WorldGenerationJobSummary {
-            arn: self.arn
-            ,
-            template: self.template
-            ,
-            created_at: self.created_at
-            ,
-            status: self.status
-            ,
-            world_count: self.world_count
-            ,
-            succeeded_world_count: self.succeeded_world_count
-                .unwrap_or_default()
-            ,
-            failed_world_count: self.failed_world_count
-                .unwrap_or_default()
-            ,
+            arn: self.arn,
+            template: self.template,
+            created_at: self.created_at,
+            status: self.status,
+            world_count: self.world_count,
+            succeeded_world_count: self.succeeded_world_count.unwrap_or_default(),
+            failed_world_count: self.failed_world_count.unwrap_or_default(),
         }
     }
 }
-

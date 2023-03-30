@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct LabelParameterVersionInput  {
+pub struct LabelParameterVersionInput {
     /// <p>The parameter name on which you want to attach one or more labels.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -15,7 +15,7 @@ pub struct LabelParameterVersionInput  {
 }
 impl LabelParameterVersionInput {
     /// <p>The parameter name on which you want to attach one or more labels.</p>
-    pub fn name(&self) -> std::option::Option<& str> {
+    pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>The specific version of the parameter on which you want to attach one or more labels. If no version is specified, the system attaches the label to the latest version.</p>
@@ -23,13 +23,15 @@ impl LabelParameterVersionInput {
         self.parameter_version
     }
     /// <p>One or more labels to attach to the specified parameter version.</p>
-    pub fn labels(&self) -> std::option::Option<& [std::string::String]> {
+    pub fn labels(&self) -> std::option::Option<&[std::string::String]> {
         self.labels.as_deref()
     }
 }
 impl LabelParameterVersionInput {
     /// Creates a new builder-style object to manufacture [`LabelParameterVersionInput`](crate::operation::label_parameter_version::LabelParameterVersionInput).
-    pub fn builder() -> crate::operation::label_parameter_version::builders::LabelParameterVersionInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::label_parameter_version::builders::LabelParameterVersionInputBuilder
+    {
         crate::operation::label_parameter_version::builders::LabelParameterVersionInputBuilder::default()
     }
 }
@@ -50,7 +52,8 @@ impl LabelParameterVersionInputBuilder {
     }
     /// <p>The parameter name on which you want to attach one or more labels.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input; self
+        self.name = input;
+        self
     }
     /// <p>The specific version of the parameter on which you want to attach one or more labels. If no version is specified, the system attaches the label to the latest version.</p>
     pub fn parameter_version(mut self, input: i64) -> Self {
@@ -59,7 +62,8 @@ impl LabelParameterVersionInputBuilder {
     }
     /// <p>The specific version of the parameter on which you want to attach one or more labels. If no version is specified, the system attaches the label to the latest version.</p>
     pub fn set_parameter_version(mut self, input: std::option::Option<i64>) -> Self {
-        self.parameter_version = input; self
+        self.parameter_version = input;
+        self
     }
     /// Appends an item to `labels`.
     ///
@@ -68,26 +72,31 @@ impl LabelParameterVersionInputBuilder {
     /// <p>One or more labels to attach to the specified parameter version.</p>
     pub fn labels(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.labels.unwrap_or_default();
-                        v.push(input.into());
-                        self.labels = Some(v);
-                        self
+        v.push(input.into());
+        self.labels = Some(v);
+        self
     }
     /// <p>One or more labels to attach to the specified parameter version.</p>
-    pub fn set_labels(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-        self.labels = input; self
+    pub fn set_labels(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
+        self.labels = input;
+        self
     }
     /// Consumes the builder and constructs a [`LabelParameterVersionInput`](crate::operation::label_parameter_version::LabelParameterVersionInput).
-    pub fn build(self) -> Result<crate::operation::label_parameter_version::LabelParameterVersionInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::label_parameter_version::LabelParameterVersionInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::label_parameter_version::LabelParameterVersionInput {
-                name: self.name
-                ,
-                parameter_version: self.parameter_version
-                ,
-                labels: self.labels
-                ,
-            }
+                name: self.name,
+                parameter_version: self.parameter_version,
+                labels: self.labels,
+            },
         )
     }
 }
-

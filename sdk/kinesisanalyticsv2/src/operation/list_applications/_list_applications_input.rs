@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListApplicationsInput  {
+pub struct ListApplicationsInput {
     /// <p>The maximum number of applications to list.</p>
     #[doc(hidden)]
     pub limit: std::option::Option<i32>,
@@ -16,13 +16,14 @@ impl ListApplicationsInput {
         self.limit
     }
     /// <p>If a previous command returned a pagination token, pass it into this value to retrieve the next set of results. For more information about pagination, see <a href="https://docs.aws.amazon.com/cli/latest/userguide/pagination.html">Using the Amazon Command Line Interface's Pagination Options</a>.</p>
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
 }
 impl ListApplicationsInput {
     /// Creates a new builder-style object to manufacture [`ListApplicationsInput`](crate::operation::list_applications::ListApplicationsInput).
-    pub fn builder() -> crate::operation::list_applications::builders::ListApplicationsInputBuilder {
+    pub fn builder() -> crate::operation::list_applications::builders::ListApplicationsInputBuilder
+    {
         crate::operation::list_applications::builders::ListApplicationsInputBuilder::default()
     }
 }
@@ -42,7 +43,8 @@ impl ListApplicationsInputBuilder {
     }
     /// <p>The maximum number of applications to list.</p>
     pub fn set_limit(mut self, input: std::option::Option<i32>) -> Self {
-        self.limit = input; self
+        self.limit = input;
+        self
     }
     /// <p>If a previous command returned a pagination token, pass it into this value to retrieve the next set of results. For more information about pagination, see <a href="https://docs.aws.amazon.com/cli/latest/userguide/pagination.html">Using the Amazon Command Line Interface's Pagination Options</a>.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -51,18 +53,19 @@ impl ListApplicationsInputBuilder {
     }
     /// <p>If a previous command returned a pagination token, pass it into this value to retrieve the next set of results. For more information about pagination, see <a href="https://docs.aws.amazon.com/cli/latest/userguide/pagination.html">Using the Amazon Command Line Interface's Pagination Options</a>.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input; self
+        self.next_token = input;
+        self
     }
     /// Consumes the builder and constructs a [`ListApplicationsInput`](crate::operation::list_applications::ListApplicationsInput).
-    pub fn build(self) -> Result<crate::operation::list_applications::ListApplicationsInput, aws_smithy_http::operation::error::BuildError> {
-        Ok(
-            crate::operation::list_applications::ListApplicationsInput {
-                limit: self.limit
-                ,
-                next_token: self.next_token
-                ,
-            }
-        )
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::list_applications::ListApplicationsInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        Ok(crate::operation::list_applications::ListApplicationsInput {
+            limit: self.limit,
+            next_token: self.next_token,
+        })
     }
 }
-

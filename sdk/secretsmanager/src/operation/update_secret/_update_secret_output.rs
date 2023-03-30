@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateSecretOutput  {
+pub struct UpdateSecretOutput {
     /// <p>The ARN of the secret that was updated.</p>
     #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
@@ -16,23 +16,23 @@ pub struct UpdateSecretOutput  {
 }
 impl UpdateSecretOutput {
     /// <p>The ARN of the secret that was updated.</p>
-    pub fn arn(&self) -> std::option::Option<& str> {
+    pub fn arn(&self) -> std::option::Option<&str> {
         self.arn.as_deref()
     }
     /// <p>The name of the secret that was updated.</p>
-    pub fn name(&self) -> std::option::Option<& str> {
+    pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>If Secrets Manager created a new version of the secret during this operation, then <code>VersionId</code> contains the unique identifier of the new version.</p>
-    pub fn version_id(&self) -> std::option::Option<& str> {
+    pub fn version_id(&self) -> std::option::Option<&str> {
         self.version_id.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for UpdateSecretOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl UpdateSecretOutput {
     /// Creates a new builder-style object to manufacture [`UpdateSecretOutput`](crate::operation::update_secret::UpdateSecretOutput).
     pub fn builder() -> crate::operation::update_secret::builders::UpdateSecretOutputBuilder {
@@ -57,7 +57,8 @@ impl UpdateSecretOutputBuilder {
     }
     /// <p>The ARN of the secret that was updated.</p>
     pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.arn = input; self
+        self.arn = input;
+        self
     }
     /// <p>The name of the secret that was updated.</p>
     pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -66,7 +67,8 @@ impl UpdateSecretOutputBuilder {
     }
     /// <p>The name of the secret that was updated.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input; self
+        self.name = input;
+        self
     }
     /// <p>If Secrets Manager created a new version of the secret during this operation, then <code>VersionId</code> contains the unique identifier of the new version.</p>
     pub fn version_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -75,28 +77,25 @@ impl UpdateSecretOutputBuilder {
     }
     /// <p>If Secrets Manager created a new version of the secret during this operation, then <code>VersionId</code> contains the unique identifier of the new version.</p>
     pub fn set_version_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.version_id = input; self
+        self.version_id = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`UpdateSecretOutput`](crate::operation::update_secret::UpdateSecretOutput).
     pub fn build(self) -> crate::operation::update_secret::UpdateSecretOutput {
         crate::operation::update_secret::UpdateSecretOutput {
-            arn: self.arn
-            ,
-            name: self.name
-            ,
-            version_id: self.version_id
-            ,
+            arn: self.arn,
+            name: self.name,
+            version_id: self.version_id,
             _request_id: self._request_id,
         }
     }
 }
-

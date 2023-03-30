@@ -3,14 +3,14 @@
 /// <p>Container for logging status information.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct BucketLoggingStatus  {
+pub struct BucketLoggingStatus {
     /// <p>Describes where logs are stored and the prefix that Amazon S3 assigns to all log object keys for a bucket. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/RESTBucketPUTlogging.html">PUT Bucket logging</a> in the <i>Amazon S3 API Reference</i>.</p>
     #[doc(hidden)]
     pub logging_enabled: std::option::Option<crate::types::LoggingEnabled>,
 }
 impl BucketLoggingStatus {
     /// <p>Describes where logs are stored and the prefix that Amazon S3 assigns to all log object keys for a bucket. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/RESTBucketPUTlogging.html">PUT Bucket logging</a> in the <i>Amazon S3 API Reference</i>.</p>
-    pub fn logging_enabled(&self) -> std::option::Option<& crate::types::LoggingEnabled> {
+    pub fn logging_enabled(&self) -> std::option::Option<&crate::types::LoggingEnabled> {
         self.logging_enabled.as_ref()
     }
 }
@@ -34,15 +34,17 @@ impl BucketLoggingStatusBuilder {
         self
     }
     /// <p>Describes where logs are stored and the prefix that Amazon S3 assigns to all log object keys for a bucket. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/RESTBucketPUTlogging.html">PUT Bucket logging</a> in the <i>Amazon S3 API Reference</i>.</p>
-    pub fn set_logging_enabled(mut self, input: std::option::Option<crate::types::LoggingEnabled>) -> Self {
-        self.logging_enabled = input; self
+    pub fn set_logging_enabled(
+        mut self,
+        input: std::option::Option<crate::types::LoggingEnabled>,
+    ) -> Self {
+        self.logging_enabled = input;
+        self
     }
     /// Consumes the builder and constructs a [`BucketLoggingStatus`](crate::types::BucketLoggingStatus).
     pub fn build(self) -> crate::types::BucketLoggingStatus {
         crate::types::BucketLoggingStatus {
-            logging_enabled: self.logging_enabled
-            ,
+            logging_enabled: self.logging_enabled,
         }
     }
 }
-

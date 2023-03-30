@@ -3,7 +3,7 @@
 /// <p>Describes a network ACL.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct NetworkAcl  {
+pub struct NetworkAcl {
     /// <p>Any associations between the network ACL and one or more subnets</p>
     #[doc(hidden)]
     pub associations: std::option::Option<std::vec::Vec<crate::types::NetworkAclAssociation>>,
@@ -28,11 +28,11 @@ pub struct NetworkAcl  {
 }
 impl NetworkAcl {
     /// <p>Any associations between the network ACL and one or more subnets</p>
-    pub fn associations(&self) -> std::option::Option<& [crate::types::NetworkAclAssociation]> {
+    pub fn associations(&self) -> std::option::Option<&[crate::types::NetworkAclAssociation]> {
         self.associations.as_deref()
     }
     /// <p>One or more entries (rules) in the network ACL.</p>
-    pub fn entries(&self) -> std::option::Option<& [crate::types::NetworkAclEntry]> {
+    pub fn entries(&self) -> std::option::Option<&[crate::types::NetworkAclEntry]> {
         self.entries.as_deref()
     }
     /// <p>Indicates whether this is the default network ACL for the VPC.</p>
@@ -40,19 +40,19 @@ impl NetworkAcl {
         self.is_default
     }
     /// <p>The ID of the network ACL.</p>
-    pub fn network_acl_id(&self) -> std::option::Option<& str> {
+    pub fn network_acl_id(&self) -> std::option::Option<&str> {
         self.network_acl_id.as_deref()
     }
     /// <p>Any tags assigned to the network ACL.</p>
-    pub fn tags(&self) -> std::option::Option<& [crate::types::Tag]> {
+    pub fn tags(&self) -> std::option::Option<&[crate::types::Tag]> {
         self.tags.as_deref()
     }
     /// <p>The ID of the VPC for the network ACL.</p>
-    pub fn vpc_id(&self) -> std::option::Option<& str> {
+    pub fn vpc_id(&self) -> std::option::Option<&str> {
         self.vpc_id.as_deref()
     }
     /// <p>The ID of the Amazon Web Services account that owns the network ACL.</p>
-    pub fn owner_id(&self) -> std::option::Option<& str> {
+    pub fn owner_id(&self) -> std::option::Option<&str> {
         self.owner_id.as_deref()
     }
 }
@@ -67,7 +67,8 @@ impl NetworkAcl {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct NetworkAclBuilder {
-    pub(crate) associations: std::option::Option<std::vec::Vec<crate::types::NetworkAclAssociation>>,
+    pub(crate) associations:
+        std::option::Option<std::vec::Vec<crate::types::NetworkAclAssociation>>,
     pub(crate) entries: std::option::Option<std::vec::Vec<crate::types::NetworkAclEntry>>,
     pub(crate) is_default: std::option::Option<bool>,
     pub(crate) network_acl_id: std::option::Option<std::string::String>,
@@ -83,13 +84,17 @@ impl NetworkAclBuilder {
     /// <p>Any associations between the network ACL and one or more subnets</p>
     pub fn associations(mut self, input: crate::types::NetworkAclAssociation) -> Self {
         let mut v = self.associations.unwrap_or_default();
-                        v.push(input);
-                        self.associations = Some(v);
-                        self
+        v.push(input);
+        self.associations = Some(v);
+        self
     }
     /// <p>Any associations between the network ACL and one or more subnets</p>
-    pub fn set_associations(mut self, input: std::option::Option<std::vec::Vec<crate::types::NetworkAclAssociation>>) -> Self {
-        self.associations = input; self
+    pub fn set_associations(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::NetworkAclAssociation>>,
+    ) -> Self {
+        self.associations = input;
+        self
     }
     /// Appends an item to `entries`.
     ///
@@ -98,13 +103,17 @@ impl NetworkAclBuilder {
     /// <p>One or more entries (rules) in the network ACL.</p>
     pub fn entries(mut self, input: crate::types::NetworkAclEntry) -> Self {
         let mut v = self.entries.unwrap_or_default();
-                        v.push(input);
-                        self.entries = Some(v);
-                        self
+        v.push(input);
+        self.entries = Some(v);
+        self
     }
     /// <p>One or more entries (rules) in the network ACL.</p>
-    pub fn set_entries(mut self, input: std::option::Option<std::vec::Vec<crate::types::NetworkAclEntry>>) -> Self {
-        self.entries = input; self
+    pub fn set_entries(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::NetworkAclEntry>>,
+    ) -> Self {
+        self.entries = input;
+        self
     }
     /// <p>Indicates whether this is the default network ACL for the VPC.</p>
     pub fn is_default(mut self, input: bool) -> Self {
@@ -113,7 +122,8 @@ impl NetworkAclBuilder {
     }
     /// <p>Indicates whether this is the default network ACL for the VPC.</p>
     pub fn set_is_default(mut self, input: std::option::Option<bool>) -> Self {
-        self.is_default = input; self
+        self.is_default = input;
+        self
     }
     /// <p>The ID of the network ACL.</p>
     pub fn network_acl_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -122,7 +132,8 @@ impl NetworkAclBuilder {
     }
     /// <p>The ID of the network ACL.</p>
     pub fn set_network_acl_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.network_acl_id = input; self
+        self.network_acl_id = input;
+        self
     }
     /// Appends an item to `tags`.
     ///
@@ -131,13 +142,17 @@ impl NetworkAclBuilder {
     /// <p>Any tags assigned to the network ACL.</p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
-                        v.push(input);
-                        self.tags = Some(v);
-                        self
+        v.push(input);
+        self.tags = Some(v);
+        self
     }
     /// <p>Any tags assigned to the network ACL.</p>
-    pub fn set_tags(mut self, input: std::option::Option<std::vec::Vec<crate::types::Tag>>) -> Self {
-        self.tags = input; self
+    pub fn set_tags(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::Tag>>,
+    ) -> Self {
+        self.tags = input;
+        self
     }
     /// <p>The ID of the VPC for the network ACL.</p>
     pub fn vpc_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -146,7 +161,8 @@ impl NetworkAclBuilder {
     }
     /// <p>The ID of the VPC for the network ACL.</p>
     pub fn set_vpc_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.vpc_id = input; self
+        self.vpc_id = input;
+        self
     }
     /// <p>The ID of the Amazon Web Services account that owns the network ACL.</p>
     pub fn owner_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -155,26 +171,19 @@ impl NetworkAclBuilder {
     }
     /// <p>The ID of the Amazon Web Services account that owns the network ACL.</p>
     pub fn set_owner_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.owner_id = input; self
+        self.owner_id = input;
+        self
     }
     /// Consumes the builder and constructs a [`NetworkAcl`](crate::types::NetworkAcl).
     pub fn build(self) -> crate::types::NetworkAcl {
         crate::types::NetworkAcl {
-            associations: self.associations
-            ,
-            entries: self.entries
-            ,
-            is_default: self.is_default
-            ,
-            network_acl_id: self.network_acl_id
-            ,
-            tags: self.tags
-            ,
-            vpc_id: self.vpc_id
-            ,
-            owner_id: self.owner_id
-            ,
+            associations: self.associations,
+            entries: self.entries,
+            is_default: self.is_default,
+            network_acl_id: self.network_acl_id,
+            tags: self.tags,
+            vpc_id: self.vpc_id,
+            owner_id: self.owner_id,
         }
     }
 }
-

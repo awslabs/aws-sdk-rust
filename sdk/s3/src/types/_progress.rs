@@ -3,7 +3,7 @@
 /// <p>This data type contains information about progress of an operation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Progress  {
+pub struct Progress {
     /// <p>The current number of object bytes scanned.</p>
     #[doc(hidden)]
     pub bytes_scanned: i64,
@@ -51,7 +51,8 @@ impl ProgressBuilder {
     }
     /// <p>The current number of object bytes scanned.</p>
     pub fn set_bytes_scanned(mut self, input: std::option::Option<i64>) -> Self {
-        self.bytes_scanned = input; self
+        self.bytes_scanned = input;
+        self
     }
     /// <p>The current number of uncompressed object bytes processed.</p>
     pub fn bytes_processed(mut self, input: i64) -> Self {
@@ -60,7 +61,8 @@ impl ProgressBuilder {
     }
     /// <p>The current number of uncompressed object bytes processed.</p>
     pub fn set_bytes_processed(mut self, input: std::option::Option<i64>) -> Self {
-        self.bytes_processed = input; self
+        self.bytes_processed = input;
+        self
     }
     /// <p>The current number of bytes of records payload data returned.</p>
     pub fn bytes_returned(mut self, input: i64) -> Self {
@@ -69,21 +71,15 @@ impl ProgressBuilder {
     }
     /// <p>The current number of bytes of records payload data returned.</p>
     pub fn set_bytes_returned(mut self, input: std::option::Option<i64>) -> Self {
-        self.bytes_returned = input; self
+        self.bytes_returned = input;
+        self
     }
     /// Consumes the builder and constructs a [`Progress`](crate::types::Progress).
     pub fn build(self) -> crate::types::Progress {
         crate::types::Progress {
-            bytes_scanned: self.bytes_scanned
-                .unwrap_or_default()
-            ,
-            bytes_processed: self.bytes_processed
-                .unwrap_or_default()
-            ,
-            bytes_returned: self.bytes_returned
-                .unwrap_or_default()
-            ,
+            bytes_scanned: self.bytes_scanned.unwrap_or_default(),
+            bytes_processed: self.bytes_processed.unwrap_or_default(),
+            bytes_returned: self.bytes_returned.unwrap_or_default(),
         }
     }
 }
-

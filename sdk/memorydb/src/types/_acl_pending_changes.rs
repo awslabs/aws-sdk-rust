@@ -3,7 +3,7 @@
 /// <p>Returns the updates being applied to the ACL.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AclPendingChanges  {
+pub struct AclPendingChanges {
     /// <p>A list of user names being removed from the ACL</p>
     #[doc(hidden)]
     pub user_names_to_remove: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -13,11 +13,11 @@ pub struct AclPendingChanges  {
 }
 impl AclPendingChanges {
     /// <p>A list of user names being removed from the ACL</p>
-    pub fn user_names_to_remove(&self) -> std::option::Option<& [std::string::String]> {
+    pub fn user_names_to_remove(&self) -> std::option::Option<&[std::string::String]> {
         self.user_names_to_remove.as_deref()
     }
     /// <p>A list of users being added to the ACL</p>
-    pub fn user_names_to_add(&self) -> std::option::Option<& [std::string::String]> {
+    pub fn user_names_to_add(&self) -> std::option::Option<&[std::string::String]> {
         self.user_names_to_add.as_deref()
     }
 }
@@ -43,13 +43,17 @@ impl AclPendingChangesBuilder {
     /// <p>A list of user names being removed from the ACL</p>
     pub fn user_names_to_remove(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.user_names_to_remove.unwrap_or_default();
-                        v.push(input.into());
-                        self.user_names_to_remove = Some(v);
-                        self
+        v.push(input.into());
+        self.user_names_to_remove = Some(v);
+        self
     }
     /// <p>A list of user names being removed from the ACL</p>
-    pub fn set_user_names_to_remove(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-        self.user_names_to_remove = input; self
+    pub fn set_user_names_to_remove(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
+        self.user_names_to_remove = input;
+        self
     }
     /// Appends an item to `user_names_to_add`.
     ///
@@ -58,22 +62,23 @@ impl AclPendingChangesBuilder {
     /// <p>A list of users being added to the ACL</p>
     pub fn user_names_to_add(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.user_names_to_add.unwrap_or_default();
-                        v.push(input.into());
-                        self.user_names_to_add = Some(v);
-                        self
+        v.push(input.into());
+        self.user_names_to_add = Some(v);
+        self
     }
     /// <p>A list of users being added to the ACL</p>
-    pub fn set_user_names_to_add(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-        self.user_names_to_add = input; self
+    pub fn set_user_names_to_add(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
+        self.user_names_to_add = input;
+        self
     }
     /// Consumes the builder and constructs a [`AclPendingChanges`](crate::types::AclPendingChanges).
     pub fn build(self) -> crate::types::AclPendingChanges {
         crate::types::AclPendingChanges {
-            user_names_to_remove: self.user_names_to_remove
-            ,
-            user_names_to_add: self.user_names_to_add
-            ,
+            user_names_to_remove: self.user_names_to_remove,
+            user_names_to_add: self.user_names_to_add,
         }
     }
 }
-

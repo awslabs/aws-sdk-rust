@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeletePolicyInput  {
+pub struct DeletePolicyInput {
     /// <p>The name of the Auto Scaling group.</p>
     #[doc(hidden)]
     pub auto_scaling_group_name: std::option::Option<std::string::String>,
@@ -12,11 +12,11 @@ pub struct DeletePolicyInput  {
 }
 impl DeletePolicyInput {
     /// <p>The name of the Auto Scaling group.</p>
-    pub fn auto_scaling_group_name(&self) -> std::option::Option<& str> {
+    pub fn auto_scaling_group_name(&self) -> std::option::Option<&str> {
         self.auto_scaling_group_name.as_deref()
     }
     /// <p>The name or Amazon Resource Name (ARN) of the policy.</p>
-    pub fn policy_name(&self) -> std::option::Option<& str> {
+    pub fn policy_name(&self) -> std::option::Option<&str> {
         self.policy_name.as_deref()
     }
 }
@@ -41,8 +41,12 @@ impl DeletePolicyInputBuilder {
         self
     }
     /// <p>The name of the Auto Scaling group.</p>
-    pub fn set_auto_scaling_group_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.auto_scaling_group_name = input; self
+    pub fn set_auto_scaling_group_name(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.auto_scaling_group_name = input;
+        self
     }
     /// <p>The name or Amazon Resource Name (ARN) of the policy.</p>
     pub fn policy_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -51,18 +55,19 @@ impl DeletePolicyInputBuilder {
     }
     /// <p>The name or Amazon Resource Name (ARN) of the policy.</p>
     pub fn set_policy_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.policy_name = input; self
+        self.policy_name = input;
+        self
     }
     /// Consumes the builder and constructs a [`DeletePolicyInput`](crate::operation::delete_policy::DeletePolicyInput).
-    pub fn build(self) -> Result<crate::operation::delete_policy::DeletePolicyInput, aws_smithy_http::operation::error::BuildError> {
-        Ok(
-            crate::operation::delete_policy::DeletePolicyInput {
-                auto_scaling_group_name: self.auto_scaling_group_name
-                ,
-                policy_name: self.policy_name
-                ,
-            }
-        )
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::delete_policy::DeletePolicyInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        Ok(crate::operation::delete_policy::DeletePolicyInput {
+            auto_scaling_group_name: self.auto_scaling_group_name,
+            policy_name: self.policy_name,
+        })
     }
 }
-

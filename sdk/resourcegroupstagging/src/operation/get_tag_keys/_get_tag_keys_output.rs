@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetTagKeysOutput  {
+pub struct GetTagKeysOutput {
     /// <p>A string that indicates that there is more data available than this response contains. To receive the next part of the response, specify this response value as the <code>PaginationToken</code> value in the request for the next page.</p>
     #[doc(hidden)]
     pub pagination_token: std::option::Option<std::string::String>,
@@ -13,19 +13,19 @@ pub struct GetTagKeysOutput  {
 }
 impl GetTagKeysOutput {
     /// <p>A string that indicates that there is more data available than this response contains. To receive the next part of the response, specify this response value as the <code>PaginationToken</code> value in the request for the next page.</p>
-    pub fn pagination_token(&self) -> std::option::Option<& str> {
+    pub fn pagination_token(&self) -> std::option::Option<&str> {
         self.pagination_token.as_deref()
     }
     /// <p>A list of all tag keys in the Amazon Web Services account.</p>
-    pub fn tag_keys(&self) -> std::option::Option<& [std::string::String]> {
+    pub fn tag_keys(&self) -> std::option::Option<&[std::string::String]> {
         self.tag_keys.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for GetTagKeysOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl GetTagKeysOutput {
     /// Creates a new builder-style object to manufacture [`GetTagKeysOutput`](crate::operation::get_tag_keys::GetTagKeysOutput).
     pub fn builder() -> crate::operation::get_tag_keys::builders::GetTagKeysOutputBuilder {
@@ -49,7 +49,8 @@ impl GetTagKeysOutputBuilder {
     }
     /// <p>A string that indicates that there is more data available than this response contains. To receive the next part of the response, specify this response value as the <code>PaginationToken</code> value in the request for the next page.</p>
     pub fn set_pagination_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.pagination_token = input; self
+        self.pagination_token = input;
+        self
     }
     /// Appends an item to `tag_keys`.
     ///
@@ -58,32 +59,33 @@ impl GetTagKeysOutputBuilder {
     /// <p>A list of all tag keys in the Amazon Web Services account.</p>
     pub fn tag_keys(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.tag_keys.unwrap_or_default();
-                        v.push(input.into());
-                        self.tag_keys = Some(v);
-                        self
+        v.push(input.into());
+        self.tag_keys = Some(v);
+        self
     }
     /// <p>A list of all tag keys in the Amazon Web Services account.</p>
-    pub fn set_tag_keys(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-        self.tag_keys = input; self
+    pub fn set_tag_keys(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
+        self.tag_keys = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`GetTagKeysOutput`](crate::operation::get_tag_keys::GetTagKeysOutput).
     pub fn build(self) -> crate::operation::get_tag_keys::GetTagKeysOutput {
         crate::operation::get_tag_keys::GetTagKeysOutput {
-            pagination_token: self.pagination_token
-            ,
-            tag_keys: self.tag_keys
-            ,
+            pagination_token: self.pagination_token,
+            tag_keys: self.tag_keys,
             _request_id: self._request_id,
         }
     }
 }
-

@@ -2,20 +2,20 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteInfrastructureConfigurationInput  {
+pub struct DeleteInfrastructureConfigurationInput {
     /// <p>The Amazon Resource Name (ARN) of the infrastructure configuration to delete.</p>
     #[doc(hidden)]
     pub infrastructure_configuration_arn: std::option::Option<std::string::String>,
 }
 impl DeleteInfrastructureConfigurationInput {
     /// <p>The Amazon Resource Name (ARN) of the infrastructure configuration to delete.</p>
-    pub fn infrastructure_configuration_arn(&self) -> std::option::Option<& str> {
+    pub fn infrastructure_configuration_arn(&self) -> std::option::Option<&str> {
         self.infrastructure_configuration_arn.as_deref()
     }
 }
 impl DeleteInfrastructureConfigurationInput {
     /// Creates a new builder-style object to manufacture [`DeleteInfrastructureConfigurationInput`](crate::operation::delete_infrastructure_configuration::DeleteInfrastructureConfigurationInput).
-    pub fn builder() -> crate::operation::delete_infrastructure_configuration::builders::DeleteInfrastructureConfigurationInputBuilder {
+    pub fn builder() -> crate::operation::delete_infrastructure_configuration::builders::DeleteInfrastructureConfigurationInputBuilder{
         crate::operation::delete_infrastructure_configuration::builders::DeleteInfrastructureConfigurationInputBuilder::default()
     }
 }
@@ -28,16 +28,23 @@ pub struct DeleteInfrastructureConfigurationInputBuilder {
 }
 impl DeleteInfrastructureConfigurationInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the infrastructure configuration to delete.</p>
-    pub fn infrastructure_configuration_arn(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn infrastructure_configuration_arn(
+        mut self,
+        input: impl Into<std::string::String>,
+    ) -> Self {
         self.infrastructure_configuration_arn = Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the infrastructure configuration to delete.</p>
-    pub fn set_infrastructure_configuration_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.infrastructure_configuration_arn = input; self
+    pub fn set_infrastructure_configuration_arn(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.infrastructure_configuration_arn = input;
+        self
     }
     /// Consumes the builder and constructs a [`DeleteInfrastructureConfigurationInput`](crate::operation::delete_infrastructure_configuration::DeleteInfrastructureConfigurationInput).
-    pub fn build(self) -> Result<crate::operation::delete_infrastructure_configuration::DeleteInfrastructureConfigurationInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> Result<crate::operation::delete_infrastructure_configuration::DeleteInfrastructureConfigurationInput, aws_smithy_http::operation::error::BuildError>{
         Ok(
             crate::operation::delete_infrastructure_configuration::DeleteInfrastructureConfigurationInput {
                 infrastructure_configuration_arn: self.infrastructure_configuration_arn
@@ -46,4 +53,3 @@ impl DeleteInfrastructureConfigurationInputBuilder {
         )
     }
 }
-

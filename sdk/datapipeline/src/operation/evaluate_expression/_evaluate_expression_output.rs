@@ -3,7 +3,7 @@
 /// <p>Contains the output of EvaluateExpression.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct EvaluateExpressionOutput  {
+pub struct EvaluateExpressionOutput {
     /// <p>The evaluated expression.</p>
     #[doc(hidden)]
     pub evaluated_expression: std::option::Option<std::string::String>,
@@ -11,18 +11,19 @@ pub struct EvaluateExpressionOutput  {
 }
 impl EvaluateExpressionOutput {
     /// <p>The evaluated expression.</p>
-    pub fn evaluated_expression(&self) -> std::option::Option<& str> {
+    pub fn evaluated_expression(&self) -> std::option::Option<&str> {
         self.evaluated_expression.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for EvaluateExpressionOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl EvaluateExpressionOutput {
     /// Creates a new builder-style object to manufacture [`EvaluateExpressionOutput`](crate::operation::evaluate_expression::EvaluateExpressionOutput).
-    pub fn builder() -> crate::operation::evaluate_expression::builders::EvaluateExpressionOutputBuilder {
+    pub fn builder(
+    ) -> crate::operation::evaluate_expression::builders::EvaluateExpressionOutputBuilder {
         crate::operation::evaluate_expression::builders::EvaluateExpressionOutputBuilder::default()
     }
 }
@@ -41,25 +42,27 @@ impl EvaluateExpressionOutputBuilder {
         self
     }
     /// <p>The evaluated expression.</p>
-    pub fn set_evaluated_expression(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.evaluated_expression = input; self
+    pub fn set_evaluated_expression(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.evaluated_expression = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`EvaluateExpressionOutput`](crate::operation::evaluate_expression::EvaluateExpressionOutput).
     pub fn build(self) -> crate::operation::evaluate_expression::EvaluateExpressionOutput {
         crate::operation::evaluate_expression::EvaluateExpressionOutput {
-            evaluated_expression: self.evaluated_expression
-            ,
+            evaluated_expression: self.evaluated_expression,
             _request_id: self._request_id,
         }
     }
 }
-

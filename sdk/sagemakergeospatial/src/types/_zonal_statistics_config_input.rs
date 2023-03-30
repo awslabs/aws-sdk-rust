@@ -3,7 +3,7 @@
 /// <p></p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ZonalStatisticsConfigInput  {
+pub struct ZonalStatisticsConfigInput {
     /// <p></p>
     #[doc(hidden)]
     pub zone_s3_path: std::option::Option<std::string::String>,
@@ -16,15 +16,15 @@ pub struct ZonalStatisticsConfigInput  {
 }
 impl ZonalStatisticsConfigInput {
     /// <p></p>
-    pub fn zone_s3_path(&self) -> std::option::Option<& str> {
+    pub fn zone_s3_path(&self) -> std::option::Option<&str> {
         self.zone_s3_path.as_deref()
     }
     /// <p></p>
-    pub fn statistics(&self) -> std::option::Option<& [crate::types::ZonalStatistics]> {
+    pub fn statistics(&self) -> std::option::Option<&[crate::types::ZonalStatistics]> {
         self.statistics.as_deref()
     }
     /// <p></p>
-    pub fn target_bands(&self) -> std::option::Option<& [std::string::String]> {
+    pub fn target_bands(&self) -> std::option::Option<&[std::string::String]> {
         self.target_bands.as_deref()
     }
 }
@@ -51,7 +51,8 @@ impl ZonalStatisticsConfigInputBuilder {
     }
     /// <p></p>
     pub fn set_zone_s3_path(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.zone_s3_path = input; self
+        self.zone_s3_path = input;
+        self
     }
     /// Appends an item to `statistics`.
     ///
@@ -60,13 +61,17 @@ impl ZonalStatisticsConfigInputBuilder {
     /// <p></p>
     pub fn statistics(mut self, input: crate::types::ZonalStatistics) -> Self {
         let mut v = self.statistics.unwrap_or_default();
-                        v.push(input);
-                        self.statistics = Some(v);
-                        self
+        v.push(input);
+        self.statistics = Some(v);
+        self
     }
     /// <p></p>
-    pub fn set_statistics(mut self, input: std::option::Option<std::vec::Vec<crate::types::ZonalStatistics>>) -> Self {
-        self.statistics = input; self
+    pub fn set_statistics(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::ZonalStatistics>>,
+    ) -> Self {
+        self.statistics = input;
+        self
     }
     /// Appends an item to `target_bands`.
     ///
@@ -75,24 +80,24 @@ impl ZonalStatisticsConfigInputBuilder {
     /// <p></p>
     pub fn target_bands(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.target_bands.unwrap_or_default();
-                        v.push(input.into());
-                        self.target_bands = Some(v);
-                        self
+        v.push(input.into());
+        self.target_bands = Some(v);
+        self
     }
     /// <p></p>
-    pub fn set_target_bands(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-        self.target_bands = input; self
+    pub fn set_target_bands(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
+        self.target_bands = input;
+        self
     }
     /// Consumes the builder and constructs a [`ZonalStatisticsConfigInput`](crate::types::ZonalStatisticsConfigInput).
     pub fn build(self) -> crate::types::ZonalStatisticsConfigInput {
         crate::types::ZonalStatisticsConfigInput {
-            zone_s3_path: self.zone_s3_path
-            ,
-            statistics: self.statistics
-            ,
-            target_bands: self.target_bands
-            ,
+            zone_s3_path: self.zone_s3_path,
+            statistics: self.statistics,
+            target_bands: self.target_bands,
         }
     }
 }
-

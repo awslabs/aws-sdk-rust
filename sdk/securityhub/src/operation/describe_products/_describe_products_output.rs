@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeProductsOutput  {
+pub struct DescribeProductsOutput {
     /// <p>A list of products, including details for each product.</p>
     #[doc(hidden)]
     pub products: std::option::Option<std::vec::Vec<crate::types::Product>>,
@@ -13,22 +13,23 @@ pub struct DescribeProductsOutput  {
 }
 impl DescribeProductsOutput {
     /// <p>A list of products, including details for each product.</p>
-    pub fn products(&self) -> std::option::Option<& [crate::types::Product]> {
+    pub fn products(&self) -> std::option::Option<&[crate::types::Product]> {
         self.products.as_deref()
     }
     /// <p>The pagination token to use to request the next page of results.</p>
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for DescribeProductsOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl DescribeProductsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeProductsOutput`](crate::operation::describe_products::DescribeProductsOutput).
-    pub fn builder() -> crate::operation::describe_products::builders::DescribeProductsOutputBuilder {
+    pub fn builder() -> crate::operation::describe_products::builders::DescribeProductsOutputBuilder
+    {
         crate::operation::describe_products::builders::DescribeProductsOutputBuilder::default()
     }
 }
@@ -49,13 +50,17 @@ impl DescribeProductsOutputBuilder {
     /// <p>A list of products, including details for each product.</p>
     pub fn products(mut self, input: crate::types::Product) -> Self {
         let mut v = self.products.unwrap_or_default();
-                        v.push(input);
-                        self.products = Some(v);
-                        self
+        v.push(input);
+        self.products = Some(v);
+        self
     }
     /// <p>A list of products, including details for each product.</p>
-    pub fn set_products(mut self, input: std::option::Option<std::vec::Vec<crate::types::Product>>) -> Self {
-        self.products = input; self
+    pub fn set_products(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::Product>>,
+    ) -> Self {
+        self.products = input;
+        self
     }
     /// <p>The pagination token to use to request the next page of results.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -64,26 +69,24 @@ impl DescribeProductsOutputBuilder {
     }
     /// <p>The pagination token to use to request the next page of results.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input; self
+        self.next_token = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`DescribeProductsOutput`](crate::operation::describe_products::DescribeProductsOutput).
     pub fn build(self) -> crate::operation::describe_products::DescribeProductsOutput {
         crate::operation::describe_products::DescribeProductsOutput {
-            products: self.products
-            ,
-            next_token: self.next_token
-            ,
+            products: self.products,
+            next_token: self.next_token,
             _request_id: self._request_id,
         }
     }
 }
-

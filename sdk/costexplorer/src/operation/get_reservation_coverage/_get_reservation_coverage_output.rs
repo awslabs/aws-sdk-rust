@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetReservationCoverageOutput  {
+pub struct GetReservationCoverageOutput {
     /// <p>The amount of time that your reservations covered.</p>
     #[doc(hidden)]
     pub coverages_by_time: std::option::Option<std::vec::Vec<crate::types::CoverageByTime>>,
@@ -16,26 +16,28 @@ pub struct GetReservationCoverageOutput  {
 }
 impl GetReservationCoverageOutput {
     /// <p>The amount of time that your reservations covered.</p>
-    pub fn coverages_by_time(&self) -> std::option::Option<& [crate::types::CoverageByTime]> {
+    pub fn coverages_by_time(&self) -> std::option::Option<&[crate::types::CoverageByTime]> {
         self.coverages_by_time.as_deref()
     }
     /// <p>The total amount of instance usage that a reservation covered.</p>
-    pub fn total(&self) -> std::option::Option<& crate::types::Coverage> {
+    pub fn total(&self) -> std::option::Option<&crate::types::Coverage> {
         self.total.as_ref()
     }
     /// <p>The token for the next set of retrievable results. Amazon Web Services provides the token when the response from a previous call has more results than the maximum page size.</p>
-    pub fn next_page_token(&self) -> std::option::Option<& str> {
+    pub fn next_page_token(&self) -> std::option::Option<&str> {
         self.next_page_token.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for GetReservationCoverageOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl GetReservationCoverageOutput {
     /// Creates a new builder-style object to manufacture [`GetReservationCoverageOutput`](crate::operation::get_reservation_coverage::GetReservationCoverageOutput).
-    pub fn builder() -> crate::operation::get_reservation_coverage::builders::GetReservationCoverageOutputBuilder {
+    pub fn builder(
+    ) -> crate::operation::get_reservation_coverage::builders::GetReservationCoverageOutputBuilder
+    {
         crate::operation::get_reservation_coverage::builders::GetReservationCoverageOutputBuilder::default()
     }
 }
@@ -57,13 +59,17 @@ impl GetReservationCoverageOutputBuilder {
     /// <p>The amount of time that your reservations covered.</p>
     pub fn coverages_by_time(mut self, input: crate::types::CoverageByTime) -> Self {
         let mut v = self.coverages_by_time.unwrap_or_default();
-                        v.push(input);
-                        self.coverages_by_time = Some(v);
-                        self
+        v.push(input);
+        self.coverages_by_time = Some(v);
+        self
     }
     /// <p>The amount of time that your reservations covered.</p>
-    pub fn set_coverages_by_time(mut self, input: std::option::Option<std::vec::Vec<crate::types::CoverageByTime>>) -> Self {
-        self.coverages_by_time = input; self
+    pub fn set_coverages_by_time(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::CoverageByTime>>,
+    ) -> Self {
+        self.coverages_by_time = input;
+        self
     }
     /// <p>The total amount of instance usage that a reservation covered.</p>
     pub fn total(mut self, input: crate::types::Coverage) -> Self {
@@ -72,7 +78,8 @@ impl GetReservationCoverageOutputBuilder {
     }
     /// <p>The total amount of instance usage that a reservation covered.</p>
     pub fn set_total(mut self, input: std::option::Option<crate::types::Coverage>) -> Self {
-        self.total = input; self
+        self.total = input;
+        self
     }
     /// <p>The token for the next set of retrievable results. Amazon Web Services provides the token when the response from a previous call has more results than the maximum page size.</p>
     pub fn next_page_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -81,28 +88,25 @@ impl GetReservationCoverageOutputBuilder {
     }
     /// <p>The token for the next set of retrievable results. Amazon Web Services provides the token when the response from a previous call has more results than the maximum page size.</p>
     pub fn set_next_page_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_page_token = input; self
+        self.next_page_token = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`GetReservationCoverageOutput`](crate::operation::get_reservation_coverage::GetReservationCoverageOutput).
     pub fn build(self) -> crate::operation::get_reservation_coverage::GetReservationCoverageOutput {
         crate::operation::get_reservation_coverage::GetReservationCoverageOutput {
-            coverages_by_time: self.coverages_by_time
-            ,
-            total: self.total
-            ,
-            next_page_token: self.next_page_token
-            ,
+            coverages_by_time: self.coverages_by_time,
+            total: self.total,
+            next_page_token: self.next_page_token,
             _request_id: self._request_id,
         }
     }
 }
-

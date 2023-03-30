@@ -3,7 +3,7 @@
 /// <p>The total value of the Convertible Reserved Instance.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ReservedInstanceReservationValue  {
+pub struct ReservedInstanceReservationValue {
     /// <p>The total value of the Convertible Reserved Instance that you are exchanging.</p>
     #[doc(hidden)]
     pub reservation_value: std::option::Option<crate::types::ReservationValue>,
@@ -13,11 +13,11 @@ pub struct ReservedInstanceReservationValue  {
 }
 impl ReservedInstanceReservationValue {
     /// <p>The total value of the Convertible Reserved Instance that you are exchanging.</p>
-    pub fn reservation_value(&self) -> std::option::Option<& crate::types::ReservationValue> {
+    pub fn reservation_value(&self) -> std::option::Option<&crate::types::ReservationValue> {
         self.reservation_value.as_ref()
     }
     /// <p>The ID of the Convertible Reserved Instance that you are exchanging.</p>
-    pub fn reserved_instance_id(&self) -> std::option::Option<& str> {
+    pub fn reserved_instance_id(&self) -> std::option::Option<&str> {
         self.reserved_instance_id.as_deref()
     }
 }
@@ -42,8 +42,12 @@ impl ReservedInstanceReservationValueBuilder {
         self
     }
     /// <p>The total value of the Convertible Reserved Instance that you are exchanging.</p>
-    pub fn set_reservation_value(mut self, input: std::option::Option<crate::types::ReservationValue>) -> Self {
-        self.reservation_value = input; self
+    pub fn set_reservation_value(
+        mut self,
+        input: std::option::Option<crate::types::ReservationValue>,
+    ) -> Self {
+        self.reservation_value = input;
+        self
     }
     /// <p>The ID of the Convertible Reserved Instance that you are exchanging.</p>
     pub fn reserved_instance_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -51,17 +55,18 @@ impl ReservedInstanceReservationValueBuilder {
         self
     }
     /// <p>The ID of the Convertible Reserved Instance that you are exchanging.</p>
-    pub fn set_reserved_instance_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.reserved_instance_id = input; self
+    pub fn set_reserved_instance_id(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.reserved_instance_id = input;
+        self
     }
     /// Consumes the builder and constructs a [`ReservedInstanceReservationValue`](crate::types::ReservedInstanceReservationValue).
     pub fn build(self) -> crate::types::ReservedInstanceReservationValue {
         crate::types::ReservedInstanceReservationValue {
-            reservation_value: self.reservation_value
-            ,
-            reserved_instance_id: self.reserved_instance_id
-            ,
+            reservation_value: self.reservation_value,
+            reserved_instance_id: self.reserved_instance_id,
         }
     }
 }
-

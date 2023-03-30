@@ -4,50 +4,72 @@ pub use crate::operation::get_experiment_results::_get_experiment_results_output
 pub use crate::operation::get_experiment_results::_get_experiment_results_input::GetExperimentResultsInputBuilder;
 
 /// Fluent builder constructing a request to `GetExperimentResults`.
-/// 
-/// <p>Retrieves the results of a running or completed experiment. No results are available until there have been 100 events for each variation and at least 10 minutes have passed since the start of the experiment. To increase the statistical power, Evidently performs an additional offline p-value analysis at the end of the experiment. Offline p-value analysis can detect statistical significance in some cases where the anytime p-values used during the experiment do not find statistical significance.</p> 
+///
+/// <p>Retrieves the results of a running or completed experiment. No results are available until there have been 100 events for each variation and at least 10 minutes have passed since the start of the experiment. To increase the statistical power, Evidently performs an additional offline p-value analysis at the end of the experiment. Offline p-value analysis can detect statistical significance in some cases where the anytime p-values used during the experiment do not find statistical significance.</p>
 /// <p>Experiment results are available up to 63 days after the start of the experiment. They are not available after that because of CloudWatch data retention policies.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct GetExperimentResultsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::get_experiment_results::builders::GetExperimentResultsInputBuilder
-            }
-impl GetExperimentResultsFluentBuilder  {
+    handle: std::sync::Arc<crate::client::Handle>,
+    inner: crate::operation::get_experiment_results::builders::GetExperimentResultsInputBuilder,
+}
+impl GetExperimentResultsFluentBuilder {
     /// Creates a new `GetExperimentResults`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
-                    /// sent. The operation's inner [http::Request] can be modified as well.
-                    pub async fn customize(self) -> std::result::Result<
-                        crate::client::customize::CustomizableOperation<crate::operation::get_experiment_results::GetExperimentResults, aws_http::retry::AwsResponseRetryClassifier,>,
-                        aws_smithy_http::result::SdkError<crate::operation::get_experiment_results::GetExperimentResultsError>
-                    >  {
-                        let handle = self.handle.clone();
-                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-                    }
-    
-                    /// Sends the request and returns the response.
-                    ///
-                    /// If an error occurs, an `SdkError` will be returned with additional details that
-                    /// can be matched against.
-                    ///
-                    /// By default, any retryable failures will be retried twice. Retry behavior
-                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                    /// set when configuring the client.
-                    pub async fn send(self) -> std::result::Result<crate::operation::get_experiment_results::GetExperimentResultsOutput, aws_smithy_http::result::SdkError<crate::operation::get_experiment_results::GetExperimentResultsError>>
-                     {
-                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&self.handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        self.handle.client.call(op).await
-                    }
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle,
+            inner: Default::default(),
+        }
+    }
+
+    /// Consume this builder, creating a customizable operation that can be modified before being
+    /// sent. The operation's inner [http::Request] can be modified as well.
+    pub async fn customize(
+        self,
+    ) -> std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::get_experiment_results::GetExperimentResults,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::result::SdkError<
+            crate::operation::get_experiment_results::GetExperimentResultsError,
+        >,
+    > {
+        let handle = self.handle.clone();
+        let operation = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+    }
+
+    /// Sends the request and returns the response.
+    ///
+    /// If an error occurs, an `SdkError` will be returned with additional details that
+    /// can be matched against.
+    ///
+    /// By default, any retryable failures will be retried twice. Retry behavior
+    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+    /// set when configuring the client.
+    pub async fn send(
+        self,
+    ) -> std::result::Result<
+        crate::operation::get_experiment_results::GetExperimentResultsOutput,
+        aws_smithy_http::result::SdkError<
+            crate::operation::get_experiment_results::GetExperimentResultsError,
+        >,
+    > {
+        let op = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&self.handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        self.handle.client.call(op).await
+    }
     /// <p>The name or ARN of the project that contains the experiment that you want to see the results of.</p>
     pub fn project(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.project(input.into());
@@ -74,7 +96,10 @@ impl GetExperimentResultsFluentBuilder  {
         self
     }
     /// <p>The date and time that the experiment started.</p>
-    pub fn set_start_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+    pub fn set_start_time(
+        mut self,
+        input: std::option::Option<aws_smithy_types::DateTime>,
+    ) -> Self {
         self.inner = self.inner.set_start_time(input);
         self
     }
@@ -98,7 +123,10 @@ impl GetExperimentResultsFluentBuilder  {
         self
     }
     /// <p>The names of the experiment metrics that you want to see the results of.</p>
-    pub fn set_metric_names(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+    pub fn set_metric_names(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
         self.inner = self.inner.set_metric_names(input);
         self
     }
@@ -112,7 +140,10 @@ impl GetExperimentResultsFluentBuilder  {
         self
     }
     /// <p>The names of the experiment treatments that you want to see the results for.</p>
-    pub fn set_treatment_names(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+    pub fn set_treatment_names(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
         self.inner = self.inner.set_treatment_names(input);
         self
     }
@@ -122,7 +153,10 @@ impl GetExperimentResultsFluentBuilder  {
         self
     }
     /// <p>The statistic used to calculate experiment results. Currently the only valid value is <code>mean</code>, which uses the mean of the collected values as the statistic.</p>
-    pub fn set_base_stat(mut self, input: std::option::Option<crate::types::ExperimentBaseStat>) -> Self {
+    pub fn set_base_stat(
+        mut self,
+        input: std::option::Option<crate::types::ExperimentBaseStat>,
+    ) -> Self {
         self.inner = self.inner.set_base_stat(input);
         self
     }
@@ -130,25 +164,28 @@ impl GetExperimentResultsFluentBuilder  {
     ///
     /// To override the contents of this collection use [`set_result_stats`](Self::set_result_stats).
     ///
-    /// <p>The statistics that you want to see in the returned results.</p> 
-    /// <ul> 
-    /// <li> <p> <code>PValue</code> specifies to use p-values for the results. A p-value is used in hypothesis testing to measure how often you are willing to make a mistake in rejecting the null hypothesis. A general practice is to reject the null hypothesis and declare that the results are statistically significant when the p-value is less than 0.05.</p> </li> 
-    /// <li> <p> <code>ConfidenceInterval</code> specifies a confidence interval for the results. The confidence interval represents the range of values for the chosen metric that is likely to contain the true difference between the <code>baseStat</code> of a variation and the baseline. Evidently returns the 95% confidence interval. </p> </li> 
-    /// <li> <p> <code>TreatmentEffect</code> is the difference in the statistic specified by the <code>baseStat</code> parameter between each variation and the default variation. </p> </li> 
-    /// <li> <p> <code>BaseStat</code> returns the statistical values collected for the metric for each variation. The statistic uses the same statistic specified in the <code>baseStat</code> parameter. Therefore, if <code>baseStat</code> is <code>mean</code>, this returns the mean of the values collected for each variation.</p> </li> 
+    /// <p>The statistics that you want to see in the returned results.</p>
+    /// <ul>
+    /// <li> <p> <code>PValue</code> specifies to use p-values for the results. A p-value is used in hypothesis testing to measure how often you are willing to make a mistake in rejecting the null hypothesis. A general practice is to reject the null hypothesis and declare that the results are statistically significant when the p-value is less than 0.05.</p> </li>
+    /// <li> <p> <code>ConfidenceInterval</code> specifies a confidence interval for the results. The confidence interval represents the range of values for the chosen metric that is likely to contain the true difference between the <code>baseStat</code> of a variation and the baseline. Evidently returns the 95% confidence interval. </p> </li>
+    /// <li> <p> <code>TreatmentEffect</code> is the difference in the statistic specified by the <code>baseStat</code> parameter between each variation and the default variation. </p> </li>
+    /// <li> <p> <code>BaseStat</code> returns the statistical values collected for the metric for each variation. The statistic uses the same statistic specified in the <code>baseStat</code> parameter. Therefore, if <code>baseStat</code> is <code>mean</code>, this returns the mean of the values collected for each variation.</p> </li>
     /// </ul>
     pub fn result_stats(mut self, input: crate::types::ExperimentResultRequestType) -> Self {
         self.inner = self.inner.result_stats(input);
         self
     }
-    /// <p>The statistics that you want to see in the returned results.</p> 
-    /// <ul> 
-    /// <li> <p> <code>PValue</code> specifies to use p-values for the results. A p-value is used in hypothesis testing to measure how often you are willing to make a mistake in rejecting the null hypothesis. A general practice is to reject the null hypothesis and declare that the results are statistically significant when the p-value is less than 0.05.</p> </li> 
-    /// <li> <p> <code>ConfidenceInterval</code> specifies a confidence interval for the results. The confidence interval represents the range of values for the chosen metric that is likely to contain the true difference between the <code>baseStat</code> of a variation and the baseline. Evidently returns the 95% confidence interval. </p> </li> 
-    /// <li> <p> <code>TreatmentEffect</code> is the difference in the statistic specified by the <code>baseStat</code> parameter between each variation and the default variation. </p> </li> 
-    /// <li> <p> <code>BaseStat</code> returns the statistical values collected for the metric for each variation. The statistic uses the same statistic specified in the <code>baseStat</code> parameter. Therefore, if <code>baseStat</code> is <code>mean</code>, this returns the mean of the values collected for each variation.</p> </li> 
+    /// <p>The statistics that you want to see in the returned results.</p>
+    /// <ul>
+    /// <li> <p> <code>PValue</code> specifies to use p-values for the results. A p-value is used in hypothesis testing to measure how often you are willing to make a mistake in rejecting the null hypothesis. A general practice is to reject the null hypothesis and declare that the results are statistically significant when the p-value is less than 0.05.</p> </li>
+    /// <li> <p> <code>ConfidenceInterval</code> specifies a confidence interval for the results. The confidence interval represents the range of values for the chosen metric that is likely to contain the true difference between the <code>baseStat</code> of a variation and the baseline. Evidently returns the 95% confidence interval. </p> </li>
+    /// <li> <p> <code>TreatmentEffect</code> is the difference in the statistic specified by the <code>baseStat</code> parameter between each variation and the default variation. </p> </li>
+    /// <li> <p> <code>BaseStat</code> returns the statistical values collected for the metric for each variation. The statistic uses the same statistic specified in the <code>baseStat</code> parameter. Therefore, if <code>baseStat</code> is <code>mean</code>, this returns the mean of the values collected for each variation.</p> </li>
     /// </ul>
-    pub fn set_result_stats(mut self, input: std::option::Option<std::vec::Vec<crate::types::ExperimentResultRequestType>>) -> Self {
+    pub fn set_result_stats(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::ExperimentResultRequestType>>,
+    ) -> Self {
         self.inner = self.inner.set_result_stats(input);
         self
     }
@@ -162,7 +199,10 @@ impl GetExperimentResultsFluentBuilder  {
         self
     }
     /// <p>The names of the report types that you want to see. Currently, <code>BayesianInference</code> is the only valid value.</p>
-    pub fn set_report_names(mut self, input: std::option::Option<std::vec::Vec<crate::types::ExperimentReportName>>) -> Self {
+    pub fn set_report_names(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::ExperimentReportName>>,
+    ) -> Self {
         self.inner = self.inner.set_report_names(input);
         self
     }
@@ -177,4 +217,3 @@ impl GetExperimentResultsFluentBuilder  {
         self
     }
 }
-

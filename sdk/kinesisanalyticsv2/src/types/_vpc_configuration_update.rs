@@ -3,7 +3,7 @@
 /// <p>Describes updates to the VPC configuration used by the application.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct VpcConfigurationUpdate  {
+pub struct VpcConfigurationUpdate {
     /// <p>Describes an update to the ID of the VPC configuration.</p>
     #[doc(hidden)]
     pub vpc_configuration_id: std::option::Option<std::string::String>,
@@ -16,15 +16,15 @@ pub struct VpcConfigurationUpdate  {
 }
 impl VpcConfigurationUpdate {
     /// <p>Describes an update to the ID of the VPC configuration.</p>
-    pub fn vpc_configuration_id(&self) -> std::option::Option<& str> {
+    pub fn vpc_configuration_id(&self) -> std::option::Option<&str> {
         self.vpc_configuration_id.as_deref()
     }
     /// <p>Describes updates to the array of <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_Subnet.html">Subnet</a> IDs used by the VPC configuration.</p>
-    pub fn subnet_id_updates(&self) -> std::option::Option<& [std::string::String]> {
+    pub fn subnet_id_updates(&self) -> std::option::Option<&[std::string::String]> {
         self.subnet_id_updates.as_deref()
     }
     /// <p>Describes updates to the array of <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_SecurityGroup.html">SecurityGroup</a> IDs used by the VPC configuration.</p>
-    pub fn security_group_id_updates(&self) -> std::option::Option<& [std::string::String]> {
+    pub fn security_group_id_updates(&self) -> std::option::Option<&[std::string::String]> {
         self.security_group_id_updates.as_deref()
     }
 }
@@ -50,8 +50,12 @@ impl VpcConfigurationUpdateBuilder {
         self
     }
     /// <p>Describes an update to the ID of the VPC configuration.</p>
-    pub fn set_vpc_configuration_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.vpc_configuration_id = input; self
+    pub fn set_vpc_configuration_id(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.vpc_configuration_id = input;
+        self
     }
     /// Appends an item to `subnet_id_updates`.
     ///
@@ -60,13 +64,17 @@ impl VpcConfigurationUpdateBuilder {
     /// <p>Describes updates to the array of <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_Subnet.html">Subnet</a> IDs used by the VPC configuration.</p>
     pub fn subnet_id_updates(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.subnet_id_updates.unwrap_or_default();
-                        v.push(input.into());
-                        self.subnet_id_updates = Some(v);
-                        self
+        v.push(input.into());
+        self.subnet_id_updates = Some(v);
+        self
     }
     /// <p>Describes updates to the array of <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_Subnet.html">Subnet</a> IDs used by the VPC configuration.</p>
-    pub fn set_subnet_id_updates(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-        self.subnet_id_updates = input; self
+    pub fn set_subnet_id_updates(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
+        self.subnet_id_updates = input;
+        self
     }
     /// Appends an item to `security_group_id_updates`.
     ///
@@ -75,24 +83,24 @@ impl VpcConfigurationUpdateBuilder {
     /// <p>Describes updates to the array of <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_SecurityGroup.html">SecurityGroup</a> IDs used by the VPC configuration.</p>
     pub fn security_group_id_updates(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.security_group_id_updates.unwrap_or_default();
-                        v.push(input.into());
-                        self.security_group_id_updates = Some(v);
-                        self
+        v.push(input.into());
+        self.security_group_id_updates = Some(v);
+        self
     }
     /// <p>Describes updates to the array of <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_SecurityGroup.html">SecurityGroup</a> IDs used by the VPC configuration.</p>
-    pub fn set_security_group_id_updates(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-        self.security_group_id_updates = input; self
+    pub fn set_security_group_id_updates(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
+        self.security_group_id_updates = input;
+        self
     }
     /// Consumes the builder and constructs a [`VpcConfigurationUpdate`](crate::types::VpcConfigurationUpdate).
     pub fn build(self) -> crate::types::VpcConfigurationUpdate {
         crate::types::VpcConfigurationUpdate {
-            vpc_configuration_id: self.vpc_configuration_id
-            ,
-            subnet_id_updates: self.subnet_id_updates
-            ,
-            security_group_id_updates: self.security_group_id_updates
-            ,
+            vpc_configuration_id: self.vpc_configuration_id,
+            subnet_id_updates: self.subnet_id_updates,
+            security_group_id_updates: self.security_group_id_updates,
         }
     }
 }
-

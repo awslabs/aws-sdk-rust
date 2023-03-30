@@ -3,20 +3,20 @@
 /// <p>Represents a request to retrieve an existing custom verification email template.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetCustomVerificationEmailTemplateInput  {
+pub struct GetCustomVerificationEmailTemplateInput {
     /// <p>The name of the custom verification email template that you want to retrieve.</p>
     #[doc(hidden)]
     pub template_name: std::option::Option<std::string::String>,
 }
 impl GetCustomVerificationEmailTemplateInput {
     /// <p>The name of the custom verification email template that you want to retrieve.</p>
-    pub fn template_name(&self) -> std::option::Option<& str> {
+    pub fn template_name(&self) -> std::option::Option<&str> {
         self.template_name.as_deref()
     }
 }
 impl GetCustomVerificationEmailTemplateInput {
     /// Creates a new builder-style object to manufacture [`GetCustomVerificationEmailTemplateInput`](crate::operation::get_custom_verification_email_template::GetCustomVerificationEmailTemplateInput).
-    pub fn builder() -> crate::operation::get_custom_verification_email_template::builders::GetCustomVerificationEmailTemplateInputBuilder {
+    pub fn builder() -> crate::operation::get_custom_verification_email_template::builders::GetCustomVerificationEmailTemplateInputBuilder{
         crate::operation::get_custom_verification_email_template::builders::GetCustomVerificationEmailTemplateInputBuilder::default()
     }
 }
@@ -35,10 +35,11 @@ impl GetCustomVerificationEmailTemplateInputBuilder {
     }
     /// <p>The name of the custom verification email template that you want to retrieve.</p>
     pub fn set_template_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.template_name = input; self
+        self.template_name = input;
+        self
     }
     /// Consumes the builder and constructs a [`GetCustomVerificationEmailTemplateInput`](crate::operation::get_custom_verification_email_template::GetCustomVerificationEmailTemplateInput).
-    pub fn build(self) -> Result<crate::operation::get_custom_verification_email_template::GetCustomVerificationEmailTemplateInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> Result<crate::operation::get_custom_verification_email_template::GetCustomVerificationEmailTemplateInput, aws_smithy_http::operation::error::BuildError>{
         Ok(
             crate::operation::get_custom_verification_email_template::GetCustomVerificationEmailTemplateInput {
                 template_name: self.template_name
@@ -47,4 +48,3 @@ impl GetCustomVerificationEmailTemplateInputBuilder {
         )
     }
 }
-

@@ -3,9 +3,9 @@
 /// <p>A container to specify the properties of your S3 Storage Lens metrics export, including the destination, schema, and format.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct StorageLensDataExport  {
-    /// <p>A container for the bucket where the S3 Storage Lens metrics export will be located.</p> <note> 
-    /// <p>This bucket must be located in the same Region as the storage lens configuration. </p> 
+pub struct StorageLensDataExport {
+    /// <p>A container for the bucket where the S3 Storage Lens metrics export will be located.</p> <note>
+    /// <p>This bucket must be located in the same Region as the storage lens configuration. </p>
     /// </note>
     #[doc(hidden)]
     pub s3_bucket_destination: std::option::Option<crate::types::S3BucketDestination>,
@@ -14,14 +14,14 @@ pub struct StorageLensDataExport  {
     pub cloud_watch_metrics: std::option::Option<crate::types::CloudWatchMetrics>,
 }
 impl StorageLensDataExport {
-    /// <p>A container for the bucket where the S3 Storage Lens metrics export will be located.</p> <note> 
-    /// <p>This bucket must be located in the same Region as the storage lens configuration. </p> 
+    /// <p>A container for the bucket where the S3 Storage Lens metrics export will be located.</p> <note>
+    /// <p>This bucket must be located in the same Region as the storage lens configuration. </p>
     /// </note>
-    pub fn s3_bucket_destination(&self) -> std::option::Option<& crate::types::S3BucketDestination> {
+    pub fn s3_bucket_destination(&self) -> std::option::Option<&crate::types::S3BucketDestination> {
         self.s3_bucket_destination.as_ref()
     }
     /// <p>A container for enabling Amazon CloudWatch publishing for S3 Storage Lens metrics.</p>
-    pub fn cloud_watch_metrics(&self) -> std::option::Option<& crate::types::CloudWatchMetrics> {
+    pub fn cloud_watch_metrics(&self) -> std::option::Option<&crate::types::CloudWatchMetrics> {
         self.cloud_watch_metrics.as_ref()
     }
 }
@@ -40,18 +40,22 @@ pub struct StorageLensDataExportBuilder {
     pub(crate) cloud_watch_metrics: std::option::Option<crate::types::CloudWatchMetrics>,
 }
 impl StorageLensDataExportBuilder {
-    /// <p>A container for the bucket where the S3 Storage Lens metrics export will be located.</p> <note> 
-    /// <p>This bucket must be located in the same Region as the storage lens configuration. </p> 
+    /// <p>A container for the bucket where the S3 Storage Lens metrics export will be located.</p> <note>
+    /// <p>This bucket must be located in the same Region as the storage lens configuration. </p>
     /// </note>
     pub fn s3_bucket_destination(mut self, input: crate::types::S3BucketDestination) -> Self {
         self.s3_bucket_destination = Some(input);
         self
     }
-    /// <p>A container for the bucket where the S3 Storage Lens metrics export will be located.</p> <note> 
-    /// <p>This bucket must be located in the same Region as the storage lens configuration. </p> 
+    /// <p>A container for the bucket where the S3 Storage Lens metrics export will be located.</p> <note>
+    /// <p>This bucket must be located in the same Region as the storage lens configuration. </p>
     /// </note>
-    pub fn set_s3_bucket_destination(mut self, input: std::option::Option<crate::types::S3BucketDestination>) -> Self {
-        self.s3_bucket_destination = input; self
+    pub fn set_s3_bucket_destination(
+        mut self,
+        input: std::option::Option<crate::types::S3BucketDestination>,
+    ) -> Self {
+        self.s3_bucket_destination = input;
+        self
     }
     /// <p>A container for enabling Amazon CloudWatch publishing for S3 Storage Lens metrics.</p>
     pub fn cloud_watch_metrics(mut self, input: crate::types::CloudWatchMetrics) -> Self {
@@ -59,17 +63,18 @@ impl StorageLensDataExportBuilder {
         self
     }
     /// <p>A container for enabling Amazon CloudWatch publishing for S3 Storage Lens metrics.</p>
-    pub fn set_cloud_watch_metrics(mut self, input: std::option::Option<crate::types::CloudWatchMetrics>) -> Self {
-        self.cloud_watch_metrics = input; self
+    pub fn set_cloud_watch_metrics(
+        mut self,
+        input: std::option::Option<crate::types::CloudWatchMetrics>,
+    ) -> Self {
+        self.cloud_watch_metrics = input;
+        self
     }
     /// Consumes the builder and constructs a [`StorageLensDataExport`](crate::types::StorageLensDataExport).
     pub fn build(self) -> crate::types::StorageLensDataExport {
         crate::types::StorageLensDataExport {
-            s3_bucket_destination: self.s3_bucket_destination
-            ,
-            cloud_watch_metrics: self.cloud_watch_metrics
-            ,
+            s3_bucket_destination: self.s3_bucket_destination,
+            cloud_watch_metrics: self.cloud_watch_metrics,
         }
     }
 }
-

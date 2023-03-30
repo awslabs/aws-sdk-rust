@@ -3,7 +3,7 @@
 /// <p>A relationship between a security group and a user.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AwsEc2SecurityGroupUserIdGroupPair  {
+pub struct AwsEc2SecurityGroupUserIdGroupPair {
     /// <p>The ID of the security group.</p>
     #[doc(hidden)]
     pub group_id: std::option::Option<std::string::String>,
@@ -13,8 +13,8 @@ pub struct AwsEc2SecurityGroupUserIdGroupPair  {
     /// <p>The status of a VPC peering connection, if applicable.</p>
     #[doc(hidden)]
     pub peering_status: std::option::Option<std::string::String>,
-    /// <p>The ID of an Amazon Web Services account.</p> 
-    /// <p>For a referenced security group in another VPC, the account ID of the referenced security group is returned in the response. If the referenced security group is deleted, this value is not returned.</p> 
+    /// <p>The ID of an Amazon Web Services account.</p>
+    /// <p>For a referenced security group in another VPC, the account ID of the referenced security group is returned in the response. If the referenced security group is deleted, this value is not returned.</p>
     /// <p>[EC2-Classic] Required when adding or removing rules that reference a security group in another VPC. </p>
     #[doc(hidden)]
     pub user_id: std::option::Option<std::string::String>,
@@ -27,29 +27,29 @@ pub struct AwsEc2SecurityGroupUserIdGroupPair  {
 }
 impl AwsEc2SecurityGroupUserIdGroupPair {
     /// <p>The ID of the security group.</p>
-    pub fn group_id(&self) -> std::option::Option<& str> {
+    pub fn group_id(&self) -> std::option::Option<&str> {
         self.group_id.as_deref()
     }
     /// <p>The name of the security group.</p>
-    pub fn group_name(&self) -> std::option::Option<& str> {
+    pub fn group_name(&self) -> std::option::Option<&str> {
         self.group_name.as_deref()
     }
     /// <p>The status of a VPC peering connection, if applicable.</p>
-    pub fn peering_status(&self) -> std::option::Option<& str> {
+    pub fn peering_status(&self) -> std::option::Option<&str> {
         self.peering_status.as_deref()
     }
-    /// <p>The ID of an Amazon Web Services account.</p> 
-    /// <p>For a referenced security group in another VPC, the account ID of the referenced security group is returned in the response. If the referenced security group is deleted, this value is not returned.</p> 
+    /// <p>The ID of an Amazon Web Services account.</p>
+    /// <p>For a referenced security group in another VPC, the account ID of the referenced security group is returned in the response. If the referenced security group is deleted, this value is not returned.</p>
     /// <p>[EC2-Classic] Required when adding or removing rules that reference a security group in another VPC. </p>
-    pub fn user_id(&self) -> std::option::Option<& str> {
+    pub fn user_id(&self) -> std::option::Option<&str> {
         self.user_id.as_deref()
     }
     /// <p>The ID of the VPC for the referenced security group, if applicable.</p>
-    pub fn vpc_id(&self) -> std::option::Option<& str> {
+    pub fn vpc_id(&self) -> std::option::Option<&str> {
         self.vpc_id.as_deref()
     }
     /// <p>The ID of the VPC peering connection, if applicable.</p>
-    pub fn vpc_peering_connection_id(&self) -> std::option::Option<& str> {
+    pub fn vpc_peering_connection_id(&self) -> std::option::Option<&str> {
         self.vpc_peering_connection_id.as_deref()
     }
 }
@@ -79,7 +79,8 @@ impl AwsEc2SecurityGroupUserIdGroupPairBuilder {
     }
     /// <p>The ID of the security group.</p>
     pub fn set_group_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.group_id = input; self
+        self.group_id = input;
+        self
     }
     /// <p>The name of the security group.</p>
     pub fn group_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -88,7 +89,8 @@ impl AwsEc2SecurityGroupUserIdGroupPairBuilder {
     }
     /// <p>The name of the security group.</p>
     pub fn set_group_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.group_name = input; self
+        self.group_name = input;
+        self
     }
     /// <p>The status of a VPC peering connection, if applicable.</p>
     pub fn peering_status(mut self, input: impl Into<std::string::String>) -> Self {
@@ -97,20 +99,22 @@ impl AwsEc2SecurityGroupUserIdGroupPairBuilder {
     }
     /// <p>The status of a VPC peering connection, if applicable.</p>
     pub fn set_peering_status(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.peering_status = input; self
+        self.peering_status = input;
+        self
     }
-    /// <p>The ID of an Amazon Web Services account.</p> 
-    /// <p>For a referenced security group in another VPC, the account ID of the referenced security group is returned in the response. If the referenced security group is deleted, this value is not returned.</p> 
+    /// <p>The ID of an Amazon Web Services account.</p>
+    /// <p>For a referenced security group in another VPC, the account ID of the referenced security group is returned in the response. If the referenced security group is deleted, this value is not returned.</p>
     /// <p>[EC2-Classic] Required when adding or removing rules that reference a security group in another VPC. </p>
     pub fn user_id(mut self, input: impl Into<std::string::String>) -> Self {
         self.user_id = Some(input.into());
         self
     }
-    /// <p>The ID of an Amazon Web Services account.</p> 
-    /// <p>For a referenced security group in another VPC, the account ID of the referenced security group is returned in the response. If the referenced security group is deleted, this value is not returned.</p> 
+    /// <p>The ID of an Amazon Web Services account.</p>
+    /// <p>For a referenced security group in another VPC, the account ID of the referenced security group is returned in the response. If the referenced security group is deleted, this value is not returned.</p>
     /// <p>[EC2-Classic] Required when adding or removing rules that reference a security group in another VPC. </p>
     pub fn set_user_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.user_id = input; self
+        self.user_id = input;
+        self
     }
     /// <p>The ID of the VPC for the referenced security group, if applicable.</p>
     pub fn vpc_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -119,7 +123,8 @@ impl AwsEc2SecurityGroupUserIdGroupPairBuilder {
     }
     /// <p>The ID of the VPC for the referenced security group, if applicable.</p>
     pub fn set_vpc_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.vpc_id = input; self
+        self.vpc_id = input;
+        self
     }
     /// <p>The ID of the VPC peering connection, if applicable.</p>
     pub fn vpc_peering_connection_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -127,25 +132,22 @@ impl AwsEc2SecurityGroupUserIdGroupPairBuilder {
         self
     }
     /// <p>The ID of the VPC peering connection, if applicable.</p>
-    pub fn set_vpc_peering_connection_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.vpc_peering_connection_id = input; self
+    pub fn set_vpc_peering_connection_id(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.vpc_peering_connection_id = input;
+        self
     }
     /// Consumes the builder and constructs a [`AwsEc2SecurityGroupUserIdGroupPair`](crate::types::AwsEc2SecurityGroupUserIdGroupPair).
     pub fn build(self) -> crate::types::AwsEc2SecurityGroupUserIdGroupPair {
         crate::types::AwsEc2SecurityGroupUserIdGroupPair {
-            group_id: self.group_id
-            ,
-            group_name: self.group_name
-            ,
-            peering_status: self.peering_status
-            ,
-            user_id: self.user_id
-            ,
-            vpc_id: self.vpc_id
-            ,
-            vpc_peering_connection_id: self.vpc_peering_connection_id
-            ,
+            group_id: self.group_id,
+            group_name: self.group_name,
+            peering_status: self.peering_status,
+            user_id: self.user_id,
+            vpc_id: self.vpc_id,
+            vpc_peering_connection_id: self.vpc_peering_connection_id,
         }
     }
 }
-

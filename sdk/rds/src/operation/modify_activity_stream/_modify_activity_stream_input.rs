@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ModifyActivityStreamInput  {
+pub struct ModifyActivityStreamInput {
     /// <p>The Amazon Resource Name (ARN) of the RDS for Oracle DB instance, for example, <code>arn:aws:rds:us-east-1:12345667890:instance:my-orcl-db</code>.</p>
     #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
@@ -12,17 +12,18 @@ pub struct ModifyActivityStreamInput  {
 }
 impl ModifyActivityStreamInput {
     /// <p>The Amazon Resource Name (ARN) of the RDS for Oracle DB instance, for example, <code>arn:aws:rds:us-east-1:12345667890:instance:my-orcl-db</code>.</p>
-    pub fn resource_arn(&self) -> std::option::Option<& str> {
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
         self.resource_arn.as_deref()
     }
     /// <p>The audit policy state. When a policy is unlocked, it is read/write. When it is locked, it is read-only. You can edit your audit policy only when the activity stream is unlocked or stopped.</p>
-    pub fn audit_policy_state(&self) -> std::option::Option<& crate::types::AuditPolicyState> {
+    pub fn audit_policy_state(&self) -> std::option::Option<&crate::types::AuditPolicyState> {
         self.audit_policy_state.as_ref()
     }
 }
 impl ModifyActivityStreamInput {
     /// Creates a new builder-style object to manufacture [`ModifyActivityStreamInput`](crate::operation::modify_activity_stream::ModifyActivityStreamInput).
-    pub fn builder() -> crate::operation::modify_activity_stream::builders::ModifyActivityStreamInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::modify_activity_stream::builders::ModifyActivityStreamInputBuilder {
         crate::operation::modify_activity_stream::builders::ModifyActivityStreamInputBuilder::default()
     }
 }
@@ -42,7 +43,8 @@ impl ModifyActivityStreamInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the RDS for Oracle DB instance, for example, <code>arn:aws:rds:us-east-1:12345667890:instance:my-orcl-db</code>.</p>
     pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.resource_arn = input; self
+        self.resource_arn = input;
+        self
     }
     /// <p>The audit policy state. When a policy is unlocked, it is read/write. When it is locked, it is read-only. You can edit your audit policy only when the activity stream is unlocked or stopped.</p>
     pub fn audit_policy_state(mut self, input: crate::types::AuditPolicyState) -> Self {
@@ -50,19 +52,25 @@ impl ModifyActivityStreamInputBuilder {
         self
     }
     /// <p>The audit policy state. When a policy is unlocked, it is read/write. When it is locked, it is read-only. You can edit your audit policy only when the activity stream is unlocked or stopped.</p>
-    pub fn set_audit_policy_state(mut self, input: std::option::Option<crate::types::AuditPolicyState>) -> Self {
-        self.audit_policy_state = input; self
+    pub fn set_audit_policy_state(
+        mut self,
+        input: std::option::Option<crate::types::AuditPolicyState>,
+    ) -> Self {
+        self.audit_policy_state = input;
+        self
     }
     /// Consumes the builder and constructs a [`ModifyActivityStreamInput`](crate::operation::modify_activity_stream::ModifyActivityStreamInput).
-    pub fn build(self) -> Result<crate::operation::modify_activity_stream::ModifyActivityStreamInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::modify_activity_stream::ModifyActivityStreamInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::modify_activity_stream::ModifyActivityStreamInput {
-                resource_arn: self.resource_arn
-                ,
-                audit_policy_state: self.audit_policy_state
-                ,
-            }
+                resource_arn: self.resource_arn,
+                audit_policy_state: self.audit_policy_state,
+            },
         )
     }
 }
-

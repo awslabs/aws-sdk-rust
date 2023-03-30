@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-/// 
+///
 /// Here is an example of how you can make a match expression forward-compatible:
-/// 
+///
 /// ```text
 /// # let locale = unimplemented!();
 /// match locale {
@@ -39,14 +39,22 @@
 /// Specifically, when `locale` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `Locale::NewFeature` also yielding `"NewFeature"`.
-/// 
+///
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
 pub enum Locale {
     #[allow(missing_docs)] // documentation missing in model
     DeDe,
@@ -71,59 +79,61 @@ pub enum Locale {
     #[allow(missing_docs)] // documentation missing in model
     ZhTw,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::primitives::UnknownVariantValue)
+    Unknown(crate::primitives::UnknownVariantValue),
 }
 impl std::convert::From<&str> for Locale {
-                fn from(s: &str) -> Self {
-                    match s {
-                        "DE_DE" => Locale::DeDe,
-"EN_GB" => Locale::EnGb,
-"EN_US" => Locale::EnUs,
-"ES_ES" => Locale::EsEs,
-"FR_FR" => Locale::FrFr,
-"IT_IT" => Locale::ItIt,
-"JA_JP" => Locale::JaJp,
-"KO_KR" => Locale::KoKr,
-"PT_BR" => Locale::PtBr,
-"ZH_CN" => Locale::ZhCn,
-"ZH_TW" => Locale::ZhTw,
-other => Locale::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
-                    }
-                }
-            }
-impl std::str::FromStr for Locale {
-                type Err = std::convert::Infallible;
-
-                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-                    Ok(Locale::from(s))
-                }
-            }
-impl Locale {
-                /// Returns the `&str` value of the enum member.
-                pub fn as_str(&self) -> &str {
-                    match self {
-    Locale::DeDe => "DE_DE",
-    Locale::EnGb => "EN_GB",
-    Locale::EnUs => "EN_US",
-    Locale::EsEs => "ES_ES",
-    Locale::FrFr => "FR_FR",
-    Locale::ItIt => "IT_IT",
-    Locale::JaJp => "JA_JP",
-    Locale::KoKr => "KO_KR",
-    Locale::PtBr => "PT_BR",
-    Locale::ZhCn => "ZH_CN",
-    Locale::ZhTw => "ZH_TW",
-    Locale::Unknown(value) => value.as_str()
+    fn from(s: &str) -> Self {
+        match s {
+            "DE_DE" => Locale::DeDe,
+            "EN_GB" => Locale::EnGb,
+            "EN_US" => Locale::EnUs,
+            "ES_ES" => Locale::EsEs,
+            "FR_FR" => Locale::FrFr,
+            "IT_IT" => Locale::ItIt,
+            "JA_JP" => Locale::JaJp,
+            "KO_KR" => Locale::KoKr,
+            "PT_BR" => Locale::PtBr,
+            "ZH_CN" => Locale::ZhCn,
+            "ZH_TW" => Locale::ZhTw,
+            other => Locale::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
+        }
+    }
 }
-                }
-                /// Returns all the `&str` representations of the enum members.
-                pub const fn values() -> &'static [&'static str] {
-                    &["DE_DE", "EN_GB", "EN_US", "ES_ES", "FR_FR", "IT_IT", "JA_JP", "KO_KR", "PT_BR", "ZH_CN", "ZH_TW"]
-                }
-            }
-impl AsRef<str> for Locale {
-                fn as_ref(&self) -> &str {
-                    self.as_str()
-                }
-            }
+impl std::str::FromStr for Locale {
+    type Err = std::convert::Infallible;
 
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(Locale::from(s))
+    }
+}
+impl Locale {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            Locale::DeDe => "DE_DE",
+            Locale::EnGb => "EN_GB",
+            Locale::EnUs => "EN_US",
+            Locale::EsEs => "ES_ES",
+            Locale::FrFr => "FR_FR",
+            Locale::ItIt => "IT_IT",
+            Locale::JaJp => "JA_JP",
+            Locale::KoKr => "KO_KR",
+            Locale::PtBr => "PT_BR",
+            Locale::ZhCn => "ZH_CN",
+            Locale::ZhTw => "ZH_TW",
+            Locale::Unknown(value) => value.as_str(),
+        }
+    }
+    /// Returns all the `&str` representations of the enum members.
+    pub const fn values() -> &'static [&'static str] {
+        &[
+            "DE_DE", "EN_GB", "EN_US", "ES_ES", "FR_FR", "IT_IT", "JA_JP", "KO_KR", "PT_BR",
+            "ZH_CN", "ZH_TW",
+        ]
+    }
+}
+impl AsRef<str> for Locale {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}

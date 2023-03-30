@@ -3,7 +3,7 @@
 /// <p>An object that represents a port mapping.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PortMapping  {
+pub struct PortMapping {
     /// <p>The port used for the port mapping.</p>
     #[doc(hidden)]
     pub port: i32,
@@ -17,7 +17,7 @@ impl PortMapping {
         self.port
     }
     /// <p>The protocol used for the port mapping. Specify one protocol.</p>
-    pub fn protocol(&self) -> std::option::Option<& crate::types::PortProtocol> {
+    pub fn protocol(&self) -> std::option::Option<&crate::types::PortProtocol> {
         self.protocol.as_ref()
     }
 }
@@ -43,7 +43,8 @@ impl PortMappingBuilder {
     }
     /// <p>The port used for the port mapping.</p>
     pub fn set_port(mut self, input: std::option::Option<i32>) -> Self {
-        self.port = input; self
+        self.port = input;
+        self
     }
     /// <p>The protocol used for the port mapping. Specify one protocol.</p>
     pub fn protocol(mut self, input: crate::types::PortProtocol) -> Self {
@@ -52,17 +53,14 @@ impl PortMappingBuilder {
     }
     /// <p>The protocol used for the port mapping. Specify one protocol.</p>
     pub fn set_protocol(mut self, input: std::option::Option<crate::types::PortProtocol>) -> Self {
-        self.protocol = input; self
+        self.protocol = input;
+        self
     }
     /// Consumes the builder and constructs a [`PortMapping`](crate::types::PortMapping).
     pub fn build(self) -> crate::types::PortMapping {
         crate::types::PortMapping {
-            port: self.port
-                .unwrap_or_default()
-            ,
-            protocol: self.protocol
-            ,
+            port: self.port.unwrap_or_default(),
+            protocol: self.protocol,
         }
     }
 }
-

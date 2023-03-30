@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeInventoryDeletionsInput  {
+pub struct DescribeInventoryDeletionsInput {
     /// <p>Specify the delete inventory ID for which you want information. This ID was returned by the <code>DeleteInventory</code> operation.</p>
     #[doc(hidden)]
     pub deletion_id: std::option::Option<std::string::String>,
@@ -15,11 +15,11 @@ pub struct DescribeInventoryDeletionsInput  {
 }
 impl DescribeInventoryDeletionsInput {
     /// <p>Specify the delete inventory ID for which you want information. This ID was returned by the <code>DeleteInventory</code> operation.</p>
-    pub fn deletion_id(&self) -> std::option::Option<& str> {
+    pub fn deletion_id(&self) -> std::option::Option<&str> {
         self.deletion_id.as_deref()
     }
     /// <p>A token to start the list. Use this token to get the next set of results. </p>
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
     /// <p>The maximum number of items to return for this call. The call also returns a token that you can specify in a subsequent call to get the next set of results.</p>
@@ -29,7 +29,7 @@ impl DescribeInventoryDeletionsInput {
 }
 impl DescribeInventoryDeletionsInput {
     /// Creates a new builder-style object to manufacture [`DescribeInventoryDeletionsInput`](crate::operation::describe_inventory_deletions::DescribeInventoryDeletionsInput).
-    pub fn builder() -> crate::operation::describe_inventory_deletions::builders::DescribeInventoryDeletionsInputBuilder {
+    pub fn builder() -> crate::operation::describe_inventory_deletions::builders::DescribeInventoryDeletionsInputBuilder{
         crate::operation::describe_inventory_deletions::builders::DescribeInventoryDeletionsInputBuilder::default()
     }
 }
@@ -50,7 +50,8 @@ impl DescribeInventoryDeletionsInputBuilder {
     }
     /// <p>Specify the delete inventory ID for which you want information. This ID was returned by the <code>DeleteInventory</code> operation.</p>
     pub fn set_deletion_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.deletion_id = input; self
+        self.deletion_id = input;
+        self
     }
     /// <p>A token to start the list. Use this token to get the next set of results. </p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -59,7 +60,8 @@ impl DescribeInventoryDeletionsInputBuilder {
     }
     /// <p>A token to start the list. Use this token to get the next set of results. </p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input; self
+        self.next_token = input;
+        self
     }
     /// <p>The maximum number of items to return for this call. The call also returns a token that you can specify in a subsequent call to get the next set of results.</p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -68,20 +70,22 @@ impl DescribeInventoryDeletionsInputBuilder {
     }
     /// <p>The maximum number of items to return for this call. The call also returns a token that you can specify in a subsequent call to get the next set of results.</p>
     pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_results = input; self
+        self.max_results = input;
+        self
     }
     /// Consumes the builder and constructs a [`DescribeInventoryDeletionsInput`](crate::operation::describe_inventory_deletions::DescribeInventoryDeletionsInput).
-    pub fn build(self) -> Result<crate::operation::describe_inventory_deletions::DescribeInventoryDeletionsInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::describe_inventory_deletions::DescribeInventoryDeletionsInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::describe_inventory_deletions::DescribeInventoryDeletionsInput {
-                deletion_id: self.deletion_id
-                ,
-                next_token: self.next_token
-                ,
-                max_results: self.max_results
-                ,
-            }
+                deletion_id: self.deletion_id,
+                next_token: self.next_token,
+                max_results: self.max_results,
+            },
         )
     }
 }
-

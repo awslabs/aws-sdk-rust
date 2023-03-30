@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetDashboardOutput  {
+pub struct GetDashboardOutput {
     /// <p>The Amazon Resource Name (ARN) of the dashboard.</p>
     #[doc(hidden)]
     pub dashboard_arn: std::option::Option<std::string::String>,
@@ -16,23 +16,23 @@ pub struct GetDashboardOutput  {
 }
 impl GetDashboardOutput {
     /// <p>The Amazon Resource Name (ARN) of the dashboard.</p>
-    pub fn dashboard_arn(&self) -> std::option::Option<& str> {
+    pub fn dashboard_arn(&self) -> std::option::Option<&str> {
         self.dashboard_arn.as_deref()
     }
     /// <p>The detailed information about the dashboard, including what widgets are included and their location on the dashboard. For more information about the <code>DashboardBody</code> syntax, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/CloudWatch-Dashboard-Body-Structure.html">Dashboard Body Structure and Syntax</a>. </p>
-    pub fn dashboard_body(&self) -> std::option::Option<& str> {
+    pub fn dashboard_body(&self) -> std::option::Option<&str> {
         self.dashboard_body.as_deref()
     }
     /// <p>The name of the dashboard.</p>
-    pub fn dashboard_name(&self) -> std::option::Option<& str> {
+    pub fn dashboard_name(&self) -> std::option::Option<&str> {
         self.dashboard_name.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for GetDashboardOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl GetDashboardOutput {
     /// Creates a new builder-style object to manufacture [`GetDashboardOutput`](crate::operation::get_dashboard::GetDashboardOutput).
     pub fn builder() -> crate::operation::get_dashboard::builders::GetDashboardOutputBuilder {
@@ -57,7 +57,8 @@ impl GetDashboardOutputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the dashboard.</p>
     pub fn set_dashboard_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.dashboard_arn = input; self
+        self.dashboard_arn = input;
+        self
     }
     /// <p>The detailed information about the dashboard, including what widgets are included and their location on the dashboard. For more information about the <code>DashboardBody</code> syntax, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/CloudWatch-Dashboard-Body-Structure.html">Dashboard Body Structure and Syntax</a>. </p>
     pub fn dashboard_body(mut self, input: impl Into<std::string::String>) -> Self {
@@ -66,7 +67,8 @@ impl GetDashboardOutputBuilder {
     }
     /// <p>The detailed information about the dashboard, including what widgets are included and their location on the dashboard. For more information about the <code>DashboardBody</code> syntax, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/CloudWatch-Dashboard-Body-Structure.html">Dashboard Body Structure and Syntax</a>. </p>
     pub fn set_dashboard_body(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.dashboard_body = input; self
+        self.dashboard_body = input;
+        self
     }
     /// <p>The name of the dashboard.</p>
     pub fn dashboard_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -75,28 +77,25 @@ impl GetDashboardOutputBuilder {
     }
     /// <p>The name of the dashboard.</p>
     pub fn set_dashboard_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.dashboard_name = input; self
+        self.dashboard_name = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`GetDashboardOutput`](crate::operation::get_dashboard::GetDashboardOutput).
     pub fn build(self) -> crate::operation::get_dashboard::GetDashboardOutput {
         crate::operation::get_dashboard::GetDashboardOutput {
-            dashboard_arn: self.dashboard_arn
-            ,
-            dashboard_body: self.dashboard_body
-            ,
-            dashboard_name: self.dashboard_name
-            ,
+            dashboard_arn: self.dashboard_arn,
+            dashboard_body: self.dashboard_body,
+            dashboard_name: self.dashboard_name,
             _request_id: self._request_id,
         }
     }
 }
-

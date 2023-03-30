@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateProfileInput  {
+pub struct CreateProfileInput {
     /// <p>The name of a room profile.</p>
     #[doc(hidden)]
     pub profile_name: std::option::Option<std::string::String>,
@@ -41,42 +41,43 @@ pub struct CreateProfileInput  {
     pub data_retention_opt_in: std::option::Option<bool>,
     /// <p>The meeting room settings of a room profile.</p>
     #[doc(hidden)]
-    pub meeting_room_configuration: std::option::Option<crate::types::CreateMeetingRoomConfiguration>,
+    pub meeting_room_configuration:
+        std::option::Option<crate::types::CreateMeetingRoomConfiguration>,
     /// <p>The tags for the profile.</p>
     #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::types::Tag>>,
 }
 impl CreateProfileInput {
     /// <p>The name of a room profile.</p>
-    pub fn profile_name(&self) -> std::option::Option<& str> {
+    pub fn profile_name(&self) -> std::option::Option<&str> {
         self.profile_name.as_deref()
     }
     /// <p>The time zone used by a room profile.</p>
-    pub fn timezone(&self) -> std::option::Option<& str> {
+    pub fn timezone(&self) -> std::option::Option<&str> {
         self.timezone.as_deref()
     }
     /// <p>The valid address for the room.</p>
-    pub fn address(&self) -> std::option::Option<& str> {
+    pub fn address(&self) -> std::option::Option<&str> {
         self.address.as_deref()
     }
     /// <p>The distance unit to be used by devices in the profile.</p>
-    pub fn distance_unit(&self) -> std::option::Option<& crate::types::DistanceUnit> {
+    pub fn distance_unit(&self) -> std::option::Option<&crate::types::DistanceUnit> {
         self.distance_unit.as_ref()
     }
     /// <p>The temperature unit to be used by devices in the profile.</p>
-    pub fn temperature_unit(&self) -> std::option::Option<& crate::types::TemperatureUnit> {
+    pub fn temperature_unit(&self) -> std::option::Option<&crate::types::TemperatureUnit> {
         self.temperature_unit.as_ref()
     }
     /// <p>A wake word for Alexa, Echo, Amazon, or a computer.</p>
-    pub fn wake_word(&self) -> std::option::Option<& crate::types::WakeWord> {
+    pub fn wake_word(&self) -> std::option::Option<&crate::types::WakeWord> {
         self.wake_word.as_ref()
     }
     /// <p>The locale of the room profile. (This is currently only available to a limited preview audience.)</p>
-    pub fn locale(&self) -> std::option::Option<& str> {
+    pub fn locale(&self) -> std::option::Option<&str> {
         self.locale.as_deref()
     }
     /// <p>The user-specified token that is used during the creation of a profile.</p>
-    pub fn client_request_token(&self) -> std::option::Option<& str> {
+    pub fn client_request_token(&self) -> std::option::Option<&str> {
         self.client_request_token.as_deref()
     }
     /// <p>Whether room profile setup is enabled.</p>
@@ -96,11 +97,13 @@ impl CreateProfileInput {
         self.data_retention_opt_in
     }
     /// <p>The meeting room settings of a room profile.</p>
-    pub fn meeting_room_configuration(&self) -> std::option::Option<& crate::types::CreateMeetingRoomConfiguration> {
+    pub fn meeting_room_configuration(
+        &self,
+    ) -> std::option::Option<&crate::types::CreateMeetingRoomConfiguration> {
         self.meeting_room_configuration.as_ref()
     }
     /// <p>The tags for the profile.</p>
-    pub fn tags(&self) -> std::option::Option<& [crate::types::Tag]> {
+    pub fn tags(&self) -> std::option::Option<&[crate::types::Tag]> {
         self.tags.as_deref()
     }
 }
@@ -127,7 +130,8 @@ pub struct CreateProfileInputBuilder {
     pub(crate) max_volume_limit: std::option::Option<i32>,
     pub(crate) pstn_enabled: std::option::Option<bool>,
     pub(crate) data_retention_opt_in: std::option::Option<bool>,
-    pub(crate) meeting_room_configuration: std::option::Option<crate::types::CreateMeetingRoomConfiguration>,
+    pub(crate) meeting_room_configuration:
+        std::option::Option<crate::types::CreateMeetingRoomConfiguration>,
     pub(crate) tags: std::option::Option<std::vec::Vec<crate::types::Tag>>,
 }
 impl CreateProfileInputBuilder {
@@ -138,7 +142,8 @@ impl CreateProfileInputBuilder {
     }
     /// <p>The name of a room profile.</p>
     pub fn set_profile_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.profile_name = input; self
+        self.profile_name = input;
+        self
     }
     /// <p>The time zone used by a room profile.</p>
     pub fn timezone(mut self, input: impl Into<std::string::String>) -> Self {
@@ -147,7 +152,8 @@ impl CreateProfileInputBuilder {
     }
     /// <p>The time zone used by a room profile.</p>
     pub fn set_timezone(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.timezone = input; self
+        self.timezone = input;
+        self
     }
     /// <p>The valid address for the room.</p>
     pub fn address(mut self, input: impl Into<std::string::String>) -> Self {
@@ -156,7 +162,8 @@ impl CreateProfileInputBuilder {
     }
     /// <p>The valid address for the room.</p>
     pub fn set_address(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.address = input; self
+        self.address = input;
+        self
     }
     /// <p>The distance unit to be used by devices in the profile.</p>
     pub fn distance_unit(mut self, input: crate::types::DistanceUnit) -> Self {
@@ -164,8 +171,12 @@ impl CreateProfileInputBuilder {
         self
     }
     /// <p>The distance unit to be used by devices in the profile.</p>
-    pub fn set_distance_unit(mut self, input: std::option::Option<crate::types::DistanceUnit>) -> Self {
-        self.distance_unit = input; self
+    pub fn set_distance_unit(
+        mut self,
+        input: std::option::Option<crate::types::DistanceUnit>,
+    ) -> Self {
+        self.distance_unit = input;
+        self
     }
     /// <p>The temperature unit to be used by devices in the profile.</p>
     pub fn temperature_unit(mut self, input: crate::types::TemperatureUnit) -> Self {
@@ -173,8 +184,12 @@ impl CreateProfileInputBuilder {
         self
     }
     /// <p>The temperature unit to be used by devices in the profile.</p>
-    pub fn set_temperature_unit(mut self, input: std::option::Option<crate::types::TemperatureUnit>) -> Self {
-        self.temperature_unit = input; self
+    pub fn set_temperature_unit(
+        mut self,
+        input: std::option::Option<crate::types::TemperatureUnit>,
+    ) -> Self {
+        self.temperature_unit = input;
+        self
     }
     /// <p>A wake word for Alexa, Echo, Amazon, or a computer.</p>
     pub fn wake_word(mut self, input: crate::types::WakeWord) -> Self {
@@ -183,7 +198,8 @@ impl CreateProfileInputBuilder {
     }
     /// <p>A wake word for Alexa, Echo, Amazon, or a computer.</p>
     pub fn set_wake_word(mut self, input: std::option::Option<crate::types::WakeWord>) -> Self {
-        self.wake_word = input; self
+        self.wake_word = input;
+        self
     }
     /// <p>The locale of the room profile. (This is currently only available to a limited preview audience.)</p>
     pub fn locale(mut self, input: impl Into<std::string::String>) -> Self {
@@ -192,7 +208,8 @@ impl CreateProfileInputBuilder {
     }
     /// <p>The locale of the room profile. (This is currently only available to a limited preview audience.)</p>
     pub fn set_locale(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.locale = input; self
+        self.locale = input;
+        self
     }
     /// <p>The user-specified token that is used during the creation of a profile.</p>
     pub fn client_request_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -200,8 +217,12 @@ impl CreateProfileInputBuilder {
         self
     }
     /// <p>The user-specified token that is used during the creation of a profile.</p>
-    pub fn set_client_request_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.client_request_token = input; self
+    pub fn set_client_request_token(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.client_request_token = input;
+        self
     }
     /// <p>Whether room profile setup is enabled.</p>
     pub fn setup_mode_disabled(mut self, input: bool) -> Self {
@@ -210,7 +231,8 @@ impl CreateProfileInputBuilder {
     }
     /// <p>Whether room profile setup is enabled.</p>
     pub fn set_setup_mode_disabled(mut self, input: std::option::Option<bool>) -> Self {
-        self.setup_mode_disabled = input; self
+        self.setup_mode_disabled = input;
+        self
     }
     /// <p>The maximum volume limit for a room profile.</p>
     pub fn max_volume_limit(mut self, input: i32) -> Self {
@@ -219,7 +241,8 @@ impl CreateProfileInputBuilder {
     }
     /// <p>The maximum volume limit for a room profile.</p>
     pub fn set_max_volume_limit(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_volume_limit = input; self
+        self.max_volume_limit = input;
+        self
     }
     /// <p>Whether PSTN calling is enabled.</p>
     pub fn pstn_enabled(mut self, input: bool) -> Self {
@@ -228,7 +251,8 @@ impl CreateProfileInputBuilder {
     }
     /// <p>Whether PSTN calling is enabled.</p>
     pub fn set_pstn_enabled(mut self, input: std::option::Option<bool>) -> Self {
-        self.pstn_enabled = input; self
+        self.pstn_enabled = input;
+        self
     }
     /// <p>Whether data retention of the profile is enabled.</p>
     pub fn data_retention_opt_in(mut self, input: bool) -> Self {
@@ -237,16 +261,24 @@ impl CreateProfileInputBuilder {
     }
     /// <p>Whether data retention of the profile is enabled.</p>
     pub fn set_data_retention_opt_in(mut self, input: std::option::Option<bool>) -> Self {
-        self.data_retention_opt_in = input; self
+        self.data_retention_opt_in = input;
+        self
     }
     /// <p>The meeting room settings of a room profile.</p>
-    pub fn meeting_room_configuration(mut self, input: crate::types::CreateMeetingRoomConfiguration) -> Self {
+    pub fn meeting_room_configuration(
+        mut self,
+        input: crate::types::CreateMeetingRoomConfiguration,
+    ) -> Self {
         self.meeting_room_configuration = Some(input);
         self
     }
     /// <p>The meeting room settings of a room profile.</p>
-    pub fn set_meeting_room_configuration(mut self, input: std::option::Option<crate::types::CreateMeetingRoomConfiguration>) -> Self {
-        self.meeting_room_configuration = input; self
+    pub fn set_meeting_room_configuration(
+        mut self,
+        input: std::option::Option<crate::types::CreateMeetingRoomConfiguration>,
+    ) -> Self {
+        self.meeting_room_configuration = input;
+        self
     }
     /// Appends an item to `tags`.
     ///
@@ -255,48 +287,40 @@ impl CreateProfileInputBuilder {
     /// <p>The tags for the profile.</p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
-                        v.push(input);
-                        self.tags = Some(v);
-                        self
+        v.push(input);
+        self.tags = Some(v);
+        self
     }
     /// <p>The tags for the profile.</p>
-    pub fn set_tags(mut self, input: std::option::Option<std::vec::Vec<crate::types::Tag>>) -> Self {
-        self.tags = input; self
+    pub fn set_tags(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::Tag>>,
+    ) -> Self {
+        self.tags = input;
+        self
     }
     /// Consumes the builder and constructs a [`CreateProfileInput`](crate::operation::create_profile::CreateProfileInput).
-    pub fn build(self) -> Result<crate::operation::create_profile::CreateProfileInput, aws_smithy_http::operation::error::BuildError> {
-        Ok(
-            crate::operation::create_profile::CreateProfileInput {
-                profile_name: self.profile_name
-                ,
-                timezone: self.timezone
-                ,
-                address: self.address
-                ,
-                distance_unit: self.distance_unit
-                ,
-                temperature_unit: self.temperature_unit
-                ,
-                wake_word: self.wake_word
-                ,
-                locale: self.locale
-                ,
-                client_request_token: self.client_request_token
-                ,
-                setup_mode_disabled: self.setup_mode_disabled
-                ,
-                max_volume_limit: self.max_volume_limit
-                ,
-                pstn_enabled: self.pstn_enabled
-                ,
-                data_retention_opt_in: self.data_retention_opt_in
-                ,
-                meeting_room_configuration: self.meeting_room_configuration
-                ,
-                tags: self.tags
-                ,
-            }
-        )
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::create_profile::CreateProfileInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        Ok(crate::operation::create_profile::CreateProfileInput {
+            profile_name: self.profile_name,
+            timezone: self.timezone,
+            address: self.address,
+            distance_unit: self.distance_unit,
+            temperature_unit: self.temperature_unit,
+            wake_word: self.wake_word,
+            locale: self.locale,
+            client_request_token: self.client_request_token,
+            setup_mode_disabled: self.setup_mode_disabled,
+            max_volume_limit: self.max_volume_limit,
+            pstn_enabled: self.pstn_enabled,
+            data_retention_opt_in: self.data_retention_opt_in,
+            meeting_room_configuration: self.meeting_room_configuration,
+            tags: self.tags,
+        })
     }
 }
-

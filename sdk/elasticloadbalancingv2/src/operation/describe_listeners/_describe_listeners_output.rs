@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeListenersOutput  {
+pub struct DescribeListenersOutput {
     /// <p>Information about the listeners.</p>
     #[doc(hidden)]
     pub listeners: std::option::Option<std::vec::Vec<crate::types::Listener>>,
@@ -13,22 +13,23 @@ pub struct DescribeListenersOutput  {
 }
 impl DescribeListenersOutput {
     /// <p>Information about the listeners.</p>
-    pub fn listeners(&self) -> std::option::Option<& [crate::types::Listener]> {
+    pub fn listeners(&self) -> std::option::Option<&[crate::types::Listener]> {
         self.listeners.as_deref()
     }
     /// <p>If there are additional results, this is the marker for the next set of results. Otherwise, this is null.</p>
-    pub fn next_marker(&self) -> std::option::Option<& str> {
+    pub fn next_marker(&self) -> std::option::Option<&str> {
         self.next_marker.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for DescribeListenersOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl DescribeListenersOutput {
     /// Creates a new builder-style object to manufacture [`DescribeListenersOutput`](crate::operation::describe_listeners::DescribeListenersOutput).
-    pub fn builder() -> crate::operation::describe_listeners::builders::DescribeListenersOutputBuilder {
+    pub fn builder(
+    ) -> crate::operation::describe_listeners::builders::DescribeListenersOutputBuilder {
         crate::operation::describe_listeners::builders::DescribeListenersOutputBuilder::default()
     }
 }
@@ -49,13 +50,17 @@ impl DescribeListenersOutputBuilder {
     /// <p>Information about the listeners.</p>
     pub fn listeners(mut self, input: crate::types::Listener) -> Self {
         let mut v = self.listeners.unwrap_or_default();
-                        v.push(input);
-                        self.listeners = Some(v);
-                        self
+        v.push(input);
+        self.listeners = Some(v);
+        self
     }
     /// <p>Information about the listeners.</p>
-    pub fn set_listeners(mut self, input: std::option::Option<std::vec::Vec<crate::types::Listener>>) -> Self {
-        self.listeners = input; self
+    pub fn set_listeners(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::Listener>>,
+    ) -> Self {
+        self.listeners = input;
+        self
     }
     /// <p>If there are additional results, this is the marker for the next set of results. Otherwise, this is null.</p>
     pub fn next_marker(mut self, input: impl Into<std::string::String>) -> Self {
@@ -64,26 +69,24 @@ impl DescribeListenersOutputBuilder {
     }
     /// <p>If there are additional results, this is the marker for the next set of results. Otherwise, this is null.</p>
     pub fn set_next_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_marker = input; self
+        self.next_marker = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`DescribeListenersOutput`](crate::operation::describe_listeners::DescribeListenersOutput).
     pub fn build(self) -> crate::operation::describe_listeners::DescribeListenersOutput {
         crate::operation::describe_listeners::DescribeListenersOutput {
-            listeners: self.listeners
-            ,
-            next_marker: self.next_marker
-            ,
+            listeners: self.listeners,
+            next_marker: self.next_marker,
             _request_id: self._request_id,
         }
     }
 }
-

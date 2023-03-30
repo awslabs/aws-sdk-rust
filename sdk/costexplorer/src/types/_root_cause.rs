@@ -3,7 +3,7 @@
 /// <p>The combination of Amazon Web Service, linked account, linked account name, Region, and usage type where a cost anomaly is observed. The linked account name will only be available when the account name can be identified.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct RootCause  {
+pub struct RootCause {
     /// <p>The Amazon Web Service name that's associated with the cost anomaly. </p>
     #[doc(hidden)]
     pub service: std::option::Option<std::string::String>,
@@ -22,23 +22,23 @@ pub struct RootCause  {
 }
 impl RootCause {
     /// <p>The Amazon Web Service name that's associated with the cost anomaly. </p>
-    pub fn service(&self) -> std::option::Option<& str> {
+    pub fn service(&self) -> std::option::Option<&str> {
         self.service.as_deref()
     }
     /// <p>The Amazon Web Services Region that's associated with the cost anomaly. </p>
-    pub fn region(&self) -> std::option::Option<& str> {
+    pub fn region(&self) -> std::option::Option<&str> {
         self.region.as_deref()
     }
     /// <p>The member account value that's associated with the cost anomaly. </p>
-    pub fn linked_account(&self) -> std::option::Option<& str> {
+    pub fn linked_account(&self) -> std::option::Option<&str> {
         self.linked_account.as_deref()
     }
     /// <p>The <code>UsageType</code> value that's associated with the cost anomaly. </p>
-    pub fn usage_type(&self) -> std::option::Option<& str> {
+    pub fn usage_type(&self) -> std::option::Option<&str> {
         self.usage_type.as_deref()
     }
     /// <p>The member account name value that's associated with the cost anomaly.</p>
-    pub fn linked_account_name(&self) -> std::option::Option<& str> {
+    pub fn linked_account_name(&self) -> std::option::Option<&str> {
         self.linked_account_name.as_deref()
     }
 }
@@ -67,7 +67,8 @@ impl RootCauseBuilder {
     }
     /// <p>The Amazon Web Service name that's associated with the cost anomaly. </p>
     pub fn set_service(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.service = input; self
+        self.service = input;
+        self
     }
     /// <p>The Amazon Web Services Region that's associated with the cost anomaly. </p>
     pub fn region(mut self, input: impl Into<std::string::String>) -> Self {
@@ -76,7 +77,8 @@ impl RootCauseBuilder {
     }
     /// <p>The Amazon Web Services Region that's associated with the cost anomaly. </p>
     pub fn set_region(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.region = input; self
+        self.region = input;
+        self
     }
     /// <p>The member account value that's associated with the cost anomaly. </p>
     pub fn linked_account(mut self, input: impl Into<std::string::String>) -> Self {
@@ -85,7 +87,8 @@ impl RootCauseBuilder {
     }
     /// <p>The member account value that's associated with the cost anomaly. </p>
     pub fn set_linked_account(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.linked_account = input; self
+        self.linked_account = input;
+        self
     }
     /// <p>The <code>UsageType</code> value that's associated with the cost anomaly. </p>
     pub fn usage_type(mut self, input: impl Into<std::string::String>) -> Self {
@@ -94,7 +97,8 @@ impl RootCauseBuilder {
     }
     /// <p>The <code>UsageType</code> value that's associated with the cost anomaly. </p>
     pub fn set_usage_type(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.usage_type = input; self
+        self.usage_type = input;
+        self
     }
     /// <p>The member account name value that's associated with the cost anomaly.</p>
     pub fn linked_account_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -102,23 +106,21 @@ impl RootCauseBuilder {
         self
     }
     /// <p>The member account name value that's associated with the cost anomaly.</p>
-    pub fn set_linked_account_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.linked_account_name = input; self
+    pub fn set_linked_account_name(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.linked_account_name = input;
+        self
     }
     /// Consumes the builder and constructs a [`RootCause`](crate::types::RootCause).
     pub fn build(self) -> crate::types::RootCause {
         crate::types::RootCause {
-            service: self.service
-            ,
-            region: self.region
-            ,
-            linked_account: self.linked_account
-            ,
-            usage_type: self.usage_type
-            ,
-            linked_account_name: self.linked_account_name
-            ,
+            service: self.service,
+            region: self.region,
+            linked_account: self.linked_account,
+            usage_type: self.usage_type,
+            linked_account_name: self.linked_account_name,
         }
     }
 }
-

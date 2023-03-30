@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-/// 
+///
 /// Here is an example of how you can make a match expression forward-compatible:
-/// 
+///
 /// ```text
 /// # let eac3atmosstereodownmix = unimplemented!();
 /// match eac3atmosstereodownmix {
@@ -32,14 +32,22 @@
 /// Specifically, when `eac3atmosstereodownmix` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `Eac3AtmosStereoDownmix::NewFeature` also yielding `"NewFeature"`.
-/// 
+///
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 /// Choose how the service does stereo downmixing. Default value: Not indicated (ATMOS_STORAGE_DDP_DMIXMOD_NOT_INDICATED) Related setting: To have MediaConvert use this value, keep the default value, Custom (SPECIFIED) for the setting Downmix control (DownmixControl). Otherwise, MediaConvert ignores Stereo downmix (StereoDownmix).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
 pub enum Eac3AtmosStereoDownmix {
     #[allow(missing_docs)] // documentation missing in model
     Dpl2,
@@ -50,45 +58,46 @@ pub enum Eac3AtmosStereoDownmix {
     #[allow(missing_docs)] // documentation missing in model
     Surround,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::primitives::UnknownVariantValue)
+    Unknown(crate::primitives::UnknownVariantValue),
 }
 impl std::convert::From<&str> for Eac3AtmosStereoDownmix {
-                fn from(s: &str) -> Self {
-                    match s {
-                        "DPL2" => Eac3AtmosStereoDownmix::Dpl2,
-"NOT_INDICATED" => Eac3AtmosStereoDownmix::NotIndicated,
-"STEREO" => Eac3AtmosStereoDownmix::Stereo,
-"SURROUND" => Eac3AtmosStereoDownmix::Surround,
-other => Eac3AtmosStereoDownmix::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
-                    }
-                }
-            }
-impl std::str::FromStr for Eac3AtmosStereoDownmix {
-                type Err = std::convert::Infallible;
-
-                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-                    Ok(Eac3AtmosStereoDownmix::from(s))
-                }
-            }
-impl Eac3AtmosStereoDownmix {
-                /// Returns the `&str` value of the enum member.
-                pub fn as_str(&self) -> &str {
-                    match self {
-    Eac3AtmosStereoDownmix::Dpl2 => "DPL2",
-    Eac3AtmosStereoDownmix::NotIndicated => "NOT_INDICATED",
-    Eac3AtmosStereoDownmix::Stereo => "STEREO",
-    Eac3AtmosStereoDownmix::Surround => "SURROUND",
-    Eac3AtmosStereoDownmix::Unknown(value) => value.as_str()
+    fn from(s: &str) -> Self {
+        match s {
+            "DPL2" => Eac3AtmosStereoDownmix::Dpl2,
+            "NOT_INDICATED" => Eac3AtmosStereoDownmix::NotIndicated,
+            "STEREO" => Eac3AtmosStereoDownmix::Stereo,
+            "SURROUND" => Eac3AtmosStereoDownmix::Surround,
+            other => Eac3AtmosStereoDownmix::Unknown(crate::primitives::UnknownVariantValue(
+                other.to_owned(),
+            )),
+        }
+    }
 }
-                }
-                /// Returns all the `&str` representations of the enum members.
-                pub const fn values() -> &'static [&'static str] {
-                    &["DPL2", "NOT_INDICATED", "STEREO", "SURROUND"]
-                }
-            }
-impl AsRef<str> for Eac3AtmosStereoDownmix {
-                fn as_ref(&self) -> &str {
-                    self.as_str()
-                }
-            }
+impl std::str::FromStr for Eac3AtmosStereoDownmix {
+    type Err = std::convert::Infallible;
 
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(Eac3AtmosStereoDownmix::from(s))
+    }
+}
+impl Eac3AtmosStereoDownmix {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            Eac3AtmosStereoDownmix::Dpl2 => "DPL2",
+            Eac3AtmosStereoDownmix::NotIndicated => "NOT_INDICATED",
+            Eac3AtmosStereoDownmix::Stereo => "STEREO",
+            Eac3AtmosStereoDownmix::Surround => "SURROUND",
+            Eac3AtmosStereoDownmix::Unknown(value) => value.as_str(),
+        }
+    }
+    /// Returns all the `&str` representations of the enum members.
+    pub const fn values() -> &'static [&'static str] {
+        &["DPL2", "NOT_INDICATED", "STEREO", "SURROUND"]
+    }
+}
+impl AsRef<str> for Eac3AtmosStereoDownmix {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}

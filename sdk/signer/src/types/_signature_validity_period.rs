@@ -3,7 +3,7 @@
 /// <p>The validity period for a signing job.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SignatureValidityPeriod  {
+pub struct SignatureValidityPeriod {
     /// <p>The numerical value of the time unit for signature validity.</p>
     #[doc(hidden)]
     pub value: i32,
@@ -17,7 +17,7 @@ impl SignatureValidityPeriod {
         self.value
     }
     /// <p>The time unit for signature validity.</p>
-    pub fn r#type(&self) -> std::option::Option<& crate::types::ValidityType> {
+    pub fn r#type(&self) -> std::option::Option<&crate::types::ValidityType> {
         self.r#type.as_ref()
     }
 }
@@ -43,7 +43,8 @@ impl SignatureValidityPeriodBuilder {
     }
     /// <p>The numerical value of the time unit for signature validity.</p>
     pub fn set_value(mut self, input: std::option::Option<i32>) -> Self {
-        self.value = input; self
+        self.value = input;
+        self
     }
     /// <p>The time unit for signature validity.</p>
     pub fn r#type(mut self, input: crate::types::ValidityType) -> Self {
@@ -52,17 +53,14 @@ impl SignatureValidityPeriodBuilder {
     }
     /// <p>The time unit for signature validity.</p>
     pub fn set_type(mut self, input: std::option::Option<crate::types::ValidityType>) -> Self {
-        self.r#type = input; self
+        self.r#type = input;
+        self
     }
     /// Consumes the builder and constructs a [`SignatureValidityPeriod`](crate::types::SignatureValidityPeriod).
     pub fn build(self) -> crate::types::SignatureValidityPeriod {
         crate::types::SignatureValidityPeriod {
-            value: self.value
-                .unwrap_or_default()
-            ,
-            r#type: self.r#type
-            ,
+            value: self.value.unwrap_or_default(),
+            r#type: self.r#type,
         }
     }
 }
-

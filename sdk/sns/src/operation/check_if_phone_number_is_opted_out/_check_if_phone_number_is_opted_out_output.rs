@@ -3,34 +3,34 @@
 /// <p>The response from the <code>CheckIfPhoneNumberIsOptedOut</code> action.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CheckIfPhoneNumberIsOptedOutOutput  {
-    /// <p>Indicates whether the phone number is opted out:</p> 
-    /// <ul> 
-    /// <li> <p> <code>true</code> – The phone number is opted out, meaning you cannot publish SMS messages to it.</p> </li> 
-    /// <li> <p> <code>false</code> – The phone number is opted in, meaning you can publish SMS messages to it.</p> </li> 
+pub struct CheckIfPhoneNumberIsOptedOutOutput {
+    /// <p>Indicates whether the phone number is opted out:</p>
+    /// <ul>
+    /// <li> <p> <code>true</code> – The phone number is opted out, meaning you cannot publish SMS messages to it.</p> </li>
+    /// <li> <p> <code>false</code> – The phone number is opted in, meaning you can publish SMS messages to it.</p> </li>
     /// </ul>
     #[doc(hidden)]
     pub is_opted_out: bool,
     _request_id: Option<String>,
 }
 impl CheckIfPhoneNumberIsOptedOutOutput {
-    /// <p>Indicates whether the phone number is opted out:</p> 
-    /// <ul> 
-    /// <li> <p> <code>true</code> – The phone number is opted out, meaning you cannot publish SMS messages to it.</p> </li> 
-    /// <li> <p> <code>false</code> – The phone number is opted in, meaning you can publish SMS messages to it.</p> </li> 
+    /// <p>Indicates whether the phone number is opted out:</p>
+    /// <ul>
+    /// <li> <p> <code>true</code> – The phone number is opted out, meaning you cannot publish SMS messages to it.</p> </li>
+    /// <li> <p> <code>false</code> – The phone number is opted in, meaning you can publish SMS messages to it.</p> </li>
     /// </ul>
     pub fn is_opted_out(&self) -> bool {
         self.is_opted_out
     }
 }
 impl aws_http::request_id::RequestId for CheckIfPhoneNumberIsOptedOutOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl CheckIfPhoneNumberIsOptedOutOutput {
     /// Creates a new builder-style object to manufacture [`CheckIfPhoneNumberIsOptedOutOutput`](crate::operation::check_if_phone_number_is_opted_out::CheckIfPhoneNumberIsOptedOutOutput).
-    pub fn builder() -> crate::operation::check_if_phone_number_is_opted_out::builders::CheckIfPhoneNumberIsOptedOutOutputBuilder {
+    pub fn builder() -> crate::operation::check_if_phone_number_is_opted_out::builders::CheckIfPhoneNumberIsOptedOutOutputBuilder{
         crate::operation::check_if_phone_number_is_opted_out::builders::CheckIfPhoneNumberIsOptedOutOutputBuilder::default()
     }
 }
@@ -43,40 +43,41 @@ pub struct CheckIfPhoneNumberIsOptedOutOutputBuilder {
     _request_id: Option<String>,
 }
 impl CheckIfPhoneNumberIsOptedOutOutputBuilder {
-    /// <p>Indicates whether the phone number is opted out:</p> 
-    /// <ul> 
-    /// <li> <p> <code>true</code> – The phone number is opted out, meaning you cannot publish SMS messages to it.</p> </li> 
-    /// <li> <p> <code>false</code> – The phone number is opted in, meaning you can publish SMS messages to it.</p> </li> 
+    /// <p>Indicates whether the phone number is opted out:</p>
+    /// <ul>
+    /// <li> <p> <code>true</code> – The phone number is opted out, meaning you cannot publish SMS messages to it.</p> </li>
+    /// <li> <p> <code>false</code> – The phone number is opted in, meaning you can publish SMS messages to it.</p> </li>
     /// </ul>
     pub fn is_opted_out(mut self, input: bool) -> Self {
         self.is_opted_out = Some(input);
         self
     }
-    /// <p>Indicates whether the phone number is opted out:</p> 
-    /// <ul> 
-    /// <li> <p> <code>true</code> – The phone number is opted out, meaning you cannot publish SMS messages to it.</p> </li> 
-    /// <li> <p> <code>false</code> – The phone number is opted in, meaning you can publish SMS messages to it.</p> </li> 
+    /// <p>Indicates whether the phone number is opted out:</p>
+    /// <ul>
+    /// <li> <p> <code>true</code> – The phone number is opted out, meaning you cannot publish SMS messages to it.</p> </li>
+    /// <li> <p> <code>false</code> – The phone number is opted in, meaning you can publish SMS messages to it.</p> </li>
     /// </ul>
     pub fn set_is_opted_out(mut self, input: std::option::Option<bool>) -> Self {
-        self.is_opted_out = input; self
+        self.is_opted_out = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`CheckIfPhoneNumberIsOptedOutOutput`](crate::operation::check_if_phone_number_is_opted_out::CheckIfPhoneNumberIsOptedOutOutput).
-    pub fn build(self) -> crate::operation::check_if_phone_number_is_opted_out::CheckIfPhoneNumberIsOptedOutOutput {
+    pub fn build(
+        self,
+    ) -> crate::operation::check_if_phone_number_is_opted_out::CheckIfPhoneNumberIsOptedOutOutput
+    {
         crate::operation::check_if_phone_number_is_opted_out::CheckIfPhoneNumberIsOptedOutOutput {
-            is_opted_out: self.is_opted_out
-                .unwrap_or_default()
-            ,
+            is_opted_out: self.is_opted_out.unwrap_or_default(),
             _request_id: self._request_id,
         }
     }
 }
-

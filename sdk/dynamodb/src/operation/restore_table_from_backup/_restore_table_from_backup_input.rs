@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct RestoreTableFromBackupInput  {
+pub struct RestoreTableFromBackupInput {
     /// <p>The name of the new table to which the backup must be restored.</p>
     #[doc(hidden)]
     pub target_table_name: std::option::Option<std::string::String>,
@@ -14,10 +14,12 @@ pub struct RestoreTableFromBackupInput  {
     pub billing_mode_override: std::option::Option<crate::types::BillingMode>,
     /// <p>List of global secondary indexes for the restored table. The indexes provided should match existing secondary indexes. You can choose to exclude some or all of the indexes at the time of restore.</p>
     #[doc(hidden)]
-    pub global_secondary_index_override: std::option::Option<std::vec::Vec<crate::types::GlobalSecondaryIndex>>,
+    pub global_secondary_index_override:
+        std::option::Option<std::vec::Vec<crate::types::GlobalSecondaryIndex>>,
     /// <p>List of local secondary indexes for the restored table. The indexes provided should match existing secondary indexes. You can choose to exclude some or all of the indexes at the time of restore.</p>
     #[doc(hidden)]
-    pub local_secondary_index_override: std::option::Option<std::vec::Vec<crate::types::LocalSecondaryIndex>>,
+    pub local_secondary_index_override:
+        std::option::Option<std::vec::Vec<crate::types::LocalSecondaryIndex>>,
     /// <p>Provisioned throughput settings for the restored table.</p>
     #[doc(hidden)]
     pub provisioned_throughput_override: std::option::Option<crate::types::ProvisionedThroughput>,
@@ -27,37 +29,47 @@ pub struct RestoreTableFromBackupInput  {
 }
 impl RestoreTableFromBackupInput {
     /// <p>The name of the new table to which the backup must be restored.</p>
-    pub fn target_table_name(&self) -> std::option::Option<& str> {
+    pub fn target_table_name(&self) -> std::option::Option<&str> {
         self.target_table_name.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) associated with the backup.</p>
-    pub fn backup_arn(&self) -> std::option::Option<& str> {
+    pub fn backup_arn(&self) -> std::option::Option<&str> {
         self.backup_arn.as_deref()
     }
     /// <p>The billing mode of the restored table.</p>
-    pub fn billing_mode_override(&self) -> std::option::Option<& crate::types::BillingMode> {
+    pub fn billing_mode_override(&self) -> std::option::Option<&crate::types::BillingMode> {
         self.billing_mode_override.as_ref()
     }
     /// <p>List of global secondary indexes for the restored table. The indexes provided should match existing secondary indexes. You can choose to exclude some or all of the indexes at the time of restore.</p>
-    pub fn global_secondary_index_override(&self) -> std::option::Option<& [crate::types::GlobalSecondaryIndex]> {
+    pub fn global_secondary_index_override(
+        &self,
+    ) -> std::option::Option<&[crate::types::GlobalSecondaryIndex]> {
         self.global_secondary_index_override.as_deref()
     }
     /// <p>List of local secondary indexes for the restored table. The indexes provided should match existing secondary indexes. You can choose to exclude some or all of the indexes at the time of restore.</p>
-    pub fn local_secondary_index_override(&self) -> std::option::Option<& [crate::types::LocalSecondaryIndex]> {
+    pub fn local_secondary_index_override(
+        &self,
+    ) -> std::option::Option<&[crate::types::LocalSecondaryIndex]> {
         self.local_secondary_index_override.as_deref()
     }
     /// <p>Provisioned throughput settings for the restored table.</p>
-    pub fn provisioned_throughput_override(&self) -> std::option::Option<& crate::types::ProvisionedThroughput> {
+    pub fn provisioned_throughput_override(
+        &self,
+    ) -> std::option::Option<&crate::types::ProvisionedThroughput> {
         self.provisioned_throughput_override.as_ref()
     }
     /// <p>The new server-side encryption settings for the restored table.</p>
-    pub fn sse_specification_override(&self) -> std::option::Option<& crate::types::SseSpecification> {
+    pub fn sse_specification_override(
+        &self,
+    ) -> std::option::Option<&crate::types::SseSpecification> {
         self.sse_specification_override.as_ref()
     }
 }
 impl RestoreTableFromBackupInput {
     /// Creates a new builder-style object to manufacture [`RestoreTableFromBackupInput`](crate::operation::restore_table_from_backup::RestoreTableFromBackupInput).
-    pub fn builder() -> crate::operation::restore_table_from_backup::builders::RestoreTableFromBackupInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::restore_table_from_backup::builders::RestoreTableFromBackupInputBuilder
+    {
         crate::operation::restore_table_from_backup::builders::RestoreTableFromBackupInputBuilder::default()
     }
 }
@@ -69,9 +81,12 @@ pub struct RestoreTableFromBackupInputBuilder {
     pub(crate) target_table_name: std::option::Option<std::string::String>,
     pub(crate) backup_arn: std::option::Option<std::string::String>,
     pub(crate) billing_mode_override: std::option::Option<crate::types::BillingMode>,
-    pub(crate) global_secondary_index_override: std::option::Option<std::vec::Vec<crate::types::GlobalSecondaryIndex>>,
-    pub(crate) local_secondary_index_override: std::option::Option<std::vec::Vec<crate::types::LocalSecondaryIndex>>,
-    pub(crate) provisioned_throughput_override: std::option::Option<crate::types::ProvisionedThroughput>,
+    pub(crate) global_secondary_index_override:
+        std::option::Option<std::vec::Vec<crate::types::GlobalSecondaryIndex>>,
+    pub(crate) local_secondary_index_override:
+        std::option::Option<std::vec::Vec<crate::types::LocalSecondaryIndex>>,
+    pub(crate) provisioned_throughput_override:
+        std::option::Option<crate::types::ProvisionedThroughput>,
     pub(crate) sse_specification_override: std::option::Option<crate::types::SseSpecification>,
 }
 impl RestoreTableFromBackupInputBuilder {
@@ -81,8 +96,12 @@ impl RestoreTableFromBackupInputBuilder {
         self
     }
     /// <p>The name of the new table to which the backup must be restored.</p>
-    pub fn set_target_table_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.target_table_name = input; self
+    pub fn set_target_table_name(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.target_table_name = input;
+        self
     }
     /// <p>The Amazon Resource Name (ARN) associated with the backup.</p>
     pub fn backup_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -91,7 +110,8 @@ impl RestoreTableFromBackupInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) associated with the backup.</p>
     pub fn set_backup_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.backup_arn = input; self
+        self.backup_arn = input;
+        self
     }
     /// <p>The billing mode of the restored table.</p>
     pub fn billing_mode_override(mut self, input: crate::types::BillingMode) -> Self {
@@ -99,47 +119,72 @@ impl RestoreTableFromBackupInputBuilder {
         self
     }
     /// <p>The billing mode of the restored table.</p>
-    pub fn set_billing_mode_override(mut self, input: std::option::Option<crate::types::BillingMode>) -> Self {
-        self.billing_mode_override = input; self
+    pub fn set_billing_mode_override(
+        mut self,
+        input: std::option::Option<crate::types::BillingMode>,
+    ) -> Self {
+        self.billing_mode_override = input;
+        self
     }
     /// Appends an item to `global_secondary_index_override`.
     ///
     /// To override the contents of this collection use [`set_global_secondary_index_override`](Self::set_global_secondary_index_override).
     ///
     /// <p>List of global secondary indexes for the restored table. The indexes provided should match existing secondary indexes. You can choose to exclude some or all of the indexes at the time of restore.</p>
-    pub fn global_secondary_index_override(mut self, input: crate::types::GlobalSecondaryIndex) -> Self {
+    pub fn global_secondary_index_override(
+        mut self,
+        input: crate::types::GlobalSecondaryIndex,
+    ) -> Self {
         let mut v = self.global_secondary_index_override.unwrap_or_default();
-                        v.push(input);
-                        self.global_secondary_index_override = Some(v);
-                        self
+        v.push(input);
+        self.global_secondary_index_override = Some(v);
+        self
     }
     /// <p>List of global secondary indexes for the restored table. The indexes provided should match existing secondary indexes. You can choose to exclude some or all of the indexes at the time of restore.</p>
-    pub fn set_global_secondary_index_override(mut self, input: std::option::Option<std::vec::Vec<crate::types::GlobalSecondaryIndex>>) -> Self {
-        self.global_secondary_index_override = input; self
+    pub fn set_global_secondary_index_override(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::GlobalSecondaryIndex>>,
+    ) -> Self {
+        self.global_secondary_index_override = input;
+        self
     }
     /// Appends an item to `local_secondary_index_override`.
     ///
     /// To override the contents of this collection use [`set_local_secondary_index_override`](Self::set_local_secondary_index_override).
     ///
     /// <p>List of local secondary indexes for the restored table. The indexes provided should match existing secondary indexes. You can choose to exclude some or all of the indexes at the time of restore.</p>
-    pub fn local_secondary_index_override(mut self, input: crate::types::LocalSecondaryIndex) -> Self {
+    pub fn local_secondary_index_override(
+        mut self,
+        input: crate::types::LocalSecondaryIndex,
+    ) -> Self {
         let mut v = self.local_secondary_index_override.unwrap_or_default();
-                        v.push(input);
-                        self.local_secondary_index_override = Some(v);
-                        self
+        v.push(input);
+        self.local_secondary_index_override = Some(v);
+        self
     }
     /// <p>List of local secondary indexes for the restored table. The indexes provided should match existing secondary indexes. You can choose to exclude some or all of the indexes at the time of restore.</p>
-    pub fn set_local_secondary_index_override(mut self, input: std::option::Option<std::vec::Vec<crate::types::LocalSecondaryIndex>>) -> Self {
-        self.local_secondary_index_override = input; self
+    pub fn set_local_secondary_index_override(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::LocalSecondaryIndex>>,
+    ) -> Self {
+        self.local_secondary_index_override = input;
+        self
     }
     /// <p>Provisioned throughput settings for the restored table.</p>
-    pub fn provisioned_throughput_override(mut self, input: crate::types::ProvisionedThroughput) -> Self {
+    pub fn provisioned_throughput_override(
+        mut self,
+        input: crate::types::ProvisionedThroughput,
+    ) -> Self {
         self.provisioned_throughput_override = Some(input);
         self
     }
     /// <p>Provisioned throughput settings for the restored table.</p>
-    pub fn set_provisioned_throughput_override(mut self, input: std::option::Option<crate::types::ProvisionedThroughput>) -> Self {
-        self.provisioned_throughput_override = input; self
+    pub fn set_provisioned_throughput_override(
+        mut self,
+        input: std::option::Option<crate::types::ProvisionedThroughput>,
+    ) -> Self {
+        self.provisioned_throughput_override = input;
+        self
     }
     /// <p>The new server-side encryption settings for the restored table.</p>
     pub fn sse_specification_override(mut self, input: crate::types::SseSpecification) -> Self {
@@ -147,29 +192,30 @@ impl RestoreTableFromBackupInputBuilder {
         self
     }
     /// <p>The new server-side encryption settings for the restored table.</p>
-    pub fn set_sse_specification_override(mut self, input: std::option::Option<crate::types::SseSpecification>) -> Self {
-        self.sse_specification_override = input; self
+    pub fn set_sse_specification_override(
+        mut self,
+        input: std::option::Option<crate::types::SseSpecification>,
+    ) -> Self {
+        self.sse_specification_override = input;
+        self
     }
     /// Consumes the builder and constructs a [`RestoreTableFromBackupInput`](crate::operation::restore_table_from_backup::RestoreTableFromBackupInput).
-    pub fn build(self) -> Result<crate::operation::restore_table_from_backup::RestoreTableFromBackupInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::restore_table_from_backup::RestoreTableFromBackupInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::restore_table_from_backup::RestoreTableFromBackupInput {
-                target_table_name: self.target_table_name
-                ,
-                backup_arn: self.backup_arn
-                ,
-                billing_mode_override: self.billing_mode_override
-                ,
-                global_secondary_index_override: self.global_secondary_index_override
-                ,
-                local_secondary_index_override: self.local_secondary_index_override
-                ,
-                provisioned_throughput_override: self.provisioned_throughput_override
-                ,
-                sse_specification_override: self.sse_specification_override
-                ,
-            }
+                target_table_name: self.target_table_name,
+                backup_arn: self.backup_arn,
+                billing_mode_override: self.billing_mode_override,
+                global_secondary_index_override: self.global_secondary_index_override,
+                local_secondary_index_override: self.local_secondary_index_override,
+                provisioned_throughput_override: self.provisioned_throughput_override,
+                sse_specification_override: self.sse_specification_override,
+            },
         )
     }
 }
-

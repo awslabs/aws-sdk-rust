@@ -4,49 +4,71 @@ pub use crate::operation::update_typed_link_facet::_update_typed_link_facet_outp
 pub use crate::operation::update_typed_link_facet::_update_typed_link_facet_input::UpdateTypedLinkFacetInputBuilder;
 
 /// Fluent builder constructing a request to `UpdateTypedLinkFacet`.
-/// 
+///
 /// <p>Updates a <code>TypedLinkFacet</code>. For more information, see <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/directory_objects_links.html#directory_objects_links_typedlink">Typed Links</a>.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct UpdateTypedLinkFacetFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::update_typed_link_facet::builders::UpdateTypedLinkFacetInputBuilder
-            }
-impl UpdateTypedLinkFacetFluentBuilder  {
+    handle: std::sync::Arc<crate::client::Handle>,
+    inner: crate::operation::update_typed_link_facet::builders::UpdateTypedLinkFacetInputBuilder,
+}
+impl UpdateTypedLinkFacetFluentBuilder {
     /// Creates a new `UpdateTypedLinkFacet`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
-                    /// sent. The operation's inner [http::Request] can be modified as well.
-                    pub async fn customize(self) -> std::result::Result<
-                        crate::client::customize::CustomizableOperation<crate::operation::update_typed_link_facet::UpdateTypedLinkFacet, aws_http::retry::AwsResponseRetryClassifier,>,
-                        aws_smithy_http::result::SdkError<crate::operation::update_typed_link_facet::UpdateTypedLinkFacetError>
-                    >  {
-                        let handle = self.handle.clone();
-                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-                    }
-    
-                    /// Sends the request and returns the response.
-                    ///
-                    /// If an error occurs, an `SdkError` will be returned with additional details that
-                    /// can be matched against.
-                    ///
-                    /// By default, any retryable failures will be retried twice. Retry behavior
-                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                    /// set when configuring the client.
-                    pub async fn send(self) -> std::result::Result<crate::operation::update_typed_link_facet::UpdateTypedLinkFacetOutput, aws_smithy_http::result::SdkError<crate::operation::update_typed_link_facet::UpdateTypedLinkFacetError>>
-                     {
-                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&self.handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        self.handle.client.call(op).await
-                    }
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle,
+            inner: Default::default(),
+        }
+    }
+
+    /// Consume this builder, creating a customizable operation that can be modified before being
+    /// sent. The operation's inner [http::Request] can be modified as well.
+    pub async fn customize(
+        self,
+    ) -> std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::update_typed_link_facet::UpdateTypedLinkFacet,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::result::SdkError<
+            crate::operation::update_typed_link_facet::UpdateTypedLinkFacetError,
+        >,
+    > {
+        let handle = self.handle.clone();
+        let operation = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+    }
+
+    /// Sends the request and returns the response.
+    ///
+    /// If an error occurs, an `SdkError` will be returned with additional details that
+    /// can be matched against.
+    ///
+    /// By default, any retryable failures will be retried twice. Retry behavior
+    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+    /// set when configuring the client.
+    pub async fn send(
+        self,
+    ) -> std::result::Result<
+        crate::operation::update_typed_link_facet::UpdateTypedLinkFacetOutput,
+        aws_smithy_http::result::SdkError<
+            crate::operation::update_typed_link_facet::UpdateTypedLinkFacetError,
+        >,
+    > {
+        let op = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&self.handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        self.handle.client.call(op).await
+    }
     /// <p>The Amazon Resource Name (ARN) that is associated with the schema. For more information, see <code>arns</code>.</p>
     pub fn schema_arn(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.schema_arn(input.into());
@@ -77,7 +99,10 @@ impl UpdateTypedLinkFacetFluentBuilder  {
         self
     }
     /// <p>Attributes update structure.</p>
-    pub fn set_attribute_updates(mut self, input: std::option::Option<std::vec::Vec<crate::types::TypedLinkFacetAttributeUpdate>>) -> Self {
+    pub fn set_attribute_updates(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::TypedLinkFacetAttributeUpdate>>,
+    ) -> Self {
         self.inner = self.inner.set_attribute_updates(input);
         self
     }
@@ -91,9 +116,11 @@ impl UpdateTypedLinkFacetFluentBuilder  {
         self
     }
     /// <p>The order of identity attributes for the facet, from most significant to least significant. The ability to filter typed links considers the order that the attributes are defined on the typed link facet. When providing ranges to a typed link selection, any inexact ranges must be specified at the end. Any attributes that do not have a range specified are presumed to match the entire range. Filters are interpreted in the order of the attributes on the typed link facet, not the order in which they are supplied to any API calls. For more information about identity attributes, see <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/directory_objects_links.html#directory_objects_links_typedlink">Typed Links</a>.</p>
-    pub fn set_identity_attribute_order(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+    pub fn set_identity_attribute_order(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
         self.inner = self.inner.set_identity_attribute_order(input);
         self
     }
 }
-

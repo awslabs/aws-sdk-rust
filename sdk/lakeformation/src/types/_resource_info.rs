@@ -3,7 +3,7 @@
 /// <p>A structure containing information about an Lake Formation resource.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ResourceInfo  {
+pub struct ResourceInfo {
     /// <p>The Amazon Resource Name (ARN) of the resource.</p>
     #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
@@ -16,15 +16,15 @@ pub struct ResourceInfo  {
 }
 impl ResourceInfo {
     /// <p>The Amazon Resource Name (ARN) of the resource.</p>
-    pub fn resource_arn(&self) -> std::option::Option<& str> {
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
         self.resource_arn.as_deref()
     }
     /// <p>The IAM role that registered a resource.</p>
-    pub fn role_arn(&self) -> std::option::Option<& str> {
+    pub fn role_arn(&self) -> std::option::Option<&str> {
         self.role_arn.as_deref()
     }
     /// <p>The date and time the resource was last modified.</p>
-    pub fn last_modified(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
+    pub fn last_modified(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_modified.as_ref()
     }
 }
@@ -51,7 +51,8 @@ impl ResourceInfoBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the resource.</p>
     pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.resource_arn = input; self
+        self.resource_arn = input;
+        self
     }
     /// <p>The IAM role that registered a resource.</p>
     pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -60,7 +61,8 @@ impl ResourceInfoBuilder {
     }
     /// <p>The IAM role that registered a resource.</p>
     pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.role_arn = input; self
+        self.role_arn = input;
+        self
     }
     /// <p>The date and time the resource was last modified.</p>
     pub fn last_modified(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -68,19 +70,19 @@ impl ResourceInfoBuilder {
         self
     }
     /// <p>The date and time the resource was last modified.</p>
-    pub fn set_last_modified(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.last_modified = input; self
+    pub fn set_last_modified(
+        mut self,
+        input: std::option::Option<aws_smithy_types::DateTime>,
+    ) -> Self {
+        self.last_modified = input;
+        self
     }
     /// Consumes the builder and constructs a [`ResourceInfo`](crate::types::ResourceInfo).
     pub fn build(self) -> crate::types::ResourceInfo {
         crate::types::ResourceInfo {
-            resource_arn: self.resource_arn
-            ,
-            role_arn: self.role_arn
-            ,
-            last_modified: self.last_modified
-            ,
+            resource_arn: self.resource_arn,
+            role_arn: self.role_arn,
+            last_modified: self.last_modified,
         }
     }
 }
-

@@ -3,7 +3,7 @@
 /// <p>Specifies the format and S3 location of the parallel data input file.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ParallelDataConfig  {
+pub struct ParallelDataConfig {
     /// <p>The URI of the Amazon S3 folder that contains the parallel data input file. The folder must be in the same Region as the API endpoint you are calling.</p>
     #[doc(hidden)]
     pub s3_uri: std::option::Option<std::string::String>,
@@ -13,11 +13,11 @@ pub struct ParallelDataConfig  {
 }
 impl ParallelDataConfig {
     /// <p>The URI of the Amazon S3 folder that contains the parallel data input file. The folder must be in the same Region as the API endpoint you are calling.</p>
-    pub fn s3_uri(&self) -> std::option::Option<& str> {
+    pub fn s3_uri(&self) -> std::option::Option<&str> {
         self.s3_uri.as_deref()
     }
     /// <p>The format of the parallel data input file.</p>
-    pub fn format(&self) -> std::option::Option<& crate::types::ParallelDataFormat> {
+    pub fn format(&self) -> std::option::Option<&crate::types::ParallelDataFormat> {
         self.format.as_ref()
     }
 }
@@ -43,7 +43,8 @@ impl ParallelDataConfigBuilder {
     }
     /// <p>The URI of the Amazon S3 folder that contains the parallel data input file. The folder must be in the same Region as the API endpoint you are calling.</p>
     pub fn set_s3_uri(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.s3_uri = input; self
+        self.s3_uri = input;
+        self
     }
     /// <p>The format of the parallel data input file.</p>
     pub fn format(mut self, input: crate::types::ParallelDataFormat) -> Self {
@@ -51,17 +52,18 @@ impl ParallelDataConfigBuilder {
         self
     }
     /// <p>The format of the parallel data input file.</p>
-    pub fn set_format(mut self, input: std::option::Option<crate::types::ParallelDataFormat>) -> Self {
-        self.format = input; self
+    pub fn set_format(
+        mut self,
+        input: std::option::Option<crate::types::ParallelDataFormat>,
+    ) -> Self {
+        self.format = input;
+        self
     }
     /// Consumes the builder and constructs a [`ParallelDataConfig`](crate::types::ParallelDataConfig).
     pub fn build(self) -> crate::types::ParallelDataConfig {
         crate::types::ParallelDataConfig {
-            s3_uri: self.s3_uri
-            ,
-            format: self.format
-            ,
+            s3_uri: self.s3_uri,
+            format: self.format,
         }
     }
 }
-

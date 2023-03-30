@@ -4,58 +4,80 @@ pub use crate::operation::modify_image_attribute::_modify_image_attribute_output
 pub use crate::operation::modify_image_attribute::_modify_image_attribute_input::ModifyImageAttributeInputBuilder;
 
 /// Fluent builder constructing a request to `ModifyImageAttribute`.
-/// 
-/// <p>Modifies the specified attribute of the specified AMI. You can specify only one attribute at a time. You can use the <code>Attribute</code> parameter to specify the attribute or one of the following parameters: <code>Description</code> or <code>LaunchPermission</code>.</p> 
-/// <p>Images with an Amazon Web Services Marketplace product code cannot be made public.</p> 
+///
+/// <p>Modifies the specified attribute of the specified AMI. You can specify only one attribute at a time. You can use the <code>Attribute</code> parameter to specify the attribute or one of the following parameters: <code>Description</code> or <code>LaunchPermission</code>.</p>
+/// <p>Images with an Amazon Web Services Marketplace product code cannot be made public.</p>
 /// <p>To enable the SriovNetSupport enhanced networking attribute of an image, enable SriovNetSupport on an instance and create an AMI from the instance.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ModifyImageAttributeFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::modify_image_attribute::builders::ModifyImageAttributeInputBuilder
-            }
-impl ModifyImageAttributeFluentBuilder  {
+    handle: std::sync::Arc<crate::client::Handle>,
+    inner: crate::operation::modify_image_attribute::builders::ModifyImageAttributeInputBuilder,
+}
+impl ModifyImageAttributeFluentBuilder {
     /// Creates a new `ModifyImageAttribute`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
-                    /// sent. The operation's inner [http::Request] can be modified as well.
-                    pub async fn customize(self) -> std::result::Result<
-                        crate::client::customize::CustomizableOperation<crate::operation::modify_image_attribute::ModifyImageAttribute, aws_http::retry::AwsResponseRetryClassifier,>,
-                        aws_smithy_http::result::SdkError<crate::operation::modify_image_attribute::ModifyImageAttributeError>
-                    >  {
-                        let handle = self.handle.clone();
-                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-                    }
-    
-                    /// Sends the request and returns the response.
-                    ///
-                    /// If an error occurs, an `SdkError` will be returned with additional details that
-                    /// can be matched against.
-                    ///
-                    /// By default, any retryable failures will be retried twice. Retry behavior
-                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                    /// set when configuring the client.
-                    pub async fn send(self) -> std::result::Result<crate::operation::modify_image_attribute::ModifyImageAttributeOutput, aws_smithy_http::result::SdkError<crate::operation::modify_image_attribute::ModifyImageAttributeError>>
-                     {
-                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&self.handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        self.handle.client.call(op).await
-                    }
-    /// <p>The name of the attribute to modify.</p> 
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle,
+            inner: Default::default(),
+        }
+    }
+
+    /// Consume this builder, creating a customizable operation that can be modified before being
+    /// sent. The operation's inner [http::Request] can be modified as well.
+    pub async fn customize(
+        self,
+    ) -> std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::modify_image_attribute::ModifyImageAttribute,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::result::SdkError<
+            crate::operation::modify_image_attribute::ModifyImageAttributeError,
+        >,
+    > {
+        let handle = self.handle.clone();
+        let operation = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+    }
+
+    /// Sends the request and returns the response.
+    ///
+    /// If an error occurs, an `SdkError` will be returned with additional details that
+    /// can be matched against.
+    ///
+    /// By default, any retryable failures will be retried twice. Retry behavior
+    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+    /// set when configuring the client.
+    pub async fn send(
+        self,
+    ) -> std::result::Result<
+        crate::operation::modify_image_attribute::ModifyImageAttributeOutput,
+        aws_smithy_http::result::SdkError<
+            crate::operation::modify_image_attribute::ModifyImageAttributeError,
+        >,
+    > {
+        let op = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&self.handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        self.handle.client.call(op).await
+    }
+    /// <p>The name of the attribute to modify.</p>
     /// <p>Valid values: <code>description</code> | <code>launchPermission</code> </p>
     pub fn attribute(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.attribute(input.into());
         self
     }
-    /// <p>The name of the attribute to modify.</p> 
+    /// <p>The name of the attribute to modify.</p>
     /// <p>Valid values: <code>description</code> | <code>launchPermission</code> </p>
     pub fn set_attribute(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.inner = self.inner.set_attribute(input);
@@ -67,7 +89,10 @@ impl ModifyImageAttributeFluentBuilder  {
         self
     }
     /// <p>A new description for the AMI.</p>
-    pub fn set_description(mut self, input: std::option::Option<crate::types::AttributeValue>) -> Self {
+    pub fn set_description(
+        mut self,
+        input: std::option::Option<crate::types::AttributeValue>,
+    ) -> Self {
         self.inner = self.inner.set_description(input);
         self
     }
@@ -87,7 +112,10 @@ impl ModifyImageAttributeFluentBuilder  {
         self
     }
     /// <p>A new launch permission for the AMI.</p>
-    pub fn set_launch_permission(mut self, input: std::option::Option<crate::types::LaunchPermissionModifications>) -> Self {
+    pub fn set_launch_permission(
+        mut self,
+        input: std::option::Option<crate::types::LaunchPermissionModifications>,
+    ) -> Self {
         self.inner = self.inner.set_launch_permission(input);
         self
     }
@@ -97,7 +125,10 @@ impl ModifyImageAttributeFluentBuilder  {
         self
     }
     /// <p>The operation type. This parameter can be used only when the <code>Attribute</code> parameter is <code>launchPermission</code>.</p>
-    pub fn set_operation_type(mut self, input: std::option::Option<crate::types::OperationType>) -> Self {
+    pub fn set_operation_type(
+        mut self,
+        input: std::option::Option<crate::types::OperationType>,
+    ) -> Self {
         self.inner = self.inner.set_operation_type(input);
         self
     }
@@ -111,7 +142,10 @@ impl ModifyImageAttributeFluentBuilder  {
         self
     }
     /// <p>Not supported.</p>
-    pub fn set_product_codes(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+    pub fn set_product_codes(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
         self.inner = self.inner.set_product_codes(input);
         self
     }
@@ -125,7 +159,10 @@ impl ModifyImageAttributeFluentBuilder  {
         self
     }
     /// <p>The user groups. This parameter can be used only when the <code>Attribute</code> parameter is <code>launchPermission</code>.</p>
-    pub fn set_user_groups(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+    pub fn set_user_groups(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
         self.inner = self.inner.set_user_groups(input);
         self
     }
@@ -139,7 +176,10 @@ impl ModifyImageAttributeFluentBuilder  {
         self
     }
     /// <p>The Amazon Web Services account IDs. This parameter can be used only when the <code>Attribute</code> parameter is <code>launchPermission</code>.</p>
-    pub fn set_user_ids(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+    pub fn set_user_ids(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
         self.inner = self.inner.set_user_ids(input);
         self
     }
@@ -173,7 +213,10 @@ impl ModifyImageAttributeFluentBuilder  {
         self
     }
     /// <p>The Amazon Resource Name (ARN) of an organization. This parameter can be used only when the <code>Attribute</code> parameter is <code>launchPermission</code>.</p>
-    pub fn set_organization_arns(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+    pub fn set_organization_arns(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
         self.inner = self.inner.set_organization_arns(input);
         self
     }
@@ -187,9 +230,11 @@ impl ModifyImageAttributeFluentBuilder  {
         self
     }
     /// <p>The Amazon Resource Name (ARN) of an organizational unit (OU). This parameter can be used only when the <code>Attribute</code> parameter is <code>launchPermission</code>.</p>
-    pub fn set_organizational_unit_arns(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+    pub fn set_organizational_unit_arns(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
         self.inner = self.inner.set_organizational_unit_arns(input);
         self
     }
 }
-

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateSubscriberOutput  {
+pub struct CreateSubscriberOutput {
     /// <p>The <code>subscriptionId</code> created by the <code>CreateSubscriber</code> API call.</p>
     #[doc(hidden)]
     pub subscription_id: std::option::Option<std::string::String>,
@@ -19,30 +19,31 @@ pub struct CreateSubscriberOutput  {
 }
 impl CreateSubscriberOutput {
     /// <p>The <code>subscriptionId</code> created by the <code>CreateSubscriber</code> API call.</p>
-    pub fn subscription_id(&self) -> std::option::Option<& str> {
+    pub fn subscription_id(&self) -> std::option::Option<&str> {
         self.subscription_id.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) created by you to provide to the subscriber. For more information about ARNs and how to use them in policies, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html">IAM identifiers in the Identity and Access Management (IAM) User Guide</a>. .</p>
-    pub fn role_arn(&self) -> std::option::Option<& str> {
+    pub fn role_arn(&self) -> std::option::Option<&str> {
         self.role_arn.as_deref()
     }
     /// <p>The ARN for the Amazon Simple Notification Service.</p>
-    pub fn sns_arn(&self) -> std::option::Option<& str> {
+    pub fn sns_arn(&self) -> std::option::Option<&str> {
         self.sns_arn.as_deref()
     }
     /// <p>The ARN for the Amazon S3 bucket. </p>
-    pub fn s3_bucket_arn(&self) -> std::option::Option<& str> {
+    pub fn s3_bucket_arn(&self) -> std::option::Option<&str> {
         self.s3_bucket_arn.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for CreateSubscriberOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl CreateSubscriberOutput {
     /// Creates a new builder-style object to manufacture [`CreateSubscriberOutput`](crate::operation::create_subscriber::CreateSubscriberOutput).
-    pub fn builder() -> crate::operation::create_subscriber::builders::CreateSubscriberOutputBuilder {
+    pub fn builder() -> crate::operation::create_subscriber::builders::CreateSubscriberOutputBuilder
+    {
         crate::operation::create_subscriber::builders::CreateSubscriberOutputBuilder::default()
     }
 }
@@ -65,7 +66,8 @@ impl CreateSubscriberOutputBuilder {
     }
     /// <p>The <code>subscriptionId</code> created by the <code>CreateSubscriber</code> API call.</p>
     pub fn set_subscription_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.subscription_id = input; self
+        self.subscription_id = input;
+        self
     }
     /// <p>The Amazon Resource Name (ARN) created by you to provide to the subscriber. For more information about ARNs and how to use them in policies, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html">IAM identifiers in the Identity and Access Management (IAM) User Guide</a>. .</p>
     pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -74,7 +76,8 @@ impl CreateSubscriberOutputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) created by you to provide to the subscriber. For more information about ARNs and how to use them in policies, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html">IAM identifiers in the Identity and Access Management (IAM) User Guide</a>. .</p>
     pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.role_arn = input; self
+        self.role_arn = input;
+        self
     }
     /// <p>The ARN for the Amazon Simple Notification Service.</p>
     pub fn sns_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -83,7 +86,8 @@ impl CreateSubscriberOutputBuilder {
     }
     /// <p>The ARN for the Amazon Simple Notification Service.</p>
     pub fn set_sns_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.sns_arn = input; self
+        self.sns_arn = input;
+        self
     }
     /// <p>The ARN for the Amazon S3 bucket. </p>
     pub fn s3_bucket_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -92,30 +96,26 @@ impl CreateSubscriberOutputBuilder {
     }
     /// <p>The ARN for the Amazon S3 bucket. </p>
     pub fn set_s3_bucket_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.s3_bucket_arn = input; self
+        self.s3_bucket_arn = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`CreateSubscriberOutput`](crate::operation::create_subscriber::CreateSubscriberOutput).
     pub fn build(self) -> crate::operation::create_subscriber::CreateSubscriberOutput {
         crate::operation::create_subscriber::CreateSubscriberOutput {
-            subscription_id: self.subscription_id
-            ,
-            role_arn: self.role_arn
-            ,
-            sns_arn: self.sns_arn
-            ,
-            s3_bucket_arn: self.s3_bucket_arn
-            ,
+            subscription_id: self.subscription_id,
+            role_arn: self.role_arn,
+            sns_arn: self.sns_arn,
+            s3_bucket_arn: self.s3_bucket_arn,
             _request_id: self._request_id,
         }
     }
 }
-

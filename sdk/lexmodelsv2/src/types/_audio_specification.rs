@@ -3,7 +3,7 @@
 /// <p>Specifies the audio input specifications.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AudioSpecification  {
+pub struct AudioSpecification {
     /// <p>Time for how long Amazon Lex waits before speech input is truncated and the speech is returned to application.</p>
     #[doc(hidden)]
     pub max_length_ms: std::option::Option<i32>,
@@ -43,7 +43,8 @@ impl AudioSpecificationBuilder {
     }
     /// <p>Time for how long Amazon Lex waits before speech input is truncated and the speech is returned to application.</p>
     pub fn set_max_length_ms(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_length_ms = input; self
+        self.max_length_ms = input;
+        self
     }
     /// <p>Time for which a bot waits after the customer stops speaking to assume the utterance is finished.</p>
     pub fn end_timeout_ms(mut self, input: i32) -> Self {
@@ -52,16 +53,14 @@ impl AudioSpecificationBuilder {
     }
     /// <p>Time for which a bot waits after the customer stops speaking to assume the utterance is finished.</p>
     pub fn set_end_timeout_ms(mut self, input: std::option::Option<i32>) -> Self {
-        self.end_timeout_ms = input; self
+        self.end_timeout_ms = input;
+        self
     }
     /// Consumes the builder and constructs a [`AudioSpecification`](crate::types::AudioSpecification).
     pub fn build(self) -> crate::types::AudioSpecification {
         crate::types::AudioSpecification {
-            max_length_ms: self.max_length_ms
-            ,
-            end_timeout_ms: self.end_timeout_ms
-            ,
+            max_length_ms: self.max_length_ms,
+            end_timeout_ms: self.end_timeout_ms,
         }
     }
 }
-

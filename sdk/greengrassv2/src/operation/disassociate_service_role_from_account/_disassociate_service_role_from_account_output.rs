@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DisassociateServiceRoleFromAccountOutput  {
+pub struct DisassociateServiceRoleFromAccountOutput {
     /// <p>The time when the service role was disassociated from IoT Greengrass for your Amazon Web Services account in this Amazon Web Services Region.</p>
     #[doc(hidden)]
     pub disassociated_at: std::option::Option<std::string::String>,
@@ -10,18 +10,18 @@ pub struct DisassociateServiceRoleFromAccountOutput  {
 }
 impl DisassociateServiceRoleFromAccountOutput {
     /// <p>The time when the service role was disassociated from IoT Greengrass for your Amazon Web Services account in this Amazon Web Services Region.</p>
-    pub fn disassociated_at(&self) -> std::option::Option<& str> {
+    pub fn disassociated_at(&self) -> std::option::Option<&str> {
         self.disassociated_at.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for DisassociateServiceRoleFromAccountOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl DisassociateServiceRoleFromAccountOutput {
     /// Creates a new builder-style object to manufacture [`DisassociateServiceRoleFromAccountOutput`](crate::operation::disassociate_service_role_from_account::DisassociateServiceRoleFromAccountOutput).
-    pub fn builder() -> crate::operation::disassociate_service_role_from_account::builders::DisassociateServiceRoleFromAccountOutputBuilder {
+    pub fn builder() -> crate::operation::disassociate_service_role_from_account::builders::DisassociateServiceRoleFromAccountOutputBuilder{
         crate::operation::disassociate_service_role_from_account::builders::DisassociateServiceRoleFromAccountOutputBuilder::default()
     }
 }
@@ -41,19 +41,20 @@ impl DisassociateServiceRoleFromAccountOutputBuilder {
     }
     /// <p>The time when the service role was disassociated from IoT Greengrass for your Amazon Web Services account in this Amazon Web Services Region.</p>
     pub fn set_disassociated_at(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.disassociated_at = input; self
+        self.disassociated_at = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`DisassociateServiceRoleFromAccountOutput`](crate::operation::disassociate_service_role_from_account::DisassociateServiceRoleFromAccountOutput).
-    pub fn build(self) -> crate::operation::disassociate_service_role_from_account::DisassociateServiceRoleFromAccountOutput {
+    pub fn build(self) -> crate::operation::disassociate_service_role_from_account::DisassociateServiceRoleFromAccountOutput{
         crate::operation::disassociate_service_role_from_account::DisassociateServiceRoleFromAccountOutput {
             disassociated_at: self.disassociated_at
             ,
@@ -61,4 +62,3 @@ impl DisassociateServiceRoleFromAccountOutputBuilder {
         }
     }
 }
-

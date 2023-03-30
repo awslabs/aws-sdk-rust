@@ -3,14 +3,14 @@
 /// <p>The description of an Amazon EC2 instance.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Instance  {
+pub struct Instance {
     /// <p>The ID of the Amazon EC2 instance.</p>
     #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
 }
 impl Instance {
     /// <p>The ID of the Amazon EC2 instance.</p>
-    pub fn id(&self) -> std::option::Option<& str> {
+    pub fn id(&self) -> std::option::Option<&str> {
         self.id.as_deref()
     }
 }
@@ -35,14 +35,11 @@ impl InstanceBuilder {
     }
     /// <p>The ID of the Amazon EC2 instance.</p>
     pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.id = input; self
+        self.id = input;
+        self
     }
     /// Consumes the builder and constructs a [`Instance`](crate::types::Instance).
     pub fn build(self) -> crate::types::Instance {
-        crate::types::Instance {
-            id: self.id
-            ,
-        }
+        crate::types::Instance { id: self.id }
     }
 }
-

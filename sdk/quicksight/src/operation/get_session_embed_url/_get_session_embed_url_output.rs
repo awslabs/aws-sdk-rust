@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct GetSessionEmbedUrlOutput  {
+pub struct GetSessionEmbedUrlOutput {
     /// <p>A single-use URL that you can put into your server-side web page to embed your Amazon QuickSight session. This URL is valid for 5 minutes. The API operation provides the URL with an <code>auth_code</code> value that enables one (and only one) sign-on to a user session that is valid for 10 hours. </p>
     #[doc(hidden)]
     pub embed_url: std::option::Option<std::string::String>,
@@ -16,7 +16,7 @@ pub struct GetSessionEmbedUrlOutput  {
 }
 impl GetSessionEmbedUrlOutput {
     /// <p>A single-use URL that you can put into your server-side web page to embed your Amazon QuickSight session. This URL is valid for 5 minutes. The API operation provides the URL with an <code>auth_code</code> value that enables one (and only one) sign-on to a user session that is valid for 10 hours. </p>
-    pub fn embed_url(&self) -> std::option::Option<& str> {
+    pub fn embed_url(&self) -> std::option::Option<&str> {
         self.embed_url.as_deref()
     }
     /// <p>The HTTP status of the request.</p>
@@ -24,11 +24,11 @@ impl GetSessionEmbedUrlOutput {
         self.status
     }
     /// <p>The Amazon Web Services request ID for this operation.</p>
-    pub fn request_id(&self) -> std::option::Option<& str> {
+    pub fn request_id(&self) -> std::option::Option<&str> {
         self.request_id.as_deref()
     }
 }
-impl  std::fmt::Debug for GetSessionEmbedUrlOutput  {
+impl std::fmt::Debug for GetSessionEmbedUrlOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetSessionEmbedUrlOutput");
         formatter.field("embed_url", &"*** Sensitive Data Redacted ***");
@@ -39,14 +39,16 @@ impl  std::fmt::Debug for GetSessionEmbedUrlOutput  {
     }
 }
 impl aws_http::request_id::RequestId for GetSessionEmbedUrlOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl GetSessionEmbedUrlOutput {
     /// Creates a new builder-style object to manufacture [`GetSessionEmbedUrlOutput`](crate::operation::get_session_embed_url::GetSessionEmbedUrlOutput).
-    pub fn builder() -> crate::operation::get_session_embed_url::builders::GetSessionEmbedUrlOutputBuilder {
-        crate::operation::get_session_embed_url::builders::GetSessionEmbedUrlOutputBuilder::default()
+    pub fn builder(
+    ) -> crate::operation::get_session_embed_url::builders::GetSessionEmbedUrlOutputBuilder {
+        crate::operation::get_session_embed_url::builders::GetSessionEmbedUrlOutputBuilder::default(
+        )
     }
 }
 
@@ -67,7 +69,8 @@ impl GetSessionEmbedUrlOutputBuilder {
     }
     /// <p>A single-use URL that you can put into your server-side web page to embed your Amazon QuickSight session. This URL is valid for 5 minutes. The API operation provides the URL with an <code>auth_code</code> value that enables one (and only one) sign-on to a user session that is valid for 10 hours. </p>
     pub fn set_embed_url(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.embed_url = input; self
+        self.embed_url = input;
+        self
     }
     /// <p>The HTTP status of the request.</p>
     pub fn status(mut self, input: i32) -> Self {
@@ -76,7 +79,8 @@ impl GetSessionEmbedUrlOutputBuilder {
     }
     /// <p>The HTTP status of the request.</p>
     pub fn set_status(mut self, input: std::option::Option<i32>) -> Self {
-        self.status = input; self
+        self.status = input;
+        self
     }
     /// <p>The Amazon Web Services request ID for this operation.</p>
     pub fn request_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -85,27 +89,24 @@ impl GetSessionEmbedUrlOutputBuilder {
     }
     /// <p>The Amazon Web Services request ID for this operation.</p>
     pub fn set_request_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.request_id = input; self
+        self.request_id = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`GetSessionEmbedUrlOutput`](crate::operation::get_session_embed_url::GetSessionEmbedUrlOutput).
     pub fn build(self) -> crate::operation::get_session_embed_url::GetSessionEmbedUrlOutput {
         crate::operation::get_session_embed_url::GetSessionEmbedUrlOutput {
-            embed_url: self.embed_url
-            ,
-            status: self.status
-                .unwrap_or_default()
-            ,
-            request_id: self.request_id
-            ,
+            embed_url: self.embed_url,
+            status: self.status.unwrap_or_default(),
+            request_id: self.request_id,
             _request_id: self._request_id,
         }
     }
@@ -120,4 +121,3 @@ impl std::fmt::Debug for GetSessionEmbedUrlOutputBuilder {
         formatter.finish()
     }
 }
-

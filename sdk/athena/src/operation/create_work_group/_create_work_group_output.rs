@@ -2,17 +2,18 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateWorkGroupOutput  {
+pub struct CreateWorkGroupOutput {
     _request_id: Option<String>,
 }
 impl aws_http::request_id::RequestId for CreateWorkGroupOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl CreateWorkGroupOutput {
     /// Creates a new builder-style object to manufacture [`CreateWorkGroupOutput`](crate::operation::create_work_group::CreateWorkGroupOutput).
-    pub fn builder() -> crate::operation::create_work_group::builders::CreateWorkGroupOutputBuilder {
+    pub fn builder() -> crate::operation::create_work_group::builders::CreateWorkGroupOutputBuilder
+    {
         crate::operation::create_work_group::builders::CreateWorkGroupOutputBuilder::default()
     }
 }
@@ -25,14 +26,14 @@ pub struct CreateWorkGroupOutputBuilder {
 }
 impl CreateWorkGroupOutputBuilder {
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`CreateWorkGroupOutput`](crate::operation::create_work_group::CreateWorkGroupOutput).
     pub fn build(self) -> crate::operation::create_work_group::CreateWorkGroupOutput {
         crate::operation::create_work_group::CreateWorkGroupOutput {
@@ -40,4 +41,3 @@ impl CreateWorkGroupOutputBuilder {
         }
     }
 }
-

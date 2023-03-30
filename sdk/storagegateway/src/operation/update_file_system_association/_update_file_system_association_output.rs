@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateFileSystemAssociationOutput  {
+pub struct UpdateFileSystemAssociationOutput {
     /// <p>The ARN of the updated file system association.</p>
     #[doc(hidden)]
     pub file_system_association_arn: std::option::Option<std::string::String>,
@@ -10,18 +10,18 @@ pub struct UpdateFileSystemAssociationOutput  {
 }
 impl UpdateFileSystemAssociationOutput {
     /// <p>The ARN of the updated file system association.</p>
-    pub fn file_system_association_arn(&self) -> std::option::Option<& str> {
+    pub fn file_system_association_arn(&self) -> std::option::Option<&str> {
         self.file_system_association_arn.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for UpdateFileSystemAssociationOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl UpdateFileSystemAssociationOutput {
     /// Creates a new builder-style object to manufacture [`UpdateFileSystemAssociationOutput`](crate::operation::update_file_system_association::UpdateFileSystemAssociationOutput).
-    pub fn builder() -> crate::operation::update_file_system_association::builders::UpdateFileSystemAssociationOutputBuilder {
+    pub fn builder() -> crate::operation::update_file_system_association::builders::UpdateFileSystemAssociationOutputBuilder{
         crate::operation::update_file_system_association::builders::UpdateFileSystemAssociationOutputBuilder::default()
     }
 }
@@ -40,25 +40,29 @@ impl UpdateFileSystemAssociationOutputBuilder {
         self
     }
     /// <p>The ARN of the updated file system association.</p>
-    pub fn set_file_system_association_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.file_system_association_arn = input; self
+    pub fn set_file_system_association_arn(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.file_system_association_arn = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`UpdateFileSystemAssociationOutput`](crate::operation::update_file_system_association::UpdateFileSystemAssociationOutput).
-    pub fn build(self) -> crate::operation::update_file_system_association::UpdateFileSystemAssociationOutput {
+    pub fn build(
+        self,
+    ) -> crate::operation::update_file_system_association::UpdateFileSystemAssociationOutput {
         crate::operation::update_file_system_association::UpdateFileSystemAssociationOutput {
-            file_system_association_arn: self.file_system_association_arn
-            ,
+            file_system_association_arn: self.file_system_association_arn,
             _request_id: self._request_id,
         }
     }
 }
-

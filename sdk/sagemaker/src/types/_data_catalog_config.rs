@@ -3,7 +3,7 @@
 /// <p>The meta data of the Glue table which serves as data catalog for the <code>OfflineStore</code>. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DataCatalogConfig  {
+pub struct DataCatalogConfig {
     /// <p>The name of the Glue table.</p>
     #[doc(hidden)]
     pub table_name: std::option::Option<std::string::String>,
@@ -16,15 +16,15 @@ pub struct DataCatalogConfig  {
 }
 impl DataCatalogConfig {
     /// <p>The name of the Glue table.</p>
-    pub fn table_name(&self) -> std::option::Option<& str> {
+    pub fn table_name(&self) -> std::option::Option<&str> {
         self.table_name.as_deref()
     }
     /// <p>The name of the Glue table catalog.</p>
-    pub fn catalog(&self) -> std::option::Option<& str> {
+    pub fn catalog(&self) -> std::option::Option<&str> {
         self.catalog.as_deref()
     }
     /// <p>The name of the Glue table database.</p>
-    pub fn database(&self) -> std::option::Option<& str> {
+    pub fn database(&self) -> std::option::Option<&str> {
         self.database.as_deref()
     }
 }
@@ -51,7 +51,8 @@ impl DataCatalogConfigBuilder {
     }
     /// <p>The name of the Glue table.</p>
     pub fn set_table_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.table_name = input; self
+        self.table_name = input;
+        self
     }
     /// <p>The name of the Glue table catalog.</p>
     pub fn catalog(mut self, input: impl Into<std::string::String>) -> Self {
@@ -60,7 +61,8 @@ impl DataCatalogConfigBuilder {
     }
     /// <p>The name of the Glue table catalog.</p>
     pub fn set_catalog(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.catalog = input; self
+        self.catalog = input;
+        self
     }
     /// <p>The name of the Glue table database.</p>
     pub fn database(mut self, input: impl Into<std::string::String>) -> Self {
@@ -69,18 +71,15 @@ impl DataCatalogConfigBuilder {
     }
     /// <p>The name of the Glue table database.</p>
     pub fn set_database(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.database = input; self
+        self.database = input;
+        self
     }
     /// Consumes the builder and constructs a [`DataCatalogConfig`](crate::types::DataCatalogConfig).
     pub fn build(self) -> crate::types::DataCatalogConfig {
         crate::types::DataCatalogConfig {
-            table_name: self.table_name
-            ,
-            catalog: self.catalog
-            ,
-            database: self.database
-            ,
+            table_name: self.table_name,
+            catalog: self.catalog,
+            database: self.database,
         }
     }
 }
-

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateSubnetGroupInput  {
+pub struct CreateSubnetGroupInput {
     /// <p>A name for the subnet group. This value is stored as a lowercase string. </p>
     #[doc(hidden)]
     pub subnet_group_name: std::option::Option<std::string::String>,
@@ -15,21 +15,22 @@ pub struct CreateSubnetGroupInput  {
 }
 impl CreateSubnetGroupInput {
     /// <p>A name for the subnet group. This value is stored as a lowercase string. </p>
-    pub fn subnet_group_name(&self) -> std::option::Option<& str> {
+    pub fn subnet_group_name(&self) -> std::option::Option<&str> {
         self.subnet_group_name.as_deref()
     }
     /// <p>A description for the subnet group</p>
-    pub fn description(&self) -> std::option::Option<& str> {
+    pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
     /// <p>A list of VPC subnet IDs for the subnet group.</p>
-    pub fn subnet_ids(&self) -> std::option::Option<& [std::string::String]> {
+    pub fn subnet_ids(&self) -> std::option::Option<&[std::string::String]> {
         self.subnet_ids.as_deref()
     }
 }
 impl CreateSubnetGroupInput {
     /// Creates a new builder-style object to manufacture [`CreateSubnetGroupInput`](crate::operation::create_subnet_group::CreateSubnetGroupInput).
-    pub fn builder() -> crate::operation::create_subnet_group::builders::CreateSubnetGroupInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::create_subnet_group::builders::CreateSubnetGroupInputBuilder {
         crate::operation::create_subnet_group::builders::CreateSubnetGroupInputBuilder::default()
     }
 }
@@ -49,8 +50,12 @@ impl CreateSubnetGroupInputBuilder {
         self
     }
     /// <p>A name for the subnet group. This value is stored as a lowercase string. </p>
-    pub fn set_subnet_group_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.subnet_group_name = input; self
+    pub fn set_subnet_group_name(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.subnet_group_name = input;
+        self
     }
     /// <p>A description for the subnet group</p>
     pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -59,7 +64,8 @@ impl CreateSubnetGroupInputBuilder {
     }
     /// <p>A description for the subnet group</p>
     pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.description = input; self
+        self.description = input;
+        self
     }
     /// Appends an item to `subnet_ids`.
     ///
@@ -68,26 +74,31 @@ impl CreateSubnetGroupInputBuilder {
     /// <p>A list of VPC subnet IDs for the subnet group.</p>
     pub fn subnet_ids(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.subnet_ids.unwrap_or_default();
-                        v.push(input.into());
-                        self.subnet_ids = Some(v);
-                        self
+        v.push(input.into());
+        self.subnet_ids = Some(v);
+        self
     }
     /// <p>A list of VPC subnet IDs for the subnet group.</p>
-    pub fn set_subnet_ids(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-        self.subnet_ids = input; self
+    pub fn set_subnet_ids(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
+        self.subnet_ids = input;
+        self
     }
     /// Consumes the builder and constructs a [`CreateSubnetGroupInput`](crate::operation::create_subnet_group::CreateSubnetGroupInput).
-    pub fn build(self) -> Result<crate::operation::create_subnet_group::CreateSubnetGroupInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::create_subnet_group::CreateSubnetGroupInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::create_subnet_group::CreateSubnetGroupInput {
-                subnet_group_name: self.subnet_group_name
-                ,
-                description: self.description
-                ,
-                subnet_ids: self.subnet_ids
-                ,
-            }
+                subnet_group_name: self.subnet_group_name,
+                description: self.description,
+                subnet_ids: self.subnet_ids,
+            },
         )
     }
 }
-

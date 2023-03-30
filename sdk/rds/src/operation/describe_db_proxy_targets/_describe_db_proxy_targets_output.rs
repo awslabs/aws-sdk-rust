@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeDbProxyTargetsOutput  {
+pub struct DescribeDbProxyTargetsOutput {
     /// <p>An arbitrary number of <code>DBProxyTarget</code> objects, containing details of the corresponding targets.</p>
     #[doc(hidden)]
     pub targets: std::option::Option<std::vec::Vec<crate::types::DbProxyTarget>>,
@@ -13,22 +13,24 @@ pub struct DescribeDbProxyTargetsOutput  {
 }
 impl DescribeDbProxyTargetsOutput {
     /// <p>An arbitrary number of <code>DBProxyTarget</code> objects, containing details of the corresponding targets.</p>
-    pub fn targets(&self) -> std::option::Option<& [crate::types::DbProxyTarget]> {
+    pub fn targets(&self) -> std::option::Option<&[crate::types::DbProxyTarget]> {
         self.targets.as_deref()
     }
     /// <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
-    pub fn marker(&self) -> std::option::Option<& str> {
+    pub fn marker(&self) -> std::option::Option<&str> {
         self.marker.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for DescribeDbProxyTargetsOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl DescribeDbProxyTargetsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeDbProxyTargetsOutput`](crate::operation::describe_db_proxy_targets::DescribeDbProxyTargetsOutput).
-    pub fn builder() -> crate::operation::describe_db_proxy_targets::builders::DescribeDbProxyTargetsOutputBuilder {
+    pub fn builder(
+    ) -> crate::operation::describe_db_proxy_targets::builders::DescribeDbProxyTargetsOutputBuilder
+    {
         crate::operation::describe_db_proxy_targets::builders::DescribeDbProxyTargetsOutputBuilder::default()
     }
 }
@@ -49,13 +51,17 @@ impl DescribeDbProxyTargetsOutputBuilder {
     /// <p>An arbitrary number of <code>DBProxyTarget</code> objects, containing details of the corresponding targets.</p>
     pub fn targets(mut self, input: crate::types::DbProxyTarget) -> Self {
         let mut v = self.targets.unwrap_or_default();
-                        v.push(input);
-                        self.targets = Some(v);
-                        self
+        v.push(input);
+        self.targets = Some(v);
+        self
     }
     /// <p>An arbitrary number of <code>DBProxyTarget</code> objects, containing details of the corresponding targets.</p>
-    pub fn set_targets(mut self, input: std::option::Option<std::vec::Vec<crate::types::DbProxyTarget>>) -> Self {
-        self.targets = input; self
+    pub fn set_targets(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::DbProxyTarget>>,
+    ) -> Self {
+        self.targets = input;
+        self
     }
     /// <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
     pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
@@ -64,26 +70,26 @@ impl DescribeDbProxyTargetsOutputBuilder {
     }
     /// <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
     pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.marker = input; self
+        self.marker = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`DescribeDbProxyTargetsOutput`](crate::operation::describe_db_proxy_targets::DescribeDbProxyTargetsOutput).
-    pub fn build(self) -> crate::operation::describe_db_proxy_targets::DescribeDbProxyTargetsOutput {
+    pub fn build(
+        self,
+    ) -> crate::operation::describe_db_proxy_targets::DescribeDbProxyTargetsOutput {
         crate::operation::describe_db_proxy_targets::DescribeDbProxyTargetsOutput {
-            targets: self.targets
-            ,
-            marker: self.marker
-            ,
+            targets: self.targets,
+            marker: self.marker,
             _request_id: self._request_id,
         }
     }
 }
-

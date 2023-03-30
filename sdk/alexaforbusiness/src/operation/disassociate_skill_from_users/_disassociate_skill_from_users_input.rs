@@ -2,20 +2,20 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DisassociateSkillFromUsersInput  {
+pub struct DisassociateSkillFromUsersInput {
     /// <p> The private skill ID you want to make unavailable for enrolled users.</p>
     #[doc(hidden)]
     pub skill_id: std::option::Option<std::string::String>,
 }
 impl DisassociateSkillFromUsersInput {
     /// <p> The private skill ID you want to make unavailable for enrolled users.</p>
-    pub fn skill_id(&self) -> std::option::Option<& str> {
+    pub fn skill_id(&self) -> std::option::Option<&str> {
         self.skill_id.as_deref()
     }
 }
 impl DisassociateSkillFromUsersInput {
     /// Creates a new builder-style object to manufacture [`DisassociateSkillFromUsersInput`](crate::operation::disassociate_skill_from_users::DisassociateSkillFromUsersInput).
-    pub fn builder() -> crate::operation::disassociate_skill_from_users::builders::DisassociateSkillFromUsersInputBuilder {
+    pub fn builder() -> crate::operation::disassociate_skill_from_users::builders::DisassociateSkillFromUsersInputBuilder{
         crate::operation::disassociate_skill_from_users::builders::DisassociateSkillFromUsersInputBuilder::default()
     }
 }
@@ -34,16 +34,20 @@ impl DisassociateSkillFromUsersInputBuilder {
     }
     /// <p> The private skill ID you want to make unavailable for enrolled users.</p>
     pub fn set_skill_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.skill_id = input; self
+        self.skill_id = input;
+        self
     }
     /// Consumes the builder and constructs a [`DisassociateSkillFromUsersInput`](crate::operation::disassociate_skill_from_users::DisassociateSkillFromUsersInput).
-    pub fn build(self) -> Result<crate::operation::disassociate_skill_from_users::DisassociateSkillFromUsersInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::disassociate_skill_from_users::DisassociateSkillFromUsersInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::disassociate_skill_from_users::DisassociateSkillFromUsersInput {
-                skill_id: self.skill_id
-                ,
-            }
+                skill_id: self.skill_id,
+            },
         )
     }
 }
-

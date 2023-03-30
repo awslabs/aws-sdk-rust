@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DisableAddOnInput  {
+pub struct DisableAddOnInput {
     /// <p>The add-on type to disable.</p>
     #[doc(hidden)]
     pub add_on_type: std::option::Option<crate::types::AddOnType>,
@@ -12,11 +12,11 @@ pub struct DisableAddOnInput  {
 }
 impl DisableAddOnInput {
     /// <p>The add-on type to disable.</p>
-    pub fn add_on_type(&self) -> std::option::Option<& crate::types::AddOnType> {
+    pub fn add_on_type(&self) -> std::option::Option<&crate::types::AddOnType> {
         self.add_on_type.as_ref()
     }
     /// <p>The name of the source resource for which to disable the add-on.</p>
-    pub fn resource_name(&self) -> std::option::Option<& str> {
+    pub fn resource_name(&self) -> std::option::Option<&str> {
         self.resource_name.as_deref()
     }
 }
@@ -42,7 +42,8 @@ impl DisableAddOnInputBuilder {
     }
     /// <p>The add-on type to disable.</p>
     pub fn set_add_on_type(mut self, input: std::option::Option<crate::types::AddOnType>) -> Self {
-        self.add_on_type = input; self
+        self.add_on_type = input;
+        self
     }
     /// <p>The name of the source resource for which to disable the add-on.</p>
     pub fn resource_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -51,18 +52,19 @@ impl DisableAddOnInputBuilder {
     }
     /// <p>The name of the source resource for which to disable the add-on.</p>
     pub fn set_resource_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.resource_name = input; self
+        self.resource_name = input;
+        self
     }
     /// Consumes the builder and constructs a [`DisableAddOnInput`](crate::operation::disable_add_on::DisableAddOnInput).
-    pub fn build(self) -> Result<crate::operation::disable_add_on::DisableAddOnInput, aws_smithy_http::operation::error::BuildError> {
-        Ok(
-            crate::operation::disable_add_on::DisableAddOnInput {
-                add_on_type: self.add_on_type
-                ,
-                resource_name: self.resource_name
-                ,
-            }
-        )
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::disable_add_on::DisableAddOnInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        Ok(crate::operation::disable_add_on::DisableAddOnInput {
+            add_on_type: self.add_on_type,
+            resource_name: self.resource_name,
+        })
     }
 }
-

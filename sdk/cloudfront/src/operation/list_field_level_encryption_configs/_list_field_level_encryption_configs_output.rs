@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListFieldLevelEncryptionConfigsOutput  {
+pub struct ListFieldLevelEncryptionConfigsOutput {
     /// <p>Returns a list of all field-level encryption configurations that have been created in CloudFront for this account.</p>
     #[doc(hidden)]
     pub field_level_encryption_list: std::option::Option<crate::types::FieldLevelEncryptionList>,
@@ -10,18 +10,20 @@ pub struct ListFieldLevelEncryptionConfigsOutput  {
 }
 impl ListFieldLevelEncryptionConfigsOutput {
     /// <p>Returns a list of all field-level encryption configurations that have been created in CloudFront for this account.</p>
-    pub fn field_level_encryption_list(&self) -> std::option::Option<& crate::types::FieldLevelEncryptionList> {
+    pub fn field_level_encryption_list(
+        &self,
+    ) -> std::option::Option<&crate::types::FieldLevelEncryptionList> {
         self.field_level_encryption_list.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for ListFieldLevelEncryptionConfigsOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl ListFieldLevelEncryptionConfigsOutput {
     /// Creates a new builder-style object to manufacture [`ListFieldLevelEncryptionConfigsOutput`](crate::operation::list_field_level_encryption_configs::ListFieldLevelEncryptionConfigsOutput).
-    pub fn builder() -> crate::operation::list_field_level_encryption_configs::builders::ListFieldLevelEncryptionConfigsOutputBuilder {
+    pub fn builder() -> crate::operation::list_field_level_encryption_configs::builders::ListFieldLevelEncryptionConfigsOutputBuilder{
         crate::operation::list_field_level_encryption_configs::builders::ListFieldLevelEncryptionConfigsOutputBuilder::default()
     }
 }
@@ -30,30 +32,41 @@ impl ListFieldLevelEncryptionConfigsOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct ListFieldLevelEncryptionConfigsOutputBuilder {
-    pub(crate) field_level_encryption_list: std::option::Option<crate::types::FieldLevelEncryptionList>,
+    pub(crate) field_level_encryption_list:
+        std::option::Option<crate::types::FieldLevelEncryptionList>,
     _request_id: Option<String>,
 }
 impl ListFieldLevelEncryptionConfigsOutputBuilder {
     /// <p>Returns a list of all field-level encryption configurations that have been created in CloudFront for this account.</p>
-    pub fn field_level_encryption_list(mut self, input: crate::types::FieldLevelEncryptionList) -> Self {
+    pub fn field_level_encryption_list(
+        mut self,
+        input: crate::types::FieldLevelEncryptionList,
+    ) -> Self {
         self.field_level_encryption_list = Some(input);
         self
     }
     /// <p>Returns a list of all field-level encryption configurations that have been created in CloudFront for this account.</p>
-    pub fn set_field_level_encryption_list(mut self, input: std::option::Option<crate::types::FieldLevelEncryptionList>) -> Self {
-        self.field_level_encryption_list = input; self
+    pub fn set_field_level_encryption_list(
+        mut self,
+        input: std::option::Option<crate::types::FieldLevelEncryptionList>,
+    ) -> Self {
+        self.field_level_encryption_list = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`ListFieldLevelEncryptionConfigsOutput`](crate::operation::list_field_level_encryption_configs::ListFieldLevelEncryptionConfigsOutput).
-    pub fn build(self) -> crate::operation::list_field_level_encryption_configs::ListFieldLevelEncryptionConfigsOutput {
+    pub fn build(
+        self,
+    ) -> crate::operation::list_field_level_encryption_configs::ListFieldLevelEncryptionConfigsOutput
+    {
         crate::operation::list_field_level_encryption_configs::ListFieldLevelEncryptionConfigsOutput {
             field_level_encryption_list: self.field_level_encryption_list
             ,
@@ -61,4 +74,3 @@ impl ListFieldLevelEncryptionConfigsOutputBuilder {
         }
     }
 }
-

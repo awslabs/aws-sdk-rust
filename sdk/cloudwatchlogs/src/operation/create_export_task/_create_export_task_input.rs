@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateExportTaskInput  {
+pub struct CreateExportTaskInput {
     /// <p>The name of the export task.</p>
     #[doc(hidden)]
     pub task_name: std::option::Option<std::string::String>,
@@ -15,7 +15,7 @@ pub struct CreateExportTaskInput  {
     /// <p>The start time of the range for the request, expressed as the number of milliseconds after <code>Jan 1, 1970 00:00:00 UTC</code>. Events with a timestamp earlier than this time are not exported.</p>
     #[doc(hidden)]
     pub from: std::option::Option<i64>,
-    /// <p>The end time of the range for the request, expressed as the number of milliseconds after <code>Jan 1, 1970 00:00:00 UTC</code>. Events with a timestamp later than this time are not exported.</p> 
+    /// <p>The end time of the range for the request, expressed as the number of milliseconds after <code>Jan 1, 1970 00:00:00 UTC</code>. Events with a timestamp later than this time are not exported.</p>
     /// <p>You must specify a time that is not earlier than when this log group was created.</p>
     #[doc(hidden)]
     pub to: std::option::Option<i64>,
@@ -28,38 +28,39 @@ pub struct CreateExportTaskInput  {
 }
 impl CreateExportTaskInput {
     /// <p>The name of the export task.</p>
-    pub fn task_name(&self) -> std::option::Option<& str> {
+    pub fn task_name(&self) -> std::option::Option<&str> {
         self.task_name.as_deref()
     }
     /// <p>The name of the log group.</p>
-    pub fn log_group_name(&self) -> std::option::Option<& str> {
+    pub fn log_group_name(&self) -> std::option::Option<&str> {
         self.log_group_name.as_deref()
     }
     /// <p>Export only log streams that match the provided prefix. If you don't specify a value, no prefix filter is applied.</p>
-    pub fn log_stream_name_prefix(&self) -> std::option::Option<& str> {
+    pub fn log_stream_name_prefix(&self) -> std::option::Option<&str> {
         self.log_stream_name_prefix.as_deref()
     }
     /// <p>The start time of the range for the request, expressed as the number of milliseconds after <code>Jan 1, 1970 00:00:00 UTC</code>. Events with a timestamp earlier than this time are not exported.</p>
     pub fn from(&self) -> std::option::Option<i64> {
         self.from
     }
-    /// <p>The end time of the range for the request, expressed as the number of milliseconds after <code>Jan 1, 1970 00:00:00 UTC</code>. Events with a timestamp later than this time are not exported.</p> 
+    /// <p>The end time of the range for the request, expressed as the number of milliseconds after <code>Jan 1, 1970 00:00:00 UTC</code>. Events with a timestamp later than this time are not exported.</p>
     /// <p>You must specify a time that is not earlier than when this log group was created.</p>
     pub fn to(&self) -> std::option::Option<i64> {
         self.to
     }
     /// <p>The name of S3 bucket for the exported log data. The bucket must be in the same Amazon Web Services Region.</p>
-    pub fn destination(&self) -> std::option::Option<& str> {
+    pub fn destination(&self) -> std::option::Option<&str> {
         self.destination.as_deref()
     }
     /// <p>The prefix used as the start of the key for every object exported. If you don't specify a value, the default is <code>exportedlogs</code>.</p>
-    pub fn destination_prefix(&self) -> std::option::Option<& str> {
+    pub fn destination_prefix(&self) -> std::option::Option<&str> {
         self.destination_prefix.as_deref()
     }
 }
 impl CreateExportTaskInput {
     /// Creates a new builder-style object to manufacture [`CreateExportTaskInput`](crate::operation::create_export_task::CreateExportTaskInput).
-    pub fn builder() -> crate::operation::create_export_task::builders::CreateExportTaskInputBuilder {
+    pub fn builder() -> crate::operation::create_export_task::builders::CreateExportTaskInputBuilder
+    {
         crate::operation::create_export_task::builders::CreateExportTaskInputBuilder::default()
     }
 }
@@ -84,7 +85,8 @@ impl CreateExportTaskInputBuilder {
     }
     /// <p>The name of the export task.</p>
     pub fn set_task_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.task_name = input; self
+        self.task_name = input;
+        self
     }
     /// <p>The name of the log group.</p>
     pub fn log_group_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -93,7 +95,8 @@ impl CreateExportTaskInputBuilder {
     }
     /// <p>The name of the log group.</p>
     pub fn set_log_group_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.log_group_name = input; self
+        self.log_group_name = input;
+        self
     }
     /// <p>Export only log streams that match the provided prefix. If you don't specify a value, no prefix filter is applied.</p>
     pub fn log_stream_name_prefix(mut self, input: impl Into<std::string::String>) -> Self {
@@ -101,8 +104,12 @@ impl CreateExportTaskInputBuilder {
         self
     }
     /// <p>Export only log streams that match the provided prefix. If you don't specify a value, no prefix filter is applied.</p>
-    pub fn set_log_stream_name_prefix(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.log_stream_name_prefix = input; self
+    pub fn set_log_stream_name_prefix(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.log_stream_name_prefix = input;
+        self
     }
     /// <p>The start time of the range for the request, expressed as the number of milliseconds after <code>Jan 1, 1970 00:00:00 UTC</code>. Events with a timestamp earlier than this time are not exported.</p>
     pub fn from(mut self, input: i64) -> Self {
@@ -111,18 +118,20 @@ impl CreateExportTaskInputBuilder {
     }
     /// <p>The start time of the range for the request, expressed as the number of milliseconds after <code>Jan 1, 1970 00:00:00 UTC</code>. Events with a timestamp earlier than this time are not exported.</p>
     pub fn set_from(mut self, input: std::option::Option<i64>) -> Self {
-        self.from = input; self
+        self.from = input;
+        self
     }
-    /// <p>The end time of the range for the request, expressed as the number of milliseconds after <code>Jan 1, 1970 00:00:00 UTC</code>. Events with a timestamp later than this time are not exported.</p> 
+    /// <p>The end time of the range for the request, expressed as the number of milliseconds after <code>Jan 1, 1970 00:00:00 UTC</code>. Events with a timestamp later than this time are not exported.</p>
     /// <p>You must specify a time that is not earlier than when this log group was created.</p>
     pub fn to(mut self, input: i64) -> Self {
         self.to = Some(input);
         self
     }
-    /// <p>The end time of the range for the request, expressed as the number of milliseconds after <code>Jan 1, 1970 00:00:00 UTC</code>. Events with a timestamp later than this time are not exported.</p> 
+    /// <p>The end time of the range for the request, expressed as the number of milliseconds after <code>Jan 1, 1970 00:00:00 UTC</code>. Events with a timestamp later than this time are not exported.</p>
     /// <p>You must specify a time that is not earlier than when this log group was created.</p>
     pub fn set_to(mut self, input: std::option::Option<i64>) -> Self {
-        self.to = input; self
+        self.to = input;
+        self
     }
     /// <p>The name of S3 bucket for the exported log data. The bucket must be in the same Amazon Web Services Region.</p>
     pub fn destination(mut self, input: impl Into<std::string::String>) -> Self {
@@ -131,7 +140,8 @@ impl CreateExportTaskInputBuilder {
     }
     /// <p>The name of S3 bucket for the exported log data. The bucket must be in the same Amazon Web Services Region.</p>
     pub fn set_destination(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.destination = input; self
+        self.destination = input;
+        self
     }
     /// <p>The prefix used as the start of the key for every object exported. If you don't specify a value, the default is <code>exportedlogs</code>.</p>
     pub fn destination_prefix(mut self, input: impl Into<std::string::String>) -> Self {
@@ -139,29 +149,30 @@ impl CreateExportTaskInputBuilder {
         self
     }
     /// <p>The prefix used as the start of the key for every object exported. If you don't specify a value, the default is <code>exportedlogs</code>.</p>
-    pub fn set_destination_prefix(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.destination_prefix = input; self
+    pub fn set_destination_prefix(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.destination_prefix = input;
+        self
     }
     /// Consumes the builder and constructs a [`CreateExportTaskInput`](crate::operation::create_export_task::CreateExportTaskInput).
-    pub fn build(self) -> Result<crate::operation::create_export_task::CreateExportTaskInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::create_export_task::CreateExportTaskInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::create_export_task::CreateExportTaskInput {
-                task_name: self.task_name
-                ,
-                log_group_name: self.log_group_name
-                ,
-                log_stream_name_prefix: self.log_stream_name_prefix
-                ,
-                from: self.from
-                ,
-                to: self.to
-                ,
-                destination: self.destination
-                ,
-                destination_prefix: self.destination_prefix
-                ,
-            }
+                task_name: self.task_name,
+                log_group_name: self.log_group_name,
+                log_stream_name_prefix: self.log_stream_name_prefix,
+                from: self.from,
+                to: self.to,
+                destination: self.destination,
+                destination_prefix: self.destination_prefix,
+            },
         )
     }
 }
-

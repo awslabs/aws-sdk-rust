@@ -40,4 +40,3 @@ pub use crate::types::_parametric_s3_monitoring_configuration::ParametricS3Monit
 pub use crate::types::_parametric_cloud_watch_monitoring_configuration::ParametricCloudWatchMonitoringConfigurationBuilder;
 
 pub use crate::types::_job_run::JobRunBuilder;
-

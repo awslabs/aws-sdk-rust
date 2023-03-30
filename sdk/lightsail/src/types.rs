@@ -732,4 +732,3 @@ pub mod builders;
 
 /// Error types that Amazon Lightsail can respond with.
 pub mod error;
-

@@ -3,14 +3,14 @@
 /// <p>Information about the dataset whose content generation triggers the new dataset content generation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct TriggeringDataset  {
+pub struct TriggeringDataset {
     /// <p>The name of the dataset whose content generation triggers the new dataset content generation.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
 }
 impl TriggeringDataset {
     /// <p>The name of the dataset whose content generation triggers the new dataset content generation.</p>
-    pub fn name(&self) -> std::option::Option<& str> {
+    pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
 }
@@ -35,14 +35,11 @@ impl TriggeringDatasetBuilder {
     }
     /// <p>The name of the dataset whose content generation triggers the new dataset content generation.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input; self
+        self.name = input;
+        self
     }
     /// Consumes the builder and constructs a [`TriggeringDataset`](crate::types::TriggeringDataset).
     pub fn build(self) -> crate::types::TriggeringDataset {
-        crate::types::TriggeringDataset {
-            name: self.name
-            ,
-        }
+        crate::types::TriggeringDataset { name: self.name }
     }
 }
-

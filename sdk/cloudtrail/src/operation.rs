@@ -114,4 +114,3 @@ pub mod update_event_data_store;
 
 /// Types for the `UpdateTrail` operation.
 pub mod update_trail;
-

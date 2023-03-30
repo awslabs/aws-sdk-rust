@@ -3,7 +3,7 @@
 /// <p>Provides a summary of the dataset properties used in the <a href="https://docs.aws.amazon.com/forecast/latest/dg/API_ListDatasets.html">ListDatasets</a> operation. To get the complete set of properties, call the <a href="https://docs.aws.amazon.com/forecast/latest/dg/API_DescribeDataset.html">DescribeDataset</a> operation, and provide the <code>DatasetArn</code>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DatasetSummary  {
+pub struct DatasetSummary {
     /// <p>The Amazon Resource Name (ARN) of the dataset.</p>
     #[doc(hidden)]
     pub dataset_arn: std::option::Option<std::string::String>,
@@ -25,27 +25,27 @@ pub struct DatasetSummary  {
 }
 impl DatasetSummary {
     /// <p>The Amazon Resource Name (ARN) of the dataset.</p>
-    pub fn dataset_arn(&self) -> std::option::Option<& str> {
+    pub fn dataset_arn(&self) -> std::option::Option<&str> {
         self.dataset_arn.as_deref()
     }
     /// <p>The name of the dataset.</p>
-    pub fn dataset_name(&self) -> std::option::Option<& str> {
+    pub fn dataset_name(&self) -> std::option::Option<&str> {
         self.dataset_name.as_deref()
     }
     /// <p>The dataset type.</p>
-    pub fn dataset_type(&self) -> std::option::Option<& crate::types::DatasetType> {
+    pub fn dataset_type(&self) -> std::option::Option<&crate::types::DatasetType> {
         self.dataset_type.as_ref()
     }
     /// <p>The domain associated with the dataset.</p>
-    pub fn domain(&self) -> std::option::Option<& crate::types::Domain> {
+    pub fn domain(&self) -> std::option::Option<&crate::types::Domain> {
         self.domain.as_ref()
     }
     /// <p>When the dataset was created.</p>
-    pub fn creation_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
+    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
     /// <p>When you create a dataset, <code>LastModificationTime</code> is the same as <code>CreationTime</code>. While data is being imported to the dataset, <code>LastModificationTime</code> is the current time of the <code>ListDatasets</code> call. After a <a href="https://docs.aws.amazon.com/forecast/latest/dg/API_CreateDatasetImportJob.html">CreateDatasetImportJob</a> operation has finished, <code>LastModificationTime</code> is when the import job completed or failed.</p>
-    pub fn last_modification_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
+    pub fn last_modification_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_modification_time.as_ref()
     }
 }
@@ -75,7 +75,8 @@ impl DatasetSummaryBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the dataset.</p>
     pub fn set_dataset_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.dataset_arn = input; self
+        self.dataset_arn = input;
+        self
     }
     /// <p>The name of the dataset.</p>
     pub fn dataset_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -84,7 +85,8 @@ impl DatasetSummaryBuilder {
     }
     /// <p>The name of the dataset.</p>
     pub fn set_dataset_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.dataset_name = input; self
+        self.dataset_name = input;
+        self
     }
     /// <p>The dataset type.</p>
     pub fn dataset_type(mut self, input: crate::types::DatasetType) -> Self {
@@ -92,8 +94,12 @@ impl DatasetSummaryBuilder {
         self
     }
     /// <p>The dataset type.</p>
-    pub fn set_dataset_type(mut self, input: std::option::Option<crate::types::DatasetType>) -> Self {
-        self.dataset_type = input; self
+    pub fn set_dataset_type(
+        mut self,
+        input: std::option::Option<crate::types::DatasetType>,
+    ) -> Self {
+        self.dataset_type = input;
+        self
     }
     /// <p>The domain associated with the dataset.</p>
     pub fn domain(mut self, input: crate::types::Domain) -> Self {
@@ -102,7 +108,8 @@ impl DatasetSummaryBuilder {
     }
     /// <p>The domain associated with the dataset.</p>
     pub fn set_domain(mut self, input: std::option::Option<crate::types::Domain>) -> Self {
-        self.domain = input; self
+        self.domain = input;
+        self
     }
     /// <p>When the dataset was created.</p>
     pub fn creation_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -110,8 +117,12 @@ impl DatasetSummaryBuilder {
         self
     }
     /// <p>When the dataset was created.</p>
-    pub fn set_creation_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.creation_time = input; self
+    pub fn set_creation_time(
+        mut self,
+        input: std::option::Option<aws_smithy_types::DateTime>,
+    ) -> Self {
+        self.creation_time = input;
+        self
     }
     /// <p>When you create a dataset, <code>LastModificationTime</code> is the same as <code>CreationTime</code>. While data is being imported to the dataset, <code>LastModificationTime</code> is the current time of the <code>ListDatasets</code> call. After a <a href="https://docs.aws.amazon.com/forecast/latest/dg/API_CreateDatasetImportJob.html">CreateDatasetImportJob</a> operation has finished, <code>LastModificationTime</code> is when the import job completed or failed.</p>
     pub fn last_modification_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -119,25 +130,22 @@ impl DatasetSummaryBuilder {
         self
     }
     /// <p>When you create a dataset, <code>LastModificationTime</code> is the same as <code>CreationTime</code>. While data is being imported to the dataset, <code>LastModificationTime</code> is the current time of the <code>ListDatasets</code> call. After a <a href="https://docs.aws.amazon.com/forecast/latest/dg/API_CreateDatasetImportJob.html">CreateDatasetImportJob</a> operation has finished, <code>LastModificationTime</code> is when the import job completed or failed.</p>
-    pub fn set_last_modification_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.last_modification_time = input; self
+    pub fn set_last_modification_time(
+        mut self,
+        input: std::option::Option<aws_smithy_types::DateTime>,
+    ) -> Self {
+        self.last_modification_time = input;
+        self
     }
     /// Consumes the builder and constructs a [`DatasetSummary`](crate::types::DatasetSummary).
     pub fn build(self) -> crate::types::DatasetSummary {
         crate::types::DatasetSummary {
-            dataset_arn: self.dataset_arn
-            ,
-            dataset_name: self.dataset_name
-            ,
-            dataset_type: self.dataset_type
-            ,
-            domain: self.domain
-            ,
-            creation_time: self.creation_time
-            ,
-            last_modification_time: self.last_modification_time
-            ,
+            dataset_arn: self.dataset_arn,
+            dataset_name: self.dataset_name,
+            dataset_type: self.dataset_type,
+            domain: self.domain,
+            creation_time: self.creation_time,
+            last_modification_time: self.last_modification_time,
         }
     }
 }
-

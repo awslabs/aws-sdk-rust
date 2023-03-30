@@ -3,7 +3,7 @@
 /// <p>Specifies a transform that joins two datasets into one dataset using a comparison phrase on the specified data property keys. You can use inner, outer, left, right, left semi, and left anti joins.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Join  {
+pub struct Join {
     /// <p>The name of the transform node.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -19,19 +19,19 @@ pub struct Join  {
 }
 impl Join {
     /// <p>The name of the transform node.</p>
-    pub fn name(&self) -> std::option::Option<& str> {
+    pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>The data inputs identified by their node names.</p>
-    pub fn inputs(&self) -> std::option::Option<& [std::string::String]> {
+    pub fn inputs(&self) -> std::option::Option<&[std::string::String]> {
         self.inputs.as_deref()
     }
     /// <p>Specifies the type of join to be performed on the datasets.</p>
-    pub fn join_type(&self) -> std::option::Option<& crate::types::JoinType> {
+    pub fn join_type(&self) -> std::option::Option<&crate::types::JoinType> {
         self.join_type.as_ref()
     }
     /// <p>A list of the two columns to be joined.</p>
-    pub fn columns(&self) -> std::option::Option<& [crate::types::JoinColumn]> {
+    pub fn columns(&self) -> std::option::Option<&[crate::types::JoinColumn]> {
         self.columns.as_deref()
     }
 }
@@ -59,7 +59,8 @@ impl JoinBuilder {
     }
     /// <p>The name of the transform node.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input; self
+        self.name = input;
+        self
     }
     /// Appends an item to `inputs`.
     ///
@@ -68,13 +69,17 @@ impl JoinBuilder {
     /// <p>The data inputs identified by their node names.</p>
     pub fn inputs(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.inputs.unwrap_or_default();
-                        v.push(input.into());
-                        self.inputs = Some(v);
-                        self
+        v.push(input.into());
+        self.inputs = Some(v);
+        self
     }
     /// <p>The data inputs identified by their node names.</p>
-    pub fn set_inputs(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-        self.inputs = input; self
+    pub fn set_inputs(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
+        self.inputs = input;
+        self
     }
     /// <p>Specifies the type of join to be performed on the datasets.</p>
     pub fn join_type(mut self, input: crate::types::JoinType) -> Self {
@@ -83,7 +88,8 @@ impl JoinBuilder {
     }
     /// <p>Specifies the type of join to be performed on the datasets.</p>
     pub fn set_join_type(mut self, input: std::option::Option<crate::types::JoinType>) -> Self {
-        self.join_type = input; self
+        self.join_type = input;
+        self
     }
     /// Appends an item to `columns`.
     ///
@@ -92,26 +98,25 @@ impl JoinBuilder {
     /// <p>A list of the two columns to be joined.</p>
     pub fn columns(mut self, input: crate::types::JoinColumn) -> Self {
         let mut v = self.columns.unwrap_or_default();
-                        v.push(input);
-                        self.columns = Some(v);
-                        self
+        v.push(input);
+        self.columns = Some(v);
+        self
     }
     /// <p>A list of the two columns to be joined.</p>
-    pub fn set_columns(mut self, input: std::option::Option<std::vec::Vec<crate::types::JoinColumn>>) -> Self {
-        self.columns = input; self
+    pub fn set_columns(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::JoinColumn>>,
+    ) -> Self {
+        self.columns = input;
+        self
     }
     /// Consumes the builder and constructs a [`Join`](crate::types::Join).
     pub fn build(self) -> crate::types::Join {
         crate::types::Join {
-            name: self.name
-            ,
-            inputs: self.inputs
-            ,
-            join_type: self.join_type
-            ,
-            columns: self.columns
-            ,
+            name: self.name,
+            inputs: self.inputs,
+            join_type: self.join_type,
+            columns: self.columns,
         }
     }
 }
-

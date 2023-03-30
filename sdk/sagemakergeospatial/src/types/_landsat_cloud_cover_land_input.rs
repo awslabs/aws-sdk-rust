@@ -3,7 +3,7 @@
 /// <p></p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct LandsatCloudCoverLandInput  {
+pub struct LandsatCloudCoverLandInput {
     /// <p></p>
     #[doc(hidden)]
     pub lower_bound: std::option::Option<f32>,
@@ -43,7 +43,8 @@ impl LandsatCloudCoverLandInputBuilder {
     }
     /// <p></p>
     pub fn set_lower_bound(mut self, input: std::option::Option<f32>) -> Self {
-        self.lower_bound = input; self
+        self.lower_bound = input;
+        self
     }
     /// <p></p>
     pub fn upper_bound(mut self, input: f32) -> Self {
@@ -52,16 +53,14 @@ impl LandsatCloudCoverLandInputBuilder {
     }
     /// <p></p>
     pub fn set_upper_bound(mut self, input: std::option::Option<f32>) -> Self {
-        self.upper_bound = input; self
+        self.upper_bound = input;
+        self
     }
     /// Consumes the builder and constructs a [`LandsatCloudCoverLandInput`](crate::types::LandsatCloudCoverLandInput).
     pub fn build(self) -> crate::types::LandsatCloudCoverLandInput {
         crate::types::LandsatCloudCoverLandInput {
-            lower_bound: self.lower_bound
-            ,
-            upper_bound: self.upper_bound
-            ,
+            lower_bound: self.lower_bound,
+            upper_bound: self.upper_bound,
         }
     }
 }
-

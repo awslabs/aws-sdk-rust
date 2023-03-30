@@ -3,38 +3,39 @@
 /// <p>The request body of the GetServiceSetting API operation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetServiceSettingInput  {
-    /// <p>The ID of the service setting to get. The setting ID can be one of the following.</p> 
-    /// <ul> 
-    /// <li> <p> <code>/ssm/automation/customer-script-log-destination</code> </p> </li> 
-    /// <li> <p> <code>/ssm/automation/customer-script-log-group-name</code> </p> </li> 
-    /// <li> <p> <code>/ssm/documents/console/public-sharing-permission</code> </p> </li> 
-    /// <li> <p> <code>/ssm/managed-instance/activation-tier</code> </p> </li> 
-    /// <li> <p> <code>/ssm/opsinsights/opscenter</code> </p> </li> 
-    /// <li> <p> <code>/ssm/parameter-store/default-parameter-tier</code> </p> </li> 
-    /// <li> <p> <code>/ssm/parameter-store/high-throughput-enabled</code> </p> </li> 
+pub struct GetServiceSettingInput {
+    /// <p>The ID of the service setting to get. The setting ID can be one of the following.</p>
+    /// <ul>
+    /// <li> <p> <code>/ssm/automation/customer-script-log-destination</code> </p> </li>
+    /// <li> <p> <code>/ssm/automation/customer-script-log-group-name</code> </p> </li>
+    /// <li> <p> <code>/ssm/documents/console/public-sharing-permission</code> </p> </li>
+    /// <li> <p> <code>/ssm/managed-instance/activation-tier</code> </p> </li>
+    /// <li> <p> <code>/ssm/opsinsights/opscenter</code> </p> </li>
+    /// <li> <p> <code>/ssm/parameter-store/default-parameter-tier</code> </p> </li>
+    /// <li> <p> <code>/ssm/parameter-store/high-throughput-enabled</code> </p> </li>
     /// </ul>
     #[doc(hidden)]
     pub setting_id: std::option::Option<std::string::String>,
 }
 impl GetServiceSettingInput {
-    /// <p>The ID of the service setting to get. The setting ID can be one of the following.</p> 
-    /// <ul> 
-    /// <li> <p> <code>/ssm/automation/customer-script-log-destination</code> </p> </li> 
-    /// <li> <p> <code>/ssm/automation/customer-script-log-group-name</code> </p> </li> 
-    /// <li> <p> <code>/ssm/documents/console/public-sharing-permission</code> </p> </li> 
-    /// <li> <p> <code>/ssm/managed-instance/activation-tier</code> </p> </li> 
-    /// <li> <p> <code>/ssm/opsinsights/opscenter</code> </p> </li> 
-    /// <li> <p> <code>/ssm/parameter-store/default-parameter-tier</code> </p> </li> 
-    /// <li> <p> <code>/ssm/parameter-store/high-throughput-enabled</code> </p> </li> 
+    /// <p>The ID of the service setting to get. The setting ID can be one of the following.</p>
+    /// <ul>
+    /// <li> <p> <code>/ssm/automation/customer-script-log-destination</code> </p> </li>
+    /// <li> <p> <code>/ssm/automation/customer-script-log-group-name</code> </p> </li>
+    /// <li> <p> <code>/ssm/documents/console/public-sharing-permission</code> </p> </li>
+    /// <li> <p> <code>/ssm/managed-instance/activation-tier</code> </p> </li>
+    /// <li> <p> <code>/ssm/opsinsights/opscenter</code> </p> </li>
+    /// <li> <p> <code>/ssm/parameter-store/default-parameter-tier</code> </p> </li>
+    /// <li> <p> <code>/ssm/parameter-store/high-throughput-enabled</code> </p> </li>
     /// </ul>
-    pub fn setting_id(&self) -> std::option::Option<& str> {
+    pub fn setting_id(&self) -> std::option::Option<&str> {
         self.setting_id.as_deref()
     }
 }
 impl GetServiceSettingInput {
     /// Creates a new builder-style object to manufacture [`GetServiceSettingInput`](crate::operation::get_service_setting::GetServiceSettingInput).
-    pub fn builder() -> crate::operation::get_service_setting::builders::GetServiceSettingInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::get_service_setting::builders::GetServiceSettingInputBuilder {
         crate::operation::get_service_setting::builders::GetServiceSettingInputBuilder::default()
     }
 }
@@ -46,41 +47,45 @@ pub struct GetServiceSettingInputBuilder {
     pub(crate) setting_id: std::option::Option<std::string::String>,
 }
 impl GetServiceSettingInputBuilder {
-    /// <p>The ID of the service setting to get. The setting ID can be one of the following.</p> 
-    /// <ul> 
-    /// <li> <p> <code>/ssm/automation/customer-script-log-destination</code> </p> </li> 
-    /// <li> <p> <code>/ssm/automation/customer-script-log-group-name</code> </p> </li> 
-    /// <li> <p> <code>/ssm/documents/console/public-sharing-permission</code> </p> </li> 
-    /// <li> <p> <code>/ssm/managed-instance/activation-tier</code> </p> </li> 
-    /// <li> <p> <code>/ssm/opsinsights/opscenter</code> </p> </li> 
-    /// <li> <p> <code>/ssm/parameter-store/default-parameter-tier</code> </p> </li> 
-    /// <li> <p> <code>/ssm/parameter-store/high-throughput-enabled</code> </p> </li> 
+    /// <p>The ID of the service setting to get. The setting ID can be one of the following.</p>
+    /// <ul>
+    /// <li> <p> <code>/ssm/automation/customer-script-log-destination</code> </p> </li>
+    /// <li> <p> <code>/ssm/automation/customer-script-log-group-name</code> </p> </li>
+    /// <li> <p> <code>/ssm/documents/console/public-sharing-permission</code> </p> </li>
+    /// <li> <p> <code>/ssm/managed-instance/activation-tier</code> </p> </li>
+    /// <li> <p> <code>/ssm/opsinsights/opscenter</code> </p> </li>
+    /// <li> <p> <code>/ssm/parameter-store/default-parameter-tier</code> </p> </li>
+    /// <li> <p> <code>/ssm/parameter-store/high-throughput-enabled</code> </p> </li>
     /// </ul>
     pub fn setting_id(mut self, input: impl Into<std::string::String>) -> Self {
         self.setting_id = Some(input.into());
         self
     }
-    /// <p>The ID of the service setting to get. The setting ID can be one of the following.</p> 
-    /// <ul> 
-    /// <li> <p> <code>/ssm/automation/customer-script-log-destination</code> </p> </li> 
-    /// <li> <p> <code>/ssm/automation/customer-script-log-group-name</code> </p> </li> 
-    /// <li> <p> <code>/ssm/documents/console/public-sharing-permission</code> </p> </li> 
-    /// <li> <p> <code>/ssm/managed-instance/activation-tier</code> </p> </li> 
-    /// <li> <p> <code>/ssm/opsinsights/opscenter</code> </p> </li> 
-    /// <li> <p> <code>/ssm/parameter-store/default-parameter-tier</code> </p> </li> 
-    /// <li> <p> <code>/ssm/parameter-store/high-throughput-enabled</code> </p> </li> 
+    /// <p>The ID of the service setting to get. The setting ID can be one of the following.</p>
+    /// <ul>
+    /// <li> <p> <code>/ssm/automation/customer-script-log-destination</code> </p> </li>
+    /// <li> <p> <code>/ssm/automation/customer-script-log-group-name</code> </p> </li>
+    /// <li> <p> <code>/ssm/documents/console/public-sharing-permission</code> </p> </li>
+    /// <li> <p> <code>/ssm/managed-instance/activation-tier</code> </p> </li>
+    /// <li> <p> <code>/ssm/opsinsights/opscenter</code> </p> </li>
+    /// <li> <p> <code>/ssm/parameter-store/default-parameter-tier</code> </p> </li>
+    /// <li> <p> <code>/ssm/parameter-store/high-throughput-enabled</code> </p> </li>
     /// </ul>
     pub fn set_setting_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.setting_id = input; self
+        self.setting_id = input;
+        self
     }
     /// Consumes the builder and constructs a [`GetServiceSettingInput`](crate::operation::get_service_setting::GetServiceSettingInput).
-    pub fn build(self) -> Result<crate::operation::get_service_setting::GetServiceSettingInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::get_service_setting::GetServiceSettingInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::get_service_setting::GetServiceSettingInput {
-                setting_id: self.setting_id
-                ,
-            }
+                setting_id: self.setting_id,
+            },
         )
     }
 }
-

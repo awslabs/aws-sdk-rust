@@ -2,21 +2,23 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteSequenceStoreInput  {
+pub struct DeleteSequenceStoreInput {
     /// <p>The sequence store's ID.</p>
     #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
 }
 impl DeleteSequenceStoreInput {
     /// <p>The sequence store's ID.</p>
-    pub fn id(&self) -> std::option::Option<& str> {
+    pub fn id(&self) -> std::option::Option<&str> {
         self.id.as_deref()
     }
 }
 impl DeleteSequenceStoreInput {
     /// Creates a new builder-style object to manufacture [`DeleteSequenceStoreInput`](crate::operation::delete_sequence_store::DeleteSequenceStoreInput).
-    pub fn builder() -> crate::operation::delete_sequence_store::builders::DeleteSequenceStoreInputBuilder {
-        crate::operation::delete_sequence_store::builders::DeleteSequenceStoreInputBuilder::default()
+    pub fn builder(
+    ) -> crate::operation::delete_sequence_store::builders::DeleteSequenceStoreInputBuilder {
+        crate::operation::delete_sequence_store::builders::DeleteSequenceStoreInputBuilder::default(
+        )
     }
 }
 
@@ -34,16 +36,16 @@ impl DeleteSequenceStoreInputBuilder {
     }
     /// <p>The sequence store's ID.</p>
     pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.id = input; self
+        self.id = input;
+        self
     }
     /// Consumes the builder and constructs a [`DeleteSequenceStoreInput`](crate::operation::delete_sequence_store::DeleteSequenceStoreInput).
-    pub fn build(self) -> Result<crate::operation::delete_sequence_store::DeleteSequenceStoreInput, aws_smithy_http::operation::error::BuildError> {
-        Ok(
-            crate::operation::delete_sequence_store::DeleteSequenceStoreInput {
-                id: self.id
-                ,
-            }
-        )
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::delete_sequence_store::DeleteSequenceStoreInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        Ok(crate::operation::delete_sequence_store::DeleteSequenceStoreInput { id: self.id })
     }
 }
-

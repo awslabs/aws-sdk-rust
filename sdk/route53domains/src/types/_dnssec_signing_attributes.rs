@@ -3,11 +3,11 @@
 /// <p>Information about a delegation signer (DS) record that was created in the registry by <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_AssociateDelegationSignerToDomain.html">AssociateDelegationSignerToDomain</a>. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DnssecSigningAttributes  {
+pub struct DnssecSigningAttributes {
     /// <p> Algorithm which was used to generate the digest from the public key. </p>
     #[doc(hidden)]
     pub algorithm: std::option::Option<i32>,
-    /// <p>Defines the type of key. It can be either a KSK (key-signing-key, value 257) or ZSK (zone-signing-key, value 256). Using KSK is always encouraged. Only use ZSK if your DNS provider isn't Route 53 and you don’t have KSK available.</p> 
+    /// <p>Defines the type of key. It can be either a KSK (key-signing-key, value 257) or ZSK (zone-signing-key, value 256). Using KSK is always encouraged. Only use ZSK if your DNS provider isn't Route 53 and you don’t have KSK available.</p>
     /// <p>If you have KSK and ZSK keys, always use KSK to create a delegations signer (DS) record. If you have ZSK keys only – use ZSK to create a DS record.</p>
     #[doc(hidden)]
     pub flags: std::option::Option<i32>,
@@ -20,13 +20,13 @@ impl DnssecSigningAttributes {
     pub fn algorithm(&self) -> std::option::Option<i32> {
         self.algorithm
     }
-    /// <p>Defines the type of key. It can be either a KSK (key-signing-key, value 257) or ZSK (zone-signing-key, value 256). Using KSK is always encouraged. Only use ZSK if your DNS provider isn't Route 53 and you don’t have KSK available.</p> 
+    /// <p>Defines the type of key. It can be either a KSK (key-signing-key, value 257) or ZSK (zone-signing-key, value 256). Using KSK is always encouraged. Only use ZSK if your DNS provider isn't Route 53 and you don’t have KSK available.</p>
     /// <p>If you have KSK and ZSK keys, always use KSK to create a delegations signer (DS) record. If you have ZSK keys only – use ZSK to create a DS record.</p>
     pub fn flags(&self) -> std::option::Option<i32> {
         self.flags
     }
     /// <p> The base64-encoded public key part of the key pair that is passed to the registry. </p>
-    pub fn public_key(&self) -> std::option::Option<& str> {
+    pub fn public_key(&self) -> std::option::Option<&str> {
         self.public_key.as_deref()
     }
 }
@@ -53,18 +53,20 @@ impl DnssecSigningAttributesBuilder {
     }
     /// <p> Algorithm which was used to generate the digest from the public key. </p>
     pub fn set_algorithm(mut self, input: std::option::Option<i32>) -> Self {
-        self.algorithm = input; self
+        self.algorithm = input;
+        self
     }
-    /// <p>Defines the type of key. It can be either a KSK (key-signing-key, value 257) or ZSK (zone-signing-key, value 256). Using KSK is always encouraged. Only use ZSK if your DNS provider isn't Route 53 and you don’t have KSK available.</p> 
+    /// <p>Defines the type of key. It can be either a KSK (key-signing-key, value 257) or ZSK (zone-signing-key, value 256). Using KSK is always encouraged. Only use ZSK if your DNS provider isn't Route 53 and you don’t have KSK available.</p>
     /// <p>If you have KSK and ZSK keys, always use KSK to create a delegations signer (DS) record. If you have ZSK keys only – use ZSK to create a DS record.</p>
     pub fn flags(mut self, input: i32) -> Self {
         self.flags = Some(input);
         self
     }
-    /// <p>Defines the type of key. It can be either a KSK (key-signing-key, value 257) or ZSK (zone-signing-key, value 256). Using KSK is always encouraged. Only use ZSK if your DNS provider isn't Route 53 and you don’t have KSK available.</p> 
+    /// <p>Defines the type of key. It can be either a KSK (key-signing-key, value 257) or ZSK (zone-signing-key, value 256). Using KSK is always encouraged. Only use ZSK if your DNS provider isn't Route 53 and you don’t have KSK available.</p>
     /// <p>If you have KSK and ZSK keys, always use KSK to create a delegations signer (DS) record. If you have ZSK keys only – use ZSK to create a DS record.</p>
     pub fn set_flags(mut self, input: std::option::Option<i32>) -> Self {
-        self.flags = input; self
+        self.flags = input;
+        self
     }
     /// <p> The base64-encoded public key part of the key pair that is passed to the registry. </p>
     pub fn public_key(mut self, input: impl Into<std::string::String>) -> Self {
@@ -73,18 +75,15 @@ impl DnssecSigningAttributesBuilder {
     }
     /// <p> The base64-encoded public key part of the key pair that is passed to the registry. </p>
     pub fn set_public_key(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.public_key = input; self
+        self.public_key = input;
+        self
     }
     /// Consumes the builder and constructs a [`DnssecSigningAttributes`](crate::types::DnssecSigningAttributes).
     pub fn build(self) -> crate::types::DnssecSigningAttributes {
         crate::types::DnssecSigningAttributes {
-            algorithm: self.algorithm
-            ,
-            flags: self.flags
-            ,
-            public_key: self.public_key
-            ,
+            algorithm: self.algorithm,
+            flags: self.flags,
+            public_key: self.public_key,
         }
     }
 }
-

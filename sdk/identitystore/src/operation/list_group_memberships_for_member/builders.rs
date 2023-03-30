@@ -4,62 +4,87 @@ pub use crate::operation::list_group_memberships_for_member::_list_group_members
 pub use crate::operation::list_group_memberships_for_member::_list_group_memberships_for_member_input::ListGroupMembershipsForMemberInputBuilder;
 
 /// Fluent builder constructing a request to `ListGroupMembershipsForMember`.
-/// 
+///
 /// <p>For the specified member in the specified identity store, returns the list of all <code>GroupMembership</code> objects and returns results in paginated form.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListGroupMembershipsForMemberFluentBuilder {
                 handle: std::sync::Arc<crate::client::Handle>,
                 inner: crate::operation::list_group_memberships_for_member::builders::ListGroupMembershipsForMemberInputBuilder
             }
-impl ListGroupMembershipsForMemberFluentBuilder  {
+impl ListGroupMembershipsForMemberFluentBuilder {
     /// Creates a new `ListGroupMembershipsForMember`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
-                    /// sent. The operation's inner [http::Request] can be modified as well.
-                    pub async fn customize(self) -> std::result::Result<
-                        crate::client::customize::CustomizableOperation<crate::operation::list_group_memberships_for_member::ListGroupMembershipsForMember, aws_http::retry::AwsResponseRetryClassifier,>,
-                        aws_smithy_http::result::SdkError<crate::operation::list_group_memberships_for_member::ListGroupMembershipsForMemberError>
-                    >  {
-                        let handle = self.handle.clone();
-                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-                    }
-    
-                    /// Sends the request and returns the response.
-                    ///
-                    /// If an error occurs, an `SdkError` will be returned with additional details that
-                    /// can be matched against.
-                    ///
-                    /// By default, any retryable failures will be retried twice. Retry behavior
-                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                    /// set when configuring the client.
-                    pub async fn send(self) -> std::result::Result<crate::operation::list_group_memberships_for_member::ListGroupMembershipsForMemberOutput, aws_smithy_http::result::SdkError<crate::operation::list_group_memberships_for_member::ListGroupMembershipsForMemberError>>
-                     {
-                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&self.handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        self.handle.client.call(op).await
-                    }
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle,
+            inner: Default::default(),
+        }
+    }
+
+    /// Consume this builder, creating a customizable operation that can be modified before being
+    /// sent. The operation's inner [http::Request] can be modified as well.
+    pub async fn customize(
+        self,
+    ) -> std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::list_group_memberships_for_member::ListGroupMembershipsForMember,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::result::SdkError<
+            crate::operation::list_group_memberships_for_member::ListGroupMembershipsForMemberError,
+        >,
+    > {
+        let handle = self.handle.clone();
+        let operation = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+    }
+
+    /// Sends the request and returns the response.
+    ///
+    /// If an error occurs, an `SdkError` will be returned with additional details that
+    /// can be matched against.
+    ///
+    /// By default, any retryable failures will be retried twice. Retry behavior
+    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+    /// set when configuring the client.
+    pub async fn send(
+        self,
+    ) -> std::result::Result<
+        crate::operation::list_group_memberships_for_member::ListGroupMembershipsForMemberOutput,
+        aws_smithy_http::result::SdkError<
+            crate::operation::list_group_memberships_for_member::ListGroupMembershipsForMemberError,
+        >,
+    > {
+        let op = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&self.handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        self.handle.client.call(op).await
+    }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::list_group_memberships_for_member::paginator::ListGroupMembershipsForMemberPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::list_group_memberships_for_member::paginator::ListGroupMembershipsForMemberPaginator {
-                            crate::operation::list_group_memberships_for_member::paginator::ListGroupMembershipsForMemberPaginator::new(self.handle, self.inner)
-                        }
+    ///
+    /// Paginators are used by calling [`send().await`](crate::operation::list_group_memberships_for_member::paginator::ListGroupMembershipsForMemberPaginator::send) which returns a `Stream`.
+    pub fn into_paginator(self) -> crate::operation::list_group_memberships_for_member::paginator::ListGroupMembershipsForMemberPaginator{
+        crate::operation::list_group_memberships_for_member::paginator::ListGroupMembershipsForMemberPaginator::new(self.handle, self.inner)
+    }
     /// <p>The globally unique identifier for the identity store.</p>
     pub fn identity_store_id(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.identity_store_id(input.into());
         self
     }
     /// <p>The globally unique identifier for the identity store.</p>
-    pub fn set_identity_store_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_identity_store_id(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_identity_store_id(input);
         self
     }
@@ -94,4 +119,3 @@ impl ListGroupMembershipsForMemberFluentBuilder  {
         self
     }
 }
-

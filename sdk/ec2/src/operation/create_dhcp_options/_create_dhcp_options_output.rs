@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateDhcpOptionsOutput  {
+pub struct CreateDhcpOptionsOutput {
     /// <p>A set of DHCP options.</p>
     #[doc(hidden)]
     pub dhcp_options: std::option::Option<crate::types::DhcpOptions>,
@@ -10,18 +10,19 @@ pub struct CreateDhcpOptionsOutput  {
 }
 impl CreateDhcpOptionsOutput {
     /// <p>A set of DHCP options.</p>
-    pub fn dhcp_options(&self) -> std::option::Option<& crate::types::DhcpOptions> {
+    pub fn dhcp_options(&self) -> std::option::Option<&crate::types::DhcpOptions> {
         self.dhcp_options.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for CreateDhcpOptionsOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl CreateDhcpOptionsOutput {
     /// Creates a new builder-style object to manufacture [`CreateDhcpOptionsOutput`](crate::operation::create_dhcp_options::CreateDhcpOptionsOutput).
-    pub fn builder() -> crate::operation::create_dhcp_options::builders::CreateDhcpOptionsOutputBuilder {
+    pub fn builder(
+    ) -> crate::operation::create_dhcp_options::builders::CreateDhcpOptionsOutputBuilder {
         crate::operation::create_dhcp_options::builders::CreateDhcpOptionsOutputBuilder::default()
     }
 }
@@ -40,25 +41,27 @@ impl CreateDhcpOptionsOutputBuilder {
         self
     }
     /// <p>A set of DHCP options.</p>
-    pub fn set_dhcp_options(mut self, input: std::option::Option<crate::types::DhcpOptions>) -> Self {
-        self.dhcp_options = input; self
+    pub fn set_dhcp_options(
+        mut self,
+        input: std::option::Option<crate::types::DhcpOptions>,
+    ) -> Self {
+        self.dhcp_options = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`CreateDhcpOptionsOutput`](crate::operation::create_dhcp_options::CreateDhcpOptionsOutput).
     pub fn build(self) -> crate::operation::create_dhcp_options::CreateDhcpOptionsOutput {
         crate::operation::create_dhcp_options::CreateDhcpOptionsOutput {
-            dhcp_options: self.dhcp_options
-            ,
+            dhcp_options: self.dhcp_options,
             _request_id: self._request_id,
         }
     }
 }
-

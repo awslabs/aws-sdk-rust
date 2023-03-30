@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateWorkspaceInput  {
+pub struct UpdateWorkspaceInput {
     /// <p>The ID of the workspace.</p>
     #[doc(hidden)]
     pub workspace_id: std::option::Option<std::string::String>,
@@ -15,15 +15,15 @@ pub struct UpdateWorkspaceInput  {
 }
 impl UpdateWorkspaceInput {
     /// <p>The ID of the workspace.</p>
-    pub fn workspace_id(&self) -> std::option::Option<& str> {
+    pub fn workspace_id(&self) -> std::option::Option<&str> {
         self.workspace_id.as_deref()
     }
     /// <p>The description of the workspace.</p>
-    pub fn description(&self) -> std::option::Option<& str> {
+    pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
     /// <p>The ARN of the execution role associated with the workspace.</p>
-    pub fn role(&self) -> std::option::Option<& str> {
+    pub fn role(&self) -> std::option::Option<&str> {
         self.role.as_deref()
     }
 }
@@ -50,7 +50,8 @@ impl UpdateWorkspaceInputBuilder {
     }
     /// <p>The ID of the workspace.</p>
     pub fn set_workspace_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.workspace_id = input; self
+        self.workspace_id = input;
+        self
     }
     /// <p>The description of the workspace.</p>
     pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -59,7 +60,8 @@ impl UpdateWorkspaceInputBuilder {
     }
     /// <p>The description of the workspace.</p>
     pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.description = input; self
+        self.description = input;
+        self
     }
     /// <p>The ARN of the execution role associated with the workspace.</p>
     pub fn role(mut self, input: impl Into<std::string::String>) -> Self {
@@ -68,20 +70,20 @@ impl UpdateWorkspaceInputBuilder {
     }
     /// <p>The ARN of the execution role associated with the workspace.</p>
     pub fn set_role(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.role = input; self
+        self.role = input;
+        self
     }
     /// Consumes the builder and constructs a [`UpdateWorkspaceInput`](crate::operation::update_workspace::UpdateWorkspaceInput).
-    pub fn build(self) -> Result<crate::operation::update_workspace::UpdateWorkspaceInput, aws_smithy_http::operation::error::BuildError> {
-        Ok(
-            crate::operation::update_workspace::UpdateWorkspaceInput {
-                workspace_id: self.workspace_id
-                ,
-                description: self.description
-                ,
-                role: self.role
-                ,
-            }
-        )
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::update_workspace::UpdateWorkspaceInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        Ok(crate::operation::update_workspace::UpdateWorkspaceInput {
+            workspace_id: self.workspace_id,
+            description: self.description,
+            role: self.role,
+        })
     }
 }
-

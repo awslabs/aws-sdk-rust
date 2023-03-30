@@ -4,49 +4,67 @@ pub use crate::operation::create_profile::_create_profile_output::CreateProfileO
 pub use crate::operation::create_profile::_create_profile_input::CreateProfileInputBuilder;
 
 /// Fluent builder constructing a request to `CreateProfile`.
-/// 
+///
 /// <p>Creates a new room profile with the specified details.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct CreateProfileFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::create_profile::builders::CreateProfileInputBuilder
-            }
-impl CreateProfileFluentBuilder  {
+    handle: std::sync::Arc<crate::client::Handle>,
+    inner: crate::operation::create_profile::builders::CreateProfileInputBuilder,
+}
+impl CreateProfileFluentBuilder {
     /// Creates a new `CreateProfile`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
-                    /// sent. The operation's inner [http::Request] can be modified as well.
-                    pub async fn customize(self) -> std::result::Result<
-                        crate::client::customize::CustomizableOperation<crate::operation::create_profile::CreateProfile, aws_http::retry::AwsResponseRetryClassifier,>,
-                        aws_smithy_http::result::SdkError<crate::operation::create_profile::CreateProfileError>
-                    >  {
-                        let handle = self.handle.clone();
-                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-                    }
-    
-                    /// Sends the request and returns the response.
-                    ///
-                    /// If an error occurs, an `SdkError` will be returned with additional details that
-                    /// can be matched against.
-                    ///
-                    /// By default, any retryable failures will be retried twice. Retry behavior
-                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                    /// set when configuring the client.
-                    pub async fn send(self) -> std::result::Result<crate::operation::create_profile::CreateProfileOutput, aws_smithy_http::result::SdkError<crate::operation::create_profile::CreateProfileError>>
-                     {
-                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&self.handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        self.handle.client.call(op).await
-                    }
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle,
+            inner: Default::default(),
+        }
+    }
+
+    /// Consume this builder, creating a customizable operation that can be modified before being
+    /// sent. The operation's inner [http::Request] can be modified as well.
+    pub async fn customize(
+        self,
+    ) -> std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::create_profile::CreateProfile,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::result::SdkError<crate::operation::create_profile::CreateProfileError>,
+    > {
+        let handle = self.handle.clone();
+        let operation = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+    }
+
+    /// Sends the request and returns the response.
+    ///
+    /// If an error occurs, an `SdkError` will be returned with additional details that
+    /// can be matched against.
+    ///
+    /// By default, any retryable failures will be retried twice. Retry behavior
+    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+    /// set when configuring the client.
+    pub async fn send(
+        self,
+    ) -> std::result::Result<
+        crate::operation::create_profile::CreateProfileOutput,
+        aws_smithy_http::result::SdkError<crate::operation::create_profile::CreateProfileError>,
+    > {
+        let op = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&self.handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        self.handle.client.call(op).await
+    }
     /// <p>The name of a room profile.</p>
     pub fn profile_name(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.profile_name(input.into());
@@ -83,7 +101,10 @@ impl CreateProfileFluentBuilder  {
         self
     }
     /// <p>The distance unit to be used by devices in the profile.</p>
-    pub fn set_distance_unit(mut self, input: std::option::Option<crate::types::DistanceUnit>) -> Self {
+    pub fn set_distance_unit(
+        mut self,
+        input: std::option::Option<crate::types::DistanceUnit>,
+    ) -> Self {
         self.inner = self.inner.set_distance_unit(input);
         self
     }
@@ -93,7 +114,10 @@ impl CreateProfileFluentBuilder  {
         self
     }
     /// <p>The temperature unit to be used by devices in the profile.</p>
-    pub fn set_temperature_unit(mut self, input: std::option::Option<crate::types::TemperatureUnit>) -> Self {
+    pub fn set_temperature_unit(
+        mut self,
+        input: std::option::Option<crate::types::TemperatureUnit>,
+    ) -> Self {
         self.inner = self.inner.set_temperature_unit(input);
         self
     }
@@ -123,7 +147,10 @@ impl CreateProfileFluentBuilder  {
         self
     }
     /// <p>The user-specified token that is used during the creation of a profile.</p>
-    pub fn set_client_request_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_client_request_token(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_client_request_token(input);
         self
     }
@@ -168,12 +195,18 @@ impl CreateProfileFluentBuilder  {
         self
     }
     /// <p>The meeting room settings of a room profile.</p>
-    pub fn meeting_room_configuration(mut self, input: crate::types::CreateMeetingRoomConfiguration) -> Self {
+    pub fn meeting_room_configuration(
+        mut self,
+        input: crate::types::CreateMeetingRoomConfiguration,
+    ) -> Self {
         self.inner = self.inner.meeting_room_configuration(input);
         self
     }
     /// <p>The meeting room settings of a room profile.</p>
-    pub fn set_meeting_room_configuration(mut self, input: std::option::Option<crate::types::CreateMeetingRoomConfiguration>) -> Self {
+    pub fn set_meeting_room_configuration(
+        mut self,
+        input: std::option::Option<crate::types::CreateMeetingRoomConfiguration>,
+    ) -> Self {
         self.inner = self.inner.set_meeting_room_configuration(input);
         self
     }
@@ -187,9 +220,11 @@ impl CreateProfileFluentBuilder  {
         self
     }
     /// <p>The tags for the profile.</p>
-    pub fn set_tags(mut self, input: std::option::Option<std::vec::Vec<crate::types::Tag>>) -> Self {
+    pub fn set_tags(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::Tag>>,
+    ) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }
 }
-

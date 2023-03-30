@@ -3,7 +3,7 @@
 /// <p>The full POSIX identity, including user ID (<code>Uid</code>), group ID (<code>Gid</code>), and any secondary groups IDs (<code>SecondaryGids</code>), that controls your users' access to your Amazon EFS file systems. The POSIX permissions that are set on files and directories in your file system determine the level of access your users get when transferring files into and out of your Amazon EFS file systems.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PosixProfile  {
+pub struct PosixProfile {
     /// <p>The POSIX user ID used for all EFS operations by this user.</p>
     #[doc(hidden)]
     pub uid: std::option::Option<i64>,
@@ -24,7 +24,7 @@ impl PosixProfile {
         self.gid
     }
     /// <p>The secondary POSIX group IDs used for all EFS operations by this user.</p>
-    pub fn secondary_gids(&self) -> std::option::Option<& [i64]> {
+    pub fn secondary_gids(&self) -> std::option::Option<&[i64]> {
         self.secondary_gids.as_deref()
     }
 }
@@ -51,7 +51,8 @@ impl PosixProfileBuilder {
     }
     /// <p>The POSIX user ID used for all EFS operations by this user.</p>
     pub fn set_uid(mut self, input: std::option::Option<i64>) -> Self {
-        self.uid = input; self
+        self.uid = input;
+        self
     }
     /// <p>The POSIX group ID used for all EFS operations by this user.</p>
     pub fn gid(mut self, input: i64) -> Self {
@@ -60,7 +61,8 @@ impl PosixProfileBuilder {
     }
     /// <p>The POSIX group ID used for all EFS operations by this user.</p>
     pub fn set_gid(mut self, input: std::option::Option<i64>) -> Self {
-        self.gid = input; self
+        self.gid = input;
+        self
     }
     /// Appends an item to `secondary_gids`.
     ///
@@ -69,24 +71,21 @@ impl PosixProfileBuilder {
     /// <p>The secondary POSIX group IDs used for all EFS operations by this user.</p>
     pub fn secondary_gids(mut self, input: i64) -> Self {
         let mut v = self.secondary_gids.unwrap_or_default();
-                        v.push(input);
-                        self.secondary_gids = Some(v);
-                        self
+        v.push(input);
+        self.secondary_gids = Some(v);
+        self
     }
     /// <p>The secondary POSIX group IDs used for all EFS operations by this user.</p>
     pub fn set_secondary_gids(mut self, input: std::option::Option<std::vec::Vec<i64>>) -> Self {
-        self.secondary_gids = input; self
+        self.secondary_gids = input;
+        self
     }
     /// Consumes the builder and constructs a [`PosixProfile`](crate::types::PosixProfile).
     pub fn build(self) -> crate::types::PosixProfile {
         crate::types::PosixProfile {
-            uid: self.uid
-            ,
-            gid: self.gid
-            ,
-            secondary_gids: self.secondary_gids
-            ,
+            uid: self.uid,
+            gid: self.gid,
+            secondary_gids: self.secondary_gids,
         }
     }
 }
-

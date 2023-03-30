@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListBotLocalesInput  {
+pub struct ListBotLocalesInput {
     /// <p>The identifier of the bot to list locales for.</p>
     #[doc(hidden)]
     pub bot_id: std::option::Option<std::string::String>,
@@ -24,19 +24,19 @@ pub struct ListBotLocalesInput  {
 }
 impl ListBotLocalesInput {
     /// <p>The identifier of the bot to list locales for.</p>
-    pub fn bot_id(&self) -> std::option::Option<& str> {
+    pub fn bot_id(&self) -> std::option::Option<&str> {
         self.bot_id.as_deref()
     }
     /// <p>The version of the bot to list locales for.</p>
-    pub fn bot_version(&self) -> std::option::Option<& str> {
+    pub fn bot_version(&self) -> std::option::Option<&str> {
         self.bot_version.as_deref()
     }
     /// <p>Specifies sorting parameters for the list of locales. You can sort by locale name in ascending or descending order.</p>
-    pub fn sort_by(&self) -> std::option::Option<& crate::types::BotLocaleSortBy> {
+    pub fn sort_by(&self) -> std::option::Option<&crate::types::BotLocaleSortBy> {
         self.sort_by.as_ref()
     }
     /// <p>Provides the specification for a filter used to limit the response to only those locales that match the filter specification. You can only specify one filter and one value to filter on.</p>
-    pub fn filters(&self) -> std::option::Option<& [crate::types::BotLocaleFilter]> {
+    pub fn filters(&self) -> std::option::Option<&[crate::types::BotLocaleFilter]> {
         self.filters.as_deref()
     }
     /// <p>The maximum number of aliases to return in each page of results. If there are fewer results than the max page size, only the actual number of results are returned.</p>
@@ -44,7 +44,7 @@ impl ListBotLocalesInput {
         self.max_results
     }
     /// <p>If the response from the <code>ListBotLocales</code> operation contains more results than specified in the <code>maxResults</code> parameter, a token is returned in the response. Use that token as the <code>nextToken</code> parameter to return the next page of results. </p>
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
 }
@@ -74,7 +74,8 @@ impl ListBotLocalesInputBuilder {
     }
     /// <p>The identifier of the bot to list locales for.</p>
     pub fn set_bot_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.bot_id = input; self
+        self.bot_id = input;
+        self
     }
     /// <p>The version of the bot to list locales for.</p>
     pub fn bot_version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -83,7 +84,8 @@ impl ListBotLocalesInputBuilder {
     }
     /// <p>The version of the bot to list locales for.</p>
     pub fn set_bot_version(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.bot_version = input; self
+        self.bot_version = input;
+        self
     }
     /// <p>Specifies sorting parameters for the list of locales. You can sort by locale name in ascending or descending order.</p>
     pub fn sort_by(mut self, input: crate::types::BotLocaleSortBy) -> Self {
@@ -91,8 +93,12 @@ impl ListBotLocalesInputBuilder {
         self
     }
     /// <p>Specifies sorting parameters for the list of locales. You can sort by locale name in ascending or descending order.</p>
-    pub fn set_sort_by(mut self, input: std::option::Option<crate::types::BotLocaleSortBy>) -> Self {
-        self.sort_by = input; self
+    pub fn set_sort_by(
+        mut self,
+        input: std::option::Option<crate::types::BotLocaleSortBy>,
+    ) -> Self {
+        self.sort_by = input;
+        self
     }
     /// Appends an item to `filters`.
     ///
@@ -101,13 +107,17 @@ impl ListBotLocalesInputBuilder {
     /// <p>Provides the specification for a filter used to limit the response to only those locales that match the filter specification. You can only specify one filter and one value to filter on.</p>
     pub fn filters(mut self, input: crate::types::BotLocaleFilter) -> Self {
         let mut v = self.filters.unwrap_or_default();
-                        v.push(input);
-                        self.filters = Some(v);
-                        self
+        v.push(input);
+        self.filters = Some(v);
+        self
     }
     /// <p>Provides the specification for a filter used to limit the response to only those locales that match the filter specification. You can only specify one filter and one value to filter on.</p>
-    pub fn set_filters(mut self, input: std::option::Option<std::vec::Vec<crate::types::BotLocaleFilter>>) -> Self {
-        self.filters = input; self
+    pub fn set_filters(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::BotLocaleFilter>>,
+    ) -> Self {
+        self.filters = input;
+        self
     }
     /// <p>The maximum number of aliases to return in each page of results. If there are fewer results than the max page size, only the actual number of results are returned.</p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -116,7 +126,8 @@ impl ListBotLocalesInputBuilder {
     }
     /// <p>The maximum number of aliases to return in each page of results. If there are fewer results than the max page size, only the actual number of results are returned.</p>
     pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_results = input; self
+        self.max_results = input;
+        self
     }
     /// <p>If the response from the <code>ListBotLocales</code> operation contains more results than specified in the <code>maxResults</code> parameter, a token is returned in the response. Use that token as the <code>nextToken</code> parameter to return the next page of results. </p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -125,26 +136,23 @@ impl ListBotLocalesInputBuilder {
     }
     /// <p>If the response from the <code>ListBotLocales</code> operation contains more results than specified in the <code>maxResults</code> parameter, a token is returned in the response. Use that token as the <code>nextToken</code> parameter to return the next page of results. </p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input; self
+        self.next_token = input;
+        self
     }
     /// Consumes the builder and constructs a [`ListBotLocalesInput`](crate::operation::list_bot_locales::ListBotLocalesInput).
-    pub fn build(self) -> Result<crate::operation::list_bot_locales::ListBotLocalesInput, aws_smithy_http::operation::error::BuildError> {
-        Ok(
-            crate::operation::list_bot_locales::ListBotLocalesInput {
-                bot_id: self.bot_id
-                ,
-                bot_version: self.bot_version
-                ,
-                sort_by: self.sort_by
-                ,
-                filters: self.filters
-                ,
-                max_results: self.max_results
-                ,
-                next_token: self.next_token
-                ,
-            }
-        )
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::list_bot_locales::ListBotLocalesInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        Ok(crate::operation::list_bot_locales::ListBotLocalesInput {
+            bot_id: self.bot_id,
+            bot_version: self.bot_version,
+            sort_by: self.sort_by,
+            filters: self.filters,
+            max_results: self.max_results,
+            next_token: self.next_token,
+        })
     }
 }
-

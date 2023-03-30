@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PutInstancePublicPortsInput  {
+pub struct PutInstancePublicPortsInput {
     /// <p>An array of objects to describe the ports to open for the specified instance.</p>
     #[doc(hidden)]
     pub port_infos: std::option::Option<std::vec::Vec<crate::types::PortInfo>>,
@@ -12,17 +12,19 @@ pub struct PutInstancePublicPortsInput  {
 }
 impl PutInstancePublicPortsInput {
     /// <p>An array of objects to describe the ports to open for the specified instance.</p>
-    pub fn port_infos(&self) -> std::option::Option<& [crate::types::PortInfo]> {
+    pub fn port_infos(&self) -> std::option::Option<&[crate::types::PortInfo]> {
         self.port_infos.as_deref()
     }
     /// <p>The name of the instance for which to open ports.</p>
-    pub fn instance_name(&self) -> std::option::Option<& str> {
+    pub fn instance_name(&self) -> std::option::Option<&str> {
         self.instance_name.as_deref()
     }
 }
 impl PutInstancePublicPortsInput {
     /// Creates a new builder-style object to manufacture [`PutInstancePublicPortsInput`](crate::operation::put_instance_public_ports::PutInstancePublicPortsInput).
-    pub fn builder() -> crate::operation::put_instance_public_ports::builders::PutInstancePublicPortsInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::put_instance_public_ports::builders::PutInstancePublicPortsInputBuilder
+    {
         crate::operation::put_instance_public_ports::builders::PutInstancePublicPortsInputBuilder::default()
     }
 }
@@ -42,13 +44,17 @@ impl PutInstancePublicPortsInputBuilder {
     /// <p>An array of objects to describe the ports to open for the specified instance.</p>
     pub fn port_infos(mut self, input: crate::types::PortInfo) -> Self {
         let mut v = self.port_infos.unwrap_or_default();
-                        v.push(input);
-                        self.port_infos = Some(v);
-                        self
+        v.push(input);
+        self.port_infos = Some(v);
+        self
     }
     /// <p>An array of objects to describe the ports to open for the specified instance.</p>
-    pub fn set_port_infos(mut self, input: std::option::Option<std::vec::Vec<crate::types::PortInfo>>) -> Self {
-        self.port_infos = input; self
+    pub fn set_port_infos(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::PortInfo>>,
+    ) -> Self {
+        self.port_infos = input;
+        self
     }
     /// <p>The name of the instance for which to open ports.</p>
     pub fn instance_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -57,18 +63,21 @@ impl PutInstancePublicPortsInputBuilder {
     }
     /// <p>The name of the instance for which to open ports.</p>
     pub fn set_instance_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.instance_name = input; self
+        self.instance_name = input;
+        self
     }
     /// Consumes the builder and constructs a [`PutInstancePublicPortsInput`](crate::operation::put_instance_public_ports::PutInstancePublicPortsInput).
-    pub fn build(self) -> Result<crate::operation::put_instance_public_ports::PutInstancePublicPortsInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::put_instance_public_ports::PutInstancePublicPortsInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::put_instance_public_ports::PutInstancePublicPortsInput {
-                port_infos: self.port_infos
-                ,
-                instance_name: self.instance_name
-                ,
-            }
+                port_infos: self.port_infos,
+                instance_name: self.instance_name,
+            },
         )
     }
 }
-

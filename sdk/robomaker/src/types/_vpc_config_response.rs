@@ -3,7 +3,7 @@
 /// <p>VPC configuration associated with your simulation job.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct VpcConfigResponse  {
+pub struct VpcConfigResponse {
     /// <p>A list of subnet IDs associated with the simulation job.</p>
     #[doc(hidden)]
     pub subnets: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -19,15 +19,15 @@ pub struct VpcConfigResponse  {
 }
 impl VpcConfigResponse {
     /// <p>A list of subnet IDs associated with the simulation job.</p>
-    pub fn subnets(&self) -> std::option::Option<& [std::string::String]> {
+    pub fn subnets(&self) -> std::option::Option<&[std::string::String]> {
         self.subnets.as_deref()
     }
     /// <p>A list of security group IDs associated with the simulation job.</p>
-    pub fn security_groups(&self) -> std::option::Option<& [std::string::String]> {
+    pub fn security_groups(&self) -> std::option::Option<&[std::string::String]> {
         self.security_groups.as_deref()
     }
     /// <p>The VPC ID associated with your simulation job.</p>
-    pub fn vpc_id(&self) -> std::option::Option<& str> {
+    pub fn vpc_id(&self) -> std::option::Option<&str> {
         self.vpc_id.as_deref()
     }
     /// <p>A boolean indicating if a public IP was assigned.</p>
@@ -59,13 +59,17 @@ impl VpcConfigResponseBuilder {
     /// <p>A list of subnet IDs associated with the simulation job.</p>
     pub fn subnets(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.subnets.unwrap_or_default();
-                        v.push(input.into());
-                        self.subnets = Some(v);
-                        self
+        v.push(input.into());
+        self.subnets = Some(v);
+        self
     }
     /// <p>A list of subnet IDs associated with the simulation job.</p>
-    pub fn set_subnets(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-        self.subnets = input; self
+    pub fn set_subnets(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
+        self.subnets = input;
+        self
     }
     /// Appends an item to `security_groups`.
     ///
@@ -74,13 +78,17 @@ impl VpcConfigResponseBuilder {
     /// <p>A list of security group IDs associated with the simulation job.</p>
     pub fn security_groups(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.security_groups.unwrap_or_default();
-                        v.push(input.into());
-                        self.security_groups = Some(v);
-                        self
+        v.push(input.into());
+        self.security_groups = Some(v);
+        self
     }
     /// <p>A list of security group IDs associated with the simulation job.</p>
-    pub fn set_security_groups(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-        self.security_groups = input; self
+    pub fn set_security_groups(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
+        self.security_groups = input;
+        self
     }
     /// <p>The VPC ID associated with your simulation job.</p>
     pub fn vpc_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -89,7 +97,8 @@ impl VpcConfigResponseBuilder {
     }
     /// <p>The VPC ID associated with your simulation job.</p>
     pub fn set_vpc_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.vpc_id = input; self
+        self.vpc_id = input;
+        self
     }
     /// <p>A boolean indicating if a public IP was assigned.</p>
     pub fn assign_public_ip(mut self, input: bool) -> Self {
@@ -98,21 +107,16 @@ impl VpcConfigResponseBuilder {
     }
     /// <p>A boolean indicating if a public IP was assigned.</p>
     pub fn set_assign_public_ip(mut self, input: std::option::Option<bool>) -> Self {
-        self.assign_public_ip = input; self
+        self.assign_public_ip = input;
+        self
     }
     /// Consumes the builder and constructs a [`VpcConfigResponse`](crate::types::VpcConfigResponse).
     pub fn build(self) -> crate::types::VpcConfigResponse {
         crate::types::VpcConfigResponse {
-            subnets: self.subnets
-            ,
-            security_groups: self.security_groups
-            ,
-            vpc_id: self.vpc_id
-            ,
-            assign_public_ip: self.assign_public_ip
-                .unwrap_or_default()
-            ,
+            subnets: self.subnets,
+            security_groups: self.security_groups,
+            vpc_id: self.vpc_id,
+            assign_public_ip: self.assign_public_ip.unwrap_or_default(),
         }
     }
 }
-

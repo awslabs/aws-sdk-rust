@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListResourcesForTagOptionOutput  {
+pub struct ListResourcesForTagOptionOutput {
     /// <p>Information about the resources.</p>
     #[doc(hidden)]
     pub resource_details: std::option::Option<std::vec::Vec<crate::types::ResourceDetail>>,
@@ -13,22 +13,22 @@ pub struct ListResourcesForTagOptionOutput  {
 }
 impl ListResourcesForTagOptionOutput {
     /// <p>Information about the resources.</p>
-    pub fn resource_details(&self) -> std::option::Option<& [crate::types::ResourceDetail]> {
+    pub fn resource_details(&self) -> std::option::Option<&[crate::types::ResourceDetail]> {
         self.resource_details.as_deref()
     }
     /// <p>The page token for the next set of results. To retrieve the first set of results, use null.</p>
-    pub fn page_token(&self) -> std::option::Option<& str> {
+    pub fn page_token(&self) -> std::option::Option<&str> {
         self.page_token.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for ListResourcesForTagOptionOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl ListResourcesForTagOptionOutput {
     /// Creates a new builder-style object to manufacture [`ListResourcesForTagOptionOutput`](crate::operation::list_resources_for_tag_option::ListResourcesForTagOptionOutput).
-    pub fn builder() -> crate::operation::list_resources_for_tag_option::builders::ListResourcesForTagOptionOutputBuilder {
+    pub fn builder() -> crate::operation::list_resources_for_tag_option::builders::ListResourcesForTagOptionOutputBuilder{
         crate::operation::list_resources_for_tag_option::builders::ListResourcesForTagOptionOutputBuilder::default()
     }
 }
@@ -49,13 +49,17 @@ impl ListResourcesForTagOptionOutputBuilder {
     /// <p>Information about the resources.</p>
     pub fn resource_details(mut self, input: crate::types::ResourceDetail) -> Self {
         let mut v = self.resource_details.unwrap_or_default();
-                        v.push(input);
-                        self.resource_details = Some(v);
-                        self
+        v.push(input);
+        self.resource_details = Some(v);
+        self
     }
     /// <p>Information about the resources.</p>
-    pub fn set_resource_details(mut self, input: std::option::Option<std::vec::Vec<crate::types::ResourceDetail>>) -> Self {
-        self.resource_details = input; self
+    pub fn set_resource_details(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::ResourceDetail>>,
+    ) -> Self {
+        self.resource_details = input;
+        self
     }
     /// <p>The page token for the next set of results. To retrieve the first set of results, use null.</p>
     pub fn page_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -64,26 +68,26 @@ impl ListResourcesForTagOptionOutputBuilder {
     }
     /// <p>The page token for the next set of results. To retrieve the first set of results, use null.</p>
     pub fn set_page_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.page_token = input; self
+        self.page_token = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`ListResourcesForTagOptionOutput`](crate::operation::list_resources_for_tag_option::ListResourcesForTagOptionOutput).
-    pub fn build(self) -> crate::operation::list_resources_for_tag_option::ListResourcesForTagOptionOutput {
+    pub fn build(
+        self,
+    ) -> crate::operation::list_resources_for_tag_option::ListResourcesForTagOptionOutput {
         crate::operation::list_resources_for_tag_option::ListResourcesForTagOptionOutput {
-            resource_details: self.resource_details
-            ,
-            page_token: self.page_token
-            ,
+            resource_details: self.resource_details,
+            page_token: self.page_token,
             _request_id: self._request_id,
         }
     }
 }
-

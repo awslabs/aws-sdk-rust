@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateHsmConfigurationOutput  {
+pub struct CreateHsmConfigurationOutput {
     /// <p>Returns information about an HSM configuration, which is an object that describes to Amazon Redshift clusters the information they require to connect to an HSM where they can store database encryption keys.</p>
     #[doc(hidden)]
     pub hsm_configuration: std::option::Option<crate::types::HsmConfiguration>,
@@ -10,18 +10,20 @@ pub struct CreateHsmConfigurationOutput  {
 }
 impl CreateHsmConfigurationOutput {
     /// <p>Returns information about an HSM configuration, which is an object that describes to Amazon Redshift clusters the information they require to connect to an HSM where they can store database encryption keys.</p>
-    pub fn hsm_configuration(&self) -> std::option::Option<& crate::types::HsmConfiguration> {
+    pub fn hsm_configuration(&self) -> std::option::Option<&crate::types::HsmConfiguration> {
         self.hsm_configuration.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for CreateHsmConfigurationOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl CreateHsmConfigurationOutput {
     /// Creates a new builder-style object to manufacture [`CreateHsmConfigurationOutput`](crate::operation::create_hsm_configuration::CreateHsmConfigurationOutput).
-    pub fn builder() -> crate::operation::create_hsm_configuration::builders::CreateHsmConfigurationOutputBuilder {
+    pub fn builder(
+    ) -> crate::operation::create_hsm_configuration::builders::CreateHsmConfigurationOutputBuilder
+    {
         crate::operation::create_hsm_configuration::builders::CreateHsmConfigurationOutputBuilder::default()
     }
 }
@@ -40,25 +42,27 @@ impl CreateHsmConfigurationOutputBuilder {
         self
     }
     /// <p>Returns information about an HSM configuration, which is an object that describes to Amazon Redshift clusters the information they require to connect to an HSM where they can store database encryption keys.</p>
-    pub fn set_hsm_configuration(mut self, input: std::option::Option<crate::types::HsmConfiguration>) -> Self {
-        self.hsm_configuration = input; self
+    pub fn set_hsm_configuration(
+        mut self,
+        input: std::option::Option<crate::types::HsmConfiguration>,
+    ) -> Self {
+        self.hsm_configuration = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`CreateHsmConfigurationOutput`](crate::operation::create_hsm_configuration::CreateHsmConfigurationOutput).
     pub fn build(self) -> crate::operation::create_hsm_configuration::CreateHsmConfigurationOutput {
         crate::operation::create_hsm_configuration::CreateHsmConfigurationOutput {
-            hsm_configuration: self.hsm_configuration
-            ,
+            hsm_configuration: self.hsm_configuration,
             _request_id: self._request_id,
         }
     }
 }
-

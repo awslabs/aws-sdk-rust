@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetFindingStatisticsOutput  {
+pub struct GetFindingStatisticsOutput {
     /// <p>An array of objects, one for each group of findings that matches the filter criteria specified in the request.</p>
     #[doc(hidden)]
     pub counts_by_group: std::option::Option<std::vec::Vec<crate::types::GroupCount>>,
@@ -10,18 +10,19 @@ pub struct GetFindingStatisticsOutput  {
 }
 impl GetFindingStatisticsOutput {
     /// <p>An array of objects, one for each group of findings that matches the filter criteria specified in the request.</p>
-    pub fn counts_by_group(&self) -> std::option::Option<& [crate::types::GroupCount]> {
+    pub fn counts_by_group(&self) -> std::option::Option<&[crate::types::GroupCount]> {
         self.counts_by_group.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for GetFindingStatisticsOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl GetFindingStatisticsOutput {
     /// Creates a new builder-style object to manufacture [`GetFindingStatisticsOutput`](crate::operation::get_finding_statistics::GetFindingStatisticsOutput).
-    pub fn builder() -> crate::operation::get_finding_statistics::builders::GetFindingStatisticsOutputBuilder {
+    pub fn builder(
+    ) -> crate::operation::get_finding_statistics::builders::GetFindingStatisticsOutputBuilder {
         crate::operation::get_finding_statistics::builders::GetFindingStatisticsOutputBuilder::default()
     }
 }
@@ -41,30 +42,32 @@ impl GetFindingStatisticsOutputBuilder {
     /// <p>An array of objects, one for each group of findings that matches the filter criteria specified in the request.</p>
     pub fn counts_by_group(mut self, input: crate::types::GroupCount) -> Self {
         let mut v = self.counts_by_group.unwrap_or_default();
-                        v.push(input);
-                        self.counts_by_group = Some(v);
-                        self
+        v.push(input);
+        self.counts_by_group = Some(v);
+        self
     }
     /// <p>An array of objects, one for each group of findings that matches the filter criteria specified in the request.</p>
-    pub fn set_counts_by_group(mut self, input: std::option::Option<std::vec::Vec<crate::types::GroupCount>>) -> Self {
-        self.counts_by_group = input; self
+    pub fn set_counts_by_group(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::GroupCount>>,
+    ) -> Self {
+        self.counts_by_group = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`GetFindingStatisticsOutput`](crate::operation::get_finding_statistics::GetFindingStatisticsOutput).
     pub fn build(self) -> crate::operation::get_finding_statistics::GetFindingStatisticsOutput {
         crate::operation::get_finding_statistics::GetFindingStatisticsOutput {
-            counts_by_group: self.counts_by_group
-            ,
+            counts_by_group: self.counts_by_group,
             _request_id: self._request_id,
         }
     }
 }
-

@@ -3,7 +3,7 @@
 /// <p>Information about the number of instances that can be launched onto the Dedicated Host.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct InstanceCapacity  {
+pub struct InstanceCapacity {
     /// <p>The number of instances that can be launched onto the Dedicated Host based on the host's available capacity.</p>
     #[doc(hidden)]
     pub available_capacity: std::option::Option<i32>,
@@ -20,7 +20,7 @@ impl InstanceCapacity {
         self.available_capacity
     }
     /// <p>The instance type supported by the Dedicated Host.</p>
-    pub fn instance_type(&self) -> std::option::Option<& str> {
+    pub fn instance_type(&self) -> std::option::Option<&str> {
         self.instance_type.as_deref()
     }
     /// <p>The total number of instances that can be launched onto the Dedicated Host if there are no instances running on it.</p>
@@ -51,7 +51,8 @@ impl InstanceCapacityBuilder {
     }
     /// <p>The number of instances that can be launched onto the Dedicated Host based on the host's available capacity.</p>
     pub fn set_available_capacity(mut self, input: std::option::Option<i32>) -> Self {
-        self.available_capacity = input; self
+        self.available_capacity = input;
+        self
     }
     /// <p>The instance type supported by the Dedicated Host.</p>
     pub fn instance_type(mut self, input: impl Into<std::string::String>) -> Self {
@@ -60,7 +61,8 @@ impl InstanceCapacityBuilder {
     }
     /// <p>The instance type supported by the Dedicated Host.</p>
     pub fn set_instance_type(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.instance_type = input; self
+        self.instance_type = input;
+        self
     }
     /// <p>The total number of instances that can be launched onto the Dedicated Host if there are no instances running on it.</p>
     pub fn total_capacity(mut self, input: i32) -> Self {
@@ -69,18 +71,15 @@ impl InstanceCapacityBuilder {
     }
     /// <p>The total number of instances that can be launched onto the Dedicated Host if there are no instances running on it.</p>
     pub fn set_total_capacity(mut self, input: std::option::Option<i32>) -> Self {
-        self.total_capacity = input; self
+        self.total_capacity = input;
+        self
     }
     /// Consumes the builder and constructs a [`InstanceCapacity`](crate::types::InstanceCapacity).
     pub fn build(self) -> crate::types::InstanceCapacity {
         crate::types::InstanceCapacity {
-            available_capacity: self.available_capacity
-            ,
-            instance_type: self.instance_type
-            ,
-            total_capacity: self.total_capacity
-            ,
+            available_capacity: self.available_capacity,
+            instance_type: self.instance_type,
+            total_capacity: self.total_capacity,
         }
     }
 }
-

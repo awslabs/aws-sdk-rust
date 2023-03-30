@@ -3,14 +3,14 @@
 /// <p> The connector-specific profile properties required when using Marketo. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct MarketoConnectorProfileProperties  {
+pub struct MarketoConnectorProfileProperties {
     /// <p> The location of the Marketo resource. </p>
     #[doc(hidden)]
     pub instance_url: std::option::Option<std::string::String>,
 }
 impl MarketoConnectorProfileProperties {
     /// <p> The location of the Marketo resource. </p>
-    pub fn instance_url(&self) -> std::option::Option<& str> {
+    pub fn instance_url(&self) -> std::option::Option<&str> {
         self.instance_url.as_deref()
     }
 }
@@ -35,14 +35,13 @@ impl MarketoConnectorProfilePropertiesBuilder {
     }
     /// <p> The location of the Marketo resource. </p>
     pub fn set_instance_url(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.instance_url = input; self
+        self.instance_url = input;
+        self
     }
     /// Consumes the builder and constructs a [`MarketoConnectorProfileProperties`](crate::types::MarketoConnectorProfileProperties).
     pub fn build(self) -> crate::types::MarketoConnectorProfileProperties {
         crate::types::MarketoConnectorProfileProperties {
-            instance_url: self.instance_url
-            ,
+            instance_url: self.instance_url,
         }
     }
 }
-

@@ -54,4 +54,3 @@ pub mod update_team_member;
 
 /// Types for the `UpdateUserProfile` operation.
 pub mod update_user_profile;
-

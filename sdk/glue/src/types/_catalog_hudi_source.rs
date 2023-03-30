@@ -3,7 +3,7 @@
 /// <p>Specifies a Hudi data source that is registered in the Glue Data Catalog.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CatalogHudiSource  {
+pub struct CatalogHudiSource {
     /// <p>The name of the Hudi data source.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -15,30 +15,34 @@ pub struct CatalogHudiSource  {
     pub table: std::option::Option<std::string::String>,
     /// <p>Specifies additional connection options.</p>
     #[doc(hidden)]
-    pub additional_hudi_options: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub additional_hudi_options:
+        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>Specifies the data schema for the Hudi source.</p>
     #[doc(hidden)]
     pub output_schemas: std::option::Option<std::vec::Vec<crate::types::GlueSchema>>,
 }
 impl CatalogHudiSource {
     /// <p>The name of the Hudi data source.</p>
-    pub fn name(&self) -> std::option::Option<& str> {
+    pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>The name of the database to read from.</p>
-    pub fn database(&self) -> std::option::Option<& str> {
+    pub fn database(&self) -> std::option::Option<&str> {
         self.database.as_deref()
     }
     /// <p>The name of the table in the database to read from.</p>
-    pub fn table(&self) -> std::option::Option<& str> {
+    pub fn table(&self) -> std::option::Option<&str> {
         self.table.as_deref()
     }
     /// <p>Specifies additional connection options.</p>
-    pub fn additional_hudi_options(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
+    pub fn additional_hudi_options(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
         self.additional_hudi_options.as_ref()
     }
     /// <p>Specifies the data schema for the Hudi source.</p>
-    pub fn output_schemas(&self) -> std::option::Option<& [crate::types::GlueSchema]> {
+    pub fn output_schemas(&self) -> std::option::Option<&[crate::types::GlueSchema]> {
         self.output_schemas.as_deref()
     }
 }
@@ -56,7 +60,8 @@ pub struct CatalogHudiSourceBuilder {
     pub(crate) name: std::option::Option<std::string::String>,
     pub(crate) database: std::option::Option<std::string::String>,
     pub(crate) table: std::option::Option<std::string::String>,
-    pub(crate) additional_hudi_options: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub(crate) additional_hudi_options:
+        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     pub(crate) output_schemas: std::option::Option<std::vec::Vec<crate::types::GlueSchema>>,
 }
 impl CatalogHudiSourceBuilder {
@@ -67,7 +72,8 @@ impl CatalogHudiSourceBuilder {
     }
     /// <p>The name of the Hudi data source.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input; self
+        self.name = input;
+        self
     }
     /// <p>The name of the database to read from.</p>
     pub fn database(mut self, input: impl Into<std::string::String>) -> Self {
@@ -76,7 +82,8 @@ impl CatalogHudiSourceBuilder {
     }
     /// <p>The name of the database to read from.</p>
     pub fn set_database(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.database = input; self
+        self.database = input;
+        self
     }
     /// <p>The name of the table in the database to read from.</p>
     pub fn table(mut self, input: impl Into<std::string::String>) -> Self {
@@ -85,22 +92,33 @@ impl CatalogHudiSourceBuilder {
     }
     /// <p>The name of the table in the database to read from.</p>
     pub fn set_table(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.table = input; self
+        self.table = input;
+        self
     }
     /// Adds a key-value pair to `additional_hudi_options`.
     ///
     /// To override the contents of this collection use [`set_additional_hudi_options`](Self::set_additional_hudi_options).
     ///
     /// <p>Specifies additional connection options.</p>
-    pub fn additional_hudi_options(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
+    pub fn additional_hudi_options(
+        mut self,
+        k: impl Into<std::string::String>,
+        v: impl Into<std::string::String>,
+    ) -> Self {
         let mut hash_map = self.additional_hudi_options.unwrap_or_default();
-                        hash_map.insert(k.into(), v.into());
-                        self.additional_hudi_options = Some(hash_map);
-                        self
+        hash_map.insert(k.into(), v.into());
+        self.additional_hudi_options = Some(hash_map);
+        self
     }
     /// <p>Specifies additional connection options.</p>
-    pub fn set_additional_hudi_options(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
-        self.additional_hudi_options = input; self
+    pub fn set_additional_hudi_options(
+        mut self,
+        input: std::option::Option<
+            std::collections::HashMap<std::string::String, std::string::String>,
+        >,
+    ) -> Self {
+        self.additional_hudi_options = input;
+        self
     }
     /// Appends an item to `output_schemas`.
     ///
@@ -109,28 +127,26 @@ impl CatalogHudiSourceBuilder {
     /// <p>Specifies the data schema for the Hudi source.</p>
     pub fn output_schemas(mut self, input: crate::types::GlueSchema) -> Self {
         let mut v = self.output_schemas.unwrap_or_default();
-                        v.push(input);
-                        self.output_schemas = Some(v);
-                        self
+        v.push(input);
+        self.output_schemas = Some(v);
+        self
     }
     /// <p>Specifies the data schema for the Hudi source.</p>
-    pub fn set_output_schemas(mut self, input: std::option::Option<std::vec::Vec<crate::types::GlueSchema>>) -> Self {
-        self.output_schemas = input; self
+    pub fn set_output_schemas(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::GlueSchema>>,
+    ) -> Self {
+        self.output_schemas = input;
+        self
     }
     /// Consumes the builder and constructs a [`CatalogHudiSource`](crate::types::CatalogHudiSource).
     pub fn build(self) -> crate::types::CatalogHudiSource {
         crate::types::CatalogHudiSource {
-            name: self.name
-            ,
-            database: self.database
-            ,
-            table: self.table
-            ,
-            additional_hudi_options: self.additional_hudi_options
-            ,
-            output_schemas: self.output_schemas
-            ,
+            name: self.name,
+            database: self.database,
+            table: self.table,
+            additional_hudi_options: self.additional_hudi_options,
+            output_schemas: self.output_schemas,
         }
     }
 }
-

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetCardinalityOutput  {
+pub struct GetCardinalityOutput {
     /// <p>The approximate count of unique values that match the query.</p>
     #[doc(hidden)]
     pub cardinality: i32,
@@ -15,10 +15,10 @@ impl GetCardinalityOutput {
     }
 }
 impl aws_http::request_id::RequestId for GetCardinalityOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl GetCardinalityOutput {
     /// Creates a new builder-style object to manufacture [`GetCardinalityOutput`](crate::operation::get_cardinality::GetCardinalityOutput).
     pub fn builder() -> crate::operation::get_cardinality::builders::GetCardinalityOutputBuilder {
@@ -41,25 +41,23 @@ impl GetCardinalityOutputBuilder {
     }
     /// <p>The approximate count of unique values that match the query.</p>
     pub fn set_cardinality(mut self, input: std::option::Option<i32>) -> Self {
-        self.cardinality = input; self
+        self.cardinality = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`GetCardinalityOutput`](crate::operation::get_cardinality::GetCardinalityOutput).
     pub fn build(self) -> crate::operation::get_cardinality::GetCardinalityOutput {
         crate::operation::get_cardinality::GetCardinalityOutput {
-            cardinality: self.cardinality
-                .unwrap_or_default()
-            ,
+            cardinality: self.cardinality.unwrap_or_default(),
             _request_id: self._request_id,
         }
     }
 }
-

@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-/// 
+///
 /// Here is an example of how you can make a match expression forward-compatible:
-/// 
+///
 /// ```text
 /// # let autoscalingpolicystate = unimplemented!();
 /// match autoscalingpolicystate {
@@ -34,14 +34,22 @@
 /// Specifically, when `autoscalingpolicystate` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `AutoScalingPolicyState::NewFeature` also yielding `"NewFeature"`.
-/// 
+///
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
 pub enum AutoScalingPolicyState {
     #[allow(missing_docs)] // documentation missing in model
     Attached,
@@ -56,49 +64,57 @@ pub enum AutoScalingPolicyState {
     #[allow(missing_docs)] // documentation missing in model
     Pending,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::primitives::UnknownVariantValue)
+    Unknown(crate::primitives::UnknownVariantValue),
 }
 impl std::convert::From<&str> for AutoScalingPolicyState {
-                fn from(s: &str) -> Self {
-                    match s {
-                        "ATTACHED" => AutoScalingPolicyState::Attached,
-"ATTACHING" => AutoScalingPolicyState::Attaching,
-"DETACHED" => AutoScalingPolicyState::Detached,
-"DETACHING" => AutoScalingPolicyState::Detaching,
-"FAILED" => AutoScalingPolicyState::Failed,
-"PENDING" => AutoScalingPolicyState::Pending,
-other => AutoScalingPolicyState::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
-                    }
-                }
-            }
-impl std::str::FromStr for AutoScalingPolicyState {
-                type Err = std::convert::Infallible;
-
-                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-                    Ok(AutoScalingPolicyState::from(s))
-                }
-            }
-impl AutoScalingPolicyState {
-                /// Returns the `&str` value of the enum member.
-                pub fn as_str(&self) -> &str {
-                    match self {
-    AutoScalingPolicyState::Attached => "ATTACHED",
-    AutoScalingPolicyState::Attaching => "ATTACHING",
-    AutoScalingPolicyState::Detached => "DETACHED",
-    AutoScalingPolicyState::Detaching => "DETACHING",
-    AutoScalingPolicyState::Failed => "FAILED",
-    AutoScalingPolicyState::Pending => "PENDING",
-    AutoScalingPolicyState::Unknown(value) => value.as_str()
+    fn from(s: &str) -> Self {
+        match s {
+            "ATTACHED" => AutoScalingPolicyState::Attached,
+            "ATTACHING" => AutoScalingPolicyState::Attaching,
+            "DETACHED" => AutoScalingPolicyState::Detached,
+            "DETACHING" => AutoScalingPolicyState::Detaching,
+            "FAILED" => AutoScalingPolicyState::Failed,
+            "PENDING" => AutoScalingPolicyState::Pending,
+            other => AutoScalingPolicyState::Unknown(crate::primitives::UnknownVariantValue(
+                other.to_owned(),
+            )),
+        }
+    }
 }
-                }
-                /// Returns all the `&str` representations of the enum members.
-                pub const fn values() -> &'static [&'static str] {
-                    &["ATTACHED", "ATTACHING", "DETACHED", "DETACHING", "FAILED", "PENDING"]
-                }
-            }
-impl AsRef<str> for AutoScalingPolicyState {
-                fn as_ref(&self) -> &str {
-                    self.as_str()
-                }
-            }
+impl std::str::FromStr for AutoScalingPolicyState {
+    type Err = std::convert::Infallible;
 
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(AutoScalingPolicyState::from(s))
+    }
+}
+impl AutoScalingPolicyState {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            AutoScalingPolicyState::Attached => "ATTACHED",
+            AutoScalingPolicyState::Attaching => "ATTACHING",
+            AutoScalingPolicyState::Detached => "DETACHED",
+            AutoScalingPolicyState::Detaching => "DETACHING",
+            AutoScalingPolicyState::Failed => "FAILED",
+            AutoScalingPolicyState::Pending => "PENDING",
+            AutoScalingPolicyState::Unknown(value) => value.as_str(),
+        }
+    }
+    /// Returns all the `&str` representations of the enum members.
+    pub const fn values() -> &'static [&'static str] {
+        &[
+            "ATTACHED",
+            "ATTACHING",
+            "DETACHED",
+            "DETACHING",
+            "FAILED",
+            "PENDING",
+        ]
+    }
+}
+impl AsRef<str> for AutoScalingPolicyState {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}

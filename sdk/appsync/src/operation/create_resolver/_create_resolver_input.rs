@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateResolverInput  {
+pub struct CreateResolverInput {
     /// <p>The ID for the GraphQL API for which the resolver is being created.</p>
     #[doc(hidden)]
     pub api_id: std::option::Option<std::string::String>,
@@ -15,18 +15,18 @@ pub struct CreateResolverInput  {
     /// <p>The name of the data source for which the resolver is being created.</p>
     #[doc(hidden)]
     pub data_source_name: std::option::Option<std::string::String>,
-    /// <p>The mapping template to use for requests.</p> 
-    /// <p>A resolver uses a request mapping template to convert a GraphQL expression into a format that a data source can understand. Mapping templates are written in Apache Velocity Template Language (VTL).</p> 
+    /// <p>The mapping template to use for requests.</p>
+    /// <p>A resolver uses a request mapping template to convert a GraphQL expression into a format that a data source can understand. Mapping templates are written in Apache Velocity Template Language (VTL).</p>
     /// <p>VTL request mapping templates are optional when using an Lambda data source. For all other data sources, VTL request and response mapping templates are required.</p>
     #[doc(hidden)]
     pub request_mapping_template: std::option::Option<std::string::String>,
     /// <p>The mapping template to use for responses from the data source.</p>
     #[doc(hidden)]
     pub response_mapping_template: std::option::Option<std::string::String>,
-    /// <p>The resolver type.</p> 
-    /// <ul> 
-    /// <li> <p> <b>UNIT</b>: A UNIT resolver type. A UNIT resolver is the default resolver type. You can use a UNIT resolver to run a GraphQL query against a single data source.</p> </li> 
-    /// <li> <p> <b>PIPELINE</b>: A PIPELINE resolver type. You can use a PIPELINE resolver to invoke a series of <code>Function</code> objects in a serial manner. You can use a pipeline resolver to run a GraphQL query against multiple data sources.</p> </li> 
+    /// <p>The resolver type.</p>
+    /// <ul>
+    /// <li> <p> <b>UNIT</b>: A UNIT resolver type. A UNIT resolver is the default resolver type. You can use a UNIT resolver to run a GraphQL query against a single data source.</p> </li>
+    /// <li> <p> <b>PIPELINE</b>: A PIPELINE resolver type. You can use a PIPELINE resolver to invoke a series of <code>Function</code> objects in a serial manner. You can use a pipeline resolver to run a GraphQL query against multiple data sources.</p> </li>
     /// </ul>
     #[doc(hidden)]
     pub kind: std::option::Option<crate::types::ResolverKind>,
@@ -51,49 +51,49 @@ pub struct CreateResolverInput  {
 }
 impl CreateResolverInput {
     /// <p>The ID for the GraphQL API for which the resolver is being created.</p>
-    pub fn api_id(&self) -> std::option::Option<& str> {
+    pub fn api_id(&self) -> std::option::Option<&str> {
         self.api_id.as_deref()
     }
     /// <p>The name of the <code>Type</code>.</p>
-    pub fn type_name(&self) -> std::option::Option<& str> {
+    pub fn type_name(&self) -> std::option::Option<&str> {
         self.type_name.as_deref()
     }
     /// <p>The name of the field to attach the resolver to.</p>
-    pub fn field_name(&self) -> std::option::Option<& str> {
+    pub fn field_name(&self) -> std::option::Option<&str> {
         self.field_name.as_deref()
     }
     /// <p>The name of the data source for which the resolver is being created.</p>
-    pub fn data_source_name(&self) -> std::option::Option<& str> {
+    pub fn data_source_name(&self) -> std::option::Option<&str> {
         self.data_source_name.as_deref()
     }
-    /// <p>The mapping template to use for requests.</p> 
-    /// <p>A resolver uses a request mapping template to convert a GraphQL expression into a format that a data source can understand. Mapping templates are written in Apache Velocity Template Language (VTL).</p> 
+    /// <p>The mapping template to use for requests.</p>
+    /// <p>A resolver uses a request mapping template to convert a GraphQL expression into a format that a data source can understand. Mapping templates are written in Apache Velocity Template Language (VTL).</p>
     /// <p>VTL request mapping templates are optional when using an Lambda data source. For all other data sources, VTL request and response mapping templates are required.</p>
-    pub fn request_mapping_template(&self) -> std::option::Option<& str> {
+    pub fn request_mapping_template(&self) -> std::option::Option<&str> {
         self.request_mapping_template.as_deref()
     }
     /// <p>The mapping template to use for responses from the data source.</p>
-    pub fn response_mapping_template(&self) -> std::option::Option<& str> {
+    pub fn response_mapping_template(&self) -> std::option::Option<&str> {
         self.response_mapping_template.as_deref()
     }
-    /// <p>The resolver type.</p> 
-    /// <ul> 
-    /// <li> <p> <b>UNIT</b>: A UNIT resolver type. A UNIT resolver is the default resolver type. You can use a UNIT resolver to run a GraphQL query against a single data source.</p> </li> 
-    /// <li> <p> <b>PIPELINE</b>: A PIPELINE resolver type. You can use a PIPELINE resolver to invoke a series of <code>Function</code> objects in a serial manner. You can use a pipeline resolver to run a GraphQL query against multiple data sources.</p> </li> 
+    /// <p>The resolver type.</p>
+    /// <ul>
+    /// <li> <p> <b>UNIT</b>: A UNIT resolver type. A UNIT resolver is the default resolver type. You can use a UNIT resolver to run a GraphQL query against a single data source.</p> </li>
+    /// <li> <p> <b>PIPELINE</b>: A PIPELINE resolver type. You can use a PIPELINE resolver to invoke a series of <code>Function</code> objects in a serial manner. You can use a pipeline resolver to run a GraphQL query against multiple data sources.</p> </li>
     /// </ul>
-    pub fn kind(&self) -> std::option::Option<& crate::types::ResolverKind> {
+    pub fn kind(&self) -> std::option::Option<&crate::types::ResolverKind> {
         self.kind.as_ref()
     }
     /// <p>The <code>PipelineConfig</code>.</p>
-    pub fn pipeline_config(&self) -> std::option::Option<& crate::types::PipelineConfig> {
+    pub fn pipeline_config(&self) -> std::option::Option<&crate::types::PipelineConfig> {
         self.pipeline_config.as_ref()
     }
     /// <p>The <code>SyncConfig</code> for a resolver attached to a versioned data source.</p>
-    pub fn sync_config(&self) -> std::option::Option<& crate::types::SyncConfig> {
+    pub fn sync_config(&self) -> std::option::Option<&crate::types::SyncConfig> {
         self.sync_config.as_ref()
     }
     /// <p>The caching configuration for the resolver.</p>
-    pub fn caching_config(&self) -> std::option::Option<& crate::types::CachingConfig> {
+    pub fn caching_config(&self) -> std::option::Option<&crate::types::CachingConfig> {
         self.caching_config.as_ref()
     }
     /// <p>The maximum batching size for a resolver.</p>
@@ -101,11 +101,11 @@ impl CreateResolverInput {
         self.max_batch_size
     }
     /// <p>Describes a runtime used by an Amazon Web Services AppSync pipeline resolver or Amazon Web Services AppSync function. Specifies the name and version of the runtime to use. Note that if a runtime is specified, code must also be specified.</p>
-    pub fn runtime(&self) -> std::option::Option<& crate::types::AppSyncRuntime> {
+    pub fn runtime(&self) -> std::option::Option<&crate::types::AppSyncRuntime> {
         self.runtime.as_ref()
     }
     /// <p>The <code>resolver</code> code that contains the request and response functions. When code is used, the <code>runtime</code> is required. The <code>runtime</code> value must be <code>APPSYNC_JS</code>.</p>
-    pub fn code(&self) -> std::option::Option<& str> {
+    pub fn code(&self) -> std::option::Option<&str> {
         self.code.as_deref()
     }
 }
@@ -142,7 +142,8 @@ impl CreateResolverInputBuilder {
     }
     /// <p>The ID for the GraphQL API for which the resolver is being created.</p>
     pub fn set_api_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.api_id = input; self
+        self.api_id = input;
+        self
     }
     /// <p>The name of the <code>Type</code>.</p>
     pub fn type_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -151,7 +152,8 @@ impl CreateResolverInputBuilder {
     }
     /// <p>The name of the <code>Type</code>.</p>
     pub fn set_type_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.type_name = input; self
+        self.type_name = input;
+        self
     }
     /// <p>The name of the field to attach the resolver to.</p>
     pub fn field_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -160,7 +162,8 @@ impl CreateResolverInputBuilder {
     }
     /// <p>The name of the field to attach the resolver to.</p>
     pub fn set_field_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.field_name = input; self
+        self.field_name = input;
+        self
     }
     /// <p>The name of the data source for which the resolver is being created.</p>
     pub fn data_source_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -169,20 +172,25 @@ impl CreateResolverInputBuilder {
     }
     /// <p>The name of the data source for which the resolver is being created.</p>
     pub fn set_data_source_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.data_source_name = input; self
+        self.data_source_name = input;
+        self
     }
-    /// <p>The mapping template to use for requests.</p> 
-    /// <p>A resolver uses a request mapping template to convert a GraphQL expression into a format that a data source can understand. Mapping templates are written in Apache Velocity Template Language (VTL).</p> 
+    /// <p>The mapping template to use for requests.</p>
+    /// <p>A resolver uses a request mapping template to convert a GraphQL expression into a format that a data source can understand. Mapping templates are written in Apache Velocity Template Language (VTL).</p>
     /// <p>VTL request mapping templates are optional when using an Lambda data source. For all other data sources, VTL request and response mapping templates are required.</p>
     pub fn request_mapping_template(mut self, input: impl Into<std::string::String>) -> Self {
         self.request_mapping_template = Some(input.into());
         self
     }
-    /// <p>The mapping template to use for requests.</p> 
-    /// <p>A resolver uses a request mapping template to convert a GraphQL expression into a format that a data source can understand. Mapping templates are written in Apache Velocity Template Language (VTL).</p> 
+    /// <p>The mapping template to use for requests.</p>
+    /// <p>A resolver uses a request mapping template to convert a GraphQL expression into a format that a data source can understand. Mapping templates are written in Apache Velocity Template Language (VTL).</p>
     /// <p>VTL request mapping templates are optional when using an Lambda data source. For all other data sources, VTL request and response mapping templates are required.</p>
-    pub fn set_request_mapping_template(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.request_mapping_template = input; self
+    pub fn set_request_mapping_template(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.request_mapping_template = input;
+        self
     }
     /// <p>The mapping template to use for responses from the data source.</p>
     pub fn response_mapping_template(mut self, input: impl Into<std::string::String>) -> Self {
@@ -190,25 +198,30 @@ impl CreateResolverInputBuilder {
         self
     }
     /// <p>The mapping template to use for responses from the data source.</p>
-    pub fn set_response_mapping_template(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.response_mapping_template = input; self
+    pub fn set_response_mapping_template(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.response_mapping_template = input;
+        self
     }
-    /// <p>The resolver type.</p> 
-    /// <ul> 
-    /// <li> <p> <b>UNIT</b>: A UNIT resolver type. A UNIT resolver is the default resolver type. You can use a UNIT resolver to run a GraphQL query against a single data source.</p> </li> 
-    /// <li> <p> <b>PIPELINE</b>: A PIPELINE resolver type. You can use a PIPELINE resolver to invoke a series of <code>Function</code> objects in a serial manner. You can use a pipeline resolver to run a GraphQL query against multiple data sources.</p> </li> 
+    /// <p>The resolver type.</p>
+    /// <ul>
+    /// <li> <p> <b>UNIT</b>: A UNIT resolver type. A UNIT resolver is the default resolver type. You can use a UNIT resolver to run a GraphQL query against a single data source.</p> </li>
+    /// <li> <p> <b>PIPELINE</b>: A PIPELINE resolver type. You can use a PIPELINE resolver to invoke a series of <code>Function</code> objects in a serial manner. You can use a pipeline resolver to run a GraphQL query against multiple data sources.</p> </li>
     /// </ul>
     pub fn kind(mut self, input: crate::types::ResolverKind) -> Self {
         self.kind = Some(input);
         self
     }
-    /// <p>The resolver type.</p> 
-    /// <ul> 
-    /// <li> <p> <b>UNIT</b>: A UNIT resolver type. A UNIT resolver is the default resolver type. You can use a UNIT resolver to run a GraphQL query against a single data source.</p> </li> 
-    /// <li> <p> <b>PIPELINE</b>: A PIPELINE resolver type. You can use a PIPELINE resolver to invoke a series of <code>Function</code> objects in a serial manner. You can use a pipeline resolver to run a GraphQL query against multiple data sources.</p> </li> 
+    /// <p>The resolver type.</p>
+    /// <ul>
+    /// <li> <p> <b>UNIT</b>: A UNIT resolver type. A UNIT resolver is the default resolver type. You can use a UNIT resolver to run a GraphQL query against a single data source.</p> </li>
+    /// <li> <p> <b>PIPELINE</b>: A PIPELINE resolver type. You can use a PIPELINE resolver to invoke a series of <code>Function</code> objects in a serial manner. You can use a pipeline resolver to run a GraphQL query against multiple data sources.</p> </li>
     /// </ul>
     pub fn set_kind(mut self, input: std::option::Option<crate::types::ResolverKind>) -> Self {
-        self.kind = input; self
+        self.kind = input;
+        self
     }
     /// <p>The <code>PipelineConfig</code>.</p>
     pub fn pipeline_config(mut self, input: crate::types::PipelineConfig) -> Self {
@@ -216,8 +229,12 @@ impl CreateResolverInputBuilder {
         self
     }
     /// <p>The <code>PipelineConfig</code>.</p>
-    pub fn set_pipeline_config(mut self, input: std::option::Option<crate::types::PipelineConfig>) -> Self {
-        self.pipeline_config = input; self
+    pub fn set_pipeline_config(
+        mut self,
+        input: std::option::Option<crate::types::PipelineConfig>,
+    ) -> Self {
+        self.pipeline_config = input;
+        self
     }
     /// <p>The <code>SyncConfig</code> for a resolver attached to a versioned data source.</p>
     pub fn sync_config(mut self, input: crate::types::SyncConfig) -> Self {
@@ -226,7 +243,8 @@ impl CreateResolverInputBuilder {
     }
     /// <p>The <code>SyncConfig</code> for a resolver attached to a versioned data source.</p>
     pub fn set_sync_config(mut self, input: std::option::Option<crate::types::SyncConfig>) -> Self {
-        self.sync_config = input; self
+        self.sync_config = input;
+        self
     }
     /// <p>The caching configuration for the resolver.</p>
     pub fn caching_config(mut self, input: crate::types::CachingConfig) -> Self {
@@ -234,8 +252,12 @@ impl CreateResolverInputBuilder {
         self
     }
     /// <p>The caching configuration for the resolver.</p>
-    pub fn set_caching_config(mut self, input: std::option::Option<crate::types::CachingConfig>) -> Self {
-        self.caching_config = input; self
+    pub fn set_caching_config(
+        mut self,
+        input: std::option::Option<crate::types::CachingConfig>,
+    ) -> Self {
+        self.caching_config = input;
+        self
     }
     /// <p>The maximum batching size for a resolver.</p>
     pub fn max_batch_size(mut self, input: i32) -> Self {
@@ -244,7 +266,8 @@ impl CreateResolverInputBuilder {
     }
     /// <p>The maximum batching size for a resolver.</p>
     pub fn set_max_batch_size(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_batch_size = input; self
+        self.max_batch_size = input;
+        self
     }
     /// <p>Describes a runtime used by an Amazon Web Services AppSync pipeline resolver or Amazon Web Services AppSync function. Specifies the name and version of the runtime to use. Note that if a runtime is specified, code must also be specified.</p>
     pub fn runtime(mut self, input: crate::types::AppSyncRuntime) -> Self {
@@ -253,7 +276,8 @@ impl CreateResolverInputBuilder {
     }
     /// <p>Describes a runtime used by an Amazon Web Services AppSync pipeline resolver or Amazon Web Services AppSync function. Specifies the name and version of the runtime to use. Note that if a runtime is specified, code must also be specified.</p>
     pub fn set_runtime(mut self, input: std::option::Option<crate::types::AppSyncRuntime>) -> Self {
-        self.runtime = input; self
+        self.runtime = input;
+        self
     }
     /// <p>The <code>resolver</code> code that contains the request and response functions. When code is used, the <code>runtime</code> is required. The <code>runtime</code> value must be <code>APPSYNC_JS</code>.</p>
     pub fn code(mut self, input: impl Into<std::string::String>) -> Self {
@@ -262,41 +286,30 @@ impl CreateResolverInputBuilder {
     }
     /// <p>The <code>resolver</code> code that contains the request and response functions. When code is used, the <code>runtime</code> is required. The <code>runtime</code> value must be <code>APPSYNC_JS</code>.</p>
     pub fn set_code(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.code = input; self
+        self.code = input;
+        self
     }
     /// Consumes the builder and constructs a [`CreateResolverInput`](crate::operation::create_resolver::CreateResolverInput).
-    pub fn build(self) -> Result<crate::operation::create_resolver::CreateResolverInput, aws_smithy_http::operation::error::BuildError> {
-        Ok(
-            crate::operation::create_resolver::CreateResolverInput {
-                api_id: self.api_id
-                ,
-                type_name: self.type_name
-                ,
-                field_name: self.field_name
-                ,
-                data_source_name: self.data_source_name
-                ,
-                request_mapping_template: self.request_mapping_template
-                ,
-                response_mapping_template: self.response_mapping_template
-                ,
-                kind: self.kind
-                ,
-                pipeline_config: self.pipeline_config
-                ,
-                sync_config: self.sync_config
-                ,
-                caching_config: self.caching_config
-                ,
-                max_batch_size: self.max_batch_size
-                    .unwrap_or_default()
-                ,
-                runtime: self.runtime
-                ,
-                code: self.code
-                ,
-            }
-        )
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::create_resolver::CreateResolverInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        Ok(crate::operation::create_resolver::CreateResolverInput {
+            api_id: self.api_id,
+            type_name: self.type_name,
+            field_name: self.field_name,
+            data_source_name: self.data_source_name,
+            request_mapping_template: self.request_mapping_template,
+            response_mapping_template: self.response_mapping_template,
+            kind: self.kind,
+            pipeline_config: self.pipeline_config,
+            sync_config: self.sync_config,
+            caching_config: self.caching_config,
+            max_batch_size: self.max_batch_size.unwrap_or_default(),
+            runtime: self.runtime,
+            code: self.code,
+        })
     }
 }
-

@@ -3,7 +3,7 @@
 /// <p> The dimension of an Amazon CloudWatch metric that is used when DevOps Guru analyzes the resources in your account for operational problems and anomalous behavior. A dimension is a name/value pair that is part of the identity of a metric. A metric can have up to 10 dimensions. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/cloudwatch_concepts.html#Dimension">Dimensions</a> in the <i>Amazon CloudWatch User Guide</i>. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CloudWatchMetricsDimension  {
+pub struct CloudWatchMetricsDimension {
     /// <p> The name of the CloudWatch dimension. </p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -13,11 +13,11 @@ pub struct CloudWatchMetricsDimension  {
 }
 impl CloudWatchMetricsDimension {
     /// <p> The name of the CloudWatch dimension. </p>
-    pub fn name(&self) -> std::option::Option<& str> {
+    pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p> The value of the CloudWatch dimension. </p>
-    pub fn value(&self) -> std::option::Option<& str> {
+    pub fn value(&self) -> std::option::Option<&str> {
         self.value.as_deref()
     }
 }
@@ -43,7 +43,8 @@ impl CloudWatchMetricsDimensionBuilder {
     }
     /// <p> The name of the CloudWatch dimension. </p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input; self
+        self.name = input;
+        self
     }
     /// <p> The value of the CloudWatch dimension. </p>
     pub fn value(mut self, input: impl Into<std::string::String>) -> Self {
@@ -52,16 +53,14 @@ impl CloudWatchMetricsDimensionBuilder {
     }
     /// <p> The value of the CloudWatch dimension. </p>
     pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.value = input; self
+        self.value = input;
+        self
     }
     /// Consumes the builder and constructs a [`CloudWatchMetricsDimension`](crate::types::CloudWatchMetricsDimension).
     pub fn build(self) -> crate::types::CloudWatchMetricsDimension {
         crate::types::CloudWatchMetricsDimension {
-            name: self.name
-            ,
-            value: self.value
-            ,
+            name: self.name,
+            value: self.value,
         }
     }
 }
-

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListVirtualMachinesOutput  {
+pub struct ListVirtualMachinesOutput {
     /// <p>A list of your <code>VirtualMachine</code> objects, ordered by their Amazon Resource Names (ARNs).</p>
     #[doc(hidden)]
     pub virtual_machines: std::option::Option<std::vec::Vec<crate::types::VirtualMachine>>,
@@ -13,23 +13,25 @@ pub struct ListVirtualMachinesOutput  {
 }
 impl ListVirtualMachinesOutput {
     /// <p>A list of your <code>VirtualMachine</code> objects, ordered by their Amazon Resource Names (ARNs).</p>
-    pub fn virtual_machines(&self) -> std::option::Option<& [crate::types::VirtualMachine]> {
+    pub fn virtual_machines(&self) -> std::option::Option<&[crate::types::VirtualMachine]> {
         self.virtual_machines.as_deref()
     }
     /// <p>The next item following a partial list of returned resources. For example, if a request is made to return <code>maxResults</code> number of resources, <code>NextToken</code> allows you to return more items in your list starting at the location pointed to by the next token.</p>
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for ListVirtualMachinesOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl ListVirtualMachinesOutput {
     /// Creates a new builder-style object to manufacture [`ListVirtualMachinesOutput`](crate::operation::list_virtual_machines::ListVirtualMachinesOutput).
-    pub fn builder() -> crate::operation::list_virtual_machines::builders::ListVirtualMachinesOutputBuilder {
-        crate::operation::list_virtual_machines::builders::ListVirtualMachinesOutputBuilder::default()
+    pub fn builder(
+    ) -> crate::operation::list_virtual_machines::builders::ListVirtualMachinesOutputBuilder {
+        crate::operation::list_virtual_machines::builders::ListVirtualMachinesOutputBuilder::default(
+        )
     }
 }
 
@@ -49,13 +51,17 @@ impl ListVirtualMachinesOutputBuilder {
     /// <p>A list of your <code>VirtualMachine</code> objects, ordered by their Amazon Resource Names (ARNs).</p>
     pub fn virtual_machines(mut self, input: crate::types::VirtualMachine) -> Self {
         let mut v = self.virtual_machines.unwrap_or_default();
-                        v.push(input);
-                        self.virtual_machines = Some(v);
-                        self
+        v.push(input);
+        self.virtual_machines = Some(v);
+        self
     }
     /// <p>A list of your <code>VirtualMachine</code> objects, ordered by their Amazon Resource Names (ARNs).</p>
-    pub fn set_virtual_machines(mut self, input: std::option::Option<std::vec::Vec<crate::types::VirtualMachine>>) -> Self {
-        self.virtual_machines = input; self
+    pub fn set_virtual_machines(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::VirtualMachine>>,
+    ) -> Self {
+        self.virtual_machines = input;
+        self
     }
     /// <p>The next item following a partial list of returned resources. For example, if a request is made to return <code>maxResults</code> number of resources, <code>NextToken</code> allows you to return more items in your list starting at the location pointed to by the next token.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -64,26 +70,24 @@ impl ListVirtualMachinesOutputBuilder {
     }
     /// <p>The next item following a partial list of returned resources. For example, if a request is made to return <code>maxResults</code> number of resources, <code>NextToken</code> allows you to return more items in your list starting at the location pointed to by the next token.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input; self
+        self.next_token = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`ListVirtualMachinesOutput`](crate::operation::list_virtual_machines::ListVirtualMachinesOutput).
     pub fn build(self) -> crate::operation::list_virtual_machines::ListVirtualMachinesOutput {
         crate::operation::list_virtual_machines::ListVirtualMachinesOutput {
-            virtual_machines: self.virtual_machines
-            ,
-            next_token: self.next_token
-            ,
+            virtual_machines: self.virtual_machines,
+            next_token: self.next_token,
             _request_id: self._request_id,
         }
     }
 }
-

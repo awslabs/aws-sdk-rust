@@ -3,14 +3,14 @@
 /// <p>Schedule configuration parameters. A channel must be stopped before changes can be made to the schedule.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ScheduleConfiguration  {
+pub struct ScheduleConfiguration {
     /// <p>Program transition configurations.</p>
     #[doc(hidden)]
     pub transition: std::option::Option<crate::types::Transition>,
 }
 impl ScheduleConfiguration {
     /// <p>Program transition configurations.</p>
-    pub fn transition(&self) -> std::option::Option<& crate::types::Transition> {
+    pub fn transition(&self) -> std::option::Option<&crate::types::Transition> {
         self.transition.as_ref()
     }
 }
@@ -35,14 +35,13 @@ impl ScheduleConfigurationBuilder {
     }
     /// <p>Program transition configurations.</p>
     pub fn set_transition(mut self, input: std::option::Option<crate::types::Transition>) -> Self {
-        self.transition = input; self
+        self.transition = input;
+        self
     }
     /// Consumes the builder and constructs a [`ScheduleConfiguration`](crate::types::ScheduleConfiguration).
     pub fn build(self) -> crate::types::ScheduleConfiguration {
         crate::types::ScheduleConfiguration {
-            transition: self.transition
-            ,
+            transition: self.transition,
         }
     }
 }
-

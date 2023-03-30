@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetTimelineEventOutput  {
+pub struct GetTimelineEventOutput {
     /// <p>Details about the timeline event.</p>
     #[doc(hidden)]
     pub event: std::option::Option<crate::types::TimelineEvent>,
@@ -10,18 +10,19 @@ pub struct GetTimelineEventOutput  {
 }
 impl GetTimelineEventOutput {
     /// <p>Details about the timeline event.</p>
-    pub fn event(&self) -> std::option::Option<& crate::types::TimelineEvent> {
+    pub fn event(&self) -> std::option::Option<&crate::types::TimelineEvent> {
         self.event.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for GetTimelineEventOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl GetTimelineEventOutput {
     /// Creates a new builder-style object to manufacture [`GetTimelineEventOutput`](crate::operation::get_timeline_event::GetTimelineEventOutput).
-    pub fn builder() -> crate::operation::get_timeline_event::builders::GetTimelineEventOutputBuilder {
+    pub fn builder() -> crate::operation::get_timeline_event::builders::GetTimelineEventOutputBuilder
+    {
         crate::operation::get_timeline_event::builders::GetTimelineEventOutputBuilder::default()
     }
 }
@@ -41,24 +42,23 @@ impl GetTimelineEventOutputBuilder {
     }
     /// <p>Details about the timeline event.</p>
     pub fn set_event(mut self, input: std::option::Option<crate::types::TimelineEvent>) -> Self {
-        self.event = input; self
+        self.event = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`GetTimelineEventOutput`](crate::operation::get_timeline_event::GetTimelineEventOutput).
     pub fn build(self) -> crate::operation::get_timeline_event::GetTimelineEventOutput {
         crate::operation::get_timeline_event::GetTimelineEventOutput {
-            event: self.event
-            ,
+            event: self.event,
             _request_id: self._request_id,
         }
     }
 }
-

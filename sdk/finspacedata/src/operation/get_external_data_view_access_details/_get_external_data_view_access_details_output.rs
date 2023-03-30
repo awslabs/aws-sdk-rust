@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetExternalDataViewAccessDetailsOutput  {
+pub struct GetExternalDataViewAccessDetailsOutput {
     /// <p>The credentials required to access the external Dataview from the S3 location.</p>
     #[doc(hidden)]
     pub credentials: std::option::Option<crate::types::AwsCredentials>,
@@ -13,22 +13,22 @@ pub struct GetExternalDataViewAccessDetailsOutput  {
 }
 impl GetExternalDataViewAccessDetailsOutput {
     /// <p>The credentials required to access the external Dataview from the S3 location.</p>
-    pub fn credentials(&self) -> std::option::Option<& crate::types::AwsCredentials> {
+    pub fn credentials(&self) -> std::option::Option<&crate::types::AwsCredentials> {
         self.credentials.as_ref()
     }
     /// <p>The location where the external Dataview is stored.</p>
-    pub fn s3_location(&self) -> std::option::Option<& crate::types::S3Location> {
+    pub fn s3_location(&self) -> std::option::Option<&crate::types::S3Location> {
         self.s3_location.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for GetExternalDataViewAccessDetailsOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl GetExternalDataViewAccessDetailsOutput {
     /// Creates a new builder-style object to manufacture [`GetExternalDataViewAccessDetailsOutput`](crate::operation::get_external_data_view_access_details::GetExternalDataViewAccessDetailsOutput).
-    pub fn builder() -> crate::operation::get_external_data_view_access_details::builders::GetExternalDataViewAccessDetailsOutputBuilder {
+    pub fn builder() -> crate::operation::get_external_data_view_access_details::builders::GetExternalDataViewAccessDetailsOutputBuilder{
         crate::operation::get_external_data_view_access_details::builders::GetExternalDataViewAccessDetailsOutputBuilder::default()
     }
 }
@@ -48,8 +48,12 @@ impl GetExternalDataViewAccessDetailsOutputBuilder {
         self
     }
     /// <p>The credentials required to access the external Dataview from the S3 location.</p>
-    pub fn set_credentials(mut self, input: std::option::Option<crate::types::AwsCredentials>) -> Self {
-        self.credentials = input; self
+    pub fn set_credentials(
+        mut self,
+        input: std::option::Option<crate::types::AwsCredentials>,
+    ) -> Self {
+        self.credentials = input;
+        self
     }
     /// <p>The location where the external Dataview is stored.</p>
     pub fn s3_location(mut self, input: crate::types::S3Location) -> Self {
@@ -58,19 +62,20 @@ impl GetExternalDataViewAccessDetailsOutputBuilder {
     }
     /// <p>The location where the external Dataview is stored.</p>
     pub fn set_s3_location(mut self, input: std::option::Option<crate::types::S3Location>) -> Self {
-        self.s3_location = input; self
+        self.s3_location = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`GetExternalDataViewAccessDetailsOutput`](crate::operation::get_external_data_view_access_details::GetExternalDataViewAccessDetailsOutput).
-    pub fn build(self) -> crate::operation::get_external_data_view_access_details::GetExternalDataViewAccessDetailsOutput {
+    pub fn build(self) -> crate::operation::get_external_data_view_access_details::GetExternalDataViewAccessDetailsOutput{
         crate::operation::get_external_data_view_access_details::GetExternalDataViewAccessDetailsOutput {
             credentials: self.credentials
             ,
@@ -80,4 +85,3 @@ impl GetExternalDataViewAccessDetailsOutputBuilder {
         }
     }
 }
-

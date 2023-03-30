@@ -3,7 +3,7 @@
 /// <p>The configuration used for performing fraud detection over a speaker during a session.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct FraudDetectionConfiguration  {
+pub struct FraudDetectionConfiguration {
     /// <p>Threshold value for determining whether the speaker is a fraudster. If the detected risk score calculated by Voice ID is higher than the threshold, the speaker is considered a fraudster.</p>
     #[doc(hidden)]
     pub risk_threshold: std::option::Option<i32>,
@@ -35,14 +35,13 @@ impl FraudDetectionConfigurationBuilder {
     }
     /// <p>Threshold value for determining whether the speaker is a fraudster. If the detected risk score calculated by Voice ID is higher than the threshold, the speaker is considered a fraudster.</p>
     pub fn set_risk_threshold(mut self, input: std::option::Option<i32>) -> Self {
-        self.risk_threshold = input; self
+        self.risk_threshold = input;
+        self
     }
     /// Consumes the builder and constructs a [`FraudDetectionConfiguration`](crate::types::FraudDetectionConfiguration).
     pub fn build(self) -> crate::types::FraudDetectionConfiguration {
         crate::types::FraudDetectionConfiguration {
-            risk_threshold: self.risk_threshold
-            ,
+            risk_threshold: self.risk_threshold,
         }
     }
 }
-

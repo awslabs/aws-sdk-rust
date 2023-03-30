@@ -2,14 +2,14 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct EnableDirectoryInput  {
+pub struct EnableDirectoryInput {
     /// <p>The ARN of the directory to enable.</p>
     #[doc(hidden)]
     pub directory_arn: std::option::Option<std::string::String>,
 }
 impl EnableDirectoryInput {
     /// <p>The ARN of the directory to enable.</p>
-    pub fn directory_arn(&self) -> std::option::Option<& str> {
+    pub fn directory_arn(&self) -> std::option::Option<&str> {
         self.directory_arn.as_deref()
     }
 }
@@ -34,16 +34,18 @@ impl EnableDirectoryInputBuilder {
     }
     /// <p>The ARN of the directory to enable.</p>
     pub fn set_directory_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.directory_arn = input; self
+        self.directory_arn = input;
+        self
     }
     /// Consumes the builder and constructs a [`EnableDirectoryInput`](crate::operation::enable_directory::EnableDirectoryInput).
-    pub fn build(self) -> Result<crate::operation::enable_directory::EnableDirectoryInput, aws_smithy_http::operation::error::BuildError> {
-        Ok(
-            crate::operation::enable_directory::EnableDirectoryInput {
-                directory_arn: self.directory_arn
-                ,
-            }
-        )
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::enable_directory::EnableDirectoryInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        Ok(crate::operation::enable_directory::EnableDirectoryInput {
+            directory_arn: self.directory_arn,
+        })
     }
 }
-

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListModelCardsInput  {
+pub struct ListModelCardsInput {
     /// <p>Only list model cards that were created after the time specified.</p>
     #[doc(hidden)]
     pub creation_time_after: std::option::Option<aws_smithy_types::DateTime>,
@@ -30,11 +30,11 @@ pub struct ListModelCardsInput  {
 }
 impl ListModelCardsInput {
     /// <p>Only list model cards that were created after the time specified.</p>
-    pub fn creation_time_after(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
+    pub fn creation_time_after(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.creation_time_after.as_ref()
     }
     /// <p>Only list model cards that were created before the time specified.</p>
-    pub fn creation_time_before(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
+    pub fn creation_time_before(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.creation_time_before.as_ref()
     }
     /// <p>The maximum number of model cards to list.</p>
@@ -42,23 +42,23 @@ impl ListModelCardsInput {
         self.max_results
     }
     /// <p>Only list model cards with names that contain the specified string.</p>
-    pub fn name_contains(&self) -> std::option::Option<& str> {
+    pub fn name_contains(&self) -> std::option::Option<&str> {
         self.name_contains.as_deref()
     }
     /// <p>Only list model cards with the specified approval status.</p>
-    pub fn model_card_status(&self) -> std::option::Option<& crate::types::ModelCardStatus> {
+    pub fn model_card_status(&self) -> std::option::Option<&crate::types::ModelCardStatus> {
         self.model_card_status.as_ref()
     }
     /// <p>If the response to a previous <code>ListModelCards</code> request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of model cards, use the token in the next request.</p>
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
     /// <p>Sort model cards by either name or creation time. Sorts by creation time by default.</p>
-    pub fn sort_by(&self) -> std::option::Option<& crate::types::ModelCardSortBy> {
+    pub fn sort_by(&self) -> std::option::Option<&crate::types::ModelCardSortBy> {
         self.sort_by.as_ref()
     }
     /// <p>Sort model cards by ascending or descending order.</p>
-    pub fn sort_order(&self) -> std::option::Option<& crate::types::ModelCardSortOrder> {
+    pub fn sort_order(&self) -> std::option::Option<&crate::types::ModelCardSortOrder> {
         self.sort_order.as_ref()
     }
 }
@@ -89,8 +89,12 @@ impl ListModelCardsInputBuilder {
         self
     }
     /// <p>Only list model cards that were created after the time specified.</p>
-    pub fn set_creation_time_after(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.creation_time_after = input; self
+    pub fn set_creation_time_after(
+        mut self,
+        input: std::option::Option<aws_smithy_types::DateTime>,
+    ) -> Self {
+        self.creation_time_after = input;
+        self
     }
     /// <p>Only list model cards that were created before the time specified.</p>
     pub fn creation_time_before(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -98,8 +102,12 @@ impl ListModelCardsInputBuilder {
         self
     }
     /// <p>Only list model cards that were created before the time specified.</p>
-    pub fn set_creation_time_before(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.creation_time_before = input; self
+    pub fn set_creation_time_before(
+        mut self,
+        input: std::option::Option<aws_smithy_types::DateTime>,
+    ) -> Self {
+        self.creation_time_before = input;
+        self
     }
     /// <p>The maximum number of model cards to list.</p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -108,7 +116,8 @@ impl ListModelCardsInputBuilder {
     }
     /// <p>The maximum number of model cards to list.</p>
     pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_results = input; self
+        self.max_results = input;
+        self
     }
     /// <p>Only list model cards with names that contain the specified string.</p>
     pub fn name_contains(mut self, input: impl Into<std::string::String>) -> Self {
@@ -117,7 +126,8 @@ impl ListModelCardsInputBuilder {
     }
     /// <p>Only list model cards with names that contain the specified string.</p>
     pub fn set_name_contains(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name_contains = input; self
+        self.name_contains = input;
+        self
     }
     /// <p>Only list model cards with the specified approval status.</p>
     pub fn model_card_status(mut self, input: crate::types::ModelCardStatus) -> Self {
@@ -125,8 +135,12 @@ impl ListModelCardsInputBuilder {
         self
     }
     /// <p>Only list model cards with the specified approval status.</p>
-    pub fn set_model_card_status(mut self, input: std::option::Option<crate::types::ModelCardStatus>) -> Self {
-        self.model_card_status = input; self
+    pub fn set_model_card_status(
+        mut self,
+        input: std::option::Option<crate::types::ModelCardStatus>,
+    ) -> Self {
+        self.model_card_status = input;
+        self
     }
     /// <p>If the response to a previous <code>ListModelCards</code> request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of model cards, use the token in the next request.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -135,7 +149,8 @@ impl ListModelCardsInputBuilder {
     }
     /// <p>If the response to a previous <code>ListModelCards</code> request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of model cards, use the token in the next request.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input; self
+        self.next_token = input;
+        self
     }
     /// <p>Sort model cards by either name or creation time. Sorts by creation time by default.</p>
     pub fn sort_by(mut self, input: crate::types::ModelCardSortBy) -> Self {
@@ -143,8 +158,12 @@ impl ListModelCardsInputBuilder {
         self
     }
     /// <p>Sort model cards by either name or creation time. Sorts by creation time by default.</p>
-    pub fn set_sort_by(mut self, input: std::option::Option<crate::types::ModelCardSortBy>) -> Self {
-        self.sort_by = input; self
+    pub fn set_sort_by(
+        mut self,
+        input: std::option::Option<crate::types::ModelCardSortBy>,
+    ) -> Self {
+        self.sort_by = input;
+        self
     }
     /// <p>Sort model cards by ascending or descending order.</p>
     pub fn sort_order(mut self, input: crate::types::ModelCardSortOrder) -> Self {
@@ -152,31 +171,29 @@ impl ListModelCardsInputBuilder {
         self
     }
     /// <p>Sort model cards by ascending or descending order.</p>
-    pub fn set_sort_order(mut self, input: std::option::Option<crate::types::ModelCardSortOrder>) -> Self {
-        self.sort_order = input; self
+    pub fn set_sort_order(
+        mut self,
+        input: std::option::Option<crate::types::ModelCardSortOrder>,
+    ) -> Self {
+        self.sort_order = input;
+        self
     }
     /// Consumes the builder and constructs a [`ListModelCardsInput`](crate::operation::list_model_cards::ListModelCardsInput).
-    pub fn build(self) -> Result<crate::operation::list_model_cards::ListModelCardsInput, aws_smithy_http::operation::error::BuildError> {
-        Ok(
-            crate::operation::list_model_cards::ListModelCardsInput {
-                creation_time_after: self.creation_time_after
-                ,
-                creation_time_before: self.creation_time_before
-                ,
-                max_results: self.max_results
-                ,
-                name_contains: self.name_contains
-                ,
-                model_card_status: self.model_card_status
-                ,
-                next_token: self.next_token
-                ,
-                sort_by: self.sort_by
-                ,
-                sort_order: self.sort_order
-                ,
-            }
-        )
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::list_model_cards::ListModelCardsInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        Ok(crate::operation::list_model_cards::ListModelCardsInput {
+            creation_time_after: self.creation_time_after,
+            creation_time_before: self.creation_time_before,
+            max_results: self.max_results,
+            name_contains: self.name_contains,
+            model_card_status: self.model_card_status,
+            next_token: self.next_token,
+            sort_by: self.sort_by,
+            sort_order: self.sort_order,
+        })
     }
 }
-

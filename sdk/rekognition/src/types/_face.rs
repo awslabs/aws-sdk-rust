@@ -3,7 +3,7 @@
 /// <p>Describes the face properties such as the bounding box, face ID, image ID of the input image, and external image ID that you assigned. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Face  {
+pub struct Face {
     /// <p>Unique identifier that Amazon Rekognition assigns to the face.</p>
     #[doc(hidden)]
     pub face_id: std::option::Option<std::string::String>,
@@ -25,19 +25,19 @@ pub struct Face  {
 }
 impl Face {
     /// <p>Unique identifier that Amazon Rekognition assigns to the face.</p>
-    pub fn face_id(&self) -> std::option::Option<& str> {
+    pub fn face_id(&self) -> std::option::Option<&str> {
         self.face_id.as_deref()
     }
     /// <p>Bounding box of the face.</p>
-    pub fn bounding_box(&self) -> std::option::Option<& crate::types::BoundingBox> {
+    pub fn bounding_box(&self) -> std::option::Option<&crate::types::BoundingBox> {
         self.bounding_box.as_ref()
     }
     /// <p>Unique identifier that Amazon Rekognition assigns to the input image.</p>
-    pub fn image_id(&self) -> std::option::Option<& str> {
+    pub fn image_id(&self) -> std::option::Option<&str> {
         self.image_id.as_deref()
     }
     /// <p>Identifier that you assign to all the faces in the input image.</p>
-    pub fn external_image_id(&self) -> std::option::Option<& str> {
+    pub fn external_image_id(&self) -> std::option::Option<&str> {
         self.external_image_id.as_deref()
     }
     /// <p>Confidence level that the bounding box contains a face (and not a different object such as a tree).</p>
@@ -45,7 +45,7 @@ impl Face {
         self.confidence
     }
     /// <p> The version of the face detect and storage model that was used when indexing the face vector. </p>
-    pub fn index_faces_model_version(&self) -> std::option::Option<& str> {
+    pub fn index_faces_model_version(&self) -> std::option::Option<&str> {
         self.index_faces_model_version.as_deref()
     }
 }
@@ -75,7 +75,8 @@ impl FaceBuilder {
     }
     /// <p>Unique identifier that Amazon Rekognition assigns to the face.</p>
     pub fn set_face_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.face_id = input; self
+        self.face_id = input;
+        self
     }
     /// <p>Bounding box of the face.</p>
     pub fn bounding_box(mut self, input: crate::types::BoundingBox) -> Self {
@@ -83,8 +84,12 @@ impl FaceBuilder {
         self
     }
     /// <p>Bounding box of the face.</p>
-    pub fn set_bounding_box(mut self, input: std::option::Option<crate::types::BoundingBox>) -> Self {
-        self.bounding_box = input; self
+    pub fn set_bounding_box(
+        mut self,
+        input: std::option::Option<crate::types::BoundingBox>,
+    ) -> Self {
+        self.bounding_box = input;
+        self
     }
     /// <p>Unique identifier that Amazon Rekognition assigns to the input image.</p>
     pub fn image_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -93,7 +98,8 @@ impl FaceBuilder {
     }
     /// <p>Unique identifier that Amazon Rekognition assigns to the input image.</p>
     pub fn set_image_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.image_id = input; self
+        self.image_id = input;
+        self
     }
     /// <p>Identifier that you assign to all the faces in the input image.</p>
     pub fn external_image_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -101,8 +107,12 @@ impl FaceBuilder {
         self
     }
     /// <p>Identifier that you assign to all the faces in the input image.</p>
-    pub fn set_external_image_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.external_image_id = input; self
+    pub fn set_external_image_id(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.external_image_id = input;
+        self
     }
     /// <p>Confidence level that the bounding box contains a face (and not a different object such as a tree).</p>
     pub fn confidence(mut self, input: f32) -> Self {
@@ -111,7 +121,8 @@ impl FaceBuilder {
     }
     /// <p>Confidence level that the bounding box contains a face (and not a different object such as a tree).</p>
     pub fn set_confidence(mut self, input: std::option::Option<f32>) -> Self {
-        self.confidence = input; self
+        self.confidence = input;
+        self
     }
     /// <p> The version of the face detect and storage model that was used when indexing the face vector. </p>
     pub fn index_faces_model_version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -119,25 +130,22 @@ impl FaceBuilder {
         self
     }
     /// <p> The version of the face detect and storage model that was used when indexing the face vector. </p>
-    pub fn set_index_faces_model_version(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.index_faces_model_version = input; self
+    pub fn set_index_faces_model_version(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.index_faces_model_version = input;
+        self
     }
     /// Consumes the builder and constructs a [`Face`](crate::types::Face).
     pub fn build(self) -> crate::types::Face {
         crate::types::Face {
-            face_id: self.face_id
-            ,
-            bounding_box: self.bounding_box
-            ,
-            image_id: self.image_id
-            ,
-            external_image_id: self.external_image_id
-            ,
-            confidence: self.confidence
-            ,
-            index_faces_model_version: self.index_faces_model_version
-            ,
+            face_id: self.face_id,
+            bounding_box: self.bounding_box,
+            image_id: self.image_id,
+            external_image_id: self.external_image_id,
+            confidence: self.confidence,
+            index_faces_model_version: self.index_faces_model_version,
         }
     }
 }
-

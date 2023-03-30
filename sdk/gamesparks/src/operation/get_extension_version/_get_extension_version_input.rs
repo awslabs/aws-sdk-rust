@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetExtensionVersionInput  {
+pub struct GetExtensionVersionInput {
     /// <p>The namespace (qualifier) of the extension.</p>
     #[doc(hidden)]
     pub namespace: std::option::Option<std::string::String>,
@@ -15,22 +15,24 @@ pub struct GetExtensionVersionInput  {
 }
 impl GetExtensionVersionInput {
     /// <p>The namespace (qualifier) of the extension.</p>
-    pub fn namespace(&self) -> std::option::Option<& str> {
+    pub fn namespace(&self) -> std::option::Option<&str> {
         self.namespace.as_deref()
     }
     /// <p>The name of the extension.</p>
-    pub fn name(&self) -> std::option::Option<& str> {
+    pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>The version of the extension.</p>
-    pub fn extension_version(&self) -> std::option::Option<& str> {
+    pub fn extension_version(&self) -> std::option::Option<&str> {
         self.extension_version.as_deref()
     }
 }
 impl GetExtensionVersionInput {
     /// Creates a new builder-style object to manufacture [`GetExtensionVersionInput`](crate::operation::get_extension_version::GetExtensionVersionInput).
-    pub fn builder() -> crate::operation::get_extension_version::builders::GetExtensionVersionInputBuilder {
-        crate::operation::get_extension_version::builders::GetExtensionVersionInputBuilder::default()
+    pub fn builder(
+    ) -> crate::operation::get_extension_version::builders::GetExtensionVersionInputBuilder {
+        crate::operation::get_extension_version::builders::GetExtensionVersionInputBuilder::default(
+        )
     }
 }
 
@@ -50,7 +52,8 @@ impl GetExtensionVersionInputBuilder {
     }
     /// <p>The namespace (qualifier) of the extension.</p>
     pub fn set_namespace(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.namespace = input; self
+        self.namespace = input;
+        self
     }
     /// <p>The name of the extension.</p>
     pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -59,7 +62,8 @@ impl GetExtensionVersionInputBuilder {
     }
     /// <p>The name of the extension.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input; self
+        self.name = input;
+        self
     }
     /// <p>The version of the extension.</p>
     pub fn extension_version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -67,21 +71,26 @@ impl GetExtensionVersionInputBuilder {
         self
     }
     /// <p>The version of the extension.</p>
-    pub fn set_extension_version(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.extension_version = input; self
+    pub fn set_extension_version(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.extension_version = input;
+        self
     }
     /// Consumes the builder and constructs a [`GetExtensionVersionInput`](crate::operation::get_extension_version::GetExtensionVersionInput).
-    pub fn build(self) -> Result<crate::operation::get_extension_version::GetExtensionVersionInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::get_extension_version::GetExtensionVersionInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::get_extension_version::GetExtensionVersionInput {
-                namespace: self.namespace
-                ,
-                name: self.name
-                ,
-                extension_version: self.extension_version
-                ,
-            }
+                namespace: self.namespace,
+                name: self.name,
+                extension_version: self.extension_version,
+            },
         )
     }
 }
-

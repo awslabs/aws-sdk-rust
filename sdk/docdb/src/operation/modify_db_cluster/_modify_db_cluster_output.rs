@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ModifyDbClusterOutput  {
+pub struct ModifyDbClusterOutput {
     /// <p>Detailed information about a cluster. </p>
     #[doc(hidden)]
     pub db_cluster: std::option::Option<crate::types::DbCluster>,
@@ -10,18 +10,19 @@ pub struct ModifyDbClusterOutput  {
 }
 impl ModifyDbClusterOutput {
     /// <p>Detailed information about a cluster. </p>
-    pub fn db_cluster(&self) -> std::option::Option<& crate::types::DbCluster> {
+    pub fn db_cluster(&self) -> std::option::Option<&crate::types::DbCluster> {
         self.db_cluster.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for ModifyDbClusterOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl ModifyDbClusterOutput {
     /// Creates a new builder-style object to manufacture [`ModifyDbClusterOutput`](crate::operation::modify_db_cluster::ModifyDbClusterOutput).
-    pub fn builder() -> crate::operation::modify_db_cluster::builders::ModifyDbClusterOutputBuilder {
+    pub fn builder() -> crate::operation::modify_db_cluster::builders::ModifyDbClusterOutputBuilder
+    {
         crate::operation::modify_db_cluster::builders::ModifyDbClusterOutputBuilder::default()
     }
 }
@@ -41,24 +42,23 @@ impl ModifyDbClusterOutputBuilder {
     }
     /// <p>Detailed information about a cluster. </p>
     pub fn set_db_cluster(mut self, input: std::option::Option<crate::types::DbCluster>) -> Self {
-        self.db_cluster = input; self
+        self.db_cluster = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`ModifyDbClusterOutput`](crate::operation::modify_db_cluster::ModifyDbClusterOutput).
     pub fn build(self) -> crate::operation::modify_db_cluster::ModifyDbClusterOutput {
         crate::operation::modify_db_cluster::ModifyDbClusterOutput {
-            db_cluster: self.db_cluster
-            ,
+            db_cluster: self.db_cluster,
             _request_id: self._request_id,
         }
     }
 }
-

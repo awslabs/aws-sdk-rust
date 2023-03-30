@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-/// 
+///
 /// Here is an example of how you can make a match expression forward-compatible:
-/// 
+///
 /// ```text
 /// # let botrecommendationstatus = unimplemented!();
 /// match botrecommendationstatus {
@@ -37,14 +37,22 @@
 /// Specifically, when `botrecommendationstatus` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `BotRecommendationStatus::NewFeature` also yielding `"NewFeature"`.
-/// 
+///
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
 pub enum BotRecommendationStatus {
     #[allow(missing_docs)] // documentation missing in model
     Available,
@@ -65,55 +73,66 @@ pub enum BotRecommendationStatus {
     #[allow(missing_docs)] // documentation missing in model
     Updating,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::primitives::UnknownVariantValue)
+    Unknown(crate::primitives::UnknownVariantValue),
 }
 impl std::convert::From<&str> for BotRecommendationStatus {
-                fn from(s: &str) -> Self {
-                    match s {
-                        "Available" => BotRecommendationStatus::Available,
-"Deleted" => BotRecommendationStatus::Deleted,
-"Deleting" => BotRecommendationStatus::Deleting,
-"Downloading" => BotRecommendationStatus::Downloading,
-"Failed" => BotRecommendationStatus::Failed,
-"Processing" => BotRecommendationStatus::Processing,
-"Stopped" => BotRecommendationStatus::Stopped,
-"Stopping" => BotRecommendationStatus::Stopping,
-"Updating" => BotRecommendationStatus::Updating,
-other => BotRecommendationStatus::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
-                    }
-                }
-            }
-impl std::str::FromStr for BotRecommendationStatus {
-                type Err = std::convert::Infallible;
-
-                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-                    Ok(BotRecommendationStatus::from(s))
-                }
-            }
-impl BotRecommendationStatus {
-                /// Returns the `&str` value of the enum member.
-                pub fn as_str(&self) -> &str {
-                    match self {
-    BotRecommendationStatus::Available => "Available",
-    BotRecommendationStatus::Deleted => "Deleted",
-    BotRecommendationStatus::Deleting => "Deleting",
-    BotRecommendationStatus::Downloading => "Downloading",
-    BotRecommendationStatus::Failed => "Failed",
-    BotRecommendationStatus::Processing => "Processing",
-    BotRecommendationStatus::Stopped => "Stopped",
-    BotRecommendationStatus::Stopping => "Stopping",
-    BotRecommendationStatus::Updating => "Updating",
-    BotRecommendationStatus::Unknown(value) => value.as_str()
+    fn from(s: &str) -> Self {
+        match s {
+            "Available" => BotRecommendationStatus::Available,
+            "Deleted" => BotRecommendationStatus::Deleted,
+            "Deleting" => BotRecommendationStatus::Deleting,
+            "Downloading" => BotRecommendationStatus::Downloading,
+            "Failed" => BotRecommendationStatus::Failed,
+            "Processing" => BotRecommendationStatus::Processing,
+            "Stopped" => BotRecommendationStatus::Stopped,
+            "Stopping" => BotRecommendationStatus::Stopping,
+            "Updating" => BotRecommendationStatus::Updating,
+            other => BotRecommendationStatus::Unknown(crate::primitives::UnknownVariantValue(
+                other.to_owned(),
+            )),
+        }
+    }
 }
-                }
-                /// Returns all the `&str` representations of the enum members.
-                pub const fn values() -> &'static [&'static str] {
-                    &["Available", "Deleted", "Deleting", "Downloading", "Failed", "Processing", "Stopped", "Stopping", "Updating"]
-                }
-            }
-impl AsRef<str> for BotRecommendationStatus {
-                fn as_ref(&self) -> &str {
-                    self.as_str()
-                }
-            }
+impl std::str::FromStr for BotRecommendationStatus {
+    type Err = std::convert::Infallible;
 
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(BotRecommendationStatus::from(s))
+    }
+}
+impl BotRecommendationStatus {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            BotRecommendationStatus::Available => "Available",
+            BotRecommendationStatus::Deleted => "Deleted",
+            BotRecommendationStatus::Deleting => "Deleting",
+            BotRecommendationStatus::Downloading => "Downloading",
+            BotRecommendationStatus::Failed => "Failed",
+            BotRecommendationStatus::Processing => "Processing",
+            BotRecommendationStatus::Stopped => "Stopped",
+            BotRecommendationStatus::Stopping => "Stopping",
+            BotRecommendationStatus::Updating => "Updating",
+            BotRecommendationStatus::Unknown(value) => value.as_str(),
+        }
+    }
+    /// Returns all the `&str` representations of the enum members.
+    pub const fn values() -> &'static [&'static str] {
+        &[
+            "Available",
+            "Deleted",
+            "Deleting",
+            "Downloading",
+            "Failed",
+            "Processing",
+            "Stopped",
+            "Stopping",
+            "Updating",
+        ]
+    }
+}
+impl AsRef<str> for BotRecommendationStatus {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}

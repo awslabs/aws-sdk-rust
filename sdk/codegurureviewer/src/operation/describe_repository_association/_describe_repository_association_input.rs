@@ -2,20 +2,20 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeRepositoryAssociationInput  {
+pub struct DescribeRepositoryAssociationInput {
     /// <p>The Amazon Resource Name (ARN) of the <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_RepositoryAssociation.html">RepositoryAssociation</a> object. You can retrieve this ARN by calling <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_ListRepositoryAssociations.html">ListRepositoryAssociations</a>.</p>
     #[doc(hidden)]
     pub association_arn: std::option::Option<std::string::String>,
 }
 impl DescribeRepositoryAssociationInput {
     /// <p>The Amazon Resource Name (ARN) of the <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_RepositoryAssociation.html">RepositoryAssociation</a> object. You can retrieve this ARN by calling <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_ListRepositoryAssociations.html">ListRepositoryAssociations</a>.</p>
-    pub fn association_arn(&self) -> std::option::Option<& str> {
+    pub fn association_arn(&self) -> std::option::Option<&str> {
         self.association_arn.as_deref()
     }
 }
 impl DescribeRepositoryAssociationInput {
     /// Creates a new builder-style object to manufacture [`DescribeRepositoryAssociationInput`](crate::operation::describe_repository_association::DescribeRepositoryAssociationInput).
-    pub fn builder() -> crate::operation::describe_repository_association::builders::DescribeRepositoryAssociationInputBuilder {
+    pub fn builder() -> crate::operation::describe_repository_association::builders::DescribeRepositoryAssociationInputBuilder{
         crate::operation::describe_repository_association::builders::DescribeRepositoryAssociationInputBuilder::default()
     }
 }
@@ -34,16 +34,20 @@ impl DescribeRepositoryAssociationInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_RepositoryAssociation.html">RepositoryAssociation</a> object. You can retrieve this ARN by calling <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_ListRepositoryAssociations.html">ListRepositoryAssociations</a>.</p>
     pub fn set_association_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.association_arn = input; self
+        self.association_arn = input;
+        self
     }
     /// Consumes the builder and constructs a [`DescribeRepositoryAssociationInput`](crate::operation::describe_repository_association::DescribeRepositoryAssociationInput).
-    pub fn build(self) -> Result<crate::operation::describe_repository_association::DescribeRepositoryAssociationInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::describe_repository_association::DescribeRepositoryAssociationInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::describe_repository_association::DescribeRepositoryAssociationInput {
-                association_arn: self.association_arn
-                ,
-            }
+                association_arn: self.association_arn,
+            },
         )
     }
 }
-

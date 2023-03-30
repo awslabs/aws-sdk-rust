@@ -78,4 +78,3 @@ pub mod update_detector_model;
 
 /// Types for the `UpdateInput` operation.
 pub mod update_input;
-

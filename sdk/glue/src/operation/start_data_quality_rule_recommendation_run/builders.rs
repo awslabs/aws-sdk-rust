@@ -4,49 +4,58 @@ pub use crate::operation::start_data_quality_rule_recommendation_run::_start_dat
 pub use crate::operation::start_data_quality_rule_recommendation_run::_start_data_quality_rule_recommendation_run_input::StartDataQualityRuleRecommendationRunInputBuilder;
 
 /// Fluent builder constructing a request to `StartDataQualityRuleRecommendationRun`.
-/// 
+///
 /// <p>Starts a recommendation run that is used to generate rules when you don't know what rules to write. Glue Data Quality analyzes the data and comes up with recommendations for a potential ruleset. You can then triage the ruleset and modify the generated ruleset to your liking.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct StartDataQualityRuleRecommendationRunFluentBuilder {
                 handle: std::sync::Arc<crate::client::Handle>,
                 inner: crate::operation::start_data_quality_rule_recommendation_run::builders::StartDataQualityRuleRecommendationRunInputBuilder
             }
-impl StartDataQualityRuleRecommendationRunFluentBuilder  {
+impl StartDataQualityRuleRecommendationRunFluentBuilder {
     /// Creates a new `StartDataQualityRuleRecommendationRun`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
-                    /// sent. The operation's inner [http::Request] can be modified as well.
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle,
+            inner: Default::default(),
+        }
+    }
+
+    /// Consume this builder, creating a customizable operation that can be modified before being
+    /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::start_data_quality_rule_recommendation_run::StartDataQualityRuleRecommendationRun, aws_http::retry::AwsResponseRetryClassifier,>,
                         aws_smithy_http::result::SdkError<crate::operation::start_data_quality_rule_recommendation_run::StartDataQualityRuleRecommendationRunError>
-                    >  {
-                        let handle = self.handle.clone();
-                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-                    }
-    
-                    /// Sends the request and returns the response.
-                    ///
-                    /// If an error occurs, an `SdkError` will be returned with additional details that
-                    /// can be matched against.
-                    ///
-                    /// By default, any retryable failures will be retried twice. Retry behavior
-                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                    /// set when configuring the client.
+    >{
+        let handle = self.handle.clone();
+        let operation = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+    }
+
+    /// Sends the request and returns the response.
+    ///
+    /// If an error occurs, an `SdkError` will be returned with additional details that
+    /// can be matched against.
+    ///
+    /// By default, any retryable failures will be retried twice. Retry behavior
+    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+    /// set when configuring the client.
                     pub async fn send(self) -> std::result::Result<crate::operation::start_data_quality_rule_recommendation_run::StartDataQualityRuleRecommendationRunOutput, aws_smithy_http::result::SdkError<crate::operation::start_data_quality_rule_recommendation_run::StartDataQualityRuleRecommendationRunError>>
                      {
-                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&self.handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        self.handle.client.call(op).await
-                    }
+        let op = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&self.handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        self.handle.client.call(op).await
+    }
     /// <p>The data source (Glue table) associated with this run.</p>
     pub fn data_source(mut self, input: crate::types::DataSource) -> Self {
         self.inner = self.inner.data_source(input);
@@ -93,7 +102,10 @@ impl StartDataQualityRuleRecommendationRunFluentBuilder  {
         self
     }
     /// <p>A name for the ruleset.</p>
-    pub fn set_created_ruleset_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_created_ruleset_name(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_created_ruleset_name(input);
         self
     }
@@ -108,4 +120,3 @@ impl StartDataQualityRuleRecommendationRunFluentBuilder  {
         self
     }
 }
-

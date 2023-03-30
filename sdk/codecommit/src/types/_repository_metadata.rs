@@ -3,7 +3,7 @@
 /// <p>Information about a repository.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct RepositoryMetadata  {
+pub struct RepositoryMetadata {
     /// <p>The ID of the AWS account associated with the repository.</p>
     #[doc(hidden)]
     pub account_id: std::option::Option<std::string::String>,
@@ -37,43 +37,43 @@ pub struct RepositoryMetadata  {
 }
 impl RepositoryMetadata {
     /// <p>The ID of the AWS account associated with the repository.</p>
-    pub fn account_id(&self) -> std::option::Option<& str> {
+    pub fn account_id(&self) -> std::option::Option<&str> {
         self.account_id.as_deref()
     }
     /// <p>The ID of the repository.</p>
-    pub fn repository_id(&self) -> std::option::Option<& str> {
+    pub fn repository_id(&self) -> std::option::Option<&str> {
         self.repository_id.as_deref()
     }
     /// <p>The repository's name.</p>
-    pub fn repository_name(&self) -> std::option::Option<& str> {
+    pub fn repository_name(&self) -> std::option::Option<&str> {
         self.repository_name.as_deref()
     }
     /// <p>A comment or description about the repository.</p>
-    pub fn repository_description(&self) -> std::option::Option<& str> {
+    pub fn repository_description(&self) -> std::option::Option<&str> {
         self.repository_description.as_deref()
     }
     /// <p>The repository's default branch name.</p>
-    pub fn default_branch(&self) -> std::option::Option<& str> {
+    pub fn default_branch(&self) -> std::option::Option<&str> {
         self.default_branch.as_deref()
     }
     /// <p>The date and time the repository was last modified, in timestamp format.</p>
-    pub fn last_modified_date(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
+    pub fn last_modified_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_modified_date.as_ref()
     }
     /// <p>The date and time the repository was created, in timestamp format.</p>
-    pub fn creation_date(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
+    pub fn creation_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.creation_date.as_ref()
     }
     /// <p>The URL to use for cloning the repository over HTTPS.</p>
-    pub fn clone_url_http(&self) -> std::option::Option<& str> {
+    pub fn clone_url_http(&self) -> std::option::Option<&str> {
         self.clone_url_http.as_deref()
     }
     /// <p>The URL to use for cloning the repository over SSH.</p>
-    pub fn clone_url_ssh(&self) -> std::option::Option<& str> {
+    pub fn clone_url_ssh(&self) -> std::option::Option<&str> {
         self.clone_url_ssh.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the repository.</p>
-    pub fn arn(&self) -> std::option::Option<& str> {
+    pub fn arn(&self) -> std::option::Option<&str> {
         self.arn.as_deref()
     }
 }
@@ -107,7 +107,8 @@ impl RepositoryMetadataBuilder {
     }
     /// <p>The ID of the AWS account associated with the repository.</p>
     pub fn set_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.account_id = input; self
+        self.account_id = input;
+        self
     }
     /// <p>The ID of the repository.</p>
     pub fn repository_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -116,7 +117,8 @@ impl RepositoryMetadataBuilder {
     }
     /// <p>The ID of the repository.</p>
     pub fn set_repository_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.repository_id = input; self
+        self.repository_id = input;
+        self
     }
     /// <p>The repository's name.</p>
     pub fn repository_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -125,7 +127,8 @@ impl RepositoryMetadataBuilder {
     }
     /// <p>The repository's name.</p>
     pub fn set_repository_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.repository_name = input; self
+        self.repository_name = input;
+        self
     }
     /// <p>A comment or description about the repository.</p>
     pub fn repository_description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -133,8 +136,12 @@ impl RepositoryMetadataBuilder {
         self
     }
     /// <p>A comment or description about the repository.</p>
-    pub fn set_repository_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.repository_description = input; self
+    pub fn set_repository_description(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.repository_description = input;
+        self
     }
     /// <p>The repository's default branch name.</p>
     pub fn default_branch(mut self, input: impl Into<std::string::String>) -> Self {
@@ -143,7 +150,8 @@ impl RepositoryMetadataBuilder {
     }
     /// <p>The repository's default branch name.</p>
     pub fn set_default_branch(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.default_branch = input; self
+        self.default_branch = input;
+        self
     }
     /// <p>The date and time the repository was last modified, in timestamp format.</p>
     pub fn last_modified_date(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -151,8 +159,12 @@ impl RepositoryMetadataBuilder {
         self
     }
     /// <p>The date and time the repository was last modified, in timestamp format.</p>
-    pub fn set_last_modified_date(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.last_modified_date = input; self
+    pub fn set_last_modified_date(
+        mut self,
+        input: std::option::Option<aws_smithy_types::DateTime>,
+    ) -> Self {
+        self.last_modified_date = input;
+        self
     }
     /// <p>The date and time the repository was created, in timestamp format.</p>
     pub fn creation_date(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -160,8 +172,12 @@ impl RepositoryMetadataBuilder {
         self
     }
     /// <p>The date and time the repository was created, in timestamp format.</p>
-    pub fn set_creation_date(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.creation_date = input; self
+    pub fn set_creation_date(
+        mut self,
+        input: std::option::Option<aws_smithy_types::DateTime>,
+    ) -> Self {
+        self.creation_date = input;
+        self
     }
     /// <p>The URL to use for cloning the repository over HTTPS.</p>
     pub fn clone_url_http(mut self, input: impl Into<std::string::String>) -> Self {
@@ -170,7 +186,8 @@ impl RepositoryMetadataBuilder {
     }
     /// <p>The URL to use for cloning the repository over HTTPS.</p>
     pub fn set_clone_url_http(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.clone_url_http = input; self
+        self.clone_url_http = input;
+        self
     }
     /// <p>The URL to use for cloning the repository over SSH.</p>
     pub fn clone_url_ssh(mut self, input: impl Into<std::string::String>) -> Self {
@@ -179,7 +196,8 @@ impl RepositoryMetadataBuilder {
     }
     /// <p>The URL to use for cloning the repository over SSH.</p>
     pub fn set_clone_url_ssh(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.clone_url_ssh = input; self
+        self.clone_url_ssh = input;
+        self
     }
     /// <p>The Amazon Resource Name (ARN) of the repository.</p>
     pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -188,32 +206,22 @@ impl RepositoryMetadataBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the repository.</p>
     pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.arn = input; self
+        self.arn = input;
+        self
     }
     /// Consumes the builder and constructs a [`RepositoryMetadata`](crate::types::RepositoryMetadata).
     pub fn build(self) -> crate::types::RepositoryMetadata {
         crate::types::RepositoryMetadata {
-            account_id: self.account_id
-            ,
-            repository_id: self.repository_id
-            ,
-            repository_name: self.repository_name
-            ,
-            repository_description: self.repository_description
-            ,
-            default_branch: self.default_branch
-            ,
-            last_modified_date: self.last_modified_date
-            ,
-            creation_date: self.creation_date
-            ,
-            clone_url_http: self.clone_url_http
-            ,
-            clone_url_ssh: self.clone_url_ssh
-            ,
-            arn: self.arn
-            ,
+            account_id: self.account_id,
+            repository_id: self.repository_id,
+            repository_name: self.repository_name,
+            repository_description: self.repository_description,
+            default_branch: self.default_branch,
+            last_modified_date: self.last_modified_date,
+            creation_date: self.creation_date,
+            clone_url_http: self.clone_url_http,
+            clone_url_ssh: self.clone_url_ssh,
+            arn: self.arn,
         }
     }
 }
-

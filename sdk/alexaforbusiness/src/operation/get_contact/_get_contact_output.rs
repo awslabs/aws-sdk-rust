@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetContactOutput  {
+pub struct GetContactOutput {
     /// <p>The details of the requested contact.</p>
     #[doc(hidden)]
     pub contact: std::option::Option<crate::types::Contact>,
@@ -10,15 +10,15 @@ pub struct GetContactOutput  {
 }
 impl GetContactOutput {
     /// <p>The details of the requested contact.</p>
-    pub fn contact(&self) -> std::option::Option<& crate::types::Contact> {
+    pub fn contact(&self) -> std::option::Option<&crate::types::Contact> {
         self.contact.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for GetContactOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl GetContactOutput {
     /// Creates a new builder-style object to manufacture [`GetContactOutput`](crate::operation::get_contact::GetContactOutput).
     pub fn builder() -> crate::operation::get_contact::builders::GetContactOutputBuilder {
@@ -41,24 +41,23 @@ impl GetContactOutputBuilder {
     }
     /// <p>The details of the requested contact.</p>
     pub fn set_contact(mut self, input: std::option::Option<crate::types::Contact>) -> Self {
-        self.contact = input; self
+        self.contact = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`GetContactOutput`](crate::operation::get_contact::GetContactOutput).
     pub fn build(self) -> crate::operation::get_contact::GetContactOutput {
         crate::operation::get_contact::GetContactOutput {
-            contact: self.contact
-            ,
+            contact: self.contact,
             _request_id: self._request_id,
         }
     }
 }
-

@@ -2,20 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CancelSimulationJobBatchInput  {
+pub struct CancelSimulationJobBatchInput {
     /// <p>The id of the batch to cancel.</p>
     #[doc(hidden)]
     pub batch: std::option::Option<std::string::String>,
 }
 impl CancelSimulationJobBatchInput {
     /// <p>The id of the batch to cancel.</p>
-    pub fn batch(&self) -> std::option::Option<& str> {
+    pub fn batch(&self) -> std::option::Option<&str> {
         self.batch.as_deref()
     }
 }
 impl CancelSimulationJobBatchInput {
     /// Creates a new builder-style object to manufacture [`CancelSimulationJobBatchInput`](crate::operation::cancel_simulation_job_batch::CancelSimulationJobBatchInput).
-    pub fn builder() -> crate::operation::cancel_simulation_job_batch::builders::CancelSimulationJobBatchInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::cancel_simulation_job_batch::builders::CancelSimulationJobBatchInputBuilder
+    {
         crate::operation::cancel_simulation_job_batch::builders::CancelSimulationJobBatchInputBuilder::default()
     }
 }
@@ -34,16 +36,20 @@ impl CancelSimulationJobBatchInputBuilder {
     }
     /// <p>The id of the batch to cancel.</p>
     pub fn set_batch(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.batch = input; self
+        self.batch = input;
+        self
     }
     /// Consumes the builder and constructs a [`CancelSimulationJobBatchInput`](crate::operation::cancel_simulation_job_batch::CancelSimulationJobBatchInput).
-    pub fn build(self) -> Result<crate::operation::cancel_simulation_job_batch::CancelSimulationJobBatchInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::cancel_simulation_job_batch::CancelSimulationJobBatchInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::cancel_simulation_job_batch::CancelSimulationJobBatchInput {
-                batch: self.batch
-                ,
-            }
+                batch: self.batch,
+            },
         )
     }
 }
-

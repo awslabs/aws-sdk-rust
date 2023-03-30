@@ -3,24 +3,24 @@
 /// <p>Information about a Capacity Reservation Fleet.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CapacityReservationFleet  {
+pub struct CapacityReservationFleet {
     /// <p>The ID of the Capacity Reservation Fleet.</p>
     #[doc(hidden)]
     pub capacity_reservation_fleet_id: std::option::Option<std::string::String>,
     /// <p>The ARN of the Capacity Reservation Fleet.</p>
     #[doc(hidden)]
     pub capacity_reservation_fleet_arn: std::option::Option<std::string::String>,
-    /// <p>The state of the Capacity Reservation Fleet. Possible states include:</p> 
-    /// <ul> 
-    /// <li> <p> <code>submitted</code> - The Capacity Reservation Fleet request has been submitted and Amazon Elastic Compute Cloud is preparing to create the Capacity Reservations.</p> </li> 
-    /// <li> <p> <code>modifying</code> - The Capacity Reservation Fleet is being modified. The Fleet remains in this state until the modification is complete.</p> </li> 
-    /// <li> <p> <code>active</code> - The Capacity Reservation Fleet has fulfilled its total target capacity and it is attempting to maintain this capacity. The Fleet remains in this state until it is modified or deleted.</p> </li> 
-    /// <li> <p> <code>partially_fulfilled</code> - The Capacity Reservation Fleet has partially fulfilled its total target capacity. There is insufficient Amazon EC2 to fulfill the total target capacity. The Fleet is attempting to asynchronously fulfill its total target capacity.</p> </li> 
-    /// <li> <p> <code>expiring</code> - The Capacity Reservation Fleet has reach its end date and it is in the process of expiring. One or more of its Capacity reservations might still be active.</p> </li> 
-    /// <li> <p> <code>expired</code> - The Capacity Reservation Fleet has reach its end date. The Fleet and its Capacity Reservations are expired. The Fleet can't create new Capacity Reservations.</p> </li> 
-    /// <li> <p> <code>cancelling</code> - The Capacity Reservation Fleet is in the process of being cancelled. One or more of its Capacity reservations might still be active.</p> </li> 
-    /// <li> <p> <code>cancelled</code> - The Capacity Reservation Fleet has been manually cancelled. The Fleet and its Capacity Reservations are cancelled and the Fleet can't create new Capacity Reservations.</p> </li> 
-    /// <li> <p> <code>failed</code> - The Capacity Reservation Fleet failed to reserve capacity for the specified instance types.</p> </li> 
+    /// <p>The state of the Capacity Reservation Fleet. Possible states include:</p>
+    /// <ul>
+    /// <li> <p> <code>submitted</code> - The Capacity Reservation Fleet request has been submitted and Amazon Elastic Compute Cloud is preparing to create the Capacity Reservations.</p> </li>
+    /// <li> <p> <code>modifying</code> - The Capacity Reservation Fleet is being modified. The Fleet remains in this state until the modification is complete.</p> </li>
+    /// <li> <p> <code>active</code> - The Capacity Reservation Fleet has fulfilled its total target capacity and it is attempting to maintain this capacity. The Fleet remains in this state until it is modified or deleted.</p> </li>
+    /// <li> <p> <code>partially_fulfilled</code> - The Capacity Reservation Fleet has partially fulfilled its total target capacity. There is insufficient Amazon EC2 to fulfill the total target capacity. The Fleet is attempting to asynchronously fulfill its total target capacity.</p> </li>
+    /// <li> <p> <code>expiring</code> - The Capacity Reservation Fleet has reach its end date and it is in the process of expiring. One or more of its Capacity reservations might still be active.</p> </li>
+    /// <li> <p> <code>expired</code> - The Capacity Reservation Fleet has reach its end date. The Fleet and its Capacity Reservations are expired. The Fleet can't create new Capacity Reservations.</p> </li>
+    /// <li> <p> <code>cancelling</code> - The Capacity Reservation Fleet is in the process of being cancelled. One or more of its Capacity reservations might still be active.</p> </li>
+    /// <li> <p> <code>cancelled</code> - The Capacity Reservation Fleet has been manually cancelled. The Fleet and its Capacity Reservations are cancelled and the Fleet can't create new Capacity Reservations.</p> </li>
+    /// <li> <p> <code>failed</code> - The Capacity Reservation Fleet failed to reserve capacity for the specified instance types.</p> </li>
     /// </ul>
     #[doc(hidden)]
     pub state: std::option::Option<crate::types::CapacityReservationFleetState>,
@@ -30,10 +30,10 @@ pub struct CapacityReservationFleet  {
     /// <p>The capacity units that have been fulfilled.</p>
     #[doc(hidden)]
     pub total_fulfilled_capacity: std::option::Option<f64>,
-    /// <p>The tenancy of the Capacity Reservation Fleet. Tenancies include:</p> 
-    /// <ul> 
-    /// <li> <p> <code>default</code> - The Capacity Reservation Fleet is created on hardware that is shared with other Amazon Web Services accounts.</p> </li> 
-    /// <li> <p> <code>dedicated</code> - The Capacity Reservation Fleet is created on single-tenant hardware that is dedicated to a single Amazon Web Services account.</p> </li> 
+    /// <p>The tenancy of the Capacity Reservation Fleet. Tenancies include:</p>
+    /// <ul>
+    /// <li> <p> <code>default</code> - The Capacity Reservation Fleet is created on hardware that is shared with other Amazon Web Services accounts.</p> </li>
+    /// <li> <p> <code>dedicated</code> - The Capacity Reservation Fleet is created on single-tenant hardware that is dedicated to a single Amazon Web Services account.</p> </li>
     /// </ul>
     #[doc(hidden)]
     pub tenancy: std::option::Option<crate::types::FleetCapacityReservationTenancy>,
@@ -43,7 +43,7 @@ pub struct CapacityReservationFleet  {
     /// <p>The date and time at which the Capacity Reservation Fleet was created.</p>
     #[doc(hidden)]
     pub create_time: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>Indicates the type of instance launches that the Capacity Reservation Fleet accepts. All Capacity Reservations in the Fleet inherit this instance matching criteria.</p> 
+    /// <p>Indicates the type of instance launches that the Capacity Reservation Fleet accepts. All Capacity Reservations in the Fleet inherit this instance matching criteria.</p>
     /// <p>Currently, Capacity Reservation Fleets support <code>open</code> instance matching criteria only. This means that instances that have matching attributes (instance type, platform, and Availability Zone) run in the Capacity Reservations automatically. Instances do not need to explicitly target a Capacity Reservation Fleet to use its reserved capacity.</p>
     #[doc(hidden)]
     pub instance_match_criteria: std::option::Option<crate::types::FleetInstanceMatchCriteria>,
@@ -52,33 +52,34 @@ pub struct CapacityReservationFleet  {
     pub allocation_strategy: std::option::Option<std::string::String>,
     /// <p>Information about the instance types for which to reserve the capacity.</p>
     #[doc(hidden)]
-    pub instance_type_specifications: std::option::Option<std::vec::Vec<crate::types::FleetCapacityReservation>>,
+    pub instance_type_specifications:
+        std::option::Option<std::vec::Vec<crate::types::FleetCapacityReservation>>,
     /// <p>The tags assigned to the Capacity Reservation Fleet.</p>
     #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::types::Tag>>,
 }
 impl CapacityReservationFleet {
     /// <p>The ID of the Capacity Reservation Fleet.</p>
-    pub fn capacity_reservation_fleet_id(&self) -> std::option::Option<& str> {
+    pub fn capacity_reservation_fleet_id(&self) -> std::option::Option<&str> {
         self.capacity_reservation_fleet_id.as_deref()
     }
     /// <p>The ARN of the Capacity Reservation Fleet.</p>
-    pub fn capacity_reservation_fleet_arn(&self) -> std::option::Option<& str> {
+    pub fn capacity_reservation_fleet_arn(&self) -> std::option::Option<&str> {
         self.capacity_reservation_fleet_arn.as_deref()
     }
-    /// <p>The state of the Capacity Reservation Fleet. Possible states include:</p> 
-    /// <ul> 
-    /// <li> <p> <code>submitted</code> - The Capacity Reservation Fleet request has been submitted and Amazon Elastic Compute Cloud is preparing to create the Capacity Reservations.</p> </li> 
-    /// <li> <p> <code>modifying</code> - The Capacity Reservation Fleet is being modified. The Fleet remains in this state until the modification is complete.</p> </li> 
-    /// <li> <p> <code>active</code> - The Capacity Reservation Fleet has fulfilled its total target capacity and it is attempting to maintain this capacity. The Fleet remains in this state until it is modified or deleted.</p> </li> 
-    /// <li> <p> <code>partially_fulfilled</code> - The Capacity Reservation Fleet has partially fulfilled its total target capacity. There is insufficient Amazon EC2 to fulfill the total target capacity. The Fleet is attempting to asynchronously fulfill its total target capacity.</p> </li> 
-    /// <li> <p> <code>expiring</code> - The Capacity Reservation Fleet has reach its end date and it is in the process of expiring. One or more of its Capacity reservations might still be active.</p> </li> 
-    /// <li> <p> <code>expired</code> - The Capacity Reservation Fleet has reach its end date. The Fleet and its Capacity Reservations are expired. The Fleet can't create new Capacity Reservations.</p> </li> 
-    /// <li> <p> <code>cancelling</code> - The Capacity Reservation Fleet is in the process of being cancelled. One or more of its Capacity reservations might still be active.</p> </li> 
-    /// <li> <p> <code>cancelled</code> - The Capacity Reservation Fleet has been manually cancelled. The Fleet and its Capacity Reservations are cancelled and the Fleet can't create new Capacity Reservations.</p> </li> 
-    /// <li> <p> <code>failed</code> - The Capacity Reservation Fleet failed to reserve capacity for the specified instance types.</p> </li> 
+    /// <p>The state of the Capacity Reservation Fleet. Possible states include:</p>
+    /// <ul>
+    /// <li> <p> <code>submitted</code> - The Capacity Reservation Fleet request has been submitted and Amazon Elastic Compute Cloud is preparing to create the Capacity Reservations.</p> </li>
+    /// <li> <p> <code>modifying</code> - The Capacity Reservation Fleet is being modified. The Fleet remains in this state until the modification is complete.</p> </li>
+    /// <li> <p> <code>active</code> - The Capacity Reservation Fleet has fulfilled its total target capacity and it is attempting to maintain this capacity. The Fleet remains in this state until it is modified or deleted.</p> </li>
+    /// <li> <p> <code>partially_fulfilled</code> - The Capacity Reservation Fleet has partially fulfilled its total target capacity. There is insufficient Amazon EC2 to fulfill the total target capacity. The Fleet is attempting to asynchronously fulfill its total target capacity.</p> </li>
+    /// <li> <p> <code>expiring</code> - The Capacity Reservation Fleet has reach its end date and it is in the process of expiring. One or more of its Capacity reservations might still be active.</p> </li>
+    /// <li> <p> <code>expired</code> - The Capacity Reservation Fleet has reach its end date. The Fleet and its Capacity Reservations are expired. The Fleet can't create new Capacity Reservations.</p> </li>
+    /// <li> <p> <code>cancelling</code> - The Capacity Reservation Fleet is in the process of being cancelled. One or more of its Capacity reservations might still be active.</p> </li>
+    /// <li> <p> <code>cancelled</code> - The Capacity Reservation Fleet has been manually cancelled. The Fleet and its Capacity Reservations are cancelled and the Fleet can't create new Capacity Reservations.</p> </li>
+    /// <li> <p> <code>failed</code> - The Capacity Reservation Fleet failed to reserve capacity for the specified instance types.</p> </li>
     /// </ul>
-    pub fn state(&self) -> std::option::Option<& crate::types::CapacityReservationFleetState> {
+    pub fn state(&self) -> std::option::Option<&crate::types::CapacityReservationFleetState> {
         self.state.as_ref()
     }
     /// <p>The total number of capacity units for which the Capacity Reservation Fleet reserves capacity. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/crfleet-concepts.html#target-capacity">Total target capacity</a> in the Amazon EC2 User Guide.</p>
@@ -89,37 +90,41 @@ impl CapacityReservationFleet {
     pub fn total_fulfilled_capacity(&self) -> std::option::Option<f64> {
         self.total_fulfilled_capacity
     }
-    /// <p>The tenancy of the Capacity Reservation Fleet. Tenancies include:</p> 
-    /// <ul> 
-    /// <li> <p> <code>default</code> - The Capacity Reservation Fleet is created on hardware that is shared with other Amazon Web Services accounts.</p> </li> 
-    /// <li> <p> <code>dedicated</code> - The Capacity Reservation Fleet is created on single-tenant hardware that is dedicated to a single Amazon Web Services account.</p> </li> 
+    /// <p>The tenancy of the Capacity Reservation Fleet. Tenancies include:</p>
+    /// <ul>
+    /// <li> <p> <code>default</code> - The Capacity Reservation Fleet is created on hardware that is shared with other Amazon Web Services accounts.</p> </li>
+    /// <li> <p> <code>dedicated</code> - The Capacity Reservation Fleet is created on single-tenant hardware that is dedicated to a single Amazon Web Services account.</p> </li>
     /// </ul>
-    pub fn tenancy(&self) -> std::option::Option<& crate::types::FleetCapacityReservationTenancy> {
+    pub fn tenancy(&self) -> std::option::Option<&crate::types::FleetCapacityReservationTenancy> {
         self.tenancy.as_ref()
     }
     /// <p>The date and time at which the Capacity Reservation Fleet expires.</p>
-    pub fn end_date(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
+    pub fn end_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.end_date.as_ref()
     }
     /// <p>The date and time at which the Capacity Reservation Fleet was created.</p>
-    pub fn create_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
+    pub fn create_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.create_time.as_ref()
     }
-    /// <p>Indicates the type of instance launches that the Capacity Reservation Fleet accepts. All Capacity Reservations in the Fleet inherit this instance matching criteria.</p> 
+    /// <p>Indicates the type of instance launches that the Capacity Reservation Fleet accepts. All Capacity Reservations in the Fleet inherit this instance matching criteria.</p>
     /// <p>Currently, Capacity Reservation Fleets support <code>open</code> instance matching criteria only. This means that instances that have matching attributes (instance type, platform, and Availability Zone) run in the Capacity Reservations automatically. Instances do not need to explicitly target a Capacity Reservation Fleet to use its reserved capacity.</p>
-    pub fn instance_match_criteria(&self) -> std::option::Option<& crate::types::FleetInstanceMatchCriteria> {
+    pub fn instance_match_criteria(
+        &self,
+    ) -> std::option::Option<&crate::types::FleetInstanceMatchCriteria> {
         self.instance_match_criteria.as_ref()
     }
     /// <p>The strategy used by the Capacity Reservation Fleet to determine which of the specified instance types to use. For more information, see For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/crfleet-concepts.html#allocation-strategy"> Allocation strategy</a> in the Amazon EC2 User Guide.</p>
-    pub fn allocation_strategy(&self) -> std::option::Option<& str> {
+    pub fn allocation_strategy(&self) -> std::option::Option<&str> {
         self.allocation_strategy.as_deref()
     }
     /// <p>Information about the instance types for which to reserve the capacity.</p>
-    pub fn instance_type_specifications(&self) -> std::option::Option<& [crate::types::FleetCapacityReservation]> {
+    pub fn instance_type_specifications(
+        &self,
+    ) -> std::option::Option<&[crate::types::FleetCapacityReservation]> {
         self.instance_type_specifications.as_deref()
     }
     /// <p>The tags assigned to the Capacity Reservation Fleet.</p>
-    pub fn tags(&self) -> std::option::Option<& [crate::types::Tag]> {
+    pub fn tags(&self) -> std::option::Option<&[crate::types::Tag]> {
         self.tags.as_deref()
     }
 }
@@ -142,9 +147,11 @@ pub struct CapacityReservationFleetBuilder {
     pub(crate) tenancy: std::option::Option<crate::types::FleetCapacityReservationTenancy>,
     pub(crate) end_date: std::option::Option<aws_smithy_types::DateTime>,
     pub(crate) create_time: std::option::Option<aws_smithy_types::DateTime>,
-    pub(crate) instance_match_criteria: std::option::Option<crate::types::FleetInstanceMatchCriteria>,
+    pub(crate) instance_match_criteria:
+        std::option::Option<crate::types::FleetInstanceMatchCriteria>,
     pub(crate) allocation_strategy: std::option::Option<std::string::String>,
-    pub(crate) instance_type_specifications: std::option::Option<std::vec::Vec<crate::types::FleetCapacityReservation>>,
+    pub(crate) instance_type_specifications:
+        std::option::Option<std::vec::Vec<crate::types::FleetCapacityReservation>>,
     pub(crate) tags: std::option::Option<std::vec::Vec<crate::types::Tag>>,
 }
 impl CapacityReservationFleetBuilder {
@@ -154,8 +161,12 @@ impl CapacityReservationFleetBuilder {
         self
     }
     /// <p>The ID of the Capacity Reservation Fleet.</p>
-    pub fn set_capacity_reservation_fleet_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.capacity_reservation_fleet_id = input; self
+    pub fn set_capacity_reservation_fleet_id(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.capacity_reservation_fleet_id = input;
+        self
     }
     /// <p>The ARN of the Capacity Reservation Fleet.</p>
     pub fn capacity_reservation_fleet_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -163,39 +174,47 @@ impl CapacityReservationFleetBuilder {
         self
     }
     /// <p>The ARN of the Capacity Reservation Fleet.</p>
-    pub fn set_capacity_reservation_fleet_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.capacity_reservation_fleet_arn = input; self
+    pub fn set_capacity_reservation_fleet_arn(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.capacity_reservation_fleet_arn = input;
+        self
     }
-    /// <p>The state of the Capacity Reservation Fleet. Possible states include:</p> 
-    /// <ul> 
-    /// <li> <p> <code>submitted</code> - The Capacity Reservation Fleet request has been submitted and Amazon Elastic Compute Cloud is preparing to create the Capacity Reservations.</p> </li> 
-    /// <li> <p> <code>modifying</code> - The Capacity Reservation Fleet is being modified. The Fleet remains in this state until the modification is complete.</p> </li> 
-    /// <li> <p> <code>active</code> - The Capacity Reservation Fleet has fulfilled its total target capacity and it is attempting to maintain this capacity. The Fleet remains in this state until it is modified or deleted.</p> </li> 
-    /// <li> <p> <code>partially_fulfilled</code> - The Capacity Reservation Fleet has partially fulfilled its total target capacity. There is insufficient Amazon EC2 to fulfill the total target capacity. The Fleet is attempting to asynchronously fulfill its total target capacity.</p> </li> 
-    /// <li> <p> <code>expiring</code> - The Capacity Reservation Fleet has reach its end date and it is in the process of expiring. One or more of its Capacity reservations might still be active.</p> </li> 
-    /// <li> <p> <code>expired</code> - The Capacity Reservation Fleet has reach its end date. The Fleet and its Capacity Reservations are expired. The Fleet can't create new Capacity Reservations.</p> </li> 
-    /// <li> <p> <code>cancelling</code> - The Capacity Reservation Fleet is in the process of being cancelled. One or more of its Capacity reservations might still be active.</p> </li> 
-    /// <li> <p> <code>cancelled</code> - The Capacity Reservation Fleet has been manually cancelled. The Fleet and its Capacity Reservations are cancelled and the Fleet can't create new Capacity Reservations.</p> </li> 
-    /// <li> <p> <code>failed</code> - The Capacity Reservation Fleet failed to reserve capacity for the specified instance types.</p> </li> 
+    /// <p>The state of the Capacity Reservation Fleet. Possible states include:</p>
+    /// <ul>
+    /// <li> <p> <code>submitted</code> - The Capacity Reservation Fleet request has been submitted and Amazon Elastic Compute Cloud is preparing to create the Capacity Reservations.</p> </li>
+    /// <li> <p> <code>modifying</code> - The Capacity Reservation Fleet is being modified. The Fleet remains in this state until the modification is complete.</p> </li>
+    /// <li> <p> <code>active</code> - The Capacity Reservation Fleet has fulfilled its total target capacity and it is attempting to maintain this capacity. The Fleet remains in this state until it is modified or deleted.</p> </li>
+    /// <li> <p> <code>partially_fulfilled</code> - The Capacity Reservation Fleet has partially fulfilled its total target capacity. There is insufficient Amazon EC2 to fulfill the total target capacity. The Fleet is attempting to asynchronously fulfill its total target capacity.</p> </li>
+    /// <li> <p> <code>expiring</code> - The Capacity Reservation Fleet has reach its end date and it is in the process of expiring. One or more of its Capacity reservations might still be active.</p> </li>
+    /// <li> <p> <code>expired</code> - The Capacity Reservation Fleet has reach its end date. The Fleet and its Capacity Reservations are expired. The Fleet can't create new Capacity Reservations.</p> </li>
+    /// <li> <p> <code>cancelling</code> - The Capacity Reservation Fleet is in the process of being cancelled. One or more of its Capacity reservations might still be active.</p> </li>
+    /// <li> <p> <code>cancelled</code> - The Capacity Reservation Fleet has been manually cancelled. The Fleet and its Capacity Reservations are cancelled and the Fleet can't create new Capacity Reservations.</p> </li>
+    /// <li> <p> <code>failed</code> - The Capacity Reservation Fleet failed to reserve capacity for the specified instance types.</p> </li>
     /// </ul>
     pub fn state(mut self, input: crate::types::CapacityReservationFleetState) -> Self {
         self.state = Some(input);
         self
     }
-    /// <p>The state of the Capacity Reservation Fleet. Possible states include:</p> 
-    /// <ul> 
-    /// <li> <p> <code>submitted</code> - The Capacity Reservation Fleet request has been submitted and Amazon Elastic Compute Cloud is preparing to create the Capacity Reservations.</p> </li> 
-    /// <li> <p> <code>modifying</code> - The Capacity Reservation Fleet is being modified. The Fleet remains in this state until the modification is complete.</p> </li> 
-    /// <li> <p> <code>active</code> - The Capacity Reservation Fleet has fulfilled its total target capacity and it is attempting to maintain this capacity. The Fleet remains in this state until it is modified or deleted.</p> </li> 
-    /// <li> <p> <code>partially_fulfilled</code> - The Capacity Reservation Fleet has partially fulfilled its total target capacity. There is insufficient Amazon EC2 to fulfill the total target capacity. The Fleet is attempting to asynchronously fulfill its total target capacity.</p> </li> 
-    /// <li> <p> <code>expiring</code> - The Capacity Reservation Fleet has reach its end date and it is in the process of expiring. One or more of its Capacity reservations might still be active.</p> </li> 
-    /// <li> <p> <code>expired</code> - The Capacity Reservation Fleet has reach its end date. The Fleet and its Capacity Reservations are expired. The Fleet can't create new Capacity Reservations.</p> </li> 
-    /// <li> <p> <code>cancelling</code> - The Capacity Reservation Fleet is in the process of being cancelled. One or more of its Capacity reservations might still be active.</p> </li> 
-    /// <li> <p> <code>cancelled</code> - The Capacity Reservation Fleet has been manually cancelled. The Fleet and its Capacity Reservations are cancelled and the Fleet can't create new Capacity Reservations.</p> </li> 
-    /// <li> <p> <code>failed</code> - The Capacity Reservation Fleet failed to reserve capacity for the specified instance types.</p> </li> 
+    /// <p>The state of the Capacity Reservation Fleet. Possible states include:</p>
+    /// <ul>
+    /// <li> <p> <code>submitted</code> - The Capacity Reservation Fleet request has been submitted and Amazon Elastic Compute Cloud is preparing to create the Capacity Reservations.</p> </li>
+    /// <li> <p> <code>modifying</code> - The Capacity Reservation Fleet is being modified. The Fleet remains in this state until the modification is complete.</p> </li>
+    /// <li> <p> <code>active</code> - The Capacity Reservation Fleet has fulfilled its total target capacity and it is attempting to maintain this capacity. The Fleet remains in this state until it is modified or deleted.</p> </li>
+    /// <li> <p> <code>partially_fulfilled</code> - The Capacity Reservation Fleet has partially fulfilled its total target capacity. There is insufficient Amazon EC2 to fulfill the total target capacity. The Fleet is attempting to asynchronously fulfill its total target capacity.</p> </li>
+    /// <li> <p> <code>expiring</code> - The Capacity Reservation Fleet has reach its end date and it is in the process of expiring. One or more of its Capacity reservations might still be active.</p> </li>
+    /// <li> <p> <code>expired</code> - The Capacity Reservation Fleet has reach its end date. The Fleet and its Capacity Reservations are expired. The Fleet can't create new Capacity Reservations.</p> </li>
+    /// <li> <p> <code>cancelling</code> - The Capacity Reservation Fleet is in the process of being cancelled. One or more of its Capacity reservations might still be active.</p> </li>
+    /// <li> <p> <code>cancelled</code> - The Capacity Reservation Fleet has been manually cancelled. The Fleet and its Capacity Reservations are cancelled and the Fleet can't create new Capacity Reservations.</p> </li>
+    /// <li> <p> <code>failed</code> - The Capacity Reservation Fleet failed to reserve capacity for the specified instance types.</p> </li>
     /// </ul>
-    pub fn set_state(mut self, input: std::option::Option<crate::types::CapacityReservationFleetState>) -> Self {
-        self.state = input; self
+    pub fn set_state(
+        mut self,
+        input: std::option::Option<crate::types::CapacityReservationFleetState>,
+    ) -> Self {
+        self.state = input;
+        self
     }
     /// <p>The total number of capacity units for which the Capacity Reservation Fleet reserves capacity. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/crfleet-concepts.html#target-capacity">Total target capacity</a> in the Amazon EC2 User Guide.</p>
     pub fn total_target_capacity(mut self, input: i32) -> Self {
@@ -204,7 +223,8 @@ impl CapacityReservationFleetBuilder {
     }
     /// <p>The total number of capacity units for which the Capacity Reservation Fleet reserves capacity. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/crfleet-concepts.html#target-capacity">Total target capacity</a> in the Amazon EC2 User Guide.</p>
     pub fn set_total_target_capacity(mut self, input: std::option::Option<i32>) -> Self {
-        self.total_target_capacity = input; self
+        self.total_target_capacity = input;
+        self
     }
     /// <p>The capacity units that have been fulfilled.</p>
     pub fn total_fulfilled_capacity(mut self, input: f64) -> Self {
@@ -213,24 +233,29 @@ impl CapacityReservationFleetBuilder {
     }
     /// <p>The capacity units that have been fulfilled.</p>
     pub fn set_total_fulfilled_capacity(mut self, input: std::option::Option<f64>) -> Self {
-        self.total_fulfilled_capacity = input; self
+        self.total_fulfilled_capacity = input;
+        self
     }
-    /// <p>The tenancy of the Capacity Reservation Fleet. Tenancies include:</p> 
-    /// <ul> 
-    /// <li> <p> <code>default</code> - The Capacity Reservation Fleet is created on hardware that is shared with other Amazon Web Services accounts.</p> </li> 
-    /// <li> <p> <code>dedicated</code> - The Capacity Reservation Fleet is created on single-tenant hardware that is dedicated to a single Amazon Web Services account.</p> </li> 
+    /// <p>The tenancy of the Capacity Reservation Fleet. Tenancies include:</p>
+    /// <ul>
+    /// <li> <p> <code>default</code> - The Capacity Reservation Fleet is created on hardware that is shared with other Amazon Web Services accounts.</p> </li>
+    /// <li> <p> <code>dedicated</code> - The Capacity Reservation Fleet is created on single-tenant hardware that is dedicated to a single Amazon Web Services account.</p> </li>
     /// </ul>
     pub fn tenancy(mut self, input: crate::types::FleetCapacityReservationTenancy) -> Self {
         self.tenancy = Some(input);
         self
     }
-    /// <p>The tenancy of the Capacity Reservation Fleet. Tenancies include:</p> 
-    /// <ul> 
-    /// <li> <p> <code>default</code> - The Capacity Reservation Fleet is created on hardware that is shared with other Amazon Web Services accounts.</p> </li> 
-    /// <li> <p> <code>dedicated</code> - The Capacity Reservation Fleet is created on single-tenant hardware that is dedicated to a single Amazon Web Services account.</p> </li> 
+    /// <p>The tenancy of the Capacity Reservation Fleet. Tenancies include:</p>
+    /// <ul>
+    /// <li> <p> <code>default</code> - The Capacity Reservation Fleet is created on hardware that is shared with other Amazon Web Services accounts.</p> </li>
+    /// <li> <p> <code>dedicated</code> - The Capacity Reservation Fleet is created on single-tenant hardware that is dedicated to a single Amazon Web Services account.</p> </li>
     /// </ul>
-    pub fn set_tenancy(mut self, input: std::option::Option<crate::types::FleetCapacityReservationTenancy>) -> Self {
-        self.tenancy = input; self
+    pub fn set_tenancy(
+        mut self,
+        input: std::option::Option<crate::types::FleetCapacityReservationTenancy>,
+    ) -> Self {
+        self.tenancy = input;
+        self
     }
     /// <p>The date and time at which the Capacity Reservation Fleet expires.</p>
     pub fn end_date(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -239,7 +264,8 @@ impl CapacityReservationFleetBuilder {
     }
     /// <p>The date and time at which the Capacity Reservation Fleet expires.</p>
     pub fn set_end_date(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.end_date = input; self
+        self.end_date = input;
+        self
     }
     /// <p>The date and time at which the Capacity Reservation Fleet was created.</p>
     pub fn create_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -247,19 +273,30 @@ impl CapacityReservationFleetBuilder {
         self
     }
     /// <p>The date and time at which the Capacity Reservation Fleet was created.</p>
-    pub fn set_create_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.create_time = input; self
+    pub fn set_create_time(
+        mut self,
+        input: std::option::Option<aws_smithy_types::DateTime>,
+    ) -> Self {
+        self.create_time = input;
+        self
     }
-    /// <p>Indicates the type of instance launches that the Capacity Reservation Fleet accepts. All Capacity Reservations in the Fleet inherit this instance matching criteria.</p> 
+    /// <p>Indicates the type of instance launches that the Capacity Reservation Fleet accepts. All Capacity Reservations in the Fleet inherit this instance matching criteria.</p>
     /// <p>Currently, Capacity Reservation Fleets support <code>open</code> instance matching criteria only. This means that instances that have matching attributes (instance type, platform, and Availability Zone) run in the Capacity Reservations automatically. Instances do not need to explicitly target a Capacity Reservation Fleet to use its reserved capacity.</p>
-    pub fn instance_match_criteria(mut self, input: crate::types::FleetInstanceMatchCriteria) -> Self {
+    pub fn instance_match_criteria(
+        mut self,
+        input: crate::types::FleetInstanceMatchCriteria,
+    ) -> Self {
         self.instance_match_criteria = Some(input);
         self
     }
-    /// <p>Indicates the type of instance launches that the Capacity Reservation Fleet accepts. All Capacity Reservations in the Fleet inherit this instance matching criteria.</p> 
+    /// <p>Indicates the type of instance launches that the Capacity Reservation Fleet accepts. All Capacity Reservations in the Fleet inherit this instance matching criteria.</p>
     /// <p>Currently, Capacity Reservation Fleets support <code>open</code> instance matching criteria only. This means that instances that have matching attributes (instance type, platform, and Availability Zone) run in the Capacity Reservations automatically. Instances do not need to explicitly target a Capacity Reservation Fleet to use its reserved capacity.</p>
-    pub fn set_instance_match_criteria(mut self, input: std::option::Option<crate::types::FleetInstanceMatchCriteria>) -> Self {
-        self.instance_match_criteria = input; self
+    pub fn set_instance_match_criteria(
+        mut self,
+        input: std::option::Option<crate::types::FleetInstanceMatchCriteria>,
+    ) -> Self {
+        self.instance_match_criteria = input;
+        self
     }
     /// <p>The strategy used by the Capacity Reservation Fleet to determine which of the specified instance types to use. For more information, see For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/crfleet-concepts.html#allocation-strategy"> Allocation strategy</a> in the Amazon EC2 User Guide.</p>
     pub fn allocation_strategy(mut self, input: impl Into<std::string::String>) -> Self {
@@ -267,23 +304,34 @@ impl CapacityReservationFleetBuilder {
         self
     }
     /// <p>The strategy used by the Capacity Reservation Fleet to determine which of the specified instance types to use. For more information, see For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/crfleet-concepts.html#allocation-strategy"> Allocation strategy</a> in the Amazon EC2 User Guide.</p>
-    pub fn set_allocation_strategy(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.allocation_strategy = input; self
+    pub fn set_allocation_strategy(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.allocation_strategy = input;
+        self
     }
     /// Appends an item to `instance_type_specifications`.
     ///
     /// To override the contents of this collection use [`set_instance_type_specifications`](Self::set_instance_type_specifications).
     ///
     /// <p>Information about the instance types for which to reserve the capacity.</p>
-    pub fn instance_type_specifications(mut self, input: crate::types::FleetCapacityReservation) -> Self {
+    pub fn instance_type_specifications(
+        mut self,
+        input: crate::types::FleetCapacityReservation,
+    ) -> Self {
         let mut v = self.instance_type_specifications.unwrap_or_default();
-                        v.push(input);
-                        self.instance_type_specifications = Some(v);
-                        self
+        v.push(input);
+        self.instance_type_specifications = Some(v);
+        self
     }
     /// <p>Information about the instance types for which to reserve the capacity.</p>
-    pub fn set_instance_type_specifications(mut self, input: std::option::Option<std::vec::Vec<crate::types::FleetCapacityReservation>>) -> Self {
-        self.instance_type_specifications = input; self
+    pub fn set_instance_type_specifications(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::FleetCapacityReservation>>,
+    ) -> Self {
+        self.instance_type_specifications = input;
+        self
     }
     /// Appends an item to `tags`.
     ///
@@ -292,42 +340,33 @@ impl CapacityReservationFleetBuilder {
     /// <p>The tags assigned to the Capacity Reservation Fleet.</p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
-                        v.push(input);
-                        self.tags = Some(v);
-                        self
+        v.push(input);
+        self.tags = Some(v);
+        self
     }
     /// <p>The tags assigned to the Capacity Reservation Fleet.</p>
-    pub fn set_tags(mut self, input: std::option::Option<std::vec::Vec<crate::types::Tag>>) -> Self {
-        self.tags = input; self
+    pub fn set_tags(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::Tag>>,
+    ) -> Self {
+        self.tags = input;
+        self
     }
     /// Consumes the builder and constructs a [`CapacityReservationFleet`](crate::types::CapacityReservationFleet).
     pub fn build(self) -> crate::types::CapacityReservationFleet {
         crate::types::CapacityReservationFleet {
-            capacity_reservation_fleet_id: self.capacity_reservation_fleet_id
-            ,
-            capacity_reservation_fleet_arn: self.capacity_reservation_fleet_arn
-            ,
-            state: self.state
-            ,
-            total_target_capacity: self.total_target_capacity
-            ,
-            total_fulfilled_capacity: self.total_fulfilled_capacity
-            ,
-            tenancy: self.tenancy
-            ,
-            end_date: self.end_date
-            ,
-            create_time: self.create_time
-            ,
-            instance_match_criteria: self.instance_match_criteria
-            ,
-            allocation_strategy: self.allocation_strategy
-            ,
-            instance_type_specifications: self.instance_type_specifications
-            ,
-            tags: self.tags
-            ,
+            capacity_reservation_fleet_id: self.capacity_reservation_fleet_id,
+            capacity_reservation_fleet_arn: self.capacity_reservation_fleet_arn,
+            state: self.state,
+            total_target_capacity: self.total_target_capacity,
+            total_fulfilled_capacity: self.total_fulfilled_capacity,
+            tenancy: self.tenancy,
+            end_date: self.end_date,
+            create_time: self.create_time,
+            instance_match_criteria: self.instance_match_criteria,
+            allocation_strategy: self.allocation_strategy,
+            instance_type_specifications: self.instance_type_specifications,
+            tags: self.tags,
         }
     }
 }
-

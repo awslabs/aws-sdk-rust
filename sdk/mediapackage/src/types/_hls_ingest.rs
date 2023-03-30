@@ -3,14 +3,14 @@
 /// An HTTP Live Streaming (HLS) ingest resource configuration.
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct HlsIngest  {
+pub struct HlsIngest {
     /// A list of endpoints to which the source stream should be sent.
     #[doc(hidden)]
     pub ingest_endpoints: std::option::Option<std::vec::Vec<crate::types::IngestEndpoint>>,
 }
 impl HlsIngest {
     /// A list of endpoints to which the source stream should be sent.
-    pub fn ingest_endpoints(&self) -> std::option::Option<& [crate::types::IngestEndpoint]> {
+    pub fn ingest_endpoints(&self) -> std::option::Option<&[crate::types::IngestEndpoint]> {
         self.ingest_endpoints.as_deref()
     }
 }
@@ -35,20 +35,22 @@ impl HlsIngestBuilder {
     /// A list of endpoints to which the source stream should be sent.
     pub fn ingest_endpoints(mut self, input: crate::types::IngestEndpoint) -> Self {
         let mut v = self.ingest_endpoints.unwrap_or_default();
-                        v.push(input);
-                        self.ingest_endpoints = Some(v);
-                        self
+        v.push(input);
+        self.ingest_endpoints = Some(v);
+        self
     }
     /// A list of endpoints to which the source stream should be sent.
-    pub fn set_ingest_endpoints(mut self, input: std::option::Option<std::vec::Vec<crate::types::IngestEndpoint>>) -> Self {
-        self.ingest_endpoints = input; self
+    pub fn set_ingest_endpoints(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::IngestEndpoint>>,
+    ) -> Self {
+        self.ingest_endpoints = input;
+        self
     }
     /// Consumes the builder and constructs a [`HlsIngest`](crate::types::HlsIngest).
     pub fn build(self) -> crate::types::HlsIngest {
         crate::types::HlsIngest {
-            ingest_endpoints: self.ingest_endpoints
-            ,
+            ingest_endpoints: self.ingest_endpoints,
         }
     }
 }
-

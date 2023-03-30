@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetGeneratedCodeJobOutput  {
+pub struct GetGeneratedCodeJobOutput {
     /// <p>Details about the generated code job.</p>
     #[doc(hidden)]
     pub generated_code_job: std::option::Option<crate::types::GeneratedCodeJobDetails>,
@@ -10,18 +10,21 @@ pub struct GetGeneratedCodeJobOutput  {
 }
 impl GetGeneratedCodeJobOutput {
     /// <p>Details about the generated code job.</p>
-    pub fn generated_code_job(&self) -> std::option::Option<& crate::types::GeneratedCodeJobDetails> {
+    pub fn generated_code_job(
+        &self,
+    ) -> std::option::Option<&crate::types::GeneratedCodeJobDetails> {
         self.generated_code_job.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for GetGeneratedCodeJobOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl GetGeneratedCodeJobOutput {
     /// Creates a new builder-style object to manufacture [`GetGeneratedCodeJobOutput`](crate::operation::get_generated_code_job::GetGeneratedCodeJobOutput).
-    pub fn builder() -> crate::operation::get_generated_code_job::builders::GetGeneratedCodeJobOutputBuilder {
+    pub fn builder(
+    ) -> crate::operation::get_generated_code_job::builders::GetGeneratedCodeJobOutputBuilder {
         crate::operation::get_generated_code_job::builders::GetGeneratedCodeJobOutputBuilder::default()
     }
 }
@@ -40,25 +43,27 @@ impl GetGeneratedCodeJobOutputBuilder {
         self
     }
     /// <p>Details about the generated code job.</p>
-    pub fn set_generated_code_job(mut self, input: std::option::Option<crate::types::GeneratedCodeJobDetails>) -> Self {
-        self.generated_code_job = input; self
+    pub fn set_generated_code_job(
+        mut self,
+        input: std::option::Option<crate::types::GeneratedCodeJobDetails>,
+    ) -> Self {
+        self.generated_code_job = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`GetGeneratedCodeJobOutput`](crate::operation::get_generated_code_job::GetGeneratedCodeJobOutput).
     pub fn build(self) -> crate::operation::get_generated_code_job::GetGeneratedCodeJobOutput {
         crate::operation::get_generated_code_job::GetGeneratedCodeJobOutput {
-            generated_code_job: self.generated_code_job
-            ,
+            generated_code_job: self.generated_code_job,
             _request_id: self._request_id,
         }
     }
 }
-

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetLinkAssociationsInput  {
+pub struct GetLinkAssociationsInput {
     /// <p>The ID of the global network.</p>
     #[doc(hidden)]
     pub global_network_id: std::option::Option<std::string::String>,
@@ -21,15 +21,15 @@ pub struct GetLinkAssociationsInput  {
 }
 impl GetLinkAssociationsInput {
     /// <p>The ID of the global network.</p>
-    pub fn global_network_id(&self) -> std::option::Option<& str> {
+    pub fn global_network_id(&self) -> std::option::Option<&str> {
         self.global_network_id.as_deref()
     }
     /// <p>The ID of the device.</p>
-    pub fn device_id(&self) -> std::option::Option<& str> {
+    pub fn device_id(&self) -> std::option::Option<&str> {
         self.device_id.as_deref()
     }
     /// <p>The ID of the link.</p>
-    pub fn link_id(&self) -> std::option::Option<& str> {
+    pub fn link_id(&self) -> std::option::Option<&str> {
         self.link_id.as_deref()
     }
     /// <p>The maximum number of results to return.</p>
@@ -37,14 +37,16 @@ impl GetLinkAssociationsInput {
         self.max_results
     }
     /// <p>The token for the next page of results.</p>
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
 }
 impl GetLinkAssociationsInput {
     /// Creates a new builder-style object to manufacture [`GetLinkAssociationsInput`](crate::operation::get_link_associations::GetLinkAssociationsInput).
-    pub fn builder() -> crate::operation::get_link_associations::builders::GetLinkAssociationsInputBuilder {
-        crate::operation::get_link_associations::builders::GetLinkAssociationsInputBuilder::default()
+    pub fn builder(
+    ) -> crate::operation::get_link_associations::builders::GetLinkAssociationsInputBuilder {
+        crate::operation::get_link_associations::builders::GetLinkAssociationsInputBuilder::default(
+        )
     }
 }
 
@@ -65,8 +67,12 @@ impl GetLinkAssociationsInputBuilder {
         self
     }
     /// <p>The ID of the global network.</p>
-    pub fn set_global_network_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.global_network_id = input; self
+    pub fn set_global_network_id(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.global_network_id = input;
+        self
     }
     /// <p>The ID of the device.</p>
     pub fn device_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -75,7 +81,8 @@ impl GetLinkAssociationsInputBuilder {
     }
     /// <p>The ID of the device.</p>
     pub fn set_device_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.device_id = input; self
+        self.device_id = input;
+        self
     }
     /// <p>The ID of the link.</p>
     pub fn link_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -84,7 +91,8 @@ impl GetLinkAssociationsInputBuilder {
     }
     /// <p>The ID of the link.</p>
     pub fn set_link_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.link_id = input; self
+        self.link_id = input;
+        self
     }
     /// <p>The maximum number of results to return.</p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -93,7 +101,8 @@ impl GetLinkAssociationsInputBuilder {
     }
     /// <p>The maximum number of results to return.</p>
     pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_results = input; self
+        self.max_results = input;
+        self
     }
     /// <p>The token for the next page of results.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -102,24 +111,24 @@ impl GetLinkAssociationsInputBuilder {
     }
     /// <p>The token for the next page of results.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input; self
+        self.next_token = input;
+        self
     }
     /// Consumes the builder and constructs a [`GetLinkAssociationsInput`](crate::operation::get_link_associations::GetLinkAssociationsInput).
-    pub fn build(self) -> Result<crate::operation::get_link_associations::GetLinkAssociationsInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::get_link_associations::GetLinkAssociationsInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::get_link_associations::GetLinkAssociationsInput {
-                global_network_id: self.global_network_id
-                ,
-                device_id: self.device_id
-                ,
-                link_id: self.link_id
-                ,
-                max_results: self.max_results
-                ,
-                next_token: self.next_token
-                ,
-            }
+                global_network_id: self.global_network_id,
+                device_id: self.device_id,
+                link_id: self.link_id,
+                max_results: self.max_results,
+                next_token: self.next_token,
+            },
         )
     }
 }
-

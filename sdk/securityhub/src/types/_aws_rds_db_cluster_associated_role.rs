@@ -3,31 +3,31 @@
 /// <p>An IAM role that is associated with the Amazon RDS DB cluster.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AwsRdsDbClusterAssociatedRole  {
+pub struct AwsRdsDbClusterAssociatedRole {
     /// <p>The ARN of the IAM role.</p>
     #[doc(hidden)]
     pub role_arn: std::option::Option<std::string::String>,
-    /// <p>The status of the association between the IAM role and the DB cluster. Valid values are as follows:</p> 
-    /// <ul> 
-    /// <li> <p> <code>ACTIVE</code> </p> </li> 
-    /// <li> <p> <code>INVALID</code> </p> </li> 
-    /// <li> <p> <code>PENDING</code> </p> </li> 
+    /// <p>The status of the association between the IAM role and the DB cluster. Valid values are as follows:</p>
+    /// <ul>
+    /// <li> <p> <code>ACTIVE</code> </p> </li>
+    /// <li> <p> <code>INVALID</code> </p> </li>
+    /// <li> <p> <code>PENDING</code> </p> </li>
     /// </ul>
     #[doc(hidden)]
     pub status: std::option::Option<std::string::String>,
 }
 impl AwsRdsDbClusterAssociatedRole {
     /// <p>The ARN of the IAM role.</p>
-    pub fn role_arn(&self) -> std::option::Option<& str> {
+    pub fn role_arn(&self) -> std::option::Option<&str> {
         self.role_arn.as_deref()
     }
-    /// <p>The status of the association between the IAM role and the DB cluster. Valid values are as follows:</p> 
-    /// <ul> 
-    /// <li> <p> <code>ACTIVE</code> </p> </li> 
-    /// <li> <p> <code>INVALID</code> </p> </li> 
-    /// <li> <p> <code>PENDING</code> </p> </li> 
+    /// <p>The status of the association between the IAM role and the DB cluster. Valid values are as follows:</p>
+    /// <ul>
+    /// <li> <p> <code>ACTIVE</code> </p> </li>
+    /// <li> <p> <code>INVALID</code> </p> </li>
+    /// <li> <p> <code>PENDING</code> </p> </li>
     /// </ul>
-    pub fn status(&self) -> std::option::Option<& str> {
+    pub fn status(&self) -> std::option::Option<&str> {
         self.status.as_deref()
     }
 }
@@ -53,35 +53,34 @@ impl AwsRdsDbClusterAssociatedRoleBuilder {
     }
     /// <p>The ARN of the IAM role.</p>
     pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.role_arn = input; self
+        self.role_arn = input;
+        self
     }
-    /// <p>The status of the association between the IAM role and the DB cluster. Valid values are as follows:</p> 
-    /// <ul> 
-    /// <li> <p> <code>ACTIVE</code> </p> </li> 
-    /// <li> <p> <code>INVALID</code> </p> </li> 
-    /// <li> <p> <code>PENDING</code> </p> </li> 
+    /// <p>The status of the association between the IAM role and the DB cluster. Valid values are as follows:</p>
+    /// <ul>
+    /// <li> <p> <code>ACTIVE</code> </p> </li>
+    /// <li> <p> <code>INVALID</code> </p> </li>
+    /// <li> <p> <code>PENDING</code> </p> </li>
     /// </ul>
     pub fn status(mut self, input: impl Into<std::string::String>) -> Self {
         self.status = Some(input.into());
         self
     }
-    /// <p>The status of the association between the IAM role and the DB cluster. Valid values are as follows:</p> 
-    /// <ul> 
-    /// <li> <p> <code>ACTIVE</code> </p> </li> 
-    /// <li> <p> <code>INVALID</code> </p> </li> 
-    /// <li> <p> <code>PENDING</code> </p> </li> 
+    /// <p>The status of the association between the IAM role and the DB cluster. Valid values are as follows:</p>
+    /// <ul>
+    /// <li> <p> <code>ACTIVE</code> </p> </li>
+    /// <li> <p> <code>INVALID</code> </p> </li>
+    /// <li> <p> <code>PENDING</code> </p> </li>
     /// </ul>
     pub fn set_status(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.status = input; self
+        self.status = input;
+        self
     }
     /// Consumes the builder and constructs a [`AwsRdsDbClusterAssociatedRole`](crate::types::AwsRdsDbClusterAssociatedRole).
     pub fn build(self) -> crate::types::AwsRdsDbClusterAssociatedRole {
         crate::types::AwsRdsDbClusterAssociatedRole {
-            role_arn: self.role_arn
-            ,
-            status: self.status
-            ,
+            role_arn: self.role_arn,
+            status: self.status,
         }
     }
 }
-

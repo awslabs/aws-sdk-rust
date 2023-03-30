@@ -4,56 +4,81 @@ pub use crate::operation::create_application::_create_application_output::Create
 pub use crate::operation::create_application::_create_application_input::CreateApplicationInputBuilder;
 
 /// Fluent builder constructing a request to `CreateApplication`.
-/// 
+///
 /// <p>Adds an application that is created from a resource group.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct CreateApplicationFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::create_application::builders::CreateApplicationInputBuilder
-            }
-impl CreateApplicationFluentBuilder  {
+    handle: std::sync::Arc<crate::client::Handle>,
+    inner: crate::operation::create_application::builders::CreateApplicationInputBuilder,
+}
+impl CreateApplicationFluentBuilder {
     /// Creates a new `CreateApplication`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
-                    /// sent. The operation's inner [http::Request] can be modified as well.
-                    pub async fn customize(self) -> std::result::Result<
-                        crate::client::customize::CustomizableOperation<crate::operation::create_application::CreateApplication, aws_http::retry::AwsResponseRetryClassifier,>,
-                        aws_smithy_http::result::SdkError<crate::operation::create_application::CreateApplicationError>
-                    >  {
-                        let handle = self.handle.clone();
-                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-                    }
-    
-                    /// Sends the request and returns the response.
-                    ///
-                    /// If an error occurs, an `SdkError` will be returned with additional details that
-                    /// can be matched against.
-                    ///
-                    /// By default, any retryable failures will be retried twice. Retry behavior
-                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                    /// set when configuring the client.
-                    pub async fn send(self) -> std::result::Result<crate::operation::create_application::CreateApplicationOutput, aws_smithy_http::result::SdkError<crate::operation::create_application::CreateApplicationError>>
-                     {
-                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&self.handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        self.handle.client.call(op).await
-                    }
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle,
+            inner: Default::default(),
+        }
+    }
+
+    /// Consume this builder, creating a customizable operation that can be modified before being
+    /// sent. The operation's inner [http::Request] can be modified as well.
+    pub async fn customize(
+        self,
+    ) -> std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::create_application::CreateApplication,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::result::SdkError<
+            crate::operation::create_application::CreateApplicationError,
+        >,
+    > {
+        let handle = self.handle.clone();
+        let operation = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+    }
+
+    /// Sends the request and returns the response.
+    ///
+    /// If an error occurs, an `SdkError` will be returned with additional details that
+    /// can be matched against.
+    ///
+    /// By default, any retryable failures will be retried twice. Retry behavior
+    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+    /// set when configuring the client.
+    pub async fn send(
+        self,
+    ) -> std::result::Result<
+        crate::operation::create_application::CreateApplicationOutput,
+        aws_smithy_http::result::SdkError<
+            crate::operation::create_application::CreateApplicationError,
+        >,
+    > {
+        let op = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&self.handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        self.handle.client.call(op).await
+    }
     /// <p>The name of the resource group.</p>
     pub fn resource_group_name(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.resource_group_name(input.into());
         self
     }
     /// <p>The name of the resource group.</p>
-    pub fn set_resource_group_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_resource_group_name(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_resource_group_name(input);
         self
     }
@@ -83,7 +108,10 @@ impl CreateApplicationFluentBuilder  {
         self
     }
     /// <p> The SNS topic provided to Application Insights that is associated to the created opsItem. Allows you to receive notifications for updates to the opsItem. </p>
-    pub fn set_ops_item_sns_topic_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_ops_item_sns_topic_arn(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_ops_item_sns_topic_arn(input);
         self
     }
@@ -97,7 +125,10 @@ impl CreateApplicationFluentBuilder  {
         self
     }
     /// <p>List of tags to add to the application. tag key (<code>Key</code>) and an associated tag value (<code>Value</code>). The maximum length of a tag key is 128 characters. The maximum length of a tag value is 256 characters.</p>
-    pub fn set_tags(mut self, input: std::option::Option<std::vec::Vec<crate::types::Tag>>) -> Self {
+    pub fn set_tags(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::Tag>>,
+    ) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }
@@ -127,9 +158,11 @@ impl CreateApplicationFluentBuilder  {
         self
     }
     /// <p>Application Insights can create applications based on a resource group or on an account. To create an account-based application using all of the resources in the account, set this parameter to <code>ACCOUNT_BASED</code>. </p>
-    pub fn set_grouping_type(mut self, input: std::option::Option<crate::types::GroupingType>) -> Self {
+    pub fn set_grouping_type(
+        mut self,
+        input: std::option::Option<crate::types::GroupingType>,
+    ) -> Self {
         self.inner = self.inner.set_grouping_type(input);
         self
     }
 }
-

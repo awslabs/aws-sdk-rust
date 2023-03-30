@@ -3,7 +3,7 @@
 /// the option to configure log subscription.
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ConfigureLogsInput  {
+pub struct ConfigureLogsInput {
     /// Configure egress access logging.
     #[doc(hidden)]
     pub egress_access_logs: std::option::Option<crate::types::EgressAccessLogs>,
@@ -16,15 +16,15 @@ pub struct ConfigureLogsInput  {
 }
 impl ConfigureLogsInput {
     /// Configure egress access logging.
-    pub fn egress_access_logs(&self) -> std::option::Option<& crate::types::EgressAccessLogs> {
+    pub fn egress_access_logs(&self) -> std::option::Option<&crate::types::EgressAccessLogs> {
         self.egress_access_logs.as_ref()
     }
     /// The ID of the channel to log subscription.
-    pub fn id(&self) -> std::option::Option<& str> {
+    pub fn id(&self) -> std::option::Option<&str> {
         self.id.as_deref()
     }
     /// Configure ingress access logging.
-    pub fn ingress_access_logs(&self) -> std::option::Option<& crate::types::IngressAccessLogs> {
+    pub fn ingress_access_logs(&self) -> std::option::Option<&crate::types::IngressAccessLogs> {
         self.ingress_access_logs.as_ref()
     }
 }
@@ -50,8 +50,12 @@ impl ConfigureLogsInputBuilder {
         self
     }
     /// Configure egress access logging.
-    pub fn set_egress_access_logs(mut self, input: std::option::Option<crate::types::EgressAccessLogs>) -> Self {
-        self.egress_access_logs = input; self
+    pub fn set_egress_access_logs(
+        mut self,
+        input: std::option::Option<crate::types::EgressAccessLogs>,
+    ) -> Self {
+        self.egress_access_logs = input;
+        self
     }
     /// The ID of the channel to log subscription.
     pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -60,7 +64,8 @@ impl ConfigureLogsInputBuilder {
     }
     /// The ID of the channel to log subscription.
     pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.id = input; self
+        self.id = input;
+        self
     }
     /// Configure ingress access logging.
     pub fn ingress_access_logs(mut self, input: crate::types::IngressAccessLogs) -> Self {
@@ -68,21 +73,24 @@ impl ConfigureLogsInputBuilder {
         self
     }
     /// Configure ingress access logging.
-    pub fn set_ingress_access_logs(mut self, input: std::option::Option<crate::types::IngressAccessLogs>) -> Self {
-        self.ingress_access_logs = input; self
+    pub fn set_ingress_access_logs(
+        mut self,
+        input: std::option::Option<crate::types::IngressAccessLogs>,
+    ) -> Self {
+        self.ingress_access_logs = input;
+        self
     }
     /// Consumes the builder and constructs a [`ConfigureLogsInput`](crate::operation::configure_logs::ConfigureLogsInput).
-    pub fn build(self) -> Result<crate::operation::configure_logs::ConfigureLogsInput, aws_smithy_http::operation::error::BuildError> {
-        Ok(
-            crate::operation::configure_logs::ConfigureLogsInput {
-                egress_access_logs: self.egress_access_logs
-                ,
-                id: self.id
-                ,
-                ingress_access_logs: self.ingress_access_logs
-                ,
-            }
-        )
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::configure_logs::ConfigureLogsInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        Ok(crate::operation::configure_logs::ConfigureLogsInput {
+            egress_access_logs: self.egress_access_logs,
+            id: self.id,
+            ingress_access_logs: self.ingress_access_logs,
+        })
     }
 }
-

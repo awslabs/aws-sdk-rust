@@ -3,7 +3,7 @@
 /// Udp Group Settings
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UdpGroupSettings  {
+pub struct UdpGroupSettings {
     /// Specifies behavior of last resort when input video is lost, and no more backup inputs are available. When dropTs is selected the entire transport stream will stop being emitted. When dropProgram is selected the program can be dropped from the transport stream (and replaced with null packets to meet the TS bitrate requirement). Or, when emitProgram is chosen the transport stream will continue to be produced normally with repeat frames, black frames, or slate frames substituted for the absent input video.
     #[doc(hidden)]
     pub input_loss_action: std::option::Option<crate::types::InputLossActionForUdpOut>,
@@ -16,11 +16,15 @@ pub struct UdpGroupSettings  {
 }
 impl UdpGroupSettings {
     /// Specifies behavior of last resort when input video is lost, and no more backup inputs are available. When dropTs is selected the entire transport stream will stop being emitted. When dropProgram is selected the program can be dropped from the transport stream (and replaced with null packets to meet the TS bitrate requirement). Or, when emitProgram is chosen the transport stream will continue to be produced normally with repeat frames, black frames, or slate frames substituted for the absent input video.
-    pub fn input_loss_action(&self) -> std::option::Option<& crate::types::InputLossActionForUdpOut> {
+    pub fn input_loss_action(
+        &self,
+    ) -> std::option::Option<&crate::types::InputLossActionForUdpOut> {
         self.input_loss_action.as_ref()
     }
     /// Indicates ID3 frame that has the timecode.
-    pub fn timed_metadata_id3_frame(&self) -> std::option::Option<& crate::types::UdpTimedMetadataId3Frame> {
+    pub fn timed_metadata_id3_frame(
+        &self,
+    ) -> std::option::Option<&crate::types::UdpTimedMetadataId3Frame> {
         self.timed_metadata_id3_frame.as_ref()
     }
     /// Timed Metadata interval in seconds.
@@ -40,7 +44,8 @@ impl UdpGroupSettings {
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct UdpGroupSettingsBuilder {
     pub(crate) input_loss_action: std::option::Option<crate::types::InputLossActionForUdpOut>,
-    pub(crate) timed_metadata_id3_frame: std::option::Option<crate::types::UdpTimedMetadataId3Frame>,
+    pub(crate) timed_metadata_id3_frame:
+        std::option::Option<crate::types::UdpTimedMetadataId3Frame>,
     pub(crate) timed_metadata_id3_period: std::option::Option<i32>,
 }
 impl UdpGroupSettingsBuilder {
@@ -50,17 +55,28 @@ impl UdpGroupSettingsBuilder {
         self
     }
     /// Specifies behavior of last resort when input video is lost, and no more backup inputs are available. When dropTs is selected the entire transport stream will stop being emitted. When dropProgram is selected the program can be dropped from the transport stream (and replaced with null packets to meet the TS bitrate requirement). Or, when emitProgram is chosen the transport stream will continue to be produced normally with repeat frames, black frames, or slate frames substituted for the absent input video.
-    pub fn set_input_loss_action(mut self, input: std::option::Option<crate::types::InputLossActionForUdpOut>) -> Self {
-        self.input_loss_action = input; self
+    pub fn set_input_loss_action(
+        mut self,
+        input: std::option::Option<crate::types::InputLossActionForUdpOut>,
+    ) -> Self {
+        self.input_loss_action = input;
+        self
     }
     /// Indicates ID3 frame that has the timecode.
-    pub fn timed_metadata_id3_frame(mut self, input: crate::types::UdpTimedMetadataId3Frame) -> Self {
+    pub fn timed_metadata_id3_frame(
+        mut self,
+        input: crate::types::UdpTimedMetadataId3Frame,
+    ) -> Self {
         self.timed_metadata_id3_frame = Some(input);
         self
     }
     /// Indicates ID3 frame that has the timecode.
-    pub fn set_timed_metadata_id3_frame(mut self, input: std::option::Option<crate::types::UdpTimedMetadataId3Frame>) -> Self {
-        self.timed_metadata_id3_frame = input; self
+    pub fn set_timed_metadata_id3_frame(
+        mut self,
+        input: std::option::Option<crate::types::UdpTimedMetadataId3Frame>,
+    ) -> Self {
+        self.timed_metadata_id3_frame = input;
+        self
     }
     /// Timed Metadata interval in seconds.
     pub fn timed_metadata_id3_period(mut self, input: i32) -> Self {
@@ -69,19 +85,15 @@ impl UdpGroupSettingsBuilder {
     }
     /// Timed Metadata interval in seconds.
     pub fn set_timed_metadata_id3_period(mut self, input: std::option::Option<i32>) -> Self {
-        self.timed_metadata_id3_period = input; self
+        self.timed_metadata_id3_period = input;
+        self
     }
     /// Consumes the builder and constructs a [`UdpGroupSettings`](crate::types::UdpGroupSettings).
     pub fn build(self) -> crate::types::UdpGroupSettings {
         crate::types::UdpGroupSettings {
-            input_loss_action: self.input_loss_action
-            ,
-            timed_metadata_id3_frame: self.timed_metadata_id3_frame
-            ,
-            timed_metadata_id3_period: self.timed_metadata_id3_period
-                .unwrap_or_default()
-            ,
+            input_loss_action: self.input_loss_action,
+            timed_metadata_id3_frame: self.timed_metadata_id3_frame,
+            timed_metadata_id3_period: self.timed_metadata_id3_period.unwrap_or_default(),
         }
     }
 }
-

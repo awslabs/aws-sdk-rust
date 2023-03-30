@@ -3,13 +3,14 @@
 /// <p>A cluster step consisting of a JAR file whose main function will be executed. The main function submits a job for Hadoop to execute and waits for the job to finish or fail.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct HadoopStepConfig  {
+pub struct HadoopStepConfig {
     /// <p>The path to the JAR file that runs during the step.</p>
     #[doc(hidden)]
     pub jar: std::option::Option<std::string::String>,
     /// <p>The list of Java properties that are set when the step runs. You can use these properties to pass key-value pairs to your main function.</p>
     #[doc(hidden)]
-    pub properties: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub properties:
+        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The name of the main class in the specified Java file. If not specified, the JAR file should specify a main class in its manifest file.</p>
     #[doc(hidden)]
     pub main_class: std::option::Option<std::string::String>,
@@ -19,19 +20,22 @@ pub struct HadoopStepConfig  {
 }
 impl HadoopStepConfig {
     /// <p>The path to the JAR file that runs during the step.</p>
-    pub fn jar(&self) -> std::option::Option<& str> {
+    pub fn jar(&self) -> std::option::Option<&str> {
         self.jar.as_deref()
     }
     /// <p>The list of Java properties that are set when the step runs. You can use these properties to pass key-value pairs to your main function.</p>
-    pub fn properties(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
+    pub fn properties(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
         self.properties.as_ref()
     }
     /// <p>The name of the main class in the specified Java file. If not specified, the JAR file should specify a main class in its manifest file.</p>
-    pub fn main_class(&self) -> std::option::Option<& str> {
+    pub fn main_class(&self) -> std::option::Option<&str> {
         self.main_class.as_deref()
     }
     /// <p>The list of command line arguments to pass to the JAR file's main function for execution.</p>
-    pub fn args(&self) -> std::option::Option<& [std::string::String]> {
+    pub fn args(&self) -> std::option::Option<&[std::string::String]> {
         self.args.as_deref()
     }
 }
@@ -47,7 +51,8 @@ impl HadoopStepConfig {
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct HadoopStepConfigBuilder {
     pub(crate) jar: std::option::Option<std::string::String>,
-    pub(crate) properties: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub(crate) properties:
+        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     pub(crate) main_class: std::option::Option<std::string::String>,
     pub(crate) args: std::option::Option<std::vec::Vec<std::string::String>>,
 }
@@ -59,22 +64,33 @@ impl HadoopStepConfigBuilder {
     }
     /// <p>The path to the JAR file that runs during the step.</p>
     pub fn set_jar(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.jar = input; self
+        self.jar = input;
+        self
     }
     /// Adds a key-value pair to `properties`.
     ///
     /// To override the contents of this collection use [`set_properties`](Self::set_properties).
     ///
     /// <p>The list of Java properties that are set when the step runs. You can use these properties to pass key-value pairs to your main function.</p>
-    pub fn properties(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
+    pub fn properties(
+        mut self,
+        k: impl Into<std::string::String>,
+        v: impl Into<std::string::String>,
+    ) -> Self {
         let mut hash_map = self.properties.unwrap_or_default();
-                        hash_map.insert(k.into(), v.into());
-                        self.properties = Some(hash_map);
-                        self
+        hash_map.insert(k.into(), v.into());
+        self.properties = Some(hash_map);
+        self
     }
     /// <p>The list of Java properties that are set when the step runs. You can use these properties to pass key-value pairs to your main function.</p>
-    pub fn set_properties(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
-        self.properties = input; self
+    pub fn set_properties(
+        mut self,
+        input: std::option::Option<
+            std::collections::HashMap<std::string::String, std::string::String>,
+        >,
+    ) -> Self {
+        self.properties = input;
+        self
     }
     /// <p>The name of the main class in the specified Java file. If not specified, the JAR file should specify a main class in its manifest file.</p>
     pub fn main_class(mut self, input: impl Into<std::string::String>) -> Self {
@@ -83,7 +99,8 @@ impl HadoopStepConfigBuilder {
     }
     /// <p>The name of the main class in the specified Java file. If not specified, the JAR file should specify a main class in its manifest file.</p>
     pub fn set_main_class(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.main_class = input; self
+        self.main_class = input;
+        self
     }
     /// Appends an item to `args`.
     ///
@@ -92,26 +109,25 @@ impl HadoopStepConfigBuilder {
     /// <p>The list of command line arguments to pass to the JAR file's main function for execution.</p>
     pub fn args(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.args.unwrap_or_default();
-                        v.push(input.into());
-                        self.args = Some(v);
-                        self
+        v.push(input.into());
+        self.args = Some(v);
+        self
     }
     /// <p>The list of command line arguments to pass to the JAR file's main function for execution.</p>
-    pub fn set_args(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-        self.args = input; self
+    pub fn set_args(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
+        self.args = input;
+        self
     }
     /// Consumes the builder and constructs a [`HadoopStepConfig`](crate::types::HadoopStepConfig).
     pub fn build(self) -> crate::types::HadoopStepConfig {
         crate::types::HadoopStepConfig {
-            jar: self.jar
-            ,
-            properties: self.properties
-            ,
-            main_class: self.main_class
-            ,
-            args: self.args
-            ,
+            jar: self.jar,
+            properties: self.properties,
+            main_class: self.main_class,
+            args: self.args,
         }
     }
 }
-

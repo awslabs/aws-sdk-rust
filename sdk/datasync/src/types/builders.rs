@@ -42,4 +42,3 @@ pub use crate::types::_fsx_protocol_nfs::FsxProtocolNfsBuilder;
 pub use crate::types::_ec2_config::Ec2ConfigBuilder;
 
 pub use crate::types::_private_link_config::PrivateLinkConfigBuilder;
-

@@ -3,7 +3,7 @@
 /// <p>An image summary.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ImageSummary  {
+pub struct ImageSummary {
     /// <p>The Amazon Resource Name (ARN) of the image.</p>
     #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
@@ -36,12 +36,13 @@ pub struct ImageSummary  {
     pub output_resources: std::option::Option<crate::types::OutputResources>,
     /// <p>The tags that apply to this image.</p>
     #[doc(hidden)]
-    pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
-    /// <p>Indicates the type of build that created this image. The build can be initiated in the following ways:</p> 
-    /// <ul> 
-    /// <li> <p> <b>USER_INITIATED</b> – A manual pipeline build request.</p> </li> 
-    /// <li> <p> <b>SCHEDULED</b> – A pipeline build initiated by a cron expression in the Image Builder pipeline, or from EventBridge.</p> </li> 
-    /// <li> <p> <b>IMPORT</b> – A VM import created the image to use as the base image for the recipe.</p> </li> 
+    pub tags:
+        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    /// <p>Indicates the type of build that created this image. The build can be initiated in the following ways:</p>
+    /// <ul>
+    /// <li> <p> <b>USER_INITIATED</b> – A manual pipeline build request.</p> </li>
+    /// <li> <p> <b>SCHEDULED</b> – A pipeline build initiated by a cron expression in the Image Builder pipeline, or from EventBridge.</p> </li>
+    /// <li> <p> <b>IMPORT</b> – A VM import created the image to use as the base image for the recipe.</p> </li>
     /// </ul>
     #[doc(hidden)]
     pub build_type: std::option::Option<crate::types::BuildType>,
@@ -51,60 +52,63 @@ pub struct ImageSummary  {
 }
 impl ImageSummary {
     /// <p>The Amazon Resource Name (ARN) of the image.</p>
-    pub fn arn(&self) -> std::option::Option<& str> {
+    pub fn arn(&self) -> std::option::Option<&str> {
         self.arn.as_deref()
     }
     /// <p>The name of the image.</p>
-    pub fn name(&self) -> std::option::Option<& str> {
+    pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>Specifies whether this image produces an AMI or a container image.</p>
-    pub fn r#type(&self) -> std::option::Option<& crate::types::ImageType> {
+    pub fn r#type(&self) -> std::option::Option<&crate::types::ImageType> {
         self.r#type.as_ref()
     }
     /// <p>The version of the image.</p>
-    pub fn version(&self) -> std::option::Option<& str> {
+    pub fn version(&self) -> std::option::Option<&str> {
         self.version.as_deref()
     }
     /// <p>The image operating system platform, such as Linux or Windows.</p>
-    pub fn platform(&self) -> std::option::Option<& crate::types::Platform> {
+    pub fn platform(&self) -> std::option::Option<&crate::types::Platform> {
         self.platform.as_ref()
     }
     /// <p>The operating system version of the instances that launch from this image. For example, Amazon Linux 2, Ubuntu 18, or Microsoft Windows Server 2019.</p>
-    pub fn os_version(&self) -> std::option::Option<& str> {
+    pub fn os_version(&self) -> std::option::Option<&str> {
         self.os_version.as_deref()
     }
     /// <p>The state of the image.</p>
-    pub fn state(&self) -> std::option::Option<& crate::types::ImageState> {
+    pub fn state(&self) -> std::option::Option<&crate::types::ImageState> {
         self.state.as_ref()
     }
     /// <p>The owner of the image.</p>
-    pub fn owner(&self) -> std::option::Option<& str> {
+    pub fn owner(&self) -> std::option::Option<&str> {
         self.owner.as_deref()
     }
     /// <p>The date on which Image Builder created this image.</p>
-    pub fn date_created(&self) -> std::option::Option<& str> {
+    pub fn date_created(&self) -> std::option::Option<&str> {
         self.date_created.as_deref()
     }
     /// <p>The output resources that Image Builder produced when it created this image.</p>
-    pub fn output_resources(&self) -> std::option::Option<& crate::types::OutputResources> {
+    pub fn output_resources(&self) -> std::option::Option<&crate::types::OutputResources> {
         self.output_resources.as_ref()
     }
     /// <p>The tags that apply to this image.</p>
-    pub fn tags(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
         self.tags.as_ref()
     }
-    /// <p>Indicates the type of build that created this image. The build can be initiated in the following ways:</p> 
-    /// <ul> 
-    /// <li> <p> <b>USER_INITIATED</b> – A manual pipeline build request.</p> </li> 
-    /// <li> <p> <b>SCHEDULED</b> – A pipeline build initiated by a cron expression in the Image Builder pipeline, or from EventBridge.</p> </li> 
-    /// <li> <p> <b>IMPORT</b> – A VM import created the image to use as the base image for the recipe.</p> </li> 
+    /// <p>Indicates the type of build that created this image. The build can be initiated in the following ways:</p>
+    /// <ul>
+    /// <li> <p> <b>USER_INITIATED</b> – A manual pipeline build request.</p> </li>
+    /// <li> <p> <b>SCHEDULED</b> – A pipeline build initiated by a cron expression in the Image Builder pipeline, or from EventBridge.</p> </li>
+    /// <li> <p> <b>IMPORT</b> – A VM import created the image to use as the base image for the recipe.</p> </li>
     /// </ul>
-    pub fn build_type(&self) -> std::option::Option<& crate::types::BuildType> {
+    pub fn build_type(&self) -> std::option::Option<&crate::types::BuildType> {
         self.build_type.as_ref()
     }
     /// <p>The origin of the base image that Image Builder used to build this image.</p>
-    pub fn image_source(&self) -> std::option::Option<& crate::types::ImageSource> {
+    pub fn image_source(&self) -> std::option::Option<&crate::types::ImageSource> {
         self.image_source.as_ref()
     }
 }
@@ -129,7 +133,8 @@ pub struct ImageSummaryBuilder {
     pub(crate) owner: std::option::Option<std::string::String>,
     pub(crate) date_created: std::option::Option<std::string::String>,
     pub(crate) output_resources: std::option::Option<crate::types::OutputResources>,
-    pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub(crate) tags:
+        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     pub(crate) build_type: std::option::Option<crate::types::BuildType>,
     pub(crate) image_source: std::option::Option<crate::types::ImageSource>,
 }
@@ -141,7 +146,8 @@ impl ImageSummaryBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the image.</p>
     pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.arn = input; self
+        self.arn = input;
+        self
     }
     /// <p>The name of the image.</p>
     pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -150,7 +156,8 @@ impl ImageSummaryBuilder {
     }
     /// <p>The name of the image.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input; self
+        self.name = input;
+        self
     }
     /// <p>Specifies whether this image produces an AMI or a container image.</p>
     pub fn r#type(mut self, input: crate::types::ImageType) -> Self {
@@ -159,7 +166,8 @@ impl ImageSummaryBuilder {
     }
     /// <p>Specifies whether this image produces an AMI or a container image.</p>
     pub fn set_type(mut self, input: std::option::Option<crate::types::ImageType>) -> Self {
-        self.r#type = input; self
+        self.r#type = input;
+        self
     }
     /// <p>The version of the image.</p>
     pub fn version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -168,7 +176,8 @@ impl ImageSummaryBuilder {
     }
     /// <p>The version of the image.</p>
     pub fn set_version(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.version = input; self
+        self.version = input;
+        self
     }
     /// <p>The image operating system platform, such as Linux or Windows.</p>
     pub fn platform(mut self, input: crate::types::Platform) -> Self {
@@ -177,7 +186,8 @@ impl ImageSummaryBuilder {
     }
     /// <p>The image operating system platform, such as Linux or Windows.</p>
     pub fn set_platform(mut self, input: std::option::Option<crate::types::Platform>) -> Self {
-        self.platform = input; self
+        self.platform = input;
+        self
     }
     /// <p>The operating system version of the instances that launch from this image. For example, Amazon Linux 2, Ubuntu 18, or Microsoft Windows Server 2019.</p>
     pub fn os_version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -186,7 +196,8 @@ impl ImageSummaryBuilder {
     }
     /// <p>The operating system version of the instances that launch from this image. For example, Amazon Linux 2, Ubuntu 18, or Microsoft Windows Server 2019.</p>
     pub fn set_os_version(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.os_version = input; self
+        self.os_version = input;
+        self
     }
     /// <p>The state of the image.</p>
     pub fn state(mut self, input: crate::types::ImageState) -> Self {
@@ -195,7 +206,8 @@ impl ImageSummaryBuilder {
     }
     /// <p>The state of the image.</p>
     pub fn set_state(mut self, input: std::option::Option<crate::types::ImageState>) -> Self {
-        self.state = input; self
+        self.state = input;
+        self
     }
     /// <p>The owner of the image.</p>
     pub fn owner(mut self, input: impl Into<std::string::String>) -> Self {
@@ -204,7 +216,8 @@ impl ImageSummaryBuilder {
     }
     /// <p>The owner of the image.</p>
     pub fn set_owner(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.owner = input; self
+        self.owner = input;
+        self
     }
     /// <p>The date on which Image Builder created this image.</p>
     pub fn date_created(mut self, input: impl Into<std::string::String>) -> Self {
@@ -213,7 +226,8 @@ impl ImageSummaryBuilder {
     }
     /// <p>The date on which Image Builder created this image.</p>
     pub fn set_date_created(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.date_created = input; self
+        self.date_created = input;
+        self
     }
     /// <p>The output resources that Image Builder produced when it created this image.</p>
     pub fn output_resources(mut self, input: crate::types::OutputResources) -> Self {
@@ -221,42 +235,57 @@ impl ImageSummaryBuilder {
         self
     }
     /// <p>The output resources that Image Builder produced when it created this image.</p>
-    pub fn set_output_resources(mut self, input: std::option::Option<crate::types::OutputResources>) -> Self {
-        self.output_resources = input; self
+    pub fn set_output_resources(
+        mut self,
+        input: std::option::Option<crate::types::OutputResources>,
+    ) -> Self {
+        self.output_resources = input;
+        self
     }
     /// Adds a key-value pair to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// <p>The tags that apply to this image.</p>
-    pub fn tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
+    pub fn tags(
+        mut self,
+        k: impl Into<std::string::String>,
+        v: impl Into<std::string::String>,
+    ) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
-                        hash_map.insert(k.into(), v.into());
-                        self.tags = Some(hash_map);
-                        self
+        hash_map.insert(k.into(), v.into());
+        self.tags = Some(hash_map);
+        self
     }
     /// <p>The tags that apply to this image.</p>
-    pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
-        self.tags = input; self
+    pub fn set_tags(
+        mut self,
+        input: std::option::Option<
+            std::collections::HashMap<std::string::String, std::string::String>,
+        >,
+    ) -> Self {
+        self.tags = input;
+        self
     }
-    /// <p>Indicates the type of build that created this image. The build can be initiated in the following ways:</p> 
-    /// <ul> 
-    /// <li> <p> <b>USER_INITIATED</b> – A manual pipeline build request.</p> </li> 
-    /// <li> <p> <b>SCHEDULED</b> – A pipeline build initiated by a cron expression in the Image Builder pipeline, or from EventBridge.</p> </li> 
-    /// <li> <p> <b>IMPORT</b> – A VM import created the image to use as the base image for the recipe.</p> </li> 
+    /// <p>Indicates the type of build that created this image. The build can be initiated in the following ways:</p>
+    /// <ul>
+    /// <li> <p> <b>USER_INITIATED</b> – A manual pipeline build request.</p> </li>
+    /// <li> <p> <b>SCHEDULED</b> – A pipeline build initiated by a cron expression in the Image Builder pipeline, or from EventBridge.</p> </li>
+    /// <li> <p> <b>IMPORT</b> – A VM import created the image to use as the base image for the recipe.</p> </li>
     /// </ul>
     pub fn build_type(mut self, input: crate::types::BuildType) -> Self {
         self.build_type = Some(input);
         self
     }
-    /// <p>Indicates the type of build that created this image. The build can be initiated in the following ways:</p> 
-    /// <ul> 
-    /// <li> <p> <b>USER_INITIATED</b> – A manual pipeline build request.</p> </li> 
-    /// <li> <p> <b>SCHEDULED</b> – A pipeline build initiated by a cron expression in the Image Builder pipeline, or from EventBridge.</p> </li> 
-    /// <li> <p> <b>IMPORT</b> – A VM import created the image to use as the base image for the recipe.</p> </li> 
+    /// <p>Indicates the type of build that created this image. The build can be initiated in the following ways:</p>
+    /// <ul>
+    /// <li> <p> <b>USER_INITIATED</b> – A manual pipeline build request.</p> </li>
+    /// <li> <p> <b>SCHEDULED</b> – A pipeline build initiated by a cron expression in the Image Builder pipeline, or from EventBridge.</p> </li>
+    /// <li> <p> <b>IMPORT</b> – A VM import created the image to use as the base image for the recipe.</p> </li>
     /// </ul>
     pub fn set_build_type(mut self, input: std::option::Option<crate::types::BuildType>) -> Self {
-        self.build_type = input; self
+        self.build_type = input;
+        self
     }
     /// <p>The origin of the base image that Image Builder used to build this image.</p>
     pub fn image_source(mut self, input: crate::types::ImageSource) -> Self {
@@ -264,39 +293,29 @@ impl ImageSummaryBuilder {
         self
     }
     /// <p>The origin of the base image that Image Builder used to build this image.</p>
-    pub fn set_image_source(mut self, input: std::option::Option<crate::types::ImageSource>) -> Self {
-        self.image_source = input; self
+    pub fn set_image_source(
+        mut self,
+        input: std::option::Option<crate::types::ImageSource>,
+    ) -> Self {
+        self.image_source = input;
+        self
     }
     /// Consumes the builder and constructs a [`ImageSummary`](crate::types::ImageSummary).
     pub fn build(self) -> crate::types::ImageSummary {
         crate::types::ImageSummary {
-            arn: self.arn
-            ,
-            name: self.name
-            ,
-            r#type: self.r#type
-            ,
-            version: self.version
-            ,
-            platform: self.platform
-            ,
-            os_version: self.os_version
-            ,
-            state: self.state
-            ,
-            owner: self.owner
-            ,
-            date_created: self.date_created
-            ,
-            output_resources: self.output_resources
-            ,
-            tags: self.tags
-            ,
-            build_type: self.build_type
-            ,
-            image_source: self.image_source
-            ,
+            arn: self.arn,
+            name: self.name,
+            r#type: self.r#type,
+            version: self.version,
+            platform: self.platform,
+            os_version: self.os_version,
+            state: self.state,
+            owner: self.owner,
+            date_created: self.date_created,
+            output_resources: self.output_resources,
+            tags: self.tags,
+            build_type: self.build_type,
+            image_source: self.image_source,
         }
     }
 }
-

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeNetworkAclsOutput  {
+pub struct DescribeNetworkAclsOutput {
     /// <p>Information about one or more network ACLs.</p>
     #[doc(hidden)]
     pub network_acls: std::option::Option<std::vec::Vec<crate::types::NetworkAcl>>,
@@ -13,23 +13,25 @@ pub struct DescribeNetworkAclsOutput  {
 }
 impl DescribeNetworkAclsOutput {
     /// <p>Information about one or more network ACLs.</p>
-    pub fn network_acls(&self) -> std::option::Option<& [crate::types::NetworkAcl]> {
+    pub fn network_acls(&self) -> std::option::Option<&[crate::types::NetworkAcl]> {
         self.network_acls.as_deref()
     }
     /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for DescribeNetworkAclsOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl DescribeNetworkAclsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeNetworkAclsOutput`](crate::operation::describe_network_acls::DescribeNetworkAclsOutput).
-    pub fn builder() -> crate::operation::describe_network_acls::builders::DescribeNetworkAclsOutputBuilder {
-        crate::operation::describe_network_acls::builders::DescribeNetworkAclsOutputBuilder::default()
+    pub fn builder(
+    ) -> crate::operation::describe_network_acls::builders::DescribeNetworkAclsOutputBuilder {
+        crate::operation::describe_network_acls::builders::DescribeNetworkAclsOutputBuilder::default(
+        )
     }
 }
 
@@ -49,13 +51,17 @@ impl DescribeNetworkAclsOutputBuilder {
     /// <p>Information about one or more network ACLs.</p>
     pub fn network_acls(mut self, input: crate::types::NetworkAcl) -> Self {
         let mut v = self.network_acls.unwrap_or_default();
-                        v.push(input);
-                        self.network_acls = Some(v);
-                        self
+        v.push(input);
+        self.network_acls = Some(v);
+        self
     }
     /// <p>Information about one or more network ACLs.</p>
-    pub fn set_network_acls(mut self, input: std::option::Option<std::vec::Vec<crate::types::NetworkAcl>>) -> Self {
-        self.network_acls = input; self
+    pub fn set_network_acls(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::NetworkAcl>>,
+    ) -> Self {
+        self.network_acls = input;
+        self
     }
     /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -64,26 +70,24 @@ impl DescribeNetworkAclsOutputBuilder {
     }
     /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input; self
+        self.next_token = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`DescribeNetworkAclsOutput`](crate::operation::describe_network_acls::DescribeNetworkAclsOutput).
     pub fn build(self) -> crate::operation::describe_network_acls::DescribeNetworkAclsOutput {
         crate::operation::describe_network_acls::DescribeNetworkAclsOutput {
-            network_acls: self.network_acls
-            ,
-            next_token: self.next_token
-            ,
+            network_acls: self.network_acls,
+            next_token: self.next_token,
             _request_id: self._request_id,
         }
     }
 }
-

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeGameServerInstancesInput  {
+pub struct DescribeGameServerInstancesInput {
     /// <p>A unique identifier for the game server group. Use either the name or ARN value.</p>
     #[doc(hidden)]
     pub game_server_group_name: std::option::Option<std::string::String>,
@@ -18,11 +18,11 @@ pub struct DescribeGameServerInstancesInput  {
 }
 impl DescribeGameServerInstancesInput {
     /// <p>A unique identifier for the game server group. Use either the name or ARN value.</p>
-    pub fn game_server_group_name(&self) -> std::option::Option<& str> {
+    pub fn game_server_group_name(&self) -> std::option::Option<&str> {
         self.game_server_group_name.as_deref()
     }
     /// <p>The Amazon EC2 instance IDs that you want to retrieve status on. Amazon EC2 instance IDs use a 17-character format, for example: <code>i-1234567890abcdef0</code>. To retrieve all instances in the game server group, leave this parameter empty. </p>
-    pub fn instance_ids(&self) -> std::option::Option<& [std::string::String]> {
+    pub fn instance_ids(&self) -> std::option::Option<&[std::string::String]> {
         self.instance_ids.as_deref()
     }
     /// <p>The maximum number of results to return. Use this parameter with <code>NextToken</code> to get results as a set of sequential pages.</p>
@@ -30,13 +30,13 @@ impl DescribeGameServerInstancesInput {
         self.limit
     }
     /// <p>A token that indicates the start of the next sequential page of results. Use the token that is returned with a previous call to this operation. To start at the beginning of the result set, do not specify a value.</p>
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
 }
 impl DescribeGameServerInstancesInput {
     /// Creates a new builder-style object to manufacture [`DescribeGameServerInstancesInput`](crate::operation::describe_game_server_instances::DescribeGameServerInstancesInput).
-    pub fn builder() -> crate::operation::describe_game_server_instances::builders::DescribeGameServerInstancesInputBuilder {
+    pub fn builder() -> crate::operation::describe_game_server_instances::builders::DescribeGameServerInstancesInputBuilder{
         crate::operation::describe_game_server_instances::builders::DescribeGameServerInstancesInputBuilder::default()
     }
 }
@@ -57,8 +57,12 @@ impl DescribeGameServerInstancesInputBuilder {
         self
     }
     /// <p>A unique identifier for the game server group. Use either the name or ARN value.</p>
-    pub fn set_game_server_group_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.game_server_group_name = input; self
+    pub fn set_game_server_group_name(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.game_server_group_name = input;
+        self
     }
     /// Appends an item to `instance_ids`.
     ///
@@ -67,13 +71,17 @@ impl DescribeGameServerInstancesInputBuilder {
     /// <p>The Amazon EC2 instance IDs that you want to retrieve status on. Amazon EC2 instance IDs use a 17-character format, for example: <code>i-1234567890abcdef0</code>. To retrieve all instances in the game server group, leave this parameter empty. </p>
     pub fn instance_ids(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.instance_ids.unwrap_or_default();
-                        v.push(input.into());
-                        self.instance_ids = Some(v);
-                        self
+        v.push(input.into());
+        self.instance_ids = Some(v);
+        self
     }
     /// <p>The Amazon EC2 instance IDs that you want to retrieve status on. Amazon EC2 instance IDs use a 17-character format, for example: <code>i-1234567890abcdef0</code>. To retrieve all instances in the game server group, leave this parameter empty. </p>
-    pub fn set_instance_ids(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-        self.instance_ids = input; self
+    pub fn set_instance_ids(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
+        self.instance_ids = input;
+        self
     }
     /// <p>The maximum number of results to return. Use this parameter with <code>NextToken</code> to get results as a set of sequential pages.</p>
     pub fn limit(mut self, input: i32) -> Self {
@@ -82,7 +90,8 @@ impl DescribeGameServerInstancesInputBuilder {
     }
     /// <p>The maximum number of results to return. Use this parameter with <code>NextToken</code> to get results as a set of sequential pages.</p>
     pub fn set_limit(mut self, input: std::option::Option<i32>) -> Self {
-        self.limit = input; self
+        self.limit = input;
+        self
     }
     /// <p>A token that indicates the start of the next sequential page of results. Use the token that is returned with a previous call to this operation. To start at the beginning of the result set, do not specify a value.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -91,22 +100,23 @@ impl DescribeGameServerInstancesInputBuilder {
     }
     /// <p>A token that indicates the start of the next sequential page of results. Use the token that is returned with a previous call to this operation. To start at the beginning of the result set, do not specify a value.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input; self
+        self.next_token = input;
+        self
     }
     /// Consumes the builder and constructs a [`DescribeGameServerInstancesInput`](crate::operation::describe_game_server_instances::DescribeGameServerInstancesInput).
-    pub fn build(self) -> Result<crate::operation::describe_game_server_instances::DescribeGameServerInstancesInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::describe_game_server_instances::DescribeGameServerInstancesInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::describe_game_server_instances::DescribeGameServerInstancesInput {
-                game_server_group_name: self.game_server_group_name
-                ,
-                instance_ids: self.instance_ids
-                ,
-                limit: self.limit
-                ,
-                next_token: self.next_token
-                ,
-            }
+                game_server_group_name: self.game_server_group_name,
+                instance_ids: self.instance_ids,
+                limit: self.limit,
+                next_token: self.next_token,
+            },
         )
     }
 }
-

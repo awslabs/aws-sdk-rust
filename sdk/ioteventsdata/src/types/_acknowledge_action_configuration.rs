@@ -3,14 +3,14 @@
 /// <p>Contains the configuration information of an acknowledge action.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AcknowledgeActionConfiguration  {
+pub struct AcknowledgeActionConfiguration {
     /// <p>The note that you can leave when you acknowledge the alarm.</p>
     #[doc(hidden)]
     pub note: std::option::Option<std::string::String>,
 }
 impl AcknowledgeActionConfiguration {
     /// <p>The note that you can leave when you acknowledge the alarm.</p>
-    pub fn note(&self) -> std::option::Option<& str> {
+    pub fn note(&self) -> std::option::Option<&str> {
         self.note.as_deref()
     }
 }
@@ -35,14 +35,11 @@ impl AcknowledgeActionConfigurationBuilder {
     }
     /// <p>The note that you can leave when you acknowledge the alarm.</p>
     pub fn set_note(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.note = input; self
+        self.note = input;
+        self
     }
     /// Consumes the builder and constructs a [`AcknowledgeActionConfiguration`](crate::types::AcknowledgeActionConfiguration).
     pub fn build(self) -> crate::types::AcknowledgeActionConfiguration {
-        crate::types::AcknowledgeActionConfiguration {
-            note: self.note
-            ,
-        }
+        crate::types::AcknowledgeActionConfiguration { note: self.note }
     }
 }
-

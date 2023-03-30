@@ -3,7 +3,7 @@
 /// <p>Contains information about the administrator account and invitation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Master  {
+pub struct Master {
     /// <p>The ID of the account used as the administrator account.</p>
     #[doc(hidden)]
     pub account_id: std::option::Option<std::string::String>,
@@ -19,19 +19,19 @@ pub struct Master  {
 }
 impl Master {
     /// <p>The ID of the account used as the administrator account.</p>
-    pub fn account_id(&self) -> std::option::Option<& str> {
+    pub fn account_id(&self) -> std::option::Option<&str> {
         self.account_id.as_deref()
     }
     /// <p>The value used to validate the administrator account to the member account.</p>
-    pub fn invitation_id(&self) -> std::option::Option<& str> {
+    pub fn invitation_id(&self) -> std::option::Option<&str> {
         self.invitation_id.as_deref()
     }
     /// <p>The status of the relationship between the administrator and member accounts.</p>
-    pub fn relationship_status(&self) -> std::option::Option<& str> {
+    pub fn relationship_status(&self) -> std::option::Option<&str> {
         self.relationship_status.as_deref()
     }
     /// <p>The timestamp when the invitation was sent.</p>
-    pub fn invited_at(&self) -> std::option::Option<& str> {
+    pub fn invited_at(&self) -> std::option::Option<&str> {
         self.invited_at.as_deref()
     }
 }
@@ -59,7 +59,8 @@ impl MasterBuilder {
     }
     /// <p>The ID of the account used as the administrator account.</p>
     pub fn set_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.account_id = input; self
+        self.account_id = input;
+        self
     }
     /// <p>The value used to validate the administrator account to the member account.</p>
     pub fn invitation_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -68,7 +69,8 @@ impl MasterBuilder {
     }
     /// <p>The value used to validate the administrator account to the member account.</p>
     pub fn set_invitation_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.invitation_id = input; self
+        self.invitation_id = input;
+        self
     }
     /// <p>The status of the relationship between the administrator and member accounts.</p>
     pub fn relationship_status(mut self, input: impl Into<std::string::String>) -> Self {
@@ -76,8 +78,12 @@ impl MasterBuilder {
         self
     }
     /// <p>The status of the relationship between the administrator and member accounts.</p>
-    pub fn set_relationship_status(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.relationship_status = input; self
+    pub fn set_relationship_status(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.relationship_status = input;
+        self
     }
     /// <p>The timestamp when the invitation was sent.</p>
     pub fn invited_at(mut self, input: impl Into<std::string::String>) -> Self {
@@ -86,20 +92,16 @@ impl MasterBuilder {
     }
     /// <p>The timestamp when the invitation was sent.</p>
     pub fn set_invited_at(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.invited_at = input; self
+        self.invited_at = input;
+        self
     }
     /// Consumes the builder and constructs a [`Master`](crate::types::Master).
     pub fn build(self) -> crate::types::Master {
         crate::types::Master {
-            account_id: self.account_id
-            ,
-            invitation_id: self.invitation_id
-            ,
-            relationship_status: self.relationship_status
-            ,
-            invited_at: self.invited_at
-            ,
+            account_id: self.account_id,
+            invitation_id: self.invitation_id,
+            relationship_status: self.relationship_status,
+            invited_at: self.invited_at,
         }
     }
 }
-

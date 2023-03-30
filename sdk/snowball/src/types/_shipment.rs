@@ -3,23 +3,23 @@
 /// <p>The <code>Status</code> and <code>TrackingNumber</code> information for an inbound or outbound shipment.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Shipment  {
+pub struct Shipment {
     /// <p>Status information for a shipment.</p>
     #[doc(hidden)]
     pub status: std::option::Option<std::string::String>,
-    /// <p>The tracking number for this job. Using this tracking number with your region's carrier's website, you can track a Snow device as the carrier transports it.</p> 
+    /// <p>The tracking number for this job. Using this tracking number with your region's carrier's website, you can track a Snow device as the carrier transports it.</p>
     /// <p>For India, the carrier is Amazon Logistics. For all other regions, UPS is the carrier.</p>
     #[doc(hidden)]
     pub tracking_number: std::option::Option<std::string::String>,
 }
 impl Shipment {
     /// <p>Status information for a shipment.</p>
-    pub fn status(&self) -> std::option::Option<& str> {
+    pub fn status(&self) -> std::option::Option<&str> {
         self.status.as_deref()
     }
-    /// <p>The tracking number for this job. Using this tracking number with your region's carrier's website, you can track a Snow device as the carrier transports it.</p> 
+    /// <p>The tracking number for this job. Using this tracking number with your region's carrier's website, you can track a Snow device as the carrier transports it.</p>
     /// <p>For India, the carrier is Amazon Logistics. For all other regions, UPS is the carrier.</p>
-    pub fn tracking_number(&self) -> std::option::Option<& str> {
+    pub fn tracking_number(&self) -> std::option::Option<&str> {
         self.tracking_number.as_deref()
     }
 }
@@ -45,27 +45,26 @@ impl ShipmentBuilder {
     }
     /// <p>Status information for a shipment.</p>
     pub fn set_status(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.status = input; self
+        self.status = input;
+        self
     }
-    /// <p>The tracking number for this job. Using this tracking number with your region's carrier's website, you can track a Snow device as the carrier transports it.</p> 
+    /// <p>The tracking number for this job. Using this tracking number with your region's carrier's website, you can track a Snow device as the carrier transports it.</p>
     /// <p>For India, the carrier is Amazon Logistics. For all other regions, UPS is the carrier.</p>
     pub fn tracking_number(mut self, input: impl Into<std::string::String>) -> Self {
         self.tracking_number = Some(input.into());
         self
     }
-    /// <p>The tracking number for this job. Using this tracking number with your region's carrier's website, you can track a Snow device as the carrier transports it.</p> 
+    /// <p>The tracking number for this job. Using this tracking number with your region's carrier's website, you can track a Snow device as the carrier transports it.</p>
     /// <p>For India, the carrier is Amazon Logistics. For all other regions, UPS is the carrier.</p>
     pub fn set_tracking_number(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.tracking_number = input; self
+        self.tracking_number = input;
+        self
     }
     /// Consumes the builder and constructs a [`Shipment`](crate::types::Shipment).
     pub fn build(self) -> crate::types::Shipment {
         crate::types::Shipment {
-            status: self.status
-            ,
-            tracking_number: self.tracking_number
-            ,
+            status: self.status,
+            tracking_number: self.tracking_number,
         }
     }
 }
-

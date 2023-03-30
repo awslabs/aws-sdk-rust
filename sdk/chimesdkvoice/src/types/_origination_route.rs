@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct OriginationRoute  {
+pub struct OriginationRoute {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub host: std::option::Option<std::string::String>,
@@ -21,7 +21,7 @@ pub struct OriginationRoute  {
 }
 impl OriginationRoute {
     #[allow(missing_docs)] // documentation missing in model
-    pub fn host(&self) -> std::option::Option<& str> {
+    pub fn host(&self) -> std::option::Option<&str> {
         self.host.as_deref()
     }
     #[allow(missing_docs)] // documentation missing in model
@@ -29,7 +29,7 @@ impl OriginationRoute {
         self.port
     }
     #[allow(missing_docs)] // documentation missing in model
-    pub fn protocol(&self) -> std::option::Option<& crate::types::OriginationRouteProtocol> {
+    pub fn protocol(&self) -> std::option::Option<&crate::types::OriginationRouteProtocol> {
         self.protocol.as_ref()
     }
     #[allow(missing_docs)] // documentation missing in model
@@ -66,7 +66,8 @@ impl OriginationRouteBuilder {
     }
     #[allow(missing_docs)] // documentation missing in model
     pub fn set_host(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.host = input; self
+        self.host = input;
+        self
     }
     #[allow(missing_docs)] // documentation missing in model
     pub fn port(mut self, input: i32) -> Self {
@@ -75,7 +76,8 @@ impl OriginationRouteBuilder {
     }
     #[allow(missing_docs)] // documentation missing in model
     pub fn set_port(mut self, input: std::option::Option<i32>) -> Self {
-        self.port = input; self
+        self.port = input;
+        self
     }
     #[allow(missing_docs)] // documentation missing in model
     pub fn protocol(mut self, input: crate::types::OriginationRouteProtocol) -> Self {
@@ -83,8 +85,12 @@ impl OriginationRouteBuilder {
         self
     }
     #[allow(missing_docs)] // documentation missing in model
-    pub fn set_protocol(mut self, input: std::option::Option<crate::types::OriginationRouteProtocol>) -> Self {
-        self.protocol = input; self
+    pub fn set_protocol(
+        mut self,
+        input: std::option::Option<crate::types::OriginationRouteProtocol>,
+    ) -> Self {
+        self.protocol = input;
+        self
     }
     #[allow(missing_docs)] // documentation missing in model
     pub fn priority(mut self, input: i32) -> Self {
@@ -93,7 +99,8 @@ impl OriginationRouteBuilder {
     }
     #[allow(missing_docs)] // documentation missing in model
     pub fn set_priority(mut self, input: std::option::Option<i32>) -> Self {
-        self.priority = input; self
+        self.priority = input;
+        self
     }
     #[allow(missing_docs)] // documentation missing in model
     pub fn weight(mut self, input: i32) -> Self {
@@ -102,22 +109,17 @@ impl OriginationRouteBuilder {
     }
     #[allow(missing_docs)] // documentation missing in model
     pub fn set_weight(mut self, input: std::option::Option<i32>) -> Self {
-        self.weight = input; self
+        self.weight = input;
+        self
     }
     /// Consumes the builder and constructs a [`OriginationRoute`](crate::types::OriginationRoute).
     pub fn build(self) -> crate::types::OriginationRoute {
         crate::types::OriginationRoute {
-            host: self.host
-            ,
-            port: self.port
-            ,
-            protocol: self.protocol
-            ,
-            priority: self.priority
-            ,
-            weight: self.weight
-            ,
+            host: self.host,
+            port: self.port,
+            protocol: self.protocol,
+            priority: self.priority,
+            weight: self.weight,
         }
     }
 }
-

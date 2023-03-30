@@ -3,10 +3,11 @@
 /// <p>Contains the output of DescribeSpotInstanceRequests.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeSpotInstanceRequestsOutput  {
+pub struct DescribeSpotInstanceRequestsOutput {
     /// <p>One or more Spot Instance requests.</p>
     #[doc(hidden)]
-    pub spot_instance_requests: std::option::Option<std::vec::Vec<crate::types::SpotInstanceRequest>>,
+    pub spot_instance_requests:
+        std::option::Option<std::vec::Vec<crate::types::SpotInstanceRequest>>,
     /// <p>The token to use to retrieve the next set of results. This value is <code>null</code> when there are no more results to return.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
@@ -14,22 +15,24 @@ pub struct DescribeSpotInstanceRequestsOutput  {
 }
 impl DescribeSpotInstanceRequestsOutput {
     /// <p>One or more Spot Instance requests.</p>
-    pub fn spot_instance_requests(&self) -> std::option::Option<& [crate::types::SpotInstanceRequest]> {
+    pub fn spot_instance_requests(
+        &self,
+    ) -> std::option::Option<&[crate::types::SpotInstanceRequest]> {
         self.spot_instance_requests.as_deref()
     }
     /// <p>The token to use to retrieve the next set of results. This value is <code>null</code> when there are no more results to return.</p>
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for DescribeSpotInstanceRequestsOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl DescribeSpotInstanceRequestsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeSpotInstanceRequestsOutput`](crate::operation::describe_spot_instance_requests::DescribeSpotInstanceRequestsOutput).
-    pub fn builder() -> crate::operation::describe_spot_instance_requests::builders::DescribeSpotInstanceRequestsOutputBuilder {
+    pub fn builder() -> crate::operation::describe_spot_instance_requests::builders::DescribeSpotInstanceRequestsOutputBuilder{
         crate::operation::describe_spot_instance_requests::builders::DescribeSpotInstanceRequestsOutputBuilder::default()
     }
 }
@@ -38,7 +41,8 @@ impl DescribeSpotInstanceRequestsOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct DescribeSpotInstanceRequestsOutputBuilder {
-    pub(crate) spot_instance_requests: std::option::Option<std::vec::Vec<crate::types::SpotInstanceRequest>>,
+    pub(crate) spot_instance_requests:
+        std::option::Option<std::vec::Vec<crate::types::SpotInstanceRequest>>,
     pub(crate) next_token: std::option::Option<std::string::String>,
     _request_id: Option<String>,
 }
@@ -50,13 +54,17 @@ impl DescribeSpotInstanceRequestsOutputBuilder {
     /// <p>One or more Spot Instance requests.</p>
     pub fn spot_instance_requests(mut self, input: crate::types::SpotInstanceRequest) -> Self {
         let mut v = self.spot_instance_requests.unwrap_or_default();
-                        v.push(input);
-                        self.spot_instance_requests = Some(v);
-                        self
+        v.push(input);
+        self.spot_instance_requests = Some(v);
+        self
     }
     /// <p>One or more Spot Instance requests.</p>
-    pub fn set_spot_instance_requests(mut self, input: std::option::Option<std::vec::Vec<crate::types::SpotInstanceRequest>>) -> Self {
-        self.spot_instance_requests = input; self
+    pub fn set_spot_instance_requests(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::SpotInstanceRequest>>,
+    ) -> Self {
+        self.spot_instance_requests = input;
+        self
     }
     /// <p>The token to use to retrieve the next set of results. This value is <code>null</code> when there are no more results to return.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -65,26 +73,26 @@ impl DescribeSpotInstanceRequestsOutputBuilder {
     }
     /// <p>The token to use to retrieve the next set of results. This value is <code>null</code> when there are no more results to return.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input; self
+        self.next_token = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`DescribeSpotInstanceRequestsOutput`](crate::operation::describe_spot_instance_requests::DescribeSpotInstanceRequestsOutput).
-    pub fn build(self) -> crate::operation::describe_spot_instance_requests::DescribeSpotInstanceRequestsOutput {
+    pub fn build(
+        self,
+    ) -> crate::operation::describe_spot_instance_requests::DescribeSpotInstanceRequestsOutput {
         crate::operation::describe_spot_instance_requests::DescribeSpotInstanceRequestsOutput {
-            spot_instance_requests: self.spot_instance_requests
-            ,
-            next_token: self.next_token
-            ,
+            spot_instance_requests: self.spot_instance_requests,
+            next_token: self.next_token,
             _request_id: self._request_id,
         }
     }
 }
-

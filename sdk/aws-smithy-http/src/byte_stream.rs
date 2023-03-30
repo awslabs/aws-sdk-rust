@@ -262,12 +262,14 @@ pin_project! {
 }
 
 impl ByteStream {
+    /// Create a new `ByteStream` from an [`SdkBody`].
     pub fn new(body: SdkBody) -> Self {
         Self {
             inner: Inner::new(body),
         }
     }
 
+    /// Create a new `ByteStream` from a static byte slice.
     pub fn from_static(bytes: &'static [u8]) -> Self {
         Self {
             inner: Inner::new(SdkBody::from(Bytes::from_static(bytes))),
@@ -394,6 +396,8 @@ impl ByteStream {
         tokio_util::io::StreamReader::new(self)
     }
 
+    /// Given a function to modify an [`SdkBody`], run it on the `SdkBody` inside this `Bytestream`.
+    /// returning a new `Bytestream`.
     pub fn map(self, f: impl Fn(SdkBody) -> SdkBody + Send + Sync + 'static) -> ByteStream {
         ByteStream::new(self.into_inner().map(f))
     }

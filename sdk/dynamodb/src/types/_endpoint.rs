@@ -3,7 +3,7 @@
 /// <p>An endpoint information details.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Endpoint  {
+pub struct Endpoint {
     /// <p>IP address of the endpoint.</p>
     #[doc(hidden)]
     pub address: std::option::Option<std::string::String>,
@@ -13,7 +13,7 @@ pub struct Endpoint  {
 }
 impl Endpoint {
     /// <p>IP address of the endpoint.</p>
-    pub fn address(&self) -> std::option::Option<& str> {
+    pub fn address(&self) -> std::option::Option<&str> {
         self.address.as_deref()
     }
     /// <p>Endpoint cache time to live (TTL) value.</p>
@@ -43,7 +43,8 @@ impl EndpointBuilder {
     }
     /// <p>IP address of the endpoint.</p>
     pub fn set_address(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.address = input; self
+        self.address = input;
+        self
     }
     /// <p>Endpoint cache time to live (TTL) value.</p>
     pub fn cache_period_in_minutes(mut self, input: i64) -> Self {
@@ -52,17 +53,14 @@ impl EndpointBuilder {
     }
     /// <p>Endpoint cache time to live (TTL) value.</p>
     pub fn set_cache_period_in_minutes(mut self, input: std::option::Option<i64>) -> Self {
-        self.cache_period_in_minutes = input; self
+        self.cache_period_in_minutes = input;
+        self
     }
     /// Consumes the builder and constructs a [`Endpoint`](crate::types::Endpoint).
     pub fn build(self) -> crate::types::Endpoint {
         crate::types::Endpoint {
-            address: self.address
-            ,
-            cache_period_in_minutes: self.cache_period_in_minutes
-                .unwrap_or_default()
-            ,
+            address: self.address,
+            cache_period_in_minutes: self.cache_period_in_minutes.unwrap_or_default(),
         }
     }
 }
-

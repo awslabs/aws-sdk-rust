@@ -3,7 +3,7 @@
 /// <p>Information about conflicts in a merge operation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Conflict  {
+pub struct Conflict {
     /// <p>Metadata about a conflict in a merge operation.</p>
     #[doc(hidden)]
     pub conflict_metadata: std::option::Option<crate::types::ConflictMetadata>,
@@ -13,11 +13,11 @@ pub struct Conflict  {
 }
 impl Conflict {
     /// <p>Metadata about a conflict in a merge operation.</p>
-    pub fn conflict_metadata(&self) -> std::option::Option<& crate::types::ConflictMetadata> {
+    pub fn conflict_metadata(&self) -> std::option::Option<&crate::types::ConflictMetadata> {
         self.conflict_metadata.as_ref()
     }
     /// <p>A list of hunks that contain the differences between files or lines causing the conflict.</p>
-    pub fn merge_hunks(&self) -> std::option::Option<& [crate::types::MergeHunk]> {
+    pub fn merge_hunks(&self) -> std::option::Option<&[crate::types::MergeHunk]> {
         self.merge_hunks.as_deref()
     }
 }
@@ -42,8 +42,12 @@ impl ConflictBuilder {
         self
     }
     /// <p>Metadata about a conflict in a merge operation.</p>
-    pub fn set_conflict_metadata(mut self, input: std::option::Option<crate::types::ConflictMetadata>) -> Self {
-        self.conflict_metadata = input; self
+    pub fn set_conflict_metadata(
+        mut self,
+        input: std::option::Option<crate::types::ConflictMetadata>,
+    ) -> Self {
+        self.conflict_metadata = input;
+        self
     }
     /// Appends an item to `merge_hunks`.
     ///
@@ -52,22 +56,23 @@ impl ConflictBuilder {
     /// <p>A list of hunks that contain the differences between files or lines causing the conflict.</p>
     pub fn merge_hunks(mut self, input: crate::types::MergeHunk) -> Self {
         let mut v = self.merge_hunks.unwrap_or_default();
-                        v.push(input);
-                        self.merge_hunks = Some(v);
-                        self
+        v.push(input);
+        self.merge_hunks = Some(v);
+        self
     }
     /// <p>A list of hunks that contain the differences between files or lines causing the conflict.</p>
-    pub fn set_merge_hunks(mut self, input: std::option::Option<std::vec::Vec<crate::types::MergeHunk>>) -> Self {
-        self.merge_hunks = input; self
+    pub fn set_merge_hunks(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::MergeHunk>>,
+    ) -> Self {
+        self.merge_hunks = input;
+        self
     }
     /// Consumes the builder and constructs a [`Conflict`](crate::types::Conflict).
     pub fn build(self) -> crate::types::Conflict {
         crate::types::Conflict {
-            conflict_metadata: self.conflict_metadata
-            ,
-            merge_hunks: self.merge_hunks
-            ,
+            conflict_metadata: self.conflict_metadata,
+            merge_hunks: self.merge_hunks,
         }
     }
 }
-

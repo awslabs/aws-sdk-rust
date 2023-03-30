@@ -4,57 +4,79 @@ pub use crate::operation::update_data_retention::_update_data_retention_output::
 pub use crate::operation::update_data_retention::_update_data_retention_input::UpdateDataRetentionInputBuilder;
 
 /// Fluent builder constructing a request to `UpdateDataRetention`.
-/// 
-/// <p> Increases or decreases the stream's data retention period by the value that you specify. To indicate whether you want to increase or decrease the data retention period, specify the <code>Operation</code> parameter in the request body. In the request, you must specify either the <code>StreamName</code> or the <code>StreamARN</code>. </p> <note> 
-/// <p>The retention period that you specify replaces the current value.</p> 
-/// </note> 
-/// <p>This operation requires permission for the <code>KinesisVideo:UpdateDataRetention</code> action.</p> 
-/// <p>Changing the data retention period affects the data in the stream as follows:</p> 
-/// <ul> 
-/// <li> <p>If the data retention period is increased, existing data is retained for the new retention period. For example, if the data retention period is increased from one hour to seven hours, all existing data is retained for seven hours.</p> </li> 
-/// <li> <p>If the data retention period is decreased, existing data is retained for the new retention period. For example, if the data retention period is decreased from seven hours to one hour, all existing data is retained for one hour, and any data older than one hour is deleted immediately.</p> </li> 
+///
+/// <p> Increases or decreases the stream's data retention period by the value that you specify. To indicate whether you want to increase or decrease the data retention period, specify the <code>Operation</code> parameter in the request body. In the request, you must specify either the <code>StreamName</code> or the <code>StreamARN</code>. </p> <note>
+/// <p>The retention period that you specify replaces the current value.</p>
+/// </note>
+/// <p>This operation requires permission for the <code>KinesisVideo:UpdateDataRetention</code> action.</p>
+/// <p>Changing the data retention period affects the data in the stream as follows:</p>
+/// <ul>
+/// <li> <p>If the data retention period is increased, existing data is retained for the new retention period. For example, if the data retention period is increased from one hour to seven hours, all existing data is retained for seven hours.</p> </li>
+/// <li> <p>If the data retention period is decreased, existing data is retained for the new retention period. For example, if the data retention period is decreased from seven hours to one hour, all existing data is retained for one hour, and any data older than one hour is deleted immediately.</p> </li>
 /// </ul>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct UpdateDataRetentionFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::update_data_retention::builders::UpdateDataRetentionInputBuilder
-            }
-impl UpdateDataRetentionFluentBuilder  {
+    handle: std::sync::Arc<crate::client::Handle>,
+    inner: crate::operation::update_data_retention::builders::UpdateDataRetentionInputBuilder,
+}
+impl UpdateDataRetentionFluentBuilder {
     /// Creates a new `UpdateDataRetention`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
-                    /// sent. The operation's inner [http::Request] can be modified as well.
-                    pub async fn customize(self) -> std::result::Result<
-                        crate::client::customize::CustomizableOperation<crate::operation::update_data_retention::UpdateDataRetention, aws_http::retry::AwsResponseRetryClassifier,>,
-                        aws_smithy_http::result::SdkError<crate::operation::update_data_retention::UpdateDataRetentionError>
-                    >  {
-                        let handle = self.handle.clone();
-                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-                    }
-    
-                    /// Sends the request and returns the response.
-                    ///
-                    /// If an error occurs, an `SdkError` will be returned with additional details that
-                    /// can be matched against.
-                    ///
-                    /// By default, any retryable failures will be retried twice. Retry behavior
-                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                    /// set when configuring the client.
-                    pub async fn send(self) -> std::result::Result<crate::operation::update_data_retention::UpdateDataRetentionOutput, aws_smithy_http::result::SdkError<crate::operation::update_data_retention::UpdateDataRetentionError>>
-                     {
-                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&self.handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        self.handle.client.call(op).await
-                    }
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle,
+            inner: Default::default(),
+        }
+    }
+
+    /// Consume this builder, creating a customizable operation that can be modified before being
+    /// sent. The operation's inner [http::Request] can be modified as well.
+    pub async fn customize(
+        self,
+    ) -> std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::update_data_retention::UpdateDataRetention,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::result::SdkError<
+            crate::operation::update_data_retention::UpdateDataRetentionError,
+        >,
+    > {
+        let handle = self.handle.clone();
+        let operation = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+    }
+
+    /// Sends the request and returns the response.
+    ///
+    /// If an error occurs, an `SdkError` will be returned with additional details that
+    /// can be matched against.
+    ///
+    /// By default, any retryable failures will be retried twice. Retry behavior
+    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+    /// set when configuring the client.
+    pub async fn send(
+        self,
+    ) -> std::result::Result<
+        crate::operation::update_data_retention::UpdateDataRetentionOutput,
+        aws_smithy_http::result::SdkError<
+            crate::operation::update_data_retention::UpdateDataRetentionError,
+        >,
+    > {
+        let op = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&self.handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        self.handle.client.call(op).await
+    }
     /// <p>The name of the stream whose retention period you want to change.</p>
     pub fn stream_name(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.stream_name(input.into());
@@ -91,7 +113,10 @@ impl UpdateDataRetentionFluentBuilder  {
         self
     }
     /// <p>Indicates whether you want to increase or decrease the retention period.</p>
-    pub fn set_operation(mut self, input: std::option::Option<crate::types::UpdateDataRetentionOperation>) -> Self {
+    pub fn set_operation(
+        mut self,
+        input: std::option::Option<crate::types::UpdateDataRetentionOperation>,
+    ) -> Self {
         self.inner = self.inner.set_operation(input);
         self
     }
@@ -106,4 +131,3 @@ impl UpdateDataRetentionFluentBuilder  {
         self
     }
 }
-

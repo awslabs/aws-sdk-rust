@@ -3,7 +3,7 @@
 /// <p> The request structure for the list webhooks request. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListWebhooksInput  {
+pub struct ListWebhooksInput {
     /// <p> The unique ID for an Amplify app. </p>
     #[doc(hidden)]
     pub app_id: std::option::Option<std::string::String>,
@@ -16,11 +16,11 @@ pub struct ListWebhooksInput  {
 }
 impl ListWebhooksInput {
     /// <p> The unique ID for an Amplify app. </p>
-    pub fn app_id(&self) -> std::option::Option<& str> {
+    pub fn app_id(&self) -> std::option::Option<&str> {
         self.app_id.as_deref()
     }
     /// <p> A pagination token. Set to null to start listing webhooks from the start. If non-null,the pagination token is returned in a result. Pass its value in here to list more webhooks. </p>
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
     /// <p> The maximum number of records to list in a single response. </p>
@@ -51,7 +51,8 @@ impl ListWebhooksInputBuilder {
     }
     /// <p> The unique ID for an Amplify app. </p>
     pub fn set_app_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.app_id = input; self
+        self.app_id = input;
+        self
     }
     /// <p> A pagination token. Set to null to start listing webhooks from the start. If non-null,the pagination token is returned in a result. Pass its value in here to list more webhooks. </p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -60,7 +61,8 @@ impl ListWebhooksInputBuilder {
     }
     /// <p> A pagination token. Set to null to start listing webhooks from the start. If non-null,the pagination token is returned in a result. Pass its value in here to list more webhooks. </p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input; self
+        self.next_token = input;
+        self
     }
     /// <p> The maximum number of records to list in a single response. </p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -69,21 +71,20 @@ impl ListWebhooksInputBuilder {
     }
     /// <p> The maximum number of records to list in a single response. </p>
     pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_results = input; self
+        self.max_results = input;
+        self
     }
     /// Consumes the builder and constructs a [`ListWebhooksInput`](crate::operation::list_webhooks::ListWebhooksInput).
-    pub fn build(self) -> Result<crate::operation::list_webhooks::ListWebhooksInput, aws_smithy_http::operation::error::BuildError> {
-        Ok(
-            crate::operation::list_webhooks::ListWebhooksInput {
-                app_id: self.app_id
-                ,
-                next_token: self.next_token
-                ,
-                max_results: self.max_results
-                    .unwrap_or_default()
-                ,
-            }
-        )
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::list_webhooks::ListWebhooksInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        Ok(crate::operation::list_webhooks::ListWebhooksInput {
+            app_id: self.app_id,
+            next_token: self.next_token,
+            max_results: self.max_results.unwrap_or_default(),
+        })
     }
 }
-

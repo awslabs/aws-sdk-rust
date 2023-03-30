@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetCertificatesOutput  {
+pub struct GetCertificatesOutput {
     /// <p>An object that describes certificates.</p>
     #[doc(hidden)]
     pub certificates: std::option::Option<std::vec::Vec<crate::types::CertificateSummary>>,
@@ -10,15 +10,15 @@ pub struct GetCertificatesOutput  {
 }
 impl GetCertificatesOutput {
     /// <p>An object that describes certificates.</p>
-    pub fn certificates(&self) -> std::option::Option<& [crate::types::CertificateSummary]> {
+    pub fn certificates(&self) -> std::option::Option<&[crate::types::CertificateSummary]> {
         self.certificates.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for GetCertificatesOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl GetCertificatesOutput {
     /// Creates a new builder-style object to manufacture [`GetCertificatesOutput`](crate::operation::get_certificates::GetCertificatesOutput).
     pub fn builder() -> crate::operation::get_certificates::builders::GetCertificatesOutputBuilder {
@@ -41,30 +41,32 @@ impl GetCertificatesOutputBuilder {
     /// <p>An object that describes certificates.</p>
     pub fn certificates(mut self, input: crate::types::CertificateSummary) -> Self {
         let mut v = self.certificates.unwrap_or_default();
-                        v.push(input);
-                        self.certificates = Some(v);
-                        self
+        v.push(input);
+        self.certificates = Some(v);
+        self
     }
     /// <p>An object that describes certificates.</p>
-    pub fn set_certificates(mut self, input: std::option::Option<std::vec::Vec<crate::types::CertificateSummary>>) -> Self {
-        self.certificates = input; self
+    pub fn set_certificates(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::CertificateSummary>>,
+    ) -> Self {
+        self.certificates = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`GetCertificatesOutput`](crate::operation::get_certificates::GetCertificatesOutput).
     pub fn build(self) -> crate::operation::get_certificates::GetCertificatesOutput {
         crate::operation::get_certificates::GetCertificatesOutput {
-            certificates: self.certificates
-            ,
+            certificates: self.certificates,
             _request_id: self._request_id,
         }
     }
 }
-

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetDistributionMetricDataOutput  {
+pub struct GetDistributionMetricDataOutput {
     /// <p>The name of the metric returned.</p>
     #[doc(hidden)]
     pub metric_name: std::option::Option<crate::types::DistributionMetricName>,
@@ -13,22 +13,22 @@ pub struct GetDistributionMetricDataOutput  {
 }
 impl GetDistributionMetricDataOutput {
     /// <p>The name of the metric returned.</p>
-    pub fn metric_name(&self) -> std::option::Option<& crate::types::DistributionMetricName> {
+    pub fn metric_name(&self) -> std::option::Option<&crate::types::DistributionMetricName> {
         self.metric_name.as_ref()
     }
     /// <p>An array of objects that describe the metric data returned.</p>
-    pub fn metric_data(&self) -> std::option::Option<& [crate::types::MetricDatapoint]> {
+    pub fn metric_data(&self) -> std::option::Option<&[crate::types::MetricDatapoint]> {
         self.metric_data.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for GetDistributionMetricDataOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl GetDistributionMetricDataOutput {
     /// Creates a new builder-style object to manufacture [`GetDistributionMetricDataOutput`](crate::operation::get_distribution_metric_data::GetDistributionMetricDataOutput).
-    pub fn builder() -> crate::operation::get_distribution_metric_data::builders::GetDistributionMetricDataOutputBuilder {
+    pub fn builder() -> crate::operation::get_distribution_metric_data::builders::GetDistributionMetricDataOutputBuilder{
         crate::operation::get_distribution_metric_data::builders::GetDistributionMetricDataOutputBuilder::default()
     }
 }
@@ -48,8 +48,12 @@ impl GetDistributionMetricDataOutputBuilder {
         self
     }
     /// <p>The name of the metric returned.</p>
-    pub fn set_metric_name(mut self, input: std::option::Option<crate::types::DistributionMetricName>) -> Self {
-        self.metric_name = input; self
+    pub fn set_metric_name(
+        mut self,
+        input: std::option::Option<crate::types::DistributionMetricName>,
+    ) -> Self {
+        self.metric_name = input;
+        self
     }
     /// Appends an item to `metric_data`.
     ///
@@ -58,32 +62,35 @@ impl GetDistributionMetricDataOutputBuilder {
     /// <p>An array of objects that describe the metric data returned.</p>
     pub fn metric_data(mut self, input: crate::types::MetricDatapoint) -> Self {
         let mut v = self.metric_data.unwrap_or_default();
-                        v.push(input);
-                        self.metric_data = Some(v);
-                        self
+        v.push(input);
+        self.metric_data = Some(v);
+        self
     }
     /// <p>An array of objects that describe the metric data returned.</p>
-    pub fn set_metric_data(mut self, input: std::option::Option<std::vec::Vec<crate::types::MetricDatapoint>>) -> Self {
-        self.metric_data = input; self
+    pub fn set_metric_data(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::MetricDatapoint>>,
+    ) -> Self {
+        self.metric_data = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`GetDistributionMetricDataOutput`](crate::operation::get_distribution_metric_data::GetDistributionMetricDataOutput).
-    pub fn build(self) -> crate::operation::get_distribution_metric_data::GetDistributionMetricDataOutput {
+    pub fn build(
+        self,
+    ) -> crate::operation::get_distribution_metric_data::GetDistributionMetricDataOutput {
         crate::operation::get_distribution_metric_data::GetDistributionMetricDataOutput {
-            metric_name: self.metric_name
-            ,
-            metric_data: self.metric_data
-            ,
+            metric_name: self.metric_name,
+            metric_data: self.metric_data,
             _request_id: self._request_id,
         }
     }
 }
-

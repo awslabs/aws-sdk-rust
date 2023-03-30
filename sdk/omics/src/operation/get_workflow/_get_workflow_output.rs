@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetWorkflowOutput  {
+pub struct GetWorkflowOutput {
     /// <p>The workflow's ARN.</p>
     #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
@@ -35,7 +35,9 @@ pub struct GetWorkflowOutput  {
     pub digest: std::option::Option<std::string::String>,
     /// <p>The workflow's parameter template.</p>
     #[doc(hidden)]
-    pub parameter_template: std::option::Option<std::collections::HashMap<std::string::String, crate::types::WorkflowParameter>>,
+    pub parameter_template: std::option::Option<
+        std::collections::HashMap<std::string::String, crate::types::WorkflowParameter>,
+    >,
     /// <p>The workflow's storage capacity.</p>
     #[doc(hidden)]
     pub storage_capacity: std::option::Option<i32>,
@@ -47,52 +49,57 @@ pub struct GetWorkflowOutput  {
     pub status_message: std::option::Option<std::string::String>,
     /// <p>The workflow's tags.</p>
     #[doc(hidden)]
-    pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub tags:
+        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     _request_id: Option<String>,
 }
 impl GetWorkflowOutput {
     /// <p>The workflow's ARN.</p>
-    pub fn arn(&self) -> std::option::Option<& str> {
+    pub fn arn(&self) -> std::option::Option<&str> {
         self.arn.as_deref()
     }
     /// <p>The workflow's ID.</p>
-    pub fn id(&self) -> std::option::Option<& str> {
+    pub fn id(&self) -> std::option::Option<&str> {
         self.id.as_deref()
     }
     /// <p>The workflow's status.</p>
-    pub fn status(&self) -> std::option::Option<& crate::types::WorkflowStatus> {
+    pub fn status(&self) -> std::option::Option<&crate::types::WorkflowStatus> {
         self.status.as_ref()
     }
     /// <p>The workflow's type.</p>
-    pub fn r#type(&self) -> std::option::Option<& crate::types::WorkflowType> {
+    pub fn r#type(&self) -> std::option::Option<&crate::types::WorkflowType> {
         self.r#type.as_ref()
     }
     /// <p>The workflow's name.</p>
-    pub fn name(&self) -> std::option::Option<& str> {
+    pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>The workflow's description.</p>
-    pub fn description(&self) -> std::option::Option<& str> {
+    pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
     /// <p>The workflow's engine.</p>
-    pub fn engine(&self) -> std::option::Option<& crate::types::WorkflowEngine> {
+    pub fn engine(&self) -> std::option::Option<&crate::types::WorkflowEngine> {
         self.engine.as_ref()
     }
     /// <p>The workflow's definition.</p>
-    pub fn definition(&self) -> std::option::Option<& str> {
+    pub fn definition(&self) -> std::option::Option<&str> {
         self.definition.as_deref()
     }
     /// <p>The path of the main definition file for the workflow.</p>
-    pub fn main(&self) -> std::option::Option<& str> {
+    pub fn main(&self) -> std::option::Option<&str> {
         self.main.as_deref()
     }
     /// <p>The workflow's digest.</p>
-    pub fn digest(&self) -> std::option::Option<& str> {
+    pub fn digest(&self) -> std::option::Option<&str> {
         self.digest.as_deref()
     }
     /// <p>The workflow's parameter template.</p>
-    pub fn parameter_template(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, crate::types::WorkflowParameter>> {
+    pub fn parameter_template(
+        &self,
+    ) -> std::option::Option<
+        &std::collections::HashMap<std::string::String, crate::types::WorkflowParameter>,
+    > {
         self.parameter_template.as_ref()
     }
     /// <p>The workflow's storage capacity.</p>
@@ -100,23 +107,26 @@ impl GetWorkflowOutput {
         self.storage_capacity
     }
     /// <p>When the workflow was created.</p>
-    pub fn creation_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
+    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
     /// <p>The workflow's status message.</p>
-    pub fn status_message(&self) -> std::option::Option<& str> {
+    pub fn status_message(&self) -> std::option::Option<&str> {
         self.status_message.as_deref()
     }
     /// <p>The workflow's tags.</p>
-    pub fn tags(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
         self.tags.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for GetWorkflowOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl GetWorkflowOutput {
     /// Creates a new builder-style object to manufacture [`GetWorkflowOutput`](crate::operation::get_workflow::GetWorkflowOutput).
     pub fn builder() -> crate::operation::get_workflow::builders::GetWorkflowOutputBuilder {
@@ -138,11 +148,14 @@ pub struct GetWorkflowOutputBuilder {
     pub(crate) definition: std::option::Option<std::string::String>,
     pub(crate) main: std::option::Option<std::string::String>,
     pub(crate) digest: std::option::Option<std::string::String>,
-    pub(crate) parameter_template: std::option::Option<std::collections::HashMap<std::string::String, crate::types::WorkflowParameter>>,
+    pub(crate) parameter_template: std::option::Option<
+        std::collections::HashMap<std::string::String, crate::types::WorkflowParameter>,
+    >,
     pub(crate) storage_capacity: std::option::Option<i32>,
     pub(crate) creation_time: std::option::Option<aws_smithy_types::DateTime>,
     pub(crate) status_message: std::option::Option<std::string::String>,
-    pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub(crate) tags:
+        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     _request_id: Option<String>,
 }
 impl GetWorkflowOutputBuilder {
@@ -153,7 +166,8 @@ impl GetWorkflowOutputBuilder {
     }
     /// <p>The workflow's ARN.</p>
     pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.arn = input; self
+        self.arn = input;
+        self
     }
     /// <p>The workflow's ID.</p>
     pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -162,7 +176,8 @@ impl GetWorkflowOutputBuilder {
     }
     /// <p>The workflow's ID.</p>
     pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.id = input; self
+        self.id = input;
+        self
     }
     /// <p>The workflow's status.</p>
     pub fn status(mut self, input: crate::types::WorkflowStatus) -> Self {
@@ -171,7 +186,8 @@ impl GetWorkflowOutputBuilder {
     }
     /// <p>The workflow's status.</p>
     pub fn set_status(mut self, input: std::option::Option<crate::types::WorkflowStatus>) -> Self {
-        self.status = input; self
+        self.status = input;
+        self
     }
     /// <p>The workflow's type.</p>
     pub fn r#type(mut self, input: crate::types::WorkflowType) -> Self {
@@ -180,7 +196,8 @@ impl GetWorkflowOutputBuilder {
     }
     /// <p>The workflow's type.</p>
     pub fn set_type(mut self, input: std::option::Option<crate::types::WorkflowType>) -> Self {
-        self.r#type = input; self
+        self.r#type = input;
+        self
     }
     /// <p>The workflow's name.</p>
     pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -189,7 +206,8 @@ impl GetWorkflowOutputBuilder {
     }
     /// <p>The workflow's name.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input; self
+        self.name = input;
+        self
     }
     /// <p>The workflow's description.</p>
     pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -198,7 +216,8 @@ impl GetWorkflowOutputBuilder {
     }
     /// <p>The workflow's description.</p>
     pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.description = input; self
+        self.description = input;
+        self
     }
     /// <p>The workflow's engine.</p>
     pub fn engine(mut self, input: crate::types::WorkflowEngine) -> Self {
@@ -207,7 +226,8 @@ impl GetWorkflowOutputBuilder {
     }
     /// <p>The workflow's engine.</p>
     pub fn set_engine(mut self, input: std::option::Option<crate::types::WorkflowEngine>) -> Self {
-        self.engine = input; self
+        self.engine = input;
+        self
     }
     /// <p>The workflow's definition.</p>
     pub fn definition(mut self, input: impl Into<std::string::String>) -> Self {
@@ -216,7 +236,8 @@ impl GetWorkflowOutputBuilder {
     }
     /// <p>The workflow's definition.</p>
     pub fn set_definition(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.definition = input; self
+        self.definition = input;
+        self
     }
     /// <p>The path of the main definition file for the workflow.</p>
     pub fn main(mut self, input: impl Into<std::string::String>) -> Self {
@@ -225,7 +246,8 @@ impl GetWorkflowOutputBuilder {
     }
     /// <p>The path of the main definition file for the workflow.</p>
     pub fn set_main(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.main = input; self
+        self.main = input;
+        self
     }
     /// <p>The workflow's digest.</p>
     pub fn digest(mut self, input: impl Into<std::string::String>) -> Self {
@@ -234,22 +256,33 @@ impl GetWorkflowOutputBuilder {
     }
     /// <p>The workflow's digest.</p>
     pub fn set_digest(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.digest = input; self
+        self.digest = input;
+        self
     }
     /// Adds a key-value pair to `parameter_template`.
     ///
     /// To override the contents of this collection use [`set_parameter_template`](Self::set_parameter_template).
     ///
     /// <p>The workflow's parameter template.</p>
-    pub fn parameter_template(mut self, k: impl Into<std::string::String>, v: crate::types::WorkflowParameter) -> Self {
+    pub fn parameter_template(
+        mut self,
+        k: impl Into<std::string::String>,
+        v: crate::types::WorkflowParameter,
+    ) -> Self {
         let mut hash_map = self.parameter_template.unwrap_or_default();
-                        hash_map.insert(k.into(), v);
-                        self.parameter_template = Some(hash_map);
-                        self
+        hash_map.insert(k.into(), v);
+        self.parameter_template = Some(hash_map);
+        self
     }
     /// <p>The workflow's parameter template.</p>
-    pub fn set_parameter_template(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, crate::types::WorkflowParameter>>) -> Self {
-        self.parameter_template = input; self
+    pub fn set_parameter_template(
+        mut self,
+        input: std::option::Option<
+            std::collections::HashMap<std::string::String, crate::types::WorkflowParameter>,
+        >,
+    ) -> Self {
+        self.parameter_template = input;
+        self
     }
     /// <p>The workflow's storage capacity.</p>
     pub fn storage_capacity(mut self, input: i32) -> Self {
@@ -258,7 +291,8 @@ impl GetWorkflowOutputBuilder {
     }
     /// <p>The workflow's storage capacity.</p>
     pub fn set_storage_capacity(mut self, input: std::option::Option<i32>) -> Self {
-        self.storage_capacity = input; self
+        self.storage_capacity = input;
+        self
     }
     /// <p>When the workflow was created.</p>
     pub fn creation_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -266,8 +300,12 @@ impl GetWorkflowOutputBuilder {
         self
     }
     /// <p>When the workflow was created.</p>
-    pub fn set_creation_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.creation_time = input; self
+    pub fn set_creation_time(
+        mut self,
+        input: std::option::Option<aws_smithy_types::DateTime>,
+    ) -> Self {
+        self.creation_time = input;
+        self
     }
     /// <p>The workflow's status message.</p>
     pub fn status_message(mut self, input: impl Into<std::string::String>) -> Self {
@@ -276,67 +314,62 @@ impl GetWorkflowOutputBuilder {
     }
     /// <p>The workflow's status message.</p>
     pub fn set_status_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.status_message = input; self
+        self.status_message = input;
+        self
     }
     /// Adds a key-value pair to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// <p>The workflow's tags.</p>
-    pub fn tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
+    pub fn tags(
+        mut self,
+        k: impl Into<std::string::String>,
+        v: impl Into<std::string::String>,
+    ) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
-                        hash_map.insert(k.into(), v.into());
-                        self.tags = Some(hash_map);
-                        self
+        hash_map.insert(k.into(), v.into());
+        self.tags = Some(hash_map);
+        self
     }
     /// <p>The workflow's tags.</p>
-    pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
-        self.tags = input; self
+    pub fn set_tags(
+        mut self,
+        input: std::option::Option<
+            std::collections::HashMap<std::string::String, std::string::String>,
+        >,
+    ) -> Self {
+        self.tags = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`GetWorkflowOutput`](crate::operation::get_workflow::GetWorkflowOutput).
     pub fn build(self) -> crate::operation::get_workflow::GetWorkflowOutput {
         crate::operation::get_workflow::GetWorkflowOutput {
-            arn: self.arn
-            ,
-            id: self.id
-            ,
-            status: self.status
-            ,
-            r#type: self.r#type
-            ,
-            name: self.name
-            ,
-            description: self.description
-            ,
-            engine: self.engine
-            ,
-            definition: self.definition
-            ,
-            main: self.main
-            ,
-            digest: self.digest
-            ,
-            parameter_template: self.parameter_template
-            ,
-            storage_capacity: self.storage_capacity
-            ,
-            creation_time: self.creation_time
-            ,
-            status_message: self.status_message
-            ,
-            tags: self.tags
-            ,
+            arn: self.arn,
+            id: self.id,
+            status: self.status,
+            r#type: self.r#type,
+            name: self.name,
+            description: self.description,
+            engine: self.engine,
+            definition: self.definition,
+            main: self.main,
+            digest: self.digest,
+            parameter_template: self.parameter_template,
+            storage_capacity: self.storage_capacity,
+            creation_time: self.creation_time,
+            status_message: self.status_message,
+            tags: self.tags,
             _request_id: self._request_id,
         }
     }
 }
-

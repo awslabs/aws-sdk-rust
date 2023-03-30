@@ -2,11 +2,11 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DisableSecurityHubInput  {
-}
+pub struct DisableSecurityHubInput {}
 impl DisableSecurityHubInput {
     /// Creates a new builder-style object to manufacture [`DisableSecurityHubInput`](crate::operation::disable_security_hub::DisableSecurityHubInput).
-    pub fn builder() -> crate::operation::disable_security_hub::builders::DisableSecurityHubInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::disable_security_hub::builders::DisableSecurityHubInputBuilder {
         crate::operation::disable_security_hub::builders::DisableSecurityHubInputBuilder::default()
     }
 }
@@ -14,15 +14,15 @@ impl DisableSecurityHubInput {
 /// A builder for [`DisableSecurityHubInput`](crate::operation::disable_security_hub::DisableSecurityHubInput).
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-pub struct DisableSecurityHubInputBuilder {
-}
+pub struct DisableSecurityHubInputBuilder {}
 impl DisableSecurityHubInputBuilder {
     /// Consumes the builder and constructs a [`DisableSecurityHubInput`](crate::operation::disable_security_hub::DisableSecurityHubInput).
-    pub fn build(self) -> Result<crate::operation::disable_security_hub::DisableSecurityHubInput, aws_smithy_http::operation::error::BuildError> {
-        Ok(
-            crate::operation::disable_security_hub::DisableSecurityHubInput {
-            }
-        )
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::disable_security_hub::DisableSecurityHubInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        Ok(crate::operation::disable_security_hub::DisableSecurityHubInput {})
     }
 }
-

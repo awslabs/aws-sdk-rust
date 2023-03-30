@@ -4,49 +4,67 @@ pub use crate::operation::create_analysis::_create_analysis_output::CreateAnalys
 pub use crate::operation::create_analysis::_create_analysis_input::CreateAnalysisInputBuilder;
 
 /// Fluent builder constructing a request to `CreateAnalysis`.
-/// 
+///
 /// <p>Creates an analysis in Amazon QuickSight.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct CreateAnalysisFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::create_analysis::builders::CreateAnalysisInputBuilder
-            }
-impl CreateAnalysisFluentBuilder  {
+    handle: std::sync::Arc<crate::client::Handle>,
+    inner: crate::operation::create_analysis::builders::CreateAnalysisInputBuilder,
+}
+impl CreateAnalysisFluentBuilder {
     /// Creates a new `CreateAnalysis`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
-                    /// sent. The operation's inner [http::Request] can be modified as well.
-                    pub async fn customize(self) -> std::result::Result<
-                        crate::client::customize::CustomizableOperation<crate::operation::create_analysis::CreateAnalysis, aws_http::retry::AwsResponseRetryClassifier,>,
-                        aws_smithy_http::result::SdkError<crate::operation::create_analysis::CreateAnalysisError>
-                    >  {
-                        let handle = self.handle.clone();
-                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-                    }
-    
-                    /// Sends the request and returns the response.
-                    ///
-                    /// If an error occurs, an `SdkError` will be returned with additional details that
-                    /// can be matched against.
-                    ///
-                    /// By default, any retryable failures will be retried twice. Retry behavior
-                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                    /// set when configuring the client.
-                    pub async fn send(self) -> std::result::Result<crate::operation::create_analysis::CreateAnalysisOutput, aws_smithy_http::result::SdkError<crate::operation::create_analysis::CreateAnalysisError>>
-                     {
-                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&self.handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        self.handle.client.call(op).await
-                    }
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle,
+            inner: Default::default(),
+        }
+    }
+
+    /// Consume this builder, creating a customizable operation that can be modified before being
+    /// sent. The operation's inner [http::Request] can be modified as well.
+    pub async fn customize(
+        self,
+    ) -> std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::create_analysis::CreateAnalysis,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::result::SdkError<crate::operation::create_analysis::CreateAnalysisError>,
+    > {
+        let handle = self.handle.clone();
+        let operation = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+    }
+
+    /// Sends the request and returns the response.
+    ///
+    /// If an error occurs, an `SdkError` will be returned with additional details that
+    /// can be matched against.
+    ///
+    /// By default, any retryable failures will be retried twice. Retry behavior
+    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+    /// set when configuring the client.
+    pub async fn send(
+        self,
+    ) -> std::result::Result<
+        crate::operation::create_analysis::CreateAnalysisOutput,
+        aws_smithy_http::result::SdkError<crate::operation::create_analysis::CreateAnalysisError>,
+    > {
+        let op = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&self.handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        self.handle.client.call(op).await
+    }
     /// <p>The ID of the Amazon Web Services account where you are creating an analysis.</p>
     pub fn aws_account_id(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.aws_account_id(input.into());
@@ -91,15 +109,18 @@ impl CreateAnalysisFluentBuilder  {
     ///
     /// To override the contents of this collection use [`set_permissions`](Self::set_permissions).
     ///
-    /// <p>A structure that describes the principals and the resource-level permissions on an analysis. You can use the <code>Permissions</code> structure to grant permissions by providing a list of Identity and Access Management (IAM) action information for each principal listed by Amazon Resource Name (ARN). </p> 
+    /// <p>A structure that describes the principals and the resource-level permissions on an analysis. You can use the <code>Permissions</code> structure to grant permissions by providing a list of Identity and Access Management (IAM) action information for each principal listed by Amazon Resource Name (ARN). </p>
     /// <p>To specify no permissions, omit <code>Permissions</code>.</p>
     pub fn permissions(mut self, input: crate::types::ResourcePermission) -> Self {
         self.inner = self.inner.permissions(input);
         self
     }
-    /// <p>A structure that describes the principals and the resource-level permissions on an analysis. You can use the <code>Permissions</code> structure to grant permissions by providing a list of Identity and Access Management (IAM) action information for each principal listed by Amazon Resource Name (ARN). </p> 
+    /// <p>A structure that describes the principals and the resource-level permissions on an analysis. You can use the <code>Permissions</code> structure to grant permissions by providing a list of Identity and Access Management (IAM) action information for each principal listed by Amazon Resource Name (ARN). </p>
     /// <p>To specify no permissions, omit <code>Permissions</code>.</p>
-    pub fn set_permissions(mut self, input: std::option::Option<std::vec::Vec<crate::types::ResourcePermission>>) -> Self {
+    pub fn set_permissions(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::ResourcePermission>>,
+    ) -> Self {
         self.inner = self.inner.set_permissions(input);
         self
     }
@@ -109,7 +130,10 @@ impl CreateAnalysisFluentBuilder  {
         self
     }
     /// <p>A source entity to use for the analysis that you're creating. This metadata structure contains details that describe a source template and one or more datasets.</p>
-    pub fn set_source_entity(mut self, input: std::option::Option<crate::types::AnalysisSourceEntity>) -> Self {
+    pub fn set_source_entity(
+        mut self,
+        input: std::option::Option<crate::types::AnalysisSourceEntity>,
+    ) -> Self {
         self.inner = self.inner.set_source_entity(input);
         self
     }
@@ -133,21 +157,26 @@ impl CreateAnalysisFluentBuilder  {
         self
     }
     /// <p>Contains a map of the key-value pairs for the resource tag or tags assigned to the analysis.</p>
-    pub fn set_tags(mut self, input: std::option::Option<std::vec::Vec<crate::types::Tag>>) -> Self {
+    pub fn set_tags(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::Tag>>,
+    ) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }
-    /// <p>The definition of an analysis.</p> 
+    /// <p>The definition of an analysis.</p>
     /// <p>A definition is the data model of all features in a Dashboard, Template, or Analysis.</p>
     pub fn definition(mut self, input: crate::types::AnalysisDefinition) -> Self {
         self.inner = self.inner.definition(input);
         self
     }
-    /// <p>The definition of an analysis.</p> 
+    /// <p>The definition of an analysis.</p>
     /// <p>A definition is the data model of all features in a Dashboard, Template, or Analysis.</p>
-    pub fn set_definition(mut self, input: std::option::Option<crate::types::AnalysisDefinition>) -> Self {
+    pub fn set_definition(
+        mut self,
+        input: std::option::Option<crate::types::AnalysisDefinition>,
+    ) -> Self {
         self.inner = self.inner.set_definition(input);
         self
     }
 }
-

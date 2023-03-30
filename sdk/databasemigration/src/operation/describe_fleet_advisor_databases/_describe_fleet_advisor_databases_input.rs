@@ -2,16 +2,16 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeFleetAdvisorDatabasesInput  {
-    /// <p> If you specify any of the following filters, the output includes information for only those databases that meet the filter criteria: </p> 
-    /// <ul> 
-    /// <li> <p> <code>database-id</code> – The ID of the database.</p> </li> 
-    /// <li> <p> <code>database-name</code> – The name of the database.</p> </li> 
-    /// <li> <p> <code>database-engine</code> – The name of the database engine.</p> </li> 
-    /// <li> <p> <code>server-ip-address</code> – The IP address of the database server.</p> </li> 
-    /// <li> <p> <code>database-ip-address</code> – The IP address of the database.</p> </li> 
-    /// <li> <p> <code>collector-name</code> – The name of the associated Fleet Advisor collector.</p> </li> 
-    /// </ul> 
+pub struct DescribeFleetAdvisorDatabasesInput {
+    /// <p> If you specify any of the following filters, the output includes information for only those databases that meet the filter criteria: </p>
+    /// <ul>
+    /// <li> <p> <code>database-id</code> – The ID of the database.</p> </li>
+    /// <li> <p> <code>database-name</code> – The name of the database.</p> </li>
+    /// <li> <p> <code>database-engine</code> – The name of the database engine.</p> </li>
+    /// <li> <p> <code>server-ip-address</code> – The IP address of the database server.</p> </li>
+    /// <li> <p> <code>database-ip-address</code> – The IP address of the database.</p> </li>
+    /// <li> <p> <code>collector-name</code> – The name of the associated Fleet Advisor collector.</p> </li>
+    /// </ul>
     /// <p>An example is: <code>describe-fleet-advisor-databases --filter Name="database-id",Values="45"</code> </p>
     #[doc(hidden)]
     pub filters: std::option::Option<std::vec::Vec<crate::types::Filter>>,
@@ -23,17 +23,17 @@ pub struct DescribeFleetAdvisorDatabasesInput  {
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeFleetAdvisorDatabasesInput {
-    /// <p> If you specify any of the following filters, the output includes information for only those databases that meet the filter criteria: </p> 
-    /// <ul> 
-    /// <li> <p> <code>database-id</code> – The ID of the database.</p> </li> 
-    /// <li> <p> <code>database-name</code> – The name of the database.</p> </li> 
-    /// <li> <p> <code>database-engine</code> – The name of the database engine.</p> </li> 
-    /// <li> <p> <code>server-ip-address</code> – The IP address of the database server.</p> </li> 
-    /// <li> <p> <code>database-ip-address</code> – The IP address of the database.</p> </li> 
-    /// <li> <p> <code>collector-name</code> – The name of the associated Fleet Advisor collector.</p> </li> 
-    /// </ul> 
+    /// <p> If you specify any of the following filters, the output includes information for only those databases that meet the filter criteria: </p>
+    /// <ul>
+    /// <li> <p> <code>database-id</code> – The ID of the database.</p> </li>
+    /// <li> <p> <code>database-name</code> – The name of the database.</p> </li>
+    /// <li> <p> <code>database-engine</code> – The name of the database engine.</p> </li>
+    /// <li> <p> <code>server-ip-address</code> – The IP address of the database server.</p> </li>
+    /// <li> <p> <code>database-ip-address</code> – The IP address of the database.</p> </li>
+    /// <li> <p> <code>collector-name</code> – The name of the associated Fleet Advisor collector.</p> </li>
+    /// </ul>
     /// <p>An example is: <code>describe-fleet-advisor-databases --filter Name="database-id",Values="45"</code> </p>
-    pub fn filters(&self) -> std::option::Option<& [crate::types::Filter]> {
+    pub fn filters(&self) -> std::option::Option<&[crate::types::Filter]> {
         self.filters.as_deref()
     }
     /// <p>Sets the maximum number of records returned in the response.</p>
@@ -41,13 +41,13 @@ impl DescribeFleetAdvisorDatabasesInput {
         self.max_records
     }
     /// <p>If <code>NextToken</code> is returned by a previous response, there are more results available. The value of <code>NextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. </p>
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
 }
 impl DescribeFleetAdvisorDatabasesInput {
     /// Creates a new builder-style object to manufacture [`DescribeFleetAdvisorDatabasesInput`](crate::operation::describe_fleet_advisor_databases::DescribeFleetAdvisorDatabasesInput).
-    pub fn builder() -> crate::operation::describe_fleet_advisor_databases::builders::DescribeFleetAdvisorDatabasesInputBuilder {
+    pub fn builder() -> crate::operation::describe_fleet_advisor_databases::builders::DescribeFleetAdvisorDatabasesInputBuilder{
         crate::operation::describe_fleet_advisor_databases::builders::DescribeFleetAdvisorDatabasesInputBuilder::default()
     }
 }
@@ -65,34 +65,38 @@ impl DescribeFleetAdvisorDatabasesInputBuilder {
     ///
     /// To override the contents of this collection use [`set_filters`](Self::set_filters).
     ///
-    /// <p> If you specify any of the following filters, the output includes information for only those databases that meet the filter criteria: </p> 
-    /// <ul> 
-    /// <li> <p> <code>database-id</code> – The ID of the database.</p> </li> 
-    /// <li> <p> <code>database-name</code> – The name of the database.</p> </li> 
-    /// <li> <p> <code>database-engine</code> – The name of the database engine.</p> </li> 
-    /// <li> <p> <code>server-ip-address</code> – The IP address of the database server.</p> </li> 
-    /// <li> <p> <code>database-ip-address</code> – The IP address of the database.</p> </li> 
-    /// <li> <p> <code>collector-name</code> – The name of the associated Fleet Advisor collector.</p> </li> 
-    /// </ul> 
+    /// <p> If you specify any of the following filters, the output includes information for only those databases that meet the filter criteria: </p>
+    /// <ul>
+    /// <li> <p> <code>database-id</code> – The ID of the database.</p> </li>
+    /// <li> <p> <code>database-name</code> – The name of the database.</p> </li>
+    /// <li> <p> <code>database-engine</code> – The name of the database engine.</p> </li>
+    /// <li> <p> <code>server-ip-address</code> – The IP address of the database server.</p> </li>
+    /// <li> <p> <code>database-ip-address</code> – The IP address of the database.</p> </li>
+    /// <li> <p> <code>collector-name</code> – The name of the associated Fleet Advisor collector.</p> </li>
+    /// </ul>
     /// <p>An example is: <code>describe-fleet-advisor-databases --filter Name="database-id",Values="45"</code> </p>
     pub fn filters(mut self, input: crate::types::Filter) -> Self {
         let mut v = self.filters.unwrap_or_default();
-                        v.push(input);
-                        self.filters = Some(v);
-                        self
+        v.push(input);
+        self.filters = Some(v);
+        self
     }
-    /// <p> If you specify any of the following filters, the output includes information for only those databases that meet the filter criteria: </p> 
-    /// <ul> 
-    /// <li> <p> <code>database-id</code> – The ID of the database.</p> </li> 
-    /// <li> <p> <code>database-name</code> – The name of the database.</p> </li> 
-    /// <li> <p> <code>database-engine</code> – The name of the database engine.</p> </li> 
-    /// <li> <p> <code>server-ip-address</code> – The IP address of the database server.</p> </li> 
-    /// <li> <p> <code>database-ip-address</code> – The IP address of the database.</p> </li> 
-    /// <li> <p> <code>collector-name</code> – The name of the associated Fleet Advisor collector.</p> </li> 
-    /// </ul> 
+    /// <p> If you specify any of the following filters, the output includes information for only those databases that meet the filter criteria: </p>
+    /// <ul>
+    /// <li> <p> <code>database-id</code> – The ID of the database.</p> </li>
+    /// <li> <p> <code>database-name</code> – The name of the database.</p> </li>
+    /// <li> <p> <code>database-engine</code> – The name of the database engine.</p> </li>
+    /// <li> <p> <code>server-ip-address</code> – The IP address of the database server.</p> </li>
+    /// <li> <p> <code>database-ip-address</code> – The IP address of the database.</p> </li>
+    /// <li> <p> <code>collector-name</code> – The name of the associated Fleet Advisor collector.</p> </li>
+    /// </ul>
     /// <p>An example is: <code>describe-fleet-advisor-databases --filter Name="database-id",Values="45"</code> </p>
-    pub fn set_filters(mut self, input: std::option::Option<std::vec::Vec<crate::types::Filter>>) -> Self {
-        self.filters = input; self
+    pub fn set_filters(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::Filter>>,
+    ) -> Self {
+        self.filters = input;
+        self
     }
     /// <p>Sets the maximum number of records returned in the response.</p>
     pub fn max_records(mut self, input: i32) -> Self {
@@ -101,7 +105,8 @@ impl DescribeFleetAdvisorDatabasesInputBuilder {
     }
     /// <p>Sets the maximum number of records returned in the response.</p>
     pub fn set_max_records(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_records = input; self
+        self.max_records = input;
+        self
     }
     /// <p>If <code>NextToken</code> is returned by a previous response, there are more results available. The value of <code>NextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. </p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -110,10 +115,16 @@ impl DescribeFleetAdvisorDatabasesInputBuilder {
     }
     /// <p>If <code>NextToken</code> is returned by a previous response, there are more results available. The value of <code>NextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. </p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input; self
+        self.next_token = input;
+        self
     }
     /// Consumes the builder and constructs a [`DescribeFleetAdvisorDatabasesInput`](crate::operation::describe_fleet_advisor_databases::DescribeFleetAdvisorDatabasesInput).
-    pub fn build(self) -> Result<crate::operation::describe_fleet_advisor_databases::DescribeFleetAdvisorDatabasesInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::describe_fleet_advisor_databases::DescribeFleetAdvisorDatabasesInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::describe_fleet_advisor_databases::DescribeFleetAdvisorDatabasesInput {
                 filters: self.filters
@@ -126,4 +137,3 @@ impl DescribeFleetAdvisorDatabasesInputBuilder {
         )
     }
 }
-

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateNotebookInstanceLifecycleConfigInput  {
+pub struct UpdateNotebookInstanceLifecycleConfigInput {
     /// <p>The name of the lifecycle configuration.</p>
     #[doc(hidden)]
     pub notebook_instance_lifecycle_config_name: std::option::Option<std::string::String>,
@@ -15,21 +15,21 @@ pub struct UpdateNotebookInstanceLifecycleConfigInput  {
 }
 impl UpdateNotebookInstanceLifecycleConfigInput {
     /// <p>The name of the lifecycle configuration.</p>
-    pub fn notebook_instance_lifecycle_config_name(&self) -> std::option::Option<& str> {
+    pub fn notebook_instance_lifecycle_config_name(&self) -> std::option::Option<&str> {
         self.notebook_instance_lifecycle_config_name.as_deref()
     }
     /// <p>The shell script that runs only once, when you create a notebook instance. The shell script must be a base64-encoded string.</p>
-    pub fn on_create(&self) -> std::option::Option<& [crate::types::NotebookInstanceLifecycleHook]> {
+    pub fn on_create(&self) -> std::option::Option<&[crate::types::NotebookInstanceLifecycleHook]> {
         self.on_create.as_deref()
     }
     /// <p>The shell script that runs every time you start a notebook instance, including when you create the notebook instance. The shell script must be a base64-encoded string.</p>
-    pub fn on_start(&self) -> std::option::Option<& [crate::types::NotebookInstanceLifecycleHook]> {
+    pub fn on_start(&self) -> std::option::Option<&[crate::types::NotebookInstanceLifecycleHook]> {
         self.on_start.as_deref()
     }
 }
 impl UpdateNotebookInstanceLifecycleConfigInput {
     /// Creates a new builder-style object to manufacture [`UpdateNotebookInstanceLifecycleConfigInput`](crate::operation::update_notebook_instance_lifecycle_config::UpdateNotebookInstanceLifecycleConfigInput).
-    pub fn builder() -> crate::operation::update_notebook_instance_lifecycle_config::builders::UpdateNotebookInstanceLifecycleConfigInputBuilder {
+    pub fn builder() -> crate::operation::update_notebook_instance_lifecycle_config::builders::UpdateNotebookInstanceLifecycleConfigInputBuilder{
         crate::operation::update_notebook_instance_lifecycle_config::builders::UpdateNotebookInstanceLifecycleConfigInputBuilder::default()
     }
 }
@@ -39,18 +39,27 @@ impl UpdateNotebookInstanceLifecycleConfigInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct UpdateNotebookInstanceLifecycleConfigInputBuilder {
     pub(crate) notebook_instance_lifecycle_config_name: std::option::Option<std::string::String>,
-    pub(crate) on_create: std::option::Option<std::vec::Vec<crate::types::NotebookInstanceLifecycleHook>>,
-    pub(crate) on_start: std::option::Option<std::vec::Vec<crate::types::NotebookInstanceLifecycleHook>>,
+    pub(crate) on_create:
+        std::option::Option<std::vec::Vec<crate::types::NotebookInstanceLifecycleHook>>,
+    pub(crate) on_start:
+        std::option::Option<std::vec::Vec<crate::types::NotebookInstanceLifecycleHook>>,
 }
 impl UpdateNotebookInstanceLifecycleConfigInputBuilder {
     /// <p>The name of the lifecycle configuration.</p>
-    pub fn notebook_instance_lifecycle_config_name(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn notebook_instance_lifecycle_config_name(
+        mut self,
+        input: impl Into<std::string::String>,
+    ) -> Self {
         self.notebook_instance_lifecycle_config_name = Some(input.into());
         self
     }
     /// <p>The name of the lifecycle configuration.</p>
-    pub fn set_notebook_instance_lifecycle_config_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.notebook_instance_lifecycle_config_name = input; self
+    pub fn set_notebook_instance_lifecycle_config_name(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.notebook_instance_lifecycle_config_name = input;
+        self
     }
     /// Appends an item to `on_create`.
     ///
@@ -59,13 +68,17 @@ impl UpdateNotebookInstanceLifecycleConfigInputBuilder {
     /// <p>The shell script that runs only once, when you create a notebook instance. The shell script must be a base64-encoded string.</p>
     pub fn on_create(mut self, input: crate::types::NotebookInstanceLifecycleHook) -> Self {
         let mut v = self.on_create.unwrap_or_default();
-                        v.push(input);
-                        self.on_create = Some(v);
-                        self
+        v.push(input);
+        self.on_create = Some(v);
+        self
     }
     /// <p>The shell script that runs only once, when you create a notebook instance. The shell script must be a base64-encoded string.</p>
-    pub fn set_on_create(mut self, input: std::option::Option<std::vec::Vec<crate::types::NotebookInstanceLifecycleHook>>) -> Self {
-        self.on_create = input; self
+    pub fn set_on_create(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::NotebookInstanceLifecycleHook>>,
+    ) -> Self {
+        self.on_create = input;
+        self
     }
     /// Appends an item to `on_start`.
     ///
@@ -74,16 +87,20 @@ impl UpdateNotebookInstanceLifecycleConfigInputBuilder {
     /// <p>The shell script that runs every time you start a notebook instance, including when you create the notebook instance. The shell script must be a base64-encoded string.</p>
     pub fn on_start(mut self, input: crate::types::NotebookInstanceLifecycleHook) -> Self {
         let mut v = self.on_start.unwrap_or_default();
-                        v.push(input);
-                        self.on_start = Some(v);
-                        self
+        v.push(input);
+        self.on_start = Some(v);
+        self
     }
     /// <p>The shell script that runs every time you start a notebook instance, including when you create the notebook instance. The shell script must be a base64-encoded string.</p>
-    pub fn set_on_start(mut self, input: std::option::Option<std::vec::Vec<crate::types::NotebookInstanceLifecycleHook>>) -> Self {
-        self.on_start = input; self
+    pub fn set_on_start(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::NotebookInstanceLifecycleHook>>,
+    ) -> Self {
+        self.on_start = input;
+        self
     }
     /// Consumes the builder and constructs a [`UpdateNotebookInstanceLifecycleConfigInput`](crate::operation::update_notebook_instance_lifecycle_config::UpdateNotebookInstanceLifecycleConfigInput).
-    pub fn build(self) -> Result<crate::operation::update_notebook_instance_lifecycle_config::UpdateNotebookInstanceLifecycleConfigInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> Result<crate::operation::update_notebook_instance_lifecycle_config::UpdateNotebookInstanceLifecycleConfigInput, aws_smithy_http::operation::error::BuildError>{
         Ok(
             crate::operation::update_notebook_instance_lifecycle_config::UpdateNotebookInstanceLifecycleConfigInput {
                 notebook_instance_lifecycle_config_name: self.notebook_instance_lifecycle_config_name
@@ -96,4 +113,3 @@ impl UpdateNotebookInstanceLifecycleConfigInputBuilder {
         )
     }
 }
-

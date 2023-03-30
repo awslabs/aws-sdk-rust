@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-/// 
+///
 /// Here is an example of how you can make a match expression forward-compatible:
-/// 
+///
 /// ```text
 /// # let weekday = unimplemented!();
 /// match weekday {
@@ -35,14 +35,22 @@
 /// Specifically, when `weekday` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `WeekDay::NewFeature` also yielding `"NewFeature"`.
-/// 
+///
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
 pub enum WeekDay {
     #[allow(missing_docs)] // documentation missing in model
     Friday,
@@ -59,51 +67,58 @@ pub enum WeekDay {
     #[allow(missing_docs)] // documentation missing in model
     Wednesday,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::primitives::UnknownVariantValue)
+    Unknown(crate::primitives::UnknownVariantValue),
 }
 impl std::convert::From<&str> for WeekDay {
-                fn from(s: &str) -> Self {
-                    match s {
-                        "friday" => WeekDay::Friday,
-"monday" => WeekDay::Monday,
-"saturday" => WeekDay::Saturday,
-"sunday" => WeekDay::Sunday,
-"thursday" => WeekDay::Thursday,
-"tuesday" => WeekDay::Tuesday,
-"wednesday" => WeekDay::Wednesday,
-other => WeekDay::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
-                    }
-                }
-            }
-impl std::str::FromStr for WeekDay {
-                type Err = std::convert::Infallible;
-
-                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-                    Ok(WeekDay::from(s))
-                }
-            }
-impl WeekDay {
-                /// Returns the `&str` value of the enum member.
-                pub fn as_str(&self) -> &str {
-                    match self {
-    WeekDay::Friday => "friday",
-    WeekDay::Monday => "monday",
-    WeekDay::Saturday => "saturday",
-    WeekDay::Sunday => "sunday",
-    WeekDay::Thursday => "thursday",
-    WeekDay::Tuesday => "tuesday",
-    WeekDay::Wednesday => "wednesday",
-    WeekDay::Unknown(value) => value.as_str()
+    fn from(s: &str) -> Self {
+        match s {
+            "friday" => WeekDay::Friday,
+            "monday" => WeekDay::Monday,
+            "saturday" => WeekDay::Saturday,
+            "sunday" => WeekDay::Sunday,
+            "thursday" => WeekDay::Thursday,
+            "tuesday" => WeekDay::Tuesday,
+            "wednesday" => WeekDay::Wednesday,
+            other => WeekDay::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
+        }
+    }
 }
-                }
-                /// Returns all the `&str` representations of the enum members.
-                pub const fn values() -> &'static [&'static str] {
-                    &["friday", "monday", "saturday", "sunday", "thursday", "tuesday", "wednesday"]
-                }
-            }
-impl AsRef<str> for WeekDay {
-                fn as_ref(&self) -> &str {
-                    self.as_str()
-                }
-            }
+impl std::str::FromStr for WeekDay {
+    type Err = std::convert::Infallible;
 
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(WeekDay::from(s))
+    }
+}
+impl WeekDay {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            WeekDay::Friday => "friday",
+            WeekDay::Monday => "monday",
+            WeekDay::Saturday => "saturday",
+            WeekDay::Sunday => "sunday",
+            WeekDay::Thursday => "thursday",
+            WeekDay::Tuesday => "tuesday",
+            WeekDay::Wednesday => "wednesday",
+            WeekDay::Unknown(value) => value.as_str(),
+        }
+    }
+    /// Returns all the `&str` representations of the enum members.
+    pub const fn values() -> &'static [&'static str] {
+        &[
+            "friday",
+            "monday",
+            "saturday",
+            "sunday",
+            "thursday",
+            "tuesday",
+            "wednesday",
+        ]
+    }
+}
+impl AsRef<str> for WeekDay {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}

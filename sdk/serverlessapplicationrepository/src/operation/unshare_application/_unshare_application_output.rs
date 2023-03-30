@@ -2,17 +2,18 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UnshareApplicationOutput  {
+pub struct UnshareApplicationOutput {
     _request_id: Option<String>,
 }
 impl aws_http::request_id::RequestId for UnshareApplicationOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl UnshareApplicationOutput {
     /// Creates a new builder-style object to manufacture [`UnshareApplicationOutput`](crate::operation::unshare_application::UnshareApplicationOutput).
-    pub fn builder() -> crate::operation::unshare_application::builders::UnshareApplicationOutputBuilder {
+    pub fn builder(
+    ) -> crate::operation::unshare_application::builders::UnshareApplicationOutputBuilder {
         crate::operation::unshare_application::builders::UnshareApplicationOutputBuilder::default()
     }
 }
@@ -25,14 +26,14 @@ pub struct UnshareApplicationOutputBuilder {
 }
 impl UnshareApplicationOutputBuilder {
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`UnshareApplicationOutput`](crate::operation::unshare_application::UnshareApplicationOutput).
     pub fn build(self) -> crate::operation::unshare_application::UnshareApplicationOutput {
         crate::operation::unshare_application::UnshareApplicationOutput {
@@ -40,4 +41,3 @@ impl UnshareApplicationOutputBuilder {
         }
     }
 }
-

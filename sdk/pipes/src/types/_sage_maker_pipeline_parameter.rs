@@ -3,7 +3,7 @@
 /// <p>Name/Value pair of a parameter to start execution of a SageMaker Model Building Pipeline.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct SageMakerPipelineParameter  {
+pub struct SageMakerPipelineParameter {
     /// <p>Name of parameter to start execution of a SageMaker Model Building Pipeline.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -13,15 +13,15 @@ pub struct SageMakerPipelineParameter  {
 }
 impl SageMakerPipelineParameter {
     /// <p>Name of parameter to start execution of a SageMaker Model Building Pipeline.</p>
-    pub fn name(&self) -> std::option::Option<& str> {
+    pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>Value of parameter to start execution of a SageMaker Model Building Pipeline.</p>
-    pub fn value(&self) -> std::option::Option<& str> {
+    pub fn value(&self) -> std::option::Option<&str> {
         self.value.as_deref()
     }
 }
-impl  std::fmt::Debug for SageMakerPipelineParameter  {
+impl std::fmt::Debug for SageMakerPipelineParameter {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("SageMakerPipelineParameter");
         formatter.field("name", &"*** Sensitive Data Redacted ***");
@@ -51,7 +51,8 @@ impl SageMakerPipelineParameterBuilder {
     }
     /// <p>Name of parameter to start execution of a SageMaker Model Building Pipeline.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input; self
+        self.name = input;
+        self
     }
     /// <p>Value of parameter to start execution of a SageMaker Model Building Pipeline.</p>
     pub fn value(mut self, input: impl Into<std::string::String>) -> Self {
@@ -60,15 +61,14 @@ impl SageMakerPipelineParameterBuilder {
     }
     /// <p>Value of parameter to start execution of a SageMaker Model Building Pipeline.</p>
     pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.value = input; self
+        self.value = input;
+        self
     }
     /// Consumes the builder and constructs a [`SageMakerPipelineParameter`](crate::types::SageMakerPipelineParameter).
     pub fn build(self) -> crate::types::SageMakerPipelineParameter {
         crate::types::SageMakerPipelineParameter {
-            name: self.name
-            ,
-            value: self.value
-            ,
+            name: self.name,
+            value: self.value,
         }
     }
 }
@@ -80,4 +80,3 @@ impl std::fmt::Debug for SageMakerPipelineParameterBuilder {
         formatter.finish()
     }
 }
-

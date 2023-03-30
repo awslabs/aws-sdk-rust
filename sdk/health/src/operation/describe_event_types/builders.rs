@@ -4,58 +4,85 @@ pub use crate::operation::describe_event_types::_describe_event_types_output::De
 pub use crate::operation::describe_event_types::_describe_event_types_input::DescribeEventTypesInputBuilder;
 
 /// Fluent builder constructing a request to `DescribeEventTypes`.
-/// 
-/// <p>Returns the event types that meet the specified filter criteria. You can use this API operation to find information about the Health event, such as the category, Amazon Web Services service, and event code. The metadata for each event appears in the <a href="https://docs.aws.amazon.com/health/latest/APIReference/API_EventType.html">EventType</a> object. </p> 
-/// <p>If you don't specify a filter criteria, the API operation returns all event types, in no particular order. </p> <note> 
-/// <p>This API operation uses pagination. Specify the <code>nextToken</code> parameter in the next request to return more results.</p> 
+///
+/// <p>Returns the event types that meet the specified filter criteria. You can use this API operation to find information about the Health event, such as the category, Amazon Web Services service, and event code. The metadata for each event appears in the <a href="https://docs.aws.amazon.com/health/latest/APIReference/API_EventType.html">EventType</a> object. </p>
+/// <p>If you don't specify a filter criteria, the API operation returns all event types, in no particular order. </p> <note>
+/// <p>This API operation uses pagination. Specify the <code>nextToken</code> parameter in the next request to return more results.</p>
 /// </note>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeEventTypesFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::describe_event_types::builders::DescribeEventTypesInputBuilder
-            }
-impl DescribeEventTypesFluentBuilder  {
+    handle: std::sync::Arc<crate::client::Handle>,
+    inner: crate::operation::describe_event_types::builders::DescribeEventTypesInputBuilder,
+}
+impl DescribeEventTypesFluentBuilder {
     /// Creates a new `DescribeEventTypes`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
-                    /// sent. The operation's inner [http::Request] can be modified as well.
-                    pub async fn customize(self) -> std::result::Result<
-                        crate::client::customize::CustomizableOperation<crate::operation::describe_event_types::DescribeEventTypes, aws_http::retry::AwsResponseRetryClassifier,>,
-                        aws_smithy_http::result::SdkError<crate::operation::describe_event_types::DescribeEventTypesError>
-                    >  {
-                        let handle = self.handle.clone();
-                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-                    }
-    
-                    /// Sends the request and returns the response.
-                    ///
-                    /// If an error occurs, an `SdkError` will be returned with additional details that
-                    /// can be matched against.
-                    ///
-                    /// By default, any retryable failures will be retried twice. Retry behavior
-                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                    /// set when configuring the client.
-                    pub async fn send(self) -> std::result::Result<crate::operation::describe_event_types::DescribeEventTypesOutput, aws_smithy_http::result::SdkError<crate::operation::describe_event_types::DescribeEventTypesError>>
-                     {
-                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&self.handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        self.handle.client.call(op).await
-                    }
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle,
+            inner: Default::default(),
+        }
+    }
+
+    /// Consume this builder, creating a customizable operation that can be modified before being
+    /// sent. The operation's inner [http::Request] can be modified as well.
+    pub async fn customize(
+        self,
+    ) -> std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::describe_event_types::DescribeEventTypes,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::result::SdkError<
+            crate::operation::describe_event_types::DescribeEventTypesError,
+        >,
+    > {
+        let handle = self.handle.clone();
+        let operation = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+    }
+
+    /// Sends the request and returns the response.
+    ///
+    /// If an error occurs, an `SdkError` will be returned with additional details that
+    /// can be matched against.
+    ///
+    /// By default, any retryable failures will be retried twice. Retry behavior
+    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+    /// set when configuring the client.
+    pub async fn send(
+        self,
+    ) -> std::result::Result<
+        crate::operation::describe_event_types::DescribeEventTypesOutput,
+        aws_smithy_http::result::SdkError<
+            crate::operation::describe_event_types::DescribeEventTypesError,
+        >,
+    > {
+        let op = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&self.handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        self.handle.client.call(op).await
+    }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::describe_event_types::paginator::DescribeEventTypesPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::describe_event_types::paginator::DescribeEventTypesPaginator {
-                            crate::operation::describe_event_types::paginator::DescribeEventTypesPaginator::new(self.handle, self.inner)
-                        }
+    ///
+    /// Paginators are used by calling [`send().await`](crate::operation::describe_event_types::paginator::DescribeEventTypesPaginator::send) which returns a `Stream`.
+    pub fn into_paginator(
+        self,
+    ) -> crate::operation::describe_event_types::paginator::DescribeEventTypesPaginator {
+        crate::operation::describe_event_types::paginator::DescribeEventTypesPaginator::new(
+            self.handle,
+            self.inner,
+        )
+    }
     /// <p>Values to narrow the results returned.</p>
     pub fn filter(mut self, input: crate::types::EventTypeFilter) -> Self {
         self.inner = self.inner.filter(input);
@@ -97,4 +124,3 @@ impl DescribeEventTypesFluentBuilder  {
         self
     }
 }
-

@@ -3,7 +3,7 @@
 /// <p>Response element for actions that make changes, namely create, update, or delete actions. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct FailuresResponse  {
+pub struct FailuresResponse {
     /// <p>List of Amazon Web Services Regions where the failure occurred. </p>
     #[doc(hidden)]
     pub region: std::option::Option<std::string::String>,
@@ -13,11 +13,11 @@ pub struct FailuresResponse  {
 }
 impl FailuresResponse {
     /// <p>List of Amazon Web Services Regions where the failure occurred. </p>
-    pub fn region(&self) -> std::option::Option<& str> {
+    pub fn region(&self) -> std::option::Option<&str> {
         self.region.as_deref()
     }
     /// <p>List of all failures. </p>
-    pub fn failures(&self) -> std::option::Option<& [crate::types::Failures]> {
+    pub fn failures(&self) -> std::option::Option<&[crate::types::Failures]> {
         self.failures.as_deref()
     }
 }
@@ -43,7 +43,8 @@ impl FailuresResponseBuilder {
     }
     /// <p>List of Amazon Web Services Regions where the failure occurred. </p>
     pub fn set_region(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.region = input; self
+        self.region = input;
+        self
     }
     /// Appends an item to `failures`.
     ///
@@ -52,22 +53,23 @@ impl FailuresResponseBuilder {
     /// <p>List of all failures. </p>
     pub fn failures(mut self, input: crate::types::Failures) -> Self {
         let mut v = self.failures.unwrap_or_default();
-                        v.push(input);
-                        self.failures = Some(v);
-                        self
+        v.push(input);
+        self.failures = Some(v);
+        self
     }
     /// <p>List of all failures. </p>
-    pub fn set_failures(mut self, input: std::option::Option<std::vec::Vec<crate::types::Failures>>) -> Self {
-        self.failures = input; self
+    pub fn set_failures(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::Failures>>,
+    ) -> Self {
+        self.failures = input;
+        self
     }
     /// Consumes the builder and constructs a [`FailuresResponse`](crate::types::FailuresResponse).
     pub fn build(self) -> crate::types::FailuresResponse {
         crate::types::FailuresResponse {
-            region: self.region
-            ,
-            failures: self.failures
-            ,
+            region: self.region,
+            failures: self.failures,
         }
     }
 }
-

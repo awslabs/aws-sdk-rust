@@ -10,4 +10,3 @@ pub use crate::types::_tunnel_summary::TunnelSummaryBuilder;
 pub use crate::types::_tunnel::TunnelBuilder;
 
 pub use crate::types::_connection_state::ConnectionStateBuilder;
-

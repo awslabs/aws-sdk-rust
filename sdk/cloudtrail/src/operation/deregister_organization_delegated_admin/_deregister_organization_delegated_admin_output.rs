@@ -3,17 +3,17 @@
 /// <p>Returns the following response if successful. Otherwise, returns an error.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeregisterOrganizationDelegatedAdminOutput  {
+pub struct DeregisterOrganizationDelegatedAdminOutput {
     _request_id: Option<String>,
 }
 impl aws_http::request_id::RequestId for DeregisterOrganizationDelegatedAdminOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl DeregisterOrganizationDelegatedAdminOutput {
     /// Creates a new builder-style object to manufacture [`DeregisterOrganizationDelegatedAdminOutput`](crate::operation::deregister_organization_delegated_admin::DeregisterOrganizationDelegatedAdminOutput).
-    pub fn builder() -> crate::operation::deregister_organization_delegated_admin::builders::DeregisterOrganizationDelegatedAdminOutputBuilder {
+    pub fn builder() -> crate::operation::deregister_organization_delegated_admin::builders::DeregisterOrganizationDelegatedAdminOutputBuilder{
         crate::operation::deregister_organization_delegated_admin::builders::DeregisterOrganizationDelegatedAdminOutputBuilder::default()
     }
 }
@@ -26,19 +26,18 @@ pub struct DeregisterOrganizationDelegatedAdminOutputBuilder {
 }
 impl DeregisterOrganizationDelegatedAdminOutputBuilder {
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`DeregisterOrganizationDelegatedAdminOutput`](crate::operation::deregister_organization_delegated_admin::DeregisterOrganizationDelegatedAdminOutput).
-    pub fn build(self) -> crate::operation::deregister_organization_delegated_admin::DeregisterOrganizationDelegatedAdminOutput {
+    pub fn build(self) -> crate::operation::deregister_organization_delegated_admin::DeregisterOrganizationDelegatedAdminOutput{
         crate::operation::deregister_organization_delegated_admin::DeregisterOrganizationDelegatedAdminOutput {
             _request_id: self._request_id,
         }
     }
 }
-

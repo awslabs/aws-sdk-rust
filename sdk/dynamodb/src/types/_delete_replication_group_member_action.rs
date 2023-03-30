@@ -3,14 +3,14 @@
 /// <p>Represents a replica to be deleted.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteReplicationGroupMemberAction  {
+pub struct DeleteReplicationGroupMemberAction {
     /// <p>The Region where the replica exists.</p>
     #[doc(hidden)]
     pub region_name: std::option::Option<std::string::String>,
 }
 impl DeleteReplicationGroupMemberAction {
     /// <p>The Region where the replica exists.</p>
-    pub fn region_name(&self) -> std::option::Option<& str> {
+    pub fn region_name(&self) -> std::option::Option<&str> {
         self.region_name.as_deref()
     }
 }
@@ -35,14 +35,13 @@ impl DeleteReplicationGroupMemberActionBuilder {
     }
     /// <p>The Region where the replica exists.</p>
     pub fn set_region_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.region_name = input; self
+        self.region_name = input;
+        self
     }
     /// Consumes the builder and constructs a [`DeleteReplicationGroupMemberAction`](crate::types::DeleteReplicationGroupMemberAction).
     pub fn build(self) -> crate::types::DeleteReplicationGroupMemberAction {
         crate::types::DeleteReplicationGroupMemberAction {
-            region_name: self.region_name
-            ,
+            region_name: self.region_name,
         }
     }
 }
-

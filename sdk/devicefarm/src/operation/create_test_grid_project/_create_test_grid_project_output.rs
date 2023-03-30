@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateTestGridProjectOutput  {
+pub struct CreateTestGridProjectOutput {
     /// <p>ARN of the Selenium testing project that was created.</p>
     #[doc(hidden)]
     pub test_grid_project: std::option::Option<crate::types::TestGridProject>,
@@ -10,18 +10,20 @@ pub struct CreateTestGridProjectOutput  {
 }
 impl CreateTestGridProjectOutput {
     /// <p>ARN of the Selenium testing project that was created.</p>
-    pub fn test_grid_project(&self) -> std::option::Option<& crate::types::TestGridProject> {
+    pub fn test_grid_project(&self) -> std::option::Option<&crate::types::TestGridProject> {
         self.test_grid_project.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for CreateTestGridProjectOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl CreateTestGridProjectOutput {
     /// Creates a new builder-style object to manufacture [`CreateTestGridProjectOutput`](crate::operation::create_test_grid_project::CreateTestGridProjectOutput).
-    pub fn builder() -> crate::operation::create_test_grid_project::builders::CreateTestGridProjectOutputBuilder {
+    pub fn builder(
+    ) -> crate::operation::create_test_grid_project::builders::CreateTestGridProjectOutputBuilder
+    {
         crate::operation::create_test_grid_project::builders::CreateTestGridProjectOutputBuilder::default()
     }
 }
@@ -40,25 +42,27 @@ impl CreateTestGridProjectOutputBuilder {
         self
     }
     /// <p>ARN of the Selenium testing project that was created.</p>
-    pub fn set_test_grid_project(mut self, input: std::option::Option<crate::types::TestGridProject>) -> Self {
-        self.test_grid_project = input; self
+    pub fn set_test_grid_project(
+        mut self,
+        input: std::option::Option<crate::types::TestGridProject>,
+    ) -> Self {
+        self.test_grid_project = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`CreateTestGridProjectOutput`](crate::operation::create_test_grid_project::CreateTestGridProjectOutput).
     pub fn build(self) -> crate::operation::create_test_grid_project::CreateTestGridProjectOutput {
         crate::operation::create_test_grid_project::CreateTestGridProjectOutput {
-            test_grid_project: self.test_grid_project
-            ,
+            test_grid_project: self.test_grid_project,
             _request_id: self._request_id,
         }
     }
 }
-

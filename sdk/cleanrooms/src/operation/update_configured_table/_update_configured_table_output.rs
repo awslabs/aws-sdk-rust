@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateConfiguredTableOutput  {
+pub struct UpdateConfiguredTableOutput {
     /// <p>The updated configured table.</p>
     #[doc(hidden)]
     pub configured_table: std::option::Option<crate::types::ConfiguredTable>,
@@ -10,18 +10,20 @@ pub struct UpdateConfiguredTableOutput  {
 }
 impl UpdateConfiguredTableOutput {
     /// <p>The updated configured table.</p>
-    pub fn configured_table(&self) -> std::option::Option<& crate::types::ConfiguredTable> {
+    pub fn configured_table(&self) -> std::option::Option<&crate::types::ConfiguredTable> {
         self.configured_table.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for UpdateConfiguredTableOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl UpdateConfiguredTableOutput {
     /// Creates a new builder-style object to manufacture [`UpdateConfiguredTableOutput`](crate::operation::update_configured_table::UpdateConfiguredTableOutput).
-    pub fn builder() -> crate::operation::update_configured_table::builders::UpdateConfiguredTableOutputBuilder {
+    pub fn builder(
+    ) -> crate::operation::update_configured_table::builders::UpdateConfiguredTableOutputBuilder
+    {
         crate::operation::update_configured_table::builders::UpdateConfiguredTableOutputBuilder::default()
     }
 }
@@ -40,25 +42,27 @@ impl UpdateConfiguredTableOutputBuilder {
         self
     }
     /// <p>The updated configured table.</p>
-    pub fn set_configured_table(mut self, input: std::option::Option<crate::types::ConfiguredTable>) -> Self {
-        self.configured_table = input; self
+    pub fn set_configured_table(
+        mut self,
+        input: std::option::Option<crate::types::ConfiguredTable>,
+    ) -> Self {
+        self.configured_table = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`UpdateConfiguredTableOutput`](crate::operation::update_configured_table::UpdateConfiguredTableOutput).
     pub fn build(self) -> crate::operation::update_configured_table::UpdateConfiguredTableOutput {
         crate::operation::update_configured_table::UpdateConfiguredTableOutput {
-            configured_table: self.configured_table
-            ,
+            configured_table: self.configured_table,
             _request_id: self._request_id,
         }
     }
 }
-

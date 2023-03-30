@@ -3,14 +3,17 @@
 /// <p>Limits settings by pattern type in the protection groups for your subscription. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ProtectionGroupPatternTypeLimits  {
+pub struct ProtectionGroupPatternTypeLimits {
     /// <p>Limits settings on protection groups with arbitrary pattern type. </p>
     #[doc(hidden)]
-    pub arbitrary_pattern_limits: std::option::Option<crate::types::ProtectionGroupArbitraryPatternLimits>,
+    pub arbitrary_pattern_limits:
+        std::option::Option<crate::types::ProtectionGroupArbitraryPatternLimits>,
 }
 impl ProtectionGroupPatternTypeLimits {
     /// <p>Limits settings on protection groups with arbitrary pattern type. </p>
-    pub fn arbitrary_pattern_limits(&self) -> std::option::Option<& crate::types::ProtectionGroupArbitraryPatternLimits> {
+    pub fn arbitrary_pattern_limits(
+        &self,
+    ) -> std::option::Option<&crate::types::ProtectionGroupArbitraryPatternLimits> {
         self.arbitrary_pattern_limits.as_ref()
     }
 }
@@ -25,24 +28,30 @@ impl ProtectionGroupPatternTypeLimits {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct ProtectionGroupPatternTypeLimitsBuilder {
-    pub(crate) arbitrary_pattern_limits: std::option::Option<crate::types::ProtectionGroupArbitraryPatternLimits>,
+    pub(crate) arbitrary_pattern_limits:
+        std::option::Option<crate::types::ProtectionGroupArbitraryPatternLimits>,
 }
 impl ProtectionGroupPatternTypeLimitsBuilder {
     /// <p>Limits settings on protection groups with arbitrary pattern type. </p>
-    pub fn arbitrary_pattern_limits(mut self, input: crate::types::ProtectionGroupArbitraryPatternLimits) -> Self {
+    pub fn arbitrary_pattern_limits(
+        mut self,
+        input: crate::types::ProtectionGroupArbitraryPatternLimits,
+    ) -> Self {
         self.arbitrary_pattern_limits = Some(input);
         self
     }
     /// <p>Limits settings on protection groups with arbitrary pattern type. </p>
-    pub fn set_arbitrary_pattern_limits(mut self, input: std::option::Option<crate::types::ProtectionGroupArbitraryPatternLimits>) -> Self {
-        self.arbitrary_pattern_limits = input; self
+    pub fn set_arbitrary_pattern_limits(
+        mut self,
+        input: std::option::Option<crate::types::ProtectionGroupArbitraryPatternLimits>,
+    ) -> Self {
+        self.arbitrary_pattern_limits = input;
+        self
     }
     /// Consumes the builder and constructs a [`ProtectionGroupPatternTypeLimits`](crate::types::ProtectionGroupPatternTypeLimits).
     pub fn build(self) -> crate::types::ProtectionGroupPatternTypeLimits {
         crate::types::ProtectionGroupPatternTypeLimits {
-            arbitrary_pattern_limits: self.arbitrary_pattern_limits
-            ,
+            arbitrary_pattern_limits: self.arbitrary_pattern_limits,
         }
     }
 }
-

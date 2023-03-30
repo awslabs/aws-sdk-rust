@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct RegisterEcsClusterInput  {
+pub struct RegisterEcsClusterInput {
     /// <p>The cluster's ARN.</p>
     #[doc(hidden)]
     pub ecs_cluster_arn: std::option::Option<std::string::String>,
@@ -12,17 +12,18 @@ pub struct RegisterEcsClusterInput  {
 }
 impl RegisterEcsClusterInput {
     /// <p>The cluster's ARN.</p>
-    pub fn ecs_cluster_arn(&self) -> std::option::Option<& str> {
+    pub fn ecs_cluster_arn(&self) -> std::option::Option<&str> {
         self.ecs_cluster_arn.as_deref()
     }
     /// <p>The stack ID.</p>
-    pub fn stack_id(&self) -> std::option::Option<& str> {
+    pub fn stack_id(&self) -> std::option::Option<&str> {
         self.stack_id.as_deref()
     }
 }
 impl RegisterEcsClusterInput {
     /// Creates a new builder-style object to manufacture [`RegisterEcsClusterInput`](crate::operation::register_ecs_cluster::RegisterEcsClusterInput).
-    pub fn builder() -> crate::operation::register_ecs_cluster::builders::RegisterEcsClusterInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::register_ecs_cluster::builders::RegisterEcsClusterInputBuilder {
         crate::operation::register_ecs_cluster::builders::RegisterEcsClusterInputBuilder::default()
     }
 }
@@ -42,7 +43,8 @@ impl RegisterEcsClusterInputBuilder {
     }
     /// <p>The cluster's ARN.</p>
     pub fn set_ecs_cluster_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.ecs_cluster_arn = input; self
+        self.ecs_cluster_arn = input;
+        self
     }
     /// <p>The stack ID.</p>
     pub fn stack_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -51,18 +53,21 @@ impl RegisterEcsClusterInputBuilder {
     }
     /// <p>The stack ID.</p>
     pub fn set_stack_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.stack_id = input; self
+        self.stack_id = input;
+        self
     }
     /// Consumes the builder and constructs a [`RegisterEcsClusterInput`](crate::operation::register_ecs_cluster::RegisterEcsClusterInput).
-    pub fn build(self) -> Result<crate::operation::register_ecs_cluster::RegisterEcsClusterInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::register_ecs_cluster::RegisterEcsClusterInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::register_ecs_cluster::RegisterEcsClusterInput {
-                ecs_cluster_arn: self.ecs_cluster_arn
-                ,
-                stack_id: self.stack_id
-                ,
-            }
+                ecs_cluster_arn: self.ecs_cluster_arn,
+                stack_id: self.stack_id,
+            },
         )
     }
 }
-

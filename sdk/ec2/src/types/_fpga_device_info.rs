@@ -3,7 +3,7 @@
 /// <p>Describes the FPGA accelerator for the instance type.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct FpgaDeviceInfo  {
+pub struct FpgaDeviceInfo {
     /// <p>The name of the FPGA accelerator.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -19,11 +19,11 @@ pub struct FpgaDeviceInfo  {
 }
 impl FpgaDeviceInfo {
     /// <p>The name of the FPGA accelerator.</p>
-    pub fn name(&self) -> std::option::Option<& str> {
+    pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>The manufacturer of the FPGA accelerator.</p>
-    pub fn manufacturer(&self) -> std::option::Option<& str> {
+    pub fn manufacturer(&self) -> std::option::Option<&str> {
         self.manufacturer.as_deref()
     }
     /// <p>The count of FPGA accelerators for the instance type.</p>
@@ -31,7 +31,7 @@ impl FpgaDeviceInfo {
         self.count
     }
     /// <p>Describes the memory for the FPGA accelerator for the instance type.</p>
-    pub fn memory_info(&self) -> std::option::Option<& crate::types::FpgaDeviceMemoryInfo> {
+    pub fn memory_info(&self) -> std::option::Option<&crate::types::FpgaDeviceMemoryInfo> {
         self.memory_info.as_ref()
     }
 }
@@ -59,7 +59,8 @@ impl FpgaDeviceInfoBuilder {
     }
     /// <p>The name of the FPGA accelerator.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input; self
+        self.name = input;
+        self
     }
     /// <p>The manufacturer of the FPGA accelerator.</p>
     pub fn manufacturer(mut self, input: impl Into<std::string::String>) -> Self {
@@ -68,7 +69,8 @@ impl FpgaDeviceInfoBuilder {
     }
     /// <p>The manufacturer of the FPGA accelerator.</p>
     pub fn set_manufacturer(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.manufacturer = input; self
+        self.manufacturer = input;
+        self
     }
     /// <p>The count of FPGA accelerators for the instance type.</p>
     pub fn count(mut self, input: i32) -> Self {
@@ -77,7 +79,8 @@ impl FpgaDeviceInfoBuilder {
     }
     /// <p>The count of FPGA accelerators for the instance type.</p>
     pub fn set_count(mut self, input: std::option::Option<i32>) -> Self {
-        self.count = input; self
+        self.count = input;
+        self
     }
     /// <p>Describes the memory for the FPGA accelerator for the instance type.</p>
     pub fn memory_info(mut self, input: crate::types::FpgaDeviceMemoryInfo) -> Self {
@@ -85,21 +88,20 @@ impl FpgaDeviceInfoBuilder {
         self
     }
     /// <p>Describes the memory for the FPGA accelerator for the instance type.</p>
-    pub fn set_memory_info(mut self, input: std::option::Option<crate::types::FpgaDeviceMemoryInfo>) -> Self {
-        self.memory_info = input; self
+    pub fn set_memory_info(
+        mut self,
+        input: std::option::Option<crate::types::FpgaDeviceMemoryInfo>,
+    ) -> Self {
+        self.memory_info = input;
+        self
     }
     /// Consumes the builder and constructs a [`FpgaDeviceInfo`](crate::types::FpgaDeviceInfo).
     pub fn build(self) -> crate::types::FpgaDeviceInfo {
         crate::types::FpgaDeviceInfo {
-            name: self.name
-            ,
-            manufacturer: self.manufacturer
-            ,
-            count: self.count
-            ,
-            memory_info: self.memory_info
-            ,
+            name: self.name,
+            manufacturer: self.manufacturer,
+            count: self.count,
+            memory_info: self.memory_info,
         }
     }
 }
-

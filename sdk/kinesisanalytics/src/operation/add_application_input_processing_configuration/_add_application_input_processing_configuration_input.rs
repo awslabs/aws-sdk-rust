@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AddApplicationInputProcessingConfigurationInput  {
+pub struct AddApplicationInputProcessingConfigurationInput {
     /// <p>Name of the application to which you want to add the input processing configuration.</p>
     #[doc(hidden)]
     pub application_name: std::option::Option<std::string::String>,
@@ -14,11 +14,12 @@ pub struct AddApplicationInputProcessingConfigurationInput  {
     pub input_id: std::option::Option<std::string::String>,
     /// <p>The <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_InputProcessingConfiguration.html">InputProcessingConfiguration</a> to add to the application.</p>
     #[doc(hidden)]
-    pub input_processing_configuration: std::option::Option<crate::types::InputProcessingConfiguration>,
+    pub input_processing_configuration:
+        std::option::Option<crate::types::InputProcessingConfiguration>,
 }
 impl AddApplicationInputProcessingConfigurationInput {
     /// <p>Name of the application to which you want to add the input processing configuration.</p>
-    pub fn application_name(&self) -> std::option::Option<& str> {
+    pub fn application_name(&self) -> std::option::Option<&str> {
         self.application_name.as_deref()
     }
     /// <p>Version of the application to which you want to add the input processing configuration. You can use the <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_DescribeApplication.html">DescribeApplication</a> operation to get the current application version. If the version specified is not the current version, the <code>ConcurrentModificationException</code> is returned.</p>
@@ -26,17 +27,19 @@ impl AddApplicationInputProcessingConfigurationInput {
         self.current_application_version_id
     }
     /// <p>The ID of the input configuration to add the input processing configuration to. You can get a list of the input IDs for an application using the <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_DescribeApplication.html">DescribeApplication</a> operation.</p>
-    pub fn input_id(&self) -> std::option::Option<& str> {
+    pub fn input_id(&self) -> std::option::Option<&str> {
         self.input_id.as_deref()
     }
     /// <p>The <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_InputProcessingConfiguration.html">InputProcessingConfiguration</a> to add to the application.</p>
-    pub fn input_processing_configuration(&self) -> std::option::Option<& crate::types::InputProcessingConfiguration> {
+    pub fn input_processing_configuration(
+        &self,
+    ) -> std::option::Option<&crate::types::InputProcessingConfiguration> {
         self.input_processing_configuration.as_ref()
     }
 }
 impl AddApplicationInputProcessingConfigurationInput {
     /// Creates a new builder-style object to manufacture [`AddApplicationInputProcessingConfigurationInput`](crate::operation::add_application_input_processing_configuration::AddApplicationInputProcessingConfigurationInput).
-    pub fn builder() -> crate::operation::add_application_input_processing_configuration::builders::AddApplicationInputProcessingConfigurationInputBuilder {
+    pub fn builder() -> crate::operation::add_application_input_processing_configuration::builders::AddApplicationInputProcessingConfigurationInputBuilder{
         crate::operation::add_application_input_processing_configuration::builders::AddApplicationInputProcessingConfigurationInputBuilder::default()
     }
 }
@@ -48,7 +51,8 @@ pub struct AddApplicationInputProcessingConfigurationInputBuilder {
     pub(crate) application_name: std::option::Option<std::string::String>,
     pub(crate) current_application_version_id: std::option::Option<i64>,
     pub(crate) input_id: std::option::Option<std::string::String>,
-    pub(crate) input_processing_configuration: std::option::Option<crate::types::InputProcessingConfiguration>,
+    pub(crate) input_processing_configuration:
+        std::option::Option<crate::types::InputProcessingConfiguration>,
 }
 impl AddApplicationInputProcessingConfigurationInputBuilder {
     /// <p>Name of the application to which you want to add the input processing configuration.</p>
@@ -58,7 +62,8 @@ impl AddApplicationInputProcessingConfigurationInputBuilder {
     }
     /// <p>Name of the application to which you want to add the input processing configuration.</p>
     pub fn set_application_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.application_name = input; self
+        self.application_name = input;
+        self
     }
     /// <p>Version of the application to which you want to add the input processing configuration. You can use the <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_DescribeApplication.html">DescribeApplication</a> operation to get the current application version. If the version specified is not the current version, the <code>ConcurrentModificationException</code> is returned.</p>
     pub fn current_application_version_id(mut self, input: i64) -> Self {
@@ -67,7 +72,8 @@ impl AddApplicationInputProcessingConfigurationInputBuilder {
     }
     /// <p>Version of the application to which you want to add the input processing configuration. You can use the <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_DescribeApplication.html">DescribeApplication</a> operation to get the current application version. If the version specified is not the current version, the <code>ConcurrentModificationException</code> is returned.</p>
     pub fn set_current_application_version_id(mut self, input: std::option::Option<i64>) -> Self {
-        self.current_application_version_id = input; self
+        self.current_application_version_id = input;
+        self
     }
     /// <p>The ID of the input configuration to add the input processing configuration to. You can get a list of the input IDs for an application using the <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_DescribeApplication.html">DescribeApplication</a> operation.</p>
     pub fn input_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -76,19 +82,27 @@ impl AddApplicationInputProcessingConfigurationInputBuilder {
     }
     /// <p>The ID of the input configuration to add the input processing configuration to. You can get a list of the input IDs for an application using the <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_DescribeApplication.html">DescribeApplication</a> operation.</p>
     pub fn set_input_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.input_id = input; self
+        self.input_id = input;
+        self
     }
     /// <p>The <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_InputProcessingConfiguration.html">InputProcessingConfiguration</a> to add to the application.</p>
-    pub fn input_processing_configuration(mut self, input: crate::types::InputProcessingConfiguration) -> Self {
+    pub fn input_processing_configuration(
+        mut self,
+        input: crate::types::InputProcessingConfiguration,
+    ) -> Self {
         self.input_processing_configuration = Some(input);
         self
     }
     /// <p>The <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_InputProcessingConfiguration.html">InputProcessingConfiguration</a> to add to the application.</p>
-    pub fn set_input_processing_configuration(mut self, input: std::option::Option<crate::types::InputProcessingConfiguration>) -> Self {
-        self.input_processing_configuration = input; self
+    pub fn set_input_processing_configuration(
+        mut self,
+        input: std::option::Option<crate::types::InputProcessingConfiguration>,
+    ) -> Self {
+        self.input_processing_configuration = input;
+        self
     }
     /// Consumes the builder and constructs a [`AddApplicationInputProcessingConfigurationInput`](crate::operation::add_application_input_processing_configuration::AddApplicationInputProcessingConfigurationInput).
-    pub fn build(self) -> Result<crate::operation::add_application_input_processing_configuration::AddApplicationInputProcessingConfigurationInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> Result<crate::operation::add_application_input_processing_configuration::AddApplicationInputProcessingConfigurationInput, aws_smithy_http::operation::error::BuildError>{
         Ok(
             crate::operation::add_application_input_processing_configuration::AddApplicationInputProcessingConfigurationInput {
                 application_name: self.application_name
@@ -103,4 +117,3 @@ impl AddApplicationInputProcessingConfigurationInputBuilder {
         )
     }
 }
-

@@ -144,4 +144,3 @@ pub mod builders;
 
 /// Error types that Amazon Lookout for Vision can respond with.
 pub mod error;
-

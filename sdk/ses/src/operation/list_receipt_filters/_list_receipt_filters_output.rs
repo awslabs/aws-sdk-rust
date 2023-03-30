@@ -3,7 +3,7 @@
 /// <p>A list of IP address filters that exist under your AWS account.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListReceiptFiltersOutput  {
+pub struct ListReceiptFiltersOutput {
     /// <p>A list of IP address filter data structures, which each consist of a name, an IP address range, and whether to allow or block mail from it.</p>
     #[doc(hidden)]
     pub filters: std::option::Option<std::vec::Vec<crate::types::ReceiptFilter>>,
@@ -11,18 +11,19 @@ pub struct ListReceiptFiltersOutput  {
 }
 impl ListReceiptFiltersOutput {
     /// <p>A list of IP address filter data structures, which each consist of a name, an IP address range, and whether to allow or block mail from it.</p>
-    pub fn filters(&self) -> std::option::Option<& [crate::types::ReceiptFilter]> {
+    pub fn filters(&self) -> std::option::Option<&[crate::types::ReceiptFilter]> {
         self.filters.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for ListReceiptFiltersOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl ListReceiptFiltersOutput {
     /// Creates a new builder-style object to manufacture [`ListReceiptFiltersOutput`](crate::operation::list_receipt_filters::ListReceiptFiltersOutput).
-    pub fn builder() -> crate::operation::list_receipt_filters::builders::ListReceiptFiltersOutputBuilder {
+    pub fn builder(
+    ) -> crate::operation::list_receipt_filters::builders::ListReceiptFiltersOutputBuilder {
         crate::operation::list_receipt_filters::builders::ListReceiptFiltersOutputBuilder::default()
     }
 }
@@ -42,30 +43,32 @@ impl ListReceiptFiltersOutputBuilder {
     /// <p>A list of IP address filter data structures, which each consist of a name, an IP address range, and whether to allow or block mail from it.</p>
     pub fn filters(mut self, input: crate::types::ReceiptFilter) -> Self {
         let mut v = self.filters.unwrap_or_default();
-                        v.push(input);
-                        self.filters = Some(v);
-                        self
+        v.push(input);
+        self.filters = Some(v);
+        self
     }
     /// <p>A list of IP address filter data structures, which each consist of a name, an IP address range, and whether to allow or block mail from it.</p>
-    pub fn set_filters(mut self, input: std::option::Option<std::vec::Vec<crate::types::ReceiptFilter>>) -> Self {
-        self.filters = input; self
+    pub fn set_filters(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::ReceiptFilter>>,
+    ) -> Self {
+        self.filters = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`ListReceiptFiltersOutput`](crate::operation::list_receipt_filters::ListReceiptFiltersOutput).
     pub fn build(self) -> crate::operation::list_receipt_filters::ListReceiptFiltersOutput {
         crate::operation::list_receipt_filters::ListReceiptFiltersOutput {
-            filters: self.filters
-            ,
+            filters: self.filters,
             _request_id: self._request_id,
         }
     }
 }
-

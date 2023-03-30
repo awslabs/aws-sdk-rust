@@ -3,7 +3,7 @@
 /// <p>Provides the details of the <code>RequestCancelExternalWorkflowExecutionInitiated</code> event.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct RequestCancelExternalWorkflowExecutionInitiatedEventAttributes  {
+pub struct RequestCancelExternalWorkflowExecutionInitiatedEventAttributes {
     /// <p>The <code>workflowId</code> of the external workflow execution to be canceled.</p>
     #[doc(hidden)]
     pub workflow_id: std::option::Option<std::string::String>,
@@ -19,11 +19,11 @@ pub struct RequestCancelExternalWorkflowExecutionInitiatedEventAttributes  {
 }
 impl RequestCancelExternalWorkflowExecutionInitiatedEventAttributes {
     /// <p>The <code>workflowId</code> of the external workflow execution to be canceled.</p>
-    pub fn workflow_id(&self) -> std::option::Option<& str> {
+    pub fn workflow_id(&self) -> std::option::Option<&str> {
         self.workflow_id.as_deref()
     }
     /// <p>The <code>runId</code> of the external workflow execution to be canceled.</p>
-    pub fn run_id(&self) -> std::option::Option<& str> {
+    pub fn run_id(&self) -> std::option::Option<&str> {
         self.run_id.as_deref()
     }
     /// <p>The ID of the <code>DecisionTaskCompleted</code> event corresponding to the decision task that resulted in the <code>RequestCancelExternalWorkflowExecution</code> decision for this cancellation request. This information can be useful for diagnosing problems by tracing back the chain of events leading up to this event.</p>
@@ -31,13 +31,15 @@ impl RequestCancelExternalWorkflowExecutionInitiatedEventAttributes {
         self.decision_task_completed_event_id
     }
     /// <p>Data attached to the event that can be used by the decider in subsequent workflow tasks.</p>
-    pub fn control(&self) -> std::option::Option<& str> {
+    pub fn control(&self) -> std::option::Option<&str> {
         self.control.as_deref()
     }
 }
 impl RequestCancelExternalWorkflowExecutionInitiatedEventAttributes {
     /// Creates a new builder-style object to manufacture [`RequestCancelExternalWorkflowExecutionInitiatedEventAttributes`](crate::types::RequestCancelExternalWorkflowExecutionInitiatedEventAttributes).
-    pub fn builder() -> crate::types::builders::RequestCancelExternalWorkflowExecutionInitiatedEventAttributesBuilder {
+    pub fn builder(
+    ) -> crate::types::builders::RequestCancelExternalWorkflowExecutionInitiatedEventAttributesBuilder
+    {
         crate::types::builders::RequestCancelExternalWorkflowExecutionInitiatedEventAttributesBuilder::default()
     }
 }
@@ -59,7 +61,8 @@ impl RequestCancelExternalWorkflowExecutionInitiatedEventAttributesBuilder {
     }
     /// <p>The <code>workflowId</code> of the external workflow execution to be canceled.</p>
     pub fn set_workflow_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.workflow_id = input; self
+        self.workflow_id = input;
+        self
     }
     /// <p>The <code>runId</code> of the external workflow execution to be canceled.</p>
     pub fn run_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -68,7 +71,8 @@ impl RequestCancelExternalWorkflowExecutionInitiatedEventAttributesBuilder {
     }
     /// <p>The <code>runId</code> of the external workflow execution to be canceled.</p>
     pub fn set_run_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.run_id = input; self
+        self.run_id = input;
+        self
     }
     /// <p>The ID of the <code>DecisionTaskCompleted</code> event corresponding to the decision task that resulted in the <code>RequestCancelExternalWorkflowExecution</code> decision for this cancellation request. This information can be useful for diagnosing problems by tracing back the chain of events leading up to this event.</p>
     pub fn decision_task_completed_event_id(mut self, input: i64) -> Self {
@@ -77,7 +81,8 @@ impl RequestCancelExternalWorkflowExecutionInitiatedEventAttributesBuilder {
     }
     /// <p>The ID of the <code>DecisionTaskCompleted</code> event corresponding to the decision task that resulted in the <code>RequestCancelExternalWorkflowExecution</code> decision for this cancellation request. This information can be useful for diagnosing problems by tracing back the chain of events leading up to this event.</p>
     pub fn set_decision_task_completed_event_id(mut self, input: std::option::Option<i64>) -> Self {
-        self.decision_task_completed_event_id = input; self
+        self.decision_task_completed_event_id = input;
+        self
     }
     /// <p>Data attached to the event that can be used by the decider in subsequent workflow tasks.</p>
     pub fn control(mut self, input: impl Into<std::string::String>) -> Self {
@@ -86,21 +91,20 @@ impl RequestCancelExternalWorkflowExecutionInitiatedEventAttributesBuilder {
     }
     /// <p>Data attached to the event that can be used by the decider in subsequent workflow tasks.</p>
     pub fn set_control(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.control = input; self
+        self.control = input;
+        self
     }
     /// Consumes the builder and constructs a [`RequestCancelExternalWorkflowExecutionInitiatedEventAttributes`](crate::types::RequestCancelExternalWorkflowExecutionInitiatedEventAttributes).
-    pub fn build(self) -> crate::types::RequestCancelExternalWorkflowExecutionInitiatedEventAttributes {
+    pub fn build(
+        self,
+    ) -> crate::types::RequestCancelExternalWorkflowExecutionInitiatedEventAttributes {
         crate::types::RequestCancelExternalWorkflowExecutionInitiatedEventAttributes {
-            workflow_id: self.workflow_id
-            ,
-            run_id: self.run_id
-            ,
-            decision_task_completed_event_id: self.decision_task_completed_event_id
-                .unwrap_or_default()
-            ,
-            control: self.control
-            ,
+            workflow_id: self.workflow_id,
+            run_id: self.run_id,
+            decision_task_completed_event_id: self
+                .decision_task_completed_event_id
+                .unwrap_or_default(),
+            control: self.control,
         }
     }
 }
-

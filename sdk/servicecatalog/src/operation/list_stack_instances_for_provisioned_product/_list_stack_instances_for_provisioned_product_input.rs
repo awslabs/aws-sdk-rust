@@ -2,12 +2,12 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListStackInstancesForProvisionedProductInput  {
-    /// <p>The language code.</p> 
-    /// <ul> 
-    /// <li> <p> <code>en</code> - English (default)</p> </li> 
-    /// <li> <p> <code>jp</code> - Japanese</p> </li> 
-    /// <li> <p> <code>zh</code> - Chinese</p> </li> 
+pub struct ListStackInstancesForProvisionedProductInput {
+    /// <p>The language code.</p>
+    /// <ul>
+    /// <li> <p> <code>en</code> - English (default)</p> </li>
+    /// <li> <p> <code>jp</code> - Japanese</p> </li>
+    /// <li> <p> <code>zh</code> - Chinese</p> </li>
     /// </ul>
     #[doc(hidden)]
     pub accept_language: std::option::Option<std::string::String>,
@@ -22,21 +22,21 @@ pub struct ListStackInstancesForProvisionedProductInput  {
     pub page_size: i32,
 }
 impl ListStackInstancesForProvisionedProductInput {
-    /// <p>The language code.</p> 
-    /// <ul> 
-    /// <li> <p> <code>en</code> - English (default)</p> </li> 
-    /// <li> <p> <code>jp</code> - Japanese</p> </li> 
-    /// <li> <p> <code>zh</code> - Chinese</p> </li> 
+    /// <p>The language code.</p>
+    /// <ul>
+    /// <li> <p> <code>en</code> - English (default)</p> </li>
+    /// <li> <p> <code>jp</code> - Japanese</p> </li>
+    /// <li> <p> <code>zh</code> - Chinese</p> </li>
     /// </ul>
-    pub fn accept_language(&self) -> std::option::Option<& str> {
+    pub fn accept_language(&self) -> std::option::Option<&str> {
         self.accept_language.as_deref()
     }
     /// <p>The identifier of the provisioned product.</p>
-    pub fn provisioned_product_id(&self) -> std::option::Option<& str> {
+    pub fn provisioned_product_id(&self) -> std::option::Option<&str> {
         self.provisioned_product_id.as_deref()
     }
     /// <p>The page token for the next set of results. To retrieve the first set of results, use null.</p>
-    pub fn page_token(&self) -> std::option::Option<& str> {
+    pub fn page_token(&self) -> std::option::Option<&str> {
         self.page_token.as_deref()
     }
     /// <p>The maximum number of items to return with this call.</p>
@@ -46,7 +46,7 @@ impl ListStackInstancesForProvisionedProductInput {
 }
 impl ListStackInstancesForProvisionedProductInput {
     /// Creates a new builder-style object to manufacture [`ListStackInstancesForProvisionedProductInput`](crate::operation::list_stack_instances_for_provisioned_product::ListStackInstancesForProvisionedProductInput).
-    pub fn builder() -> crate::operation::list_stack_instances_for_provisioned_product::builders::ListStackInstancesForProvisionedProductInputBuilder {
+    pub fn builder() -> crate::operation::list_stack_instances_for_provisioned_product::builders::ListStackInstancesForProvisionedProductInputBuilder{
         crate::operation::list_stack_instances_for_provisioned_product::builders::ListStackInstancesForProvisionedProductInputBuilder::default()
     }
 }
@@ -61,24 +61,25 @@ pub struct ListStackInstancesForProvisionedProductInputBuilder {
     pub(crate) page_size: std::option::Option<i32>,
 }
 impl ListStackInstancesForProvisionedProductInputBuilder {
-    /// <p>The language code.</p> 
-    /// <ul> 
-    /// <li> <p> <code>en</code> - English (default)</p> </li> 
-    /// <li> <p> <code>jp</code> - Japanese</p> </li> 
-    /// <li> <p> <code>zh</code> - Chinese</p> </li> 
+    /// <p>The language code.</p>
+    /// <ul>
+    /// <li> <p> <code>en</code> - English (default)</p> </li>
+    /// <li> <p> <code>jp</code> - Japanese</p> </li>
+    /// <li> <p> <code>zh</code> - Chinese</p> </li>
     /// </ul>
     pub fn accept_language(mut self, input: impl Into<std::string::String>) -> Self {
         self.accept_language = Some(input.into());
         self
     }
-    /// <p>The language code.</p> 
-    /// <ul> 
-    /// <li> <p> <code>en</code> - English (default)</p> </li> 
-    /// <li> <p> <code>jp</code> - Japanese</p> </li> 
-    /// <li> <p> <code>zh</code> - Chinese</p> </li> 
+    /// <p>The language code.</p>
+    /// <ul>
+    /// <li> <p> <code>en</code> - English (default)</p> </li>
+    /// <li> <p> <code>jp</code> - Japanese</p> </li>
+    /// <li> <p> <code>zh</code> - Chinese</p> </li>
     /// </ul>
     pub fn set_accept_language(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.accept_language = input; self
+        self.accept_language = input;
+        self
     }
     /// <p>The identifier of the provisioned product.</p>
     pub fn provisioned_product_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -86,8 +87,12 @@ impl ListStackInstancesForProvisionedProductInputBuilder {
         self
     }
     /// <p>The identifier of the provisioned product.</p>
-    pub fn set_provisioned_product_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.provisioned_product_id = input; self
+    pub fn set_provisioned_product_id(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.provisioned_product_id = input;
+        self
     }
     /// <p>The page token for the next set of results. To retrieve the first set of results, use null.</p>
     pub fn page_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -96,7 +101,8 @@ impl ListStackInstancesForProvisionedProductInputBuilder {
     }
     /// <p>The page token for the next set of results. To retrieve the first set of results, use null.</p>
     pub fn set_page_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.page_token = input; self
+        self.page_token = input;
+        self
     }
     /// <p>The maximum number of items to return with this call.</p>
     pub fn page_size(mut self, input: i32) -> Self {
@@ -105,10 +111,11 @@ impl ListStackInstancesForProvisionedProductInputBuilder {
     }
     /// <p>The maximum number of items to return with this call.</p>
     pub fn set_page_size(mut self, input: std::option::Option<i32>) -> Self {
-        self.page_size = input; self
+        self.page_size = input;
+        self
     }
     /// Consumes the builder and constructs a [`ListStackInstancesForProvisionedProductInput`](crate::operation::list_stack_instances_for_provisioned_product::ListStackInstancesForProvisionedProductInput).
-    pub fn build(self) -> Result<crate::operation::list_stack_instances_for_provisioned_product::ListStackInstancesForProvisionedProductInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> Result<crate::operation::list_stack_instances_for_provisioned_product::ListStackInstancesForProvisionedProductInput, aws_smithy_http::operation::error::BuildError>{
         Ok(
             crate::operation::list_stack_instances_for_provisioned_product::ListStackInstancesForProvisionedProductInput {
                 accept_language: self.accept_language
@@ -124,4 +131,3 @@ impl ListStackInstancesForProvisionedProductInputBuilder {
         )
     }
 }
-

@@ -3,7 +3,7 @@
 /// <p>You can use <code>RightsizingRecommendationConfiguration</code> to customize recommendations across two attributes. You can choose to view recommendations for instances within the same instance families or across different instance families. You can also choose to view your estimated savings that are associated with recommendations with consideration of existing Savings Plans or Reserved Instance (RI) benefits, or neither. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct RightsizingRecommendationConfiguration  {
+pub struct RightsizingRecommendationConfiguration {
     /// <p>The option to see recommendations within the same instance family or recommendations for instances across other families. The default value is <code>SAME_INSTANCE_FAMILY</code>. </p>
     #[doc(hidden)]
     pub recommendation_target: std::option::Option<crate::types::RecommendationTarget>,
@@ -13,7 +13,9 @@ pub struct RightsizingRecommendationConfiguration  {
 }
 impl RightsizingRecommendationConfiguration {
     /// <p>The option to see recommendations within the same instance family or recommendations for instances across other families. The default value is <code>SAME_INSTANCE_FAMILY</code>. </p>
-    pub fn recommendation_target(&self) -> std::option::Option<& crate::types::RecommendationTarget> {
+    pub fn recommendation_target(
+        &self,
+    ) -> std::option::Option<&crate::types::RecommendationTarget> {
         self.recommendation_target.as_ref()
     }
     /// <p>The option to consider RI or Savings Plans discount benefits in your savings calculation. The default value is <code>TRUE</code>. </p>
@@ -42,8 +44,12 @@ impl RightsizingRecommendationConfigurationBuilder {
         self
     }
     /// <p>The option to see recommendations within the same instance family or recommendations for instances across other families. The default value is <code>SAME_INSTANCE_FAMILY</code>. </p>
-    pub fn set_recommendation_target(mut self, input: std::option::Option<crate::types::RecommendationTarget>) -> Self {
-        self.recommendation_target = input; self
+    pub fn set_recommendation_target(
+        mut self,
+        input: std::option::Option<crate::types::RecommendationTarget>,
+    ) -> Self {
+        self.recommendation_target = input;
+        self
     }
     /// <p>The option to consider RI or Savings Plans discount benefits in your savings calculation. The default value is <code>TRUE</code>. </p>
     pub fn benefits_considered(mut self, input: bool) -> Self {
@@ -52,17 +58,14 @@ impl RightsizingRecommendationConfigurationBuilder {
     }
     /// <p>The option to consider RI or Savings Plans discount benefits in your savings calculation. The default value is <code>TRUE</code>. </p>
     pub fn set_benefits_considered(mut self, input: std::option::Option<bool>) -> Self {
-        self.benefits_considered = input; self
+        self.benefits_considered = input;
+        self
     }
     /// Consumes the builder and constructs a [`RightsizingRecommendationConfiguration`](crate::types::RightsizingRecommendationConfiguration).
     pub fn build(self) -> crate::types::RightsizingRecommendationConfiguration {
         crate::types::RightsizingRecommendationConfiguration {
-            recommendation_target: self.recommendation_target
-            ,
-            benefits_considered: self.benefits_considered
-                .unwrap_or_default()
-            ,
+            recommendation_target: self.recommendation_target,
+            benefits_considered: self.benefits_considered.unwrap_or_default(),
         }
     }
 }
-

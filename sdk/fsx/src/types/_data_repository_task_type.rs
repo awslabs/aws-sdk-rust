@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-/// 
+///
 /// Here is an example of how you can make a match expression forward-compatible:
-/// 
+///
 /// ```text
 /// # let datarepositorytasktype = unimplemented!();
 /// match datarepositorytasktype {
@@ -32,14 +32,22 @@
 /// Specifically, when `datarepositorytasktype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `DataRepositoryTaskType::NewFeature` also yielding `"NewFeature"`.
-/// 
+///
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
 pub enum DataRepositoryTaskType {
     #[allow(missing_docs)] // documentation missing in model
     AutoTriggeredEviction,
@@ -50,45 +58,51 @@ pub enum DataRepositoryTaskType {
     #[allow(missing_docs)] // documentation missing in model
     Eviction,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::primitives::UnknownVariantValue)
+    Unknown(crate::primitives::UnknownVariantValue),
 }
 impl std::convert::From<&str> for DataRepositoryTaskType {
-                fn from(s: &str) -> Self {
-                    match s {
-                        "AUTO_RELEASE_DATA" => DataRepositoryTaskType::AutoTriggeredEviction,
-"EXPORT_TO_REPOSITORY" => DataRepositoryTaskType::Export,
-"IMPORT_METADATA_FROM_REPOSITORY" => DataRepositoryTaskType::Import,
-"RELEASE_DATA_FROM_FILESYSTEM" => DataRepositoryTaskType::Eviction,
-other => DataRepositoryTaskType::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
-                    }
-                }
-            }
-impl std::str::FromStr for DataRepositoryTaskType {
-                type Err = std::convert::Infallible;
-
-                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-                    Ok(DataRepositoryTaskType::from(s))
-                }
-            }
-impl DataRepositoryTaskType {
-                /// Returns the `&str` value of the enum member.
-                pub fn as_str(&self) -> &str {
-                    match self {
-    DataRepositoryTaskType::AutoTriggeredEviction => "AUTO_RELEASE_DATA",
-    DataRepositoryTaskType::Export => "EXPORT_TO_REPOSITORY",
-    DataRepositoryTaskType::Import => "IMPORT_METADATA_FROM_REPOSITORY",
-    DataRepositoryTaskType::Eviction => "RELEASE_DATA_FROM_FILESYSTEM",
-    DataRepositoryTaskType::Unknown(value) => value.as_str()
+    fn from(s: &str) -> Self {
+        match s {
+            "AUTO_RELEASE_DATA" => DataRepositoryTaskType::AutoTriggeredEviction,
+            "EXPORT_TO_REPOSITORY" => DataRepositoryTaskType::Export,
+            "IMPORT_METADATA_FROM_REPOSITORY" => DataRepositoryTaskType::Import,
+            "RELEASE_DATA_FROM_FILESYSTEM" => DataRepositoryTaskType::Eviction,
+            other => DataRepositoryTaskType::Unknown(crate::primitives::UnknownVariantValue(
+                other.to_owned(),
+            )),
+        }
+    }
 }
-                }
-                /// Returns all the `&str` representations of the enum members.
-                pub const fn values() -> &'static [&'static str] {
-                    &["AUTO_RELEASE_DATA", "EXPORT_TO_REPOSITORY", "IMPORT_METADATA_FROM_REPOSITORY", "RELEASE_DATA_FROM_FILESYSTEM"]
-                }
-            }
-impl AsRef<str> for DataRepositoryTaskType {
-                fn as_ref(&self) -> &str {
-                    self.as_str()
-                }
-            }
+impl std::str::FromStr for DataRepositoryTaskType {
+    type Err = std::convert::Infallible;
 
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(DataRepositoryTaskType::from(s))
+    }
+}
+impl DataRepositoryTaskType {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            DataRepositoryTaskType::AutoTriggeredEviction => "AUTO_RELEASE_DATA",
+            DataRepositoryTaskType::Export => "EXPORT_TO_REPOSITORY",
+            DataRepositoryTaskType::Import => "IMPORT_METADATA_FROM_REPOSITORY",
+            DataRepositoryTaskType::Eviction => "RELEASE_DATA_FROM_FILESYSTEM",
+            DataRepositoryTaskType::Unknown(value) => value.as_str(),
+        }
+    }
+    /// Returns all the `&str` representations of the enum members.
+    pub const fn values() -> &'static [&'static str] {
+        &[
+            "AUTO_RELEASE_DATA",
+            "EXPORT_TO_REPOSITORY",
+            "IMPORT_METADATA_FROM_REPOSITORY",
+            "RELEASE_DATA_FROM_FILESYSTEM",
+        ]
+    }
+}
+impl AsRef<str> for DataRepositoryTaskType {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}

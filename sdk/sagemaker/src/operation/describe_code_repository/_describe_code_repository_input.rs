@@ -2,20 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeCodeRepositoryInput  {
+pub struct DescribeCodeRepositoryInput {
     /// <p>The name of the Git repository to describe.</p>
     #[doc(hidden)]
     pub code_repository_name: std::option::Option<std::string::String>,
 }
 impl DescribeCodeRepositoryInput {
     /// <p>The name of the Git repository to describe.</p>
-    pub fn code_repository_name(&self) -> std::option::Option<& str> {
+    pub fn code_repository_name(&self) -> std::option::Option<&str> {
         self.code_repository_name.as_deref()
     }
 }
 impl DescribeCodeRepositoryInput {
     /// Creates a new builder-style object to manufacture [`DescribeCodeRepositoryInput`](crate::operation::describe_code_repository::DescribeCodeRepositoryInput).
-    pub fn builder() -> crate::operation::describe_code_repository::builders::DescribeCodeRepositoryInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::describe_code_repository::builders::DescribeCodeRepositoryInputBuilder
+    {
         crate::operation::describe_code_repository::builders::DescribeCodeRepositoryInputBuilder::default()
     }
 }
@@ -33,17 +35,24 @@ impl DescribeCodeRepositoryInputBuilder {
         self
     }
     /// <p>The name of the Git repository to describe.</p>
-    pub fn set_code_repository_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.code_repository_name = input; self
+    pub fn set_code_repository_name(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.code_repository_name = input;
+        self
     }
     /// Consumes the builder and constructs a [`DescribeCodeRepositoryInput`](crate::operation::describe_code_repository::DescribeCodeRepositoryInput).
-    pub fn build(self) -> Result<crate::operation::describe_code_repository::DescribeCodeRepositoryInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::describe_code_repository::DescribeCodeRepositoryInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::describe_code_repository::DescribeCodeRepositoryInput {
-                code_repository_name: self.code_repository_name
-                ,
-            }
+                code_repository_name: self.code_repository_name,
+            },
         )
     }
 }
-

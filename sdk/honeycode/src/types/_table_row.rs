@@ -3,7 +3,7 @@
 /// <p>An object that contains attributes about a single row in a table</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct TableRow  {
+pub struct TableRow {
     /// <p>The id of the row in the table.</p>
     #[doc(hidden)]
     pub row_id: std::option::Option<std::string::String>,
@@ -13,11 +13,11 @@ pub struct TableRow  {
 }
 impl TableRow {
     /// <p>The id of the row in the table.</p>
-    pub fn row_id(&self) -> std::option::Option<& str> {
+    pub fn row_id(&self) -> std::option::Option<&str> {
         self.row_id.as_deref()
     }
     /// <p>A list of cells in the table row. The cells appear in the same order as the columns of the table. </p>
-    pub fn cells(&self) -> std::option::Option<& [crate::types::Cell]> {
+    pub fn cells(&self) -> std::option::Option<&[crate::types::Cell]> {
         self.cells.as_deref()
     }
 }
@@ -43,7 +43,8 @@ impl TableRowBuilder {
     }
     /// <p>The id of the row in the table.</p>
     pub fn set_row_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.row_id = input; self
+        self.row_id = input;
+        self
     }
     /// Appends an item to `cells`.
     ///
@@ -52,22 +53,23 @@ impl TableRowBuilder {
     /// <p>A list of cells in the table row. The cells appear in the same order as the columns of the table. </p>
     pub fn cells(mut self, input: crate::types::Cell) -> Self {
         let mut v = self.cells.unwrap_or_default();
-                        v.push(input);
-                        self.cells = Some(v);
-                        self
+        v.push(input);
+        self.cells = Some(v);
+        self
     }
     /// <p>A list of cells in the table row. The cells appear in the same order as the columns of the table. </p>
-    pub fn set_cells(mut self, input: std::option::Option<std::vec::Vec<crate::types::Cell>>) -> Self {
-        self.cells = input; self
+    pub fn set_cells(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::Cell>>,
+    ) -> Self {
+        self.cells = input;
+        self
     }
     /// Consumes the builder and constructs a [`TableRow`](crate::types::TableRow).
     pub fn build(self) -> crate::types::TableRow {
         crate::types::TableRow {
-            row_id: self.row_id
-            ,
-            cells: self.cells
-            ,
+            row_id: self.row_id,
+            cells: self.cells,
         }
     }
 }
-

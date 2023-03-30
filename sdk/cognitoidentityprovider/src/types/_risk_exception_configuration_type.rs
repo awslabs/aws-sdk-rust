@@ -3,7 +3,7 @@
 /// <p>The type of the configuration to override the risk decision.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct RiskExceptionConfigurationType  {
+pub struct RiskExceptionConfigurationType {
     /// <p>Overrides the risk decision to always block the pre-authentication requests. The IP range is in CIDR notation, a compact representation of an IP address and its routing prefix.</p>
     #[doc(hidden)]
     pub blocked_ip_range_list: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -13,11 +13,11 @@ pub struct RiskExceptionConfigurationType  {
 }
 impl RiskExceptionConfigurationType {
     /// <p>Overrides the risk decision to always block the pre-authentication requests. The IP range is in CIDR notation, a compact representation of an IP address and its routing prefix.</p>
-    pub fn blocked_ip_range_list(&self) -> std::option::Option<& [std::string::String]> {
+    pub fn blocked_ip_range_list(&self) -> std::option::Option<&[std::string::String]> {
         self.blocked_ip_range_list.as_deref()
     }
     /// <p>Risk detection isn't performed on the IP addresses in this range list. The IP range is in CIDR notation.</p>
-    pub fn skipped_ip_range_list(&self) -> std::option::Option<& [std::string::String]> {
+    pub fn skipped_ip_range_list(&self) -> std::option::Option<&[std::string::String]> {
         self.skipped_ip_range_list.as_deref()
     }
 }
@@ -43,13 +43,17 @@ impl RiskExceptionConfigurationTypeBuilder {
     /// <p>Overrides the risk decision to always block the pre-authentication requests. The IP range is in CIDR notation, a compact representation of an IP address and its routing prefix.</p>
     pub fn blocked_ip_range_list(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.blocked_ip_range_list.unwrap_or_default();
-                        v.push(input.into());
-                        self.blocked_ip_range_list = Some(v);
-                        self
+        v.push(input.into());
+        self.blocked_ip_range_list = Some(v);
+        self
     }
     /// <p>Overrides the risk decision to always block the pre-authentication requests. The IP range is in CIDR notation, a compact representation of an IP address and its routing prefix.</p>
-    pub fn set_blocked_ip_range_list(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-        self.blocked_ip_range_list = input; self
+    pub fn set_blocked_ip_range_list(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
+        self.blocked_ip_range_list = input;
+        self
     }
     /// Appends an item to `skipped_ip_range_list`.
     ///
@@ -58,22 +62,23 @@ impl RiskExceptionConfigurationTypeBuilder {
     /// <p>Risk detection isn't performed on the IP addresses in this range list. The IP range is in CIDR notation.</p>
     pub fn skipped_ip_range_list(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.skipped_ip_range_list.unwrap_or_default();
-                        v.push(input.into());
-                        self.skipped_ip_range_list = Some(v);
-                        self
+        v.push(input.into());
+        self.skipped_ip_range_list = Some(v);
+        self
     }
     /// <p>Risk detection isn't performed on the IP addresses in this range list. The IP range is in CIDR notation.</p>
-    pub fn set_skipped_ip_range_list(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-        self.skipped_ip_range_list = input; self
+    pub fn set_skipped_ip_range_list(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
+        self.skipped_ip_range_list = input;
+        self
     }
     /// Consumes the builder and constructs a [`RiskExceptionConfigurationType`](crate::types::RiskExceptionConfigurationType).
     pub fn build(self) -> crate::types::RiskExceptionConfigurationType {
         crate::types::RiskExceptionConfigurationType {
-            blocked_ip_range_list: self.blocked_ip_range_list
-            ,
-            skipped_ip_range_list: self.skipped_ip_range_list
-            ,
+            blocked_ip_range_list: self.blocked_ip_range_list,
+            skipped_ip_range_list: self.skipped_ip_range_list,
         }
     }
 }
-

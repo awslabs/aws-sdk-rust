@@ -3,8 +3,8 @@
 /// <p>Contains the parameters for ModifyImageAttribute.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ModifyImageAttributeInput  {
-    /// <p>The name of the attribute to modify.</p> 
+pub struct ModifyImageAttributeInput {
+    /// <p>The name of the attribute to modify.</p>
     /// <p>Valid values: <code>description</code> | <code>launchPermission</code> </p>
     #[doc(hidden)]
     pub attribute: std::option::Option<std::string::String>,
@@ -43,41 +43,43 @@ pub struct ModifyImageAttributeInput  {
     pub organizational_unit_arns: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl ModifyImageAttributeInput {
-    /// <p>The name of the attribute to modify.</p> 
+    /// <p>The name of the attribute to modify.</p>
     /// <p>Valid values: <code>description</code> | <code>launchPermission</code> </p>
-    pub fn attribute(&self) -> std::option::Option<& str> {
+    pub fn attribute(&self) -> std::option::Option<&str> {
         self.attribute.as_deref()
     }
     /// <p>A new description for the AMI.</p>
-    pub fn description(&self) -> std::option::Option<& crate::types::AttributeValue> {
+    pub fn description(&self) -> std::option::Option<&crate::types::AttributeValue> {
         self.description.as_ref()
     }
     /// <p>The ID of the AMI.</p>
-    pub fn image_id(&self) -> std::option::Option<& str> {
+    pub fn image_id(&self) -> std::option::Option<&str> {
         self.image_id.as_deref()
     }
     /// <p>A new launch permission for the AMI.</p>
-    pub fn launch_permission(&self) -> std::option::Option<& crate::types::LaunchPermissionModifications> {
+    pub fn launch_permission(
+        &self,
+    ) -> std::option::Option<&crate::types::LaunchPermissionModifications> {
         self.launch_permission.as_ref()
     }
     /// <p>The operation type. This parameter can be used only when the <code>Attribute</code> parameter is <code>launchPermission</code>.</p>
-    pub fn operation_type(&self) -> std::option::Option<& crate::types::OperationType> {
+    pub fn operation_type(&self) -> std::option::Option<&crate::types::OperationType> {
         self.operation_type.as_ref()
     }
     /// <p>Not supported.</p>
-    pub fn product_codes(&self) -> std::option::Option<& [std::string::String]> {
+    pub fn product_codes(&self) -> std::option::Option<&[std::string::String]> {
         self.product_codes.as_deref()
     }
     /// <p>The user groups. This parameter can be used only when the <code>Attribute</code> parameter is <code>launchPermission</code>.</p>
-    pub fn user_groups(&self) -> std::option::Option<& [std::string::String]> {
+    pub fn user_groups(&self) -> std::option::Option<&[std::string::String]> {
         self.user_groups.as_deref()
     }
     /// <p>The Amazon Web Services account IDs. This parameter can be used only when the <code>Attribute</code> parameter is <code>launchPermission</code>.</p>
-    pub fn user_ids(&self) -> std::option::Option<& [std::string::String]> {
+    pub fn user_ids(&self) -> std::option::Option<&[std::string::String]> {
         self.user_ids.as_deref()
     }
     /// <p>The value of the attribute being modified. This parameter can be used only when the <code>Attribute</code> parameter is <code>description</code>.</p>
-    pub fn value(&self) -> std::option::Option<& str> {
+    pub fn value(&self) -> std::option::Option<&str> {
         self.value.as_deref()
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
@@ -85,17 +87,18 @@ impl ModifyImageAttributeInput {
         self.dry_run
     }
     /// <p>The Amazon Resource Name (ARN) of an organization. This parameter can be used only when the <code>Attribute</code> parameter is <code>launchPermission</code>.</p>
-    pub fn organization_arns(&self) -> std::option::Option<& [std::string::String]> {
+    pub fn organization_arns(&self) -> std::option::Option<&[std::string::String]> {
         self.organization_arns.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of an organizational unit (OU). This parameter can be used only when the <code>Attribute</code> parameter is <code>launchPermission</code>.</p>
-    pub fn organizational_unit_arns(&self) -> std::option::Option<& [std::string::String]> {
+    pub fn organizational_unit_arns(&self) -> std::option::Option<&[std::string::String]> {
         self.organizational_unit_arns.as_deref()
     }
 }
 impl ModifyImageAttributeInput {
     /// Creates a new builder-style object to manufacture [`ModifyImageAttributeInput`](crate::operation::modify_image_attribute::ModifyImageAttributeInput).
-    pub fn builder() -> crate::operation::modify_image_attribute::builders::ModifyImageAttributeInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::modify_image_attribute::builders::ModifyImageAttributeInputBuilder {
         crate::operation::modify_image_attribute::builders::ModifyImageAttributeInputBuilder::default()
     }
 }
@@ -118,16 +121,17 @@ pub struct ModifyImageAttributeInputBuilder {
     pub(crate) organizational_unit_arns: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl ModifyImageAttributeInputBuilder {
-    /// <p>The name of the attribute to modify.</p> 
+    /// <p>The name of the attribute to modify.</p>
     /// <p>Valid values: <code>description</code> | <code>launchPermission</code> </p>
     pub fn attribute(mut self, input: impl Into<std::string::String>) -> Self {
         self.attribute = Some(input.into());
         self
     }
-    /// <p>The name of the attribute to modify.</p> 
+    /// <p>The name of the attribute to modify.</p>
     /// <p>Valid values: <code>description</code> | <code>launchPermission</code> </p>
     pub fn set_attribute(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.attribute = input; self
+        self.attribute = input;
+        self
     }
     /// <p>A new description for the AMI.</p>
     pub fn description(mut self, input: crate::types::AttributeValue) -> Self {
@@ -135,8 +139,12 @@ impl ModifyImageAttributeInputBuilder {
         self
     }
     /// <p>A new description for the AMI.</p>
-    pub fn set_description(mut self, input: std::option::Option<crate::types::AttributeValue>) -> Self {
-        self.description = input; self
+    pub fn set_description(
+        mut self,
+        input: std::option::Option<crate::types::AttributeValue>,
+    ) -> Self {
+        self.description = input;
+        self
     }
     /// <p>The ID of the AMI.</p>
     pub fn image_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -145,7 +153,8 @@ impl ModifyImageAttributeInputBuilder {
     }
     /// <p>The ID of the AMI.</p>
     pub fn set_image_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.image_id = input; self
+        self.image_id = input;
+        self
     }
     /// <p>A new launch permission for the AMI.</p>
     pub fn launch_permission(mut self, input: crate::types::LaunchPermissionModifications) -> Self {
@@ -153,8 +162,12 @@ impl ModifyImageAttributeInputBuilder {
         self
     }
     /// <p>A new launch permission for the AMI.</p>
-    pub fn set_launch_permission(mut self, input: std::option::Option<crate::types::LaunchPermissionModifications>) -> Self {
-        self.launch_permission = input; self
+    pub fn set_launch_permission(
+        mut self,
+        input: std::option::Option<crate::types::LaunchPermissionModifications>,
+    ) -> Self {
+        self.launch_permission = input;
+        self
     }
     /// <p>The operation type. This parameter can be used only when the <code>Attribute</code> parameter is <code>launchPermission</code>.</p>
     pub fn operation_type(mut self, input: crate::types::OperationType) -> Self {
@@ -162,8 +175,12 @@ impl ModifyImageAttributeInputBuilder {
         self
     }
     /// <p>The operation type. This parameter can be used only when the <code>Attribute</code> parameter is <code>launchPermission</code>.</p>
-    pub fn set_operation_type(mut self, input: std::option::Option<crate::types::OperationType>) -> Self {
-        self.operation_type = input; self
+    pub fn set_operation_type(
+        mut self,
+        input: std::option::Option<crate::types::OperationType>,
+    ) -> Self {
+        self.operation_type = input;
+        self
     }
     /// Appends an item to `product_codes`.
     ///
@@ -172,13 +189,17 @@ impl ModifyImageAttributeInputBuilder {
     /// <p>Not supported.</p>
     pub fn product_codes(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.product_codes.unwrap_or_default();
-                        v.push(input.into());
-                        self.product_codes = Some(v);
-                        self
+        v.push(input.into());
+        self.product_codes = Some(v);
+        self
     }
     /// <p>Not supported.</p>
-    pub fn set_product_codes(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-        self.product_codes = input; self
+    pub fn set_product_codes(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
+        self.product_codes = input;
+        self
     }
     /// Appends an item to `user_groups`.
     ///
@@ -187,13 +208,17 @@ impl ModifyImageAttributeInputBuilder {
     /// <p>The user groups. This parameter can be used only when the <code>Attribute</code> parameter is <code>launchPermission</code>.</p>
     pub fn user_groups(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.user_groups.unwrap_or_default();
-                        v.push(input.into());
-                        self.user_groups = Some(v);
-                        self
+        v.push(input.into());
+        self.user_groups = Some(v);
+        self
     }
     /// <p>The user groups. This parameter can be used only when the <code>Attribute</code> parameter is <code>launchPermission</code>.</p>
-    pub fn set_user_groups(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-        self.user_groups = input; self
+    pub fn set_user_groups(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
+        self.user_groups = input;
+        self
     }
     /// Appends an item to `user_ids`.
     ///
@@ -202,13 +227,17 @@ impl ModifyImageAttributeInputBuilder {
     /// <p>The Amazon Web Services account IDs. This parameter can be used only when the <code>Attribute</code> parameter is <code>launchPermission</code>.</p>
     pub fn user_ids(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.user_ids.unwrap_or_default();
-                        v.push(input.into());
-                        self.user_ids = Some(v);
-                        self
+        v.push(input.into());
+        self.user_ids = Some(v);
+        self
     }
     /// <p>The Amazon Web Services account IDs. This parameter can be used only when the <code>Attribute</code> parameter is <code>launchPermission</code>.</p>
-    pub fn set_user_ids(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-        self.user_ids = input; self
+    pub fn set_user_ids(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
+        self.user_ids = input;
+        self
     }
     /// <p>The value of the attribute being modified. This parameter can be used only when the <code>Attribute</code> parameter is <code>description</code>.</p>
     pub fn value(mut self, input: impl Into<std::string::String>) -> Self {
@@ -217,7 +246,8 @@ impl ModifyImageAttributeInputBuilder {
     }
     /// <p>The value of the attribute being modified. This parameter can be used only when the <code>Attribute</code> parameter is <code>description</code>.</p>
     pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.value = input; self
+        self.value = input;
+        self
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn dry_run(mut self, input: bool) -> Self {
@@ -226,7 +256,8 @@ impl ModifyImageAttributeInputBuilder {
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn set_dry_run(mut self, input: std::option::Option<bool>) -> Self {
-        self.dry_run = input; self
+        self.dry_run = input;
+        self
     }
     /// Appends an item to `organization_arns`.
     ///
@@ -235,13 +266,17 @@ impl ModifyImageAttributeInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of an organization. This parameter can be used only when the <code>Attribute</code> parameter is <code>launchPermission</code>.</p>
     pub fn organization_arns(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.organization_arns.unwrap_or_default();
-                        v.push(input.into());
-                        self.organization_arns = Some(v);
-                        self
+        v.push(input.into());
+        self.organization_arns = Some(v);
+        self
     }
     /// <p>The Amazon Resource Name (ARN) of an organization. This parameter can be used only when the <code>Attribute</code> parameter is <code>launchPermission</code>.</p>
-    pub fn set_organization_arns(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-        self.organization_arns = input; self
+    pub fn set_organization_arns(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
+        self.organization_arns = input;
+        self
     }
     /// Appends an item to `organizational_unit_arns`.
     ///
@@ -250,44 +285,40 @@ impl ModifyImageAttributeInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of an organizational unit (OU). This parameter can be used only when the <code>Attribute</code> parameter is <code>launchPermission</code>.</p>
     pub fn organizational_unit_arns(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.organizational_unit_arns.unwrap_or_default();
-                        v.push(input.into());
-                        self.organizational_unit_arns = Some(v);
-                        self
+        v.push(input.into());
+        self.organizational_unit_arns = Some(v);
+        self
     }
     /// <p>The Amazon Resource Name (ARN) of an organizational unit (OU). This parameter can be used only when the <code>Attribute</code> parameter is <code>launchPermission</code>.</p>
-    pub fn set_organizational_unit_arns(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-        self.organizational_unit_arns = input; self
+    pub fn set_organizational_unit_arns(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
+        self.organizational_unit_arns = input;
+        self
     }
     /// Consumes the builder and constructs a [`ModifyImageAttributeInput`](crate::operation::modify_image_attribute::ModifyImageAttributeInput).
-    pub fn build(self) -> Result<crate::operation::modify_image_attribute::ModifyImageAttributeInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::modify_image_attribute::ModifyImageAttributeInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::modify_image_attribute::ModifyImageAttributeInput {
-                attribute: self.attribute
-                ,
-                description: self.description
-                ,
-                image_id: self.image_id
-                ,
-                launch_permission: self.launch_permission
-                ,
-                operation_type: self.operation_type
-                ,
-                product_codes: self.product_codes
-                ,
-                user_groups: self.user_groups
-                ,
-                user_ids: self.user_ids
-                ,
-                value: self.value
-                ,
-                dry_run: self.dry_run
-                ,
-                organization_arns: self.organization_arns
-                ,
-                organizational_unit_arns: self.organizational_unit_arns
-                ,
-            }
+                attribute: self.attribute,
+                description: self.description,
+                image_id: self.image_id,
+                launch_permission: self.launch_permission,
+                operation_type: self.operation_type,
+                product_codes: self.product_codes,
+                user_groups: self.user_groups,
+                user_ids: self.user_ids,
+                value: self.value,
+                dry_run: self.dry_run,
+                organization_arns: self.organization_arns,
+                organizational_unit_arns: self.organizational_unit_arns,
+            },
         )
     }
 }
-

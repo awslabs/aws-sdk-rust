@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AddApplicationCloudWatchLoggingOptionInput  {
+pub struct AddApplicationCloudWatchLoggingOptionInput {
     /// <p>The Kinesis Analytics application name.</p>
     #[doc(hidden)]
     pub application_name: std::option::Option<std::string::String>,
@@ -15,7 +15,7 @@ pub struct AddApplicationCloudWatchLoggingOptionInput  {
 }
 impl AddApplicationCloudWatchLoggingOptionInput {
     /// <p>The Kinesis Analytics application name.</p>
-    pub fn application_name(&self) -> std::option::Option<& str> {
+    pub fn application_name(&self) -> std::option::Option<&str> {
         self.application_name.as_deref()
     }
     /// <p>The version ID of the Kinesis Analytics application.</p>
@@ -23,13 +23,15 @@ impl AddApplicationCloudWatchLoggingOptionInput {
         self.current_application_version_id
     }
     /// <p>Provides the CloudWatch log stream Amazon Resource Name (ARN) and the IAM role ARN. Note: To write application messages to CloudWatch, the IAM role that is used must have the <code>PutLogEvents</code> policy action enabled.</p>
-    pub fn cloud_watch_logging_option(&self) -> std::option::Option<& crate::types::CloudWatchLoggingOption> {
+    pub fn cloud_watch_logging_option(
+        &self,
+    ) -> std::option::Option<&crate::types::CloudWatchLoggingOption> {
         self.cloud_watch_logging_option.as_ref()
     }
 }
 impl AddApplicationCloudWatchLoggingOptionInput {
     /// Creates a new builder-style object to manufacture [`AddApplicationCloudWatchLoggingOptionInput`](crate::operation::add_application_cloud_watch_logging_option::AddApplicationCloudWatchLoggingOptionInput).
-    pub fn builder() -> crate::operation::add_application_cloud_watch_logging_option::builders::AddApplicationCloudWatchLoggingOptionInputBuilder {
+    pub fn builder() -> crate::operation::add_application_cloud_watch_logging_option::builders::AddApplicationCloudWatchLoggingOptionInputBuilder{
         crate::operation::add_application_cloud_watch_logging_option::builders::AddApplicationCloudWatchLoggingOptionInputBuilder::default()
     }
 }
@@ -40,7 +42,8 @@ impl AddApplicationCloudWatchLoggingOptionInput {
 pub struct AddApplicationCloudWatchLoggingOptionInputBuilder {
     pub(crate) application_name: std::option::Option<std::string::String>,
     pub(crate) current_application_version_id: std::option::Option<i64>,
-    pub(crate) cloud_watch_logging_option: std::option::Option<crate::types::CloudWatchLoggingOption>,
+    pub(crate) cloud_watch_logging_option:
+        std::option::Option<crate::types::CloudWatchLoggingOption>,
 }
 impl AddApplicationCloudWatchLoggingOptionInputBuilder {
     /// <p>The Kinesis Analytics application name.</p>
@@ -50,7 +53,8 @@ impl AddApplicationCloudWatchLoggingOptionInputBuilder {
     }
     /// <p>The Kinesis Analytics application name.</p>
     pub fn set_application_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.application_name = input; self
+        self.application_name = input;
+        self
     }
     /// <p>The version ID of the Kinesis Analytics application.</p>
     pub fn current_application_version_id(mut self, input: i64) -> Self {
@@ -59,19 +63,27 @@ impl AddApplicationCloudWatchLoggingOptionInputBuilder {
     }
     /// <p>The version ID of the Kinesis Analytics application.</p>
     pub fn set_current_application_version_id(mut self, input: std::option::Option<i64>) -> Self {
-        self.current_application_version_id = input; self
+        self.current_application_version_id = input;
+        self
     }
     /// <p>Provides the CloudWatch log stream Amazon Resource Name (ARN) and the IAM role ARN. Note: To write application messages to CloudWatch, the IAM role that is used must have the <code>PutLogEvents</code> policy action enabled.</p>
-    pub fn cloud_watch_logging_option(mut self, input: crate::types::CloudWatchLoggingOption) -> Self {
+    pub fn cloud_watch_logging_option(
+        mut self,
+        input: crate::types::CloudWatchLoggingOption,
+    ) -> Self {
         self.cloud_watch_logging_option = Some(input);
         self
     }
     /// <p>Provides the CloudWatch log stream Amazon Resource Name (ARN) and the IAM role ARN. Note: To write application messages to CloudWatch, the IAM role that is used must have the <code>PutLogEvents</code> policy action enabled.</p>
-    pub fn set_cloud_watch_logging_option(mut self, input: std::option::Option<crate::types::CloudWatchLoggingOption>) -> Self {
-        self.cloud_watch_logging_option = input; self
+    pub fn set_cloud_watch_logging_option(
+        mut self,
+        input: std::option::Option<crate::types::CloudWatchLoggingOption>,
+    ) -> Self {
+        self.cloud_watch_logging_option = input;
+        self
     }
     /// Consumes the builder and constructs a [`AddApplicationCloudWatchLoggingOptionInput`](crate::operation::add_application_cloud_watch_logging_option::AddApplicationCloudWatchLoggingOptionInput).
-    pub fn build(self) -> Result<crate::operation::add_application_cloud_watch_logging_option::AddApplicationCloudWatchLoggingOptionInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> Result<crate::operation::add_application_cloud_watch_logging_option::AddApplicationCloudWatchLoggingOptionInput, aws_smithy_http::operation::error::BuildError>{
         Ok(
             crate::operation::add_application_cloud_watch_logging_option::AddApplicationCloudWatchLoggingOptionInput {
                 application_name: self.application_name
@@ -84,4 +96,3 @@ impl AddApplicationCloudWatchLoggingOptionInputBuilder {
         )
     }
 }
-

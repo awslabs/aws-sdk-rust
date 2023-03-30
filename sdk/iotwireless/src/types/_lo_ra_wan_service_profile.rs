@@ -3,7 +3,7 @@
 /// <p>LoRaWANServiceProfile object.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct LoRaWanServiceProfile  {
+pub struct LoRaWanServiceProfile {
     /// <p>The AddGWMetaData value.</p>
     #[doc(hidden)]
     pub add_gw_metadata: bool,
@@ -51,7 +51,8 @@ impl LoRaWanServiceProfileBuilder {
     }
     /// <p>The AddGWMetaData value.</p>
     pub fn set_add_gw_metadata(mut self, input: std::option::Option<bool>) -> Self {
-        self.add_gw_metadata = input; self
+        self.add_gw_metadata = input;
+        self
     }
     /// <p>The DrMin value.</p>
     pub fn dr_min(mut self, input: i32) -> Self {
@@ -60,7 +61,8 @@ impl LoRaWanServiceProfileBuilder {
     }
     /// <p>The DrMin value.</p>
     pub fn set_dr_min(mut self, input: std::option::Option<i32>) -> Self {
-        self.dr_min = input; self
+        self.dr_min = input;
+        self
     }
     /// <p>The DrMax value.</p>
     pub fn dr_max(mut self, input: i32) -> Self {
@@ -69,19 +71,15 @@ impl LoRaWanServiceProfileBuilder {
     }
     /// <p>The DrMax value.</p>
     pub fn set_dr_max(mut self, input: std::option::Option<i32>) -> Self {
-        self.dr_max = input; self
+        self.dr_max = input;
+        self
     }
     /// Consumes the builder and constructs a [`LoRaWanServiceProfile`](crate::types::LoRaWanServiceProfile).
     pub fn build(self) -> crate::types::LoRaWanServiceProfile {
         crate::types::LoRaWanServiceProfile {
-            add_gw_metadata: self.add_gw_metadata
-                .unwrap_or_default()
-            ,
-            dr_min: self.dr_min
-            ,
-            dr_max: self.dr_max
-            ,
+            add_gw_metadata: self.add_gw_metadata.unwrap_or_default(),
+            dr_min: self.dr_min,
+            dr_max: self.dr_max,
         }
     }
 }
-

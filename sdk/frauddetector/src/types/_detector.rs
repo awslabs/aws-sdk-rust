@@ -3,7 +3,7 @@
 /// <p>The detector.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Detector  {
+pub struct Detector {
     /// <p>The detector ID.</p>
     #[doc(hidden)]
     pub detector_id: std::option::Option<std::string::String>,
@@ -25,27 +25,27 @@ pub struct Detector  {
 }
 impl Detector {
     /// <p>The detector ID.</p>
-    pub fn detector_id(&self) -> std::option::Option<& str> {
+    pub fn detector_id(&self) -> std::option::Option<&str> {
         self.detector_id.as_deref()
     }
     /// <p>The detector description.</p>
-    pub fn description(&self) -> std::option::Option<& str> {
+    pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
     /// <p>The name of the event type.</p>
-    pub fn event_type_name(&self) -> std::option::Option<& str> {
+    pub fn event_type_name(&self) -> std::option::Option<&str> {
         self.event_type_name.as_deref()
     }
     /// <p>Timestamp of when the detector was last updated.</p>
-    pub fn last_updated_time(&self) -> std::option::Option<& str> {
+    pub fn last_updated_time(&self) -> std::option::Option<&str> {
         self.last_updated_time.as_deref()
     }
     /// <p>Timestamp of when the detector was created.</p>
-    pub fn created_time(&self) -> std::option::Option<& str> {
+    pub fn created_time(&self) -> std::option::Option<&str> {
         self.created_time.as_deref()
     }
     /// <p>The detector ARN.</p>
-    pub fn arn(&self) -> std::option::Option<& str> {
+    pub fn arn(&self) -> std::option::Option<&str> {
         self.arn.as_deref()
     }
 }
@@ -75,7 +75,8 @@ impl DetectorBuilder {
     }
     /// <p>The detector ID.</p>
     pub fn set_detector_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.detector_id = input; self
+        self.detector_id = input;
+        self
     }
     /// <p>The detector description.</p>
     pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -84,7 +85,8 @@ impl DetectorBuilder {
     }
     /// <p>The detector description.</p>
     pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.description = input; self
+        self.description = input;
+        self
     }
     /// <p>The name of the event type.</p>
     pub fn event_type_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -93,7 +95,8 @@ impl DetectorBuilder {
     }
     /// <p>The name of the event type.</p>
     pub fn set_event_type_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.event_type_name = input; self
+        self.event_type_name = input;
+        self
     }
     /// <p>Timestamp of when the detector was last updated.</p>
     pub fn last_updated_time(mut self, input: impl Into<std::string::String>) -> Self {
@@ -101,8 +104,12 @@ impl DetectorBuilder {
         self
     }
     /// <p>Timestamp of when the detector was last updated.</p>
-    pub fn set_last_updated_time(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.last_updated_time = input; self
+    pub fn set_last_updated_time(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.last_updated_time = input;
+        self
     }
     /// <p>Timestamp of when the detector was created.</p>
     pub fn created_time(mut self, input: impl Into<std::string::String>) -> Self {
@@ -111,7 +118,8 @@ impl DetectorBuilder {
     }
     /// <p>Timestamp of when the detector was created.</p>
     pub fn set_created_time(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.created_time = input; self
+        self.created_time = input;
+        self
     }
     /// <p>The detector ARN.</p>
     pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -120,24 +128,18 @@ impl DetectorBuilder {
     }
     /// <p>The detector ARN.</p>
     pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.arn = input; self
+        self.arn = input;
+        self
     }
     /// Consumes the builder and constructs a [`Detector`](crate::types::Detector).
     pub fn build(self) -> crate::types::Detector {
         crate::types::Detector {
-            detector_id: self.detector_id
-            ,
-            description: self.description
-            ,
-            event_type_name: self.event_type_name
-            ,
-            last_updated_time: self.last_updated_time
-            ,
-            created_time: self.created_time
-            ,
-            arn: self.arn
-            ,
+            detector_id: self.detector_id,
+            description: self.description,
+            event_type_name: self.event_type_name,
+            last_updated_time: self.last_updated_time,
+            created_time: self.created_time,
+            arn: self.arn,
         }
     }
 }
-

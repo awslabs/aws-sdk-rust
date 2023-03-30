@@ -3,7 +3,7 @@
 /// <p>The output of the ListCertificates operation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListCertificatesOutput  {
+pub struct ListCertificatesOutput {
     /// <p>The descriptions of the certificates.</p>
     #[doc(hidden)]
     pub certificates: std::option::Option<std::vec::Vec<crate::types::Certificate>>,
@@ -14,22 +14,23 @@ pub struct ListCertificatesOutput  {
 }
 impl ListCertificatesOutput {
     /// <p>The descriptions of the certificates.</p>
-    pub fn certificates(&self) -> std::option::Option<& [crate::types::Certificate]> {
+    pub fn certificates(&self) -> std::option::Option<&[crate::types::Certificate]> {
         self.certificates.as_deref()
     }
     /// <p>The marker for the next set of results, or null if there are no additional results.</p>
-    pub fn next_marker(&self) -> std::option::Option<& str> {
+    pub fn next_marker(&self) -> std::option::Option<&str> {
         self.next_marker.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for ListCertificatesOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl ListCertificatesOutput {
     /// Creates a new builder-style object to manufacture [`ListCertificatesOutput`](crate::operation::list_certificates::ListCertificatesOutput).
-    pub fn builder() -> crate::operation::list_certificates::builders::ListCertificatesOutputBuilder {
+    pub fn builder() -> crate::operation::list_certificates::builders::ListCertificatesOutputBuilder
+    {
         crate::operation::list_certificates::builders::ListCertificatesOutputBuilder::default()
     }
 }
@@ -50,13 +51,17 @@ impl ListCertificatesOutputBuilder {
     /// <p>The descriptions of the certificates.</p>
     pub fn certificates(mut self, input: crate::types::Certificate) -> Self {
         let mut v = self.certificates.unwrap_or_default();
-                        v.push(input);
-                        self.certificates = Some(v);
-                        self
+        v.push(input);
+        self.certificates = Some(v);
+        self
     }
     /// <p>The descriptions of the certificates.</p>
-    pub fn set_certificates(mut self, input: std::option::Option<std::vec::Vec<crate::types::Certificate>>) -> Self {
-        self.certificates = input; self
+    pub fn set_certificates(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::Certificate>>,
+    ) -> Self {
+        self.certificates = input;
+        self
     }
     /// <p>The marker for the next set of results, or null if there are no additional results.</p>
     pub fn next_marker(mut self, input: impl Into<std::string::String>) -> Self {
@@ -65,26 +70,24 @@ impl ListCertificatesOutputBuilder {
     }
     /// <p>The marker for the next set of results, or null if there are no additional results.</p>
     pub fn set_next_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_marker = input; self
+        self.next_marker = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`ListCertificatesOutput`](crate::operation::list_certificates::ListCertificatesOutput).
     pub fn build(self) -> crate::operation::list_certificates::ListCertificatesOutput {
         crate::operation::list_certificates::ListCertificatesOutput {
-            certificates: self.certificates
-            ,
-            next_marker: self.next_marker
-            ,
+            certificates: self.certificates,
+            next_marker: self.next_marker,
             _request_id: self._request_id,
         }
     }
 }
-

@@ -3,7 +3,7 @@
 /// <p></p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Filter  {
+pub struct Filter {
     /// <p></p>
     #[doc(hidden)]
     pub key: std::option::Option<std::string::String>,
@@ -16,15 +16,15 @@ pub struct Filter  {
 }
 impl Filter {
     /// <p></p>
-    pub fn key(&self) -> std::option::Option<& str> {
+    pub fn key(&self) -> std::option::Option<&str> {
         self.key.as_deref()
     }
     /// <p></p>
-    pub fn values(&self) -> std::option::Option<& [std::string::String]> {
+    pub fn values(&self) -> std::option::Option<&[std::string::String]> {
         self.values.as_deref()
     }
     /// <p></p>
-    pub fn comparison_operator(&self) -> std::option::Option<& str> {
+    pub fn comparison_operator(&self) -> std::option::Option<&str> {
         self.comparison_operator.as_deref()
     }
 }
@@ -51,7 +51,8 @@ impl FilterBuilder {
     }
     /// <p></p>
     pub fn set_key(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.key = input; self
+        self.key = input;
+        self
     }
     /// Appends an item to `values`.
     ///
@@ -60,13 +61,17 @@ impl FilterBuilder {
     /// <p></p>
     pub fn values(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.values.unwrap_or_default();
-                        v.push(input.into());
-                        self.values = Some(v);
-                        self
+        v.push(input.into());
+        self.values = Some(v);
+        self
     }
     /// <p></p>
-    pub fn set_values(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-        self.values = input; self
+    pub fn set_values(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
+        self.values = input;
+        self
     }
     /// <p></p>
     pub fn comparison_operator(mut self, input: impl Into<std::string::String>) -> Self {
@@ -74,19 +79,19 @@ impl FilterBuilder {
         self
     }
     /// <p></p>
-    pub fn set_comparison_operator(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.comparison_operator = input; self
+    pub fn set_comparison_operator(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.comparison_operator = input;
+        self
     }
     /// Consumes the builder and constructs a [`Filter`](crate::types::Filter).
     pub fn build(self) -> crate::types::Filter {
         crate::types::Filter {
-            key: self.key
-            ,
-            values: self.values
-            ,
-            comparison_operator: self.comparison_operator
-            ,
+            key: self.key,
+            values: self.values,
+            comparison_operator: self.comparison_operator,
         }
     }
 }
-

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteBillingGroupInput  {
+pub struct DeleteBillingGroupInput {
     /// <p>The name of the billing group.</p>
     #[doc(hidden)]
     pub billing_group_name: std::option::Option<std::string::String>,
@@ -12,7 +12,7 @@ pub struct DeleteBillingGroupInput  {
 }
 impl DeleteBillingGroupInput {
     /// <p>The name of the billing group.</p>
-    pub fn billing_group_name(&self) -> std::option::Option<& str> {
+    pub fn billing_group_name(&self) -> std::option::Option<&str> {
         self.billing_group_name.as_deref()
     }
     /// <p>The expected version of the billing group. If the version of the billing group does not match the expected version specified in the request, the <code>DeleteBillingGroup</code> request is rejected with a <code>VersionConflictException</code>.</p>
@@ -22,7 +22,8 @@ impl DeleteBillingGroupInput {
 }
 impl DeleteBillingGroupInput {
     /// Creates a new builder-style object to manufacture [`DeleteBillingGroupInput`](crate::operation::delete_billing_group::DeleteBillingGroupInput).
-    pub fn builder() -> crate::operation::delete_billing_group::builders::DeleteBillingGroupInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::delete_billing_group::builders::DeleteBillingGroupInputBuilder {
         crate::operation::delete_billing_group::builders::DeleteBillingGroupInputBuilder::default()
     }
 }
@@ -41,8 +42,12 @@ impl DeleteBillingGroupInputBuilder {
         self
     }
     /// <p>The name of the billing group.</p>
-    pub fn set_billing_group_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.billing_group_name = input; self
+    pub fn set_billing_group_name(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.billing_group_name = input;
+        self
     }
     /// <p>The expected version of the billing group. If the version of the billing group does not match the expected version specified in the request, the <code>DeleteBillingGroup</code> request is rejected with a <code>VersionConflictException</code>.</p>
     pub fn expected_version(mut self, input: i64) -> Self {
@@ -51,18 +56,21 @@ impl DeleteBillingGroupInputBuilder {
     }
     /// <p>The expected version of the billing group. If the version of the billing group does not match the expected version specified in the request, the <code>DeleteBillingGroup</code> request is rejected with a <code>VersionConflictException</code>.</p>
     pub fn set_expected_version(mut self, input: std::option::Option<i64>) -> Self {
-        self.expected_version = input; self
+        self.expected_version = input;
+        self
     }
     /// Consumes the builder and constructs a [`DeleteBillingGroupInput`](crate::operation::delete_billing_group::DeleteBillingGroupInput).
-    pub fn build(self) -> Result<crate::operation::delete_billing_group::DeleteBillingGroupInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::delete_billing_group::DeleteBillingGroupInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::delete_billing_group::DeleteBillingGroupInput {
-                billing_group_name: self.billing_group_name
-                ,
-                expected_version: self.expected_version
-                ,
-            }
+                billing_group_name: self.billing_group_name,
+                expected_version: self.expected_version,
+            },
         )
     }
 }
-

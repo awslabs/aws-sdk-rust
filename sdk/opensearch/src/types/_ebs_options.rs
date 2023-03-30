@@ -3,7 +3,7 @@
 /// <p>Container for the parameters required to enable EBS-based storage for an OpenSearch Service domain.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct EbsOptions  {
+pub struct EbsOptions {
     /// <p>Indicates whether EBS volumes are attached to data nodes in an OpenSearch Service domain.</p>
     #[doc(hidden)]
     pub ebs_enabled: std::option::Option<bool>,
@@ -26,7 +26,7 @@ impl EbsOptions {
         self.ebs_enabled
     }
     /// <p>Specifies the type of EBS volumes attached to data nodes.</p>
-    pub fn volume_type(&self) -> std::option::Option<& crate::types::VolumeType> {
+    pub fn volume_type(&self) -> std::option::Option<&crate::types::VolumeType> {
         self.volume_type.as_ref()
     }
     /// <p>Specifies the size (in GiB) of EBS volumes attached to data nodes.</p>
@@ -67,7 +67,8 @@ impl EbsOptionsBuilder {
     }
     /// <p>Indicates whether EBS volumes are attached to data nodes in an OpenSearch Service domain.</p>
     pub fn set_ebs_enabled(mut self, input: std::option::Option<bool>) -> Self {
-        self.ebs_enabled = input; self
+        self.ebs_enabled = input;
+        self
     }
     /// <p>Specifies the type of EBS volumes attached to data nodes.</p>
     pub fn volume_type(mut self, input: crate::types::VolumeType) -> Self {
@@ -76,7 +77,8 @@ impl EbsOptionsBuilder {
     }
     /// <p>Specifies the type of EBS volumes attached to data nodes.</p>
     pub fn set_volume_type(mut self, input: std::option::Option<crate::types::VolumeType>) -> Self {
-        self.volume_type = input; self
+        self.volume_type = input;
+        self
     }
     /// <p>Specifies the size (in GiB) of EBS volumes attached to data nodes.</p>
     pub fn volume_size(mut self, input: i32) -> Self {
@@ -85,7 +87,8 @@ impl EbsOptionsBuilder {
     }
     /// <p>Specifies the size (in GiB) of EBS volumes attached to data nodes.</p>
     pub fn set_volume_size(mut self, input: std::option::Option<i32>) -> Self {
-        self.volume_size = input; self
+        self.volume_size = input;
+        self
     }
     /// <p>Specifies the baseline input/output (I/O) performance of EBS volumes attached to data nodes. Applicable only for the <code>gp3</code> and provisioned IOPS EBS volume types.</p>
     pub fn iops(mut self, input: i32) -> Self {
@@ -94,7 +97,8 @@ impl EbsOptionsBuilder {
     }
     /// <p>Specifies the baseline input/output (I/O) performance of EBS volumes attached to data nodes. Applicable only for the <code>gp3</code> and provisioned IOPS EBS volume types.</p>
     pub fn set_iops(mut self, input: std::option::Option<i32>) -> Self {
-        self.iops = input; self
+        self.iops = input;
+        self
     }
     /// <p>Specifies the throughput (in MiB/s) of the EBS volumes attached to data nodes. Applicable only for the <code>gp3</code> volume type.</p>
     pub fn throughput(mut self, input: i32) -> Self {
@@ -103,22 +107,17 @@ impl EbsOptionsBuilder {
     }
     /// <p>Specifies the throughput (in MiB/s) of the EBS volumes attached to data nodes. Applicable only for the <code>gp3</code> volume type.</p>
     pub fn set_throughput(mut self, input: std::option::Option<i32>) -> Self {
-        self.throughput = input; self
+        self.throughput = input;
+        self
     }
     /// Consumes the builder and constructs a [`EbsOptions`](crate::types::EbsOptions).
     pub fn build(self) -> crate::types::EbsOptions {
         crate::types::EbsOptions {
-            ebs_enabled: self.ebs_enabled
-            ,
-            volume_type: self.volume_type
-            ,
-            volume_size: self.volume_size
-            ,
-            iops: self.iops
-            ,
-            throughput: self.throughput
-            ,
+            ebs_enabled: self.ebs_enabled,
+            volume_type: self.volume_type,
+            volume_size: self.volume_size,
+            iops: self.iops,
+            throughput: self.throughput,
         }
     }
 }
-

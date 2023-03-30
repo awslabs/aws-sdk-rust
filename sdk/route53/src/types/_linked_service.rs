@@ -3,7 +3,7 @@
 /// <p>If a health check or hosted zone was created by another service, <code>LinkedService</code> is a complex type that describes the service that created the resource. When a resource is created by another service, you can't edit or delete it using Amazon Route 53. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct LinkedService  {
+pub struct LinkedService {
     /// <p>If the health check or hosted zone was created by another service, the service that created the resource. When a resource is created by another service, you can't edit or delete it using Amazon Route 53. </p>
     #[doc(hidden)]
     pub service_principal: std::option::Option<std::string::String>,
@@ -13,11 +13,11 @@ pub struct LinkedService  {
 }
 impl LinkedService {
     /// <p>If the health check or hosted zone was created by another service, the service that created the resource. When a resource is created by another service, you can't edit or delete it using Amazon Route 53. </p>
-    pub fn service_principal(&self) -> std::option::Option<& str> {
+    pub fn service_principal(&self) -> std::option::Option<&str> {
         self.service_principal.as_deref()
     }
     /// <p>If the health check or hosted zone was created by another service, an optional description that can be provided by the other service. When a resource is created by another service, you can't edit or delete it using Amazon Route 53. </p>
-    pub fn description(&self) -> std::option::Option<& str> {
+    pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
 }
@@ -42,8 +42,12 @@ impl LinkedServiceBuilder {
         self
     }
     /// <p>If the health check or hosted zone was created by another service, the service that created the resource. When a resource is created by another service, you can't edit or delete it using Amazon Route 53. </p>
-    pub fn set_service_principal(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.service_principal = input; self
+    pub fn set_service_principal(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.service_principal = input;
+        self
     }
     /// <p>If the health check or hosted zone was created by another service, an optional description that can be provided by the other service. When a resource is created by another service, you can't edit or delete it using Amazon Route 53. </p>
     pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -52,16 +56,14 @@ impl LinkedServiceBuilder {
     }
     /// <p>If the health check or hosted zone was created by another service, an optional description that can be provided by the other service. When a resource is created by another service, you can't edit or delete it using Amazon Route 53. </p>
     pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.description = input; self
+        self.description = input;
+        self
     }
     /// Consumes the builder and constructs a [`LinkedService`](crate::types::LinkedService).
     pub fn build(self) -> crate::types::LinkedService {
         crate::types::LinkedService {
-            service_principal: self.service_principal
-            ,
-            description: self.description
-            ,
+            service_principal: self.service_principal,
+            description: self.description,
         }
     }
 }
-

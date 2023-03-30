@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-/// 
+///
 /// Here is an example of how you can make a match expression forward-compatible:
-/// 
+///
 /// ```text
 /// # let confluenceattachmentfieldname = unimplemented!();
 /// match confluenceattachmentfieldname {
@@ -39,14 +39,22 @@
 /// Specifically, when `confluenceattachmentfieldname` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `ConfluenceAttachmentFieldName::NewFeature` also yielding `"NewFeature"`.
-/// 
+///
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
 pub enum ConfluenceAttachmentFieldName {
     #[allow(missing_docs)] // documentation missing in model
     Author,
@@ -71,59 +79,72 @@ pub enum ConfluenceAttachmentFieldName {
     #[allow(missing_docs)] // documentation missing in model
     Version,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::primitives::UnknownVariantValue)
+    Unknown(crate::primitives::UnknownVariantValue),
 }
 impl std::convert::From<&str> for ConfluenceAttachmentFieldName {
-                fn from(s: &str) -> Self {
-                    match s {
-                        "AUTHOR" => ConfluenceAttachmentFieldName::Author,
-"CONTENT_TYPE" => ConfluenceAttachmentFieldName::ContentType,
-"CREATED_DATE" => ConfluenceAttachmentFieldName::CreatedDate,
-"DISPLAY_URL" => ConfluenceAttachmentFieldName::DisplayUrl,
-"FILE_SIZE" => ConfluenceAttachmentFieldName::FileSize,
-"ITEM_TYPE" => ConfluenceAttachmentFieldName::ItemType,
-"PARENT_ID" => ConfluenceAttachmentFieldName::ParentId,
-"SPACE_KEY" => ConfluenceAttachmentFieldName::SpaceKey,
-"SPACE_NAME" => ConfluenceAttachmentFieldName::SpaceName,
-"URL" => ConfluenceAttachmentFieldName::Url,
-"VERSION" => ConfluenceAttachmentFieldName::Version,
-other => ConfluenceAttachmentFieldName::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
-                    }
-                }
-            }
-impl std::str::FromStr for ConfluenceAttachmentFieldName {
-                type Err = std::convert::Infallible;
-
-                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-                    Ok(ConfluenceAttachmentFieldName::from(s))
-                }
-            }
-impl ConfluenceAttachmentFieldName {
-                /// Returns the `&str` value of the enum member.
-                pub fn as_str(&self) -> &str {
-                    match self {
-    ConfluenceAttachmentFieldName::Author => "AUTHOR",
-    ConfluenceAttachmentFieldName::ContentType => "CONTENT_TYPE",
-    ConfluenceAttachmentFieldName::CreatedDate => "CREATED_DATE",
-    ConfluenceAttachmentFieldName::DisplayUrl => "DISPLAY_URL",
-    ConfluenceAttachmentFieldName::FileSize => "FILE_SIZE",
-    ConfluenceAttachmentFieldName::ItemType => "ITEM_TYPE",
-    ConfluenceAttachmentFieldName::ParentId => "PARENT_ID",
-    ConfluenceAttachmentFieldName::SpaceKey => "SPACE_KEY",
-    ConfluenceAttachmentFieldName::SpaceName => "SPACE_NAME",
-    ConfluenceAttachmentFieldName::Url => "URL",
-    ConfluenceAttachmentFieldName::Version => "VERSION",
-    ConfluenceAttachmentFieldName::Unknown(value) => value.as_str()
+    fn from(s: &str) -> Self {
+        match s {
+            "AUTHOR" => ConfluenceAttachmentFieldName::Author,
+            "CONTENT_TYPE" => ConfluenceAttachmentFieldName::ContentType,
+            "CREATED_DATE" => ConfluenceAttachmentFieldName::CreatedDate,
+            "DISPLAY_URL" => ConfluenceAttachmentFieldName::DisplayUrl,
+            "FILE_SIZE" => ConfluenceAttachmentFieldName::FileSize,
+            "ITEM_TYPE" => ConfluenceAttachmentFieldName::ItemType,
+            "PARENT_ID" => ConfluenceAttachmentFieldName::ParentId,
+            "SPACE_KEY" => ConfluenceAttachmentFieldName::SpaceKey,
+            "SPACE_NAME" => ConfluenceAttachmentFieldName::SpaceName,
+            "URL" => ConfluenceAttachmentFieldName::Url,
+            "VERSION" => ConfluenceAttachmentFieldName::Version,
+            other => ConfluenceAttachmentFieldName::Unknown(
+                crate::primitives::UnknownVariantValue(other.to_owned()),
+            ),
+        }
+    }
 }
-                }
-                /// Returns all the `&str` representations of the enum members.
-                pub const fn values() -> &'static [&'static str] {
-                    &["AUTHOR", "CONTENT_TYPE", "CREATED_DATE", "DISPLAY_URL", "FILE_SIZE", "ITEM_TYPE", "PARENT_ID", "SPACE_KEY", "SPACE_NAME", "URL", "VERSION"]
-                }
-            }
-impl AsRef<str> for ConfluenceAttachmentFieldName {
-                fn as_ref(&self) -> &str {
-                    self.as_str()
-                }
-            }
+impl std::str::FromStr for ConfluenceAttachmentFieldName {
+    type Err = std::convert::Infallible;
 
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(ConfluenceAttachmentFieldName::from(s))
+    }
+}
+impl ConfluenceAttachmentFieldName {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            ConfluenceAttachmentFieldName::Author => "AUTHOR",
+            ConfluenceAttachmentFieldName::ContentType => "CONTENT_TYPE",
+            ConfluenceAttachmentFieldName::CreatedDate => "CREATED_DATE",
+            ConfluenceAttachmentFieldName::DisplayUrl => "DISPLAY_URL",
+            ConfluenceAttachmentFieldName::FileSize => "FILE_SIZE",
+            ConfluenceAttachmentFieldName::ItemType => "ITEM_TYPE",
+            ConfluenceAttachmentFieldName::ParentId => "PARENT_ID",
+            ConfluenceAttachmentFieldName::SpaceKey => "SPACE_KEY",
+            ConfluenceAttachmentFieldName::SpaceName => "SPACE_NAME",
+            ConfluenceAttachmentFieldName::Url => "URL",
+            ConfluenceAttachmentFieldName::Version => "VERSION",
+            ConfluenceAttachmentFieldName::Unknown(value) => value.as_str(),
+        }
+    }
+    /// Returns all the `&str` representations of the enum members.
+    pub const fn values() -> &'static [&'static str] {
+        &[
+            "AUTHOR",
+            "CONTENT_TYPE",
+            "CREATED_DATE",
+            "DISPLAY_URL",
+            "FILE_SIZE",
+            "ITEM_TYPE",
+            "PARENT_ID",
+            "SPACE_KEY",
+            "SPACE_NAME",
+            "URL",
+            "VERSION",
+        ]
+    }
+}
+impl AsRef<str> for ConfluenceAttachmentFieldName {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}

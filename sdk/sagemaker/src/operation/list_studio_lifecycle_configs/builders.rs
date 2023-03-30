@@ -4,55 +4,77 @@ pub use crate::operation::list_studio_lifecycle_configs::_list_studio_lifecycle_
 pub use crate::operation::list_studio_lifecycle_configs::_list_studio_lifecycle_configs_input::ListStudioLifecycleConfigsInputBuilder;
 
 /// Fluent builder constructing a request to `ListStudioLifecycleConfigs`.
-/// 
+///
 /// <p>Lists the Studio Lifecycle Configurations in your Amazon Web Services Account.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListStudioLifecycleConfigsFluentBuilder {
                 handle: std::sync::Arc<crate::client::Handle>,
                 inner: crate::operation::list_studio_lifecycle_configs::builders::ListStudioLifecycleConfigsInputBuilder
             }
-impl ListStudioLifecycleConfigsFluentBuilder  {
+impl ListStudioLifecycleConfigsFluentBuilder {
     /// Creates a new `ListStudioLifecycleConfigs`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
-                    /// sent. The operation's inner [http::Request] can be modified as well.
-                    pub async fn customize(self) -> std::result::Result<
-                        crate::client::customize::CustomizableOperation<crate::operation::list_studio_lifecycle_configs::ListStudioLifecycleConfigs, aws_http::retry::AwsResponseRetryClassifier,>,
-                        aws_smithy_http::result::SdkError<crate::operation::list_studio_lifecycle_configs::ListStudioLifecycleConfigsError>
-                    >  {
-                        let handle = self.handle.clone();
-                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-                    }
-    
-                    /// Sends the request and returns the response.
-                    ///
-                    /// If an error occurs, an `SdkError` will be returned with additional details that
-                    /// can be matched against.
-                    ///
-                    /// By default, any retryable failures will be retried twice. Retry behavior
-                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                    /// set when configuring the client.
-                    pub async fn send(self) -> std::result::Result<crate::operation::list_studio_lifecycle_configs::ListStudioLifecycleConfigsOutput, aws_smithy_http::result::SdkError<crate::operation::list_studio_lifecycle_configs::ListStudioLifecycleConfigsError>>
-                     {
-                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&self.handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        self.handle.client.call(op).await
-                    }
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle,
+            inner: Default::default(),
+        }
+    }
+
+    /// Consume this builder, creating a customizable operation that can be modified before being
+    /// sent. The operation's inner [http::Request] can be modified as well.
+    pub async fn customize(
+        self,
+    ) -> std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::list_studio_lifecycle_configs::ListStudioLifecycleConfigs,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::result::SdkError<
+            crate::operation::list_studio_lifecycle_configs::ListStudioLifecycleConfigsError,
+        >,
+    > {
+        let handle = self.handle.clone();
+        let operation = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+    }
+
+    /// Sends the request and returns the response.
+    ///
+    /// If an error occurs, an `SdkError` will be returned with additional details that
+    /// can be matched against.
+    ///
+    /// By default, any retryable failures will be retried twice. Retry behavior
+    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+    /// set when configuring the client.
+    pub async fn send(
+        self,
+    ) -> std::result::Result<
+        crate::operation::list_studio_lifecycle_configs::ListStudioLifecycleConfigsOutput,
+        aws_smithy_http::result::SdkError<
+            crate::operation::list_studio_lifecycle_configs::ListStudioLifecycleConfigsError,
+        >,
+    > {
+        let op = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&self.handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        self.handle.client.call(op).await
+    }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::list_studio_lifecycle_configs::paginator::ListStudioLifecycleConfigsPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::list_studio_lifecycle_configs::paginator::ListStudioLifecycleConfigsPaginator {
-                            crate::operation::list_studio_lifecycle_configs::paginator::ListStudioLifecycleConfigsPaginator::new(self.handle, self.inner)
-                        }
+    ///
+    /// Paginators are used by calling [`send().await`](crate::operation::list_studio_lifecycle_configs::paginator::ListStudioLifecycleConfigsPaginator::send) which returns a `Stream`.
+    pub fn into_paginator(self) -> crate::operation::list_studio_lifecycle_configs::paginator::ListStudioLifecycleConfigsPaginator{
+        crate::operation::list_studio_lifecycle_configs::paginator::ListStudioLifecycleConfigsPaginator::new(self.handle, self.inner)
+    }
     /// <p>The maximum number of Studio Lifecycle Configurations to return in the response. The default value is 10.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.inner = self.inner.max_results(input);
@@ -89,7 +111,10 @@ impl ListStudioLifecycleConfigsFluentBuilder  {
         self
     }
     /// <p>A parameter to search for the App Type to which the Lifecycle Configuration is attached.</p>
-    pub fn set_app_type_equals(mut self, input: std::option::Option<crate::types::StudioLifecycleConfigAppType>) -> Self {
+    pub fn set_app_type_equals(
+        mut self,
+        input: std::option::Option<crate::types::StudioLifecycleConfigAppType>,
+    ) -> Self {
         self.inner = self.inner.set_app_type_equals(input);
         self
     }
@@ -99,7 +124,10 @@ impl ListStudioLifecycleConfigsFluentBuilder  {
         self
     }
     /// <p>A filter that returns only Lifecycle Configurations created on or before the specified time.</p>
-    pub fn set_creation_time_before(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+    pub fn set_creation_time_before(
+        mut self,
+        input: std::option::Option<aws_smithy_types::DateTime>,
+    ) -> Self {
         self.inner = self.inner.set_creation_time_before(input);
         self
     }
@@ -109,7 +137,10 @@ impl ListStudioLifecycleConfigsFluentBuilder  {
         self
     }
     /// <p>A filter that returns only Lifecycle Configurations created on or after the specified time.</p>
-    pub fn set_creation_time_after(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+    pub fn set_creation_time_after(
+        mut self,
+        input: std::option::Option<aws_smithy_types::DateTime>,
+    ) -> Self {
         self.inner = self.inner.set_creation_time_after(input);
         self
     }
@@ -119,7 +150,10 @@ impl ListStudioLifecycleConfigsFluentBuilder  {
         self
     }
     /// <p>A filter that returns only Lifecycle Configurations modified before the specified time.</p>
-    pub fn set_modified_time_before(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+    pub fn set_modified_time_before(
+        mut self,
+        input: std::option::Option<aws_smithy_types::DateTime>,
+    ) -> Self {
         self.inner = self.inner.set_modified_time_before(input);
         self
     }
@@ -129,7 +163,10 @@ impl ListStudioLifecycleConfigsFluentBuilder  {
         self
     }
     /// <p>A filter that returns only Lifecycle Configurations modified after the specified time.</p>
-    pub fn set_modified_time_after(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+    pub fn set_modified_time_after(
+        mut self,
+        input: std::option::Option<aws_smithy_types::DateTime>,
+    ) -> Self {
         self.inner = self.inner.set_modified_time_after(input);
         self
     }
@@ -139,7 +176,10 @@ impl ListStudioLifecycleConfigsFluentBuilder  {
         self
     }
     /// <p>The property used to sort results. The default value is CreationTime.</p>
-    pub fn set_sort_by(mut self, input: std::option::Option<crate::types::StudioLifecycleConfigSortKey>) -> Self {
+    pub fn set_sort_by(
+        mut self,
+        input: std::option::Option<crate::types::StudioLifecycleConfigSortKey>,
+    ) -> Self {
         self.inner = self.inner.set_sort_by(input);
         self
     }
@@ -154,4 +194,3 @@ impl ListStudioLifecycleConfigsFluentBuilder  {
         self
     }
 }
-

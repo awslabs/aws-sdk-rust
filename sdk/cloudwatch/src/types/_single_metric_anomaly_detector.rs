@@ -3,7 +3,7 @@
 /// <p>Designates the CloudWatch metric and statistic that provides the time series the anomaly detector uses as input.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SingleMetricAnomalyDetector  {
+pub struct SingleMetricAnomalyDetector {
     /// <p>The namespace of the metric to create the anomaly detection model for.</p>
     #[doc(hidden)]
     pub namespace: std::option::Option<std::string::String>,
@@ -19,19 +19,19 @@ pub struct SingleMetricAnomalyDetector  {
 }
 impl SingleMetricAnomalyDetector {
     /// <p>The namespace of the metric to create the anomaly detection model for.</p>
-    pub fn namespace(&self) -> std::option::Option<& str> {
+    pub fn namespace(&self) -> std::option::Option<&str> {
         self.namespace.as_deref()
     }
     /// <p>The name of the metric to create the anomaly detection model for.</p>
-    pub fn metric_name(&self) -> std::option::Option<& str> {
+    pub fn metric_name(&self) -> std::option::Option<&str> {
         self.metric_name.as_deref()
     }
     /// <p>The metric dimensions to create the anomaly detection model for.</p>
-    pub fn dimensions(&self) -> std::option::Option<& [crate::types::Dimension]> {
+    pub fn dimensions(&self) -> std::option::Option<&[crate::types::Dimension]> {
         self.dimensions.as_deref()
     }
     /// <p>The statistic to use for the metric and anomaly detection model.</p>
-    pub fn stat(&self) -> std::option::Option<& str> {
+    pub fn stat(&self) -> std::option::Option<&str> {
         self.stat.as_deref()
     }
 }
@@ -59,7 +59,8 @@ impl SingleMetricAnomalyDetectorBuilder {
     }
     /// <p>The namespace of the metric to create the anomaly detection model for.</p>
     pub fn set_namespace(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.namespace = input; self
+        self.namespace = input;
+        self
     }
     /// <p>The name of the metric to create the anomaly detection model for.</p>
     pub fn metric_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -68,7 +69,8 @@ impl SingleMetricAnomalyDetectorBuilder {
     }
     /// <p>The name of the metric to create the anomaly detection model for.</p>
     pub fn set_metric_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.metric_name = input; self
+        self.metric_name = input;
+        self
     }
     /// Appends an item to `dimensions`.
     ///
@@ -77,13 +79,17 @@ impl SingleMetricAnomalyDetectorBuilder {
     /// <p>The metric dimensions to create the anomaly detection model for.</p>
     pub fn dimensions(mut self, input: crate::types::Dimension) -> Self {
         let mut v = self.dimensions.unwrap_or_default();
-                        v.push(input);
-                        self.dimensions = Some(v);
-                        self
+        v.push(input);
+        self.dimensions = Some(v);
+        self
     }
     /// <p>The metric dimensions to create the anomaly detection model for.</p>
-    pub fn set_dimensions(mut self, input: std::option::Option<std::vec::Vec<crate::types::Dimension>>) -> Self {
-        self.dimensions = input; self
+    pub fn set_dimensions(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::Dimension>>,
+    ) -> Self {
+        self.dimensions = input;
+        self
     }
     /// <p>The statistic to use for the metric and anomaly detection model.</p>
     pub fn stat(mut self, input: impl Into<std::string::String>) -> Self {
@@ -92,20 +98,16 @@ impl SingleMetricAnomalyDetectorBuilder {
     }
     /// <p>The statistic to use for the metric and anomaly detection model.</p>
     pub fn set_stat(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.stat = input; self
+        self.stat = input;
+        self
     }
     /// Consumes the builder and constructs a [`SingleMetricAnomalyDetector`](crate::types::SingleMetricAnomalyDetector).
     pub fn build(self) -> crate::types::SingleMetricAnomalyDetector {
         crate::types::SingleMetricAnomalyDetector {
-            namespace: self.namespace
-            ,
-            metric_name: self.metric_name
-            ,
-            dimensions: self.dimensions
-            ,
-            stat: self.stat
-            ,
+            namespace: self.namespace,
+            metric_name: self.metric_name,
+            dimensions: self.dimensions,
+            stat: self.stat,
         }
     }
 }
-

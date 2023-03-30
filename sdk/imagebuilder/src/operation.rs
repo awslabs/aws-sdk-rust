@@ -150,4 +150,3 @@ pub mod update_image_pipeline;
 
 /// Types for the `UpdateInfrastructureConfiguration` operation.
 pub mod update_infrastructure_configuration;
-

@@ -3,14 +3,14 @@
 /// <p>A summary of enabled controls.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct EnabledControlSummary  {
+pub struct EnabledControlSummary {
     /// <p>The ARN of the control. Only <b>Strongly recommended</b> and <b>Elective</b> controls are permitted, with the exception of the <b>Region deny</b> guardrail.</p>
     #[doc(hidden)]
     pub control_identifier: std::option::Option<std::string::String>,
 }
 impl EnabledControlSummary {
     /// <p>The ARN of the control. Only <b>Strongly recommended</b> and <b>Elective</b> controls are permitted, with the exception of the <b>Region deny</b> guardrail.</p>
-    pub fn control_identifier(&self) -> std::option::Option<& str> {
+    pub fn control_identifier(&self) -> std::option::Option<&str> {
         self.control_identifier.as_deref()
     }
 }
@@ -34,15 +34,17 @@ impl EnabledControlSummaryBuilder {
         self
     }
     /// <p>The ARN of the control. Only <b>Strongly recommended</b> and <b>Elective</b> controls are permitted, with the exception of the <b>Region deny</b> guardrail.</p>
-    pub fn set_control_identifier(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.control_identifier = input; self
+    pub fn set_control_identifier(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.control_identifier = input;
+        self
     }
     /// Consumes the builder and constructs a [`EnabledControlSummary`](crate::types::EnabledControlSummary).
     pub fn build(self) -> crate::types::EnabledControlSummary {
         crate::types::EnabledControlSummary {
-            control_identifier: self.control_identifier
-            ,
+            control_identifier: self.control_identifier,
         }
     }
 }
-

@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-/// 
+///
 /// Here is an example of how you can make a match expression forward-compatible:
-/// 
+///
 /// ```text
 /// # let scte35noregionalblackoutflag = unimplemented!();
 /// match scte35noregionalblackoutflag {
@@ -30,55 +30,64 @@
 /// Specifically, when `scte35noregionalblackoutflag` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `Scte35NoRegionalBlackoutFlag::NewFeature` also yielding `"NewFeature"`.
-/// 
+///
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 /// Corresponds to the no_regional_blackout_flag parameter. A value of REGIONAL_BLACKOUT corresponds to 0 (false) in the SCTE-35 specification. If you include one of the "restriction" flags then you must include all four of them.
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
 pub enum Scte35NoRegionalBlackoutFlag {
     #[allow(missing_docs)] // documentation missing in model
     NoRegionalBlackout,
     #[allow(missing_docs)] // documentation missing in model
     RegionalBlackout,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::primitives::UnknownVariantValue)
+    Unknown(crate::primitives::UnknownVariantValue),
 }
 impl std::convert::From<&str> for Scte35NoRegionalBlackoutFlag {
-                fn from(s: &str) -> Self {
-                    match s {
-                        "NO_REGIONAL_BLACKOUT" => Scte35NoRegionalBlackoutFlag::NoRegionalBlackout,
-"REGIONAL_BLACKOUT" => Scte35NoRegionalBlackoutFlag::RegionalBlackout,
-other => Scte35NoRegionalBlackoutFlag::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
-                    }
-                }
-            }
-impl std::str::FromStr for Scte35NoRegionalBlackoutFlag {
-                type Err = std::convert::Infallible;
-
-                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-                    Ok(Scte35NoRegionalBlackoutFlag::from(s))
-                }
-            }
-impl Scte35NoRegionalBlackoutFlag {
-                /// Returns the `&str` value of the enum member.
-                pub fn as_str(&self) -> &str {
-                    match self {
-    Scte35NoRegionalBlackoutFlag::NoRegionalBlackout => "NO_REGIONAL_BLACKOUT",
-    Scte35NoRegionalBlackoutFlag::RegionalBlackout => "REGIONAL_BLACKOUT",
-    Scte35NoRegionalBlackoutFlag::Unknown(value) => value.as_str()
+    fn from(s: &str) -> Self {
+        match s {
+            "NO_REGIONAL_BLACKOUT" => Scte35NoRegionalBlackoutFlag::NoRegionalBlackout,
+            "REGIONAL_BLACKOUT" => Scte35NoRegionalBlackoutFlag::RegionalBlackout,
+            other => Scte35NoRegionalBlackoutFlag::Unknown(crate::primitives::UnknownVariantValue(
+                other.to_owned(),
+            )),
+        }
+    }
 }
-                }
-                /// Returns all the `&str` representations of the enum members.
-                pub const fn values() -> &'static [&'static str] {
-                    &["NO_REGIONAL_BLACKOUT", "REGIONAL_BLACKOUT"]
-                }
-            }
-impl AsRef<str> for Scte35NoRegionalBlackoutFlag {
-                fn as_ref(&self) -> &str {
-                    self.as_str()
-                }
-            }
+impl std::str::FromStr for Scte35NoRegionalBlackoutFlag {
+    type Err = std::convert::Infallible;
 
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(Scte35NoRegionalBlackoutFlag::from(s))
+    }
+}
+impl Scte35NoRegionalBlackoutFlag {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            Scte35NoRegionalBlackoutFlag::NoRegionalBlackout => "NO_REGIONAL_BLACKOUT",
+            Scte35NoRegionalBlackoutFlag::RegionalBlackout => "REGIONAL_BLACKOUT",
+            Scte35NoRegionalBlackoutFlag::Unknown(value) => value.as_str(),
+        }
+    }
+    /// Returns all the `&str` representations of the enum members.
+    pub const fn values() -> &'static [&'static str] {
+        &["NO_REGIONAL_BLACKOUT", "REGIONAL_BLACKOUT"]
+    }
+}
+impl AsRef<str> for Scte35NoRegionalBlackoutFlag {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}

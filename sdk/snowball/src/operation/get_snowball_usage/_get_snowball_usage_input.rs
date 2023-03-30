@@ -2,11 +2,11 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetSnowballUsageInput  {
-}
+pub struct GetSnowballUsageInput {}
 impl GetSnowballUsageInput {
     /// Creates a new builder-style object to manufacture [`GetSnowballUsageInput`](crate::operation::get_snowball_usage::GetSnowballUsageInput).
-    pub fn builder() -> crate::operation::get_snowball_usage::builders::GetSnowballUsageInputBuilder {
+    pub fn builder() -> crate::operation::get_snowball_usage::builders::GetSnowballUsageInputBuilder
+    {
         crate::operation::get_snowball_usage::builders::GetSnowballUsageInputBuilder::default()
     }
 }
@@ -14,15 +14,15 @@ impl GetSnowballUsageInput {
 /// A builder for [`GetSnowballUsageInput`](crate::operation::get_snowball_usage::GetSnowballUsageInput).
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-pub struct GetSnowballUsageInputBuilder {
-}
+pub struct GetSnowballUsageInputBuilder {}
 impl GetSnowballUsageInputBuilder {
     /// Consumes the builder and constructs a [`GetSnowballUsageInput`](crate::operation::get_snowball_usage::GetSnowballUsageInput).
-    pub fn build(self) -> Result<crate::operation::get_snowball_usage::GetSnowballUsageInput, aws_smithy_http::operation::error::BuildError> {
-        Ok(
-            crate::operation::get_snowball_usage::GetSnowballUsageInput {
-            }
-        )
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::get_snowball_usage::GetSnowballUsageInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        Ok(crate::operation::get_snowball_usage::GetSnowballUsageInput {})
     }
 }
-

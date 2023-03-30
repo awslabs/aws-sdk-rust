@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ReleaseFileSystemNfsV3LocksInput  {
+pub struct ReleaseFileSystemNfsV3LocksInput {
     /// <p>The globally unique ID of the file system, assigned by Amazon FSx.</p>
     #[doc(hidden)]
     pub file_system_id: std::option::Option<std::string::String>,
@@ -12,17 +12,17 @@ pub struct ReleaseFileSystemNfsV3LocksInput  {
 }
 impl ReleaseFileSystemNfsV3LocksInput {
     /// <p>The globally unique ID of the file system, assigned by Amazon FSx.</p>
-    pub fn file_system_id(&self) -> std::option::Option<& str> {
+    pub fn file_system_id(&self) -> std::option::Option<&str> {
         self.file_system_id.as_deref()
     }
     /// <p>(Optional) An idempotency token for resource creation, in a string of up to 64 ASCII characters. This token is automatically filled on your behalf when you use the Command Line Interface (CLI) or an Amazon Web Services SDK.</p>
-    pub fn client_request_token(&self) -> std::option::Option<& str> {
+    pub fn client_request_token(&self) -> std::option::Option<&str> {
         self.client_request_token.as_deref()
     }
 }
 impl ReleaseFileSystemNfsV3LocksInput {
     /// Creates a new builder-style object to manufacture [`ReleaseFileSystemNfsV3LocksInput`](crate::operation::release_file_system_nfs_v3_locks::ReleaseFileSystemNfsV3LocksInput).
-    pub fn builder() -> crate::operation::release_file_system_nfs_v3_locks::builders::ReleaseFileSystemNfsV3LocksInputBuilder {
+    pub fn builder() -> crate::operation::release_file_system_nfs_v3_locks::builders::ReleaseFileSystemNfsV3LocksInputBuilder{
         crate::operation::release_file_system_nfs_v3_locks::builders::ReleaseFileSystemNfsV3LocksInputBuilder::default()
     }
 }
@@ -42,7 +42,8 @@ impl ReleaseFileSystemNfsV3LocksInputBuilder {
     }
     /// <p>The globally unique ID of the file system, assigned by Amazon FSx.</p>
     pub fn set_file_system_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.file_system_id = input; self
+        self.file_system_id = input;
+        self
     }
     /// <p>(Optional) An idempotency token for resource creation, in a string of up to 64 ASCII characters. This token is automatically filled on your behalf when you use the Command Line Interface (CLI) or an Amazon Web Services SDK.</p>
     pub fn client_request_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -50,19 +51,25 @@ impl ReleaseFileSystemNfsV3LocksInputBuilder {
         self
     }
     /// <p>(Optional) An idempotency token for resource creation, in a string of up to 64 ASCII characters. This token is automatically filled on your behalf when you use the Command Line Interface (CLI) or an Amazon Web Services SDK.</p>
-    pub fn set_client_request_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.client_request_token = input; self
+    pub fn set_client_request_token(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.client_request_token = input;
+        self
     }
     /// Consumes the builder and constructs a [`ReleaseFileSystemNfsV3LocksInput`](crate::operation::release_file_system_nfs_v3_locks::ReleaseFileSystemNfsV3LocksInput).
-    pub fn build(self) -> Result<crate::operation::release_file_system_nfs_v3_locks::ReleaseFileSystemNfsV3LocksInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::release_file_system_nfs_v3_locks::ReleaseFileSystemNfsV3LocksInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::release_file_system_nfs_v3_locks::ReleaseFileSystemNfsV3LocksInput {
-                file_system_id: self.file_system_id
-                ,
-                client_request_token: self.client_request_token
-                ,
-            }
+                file_system_id: self.file_system_id,
+                client_request_token: self.client_request_token,
+            },
         )
     }
 }
-

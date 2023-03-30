@@ -452,11 +452,10 @@ mod test {
             sleeper.sleep(std::time::Duration::from_millis(100)),
         );
         match timeout.await {
-            Ok(_) => assert!(false, "provide_credentials completed before timeout future"),
+            Ok(_) => panic!("provide_credentials completed before timeout future"),
             Err(_err) => match provider.fallback_on_interrupt() {
                 Some(actual) => assert_eq!(actual, expected),
-                None => assert!(
-                    false,
+                None => panic!(
                     "provide_credentials timed out and no credentials returned from fallback_on_interrupt"
                 ),
             },

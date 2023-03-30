@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct GenerateDataKeyOutput  {
+pub struct GenerateDataKeyOutput {
     /// <p>The encrypted copy of the data key. When you use the HTTP API or the Amazon Web Services CLI, the value is Base64-encoded. Otherwise, it is not Base64-encoded.</p>
     #[doc(hidden)]
     pub ciphertext_blob: std::option::Option<aws_smithy_types::Blob>,
@@ -16,19 +16,19 @@ pub struct GenerateDataKeyOutput  {
 }
 impl GenerateDataKeyOutput {
     /// <p>The encrypted copy of the data key. When you use the HTTP API or the Amazon Web Services CLI, the value is Base64-encoded. Otherwise, it is not Base64-encoded.</p>
-    pub fn ciphertext_blob(&self) -> std::option::Option<& aws_smithy_types::Blob> {
+    pub fn ciphertext_blob(&self) -> std::option::Option<&aws_smithy_types::Blob> {
         self.ciphertext_blob.as_ref()
     }
     /// <p>The plaintext data key. When you use the HTTP API or the Amazon Web Services CLI, the value is Base64-encoded. Otherwise, it is not Base64-encoded. Use this data key to encrypt your data outside of KMS. Then, remove it from memory as soon as possible.</p>
-    pub fn plaintext(&self) -> std::option::Option<& aws_smithy_types::Blob> {
+    pub fn plaintext(&self) -> std::option::Option<&aws_smithy_types::Blob> {
         self.plaintext.as_ref()
     }
     /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id-key-ARN">key ARN</a>) of the KMS key that encrypted the data key.</p>
-    pub fn key_id(&self) -> std::option::Option<& str> {
+    pub fn key_id(&self) -> std::option::Option<&str> {
         self.key_id.as_deref()
     }
 }
-impl  std::fmt::Debug for GenerateDataKeyOutput  {
+impl std::fmt::Debug for GenerateDataKeyOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GenerateDataKeyOutput");
         formatter.field("ciphertext_blob", &self.ciphertext_blob);
@@ -39,13 +39,14 @@ impl  std::fmt::Debug for GenerateDataKeyOutput  {
     }
 }
 impl aws_http::request_id::RequestId for GenerateDataKeyOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl GenerateDataKeyOutput {
     /// Creates a new builder-style object to manufacture [`GenerateDataKeyOutput`](crate::operation::generate_data_key::GenerateDataKeyOutput).
-    pub fn builder() -> crate::operation::generate_data_key::builders::GenerateDataKeyOutputBuilder {
+    pub fn builder() -> crate::operation::generate_data_key::builders::GenerateDataKeyOutputBuilder
+    {
         crate::operation::generate_data_key::builders::GenerateDataKeyOutputBuilder::default()
     }
 }
@@ -66,8 +67,12 @@ impl GenerateDataKeyOutputBuilder {
         self
     }
     /// <p>The encrypted copy of the data key. When you use the HTTP API or the Amazon Web Services CLI, the value is Base64-encoded. Otherwise, it is not Base64-encoded.</p>
-    pub fn set_ciphertext_blob(mut self, input: std::option::Option<aws_smithy_types::Blob>) -> Self {
-        self.ciphertext_blob = input; self
+    pub fn set_ciphertext_blob(
+        mut self,
+        input: std::option::Option<aws_smithy_types::Blob>,
+    ) -> Self {
+        self.ciphertext_blob = input;
+        self
     }
     /// <p>The plaintext data key. When you use the HTTP API or the Amazon Web Services CLI, the value is Base64-encoded. Otherwise, it is not Base64-encoded. Use this data key to encrypt your data outside of KMS. Then, remove it from memory as soon as possible.</p>
     pub fn plaintext(mut self, input: aws_smithy_types::Blob) -> Self {
@@ -76,7 +81,8 @@ impl GenerateDataKeyOutputBuilder {
     }
     /// <p>The plaintext data key. When you use the HTTP API or the Amazon Web Services CLI, the value is Base64-encoded. Otherwise, it is not Base64-encoded. Use this data key to encrypt your data outside of KMS. Then, remove it from memory as soon as possible.</p>
     pub fn set_plaintext(mut self, input: std::option::Option<aws_smithy_types::Blob>) -> Self {
-        self.plaintext = input; self
+        self.plaintext = input;
+        self
     }
     /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id-key-ARN">key ARN</a>) of the KMS key that encrypted the data key.</p>
     pub fn key_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -85,26 +91,24 @@ impl GenerateDataKeyOutputBuilder {
     }
     /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id-key-ARN">key ARN</a>) of the KMS key that encrypted the data key.</p>
     pub fn set_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.key_id = input; self
+        self.key_id = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`GenerateDataKeyOutput`](crate::operation::generate_data_key::GenerateDataKeyOutput).
     pub fn build(self) -> crate::operation::generate_data_key::GenerateDataKeyOutput {
         crate::operation::generate_data_key::GenerateDataKeyOutput {
-            ciphertext_blob: self.ciphertext_blob
-            ,
-            plaintext: self.plaintext
-            ,
-            key_id: self.key_id
-            ,
+            ciphertext_blob: self.ciphertext_blob,
+            plaintext: self.plaintext,
+            key_id: self.key_id,
             _request_id: self._request_id,
         }
     }
@@ -119,4 +123,3 @@ impl std::fmt::Debug for GenerateDataKeyOutputBuilder {
         formatter.finish()
     }
 }
-

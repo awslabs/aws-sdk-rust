@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct StartExpenseAnalysisOutput  {
+pub struct StartExpenseAnalysisOutput {
     /// <p>A unique identifier for the text detection job. The <code>JobId</code> is returned from <code>StartExpenseAnalysis</code>. A <code>JobId</code> value is only valid for 7 days.</p>
     #[doc(hidden)]
     pub job_id: std::option::Option<std::string::String>,
@@ -10,18 +10,19 @@ pub struct StartExpenseAnalysisOutput  {
 }
 impl StartExpenseAnalysisOutput {
     /// <p>A unique identifier for the text detection job. The <code>JobId</code> is returned from <code>StartExpenseAnalysis</code>. A <code>JobId</code> value is only valid for 7 days.</p>
-    pub fn job_id(&self) -> std::option::Option<& str> {
+    pub fn job_id(&self) -> std::option::Option<&str> {
         self.job_id.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for StartExpenseAnalysisOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl StartExpenseAnalysisOutput {
     /// Creates a new builder-style object to manufacture [`StartExpenseAnalysisOutput`](crate::operation::start_expense_analysis::StartExpenseAnalysisOutput).
-    pub fn builder() -> crate::operation::start_expense_analysis::builders::StartExpenseAnalysisOutputBuilder {
+    pub fn builder(
+    ) -> crate::operation::start_expense_analysis::builders::StartExpenseAnalysisOutputBuilder {
         crate::operation::start_expense_analysis::builders::StartExpenseAnalysisOutputBuilder::default()
     }
 }
@@ -41,24 +42,23 @@ impl StartExpenseAnalysisOutputBuilder {
     }
     /// <p>A unique identifier for the text detection job. The <code>JobId</code> is returned from <code>StartExpenseAnalysis</code>. A <code>JobId</code> value is only valid for 7 days.</p>
     pub fn set_job_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.job_id = input; self
+        self.job_id = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`StartExpenseAnalysisOutput`](crate::operation::start_expense_analysis::StartExpenseAnalysisOutput).
     pub fn build(self) -> crate::operation::start_expense_analysis::StartExpenseAnalysisOutput {
         crate::operation::start_expense_analysis::StartExpenseAnalysisOutput {
-            job_id: self.job_id
-            ,
+            job_id: self.job_id,
             _request_id: self._request_id,
         }
     }
 }
-

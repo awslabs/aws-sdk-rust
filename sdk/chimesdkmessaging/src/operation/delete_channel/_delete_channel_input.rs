@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteChannelInput  {
+pub struct DeleteChannelInput {
     /// <p>The ARN of the channel being deleted.</p>
     #[doc(hidden)]
     pub channel_arn: std::option::Option<std::string::String>,
@@ -15,15 +15,15 @@ pub struct DeleteChannelInput  {
 }
 impl DeleteChannelInput {
     /// <p>The ARN of the channel being deleted.</p>
-    pub fn channel_arn(&self) -> std::option::Option<& str> {
+    pub fn channel_arn(&self) -> std::option::Option<&str> {
         self.channel_arn.as_deref()
     }
     /// <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
-    pub fn chime_bearer(&self) -> std::option::Option<& str> {
+    pub fn chime_bearer(&self) -> std::option::Option<&str> {
         self.chime_bearer.as_deref()
     }
     /// <p>The ID of the SubChannel in the request.</p>
-    pub fn sub_channel_id(&self) -> std::option::Option<& str> {
+    pub fn sub_channel_id(&self) -> std::option::Option<&str> {
         self.sub_channel_id.as_deref()
     }
 }
@@ -50,7 +50,8 @@ impl DeleteChannelInputBuilder {
     }
     /// <p>The ARN of the channel being deleted.</p>
     pub fn set_channel_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.channel_arn = input; self
+        self.channel_arn = input;
+        self
     }
     /// <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
     pub fn chime_bearer(mut self, input: impl Into<std::string::String>) -> Self {
@@ -59,7 +60,8 @@ impl DeleteChannelInputBuilder {
     }
     /// <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
     pub fn set_chime_bearer(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.chime_bearer = input; self
+        self.chime_bearer = input;
+        self
     }
     /// <p>The ID of the SubChannel in the request.</p>
     pub fn sub_channel_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -68,20 +70,20 @@ impl DeleteChannelInputBuilder {
     }
     /// <p>The ID of the SubChannel in the request.</p>
     pub fn set_sub_channel_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.sub_channel_id = input; self
+        self.sub_channel_id = input;
+        self
     }
     /// Consumes the builder and constructs a [`DeleteChannelInput`](crate::operation::delete_channel::DeleteChannelInput).
-    pub fn build(self) -> Result<crate::operation::delete_channel::DeleteChannelInput, aws_smithy_http::operation::error::BuildError> {
-        Ok(
-            crate::operation::delete_channel::DeleteChannelInput {
-                channel_arn: self.channel_arn
-                ,
-                chime_bearer: self.chime_bearer
-                ,
-                sub_channel_id: self.sub_channel_id
-                ,
-            }
-        )
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::delete_channel::DeleteChannelInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        Ok(crate::operation::delete_channel::DeleteChannelInput {
+            channel_arn: self.channel_arn,
+            chime_bearer: self.chime_bearer,
+            sub_channel_id: self.sub_channel_id,
+        })
     }
 }
-

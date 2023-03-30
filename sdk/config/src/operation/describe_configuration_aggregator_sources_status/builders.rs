@@ -4,62 +4,74 @@ pub use crate::operation::describe_configuration_aggregator_sources_status::_des
 pub use crate::operation::describe_configuration_aggregator_sources_status::_describe_configuration_aggregator_sources_status_input::DescribeConfigurationAggregatorSourcesStatusInputBuilder;
 
 /// Fluent builder constructing a request to `DescribeConfigurationAggregatorSourcesStatus`.
-/// 
+///
 /// <p>Returns status information for sources within an aggregator. The status includes information about the last time Config verified authorization between the source account and an aggregator account. In case of a failure, the status contains the related error code or message. </p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeConfigurationAggregatorSourcesStatusFluentBuilder {
                 handle: std::sync::Arc<crate::client::Handle>,
                 inner: crate::operation::describe_configuration_aggregator_sources_status::builders::DescribeConfigurationAggregatorSourcesStatusInputBuilder
             }
-impl DescribeConfigurationAggregatorSourcesStatusFluentBuilder  {
+impl DescribeConfigurationAggregatorSourcesStatusFluentBuilder {
     /// Creates a new `DescribeConfigurationAggregatorSourcesStatus`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
-                    /// sent. The operation's inner [http::Request] can be modified as well.
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle,
+            inner: Default::default(),
+        }
+    }
+
+    /// Consume this builder, creating a customizable operation that can be modified before being
+    /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::describe_configuration_aggregator_sources_status::DescribeConfigurationAggregatorSourcesStatus, aws_http::retry::AwsResponseRetryClassifier,>,
                         aws_smithy_http::result::SdkError<crate::operation::describe_configuration_aggregator_sources_status::DescribeConfigurationAggregatorSourcesStatusError>
-                    >  {
-                        let handle = self.handle.clone();
-                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-                    }
-    
-                    /// Sends the request and returns the response.
-                    ///
-                    /// If an error occurs, an `SdkError` will be returned with additional details that
-                    /// can be matched against.
-                    ///
-                    /// By default, any retryable failures will be retried twice. Retry behavior
-                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                    /// set when configuring the client.
+    >{
+        let handle = self.handle.clone();
+        let operation = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+    }
+
+    /// Sends the request and returns the response.
+    ///
+    /// If an error occurs, an `SdkError` will be returned with additional details that
+    /// can be matched against.
+    ///
+    /// By default, any retryable failures will be retried twice. Retry behavior
+    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+    /// set when configuring the client.
                     pub async fn send(self) -> std::result::Result<crate::operation::describe_configuration_aggregator_sources_status::DescribeConfigurationAggregatorSourcesStatusOutput, aws_smithy_http::result::SdkError<crate::operation::describe_configuration_aggregator_sources_status::DescribeConfigurationAggregatorSourcesStatusError>>
                      {
-                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&self.handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        self.handle.client.call(op).await
-                    }
+        let op = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&self.handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        self.handle.client.call(op).await
+    }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::describe_configuration_aggregator_sources_status::paginator::DescribeConfigurationAggregatorSourcesStatusPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::describe_configuration_aggregator_sources_status::paginator::DescribeConfigurationAggregatorSourcesStatusPaginator {
-                            crate::operation::describe_configuration_aggregator_sources_status::paginator::DescribeConfigurationAggregatorSourcesStatusPaginator::new(self.handle, self.inner)
-                        }
+    ///
+    /// Paginators are used by calling [`send().await`](crate::operation::describe_configuration_aggregator_sources_status::paginator::DescribeConfigurationAggregatorSourcesStatusPaginator::send) which returns a `Stream`.
+    pub fn into_paginator(self) -> crate::operation::describe_configuration_aggregator_sources_status::paginator::DescribeConfigurationAggregatorSourcesStatusPaginator{
+        crate::operation::describe_configuration_aggregator_sources_status::paginator::DescribeConfigurationAggregatorSourcesStatusPaginator::new(self.handle, self.inner)
+    }
     /// <p>The name of the configuration aggregator.</p>
     pub fn configuration_aggregator_name(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.configuration_aggregator_name(input.into());
         self
     }
     /// <p>The name of the configuration aggregator.</p>
-    pub fn set_configuration_aggregator_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_configuration_aggregator_name(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_configuration_aggregator_name(input);
         self
     }
@@ -67,23 +79,26 @@ impl DescribeConfigurationAggregatorSourcesStatusFluentBuilder  {
     ///
     /// To override the contents of this collection use [`set_update_status`](Self::set_update_status).
     ///
-    /// <p>Filters the status type.</p> 
-    /// <ul> 
-    /// <li> <p>Valid value FAILED indicates errors while moving data.</p> </li> 
-    /// <li> <p>Valid value SUCCEEDED indicates the data was successfully moved.</p> </li> 
-    /// <li> <p>Valid value OUTDATED indicates the data is not the most recent.</p> </li> 
+    /// <p>Filters the status type.</p>
+    /// <ul>
+    /// <li> <p>Valid value FAILED indicates errors while moving data.</p> </li>
+    /// <li> <p>Valid value SUCCEEDED indicates the data was successfully moved.</p> </li>
+    /// <li> <p>Valid value OUTDATED indicates the data is not the most recent.</p> </li>
     /// </ul>
     pub fn update_status(mut self, input: crate::types::AggregatedSourceStatusType) -> Self {
         self.inner = self.inner.update_status(input);
         self
     }
-    /// <p>Filters the status type.</p> 
-    /// <ul> 
-    /// <li> <p>Valid value FAILED indicates errors while moving data.</p> </li> 
-    /// <li> <p>Valid value SUCCEEDED indicates the data was successfully moved.</p> </li> 
-    /// <li> <p>Valid value OUTDATED indicates the data is not the most recent.</p> </li> 
+    /// <p>Filters the status type.</p>
+    /// <ul>
+    /// <li> <p>Valid value FAILED indicates errors while moving data.</p> </li>
+    /// <li> <p>Valid value SUCCEEDED indicates the data was successfully moved.</p> </li>
+    /// <li> <p>Valid value OUTDATED indicates the data is not the most recent.</p> </li>
     /// </ul>
-    pub fn set_update_status(mut self, input: std::option::Option<std::vec::Vec<crate::types::AggregatedSourceStatusType>>) -> Self {
+    pub fn set_update_status(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::AggregatedSourceStatusType>>,
+    ) -> Self {
         self.inner = self.inner.set_update_status(input);
         self
     }
@@ -108,4 +123,3 @@ impl DescribeConfigurationAggregatorSourcesStatusFluentBuilder  {
         self
     }
 }
-

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteDataRepositoryAssociationInput  {
+pub struct DeleteDataRepositoryAssociationInput {
     /// <p>The ID of the data repository association that you want to delete.</p>
     #[doc(hidden)]
     pub association_id: std::option::Option<std::string::String>,
@@ -15,11 +15,11 @@ pub struct DeleteDataRepositoryAssociationInput  {
 }
 impl DeleteDataRepositoryAssociationInput {
     /// <p>The ID of the data repository association that you want to delete.</p>
-    pub fn association_id(&self) -> std::option::Option<& str> {
+    pub fn association_id(&self) -> std::option::Option<&str> {
         self.association_id.as_deref()
     }
     /// <p>(Optional) An idempotency token for resource creation, in a string of up to 64 ASCII characters. This token is automatically filled on your behalf when you use the Command Line Interface (CLI) or an Amazon Web Services SDK.</p>
-    pub fn client_request_token(&self) -> std::option::Option<& str> {
+    pub fn client_request_token(&self) -> std::option::Option<&str> {
         self.client_request_token.as_deref()
     }
     /// <p>Set to <code>true</code> to delete the data in the file system that corresponds to the data repository association.</p>
@@ -29,7 +29,7 @@ impl DeleteDataRepositoryAssociationInput {
 }
 impl DeleteDataRepositoryAssociationInput {
     /// Creates a new builder-style object to manufacture [`DeleteDataRepositoryAssociationInput`](crate::operation::delete_data_repository_association::DeleteDataRepositoryAssociationInput).
-    pub fn builder() -> crate::operation::delete_data_repository_association::builders::DeleteDataRepositoryAssociationInputBuilder {
+    pub fn builder() -> crate::operation::delete_data_repository_association::builders::DeleteDataRepositoryAssociationInputBuilder{
         crate::operation::delete_data_repository_association::builders::DeleteDataRepositoryAssociationInputBuilder::default()
     }
 }
@@ -50,7 +50,8 @@ impl DeleteDataRepositoryAssociationInputBuilder {
     }
     /// <p>The ID of the data repository association that you want to delete.</p>
     pub fn set_association_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.association_id = input; self
+        self.association_id = input;
+        self
     }
     /// <p>(Optional) An idempotency token for resource creation, in a string of up to 64 ASCII characters. This token is automatically filled on your behalf when you use the Command Line Interface (CLI) or an Amazon Web Services SDK.</p>
     pub fn client_request_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -58,8 +59,12 @@ impl DeleteDataRepositoryAssociationInputBuilder {
         self
     }
     /// <p>(Optional) An idempotency token for resource creation, in a string of up to 64 ASCII characters. This token is automatically filled on your behalf when you use the Command Line Interface (CLI) or an Amazon Web Services SDK.</p>
-    pub fn set_client_request_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.client_request_token = input; self
+    pub fn set_client_request_token(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.client_request_token = input;
+        self
     }
     /// <p>Set to <code>true</code> to delete the data in the file system that corresponds to the data repository association.</p>
     pub fn delete_data_in_file_system(mut self, input: bool) -> Self {
@@ -68,10 +73,16 @@ impl DeleteDataRepositoryAssociationInputBuilder {
     }
     /// <p>Set to <code>true</code> to delete the data in the file system that corresponds to the data repository association.</p>
     pub fn set_delete_data_in_file_system(mut self, input: std::option::Option<bool>) -> Self {
-        self.delete_data_in_file_system = input; self
+        self.delete_data_in_file_system = input;
+        self
     }
     /// Consumes the builder and constructs a [`DeleteDataRepositoryAssociationInput`](crate::operation::delete_data_repository_association::DeleteDataRepositoryAssociationInput).
-    pub fn build(self) -> Result<crate::operation::delete_data_repository_association::DeleteDataRepositoryAssociationInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::delete_data_repository_association::DeleteDataRepositoryAssociationInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::delete_data_repository_association::DeleteDataRepositoryAssociationInput {
                 association_id: self.association_id
@@ -84,4 +95,3 @@ impl DeleteDataRepositoryAssociationInputBuilder {
         )
     }
 }
-

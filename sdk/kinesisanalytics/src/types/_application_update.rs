@@ -3,7 +3,7 @@
 /// <p>Describes updates to apply to an existing Amazon Kinesis Analytics application.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ApplicationUpdate  {
+pub struct ApplicationUpdate {
     /// <p>Describes application input configuration updates.</p>
     #[doc(hidden)]
     pub input_updates: std::option::Option<std::vec::Vec<crate::types::InputUpdate>>,
@@ -15,30 +15,36 @@ pub struct ApplicationUpdate  {
     pub output_updates: std::option::Option<std::vec::Vec<crate::types::OutputUpdate>>,
     /// <p>Describes application reference data source updates.</p>
     #[doc(hidden)]
-    pub reference_data_source_updates: std::option::Option<std::vec::Vec<crate::types::ReferenceDataSourceUpdate>>,
+    pub reference_data_source_updates:
+        std::option::Option<std::vec::Vec<crate::types::ReferenceDataSourceUpdate>>,
     /// <p>Describes application CloudWatch logging option updates.</p>
     #[doc(hidden)]
-    pub cloud_watch_logging_option_updates: std::option::Option<std::vec::Vec<crate::types::CloudWatchLoggingOptionUpdate>>,
+    pub cloud_watch_logging_option_updates:
+        std::option::Option<std::vec::Vec<crate::types::CloudWatchLoggingOptionUpdate>>,
 }
 impl ApplicationUpdate {
     /// <p>Describes application input configuration updates.</p>
-    pub fn input_updates(&self) -> std::option::Option<& [crate::types::InputUpdate]> {
+    pub fn input_updates(&self) -> std::option::Option<&[crate::types::InputUpdate]> {
         self.input_updates.as_deref()
     }
     /// <p>Describes application code updates.</p>
-    pub fn application_code_update(&self) -> std::option::Option<& str> {
+    pub fn application_code_update(&self) -> std::option::Option<&str> {
         self.application_code_update.as_deref()
     }
     /// <p>Describes application output configuration updates.</p>
-    pub fn output_updates(&self) -> std::option::Option<& [crate::types::OutputUpdate]> {
+    pub fn output_updates(&self) -> std::option::Option<&[crate::types::OutputUpdate]> {
         self.output_updates.as_deref()
     }
     /// <p>Describes application reference data source updates.</p>
-    pub fn reference_data_source_updates(&self) -> std::option::Option<& [crate::types::ReferenceDataSourceUpdate]> {
+    pub fn reference_data_source_updates(
+        &self,
+    ) -> std::option::Option<&[crate::types::ReferenceDataSourceUpdate]> {
         self.reference_data_source_updates.as_deref()
     }
     /// <p>Describes application CloudWatch logging option updates.</p>
-    pub fn cloud_watch_logging_option_updates(&self) -> std::option::Option<& [crate::types::CloudWatchLoggingOptionUpdate]> {
+    pub fn cloud_watch_logging_option_updates(
+        &self,
+    ) -> std::option::Option<&[crate::types::CloudWatchLoggingOptionUpdate]> {
         self.cloud_watch_logging_option_updates.as_deref()
     }
 }
@@ -56,8 +62,10 @@ pub struct ApplicationUpdateBuilder {
     pub(crate) input_updates: std::option::Option<std::vec::Vec<crate::types::InputUpdate>>,
     pub(crate) application_code_update: std::option::Option<std::string::String>,
     pub(crate) output_updates: std::option::Option<std::vec::Vec<crate::types::OutputUpdate>>,
-    pub(crate) reference_data_source_updates: std::option::Option<std::vec::Vec<crate::types::ReferenceDataSourceUpdate>>,
-    pub(crate) cloud_watch_logging_option_updates: std::option::Option<std::vec::Vec<crate::types::CloudWatchLoggingOptionUpdate>>,
+    pub(crate) reference_data_source_updates:
+        std::option::Option<std::vec::Vec<crate::types::ReferenceDataSourceUpdate>>,
+    pub(crate) cloud_watch_logging_option_updates:
+        std::option::Option<std::vec::Vec<crate::types::CloudWatchLoggingOptionUpdate>>,
 }
 impl ApplicationUpdateBuilder {
     /// Appends an item to `input_updates`.
@@ -67,13 +75,17 @@ impl ApplicationUpdateBuilder {
     /// <p>Describes application input configuration updates.</p>
     pub fn input_updates(mut self, input: crate::types::InputUpdate) -> Self {
         let mut v = self.input_updates.unwrap_or_default();
-                        v.push(input);
-                        self.input_updates = Some(v);
-                        self
+        v.push(input);
+        self.input_updates = Some(v);
+        self
     }
     /// <p>Describes application input configuration updates.</p>
-    pub fn set_input_updates(mut self, input: std::option::Option<std::vec::Vec<crate::types::InputUpdate>>) -> Self {
-        self.input_updates = input; self
+    pub fn set_input_updates(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::InputUpdate>>,
+    ) -> Self {
+        self.input_updates = input;
+        self
     }
     /// <p>Describes application code updates.</p>
     pub fn application_code_update(mut self, input: impl Into<std::string::String>) -> Self {
@@ -81,8 +93,12 @@ impl ApplicationUpdateBuilder {
         self
     }
     /// <p>Describes application code updates.</p>
-    pub fn set_application_code_update(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.application_code_update = input; self
+    pub fn set_application_code_update(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.application_code_update = input;
+        self
     }
     /// Appends an item to `output_updates`.
     ///
@@ -91,58 +107,70 @@ impl ApplicationUpdateBuilder {
     /// <p>Describes application output configuration updates.</p>
     pub fn output_updates(mut self, input: crate::types::OutputUpdate) -> Self {
         let mut v = self.output_updates.unwrap_or_default();
-                        v.push(input);
-                        self.output_updates = Some(v);
-                        self
+        v.push(input);
+        self.output_updates = Some(v);
+        self
     }
     /// <p>Describes application output configuration updates.</p>
-    pub fn set_output_updates(mut self, input: std::option::Option<std::vec::Vec<crate::types::OutputUpdate>>) -> Self {
-        self.output_updates = input; self
+    pub fn set_output_updates(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::OutputUpdate>>,
+    ) -> Self {
+        self.output_updates = input;
+        self
     }
     /// Appends an item to `reference_data_source_updates`.
     ///
     /// To override the contents of this collection use [`set_reference_data_source_updates`](Self::set_reference_data_source_updates).
     ///
     /// <p>Describes application reference data source updates.</p>
-    pub fn reference_data_source_updates(mut self, input: crate::types::ReferenceDataSourceUpdate) -> Self {
+    pub fn reference_data_source_updates(
+        mut self,
+        input: crate::types::ReferenceDataSourceUpdate,
+    ) -> Self {
         let mut v = self.reference_data_source_updates.unwrap_or_default();
-                        v.push(input);
-                        self.reference_data_source_updates = Some(v);
-                        self
+        v.push(input);
+        self.reference_data_source_updates = Some(v);
+        self
     }
     /// <p>Describes application reference data source updates.</p>
-    pub fn set_reference_data_source_updates(mut self, input: std::option::Option<std::vec::Vec<crate::types::ReferenceDataSourceUpdate>>) -> Self {
-        self.reference_data_source_updates = input; self
+    pub fn set_reference_data_source_updates(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::ReferenceDataSourceUpdate>>,
+    ) -> Self {
+        self.reference_data_source_updates = input;
+        self
     }
     /// Appends an item to `cloud_watch_logging_option_updates`.
     ///
     /// To override the contents of this collection use [`set_cloud_watch_logging_option_updates`](Self::set_cloud_watch_logging_option_updates).
     ///
     /// <p>Describes application CloudWatch logging option updates.</p>
-    pub fn cloud_watch_logging_option_updates(mut self, input: crate::types::CloudWatchLoggingOptionUpdate) -> Self {
+    pub fn cloud_watch_logging_option_updates(
+        mut self,
+        input: crate::types::CloudWatchLoggingOptionUpdate,
+    ) -> Self {
         let mut v = self.cloud_watch_logging_option_updates.unwrap_or_default();
-                        v.push(input);
-                        self.cloud_watch_logging_option_updates = Some(v);
-                        self
+        v.push(input);
+        self.cloud_watch_logging_option_updates = Some(v);
+        self
     }
     /// <p>Describes application CloudWatch logging option updates.</p>
-    pub fn set_cloud_watch_logging_option_updates(mut self, input: std::option::Option<std::vec::Vec<crate::types::CloudWatchLoggingOptionUpdate>>) -> Self {
-        self.cloud_watch_logging_option_updates = input; self
+    pub fn set_cloud_watch_logging_option_updates(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::CloudWatchLoggingOptionUpdate>>,
+    ) -> Self {
+        self.cloud_watch_logging_option_updates = input;
+        self
     }
     /// Consumes the builder and constructs a [`ApplicationUpdate`](crate::types::ApplicationUpdate).
     pub fn build(self) -> crate::types::ApplicationUpdate {
         crate::types::ApplicationUpdate {
-            input_updates: self.input_updates
-            ,
-            application_code_update: self.application_code_update
-            ,
-            output_updates: self.output_updates
-            ,
-            reference_data_source_updates: self.reference_data_source_updates
-            ,
-            cloud_watch_logging_option_updates: self.cloud_watch_logging_option_updates
-            ,
+            input_updates: self.input_updates,
+            application_code_update: self.application_code_update,
+            output_updates: self.output_updates,
+            reference_data_source_updates: self.reference_data_source_updates,
+            cloud_watch_logging_option_updates: self.cloud_watch_logging_option_updates,
         }
     }
 }
-

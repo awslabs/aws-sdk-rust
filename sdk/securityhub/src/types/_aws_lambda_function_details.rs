@@ -3,7 +3,7 @@
 /// <p>Details about an Lambda function's configuration.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AwsLambdaFunctionDetails  {
+pub struct AwsLambdaFunctionDetails {
     /// <p>An <code>AwsLambdaFunctionCode</code> object.</p>
     #[doc(hidden)]
     pub code: std::option::Option<crate::types::AwsLambdaFunctionCode>,
@@ -25,7 +25,7 @@ pub struct AwsLambdaFunctionDetails  {
     /// <p>The KMS key that is used to encrypt the function's environment variables. This key is only returned if you've configured a customer managed customer managed key.</p>
     #[doc(hidden)]
     pub kms_key_arn: std::option::Option<std::string::String>,
-    /// <p>Indicates when the function was last updated.</p> 
+    /// <p>Indicates when the function was last updated.</p>
     /// <p>Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces. For example, <code>2020-03-22T13:22:13.933Z</code>.</p>
     #[doc(hidden)]
     pub last_modified: std::option::Option<std::string::String>,
@@ -68,44 +68,46 @@ pub struct AwsLambdaFunctionDetails  {
 }
 impl AwsLambdaFunctionDetails {
     /// <p>An <code>AwsLambdaFunctionCode</code> object.</p>
-    pub fn code(&self) -> std::option::Option<& crate::types::AwsLambdaFunctionCode> {
+    pub fn code(&self) -> std::option::Option<&crate::types::AwsLambdaFunctionCode> {
         self.code.as_ref()
     }
     /// <p>The SHA256 hash of the function's deployment package.</p>
-    pub fn code_sha256(&self) -> std::option::Option<& str> {
+    pub fn code_sha256(&self) -> std::option::Option<&str> {
         self.code_sha256.as_deref()
     }
     /// <p>The function's dead letter queue.</p>
-    pub fn dead_letter_config(&self) -> std::option::Option<& crate::types::AwsLambdaFunctionDeadLetterConfig> {
+    pub fn dead_letter_config(
+        &self,
+    ) -> std::option::Option<&crate::types::AwsLambdaFunctionDeadLetterConfig> {
         self.dead_letter_config.as_ref()
     }
     /// <p>The function's environment variables.</p>
-    pub fn environment(&self) -> std::option::Option<& crate::types::AwsLambdaFunctionEnvironment> {
+    pub fn environment(&self) -> std::option::Option<&crate::types::AwsLambdaFunctionEnvironment> {
         self.environment.as_ref()
     }
     /// <p>The name of the function.</p>
-    pub fn function_name(&self) -> std::option::Option<& str> {
+    pub fn function_name(&self) -> std::option::Option<&str> {
         self.function_name.as_deref()
     }
     /// <p>The function that Lambda calls to begin executing your function.</p>
-    pub fn handler(&self) -> std::option::Option<& str> {
+    pub fn handler(&self) -> std::option::Option<&str> {
         self.handler.as_deref()
     }
     /// <p>The KMS key that is used to encrypt the function's environment variables. This key is only returned if you've configured a customer managed customer managed key.</p>
-    pub fn kms_key_arn(&self) -> std::option::Option<& str> {
+    pub fn kms_key_arn(&self) -> std::option::Option<&str> {
         self.kms_key_arn.as_deref()
     }
-    /// <p>Indicates when the function was last updated.</p> 
+    /// <p>Indicates when the function was last updated.</p>
     /// <p>Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces. For example, <code>2020-03-22T13:22:13.933Z</code>.</p>
-    pub fn last_modified(&self) -> std::option::Option<& str> {
+    pub fn last_modified(&self) -> std::option::Option<&str> {
         self.last_modified.as_deref()
     }
     /// <p>The function's layers.</p>
-    pub fn layers(&self) -> std::option::Option<& [crate::types::AwsLambdaFunctionLayer]> {
+    pub fn layers(&self) -> std::option::Option<&[crate::types::AwsLambdaFunctionLayer]> {
         self.layers.as_deref()
     }
     /// <p>For Lambda@Edge functions, the ARN of the master function.</p>
-    pub fn master_arn(&self) -> std::option::Option<& str> {
+    pub fn master_arn(&self) -> std::option::Option<&str> {
         self.master_arn.as_deref()
     }
     /// <p>The memory that is allocated to the function.</p>
@@ -113,15 +115,15 @@ impl AwsLambdaFunctionDetails {
         self.memory_size
     }
     /// <p>The latest updated revision of the function or alias.</p>
-    pub fn revision_id(&self) -> std::option::Option<& str> {
+    pub fn revision_id(&self) -> std::option::Option<&str> {
         self.revision_id.as_deref()
     }
     /// <p>The function's execution role.</p>
-    pub fn role(&self) -> std::option::Option<& str> {
+    pub fn role(&self) -> std::option::Option<&str> {
         self.role.as_deref()
     }
     /// <p>The runtime environment for the Lambda function.</p>
-    pub fn runtime(&self) -> std::option::Option<& str> {
+    pub fn runtime(&self) -> std::option::Option<&str> {
         self.runtime.as_deref()
     }
     /// <p>The amount of time that Lambda allows a function to run before stopping it.</p>
@@ -129,23 +131,25 @@ impl AwsLambdaFunctionDetails {
         self.timeout
     }
     /// <p>The function's X-Ray tracing configuration.</p>
-    pub fn tracing_config(&self) -> std::option::Option<& crate::types::AwsLambdaFunctionTracingConfig> {
+    pub fn tracing_config(
+        &self,
+    ) -> std::option::Option<&crate::types::AwsLambdaFunctionTracingConfig> {
         self.tracing_config.as_ref()
     }
     /// <p>The function's networking configuration.</p>
-    pub fn vpc_config(&self) -> std::option::Option<& crate::types::AwsLambdaFunctionVpcConfig> {
+    pub fn vpc_config(&self) -> std::option::Option<&crate::types::AwsLambdaFunctionVpcConfig> {
         self.vpc_config.as_ref()
     }
     /// <p>The version of the Lambda function.</p>
-    pub fn version(&self) -> std::option::Option<& str> {
+    pub fn version(&self) -> std::option::Option<&str> {
         self.version.as_deref()
     }
     /// <p>The instruction set architecture that the function uses. Valid values are <code>x86_64</code> or <code>arm64</code>.</p>
-    pub fn architectures(&self) -> std::option::Option<& [std::string::String]> {
+    pub fn architectures(&self) -> std::option::Option<&[std::string::String]> {
         self.architectures.as_deref()
     }
     /// <p>The type of deployment package that's used to deploy the function code to Lambda. Set to <code>Image</code> for a container image and <code>Zip</code> for a .zip file archive. </p>
-    pub fn package_type(&self) -> std::option::Option<& str> {
+    pub fn package_type(&self) -> std::option::Option<&str> {
         self.package_type.as_deref()
     }
 }
@@ -162,7 +166,8 @@ impl AwsLambdaFunctionDetails {
 pub struct AwsLambdaFunctionDetailsBuilder {
     pub(crate) code: std::option::Option<crate::types::AwsLambdaFunctionCode>,
     pub(crate) code_sha256: std::option::Option<std::string::String>,
-    pub(crate) dead_letter_config: std::option::Option<crate::types::AwsLambdaFunctionDeadLetterConfig>,
+    pub(crate) dead_letter_config:
+        std::option::Option<crate::types::AwsLambdaFunctionDeadLetterConfig>,
     pub(crate) environment: std::option::Option<crate::types::AwsLambdaFunctionEnvironment>,
     pub(crate) function_name: std::option::Option<std::string::String>,
     pub(crate) handler: std::option::Option<std::string::String>,
@@ -188,8 +193,12 @@ impl AwsLambdaFunctionDetailsBuilder {
         self
     }
     /// <p>An <code>AwsLambdaFunctionCode</code> object.</p>
-    pub fn set_code(mut self, input: std::option::Option<crate::types::AwsLambdaFunctionCode>) -> Self {
-        self.code = input; self
+    pub fn set_code(
+        mut self,
+        input: std::option::Option<crate::types::AwsLambdaFunctionCode>,
+    ) -> Self {
+        self.code = input;
+        self
     }
     /// <p>The SHA256 hash of the function's deployment package.</p>
     pub fn code_sha256(mut self, input: impl Into<std::string::String>) -> Self {
@@ -198,16 +207,24 @@ impl AwsLambdaFunctionDetailsBuilder {
     }
     /// <p>The SHA256 hash of the function's deployment package.</p>
     pub fn set_code_sha256(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.code_sha256 = input; self
+        self.code_sha256 = input;
+        self
     }
     /// <p>The function's dead letter queue.</p>
-    pub fn dead_letter_config(mut self, input: crate::types::AwsLambdaFunctionDeadLetterConfig) -> Self {
+    pub fn dead_letter_config(
+        mut self,
+        input: crate::types::AwsLambdaFunctionDeadLetterConfig,
+    ) -> Self {
         self.dead_letter_config = Some(input);
         self
     }
     /// <p>The function's dead letter queue.</p>
-    pub fn set_dead_letter_config(mut self, input: std::option::Option<crate::types::AwsLambdaFunctionDeadLetterConfig>) -> Self {
-        self.dead_letter_config = input; self
+    pub fn set_dead_letter_config(
+        mut self,
+        input: std::option::Option<crate::types::AwsLambdaFunctionDeadLetterConfig>,
+    ) -> Self {
+        self.dead_letter_config = input;
+        self
     }
     /// <p>The function's environment variables.</p>
     pub fn environment(mut self, input: crate::types::AwsLambdaFunctionEnvironment) -> Self {
@@ -215,8 +232,12 @@ impl AwsLambdaFunctionDetailsBuilder {
         self
     }
     /// <p>The function's environment variables.</p>
-    pub fn set_environment(mut self, input: std::option::Option<crate::types::AwsLambdaFunctionEnvironment>) -> Self {
-        self.environment = input; self
+    pub fn set_environment(
+        mut self,
+        input: std::option::Option<crate::types::AwsLambdaFunctionEnvironment>,
+    ) -> Self {
+        self.environment = input;
+        self
     }
     /// <p>The name of the function.</p>
     pub fn function_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -225,7 +246,8 @@ impl AwsLambdaFunctionDetailsBuilder {
     }
     /// <p>The name of the function.</p>
     pub fn set_function_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.function_name = input; self
+        self.function_name = input;
+        self
     }
     /// <p>The function that Lambda calls to begin executing your function.</p>
     pub fn handler(mut self, input: impl Into<std::string::String>) -> Self {
@@ -234,7 +256,8 @@ impl AwsLambdaFunctionDetailsBuilder {
     }
     /// <p>The function that Lambda calls to begin executing your function.</p>
     pub fn set_handler(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.handler = input; self
+        self.handler = input;
+        self
     }
     /// <p>The KMS key that is used to encrypt the function's environment variables. This key is only returned if you've configured a customer managed customer managed key.</p>
     pub fn kms_key_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -243,18 +266,20 @@ impl AwsLambdaFunctionDetailsBuilder {
     }
     /// <p>The KMS key that is used to encrypt the function's environment variables. This key is only returned if you've configured a customer managed customer managed key.</p>
     pub fn set_kms_key_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.kms_key_arn = input; self
+        self.kms_key_arn = input;
+        self
     }
-    /// <p>Indicates when the function was last updated.</p> 
+    /// <p>Indicates when the function was last updated.</p>
     /// <p>Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces. For example, <code>2020-03-22T13:22:13.933Z</code>.</p>
     pub fn last_modified(mut self, input: impl Into<std::string::String>) -> Self {
         self.last_modified = Some(input.into());
         self
     }
-    /// <p>Indicates when the function was last updated.</p> 
+    /// <p>Indicates when the function was last updated.</p>
     /// <p>Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces. For example, <code>2020-03-22T13:22:13.933Z</code>.</p>
     pub fn set_last_modified(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.last_modified = input; self
+        self.last_modified = input;
+        self
     }
     /// Appends an item to `layers`.
     ///
@@ -263,13 +288,17 @@ impl AwsLambdaFunctionDetailsBuilder {
     /// <p>The function's layers.</p>
     pub fn layers(mut self, input: crate::types::AwsLambdaFunctionLayer) -> Self {
         let mut v = self.layers.unwrap_or_default();
-                        v.push(input);
-                        self.layers = Some(v);
-                        self
+        v.push(input);
+        self.layers = Some(v);
+        self
     }
     /// <p>The function's layers.</p>
-    pub fn set_layers(mut self, input: std::option::Option<std::vec::Vec<crate::types::AwsLambdaFunctionLayer>>) -> Self {
-        self.layers = input; self
+    pub fn set_layers(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::AwsLambdaFunctionLayer>>,
+    ) -> Self {
+        self.layers = input;
+        self
     }
     /// <p>For Lambda@Edge functions, the ARN of the master function.</p>
     pub fn master_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -278,7 +307,8 @@ impl AwsLambdaFunctionDetailsBuilder {
     }
     /// <p>For Lambda@Edge functions, the ARN of the master function.</p>
     pub fn set_master_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.master_arn = input; self
+        self.master_arn = input;
+        self
     }
     /// <p>The memory that is allocated to the function.</p>
     pub fn memory_size(mut self, input: i32) -> Self {
@@ -287,7 +317,8 @@ impl AwsLambdaFunctionDetailsBuilder {
     }
     /// <p>The memory that is allocated to the function.</p>
     pub fn set_memory_size(mut self, input: std::option::Option<i32>) -> Self {
-        self.memory_size = input; self
+        self.memory_size = input;
+        self
     }
     /// <p>The latest updated revision of the function or alias.</p>
     pub fn revision_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -296,7 +327,8 @@ impl AwsLambdaFunctionDetailsBuilder {
     }
     /// <p>The latest updated revision of the function or alias.</p>
     pub fn set_revision_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.revision_id = input; self
+        self.revision_id = input;
+        self
     }
     /// <p>The function's execution role.</p>
     pub fn role(mut self, input: impl Into<std::string::String>) -> Self {
@@ -305,7 +337,8 @@ impl AwsLambdaFunctionDetailsBuilder {
     }
     /// <p>The function's execution role.</p>
     pub fn set_role(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.role = input; self
+        self.role = input;
+        self
     }
     /// <p>The runtime environment for the Lambda function.</p>
     pub fn runtime(mut self, input: impl Into<std::string::String>) -> Self {
@@ -314,7 +347,8 @@ impl AwsLambdaFunctionDetailsBuilder {
     }
     /// <p>The runtime environment for the Lambda function.</p>
     pub fn set_runtime(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.runtime = input; self
+        self.runtime = input;
+        self
     }
     /// <p>The amount of time that Lambda allows a function to run before stopping it.</p>
     pub fn timeout(mut self, input: i32) -> Self {
@@ -323,7 +357,8 @@ impl AwsLambdaFunctionDetailsBuilder {
     }
     /// <p>The amount of time that Lambda allows a function to run before stopping it.</p>
     pub fn set_timeout(mut self, input: std::option::Option<i32>) -> Self {
-        self.timeout = input; self
+        self.timeout = input;
+        self
     }
     /// <p>The function's X-Ray tracing configuration.</p>
     pub fn tracing_config(mut self, input: crate::types::AwsLambdaFunctionTracingConfig) -> Self {
@@ -331,8 +366,12 @@ impl AwsLambdaFunctionDetailsBuilder {
         self
     }
     /// <p>The function's X-Ray tracing configuration.</p>
-    pub fn set_tracing_config(mut self, input: std::option::Option<crate::types::AwsLambdaFunctionTracingConfig>) -> Self {
-        self.tracing_config = input; self
+    pub fn set_tracing_config(
+        mut self,
+        input: std::option::Option<crate::types::AwsLambdaFunctionTracingConfig>,
+    ) -> Self {
+        self.tracing_config = input;
+        self
     }
     /// <p>The function's networking configuration.</p>
     pub fn vpc_config(mut self, input: crate::types::AwsLambdaFunctionVpcConfig) -> Self {
@@ -340,8 +379,12 @@ impl AwsLambdaFunctionDetailsBuilder {
         self
     }
     /// <p>The function's networking configuration.</p>
-    pub fn set_vpc_config(mut self, input: std::option::Option<crate::types::AwsLambdaFunctionVpcConfig>) -> Self {
-        self.vpc_config = input; self
+    pub fn set_vpc_config(
+        mut self,
+        input: std::option::Option<crate::types::AwsLambdaFunctionVpcConfig>,
+    ) -> Self {
+        self.vpc_config = input;
+        self
     }
     /// <p>The version of the Lambda function.</p>
     pub fn version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -350,7 +393,8 @@ impl AwsLambdaFunctionDetailsBuilder {
     }
     /// <p>The version of the Lambda function.</p>
     pub fn set_version(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.version = input; self
+        self.version = input;
+        self
     }
     /// Appends an item to `architectures`.
     ///
@@ -359,13 +403,17 @@ impl AwsLambdaFunctionDetailsBuilder {
     /// <p>The instruction set architecture that the function uses. Valid values are <code>x86_64</code> or <code>arm64</code>.</p>
     pub fn architectures(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.architectures.unwrap_or_default();
-                        v.push(input.into());
-                        self.architectures = Some(v);
-                        self
+        v.push(input.into());
+        self.architectures = Some(v);
+        self
     }
     /// <p>The instruction set architecture that the function uses. Valid values are <code>x86_64</code> or <code>arm64</code>.</p>
-    pub fn set_architectures(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-        self.architectures = input; self
+    pub fn set_architectures(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
+        self.architectures = input;
+        self
     }
     /// <p>The type of deployment package that's used to deploy the function code to Lambda. Set to <code>Image</code> for a container image and <code>Zip</code> for a .zip file archive. </p>
     pub fn package_type(mut self, input: impl Into<std::string::String>) -> Self {
@@ -374,54 +422,32 @@ impl AwsLambdaFunctionDetailsBuilder {
     }
     /// <p>The type of deployment package that's used to deploy the function code to Lambda. Set to <code>Image</code> for a container image and <code>Zip</code> for a .zip file archive. </p>
     pub fn set_package_type(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.package_type = input; self
+        self.package_type = input;
+        self
     }
     /// Consumes the builder and constructs a [`AwsLambdaFunctionDetails`](crate::types::AwsLambdaFunctionDetails).
     pub fn build(self) -> crate::types::AwsLambdaFunctionDetails {
         crate::types::AwsLambdaFunctionDetails {
-            code: self.code
-            ,
-            code_sha256: self.code_sha256
-            ,
-            dead_letter_config: self.dead_letter_config
-            ,
-            environment: self.environment
-            ,
-            function_name: self.function_name
-            ,
-            handler: self.handler
-            ,
-            kms_key_arn: self.kms_key_arn
-            ,
-            last_modified: self.last_modified
-            ,
-            layers: self.layers
-            ,
-            master_arn: self.master_arn
-            ,
-            memory_size: self.memory_size
-                .unwrap_or_default()
-            ,
-            revision_id: self.revision_id
-            ,
-            role: self.role
-            ,
-            runtime: self.runtime
-            ,
-            timeout: self.timeout
-                .unwrap_or_default()
-            ,
-            tracing_config: self.tracing_config
-            ,
-            vpc_config: self.vpc_config
-            ,
-            version: self.version
-            ,
-            architectures: self.architectures
-            ,
-            package_type: self.package_type
-            ,
+            code: self.code,
+            code_sha256: self.code_sha256,
+            dead_letter_config: self.dead_letter_config,
+            environment: self.environment,
+            function_name: self.function_name,
+            handler: self.handler,
+            kms_key_arn: self.kms_key_arn,
+            last_modified: self.last_modified,
+            layers: self.layers,
+            master_arn: self.master_arn,
+            memory_size: self.memory_size.unwrap_or_default(),
+            revision_id: self.revision_id,
+            role: self.role,
+            runtime: self.runtime,
+            timeout: self.timeout.unwrap_or_default(),
+            tracing_config: self.tracing_config,
+            vpc_config: self.vpc_config,
+            version: self.version,
+            architectures: self.architectures,
+            package_type: self.package_type,
         }
     }
 }
-

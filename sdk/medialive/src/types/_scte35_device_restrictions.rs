@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-/// 
+///
 /// Here is an example of how you can make a match expression forward-compatible:
-/// 
+///
 /// ```text
 /// # let scte35devicerestrictions = unimplemented!();
 /// match scte35devicerestrictions {
@@ -32,14 +32,22 @@
 /// Specifically, when `scte35devicerestrictions` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `Scte35DeviceRestrictions::NewFeature` also yielding `"NewFeature"`.
-/// 
+///
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 /// Corresponds to the device_restrictions parameter in a segmentation_descriptor. If you include one of the "restriction" flags then you must include all four of them.
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
 pub enum Scte35DeviceRestrictions {
     #[allow(missing_docs)] // documentation missing in model
     None,
@@ -50,45 +58,51 @@ pub enum Scte35DeviceRestrictions {
     #[allow(missing_docs)] // documentation missing in model
     RestrictGroup2,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::primitives::UnknownVariantValue)
+    Unknown(crate::primitives::UnknownVariantValue),
 }
 impl std::convert::From<&str> for Scte35DeviceRestrictions {
-                fn from(s: &str) -> Self {
-                    match s {
-                        "NONE" => Scte35DeviceRestrictions::None,
-"RESTRICT_GROUP0" => Scte35DeviceRestrictions::RestrictGroup0,
-"RESTRICT_GROUP1" => Scte35DeviceRestrictions::RestrictGroup1,
-"RESTRICT_GROUP2" => Scte35DeviceRestrictions::RestrictGroup2,
-other => Scte35DeviceRestrictions::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
-                    }
-                }
-            }
-impl std::str::FromStr for Scte35DeviceRestrictions {
-                type Err = std::convert::Infallible;
-
-                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-                    Ok(Scte35DeviceRestrictions::from(s))
-                }
-            }
-impl Scte35DeviceRestrictions {
-                /// Returns the `&str` value of the enum member.
-                pub fn as_str(&self) -> &str {
-                    match self {
-    Scte35DeviceRestrictions::None => "NONE",
-    Scte35DeviceRestrictions::RestrictGroup0 => "RESTRICT_GROUP0",
-    Scte35DeviceRestrictions::RestrictGroup1 => "RESTRICT_GROUP1",
-    Scte35DeviceRestrictions::RestrictGroup2 => "RESTRICT_GROUP2",
-    Scte35DeviceRestrictions::Unknown(value) => value.as_str()
+    fn from(s: &str) -> Self {
+        match s {
+            "NONE" => Scte35DeviceRestrictions::None,
+            "RESTRICT_GROUP0" => Scte35DeviceRestrictions::RestrictGroup0,
+            "RESTRICT_GROUP1" => Scte35DeviceRestrictions::RestrictGroup1,
+            "RESTRICT_GROUP2" => Scte35DeviceRestrictions::RestrictGroup2,
+            other => Scte35DeviceRestrictions::Unknown(crate::primitives::UnknownVariantValue(
+                other.to_owned(),
+            )),
+        }
+    }
 }
-                }
-                /// Returns all the `&str` representations of the enum members.
-                pub const fn values() -> &'static [&'static str] {
-                    &["NONE", "RESTRICT_GROUP0", "RESTRICT_GROUP1", "RESTRICT_GROUP2"]
-                }
-            }
-impl AsRef<str> for Scte35DeviceRestrictions {
-                fn as_ref(&self) -> &str {
-                    self.as_str()
-                }
-            }
+impl std::str::FromStr for Scte35DeviceRestrictions {
+    type Err = std::convert::Infallible;
 
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(Scte35DeviceRestrictions::from(s))
+    }
+}
+impl Scte35DeviceRestrictions {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            Scte35DeviceRestrictions::None => "NONE",
+            Scte35DeviceRestrictions::RestrictGroup0 => "RESTRICT_GROUP0",
+            Scte35DeviceRestrictions::RestrictGroup1 => "RESTRICT_GROUP1",
+            Scte35DeviceRestrictions::RestrictGroup2 => "RESTRICT_GROUP2",
+            Scte35DeviceRestrictions::Unknown(value) => value.as_str(),
+        }
+    }
+    /// Returns all the `&str` representations of the enum members.
+    pub const fn values() -> &'static [&'static str] {
+        &[
+            "NONE",
+            "RESTRICT_GROUP0",
+            "RESTRICT_GROUP1",
+            "RESTRICT_GROUP2",
+        ]
+    }
+}
+impl AsRef<str> for Scte35DeviceRestrictions {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}

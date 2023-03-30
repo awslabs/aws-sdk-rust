@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeTrafficSourcesInput  {
+pub struct DescribeTrafficSourcesInput {
     /// <p>The name of the Auto Scaling group.</p>
     #[doc(hidden)]
     pub auto_scaling_group_name: std::option::Option<std::string::String>,
@@ -18,15 +18,15 @@ pub struct DescribeTrafficSourcesInput  {
 }
 impl DescribeTrafficSourcesInput {
     /// <p>The name of the Auto Scaling group.</p>
-    pub fn auto_scaling_group_name(&self) -> std::option::Option<& str> {
+    pub fn auto_scaling_group_name(&self) -> std::option::Option<&str> {
         self.auto_scaling_group_name.as_deref()
     }
     /// <p>The type of traffic source you are describing. Currently, the only valid value is <code>vpc-lattice</code>.</p>
-    pub fn traffic_source_type(&self) -> std::option::Option<& str> {
+    pub fn traffic_source_type(&self) -> std::option::Option<&str> {
         self.traffic_source_type.as_deref()
     }
     /// <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
     /// <p>The maximum number of items to return with this call. The maximum value is <code>50</code>.</p>
@@ -36,7 +36,9 @@ impl DescribeTrafficSourcesInput {
 }
 impl DescribeTrafficSourcesInput {
     /// Creates a new builder-style object to manufacture [`DescribeTrafficSourcesInput`](crate::operation::describe_traffic_sources::DescribeTrafficSourcesInput).
-    pub fn builder() -> crate::operation::describe_traffic_sources::builders::DescribeTrafficSourcesInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::describe_traffic_sources::builders::DescribeTrafficSourcesInputBuilder
+    {
         crate::operation::describe_traffic_sources::builders::DescribeTrafficSourcesInputBuilder::default()
     }
 }
@@ -57,8 +59,12 @@ impl DescribeTrafficSourcesInputBuilder {
         self
     }
     /// <p>The name of the Auto Scaling group.</p>
-    pub fn set_auto_scaling_group_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.auto_scaling_group_name = input; self
+    pub fn set_auto_scaling_group_name(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.auto_scaling_group_name = input;
+        self
     }
     /// <p>The type of traffic source you are describing. Currently, the only valid value is <code>vpc-lattice</code>.</p>
     pub fn traffic_source_type(mut self, input: impl Into<std::string::String>) -> Self {
@@ -66,8 +72,12 @@ impl DescribeTrafficSourcesInputBuilder {
         self
     }
     /// <p>The type of traffic source you are describing. Currently, the only valid value is <code>vpc-lattice</code>.</p>
-    pub fn set_traffic_source_type(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.traffic_source_type = input; self
+    pub fn set_traffic_source_type(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.traffic_source_type = input;
+        self
     }
     /// <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -76,7 +86,8 @@ impl DescribeTrafficSourcesInputBuilder {
     }
     /// <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input; self
+        self.next_token = input;
+        self
     }
     /// <p>The maximum number of items to return with this call. The maximum value is <code>50</code>.</p>
     pub fn max_records(mut self, input: i32) -> Self {
@@ -85,22 +96,23 @@ impl DescribeTrafficSourcesInputBuilder {
     }
     /// <p>The maximum number of items to return with this call. The maximum value is <code>50</code>.</p>
     pub fn set_max_records(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_records = input; self
+        self.max_records = input;
+        self
     }
     /// Consumes the builder and constructs a [`DescribeTrafficSourcesInput`](crate::operation::describe_traffic_sources::DescribeTrafficSourcesInput).
-    pub fn build(self) -> Result<crate::operation::describe_traffic_sources::DescribeTrafficSourcesInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::describe_traffic_sources::DescribeTrafficSourcesInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::describe_traffic_sources::DescribeTrafficSourcesInput {
-                auto_scaling_group_name: self.auto_scaling_group_name
-                ,
-                traffic_source_type: self.traffic_source_type
-                ,
-                next_token: self.next_token
-                ,
-                max_records: self.max_records
-                ,
-            }
+                auto_scaling_group_name: self.auto_scaling_group_name,
+                traffic_source_type: self.traffic_source_type,
+                next_token: self.next_token,
+                max_records: self.max_records,
+            },
         )
     }
 }
-

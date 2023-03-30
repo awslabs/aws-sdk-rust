@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListSpacesInput  {
+pub struct ListSpacesInput {
     /// <p>If the previous response was truncated, you will receive this token. Use it in your next request to receive the next set of results.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
@@ -24,7 +24,7 @@ pub struct ListSpacesInput  {
 }
 impl ListSpacesInput {
     /// <p>If the previous response was truncated, you will receive this token. Use it in your next request to receive the next set of results.</p>
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
     /// <p>Returns a list up to a specified limit.</p>
@@ -32,19 +32,19 @@ impl ListSpacesInput {
         self.max_results
     }
     /// <p>The sort order for the results. The default is <code>Ascending</code>.</p>
-    pub fn sort_order(&self) -> std::option::Option<& crate::types::SortOrder> {
+    pub fn sort_order(&self) -> std::option::Option<&crate::types::SortOrder> {
         self.sort_order.as_ref()
     }
     /// <p>The parameter by which to sort the results. The default is <code>CreationTime</code>.</p>
-    pub fn sort_by(&self) -> std::option::Option<& crate::types::SpaceSortKey> {
+    pub fn sort_by(&self) -> std::option::Option<&crate::types::SpaceSortKey> {
         self.sort_by.as_ref()
     }
     /// <p>A parameter to search for the Domain ID.</p>
-    pub fn domain_id_equals(&self) -> std::option::Option<& str> {
+    pub fn domain_id_equals(&self) -> std::option::Option<&str> {
         self.domain_id_equals.as_deref()
     }
     /// <p>A parameter by which to filter the results.</p>
-    pub fn space_name_contains(&self) -> std::option::Option<& str> {
+    pub fn space_name_contains(&self) -> std::option::Option<&str> {
         self.space_name_contains.as_deref()
     }
 }
@@ -74,7 +74,8 @@ impl ListSpacesInputBuilder {
     }
     /// <p>If the previous response was truncated, you will receive this token. Use it in your next request to receive the next set of results.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input; self
+        self.next_token = input;
+        self
     }
     /// <p>Returns a list up to a specified limit.</p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -83,7 +84,8 @@ impl ListSpacesInputBuilder {
     }
     /// <p>Returns a list up to a specified limit.</p>
     pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_results = input; self
+        self.max_results = input;
+        self
     }
     /// <p>The sort order for the results. The default is <code>Ascending</code>.</p>
     pub fn sort_order(mut self, input: crate::types::SortOrder) -> Self {
@@ -92,7 +94,8 @@ impl ListSpacesInputBuilder {
     }
     /// <p>The sort order for the results. The default is <code>Ascending</code>.</p>
     pub fn set_sort_order(mut self, input: std::option::Option<crate::types::SortOrder>) -> Self {
-        self.sort_order = input; self
+        self.sort_order = input;
+        self
     }
     /// <p>The parameter by which to sort the results. The default is <code>CreationTime</code>.</p>
     pub fn sort_by(mut self, input: crate::types::SpaceSortKey) -> Self {
@@ -101,7 +104,8 @@ impl ListSpacesInputBuilder {
     }
     /// <p>The parameter by which to sort the results. The default is <code>CreationTime</code>.</p>
     pub fn set_sort_by(mut self, input: std::option::Option<crate::types::SpaceSortKey>) -> Self {
-        self.sort_by = input; self
+        self.sort_by = input;
+        self
     }
     /// <p>A parameter to search for the Domain ID.</p>
     pub fn domain_id_equals(mut self, input: impl Into<std::string::String>) -> Self {
@@ -110,7 +114,8 @@ impl ListSpacesInputBuilder {
     }
     /// <p>A parameter to search for the Domain ID.</p>
     pub fn set_domain_id_equals(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.domain_id_equals = input; self
+        self.domain_id_equals = input;
+        self
     }
     /// <p>A parameter by which to filter the results.</p>
     pub fn space_name_contains(mut self, input: impl Into<std::string::String>) -> Self {
@@ -118,27 +123,27 @@ impl ListSpacesInputBuilder {
         self
     }
     /// <p>A parameter by which to filter the results.</p>
-    pub fn set_space_name_contains(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.space_name_contains = input; self
+    pub fn set_space_name_contains(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.space_name_contains = input;
+        self
     }
     /// Consumes the builder and constructs a [`ListSpacesInput`](crate::operation::list_spaces::ListSpacesInput).
-    pub fn build(self) -> Result<crate::operation::list_spaces::ListSpacesInput, aws_smithy_http::operation::error::BuildError> {
-        Ok(
-            crate::operation::list_spaces::ListSpacesInput {
-                next_token: self.next_token
-                ,
-                max_results: self.max_results
-                ,
-                sort_order: self.sort_order
-                ,
-                sort_by: self.sort_by
-                ,
-                domain_id_equals: self.domain_id_equals
-                ,
-                space_name_contains: self.space_name_contains
-                ,
-            }
-        )
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::list_spaces::ListSpacesInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        Ok(crate::operation::list_spaces::ListSpacesInput {
+            next_token: self.next_token,
+            max_results: self.max_results,
+            sort_order: self.sort_order,
+            sort_by: self.sort_by,
+            domain_id_equals: self.domain_id_equals,
+            space_name_contains: self.space_name_contains,
+        })
     }
 }
-

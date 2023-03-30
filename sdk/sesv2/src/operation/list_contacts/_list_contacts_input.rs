@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListContactsInput  {
+pub struct ListContactsInput {
     /// <p>The name of the contact list.</p>
     #[doc(hidden)]
     pub contact_list_name: std::option::Option<std::string::String>,
@@ -18,11 +18,11 @@ pub struct ListContactsInput  {
 }
 impl ListContactsInput {
     /// <p>The name of the contact list.</p>
-    pub fn contact_list_name(&self) -> std::option::Option<& str> {
+    pub fn contact_list_name(&self) -> std::option::Option<&str> {
         self.contact_list_name.as_deref()
     }
     /// <p>A filter that can be applied to a list of contacts.</p>
-    pub fn filter(&self) -> std::option::Option<& crate::types::ListContactsFilter> {
+    pub fn filter(&self) -> std::option::Option<&crate::types::ListContactsFilter> {
         self.filter.as_ref()
     }
     /// <p>The number of contacts that may be returned at once, which is dependent on if there are more or less contacts than the value of the PageSize. Use this parameter to paginate results. If additional contacts exist beyond the specified limit, the <code>NextToken</code> element is sent in the response. Use the <code>NextToken</code> value in subsequent requests to retrieve additional contacts.</p>
@@ -30,7 +30,7 @@ impl ListContactsInput {
         self.page_size
     }
     /// <p>A string token indicating that there might be additional contacts available to be listed. Use the token provided in the Response to use in the subsequent call to ListContacts with the same parameters to retrieve the next page of contacts.</p>
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
 }
@@ -57,8 +57,12 @@ impl ListContactsInputBuilder {
         self
     }
     /// <p>The name of the contact list.</p>
-    pub fn set_contact_list_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.contact_list_name = input; self
+    pub fn set_contact_list_name(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.contact_list_name = input;
+        self
     }
     /// <p>A filter that can be applied to a list of contacts.</p>
     pub fn filter(mut self, input: crate::types::ListContactsFilter) -> Self {
@@ -66,8 +70,12 @@ impl ListContactsInputBuilder {
         self
     }
     /// <p>A filter that can be applied to a list of contacts.</p>
-    pub fn set_filter(mut self, input: std::option::Option<crate::types::ListContactsFilter>) -> Self {
-        self.filter = input; self
+    pub fn set_filter(
+        mut self,
+        input: std::option::Option<crate::types::ListContactsFilter>,
+    ) -> Self {
+        self.filter = input;
+        self
     }
     /// <p>The number of contacts that may be returned at once, which is dependent on if there are more or less contacts than the value of the PageSize. Use this parameter to paginate results. If additional contacts exist beyond the specified limit, the <code>NextToken</code> element is sent in the response. Use the <code>NextToken</code> value in subsequent requests to retrieve additional contacts.</p>
     pub fn page_size(mut self, input: i32) -> Self {
@@ -76,7 +84,8 @@ impl ListContactsInputBuilder {
     }
     /// <p>The number of contacts that may be returned at once, which is dependent on if there are more or less contacts than the value of the PageSize. Use this parameter to paginate results. If additional contacts exist beyond the specified limit, the <code>NextToken</code> element is sent in the response. Use the <code>NextToken</code> value in subsequent requests to retrieve additional contacts.</p>
     pub fn set_page_size(mut self, input: std::option::Option<i32>) -> Self {
-        self.page_size = input; self
+        self.page_size = input;
+        self
     }
     /// <p>A string token indicating that there might be additional contacts available to be listed. Use the token provided in the Response to use in the subsequent call to ListContacts with the same parameters to retrieve the next page of contacts.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -85,22 +94,21 @@ impl ListContactsInputBuilder {
     }
     /// <p>A string token indicating that there might be additional contacts available to be listed. Use the token provided in the Response to use in the subsequent call to ListContacts with the same parameters to retrieve the next page of contacts.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input; self
+        self.next_token = input;
+        self
     }
     /// Consumes the builder and constructs a [`ListContactsInput`](crate::operation::list_contacts::ListContactsInput).
-    pub fn build(self) -> Result<crate::operation::list_contacts::ListContactsInput, aws_smithy_http::operation::error::BuildError> {
-        Ok(
-            crate::operation::list_contacts::ListContactsInput {
-                contact_list_name: self.contact_list_name
-                ,
-                filter: self.filter
-                ,
-                page_size: self.page_size
-                ,
-                next_token: self.next_token
-                ,
-            }
-        )
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::list_contacts::ListContactsInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        Ok(crate::operation::list_contacts::ListContactsInput {
+            contact_list_name: self.contact_list_name,
+            filter: self.filter,
+            page_size: self.page_size,
+            next_token: self.next_token,
+        })
     }
 }
-

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct GetRelationalDatabaseMasterUserPasswordOutput  {
+pub struct GetRelationalDatabaseMasterUserPasswordOutput {
     /// <p>The master user password for the <code>password version</code> specified.</p>
     #[doc(hidden)]
     pub master_user_password: std::option::Option<std::string::String>,
@@ -13,15 +13,15 @@ pub struct GetRelationalDatabaseMasterUserPasswordOutput  {
 }
 impl GetRelationalDatabaseMasterUserPasswordOutput {
     /// <p>The master user password for the <code>password version</code> specified.</p>
-    pub fn master_user_password(&self) -> std::option::Option<& str> {
+    pub fn master_user_password(&self) -> std::option::Option<&str> {
         self.master_user_password.as_deref()
     }
     /// <p>The timestamp when the specified version of the master user password was created.</p>
-    pub fn created_at(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
+    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
 }
-impl  std::fmt::Debug for GetRelationalDatabaseMasterUserPasswordOutput  {
+impl std::fmt::Debug for GetRelationalDatabaseMasterUserPasswordOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetRelationalDatabaseMasterUserPasswordOutput");
         formatter.field("master_user_password", &"*** Sensitive Data Redacted ***");
@@ -31,13 +31,13 @@ impl  std::fmt::Debug for GetRelationalDatabaseMasterUserPasswordOutput  {
     }
 }
 impl aws_http::request_id::RequestId for GetRelationalDatabaseMasterUserPasswordOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl GetRelationalDatabaseMasterUserPasswordOutput {
     /// Creates a new builder-style object to manufacture [`GetRelationalDatabaseMasterUserPasswordOutput`](crate::operation::get_relational_database_master_user_password::GetRelationalDatabaseMasterUserPasswordOutput).
-    pub fn builder() -> crate::operation::get_relational_database_master_user_password::builders::GetRelationalDatabaseMasterUserPasswordOutputBuilder {
+    pub fn builder() -> crate::operation::get_relational_database_master_user_password::builders::GetRelationalDatabaseMasterUserPasswordOutputBuilder{
         crate::operation::get_relational_database_master_user_password::builders::GetRelationalDatabaseMasterUserPasswordOutputBuilder::default()
     }
 }
@@ -57,8 +57,12 @@ impl GetRelationalDatabaseMasterUserPasswordOutputBuilder {
         self
     }
     /// <p>The master user password for the <code>password version</code> specified.</p>
-    pub fn set_master_user_password(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.master_user_password = input; self
+    pub fn set_master_user_password(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.master_user_password = input;
+        self
     }
     /// <p>The timestamp when the specified version of the master user password was created.</p>
     pub fn created_at(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -66,20 +70,24 @@ impl GetRelationalDatabaseMasterUserPasswordOutputBuilder {
         self
     }
     /// <p>The timestamp when the specified version of the master user password was created.</p>
-    pub fn set_created_at(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.created_at = input; self
+    pub fn set_created_at(
+        mut self,
+        input: std::option::Option<aws_smithy_types::DateTime>,
+    ) -> Self {
+        self.created_at = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`GetRelationalDatabaseMasterUserPasswordOutput`](crate::operation::get_relational_database_master_user_password::GetRelationalDatabaseMasterUserPasswordOutput).
-    pub fn build(self) -> crate::operation::get_relational_database_master_user_password::GetRelationalDatabaseMasterUserPasswordOutput {
+    pub fn build(self) -> crate::operation::get_relational_database_master_user_password::GetRelationalDatabaseMasterUserPasswordOutput{
         crate::operation::get_relational_database_master_user_password::GetRelationalDatabaseMasterUserPasswordOutput {
             master_user_password: self.master_user_password
             ,
@@ -98,4 +106,3 @@ impl std::fmt::Debug for GetRelationalDatabaseMasterUserPasswordOutputBuilder {
         formatter.finish()
     }
 }
-

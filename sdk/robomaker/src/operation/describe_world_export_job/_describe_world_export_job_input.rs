@@ -2,20 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeWorldExportJobInput  {
+pub struct DescribeWorldExportJobInput {
     /// <p>The Amazon Resource Name (arn) of the world export job to describe.</p>
     #[doc(hidden)]
     pub job: std::option::Option<std::string::String>,
 }
 impl DescribeWorldExportJobInput {
     /// <p>The Amazon Resource Name (arn) of the world export job to describe.</p>
-    pub fn job(&self) -> std::option::Option<& str> {
+    pub fn job(&self) -> std::option::Option<&str> {
         self.job.as_deref()
     }
 }
 impl DescribeWorldExportJobInput {
     /// Creates a new builder-style object to manufacture [`DescribeWorldExportJobInput`](crate::operation::describe_world_export_job::DescribeWorldExportJobInput).
-    pub fn builder() -> crate::operation::describe_world_export_job::builders::DescribeWorldExportJobInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::describe_world_export_job::builders::DescribeWorldExportJobInputBuilder
+    {
         crate::operation::describe_world_export_job::builders::DescribeWorldExportJobInputBuilder::default()
     }
 }
@@ -34,16 +36,20 @@ impl DescribeWorldExportJobInputBuilder {
     }
     /// <p>The Amazon Resource Name (arn) of the world export job to describe.</p>
     pub fn set_job(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.job = input; self
+        self.job = input;
+        self
     }
     /// Consumes the builder and constructs a [`DescribeWorldExportJobInput`](crate::operation::describe_world_export_job::DescribeWorldExportJobInput).
-    pub fn build(self) -> Result<crate::operation::describe_world_export_job::DescribeWorldExportJobInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::describe_world_export_job::DescribeWorldExportJobInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::describe_world_export_job::DescribeWorldExportJobInput {
-                job: self.job
-                ,
-            }
+                job: self.job,
+            },
         )
     }
 }
-

@@ -3,15 +3,15 @@
 /// <p></p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateDbSecurityGroupInput  {
-    /// <p>The name for the DB security group. This value is stored as a lowercase string.</p> 
-    /// <p>Constraints:</p> 
-    /// <ul> 
-    /// <li> <p>Must be 1 to 255 letters, numbers, or hyphens.</p> </li> 
-    /// <li> <p>First character must be a letter</p> </li> 
-    /// <li> <p>Can't end with a hyphen or contain two consecutive hyphens</p> </li> 
-    /// <li> <p>Must not be "Default"</p> </li> 
-    /// </ul> 
+pub struct CreateDbSecurityGroupInput {
+    /// <p>The name for the DB security group. This value is stored as a lowercase string.</p>
+    /// <p>Constraints:</p>
+    /// <ul>
+    /// <li> <p>Must be 1 to 255 letters, numbers, or hyphens.</p> </li>
+    /// <li> <p>First character must be a letter</p> </li>
+    /// <li> <p>Can't end with a hyphen or contain two consecutive hyphens</p> </li>
+    /// <li> <p>Must not be "Default"</p> </li>
+    /// </ul>
     /// <p>Example: <code>mysecuritygroup</code> </p>
     #[doc(hidden)]
     pub db_security_group_name: std::option::Option<std::string::String>,
@@ -23,30 +23,32 @@ pub struct CreateDbSecurityGroupInput  {
     pub tags: std::option::Option<std::vec::Vec<crate::types::Tag>>,
 }
 impl CreateDbSecurityGroupInput {
-    /// <p>The name for the DB security group. This value is stored as a lowercase string.</p> 
-    /// <p>Constraints:</p> 
-    /// <ul> 
-    /// <li> <p>Must be 1 to 255 letters, numbers, or hyphens.</p> </li> 
-    /// <li> <p>First character must be a letter</p> </li> 
-    /// <li> <p>Can't end with a hyphen or contain two consecutive hyphens</p> </li> 
-    /// <li> <p>Must not be "Default"</p> </li> 
-    /// </ul> 
+    /// <p>The name for the DB security group. This value is stored as a lowercase string.</p>
+    /// <p>Constraints:</p>
+    /// <ul>
+    /// <li> <p>Must be 1 to 255 letters, numbers, or hyphens.</p> </li>
+    /// <li> <p>First character must be a letter</p> </li>
+    /// <li> <p>Can't end with a hyphen or contain two consecutive hyphens</p> </li>
+    /// <li> <p>Must not be "Default"</p> </li>
+    /// </ul>
     /// <p>Example: <code>mysecuritygroup</code> </p>
-    pub fn db_security_group_name(&self) -> std::option::Option<& str> {
+    pub fn db_security_group_name(&self) -> std::option::Option<&str> {
         self.db_security_group_name.as_deref()
     }
     /// <p>The description for the DB security group.</p>
-    pub fn db_security_group_description(&self) -> std::option::Option<& str> {
+    pub fn db_security_group_description(&self) -> std::option::Option<&str> {
         self.db_security_group_description.as_deref()
     }
     /// <p>Tags to assign to the DB security group.</p>
-    pub fn tags(&self) -> std::option::Option<& [crate::types::Tag]> {
+    pub fn tags(&self) -> std::option::Option<&[crate::types::Tag]> {
         self.tags.as_deref()
     }
 }
 impl CreateDbSecurityGroupInput {
     /// Creates a new builder-style object to manufacture [`CreateDbSecurityGroupInput`](crate::operation::create_db_security_group::CreateDbSecurityGroupInput).
-    pub fn builder() -> crate::operation::create_db_security_group::builders::CreateDbSecurityGroupInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::create_db_security_group::builders::CreateDbSecurityGroupInputBuilder
+    {
         crate::operation::create_db_security_group::builders::CreateDbSecurityGroupInputBuilder::default()
     }
 }
@@ -60,30 +62,34 @@ pub struct CreateDbSecurityGroupInputBuilder {
     pub(crate) tags: std::option::Option<std::vec::Vec<crate::types::Tag>>,
 }
 impl CreateDbSecurityGroupInputBuilder {
-    /// <p>The name for the DB security group. This value is stored as a lowercase string.</p> 
-    /// <p>Constraints:</p> 
-    /// <ul> 
-    /// <li> <p>Must be 1 to 255 letters, numbers, or hyphens.</p> </li> 
-    /// <li> <p>First character must be a letter</p> </li> 
-    /// <li> <p>Can't end with a hyphen or contain two consecutive hyphens</p> </li> 
-    /// <li> <p>Must not be "Default"</p> </li> 
-    /// </ul> 
+    /// <p>The name for the DB security group. This value is stored as a lowercase string.</p>
+    /// <p>Constraints:</p>
+    /// <ul>
+    /// <li> <p>Must be 1 to 255 letters, numbers, or hyphens.</p> </li>
+    /// <li> <p>First character must be a letter</p> </li>
+    /// <li> <p>Can't end with a hyphen or contain two consecutive hyphens</p> </li>
+    /// <li> <p>Must not be "Default"</p> </li>
+    /// </ul>
     /// <p>Example: <code>mysecuritygroup</code> </p>
     pub fn db_security_group_name(mut self, input: impl Into<std::string::String>) -> Self {
         self.db_security_group_name = Some(input.into());
         self
     }
-    /// <p>The name for the DB security group. This value is stored as a lowercase string.</p> 
-    /// <p>Constraints:</p> 
-    /// <ul> 
-    /// <li> <p>Must be 1 to 255 letters, numbers, or hyphens.</p> </li> 
-    /// <li> <p>First character must be a letter</p> </li> 
-    /// <li> <p>Can't end with a hyphen or contain two consecutive hyphens</p> </li> 
-    /// <li> <p>Must not be "Default"</p> </li> 
-    /// </ul> 
+    /// <p>The name for the DB security group. This value is stored as a lowercase string.</p>
+    /// <p>Constraints:</p>
+    /// <ul>
+    /// <li> <p>Must be 1 to 255 letters, numbers, or hyphens.</p> </li>
+    /// <li> <p>First character must be a letter</p> </li>
+    /// <li> <p>Can't end with a hyphen or contain two consecutive hyphens</p> </li>
+    /// <li> <p>Must not be "Default"</p> </li>
+    /// </ul>
     /// <p>Example: <code>mysecuritygroup</code> </p>
-    pub fn set_db_security_group_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.db_security_group_name = input; self
+    pub fn set_db_security_group_name(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.db_security_group_name = input;
+        self
     }
     /// <p>The description for the DB security group.</p>
     pub fn db_security_group_description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -91,8 +97,12 @@ impl CreateDbSecurityGroupInputBuilder {
         self
     }
     /// <p>The description for the DB security group.</p>
-    pub fn set_db_security_group_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.db_security_group_description = input; self
+    pub fn set_db_security_group_description(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.db_security_group_description = input;
+        self
     }
     /// Appends an item to `tags`.
     ///
@@ -101,26 +111,31 @@ impl CreateDbSecurityGroupInputBuilder {
     /// <p>Tags to assign to the DB security group.</p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
-                        v.push(input);
-                        self.tags = Some(v);
-                        self
+        v.push(input);
+        self.tags = Some(v);
+        self
     }
     /// <p>Tags to assign to the DB security group.</p>
-    pub fn set_tags(mut self, input: std::option::Option<std::vec::Vec<crate::types::Tag>>) -> Self {
-        self.tags = input; self
+    pub fn set_tags(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::Tag>>,
+    ) -> Self {
+        self.tags = input;
+        self
     }
     /// Consumes the builder and constructs a [`CreateDbSecurityGroupInput`](crate::operation::create_db_security_group::CreateDbSecurityGroupInput).
-    pub fn build(self) -> Result<crate::operation::create_db_security_group::CreateDbSecurityGroupInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::create_db_security_group::CreateDbSecurityGroupInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::create_db_security_group::CreateDbSecurityGroupInput {
-                db_security_group_name: self.db_security_group_name
-                ,
-                db_security_group_description: self.db_security_group_description
-                ,
-                tags: self.tags
-                ,
-            }
+                db_security_group_name: self.db_security_group_name,
+                db_security_group_description: self.db_security_group_description,
+                tags: self.tags,
+            },
         )
     }
 }
-

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeUpdateOutput  {
+pub struct DescribeUpdateOutput {
     /// <p>The full description of the specified update.</p>
     #[doc(hidden)]
     pub update: std::option::Option<crate::types::Update>,
@@ -10,15 +10,15 @@ pub struct DescribeUpdateOutput  {
 }
 impl DescribeUpdateOutput {
     /// <p>The full description of the specified update.</p>
-    pub fn update(&self) -> std::option::Option<& crate::types::Update> {
+    pub fn update(&self) -> std::option::Option<&crate::types::Update> {
         self.update.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for DescribeUpdateOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl DescribeUpdateOutput {
     /// Creates a new builder-style object to manufacture [`DescribeUpdateOutput`](crate::operation::describe_update::DescribeUpdateOutput).
     pub fn builder() -> crate::operation::describe_update::builders::DescribeUpdateOutputBuilder {
@@ -41,24 +41,23 @@ impl DescribeUpdateOutputBuilder {
     }
     /// <p>The full description of the specified update.</p>
     pub fn set_update(mut self, input: std::option::Option<crate::types::Update>) -> Self {
-        self.update = input; self
+        self.update = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`DescribeUpdateOutput`](crate::operation::describe_update::DescribeUpdateOutput).
     pub fn build(self) -> crate::operation::describe_update::DescribeUpdateOutput {
         crate::operation::describe_update::DescribeUpdateOutput {
-            update: self.update
-            ,
+            update: self.update,
             _request_id: self._request_id,
         }
     }
 }
-

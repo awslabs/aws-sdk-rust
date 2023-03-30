@@ -3,7 +3,7 @@
 /// <p>Information about an instance in the DB cluster.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AwsRdsDbClusterMember  {
+pub struct AwsRdsDbClusterMember {
     /// <p>Whether the cluster member is the primary instance for the DB cluster.</p>
     #[doc(hidden)]
     pub is_cluster_writer: bool,
@@ -27,11 +27,11 @@ impl AwsRdsDbClusterMember {
         self.promotion_tier
     }
     /// <p>The instance identifier for this member of the DB cluster.</p>
-    pub fn db_instance_identifier(&self) -> std::option::Option<& str> {
+    pub fn db_instance_identifier(&self) -> std::option::Option<&str> {
         self.db_instance_identifier.as_deref()
     }
     /// <p>The status of the DB cluster parameter group for this member of the DB cluster.</p>
-    pub fn db_cluster_parameter_group_status(&self) -> std::option::Option<& str> {
+    pub fn db_cluster_parameter_group_status(&self) -> std::option::Option<&str> {
         self.db_cluster_parameter_group_status.as_deref()
     }
 }
@@ -59,7 +59,8 @@ impl AwsRdsDbClusterMemberBuilder {
     }
     /// <p>Whether the cluster member is the primary instance for the DB cluster.</p>
     pub fn set_is_cluster_writer(mut self, input: std::option::Option<bool>) -> Self {
-        self.is_cluster_writer = input; self
+        self.is_cluster_writer = input;
+        self
     }
     /// <p>Specifies the order in which an Aurora replica is promoted to the primary instance when the existing primary instance fails.</p>
     pub fn promotion_tier(mut self, input: i32) -> Self {
@@ -68,7 +69,8 @@ impl AwsRdsDbClusterMemberBuilder {
     }
     /// <p>Specifies the order in which an Aurora replica is promoted to the primary instance when the existing primary instance fails.</p>
     pub fn set_promotion_tier(mut self, input: std::option::Option<i32>) -> Self {
-        self.promotion_tier = input; self
+        self.promotion_tier = input;
+        self
     }
     /// <p>The instance identifier for this member of the DB cluster.</p>
     pub fn db_instance_identifier(mut self, input: impl Into<std::string::String>) -> Self {
@@ -76,32 +78,36 @@ impl AwsRdsDbClusterMemberBuilder {
         self
     }
     /// <p>The instance identifier for this member of the DB cluster.</p>
-    pub fn set_db_instance_identifier(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.db_instance_identifier = input; self
+    pub fn set_db_instance_identifier(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.db_instance_identifier = input;
+        self
     }
     /// <p>The status of the DB cluster parameter group for this member of the DB cluster.</p>
-    pub fn db_cluster_parameter_group_status(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn db_cluster_parameter_group_status(
+        mut self,
+        input: impl Into<std::string::String>,
+    ) -> Self {
         self.db_cluster_parameter_group_status = Some(input.into());
         self
     }
     /// <p>The status of the DB cluster parameter group for this member of the DB cluster.</p>
-    pub fn set_db_cluster_parameter_group_status(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.db_cluster_parameter_group_status = input; self
+    pub fn set_db_cluster_parameter_group_status(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.db_cluster_parameter_group_status = input;
+        self
     }
     /// Consumes the builder and constructs a [`AwsRdsDbClusterMember`](crate::types::AwsRdsDbClusterMember).
     pub fn build(self) -> crate::types::AwsRdsDbClusterMember {
         crate::types::AwsRdsDbClusterMember {
-            is_cluster_writer: self.is_cluster_writer
-                .unwrap_or_default()
-            ,
-            promotion_tier: self.promotion_tier
-                .unwrap_or_default()
-            ,
-            db_instance_identifier: self.db_instance_identifier
-            ,
-            db_cluster_parameter_group_status: self.db_cluster_parameter_group_status
-            ,
+            is_cluster_writer: self.is_cluster_writer.unwrap_or_default(),
+            promotion_tier: self.promotion_tier.unwrap_or_default(),
+            db_instance_identifier: self.db_instance_identifier,
+            db_cluster_parameter_group_status: self.db_cluster_parameter_group_status,
         }
     }
 }
-

@@ -4,56 +4,81 @@ pub use crate::operation::delete_gateway_route::_delete_gateway_route_output::De
 pub use crate::operation::delete_gateway_route::_delete_gateway_route_input::DeleteGatewayRouteInputBuilder;
 
 /// Fluent builder constructing a request to `DeleteGatewayRoute`.
-/// 
+///
 /// <p>Deletes an existing gateway route.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DeleteGatewayRouteFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::delete_gateway_route::builders::DeleteGatewayRouteInputBuilder
-            }
-impl DeleteGatewayRouteFluentBuilder  {
+    handle: std::sync::Arc<crate::client::Handle>,
+    inner: crate::operation::delete_gateway_route::builders::DeleteGatewayRouteInputBuilder,
+}
+impl DeleteGatewayRouteFluentBuilder {
     /// Creates a new `DeleteGatewayRoute`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
-                    /// sent. The operation's inner [http::Request] can be modified as well.
-                    pub async fn customize(self) -> std::result::Result<
-                        crate::client::customize::CustomizableOperation<crate::operation::delete_gateway_route::DeleteGatewayRoute, aws_http::retry::AwsResponseRetryClassifier,>,
-                        aws_smithy_http::result::SdkError<crate::operation::delete_gateway_route::DeleteGatewayRouteError>
-                    >  {
-                        let handle = self.handle.clone();
-                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-                    }
-    
-                    /// Sends the request and returns the response.
-                    ///
-                    /// If an error occurs, an `SdkError` will be returned with additional details that
-                    /// can be matched against.
-                    ///
-                    /// By default, any retryable failures will be retried twice. Retry behavior
-                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                    /// set when configuring the client.
-                    pub async fn send(self) -> std::result::Result<crate::operation::delete_gateway_route::DeleteGatewayRouteOutput, aws_smithy_http::result::SdkError<crate::operation::delete_gateway_route::DeleteGatewayRouteError>>
-                     {
-                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&self.handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        self.handle.client.call(op).await
-                    }
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle,
+            inner: Default::default(),
+        }
+    }
+
+    /// Consume this builder, creating a customizable operation that can be modified before being
+    /// sent. The operation's inner [http::Request] can be modified as well.
+    pub async fn customize(
+        self,
+    ) -> std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::delete_gateway_route::DeleteGatewayRoute,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::result::SdkError<
+            crate::operation::delete_gateway_route::DeleteGatewayRouteError,
+        >,
+    > {
+        let handle = self.handle.clone();
+        let operation = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+    }
+
+    /// Sends the request and returns the response.
+    ///
+    /// If an error occurs, an `SdkError` will be returned with additional details that
+    /// can be matched against.
+    ///
+    /// By default, any retryable failures will be retried twice. Retry behavior
+    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+    /// set when configuring the client.
+    pub async fn send(
+        self,
+    ) -> std::result::Result<
+        crate::operation::delete_gateway_route::DeleteGatewayRouteOutput,
+        aws_smithy_http::result::SdkError<
+            crate::operation::delete_gateway_route::DeleteGatewayRouteError,
+        >,
+    > {
+        let op = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&self.handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        self.handle.client.call(op).await
+    }
     /// <p>The name of the gateway route to delete.</p>
     pub fn gateway_route_name(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.gateway_route_name(input.into());
         self
     }
     /// <p>The name of the gateway route to delete.</p>
-    pub fn set_gateway_route_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_gateway_route_name(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_gateway_route_name(input);
         self
     }
@@ -73,7 +98,10 @@ impl DeleteGatewayRouteFluentBuilder  {
         self
     }
     /// <p>The name of the virtual gateway to delete the route from.</p>
-    pub fn set_virtual_gateway_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_virtual_gateway_name(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_virtual_gateway_name(input);
         self
     }
@@ -88,4 +116,3 @@ impl DeleteGatewayRouteFluentBuilder  {
         self
     }
 }
-

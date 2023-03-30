@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetReadSetActivationJobInput  {
+pub struct GetReadSetActivationJobInput {
     /// <p>The job's ID.</p>
     #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
@@ -12,17 +12,19 @@ pub struct GetReadSetActivationJobInput  {
 }
 impl GetReadSetActivationJobInput {
     /// <p>The job's ID.</p>
-    pub fn id(&self) -> std::option::Option<& str> {
+    pub fn id(&self) -> std::option::Option<&str> {
         self.id.as_deref()
     }
     /// <p>The job's sequence store ID.</p>
-    pub fn sequence_store_id(&self) -> std::option::Option<& str> {
+    pub fn sequence_store_id(&self) -> std::option::Option<&str> {
         self.sequence_store_id.as_deref()
     }
 }
 impl GetReadSetActivationJobInput {
     /// Creates a new builder-style object to manufacture [`GetReadSetActivationJobInput`](crate::operation::get_read_set_activation_job::GetReadSetActivationJobInput).
-    pub fn builder() -> crate::operation::get_read_set_activation_job::builders::GetReadSetActivationJobInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::get_read_set_activation_job::builders::GetReadSetActivationJobInputBuilder
+    {
         crate::operation::get_read_set_activation_job::builders::GetReadSetActivationJobInputBuilder::default()
     }
 }
@@ -42,7 +44,8 @@ impl GetReadSetActivationJobInputBuilder {
     }
     /// <p>The job's ID.</p>
     pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.id = input; self
+        self.id = input;
+        self
     }
     /// <p>The job's sequence store ID.</p>
     pub fn sequence_store_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -50,19 +53,25 @@ impl GetReadSetActivationJobInputBuilder {
         self
     }
     /// <p>The job's sequence store ID.</p>
-    pub fn set_sequence_store_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.sequence_store_id = input; self
+    pub fn set_sequence_store_id(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.sequence_store_id = input;
+        self
     }
     /// Consumes the builder and constructs a [`GetReadSetActivationJobInput`](crate::operation::get_read_set_activation_job::GetReadSetActivationJobInput).
-    pub fn build(self) -> Result<crate::operation::get_read_set_activation_job::GetReadSetActivationJobInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::get_read_set_activation_job::GetReadSetActivationJobInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::get_read_set_activation_job::GetReadSetActivationJobInput {
-                id: self.id
-                ,
-                sequence_store_id: self.sequence_store_id
-                ,
-            }
+                id: self.id,
+                sequence_store_id: self.sequence_store_id,
+            },
         )
     }
 }
-

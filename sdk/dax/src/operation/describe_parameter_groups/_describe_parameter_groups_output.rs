@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeParameterGroupsOutput  {
+pub struct DescribeParameterGroupsOutput {
     /// <p>Provides an identifier to allow retrieval of paginated results.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
@@ -13,22 +13,24 @@ pub struct DescribeParameterGroupsOutput  {
 }
 impl DescribeParameterGroupsOutput {
     /// <p>Provides an identifier to allow retrieval of paginated results.</p>
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
     /// <p>An array of parameter groups. Each element in the array represents one parameter group.</p>
-    pub fn parameter_groups(&self) -> std::option::Option<& [crate::types::ParameterGroup]> {
+    pub fn parameter_groups(&self) -> std::option::Option<&[crate::types::ParameterGroup]> {
         self.parameter_groups.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for DescribeParameterGroupsOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl DescribeParameterGroupsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeParameterGroupsOutput`](crate::operation::describe_parameter_groups::DescribeParameterGroupsOutput).
-    pub fn builder() -> crate::operation::describe_parameter_groups::builders::DescribeParameterGroupsOutputBuilder {
+    pub fn builder(
+    ) -> crate::operation::describe_parameter_groups::builders::DescribeParameterGroupsOutputBuilder
+    {
         crate::operation::describe_parameter_groups::builders::DescribeParameterGroupsOutputBuilder::default()
     }
 }
@@ -49,7 +51,8 @@ impl DescribeParameterGroupsOutputBuilder {
     }
     /// <p>Provides an identifier to allow retrieval of paginated results.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input; self
+        self.next_token = input;
+        self
     }
     /// Appends an item to `parameter_groups`.
     ///
@@ -58,32 +61,35 @@ impl DescribeParameterGroupsOutputBuilder {
     /// <p>An array of parameter groups. Each element in the array represents one parameter group.</p>
     pub fn parameter_groups(mut self, input: crate::types::ParameterGroup) -> Self {
         let mut v = self.parameter_groups.unwrap_or_default();
-                        v.push(input);
-                        self.parameter_groups = Some(v);
-                        self
+        v.push(input);
+        self.parameter_groups = Some(v);
+        self
     }
     /// <p>An array of parameter groups. Each element in the array represents one parameter group.</p>
-    pub fn set_parameter_groups(mut self, input: std::option::Option<std::vec::Vec<crate::types::ParameterGroup>>) -> Self {
-        self.parameter_groups = input; self
+    pub fn set_parameter_groups(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::ParameterGroup>>,
+    ) -> Self {
+        self.parameter_groups = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`DescribeParameterGroupsOutput`](crate::operation::describe_parameter_groups::DescribeParameterGroupsOutput).
-    pub fn build(self) -> crate::operation::describe_parameter_groups::DescribeParameterGroupsOutput {
+    pub fn build(
+        self,
+    ) -> crate::operation::describe_parameter_groups::DescribeParameterGroupsOutput {
         crate::operation::describe_parameter_groups::DescribeParameterGroupsOutput {
-            next_token: self.next_token
-            ,
-            parameter_groups: self.parameter_groups
-            ,
+            next_token: self.next_token,
+            parameter_groups: self.parameter_groups,
             _request_id: self._request_id,
         }
     }
 }
-

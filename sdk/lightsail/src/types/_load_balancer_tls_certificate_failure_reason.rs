@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-/// 
+///
 /// Here is an example of how you can make a match expression forward-compatible:
-/// 
+///
 /// ```text
 /// # let loadbalancertlscertificatefailurereason = unimplemented!();
 /// match loadbalancertlscertificatefailurereason {
@@ -33,14 +33,22 @@
 /// Specifically, when `loadbalancertlscertificatefailurereason` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `LoadBalancerTlsCertificateFailureReason::NewFeature` also yielding `"NewFeature"`.
-/// 
+///
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
 pub enum LoadBalancerTlsCertificateFailureReason {
     #[allow(missing_docs)] // documentation missing in model
     AdditionalVerificationRequired,
@@ -53,47 +61,58 @@ pub enum LoadBalancerTlsCertificateFailureReason {
     #[allow(missing_docs)] // documentation missing in model
     Other,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::primitives::UnknownVariantValue)
+    Unknown(crate::primitives::UnknownVariantValue),
 }
 impl std::convert::From<&str> for LoadBalancerTlsCertificateFailureReason {
-                fn from(s: &str) -> Self {
-                    match s {
-                        "ADDITIONAL_VERIFICATION_REQUIRED" => LoadBalancerTlsCertificateFailureReason::AdditionalVerificationRequired,
-"DOMAIN_NOT_ALLOWED" => LoadBalancerTlsCertificateFailureReason::DomainNotAllowed,
-"INVALID_PUBLIC_DOMAIN" => LoadBalancerTlsCertificateFailureReason::InvalidPublicDomain,
-"NO_AVAILABLE_CONTACTS" => LoadBalancerTlsCertificateFailureReason::NoAvailableContacts,
-"OTHER" => LoadBalancerTlsCertificateFailureReason::Other,
-other => LoadBalancerTlsCertificateFailureReason::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
-                    }
-                }
+    fn from(s: &str) -> Self {
+        match s {
+            "ADDITIONAL_VERIFICATION_REQUIRED" => {
+                LoadBalancerTlsCertificateFailureReason::AdditionalVerificationRequired
             }
-impl std::str::FromStr for LoadBalancerTlsCertificateFailureReason {
-                type Err = std::convert::Infallible;
-
-                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-                    Ok(LoadBalancerTlsCertificateFailureReason::from(s))
-                }
-            }
-impl LoadBalancerTlsCertificateFailureReason {
-                /// Returns the `&str` value of the enum member.
-                pub fn as_str(&self) -> &str {
-                    match self {
-    LoadBalancerTlsCertificateFailureReason::AdditionalVerificationRequired => "ADDITIONAL_VERIFICATION_REQUIRED",
-    LoadBalancerTlsCertificateFailureReason::DomainNotAllowed => "DOMAIN_NOT_ALLOWED",
-    LoadBalancerTlsCertificateFailureReason::InvalidPublicDomain => "INVALID_PUBLIC_DOMAIN",
-    LoadBalancerTlsCertificateFailureReason::NoAvailableContacts => "NO_AVAILABLE_CONTACTS",
-    LoadBalancerTlsCertificateFailureReason::Other => "OTHER",
-    LoadBalancerTlsCertificateFailureReason::Unknown(value) => value.as_str()
+            "DOMAIN_NOT_ALLOWED" => LoadBalancerTlsCertificateFailureReason::DomainNotAllowed,
+            "INVALID_PUBLIC_DOMAIN" => LoadBalancerTlsCertificateFailureReason::InvalidPublicDomain,
+            "NO_AVAILABLE_CONTACTS" => LoadBalancerTlsCertificateFailureReason::NoAvailableContacts,
+            "OTHER" => LoadBalancerTlsCertificateFailureReason::Other,
+            other => LoadBalancerTlsCertificateFailureReason::Unknown(
+                crate::primitives::UnknownVariantValue(other.to_owned()),
+            ),
+        }
+    }
 }
-                }
-                /// Returns all the `&str` representations of the enum members.
-                pub const fn values() -> &'static [&'static str] {
-                    &["ADDITIONAL_VERIFICATION_REQUIRED", "DOMAIN_NOT_ALLOWED", "INVALID_PUBLIC_DOMAIN", "NO_AVAILABLE_CONTACTS", "OTHER"]
-                }
-            }
-impl AsRef<str> for LoadBalancerTlsCertificateFailureReason {
-                fn as_ref(&self) -> &str {
-                    self.as_str()
-                }
-            }
+impl std::str::FromStr for LoadBalancerTlsCertificateFailureReason {
+    type Err = std::convert::Infallible;
 
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(LoadBalancerTlsCertificateFailureReason::from(s))
+    }
+}
+impl LoadBalancerTlsCertificateFailureReason {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            LoadBalancerTlsCertificateFailureReason::AdditionalVerificationRequired => {
+                "ADDITIONAL_VERIFICATION_REQUIRED"
+            }
+            LoadBalancerTlsCertificateFailureReason::DomainNotAllowed => "DOMAIN_NOT_ALLOWED",
+            LoadBalancerTlsCertificateFailureReason::InvalidPublicDomain => "INVALID_PUBLIC_DOMAIN",
+            LoadBalancerTlsCertificateFailureReason::NoAvailableContacts => "NO_AVAILABLE_CONTACTS",
+            LoadBalancerTlsCertificateFailureReason::Other => "OTHER",
+            LoadBalancerTlsCertificateFailureReason::Unknown(value) => value.as_str(),
+        }
+    }
+    /// Returns all the `&str` representations of the enum members.
+    pub const fn values() -> &'static [&'static str] {
+        &[
+            "ADDITIONAL_VERIFICATION_REQUIRED",
+            "DOMAIN_NOT_ALLOWED",
+            "INVALID_PUBLIC_DOMAIN",
+            "NO_AVAILABLE_CONTACTS",
+            "OTHER",
+        ]
+    }
+}
+impl AsRef<str> for LoadBalancerTlsCertificateFailureReason {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}

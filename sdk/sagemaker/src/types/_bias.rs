@@ -3,7 +3,7 @@
 /// <p>Contains bias metrics for a model.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Bias  {
+pub struct Bias {
     /// <p>The bias report for a model</p>
     #[doc(hidden)]
     pub report: std::option::Option<crate::types::MetricsSource>,
@@ -16,15 +16,15 @@ pub struct Bias  {
 }
 impl Bias {
     /// <p>The bias report for a model</p>
-    pub fn report(&self) -> std::option::Option<& crate::types::MetricsSource> {
+    pub fn report(&self) -> std::option::Option<&crate::types::MetricsSource> {
         self.report.as_ref()
     }
     /// <p>The pre-training bias report for a model.</p>
-    pub fn pre_training_report(&self) -> std::option::Option<& crate::types::MetricsSource> {
+    pub fn pre_training_report(&self) -> std::option::Option<&crate::types::MetricsSource> {
         self.pre_training_report.as_ref()
     }
     /// <p>The post-training bias report for a model.</p>
-    pub fn post_training_report(&self) -> std::option::Option<& crate::types::MetricsSource> {
+    pub fn post_training_report(&self) -> std::option::Option<&crate::types::MetricsSource> {
         self.post_training_report.as_ref()
     }
 }
@@ -51,7 +51,8 @@ impl BiasBuilder {
     }
     /// <p>The bias report for a model</p>
     pub fn set_report(mut self, input: std::option::Option<crate::types::MetricsSource>) -> Self {
-        self.report = input; self
+        self.report = input;
+        self
     }
     /// <p>The pre-training bias report for a model.</p>
     pub fn pre_training_report(mut self, input: crate::types::MetricsSource) -> Self {
@@ -59,8 +60,12 @@ impl BiasBuilder {
         self
     }
     /// <p>The pre-training bias report for a model.</p>
-    pub fn set_pre_training_report(mut self, input: std::option::Option<crate::types::MetricsSource>) -> Self {
-        self.pre_training_report = input; self
+    pub fn set_pre_training_report(
+        mut self,
+        input: std::option::Option<crate::types::MetricsSource>,
+    ) -> Self {
+        self.pre_training_report = input;
+        self
     }
     /// <p>The post-training bias report for a model.</p>
     pub fn post_training_report(mut self, input: crate::types::MetricsSource) -> Self {
@@ -68,19 +73,19 @@ impl BiasBuilder {
         self
     }
     /// <p>The post-training bias report for a model.</p>
-    pub fn set_post_training_report(mut self, input: std::option::Option<crate::types::MetricsSource>) -> Self {
-        self.post_training_report = input; self
+    pub fn set_post_training_report(
+        mut self,
+        input: std::option::Option<crate::types::MetricsSource>,
+    ) -> Self {
+        self.post_training_report = input;
+        self
     }
     /// Consumes the builder and constructs a [`Bias`](crate::types::Bias).
     pub fn build(self) -> crate::types::Bias {
         crate::types::Bias {
-            report: self.report
-            ,
-            pre_training_report: self.pre_training_report
-            ,
-            post_training_report: self.post_training_report
-            ,
+            report: self.report,
+            pre_training_report: self.pre_training_report,
+            post_training_report: self.post_training_report,
         }
     }
 }
-

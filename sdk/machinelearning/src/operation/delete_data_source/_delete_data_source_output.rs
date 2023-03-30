@@ -3,7 +3,7 @@
 /// <p> Represents the output of a <code>DeleteDataSource</code> operation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteDataSourceOutput  {
+pub struct DeleteDataSourceOutput {
     /// <p>A user-supplied ID that uniquely identifies the <code>DataSource</code>. This value should be identical to the value of the <code>DataSourceID</code> in the request.</p>
     #[doc(hidden)]
     pub data_source_id: std::option::Option<std::string::String>,
@@ -11,18 +11,19 @@ pub struct DeleteDataSourceOutput  {
 }
 impl DeleteDataSourceOutput {
     /// <p>A user-supplied ID that uniquely identifies the <code>DataSource</code>. This value should be identical to the value of the <code>DataSourceID</code> in the request.</p>
-    pub fn data_source_id(&self) -> std::option::Option<& str> {
+    pub fn data_source_id(&self) -> std::option::Option<&str> {
         self.data_source_id.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for DeleteDataSourceOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl DeleteDataSourceOutput {
     /// Creates a new builder-style object to manufacture [`DeleteDataSourceOutput`](crate::operation::delete_data_source::DeleteDataSourceOutput).
-    pub fn builder() -> crate::operation::delete_data_source::builders::DeleteDataSourceOutputBuilder {
+    pub fn builder() -> crate::operation::delete_data_source::builders::DeleteDataSourceOutputBuilder
+    {
         crate::operation::delete_data_source::builders::DeleteDataSourceOutputBuilder::default()
     }
 }
@@ -42,24 +43,23 @@ impl DeleteDataSourceOutputBuilder {
     }
     /// <p>A user-supplied ID that uniquely identifies the <code>DataSource</code>. This value should be identical to the value of the <code>DataSourceID</code> in the request.</p>
     pub fn set_data_source_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.data_source_id = input; self
+        self.data_source_id = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`DeleteDataSourceOutput`](crate::operation::delete_data_source::DeleteDataSourceOutput).
     pub fn build(self) -> crate::operation::delete_data_source::DeleteDataSourceOutput {
         crate::operation::delete_data_source::DeleteDataSourceOutput {
-            data_source_id: self.data_source_id
-            ,
+            data_source_id: self.data_source_id,
             _request_id: self._request_id,
         }
     }
 }
-

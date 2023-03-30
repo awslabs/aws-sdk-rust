@@ -3,20 +3,22 @@
 /// <p>Container for the parameters to the <code>DeleteOutboundConnection</code> operation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteOutboundConnectionInput  {
+pub struct DeleteOutboundConnectionInput {
     /// <p>The ID of the outbound connection you want to permanently delete.</p>
     #[doc(hidden)]
     pub connection_id: std::option::Option<std::string::String>,
 }
 impl DeleteOutboundConnectionInput {
     /// <p>The ID of the outbound connection you want to permanently delete.</p>
-    pub fn connection_id(&self) -> std::option::Option<& str> {
+    pub fn connection_id(&self) -> std::option::Option<&str> {
         self.connection_id.as_deref()
     }
 }
 impl DeleteOutboundConnectionInput {
     /// Creates a new builder-style object to manufacture [`DeleteOutboundConnectionInput`](crate::operation::delete_outbound_connection::DeleteOutboundConnectionInput).
-    pub fn builder() -> crate::operation::delete_outbound_connection::builders::DeleteOutboundConnectionInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::delete_outbound_connection::builders::DeleteOutboundConnectionInputBuilder
+    {
         crate::operation::delete_outbound_connection::builders::DeleteOutboundConnectionInputBuilder::default()
     }
 }
@@ -35,16 +37,20 @@ impl DeleteOutboundConnectionInputBuilder {
     }
     /// <p>The ID of the outbound connection you want to permanently delete.</p>
     pub fn set_connection_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.connection_id = input; self
+        self.connection_id = input;
+        self
     }
     /// Consumes the builder and constructs a [`DeleteOutboundConnectionInput`](crate::operation::delete_outbound_connection::DeleteOutboundConnectionInput).
-    pub fn build(self) -> Result<crate::operation::delete_outbound_connection::DeleteOutboundConnectionInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::delete_outbound_connection::DeleteOutboundConnectionInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::delete_outbound_connection::DeleteOutboundConnectionInput {
-                connection_id: self.connection_id
-                ,
-            }
+                connection_id: self.connection_id,
+            },
         )
     }
 }
-

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListRequestedServiceQuotaChangeHistoryInput  {
+pub struct ListRequestedServiceQuotaChangeHistoryInput {
     /// <p>The service identifier.</p>
     #[doc(hidden)]
     pub service_code: std::option::Option<std::string::String>,
@@ -18,15 +18,15 @@ pub struct ListRequestedServiceQuotaChangeHistoryInput  {
 }
 impl ListRequestedServiceQuotaChangeHistoryInput {
     /// <p>The service identifier.</p>
-    pub fn service_code(&self) -> std::option::Option<& str> {
+    pub fn service_code(&self) -> std::option::Option<&str> {
         self.service_code.as_deref()
     }
     /// <p>The status of the quota increase request.</p>
-    pub fn status(&self) -> std::option::Option<& crate::types::RequestStatus> {
+    pub fn status(&self) -> std::option::Option<&crate::types::RequestStatus> {
         self.status.as_ref()
     }
     /// <p>The token for the next page of results.</p>
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
     /// <p>The maximum number of results to return with a single call. To retrieve the remaining results, if any, make another call with the token returned from this call.</p>
@@ -36,7 +36,7 @@ impl ListRequestedServiceQuotaChangeHistoryInput {
 }
 impl ListRequestedServiceQuotaChangeHistoryInput {
     /// Creates a new builder-style object to manufacture [`ListRequestedServiceQuotaChangeHistoryInput`](crate::operation::list_requested_service_quota_change_history::ListRequestedServiceQuotaChangeHistoryInput).
-    pub fn builder() -> crate::operation::list_requested_service_quota_change_history::builders::ListRequestedServiceQuotaChangeHistoryInputBuilder {
+    pub fn builder() -> crate::operation::list_requested_service_quota_change_history::builders::ListRequestedServiceQuotaChangeHistoryInputBuilder{
         crate::operation::list_requested_service_quota_change_history::builders::ListRequestedServiceQuotaChangeHistoryInputBuilder::default()
     }
 }
@@ -58,7 +58,8 @@ impl ListRequestedServiceQuotaChangeHistoryInputBuilder {
     }
     /// <p>The service identifier.</p>
     pub fn set_service_code(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.service_code = input; self
+        self.service_code = input;
+        self
     }
     /// <p>The status of the quota increase request.</p>
     pub fn status(mut self, input: crate::types::RequestStatus) -> Self {
@@ -67,7 +68,8 @@ impl ListRequestedServiceQuotaChangeHistoryInputBuilder {
     }
     /// <p>The status of the quota increase request.</p>
     pub fn set_status(mut self, input: std::option::Option<crate::types::RequestStatus>) -> Self {
-        self.status = input; self
+        self.status = input;
+        self
     }
     /// <p>The token for the next page of results.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -76,7 +78,8 @@ impl ListRequestedServiceQuotaChangeHistoryInputBuilder {
     }
     /// <p>The token for the next page of results.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input; self
+        self.next_token = input;
+        self
     }
     /// <p>The maximum number of results to return with a single call. To retrieve the remaining results, if any, make another call with the token returned from this call.</p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -85,10 +88,11 @@ impl ListRequestedServiceQuotaChangeHistoryInputBuilder {
     }
     /// <p>The maximum number of results to return with a single call. To retrieve the remaining results, if any, make another call with the token returned from this call.</p>
     pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_results = input; self
+        self.max_results = input;
+        self
     }
     /// Consumes the builder and constructs a [`ListRequestedServiceQuotaChangeHistoryInput`](crate::operation::list_requested_service_quota_change_history::ListRequestedServiceQuotaChangeHistoryInput).
-    pub fn build(self) -> Result<crate::operation::list_requested_service_quota_change_history::ListRequestedServiceQuotaChangeHistoryInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> Result<crate::operation::list_requested_service_quota_change_history::ListRequestedServiceQuotaChangeHistoryInput, aws_smithy_http::operation::error::BuildError>{
         Ok(
             crate::operation::list_requested_service_quota_change_history::ListRequestedServiceQuotaChangeHistoryInput {
                 service_code: self.service_code
@@ -103,4 +107,3 @@ impl ListRequestedServiceQuotaChangeHistoryInputBuilder {
         )
     }
 }
-

@@ -3,7 +3,7 @@
 /// <p>A search filter for environment templates.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct EnvironmentTemplateFilter  {
+pub struct EnvironmentTemplateFilter {
     /// <p>Include <code>templateName</code> to filter search for a template name.</p>
     #[doc(hidden)]
     pub template_name: std::option::Option<std::string::String>,
@@ -13,11 +13,11 @@ pub struct EnvironmentTemplateFilter  {
 }
 impl EnvironmentTemplateFilter {
     /// <p>Include <code>templateName</code> to filter search for a template name.</p>
-    pub fn template_name(&self) -> std::option::Option<& str> {
+    pub fn template_name(&self) -> std::option::Option<&str> {
         self.template_name.as_deref()
     }
     /// <p>Include <code>majorVersion</code> to filter search for a major version.</p>
-    pub fn major_version(&self) -> std::option::Option<& str> {
+    pub fn major_version(&self) -> std::option::Option<&str> {
         self.major_version.as_deref()
     }
 }
@@ -43,7 +43,8 @@ impl EnvironmentTemplateFilterBuilder {
     }
     /// <p>Include <code>templateName</code> to filter search for a template name.</p>
     pub fn set_template_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.template_name = input; self
+        self.template_name = input;
+        self
     }
     /// <p>Include <code>majorVersion</code> to filter search for a major version.</p>
     pub fn major_version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -52,16 +53,14 @@ impl EnvironmentTemplateFilterBuilder {
     }
     /// <p>Include <code>majorVersion</code> to filter search for a major version.</p>
     pub fn set_major_version(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.major_version = input; self
+        self.major_version = input;
+        self
     }
     /// Consumes the builder and constructs a [`EnvironmentTemplateFilter`](crate::types::EnvironmentTemplateFilter).
     pub fn build(self) -> crate::types::EnvironmentTemplateFilter {
         crate::types::EnvironmentTemplateFilter {
-            template_name: self.template_name
-            ,
-            major_version: self.major_version
-            ,
+            template_name: self.template_name,
+            major_version: self.major_version,
         }
     }
 }
-

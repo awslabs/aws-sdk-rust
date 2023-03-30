@@ -3,7 +3,7 @@
 /// <p>Network Measurement Reports.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct WcdmaNmrObj  {
+pub struct WcdmaNmrObj {
     /// <p>WCDMA UTRA Absolute RF Channel Number downlink.</p>
     #[doc(hidden)]
     pub uarfcndl: std::option::Option<i32>,
@@ -67,7 +67,8 @@ impl WcdmaNmrObjBuilder {
     }
     /// <p>WCDMA UTRA Absolute RF Channel Number downlink.</p>
     pub fn set_uarfcndl(mut self, input: std::option::Option<i32>) -> Self {
-        self.uarfcndl = input; self
+        self.uarfcndl = input;
+        self
     }
     /// <p>Primary Scrambling Code.</p>
     pub fn psc(mut self, input: i32) -> Self {
@@ -76,7 +77,8 @@ impl WcdmaNmrObjBuilder {
     }
     /// <p>Primary Scrambling Code.</p>
     pub fn set_psc(mut self, input: std::option::Option<i32>) -> Self {
-        self.psc = input; self
+        self.psc = input;
+        self
     }
     /// <p>UTRAN (UMTS Terrestrial Radio Access Network) Cell Global Identifier.</p>
     pub fn utran_cid(mut self, input: i32) -> Self {
@@ -85,7 +87,8 @@ impl WcdmaNmrObjBuilder {
     }
     /// <p>UTRAN (UMTS Terrestrial Radio Access Network) Cell Global Identifier.</p>
     pub fn set_utran_cid(mut self, input: std::option::Option<i32>) -> Self {
-        self.utran_cid = input; self
+        self.utran_cid = input;
+        self
     }
     /// <p>Received Signal Code Power (signal power) (dBm)</p>
     pub fn rscp(mut self, input: i32) -> Self {
@@ -94,7 +97,8 @@ impl WcdmaNmrObjBuilder {
     }
     /// <p>Received Signal Code Power (signal power) (dBm)</p>
     pub fn set_rscp(mut self, input: std::option::Option<i32>) -> Self {
-        self.rscp = input; self
+        self.rscp = input;
+        self
     }
     /// <p>Path loss, or path attenuation, is the reduction in power density of an electromagnetic wave as it propagates through space.</p>
     pub fn path_loss(mut self, input: i32) -> Self {
@@ -103,22 +107,17 @@ impl WcdmaNmrObjBuilder {
     }
     /// <p>Path loss, or path attenuation, is the reduction in power density of an electromagnetic wave as it propagates through space.</p>
     pub fn set_path_loss(mut self, input: std::option::Option<i32>) -> Self {
-        self.path_loss = input; self
+        self.path_loss = input;
+        self
     }
     /// Consumes the builder and constructs a [`WcdmaNmrObj`](crate::types::WcdmaNmrObj).
     pub fn build(self) -> crate::types::WcdmaNmrObj {
         crate::types::WcdmaNmrObj {
-            uarfcndl: self.uarfcndl
-            ,
-            psc: self.psc
-            ,
-            utran_cid: self.utran_cid
-            ,
-            rscp: self.rscp
-            ,
-            path_loss: self.path_loss
-            ,
+            uarfcndl: self.uarfcndl,
+            psc: self.psc,
+            utran_cid: self.utran_cid,
+            rscp: self.rscp,
+            path_loss: self.path_loss,
         }
     }
 }
-

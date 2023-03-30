@@ -2,14 +2,14 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetContactInput  {
+pub struct GetContactInput {
     /// <p>The ARN of the contact for which to request details.</p>
     #[doc(hidden)]
     pub contact_arn: std::option::Option<std::string::String>,
 }
 impl GetContactInput {
     /// <p>The ARN of the contact for which to request details.</p>
-    pub fn contact_arn(&self) -> std::option::Option<& str> {
+    pub fn contact_arn(&self) -> std::option::Option<&str> {
         self.contact_arn.as_deref()
     }
 }
@@ -34,16 +34,18 @@ impl GetContactInputBuilder {
     }
     /// <p>The ARN of the contact for which to request details.</p>
     pub fn set_contact_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.contact_arn = input; self
+        self.contact_arn = input;
+        self
     }
     /// Consumes the builder and constructs a [`GetContactInput`](crate::operation::get_contact::GetContactInput).
-    pub fn build(self) -> Result<crate::operation::get_contact::GetContactInput, aws_smithy_http::operation::error::BuildError> {
-        Ok(
-            crate::operation::get_contact::GetContactInput {
-                contact_arn: self.contact_arn
-                ,
-            }
-        )
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::get_contact::GetContactInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        Ok(crate::operation::get_contact::GetContactInput {
+            contact_arn: self.contact_arn,
+        })
     }
 }
-

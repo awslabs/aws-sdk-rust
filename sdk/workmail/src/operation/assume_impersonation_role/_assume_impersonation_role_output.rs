@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AssumeImpersonationRoleOutput  {
+pub struct AssumeImpersonationRoleOutput {
     /// <p>The authentication token for the impersonation role.</p>
     #[doc(hidden)]
     pub token: std::option::Option<std::string::String>,
@@ -13,7 +13,7 @@ pub struct AssumeImpersonationRoleOutput  {
 }
 impl AssumeImpersonationRoleOutput {
     /// <p>The authentication token for the impersonation role.</p>
-    pub fn token(&self) -> std::option::Option<& str> {
+    pub fn token(&self) -> std::option::Option<&str> {
         self.token.as_deref()
     }
     /// <p>The authentication token's validity, in seconds.</p>
@@ -22,13 +22,15 @@ impl AssumeImpersonationRoleOutput {
     }
 }
 impl aws_http::request_id::RequestId for AssumeImpersonationRoleOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl AssumeImpersonationRoleOutput {
     /// Creates a new builder-style object to manufacture [`AssumeImpersonationRoleOutput`](crate::operation::assume_impersonation_role::AssumeImpersonationRoleOutput).
-    pub fn builder() -> crate::operation::assume_impersonation_role::builders::AssumeImpersonationRoleOutputBuilder {
+    pub fn builder(
+    ) -> crate::operation::assume_impersonation_role::builders::AssumeImpersonationRoleOutputBuilder
+    {
         crate::operation::assume_impersonation_role::builders::AssumeImpersonationRoleOutputBuilder::default()
     }
 }
@@ -49,7 +51,8 @@ impl AssumeImpersonationRoleOutputBuilder {
     }
     /// <p>The authentication token for the impersonation role.</p>
     pub fn set_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.token = input; self
+        self.token = input;
+        self
     }
     /// <p>The authentication token's validity, in seconds.</p>
     pub fn expires_in(mut self, input: i64) -> Self {
@@ -58,26 +61,26 @@ impl AssumeImpersonationRoleOutputBuilder {
     }
     /// <p>The authentication token's validity, in seconds.</p>
     pub fn set_expires_in(mut self, input: std::option::Option<i64>) -> Self {
-        self.expires_in = input; self
+        self.expires_in = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`AssumeImpersonationRoleOutput`](crate::operation::assume_impersonation_role::AssumeImpersonationRoleOutput).
-    pub fn build(self) -> crate::operation::assume_impersonation_role::AssumeImpersonationRoleOutput {
+    pub fn build(
+        self,
+    ) -> crate::operation::assume_impersonation_role::AssumeImpersonationRoleOutput {
         crate::operation::assume_impersonation_role::AssumeImpersonationRoleOutput {
-            token: self.token
-            ,
-            expires_in: self.expires_in
-            ,
+            token: self.token,
+            expires_in: self.expires_in,
             _request_id: self._request_id,
         }
     }
 }
-

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateRescoreExecutionPlanInput  {
+pub struct CreateRescoreExecutionPlanInput {
     /// <p>A name for the rescore execution plan.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -21,29 +21,29 @@ pub struct CreateRescoreExecutionPlanInput  {
 }
 impl CreateRescoreExecutionPlanInput {
     /// <p>A name for the rescore execution plan.</p>
-    pub fn name(&self) -> std::option::Option<& str> {
+    pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>A description for the rescore execution plan.</p>
-    pub fn description(&self) -> std::option::Option<& str> {
+    pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
     /// <p>You can set additional capacity units to meet the needs of your rescore execution plan. You are given a single capacity unit by default. If you want to use the default capacity, you don't set additional capacity units. For more information on the default capacity and additional capacity units, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/adjusting-capacity.html">Adjusting capacity</a>.</p>
-    pub fn capacity_units(&self) -> std::option::Option<& crate::types::CapacityUnitsConfiguration> {
+    pub fn capacity_units(&self) -> std::option::Option<&crate::types::CapacityUnitsConfiguration> {
         self.capacity_units.as_ref()
     }
     /// <p>A list of key-value pairs that identify or categorize your rescore execution plan. You can also use tags to help control access to the rescore execution plan. Tag keys and values can consist of Unicode letters, digits, white space, and any of the following symbols: _ . : / = + - @.</p>
-    pub fn tags(&self) -> std::option::Option<& [crate::types::Tag]> {
+    pub fn tags(&self) -> std::option::Option<&[crate::types::Tag]> {
         self.tags.as_deref()
     }
     /// <p>A token that you provide to identify the request to create a rescore execution plan. Multiple calls to the <code>CreateRescoreExecutionPlanRequest</code> API with the same client token will create only one rescore execution plan.</p>
-    pub fn client_token(&self) -> std::option::Option<& str> {
+    pub fn client_token(&self) -> std::option::Option<&str> {
         self.client_token.as_deref()
     }
 }
 impl CreateRescoreExecutionPlanInput {
     /// Creates a new builder-style object to manufacture [`CreateRescoreExecutionPlanInput`](crate::operation::create_rescore_execution_plan::CreateRescoreExecutionPlanInput).
-    pub fn builder() -> crate::operation::create_rescore_execution_plan::builders::CreateRescoreExecutionPlanInputBuilder {
+    pub fn builder() -> crate::operation::create_rescore_execution_plan::builders::CreateRescoreExecutionPlanInputBuilder{
         crate::operation::create_rescore_execution_plan::builders::CreateRescoreExecutionPlanInputBuilder::default()
     }
 }
@@ -66,7 +66,8 @@ impl CreateRescoreExecutionPlanInputBuilder {
     }
     /// <p>A name for the rescore execution plan.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input; self
+        self.name = input;
+        self
     }
     /// <p>A description for the rescore execution plan.</p>
     pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -75,7 +76,8 @@ impl CreateRescoreExecutionPlanInputBuilder {
     }
     /// <p>A description for the rescore execution plan.</p>
     pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.description = input; self
+        self.description = input;
+        self
     }
     /// <p>You can set additional capacity units to meet the needs of your rescore execution plan. You are given a single capacity unit by default. If you want to use the default capacity, you don't set additional capacity units. For more information on the default capacity and additional capacity units, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/adjusting-capacity.html">Adjusting capacity</a>.</p>
     pub fn capacity_units(mut self, input: crate::types::CapacityUnitsConfiguration) -> Self {
@@ -83,8 +85,12 @@ impl CreateRescoreExecutionPlanInputBuilder {
         self
     }
     /// <p>You can set additional capacity units to meet the needs of your rescore execution plan. You are given a single capacity unit by default. If you want to use the default capacity, you don't set additional capacity units. For more information on the default capacity and additional capacity units, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/adjusting-capacity.html">Adjusting capacity</a>.</p>
-    pub fn set_capacity_units(mut self, input: std::option::Option<crate::types::CapacityUnitsConfiguration>) -> Self {
-        self.capacity_units = input; self
+    pub fn set_capacity_units(
+        mut self,
+        input: std::option::Option<crate::types::CapacityUnitsConfiguration>,
+    ) -> Self {
+        self.capacity_units = input;
+        self
     }
     /// Appends an item to `tags`.
     ///
@@ -93,13 +99,17 @@ impl CreateRescoreExecutionPlanInputBuilder {
     /// <p>A list of key-value pairs that identify or categorize your rescore execution plan. You can also use tags to help control access to the rescore execution plan. Tag keys and values can consist of Unicode letters, digits, white space, and any of the following symbols: _ . : / = + - @.</p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
-                        v.push(input);
-                        self.tags = Some(v);
-                        self
+        v.push(input);
+        self.tags = Some(v);
+        self
     }
     /// <p>A list of key-value pairs that identify or categorize your rescore execution plan. You can also use tags to help control access to the rescore execution plan. Tag keys and values can consist of Unicode letters, digits, white space, and any of the following symbols: _ . : / = + - @.</p>
-    pub fn set_tags(mut self, input: std::option::Option<std::vec::Vec<crate::types::Tag>>) -> Self {
-        self.tags = input; self
+    pub fn set_tags(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::Tag>>,
+    ) -> Self {
+        self.tags = input;
+        self
     }
     /// <p>A token that you provide to identify the request to create a rescore execution plan. Multiple calls to the <code>CreateRescoreExecutionPlanRequest</code> API with the same client token will create only one rescore execution plan.</p>
     pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -108,24 +118,24 @@ impl CreateRescoreExecutionPlanInputBuilder {
     }
     /// <p>A token that you provide to identify the request to create a rescore execution plan. Multiple calls to the <code>CreateRescoreExecutionPlanRequest</code> API with the same client token will create only one rescore execution plan.</p>
     pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.client_token = input; self
+        self.client_token = input;
+        self
     }
     /// Consumes the builder and constructs a [`CreateRescoreExecutionPlanInput`](crate::operation::create_rescore_execution_plan::CreateRescoreExecutionPlanInput).
-    pub fn build(self) -> Result<crate::operation::create_rescore_execution_plan::CreateRescoreExecutionPlanInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::create_rescore_execution_plan::CreateRescoreExecutionPlanInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::create_rescore_execution_plan::CreateRescoreExecutionPlanInput {
-                name: self.name
-                ,
-                description: self.description
-                ,
-                capacity_units: self.capacity_units
-                ,
-                tags: self.tags
-                ,
-                client_token: self.client_token
-                ,
-            }
+                name: self.name,
+                description: self.description,
+                capacity_units: self.capacity_units,
+                tags: self.tags,
+                client_token: self.client_token,
+            },
         )
     }
 }
-

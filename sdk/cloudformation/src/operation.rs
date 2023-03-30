@@ -198,4 +198,3 @@ pub mod update_termination_protection;
 
 /// Types for the `ValidateTemplate` operation.
 pub mod validate_template;
-

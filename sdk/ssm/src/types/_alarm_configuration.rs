@@ -3,7 +3,7 @@
 /// <p>The details for the CloudWatch alarm you want to apply to an automation or command.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AlarmConfiguration  {
+pub struct AlarmConfiguration {
     /// <p>If you specify <code>true</code> for this value, your automation or command continue to run even if we can't gather information about the state of your CloudWatch alarm. The default value is <code>false</code>.</p>
     #[doc(hidden)]
     pub ignore_poll_alarm_failure: bool,
@@ -17,7 +17,7 @@ impl AlarmConfiguration {
         self.ignore_poll_alarm_failure
     }
     /// <p>The name of the CloudWatch alarm specified in the configuration.</p>
-    pub fn alarms(&self) -> std::option::Option<& [crate::types::Alarm]> {
+    pub fn alarms(&self) -> std::option::Option<&[crate::types::Alarm]> {
         self.alarms.as_deref()
     }
 }
@@ -43,7 +43,8 @@ impl AlarmConfigurationBuilder {
     }
     /// <p>If you specify <code>true</code> for this value, your automation or command continue to run even if we can't gather information about the state of your CloudWatch alarm. The default value is <code>false</code>.</p>
     pub fn set_ignore_poll_alarm_failure(mut self, input: std::option::Option<bool>) -> Self {
-        self.ignore_poll_alarm_failure = input; self
+        self.ignore_poll_alarm_failure = input;
+        self
     }
     /// Appends an item to `alarms`.
     ///
@@ -52,23 +53,23 @@ impl AlarmConfigurationBuilder {
     /// <p>The name of the CloudWatch alarm specified in the configuration.</p>
     pub fn alarms(mut self, input: crate::types::Alarm) -> Self {
         let mut v = self.alarms.unwrap_or_default();
-                        v.push(input);
-                        self.alarms = Some(v);
-                        self
+        v.push(input);
+        self.alarms = Some(v);
+        self
     }
     /// <p>The name of the CloudWatch alarm specified in the configuration.</p>
-    pub fn set_alarms(mut self, input: std::option::Option<std::vec::Vec<crate::types::Alarm>>) -> Self {
-        self.alarms = input; self
+    pub fn set_alarms(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::Alarm>>,
+    ) -> Self {
+        self.alarms = input;
+        self
     }
     /// Consumes the builder and constructs a [`AlarmConfiguration`](crate::types::AlarmConfiguration).
     pub fn build(self) -> crate::types::AlarmConfiguration {
         crate::types::AlarmConfiguration {
-            ignore_poll_alarm_failure: self.ignore_poll_alarm_failure
-                .unwrap_or_default()
-            ,
-            alarms: self.alarms
-            ,
+            ignore_poll_alarm_failure: self.ignore_poll_alarm_failure.unwrap_or_default(),
+            alarms: self.alarms,
         }
     }
 }
-

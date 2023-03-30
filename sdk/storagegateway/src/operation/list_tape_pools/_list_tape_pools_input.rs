@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListTapePoolsInput  {
+pub struct ListTapePoolsInput {
     /// <p>The Amazon Resource Name (ARN) of each of the custom tape pools you want to list. If you don't specify a custom tape pool ARN, the response lists all custom tape pools. </p>
     #[doc(hidden)]
     pub pool_ar_ns: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -15,11 +15,11 @@ pub struct ListTapePoolsInput  {
 }
 impl ListTapePoolsInput {
     /// <p>The Amazon Resource Name (ARN) of each of the custom tape pools you want to list. If you don't specify a custom tape pool ARN, the response lists all custom tape pools. </p>
-    pub fn pool_ar_ns(&self) -> std::option::Option<& [std::string::String]> {
+    pub fn pool_ar_ns(&self) -> std::option::Option<&[std::string::String]> {
         self.pool_ar_ns.as_deref()
     }
     /// <p>A string that indicates the position at which to begin the returned list of tape pools.</p>
-    pub fn marker(&self) -> std::option::Option<& str> {
+    pub fn marker(&self) -> std::option::Option<&str> {
         self.marker.as_deref()
     }
     /// <p>An optional number limit for the tape pools in the list returned by this call.</p>
@@ -50,13 +50,17 @@ impl ListTapePoolsInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of each of the custom tape pools you want to list. If you don't specify a custom tape pool ARN, the response lists all custom tape pools. </p>
     pub fn pool_ar_ns(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.pool_ar_ns.unwrap_or_default();
-                        v.push(input.into());
-                        self.pool_ar_ns = Some(v);
-                        self
+        v.push(input.into());
+        self.pool_ar_ns = Some(v);
+        self
     }
     /// <p>The Amazon Resource Name (ARN) of each of the custom tape pools you want to list. If you don't specify a custom tape pool ARN, the response lists all custom tape pools. </p>
-    pub fn set_pool_ar_ns(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-        self.pool_ar_ns = input; self
+    pub fn set_pool_ar_ns(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
+        self.pool_ar_ns = input;
+        self
     }
     /// <p>A string that indicates the position at which to begin the returned list of tape pools.</p>
     pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
@@ -65,7 +69,8 @@ impl ListTapePoolsInputBuilder {
     }
     /// <p>A string that indicates the position at which to begin the returned list of tape pools.</p>
     pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.marker = input; self
+        self.marker = input;
+        self
     }
     /// <p>An optional number limit for the tape pools in the list returned by this call.</p>
     pub fn limit(mut self, input: i32) -> Self {
@@ -74,20 +79,20 @@ impl ListTapePoolsInputBuilder {
     }
     /// <p>An optional number limit for the tape pools in the list returned by this call.</p>
     pub fn set_limit(mut self, input: std::option::Option<i32>) -> Self {
-        self.limit = input; self
+        self.limit = input;
+        self
     }
     /// Consumes the builder and constructs a [`ListTapePoolsInput`](crate::operation::list_tape_pools::ListTapePoolsInput).
-    pub fn build(self) -> Result<crate::operation::list_tape_pools::ListTapePoolsInput, aws_smithy_http::operation::error::BuildError> {
-        Ok(
-            crate::operation::list_tape_pools::ListTapePoolsInput {
-                pool_ar_ns: self.pool_ar_ns
-                ,
-                marker: self.marker
-                ,
-                limit: self.limit
-                ,
-            }
-        )
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::list_tape_pools::ListTapePoolsInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        Ok(crate::operation::list_tape_pools::ListTapePoolsInput {
+            pool_ar_ns: self.pool_ar_ns,
+            marker: self.marker,
+            limit: self.limit,
+        })
     }
 }
-

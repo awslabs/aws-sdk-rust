@@ -21,8 +21,14 @@ pub enum SourceType {
 impl SourceType {
     /// Tries to convert the enum instance into [`AwsSourceType`](crate::types::SourceType::AwsSourceType), extracting the inner [`AwsLogSourceType`](crate::types::AwsLogSourceType).
     /// Returns `Err(&Self)` if it can't be converted.
-    pub fn as_aws_source_type(&self) -> std::result::Result<&crate::types::AwsLogSourceType, &Self> {
-        if let SourceType::AwsSourceType(val) = &self { Ok(val) } else { Err(self) }
+    pub fn as_aws_source_type(
+        &self,
+    ) -> std::result::Result<&crate::types::AwsLogSourceType, &Self> {
+        if let SourceType::AwsSourceType(val) = &self {
+            Ok(val)
+        } else {
+            Err(self)
+        }
     }
     /// Returns true if this is a [`AwsSourceType`](crate::types::SourceType::AwsSourceType).
     pub fn is_aws_source_type(&self) -> bool {
@@ -31,7 +37,11 @@ impl SourceType {
     /// Tries to convert the enum instance into [`CustomSourceType`](crate::types::SourceType::CustomSourceType), extracting the inner [`String`](std::string::String).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_custom_source_type(&self) -> std::result::Result<&std::string::String, &Self> {
-        if let SourceType::CustomSourceType(val) = &self { Ok(val) } else { Err(self) }
+        if let SourceType::CustomSourceType(val) = &self {
+            Ok(val)
+        } else {
+            Err(self)
+        }
     }
     /// Returns true if this is a [`CustomSourceType`](crate::types::SourceType::CustomSourceType).
     pub fn is_custom_source_type(&self) -> bool {
@@ -42,4 +52,3 @@ impl SourceType {
         matches!(self, Self::Unknown)
     }
 }
-

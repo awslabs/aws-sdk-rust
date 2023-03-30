@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListReservationsInput  {
+pub struct ListReservationsInput {
     /// The maximum number of results to return per API request. For example, you submit a ListReservations request with MaxResults set at 5. Although 20 items match your request, the service returns no more than the first 5 items. (The service also returns a NextToken value that you can use to fetch the next batch of results.) The service might return fewer results than the MaxResults value. If MaxResults is not included in the request, the service defaults to pagination with a maximum of 10 results per page.
     #[doc(hidden)]
     pub max_results: i32,
@@ -16,13 +16,14 @@ impl ListReservationsInput {
         self.max_results
     }
     /// The token that identifies which batch of results that you want to see. For example, you submit a ListReservations request with MaxResults set at 5. The service returns the first batch of results (up to 5) and a NextToken value. To see the next batch of results, you can submit the ListOfferings request a second time and specify the NextToken value.
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
 }
 impl ListReservationsInput {
     /// Creates a new builder-style object to manufacture [`ListReservationsInput`](crate::operation::list_reservations::ListReservationsInput).
-    pub fn builder() -> crate::operation::list_reservations::builders::ListReservationsInputBuilder {
+    pub fn builder() -> crate::operation::list_reservations::builders::ListReservationsInputBuilder
+    {
         crate::operation::list_reservations::builders::ListReservationsInputBuilder::default()
     }
 }
@@ -42,7 +43,8 @@ impl ListReservationsInputBuilder {
     }
     /// The maximum number of results to return per API request. For example, you submit a ListReservations request with MaxResults set at 5. Although 20 items match your request, the service returns no more than the first 5 items. (The service also returns a NextToken value that you can use to fetch the next batch of results.) The service might return fewer results than the MaxResults value. If MaxResults is not included in the request, the service defaults to pagination with a maximum of 10 results per page.
     pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_results = input; self
+        self.max_results = input;
+        self
     }
     /// The token that identifies which batch of results that you want to see. For example, you submit a ListReservations request with MaxResults set at 5. The service returns the first batch of results (up to 5) and a NextToken value. To see the next batch of results, you can submit the ListOfferings request a second time and specify the NextToken value.
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -51,19 +53,19 @@ impl ListReservationsInputBuilder {
     }
     /// The token that identifies which batch of results that you want to see. For example, you submit a ListReservations request with MaxResults set at 5. The service returns the first batch of results (up to 5) and a NextToken value. To see the next batch of results, you can submit the ListOfferings request a second time and specify the NextToken value.
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input; self
+        self.next_token = input;
+        self
     }
     /// Consumes the builder and constructs a [`ListReservationsInput`](crate::operation::list_reservations::ListReservationsInput).
-    pub fn build(self) -> Result<crate::operation::list_reservations::ListReservationsInput, aws_smithy_http::operation::error::BuildError> {
-        Ok(
-            crate::operation::list_reservations::ListReservationsInput {
-                max_results: self.max_results
-                    .unwrap_or_default()
-                ,
-                next_token: self.next_token
-                ,
-            }
-        )
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::list_reservations::ListReservationsInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        Ok(crate::operation::list_reservations::ListReservationsInput {
+            max_results: self.max_results.unwrap_or_default(),
+            next_token: self.next_token,
+        })
     }
 }
-

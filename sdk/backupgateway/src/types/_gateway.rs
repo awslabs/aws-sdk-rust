@@ -3,7 +3,7 @@
 /// <p>A gateway is an Backup Gateway appliance that runs on the customer's network to provide seamless connectivity to backup storage in the Amazon Web Services Cloud.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Gateway  {
+pub struct Gateway {
     /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
     #[doc(hidden)]
     pub gateway_arn: std::option::Option<std::string::String>,
@@ -22,23 +22,23 @@ pub struct Gateway  {
 }
 impl Gateway {
     /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
-    pub fn gateway_arn(&self) -> std::option::Option<& str> {
+    pub fn gateway_arn(&self) -> std::option::Option<&str> {
         self.gateway_arn.as_deref()
     }
     /// <p>The display name of the gateway.</p>
-    pub fn gateway_display_name(&self) -> std::option::Option<& str> {
+    pub fn gateway_display_name(&self) -> std::option::Option<&str> {
         self.gateway_display_name.as_deref()
     }
     /// <p>The type of the gateway.</p>
-    pub fn gateway_type(&self) -> std::option::Option<& crate::types::GatewayType> {
+    pub fn gateway_type(&self) -> std::option::Option<&crate::types::GatewayType> {
         self.gateway_type.as_ref()
     }
     /// <p>The hypervisor ID of the gateway.</p>
-    pub fn hypervisor_id(&self) -> std::option::Option<& str> {
+    pub fn hypervisor_id(&self) -> std::option::Option<&str> {
         self.hypervisor_id.as_deref()
     }
     /// <p>The last time Backup gateway communicated with the gateway, in Unix format and UTC time.</p>
-    pub fn last_seen_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
+    pub fn last_seen_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_seen_time.as_ref()
     }
 }
@@ -67,7 +67,8 @@ impl GatewayBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
     pub fn set_gateway_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.gateway_arn = input; self
+        self.gateway_arn = input;
+        self
     }
     /// <p>The display name of the gateway.</p>
     pub fn gateway_display_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -75,8 +76,12 @@ impl GatewayBuilder {
         self
     }
     /// <p>The display name of the gateway.</p>
-    pub fn set_gateway_display_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.gateway_display_name = input; self
+    pub fn set_gateway_display_name(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.gateway_display_name = input;
+        self
     }
     /// <p>The type of the gateway.</p>
     pub fn gateway_type(mut self, input: crate::types::GatewayType) -> Self {
@@ -84,8 +89,12 @@ impl GatewayBuilder {
         self
     }
     /// <p>The type of the gateway.</p>
-    pub fn set_gateway_type(mut self, input: std::option::Option<crate::types::GatewayType>) -> Self {
-        self.gateway_type = input; self
+    pub fn set_gateway_type(
+        mut self,
+        input: std::option::Option<crate::types::GatewayType>,
+    ) -> Self {
+        self.gateway_type = input;
+        self
     }
     /// <p>The hypervisor ID of the gateway.</p>
     pub fn hypervisor_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -94,7 +103,8 @@ impl GatewayBuilder {
     }
     /// <p>The hypervisor ID of the gateway.</p>
     pub fn set_hypervisor_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.hypervisor_id = input; self
+        self.hypervisor_id = input;
+        self
     }
     /// <p>The last time Backup gateway communicated with the gateway, in Unix format and UTC time.</p>
     pub fn last_seen_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -102,23 +112,21 @@ impl GatewayBuilder {
         self
     }
     /// <p>The last time Backup gateway communicated with the gateway, in Unix format and UTC time.</p>
-    pub fn set_last_seen_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.last_seen_time = input; self
+    pub fn set_last_seen_time(
+        mut self,
+        input: std::option::Option<aws_smithy_types::DateTime>,
+    ) -> Self {
+        self.last_seen_time = input;
+        self
     }
     /// Consumes the builder and constructs a [`Gateway`](crate::types::Gateway).
     pub fn build(self) -> crate::types::Gateway {
         crate::types::Gateway {
-            gateway_arn: self.gateway_arn
-            ,
-            gateway_display_name: self.gateway_display_name
-            ,
-            gateway_type: self.gateway_type
-            ,
-            hypervisor_id: self.hypervisor_id
-            ,
-            last_seen_time: self.last_seen_time
-            ,
+            gateway_arn: self.gateway_arn,
+            gateway_display_name: self.gateway_display_name,
+            gateway_type: self.gateway_type,
+            hypervisor_id: self.hypervisor_id,
+            last_seen_time: self.last_seen_time,
         }
     }
 }
-

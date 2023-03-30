@@ -2,14 +2,14 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteBackupInput  {
+pub struct DeleteBackupInput {
     /// <p>The ARN associated with the backup.</p>
     #[doc(hidden)]
     pub backup_arn: std::option::Option<std::string::String>,
 }
 impl DeleteBackupInput {
     /// <p>The ARN associated with the backup.</p>
-    pub fn backup_arn(&self) -> std::option::Option<& str> {
+    pub fn backup_arn(&self) -> std::option::Option<&str> {
         self.backup_arn.as_deref()
     }
 }
@@ -34,16 +34,18 @@ impl DeleteBackupInputBuilder {
     }
     /// <p>The ARN associated with the backup.</p>
     pub fn set_backup_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.backup_arn = input; self
+        self.backup_arn = input;
+        self
     }
     /// Consumes the builder and constructs a [`DeleteBackupInput`](crate::operation::delete_backup::DeleteBackupInput).
-    pub fn build(self) -> Result<crate::operation::delete_backup::DeleteBackupInput, aws_smithy_http::operation::error::BuildError> {
-        Ok(
-            crate::operation::delete_backup::DeleteBackupInput {
-                backup_arn: self.backup_arn
-                ,
-            }
-        )
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::delete_backup::DeleteBackupInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        Ok(crate::operation::delete_backup::DeleteBackupInput {
+            backup_arn: self.backup_arn,
+        })
     }
 }
-

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SetTextMessageSpendLimitOverrideOutput  {
+pub struct SetTextMessageSpendLimitOverrideOutput {
     /// <p>The current monthly limit to enforce on sending text messages.</p>
     #[doc(hidden)]
     pub monthly_limit: std::option::Option<i64>,
@@ -15,13 +15,13 @@ impl SetTextMessageSpendLimitOverrideOutput {
     }
 }
 impl aws_http::request_id::RequestId for SetTextMessageSpendLimitOverrideOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl SetTextMessageSpendLimitOverrideOutput {
     /// Creates a new builder-style object to manufacture [`SetTextMessageSpendLimitOverrideOutput`](crate::operation::set_text_message_spend_limit_override::SetTextMessageSpendLimitOverrideOutput).
-    pub fn builder() -> crate::operation::set_text_message_spend_limit_override::builders::SetTextMessageSpendLimitOverrideOutputBuilder {
+    pub fn builder() -> crate::operation::set_text_message_spend_limit_override::builders::SetTextMessageSpendLimitOverrideOutputBuilder{
         crate::operation::set_text_message_spend_limit_override::builders::SetTextMessageSpendLimitOverrideOutputBuilder::default()
     }
 }
@@ -41,19 +41,20 @@ impl SetTextMessageSpendLimitOverrideOutputBuilder {
     }
     /// <p>The current monthly limit to enforce on sending text messages.</p>
     pub fn set_monthly_limit(mut self, input: std::option::Option<i64>) -> Self {
-        self.monthly_limit = input; self
+        self.monthly_limit = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`SetTextMessageSpendLimitOverrideOutput`](crate::operation::set_text_message_spend_limit_override::SetTextMessageSpendLimitOverrideOutput).
-    pub fn build(self) -> crate::operation::set_text_message_spend_limit_override::SetTextMessageSpendLimitOverrideOutput {
+    pub fn build(self) -> crate::operation::set_text_message_spend_limit_override::SetTextMessageSpendLimitOverrideOutput{
         crate::operation::set_text_message_spend_limit_override::SetTextMessageSpendLimitOverrideOutput {
             monthly_limit: self.monthly_limit
             ,
@@ -61,4 +62,3 @@ impl SetTextMessageSpendLimitOverrideOutputBuilder {
         }
     }
 }
-

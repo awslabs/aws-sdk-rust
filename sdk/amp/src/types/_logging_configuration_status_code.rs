@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-/// 
+///
 /// Here is an example of how you can make a match expression forward-compatible:
-/// 
+///
 /// ```text
 /// # let loggingconfigurationstatuscode = unimplemented!();
 /// match loggingconfigurationstatuscode {
@@ -34,14 +34,22 @@
 /// Specifically, when `loggingconfigurationstatuscode` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `LoggingConfigurationStatusCode::NewFeature` also yielding `"NewFeature"`.
-/// 
+///
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 /// State of a logging configuration.
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
 pub enum LoggingConfigurationStatusCode {
     /// Logging configuration has been created/updated. Update/Deletion is disallowed until logging configuration is ACTIVE and workspace status is ACTIVE.
     Active,
@@ -56,49 +64,57 @@ pub enum LoggingConfigurationStatusCode {
     /// Logging configuration is being updated. Update/Deletion is disallowed until logging configuration is ACTIVE and workspace status is ACTIVE.
     Updating,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::primitives::UnknownVariantValue)
+    Unknown(crate::primitives::UnknownVariantValue),
 }
 impl std::convert::From<&str> for LoggingConfigurationStatusCode {
-                fn from(s: &str) -> Self {
-                    match s {
-                        "ACTIVE" => LoggingConfigurationStatusCode::Active,
-"CREATING" => LoggingConfigurationStatusCode::Creating,
-"CREATION_FAILED" => LoggingConfigurationStatusCode::CreationFailed,
-"DELETING" => LoggingConfigurationStatusCode::Deleting,
-"UPDATE_FAILED" => LoggingConfigurationStatusCode::UpdateFailed,
-"UPDATING" => LoggingConfigurationStatusCode::Updating,
-other => LoggingConfigurationStatusCode::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
-                    }
-                }
-            }
-impl std::str::FromStr for LoggingConfigurationStatusCode {
-                type Err = std::convert::Infallible;
-
-                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-                    Ok(LoggingConfigurationStatusCode::from(s))
-                }
-            }
-impl LoggingConfigurationStatusCode {
-                /// Returns the `&str` value of the enum member.
-                pub fn as_str(&self) -> &str {
-                    match self {
-    LoggingConfigurationStatusCode::Active => "ACTIVE",
-    LoggingConfigurationStatusCode::Creating => "CREATING",
-    LoggingConfigurationStatusCode::CreationFailed => "CREATION_FAILED",
-    LoggingConfigurationStatusCode::Deleting => "DELETING",
-    LoggingConfigurationStatusCode::UpdateFailed => "UPDATE_FAILED",
-    LoggingConfigurationStatusCode::Updating => "UPDATING",
-    LoggingConfigurationStatusCode::Unknown(value) => value.as_str()
+    fn from(s: &str) -> Self {
+        match s {
+            "ACTIVE" => LoggingConfigurationStatusCode::Active,
+            "CREATING" => LoggingConfigurationStatusCode::Creating,
+            "CREATION_FAILED" => LoggingConfigurationStatusCode::CreationFailed,
+            "DELETING" => LoggingConfigurationStatusCode::Deleting,
+            "UPDATE_FAILED" => LoggingConfigurationStatusCode::UpdateFailed,
+            "UPDATING" => LoggingConfigurationStatusCode::Updating,
+            other => LoggingConfigurationStatusCode::Unknown(
+                crate::primitives::UnknownVariantValue(other.to_owned()),
+            ),
+        }
+    }
 }
-                }
-                /// Returns all the `&str` representations of the enum members.
-                pub const fn values() -> &'static [&'static str] {
-                    &["ACTIVE", "CREATING", "CREATION_FAILED", "DELETING", "UPDATE_FAILED", "UPDATING"]
-                }
-            }
-impl AsRef<str> for LoggingConfigurationStatusCode {
-                fn as_ref(&self) -> &str {
-                    self.as_str()
-                }
-            }
+impl std::str::FromStr for LoggingConfigurationStatusCode {
+    type Err = std::convert::Infallible;
 
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(LoggingConfigurationStatusCode::from(s))
+    }
+}
+impl LoggingConfigurationStatusCode {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            LoggingConfigurationStatusCode::Active => "ACTIVE",
+            LoggingConfigurationStatusCode::Creating => "CREATING",
+            LoggingConfigurationStatusCode::CreationFailed => "CREATION_FAILED",
+            LoggingConfigurationStatusCode::Deleting => "DELETING",
+            LoggingConfigurationStatusCode::UpdateFailed => "UPDATE_FAILED",
+            LoggingConfigurationStatusCode::Updating => "UPDATING",
+            LoggingConfigurationStatusCode::Unknown(value) => value.as_str(),
+        }
+    }
+    /// Returns all the `&str` representations of the enum members.
+    pub const fn values() -> &'static [&'static str] {
+        &[
+            "ACTIVE",
+            "CREATING",
+            "CREATION_FAILED",
+            "DELETING",
+            "UPDATE_FAILED",
+            "UPDATING",
+        ]
+    }
+}
+impl AsRef<str> for LoggingConfigurationStatusCode {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}

@@ -4,74 +4,96 @@ pub use crate::operation::authorize_security_group_ingress::_authorize_security_
 pub use crate::operation::authorize_security_group_ingress::_authorize_security_group_ingress_input::AuthorizeSecurityGroupIngressInputBuilder;
 
 /// Fluent builder constructing a request to `AuthorizeSecurityGroupIngress`.
-/// 
-/// <p>Adds the specified inbound (ingress) rules to a security group.</p> 
-/// <p>An inbound rule permits instances to receive traffic from the specified IPv4 or IPv6 CIDR address range, or from the instances that are associated with the specified destination security groups. When specifying an inbound rule for your security group in a VPC, the <code>IpPermissions</code> must include a source for the traffic.</p> 
-/// <p>You specify a protocol for each rule (for example, TCP). For TCP and UDP, you must also specify the destination port or port range. For ICMP/ICMPv6, you must also specify the ICMP/ICMPv6 type and code. You can use -1 to mean all types or all codes.</p> 
-/// <p>Rule changes are propagated to instances within the security group as quickly as possible. However, a small delay might occur.</p> 
-/// <p>For more information about VPC security group quotas, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/amazon-vpc-limits.html">Amazon VPC quotas</a>.</p> <note> 
-/// <p>We are retiring EC2-Classic. We recommend that you migrate from EC2-Classic to a VPC. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-migrate.html">Migrate from EC2-Classic to a VPC</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p> 
+///
+/// <p>Adds the specified inbound (ingress) rules to a security group.</p>
+/// <p>An inbound rule permits instances to receive traffic from the specified IPv4 or IPv6 CIDR address range, or from the instances that are associated with the specified destination security groups. When specifying an inbound rule for your security group in a VPC, the <code>IpPermissions</code> must include a source for the traffic.</p>
+/// <p>You specify a protocol for each rule (for example, TCP). For TCP and UDP, you must also specify the destination port or port range. For ICMP/ICMPv6, you must also specify the ICMP/ICMPv6 type and code. You can use -1 to mean all types or all codes.</p>
+/// <p>Rule changes are propagated to instances within the security group as quickly as possible. However, a small delay might occur.</p>
+/// <p>For more information about VPC security group quotas, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/amazon-vpc-limits.html">Amazon VPC quotas</a>.</p> <note>
+/// <p>We are retiring EC2-Classic. We recommend that you migrate from EC2-Classic to a VPC. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-migrate.html">Migrate from EC2-Classic to a VPC</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
 /// </note>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct AuthorizeSecurityGroupIngressFluentBuilder {
                 handle: std::sync::Arc<crate::client::Handle>,
                 inner: crate::operation::authorize_security_group_ingress::builders::AuthorizeSecurityGroupIngressInputBuilder
             }
-impl AuthorizeSecurityGroupIngressFluentBuilder  {
+impl AuthorizeSecurityGroupIngressFluentBuilder {
     /// Creates a new `AuthorizeSecurityGroupIngress`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
-                    /// sent. The operation's inner [http::Request] can be modified as well.
-                    pub async fn customize(self) -> std::result::Result<
-                        crate::client::customize::CustomizableOperation<crate::operation::authorize_security_group_ingress::AuthorizeSecurityGroupIngress, aws_http::retry::AwsResponseRetryClassifier,>,
-                        aws_smithy_http::result::SdkError<crate::operation::authorize_security_group_ingress::AuthorizeSecurityGroupIngressError>
-                    >  {
-                        let handle = self.handle.clone();
-                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-                    }
-    
-                    /// Sends the request and returns the response.
-                    ///
-                    /// If an error occurs, an `SdkError` will be returned with additional details that
-                    /// can be matched against.
-                    ///
-                    /// By default, any retryable failures will be retried twice. Retry behavior
-                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                    /// set when configuring the client.
-                    pub async fn send(self) -> std::result::Result<crate::operation::authorize_security_group_ingress::AuthorizeSecurityGroupIngressOutput, aws_smithy_http::result::SdkError<crate::operation::authorize_security_group_ingress::AuthorizeSecurityGroupIngressError>>
-                     {
-                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&self.handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        self.handle.client.call(op).await
-                    }
-    /// <p>The IPv4 address range, in CIDR format. You can't specify this parameter when specifying a source security group. To specify an IPv6 address range, use a set of IP permissions.</p> 
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle,
+            inner: Default::default(),
+        }
+    }
+
+    /// Consume this builder, creating a customizable operation that can be modified before being
+    /// sent. The operation's inner [http::Request] can be modified as well.
+    pub async fn customize(
+        self,
+    ) -> std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::authorize_security_group_ingress::AuthorizeSecurityGroupIngress,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::result::SdkError<
+            crate::operation::authorize_security_group_ingress::AuthorizeSecurityGroupIngressError,
+        >,
+    > {
+        let handle = self.handle.clone();
+        let operation = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+    }
+
+    /// Sends the request and returns the response.
+    ///
+    /// If an error occurs, an `SdkError` will be returned with additional details that
+    /// can be matched against.
+    ///
+    /// By default, any retryable failures will be retried twice. Retry behavior
+    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+    /// set when configuring the client.
+    pub async fn send(
+        self,
+    ) -> std::result::Result<
+        crate::operation::authorize_security_group_ingress::AuthorizeSecurityGroupIngressOutput,
+        aws_smithy_http::result::SdkError<
+            crate::operation::authorize_security_group_ingress::AuthorizeSecurityGroupIngressError,
+        >,
+    > {
+        let op = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&self.handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        self.handle.client.call(op).await
+    }
+    /// <p>The IPv4 address range, in CIDR format. You can't specify this parameter when specifying a source security group. To specify an IPv6 address range, use a set of IP permissions.</p>
     /// <p>Alternatively, use a set of IP permissions to specify multiple rules and a description for the rule.</p>
     pub fn cidr_ip(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.cidr_ip(input.into());
         self
     }
-    /// <p>The IPv4 address range, in CIDR format. You can't specify this parameter when specifying a source security group. To specify an IPv6 address range, use a set of IP permissions.</p> 
+    /// <p>The IPv4 address range, in CIDR format. You can't specify this parameter when specifying a source security group. To specify an IPv6 address range, use a set of IP permissions.</p>
     /// <p>Alternatively, use a set of IP permissions to specify multiple rules and a description for the rule.</p>
     pub fn set_cidr_ip(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.inner = self.inner.set_cidr_ip(input);
         self
     }
-    /// <p>If the protocol is TCP or UDP, this is the start of the port range. If the protocol is ICMP, this is the type number. A value of -1 indicates all ICMP types. If you specify all ICMP types, you must specify all ICMP codes.</p> 
+    /// <p>If the protocol is TCP or UDP, this is the start of the port range. If the protocol is ICMP, this is the type number. A value of -1 indicates all ICMP types. If you specify all ICMP types, you must specify all ICMP codes.</p>
     /// <p>Alternatively, use a set of IP permissions to specify multiple rules and a description for the rule.</p>
     pub fn from_port(mut self, input: i32) -> Self {
         self.inner = self.inner.from_port(input);
         self
     }
-    /// <p>If the protocol is TCP or UDP, this is the start of the port range. If the protocol is ICMP, this is the type number. A value of -1 indicates all ICMP types. If you specify all ICMP types, you must specify all ICMP codes.</p> 
+    /// <p>If the protocol is TCP or UDP, this is the start of the port range. If the protocol is ICMP, this is the type number. A value of -1 indicates all ICMP types. If you specify all ICMP types, you must specify all ICMP codes.</p>
     /// <p>Alternatively, use a set of IP permissions to specify multiple rules and a description for the rule.</p>
     pub fn set_from_port(mut self, input: std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_from_port(input);
@@ -107,19 +129,22 @@ impl AuthorizeSecurityGroupIngressFluentBuilder  {
         self
     }
     /// <p>The sets of IP permissions.</p>
-    pub fn set_ip_permissions(mut self, input: std::option::Option<std::vec::Vec<crate::types::IpPermission>>) -> Self {
+    pub fn set_ip_permissions(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::IpPermission>>,
+    ) -> Self {
         self.inner = self.inner.set_ip_permissions(input);
         self
     }
-    /// <p>The IP protocol name (<code>tcp</code>, <code>udp</code>, <code>icmp</code>) or number (see <a href="http://www.iana.org/assignments/protocol-numbers/protocol-numbers.xhtml">Protocol Numbers</a>). To specify <code>icmpv6</code>, use a set of IP permissions.</p> 
-    /// <p>[VPC only] Use <code>-1</code> to specify all protocols. If you specify <code>-1</code> or a protocol other than <code>tcp</code>, <code>udp</code>, or <code>icmp</code>, traffic on all ports is allowed, regardless of any ports you specify.</p> 
+    /// <p>The IP protocol name (<code>tcp</code>, <code>udp</code>, <code>icmp</code>) or number (see <a href="http://www.iana.org/assignments/protocol-numbers/protocol-numbers.xhtml">Protocol Numbers</a>). To specify <code>icmpv6</code>, use a set of IP permissions.</p>
+    /// <p>[VPC only] Use <code>-1</code> to specify all protocols. If you specify <code>-1</code> or a protocol other than <code>tcp</code>, <code>udp</code>, or <code>icmp</code>, traffic on all ports is allowed, regardless of any ports you specify.</p>
     /// <p>Alternatively, use a set of IP permissions to specify multiple rules and a description for the rule.</p>
     pub fn ip_protocol(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.ip_protocol(input.into());
         self
     }
-    /// <p>The IP protocol name (<code>tcp</code>, <code>udp</code>, <code>icmp</code>) or number (see <a href="http://www.iana.org/assignments/protocol-numbers/protocol-numbers.xhtml">Protocol Numbers</a>). To specify <code>icmpv6</code>, use a set of IP permissions.</p> 
-    /// <p>[VPC only] Use <code>-1</code> to specify all protocols. If you specify <code>-1</code> or a protocol other than <code>tcp</code>, <code>udp</code>, or <code>icmp</code>, traffic on all ports is allowed, regardless of any ports you specify.</p> 
+    /// <p>The IP protocol name (<code>tcp</code>, <code>udp</code>, <code>icmp</code>) or number (see <a href="http://www.iana.org/assignments/protocol-numbers/protocol-numbers.xhtml">Protocol Numbers</a>). To specify <code>icmpv6</code>, use a set of IP permissions.</p>
+    /// <p>[VPC only] Use <code>-1</code> to specify all protocols. If you specify <code>-1</code> or a protocol other than <code>tcp</code>, <code>udp</code>, or <code>icmp</code>, traffic on all ports is allowed, regardless of any ports you specify.</p>
     /// <p>Alternatively, use a set of IP permissions to specify multiple rules and a description for the rule.</p>
     pub fn set_ip_protocol(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.inner = self.inner.set_ip_protocol(input);
@@ -131,7 +156,10 @@ impl AuthorizeSecurityGroupIngressFluentBuilder  {
         self
     }
     /// <p>[EC2-Classic, default VPC] The name of the source security group. You can't specify this parameter in combination with the following parameters: the CIDR IP address range, the start of the port range, the IP protocol, and the end of the port range. Creates rules that grant full ICMP, UDP, and TCP access. To create a rule with a specific IP protocol and port range, use a set of IP permissions instead. For EC2-VPC, the source security group must be in the same VPC.</p>
-    pub fn set_source_security_group_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_source_security_group_name(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_source_security_group_name(input);
         self
     }
@@ -141,17 +169,20 @@ impl AuthorizeSecurityGroupIngressFluentBuilder  {
         self
     }
     /// <p>[nondefault VPC] The Amazon Web Services account ID for the source security group, if the source security group is in a different account. You can't specify this parameter in combination with the following parameters: the CIDR IP address range, the IP protocol, the start of the port range, and the end of the port range. Creates rules that grant full ICMP, UDP, and TCP access. To create a rule with a specific IP protocol and port range, use a set of IP permissions instead.</p>
-    pub fn set_source_security_group_owner_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_source_security_group_owner_id(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_source_security_group_owner_id(input);
         self
     }
-    /// <p>If the protocol is TCP or UDP, this is the end of the port range. If the protocol is ICMP, this is the code. A value of -1 indicates all ICMP codes. If you specify all ICMP types, you must specify all ICMP codes.</p> 
+    /// <p>If the protocol is TCP or UDP, this is the end of the port range. If the protocol is ICMP, this is the code. A value of -1 indicates all ICMP codes. If you specify all ICMP types, you must specify all ICMP codes.</p>
     /// <p>Alternatively, use a set of IP permissions to specify multiple rules and a description for the rule.</p>
     pub fn to_port(mut self, input: i32) -> Self {
         self.inner = self.inner.to_port(input);
         self
     }
-    /// <p>If the protocol is TCP or UDP, this is the end of the port range. If the protocol is ICMP, this is the code. A value of -1 indicates all ICMP codes. If you specify all ICMP types, you must specify all ICMP codes.</p> 
+    /// <p>If the protocol is TCP or UDP, this is the end of the port range. If the protocol is ICMP, this is the code. A value of -1 indicates all ICMP codes. If you specify all ICMP types, you must specify all ICMP codes.</p>
     /// <p>Alternatively, use a set of IP permissions to specify multiple rules and a description for the rule.</p>
     pub fn set_to_port(mut self, input: std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_to_port(input);
@@ -177,9 +208,11 @@ impl AuthorizeSecurityGroupIngressFluentBuilder  {
         self
     }
     /// <p>[VPC Only] The tags applied to the security group rule.</p>
-    pub fn set_tag_specifications(mut self, input: std::option::Option<std::vec::Vec<crate::types::TagSpecification>>) -> Self {
+    pub fn set_tag_specifications(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::TagSpecification>>,
+    ) -> Self {
         self.inner = self.inner.set_tag_specifications(input);
         self
     }
 }
-

@@ -52,4 +52,3 @@ pub use crate::types::_shipment::ShipmentBuilder;
 pub use crate::types::_cluster_metadata::ClusterMetadataBuilder;
 
 pub use crate::types::_address::AddressBuilder;
-

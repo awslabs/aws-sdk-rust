@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListIngestionsInput  {
+pub struct ListIngestionsInput {
     /// <p>The ID of the dataset used in the ingestion.</p>
     #[doc(hidden)]
     pub data_set_id: std::option::Option<std::string::String>,
@@ -18,15 +18,15 @@ pub struct ListIngestionsInput  {
 }
 impl ListIngestionsInput {
     /// <p>The ID of the dataset used in the ingestion.</p>
-    pub fn data_set_id(&self) -> std::option::Option<& str> {
+    pub fn data_set_id(&self) -> std::option::Option<&str> {
         self.data_set_id.as_deref()
     }
     /// <p>The token for the next set of results, or null if there are no more results.</p>
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
     /// <p>The Amazon Web Services account ID.</p>
-    pub fn aws_account_id(&self) -> std::option::Option<& str> {
+    pub fn aws_account_id(&self) -> std::option::Option<&str> {
         self.aws_account_id.as_deref()
     }
     /// <p>The maximum number of results to be returned per request.</p>
@@ -58,7 +58,8 @@ impl ListIngestionsInputBuilder {
     }
     /// <p>The ID of the dataset used in the ingestion.</p>
     pub fn set_data_set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.data_set_id = input; self
+        self.data_set_id = input;
+        self
     }
     /// <p>The token for the next set of results, or null if there are no more results.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -67,7 +68,8 @@ impl ListIngestionsInputBuilder {
     }
     /// <p>The token for the next set of results, or null if there are no more results.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input; self
+        self.next_token = input;
+        self
     }
     /// <p>The Amazon Web Services account ID.</p>
     pub fn aws_account_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -76,7 +78,8 @@ impl ListIngestionsInputBuilder {
     }
     /// <p>The Amazon Web Services account ID.</p>
     pub fn set_aws_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.aws_account_id = input; self
+        self.aws_account_id = input;
+        self
     }
     /// <p>The maximum number of results to be returned per request.</p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -85,22 +88,21 @@ impl ListIngestionsInputBuilder {
     }
     /// <p>The maximum number of results to be returned per request.</p>
     pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_results = input; self
+        self.max_results = input;
+        self
     }
     /// Consumes the builder and constructs a [`ListIngestionsInput`](crate::operation::list_ingestions::ListIngestionsInput).
-    pub fn build(self) -> Result<crate::operation::list_ingestions::ListIngestionsInput, aws_smithy_http::operation::error::BuildError> {
-        Ok(
-            crate::operation::list_ingestions::ListIngestionsInput {
-                data_set_id: self.data_set_id
-                ,
-                next_token: self.next_token
-                ,
-                aws_account_id: self.aws_account_id
-                ,
-                max_results: self.max_results
-                ,
-            }
-        )
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::list_ingestions::ListIngestionsInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        Ok(crate::operation::list_ingestions::ListIngestionsInput {
+            data_set_id: self.data_set_id,
+            next_token: self.next_token,
+            aws_account_id: self.aws_account_id,
+            max_results: self.max_results,
+        })
     }
 }
-

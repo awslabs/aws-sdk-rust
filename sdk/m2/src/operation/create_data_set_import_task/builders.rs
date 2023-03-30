@@ -4,49 +4,71 @@ pub use crate::operation::create_data_set_import_task::_create_data_set_import_t
 pub use crate::operation::create_data_set_import_task::_create_data_set_import_task_input::CreateDataSetImportTaskInputBuilder;
 
 /// Fluent builder constructing a request to `CreateDataSetImportTask`.
-/// 
+///
 /// <p>Starts a data set import task for a specific application.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct CreateDataSetImportTaskFluentBuilder {
                 handle: std::sync::Arc<crate::client::Handle>,
                 inner: crate::operation::create_data_set_import_task::builders::CreateDataSetImportTaskInputBuilder
             }
-impl CreateDataSetImportTaskFluentBuilder  {
+impl CreateDataSetImportTaskFluentBuilder {
     /// Creates a new `CreateDataSetImportTask`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
-                    /// sent. The operation's inner [http::Request] can be modified as well.
-                    pub async fn customize(self) -> std::result::Result<
-                        crate::client::customize::CustomizableOperation<crate::operation::create_data_set_import_task::CreateDataSetImportTask, aws_http::retry::AwsResponseRetryClassifier,>,
-                        aws_smithy_http::result::SdkError<crate::operation::create_data_set_import_task::CreateDataSetImportTaskError>
-                    >  {
-                        let handle = self.handle.clone();
-                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-                    }
-    
-                    /// Sends the request and returns the response.
-                    ///
-                    /// If an error occurs, an `SdkError` will be returned with additional details that
-                    /// can be matched against.
-                    ///
-                    /// By default, any retryable failures will be retried twice. Retry behavior
-                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                    /// set when configuring the client.
-                    pub async fn send(self) -> std::result::Result<crate::operation::create_data_set_import_task::CreateDataSetImportTaskOutput, aws_smithy_http::result::SdkError<crate::operation::create_data_set_import_task::CreateDataSetImportTaskError>>
-                     {
-                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&self.handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        self.handle.client.call(op).await
-                    }
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle,
+            inner: Default::default(),
+        }
+    }
+
+    /// Consume this builder, creating a customizable operation that can be modified before being
+    /// sent. The operation's inner [http::Request] can be modified as well.
+    pub async fn customize(
+        self,
+    ) -> std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::create_data_set_import_task::CreateDataSetImportTask,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::result::SdkError<
+            crate::operation::create_data_set_import_task::CreateDataSetImportTaskError,
+        >,
+    > {
+        let handle = self.handle.clone();
+        let operation = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+    }
+
+    /// Sends the request and returns the response.
+    ///
+    /// If an error occurs, an `SdkError` will be returned with additional details that
+    /// can be matched against.
+    ///
+    /// By default, any retryable failures will be retried twice. Retry behavior
+    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+    /// set when configuring the client.
+    pub async fn send(
+        self,
+    ) -> std::result::Result<
+        crate::operation::create_data_set_import_task::CreateDataSetImportTaskOutput,
+        aws_smithy_http::result::SdkError<
+            crate::operation::create_data_set_import_task::CreateDataSetImportTaskError,
+        >,
+    > {
+        let op = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&self.handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        self.handle.client.call(op).await
+    }
     /// <p>The unique identifier of the application for which you want to import data sets.</p>
     pub fn application_id(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.application_id(input.into());
@@ -63,7 +85,10 @@ impl CreateDataSetImportTaskFluentBuilder  {
         self
     }
     /// <p>The data set import task configuration.</p>
-    pub fn set_import_config(mut self, input: std::option::Option<crate::types::DataSetImportConfig>) -> Self {
+    pub fn set_import_config(
+        mut self,
+        input: std::option::Option<crate::types::DataSetImportConfig>,
+    ) -> Self {
         self.inner = self.inner.set_import_config(input);
         self
     }
@@ -78,4 +103,3 @@ impl CreateDataSetImportTaskFluentBuilder  {
         self
     }
 }
-

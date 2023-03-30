@@ -4,51 +4,73 @@ pub use crate::operation::accept_administrator_invitation::_accept_administrator
 pub use crate::operation::accept_administrator_invitation::_accept_administrator_invitation_input::AcceptAdministratorInvitationInputBuilder;
 
 /// Fluent builder constructing a request to `AcceptAdministratorInvitation`.
-/// 
-/// <p>Accepts the invitation to be a member account and be monitored by the Security Hub administrator account that the invitation was sent from.</p> 
-/// <p>This operation is only used by member accounts that are not added through Organizations.</p> 
+///
+/// <p>Accepts the invitation to be a member account and be monitored by the Security Hub administrator account that the invitation was sent from.</p>
+/// <p>This operation is only used by member accounts that are not added through Organizations.</p>
 /// <p>When the member account accepts the invitation, permission is granted to the administrator account to view findings generated in the member account.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct AcceptAdministratorInvitationFluentBuilder {
                 handle: std::sync::Arc<crate::client::Handle>,
                 inner: crate::operation::accept_administrator_invitation::builders::AcceptAdministratorInvitationInputBuilder
             }
-impl AcceptAdministratorInvitationFluentBuilder  {
+impl AcceptAdministratorInvitationFluentBuilder {
     /// Creates a new `AcceptAdministratorInvitation`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
-                    /// sent. The operation's inner [http::Request] can be modified as well.
-                    pub async fn customize(self) -> std::result::Result<
-                        crate::client::customize::CustomizableOperation<crate::operation::accept_administrator_invitation::AcceptAdministratorInvitation, aws_http::retry::AwsResponseRetryClassifier,>,
-                        aws_smithy_http::result::SdkError<crate::operation::accept_administrator_invitation::AcceptAdministratorInvitationError>
-                    >  {
-                        let handle = self.handle.clone();
-                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-                    }
-    
-                    /// Sends the request and returns the response.
-                    ///
-                    /// If an error occurs, an `SdkError` will be returned with additional details that
-                    /// can be matched against.
-                    ///
-                    /// By default, any retryable failures will be retried twice. Retry behavior
-                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                    /// set when configuring the client.
-                    pub async fn send(self) -> std::result::Result<crate::operation::accept_administrator_invitation::AcceptAdministratorInvitationOutput, aws_smithy_http::result::SdkError<crate::operation::accept_administrator_invitation::AcceptAdministratorInvitationError>>
-                     {
-                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&self.handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        self.handle.client.call(op).await
-                    }
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle,
+            inner: Default::default(),
+        }
+    }
+
+    /// Consume this builder, creating a customizable operation that can be modified before being
+    /// sent. The operation's inner [http::Request] can be modified as well.
+    pub async fn customize(
+        self,
+    ) -> std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::accept_administrator_invitation::AcceptAdministratorInvitation,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::result::SdkError<
+            crate::operation::accept_administrator_invitation::AcceptAdministratorInvitationError,
+        >,
+    > {
+        let handle = self.handle.clone();
+        let operation = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+    }
+
+    /// Sends the request and returns the response.
+    ///
+    /// If an error occurs, an `SdkError` will be returned with additional details that
+    /// can be matched against.
+    ///
+    /// By default, any retryable failures will be retried twice. Retry behavior
+    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+    /// set when configuring the client.
+    pub async fn send(
+        self,
+    ) -> std::result::Result<
+        crate::operation::accept_administrator_invitation::AcceptAdministratorInvitationOutput,
+        aws_smithy_http::result::SdkError<
+            crate::operation::accept_administrator_invitation::AcceptAdministratorInvitationError,
+        >,
+    > {
+        let op = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&self.handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        self.handle.client.call(op).await
+    }
     /// <p>The account ID of the Security Hub administrator account that sent the invitation.</p>
     pub fn administrator_id(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.administrator_id(input.into());
@@ -70,4 +92,3 @@ impl AcceptAdministratorInvitationFluentBuilder  {
         self
     }
 }
-

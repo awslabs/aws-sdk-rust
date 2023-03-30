@@ -3,7 +3,7 @@
 /// <p>Information about an RAM permission.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ResourceSharePermissionDetail  {
+pub struct ResourceSharePermissionDetail {
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resoure Name (ARN)</a> of this RAM permission.</p>
     #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
@@ -34,11 +34,11 @@ pub struct ResourceSharePermissionDetail  {
 }
 impl ResourceSharePermissionDetail {
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resoure Name (ARN)</a> of this RAM permission.</p>
-    pub fn arn(&self) -> std::option::Option<& str> {
+    pub fn arn(&self) -> std::option::Option<&str> {
         self.arn.as_deref()
     }
     /// <p>The version of the permission represented in this structure.</p>
-    pub fn version(&self) -> std::option::Option<& str> {
+    pub fn version(&self) -> std::option::Option<&str> {
         self.version.as_deref()
     }
     /// <p>Specifies whether the version of the permission represented in this structure is the default version for this permission.</p>
@@ -46,23 +46,23 @@ impl ResourceSharePermissionDetail {
         self.default_version
     }
     /// <p>The name of this permission.</p>
-    pub fn name(&self) -> std::option::Option<& str> {
+    pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>The resource type to which this permission applies.</p>
-    pub fn resource_type(&self) -> std::option::Option<& str> {
+    pub fn resource_type(&self) -> std::option::Option<&str> {
         self.resource_type.as_deref()
     }
     /// <p>The permission's effect and actions in JSON format. The <code>effect</code> indicates whether the specified actions are allowed or denied. The <code>actions</code> list the operations to which the principal is granted or denied access.</p>
-    pub fn permission(&self) -> std::option::Option<& str> {
+    pub fn permission(&self) -> std::option::Option<&str> {
         self.permission.as_deref()
     }
     /// <p>The date and time when the permission was created.</p>
-    pub fn creation_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
+    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
     /// <p>The date and time when the permission was last updated.</p>
-    pub fn last_updated_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
+    pub fn last_updated_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_updated_time.as_ref()
     }
     /// <p>Specifies whether the version of the permission represented in this structure is the default version for all resources of this resource type.</p>
@@ -99,7 +99,8 @@ impl ResourceSharePermissionDetailBuilder {
     }
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resoure Name (ARN)</a> of this RAM permission.</p>
     pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.arn = input; self
+        self.arn = input;
+        self
     }
     /// <p>The version of the permission represented in this structure.</p>
     pub fn version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -108,7 +109,8 @@ impl ResourceSharePermissionDetailBuilder {
     }
     /// <p>The version of the permission represented in this structure.</p>
     pub fn set_version(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.version = input; self
+        self.version = input;
+        self
     }
     /// <p>Specifies whether the version of the permission represented in this structure is the default version for this permission.</p>
     pub fn default_version(mut self, input: bool) -> Self {
@@ -117,7 +119,8 @@ impl ResourceSharePermissionDetailBuilder {
     }
     /// <p>Specifies whether the version of the permission represented in this structure is the default version for this permission.</p>
     pub fn set_default_version(mut self, input: std::option::Option<bool>) -> Self {
-        self.default_version = input; self
+        self.default_version = input;
+        self
     }
     /// <p>The name of this permission.</p>
     pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -126,7 +129,8 @@ impl ResourceSharePermissionDetailBuilder {
     }
     /// <p>The name of this permission.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input; self
+        self.name = input;
+        self
     }
     /// <p>The resource type to which this permission applies.</p>
     pub fn resource_type(mut self, input: impl Into<std::string::String>) -> Self {
@@ -135,7 +139,8 @@ impl ResourceSharePermissionDetailBuilder {
     }
     /// <p>The resource type to which this permission applies.</p>
     pub fn set_resource_type(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.resource_type = input; self
+        self.resource_type = input;
+        self
     }
     /// <p>The permission's effect and actions in JSON format. The <code>effect</code> indicates whether the specified actions are allowed or denied. The <code>actions</code> list the operations to which the principal is granted or denied access.</p>
     pub fn permission(mut self, input: impl Into<std::string::String>) -> Self {
@@ -144,7 +149,8 @@ impl ResourceSharePermissionDetailBuilder {
     }
     /// <p>The permission's effect and actions in JSON format. The <code>effect</code> indicates whether the specified actions are allowed or denied. The <code>actions</code> list the operations to which the principal is granted or denied access.</p>
     pub fn set_permission(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.permission = input; self
+        self.permission = input;
+        self
     }
     /// <p>The date and time when the permission was created.</p>
     pub fn creation_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -152,8 +158,12 @@ impl ResourceSharePermissionDetailBuilder {
         self
     }
     /// <p>The date and time when the permission was created.</p>
-    pub fn set_creation_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.creation_time = input; self
+    pub fn set_creation_time(
+        mut self,
+        input: std::option::Option<aws_smithy_types::DateTime>,
+    ) -> Self {
+        self.creation_time = input;
+        self
     }
     /// <p>The date and time when the permission was last updated.</p>
     pub fn last_updated_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -161,8 +171,12 @@ impl ResourceSharePermissionDetailBuilder {
         self
     }
     /// <p>The date and time when the permission was last updated.</p>
-    pub fn set_last_updated_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.last_updated_time = input; self
+    pub fn set_last_updated_time(
+        mut self,
+        input: std::option::Option<aws_smithy_types::DateTime>,
+    ) -> Self {
+        self.last_updated_time = input;
+        self
     }
     /// <p>Specifies whether the version of the permission represented in this structure is the default version for all resources of this resource type.</p>
     pub fn is_resource_type_default(mut self, input: bool) -> Self {
@@ -171,30 +185,21 @@ impl ResourceSharePermissionDetailBuilder {
     }
     /// <p>Specifies whether the version of the permission represented in this structure is the default version for all resources of this resource type.</p>
     pub fn set_is_resource_type_default(mut self, input: std::option::Option<bool>) -> Self {
-        self.is_resource_type_default = input; self
+        self.is_resource_type_default = input;
+        self
     }
     /// Consumes the builder and constructs a [`ResourceSharePermissionDetail`](crate::types::ResourceSharePermissionDetail).
     pub fn build(self) -> crate::types::ResourceSharePermissionDetail {
         crate::types::ResourceSharePermissionDetail {
-            arn: self.arn
-            ,
-            version: self.version
-            ,
-            default_version: self.default_version
-            ,
-            name: self.name
-            ,
-            resource_type: self.resource_type
-            ,
-            permission: self.permission
-            ,
-            creation_time: self.creation_time
-            ,
-            last_updated_time: self.last_updated_time
-            ,
-            is_resource_type_default: self.is_resource_type_default
-            ,
+            arn: self.arn,
+            version: self.version,
+            default_version: self.default_version,
+            name: self.name,
+            resource_type: self.resource_type,
+            permission: self.permission,
+            creation_time: self.creation_time,
+            last_updated_time: self.last_updated_time,
+            is_resource_type_default: self.is_resource_type_default,
         }
     }
 }
-

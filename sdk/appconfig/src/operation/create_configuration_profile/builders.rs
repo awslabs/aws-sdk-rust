@@ -4,55 +4,77 @@ pub use crate::operation::create_configuration_profile::_create_configuration_pr
 pub use crate::operation::create_configuration_profile::_create_configuration_profile_input::CreateConfigurationProfileInputBuilder;
 
 /// Fluent builder constructing a request to `CreateConfigurationProfile`.
-/// 
-/// <p>Creates a configuration profile, which is information that enables AppConfig to access the configuration source. Valid configuration sources include the AppConfig hosted configuration store, Amazon Web Services Systems Manager (SSM) documents, SSM Parameter Store parameters, Amazon S3 objects, or any <a href="http://docs.aws.amazon.com/codepipeline/latest/userguide/integrations-action-type.html#integrations-source">integration source action</a> supported by CodePipeline. A configuration profile includes the following information:</p> 
-/// <ul> 
-/// <li> <p>The URI location of the configuration data.</p> </li> 
-/// <li> <p>The Identity and Access Management (IAM) role that provides access to the configuration data.</p> </li> 
-/// <li> <p>A validator for the configuration data. Available validators include either a JSON Schema or an Amazon Web Services Lambda function.</p> </li> 
-/// </ul> 
+///
+/// <p>Creates a configuration profile, which is information that enables AppConfig to access the configuration source. Valid configuration sources include the AppConfig hosted configuration store, Amazon Web Services Systems Manager (SSM) documents, SSM Parameter Store parameters, Amazon S3 objects, or any <a href="http://docs.aws.amazon.com/codepipeline/latest/userguide/integrations-action-type.html#integrations-source">integration source action</a> supported by CodePipeline. A configuration profile includes the following information:</p>
+/// <ul>
+/// <li> <p>The URI location of the configuration data.</p> </li>
+/// <li> <p>The Identity and Access Management (IAM) role that provides access to the configuration data.</p> </li>
+/// <li> <p>A validator for the configuration data. Available validators include either a JSON Schema or an Amazon Web Services Lambda function.</p> </li>
+/// </ul>
 /// <p>For more information, see <a href="http://docs.aws.amazon.com/appconfig/latest/userguide/appconfig-creating-configuration-and-profile.html">Create a Configuration and a Configuration Profile</a> in the <i>AppConfig User Guide</i>.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct CreateConfigurationProfileFluentBuilder {
                 handle: std::sync::Arc<crate::client::Handle>,
                 inner: crate::operation::create_configuration_profile::builders::CreateConfigurationProfileInputBuilder
             }
-impl CreateConfigurationProfileFluentBuilder  {
+impl CreateConfigurationProfileFluentBuilder {
     /// Creates a new `CreateConfigurationProfile`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
-                    /// sent. The operation's inner [http::Request] can be modified as well.
-                    pub async fn customize(self) -> std::result::Result<
-                        crate::client::customize::CustomizableOperation<crate::operation::create_configuration_profile::CreateConfigurationProfile, aws_http::retry::AwsResponseRetryClassifier,>,
-                        aws_smithy_http::result::SdkError<crate::operation::create_configuration_profile::CreateConfigurationProfileError>
-                    >  {
-                        let handle = self.handle.clone();
-                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-                    }
-    
-                    /// Sends the request and returns the response.
-                    ///
-                    /// If an error occurs, an `SdkError` will be returned with additional details that
-                    /// can be matched against.
-                    ///
-                    /// By default, any retryable failures will be retried twice. Retry behavior
-                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                    /// set when configuring the client.
-                    pub async fn send(self) -> std::result::Result<crate::operation::create_configuration_profile::CreateConfigurationProfileOutput, aws_smithy_http::result::SdkError<crate::operation::create_configuration_profile::CreateConfigurationProfileError>>
-                     {
-                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&self.handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        self.handle.client.call(op).await
-                    }
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle,
+            inner: Default::default(),
+        }
+    }
+
+    /// Consume this builder, creating a customizable operation that can be modified before being
+    /// sent. The operation's inner [http::Request] can be modified as well.
+    pub async fn customize(
+        self,
+    ) -> std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::create_configuration_profile::CreateConfigurationProfile,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::result::SdkError<
+            crate::operation::create_configuration_profile::CreateConfigurationProfileError,
+        >,
+    > {
+        let handle = self.handle.clone();
+        let operation = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+    }
+
+    /// Sends the request and returns the response.
+    ///
+    /// If an error occurs, an `SdkError` will be returned with additional details that
+    /// can be matched against.
+    ///
+    /// By default, any retryable failures will be retried twice. Retry behavior
+    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+    /// set when configuring the client.
+    pub async fn send(
+        self,
+    ) -> std::result::Result<
+        crate::operation::create_configuration_profile::CreateConfigurationProfileOutput,
+        aws_smithy_http::result::SdkError<
+            crate::operation::create_configuration_profile::CreateConfigurationProfileError,
+        >,
+    > {
+        let op = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&self.handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        self.handle.client.call(op).await
+    }
     /// <p>The application ID.</p>
     pub fn application_id(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.application_id(input.into());
@@ -88,7 +110,7 @@ impl CreateConfigurationProfileFluentBuilder  {
     /// <parameter_name></parameter_name></code> or the ARN. For an Amazon S3 object, specify the URI in the following format: <code>s3://
     /// <bucket>
     /// /
-    /// <objectkey> 
+    /// <objectkey>
     /// </objectkey>
     /// </bucket></code>. Here is an example: <code>s3://my-bucket/my-app/us-east-1/my-config.json</code> </p>
     pub fn location_uri(mut self, input: impl Into<std::string::String>) -> Self {
@@ -100,24 +122,27 @@ impl CreateConfigurationProfileFluentBuilder  {
     /// <parameter_name></parameter_name></code> or the ARN. For an Amazon S3 object, specify the URI in the following format: <code>s3://
     /// <bucket>
     /// /
-    /// <objectkey> 
+    /// <objectkey>
     /// </objectkey>
     /// </bucket></code>. Here is an example: <code>s3://my-bucket/my-app/us-east-1/my-config.json</code> </p>
     pub fn set_location_uri(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.inner = self.inner.set_location_uri(input);
         self
     }
-    /// <p>The ARN of an IAM role with permission to access the configuration at the specified <code>LocationUri</code>.</p> <important> 
-    /// <p>A retrieval role ARN is not required for configurations stored in the AppConfig hosted configuration store. It is required for all other sources that store your configuration. </p> 
+    /// <p>The ARN of an IAM role with permission to access the configuration at the specified <code>LocationUri</code>.</p> <important>
+    /// <p>A retrieval role ARN is not required for configurations stored in the AppConfig hosted configuration store. It is required for all other sources that store your configuration. </p>
     /// </important>
     pub fn retrieval_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.retrieval_role_arn(input.into());
         self
     }
-    /// <p>The ARN of an IAM role with permission to access the configuration at the specified <code>LocationUri</code>.</p> <important> 
-    /// <p>A retrieval role ARN is not required for configurations stored in the AppConfig hosted configuration store. It is required for all other sources that store your configuration. </p> 
+    /// <p>The ARN of an IAM role with permission to access the configuration at the specified <code>LocationUri</code>.</p> <important>
+    /// <p>A retrieval role ARN is not required for configurations stored in the AppConfig hosted configuration store. It is required for all other sources that store your configuration. </p>
     /// </important>
-    pub fn set_retrieval_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_retrieval_role_arn(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_retrieval_role_arn(input);
         self
     }
@@ -131,7 +156,10 @@ impl CreateConfigurationProfileFluentBuilder  {
         self
     }
     /// <p>A list of methods for validating the configuration.</p>
-    pub fn set_validators(mut self, input: std::option::Option<std::vec::Vec<crate::types::Validator>>) -> Self {
+    pub fn set_validators(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::Validator>>,
+    ) -> Self {
         self.inner = self.inner.set_validators(input);
         self
     }
@@ -140,28 +168,36 @@ impl CreateConfigurationProfileFluentBuilder  {
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// <p>Metadata to assign to the configuration profile. Tags help organize and categorize your AppConfig resources. Each tag consists of a key and an optional value, both of which you define.</p>
-    pub fn tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
+    pub fn tags(
+        mut self,
+        k: impl Into<std::string::String>,
+        v: impl Into<std::string::String>,
+    ) -> Self {
         self.inner = self.inner.tags(k.into(), v.into());
         self
     }
     /// <p>Metadata to assign to the configuration profile. Tags help organize and categorize your AppConfig resources. Each tag consists of a key and an optional value, both of which you define.</p>
-    pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+    pub fn set_tags(
+        mut self,
+        input: std::option::Option<
+            std::collections::HashMap<std::string::String, std::string::String>,
+        >,
+    ) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }
-    /// <p>The type of configurations contained in the profile. AppConfig supports <code>feature flags</code> and <code>freeform</code> configurations. We recommend you create feature flag configurations to enable or disable new features and freeform configurations to distribute configurations to an application. When calling this API, enter one of the following values for <code>Type</code>:</p> 
-    /// <p> <code>AWS.AppConfig.FeatureFlags</code> </p> 
+    /// <p>The type of configurations contained in the profile. AppConfig supports <code>feature flags</code> and <code>freeform</code> configurations. We recommend you create feature flag configurations to enable or disable new features and freeform configurations to distribute configurations to an application. When calling this API, enter one of the following values for <code>Type</code>:</p>
+    /// <p> <code>AWS.AppConfig.FeatureFlags</code> </p>
     /// <p> <code>AWS.Freeform</code> </p>
     pub fn r#type(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.r#type(input.into());
         self
     }
-    /// <p>The type of configurations contained in the profile. AppConfig supports <code>feature flags</code> and <code>freeform</code> configurations. We recommend you create feature flag configurations to enable or disable new features and freeform configurations to distribute configurations to an application. When calling this API, enter one of the following values for <code>Type</code>:</p> 
-    /// <p> <code>AWS.AppConfig.FeatureFlags</code> </p> 
+    /// <p>The type of configurations contained in the profile. AppConfig supports <code>feature flags</code> and <code>freeform</code> configurations. We recommend you create feature flag configurations to enable or disable new features and freeform configurations to distribute configurations to an application. When calling this API, enter one of the following values for <code>Type</code>:</p>
+    /// <p> <code>AWS.AppConfig.FeatureFlags</code> </p>
     /// <p> <code>AWS.Freeform</code> </p>
     pub fn set_type(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.inner = self.inner.set_type(input);
         self
     }
 }
-

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteTransitGatewayOutput  {
+pub struct DeleteTransitGatewayOutput {
     /// <p>Information about the deleted transit gateway.</p>
     #[doc(hidden)]
     pub transit_gateway: std::option::Option<crate::types::TransitGateway>,
@@ -10,18 +10,19 @@ pub struct DeleteTransitGatewayOutput  {
 }
 impl DeleteTransitGatewayOutput {
     /// <p>Information about the deleted transit gateway.</p>
-    pub fn transit_gateway(&self) -> std::option::Option<& crate::types::TransitGateway> {
+    pub fn transit_gateway(&self) -> std::option::Option<&crate::types::TransitGateway> {
         self.transit_gateway.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for DeleteTransitGatewayOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl DeleteTransitGatewayOutput {
     /// Creates a new builder-style object to manufacture [`DeleteTransitGatewayOutput`](crate::operation::delete_transit_gateway::DeleteTransitGatewayOutput).
-    pub fn builder() -> crate::operation::delete_transit_gateway::builders::DeleteTransitGatewayOutputBuilder {
+    pub fn builder(
+    ) -> crate::operation::delete_transit_gateway::builders::DeleteTransitGatewayOutputBuilder {
         crate::operation::delete_transit_gateway::builders::DeleteTransitGatewayOutputBuilder::default()
     }
 }
@@ -40,25 +41,27 @@ impl DeleteTransitGatewayOutputBuilder {
         self
     }
     /// <p>Information about the deleted transit gateway.</p>
-    pub fn set_transit_gateway(mut self, input: std::option::Option<crate::types::TransitGateway>) -> Self {
-        self.transit_gateway = input; self
+    pub fn set_transit_gateway(
+        mut self,
+        input: std::option::Option<crate::types::TransitGateway>,
+    ) -> Self {
+        self.transit_gateway = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`DeleteTransitGatewayOutput`](crate::operation::delete_transit_gateway::DeleteTransitGatewayOutput).
     pub fn build(self) -> crate::operation::delete_transit_gateway::DeleteTransitGatewayOutput {
         crate::operation::delete_transit_gateway::DeleteTransitGatewayOutput {
-            transit_gateway: self.transit_gateway
-            ,
+            transit_gateway: self.transit_gateway,
             _request_id: self._request_id,
         }
     }
 }
-

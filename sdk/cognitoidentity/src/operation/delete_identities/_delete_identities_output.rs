@@ -3,26 +3,30 @@
 /// <p>Returned in response to a successful <code>DeleteIdentities</code> operation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteIdentitiesOutput  {
+pub struct DeleteIdentitiesOutput {
     /// <p>An array of UnprocessedIdentityId objects, each of which contains an ErrorCode and IdentityId.</p>
     #[doc(hidden)]
-    pub unprocessed_identity_ids: std::option::Option<std::vec::Vec<crate::types::UnprocessedIdentityId>>,
+    pub unprocessed_identity_ids:
+        std::option::Option<std::vec::Vec<crate::types::UnprocessedIdentityId>>,
     _request_id: Option<String>,
 }
 impl DeleteIdentitiesOutput {
     /// <p>An array of UnprocessedIdentityId objects, each of which contains an ErrorCode and IdentityId.</p>
-    pub fn unprocessed_identity_ids(&self) -> std::option::Option<& [crate::types::UnprocessedIdentityId]> {
+    pub fn unprocessed_identity_ids(
+        &self,
+    ) -> std::option::Option<&[crate::types::UnprocessedIdentityId]> {
         self.unprocessed_identity_ids.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for DeleteIdentitiesOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl DeleteIdentitiesOutput {
     /// Creates a new builder-style object to manufacture [`DeleteIdentitiesOutput`](crate::operation::delete_identities::DeleteIdentitiesOutput).
-    pub fn builder() -> crate::operation::delete_identities::builders::DeleteIdentitiesOutputBuilder {
+    pub fn builder() -> crate::operation::delete_identities::builders::DeleteIdentitiesOutputBuilder
+    {
         crate::operation::delete_identities::builders::DeleteIdentitiesOutputBuilder::default()
     }
 }
@@ -31,7 +35,8 @@ impl DeleteIdentitiesOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct DeleteIdentitiesOutputBuilder {
-    pub(crate) unprocessed_identity_ids: std::option::Option<std::vec::Vec<crate::types::UnprocessedIdentityId>>,
+    pub(crate) unprocessed_identity_ids:
+        std::option::Option<std::vec::Vec<crate::types::UnprocessedIdentityId>>,
     _request_id: Option<String>,
 }
 impl DeleteIdentitiesOutputBuilder {
@@ -42,30 +47,32 @@ impl DeleteIdentitiesOutputBuilder {
     /// <p>An array of UnprocessedIdentityId objects, each of which contains an ErrorCode and IdentityId.</p>
     pub fn unprocessed_identity_ids(mut self, input: crate::types::UnprocessedIdentityId) -> Self {
         let mut v = self.unprocessed_identity_ids.unwrap_or_default();
-                        v.push(input);
-                        self.unprocessed_identity_ids = Some(v);
-                        self
+        v.push(input);
+        self.unprocessed_identity_ids = Some(v);
+        self
     }
     /// <p>An array of UnprocessedIdentityId objects, each of which contains an ErrorCode and IdentityId.</p>
-    pub fn set_unprocessed_identity_ids(mut self, input: std::option::Option<std::vec::Vec<crate::types::UnprocessedIdentityId>>) -> Self {
-        self.unprocessed_identity_ids = input; self
+    pub fn set_unprocessed_identity_ids(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::UnprocessedIdentityId>>,
+    ) -> Self {
+        self.unprocessed_identity_ids = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`DeleteIdentitiesOutput`](crate::operation::delete_identities::DeleteIdentitiesOutput).
     pub fn build(self) -> crate::operation::delete_identities::DeleteIdentitiesOutput {
         crate::operation::delete_identities::DeleteIdentitiesOutput {
-            unprocessed_identity_ids: self.unprocessed_identity_ids
-            ,
+            unprocessed_identity_ids: self.unprocessed_identity_ids,
             _request_id: self._request_id,
         }
     }
 }
-

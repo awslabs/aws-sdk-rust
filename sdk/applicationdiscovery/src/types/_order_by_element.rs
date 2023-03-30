@@ -3,7 +3,7 @@
 /// <p>A field and direction for ordered output.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct OrderByElement  {
+pub struct OrderByElement {
     /// <p>The field on which to order.</p>
     #[doc(hidden)]
     pub field_name: std::option::Option<std::string::String>,
@@ -13,11 +13,11 @@ pub struct OrderByElement  {
 }
 impl OrderByElement {
     /// <p>The field on which to order.</p>
-    pub fn field_name(&self) -> std::option::Option<& str> {
+    pub fn field_name(&self) -> std::option::Option<&str> {
         self.field_name.as_deref()
     }
     /// <p>Ordering direction.</p>
-    pub fn sort_order(&self) -> std::option::Option<& crate::types::OrderString> {
+    pub fn sort_order(&self) -> std::option::Option<&crate::types::OrderString> {
         self.sort_order.as_ref()
     }
 }
@@ -43,7 +43,8 @@ impl OrderByElementBuilder {
     }
     /// <p>The field on which to order.</p>
     pub fn set_field_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.field_name = input; self
+        self.field_name = input;
+        self
     }
     /// <p>Ordering direction.</p>
     pub fn sort_order(mut self, input: crate::types::OrderString) -> Self {
@@ -52,16 +53,14 @@ impl OrderByElementBuilder {
     }
     /// <p>Ordering direction.</p>
     pub fn set_sort_order(mut self, input: std::option::Option<crate::types::OrderString>) -> Self {
-        self.sort_order = input; self
+        self.sort_order = input;
+        self
     }
     /// Consumes the builder and constructs a [`OrderByElement`](crate::types::OrderByElement).
     pub fn build(self) -> crate::types::OrderByElement {
         crate::types::OrderByElement {
-            field_name: self.field_name
-            ,
-            sort_order: self.sort_order
-            ,
+            field_name: self.field_name,
+            sort_order: self.sort_order,
         }
     }
 }
-

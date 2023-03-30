@@ -4,58 +4,80 @@ pub use crate::operation::create_customer_gateway::_create_customer_gateway_outp
 pub use crate::operation::create_customer_gateway::_create_customer_gateway_input::CreateCustomerGatewayInputBuilder;
 
 /// Fluent builder constructing a request to `CreateCustomerGateway`.
-/// 
-/// <p>Provides information to Amazon Web Services about your customer gateway device. The customer gateway device is the appliance at your end of the VPN connection. You must provide the IP address of the customer gateway device’s external interface. The IP address must be static and can be behind a device performing network address translation (NAT).</p> 
-/// <p>For devices that use Border Gateway Protocol (BGP), you can also provide the device's BGP Autonomous System Number (ASN). You can use an existing ASN assigned to your network. If you don't have an ASN already, you can use a private ASN. For more information, see <a href="https://docs.aws.amazon.com/vpn/latest/s2svpn/cgw-options.html">Customer gateway options for your Site-to-Site VPN connection</a> in the <i>Amazon Web Services Site-to-Site VPN User Guide</i>.</p> 
+///
+/// <p>Provides information to Amazon Web Services about your customer gateway device. The customer gateway device is the appliance at your end of the VPN connection. You must provide the IP address of the customer gateway device’s external interface. The IP address must be static and can be behind a device performing network address translation (NAT).</p>
+/// <p>For devices that use Border Gateway Protocol (BGP), you can also provide the device's BGP Autonomous System Number (ASN). You can use an existing ASN assigned to your network. If you don't have an ASN already, you can use a private ASN. For more information, see <a href="https://docs.aws.amazon.com/vpn/latest/s2svpn/cgw-options.html">Customer gateway options for your Site-to-Site VPN connection</a> in the <i>Amazon Web Services Site-to-Site VPN User Guide</i>.</p>
 /// <p>To create more than one customer gateway with the same VPN type, IP address, and BGP ASN, specify a unique device name for each customer gateway. An identical request returns information about the existing customer gateway; it doesn't create a new customer gateway.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct CreateCustomerGatewayFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::create_customer_gateway::builders::CreateCustomerGatewayInputBuilder
-            }
-impl CreateCustomerGatewayFluentBuilder  {
+    handle: std::sync::Arc<crate::client::Handle>,
+    inner: crate::operation::create_customer_gateway::builders::CreateCustomerGatewayInputBuilder,
+}
+impl CreateCustomerGatewayFluentBuilder {
     /// Creates a new `CreateCustomerGateway`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
-                    /// sent. The operation's inner [http::Request] can be modified as well.
-                    pub async fn customize(self) -> std::result::Result<
-                        crate::client::customize::CustomizableOperation<crate::operation::create_customer_gateway::CreateCustomerGateway, aws_http::retry::AwsResponseRetryClassifier,>,
-                        aws_smithy_http::result::SdkError<crate::operation::create_customer_gateway::CreateCustomerGatewayError>
-                    >  {
-                        let handle = self.handle.clone();
-                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-                    }
-    
-                    /// Sends the request and returns the response.
-                    ///
-                    /// If an error occurs, an `SdkError` will be returned with additional details that
-                    /// can be matched against.
-                    ///
-                    /// By default, any retryable failures will be retried twice. Retry behavior
-                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                    /// set when configuring the client.
-                    pub async fn send(self) -> std::result::Result<crate::operation::create_customer_gateway::CreateCustomerGatewayOutput, aws_smithy_http::result::SdkError<crate::operation::create_customer_gateway::CreateCustomerGatewayError>>
-                     {
-                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&self.handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        self.handle.client.call(op).await
-                    }
-    /// <p>For devices that support BGP, the customer gateway's BGP ASN.</p> 
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle,
+            inner: Default::default(),
+        }
+    }
+
+    /// Consume this builder, creating a customizable operation that can be modified before being
+    /// sent. The operation's inner [http::Request] can be modified as well.
+    pub async fn customize(
+        self,
+    ) -> std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::create_customer_gateway::CreateCustomerGateway,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::result::SdkError<
+            crate::operation::create_customer_gateway::CreateCustomerGatewayError,
+        >,
+    > {
+        let handle = self.handle.clone();
+        let operation = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+    }
+
+    /// Sends the request and returns the response.
+    ///
+    /// If an error occurs, an `SdkError` will be returned with additional details that
+    /// can be matched against.
+    ///
+    /// By default, any retryable failures will be retried twice. Retry behavior
+    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+    /// set when configuring the client.
+    pub async fn send(
+        self,
+    ) -> std::result::Result<
+        crate::operation::create_customer_gateway::CreateCustomerGatewayOutput,
+        aws_smithy_http::result::SdkError<
+            crate::operation::create_customer_gateway::CreateCustomerGatewayError,
+        >,
+    > {
+        let op = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&self.handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        self.handle.client.call(op).await
+    }
+    /// <p>For devices that support BGP, the customer gateway's BGP ASN.</p>
     /// <p>Default: 65000</p>
     pub fn bgp_asn(mut self, input: i32) -> Self {
         self.inner = self.inner.bgp_asn(input);
         self
     }
-    /// <p>For devices that support BGP, the customer gateway's BGP ASN.</p> 
+    /// <p>For devices that support BGP, the customer gateway's BGP ASN.</p>
     /// <p>Default: 65000</p>
     pub fn set_bgp_asn(mut self, input: std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_bgp_asn(input);
@@ -101,17 +123,20 @@ impl CreateCustomerGatewayFluentBuilder  {
         self
     }
     /// <p>The tags to apply to the customer gateway.</p>
-    pub fn set_tag_specifications(mut self, input: std::option::Option<std::vec::Vec<crate::types::TagSpecification>>) -> Self {
+    pub fn set_tag_specifications(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::TagSpecification>>,
+    ) -> Self {
         self.inner = self.inner.set_tag_specifications(input);
         self
     }
-    /// <p>A name for the customer gateway device.</p> 
+    /// <p>A name for the customer gateway device.</p>
     /// <p>Length Constraints: Up to 255 characters.</p>
     pub fn device_name(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.device_name(input.into());
         self
     }
-    /// <p>A name for the customer gateway device.</p> 
+    /// <p>A name for the customer gateway device.</p>
     /// <p>Length Constraints: Up to 255 characters.</p>
     pub fn set_device_name(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.inner = self.inner.set_device_name(input);
@@ -138,4 +163,3 @@ impl CreateCustomerGatewayFluentBuilder  {
         self
     }
 }
-

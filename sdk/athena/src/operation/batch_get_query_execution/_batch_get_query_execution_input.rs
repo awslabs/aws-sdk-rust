@@ -3,20 +3,22 @@
 /// <p>Contains an array of query execution IDs.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct BatchGetQueryExecutionInput  {
+pub struct BatchGetQueryExecutionInput {
     /// <p>An array of query execution IDs.</p>
     #[doc(hidden)]
     pub query_execution_ids: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl BatchGetQueryExecutionInput {
     /// <p>An array of query execution IDs.</p>
-    pub fn query_execution_ids(&self) -> std::option::Option<& [std::string::String]> {
+    pub fn query_execution_ids(&self) -> std::option::Option<&[std::string::String]> {
         self.query_execution_ids.as_deref()
     }
 }
 impl BatchGetQueryExecutionInput {
     /// Creates a new builder-style object to manufacture [`BatchGetQueryExecutionInput`](crate::operation::batch_get_query_execution::BatchGetQueryExecutionInput).
-    pub fn builder() -> crate::operation::batch_get_query_execution::builders::BatchGetQueryExecutionInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::batch_get_query_execution::builders::BatchGetQueryExecutionInputBuilder
+    {
         crate::operation::batch_get_query_execution::builders::BatchGetQueryExecutionInputBuilder::default()
     }
 }
@@ -35,22 +37,29 @@ impl BatchGetQueryExecutionInputBuilder {
     /// <p>An array of query execution IDs.</p>
     pub fn query_execution_ids(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.query_execution_ids.unwrap_or_default();
-                        v.push(input.into());
-                        self.query_execution_ids = Some(v);
-                        self
+        v.push(input.into());
+        self.query_execution_ids = Some(v);
+        self
     }
     /// <p>An array of query execution IDs.</p>
-    pub fn set_query_execution_ids(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-        self.query_execution_ids = input; self
+    pub fn set_query_execution_ids(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
+        self.query_execution_ids = input;
+        self
     }
     /// Consumes the builder and constructs a [`BatchGetQueryExecutionInput`](crate::operation::batch_get_query_execution::BatchGetQueryExecutionInput).
-    pub fn build(self) -> Result<crate::operation::batch_get_query_execution::BatchGetQueryExecutionInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::batch_get_query_execution::BatchGetQueryExecutionInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::batch_get_query_execution::BatchGetQueryExecutionInput {
-                query_execution_ids: self.query_execution_ids
-                ,
-            }
+                query_execution_ids: self.query_execution_ids,
+            },
         )
     }
 }
-

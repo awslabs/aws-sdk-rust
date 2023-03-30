@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetVerifiedAccessEndpointPolicyInput  {
+pub struct GetVerifiedAccessEndpointPolicyInput {
     /// <p>The ID of the Amazon Web Services Verified Access endpoint.</p>
     #[doc(hidden)]
     pub verified_access_endpoint_id: std::option::Option<std::string::String>,
@@ -12,7 +12,7 @@ pub struct GetVerifiedAccessEndpointPolicyInput  {
 }
 impl GetVerifiedAccessEndpointPolicyInput {
     /// <p>The ID of the Amazon Web Services Verified Access endpoint.</p>
-    pub fn verified_access_endpoint_id(&self) -> std::option::Option<& str> {
+    pub fn verified_access_endpoint_id(&self) -> std::option::Option<&str> {
         self.verified_access_endpoint_id.as_deref()
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
@@ -22,7 +22,7 @@ impl GetVerifiedAccessEndpointPolicyInput {
 }
 impl GetVerifiedAccessEndpointPolicyInput {
     /// Creates a new builder-style object to manufacture [`GetVerifiedAccessEndpointPolicyInput`](crate::operation::get_verified_access_endpoint_policy::GetVerifiedAccessEndpointPolicyInput).
-    pub fn builder() -> crate::operation::get_verified_access_endpoint_policy::builders::GetVerifiedAccessEndpointPolicyInputBuilder {
+    pub fn builder() -> crate::operation::get_verified_access_endpoint_policy::builders::GetVerifiedAccessEndpointPolicyInputBuilder{
         crate::operation::get_verified_access_endpoint_policy::builders::GetVerifiedAccessEndpointPolicyInputBuilder::default()
     }
 }
@@ -41,8 +41,12 @@ impl GetVerifiedAccessEndpointPolicyInputBuilder {
         self
     }
     /// <p>The ID of the Amazon Web Services Verified Access endpoint.</p>
-    pub fn set_verified_access_endpoint_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.verified_access_endpoint_id = input; self
+    pub fn set_verified_access_endpoint_id(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.verified_access_endpoint_id = input;
+        self
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn dry_run(mut self, input: bool) -> Self {
@@ -51,10 +55,16 @@ impl GetVerifiedAccessEndpointPolicyInputBuilder {
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn set_dry_run(mut self, input: std::option::Option<bool>) -> Self {
-        self.dry_run = input; self
+        self.dry_run = input;
+        self
     }
     /// Consumes the builder and constructs a [`GetVerifiedAccessEndpointPolicyInput`](crate::operation::get_verified_access_endpoint_policy::GetVerifiedAccessEndpointPolicyInput).
-    pub fn build(self) -> Result<crate::operation::get_verified_access_endpoint_policy::GetVerifiedAccessEndpointPolicyInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::get_verified_access_endpoint_policy::GetVerifiedAccessEndpointPolicyInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::get_verified_access_endpoint_policy::GetVerifiedAccessEndpointPolicyInput {
                 verified_access_endpoint_id: self.verified_access_endpoint_id
@@ -65,4 +75,3 @@ impl GetVerifiedAccessEndpointPolicyInputBuilder {
         )
     }
 }
-

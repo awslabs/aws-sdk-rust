@@ -3,7 +3,7 @@
 /// <p>Summarizes the resource sets used in a policy.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ResourceSetSummary  {
+pub struct ResourceSetSummary {
     /// <p>A unique identifier for the resource set. This ID is returned in the responses to create and list commands. You provide it to operations like update and delete.</p>
     #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
@@ -19,19 +19,19 @@ pub struct ResourceSetSummary  {
 }
 impl ResourceSetSummary {
     /// <p>A unique identifier for the resource set. This ID is returned in the responses to create and list commands. You provide it to operations like update and delete.</p>
-    pub fn id(&self) -> std::option::Option<& str> {
+    pub fn id(&self) -> std::option::Option<&str> {
         self.id.as_deref()
     }
     /// <p>The descriptive name of the resource set. You can't change the name of a resource set after you create it.</p>
-    pub fn name(&self) -> std::option::Option<& str> {
+    pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>A description of the resource set.</p>
-    pub fn description(&self) -> std::option::Option<& str> {
+    pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
     /// <p>The last time that the resource set was changed.</p>
-    pub fn last_update_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
+    pub fn last_update_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_update_time.as_ref()
     }
 }
@@ -59,7 +59,8 @@ impl ResourceSetSummaryBuilder {
     }
     /// <p>A unique identifier for the resource set. This ID is returned in the responses to create and list commands. You provide it to operations like update and delete.</p>
     pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.id = input; self
+        self.id = input;
+        self
     }
     /// <p>The descriptive name of the resource set. You can't change the name of a resource set after you create it.</p>
     pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -68,7 +69,8 @@ impl ResourceSetSummaryBuilder {
     }
     /// <p>The descriptive name of the resource set. You can't change the name of a resource set after you create it.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input; self
+        self.name = input;
+        self
     }
     /// <p>A description of the resource set.</p>
     pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -77,7 +79,8 @@ impl ResourceSetSummaryBuilder {
     }
     /// <p>A description of the resource set.</p>
     pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.description = input; self
+        self.description = input;
+        self
     }
     /// <p>The last time that the resource set was changed.</p>
     pub fn last_update_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -85,21 +88,20 @@ impl ResourceSetSummaryBuilder {
         self
     }
     /// <p>The last time that the resource set was changed.</p>
-    pub fn set_last_update_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.last_update_time = input; self
+    pub fn set_last_update_time(
+        mut self,
+        input: std::option::Option<aws_smithy_types::DateTime>,
+    ) -> Self {
+        self.last_update_time = input;
+        self
     }
     /// Consumes the builder and constructs a [`ResourceSetSummary`](crate::types::ResourceSetSummary).
     pub fn build(self) -> crate::types::ResourceSetSummary {
         crate::types::ResourceSetSummary {
-            id: self.id
-            ,
-            name: self.name
-            ,
-            description: self.description
-            ,
-            last_update_time: self.last_update_time
-            ,
+            id: self.id,
+            name: self.name,
+            description: self.description,
+            last_update_time: self.last_update_time,
         }
     }
 }
-

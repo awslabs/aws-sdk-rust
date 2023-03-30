@@ -96,4 +96,3 @@ pub mod update_recovery_group;
 
 /// Types for the `UpdateResourceSet` operation.
 pub mod update_resource_set;
-

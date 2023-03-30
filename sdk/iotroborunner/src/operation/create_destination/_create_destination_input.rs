@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateDestinationInput  {
+pub struct CreateDestinationInput {
     /// Token used for detecting replayed requests. Replayed requests will not be performed multiple times.
     #[doc(hidden)]
     pub client_token: std::option::Option<std::string::String>,
@@ -21,29 +21,30 @@ pub struct CreateDestinationInput  {
 }
 impl CreateDestinationInput {
     /// Token used for detecting replayed requests. Replayed requests will not be performed multiple times.
-    pub fn client_token(&self) -> std::option::Option<& str> {
+    pub fn client_token(&self) -> std::option::Option<&str> {
         self.client_token.as_deref()
     }
     /// Human friendly name of the resource.
-    pub fn name(&self) -> std::option::Option<& str> {
+    pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
     /// Site ARN.
-    pub fn site(&self) -> std::option::Option<& str> {
+    pub fn site(&self) -> std::option::Option<&str> {
         self.site.as_deref()
     }
     /// The state of the destination. Default used if not specified.
-    pub fn state(&self) -> std::option::Option<& crate::types::DestinationState> {
+    pub fn state(&self) -> std::option::Option<&crate::types::DestinationState> {
         self.state.as_ref()
     }
     /// JSON document containing additional fixed properties regarding the destination
-    pub fn additional_fixed_properties(&self) -> std::option::Option<& str> {
+    pub fn additional_fixed_properties(&self) -> std::option::Option<&str> {
         self.additional_fixed_properties.as_deref()
     }
 }
 impl CreateDestinationInput {
     /// Creates a new builder-style object to manufacture [`CreateDestinationInput`](crate::operation::create_destination::CreateDestinationInput).
-    pub fn builder() -> crate::operation::create_destination::builders::CreateDestinationInputBuilder {
+    pub fn builder() -> crate::operation::create_destination::builders::CreateDestinationInputBuilder
+    {
         crate::operation::create_destination::builders::CreateDestinationInputBuilder::default()
     }
 }
@@ -66,7 +67,8 @@ impl CreateDestinationInputBuilder {
     }
     /// Token used for detecting replayed requests. Replayed requests will not be performed multiple times.
     pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.client_token = input; self
+        self.client_token = input;
+        self
     }
     /// Human friendly name of the resource.
     pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -75,7 +77,8 @@ impl CreateDestinationInputBuilder {
     }
     /// Human friendly name of the resource.
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input; self
+        self.name = input;
+        self
     }
     /// Site ARN.
     pub fn site(mut self, input: impl Into<std::string::String>) -> Self {
@@ -84,7 +87,8 @@ impl CreateDestinationInputBuilder {
     }
     /// Site ARN.
     pub fn set_site(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.site = input; self
+        self.site = input;
+        self
     }
     /// The state of the destination. Default used if not specified.
     pub fn state(mut self, input: crate::types::DestinationState) -> Self {
@@ -93,7 +97,8 @@ impl CreateDestinationInputBuilder {
     }
     /// The state of the destination. Default used if not specified.
     pub fn set_state(mut self, input: std::option::Option<crate::types::DestinationState>) -> Self {
-        self.state = input; self
+        self.state = input;
+        self
     }
     /// JSON document containing additional fixed properties regarding the destination
     pub fn additional_fixed_properties(mut self, input: impl Into<std::string::String>) -> Self {
@@ -101,25 +106,28 @@ impl CreateDestinationInputBuilder {
         self
     }
     /// JSON document containing additional fixed properties regarding the destination
-    pub fn set_additional_fixed_properties(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.additional_fixed_properties = input; self
+    pub fn set_additional_fixed_properties(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.additional_fixed_properties = input;
+        self
     }
     /// Consumes the builder and constructs a [`CreateDestinationInput`](crate::operation::create_destination::CreateDestinationInput).
-    pub fn build(self) -> Result<crate::operation::create_destination::CreateDestinationInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::create_destination::CreateDestinationInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::create_destination::CreateDestinationInput {
-                client_token: self.client_token
-                ,
-                name: self.name
-                ,
-                site: self.site
-                ,
-                state: self.state
-                ,
-                additional_fixed_properties: self.additional_fixed_properties
-                ,
-            }
+                client_token: self.client_token,
+                name: self.name,
+                site: self.site,
+                state: self.state,
+                additional_fixed_properties: self.additional_fixed_properties,
+            },
         )
     }
 }
-

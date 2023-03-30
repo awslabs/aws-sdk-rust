@@ -3,6 +3,8 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
+//! Code for rate-limiting smithy clients.
+
 pub mod error;
 pub mod token;
 pub mod token_bucket;

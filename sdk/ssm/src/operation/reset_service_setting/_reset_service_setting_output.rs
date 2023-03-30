@@ -3,7 +3,7 @@
 /// <p>The result body of the ResetServiceSetting API operation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ResetServiceSettingOutput  {
+pub struct ResetServiceSettingOutput {
     /// <p>The current, effective service setting after calling the ResetServiceSetting API operation.</p>
     #[doc(hidden)]
     pub service_setting: std::option::Option<crate::types::ServiceSetting>,
@@ -11,19 +11,21 @@ pub struct ResetServiceSettingOutput  {
 }
 impl ResetServiceSettingOutput {
     /// <p>The current, effective service setting after calling the ResetServiceSetting API operation.</p>
-    pub fn service_setting(&self) -> std::option::Option<& crate::types::ServiceSetting> {
+    pub fn service_setting(&self) -> std::option::Option<&crate::types::ServiceSetting> {
         self.service_setting.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for ResetServiceSettingOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl ResetServiceSettingOutput {
     /// Creates a new builder-style object to manufacture [`ResetServiceSettingOutput`](crate::operation::reset_service_setting::ResetServiceSettingOutput).
-    pub fn builder() -> crate::operation::reset_service_setting::builders::ResetServiceSettingOutputBuilder {
-        crate::operation::reset_service_setting::builders::ResetServiceSettingOutputBuilder::default()
+    pub fn builder(
+    ) -> crate::operation::reset_service_setting::builders::ResetServiceSettingOutputBuilder {
+        crate::operation::reset_service_setting::builders::ResetServiceSettingOutputBuilder::default(
+        )
     }
 }
 
@@ -41,25 +43,27 @@ impl ResetServiceSettingOutputBuilder {
         self
     }
     /// <p>The current, effective service setting after calling the ResetServiceSetting API operation.</p>
-    pub fn set_service_setting(mut self, input: std::option::Option<crate::types::ServiceSetting>) -> Self {
-        self.service_setting = input; self
+    pub fn set_service_setting(
+        mut self,
+        input: std::option::Option<crate::types::ServiceSetting>,
+    ) -> Self {
+        self.service_setting = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`ResetServiceSettingOutput`](crate::operation::reset_service_setting::ResetServiceSettingOutput).
     pub fn build(self) -> crate::operation::reset_service_setting::ResetServiceSettingOutput {
         crate::operation::reset_service_setting::ResetServiceSettingOutput {
-            service_setting: self.service_setting
-            ,
+            service_setting: self.service_setting,
             _request_id: self._request_id,
         }
     }
 }
-

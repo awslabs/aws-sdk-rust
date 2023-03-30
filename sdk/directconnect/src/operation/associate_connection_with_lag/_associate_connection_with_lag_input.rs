@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AssociateConnectionWithLagInput  {
+pub struct AssociateConnectionWithLagInput {
     /// <p>The ID of the connection.</p>
     #[doc(hidden)]
     pub connection_id: std::option::Option<std::string::String>,
@@ -12,17 +12,17 @@ pub struct AssociateConnectionWithLagInput  {
 }
 impl AssociateConnectionWithLagInput {
     /// <p>The ID of the connection.</p>
-    pub fn connection_id(&self) -> std::option::Option<& str> {
+    pub fn connection_id(&self) -> std::option::Option<&str> {
         self.connection_id.as_deref()
     }
     /// <p>The ID of the LAG with which to associate the connection.</p>
-    pub fn lag_id(&self) -> std::option::Option<& str> {
+    pub fn lag_id(&self) -> std::option::Option<&str> {
         self.lag_id.as_deref()
     }
 }
 impl AssociateConnectionWithLagInput {
     /// Creates a new builder-style object to manufacture [`AssociateConnectionWithLagInput`](crate::operation::associate_connection_with_lag::AssociateConnectionWithLagInput).
-    pub fn builder() -> crate::operation::associate_connection_with_lag::builders::AssociateConnectionWithLagInputBuilder {
+    pub fn builder() -> crate::operation::associate_connection_with_lag::builders::AssociateConnectionWithLagInputBuilder{
         crate::operation::associate_connection_with_lag::builders::AssociateConnectionWithLagInputBuilder::default()
     }
 }
@@ -42,7 +42,8 @@ impl AssociateConnectionWithLagInputBuilder {
     }
     /// <p>The ID of the connection.</p>
     pub fn set_connection_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.connection_id = input; self
+        self.connection_id = input;
+        self
     }
     /// <p>The ID of the LAG with which to associate the connection.</p>
     pub fn lag_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -51,18 +52,21 @@ impl AssociateConnectionWithLagInputBuilder {
     }
     /// <p>The ID of the LAG with which to associate the connection.</p>
     pub fn set_lag_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.lag_id = input; self
+        self.lag_id = input;
+        self
     }
     /// Consumes the builder and constructs a [`AssociateConnectionWithLagInput`](crate::operation::associate_connection_with_lag::AssociateConnectionWithLagInput).
-    pub fn build(self) -> Result<crate::operation::associate_connection_with_lag::AssociateConnectionWithLagInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::associate_connection_with_lag::AssociateConnectionWithLagInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::associate_connection_with_lag::AssociateConnectionWithLagInput {
-                connection_id: self.connection_id
-                ,
-                lag_id: self.lag_id
-                ,
-            }
+                connection_id: self.connection_id,
+                lag_id: self.lag_id,
+            },
         )
     }
 }
-

@@ -3,7 +3,7 @@
 /// <p>Contains the parameters for AttachLoaBalancerToSubnets.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AttachLoadBalancerToSubnetsInput  {
+pub struct AttachLoadBalancerToSubnetsInput {
     /// <p>The name of the load balancer.</p>
     #[doc(hidden)]
     pub load_balancer_name: std::option::Option<std::string::String>,
@@ -13,17 +13,17 @@ pub struct AttachLoadBalancerToSubnetsInput  {
 }
 impl AttachLoadBalancerToSubnetsInput {
     /// <p>The name of the load balancer.</p>
-    pub fn load_balancer_name(&self) -> std::option::Option<& str> {
+    pub fn load_balancer_name(&self) -> std::option::Option<&str> {
         self.load_balancer_name.as_deref()
     }
     /// <p>The IDs of the subnets to add. You can add only one subnet per Availability Zone.</p>
-    pub fn subnets(&self) -> std::option::Option<& [std::string::String]> {
+    pub fn subnets(&self) -> std::option::Option<&[std::string::String]> {
         self.subnets.as_deref()
     }
 }
 impl AttachLoadBalancerToSubnetsInput {
     /// Creates a new builder-style object to manufacture [`AttachLoadBalancerToSubnetsInput`](crate::operation::attach_load_balancer_to_subnets::AttachLoadBalancerToSubnetsInput).
-    pub fn builder() -> crate::operation::attach_load_balancer_to_subnets::builders::AttachLoadBalancerToSubnetsInputBuilder {
+    pub fn builder() -> crate::operation::attach_load_balancer_to_subnets::builders::AttachLoadBalancerToSubnetsInputBuilder{
         crate::operation::attach_load_balancer_to_subnets::builders::AttachLoadBalancerToSubnetsInputBuilder::default()
     }
 }
@@ -42,8 +42,12 @@ impl AttachLoadBalancerToSubnetsInputBuilder {
         self
     }
     /// <p>The name of the load balancer.</p>
-    pub fn set_load_balancer_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.load_balancer_name = input; self
+    pub fn set_load_balancer_name(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.load_balancer_name = input;
+        self
     }
     /// Appends an item to `subnets`.
     ///
@@ -52,24 +56,30 @@ impl AttachLoadBalancerToSubnetsInputBuilder {
     /// <p>The IDs of the subnets to add. You can add only one subnet per Availability Zone.</p>
     pub fn subnets(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.subnets.unwrap_or_default();
-                        v.push(input.into());
-                        self.subnets = Some(v);
-                        self
+        v.push(input.into());
+        self.subnets = Some(v);
+        self
     }
     /// <p>The IDs of the subnets to add. You can add only one subnet per Availability Zone.</p>
-    pub fn set_subnets(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-        self.subnets = input; self
+    pub fn set_subnets(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
+        self.subnets = input;
+        self
     }
     /// Consumes the builder and constructs a [`AttachLoadBalancerToSubnetsInput`](crate::operation::attach_load_balancer_to_subnets::AttachLoadBalancerToSubnetsInput).
-    pub fn build(self) -> Result<crate::operation::attach_load_balancer_to_subnets::AttachLoadBalancerToSubnetsInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::attach_load_balancer_to_subnets::AttachLoadBalancerToSubnetsInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::attach_load_balancer_to_subnets::AttachLoadBalancerToSubnetsInput {
-                load_balancer_name: self.load_balancer_name
-                ,
-                subnets: self.subnets
-                ,
-            }
+                load_balancer_name: self.load_balancer_name,
+                subnets: self.subnets,
+            },
         )
     }
 }
-

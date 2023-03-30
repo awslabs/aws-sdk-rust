@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AddPermissionOutput  {
+pub struct AddPermissionOutput {
     /// <p>The permission statement that's added to the function policy.</p>
     #[doc(hidden)]
     pub statement: std::option::Option<std::string::String>,
@@ -10,15 +10,15 @@ pub struct AddPermissionOutput  {
 }
 impl AddPermissionOutput {
     /// <p>The permission statement that's added to the function policy.</p>
-    pub fn statement(&self) -> std::option::Option<& str> {
+    pub fn statement(&self) -> std::option::Option<&str> {
         self.statement.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for AddPermissionOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl AddPermissionOutput {
     /// Creates a new builder-style object to manufacture [`AddPermissionOutput`](crate::operation::add_permission::AddPermissionOutput).
     pub fn builder() -> crate::operation::add_permission::builders::AddPermissionOutputBuilder {
@@ -41,24 +41,23 @@ impl AddPermissionOutputBuilder {
     }
     /// <p>The permission statement that's added to the function policy.</p>
     pub fn set_statement(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.statement = input; self
+        self.statement = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`AddPermissionOutput`](crate::operation::add_permission::AddPermissionOutput).
     pub fn build(self) -> crate::operation::add_permission::AddPermissionOutput {
         crate::operation::add_permission::AddPermissionOutput {
-            statement: self.statement
-            ,
+            statement: self.statement,
             _request_id: self._request_id,
         }
     }
 }
-

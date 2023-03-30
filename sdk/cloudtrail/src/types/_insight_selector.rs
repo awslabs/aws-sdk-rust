@@ -3,14 +3,14 @@
 /// <p>A JSON string that contains a list of insight types that are logged on a trail.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct InsightSelector  {
+pub struct InsightSelector {
     /// <p>The type of insights to log on a trail. <code>ApiCallRateInsight</code> and <code>ApiErrorRateInsight</code> are valid insight types.</p>
     #[doc(hidden)]
     pub insight_type: std::option::Option<crate::types::InsightType>,
 }
 impl InsightSelector {
     /// <p>The type of insights to log on a trail. <code>ApiCallRateInsight</code> and <code>ApiErrorRateInsight</code> are valid insight types.</p>
-    pub fn insight_type(&self) -> std::option::Option<& crate::types::InsightType> {
+    pub fn insight_type(&self) -> std::option::Option<&crate::types::InsightType> {
         self.insight_type.as_ref()
     }
 }
@@ -34,15 +34,17 @@ impl InsightSelectorBuilder {
         self
     }
     /// <p>The type of insights to log on a trail. <code>ApiCallRateInsight</code> and <code>ApiErrorRateInsight</code> are valid insight types.</p>
-    pub fn set_insight_type(mut self, input: std::option::Option<crate::types::InsightType>) -> Self {
-        self.insight_type = input; self
+    pub fn set_insight_type(
+        mut self,
+        input: std::option::Option<crate::types::InsightType>,
+    ) -> Self {
+        self.insight_type = input;
+        self
     }
     /// Consumes the builder and constructs a [`InsightSelector`](crate::types::InsightSelector).
     pub fn build(self) -> crate::types::InsightSelector {
         crate::types::InsightSelector {
-            insight_type: self.insight_type
-            ,
+            insight_type: self.insight_type,
         }
     }
 }
-

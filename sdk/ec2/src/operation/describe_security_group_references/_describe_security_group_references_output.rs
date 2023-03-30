@@ -2,26 +2,29 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeSecurityGroupReferencesOutput  {
+pub struct DescribeSecurityGroupReferencesOutput {
     /// <p>Information about the VPCs with the referencing security groups.</p>
     #[doc(hidden)]
-    pub security_group_reference_set: std::option::Option<std::vec::Vec<crate::types::SecurityGroupReference>>,
+    pub security_group_reference_set:
+        std::option::Option<std::vec::Vec<crate::types::SecurityGroupReference>>,
     _request_id: Option<String>,
 }
 impl DescribeSecurityGroupReferencesOutput {
     /// <p>Information about the VPCs with the referencing security groups.</p>
-    pub fn security_group_reference_set(&self) -> std::option::Option<& [crate::types::SecurityGroupReference]> {
+    pub fn security_group_reference_set(
+        &self,
+    ) -> std::option::Option<&[crate::types::SecurityGroupReference]> {
         self.security_group_reference_set.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for DescribeSecurityGroupReferencesOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl DescribeSecurityGroupReferencesOutput {
     /// Creates a new builder-style object to manufacture [`DescribeSecurityGroupReferencesOutput`](crate::operation::describe_security_group_references::DescribeSecurityGroupReferencesOutput).
-    pub fn builder() -> crate::operation::describe_security_group_references::builders::DescribeSecurityGroupReferencesOutputBuilder {
+    pub fn builder() -> crate::operation::describe_security_group_references::builders::DescribeSecurityGroupReferencesOutputBuilder{
         crate::operation::describe_security_group_references::builders::DescribeSecurityGroupReferencesOutputBuilder::default()
     }
 }
@@ -30,7 +33,8 @@ impl DescribeSecurityGroupReferencesOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct DescribeSecurityGroupReferencesOutputBuilder {
-    pub(crate) security_group_reference_set: std::option::Option<std::vec::Vec<crate::types::SecurityGroupReference>>,
+    pub(crate) security_group_reference_set:
+        std::option::Option<std::vec::Vec<crate::types::SecurityGroupReference>>,
     _request_id: Option<String>,
 }
 impl DescribeSecurityGroupReferencesOutputBuilder {
@@ -39,27 +43,37 @@ impl DescribeSecurityGroupReferencesOutputBuilder {
     /// To override the contents of this collection use [`set_security_group_reference_set`](Self::set_security_group_reference_set).
     ///
     /// <p>Information about the VPCs with the referencing security groups.</p>
-    pub fn security_group_reference_set(mut self, input: crate::types::SecurityGroupReference) -> Self {
+    pub fn security_group_reference_set(
+        mut self,
+        input: crate::types::SecurityGroupReference,
+    ) -> Self {
         let mut v = self.security_group_reference_set.unwrap_or_default();
-                        v.push(input);
-                        self.security_group_reference_set = Some(v);
-                        self
+        v.push(input);
+        self.security_group_reference_set = Some(v);
+        self
     }
     /// <p>Information about the VPCs with the referencing security groups.</p>
-    pub fn set_security_group_reference_set(mut self, input: std::option::Option<std::vec::Vec<crate::types::SecurityGroupReference>>) -> Self {
-        self.security_group_reference_set = input; self
+    pub fn set_security_group_reference_set(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::SecurityGroupReference>>,
+    ) -> Self {
+        self.security_group_reference_set = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`DescribeSecurityGroupReferencesOutput`](crate::operation::describe_security_group_references::DescribeSecurityGroupReferencesOutput).
-    pub fn build(self) -> crate::operation::describe_security_group_references::DescribeSecurityGroupReferencesOutput {
+    pub fn build(
+        self,
+    ) -> crate::operation::describe_security_group_references::DescribeSecurityGroupReferencesOutput
+    {
         crate::operation::describe_security_group_references::DescribeSecurityGroupReferencesOutput {
             security_group_reference_set: self.security_group_reference_set
             ,
@@ -67,4 +81,3 @@ impl DescribeSecurityGroupReferencesOutputBuilder {
         }
     }
 }
-

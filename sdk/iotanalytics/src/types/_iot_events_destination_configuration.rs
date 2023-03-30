@@ -3,7 +3,7 @@
 /// <p>Configuration information for delivery of dataset contents to IoT Events.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct IotEventsDestinationConfiguration  {
+pub struct IotEventsDestinationConfiguration {
     /// <p>The name of the IoT Events input to which dataset contents are delivered.</p>
     #[doc(hidden)]
     pub input_name: std::option::Option<std::string::String>,
@@ -13,11 +13,11 @@ pub struct IotEventsDestinationConfiguration  {
 }
 impl IotEventsDestinationConfiguration {
     /// <p>The name of the IoT Events input to which dataset contents are delivered.</p>
-    pub fn input_name(&self) -> std::option::Option<& str> {
+    pub fn input_name(&self) -> std::option::Option<&str> {
         self.input_name.as_deref()
     }
     /// <p>The ARN of the role that grants IoT Analytics permission to deliver dataset contents to an IoT Events input.</p>
-    pub fn role_arn(&self) -> std::option::Option<& str> {
+    pub fn role_arn(&self) -> std::option::Option<&str> {
         self.role_arn.as_deref()
     }
 }
@@ -43,7 +43,8 @@ impl IotEventsDestinationConfigurationBuilder {
     }
     /// <p>The name of the IoT Events input to which dataset contents are delivered.</p>
     pub fn set_input_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.input_name = input; self
+        self.input_name = input;
+        self
     }
     /// <p>The ARN of the role that grants IoT Analytics permission to deliver dataset contents to an IoT Events input.</p>
     pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -52,16 +53,14 @@ impl IotEventsDestinationConfigurationBuilder {
     }
     /// <p>The ARN of the role that grants IoT Analytics permission to deliver dataset contents to an IoT Events input.</p>
     pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.role_arn = input; self
+        self.role_arn = input;
+        self
     }
     /// Consumes the builder and constructs a [`IotEventsDestinationConfiguration`](crate::types::IotEventsDestinationConfiguration).
     pub fn build(self) -> crate::types::IotEventsDestinationConfiguration {
         crate::types::IotEventsDestinationConfiguration {
-            input_name: self.input_name
-            ,
-            role_arn: self.role_arn
-            ,
+            input_name: self.input_name,
+            role_arn: self.role_arn,
         }
     }
 }
-

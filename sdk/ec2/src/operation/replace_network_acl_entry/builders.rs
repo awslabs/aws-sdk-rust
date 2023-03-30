@@ -4,49 +4,72 @@ pub use crate::operation::replace_network_acl_entry::_replace_network_acl_entry_
 pub use crate::operation::replace_network_acl_entry::_replace_network_acl_entry_input::ReplaceNetworkAclEntryInputBuilder;
 
 /// Fluent builder constructing a request to `ReplaceNetworkAclEntry`.
-/// 
+///
 /// <p>Replaces an entry (rule) in a network ACL. For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_ACLs.html">Network ACLs</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ReplaceNetworkAclEntryFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::replace_network_acl_entry::builders::ReplaceNetworkAclEntryInputBuilder
-            }
-impl ReplaceNetworkAclEntryFluentBuilder  {
+    handle: std::sync::Arc<crate::client::Handle>,
+    inner:
+        crate::operation::replace_network_acl_entry::builders::ReplaceNetworkAclEntryInputBuilder,
+}
+impl ReplaceNetworkAclEntryFluentBuilder {
     /// Creates a new `ReplaceNetworkAclEntry`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
-                    /// sent. The operation's inner [http::Request] can be modified as well.
-                    pub async fn customize(self) -> std::result::Result<
-                        crate::client::customize::CustomizableOperation<crate::operation::replace_network_acl_entry::ReplaceNetworkAclEntry, aws_http::retry::AwsResponseRetryClassifier,>,
-                        aws_smithy_http::result::SdkError<crate::operation::replace_network_acl_entry::ReplaceNetworkAclEntryError>
-                    >  {
-                        let handle = self.handle.clone();
-                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-                    }
-    
-                    /// Sends the request and returns the response.
-                    ///
-                    /// If an error occurs, an `SdkError` will be returned with additional details that
-                    /// can be matched against.
-                    ///
-                    /// By default, any retryable failures will be retried twice. Retry behavior
-                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                    /// set when configuring the client.
-                    pub async fn send(self) -> std::result::Result<crate::operation::replace_network_acl_entry::ReplaceNetworkAclEntryOutput, aws_smithy_http::result::SdkError<crate::operation::replace_network_acl_entry::ReplaceNetworkAclEntryError>>
-                     {
-                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&self.handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        self.handle.client.call(op).await
-                    }
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle,
+            inner: Default::default(),
+        }
+    }
+
+    /// Consume this builder, creating a customizable operation that can be modified before being
+    /// sent. The operation's inner [http::Request] can be modified as well.
+    pub async fn customize(
+        self,
+    ) -> std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::replace_network_acl_entry::ReplaceNetworkAclEntry,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::result::SdkError<
+            crate::operation::replace_network_acl_entry::ReplaceNetworkAclEntryError,
+        >,
+    > {
+        let handle = self.handle.clone();
+        let operation = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+    }
+
+    /// Sends the request and returns the response.
+    ///
+    /// If an error occurs, an `SdkError` will be returned with additional details that
+    /// can be matched against.
+    ///
+    /// By default, any retryable failures will be retried twice. Retry behavior
+    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+    /// set when configuring the client.
+    pub async fn send(
+        self,
+    ) -> std::result::Result<
+        crate::operation::replace_network_acl_entry::ReplaceNetworkAclEntryOutput,
+        aws_smithy_http::result::SdkError<
+            crate::operation::replace_network_acl_entry::ReplaceNetworkAclEntryError,
+        >,
+    > {
+        let op = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&self.handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        self.handle.client.call(op).await
+    }
     /// <p>The IPv4 network range to allow or deny, in CIDR notation (for example <code>172.16.0.0/24</code>).</p>
     pub fn cidr_block(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.cidr_block(input.into());
@@ -67,13 +90,13 @@ impl ReplaceNetworkAclEntryFluentBuilder  {
         self.inner = self.inner.set_dry_run(input);
         self
     }
-    /// <p>Indicates whether to replace the egress rule.</p> 
+    /// <p>Indicates whether to replace the egress rule.</p>
     /// <p>Default: If no value is specified, we replace the ingress rule.</p>
     pub fn egress(mut self, input: bool) -> Self {
         self.inner = self.inner.egress(input);
         self
     }
-    /// <p>Indicates whether to replace the egress rule.</p> 
+    /// <p>Indicates whether to replace the egress rule.</p>
     /// <p>Default: If no value is specified, we replace the ingress rule.</p>
     pub fn set_egress(mut self, input: std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_egress(input);
@@ -85,7 +108,10 @@ impl ReplaceNetworkAclEntryFluentBuilder  {
         self
     }
     /// <p>ICMP protocol: The ICMP or ICMPv6 type and code. Required if specifying protocol 1 (ICMP) or protocol 58 (ICMPv6) with an IPv6 CIDR block.</p>
-    pub fn set_icmp_type_code(mut self, input: std::option::Option<crate::types::IcmpTypeCode>) -> Self {
+    pub fn set_icmp_type_code(
+        mut self,
+        input: std::option::Option<crate::types::IcmpTypeCode>,
+    ) -> Self {
         self.inner = self.inner.set_icmp_type_code(input);
         self
     }
@@ -150,4 +176,3 @@ impl ReplaceNetworkAclEntryFluentBuilder  {
         self
     }
 }
-

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListAppImageConfigsOutput  {
+pub struct ListAppImageConfigsOutput {
     /// <p>A token for getting the next set of AppImageConfigs, if there are any.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
@@ -13,22 +13,23 @@ pub struct ListAppImageConfigsOutput  {
 }
 impl ListAppImageConfigsOutput {
     /// <p>A token for getting the next set of AppImageConfigs, if there are any.</p>
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
     /// <p>A list of AppImageConfigs and their properties.</p>
-    pub fn app_image_configs(&self) -> std::option::Option<& [crate::types::AppImageConfigDetails]> {
+    pub fn app_image_configs(&self) -> std::option::Option<&[crate::types::AppImageConfigDetails]> {
         self.app_image_configs.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for ListAppImageConfigsOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl ListAppImageConfigsOutput {
     /// Creates a new builder-style object to manufacture [`ListAppImageConfigsOutput`](crate::operation::list_app_image_configs::ListAppImageConfigsOutput).
-    pub fn builder() -> crate::operation::list_app_image_configs::builders::ListAppImageConfigsOutputBuilder {
+    pub fn builder(
+    ) -> crate::operation::list_app_image_configs::builders::ListAppImageConfigsOutputBuilder {
         crate::operation::list_app_image_configs::builders::ListAppImageConfigsOutputBuilder::default()
     }
 }
@@ -38,7 +39,8 @@ impl ListAppImageConfigsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct ListAppImageConfigsOutputBuilder {
     pub(crate) next_token: std::option::Option<std::string::String>,
-    pub(crate) app_image_configs: std::option::Option<std::vec::Vec<crate::types::AppImageConfigDetails>>,
+    pub(crate) app_image_configs:
+        std::option::Option<std::vec::Vec<crate::types::AppImageConfigDetails>>,
     _request_id: Option<String>,
 }
 impl ListAppImageConfigsOutputBuilder {
@@ -49,7 +51,8 @@ impl ListAppImageConfigsOutputBuilder {
     }
     /// <p>A token for getting the next set of AppImageConfigs, if there are any.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input; self
+        self.next_token = input;
+        self
     }
     /// Appends an item to `app_image_configs`.
     ///
@@ -58,32 +61,33 @@ impl ListAppImageConfigsOutputBuilder {
     /// <p>A list of AppImageConfigs and their properties.</p>
     pub fn app_image_configs(mut self, input: crate::types::AppImageConfigDetails) -> Self {
         let mut v = self.app_image_configs.unwrap_or_default();
-                        v.push(input);
-                        self.app_image_configs = Some(v);
-                        self
+        v.push(input);
+        self.app_image_configs = Some(v);
+        self
     }
     /// <p>A list of AppImageConfigs and their properties.</p>
-    pub fn set_app_image_configs(mut self, input: std::option::Option<std::vec::Vec<crate::types::AppImageConfigDetails>>) -> Self {
-        self.app_image_configs = input; self
+    pub fn set_app_image_configs(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::AppImageConfigDetails>>,
+    ) -> Self {
+        self.app_image_configs = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`ListAppImageConfigsOutput`](crate::operation::list_app_image_configs::ListAppImageConfigsOutput).
     pub fn build(self) -> crate::operation::list_app_image_configs::ListAppImageConfigsOutput {
         crate::operation::list_app_image_configs::ListAppImageConfigsOutput {
-            next_token: self.next_token
-            ,
-            app_image_configs: self.app_image_configs
-            ,
+            next_token: self.next_token,
+            app_image_configs: self.app_image_configs,
             _request_id: self._request_id,
         }
     }
 }
-

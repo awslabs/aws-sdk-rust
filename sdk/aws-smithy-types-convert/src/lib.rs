@@ -9,9 +9,8 @@
 #![warn(
     missing_docs,
     rustdoc::missing_crate_level_docs,
-    missing_debug_implementations,
-    rust_2018_idioms,
-    unreachable_pub
+    unreachable_pub,
+    rust_2018_idioms
 )]
 
 #[cfg(any(feature = "convert-time", feature = "convert-chrono"))]

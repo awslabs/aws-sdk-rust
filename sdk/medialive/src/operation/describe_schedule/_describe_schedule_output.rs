@@ -3,7 +3,7 @@
 /// Placeholder documentation for DescribeScheduleResponse
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeScheduleOutput  {
+pub struct DescribeScheduleOutput {
     /// The next token; for use in pagination.
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
@@ -14,22 +14,23 @@ pub struct DescribeScheduleOutput  {
 }
 impl DescribeScheduleOutput {
     /// The next token; for use in pagination.
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
     /// The list of actions in the schedule.
-    pub fn schedule_actions(&self) -> std::option::Option<& [crate::types::ScheduleAction]> {
+    pub fn schedule_actions(&self) -> std::option::Option<&[crate::types::ScheduleAction]> {
         self.schedule_actions.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for DescribeScheduleOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl DescribeScheduleOutput {
     /// Creates a new builder-style object to manufacture [`DescribeScheduleOutput`](crate::operation::describe_schedule::DescribeScheduleOutput).
-    pub fn builder() -> crate::operation::describe_schedule::builders::DescribeScheduleOutputBuilder {
+    pub fn builder() -> crate::operation::describe_schedule::builders::DescribeScheduleOutputBuilder
+    {
         crate::operation::describe_schedule::builders::DescribeScheduleOutputBuilder::default()
     }
 }
@@ -50,7 +51,8 @@ impl DescribeScheduleOutputBuilder {
     }
     /// The next token; for use in pagination.
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input; self
+        self.next_token = input;
+        self
     }
     /// Appends an item to `schedule_actions`.
     ///
@@ -59,32 +61,33 @@ impl DescribeScheduleOutputBuilder {
     /// The list of actions in the schedule.
     pub fn schedule_actions(mut self, input: crate::types::ScheduleAction) -> Self {
         let mut v = self.schedule_actions.unwrap_or_default();
-                        v.push(input);
-                        self.schedule_actions = Some(v);
-                        self
+        v.push(input);
+        self.schedule_actions = Some(v);
+        self
     }
     /// The list of actions in the schedule.
-    pub fn set_schedule_actions(mut self, input: std::option::Option<std::vec::Vec<crate::types::ScheduleAction>>) -> Self {
-        self.schedule_actions = input; self
+    pub fn set_schedule_actions(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::ScheduleAction>>,
+    ) -> Self {
+        self.schedule_actions = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`DescribeScheduleOutput`](crate::operation::describe_schedule::DescribeScheduleOutput).
     pub fn build(self) -> crate::operation::describe_schedule::DescribeScheduleOutput {
         crate::operation::describe_schedule::DescribeScheduleOutput {
-            next_token: self.next_token
-            ,
-            schedule_actions: self.schedule_actions
-            ,
+            next_token: self.next_token,
+            schedule_actions: self.schedule_actions,
             _request_id: self._request_id,
         }
     }
 }
-

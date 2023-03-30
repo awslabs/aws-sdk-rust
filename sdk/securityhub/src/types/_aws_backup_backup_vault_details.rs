@@ -3,7 +3,7 @@
 /// <p>Provides details about an Backup backup vault. In Backup, a backup vault is a container that stores and organizes your backups. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AwsBackupBackupVaultDetails  {
+pub struct AwsBackupBackupVaultDetails {
     /// <p>An Amazon Resource Name (ARN) that uniquely identifies a backup vault. </p>
     #[doc(hidden)]
     pub backup_vault_arn: std::option::Option<std::string::String>,
@@ -22,23 +22,25 @@ pub struct AwsBackupBackupVaultDetails  {
 }
 impl AwsBackupBackupVaultDetails {
     /// <p>An Amazon Resource Name (ARN) that uniquely identifies a backup vault. </p>
-    pub fn backup_vault_arn(&self) -> std::option::Option<& str> {
+    pub fn backup_vault_arn(&self) -> std::option::Option<&str> {
         self.backup_vault_arn.as_deref()
     }
     /// <p>The name of a logical container where backups are stored. Backup vaults are identified by names that are unique to the Amazon Web Services account used to create them and the Amazon Web Services Region where they are created. They consist of lowercase letters, numbers, and hyphens. </p>
-    pub fn backup_vault_name(&self) -> std::option::Option<& str> {
+    pub fn backup_vault_name(&self) -> std::option::Option<&str> {
         self.backup_vault_name.as_deref()
     }
     /// <p>The unique ARN associated with the server-side encryption key. You can specify a key to encrypt your backups from services that support full Backup management. If you do not specify a key, Backup creates an KMS key for you by default. </p>
-    pub fn encryption_key_arn(&self) -> std::option::Option<& str> {
+    pub fn encryption_key_arn(&self) -> std::option::Option<&str> {
         self.encryption_key_arn.as_deref()
     }
     /// <p>The Amazon SNS event notifications for the specified backup vault. </p>
-    pub fn notifications(&self) -> std::option::Option<& crate::types::AwsBackupBackupVaultNotificationsDetails> {
+    pub fn notifications(
+        &self,
+    ) -> std::option::Option<&crate::types::AwsBackupBackupVaultNotificationsDetails> {
         self.notifications.as_ref()
     }
     /// <p>A resource-based policy that is used to manage access permissions on the target backup vault. </p>
-    pub fn access_policy(&self) -> std::option::Option<& str> {
+    pub fn access_policy(&self) -> std::option::Option<&str> {
         self.access_policy.as_deref()
     }
 }
@@ -56,7 +58,8 @@ pub struct AwsBackupBackupVaultDetailsBuilder {
     pub(crate) backup_vault_arn: std::option::Option<std::string::String>,
     pub(crate) backup_vault_name: std::option::Option<std::string::String>,
     pub(crate) encryption_key_arn: std::option::Option<std::string::String>,
-    pub(crate) notifications: std::option::Option<crate::types::AwsBackupBackupVaultNotificationsDetails>,
+    pub(crate) notifications:
+        std::option::Option<crate::types::AwsBackupBackupVaultNotificationsDetails>,
     pub(crate) access_policy: std::option::Option<std::string::String>,
 }
 impl AwsBackupBackupVaultDetailsBuilder {
@@ -67,7 +70,8 @@ impl AwsBackupBackupVaultDetailsBuilder {
     }
     /// <p>An Amazon Resource Name (ARN) that uniquely identifies a backup vault. </p>
     pub fn set_backup_vault_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.backup_vault_arn = input; self
+        self.backup_vault_arn = input;
+        self
     }
     /// <p>The name of a logical container where backups are stored. Backup vaults are identified by names that are unique to the Amazon Web Services account used to create them and the Amazon Web Services Region where they are created. They consist of lowercase letters, numbers, and hyphens. </p>
     pub fn backup_vault_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -75,8 +79,12 @@ impl AwsBackupBackupVaultDetailsBuilder {
         self
     }
     /// <p>The name of a logical container where backups are stored. Backup vaults are identified by names that are unique to the Amazon Web Services account used to create them and the Amazon Web Services Region where they are created. They consist of lowercase letters, numbers, and hyphens. </p>
-    pub fn set_backup_vault_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.backup_vault_name = input; self
+    pub fn set_backup_vault_name(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.backup_vault_name = input;
+        self
     }
     /// <p>The unique ARN associated with the server-side encryption key. You can specify a key to encrypt your backups from services that support full Backup management. If you do not specify a key, Backup creates an KMS key for you by default. </p>
     pub fn encryption_key_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -84,17 +92,28 @@ impl AwsBackupBackupVaultDetailsBuilder {
         self
     }
     /// <p>The unique ARN associated with the server-side encryption key. You can specify a key to encrypt your backups from services that support full Backup management. If you do not specify a key, Backup creates an KMS key for you by default. </p>
-    pub fn set_encryption_key_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.encryption_key_arn = input; self
+    pub fn set_encryption_key_arn(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.encryption_key_arn = input;
+        self
     }
     /// <p>The Amazon SNS event notifications for the specified backup vault. </p>
-    pub fn notifications(mut self, input: crate::types::AwsBackupBackupVaultNotificationsDetails) -> Self {
+    pub fn notifications(
+        mut self,
+        input: crate::types::AwsBackupBackupVaultNotificationsDetails,
+    ) -> Self {
         self.notifications = Some(input);
         self
     }
     /// <p>The Amazon SNS event notifications for the specified backup vault. </p>
-    pub fn set_notifications(mut self, input: std::option::Option<crate::types::AwsBackupBackupVaultNotificationsDetails>) -> Self {
-        self.notifications = input; self
+    pub fn set_notifications(
+        mut self,
+        input: std::option::Option<crate::types::AwsBackupBackupVaultNotificationsDetails>,
+    ) -> Self {
+        self.notifications = input;
+        self
     }
     /// <p>A resource-based policy that is used to manage access permissions on the target backup vault. </p>
     pub fn access_policy(mut self, input: impl Into<std::string::String>) -> Self {
@@ -103,22 +122,17 @@ impl AwsBackupBackupVaultDetailsBuilder {
     }
     /// <p>A resource-based policy that is used to manage access permissions on the target backup vault. </p>
     pub fn set_access_policy(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.access_policy = input; self
+        self.access_policy = input;
+        self
     }
     /// Consumes the builder and constructs a [`AwsBackupBackupVaultDetails`](crate::types::AwsBackupBackupVaultDetails).
     pub fn build(self) -> crate::types::AwsBackupBackupVaultDetails {
         crate::types::AwsBackupBackupVaultDetails {
-            backup_vault_arn: self.backup_vault_arn
-            ,
-            backup_vault_name: self.backup_vault_name
-            ,
-            encryption_key_arn: self.encryption_key_arn
-            ,
-            notifications: self.notifications
-            ,
-            access_policy: self.access_policy
-            ,
+            backup_vault_arn: self.backup_vault_arn,
+            backup_vault_name: self.backup_vault_name,
+            encryption_key_arn: self.encryption_key_arn,
+            notifications: self.notifications,
+            access_policy: self.access_policy,
         }
     }
 }
-

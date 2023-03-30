@@ -3,7 +3,7 @@
 /// <p>An object that represents the status of an entity, component, component type, or workspace.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Status  {
+pub struct Status {
     /// <p>The current state of the entity, component, component type, or workspace.</p>
     #[doc(hidden)]
     pub state: std::option::Option<crate::types::State>,
@@ -13,11 +13,11 @@ pub struct Status  {
 }
 impl Status {
     /// <p>The current state of the entity, component, component type, or workspace.</p>
-    pub fn state(&self) -> std::option::Option<& crate::types::State> {
+    pub fn state(&self) -> std::option::Option<&crate::types::State> {
         self.state.as_ref()
     }
     /// <p>The error message.</p>
-    pub fn error(&self) -> std::option::Option<& crate::types::ErrorDetails> {
+    pub fn error(&self) -> std::option::Option<&crate::types::ErrorDetails> {
         self.error.as_ref()
     }
 }
@@ -43,7 +43,8 @@ impl StatusBuilder {
     }
     /// <p>The current state of the entity, component, component type, or workspace.</p>
     pub fn set_state(mut self, input: std::option::Option<crate::types::State>) -> Self {
-        self.state = input; self
+        self.state = input;
+        self
     }
     /// <p>The error message.</p>
     pub fn error(mut self, input: crate::types::ErrorDetails) -> Self {
@@ -52,16 +53,14 @@ impl StatusBuilder {
     }
     /// <p>The error message.</p>
     pub fn set_error(mut self, input: std::option::Option<crate::types::ErrorDetails>) -> Self {
-        self.error = input; self
+        self.error = input;
+        self
     }
     /// Consumes the builder and constructs a [`Status`](crate::types::Status).
     pub fn build(self) -> crate::types::Status {
         crate::types::Status {
-            state: self.state
-            ,
-            error: self.error
-            ,
+            state: self.state,
+            error: self.error,
         }
     }
 }
-

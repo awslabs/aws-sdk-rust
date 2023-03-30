@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListSecurityProfilePermissionsOutput  {
+pub struct ListSecurityProfilePermissionsOutput {
     /// <p>The permissions granted to the security profile. For a complete list of valid permissions, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/security-profile-list.html">List of security profile permissions</a>.</p>
     #[doc(hidden)]
     pub permissions: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -13,22 +13,22 @@ pub struct ListSecurityProfilePermissionsOutput  {
 }
 impl ListSecurityProfilePermissionsOutput {
     /// <p>The permissions granted to the security profile. For a complete list of valid permissions, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/security-profile-list.html">List of security profile permissions</a>.</p>
-    pub fn permissions(&self) -> std::option::Option<& [std::string::String]> {
+    pub fn permissions(&self) -> std::option::Option<&[std::string::String]> {
         self.permissions.as_deref()
     }
     /// <p>If there are additional results, this is the token for the next set of results.</p>
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for ListSecurityProfilePermissionsOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl ListSecurityProfilePermissionsOutput {
     /// Creates a new builder-style object to manufacture [`ListSecurityProfilePermissionsOutput`](crate::operation::list_security_profile_permissions::ListSecurityProfilePermissionsOutput).
-    pub fn builder() -> crate::operation::list_security_profile_permissions::builders::ListSecurityProfilePermissionsOutputBuilder {
+    pub fn builder() -> crate::operation::list_security_profile_permissions::builders::ListSecurityProfilePermissionsOutputBuilder{
         crate::operation::list_security_profile_permissions::builders::ListSecurityProfilePermissionsOutputBuilder::default()
     }
 }
@@ -49,13 +49,17 @@ impl ListSecurityProfilePermissionsOutputBuilder {
     /// <p>The permissions granted to the security profile. For a complete list of valid permissions, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/security-profile-list.html">List of security profile permissions</a>.</p>
     pub fn permissions(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.permissions.unwrap_or_default();
-                        v.push(input.into());
-                        self.permissions = Some(v);
-                        self
+        v.push(input.into());
+        self.permissions = Some(v);
+        self
     }
     /// <p>The permissions granted to the security profile. For a complete list of valid permissions, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/security-profile-list.html">List of security profile permissions</a>.</p>
-    pub fn set_permissions(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-        self.permissions = input; self
+    pub fn set_permissions(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
+        self.permissions = input;
+        self
     }
     /// <p>If there are additional results, this is the token for the next set of results.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -64,26 +68,27 @@ impl ListSecurityProfilePermissionsOutputBuilder {
     }
     /// <p>If there are additional results, this is the token for the next set of results.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input; self
+        self.next_token = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`ListSecurityProfilePermissionsOutput`](crate::operation::list_security_profile_permissions::ListSecurityProfilePermissionsOutput).
-    pub fn build(self) -> crate::operation::list_security_profile_permissions::ListSecurityProfilePermissionsOutput {
+    pub fn build(
+        self,
+    ) -> crate::operation::list_security_profile_permissions::ListSecurityProfilePermissionsOutput
+    {
         crate::operation::list_security_profile_permissions::ListSecurityProfilePermissionsOutput {
-            permissions: self.permissions
-            ,
-            next_token: self.next_token
-            ,
+            permissions: self.permissions,
+            next_token: self.next_token,
             _request_id: self._request_id,
         }
     }
 }
-

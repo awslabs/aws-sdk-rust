@@ -3,7 +3,7 @@
 /// <p>A <code>GroupSearchFilter</code> object that you want to apply to your search.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GroupSearchFilter  {
+pub struct GroupSearchFilter {
     /// <p>The comparison operator that you want to use as a filter, for example <code>"Operator": "StartsWith"</code>. Currently, the only supported operator is <code>StartsWith</code>.</p>
     #[doc(hidden)]
     pub operator: std::option::Option<crate::types::GroupFilterOperator>,
@@ -16,15 +16,15 @@ pub struct GroupSearchFilter  {
 }
 impl GroupSearchFilter {
     /// <p>The comparison operator that you want to use as a filter, for example <code>"Operator": "StartsWith"</code>. Currently, the only supported operator is <code>StartsWith</code>.</p>
-    pub fn operator(&self) -> std::option::Option<& crate::types::GroupFilterOperator> {
+    pub fn operator(&self) -> std::option::Option<&crate::types::GroupFilterOperator> {
         self.operator.as_ref()
     }
     /// <p>The name of the value that you want to use as a filter, for example <code>"Name": "GROUP_NAME"</code>. Currently, the only supported name is <code>GROUP_NAME</code>.</p>
-    pub fn name(&self) -> std::option::Option<& crate::types::GroupFilterAttribute> {
+    pub fn name(&self) -> std::option::Option<&crate::types::GroupFilterAttribute> {
         self.name.as_ref()
     }
     /// <p>The value of the named item, in this case <code>GROUP_NAME</code>, that you want to use as a filter.</p>
-    pub fn value(&self) -> std::option::Option<& str> {
+    pub fn value(&self) -> std::option::Option<&str> {
         self.value.as_deref()
     }
 }
@@ -50,8 +50,12 @@ impl GroupSearchFilterBuilder {
         self
     }
     /// <p>The comparison operator that you want to use as a filter, for example <code>"Operator": "StartsWith"</code>. Currently, the only supported operator is <code>StartsWith</code>.</p>
-    pub fn set_operator(mut self, input: std::option::Option<crate::types::GroupFilterOperator>) -> Self {
-        self.operator = input; self
+    pub fn set_operator(
+        mut self,
+        input: std::option::Option<crate::types::GroupFilterOperator>,
+    ) -> Self {
+        self.operator = input;
+        self
     }
     /// <p>The name of the value that you want to use as a filter, for example <code>"Name": "GROUP_NAME"</code>. Currently, the only supported name is <code>GROUP_NAME</code>.</p>
     pub fn name(mut self, input: crate::types::GroupFilterAttribute) -> Self {
@@ -59,8 +63,12 @@ impl GroupSearchFilterBuilder {
         self
     }
     /// <p>The name of the value that you want to use as a filter, for example <code>"Name": "GROUP_NAME"</code>. Currently, the only supported name is <code>GROUP_NAME</code>.</p>
-    pub fn set_name(mut self, input: std::option::Option<crate::types::GroupFilterAttribute>) -> Self {
-        self.name = input; self
+    pub fn set_name(
+        mut self,
+        input: std::option::Option<crate::types::GroupFilterAttribute>,
+    ) -> Self {
+        self.name = input;
+        self
     }
     /// <p>The value of the named item, in this case <code>GROUP_NAME</code>, that you want to use as a filter.</p>
     pub fn value(mut self, input: impl Into<std::string::String>) -> Self {
@@ -69,18 +77,15 @@ impl GroupSearchFilterBuilder {
     }
     /// <p>The value of the named item, in this case <code>GROUP_NAME</code>, that you want to use as a filter.</p>
     pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.value = input; self
+        self.value = input;
+        self
     }
     /// Consumes the builder and constructs a [`GroupSearchFilter`](crate::types::GroupSearchFilter).
     pub fn build(self) -> crate::types::GroupSearchFilter {
         crate::types::GroupSearchFilter {
-            operator: self.operator
-            ,
-            name: self.name
-            ,
-            value: self.value
-            ,
+            operator: self.operator,
+            name: self.name,
+            value: self.value,
         }
     }
 }
-

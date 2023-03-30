@@ -3,7 +3,7 @@
 /// <p>Displays the attributes associated with a single Amazon Web Services account.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AccountAttribute  {
+pub struct AccountAttribute {
     /// <p>The name of the account attribute.</p>
     #[doc(hidden)]
     pub name: std::option::Option<crate::types::AccountAttributeName>,
@@ -13,11 +13,11 @@ pub struct AccountAttribute  {
 }
 impl AccountAttribute {
     /// <p>The name of the account attribute.</p>
-    pub fn name(&self) -> std::option::Option<& crate::types::AccountAttributeName> {
+    pub fn name(&self) -> std::option::Option<&crate::types::AccountAttributeName> {
         self.name.as_ref()
     }
     /// <p>The value associated with the account attribute name.</p>
-    pub fn value(&self) -> std::option::Option<& str> {
+    pub fn value(&self) -> std::option::Option<&str> {
         self.value.as_deref()
     }
 }
@@ -42,8 +42,12 @@ impl AccountAttributeBuilder {
         self
     }
     /// <p>The name of the account attribute.</p>
-    pub fn set_name(mut self, input: std::option::Option<crate::types::AccountAttributeName>) -> Self {
-        self.name = input; self
+    pub fn set_name(
+        mut self,
+        input: std::option::Option<crate::types::AccountAttributeName>,
+    ) -> Self {
+        self.name = input;
+        self
     }
     /// <p>The value associated with the account attribute name.</p>
     pub fn value(mut self, input: impl Into<std::string::String>) -> Self {
@@ -52,16 +56,14 @@ impl AccountAttributeBuilder {
     }
     /// <p>The value associated with the account attribute name.</p>
     pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.value = input; self
+        self.value = input;
+        self
     }
     /// Consumes the builder and constructs a [`AccountAttribute`](crate::types::AccountAttribute).
     pub fn build(self) -> crate::types::AccountAttribute {
         crate::types::AccountAttribute {
-            name: self.name
-            ,
-            value: self.value
-            ,
+            name: self.name,
+            value: self.value,
         }
     }
 }
-

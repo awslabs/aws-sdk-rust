@@ -2,12 +2,12 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeRecordInput  {
-    /// <p>The language code.</p> 
-    /// <ul> 
-    /// <li> <p> <code>en</code> - English (default)</p> </li> 
-    /// <li> <p> <code>jp</code> - Japanese</p> </li> 
-    /// <li> <p> <code>zh</code> - Chinese</p> </li> 
+pub struct DescribeRecordInput {
+    /// <p>The language code.</p>
+    /// <ul>
+    /// <li> <p> <code>en</code> - English (default)</p> </li>
+    /// <li> <p> <code>jp</code> - Japanese</p> </li>
+    /// <li> <p> <code>zh</code> - Chinese</p> </li>
     /// </ul>
     #[doc(hidden)]
     pub accept_language: std::option::Option<std::string::String>,
@@ -22,21 +22,21 @@ pub struct DescribeRecordInput  {
     pub page_size: i32,
 }
 impl DescribeRecordInput {
-    /// <p>The language code.</p> 
-    /// <ul> 
-    /// <li> <p> <code>en</code> - English (default)</p> </li> 
-    /// <li> <p> <code>jp</code> - Japanese</p> </li> 
-    /// <li> <p> <code>zh</code> - Chinese</p> </li> 
+    /// <p>The language code.</p>
+    /// <ul>
+    /// <li> <p> <code>en</code> - English (default)</p> </li>
+    /// <li> <p> <code>jp</code> - Japanese</p> </li>
+    /// <li> <p> <code>zh</code> - Chinese</p> </li>
     /// </ul>
-    pub fn accept_language(&self) -> std::option::Option<& str> {
+    pub fn accept_language(&self) -> std::option::Option<&str> {
         self.accept_language.as_deref()
     }
     /// <p>The record identifier of the provisioned product. This identifier is returned by the request operation.</p>
-    pub fn id(&self) -> std::option::Option<& str> {
+    pub fn id(&self) -> std::option::Option<&str> {
         self.id.as_deref()
     }
     /// <p>The page token for the next set of results. To retrieve the first set of results, use null.</p>
-    pub fn page_token(&self) -> std::option::Option<& str> {
+    pub fn page_token(&self) -> std::option::Option<&str> {
         self.page_token.as_deref()
     }
     /// <p>The maximum number of items to return with this call.</p>
@@ -61,24 +61,25 @@ pub struct DescribeRecordInputBuilder {
     pub(crate) page_size: std::option::Option<i32>,
 }
 impl DescribeRecordInputBuilder {
-    /// <p>The language code.</p> 
-    /// <ul> 
-    /// <li> <p> <code>en</code> - English (default)</p> </li> 
-    /// <li> <p> <code>jp</code> - Japanese</p> </li> 
-    /// <li> <p> <code>zh</code> - Chinese</p> </li> 
+    /// <p>The language code.</p>
+    /// <ul>
+    /// <li> <p> <code>en</code> - English (default)</p> </li>
+    /// <li> <p> <code>jp</code> - Japanese</p> </li>
+    /// <li> <p> <code>zh</code> - Chinese</p> </li>
     /// </ul>
     pub fn accept_language(mut self, input: impl Into<std::string::String>) -> Self {
         self.accept_language = Some(input.into());
         self
     }
-    /// <p>The language code.</p> 
-    /// <ul> 
-    /// <li> <p> <code>en</code> - English (default)</p> </li> 
-    /// <li> <p> <code>jp</code> - Japanese</p> </li> 
-    /// <li> <p> <code>zh</code> - Chinese</p> </li> 
+    /// <p>The language code.</p>
+    /// <ul>
+    /// <li> <p> <code>en</code> - English (default)</p> </li>
+    /// <li> <p> <code>jp</code> - Japanese</p> </li>
+    /// <li> <p> <code>zh</code> - Chinese</p> </li>
     /// </ul>
     pub fn set_accept_language(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.accept_language = input; self
+        self.accept_language = input;
+        self
     }
     /// <p>The record identifier of the provisioned product. This identifier is returned by the request operation.</p>
     pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -87,7 +88,8 @@ impl DescribeRecordInputBuilder {
     }
     /// <p>The record identifier of the provisioned product. This identifier is returned by the request operation.</p>
     pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.id = input; self
+        self.id = input;
+        self
     }
     /// <p>The page token for the next set of results. To retrieve the first set of results, use null.</p>
     pub fn page_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -96,7 +98,8 @@ impl DescribeRecordInputBuilder {
     }
     /// <p>The page token for the next set of results. To retrieve the first set of results, use null.</p>
     pub fn set_page_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.page_token = input; self
+        self.page_token = input;
+        self
     }
     /// <p>The maximum number of items to return with this call.</p>
     pub fn page_size(mut self, input: i32) -> Self {
@@ -105,23 +108,21 @@ impl DescribeRecordInputBuilder {
     }
     /// <p>The maximum number of items to return with this call.</p>
     pub fn set_page_size(mut self, input: std::option::Option<i32>) -> Self {
-        self.page_size = input; self
+        self.page_size = input;
+        self
     }
     /// Consumes the builder and constructs a [`DescribeRecordInput`](crate::operation::describe_record::DescribeRecordInput).
-    pub fn build(self) -> Result<crate::operation::describe_record::DescribeRecordInput, aws_smithy_http::operation::error::BuildError> {
-        Ok(
-            crate::operation::describe_record::DescribeRecordInput {
-                accept_language: self.accept_language
-                ,
-                id: self.id
-                ,
-                page_token: self.page_token
-                ,
-                page_size: self.page_size
-                    .unwrap_or_default()
-                ,
-            }
-        )
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::describe_record::DescribeRecordInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        Ok(crate::operation::describe_record::DescribeRecordInput {
+            accept_language: self.accept_language,
+            id: self.id,
+            page_token: self.page_token,
+            page_size: self.page_size.unwrap_or_default(),
+        })
     }
 }
-

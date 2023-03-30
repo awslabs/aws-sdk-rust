@@ -3,33 +3,36 @@
 /// <p></p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeClusterSecurityGroupsOutput  {
+pub struct DescribeClusterSecurityGroupsOutput {
     /// <p>A value that indicates the starting point for the next set of response records in a subsequent request. If a value is returned in a response, you can retrieve the next set of records by providing this returned marker value in the <code>Marker</code> parameter and retrying the command. If the <code>Marker</code> field is empty, all response records have been retrieved for the request. </p>
     #[doc(hidden)]
     pub marker: std::option::Option<std::string::String>,
     /// <p>A list of <code>ClusterSecurityGroup</code> instances. </p>
     #[doc(hidden)]
-    pub cluster_security_groups: std::option::Option<std::vec::Vec<crate::types::ClusterSecurityGroup>>,
+    pub cluster_security_groups:
+        std::option::Option<std::vec::Vec<crate::types::ClusterSecurityGroup>>,
     _request_id: Option<String>,
 }
 impl DescribeClusterSecurityGroupsOutput {
     /// <p>A value that indicates the starting point for the next set of response records in a subsequent request. If a value is returned in a response, you can retrieve the next set of records by providing this returned marker value in the <code>Marker</code> parameter and retrying the command. If the <code>Marker</code> field is empty, all response records have been retrieved for the request. </p>
-    pub fn marker(&self) -> std::option::Option<& str> {
+    pub fn marker(&self) -> std::option::Option<&str> {
         self.marker.as_deref()
     }
     /// <p>A list of <code>ClusterSecurityGroup</code> instances. </p>
-    pub fn cluster_security_groups(&self) -> std::option::Option<& [crate::types::ClusterSecurityGroup]> {
+    pub fn cluster_security_groups(
+        &self,
+    ) -> std::option::Option<&[crate::types::ClusterSecurityGroup]> {
         self.cluster_security_groups.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for DescribeClusterSecurityGroupsOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl DescribeClusterSecurityGroupsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeClusterSecurityGroupsOutput`](crate::operation::describe_cluster_security_groups::DescribeClusterSecurityGroupsOutput).
-    pub fn builder() -> crate::operation::describe_cluster_security_groups::builders::DescribeClusterSecurityGroupsOutputBuilder {
+    pub fn builder() -> crate::operation::describe_cluster_security_groups::builders::DescribeClusterSecurityGroupsOutputBuilder{
         crate::operation::describe_cluster_security_groups::builders::DescribeClusterSecurityGroupsOutputBuilder::default()
     }
 }
@@ -39,7 +42,8 @@ impl DescribeClusterSecurityGroupsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct DescribeClusterSecurityGroupsOutputBuilder {
     pub(crate) marker: std::option::Option<std::string::String>,
-    pub(crate) cluster_security_groups: std::option::Option<std::vec::Vec<crate::types::ClusterSecurityGroup>>,
+    pub(crate) cluster_security_groups:
+        std::option::Option<std::vec::Vec<crate::types::ClusterSecurityGroup>>,
     _request_id: Option<String>,
 }
 impl DescribeClusterSecurityGroupsOutputBuilder {
@@ -50,7 +54,8 @@ impl DescribeClusterSecurityGroupsOutputBuilder {
     }
     /// <p>A value that indicates the starting point for the next set of response records in a subsequent request. If a value is returned in a response, you can retrieve the next set of records by providing this returned marker value in the <code>Marker</code> parameter and retrying the command. If the <code>Marker</code> field is empty, all response records have been retrieved for the request. </p>
     pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.marker = input; self
+        self.marker = input;
+        self
     }
     /// Appends an item to `cluster_security_groups`.
     ///
@@ -59,32 +64,36 @@ impl DescribeClusterSecurityGroupsOutputBuilder {
     /// <p>A list of <code>ClusterSecurityGroup</code> instances. </p>
     pub fn cluster_security_groups(mut self, input: crate::types::ClusterSecurityGroup) -> Self {
         let mut v = self.cluster_security_groups.unwrap_or_default();
-                        v.push(input);
-                        self.cluster_security_groups = Some(v);
-                        self
+        v.push(input);
+        self.cluster_security_groups = Some(v);
+        self
     }
     /// <p>A list of <code>ClusterSecurityGroup</code> instances. </p>
-    pub fn set_cluster_security_groups(mut self, input: std::option::Option<std::vec::Vec<crate::types::ClusterSecurityGroup>>) -> Self {
-        self.cluster_security_groups = input; self
+    pub fn set_cluster_security_groups(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::ClusterSecurityGroup>>,
+    ) -> Self {
+        self.cluster_security_groups = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`DescribeClusterSecurityGroupsOutput`](crate::operation::describe_cluster_security_groups::DescribeClusterSecurityGroupsOutput).
-    pub fn build(self) -> crate::operation::describe_cluster_security_groups::DescribeClusterSecurityGroupsOutput {
+    pub fn build(
+        self,
+    ) -> crate::operation::describe_cluster_security_groups::DescribeClusterSecurityGroupsOutput
+    {
         crate::operation::describe_cluster_security_groups::DescribeClusterSecurityGroupsOutput {
-            marker: self.marker
-            ,
-            cluster_security_groups: self.cluster_security_groups
-            ,
+            marker: self.marker,
+            cluster_security_groups: self.cluster_security_groups,
             _request_id: self._request_id,
         }
     }
 }
-

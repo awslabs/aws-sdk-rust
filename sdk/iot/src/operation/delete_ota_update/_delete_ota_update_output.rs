@@ -2,17 +2,18 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteOtaUpdateOutput  {
+pub struct DeleteOtaUpdateOutput {
     _request_id: Option<String>,
 }
 impl aws_http::request_id::RequestId for DeleteOtaUpdateOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl DeleteOtaUpdateOutput {
     /// Creates a new builder-style object to manufacture [`DeleteOtaUpdateOutput`](crate::operation::delete_ota_update::DeleteOtaUpdateOutput).
-    pub fn builder() -> crate::operation::delete_ota_update::builders::DeleteOtaUpdateOutputBuilder {
+    pub fn builder() -> crate::operation::delete_ota_update::builders::DeleteOtaUpdateOutputBuilder
+    {
         crate::operation::delete_ota_update::builders::DeleteOtaUpdateOutputBuilder::default()
     }
 }
@@ -25,14 +26,14 @@ pub struct DeleteOtaUpdateOutputBuilder {
 }
 impl DeleteOtaUpdateOutputBuilder {
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`DeleteOtaUpdateOutput`](crate::operation::delete_ota_update::DeleteOtaUpdateOutput).
     pub fn build(self) -> crate::operation::delete_ota_update::DeleteOtaUpdateOutput {
         crate::operation::delete_ota_update::DeleteOtaUpdateOutput {
@@ -40,4 +41,3 @@ impl DeleteOtaUpdateOutputBuilder {
         }
     }
 }
-

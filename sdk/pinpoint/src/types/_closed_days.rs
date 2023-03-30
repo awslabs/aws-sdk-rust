@@ -3,7 +3,7 @@
 /// <p>The time when journey will stop sending messages.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ClosedDays  {
+pub struct ClosedDays {
     /// <p>Rules for Email Channel.</p>
     #[doc(hidden)]
     pub email: std::option::Option<std::vec::Vec<crate::types::ClosedDaysRule>>,
@@ -22,23 +22,23 @@ pub struct ClosedDays  {
 }
 impl ClosedDays {
     /// <p>Rules for Email Channel.</p>
-    pub fn email(&self) -> std::option::Option<& [crate::types::ClosedDaysRule]> {
+    pub fn email(&self) -> std::option::Option<&[crate::types::ClosedDaysRule]> {
         self.email.as_deref()
     }
     /// <p>Rules for SMS Channel.</p>
-    pub fn sms(&self) -> std::option::Option<& [crate::types::ClosedDaysRule]> {
+    pub fn sms(&self) -> std::option::Option<&[crate::types::ClosedDaysRule]> {
         self.sms.as_deref()
     }
     /// <p>Rules for Push Channel.</p>
-    pub fn push(&self) -> std::option::Option<& [crate::types::ClosedDaysRule]> {
+    pub fn push(&self) -> std::option::Option<&[crate::types::ClosedDaysRule]> {
         self.push.as_deref()
     }
     /// <p>Rules for Voice Channel.</p>
-    pub fn voice(&self) -> std::option::Option<& [crate::types::ClosedDaysRule]> {
+    pub fn voice(&self) -> std::option::Option<&[crate::types::ClosedDaysRule]> {
         self.voice.as_deref()
     }
     /// <p>Rules for Custom Channel.</p>
-    pub fn custom(&self) -> std::option::Option<& [crate::types::ClosedDaysRule]> {
+    pub fn custom(&self) -> std::option::Option<&[crate::types::ClosedDaysRule]> {
         self.custom.as_deref()
     }
 }
@@ -67,13 +67,17 @@ impl ClosedDaysBuilder {
     /// <p>Rules for Email Channel.</p>
     pub fn email(mut self, input: crate::types::ClosedDaysRule) -> Self {
         let mut v = self.email.unwrap_or_default();
-                        v.push(input);
-                        self.email = Some(v);
-                        self
+        v.push(input);
+        self.email = Some(v);
+        self
     }
     /// <p>Rules for Email Channel.</p>
-    pub fn set_email(mut self, input: std::option::Option<std::vec::Vec<crate::types::ClosedDaysRule>>) -> Self {
-        self.email = input; self
+    pub fn set_email(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::ClosedDaysRule>>,
+    ) -> Self {
+        self.email = input;
+        self
     }
     /// Appends an item to `sms`.
     ///
@@ -82,13 +86,17 @@ impl ClosedDaysBuilder {
     /// <p>Rules for SMS Channel.</p>
     pub fn sms(mut self, input: crate::types::ClosedDaysRule) -> Self {
         let mut v = self.sms.unwrap_or_default();
-                        v.push(input);
-                        self.sms = Some(v);
-                        self
+        v.push(input);
+        self.sms = Some(v);
+        self
     }
     /// <p>Rules for SMS Channel.</p>
-    pub fn set_sms(mut self, input: std::option::Option<std::vec::Vec<crate::types::ClosedDaysRule>>) -> Self {
-        self.sms = input; self
+    pub fn set_sms(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::ClosedDaysRule>>,
+    ) -> Self {
+        self.sms = input;
+        self
     }
     /// Appends an item to `push`.
     ///
@@ -97,13 +105,17 @@ impl ClosedDaysBuilder {
     /// <p>Rules for Push Channel.</p>
     pub fn push(mut self, input: crate::types::ClosedDaysRule) -> Self {
         let mut v = self.push.unwrap_or_default();
-                        v.push(input);
-                        self.push = Some(v);
-                        self
+        v.push(input);
+        self.push = Some(v);
+        self
     }
     /// <p>Rules for Push Channel.</p>
-    pub fn set_push(mut self, input: std::option::Option<std::vec::Vec<crate::types::ClosedDaysRule>>) -> Self {
-        self.push = input; self
+    pub fn set_push(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::ClosedDaysRule>>,
+    ) -> Self {
+        self.push = input;
+        self
     }
     /// Appends an item to `voice`.
     ///
@@ -112,13 +124,17 @@ impl ClosedDaysBuilder {
     /// <p>Rules for Voice Channel.</p>
     pub fn voice(mut self, input: crate::types::ClosedDaysRule) -> Self {
         let mut v = self.voice.unwrap_or_default();
-                        v.push(input);
-                        self.voice = Some(v);
-                        self
+        v.push(input);
+        self.voice = Some(v);
+        self
     }
     /// <p>Rules for Voice Channel.</p>
-    pub fn set_voice(mut self, input: std::option::Option<std::vec::Vec<crate::types::ClosedDaysRule>>) -> Self {
-        self.voice = input; self
+    pub fn set_voice(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::ClosedDaysRule>>,
+    ) -> Self {
+        self.voice = input;
+        self
     }
     /// Appends an item to `custom`.
     ///
@@ -127,28 +143,26 @@ impl ClosedDaysBuilder {
     /// <p>Rules for Custom Channel.</p>
     pub fn custom(mut self, input: crate::types::ClosedDaysRule) -> Self {
         let mut v = self.custom.unwrap_or_default();
-                        v.push(input);
-                        self.custom = Some(v);
-                        self
+        v.push(input);
+        self.custom = Some(v);
+        self
     }
     /// <p>Rules for Custom Channel.</p>
-    pub fn set_custom(mut self, input: std::option::Option<std::vec::Vec<crate::types::ClosedDaysRule>>) -> Self {
-        self.custom = input; self
+    pub fn set_custom(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::ClosedDaysRule>>,
+    ) -> Self {
+        self.custom = input;
+        self
     }
     /// Consumes the builder and constructs a [`ClosedDays`](crate::types::ClosedDays).
     pub fn build(self) -> crate::types::ClosedDays {
         crate::types::ClosedDays {
-            email: self.email
-            ,
-            sms: self.sms
-            ,
-            push: self.push
-            ,
-            voice: self.voice
-            ,
-            custom: self.custom
-            ,
+            email: self.email,
+            sms: self.sms,
+            push: self.push,
+            voice: self.voice,
+            custom: self.custom,
         }
     }
 }
-

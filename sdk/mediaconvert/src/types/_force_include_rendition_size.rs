@@ -3,7 +3,7 @@
 /// Use Force include renditions to specify one or more resolutions to include your ABR stack. * (Recommended) To optimize automated ABR, specify as few resolutions as possible. * (Required) The number of resolutions that you specify must be equal to, or less than, the Max renditions setting. * If you specify a Min top rendition size rule, specify at least one resolution that is equal to, or greater than, Min top rendition size. * If you specify a Min bottom rendition size rule, only specify resolutions that are equal to, or greater than, Min bottom rendition size. * If you specify a Force include renditions rule, do not specify a separate rule for Allowed renditions. * Note: The ABR stack may include other resolutions that you do not specify here, depending on the Max renditions setting.
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ForceIncludeRenditionSize  {
+pub struct ForceIncludeRenditionSize {
     /// Use Height to define the video resolution height, in pixels, for this rule.
     #[doc(hidden)]
     pub height: i32,
@@ -43,7 +43,8 @@ impl ForceIncludeRenditionSizeBuilder {
     }
     /// Use Height to define the video resolution height, in pixels, for this rule.
     pub fn set_height(mut self, input: std::option::Option<i32>) -> Self {
-        self.height = input; self
+        self.height = input;
+        self
     }
     /// Use Width to define the video resolution width, in pixels, for this rule.
     pub fn width(mut self, input: i32) -> Self {
@@ -52,18 +53,14 @@ impl ForceIncludeRenditionSizeBuilder {
     }
     /// Use Width to define the video resolution width, in pixels, for this rule.
     pub fn set_width(mut self, input: std::option::Option<i32>) -> Self {
-        self.width = input; self
+        self.width = input;
+        self
     }
     /// Consumes the builder and constructs a [`ForceIncludeRenditionSize`](crate::types::ForceIncludeRenditionSize).
     pub fn build(self) -> crate::types::ForceIncludeRenditionSize {
         crate::types::ForceIncludeRenditionSize {
-            height: self.height
-                .unwrap_or_default()
-            ,
-            width: self.width
-                .unwrap_or_default()
-            ,
+            height: self.height.unwrap_or_default(),
+            width: self.width.unwrap_or_default(),
         }
     }
 }
-

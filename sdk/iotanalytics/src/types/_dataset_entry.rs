@@ -3,7 +3,7 @@
 /// <p>The reference to a dataset entry.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DatasetEntry  {
+pub struct DatasetEntry {
     /// <p>The name of the dataset item.</p>
     #[doc(hidden)]
     pub entry_name: std::option::Option<std::string::String>,
@@ -13,11 +13,11 @@ pub struct DatasetEntry  {
 }
 impl DatasetEntry {
     /// <p>The name of the dataset item.</p>
-    pub fn entry_name(&self) -> std::option::Option<& str> {
+    pub fn entry_name(&self) -> std::option::Option<&str> {
         self.entry_name.as_deref()
     }
     /// <p>The presigned URI of the dataset item.</p>
-    pub fn data_uri(&self) -> std::option::Option<& str> {
+    pub fn data_uri(&self) -> std::option::Option<&str> {
         self.data_uri.as_deref()
     }
 }
@@ -43,7 +43,8 @@ impl DatasetEntryBuilder {
     }
     /// <p>The name of the dataset item.</p>
     pub fn set_entry_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.entry_name = input; self
+        self.entry_name = input;
+        self
     }
     /// <p>The presigned URI of the dataset item.</p>
     pub fn data_uri(mut self, input: impl Into<std::string::String>) -> Self {
@@ -52,16 +53,14 @@ impl DatasetEntryBuilder {
     }
     /// <p>The presigned URI of the dataset item.</p>
     pub fn set_data_uri(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.data_uri = input; self
+        self.data_uri = input;
+        self
     }
     /// Consumes the builder and constructs a [`DatasetEntry`](crate::types::DatasetEntry).
     pub fn build(self) -> crate::types::DatasetEntry {
         crate::types::DatasetEntry {
-            entry_name: self.entry_name
-            ,
-            data_uri: self.data_uri
-            ,
+            entry_name: self.entry_name,
+            data_uri: self.data_uri,
         }
     }
 }
-

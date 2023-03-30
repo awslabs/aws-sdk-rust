@@ -4,50 +4,72 @@ pub use crate::operation::get_query_suggestions::_get_query_suggestions_output::
 pub use crate::operation::get_query_suggestions::_get_query_suggestions_input::GetQuerySuggestionsInputBuilder;
 
 /// Fluent builder constructing a request to `GetQuerySuggestions`.
-/// 
-/// <p>Fetches the queries that are suggested to your users.</p> 
+///
+/// <p>Fetches the queries that are suggested to your users.</p>
 /// <p> <code>GetQuerySuggestions</code> is currently not supported in the Amazon Web Services GovCloud (US-West) region.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct GetQuerySuggestionsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::get_query_suggestions::builders::GetQuerySuggestionsInputBuilder
-            }
-impl GetQuerySuggestionsFluentBuilder  {
+    handle: std::sync::Arc<crate::client::Handle>,
+    inner: crate::operation::get_query_suggestions::builders::GetQuerySuggestionsInputBuilder,
+}
+impl GetQuerySuggestionsFluentBuilder {
     /// Creates a new `GetQuerySuggestions`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
-                    /// sent. The operation's inner [http::Request] can be modified as well.
-                    pub async fn customize(self) -> std::result::Result<
-                        crate::client::customize::CustomizableOperation<crate::operation::get_query_suggestions::GetQuerySuggestions, aws_http::retry::AwsResponseRetryClassifier,>,
-                        aws_smithy_http::result::SdkError<crate::operation::get_query_suggestions::GetQuerySuggestionsError>
-                    >  {
-                        let handle = self.handle.clone();
-                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-                    }
-    
-                    /// Sends the request and returns the response.
-                    ///
-                    /// If an error occurs, an `SdkError` will be returned with additional details that
-                    /// can be matched against.
-                    ///
-                    /// By default, any retryable failures will be retried twice. Retry behavior
-                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                    /// set when configuring the client.
-                    pub async fn send(self) -> std::result::Result<crate::operation::get_query_suggestions::GetQuerySuggestionsOutput, aws_smithy_http::result::SdkError<crate::operation::get_query_suggestions::GetQuerySuggestionsError>>
-                     {
-                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&self.handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        self.handle.client.call(op).await
-                    }
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle,
+            inner: Default::default(),
+        }
+    }
+
+    /// Consume this builder, creating a customizable operation that can be modified before being
+    /// sent. The operation's inner [http::Request] can be modified as well.
+    pub async fn customize(
+        self,
+    ) -> std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::get_query_suggestions::GetQuerySuggestions,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::result::SdkError<
+            crate::operation::get_query_suggestions::GetQuerySuggestionsError,
+        >,
+    > {
+        let handle = self.handle.clone();
+        let operation = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+    }
+
+    /// Sends the request and returns the response.
+    ///
+    /// If an error occurs, an `SdkError` will be returned with additional details that
+    /// can be matched against.
+    ///
+    /// By default, any retryable failures will be retried twice. Retry behavior
+    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+    /// set when configuring the client.
+    pub async fn send(
+        self,
+    ) -> std::result::Result<
+        crate::operation::get_query_suggestions::GetQuerySuggestionsOutput,
+        aws_smithy_http::result::SdkError<
+            crate::operation::get_query_suggestions::GetQuerySuggestionsError,
+        >,
+    > {
+        let op = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&self.handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        self.handle.client.call(op).await
+    }
     /// <p>The identifier of the index you want to get query suggestions from.</p>
     pub fn index_id(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.index_id(input.into());
@@ -58,15 +80,15 @@ impl GetQuerySuggestionsFluentBuilder  {
         self.inner = self.inner.set_index_id(input);
         self
     }
-    /// <p>The text of a user's query to generate query suggestions.</p> 
-    /// <p>A query is suggested if the query prefix matches what a user starts to type as their query.</p> 
+    /// <p>The text of a user's query to generate query suggestions.</p>
+    /// <p>A query is suggested if the query prefix matches what a user starts to type as their query.</p>
     /// <p>Amazon Kendra does not show any suggestions if a user types fewer than two characters or more than 60 characters. A query must also have at least one search result and contain at least one word of more than four characters.</p>
     pub fn query_text(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.query_text(input.into());
         self
     }
-    /// <p>The text of a user's query to generate query suggestions.</p> 
-    /// <p>A query is suggested if the query prefix matches what a user starts to type as their query.</p> 
+    /// <p>The text of a user's query to generate query suggestions.</p>
+    /// <p>A query is suggested if the query prefix matches what a user starts to type as their query.</p>
     /// <p>Amazon Kendra does not show any suggestions if a user types fewer than two characters or more than 60 characters. A query must also have at least one search result and contain at least one word of more than four characters.</p>
     pub fn set_query_text(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.inner = self.inner.set_query_text(input);
@@ -83,4 +105,3 @@ impl GetQuerySuggestionsFluentBuilder  {
         self
     }
 }
-

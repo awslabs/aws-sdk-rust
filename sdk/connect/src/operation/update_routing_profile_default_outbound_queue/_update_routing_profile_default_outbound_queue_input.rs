@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateRoutingProfileDefaultOutboundQueueInput  {
+pub struct UpdateRoutingProfileDefaultOutboundQueueInput {
     /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
     #[doc(hidden)]
     pub instance_id: std::option::Option<std::string::String>,
@@ -15,21 +15,21 @@ pub struct UpdateRoutingProfileDefaultOutboundQueueInput  {
 }
 impl UpdateRoutingProfileDefaultOutboundQueueInput {
     /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
-    pub fn instance_id(&self) -> std::option::Option<& str> {
+    pub fn instance_id(&self) -> std::option::Option<&str> {
         self.instance_id.as_deref()
     }
     /// <p>The identifier of the routing profile.</p>
-    pub fn routing_profile_id(&self) -> std::option::Option<& str> {
+    pub fn routing_profile_id(&self) -> std::option::Option<&str> {
         self.routing_profile_id.as_deref()
     }
     /// <p>The identifier for the default outbound queue.</p>
-    pub fn default_outbound_queue_id(&self) -> std::option::Option<& str> {
+    pub fn default_outbound_queue_id(&self) -> std::option::Option<&str> {
         self.default_outbound_queue_id.as_deref()
     }
 }
 impl UpdateRoutingProfileDefaultOutboundQueueInput {
     /// Creates a new builder-style object to manufacture [`UpdateRoutingProfileDefaultOutboundQueueInput`](crate::operation::update_routing_profile_default_outbound_queue::UpdateRoutingProfileDefaultOutboundQueueInput).
-    pub fn builder() -> crate::operation::update_routing_profile_default_outbound_queue::builders::UpdateRoutingProfileDefaultOutboundQueueInputBuilder {
+    pub fn builder() -> crate::operation::update_routing_profile_default_outbound_queue::builders::UpdateRoutingProfileDefaultOutboundQueueInputBuilder{
         crate::operation::update_routing_profile_default_outbound_queue::builders::UpdateRoutingProfileDefaultOutboundQueueInputBuilder::default()
     }
 }
@@ -50,7 +50,8 @@ impl UpdateRoutingProfileDefaultOutboundQueueInputBuilder {
     }
     /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
     pub fn set_instance_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.instance_id = input; self
+        self.instance_id = input;
+        self
     }
     /// <p>The identifier of the routing profile.</p>
     pub fn routing_profile_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -58,8 +59,12 @@ impl UpdateRoutingProfileDefaultOutboundQueueInputBuilder {
         self
     }
     /// <p>The identifier of the routing profile.</p>
-    pub fn set_routing_profile_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.routing_profile_id = input; self
+    pub fn set_routing_profile_id(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.routing_profile_id = input;
+        self
     }
     /// <p>The identifier for the default outbound queue.</p>
     pub fn default_outbound_queue_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -67,11 +72,15 @@ impl UpdateRoutingProfileDefaultOutboundQueueInputBuilder {
         self
     }
     /// <p>The identifier for the default outbound queue.</p>
-    pub fn set_default_outbound_queue_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.default_outbound_queue_id = input; self
+    pub fn set_default_outbound_queue_id(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.default_outbound_queue_id = input;
+        self
     }
     /// Consumes the builder and constructs a [`UpdateRoutingProfileDefaultOutboundQueueInput`](crate::operation::update_routing_profile_default_outbound_queue::UpdateRoutingProfileDefaultOutboundQueueInput).
-    pub fn build(self) -> Result<crate::operation::update_routing_profile_default_outbound_queue::UpdateRoutingProfileDefaultOutboundQueueInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> Result<crate::operation::update_routing_profile_default_outbound_queue::UpdateRoutingProfileDefaultOutboundQueueInput, aws_smithy_http::operation::error::BuildError>{
         Ok(
             crate::operation::update_routing_profile_default_outbound_queue::UpdateRoutingProfileDefaultOutboundQueueInput {
                 instance_id: self.instance_id
@@ -84,4 +93,3 @@ impl UpdateRoutingProfileDefaultOutboundQueueInputBuilder {
         )
     }
 }
-

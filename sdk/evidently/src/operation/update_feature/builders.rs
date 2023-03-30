@@ -4,50 +4,68 @@ pub use crate::operation::update_feature::_update_feature_output::UpdateFeatureO
 pub use crate::operation::update_feature::_update_feature_input::UpdateFeatureInputBuilder;
 
 /// Fluent builder constructing a request to `UpdateFeature`.
-/// 
-/// <p>Updates an existing feature.</p> 
+///
+/// <p>Updates an existing feature.</p>
 /// <p>You can't use this operation to update the tags of an existing feature. Instead, use <a href="https://docs.aws.amazon.com/cloudwatchevidently/latest/APIReference/API_TagResource.html">TagResource</a>. </p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct UpdateFeatureFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::update_feature::builders::UpdateFeatureInputBuilder
-            }
-impl UpdateFeatureFluentBuilder  {
+    handle: std::sync::Arc<crate::client::Handle>,
+    inner: crate::operation::update_feature::builders::UpdateFeatureInputBuilder,
+}
+impl UpdateFeatureFluentBuilder {
     /// Creates a new `UpdateFeature`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
-                    /// sent. The operation's inner [http::Request] can be modified as well.
-                    pub async fn customize(self) -> std::result::Result<
-                        crate::client::customize::CustomizableOperation<crate::operation::update_feature::UpdateFeature, aws_http::retry::AwsResponseRetryClassifier,>,
-                        aws_smithy_http::result::SdkError<crate::operation::update_feature::UpdateFeatureError>
-                    >  {
-                        let handle = self.handle.clone();
-                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-                    }
-    
-                    /// Sends the request and returns the response.
-                    ///
-                    /// If an error occurs, an `SdkError` will be returned with additional details that
-                    /// can be matched against.
-                    ///
-                    /// By default, any retryable failures will be retried twice. Retry behavior
-                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                    /// set when configuring the client.
-                    pub async fn send(self) -> std::result::Result<crate::operation::update_feature::UpdateFeatureOutput, aws_smithy_http::result::SdkError<crate::operation::update_feature::UpdateFeatureError>>
-                     {
-                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&self.handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        self.handle.client.call(op).await
-                    }
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle,
+            inner: Default::default(),
+        }
+    }
+
+    /// Consume this builder, creating a customizable operation that can be modified before being
+    /// sent. The operation's inner [http::Request] can be modified as well.
+    pub async fn customize(
+        self,
+    ) -> std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::update_feature::UpdateFeature,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::result::SdkError<crate::operation::update_feature::UpdateFeatureError>,
+    > {
+        let handle = self.handle.clone();
+        let operation = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+    }
+
+    /// Sends the request and returns the response.
+    ///
+    /// If an error occurs, an `SdkError` will be returned with additional details that
+    /// can be matched against.
+    ///
+    /// By default, any retryable failures will be retried twice. Retry behavior
+    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+    /// set when configuring the client.
+    pub async fn send(
+        self,
+    ) -> std::result::Result<
+        crate::operation::update_feature::UpdateFeatureOutput,
+        aws_smithy_http::result::SdkError<crate::operation::update_feature::UpdateFeatureError>,
+    > {
+        let op = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&self.handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        self.handle.client.call(op).await
+    }
     /// <p>The name or ARN of the project that contains the feature to be updated.</p>
     pub fn project(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.project(input.into());
@@ -74,7 +92,10 @@ impl UpdateFeatureFluentBuilder  {
         self
     }
     /// <p>Specify <code>ALL_RULES</code> to activate the traffic allocation specified by any ongoing launches or experiments. Specify <code>DEFAULT_VARIATION</code> to serve the default variation to all users instead.</p>
-    pub fn set_evaluation_strategy(mut self, input: std::option::Option<crate::types::FeatureEvaluationStrategy>) -> Self {
+    pub fn set_evaluation_strategy(
+        mut self,
+        input: std::option::Option<crate::types::FeatureEvaluationStrategy>,
+    ) -> Self {
         self.inner = self.inner.set_evaluation_strategy(input);
         self
     }
@@ -98,7 +119,10 @@ impl UpdateFeatureFluentBuilder  {
         self
     }
     /// <p>To update variation configurations for this feature, or add new ones, specify this structure. In this array, include any variations that you want to add or update. If the array includes a variation name that already exists for this feature, it is updated. If it includes a new variation name, it is added as a new variation.</p>
-    pub fn set_add_or_update_variations(mut self, input: std::option::Option<std::vec::Vec<crate::types::VariationConfig>>) -> Self {
+    pub fn set_add_or_update_variations(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::VariationConfig>>,
+    ) -> Self {
         self.inner = self.inner.set_add_or_update_variations(input);
         self
     }
@@ -106,15 +130,18 @@ impl UpdateFeatureFluentBuilder  {
     ///
     /// To override the contents of this collection use [`set_remove_variations`](Self::set_remove_variations).
     ///
-    /// <p>Removes a variation from the feature. If the variation you specify doesn't exist, then this makes no change and does not report an error.</p> 
+    /// <p>Removes a variation from the feature. If the variation you specify doesn't exist, then this makes no change and does not report an error.</p>
     /// <p>This operation fails if you try to remove a variation that is part of an ongoing launch or experiment.</p>
     pub fn remove_variations(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.remove_variations(input.into());
         self
     }
-    /// <p>Removes a variation from the feature. If the variation you specify doesn't exist, then this makes no change and does not report an error.</p> 
+    /// <p>Removes a variation from the feature. If the variation you specify doesn't exist, then this makes no change and does not report an error.</p>
     /// <p>This operation fails if you try to remove a variation that is part of an ongoing launch or experiment.</p>
-    pub fn set_remove_variations(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+    pub fn set_remove_variations(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
         self.inner = self.inner.set_remove_variations(input);
         self
     }
@@ -124,7 +151,10 @@ impl UpdateFeatureFluentBuilder  {
         self
     }
     /// <p>The name of the variation to use as the default variation. The default variation is served to users who are not allocated to any ongoing launches or experiments of this feature.</p>
-    pub fn set_default_variation(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_default_variation(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_default_variation(input);
         self
     }
@@ -133,14 +163,22 @@ impl UpdateFeatureFluentBuilder  {
     /// To override the contents of this collection use [`set_entity_overrides`](Self::set_entity_overrides).
     ///
     /// <p>Specified users that should always be served a specific variation of a feature. Each user is specified by a key-value pair . For each key, specify a user by entering their user ID, account ID, or some other identifier. For the value, specify the name of the variation that they are to be served.</p>
-    pub fn entity_overrides(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
+    pub fn entity_overrides(
+        mut self,
+        k: impl Into<std::string::String>,
+        v: impl Into<std::string::String>,
+    ) -> Self {
         self.inner = self.inner.entity_overrides(k.into(), v.into());
         self
     }
     /// <p>Specified users that should always be served a specific variation of a feature. Each user is specified by a key-value pair . For each key, specify a user by entering their user ID, account ID, or some other identifier. For the value, specify the name of the variation that they are to be served.</p>
-    pub fn set_entity_overrides(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+    pub fn set_entity_overrides(
+        mut self,
+        input: std::option::Option<
+            std::collections::HashMap<std::string::String, std::string::String>,
+        >,
+    ) -> Self {
         self.inner = self.inner.set_entity_overrides(input);
         self
     }
 }
-

@@ -2,11 +2,11 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListDecoderManifestsInput  {
+pub struct ListDecoderManifestsInput {
     /// <p> The Amazon Resource Name (ARN) of a vehicle model (model manifest) associated with the decoder manifest. </p>
     #[doc(hidden)]
     pub model_manifest_arn: std::option::Option<std::string::String>,
-    /// <p>A pagination token for the next set of results.</p> 
+    /// <p>A pagination token for the next set of results.</p>
     /// <p>If the results of a search are large, only a portion of the results are returned, and a <code>nextToken</code> pagination token is returned in the response. To retrieve the next set of results, reissue the search request and include the returned token. When all results have been returned, the response does not contain a pagination token value. </p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
@@ -16,12 +16,12 @@ pub struct ListDecoderManifestsInput  {
 }
 impl ListDecoderManifestsInput {
     /// <p> The Amazon Resource Name (ARN) of a vehicle model (model manifest) associated with the decoder manifest. </p>
-    pub fn model_manifest_arn(&self) -> std::option::Option<& str> {
+    pub fn model_manifest_arn(&self) -> std::option::Option<&str> {
         self.model_manifest_arn.as_deref()
     }
-    /// <p>A pagination token for the next set of results.</p> 
+    /// <p>A pagination token for the next set of results.</p>
     /// <p>If the results of a search are large, only a portion of the results are returned, and a <code>nextToken</code> pagination token is returned in the response. To retrieve the next set of results, reissue the search request and include the returned token. When all results have been returned, the response does not contain a pagination token value. </p>
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
     /// <p> The maximum number of items to return, between 1 and 100, inclusive. </p>
@@ -31,7 +31,8 @@ impl ListDecoderManifestsInput {
 }
 impl ListDecoderManifestsInput {
     /// Creates a new builder-style object to manufacture [`ListDecoderManifestsInput`](crate::operation::list_decoder_manifests::ListDecoderManifestsInput).
-    pub fn builder() -> crate::operation::list_decoder_manifests::builders::ListDecoderManifestsInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::list_decoder_manifests::builders::ListDecoderManifestsInputBuilder {
         crate::operation::list_decoder_manifests::builders::ListDecoderManifestsInputBuilder::default()
     }
 }
@@ -51,19 +52,24 @@ impl ListDecoderManifestsInputBuilder {
         self
     }
     /// <p> The Amazon Resource Name (ARN) of a vehicle model (model manifest) associated with the decoder manifest. </p>
-    pub fn set_model_manifest_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.model_manifest_arn = input; self
+    pub fn set_model_manifest_arn(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.model_manifest_arn = input;
+        self
     }
-    /// <p>A pagination token for the next set of results.</p> 
+    /// <p>A pagination token for the next set of results.</p>
     /// <p>If the results of a search are large, only a portion of the results are returned, and a <code>nextToken</code> pagination token is returned in the response. To retrieve the next set of results, reissue the search request and include the returned token. When all results have been returned, the response does not contain a pagination token value. </p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
         self.next_token = Some(input.into());
         self
     }
-    /// <p>A pagination token for the next set of results.</p> 
+    /// <p>A pagination token for the next set of results.</p>
     /// <p>If the results of a search are large, only a portion of the results are returned, and a <code>nextToken</code> pagination token is returned in the response. To retrieve the next set of results, reissue the search request and include the returned token. When all results have been returned, the response does not contain a pagination token value. </p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input; self
+        self.next_token = input;
+        self
     }
     /// <p> The maximum number of items to return, between 1 and 100, inclusive. </p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -72,20 +78,22 @@ impl ListDecoderManifestsInputBuilder {
     }
     /// <p> The maximum number of items to return, between 1 and 100, inclusive. </p>
     pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_results = input; self
+        self.max_results = input;
+        self
     }
     /// Consumes the builder and constructs a [`ListDecoderManifestsInput`](crate::operation::list_decoder_manifests::ListDecoderManifestsInput).
-    pub fn build(self) -> Result<crate::operation::list_decoder_manifests::ListDecoderManifestsInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::list_decoder_manifests::ListDecoderManifestsInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::list_decoder_manifests::ListDecoderManifestsInput {
-                model_manifest_arn: self.model_manifest_arn
-                ,
-                next_token: self.next_token
-                ,
-                max_results: self.max_results
-                ,
-            }
+                model_manifest_arn: self.model_manifest_arn,
+                next_token: self.next_token,
+                max_results: self.max_results,
+            },
         )
     }
 }
-

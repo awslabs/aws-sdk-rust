@@ -3,7 +3,7 @@
 /// <p>Describes the source of a CloudFormation stack record (i.e., the export snapshot record).</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CloudFormationStackRecordSourceInfo  {
+pub struct CloudFormationStackRecordSourceInfo {
     /// <p>The Lightsail resource type (e.g., <code>ExportSnapshotRecord</code>).</p>
     #[doc(hidden)]
     pub resource_type: std::option::Option<crate::types::CloudFormationStackRecordSourceType>,
@@ -16,15 +16,17 @@ pub struct CloudFormationStackRecordSourceInfo  {
 }
 impl CloudFormationStackRecordSourceInfo {
     /// <p>The Lightsail resource type (e.g., <code>ExportSnapshotRecord</code>).</p>
-    pub fn resource_type(&self) -> std::option::Option<& crate::types::CloudFormationStackRecordSourceType> {
+    pub fn resource_type(
+        &self,
+    ) -> std::option::Option<&crate::types::CloudFormationStackRecordSourceType> {
         self.resource_type.as_ref()
     }
     /// <p>The name of the record.</p>
-    pub fn name(&self) -> std::option::Option<& str> {
+    pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the export snapshot record.</p>
-    pub fn arn(&self) -> std::option::Option<& str> {
+    pub fn arn(&self) -> std::option::Option<&str> {
         self.arn.as_deref()
     }
 }
@@ -39,19 +41,27 @@ impl CloudFormationStackRecordSourceInfo {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct CloudFormationStackRecordSourceInfoBuilder {
-    pub(crate) resource_type: std::option::Option<crate::types::CloudFormationStackRecordSourceType>,
+    pub(crate) resource_type:
+        std::option::Option<crate::types::CloudFormationStackRecordSourceType>,
     pub(crate) name: std::option::Option<std::string::String>,
     pub(crate) arn: std::option::Option<std::string::String>,
 }
 impl CloudFormationStackRecordSourceInfoBuilder {
     /// <p>The Lightsail resource type (e.g., <code>ExportSnapshotRecord</code>).</p>
-    pub fn resource_type(mut self, input: crate::types::CloudFormationStackRecordSourceType) -> Self {
+    pub fn resource_type(
+        mut self,
+        input: crate::types::CloudFormationStackRecordSourceType,
+    ) -> Self {
         self.resource_type = Some(input);
         self
     }
     /// <p>The Lightsail resource type (e.g., <code>ExportSnapshotRecord</code>).</p>
-    pub fn set_resource_type(mut self, input: std::option::Option<crate::types::CloudFormationStackRecordSourceType>) -> Self {
-        self.resource_type = input; self
+    pub fn set_resource_type(
+        mut self,
+        input: std::option::Option<crate::types::CloudFormationStackRecordSourceType>,
+    ) -> Self {
+        self.resource_type = input;
+        self
     }
     /// <p>The name of the record.</p>
     pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -60,7 +70,8 @@ impl CloudFormationStackRecordSourceInfoBuilder {
     }
     /// <p>The name of the record.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input; self
+        self.name = input;
+        self
     }
     /// <p>The Amazon Resource Name (ARN) of the export snapshot record.</p>
     pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -69,18 +80,15 @@ impl CloudFormationStackRecordSourceInfoBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the export snapshot record.</p>
     pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.arn = input; self
+        self.arn = input;
+        self
     }
     /// Consumes the builder and constructs a [`CloudFormationStackRecordSourceInfo`](crate::types::CloudFormationStackRecordSourceInfo).
     pub fn build(self) -> crate::types::CloudFormationStackRecordSourceInfo {
         crate::types::CloudFormationStackRecordSourceInfo {
-            resource_type: self.resource_type
-            ,
-            name: self.name
-            ,
-            arn: self.arn
-            ,
+            resource_type: self.resource_type,
+            name: self.name,
+            arn: self.arn,
         }
     }
 }
-

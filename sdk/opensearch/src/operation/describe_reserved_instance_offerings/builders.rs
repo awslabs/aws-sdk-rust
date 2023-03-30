@@ -4,62 +4,74 @@ pub use crate::operation::describe_reserved_instance_offerings::_describe_reserv
 pub use crate::operation::describe_reserved_instance_offerings::_describe_reserved_instance_offerings_input::DescribeReservedInstanceOfferingsInputBuilder;
 
 /// Fluent builder constructing a request to `DescribeReservedInstanceOfferings`.
-/// 
+///
 /// <p>Describes the available Amazon OpenSearch Service Reserved Instance offerings for a given Region. For more information, see <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/ri.html">Reserved Instances in Amazon OpenSearch Service</a>.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeReservedInstanceOfferingsFluentBuilder {
                 handle: std::sync::Arc<crate::client::Handle>,
                 inner: crate::operation::describe_reserved_instance_offerings::builders::DescribeReservedInstanceOfferingsInputBuilder
             }
-impl DescribeReservedInstanceOfferingsFluentBuilder  {
+impl DescribeReservedInstanceOfferingsFluentBuilder {
     /// Creates a new `DescribeReservedInstanceOfferings`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
-                    /// sent. The operation's inner [http::Request] can be modified as well.
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle,
+            inner: Default::default(),
+        }
+    }
+
+    /// Consume this builder, creating a customizable operation that can be modified before being
+    /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::describe_reserved_instance_offerings::DescribeReservedInstanceOfferings, aws_http::retry::AwsResponseRetryClassifier,>,
                         aws_smithy_http::result::SdkError<crate::operation::describe_reserved_instance_offerings::DescribeReservedInstanceOfferingsError>
-                    >  {
-                        let handle = self.handle.clone();
-                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-                    }
-    
-                    /// Sends the request and returns the response.
-                    ///
-                    /// If an error occurs, an `SdkError` will be returned with additional details that
-                    /// can be matched against.
-                    ///
-                    /// By default, any retryable failures will be retried twice. Retry behavior
-                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                    /// set when configuring the client.
+    >{
+        let handle = self.handle.clone();
+        let operation = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+    }
+
+    /// Sends the request and returns the response.
+    ///
+    /// If an error occurs, an `SdkError` will be returned with additional details that
+    /// can be matched against.
+    ///
+    /// By default, any retryable failures will be retried twice. Retry behavior
+    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+    /// set when configuring the client.
                     pub async fn send(self) -> std::result::Result<crate::operation::describe_reserved_instance_offerings::DescribeReservedInstanceOfferingsOutput, aws_smithy_http::result::SdkError<crate::operation::describe_reserved_instance_offerings::DescribeReservedInstanceOfferingsError>>
                      {
-                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&self.handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        self.handle.client.call(op).await
-                    }
+        let op = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&self.handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        self.handle.client.call(op).await
+    }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::describe_reserved_instance_offerings::paginator::DescribeReservedInstanceOfferingsPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::describe_reserved_instance_offerings::paginator::DescribeReservedInstanceOfferingsPaginator {
-                            crate::operation::describe_reserved_instance_offerings::paginator::DescribeReservedInstanceOfferingsPaginator::new(self.handle, self.inner)
-                        }
+    ///
+    /// Paginators are used by calling [`send().await`](crate::operation::describe_reserved_instance_offerings::paginator::DescribeReservedInstanceOfferingsPaginator::send) which returns a `Stream`.
+    pub fn into_paginator(self) -> crate::operation::describe_reserved_instance_offerings::paginator::DescribeReservedInstanceOfferingsPaginator{
+        crate::operation::describe_reserved_instance_offerings::paginator::DescribeReservedInstanceOfferingsPaginator::new(self.handle, self.inner)
+    }
     /// <p>The Reserved Instance identifier filter value. Use this parameter to show only the available instance types that match the specified reservation identifier.</p>
     pub fn reserved_instance_offering_id(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.reserved_instance_offering_id(input.into());
         self
     }
     /// <p>The Reserved Instance identifier filter value. Use this parameter to show only the available instance types that match the specified reservation identifier.</p>
-    pub fn set_reserved_instance_offering_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_reserved_instance_offering_id(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_reserved_instance_offering_id(input);
         self
     }
@@ -84,4 +96,3 @@ impl DescribeReservedInstanceOfferingsFluentBuilder  {
         self
     }
 }
-

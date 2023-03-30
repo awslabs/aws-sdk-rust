@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListPackagingGroupsInput  {
+pub struct ListPackagingGroupsInput {
     /// Upper bound on number of records to return.
     #[doc(hidden)]
     pub max_results: i32,
@@ -16,14 +16,16 @@ impl ListPackagingGroupsInput {
         self.max_results
     }
     /// A token used to resume pagination from the end of a previous request.
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
 }
 impl ListPackagingGroupsInput {
     /// Creates a new builder-style object to manufacture [`ListPackagingGroupsInput`](crate::operation::list_packaging_groups::ListPackagingGroupsInput).
-    pub fn builder() -> crate::operation::list_packaging_groups::builders::ListPackagingGroupsInputBuilder {
-        crate::operation::list_packaging_groups::builders::ListPackagingGroupsInputBuilder::default()
+    pub fn builder(
+    ) -> crate::operation::list_packaging_groups::builders::ListPackagingGroupsInputBuilder {
+        crate::operation::list_packaging_groups::builders::ListPackagingGroupsInputBuilder::default(
+        )
     }
 }
 
@@ -42,7 +44,8 @@ impl ListPackagingGroupsInputBuilder {
     }
     /// Upper bound on number of records to return.
     pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_results = input; self
+        self.max_results = input;
+        self
     }
     /// A token used to resume pagination from the end of a previous request.
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -51,19 +54,21 @@ impl ListPackagingGroupsInputBuilder {
     }
     /// A token used to resume pagination from the end of a previous request.
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input; self
+        self.next_token = input;
+        self
     }
     /// Consumes the builder and constructs a [`ListPackagingGroupsInput`](crate::operation::list_packaging_groups::ListPackagingGroupsInput).
-    pub fn build(self) -> Result<crate::operation::list_packaging_groups::ListPackagingGroupsInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::list_packaging_groups::ListPackagingGroupsInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::list_packaging_groups::ListPackagingGroupsInput {
-                max_results: self.max_results
-                    .unwrap_or_default()
-                ,
-                next_token: self.next_token
-                ,
-            }
+                max_results: self.max_results.unwrap_or_default(),
+                next_token: self.next_token,
+            },
         )
     }
 }
-

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SearchAddressBooksOutput  {
+pub struct SearchAddressBooksOutput {
     /// <p>The address books that meet the specified set of filter criteria, in sort order.</p>
     #[doc(hidden)]
     pub address_books: std::option::Option<std::vec::Vec<crate::types::AddressBookData>>,
@@ -16,11 +16,11 @@ pub struct SearchAddressBooksOutput  {
 }
 impl SearchAddressBooksOutput {
     /// <p>The address books that meet the specified set of filter criteria, in sort order.</p>
-    pub fn address_books(&self) -> std::option::Option<& [crate::types::AddressBookData]> {
+    pub fn address_books(&self) -> std::option::Option<&[crate::types::AddressBookData]> {
         self.address_books.as_deref()
     }
     /// <p>The token returned to indicate that there is more data available.</p>
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
     /// <p>The total number of address books returned.</p>
@@ -29,13 +29,14 @@ impl SearchAddressBooksOutput {
     }
 }
 impl aws_http::request_id::RequestId for SearchAddressBooksOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl SearchAddressBooksOutput {
     /// Creates a new builder-style object to manufacture [`SearchAddressBooksOutput`](crate::operation::search_address_books::SearchAddressBooksOutput).
-    pub fn builder() -> crate::operation::search_address_books::builders::SearchAddressBooksOutputBuilder {
+    pub fn builder(
+    ) -> crate::operation::search_address_books::builders::SearchAddressBooksOutputBuilder {
         crate::operation::search_address_books::builders::SearchAddressBooksOutputBuilder::default()
     }
 }
@@ -57,13 +58,17 @@ impl SearchAddressBooksOutputBuilder {
     /// <p>The address books that meet the specified set of filter criteria, in sort order.</p>
     pub fn address_books(mut self, input: crate::types::AddressBookData) -> Self {
         let mut v = self.address_books.unwrap_or_default();
-                        v.push(input);
-                        self.address_books = Some(v);
-                        self
+        v.push(input);
+        self.address_books = Some(v);
+        self
     }
     /// <p>The address books that meet the specified set of filter criteria, in sort order.</p>
-    pub fn set_address_books(mut self, input: std::option::Option<std::vec::Vec<crate::types::AddressBookData>>) -> Self {
-        self.address_books = input; self
+    pub fn set_address_books(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::AddressBookData>>,
+    ) -> Self {
+        self.address_books = input;
+        self
     }
     /// <p>The token returned to indicate that there is more data available.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -72,7 +77,8 @@ impl SearchAddressBooksOutputBuilder {
     }
     /// <p>The token returned to indicate that there is more data available.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input; self
+        self.next_token = input;
+        self
     }
     /// <p>The total number of address books returned.</p>
     pub fn total_count(mut self, input: i32) -> Self {
@@ -81,28 +87,25 @@ impl SearchAddressBooksOutputBuilder {
     }
     /// <p>The total number of address books returned.</p>
     pub fn set_total_count(mut self, input: std::option::Option<i32>) -> Self {
-        self.total_count = input; self
+        self.total_count = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`SearchAddressBooksOutput`](crate::operation::search_address_books::SearchAddressBooksOutput).
     pub fn build(self) -> crate::operation::search_address_books::SearchAddressBooksOutput {
         crate::operation::search_address_books::SearchAddressBooksOutput {
-            address_books: self.address_books
-            ,
-            next_token: self.next_token
-            ,
-            total_count: self.total_count
-            ,
+            address_books: self.address_books,
+            next_token: self.next_token,
+            total_count: self.total_count,
             _request_id: self._request_id,
         }
     }
 }
-

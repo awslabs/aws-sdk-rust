@@ -2,26 +2,29 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetDatalakeExceptionsSubscriptionOutput  {
+pub struct GetDatalakeExceptionsSubscriptionOutput {
     /// <p>Retrieves the exception notification subscription information.</p>
     #[doc(hidden)]
-    pub protocol_and_notification_endpoint: std::option::Option<crate::types::ProtocolAndNotificationEndpoint>,
+    pub protocol_and_notification_endpoint:
+        std::option::Option<crate::types::ProtocolAndNotificationEndpoint>,
     _request_id: Option<String>,
 }
 impl GetDatalakeExceptionsSubscriptionOutput {
     /// <p>Retrieves the exception notification subscription information.</p>
-    pub fn protocol_and_notification_endpoint(&self) -> std::option::Option<& crate::types::ProtocolAndNotificationEndpoint> {
+    pub fn protocol_and_notification_endpoint(
+        &self,
+    ) -> std::option::Option<&crate::types::ProtocolAndNotificationEndpoint> {
         self.protocol_and_notification_endpoint.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for GetDatalakeExceptionsSubscriptionOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl GetDatalakeExceptionsSubscriptionOutput {
     /// Creates a new builder-style object to manufacture [`GetDatalakeExceptionsSubscriptionOutput`](crate::operation::get_datalake_exceptions_subscription::GetDatalakeExceptionsSubscriptionOutput).
-    pub fn builder() -> crate::operation::get_datalake_exceptions_subscription::builders::GetDatalakeExceptionsSubscriptionOutputBuilder {
+    pub fn builder() -> crate::operation::get_datalake_exceptions_subscription::builders::GetDatalakeExceptionsSubscriptionOutputBuilder{
         crate::operation::get_datalake_exceptions_subscription::builders::GetDatalakeExceptionsSubscriptionOutputBuilder::default()
     }
 }
@@ -30,30 +33,38 @@ impl GetDatalakeExceptionsSubscriptionOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct GetDatalakeExceptionsSubscriptionOutputBuilder {
-    pub(crate) protocol_and_notification_endpoint: std::option::Option<crate::types::ProtocolAndNotificationEndpoint>,
+    pub(crate) protocol_and_notification_endpoint:
+        std::option::Option<crate::types::ProtocolAndNotificationEndpoint>,
     _request_id: Option<String>,
 }
 impl GetDatalakeExceptionsSubscriptionOutputBuilder {
     /// <p>Retrieves the exception notification subscription information.</p>
-    pub fn protocol_and_notification_endpoint(mut self, input: crate::types::ProtocolAndNotificationEndpoint) -> Self {
+    pub fn protocol_and_notification_endpoint(
+        mut self,
+        input: crate::types::ProtocolAndNotificationEndpoint,
+    ) -> Self {
         self.protocol_and_notification_endpoint = Some(input);
         self
     }
     /// <p>Retrieves the exception notification subscription information.</p>
-    pub fn set_protocol_and_notification_endpoint(mut self, input: std::option::Option<crate::types::ProtocolAndNotificationEndpoint>) -> Self {
-        self.protocol_and_notification_endpoint = input; self
+    pub fn set_protocol_and_notification_endpoint(
+        mut self,
+        input: std::option::Option<crate::types::ProtocolAndNotificationEndpoint>,
+    ) -> Self {
+        self.protocol_and_notification_endpoint = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`GetDatalakeExceptionsSubscriptionOutput`](crate::operation::get_datalake_exceptions_subscription::GetDatalakeExceptionsSubscriptionOutput).
-    pub fn build(self) -> crate::operation::get_datalake_exceptions_subscription::GetDatalakeExceptionsSubscriptionOutput {
+    pub fn build(self) -> crate::operation::get_datalake_exceptions_subscription::GetDatalakeExceptionsSubscriptionOutput{
         crate::operation::get_datalake_exceptions_subscription::GetDatalakeExceptionsSubscriptionOutput {
             protocol_and_notification_endpoint: self.protocol_and_notification_endpoint
             ,
@@ -61,4 +72,3 @@ impl GetDatalakeExceptionsSubscriptionOutputBuilder {
         }
     }
 }
-

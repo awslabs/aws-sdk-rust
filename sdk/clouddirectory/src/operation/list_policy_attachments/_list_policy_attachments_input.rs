@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListPolicyAttachmentsInput  {
+pub struct ListPolicyAttachmentsInput {
     /// <p>The Amazon Resource Name (ARN) that is associated with the <code>Directory</code> where objects reside. For more information, see <code>arns</code>.</p>
     #[doc(hidden)]
     pub directory_arn: std::option::Option<std::string::String>,
@@ -21,15 +21,15 @@ pub struct ListPolicyAttachmentsInput  {
 }
 impl ListPolicyAttachmentsInput {
     /// <p>The Amazon Resource Name (ARN) that is associated with the <code>Directory</code> where objects reside. For more information, see <code>arns</code>.</p>
-    pub fn directory_arn(&self) -> std::option::Option<& str> {
+    pub fn directory_arn(&self) -> std::option::Option<&str> {
         self.directory_arn.as_deref()
     }
     /// <p>The reference that identifies the policy object.</p>
-    pub fn policy_reference(&self) -> std::option::Option<& crate::types::ObjectReference> {
+    pub fn policy_reference(&self) -> std::option::Option<&crate::types::ObjectReference> {
         self.policy_reference.as_ref()
     }
     /// <p>The pagination token.</p>
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
     /// <p>The maximum number of items to be retrieved in a single call. This is an approximate number.</p>
@@ -37,13 +37,15 @@ impl ListPolicyAttachmentsInput {
         self.max_results
     }
     /// <p>Represents the manner and timing in which the successful write or update of an object is reflected in a subsequent read operation of that same object.</p>
-    pub fn consistency_level(&self) -> std::option::Option<& crate::types::ConsistencyLevel> {
+    pub fn consistency_level(&self) -> std::option::Option<&crate::types::ConsistencyLevel> {
         self.consistency_level.as_ref()
     }
 }
 impl ListPolicyAttachmentsInput {
     /// Creates a new builder-style object to manufacture [`ListPolicyAttachmentsInput`](crate::operation::list_policy_attachments::ListPolicyAttachmentsInput).
-    pub fn builder() -> crate::operation::list_policy_attachments::builders::ListPolicyAttachmentsInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::list_policy_attachments::builders::ListPolicyAttachmentsInputBuilder
+    {
         crate::operation::list_policy_attachments::builders::ListPolicyAttachmentsInputBuilder::default()
     }
 }
@@ -66,7 +68,8 @@ impl ListPolicyAttachmentsInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) that is associated with the <code>Directory</code> where objects reside. For more information, see <code>arns</code>.</p>
     pub fn set_directory_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.directory_arn = input; self
+        self.directory_arn = input;
+        self
     }
     /// <p>The reference that identifies the policy object.</p>
     pub fn policy_reference(mut self, input: crate::types::ObjectReference) -> Self {
@@ -74,8 +77,12 @@ impl ListPolicyAttachmentsInputBuilder {
         self
     }
     /// <p>The reference that identifies the policy object.</p>
-    pub fn set_policy_reference(mut self, input: std::option::Option<crate::types::ObjectReference>) -> Self {
-        self.policy_reference = input; self
+    pub fn set_policy_reference(
+        mut self,
+        input: std::option::Option<crate::types::ObjectReference>,
+    ) -> Self {
+        self.policy_reference = input;
+        self
     }
     /// <p>The pagination token.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -84,7 +91,8 @@ impl ListPolicyAttachmentsInputBuilder {
     }
     /// <p>The pagination token.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input; self
+        self.next_token = input;
+        self
     }
     /// <p>The maximum number of items to be retrieved in a single call. This is an approximate number.</p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -93,7 +101,8 @@ impl ListPolicyAttachmentsInputBuilder {
     }
     /// <p>The maximum number of items to be retrieved in a single call. This is an approximate number.</p>
     pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_results = input; self
+        self.max_results = input;
+        self
     }
     /// <p>Represents the manner and timing in which the successful write or update of an object is reflected in a subsequent read operation of that same object.</p>
     pub fn consistency_level(mut self, input: crate::types::ConsistencyLevel) -> Self {
@@ -101,25 +110,28 @@ impl ListPolicyAttachmentsInputBuilder {
         self
     }
     /// <p>Represents the manner and timing in which the successful write or update of an object is reflected in a subsequent read operation of that same object.</p>
-    pub fn set_consistency_level(mut self, input: std::option::Option<crate::types::ConsistencyLevel>) -> Self {
-        self.consistency_level = input; self
+    pub fn set_consistency_level(
+        mut self,
+        input: std::option::Option<crate::types::ConsistencyLevel>,
+    ) -> Self {
+        self.consistency_level = input;
+        self
     }
     /// Consumes the builder and constructs a [`ListPolicyAttachmentsInput`](crate::operation::list_policy_attachments::ListPolicyAttachmentsInput).
-    pub fn build(self) -> Result<crate::operation::list_policy_attachments::ListPolicyAttachmentsInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::list_policy_attachments::ListPolicyAttachmentsInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::list_policy_attachments::ListPolicyAttachmentsInput {
-                directory_arn: self.directory_arn
-                ,
-                policy_reference: self.policy_reference
-                ,
-                next_token: self.next_token
-                ,
-                max_results: self.max_results
-                ,
-                consistency_level: self.consistency_level
-                ,
-            }
+                directory_arn: self.directory_arn,
+                policy_reference: self.policy_reference,
+                next_token: self.next_token,
+                max_results: self.max_results,
+                consistency_level: self.consistency_level,
+            },
         )
     }
 }
-

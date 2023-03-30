@@ -3,14 +3,14 @@
 /// <p>A read set.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ExportReadSet  {
+pub struct ExportReadSet {
     /// <p>The set's ID.</p>
     #[doc(hidden)]
     pub read_set_id: std::option::Option<std::string::String>,
 }
 impl ExportReadSet {
     /// <p>The set's ID.</p>
-    pub fn read_set_id(&self) -> std::option::Option<& str> {
+    pub fn read_set_id(&self) -> std::option::Option<&str> {
         self.read_set_id.as_deref()
     }
 }
@@ -35,14 +35,13 @@ impl ExportReadSetBuilder {
     }
     /// <p>The set's ID.</p>
     pub fn set_read_set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.read_set_id = input; self
+        self.read_set_id = input;
+        self
     }
     /// Consumes the builder and constructs a [`ExportReadSet`](crate::types::ExportReadSet).
     pub fn build(self) -> crate::types::ExportReadSet {
         crate::types::ExportReadSet {
-            read_set_id: self.read_set_id
-            ,
+            read_set_id: self.read_set_id,
         }
     }
 }
-

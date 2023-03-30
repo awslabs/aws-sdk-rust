@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateComputeEnvironmentOutput  {
+pub struct CreateComputeEnvironmentOutput {
     /// <p>The name of the compute environment. It can be up to 128 characters long. It can contain uppercase and lowercase letters, numbers, hyphens (-), and underscores (_).</p>
     #[doc(hidden)]
     pub compute_environment_name: std::option::Option<std::string::String>,
@@ -13,22 +13,24 @@ pub struct CreateComputeEnvironmentOutput  {
 }
 impl CreateComputeEnvironmentOutput {
     /// <p>The name of the compute environment. It can be up to 128 characters long. It can contain uppercase and lowercase letters, numbers, hyphens (-), and underscores (_).</p>
-    pub fn compute_environment_name(&self) -> std::option::Option<& str> {
+    pub fn compute_environment_name(&self) -> std::option::Option<&str> {
         self.compute_environment_name.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the compute environment.</p>
-    pub fn compute_environment_arn(&self) -> std::option::Option<& str> {
+    pub fn compute_environment_arn(&self) -> std::option::Option<&str> {
         self.compute_environment_arn.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for CreateComputeEnvironmentOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl CreateComputeEnvironmentOutput {
     /// Creates a new builder-style object to manufacture [`CreateComputeEnvironmentOutput`](crate::operation::create_compute_environment::CreateComputeEnvironmentOutput).
-    pub fn builder() -> crate::operation::create_compute_environment::builders::CreateComputeEnvironmentOutputBuilder {
+    pub fn builder(
+    ) -> crate::operation::create_compute_environment::builders::CreateComputeEnvironmentOutputBuilder
+    {
         crate::operation::create_compute_environment::builders::CreateComputeEnvironmentOutputBuilder::default()
     }
 }
@@ -48,8 +50,12 @@ impl CreateComputeEnvironmentOutputBuilder {
         self
     }
     /// <p>The name of the compute environment. It can be up to 128 characters long. It can contain uppercase and lowercase letters, numbers, hyphens (-), and underscores (_).</p>
-    pub fn set_compute_environment_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.compute_environment_name = input; self
+    pub fn set_compute_environment_name(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.compute_environment_name = input;
+        self
     }
     /// <p>The Amazon Resource Name (ARN) of the compute environment.</p>
     pub fn compute_environment_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -57,27 +63,30 @@ impl CreateComputeEnvironmentOutputBuilder {
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the compute environment.</p>
-    pub fn set_compute_environment_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.compute_environment_arn = input; self
+    pub fn set_compute_environment_arn(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.compute_environment_arn = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`CreateComputeEnvironmentOutput`](crate::operation::create_compute_environment::CreateComputeEnvironmentOutput).
-    pub fn build(self) -> crate::operation::create_compute_environment::CreateComputeEnvironmentOutput {
+    pub fn build(
+        self,
+    ) -> crate::operation::create_compute_environment::CreateComputeEnvironmentOutput {
         crate::operation::create_compute_environment::CreateComputeEnvironmentOutput {
-            compute_environment_name: self.compute_environment_name
-            ,
-            compute_environment_arn: self.compute_environment_arn
-            ,
+            compute_environment_name: self.compute_environment_name,
+            compute_environment_arn: self.compute_environment_arn,
             _request_id: self._request_id,
         }
     }
 }
-

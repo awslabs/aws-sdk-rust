@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeMatchmakingOutput  {
+pub struct DescribeMatchmakingOutput {
     /// <p>A collection of existing matchmaking ticket objects matching the request.</p>
     #[doc(hidden)]
     pub ticket_list: std::option::Option<std::vec::Vec<crate::types::MatchmakingTicket>>,
@@ -10,19 +10,21 @@ pub struct DescribeMatchmakingOutput  {
 }
 impl DescribeMatchmakingOutput {
     /// <p>A collection of existing matchmaking ticket objects matching the request.</p>
-    pub fn ticket_list(&self) -> std::option::Option<& [crate::types::MatchmakingTicket]> {
+    pub fn ticket_list(&self) -> std::option::Option<&[crate::types::MatchmakingTicket]> {
         self.ticket_list.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for DescribeMatchmakingOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl DescribeMatchmakingOutput {
     /// Creates a new builder-style object to manufacture [`DescribeMatchmakingOutput`](crate::operation::describe_matchmaking::DescribeMatchmakingOutput).
-    pub fn builder() -> crate::operation::describe_matchmaking::builders::DescribeMatchmakingOutputBuilder {
-        crate::operation::describe_matchmaking::builders::DescribeMatchmakingOutputBuilder::default()
+    pub fn builder(
+    ) -> crate::operation::describe_matchmaking::builders::DescribeMatchmakingOutputBuilder {
+        crate::operation::describe_matchmaking::builders::DescribeMatchmakingOutputBuilder::default(
+        )
     }
 }
 
@@ -41,30 +43,32 @@ impl DescribeMatchmakingOutputBuilder {
     /// <p>A collection of existing matchmaking ticket objects matching the request.</p>
     pub fn ticket_list(mut self, input: crate::types::MatchmakingTicket) -> Self {
         let mut v = self.ticket_list.unwrap_or_default();
-                        v.push(input);
-                        self.ticket_list = Some(v);
-                        self
+        v.push(input);
+        self.ticket_list = Some(v);
+        self
     }
     /// <p>A collection of existing matchmaking ticket objects matching the request.</p>
-    pub fn set_ticket_list(mut self, input: std::option::Option<std::vec::Vec<crate::types::MatchmakingTicket>>) -> Self {
-        self.ticket_list = input; self
+    pub fn set_ticket_list(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::MatchmakingTicket>>,
+    ) -> Self {
+        self.ticket_list = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`DescribeMatchmakingOutput`](crate::operation::describe_matchmaking::DescribeMatchmakingOutput).
     pub fn build(self) -> crate::operation::describe_matchmaking::DescribeMatchmakingOutput {
         crate::operation::describe_matchmaking::DescribeMatchmakingOutput {
-            ticket_list: self.ticket_list
-            ,
+            ticket_list: self.ticket_list,
             _request_id: self._request_id,
         }
     }
 }
-

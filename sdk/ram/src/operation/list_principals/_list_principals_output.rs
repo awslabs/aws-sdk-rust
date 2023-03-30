@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListPrincipalsOutput  {
+pub struct ListPrincipalsOutput {
     /// <p>An array of objects that contain the details about the principals.</p>
     #[doc(hidden)]
     pub principals: std::option::Option<std::vec::Vec<crate::types::Principal>>,
@@ -13,19 +13,19 @@ pub struct ListPrincipalsOutput  {
 }
 impl ListPrincipalsOutput {
     /// <p>An array of objects that contain the details about the principals.</p>
-    pub fn principals(&self) -> std::option::Option<& [crate::types::Principal]> {
+    pub fn principals(&self) -> std::option::Option<&[crate::types::Principal]> {
         self.principals.as_deref()
     }
     /// <p>If present, this value indicates that more output is available than is included in the current response. Use this value in the <code>NextToken</code> request parameter in a subsequent call to the operation to get the next part of the output. You should repeat this until the <code>NextToken</code> response element comes back as <code>null</code>. This indicates that this is the last page of results.</p>
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for ListPrincipalsOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl ListPrincipalsOutput {
     /// Creates a new builder-style object to manufacture [`ListPrincipalsOutput`](crate::operation::list_principals::ListPrincipalsOutput).
     pub fn builder() -> crate::operation::list_principals::builders::ListPrincipalsOutputBuilder {
@@ -49,13 +49,17 @@ impl ListPrincipalsOutputBuilder {
     /// <p>An array of objects that contain the details about the principals.</p>
     pub fn principals(mut self, input: crate::types::Principal) -> Self {
         let mut v = self.principals.unwrap_or_default();
-                        v.push(input);
-                        self.principals = Some(v);
-                        self
+        v.push(input);
+        self.principals = Some(v);
+        self
     }
     /// <p>An array of objects that contain the details about the principals.</p>
-    pub fn set_principals(mut self, input: std::option::Option<std::vec::Vec<crate::types::Principal>>) -> Self {
-        self.principals = input; self
+    pub fn set_principals(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::Principal>>,
+    ) -> Self {
+        self.principals = input;
+        self
     }
     /// <p>If present, this value indicates that more output is available than is included in the current response. Use this value in the <code>NextToken</code> request parameter in a subsequent call to the operation to get the next part of the output. You should repeat this until the <code>NextToken</code> response element comes back as <code>null</code>. This indicates that this is the last page of results.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -64,26 +68,24 @@ impl ListPrincipalsOutputBuilder {
     }
     /// <p>If present, this value indicates that more output is available than is included in the current response. Use this value in the <code>NextToken</code> request parameter in a subsequent call to the operation to get the next part of the output. You should repeat this until the <code>NextToken</code> response element comes back as <code>null</code>. This indicates that this is the last page of results.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input; self
+        self.next_token = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`ListPrincipalsOutput`](crate::operation::list_principals::ListPrincipalsOutput).
     pub fn build(self) -> crate::operation::list_principals::ListPrincipalsOutput {
         crate::operation::list_principals::ListPrincipalsOutput {
-            principals: self.principals
-            ,
-            next_token: self.next_token
-            ,
+            principals: self.principals,
+            next_token: self.next_token,
             _request_id: self._request_id,
         }
     }
 }
-

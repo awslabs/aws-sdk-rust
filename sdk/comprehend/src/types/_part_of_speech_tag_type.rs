@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-/// 
+///
 /// Here is an example of how you can make a match expression forward-compatible:
-/// 
+///
 /// ```text
 /// # let partofspeechtagtype = unimplemented!();
 /// match partofspeechtagtype {
@@ -46,14 +46,22 @@
 /// Specifically, when `partofspeechtagtype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `PartOfSpeechTagType::NewFeature` also yielding `"NewFeature"`.
-/// 
+///
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
 pub enum PartOfSpeechTagType {
     #[allow(missing_docs)] // documentation missing in model
     Adj,
@@ -92,73 +100,77 @@ pub enum PartOfSpeechTagType {
     #[allow(missing_docs)] // documentation missing in model
     Verb,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::primitives::UnknownVariantValue)
+    Unknown(crate::primitives::UnknownVariantValue),
 }
 impl std::convert::From<&str> for PartOfSpeechTagType {
-                fn from(s: &str) -> Self {
-                    match s {
-                        "ADJ" => PartOfSpeechTagType::Adj,
-"ADP" => PartOfSpeechTagType::Adp,
-"ADV" => PartOfSpeechTagType::Adv,
-"AUX" => PartOfSpeechTagType::Aux,
-"CCONJ" => PartOfSpeechTagType::Cconj,
-"CONJ" => PartOfSpeechTagType::Conj,
-"DET" => PartOfSpeechTagType::Det,
-"INTJ" => PartOfSpeechTagType::Intj,
-"NOUN" => PartOfSpeechTagType::Noun,
-"NUM" => PartOfSpeechTagType::Num,
-"O" => PartOfSpeechTagType::O,
-"PART" => PartOfSpeechTagType::Part,
-"PRON" => PartOfSpeechTagType::Pron,
-"PROPN" => PartOfSpeechTagType::Propn,
-"PUNCT" => PartOfSpeechTagType::Punct,
-"SCONJ" => PartOfSpeechTagType::Sconj,
-"SYM" => PartOfSpeechTagType::Sym,
-"VERB" => PartOfSpeechTagType::Verb,
-other => PartOfSpeechTagType::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
-                    }
-                }
-            }
-impl std::str::FromStr for PartOfSpeechTagType {
-                type Err = std::convert::Infallible;
-
-                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-                    Ok(PartOfSpeechTagType::from(s))
-                }
-            }
-impl PartOfSpeechTagType {
-                /// Returns the `&str` value of the enum member.
-                pub fn as_str(&self) -> &str {
-                    match self {
-    PartOfSpeechTagType::Adj => "ADJ",
-    PartOfSpeechTagType::Adp => "ADP",
-    PartOfSpeechTagType::Adv => "ADV",
-    PartOfSpeechTagType::Aux => "AUX",
-    PartOfSpeechTagType::Cconj => "CCONJ",
-    PartOfSpeechTagType::Conj => "CONJ",
-    PartOfSpeechTagType::Det => "DET",
-    PartOfSpeechTagType::Intj => "INTJ",
-    PartOfSpeechTagType::Noun => "NOUN",
-    PartOfSpeechTagType::Num => "NUM",
-    PartOfSpeechTagType::O => "O",
-    PartOfSpeechTagType::Part => "PART",
-    PartOfSpeechTagType::Pron => "PRON",
-    PartOfSpeechTagType::Propn => "PROPN",
-    PartOfSpeechTagType::Punct => "PUNCT",
-    PartOfSpeechTagType::Sconj => "SCONJ",
-    PartOfSpeechTagType::Sym => "SYM",
-    PartOfSpeechTagType::Verb => "VERB",
-    PartOfSpeechTagType::Unknown(value) => value.as_str()
+    fn from(s: &str) -> Self {
+        match s {
+            "ADJ" => PartOfSpeechTagType::Adj,
+            "ADP" => PartOfSpeechTagType::Adp,
+            "ADV" => PartOfSpeechTagType::Adv,
+            "AUX" => PartOfSpeechTagType::Aux,
+            "CCONJ" => PartOfSpeechTagType::Cconj,
+            "CONJ" => PartOfSpeechTagType::Conj,
+            "DET" => PartOfSpeechTagType::Det,
+            "INTJ" => PartOfSpeechTagType::Intj,
+            "NOUN" => PartOfSpeechTagType::Noun,
+            "NUM" => PartOfSpeechTagType::Num,
+            "O" => PartOfSpeechTagType::O,
+            "PART" => PartOfSpeechTagType::Part,
+            "PRON" => PartOfSpeechTagType::Pron,
+            "PROPN" => PartOfSpeechTagType::Propn,
+            "PUNCT" => PartOfSpeechTagType::Punct,
+            "SCONJ" => PartOfSpeechTagType::Sconj,
+            "SYM" => PartOfSpeechTagType::Sym,
+            "VERB" => PartOfSpeechTagType::Verb,
+            other => PartOfSpeechTagType::Unknown(crate::primitives::UnknownVariantValue(
+                other.to_owned(),
+            )),
+        }
+    }
 }
-                }
-                /// Returns all the `&str` representations of the enum members.
-                pub const fn values() -> &'static [&'static str] {
-                    &["ADJ", "ADP", "ADV", "AUX", "CCONJ", "CONJ", "DET", "INTJ", "NOUN", "NUM", "O", "PART", "PRON", "PROPN", "PUNCT", "SCONJ", "SYM", "VERB"]
-                }
-            }
-impl AsRef<str> for PartOfSpeechTagType {
-                fn as_ref(&self) -> &str {
-                    self.as_str()
-                }
-            }
+impl std::str::FromStr for PartOfSpeechTagType {
+    type Err = std::convert::Infallible;
 
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(PartOfSpeechTagType::from(s))
+    }
+}
+impl PartOfSpeechTagType {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            PartOfSpeechTagType::Adj => "ADJ",
+            PartOfSpeechTagType::Adp => "ADP",
+            PartOfSpeechTagType::Adv => "ADV",
+            PartOfSpeechTagType::Aux => "AUX",
+            PartOfSpeechTagType::Cconj => "CCONJ",
+            PartOfSpeechTagType::Conj => "CONJ",
+            PartOfSpeechTagType::Det => "DET",
+            PartOfSpeechTagType::Intj => "INTJ",
+            PartOfSpeechTagType::Noun => "NOUN",
+            PartOfSpeechTagType::Num => "NUM",
+            PartOfSpeechTagType::O => "O",
+            PartOfSpeechTagType::Part => "PART",
+            PartOfSpeechTagType::Pron => "PRON",
+            PartOfSpeechTagType::Propn => "PROPN",
+            PartOfSpeechTagType::Punct => "PUNCT",
+            PartOfSpeechTagType::Sconj => "SCONJ",
+            PartOfSpeechTagType::Sym => "SYM",
+            PartOfSpeechTagType::Verb => "VERB",
+            PartOfSpeechTagType::Unknown(value) => value.as_str(),
+        }
+    }
+    /// Returns all the `&str` representations of the enum members.
+    pub const fn values() -> &'static [&'static str] {
+        &[
+            "ADJ", "ADP", "ADV", "AUX", "CCONJ", "CONJ", "DET", "INTJ", "NOUN", "NUM", "O", "PART",
+            "PRON", "PROPN", "PUNCT", "SCONJ", "SYM", "VERB",
+        ]
+    }
+}
+impl AsRef<str> for PartOfSpeechTagType {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}

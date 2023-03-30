@@ -3,7 +3,7 @@
 /// <p>A list of Amazon Web Services accounts whose public keys CloudFront can use to verify the signatures of signed URLs and signed cookies.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct TrustedSigners  {
+pub struct TrustedSigners {
     /// <p>This field is <code>true</code> if any of the Amazon Web Services accounts have public keys that CloudFront can use to verify the signatures of signed URLs and signed cookies. If not, this field is <code>false</code>.</p>
     #[doc(hidden)]
     pub enabled: std::option::Option<bool>,
@@ -24,7 +24,7 @@ impl TrustedSigners {
         self.quantity
     }
     /// <p>A list of Amazon Web Services account identifiers.</p>
-    pub fn items(&self) -> std::option::Option<& [std::string::String]> {
+    pub fn items(&self) -> std::option::Option<&[std::string::String]> {
         self.items.as_deref()
     }
 }
@@ -51,7 +51,8 @@ impl TrustedSignersBuilder {
     }
     /// <p>This field is <code>true</code> if any of the Amazon Web Services accounts have public keys that CloudFront can use to verify the signatures of signed URLs and signed cookies. If not, this field is <code>false</code>.</p>
     pub fn set_enabled(mut self, input: std::option::Option<bool>) -> Self {
-        self.enabled = input; self
+        self.enabled = input;
+        self
     }
     /// <p>The number of Amazon Web Services accounts in the list.</p>
     pub fn quantity(mut self, input: i32) -> Self {
@@ -60,7 +61,8 @@ impl TrustedSignersBuilder {
     }
     /// <p>The number of Amazon Web Services accounts in the list.</p>
     pub fn set_quantity(mut self, input: std::option::Option<i32>) -> Self {
-        self.quantity = input; self
+        self.quantity = input;
+        self
     }
     /// Appends an item to `items`.
     ///
@@ -69,24 +71,24 @@ impl TrustedSignersBuilder {
     /// <p>A list of Amazon Web Services account identifiers.</p>
     pub fn items(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.items.unwrap_or_default();
-                        v.push(input.into());
-                        self.items = Some(v);
-                        self
+        v.push(input.into());
+        self.items = Some(v);
+        self
     }
     /// <p>A list of Amazon Web Services account identifiers.</p>
-    pub fn set_items(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-        self.items = input; self
+    pub fn set_items(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
+        self.items = input;
+        self
     }
     /// Consumes the builder and constructs a [`TrustedSigners`](crate::types::TrustedSigners).
     pub fn build(self) -> crate::types::TrustedSigners {
         crate::types::TrustedSigners {
-            enabled: self.enabled
-            ,
-            quantity: self.quantity
-            ,
-            items: self.items
-            ,
+            enabled: self.enabled,
+            quantity: self.quantity,
+            items: self.items,
         }
     }
 }
-

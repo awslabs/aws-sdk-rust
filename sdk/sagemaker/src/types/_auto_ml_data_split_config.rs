@@ -3,7 +3,7 @@
 /// <p>This structure specifies how to split the data into train and validation datasets. The validation and training datasets must contain the same headers. The validation dataset must be less than 2 GB in size.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AutoMlDataSplitConfig  {
+pub struct AutoMlDataSplitConfig {
     /// <p>The validation fraction (optional) is a float that specifies the portion of the training dataset to be used for validation. The default value is 0.2, and values must be greater than 0 and less than 1. We recommend setting this value to be less than 0.5.</p>
     #[doc(hidden)]
     pub validation_fraction: std::option::Option<f32>,
@@ -35,14 +35,13 @@ impl AutoMlDataSplitConfigBuilder {
     }
     /// <p>The validation fraction (optional) is a float that specifies the portion of the training dataset to be used for validation. The default value is 0.2, and values must be greater than 0 and less than 1. We recommend setting this value to be less than 0.5.</p>
     pub fn set_validation_fraction(mut self, input: std::option::Option<f32>) -> Self {
-        self.validation_fraction = input; self
+        self.validation_fraction = input;
+        self
     }
     /// Consumes the builder and constructs a [`AutoMlDataSplitConfig`](crate::types::AutoMlDataSplitConfig).
     pub fn build(self) -> crate::types::AutoMlDataSplitConfig {
         crate::types::AutoMlDataSplitConfig {
-            validation_fraction: self.validation_fraction
-            ,
+            validation_fraction: self.validation_fraction,
         }
     }
 }
-

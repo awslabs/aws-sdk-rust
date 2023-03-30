@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeVcenterClientsInput  {
+pub struct DescribeVcenterClientsInput {
     /// <p>Maximum results to be returned in DescribeVcenterClients.</p>
     #[doc(hidden)]
     pub max_results: i32,
@@ -16,13 +16,15 @@ impl DescribeVcenterClientsInput {
         self.max_results
     }
     /// <p>Next pagination token to be provided for DescribeVcenterClients.</p>
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
 }
 impl DescribeVcenterClientsInput {
     /// Creates a new builder-style object to manufacture [`DescribeVcenterClientsInput`](crate::operation::describe_vcenter_clients::DescribeVcenterClientsInput).
-    pub fn builder() -> crate::operation::describe_vcenter_clients::builders::DescribeVcenterClientsInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::describe_vcenter_clients::builders::DescribeVcenterClientsInputBuilder
+    {
         crate::operation::describe_vcenter_clients::builders::DescribeVcenterClientsInputBuilder::default()
     }
 }
@@ -42,7 +44,8 @@ impl DescribeVcenterClientsInputBuilder {
     }
     /// <p>Maximum results to be returned in DescribeVcenterClients.</p>
     pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_results = input; self
+        self.max_results = input;
+        self
     }
     /// <p>Next pagination token to be provided for DescribeVcenterClients.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -51,19 +54,21 @@ impl DescribeVcenterClientsInputBuilder {
     }
     /// <p>Next pagination token to be provided for DescribeVcenterClients.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input; self
+        self.next_token = input;
+        self
     }
     /// Consumes the builder and constructs a [`DescribeVcenterClientsInput`](crate::operation::describe_vcenter_clients::DescribeVcenterClientsInput).
-    pub fn build(self) -> Result<crate::operation::describe_vcenter_clients::DescribeVcenterClientsInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::describe_vcenter_clients::DescribeVcenterClientsInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::describe_vcenter_clients::DescribeVcenterClientsInput {
-                max_results: self.max_results
-                    .unwrap_or_default()
-                ,
-                next_token: self.next_token
-                ,
-            }
+                max_results: self.max_results.unwrap_or_default(),
+                next_token: self.next_token,
+            },
         )
     }
 }
-

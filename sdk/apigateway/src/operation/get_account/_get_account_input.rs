@@ -3,8 +3,7 @@
 /// <p>Requests API Gateway to get information about the current Account resource.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetAccountInput  {
-}
+pub struct GetAccountInput {}
 impl GetAccountInput {
     /// Creates a new builder-style object to manufacture [`GetAccountInput`](crate::operation::get_account::GetAccountInput).
     pub fn builder() -> crate::operation::get_account::builders::GetAccountInputBuilder {
@@ -15,15 +14,15 @@ impl GetAccountInput {
 /// A builder for [`GetAccountInput`](crate::operation::get_account::GetAccountInput).
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-pub struct GetAccountInputBuilder {
-}
+pub struct GetAccountInputBuilder {}
 impl GetAccountInputBuilder {
     /// Consumes the builder and constructs a [`GetAccountInput`](crate::operation::get_account::GetAccountInput).
-    pub fn build(self) -> Result<crate::operation::get_account::GetAccountInput, aws_smithy_http::operation::error::BuildError> {
-        Ok(
-            crate::operation::get_account::GetAccountInput {
-            }
-        )
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::get_account::GetAccountInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        Ok(crate::operation::get_account::GetAccountInput {})
     }
 }
-

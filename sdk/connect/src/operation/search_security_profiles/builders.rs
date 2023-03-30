@@ -4,56 +4,84 @@ pub use crate::operation::search_security_profiles::_search_security_profiles_ou
 pub use crate::operation::search_security_profiles::_search_security_profiles_input::SearchSecurityProfilesInputBuilder;
 
 /// Fluent builder constructing a request to `SearchSecurityProfiles`.
-/// 
-/// <p>This API is in preview release for Amazon Connect and is subject to change.</p> 
+///
+/// <p>This API is in preview release for Amazon Connect and is subject to change.</p>
 /// <p>Searches security profiles in an Amazon Connect instance, with optional filtering.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct SearchSecurityProfilesFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::search_security_profiles::builders::SearchSecurityProfilesInputBuilder
-            }
-impl SearchSecurityProfilesFluentBuilder  {
+    handle: std::sync::Arc<crate::client::Handle>,
+    inner: crate::operation::search_security_profiles::builders::SearchSecurityProfilesInputBuilder,
+}
+impl SearchSecurityProfilesFluentBuilder {
     /// Creates a new `SearchSecurityProfiles`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
-                    /// sent. The operation's inner [http::Request] can be modified as well.
-                    pub async fn customize(self) -> std::result::Result<
-                        crate::client::customize::CustomizableOperation<crate::operation::search_security_profiles::SearchSecurityProfiles, aws_http::retry::AwsResponseRetryClassifier,>,
-                        aws_smithy_http::result::SdkError<crate::operation::search_security_profiles::SearchSecurityProfilesError>
-                    >  {
-                        let handle = self.handle.clone();
-                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-                    }
-    
-                    /// Sends the request and returns the response.
-                    ///
-                    /// If an error occurs, an `SdkError` will be returned with additional details that
-                    /// can be matched against.
-                    ///
-                    /// By default, any retryable failures will be retried twice. Retry behavior
-                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                    /// set when configuring the client.
-                    pub async fn send(self) -> std::result::Result<crate::operation::search_security_profiles::SearchSecurityProfilesOutput, aws_smithy_http::result::SdkError<crate::operation::search_security_profiles::SearchSecurityProfilesError>>
-                     {
-                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&self.handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        self.handle.client.call(op).await
-                    }
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle,
+            inner: Default::default(),
+        }
+    }
+
+    /// Consume this builder, creating a customizable operation that can be modified before being
+    /// sent. The operation's inner [http::Request] can be modified as well.
+    pub async fn customize(
+        self,
+    ) -> std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::search_security_profiles::SearchSecurityProfiles,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::result::SdkError<
+            crate::operation::search_security_profiles::SearchSecurityProfilesError,
+        >,
+    > {
+        let handle = self.handle.clone();
+        let operation = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+    }
+
+    /// Sends the request and returns the response.
+    ///
+    /// If an error occurs, an `SdkError` will be returned with additional details that
+    /// can be matched against.
+    ///
+    /// By default, any retryable failures will be retried twice. Retry behavior
+    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+    /// set when configuring the client.
+    pub async fn send(
+        self,
+    ) -> std::result::Result<
+        crate::operation::search_security_profiles::SearchSecurityProfilesOutput,
+        aws_smithy_http::result::SdkError<
+            crate::operation::search_security_profiles::SearchSecurityProfilesError,
+        >,
+    > {
+        let op = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&self.handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        self.handle.client.call(op).await
+    }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::search_security_profiles::paginator::SearchSecurityProfilesPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::search_security_profiles::paginator::SearchSecurityProfilesPaginator {
-                            crate::operation::search_security_profiles::paginator::SearchSecurityProfilesPaginator::new(self.handle, self.inner)
-                        }
+    ///
+    /// Paginators are used by calling [`send().await`](crate::operation::search_security_profiles::paginator::SearchSecurityProfilesPaginator::send) which returns a `Stream`.
+    pub fn into_paginator(
+        self,
+    ) -> crate::operation::search_security_profiles::paginator::SearchSecurityProfilesPaginator
+    {
+        crate::operation::search_security_profiles::paginator::SearchSecurityProfilesPaginator::new(
+            self.handle,
+            self.inner,
+        )
+    }
     /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
     pub fn instance_id(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.instance_id(input.into());
@@ -84,21 +112,24 @@ impl SearchSecurityProfilesFluentBuilder  {
         self.inner = self.inner.set_max_results(input);
         self
     }
-    /// <p>The search criteria to be used to return security profiles. </p> <note> 
-    /// <p>The <code>name</code> field support "contains" queries with a minimum of 2 characters and maximum of 25 characters. Any queries with character lengths outside of this range will throw invalid results.</p> 
-    /// </note> <note> 
-    /// <p>The currently supported value for <code>FieldName</code>: <code>name</code> </p> 
+    /// <p>The search criteria to be used to return security profiles. </p> <note>
+    /// <p>The <code>name</code> field support "contains" queries with a minimum of 2 characters and maximum of 25 characters. Any queries with character lengths outside of this range will throw invalid results.</p>
+    /// </note> <note>
+    /// <p>The currently supported value for <code>FieldName</code>: <code>name</code> </p>
     /// </note>
     pub fn search_criteria(mut self, input: crate::types::SecurityProfileSearchCriteria) -> Self {
         self.inner = self.inner.search_criteria(input);
         self
     }
-    /// <p>The search criteria to be used to return security profiles. </p> <note> 
-    /// <p>The <code>name</code> field support "contains" queries with a minimum of 2 characters and maximum of 25 characters. Any queries with character lengths outside of this range will throw invalid results.</p> 
-    /// </note> <note> 
-    /// <p>The currently supported value for <code>FieldName</code>: <code>name</code> </p> 
+    /// <p>The search criteria to be used to return security profiles. </p> <note>
+    /// <p>The <code>name</code> field support "contains" queries with a minimum of 2 characters and maximum of 25 characters. Any queries with character lengths outside of this range will throw invalid results.</p>
+    /// </note> <note>
+    /// <p>The currently supported value for <code>FieldName</code>: <code>name</code> </p>
     /// </note>
-    pub fn set_search_criteria(mut self, input: std::option::Option<crate::types::SecurityProfileSearchCriteria>) -> Self {
+    pub fn set_search_criteria(
+        mut self,
+        input: std::option::Option<crate::types::SecurityProfileSearchCriteria>,
+    ) -> Self {
         self.inner = self.inner.set_search_criteria(input);
         self
     }
@@ -108,9 +139,11 @@ impl SearchSecurityProfilesFluentBuilder  {
         self
     }
     /// <p>Filters to be applied to search results.</p>
-    pub fn set_search_filter(mut self, input: std::option::Option<crate::types::SecurityProfilesSearchFilter>) -> Self {
+    pub fn set_search_filter(
+        mut self,
+        input: std::option::Option<crate::types::SecurityProfilesSearchFilter>,
+    ) -> Self {
         self.inner = self.inner.set_search_filter(input);
         self
     }
 }
-

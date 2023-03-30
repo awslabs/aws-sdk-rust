@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteCustomLogSourceOutput  {
+pub struct DeleteCustomLogSourceOutput {
     /// <p>The location of the partition in the Amazon S3 bucket for Security Lake.</p>
     #[doc(hidden)]
     pub custom_data_location: std::option::Option<std::string::String>,
@@ -10,18 +10,20 @@ pub struct DeleteCustomLogSourceOutput  {
 }
 impl DeleteCustomLogSourceOutput {
     /// <p>The location of the partition in the Amazon S3 bucket for Security Lake.</p>
-    pub fn custom_data_location(&self) -> std::option::Option<& str> {
+    pub fn custom_data_location(&self) -> std::option::Option<&str> {
         self.custom_data_location.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for DeleteCustomLogSourceOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl DeleteCustomLogSourceOutput {
     /// Creates a new builder-style object to manufacture [`DeleteCustomLogSourceOutput`](crate::operation::delete_custom_log_source::DeleteCustomLogSourceOutput).
-    pub fn builder() -> crate::operation::delete_custom_log_source::builders::DeleteCustomLogSourceOutputBuilder {
+    pub fn builder(
+    ) -> crate::operation::delete_custom_log_source::builders::DeleteCustomLogSourceOutputBuilder
+    {
         crate::operation::delete_custom_log_source::builders::DeleteCustomLogSourceOutputBuilder::default()
     }
 }
@@ -40,25 +42,27 @@ impl DeleteCustomLogSourceOutputBuilder {
         self
     }
     /// <p>The location of the partition in the Amazon S3 bucket for Security Lake.</p>
-    pub fn set_custom_data_location(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.custom_data_location = input; self
+    pub fn set_custom_data_location(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.custom_data_location = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`DeleteCustomLogSourceOutput`](crate::operation::delete_custom_log_source::DeleteCustomLogSourceOutput).
     pub fn build(self) -> crate::operation::delete_custom_log_source::DeleteCustomLogSourceOutput {
         crate::operation::delete_custom_log_source::DeleteCustomLogSourceOutput {
-            custom_data_location: self.custom_data_location
-            ,
+            custom_data_location: self.custom_data_location,
             _request_id: self._request_id,
         }
     }
 }
-

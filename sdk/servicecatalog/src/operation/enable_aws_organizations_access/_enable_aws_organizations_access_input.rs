@@ -2,11 +2,10 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct EnableAwsOrganizationsAccessInput  {
-}
+pub struct EnableAwsOrganizationsAccessInput {}
 impl EnableAwsOrganizationsAccessInput {
     /// Creates a new builder-style object to manufacture [`EnableAwsOrganizationsAccessInput`](crate::operation::enable_aws_organizations_access::EnableAwsOrganizationsAccessInput).
-    pub fn builder() -> crate::operation::enable_aws_organizations_access::builders::EnableAwsOrganizationsAccessInputBuilder {
+    pub fn builder() -> crate::operation::enable_aws_organizations_access::builders::EnableAwsOrganizationsAccessInputBuilder{
         crate::operation::enable_aws_organizations_access::builders::EnableAwsOrganizationsAccessInputBuilder::default()
     }
 }
@@ -14,15 +13,15 @@ impl EnableAwsOrganizationsAccessInput {
 /// A builder for [`EnableAwsOrganizationsAccessInput`](crate::operation::enable_aws_organizations_access::EnableAwsOrganizationsAccessInput).
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-pub struct EnableAwsOrganizationsAccessInputBuilder {
-}
+pub struct EnableAwsOrganizationsAccessInputBuilder {}
 impl EnableAwsOrganizationsAccessInputBuilder {
     /// Consumes the builder and constructs a [`EnableAwsOrganizationsAccessInput`](crate::operation::enable_aws_organizations_access::EnableAwsOrganizationsAccessInput).
-    pub fn build(self) -> Result<crate::operation::enable_aws_organizations_access::EnableAwsOrganizationsAccessInput, aws_smithy_http::operation::error::BuildError> {
-        Ok(
-            crate::operation::enable_aws_organizations_access::EnableAwsOrganizationsAccessInput {
-            }
-        )
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::enable_aws_organizations_access::EnableAwsOrganizationsAccessInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        Ok(crate::operation::enable_aws_organizations_access::EnableAwsOrganizationsAccessInput {})
     }
 }
-

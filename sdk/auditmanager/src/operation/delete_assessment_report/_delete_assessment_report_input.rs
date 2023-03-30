@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteAssessmentReportInput  {
+pub struct DeleteAssessmentReportInput {
     /// <p> The unique identifier for the assessment. </p>
     #[doc(hidden)]
     pub assessment_id: std::option::Option<std::string::String>,
@@ -12,17 +12,19 @@ pub struct DeleteAssessmentReportInput  {
 }
 impl DeleteAssessmentReportInput {
     /// <p> The unique identifier for the assessment. </p>
-    pub fn assessment_id(&self) -> std::option::Option<& str> {
+    pub fn assessment_id(&self) -> std::option::Option<&str> {
         self.assessment_id.as_deref()
     }
     /// <p> The unique identifier for the assessment report. </p>
-    pub fn assessment_report_id(&self) -> std::option::Option<& str> {
+    pub fn assessment_report_id(&self) -> std::option::Option<&str> {
         self.assessment_report_id.as_deref()
     }
 }
 impl DeleteAssessmentReportInput {
     /// Creates a new builder-style object to manufacture [`DeleteAssessmentReportInput`](crate::operation::delete_assessment_report::DeleteAssessmentReportInput).
-    pub fn builder() -> crate::operation::delete_assessment_report::builders::DeleteAssessmentReportInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::delete_assessment_report::builders::DeleteAssessmentReportInputBuilder
+    {
         crate::operation::delete_assessment_report::builders::DeleteAssessmentReportInputBuilder::default()
     }
 }
@@ -42,7 +44,8 @@ impl DeleteAssessmentReportInputBuilder {
     }
     /// <p> The unique identifier for the assessment. </p>
     pub fn set_assessment_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.assessment_id = input; self
+        self.assessment_id = input;
+        self
     }
     /// <p> The unique identifier for the assessment report. </p>
     pub fn assessment_report_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -50,19 +53,25 @@ impl DeleteAssessmentReportInputBuilder {
         self
     }
     /// <p> The unique identifier for the assessment report. </p>
-    pub fn set_assessment_report_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.assessment_report_id = input; self
+    pub fn set_assessment_report_id(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.assessment_report_id = input;
+        self
     }
     /// Consumes the builder and constructs a [`DeleteAssessmentReportInput`](crate::operation::delete_assessment_report::DeleteAssessmentReportInput).
-    pub fn build(self) -> Result<crate::operation::delete_assessment_report::DeleteAssessmentReportInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::delete_assessment_report::DeleteAssessmentReportInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::delete_assessment_report::DeleteAssessmentReportInput {
-                assessment_id: self.assessment_id
-                ,
-                assessment_report_id: self.assessment_report_id
-                ,
-            }
+                assessment_id: self.assessment_id,
+                assessment_report_id: self.assessment_report_id,
+            },
         )
     }
 }
-

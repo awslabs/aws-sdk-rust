@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-/// 
+///
 /// Here is an example of how you can make a match expression forward-compatible:
-/// 
+///
 /// ```text
 /// # let f4vmoovplacement = unimplemented!();
 /// match f4vmoovplacement {
@@ -30,55 +30,64 @@
 /// Specifically, when `f4vmoovplacement` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `F4vMoovPlacement::NewFeature` also yielding `"NewFeature"`.
-/// 
+///
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 /// If set to PROGRESSIVE_DOWNLOAD, the MOOV atom is relocated to the beginning of the archive as required for progressive downloading. Otherwise it is placed normally at the end.
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
 pub enum F4vMoovPlacement {
     #[allow(missing_docs)] // documentation missing in model
     Normal,
     #[allow(missing_docs)] // documentation missing in model
     ProgressiveDownload,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::primitives::UnknownVariantValue)
+    Unknown(crate::primitives::UnknownVariantValue),
 }
 impl std::convert::From<&str> for F4vMoovPlacement {
-                fn from(s: &str) -> Self {
-                    match s {
-                        "NORMAL" => F4vMoovPlacement::Normal,
-"PROGRESSIVE_DOWNLOAD" => F4vMoovPlacement::ProgressiveDownload,
-other => F4vMoovPlacement::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
-                    }
-                }
+    fn from(s: &str) -> Self {
+        match s {
+            "NORMAL" => F4vMoovPlacement::Normal,
+            "PROGRESSIVE_DOWNLOAD" => F4vMoovPlacement::ProgressiveDownload,
+            other => {
+                F4vMoovPlacement::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
             }
-impl std::str::FromStr for F4vMoovPlacement {
-                type Err = std::convert::Infallible;
-
-                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-                    Ok(F4vMoovPlacement::from(s))
-                }
-            }
-impl F4vMoovPlacement {
-                /// Returns the `&str` value of the enum member.
-                pub fn as_str(&self) -> &str {
-                    match self {
-    F4vMoovPlacement::Normal => "NORMAL",
-    F4vMoovPlacement::ProgressiveDownload => "PROGRESSIVE_DOWNLOAD",
-    F4vMoovPlacement::Unknown(value) => value.as_str()
+        }
+    }
 }
-                }
-                /// Returns all the `&str` representations of the enum members.
-                pub const fn values() -> &'static [&'static str] {
-                    &["NORMAL", "PROGRESSIVE_DOWNLOAD"]
-                }
-            }
-impl AsRef<str> for F4vMoovPlacement {
-                fn as_ref(&self) -> &str {
-                    self.as_str()
-                }
-            }
+impl std::str::FromStr for F4vMoovPlacement {
+    type Err = std::convert::Infallible;
 
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(F4vMoovPlacement::from(s))
+    }
+}
+impl F4vMoovPlacement {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            F4vMoovPlacement::Normal => "NORMAL",
+            F4vMoovPlacement::ProgressiveDownload => "PROGRESSIVE_DOWNLOAD",
+            F4vMoovPlacement::Unknown(value) => value.as_str(),
+        }
+    }
+    /// Returns all the `&str` representations of the enum members.
+    pub const fn values() -> &'static [&'static str] {
+        &["NORMAL", "PROGRESSIVE_DOWNLOAD"]
+    }
+}
+impl AsRef<str> for F4vMoovPlacement {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}

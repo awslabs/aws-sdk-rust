@@ -3,7 +3,7 @@
 /// <p>Describes authorization configurations for the auth resources, configured as a part of your Amplify project.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateBackendAuthIdentityPoolConfig  {
+pub struct CreateBackendAuthIdentityPoolConfig {
     /// <p>Name of the Amazon Cognito identity pool used for authorization.</p>
     #[doc(hidden)]
     pub identity_pool_name: std::option::Option<std::string::String>,
@@ -13,7 +13,7 @@ pub struct CreateBackendAuthIdentityPoolConfig  {
 }
 impl CreateBackendAuthIdentityPoolConfig {
     /// <p>Name of the Amazon Cognito identity pool used for authorization.</p>
-    pub fn identity_pool_name(&self) -> std::option::Option<& str> {
+    pub fn identity_pool_name(&self) -> std::option::Option<&str> {
         self.identity_pool_name.as_deref()
     }
     /// <p>Set to true or false based on whether you want to enable guest authorization to your Amplify app.</p>
@@ -42,8 +42,12 @@ impl CreateBackendAuthIdentityPoolConfigBuilder {
         self
     }
     /// <p>Name of the Amazon Cognito identity pool used for authorization.</p>
-    pub fn set_identity_pool_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.identity_pool_name = input; self
+    pub fn set_identity_pool_name(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.identity_pool_name = input;
+        self
     }
     /// <p>Set to true or false based on whether you want to enable guest authorization to your Amplify app.</p>
     pub fn unauthenticated_login(mut self, input: bool) -> Self {
@@ -52,17 +56,14 @@ impl CreateBackendAuthIdentityPoolConfigBuilder {
     }
     /// <p>Set to true or false based on whether you want to enable guest authorization to your Amplify app.</p>
     pub fn set_unauthenticated_login(mut self, input: std::option::Option<bool>) -> Self {
-        self.unauthenticated_login = input; self
+        self.unauthenticated_login = input;
+        self
     }
     /// Consumes the builder and constructs a [`CreateBackendAuthIdentityPoolConfig`](crate::types::CreateBackendAuthIdentityPoolConfig).
     pub fn build(self) -> crate::types::CreateBackendAuthIdentityPoolConfig {
         crate::types::CreateBackendAuthIdentityPoolConfig {
-            identity_pool_name: self.identity_pool_name
-            ,
-            unauthenticated_login: self.unauthenticated_login
-                .unwrap_or_default()
-            ,
+            identity_pool_name: self.identity_pool_name,
+            unauthenticated_login: self.unauthenticated_login.unwrap_or_default(),
         }
     }
 }
-

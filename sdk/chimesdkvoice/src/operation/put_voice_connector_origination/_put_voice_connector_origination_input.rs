@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PutVoiceConnectorOriginationInput  {
+pub struct PutVoiceConnectorOriginationInput {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub voice_connector_id: std::option::Option<std::string::String>,
@@ -12,17 +12,17 @@ pub struct PutVoiceConnectorOriginationInput  {
 }
 impl PutVoiceConnectorOriginationInput {
     #[allow(missing_docs)] // documentation missing in model
-    pub fn voice_connector_id(&self) -> std::option::Option<& str> {
+    pub fn voice_connector_id(&self) -> std::option::Option<&str> {
         self.voice_connector_id.as_deref()
     }
     #[allow(missing_docs)] // documentation missing in model
-    pub fn origination(&self) -> std::option::Option<& crate::types::Origination> {
+    pub fn origination(&self) -> std::option::Option<&crate::types::Origination> {
         self.origination.as_ref()
     }
 }
 impl PutVoiceConnectorOriginationInput {
     /// Creates a new builder-style object to manufacture [`PutVoiceConnectorOriginationInput`](crate::operation::put_voice_connector_origination::PutVoiceConnectorOriginationInput).
-    pub fn builder() -> crate::operation::put_voice_connector_origination::builders::PutVoiceConnectorOriginationInputBuilder {
+    pub fn builder() -> crate::operation::put_voice_connector_origination::builders::PutVoiceConnectorOriginationInputBuilder{
         crate::operation::put_voice_connector_origination::builders::PutVoiceConnectorOriginationInputBuilder::default()
     }
 }
@@ -41,8 +41,12 @@ impl PutVoiceConnectorOriginationInputBuilder {
         self
     }
     #[allow(missing_docs)] // documentation missing in model
-    pub fn set_voice_connector_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.voice_connector_id = input; self
+    pub fn set_voice_connector_id(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.voice_connector_id = input;
+        self
     }
     #[allow(missing_docs)] // documentation missing in model
     pub fn origination(mut self, input: crate::types::Origination) -> Self {
@@ -50,19 +54,25 @@ impl PutVoiceConnectorOriginationInputBuilder {
         self
     }
     #[allow(missing_docs)] // documentation missing in model
-    pub fn set_origination(mut self, input: std::option::Option<crate::types::Origination>) -> Self {
-        self.origination = input; self
+    pub fn set_origination(
+        mut self,
+        input: std::option::Option<crate::types::Origination>,
+    ) -> Self {
+        self.origination = input;
+        self
     }
     /// Consumes the builder and constructs a [`PutVoiceConnectorOriginationInput`](crate::operation::put_voice_connector_origination::PutVoiceConnectorOriginationInput).
-    pub fn build(self) -> Result<crate::operation::put_voice_connector_origination::PutVoiceConnectorOriginationInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::put_voice_connector_origination::PutVoiceConnectorOriginationInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::put_voice_connector_origination::PutVoiceConnectorOriginationInput {
-                voice_connector_id: self.voice_connector_id
-                ,
-                origination: self.origination
-                ,
-            }
+                voice_connector_id: self.voice_connector_id,
+                origination: self.origination,
+            },
         )
     }
 }
-

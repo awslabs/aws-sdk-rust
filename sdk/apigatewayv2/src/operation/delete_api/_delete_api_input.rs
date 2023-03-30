@@ -2,14 +2,14 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteApiInput  {
+pub struct DeleteApiInput {
     /// <p>The API identifier.</p>
     #[doc(hidden)]
     pub api_id: std::option::Option<std::string::String>,
 }
 impl DeleteApiInput {
     /// <p>The API identifier.</p>
-    pub fn api_id(&self) -> std::option::Option<& str> {
+    pub fn api_id(&self) -> std::option::Option<&str> {
         self.api_id.as_deref()
     }
 }
@@ -34,16 +34,18 @@ impl DeleteApiInputBuilder {
     }
     /// <p>The API identifier.</p>
     pub fn set_api_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.api_id = input; self
+        self.api_id = input;
+        self
     }
     /// Consumes the builder and constructs a [`DeleteApiInput`](crate::operation::delete_api::DeleteApiInput).
-    pub fn build(self) -> Result<crate::operation::delete_api::DeleteApiInput, aws_smithy_http::operation::error::BuildError> {
-        Ok(
-            crate::operation::delete_api::DeleteApiInput {
-                api_id: self.api_id
-                ,
-            }
-        )
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::delete_api::DeleteApiInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        Ok(crate::operation::delete_api::DeleteApiInput {
+            api_id: self.api_id,
+        })
     }
 }
-

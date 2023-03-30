@@ -74,4 +74,3 @@ pub use crate::types::_create_vehicle_error::CreateVehicleErrorBuilder;
 pub use crate::types::_create_vehicle_response_item::CreateVehicleResponseItemBuilder;
 
 pub use crate::types::_create_vehicle_request_item::CreateVehicleRequestItemBuilder;
-

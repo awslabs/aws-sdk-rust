@@ -3,7 +3,7 @@
 /// <p>Represents an application source.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ApplicationSource  {
+pub struct ApplicationSource {
     /// <p>The Amazon Resource Name (ARN) of a AWS CloudFormation stack.</p>
     #[doc(hidden)]
     pub cloud_formation_stack_arn: std::option::Option<std::string::String>,
@@ -13,11 +13,11 @@ pub struct ApplicationSource  {
 }
 impl ApplicationSource {
     /// <p>The Amazon Resource Name (ARN) of a AWS CloudFormation stack.</p>
-    pub fn cloud_formation_stack_arn(&self) -> std::option::Option<& str> {
+    pub fn cloud_formation_stack_arn(&self) -> std::option::Option<&str> {
         self.cloud_formation_stack_arn.as_deref()
     }
     /// <p>A set of tags (up to 50).</p>
-    pub fn tag_filters(&self) -> std::option::Option<& [crate::types::TagFilter]> {
+    pub fn tag_filters(&self) -> std::option::Option<&[crate::types::TagFilter]> {
         self.tag_filters.as_deref()
     }
 }
@@ -42,8 +42,12 @@ impl ApplicationSourceBuilder {
         self
     }
     /// <p>The Amazon Resource Name (ARN) of a AWS CloudFormation stack.</p>
-    pub fn set_cloud_formation_stack_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.cloud_formation_stack_arn = input; self
+    pub fn set_cloud_formation_stack_arn(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.cloud_formation_stack_arn = input;
+        self
     }
     /// Appends an item to `tag_filters`.
     ///
@@ -52,22 +56,23 @@ impl ApplicationSourceBuilder {
     /// <p>A set of tags (up to 50).</p>
     pub fn tag_filters(mut self, input: crate::types::TagFilter) -> Self {
         let mut v = self.tag_filters.unwrap_or_default();
-                        v.push(input);
-                        self.tag_filters = Some(v);
-                        self
+        v.push(input);
+        self.tag_filters = Some(v);
+        self
     }
     /// <p>A set of tags (up to 50).</p>
-    pub fn set_tag_filters(mut self, input: std::option::Option<std::vec::Vec<crate::types::TagFilter>>) -> Self {
-        self.tag_filters = input; self
+    pub fn set_tag_filters(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::TagFilter>>,
+    ) -> Self {
+        self.tag_filters = input;
+        self
     }
     /// Consumes the builder and constructs a [`ApplicationSource`](crate::types::ApplicationSource).
     pub fn build(self) -> crate::types::ApplicationSource {
         crate::types::ApplicationSource {
-            cloud_formation_stack_arn: self.cloud_formation_stack_arn
-            ,
-            tag_filters: self.tag_filters
-            ,
+            cloud_formation_stack_arn: self.cloud_formation_stack_arn,
+            tag_filters: self.tag_filters,
         }
     }
 }
-

@@ -24,4 +24,3 @@ pub mod send_message;
 
 /// Types for the `StartAttachmentUpload` operation.
 pub mod start_attachment_upload;
-

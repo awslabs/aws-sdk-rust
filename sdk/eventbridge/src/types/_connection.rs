@@ -3,7 +3,7 @@
 /// <p>Contains information about a connection.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Connection  {
+pub struct Connection {
     /// <p>The ARN of the connection.</p>
     #[doc(hidden)]
     pub connection_arn: std::option::Option<std::string::String>,
@@ -31,35 +31,37 @@ pub struct Connection  {
 }
 impl Connection {
     /// <p>The ARN of the connection.</p>
-    pub fn connection_arn(&self) -> std::option::Option<& str> {
+    pub fn connection_arn(&self) -> std::option::Option<&str> {
         self.connection_arn.as_deref()
     }
     /// <p>The name of the connection.</p>
-    pub fn name(&self) -> std::option::Option<& str> {
+    pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>The state of the connection.</p>
-    pub fn connection_state(&self) -> std::option::Option<& crate::types::ConnectionState> {
+    pub fn connection_state(&self) -> std::option::Option<&crate::types::ConnectionState> {
         self.connection_state.as_ref()
     }
     /// <p>The reason that the connection is in the connection state.</p>
-    pub fn state_reason(&self) -> std::option::Option<& str> {
+    pub fn state_reason(&self) -> std::option::Option<&str> {
         self.state_reason.as_deref()
     }
     /// <p>The authorization type specified for the connection.</p>
-    pub fn authorization_type(&self) -> std::option::Option<& crate::types::ConnectionAuthorizationType> {
+    pub fn authorization_type(
+        &self,
+    ) -> std::option::Option<&crate::types::ConnectionAuthorizationType> {
         self.authorization_type.as_ref()
     }
     /// <p>A time stamp for the time that the connection was created.</p>
-    pub fn creation_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
+    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
     /// <p>A time stamp for the time that the connection was last modified.</p>
-    pub fn last_modified_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
+    pub fn last_modified_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_modified_time.as_ref()
     }
     /// <p>A time stamp for the time that the connection was last authorized.</p>
-    pub fn last_authorized_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
+    pub fn last_authorized_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_authorized_time.as_ref()
     }
 }
@@ -91,7 +93,8 @@ impl ConnectionBuilder {
     }
     /// <p>The ARN of the connection.</p>
     pub fn set_connection_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.connection_arn = input; self
+        self.connection_arn = input;
+        self
     }
     /// <p>The name of the connection.</p>
     pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -100,7 +103,8 @@ impl ConnectionBuilder {
     }
     /// <p>The name of the connection.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input; self
+        self.name = input;
+        self
     }
     /// <p>The state of the connection.</p>
     pub fn connection_state(mut self, input: crate::types::ConnectionState) -> Self {
@@ -108,8 +112,12 @@ impl ConnectionBuilder {
         self
     }
     /// <p>The state of the connection.</p>
-    pub fn set_connection_state(mut self, input: std::option::Option<crate::types::ConnectionState>) -> Self {
-        self.connection_state = input; self
+    pub fn set_connection_state(
+        mut self,
+        input: std::option::Option<crate::types::ConnectionState>,
+    ) -> Self {
+        self.connection_state = input;
+        self
     }
     /// <p>The reason that the connection is in the connection state.</p>
     pub fn state_reason(mut self, input: impl Into<std::string::String>) -> Self {
@@ -118,7 +126,8 @@ impl ConnectionBuilder {
     }
     /// <p>The reason that the connection is in the connection state.</p>
     pub fn set_state_reason(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.state_reason = input; self
+        self.state_reason = input;
+        self
     }
     /// <p>The authorization type specified for the connection.</p>
     pub fn authorization_type(mut self, input: crate::types::ConnectionAuthorizationType) -> Self {
@@ -126,8 +135,12 @@ impl ConnectionBuilder {
         self
     }
     /// <p>The authorization type specified for the connection.</p>
-    pub fn set_authorization_type(mut self, input: std::option::Option<crate::types::ConnectionAuthorizationType>) -> Self {
-        self.authorization_type = input; self
+    pub fn set_authorization_type(
+        mut self,
+        input: std::option::Option<crate::types::ConnectionAuthorizationType>,
+    ) -> Self {
+        self.authorization_type = input;
+        self
     }
     /// <p>A time stamp for the time that the connection was created.</p>
     pub fn creation_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -135,8 +148,12 @@ impl ConnectionBuilder {
         self
     }
     /// <p>A time stamp for the time that the connection was created.</p>
-    pub fn set_creation_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.creation_time = input; self
+    pub fn set_creation_time(
+        mut self,
+        input: std::option::Option<aws_smithy_types::DateTime>,
+    ) -> Self {
+        self.creation_time = input;
+        self
     }
     /// <p>A time stamp for the time that the connection was last modified.</p>
     pub fn last_modified_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -144,8 +161,12 @@ impl ConnectionBuilder {
         self
     }
     /// <p>A time stamp for the time that the connection was last modified.</p>
-    pub fn set_last_modified_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.last_modified_time = input; self
+    pub fn set_last_modified_time(
+        mut self,
+        input: std::option::Option<aws_smithy_types::DateTime>,
+    ) -> Self {
+        self.last_modified_time = input;
+        self
     }
     /// <p>A time stamp for the time that the connection was last authorized.</p>
     pub fn last_authorized_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -153,29 +174,24 @@ impl ConnectionBuilder {
         self
     }
     /// <p>A time stamp for the time that the connection was last authorized.</p>
-    pub fn set_last_authorized_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.last_authorized_time = input; self
+    pub fn set_last_authorized_time(
+        mut self,
+        input: std::option::Option<aws_smithy_types::DateTime>,
+    ) -> Self {
+        self.last_authorized_time = input;
+        self
     }
     /// Consumes the builder and constructs a [`Connection`](crate::types::Connection).
     pub fn build(self) -> crate::types::Connection {
         crate::types::Connection {
-            connection_arn: self.connection_arn
-            ,
-            name: self.name
-            ,
-            connection_state: self.connection_state
-            ,
-            state_reason: self.state_reason
-            ,
-            authorization_type: self.authorization_type
-            ,
-            creation_time: self.creation_time
-            ,
-            last_modified_time: self.last_modified_time
-            ,
-            last_authorized_time: self.last_authorized_time
-            ,
+            connection_arn: self.connection_arn,
+            name: self.name,
+            connection_state: self.connection_state,
+            state_reason: self.state_reason,
+            authorization_type: self.authorization_type,
+            creation_time: self.creation_time,
+            last_modified_time: self.last_modified_time,
+            last_authorized_time: self.last_authorized_time,
         }
     }
 }
-

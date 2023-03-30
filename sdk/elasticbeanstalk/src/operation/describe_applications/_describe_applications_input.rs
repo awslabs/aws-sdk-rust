@@ -3,21 +3,23 @@
 /// <p>Request to describe one or more applications.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeApplicationsInput  {
+pub struct DescribeApplicationsInput {
     /// <p>If specified, AWS Elastic Beanstalk restricts the returned descriptions to only include those with the specified names.</p>
     #[doc(hidden)]
     pub application_names: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl DescribeApplicationsInput {
     /// <p>If specified, AWS Elastic Beanstalk restricts the returned descriptions to only include those with the specified names.</p>
-    pub fn application_names(&self) -> std::option::Option<& [std::string::String]> {
+    pub fn application_names(&self) -> std::option::Option<&[std::string::String]> {
         self.application_names.as_deref()
     }
 }
 impl DescribeApplicationsInput {
     /// Creates a new builder-style object to manufacture [`DescribeApplicationsInput`](crate::operation::describe_applications::DescribeApplicationsInput).
-    pub fn builder() -> crate::operation::describe_applications::builders::DescribeApplicationsInputBuilder {
-        crate::operation::describe_applications::builders::DescribeApplicationsInputBuilder::default()
+    pub fn builder(
+    ) -> crate::operation::describe_applications::builders::DescribeApplicationsInputBuilder {
+        crate::operation::describe_applications::builders::DescribeApplicationsInputBuilder::default(
+        )
     }
 }
 
@@ -35,22 +37,29 @@ impl DescribeApplicationsInputBuilder {
     /// <p>If specified, AWS Elastic Beanstalk restricts the returned descriptions to only include those with the specified names.</p>
     pub fn application_names(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.application_names.unwrap_or_default();
-                        v.push(input.into());
-                        self.application_names = Some(v);
-                        self
+        v.push(input.into());
+        self.application_names = Some(v);
+        self
     }
     /// <p>If specified, AWS Elastic Beanstalk restricts the returned descriptions to only include those with the specified names.</p>
-    pub fn set_application_names(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-        self.application_names = input; self
+    pub fn set_application_names(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
+        self.application_names = input;
+        self
     }
     /// Consumes the builder and constructs a [`DescribeApplicationsInput`](crate::operation::describe_applications::DescribeApplicationsInput).
-    pub fn build(self) -> Result<crate::operation::describe_applications::DescribeApplicationsInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::describe_applications::DescribeApplicationsInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::describe_applications::DescribeApplicationsInput {
-                application_names: self.application_names
-                ,
-            }
+                application_names: self.application_names,
+            },
         )
     }
 }
-

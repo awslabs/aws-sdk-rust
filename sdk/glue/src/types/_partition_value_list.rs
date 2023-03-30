@@ -3,14 +3,14 @@
 /// <p>Contains a list of values defining partitions.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PartitionValueList  {
+pub struct PartitionValueList {
     /// <p>The list of values.</p>
     #[doc(hidden)]
     pub values: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl PartitionValueList {
     /// <p>The list of values.</p>
-    pub fn values(&self) -> std::option::Option<& [std::string::String]> {
+    pub fn values(&self) -> std::option::Option<&[std::string::String]> {
         self.values.as_deref()
     }
 }
@@ -35,20 +35,22 @@ impl PartitionValueListBuilder {
     /// <p>The list of values.</p>
     pub fn values(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.values.unwrap_or_default();
-                        v.push(input.into());
-                        self.values = Some(v);
-                        self
+        v.push(input.into());
+        self.values = Some(v);
+        self
     }
     /// <p>The list of values.</p>
-    pub fn set_values(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-        self.values = input; self
+    pub fn set_values(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
+        self.values = input;
+        self
     }
     /// Consumes the builder and constructs a [`PartitionValueList`](crate::types::PartitionValueList).
     pub fn build(self) -> crate::types::PartitionValueList {
         crate::types::PartitionValueList {
-            values: self.values
-            ,
+            values: self.values,
         }
     }
 }
-

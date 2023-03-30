@@ -3,14 +3,17 @@
 /// <p>Information about groups of Amazon EC2 instance tags.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Ec2TagSet  {
+pub struct Ec2TagSet {
     /// <p>A list that contains other lists of Amazon EC2 instance tag groups. For an instance to be included in the deployment group, it must be identified by all of the tag groups in the list.</p>
     #[doc(hidden)]
-    pub ec2_tag_set_list: std::option::Option<std::vec::Vec<std::vec::Vec<crate::types::Ec2TagFilter>>>,
+    pub ec2_tag_set_list:
+        std::option::Option<std::vec::Vec<std::vec::Vec<crate::types::Ec2TagFilter>>>,
 }
 impl Ec2TagSet {
     /// <p>A list that contains other lists of Amazon EC2 instance tag groups. For an instance to be included in the deployment group, it must be identified by all of the tag groups in the list.</p>
-    pub fn ec2_tag_set_list(&self) -> std::option::Option<& [std::vec::Vec<crate::types::Ec2TagFilter>]> {
+    pub fn ec2_tag_set_list(
+        &self,
+    ) -> std::option::Option<&[std::vec::Vec<crate::types::Ec2TagFilter>]> {
         self.ec2_tag_set_list.as_deref()
     }
 }
@@ -25,7 +28,8 @@ impl Ec2TagSet {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct Ec2TagSetBuilder {
-    pub(crate) ec2_tag_set_list: std::option::Option<std::vec::Vec<std::vec::Vec<crate::types::Ec2TagFilter>>>,
+    pub(crate) ec2_tag_set_list:
+        std::option::Option<std::vec::Vec<std::vec::Vec<crate::types::Ec2TagFilter>>>,
 }
 impl Ec2TagSetBuilder {
     /// Appends an item to `ec2_tag_set_list`.
@@ -35,20 +39,22 @@ impl Ec2TagSetBuilder {
     /// <p>A list that contains other lists of Amazon EC2 instance tag groups. For an instance to be included in the deployment group, it must be identified by all of the tag groups in the list.</p>
     pub fn ec2_tag_set_list(mut self, input: std::vec::Vec<crate::types::Ec2TagFilter>) -> Self {
         let mut v = self.ec2_tag_set_list.unwrap_or_default();
-                        v.push(input);
-                        self.ec2_tag_set_list = Some(v);
-                        self
+        v.push(input);
+        self.ec2_tag_set_list = Some(v);
+        self
     }
     /// <p>A list that contains other lists of Amazon EC2 instance tag groups. For an instance to be included in the deployment group, it must be identified by all of the tag groups in the list.</p>
-    pub fn set_ec2_tag_set_list(mut self, input: std::option::Option<std::vec::Vec<std::vec::Vec<crate::types::Ec2TagFilter>>>) -> Self {
-        self.ec2_tag_set_list = input; self
+    pub fn set_ec2_tag_set_list(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::vec::Vec<crate::types::Ec2TagFilter>>>,
+    ) -> Self {
+        self.ec2_tag_set_list = input;
+        self
     }
     /// Consumes the builder and constructs a [`Ec2TagSet`](crate::types::Ec2TagSet).
     pub fn build(self) -> crate::types::Ec2TagSet {
         crate::types::Ec2TagSet {
-            ec2_tag_set_list: self.ec2_tag_set_list
-            ,
+            ec2_tag_set_list: self.ec2_tag_set_list,
         }
     }
 }
-

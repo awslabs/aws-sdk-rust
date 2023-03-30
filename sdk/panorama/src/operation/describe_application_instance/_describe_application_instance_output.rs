@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeApplicationInstanceOutput  {
+pub struct DescribeApplicationInstanceOutput {
     /// <p>The application instance's name.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -44,82 +44,91 @@ pub struct DescribeApplicationInstanceOutput  {
     pub arn: std::option::Option<std::string::String>,
     /// <p>The application instance's tags.</p>
     #[doc(hidden)]
-    pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub tags:
+        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The application instance's state.</p>
     #[doc(hidden)]
-    pub runtime_context_states: std::option::Option<std::vec::Vec<crate::types::ReportedRuntimeContextState>>,
+    pub runtime_context_states:
+        std::option::Option<std::vec::Vec<crate::types::ReportedRuntimeContextState>>,
     _request_id: Option<String>,
 }
 impl DescribeApplicationInstanceOutput {
     /// <p>The application instance's name.</p>
-    pub fn name(&self) -> std::option::Option<& str> {
+    pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>The application instance's description.</p>
-    pub fn description(&self) -> std::option::Option<& str> {
+    pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
     /// <p>The device's ID.</p>
-    pub fn default_runtime_context_device(&self) -> std::option::Option<& str> {
+    pub fn default_runtime_context_device(&self) -> std::option::Option<&str> {
         self.default_runtime_context_device.as_deref()
     }
     /// <p>The device's bane.</p>
-    pub fn default_runtime_context_device_name(&self) -> std::option::Option<& str> {
+    pub fn default_runtime_context_device_name(&self) -> std::option::Option<&str> {
         self.default_runtime_context_device_name.as_deref()
     }
     /// <p>The ID of the application instance that this instance replaced.</p>
-    pub fn application_instance_id_to_replace(&self) -> std::option::Option<& str> {
+    pub fn application_instance_id_to_replace(&self) -> std::option::Option<&str> {
         self.application_instance_id_to_replace.as_deref()
     }
     /// <p>The application instance's runtime role ARN.</p>
-    pub fn runtime_role_arn(&self) -> std::option::Option<& str> {
+    pub fn runtime_role_arn(&self) -> std::option::Option<&str> {
         self.runtime_role_arn.as_deref()
     }
     /// <p>The application instance's status.</p>
-    pub fn status(&self) -> std::option::Option<& crate::types::ApplicationInstanceStatus> {
+    pub fn status(&self) -> std::option::Option<&crate::types::ApplicationInstanceStatus> {
         self.status.as_ref()
     }
     /// <p>The application instance's health status.</p>
-    pub fn health_status(&self) -> std::option::Option<& crate::types::ApplicationInstanceHealthStatus> {
+    pub fn health_status(
+        &self,
+    ) -> std::option::Option<&crate::types::ApplicationInstanceHealthStatus> {
         self.health_status.as_ref()
     }
     /// <p>The application instance's status description.</p>
-    pub fn status_description(&self) -> std::option::Option<& str> {
+    pub fn status_description(&self) -> std::option::Option<&str> {
         self.status_description.as_deref()
     }
     /// <p>When the application instance was created.</p>
-    pub fn created_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
+    pub fn created_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created_time.as_ref()
     }
     /// <p>The application instance was updated.</p>
-    pub fn last_updated_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
+    pub fn last_updated_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_updated_time.as_ref()
     }
     /// <p>The application instance's ID.</p>
-    pub fn application_instance_id(&self) -> std::option::Option<& str> {
+    pub fn application_instance_id(&self) -> std::option::Option<&str> {
         self.application_instance_id.as_deref()
     }
     /// <p>The application instance's ARN.</p>
-    pub fn arn(&self) -> std::option::Option<& str> {
+    pub fn arn(&self) -> std::option::Option<&str> {
         self.arn.as_deref()
     }
     /// <p>The application instance's tags.</p>
-    pub fn tags(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
         self.tags.as_ref()
     }
     /// <p>The application instance's state.</p>
-    pub fn runtime_context_states(&self) -> std::option::Option<& [crate::types::ReportedRuntimeContextState]> {
+    pub fn runtime_context_states(
+        &self,
+    ) -> std::option::Option<&[crate::types::ReportedRuntimeContextState]> {
         self.runtime_context_states.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for DescribeApplicationInstanceOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl DescribeApplicationInstanceOutput {
     /// Creates a new builder-style object to manufacture [`DescribeApplicationInstanceOutput`](crate::operation::describe_application_instance::DescribeApplicationInstanceOutput).
-    pub fn builder() -> crate::operation::describe_application_instance::builders::DescribeApplicationInstanceOutputBuilder {
+    pub fn builder() -> crate::operation::describe_application_instance::builders::DescribeApplicationInstanceOutputBuilder{
         crate::operation::describe_application_instance::builders::DescribeApplicationInstanceOutputBuilder::default()
     }
 }
@@ -141,8 +150,10 @@ pub struct DescribeApplicationInstanceOutputBuilder {
     pub(crate) last_updated_time: std::option::Option<aws_smithy_types::DateTime>,
     pub(crate) application_instance_id: std::option::Option<std::string::String>,
     pub(crate) arn: std::option::Option<std::string::String>,
-    pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
-    pub(crate) runtime_context_states: std::option::Option<std::vec::Vec<crate::types::ReportedRuntimeContextState>>,
+    pub(crate) tags:
+        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub(crate) runtime_context_states:
+        std::option::Option<std::vec::Vec<crate::types::ReportedRuntimeContextState>>,
     _request_id: Option<String>,
 }
 impl DescribeApplicationInstanceOutputBuilder {
@@ -153,7 +164,8 @@ impl DescribeApplicationInstanceOutputBuilder {
     }
     /// <p>The application instance's name.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input; self
+        self.name = input;
+        self
     }
     /// <p>The application instance's description.</p>
     pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -162,7 +174,8 @@ impl DescribeApplicationInstanceOutputBuilder {
     }
     /// <p>The application instance's description.</p>
     pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.description = input; self
+        self.description = input;
+        self
     }
     /// <p>The device's ID.</p>
     pub fn default_runtime_context_device(mut self, input: impl Into<std::string::String>) -> Self {
@@ -170,26 +183,44 @@ impl DescribeApplicationInstanceOutputBuilder {
         self
     }
     /// <p>The device's ID.</p>
-    pub fn set_default_runtime_context_device(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.default_runtime_context_device = input; self
+    pub fn set_default_runtime_context_device(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.default_runtime_context_device = input;
+        self
     }
     /// <p>The device's bane.</p>
-    pub fn default_runtime_context_device_name(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn default_runtime_context_device_name(
+        mut self,
+        input: impl Into<std::string::String>,
+    ) -> Self {
         self.default_runtime_context_device_name = Some(input.into());
         self
     }
     /// <p>The device's bane.</p>
-    pub fn set_default_runtime_context_device_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.default_runtime_context_device_name = input; self
+    pub fn set_default_runtime_context_device_name(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.default_runtime_context_device_name = input;
+        self
     }
     /// <p>The ID of the application instance that this instance replaced.</p>
-    pub fn application_instance_id_to_replace(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn application_instance_id_to_replace(
+        mut self,
+        input: impl Into<std::string::String>,
+    ) -> Self {
         self.application_instance_id_to_replace = Some(input.into());
         self
     }
     /// <p>The ID of the application instance that this instance replaced.</p>
-    pub fn set_application_instance_id_to_replace(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.application_instance_id_to_replace = input; self
+    pub fn set_application_instance_id_to_replace(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.application_instance_id_to_replace = input;
+        self
     }
     /// <p>The application instance's runtime role ARN.</p>
     pub fn runtime_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -198,7 +229,8 @@ impl DescribeApplicationInstanceOutputBuilder {
     }
     /// <p>The application instance's runtime role ARN.</p>
     pub fn set_runtime_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.runtime_role_arn = input; self
+        self.runtime_role_arn = input;
+        self
     }
     /// <p>The application instance's status.</p>
     pub fn status(mut self, input: crate::types::ApplicationInstanceStatus) -> Self {
@@ -206,8 +238,12 @@ impl DescribeApplicationInstanceOutputBuilder {
         self
     }
     /// <p>The application instance's status.</p>
-    pub fn set_status(mut self, input: std::option::Option<crate::types::ApplicationInstanceStatus>) -> Self {
-        self.status = input; self
+    pub fn set_status(
+        mut self,
+        input: std::option::Option<crate::types::ApplicationInstanceStatus>,
+    ) -> Self {
+        self.status = input;
+        self
     }
     /// <p>The application instance's health status.</p>
     pub fn health_status(mut self, input: crate::types::ApplicationInstanceHealthStatus) -> Self {
@@ -215,8 +251,12 @@ impl DescribeApplicationInstanceOutputBuilder {
         self
     }
     /// <p>The application instance's health status.</p>
-    pub fn set_health_status(mut self, input: std::option::Option<crate::types::ApplicationInstanceHealthStatus>) -> Self {
-        self.health_status = input; self
+    pub fn set_health_status(
+        mut self,
+        input: std::option::Option<crate::types::ApplicationInstanceHealthStatus>,
+    ) -> Self {
+        self.health_status = input;
+        self
     }
     /// <p>The application instance's status description.</p>
     pub fn status_description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -224,8 +264,12 @@ impl DescribeApplicationInstanceOutputBuilder {
         self
     }
     /// <p>The application instance's status description.</p>
-    pub fn set_status_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.status_description = input; self
+    pub fn set_status_description(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.status_description = input;
+        self
     }
     /// <p>When the application instance was created.</p>
     pub fn created_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -233,8 +277,12 @@ impl DescribeApplicationInstanceOutputBuilder {
         self
     }
     /// <p>When the application instance was created.</p>
-    pub fn set_created_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.created_time = input; self
+    pub fn set_created_time(
+        mut self,
+        input: std::option::Option<aws_smithy_types::DateTime>,
+    ) -> Self {
+        self.created_time = input;
+        self
     }
     /// <p>The application instance was updated.</p>
     pub fn last_updated_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -242,8 +290,12 @@ impl DescribeApplicationInstanceOutputBuilder {
         self
     }
     /// <p>The application instance was updated.</p>
-    pub fn set_last_updated_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.last_updated_time = input; self
+    pub fn set_last_updated_time(
+        mut self,
+        input: std::option::Option<aws_smithy_types::DateTime>,
+    ) -> Self {
+        self.last_updated_time = input;
+        self
     }
     /// <p>The application instance's ID.</p>
     pub fn application_instance_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -251,8 +303,12 @@ impl DescribeApplicationInstanceOutputBuilder {
         self
     }
     /// <p>The application instance's ID.</p>
-    pub fn set_application_instance_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.application_instance_id = input; self
+    pub fn set_application_instance_id(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.application_instance_id = input;
+        self
     }
     /// <p>The application instance's ARN.</p>
     pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -261,82 +317,86 @@ impl DescribeApplicationInstanceOutputBuilder {
     }
     /// <p>The application instance's ARN.</p>
     pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.arn = input; self
+        self.arn = input;
+        self
     }
     /// Adds a key-value pair to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// <p>The application instance's tags.</p>
-    pub fn tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
+    pub fn tags(
+        mut self,
+        k: impl Into<std::string::String>,
+        v: impl Into<std::string::String>,
+    ) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
-                        hash_map.insert(k.into(), v.into());
-                        self.tags = Some(hash_map);
-                        self
+        hash_map.insert(k.into(), v.into());
+        self.tags = Some(hash_map);
+        self
     }
     /// <p>The application instance's tags.</p>
-    pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
-        self.tags = input; self
+    pub fn set_tags(
+        mut self,
+        input: std::option::Option<
+            std::collections::HashMap<std::string::String, std::string::String>,
+        >,
+    ) -> Self {
+        self.tags = input;
+        self
     }
     /// Appends an item to `runtime_context_states`.
     ///
     /// To override the contents of this collection use [`set_runtime_context_states`](Self::set_runtime_context_states).
     ///
     /// <p>The application instance's state.</p>
-    pub fn runtime_context_states(mut self, input: crate::types::ReportedRuntimeContextState) -> Self {
+    pub fn runtime_context_states(
+        mut self,
+        input: crate::types::ReportedRuntimeContextState,
+    ) -> Self {
         let mut v = self.runtime_context_states.unwrap_or_default();
-                        v.push(input);
-                        self.runtime_context_states = Some(v);
-                        self
+        v.push(input);
+        self.runtime_context_states = Some(v);
+        self
     }
     /// <p>The application instance's state.</p>
-    pub fn set_runtime_context_states(mut self, input: std::option::Option<std::vec::Vec<crate::types::ReportedRuntimeContextState>>) -> Self {
-        self.runtime_context_states = input; self
+    pub fn set_runtime_context_states(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::ReportedRuntimeContextState>>,
+    ) -> Self {
+        self.runtime_context_states = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`DescribeApplicationInstanceOutput`](crate::operation::describe_application_instance::DescribeApplicationInstanceOutput).
-    pub fn build(self) -> crate::operation::describe_application_instance::DescribeApplicationInstanceOutput {
+    pub fn build(
+        self,
+    ) -> crate::operation::describe_application_instance::DescribeApplicationInstanceOutput {
         crate::operation::describe_application_instance::DescribeApplicationInstanceOutput {
-            name: self.name
-            ,
-            description: self.description
-            ,
-            default_runtime_context_device: self.default_runtime_context_device
-            ,
-            default_runtime_context_device_name: self.default_runtime_context_device_name
-            ,
-            application_instance_id_to_replace: self.application_instance_id_to_replace
-            ,
-            runtime_role_arn: self.runtime_role_arn
-            ,
-            status: self.status
-            ,
-            health_status: self.health_status
-            ,
-            status_description: self.status_description
-            ,
-            created_time: self.created_time
-            ,
-            last_updated_time: self.last_updated_time
-            ,
-            application_instance_id: self.application_instance_id
-            ,
-            arn: self.arn
-            ,
-            tags: self.tags
-            ,
-            runtime_context_states: self.runtime_context_states
-            ,
+            name: self.name,
+            description: self.description,
+            default_runtime_context_device: self.default_runtime_context_device,
+            default_runtime_context_device_name: self.default_runtime_context_device_name,
+            application_instance_id_to_replace: self.application_instance_id_to_replace,
+            runtime_role_arn: self.runtime_role_arn,
+            status: self.status,
+            health_status: self.health_status,
+            status_description: self.status_description,
+            created_time: self.created_time,
+            last_updated_time: self.last_updated_time,
+            application_instance_id: self.application_instance_id,
+            arn: self.arn,
+            tags: self.tags,
+            runtime_context_states: self.runtime_context_states,
             _request_id: self._request_id,
         }
     }
 }
-

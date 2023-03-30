@@ -3,18 +3,18 @@
 /// <p>An object consists of data and its descriptive metadata.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Object  {
+pub struct Object {
     /// <p>The name that you assign to an object. You use the object key to retrieve the object.</p>
     #[doc(hidden)]
     pub key: std::option::Option<std::string::String>,
     /// <p>Creation date of the object.</p>
     #[doc(hidden)]
     pub last_modified: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>The entity tag is a hash of the object. The ETag reflects changes only to the contents of an object, not its metadata. The ETag may or may not be an MD5 digest of the object data. Whether or not it is depends on how the object was created and how it is encrypted as described below:</p> 
-    /// <ul> 
-    /// <li> <p>Objects created by the PUT Object, POST Object, or Copy operation, or through the Amazon Web Services Management Console, and are encrypted by SSE-S3 or plaintext, have ETags that are an MD5 digest of their object data.</p> </li> 
-    /// <li> <p>Objects created by the PUT Object, POST Object, or Copy operation, or through the Amazon Web Services Management Console, and are encrypted by SSE-C or SSE-KMS, have ETags that are not an MD5 digest of their object data.</p> </li> 
-    /// <li> <p>If an object is created by either the Multipart Upload or Part Copy operation, the ETag is not an MD5 digest, regardless of the method of encryption. If an object is larger than 16 MB, the Amazon Web Services Management Console will upload or copy that object as a Multipart Upload, and therefore the ETag will not be an MD5 digest.</p> </li> 
+    /// <p>The entity tag is a hash of the object. The ETag reflects changes only to the contents of an object, not its metadata. The ETag may or may not be an MD5 digest of the object data. Whether or not it is depends on how the object was created and how it is encrypted as described below:</p>
+    /// <ul>
+    /// <li> <p>Objects created by the PUT Object, POST Object, or Copy operation, or through the Amazon Web Services Management Console, and are encrypted by SSE-S3 or plaintext, have ETags that are an MD5 digest of their object data.</p> </li>
+    /// <li> <p>Objects created by the PUT Object, POST Object, or Copy operation, or through the Amazon Web Services Management Console, and are encrypted by SSE-C or SSE-KMS, have ETags that are not an MD5 digest of their object data.</p> </li>
+    /// <li> <p>If an object is created by either the Multipart Upload or Part Copy operation, the ETag is not an MD5 digest, regardless of the method of encryption. If an object is larger than 16 MB, the Amazon Web Services Management Console will upload or copy that object as a Multipart Upload, and therefore the ETag will not be an MD5 digest.</p> </li>
     /// </ul>
     #[doc(hidden)]
     pub e_tag: std::option::Option<std::string::String>,
@@ -33,24 +33,24 @@ pub struct Object  {
 }
 impl Object {
     /// <p>The name that you assign to an object. You use the object key to retrieve the object.</p>
-    pub fn key(&self) -> std::option::Option<& str> {
+    pub fn key(&self) -> std::option::Option<&str> {
         self.key.as_deref()
     }
     /// <p>Creation date of the object.</p>
-    pub fn last_modified(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
+    pub fn last_modified(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_modified.as_ref()
     }
-    /// <p>The entity tag is a hash of the object. The ETag reflects changes only to the contents of an object, not its metadata. The ETag may or may not be an MD5 digest of the object data. Whether or not it is depends on how the object was created and how it is encrypted as described below:</p> 
-    /// <ul> 
-    /// <li> <p>Objects created by the PUT Object, POST Object, or Copy operation, or through the Amazon Web Services Management Console, and are encrypted by SSE-S3 or plaintext, have ETags that are an MD5 digest of their object data.</p> </li> 
-    /// <li> <p>Objects created by the PUT Object, POST Object, or Copy operation, or through the Amazon Web Services Management Console, and are encrypted by SSE-C or SSE-KMS, have ETags that are not an MD5 digest of their object data.</p> </li> 
-    /// <li> <p>If an object is created by either the Multipart Upload or Part Copy operation, the ETag is not an MD5 digest, regardless of the method of encryption. If an object is larger than 16 MB, the Amazon Web Services Management Console will upload or copy that object as a Multipart Upload, and therefore the ETag will not be an MD5 digest.</p> </li> 
+    /// <p>The entity tag is a hash of the object. The ETag reflects changes only to the contents of an object, not its metadata. The ETag may or may not be an MD5 digest of the object data. Whether or not it is depends on how the object was created and how it is encrypted as described below:</p>
+    /// <ul>
+    /// <li> <p>Objects created by the PUT Object, POST Object, or Copy operation, or through the Amazon Web Services Management Console, and are encrypted by SSE-S3 or plaintext, have ETags that are an MD5 digest of their object data.</p> </li>
+    /// <li> <p>Objects created by the PUT Object, POST Object, or Copy operation, or through the Amazon Web Services Management Console, and are encrypted by SSE-C or SSE-KMS, have ETags that are not an MD5 digest of their object data.</p> </li>
+    /// <li> <p>If an object is created by either the Multipart Upload or Part Copy operation, the ETag is not an MD5 digest, regardless of the method of encryption. If an object is larger than 16 MB, the Amazon Web Services Management Console will upload or copy that object as a Multipart Upload, and therefore the ETag will not be an MD5 digest.</p> </li>
     /// </ul>
-    pub fn e_tag(&self) -> std::option::Option<& str> {
+    pub fn e_tag(&self) -> std::option::Option<&str> {
         self.e_tag.as_deref()
     }
     /// <p>The algorithm that was used to create a checksum of the object.</p>
-    pub fn checksum_algorithm(&self) -> std::option::Option<& [crate::types::ChecksumAlgorithm]> {
+    pub fn checksum_algorithm(&self) -> std::option::Option<&[crate::types::ChecksumAlgorithm]> {
         self.checksum_algorithm.as_deref()
     }
     /// <p>Size in bytes of the object</p>
@@ -58,11 +58,11 @@ impl Object {
         self.size
     }
     /// <p>The class of storage used to store the object.</p>
-    pub fn storage_class(&self) -> std::option::Option<& crate::types::ObjectStorageClass> {
+    pub fn storage_class(&self) -> std::option::Option<&crate::types::ObjectStorageClass> {
         self.storage_class.as_ref()
     }
     /// <p>The owner of the object</p>
-    pub fn owner(&self) -> std::option::Option<& crate::types::Owner> {
+    pub fn owner(&self) -> std::option::Option<&crate::types::Owner> {
         self.owner.as_ref()
     }
 }
@@ -80,7 +80,8 @@ pub struct ObjectBuilder {
     pub(crate) key: std::option::Option<std::string::String>,
     pub(crate) last_modified: std::option::Option<aws_smithy_types::DateTime>,
     pub(crate) e_tag: std::option::Option<std::string::String>,
-    pub(crate) checksum_algorithm: std::option::Option<std::vec::Vec<crate::types::ChecksumAlgorithm>>,
+    pub(crate) checksum_algorithm:
+        std::option::Option<std::vec::Vec<crate::types::ChecksumAlgorithm>>,
     pub(crate) size: std::option::Option<i64>,
     pub(crate) storage_class: std::option::Option<crate::types::ObjectStorageClass>,
     pub(crate) owner: std::option::Option<crate::types::Owner>,
@@ -93,7 +94,8 @@ impl ObjectBuilder {
     }
     /// <p>The name that you assign to an object. You use the object key to retrieve the object.</p>
     pub fn set_key(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.key = input; self
+        self.key = input;
+        self
     }
     /// <p>Creation date of the object.</p>
     pub fn last_modified(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -101,27 +103,32 @@ impl ObjectBuilder {
         self
     }
     /// <p>Creation date of the object.</p>
-    pub fn set_last_modified(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.last_modified = input; self
+    pub fn set_last_modified(
+        mut self,
+        input: std::option::Option<aws_smithy_types::DateTime>,
+    ) -> Self {
+        self.last_modified = input;
+        self
     }
-    /// <p>The entity tag is a hash of the object. The ETag reflects changes only to the contents of an object, not its metadata. The ETag may or may not be an MD5 digest of the object data. Whether or not it is depends on how the object was created and how it is encrypted as described below:</p> 
-    /// <ul> 
-    /// <li> <p>Objects created by the PUT Object, POST Object, or Copy operation, or through the Amazon Web Services Management Console, and are encrypted by SSE-S3 or plaintext, have ETags that are an MD5 digest of their object data.</p> </li> 
-    /// <li> <p>Objects created by the PUT Object, POST Object, or Copy operation, or through the Amazon Web Services Management Console, and are encrypted by SSE-C or SSE-KMS, have ETags that are not an MD5 digest of their object data.</p> </li> 
-    /// <li> <p>If an object is created by either the Multipart Upload or Part Copy operation, the ETag is not an MD5 digest, regardless of the method of encryption. If an object is larger than 16 MB, the Amazon Web Services Management Console will upload or copy that object as a Multipart Upload, and therefore the ETag will not be an MD5 digest.</p> </li> 
+    /// <p>The entity tag is a hash of the object. The ETag reflects changes only to the contents of an object, not its metadata. The ETag may or may not be an MD5 digest of the object data. Whether or not it is depends on how the object was created and how it is encrypted as described below:</p>
+    /// <ul>
+    /// <li> <p>Objects created by the PUT Object, POST Object, or Copy operation, or through the Amazon Web Services Management Console, and are encrypted by SSE-S3 or plaintext, have ETags that are an MD5 digest of their object data.</p> </li>
+    /// <li> <p>Objects created by the PUT Object, POST Object, or Copy operation, or through the Amazon Web Services Management Console, and are encrypted by SSE-C or SSE-KMS, have ETags that are not an MD5 digest of their object data.</p> </li>
+    /// <li> <p>If an object is created by either the Multipart Upload or Part Copy operation, the ETag is not an MD5 digest, regardless of the method of encryption. If an object is larger than 16 MB, the Amazon Web Services Management Console will upload or copy that object as a Multipart Upload, and therefore the ETag will not be an MD5 digest.</p> </li>
     /// </ul>
     pub fn e_tag(mut self, input: impl Into<std::string::String>) -> Self {
         self.e_tag = Some(input.into());
         self
     }
-    /// <p>The entity tag is a hash of the object. The ETag reflects changes only to the contents of an object, not its metadata. The ETag may or may not be an MD5 digest of the object data. Whether or not it is depends on how the object was created and how it is encrypted as described below:</p> 
-    /// <ul> 
-    /// <li> <p>Objects created by the PUT Object, POST Object, or Copy operation, or through the Amazon Web Services Management Console, and are encrypted by SSE-S3 or plaintext, have ETags that are an MD5 digest of their object data.</p> </li> 
-    /// <li> <p>Objects created by the PUT Object, POST Object, or Copy operation, or through the Amazon Web Services Management Console, and are encrypted by SSE-C or SSE-KMS, have ETags that are not an MD5 digest of their object data.</p> </li> 
-    /// <li> <p>If an object is created by either the Multipart Upload or Part Copy operation, the ETag is not an MD5 digest, regardless of the method of encryption. If an object is larger than 16 MB, the Amazon Web Services Management Console will upload or copy that object as a Multipart Upload, and therefore the ETag will not be an MD5 digest.</p> </li> 
+    /// <p>The entity tag is a hash of the object. The ETag reflects changes only to the contents of an object, not its metadata. The ETag may or may not be an MD5 digest of the object data. Whether or not it is depends on how the object was created and how it is encrypted as described below:</p>
+    /// <ul>
+    /// <li> <p>Objects created by the PUT Object, POST Object, or Copy operation, or through the Amazon Web Services Management Console, and are encrypted by SSE-S3 or plaintext, have ETags that are an MD5 digest of their object data.</p> </li>
+    /// <li> <p>Objects created by the PUT Object, POST Object, or Copy operation, or through the Amazon Web Services Management Console, and are encrypted by SSE-C or SSE-KMS, have ETags that are not an MD5 digest of their object data.</p> </li>
+    /// <li> <p>If an object is created by either the Multipart Upload or Part Copy operation, the ETag is not an MD5 digest, regardless of the method of encryption. If an object is larger than 16 MB, the Amazon Web Services Management Console will upload or copy that object as a Multipart Upload, and therefore the ETag will not be an MD5 digest.</p> </li>
     /// </ul>
     pub fn set_e_tag(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.e_tag = input; self
+        self.e_tag = input;
+        self
     }
     /// Appends an item to `checksum_algorithm`.
     ///
@@ -130,13 +137,17 @@ impl ObjectBuilder {
     /// <p>The algorithm that was used to create a checksum of the object.</p>
     pub fn checksum_algorithm(mut self, input: crate::types::ChecksumAlgorithm) -> Self {
         let mut v = self.checksum_algorithm.unwrap_or_default();
-                        v.push(input);
-                        self.checksum_algorithm = Some(v);
-                        self
+        v.push(input);
+        self.checksum_algorithm = Some(v);
+        self
     }
     /// <p>The algorithm that was used to create a checksum of the object.</p>
-    pub fn set_checksum_algorithm(mut self, input: std::option::Option<std::vec::Vec<crate::types::ChecksumAlgorithm>>) -> Self {
-        self.checksum_algorithm = input; self
+    pub fn set_checksum_algorithm(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::ChecksumAlgorithm>>,
+    ) -> Self {
+        self.checksum_algorithm = input;
+        self
     }
     /// <p>Size in bytes of the object</p>
     pub fn size(mut self, input: i64) -> Self {
@@ -145,7 +156,8 @@ impl ObjectBuilder {
     }
     /// <p>Size in bytes of the object</p>
     pub fn set_size(mut self, input: std::option::Option<i64>) -> Self {
-        self.size = input; self
+        self.size = input;
+        self
     }
     /// <p>The class of storage used to store the object.</p>
     pub fn storage_class(mut self, input: crate::types::ObjectStorageClass) -> Self {
@@ -153,8 +165,12 @@ impl ObjectBuilder {
         self
     }
     /// <p>The class of storage used to store the object.</p>
-    pub fn set_storage_class(mut self, input: std::option::Option<crate::types::ObjectStorageClass>) -> Self {
-        self.storage_class = input; self
+    pub fn set_storage_class(
+        mut self,
+        input: std::option::Option<crate::types::ObjectStorageClass>,
+    ) -> Self {
+        self.storage_class = input;
+        self
     }
     /// <p>The owner of the object</p>
     pub fn owner(mut self, input: crate::types::Owner) -> Self {
@@ -163,27 +179,19 @@ impl ObjectBuilder {
     }
     /// <p>The owner of the object</p>
     pub fn set_owner(mut self, input: std::option::Option<crate::types::Owner>) -> Self {
-        self.owner = input; self
+        self.owner = input;
+        self
     }
     /// Consumes the builder and constructs a [`Object`](crate::types::Object).
     pub fn build(self) -> crate::types::Object {
         crate::types::Object {
-            key: self.key
-            ,
-            last_modified: self.last_modified
-            ,
-            e_tag: self.e_tag
-            ,
-            checksum_algorithm: self.checksum_algorithm
-            ,
-            size: self.size
-                .unwrap_or_default()
-            ,
-            storage_class: self.storage_class
-            ,
-            owner: self.owner
-            ,
+            key: self.key,
+            last_modified: self.last_modified,
+            e_tag: self.e_tag,
+            checksum_algorithm: self.checksum_algorithm,
+            size: self.size.unwrap_or_default(),
+            storage_class: self.storage_class,
+            owner: self.owner,
         }
     }
 }
-

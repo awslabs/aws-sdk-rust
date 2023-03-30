@@ -2,20 +2,21 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetConfiguredTableInput  {
+pub struct GetConfiguredTableInput {
     /// <p>The unique ID for the configured table to retrieve.</p>
     #[doc(hidden)]
     pub configured_table_identifier: std::option::Option<std::string::String>,
 }
 impl GetConfiguredTableInput {
     /// <p>The unique ID for the configured table to retrieve.</p>
-    pub fn configured_table_identifier(&self) -> std::option::Option<& str> {
+    pub fn configured_table_identifier(&self) -> std::option::Option<&str> {
         self.configured_table_identifier.as_deref()
     }
 }
 impl GetConfiguredTableInput {
     /// Creates a new builder-style object to manufacture [`GetConfiguredTableInput`](crate::operation::get_configured_table::GetConfiguredTableInput).
-    pub fn builder() -> crate::operation::get_configured_table::builders::GetConfiguredTableInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::get_configured_table::builders::GetConfiguredTableInputBuilder {
         crate::operation::get_configured_table::builders::GetConfiguredTableInputBuilder::default()
     }
 }
@@ -33,17 +34,24 @@ impl GetConfiguredTableInputBuilder {
         self
     }
     /// <p>The unique ID for the configured table to retrieve.</p>
-    pub fn set_configured_table_identifier(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.configured_table_identifier = input; self
+    pub fn set_configured_table_identifier(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.configured_table_identifier = input;
+        self
     }
     /// Consumes the builder and constructs a [`GetConfiguredTableInput`](crate::operation::get_configured_table::GetConfiguredTableInput).
-    pub fn build(self) -> Result<crate::operation::get_configured_table::GetConfiguredTableInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::get_configured_table::GetConfiguredTableInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::get_configured_table::GetConfiguredTableInput {
-                configured_table_identifier: self.configured_table_identifier
-                ,
-            }
+                configured_table_identifier: self.configured_table_identifier,
+            },
         )
     }
 }
-

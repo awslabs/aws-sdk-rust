@@ -3,7 +3,7 @@
 /// <p>The replication parameters for replicating a server.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ServerReplicationParameters  {
+pub struct ServerReplicationParameters {
     /// <p>The seed time for creating a replication job for the server.</p>
     #[doc(hidden)]
     pub seed_time: std::option::Option<aws_smithy_types::DateTime>,
@@ -22,20 +22,20 @@ pub struct ServerReplicationParameters  {
     /// <p>Indicates whether the replication job produces encrypted AMIs.</p>
     #[doc(hidden)]
     pub encrypted: std::option::Option<bool>,
-    /// <p>The ID of the KMS key for replication jobs that produce encrypted AMIs. This value can be any of the following:</p> 
-    /// <ul> 
-    /// <li> <p>KMS key ID</p> </li> 
-    /// <li> <p>KMS key alias</p> </li> 
-    /// <li> <p>ARN referring to the KMS key ID</p> </li> 
-    /// <li> <p>ARN referring to the KMS key alias</p> </li> 
-    /// </ul> 
+    /// <p>The ID of the KMS key for replication jobs that produce encrypted AMIs. This value can be any of the following:</p>
+    /// <ul>
+    /// <li> <p>KMS key ID</p> </li>
+    /// <li> <p>KMS key alias</p> </li>
+    /// <li> <p>ARN referring to the KMS key ID</p> </li>
+    /// <li> <p>ARN referring to the KMS key alias</p> </li>
+    /// </ul>
     /// <p>If encrypted is enabled but a KMS key ID is not specified, the customer's default KMS key for Amazon EBS is used.</p>
     #[doc(hidden)]
     pub kms_key_id: std::option::Option<std::string::String>,
 }
 impl ServerReplicationParameters {
     /// <p>The seed time for creating a replication job for the server.</p>
-    pub fn seed_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
+    pub fn seed_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.seed_time.as_ref()
     }
     /// <p>The frequency of creating replication jobs for the server.</p>
@@ -47,7 +47,7 @@ impl ServerReplicationParameters {
         self.run_once
     }
     /// <p>The license type for creating a replication job for the server.</p>
-    pub fn license_type(&self) -> std::option::Option<& crate::types::LicenseType> {
+    pub fn license_type(&self) -> std::option::Option<&crate::types::LicenseType> {
         self.license_type.as_ref()
     }
     /// <p>The number of recent AMIs to keep when creating a replication job for this server.</p>
@@ -58,15 +58,15 @@ impl ServerReplicationParameters {
     pub fn encrypted(&self) -> std::option::Option<bool> {
         self.encrypted
     }
-    /// <p>The ID of the KMS key for replication jobs that produce encrypted AMIs. This value can be any of the following:</p> 
-    /// <ul> 
-    /// <li> <p>KMS key ID</p> </li> 
-    /// <li> <p>KMS key alias</p> </li> 
-    /// <li> <p>ARN referring to the KMS key ID</p> </li> 
-    /// <li> <p>ARN referring to the KMS key alias</p> </li> 
-    /// </ul> 
+    /// <p>The ID of the KMS key for replication jobs that produce encrypted AMIs. This value can be any of the following:</p>
+    /// <ul>
+    /// <li> <p>KMS key ID</p> </li>
+    /// <li> <p>KMS key alias</p> </li>
+    /// <li> <p>ARN referring to the KMS key ID</p> </li>
+    /// <li> <p>ARN referring to the KMS key alias</p> </li>
+    /// </ul>
     /// <p>If encrypted is enabled but a KMS key ID is not specified, the customer's default KMS key for Amazon EBS is used.</p>
-    pub fn kms_key_id(&self) -> std::option::Option<& str> {
+    pub fn kms_key_id(&self) -> std::option::Option<&str> {
         self.kms_key_id.as_deref()
     }
 }
@@ -97,7 +97,8 @@ impl ServerReplicationParametersBuilder {
     }
     /// <p>The seed time for creating a replication job for the server.</p>
     pub fn set_seed_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.seed_time = input; self
+        self.seed_time = input;
+        self
     }
     /// <p>The frequency of creating replication jobs for the server.</p>
     pub fn frequency(mut self, input: i32) -> Self {
@@ -106,7 +107,8 @@ impl ServerReplicationParametersBuilder {
     }
     /// <p>The frequency of creating replication jobs for the server.</p>
     pub fn set_frequency(mut self, input: std::option::Option<i32>) -> Self {
-        self.frequency = input; self
+        self.frequency = input;
+        self
     }
     /// <p>Indicates whether to run the replication job one time.</p>
     pub fn run_once(mut self, input: bool) -> Self {
@@ -115,7 +117,8 @@ impl ServerReplicationParametersBuilder {
     }
     /// <p>Indicates whether to run the replication job one time.</p>
     pub fn set_run_once(mut self, input: std::option::Option<bool>) -> Self {
-        self.run_once = input; self
+        self.run_once = input;
+        self
     }
     /// <p>The license type for creating a replication job for the server.</p>
     pub fn license_type(mut self, input: crate::types::LicenseType) -> Self {
@@ -123,8 +126,12 @@ impl ServerReplicationParametersBuilder {
         self
     }
     /// <p>The license type for creating a replication job for the server.</p>
-    pub fn set_license_type(mut self, input: std::option::Option<crate::types::LicenseType>) -> Self {
-        self.license_type = input; self
+    pub fn set_license_type(
+        mut self,
+        input: std::option::Option<crate::types::LicenseType>,
+    ) -> Self {
+        self.license_type = input;
+        self
     }
     /// <p>The number of recent AMIs to keep when creating a replication job for this server.</p>
     pub fn number_of_recent_amis_to_keep(mut self, input: i32) -> Self {
@@ -133,7 +140,8 @@ impl ServerReplicationParametersBuilder {
     }
     /// <p>The number of recent AMIs to keep when creating a replication job for this server.</p>
     pub fn set_number_of_recent_amis_to_keep(mut self, input: std::option::Option<i32>) -> Self {
-        self.number_of_recent_amis_to_keep = input; self
+        self.number_of_recent_amis_to_keep = input;
+        self
     }
     /// <p>Indicates whether the replication job produces encrypted AMIs.</p>
     pub fn encrypted(mut self, input: bool) -> Self {
@@ -142,49 +150,43 @@ impl ServerReplicationParametersBuilder {
     }
     /// <p>Indicates whether the replication job produces encrypted AMIs.</p>
     pub fn set_encrypted(mut self, input: std::option::Option<bool>) -> Self {
-        self.encrypted = input; self
+        self.encrypted = input;
+        self
     }
-    /// <p>The ID of the KMS key for replication jobs that produce encrypted AMIs. This value can be any of the following:</p> 
-    /// <ul> 
-    /// <li> <p>KMS key ID</p> </li> 
-    /// <li> <p>KMS key alias</p> </li> 
-    /// <li> <p>ARN referring to the KMS key ID</p> </li> 
-    /// <li> <p>ARN referring to the KMS key alias</p> </li> 
-    /// </ul> 
+    /// <p>The ID of the KMS key for replication jobs that produce encrypted AMIs. This value can be any of the following:</p>
+    /// <ul>
+    /// <li> <p>KMS key ID</p> </li>
+    /// <li> <p>KMS key alias</p> </li>
+    /// <li> <p>ARN referring to the KMS key ID</p> </li>
+    /// <li> <p>ARN referring to the KMS key alias</p> </li>
+    /// </ul>
     /// <p>If encrypted is enabled but a KMS key ID is not specified, the customer's default KMS key for Amazon EBS is used.</p>
     pub fn kms_key_id(mut self, input: impl Into<std::string::String>) -> Self {
         self.kms_key_id = Some(input.into());
         self
     }
-    /// <p>The ID of the KMS key for replication jobs that produce encrypted AMIs. This value can be any of the following:</p> 
-    /// <ul> 
-    /// <li> <p>KMS key ID</p> </li> 
-    /// <li> <p>KMS key alias</p> </li> 
-    /// <li> <p>ARN referring to the KMS key ID</p> </li> 
-    /// <li> <p>ARN referring to the KMS key alias</p> </li> 
-    /// </ul> 
+    /// <p>The ID of the KMS key for replication jobs that produce encrypted AMIs. This value can be any of the following:</p>
+    /// <ul>
+    /// <li> <p>KMS key ID</p> </li>
+    /// <li> <p>KMS key alias</p> </li>
+    /// <li> <p>ARN referring to the KMS key ID</p> </li>
+    /// <li> <p>ARN referring to the KMS key alias</p> </li>
+    /// </ul>
     /// <p>If encrypted is enabled but a KMS key ID is not specified, the customer's default KMS key for Amazon EBS is used.</p>
     pub fn set_kms_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.kms_key_id = input; self
+        self.kms_key_id = input;
+        self
     }
     /// Consumes the builder and constructs a [`ServerReplicationParameters`](crate::types::ServerReplicationParameters).
     pub fn build(self) -> crate::types::ServerReplicationParameters {
         crate::types::ServerReplicationParameters {
-            seed_time: self.seed_time
-            ,
-            frequency: self.frequency
-            ,
-            run_once: self.run_once
-            ,
-            license_type: self.license_type
-            ,
-            number_of_recent_amis_to_keep: self.number_of_recent_amis_to_keep
-            ,
-            encrypted: self.encrypted
-            ,
-            kms_key_id: self.kms_key_id
-            ,
+            seed_time: self.seed_time,
+            frequency: self.frequency,
+            run_once: self.run_once,
+            license_type: self.license_type,
+            number_of_recent_amis_to_keep: self.number_of_recent_amis_to_keep,
+            encrypted: self.encrypted,
+            kms_key_id: self.kms_key_id,
         }
     }
 }
-

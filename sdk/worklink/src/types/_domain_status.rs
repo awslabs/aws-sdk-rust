@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-/// 
+///
 /// Here is an example of how you can make a match expression forward-compatible:
-/// 
+///
 /// ```text
 /// # let domainstatus = unimplemented!();
 /// match domainstatus {
@@ -36,14 +36,22 @@
 /// Specifically, when `domainstatus` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `DomainStatus::NewFeature` also yielding `"NewFeature"`.
-/// 
+///
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
 pub enum DomainStatus {
     #[allow(missing_docs)] // documentation missing in model
     Active,
@@ -62,53 +70,63 @@ pub enum DomainStatus {
     #[allow(missing_docs)] // documentation missing in model
     PendingValidation,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::primitives::UnknownVariantValue)
+    Unknown(crate::primitives::UnknownVariantValue),
 }
 impl std::convert::From<&str> for DomainStatus {
-                fn from(s: &str) -> Self {
-                    match s {
-                        "ACTIVE" => DomainStatus::Active,
-"ASSOCIATING" => DomainStatus::Associating,
-"DISASSOCIATED" => DomainStatus::Disassociated,
-"DISASSOCIATING" => DomainStatus::Disassociating,
-"FAILED_TO_ASSOCIATE" => DomainStatus::FailedToAssociate,
-"FAILED_TO_DISASSOCIATE" => DomainStatus::FailedToDisassociate,
-"INACTIVE" => DomainStatus::Inactive,
-"PENDING_VALIDATION" => DomainStatus::PendingValidation,
-other => DomainStatus::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
-                    }
-                }
+    fn from(s: &str) -> Self {
+        match s {
+            "ACTIVE" => DomainStatus::Active,
+            "ASSOCIATING" => DomainStatus::Associating,
+            "DISASSOCIATED" => DomainStatus::Disassociated,
+            "DISASSOCIATING" => DomainStatus::Disassociating,
+            "FAILED_TO_ASSOCIATE" => DomainStatus::FailedToAssociate,
+            "FAILED_TO_DISASSOCIATE" => DomainStatus::FailedToDisassociate,
+            "INACTIVE" => DomainStatus::Inactive,
+            "PENDING_VALIDATION" => DomainStatus::PendingValidation,
+            other => {
+                DomainStatus::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
             }
-impl std::str::FromStr for DomainStatus {
-                type Err = std::convert::Infallible;
-
-                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-                    Ok(DomainStatus::from(s))
-                }
-            }
-impl DomainStatus {
-                /// Returns the `&str` value of the enum member.
-                pub fn as_str(&self) -> &str {
-                    match self {
-    DomainStatus::Active => "ACTIVE",
-    DomainStatus::Associating => "ASSOCIATING",
-    DomainStatus::Disassociated => "DISASSOCIATED",
-    DomainStatus::Disassociating => "DISASSOCIATING",
-    DomainStatus::FailedToAssociate => "FAILED_TO_ASSOCIATE",
-    DomainStatus::FailedToDisassociate => "FAILED_TO_DISASSOCIATE",
-    DomainStatus::Inactive => "INACTIVE",
-    DomainStatus::PendingValidation => "PENDING_VALIDATION",
-    DomainStatus::Unknown(value) => value.as_str()
+        }
+    }
 }
-                }
-                /// Returns all the `&str` representations of the enum members.
-                pub const fn values() -> &'static [&'static str] {
-                    &["ACTIVE", "ASSOCIATING", "DISASSOCIATED", "DISASSOCIATING", "FAILED_TO_ASSOCIATE", "FAILED_TO_DISASSOCIATE", "INACTIVE", "PENDING_VALIDATION"]
-                }
-            }
-impl AsRef<str> for DomainStatus {
-                fn as_ref(&self) -> &str {
-                    self.as_str()
-                }
-            }
+impl std::str::FromStr for DomainStatus {
+    type Err = std::convert::Infallible;
 
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(DomainStatus::from(s))
+    }
+}
+impl DomainStatus {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            DomainStatus::Active => "ACTIVE",
+            DomainStatus::Associating => "ASSOCIATING",
+            DomainStatus::Disassociated => "DISASSOCIATED",
+            DomainStatus::Disassociating => "DISASSOCIATING",
+            DomainStatus::FailedToAssociate => "FAILED_TO_ASSOCIATE",
+            DomainStatus::FailedToDisassociate => "FAILED_TO_DISASSOCIATE",
+            DomainStatus::Inactive => "INACTIVE",
+            DomainStatus::PendingValidation => "PENDING_VALIDATION",
+            DomainStatus::Unknown(value) => value.as_str(),
+        }
+    }
+    /// Returns all the `&str` representations of the enum members.
+    pub const fn values() -> &'static [&'static str] {
+        &[
+            "ACTIVE",
+            "ASSOCIATING",
+            "DISASSOCIATED",
+            "DISASSOCIATING",
+            "FAILED_TO_ASSOCIATE",
+            "FAILED_TO_DISASSOCIATE",
+            "INACTIVE",
+            "PENDING_VALIDATION",
+        ]
+    }
+}
+impl AsRef<str> for DomainStatus {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}

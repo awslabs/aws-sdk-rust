@@ -342,4 +342,3 @@ pub use crate::types::_video_detail::VideoDetailBuilder;
 pub use crate::types::_job_messages::JobMessagesBuilder;
 
 pub use crate::types::_endpoint::EndpointBuilder;
-

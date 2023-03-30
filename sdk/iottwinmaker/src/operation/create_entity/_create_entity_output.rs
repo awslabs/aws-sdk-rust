@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateEntityOutput  {
+pub struct CreateEntityOutput {
     /// <p>The ID of the entity.</p>
     #[doc(hidden)]
     pub entity_id: std::option::Option<std::string::String>,
@@ -19,27 +19,27 @@ pub struct CreateEntityOutput  {
 }
 impl CreateEntityOutput {
     /// <p>The ID of the entity.</p>
-    pub fn entity_id(&self) -> std::option::Option<& str> {
+    pub fn entity_id(&self) -> std::option::Option<&str> {
         self.entity_id.as_deref()
     }
     /// <p>The ARN of the entity.</p>
-    pub fn arn(&self) -> std::option::Option<& str> {
+    pub fn arn(&self) -> std::option::Option<&str> {
         self.arn.as_deref()
     }
     /// <p>The date and time when the entity was created.</p>
-    pub fn creation_date_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
+    pub fn creation_date_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.creation_date_time.as_ref()
     }
     /// <p>The current state of the entity.</p>
-    pub fn state(&self) -> std::option::Option<& crate::types::State> {
+    pub fn state(&self) -> std::option::Option<&crate::types::State> {
         self.state.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for CreateEntityOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl CreateEntityOutput {
     /// Creates a new builder-style object to manufacture [`CreateEntityOutput`](crate::operation::create_entity::CreateEntityOutput).
     pub fn builder() -> crate::operation::create_entity::builders::CreateEntityOutputBuilder {
@@ -65,7 +65,8 @@ impl CreateEntityOutputBuilder {
     }
     /// <p>The ID of the entity.</p>
     pub fn set_entity_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.entity_id = input; self
+        self.entity_id = input;
+        self
     }
     /// <p>The ARN of the entity.</p>
     pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -74,7 +75,8 @@ impl CreateEntityOutputBuilder {
     }
     /// <p>The ARN of the entity.</p>
     pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.arn = input; self
+        self.arn = input;
+        self
     }
     /// <p>The date and time when the entity was created.</p>
     pub fn creation_date_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -82,8 +84,12 @@ impl CreateEntityOutputBuilder {
         self
     }
     /// <p>The date and time when the entity was created.</p>
-    pub fn set_creation_date_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.creation_date_time = input; self
+    pub fn set_creation_date_time(
+        mut self,
+        input: std::option::Option<aws_smithy_types::DateTime>,
+    ) -> Self {
+        self.creation_date_time = input;
+        self
     }
     /// <p>The current state of the entity.</p>
     pub fn state(mut self, input: crate::types::State) -> Self {
@@ -92,30 +98,26 @@ impl CreateEntityOutputBuilder {
     }
     /// <p>The current state of the entity.</p>
     pub fn set_state(mut self, input: std::option::Option<crate::types::State>) -> Self {
-        self.state = input; self
+        self.state = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`CreateEntityOutput`](crate::operation::create_entity::CreateEntityOutput).
     pub fn build(self) -> crate::operation::create_entity::CreateEntityOutput {
         crate::operation::create_entity::CreateEntityOutput {
-            entity_id: self.entity_id
-            ,
-            arn: self.arn
-            ,
-            creation_date_time: self.creation_date_time
-            ,
-            state: self.state
-            ,
+            entity_id: self.entity_id,
+            arn: self.arn,
+            creation_date_time: self.creation_date_time,
+            state: self.state,
             _request_id: self._request_id,
         }
     }
 }
-

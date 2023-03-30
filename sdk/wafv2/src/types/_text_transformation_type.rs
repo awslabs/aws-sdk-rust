@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-/// 
+///
 /// Here is an example of how you can make a match expression forward-compatible:
-/// 
+///
 /// ```text
 /// # let texttransformationtype = unimplemented!();
 /// match texttransformationtype {
@@ -49,14 +49,22 @@
 /// Specifically, when `texttransformationtype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `TextTransformationType::NewFeature` also yielding `"NewFeature"`.
-/// 
+///
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
 pub enum TextTransformationType {
     #[allow(missing_docs)] // documentation missing in model
     Base64Decode,
@@ -101,79 +109,102 @@ pub enum TextTransformationType {
     #[allow(missing_docs)] // documentation missing in model
     Utf8ToUnicode,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::primitives::UnknownVariantValue)
+    Unknown(crate::primitives::UnknownVariantValue),
 }
 impl std::convert::From<&str> for TextTransformationType {
-                fn from(s: &str) -> Self {
-                    match s {
-                        "BASE64_DECODE" => TextTransformationType::Base64Decode,
-"BASE64_DECODE_EXT" => TextTransformationType::Base64DecodeExt,
-"CMD_LINE" => TextTransformationType::CmdLine,
-"COMPRESS_WHITE_SPACE" => TextTransformationType::CompressWhiteSpace,
-"CSS_DECODE" => TextTransformationType::CssDecode,
-"ESCAPE_SEQ_DECODE" => TextTransformationType::EscapeSeqDecode,
-"HEX_DECODE" => TextTransformationType::HexDecode,
-"HTML_ENTITY_DECODE" => TextTransformationType::HtmlEntityDecode,
-"JS_DECODE" => TextTransformationType::JsDecode,
-"LOWERCASE" => TextTransformationType::Lowercase,
-"MD5" => TextTransformationType::Md5,
-"NONE" => TextTransformationType::None,
-"NORMALIZE_PATH" => TextTransformationType::NormalizePath,
-"NORMALIZE_PATH_WIN" => TextTransformationType::NormalizePathWin,
-"REMOVE_NULLS" => TextTransformationType::RemoveNulls,
-"REPLACE_COMMENTS" => TextTransformationType::ReplaceComments,
-"REPLACE_NULLS" => TextTransformationType::ReplaceNulls,
-"SQL_HEX_DECODE" => TextTransformationType::SqlHexDecode,
-"URL_DECODE" => TextTransformationType::UrlDecode,
-"URL_DECODE_UNI" => TextTransformationType::UrlDecodeUni,
-"UTF8_TO_UNICODE" => TextTransformationType::Utf8ToUnicode,
-other => TextTransformationType::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
-                    }
-                }
-            }
-impl std::str::FromStr for TextTransformationType {
-                type Err = std::convert::Infallible;
-
-                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-                    Ok(TextTransformationType::from(s))
-                }
-            }
-impl TextTransformationType {
-                /// Returns the `&str` value of the enum member.
-                pub fn as_str(&self) -> &str {
-                    match self {
-    TextTransformationType::Base64Decode => "BASE64_DECODE",
-    TextTransformationType::Base64DecodeExt => "BASE64_DECODE_EXT",
-    TextTransformationType::CmdLine => "CMD_LINE",
-    TextTransformationType::CompressWhiteSpace => "COMPRESS_WHITE_SPACE",
-    TextTransformationType::CssDecode => "CSS_DECODE",
-    TextTransformationType::EscapeSeqDecode => "ESCAPE_SEQ_DECODE",
-    TextTransformationType::HexDecode => "HEX_DECODE",
-    TextTransformationType::HtmlEntityDecode => "HTML_ENTITY_DECODE",
-    TextTransformationType::JsDecode => "JS_DECODE",
-    TextTransformationType::Lowercase => "LOWERCASE",
-    TextTransformationType::Md5 => "MD5",
-    TextTransformationType::None => "NONE",
-    TextTransformationType::NormalizePath => "NORMALIZE_PATH",
-    TextTransformationType::NormalizePathWin => "NORMALIZE_PATH_WIN",
-    TextTransformationType::RemoveNulls => "REMOVE_NULLS",
-    TextTransformationType::ReplaceComments => "REPLACE_COMMENTS",
-    TextTransformationType::ReplaceNulls => "REPLACE_NULLS",
-    TextTransformationType::SqlHexDecode => "SQL_HEX_DECODE",
-    TextTransformationType::UrlDecode => "URL_DECODE",
-    TextTransformationType::UrlDecodeUni => "URL_DECODE_UNI",
-    TextTransformationType::Utf8ToUnicode => "UTF8_TO_UNICODE",
-    TextTransformationType::Unknown(value) => value.as_str()
+    fn from(s: &str) -> Self {
+        match s {
+            "BASE64_DECODE" => TextTransformationType::Base64Decode,
+            "BASE64_DECODE_EXT" => TextTransformationType::Base64DecodeExt,
+            "CMD_LINE" => TextTransformationType::CmdLine,
+            "COMPRESS_WHITE_SPACE" => TextTransformationType::CompressWhiteSpace,
+            "CSS_DECODE" => TextTransformationType::CssDecode,
+            "ESCAPE_SEQ_DECODE" => TextTransformationType::EscapeSeqDecode,
+            "HEX_DECODE" => TextTransformationType::HexDecode,
+            "HTML_ENTITY_DECODE" => TextTransformationType::HtmlEntityDecode,
+            "JS_DECODE" => TextTransformationType::JsDecode,
+            "LOWERCASE" => TextTransformationType::Lowercase,
+            "MD5" => TextTransformationType::Md5,
+            "NONE" => TextTransformationType::None,
+            "NORMALIZE_PATH" => TextTransformationType::NormalizePath,
+            "NORMALIZE_PATH_WIN" => TextTransformationType::NormalizePathWin,
+            "REMOVE_NULLS" => TextTransformationType::RemoveNulls,
+            "REPLACE_COMMENTS" => TextTransformationType::ReplaceComments,
+            "REPLACE_NULLS" => TextTransformationType::ReplaceNulls,
+            "SQL_HEX_DECODE" => TextTransformationType::SqlHexDecode,
+            "URL_DECODE" => TextTransformationType::UrlDecode,
+            "URL_DECODE_UNI" => TextTransformationType::UrlDecodeUni,
+            "UTF8_TO_UNICODE" => TextTransformationType::Utf8ToUnicode,
+            other => TextTransformationType::Unknown(crate::primitives::UnknownVariantValue(
+                other.to_owned(),
+            )),
+        }
+    }
 }
-                }
-                /// Returns all the `&str` representations of the enum members.
-                pub const fn values() -> &'static [&'static str] {
-                    &["BASE64_DECODE", "BASE64_DECODE_EXT", "CMD_LINE", "COMPRESS_WHITE_SPACE", "CSS_DECODE", "ESCAPE_SEQ_DECODE", "HEX_DECODE", "HTML_ENTITY_DECODE", "JS_DECODE", "LOWERCASE", "MD5", "NONE", "NORMALIZE_PATH", "NORMALIZE_PATH_WIN", "REMOVE_NULLS", "REPLACE_COMMENTS", "REPLACE_NULLS", "SQL_HEX_DECODE", "URL_DECODE", "URL_DECODE_UNI", "UTF8_TO_UNICODE"]
-                }
-            }
-impl AsRef<str> for TextTransformationType {
-                fn as_ref(&self) -> &str {
-                    self.as_str()
-                }
-            }
+impl std::str::FromStr for TextTransformationType {
+    type Err = std::convert::Infallible;
 
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(TextTransformationType::from(s))
+    }
+}
+impl TextTransformationType {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            TextTransformationType::Base64Decode => "BASE64_DECODE",
+            TextTransformationType::Base64DecodeExt => "BASE64_DECODE_EXT",
+            TextTransformationType::CmdLine => "CMD_LINE",
+            TextTransformationType::CompressWhiteSpace => "COMPRESS_WHITE_SPACE",
+            TextTransformationType::CssDecode => "CSS_DECODE",
+            TextTransformationType::EscapeSeqDecode => "ESCAPE_SEQ_DECODE",
+            TextTransformationType::HexDecode => "HEX_DECODE",
+            TextTransformationType::HtmlEntityDecode => "HTML_ENTITY_DECODE",
+            TextTransformationType::JsDecode => "JS_DECODE",
+            TextTransformationType::Lowercase => "LOWERCASE",
+            TextTransformationType::Md5 => "MD5",
+            TextTransformationType::None => "NONE",
+            TextTransformationType::NormalizePath => "NORMALIZE_PATH",
+            TextTransformationType::NormalizePathWin => "NORMALIZE_PATH_WIN",
+            TextTransformationType::RemoveNulls => "REMOVE_NULLS",
+            TextTransformationType::ReplaceComments => "REPLACE_COMMENTS",
+            TextTransformationType::ReplaceNulls => "REPLACE_NULLS",
+            TextTransformationType::SqlHexDecode => "SQL_HEX_DECODE",
+            TextTransformationType::UrlDecode => "URL_DECODE",
+            TextTransformationType::UrlDecodeUni => "URL_DECODE_UNI",
+            TextTransformationType::Utf8ToUnicode => "UTF8_TO_UNICODE",
+            TextTransformationType::Unknown(value) => value.as_str(),
+        }
+    }
+    /// Returns all the `&str` representations of the enum members.
+    pub const fn values() -> &'static [&'static str] {
+        &[
+            "BASE64_DECODE",
+            "BASE64_DECODE_EXT",
+            "CMD_LINE",
+            "COMPRESS_WHITE_SPACE",
+            "CSS_DECODE",
+            "ESCAPE_SEQ_DECODE",
+            "HEX_DECODE",
+            "HTML_ENTITY_DECODE",
+            "JS_DECODE",
+            "LOWERCASE",
+            "MD5",
+            "NONE",
+            "NORMALIZE_PATH",
+            "NORMALIZE_PATH_WIN",
+            "REMOVE_NULLS",
+            "REPLACE_COMMENTS",
+            "REPLACE_NULLS",
+            "SQL_HEX_DECODE",
+            "URL_DECODE",
+            "URL_DECODE_UNI",
+            "UTF8_TO_UNICODE",
+        ]
+    }
+}
+impl AsRef<str> for TextTransformationType {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}

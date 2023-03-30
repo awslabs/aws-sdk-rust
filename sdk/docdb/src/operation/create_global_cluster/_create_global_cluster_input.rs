@@ -3,7 +3,7 @@
 /// <p>Represents the input to <code>CreateGlobalCluster</code>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateGlobalClusterInput  {
+pub struct CreateGlobalClusterInput {
     /// <p>The cluster identifier of the new global cluster.</p>
     #[doc(hidden)]
     pub global_cluster_identifier: std::option::Option<std::string::String>,
@@ -28,19 +28,19 @@ pub struct CreateGlobalClusterInput  {
 }
 impl CreateGlobalClusterInput {
     /// <p>The cluster identifier of the new global cluster.</p>
-    pub fn global_cluster_identifier(&self) -> std::option::Option<& str> {
+    pub fn global_cluster_identifier(&self) -> std::option::Option<&str> {
         self.global_cluster_identifier.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) to use as the primary cluster of the global cluster. This parameter is optional.</p>
-    pub fn source_db_cluster_identifier(&self) -> std::option::Option<& str> {
+    pub fn source_db_cluster_identifier(&self) -> std::option::Option<&str> {
         self.source_db_cluster_identifier.as_deref()
     }
     /// <p>The name of the database engine to be used for this cluster.</p>
-    pub fn engine(&self) -> std::option::Option<& str> {
+    pub fn engine(&self) -> std::option::Option<&str> {
         self.engine.as_deref()
     }
     /// <p>The engine version of the global cluster.</p>
-    pub fn engine_version(&self) -> std::option::Option<& str> {
+    pub fn engine_version(&self) -> std::option::Option<&str> {
         self.engine_version.as_deref()
     }
     /// <p>The deletion protection setting for the new global cluster. The global cluster can't be deleted when deletion protection is enabled. </p>
@@ -48,7 +48,7 @@ impl CreateGlobalClusterInput {
         self.deletion_protection
     }
     /// <p>The name for your database of up to 64 alpha-numeric characters. If you do not provide a name, Amazon DocumentDB will not create a database in the global cluster you are creating.</p>
-    pub fn database_name(&self) -> std::option::Option<& str> {
+    pub fn database_name(&self) -> std::option::Option<&str> {
         self.database_name.as_deref()
     }
     /// <p>The storage encryption setting for the new global cluster. </p>
@@ -58,8 +58,10 @@ impl CreateGlobalClusterInput {
 }
 impl CreateGlobalClusterInput {
     /// Creates a new builder-style object to manufacture [`CreateGlobalClusterInput`](crate::operation::create_global_cluster::CreateGlobalClusterInput).
-    pub fn builder() -> crate::operation::create_global_cluster::builders::CreateGlobalClusterInputBuilder {
-        crate::operation::create_global_cluster::builders::CreateGlobalClusterInputBuilder::default()
+    pub fn builder(
+    ) -> crate::operation::create_global_cluster::builders::CreateGlobalClusterInputBuilder {
+        crate::operation::create_global_cluster::builders::CreateGlobalClusterInputBuilder::default(
+        )
     }
 }
 
@@ -82,8 +84,12 @@ impl CreateGlobalClusterInputBuilder {
         self
     }
     /// <p>The cluster identifier of the new global cluster.</p>
-    pub fn set_global_cluster_identifier(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.global_cluster_identifier = input; self
+    pub fn set_global_cluster_identifier(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.global_cluster_identifier = input;
+        self
     }
     /// <p>The Amazon Resource Name (ARN) to use as the primary cluster of the global cluster. This parameter is optional.</p>
     pub fn source_db_cluster_identifier(mut self, input: impl Into<std::string::String>) -> Self {
@@ -91,8 +97,12 @@ impl CreateGlobalClusterInputBuilder {
         self
     }
     /// <p>The Amazon Resource Name (ARN) to use as the primary cluster of the global cluster. This parameter is optional.</p>
-    pub fn set_source_db_cluster_identifier(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.source_db_cluster_identifier = input; self
+    pub fn set_source_db_cluster_identifier(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.source_db_cluster_identifier = input;
+        self
     }
     /// <p>The name of the database engine to be used for this cluster.</p>
     pub fn engine(mut self, input: impl Into<std::string::String>) -> Self {
@@ -101,7 +111,8 @@ impl CreateGlobalClusterInputBuilder {
     }
     /// <p>The name of the database engine to be used for this cluster.</p>
     pub fn set_engine(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.engine = input; self
+        self.engine = input;
+        self
     }
     /// <p>The engine version of the global cluster.</p>
     pub fn engine_version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -110,7 +121,8 @@ impl CreateGlobalClusterInputBuilder {
     }
     /// <p>The engine version of the global cluster.</p>
     pub fn set_engine_version(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.engine_version = input; self
+        self.engine_version = input;
+        self
     }
     /// <p>The deletion protection setting for the new global cluster. The global cluster can't be deleted when deletion protection is enabled. </p>
     pub fn deletion_protection(mut self, input: bool) -> Self {
@@ -119,7 +131,8 @@ impl CreateGlobalClusterInputBuilder {
     }
     /// <p>The deletion protection setting for the new global cluster. The global cluster can't be deleted when deletion protection is enabled. </p>
     pub fn set_deletion_protection(mut self, input: std::option::Option<bool>) -> Self {
-        self.deletion_protection = input; self
+        self.deletion_protection = input;
+        self
     }
     /// <p>The name for your database of up to 64 alpha-numeric characters. If you do not provide a name, Amazon DocumentDB will not create a database in the global cluster you are creating.</p>
     pub fn database_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -128,7 +141,8 @@ impl CreateGlobalClusterInputBuilder {
     }
     /// <p>The name for your database of up to 64 alpha-numeric characters. If you do not provide a name, Amazon DocumentDB will not create a database in the global cluster you are creating.</p>
     pub fn set_database_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.database_name = input; self
+        self.database_name = input;
+        self
     }
     /// <p>The storage encryption setting for the new global cluster. </p>
     pub fn storage_encrypted(mut self, input: bool) -> Self {
@@ -137,28 +151,26 @@ impl CreateGlobalClusterInputBuilder {
     }
     /// <p>The storage encryption setting for the new global cluster. </p>
     pub fn set_storage_encrypted(mut self, input: std::option::Option<bool>) -> Self {
-        self.storage_encrypted = input; self
+        self.storage_encrypted = input;
+        self
     }
     /// Consumes the builder and constructs a [`CreateGlobalClusterInput`](crate::operation::create_global_cluster::CreateGlobalClusterInput).
-    pub fn build(self) -> Result<crate::operation::create_global_cluster::CreateGlobalClusterInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::create_global_cluster::CreateGlobalClusterInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::create_global_cluster::CreateGlobalClusterInput {
-                global_cluster_identifier: self.global_cluster_identifier
-                ,
-                source_db_cluster_identifier: self.source_db_cluster_identifier
-                ,
-                engine: self.engine
-                ,
-                engine_version: self.engine_version
-                ,
-                deletion_protection: self.deletion_protection
-                ,
-                database_name: self.database_name
-                ,
-                storage_encrypted: self.storage_encrypted
-                ,
-            }
+                global_cluster_identifier: self.global_cluster_identifier,
+                source_db_cluster_identifier: self.source_db_cluster_identifier,
+                engine: self.engine,
+                engine_version: self.engine_version,
+                deletion_protection: self.deletion_protection,
+                database_name: self.database_name,
+                storage_encrypted: self.storage_encrypted,
+            },
         )
     }
 }
-

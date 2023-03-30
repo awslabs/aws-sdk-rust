@@ -3,7 +3,7 @@
 /// <p>A notebook execution. An execution is a specific instance that an EMR Notebook is run using the <code>StartNotebookExecution</code> action.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct NotebookExecution  {
+pub struct NotebookExecution {
     /// <p>The unique identifier of a notebook execution.</p>
     #[doc(hidden)]
     pub notebook_execution_id: std::option::Option<std::string::String>,
@@ -19,18 +19,18 @@ pub struct NotebookExecution  {
     /// <p>Input parameters in JSON format passed to the EMR Notebook at runtime for execution.</p>
     #[doc(hidden)]
     pub notebook_params: std::option::Option<std::string::String>,
-    /// <p>The status of the notebook execution.</p> 
-    /// <ul> 
-    /// <li> <p> <code>START_PENDING</code> indicates that the cluster has received the execution request but execution has not begun.</p> </li> 
-    /// <li> <p> <code>STARTING</code> indicates that the execution is starting on the cluster.</p> </li> 
-    /// <li> <p> <code>RUNNING</code> indicates that the execution is being processed by the cluster.</p> </li> 
-    /// <li> <p> <code>FINISHING</code> indicates that execution processing is in the final stages.</p> </li> 
-    /// <li> <p> <code>FINISHED</code> indicates that the execution has completed without error.</p> </li> 
-    /// <li> <p> <code>FAILING</code> indicates that the execution is failing and will not finish successfully.</p> </li> 
-    /// <li> <p> <code>FAILED</code> indicates that the execution failed.</p> </li> 
-    /// <li> <p> <code>STOP_PENDING</code> indicates that the cluster has received a <code>StopNotebookExecution</code> request and the stop is pending.</p> </li> 
-    /// <li> <p> <code>STOPPING</code> indicates that the cluster is in the process of stopping the execution as a result of a <code>StopNotebookExecution</code> request.</p> </li> 
-    /// <li> <p> <code>STOPPED</code> indicates that the execution stopped because of a <code>StopNotebookExecution</code> request.</p> </li> 
+    /// <p>The status of the notebook execution.</p>
+    /// <ul>
+    /// <li> <p> <code>START_PENDING</code> indicates that the cluster has received the execution request but execution has not begun.</p> </li>
+    /// <li> <p> <code>STARTING</code> indicates that the execution is starting on the cluster.</p> </li>
+    /// <li> <p> <code>RUNNING</code> indicates that the execution is being processed by the cluster.</p> </li>
+    /// <li> <p> <code>FINISHING</code> indicates that execution processing is in the final stages.</p> </li>
+    /// <li> <p> <code>FINISHED</code> indicates that the execution has completed without error.</p> </li>
+    /// <li> <p> <code>FAILING</code> indicates that the execution is failing and will not finish successfully.</p> </li>
+    /// <li> <p> <code>FAILED</code> indicates that the execution failed.</p> </li>
+    /// <li> <p> <code>STOP_PENDING</code> indicates that the cluster has received a <code>StopNotebookExecution</code> request and the stop is pending.</p> </li>
+    /// <li> <p> <code>STOPPING</code> indicates that the cluster is in the process of stopping the execution as a result of a <code>StopNotebookExecution</code> request.</p> </li>
+    /// <li> <p> <code>STOPPED</code> indicates that the execution stopped because of a <code>StopNotebookExecution</code> request.</p> </li>
     /// </ul>
     #[doc(hidden)]
     pub status: std::option::Option<crate::types::NotebookExecutionStatus>,
@@ -58,67 +58,67 @@ pub struct NotebookExecution  {
 }
 impl NotebookExecution {
     /// <p>The unique identifier of a notebook execution.</p>
-    pub fn notebook_execution_id(&self) -> std::option::Option<& str> {
+    pub fn notebook_execution_id(&self) -> std::option::Option<&str> {
         self.notebook_execution_id.as_deref()
     }
     /// <p>The unique identifier of the EMR Notebook that is used for the notebook execution.</p>
-    pub fn editor_id(&self) -> std::option::Option<& str> {
+    pub fn editor_id(&self) -> std::option::Option<&str> {
         self.editor_id.as_deref()
     }
     /// <p>The execution engine, such as an EMR cluster, used to run the EMR notebook and perform the notebook execution.</p>
-    pub fn execution_engine(&self) -> std::option::Option<& crate::types::ExecutionEngineConfig> {
+    pub fn execution_engine(&self) -> std::option::Option<&crate::types::ExecutionEngineConfig> {
         self.execution_engine.as_ref()
     }
     /// <p>A name for the notebook execution.</p>
-    pub fn notebook_execution_name(&self) -> std::option::Option<& str> {
+    pub fn notebook_execution_name(&self) -> std::option::Option<&str> {
         self.notebook_execution_name.as_deref()
     }
     /// <p>Input parameters in JSON format passed to the EMR Notebook at runtime for execution.</p>
-    pub fn notebook_params(&self) -> std::option::Option<& str> {
+    pub fn notebook_params(&self) -> std::option::Option<&str> {
         self.notebook_params.as_deref()
     }
-    /// <p>The status of the notebook execution.</p> 
-    /// <ul> 
-    /// <li> <p> <code>START_PENDING</code> indicates that the cluster has received the execution request but execution has not begun.</p> </li> 
-    /// <li> <p> <code>STARTING</code> indicates that the execution is starting on the cluster.</p> </li> 
-    /// <li> <p> <code>RUNNING</code> indicates that the execution is being processed by the cluster.</p> </li> 
-    /// <li> <p> <code>FINISHING</code> indicates that execution processing is in the final stages.</p> </li> 
-    /// <li> <p> <code>FINISHED</code> indicates that the execution has completed without error.</p> </li> 
-    /// <li> <p> <code>FAILING</code> indicates that the execution is failing and will not finish successfully.</p> </li> 
-    /// <li> <p> <code>FAILED</code> indicates that the execution failed.</p> </li> 
-    /// <li> <p> <code>STOP_PENDING</code> indicates that the cluster has received a <code>StopNotebookExecution</code> request and the stop is pending.</p> </li> 
-    /// <li> <p> <code>STOPPING</code> indicates that the cluster is in the process of stopping the execution as a result of a <code>StopNotebookExecution</code> request.</p> </li> 
-    /// <li> <p> <code>STOPPED</code> indicates that the execution stopped because of a <code>StopNotebookExecution</code> request.</p> </li> 
+    /// <p>The status of the notebook execution.</p>
+    /// <ul>
+    /// <li> <p> <code>START_PENDING</code> indicates that the cluster has received the execution request but execution has not begun.</p> </li>
+    /// <li> <p> <code>STARTING</code> indicates that the execution is starting on the cluster.</p> </li>
+    /// <li> <p> <code>RUNNING</code> indicates that the execution is being processed by the cluster.</p> </li>
+    /// <li> <p> <code>FINISHING</code> indicates that execution processing is in the final stages.</p> </li>
+    /// <li> <p> <code>FINISHED</code> indicates that the execution has completed without error.</p> </li>
+    /// <li> <p> <code>FAILING</code> indicates that the execution is failing and will not finish successfully.</p> </li>
+    /// <li> <p> <code>FAILED</code> indicates that the execution failed.</p> </li>
+    /// <li> <p> <code>STOP_PENDING</code> indicates that the cluster has received a <code>StopNotebookExecution</code> request and the stop is pending.</p> </li>
+    /// <li> <p> <code>STOPPING</code> indicates that the cluster is in the process of stopping the execution as a result of a <code>StopNotebookExecution</code> request.</p> </li>
+    /// <li> <p> <code>STOPPED</code> indicates that the execution stopped because of a <code>StopNotebookExecution</code> request.</p> </li>
     /// </ul>
-    pub fn status(&self) -> std::option::Option<& crate::types::NotebookExecutionStatus> {
+    pub fn status(&self) -> std::option::Option<&crate::types::NotebookExecutionStatus> {
         self.status.as_ref()
     }
     /// <p>The timestamp when notebook execution started.</p>
-    pub fn start_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
+    pub fn start_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.start_time.as_ref()
     }
     /// <p>The timestamp when notebook execution ended.</p>
-    pub fn end_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
+    pub fn end_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.end_time.as_ref()
     }
     /// <p>The Amazon Resource Name (ARN) of the notebook execution.</p>
-    pub fn arn(&self) -> std::option::Option<& str> {
+    pub fn arn(&self) -> std::option::Option<&str> {
         self.arn.as_deref()
     }
     /// <p>The location of the notebook execution's output file in Amazon S3.</p>
-    pub fn output_notebook_uri(&self) -> std::option::Option<& str> {
+    pub fn output_notebook_uri(&self) -> std::option::Option<&str> {
         self.output_notebook_uri.as_deref()
     }
     /// <p>The reason for the latest status change of the notebook execution.</p>
-    pub fn last_state_change_reason(&self) -> std::option::Option<& str> {
+    pub fn last_state_change_reason(&self) -> std::option::Option<&str> {
         self.last_state_change_reason.as_deref()
     }
     /// <p>The unique identifier of the EC2 security group associated with the EMR Notebook instance. For more information see <a href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-managed-notebooks-security-groups.html">Specifying EC2 Security Groups for EMR Notebooks</a> in the <i>EMR Management Guide</i>.</p>
-    pub fn notebook_instance_security_group_id(&self) -> std::option::Option<& str> {
+    pub fn notebook_instance_security_group_id(&self) -> std::option::Option<&str> {
         self.notebook_instance_security_group_id.as_deref()
     }
     /// <p>A list of tags associated with a notebook execution. Tags are user-defined key-value pairs that consist of a required key string with a maximum of 128 characters and an optional value string with a maximum of 256 characters.</p>
-    pub fn tags(&self) -> std::option::Option<& [crate::types::Tag]> {
+    pub fn tags(&self) -> std::option::Option<&[crate::types::Tag]> {
         self.tags.as_deref()
     }
 }
@@ -154,8 +154,12 @@ impl NotebookExecutionBuilder {
         self
     }
     /// <p>The unique identifier of a notebook execution.</p>
-    pub fn set_notebook_execution_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.notebook_execution_id = input; self
+    pub fn set_notebook_execution_id(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.notebook_execution_id = input;
+        self
     }
     /// <p>The unique identifier of the EMR Notebook that is used for the notebook execution.</p>
     pub fn editor_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -164,7 +168,8 @@ impl NotebookExecutionBuilder {
     }
     /// <p>The unique identifier of the EMR Notebook that is used for the notebook execution.</p>
     pub fn set_editor_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.editor_id = input; self
+        self.editor_id = input;
+        self
     }
     /// <p>The execution engine, such as an EMR cluster, used to run the EMR notebook and perform the notebook execution.</p>
     pub fn execution_engine(mut self, input: crate::types::ExecutionEngineConfig) -> Self {
@@ -172,8 +177,12 @@ impl NotebookExecutionBuilder {
         self
     }
     /// <p>The execution engine, such as an EMR cluster, used to run the EMR notebook and perform the notebook execution.</p>
-    pub fn set_execution_engine(mut self, input: std::option::Option<crate::types::ExecutionEngineConfig>) -> Self {
-        self.execution_engine = input; self
+    pub fn set_execution_engine(
+        mut self,
+        input: std::option::Option<crate::types::ExecutionEngineConfig>,
+    ) -> Self {
+        self.execution_engine = input;
+        self
     }
     /// <p>A name for the notebook execution.</p>
     pub fn notebook_execution_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -181,8 +190,12 @@ impl NotebookExecutionBuilder {
         self
     }
     /// <p>A name for the notebook execution.</p>
-    pub fn set_notebook_execution_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.notebook_execution_name = input; self
+    pub fn set_notebook_execution_name(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.notebook_execution_name = input;
+        self
     }
     /// <p>Input parameters in JSON format passed to the EMR Notebook at runtime for execution.</p>
     pub fn notebook_params(mut self, input: impl Into<std::string::String>) -> Self {
@@ -191,40 +204,45 @@ impl NotebookExecutionBuilder {
     }
     /// <p>Input parameters in JSON format passed to the EMR Notebook at runtime for execution.</p>
     pub fn set_notebook_params(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.notebook_params = input; self
+        self.notebook_params = input;
+        self
     }
-    /// <p>The status of the notebook execution.</p> 
-    /// <ul> 
-    /// <li> <p> <code>START_PENDING</code> indicates that the cluster has received the execution request but execution has not begun.</p> </li> 
-    /// <li> <p> <code>STARTING</code> indicates that the execution is starting on the cluster.</p> </li> 
-    /// <li> <p> <code>RUNNING</code> indicates that the execution is being processed by the cluster.</p> </li> 
-    /// <li> <p> <code>FINISHING</code> indicates that execution processing is in the final stages.</p> </li> 
-    /// <li> <p> <code>FINISHED</code> indicates that the execution has completed without error.</p> </li> 
-    /// <li> <p> <code>FAILING</code> indicates that the execution is failing and will not finish successfully.</p> </li> 
-    /// <li> <p> <code>FAILED</code> indicates that the execution failed.</p> </li> 
-    /// <li> <p> <code>STOP_PENDING</code> indicates that the cluster has received a <code>StopNotebookExecution</code> request and the stop is pending.</p> </li> 
-    /// <li> <p> <code>STOPPING</code> indicates that the cluster is in the process of stopping the execution as a result of a <code>StopNotebookExecution</code> request.</p> </li> 
-    /// <li> <p> <code>STOPPED</code> indicates that the execution stopped because of a <code>StopNotebookExecution</code> request.</p> </li> 
+    /// <p>The status of the notebook execution.</p>
+    /// <ul>
+    /// <li> <p> <code>START_PENDING</code> indicates that the cluster has received the execution request but execution has not begun.</p> </li>
+    /// <li> <p> <code>STARTING</code> indicates that the execution is starting on the cluster.</p> </li>
+    /// <li> <p> <code>RUNNING</code> indicates that the execution is being processed by the cluster.</p> </li>
+    /// <li> <p> <code>FINISHING</code> indicates that execution processing is in the final stages.</p> </li>
+    /// <li> <p> <code>FINISHED</code> indicates that the execution has completed without error.</p> </li>
+    /// <li> <p> <code>FAILING</code> indicates that the execution is failing and will not finish successfully.</p> </li>
+    /// <li> <p> <code>FAILED</code> indicates that the execution failed.</p> </li>
+    /// <li> <p> <code>STOP_PENDING</code> indicates that the cluster has received a <code>StopNotebookExecution</code> request and the stop is pending.</p> </li>
+    /// <li> <p> <code>STOPPING</code> indicates that the cluster is in the process of stopping the execution as a result of a <code>StopNotebookExecution</code> request.</p> </li>
+    /// <li> <p> <code>STOPPED</code> indicates that the execution stopped because of a <code>StopNotebookExecution</code> request.</p> </li>
     /// </ul>
     pub fn status(mut self, input: crate::types::NotebookExecutionStatus) -> Self {
         self.status = Some(input);
         self
     }
-    /// <p>The status of the notebook execution.</p> 
-    /// <ul> 
-    /// <li> <p> <code>START_PENDING</code> indicates that the cluster has received the execution request but execution has not begun.</p> </li> 
-    /// <li> <p> <code>STARTING</code> indicates that the execution is starting on the cluster.</p> </li> 
-    /// <li> <p> <code>RUNNING</code> indicates that the execution is being processed by the cluster.</p> </li> 
-    /// <li> <p> <code>FINISHING</code> indicates that execution processing is in the final stages.</p> </li> 
-    /// <li> <p> <code>FINISHED</code> indicates that the execution has completed without error.</p> </li> 
-    /// <li> <p> <code>FAILING</code> indicates that the execution is failing and will not finish successfully.</p> </li> 
-    /// <li> <p> <code>FAILED</code> indicates that the execution failed.</p> </li> 
-    /// <li> <p> <code>STOP_PENDING</code> indicates that the cluster has received a <code>StopNotebookExecution</code> request and the stop is pending.</p> </li> 
-    /// <li> <p> <code>STOPPING</code> indicates that the cluster is in the process of stopping the execution as a result of a <code>StopNotebookExecution</code> request.</p> </li> 
-    /// <li> <p> <code>STOPPED</code> indicates that the execution stopped because of a <code>StopNotebookExecution</code> request.</p> </li> 
+    /// <p>The status of the notebook execution.</p>
+    /// <ul>
+    /// <li> <p> <code>START_PENDING</code> indicates that the cluster has received the execution request but execution has not begun.</p> </li>
+    /// <li> <p> <code>STARTING</code> indicates that the execution is starting on the cluster.</p> </li>
+    /// <li> <p> <code>RUNNING</code> indicates that the execution is being processed by the cluster.</p> </li>
+    /// <li> <p> <code>FINISHING</code> indicates that execution processing is in the final stages.</p> </li>
+    /// <li> <p> <code>FINISHED</code> indicates that the execution has completed without error.</p> </li>
+    /// <li> <p> <code>FAILING</code> indicates that the execution is failing and will not finish successfully.</p> </li>
+    /// <li> <p> <code>FAILED</code> indicates that the execution failed.</p> </li>
+    /// <li> <p> <code>STOP_PENDING</code> indicates that the cluster has received a <code>StopNotebookExecution</code> request and the stop is pending.</p> </li>
+    /// <li> <p> <code>STOPPING</code> indicates that the cluster is in the process of stopping the execution as a result of a <code>StopNotebookExecution</code> request.</p> </li>
+    /// <li> <p> <code>STOPPED</code> indicates that the execution stopped because of a <code>StopNotebookExecution</code> request.</p> </li>
     /// </ul>
-    pub fn set_status(mut self, input: std::option::Option<crate::types::NotebookExecutionStatus>) -> Self {
-        self.status = input; self
+    pub fn set_status(
+        mut self,
+        input: std::option::Option<crate::types::NotebookExecutionStatus>,
+    ) -> Self {
+        self.status = input;
+        self
     }
     /// <p>The timestamp when notebook execution started.</p>
     pub fn start_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -232,8 +250,12 @@ impl NotebookExecutionBuilder {
         self
     }
     /// <p>The timestamp when notebook execution started.</p>
-    pub fn set_start_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.start_time = input; self
+    pub fn set_start_time(
+        mut self,
+        input: std::option::Option<aws_smithy_types::DateTime>,
+    ) -> Self {
+        self.start_time = input;
+        self
     }
     /// <p>The timestamp when notebook execution ended.</p>
     pub fn end_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -242,7 +264,8 @@ impl NotebookExecutionBuilder {
     }
     /// <p>The timestamp when notebook execution ended.</p>
     pub fn set_end_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.end_time = input; self
+        self.end_time = input;
+        self
     }
     /// <p>The Amazon Resource Name (ARN) of the notebook execution.</p>
     pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -251,7 +274,8 @@ impl NotebookExecutionBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the notebook execution.</p>
     pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.arn = input; self
+        self.arn = input;
+        self
     }
     /// <p>The location of the notebook execution's output file in Amazon S3.</p>
     pub fn output_notebook_uri(mut self, input: impl Into<std::string::String>) -> Self {
@@ -259,8 +283,12 @@ impl NotebookExecutionBuilder {
         self
     }
     /// <p>The location of the notebook execution's output file in Amazon S3.</p>
-    pub fn set_output_notebook_uri(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.output_notebook_uri = input; self
+    pub fn set_output_notebook_uri(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.output_notebook_uri = input;
+        self
     }
     /// <p>The reason for the latest status change of the notebook execution.</p>
     pub fn last_state_change_reason(mut self, input: impl Into<std::string::String>) -> Self {
@@ -268,17 +296,28 @@ impl NotebookExecutionBuilder {
         self
     }
     /// <p>The reason for the latest status change of the notebook execution.</p>
-    pub fn set_last_state_change_reason(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.last_state_change_reason = input; self
+    pub fn set_last_state_change_reason(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.last_state_change_reason = input;
+        self
     }
     /// <p>The unique identifier of the EC2 security group associated with the EMR Notebook instance. For more information see <a href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-managed-notebooks-security-groups.html">Specifying EC2 Security Groups for EMR Notebooks</a> in the <i>EMR Management Guide</i>.</p>
-    pub fn notebook_instance_security_group_id(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn notebook_instance_security_group_id(
+        mut self,
+        input: impl Into<std::string::String>,
+    ) -> Self {
         self.notebook_instance_security_group_id = Some(input.into());
         self
     }
     /// <p>The unique identifier of the EC2 security group associated with the EMR Notebook instance. For more information see <a href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-managed-notebooks-security-groups.html">Specifying EC2 Security Groups for EMR Notebooks</a> in the <i>EMR Management Guide</i>.</p>
-    pub fn set_notebook_instance_security_group_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.notebook_instance_security_group_id = input; self
+    pub fn set_notebook_instance_security_group_id(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.notebook_instance_security_group_id = input;
+        self
     }
     /// Appends an item to `tags`.
     ///
@@ -287,44 +326,34 @@ impl NotebookExecutionBuilder {
     /// <p>A list of tags associated with a notebook execution. Tags are user-defined key-value pairs that consist of a required key string with a maximum of 128 characters and an optional value string with a maximum of 256 characters.</p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
-                        v.push(input);
-                        self.tags = Some(v);
-                        self
+        v.push(input);
+        self.tags = Some(v);
+        self
     }
     /// <p>A list of tags associated with a notebook execution. Tags are user-defined key-value pairs that consist of a required key string with a maximum of 128 characters and an optional value string with a maximum of 256 characters.</p>
-    pub fn set_tags(mut self, input: std::option::Option<std::vec::Vec<crate::types::Tag>>) -> Self {
-        self.tags = input; self
+    pub fn set_tags(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::Tag>>,
+    ) -> Self {
+        self.tags = input;
+        self
     }
     /// Consumes the builder and constructs a [`NotebookExecution`](crate::types::NotebookExecution).
     pub fn build(self) -> crate::types::NotebookExecution {
         crate::types::NotebookExecution {
-            notebook_execution_id: self.notebook_execution_id
-            ,
-            editor_id: self.editor_id
-            ,
-            execution_engine: self.execution_engine
-            ,
-            notebook_execution_name: self.notebook_execution_name
-            ,
-            notebook_params: self.notebook_params
-            ,
-            status: self.status
-            ,
-            start_time: self.start_time
-            ,
-            end_time: self.end_time
-            ,
-            arn: self.arn
-            ,
-            output_notebook_uri: self.output_notebook_uri
-            ,
-            last_state_change_reason: self.last_state_change_reason
-            ,
-            notebook_instance_security_group_id: self.notebook_instance_security_group_id
-            ,
-            tags: self.tags
-            ,
+            notebook_execution_id: self.notebook_execution_id,
+            editor_id: self.editor_id,
+            execution_engine: self.execution_engine,
+            notebook_execution_name: self.notebook_execution_name,
+            notebook_params: self.notebook_params,
+            status: self.status,
+            start_time: self.start_time,
+            end_time: self.end_time,
+            arn: self.arn,
+            output_notebook_uri: self.output_notebook_uri,
+            last_state_change_reason: self.last_state_change_reason,
+            notebook_instance_security_group_id: self.notebook_instance_security_group_id,
+            tags: self.tags,
         }
     }
 }
-

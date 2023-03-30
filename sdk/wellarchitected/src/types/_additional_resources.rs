@@ -3,7 +3,7 @@
 /// <p>The choice level additional resources.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AdditionalResources  {
+pub struct AdditionalResources {
     /// <p>Type of additional resource.</p>
     #[doc(hidden)]
     pub r#type: std::option::Option<crate::types::AdditionalResourceType>,
@@ -13,11 +13,11 @@ pub struct AdditionalResources  {
 }
 impl AdditionalResources {
     /// <p>Type of additional resource.</p>
-    pub fn r#type(&self) -> std::option::Option<& crate::types::AdditionalResourceType> {
+    pub fn r#type(&self) -> std::option::Option<&crate::types::AdditionalResourceType> {
         self.r#type.as_ref()
     }
     /// <p>The URLs for additional resources, either helpful resources or improvement plans. Up to five additional URLs can be specified.</p>
-    pub fn content(&self) -> std::option::Option<& [crate::types::ChoiceContent]> {
+    pub fn content(&self) -> std::option::Option<&[crate::types::ChoiceContent]> {
         self.content.as_deref()
     }
 }
@@ -42,8 +42,12 @@ impl AdditionalResourcesBuilder {
         self
     }
     /// <p>Type of additional resource.</p>
-    pub fn set_type(mut self, input: std::option::Option<crate::types::AdditionalResourceType>) -> Self {
-        self.r#type = input; self
+    pub fn set_type(
+        mut self,
+        input: std::option::Option<crate::types::AdditionalResourceType>,
+    ) -> Self {
+        self.r#type = input;
+        self
     }
     /// Appends an item to `content`.
     ///
@@ -52,22 +56,23 @@ impl AdditionalResourcesBuilder {
     /// <p>The URLs for additional resources, either helpful resources or improvement plans. Up to five additional URLs can be specified.</p>
     pub fn content(mut self, input: crate::types::ChoiceContent) -> Self {
         let mut v = self.content.unwrap_or_default();
-                        v.push(input);
-                        self.content = Some(v);
-                        self
+        v.push(input);
+        self.content = Some(v);
+        self
     }
     /// <p>The URLs for additional resources, either helpful resources or improvement plans. Up to five additional URLs can be specified.</p>
-    pub fn set_content(mut self, input: std::option::Option<std::vec::Vec<crate::types::ChoiceContent>>) -> Self {
-        self.content = input; self
+    pub fn set_content(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::ChoiceContent>>,
+    ) -> Self {
+        self.content = input;
+        self
     }
     /// Consumes the builder and constructs a [`AdditionalResources`](crate::types::AdditionalResources).
     pub fn build(self) -> crate::types::AdditionalResources {
         crate::types::AdditionalResources {
-            r#type: self.r#type
-            ,
-            content: self.content
-            ,
+            r#type: self.r#type,
+            content: self.content,
         }
     }
 }
-

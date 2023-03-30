@@ -40,4 +40,3 @@ pub use crate::types::_stream_key::StreamKeyBuilder;
 pub use crate::types::_stream::StreamBuilder;
 
 pub use crate::types::_batch_error::BatchErrorBuilder;
-

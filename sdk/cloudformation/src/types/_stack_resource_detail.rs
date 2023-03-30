@@ -3,7 +3,7 @@
 /// <p>Contains detailed information about the specified stack resource.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct StackResourceDetail  {
+pub struct StackResourceDetail {
     /// <p>The name associated with the stack.</p>
     #[doc(hidden)]
     pub stack_name: std::option::Option<std::string::String>,
@@ -43,51 +43,53 @@ pub struct StackResourceDetail  {
 }
 impl StackResourceDetail {
     /// <p>The name associated with the stack.</p>
-    pub fn stack_name(&self) -> std::option::Option<& str> {
+    pub fn stack_name(&self) -> std::option::Option<&str> {
         self.stack_name.as_deref()
     }
     /// <p>Unique identifier of the stack.</p>
-    pub fn stack_id(&self) -> std::option::Option<& str> {
+    pub fn stack_id(&self) -> std::option::Option<&str> {
         self.stack_id.as_deref()
     }
     /// <p>The logical name of the resource specified in the template.</p>
-    pub fn logical_resource_id(&self) -> std::option::Option<& str> {
+    pub fn logical_resource_id(&self) -> std::option::Option<&str> {
         self.logical_resource_id.as_deref()
     }
     /// <p>The name or unique identifier that corresponds to a physical instance ID of a resource supported by CloudFormation.</p>
-    pub fn physical_resource_id(&self) -> std::option::Option<& str> {
+    pub fn physical_resource_id(&self) -> std::option::Option<&str> {
         self.physical_resource_id.as_deref()
     }
     /// <p>Type of resource. For more information, go to <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">Amazon Web Services Resource Types Reference</a> in the CloudFormation User Guide.</p>
-    pub fn resource_type(&self) -> std::option::Option<& str> {
+    pub fn resource_type(&self) -> std::option::Option<&str> {
         self.resource_type.as_deref()
     }
     /// <p>Time the status was updated.</p>
-    pub fn last_updated_timestamp(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
+    pub fn last_updated_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_updated_timestamp.as_ref()
     }
     /// <p>Current status of the resource.</p>
-    pub fn resource_status(&self) -> std::option::Option<& crate::types::ResourceStatus> {
+    pub fn resource_status(&self) -> std::option::Option<&crate::types::ResourceStatus> {
         self.resource_status.as_ref()
     }
     /// <p>Success/failure message associated with the resource.</p>
-    pub fn resource_status_reason(&self) -> std::option::Option<& str> {
+    pub fn resource_status_reason(&self) -> std::option::Option<&str> {
         self.resource_status_reason.as_deref()
     }
     /// <p>User defined description associated with the resource.</p>
-    pub fn description(&self) -> std::option::Option<& str> {
+    pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
     /// <p>The content of the <code>Metadata</code> attribute declared for the resource. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-attribute-metadata.html">Metadata Attribute</a> in the CloudFormation User Guide.</p>
-    pub fn metadata(&self) -> std::option::Option<& str> {
+    pub fn metadata(&self) -> std::option::Option<&str> {
         self.metadata.as_deref()
     }
     /// <p>Information about whether the resource's actual configuration differs, or has <i>drifted</i>, from its expected configuration, as defined in the stack template and any values specified as template parameters. For more information, see <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-stack-drift.html">Detecting Unregulated Configuration Changes to Stacks and Resources</a>.</p>
-    pub fn drift_information(&self) -> std::option::Option<& crate::types::StackResourceDriftInformation> {
+    pub fn drift_information(
+        &self,
+    ) -> std::option::Option<&crate::types::StackResourceDriftInformation> {
         self.drift_information.as_ref()
     }
     /// <p>Contains information about the module from which the resource was created, if the resource was created from a module included in the stack template.</p>
-    pub fn module_info(&self) -> std::option::Option<& crate::types::ModuleInfo> {
+    pub fn module_info(&self) -> std::option::Option<&crate::types::ModuleInfo> {
         self.module_info.as_ref()
     }
 }
@@ -123,7 +125,8 @@ impl StackResourceDetailBuilder {
     }
     /// <p>The name associated with the stack.</p>
     pub fn set_stack_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.stack_name = input; self
+        self.stack_name = input;
+        self
     }
     /// <p>Unique identifier of the stack.</p>
     pub fn stack_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -132,7 +135,8 @@ impl StackResourceDetailBuilder {
     }
     /// <p>Unique identifier of the stack.</p>
     pub fn set_stack_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.stack_id = input; self
+        self.stack_id = input;
+        self
     }
     /// <p>The logical name of the resource specified in the template.</p>
     pub fn logical_resource_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -140,8 +144,12 @@ impl StackResourceDetailBuilder {
         self
     }
     /// <p>The logical name of the resource specified in the template.</p>
-    pub fn set_logical_resource_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.logical_resource_id = input; self
+    pub fn set_logical_resource_id(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.logical_resource_id = input;
+        self
     }
     /// <p>The name or unique identifier that corresponds to a physical instance ID of a resource supported by CloudFormation.</p>
     pub fn physical_resource_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -149,8 +157,12 @@ impl StackResourceDetailBuilder {
         self
     }
     /// <p>The name or unique identifier that corresponds to a physical instance ID of a resource supported by CloudFormation.</p>
-    pub fn set_physical_resource_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.physical_resource_id = input; self
+    pub fn set_physical_resource_id(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.physical_resource_id = input;
+        self
     }
     /// <p>Type of resource. For more information, go to <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">Amazon Web Services Resource Types Reference</a> in the CloudFormation User Guide.</p>
     pub fn resource_type(mut self, input: impl Into<std::string::String>) -> Self {
@@ -159,7 +171,8 @@ impl StackResourceDetailBuilder {
     }
     /// <p>Type of resource. For more information, go to <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">Amazon Web Services Resource Types Reference</a> in the CloudFormation User Guide.</p>
     pub fn set_resource_type(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.resource_type = input; self
+        self.resource_type = input;
+        self
     }
     /// <p>Time the status was updated.</p>
     pub fn last_updated_timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -167,8 +180,12 @@ impl StackResourceDetailBuilder {
         self
     }
     /// <p>Time the status was updated.</p>
-    pub fn set_last_updated_timestamp(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.last_updated_timestamp = input; self
+    pub fn set_last_updated_timestamp(
+        mut self,
+        input: std::option::Option<aws_smithy_types::DateTime>,
+    ) -> Self {
+        self.last_updated_timestamp = input;
+        self
     }
     /// <p>Current status of the resource.</p>
     pub fn resource_status(mut self, input: crate::types::ResourceStatus) -> Self {
@@ -176,8 +193,12 @@ impl StackResourceDetailBuilder {
         self
     }
     /// <p>Current status of the resource.</p>
-    pub fn set_resource_status(mut self, input: std::option::Option<crate::types::ResourceStatus>) -> Self {
-        self.resource_status = input; self
+    pub fn set_resource_status(
+        mut self,
+        input: std::option::Option<crate::types::ResourceStatus>,
+    ) -> Self {
+        self.resource_status = input;
+        self
     }
     /// <p>Success/failure message associated with the resource.</p>
     pub fn resource_status_reason(mut self, input: impl Into<std::string::String>) -> Self {
@@ -185,8 +206,12 @@ impl StackResourceDetailBuilder {
         self
     }
     /// <p>Success/failure message associated with the resource.</p>
-    pub fn set_resource_status_reason(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.resource_status_reason = input; self
+    pub fn set_resource_status_reason(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.resource_status_reason = input;
+        self
     }
     /// <p>User defined description associated with the resource.</p>
     pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -195,7 +220,8 @@ impl StackResourceDetailBuilder {
     }
     /// <p>User defined description associated with the resource.</p>
     pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.description = input; self
+        self.description = input;
+        self
     }
     /// <p>The content of the <code>Metadata</code> attribute declared for the resource. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-attribute-metadata.html">Metadata Attribute</a> in the CloudFormation User Guide.</p>
     pub fn metadata(mut self, input: impl Into<std::string::String>) -> Self {
@@ -204,7 +230,8 @@ impl StackResourceDetailBuilder {
     }
     /// <p>The content of the <code>Metadata</code> attribute declared for the resource. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-attribute-metadata.html">Metadata Attribute</a> in the CloudFormation User Guide.</p>
     pub fn set_metadata(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.metadata = input; self
+        self.metadata = input;
+        self
     }
     /// <p>Information about whether the resource's actual configuration differs, or has <i>drifted</i>, from its expected configuration, as defined in the stack template and any values specified as template parameters. For more information, see <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-stack-drift.html">Detecting Unregulated Configuration Changes to Stacks and Resources</a>.</p>
     pub fn drift_information(mut self, input: crate::types::StackResourceDriftInformation) -> Self {
@@ -212,8 +239,12 @@ impl StackResourceDetailBuilder {
         self
     }
     /// <p>Information about whether the resource's actual configuration differs, or has <i>drifted</i>, from its expected configuration, as defined in the stack template and any values specified as template parameters. For more information, see <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-stack-drift.html">Detecting Unregulated Configuration Changes to Stacks and Resources</a>.</p>
-    pub fn set_drift_information(mut self, input: std::option::Option<crate::types::StackResourceDriftInformation>) -> Self {
-        self.drift_information = input; self
+    pub fn set_drift_information(
+        mut self,
+        input: std::option::Option<crate::types::StackResourceDriftInformation>,
+    ) -> Self {
+        self.drift_information = input;
+        self
     }
     /// <p>Contains information about the module from which the resource was created, if the resource was created from a module included in the stack template.</p>
     pub fn module_info(mut self, input: crate::types::ModuleInfo) -> Self {
@@ -222,36 +253,24 @@ impl StackResourceDetailBuilder {
     }
     /// <p>Contains information about the module from which the resource was created, if the resource was created from a module included in the stack template.</p>
     pub fn set_module_info(mut self, input: std::option::Option<crate::types::ModuleInfo>) -> Self {
-        self.module_info = input; self
+        self.module_info = input;
+        self
     }
     /// Consumes the builder and constructs a [`StackResourceDetail`](crate::types::StackResourceDetail).
     pub fn build(self) -> crate::types::StackResourceDetail {
         crate::types::StackResourceDetail {
-            stack_name: self.stack_name
-            ,
-            stack_id: self.stack_id
-            ,
-            logical_resource_id: self.logical_resource_id
-            ,
-            physical_resource_id: self.physical_resource_id
-            ,
-            resource_type: self.resource_type
-            ,
-            last_updated_timestamp: self.last_updated_timestamp
-            ,
-            resource_status: self.resource_status
-            ,
-            resource_status_reason: self.resource_status_reason
-            ,
-            description: self.description
-            ,
-            metadata: self.metadata
-            ,
-            drift_information: self.drift_information
-            ,
-            module_info: self.module_info
-            ,
+            stack_name: self.stack_name,
+            stack_id: self.stack_id,
+            logical_resource_id: self.logical_resource_id,
+            physical_resource_id: self.physical_resource_id,
+            resource_type: self.resource_type,
+            last_updated_timestamp: self.last_updated_timestamp,
+            resource_status: self.resource_status,
+            resource_status_reason: self.resource_status_reason,
+            description: self.description,
+            metadata: self.metadata,
+            drift_information: self.drift_information,
+            module_info: self.module_info,
         }
     }
 }
-

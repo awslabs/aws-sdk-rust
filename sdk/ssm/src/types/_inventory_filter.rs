@@ -3,32 +3,32 @@
 /// <p>One or more filters. Use a filter to return a more specific list of results.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct InventoryFilter  {
+pub struct InventoryFilter {
     /// <p>The name of the filter key.</p>
     #[doc(hidden)]
     pub key: std::option::Option<std::string::String>,
     /// <p>Inventory filter values. Example: inventory filter where managed node IDs are specified as values <code>Key=AWS:InstanceInformation.InstanceId,Values= i-a12b3c4d5e6g, i-1a2b3c4d5e6,Type=Equal</code>. </p>
     #[doc(hidden)]
     pub values: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>The type of filter.</p> <note> 
-    /// <p>The <code>Exists</code> filter must be used with aggregators. For more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-inventory-aggregate.html">Aggregating inventory data</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p> 
+    /// <p>The type of filter.</p> <note>
+    /// <p>The <code>Exists</code> filter must be used with aggregators. For more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-inventory-aggregate.html">Aggregating inventory data</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
     /// </note>
     #[doc(hidden)]
     pub r#type: std::option::Option<crate::types::InventoryQueryOperatorType>,
 }
 impl InventoryFilter {
     /// <p>The name of the filter key.</p>
-    pub fn key(&self) -> std::option::Option<& str> {
+    pub fn key(&self) -> std::option::Option<&str> {
         self.key.as_deref()
     }
     /// <p>Inventory filter values. Example: inventory filter where managed node IDs are specified as values <code>Key=AWS:InstanceInformation.InstanceId,Values= i-a12b3c4d5e6g, i-1a2b3c4d5e6,Type=Equal</code>. </p>
-    pub fn values(&self) -> std::option::Option<& [std::string::String]> {
+    pub fn values(&self) -> std::option::Option<&[std::string::String]> {
         self.values.as_deref()
     }
-    /// <p>The type of filter.</p> <note> 
-    /// <p>The <code>Exists</code> filter must be used with aggregators. For more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-inventory-aggregate.html">Aggregating inventory data</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p> 
+    /// <p>The type of filter.</p> <note>
+    /// <p>The <code>Exists</code> filter must be used with aggregators. For more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-inventory-aggregate.html">Aggregating inventory data</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
     /// </note>
-    pub fn r#type(&self) -> std::option::Option<& crate::types::InventoryQueryOperatorType> {
+    pub fn r#type(&self) -> std::option::Option<&crate::types::InventoryQueryOperatorType> {
         self.r#type.as_ref()
     }
 }
@@ -55,7 +55,8 @@ impl InventoryFilterBuilder {
     }
     /// <p>The name of the filter key.</p>
     pub fn set_key(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.key = input; self
+        self.key = input;
+        self
     }
     /// Appends an item to `values`.
     ///
@@ -64,37 +65,41 @@ impl InventoryFilterBuilder {
     /// <p>Inventory filter values. Example: inventory filter where managed node IDs are specified as values <code>Key=AWS:InstanceInformation.InstanceId,Values= i-a12b3c4d5e6g, i-1a2b3c4d5e6,Type=Equal</code>. </p>
     pub fn values(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.values.unwrap_or_default();
-                        v.push(input.into());
-                        self.values = Some(v);
-                        self
+        v.push(input.into());
+        self.values = Some(v);
+        self
     }
     /// <p>Inventory filter values. Example: inventory filter where managed node IDs are specified as values <code>Key=AWS:InstanceInformation.InstanceId,Values= i-a12b3c4d5e6g, i-1a2b3c4d5e6,Type=Equal</code>. </p>
-    pub fn set_values(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-        self.values = input; self
+    pub fn set_values(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
+        self.values = input;
+        self
     }
-    /// <p>The type of filter.</p> <note> 
-    /// <p>The <code>Exists</code> filter must be used with aggregators. For more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-inventory-aggregate.html">Aggregating inventory data</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p> 
+    /// <p>The type of filter.</p> <note>
+    /// <p>The <code>Exists</code> filter must be used with aggregators. For more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-inventory-aggregate.html">Aggregating inventory data</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
     /// </note>
     pub fn r#type(mut self, input: crate::types::InventoryQueryOperatorType) -> Self {
         self.r#type = Some(input);
         self
     }
-    /// <p>The type of filter.</p> <note> 
-    /// <p>The <code>Exists</code> filter must be used with aggregators. For more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-inventory-aggregate.html">Aggregating inventory data</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p> 
+    /// <p>The type of filter.</p> <note>
+    /// <p>The <code>Exists</code> filter must be used with aggregators. For more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-inventory-aggregate.html">Aggregating inventory data</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
     /// </note>
-    pub fn set_type(mut self, input: std::option::Option<crate::types::InventoryQueryOperatorType>) -> Self {
-        self.r#type = input; self
+    pub fn set_type(
+        mut self,
+        input: std::option::Option<crate::types::InventoryQueryOperatorType>,
+    ) -> Self {
+        self.r#type = input;
+        self
     }
     /// Consumes the builder and constructs a [`InventoryFilter`](crate::types::InventoryFilter).
     pub fn build(self) -> crate::types::InventoryFilter {
         crate::types::InventoryFilter {
-            key: self.key
-            ,
-            values: self.values
-            ,
-            r#type: self.r#type
-            ,
+            key: self.key,
+            values: self.values,
+            r#type: self.r#type,
         }
     }
 }
-

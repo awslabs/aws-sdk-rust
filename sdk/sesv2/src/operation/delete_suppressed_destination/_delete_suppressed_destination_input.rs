@@ -3,20 +3,20 @@
 /// <p>A request to remove an email address from the suppression list for your account.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteSuppressedDestinationInput  {
+pub struct DeleteSuppressedDestinationInput {
     /// <p>The suppressed email destination to remove from the account suppression list.</p>
     #[doc(hidden)]
     pub email_address: std::option::Option<std::string::String>,
 }
 impl DeleteSuppressedDestinationInput {
     /// <p>The suppressed email destination to remove from the account suppression list.</p>
-    pub fn email_address(&self) -> std::option::Option<& str> {
+    pub fn email_address(&self) -> std::option::Option<&str> {
         self.email_address.as_deref()
     }
 }
 impl DeleteSuppressedDestinationInput {
     /// Creates a new builder-style object to manufacture [`DeleteSuppressedDestinationInput`](crate::operation::delete_suppressed_destination::DeleteSuppressedDestinationInput).
-    pub fn builder() -> crate::operation::delete_suppressed_destination::builders::DeleteSuppressedDestinationInputBuilder {
+    pub fn builder() -> crate::operation::delete_suppressed_destination::builders::DeleteSuppressedDestinationInputBuilder{
         crate::operation::delete_suppressed_destination::builders::DeleteSuppressedDestinationInputBuilder::default()
     }
 }
@@ -35,16 +35,20 @@ impl DeleteSuppressedDestinationInputBuilder {
     }
     /// <p>The suppressed email destination to remove from the account suppression list.</p>
     pub fn set_email_address(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.email_address = input; self
+        self.email_address = input;
+        self
     }
     /// Consumes the builder and constructs a [`DeleteSuppressedDestinationInput`](crate::operation::delete_suppressed_destination::DeleteSuppressedDestinationInput).
-    pub fn build(self) -> Result<crate::operation::delete_suppressed_destination::DeleteSuppressedDestinationInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::delete_suppressed_destination::DeleteSuppressedDestinationInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::delete_suppressed_destination::DeleteSuppressedDestinationInput {
-                email_address: self.email_address
-                ,
-            }
+                email_address: self.email_address,
+            },
         )
     }
 }
-

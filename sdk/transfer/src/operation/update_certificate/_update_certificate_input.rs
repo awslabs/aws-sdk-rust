@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateCertificateInput  {
+pub struct UpdateCertificateInput {
     /// <p>The identifier of the certificate object that you are updating.</p>
     #[doc(hidden)]
     pub certificate_id: std::option::Option<std::string::String>,
@@ -18,25 +18,26 @@ pub struct UpdateCertificateInput  {
 }
 impl UpdateCertificateInput {
     /// <p>The identifier of the certificate object that you are updating.</p>
-    pub fn certificate_id(&self) -> std::option::Option<& str> {
+    pub fn certificate_id(&self) -> std::option::Option<&str> {
         self.certificate_id.as_deref()
     }
     /// <p>An optional date that specifies when the certificate becomes active.</p>
-    pub fn active_date(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
+    pub fn active_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.active_date.as_ref()
     }
     /// <p>An optional date that specifies when the certificate becomes inactive.</p>
-    pub fn inactive_date(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
+    pub fn inactive_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.inactive_date.as_ref()
     }
     /// <p>A short description to help identify the certificate.</p>
-    pub fn description(&self) -> std::option::Option<& str> {
+    pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
 }
 impl UpdateCertificateInput {
     /// Creates a new builder-style object to manufacture [`UpdateCertificateInput`](crate::operation::update_certificate::UpdateCertificateInput).
-    pub fn builder() -> crate::operation::update_certificate::builders::UpdateCertificateInputBuilder {
+    pub fn builder() -> crate::operation::update_certificate::builders::UpdateCertificateInputBuilder
+    {
         crate::operation::update_certificate::builders::UpdateCertificateInputBuilder::default()
     }
 }
@@ -58,7 +59,8 @@ impl UpdateCertificateInputBuilder {
     }
     /// <p>The identifier of the certificate object that you are updating.</p>
     pub fn set_certificate_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.certificate_id = input; self
+        self.certificate_id = input;
+        self
     }
     /// <p>An optional date that specifies when the certificate becomes active.</p>
     pub fn active_date(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -66,8 +68,12 @@ impl UpdateCertificateInputBuilder {
         self
     }
     /// <p>An optional date that specifies when the certificate becomes active.</p>
-    pub fn set_active_date(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.active_date = input; self
+    pub fn set_active_date(
+        mut self,
+        input: std::option::Option<aws_smithy_types::DateTime>,
+    ) -> Self {
+        self.active_date = input;
+        self
     }
     /// <p>An optional date that specifies when the certificate becomes inactive.</p>
     pub fn inactive_date(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -75,8 +81,12 @@ impl UpdateCertificateInputBuilder {
         self
     }
     /// <p>An optional date that specifies when the certificate becomes inactive.</p>
-    pub fn set_inactive_date(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.inactive_date = input; self
+    pub fn set_inactive_date(
+        mut self,
+        input: std::option::Option<aws_smithy_types::DateTime>,
+    ) -> Self {
+        self.inactive_date = input;
+        self
     }
     /// <p>A short description to help identify the certificate.</p>
     pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -85,22 +95,23 @@ impl UpdateCertificateInputBuilder {
     }
     /// <p>A short description to help identify the certificate.</p>
     pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.description = input; self
+        self.description = input;
+        self
     }
     /// Consumes the builder and constructs a [`UpdateCertificateInput`](crate::operation::update_certificate::UpdateCertificateInput).
-    pub fn build(self) -> Result<crate::operation::update_certificate::UpdateCertificateInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::update_certificate::UpdateCertificateInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::update_certificate::UpdateCertificateInput {
-                certificate_id: self.certificate_id
-                ,
-                active_date: self.active_date
-                ,
-                inactive_date: self.inactive_date
-                ,
-                description: self.description
-                ,
-            }
+                certificate_id: self.certificate_id,
+                active_date: self.active_date,
+                inactive_date: self.inactive_date,
+                description: self.description,
+            },
         )
     }
 }
-

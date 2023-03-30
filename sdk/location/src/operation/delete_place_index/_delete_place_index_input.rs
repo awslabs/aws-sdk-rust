@@ -2,20 +2,21 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeletePlaceIndexInput  {
+pub struct DeletePlaceIndexInput {
     /// <p>The name of the place index resource to be deleted.</p>
     #[doc(hidden)]
     pub index_name: std::option::Option<std::string::String>,
 }
 impl DeletePlaceIndexInput {
     /// <p>The name of the place index resource to be deleted.</p>
-    pub fn index_name(&self) -> std::option::Option<& str> {
+    pub fn index_name(&self) -> std::option::Option<&str> {
         self.index_name.as_deref()
     }
 }
 impl DeletePlaceIndexInput {
     /// Creates a new builder-style object to manufacture [`DeletePlaceIndexInput`](crate::operation::delete_place_index::DeletePlaceIndexInput).
-    pub fn builder() -> crate::operation::delete_place_index::builders::DeletePlaceIndexInputBuilder {
+    pub fn builder() -> crate::operation::delete_place_index::builders::DeletePlaceIndexInputBuilder
+    {
         crate::operation::delete_place_index::builders::DeletePlaceIndexInputBuilder::default()
     }
 }
@@ -34,16 +35,20 @@ impl DeletePlaceIndexInputBuilder {
     }
     /// <p>The name of the place index resource to be deleted.</p>
     pub fn set_index_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.index_name = input; self
+        self.index_name = input;
+        self
     }
     /// Consumes the builder and constructs a [`DeletePlaceIndexInput`](crate::operation::delete_place_index::DeletePlaceIndexInput).
-    pub fn build(self) -> Result<crate::operation::delete_place_index::DeletePlaceIndexInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::delete_place_index::DeletePlaceIndexInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::delete_place_index::DeletePlaceIndexInput {
-                index_name: self.index_name
-                ,
-            }
+                index_name: self.index_name,
+            },
         )
     }
 }
-

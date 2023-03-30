@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateSecurityProfileInput  {
+pub struct UpdateSecurityProfileInput {
     /// <p>The name of the security profile you want to update.</p>
     #[doc(hidden)]
     pub security_profile_name: std::option::Option<std::string::String>,
@@ -14,15 +14,18 @@ pub struct UpdateSecurityProfileInput  {
     pub behaviors: std::option::Option<std::vec::Vec<crate::types::Behavior>>,
     /// <p>Where the alerts are sent. (Alerts are always sent to the console.)</p>
     #[doc(hidden)]
-    pub alert_targets: std::option::Option<std::collections::HashMap<crate::types::AlertTargetType, crate::types::AlertTarget>>,
-    /// <p> <i>Please use <code>UpdateSecurityProfileRequest$additionalMetricsToRetainV2</code> instead.</i> </p> 
+    pub alert_targets: std::option::Option<
+        std::collections::HashMap<crate::types::AlertTargetType, crate::types::AlertTarget>,
+    >,
+    /// <p> <i>Please use <code>UpdateSecurityProfileRequest$additionalMetricsToRetainV2</code> instead.</i> </p>
     /// <p>A list of metrics whose data is retained (stored). By default, data is retained for any metric used in the profile's <code>behaviors</code>, but it is also retained for any metric specified here. Can be used with custom metrics; cannot be used with dimensions.</p>
     #[deprecated(note = "Use additionalMetricsToRetainV2.")]
     #[doc(hidden)]
     pub additional_metrics_to_retain: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>A list of metrics whose data is retained (stored). By default, data is retained for any metric used in the profile's behaviors, but it is also retained for any metric specified here. Can be used with custom metrics; cannot be used with dimensions.</p>
     #[doc(hidden)]
-    pub additional_metrics_to_retain_v2: std::option::Option<std::vec::Vec<crate::types::MetricToRetain>>,
+    pub additional_metrics_to_retain_v2:
+        std::option::Option<std::vec::Vec<crate::types::MetricToRetain>>,
     /// <p>If true, delete all <code>behaviors</code> defined for this security profile. If any <code>behaviors</code> are defined in the current invocation, an exception occurs.</p>
     #[doc(hidden)]
     pub delete_behaviors: bool,
@@ -38,29 +41,35 @@ pub struct UpdateSecurityProfileInput  {
 }
 impl UpdateSecurityProfileInput {
     /// <p>The name of the security profile you want to update.</p>
-    pub fn security_profile_name(&self) -> std::option::Option<& str> {
+    pub fn security_profile_name(&self) -> std::option::Option<&str> {
         self.security_profile_name.as_deref()
     }
     /// <p>A description of the security profile.</p>
-    pub fn security_profile_description(&self) -> std::option::Option<& str> {
+    pub fn security_profile_description(&self) -> std::option::Option<&str> {
         self.security_profile_description.as_deref()
     }
     /// <p>Specifies the behaviors that, when violated by a device (thing), cause an alert.</p>
-    pub fn behaviors(&self) -> std::option::Option<& [crate::types::Behavior]> {
+    pub fn behaviors(&self) -> std::option::Option<&[crate::types::Behavior]> {
         self.behaviors.as_deref()
     }
     /// <p>Where the alerts are sent. (Alerts are always sent to the console.)</p>
-    pub fn alert_targets(&self) -> std::option::Option<& std::collections::HashMap<crate::types::AlertTargetType, crate::types::AlertTarget>> {
+    pub fn alert_targets(
+        &self,
+    ) -> std::option::Option<
+        &std::collections::HashMap<crate::types::AlertTargetType, crate::types::AlertTarget>,
+    > {
         self.alert_targets.as_ref()
     }
-    /// <p> <i>Please use <code>UpdateSecurityProfileRequest$additionalMetricsToRetainV2</code> instead.</i> </p> 
+    /// <p> <i>Please use <code>UpdateSecurityProfileRequest$additionalMetricsToRetainV2</code> instead.</i> </p>
     /// <p>A list of metrics whose data is retained (stored). By default, data is retained for any metric used in the profile's <code>behaviors</code>, but it is also retained for any metric specified here. Can be used with custom metrics; cannot be used with dimensions.</p>
     #[deprecated(note = "Use additionalMetricsToRetainV2.")]
-    pub fn additional_metrics_to_retain(&self) -> std::option::Option<& [std::string::String]> {
+    pub fn additional_metrics_to_retain(&self) -> std::option::Option<&[std::string::String]> {
         self.additional_metrics_to_retain.as_deref()
     }
     /// <p>A list of metrics whose data is retained (stored). By default, data is retained for any metric used in the profile's behaviors, but it is also retained for any metric specified here. Can be used with custom metrics; cannot be used with dimensions.</p>
-    pub fn additional_metrics_to_retain_v2(&self) -> std::option::Option<& [crate::types::MetricToRetain]> {
+    pub fn additional_metrics_to_retain_v2(
+        &self,
+    ) -> std::option::Option<&[crate::types::MetricToRetain]> {
         self.additional_metrics_to_retain_v2.as_deref()
     }
     /// <p>If true, delete all <code>behaviors</code> defined for this security profile. If any <code>behaviors</code> are defined in the current invocation, an exception occurs.</p>
@@ -82,7 +91,9 @@ impl UpdateSecurityProfileInput {
 }
 impl UpdateSecurityProfileInput {
     /// Creates a new builder-style object to manufacture [`UpdateSecurityProfileInput`](crate::operation::update_security_profile::UpdateSecurityProfileInput).
-    pub fn builder() -> crate::operation::update_security_profile::builders::UpdateSecurityProfileInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::update_security_profile::builders::UpdateSecurityProfileInputBuilder
+    {
         crate::operation::update_security_profile::builders::UpdateSecurityProfileInputBuilder::default()
     }
 }
@@ -94,9 +105,13 @@ pub struct UpdateSecurityProfileInputBuilder {
     pub(crate) security_profile_name: std::option::Option<std::string::String>,
     pub(crate) security_profile_description: std::option::Option<std::string::String>,
     pub(crate) behaviors: std::option::Option<std::vec::Vec<crate::types::Behavior>>,
-    pub(crate) alert_targets: std::option::Option<std::collections::HashMap<crate::types::AlertTargetType, crate::types::AlertTarget>>,
-    pub(crate) additional_metrics_to_retain: std::option::Option<std::vec::Vec<std::string::String>>,
-    pub(crate) additional_metrics_to_retain_v2: std::option::Option<std::vec::Vec<crate::types::MetricToRetain>>,
+    pub(crate) alert_targets: std::option::Option<
+        std::collections::HashMap<crate::types::AlertTargetType, crate::types::AlertTarget>,
+    >,
+    pub(crate) additional_metrics_to_retain:
+        std::option::Option<std::vec::Vec<std::string::String>>,
+    pub(crate) additional_metrics_to_retain_v2:
+        std::option::Option<std::vec::Vec<crate::types::MetricToRetain>>,
     pub(crate) delete_behaviors: std::option::Option<bool>,
     pub(crate) delete_alert_targets: std::option::Option<bool>,
     pub(crate) delete_additional_metrics_to_retain: std::option::Option<bool>,
@@ -109,8 +124,12 @@ impl UpdateSecurityProfileInputBuilder {
         self
     }
     /// <p>The name of the security profile you want to update.</p>
-    pub fn set_security_profile_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.security_profile_name = input; self
+    pub fn set_security_profile_name(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.security_profile_name = input;
+        self
     }
     /// <p>A description of the security profile.</p>
     pub fn security_profile_description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -118,8 +137,12 @@ impl UpdateSecurityProfileInputBuilder {
         self
     }
     /// <p>A description of the security profile.</p>
-    pub fn set_security_profile_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.security_profile_description = input; self
+    pub fn set_security_profile_description(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.security_profile_description = input;
+        self
     }
     /// Appends an item to `behaviors`.
     ///
@@ -128,47 +151,65 @@ impl UpdateSecurityProfileInputBuilder {
     /// <p>Specifies the behaviors that, when violated by a device (thing), cause an alert.</p>
     pub fn behaviors(mut self, input: crate::types::Behavior) -> Self {
         let mut v = self.behaviors.unwrap_or_default();
-                        v.push(input);
-                        self.behaviors = Some(v);
-                        self
+        v.push(input);
+        self.behaviors = Some(v);
+        self
     }
     /// <p>Specifies the behaviors that, when violated by a device (thing), cause an alert.</p>
-    pub fn set_behaviors(mut self, input: std::option::Option<std::vec::Vec<crate::types::Behavior>>) -> Self {
-        self.behaviors = input; self
+    pub fn set_behaviors(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::Behavior>>,
+    ) -> Self {
+        self.behaviors = input;
+        self
     }
     /// Adds a key-value pair to `alert_targets`.
     ///
     /// To override the contents of this collection use [`set_alert_targets`](Self::set_alert_targets).
     ///
     /// <p>Where the alerts are sent. (Alerts are always sent to the console.)</p>
-    pub fn alert_targets(mut self, k: crate::types::AlertTargetType, v: crate::types::AlertTarget) -> Self {
+    pub fn alert_targets(
+        mut self,
+        k: crate::types::AlertTargetType,
+        v: crate::types::AlertTarget,
+    ) -> Self {
         let mut hash_map = self.alert_targets.unwrap_or_default();
-                        hash_map.insert(k, v);
-                        self.alert_targets = Some(hash_map);
-                        self
+        hash_map.insert(k, v);
+        self.alert_targets = Some(hash_map);
+        self
     }
     /// <p>Where the alerts are sent. (Alerts are always sent to the console.)</p>
-    pub fn set_alert_targets(mut self, input: std::option::Option<std::collections::HashMap<crate::types::AlertTargetType, crate::types::AlertTarget>>) -> Self {
-        self.alert_targets = input; self
+    pub fn set_alert_targets(
+        mut self,
+        input: std::option::Option<
+            std::collections::HashMap<crate::types::AlertTargetType, crate::types::AlertTarget>,
+        >,
+    ) -> Self {
+        self.alert_targets = input;
+        self
     }
     /// Appends an item to `additional_metrics_to_retain`.
     ///
     /// To override the contents of this collection use [`set_additional_metrics_to_retain`](Self::set_additional_metrics_to_retain).
     ///
-    /// <p> <i>Please use <code>UpdateSecurityProfileRequest$additionalMetricsToRetainV2</code> instead.</i> </p> 
+    /// <p> <i>Please use <code>UpdateSecurityProfileRequest$additionalMetricsToRetainV2</code> instead.</i> </p>
     /// <p>A list of metrics whose data is retained (stored). By default, data is retained for any metric used in the profile's <code>behaviors</code>, but it is also retained for any metric specified here. Can be used with custom metrics; cannot be used with dimensions.</p>
     #[deprecated(note = "Use additionalMetricsToRetainV2.")]
     pub fn additional_metrics_to_retain(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.additional_metrics_to_retain.unwrap_or_default();
-                        v.push(input.into());
-                        self.additional_metrics_to_retain = Some(v);
-                        self
+        v.push(input.into());
+        self.additional_metrics_to_retain = Some(v);
+        self
     }
-    /// <p> <i>Please use <code>UpdateSecurityProfileRequest$additionalMetricsToRetainV2</code> instead.</i> </p> 
+    /// <p> <i>Please use <code>UpdateSecurityProfileRequest$additionalMetricsToRetainV2</code> instead.</i> </p>
     /// <p>A list of metrics whose data is retained (stored). By default, data is retained for any metric used in the profile's <code>behaviors</code>, but it is also retained for any metric specified here. Can be used with custom metrics; cannot be used with dimensions.</p>
     #[deprecated(note = "Use additionalMetricsToRetainV2.")]
-    pub fn set_additional_metrics_to_retain(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-        self.additional_metrics_to_retain = input; self
+    pub fn set_additional_metrics_to_retain(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
+        self.additional_metrics_to_retain = input;
+        self
     }
     /// Appends an item to `additional_metrics_to_retain_v2`.
     ///
@@ -177,13 +218,17 @@ impl UpdateSecurityProfileInputBuilder {
     /// <p>A list of metrics whose data is retained (stored). By default, data is retained for any metric used in the profile's behaviors, but it is also retained for any metric specified here. Can be used with custom metrics; cannot be used with dimensions.</p>
     pub fn additional_metrics_to_retain_v2(mut self, input: crate::types::MetricToRetain) -> Self {
         let mut v = self.additional_metrics_to_retain_v2.unwrap_or_default();
-                        v.push(input);
-                        self.additional_metrics_to_retain_v2 = Some(v);
-                        self
+        v.push(input);
+        self.additional_metrics_to_retain_v2 = Some(v);
+        self
     }
     /// <p>A list of metrics whose data is retained (stored). By default, data is retained for any metric used in the profile's behaviors, but it is also retained for any metric specified here. Can be used with custom metrics; cannot be used with dimensions.</p>
-    pub fn set_additional_metrics_to_retain_v2(mut self, input: std::option::Option<std::vec::Vec<crate::types::MetricToRetain>>) -> Self {
-        self.additional_metrics_to_retain_v2 = input; self
+    pub fn set_additional_metrics_to_retain_v2(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::MetricToRetain>>,
+    ) -> Self {
+        self.additional_metrics_to_retain_v2 = input;
+        self
     }
     /// <p>If true, delete all <code>behaviors</code> defined for this security profile. If any <code>behaviors</code> are defined in the current invocation, an exception occurs.</p>
     pub fn delete_behaviors(mut self, input: bool) -> Self {
@@ -192,7 +237,8 @@ impl UpdateSecurityProfileInputBuilder {
     }
     /// <p>If true, delete all <code>behaviors</code> defined for this security profile. If any <code>behaviors</code> are defined in the current invocation, an exception occurs.</p>
     pub fn set_delete_behaviors(mut self, input: std::option::Option<bool>) -> Self {
-        self.delete_behaviors = input; self
+        self.delete_behaviors = input;
+        self
     }
     /// <p>If true, delete all <code>alertTargets</code> defined for this security profile. If any <code>alertTargets</code> are defined in the current invocation, an exception occurs.</p>
     pub fn delete_alert_targets(mut self, input: bool) -> Self {
@@ -201,7 +247,8 @@ impl UpdateSecurityProfileInputBuilder {
     }
     /// <p>If true, delete all <code>alertTargets</code> defined for this security profile. If any <code>alertTargets</code> are defined in the current invocation, an exception occurs.</p>
     pub fn set_delete_alert_targets(mut self, input: std::option::Option<bool>) -> Self {
-        self.delete_alert_targets = input; self
+        self.delete_alert_targets = input;
+        self
     }
     /// <p>If true, delete all <code>additionalMetricsToRetain</code> defined for this security profile. If any <code>additionalMetricsToRetain</code> are defined in the current invocation, an exception occurs.</p>
     pub fn delete_additional_metrics_to_retain(mut self, input: bool) -> Self {
@@ -209,8 +256,12 @@ impl UpdateSecurityProfileInputBuilder {
         self
     }
     /// <p>If true, delete all <code>additionalMetricsToRetain</code> defined for this security profile. If any <code>additionalMetricsToRetain</code> are defined in the current invocation, an exception occurs.</p>
-    pub fn set_delete_additional_metrics_to_retain(mut self, input: std::option::Option<bool>) -> Self {
-        self.delete_additional_metrics_to_retain = input; self
+    pub fn set_delete_additional_metrics_to_retain(
+        mut self,
+        input: std::option::Option<bool>,
+    ) -> Self {
+        self.delete_additional_metrics_to_retain = input;
+        self
     }
     /// <p>The expected version of the security profile. A new version is generated whenever the security profile is updated. If you specify a value that is different from the actual version, a <code>VersionConflictException</code> is thrown.</p>
     pub fn expected_version(mut self, input: i64) -> Self {
@@ -219,37 +270,31 @@ impl UpdateSecurityProfileInputBuilder {
     }
     /// <p>The expected version of the security profile. A new version is generated whenever the security profile is updated. If you specify a value that is different from the actual version, a <code>VersionConflictException</code> is thrown.</p>
     pub fn set_expected_version(mut self, input: std::option::Option<i64>) -> Self {
-        self.expected_version = input; self
+        self.expected_version = input;
+        self
     }
     /// Consumes the builder and constructs a [`UpdateSecurityProfileInput`](crate::operation::update_security_profile::UpdateSecurityProfileInput).
-    pub fn build(self) -> Result<crate::operation::update_security_profile::UpdateSecurityProfileInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::update_security_profile::UpdateSecurityProfileInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::update_security_profile::UpdateSecurityProfileInput {
-                security_profile_name: self.security_profile_name
-                ,
-                security_profile_description: self.security_profile_description
-                ,
-                behaviors: self.behaviors
-                ,
-                alert_targets: self.alert_targets
-                ,
-                additional_metrics_to_retain: self.additional_metrics_to_retain
-                ,
-                additional_metrics_to_retain_v2: self.additional_metrics_to_retain_v2
-                ,
-                delete_behaviors: self.delete_behaviors
-                    .unwrap_or_default()
-                ,
-                delete_alert_targets: self.delete_alert_targets
-                    .unwrap_or_default()
-                ,
-                delete_additional_metrics_to_retain: self.delete_additional_metrics_to_retain
-                    .unwrap_or_default()
-                ,
-                expected_version: self.expected_version
-                ,
-            }
+                security_profile_name: self.security_profile_name,
+                security_profile_description: self.security_profile_description,
+                behaviors: self.behaviors,
+                alert_targets: self.alert_targets,
+                additional_metrics_to_retain: self.additional_metrics_to_retain,
+                additional_metrics_to_retain_v2: self.additional_metrics_to_retain_v2,
+                delete_behaviors: self.delete_behaviors.unwrap_or_default(),
+                delete_alert_targets: self.delete_alert_targets.unwrap_or_default(),
+                delete_additional_metrics_to_retain: self
+                    .delete_additional_metrics_to_retain
+                    .unwrap_or_default(),
+                expected_version: self.expected_version,
+            },
         )
     }
 }
-

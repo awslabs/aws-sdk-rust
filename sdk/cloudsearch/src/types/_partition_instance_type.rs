@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-/// 
+///
 /// Here is an example of how you can make a match expression forward-compatible:
-/// 
+///
 /// ```text
 /// # let partitioninstancetype = unimplemented!();
 /// match partitioninstancetype {
@@ -45,14 +45,22 @@
 /// Specifically, when `partitioninstancetype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `PartitionInstanceType::NewFeature` also yielding `"NewFeature"`.
-/// 
+///
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 /// <p>The instance type (such as <code>search.m1.small</code>) on which an index partition is hosted.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
 pub enum PartitionInstanceType {
     #[allow(missing_docs)] // documentation missing in model
     Search2xlarge,
@@ -89,71 +97,106 @@ pub enum PartitionInstanceType {
     #[allow(missing_docs)] // documentation missing in model
     SearchXlarge,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::primitives::UnknownVariantValue)
+    Unknown(crate::primitives::UnknownVariantValue),
 }
 impl std::convert::From<&str> for PartitionInstanceType {
-                fn from(s: &str) -> Self {
-                    match s {
-                        "search.2xlarge" => PartitionInstanceType::Search2xlarge,
-"search.large" => PartitionInstanceType::SearchLarge,
-"search.m1.large" => PartitionInstanceType::SearchM1Large,
-"search.m1.small" => PartitionInstanceType::SearchM1Small,
-"search.m2.2xlarge" => PartitionInstanceType::SearchM22xlarge,
-"search.m2.xlarge" => PartitionInstanceType::SearchM2Xlarge,
-"search.m3.2xlarge" => PartitionInstanceType::SearchM32xlarge,
-"search.m3.large" => PartitionInstanceType::SearchM3Large,
-"search.m3.medium" => PartitionInstanceType::SearchM3Medium,
-"search.m3.xlarge" => PartitionInstanceType::SearchM3Xlarge,
-"search.medium" => PartitionInstanceType::SearchMedium,
-"search.previousgeneration.2xlarge" => PartitionInstanceType::SearchPreviousgeneration2xlarge,
-"search.previousgeneration.large" => PartitionInstanceType::SearchPreviousgenerationLarge,
-"search.previousgeneration.small" => PartitionInstanceType::SearchPreviousgenerationSmall,
-"search.previousgeneration.xlarge" => PartitionInstanceType::SearchPreviousgenerationXlarge,
-"search.small" => PartitionInstanceType::SearchSmall,
-"search.xlarge" => PartitionInstanceType::SearchXlarge,
-other => PartitionInstanceType::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
-                    }
-                }
+    fn from(s: &str) -> Self {
+        match s {
+            "search.2xlarge" => PartitionInstanceType::Search2xlarge,
+            "search.large" => PartitionInstanceType::SearchLarge,
+            "search.m1.large" => PartitionInstanceType::SearchM1Large,
+            "search.m1.small" => PartitionInstanceType::SearchM1Small,
+            "search.m2.2xlarge" => PartitionInstanceType::SearchM22xlarge,
+            "search.m2.xlarge" => PartitionInstanceType::SearchM2Xlarge,
+            "search.m3.2xlarge" => PartitionInstanceType::SearchM32xlarge,
+            "search.m3.large" => PartitionInstanceType::SearchM3Large,
+            "search.m3.medium" => PartitionInstanceType::SearchM3Medium,
+            "search.m3.xlarge" => PartitionInstanceType::SearchM3Xlarge,
+            "search.medium" => PartitionInstanceType::SearchMedium,
+            "search.previousgeneration.2xlarge" => {
+                PartitionInstanceType::SearchPreviousgeneration2xlarge
             }
-impl std::str::FromStr for PartitionInstanceType {
-                type Err = std::convert::Infallible;
-
-                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-                    Ok(PartitionInstanceType::from(s))
-                }
+            "search.previousgeneration.large" => {
+                PartitionInstanceType::SearchPreviousgenerationLarge
             }
-impl PartitionInstanceType {
-                /// Returns the `&str` value of the enum member.
-                pub fn as_str(&self) -> &str {
-                    match self {
-    PartitionInstanceType::Search2xlarge => "search.2xlarge",
-    PartitionInstanceType::SearchLarge => "search.large",
-    PartitionInstanceType::SearchM1Large => "search.m1.large",
-    PartitionInstanceType::SearchM1Small => "search.m1.small",
-    PartitionInstanceType::SearchM22xlarge => "search.m2.2xlarge",
-    PartitionInstanceType::SearchM2Xlarge => "search.m2.xlarge",
-    PartitionInstanceType::SearchM32xlarge => "search.m3.2xlarge",
-    PartitionInstanceType::SearchM3Large => "search.m3.large",
-    PartitionInstanceType::SearchM3Medium => "search.m3.medium",
-    PartitionInstanceType::SearchM3Xlarge => "search.m3.xlarge",
-    PartitionInstanceType::SearchMedium => "search.medium",
-    PartitionInstanceType::SearchPreviousgeneration2xlarge => "search.previousgeneration.2xlarge",
-    PartitionInstanceType::SearchPreviousgenerationLarge => "search.previousgeneration.large",
-    PartitionInstanceType::SearchPreviousgenerationSmall => "search.previousgeneration.small",
-    PartitionInstanceType::SearchPreviousgenerationXlarge => "search.previousgeneration.xlarge",
-    PartitionInstanceType::SearchSmall => "search.small",
-    PartitionInstanceType::SearchXlarge => "search.xlarge",
-    PartitionInstanceType::Unknown(value) => value.as_str()
+            "search.previousgeneration.small" => {
+                PartitionInstanceType::SearchPreviousgenerationSmall
+            }
+            "search.previousgeneration.xlarge" => {
+                PartitionInstanceType::SearchPreviousgenerationXlarge
+            }
+            "search.small" => PartitionInstanceType::SearchSmall,
+            "search.xlarge" => PartitionInstanceType::SearchXlarge,
+            other => PartitionInstanceType::Unknown(crate::primitives::UnknownVariantValue(
+                other.to_owned(),
+            )),
+        }
+    }
 }
-                }
-                /// Returns all the `&str` representations of the enum members.
-                pub const fn values() -> &'static [&'static str] {
-                    &["search.2xlarge", "search.large", "search.m1.large", "search.m1.small", "search.m2.2xlarge", "search.m2.xlarge", "search.m3.2xlarge", "search.m3.large", "search.m3.medium", "search.m3.xlarge", "search.medium", "search.previousgeneration.2xlarge", "search.previousgeneration.large", "search.previousgeneration.small", "search.previousgeneration.xlarge", "search.small", "search.xlarge"]
-                }
-            }
-impl AsRef<str> for PartitionInstanceType {
-                fn as_ref(&self) -> &str {
-                    self.as_str()
-                }
-            }
+impl std::str::FromStr for PartitionInstanceType {
+    type Err = std::convert::Infallible;
 
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(PartitionInstanceType::from(s))
+    }
+}
+impl PartitionInstanceType {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            PartitionInstanceType::Search2xlarge => "search.2xlarge",
+            PartitionInstanceType::SearchLarge => "search.large",
+            PartitionInstanceType::SearchM1Large => "search.m1.large",
+            PartitionInstanceType::SearchM1Small => "search.m1.small",
+            PartitionInstanceType::SearchM22xlarge => "search.m2.2xlarge",
+            PartitionInstanceType::SearchM2Xlarge => "search.m2.xlarge",
+            PartitionInstanceType::SearchM32xlarge => "search.m3.2xlarge",
+            PartitionInstanceType::SearchM3Large => "search.m3.large",
+            PartitionInstanceType::SearchM3Medium => "search.m3.medium",
+            PartitionInstanceType::SearchM3Xlarge => "search.m3.xlarge",
+            PartitionInstanceType::SearchMedium => "search.medium",
+            PartitionInstanceType::SearchPreviousgeneration2xlarge => {
+                "search.previousgeneration.2xlarge"
+            }
+            PartitionInstanceType::SearchPreviousgenerationLarge => {
+                "search.previousgeneration.large"
+            }
+            PartitionInstanceType::SearchPreviousgenerationSmall => {
+                "search.previousgeneration.small"
+            }
+            PartitionInstanceType::SearchPreviousgenerationXlarge => {
+                "search.previousgeneration.xlarge"
+            }
+            PartitionInstanceType::SearchSmall => "search.small",
+            PartitionInstanceType::SearchXlarge => "search.xlarge",
+            PartitionInstanceType::Unknown(value) => value.as_str(),
+        }
+    }
+    /// Returns all the `&str` representations of the enum members.
+    pub const fn values() -> &'static [&'static str] {
+        &[
+            "search.2xlarge",
+            "search.large",
+            "search.m1.large",
+            "search.m1.small",
+            "search.m2.2xlarge",
+            "search.m2.xlarge",
+            "search.m3.2xlarge",
+            "search.m3.large",
+            "search.m3.medium",
+            "search.m3.xlarge",
+            "search.medium",
+            "search.previousgeneration.2xlarge",
+            "search.previousgeneration.large",
+            "search.previousgeneration.small",
+            "search.previousgeneration.xlarge",
+            "search.small",
+            "search.xlarge",
+        ]
+    }
+}
+impl AsRef<str> for PartitionInstanceType {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}

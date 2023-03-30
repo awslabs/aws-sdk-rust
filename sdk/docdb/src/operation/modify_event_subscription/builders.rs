@@ -4,56 +4,82 @@ pub use crate::operation::modify_event_subscription::_modify_event_subscription_
 pub use crate::operation::modify_event_subscription::_modify_event_subscription_input::ModifyEventSubscriptionInputBuilder;
 
 /// Fluent builder constructing a request to `ModifyEventSubscription`.
-/// 
+///
 /// <p>Modifies an existing Amazon DocumentDB event notification subscription.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ModifyEventSubscriptionFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::modify_event_subscription::builders::ModifyEventSubscriptionInputBuilder
-            }
-impl ModifyEventSubscriptionFluentBuilder  {
+    handle: std::sync::Arc<crate::client::Handle>,
+    inner:
+        crate::operation::modify_event_subscription::builders::ModifyEventSubscriptionInputBuilder,
+}
+impl ModifyEventSubscriptionFluentBuilder {
     /// Creates a new `ModifyEventSubscription`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
-                    /// sent. The operation's inner [http::Request] can be modified as well.
-                    pub async fn customize(self) -> std::result::Result<
-                        crate::client::customize::CustomizableOperation<crate::operation::modify_event_subscription::ModifyEventSubscription, aws_http::retry::AwsResponseRetryClassifier,>,
-                        aws_smithy_http::result::SdkError<crate::operation::modify_event_subscription::ModifyEventSubscriptionError>
-                    >  {
-                        let handle = self.handle.clone();
-                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-                    }
-    
-                    /// Sends the request and returns the response.
-                    ///
-                    /// If an error occurs, an `SdkError` will be returned with additional details that
-                    /// can be matched against.
-                    ///
-                    /// By default, any retryable failures will be retried twice. Retry behavior
-                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                    /// set when configuring the client.
-                    pub async fn send(self) -> std::result::Result<crate::operation::modify_event_subscription::ModifyEventSubscriptionOutput, aws_smithy_http::result::SdkError<crate::operation::modify_event_subscription::ModifyEventSubscriptionError>>
-                     {
-                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&self.handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        self.handle.client.call(op).await
-                    }
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle,
+            inner: Default::default(),
+        }
+    }
+
+    /// Consume this builder, creating a customizable operation that can be modified before being
+    /// sent. The operation's inner [http::Request] can be modified as well.
+    pub async fn customize(
+        self,
+    ) -> std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::modify_event_subscription::ModifyEventSubscription,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::result::SdkError<
+            crate::operation::modify_event_subscription::ModifyEventSubscriptionError,
+        >,
+    > {
+        let handle = self.handle.clone();
+        let operation = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+    }
+
+    /// Sends the request and returns the response.
+    ///
+    /// If an error occurs, an `SdkError` will be returned with additional details that
+    /// can be matched against.
+    ///
+    /// By default, any retryable failures will be retried twice. Retry behavior
+    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+    /// set when configuring the client.
+    pub async fn send(
+        self,
+    ) -> std::result::Result<
+        crate::operation::modify_event_subscription::ModifyEventSubscriptionOutput,
+        aws_smithy_http::result::SdkError<
+            crate::operation::modify_event_subscription::ModifyEventSubscriptionError,
+        >,
+    > {
+        let op = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&self.handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        self.handle.client.call(op).await
+    }
     /// <p>The name of the Amazon DocumentDB event notification subscription.</p>
     pub fn subscription_name(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.subscription_name(input.into());
         self
     }
     /// <p>The name of the Amazon DocumentDB event notification subscription.</p>
-    pub fn set_subscription_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_subscription_name(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_subscription_name(input);
         self
     }
@@ -67,13 +93,13 @@ impl ModifyEventSubscriptionFluentBuilder  {
         self.inner = self.inner.set_sns_topic_arn(input);
         self
     }
-    /// <p>The type of source that is generating the events. For example, if you want to be notified of events generated by an instance, set this parameter to <code>db-instance</code>. If this value is not specified, all events are returned.</p> 
+    /// <p>The type of source that is generating the events. For example, if you want to be notified of events generated by an instance, set this parameter to <code>db-instance</code>. If this value is not specified, all events are returned.</p>
     /// <p>Valid values: <code>db-instance</code>, <code>db-parameter-group</code>, <code>db-security-group</code> </p>
     pub fn source_type(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.source_type(input.into());
         self
     }
-    /// <p>The type of source that is generating the events. For example, if you want to be notified of events generated by an instance, set this parameter to <code>db-instance</code>. If this value is not specified, all events are returned.</p> 
+    /// <p>The type of source that is generating the events. For example, if you want to be notified of events generated by an instance, set this parameter to <code>db-instance</code>. If this value is not specified, all events are returned.</p>
     /// <p>Valid values: <code>db-instance</code>, <code>db-parameter-group</code>, <code>db-security-group</code> </p>
     pub fn set_source_type(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.inner = self.inner.set_source_type(input);
@@ -89,7 +115,10 @@ impl ModifyEventSubscriptionFluentBuilder  {
         self
     }
     /// <p> A list of event categories for a <code>SourceType</code> that you want to subscribe to.</p>
-    pub fn set_event_categories(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+    pub fn set_event_categories(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
         self.inner = self.inner.set_event_categories(input);
         self
     }
@@ -104,4 +133,3 @@ impl ModifyEventSubscriptionFluentBuilder  {
         self
     }
 }
-

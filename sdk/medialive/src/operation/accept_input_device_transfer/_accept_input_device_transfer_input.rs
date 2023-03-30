@@ -3,20 +3,20 @@
 /// Placeholder documentation for AcceptInputDeviceTransferRequest
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AcceptInputDeviceTransferInput  {
+pub struct AcceptInputDeviceTransferInput {
     /// The unique ID of the input device to accept. For example, hd-123456789abcdef.
     #[doc(hidden)]
     pub input_device_id: std::option::Option<std::string::String>,
 }
 impl AcceptInputDeviceTransferInput {
     /// The unique ID of the input device to accept. For example, hd-123456789abcdef.
-    pub fn input_device_id(&self) -> std::option::Option<& str> {
+    pub fn input_device_id(&self) -> std::option::Option<&str> {
         self.input_device_id.as_deref()
     }
 }
 impl AcceptInputDeviceTransferInput {
     /// Creates a new builder-style object to manufacture [`AcceptInputDeviceTransferInput`](crate::operation::accept_input_device_transfer::AcceptInputDeviceTransferInput).
-    pub fn builder() -> crate::operation::accept_input_device_transfer::builders::AcceptInputDeviceTransferInputBuilder {
+    pub fn builder() -> crate::operation::accept_input_device_transfer::builders::AcceptInputDeviceTransferInputBuilder{
         crate::operation::accept_input_device_transfer::builders::AcceptInputDeviceTransferInputBuilder::default()
     }
 }
@@ -35,16 +35,20 @@ impl AcceptInputDeviceTransferInputBuilder {
     }
     /// The unique ID of the input device to accept. For example, hd-123456789abcdef.
     pub fn set_input_device_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.input_device_id = input; self
+        self.input_device_id = input;
+        self
     }
     /// Consumes the builder and constructs a [`AcceptInputDeviceTransferInput`](crate::operation::accept_input_device_transfer::AcceptInputDeviceTransferInput).
-    pub fn build(self) -> Result<crate::operation::accept_input_device_transfer::AcceptInputDeviceTransferInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::accept_input_device_transfer::AcceptInputDeviceTransferInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::accept_input_device_transfer::AcceptInputDeviceTransferInput {
-                input_device_id: self.input_device_id
-                ,
-            }
+                input_device_id: self.input_device_id,
+            },
         )
     }
 }
-

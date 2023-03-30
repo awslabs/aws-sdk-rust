@@ -3,14 +3,14 @@
 /// <p> Information about a listener. The listener contains the path used to route traffic that is received from the load balancer to a target group. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct TrafficRoute  {
+pub struct TrafficRoute {
     /// <p> The Amazon Resource Name (ARN) of one listener. The listener identifies the route between a target group and a load balancer. This is an array of strings with a maximum size of one. </p>
     #[doc(hidden)]
     pub listener_arns: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl TrafficRoute {
     /// <p> The Amazon Resource Name (ARN) of one listener. The listener identifies the route between a target group and a load balancer. This is an array of strings with a maximum size of one. </p>
-    pub fn listener_arns(&self) -> std::option::Option<& [std::string::String]> {
+    pub fn listener_arns(&self) -> std::option::Option<&[std::string::String]> {
         self.listener_arns.as_deref()
     }
 }
@@ -35,20 +35,22 @@ impl TrafficRouteBuilder {
     /// <p> The Amazon Resource Name (ARN) of one listener. The listener identifies the route between a target group and a load balancer. This is an array of strings with a maximum size of one. </p>
     pub fn listener_arns(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.listener_arns.unwrap_or_default();
-                        v.push(input.into());
-                        self.listener_arns = Some(v);
-                        self
+        v.push(input.into());
+        self.listener_arns = Some(v);
+        self
     }
     /// <p> The Amazon Resource Name (ARN) of one listener. The listener identifies the route between a target group and a load balancer. This is an array of strings with a maximum size of one. </p>
-    pub fn set_listener_arns(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-        self.listener_arns = input; self
+    pub fn set_listener_arns(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
+        self.listener_arns = input;
+        self
     }
     /// Consumes the builder and constructs a [`TrafficRoute`](crate::types::TrafficRoute).
     pub fn build(self) -> crate::types::TrafficRoute {
         crate::types::TrafficRoute {
-            listener_arns: self.listener_arns
-            ,
+            listener_arns: self.listener_arns,
         }
     }
 }
-

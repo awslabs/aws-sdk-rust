@@ -2,20 +2,21 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetSignalCatalogInput  {
+pub struct GetSignalCatalogInput {
     /// <p> The name of the signal catalog to retrieve information about. </p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
 }
 impl GetSignalCatalogInput {
     /// <p> The name of the signal catalog to retrieve information about. </p>
-    pub fn name(&self) -> std::option::Option<& str> {
+    pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
 }
 impl GetSignalCatalogInput {
     /// Creates a new builder-style object to manufacture [`GetSignalCatalogInput`](crate::operation::get_signal_catalog::GetSignalCatalogInput).
-    pub fn builder() -> crate::operation::get_signal_catalog::builders::GetSignalCatalogInputBuilder {
+    pub fn builder() -> crate::operation::get_signal_catalog::builders::GetSignalCatalogInputBuilder
+    {
         crate::operation::get_signal_catalog::builders::GetSignalCatalogInputBuilder::default()
     }
 }
@@ -34,16 +35,16 @@ impl GetSignalCatalogInputBuilder {
     }
     /// <p> The name of the signal catalog to retrieve information about. </p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input; self
+        self.name = input;
+        self
     }
     /// Consumes the builder and constructs a [`GetSignalCatalogInput`](crate::operation::get_signal_catalog::GetSignalCatalogInput).
-    pub fn build(self) -> Result<crate::operation::get_signal_catalog::GetSignalCatalogInput, aws_smithy_http::operation::error::BuildError> {
-        Ok(
-            crate::operation::get_signal_catalog::GetSignalCatalogInput {
-                name: self.name
-                ,
-            }
-        )
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::get_signal_catalog::GetSignalCatalogInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        Ok(crate::operation::get_signal_catalog::GetSignalCatalogInput { name: self.name })
     }
 }
-

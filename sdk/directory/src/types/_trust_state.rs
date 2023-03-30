@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-/// 
+///
 /// Here is an example of how you can make a match expression forward-compatible:
-/// 
+///
 /// ```text
 /// # let truststate = unimplemented!();
 /// match truststate {
@@ -39,14 +39,22 @@
 /// Specifically, when `truststate` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `TrustState::NewFeature` also yielding `"NewFeature"`.
-/// 
+///
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
 pub enum TrustState {
     #[allow(missing_docs)] // documentation missing in model
     Created,
@@ -71,59 +79,70 @@ pub enum TrustState {
     #[allow(missing_docs)] // documentation missing in model
     Verifying,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::primitives::UnknownVariantValue)
+    Unknown(crate::primitives::UnknownVariantValue),
 }
 impl std::convert::From<&str> for TrustState {
-                fn from(s: &str) -> Self {
-                    match s {
-                        "Created" => TrustState::Created,
-"Creating" => TrustState::Creating,
-"Deleted" => TrustState::Deleted,
-"Deleting" => TrustState::Deleting,
-"Failed" => TrustState::Failed,
-"UpdateFailed" => TrustState::UpdateFailed,
-"Updated" => TrustState::Updated,
-"Updating" => TrustState::Updating,
-"Verified" => TrustState::Verified,
-"VerifyFailed" => TrustState::VerifyFailed,
-"Verifying" => TrustState::Verifying,
-other => TrustState::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
-                    }
-                }
-            }
-impl std::str::FromStr for TrustState {
-                type Err = std::convert::Infallible;
-
-                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-                    Ok(TrustState::from(s))
-                }
-            }
-impl TrustState {
-                /// Returns the `&str` value of the enum member.
-                pub fn as_str(&self) -> &str {
-                    match self {
-    TrustState::Created => "Created",
-    TrustState::Creating => "Creating",
-    TrustState::Deleted => "Deleted",
-    TrustState::Deleting => "Deleting",
-    TrustState::Failed => "Failed",
-    TrustState::UpdateFailed => "UpdateFailed",
-    TrustState::Updated => "Updated",
-    TrustState::Updating => "Updating",
-    TrustState::Verified => "Verified",
-    TrustState::VerifyFailed => "VerifyFailed",
-    TrustState::Verifying => "Verifying",
-    TrustState::Unknown(value) => value.as_str()
+    fn from(s: &str) -> Self {
+        match s {
+            "Created" => TrustState::Created,
+            "Creating" => TrustState::Creating,
+            "Deleted" => TrustState::Deleted,
+            "Deleting" => TrustState::Deleting,
+            "Failed" => TrustState::Failed,
+            "UpdateFailed" => TrustState::UpdateFailed,
+            "Updated" => TrustState::Updated,
+            "Updating" => TrustState::Updating,
+            "Verified" => TrustState::Verified,
+            "VerifyFailed" => TrustState::VerifyFailed,
+            "Verifying" => TrustState::Verifying,
+            other => TrustState::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
+        }
+    }
 }
-                }
-                /// Returns all the `&str` representations of the enum members.
-                pub const fn values() -> &'static [&'static str] {
-                    &["Created", "Creating", "Deleted", "Deleting", "Failed", "UpdateFailed", "Updated", "Updating", "Verified", "VerifyFailed", "Verifying"]
-                }
-            }
-impl AsRef<str> for TrustState {
-                fn as_ref(&self) -> &str {
-                    self.as_str()
-                }
-            }
+impl std::str::FromStr for TrustState {
+    type Err = std::convert::Infallible;
 
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(TrustState::from(s))
+    }
+}
+impl TrustState {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            TrustState::Created => "Created",
+            TrustState::Creating => "Creating",
+            TrustState::Deleted => "Deleted",
+            TrustState::Deleting => "Deleting",
+            TrustState::Failed => "Failed",
+            TrustState::UpdateFailed => "UpdateFailed",
+            TrustState::Updated => "Updated",
+            TrustState::Updating => "Updating",
+            TrustState::Verified => "Verified",
+            TrustState::VerifyFailed => "VerifyFailed",
+            TrustState::Verifying => "Verifying",
+            TrustState::Unknown(value) => value.as_str(),
+        }
+    }
+    /// Returns all the `&str` representations of the enum members.
+    pub const fn values() -> &'static [&'static str] {
+        &[
+            "Created",
+            "Creating",
+            "Deleted",
+            "Deleting",
+            "Failed",
+            "UpdateFailed",
+            "Updated",
+            "Updating",
+            "Verified",
+            "VerifyFailed",
+            "Verifying",
+        ]
+    }
+}
+impl AsRef<str> for TrustState {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}

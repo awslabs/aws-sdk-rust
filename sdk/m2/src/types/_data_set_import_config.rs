@@ -21,8 +21,14 @@ pub enum DataSetImportConfig {
 impl DataSetImportConfig {
     /// Tries to convert the enum instance into [`DataSets`](crate::types::DataSetImportConfig::DataSets), extracting the inner [`Vec`](std::vec::Vec).
     /// Returns `Err(&Self)` if it can't be converted.
-    pub fn as_data_sets(&self) -> std::result::Result<&std::vec::Vec<crate::types::DataSetImportItem>, &Self> {
-        if let DataSetImportConfig::DataSets(val) = &self { Ok(val) } else { Err(self) }
+    pub fn as_data_sets(
+        &self,
+    ) -> std::result::Result<&std::vec::Vec<crate::types::DataSetImportItem>, &Self> {
+        if let DataSetImportConfig::DataSets(val) = &self {
+            Ok(val)
+        } else {
+            Err(self)
+        }
     }
     /// Returns true if this is a [`DataSets`](crate::types::DataSetImportConfig::DataSets).
     pub fn is_data_sets(&self) -> bool {
@@ -31,7 +37,11 @@ impl DataSetImportConfig {
     /// Tries to convert the enum instance into [`S3Location`](crate::types::DataSetImportConfig::S3Location), extracting the inner [`String`](std::string::String).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_s3_location(&self) -> std::result::Result<&std::string::String, &Self> {
-        if let DataSetImportConfig::S3Location(val) = &self { Ok(val) } else { Err(self) }
+        if let DataSetImportConfig::S3Location(val) = &self {
+            Ok(val)
+        } else {
+            Err(self)
+        }
     }
     /// Returns true if this is a [`S3Location`](crate::types::DataSetImportConfig::S3Location).
     pub fn is_s3_location(&self) -> bool {
@@ -42,4 +52,3 @@ impl DataSetImportConfig {
         matches!(self, Self::Unknown)
     }
 }
-

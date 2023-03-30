@@ -3,7 +3,7 @@
 /// <p>The options for data bars.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DataBarsOptions  {
+pub struct DataBarsOptions {
     /// <p>The field ID for the data bars options.</p>
     #[doc(hidden)]
     pub field_id: std::option::Option<std::string::String>,
@@ -16,15 +16,15 @@ pub struct DataBarsOptions  {
 }
 impl DataBarsOptions {
     /// <p>The field ID for the data bars options.</p>
-    pub fn field_id(&self) -> std::option::Option<& str> {
+    pub fn field_id(&self) -> std::option::Option<&str> {
         self.field_id.as_deref()
     }
     /// <p>The color of the positive data bar.</p>
-    pub fn positive_color(&self) -> std::option::Option<& str> {
+    pub fn positive_color(&self) -> std::option::Option<&str> {
         self.positive_color.as_deref()
     }
     /// <p>The color of the negative data bar.</p>
-    pub fn negative_color(&self) -> std::option::Option<& str> {
+    pub fn negative_color(&self) -> std::option::Option<&str> {
         self.negative_color.as_deref()
     }
 }
@@ -51,7 +51,8 @@ impl DataBarsOptionsBuilder {
     }
     /// <p>The field ID for the data bars options.</p>
     pub fn set_field_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.field_id = input; self
+        self.field_id = input;
+        self
     }
     /// <p>The color of the positive data bar.</p>
     pub fn positive_color(mut self, input: impl Into<std::string::String>) -> Self {
@@ -60,7 +61,8 @@ impl DataBarsOptionsBuilder {
     }
     /// <p>The color of the positive data bar.</p>
     pub fn set_positive_color(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.positive_color = input; self
+        self.positive_color = input;
+        self
     }
     /// <p>The color of the negative data bar.</p>
     pub fn negative_color(mut self, input: impl Into<std::string::String>) -> Self {
@@ -69,18 +71,15 @@ impl DataBarsOptionsBuilder {
     }
     /// <p>The color of the negative data bar.</p>
     pub fn set_negative_color(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.negative_color = input; self
+        self.negative_color = input;
+        self
     }
     /// Consumes the builder and constructs a [`DataBarsOptions`](crate::types::DataBarsOptions).
     pub fn build(self) -> crate::types::DataBarsOptions {
         crate::types::DataBarsOptions {
-            field_id: self.field_id
-            ,
-            positive_color: self.positive_color
-            ,
-            negative_color: self.negative_color
-            ,
+            field_id: self.field_id,
+            positive_color: self.positive_color,
+            negative_color: self.negative_color,
         }
     }
 }
-

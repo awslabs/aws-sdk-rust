@@ -3,7 +3,7 @@
 /// <p>A complex type that contains information about the traffic policy that you want to update the comment for.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateTrafficPolicyCommentInput  {
+pub struct UpdateTrafficPolicyCommentInput {
     /// <p>The value of <code>Id</code> for the traffic policy that you want to update the comment for.</p>
     #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
@@ -16,7 +16,7 @@ pub struct UpdateTrafficPolicyCommentInput  {
 }
 impl UpdateTrafficPolicyCommentInput {
     /// <p>The value of <code>Id</code> for the traffic policy that you want to update the comment for.</p>
-    pub fn id(&self) -> std::option::Option<& str> {
+    pub fn id(&self) -> std::option::Option<&str> {
         self.id.as_deref()
     }
     /// <p>The value of <code>Version</code> for the traffic policy that you want to update the comment for.</p>
@@ -24,13 +24,13 @@ impl UpdateTrafficPolicyCommentInput {
         self.version
     }
     /// <p>The new comment for the specified traffic policy and version.</p>
-    pub fn comment(&self) -> std::option::Option<& str> {
+    pub fn comment(&self) -> std::option::Option<&str> {
         self.comment.as_deref()
     }
 }
 impl UpdateTrafficPolicyCommentInput {
     /// Creates a new builder-style object to manufacture [`UpdateTrafficPolicyCommentInput`](crate::operation::update_traffic_policy_comment::UpdateTrafficPolicyCommentInput).
-    pub fn builder() -> crate::operation::update_traffic_policy_comment::builders::UpdateTrafficPolicyCommentInputBuilder {
+    pub fn builder() -> crate::operation::update_traffic_policy_comment::builders::UpdateTrafficPolicyCommentInputBuilder{
         crate::operation::update_traffic_policy_comment::builders::UpdateTrafficPolicyCommentInputBuilder::default()
     }
 }
@@ -51,7 +51,8 @@ impl UpdateTrafficPolicyCommentInputBuilder {
     }
     /// <p>The value of <code>Id</code> for the traffic policy that you want to update the comment for.</p>
     pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.id = input; self
+        self.id = input;
+        self
     }
     /// <p>The value of <code>Version</code> for the traffic policy that you want to update the comment for.</p>
     pub fn version(mut self, input: i32) -> Self {
@@ -60,7 +61,8 @@ impl UpdateTrafficPolicyCommentInputBuilder {
     }
     /// <p>The value of <code>Version</code> for the traffic policy that you want to update the comment for.</p>
     pub fn set_version(mut self, input: std::option::Option<i32>) -> Self {
-        self.version = input; self
+        self.version = input;
+        self
     }
     /// <p>The new comment for the specified traffic policy and version.</p>
     pub fn comment(mut self, input: impl Into<std::string::String>) -> Self {
@@ -69,20 +71,22 @@ impl UpdateTrafficPolicyCommentInputBuilder {
     }
     /// <p>The new comment for the specified traffic policy and version.</p>
     pub fn set_comment(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.comment = input; self
+        self.comment = input;
+        self
     }
     /// Consumes the builder and constructs a [`UpdateTrafficPolicyCommentInput`](crate::operation::update_traffic_policy_comment::UpdateTrafficPolicyCommentInput).
-    pub fn build(self) -> Result<crate::operation::update_traffic_policy_comment::UpdateTrafficPolicyCommentInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::update_traffic_policy_comment::UpdateTrafficPolicyCommentInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::update_traffic_policy_comment::UpdateTrafficPolicyCommentInput {
-                id: self.id
-                ,
-                version: self.version
-                ,
-                comment: self.comment
-                ,
-            }
+                id: self.id,
+                version: self.version,
+                comment: self.comment,
+            },
         )
     }
 }
-

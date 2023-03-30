@@ -4,56 +4,81 @@ pub use crate::operation::create_meeting_with_attendees::_create_meeting_with_at
 pub use crate::operation::create_meeting_with_attendees::_create_meeting_with_attendees_input::CreateMeetingWithAttendeesInputBuilder;
 
 /// Fluent builder constructing a request to `CreateMeetingWithAttendees`.
-/// 
+///
 /// <p> Creates a new Amazon Chime SDK meeting in the specified media Region, with attendees. For more information about specifying media Regions, see <a href="https://docs.aws.amazon.com/chime/latest/dg/chime-sdk-meetings-regions.html">Amazon Chime SDK Media Regions</a> in the <i>Amazon Chime Developer Guide</i> . For more information about the Amazon Chime SDK, see <a href="https://docs.aws.amazon.com/chime/latest/dg/meetings-sdk.html">Using the Amazon Chime SDK</a> in the <i>Amazon Chime Developer Guide</i> . </p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct CreateMeetingWithAttendeesFluentBuilder {
                 handle: std::sync::Arc<crate::client::Handle>,
                 inner: crate::operation::create_meeting_with_attendees::builders::CreateMeetingWithAttendeesInputBuilder
             }
-impl CreateMeetingWithAttendeesFluentBuilder  {
+impl CreateMeetingWithAttendeesFluentBuilder {
     /// Creates a new `CreateMeetingWithAttendees`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
-                    /// sent. The operation's inner [http::Request] can be modified as well.
-                    pub async fn customize(self) -> std::result::Result<
-                        crate::client::customize::CustomizableOperation<crate::operation::create_meeting_with_attendees::CreateMeetingWithAttendees, aws_http::retry::AwsResponseRetryClassifier,>,
-                        aws_smithy_http::result::SdkError<crate::operation::create_meeting_with_attendees::CreateMeetingWithAttendeesError>
-                    >  {
-                        let handle = self.handle.clone();
-                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-                    }
-    
-                    /// Sends the request and returns the response.
-                    ///
-                    /// If an error occurs, an `SdkError` will be returned with additional details that
-                    /// can be matched against.
-                    ///
-                    /// By default, any retryable failures will be retried twice. Retry behavior
-                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                    /// set when configuring the client.
-                    pub async fn send(self) -> std::result::Result<crate::operation::create_meeting_with_attendees::CreateMeetingWithAttendeesOutput, aws_smithy_http::result::SdkError<crate::operation::create_meeting_with_attendees::CreateMeetingWithAttendeesError>>
-                     {
-                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&self.handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        self.handle.client.call(op).await
-                    }
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle,
+            inner: Default::default(),
+        }
+    }
+
+    /// Consume this builder, creating a customizable operation that can be modified before being
+    /// sent. The operation's inner [http::Request] can be modified as well.
+    pub async fn customize(
+        self,
+    ) -> std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::create_meeting_with_attendees::CreateMeetingWithAttendees,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::result::SdkError<
+            crate::operation::create_meeting_with_attendees::CreateMeetingWithAttendeesError,
+        >,
+    > {
+        let handle = self.handle.clone();
+        let operation = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+    }
+
+    /// Sends the request and returns the response.
+    ///
+    /// If an error occurs, an `SdkError` will be returned with additional details that
+    /// can be matched against.
+    ///
+    /// By default, any retryable failures will be retried twice. Retry behavior
+    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+    /// set when configuring the client.
+    pub async fn send(
+        self,
+    ) -> std::result::Result<
+        crate::operation::create_meeting_with_attendees::CreateMeetingWithAttendeesOutput,
+        aws_smithy_http::result::SdkError<
+            crate::operation::create_meeting_with_attendees::CreateMeetingWithAttendeesError,
+        >,
+    > {
+        let op = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&self.handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        self.handle.client.call(op).await
+    }
     /// <p>The unique identifier for the client request. Use a different token for different meetings.</p>
     pub fn client_request_token(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.client_request_token(input.into());
         self
     }
     /// <p>The unique identifier for the client request. Use a different token for different meetings.</p>
-    pub fn set_client_request_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_client_request_token(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_client_request_token(input);
         self
     }
@@ -63,7 +88,10 @@ impl CreateMeetingWithAttendeesFluentBuilder  {
         self
     }
     /// <p>The external meeting ID.</p>
-    pub fn set_external_meeting_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_external_meeting_id(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_external_meeting_id(input);
         self
     }
@@ -77,13 +105,13 @@ impl CreateMeetingWithAttendeesFluentBuilder  {
         self.inner = self.inner.set_meeting_host_id(input);
         self
     }
-    /// <p> The Region in which to create the meeting. Default: <code>us-east-1</code> . </p> 
+    /// <p> The Region in which to create the meeting. Default: <code>us-east-1</code> . </p>
     /// <p> Available values: <code>af-south-1</code> , <code>ap-northeast-1</code> , <code>ap-northeast-2</code> , <code>ap-south-1</code> , <code>ap-southeast-1</code> , <code>ap-southeast-2</code> , <code>ca-central-1</code> , <code>eu-central-1</code> , <code>eu-north-1</code> , <code>eu-south-1</code> , <code>eu-west-1</code> , <code>eu-west-2</code> , <code>eu-west-3</code> , <code>sa-east-1</code> , <code>us-east-1</code> , <code>us-east-2</code> , <code>us-west-1</code> , <code>us-west-2</code> . </p>
     pub fn media_region(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.media_region(input.into());
         self
     }
-    /// <p> The Region in which to create the meeting. Default: <code>us-east-1</code> . </p> 
+    /// <p> The Region in which to create the meeting. Default: <code>us-east-1</code> . </p>
     /// <p> Available values: <code>af-south-1</code> , <code>ap-northeast-1</code> , <code>ap-northeast-2</code> , <code>ap-south-1</code> , <code>ap-southeast-1</code> , <code>ap-southeast-2</code> , <code>ca-central-1</code> , <code>eu-central-1</code> , <code>eu-north-1</code> , <code>eu-south-1</code> , <code>eu-west-1</code> , <code>eu-west-2</code> , <code>eu-west-3</code> , <code>sa-east-1</code> , <code>us-east-1</code> , <code>us-east-2</code> , <code>us-west-1</code> , <code>us-west-2</code> . </p>
     pub fn set_media_region(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.inner = self.inner.set_media_region(input);
@@ -99,17 +127,26 @@ impl CreateMeetingWithAttendeesFluentBuilder  {
         self
     }
     /// <p>The tag key-value pairs.</p>
-    pub fn set_tags(mut self, input: std::option::Option<std::vec::Vec<crate::types::Tag>>) -> Self {
+    pub fn set_tags(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::Tag>>,
+    ) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }
     /// <p> The resource target configurations for receiving Amazon Chime SDK meeting and attendee event notifications. The Amazon Chime SDK supports resource targets located in the US East (N. Virginia) AWS Region (<code>us-east-1</code>). </p>
-    pub fn notifications_configuration(mut self, input: crate::types::MeetingNotificationConfiguration) -> Self {
+    pub fn notifications_configuration(
+        mut self,
+        input: crate::types::MeetingNotificationConfiguration,
+    ) -> Self {
         self.inner = self.inner.notifications_configuration(input);
         self
     }
     /// <p> The resource target configurations for receiving Amazon Chime SDK meeting and attendee event notifications. The Amazon Chime SDK supports resource targets located in the US East (N. Virginia) AWS Region (<code>us-east-1</code>). </p>
-    pub fn set_notifications_configuration(mut self, input: std::option::Option<crate::types::MeetingNotificationConfiguration>) -> Self {
+    pub fn set_notifications_configuration(
+        mut self,
+        input: std::option::Option<crate::types::MeetingNotificationConfiguration>,
+    ) -> Self {
         self.inner = self.inner.set_notifications_configuration(input);
         self
     }
@@ -123,9 +160,11 @@ impl CreateMeetingWithAttendeesFluentBuilder  {
         self
     }
     /// <p>The request containing the attendees to create.</p>
-    pub fn set_attendees(mut self, input: std::option::Option<std::vec::Vec<crate::types::CreateAttendeeRequestItem>>) -> Self {
+    pub fn set_attendees(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::CreateAttendeeRequestItem>>,
+    ) -> Self {
         self.inner = self.inner.set_attendees(input);
         self
     }
 }
-

@@ -17,12 +17,14 @@ enum SerializationErrorKind {
     DateTimeFormatError { cause: DateTimeFormatError },
 }
 
+/// An error that occurs when serialization of an operation fails.
 #[derive(Debug)]
 pub struct SerializationError {
     kind: SerializationErrorKind,
 }
 
 impl SerializationError {
+    /// An error that occurs when serialization of an operation fails for an unknown reason.
     pub fn unknown_variant(union: &'static str) -> Self {
         Self {
             kind: SerializationErrorKind::CannotSerializeUnknownVariant { union },

@@ -3,7 +3,7 @@
 /// <p>An object that describes workflow billing details.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct BillingDetails  {
+pub struct BillingDetails {
     /// <p>Billed memory consumption of your workflow, in MB.</p>
     #[doc(hidden)]
     pub billed_memory_used_in_mb: i64,
@@ -43,7 +43,8 @@ impl BillingDetailsBuilder {
     }
     /// <p>Billed memory consumption of your workflow, in MB.</p>
     pub fn set_billed_memory_used_in_mb(mut self, input: std::option::Option<i64>) -> Self {
-        self.billed_memory_used_in_mb = input; self
+        self.billed_memory_used_in_mb = input;
+        self
     }
     /// <p>Billed duration of your workflow, in milliseconds.</p>
     pub fn billed_duration_in_milliseconds(mut self, input: i64) -> Self {
@@ -52,18 +53,16 @@ impl BillingDetailsBuilder {
     }
     /// <p>Billed duration of your workflow, in milliseconds.</p>
     pub fn set_billed_duration_in_milliseconds(mut self, input: std::option::Option<i64>) -> Self {
-        self.billed_duration_in_milliseconds = input; self
+        self.billed_duration_in_milliseconds = input;
+        self
     }
     /// Consumes the builder and constructs a [`BillingDetails`](crate::types::BillingDetails).
     pub fn build(self) -> crate::types::BillingDetails {
         crate::types::BillingDetails {
-            billed_memory_used_in_mb: self.billed_memory_used_in_mb
-                .unwrap_or_default()
-            ,
-            billed_duration_in_milliseconds: self.billed_duration_in_milliseconds
-                .unwrap_or_default()
-            ,
+            billed_memory_used_in_mb: self.billed_memory_used_in_mb.unwrap_or_default(),
+            billed_duration_in_milliseconds: self
+                .billed_duration_in_milliseconds
+                .unwrap_or_default(),
         }
     }
 }
-

@@ -4,55 +4,78 @@ pub use crate::operation::list_log_sources::_list_log_sources_output::ListLogSou
 pub use crate::operation::list_log_sources::_list_log_sources_input::ListLogSourcesInputBuilder;
 
 /// Fluent builder constructing a request to `ListLogSources`.
-/// 
+///
 /// <p>Retrieves the log sources in the current Amazon Web Services Region. </p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListLogSourcesFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::list_log_sources::builders::ListLogSourcesInputBuilder
-            }
-impl ListLogSourcesFluentBuilder  {
+    handle: std::sync::Arc<crate::client::Handle>,
+    inner: crate::operation::list_log_sources::builders::ListLogSourcesInputBuilder,
+}
+impl ListLogSourcesFluentBuilder {
     /// Creates a new `ListLogSources`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
-                    /// sent. The operation's inner [http::Request] can be modified as well.
-                    pub async fn customize(self) -> std::result::Result<
-                        crate::client::customize::CustomizableOperation<crate::operation::list_log_sources::ListLogSources, aws_http::retry::AwsResponseRetryClassifier,>,
-                        aws_smithy_http::result::SdkError<crate::operation::list_log_sources::ListLogSourcesError>
-                    >  {
-                        let handle = self.handle.clone();
-                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-                    }
-    
-                    /// Sends the request and returns the response.
-                    ///
-                    /// If an error occurs, an `SdkError` will be returned with additional details that
-                    /// can be matched against.
-                    ///
-                    /// By default, any retryable failures will be retried twice. Retry behavior
-                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                    /// set when configuring the client.
-                    pub async fn send(self) -> std::result::Result<crate::operation::list_log_sources::ListLogSourcesOutput, aws_smithy_http::result::SdkError<crate::operation::list_log_sources::ListLogSourcesError>>
-                     {
-                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&self.handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        self.handle.client.call(op).await
-                    }
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle,
+            inner: Default::default(),
+        }
+    }
+
+    /// Consume this builder, creating a customizable operation that can be modified before being
+    /// sent. The operation's inner [http::Request] can be modified as well.
+    pub async fn customize(
+        self,
+    ) -> std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::list_log_sources::ListLogSources,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::result::SdkError<crate::operation::list_log_sources::ListLogSourcesError>,
+    > {
+        let handle = self.handle.clone();
+        let operation = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+    }
+
+    /// Sends the request and returns the response.
+    ///
+    /// If an error occurs, an `SdkError` will be returned with additional details that
+    /// can be matched against.
+    ///
+    /// By default, any retryable failures will be retried twice. Retry behavior
+    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+    /// set when configuring the client.
+    pub async fn send(
+        self,
+    ) -> std::result::Result<
+        crate::operation::list_log_sources::ListLogSourcesOutput,
+        aws_smithy_http::result::SdkError<crate::operation::list_log_sources::ListLogSourcesError>,
+    > {
+        let op = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&self.handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        self.handle.client.call(op).await
+    }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::list_log_sources::paginator::ListLogSourcesPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::list_log_sources::paginator::ListLogSourcesPaginator {
-                            crate::operation::list_log_sources::paginator::ListLogSourcesPaginator::new(self.handle, self.inner)
-                        }
+    ///
+    /// Paginators are used by calling [`send().await`](crate::operation::list_log_sources::paginator::ListLogSourcesPaginator::send) which returns a `Stream`.
+    pub fn into_paginator(
+        self,
+    ) -> crate::operation::list_log_sources::paginator::ListLogSourcesPaginator {
+        crate::operation::list_log_sources::paginator::ListLogSourcesPaginator::new(
+            self.handle,
+            self.inner,
+        )
+    }
     /// Appends an item to `inputOrder`.
     ///
     /// To override the contents of this collection use [`set_input_order`](Self::set_input_order).
@@ -63,7 +86,10 @@ impl ListLogSourcesFluentBuilder  {
         self
     }
     /// <p>Lists the log sources in input order, namely Region, source type, and member account.</p>
-    pub fn set_input_order(mut self, input: std::option::Option<std::vec::Vec<crate::types::Dimension>>) -> Self {
+    pub fn set_input_order(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::Dimension>>,
+    ) -> Self {
         self.inner = self.inner.set_input_order(input);
         self
     }
@@ -72,12 +98,24 @@ impl ListLogSourcesFluentBuilder  {
     /// To override the contents of this collection use [`set_list_all_dimensions`](Self::set_list_all_dimensions).
     ///
     /// <p>List the view of log sources for enabled Amazon Security Lake accounts for specific Amazon Web Services sources from specific accounts and specific Regions.</p>
-    pub fn list_all_dimensions(mut self, k: impl Into<std::string::String>, v: std::collections::HashMap<std::string::String, std::vec::Vec<std::string::String>>) -> Self {
+    pub fn list_all_dimensions(
+        mut self,
+        k: impl Into<std::string::String>,
+        v: std::collections::HashMap<std::string::String, std::vec::Vec<std::string::String>>,
+    ) -> Self {
         self.inner = self.inner.list_all_dimensions(k.into(), v);
         self
     }
     /// <p>List the view of log sources for enabled Amazon Security Lake accounts for specific Amazon Web Services sources from specific accounts and specific Regions.</p>
-    pub fn set_list_all_dimensions(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::collections::HashMap<std::string::String, std::vec::Vec<std::string::String>>>>) -> Self {
+    pub fn set_list_all_dimensions(
+        mut self,
+        input: std::option::Option<
+            std::collections::HashMap<
+                std::string::String,
+                std::collections::HashMap<std::string::String, std::vec::Vec<std::string::String>>,
+            >,
+        >,
+    ) -> Self {
         self.inner = self.inner.set_list_all_dimensions(input);
         self
     }
@@ -86,12 +124,21 @@ impl ListLogSourcesFluentBuilder  {
     /// To override the contents of this collection use [`set_list_two_dimensions`](Self::set_list_two_dimensions).
     ///
     /// <p>Lists the view of log sources for enabled Security Lake accounts for specific Amazon Web Services sources from specific accounts or specific Regions.</p>
-    pub fn list_two_dimensions(mut self, k: impl Into<std::string::String>, v: std::vec::Vec<std::string::String>) -> Self {
+    pub fn list_two_dimensions(
+        mut self,
+        k: impl Into<std::string::String>,
+        v: std::vec::Vec<std::string::String>,
+    ) -> Self {
         self.inner = self.inner.list_two_dimensions(k.into(), v);
         self
     }
     /// <p>Lists the view of log sources for enabled Security Lake accounts for specific Amazon Web Services sources from specific accounts or specific Regions.</p>
-    pub fn set_list_two_dimensions(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::vec::Vec<std::string::String>>>) -> Self {
+    pub fn set_list_two_dimensions(
+        mut self,
+        input: std::option::Option<
+            std::collections::HashMap<std::string::String, std::vec::Vec<std::string::String>>,
+        >,
+    ) -> Self {
         self.inner = self.inner.set_list_two_dimensions(input);
         self
     }
@@ -105,7 +152,10 @@ impl ListLogSourcesFluentBuilder  {
         self
     }
     /// <p>List the view of log sources for enabled Security Lake accounts for all Amazon Web Services sources from specific accounts or specific Regions.</p>
-    pub fn set_list_single_dimension(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+    pub fn set_list_single_dimension(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
         self.inner = self.inner.set_list_single_dimension(input);
         self
     }
@@ -130,4 +180,3 @@ impl ListLogSourcesFluentBuilder  {
         self
     }
 }
-

@@ -4,4 +4,3 @@ pub use crate::types::error::_not_authorized_exception::NotAuthorizedExceptionBu
 pub use crate::types::error::_invalid_argument_exception::InvalidArgumentExceptionBuilder;
 
 pub use crate::types::error::_internal_service_error::InternalServiceErrorBuilder;
-

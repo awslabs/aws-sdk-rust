@@ -6,4 +6,3 @@ pub use crate::types::error::_not_found_exception::NotFoundExceptionBuilder;
 pub use crate::types::error::_gateway_timeout_exception::GatewayTimeoutExceptionBuilder;
 
 pub use crate::types::error::_bad_request_exception::BadRequestExceptionBuilder;
-

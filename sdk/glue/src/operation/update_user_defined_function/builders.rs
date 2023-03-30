@@ -4,49 +4,71 @@ pub use crate::operation::update_user_defined_function::_update_user_defined_fun
 pub use crate::operation::update_user_defined_function::_update_user_defined_function_input::UpdateUserDefinedFunctionInputBuilder;
 
 /// Fluent builder constructing a request to `UpdateUserDefinedFunction`.
-/// 
+///
 /// <p>Updates an existing function definition in the Data Catalog.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct UpdateUserDefinedFunctionFluentBuilder {
                 handle: std::sync::Arc<crate::client::Handle>,
                 inner: crate::operation::update_user_defined_function::builders::UpdateUserDefinedFunctionInputBuilder
             }
-impl UpdateUserDefinedFunctionFluentBuilder  {
+impl UpdateUserDefinedFunctionFluentBuilder {
     /// Creates a new `UpdateUserDefinedFunction`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
-                    /// sent. The operation's inner [http::Request] can be modified as well.
-                    pub async fn customize(self) -> std::result::Result<
-                        crate::client::customize::CustomizableOperation<crate::operation::update_user_defined_function::UpdateUserDefinedFunction, aws_http::retry::AwsResponseRetryClassifier,>,
-                        aws_smithy_http::result::SdkError<crate::operation::update_user_defined_function::UpdateUserDefinedFunctionError>
-                    >  {
-                        let handle = self.handle.clone();
-                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-                    }
-    
-                    /// Sends the request and returns the response.
-                    ///
-                    /// If an error occurs, an `SdkError` will be returned with additional details that
-                    /// can be matched against.
-                    ///
-                    /// By default, any retryable failures will be retried twice. Retry behavior
-                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                    /// set when configuring the client.
-                    pub async fn send(self) -> std::result::Result<crate::operation::update_user_defined_function::UpdateUserDefinedFunctionOutput, aws_smithy_http::result::SdkError<crate::operation::update_user_defined_function::UpdateUserDefinedFunctionError>>
-                     {
-                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&self.handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        self.handle.client.call(op).await
-                    }
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle,
+            inner: Default::default(),
+        }
+    }
+
+    /// Consume this builder, creating a customizable operation that can be modified before being
+    /// sent. The operation's inner [http::Request] can be modified as well.
+    pub async fn customize(
+        self,
+    ) -> std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::update_user_defined_function::UpdateUserDefinedFunction,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::result::SdkError<
+            crate::operation::update_user_defined_function::UpdateUserDefinedFunctionError,
+        >,
+    > {
+        let handle = self.handle.clone();
+        let operation = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+    }
+
+    /// Sends the request and returns the response.
+    ///
+    /// If an error occurs, an `SdkError` will be returned with additional details that
+    /// can be matched against.
+    ///
+    /// By default, any retryable failures will be retried twice. Retry behavior
+    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+    /// set when configuring the client.
+    pub async fn send(
+        self,
+    ) -> std::result::Result<
+        crate::operation::update_user_defined_function::UpdateUserDefinedFunctionOutput,
+        aws_smithy_http::result::SdkError<
+            crate::operation::update_user_defined_function::UpdateUserDefinedFunctionError,
+        >,
+    > {
+        let op = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&self.handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        self.handle.client.call(op).await
+    }
     /// <p>The ID of the Data Catalog where the function to be updated is located. If none is provided, the Amazon Web Services account ID is used by default.</p>
     pub fn catalog_id(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.catalog_id(input.into());
@@ -83,9 +105,11 @@ impl UpdateUserDefinedFunctionFluentBuilder  {
         self
     }
     /// <p>A <code>FunctionInput</code> object that redefines the function in the Data Catalog.</p>
-    pub fn set_function_input(mut self, input: std::option::Option<crate::types::UserDefinedFunctionInput>) -> Self {
+    pub fn set_function_input(
+        mut self,
+        input: std::option::Option<crate::types::UserDefinedFunctionInput>,
+    ) -> Self {
         self.inner = self.inner.set_function_input(input);
         self
     }
 }
-

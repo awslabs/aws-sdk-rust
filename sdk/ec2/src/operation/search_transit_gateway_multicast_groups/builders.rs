@@ -4,62 +4,77 @@ pub use crate::operation::search_transit_gateway_multicast_groups::_search_trans
 pub use crate::operation::search_transit_gateway_multicast_groups::_search_transit_gateway_multicast_groups_input::SearchTransitGatewayMulticastGroupsInputBuilder;
 
 /// Fluent builder constructing a request to `SearchTransitGatewayMulticastGroups`.
-/// 
+///
 /// <p>Searches one or more transit gateway multicast groups and returns the group membership information.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct SearchTransitGatewayMulticastGroupsFluentBuilder {
                 handle: std::sync::Arc<crate::client::Handle>,
                 inner: crate::operation::search_transit_gateway_multicast_groups::builders::SearchTransitGatewayMulticastGroupsInputBuilder
             }
-impl SearchTransitGatewayMulticastGroupsFluentBuilder  {
+impl SearchTransitGatewayMulticastGroupsFluentBuilder {
     /// Creates a new `SearchTransitGatewayMulticastGroups`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
-                    /// sent. The operation's inner [http::Request] can be modified as well.
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle,
+            inner: Default::default(),
+        }
+    }
+
+    /// Consume this builder, creating a customizable operation that can be modified before being
+    /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::search_transit_gateway_multicast_groups::SearchTransitGatewayMulticastGroups, aws_http::retry::AwsResponseRetryClassifier,>,
                         aws_smithy_http::result::SdkError<crate::operation::search_transit_gateway_multicast_groups::SearchTransitGatewayMulticastGroupsError>
-                    >  {
-                        let handle = self.handle.clone();
-                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-                    }
-    
-                    /// Sends the request and returns the response.
-                    ///
-                    /// If an error occurs, an `SdkError` will be returned with additional details that
-                    /// can be matched against.
-                    ///
-                    /// By default, any retryable failures will be retried twice. Retry behavior
-                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                    /// set when configuring the client.
+    >{
+        let handle = self.handle.clone();
+        let operation = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+    }
+
+    /// Sends the request and returns the response.
+    ///
+    /// If an error occurs, an `SdkError` will be returned with additional details that
+    /// can be matched against.
+    ///
+    /// By default, any retryable failures will be retried twice. Retry behavior
+    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+    /// set when configuring the client.
                     pub async fn send(self) -> std::result::Result<crate::operation::search_transit_gateway_multicast_groups::SearchTransitGatewayMulticastGroupsOutput, aws_smithy_http::result::SdkError<crate::operation::search_transit_gateway_multicast_groups::SearchTransitGatewayMulticastGroupsError>>
                      {
-                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&self.handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        self.handle.client.call(op).await
-                    }
+        let op = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&self.handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        self.handle.client.call(op).await
+    }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::search_transit_gateway_multicast_groups::paginator::SearchTransitGatewayMulticastGroupsPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::search_transit_gateway_multicast_groups::paginator::SearchTransitGatewayMulticastGroupsPaginator {
-                            crate::operation::search_transit_gateway_multicast_groups::paginator::SearchTransitGatewayMulticastGroupsPaginator::new(self.handle, self.inner)
-                        }
+    ///
+    /// Paginators are used by calling [`send().await`](crate::operation::search_transit_gateway_multicast_groups::paginator::SearchTransitGatewayMulticastGroupsPaginator::send) which returns a `Stream`.
+    pub fn into_paginator(self) -> crate::operation::search_transit_gateway_multicast_groups::paginator::SearchTransitGatewayMulticastGroupsPaginator{
+        crate::operation::search_transit_gateway_multicast_groups::paginator::SearchTransitGatewayMulticastGroupsPaginator::new(self.handle, self.inner)
+    }
     /// <p>The ID of the transit gateway multicast domain.</p>
-    pub fn transit_gateway_multicast_domain_id(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn transit_gateway_multicast_domain_id(
+        mut self,
+        input: impl Into<std::string::String>,
+    ) -> Self {
         self.inner = self.inner.transit_gateway_multicast_domain_id(input.into());
         self
     }
     /// <p>The ID of the transit gateway multicast domain.</p>
-    pub fn set_transit_gateway_multicast_domain_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_transit_gateway_multicast_domain_id(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_transit_gateway_multicast_domain_id(input);
         self
     }
@@ -67,35 +82,38 @@ impl SearchTransitGatewayMulticastGroupsFluentBuilder  {
     ///
     /// To override the contents of this collection use [`set_filters`](Self::set_filters).
     ///
-    /// <p>One or more filters. The possible values are:</p> 
-    /// <ul> 
-    /// <li> <p> <code>group-ip-address</code> - The IP address of the transit gateway multicast group.</p> </li> 
-    /// <li> <p> <code>is-group-member</code> - The resource is a group member. Valid values are <code>true</code> | <code>false</code>.</p> </li> 
-    /// <li> <p> <code>is-group-source</code> - The resource is a group source. Valid values are <code>true</code> | <code>false</code>.</p> </li> 
-    /// <li> <p> <code>member-type</code> - The member type. Valid values are <code>igmp</code> | <code>static</code>.</p> </li> 
-    /// <li> <p> <code>resource-id</code> - The ID of the resource.</p> </li> 
-    /// <li> <p> <code>resource-type</code> - The type of resource. Valid values are <code>vpc</code> | <code>vpn</code> | <code>direct-connect-gateway</code> | <code>tgw-peering</code>.</p> </li> 
-    /// <li> <p> <code>source-type</code> - The source type. Valid values are <code>igmp</code> | <code>static</code>.</p> </li> 
-    /// <li> <p> <code>subnet-id</code> - The ID of the subnet.</p> </li> 
-    /// <li> <p> <code>transit-gateway-attachment-id</code> - The id of the transit gateway attachment.</p> </li> 
+    /// <p>One or more filters. The possible values are:</p>
+    /// <ul>
+    /// <li> <p> <code>group-ip-address</code> - The IP address of the transit gateway multicast group.</p> </li>
+    /// <li> <p> <code>is-group-member</code> - The resource is a group member. Valid values are <code>true</code> | <code>false</code>.</p> </li>
+    /// <li> <p> <code>is-group-source</code> - The resource is a group source. Valid values are <code>true</code> | <code>false</code>.</p> </li>
+    /// <li> <p> <code>member-type</code> - The member type. Valid values are <code>igmp</code> | <code>static</code>.</p> </li>
+    /// <li> <p> <code>resource-id</code> - The ID of the resource.</p> </li>
+    /// <li> <p> <code>resource-type</code> - The type of resource. Valid values are <code>vpc</code> | <code>vpn</code> | <code>direct-connect-gateway</code> | <code>tgw-peering</code>.</p> </li>
+    /// <li> <p> <code>source-type</code> - The source type. Valid values are <code>igmp</code> | <code>static</code>.</p> </li>
+    /// <li> <p> <code>subnet-id</code> - The ID of the subnet.</p> </li>
+    /// <li> <p> <code>transit-gateway-attachment-id</code> - The id of the transit gateway attachment.</p> </li>
     /// </ul>
     pub fn filters(mut self, input: crate::types::Filter) -> Self {
         self.inner = self.inner.filters(input);
         self
     }
-    /// <p>One or more filters. The possible values are:</p> 
-    /// <ul> 
-    /// <li> <p> <code>group-ip-address</code> - The IP address of the transit gateway multicast group.</p> </li> 
-    /// <li> <p> <code>is-group-member</code> - The resource is a group member. Valid values are <code>true</code> | <code>false</code>.</p> </li> 
-    /// <li> <p> <code>is-group-source</code> - The resource is a group source. Valid values are <code>true</code> | <code>false</code>.</p> </li> 
-    /// <li> <p> <code>member-type</code> - The member type. Valid values are <code>igmp</code> | <code>static</code>.</p> </li> 
-    /// <li> <p> <code>resource-id</code> - The ID of the resource.</p> </li> 
-    /// <li> <p> <code>resource-type</code> - The type of resource. Valid values are <code>vpc</code> | <code>vpn</code> | <code>direct-connect-gateway</code> | <code>tgw-peering</code>.</p> </li> 
-    /// <li> <p> <code>source-type</code> - The source type. Valid values are <code>igmp</code> | <code>static</code>.</p> </li> 
-    /// <li> <p> <code>subnet-id</code> - The ID of the subnet.</p> </li> 
-    /// <li> <p> <code>transit-gateway-attachment-id</code> - The id of the transit gateway attachment.</p> </li> 
+    /// <p>One or more filters. The possible values are:</p>
+    /// <ul>
+    /// <li> <p> <code>group-ip-address</code> - The IP address of the transit gateway multicast group.</p> </li>
+    /// <li> <p> <code>is-group-member</code> - The resource is a group member. Valid values are <code>true</code> | <code>false</code>.</p> </li>
+    /// <li> <p> <code>is-group-source</code> - The resource is a group source. Valid values are <code>true</code> | <code>false</code>.</p> </li>
+    /// <li> <p> <code>member-type</code> - The member type. Valid values are <code>igmp</code> | <code>static</code>.</p> </li>
+    /// <li> <p> <code>resource-id</code> - The ID of the resource.</p> </li>
+    /// <li> <p> <code>resource-type</code> - The type of resource. Valid values are <code>vpc</code> | <code>vpn</code> | <code>direct-connect-gateway</code> | <code>tgw-peering</code>.</p> </li>
+    /// <li> <p> <code>source-type</code> - The source type. Valid values are <code>igmp</code> | <code>static</code>.</p> </li>
+    /// <li> <p> <code>subnet-id</code> - The ID of the subnet.</p> </li>
+    /// <li> <p> <code>transit-gateway-attachment-id</code> - The id of the transit gateway attachment.</p> </li>
     /// </ul>
-    pub fn set_filters(mut self, input: std::option::Option<std::vec::Vec<crate::types::Filter>>) -> Self {
+    pub fn set_filters(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::Filter>>,
+    ) -> Self {
         self.inner = self.inner.set_filters(input);
         self
     }
@@ -130,4 +148,3 @@ impl SearchTransitGatewayMulticastGroupsFluentBuilder  {
         self
     }
 }
-

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListAuditSuppressionsInput  {
+pub struct ListAuditSuppressionsInput {
     /// <p>An audit check name. Checks must be enabled for your account. (Use <code>DescribeAccountAuditConfiguration</code> to see the list of all checks, including those that are enabled or use <code>UpdateAccountAuditConfiguration</code> to select which checks are enabled.)</p>
     #[doc(hidden)]
     pub check_name: std::option::Option<std::string::String>,
@@ -21,11 +21,11 @@ pub struct ListAuditSuppressionsInput  {
 }
 impl ListAuditSuppressionsInput {
     /// <p>An audit check name. Checks must be enabled for your account. (Use <code>DescribeAccountAuditConfiguration</code> to see the list of all checks, including those that are enabled or use <code>UpdateAccountAuditConfiguration</code> to select which checks are enabled.)</p>
-    pub fn check_name(&self) -> std::option::Option<& str> {
+    pub fn check_name(&self) -> std::option::Option<&str> {
         self.check_name.as_deref()
     }
     /// <p>Information that identifies the noncompliant resource.</p>
-    pub fn resource_identifier(&self) -> std::option::Option<& crate::types::ResourceIdentifier> {
+    pub fn resource_identifier(&self) -> std::option::Option<&crate::types::ResourceIdentifier> {
         self.resource_identifier.as_ref()
     }
     /// <p> Determines whether suppressions are listed in ascending order by expiration date or not. If parameter isn't provided, <code>ascendingOrder=true</code>. </p>
@@ -33,7 +33,7 @@ impl ListAuditSuppressionsInput {
         self.ascending_order
     }
     /// <p> The token for the next set of results. </p>
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
     /// <p> The maximum number of results to return at one time. The default is 25. </p>
@@ -43,7 +43,9 @@ impl ListAuditSuppressionsInput {
 }
 impl ListAuditSuppressionsInput {
     /// Creates a new builder-style object to manufacture [`ListAuditSuppressionsInput`](crate::operation::list_audit_suppressions::ListAuditSuppressionsInput).
-    pub fn builder() -> crate::operation::list_audit_suppressions::builders::ListAuditSuppressionsInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::list_audit_suppressions::builders::ListAuditSuppressionsInputBuilder
+    {
         crate::operation::list_audit_suppressions::builders::ListAuditSuppressionsInputBuilder::default()
     }
 }
@@ -66,7 +68,8 @@ impl ListAuditSuppressionsInputBuilder {
     }
     /// <p>An audit check name. Checks must be enabled for your account. (Use <code>DescribeAccountAuditConfiguration</code> to see the list of all checks, including those that are enabled or use <code>UpdateAccountAuditConfiguration</code> to select which checks are enabled.)</p>
     pub fn set_check_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.check_name = input; self
+        self.check_name = input;
+        self
     }
     /// <p>Information that identifies the noncompliant resource.</p>
     pub fn resource_identifier(mut self, input: crate::types::ResourceIdentifier) -> Self {
@@ -74,8 +77,12 @@ impl ListAuditSuppressionsInputBuilder {
         self
     }
     /// <p>Information that identifies the noncompliant resource.</p>
-    pub fn set_resource_identifier(mut self, input: std::option::Option<crate::types::ResourceIdentifier>) -> Self {
-        self.resource_identifier = input; self
+    pub fn set_resource_identifier(
+        mut self,
+        input: std::option::Option<crate::types::ResourceIdentifier>,
+    ) -> Self {
+        self.resource_identifier = input;
+        self
     }
     /// <p> Determines whether suppressions are listed in ascending order by expiration date or not. If parameter isn't provided, <code>ascendingOrder=true</code>. </p>
     pub fn ascending_order(mut self, input: bool) -> Self {
@@ -84,7 +91,8 @@ impl ListAuditSuppressionsInputBuilder {
     }
     /// <p> Determines whether suppressions are listed in ascending order by expiration date or not. If parameter isn't provided, <code>ascendingOrder=true</code>. </p>
     pub fn set_ascending_order(mut self, input: std::option::Option<bool>) -> Self {
-        self.ascending_order = input; self
+        self.ascending_order = input;
+        self
     }
     /// <p> The token for the next set of results. </p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -93,7 +101,8 @@ impl ListAuditSuppressionsInputBuilder {
     }
     /// <p> The token for the next set of results. </p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input; self
+        self.next_token = input;
+        self
     }
     /// <p> The maximum number of results to return at one time. The default is 25. </p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -102,25 +111,24 @@ impl ListAuditSuppressionsInputBuilder {
     }
     /// <p> The maximum number of results to return at one time. The default is 25. </p>
     pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_results = input; self
+        self.max_results = input;
+        self
     }
     /// Consumes the builder and constructs a [`ListAuditSuppressionsInput`](crate::operation::list_audit_suppressions::ListAuditSuppressionsInput).
-    pub fn build(self) -> Result<crate::operation::list_audit_suppressions::ListAuditSuppressionsInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::list_audit_suppressions::ListAuditSuppressionsInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::list_audit_suppressions::ListAuditSuppressionsInput {
-                check_name: self.check_name
-                ,
-                resource_identifier: self.resource_identifier
-                ,
-                ascending_order: self.ascending_order
-                    .unwrap_or_default()
-                ,
-                next_token: self.next_token
-                ,
-                max_results: self.max_results
-                ,
-            }
+                check_name: self.check_name,
+                resource_identifier: self.resource_identifier,
+                ascending_order: self.ascending_order.unwrap_or_default(),
+                next_token: self.next_token,
+                max_results: self.max_results,
+            },
         )
     }
 }
-

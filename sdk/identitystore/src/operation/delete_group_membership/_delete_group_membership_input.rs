@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteGroupMembershipInput  {
+pub struct DeleteGroupMembershipInput {
     /// <p>The globally unique identifier for the identity store.</p>
     #[doc(hidden)]
     pub identity_store_id: std::option::Option<std::string::String>,
@@ -12,17 +12,19 @@ pub struct DeleteGroupMembershipInput  {
 }
 impl DeleteGroupMembershipInput {
     /// <p>The globally unique identifier for the identity store.</p>
-    pub fn identity_store_id(&self) -> std::option::Option<& str> {
+    pub fn identity_store_id(&self) -> std::option::Option<&str> {
         self.identity_store_id.as_deref()
     }
     /// <p>The identifier for a <code>GroupMembership</code> in an identity store.</p>
-    pub fn membership_id(&self) -> std::option::Option<& str> {
+    pub fn membership_id(&self) -> std::option::Option<&str> {
         self.membership_id.as_deref()
     }
 }
 impl DeleteGroupMembershipInput {
     /// Creates a new builder-style object to manufacture [`DeleteGroupMembershipInput`](crate::operation::delete_group_membership::DeleteGroupMembershipInput).
-    pub fn builder() -> crate::operation::delete_group_membership::builders::DeleteGroupMembershipInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::delete_group_membership::builders::DeleteGroupMembershipInputBuilder
+    {
         crate::operation::delete_group_membership::builders::DeleteGroupMembershipInputBuilder::default()
     }
 }
@@ -41,8 +43,12 @@ impl DeleteGroupMembershipInputBuilder {
         self
     }
     /// <p>The globally unique identifier for the identity store.</p>
-    pub fn set_identity_store_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.identity_store_id = input; self
+    pub fn set_identity_store_id(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.identity_store_id = input;
+        self
     }
     /// <p>The identifier for a <code>GroupMembership</code> in an identity store.</p>
     pub fn membership_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -51,18 +57,21 @@ impl DeleteGroupMembershipInputBuilder {
     }
     /// <p>The identifier for a <code>GroupMembership</code> in an identity store.</p>
     pub fn set_membership_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.membership_id = input; self
+        self.membership_id = input;
+        self
     }
     /// Consumes the builder and constructs a [`DeleteGroupMembershipInput`](crate::operation::delete_group_membership::DeleteGroupMembershipInput).
-    pub fn build(self) -> Result<crate::operation::delete_group_membership::DeleteGroupMembershipInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::delete_group_membership::DeleteGroupMembershipInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::delete_group_membership::DeleteGroupMembershipInput {
-                identity_store_id: self.identity_store_id
-                ,
-                membership_id: self.membership_id
-                ,
-            }
+                identity_store_id: self.identity_store_id,
+                membership_id: self.membership_id,
+            },
         )
     }
 }
-

@@ -2,21 +2,23 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct StopCrawlerScheduleInput  {
+pub struct StopCrawlerScheduleInput {
     /// <p>Name of the crawler whose schedule state to set.</p>
     #[doc(hidden)]
     pub crawler_name: std::option::Option<std::string::String>,
 }
 impl StopCrawlerScheduleInput {
     /// <p>Name of the crawler whose schedule state to set.</p>
-    pub fn crawler_name(&self) -> std::option::Option<& str> {
+    pub fn crawler_name(&self) -> std::option::Option<&str> {
         self.crawler_name.as_deref()
     }
 }
 impl StopCrawlerScheduleInput {
     /// Creates a new builder-style object to manufacture [`StopCrawlerScheduleInput`](crate::operation::stop_crawler_schedule::StopCrawlerScheduleInput).
-    pub fn builder() -> crate::operation::stop_crawler_schedule::builders::StopCrawlerScheduleInputBuilder {
-        crate::operation::stop_crawler_schedule::builders::StopCrawlerScheduleInputBuilder::default()
+    pub fn builder(
+    ) -> crate::operation::stop_crawler_schedule::builders::StopCrawlerScheduleInputBuilder {
+        crate::operation::stop_crawler_schedule::builders::StopCrawlerScheduleInputBuilder::default(
+        )
     }
 }
 
@@ -34,16 +36,20 @@ impl StopCrawlerScheduleInputBuilder {
     }
     /// <p>Name of the crawler whose schedule state to set.</p>
     pub fn set_crawler_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.crawler_name = input; self
+        self.crawler_name = input;
+        self
     }
     /// Consumes the builder and constructs a [`StopCrawlerScheduleInput`](crate::operation::stop_crawler_schedule::StopCrawlerScheduleInput).
-    pub fn build(self) -> Result<crate::operation::stop_crawler_schedule::StopCrawlerScheduleInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::stop_crawler_schedule::StopCrawlerScheduleInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::stop_crawler_schedule::StopCrawlerScheduleInput {
-                crawler_name: self.crawler_name
-                ,
-            }
+                crawler_name: self.crawler_name,
+            },
         )
     }
 }
-

@@ -44,4 +44,3 @@ pub mod builders;
 
 /// Error types that Amazon Pinpoint SMS and Voice Service can respond with.
 pub mod error;
-

@@ -3,7 +3,7 @@
 /// <p>The username and password that you use to connect to cluster endpoints.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct UsernamePassword  {
+pub struct UsernamePassword {
     /// <p>The username associated with the temporary credentials that you use to connect to cluster endpoints.</p>
     #[doc(hidden)]
     pub username: std::option::Option<std::string::String>,
@@ -13,15 +13,15 @@ pub struct UsernamePassword  {
 }
 impl UsernamePassword {
     /// <p>The username associated with the temporary credentials that you use to connect to cluster endpoints.</p>
-    pub fn username(&self) -> std::option::Option<& str> {
+    pub fn username(&self) -> std::option::Option<&str> {
         self.username.as_deref()
     }
     /// <p>The password associated with the temporary credentials that you use to connect to cluster endpoints.</p>
-    pub fn password(&self) -> std::option::Option<& str> {
+    pub fn password(&self) -> std::option::Option<&str> {
         self.password.as_deref()
     }
 }
-impl  std::fmt::Debug for UsernamePassword  {
+impl std::fmt::Debug for UsernamePassword {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UsernamePassword");
         formatter.field("username", &"*** Sensitive Data Redacted ***");
@@ -51,7 +51,8 @@ impl UsernamePasswordBuilder {
     }
     /// <p>The username associated with the temporary credentials that you use to connect to cluster endpoints.</p>
     pub fn set_username(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.username = input; self
+        self.username = input;
+        self
     }
     /// <p>The password associated with the temporary credentials that you use to connect to cluster endpoints.</p>
     pub fn password(mut self, input: impl Into<std::string::String>) -> Self {
@@ -60,15 +61,14 @@ impl UsernamePasswordBuilder {
     }
     /// <p>The password associated with the temporary credentials that you use to connect to cluster endpoints.</p>
     pub fn set_password(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.password = input; self
+        self.password = input;
+        self
     }
     /// Consumes the builder and constructs a [`UsernamePassword`](crate::types::UsernamePassword).
     pub fn build(self) -> crate::types::UsernamePassword {
         crate::types::UsernamePassword {
-            username: self.username
-            ,
-            password: self.password
-            ,
+            username: self.username,
+            password: self.password,
         }
     }
 }
@@ -80,4 +80,3 @@ impl std::fmt::Debug for UsernamePasswordBuilder {
         formatter.finish()
     }
 }
-

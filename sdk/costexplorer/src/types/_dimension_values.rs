@@ -3,38 +3,38 @@
 /// <p>The metadata that you can use to filter and group your results. You can use <code>GetDimensionValues</code> to find specific values.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DimensionValues  {
-    /// <p>The names of the metadata types that you can use to filter and group your results. For example, <code>AZ</code> returns a list of Availability Zones.</p> 
-    /// <p>Not all dimensions are supported in each API. Refer to the documentation for each specific API to see what is supported.</p> 
-    /// <p> <code>LINK_ACCOUNT_NAME</code> and <code>SERVICE_CODE</code> can only be used in <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_CostCategoryRule.html">CostCategoryRule</a>.</p> 
+pub struct DimensionValues {
+    /// <p>The names of the metadata types that you can use to filter and group your results. For example, <code>AZ</code> returns a list of Availability Zones.</p>
+    /// <p>Not all dimensions are supported in each API. Refer to the documentation for each specific API to see what is supported.</p>
+    /// <p> <code>LINK_ACCOUNT_NAME</code> and <code>SERVICE_CODE</code> can only be used in <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_CostCategoryRule.html">CostCategoryRule</a>.</p>
     /// <p> <code>ANOMALY_TOTAL_IMPACT_ABSOLUTE</code> and <code>ANOMALY_TOTAL_IMPACT_PERCENTAGE</code> can only be used in <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_AnomalySubscription.html">AnomalySubscriptions</a>.</p>
     #[doc(hidden)]
     pub key: std::option::Option<crate::types::Dimension>,
     /// <p>The metadata values that you can use to filter and group your results. You can use <code>GetDimensionValues</code> to find specific values.</p>
     #[doc(hidden)]
     pub values: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>The match options that you can use to filter your results.</p> 
-    /// <p> <code>MatchOptions</code> is only applicable for actions related to Cost Category and Anomaly Subscriptions. Refer to the documentation for each specific API to see what is supported.</p> 
+    /// <p>The match options that you can use to filter your results.</p>
+    /// <p> <code>MatchOptions</code> is only applicable for actions related to Cost Category and Anomaly Subscriptions. Refer to the documentation for each specific API to see what is supported.</p>
     /// <p>The default values for <code>MatchOptions</code> are <code>EQUALS</code> and <code>CASE_SENSITIVE</code>.</p>
     #[doc(hidden)]
     pub match_options: std::option::Option<std::vec::Vec<crate::types::MatchOption>>,
 }
 impl DimensionValues {
-    /// <p>The names of the metadata types that you can use to filter and group your results. For example, <code>AZ</code> returns a list of Availability Zones.</p> 
-    /// <p>Not all dimensions are supported in each API. Refer to the documentation for each specific API to see what is supported.</p> 
-    /// <p> <code>LINK_ACCOUNT_NAME</code> and <code>SERVICE_CODE</code> can only be used in <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_CostCategoryRule.html">CostCategoryRule</a>.</p> 
+    /// <p>The names of the metadata types that you can use to filter and group your results. For example, <code>AZ</code> returns a list of Availability Zones.</p>
+    /// <p>Not all dimensions are supported in each API. Refer to the documentation for each specific API to see what is supported.</p>
+    /// <p> <code>LINK_ACCOUNT_NAME</code> and <code>SERVICE_CODE</code> can only be used in <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_CostCategoryRule.html">CostCategoryRule</a>.</p>
     /// <p> <code>ANOMALY_TOTAL_IMPACT_ABSOLUTE</code> and <code>ANOMALY_TOTAL_IMPACT_PERCENTAGE</code> can only be used in <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_AnomalySubscription.html">AnomalySubscriptions</a>.</p>
-    pub fn key(&self) -> std::option::Option<& crate::types::Dimension> {
+    pub fn key(&self) -> std::option::Option<&crate::types::Dimension> {
         self.key.as_ref()
     }
     /// <p>The metadata values that you can use to filter and group your results. You can use <code>GetDimensionValues</code> to find specific values.</p>
-    pub fn values(&self) -> std::option::Option<& [std::string::String]> {
+    pub fn values(&self) -> std::option::Option<&[std::string::String]> {
         self.values.as_deref()
     }
-    /// <p>The match options that you can use to filter your results.</p> 
-    /// <p> <code>MatchOptions</code> is only applicable for actions related to Cost Category and Anomaly Subscriptions. Refer to the documentation for each specific API to see what is supported.</p> 
+    /// <p>The match options that you can use to filter your results.</p>
+    /// <p> <code>MatchOptions</code> is only applicable for actions related to Cost Category and Anomaly Subscriptions. Refer to the documentation for each specific API to see what is supported.</p>
     /// <p>The default values for <code>MatchOptions</code> are <code>EQUALS</code> and <code>CASE_SENSITIVE</code>.</p>
-    pub fn match_options(&self) -> std::option::Option<& [crate::types::MatchOption]> {
+    pub fn match_options(&self) -> std::option::Option<&[crate::types::MatchOption]> {
         self.match_options.as_deref()
     }
 }
@@ -54,20 +54,21 @@ pub struct DimensionValuesBuilder {
     pub(crate) match_options: std::option::Option<std::vec::Vec<crate::types::MatchOption>>,
 }
 impl DimensionValuesBuilder {
-    /// <p>The names of the metadata types that you can use to filter and group your results. For example, <code>AZ</code> returns a list of Availability Zones.</p> 
-    /// <p>Not all dimensions are supported in each API. Refer to the documentation for each specific API to see what is supported.</p> 
-    /// <p> <code>LINK_ACCOUNT_NAME</code> and <code>SERVICE_CODE</code> can only be used in <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_CostCategoryRule.html">CostCategoryRule</a>.</p> 
+    /// <p>The names of the metadata types that you can use to filter and group your results. For example, <code>AZ</code> returns a list of Availability Zones.</p>
+    /// <p>Not all dimensions are supported in each API. Refer to the documentation for each specific API to see what is supported.</p>
+    /// <p> <code>LINK_ACCOUNT_NAME</code> and <code>SERVICE_CODE</code> can only be used in <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_CostCategoryRule.html">CostCategoryRule</a>.</p>
     /// <p> <code>ANOMALY_TOTAL_IMPACT_ABSOLUTE</code> and <code>ANOMALY_TOTAL_IMPACT_PERCENTAGE</code> can only be used in <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_AnomalySubscription.html">AnomalySubscriptions</a>.</p>
     pub fn key(mut self, input: crate::types::Dimension) -> Self {
         self.key = Some(input);
         self
     }
-    /// <p>The names of the metadata types that you can use to filter and group your results. For example, <code>AZ</code> returns a list of Availability Zones.</p> 
-    /// <p>Not all dimensions are supported in each API. Refer to the documentation for each specific API to see what is supported.</p> 
-    /// <p> <code>LINK_ACCOUNT_NAME</code> and <code>SERVICE_CODE</code> can only be used in <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_CostCategoryRule.html">CostCategoryRule</a>.</p> 
+    /// <p>The names of the metadata types that you can use to filter and group your results. For example, <code>AZ</code> returns a list of Availability Zones.</p>
+    /// <p>Not all dimensions are supported in each API. Refer to the documentation for each specific API to see what is supported.</p>
+    /// <p> <code>LINK_ACCOUNT_NAME</code> and <code>SERVICE_CODE</code> can only be used in <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_CostCategoryRule.html">CostCategoryRule</a>.</p>
     /// <p> <code>ANOMALY_TOTAL_IMPACT_ABSOLUTE</code> and <code>ANOMALY_TOTAL_IMPACT_PERCENTAGE</code> can only be used in <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_AnomalySubscription.html">AnomalySubscriptions</a>.</p>
     pub fn set_key(mut self, input: std::option::Option<crate::types::Dimension>) -> Self {
-        self.key = input; self
+        self.key = input;
+        self
     }
     /// Appends an item to `values`.
     ///
@@ -76,43 +77,47 @@ impl DimensionValuesBuilder {
     /// <p>The metadata values that you can use to filter and group your results. You can use <code>GetDimensionValues</code> to find specific values.</p>
     pub fn values(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.values.unwrap_or_default();
-                        v.push(input.into());
-                        self.values = Some(v);
-                        self
+        v.push(input.into());
+        self.values = Some(v);
+        self
     }
     /// <p>The metadata values that you can use to filter and group your results. You can use <code>GetDimensionValues</code> to find specific values.</p>
-    pub fn set_values(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-        self.values = input; self
+    pub fn set_values(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
+        self.values = input;
+        self
     }
     /// Appends an item to `match_options`.
     ///
     /// To override the contents of this collection use [`set_match_options`](Self::set_match_options).
     ///
-    /// <p>The match options that you can use to filter your results.</p> 
-    /// <p> <code>MatchOptions</code> is only applicable for actions related to Cost Category and Anomaly Subscriptions. Refer to the documentation for each specific API to see what is supported.</p> 
+    /// <p>The match options that you can use to filter your results.</p>
+    /// <p> <code>MatchOptions</code> is only applicable for actions related to Cost Category and Anomaly Subscriptions. Refer to the documentation for each specific API to see what is supported.</p>
     /// <p>The default values for <code>MatchOptions</code> are <code>EQUALS</code> and <code>CASE_SENSITIVE</code>.</p>
     pub fn match_options(mut self, input: crate::types::MatchOption) -> Self {
         let mut v = self.match_options.unwrap_or_default();
-                        v.push(input);
-                        self.match_options = Some(v);
-                        self
+        v.push(input);
+        self.match_options = Some(v);
+        self
     }
-    /// <p>The match options that you can use to filter your results.</p> 
-    /// <p> <code>MatchOptions</code> is only applicable for actions related to Cost Category and Anomaly Subscriptions. Refer to the documentation for each specific API to see what is supported.</p> 
+    /// <p>The match options that you can use to filter your results.</p>
+    /// <p> <code>MatchOptions</code> is only applicable for actions related to Cost Category and Anomaly Subscriptions. Refer to the documentation for each specific API to see what is supported.</p>
     /// <p>The default values for <code>MatchOptions</code> are <code>EQUALS</code> and <code>CASE_SENSITIVE</code>.</p>
-    pub fn set_match_options(mut self, input: std::option::Option<std::vec::Vec<crate::types::MatchOption>>) -> Self {
-        self.match_options = input; self
+    pub fn set_match_options(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::MatchOption>>,
+    ) -> Self {
+        self.match_options = input;
+        self
     }
     /// Consumes the builder and constructs a [`DimensionValues`](crate::types::DimensionValues).
     pub fn build(self) -> crate::types::DimensionValues {
         crate::types::DimensionValues {
-            key: self.key
-            ,
-            values: self.values
-            ,
-            match_options: self.match_options
-            ,
+            key: self.key,
+            values: self.values,
+            match_options: self.match_options,
         }
     }
 }
-

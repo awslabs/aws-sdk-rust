@@ -74,7 +74,7 @@ fn calculate_string_to_sign(
     let mut date_buffer = Vec::new();
     write_headers_to(&[date_header], &mut date_buffer).unwrap();
     writeln!(sts, "{}", sha256_hex_string(&date_buffer)).unwrap();
-    write!(sts, "{}", sha256_hex_string(&message_payload)).unwrap();
+    write!(sts, "{}", sha256_hex_string(message_payload)).unwrap();
     sts
 }
 

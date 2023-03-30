@@ -2,14 +2,14 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct BatchGetRecordInput  {
+pub struct BatchGetRecordInput {
     /// <p>A list of <code>FeatureGroup</code> names, with their corresponding <code>RecordIdentifier</code> value, and Feature name that have been requested to be retrieved in batch.</p>
     #[doc(hidden)]
     pub identifiers: std::option::Option<std::vec::Vec<crate::types::BatchGetRecordIdentifier>>,
 }
 impl BatchGetRecordInput {
     /// <p>A list of <code>FeatureGroup</code> names, with their corresponding <code>RecordIdentifier</code> value, and Feature name that have been requested to be retrieved in batch.</p>
-    pub fn identifiers(&self) -> std::option::Option<& [crate::types::BatchGetRecordIdentifier]> {
+    pub fn identifiers(&self) -> std::option::Option<&[crate::types::BatchGetRecordIdentifier]> {
         self.identifiers.as_deref()
     }
 }
@@ -24,7 +24,8 @@ impl BatchGetRecordInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct BatchGetRecordInputBuilder {
-    pub(crate) identifiers: std::option::Option<std::vec::Vec<crate::types::BatchGetRecordIdentifier>>,
+    pub(crate) identifiers:
+        std::option::Option<std::vec::Vec<crate::types::BatchGetRecordIdentifier>>,
 }
 impl BatchGetRecordInputBuilder {
     /// Appends an item to `identifiers`.
@@ -34,22 +35,27 @@ impl BatchGetRecordInputBuilder {
     /// <p>A list of <code>FeatureGroup</code> names, with their corresponding <code>RecordIdentifier</code> value, and Feature name that have been requested to be retrieved in batch.</p>
     pub fn identifiers(mut self, input: crate::types::BatchGetRecordIdentifier) -> Self {
         let mut v = self.identifiers.unwrap_or_default();
-                        v.push(input);
-                        self.identifiers = Some(v);
-                        self
+        v.push(input);
+        self.identifiers = Some(v);
+        self
     }
     /// <p>A list of <code>FeatureGroup</code> names, with their corresponding <code>RecordIdentifier</code> value, and Feature name that have been requested to be retrieved in batch.</p>
-    pub fn set_identifiers(mut self, input: std::option::Option<std::vec::Vec<crate::types::BatchGetRecordIdentifier>>) -> Self {
-        self.identifiers = input; self
+    pub fn set_identifiers(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::BatchGetRecordIdentifier>>,
+    ) -> Self {
+        self.identifiers = input;
+        self
     }
     /// Consumes the builder and constructs a [`BatchGetRecordInput`](crate::operation::batch_get_record::BatchGetRecordInput).
-    pub fn build(self) -> Result<crate::operation::batch_get_record::BatchGetRecordInput, aws_smithy_http::operation::error::BuildError> {
-        Ok(
-            crate::operation::batch_get_record::BatchGetRecordInput {
-                identifiers: self.identifiers
-                ,
-            }
-        )
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::batch_get_record::BatchGetRecordInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        Ok(crate::operation::batch_get_record::BatchGetRecordInput {
+            identifiers: self.identifiers,
+        })
     }
 }
-

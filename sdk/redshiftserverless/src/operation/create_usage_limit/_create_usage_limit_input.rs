@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateUsageLimitInput  {
+pub struct CreateUsageLimitInput {
     /// <p>The Amazon Resource Name (ARN) of the Amazon Redshift Serverless resource to create the usage limit for.</p>
     #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
@@ -21,11 +21,11 @@ pub struct CreateUsageLimitInput  {
 }
 impl CreateUsageLimitInput {
     /// <p>The Amazon Resource Name (ARN) of the Amazon Redshift Serverless resource to create the usage limit for.</p>
-    pub fn resource_arn(&self) -> std::option::Option<& str> {
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
         self.resource_arn.as_deref()
     }
     /// <p>The type of Amazon Redshift Serverless usage to create a usage limit for.</p>
-    pub fn usage_type(&self) -> std::option::Option<& crate::types::UsageLimitUsageType> {
+    pub fn usage_type(&self) -> std::option::Option<&crate::types::UsageLimitUsageType> {
         self.usage_type.as_ref()
     }
     /// <p>The limit amount. If time-based, this amount is in Redshift Processing Units (RPU) consumed per hour. If data-based, this amount is in terabytes (TB) of data transferred between Regions in cross-account sharing. The value must be a positive number.</p>
@@ -33,17 +33,18 @@ impl CreateUsageLimitInput {
         self.amount
     }
     /// <p>The time period that the amount applies to. A weekly period begins on Sunday. The default is monthly.</p>
-    pub fn period(&self) -> std::option::Option<& crate::types::UsageLimitPeriod> {
+    pub fn period(&self) -> std::option::Option<&crate::types::UsageLimitPeriod> {
         self.period.as_ref()
     }
     /// <p>The action that Amazon Redshift Serverless takes when the limit is reached. The default is log.</p>
-    pub fn breach_action(&self) -> std::option::Option<& crate::types::UsageLimitBreachAction> {
+    pub fn breach_action(&self) -> std::option::Option<&crate::types::UsageLimitBreachAction> {
         self.breach_action.as_ref()
     }
 }
 impl CreateUsageLimitInput {
     /// Creates a new builder-style object to manufacture [`CreateUsageLimitInput`](crate::operation::create_usage_limit::CreateUsageLimitInput).
-    pub fn builder() -> crate::operation::create_usage_limit::builders::CreateUsageLimitInputBuilder {
+    pub fn builder() -> crate::operation::create_usage_limit::builders::CreateUsageLimitInputBuilder
+    {
         crate::operation::create_usage_limit::builders::CreateUsageLimitInputBuilder::default()
     }
 }
@@ -66,7 +67,8 @@ impl CreateUsageLimitInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the Amazon Redshift Serverless resource to create the usage limit for.</p>
     pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.resource_arn = input; self
+        self.resource_arn = input;
+        self
     }
     /// <p>The type of Amazon Redshift Serverless usage to create a usage limit for.</p>
     pub fn usage_type(mut self, input: crate::types::UsageLimitUsageType) -> Self {
@@ -74,8 +76,12 @@ impl CreateUsageLimitInputBuilder {
         self
     }
     /// <p>The type of Amazon Redshift Serverless usage to create a usage limit for.</p>
-    pub fn set_usage_type(mut self, input: std::option::Option<crate::types::UsageLimitUsageType>) -> Self {
-        self.usage_type = input; self
+    pub fn set_usage_type(
+        mut self,
+        input: std::option::Option<crate::types::UsageLimitUsageType>,
+    ) -> Self {
+        self.usage_type = input;
+        self
     }
     /// <p>The limit amount. If time-based, this amount is in Redshift Processing Units (RPU) consumed per hour. If data-based, this amount is in terabytes (TB) of data transferred between Regions in cross-account sharing. The value must be a positive number.</p>
     pub fn amount(mut self, input: i64) -> Self {
@@ -84,7 +90,8 @@ impl CreateUsageLimitInputBuilder {
     }
     /// <p>The limit amount. If time-based, this amount is in Redshift Processing Units (RPU) consumed per hour. If data-based, this amount is in terabytes (TB) of data transferred between Regions in cross-account sharing. The value must be a positive number.</p>
     pub fn set_amount(mut self, input: std::option::Option<i64>) -> Self {
-        self.amount = input; self
+        self.amount = input;
+        self
     }
     /// <p>The time period that the amount applies to. A weekly period begins on Sunday. The default is monthly.</p>
     pub fn period(mut self, input: crate::types::UsageLimitPeriod) -> Self {
@@ -92,8 +99,12 @@ impl CreateUsageLimitInputBuilder {
         self
     }
     /// <p>The time period that the amount applies to. A weekly period begins on Sunday. The default is monthly.</p>
-    pub fn set_period(mut self, input: std::option::Option<crate::types::UsageLimitPeriod>) -> Self {
-        self.period = input; self
+    pub fn set_period(
+        mut self,
+        input: std::option::Option<crate::types::UsageLimitPeriod>,
+    ) -> Self {
+        self.period = input;
+        self
     }
     /// <p>The action that Amazon Redshift Serverless takes when the limit is reached. The default is log.</p>
     pub fn breach_action(mut self, input: crate::types::UsageLimitBreachAction) -> Self {
@@ -101,25 +112,28 @@ impl CreateUsageLimitInputBuilder {
         self
     }
     /// <p>The action that Amazon Redshift Serverless takes when the limit is reached. The default is log.</p>
-    pub fn set_breach_action(mut self, input: std::option::Option<crate::types::UsageLimitBreachAction>) -> Self {
-        self.breach_action = input; self
+    pub fn set_breach_action(
+        mut self,
+        input: std::option::Option<crate::types::UsageLimitBreachAction>,
+    ) -> Self {
+        self.breach_action = input;
+        self
     }
     /// Consumes the builder and constructs a [`CreateUsageLimitInput`](crate::operation::create_usage_limit::CreateUsageLimitInput).
-    pub fn build(self) -> Result<crate::operation::create_usage_limit::CreateUsageLimitInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::create_usage_limit::CreateUsageLimitInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::create_usage_limit::CreateUsageLimitInput {
-                resource_arn: self.resource_arn
-                ,
-                usage_type: self.usage_type
-                ,
-                amount: self.amount
-                ,
-                period: self.period
-                ,
-                breach_action: self.breach_action
-                ,
-            }
+                resource_arn: self.resource_arn,
+                usage_type: self.usage_type,
+                amount: self.amount,
+                period: self.period,
+                breach_action: self.breach_action,
+            },
         )
     }
 }
-

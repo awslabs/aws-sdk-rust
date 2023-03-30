@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct QueryTableRowsOutput  {
+pub struct QueryTableRowsOutput {
     /// <p> The list of columns in the table whose row data is returned in the result. </p>
     #[doc(hidden)]
     pub column_ids: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -19,15 +19,15 @@ pub struct QueryTableRowsOutput  {
 }
 impl QueryTableRowsOutput {
     /// <p> The list of columns in the table whose row data is returned in the result. </p>
-    pub fn column_ids(&self) -> std::option::Option<& [std::string::String]> {
+    pub fn column_ids(&self) -> std::option::Option<&[std::string::String]> {
         self.column_ids.as_deref()
     }
     /// <p> The list of rows in the table that match the query filter. </p>
-    pub fn rows(&self) -> std::option::Option<& [crate::types::TableRow]> {
+    pub fn rows(&self) -> std::option::Option<&[crate::types::TableRow]> {
         self.rows.as_deref()
     }
     /// <p> Provides the pagination token to load the next page if there are more results matching the request. If a pagination token is not present in the response, it means that all data matching the request has been loaded. </p>
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
     /// <p> Indicates the cursor of the workbook at which the data returned by this request is read. Workbook cursor keeps increasing with every update and the increments are not sequential. </p>
@@ -36,10 +36,10 @@ impl QueryTableRowsOutput {
     }
 }
 impl aws_http::request_id::RequestId for QueryTableRowsOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl QueryTableRowsOutput {
     /// Creates a new builder-style object to manufacture [`QueryTableRowsOutput`](crate::operation::query_table_rows::QueryTableRowsOutput).
     pub fn builder() -> crate::operation::query_table_rows::builders::QueryTableRowsOutputBuilder {
@@ -65,13 +65,17 @@ impl QueryTableRowsOutputBuilder {
     /// <p> The list of columns in the table whose row data is returned in the result. </p>
     pub fn column_ids(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.column_ids.unwrap_or_default();
-                        v.push(input.into());
-                        self.column_ids = Some(v);
-                        self
+        v.push(input.into());
+        self.column_ids = Some(v);
+        self
     }
     /// <p> The list of columns in the table whose row data is returned in the result. </p>
-    pub fn set_column_ids(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-        self.column_ids = input; self
+    pub fn set_column_ids(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
+        self.column_ids = input;
+        self
     }
     /// Appends an item to `rows`.
     ///
@@ -80,13 +84,17 @@ impl QueryTableRowsOutputBuilder {
     /// <p> The list of rows in the table that match the query filter. </p>
     pub fn rows(mut self, input: crate::types::TableRow) -> Self {
         let mut v = self.rows.unwrap_or_default();
-                        v.push(input);
-                        self.rows = Some(v);
-                        self
+        v.push(input);
+        self.rows = Some(v);
+        self
     }
     /// <p> The list of rows in the table that match the query filter. </p>
-    pub fn set_rows(mut self, input: std::option::Option<std::vec::Vec<crate::types::TableRow>>) -> Self {
-        self.rows = input; self
+    pub fn set_rows(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::TableRow>>,
+    ) -> Self {
+        self.rows = input;
+        self
     }
     /// <p> Provides the pagination token to load the next page if there are more results matching the request. If a pagination token is not present in the response, it means that all data matching the request has been loaded. </p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -95,7 +103,8 @@ impl QueryTableRowsOutputBuilder {
     }
     /// <p> Provides the pagination token to load the next page if there are more results matching the request. If a pagination token is not present in the response, it means that all data matching the request has been loaded. </p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input; self
+        self.next_token = input;
+        self
     }
     /// <p> Indicates the cursor of the workbook at which the data returned by this request is read. Workbook cursor keeps increasing with every update and the increments are not sequential. </p>
     pub fn workbook_cursor(mut self, input: i64) -> Self {
@@ -104,31 +113,26 @@ impl QueryTableRowsOutputBuilder {
     }
     /// <p> Indicates the cursor of the workbook at which the data returned by this request is read. Workbook cursor keeps increasing with every update and the increments are not sequential. </p>
     pub fn set_workbook_cursor(mut self, input: std::option::Option<i64>) -> Self {
-        self.workbook_cursor = input; self
+        self.workbook_cursor = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`QueryTableRowsOutput`](crate::operation::query_table_rows::QueryTableRowsOutput).
     pub fn build(self) -> crate::operation::query_table_rows::QueryTableRowsOutput {
         crate::operation::query_table_rows::QueryTableRowsOutput {
-            column_ids: self.column_ids
-            ,
-            rows: self.rows
-            ,
-            next_token: self.next_token
-            ,
-            workbook_cursor: self.workbook_cursor
-                .unwrap_or_default()
-            ,
+            column_ids: self.column_ids,
+            rows: self.rows,
+            next_token: self.next_token,
+            workbook_cursor: self.workbook_cursor.unwrap_or_default(),
             _request_id: self._request_id,
         }
     }
 }
-

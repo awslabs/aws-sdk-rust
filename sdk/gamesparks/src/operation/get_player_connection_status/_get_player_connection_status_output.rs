@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetPlayerConnectionStatusOutput  {
+pub struct GetPlayerConnectionStatusOutput {
     /// <p>The list of connection ids, one for each connection in use by the player.</p>
     #[doc(hidden)]
     pub connections: std::option::Option<std::vec::Vec<crate::types::Connection>>,
@@ -10,18 +10,18 @@ pub struct GetPlayerConnectionStatusOutput  {
 }
 impl GetPlayerConnectionStatusOutput {
     /// <p>The list of connection ids, one for each connection in use by the player.</p>
-    pub fn connections(&self) -> std::option::Option<& [crate::types::Connection]> {
+    pub fn connections(&self) -> std::option::Option<&[crate::types::Connection]> {
         self.connections.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for GetPlayerConnectionStatusOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl GetPlayerConnectionStatusOutput {
     /// Creates a new builder-style object to manufacture [`GetPlayerConnectionStatusOutput`](crate::operation::get_player_connection_status::GetPlayerConnectionStatusOutput).
-    pub fn builder() -> crate::operation::get_player_connection_status::builders::GetPlayerConnectionStatusOutputBuilder {
+    pub fn builder() -> crate::operation::get_player_connection_status::builders::GetPlayerConnectionStatusOutputBuilder{
         crate::operation::get_player_connection_status::builders::GetPlayerConnectionStatusOutputBuilder::default()
     }
 }
@@ -41,30 +41,34 @@ impl GetPlayerConnectionStatusOutputBuilder {
     /// <p>The list of connection ids, one for each connection in use by the player.</p>
     pub fn connections(mut self, input: crate::types::Connection) -> Self {
         let mut v = self.connections.unwrap_or_default();
-                        v.push(input);
-                        self.connections = Some(v);
-                        self
+        v.push(input);
+        self.connections = Some(v);
+        self
     }
     /// <p>The list of connection ids, one for each connection in use by the player.</p>
-    pub fn set_connections(mut self, input: std::option::Option<std::vec::Vec<crate::types::Connection>>) -> Self {
-        self.connections = input; self
+    pub fn set_connections(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::Connection>>,
+    ) -> Self {
+        self.connections = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`GetPlayerConnectionStatusOutput`](crate::operation::get_player_connection_status::GetPlayerConnectionStatusOutput).
-    pub fn build(self) -> crate::operation::get_player_connection_status::GetPlayerConnectionStatusOutput {
+    pub fn build(
+        self,
+    ) -> crate::operation::get_player_connection_status::GetPlayerConnectionStatusOutput {
         crate::operation::get_player_connection_status::GetPlayerConnectionStatusOutput {
-            connections: self.connections
-            ,
+            connections: self.connections,
             _request_id: self._request_id,
         }
     }
 }
-

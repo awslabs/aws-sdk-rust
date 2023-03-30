@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetContactPolicyOutput  {
+pub struct GetContactPolicyOutput {
     /// <p>The ARN of the contact or escalation plan.</p>
     #[doc(hidden)]
     pub contact_arn: std::option::Option<std::string::String>,
@@ -13,22 +13,23 @@ pub struct GetContactPolicyOutput  {
 }
 impl GetContactPolicyOutput {
     /// <p>The ARN of the contact or escalation plan.</p>
-    pub fn contact_arn(&self) -> std::option::Option<& str> {
+    pub fn contact_arn(&self) -> std::option::Option<&str> {
         self.contact_arn.as_deref()
     }
     /// <p>Details about the resource policy attached to the contact or escalation plan.</p>
-    pub fn policy(&self) -> std::option::Option<& str> {
+    pub fn policy(&self) -> std::option::Option<&str> {
         self.policy.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for GetContactPolicyOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl GetContactPolicyOutput {
     /// Creates a new builder-style object to manufacture [`GetContactPolicyOutput`](crate::operation::get_contact_policy::GetContactPolicyOutput).
-    pub fn builder() -> crate::operation::get_contact_policy::builders::GetContactPolicyOutputBuilder {
+    pub fn builder() -> crate::operation::get_contact_policy::builders::GetContactPolicyOutputBuilder
+    {
         crate::operation::get_contact_policy::builders::GetContactPolicyOutputBuilder::default()
     }
 }
@@ -49,7 +50,8 @@ impl GetContactPolicyOutputBuilder {
     }
     /// <p>The ARN of the contact or escalation plan.</p>
     pub fn set_contact_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.contact_arn = input; self
+        self.contact_arn = input;
+        self
     }
     /// <p>Details about the resource policy attached to the contact or escalation plan.</p>
     pub fn policy(mut self, input: impl Into<std::string::String>) -> Self {
@@ -58,26 +60,24 @@ impl GetContactPolicyOutputBuilder {
     }
     /// <p>Details about the resource policy attached to the contact or escalation plan.</p>
     pub fn set_policy(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.policy = input; self
+        self.policy = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`GetContactPolicyOutput`](crate::operation::get_contact_policy::GetContactPolicyOutput).
     pub fn build(self) -> crate::operation::get_contact_policy::GetContactPolicyOutput {
         crate::operation::get_contact_policy::GetContactPolicyOutput {
-            contact_arn: self.contact_arn
-            ,
-            policy: self.policy
-            ,
+            contact_arn: self.contact_arn,
+            policy: self.policy,
             _request_id: self._request_id,
         }
     }
 }
-

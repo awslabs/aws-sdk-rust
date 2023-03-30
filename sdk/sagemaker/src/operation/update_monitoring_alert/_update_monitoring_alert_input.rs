@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateMonitoringAlertInput  {
+pub struct UpdateMonitoringAlertInput {
     /// <p>The name of a monitoring schedule.</p>
     #[doc(hidden)]
     pub monitoring_schedule_name: std::option::Option<std::string::String>,
@@ -18,11 +18,11 @@ pub struct UpdateMonitoringAlertInput  {
 }
 impl UpdateMonitoringAlertInput {
     /// <p>The name of a monitoring schedule.</p>
-    pub fn monitoring_schedule_name(&self) -> std::option::Option<& str> {
+    pub fn monitoring_schedule_name(&self) -> std::option::Option<&str> {
         self.monitoring_schedule_name.as_deref()
     }
     /// <p>The name of a monitoring alert.</p>
-    pub fn monitoring_alert_name(&self) -> std::option::Option<& str> {
+    pub fn monitoring_alert_name(&self) -> std::option::Option<&str> {
         self.monitoring_alert_name.as_deref()
     }
     /// <p>Within <code>EvaluationPeriod</code>, how many execution failures will raise an alert.</p>
@@ -36,7 +36,9 @@ impl UpdateMonitoringAlertInput {
 }
 impl UpdateMonitoringAlertInput {
     /// Creates a new builder-style object to manufacture [`UpdateMonitoringAlertInput`](crate::operation::update_monitoring_alert::UpdateMonitoringAlertInput).
-    pub fn builder() -> crate::operation::update_monitoring_alert::builders::UpdateMonitoringAlertInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::update_monitoring_alert::builders::UpdateMonitoringAlertInputBuilder
+    {
         crate::operation::update_monitoring_alert::builders::UpdateMonitoringAlertInputBuilder::default()
     }
 }
@@ -57,8 +59,12 @@ impl UpdateMonitoringAlertInputBuilder {
         self
     }
     /// <p>The name of a monitoring schedule.</p>
-    pub fn set_monitoring_schedule_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.monitoring_schedule_name = input; self
+    pub fn set_monitoring_schedule_name(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.monitoring_schedule_name = input;
+        self
     }
     /// <p>The name of a monitoring alert.</p>
     pub fn monitoring_alert_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -66,8 +72,12 @@ impl UpdateMonitoringAlertInputBuilder {
         self
     }
     /// <p>The name of a monitoring alert.</p>
-    pub fn set_monitoring_alert_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.monitoring_alert_name = input; self
+    pub fn set_monitoring_alert_name(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.monitoring_alert_name = input;
+        self
     }
     /// <p>Within <code>EvaluationPeriod</code>, how many execution failures will raise an alert.</p>
     pub fn datapoints_to_alert(mut self, input: i32) -> Self {
@@ -76,7 +86,8 @@ impl UpdateMonitoringAlertInputBuilder {
     }
     /// <p>Within <code>EvaluationPeriod</code>, how many execution failures will raise an alert.</p>
     pub fn set_datapoints_to_alert(mut self, input: std::option::Option<i32>) -> Self {
-        self.datapoints_to_alert = input; self
+        self.datapoints_to_alert = input;
+        self
     }
     /// <p>The number of most recent monitoring executions to consider when evaluating alert status.</p>
     pub fn evaluation_period(mut self, input: i32) -> Self {
@@ -85,22 +96,23 @@ impl UpdateMonitoringAlertInputBuilder {
     }
     /// <p>The number of most recent monitoring executions to consider when evaluating alert status.</p>
     pub fn set_evaluation_period(mut self, input: std::option::Option<i32>) -> Self {
-        self.evaluation_period = input; self
+        self.evaluation_period = input;
+        self
     }
     /// Consumes the builder and constructs a [`UpdateMonitoringAlertInput`](crate::operation::update_monitoring_alert::UpdateMonitoringAlertInput).
-    pub fn build(self) -> Result<crate::operation::update_monitoring_alert::UpdateMonitoringAlertInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::update_monitoring_alert::UpdateMonitoringAlertInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::update_monitoring_alert::UpdateMonitoringAlertInput {
-                monitoring_schedule_name: self.monitoring_schedule_name
-                ,
-                monitoring_alert_name: self.monitoring_alert_name
-                ,
-                datapoints_to_alert: self.datapoints_to_alert
-                ,
-                evaluation_period: self.evaluation_period
-                ,
-            }
+                monitoring_schedule_name: self.monitoring_schedule_name,
+                monitoring_alert_name: self.monitoring_alert_name,
+                datapoints_to_alert: self.datapoints_to_alert,
+                evaluation_period: self.evaluation_period,
+            },
         )
     }
 }
-

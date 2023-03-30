@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateConnectPeerInput  {
+pub struct CreateConnectPeerInput {
     /// <p>The ID of the connection attachment.</p>
     #[doc(hidden)]
     pub connect_attachment_id: std::option::Option<std::string::String>,
@@ -27,37 +27,38 @@ pub struct CreateConnectPeerInput  {
 }
 impl CreateConnectPeerInput {
     /// <p>The ID of the connection attachment.</p>
-    pub fn connect_attachment_id(&self) -> std::option::Option<& str> {
+    pub fn connect_attachment_id(&self) -> std::option::Option<&str> {
         self.connect_attachment_id.as_deref()
     }
     /// <p>A Connect peer core network address.</p>
-    pub fn core_network_address(&self) -> std::option::Option<& str> {
+    pub fn core_network_address(&self) -> std::option::Option<&str> {
         self.core_network_address.as_deref()
     }
     /// <p>The Connect peer address.</p>
-    pub fn peer_address(&self) -> std::option::Option<& str> {
+    pub fn peer_address(&self) -> std::option::Option<&str> {
         self.peer_address.as_deref()
     }
     /// <p>The Connect peer BGP options.</p>
-    pub fn bgp_options(&self) -> std::option::Option<& crate::types::BgpOptions> {
+    pub fn bgp_options(&self) -> std::option::Option<&crate::types::BgpOptions> {
         self.bgp_options.as_ref()
     }
     /// <p>The inside IP addresses used for BGP peering.</p>
-    pub fn inside_cidr_blocks(&self) -> std::option::Option<& [std::string::String]> {
+    pub fn inside_cidr_blocks(&self) -> std::option::Option<&[std::string::String]> {
         self.inside_cidr_blocks.as_deref()
     }
     /// <p>The tags associated with the peer request.</p>
-    pub fn tags(&self) -> std::option::Option<& [crate::types::Tag]> {
+    pub fn tags(&self) -> std::option::Option<&[crate::types::Tag]> {
         self.tags.as_deref()
     }
     /// <p>The client token associated with the request.</p>
-    pub fn client_token(&self) -> std::option::Option<& str> {
+    pub fn client_token(&self) -> std::option::Option<&str> {
         self.client_token.as_deref()
     }
 }
 impl CreateConnectPeerInput {
     /// Creates a new builder-style object to manufacture [`CreateConnectPeerInput`](crate::operation::create_connect_peer::CreateConnectPeerInput).
-    pub fn builder() -> crate::operation::create_connect_peer::builders::CreateConnectPeerInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::create_connect_peer::builders::CreateConnectPeerInputBuilder {
         crate::operation::create_connect_peer::builders::CreateConnectPeerInputBuilder::default()
     }
 }
@@ -81,8 +82,12 @@ impl CreateConnectPeerInputBuilder {
         self
     }
     /// <p>The ID of the connection attachment.</p>
-    pub fn set_connect_attachment_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.connect_attachment_id = input; self
+    pub fn set_connect_attachment_id(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.connect_attachment_id = input;
+        self
     }
     /// <p>A Connect peer core network address.</p>
     pub fn core_network_address(mut self, input: impl Into<std::string::String>) -> Self {
@@ -90,8 +95,12 @@ impl CreateConnectPeerInputBuilder {
         self
     }
     /// <p>A Connect peer core network address.</p>
-    pub fn set_core_network_address(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.core_network_address = input; self
+    pub fn set_core_network_address(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.core_network_address = input;
+        self
     }
     /// <p>The Connect peer address.</p>
     pub fn peer_address(mut self, input: impl Into<std::string::String>) -> Self {
@@ -100,7 +109,8 @@ impl CreateConnectPeerInputBuilder {
     }
     /// <p>The Connect peer address.</p>
     pub fn set_peer_address(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.peer_address = input; self
+        self.peer_address = input;
+        self
     }
     /// <p>The Connect peer BGP options.</p>
     pub fn bgp_options(mut self, input: crate::types::BgpOptions) -> Self {
@@ -109,7 +119,8 @@ impl CreateConnectPeerInputBuilder {
     }
     /// <p>The Connect peer BGP options.</p>
     pub fn set_bgp_options(mut self, input: std::option::Option<crate::types::BgpOptions>) -> Self {
-        self.bgp_options = input; self
+        self.bgp_options = input;
+        self
     }
     /// Appends an item to `inside_cidr_blocks`.
     ///
@@ -118,13 +129,17 @@ impl CreateConnectPeerInputBuilder {
     /// <p>The inside IP addresses used for BGP peering.</p>
     pub fn inside_cidr_blocks(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.inside_cidr_blocks.unwrap_or_default();
-                        v.push(input.into());
-                        self.inside_cidr_blocks = Some(v);
-                        self
+        v.push(input.into());
+        self.inside_cidr_blocks = Some(v);
+        self
     }
     /// <p>The inside IP addresses used for BGP peering.</p>
-    pub fn set_inside_cidr_blocks(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-        self.inside_cidr_blocks = input; self
+    pub fn set_inside_cidr_blocks(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
+        self.inside_cidr_blocks = input;
+        self
     }
     /// Appends an item to `tags`.
     ///
@@ -133,13 +148,17 @@ impl CreateConnectPeerInputBuilder {
     /// <p>The tags associated with the peer request.</p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
-                        v.push(input);
-                        self.tags = Some(v);
-                        self
+        v.push(input);
+        self.tags = Some(v);
+        self
     }
     /// <p>The tags associated with the peer request.</p>
-    pub fn set_tags(mut self, input: std::option::Option<std::vec::Vec<crate::types::Tag>>) -> Self {
-        self.tags = input; self
+    pub fn set_tags(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::Tag>>,
+    ) -> Self {
+        self.tags = input;
+        self
     }
     /// <p>The client token associated with the request.</p>
     pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -148,28 +167,26 @@ impl CreateConnectPeerInputBuilder {
     }
     /// <p>The client token associated with the request.</p>
     pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.client_token = input; self
+        self.client_token = input;
+        self
     }
     /// Consumes the builder and constructs a [`CreateConnectPeerInput`](crate::operation::create_connect_peer::CreateConnectPeerInput).
-    pub fn build(self) -> Result<crate::operation::create_connect_peer::CreateConnectPeerInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::create_connect_peer::CreateConnectPeerInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::create_connect_peer::CreateConnectPeerInput {
-                connect_attachment_id: self.connect_attachment_id
-                ,
-                core_network_address: self.core_network_address
-                ,
-                peer_address: self.peer_address
-                ,
-                bgp_options: self.bgp_options
-                ,
-                inside_cidr_blocks: self.inside_cidr_blocks
-                ,
-                tags: self.tags
-                ,
-                client_token: self.client_token
-                ,
-            }
+                connect_attachment_id: self.connect_attachment_id,
+                core_network_address: self.core_network_address,
+                peer_address: self.peer_address,
+                bgp_options: self.bgp_options,
+                inside_cidr_blocks: self.inside_cidr_blocks,
+                tags: self.tags,
+                client_token: self.client_token,
+            },
         )
     }
 }
-

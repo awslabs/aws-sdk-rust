@@ -3,7 +3,7 @@
 /// <p> Information about an instance of an AWS resource associated with a project. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Resource  {
+pub struct Resource {
     /// <p> Simplified name for type of AWS resource (e.g., bucket is an Amazon S3 bucket). </p>
     #[doc(hidden)]
     pub r#type: std::option::Option<std::string::String>,
@@ -18,27 +18,31 @@ pub struct Resource  {
     pub feature: std::option::Option<std::string::String>,
     /// <p> Key-value attribute pairs. </p>
     #[doc(hidden)]
-    pub attributes: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub attributes:
+        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl Resource {
     /// <p> Simplified name for type of AWS resource (e.g., bucket is an Amazon S3 bucket). </p>
-    pub fn r#type(&self) -> std::option::Option<& str> {
+    pub fn r#type(&self) -> std::option::Option<&str> {
         self.r#type.as_deref()
     }
     /// <p> Name of the AWS resource (e.g., for an Amazon S3 bucket this is the name of the bucket). </p>
-    pub fn name(&self) -> std::option::Option<& str> {
+    pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p> AWS resource name which uniquely identifies the resource in AWS systems. </p>
-    pub fn arn(&self) -> std::option::Option<& str> {
+    pub fn arn(&self) -> std::option::Option<&str> {
         self.arn.as_deref()
     }
     /// <p> Identifies which feature in AWS Mobile Hub is associated with this AWS resource. </p>
-    pub fn feature(&self) -> std::option::Option<& str> {
+    pub fn feature(&self) -> std::option::Option<&str> {
         self.feature.as_deref()
     }
     /// <p> Key-value attribute pairs. </p>
-    pub fn attributes(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
+    pub fn attributes(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
         self.attributes.as_ref()
     }
 }
@@ -57,7 +61,8 @@ pub struct ResourceBuilder {
     pub(crate) name: std::option::Option<std::string::String>,
     pub(crate) arn: std::option::Option<std::string::String>,
     pub(crate) feature: std::option::Option<std::string::String>,
-    pub(crate) attributes: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub(crate) attributes:
+        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl ResourceBuilder {
     /// <p> Simplified name for type of AWS resource (e.g., bucket is an Amazon S3 bucket). </p>
@@ -67,7 +72,8 @@ impl ResourceBuilder {
     }
     /// <p> Simplified name for type of AWS resource (e.g., bucket is an Amazon S3 bucket). </p>
     pub fn set_type(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.r#type = input; self
+        self.r#type = input;
+        self
     }
     /// <p> Name of the AWS resource (e.g., for an Amazon S3 bucket this is the name of the bucket). </p>
     pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -76,7 +82,8 @@ impl ResourceBuilder {
     }
     /// <p> Name of the AWS resource (e.g., for an Amazon S3 bucket this is the name of the bucket). </p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input; self
+        self.name = input;
+        self
     }
     /// <p> AWS resource name which uniquely identifies the resource in AWS systems. </p>
     pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -85,7 +92,8 @@ impl ResourceBuilder {
     }
     /// <p> AWS resource name which uniquely identifies the resource in AWS systems. </p>
     pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.arn = input; self
+        self.arn = input;
+        self
     }
     /// <p> Identifies which feature in AWS Mobile Hub is associated with this AWS resource. </p>
     pub fn feature(mut self, input: impl Into<std::string::String>) -> Self {
@@ -94,37 +102,42 @@ impl ResourceBuilder {
     }
     /// <p> Identifies which feature in AWS Mobile Hub is associated with this AWS resource. </p>
     pub fn set_feature(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.feature = input; self
+        self.feature = input;
+        self
     }
     /// Adds a key-value pair to `attributes`.
     ///
     /// To override the contents of this collection use [`set_attributes`](Self::set_attributes).
     ///
     /// <p> Key-value attribute pairs. </p>
-    pub fn attributes(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
+    pub fn attributes(
+        mut self,
+        k: impl Into<std::string::String>,
+        v: impl Into<std::string::String>,
+    ) -> Self {
         let mut hash_map = self.attributes.unwrap_or_default();
-                        hash_map.insert(k.into(), v.into());
-                        self.attributes = Some(hash_map);
-                        self
+        hash_map.insert(k.into(), v.into());
+        self.attributes = Some(hash_map);
+        self
     }
     /// <p> Key-value attribute pairs. </p>
-    pub fn set_attributes(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
-        self.attributes = input; self
+    pub fn set_attributes(
+        mut self,
+        input: std::option::Option<
+            std::collections::HashMap<std::string::String, std::string::String>,
+        >,
+    ) -> Self {
+        self.attributes = input;
+        self
     }
     /// Consumes the builder and constructs a [`Resource`](crate::types::Resource).
     pub fn build(self) -> crate::types::Resource {
         crate::types::Resource {
-            r#type: self.r#type
-            ,
-            name: self.name
-            ,
-            arn: self.arn
-            ,
-            feature: self.feature
-            ,
-            attributes: self.attributes
-            ,
+            r#type: self.r#type,
+            name: self.name,
+            arn: self.arn,
+            feature: self.feature,
+            attributes: self.attributes,
         }
     }
 }
-

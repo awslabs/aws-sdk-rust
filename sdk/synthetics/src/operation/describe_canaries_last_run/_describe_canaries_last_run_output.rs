@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeCanariesLastRunOutput  {
+pub struct DescribeCanariesLastRunOutput {
     /// <p>An array that contains the information from the most recent run of each canary.</p>
     #[doc(hidden)]
     pub canaries_last_run: std::option::Option<std::vec::Vec<crate::types::CanaryLastRun>>,
@@ -13,22 +13,24 @@ pub struct DescribeCanariesLastRunOutput  {
 }
 impl DescribeCanariesLastRunOutput {
     /// <p>An array that contains the information from the most recent run of each canary.</p>
-    pub fn canaries_last_run(&self) -> std::option::Option<& [crate::types::CanaryLastRun]> {
+    pub fn canaries_last_run(&self) -> std::option::Option<&[crate::types::CanaryLastRun]> {
         self.canaries_last_run.as_deref()
     }
     /// <p>A token that indicates that there is more data available. You can use this token in a subsequent <code>DescribeCanariesLastRun</code> operation to retrieve the next set of results.</p>
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for DescribeCanariesLastRunOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl DescribeCanariesLastRunOutput {
     /// Creates a new builder-style object to manufacture [`DescribeCanariesLastRunOutput`](crate::operation::describe_canaries_last_run::DescribeCanariesLastRunOutput).
-    pub fn builder() -> crate::operation::describe_canaries_last_run::builders::DescribeCanariesLastRunOutputBuilder {
+    pub fn builder(
+    ) -> crate::operation::describe_canaries_last_run::builders::DescribeCanariesLastRunOutputBuilder
+    {
         crate::operation::describe_canaries_last_run::builders::DescribeCanariesLastRunOutputBuilder::default()
     }
 }
@@ -49,13 +51,17 @@ impl DescribeCanariesLastRunOutputBuilder {
     /// <p>An array that contains the information from the most recent run of each canary.</p>
     pub fn canaries_last_run(mut self, input: crate::types::CanaryLastRun) -> Self {
         let mut v = self.canaries_last_run.unwrap_or_default();
-                        v.push(input);
-                        self.canaries_last_run = Some(v);
-                        self
+        v.push(input);
+        self.canaries_last_run = Some(v);
+        self
     }
     /// <p>An array that contains the information from the most recent run of each canary.</p>
-    pub fn set_canaries_last_run(mut self, input: std::option::Option<std::vec::Vec<crate::types::CanaryLastRun>>) -> Self {
-        self.canaries_last_run = input; self
+    pub fn set_canaries_last_run(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::CanaryLastRun>>,
+    ) -> Self {
+        self.canaries_last_run = input;
+        self
     }
     /// <p>A token that indicates that there is more data available. You can use this token in a subsequent <code>DescribeCanariesLastRun</code> operation to retrieve the next set of results.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -64,26 +70,26 @@ impl DescribeCanariesLastRunOutputBuilder {
     }
     /// <p>A token that indicates that there is more data available. You can use this token in a subsequent <code>DescribeCanariesLastRun</code> operation to retrieve the next set of results.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input; self
+        self.next_token = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`DescribeCanariesLastRunOutput`](crate::operation::describe_canaries_last_run::DescribeCanariesLastRunOutput).
-    pub fn build(self) -> crate::operation::describe_canaries_last_run::DescribeCanariesLastRunOutput {
+    pub fn build(
+        self,
+    ) -> crate::operation::describe_canaries_last_run::DescribeCanariesLastRunOutput {
         crate::operation::describe_canaries_last_run::DescribeCanariesLastRunOutput {
-            canaries_last_run: self.canaries_last_run
-            ,
-            next_token: self.next_token
-            ,
+            canaries_last_run: self.canaries_last_run,
+            next_token: self.next_token,
             _request_id: self._request_id,
         }
     }
 }
-

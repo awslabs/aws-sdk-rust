@@ -3,14 +3,14 @@
 /// <p>This structure contains the name of one of the metric namespaces that is listed in a filter of a metric stream.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct MetricStreamFilter  {
+pub struct MetricStreamFilter {
     /// <p>The name of the metric namespace in the filter.</p>
     #[doc(hidden)]
     pub namespace: std::option::Option<std::string::String>,
 }
 impl MetricStreamFilter {
     /// <p>The name of the metric namespace in the filter.</p>
-    pub fn namespace(&self) -> std::option::Option<& str> {
+    pub fn namespace(&self) -> std::option::Option<&str> {
         self.namespace.as_deref()
     }
 }
@@ -35,14 +35,13 @@ impl MetricStreamFilterBuilder {
     }
     /// <p>The name of the metric namespace in the filter.</p>
     pub fn set_namespace(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.namespace = input; self
+        self.namespace = input;
+        self
     }
     /// Consumes the builder and constructs a [`MetricStreamFilter`](crate::types::MetricStreamFilter).
     pub fn build(self) -> crate::types::MetricStreamFilter {
         crate::types::MetricStreamFilter {
-            namespace: self.namespace
-            ,
+            namespace: self.namespace,
         }
     }
 }
-

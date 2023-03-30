@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ColumnRowFilter  {
+pub struct ColumnRowFilter {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub column_name: std::option::Option<std::string::String>,
@@ -12,11 +12,11 @@ pub struct ColumnRowFilter  {
 }
 impl ColumnRowFilter {
     #[allow(missing_docs)] // documentation missing in model
-    pub fn column_name(&self) -> std::option::Option<& str> {
+    pub fn column_name(&self) -> std::option::Option<&str> {
         self.column_name.as_deref()
     }
     #[allow(missing_docs)] // documentation missing in model
-    pub fn row_filter_expression(&self) -> std::option::Option<& str> {
+    pub fn row_filter_expression(&self) -> std::option::Option<&str> {
         self.row_filter_expression.as_deref()
     }
 }
@@ -42,7 +42,8 @@ impl ColumnRowFilterBuilder {
     }
     #[allow(missing_docs)] // documentation missing in model
     pub fn set_column_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.column_name = input; self
+        self.column_name = input;
+        self
     }
     #[allow(missing_docs)] // documentation missing in model
     pub fn row_filter_expression(mut self, input: impl Into<std::string::String>) -> Self {
@@ -50,17 +51,18 @@ impl ColumnRowFilterBuilder {
         self
     }
     #[allow(missing_docs)] // documentation missing in model
-    pub fn set_row_filter_expression(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.row_filter_expression = input; self
+    pub fn set_row_filter_expression(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.row_filter_expression = input;
+        self
     }
     /// Consumes the builder and constructs a [`ColumnRowFilter`](crate::types::ColumnRowFilter).
     pub fn build(self) -> crate::types::ColumnRowFilter {
         crate::types::ColumnRowFilter {
-            column_name: self.column_name
-            ,
-            row_filter_expression: self.row_filter_expression
-            ,
+            column_name: self.column_name,
+            row_filter_expression: self.row_filter_expression,
         }
     }
 }
-

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeDetectorModelInput  {
+pub struct DescribeDetectorModelInput {
     /// <p>The name of the detector model.</p>
     #[doc(hidden)]
     pub detector_model_name: std::option::Option<std::string::String>,
@@ -12,17 +12,19 @@ pub struct DescribeDetectorModelInput  {
 }
 impl DescribeDetectorModelInput {
     /// <p>The name of the detector model.</p>
-    pub fn detector_model_name(&self) -> std::option::Option<& str> {
+    pub fn detector_model_name(&self) -> std::option::Option<&str> {
         self.detector_model_name.as_deref()
     }
     /// <p>The version of the detector model.</p>
-    pub fn detector_model_version(&self) -> std::option::Option<& str> {
+    pub fn detector_model_version(&self) -> std::option::Option<&str> {
         self.detector_model_version.as_deref()
     }
 }
 impl DescribeDetectorModelInput {
     /// Creates a new builder-style object to manufacture [`DescribeDetectorModelInput`](crate::operation::describe_detector_model::DescribeDetectorModelInput).
-    pub fn builder() -> crate::operation::describe_detector_model::builders::DescribeDetectorModelInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::describe_detector_model::builders::DescribeDetectorModelInputBuilder
+    {
         crate::operation::describe_detector_model::builders::DescribeDetectorModelInputBuilder::default()
     }
 }
@@ -41,8 +43,12 @@ impl DescribeDetectorModelInputBuilder {
         self
     }
     /// <p>The name of the detector model.</p>
-    pub fn set_detector_model_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.detector_model_name = input; self
+    pub fn set_detector_model_name(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.detector_model_name = input;
+        self
     }
     /// <p>The version of the detector model.</p>
     pub fn detector_model_version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -50,19 +56,25 @@ impl DescribeDetectorModelInputBuilder {
         self
     }
     /// <p>The version of the detector model.</p>
-    pub fn set_detector_model_version(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.detector_model_version = input; self
+    pub fn set_detector_model_version(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.detector_model_version = input;
+        self
     }
     /// Consumes the builder and constructs a [`DescribeDetectorModelInput`](crate::operation::describe_detector_model::DescribeDetectorModelInput).
-    pub fn build(self) -> Result<crate::operation::describe_detector_model::DescribeDetectorModelInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::describe_detector_model::DescribeDetectorModelInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::describe_detector_model::DescribeDetectorModelInput {
-                detector_model_name: self.detector_model_name
-                ,
-                detector_model_version: self.detector_model_version
-                ,
-            }
+                detector_model_name: self.detector_model_name,
+                detector_model_version: self.detector_model_version,
+            },
         )
     }
 }
-

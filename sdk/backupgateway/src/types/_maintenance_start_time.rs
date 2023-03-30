@@ -3,7 +3,7 @@
 /// <p>This is your gateway's weekly maintenance start time including the day and time of the week. Note that values are in terms of the gateway's time zone. Can be weekly or monthly.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct MaintenanceStartTime  {
+pub struct MaintenanceStartTime {
     /// <p>The day of the month component of the maintenance start time represented as an ordinal number from 1 to 28, where 1 represents the first day of the month and 28 represents the last day of the month.</p>
     #[doc(hidden)]
     pub day_of_month: std::option::Option<i32>,
@@ -59,7 +59,8 @@ impl MaintenanceStartTimeBuilder {
     }
     /// <p>The day of the month component of the maintenance start time represented as an ordinal number from 1 to 28, where 1 represents the first day of the month and 28 represents the last day of the month.</p>
     pub fn set_day_of_month(mut self, input: std::option::Option<i32>) -> Self {
-        self.day_of_month = input; self
+        self.day_of_month = input;
+        self
     }
     /// <p>An ordinal number between 0 and 6 that represents the day of the week, where 0 represents Sunday and 6 represents Saturday. The day of week is in the time zone of the gateway.</p>
     pub fn day_of_week(mut self, input: i32) -> Self {
@@ -68,7 +69,8 @@ impl MaintenanceStartTimeBuilder {
     }
     /// <p>An ordinal number between 0 and 6 that represents the day of the week, where 0 represents Sunday and 6 represents Saturday. The day of week is in the time zone of the gateway.</p>
     pub fn set_day_of_week(mut self, input: std::option::Option<i32>) -> Self {
-        self.day_of_week = input; self
+        self.day_of_week = input;
+        self
     }
     /// <p>The hour component of the maintenance start time represented as <i>hh</i>, where <i>hh</i> is the hour (0 to 23). The hour of the day is in the time zone of the gateway.</p>
     pub fn hour_of_day(mut self, input: i32) -> Self {
@@ -77,7 +79,8 @@ impl MaintenanceStartTimeBuilder {
     }
     /// <p>The hour component of the maintenance start time represented as <i>hh</i>, where <i>hh</i> is the hour (0 to 23). The hour of the day is in the time zone of the gateway.</p>
     pub fn set_hour_of_day(mut self, input: std::option::Option<i32>) -> Self {
-        self.hour_of_day = input; self
+        self.hour_of_day = input;
+        self
     }
     /// <p>The minute component of the maintenance start time represented as <i>mm</i>, where <i>mm</i> is the minute (0 to 59). The minute of the hour is in the time zone of the gateway.</p>
     pub fn minute_of_hour(mut self, input: i32) -> Self {
@@ -86,20 +89,16 @@ impl MaintenanceStartTimeBuilder {
     }
     /// <p>The minute component of the maintenance start time represented as <i>mm</i>, where <i>mm</i> is the minute (0 to 59). The minute of the hour is in the time zone of the gateway.</p>
     pub fn set_minute_of_hour(mut self, input: std::option::Option<i32>) -> Self {
-        self.minute_of_hour = input; self
+        self.minute_of_hour = input;
+        self
     }
     /// Consumes the builder and constructs a [`MaintenanceStartTime`](crate::types::MaintenanceStartTime).
     pub fn build(self) -> crate::types::MaintenanceStartTime {
         crate::types::MaintenanceStartTime {
-            day_of_month: self.day_of_month
-            ,
-            day_of_week: self.day_of_week
-            ,
-            hour_of_day: self.hour_of_day
-            ,
-            minute_of_hour: self.minute_of_hour
-            ,
+            day_of_month: self.day_of_month,
+            day_of_week: self.day_of_week,
+            hour_of_day: self.hour_of_day,
+            minute_of_hour: self.minute_of_hour,
         }
     }
 }
-

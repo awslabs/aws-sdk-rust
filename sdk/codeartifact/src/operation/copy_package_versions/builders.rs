@@ -4,51 +4,73 @@ pub use crate::operation::copy_package_versions::_copy_package_versions_output::
 pub use crate::operation::copy_package_versions::_copy_package_versions_input::CopyPackageVersionsInputBuilder;
 
 /// Fluent builder constructing a request to `CopyPackageVersions`.
-/// 
-/// <p> Copies package versions from one repository to another repository in the same domain. </p> <note> 
-/// <p> You must specify <code>versions</code> or <code>versionRevisions</code>. You cannot specify both. </p> 
+///
+/// <p> Copies package versions from one repository to another repository in the same domain. </p> <note>
+/// <p> You must specify <code>versions</code> or <code>versionRevisions</code>. You cannot specify both. </p>
 /// </note>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct CopyPackageVersionsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::copy_package_versions::builders::CopyPackageVersionsInputBuilder
-            }
-impl CopyPackageVersionsFluentBuilder  {
+    handle: std::sync::Arc<crate::client::Handle>,
+    inner: crate::operation::copy_package_versions::builders::CopyPackageVersionsInputBuilder,
+}
+impl CopyPackageVersionsFluentBuilder {
     /// Creates a new `CopyPackageVersions`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
-                    /// sent. The operation's inner [http::Request] can be modified as well.
-                    pub async fn customize(self) -> std::result::Result<
-                        crate::client::customize::CustomizableOperation<crate::operation::copy_package_versions::CopyPackageVersions, aws_http::retry::AwsResponseRetryClassifier,>,
-                        aws_smithy_http::result::SdkError<crate::operation::copy_package_versions::CopyPackageVersionsError>
-                    >  {
-                        let handle = self.handle.clone();
-                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-                    }
-    
-                    /// Sends the request and returns the response.
-                    ///
-                    /// If an error occurs, an `SdkError` will be returned with additional details that
-                    /// can be matched against.
-                    ///
-                    /// By default, any retryable failures will be retried twice. Retry behavior
-                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                    /// set when configuring the client.
-                    pub async fn send(self) -> std::result::Result<crate::operation::copy_package_versions::CopyPackageVersionsOutput, aws_smithy_http::result::SdkError<crate::operation::copy_package_versions::CopyPackageVersionsError>>
-                     {
-                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&self.handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        self.handle.client.call(op).await
-                    }
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle,
+            inner: Default::default(),
+        }
+    }
+
+    /// Consume this builder, creating a customizable operation that can be modified before being
+    /// sent. The operation's inner [http::Request] can be modified as well.
+    pub async fn customize(
+        self,
+    ) -> std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::copy_package_versions::CopyPackageVersions,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::result::SdkError<
+            crate::operation::copy_package_versions::CopyPackageVersionsError,
+        >,
+    > {
+        let handle = self.handle.clone();
+        let operation = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+    }
+
+    /// Sends the request and returns the response.
+    ///
+    /// If an error occurs, an `SdkError` will be returned with additional details that
+    /// can be matched against.
+    ///
+    /// By default, any retryable failures will be retried twice. Retry behavior
+    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+    /// set when configuring the client.
+    pub async fn send(
+        self,
+    ) -> std::result::Result<
+        crate::operation::copy_package_versions::CopyPackageVersionsOutput,
+        aws_smithy_http::result::SdkError<
+            crate::operation::copy_package_versions::CopyPackageVersionsError,
+        >,
+    > {
+        let op = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&self.handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        self.handle.client.call(op).await
+    }
     /// <p> The name of the domain that contains the source and destination repositories. </p>
     pub fn domain(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.domain(input.into());
@@ -75,7 +97,10 @@ impl CopyPackageVersionsFluentBuilder  {
         self
     }
     /// <p> The name of the repository that contains the package versions to be copied. </p>
-    pub fn set_source_repository(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_source_repository(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_source_repository(input);
         self
     }
@@ -85,7 +110,10 @@ impl CopyPackageVersionsFluentBuilder  {
         self
     }
     /// <p> The name of the repository into which package versions are copied. </p>
-    pub fn set_destination_repository(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_destination_repository(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_destination_repository(input);
         self
     }
@@ -99,21 +127,21 @@ impl CopyPackageVersionsFluentBuilder  {
         self.inner = self.inner.set_format(input);
         self
     }
-    /// <p>The namespace of the package versions to be copied. The package version component that specifies its namespace depends on its type. For example:</p> 
-    /// <ul> 
-    /// <li> <p> The namespace of a Maven package version is its <code>groupId</code>. The namespace is required when copying Maven package versions. </p> </li> 
-    /// <li> <p> The namespace of an npm package version is its <code>scope</code>. </p> </li> 
-    /// <li> <p> Python and NuGet package versions do not contain a corresponding component, package versions of those formats do not have a namespace. </p> </li> 
+    /// <p>The namespace of the package versions to be copied. The package version component that specifies its namespace depends on its type. For example:</p>
+    /// <ul>
+    /// <li> <p> The namespace of a Maven package version is its <code>groupId</code>. The namespace is required when copying Maven package versions. </p> </li>
+    /// <li> <p> The namespace of an npm package version is its <code>scope</code>. </p> </li>
+    /// <li> <p> Python and NuGet package versions do not contain a corresponding component, package versions of those formats do not have a namespace. </p> </li>
     /// </ul>
     pub fn namespace(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.namespace(input.into());
         self
     }
-    /// <p>The namespace of the package versions to be copied. The package version component that specifies its namespace depends on its type. For example:</p> 
-    /// <ul> 
-    /// <li> <p> The namespace of a Maven package version is its <code>groupId</code>. The namespace is required when copying Maven package versions. </p> </li> 
-    /// <li> <p> The namespace of an npm package version is its <code>scope</code>. </p> </li> 
-    /// <li> <p> Python and NuGet package versions do not contain a corresponding component, package versions of those formats do not have a namespace. </p> </li> 
+    /// <p>The namespace of the package versions to be copied. The package version component that specifies its namespace depends on its type. For example:</p>
+    /// <ul>
+    /// <li> <p> The namespace of a Maven package version is its <code>groupId</code>. The namespace is required when copying Maven package versions. </p> </li>
+    /// <li> <p> The namespace of an npm package version is its <code>scope</code>. </p> </li>
+    /// <li> <p> Python and NuGet package versions do not contain a corresponding component, package versions of those formats do not have a namespace. </p> </li>
     /// </ul>
     pub fn set_namespace(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.inner = self.inner.set_namespace(input);
@@ -133,17 +161,20 @@ impl CopyPackageVersionsFluentBuilder  {
     ///
     /// To override the contents of this collection use [`set_versions`](Self::set_versions).
     ///
-    /// <p> The versions of the package to be copied. </p> <note> 
-    /// <p> You must specify <code>versions</code> or <code>versionRevisions</code>. You cannot specify both. </p> 
+    /// <p> The versions of the package to be copied. </p> <note>
+    /// <p> You must specify <code>versions</code> or <code>versionRevisions</code>. You cannot specify both. </p>
     /// </note>
     pub fn versions(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.versions(input.into());
         self
     }
-    /// <p> The versions of the package to be copied. </p> <note> 
-    /// <p> You must specify <code>versions</code> or <code>versionRevisions</code>. You cannot specify both. </p> 
+    /// <p> The versions of the package to be copied. </p> <note>
+    /// <p> You must specify <code>versions</code> or <code>versionRevisions</code>. You cannot specify both. </p>
     /// </note>
-    pub fn set_versions(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+    pub fn set_versions(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
         self.inner = self.inner.set_versions(input);
         self
     }
@@ -151,17 +182,26 @@ impl CopyPackageVersionsFluentBuilder  {
     ///
     /// To override the contents of this collection use [`set_version_revisions`](Self::set_version_revisions).
     ///
-    /// <p> A list of key-value pairs. The keys are package versions and the values are package version revisions. A <code>CopyPackageVersion</code> operation succeeds if the specified versions in the source repository match the specified package version revision. </p> <note> 
-    /// <p> You must specify <code>versions</code> or <code>versionRevisions</code>. You cannot specify both. </p> 
+    /// <p> A list of key-value pairs. The keys are package versions and the values are package version revisions. A <code>CopyPackageVersion</code> operation succeeds if the specified versions in the source repository match the specified package version revision. </p> <note>
+    /// <p> You must specify <code>versions</code> or <code>versionRevisions</code>. You cannot specify both. </p>
     /// </note>
-    pub fn version_revisions(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
+    pub fn version_revisions(
+        mut self,
+        k: impl Into<std::string::String>,
+        v: impl Into<std::string::String>,
+    ) -> Self {
         self.inner = self.inner.version_revisions(k.into(), v.into());
         self
     }
-    /// <p> A list of key-value pairs. The keys are package versions and the values are package version revisions. A <code>CopyPackageVersion</code> operation succeeds if the specified versions in the source repository match the specified package version revision. </p> <note> 
-    /// <p> You must specify <code>versions</code> or <code>versionRevisions</code>. You cannot specify both. </p> 
+    /// <p> A list of key-value pairs. The keys are package versions and the values are package version revisions. A <code>CopyPackageVersion</code> operation succeeds if the specified versions in the source repository match the specified package version revision. </p> <note>
+    /// <p> You must specify <code>versions</code> or <code>versionRevisions</code>. You cannot specify both. </p>
     /// </note>
-    pub fn set_version_revisions(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+    pub fn set_version_revisions(
+        mut self,
+        input: std::option::Option<
+            std::collections::HashMap<std::string::String, std::string::String>,
+        >,
+    ) -> Self {
         self.inner = self.inner.set_version_revisions(input);
         self
     }
@@ -186,4 +226,3 @@ impl CopyPackageVersionsFluentBuilder  {
         self
     }
 }
-

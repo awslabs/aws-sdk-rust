@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeInstanceAttributeOutput  {
+pub struct DescribeInstanceAttributeOutput {
     /// <p>The type of attribute.</p>
     #[doc(hidden)]
     pub attribute: std::option::Option<crate::types::Attribute>,
@@ -10,18 +10,18 @@ pub struct DescribeInstanceAttributeOutput  {
 }
 impl DescribeInstanceAttributeOutput {
     /// <p>The type of attribute.</p>
-    pub fn attribute(&self) -> std::option::Option<& crate::types::Attribute> {
+    pub fn attribute(&self) -> std::option::Option<&crate::types::Attribute> {
         self.attribute.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for DescribeInstanceAttributeOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl DescribeInstanceAttributeOutput {
     /// Creates a new builder-style object to manufacture [`DescribeInstanceAttributeOutput`](crate::operation::describe_instance_attribute::DescribeInstanceAttributeOutput).
-    pub fn builder() -> crate::operation::describe_instance_attribute::builders::DescribeInstanceAttributeOutputBuilder {
+    pub fn builder() -> crate::operation::describe_instance_attribute::builders::DescribeInstanceAttributeOutputBuilder{
         crate::operation::describe_instance_attribute::builders::DescribeInstanceAttributeOutputBuilder::default()
     }
 }
@@ -41,24 +41,25 @@ impl DescribeInstanceAttributeOutputBuilder {
     }
     /// <p>The type of attribute.</p>
     pub fn set_attribute(mut self, input: std::option::Option<crate::types::Attribute>) -> Self {
-        self.attribute = input; self
+        self.attribute = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`DescribeInstanceAttributeOutput`](crate::operation::describe_instance_attribute::DescribeInstanceAttributeOutput).
-    pub fn build(self) -> crate::operation::describe_instance_attribute::DescribeInstanceAttributeOutput {
+    pub fn build(
+        self,
+    ) -> crate::operation::describe_instance_attribute::DescribeInstanceAttributeOutput {
         crate::operation::describe_instance_attribute::DescribeInstanceAttributeOutput {
-            attribute: self.attribute
-            ,
+            attribute: self.attribute,
             _request_id: self._request_id,
         }
     }
 }
-

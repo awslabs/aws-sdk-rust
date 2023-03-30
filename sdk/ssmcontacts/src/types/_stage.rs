@@ -3,7 +3,7 @@
 /// <p>A set amount of time that an escalation plan or engagement plan engages the specified contacts or contact methods.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Stage  {
+pub struct Stage {
     /// <p>The time to wait until beginning the next stage. The duration can only be set to 0 if a target is specified.</p>
     #[doc(hidden)]
     pub duration_in_minutes: std::option::Option<i32>,
@@ -17,7 +17,7 @@ impl Stage {
         self.duration_in_minutes
     }
     /// <p>The contacts or contact methods that the escalation plan or engagement plan is engaging.</p>
-    pub fn targets(&self) -> std::option::Option<& [crate::types::Target]> {
+    pub fn targets(&self) -> std::option::Option<&[crate::types::Target]> {
         self.targets.as_deref()
     }
 }
@@ -43,7 +43,8 @@ impl StageBuilder {
     }
     /// <p>The time to wait until beginning the next stage. The duration can only be set to 0 if a target is specified.</p>
     pub fn set_duration_in_minutes(mut self, input: std::option::Option<i32>) -> Self {
-        self.duration_in_minutes = input; self
+        self.duration_in_minutes = input;
+        self
     }
     /// Appends an item to `targets`.
     ///
@@ -52,22 +53,23 @@ impl StageBuilder {
     /// <p>The contacts or contact methods that the escalation plan or engagement plan is engaging.</p>
     pub fn targets(mut self, input: crate::types::Target) -> Self {
         let mut v = self.targets.unwrap_or_default();
-                        v.push(input);
-                        self.targets = Some(v);
-                        self
+        v.push(input);
+        self.targets = Some(v);
+        self
     }
     /// <p>The contacts or contact methods that the escalation plan or engagement plan is engaging.</p>
-    pub fn set_targets(mut self, input: std::option::Option<std::vec::Vec<crate::types::Target>>) -> Self {
-        self.targets = input; self
+    pub fn set_targets(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::Target>>,
+    ) -> Self {
+        self.targets = input;
+        self
     }
     /// Consumes the builder and constructs a [`Stage`](crate::types::Stage).
     pub fn build(self) -> crate::types::Stage {
         crate::types::Stage {
-            duration_in_minutes: self.duration_in_minutes
-            ,
-            targets: self.targets
-            ,
+            duration_in_minutes: self.duration_in_minutes,
+            targets: self.targets,
         }
     }
 }
-

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateSchemaOutput  {
+pub struct UpdateSchemaOutput {
     /// <p>The Amazon Resource Name (ARN) of the schema.</p>
     #[doc(hidden)]
     pub schema_arn: std::option::Option<std::string::String>,
@@ -16,23 +16,23 @@ pub struct UpdateSchemaOutput  {
 }
 impl UpdateSchemaOutput {
     /// <p>The Amazon Resource Name (ARN) of the schema.</p>
-    pub fn schema_arn(&self) -> std::option::Option<& str> {
+    pub fn schema_arn(&self) -> std::option::Option<&str> {
         self.schema_arn.as_deref()
     }
     /// <p>The name of the schema.</p>
-    pub fn schema_name(&self) -> std::option::Option<& str> {
+    pub fn schema_name(&self) -> std::option::Option<&str> {
         self.schema_name.as_deref()
     }
     /// <p>The name of the registry that contains the schema.</p>
-    pub fn registry_name(&self) -> std::option::Option<& str> {
+    pub fn registry_name(&self) -> std::option::Option<&str> {
         self.registry_name.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for UpdateSchemaOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl UpdateSchemaOutput {
     /// Creates a new builder-style object to manufacture [`UpdateSchemaOutput`](crate::operation::update_schema::UpdateSchemaOutput).
     pub fn builder() -> crate::operation::update_schema::builders::UpdateSchemaOutputBuilder {
@@ -57,7 +57,8 @@ impl UpdateSchemaOutputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the schema.</p>
     pub fn set_schema_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.schema_arn = input; self
+        self.schema_arn = input;
+        self
     }
     /// <p>The name of the schema.</p>
     pub fn schema_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -66,7 +67,8 @@ impl UpdateSchemaOutputBuilder {
     }
     /// <p>The name of the schema.</p>
     pub fn set_schema_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.schema_name = input; self
+        self.schema_name = input;
+        self
     }
     /// <p>The name of the registry that contains the schema.</p>
     pub fn registry_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -75,28 +77,25 @@ impl UpdateSchemaOutputBuilder {
     }
     /// <p>The name of the registry that contains the schema.</p>
     pub fn set_registry_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.registry_name = input; self
+        self.registry_name = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`UpdateSchemaOutput`](crate::operation::update_schema::UpdateSchemaOutput).
     pub fn build(self) -> crate::operation::update_schema::UpdateSchemaOutput {
         crate::operation::update_schema::UpdateSchemaOutput {
-            schema_arn: self.schema_arn
-            ,
-            schema_name: self.schema_name
-            ,
-            registry_name: self.registry_name
-            ,
+            schema_arn: self.schema_arn,
+            schema_name: self.schema_name,
+            registry_name: self.registry_name,
             _request_id: self._request_id,
         }
     }
 }
-

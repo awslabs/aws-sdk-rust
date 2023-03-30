@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateTimeToLiveOutput  {
+pub struct UpdateTimeToLiveOutput {
     /// <p>Represents the output of an <code>UpdateTimeToLive</code> operation.</p>
     #[doc(hidden)]
     pub time_to_live_specification: std::option::Option<crate::types::TimeToLiveSpecification>,
@@ -10,18 +10,21 @@ pub struct UpdateTimeToLiveOutput  {
 }
 impl UpdateTimeToLiveOutput {
     /// <p>Represents the output of an <code>UpdateTimeToLive</code> operation.</p>
-    pub fn time_to_live_specification(&self) -> std::option::Option<& crate::types::TimeToLiveSpecification> {
+    pub fn time_to_live_specification(
+        &self,
+    ) -> std::option::Option<&crate::types::TimeToLiveSpecification> {
         self.time_to_live_specification.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for UpdateTimeToLiveOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl UpdateTimeToLiveOutput {
     /// Creates a new builder-style object to manufacture [`UpdateTimeToLiveOutput`](crate::operation::update_time_to_live::UpdateTimeToLiveOutput).
-    pub fn builder() -> crate::operation::update_time_to_live::builders::UpdateTimeToLiveOutputBuilder {
+    pub fn builder(
+    ) -> crate::operation::update_time_to_live::builders::UpdateTimeToLiveOutputBuilder {
         crate::operation::update_time_to_live::builders::UpdateTimeToLiveOutputBuilder::default()
     }
 }
@@ -30,35 +33,41 @@ impl UpdateTimeToLiveOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct UpdateTimeToLiveOutputBuilder {
-    pub(crate) time_to_live_specification: std::option::Option<crate::types::TimeToLiveSpecification>,
+    pub(crate) time_to_live_specification:
+        std::option::Option<crate::types::TimeToLiveSpecification>,
     _request_id: Option<String>,
 }
 impl UpdateTimeToLiveOutputBuilder {
     /// <p>Represents the output of an <code>UpdateTimeToLive</code> operation.</p>
-    pub fn time_to_live_specification(mut self, input: crate::types::TimeToLiveSpecification) -> Self {
+    pub fn time_to_live_specification(
+        mut self,
+        input: crate::types::TimeToLiveSpecification,
+    ) -> Self {
         self.time_to_live_specification = Some(input);
         self
     }
     /// <p>Represents the output of an <code>UpdateTimeToLive</code> operation.</p>
-    pub fn set_time_to_live_specification(mut self, input: std::option::Option<crate::types::TimeToLiveSpecification>) -> Self {
-        self.time_to_live_specification = input; self
+    pub fn set_time_to_live_specification(
+        mut self,
+        input: std::option::Option<crate::types::TimeToLiveSpecification>,
+    ) -> Self {
+        self.time_to_live_specification = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`UpdateTimeToLiveOutput`](crate::operation::update_time_to_live::UpdateTimeToLiveOutput).
     pub fn build(self) -> crate::operation::update_time_to_live::UpdateTimeToLiveOutput {
         crate::operation::update_time_to_live::UpdateTimeToLiveOutput {
-            time_to_live_specification: self.time_to_live_specification
-            ,
+            time_to_live_specification: self.time_to_live_specification,
             _request_id: self._request_id,
         }
     }
 }
-

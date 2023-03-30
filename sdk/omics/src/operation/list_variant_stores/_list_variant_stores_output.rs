@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListVariantStoresOutput  {
+pub struct ListVariantStoresOutput {
     /// <p>A list of variant stores.</p>
     #[doc(hidden)]
     pub variant_stores: std::option::Option<std::vec::Vec<crate::types::VariantStoreItem>>,
@@ -13,22 +13,23 @@ pub struct ListVariantStoresOutput  {
 }
 impl ListVariantStoresOutput {
     /// <p>A list of variant stores.</p>
-    pub fn variant_stores(&self) -> std::option::Option<& [crate::types::VariantStoreItem]> {
+    pub fn variant_stores(&self) -> std::option::Option<&[crate::types::VariantStoreItem]> {
         self.variant_stores.as_deref()
     }
     /// <p>A pagination token that's included if more results are available.</p>
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for ListVariantStoresOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl ListVariantStoresOutput {
     /// Creates a new builder-style object to manufacture [`ListVariantStoresOutput`](crate::operation::list_variant_stores::ListVariantStoresOutput).
-    pub fn builder() -> crate::operation::list_variant_stores::builders::ListVariantStoresOutputBuilder {
+    pub fn builder(
+    ) -> crate::operation::list_variant_stores::builders::ListVariantStoresOutputBuilder {
         crate::operation::list_variant_stores::builders::ListVariantStoresOutputBuilder::default()
     }
 }
@@ -49,13 +50,17 @@ impl ListVariantStoresOutputBuilder {
     /// <p>A list of variant stores.</p>
     pub fn variant_stores(mut self, input: crate::types::VariantStoreItem) -> Self {
         let mut v = self.variant_stores.unwrap_or_default();
-                        v.push(input);
-                        self.variant_stores = Some(v);
-                        self
+        v.push(input);
+        self.variant_stores = Some(v);
+        self
     }
     /// <p>A list of variant stores.</p>
-    pub fn set_variant_stores(mut self, input: std::option::Option<std::vec::Vec<crate::types::VariantStoreItem>>) -> Self {
-        self.variant_stores = input; self
+    pub fn set_variant_stores(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::VariantStoreItem>>,
+    ) -> Self {
+        self.variant_stores = input;
+        self
     }
     /// <p>A pagination token that's included if more results are available.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -64,26 +69,24 @@ impl ListVariantStoresOutputBuilder {
     }
     /// <p>A pagination token that's included if more results are available.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input; self
+        self.next_token = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`ListVariantStoresOutput`](crate::operation::list_variant_stores::ListVariantStoresOutput).
     pub fn build(self) -> crate::operation::list_variant_stores::ListVariantStoresOutput {
         crate::operation::list_variant_stores::ListVariantStoresOutput {
-            variant_stores: self.variant_stores
-            ,
-            next_token: self.next_token
-            ,
+            variant_stores: self.variant_stores,
+            next_token: self.next_token,
             _request_id: self._request_id,
         }
     }
 }
-

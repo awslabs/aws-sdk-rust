@@ -22,7 +22,11 @@ impl AlternateIdentifier {
     /// Tries to convert the enum instance into [`ExternalId`](crate::types::AlternateIdentifier::ExternalId), extracting the inner [`ExternalId`](crate::types::ExternalId).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_external_id(&self) -> std::result::Result<&crate::types::ExternalId, &Self> {
-        if let AlternateIdentifier::ExternalId(val) = &self { Ok(val) } else { Err(self) }
+        if let AlternateIdentifier::ExternalId(val) = &self {
+            Ok(val)
+        } else {
+            Err(self)
+        }
     }
     /// Returns true if this is a [`ExternalId`](crate::types::AlternateIdentifier::ExternalId).
     pub fn is_external_id(&self) -> bool {
@@ -30,8 +34,14 @@ impl AlternateIdentifier {
     }
     /// Tries to convert the enum instance into [`UniqueAttribute`](crate::types::AlternateIdentifier::UniqueAttribute), extracting the inner [`UniqueAttribute`](crate::types::UniqueAttribute).
     /// Returns `Err(&Self)` if it can't be converted.
-    pub fn as_unique_attribute(&self) -> std::result::Result<&crate::types::UniqueAttribute, &Self> {
-        if let AlternateIdentifier::UniqueAttribute(val) = &self { Ok(val) } else { Err(self) }
+    pub fn as_unique_attribute(
+        &self,
+    ) -> std::result::Result<&crate::types::UniqueAttribute, &Self> {
+        if let AlternateIdentifier::UniqueAttribute(val) = &self {
+            Ok(val)
+        } else {
+            Err(self)
+        }
     }
     /// Returns true if this is a [`UniqueAttribute`](crate::types::AlternateIdentifier::UniqueAttribute).
     pub fn is_unique_attribute(&self) -> bool {
@@ -42,4 +52,3 @@ impl AlternateIdentifier {
         matches!(self, Self::Unknown)
     }
 }
-

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeExportTasksOutput  {
+pub struct DescribeExportTasksOutput {
     /// <p>Contains one or more sets of export request details. When the status of a request is <code>SUCCEEDED</code>, the response includes a URL for an Amazon S3 bucket where you can view the data in a CSV file.</p>
     #[doc(hidden)]
     pub exports_info: std::option::Option<std::vec::Vec<crate::types::ExportInfo>>,
@@ -13,23 +13,25 @@ pub struct DescribeExportTasksOutput  {
 }
 impl DescribeExportTasksOutput {
     /// <p>Contains one or more sets of export request details. When the status of a request is <code>SUCCEEDED</code>, the response includes a URL for an Amazon S3 bucket where you can view the data in a CSV file.</p>
-    pub fn exports_info(&self) -> std::option::Option<& [crate::types::ExportInfo]> {
+    pub fn exports_info(&self) -> std::option::Option<&[crate::types::ExportInfo]> {
         self.exports_info.as_deref()
     }
     /// <p>The <code>nextToken</code> value to include in a future <code>DescribeExportTasks</code> request. When the results of a <code>DescribeExportTasks</code> request exceed <code>maxResults</code>, this value can be used to retrieve the next page of results. This value is null when there are no more results to return.</p>
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for DescribeExportTasksOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl DescribeExportTasksOutput {
     /// Creates a new builder-style object to manufacture [`DescribeExportTasksOutput`](crate::operation::describe_export_tasks::DescribeExportTasksOutput).
-    pub fn builder() -> crate::operation::describe_export_tasks::builders::DescribeExportTasksOutputBuilder {
-        crate::operation::describe_export_tasks::builders::DescribeExportTasksOutputBuilder::default()
+    pub fn builder(
+    ) -> crate::operation::describe_export_tasks::builders::DescribeExportTasksOutputBuilder {
+        crate::operation::describe_export_tasks::builders::DescribeExportTasksOutputBuilder::default(
+        )
     }
 }
 
@@ -49,13 +51,17 @@ impl DescribeExportTasksOutputBuilder {
     /// <p>Contains one or more sets of export request details. When the status of a request is <code>SUCCEEDED</code>, the response includes a URL for an Amazon S3 bucket where you can view the data in a CSV file.</p>
     pub fn exports_info(mut self, input: crate::types::ExportInfo) -> Self {
         let mut v = self.exports_info.unwrap_or_default();
-                        v.push(input);
-                        self.exports_info = Some(v);
-                        self
+        v.push(input);
+        self.exports_info = Some(v);
+        self
     }
     /// <p>Contains one or more sets of export request details. When the status of a request is <code>SUCCEEDED</code>, the response includes a URL for an Amazon S3 bucket where you can view the data in a CSV file.</p>
-    pub fn set_exports_info(mut self, input: std::option::Option<std::vec::Vec<crate::types::ExportInfo>>) -> Self {
-        self.exports_info = input; self
+    pub fn set_exports_info(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::ExportInfo>>,
+    ) -> Self {
+        self.exports_info = input;
+        self
     }
     /// <p>The <code>nextToken</code> value to include in a future <code>DescribeExportTasks</code> request. When the results of a <code>DescribeExportTasks</code> request exceed <code>maxResults</code>, this value can be used to retrieve the next page of results. This value is null when there are no more results to return.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -64,26 +70,24 @@ impl DescribeExportTasksOutputBuilder {
     }
     /// <p>The <code>nextToken</code> value to include in a future <code>DescribeExportTasks</code> request. When the results of a <code>DescribeExportTasks</code> request exceed <code>maxResults</code>, this value can be used to retrieve the next page of results. This value is null when there are no more results to return.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input; self
+        self.next_token = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`DescribeExportTasksOutput`](crate::operation::describe_export_tasks::DescribeExportTasksOutput).
     pub fn build(self) -> crate::operation::describe_export_tasks::DescribeExportTasksOutput {
         crate::operation::describe_export_tasks::DescribeExportTasksOutput {
-            exports_info: self.exports_info
-            ,
-            next_token: self.next_token
-            ,
+            exports_info: self.exports_info,
+            next_token: self.next_token,
             _request_id: self._request_id,
         }
     }
 }
-

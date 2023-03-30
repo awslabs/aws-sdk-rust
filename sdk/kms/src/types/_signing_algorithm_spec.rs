@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-/// 
+///
 /// Here is an example of how you can make a match expression forward-compatible:
-/// 
+///
 /// ```text
 /// # let signingalgorithmspec = unimplemented!();
 /// match signingalgorithmspec {
@@ -38,14 +38,22 @@
 /// Specifically, when `signingalgorithmspec` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `SigningAlgorithmSpec::NewFeature` also yielding `"NewFeature"`.
-/// 
+///
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
 pub enum SigningAlgorithmSpec {
     #[allow(missing_docs)] // documentation missing in model
     EcdsaSha256,
@@ -68,57 +76,69 @@ pub enum SigningAlgorithmSpec {
     #[allow(missing_docs)] // documentation missing in model
     Sm2Dsa,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::primitives::UnknownVariantValue)
+    Unknown(crate::primitives::UnknownVariantValue),
 }
 impl std::convert::From<&str> for SigningAlgorithmSpec {
-                fn from(s: &str) -> Self {
-                    match s {
-                        "ECDSA_SHA_256" => SigningAlgorithmSpec::EcdsaSha256,
-"ECDSA_SHA_384" => SigningAlgorithmSpec::EcdsaSha384,
-"ECDSA_SHA_512" => SigningAlgorithmSpec::EcdsaSha512,
-"RSASSA_PKCS1_V1_5_SHA_256" => SigningAlgorithmSpec::RsassaPkcs1V15Sha256,
-"RSASSA_PKCS1_V1_5_SHA_384" => SigningAlgorithmSpec::RsassaPkcs1V15Sha384,
-"RSASSA_PKCS1_V1_5_SHA_512" => SigningAlgorithmSpec::RsassaPkcs1V15Sha512,
-"RSASSA_PSS_SHA_256" => SigningAlgorithmSpec::RsassaPssSha256,
-"RSASSA_PSS_SHA_384" => SigningAlgorithmSpec::RsassaPssSha384,
-"RSASSA_PSS_SHA_512" => SigningAlgorithmSpec::RsassaPssSha512,
-"SM2DSA" => SigningAlgorithmSpec::Sm2Dsa,
-other => SigningAlgorithmSpec::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
-                    }
-                }
-            }
-impl std::str::FromStr for SigningAlgorithmSpec {
-                type Err = std::convert::Infallible;
-
-                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-                    Ok(SigningAlgorithmSpec::from(s))
-                }
-            }
-impl SigningAlgorithmSpec {
-                /// Returns the `&str` value of the enum member.
-                pub fn as_str(&self) -> &str {
-                    match self {
-    SigningAlgorithmSpec::EcdsaSha256 => "ECDSA_SHA_256",
-    SigningAlgorithmSpec::EcdsaSha384 => "ECDSA_SHA_384",
-    SigningAlgorithmSpec::EcdsaSha512 => "ECDSA_SHA_512",
-    SigningAlgorithmSpec::RsassaPkcs1V15Sha256 => "RSASSA_PKCS1_V1_5_SHA_256",
-    SigningAlgorithmSpec::RsassaPkcs1V15Sha384 => "RSASSA_PKCS1_V1_5_SHA_384",
-    SigningAlgorithmSpec::RsassaPkcs1V15Sha512 => "RSASSA_PKCS1_V1_5_SHA_512",
-    SigningAlgorithmSpec::RsassaPssSha256 => "RSASSA_PSS_SHA_256",
-    SigningAlgorithmSpec::RsassaPssSha384 => "RSASSA_PSS_SHA_384",
-    SigningAlgorithmSpec::RsassaPssSha512 => "RSASSA_PSS_SHA_512",
-    SigningAlgorithmSpec::Sm2Dsa => "SM2DSA",
-    SigningAlgorithmSpec::Unknown(value) => value.as_str()
+    fn from(s: &str) -> Self {
+        match s {
+            "ECDSA_SHA_256" => SigningAlgorithmSpec::EcdsaSha256,
+            "ECDSA_SHA_384" => SigningAlgorithmSpec::EcdsaSha384,
+            "ECDSA_SHA_512" => SigningAlgorithmSpec::EcdsaSha512,
+            "RSASSA_PKCS1_V1_5_SHA_256" => SigningAlgorithmSpec::RsassaPkcs1V15Sha256,
+            "RSASSA_PKCS1_V1_5_SHA_384" => SigningAlgorithmSpec::RsassaPkcs1V15Sha384,
+            "RSASSA_PKCS1_V1_5_SHA_512" => SigningAlgorithmSpec::RsassaPkcs1V15Sha512,
+            "RSASSA_PSS_SHA_256" => SigningAlgorithmSpec::RsassaPssSha256,
+            "RSASSA_PSS_SHA_384" => SigningAlgorithmSpec::RsassaPssSha384,
+            "RSASSA_PSS_SHA_512" => SigningAlgorithmSpec::RsassaPssSha512,
+            "SM2DSA" => SigningAlgorithmSpec::Sm2Dsa,
+            other => SigningAlgorithmSpec::Unknown(crate::primitives::UnknownVariantValue(
+                other.to_owned(),
+            )),
+        }
+    }
 }
-                }
-                /// Returns all the `&str` representations of the enum members.
-                pub const fn values() -> &'static [&'static str] {
-                    &["ECDSA_SHA_256", "ECDSA_SHA_384", "ECDSA_SHA_512", "RSASSA_PKCS1_V1_5_SHA_256", "RSASSA_PKCS1_V1_5_SHA_384", "RSASSA_PKCS1_V1_5_SHA_512", "RSASSA_PSS_SHA_256", "RSASSA_PSS_SHA_384", "RSASSA_PSS_SHA_512", "SM2DSA"]
-                }
-            }
-impl AsRef<str> for SigningAlgorithmSpec {
-                fn as_ref(&self) -> &str {
-                    self.as_str()
-                }
-            }
+impl std::str::FromStr for SigningAlgorithmSpec {
+    type Err = std::convert::Infallible;
 
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(SigningAlgorithmSpec::from(s))
+    }
+}
+impl SigningAlgorithmSpec {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            SigningAlgorithmSpec::EcdsaSha256 => "ECDSA_SHA_256",
+            SigningAlgorithmSpec::EcdsaSha384 => "ECDSA_SHA_384",
+            SigningAlgorithmSpec::EcdsaSha512 => "ECDSA_SHA_512",
+            SigningAlgorithmSpec::RsassaPkcs1V15Sha256 => "RSASSA_PKCS1_V1_5_SHA_256",
+            SigningAlgorithmSpec::RsassaPkcs1V15Sha384 => "RSASSA_PKCS1_V1_5_SHA_384",
+            SigningAlgorithmSpec::RsassaPkcs1V15Sha512 => "RSASSA_PKCS1_V1_5_SHA_512",
+            SigningAlgorithmSpec::RsassaPssSha256 => "RSASSA_PSS_SHA_256",
+            SigningAlgorithmSpec::RsassaPssSha384 => "RSASSA_PSS_SHA_384",
+            SigningAlgorithmSpec::RsassaPssSha512 => "RSASSA_PSS_SHA_512",
+            SigningAlgorithmSpec::Sm2Dsa => "SM2DSA",
+            SigningAlgorithmSpec::Unknown(value) => value.as_str(),
+        }
+    }
+    /// Returns all the `&str` representations of the enum members.
+    pub const fn values() -> &'static [&'static str] {
+        &[
+            "ECDSA_SHA_256",
+            "ECDSA_SHA_384",
+            "ECDSA_SHA_512",
+            "RSASSA_PKCS1_V1_5_SHA_256",
+            "RSASSA_PKCS1_V1_5_SHA_384",
+            "RSASSA_PKCS1_V1_5_SHA_512",
+            "RSASSA_PSS_SHA_256",
+            "RSASSA_PSS_SHA_384",
+            "RSASSA_PSS_SHA_512",
+            "SM2DSA",
+        ]
+    }
+}
+impl AsRef<str> for SigningAlgorithmSpec {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}

@@ -3,14 +3,14 @@
 /// <p>The filter used to retrieve specific <code>BillingGroupCostReportElements</code>. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListBillingGroupCostReportsFilter  {
+pub struct ListBillingGroupCostReportsFilter {
     /// <p>The list of Amazon Resource Names (ARNs) used to filter billing groups to retrieve reports. </p>
     #[doc(hidden)]
     pub billing_group_arns: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl ListBillingGroupCostReportsFilter {
     /// <p>The list of Amazon Resource Names (ARNs) used to filter billing groups to retrieve reports. </p>
-    pub fn billing_group_arns(&self) -> std::option::Option<& [std::string::String]> {
+    pub fn billing_group_arns(&self) -> std::option::Option<&[std::string::String]> {
         self.billing_group_arns.as_deref()
     }
 }
@@ -35,20 +35,22 @@ impl ListBillingGroupCostReportsFilterBuilder {
     /// <p>The list of Amazon Resource Names (ARNs) used to filter billing groups to retrieve reports. </p>
     pub fn billing_group_arns(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.billing_group_arns.unwrap_or_default();
-                        v.push(input.into());
-                        self.billing_group_arns = Some(v);
-                        self
+        v.push(input.into());
+        self.billing_group_arns = Some(v);
+        self
     }
     /// <p>The list of Amazon Resource Names (ARNs) used to filter billing groups to retrieve reports. </p>
-    pub fn set_billing_group_arns(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-        self.billing_group_arns = input; self
+    pub fn set_billing_group_arns(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
+        self.billing_group_arns = input;
+        self
     }
     /// Consumes the builder and constructs a [`ListBillingGroupCostReportsFilter`](crate::types::ListBillingGroupCostReportsFilter).
     pub fn build(self) -> crate::types::ListBillingGroupCostReportsFilter {
         crate::types::ListBillingGroupCostReportsFilter {
-            billing_group_arns: self.billing_group_arns
-            ,
+            billing_group_arns: self.billing_group_arns,
         }
     }
 }
-

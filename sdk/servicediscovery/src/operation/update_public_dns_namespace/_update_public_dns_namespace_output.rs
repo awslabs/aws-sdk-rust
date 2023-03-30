@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdatePublicDnsNamespaceOutput  {
+pub struct UpdatePublicDnsNamespaceOutput {
     /// <p>A value that you can use to determine whether the request completed successfully. To get the status of the operation, see <a href="https://docs.aws.amazon.com/cloud-map/latest/api/API_GetOperation.html">GetOperation</a>.</p>
     #[doc(hidden)]
     pub operation_id: std::option::Option<std::string::String>,
@@ -10,18 +10,18 @@ pub struct UpdatePublicDnsNamespaceOutput  {
 }
 impl UpdatePublicDnsNamespaceOutput {
     /// <p>A value that you can use to determine whether the request completed successfully. To get the status of the operation, see <a href="https://docs.aws.amazon.com/cloud-map/latest/api/API_GetOperation.html">GetOperation</a>.</p>
-    pub fn operation_id(&self) -> std::option::Option<& str> {
+    pub fn operation_id(&self) -> std::option::Option<&str> {
         self.operation_id.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for UpdatePublicDnsNamespaceOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl UpdatePublicDnsNamespaceOutput {
     /// Creates a new builder-style object to manufacture [`UpdatePublicDnsNamespaceOutput`](crate::operation::update_public_dns_namespace::UpdatePublicDnsNamespaceOutput).
-    pub fn builder() -> crate::operation::update_public_dns_namespace::builders::UpdatePublicDnsNamespaceOutputBuilder {
+    pub fn builder() -> crate::operation::update_public_dns_namespace::builders::UpdatePublicDnsNamespaceOutputBuilder{
         crate::operation::update_public_dns_namespace::builders::UpdatePublicDnsNamespaceOutputBuilder::default()
     }
 }
@@ -41,24 +41,25 @@ impl UpdatePublicDnsNamespaceOutputBuilder {
     }
     /// <p>A value that you can use to determine whether the request completed successfully. To get the status of the operation, see <a href="https://docs.aws.amazon.com/cloud-map/latest/api/API_GetOperation.html">GetOperation</a>.</p>
     pub fn set_operation_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.operation_id = input; self
+        self.operation_id = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`UpdatePublicDnsNamespaceOutput`](crate::operation::update_public_dns_namespace::UpdatePublicDnsNamespaceOutput).
-    pub fn build(self) -> crate::operation::update_public_dns_namespace::UpdatePublicDnsNamespaceOutput {
+    pub fn build(
+        self,
+    ) -> crate::operation::update_public_dns_namespace::UpdatePublicDnsNamespaceOutput {
         crate::operation::update_public_dns_namespace::UpdatePublicDnsNamespaceOutput {
-            operation_id: self.operation_id
-            ,
+            operation_id: self.operation_id,
             _request_id: self._request_id,
         }
     }
 }
-

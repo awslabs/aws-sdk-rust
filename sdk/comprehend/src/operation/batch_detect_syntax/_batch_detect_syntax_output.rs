@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct BatchDetectSyntaxOutput  {
+pub struct BatchDetectSyntaxOutput {
     /// <p>A list of objects containing the results of the operation. The results are sorted in ascending order by the <code>Index</code> field and match the order of the documents in the input list. If all of the documents contain an error, the <code>ResultList</code> is empty.</p>
     #[doc(hidden)]
     pub result_list: std::option::Option<std::vec::Vec<crate::types::BatchDetectSyntaxItemResult>>,
@@ -13,15 +13,15 @@ pub struct BatchDetectSyntaxOutput  {
 }
 impl BatchDetectSyntaxOutput {
     /// <p>A list of objects containing the results of the operation. The results are sorted in ascending order by the <code>Index</code> field and match the order of the documents in the input list. If all of the documents contain an error, the <code>ResultList</code> is empty.</p>
-    pub fn result_list(&self) -> std::option::Option<& [crate::types::BatchDetectSyntaxItemResult]> {
+    pub fn result_list(&self) -> std::option::Option<&[crate::types::BatchDetectSyntaxItemResult]> {
         self.result_list.as_deref()
     }
     /// <p>A list containing one object for each document that contained an error. The results are sorted in ascending order by the <code>Index</code> field and match the order of the documents in the input list. If there are no errors in the batch, the <code>ErrorList</code> is empty.</p>
-    pub fn error_list(&self) -> std::option::Option<& [crate::types::BatchItemError]> {
+    pub fn error_list(&self) -> std::option::Option<&[crate::types::BatchItemError]> {
         self.error_list.as_deref()
     }
 }
-impl  std::fmt::Debug for BatchDetectSyntaxOutput  {
+impl std::fmt::Debug for BatchDetectSyntaxOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("BatchDetectSyntaxOutput");
         formatter.field("result_list", &"*** Sensitive Data Redacted ***");
@@ -31,13 +31,14 @@ impl  std::fmt::Debug for BatchDetectSyntaxOutput  {
     }
 }
 impl aws_http::request_id::RequestId for BatchDetectSyntaxOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl BatchDetectSyntaxOutput {
     /// Creates a new builder-style object to manufacture [`BatchDetectSyntaxOutput`](crate::operation::batch_detect_syntax::BatchDetectSyntaxOutput).
-    pub fn builder() -> crate::operation::batch_detect_syntax::builders::BatchDetectSyntaxOutputBuilder {
+    pub fn builder(
+    ) -> crate::operation::batch_detect_syntax::builders::BatchDetectSyntaxOutputBuilder {
         crate::operation::batch_detect_syntax::builders::BatchDetectSyntaxOutputBuilder::default()
     }
 }
@@ -46,7 +47,8 @@ impl BatchDetectSyntaxOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
 pub struct BatchDetectSyntaxOutputBuilder {
-    pub(crate) result_list: std::option::Option<std::vec::Vec<crate::types::BatchDetectSyntaxItemResult>>,
+    pub(crate) result_list:
+        std::option::Option<std::vec::Vec<crate::types::BatchDetectSyntaxItemResult>>,
     pub(crate) error_list: std::option::Option<std::vec::Vec<crate::types::BatchItemError>>,
     _request_id: Option<String>,
 }
@@ -58,13 +60,17 @@ impl BatchDetectSyntaxOutputBuilder {
     /// <p>A list of objects containing the results of the operation. The results are sorted in ascending order by the <code>Index</code> field and match the order of the documents in the input list. If all of the documents contain an error, the <code>ResultList</code> is empty.</p>
     pub fn result_list(mut self, input: crate::types::BatchDetectSyntaxItemResult) -> Self {
         let mut v = self.result_list.unwrap_or_default();
-                        v.push(input);
-                        self.result_list = Some(v);
-                        self
+        v.push(input);
+        self.result_list = Some(v);
+        self
     }
     /// <p>A list of objects containing the results of the operation. The results are sorted in ascending order by the <code>Index</code> field and match the order of the documents in the input list. If all of the documents contain an error, the <code>ResultList</code> is empty.</p>
-    pub fn set_result_list(mut self, input: std::option::Option<std::vec::Vec<crate::types::BatchDetectSyntaxItemResult>>) -> Self {
-        self.result_list = input; self
+    pub fn set_result_list(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::BatchDetectSyntaxItemResult>>,
+    ) -> Self {
+        self.result_list = input;
+        self
     }
     /// Appends an item to `error_list`.
     ///
@@ -73,30 +79,32 @@ impl BatchDetectSyntaxOutputBuilder {
     /// <p>A list containing one object for each document that contained an error. The results are sorted in ascending order by the <code>Index</code> field and match the order of the documents in the input list. If there are no errors in the batch, the <code>ErrorList</code> is empty.</p>
     pub fn error_list(mut self, input: crate::types::BatchItemError) -> Self {
         let mut v = self.error_list.unwrap_or_default();
-                        v.push(input);
-                        self.error_list = Some(v);
-                        self
+        v.push(input);
+        self.error_list = Some(v);
+        self
     }
     /// <p>A list containing one object for each document that contained an error. The results are sorted in ascending order by the <code>Index</code> field and match the order of the documents in the input list. If there are no errors in the batch, the <code>ErrorList</code> is empty.</p>
-    pub fn set_error_list(mut self, input: std::option::Option<std::vec::Vec<crate::types::BatchItemError>>) -> Self {
-        self.error_list = input; self
+    pub fn set_error_list(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::BatchItemError>>,
+    ) -> Self {
+        self.error_list = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`BatchDetectSyntaxOutput`](crate::operation::batch_detect_syntax::BatchDetectSyntaxOutput).
     pub fn build(self) -> crate::operation::batch_detect_syntax::BatchDetectSyntaxOutput {
         crate::operation::batch_detect_syntax::BatchDetectSyntaxOutput {
-            result_list: self.result_list
-            ,
-            error_list: self.error_list
-            ,
+            result_list: self.result_list,
+            error_list: self.error_list,
             _request_id: self._request_id,
         }
     }
@@ -110,4 +118,3 @@ impl std::fmt::Debug for BatchDetectSyntaxOutputBuilder {
         formatter.finish()
     }
 }
-

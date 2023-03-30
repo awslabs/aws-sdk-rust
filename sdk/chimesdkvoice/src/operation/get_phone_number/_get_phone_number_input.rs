@@ -2,18 +2,18 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct GetPhoneNumberInput  {
+pub struct GetPhoneNumberInput {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub phone_number_id: std::option::Option<std::string::String>,
 }
 impl GetPhoneNumberInput {
     #[allow(missing_docs)] // documentation missing in model
-    pub fn phone_number_id(&self) -> std::option::Option<& str> {
+    pub fn phone_number_id(&self) -> std::option::Option<&str> {
         self.phone_number_id.as_deref()
     }
 }
-impl  std::fmt::Debug for GetPhoneNumberInput  {
+impl std::fmt::Debug for GetPhoneNumberInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetPhoneNumberInput");
         formatter.field("phone_number_id", &"*** Sensitive Data Redacted ***");
@@ -41,16 +41,19 @@ impl GetPhoneNumberInputBuilder {
     }
     #[allow(missing_docs)] // documentation missing in model
     pub fn set_phone_number_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.phone_number_id = input; self
+        self.phone_number_id = input;
+        self
     }
     /// Consumes the builder and constructs a [`GetPhoneNumberInput`](crate::operation::get_phone_number::GetPhoneNumberInput).
-    pub fn build(self) -> Result<crate::operation::get_phone_number::GetPhoneNumberInput, aws_smithy_http::operation::error::BuildError> {
-        Ok(
-            crate::operation::get_phone_number::GetPhoneNumberInput {
-                phone_number_id: self.phone_number_id
-                ,
-            }
-        )
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::get_phone_number::GetPhoneNumberInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        Ok(crate::operation::get_phone_number::GetPhoneNumberInput {
+            phone_number_id: self.phone_number_id,
+        })
     }
 }
 impl std::fmt::Debug for GetPhoneNumberInputBuilder {
@@ -60,4 +63,3 @@ impl std::fmt::Debug for GetPhoneNumberInputBuilder {
         formatter.finish()
     }
 }
-

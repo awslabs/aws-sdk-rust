@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct StartExportTaskInput  {
+pub struct StartExportTaskInput {
     /// <p>A unique identifier for the snapshot export task. This ID isn't an identifier for the Amazon S3 bucket where the snapshot is to be exported to.</p>
     #[doc(hidden)]
     pub export_task_identifier: std::option::Option<std::string::String>,
@@ -15,77 +15,77 @@ pub struct StartExportTaskInput  {
     /// <p>The name of the IAM role to use for writing to the Amazon S3 bucket when exporting a snapshot.</p>
     #[doc(hidden)]
     pub iam_role_arn: std::option::Option<std::string::String>,
-    /// <p>The ID of the Amazon Web Services KMS key to use to encrypt the snapshot exported to Amazon S3. The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the KMS key. The caller of this operation must be authorized to run the following operations. These can be set in the Amazon Web Services KMS key policy:</p> 
-    /// <ul> 
-    /// <li> <p>kms:Encrypt</p> </li> 
-    /// <li> <p>kms:Decrypt</p> </li> 
-    /// <li> <p>kms:GenerateDataKey</p> </li> 
-    /// <li> <p>kms:GenerateDataKeyWithoutPlaintext</p> </li> 
-    /// <li> <p>kms:ReEncryptFrom</p> </li> 
-    /// <li> <p>kms:ReEncryptTo</p> </li> 
-    /// <li> <p>kms:CreateGrant</p> </li> 
-    /// <li> <p>kms:DescribeKey</p> </li> 
-    /// <li> <p>kms:RetireGrant</p> </li> 
+    /// <p>The ID of the Amazon Web Services KMS key to use to encrypt the snapshot exported to Amazon S3. The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the KMS key. The caller of this operation must be authorized to run the following operations. These can be set in the Amazon Web Services KMS key policy:</p>
+    /// <ul>
+    /// <li> <p>kms:Encrypt</p> </li>
+    /// <li> <p>kms:Decrypt</p> </li>
+    /// <li> <p>kms:GenerateDataKey</p> </li>
+    /// <li> <p>kms:GenerateDataKeyWithoutPlaintext</p> </li>
+    /// <li> <p>kms:ReEncryptFrom</p> </li>
+    /// <li> <p>kms:ReEncryptTo</p> </li>
+    /// <li> <p>kms:CreateGrant</p> </li>
+    /// <li> <p>kms:DescribeKey</p> </li>
+    /// <li> <p>kms:RetireGrant</p> </li>
     /// </ul>
     #[doc(hidden)]
     pub kms_key_id: std::option::Option<std::string::String>,
     /// <p>The Amazon S3 bucket prefix to use as the file name and path of the exported snapshot.</p>
     #[doc(hidden)]
     pub s3_prefix: std::option::Option<std::string::String>,
-    /// <p>The data to be exported from the snapshot. If this parameter is not provided, all the snapshot data is exported. Valid values are the following:</p> 
-    /// <ul> 
-    /// <li> <p> <code>database</code> - Export all the data from a specified database.</p> </li> 
-    /// <li> <p> <code>database.table</code> <i>table-name</i> - Export a table of the snapshot. This format is valid only for RDS for MySQL, RDS for MariaDB, and Aurora MySQL.</p> </li> 
-    /// <li> <p> <code>database.schema</code> <i>schema-name</i> - Export a database schema of the snapshot. This format is valid only for RDS for PostgreSQL and Aurora PostgreSQL.</p> </li> 
-    /// <li> <p> <code>database.schema.table</code> <i>table-name</i> - Export a table of the database schema. This format is valid only for RDS for PostgreSQL and Aurora PostgreSQL.</p> </li> 
+    /// <p>The data to be exported from the snapshot. If this parameter is not provided, all the snapshot data is exported. Valid values are the following:</p>
+    /// <ul>
+    /// <li> <p> <code>database</code> - Export all the data from a specified database.</p> </li>
+    /// <li> <p> <code>database.table</code> <i>table-name</i> - Export a table of the snapshot. This format is valid only for RDS for MySQL, RDS for MariaDB, and Aurora MySQL.</p> </li>
+    /// <li> <p> <code>database.schema</code> <i>schema-name</i> - Export a database schema of the snapshot. This format is valid only for RDS for PostgreSQL and Aurora PostgreSQL.</p> </li>
+    /// <li> <p> <code>database.schema.table</code> <i>table-name</i> - Export a table of the database schema. This format is valid only for RDS for PostgreSQL and Aurora PostgreSQL.</p> </li>
     /// </ul>
     #[doc(hidden)]
     pub export_only: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl StartExportTaskInput {
     /// <p>A unique identifier for the snapshot export task. This ID isn't an identifier for the Amazon S3 bucket where the snapshot is to be exported to.</p>
-    pub fn export_task_identifier(&self) -> std::option::Option<& str> {
+    pub fn export_task_identifier(&self) -> std::option::Option<&str> {
         self.export_task_identifier.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the snapshot to export to Amazon S3.</p>
-    pub fn source_arn(&self) -> std::option::Option<& str> {
+    pub fn source_arn(&self) -> std::option::Option<&str> {
         self.source_arn.as_deref()
     }
     /// <p>The name of the Amazon S3 bucket to export the snapshot to.</p>
-    pub fn s3_bucket_name(&self) -> std::option::Option<& str> {
+    pub fn s3_bucket_name(&self) -> std::option::Option<&str> {
         self.s3_bucket_name.as_deref()
     }
     /// <p>The name of the IAM role to use for writing to the Amazon S3 bucket when exporting a snapshot.</p>
-    pub fn iam_role_arn(&self) -> std::option::Option<& str> {
+    pub fn iam_role_arn(&self) -> std::option::Option<&str> {
         self.iam_role_arn.as_deref()
     }
-    /// <p>The ID of the Amazon Web Services KMS key to use to encrypt the snapshot exported to Amazon S3. The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the KMS key. The caller of this operation must be authorized to run the following operations. These can be set in the Amazon Web Services KMS key policy:</p> 
-    /// <ul> 
-    /// <li> <p>kms:Encrypt</p> </li> 
-    /// <li> <p>kms:Decrypt</p> </li> 
-    /// <li> <p>kms:GenerateDataKey</p> </li> 
-    /// <li> <p>kms:GenerateDataKeyWithoutPlaintext</p> </li> 
-    /// <li> <p>kms:ReEncryptFrom</p> </li> 
-    /// <li> <p>kms:ReEncryptTo</p> </li> 
-    /// <li> <p>kms:CreateGrant</p> </li> 
-    /// <li> <p>kms:DescribeKey</p> </li> 
-    /// <li> <p>kms:RetireGrant</p> </li> 
+    /// <p>The ID of the Amazon Web Services KMS key to use to encrypt the snapshot exported to Amazon S3. The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the KMS key. The caller of this operation must be authorized to run the following operations. These can be set in the Amazon Web Services KMS key policy:</p>
+    /// <ul>
+    /// <li> <p>kms:Encrypt</p> </li>
+    /// <li> <p>kms:Decrypt</p> </li>
+    /// <li> <p>kms:GenerateDataKey</p> </li>
+    /// <li> <p>kms:GenerateDataKeyWithoutPlaintext</p> </li>
+    /// <li> <p>kms:ReEncryptFrom</p> </li>
+    /// <li> <p>kms:ReEncryptTo</p> </li>
+    /// <li> <p>kms:CreateGrant</p> </li>
+    /// <li> <p>kms:DescribeKey</p> </li>
+    /// <li> <p>kms:RetireGrant</p> </li>
     /// </ul>
-    pub fn kms_key_id(&self) -> std::option::Option<& str> {
+    pub fn kms_key_id(&self) -> std::option::Option<&str> {
         self.kms_key_id.as_deref()
     }
     /// <p>The Amazon S3 bucket prefix to use as the file name and path of the exported snapshot.</p>
-    pub fn s3_prefix(&self) -> std::option::Option<& str> {
+    pub fn s3_prefix(&self) -> std::option::Option<&str> {
         self.s3_prefix.as_deref()
     }
-    /// <p>The data to be exported from the snapshot. If this parameter is not provided, all the snapshot data is exported. Valid values are the following:</p> 
-    /// <ul> 
-    /// <li> <p> <code>database</code> - Export all the data from a specified database.</p> </li> 
-    /// <li> <p> <code>database.table</code> <i>table-name</i> - Export a table of the snapshot. This format is valid only for RDS for MySQL, RDS for MariaDB, and Aurora MySQL.</p> </li> 
-    /// <li> <p> <code>database.schema</code> <i>schema-name</i> - Export a database schema of the snapshot. This format is valid only for RDS for PostgreSQL and Aurora PostgreSQL.</p> </li> 
-    /// <li> <p> <code>database.schema.table</code> <i>table-name</i> - Export a table of the database schema. This format is valid only for RDS for PostgreSQL and Aurora PostgreSQL.</p> </li> 
+    /// <p>The data to be exported from the snapshot. If this parameter is not provided, all the snapshot data is exported. Valid values are the following:</p>
+    /// <ul>
+    /// <li> <p> <code>database</code> - Export all the data from a specified database.</p> </li>
+    /// <li> <p> <code>database.table</code> <i>table-name</i> - Export a table of the snapshot. This format is valid only for RDS for MySQL, RDS for MariaDB, and Aurora MySQL.</p> </li>
+    /// <li> <p> <code>database.schema</code> <i>schema-name</i> - Export a database schema of the snapshot. This format is valid only for RDS for PostgreSQL and Aurora PostgreSQL.</p> </li>
+    /// <li> <p> <code>database.schema.table</code> <i>table-name</i> - Export a table of the database schema. This format is valid only for RDS for PostgreSQL and Aurora PostgreSQL.</p> </li>
     /// </ul>
-    pub fn export_only(&self) -> std::option::Option<& [std::string::String]> {
+    pub fn export_only(&self) -> std::option::Option<&[std::string::String]> {
         self.export_only.as_deref()
     }
 }
@@ -115,8 +115,12 @@ impl StartExportTaskInputBuilder {
         self
     }
     /// <p>A unique identifier for the snapshot export task. This ID isn't an identifier for the Amazon S3 bucket where the snapshot is to be exported to.</p>
-    pub fn set_export_task_identifier(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.export_task_identifier = input; self
+    pub fn set_export_task_identifier(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.export_task_identifier = input;
+        self
     }
     /// <p>The Amazon Resource Name (ARN) of the snapshot to export to Amazon S3.</p>
     pub fn source_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -125,7 +129,8 @@ impl StartExportTaskInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the snapshot to export to Amazon S3.</p>
     pub fn set_source_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.source_arn = input; self
+        self.source_arn = input;
+        self
     }
     /// <p>The name of the Amazon S3 bucket to export the snapshot to.</p>
     pub fn s3_bucket_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -134,7 +139,8 @@ impl StartExportTaskInputBuilder {
     }
     /// <p>The name of the Amazon S3 bucket to export the snapshot to.</p>
     pub fn set_s3_bucket_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.s3_bucket_name = input; self
+        self.s3_bucket_name = input;
+        self
     }
     /// <p>The name of the IAM role to use for writing to the Amazon S3 bucket when exporting a snapshot.</p>
     pub fn iam_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -143,38 +149,40 @@ impl StartExportTaskInputBuilder {
     }
     /// <p>The name of the IAM role to use for writing to the Amazon S3 bucket when exporting a snapshot.</p>
     pub fn set_iam_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.iam_role_arn = input; self
+        self.iam_role_arn = input;
+        self
     }
-    /// <p>The ID of the Amazon Web Services KMS key to use to encrypt the snapshot exported to Amazon S3. The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the KMS key. The caller of this operation must be authorized to run the following operations. These can be set in the Amazon Web Services KMS key policy:</p> 
-    /// <ul> 
-    /// <li> <p>kms:Encrypt</p> </li> 
-    /// <li> <p>kms:Decrypt</p> </li> 
-    /// <li> <p>kms:GenerateDataKey</p> </li> 
-    /// <li> <p>kms:GenerateDataKeyWithoutPlaintext</p> </li> 
-    /// <li> <p>kms:ReEncryptFrom</p> </li> 
-    /// <li> <p>kms:ReEncryptTo</p> </li> 
-    /// <li> <p>kms:CreateGrant</p> </li> 
-    /// <li> <p>kms:DescribeKey</p> </li> 
-    /// <li> <p>kms:RetireGrant</p> </li> 
+    /// <p>The ID of the Amazon Web Services KMS key to use to encrypt the snapshot exported to Amazon S3. The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the KMS key. The caller of this operation must be authorized to run the following operations. These can be set in the Amazon Web Services KMS key policy:</p>
+    /// <ul>
+    /// <li> <p>kms:Encrypt</p> </li>
+    /// <li> <p>kms:Decrypt</p> </li>
+    /// <li> <p>kms:GenerateDataKey</p> </li>
+    /// <li> <p>kms:GenerateDataKeyWithoutPlaintext</p> </li>
+    /// <li> <p>kms:ReEncryptFrom</p> </li>
+    /// <li> <p>kms:ReEncryptTo</p> </li>
+    /// <li> <p>kms:CreateGrant</p> </li>
+    /// <li> <p>kms:DescribeKey</p> </li>
+    /// <li> <p>kms:RetireGrant</p> </li>
     /// </ul>
     pub fn kms_key_id(mut self, input: impl Into<std::string::String>) -> Self {
         self.kms_key_id = Some(input.into());
         self
     }
-    /// <p>The ID of the Amazon Web Services KMS key to use to encrypt the snapshot exported to Amazon S3. The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the KMS key. The caller of this operation must be authorized to run the following operations. These can be set in the Amazon Web Services KMS key policy:</p> 
-    /// <ul> 
-    /// <li> <p>kms:Encrypt</p> </li> 
-    /// <li> <p>kms:Decrypt</p> </li> 
-    /// <li> <p>kms:GenerateDataKey</p> </li> 
-    /// <li> <p>kms:GenerateDataKeyWithoutPlaintext</p> </li> 
-    /// <li> <p>kms:ReEncryptFrom</p> </li> 
-    /// <li> <p>kms:ReEncryptTo</p> </li> 
-    /// <li> <p>kms:CreateGrant</p> </li> 
-    /// <li> <p>kms:DescribeKey</p> </li> 
-    /// <li> <p>kms:RetireGrant</p> </li> 
+    /// <p>The ID of the Amazon Web Services KMS key to use to encrypt the snapshot exported to Amazon S3. The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the KMS key. The caller of this operation must be authorized to run the following operations. These can be set in the Amazon Web Services KMS key policy:</p>
+    /// <ul>
+    /// <li> <p>kms:Encrypt</p> </li>
+    /// <li> <p>kms:Decrypt</p> </li>
+    /// <li> <p>kms:GenerateDataKey</p> </li>
+    /// <li> <p>kms:GenerateDataKeyWithoutPlaintext</p> </li>
+    /// <li> <p>kms:ReEncryptFrom</p> </li>
+    /// <li> <p>kms:ReEncryptTo</p> </li>
+    /// <li> <p>kms:CreateGrant</p> </li>
+    /// <li> <p>kms:DescribeKey</p> </li>
+    /// <li> <p>kms:RetireGrant</p> </li>
     /// </ul>
     pub fn set_kms_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.kms_key_id = input; self
+        self.kms_key_id = input;
+        self
     }
     /// <p>The Amazon S3 bucket prefix to use as the file name and path of the exported snapshot.</p>
     pub fn s3_prefix(mut self, input: impl Into<std::string::String>) -> Self {
@@ -183,55 +191,55 @@ impl StartExportTaskInputBuilder {
     }
     /// <p>The Amazon S3 bucket prefix to use as the file name and path of the exported snapshot.</p>
     pub fn set_s3_prefix(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.s3_prefix = input; self
+        self.s3_prefix = input;
+        self
     }
     /// Appends an item to `export_only`.
     ///
     /// To override the contents of this collection use [`set_export_only`](Self::set_export_only).
     ///
-    /// <p>The data to be exported from the snapshot. If this parameter is not provided, all the snapshot data is exported. Valid values are the following:</p> 
-    /// <ul> 
-    /// <li> <p> <code>database</code> - Export all the data from a specified database.</p> </li> 
-    /// <li> <p> <code>database.table</code> <i>table-name</i> - Export a table of the snapshot. This format is valid only for RDS for MySQL, RDS for MariaDB, and Aurora MySQL.</p> </li> 
-    /// <li> <p> <code>database.schema</code> <i>schema-name</i> - Export a database schema of the snapshot. This format is valid only for RDS for PostgreSQL and Aurora PostgreSQL.</p> </li> 
-    /// <li> <p> <code>database.schema.table</code> <i>table-name</i> - Export a table of the database schema. This format is valid only for RDS for PostgreSQL and Aurora PostgreSQL.</p> </li> 
+    /// <p>The data to be exported from the snapshot. If this parameter is not provided, all the snapshot data is exported. Valid values are the following:</p>
+    /// <ul>
+    /// <li> <p> <code>database</code> - Export all the data from a specified database.</p> </li>
+    /// <li> <p> <code>database.table</code> <i>table-name</i> - Export a table of the snapshot. This format is valid only for RDS for MySQL, RDS for MariaDB, and Aurora MySQL.</p> </li>
+    /// <li> <p> <code>database.schema</code> <i>schema-name</i> - Export a database schema of the snapshot. This format is valid only for RDS for PostgreSQL and Aurora PostgreSQL.</p> </li>
+    /// <li> <p> <code>database.schema.table</code> <i>table-name</i> - Export a table of the database schema. This format is valid only for RDS for PostgreSQL and Aurora PostgreSQL.</p> </li>
     /// </ul>
     pub fn export_only(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.export_only.unwrap_or_default();
-                        v.push(input.into());
-                        self.export_only = Some(v);
-                        self
+        v.push(input.into());
+        self.export_only = Some(v);
+        self
     }
-    /// <p>The data to be exported from the snapshot. If this parameter is not provided, all the snapshot data is exported. Valid values are the following:</p> 
-    /// <ul> 
-    /// <li> <p> <code>database</code> - Export all the data from a specified database.</p> </li> 
-    /// <li> <p> <code>database.table</code> <i>table-name</i> - Export a table of the snapshot. This format is valid only for RDS for MySQL, RDS for MariaDB, and Aurora MySQL.</p> </li> 
-    /// <li> <p> <code>database.schema</code> <i>schema-name</i> - Export a database schema of the snapshot. This format is valid only for RDS for PostgreSQL and Aurora PostgreSQL.</p> </li> 
-    /// <li> <p> <code>database.schema.table</code> <i>table-name</i> - Export a table of the database schema. This format is valid only for RDS for PostgreSQL and Aurora PostgreSQL.</p> </li> 
+    /// <p>The data to be exported from the snapshot. If this parameter is not provided, all the snapshot data is exported. Valid values are the following:</p>
+    /// <ul>
+    /// <li> <p> <code>database</code> - Export all the data from a specified database.</p> </li>
+    /// <li> <p> <code>database.table</code> <i>table-name</i> - Export a table of the snapshot. This format is valid only for RDS for MySQL, RDS for MariaDB, and Aurora MySQL.</p> </li>
+    /// <li> <p> <code>database.schema</code> <i>schema-name</i> - Export a database schema of the snapshot. This format is valid only for RDS for PostgreSQL and Aurora PostgreSQL.</p> </li>
+    /// <li> <p> <code>database.schema.table</code> <i>table-name</i> - Export a table of the database schema. This format is valid only for RDS for PostgreSQL and Aurora PostgreSQL.</p> </li>
     /// </ul>
-    pub fn set_export_only(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-        self.export_only = input; self
+    pub fn set_export_only(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
+        self.export_only = input;
+        self
     }
     /// Consumes the builder and constructs a [`StartExportTaskInput`](crate::operation::start_export_task::StartExportTaskInput).
-    pub fn build(self) -> Result<crate::operation::start_export_task::StartExportTaskInput, aws_smithy_http::operation::error::BuildError> {
-        Ok(
-            crate::operation::start_export_task::StartExportTaskInput {
-                export_task_identifier: self.export_task_identifier
-                ,
-                source_arn: self.source_arn
-                ,
-                s3_bucket_name: self.s3_bucket_name
-                ,
-                iam_role_arn: self.iam_role_arn
-                ,
-                kms_key_id: self.kms_key_id
-                ,
-                s3_prefix: self.s3_prefix
-                ,
-                export_only: self.export_only
-                ,
-            }
-        )
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::start_export_task::StartExportTaskInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        Ok(crate::operation::start_export_task::StartExportTaskInput {
+            export_task_identifier: self.export_task_identifier,
+            source_arn: self.source_arn,
+            s3_bucket_name: self.s3_bucket_name,
+            iam_role_arn: self.iam_role_arn,
+            kms_key_id: self.kms_key_id,
+            s3_prefix: self.s3_prefix,
+            export_only: self.export_only,
+        })
     }
 }
-

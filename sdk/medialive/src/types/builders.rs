@@ -468,4 +468,3 @@ pub use crate::types::_batch_schedule_action_create_request::BatchScheduleAction
 pub use crate::types::_batch_successful_result_model::BatchSuccessfulResultModelBuilder;
 
 pub use crate::types::_batch_failed_result_model::BatchFailedResultModelBuilder;
-

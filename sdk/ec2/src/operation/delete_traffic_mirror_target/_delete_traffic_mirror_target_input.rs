@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteTrafficMirrorTargetInput  {
+pub struct DeleteTrafficMirrorTargetInput {
     /// <p>The ID of the Traffic Mirror target.</p>
     #[doc(hidden)]
     pub traffic_mirror_target_id: std::option::Option<std::string::String>,
@@ -12,7 +12,7 @@ pub struct DeleteTrafficMirrorTargetInput  {
 }
 impl DeleteTrafficMirrorTargetInput {
     /// <p>The ID of the Traffic Mirror target.</p>
-    pub fn traffic_mirror_target_id(&self) -> std::option::Option<& str> {
+    pub fn traffic_mirror_target_id(&self) -> std::option::Option<&str> {
         self.traffic_mirror_target_id.as_deref()
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
@@ -22,7 +22,7 @@ impl DeleteTrafficMirrorTargetInput {
 }
 impl DeleteTrafficMirrorTargetInput {
     /// Creates a new builder-style object to manufacture [`DeleteTrafficMirrorTargetInput`](crate::operation::delete_traffic_mirror_target::DeleteTrafficMirrorTargetInput).
-    pub fn builder() -> crate::operation::delete_traffic_mirror_target::builders::DeleteTrafficMirrorTargetInputBuilder {
+    pub fn builder() -> crate::operation::delete_traffic_mirror_target::builders::DeleteTrafficMirrorTargetInputBuilder{
         crate::operation::delete_traffic_mirror_target::builders::DeleteTrafficMirrorTargetInputBuilder::default()
     }
 }
@@ -41,8 +41,12 @@ impl DeleteTrafficMirrorTargetInputBuilder {
         self
     }
     /// <p>The ID of the Traffic Mirror target.</p>
-    pub fn set_traffic_mirror_target_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.traffic_mirror_target_id = input; self
+    pub fn set_traffic_mirror_target_id(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.traffic_mirror_target_id = input;
+        self
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn dry_run(mut self, input: bool) -> Self {
@@ -51,18 +55,21 @@ impl DeleteTrafficMirrorTargetInputBuilder {
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn set_dry_run(mut self, input: std::option::Option<bool>) -> Self {
-        self.dry_run = input; self
+        self.dry_run = input;
+        self
     }
     /// Consumes the builder and constructs a [`DeleteTrafficMirrorTargetInput`](crate::operation::delete_traffic_mirror_target::DeleteTrafficMirrorTargetInput).
-    pub fn build(self) -> Result<crate::operation::delete_traffic_mirror_target::DeleteTrafficMirrorTargetInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::delete_traffic_mirror_target::DeleteTrafficMirrorTargetInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::delete_traffic_mirror_target::DeleteTrafficMirrorTargetInput {
-                traffic_mirror_target_id: self.traffic_mirror_target_id
-                ,
-                dry_run: self.dry_run
-                ,
-            }
+                traffic_mirror_target_id: self.traffic_mirror_target_id,
+                dry_run: self.dry_run,
+            },
         )
     }
 }
-

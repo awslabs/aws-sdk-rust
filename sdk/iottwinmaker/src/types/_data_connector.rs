@@ -3,7 +3,7 @@
 /// <p>The data connector.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DataConnector  {
+pub struct DataConnector {
     /// <p>The Lambda function associated with this data connector.</p>
     #[doc(hidden)]
     pub lambda: std::option::Option<crate::types::LambdaFunction>,
@@ -13,7 +13,7 @@ pub struct DataConnector  {
 }
 impl DataConnector {
     /// <p>The Lambda function associated with this data connector.</p>
-    pub fn lambda(&self) -> std::option::Option<& crate::types::LambdaFunction> {
+    pub fn lambda(&self) -> std::option::Option<&crate::types::LambdaFunction> {
         self.lambda.as_ref()
     }
     /// <p>A Boolean value that specifies whether the data connector is native to IoT TwinMaker.</p>
@@ -43,7 +43,8 @@ impl DataConnectorBuilder {
     }
     /// <p>The Lambda function associated with this data connector.</p>
     pub fn set_lambda(mut self, input: std::option::Option<crate::types::LambdaFunction>) -> Self {
-        self.lambda = input; self
+        self.lambda = input;
+        self
     }
     /// <p>A Boolean value that specifies whether the data connector is native to IoT TwinMaker.</p>
     pub fn is_native(mut self, input: bool) -> Self {
@@ -52,16 +53,14 @@ impl DataConnectorBuilder {
     }
     /// <p>A Boolean value that specifies whether the data connector is native to IoT TwinMaker.</p>
     pub fn set_is_native(mut self, input: std::option::Option<bool>) -> Self {
-        self.is_native = input; self
+        self.is_native = input;
+        self
     }
     /// Consumes the builder and constructs a [`DataConnector`](crate::types::DataConnector).
     pub fn build(self) -> crate::types::DataConnector {
         crate::types::DataConnector {
-            lambda: self.lambda
-            ,
-            is_native: self.is_native
-            ,
+            lambda: self.lambda,
+            is_native: self.is_native,
         }
     }
 }
-

@@ -3,31 +3,31 @@
 /// <p> Information about compute hardware assets. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ComputeAttributes  {
+pub struct ComputeAttributes {
     /// <p> The host ID of the Dedicated Host on the asset. </p>
     #[doc(hidden)]
     pub host_id: std::option::Option<std::string::String>,
-    /// <p>The state.</p> 
-    /// <ul> 
-    /// <li> <p>ACTIVE - The asset is available and can provide capacity for new compute resources.</p> </li> 
-    /// <li> <p>ISOLATED - The asset is undergoing maintenance and can't provide capacity for new compute resources. Existing compute resources on the asset are not affected.</p> </li> 
-    /// <li> <p>RETIRING - The underlying hardware for the asset is degraded. Capacity for new compute resources is reduced. Amazon Web Services sends notifications for resources that must be stopped before the asset can be replaced.</p> </li> 
+    /// <p>The state.</p>
+    /// <ul>
+    /// <li> <p>ACTIVE - The asset is available and can provide capacity for new compute resources.</p> </li>
+    /// <li> <p>ISOLATED - The asset is undergoing maintenance and can't provide capacity for new compute resources. Existing compute resources on the asset are not affected.</p> </li>
+    /// <li> <p>RETIRING - The underlying hardware for the asset is degraded. Capacity for new compute resources is reduced. Amazon Web Services sends notifications for resources that must be stopped before the asset can be replaced.</p> </li>
     /// </ul>
     #[doc(hidden)]
     pub state: std::option::Option<crate::types::ComputeAssetState>,
 }
 impl ComputeAttributes {
     /// <p> The host ID of the Dedicated Host on the asset. </p>
-    pub fn host_id(&self) -> std::option::Option<& str> {
+    pub fn host_id(&self) -> std::option::Option<&str> {
         self.host_id.as_deref()
     }
-    /// <p>The state.</p> 
-    /// <ul> 
-    /// <li> <p>ACTIVE - The asset is available and can provide capacity for new compute resources.</p> </li> 
-    /// <li> <p>ISOLATED - The asset is undergoing maintenance and can't provide capacity for new compute resources. Existing compute resources on the asset are not affected.</p> </li> 
-    /// <li> <p>RETIRING - The underlying hardware for the asset is degraded. Capacity for new compute resources is reduced. Amazon Web Services sends notifications for resources that must be stopped before the asset can be replaced.</p> </li> 
+    /// <p>The state.</p>
+    /// <ul>
+    /// <li> <p>ACTIVE - The asset is available and can provide capacity for new compute resources.</p> </li>
+    /// <li> <p>ISOLATED - The asset is undergoing maintenance and can't provide capacity for new compute resources. Existing compute resources on the asset are not affected.</p> </li>
+    /// <li> <p>RETIRING - The underlying hardware for the asset is degraded. Capacity for new compute resources is reduced. Amazon Web Services sends notifications for resources that must be stopped before the asset can be replaced.</p> </li>
     /// </ul>
-    pub fn state(&self) -> std::option::Option<& crate::types::ComputeAssetState> {
+    pub fn state(&self) -> std::option::Option<&crate::types::ComputeAssetState> {
         self.state.as_ref()
     }
 }
@@ -53,35 +53,37 @@ impl ComputeAttributesBuilder {
     }
     /// <p> The host ID of the Dedicated Host on the asset. </p>
     pub fn set_host_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.host_id = input; self
+        self.host_id = input;
+        self
     }
-    /// <p>The state.</p> 
-    /// <ul> 
-    /// <li> <p>ACTIVE - The asset is available and can provide capacity for new compute resources.</p> </li> 
-    /// <li> <p>ISOLATED - The asset is undergoing maintenance and can't provide capacity for new compute resources. Existing compute resources on the asset are not affected.</p> </li> 
-    /// <li> <p>RETIRING - The underlying hardware for the asset is degraded. Capacity for new compute resources is reduced. Amazon Web Services sends notifications for resources that must be stopped before the asset can be replaced.</p> </li> 
+    /// <p>The state.</p>
+    /// <ul>
+    /// <li> <p>ACTIVE - The asset is available and can provide capacity for new compute resources.</p> </li>
+    /// <li> <p>ISOLATED - The asset is undergoing maintenance and can't provide capacity for new compute resources. Existing compute resources on the asset are not affected.</p> </li>
+    /// <li> <p>RETIRING - The underlying hardware for the asset is degraded. Capacity for new compute resources is reduced. Amazon Web Services sends notifications for resources that must be stopped before the asset can be replaced.</p> </li>
     /// </ul>
     pub fn state(mut self, input: crate::types::ComputeAssetState) -> Self {
         self.state = Some(input);
         self
     }
-    /// <p>The state.</p> 
-    /// <ul> 
-    /// <li> <p>ACTIVE - The asset is available and can provide capacity for new compute resources.</p> </li> 
-    /// <li> <p>ISOLATED - The asset is undergoing maintenance and can't provide capacity for new compute resources. Existing compute resources on the asset are not affected.</p> </li> 
-    /// <li> <p>RETIRING - The underlying hardware for the asset is degraded. Capacity for new compute resources is reduced. Amazon Web Services sends notifications for resources that must be stopped before the asset can be replaced.</p> </li> 
+    /// <p>The state.</p>
+    /// <ul>
+    /// <li> <p>ACTIVE - The asset is available and can provide capacity for new compute resources.</p> </li>
+    /// <li> <p>ISOLATED - The asset is undergoing maintenance and can't provide capacity for new compute resources. Existing compute resources on the asset are not affected.</p> </li>
+    /// <li> <p>RETIRING - The underlying hardware for the asset is degraded. Capacity for new compute resources is reduced. Amazon Web Services sends notifications for resources that must be stopped before the asset can be replaced.</p> </li>
     /// </ul>
-    pub fn set_state(mut self, input: std::option::Option<crate::types::ComputeAssetState>) -> Self {
-        self.state = input; self
+    pub fn set_state(
+        mut self,
+        input: std::option::Option<crate::types::ComputeAssetState>,
+    ) -> Self {
+        self.state = input;
+        self
     }
     /// Consumes the builder and constructs a [`ComputeAttributes`](crate::types::ComputeAttributes).
     pub fn build(self) -> crate::types::ComputeAttributes {
         crate::types::ComputeAttributes {
-            host_id: self.host_id
-            ,
-            state: self.state
-            ,
+            host_id: self.host_id,
+            state: self.state,
         }
     }
 }
-

@@ -2,8 +2,8 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PutObjectRetentionInput  {
-    /// <p>The bucket name that contains the object you want to apply this Object Retention configuration to. </p> 
+pub struct PutObjectRetentionInput {
+    /// <p>The bucket name that contains the object you want to apply this Object Retention configuration to. </p>
     /// <p>When using this action with an access point, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action with an access point through the Amazon Web Services SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <i>Amazon S3 User Guide</i>.</p>
     #[doc(hidden)]
     pub bucket: std::option::Option<std::string::String>,
@@ -22,11 +22,11 @@ pub struct PutObjectRetentionInput  {
     /// <p>Indicates whether this action should bypass Governance-mode restrictions.</p>
     #[doc(hidden)]
     pub bypass_governance_retention: bool,
-    /// <p>The MD5 hash for the request body.</p> 
+    /// <p>The MD5 hash for the request body.</p>
     /// <p>For requests made using the Amazon Web Services Command Line Interface (CLI) or Amazon Web Services SDKs, this field is calculated automatically.</p>
     #[doc(hidden)]
     pub content_md5: std::option::Option<std::string::String>,
-    /// <p>Indicates the algorithm used to create the checksum for the object when using the SDK. This header will not provide any additional functionality if not using the SDK. When sending this header, there must be a corresponding <code>x-amz-checksum</code> or <code>x-amz-trailer</code> header sent. Otherwise, Amazon S3 fails the request with the HTTP status code <code>400 Bad Request</code>. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p> 
+    /// <p>Indicates the algorithm used to create the checksum for the object when using the SDK. This header will not provide any additional functionality if not using the SDK. When sending this header, there must be a corresponding <code>x-amz-checksum</code> or <code>x-amz-trailer</code> header sent. Otherwise, Amazon S3 fails the request with the HTTP status code <code>400 Bad Request</code>. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
     /// <p>If you provide an individual checksum, Amazon S3 ignores any provided <code>ChecksumAlgorithm</code> parameter.</p>
     #[doc(hidden)]
     pub checksum_algorithm: std::option::Option<crate::types::ChecksumAlgorithm>,
@@ -35,49 +35,50 @@ pub struct PutObjectRetentionInput  {
     pub expected_bucket_owner: std::option::Option<std::string::String>,
 }
 impl PutObjectRetentionInput {
-    /// <p>The bucket name that contains the object you want to apply this Object Retention configuration to. </p> 
+    /// <p>The bucket name that contains the object you want to apply this Object Retention configuration to. </p>
     /// <p>When using this action with an access point, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action with an access point through the Amazon Web Services SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <i>Amazon S3 User Guide</i>.</p>
-    pub fn bucket(&self) -> std::option::Option<& str> {
+    pub fn bucket(&self) -> std::option::Option<&str> {
         self.bucket.as_deref()
     }
     /// <p>The key name for the object that you want to apply this Object Retention configuration to.</p>
-    pub fn key(&self) -> std::option::Option<& str> {
+    pub fn key(&self) -> std::option::Option<&str> {
         self.key.as_deref()
     }
     /// <p>The container element for the Object Retention configuration.</p>
-    pub fn retention(&self) -> std::option::Option<& crate::types::ObjectLockRetention> {
+    pub fn retention(&self) -> std::option::Option<&crate::types::ObjectLockRetention> {
         self.retention.as_ref()
     }
     /// <p>Confirms that the requester knows that they will be charged for the request. Bucket owners need not specify this parameter in their requests. For information about downloading objects from Requester Pays buckets, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ObjectsinRequesterPaysBuckets.html">Downloading Objects in Requester Pays Buckets</a> in the <i>Amazon S3 User Guide</i>.</p>
-    pub fn request_payer(&self) -> std::option::Option<& crate::types::RequestPayer> {
+    pub fn request_payer(&self) -> std::option::Option<&crate::types::RequestPayer> {
         self.request_payer.as_ref()
     }
     /// <p>The version ID for the object that you want to apply this Object Retention configuration to.</p>
-    pub fn version_id(&self) -> std::option::Option<& str> {
+    pub fn version_id(&self) -> std::option::Option<&str> {
         self.version_id.as_deref()
     }
     /// <p>Indicates whether this action should bypass Governance-mode restrictions.</p>
     pub fn bypass_governance_retention(&self) -> bool {
         self.bypass_governance_retention
     }
-    /// <p>The MD5 hash for the request body.</p> 
+    /// <p>The MD5 hash for the request body.</p>
     /// <p>For requests made using the Amazon Web Services Command Line Interface (CLI) or Amazon Web Services SDKs, this field is calculated automatically.</p>
-    pub fn content_md5(&self) -> std::option::Option<& str> {
+    pub fn content_md5(&self) -> std::option::Option<&str> {
         self.content_md5.as_deref()
     }
-    /// <p>Indicates the algorithm used to create the checksum for the object when using the SDK. This header will not provide any additional functionality if not using the SDK. When sending this header, there must be a corresponding <code>x-amz-checksum</code> or <code>x-amz-trailer</code> header sent. Otherwise, Amazon S3 fails the request with the HTTP status code <code>400 Bad Request</code>. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p> 
+    /// <p>Indicates the algorithm used to create the checksum for the object when using the SDK. This header will not provide any additional functionality if not using the SDK. When sending this header, there must be a corresponding <code>x-amz-checksum</code> or <code>x-amz-trailer</code> header sent. Otherwise, Amazon S3 fails the request with the HTTP status code <code>400 Bad Request</code>. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
     /// <p>If you provide an individual checksum, Amazon S3 ignores any provided <code>ChecksumAlgorithm</code> parameter.</p>
-    pub fn checksum_algorithm(&self) -> std::option::Option<& crate::types::ChecksumAlgorithm> {
+    pub fn checksum_algorithm(&self) -> std::option::Option<&crate::types::ChecksumAlgorithm> {
         self.checksum_algorithm.as_ref()
     }
     /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
-    pub fn expected_bucket_owner(&self) -> std::option::Option<& str> {
+    pub fn expected_bucket_owner(&self) -> std::option::Option<&str> {
         self.expected_bucket_owner.as_deref()
     }
 }
 impl PutObjectRetentionInput {
     /// Creates a new builder-style object to manufacture [`PutObjectRetentionInput`](crate::operation::put_object_retention::PutObjectRetentionInput).
-    pub fn builder() -> crate::operation::put_object_retention::builders::PutObjectRetentionInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::put_object_retention::builders::PutObjectRetentionInputBuilder {
         crate::operation::put_object_retention::builders::PutObjectRetentionInputBuilder::default()
     }
 }
@@ -97,16 +98,17 @@ pub struct PutObjectRetentionInputBuilder {
     pub(crate) expected_bucket_owner: std::option::Option<std::string::String>,
 }
 impl PutObjectRetentionInputBuilder {
-    /// <p>The bucket name that contains the object you want to apply this Object Retention configuration to. </p> 
+    /// <p>The bucket name that contains the object you want to apply this Object Retention configuration to. </p>
     /// <p>When using this action with an access point, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action with an access point through the Amazon Web Services SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <i>Amazon S3 User Guide</i>.</p>
     pub fn bucket(mut self, input: impl Into<std::string::String>) -> Self {
         self.bucket = Some(input.into());
         self
     }
-    /// <p>The bucket name that contains the object you want to apply this Object Retention configuration to. </p> 
+    /// <p>The bucket name that contains the object you want to apply this Object Retention configuration to. </p>
     /// <p>When using this action with an access point, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action with an access point through the Amazon Web Services SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <i>Amazon S3 User Guide</i>.</p>
     pub fn set_bucket(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.bucket = input; self
+        self.bucket = input;
+        self
     }
     /// <p>The key name for the object that you want to apply this Object Retention configuration to.</p>
     pub fn key(mut self, input: impl Into<std::string::String>) -> Self {
@@ -115,7 +117,8 @@ impl PutObjectRetentionInputBuilder {
     }
     /// <p>The key name for the object that you want to apply this Object Retention configuration to.</p>
     pub fn set_key(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.key = input; self
+        self.key = input;
+        self
     }
     /// <p>The container element for the Object Retention configuration.</p>
     pub fn retention(mut self, input: crate::types::ObjectLockRetention) -> Self {
@@ -123,8 +126,12 @@ impl PutObjectRetentionInputBuilder {
         self
     }
     /// <p>The container element for the Object Retention configuration.</p>
-    pub fn set_retention(mut self, input: std::option::Option<crate::types::ObjectLockRetention>) -> Self {
-        self.retention = input; self
+    pub fn set_retention(
+        mut self,
+        input: std::option::Option<crate::types::ObjectLockRetention>,
+    ) -> Self {
+        self.retention = input;
+        self
     }
     /// <p>Confirms that the requester knows that they will be charged for the request. Bucket owners need not specify this parameter in their requests. For information about downloading objects from Requester Pays buckets, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ObjectsinRequesterPaysBuckets.html">Downloading Objects in Requester Pays Buckets</a> in the <i>Amazon S3 User Guide</i>.</p>
     pub fn request_payer(mut self, input: crate::types::RequestPayer) -> Self {
@@ -132,8 +139,12 @@ impl PutObjectRetentionInputBuilder {
         self
     }
     /// <p>Confirms that the requester knows that they will be charged for the request. Bucket owners need not specify this parameter in their requests. For information about downloading objects from Requester Pays buckets, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ObjectsinRequesterPaysBuckets.html">Downloading Objects in Requester Pays Buckets</a> in the <i>Amazon S3 User Guide</i>.</p>
-    pub fn set_request_payer(mut self, input: std::option::Option<crate::types::RequestPayer>) -> Self {
-        self.request_payer = input; self
+    pub fn set_request_payer(
+        mut self,
+        input: std::option::Option<crate::types::RequestPayer>,
+    ) -> Self {
+        self.request_payer = input;
+        self
     }
     /// <p>The version ID for the object that you want to apply this Object Retention configuration to.</p>
     pub fn version_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -142,7 +153,8 @@ impl PutObjectRetentionInputBuilder {
     }
     /// <p>The version ID for the object that you want to apply this Object Retention configuration to.</p>
     pub fn set_version_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.version_id = input; self
+        self.version_id = input;
+        self
     }
     /// <p>Indicates whether this action should bypass Governance-mode restrictions.</p>
     pub fn bypass_governance_retention(mut self, input: bool) -> Self {
@@ -151,29 +163,35 @@ impl PutObjectRetentionInputBuilder {
     }
     /// <p>Indicates whether this action should bypass Governance-mode restrictions.</p>
     pub fn set_bypass_governance_retention(mut self, input: std::option::Option<bool>) -> Self {
-        self.bypass_governance_retention = input; self
+        self.bypass_governance_retention = input;
+        self
     }
-    /// <p>The MD5 hash for the request body.</p> 
+    /// <p>The MD5 hash for the request body.</p>
     /// <p>For requests made using the Amazon Web Services Command Line Interface (CLI) or Amazon Web Services SDKs, this field is calculated automatically.</p>
     pub fn content_md5(mut self, input: impl Into<std::string::String>) -> Self {
         self.content_md5 = Some(input.into());
         self
     }
-    /// <p>The MD5 hash for the request body.</p> 
+    /// <p>The MD5 hash for the request body.</p>
     /// <p>For requests made using the Amazon Web Services Command Line Interface (CLI) or Amazon Web Services SDKs, this field is calculated automatically.</p>
     pub fn set_content_md5(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.content_md5 = input; self
+        self.content_md5 = input;
+        self
     }
-    /// <p>Indicates the algorithm used to create the checksum for the object when using the SDK. This header will not provide any additional functionality if not using the SDK. When sending this header, there must be a corresponding <code>x-amz-checksum</code> or <code>x-amz-trailer</code> header sent. Otherwise, Amazon S3 fails the request with the HTTP status code <code>400 Bad Request</code>. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p> 
+    /// <p>Indicates the algorithm used to create the checksum for the object when using the SDK. This header will not provide any additional functionality if not using the SDK. When sending this header, there must be a corresponding <code>x-amz-checksum</code> or <code>x-amz-trailer</code> header sent. Otherwise, Amazon S3 fails the request with the HTTP status code <code>400 Bad Request</code>. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
     /// <p>If you provide an individual checksum, Amazon S3 ignores any provided <code>ChecksumAlgorithm</code> parameter.</p>
     pub fn checksum_algorithm(mut self, input: crate::types::ChecksumAlgorithm) -> Self {
         self.checksum_algorithm = Some(input);
         self
     }
-    /// <p>Indicates the algorithm used to create the checksum for the object when using the SDK. This header will not provide any additional functionality if not using the SDK. When sending this header, there must be a corresponding <code>x-amz-checksum</code> or <code>x-amz-trailer</code> header sent. Otherwise, Amazon S3 fails the request with the HTTP status code <code>400 Bad Request</code>. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p> 
+    /// <p>Indicates the algorithm used to create the checksum for the object when using the SDK. This header will not provide any additional functionality if not using the SDK. When sending this header, there must be a corresponding <code>x-amz-checksum</code> or <code>x-amz-trailer</code> header sent. Otherwise, Amazon S3 fails the request with the HTTP status code <code>400 Bad Request</code>. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
     /// <p>If you provide an individual checksum, Amazon S3 ignores any provided <code>ChecksumAlgorithm</code> parameter.</p>
-    pub fn set_checksum_algorithm(mut self, input: std::option::Option<crate::types::ChecksumAlgorithm>) -> Self {
-        self.checksum_algorithm = input; self
+    pub fn set_checksum_algorithm(
+        mut self,
+        input: std::option::Option<crate::types::ChecksumAlgorithm>,
+    ) -> Self {
+        self.checksum_algorithm = input;
+        self
     }
     /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
     pub fn expected_bucket_owner(mut self, input: impl Into<std::string::String>) -> Self {
@@ -181,34 +199,32 @@ impl PutObjectRetentionInputBuilder {
         self
     }
     /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
-    pub fn set_expected_bucket_owner(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.expected_bucket_owner = input; self
+    pub fn set_expected_bucket_owner(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.expected_bucket_owner = input;
+        self
     }
     /// Consumes the builder and constructs a [`PutObjectRetentionInput`](crate::operation::put_object_retention::PutObjectRetentionInput).
-    pub fn build(self) -> Result<crate::operation::put_object_retention::PutObjectRetentionInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::put_object_retention::PutObjectRetentionInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::put_object_retention::PutObjectRetentionInput {
-                bucket: self.bucket
-                ,
-                key: self.key
-                ,
-                retention: self.retention
-                ,
-                request_payer: self.request_payer
-                ,
-                version_id: self.version_id
-                ,
-                bypass_governance_retention: self.bypass_governance_retention
-                    .unwrap_or_default()
-                ,
-                content_md5: self.content_md5
-                ,
-                checksum_algorithm: self.checksum_algorithm
-                ,
-                expected_bucket_owner: self.expected_bucket_owner
-                ,
-            }
+                bucket: self.bucket,
+                key: self.key,
+                retention: self.retention,
+                request_payer: self.request_payer,
+                version_id: self.version_id,
+                bypass_governance_retention: self.bypass_governance_retention.unwrap_or_default(),
+                content_md5: self.content_md5,
+                checksum_algorithm: self.checksum_algorithm,
+                expected_bucket_owner: self.expected_bucket_owner,
+            },
         )
     }
 }
-

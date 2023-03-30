@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribePackagingConfigurationOutput  {
+pub struct DescribePackagingConfigurationOutput {
     /// The ARN of the PackagingConfiguration.
     #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
@@ -26,51 +26,55 @@ pub struct DescribePackagingConfigurationOutput  {
     pub packaging_group_id: std::option::Option<std::string::String>,
     /// A collection of tags associated with a resource
     #[doc(hidden)]
-    pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub tags:
+        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     _request_id: Option<String>,
 }
 impl DescribePackagingConfigurationOutput {
     /// The ARN of the PackagingConfiguration.
-    pub fn arn(&self) -> std::option::Option<& str> {
+    pub fn arn(&self) -> std::option::Option<&str> {
         self.arn.as_deref()
     }
     /// A CMAF packaging configuration.
-    pub fn cmaf_package(&self) -> std::option::Option<& crate::types::CmafPackage> {
+    pub fn cmaf_package(&self) -> std::option::Option<&crate::types::CmafPackage> {
         self.cmaf_package.as_ref()
     }
     /// A Dynamic Adaptive Streaming over HTTP (DASH) packaging configuration.
-    pub fn dash_package(&self) -> std::option::Option<& crate::types::DashPackage> {
+    pub fn dash_package(&self) -> std::option::Option<&crate::types::DashPackage> {
         self.dash_package.as_ref()
     }
     /// An HTTP Live Streaming (HLS) packaging configuration.
-    pub fn hls_package(&self) -> std::option::Option<& crate::types::HlsPackage> {
+    pub fn hls_package(&self) -> std::option::Option<&crate::types::HlsPackage> {
         self.hls_package.as_ref()
     }
     /// The ID of the PackagingConfiguration.
-    pub fn id(&self) -> std::option::Option<& str> {
+    pub fn id(&self) -> std::option::Option<&str> {
         self.id.as_deref()
     }
     /// A Microsoft Smooth Streaming (MSS) PackagingConfiguration.
-    pub fn mss_package(&self) -> std::option::Option<& crate::types::MssPackage> {
+    pub fn mss_package(&self) -> std::option::Option<&crate::types::MssPackage> {
         self.mss_package.as_ref()
     }
     /// The ID of a PackagingGroup.
-    pub fn packaging_group_id(&self) -> std::option::Option<& str> {
+    pub fn packaging_group_id(&self) -> std::option::Option<&str> {
         self.packaging_group_id.as_deref()
     }
     /// A collection of tags associated with a resource
-    pub fn tags(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
         self.tags.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for DescribePackagingConfigurationOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl DescribePackagingConfigurationOutput {
     /// Creates a new builder-style object to manufacture [`DescribePackagingConfigurationOutput`](crate::operation::describe_packaging_configuration::DescribePackagingConfigurationOutput).
-    pub fn builder() -> crate::operation::describe_packaging_configuration::builders::DescribePackagingConfigurationOutputBuilder {
+    pub fn builder() -> crate::operation::describe_packaging_configuration::builders::DescribePackagingConfigurationOutputBuilder{
         crate::operation::describe_packaging_configuration::builders::DescribePackagingConfigurationOutputBuilder::default()
     }
 }
@@ -86,7 +90,8 @@ pub struct DescribePackagingConfigurationOutputBuilder {
     pub(crate) id: std::option::Option<std::string::String>,
     pub(crate) mss_package: std::option::Option<crate::types::MssPackage>,
     pub(crate) packaging_group_id: std::option::Option<std::string::String>,
-    pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub(crate) tags:
+        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     _request_id: Option<String>,
 }
 impl DescribePackagingConfigurationOutputBuilder {
@@ -97,7 +102,8 @@ impl DescribePackagingConfigurationOutputBuilder {
     }
     /// The ARN of the PackagingConfiguration.
     pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.arn = input; self
+        self.arn = input;
+        self
     }
     /// A CMAF packaging configuration.
     pub fn cmaf_package(mut self, input: crate::types::CmafPackage) -> Self {
@@ -105,8 +111,12 @@ impl DescribePackagingConfigurationOutputBuilder {
         self
     }
     /// A CMAF packaging configuration.
-    pub fn set_cmaf_package(mut self, input: std::option::Option<crate::types::CmafPackage>) -> Self {
-        self.cmaf_package = input; self
+    pub fn set_cmaf_package(
+        mut self,
+        input: std::option::Option<crate::types::CmafPackage>,
+    ) -> Self {
+        self.cmaf_package = input;
+        self
     }
     /// A Dynamic Adaptive Streaming over HTTP (DASH) packaging configuration.
     pub fn dash_package(mut self, input: crate::types::DashPackage) -> Self {
@@ -114,8 +124,12 @@ impl DescribePackagingConfigurationOutputBuilder {
         self
     }
     /// A Dynamic Adaptive Streaming over HTTP (DASH) packaging configuration.
-    pub fn set_dash_package(mut self, input: std::option::Option<crate::types::DashPackage>) -> Self {
-        self.dash_package = input; self
+    pub fn set_dash_package(
+        mut self,
+        input: std::option::Option<crate::types::DashPackage>,
+    ) -> Self {
+        self.dash_package = input;
+        self
     }
     /// An HTTP Live Streaming (HLS) packaging configuration.
     pub fn hls_package(mut self, input: crate::types::HlsPackage) -> Self {
@@ -124,7 +138,8 @@ impl DescribePackagingConfigurationOutputBuilder {
     }
     /// An HTTP Live Streaming (HLS) packaging configuration.
     pub fn set_hls_package(mut self, input: std::option::Option<crate::types::HlsPackage>) -> Self {
-        self.hls_package = input; self
+        self.hls_package = input;
+        self
     }
     /// The ID of the PackagingConfiguration.
     pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -133,7 +148,8 @@ impl DescribePackagingConfigurationOutputBuilder {
     }
     /// The ID of the PackagingConfiguration.
     pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.id = input; self
+        self.id = input;
+        self
     }
     /// A Microsoft Smooth Streaming (MSS) PackagingConfiguration.
     pub fn mss_package(mut self, input: crate::types::MssPackage) -> Self {
@@ -142,7 +158,8 @@ impl DescribePackagingConfigurationOutputBuilder {
     }
     /// A Microsoft Smooth Streaming (MSS) PackagingConfiguration.
     pub fn set_mss_package(mut self, input: std::option::Option<crate::types::MssPackage>) -> Self {
-        self.mss_package = input; self
+        self.mss_package = input;
+        self
     }
     /// The ID of a PackagingGroup.
     pub fn packaging_group_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -150,54 +167,62 @@ impl DescribePackagingConfigurationOutputBuilder {
         self
     }
     /// The ID of a PackagingGroup.
-    pub fn set_packaging_group_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.packaging_group_id = input; self
+    pub fn set_packaging_group_id(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.packaging_group_id = input;
+        self
     }
     /// Adds a key-value pair to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// A collection of tags associated with a resource
-    pub fn tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
+    pub fn tags(
+        mut self,
+        k: impl Into<std::string::String>,
+        v: impl Into<std::string::String>,
+    ) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
-                        hash_map.insert(k.into(), v.into());
-                        self.tags = Some(hash_map);
-                        self
+        hash_map.insert(k.into(), v.into());
+        self.tags = Some(hash_map);
+        self
     }
     /// A collection of tags associated with a resource
-    pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
-        self.tags = input; self
+    pub fn set_tags(
+        mut self,
+        input: std::option::Option<
+            std::collections::HashMap<std::string::String, std::string::String>,
+        >,
+    ) -> Self {
+        self.tags = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`DescribePackagingConfigurationOutput`](crate::operation::describe_packaging_configuration::DescribePackagingConfigurationOutput).
-    pub fn build(self) -> crate::operation::describe_packaging_configuration::DescribePackagingConfigurationOutput {
+    pub fn build(
+        self,
+    ) -> crate::operation::describe_packaging_configuration::DescribePackagingConfigurationOutput
+    {
         crate::operation::describe_packaging_configuration::DescribePackagingConfigurationOutput {
-            arn: self.arn
-            ,
-            cmaf_package: self.cmaf_package
-            ,
-            dash_package: self.dash_package
-            ,
-            hls_package: self.hls_package
-            ,
-            id: self.id
-            ,
-            mss_package: self.mss_package
-            ,
-            packaging_group_id: self.packaging_group_id
-            ,
-            tags: self.tags
-            ,
+            arn: self.arn,
+            cmaf_package: self.cmaf_package,
+            dash_package: self.dash_package,
+            hls_package: self.hls_package,
+            id: self.id,
+            mss_package: self.mss_package,
+            packaging_group_id: self.packaging_group_id,
+            tags: self.tags,
             _request_id: self._request_id,
         }
     }
 }
-

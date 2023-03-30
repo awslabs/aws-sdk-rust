@@ -3,7 +3,7 @@
 /// <p>An object that represents an HTTP or HTTP/2 route type.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct HttpRoute  {
+pub struct HttpRoute {
     /// <p>An object that represents the criteria for determining a request match.</p>
     #[doc(hidden)]
     pub r#match: std::option::Option<crate::types::HttpRouteMatch>,
@@ -19,19 +19,19 @@ pub struct HttpRoute  {
 }
 impl HttpRoute {
     /// <p>An object that represents the criteria for determining a request match.</p>
-    pub fn r#match(&self) -> std::option::Option<& crate::types::HttpRouteMatch> {
+    pub fn r#match(&self) -> std::option::Option<&crate::types::HttpRouteMatch> {
         self.r#match.as_ref()
     }
     /// <p>An object that represents the action to take if a match is determined.</p>
-    pub fn action(&self) -> std::option::Option<& crate::types::HttpRouteAction> {
+    pub fn action(&self) -> std::option::Option<&crate::types::HttpRouteAction> {
         self.action.as_ref()
     }
     /// <p>An object that represents a retry policy.</p>
-    pub fn retry_policy(&self) -> std::option::Option<& crate::types::HttpRetryPolicy> {
+    pub fn retry_policy(&self) -> std::option::Option<&crate::types::HttpRetryPolicy> {
         self.retry_policy.as_ref()
     }
     /// <p>An object that represents types of timeouts. </p>
-    pub fn timeout(&self) -> std::option::Option<& crate::types::HttpTimeout> {
+    pub fn timeout(&self) -> std::option::Option<&crate::types::HttpTimeout> {
         self.timeout.as_ref()
     }
 }
@@ -59,7 +59,8 @@ impl HttpRouteBuilder {
     }
     /// <p>An object that represents the criteria for determining a request match.</p>
     pub fn set_match(mut self, input: std::option::Option<crate::types::HttpRouteMatch>) -> Self {
-        self.r#match = input; self
+        self.r#match = input;
+        self
     }
     /// <p>An object that represents the action to take if a match is determined.</p>
     pub fn action(mut self, input: crate::types::HttpRouteAction) -> Self {
@@ -68,7 +69,8 @@ impl HttpRouteBuilder {
     }
     /// <p>An object that represents the action to take if a match is determined.</p>
     pub fn set_action(mut self, input: std::option::Option<crate::types::HttpRouteAction>) -> Self {
-        self.action = input; self
+        self.action = input;
+        self
     }
     /// <p>An object that represents a retry policy.</p>
     pub fn retry_policy(mut self, input: crate::types::HttpRetryPolicy) -> Self {
@@ -76,8 +78,12 @@ impl HttpRouteBuilder {
         self
     }
     /// <p>An object that represents a retry policy.</p>
-    pub fn set_retry_policy(mut self, input: std::option::Option<crate::types::HttpRetryPolicy>) -> Self {
-        self.retry_policy = input; self
+    pub fn set_retry_policy(
+        mut self,
+        input: std::option::Option<crate::types::HttpRetryPolicy>,
+    ) -> Self {
+        self.retry_policy = input;
+        self
     }
     /// <p>An object that represents types of timeouts. </p>
     pub fn timeout(mut self, input: crate::types::HttpTimeout) -> Self {
@@ -86,20 +92,16 @@ impl HttpRouteBuilder {
     }
     /// <p>An object that represents types of timeouts. </p>
     pub fn set_timeout(mut self, input: std::option::Option<crate::types::HttpTimeout>) -> Self {
-        self.timeout = input; self
+        self.timeout = input;
+        self
     }
     /// Consumes the builder and constructs a [`HttpRoute`](crate::types::HttpRoute).
     pub fn build(self) -> crate::types::HttpRoute {
         crate::types::HttpRoute {
-            r#match: self.r#match
-            ,
-            action: self.action
-            ,
-            retry_policy: self.retry_policy
-            ,
-            timeout: self.timeout
-            ,
+            r#match: self.r#match,
+            action: self.action,
+            retry_policy: self.retry_policy,
+            timeout: self.timeout,
         }
     }
 }
-

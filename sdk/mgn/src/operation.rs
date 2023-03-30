@@ -165,4 +165,3 @@ pub mod update_source_server_replication_type;
 
 /// Types for the `UpdateWave` operation.
 pub mod update_wave;
-

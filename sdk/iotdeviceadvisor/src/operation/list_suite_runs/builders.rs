@@ -4,63 +4,89 @@ pub use crate::operation::list_suite_runs::_list_suite_runs_output::ListSuiteRun
 pub use crate::operation::list_suite_runs::_list_suite_runs_input::ListSuiteRunsInputBuilder;
 
 /// Fluent builder constructing a request to `ListSuiteRuns`.
-/// 
-/// <p>Lists runs of the specified Device Advisor test suite. You can list all runs of the test suite, or the runs of a specific version of the test suite.</p> 
+///
+/// <p>Lists runs of the specified Device Advisor test suite. You can list all runs of the test suite, or the runs of a specific version of the test suite.</p>
 /// <p>Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">ListSuiteRuns</a> action.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListSuiteRunsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::list_suite_runs::builders::ListSuiteRunsInputBuilder
-            }
-impl ListSuiteRunsFluentBuilder  {
+    handle: std::sync::Arc<crate::client::Handle>,
+    inner: crate::operation::list_suite_runs::builders::ListSuiteRunsInputBuilder,
+}
+impl ListSuiteRunsFluentBuilder {
     /// Creates a new `ListSuiteRuns`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
-                    /// sent. The operation's inner [http::Request] can be modified as well.
-                    pub async fn customize(self) -> std::result::Result<
-                        crate::client::customize::CustomizableOperation<crate::operation::list_suite_runs::ListSuiteRuns, aws_http::retry::AwsResponseRetryClassifier,>,
-                        aws_smithy_http::result::SdkError<crate::operation::list_suite_runs::ListSuiteRunsError>
-                    >  {
-                        let handle = self.handle.clone();
-                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-                    }
-    
-                    /// Sends the request and returns the response.
-                    ///
-                    /// If an error occurs, an `SdkError` will be returned with additional details that
-                    /// can be matched against.
-                    ///
-                    /// By default, any retryable failures will be retried twice. Retry behavior
-                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                    /// set when configuring the client.
-                    pub async fn send(self) -> std::result::Result<crate::operation::list_suite_runs::ListSuiteRunsOutput, aws_smithy_http::result::SdkError<crate::operation::list_suite_runs::ListSuiteRunsError>>
-                     {
-                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&self.handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        self.handle.client.call(op).await
-                    }
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle,
+            inner: Default::default(),
+        }
+    }
+
+    /// Consume this builder, creating a customizable operation that can be modified before being
+    /// sent. The operation's inner [http::Request] can be modified as well.
+    pub async fn customize(
+        self,
+    ) -> std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::list_suite_runs::ListSuiteRuns,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::result::SdkError<crate::operation::list_suite_runs::ListSuiteRunsError>,
+    > {
+        let handle = self.handle.clone();
+        let operation = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+    }
+
+    /// Sends the request and returns the response.
+    ///
+    /// If an error occurs, an `SdkError` will be returned with additional details that
+    /// can be matched against.
+    ///
+    /// By default, any retryable failures will be retried twice. Retry behavior
+    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+    /// set when configuring the client.
+    pub async fn send(
+        self,
+    ) -> std::result::Result<
+        crate::operation::list_suite_runs::ListSuiteRunsOutput,
+        aws_smithy_http::result::SdkError<crate::operation::list_suite_runs::ListSuiteRunsError>,
+    > {
+        let op = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&self.handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        self.handle.client.call(op).await
+    }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::list_suite_runs::paginator::ListSuiteRunsPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::list_suite_runs::paginator::ListSuiteRunsPaginator {
-                            crate::operation::list_suite_runs::paginator::ListSuiteRunsPaginator::new(self.handle, self.inner)
-                        }
+    ///
+    /// Paginators are used by calling [`send().await`](crate::operation::list_suite_runs::paginator::ListSuiteRunsPaginator::send) which returns a `Stream`.
+    pub fn into_paginator(
+        self,
+    ) -> crate::operation::list_suite_runs::paginator::ListSuiteRunsPaginator {
+        crate::operation::list_suite_runs::paginator::ListSuiteRunsPaginator::new(
+            self.handle,
+            self.inner,
+        )
+    }
     /// <p>Lists the test suite runs of the specified test suite based on suite definition ID.</p>
     pub fn suite_definition_id(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.suite_definition_id(input.into());
         self
     }
     /// <p>Lists the test suite runs of the specified test suite based on suite definition ID.</p>
-    pub fn set_suite_definition_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_suite_definition_id(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_suite_definition_id(input);
         self
     }
@@ -70,7 +96,10 @@ impl ListSuiteRunsFluentBuilder  {
         self
     }
     /// <p>Must be passed along with <code>suiteDefinitionId</code>. Lists the test suite runs of the specified test suite based on suite definition version.</p>
-    pub fn set_suite_definition_version(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_suite_definition_version(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_suite_definition_version(input);
         self
     }
@@ -95,4 +124,3 @@ impl ListSuiteRunsFluentBuilder  {
         self
     }
 }
-

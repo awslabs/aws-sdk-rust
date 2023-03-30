@@ -2,14 +2,14 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DisableProfileInput  {
+pub struct DisableProfileInput {
     /// <p>The unique identifier of the profile.</p>
     #[doc(hidden)]
     pub profile_id: std::option::Option<std::string::String>,
 }
 impl DisableProfileInput {
     /// <p>The unique identifier of the profile.</p>
-    pub fn profile_id(&self) -> std::option::Option<& str> {
+    pub fn profile_id(&self) -> std::option::Option<&str> {
         self.profile_id.as_deref()
     }
 }
@@ -34,16 +34,18 @@ impl DisableProfileInputBuilder {
     }
     /// <p>The unique identifier of the profile.</p>
     pub fn set_profile_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.profile_id = input; self
+        self.profile_id = input;
+        self
     }
     /// Consumes the builder and constructs a [`DisableProfileInput`](crate::operation::disable_profile::DisableProfileInput).
-    pub fn build(self) -> Result<crate::operation::disable_profile::DisableProfileInput, aws_smithy_http::operation::error::BuildError> {
-        Ok(
-            crate::operation::disable_profile::DisableProfileInput {
-                profile_id: self.profile_id
-                ,
-            }
-        )
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::disable_profile::DisableProfileInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        Ok(crate::operation::disable_profile::DisableProfileInput {
+            profile_id: self.profile_id,
+        })
     }
 }
-

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ModifyTransitGatewayPrefixListReferenceInput  {
+pub struct ModifyTransitGatewayPrefixListReferenceInput {
     /// <p>The ID of the transit gateway route table.</p>
     #[doc(hidden)]
     pub transit_gateway_route_table_id: std::option::Option<std::string::String>,
@@ -21,15 +21,15 @@ pub struct ModifyTransitGatewayPrefixListReferenceInput  {
 }
 impl ModifyTransitGatewayPrefixListReferenceInput {
     /// <p>The ID of the transit gateway route table.</p>
-    pub fn transit_gateway_route_table_id(&self) -> std::option::Option<& str> {
+    pub fn transit_gateway_route_table_id(&self) -> std::option::Option<&str> {
         self.transit_gateway_route_table_id.as_deref()
     }
     /// <p>The ID of the prefix list.</p>
-    pub fn prefix_list_id(&self) -> std::option::Option<& str> {
+    pub fn prefix_list_id(&self) -> std::option::Option<&str> {
         self.prefix_list_id.as_deref()
     }
     /// <p>The ID of the attachment to which traffic is routed.</p>
-    pub fn transit_gateway_attachment_id(&self) -> std::option::Option<& str> {
+    pub fn transit_gateway_attachment_id(&self) -> std::option::Option<&str> {
         self.transit_gateway_attachment_id.as_deref()
     }
     /// <p>Indicates whether to drop traffic that matches this route.</p>
@@ -43,7 +43,7 @@ impl ModifyTransitGatewayPrefixListReferenceInput {
 }
 impl ModifyTransitGatewayPrefixListReferenceInput {
     /// Creates a new builder-style object to manufacture [`ModifyTransitGatewayPrefixListReferenceInput`](crate::operation::modify_transit_gateway_prefix_list_reference::ModifyTransitGatewayPrefixListReferenceInput).
-    pub fn builder() -> crate::operation::modify_transit_gateway_prefix_list_reference::builders::ModifyTransitGatewayPrefixListReferenceInputBuilder {
+    pub fn builder() -> crate::operation::modify_transit_gateway_prefix_list_reference::builders::ModifyTransitGatewayPrefixListReferenceInputBuilder{
         crate::operation::modify_transit_gateway_prefix_list_reference::builders::ModifyTransitGatewayPrefixListReferenceInputBuilder::default()
     }
 }
@@ -65,8 +65,12 @@ impl ModifyTransitGatewayPrefixListReferenceInputBuilder {
         self
     }
     /// <p>The ID of the transit gateway route table.</p>
-    pub fn set_transit_gateway_route_table_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.transit_gateway_route_table_id = input; self
+    pub fn set_transit_gateway_route_table_id(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.transit_gateway_route_table_id = input;
+        self
     }
     /// <p>The ID of the prefix list.</p>
     pub fn prefix_list_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -75,7 +79,8 @@ impl ModifyTransitGatewayPrefixListReferenceInputBuilder {
     }
     /// <p>The ID of the prefix list.</p>
     pub fn set_prefix_list_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.prefix_list_id = input; self
+        self.prefix_list_id = input;
+        self
     }
     /// <p>The ID of the attachment to which traffic is routed.</p>
     pub fn transit_gateway_attachment_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -83,8 +88,12 @@ impl ModifyTransitGatewayPrefixListReferenceInputBuilder {
         self
     }
     /// <p>The ID of the attachment to which traffic is routed.</p>
-    pub fn set_transit_gateway_attachment_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.transit_gateway_attachment_id = input; self
+    pub fn set_transit_gateway_attachment_id(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.transit_gateway_attachment_id = input;
+        self
     }
     /// <p>Indicates whether to drop traffic that matches this route.</p>
     pub fn blackhole(mut self, input: bool) -> Self {
@@ -93,7 +102,8 @@ impl ModifyTransitGatewayPrefixListReferenceInputBuilder {
     }
     /// <p>Indicates whether to drop traffic that matches this route.</p>
     pub fn set_blackhole(mut self, input: std::option::Option<bool>) -> Self {
-        self.blackhole = input; self
+        self.blackhole = input;
+        self
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn dry_run(mut self, input: bool) -> Self {
@@ -102,10 +112,11 @@ impl ModifyTransitGatewayPrefixListReferenceInputBuilder {
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn set_dry_run(mut self, input: std::option::Option<bool>) -> Self {
-        self.dry_run = input; self
+        self.dry_run = input;
+        self
     }
     /// Consumes the builder and constructs a [`ModifyTransitGatewayPrefixListReferenceInput`](crate::operation::modify_transit_gateway_prefix_list_reference::ModifyTransitGatewayPrefixListReferenceInput).
-    pub fn build(self) -> Result<crate::operation::modify_transit_gateway_prefix_list_reference::ModifyTransitGatewayPrefixListReferenceInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> Result<crate::operation::modify_transit_gateway_prefix_list_reference::ModifyTransitGatewayPrefixListReferenceInput, aws_smithy_http::operation::error::BuildError>{
         Ok(
             crate::operation::modify_transit_gateway_prefix_list_reference::ModifyTransitGatewayPrefixListReferenceInput {
                 transit_gateway_route_table_id: self.transit_gateway_route_table_id
@@ -122,4 +133,3 @@ impl ModifyTransitGatewayPrefixListReferenceInputBuilder {
         )
     }
 }
-

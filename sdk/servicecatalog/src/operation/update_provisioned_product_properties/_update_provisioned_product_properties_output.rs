@@ -2,13 +2,15 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateProvisionedProductPropertiesOutput  {
+pub struct UpdateProvisionedProductPropertiesOutput {
     /// <p>The provisioned product identifier.</p>
     #[doc(hidden)]
     pub provisioned_product_id: std::option::Option<std::string::String>,
     /// <p>A map that contains the properties updated.</p>
     #[doc(hidden)]
-    pub provisioned_product_properties: std::option::Option<std::collections::HashMap<crate::types::PropertyKey, std::string::String>>,
+    pub provisioned_product_properties: std::option::Option<
+        std::collections::HashMap<crate::types::PropertyKey, std::string::String>,
+    >,
     /// <p>The identifier of the record.</p>
     #[doc(hidden)]
     pub record_id: std::option::Option<std::string::String>,
@@ -19,30 +21,34 @@ pub struct UpdateProvisionedProductPropertiesOutput  {
 }
 impl UpdateProvisionedProductPropertiesOutput {
     /// <p>The provisioned product identifier.</p>
-    pub fn provisioned_product_id(&self) -> std::option::Option<& str> {
+    pub fn provisioned_product_id(&self) -> std::option::Option<&str> {
         self.provisioned_product_id.as_deref()
     }
     /// <p>A map that contains the properties updated.</p>
-    pub fn provisioned_product_properties(&self) -> std::option::Option<& std::collections::HashMap<crate::types::PropertyKey, std::string::String>> {
+    pub fn provisioned_product_properties(
+        &self,
+    ) -> std::option::Option<
+        &std::collections::HashMap<crate::types::PropertyKey, std::string::String>,
+    > {
         self.provisioned_product_properties.as_ref()
     }
     /// <p>The identifier of the record.</p>
-    pub fn record_id(&self) -> std::option::Option<& str> {
+    pub fn record_id(&self) -> std::option::Option<&str> {
         self.record_id.as_deref()
     }
     /// <p>The status of the request.</p>
-    pub fn status(&self) -> std::option::Option<& crate::types::RecordStatus> {
+    pub fn status(&self) -> std::option::Option<&crate::types::RecordStatus> {
         self.status.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for UpdateProvisionedProductPropertiesOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl UpdateProvisionedProductPropertiesOutput {
     /// Creates a new builder-style object to manufacture [`UpdateProvisionedProductPropertiesOutput`](crate::operation::update_provisioned_product_properties::UpdateProvisionedProductPropertiesOutput).
-    pub fn builder() -> crate::operation::update_provisioned_product_properties::builders::UpdateProvisionedProductPropertiesOutputBuilder {
+    pub fn builder() -> crate::operation::update_provisioned_product_properties::builders::UpdateProvisionedProductPropertiesOutputBuilder{
         crate::operation::update_provisioned_product_properties::builders::UpdateProvisionedProductPropertiesOutputBuilder::default()
     }
 }
@@ -52,7 +58,9 @@ impl UpdateProvisionedProductPropertiesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct UpdateProvisionedProductPropertiesOutputBuilder {
     pub(crate) provisioned_product_id: std::option::Option<std::string::String>,
-    pub(crate) provisioned_product_properties: std::option::Option<std::collections::HashMap<crate::types::PropertyKey, std::string::String>>,
+    pub(crate) provisioned_product_properties: std::option::Option<
+        std::collections::HashMap<crate::types::PropertyKey, std::string::String>,
+    >,
     pub(crate) record_id: std::option::Option<std::string::String>,
     pub(crate) status: std::option::Option<crate::types::RecordStatus>,
     _request_id: Option<String>,
@@ -64,23 +72,37 @@ impl UpdateProvisionedProductPropertiesOutputBuilder {
         self
     }
     /// <p>The provisioned product identifier.</p>
-    pub fn set_provisioned_product_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.provisioned_product_id = input; self
+    pub fn set_provisioned_product_id(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.provisioned_product_id = input;
+        self
     }
     /// Adds a key-value pair to `provisioned_product_properties`.
     ///
     /// To override the contents of this collection use [`set_provisioned_product_properties`](Self::set_provisioned_product_properties).
     ///
     /// <p>A map that contains the properties updated.</p>
-    pub fn provisioned_product_properties(mut self, k: crate::types::PropertyKey, v: impl Into<std::string::String>) -> Self {
+    pub fn provisioned_product_properties(
+        mut self,
+        k: crate::types::PropertyKey,
+        v: impl Into<std::string::String>,
+    ) -> Self {
         let mut hash_map = self.provisioned_product_properties.unwrap_or_default();
-                        hash_map.insert(k, v.into());
-                        self.provisioned_product_properties = Some(hash_map);
-                        self
+        hash_map.insert(k, v.into());
+        self.provisioned_product_properties = Some(hash_map);
+        self
     }
     /// <p>A map that contains the properties updated.</p>
-    pub fn set_provisioned_product_properties(mut self, input: std::option::Option<std::collections::HashMap<crate::types::PropertyKey, std::string::String>>) -> Self {
-        self.provisioned_product_properties = input; self
+    pub fn set_provisioned_product_properties(
+        mut self,
+        input: std::option::Option<
+            std::collections::HashMap<crate::types::PropertyKey, std::string::String>,
+        >,
+    ) -> Self {
+        self.provisioned_product_properties = input;
+        self
     }
     /// <p>The identifier of the record.</p>
     pub fn record_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -89,7 +111,8 @@ impl UpdateProvisionedProductPropertiesOutputBuilder {
     }
     /// <p>The identifier of the record.</p>
     pub fn set_record_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.record_id = input; self
+        self.record_id = input;
+        self
     }
     /// <p>The status of the request.</p>
     pub fn status(mut self, input: crate::types::RecordStatus) -> Self {
@@ -98,19 +121,20 @@ impl UpdateProvisionedProductPropertiesOutputBuilder {
     }
     /// <p>The status of the request.</p>
     pub fn set_status(mut self, input: std::option::Option<crate::types::RecordStatus>) -> Self {
-        self.status = input; self
+        self.status = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`UpdateProvisionedProductPropertiesOutput`](crate::operation::update_provisioned_product_properties::UpdateProvisionedProductPropertiesOutput).
-    pub fn build(self) -> crate::operation::update_provisioned_product_properties::UpdateProvisionedProductPropertiesOutput {
+    pub fn build(self) -> crate::operation::update_provisioned_product_properties::UpdateProvisionedProductPropertiesOutput{
         crate::operation::update_provisioned_product_properties::UpdateProvisionedProductPropertiesOutput {
             provisioned_product_id: self.provisioned_product_id
             ,
@@ -124,4 +148,3 @@ impl UpdateProvisionedProductPropertiesOutputBuilder {
         }
     }
 }
-

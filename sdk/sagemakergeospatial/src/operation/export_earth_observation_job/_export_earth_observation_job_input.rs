@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ExportEarthObservationJobInput  {
+pub struct ExportEarthObservationJobInput {
     /// <p>The input Amazon Resource Name (ARN) of the Earth Observation job being exported.</p>
     #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
@@ -18,15 +18,15 @@ pub struct ExportEarthObservationJobInput  {
 }
 impl ExportEarthObservationJobInput {
     /// <p>The input Amazon Resource Name (ARN) of the Earth Observation job being exported.</p>
-    pub fn arn(&self) -> std::option::Option<& str> {
+    pub fn arn(&self) -> std::option::Option<&str> {
         self.arn.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the IAM role that you specified for the job.</p>
-    pub fn execution_role_arn(&self) -> std::option::Option<& str> {
+    pub fn execution_role_arn(&self) -> std::option::Option<&str> {
         self.execution_role_arn.as_deref()
     }
     /// <p>An object containing information about the output file.</p>
-    pub fn output_config(&self) -> std::option::Option<& crate::types::OutputConfigInput> {
+    pub fn output_config(&self) -> std::option::Option<&crate::types::OutputConfigInput> {
         self.output_config.as_ref()
     }
     /// <p>The source images provided to the Earth Observation job being exported.</p>
@@ -36,7 +36,7 @@ impl ExportEarthObservationJobInput {
 }
 impl ExportEarthObservationJobInput {
     /// Creates a new builder-style object to manufacture [`ExportEarthObservationJobInput`](crate::operation::export_earth_observation_job::ExportEarthObservationJobInput).
-    pub fn builder() -> crate::operation::export_earth_observation_job::builders::ExportEarthObservationJobInputBuilder {
+    pub fn builder() -> crate::operation::export_earth_observation_job::builders::ExportEarthObservationJobInputBuilder{
         crate::operation::export_earth_observation_job::builders::ExportEarthObservationJobInputBuilder::default()
     }
 }
@@ -58,7 +58,8 @@ impl ExportEarthObservationJobInputBuilder {
     }
     /// <p>The input Amazon Resource Name (ARN) of the Earth Observation job being exported.</p>
     pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.arn = input; self
+        self.arn = input;
+        self
     }
     /// <p>The Amazon Resource Name (ARN) of the IAM role that you specified for the job.</p>
     pub fn execution_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -66,8 +67,12 @@ impl ExportEarthObservationJobInputBuilder {
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the IAM role that you specified for the job.</p>
-    pub fn set_execution_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.execution_role_arn = input; self
+    pub fn set_execution_role_arn(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.execution_role_arn = input;
+        self
     }
     /// <p>An object containing information about the output file.</p>
     pub fn output_config(mut self, input: crate::types::OutputConfigInput) -> Self {
@@ -75,8 +80,12 @@ impl ExportEarthObservationJobInputBuilder {
         self
     }
     /// <p>An object containing information about the output file.</p>
-    pub fn set_output_config(mut self, input: std::option::Option<crate::types::OutputConfigInput>) -> Self {
-        self.output_config = input; self
+    pub fn set_output_config(
+        mut self,
+        input: std::option::Option<crate::types::OutputConfigInput>,
+    ) -> Self {
+        self.output_config = input;
+        self
     }
     /// <p>The source images provided to the Earth Observation job being exported.</p>
     pub fn export_source_images(mut self, input: bool) -> Self {
@@ -85,22 +94,23 @@ impl ExportEarthObservationJobInputBuilder {
     }
     /// <p>The source images provided to the Earth Observation job being exported.</p>
     pub fn set_export_source_images(mut self, input: std::option::Option<bool>) -> Self {
-        self.export_source_images = input; self
+        self.export_source_images = input;
+        self
     }
     /// Consumes the builder and constructs a [`ExportEarthObservationJobInput`](crate::operation::export_earth_observation_job::ExportEarthObservationJobInput).
-    pub fn build(self) -> Result<crate::operation::export_earth_observation_job::ExportEarthObservationJobInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::export_earth_observation_job::ExportEarthObservationJobInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::export_earth_observation_job::ExportEarthObservationJobInput {
-                arn: self.arn
-                ,
-                execution_role_arn: self.execution_role_arn
-                ,
-                output_config: self.output_config
-                ,
-                export_source_images: self.export_source_images
-                ,
-            }
+                arn: self.arn,
+                execution_role_arn: self.execution_role_arn,
+                output_config: self.output_config,
+                export_source_images: self.export_source_images,
+            },
         )
     }
 }
-

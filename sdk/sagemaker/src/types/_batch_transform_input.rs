@@ -3,7 +3,7 @@
 /// <p>Input object for the batch transform job.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct BatchTransformInput  {
+pub struct BatchTransformInput {
     /// <p>The Amazon S3 location being used to capture the data.</p>
     #[doc(hidden)]
     pub data_captured_destination_s3_uri: std::option::Option<std::string::String>,
@@ -18,7 +18,8 @@ pub struct BatchTransformInput  {
     pub s3_input_mode: std::option::Option<crate::types::ProcessingS3InputMode>,
     /// <p>Whether input data distributed in Amazon S3 is fully replicated or sharded by an S3 key. Defaults to <code>FullyReplicated</code> </p>
     #[doc(hidden)]
-    pub s3_data_distribution_type: std::option::Option<crate::types::ProcessingS3DataDistributionType>,
+    pub s3_data_distribution_type:
+        std::option::Option<crate::types::ProcessingS3DataDistributionType>,
     /// <p>The attributes of the input data that are the input features.</p>
     #[doc(hidden)]
     pub features_attribute: std::option::Option<std::string::String>,
@@ -40,35 +41,37 @@ pub struct BatchTransformInput  {
 }
 impl BatchTransformInput {
     /// <p>The Amazon S3 location being used to capture the data.</p>
-    pub fn data_captured_destination_s3_uri(&self) -> std::option::Option<& str> {
+    pub fn data_captured_destination_s3_uri(&self) -> std::option::Option<&str> {
         self.data_captured_destination_s3_uri.as_deref()
     }
     /// <p>The dataset format for your batch transform job.</p>
-    pub fn dataset_format(&self) -> std::option::Option<& crate::types::MonitoringDatasetFormat> {
+    pub fn dataset_format(&self) -> std::option::Option<&crate::types::MonitoringDatasetFormat> {
         self.dataset_format.as_ref()
     }
     /// <p>Path to the filesystem where the batch transform data is available to the container.</p>
-    pub fn local_path(&self) -> std::option::Option<& str> {
+    pub fn local_path(&self) -> std::option::Option<&str> {
         self.local_path.as_deref()
     }
     /// <p>Whether the <code>Pipe</code> or <code>File</code> is used as the input mode for transferring data for the monitoring job. <code>Pipe</code> mode is recommended for large datasets. <code>File</code> mode is useful for small files that fit in memory. Defaults to <code>File</code>.</p>
-    pub fn s3_input_mode(&self) -> std::option::Option<& crate::types::ProcessingS3InputMode> {
+    pub fn s3_input_mode(&self) -> std::option::Option<&crate::types::ProcessingS3InputMode> {
         self.s3_input_mode.as_ref()
     }
     /// <p>Whether input data distributed in Amazon S3 is fully replicated or sharded by an S3 key. Defaults to <code>FullyReplicated</code> </p>
-    pub fn s3_data_distribution_type(&self) -> std::option::Option<& crate::types::ProcessingS3DataDistributionType> {
+    pub fn s3_data_distribution_type(
+        &self,
+    ) -> std::option::Option<&crate::types::ProcessingS3DataDistributionType> {
         self.s3_data_distribution_type.as_ref()
     }
     /// <p>The attributes of the input data that are the input features.</p>
-    pub fn features_attribute(&self) -> std::option::Option<& str> {
+    pub fn features_attribute(&self) -> std::option::Option<&str> {
         self.features_attribute.as_deref()
     }
     /// <p>The attribute of the input data that represents the ground truth label.</p>
-    pub fn inference_attribute(&self) -> std::option::Option<& str> {
+    pub fn inference_attribute(&self) -> std::option::Option<&str> {
         self.inference_attribute.as_deref()
     }
     /// <p>In a classification problem, the attribute that represents the class probability.</p>
-    pub fn probability_attribute(&self) -> std::option::Option<& str> {
+    pub fn probability_attribute(&self) -> std::option::Option<&str> {
         self.probability_attribute.as_deref()
     }
     /// <p>The threshold for the class probability to be evaluated as a positive result.</p>
@@ -76,11 +79,11 @@ impl BatchTransformInput {
         self.probability_threshold_attribute
     }
     /// <p>If specified, monitoring jobs substract this time from the start time. For information about using offsets for scheduling monitoring jobs, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/model-monitor-model-quality-schedule.html">Schedule Model Quality Monitoring Jobs</a>.</p>
-    pub fn start_time_offset(&self) -> std::option::Option<& str> {
+    pub fn start_time_offset(&self) -> std::option::Option<&str> {
         self.start_time_offset.as_deref()
     }
     /// <p>If specified, monitoring jobs substract this time from the end time. For information about using offsets for scheduling monitoring jobs, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/model-monitor-model-quality-schedule.html">Schedule Model Quality Monitoring Jobs</a>.</p>
-    pub fn end_time_offset(&self) -> std::option::Option<& str> {
+    pub fn end_time_offset(&self) -> std::option::Option<&str> {
         self.end_time_offset.as_deref()
     }
 }
@@ -99,7 +102,8 @@ pub struct BatchTransformInputBuilder {
     pub(crate) dataset_format: std::option::Option<crate::types::MonitoringDatasetFormat>,
     pub(crate) local_path: std::option::Option<std::string::String>,
     pub(crate) s3_input_mode: std::option::Option<crate::types::ProcessingS3InputMode>,
-    pub(crate) s3_data_distribution_type: std::option::Option<crate::types::ProcessingS3DataDistributionType>,
+    pub(crate) s3_data_distribution_type:
+        std::option::Option<crate::types::ProcessingS3DataDistributionType>,
     pub(crate) features_attribute: std::option::Option<std::string::String>,
     pub(crate) inference_attribute: std::option::Option<std::string::String>,
     pub(crate) probability_attribute: std::option::Option<std::string::String>,
@@ -109,13 +113,20 @@ pub struct BatchTransformInputBuilder {
 }
 impl BatchTransformInputBuilder {
     /// <p>The Amazon S3 location being used to capture the data.</p>
-    pub fn data_captured_destination_s3_uri(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn data_captured_destination_s3_uri(
+        mut self,
+        input: impl Into<std::string::String>,
+    ) -> Self {
         self.data_captured_destination_s3_uri = Some(input.into());
         self
     }
     /// <p>The Amazon S3 location being used to capture the data.</p>
-    pub fn set_data_captured_destination_s3_uri(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.data_captured_destination_s3_uri = input; self
+    pub fn set_data_captured_destination_s3_uri(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.data_captured_destination_s3_uri = input;
+        self
     }
     /// <p>The dataset format for your batch transform job.</p>
     pub fn dataset_format(mut self, input: crate::types::MonitoringDatasetFormat) -> Self {
@@ -123,8 +134,12 @@ impl BatchTransformInputBuilder {
         self
     }
     /// <p>The dataset format for your batch transform job.</p>
-    pub fn set_dataset_format(mut self, input: std::option::Option<crate::types::MonitoringDatasetFormat>) -> Self {
-        self.dataset_format = input; self
+    pub fn set_dataset_format(
+        mut self,
+        input: std::option::Option<crate::types::MonitoringDatasetFormat>,
+    ) -> Self {
+        self.dataset_format = input;
+        self
     }
     /// <p>Path to the filesystem where the batch transform data is available to the container.</p>
     pub fn local_path(mut self, input: impl Into<std::string::String>) -> Self {
@@ -133,7 +148,8 @@ impl BatchTransformInputBuilder {
     }
     /// <p>Path to the filesystem where the batch transform data is available to the container.</p>
     pub fn set_local_path(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.local_path = input; self
+        self.local_path = input;
+        self
     }
     /// <p>Whether the <code>Pipe</code> or <code>File</code> is used as the input mode for transferring data for the monitoring job. <code>Pipe</code> mode is recommended for large datasets. <code>File</code> mode is useful for small files that fit in memory. Defaults to <code>File</code>.</p>
     pub fn s3_input_mode(mut self, input: crate::types::ProcessingS3InputMode) -> Self {
@@ -141,17 +157,28 @@ impl BatchTransformInputBuilder {
         self
     }
     /// <p>Whether the <code>Pipe</code> or <code>File</code> is used as the input mode for transferring data for the monitoring job. <code>Pipe</code> mode is recommended for large datasets. <code>File</code> mode is useful for small files that fit in memory. Defaults to <code>File</code>.</p>
-    pub fn set_s3_input_mode(mut self, input: std::option::Option<crate::types::ProcessingS3InputMode>) -> Self {
-        self.s3_input_mode = input; self
+    pub fn set_s3_input_mode(
+        mut self,
+        input: std::option::Option<crate::types::ProcessingS3InputMode>,
+    ) -> Self {
+        self.s3_input_mode = input;
+        self
     }
     /// <p>Whether input data distributed in Amazon S3 is fully replicated or sharded by an S3 key. Defaults to <code>FullyReplicated</code> </p>
-    pub fn s3_data_distribution_type(mut self, input: crate::types::ProcessingS3DataDistributionType) -> Self {
+    pub fn s3_data_distribution_type(
+        mut self,
+        input: crate::types::ProcessingS3DataDistributionType,
+    ) -> Self {
         self.s3_data_distribution_type = Some(input);
         self
     }
     /// <p>Whether input data distributed in Amazon S3 is fully replicated or sharded by an S3 key. Defaults to <code>FullyReplicated</code> </p>
-    pub fn set_s3_data_distribution_type(mut self, input: std::option::Option<crate::types::ProcessingS3DataDistributionType>) -> Self {
-        self.s3_data_distribution_type = input; self
+    pub fn set_s3_data_distribution_type(
+        mut self,
+        input: std::option::Option<crate::types::ProcessingS3DataDistributionType>,
+    ) -> Self {
+        self.s3_data_distribution_type = input;
+        self
     }
     /// <p>The attributes of the input data that are the input features.</p>
     pub fn features_attribute(mut self, input: impl Into<std::string::String>) -> Self {
@@ -159,8 +186,12 @@ impl BatchTransformInputBuilder {
         self
     }
     /// <p>The attributes of the input data that are the input features.</p>
-    pub fn set_features_attribute(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.features_attribute = input; self
+    pub fn set_features_attribute(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.features_attribute = input;
+        self
     }
     /// <p>The attribute of the input data that represents the ground truth label.</p>
     pub fn inference_attribute(mut self, input: impl Into<std::string::String>) -> Self {
@@ -168,8 +199,12 @@ impl BatchTransformInputBuilder {
         self
     }
     /// <p>The attribute of the input data that represents the ground truth label.</p>
-    pub fn set_inference_attribute(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.inference_attribute = input; self
+    pub fn set_inference_attribute(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.inference_attribute = input;
+        self
     }
     /// <p>In a classification problem, the attribute that represents the class probability.</p>
     pub fn probability_attribute(mut self, input: impl Into<std::string::String>) -> Self {
@@ -177,8 +212,12 @@ impl BatchTransformInputBuilder {
         self
     }
     /// <p>In a classification problem, the attribute that represents the class probability.</p>
-    pub fn set_probability_attribute(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.probability_attribute = input; self
+    pub fn set_probability_attribute(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.probability_attribute = input;
+        self
     }
     /// <p>The threshold for the class probability to be evaluated as a positive result.</p>
     pub fn probability_threshold_attribute(mut self, input: f64) -> Self {
@@ -187,7 +226,8 @@ impl BatchTransformInputBuilder {
     }
     /// <p>The threshold for the class probability to be evaluated as a positive result.</p>
     pub fn set_probability_threshold_attribute(mut self, input: std::option::Option<f64>) -> Self {
-        self.probability_threshold_attribute = input; self
+        self.probability_threshold_attribute = input;
+        self
     }
     /// <p>If specified, monitoring jobs substract this time from the start time. For information about using offsets for scheduling monitoring jobs, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/model-monitor-model-quality-schedule.html">Schedule Model Quality Monitoring Jobs</a>.</p>
     pub fn start_time_offset(mut self, input: impl Into<std::string::String>) -> Self {
@@ -195,8 +235,12 @@ impl BatchTransformInputBuilder {
         self
     }
     /// <p>If specified, monitoring jobs substract this time from the start time. For information about using offsets for scheduling monitoring jobs, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/model-monitor-model-quality-schedule.html">Schedule Model Quality Monitoring Jobs</a>.</p>
-    pub fn set_start_time_offset(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.start_time_offset = input; self
+    pub fn set_start_time_offset(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.start_time_offset = input;
+        self
     }
     /// <p>If specified, monitoring jobs substract this time from the end time. For information about using offsets for scheduling monitoring jobs, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/model-monitor-model-quality-schedule.html">Schedule Model Quality Monitoring Jobs</a>.</p>
     pub fn end_time_offset(mut self, input: impl Into<std::string::String>) -> Self {
@@ -205,34 +249,23 @@ impl BatchTransformInputBuilder {
     }
     /// <p>If specified, monitoring jobs substract this time from the end time. For information about using offsets for scheduling monitoring jobs, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/model-monitor-model-quality-schedule.html">Schedule Model Quality Monitoring Jobs</a>.</p>
     pub fn set_end_time_offset(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.end_time_offset = input; self
+        self.end_time_offset = input;
+        self
     }
     /// Consumes the builder and constructs a [`BatchTransformInput`](crate::types::BatchTransformInput).
     pub fn build(self) -> crate::types::BatchTransformInput {
         crate::types::BatchTransformInput {
-            data_captured_destination_s3_uri: self.data_captured_destination_s3_uri
-            ,
-            dataset_format: self.dataset_format
-            ,
-            local_path: self.local_path
-            ,
-            s3_input_mode: self.s3_input_mode
-            ,
-            s3_data_distribution_type: self.s3_data_distribution_type
-            ,
-            features_attribute: self.features_attribute
-            ,
-            inference_attribute: self.inference_attribute
-            ,
-            probability_attribute: self.probability_attribute
-            ,
-            probability_threshold_attribute: self.probability_threshold_attribute
-            ,
-            start_time_offset: self.start_time_offset
-            ,
-            end_time_offset: self.end_time_offset
-            ,
+            data_captured_destination_s3_uri: self.data_captured_destination_s3_uri,
+            dataset_format: self.dataset_format,
+            local_path: self.local_path,
+            s3_input_mode: self.s3_input_mode,
+            s3_data_distribution_type: self.s3_data_distribution_type,
+            features_attribute: self.features_attribute,
+            inference_attribute: self.inference_attribute,
+            probability_attribute: self.probability_attribute,
+            probability_threshold_attribute: self.probability_threshold_attribute,
+            start_time_offset: self.start_time_offset,
+            end_time_offset: self.end_time_offset,
         }
     }
 }
-

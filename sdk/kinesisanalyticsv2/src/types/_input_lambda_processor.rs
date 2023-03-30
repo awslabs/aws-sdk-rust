@@ -3,18 +3,18 @@
 /// <p>An object that contains the Amazon Resource Name (ARN) of the Amazon Lambda function that is used to preprocess records in the stream in a SQL-based Kinesis Data Analytics application. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct InputLambdaProcessor  {
-    /// <p>The ARN of the Amazon Lambda function that operates on records in the stream.</p> <note> 
-    /// <p>To specify an earlier version of the Lambda function than the latest, include the Lambda function version in the Lambda function ARN. For more information about Lambda ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-lambda">Example ARNs: Amazon Lambda</a> </p> 
+pub struct InputLambdaProcessor {
+    /// <p>The ARN of the Amazon Lambda function that operates on records in the stream.</p> <note>
+    /// <p>To specify an earlier version of the Lambda function than the latest, include the Lambda function version in the Lambda function ARN. For more information about Lambda ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-lambda">Example ARNs: Amazon Lambda</a> </p>
     /// </note>
     #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
 }
 impl InputLambdaProcessor {
-    /// <p>The ARN of the Amazon Lambda function that operates on records in the stream.</p> <note> 
-    /// <p>To specify an earlier version of the Lambda function than the latest, include the Lambda function version in the Lambda function ARN. For more information about Lambda ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-lambda">Example ARNs: Amazon Lambda</a> </p> 
+    /// <p>The ARN of the Amazon Lambda function that operates on records in the stream.</p> <note>
+    /// <p>To specify an earlier version of the Lambda function than the latest, include the Lambda function version in the Lambda function ARN. For more information about Lambda ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-lambda">Example ARNs: Amazon Lambda</a> </p>
     /// </note>
-    pub fn resource_arn(&self) -> std::option::Option<& str> {
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
         self.resource_arn.as_deref()
     }
 }
@@ -32,25 +32,24 @@ pub struct InputLambdaProcessorBuilder {
     pub(crate) resource_arn: std::option::Option<std::string::String>,
 }
 impl InputLambdaProcessorBuilder {
-    /// <p>The ARN of the Amazon Lambda function that operates on records in the stream.</p> <note> 
-    /// <p>To specify an earlier version of the Lambda function than the latest, include the Lambda function version in the Lambda function ARN. For more information about Lambda ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-lambda">Example ARNs: Amazon Lambda</a> </p> 
+    /// <p>The ARN of the Amazon Lambda function that operates on records in the stream.</p> <note>
+    /// <p>To specify an earlier version of the Lambda function than the latest, include the Lambda function version in the Lambda function ARN. For more information about Lambda ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-lambda">Example ARNs: Amazon Lambda</a> </p>
     /// </note>
     pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
         self.resource_arn = Some(input.into());
         self
     }
-    /// <p>The ARN of the Amazon Lambda function that operates on records in the stream.</p> <note> 
-    /// <p>To specify an earlier version of the Lambda function than the latest, include the Lambda function version in the Lambda function ARN. For more information about Lambda ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-lambda">Example ARNs: Amazon Lambda</a> </p> 
+    /// <p>The ARN of the Amazon Lambda function that operates on records in the stream.</p> <note>
+    /// <p>To specify an earlier version of the Lambda function than the latest, include the Lambda function version in the Lambda function ARN. For more information about Lambda ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-lambda">Example ARNs: Amazon Lambda</a> </p>
     /// </note>
     pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.resource_arn = input; self
+        self.resource_arn = input;
+        self
     }
     /// Consumes the builder and constructs a [`InputLambdaProcessor`](crate::types::InputLambdaProcessor).
     pub fn build(self) -> crate::types::InputLambdaProcessor {
         crate::types::InputLambdaProcessor {
-            resource_arn: self.resource_arn
-            ,
+            resource_arn: self.resource_arn,
         }
     }
 }
-

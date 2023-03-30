@@ -3,7 +3,7 @@
 /// <p>A key-value pair object.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct KeyValuePair  {
+pub struct KeyValuePair {
     /// <p>The name of the key-value pair. For environment variables, this is the name of the environment variable.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -13,11 +13,11 @@ pub struct KeyValuePair  {
 }
 impl KeyValuePair {
     /// <p>The name of the key-value pair. For environment variables, this is the name of the environment variable.</p>
-    pub fn name(&self) -> std::option::Option<& str> {
+    pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>The value of the key-value pair. For environment variables, this is the value of the environment variable.</p>
-    pub fn value(&self) -> std::option::Option<& str> {
+    pub fn value(&self) -> std::option::Option<&str> {
         self.value.as_deref()
     }
 }
@@ -43,7 +43,8 @@ impl KeyValuePairBuilder {
     }
     /// <p>The name of the key-value pair. For environment variables, this is the name of the environment variable.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input; self
+        self.name = input;
+        self
     }
     /// <p>The value of the key-value pair. For environment variables, this is the value of the environment variable.</p>
     pub fn value(mut self, input: impl Into<std::string::String>) -> Self {
@@ -52,16 +53,14 @@ impl KeyValuePairBuilder {
     }
     /// <p>The value of the key-value pair. For environment variables, this is the value of the environment variable.</p>
     pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.value = input; self
+        self.value = input;
+        self
     }
     /// Consumes the builder and constructs a [`KeyValuePair`](crate::types::KeyValuePair).
     pub fn build(self) -> crate::types::KeyValuePair {
         crate::types::KeyValuePair {
-            name: self.name
-            ,
-            value: self.value
-            ,
+            name: self.name,
+            value: self.value,
         }
     }
 }
-

@@ -3,14 +3,14 @@
 /// <p>A batch job definition contained in a script.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ScriptBatchJobDefinition  {
+pub struct ScriptBatchJobDefinition {
     /// <p>The name of the script containing the batch job definition.</p>
     #[doc(hidden)]
     pub script_name: std::option::Option<std::string::String>,
 }
 impl ScriptBatchJobDefinition {
     /// <p>The name of the script containing the batch job definition.</p>
-    pub fn script_name(&self) -> std::option::Option<& str> {
+    pub fn script_name(&self) -> std::option::Option<&str> {
         self.script_name.as_deref()
     }
 }
@@ -35,14 +35,13 @@ impl ScriptBatchJobDefinitionBuilder {
     }
     /// <p>The name of the script containing the batch job definition.</p>
     pub fn set_script_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.script_name = input; self
+        self.script_name = input;
+        self
     }
     /// Consumes the builder and constructs a [`ScriptBatchJobDefinition`](crate::types::ScriptBatchJobDefinition).
     pub fn build(self) -> crate::types::ScriptBatchJobDefinition {
         crate::types::ScriptBatchJobDefinition {
-            script_name: self.script_name
-            ,
+            script_name: self.script_name,
         }
     }
 }
-

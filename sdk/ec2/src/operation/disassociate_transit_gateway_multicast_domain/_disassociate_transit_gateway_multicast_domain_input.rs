@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DisassociateTransitGatewayMulticastDomainInput  {
+pub struct DisassociateTransitGatewayMulticastDomainInput {
     /// <p>The ID of the transit gateway multicast domain.</p>
     #[doc(hidden)]
     pub transit_gateway_multicast_domain_id: std::option::Option<std::string::String>,
@@ -18,15 +18,15 @@ pub struct DisassociateTransitGatewayMulticastDomainInput  {
 }
 impl DisassociateTransitGatewayMulticastDomainInput {
     /// <p>The ID of the transit gateway multicast domain.</p>
-    pub fn transit_gateway_multicast_domain_id(&self) -> std::option::Option<& str> {
+    pub fn transit_gateway_multicast_domain_id(&self) -> std::option::Option<&str> {
         self.transit_gateway_multicast_domain_id.as_deref()
     }
     /// <p>The ID of the attachment.</p>
-    pub fn transit_gateway_attachment_id(&self) -> std::option::Option<& str> {
+    pub fn transit_gateway_attachment_id(&self) -> std::option::Option<&str> {
         self.transit_gateway_attachment_id.as_deref()
     }
     /// <p>The IDs of the subnets;</p>
-    pub fn subnet_ids(&self) -> std::option::Option<& [std::string::String]> {
+    pub fn subnet_ids(&self) -> std::option::Option<&[std::string::String]> {
         self.subnet_ids.as_deref()
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
@@ -36,7 +36,7 @@ impl DisassociateTransitGatewayMulticastDomainInput {
 }
 impl DisassociateTransitGatewayMulticastDomainInput {
     /// Creates a new builder-style object to manufacture [`DisassociateTransitGatewayMulticastDomainInput`](crate::operation::disassociate_transit_gateway_multicast_domain::DisassociateTransitGatewayMulticastDomainInput).
-    pub fn builder() -> crate::operation::disassociate_transit_gateway_multicast_domain::builders::DisassociateTransitGatewayMulticastDomainInputBuilder {
+    pub fn builder() -> crate::operation::disassociate_transit_gateway_multicast_domain::builders::DisassociateTransitGatewayMulticastDomainInputBuilder{
         crate::operation::disassociate_transit_gateway_multicast_domain::builders::DisassociateTransitGatewayMulticastDomainInputBuilder::default()
     }
 }
@@ -52,13 +52,20 @@ pub struct DisassociateTransitGatewayMulticastDomainInputBuilder {
 }
 impl DisassociateTransitGatewayMulticastDomainInputBuilder {
     /// <p>The ID of the transit gateway multicast domain.</p>
-    pub fn transit_gateway_multicast_domain_id(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn transit_gateway_multicast_domain_id(
+        mut self,
+        input: impl Into<std::string::String>,
+    ) -> Self {
         self.transit_gateway_multicast_domain_id = Some(input.into());
         self
     }
     /// <p>The ID of the transit gateway multicast domain.</p>
-    pub fn set_transit_gateway_multicast_domain_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.transit_gateway_multicast_domain_id = input; self
+    pub fn set_transit_gateway_multicast_domain_id(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.transit_gateway_multicast_domain_id = input;
+        self
     }
     /// <p>The ID of the attachment.</p>
     pub fn transit_gateway_attachment_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -66,8 +73,12 @@ impl DisassociateTransitGatewayMulticastDomainInputBuilder {
         self
     }
     /// <p>The ID of the attachment.</p>
-    pub fn set_transit_gateway_attachment_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.transit_gateway_attachment_id = input; self
+    pub fn set_transit_gateway_attachment_id(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.transit_gateway_attachment_id = input;
+        self
     }
     /// Appends an item to `subnet_ids`.
     ///
@@ -76,13 +87,17 @@ impl DisassociateTransitGatewayMulticastDomainInputBuilder {
     /// <p>The IDs of the subnets;</p>
     pub fn subnet_ids(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.subnet_ids.unwrap_or_default();
-                        v.push(input.into());
-                        self.subnet_ids = Some(v);
-                        self
+        v.push(input.into());
+        self.subnet_ids = Some(v);
+        self
     }
     /// <p>The IDs of the subnets;</p>
-    pub fn set_subnet_ids(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-        self.subnet_ids = input; self
+    pub fn set_subnet_ids(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
+        self.subnet_ids = input;
+        self
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn dry_run(mut self, input: bool) -> Self {
@@ -91,10 +106,11 @@ impl DisassociateTransitGatewayMulticastDomainInputBuilder {
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn set_dry_run(mut self, input: std::option::Option<bool>) -> Self {
-        self.dry_run = input; self
+        self.dry_run = input;
+        self
     }
     /// Consumes the builder and constructs a [`DisassociateTransitGatewayMulticastDomainInput`](crate::operation::disassociate_transit_gateway_multicast_domain::DisassociateTransitGatewayMulticastDomainInput).
-    pub fn build(self) -> Result<crate::operation::disassociate_transit_gateway_multicast_domain::DisassociateTransitGatewayMulticastDomainInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> Result<crate::operation::disassociate_transit_gateway_multicast_domain::DisassociateTransitGatewayMulticastDomainInput, aws_smithy_http::operation::error::BuildError>{
         Ok(
             crate::operation::disassociate_transit_gateway_multicast_domain::DisassociateTransitGatewayMulticastDomainInput {
                 transit_gateway_multicast_domain_id: self.transit_gateway_multicast_domain_id
@@ -109,4 +125,3 @@ impl DisassociateTransitGatewayMulticastDomainInputBuilder {
         )
     }
 }
-

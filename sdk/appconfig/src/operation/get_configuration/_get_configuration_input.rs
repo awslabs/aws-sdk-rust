@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetConfigurationInput  {
+pub struct GetConfigurationInput {
     /// <p>The application to get. Specify either the application name or the application ID.</p>
     #[doc(hidden)]
     pub application: std::option::Option<std::string::String>,
@@ -15,43 +15,44 @@ pub struct GetConfigurationInput  {
     /// <p>The clientId parameter in the following command is a unique, user-specified ID to identify the client for the configuration. This ID enables AppConfig to deploy the configuration in intervals, as defined in the deployment strategy. </p>
     #[doc(hidden)]
     pub client_id: std::option::Option<std::string::String>,
-    /// <p>The configuration version returned in the most recent <code>GetConfiguration</code> response.</p> <important> 
-    /// <p>AppConfig uses the value of the <code>ClientConfigurationVersion</code> parameter to identify the configuration version on your clients. If you don’t send <code>ClientConfigurationVersion</code> with each call to <code>GetConfiguration</code>, your clients receive the current configuration. You are charged each time your clients receive a configuration.</p> 
-    /// <p>To avoid excess charges, we recommend that you include the <code>ClientConfigurationVersion</code> value with every call to <code>GetConfiguration</code>. This value must be saved on your client. Subsequent calls to <code>GetConfiguration</code> must pass this value by using the <code>ClientConfigurationVersion</code> parameter. </p> 
-    /// </important> 
+    /// <p>The configuration version returned in the most recent <code>GetConfiguration</code> response.</p> <important>
+    /// <p>AppConfig uses the value of the <code>ClientConfigurationVersion</code> parameter to identify the configuration version on your clients. If you don’t send <code>ClientConfigurationVersion</code> with each call to <code>GetConfiguration</code>, your clients receive the current configuration. You are charged each time your clients receive a configuration.</p>
+    /// <p>To avoid excess charges, we recommend that you include the <code>ClientConfigurationVersion</code> value with every call to <code>GetConfiguration</code>. This value must be saved on your client. Subsequent calls to <code>GetConfiguration</code> must pass this value by using the <code>ClientConfigurationVersion</code> parameter. </p>
+    /// </important>
     /// <p>For more information about working with configurations, see <a href="http://docs.aws.amazon.com/appconfig/latest/userguide/appconfig-retrieving-the-configuration.html">Retrieving the Configuration</a> in the <i>AppConfig User Guide</i>.</p>
     #[doc(hidden)]
     pub client_configuration_version: std::option::Option<std::string::String>,
 }
 impl GetConfigurationInput {
     /// <p>The application to get. Specify either the application name or the application ID.</p>
-    pub fn application(&self) -> std::option::Option<& str> {
+    pub fn application(&self) -> std::option::Option<&str> {
         self.application.as_deref()
     }
     /// <p>The environment to get. Specify either the environment name or the environment ID.</p>
-    pub fn environment(&self) -> std::option::Option<& str> {
+    pub fn environment(&self) -> std::option::Option<&str> {
         self.environment.as_deref()
     }
     /// <p>The configuration to get. Specify either the configuration name or the configuration ID.</p>
-    pub fn configuration(&self) -> std::option::Option<& str> {
+    pub fn configuration(&self) -> std::option::Option<&str> {
         self.configuration.as_deref()
     }
     /// <p>The clientId parameter in the following command is a unique, user-specified ID to identify the client for the configuration. This ID enables AppConfig to deploy the configuration in intervals, as defined in the deployment strategy. </p>
-    pub fn client_id(&self) -> std::option::Option<& str> {
+    pub fn client_id(&self) -> std::option::Option<&str> {
         self.client_id.as_deref()
     }
-    /// <p>The configuration version returned in the most recent <code>GetConfiguration</code> response.</p> <important> 
-    /// <p>AppConfig uses the value of the <code>ClientConfigurationVersion</code> parameter to identify the configuration version on your clients. If you don’t send <code>ClientConfigurationVersion</code> with each call to <code>GetConfiguration</code>, your clients receive the current configuration. You are charged each time your clients receive a configuration.</p> 
-    /// <p>To avoid excess charges, we recommend that you include the <code>ClientConfigurationVersion</code> value with every call to <code>GetConfiguration</code>. This value must be saved on your client. Subsequent calls to <code>GetConfiguration</code> must pass this value by using the <code>ClientConfigurationVersion</code> parameter. </p> 
-    /// </important> 
+    /// <p>The configuration version returned in the most recent <code>GetConfiguration</code> response.</p> <important>
+    /// <p>AppConfig uses the value of the <code>ClientConfigurationVersion</code> parameter to identify the configuration version on your clients. If you don’t send <code>ClientConfigurationVersion</code> with each call to <code>GetConfiguration</code>, your clients receive the current configuration. You are charged each time your clients receive a configuration.</p>
+    /// <p>To avoid excess charges, we recommend that you include the <code>ClientConfigurationVersion</code> value with every call to <code>GetConfiguration</code>. This value must be saved on your client. Subsequent calls to <code>GetConfiguration</code> must pass this value by using the <code>ClientConfigurationVersion</code> parameter. </p>
+    /// </important>
     /// <p>For more information about working with configurations, see <a href="http://docs.aws.amazon.com/appconfig/latest/userguide/appconfig-retrieving-the-configuration.html">Retrieving the Configuration</a> in the <i>AppConfig User Guide</i>.</p>
-    pub fn client_configuration_version(&self) -> std::option::Option<& str> {
+    pub fn client_configuration_version(&self) -> std::option::Option<&str> {
         self.client_configuration_version.as_deref()
     }
 }
 impl GetConfigurationInput {
     /// Creates a new builder-style object to manufacture [`GetConfigurationInput`](crate::operation::get_configuration::GetConfigurationInput).
-    pub fn builder() -> crate::operation::get_configuration::builders::GetConfigurationInputBuilder {
+    pub fn builder() -> crate::operation::get_configuration::builders::GetConfigurationInputBuilder
+    {
         crate::operation::get_configuration::builders::GetConfigurationInputBuilder::default()
     }
 }
@@ -74,7 +75,8 @@ impl GetConfigurationInputBuilder {
     }
     /// <p>The application to get. Specify either the application name or the application ID.</p>
     pub fn set_application(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.application = input; self
+        self.application = input;
+        self
     }
     /// <p>The environment to get. Specify either the environment name or the environment ID.</p>
     pub fn environment(mut self, input: impl Into<std::string::String>) -> Self {
@@ -83,7 +85,8 @@ impl GetConfigurationInputBuilder {
     }
     /// <p>The environment to get. Specify either the environment name or the environment ID.</p>
     pub fn set_environment(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.environment = input; self
+        self.environment = input;
+        self
     }
     /// <p>The configuration to get. Specify either the configuration name or the configuration ID.</p>
     pub fn configuration(mut self, input: impl Into<std::string::String>) -> Self {
@@ -92,7 +95,8 @@ impl GetConfigurationInputBuilder {
     }
     /// <p>The configuration to get. Specify either the configuration name or the configuration ID.</p>
     pub fn set_configuration(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.configuration = input; self
+        self.configuration = input;
+        self
     }
     /// <p>The clientId parameter in the following command is a unique, user-specified ID to identify the client for the configuration. This ID enables AppConfig to deploy the configuration in intervals, as defined in the deployment strategy. </p>
     pub fn client_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -101,41 +105,43 @@ impl GetConfigurationInputBuilder {
     }
     /// <p>The clientId parameter in the following command is a unique, user-specified ID to identify the client for the configuration. This ID enables AppConfig to deploy the configuration in intervals, as defined in the deployment strategy. </p>
     pub fn set_client_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.client_id = input; self
+        self.client_id = input;
+        self
     }
-    /// <p>The configuration version returned in the most recent <code>GetConfiguration</code> response.</p> <important> 
-    /// <p>AppConfig uses the value of the <code>ClientConfigurationVersion</code> parameter to identify the configuration version on your clients. If you don’t send <code>ClientConfigurationVersion</code> with each call to <code>GetConfiguration</code>, your clients receive the current configuration. You are charged each time your clients receive a configuration.</p> 
-    /// <p>To avoid excess charges, we recommend that you include the <code>ClientConfigurationVersion</code> value with every call to <code>GetConfiguration</code>. This value must be saved on your client. Subsequent calls to <code>GetConfiguration</code> must pass this value by using the <code>ClientConfigurationVersion</code> parameter. </p> 
-    /// </important> 
+    /// <p>The configuration version returned in the most recent <code>GetConfiguration</code> response.</p> <important>
+    /// <p>AppConfig uses the value of the <code>ClientConfigurationVersion</code> parameter to identify the configuration version on your clients. If you don’t send <code>ClientConfigurationVersion</code> with each call to <code>GetConfiguration</code>, your clients receive the current configuration. You are charged each time your clients receive a configuration.</p>
+    /// <p>To avoid excess charges, we recommend that you include the <code>ClientConfigurationVersion</code> value with every call to <code>GetConfiguration</code>. This value must be saved on your client. Subsequent calls to <code>GetConfiguration</code> must pass this value by using the <code>ClientConfigurationVersion</code> parameter. </p>
+    /// </important>
     /// <p>For more information about working with configurations, see <a href="http://docs.aws.amazon.com/appconfig/latest/userguide/appconfig-retrieving-the-configuration.html">Retrieving the Configuration</a> in the <i>AppConfig User Guide</i>.</p>
     pub fn client_configuration_version(mut self, input: impl Into<std::string::String>) -> Self {
         self.client_configuration_version = Some(input.into());
         self
     }
-    /// <p>The configuration version returned in the most recent <code>GetConfiguration</code> response.</p> <important> 
-    /// <p>AppConfig uses the value of the <code>ClientConfigurationVersion</code> parameter to identify the configuration version on your clients. If you don’t send <code>ClientConfigurationVersion</code> with each call to <code>GetConfiguration</code>, your clients receive the current configuration. You are charged each time your clients receive a configuration.</p> 
-    /// <p>To avoid excess charges, we recommend that you include the <code>ClientConfigurationVersion</code> value with every call to <code>GetConfiguration</code>. This value must be saved on your client. Subsequent calls to <code>GetConfiguration</code> must pass this value by using the <code>ClientConfigurationVersion</code> parameter. </p> 
-    /// </important> 
+    /// <p>The configuration version returned in the most recent <code>GetConfiguration</code> response.</p> <important>
+    /// <p>AppConfig uses the value of the <code>ClientConfigurationVersion</code> parameter to identify the configuration version on your clients. If you don’t send <code>ClientConfigurationVersion</code> with each call to <code>GetConfiguration</code>, your clients receive the current configuration. You are charged each time your clients receive a configuration.</p>
+    /// <p>To avoid excess charges, we recommend that you include the <code>ClientConfigurationVersion</code> value with every call to <code>GetConfiguration</code>. This value must be saved on your client. Subsequent calls to <code>GetConfiguration</code> must pass this value by using the <code>ClientConfigurationVersion</code> parameter. </p>
+    /// </important>
     /// <p>For more information about working with configurations, see <a href="http://docs.aws.amazon.com/appconfig/latest/userguide/appconfig-retrieving-the-configuration.html">Retrieving the Configuration</a> in the <i>AppConfig User Guide</i>.</p>
-    pub fn set_client_configuration_version(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.client_configuration_version = input; self
+    pub fn set_client_configuration_version(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.client_configuration_version = input;
+        self
     }
     /// Consumes the builder and constructs a [`GetConfigurationInput`](crate::operation::get_configuration::GetConfigurationInput).
-    pub fn build(self) -> Result<crate::operation::get_configuration::GetConfigurationInput, aws_smithy_http::operation::error::BuildError> {
-        Ok(
-            crate::operation::get_configuration::GetConfigurationInput {
-                application: self.application
-                ,
-                environment: self.environment
-                ,
-                configuration: self.configuration
-                ,
-                client_id: self.client_id
-                ,
-                client_configuration_version: self.client_configuration_version
-                ,
-            }
-        )
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::get_configuration::GetConfigurationInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        Ok(crate::operation::get_configuration::GetConfigurationInput {
+            application: self.application,
+            environment: self.environment,
+            configuration: self.configuration,
+            client_id: self.client_id,
+            client_configuration_version: self.client_configuration_version,
+        })
     }
 }
-

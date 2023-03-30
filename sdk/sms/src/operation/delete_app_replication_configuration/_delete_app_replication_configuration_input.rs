@@ -2,20 +2,20 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteAppReplicationConfigurationInput  {
+pub struct DeleteAppReplicationConfigurationInput {
     /// <p>The ID of the application.</p>
     #[doc(hidden)]
     pub app_id: std::option::Option<std::string::String>,
 }
 impl DeleteAppReplicationConfigurationInput {
     /// <p>The ID of the application.</p>
-    pub fn app_id(&self) -> std::option::Option<& str> {
+    pub fn app_id(&self) -> std::option::Option<&str> {
         self.app_id.as_deref()
     }
 }
 impl DeleteAppReplicationConfigurationInput {
     /// Creates a new builder-style object to manufacture [`DeleteAppReplicationConfigurationInput`](crate::operation::delete_app_replication_configuration::DeleteAppReplicationConfigurationInput).
-    pub fn builder() -> crate::operation::delete_app_replication_configuration::builders::DeleteAppReplicationConfigurationInputBuilder {
+    pub fn builder() -> crate::operation::delete_app_replication_configuration::builders::DeleteAppReplicationConfigurationInputBuilder{
         crate::operation::delete_app_replication_configuration::builders::DeleteAppReplicationConfigurationInputBuilder::default()
     }
 }
@@ -34,10 +34,11 @@ impl DeleteAppReplicationConfigurationInputBuilder {
     }
     /// <p>The ID of the application.</p>
     pub fn set_app_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.app_id = input; self
+        self.app_id = input;
+        self
     }
     /// Consumes the builder and constructs a [`DeleteAppReplicationConfigurationInput`](crate::operation::delete_app_replication_configuration::DeleteAppReplicationConfigurationInput).
-    pub fn build(self) -> Result<crate::operation::delete_app_replication_configuration::DeleteAppReplicationConfigurationInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> Result<crate::operation::delete_app_replication_configuration::DeleteAppReplicationConfigurationInput, aws_smithy_http::operation::error::BuildError>{
         Ok(
             crate::operation::delete_app_replication_configuration::DeleteAppReplicationConfigurationInput {
                 app_id: self.app_id
@@ -46,4 +47,3 @@ impl DeleteAppReplicationConfigurationInputBuilder {
         )
     }
 }
-

@@ -2,17 +2,19 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct StopVectorEnrichmentJobOutput  {
+pub struct StopVectorEnrichmentJobOutput {
     _request_id: Option<String>,
 }
 impl aws_http::request_id::RequestId for StopVectorEnrichmentJobOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl StopVectorEnrichmentJobOutput {
     /// Creates a new builder-style object to manufacture [`StopVectorEnrichmentJobOutput`](crate::operation::stop_vector_enrichment_job::StopVectorEnrichmentJobOutput).
-    pub fn builder() -> crate::operation::stop_vector_enrichment_job::builders::StopVectorEnrichmentJobOutputBuilder {
+    pub fn builder(
+    ) -> crate::operation::stop_vector_enrichment_job::builders::StopVectorEnrichmentJobOutputBuilder
+    {
         crate::operation::stop_vector_enrichment_job::builders::StopVectorEnrichmentJobOutputBuilder::default()
     }
 }
@@ -25,19 +27,20 @@ pub struct StopVectorEnrichmentJobOutputBuilder {
 }
 impl StopVectorEnrichmentJobOutputBuilder {
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`StopVectorEnrichmentJobOutput`](crate::operation::stop_vector_enrichment_job::StopVectorEnrichmentJobOutput).
-    pub fn build(self) -> crate::operation::stop_vector_enrichment_job::StopVectorEnrichmentJobOutput {
+    pub fn build(
+        self,
+    ) -> crate::operation::stop_vector_enrichment_job::StopVectorEnrichmentJobOutput {
         crate::operation::stop_vector_enrichment_job::StopVectorEnrichmentJobOutput {
             _request_id: self._request_id,
         }
     }
 }
-

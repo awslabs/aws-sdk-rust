@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeFleetHistoryInput  {
+pub struct DescribeFleetHistoryInput {
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     #[doc(hidden)]
     pub dry_run: std::option::Option<bool>,
@@ -28,7 +28,7 @@ impl DescribeFleetHistoryInput {
         self.dry_run
     }
     /// <p>The type of events to describe. By default, all events are described.</p>
-    pub fn event_type(&self) -> std::option::Option<& crate::types::FleetEventType> {
+    pub fn event_type(&self) -> std::option::Option<&crate::types::FleetEventType> {
         self.event_type.as_ref()
     }
     /// <p>The maximum number of results to return in a single call. Specify a value between 1 and 1000. The default value is 1000. To retrieve the remaining results, make another call with the returned <code>NextToken</code> value.</p>
@@ -36,21 +36,22 @@ impl DescribeFleetHistoryInput {
         self.max_results
     }
     /// <p>The token for the next set of results.</p>
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
     /// <p>The ID of the EC2 Fleet.</p>
-    pub fn fleet_id(&self) -> std::option::Option<& str> {
+    pub fn fleet_id(&self) -> std::option::Option<&str> {
         self.fleet_id.as_deref()
     }
     /// <p>The start date and time for the events, in UTC format (for example, <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z).</p>
-    pub fn start_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
+    pub fn start_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.start_time.as_ref()
     }
 }
 impl DescribeFleetHistoryInput {
     /// Creates a new builder-style object to manufacture [`DescribeFleetHistoryInput`](crate::operation::describe_fleet_history::DescribeFleetHistoryInput).
-    pub fn builder() -> crate::operation::describe_fleet_history::builders::DescribeFleetHistoryInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::describe_fleet_history::builders::DescribeFleetHistoryInputBuilder {
         crate::operation::describe_fleet_history::builders::DescribeFleetHistoryInputBuilder::default()
     }
 }
@@ -74,7 +75,8 @@ impl DescribeFleetHistoryInputBuilder {
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn set_dry_run(mut self, input: std::option::Option<bool>) -> Self {
-        self.dry_run = input; self
+        self.dry_run = input;
+        self
     }
     /// <p>The type of events to describe. By default, all events are described.</p>
     pub fn event_type(mut self, input: crate::types::FleetEventType) -> Self {
@@ -82,8 +84,12 @@ impl DescribeFleetHistoryInputBuilder {
         self
     }
     /// <p>The type of events to describe. By default, all events are described.</p>
-    pub fn set_event_type(mut self, input: std::option::Option<crate::types::FleetEventType>) -> Self {
-        self.event_type = input; self
+    pub fn set_event_type(
+        mut self,
+        input: std::option::Option<crate::types::FleetEventType>,
+    ) -> Self {
+        self.event_type = input;
+        self
     }
     /// <p>The maximum number of results to return in a single call. Specify a value between 1 and 1000. The default value is 1000. To retrieve the remaining results, make another call with the returned <code>NextToken</code> value.</p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -92,7 +98,8 @@ impl DescribeFleetHistoryInputBuilder {
     }
     /// <p>The maximum number of results to return in a single call. Specify a value between 1 and 1000. The default value is 1000. To retrieve the remaining results, make another call with the returned <code>NextToken</code> value.</p>
     pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_results = input; self
+        self.max_results = input;
+        self
     }
     /// <p>The token for the next set of results.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -101,7 +108,8 @@ impl DescribeFleetHistoryInputBuilder {
     }
     /// <p>The token for the next set of results.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input; self
+        self.next_token = input;
+        self
     }
     /// <p>The ID of the EC2 Fleet.</p>
     pub fn fleet_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -110,7 +118,8 @@ impl DescribeFleetHistoryInputBuilder {
     }
     /// <p>The ID of the EC2 Fleet.</p>
     pub fn set_fleet_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.fleet_id = input; self
+        self.fleet_id = input;
+        self
     }
     /// <p>The start date and time for the events, in UTC format (for example, <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z).</p>
     pub fn start_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -118,27 +127,29 @@ impl DescribeFleetHistoryInputBuilder {
         self
     }
     /// <p>The start date and time for the events, in UTC format (for example, <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z).</p>
-    pub fn set_start_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.start_time = input; self
+    pub fn set_start_time(
+        mut self,
+        input: std::option::Option<aws_smithy_types::DateTime>,
+    ) -> Self {
+        self.start_time = input;
+        self
     }
     /// Consumes the builder and constructs a [`DescribeFleetHistoryInput`](crate::operation::describe_fleet_history::DescribeFleetHistoryInput).
-    pub fn build(self) -> Result<crate::operation::describe_fleet_history::DescribeFleetHistoryInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::describe_fleet_history::DescribeFleetHistoryInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::describe_fleet_history::DescribeFleetHistoryInput {
-                dry_run: self.dry_run
-                ,
-                event_type: self.event_type
-                ,
-                max_results: self.max_results
-                ,
-                next_token: self.next_token
-                ,
-                fleet_id: self.fleet_id
-                ,
-                start_time: self.start_time
-                ,
-            }
+                dry_run: self.dry_run,
+                event_type: self.event_type,
+                max_results: self.max_results,
+                next_token: self.next_token,
+                fleet_id: self.fleet_id,
+                start_time: self.start_time,
+            },
         )
     }
 }
-

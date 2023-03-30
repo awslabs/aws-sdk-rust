@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeAvailabilityMonitorTestOutput  {
+pub struct DescribeAvailabilityMonitorTestOutput {
     /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
     #[doc(hidden)]
     pub gateway_arn: std::option::Option<std::string::String>,
@@ -16,26 +16,26 @@ pub struct DescribeAvailabilityMonitorTestOutput  {
 }
 impl DescribeAvailabilityMonitorTestOutput {
     /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
-    pub fn gateway_arn(&self) -> std::option::Option<& str> {
+    pub fn gateway_arn(&self) -> std::option::Option<&str> {
         self.gateway_arn.as_deref()
     }
     /// <p>The status of the high availability monitoring test. If a test hasn't been performed, the value of this field is null.</p>
-    pub fn status(&self) -> std::option::Option<& crate::types::AvailabilityMonitorTestStatus> {
+    pub fn status(&self) -> std::option::Option<&crate::types::AvailabilityMonitorTestStatus> {
         self.status.as_ref()
     }
     /// <p>The time the high availability monitoring test was started. If a test hasn't been performed, the value of this field is null.</p>
-    pub fn start_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
+    pub fn start_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.start_time.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for DescribeAvailabilityMonitorTestOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl DescribeAvailabilityMonitorTestOutput {
     /// Creates a new builder-style object to manufacture [`DescribeAvailabilityMonitorTestOutput`](crate::operation::describe_availability_monitor_test::DescribeAvailabilityMonitorTestOutput).
-    pub fn builder() -> crate::operation::describe_availability_monitor_test::builders::DescribeAvailabilityMonitorTestOutputBuilder {
+    pub fn builder() -> crate::operation::describe_availability_monitor_test::builders::DescribeAvailabilityMonitorTestOutputBuilder{
         crate::operation::describe_availability_monitor_test::builders::DescribeAvailabilityMonitorTestOutputBuilder::default()
     }
 }
@@ -57,7 +57,8 @@ impl DescribeAvailabilityMonitorTestOutputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
     pub fn set_gateway_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.gateway_arn = input; self
+        self.gateway_arn = input;
+        self
     }
     /// <p>The status of the high availability monitoring test. If a test hasn't been performed, the value of this field is null.</p>
     pub fn status(mut self, input: crate::types::AvailabilityMonitorTestStatus) -> Self {
@@ -65,8 +66,12 @@ impl DescribeAvailabilityMonitorTestOutputBuilder {
         self
     }
     /// <p>The status of the high availability monitoring test. If a test hasn't been performed, the value of this field is null.</p>
-    pub fn set_status(mut self, input: std::option::Option<crate::types::AvailabilityMonitorTestStatus>) -> Self {
-        self.status = input; self
+    pub fn set_status(
+        mut self,
+        input: std::option::Option<crate::types::AvailabilityMonitorTestStatus>,
+    ) -> Self {
+        self.status = input;
+        self
     }
     /// <p>The time the high availability monitoring test was started. If a test hasn't been performed, the value of this field is null.</p>
     pub fn start_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -74,20 +79,27 @@ impl DescribeAvailabilityMonitorTestOutputBuilder {
         self
     }
     /// <p>The time the high availability monitoring test was started. If a test hasn't been performed, the value of this field is null.</p>
-    pub fn set_start_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.start_time = input; self
+    pub fn set_start_time(
+        mut self,
+        input: std::option::Option<aws_smithy_types::DateTime>,
+    ) -> Self {
+        self.start_time = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`DescribeAvailabilityMonitorTestOutput`](crate::operation::describe_availability_monitor_test::DescribeAvailabilityMonitorTestOutput).
-    pub fn build(self) -> crate::operation::describe_availability_monitor_test::DescribeAvailabilityMonitorTestOutput {
+    pub fn build(
+        self,
+    ) -> crate::operation::describe_availability_monitor_test::DescribeAvailabilityMonitorTestOutput
+    {
         crate::operation::describe_availability_monitor_test::DescribeAvailabilityMonitorTestOutput {
             gateway_arn: self.gateway_arn
             ,
@@ -99,4 +111,3 @@ impl DescribeAvailabilityMonitorTestOutputBuilder {
         }
     }
 }
-

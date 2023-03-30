@@ -3,7 +3,7 @@
 /// <p>Describes the metadata of a resource.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ResourceMetadata  {
+pub struct ResourceMetadata {
     /// <p>The type of resource.</p>
     #[doc(hidden)]
     pub r#type: std::option::Option<crate::types::ResourceType>,
@@ -28,31 +28,31 @@ pub struct ResourceMetadata  {
 }
 impl ResourceMetadata {
     /// <p>The type of resource.</p>
-    pub fn r#type(&self) -> std::option::Option<& crate::types::ResourceType> {
+    pub fn r#type(&self) -> std::option::Option<&crate::types::ResourceType> {
         self.r#type.as_ref()
     }
     /// <p>The name of the resource.</p>
-    pub fn name(&self) -> std::option::Option<& str> {
+    pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>The original name of the resource before a rename operation.</p>
-    pub fn original_name(&self) -> std::option::Option<& str> {
+    pub fn original_name(&self) -> std::option::Option<&str> {
         self.original_name.as_deref()
     }
     /// <p>The ID of the resource.</p>
-    pub fn id(&self) -> std::option::Option<& str> {
+    pub fn id(&self) -> std::option::Option<&str> {
         self.id.as_deref()
     }
     /// <p>The version ID of the resource. This is an optional field and is filled for action on document version.</p>
-    pub fn version_id(&self) -> std::option::Option<& str> {
+    pub fn version_id(&self) -> std::option::Option<&str> {
         self.version_id.as_deref()
     }
     /// <p>The owner of the resource.</p>
-    pub fn owner(&self) -> std::option::Option<& crate::types::UserMetadata> {
+    pub fn owner(&self) -> std::option::Option<&crate::types::UserMetadata> {
         self.owner.as_ref()
     }
     /// <p>The parent ID of the resource before a rename operation.</p>
-    pub fn parent_id(&self) -> std::option::Option<& str> {
+    pub fn parent_id(&self) -> std::option::Option<&str> {
         self.parent_id.as_deref()
     }
 }
@@ -83,7 +83,8 @@ impl ResourceMetadataBuilder {
     }
     /// <p>The type of resource.</p>
     pub fn set_type(mut self, input: std::option::Option<crate::types::ResourceType>) -> Self {
-        self.r#type = input; self
+        self.r#type = input;
+        self
     }
     /// <p>The name of the resource.</p>
     pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -92,7 +93,8 @@ impl ResourceMetadataBuilder {
     }
     /// <p>The name of the resource.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input; self
+        self.name = input;
+        self
     }
     /// <p>The original name of the resource before a rename operation.</p>
     pub fn original_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -101,7 +103,8 @@ impl ResourceMetadataBuilder {
     }
     /// <p>The original name of the resource before a rename operation.</p>
     pub fn set_original_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.original_name = input; self
+        self.original_name = input;
+        self
     }
     /// <p>The ID of the resource.</p>
     pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -110,7 +113,8 @@ impl ResourceMetadataBuilder {
     }
     /// <p>The ID of the resource.</p>
     pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.id = input; self
+        self.id = input;
+        self
     }
     /// <p>The version ID of the resource. This is an optional field and is filled for action on document version.</p>
     pub fn version_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -119,7 +123,8 @@ impl ResourceMetadataBuilder {
     }
     /// <p>The version ID of the resource. This is an optional field and is filled for action on document version.</p>
     pub fn set_version_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.version_id = input; self
+        self.version_id = input;
+        self
     }
     /// <p>The owner of the resource.</p>
     pub fn owner(mut self, input: crate::types::UserMetadata) -> Self {
@@ -128,7 +133,8 @@ impl ResourceMetadataBuilder {
     }
     /// <p>The owner of the resource.</p>
     pub fn set_owner(mut self, input: std::option::Option<crate::types::UserMetadata>) -> Self {
-        self.owner = input; self
+        self.owner = input;
+        self
     }
     /// <p>The parent ID of the resource before a rename operation.</p>
     pub fn parent_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -137,26 +143,19 @@ impl ResourceMetadataBuilder {
     }
     /// <p>The parent ID of the resource before a rename operation.</p>
     pub fn set_parent_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.parent_id = input; self
+        self.parent_id = input;
+        self
     }
     /// Consumes the builder and constructs a [`ResourceMetadata`](crate::types::ResourceMetadata).
     pub fn build(self) -> crate::types::ResourceMetadata {
         crate::types::ResourceMetadata {
-            r#type: self.r#type
-            ,
-            name: self.name
-            ,
-            original_name: self.original_name
-            ,
-            id: self.id
-            ,
-            version_id: self.version_id
-            ,
-            owner: self.owner
-            ,
-            parent_id: self.parent_id
-            ,
+            r#type: self.r#type,
+            name: self.name,
+            original_name: self.original_name,
+            id: self.id,
+            version_id: self.version_id,
+            owner: self.owner,
+            parent_id: self.parent_id,
         }
     }
 }
-

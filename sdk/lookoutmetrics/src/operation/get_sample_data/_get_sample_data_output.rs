@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetSampleDataOutput  {
+pub struct GetSampleDataOutput {
     /// <p>A list of header labels for the records.</p>
     #[doc(hidden)]
     pub header_values: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -13,19 +13,19 @@ pub struct GetSampleDataOutput  {
 }
 impl GetSampleDataOutput {
     /// <p>A list of header labels for the records.</p>
-    pub fn header_values(&self) -> std::option::Option<& [std::string::String]> {
+    pub fn header_values(&self) -> std::option::Option<&[std::string::String]> {
         self.header_values.as_deref()
     }
     /// <p>A list of records.</p>
-    pub fn sample_rows(&self) -> std::option::Option<& [std::vec::Vec<std::string::String>]> {
+    pub fn sample_rows(&self) -> std::option::Option<&[std::vec::Vec<std::string::String>]> {
         self.sample_rows.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for GetSampleDataOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl GetSampleDataOutput {
     /// Creates a new builder-style object to manufacture [`GetSampleDataOutput`](crate::operation::get_sample_data::GetSampleDataOutput).
     pub fn builder() -> crate::operation::get_sample_data::builders::GetSampleDataOutputBuilder {
@@ -49,13 +49,17 @@ impl GetSampleDataOutputBuilder {
     /// <p>A list of header labels for the records.</p>
     pub fn header_values(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.header_values.unwrap_or_default();
-                        v.push(input.into());
-                        self.header_values = Some(v);
-                        self
+        v.push(input.into());
+        self.header_values = Some(v);
+        self
     }
     /// <p>A list of header labels for the records.</p>
-    pub fn set_header_values(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-        self.header_values = input; self
+    pub fn set_header_values(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
+        self.header_values = input;
+        self
     }
     /// Appends an item to `sample_rows`.
     ///
@@ -64,32 +68,33 @@ impl GetSampleDataOutputBuilder {
     /// <p>A list of records.</p>
     pub fn sample_rows(mut self, input: std::vec::Vec<std::string::String>) -> Self {
         let mut v = self.sample_rows.unwrap_or_default();
-                        v.push(input);
-                        self.sample_rows = Some(v);
-                        self
+        v.push(input);
+        self.sample_rows = Some(v);
+        self
     }
     /// <p>A list of records.</p>
-    pub fn set_sample_rows(mut self, input: std::option::Option<std::vec::Vec<std::vec::Vec<std::string::String>>>) -> Self {
-        self.sample_rows = input; self
+    pub fn set_sample_rows(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::vec::Vec<std::string::String>>>,
+    ) -> Self {
+        self.sample_rows = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`GetSampleDataOutput`](crate::operation::get_sample_data::GetSampleDataOutput).
     pub fn build(self) -> crate::operation::get_sample_data::GetSampleDataOutput {
         crate::operation::get_sample_data::GetSampleDataOutput {
-            header_values: self.header_values
-            ,
-            sample_rows: self.sample_rows
-            ,
+            header_values: self.header_values,
+            sample_rows: self.sample_rows,
             _request_id: self._request_id,
         }
     }
 }
-

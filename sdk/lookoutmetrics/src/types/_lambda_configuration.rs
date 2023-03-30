@@ -3,7 +3,7 @@
 /// <p>Contains information about a Lambda configuration.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct LambdaConfiguration  {
+pub struct LambdaConfiguration {
     /// <p>The ARN of an IAM role that has permission to invoke the Lambda function.</p>
     #[doc(hidden)]
     pub role_arn: std::option::Option<std::string::String>,
@@ -13,11 +13,11 @@ pub struct LambdaConfiguration  {
 }
 impl LambdaConfiguration {
     /// <p>The ARN of an IAM role that has permission to invoke the Lambda function.</p>
-    pub fn role_arn(&self) -> std::option::Option<& str> {
+    pub fn role_arn(&self) -> std::option::Option<&str> {
         self.role_arn.as_deref()
     }
     /// <p>The ARN of the Lambda function.</p>
-    pub fn lambda_arn(&self) -> std::option::Option<& str> {
+    pub fn lambda_arn(&self) -> std::option::Option<&str> {
         self.lambda_arn.as_deref()
     }
 }
@@ -43,7 +43,8 @@ impl LambdaConfigurationBuilder {
     }
     /// <p>The ARN of an IAM role that has permission to invoke the Lambda function.</p>
     pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.role_arn = input; self
+        self.role_arn = input;
+        self
     }
     /// <p>The ARN of the Lambda function.</p>
     pub fn lambda_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -52,16 +53,14 @@ impl LambdaConfigurationBuilder {
     }
     /// <p>The ARN of the Lambda function.</p>
     pub fn set_lambda_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.lambda_arn = input; self
+        self.lambda_arn = input;
+        self
     }
     /// Consumes the builder and constructs a [`LambdaConfiguration`](crate::types::LambdaConfiguration).
     pub fn build(self) -> crate::types::LambdaConfiguration {
         crate::types::LambdaConfiguration {
-            role_arn: self.role_arn
-            ,
-            lambda_arn: self.lambda_arn
-            ,
+            role_arn: self.role_arn,
+            lambda_arn: self.lambda_arn,
         }
     }
 }
-

@@ -3,7 +3,7 @@
 /// <p>Status of a daily automated snapshot.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SnapshotOptionsStatus  {
+pub struct SnapshotOptionsStatus {
     /// <p>Specifies the daily snapshot options specified for the Elasticsearch domain.</p>
     #[doc(hidden)]
     pub options: std::option::Option<crate::types::SnapshotOptions>,
@@ -13,11 +13,11 @@ pub struct SnapshotOptionsStatus  {
 }
 impl SnapshotOptionsStatus {
     /// <p>Specifies the daily snapshot options specified for the Elasticsearch domain.</p>
-    pub fn options(&self) -> std::option::Option<& crate::types::SnapshotOptions> {
+    pub fn options(&self) -> std::option::Option<&crate::types::SnapshotOptions> {
         self.options.as_ref()
     }
     /// <p>Specifies the status of a daily automated snapshot.</p>
-    pub fn status(&self) -> std::option::Option<& crate::types::OptionStatus> {
+    pub fn status(&self) -> std::option::Option<&crate::types::OptionStatus> {
         self.status.as_ref()
     }
 }
@@ -42,8 +42,12 @@ impl SnapshotOptionsStatusBuilder {
         self
     }
     /// <p>Specifies the daily snapshot options specified for the Elasticsearch domain.</p>
-    pub fn set_options(mut self, input: std::option::Option<crate::types::SnapshotOptions>) -> Self {
-        self.options = input; self
+    pub fn set_options(
+        mut self,
+        input: std::option::Option<crate::types::SnapshotOptions>,
+    ) -> Self {
+        self.options = input;
+        self
     }
     /// <p>Specifies the status of a daily automated snapshot.</p>
     pub fn status(mut self, input: crate::types::OptionStatus) -> Self {
@@ -52,16 +56,14 @@ impl SnapshotOptionsStatusBuilder {
     }
     /// <p>Specifies the status of a daily automated snapshot.</p>
     pub fn set_status(mut self, input: std::option::Option<crate::types::OptionStatus>) -> Self {
-        self.status = input; self
+        self.status = input;
+        self
     }
     /// Consumes the builder and constructs a [`SnapshotOptionsStatus`](crate::types::SnapshotOptionsStatus).
     pub fn build(self) -> crate::types::SnapshotOptionsStatus {
         crate::types::SnapshotOptionsStatus {
-            options: self.options
-            ,
-            status: self.status
-            ,
+            options: self.options,
+            status: self.status,
         }
     }
 }
-

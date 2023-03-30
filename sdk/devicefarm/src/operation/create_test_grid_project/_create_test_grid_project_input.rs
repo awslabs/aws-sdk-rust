@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateTestGridProjectInput  {
+pub struct CreateTestGridProjectInput {
     /// <p>Human-readable name of the Selenium testing project.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -15,21 +15,23 @@ pub struct CreateTestGridProjectInput  {
 }
 impl CreateTestGridProjectInput {
     /// <p>Human-readable name of the Selenium testing project.</p>
-    pub fn name(&self) -> std::option::Option<& str> {
+    pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>Human-readable description of the project.</p>
-    pub fn description(&self) -> std::option::Option<& str> {
+    pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
     /// <p>The VPC security groups and subnets that are attached to a project.</p>
-    pub fn vpc_config(&self) -> std::option::Option<& crate::types::TestGridVpcConfig> {
+    pub fn vpc_config(&self) -> std::option::Option<&crate::types::TestGridVpcConfig> {
         self.vpc_config.as_ref()
     }
 }
 impl CreateTestGridProjectInput {
     /// Creates a new builder-style object to manufacture [`CreateTestGridProjectInput`](crate::operation::create_test_grid_project::CreateTestGridProjectInput).
-    pub fn builder() -> crate::operation::create_test_grid_project::builders::CreateTestGridProjectInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::create_test_grid_project::builders::CreateTestGridProjectInputBuilder
+    {
         crate::operation::create_test_grid_project::builders::CreateTestGridProjectInputBuilder::default()
     }
 }
@@ -50,7 +52,8 @@ impl CreateTestGridProjectInputBuilder {
     }
     /// <p>Human-readable name of the Selenium testing project.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input; self
+        self.name = input;
+        self
     }
     /// <p>Human-readable description of the project.</p>
     pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -59,7 +62,8 @@ impl CreateTestGridProjectInputBuilder {
     }
     /// <p>Human-readable description of the project.</p>
     pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.description = input; self
+        self.description = input;
+        self
     }
     /// <p>The VPC security groups and subnets that are attached to a project.</p>
     pub fn vpc_config(mut self, input: crate::types::TestGridVpcConfig) -> Self {
@@ -67,21 +71,26 @@ impl CreateTestGridProjectInputBuilder {
         self
     }
     /// <p>The VPC security groups and subnets that are attached to a project.</p>
-    pub fn set_vpc_config(mut self, input: std::option::Option<crate::types::TestGridVpcConfig>) -> Self {
-        self.vpc_config = input; self
+    pub fn set_vpc_config(
+        mut self,
+        input: std::option::Option<crate::types::TestGridVpcConfig>,
+    ) -> Self {
+        self.vpc_config = input;
+        self
     }
     /// Consumes the builder and constructs a [`CreateTestGridProjectInput`](crate::operation::create_test_grid_project::CreateTestGridProjectInput).
-    pub fn build(self) -> Result<crate::operation::create_test_grid_project::CreateTestGridProjectInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::create_test_grid_project::CreateTestGridProjectInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::create_test_grid_project::CreateTestGridProjectInput {
-                name: self.name
-                ,
-                description: self.description
-                ,
-                vpc_config: self.vpc_config
-                ,
-            }
+                name: self.name,
+                description: self.description,
+                vpc_config: self.vpc_config,
+            },
         )
     }
 }
-

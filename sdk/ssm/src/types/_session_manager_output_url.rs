@@ -3,7 +3,7 @@
 /// <p>Reserved for future use.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SessionManagerOutputUrl  {
+pub struct SessionManagerOutputUrl {
     /// <p>Reserved for future use.</p>
     #[doc(hidden)]
     pub s3_output_url: std::option::Option<std::string::String>,
@@ -13,11 +13,11 @@ pub struct SessionManagerOutputUrl  {
 }
 impl SessionManagerOutputUrl {
     /// <p>Reserved for future use.</p>
-    pub fn s3_output_url(&self) -> std::option::Option<& str> {
+    pub fn s3_output_url(&self) -> std::option::Option<&str> {
         self.s3_output_url.as_deref()
     }
     /// <p>Reserved for future use.</p>
-    pub fn cloud_watch_output_url(&self) -> std::option::Option<& str> {
+    pub fn cloud_watch_output_url(&self) -> std::option::Option<&str> {
         self.cloud_watch_output_url.as_deref()
     }
 }
@@ -43,7 +43,8 @@ impl SessionManagerOutputUrlBuilder {
     }
     /// <p>Reserved for future use.</p>
     pub fn set_s3_output_url(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.s3_output_url = input; self
+        self.s3_output_url = input;
+        self
     }
     /// <p>Reserved for future use.</p>
     pub fn cloud_watch_output_url(mut self, input: impl Into<std::string::String>) -> Self {
@@ -51,17 +52,18 @@ impl SessionManagerOutputUrlBuilder {
         self
     }
     /// <p>Reserved for future use.</p>
-    pub fn set_cloud_watch_output_url(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.cloud_watch_output_url = input; self
+    pub fn set_cloud_watch_output_url(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.cloud_watch_output_url = input;
+        self
     }
     /// Consumes the builder and constructs a [`SessionManagerOutputUrl`](crate::types::SessionManagerOutputUrl).
     pub fn build(self) -> crate::types::SessionManagerOutputUrl {
         crate::types::SessionManagerOutputUrl {
-            s3_output_url: self.s3_output_url
-            ,
-            cloud_watch_output_url: self.cloud_watch_output_url
-            ,
+            s3_output_url: self.s3_output_url,
+            cloud_watch_output_url: self.cloud_watch_output_url,
         }
     }
 }
-

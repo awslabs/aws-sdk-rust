@@ -3,7 +3,7 @@
 /// <p>Describes the specifications of a distribution bundle.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DistributionBundle  {
+pub struct DistributionBundle {
     /// <p>The ID of the bundle.</p>
     #[doc(hidden)]
     pub bundle_id: std::option::Option<std::string::String>,
@@ -22,11 +22,11 @@ pub struct DistributionBundle  {
 }
 impl DistributionBundle {
     /// <p>The ID of the bundle.</p>
-    pub fn bundle_id(&self) -> std::option::Option<& str> {
+    pub fn bundle_id(&self) -> std::option::Option<&str> {
         self.bundle_id.as_deref()
     }
     /// <p>The name of the distribution bundle.</p>
-    pub fn name(&self) -> std::option::Option<& str> {
+    pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>The monthly price, in US dollars, of the bundle.</p>
@@ -67,7 +67,8 @@ impl DistributionBundleBuilder {
     }
     /// <p>The ID of the bundle.</p>
     pub fn set_bundle_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.bundle_id = input; self
+        self.bundle_id = input;
+        self
     }
     /// <p>The name of the distribution bundle.</p>
     pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -76,7 +77,8 @@ impl DistributionBundleBuilder {
     }
     /// <p>The name of the distribution bundle.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input; self
+        self.name = input;
+        self
     }
     /// <p>The monthly price, in US dollars, of the bundle.</p>
     pub fn price(mut self, input: f32) -> Self {
@@ -85,7 +87,8 @@ impl DistributionBundleBuilder {
     }
     /// <p>The monthly price, in US dollars, of the bundle.</p>
     pub fn set_price(mut self, input: std::option::Option<f32>) -> Self {
-        self.price = input; self
+        self.price = input;
+        self
     }
     /// <p>The monthly network transfer quota of the bundle.</p>
     pub fn transfer_per_month_in_gb(mut self, input: i32) -> Self {
@@ -94,7 +97,8 @@ impl DistributionBundleBuilder {
     }
     /// <p>The monthly network transfer quota of the bundle.</p>
     pub fn set_transfer_per_month_in_gb(mut self, input: std::option::Option<i32>) -> Self {
-        self.transfer_per_month_in_gb = input; self
+        self.transfer_per_month_in_gb = input;
+        self
     }
     /// <p>Indicates whether the bundle is active, and can be specified for a new or existing distribution.</p>
     pub fn is_active(mut self, input: bool) -> Self {
@@ -103,22 +107,17 @@ impl DistributionBundleBuilder {
     }
     /// <p>Indicates whether the bundle is active, and can be specified for a new or existing distribution.</p>
     pub fn set_is_active(mut self, input: std::option::Option<bool>) -> Self {
-        self.is_active = input; self
+        self.is_active = input;
+        self
     }
     /// Consumes the builder and constructs a [`DistributionBundle`](crate::types::DistributionBundle).
     pub fn build(self) -> crate::types::DistributionBundle {
         crate::types::DistributionBundle {
-            bundle_id: self.bundle_id
-            ,
-            name: self.name
-            ,
-            price: self.price
-            ,
-            transfer_per_month_in_gb: self.transfer_per_month_in_gb
-            ,
-            is_active: self.is_active
-            ,
+            bundle_id: self.bundle_id,
+            name: self.name,
+            price: self.price,
+            transfer_per_month_in_gb: self.transfer_per_month_in_gb,
+            is_active: self.is_active,
         }
     }
 }
-

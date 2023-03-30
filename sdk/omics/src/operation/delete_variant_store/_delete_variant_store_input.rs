@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteVariantStoreInput  {
+pub struct DeleteVariantStoreInput {
     /// <p>The store's name.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -12,7 +12,7 @@ pub struct DeleteVariantStoreInput  {
 }
 impl DeleteVariantStoreInput {
     /// <p>The store's name.</p>
-    pub fn name(&self) -> std::option::Option<& str> {
+    pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>Whether to force deletion.</p>
@@ -22,7 +22,8 @@ impl DeleteVariantStoreInput {
 }
 impl DeleteVariantStoreInput {
     /// Creates a new builder-style object to manufacture [`DeleteVariantStoreInput`](crate::operation::delete_variant_store::DeleteVariantStoreInput).
-    pub fn builder() -> crate::operation::delete_variant_store::builders::DeleteVariantStoreInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::delete_variant_store::builders::DeleteVariantStoreInputBuilder {
         crate::operation::delete_variant_store::builders::DeleteVariantStoreInputBuilder::default()
     }
 }
@@ -42,7 +43,8 @@ impl DeleteVariantStoreInputBuilder {
     }
     /// <p>The store's name.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input; self
+        self.name = input;
+        self
     }
     /// <p>Whether to force deletion.</p>
     pub fn force(mut self, input: bool) -> Self {
@@ -51,18 +53,21 @@ impl DeleteVariantStoreInputBuilder {
     }
     /// <p>Whether to force deletion.</p>
     pub fn set_force(mut self, input: std::option::Option<bool>) -> Self {
-        self.force = input; self
+        self.force = input;
+        self
     }
     /// Consumes the builder and constructs a [`DeleteVariantStoreInput`](crate::operation::delete_variant_store::DeleteVariantStoreInput).
-    pub fn build(self) -> Result<crate::operation::delete_variant_store::DeleteVariantStoreInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::delete_variant_store::DeleteVariantStoreInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::delete_variant_store::DeleteVariantStoreInput {
-                name: self.name
-                ,
-                force: self.force
-                ,
-            }
+                name: self.name,
+                force: self.force,
+            },
         )
     }
 }
-

@@ -3,7 +3,7 @@
 /// <p>Defines the storage configuration for an Amazon EFS file system.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct EfsStorageConfiguration  {
+pub struct EfsStorageConfiguration {
     /// <p>The file system identifier.</p>
     #[doc(hidden)]
     pub file_system_id: std::option::Option<std::string::String>,
@@ -13,11 +13,11 @@ pub struct EfsStorageConfiguration  {
 }
 impl EfsStorageConfiguration {
     /// <p>The file system identifier.</p>
-    pub fn file_system_id(&self) -> std::option::Option<& str> {
+    pub fn file_system_id(&self) -> std::option::Option<&str> {
         self.file_system_id.as_deref()
     }
     /// <p>The mount point for the file system.</p>
-    pub fn mount_point(&self) -> std::option::Option<& str> {
+    pub fn mount_point(&self) -> std::option::Option<&str> {
         self.mount_point.as_deref()
     }
 }
@@ -43,7 +43,8 @@ impl EfsStorageConfigurationBuilder {
     }
     /// <p>The file system identifier.</p>
     pub fn set_file_system_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.file_system_id = input; self
+        self.file_system_id = input;
+        self
     }
     /// <p>The mount point for the file system.</p>
     pub fn mount_point(mut self, input: impl Into<std::string::String>) -> Self {
@@ -52,16 +53,14 @@ impl EfsStorageConfigurationBuilder {
     }
     /// <p>The mount point for the file system.</p>
     pub fn set_mount_point(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.mount_point = input; self
+        self.mount_point = input;
+        self
     }
     /// Consumes the builder and constructs a [`EfsStorageConfiguration`](crate::types::EfsStorageConfiguration).
     pub fn build(self) -> crate::types::EfsStorageConfiguration {
         crate::types::EfsStorageConfiguration {
-            file_system_id: self.file_system_id
-            ,
-            mount_point: self.mount_point
-            ,
+            file_system_id: self.file_system_id,
+            mount_point: self.mount_point,
         }
     }
 }
-

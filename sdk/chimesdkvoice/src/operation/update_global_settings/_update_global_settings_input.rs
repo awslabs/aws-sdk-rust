@@ -2,20 +2,21 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateGlobalSettingsInput  {
+pub struct UpdateGlobalSettingsInput {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub voice_connector: std::option::Option<crate::types::VoiceConnectorSettings>,
 }
 impl UpdateGlobalSettingsInput {
     #[allow(missing_docs)] // documentation missing in model
-    pub fn voice_connector(&self) -> std::option::Option<& crate::types::VoiceConnectorSettings> {
+    pub fn voice_connector(&self) -> std::option::Option<&crate::types::VoiceConnectorSettings> {
         self.voice_connector.as_ref()
     }
 }
 impl UpdateGlobalSettingsInput {
     /// Creates a new builder-style object to manufacture [`UpdateGlobalSettingsInput`](crate::operation::update_global_settings::UpdateGlobalSettingsInput).
-    pub fn builder() -> crate::operation::update_global_settings::builders::UpdateGlobalSettingsInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::update_global_settings::builders::UpdateGlobalSettingsInputBuilder {
         crate::operation::update_global_settings::builders::UpdateGlobalSettingsInputBuilder::default()
     }
 }
@@ -33,17 +34,24 @@ impl UpdateGlobalSettingsInputBuilder {
         self
     }
     #[allow(missing_docs)] // documentation missing in model
-    pub fn set_voice_connector(mut self, input: std::option::Option<crate::types::VoiceConnectorSettings>) -> Self {
-        self.voice_connector = input; self
+    pub fn set_voice_connector(
+        mut self,
+        input: std::option::Option<crate::types::VoiceConnectorSettings>,
+    ) -> Self {
+        self.voice_connector = input;
+        self
     }
     /// Consumes the builder and constructs a [`UpdateGlobalSettingsInput`](crate::operation::update_global_settings::UpdateGlobalSettingsInput).
-    pub fn build(self) -> Result<crate::operation::update_global_settings::UpdateGlobalSettingsInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::update_global_settings::UpdateGlobalSettingsInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::update_global_settings::UpdateGlobalSettingsInput {
-                voice_connector: self.voice_connector
-                ,
-            }
+                voice_connector: self.voice_connector,
+            },
         )
     }
 }
-

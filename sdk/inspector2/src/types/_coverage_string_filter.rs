@@ -3,7 +3,7 @@
 /// <p>Contains details of a coverage string filter.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CoverageStringFilter  {
+pub struct CoverageStringFilter {
     /// <p>The operator to compare strings on.</p>
     #[doc(hidden)]
     pub comparison: std::option::Option<crate::types::CoverageStringComparison>,
@@ -13,11 +13,11 @@ pub struct CoverageStringFilter  {
 }
 impl CoverageStringFilter {
     /// <p>The operator to compare strings on.</p>
-    pub fn comparison(&self) -> std::option::Option<& crate::types::CoverageStringComparison> {
+    pub fn comparison(&self) -> std::option::Option<&crate::types::CoverageStringComparison> {
         self.comparison.as_ref()
     }
     /// <p>The value to compare strings on.</p>
-    pub fn value(&self) -> std::option::Option<& str> {
+    pub fn value(&self) -> std::option::Option<&str> {
         self.value.as_deref()
     }
 }
@@ -42,8 +42,12 @@ impl CoverageStringFilterBuilder {
         self
     }
     /// <p>The operator to compare strings on.</p>
-    pub fn set_comparison(mut self, input: std::option::Option<crate::types::CoverageStringComparison>) -> Self {
-        self.comparison = input; self
+    pub fn set_comparison(
+        mut self,
+        input: std::option::Option<crate::types::CoverageStringComparison>,
+    ) -> Self {
+        self.comparison = input;
+        self
     }
     /// <p>The value to compare strings on.</p>
     pub fn value(mut self, input: impl Into<std::string::String>) -> Self {
@@ -52,16 +56,14 @@ impl CoverageStringFilterBuilder {
     }
     /// <p>The value to compare strings on.</p>
     pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.value = input; self
+        self.value = input;
+        self
     }
     /// Consumes the builder and constructs a [`CoverageStringFilter`](crate::types::CoverageStringFilter).
     pub fn build(self) -> crate::types::CoverageStringFilter {
         crate::types::CoverageStringFilter {
-            comparison: self.comparison
-            ,
-            value: self.value
-            ,
+            comparison: self.comparison,
+            value: self.value,
         }
     }
 }
-

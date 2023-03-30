@@ -3,28 +3,34 @@
 /// <p>Describes the destinations for Verified Access logs.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct VerifiedAccessLogs  {
+pub struct VerifiedAccessLogs {
     /// <p>Amazon S3 logging options.</p>
     #[doc(hidden)]
     pub s3: std::option::Option<crate::types::VerifiedAccessLogS3Destination>,
     /// <p>CloudWatch Logs logging destination.</p>
     #[doc(hidden)]
-    pub cloud_watch_logs: std::option::Option<crate::types::VerifiedAccessLogCloudWatchLogsDestination>,
+    pub cloud_watch_logs:
+        std::option::Option<crate::types::VerifiedAccessLogCloudWatchLogsDestination>,
     /// <p>Kinesis logging destination.</p>
     #[doc(hidden)]
-    pub kinesis_data_firehose: std::option::Option<crate::types::VerifiedAccessLogKinesisDataFirehoseDestination>,
+    pub kinesis_data_firehose:
+        std::option::Option<crate::types::VerifiedAccessLogKinesisDataFirehoseDestination>,
 }
 impl VerifiedAccessLogs {
     /// <p>Amazon S3 logging options.</p>
-    pub fn s3(&self) -> std::option::Option<& crate::types::VerifiedAccessLogS3Destination> {
+    pub fn s3(&self) -> std::option::Option<&crate::types::VerifiedAccessLogS3Destination> {
         self.s3.as_ref()
     }
     /// <p>CloudWatch Logs logging destination.</p>
-    pub fn cloud_watch_logs(&self) -> std::option::Option<& crate::types::VerifiedAccessLogCloudWatchLogsDestination> {
+    pub fn cloud_watch_logs(
+        &self,
+    ) -> std::option::Option<&crate::types::VerifiedAccessLogCloudWatchLogsDestination> {
         self.cloud_watch_logs.as_ref()
     }
     /// <p>Kinesis logging destination.</p>
-    pub fn kinesis_data_firehose(&self) -> std::option::Option<& crate::types::VerifiedAccessLogKinesisDataFirehoseDestination> {
+    pub fn kinesis_data_firehose(
+        &self,
+    ) -> std::option::Option<&crate::types::VerifiedAccessLogKinesisDataFirehoseDestination> {
         self.kinesis_data_firehose.as_ref()
     }
 }
@@ -40,8 +46,10 @@ impl VerifiedAccessLogs {
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct VerifiedAccessLogsBuilder {
     pub(crate) s3: std::option::Option<crate::types::VerifiedAccessLogS3Destination>,
-    pub(crate) cloud_watch_logs: std::option::Option<crate::types::VerifiedAccessLogCloudWatchLogsDestination>,
-    pub(crate) kinesis_data_firehose: std::option::Option<crate::types::VerifiedAccessLogKinesisDataFirehoseDestination>,
+    pub(crate) cloud_watch_logs:
+        std::option::Option<crate::types::VerifiedAccessLogCloudWatchLogsDestination>,
+    pub(crate) kinesis_data_firehose:
+        std::option::Option<crate::types::VerifiedAccessLogKinesisDataFirehoseDestination>,
 }
 impl VerifiedAccessLogsBuilder {
     /// <p>Amazon S3 logging options.</p>
@@ -50,37 +58,51 @@ impl VerifiedAccessLogsBuilder {
         self
     }
     /// <p>Amazon S3 logging options.</p>
-    pub fn set_s3(mut self, input: std::option::Option<crate::types::VerifiedAccessLogS3Destination>) -> Self {
-        self.s3 = input; self
+    pub fn set_s3(
+        mut self,
+        input: std::option::Option<crate::types::VerifiedAccessLogS3Destination>,
+    ) -> Self {
+        self.s3 = input;
+        self
     }
     /// <p>CloudWatch Logs logging destination.</p>
-    pub fn cloud_watch_logs(mut self, input: crate::types::VerifiedAccessLogCloudWatchLogsDestination) -> Self {
+    pub fn cloud_watch_logs(
+        mut self,
+        input: crate::types::VerifiedAccessLogCloudWatchLogsDestination,
+    ) -> Self {
         self.cloud_watch_logs = Some(input);
         self
     }
     /// <p>CloudWatch Logs logging destination.</p>
-    pub fn set_cloud_watch_logs(mut self, input: std::option::Option<crate::types::VerifiedAccessLogCloudWatchLogsDestination>) -> Self {
-        self.cloud_watch_logs = input; self
+    pub fn set_cloud_watch_logs(
+        mut self,
+        input: std::option::Option<crate::types::VerifiedAccessLogCloudWatchLogsDestination>,
+    ) -> Self {
+        self.cloud_watch_logs = input;
+        self
     }
     /// <p>Kinesis logging destination.</p>
-    pub fn kinesis_data_firehose(mut self, input: crate::types::VerifiedAccessLogKinesisDataFirehoseDestination) -> Self {
+    pub fn kinesis_data_firehose(
+        mut self,
+        input: crate::types::VerifiedAccessLogKinesisDataFirehoseDestination,
+    ) -> Self {
         self.kinesis_data_firehose = Some(input);
         self
     }
     /// <p>Kinesis logging destination.</p>
-    pub fn set_kinesis_data_firehose(mut self, input: std::option::Option<crate::types::VerifiedAccessLogKinesisDataFirehoseDestination>) -> Self {
-        self.kinesis_data_firehose = input; self
+    pub fn set_kinesis_data_firehose(
+        mut self,
+        input: std::option::Option<crate::types::VerifiedAccessLogKinesisDataFirehoseDestination>,
+    ) -> Self {
+        self.kinesis_data_firehose = input;
+        self
     }
     /// Consumes the builder and constructs a [`VerifiedAccessLogs`](crate::types::VerifiedAccessLogs).
     pub fn build(self) -> crate::types::VerifiedAccessLogs {
         crate::types::VerifiedAccessLogs {
-            s3: self.s3
-            ,
-            cloud_watch_logs: self.cloud_watch_logs
-            ,
-            kinesis_data_firehose: self.kinesis_data_firehose
-            ,
+            s3: self.s3,
+            cloud_watch_logs: self.cloud_watch_logs,
+            kinesis_data_firehose: self.kinesis_data_firehose,
         }
     }
 }
-

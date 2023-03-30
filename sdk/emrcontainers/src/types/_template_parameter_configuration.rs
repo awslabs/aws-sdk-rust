@@ -3,7 +3,7 @@
 /// <p>The configuration of a job template parameter.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct TemplateParameterConfiguration  {
+pub struct TemplateParameterConfiguration {
     /// <p>The type of the job template parameter. Allowed values are: ‘String’, ‘Number’.</p>
     #[doc(hidden)]
     pub r#type: std::option::Option<crate::types::TemplateParameterDataType>,
@@ -13,11 +13,11 @@ pub struct TemplateParameterConfiguration  {
 }
 impl TemplateParameterConfiguration {
     /// <p>The type of the job template parameter. Allowed values are: ‘String’, ‘Number’.</p>
-    pub fn r#type(&self) -> std::option::Option<& crate::types::TemplateParameterDataType> {
+    pub fn r#type(&self) -> std::option::Option<&crate::types::TemplateParameterDataType> {
         self.r#type.as_ref()
     }
     /// <p>The default value for the job template parameter.</p>
-    pub fn default_value(&self) -> std::option::Option<& str> {
+    pub fn default_value(&self) -> std::option::Option<&str> {
         self.default_value.as_deref()
     }
 }
@@ -42,8 +42,12 @@ impl TemplateParameterConfigurationBuilder {
         self
     }
     /// <p>The type of the job template parameter. Allowed values are: ‘String’, ‘Number’.</p>
-    pub fn set_type(mut self, input: std::option::Option<crate::types::TemplateParameterDataType>) -> Self {
-        self.r#type = input; self
+    pub fn set_type(
+        mut self,
+        input: std::option::Option<crate::types::TemplateParameterDataType>,
+    ) -> Self {
+        self.r#type = input;
+        self
     }
     /// <p>The default value for the job template parameter.</p>
     pub fn default_value(mut self, input: impl Into<std::string::String>) -> Self {
@@ -52,16 +56,14 @@ impl TemplateParameterConfigurationBuilder {
     }
     /// <p>The default value for the job template parameter.</p>
     pub fn set_default_value(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.default_value = input; self
+        self.default_value = input;
+        self
     }
     /// Consumes the builder and constructs a [`TemplateParameterConfiguration`](crate::types::TemplateParameterConfiguration).
     pub fn build(self) -> crate::types::TemplateParameterConfiguration {
         crate::types::TemplateParameterConfiguration {
-            r#type: self.r#type
-            ,
-            default_value: self.default_value
-            ,
+            r#type: self.r#type,
+            default_value: self.default_value,
         }
     }
 }
-

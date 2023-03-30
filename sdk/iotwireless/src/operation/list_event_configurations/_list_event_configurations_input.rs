@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListEventConfigurationsInput  {
+pub struct ListEventConfigurationsInput {
     /// <p>Resource type to filter event configurations.</p>
     #[doc(hidden)]
     pub resource_type: std::option::Option<crate::types::EventNotificationResourceType>,
@@ -15,7 +15,9 @@ pub struct ListEventConfigurationsInput  {
 }
 impl ListEventConfigurationsInput {
     /// <p>Resource type to filter event configurations.</p>
-    pub fn resource_type(&self) -> std::option::Option<& crate::types::EventNotificationResourceType> {
+    pub fn resource_type(
+        &self,
+    ) -> std::option::Option<&crate::types::EventNotificationResourceType> {
         self.resource_type.as_ref()
     }
     /// <p>The maximum number of results to return in this operation.</p>
@@ -23,13 +25,15 @@ impl ListEventConfigurationsInput {
         self.max_results
     }
     /// <p>To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <b>null</b> to receive the first set of results.</p>
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
 }
 impl ListEventConfigurationsInput {
     /// Creates a new builder-style object to manufacture [`ListEventConfigurationsInput`](crate::operation::list_event_configurations::ListEventConfigurationsInput).
-    pub fn builder() -> crate::operation::list_event_configurations::builders::ListEventConfigurationsInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::list_event_configurations::builders::ListEventConfigurationsInputBuilder
+    {
         crate::operation::list_event_configurations::builders::ListEventConfigurationsInputBuilder::default()
     }
 }
@@ -49,8 +53,12 @@ impl ListEventConfigurationsInputBuilder {
         self
     }
     /// <p>Resource type to filter event configurations.</p>
-    pub fn set_resource_type(mut self, input: std::option::Option<crate::types::EventNotificationResourceType>) -> Self {
-        self.resource_type = input; self
+    pub fn set_resource_type(
+        mut self,
+        input: std::option::Option<crate::types::EventNotificationResourceType>,
+    ) -> Self {
+        self.resource_type = input;
+        self
     }
     /// <p>The maximum number of results to return in this operation.</p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -59,7 +67,8 @@ impl ListEventConfigurationsInputBuilder {
     }
     /// <p>The maximum number of results to return in this operation.</p>
     pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_results = input; self
+        self.max_results = input;
+        self
     }
     /// <p>To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <b>null</b> to receive the first set of results.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -68,21 +77,22 @@ impl ListEventConfigurationsInputBuilder {
     }
     /// <p>To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <b>null</b> to receive the first set of results.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input; self
+        self.next_token = input;
+        self
     }
     /// Consumes the builder and constructs a [`ListEventConfigurationsInput`](crate::operation::list_event_configurations::ListEventConfigurationsInput).
-    pub fn build(self) -> Result<crate::operation::list_event_configurations::ListEventConfigurationsInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::list_event_configurations::ListEventConfigurationsInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::list_event_configurations::ListEventConfigurationsInput {
-                resource_type: self.resource_type
-                ,
-                max_results: self.max_results
-                    .unwrap_or_default()
-                ,
-                next_token: self.next_token
-                ,
-            }
+                resource_type: self.resource_type,
+                max_results: self.max_results.unwrap_or_default(),
+                next_token: self.next_token,
+            },
         )
     }
 }
-

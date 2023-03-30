@@ -2,20 +2,21 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteCidrCollectionInput  {
+pub struct DeleteCidrCollectionInput {
     /// <p>The UUID of the collection to delete.</p>
     #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
 }
 impl DeleteCidrCollectionInput {
     /// <p>The UUID of the collection to delete.</p>
-    pub fn id(&self) -> std::option::Option<& str> {
+    pub fn id(&self) -> std::option::Option<&str> {
         self.id.as_deref()
     }
 }
 impl DeleteCidrCollectionInput {
     /// Creates a new builder-style object to manufacture [`DeleteCidrCollectionInput`](crate::operation::delete_cidr_collection::DeleteCidrCollectionInput).
-    pub fn builder() -> crate::operation::delete_cidr_collection::builders::DeleteCidrCollectionInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::delete_cidr_collection::builders::DeleteCidrCollectionInputBuilder {
         crate::operation::delete_cidr_collection::builders::DeleteCidrCollectionInputBuilder::default()
     }
 }
@@ -34,16 +35,16 @@ impl DeleteCidrCollectionInputBuilder {
     }
     /// <p>The UUID of the collection to delete.</p>
     pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.id = input; self
+        self.id = input;
+        self
     }
     /// Consumes the builder and constructs a [`DeleteCidrCollectionInput`](crate::operation::delete_cidr_collection::DeleteCidrCollectionInput).
-    pub fn build(self) -> Result<crate::operation::delete_cidr_collection::DeleteCidrCollectionInput, aws_smithy_http::operation::error::BuildError> {
-        Ok(
-            crate::operation::delete_cidr_collection::DeleteCidrCollectionInput {
-                id: self.id
-                ,
-            }
-        )
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::delete_cidr_collection::DeleteCidrCollectionInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        Ok(crate::operation::delete_cidr_collection::DeleteCidrCollectionInput { id: self.id })
     }
 }
-

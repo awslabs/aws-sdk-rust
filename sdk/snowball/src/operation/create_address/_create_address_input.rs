@@ -2,14 +2,14 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateAddressInput  {
+pub struct CreateAddressInput {
     /// <p>The address that you want the Snow device shipped to.</p>
     #[doc(hidden)]
     pub address: std::option::Option<crate::types::Address>,
 }
 impl CreateAddressInput {
     /// <p>The address that you want the Snow device shipped to.</p>
-    pub fn address(&self) -> std::option::Option<& crate::types::Address> {
+    pub fn address(&self) -> std::option::Option<&crate::types::Address> {
         self.address.as_ref()
     }
 }
@@ -34,16 +34,18 @@ impl CreateAddressInputBuilder {
     }
     /// <p>The address that you want the Snow device shipped to.</p>
     pub fn set_address(mut self, input: std::option::Option<crate::types::Address>) -> Self {
-        self.address = input; self
+        self.address = input;
+        self
     }
     /// Consumes the builder and constructs a [`CreateAddressInput`](crate::operation::create_address::CreateAddressInput).
-    pub fn build(self) -> Result<crate::operation::create_address::CreateAddressInput, aws_smithy_http::operation::error::BuildError> {
-        Ok(
-            crate::operation::create_address::CreateAddressInput {
-                address: self.address
-                ,
-            }
-        )
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::create_address::CreateAddressInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        Ok(crate::operation::create_address::CreateAddressInput {
+            address: self.address,
+        })
     }
 }
-

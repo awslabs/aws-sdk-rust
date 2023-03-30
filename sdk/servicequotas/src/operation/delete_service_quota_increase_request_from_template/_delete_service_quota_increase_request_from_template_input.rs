@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteServiceQuotaIncreaseRequestFromTemplateInput  {
+pub struct DeleteServiceQuotaIncreaseRequestFromTemplateInput {
     /// <p>The service identifier.</p>
     #[doc(hidden)]
     pub service_code: std::option::Option<std::string::String>,
@@ -15,21 +15,21 @@ pub struct DeleteServiceQuotaIncreaseRequestFromTemplateInput  {
 }
 impl DeleteServiceQuotaIncreaseRequestFromTemplateInput {
     /// <p>The service identifier.</p>
-    pub fn service_code(&self) -> std::option::Option<& str> {
+    pub fn service_code(&self) -> std::option::Option<&str> {
         self.service_code.as_deref()
     }
     /// <p>The quota identifier.</p>
-    pub fn quota_code(&self) -> std::option::Option<& str> {
+    pub fn quota_code(&self) -> std::option::Option<&str> {
         self.quota_code.as_deref()
     }
     /// <p>The AWS Region.</p>
-    pub fn aws_region(&self) -> std::option::Option<& str> {
+    pub fn aws_region(&self) -> std::option::Option<&str> {
         self.aws_region.as_deref()
     }
 }
 impl DeleteServiceQuotaIncreaseRequestFromTemplateInput {
     /// Creates a new builder-style object to manufacture [`DeleteServiceQuotaIncreaseRequestFromTemplateInput`](crate::operation::delete_service_quota_increase_request_from_template::DeleteServiceQuotaIncreaseRequestFromTemplateInput).
-    pub fn builder() -> crate::operation::delete_service_quota_increase_request_from_template::builders::DeleteServiceQuotaIncreaseRequestFromTemplateInputBuilder {
+    pub fn builder() -> crate::operation::delete_service_quota_increase_request_from_template::builders::DeleteServiceQuotaIncreaseRequestFromTemplateInputBuilder{
         crate::operation::delete_service_quota_increase_request_from_template::builders::DeleteServiceQuotaIncreaseRequestFromTemplateInputBuilder::default()
     }
 }
@@ -50,7 +50,8 @@ impl DeleteServiceQuotaIncreaseRequestFromTemplateInputBuilder {
     }
     /// <p>The service identifier.</p>
     pub fn set_service_code(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.service_code = input; self
+        self.service_code = input;
+        self
     }
     /// <p>The quota identifier.</p>
     pub fn quota_code(mut self, input: impl Into<std::string::String>) -> Self {
@@ -59,7 +60,8 @@ impl DeleteServiceQuotaIncreaseRequestFromTemplateInputBuilder {
     }
     /// <p>The quota identifier.</p>
     pub fn set_quota_code(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.quota_code = input; self
+        self.quota_code = input;
+        self
     }
     /// <p>The AWS Region.</p>
     pub fn aws_region(mut self, input: impl Into<std::string::String>) -> Self {
@@ -68,10 +70,11 @@ impl DeleteServiceQuotaIncreaseRequestFromTemplateInputBuilder {
     }
     /// <p>The AWS Region.</p>
     pub fn set_aws_region(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.aws_region = input; self
+        self.aws_region = input;
+        self
     }
     /// Consumes the builder and constructs a [`DeleteServiceQuotaIncreaseRequestFromTemplateInput`](crate::operation::delete_service_quota_increase_request_from_template::DeleteServiceQuotaIncreaseRequestFromTemplateInput).
-    pub fn build(self) -> Result<crate::operation::delete_service_quota_increase_request_from_template::DeleteServiceQuotaIncreaseRequestFromTemplateInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> Result<crate::operation::delete_service_quota_increase_request_from_template::DeleteServiceQuotaIncreaseRequestFromTemplateInput, aws_smithy_http::operation::error::BuildError>{
         Ok(
             crate::operation::delete_service_quota_increase_request_from_template::DeleteServiceQuotaIncreaseRequestFromTemplateInput {
                 service_code: self.service_code
@@ -84,4 +87,3 @@ impl DeleteServiceQuotaIncreaseRequestFromTemplateInputBuilder {
         )
     }
 }
-

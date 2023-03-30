@@ -2,8 +2,8 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetParametersInput  {
-    /// <p>Names of the parameters for which you want to query information.</p> 
+pub struct GetParametersInput {
+    /// <p>Names of the parameters for which you want to query information.</p>
     /// <p>To query by parameter label, use <code>"Name": "name:label"</code>. To query by parameter version, use <code>"Name": "name:version"</code>.</p>
     #[doc(hidden)]
     pub names: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -12,9 +12,9 @@ pub struct GetParametersInput  {
     pub with_decryption: std::option::Option<bool>,
 }
 impl GetParametersInput {
-    /// <p>Names of the parameters for which you want to query information.</p> 
+    /// <p>Names of the parameters for which you want to query information.</p>
     /// <p>To query by parameter label, use <code>"Name": "name:label"</code>. To query by parameter version, use <code>"Name": "name:version"</code>.</p>
-    pub fn names(&self) -> std::option::Option<& [std::string::String]> {
+    pub fn names(&self) -> std::option::Option<&[std::string::String]> {
         self.names.as_deref()
     }
     /// <p>Return decrypted secure string value. Return decrypted values for secure string parameters. This flag is ignored for <code>String</code> and <code>StringList</code> parameter types.</p>
@@ -41,18 +41,22 @@ impl GetParametersInputBuilder {
     ///
     /// To override the contents of this collection use [`set_names`](Self::set_names).
     ///
-    /// <p>Names of the parameters for which you want to query information.</p> 
+    /// <p>Names of the parameters for which you want to query information.</p>
     /// <p>To query by parameter label, use <code>"Name": "name:label"</code>. To query by parameter version, use <code>"Name": "name:version"</code>.</p>
     pub fn names(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.names.unwrap_or_default();
-                        v.push(input.into());
-                        self.names = Some(v);
-                        self
+        v.push(input.into());
+        self.names = Some(v);
+        self
     }
-    /// <p>Names of the parameters for which you want to query information.</p> 
+    /// <p>Names of the parameters for which you want to query information.</p>
     /// <p>To query by parameter label, use <code>"Name": "name:label"</code>. To query by parameter version, use <code>"Name": "name:version"</code>.</p>
-    pub fn set_names(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-        self.names = input; self
+    pub fn set_names(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
+        self.names = input;
+        self
     }
     /// <p>Return decrypted secure string value. Return decrypted values for secure string parameters. This flag is ignored for <code>String</code> and <code>StringList</code> parameter types.</p>
     pub fn with_decryption(mut self, input: bool) -> Self {
@@ -61,18 +65,19 @@ impl GetParametersInputBuilder {
     }
     /// <p>Return decrypted secure string value. Return decrypted values for secure string parameters. This flag is ignored for <code>String</code> and <code>StringList</code> parameter types.</p>
     pub fn set_with_decryption(mut self, input: std::option::Option<bool>) -> Self {
-        self.with_decryption = input; self
+        self.with_decryption = input;
+        self
     }
     /// Consumes the builder and constructs a [`GetParametersInput`](crate::operation::get_parameters::GetParametersInput).
-    pub fn build(self) -> Result<crate::operation::get_parameters::GetParametersInput, aws_smithy_http::operation::error::BuildError> {
-        Ok(
-            crate::operation::get_parameters::GetParametersInput {
-                names: self.names
-                ,
-                with_decryption: self.with_decryption
-                ,
-            }
-        )
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::get_parameters::GetParametersInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        Ok(crate::operation::get_parameters::GetParametersInput {
+            names: self.names,
+            with_decryption: self.with_decryption,
+        })
     }
 }
-

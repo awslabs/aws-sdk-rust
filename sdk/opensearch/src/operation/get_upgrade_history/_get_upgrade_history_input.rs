@@ -3,7 +3,7 @@
 /// <p>Container for the request parameters to the <code>GetUpgradeHistory</code> operation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetUpgradeHistoryInput  {
+pub struct GetUpgradeHistoryInput {
     /// <p>The name of an existing domain.</p>
     #[doc(hidden)]
     pub domain_name: std::option::Option<std::string::String>,
@@ -16,7 +16,7 @@ pub struct GetUpgradeHistoryInput  {
 }
 impl GetUpgradeHistoryInput {
     /// <p>The name of an existing domain.</p>
-    pub fn domain_name(&self) -> std::option::Option<& str> {
+    pub fn domain_name(&self) -> std::option::Option<&str> {
         self.domain_name.as_deref()
     }
     /// <p>An optional parameter that specifies the maximum number of results to return. You can use <code>nextToken</code> to get the next page of results.</p>
@@ -24,13 +24,14 @@ impl GetUpgradeHistoryInput {
         self.max_results
     }
     /// <p>If your initial <code>GetUpgradeHistory</code> operation returns a <code>nextToken</code>, you can include the returned <code>nextToken</code> in subsequent <code>GetUpgradeHistory</code> operations, which returns results in the next page.</p>
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
 }
 impl GetUpgradeHistoryInput {
     /// Creates a new builder-style object to manufacture [`GetUpgradeHistoryInput`](crate::operation::get_upgrade_history::GetUpgradeHistoryInput).
-    pub fn builder() -> crate::operation::get_upgrade_history::builders::GetUpgradeHistoryInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::get_upgrade_history::builders::GetUpgradeHistoryInputBuilder {
         crate::operation::get_upgrade_history::builders::GetUpgradeHistoryInputBuilder::default()
     }
 }
@@ -51,7 +52,8 @@ impl GetUpgradeHistoryInputBuilder {
     }
     /// <p>The name of an existing domain.</p>
     pub fn set_domain_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.domain_name = input; self
+        self.domain_name = input;
+        self
     }
     /// <p>An optional parameter that specifies the maximum number of results to return. You can use <code>nextToken</code> to get the next page of results.</p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -60,7 +62,8 @@ impl GetUpgradeHistoryInputBuilder {
     }
     /// <p>An optional parameter that specifies the maximum number of results to return. You can use <code>nextToken</code> to get the next page of results.</p>
     pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_results = input; self
+        self.max_results = input;
+        self
     }
     /// <p>If your initial <code>GetUpgradeHistory</code> operation returns a <code>nextToken</code>, you can include the returned <code>nextToken</code> in subsequent <code>GetUpgradeHistory</code> operations, which returns results in the next page.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -69,21 +72,22 @@ impl GetUpgradeHistoryInputBuilder {
     }
     /// <p>If your initial <code>GetUpgradeHistory</code> operation returns a <code>nextToken</code>, you can include the returned <code>nextToken</code> in subsequent <code>GetUpgradeHistory</code> operations, which returns results in the next page.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input; self
+        self.next_token = input;
+        self
     }
     /// Consumes the builder and constructs a [`GetUpgradeHistoryInput`](crate::operation::get_upgrade_history::GetUpgradeHistoryInput).
-    pub fn build(self) -> Result<crate::operation::get_upgrade_history::GetUpgradeHistoryInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::get_upgrade_history::GetUpgradeHistoryInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::get_upgrade_history::GetUpgradeHistoryInput {
-                domain_name: self.domain_name
-                ,
-                max_results: self.max_results
-                    .unwrap_or_default()
-                ,
-                next_token: self.next_token
-                ,
-            }
+                domain_name: self.domain_name,
+                max_results: self.max_results.unwrap_or_default(),
+                next_token: self.next_token,
+            },
         )
     }
 }
-

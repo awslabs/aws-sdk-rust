@@ -2,14 +2,14 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateRecipeJobInput  {
+pub struct UpdateRecipeJobInput {
     /// <p>The Amazon Resource Name (ARN) of an encryption key that is used to protect the job.</p>
     #[doc(hidden)]
     pub encryption_key_arn: std::option::Option<std::string::String>,
-    /// <p>The encryption mode for the job, which can be one of the following:</p> 
-    /// <ul> 
-    /// <li> <p> <code>SSE-KMS</code> - Server-side encryption with keys managed by KMS.</p> </li> 
-    /// <li> <p> <code>SSE-S3</code> - Server-side encryption with keys managed by Amazon S3.</p> </li> 
+    /// <p>The encryption mode for the job, which can be one of the following:</p>
+    /// <ul>
+    /// <li> <p> <code>SSE-KMS</code> - Server-side encryption with keys managed by KMS.</p> </li>
+    /// <li> <p> <code>SSE-S3</code> - Server-side encryption with keys managed by Amazon S3.</p> </li>
     /// </ul>
     #[doc(hidden)]
     pub encryption_mode: std::option::Option<crate::types::EncryptionMode>,
@@ -43,23 +43,23 @@ pub struct UpdateRecipeJobInput  {
 }
 impl UpdateRecipeJobInput {
     /// <p>The Amazon Resource Name (ARN) of an encryption key that is used to protect the job.</p>
-    pub fn encryption_key_arn(&self) -> std::option::Option<& str> {
+    pub fn encryption_key_arn(&self) -> std::option::Option<&str> {
         self.encryption_key_arn.as_deref()
     }
-    /// <p>The encryption mode for the job, which can be one of the following:</p> 
-    /// <ul> 
-    /// <li> <p> <code>SSE-KMS</code> - Server-side encryption with keys managed by KMS.</p> </li> 
-    /// <li> <p> <code>SSE-S3</code> - Server-side encryption with keys managed by Amazon S3.</p> </li> 
+    /// <p>The encryption mode for the job, which can be one of the following:</p>
+    /// <ul>
+    /// <li> <p> <code>SSE-KMS</code> - Server-side encryption with keys managed by KMS.</p> </li>
+    /// <li> <p> <code>SSE-S3</code> - Server-side encryption with keys managed by Amazon S3.</p> </li>
     /// </ul>
-    pub fn encryption_mode(&self) -> std::option::Option<& crate::types::EncryptionMode> {
+    pub fn encryption_mode(&self) -> std::option::Option<&crate::types::EncryptionMode> {
         self.encryption_mode.as_ref()
     }
     /// <p>The name of the job to update.</p>
-    pub fn name(&self) -> std::option::Option<& str> {
+    pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>Enables or disables Amazon CloudWatch logging for the job. If logging is enabled, CloudWatch writes one log stream for each job run.</p>
-    pub fn log_subscription(&self) -> std::option::Option<& crate::types::LogSubscription> {
+    pub fn log_subscription(&self) -> std::option::Option<&crate::types::LogSubscription> {
         self.log_subscription.as_ref()
     }
     /// <p>The maximum number of nodes that DataBrew can consume when the job processes data.</p>
@@ -71,19 +71,19 @@ impl UpdateRecipeJobInput {
         self.max_retries
     }
     /// <p>One or more artifacts that represent the output from running the job. </p>
-    pub fn outputs(&self) -> std::option::Option<& [crate::types::Output]> {
+    pub fn outputs(&self) -> std::option::Option<&[crate::types::Output]> {
         self.outputs.as_deref()
     }
     /// <p>One or more artifacts that represent the Glue Data Catalog output from running the job.</p>
-    pub fn data_catalog_outputs(&self) -> std::option::Option<& [crate::types::DataCatalogOutput]> {
+    pub fn data_catalog_outputs(&self) -> std::option::Option<&[crate::types::DataCatalogOutput]> {
         self.data_catalog_outputs.as_deref()
     }
     /// <p>Represents a list of JDBC database output objects which defines the output destination for a DataBrew recipe job to write into.</p>
-    pub fn database_outputs(&self) -> std::option::Option<& [crate::types::DatabaseOutput]> {
+    pub fn database_outputs(&self) -> std::option::Option<&[crate::types::DatabaseOutput]> {
         self.database_outputs.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) role to be assumed when DataBrew runs the job.</p>
-    pub fn role_arn(&self) -> std::option::Option<& str> {
+    pub fn role_arn(&self) -> std::option::Option<&str> {
         self.role_arn.as_deref()
     }
     /// <p>The job's timeout in minutes. A job that attempts to run longer than this timeout period ends with a status of <code>TIMEOUT</code>.</p>
@@ -109,7 +109,8 @@ pub struct UpdateRecipeJobInputBuilder {
     pub(crate) max_capacity: std::option::Option<i32>,
     pub(crate) max_retries: std::option::Option<i32>,
     pub(crate) outputs: std::option::Option<std::vec::Vec<crate::types::Output>>,
-    pub(crate) data_catalog_outputs: std::option::Option<std::vec::Vec<crate::types::DataCatalogOutput>>,
+    pub(crate) data_catalog_outputs:
+        std::option::Option<std::vec::Vec<crate::types::DataCatalogOutput>>,
     pub(crate) database_outputs: std::option::Option<std::vec::Vec<crate::types::DatabaseOutput>>,
     pub(crate) role_arn: std::option::Option<std::string::String>,
     pub(crate) timeout: std::option::Option<i32>,
@@ -121,25 +122,33 @@ impl UpdateRecipeJobInputBuilder {
         self
     }
     /// <p>The Amazon Resource Name (ARN) of an encryption key that is used to protect the job.</p>
-    pub fn set_encryption_key_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.encryption_key_arn = input; self
+    pub fn set_encryption_key_arn(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.encryption_key_arn = input;
+        self
     }
-    /// <p>The encryption mode for the job, which can be one of the following:</p> 
-    /// <ul> 
-    /// <li> <p> <code>SSE-KMS</code> - Server-side encryption with keys managed by KMS.</p> </li> 
-    /// <li> <p> <code>SSE-S3</code> - Server-side encryption with keys managed by Amazon S3.</p> </li> 
+    /// <p>The encryption mode for the job, which can be one of the following:</p>
+    /// <ul>
+    /// <li> <p> <code>SSE-KMS</code> - Server-side encryption with keys managed by KMS.</p> </li>
+    /// <li> <p> <code>SSE-S3</code> - Server-side encryption with keys managed by Amazon S3.</p> </li>
     /// </ul>
     pub fn encryption_mode(mut self, input: crate::types::EncryptionMode) -> Self {
         self.encryption_mode = Some(input);
         self
     }
-    /// <p>The encryption mode for the job, which can be one of the following:</p> 
-    /// <ul> 
-    /// <li> <p> <code>SSE-KMS</code> - Server-side encryption with keys managed by KMS.</p> </li> 
-    /// <li> <p> <code>SSE-S3</code> - Server-side encryption with keys managed by Amazon S3.</p> </li> 
+    /// <p>The encryption mode for the job, which can be one of the following:</p>
+    /// <ul>
+    /// <li> <p> <code>SSE-KMS</code> - Server-side encryption with keys managed by KMS.</p> </li>
+    /// <li> <p> <code>SSE-S3</code> - Server-side encryption with keys managed by Amazon S3.</p> </li>
     /// </ul>
-    pub fn set_encryption_mode(mut self, input: std::option::Option<crate::types::EncryptionMode>) -> Self {
-        self.encryption_mode = input; self
+    pub fn set_encryption_mode(
+        mut self,
+        input: std::option::Option<crate::types::EncryptionMode>,
+    ) -> Self {
+        self.encryption_mode = input;
+        self
     }
     /// <p>The name of the job to update.</p>
     pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -148,7 +157,8 @@ impl UpdateRecipeJobInputBuilder {
     }
     /// <p>The name of the job to update.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input; self
+        self.name = input;
+        self
     }
     /// <p>Enables or disables Amazon CloudWatch logging for the job. If logging is enabled, CloudWatch writes one log stream for each job run.</p>
     pub fn log_subscription(mut self, input: crate::types::LogSubscription) -> Self {
@@ -156,8 +166,12 @@ impl UpdateRecipeJobInputBuilder {
         self
     }
     /// <p>Enables or disables Amazon CloudWatch logging for the job. If logging is enabled, CloudWatch writes one log stream for each job run.</p>
-    pub fn set_log_subscription(mut self, input: std::option::Option<crate::types::LogSubscription>) -> Self {
-        self.log_subscription = input; self
+    pub fn set_log_subscription(
+        mut self,
+        input: std::option::Option<crate::types::LogSubscription>,
+    ) -> Self {
+        self.log_subscription = input;
+        self
     }
     /// <p>The maximum number of nodes that DataBrew can consume when the job processes data.</p>
     pub fn max_capacity(mut self, input: i32) -> Self {
@@ -166,7 +180,8 @@ impl UpdateRecipeJobInputBuilder {
     }
     /// <p>The maximum number of nodes that DataBrew can consume when the job processes data.</p>
     pub fn set_max_capacity(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_capacity = input; self
+        self.max_capacity = input;
+        self
     }
     /// <p>The maximum number of times to retry the job after a job run fails.</p>
     pub fn max_retries(mut self, input: i32) -> Self {
@@ -175,7 +190,8 @@ impl UpdateRecipeJobInputBuilder {
     }
     /// <p>The maximum number of times to retry the job after a job run fails.</p>
     pub fn set_max_retries(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_retries = input; self
+        self.max_retries = input;
+        self
     }
     /// Appends an item to `outputs`.
     ///
@@ -184,13 +200,17 @@ impl UpdateRecipeJobInputBuilder {
     /// <p>One or more artifacts that represent the output from running the job. </p>
     pub fn outputs(mut self, input: crate::types::Output) -> Self {
         let mut v = self.outputs.unwrap_or_default();
-                        v.push(input);
-                        self.outputs = Some(v);
-                        self
+        v.push(input);
+        self.outputs = Some(v);
+        self
     }
     /// <p>One or more artifacts that represent the output from running the job. </p>
-    pub fn set_outputs(mut self, input: std::option::Option<std::vec::Vec<crate::types::Output>>) -> Self {
-        self.outputs = input; self
+    pub fn set_outputs(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::Output>>,
+    ) -> Self {
+        self.outputs = input;
+        self
     }
     /// Appends an item to `data_catalog_outputs`.
     ///
@@ -199,13 +219,17 @@ impl UpdateRecipeJobInputBuilder {
     /// <p>One or more artifacts that represent the Glue Data Catalog output from running the job.</p>
     pub fn data_catalog_outputs(mut self, input: crate::types::DataCatalogOutput) -> Self {
         let mut v = self.data_catalog_outputs.unwrap_or_default();
-                        v.push(input);
-                        self.data_catalog_outputs = Some(v);
-                        self
+        v.push(input);
+        self.data_catalog_outputs = Some(v);
+        self
     }
     /// <p>One or more artifacts that represent the Glue Data Catalog output from running the job.</p>
-    pub fn set_data_catalog_outputs(mut self, input: std::option::Option<std::vec::Vec<crate::types::DataCatalogOutput>>) -> Self {
-        self.data_catalog_outputs = input; self
+    pub fn set_data_catalog_outputs(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::DataCatalogOutput>>,
+    ) -> Self {
+        self.data_catalog_outputs = input;
+        self
     }
     /// Appends an item to `database_outputs`.
     ///
@@ -214,13 +238,17 @@ impl UpdateRecipeJobInputBuilder {
     /// <p>Represents a list of JDBC database output objects which defines the output destination for a DataBrew recipe job to write into.</p>
     pub fn database_outputs(mut self, input: crate::types::DatabaseOutput) -> Self {
         let mut v = self.database_outputs.unwrap_or_default();
-                        v.push(input);
-                        self.database_outputs = Some(v);
-                        self
+        v.push(input);
+        self.database_outputs = Some(v);
+        self
     }
     /// <p>Represents a list of JDBC database output objects which defines the output destination for a DataBrew recipe job to write into.</p>
-    pub fn set_database_outputs(mut self, input: std::option::Option<std::vec::Vec<crate::types::DatabaseOutput>>) -> Self {
-        self.database_outputs = input; self
+    pub fn set_database_outputs(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::DatabaseOutput>>,
+    ) -> Self {
+        self.database_outputs = input;
+        self
     }
     /// <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) role to be assumed when DataBrew runs the job.</p>
     pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -229,7 +257,8 @@ impl UpdateRecipeJobInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) role to be assumed when DataBrew runs the job.</p>
     pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.role_arn = input; self
+        self.role_arn = input;
+        self
     }
     /// <p>The job's timeout in minutes. A job that attempts to run longer than this timeout period ends with a status of <code>TIMEOUT</code>.</p>
     pub fn timeout(mut self, input: i32) -> Self {
@@ -238,39 +267,28 @@ impl UpdateRecipeJobInputBuilder {
     }
     /// <p>The job's timeout in minutes. A job that attempts to run longer than this timeout period ends with a status of <code>TIMEOUT</code>.</p>
     pub fn set_timeout(mut self, input: std::option::Option<i32>) -> Self {
-        self.timeout = input; self
+        self.timeout = input;
+        self
     }
     /// Consumes the builder and constructs a [`UpdateRecipeJobInput`](crate::operation::update_recipe_job::UpdateRecipeJobInput).
-    pub fn build(self) -> Result<crate::operation::update_recipe_job::UpdateRecipeJobInput, aws_smithy_http::operation::error::BuildError> {
-        Ok(
-            crate::operation::update_recipe_job::UpdateRecipeJobInput {
-                encryption_key_arn: self.encryption_key_arn
-                ,
-                encryption_mode: self.encryption_mode
-                ,
-                name: self.name
-                ,
-                log_subscription: self.log_subscription
-                ,
-                max_capacity: self.max_capacity
-                    .unwrap_or_default()
-                ,
-                max_retries: self.max_retries
-                    .unwrap_or_default()
-                ,
-                outputs: self.outputs
-                ,
-                data_catalog_outputs: self.data_catalog_outputs
-                ,
-                database_outputs: self.database_outputs
-                ,
-                role_arn: self.role_arn
-                ,
-                timeout: self.timeout
-                    .unwrap_or_default()
-                ,
-            }
-        )
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::update_recipe_job::UpdateRecipeJobInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        Ok(crate::operation::update_recipe_job::UpdateRecipeJobInput {
+            encryption_key_arn: self.encryption_key_arn,
+            encryption_mode: self.encryption_mode,
+            name: self.name,
+            log_subscription: self.log_subscription,
+            max_capacity: self.max_capacity.unwrap_or_default(),
+            max_retries: self.max_retries.unwrap_or_default(),
+            outputs: self.outputs,
+            data_catalog_outputs: self.data_catalog_outputs,
+            database_outputs: self.database_outputs,
+            role_arn: self.role_arn,
+            timeout: self.timeout.unwrap_or_default(),
+        })
     }
 }
-

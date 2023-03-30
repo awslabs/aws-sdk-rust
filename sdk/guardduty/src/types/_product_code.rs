@@ -3,7 +3,7 @@
 /// <p>Contains information about the product code for the EC2 instance.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ProductCode  {
+pub struct ProductCode {
     /// <p>The product code information.</p>
     #[doc(hidden)]
     pub code: std::option::Option<std::string::String>,
@@ -13,11 +13,11 @@ pub struct ProductCode  {
 }
 impl ProductCode {
     /// <p>The product code information.</p>
-    pub fn code(&self) -> std::option::Option<& str> {
+    pub fn code(&self) -> std::option::Option<&str> {
         self.code.as_deref()
     }
     /// <p>The product code type.</p>
-    pub fn product_type(&self) -> std::option::Option<& str> {
+    pub fn product_type(&self) -> std::option::Option<&str> {
         self.product_type.as_deref()
     }
 }
@@ -43,7 +43,8 @@ impl ProductCodeBuilder {
     }
     /// <p>The product code information.</p>
     pub fn set_code(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.code = input; self
+        self.code = input;
+        self
     }
     /// <p>The product code type.</p>
     pub fn product_type(mut self, input: impl Into<std::string::String>) -> Self {
@@ -52,16 +53,14 @@ impl ProductCodeBuilder {
     }
     /// <p>The product code type.</p>
     pub fn set_product_type(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.product_type = input; self
+        self.product_type = input;
+        self
     }
     /// Consumes the builder and constructs a [`ProductCode`](crate::types::ProductCode).
     pub fn build(self) -> crate::types::ProductCode {
         crate::types::ProductCode {
-            code: self.code
-            ,
-            product_type: self.product_type
-            ,
+            code: self.code,
+            product_type: self.product_type,
         }
     }
 }
-

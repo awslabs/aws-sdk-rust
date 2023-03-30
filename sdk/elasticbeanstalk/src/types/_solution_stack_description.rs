@@ -3,7 +3,7 @@
 /// <p>Describes the solution stack.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SolutionStackDescription  {
+pub struct SolutionStackDescription {
     /// <p>The name of the solution stack.</p>
     #[doc(hidden)]
     pub solution_stack_name: std::option::Option<std::string::String>,
@@ -13,11 +13,11 @@ pub struct SolutionStackDescription  {
 }
 impl SolutionStackDescription {
     /// <p>The name of the solution stack.</p>
-    pub fn solution_stack_name(&self) -> std::option::Option<& str> {
+    pub fn solution_stack_name(&self) -> std::option::Option<&str> {
         self.solution_stack_name.as_deref()
     }
     /// <p>The permitted file types allowed for a solution stack.</p>
-    pub fn permitted_file_types(&self) -> std::option::Option<& [std::string::String]> {
+    pub fn permitted_file_types(&self) -> std::option::Option<&[std::string::String]> {
         self.permitted_file_types.as_deref()
     }
 }
@@ -42,8 +42,12 @@ impl SolutionStackDescriptionBuilder {
         self
     }
     /// <p>The name of the solution stack.</p>
-    pub fn set_solution_stack_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.solution_stack_name = input; self
+    pub fn set_solution_stack_name(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.solution_stack_name = input;
+        self
     }
     /// Appends an item to `permitted_file_types`.
     ///
@@ -52,22 +56,23 @@ impl SolutionStackDescriptionBuilder {
     /// <p>The permitted file types allowed for a solution stack.</p>
     pub fn permitted_file_types(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.permitted_file_types.unwrap_or_default();
-                        v.push(input.into());
-                        self.permitted_file_types = Some(v);
-                        self
+        v.push(input.into());
+        self.permitted_file_types = Some(v);
+        self
     }
     /// <p>The permitted file types allowed for a solution stack.</p>
-    pub fn set_permitted_file_types(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-        self.permitted_file_types = input; self
+    pub fn set_permitted_file_types(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
+        self.permitted_file_types = input;
+        self
     }
     /// Consumes the builder and constructs a [`SolutionStackDescription`](crate::types::SolutionStackDescription).
     pub fn build(self) -> crate::types::SolutionStackDescription {
         crate::types::SolutionStackDescription {
-            solution_stack_name: self.solution_stack_name
-            ,
-            permitted_file_types: self.permitted_file_types
-            ,
+            solution_stack_name: self.solution_stack_name,
+            permitted_file_types: self.permitted_file_types,
         }
     }
 }
-

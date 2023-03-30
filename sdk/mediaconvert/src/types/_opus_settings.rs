@@ -3,7 +3,7 @@
 /// Required when you set Codec, under AudioDescriptions&gt;CodecSettings, to the value OPUS.
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct OpusSettings  {
+pub struct OpusSettings {
     /// Optional. Specify the average bitrate in bits per second. Valid values are multiples of 8000, from 32000 through 192000. The default value is 96000, which we recommend for quality and bandwidth.
     #[doc(hidden)]
     pub bitrate: i32,
@@ -51,7 +51,8 @@ impl OpusSettingsBuilder {
     }
     /// Optional. Specify the average bitrate in bits per second. Valid values are multiples of 8000, from 32000 through 192000. The default value is 96000, which we recommend for quality and bandwidth.
     pub fn set_bitrate(mut self, input: std::option::Option<i32>) -> Self {
-        self.bitrate = input; self
+        self.bitrate = input;
+        self
     }
     /// Specify the number of channels in this output audio track. Choosing Mono on the console gives you 1 output channel; choosing Stereo gives you 2. In the API, valid values are 1 and 2.
     pub fn channels(mut self, input: i32) -> Self {
@@ -60,7 +61,8 @@ impl OpusSettingsBuilder {
     }
     /// Specify the number of channels in this output audio track. Choosing Mono on the console gives you 1 output channel; choosing Stereo gives you 2. In the API, valid values are 1 and 2.
     pub fn set_channels(mut self, input: std::option::Option<i32>) -> Self {
-        self.channels = input; self
+        self.channels = input;
+        self
     }
     /// Optional. Sample rate in hz. Valid values are 16000, 24000, and 48000. The default value is 48000.
     pub fn sample_rate(mut self, input: i32) -> Self {
@@ -69,21 +71,15 @@ impl OpusSettingsBuilder {
     }
     /// Optional. Sample rate in hz. Valid values are 16000, 24000, and 48000. The default value is 48000.
     pub fn set_sample_rate(mut self, input: std::option::Option<i32>) -> Self {
-        self.sample_rate = input; self
+        self.sample_rate = input;
+        self
     }
     /// Consumes the builder and constructs a [`OpusSettings`](crate::types::OpusSettings).
     pub fn build(self) -> crate::types::OpusSettings {
         crate::types::OpusSettings {
-            bitrate: self.bitrate
-                .unwrap_or_default()
-            ,
-            channels: self.channels
-                .unwrap_or_default()
-            ,
-            sample_rate: self.sample_rate
-                .unwrap_or_default()
-            ,
+            bitrate: self.bitrate.unwrap_or_default(),
+            channels: self.channels.unwrap_or_default(),
+            sample_rate: self.sample_rate.unwrap_or_default(),
         }
     }
 }
-

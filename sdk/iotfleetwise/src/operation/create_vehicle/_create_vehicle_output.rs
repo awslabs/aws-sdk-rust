@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateVehicleOutput  {
+pub struct CreateVehicleOutput {
     /// <p>The unique ID of the created vehicle.</p>
     #[doc(hidden)]
     pub vehicle_name: std::option::Option<std::string::String>,
@@ -16,23 +16,23 @@ pub struct CreateVehicleOutput  {
 }
 impl CreateVehicleOutput {
     /// <p>The unique ID of the created vehicle.</p>
-    pub fn vehicle_name(&self) -> std::option::Option<& str> {
+    pub fn vehicle_name(&self) -> std::option::Option<&str> {
         self.vehicle_name.as_deref()
     }
     /// <p> The ARN of the created vehicle. </p>
-    pub fn arn(&self) -> std::option::Option<& str> {
+    pub fn arn(&self) -> std::option::Option<&str> {
         self.arn.as_deref()
     }
     /// <p> The ARN of a created or validated Amazon Web Services IoT thing. </p>
-    pub fn thing_arn(&self) -> std::option::Option<& str> {
+    pub fn thing_arn(&self) -> std::option::Option<&str> {
         self.thing_arn.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for CreateVehicleOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl CreateVehicleOutput {
     /// Creates a new builder-style object to manufacture [`CreateVehicleOutput`](crate::operation::create_vehicle::CreateVehicleOutput).
     pub fn builder() -> crate::operation::create_vehicle::builders::CreateVehicleOutputBuilder {
@@ -57,7 +57,8 @@ impl CreateVehicleOutputBuilder {
     }
     /// <p>The unique ID of the created vehicle.</p>
     pub fn set_vehicle_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.vehicle_name = input; self
+        self.vehicle_name = input;
+        self
     }
     /// <p> The ARN of the created vehicle. </p>
     pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -66,7 +67,8 @@ impl CreateVehicleOutputBuilder {
     }
     /// <p> The ARN of the created vehicle. </p>
     pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.arn = input; self
+        self.arn = input;
+        self
     }
     /// <p> The ARN of a created or validated Amazon Web Services IoT thing. </p>
     pub fn thing_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -75,28 +77,25 @@ impl CreateVehicleOutputBuilder {
     }
     /// <p> The ARN of a created or validated Amazon Web Services IoT thing. </p>
     pub fn set_thing_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.thing_arn = input; self
+        self.thing_arn = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`CreateVehicleOutput`](crate::operation::create_vehicle::CreateVehicleOutput).
     pub fn build(self) -> crate::operation::create_vehicle::CreateVehicleOutput {
         crate::operation::create_vehicle::CreateVehicleOutput {
-            vehicle_name: self.vehicle_name
-            ,
-            arn: self.arn
-            ,
-            thing_arn: self.thing_arn
-            ,
+            vehicle_name: self.vehicle_name,
+            arn: self.arn,
+            thing_arn: self.thing_arn,
             _request_id: self._request_id,
         }
     }
 }
-

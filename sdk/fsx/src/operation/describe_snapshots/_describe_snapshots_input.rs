@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeSnapshotsInput  {
+pub struct DescribeSnapshotsInput {
     /// <p>The IDs of the snapshots that you want to retrieve. This parameter value overrides any filters. If any IDs aren't found, a <code>SnapshotNotFound</code> error occurs.</p>
     #[doc(hidden)]
     pub snapshot_ids: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -18,11 +18,11 @@ pub struct DescribeSnapshotsInput  {
 }
 impl DescribeSnapshotsInput {
     /// <p>The IDs of the snapshots that you want to retrieve. This parameter value overrides any filters. If any IDs aren't found, a <code>SnapshotNotFound</code> error occurs.</p>
-    pub fn snapshot_ids(&self) -> std::option::Option<& [std::string::String]> {
+    pub fn snapshot_ids(&self) -> std::option::Option<&[std::string::String]> {
         self.snapshot_ids.as_deref()
     }
     /// <p>The filters structure. The supported names are <code>file-system-id</code> or <code>volume-id</code>.</p>
-    pub fn filters(&self) -> std::option::Option<& [crate::types::SnapshotFilter]> {
+    pub fn filters(&self) -> std::option::Option<&[crate::types::SnapshotFilter]> {
         self.filters.as_deref()
     }
     /// <p>The maximum number of resources to return in the response. This value must be an integer greater than zero.</p>
@@ -30,13 +30,14 @@ impl DescribeSnapshotsInput {
         self.max_results
     }
     /// <p>(Optional) Opaque pagination token returned from a previous operation (String). If present, this token indicates from what point you can continue processing the request, where the previous <code>NextToken</code> value left off.</p>
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
 }
 impl DescribeSnapshotsInput {
     /// Creates a new builder-style object to manufacture [`DescribeSnapshotsInput`](crate::operation::describe_snapshots::DescribeSnapshotsInput).
-    pub fn builder() -> crate::operation::describe_snapshots::builders::DescribeSnapshotsInputBuilder {
+    pub fn builder() -> crate::operation::describe_snapshots::builders::DescribeSnapshotsInputBuilder
+    {
         crate::operation::describe_snapshots::builders::DescribeSnapshotsInputBuilder::default()
     }
 }
@@ -58,13 +59,17 @@ impl DescribeSnapshotsInputBuilder {
     /// <p>The IDs of the snapshots that you want to retrieve. This parameter value overrides any filters. If any IDs aren't found, a <code>SnapshotNotFound</code> error occurs.</p>
     pub fn snapshot_ids(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.snapshot_ids.unwrap_or_default();
-                        v.push(input.into());
-                        self.snapshot_ids = Some(v);
-                        self
+        v.push(input.into());
+        self.snapshot_ids = Some(v);
+        self
     }
     /// <p>The IDs of the snapshots that you want to retrieve. This parameter value overrides any filters. If any IDs aren't found, a <code>SnapshotNotFound</code> error occurs.</p>
-    pub fn set_snapshot_ids(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-        self.snapshot_ids = input; self
+    pub fn set_snapshot_ids(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
+        self.snapshot_ids = input;
+        self
     }
     /// Appends an item to `filters`.
     ///
@@ -73,13 +78,17 @@ impl DescribeSnapshotsInputBuilder {
     /// <p>The filters structure. The supported names are <code>file-system-id</code> or <code>volume-id</code>.</p>
     pub fn filters(mut self, input: crate::types::SnapshotFilter) -> Self {
         let mut v = self.filters.unwrap_or_default();
-                        v.push(input);
-                        self.filters = Some(v);
-                        self
+        v.push(input);
+        self.filters = Some(v);
+        self
     }
     /// <p>The filters structure. The supported names are <code>file-system-id</code> or <code>volume-id</code>.</p>
-    pub fn set_filters(mut self, input: std::option::Option<std::vec::Vec<crate::types::SnapshotFilter>>) -> Self {
-        self.filters = input; self
+    pub fn set_filters(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::SnapshotFilter>>,
+    ) -> Self {
+        self.filters = input;
+        self
     }
     /// <p>The maximum number of resources to return in the response. This value must be an integer greater than zero.</p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -88,7 +97,8 @@ impl DescribeSnapshotsInputBuilder {
     }
     /// <p>The maximum number of resources to return in the response. This value must be an integer greater than zero.</p>
     pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_results = input; self
+        self.max_results = input;
+        self
     }
     /// <p>(Optional) Opaque pagination token returned from a previous operation (String). If present, this token indicates from what point you can continue processing the request, where the previous <code>NextToken</code> value left off.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -97,22 +107,23 @@ impl DescribeSnapshotsInputBuilder {
     }
     /// <p>(Optional) Opaque pagination token returned from a previous operation (String). If present, this token indicates from what point you can continue processing the request, where the previous <code>NextToken</code> value left off.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input; self
+        self.next_token = input;
+        self
     }
     /// Consumes the builder and constructs a [`DescribeSnapshotsInput`](crate::operation::describe_snapshots::DescribeSnapshotsInput).
-    pub fn build(self) -> Result<crate::operation::describe_snapshots::DescribeSnapshotsInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::describe_snapshots::DescribeSnapshotsInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::describe_snapshots::DescribeSnapshotsInput {
-                snapshot_ids: self.snapshot_ids
-                ,
-                filters: self.filters
-                ,
-                max_results: self.max_results
-                ,
-                next_token: self.next_token
-                ,
-            }
+                snapshot_ids: self.snapshot_ids,
+                filters: self.filters,
+                max_results: self.max_results,
+                next_token: self.next_token,
+            },
         )
     }
 }
-

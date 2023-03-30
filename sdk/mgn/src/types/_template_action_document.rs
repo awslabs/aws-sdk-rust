@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct TemplateActionDocument  {
+pub struct TemplateActionDocument {
     /// <p>Template post migration custom action ID.</p>
     #[doc(hidden)]
     pub action_id: std::option::Option<std::string::String>,
@@ -29,22 +29,27 @@ pub struct TemplateActionDocument  {
     pub must_succeed_for_cutover: std::option::Option<bool>,
     /// <p>Template post migration custom action parameters.</p>
     #[doc(hidden)]
-    pub parameters: std::option::Option<std::collections::HashMap<std::string::String, std::vec::Vec<crate::types::SsmParameterStoreParameter>>>,
+    pub parameters: std::option::Option<
+        std::collections::HashMap<
+            std::string::String,
+            std::vec::Vec<crate::types::SsmParameterStoreParameter>,
+        >,
+    >,
     /// <p>Operating system eligible for this template post migration custom action.</p>
     #[doc(hidden)]
     pub operating_system: std::option::Option<std::string::String>,
 }
 impl TemplateActionDocument {
     /// <p>Template post migration custom action ID.</p>
-    pub fn action_id(&self) -> std::option::Option<& str> {
+    pub fn action_id(&self) -> std::option::Option<&str> {
         self.action_id.as_deref()
     }
     /// <p>Template post migration custom action name.</p>
-    pub fn action_name(&self) -> std::option::Option<& str> {
+    pub fn action_name(&self) -> std::option::Option<&str> {
         self.action_name.as_deref()
     }
     /// <p>Template post migration custom action document identifier.</p>
-    pub fn document_identifier(&self) -> std::option::Option<& str> {
+    pub fn document_identifier(&self) -> std::option::Option<&str> {
         self.document_identifier.as_deref()
     }
     /// <p>Template post migration custom action order.</p>
@@ -52,7 +57,7 @@ impl TemplateActionDocument {
         self.order
     }
     /// <p>Template post migration custom action document version.</p>
-    pub fn document_version(&self) -> std::option::Option<& str> {
+    pub fn document_version(&self) -> std::option::Option<&str> {
         self.document_version.as_deref()
     }
     /// <p>Template post migration custom action active status.</p>
@@ -68,11 +73,18 @@ impl TemplateActionDocument {
         self.must_succeed_for_cutover
     }
     /// <p>Template post migration custom action parameters.</p>
-    pub fn parameters(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::vec::Vec<crate::types::SsmParameterStoreParameter>>> {
+    pub fn parameters(
+        &self,
+    ) -> std::option::Option<
+        &std::collections::HashMap<
+            std::string::String,
+            std::vec::Vec<crate::types::SsmParameterStoreParameter>,
+        >,
+    > {
         self.parameters.as_ref()
     }
     /// <p>Operating system eligible for this template post migration custom action.</p>
-    pub fn operating_system(&self) -> std::option::Option<& str> {
+    pub fn operating_system(&self) -> std::option::Option<&str> {
         self.operating_system.as_deref()
     }
 }
@@ -95,7 +107,12 @@ pub struct TemplateActionDocumentBuilder {
     pub(crate) active: std::option::Option<bool>,
     pub(crate) timeout_seconds: std::option::Option<i32>,
     pub(crate) must_succeed_for_cutover: std::option::Option<bool>,
-    pub(crate) parameters: std::option::Option<std::collections::HashMap<std::string::String, std::vec::Vec<crate::types::SsmParameterStoreParameter>>>,
+    pub(crate) parameters: std::option::Option<
+        std::collections::HashMap<
+            std::string::String,
+            std::vec::Vec<crate::types::SsmParameterStoreParameter>,
+        >,
+    >,
     pub(crate) operating_system: std::option::Option<std::string::String>,
 }
 impl TemplateActionDocumentBuilder {
@@ -106,7 +123,8 @@ impl TemplateActionDocumentBuilder {
     }
     /// <p>Template post migration custom action ID.</p>
     pub fn set_action_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.action_id = input; self
+        self.action_id = input;
+        self
     }
     /// <p>Template post migration custom action name.</p>
     pub fn action_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -115,7 +133,8 @@ impl TemplateActionDocumentBuilder {
     }
     /// <p>Template post migration custom action name.</p>
     pub fn set_action_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.action_name = input; self
+        self.action_name = input;
+        self
     }
     /// <p>Template post migration custom action document identifier.</p>
     pub fn document_identifier(mut self, input: impl Into<std::string::String>) -> Self {
@@ -123,8 +142,12 @@ impl TemplateActionDocumentBuilder {
         self
     }
     /// <p>Template post migration custom action document identifier.</p>
-    pub fn set_document_identifier(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.document_identifier = input; self
+    pub fn set_document_identifier(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.document_identifier = input;
+        self
     }
     /// <p>Template post migration custom action order.</p>
     pub fn order(mut self, input: i32) -> Self {
@@ -133,7 +156,8 @@ impl TemplateActionDocumentBuilder {
     }
     /// <p>Template post migration custom action order.</p>
     pub fn set_order(mut self, input: std::option::Option<i32>) -> Self {
-        self.order = input; self
+        self.order = input;
+        self
     }
     /// <p>Template post migration custom action document version.</p>
     pub fn document_version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -142,7 +166,8 @@ impl TemplateActionDocumentBuilder {
     }
     /// <p>Template post migration custom action document version.</p>
     pub fn set_document_version(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.document_version = input; self
+        self.document_version = input;
+        self
     }
     /// <p>Template post migration custom action active status.</p>
     pub fn active(mut self, input: bool) -> Self {
@@ -151,7 +176,8 @@ impl TemplateActionDocumentBuilder {
     }
     /// <p>Template post migration custom action active status.</p>
     pub fn set_active(mut self, input: std::option::Option<bool>) -> Self {
-        self.active = input; self
+        self.active = input;
+        self
     }
     /// <p>Template post migration custom action timeout in seconds.</p>
     pub fn timeout_seconds(mut self, input: i32) -> Self {
@@ -160,7 +186,8 @@ impl TemplateActionDocumentBuilder {
     }
     /// <p>Template post migration custom action timeout in seconds.</p>
     pub fn set_timeout_seconds(mut self, input: std::option::Option<i32>) -> Self {
-        self.timeout_seconds = input; self
+        self.timeout_seconds = input;
+        self
     }
     /// <p>Template post migration custom action must succeed for cutover.</p>
     pub fn must_succeed_for_cutover(mut self, input: bool) -> Self {
@@ -169,22 +196,36 @@ impl TemplateActionDocumentBuilder {
     }
     /// <p>Template post migration custom action must succeed for cutover.</p>
     pub fn set_must_succeed_for_cutover(mut self, input: std::option::Option<bool>) -> Self {
-        self.must_succeed_for_cutover = input; self
+        self.must_succeed_for_cutover = input;
+        self
     }
     /// Adds a key-value pair to `parameters`.
     ///
     /// To override the contents of this collection use [`set_parameters`](Self::set_parameters).
     ///
     /// <p>Template post migration custom action parameters.</p>
-    pub fn parameters(mut self, k: impl Into<std::string::String>, v: std::vec::Vec<crate::types::SsmParameterStoreParameter>) -> Self {
+    pub fn parameters(
+        mut self,
+        k: impl Into<std::string::String>,
+        v: std::vec::Vec<crate::types::SsmParameterStoreParameter>,
+    ) -> Self {
         let mut hash_map = self.parameters.unwrap_or_default();
-                        hash_map.insert(k.into(), v);
-                        self.parameters = Some(hash_map);
-                        self
+        hash_map.insert(k.into(), v);
+        self.parameters = Some(hash_map);
+        self
     }
     /// <p>Template post migration custom action parameters.</p>
-    pub fn set_parameters(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::vec::Vec<crate::types::SsmParameterStoreParameter>>>) -> Self {
-        self.parameters = input; self
+    pub fn set_parameters(
+        mut self,
+        input: std::option::Option<
+            std::collections::HashMap<
+                std::string::String,
+                std::vec::Vec<crate::types::SsmParameterStoreParameter>,
+            >,
+        >,
+    ) -> Self {
+        self.parameters = input;
+        self
     }
     /// <p>Operating system eligible for this template post migration custom action.</p>
     pub fn operating_system(mut self, input: impl Into<std::string::String>) -> Self {
@@ -193,34 +234,22 @@ impl TemplateActionDocumentBuilder {
     }
     /// <p>Operating system eligible for this template post migration custom action.</p>
     pub fn set_operating_system(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.operating_system = input; self
+        self.operating_system = input;
+        self
     }
     /// Consumes the builder and constructs a [`TemplateActionDocument`](crate::types::TemplateActionDocument).
     pub fn build(self) -> crate::types::TemplateActionDocument {
         crate::types::TemplateActionDocument {
-            action_id: self.action_id
-            ,
-            action_name: self.action_name
-            ,
-            document_identifier: self.document_identifier
-            ,
-            order: self.order
-                .unwrap_or_default()
-            ,
-            document_version: self.document_version
-            ,
-            active: self.active
-            ,
-            timeout_seconds: self.timeout_seconds
-                .unwrap_or_default()
-            ,
-            must_succeed_for_cutover: self.must_succeed_for_cutover
-            ,
-            parameters: self.parameters
-            ,
-            operating_system: self.operating_system
-            ,
+            action_id: self.action_id,
+            action_name: self.action_name,
+            document_identifier: self.document_identifier,
+            order: self.order.unwrap_or_default(),
+            document_version: self.document_version,
+            active: self.active,
+            timeout_seconds: self.timeout_seconds.unwrap_or_default(),
+            must_succeed_for_cutover: self.must_succeed_for_cutover,
+            parameters: self.parameters,
+            operating_system: self.operating_system,
         }
     }
 }
-

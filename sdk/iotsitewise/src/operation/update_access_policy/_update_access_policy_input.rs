@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateAccessPolicyInput  {
+pub struct UpdateAccessPolicyInput {
     /// <p>The ID of the access policy.</p>
     #[doc(hidden)]
     pub access_policy_id: std::option::Option<std::string::String>,
@@ -21,29 +21,30 @@ pub struct UpdateAccessPolicyInput  {
 }
 impl UpdateAccessPolicyInput {
     /// <p>The ID of the access policy.</p>
-    pub fn access_policy_id(&self) -> std::option::Option<& str> {
+    pub fn access_policy_id(&self) -> std::option::Option<&str> {
         self.access_policy_id.as_deref()
     }
     /// <p>The identity for this access policy. Choose an IAM Identity Center user, an IAM Identity Center group, or an IAM user.</p>
-    pub fn access_policy_identity(&self) -> std::option::Option<& crate::types::Identity> {
+    pub fn access_policy_identity(&self) -> std::option::Option<&crate::types::Identity> {
         self.access_policy_identity.as_ref()
     }
     /// <p>The IoT SiteWise Monitor resource for this access policy. Choose either a portal or a project.</p>
-    pub fn access_policy_resource(&self) -> std::option::Option<& crate::types::Resource> {
+    pub fn access_policy_resource(&self) -> std::option::Option<&crate::types::Resource> {
         self.access_policy_resource.as_ref()
     }
     /// <p>The permission level for this access policy. Note that a project <code>ADMINISTRATOR</code> is also known as a project owner.</p>
-    pub fn access_policy_permission(&self) -> std::option::Option<& crate::types::Permission> {
+    pub fn access_policy_permission(&self) -> std::option::Option<&crate::types::Permission> {
         self.access_policy_permission.as_ref()
     }
     /// <p>A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.</p>
-    pub fn client_token(&self) -> std::option::Option<& str> {
+    pub fn client_token(&self) -> std::option::Option<&str> {
         self.client_token.as_deref()
     }
 }
 impl UpdateAccessPolicyInput {
     /// Creates a new builder-style object to manufacture [`UpdateAccessPolicyInput`](crate::operation::update_access_policy::UpdateAccessPolicyInput).
-    pub fn builder() -> crate::operation::update_access_policy::builders::UpdateAccessPolicyInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::update_access_policy::builders::UpdateAccessPolicyInputBuilder {
         crate::operation::update_access_policy::builders::UpdateAccessPolicyInputBuilder::default()
     }
 }
@@ -66,7 +67,8 @@ impl UpdateAccessPolicyInputBuilder {
     }
     /// <p>The ID of the access policy.</p>
     pub fn set_access_policy_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.access_policy_id = input; self
+        self.access_policy_id = input;
+        self
     }
     /// <p>The identity for this access policy. Choose an IAM Identity Center user, an IAM Identity Center group, or an IAM user.</p>
     pub fn access_policy_identity(mut self, input: crate::types::Identity) -> Self {
@@ -74,8 +76,12 @@ impl UpdateAccessPolicyInputBuilder {
         self
     }
     /// <p>The identity for this access policy. Choose an IAM Identity Center user, an IAM Identity Center group, or an IAM user.</p>
-    pub fn set_access_policy_identity(mut self, input: std::option::Option<crate::types::Identity>) -> Self {
-        self.access_policy_identity = input; self
+    pub fn set_access_policy_identity(
+        mut self,
+        input: std::option::Option<crate::types::Identity>,
+    ) -> Self {
+        self.access_policy_identity = input;
+        self
     }
     /// <p>The IoT SiteWise Monitor resource for this access policy. Choose either a portal or a project.</p>
     pub fn access_policy_resource(mut self, input: crate::types::Resource) -> Self {
@@ -83,8 +89,12 @@ impl UpdateAccessPolicyInputBuilder {
         self
     }
     /// <p>The IoT SiteWise Monitor resource for this access policy. Choose either a portal or a project.</p>
-    pub fn set_access_policy_resource(mut self, input: std::option::Option<crate::types::Resource>) -> Self {
-        self.access_policy_resource = input; self
+    pub fn set_access_policy_resource(
+        mut self,
+        input: std::option::Option<crate::types::Resource>,
+    ) -> Self {
+        self.access_policy_resource = input;
+        self
     }
     /// <p>The permission level for this access policy. Note that a project <code>ADMINISTRATOR</code> is also known as a project owner.</p>
     pub fn access_policy_permission(mut self, input: crate::types::Permission) -> Self {
@@ -92,8 +102,12 @@ impl UpdateAccessPolicyInputBuilder {
         self
     }
     /// <p>The permission level for this access policy. Note that a project <code>ADMINISTRATOR</code> is also known as a project owner.</p>
-    pub fn set_access_policy_permission(mut self, input: std::option::Option<crate::types::Permission>) -> Self {
-        self.access_policy_permission = input; self
+    pub fn set_access_policy_permission(
+        mut self,
+        input: std::option::Option<crate::types::Permission>,
+    ) -> Self {
+        self.access_policy_permission = input;
+        self
     }
     /// <p>A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.</p>
     pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -102,24 +116,24 @@ impl UpdateAccessPolicyInputBuilder {
     }
     /// <p>A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.</p>
     pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.client_token = input; self
+        self.client_token = input;
+        self
     }
     /// Consumes the builder and constructs a [`UpdateAccessPolicyInput`](crate::operation::update_access_policy::UpdateAccessPolicyInput).
-    pub fn build(self) -> Result<crate::operation::update_access_policy::UpdateAccessPolicyInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::update_access_policy::UpdateAccessPolicyInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::update_access_policy::UpdateAccessPolicyInput {
-                access_policy_id: self.access_policy_id
-                ,
-                access_policy_identity: self.access_policy_identity
-                ,
-                access_policy_resource: self.access_policy_resource
-                ,
-                access_policy_permission: self.access_policy_permission
-                ,
-                client_token: self.client_token
-                ,
-            }
+                access_policy_id: self.access_policy_id,
+                access_policy_identity: self.access_policy_identity,
+                access_policy_resource: self.access_policy_resource,
+                access_policy_permission: self.access_policy_permission,
+                client_token: self.client_token,
+            },
         )
     }
 }
-

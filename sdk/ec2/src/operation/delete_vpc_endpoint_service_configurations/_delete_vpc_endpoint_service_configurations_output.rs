@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteVpcEndpointServiceConfigurationsOutput  {
+pub struct DeleteVpcEndpointServiceConfigurationsOutput {
     /// <p>Information about the service configurations that were not deleted, if applicable.</p>
     #[doc(hidden)]
     pub unsuccessful: std::option::Option<std::vec::Vec<crate::types::UnsuccessfulItem>>,
@@ -10,18 +10,18 @@ pub struct DeleteVpcEndpointServiceConfigurationsOutput  {
 }
 impl DeleteVpcEndpointServiceConfigurationsOutput {
     /// <p>Information about the service configurations that were not deleted, if applicable.</p>
-    pub fn unsuccessful(&self) -> std::option::Option<& [crate::types::UnsuccessfulItem]> {
+    pub fn unsuccessful(&self) -> std::option::Option<&[crate::types::UnsuccessfulItem]> {
         self.unsuccessful.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for DeleteVpcEndpointServiceConfigurationsOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl DeleteVpcEndpointServiceConfigurationsOutput {
     /// Creates a new builder-style object to manufacture [`DeleteVpcEndpointServiceConfigurationsOutput`](crate::operation::delete_vpc_endpoint_service_configurations::DeleteVpcEndpointServiceConfigurationsOutput).
-    pub fn builder() -> crate::operation::delete_vpc_endpoint_service_configurations::builders::DeleteVpcEndpointServiceConfigurationsOutputBuilder {
+    pub fn builder() -> crate::operation::delete_vpc_endpoint_service_configurations::builders::DeleteVpcEndpointServiceConfigurationsOutputBuilder{
         crate::operation::delete_vpc_endpoint_service_configurations::builders::DeleteVpcEndpointServiceConfigurationsOutputBuilder::default()
     }
 }
@@ -41,25 +41,29 @@ impl DeleteVpcEndpointServiceConfigurationsOutputBuilder {
     /// <p>Information about the service configurations that were not deleted, if applicable.</p>
     pub fn unsuccessful(mut self, input: crate::types::UnsuccessfulItem) -> Self {
         let mut v = self.unsuccessful.unwrap_or_default();
-                        v.push(input);
-                        self.unsuccessful = Some(v);
-                        self
+        v.push(input);
+        self.unsuccessful = Some(v);
+        self
     }
     /// <p>Information about the service configurations that were not deleted, if applicable.</p>
-    pub fn set_unsuccessful(mut self, input: std::option::Option<std::vec::Vec<crate::types::UnsuccessfulItem>>) -> Self {
-        self.unsuccessful = input; self
+    pub fn set_unsuccessful(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::UnsuccessfulItem>>,
+    ) -> Self {
+        self.unsuccessful = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`DeleteVpcEndpointServiceConfigurationsOutput`](crate::operation::delete_vpc_endpoint_service_configurations::DeleteVpcEndpointServiceConfigurationsOutput).
-    pub fn build(self) -> crate::operation::delete_vpc_endpoint_service_configurations::DeleteVpcEndpointServiceConfigurationsOutput {
+    pub fn build(self) -> crate::operation::delete_vpc_endpoint_service_configurations::DeleteVpcEndpointServiceConfigurationsOutput{
         crate::operation::delete_vpc_endpoint_service_configurations::DeleteVpcEndpointServiceConfigurationsOutput {
             unsuccessful: self.unsuccessful
             ,
@@ -67,4 +71,3 @@ impl DeleteVpcEndpointServiceConfigurationsOutputBuilder {
         }
     }
 }
-

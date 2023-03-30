@@ -3,7 +3,7 @@
 /// <p>Describes information used to set up an EBS volume specified in a block device mapping.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct EbsInstanceBlockDeviceSpecification  {
+pub struct EbsInstanceBlockDeviceSpecification {
     /// <p>Indicates whether the volume is deleted on instance termination.</p>
     #[doc(hidden)]
     pub delete_on_termination: std::option::Option<bool>,
@@ -17,7 +17,7 @@ impl EbsInstanceBlockDeviceSpecification {
         self.delete_on_termination
     }
     /// <p>The ID of the EBS volume.</p>
-    pub fn volume_id(&self) -> std::option::Option<& str> {
+    pub fn volume_id(&self) -> std::option::Option<&str> {
         self.volume_id.as_deref()
     }
 }
@@ -43,7 +43,8 @@ impl EbsInstanceBlockDeviceSpecificationBuilder {
     }
     /// <p>Indicates whether the volume is deleted on instance termination.</p>
     pub fn set_delete_on_termination(mut self, input: std::option::Option<bool>) -> Self {
-        self.delete_on_termination = input; self
+        self.delete_on_termination = input;
+        self
     }
     /// <p>The ID of the EBS volume.</p>
     pub fn volume_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -52,16 +53,14 @@ impl EbsInstanceBlockDeviceSpecificationBuilder {
     }
     /// <p>The ID of the EBS volume.</p>
     pub fn set_volume_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.volume_id = input; self
+        self.volume_id = input;
+        self
     }
     /// Consumes the builder and constructs a [`EbsInstanceBlockDeviceSpecification`](crate::types::EbsInstanceBlockDeviceSpecification).
     pub fn build(self) -> crate::types::EbsInstanceBlockDeviceSpecification {
         crate::types::EbsInstanceBlockDeviceSpecification {
-            delete_on_termination: self.delete_on_termination
-            ,
-            volume_id: self.volume_id
-            ,
+            delete_on_termination: self.delete_on_termination,
+            volume_id: self.volume_id,
         }
     }
 }
-

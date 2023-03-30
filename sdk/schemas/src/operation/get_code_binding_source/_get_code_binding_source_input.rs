@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetCodeBindingSourceInput  {
+pub struct GetCodeBindingSourceInput {
     /// <p>The language of the code binding.</p>
     #[doc(hidden)]
     pub language: std::option::Option<std::string::String>,
@@ -18,25 +18,26 @@ pub struct GetCodeBindingSourceInput  {
 }
 impl GetCodeBindingSourceInput {
     /// <p>The language of the code binding.</p>
-    pub fn language(&self) -> std::option::Option<& str> {
+    pub fn language(&self) -> std::option::Option<&str> {
         self.language.as_deref()
     }
     /// <p>The name of the registry.</p>
-    pub fn registry_name(&self) -> std::option::Option<& str> {
+    pub fn registry_name(&self) -> std::option::Option<&str> {
         self.registry_name.as_deref()
     }
     /// <p>The name of the schema.</p>
-    pub fn schema_name(&self) -> std::option::Option<& str> {
+    pub fn schema_name(&self) -> std::option::Option<&str> {
         self.schema_name.as_deref()
     }
     /// <p>Specifying this limits the results to only this schema version.</p>
-    pub fn schema_version(&self) -> std::option::Option<& str> {
+    pub fn schema_version(&self) -> std::option::Option<&str> {
         self.schema_version.as_deref()
     }
 }
 impl GetCodeBindingSourceInput {
     /// Creates a new builder-style object to manufacture [`GetCodeBindingSourceInput`](crate::operation::get_code_binding_source::GetCodeBindingSourceInput).
-    pub fn builder() -> crate::operation::get_code_binding_source::builders::GetCodeBindingSourceInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::get_code_binding_source::builders::GetCodeBindingSourceInputBuilder {
         crate::operation::get_code_binding_source::builders::GetCodeBindingSourceInputBuilder::default()
     }
 }
@@ -58,7 +59,8 @@ impl GetCodeBindingSourceInputBuilder {
     }
     /// <p>The language of the code binding.</p>
     pub fn set_language(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.language = input; self
+        self.language = input;
+        self
     }
     /// <p>The name of the registry.</p>
     pub fn registry_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -67,7 +69,8 @@ impl GetCodeBindingSourceInputBuilder {
     }
     /// <p>The name of the registry.</p>
     pub fn set_registry_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.registry_name = input; self
+        self.registry_name = input;
+        self
     }
     /// <p>The name of the schema.</p>
     pub fn schema_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -76,7 +79,8 @@ impl GetCodeBindingSourceInputBuilder {
     }
     /// <p>The name of the schema.</p>
     pub fn set_schema_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.schema_name = input; self
+        self.schema_name = input;
+        self
     }
     /// <p>Specifying this limits the results to only this schema version.</p>
     pub fn schema_version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -85,22 +89,23 @@ impl GetCodeBindingSourceInputBuilder {
     }
     /// <p>Specifying this limits the results to only this schema version.</p>
     pub fn set_schema_version(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.schema_version = input; self
+        self.schema_version = input;
+        self
     }
     /// Consumes the builder and constructs a [`GetCodeBindingSourceInput`](crate::operation::get_code_binding_source::GetCodeBindingSourceInput).
-    pub fn build(self) -> Result<crate::operation::get_code_binding_source::GetCodeBindingSourceInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::get_code_binding_source::GetCodeBindingSourceInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::get_code_binding_source::GetCodeBindingSourceInput {
-                language: self.language
-                ,
-                registry_name: self.registry_name
-                ,
-                schema_name: self.schema_name
-                ,
-                schema_version: self.schema_version
-                ,
-            }
+                language: self.language,
+                registry_name: self.registry_name,
+                schema_name: self.schema_name,
+                schema_version: self.schema_version,
+            },
         )
     }
 }
-

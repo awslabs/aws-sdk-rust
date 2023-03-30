@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeComponentConfigurationInput  {
+pub struct DescribeComponentConfigurationInput {
     /// <p>The name of the resource group.</p>
     #[doc(hidden)]
     pub resource_group_name: std::option::Option<std::string::String>,
@@ -12,17 +12,17 @@ pub struct DescribeComponentConfigurationInput  {
 }
 impl DescribeComponentConfigurationInput {
     /// <p>The name of the resource group.</p>
-    pub fn resource_group_name(&self) -> std::option::Option<& str> {
+    pub fn resource_group_name(&self) -> std::option::Option<&str> {
         self.resource_group_name.as_deref()
     }
     /// <p>The name of the component.</p>
-    pub fn component_name(&self) -> std::option::Option<& str> {
+    pub fn component_name(&self) -> std::option::Option<&str> {
         self.component_name.as_deref()
     }
 }
 impl DescribeComponentConfigurationInput {
     /// Creates a new builder-style object to manufacture [`DescribeComponentConfigurationInput`](crate::operation::describe_component_configuration::DescribeComponentConfigurationInput).
-    pub fn builder() -> crate::operation::describe_component_configuration::builders::DescribeComponentConfigurationInputBuilder {
+    pub fn builder() -> crate::operation::describe_component_configuration::builders::DescribeComponentConfigurationInputBuilder{
         crate::operation::describe_component_configuration::builders::DescribeComponentConfigurationInputBuilder::default()
     }
 }
@@ -41,8 +41,12 @@ impl DescribeComponentConfigurationInputBuilder {
         self
     }
     /// <p>The name of the resource group.</p>
-    pub fn set_resource_group_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.resource_group_name = input; self
+    pub fn set_resource_group_name(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.resource_group_name = input;
+        self
     }
     /// <p>The name of the component.</p>
     pub fn component_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -51,10 +55,16 @@ impl DescribeComponentConfigurationInputBuilder {
     }
     /// <p>The name of the component.</p>
     pub fn set_component_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.component_name = input; self
+        self.component_name = input;
+        self
     }
     /// Consumes the builder and constructs a [`DescribeComponentConfigurationInput`](crate::operation::describe_component_configuration::DescribeComponentConfigurationInput).
-    pub fn build(self) -> Result<crate::operation::describe_component_configuration::DescribeComponentConfigurationInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::describe_component_configuration::DescribeComponentConfigurationInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::describe_component_configuration::DescribeComponentConfigurationInput {
                 resource_group_name: self.resource_group_name
@@ -65,4 +75,3 @@ impl DescribeComponentConfigurationInputBuilder {
         )
     }
 }
-

@@ -4,57 +4,82 @@ pub use crate::operation::modify_load_balancer_attributes::_modify_load_balancer
 pub use crate::operation::modify_load_balancer_attributes::_modify_load_balancer_attributes_input::ModifyLoadBalancerAttributesInputBuilder;
 
 /// Fluent builder constructing a request to `ModifyLoadBalancerAttributes`.
-/// 
-/// <p>Modifies the specified attributes of the specified Application Load Balancer, Network Load Balancer, or Gateway Load Balancer.</p> 
+///
+/// <p>Modifies the specified attributes of the specified Application Load Balancer, Network Load Balancer, or Gateway Load Balancer.</p>
 /// <p>If any of the specified attributes can't be modified as requested, the call fails. Any existing attributes that you do not modify retain their current values.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ModifyLoadBalancerAttributesFluentBuilder {
                 handle: std::sync::Arc<crate::client::Handle>,
                 inner: crate::operation::modify_load_balancer_attributes::builders::ModifyLoadBalancerAttributesInputBuilder
             }
-impl ModifyLoadBalancerAttributesFluentBuilder  {
+impl ModifyLoadBalancerAttributesFluentBuilder {
     /// Creates a new `ModifyLoadBalancerAttributes`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
-                    /// sent. The operation's inner [http::Request] can be modified as well.
-                    pub async fn customize(self) -> std::result::Result<
-                        crate::client::customize::CustomizableOperation<crate::operation::modify_load_balancer_attributes::ModifyLoadBalancerAttributes, aws_http::retry::AwsResponseRetryClassifier,>,
-                        aws_smithy_http::result::SdkError<crate::operation::modify_load_balancer_attributes::ModifyLoadBalancerAttributesError>
-                    >  {
-                        let handle = self.handle.clone();
-                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-                    }
-    
-                    /// Sends the request and returns the response.
-                    ///
-                    /// If an error occurs, an `SdkError` will be returned with additional details that
-                    /// can be matched against.
-                    ///
-                    /// By default, any retryable failures will be retried twice. Retry behavior
-                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                    /// set when configuring the client.
-                    pub async fn send(self) -> std::result::Result<crate::operation::modify_load_balancer_attributes::ModifyLoadBalancerAttributesOutput, aws_smithy_http::result::SdkError<crate::operation::modify_load_balancer_attributes::ModifyLoadBalancerAttributesError>>
-                     {
-                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&self.handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        self.handle.client.call(op).await
-                    }
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle,
+            inner: Default::default(),
+        }
+    }
+
+    /// Consume this builder, creating a customizable operation that can be modified before being
+    /// sent. The operation's inner [http::Request] can be modified as well.
+    pub async fn customize(
+        self,
+    ) -> std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::modify_load_balancer_attributes::ModifyLoadBalancerAttributes,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::result::SdkError<
+            crate::operation::modify_load_balancer_attributes::ModifyLoadBalancerAttributesError,
+        >,
+    > {
+        let handle = self.handle.clone();
+        let operation = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+    }
+
+    /// Sends the request and returns the response.
+    ///
+    /// If an error occurs, an `SdkError` will be returned with additional details that
+    /// can be matched against.
+    ///
+    /// By default, any retryable failures will be retried twice. Retry behavior
+    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+    /// set when configuring the client.
+    pub async fn send(
+        self,
+    ) -> std::result::Result<
+        crate::operation::modify_load_balancer_attributes::ModifyLoadBalancerAttributesOutput,
+        aws_smithy_http::result::SdkError<
+            crate::operation::modify_load_balancer_attributes::ModifyLoadBalancerAttributesError,
+        >,
+    > {
+        let op = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&self.handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        self.handle.client.call(op).await
+    }
     /// <p>The Amazon Resource Name (ARN) of the load balancer.</p>
     pub fn load_balancer_arn(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.load_balancer_arn(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the load balancer.</p>
-    pub fn set_load_balancer_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_load_balancer_arn(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_load_balancer_arn(input);
         self
     }
@@ -68,9 +93,11 @@ impl ModifyLoadBalancerAttributesFluentBuilder  {
         self
     }
     /// <p>The load balancer attributes.</p>
-    pub fn set_attributes(mut self, input: std::option::Option<std::vec::Vec<crate::types::LoadBalancerAttribute>>) -> Self {
+    pub fn set_attributes(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::LoadBalancerAttribute>>,
+    ) -> Self {
         self.inner = self.inner.set_attributes(input);
         self
     }
 }
-

@@ -141,4 +141,3 @@ pub mod update_application;
 
 /// Types for the `UpdateDeploymentGroup` operation.
 pub mod update_deployment_group;
-

@@ -3,7 +3,7 @@
 /// <p>Information about connection details for a Dev Environment.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct DevEnvironmentAccessDetails  {
+pub struct DevEnvironmentAccessDetails {
     /// <p>The URL used to send commands to and from the Dev Environment.</p>
     #[doc(hidden)]
     pub stream_url: std::option::Option<std::string::String>,
@@ -13,15 +13,15 @@ pub struct DevEnvironmentAccessDetails  {
 }
 impl DevEnvironmentAccessDetails {
     /// <p>The URL used to send commands to and from the Dev Environment.</p>
-    pub fn stream_url(&self) -> std::option::Option<& str> {
+    pub fn stream_url(&self) -> std::option::Option<&str> {
         self.stream_url.as_deref()
     }
     /// <p>An encrypted token value that contains session and caller information used to authenticate the connection.</p>
-    pub fn token_value(&self) -> std::option::Option<& str> {
+    pub fn token_value(&self) -> std::option::Option<&str> {
         self.token_value.as_deref()
     }
 }
-impl  std::fmt::Debug for DevEnvironmentAccessDetails  {
+impl std::fmt::Debug for DevEnvironmentAccessDetails {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DevEnvironmentAccessDetails");
         formatter.field("stream_url", &"*** Sensitive Data Redacted ***");
@@ -51,7 +51,8 @@ impl DevEnvironmentAccessDetailsBuilder {
     }
     /// <p>The URL used to send commands to and from the Dev Environment.</p>
     pub fn set_stream_url(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.stream_url = input; self
+        self.stream_url = input;
+        self
     }
     /// <p>An encrypted token value that contains session and caller information used to authenticate the connection.</p>
     pub fn token_value(mut self, input: impl Into<std::string::String>) -> Self {
@@ -60,15 +61,14 @@ impl DevEnvironmentAccessDetailsBuilder {
     }
     /// <p>An encrypted token value that contains session and caller information used to authenticate the connection.</p>
     pub fn set_token_value(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.token_value = input; self
+        self.token_value = input;
+        self
     }
     /// Consumes the builder and constructs a [`DevEnvironmentAccessDetails`](crate::types::DevEnvironmentAccessDetails).
     pub fn build(self) -> crate::types::DevEnvironmentAccessDetails {
         crate::types::DevEnvironmentAccessDetails {
-            stream_url: self.stream_url
-            ,
-            token_value: self.token_value
-            ,
+            stream_url: self.stream_url,
+            token_value: self.token_value,
         }
     }
 }
@@ -80,4 +80,3 @@ impl std::fmt::Debug for DevEnvironmentAccessDetailsBuilder {
         formatter.finish()
     }
 }
-

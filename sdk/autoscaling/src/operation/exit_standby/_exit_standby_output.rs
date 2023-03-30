@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ExitStandbyOutput  {
+pub struct ExitStandbyOutput {
     /// <p>The activities related to moving instances out of <code>Standby</code> mode.</p>
     #[doc(hidden)]
     pub activities: std::option::Option<std::vec::Vec<crate::types::Activity>>,
@@ -10,15 +10,15 @@ pub struct ExitStandbyOutput  {
 }
 impl ExitStandbyOutput {
     /// <p>The activities related to moving instances out of <code>Standby</code> mode.</p>
-    pub fn activities(&self) -> std::option::Option<& [crate::types::Activity]> {
+    pub fn activities(&self) -> std::option::Option<&[crate::types::Activity]> {
         self.activities.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for ExitStandbyOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl ExitStandbyOutput {
     /// Creates a new builder-style object to manufacture [`ExitStandbyOutput`](crate::operation::exit_standby::ExitStandbyOutput).
     pub fn builder() -> crate::operation::exit_standby::builders::ExitStandbyOutputBuilder {
@@ -41,30 +41,32 @@ impl ExitStandbyOutputBuilder {
     /// <p>The activities related to moving instances out of <code>Standby</code> mode.</p>
     pub fn activities(mut self, input: crate::types::Activity) -> Self {
         let mut v = self.activities.unwrap_or_default();
-                        v.push(input);
-                        self.activities = Some(v);
-                        self
+        v.push(input);
+        self.activities = Some(v);
+        self
     }
     /// <p>The activities related to moving instances out of <code>Standby</code> mode.</p>
-    pub fn set_activities(mut self, input: std::option::Option<std::vec::Vec<crate::types::Activity>>) -> Self {
-        self.activities = input; self
+    pub fn set_activities(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::Activity>>,
+    ) -> Self {
+        self.activities = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`ExitStandbyOutput`](crate::operation::exit_standby::ExitStandbyOutput).
     pub fn build(self) -> crate::operation::exit_standby::ExitStandbyOutput {
         crate::operation::exit_standby::ExitStandbyOutput {
-            activities: self.activities
-            ,
+            activities: self.activities,
             _request_id: self._request_id,
         }
     }
 }
-

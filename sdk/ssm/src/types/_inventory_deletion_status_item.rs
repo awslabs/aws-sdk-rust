@@ -3,7 +3,7 @@
 /// <p>Status information returned by the <code>DeleteInventory</code> operation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct InventoryDeletionStatusItem  {
+pub struct InventoryDeletionStatusItem {
     /// <p>The deletion ID returned by the <code>DeleteInventory</code> operation.</p>
     #[doc(hidden)]
     pub deletion_id: std::option::Option<std::string::String>,
@@ -28,31 +28,31 @@ pub struct InventoryDeletionStatusItem  {
 }
 impl InventoryDeletionStatusItem {
     /// <p>The deletion ID returned by the <code>DeleteInventory</code> operation.</p>
-    pub fn deletion_id(&self) -> std::option::Option<& str> {
+    pub fn deletion_id(&self) -> std::option::Option<&str> {
         self.deletion_id.as_deref()
     }
     /// <p>The name of the inventory data type.</p>
-    pub fn type_name(&self) -> std::option::Option<& str> {
+    pub fn type_name(&self) -> std::option::Option<&str> {
         self.type_name.as_deref()
     }
     /// <p>The UTC timestamp when the delete operation started.</p>
-    pub fn deletion_start_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
+    pub fn deletion_start_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.deletion_start_time.as_ref()
     }
     /// <p>The status of the operation. Possible values are InProgress and Complete.</p>
-    pub fn last_status(&self) -> std::option::Option<& crate::types::InventoryDeletionStatus> {
+    pub fn last_status(&self) -> std::option::Option<&crate::types::InventoryDeletionStatus> {
         self.last_status.as_ref()
     }
     /// <p>Information about the status.</p>
-    pub fn last_status_message(&self) -> std::option::Option<& str> {
+    pub fn last_status_message(&self) -> std::option::Option<&str> {
         self.last_status_message.as_deref()
     }
     /// <p>Information about the delete operation. For more information about this summary, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-inventory-custom.html#sysman-inventory-delete">Understanding the delete inventory summary</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
-    pub fn deletion_summary(&self) -> std::option::Option<& crate::types::InventoryDeletionSummary> {
+    pub fn deletion_summary(&self) -> std::option::Option<&crate::types::InventoryDeletionSummary> {
         self.deletion_summary.as_ref()
     }
     /// <p>The UTC timestamp of when the last status report.</p>
-    pub fn last_status_update_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
+    pub fn last_status_update_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_status_update_time.as_ref()
     }
 }
@@ -83,7 +83,8 @@ impl InventoryDeletionStatusItemBuilder {
     }
     /// <p>The deletion ID returned by the <code>DeleteInventory</code> operation.</p>
     pub fn set_deletion_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.deletion_id = input; self
+        self.deletion_id = input;
+        self
     }
     /// <p>The name of the inventory data type.</p>
     pub fn type_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -92,7 +93,8 @@ impl InventoryDeletionStatusItemBuilder {
     }
     /// <p>The name of the inventory data type.</p>
     pub fn set_type_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.type_name = input; self
+        self.type_name = input;
+        self
     }
     /// <p>The UTC timestamp when the delete operation started.</p>
     pub fn deletion_start_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -100,8 +102,12 @@ impl InventoryDeletionStatusItemBuilder {
         self
     }
     /// <p>The UTC timestamp when the delete operation started.</p>
-    pub fn set_deletion_start_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.deletion_start_time = input; self
+    pub fn set_deletion_start_time(
+        mut self,
+        input: std::option::Option<aws_smithy_types::DateTime>,
+    ) -> Self {
+        self.deletion_start_time = input;
+        self
     }
     /// <p>The status of the operation. Possible values are InProgress and Complete.</p>
     pub fn last_status(mut self, input: crate::types::InventoryDeletionStatus) -> Self {
@@ -109,8 +115,12 @@ impl InventoryDeletionStatusItemBuilder {
         self
     }
     /// <p>The status of the operation. Possible values are InProgress and Complete.</p>
-    pub fn set_last_status(mut self, input: std::option::Option<crate::types::InventoryDeletionStatus>) -> Self {
-        self.last_status = input; self
+    pub fn set_last_status(
+        mut self,
+        input: std::option::Option<crate::types::InventoryDeletionStatus>,
+    ) -> Self {
+        self.last_status = input;
+        self
     }
     /// <p>Information about the status.</p>
     pub fn last_status_message(mut self, input: impl Into<std::string::String>) -> Self {
@@ -118,8 +128,12 @@ impl InventoryDeletionStatusItemBuilder {
         self
     }
     /// <p>Information about the status.</p>
-    pub fn set_last_status_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.last_status_message = input; self
+    pub fn set_last_status_message(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.last_status_message = input;
+        self
     }
     /// <p>Information about the delete operation. For more information about this summary, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-inventory-custom.html#sysman-inventory-delete">Understanding the delete inventory summary</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
     pub fn deletion_summary(mut self, input: crate::types::InventoryDeletionSummary) -> Self {
@@ -127,8 +141,12 @@ impl InventoryDeletionStatusItemBuilder {
         self
     }
     /// <p>Information about the delete operation. For more information about this summary, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-inventory-custom.html#sysman-inventory-delete">Understanding the delete inventory summary</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
-    pub fn set_deletion_summary(mut self, input: std::option::Option<crate::types::InventoryDeletionSummary>) -> Self {
-        self.deletion_summary = input; self
+    pub fn set_deletion_summary(
+        mut self,
+        input: std::option::Option<crate::types::InventoryDeletionSummary>,
+    ) -> Self {
+        self.deletion_summary = input;
+        self
     }
     /// <p>The UTC timestamp of when the last status report.</p>
     pub fn last_status_update_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -136,27 +154,23 @@ impl InventoryDeletionStatusItemBuilder {
         self
     }
     /// <p>The UTC timestamp of when the last status report.</p>
-    pub fn set_last_status_update_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.last_status_update_time = input; self
+    pub fn set_last_status_update_time(
+        mut self,
+        input: std::option::Option<aws_smithy_types::DateTime>,
+    ) -> Self {
+        self.last_status_update_time = input;
+        self
     }
     /// Consumes the builder and constructs a [`InventoryDeletionStatusItem`](crate::types::InventoryDeletionStatusItem).
     pub fn build(self) -> crate::types::InventoryDeletionStatusItem {
         crate::types::InventoryDeletionStatusItem {
-            deletion_id: self.deletion_id
-            ,
-            type_name: self.type_name
-            ,
-            deletion_start_time: self.deletion_start_time
-            ,
-            last_status: self.last_status
-            ,
-            last_status_message: self.last_status_message
-            ,
-            deletion_summary: self.deletion_summary
-            ,
-            last_status_update_time: self.last_status_update_time
-            ,
+            deletion_id: self.deletion_id,
+            type_name: self.type_name,
+            deletion_start_time: self.deletion_start_time,
+            last_status: self.last_status,
+            last_status_message: self.last_status_message,
+            deletion_summary: self.deletion_summary,
+            last_status_update_time: self.last_status_update_time,
         }
     }
 }
-

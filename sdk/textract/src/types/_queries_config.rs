@@ -3,14 +3,14 @@
 /// <p></p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct QueriesConfig  {
+pub struct QueriesConfig {
     /// <p></p>
     #[doc(hidden)]
     pub queries: std::option::Option<std::vec::Vec<crate::types::Query>>,
 }
 impl QueriesConfig {
     /// <p></p>
-    pub fn queries(&self) -> std::option::Option<& [crate::types::Query]> {
+    pub fn queries(&self) -> std::option::Option<&[crate::types::Query]> {
         self.queries.as_deref()
     }
 }
@@ -35,20 +35,22 @@ impl QueriesConfigBuilder {
     /// <p></p>
     pub fn queries(mut self, input: crate::types::Query) -> Self {
         let mut v = self.queries.unwrap_or_default();
-                        v.push(input);
-                        self.queries = Some(v);
-                        self
+        v.push(input);
+        self.queries = Some(v);
+        self
     }
     /// <p></p>
-    pub fn set_queries(mut self, input: std::option::Option<std::vec::Vec<crate::types::Query>>) -> Self {
-        self.queries = input; self
+    pub fn set_queries(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::Query>>,
+    ) -> Self {
+        self.queries = input;
+        self
     }
     /// Consumes the builder and constructs a [`QueriesConfig`](crate::types::QueriesConfig).
     pub fn build(self) -> crate::types::QueriesConfig {
         crate::types::QueriesConfig {
-            queries: self.queries
-            ,
+            queries: self.queries,
         }
     }
 }
-

@@ -4,49 +4,71 @@ pub use crate::operation::delete_rum_metrics_destination::_delete_rum_metrics_de
 pub use crate::operation::delete_rum_metrics_destination::_delete_rum_metrics_destination_input::DeleteRumMetricsDestinationInputBuilder;
 
 /// Fluent builder constructing a request to `DeleteRumMetricsDestination`.
-/// 
+///
 /// <p>Deletes a destination for CloudWatch RUM extended metrics, so that the specified app monitor stops sending extended metrics to that destination.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DeleteRumMetricsDestinationFluentBuilder {
                 handle: std::sync::Arc<crate::client::Handle>,
                 inner: crate::operation::delete_rum_metrics_destination::builders::DeleteRumMetricsDestinationInputBuilder
             }
-impl DeleteRumMetricsDestinationFluentBuilder  {
+impl DeleteRumMetricsDestinationFluentBuilder {
     /// Creates a new `DeleteRumMetricsDestination`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
-                    /// sent. The operation's inner [http::Request] can be modified as well.
-                    pub async fn customize(self) -> std::result::Result<
-                        crate::client::customize::CustomizableOperation<crate::operation::delete_rum_metrics_destination::DeleteRumMetricsDestination, aws_http::retry::AwsResponseRetryClassifier,>,
-                        aws_smithy_http::result::SdkError<crate::operation::delete_rum_metrics_destination::DeleteRumMetricsDestinationError>
-                    >  {
-                        let handle = self.handle.clone();
-                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-                    }
-    
-                    /// Sends the request and returns the response.
-                    ///
-                    /// If an error occurs, an `SdkError` will be returned with additional details that
-                    /// can be matched against.
-                    ///
-                    /// By default, any retryable failures will be retried twice. Retry behavior
-                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                    /// set when configuring the client.
-                    pub async fn send(self) -> std::result::Result<crate::operation::delete_rum_metrics_destination::DeleteRumMetricsDestinationOutput, aws_smithy_http::result::SdkError<crate::operation::delete_rum_metrics_destination::DeleteRumMetricsDestinationError>>
-                     {
-                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&self.handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        self.handle.client.call(op).await
-                    }
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle,
+            inner: Default::default(),
+        }
+    }
+
+    /// Consume this builder, creating a customizable operation that can be modified before being
+    /// sent. The operation's inner [http::Request] can be modified as well.
+    pub async fn customize(
+        self,
+    ) -> std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::delete_rum_metrics_destination::DeleteRumMetricsDestination,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::result::SdkError<
+            crate::operation::delete_rum_metrics_destination::DeleteRumMetricsDestinationError,
+        >,
+    > {
+        let handle = self.handle.clone();
+        let operation = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+    }
+
+    /// Sends the request and returns the response.
+    ///
+    /// If an error occurs, an `SdkError` will be returned with additional details that
+    /// can be matched against.
+    ///
+    /// By default, any retryable failures will be retried twice. Retry behavior
+    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+    /// set when configuring the client.
+    pub async fn send(
+        self,
+    ) -> std::result::Result<
+        crate::operation::delete_rum_metrics_destination::DeleteRumMetricsDestinationOutput,
+        aws_smithy_http::result::SdkError<
+            crate::operation::delete_rum_metrics_destination::DeleteRumMetricsDestinationError,
+        >,
+    > {
+        let op = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&self.handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        self.handle.client.call(op).await
+    }
     /// <p>The name of the app monitor that is sending metrics to the destination that you want to delete.</p>
     pub fn app_monitor_name(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.app_monitor_name(input.into());
@@ -63,7 +85,10 @@ impl DeleteRumMetricsDestinationFluentBuilder  {
         self
     }
     /// <p>The type of destination to delete. Valid values are <code>CloudWatch</code> and <code>Evidently</code>.</p>
-    pub fn set_destination(mut self, input: std::option::Option<crate::types::MetricDestination>) -> Self {
+    pub fn set_destination(
+        mut self,
+        input: std::option::Option<crate::types::MetricDestination>,
+    ) -> Self {
         self.inner = self.inner.set_destination(input);
         self
     }
@@ -78,4 +103,3 @@ impl DeleteRumMetricsDestinationFluentBuilder  {
         self
     }
 }
-

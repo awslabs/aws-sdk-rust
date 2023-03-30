@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListWorkersWithQualificationTypeInput  {
+pub struct ListWorkersWithQualificationTypeInput {
     /// <p>The ID of the Qualification type of the Qualifications to return.</p>
     #[doc(hidden)]
     pub qualification_type_id: std::option::Option<std::string::String>,
@@ -18,15 +18,15 @@ pub struct ListWorkersWithQualificationTypeInput  {
 }
 impl ListWorkersWithQualificationTypeInput {
     /// <p>The ID of the Qualification type of the Qualifications to return.</p>
-    pub fn qualification_type_id(&self) -> std::option::Option<& str> {
+    pub fn qualification_type_id(&self) -> std::option::Option<&str> {
         self.qualification_type_id.as_deref()
     }
     /// <p> The status of the Qualifications to return. Can be <code>Granted | Revoked</code>. </p>
-    pub fn status(&self) -> std::option::Option<& crate::types::QualificationStatus> {
+    pub fn status(&self) -> std::option::Option<&crate::types::QualificationStatus> {
         self.status.as_ref()
     }
     /// <p>Pagination Token</p>
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
     /// <p> Limit the number of results returned. </p>
@@ -36,7 +36,7 @@ impl ListWorkersWithQualificationTypeInput {
 }
 impl ListWorkersWithQualificationTypeInput {
     /// Creates a new builder-style object to manufacture [`ListWorkersWithQualificationTypeInput`](crate::operation::list_workers_with_qualification_type::ListWorkersWithQualificationTypeInput).
-    pub fn builder() -> crate::operation::list_workers_with_qualification_type::builders::ListWorkersWithQualificationTypeInputBuilder {
+    pub fn builder() -> crate::operation::list_workers_with_qualification_type::builders::ListWorkersWithQualificationTypeInputBuilder{
         crate::operation::list_workers_with_qualification_type::builders::ListWorkersWithQualificationTypeInputBuilder::default()
     }
 }
@@ -57,8 +57,12 @@ impl ListWorkersWithQualificationTypeInputBuilder {
         self
     }
     /// <p>The ID of the Qualification type of the Qualifications to return.</p>
-    pub fn set_qualification_type_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.qualification_type_id = input; self
+    pub fn set_qualification_type_id(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.qualification_type_id = input;
+        self
     }
     /// <p> The status of the Qualifications to return. Can be <code>Granted | Revoked</code>. </p>
     pub fn status(mut self, input: crate::types::QualificationStatus) -> Self {
@@ -66,8 +70,12 @@ impl ListWorkersWithQualificationTypeInputBuilder {
         self
     }
     /// <p> The status of the Qualifications to return. Can be <code>Granted | Revoked</code>. </p>
-    pub fn set_status(mut self, input: std::option::Option<crate::types::QualificationStatus>) -> Self {
-        self.status = input; self
+    pub fn set_status(
+        mut self,
+        input: std::option::Option<crate::types::QualificationStatus>,
+    ) -> Self {
+        self.status = input;
+        self
     }
     /// <p>Pagination Token</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -76,7 +84,8 @@ impl ListWorkersWithQualificationTypeInputBuilder {
     }
     /// <p>Pagination Token</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input; self
+        self.next_token = input;
+        self
     }
     /// <p> Limit the number of results returned. </p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -85,10 +94,11 @@ impl ListWorkersWithQualificationTypeInputBuilder {
     }
     /// <p> Limit the number of results returned. </p>
     pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_results = input; self
+        self.max_results = input;
+        self
     }
     /// Consumes the builder and constructs a [`ListWorkersWithQualificationTypeInput`](crate::operation::list_workers_with_qualification_type::ListWorkersWithQualificationTypeInput).
-    pub fn build(self) -> Result<crate::operation::list_workers_with_qualification_type::ListWorkersWithQualificationTypeInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> Result<crate::operation::list_workers_with_qualification_type::ListWorkersWithQualificationTypeInput, aws_smithy_http::operation::error::BuildError>{
         Ok(
             crate::operation::list_workers_with_qualification_type::ListWorkersWithQualificationTypeInput {
                 qualification_type_id: self.qualification_type_id
@@ -103,4 +113,3 @@ impl ListWorkersWithQualificationTypeInputBuilder {
         )
     }
 }
-

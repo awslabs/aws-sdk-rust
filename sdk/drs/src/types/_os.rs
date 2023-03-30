@@ -3,14 +3,14 @@
 /// <p>Operating System.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Os  {
+pub struct Os {
     /// <p>The long name of the Operating System.</p>
     #[doc(hidden)]
     pub full_string: std::option::Option<std::string::String>,
 }
 impl Os {
     /// <p>The long name of the Operating System.</p>
-    pub fn full_string(&self) -> std::option::Option<& str> {
+    pub fn full_string(&self) -> std::option::Option<&str> {
         self.full_string.as_deref()
     }
 }
@@ -35,14 +35,13 @@ impl OsBuilder {
     }
     /// <p>The long name of the Operating System.</p>
     pub fn set_full_string(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.full_string = input; self
+        self.full_string = input;
+        self
     }
     /// Consumes the builder and constructs a [`Os`](crate::types::Os).
     pub fn build(self) -> crate::types::Os {
         crate::types::Os {
-            full_string: self.full_string
-            ,
+            full_string: self.full_string,
         }
     }
 }
-

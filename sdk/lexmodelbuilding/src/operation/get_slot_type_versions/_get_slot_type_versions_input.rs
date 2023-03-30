@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetSlotTypeVersionsInput  {
+pub struct GetSlotTypeVersionsInput {
     /// <p>The name of the slot type for which versions should be returned.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -15,11 +15,11 @@ pub struct GetSlotTypeVersionsInput  {
 }
 impl GetSlotTypeVersionsInput {
     /// <p>The name of the slot type for which versions should be returned.</p>
-    pub fn name(&self) -> std::option::Option<& str> {
+    pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>A pagination token for fetching the next page of slot type versions. If the response to this call is truncated, Amazon Lex returns a pagination token in the response. To fetch the next page of versions, specify the pagination token in the next request. </p>
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
     /// <p>The maximum number of slot type versions to return in the response. The default is 10.</p>
@@ -29,8 +29,10 @@ impl GetSlotTypeVersionsInput {
 }
 impl GetSlotTypeVersionsInput {
     /// Creates a new builder-style object to manufacture [`GetSlotTypeVersionsInput`](crate::operation::get_slot_type_versions::GetSlotTypeVersionsInput).
-    pub fn builder() -> crate::operation::get_slot_type_versions::builders::GetSlotTypeVersionsInputBuilder {
-        crate::operation::get_slot_type_versions::builders::GetSlotTypeVersionsInputBuilder::default()
+    pub fn builder(
+    ) -> crate::operation::get_slot_type_versions::builders::GetSlotTypeVersionsInputBuilder {
+        crate::operation::get_slot_type_versions::builders::GetSlotTypeVersionsInputBuilder::default(
+        )
     }
 }
 
@@ -50,7 +52,8 @@ impl GetSlotTypeVersionsInputBuilder {
     }
     /// <p>The name of the slot type for which versions should be returned.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input; self
+        self.name = input;
+        self
     }
     /// <p>A pagination token for fetching the next page of slot type versions. If the response to this call is truncated, Amazon Lex returns a pagination token in the response. To fetch the next page of versions, specify the pagination token in the next request. </p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -59,7 +62,8 @@ impl GetSlotTypeVersionsInputBuilder {
     }
     /// <p>A pagination token for fetching the next page of slot type versions. If the response to this call is truncated, Amazon Lex returns a pagination token in the response. To fetch the next page of versions, specify the pagination token in the next request. </p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input; self
+        self.next_token = input;
+        self
     }
     /// <p>The maximum number of slot type versions to return in the response. The default is 10.</p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -68,20 +72,22 @@ impl GetSlotTypeVersionsInputBuilder {
     }
     /// <p>The maximum number of slot type versions to return in the response. The default is 10.</p>
     pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_results = input; self
+        self.max_results = input;
+        self
     }
     /// Consumes the builder and constructs a [`GetSlotTypeVersionsInput`](crate::operation::get_slot_type_versions::GetSlotTypeVersionsInput).
-    pub fn build(self) -> Result<crate::operation::get_slot_type_versions::GetSlotTypeVersionsInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::get_slot_type_versions::GetSlotTypeVersionsInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::get_slot_type_versions::GetSlotTypeVersionsInput {
-                name: self.name
-                ,
-                next_token: self.next_token
-                ,
-                max_results: self.max_results
-                ,
-            }
+                name: self.name,
+                next_token: self.next_token,
+                max_results: self.max_results,
+            },
         )
     }
 }
-

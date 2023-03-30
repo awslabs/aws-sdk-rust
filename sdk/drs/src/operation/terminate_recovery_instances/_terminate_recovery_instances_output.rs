@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct TerminateRecoveryInstancesOutput  {
+pub struct TerminateRecoveryInstancesOutput {
     /// <p>The Job for terminating the Recovery Instances.</p>
     #[doc(hidden)]
     pub job: std::option::Option<crate::types::Job>,
@@ -10,18 +10,18 @@ pub struct TerminateRecoveryInstancesOutput  {
 }
 impl TerminateRecoveryInstancesOutput {
     /// <p>The Job for terminating the Recovery Instances.</p>
-    pub fn job(&self) -> std::option::Option<& crate::types::Job> {
+    pub fn job(&self) -> std::option::Option<&crate::types::Job> {
         self.job.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for TerminateRecoveryInstancesOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl TerminateRecoveryInstancesOutput {
     /// Creates a new builder-style object to manufacture [`TerminateRecoveryInstancesOutput`](crate::operation::terminate_recovery_instances::TerminateRecoveryInstancesOutput).
-    pub fn builder() -> crate::operation::terminate_recovery_instances::builders::TerminateRecoveryInstancesOutputBuilder {
+    pub fn builder() -> crate::operation::terminate_recovery_instances::builders::TerminateRecoveryInstancesOutputBuilder{
         crate::operation::terminate_recovery_instances::builders::TerminateRecoveryInstancesOutputBuilder::default()
     }
 }
@@ -41,24 +41,25 @@ impl TerminateRecoveryInstancesOutputBuilder {
     }
     /// <p>The Job for terminating the Recovery Instances.</p>
     pub fn set_job(mut self, input: std::option::Option<crate::types::Job>) -> Self {
-        self.job = input; self
+        self.job = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`TerminateRecoveryInstancesOutput`](crate::operation::terminate_recovery_instances::TerminateRecoveryInstancesOutput).
-    pub fn build(self) -> crate::operation::terminate_recovery_instances::TerminateRecoveryInstancesOutput {
+    pub fn build(
+        self,
+    ) -> crate::operation::terminate_recovery_instances::TerminateRecoveryInstancesOutput {
         crate::operation::terminate_recovery_instances::TerminateRecoveryInstancesOutput {
-            job: self.job
-            ,
+            job: self.job,
             _request_id: self._request_id,
         }
     }
 }
-

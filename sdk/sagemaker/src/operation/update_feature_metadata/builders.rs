@@ -4,56 +4,81 @@ pub use crate::operation::update_feature_metadata::_update_feature_metadata_outp
 pub use crate::operation::update_feature_metadata::_update_feature_metadata_input::UpdateFeatureMetadataInputBuilder;
 
 /// Fluent builder constructing a request to `UpdateFeatureMetadata`.
-/// 
+///
 /// <p>Updates the description and parameters of the feature group.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct UpdateFeatureMetadataFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::update_feature_metadata::builders::UpdateFeatureMetadataInputBuilder
-            }
-impl UpdateFeatureMetadataFluentBuilder  {
+    handle: std::sync::Arc<crate::client::Handle>,
+    inner: crate::operation::update_feature_metadata::builders::UpdateFeatureMetadataInputBuilder,
+}
+impl UpdateFeatureMetadataFluentBuilder {
     /// Creates a new `UpdateFeatureMetadata`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
-                    /// sent. The operation's inner [http::Request] can be modified as well.
-                    pub async fn customize(self) -> std::result::Result<
-                        crate::client::customize::CustomizableOperation<crate::operation::update_feature_metadata::UpdateFeatureMetadata, aws_http::retry::AwsResponseRetryClassifier,>,
-                        aws_smithy_http::result::SdkError<crate::operation::update_feature_metadata::UpdateFeatureMetadataError>
-                    >  {
-                        let handle = self.handle.clone();
-                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-                    }
-    
-                    /// Sends the request and returns the response.
-                    ///
-                    /// If an error occurs, an `SdkError` will be returned with additional details that
-                    /// can be matched against.
-                    ///
-                    /// By default, any retryable failures will be retried twice. Retry behavior
-                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                    /// set when configuring the client.
-                    pub async fn send(self) -> std::result::Result<crate::operation::update_feature_metadata::UpdateFeatureMetadataOutput, aws_smithy_http::result::SdkError<crate::operation::update_feature_metadata::UpdateFeatureMetadataError>>
-                     {
-                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&self.handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        self.handle.client.call(op).await
-                    }
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle,
+            inner: Default::default(),
+        }
+    }
+
+    /// Consume this builder, creating a customizable operation that can be modified before being
+    /// sent. The operation's inner [http::Request] can be modified as well.
+    pub async fn customize(
+        self,
+    ) -> std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::update_feature_metadata::UpdateFeatureMetadata,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::result::SdkError<
+            crate::operation::update_feature_metadata::UpdateFeatureMetadataError,
+        >,
+    > {
+        let handle = self.handle.clone();
+        let operation = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+    }
+
+    /// Sends the request and returns the response.
+    ///
+    /// If an error occurs, an `SdkError` will be returned with additional details that
+    /// can be matched against.
+    ///
+    /// By default, any retryable failures will be retried twice. Retry behavior
+    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+    /// set when configuring the client.
+    pub async fn send(
+        self,
+    ) -> std::result::Result<
+        crate::operation::update_feature_metadata::UpdateFeatureMetadataOutput,
+        aws_smithy_http::result::SdkError<
+            crate::operation::update_feature_metadata::UpdateFeatureMetadataError,
+        >,
+    > {
+        let op = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&self.handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        self.handle.client.call(op).await
+    }
     /// <p>The name of the feature group containing the feature that you're updating.</p>
     pub fn feature_group_name(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.feature_group_name(input.into());
         self
     }
     /// <p>The name of the feature group containing the feature that you're updating.</p>
-    pub fn set_feature_group_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_feature_group_name(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_feature_group_name(input);
         self
     }
@@ -87,7 +112,10 @@ impl UpdateFeatureMetadataFluentBuilder  {
         self
     }
     /// <p>A list of key-value pairs that you can add to better describe the feature.</p>
-    pub fn set_parameter_additions(mut self, input: std::option::Option<std::vec::Vec<crate::types::FeatureParameter>>) -> Self {
+    pub fn set_parameter_additions(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::FeatureParameter>>,
+    ) -> Self {
         self.inner = self.inner.set_parameter_additions(input);
         self
     }
@@ -101,9 +129,11 @@ impl UpdateFeatureMetadataFluentBuilder  {
         self
     }
     /// <p>A list of parameter keys that you can specify to remove parameters that describe your feature.</p>
-    pub fn set_parameter_removals(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+    pub fn set_parameter_removals(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
         self.inner = self.inner.set_parameter_removals(input);
         self
     }
 }
-

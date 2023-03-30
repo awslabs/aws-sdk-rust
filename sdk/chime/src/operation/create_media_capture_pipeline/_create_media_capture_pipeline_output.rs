@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateMediaCapturePipelineOutput  {
+pub struct CreateMediaCapturePipelineOutput {
     /// <p>A media capture pipeline object, the ID, source type, source ARN, sink type, and sink ARN of a media capture pipeline object.</p>
     #[doc(hidden)]
     pub media_capture_pipeline: std::option::Option<crate::types::MediaCapturePipeline>,
@@ -10,18 +10,20 @@ pub struct CreateMediaCapturePipelineOutput  {
 }
 impl CreateMediaCapturePipelineOutput {
     /// <p>A media capture pipeline object, the ID, source type, source ARN, sink type, and sink ARN of a media capture pipeline object.</p>
-    pub fn media_capture_pipeline(&self) -> std::option::Option<& crate::types::MediaCapturePipeline> {
+    pub fn media_capture_pipeline(
+        &self,
+    ) -> std::option::Option<&crate::types::MediaCapturePipeline> {
         self.media_capture_pipeline.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for CreateMediaCapturePipelineOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl CreateMediaCapturePipelineOutput {
     /// Creates a new builder-style object to manufacture [`CreateMediaCapturePipelineOutput`](crate::operation::create_media_capture_pipeline::CreateMediaCapturePipelineOutput).
-    pub fn builder() -> crate::operation::create_media_capture_pipeline::builders::CreateMediaCapturePipelineOutputBuilder {
+    pub fn builder() -> crate::operation::create_media_capture_pipeline::builders::CreateMediaCapturePipelineOutputBuilder{
         crate::operation::create_media_capture_pipeline::builders::CreateMediaCapturePipelineOutputBuilder::default()
     }
 }
@@ -40,25 +42,29 @@ impl CreateMediaCapturePipelineOutputBuilder {
         self
     }
     /// <p>A media capture pipeline object, the ID, source type, source ARN, sink type, and sink ARN of a media capture pipeline object.</p>
-    pub fn set_media_capture_pipeline(mut self, input: std::option::Option<crate::types::MediaCapturePipeline>) -> Self {
-        self.media_capture_pipeline = input; self
+    pub fn set_media_capture_pipeline(
+        mut self,
+        input: std::option::Option<crate::types::MediaCapturePipeline>,
+    ) -> Self {
+        self.media_capture_pipeline = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`CreateMediaCapturePipelineOutput`](crate::operation::create_media_capture_pipeline::CreateMediaCapturePipelineOutput).
-    pub fn build(self) -> crate::operation::create_media_capture_pipeline::CreateMediaCapturePipelineOutput {
+    pub fn build(
+        self,
+    ) -> crate::operation::create_media_capture_pipeline::CreateMediaCapturePipelineOutput {
         crate::operation::create_media_capture_pipeline::CreateMediaCapturePipelineOutput {
-            media_capture_pipeline: self.media_capture_pipeline
-            ,
+            media_capture_pipeline: self.media_capture_pipeline,
             _request_id: self._request_id,
         }
     }
 }
-

@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-/// 
+///
 /// Here is an example of how you can make a match expression forward-compatible:
-/// 
+///
 /// ```text
 /// # let runtimeenvironment = unimplemented!();
 /// match runtimeenvironment {
@@ -36,14 +36,22 @@
 /// Specifically, when `runtimeenvironment` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `RuntimeEnvironment::NewFeature` also yielding `"NewFeature"`.
-/// 
+///
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
 pub enum RuntimeEnvironment {
     #[allow(missing_docs)] // documentation missing in model
     Flink111,
@@ -62,53 +70,63 @@ pub enum RuntimeEnvironment {
     #[allow(missing_docs)] // documentation missing in model
     ZeppelinFlink20,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::primitives::UnknownVariantValue)
+    Unknown(crate::primitives::UnknownVariantValue),
 }
 impl std::convert::From<&str> for RuntimeEnvironment {
-                fn from(s: &str) -> Self {
-                    match s {
-                        "FLINK-1_11" => RuntimeEnvironment::Flink111,
-"FLINK-1_13" => RuntimeEnvironment::Flink113,
-"FLINK-1_15" => RuntimeEnvironment::Flink115,
-"FLINK-1_6" => RuntimeEnvironment::Flink16,
-"FLINK-1_8" => RuntimeEnvironment::Flink18,
-"SQL-1_0" => RuntimeEnvironment::Sql10,
-"ZEPPELIN-FLINK-1_0" => RuntimeEnvironment::ZeppelinFlink10,
-"ZEPPELIN-FLINK-2_0" => RuntimeEnvironment::ZeppelinFlink20,
-other => RuntimeEnvironment::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
-                    }
-                }
-            }
-impl std::str::FromStr for RuntimeEnvironment {
-                type Err = std::convert::Infallible;
-
-                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-                    Ok(RuntimeEnvironment::from(s))
-                }
-            }
-impl RuntimeEnvironment {
-                /// Returns the `&str` value of the enum member.
-                pub fn as_str(&self) -> &str {
-                    match self {
-    RuntimeEnvironment::Flink111 => "FLINK-1_11",
-    RuntimeEnvironment::Flink113 => "FLINK-1_13",
-    RuntimeEnvironment::Flink115 => "FLINK-1_15",
-    RuntimeEnvironment::Flink16 => "FLINK-1_6",
-    RuntimeEnvironment::Flink18 => "FLINK-1_8",
-    RuntimeEnvironment::Sql10 => "SQL-1_0",
-    RuntimeEnvironment::ZeppelinFlink10 => "ZEPPELIN-FLINK-1_0",
-    RuntimeEnvironment::ZeppelinFlink20 => "ZEPPELIN-FLINK-2_0",
-    RuntimeEnvironment::Unknown(value) => value.as_str()
+    fn from(s: &str) -> Self {
+        match s {
+            "FLINK-1_11" => RuntimeEnvironment::Flink111,
+            "FLINK-1_13" => RuntimeEnvironment::Flink113,
+            "FLINK-1_15" => RuntimeEnvironment::Flink115,
+            "FLINK-1_6" => RuntimeEnvironment::Flink16,
+            "FLINK-1_8" => RuntimeEnvironment::Flink18,
+            "SQL-1_0" => RuntimeEnvironment::Sql10,
+            "ZEPPELIN-FLINK-1_0" => RuntimeEnvironment::ZeppelinFlink10,
+            "ZEPPELIN-FLINK-2_0" => RuntimeEnvironment::ZeppelinFlink20,
+            other => RuntimeEnvironment::Unknown(crate::primitives::UnknownVariantValue(
+                other.to_owned(),
+            )),
+        }
+    }
 }
-                }
-                /// Returns all the `&str` representations of the enum members.
-                pub const fn values() -> &'static [&'static str] {
-                    &["FLINK-1_11", "FLINK-1_13", "FLINK-1_15", "FLINK-1_6", "FLINK-1_8", "SQL-1_0", "ZEPPELIN-FLINK-1_0", "ZEPPELIN-FLINK-2_0"]
-                }
-            }
-impl AsRef<str> for RuntimeEnvironment {
-                fn as_ref(&self) -> &str {
-                    self.as_str()
-                }
-            }
+impl std::str::FromStr for RuntimeEnvironment {
+    type Err = std::convert::Infallible;
 
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(RuntimeEnvironment::from(s))
+    }
+}
+impl RuntimeEnvironment {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            RuntimeEnvironment::Flink111 => "FLINK-1_11",
+            RuntimeEnvironment::Flink113 => "FLINK-1_13",
+            RuntimeEnvironment::Flink115 => "FLINK-1_15",
+            RuntimeEnvironment::Flink16 => "FLINK-1_6",
+            RuntimeEnvironment::Flink18 => "FLINK-1_8",
+            RuntimeEnvironment::Sql10 => "SQL-1_0",
+            RuntimeEnvironment::ZeppelinFlink10 => "ZEPPELIN-FLINK-1_0",
+            RuntimeEnvironment::ZeppelinFlink20 => "ZEPPELIN-FLINK-2_0",
+            RuntimeEnvironment::Unknown(value) => value.as_str(),
+        }
+    }
+    /// Returns all the `&str` representations of the enum members.
+    pub const fn values() -> &'static [&'static str] {
+        &[
+            "FLINK-1_11",
+            "FLINK-1_13",
+            "FLINK-1_15",
+            "FLINK-1_6",
+            "FLINK-1_8",
+            "SQL-1_0",
+            "ZEPPELIN-FLINK-1_0",
+            "ZEPPELIN-FLINK-2_0",
+        ]
+    }
+}
+impl AsRef<str> for RuntimeEnvironment {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}

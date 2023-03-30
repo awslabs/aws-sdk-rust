@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreatePartitionInput  {
+pub struct CreatePartitionInput {
     /// <p>The Amazon Web Services account ID of the catalog in which the partition is to be created.</p>
     #[doc(hidden)]
     pub catalog_id: std::option::Option<std::string::String>,
@@ -18,19 +18,19 @@ pub struct CreatePartitionInput  {
 }
 impl CreatePartitionInput {
     /// <p>The Amazon Web Services account ID of the catalog in which the partition is to be created.</p>
-    pub fn catalog_id(&self) -> std::option::Option<& str> {
+    pub fn catalog_id(&self) -> std::option::Option<&str> {
         self.catalog_id.as_deref()
     }
     /// <p>The name of the metadata database in which the partition is to be created.</p>
-    pub fn database_name(&self) -> std::option::Option<& str> {
+    pub fn database_name(&self) -> std::option::Option<&str> {
         self.database_name.as_deref()
     }
     /// <p>The name of the metadata table in which the partition is to be created.</p>
-    pub fn table_name(&self) -> std::option::Option<& str> {
+    pub fn table_name(&self) -> std::option::Option<&str> {
         self.table_name.as_deref()
     }
     /// <p>A <code>PartitionInput</code> structure defining the partition to be created.</p>
-    pub fn partition_input(&self) -> std::option::Option<& crate::types::PartitionInput> {
+    pub fn partition_input(&self) -> std::option::Option<&crate::types::PartitionInput> {
         self.partition_input.as_ref()
     }
 }
@@ -58,7 +58,8 @@ impl CreatePartitionInputBuilder {
     }
     /// <p>The Amazon Web Services account ID of the catalog in which the partition is to be created.</p>
     pub fn set_catalog_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.catalog_id = input; self
+        self.catalog_id = input;
+        self
     }
     /// <p>The name of the metadata database in which the partition is to be created.</p>
     pub fn database_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -67,7 +68,8 @@ impl CreatePartitionInputBuilder {
     }
     /// <p>The name of the metadata database in which the partition is to be created.</p>
     pub fn set_database_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.database_name = input; self
+        self.database_name = input;
+        self
     }
     /// <p>The name of the metadata table in which the partition is to be created.</p>
     pub fn table_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -76,7 +78,8 @@ impl CreatePartitionInputBuilder {
     }
     /// <p>The name of the metadata table in which the partition is to be created.</p>
     pub fn set_table_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.table_name = input; self
+        self.table_name = input;
+        self
     }
     /// <p>A <code>PartitionInput</code> structure defining the partition to be created.</p>
     pub fn partition_input(mut self, input: crate::types::PartitionInput) -> Self {
@@ -84,23 +87,25 @@ impl CreatePartitionInputBuilder {
         self
     }
     /// <p>A <code>PartitionInput</code> structure defining the partition to be created.</p>
-    pub fn set_partition_input(mut self, input: std::option::Option<crate::types::PartitionInput>) -> Self {
-        self.partition_input = input; self
+    pub fn set_partition_input(
+        mut self,
+        input: std::option::Option<crate::types::PartitionInput>,
+    ) -> Self {
+        self.partition_input = input;
+        self
     }
     /// Consumes the builder and constructs a [`CreatePartitionInput`](crate::operation::create_partition::CreatePartitionInput).
-    pub fn build(self) -> Result<crate::operation::create_partition::CreatePartitionInput, aws_smithy_http::operation::error::BuildError> {
-        Ok(
-            crate::operation::create_partition::CreatePartitionInput {
-                catalog_id: self.catalog_id
-                ,
-                database_name: self.database_name
-                ,
-                table_name: self.table_name
-                ,
-                partition_input: self.partition_input
-                ,
-            }
-        )
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::create_partition::CreatePartitionInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        Ok(crate::operation::create_partition::CreatePartitionInput {
+            catalog_id: self.catalog_id,
+            database_name: self.database_name,
+            table_name: self.table_name,
+            partition_input: self.partition_input,
+        })
     }
 }
-

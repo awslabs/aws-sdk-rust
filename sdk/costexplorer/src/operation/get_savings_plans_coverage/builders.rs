@@ -4,69 +4,98 @@ pub use crate::operation::get_savings_plans_coverage::_get_savings_plans_coverag
 pub use crate::operation::get_savings_plans_coverage::_get_savings_plans_coverage_input::GetSavingsPlansCoverageInputBuilder;
 
 /// Fluent builder constructing a request to `GetSavingsPlansCoverage`.
-/// 
-/// <p>Retrieves the Savings Plans covered for your account. This enables you to see how much of your cost is covered by a Savings Plan. An organization’s management account can see the coverage of the associated member accounts. This supports dimensions, Cost Categories, and nested expressions. For any time period, you can filter data for Savings Plans usage with the following dimensions:</p> 
-/// <ul> 
-/// <li> <p> <code>LINKED_ACCOUNT</code> </p> </li> 
-/// <li> <p> <code>REGION</code> </p> </li> 
-/// <li> <p> <code>SERVICE</code> </p> </li> 
-/// <li> <p> <code>INSTANCE_FAMILY</code> </p> </li> 
-/// </ul> 
+///
+/// <p>Retrieves the Savings Plans covered for your account. This enables you to see how much of your cost is covered by a Savings Plan. An organization’s management account can see the coverage of the associated member accounts. This supports dimensions, Cost Categories, and nested expressions. For any time period, you can filter data for Savings Plans usage with the following dimensions:</p>
+/// <ul>
+/// <li> <p> <code>LINKED_ACCOUNT</code> </p> </li>
+/// <li> <p> <code>REGION</code> </p> </li>
+/// <li> <p> <code>SERVICE</code> </p> </li>
+/// <li> <p> <code>INSTANCE_FAMILY</code> </p> </li>
+/// </ul>
 /// <p>To determine valid values for a dimension, use the <code>GetDimensionValues</code> operation.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct GetSavingsPlansCoverageFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::get_savings_plans_coverage::builders::GetSavingsPlansCoverageInputBuilder
-            }
-impl GetSavingsPlansCoverageFluentBuilder  {
+    handle: std::sync::Arc<crate::client::Handle>,
+    inner:
+        crate::operation::get_savings_plans_coverage::builders::GetSavingsPlansCoverageInputBuilder,
+}
+impl GetSavingsPlansCoverageFluentBuilder {
     /// Creates a new `GetSavingsPlansCoverage`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
-                    /// sent. The operation's inner [http::Request] can be modified as well.
-                    pub async fn customize(self) -> std::result::Result<
-                        crate::client::customize::CustomizableOperation<crate::operation::get_savings_plans_coverage::GetSavingsPlansCoverage, aws_http::retry::AwsResponseRetryClassifier,>,
-                        aws_smithy_http::result::SdkError<crate::operation::get_savings_plans_coverage::GetSavingsPlansCoverageError>
-                    >  {
-                        let handle = self.handle.clone();
-                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-                    }
-    
-                    /// Sends the request and returns the response.
-                    ///
-                    /// If an error occurs, an `SdkError` will be returned with additional details that
-                    /// can be matched against.
-                    ///
-                    /// By default, any retryable failures will be retried twice. Retry behavior
-                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                    /// set when configuring the client.
-                    pub async fn send(self) -> std::result::Result<crate::operation::get_savings_plans_coverage::GetSavingsPlansCoverageOutput, aws_smithy_http::result::SdkError<crate::operation::get_savings_plans_coverage::GetSavingsPlansCoverageError>>
-                     {
-                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&self.handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        self.handle.client.call(op).await
-                    }
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle,
+            inner: Default::default(),
+        }
+    }
+
+    /// Consume this builder, creating a customizable operation that can be modified before being
+    /// sent. The operation's inner [http::Request] can be modified as well.
+    pub async fn customize(
+        self,
+    ) -> std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::get_savings_plans_coverage::GetSavingsPlansCoverage,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::result::SdkError<
+            crate::operation::get_savings_plans_coverage::GetSavingsPlansCoverageError,
+        >,
+    > {
+        let handle = self.handle.clone();
+        let operation = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+    }
+
+    /// Sends the request and returns the response.
+    ///
+    /// If an error occurs, an `SdkError` will be returned with additional details that
+    /// can be matched against.
+    ///
+    /// By default, any retryable failures will be retried twice. Retry behavior
+    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+    /// set when configuring the client.
+    pub async fn send(
+        self,
+    ) -> std::result::Result<
+        crate::operation::get_savings_plans_coverage::GetSavingsPlansCoverageOutput,
+        aws_smithy_http::result::SdkError<
+            crate::operation::get_savings_plans_coverage::GetSavingsPlansCoverageError,
+        >,
+    > {
+        let op = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&self.handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        self.handle.client.call(op).await
+    }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::get_savings_plans_coverage::paginator::GetSavingsPlansCoveragePaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::get_savings_plans_coverage::paginator::GetSavingsPlansCoveragePaginator {
-                            crate::operation::get_savings_plans_coverage::paginator::GetSavingsPlansCoveragePaginator::new(self.handle, self.inner)
-                        }
+    ///
+    /// Paginators are used by calling [`send().await`](crate::operation::get_savings_plans_coverage::paginator::GetSavingsPlansCoveragePaginator::send) which returns a `Stream`.
+    pub fn into_paginator(
+        self,
+    ) -> crate::operation::get_savings_plans_coverage::paginator::GetSavingsPlansCoveragePaginator
+    {
+        crate::operation::get_savings_plans_coverage::paginator::GetSavingsPlansCoveragePaginator::new(self.handle, self.inner)
+    }
     /// <p>The time period that you want the usage and costs for. The <code>Start</code> date must be within 13 months. The <code>End</code> date must be after the <code>Start</code> date, and before the current date. Future dates can't be used as an <code>End</code> date.</p>
     pub fn time_period(mut self, input: crate::types::DateInterval) -> Self {
         self.inner = self.inner.time_period(input);
         self
     }
     /// <p>The time period that you want the usage and costs for. The <code>Start</code> date must be within 13 months. The <code>End</code> date must be after the <code>Start</code> date, and before the current date. Future dates can't be used as an <code>End</code> date.</p>
-    pub fn set_time_period(mut self, input: std::option::Option<crate::types::DateInterval>) -> Self {
+    pub fn set_time_period(
+        mut self,
+        input: std::option::Option<crate::types::DateInterval>,
+    ) -> Self {
         self.inner = self.inner.set_time_period(input);
         self
     }
@@ -80,43 +109,49 @@ impl GetSavingsPlansCoverageFluentBuilder  {
         self
     }
     /// <p>You can group the data using the attributes <code>INSTANCE_FAMILY</code>, <code>REGION</code>, or <code>SERVICE</code>.</p>
-    pub fn set_group_by(mut self, input: std::option::Option<std::vec::Vec<crate::types::GroupDefinition>>) -> Self {
+    pub fn set_group_by(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::GroupDefinition>>,
+    ) -> Self {
         self.inner = self.inner.set_group_by(input);
         self
     }
-    /// <p>The granularity of the Amazon Web Services cost data for your Savings Plans. <code>Granularity</code> can't be set if <code>GroupBy</code> is set.</p> 
+    /// <p>The granularity of the Amazon Web Services cost data for your Savings Plans. <code>Granularity</code> can't be set if <code>GroupBy</code> is set.</p>
     /// <p>The <code>GetSavingsPlansCoverage</code> operation supports only <code>DAILY</code> and <code>MONTHLY</code> granularities.</p>
     pub fn granularity(mut self, input: crate::types::Granularity) -> Self {
         self.inner = self.inner.granularity(input);
         self
     }
-    /// <p>The granularity of the Amazon Web Services cost data for your Savings Plans. <code>Granularity</code> can't be set if <code>GroupBy</code> is set.</p> 
+    /// <p>The granularity of the Amazon Web Services cost data for your Savings Plans. <code>Granularity</code> can't be set if <code>GroupBy</code> is set.</p>
     /// <p>The <code>GetSavingsPlansCoverage</code> operation supports only <code>DAILY</code> and <code>MONTHLY</code> granularities.</p>
-    pub fn set_granularity(mut self, input: std::option::Option<crate::types::Granularity>) -> Self {
+    pub fn set_granularity(
+        mut self,
+        input: std::option::Option<crate::types::Granularity>,
+    ) -> Self {
         self.inner = self.inner.set_granularity(input);
         self
     }
-    /// <p>Filters Savings Plans coverage data by dimensions. You can filter data for Savings Plans usage with the following dimensions:</p> 
-    /// <ul> 
-    /// <li> <p> <code>LINKED_ACCOUNT</code> </p> </li> 
-    /// <li> <p> <code>REGION</code> </p> </li> 
-    /// <li> <p> <code>SERVICE</code> </p> </li> 
-    /// <li> <p> <code>INSTANCE_FAMILY</code> </p> </li> 
-    /// </ul> 
-    /// <p> <code>GetSavingsPlansCoverage</code> uses the same <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Expression.html">Expression</a> object as the other operations, but only <code>AND</code> is supported among each dimension. If there are multiple values for a dimension, they are OR'd together.</p> 
+    /// <p>Filters Savings Plans coverage data by dimensions. You can filter data for Savings Plans usage with the following dimensions:</p>
+    /// <ul>
+    /// <li> <p> <code>LINKED_ACCOUNT</code> </p> </li>
+    /// <li> <p> <code>REGION</code> </p> </li>
+    /// <li> <p> <code>SERVICE</code> </p> </li>
+    /// <li> <p> <code>INSTANCE_FAMILY</code> </p> </li>
+    /// </ul>
+    /// <p> <code>GetSavingsPlansCoverage</code> uses the same <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Expression.html">Expression</a> object as the other operations, but only <code>AND</code> is supported among each dimension. If there are multiple values for a dimension, they are OR'd together.</p>
     /// <p>Cost category is also supported.</p>
     pub fn filter(mut self, input: crate::types::Expression) -> Self {
         self.inner = self.inner.filter(input);
         self
     }
-    /// <p>Filters Savings Plans coverage data by dimensions. You can filter data for Savings Plans usage with the following dimensions:</p> 
-    /// <ul> 
-    /// <li> <p> <code>LINKED_ACCOUNT</code> </p> </li> 
-    /// <li> <p> <code>REGION</code> </p> </li> 
-    /// <li> <p> <code>SERVICE</code> </p> </li> 
-    /// <li> <p> <code>INSTANCE_FAMILY</code> </p> </li> 
-    /// </ul> 
-    /// <p> <code>GetSavingsPlansCoverage</code> uses the same <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Expression.html">Expression</a> object as the other operations, but only <code>AND</code> is supported among each dimension. If there are multiple values for a dimension, they are OR'd together.</p> 
+    /// <p>Filters Savings Plans coverage data by dimensions. You can filter data for Savings Plans usage with the following dimensions:</p>
+    /// <ul>
+    /// <li> <p> <code>LINKED_ACCOUNT</code> </p> </li>
+    /// <li> <p> <code>REGION</code> </p> </li>
+    /// <li> <p> <code>SERVICE</code> </p> </li>
+    /// <li> <p> <code>INSTANCE_FAMILY</code> </p> </li>
+    /// </ul>
+    /// <p> <code>GetSavingsPlansCoverage</code> uses the same <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Expression.html">Expression</a> object as the other operations, but only <code>AND</code> is supported among each dimension. If there are multiple values for a dimension, they are OR'd together.</p>
     /// <p>Cost category is also supported.</p>
     pub fn set_filter(mut self, input: std::option::Option<crate::types::Expression>) -> Self {
         self.inner = self.inner.set_filter(input);
@@ -132,7 +167,10 @@ impl GetSavingsPlansCoverageFluentBuilder  {
         self
     }
     /// <p>The measurement that you want your Savings Plans coverage reported in. The only valid value is <code>SpendCoveredBySavingsPlans</code>.</p>
-    pub fn set_metrics(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+    pub fn set_metrics(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
         self.inner = self.inner.set_metrics(input);
         self
     }
@@ -156,37 +194,36 @@ impl GetSavingsPlansCoverageFluentBuilder  {
         self.inner = self.inner.set_max_results(input);
         self
     }
-    /// <p>The value that you want to sort the data by.</p> 
-    /// <p>The following values are supported for <code>Key</code>:</p> 
-    /// <ul> 
-    /// <li> <p> <code>SpendCoveredBySavingsPlan</code> </p> </li> 
-    /// <li> <p> <code>OnDemandCost</code> </p> </li> 
-    /// <li> <p> <code>CoveragePercentage</code> </p> </li> 
-    /// <li> <p> <code>TotalCost</code> </p> </li> 
-    /// <li> <p> <code>InstanceFamily</code> </p> </li> 
-    /// <li> <p> <code>Region</code> </p> </li> 
-    /// <li> <p> <code>Service</code> </p> </li> 
-    /// </ul> 
+    /// <p>The value that you want to sort the data by.</p>
+    /// <p>The following values are supported for <code>Key</code>:</p>
+    /// <ul>
+    /// <li> <p> <code>SpendCoveredBySavingsPlan</code> </p> </li>
+    /// <li> <p> <code>OnDemandCost</code> </p> </li>
+    /// <li> <p> <code>CoveragePercentage</code> </p> </li>
+    /// <li> <p> <code>TotalCost</code> </p> </li>
+    /// <li> <p> <code>InstanceFamily</code> </p> </li>
+    /// <li> <p> <code>Region</code> </p> </li>
+    /// <li> <p> <code>Service</code> </p> </li>
+    /// </ul>
     /// <p>The supported values for <code>SortOrder</code> are <code>ASCENDING</code> and <code>DESCENDING</code>.</p>
     pub fn sort_by(mut self, input: crate::types::SortDefinition) -> Self {
         self.inner = self.inner.sort_by(input);
         self
     }
-    /// <p>The value that you want to sort the data by.</p> 
-    /// <p>The following values are supported for <code>Key</code>:</p> 
-    /// <ul> 
-    /// <li> <p> <code>SpendCoveredBySavingsPlan</code> </p> </li> 
-    /// <li> <p> <code>OnDemandCost</code> </p> </li> 
-    /// <li> <p> <code>CoveragePercentage</code> </p> </li> 
-    /// <li> <p> <code>TotalCost</code> </p> </li> 
-    /// <li> <p> <code>InstanceFamily</code> </p> </li> 
-    /// <li> <p> <code>Region</code> </p> </li> 
-    /// <li> <p> <code>Service</code> </p> </li> 
-    /// </ul> 
+    /// <p>The value that you want to sort the data by.</p>
+    /// <p>The following values are supported for <code>Key</code>:</p>
+    /// <ul>
+    /// <li> <p> <code>SpendCoveredBySavingsPlan</code> </p> </li>
+    /// <li> <p> <code>OnDemandCost</code> </p> </li>
+    /// <li> <p> <code>CoveragePercentage</code> </p> </li>
+    /// <li> <p> <code>TotalCost</code> </p> </li>
+    /// <li> <p> <code>InstanceFamily</code> </p> </li>
+    /// <li> <p> <code>Region</code> </p> </li>
+    /// <li> <p> <code>Service</code> </p> </li>
+    /// </ul>
     /// <p>The supported values for <code>SortOrder</code> are <code>ASCENDING</code> and <code>DESCENDING</code>.</p>
     pub fn set_sort_by(mut self, input: std::option::Option<crate::types::SortDefinition>) -> Self {
         self.inner = self.inner.set_sort_by(input);
         self
     }
 }
-

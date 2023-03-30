@@ -2,20 +2,21 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateCachePolicyInput  {
+pub struct CreateCachePolicyInput {
     /// <p>A cache policy configuration.</p>
     #[doc(hidden)]
     pub cache_policy_config: std::option::Option<crate::types::CachePolicyConfig>,
 }
 impl CreateCachePolicyInput {
     /// <p>A cache policy configuration.</p>
-    pub fn cache_policy_config(&self) -> std::option::Option<& crate::types::CachePolicyConfig> {
+    pub fn cache_policy_config(&self) -> std::option::Option<&crate::types::CachePolicyConfig> {
         self.cache_policy_config.as_ref()
     }
 }
 impl CreateCachePolicyInput {
     /// Creates a new builder-style object to manufacture [`CreateCachePolicyInput`](crate::operation::create_cache_policy::CreateCachePolicyInput).
-    pub fn builder() -> crate::operation::create_cache_policy::builders::CreateCachePolicyInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::create_cache_policy::builders::CreateCachePolicyInputBuilder {
         crate::operation::create_cache_policy::builders::CreateCachePolicyInputBuilder::default()
     }
 }
@@ -33,17 +34,24 @@ impl CreateCachePolicyInputBuilder {
         self
     }
     /// <p>A cache policy configuration.</p>
-    pub fn set_cache_policy_config(mut self, input: std::option::Option<crate::types::CachePolicyConfig>) -> Self {
-        self.cache_policy_config = input; self
+    pub fn set_cache_policy_config(
+        mut self,
+        input: std::option::Option<crate::types::CachePolicyConfig>,
+    ) -> Self {
+        self.cache_policy_config = input;
+        self
     }
     /// Consumes the builder and constructs a [`CreateCachePolicyInput`](crate::operation::create_cache_policy::CreateCachePolicyInput).
-    pub fn build(self) -> Result<crate::operation::create_cache_policy::CreateCachePolicyInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::create_cache_policy::CreateCachePolicyInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::create_cache_policy::CreateCachePolicyInput {
-                cache_policy_config: self.cache_policy_config
-                ,
-            }
+                cache_policy_config: self.cache_policy_config,
+            },
         )
     }
 }
-

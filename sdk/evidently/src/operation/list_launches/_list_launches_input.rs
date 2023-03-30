@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListLaunchesInput  {
+pub struct ListLaunchesInput {
     /// <p>The name or ARN of the project to return the launch list from.</p>
     #[doc(hidden)]
     pub project: std::option::Option<std::string::String>,
@@ -18,7 +18,7 @@ pub struct ListLaunchesInput  {
 }
 impl ListLaunchesInput {
     /// <p>The name or ARN of the project to return the launch list from.</p>
-    pub fn project(&self) -> std::option::Option<& str> {
+    pub fn project(&self) -> std::option::Option<&str> {
         self.project.as_deref()
     }
     /// <p>The maximum number of results to include in the response.</p>
@@ -26,11 +26,11 @@ impl ListLaunchesInput {
         self.max_results
     }
     /// <p>The token to use when requesting the next set of results. You received this token from a previous <code>ListLaunches</code> operation.</p>
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
     /// <p>Use this optional parameter to limit the returned results to only the launches with the status that you specify here.</p>
-    pub fn status(&self) -> std::option::Option<& crate::types::LaunchStatus> {
+    pub fn status(&self) -> std::option::Option<&crate::types::LaunchStatus> {
         self.status.as_ref()
     }
 }
@@ -58,7 +58,8 @@ impl ListLaunchesInputBuilder {
     }
     /// <p>The name or ARN of the project to return the launch list from.</p>
     pub fn set_project(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.project = input; self
+        self.project = input;
+        self
     }
     /// <p>The maximum number of results to include in the response.</p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -67,7 +68,8 @@ impl ListLaunchesInputBuilder {
     }
     /// <p>The maximum number of results to include in the response.</p>
     pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_results = input; self
+        self.max_results = input;
+        self
     }
     /// <p>The token to use when requesting the next set of results. You received this token from a previous <code>ListLaunches</code> operation.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -76,7 +78,8 @@ impl ListLaunchesInputBuilder {
     }
     /// <p>The token to use when requesting the next set of results. You received this token from a previous <code>ListLaunches</code> operation.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input; self
+        self.next_token = input;
+        self
     }
     /// <p>Use this optional parameter to limit the returned results to only the launches with the status that you specify here.</p>
     pub fn status(mut self, input: crate::types::LaunchStatus) -> Self {
@@ -85,22 +88,21 @@ impl ListLaunchesInputBuilder {
     }
     /// <p>Use this optional parameter to limit the returned results to only the launches with the status that you specify here.</p>
     pub fn set_status(mut self, input: std::option::Option<crate::types::LaunchStatus>) -> Self {
-        self.status = input; self
+        self.status = input;
+        self
     }
     /// Consumes the builder and constructs a [`ListLaunchesInput`](crate::operation::list_launches::ListLaunchesInput).
-    pub fn build(self) -> Result<crate::operation::list_launches::ListLaunchesInput, aws_smithy_http::operation::error::BuildError> {
-        Ok(
-            crate::operation::list_launches::ListLaunchesInput {
-                project: self.project
-                ,
-                max_results: self.max_results
-                ,
-                next_token: self.next_token
-                ,
-                status: self.status
-                ,
-            }
-        )
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::list_launches::ListLaunchesInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        Ok(crate::operation::list_launches::ListLaunchesInput {
+            project: self.project,
+            max_results: self.max_results,
+            next_token: self.next_token,
+            status: self.status,
+        })
     }
 }
-

@@ -3,7 +3,7 @@
 /// <p>The result of a <code>DescribeDomainEndpointOptions</code> request. Contains the status and configuration of a search domain's endpoint options. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeDomainEndpointOptionsOutput  {
+pub struct DescribeDomainEndpointOptionsOutput {
     /// <p>The status and configuration of a search domain's endpoint options.</p>
     #[doc(hidden)]
     pub domain_endpoint_options: std::option::Option<crate::types::DomainEndpointOptionsStatus>,
@@ -11,18 +11,20 @@ pub struct DescribeDomainEndpointOptionsOutput  {
 }
 impl DescribeDomainEndpointOptionsOutput {
     /// <p>The status and configuration of a search domain's endpoint options.</p>
-    pub fn domain_endpoint_options(&self) -> std::option::Option<& crate::types::DomainEndpointOptionsStatus> {
+    pub fn domain_endpoint_options(
+        &self,
+    ) -> std::option::Option<&crate::types::DomainEndpointOptionsStatus> {
         self.domain_endpoint_options.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for DescribeDomainEndpointOptionsOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl DescribeDomainEndpointOptionsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeDomainEndpointOptionsOutput`](crate::operation::describe_domain_endpoint_options::DescribeDomainEndpointOptionsOutput).
-    pub fn builder() -> crate::operation::describe_domain_endpoint_options::builders::DescribeDomainEndpointOptionsOutputBuilder {
+    pub fn builder() -> crate::operation::describe_domain_endpoint_options::builders::DescribeDomainEndpointOptionsOutputBuilder{
         crate::operation::describe_domain_endpoint_options::builders::DescribeDomainEndpointOptionsOutputBuilder::default()
     }
 }
@@ -31,35 +33,44 @@ impl DescribeDomainEndpointOptionsOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct DescribeDomainEndpointOptionsOutputBuilder {
-    pub(crate) domain_endpoint_options: std::option::Option<crate::types::DomainEndpointOptionsStatus>,
+    pub(crate) domain_endpoint_options:
+        std::option::Option<crate::types::DomainEndpointOptionsStatus>,
     _request_id: Option<String>,
 }
 impl DescribeDomainEndpointOptionsOutputBuilder {
     /// <p>The status and configuration of a search domain's endpoint options.</p>
-    pub fn domain_endpoint_options(mut self, input: crate::types::DomainEndpointOptionsStatus) -> Self {
+    pub fn domain_endpoint_options(
+        mut self,
+        input: crate::types::DomainEndpointOptionsStatus,
+    ) -> Self {
         self.domain_endpoint_options = Some(input);
         self
     }
     /// <p>The status and configuration of a search domain's endpoint options.</p>
-    pub fn set_domain_endpoint_options(mut self, input: std::option::Option<crate::types::DomainEndpointOptionsStatus>) -> Self {
-        self.domain_endpoint_options = input; self
+    pub fn set_domain_endpoint_options(
+        mut self,
+        input: std::option::Option<crate::types::DomainEndpointOptionsStatus>,
+    ) -> Self {
+        self.domain_endpoint_options = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`DescribeDomainEndpointOptionsOutput`](crate::operation::describe_domain_endpoint_options::DescribeDomainEndpointOptionsOutput).
-    pub fn build(self) -> crate::operation::describe_domain_endpoint_options::DescribeDomainEndpointOptionsOutput {
+    pub fn build(
+        self,
+    ) -> crate::operation::describe_domain_endpoint_options::DescribeDomainEndpointOptionsOutput
+    {
         crate::operation::describe_domain_endpoint_options::DescribeDomainEndpointOptionsOutput {
-            domain_endpoint_options: self.domain_endpoint_options
-            ,
+            domain_endpoint_options: self.domain_endpoint_options,
             _request_id: self._request_id,
         }
     }
 }
-

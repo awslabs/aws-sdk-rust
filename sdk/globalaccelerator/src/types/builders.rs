@@ -50,4 +50,3 @@ pub use crate::types::_custom_routing_destination_description::CustomRoutingDest
 pub use crate::types::_custom_routing_destination_configuration::CustomRoutingDestinationConfigurationBuilder;
 
 pub use crate::types::_custom_routing_endpoint_configuration::CustomRoutingEndpointConfigurationBuilder;
-

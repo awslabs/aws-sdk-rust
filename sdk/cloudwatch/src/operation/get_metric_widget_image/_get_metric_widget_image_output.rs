@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetMetricWidgetImageOutput  {
+pub struct GetMetricWidgetImageOutput {
     /// <p>The image of the graph, in the output format specified. The output is base64-encoded.</p>
     #[doc(hidden)]
     pub metric_widget_image: std::option::Option<aws_smithy_types::Blob>,
@@ -10,18 +10,20 @@ pub struct GetMetricWidgetImageOutput  {
 }
 impl GetMetricWidgetImageOutput {
     /// <p>The image of the graph, in the output format specified. The output is base64-encoded.</p>
-    pub fn metric_widget_image(&self) -> std::option::Option<& aws_smithy_types::Blob> {
+    pub fn metric_widget_image(&self) -> std::option::Option<&aws_smithy_types::Blob> {
         self.metric_widget_image.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for GetMetricWidgetImageOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl GetMetricWidgetImageOutput {
     /// Creates a new builder-style object to manufacture [`GetMetricWidgetImageOutput`](crate::operation::get_metric_widget_image::GetMetricWidgetImageOutput).
-    pub fn builder() -> crate::operation::get_metric_widget_image::builders::GetMetricWidgetImageOutputBuilder {
+    pub fn builder(
+    ) -> crate::operation::get_metric_widget_image::builders::GetMetricWidgetImageOutputBuilder
+    {
         crate::operation::get_metric_widget_image::builders::GetMetricWidgetImageOutputBuilder::default()
     }
 }
@@ -40,25 +42,27 @@ impl GetMetricWidgetImageOutputBuilder {
         self
     }
     /// <p>The image of the graph, in the output format specified. The output is base64-encoded.</p>
-    pub fn set_metric_widget_image(mut self, input: std::option::Option<aws_smithy_types::Blob>) -> Self {
-        self.metric_widget_image = input; self
+    pub fn set_metric_widget_image(
+        mut self,
+        input: std::option::Option<aws_smithy_types::Blob>,
+    ) -> Self {
+        self.metric_widget_image = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`GetMetricWidgetImageOutput`](crate::operation::get_metric_widget_image::GetMetricWidgetImageOutput).
     pub fn build(self) -> crate::operation::get_metric_widget_image::GetMetricWidgetImageOutput {
         crate::operation::get_metric_widget_image::GetMetricWidgetImageOutput {
-            metric_widget_image: self.metric_widget_image
-            ,
+            metric_widget_image: self.metric_widget_image,
             _request_id: self._request_id,
         }
     }
 }
-

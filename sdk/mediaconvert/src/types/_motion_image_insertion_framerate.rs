@@ -3,7 +3,7 @@
 /// For motion overlays that don't have a built-in frame rate, specify the frame rate of the overlay in frames per second, as a fraction. For example, specify 24 fps as 24/1. The overlay frame rate doesn't need to match the frame rate of the underlying video.
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct MotionImageInsertionFramerate  {
+pub struct MotionImageInsertionFramerate {
     /// The bottom of the fraction that expresses your overlay frame rate. For example, if your frame rate is 24 fps, set this value to 1.
     #[doc(hidden)]
     pub framerate_denominator: i32,
@@ -43,7 +43,8 @@ impl MotionImageInsertionFramerateBuilder {
     }
     /// The bottom of the fraction that expresses your overlay frame rate. For example, if your frame rate is 24 fps, set this value to 1.
     pub fn set_framerate_denominator(mut self, input: std::option::Option<i32>) -> Self {
-        self.framerate_denominator = input; self
+        self.framerate_denominator = input;
+        self
     }
     /// The top of the fraction that expresses your overlay frame rate. For example, if your frame rate is 24 fps, set this value to 24.
     pub fn framerate_numerator(mut self, input: i32) -> Self {
@@ -52,18 +53,14 @@ impl MotionImageInsertionFramerateBuilder {
     }
     /// The top of the fraction that expresses your overlay frame rate. For example, if your frame rate is 24 fps, set this value to 24.
     pub fn set_framerate_numerator(mut self, input: std::option::Option<i32>) -> Self {
-        self.framerate_numerator = input; self
+        self.framerate_numerator = input;
+        self
     }
     /// Consumes the builder and constructs a [`MotionImageInsertionFramerate`](crate::types::MotionImageInsertionFramerate).
     pub fn build(self) -> crate::types::MotionImageInsertionFramerate {
         crate::types::MotionImageInsertionFramerate {
-            framerate_denominator: self.framerate_denominator
-                .unwrap_or_default()
-            ,
-            framerate_numerator: self.framerate_numerator
-                .unwrap_or_default()
-            ,
+            framerate_denominator: self.framerate_denominator.unwrap_or_default(),
+            framerate_numerator: self.framerate_numerator.unwrap_or_default(),
         }
     }
 }
-

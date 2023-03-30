@@ -3,7 +3,7 @@
 /// <p> A list of errors retrieving an application's resources. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ResourceErrorsDetails  {
+pub struct ResourceErrorsDetails {
     /// <p> A list of errors retrieving an application's resources. </p>
     #[doc(hidden)]
     pub resource_errors: std::option::Option<std::vec::Vec<crate::types::ResourceError>>,
@@ -13,7 +13,7 @@ pub struct ResourceErrorsDetails  {
 }
 impl ResourceErrorsDetails {
     /// <p> A list of errors retrieving an application's resources. </p>
-    pub fn resource_errors(&self) -> std::option::Option<& [crate::types::ResourceError]> {
+    pub fn resource_errors(&self) -> std::option::Option<&[crate::types::ResourceError]> {
         self.resource_errors.as_deref()
     }
     /// <p> This indicates if there are more errors not listed in the resourceErrors list. </p>
@@ -43,13 +43,17 @@ impl ResourceErrorsDetailsBuilder {
     /// <p> A list of errors retrieving an application's resources. </p>
     pub fn resource_errors(mut self, input: crate::types::ResourceError) -> Self {
         let mut v = self.resource_errors.unwrap_or_default();
-                        v.push(input);
-                        self.resource_errors = Some(v);
-                        self
+        v.push(input);
+        self.resource_errors = Some(v);
+        self
     }
     /// <p> A list of errors retrieving an application's resources. </p>
-    pub fn set_resource_errors(mut self, input: std::option::Option<std::vec::Vec<crate::types::ResourceError>>) -> Self {
-        self.resource_errors = input; self
+    pub fn set_resource_errors(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::ResourceError>>,
+    ) -> Self {
+        self.resource_errors = input;
+        self
     }
     /// <p> This indicates if there are more errors not listed in the resourceErrors list. </p>
     pub fn has_more_errors(mut self, input: bool) -> Self {
@@ -58,16 +62,14 @@ impl ResourceErrorsDetailsBuilder {
     }
     /// <p> This indicates if there are more errors not listed in the resourceErrors list. </p>
     pub fn set_has_more_errors(mut self, input: std::option::Option<bool>) -> Self {
-        self.has_more_errors = input; self
+        self.has_more_errors = input;
+        self
     }
     /// Consumes the builder and constructs a [`ResourceErrorsDetails`](crate::types::ResourceErrorsDetails).
     pub fn build(self) -> crate::types::ResourceErrorsDetails {
         crate::types::ResourceErrorsDetails {
-            resource_errors: self.resource_errors
-            ,
-            has_more_errors: self.has_more_errors
-            ,
+            resource_errors: self.resource_errors,
+            has_more_errors: self.has_more_errors,
         }
     }
 }
-

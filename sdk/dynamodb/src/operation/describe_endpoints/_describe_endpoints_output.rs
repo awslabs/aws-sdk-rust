@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeEndpointsOutput  {
+pub struct DescribeEndpointsOutput {
     /// <p>List of endpoints.</p>
     #[doc(hidden)]
     pub endpoints: std::option::Option<std::vec::Vec<crate::types::Endpoint>>,
@@ -10,18 +10,19 @@ pub struct DescribeEndpointsOutput  {
 }
 impl DescribeEndpointsOutput {
     /// <p>List of endpoints.</p>
-    pub fn endpoints(&self) -> std::option::Option<& [crate::types::Endpoint]> {
+    pub fn endpoints(&self) -> std::option::Option<&[crate::types::Endpoint]> {
         self.endpoints.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for DescribeEndpointsOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl DescribeEndpointsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeEndpointsOutput`](crate::operation::describe_endpoints::DescribeEndpointsOutput).
-    pub fn builder() -> crate::operation::describe_endpoints::builders::DescribeEndpointsOutputBuilder {
+    pub fn builder(
+    ) -> crate::operation::describe_endpoints::builders::DescribeEndpointsOutputBuilder {
         crate::operation::describe_endpoints::builders::DescribeEndpointsOutputBuilder::default()
     }
 }
@@ -41,30 +42,32 @@ impl DescribeEndpointsOutputBuilder {
     /// <p>List of endpoints.</p>
     pub fn endpoints(mut self, input: crate::types::Endpoint) -> Self {
         let mut v = self.endpoints.unwrap_or_default();
-                        v.push(input);
-                        self.endpoints = Some(v);
-                        self
+        v.push(input);
+        self.endpoints = Some(v);
+        self
     }
     /// <p>List of endpoints.</p>
-    pub fn set_endpoints(mut self, input: std::option::Option<std::vec::Vec<crate::types::Endpoint>>) -> Self {
-        self.endpoints = input; self
+    pub fn set_endpoints(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::Endpoint>>,
+    ) -> Self {
+        self.endpoints = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`DescribeEndpointsOutput`](crate::operation::describe_endpoints::DescribeEndpointsOutput).
     pub fn build(self) -> crate::operation::describe_endpoints::DescribeEndpointsOutput {
         crate::operation::describe_endpoints::DescribeEndpointsOutput {
-            endpoints: self.endpoints
-            ,
+            endpoints: self.endpoints,
             _request_id: self._request_id,
         }
     }
 }
-

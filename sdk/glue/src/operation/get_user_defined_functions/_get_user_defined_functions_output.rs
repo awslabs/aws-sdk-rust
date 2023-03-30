@@ -2,10 +2,11 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetUserDefinedFunctionsOutput  {
+pub struct GetUserDefinedFunctionsOutput {
     /// <p>A list of requested function definitions.</p>
     #[doc(hidden)]
-    pub user_defined_functions: std::option::Option<std::vec::Vec<crate::types::UserDefinedFunction>>,
+    pub user_defined_functions:
+        std::option::Option<std::vec::Vec<crate::types::UserDefinedFunction>>,
     /// <p>A continuation token, if the list of functions returned does not include the last requested function.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
@@ -13,22 +14,26 @@ pub struct GetUserDefinedFunctionsOutput  {
 }
 impl GetUserDefinedFunctionsOutput {
     /// <p>A list of requested function definitions.</p>
-    pub fn user_defined_functions(&self) -> std::option::Option<& [crate::types::UserDefinedFunction]> {
+    pub fn user_defined_functions(
+        &self,
+    ) -> std::option::Option<&[crate::types::UserDefinedFunction]> {
         self.user_defined_functions.as_deref()
     }
     /// <p>A continuation token, if the list of functions returned does not include the last requested function.</p>
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for GetUserDefinedFunctionsOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl GetUserDefinedFunctionsOutput {
     /// Creates a new builder-style object to manufacture [`GetUserDefinedFunctionsOutput`](crate::operation::get_user_defined_functions::GetUserDefinedFunctionsOutput).
-    pub fn builder() -> crate::operation::get_user_defined_functions::builders::GetUserDefinedFunctionsOutputBuilder {
+    pub fn builder(
+    ) -> crate::operation::get_user_defined_functions::builders::GetUserDefinedFunctionsOutputBuilder
+    {
         crate::operation::get_user_defined_functions::builders::GetUserDefinedFunctionsOutputBuilder::default()
     }
 }
@@ -37,7 +42,8 @@ impl GetUserDefinedFunctionsOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct GetUserDefinedFunctionsOutputBuilder {
-    pub(crate) user_defined_functions: std::option::Option<std::vec::Vec<crate::types::UserDefinedFunction>>,
+    pub(crate) user_defined_functions:
+        std::option::Option<std::vec::Vec<crate::types::UserDefinedFunction>>,
     pub(crate) next_token: std::option::Option<std::string::String>,
     _request_id: Option<String>,
 }
@@ -49,13 +55,17 @@ impl GetUserDefinedFunctionsOutputBuilder {
     /// <p>A list of requested function definitions.</p>
     pub fn user_defined_functions(mut self, input: crate::types::UserDefinedFunction) -> Self {
         let mut v = self.user_defined_functions.unwrap_or_default();
-                        v.push(input);
-                        self.user_defined_functions = Some(v);
-                        self
+        v.push(input);
+        self.user_defined_functions = Some(v);
+        self
     }
     /// <p>A list of requested function definitions.</p>
-    pub fn set_user_defined_functions(mut self, input: std::option::Option<std::vec::Vec<crate::types::UserDefinedFunction>>) -> Self {
-        self.user_defined_functions = input; self
+    pub fn set_user_defined_functions(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::UserDefinedFunction>>,
+    ) -> Self {
+        self.user_defined_functions = input;
+        self
     }
     /// <p>A continuation token, if the list of functions returned does not include the last requested function.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -64,26 +74,26 @@ impl GetUserDefinedFunctionsOutputBuilder {
     }
     /// <p>A continuation token, if the list of functions returned does not include the last requested function.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input; self
+        self.next_token = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`GetUserDefinedFunctionsOutput`](crate::operation::get_user_defined_functions::GetUserDefinedFunctionsOutput).
-    pub fn build(self) -> crate::operation::get_user_defined_functions::GetUserDefinedFunctionsOutput {
+    pub fn build(
+        self,
+    ) -> crate::operation::get_user_defined_functions::GetUserDefinedFunctionsOutput {
         crate::operation::get_user_defined_functions::GetUserDefinedFunctionsOutput {
-            user_defined_functions: self.user_defined_functions
-            ,
-            next_token: self.next_token
-            ,
+            user_defined_functions: self.user_defined_functions,
+            next_token: self.next_token,
             _request_id: self._request_id,
         }
     }
 }
-

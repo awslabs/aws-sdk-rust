@@ -3,7 +3,7 @@
 /// <p>An HTTP 200 response if the request succeeds, or an error message if the request fails.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetImportJobOutput  {
+pub struct GetImportJobOutput {
     /// <p>A string that represents the import job ID.</p>
     #[doc(hidden)]
     pub job_id: std::option::Option<std::string::String>,
@@ -35,31 +35,31 @@ pub struct GetImportJobOutput  {
 }
 impl GetImportJobOutput {
     /// <p>A string that represents the import job ID.</p>
-    pub fn job_id(&self) -> std::option::Option<& str> {
+    pub fn job_id(&self) -> std::option::Option<&str> {
         self.job_id.as_deref()
     }
     /// <p>The destination of the import job.</p>
-    pub fn import_destination(&self) -> std::option::Option<& crate::types::ImportDestination> {
+    pub fn import_destination(&self) -> std::option::Option<&crate::types::ImportDestination> {
         self.import_destination.as_ref()
     }
     /// <p>The data source of the import job.</p>
-    pub fn import_data_source(&self) -> std::option::Option<& crate::types::ImportDataSource> {
+    pub fn import_data_source(&self) -> std::option::Option<&crate::types::ImportDataSource> {
         self.import_data_source.as_ref()
     }
     /// <p>The failure details about an import job.</p>
-    pub fn failure_info(&self) -> std::option::Option<& crate::types::FailureInfo> {
+    pub fn failure_info(&self) -> std::option::Option<&crate::types::FailureInfo> {
         self.failure_info.as_ref()
     }
     /// <p>The status of the import job.</p>
-    pub fn job_status(&self) -> std::option::Option<& crate::types::JobStatus> {
+    pub fn job_status(&self) -> std::option::Option<&crate::types::JobStatus> {
         self.job_status.as_ref()
     }
     /// <p>The time stamp of when the import job was created.</p>
-    pub fn created_timestamp(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
+    pub fn created_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created_timestamp.as_ref()
     }
     /// <p>The time stamp of when the import job was completed.</p>
-    pub fn completed_timestamp(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
+    pub fn completed_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.completed_timestamp.as_ref()
     }
     /// <p>The current number of records processed.</p>
@@ -72,10 +72,10 @@ impl GetImportJobOutput {
     }
 }
 impl aws_http::request_id::RequestId for GetImportJobOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl GetImportJobOutput {
     /// Creates a new builder-style object to manufacture [`GetImportJobOutput`](crate::operation::get_import_job::GetImportJobOutput).
     pub fn builder() -> crate::operation::get_import_job::builders::GetImportJobOutputBuilder {
@@ -106,7 +106,8 @@ impl GetImportJobOutputBuilder {
     }
     /// <p>A string that represents the import job ID.</p>
     pub fn set_job_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.job_id = input; self
+        self.job_id = input;
+        self
     }
     /// <p>The destination of the import job.</p>
     pub fn import_destination(mut self, input: crate::types::ImportDestination) -> Self {
@@ -114,8 +115,12 @@ impl GetImportJobOutputBuilder {
         self
     }
     /// <p>The destination of the import job.</p>
-    pub fn set_import_destination(mut self, input: std::option::Option<crate::types::ImportDestination>) -> Self {
-        self.import_destination = input; self
+    pub fn set_import_destination(
+        mut self,
+        input: std::option::Option<crate::types::ImportDestination>,
+    ) -> Self {
+        self.import_destination = input;
+        self
     }
     /// <p>The data source of the import job.</p>
     pub fn import_data_source(mut self, input: crate::types::ImportDataSource) -> Self {
@@ -123,8 +128,12 @@ impl GetImportJobOutputBuilder {
         self
     }
     /// <p>The data source of the import job.</p>
-    pub fn set_import_data_source(mut self, input: std::option::Option<crate::types::ImportDataSource>) -> Self {
-        self.import_data_source = input; self
+    pub fn set_import_data_source(
+        mut self,
+        input: std::option::Option<crate::types::ImportDataSource>,
+    ) -> Self {
+        self.import_data_source = input;
+        self
     }
     /// <p>The failure details about an import job.</p>
     pub fn failure_info(mut self, input: crate::types::FailureInfo) -> Self {
@@ -132,8 +141,12 @@ impl GetImportJobOutputBuilder {
         self
     }
     /// <p>The failure details about an import job.</p>
-    pub fn set_failure_info(mut self, input: std::option::Option<crate::types::FailureInfo>) -> Self {
-        self.failure_info = input; self
+    pub fn set_failure_info(
+        mut self,
+        input: std::option::Option<crate::types::FailureInfo>,
+    ) -> Self {
+        self.failure_info = input;
+        self
     }
     /// <p>The status of the import job.</p>
     pub fn job_status(mut self, input: crate::types::JobStatus) -> Self {
@@ -142,7 +155,8 @@ impl GetImportJobOutputBuilder {
     }
     /// <p>The status of the import job.</p>
     pub fn set_job_status(mut self, input: std::option::Option<crate::types::JobStatus>) -> Self {
-        self.job_status = input; self
+        self.job_status = input;
+        self
     }
     /// <p>The time stamp of when the import job was created.</p>
     pub fn created_timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -150,8 +164,12 @@ impl GetImportJobOutputBuilder {
         self
     }
     /// <p>The time stamp of when the import job was created.</p>
-    pub fn set_created_timestamp(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.created_timestamp = input; self
+    pub fn set_created_timestamp(
+        mut self,
+        input: std::option::Option<aws_smithy_types::DateTime>,
+    ) -> Self {
+        self.created_timestamp = input;
+        self
     }
     /// <p>The time stamp of when the import job was completed.</p>
     pub fn completed_timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -159,8 +177,12 @@ impl GetImportJobOutputBuilder {
         self
     }
     /// <p>The time stamp of when the import job was completed.</p>
-    pub fn set_completed_timestamp(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.completed_timestamp = input; self
+    pub fn set_completed_timestamp(
+        mut self,
+        input: std::option::Option<aws_smithy_types::DateTime>,
+    ) -> Self {
+        self.completed_timestamp = input;
+        self
     }
     /// <p>The current number of records processed.</p>
     pub fn processed_records_count(mut self, input: i32) -> Self {
@@ -169,7 +191,8 @@ impl GetImportJobOutputBuilder {
     }
     /// <p>The current number of records processed.</p>
     pub fn set_processed_records_count(mut self, input: std::option::Option<i32>) -> Self {
-        self.processed_records_count = input; self
+        self.processed_records_count = input;
+        self
     }
     /// <p>The number of records that failed processing because of invalid input or other reasons.</p>
     pub fn failed_records_count(mut self, input: i32) -> Self {
@@ -178,40 +201,31 @@ impl GetImportJobOutputBuilder {
     }
     /// <p>The number of records that failed processing because of invalid input or other reasons.</p>
     pub fn set_failed_records_count(mut self, input: std::option::Option<i32>) -> Self {
-        self.failed_records_count = input; self
+        self.failed_records_count = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`GetImportJobOutput`](crate::operation::get_import_job::GetImportJobOutput).
     pub fn build(self) -> crate::operation::get_import_job::GetImportJobOutput {
         crate::operation::get_import_job::GetImportJobOutput {
-            job_id: self.job_id
-            ,
-            import_destination: self.import_destination
-            ,
-            import_data_source: self.import_data_source
-            ,
-            failure_info: self.failure_info
-            ,
-            job_status: self.job_status
-            ,
-            created_timestamp: self.created_timestamp
-            ,
-            completed_timestamp: self.completed_timestamp
-            ,
-            processed_records_count: self.processed_records_count
-            ,
-            failed_records_count: self.failed_records_count
-            ,
+            job_id: self.job_id,
+            import_destination: self.import_destination,
+            import_data_source: self.import_data_source,
+            failure_info: self.failure_info,
+            job_status: self.job_status,
+            created_timestamp: self.created_timestamp,
+            completed_timestamp: self.completed_timestamp,
+            processed_records_count: self.processed_records_count,
+            failed_records_count: self.failed_records_count,
             _request_id: self._request_id,
         }
     }
 }
-

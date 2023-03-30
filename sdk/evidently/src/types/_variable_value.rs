@@ -26,7 +26,11 @@ impl VariableValue {
     /// Tries to convert the enum instance into [`BoolValue`](crate::types::VariableValue::BoolValue), extracting the inner [`bool`](bool).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_bool_value(&self) -> std::result::Result<&bool, &Self> {
-        if let VariableValue::BoolValue(val) = &self { Ok(val) } else { Err(self) }
+        if let VariableValue::BoolValue(val) = &self {
+            Ok(val)
+        } else {
+            Err(self)
+        }
     }
     /// Returns true if this is a [`BoolValue`](crate::types::VariableValue::BoolValue).
     pub fn is_bool_value(&self) -> bool {
@@ -35,7 +39,11 @@ impl VariableValue {
     /// Tries to convert the enum instance into [`DoubleValue`](crate::types::VariableValue::DoubleValue), extracting the inner [`f64`](f64).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_double_value(&self) -> std::result::Result<&f64, &Self> {
-        if let VariableValue::DoubleValue(val) = &self { Ok(val) } else { Err(self) }
+        if let VariableValue::DoubleValue(val) = &self {
+            Ok(val)
+        } else {
+            Err(self)
+        }
     }
     /// Returns true if this is a [`DoubleValue`](crate::types::VariableValue::DoubleValue).
     pub fn is_double_value(&self) -> bool {
@@ -44,7 +52,11 @@ impl VariableValue {
     /// Tries to convert the enum instance into [`LongValue`](crate::types::VariableValue::LongValue), extracting the inner [`i64`](i64).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_long_value(&self) -> std::result::Result<&i64, &Self> {
-        if let VariableValue::LongValue(val) = &self { Ok(val) } else { Err(self) }
+        if let VariableValue::LongValue(val) = &self {
+            Ok(val)
+        } else {
+            Err(self)
+        }
     }
     /// Returns true if this is a [`LongValue`](crate::types::VariableValue::LongValue).
     pub fn is_long_value(&self) -> bool {
@@ -53,7 +65,11 @@ impl VariableValue {
     /// Tries to convert the enum instance into [`StringValue`](crate::types::VariableValue::StringValue), extracting the inner [`String`](std::string::String).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_string_value(&self) -> std::result::Result<&std::string::String, &Self> {
-        if let VariableValue::StringValue(val) = &self { Ok(val) } else { Err(self) }
+        if let VariableValue::StringValue(val) = &self {
+            Ok(val)
+        } else {
+            Err(self)
+        }
     }
     /// Returns true if this is a [`StringValue`](crate::types::VariableValue::StringValue).
     pub fn is_string_value(&self) -> bool {
@@ -64,4 +80,3 @@ impl VariableValue {
         matches!(self, Self::Unknown)
     }
 }
-

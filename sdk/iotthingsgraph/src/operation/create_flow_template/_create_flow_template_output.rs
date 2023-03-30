@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateFlowTemplateOutput  {
+pub struct CreateFlowTemplateOutput {
     /// <p>The summary object that describes the created workflow.</p>
     #[doc(hidden)]
     pub summary: std::option::Option<crate::types::FlowTemplateSummary>,
@@ -10,18 +10,19 @@ pub struct CreateFlowTemplateOutput  {
 }
 impl CreateFlowTemplateOutput {
     /// <p>The summary object that describes the created workflow.</p>
-    pub fn summary(&self) -> std::option::Option<& crate::types::FlowTemplateSummary> {
+    pub fn summary(&self) -> std::option::Option<&crate::types::FlowTemplateSummary> {
         self.summary.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for CreateFlowTemplateOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl CreateFlowTemplateOutput {
     /// Creates a new builder-style object to manufacture [`CreateFlowTemplateOutput`](crate::operation::create_flow_template::CreateFlowTemplateOutput).
-    pub fn builder() -> crate::operation::create_flow_template::builders::CreateFlowTemplateOutputBuilder {
+    pub fn builder(
+    ) -> crate::operation::create_flow_template::builders::CreateFlowTemplateOutputBuilder {
         crate::operation::create_flow_template::builders::CreateFlowTemplateOutputBuilder::default()
     }
 }
@@ -40,25 +41,27 @@ impl CreateFlowTemplateOutputBuilder {
         self
     }
     /// <p>The summary object that describes the created workflow.</p>
-    pub fn set_summary(mut self, input: std::option::Option<crate::types::FlowTemplateSummary>) -> Self {
-        self.summary = input; self
+    pub fn set_summary(
+        mut self,
+        input: std::option::Option<crate::types::FlowTemplateSummary>,
+    ) -> Self {
+        self.summary = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`CreateFlowTemplateOutput`](crate::operation::create_flow_template::CreateFlowTemplateOutput).
     pub fn build(self) -> crate::operation::create_flow_template::CreateFlowTemplateOutput {
         crate::operation::create_flow_template::CreateFlowTemplateOutput {
-            summary: self.summary
-            ,
+            summary: self.summary,
             _request_id: self._request_id,
         }
     }
 }
-

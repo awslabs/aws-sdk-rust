@@ -20,4 +20,3 @@ pub use crate::types::_platform_application::PlatformApplicationBuilder;
 pub use crate::types::_phone_number_information::PhoneNumberInformationBuilder;
 
 pub use crate::types::_endpoint::EndpointBuilder;
-

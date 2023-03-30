@@ -102,4 +102,3 @@ pub mod update_tags_for_domain;
 
 /// Types for the `ViewBilling` operation.
 pub mod view_billing;
-

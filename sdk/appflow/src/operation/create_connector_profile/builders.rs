@@ -4,56 +4,81 @@ pub use crate::operation::create_connector_profile::_create_connector_profile_ou
 pub use crate::operation::create_connector_profile::_create_connector_profile_input::CreateConnectorProfileInputBuilder;
 
 /// Fluent builder constructing a request to `CreateConnectorProfile`.
-/// 
+///
 /// <p> Creates a new connector profile associated with your Amazon Web Services account. There is a soft quota of 100 connector profiles per Amazon Web Services account. If you need more connector profiles than this quota allows, you can submit a request to the Amazon AppFlow team through the Amazon AppFlow support channel. In each connector profile that you create, you can provide the credentials and properties for only one connector.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct CreateConnectorProfileFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::create_connector_profile::builders::CreateConnectorProfileInputBuilder
-            }
-impl CreateConnectorProfileFluentBuilder  {
+    handle: std::sync::Arc<crate::client::Handle>,
+    inner: crate::operation::create_connector_profile::builders::CreateConnectorProfileInputBuilder,
+}
+impl CreateConnectorProfileFluentBuilder {
     /// Creates a new `CreateConnectorProfile`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
-                    /// sent. The operation's inner [http::Request] can be modified as well.
-                    pub async fn customize(self) -> std::result::Result<
-                        crate::client::customize::CustomizableOperation<crate::operation::create_connector_profile::CreateConnectorProfile, aws_http::retry::AwsResponseRetryClassifier,>,
-                        aws_smithy_http::result::SdkError<crate::operation::create_connector_profile::CreateConnectorProfileError>
-                    >  {
-                        let handle = self.handle.clone();
-                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-                    }
-    
-                    /// Sends the request and returns the response.
-                    ///
-                    /// If an error occurs, an `SdkError` will be returned with additional details that
-                    /// can be matched against.
-                    ///
-                    /// By default, any retryable failures will be retried twice. Retry behavior
-                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                    /// set when configuring the client.
-                    pub async fn send(self) -> std::result::Result<crate::operation::create_connector_profile::CreateConnectorProfileOutput, aws_smithy_http::result::SdkError<crate::operation::create_connector_profile::CreateConnectorProfileError>>
-                     {
-                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&self.handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        self.handle.client.call(op).await
-                    }
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle,
+            inner: Default::default(),
+        }
+    }
+
+    /// Consume this builder, creating a customizable operation that can be modified before being
+    /// sent. The operation's inner [http::Request] can be modified as well.
+    pub async fn customize(
+        self,
+    ) -> std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::create_connector_profile::CreateConnectorProfile,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::result::SdkError<
+            crate::operation::create_connector_profile::CreateConnectorProfileError,
+        >,
+    > {
+        let handle = self.handle.clone();
+        let operation = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+    }
+
+    /// Sends the request and returns the response.
+    ///
+    /// If an error occurs, an `SdkError` will be returned with additional details that
+    /// can be matched against.
+    ///
+    /// By default, any retryable failures will be retried twice. Retry behavior
+    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+    /// set when configuring the client.
+    pub async fn send(
+        self,
+    ) -> std::result::Result<
+        crate::operation::create_connector_profile::CreateConnectorProfileOutput,
+        aws_smithy_http::result::SdkError<
+            crate::operation::create_connector_profile::CreateConnectorProfileError,
+        >,
+    > {
+        let op = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&self.handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        self.handle.client.call(op).await
+    }
     /// <p> The name of the connector profile. The name is unique for each <code>ConnectorProfile</code> in your Amazon Web Services account. </p>
     pub fn connector_profile_name(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.connector_profile_name(input.into());
         self
     }
     /// <p> The name of the connector profile. The name is unique for each <code>ConnectorProfile</code> in your Amazon Web Services account. </p>
-    pub fn set_connector_profile_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_connector_profile_name(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_connector_profile_name(input);
         self
     }
@@ -73,7 +98,10 @@ impl CreateConnectorProfileFluentBuilder  {
         self
     }
     /// <p> The type of connector, such as Salesforce, Amplitude, and so on. </p>
-    pub fn set_connector_type(mut self, input: std::option::Option<crate::types::ConnectorType>) -> Self {
+    pub fn set_connector_type(
+        mut self,
+        input: std::option::Option<crate::types::ConnectorType>,
+    ) -> Self {
         self.inner = self.inner.set_connector_type(input);
         self
     }
@@ -93,7 +121,10 @@ impl CreateConnectorProfileFluentBuilder  {
         self
     }
     /// <p> Indicates the connection mode and specifies whether it is public or private. Private flows use Amazon Web Services PrivateLink to route data over Amazon Web Services infrastructure without exposing it to the public internet. </p>
-    pub fn set_connection_mode(mut self, input: std::option::Option<crate::types::ConnectionMode>) -> Self {
+    pub fn set_connection_mode(
+        mut self,
+        input: std::option::Option<crate::types::ConnectionMode>,
+    ) -> Self {
         self.inner = self.inner.set_connection_mode(input);
         self
     }
@@ -103,9 +134,11 @@ impl CreateConnectorProfileFluentBuilder  {
         self
     }
     /// <p> Defines the connector-specific configuration and credentials. </p>
-    pub fn set_connector_profile_config(mut self, input: std::option::Option<crate::types::ConnectorProfileConfig>) -> Self {
+    pub fn set_connector_profile_config(
+        mut self,
+        input: std::option::Option<crate::types::ConnectorProfileConfig>,
+    ) -> Self {
         self.inner = self.inner.set_connector_profile_config(input);
         self
     }
 }
-

@@ -3,45 +3,45 @@
 /// <p>Identifies a document for which to retrieve status information</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DocumentInfo  {
+pub struct DocumentInfo {
     /// <p>The identifier of the document.</p>
     #[doc(hidden)]
     pub document_id: std::option::Option<std::string::String>,
-    /// <p>Attributes that identify a specific version of a document to check.</p> 
-    /// <p>The only valid attributes are:</p> 
-    /// <ul> 
-    /// <li> <p>version</p> </li> 
-    /// <li> <p>datasourceId</p> </li> 
-    /// <li> <p>jobExecutionId</p> </li> 
-    /// </ul> 
-    /// <p>The attributes follow these rules:</p> 
-    /// <ul> 
-    /// <li> <p> <code>dataSourceId</code> and <code>jobExecutionId</code> must be used together.</p> </li> 
-    /// <li> <p> <code>version</code> is ignored if <code>dataSourceId</code> and <code>jobExecutionId</code> are not provided.</p> </li> 
-    /// <li> <p>If <code>dataSourceId</code> and <code>jobExecutionId</code> are provided, but <code>version</code> is not, the version defaults to "0".</p> </li> 
+    /// <p>Attributes that identify a specific version of a document to check.</p>
+    /// <p>The only valid attributes are:</p>
+    /// <ul>
+    /// <li> <p>version</p> </li>
+    /// <li> <p>datasourceId</p> </li>
+    /// <li> <p>jobExecutionId</p> </li>
+    /// </ul>
+    /// <p>The attributes follow these rules:</p>
+    /// <ul>
+    /// <li> <p> <code>dataSourceId</code> and <code>jobExecutionId</code> must be used together.</p> </li>
+    /// <li> <p> <code>version</code> is ignored if <code>dataSourceId</code> and <code>jobExecutionId</code> are not provided.</p> </li>
+    /// <li> <p>If <code>dataSourceId</code> and <code>jobExecutionId</code> are provided, but <code>version</code> is not, the version defaults to "0".</p> </li>
     /// </ul>
     #[doc(hidden)]
     pub attributes: std::option::Option<std::vec::Vec<crate::types::DocumentAttribute>>,
 }
 impl DocumentInfo {
     /// <p>The identifier of the document.</p>
-    pub fn document_id(&self) -> std::option::Option<& str> {
+    pub fn document_id(&self) -> std::option::Option<&str> {
         self.document_id.as_deref()
     }
-    /// <p>Attributes that identify a specific version of a document to check.</p> 
-    /// <p>The only valid attributes are:</p> 
-    /// <ul> 
-    /// <li> <p>version</p> </li> 
-    /// <li> <p>datasourceId</p> </li> 
-    /// <li> <p>jobExecutionId</p> </li> 
-    /// </ul> 
-    /// <p>The attributes follow these rules:</p> 
-    /// <ul> 
-    /// <li> <p> <code>dataSourceId</code> and <code>jobExecutionId</code> must be used together.</p> </li> 
-    /// <li> <p> <code>version</code> is ignored if <code>dataSourceId</code> and <code>jobExecutionId</code> are not provided.</p> </li> 
-    /// <li> <p>If <code>dataSourceId</code> and <code>jobExecutionId</code> are provided, but <code>version</code> is not, the version defaults to "0".</p> </li> 
+    /// <p>Attributes that identify a specific version of a document to check.</p>
+    /// <p>The only valid attributes are:</p>
+    /// <ul>
+    /// <li> <p>version</p> </li>
+    /// <li> <p>datasourceId</p> </li>
+    /// <li> <p>jobExecutionId</p> </li>
     /// </ul>
-    pub fn attributes(&self) -> std::option::Option<& [crate::types::DocumentAttribute]> {
+    /// <p>The attributes follow these rules:</p>
+    /// <ul>
+    /// <li> <p> <code>dataSourceId</code> and <code>jobExecutionId</code> must be used together.</p> </li>
+    /// <li> <p> <code>version</code> is ignored if <code>dataSourceId</code> and <code>jobExecutionId</code> are not provided.</p> </li>
+    /// <li> <p>If <code>dataSourceId</code> and <code>jobExecutionId</code> are provided, but <code>version</code> is not, the version defaults to "0".</p> </li>
+    /// </ul>
+    pub fn attributes(&self) -> std::option::Option<&[crate::types::DocumentAttribute]> {
         self.attributes.as_deref()
     }
 }
@@ -67,55 +67,57 @@ impl DocumentInfoBuilder {
     }
     /// <p>The identifier of the document.</p>
     pub fn set_document_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.document_id = input; self
+        self.document_id = input;
+        self
     }
     /// Appends an item to `attributes`.
     ///
     /// To override the contents of this collection use [`set_attributes`](Self::set_attributes).
     ///
-    /// <p>Attributes that identify a specific version of a document to check.</p> 
-    /// <p>The only valid attributes are:</p> 
-    /// <ul> 
-    /// <li> <p>version</p> </li> 
-    /// <li> <p>datasourceId</p> </li> 
-    /// <li> <p>jobExecutionId</p> </li> 
-    /// </ul> 
-    /// <p>The attributes follow these rules:</p> 
-    /// <ul> 
-    /// <li> <p> <code>dataSourceId</code> and <code>jobExecutionId</code> must be used together.</p> </li> 
-    /// <li> <p> <code>version</code> is ignored if <code>dataSourceId</code> and <code>jobExecutionId</code> are not provided.</p> </li> 
-    /// <li> <p>If <code>dataSourceId</code> and <code>jobExecutionId</code> are provided, but <code>version</code> is not, the version defaults to "0".</p> </li> 
+    /// <p>Attributes that identify a specific version of a document to check.</p>
+    /// <p>The only valid attributes are:</p>
+    /// <ul>
+    /// <li> <p>version</p> </li>
+    /// <li> <p>datasourceId</p> </li>
+    /// <li> <p>jobExecutionId</p> </li>
+    /// </ul>
+    /// <p>The attributes follow these rules:</p>
+    /// <ul>
+    /// <li> <p> <code>dataSourceId</code> and <code>jobExecutionId</code> must be used together.</p> </li>
+    /// <li> <p> <code>version</code> is ignored if <code>dataSourceId</code> and <code>jobExecutionId</code> are not provided.</p> </li>
+    /// <li> <p>If <code>dataSourceId</code> and <code>jobExecutionId</code> are provided, but <code>version</code> is not, the version defaults to "0".</p> </li>
     /// </ul>
     pub fn attributes(mut self, input: crate::types::DocumentAttribute) -> Self {
         let mut v = self.attributes.unwrap_or_default();
-                        v.push(input);
-                        self.attributes = Some(v);
-                        self
+        v.push(input);
+        self.attributes = Some(v);
+        self
     }
-    /// <p>Attributes that identify a specific version of a document to check.</p> 
-    /// <p>The only valid attributes are:</p> 
-    /// <ul> 
-    /// <li> <p>version</p> </li> 
-    /// <li> <p>datasourceId</p> </li> 
-    /// <li> <p>jobExecutionId</p> </li> 
-    /// </ul> 
-    /// <p>The attributes follow these rules:</p> 
-    /// <ul> 
-    /// <li> <p> <code>dataSourceId</code> and <code>jobExecutionId</code> must be used together.</p> </li> 
-    /// <li> <p> <code>version</code> is ignored if <code>dataSourceId</code> and <code>jobExecutionId</code> are not provided.</p> </li> 
-    /// <li> <p>If <code>dataSourceId</code> and <code>jobExecutionId</code> are provided, but <code>version</code> is not, the version defaults to "0".</p> </li> 
+    /// <p>Attributes that identify a specific version of a document to check.</p>
+    /// <p>The only valid attributes are:</p>
+    /// <ul>
+    /// <li> <p>version</p> </li>
+    /// <li> <p>datasourceId</p> </li>
+    /// <li> <p>jobExecutionId</p> </li>
     /// </ul>
-    pub fn set_attributes(mut self, input: std::option::Option<std::vec::Vec<crate::types::DocumentAttribute>>) -> Self {
-        self.attributes = input; self
+    /// <p>The attributes follow these rules:</p>
+    /// <ul>
+    /// <li> <p> <code>dataSourceId</code> and <code>jobExecutionId</code> must be used together.</p> </li>
+    /// <li> <p> <code>version</code> is ignored if <code>dataSourceId</code> and <code>jobExecutionId</code> are not provided.</p> </li>
+    /// <li> <p>If <code>dataSourceId</code> and <code>jobExecutionId</code> are provided, but <code>version</code> is not, the version defaults to "0".</p> </li>
+    /// </ul>
+    pub fn set_attributes(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::DocumentAttribute>>,
+    ) -> Self {
+        self.attributes = input;
+        self
     }
     /// Consumes the builder and constructs a [`DocumentInfo`](crate::types::DocumentInfo).
     pub fn build(self) -> crate::types::DocumentInfo {
         crate::types::DocumentInfo {
-            document_id: self.document_id
-            ,
-            attributes: self.attributes
-            ,
+            document_id: self.document_id,
+            attributes: self.attributes,
         }
     }
 }
-

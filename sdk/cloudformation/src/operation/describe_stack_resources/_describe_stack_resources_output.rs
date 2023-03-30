@@ -3,7 +3,7 @@
 /// <p>The output for a <code>DescribeStackResources</code> action.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeStackResourcesOutput  {
+pub struct DescribeStackResourcesOutput {
     /// <p>A list of <code>StackResource</code> structures.</p>
     #[doc(hidden)]
     pub stack_resources: std::option::Option<std::vec::Vec<crate::types::StackResource>>,
@@ -11,18 +11,20 @@ pub struct DescribeStackResourcesOutput  {
 }
 impl DescribeStackResourcesOutput {
     /// <p>A list of <code>StackResource</code> structures.</p>
-    pub fn stack_resources(&self) -> std::option::Option<& [crate::types::StackResource]> {
+    pub fn stack_resources(&self) -> std::option::Option<&[crate::types::StackResource]> {
         self.stack_resources.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for DescribeStackResourcesOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl DescribeStackResourcesOutput {
     /// Creates a new builder-style object to manufacture [`DescribeStackResourcesOutput`](crate::operation::describe_stack_resources::DescribeStackResourcesOutput).
-    pub fn builder() -> crate::operation::describe_stack_resources::builders::DescribeStackResourcesOutputBuilder {
+    pub fn builder(
+    ) -> crate::operation::describe_stack_resources::builders::DescribeStackResourcesOutputBuilder
+    {
         crate::operation::describe_stack_resources::builders::DescribeStackResourcesOutputBuilder::default()
     }
 }
@@ -42,30 +44,32 @@ impl DescribeStackResourcesOutputBuilder {
     /// <p>A list of <code>StackResource</code> structures.</p>
     pub fn stack_resources(mut self, input: crate::types::StackResource) -> Self {
         let mut v = self.stack_resources.unwrap_or_default();
-                        v.push(input);
-                        self.stack_resources = Some(v);
-                        self
+        v.push(input);
+        self.stack_resources = Some(v);
+        self
     }
     /// <p>A list of <code>StackResource</code> structures.</p>
-    pub fn set_stack_resources(mut self, input: std::option::Option<std::vec::Vec<crate::types::StackResource>>) -> Self {
-        self.stack_resources = input; self
+    pub fn set_stack_resources(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::StackResource>>,
+    ) -> Self {
+        self.stack_resources = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`DescribeStackResourcesOutput`](crate::operation::describe_stack_resources::DescribeStackResourcesOutput).
     pub fn build(self) -> crate::operation::describe_stack_resources::DescribeStackResourcesOutput {
         crate::operation::describe_stack_resources::DescribeStackResourcesOutput {
-            stack_resources: self.stack_resources
-            ,
+            stack_resources: self.stack_resources,
             _request_id: self._request_id,
         }
     }
 }
-

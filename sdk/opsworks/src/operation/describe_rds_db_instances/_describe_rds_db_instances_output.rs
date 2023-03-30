@@ -3,7 +3,7 @@
 /// <p>Contains the response to a <code>DescribeRdsDbInstances</code> request.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeRdsDbInstancesOutput  {
+pub struct DescribeRdsDbInstancesOutput {
     /// <p>An a array of <code>RdsDbInstance</code> objects that describe the instances.</p>
     #[doc(hidden)]
     pub rds_db_instances: std::option::Option<std::vec::Vec<crate::types::RdsDbInstance>>,
@@ -11,18 +11,20 @@ pub struct DescribeRdsDbInstancesOutput  {
 }
 impl DescribeRdsDbInstancesOutput {
     /// <p>An a array of <code>RdsDbInstance</code> objects that describe the instances.</p>
-    pub fn rds_db_instances(&self) -> std::option::Option<& [crate::types::RdsDbInstance]> {
+    pub fn rds_db_instances(&self) -> std::option::Option<&[crate::types::RdsDbInstance]> {
         self.rds_db_instances.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for DescribeRdsDbInstancesOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl DescribeRdsDbInstancesOutput {
     /// Creates a new builder-style object to manufacture [`DescribeRdsDbInstancesOutput`](crate::operation::describe_rds_db_instances::DescribeRdsDbInstancesOutput).
-    pub fn builder() -> crate::operation::describe_rds_db_instances::builders::DescribeRdsDbInstancesOutputBuilder {
+    pub fn builder(
+    ) -> crate::operation::describe_rds_db_instances::builders::DescribeRdsDbInstancesOutputBuilder
+    {
         crate::operation::describe_rds_db_instances::builders::DescribeRdsDbInstancesOutputBuilder::default()
     }
 }
@@ -42,30 +44,34 @@ impl DescribeRdsDbInstancesOutputBuilder {
     /// <p>An a array of <code>RdsDbInstance</code> objects that describe the instances.</p>
     pub fn rds_db_instances(mut self, input: crate::types::RdsDbInstance) -> Self {
         let mut v = self.rds_db_instances.unwrap_or_default();
-                        v.push(input);
-                        self.rds_db_instances = Some(v);
-                        self
+        v.push(input);
+        self.rds_db_instances = Some(v);
+        self
     }
     /// <p>An a array of <code>RdsDbInstance</code> objects that describe the instances.</p>
-    pub fn set_rds_db_instances(mut self, input: std::option::Option<std::vec::Vec<crate::types::RdsDbInstance>>) -> Self {
-        self.rds_db_instances = input; self
+    pub fn set_rds_db_instances(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::RdsDbInstance>>,
+    ) -> Self {
+        self.rds_db_instances = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`DescribeRdsDbInstancesOutput`](crate::operation::describe_rds_db_instances::DescribeRdsDbInstancesOutput).
-    pub fn build(self) -> crate::operation::describe_rds_db_instances::DescribeRdsDbInstancesOutput {
+    pub fn build(
+        self,
+    ) -> crate::operation::describe_rds_db_instances::DescribeRdsDbInstancesOutput {
         crate::operation::describe_rds_db_instances::DescribeRdsDbInstancesOutput {
-            rds_db_instances: self.rds_db_instances
-            ,
+            rds_db_instances: self.rds_db_instances,
             _request_id: self._request_id,
         }
     }
 }
-

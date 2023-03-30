@@ -3,7 +3,7 @@
 /// <p>Protocol used in Amazon Security Lake that dictates how notifications are posted at the endpoint. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ProtocolAndNotificationEndpoint  {
+pub struct ProtocolAndNotificationEndpoint {
     /// <p>The protocol to which notification messages are posted. </p>
     #[doc(hidden)]
     pub protocol: std::option::Option<std::string::String>,
@@ -13,11 +13,11 @@ pub struct ProtocolAndNotificationEndpoint  {
 }
 impl ProtocolAndNotificationEndpoint {
     /// <p>The protocol to which notification messages are posted. </p>
-    pub fn protocol(&self) -> std::option::Option<& str> {
+    pub fn protocol(&self) -> std::option::Option<&str> {
         self.protocol.as_deref()
     }
     /// <p>The account that is subscribed to receive exception notifications. </p>
-    pub fn endpoint(&self) -> std::option::Option<& str> {
+    pub fn endpoint(&self) -> std::option::Option<&str> {
         self.endpoint.as_deref()
     }
 }
@@ -43,7 +43,8 @@ impl ProtocolAndNotificationEndpointBuilder {
     }
     /// <p>The protocol to which notification messages are posted. </p>
     pub fn set_protocol(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.protocol = input; self
+        self.protocol = input;
+        self
     }
     /// <p>The account that is subscribed to receive exception notifications. </p>
     pub fn endpoint(mut self, input: impl Into<std::string::String>) -> Self {
@@ -52,16 +53,14 @@ impl ProtocolAndNotificationEndpointBuilder {
     }
     /// <p>The account that is subscribed to receive exception notifications. </p>
     pub fn set_endpoint(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.endpoint = input; self
+        self.endpoint = input;
+        self
     }
     /// Consumes the builder and constructs a [`ProtocolAndNotificationEndpoint`](crate::types::ProtocolAndNotificationEndpoint).
     pub fn build(self) -> crate::types::ProtocolAndNotificationEndpoint {
         crate::types::ProtocolAndNotificationEndpoint {
-            protocol: self.protocol
-            ,
-            endpoint: self.endpoint
-            ,
+            protocol: self.protocol,
+            endpoint: self.endpoint,
         }
     }
 }
-

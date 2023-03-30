@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ModifyTargetGroupAttributesOutput  {
+pub struct ModifyTargetGroupAttributesOutput {
     /// <p>Information about the attributes.</p>
     #[doc(hidden)]
     pub attributes: std::option::Option<std::vec::Vec<crate::types::TargetGroupAttribute>>,
@@ -10,18 +10,18 @@ pub struct ModifyTargetGroupAttributesOutput  {
 }
 impl ModifyTargetGroupAttributesOutput {
     /// <p>Information about the attributes.</p>
-    pub fn attributes(&self) -> std::option::Option<& [crate::types::TargetGroupAttribute]> {
+    pub fn attributes(&self) -> std::option::Option<&[crate::types::TargetGroupAttribute]> {
         self.attributes.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for ModifyTargetGroupAttributesOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl ModifyTargetGroupAttributesOutput {
     /// Creates a new builder-style object to manufacture [`ModifyTargetGroupAttributesOutput`](crate::operation::modify_target_group_attributes::ModifyTargetGroupAttributesOutput).
-    pub fn builder() -> crate::operation::modify_target_group_attributes::builders::ModifyTargetGroupAttributesOutputBuilder {
+    pub fn builder() -> crate::operation::modify_target_group_attributes::builders::ModifyTargetGroupAttributesOutputBuilder{
         crate::operation::modify_target_group_attributes::builders::ModifyTargetGroupAttributesOutputBuilder::default()
     }
 }
@@ -41,30 +41,34 @@ impl ModifyTargetGroupAttributesOutputBuilder {
     /// <p>Information about the attributes.</p>
     pub fn attributes(mut self, input: crate::types::TargetGroupAttribute) -> Self {
         let mut v = self.attributes.unwrap_or_default();
-                        v.push(input);
-                        self.attributes = Some(v);
-                        self
+        v.push(input);
+        self.attributes = Some(v);
+        self
     }
     /// <p>Information about the attributes.</p>
-    pub fn set_attributes(mut self, input: std::option::Option<std::vec::Vec<crate::types::TargetGroupAttribute>>) -> Self {
-        self.attributes = input; self
+    pub fn set_attributes(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::TargetGroupAttribute>>,
+    ) -> Self {
+        self.attributes = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`ModifyTargetGroupAttributesOutput`](crate::operation::modify_target_group_attributes::ModifyTargetGroupAttributesOutput).
-    pub fn build(self) -> crate::operation::modify_target_group_attributes::ModifyTargetGroupAttributesOutput {
+    pub fn build(
+        self,
+    ) -> crate::operation::modify_target_group_attributes::ModifyTargetGroupAttributesOutput {
         crate::operation::modify_target_group_attributes::ModifyTargetGroupAttributesOutput {
-            attributes: self.attributes
-            ,
+            attributes: self.attributes,
             _request_id: self._request_id,
         }
     }
 }
-

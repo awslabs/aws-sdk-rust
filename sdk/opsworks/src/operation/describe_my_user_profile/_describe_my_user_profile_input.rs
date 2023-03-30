@@ -2,11 +2,12 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeMyUserProfileInput  {
-}
+pub struct DescribeMyUserProfileInput {}
 impl DescribeMyUserProfileInput {
     /// Creates a new builder-style object to manufacture [`DescribeMyUserProfileInput`](crate::operation::describe_my_user_profile::DescribeMyUserProfileInput).
-    pub fn builder() -> crate::operation::describe_my_user_profile::builders::DescribeMyUserProfileInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::describe_my_user_profile::builders::DescribeMyUserProfileInputBuilder
+    {
         crate::operation::describe_my_user_profile::builders::DescribeMyUserProfileInputBuilder::default()
     }
 }
@@ -14,15 +15,15 @@ impl DescribeMyUserProfileInput {
 /// A builder for [`DescribeMyUserProfileInput`](crate::operation::describe_my_user_profile::DescribeMyUserProfileInput).
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-pub struct DescribeMyUserProfileInputBuilder {
-}
+pub struct DescribeMyUserProfileInputBuilder {}
 impl DescribeMyUserProfileInputBuilder {
     /// Consumes the builder and constructs a [`DescribeMyUserProfileInput`](crate::operation::describe_my_user_profile::DescribeMyUserProfileInput).
-    pub fn build(self) -> Result<crate::operation::describe_my_user_profile::DescribeMyUserProfileInput, aws_smithy_http::operation::error::BuildError> {
-        Ok(
-            crate::operation::describe_my_user_profile::DescribeMyUserProfileInput {
-            }
-        )
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::describe_my_user_profile::DescribeMyUserProfileInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        Ok(crate::operation::describe_my_user_profile::DescribeMyUserProfileInput {})
     }
 }
-

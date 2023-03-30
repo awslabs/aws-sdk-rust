@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetRoomSkillParameterOutput  {
+pub struct GetRoomSkillParameterOutput {
     /// <p>The details of the room skill parameter requested. Required.</p>
     #[doc(hidden)]
     pub room_skill_parameter: std::option::Option<crate::types::RoomSkillParameter>,
@@ -10,18 +10,20 @@ pub struct GetRoomSkillParameterOutput  {
 }
 impl GetRoomSkillParameterOutput {
     /// <p>The details of the room skill parameter requested. Required.</p>
-    pub fn room_skill_parameter(&self) -> std::option::Option<& crate::types::RoomSkillParameter> {
+    pub fn room_skill_parameter(&self) -> std::option::Option<&crate::types::RoomSkillParameter> {
         self.room_skill_parameter.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for GetRoomSkillParameterOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl GetRoomSkillParameterOutput {
     /// Creates a new builder-style object to manufacture [`GetRoomSkillParameterOutput`](crate::operation::get_room_skill_parameter::GetRoomSkillParameterOutput).
-    pub fn builder() -> crate::operation::get_room_skill_parameter::builders::GetRoomSkillParameterOutputBuilder {
+    pub fn builder(
+    ) -> crate::operation::get_room_skill_parameter::builders::GetRoomSkillParameterOutputBuilder
+    {
         crate::operation::get_room_skill_parameter::builders::GetRoomSkillParameterOutputBuilder::default()
     }
 }
@@ -40,25 +42,27 @@ impl GetRoomSkillParameterOutputBuilder {
         self
     }
     /// <p>The details of the room skill parameter requested. Required.</p>
-    pub fn set_room_skill_parameter(mut self, input: std::option::Option<crate::types::RoomSkillParameter>) -> Self {
-        self.room_skill_parameter = input; self
+    pub fn set_room_skill_parameter(
+        mut self,
+        input: std::option::Option<crate::types::RoomSkillParameter>,
+    ) -> Self {
+        self.room_skill_parameter = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`GetRoomSkillParameterOutput`](crate::operation::get_room_skill_parameter::GetRoomSkillParameterOutput).
     pub fn build(self) -> crate::operation::get_room_skill_parameter::GetRoomSkillParameterOutput {
         crate::operation::get_room_skill_parameter::GetRoomSkillParameterOutput {
-            room_skill_parameter: self.room_skill_parameter
-            ,
+            room_skill_parameter: self.room_skill_parameter,
             _request_id: self._request_id,
         }
     }
 }
-

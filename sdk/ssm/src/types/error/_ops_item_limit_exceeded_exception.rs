@@ -3,7 +3,7 @@
 /// <p>The request caused OpsItems to exceed one or more quotas. For information about OpsItem quotas, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-learn-more.html#OpsCenter-learn-more-limits">What are the resource limits for OpsCenter?</a>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct OpsItemLimitExceededException  {
+pub struct OpsItemLimitExceededException {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub resource_types: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -20,7 +20,7 @@ pub struct OpsItemLimitExceededException  {
 }
 impl OpsItemLimitExceededException {
     #[allow(missing_docs)] // documentation missing in model
-    pub fn resource_types(&self) -> std::option::Option<& [std::string::String]> {
+    pub fn resource_types(&self) -> std::option::Option<&[std::string::String]> {
         self.resource_types.as_deref()
     }
     #[allow(missing_docs)] // documentation missing in model
@@ -28,19 +28,21 @@ impl OpsItemLimitExceededException {
         self.limit
     }
     #[allow(missing_docs)] // documentation missing in model
-    pub fn limit_type(&self) -> std::option::Option<& str> {
+    pub fn limit_type(&self) -> std::option::Option<&str> {
         self.limit_type.as_deref()
     }
 }
 impl OpsItemLimitExceededException {
     /// Returns the error message.
-                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
+    pub fn message(&self) -> std::option::Option<&str> {
+        self.message.as_deref()
+    }
 }
 impl std::fmt::Display for OpsItemLimitExceededException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "OpsItemLimitExceededException")?;
         if let Some(inner_1) = &self.message {
-             {
+            {
                 write!(f, ": {}", inner_1)?;
             }
         }
@@ -55,7 +57,9 @@ impl aws_http::request_id::RequestId for crate::types::error::OpsItemLimitExceed
     }
 }
 impl aws_smithy_types::error::metadata::ProvideErrorMetadata for OpsItemLimitExceededException {
-    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata { &self.meta }
+    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
+        &self.meta
+    }
 }
 impl OpsItemLimitExceededException {
     /// Creates a new builder-style object to manufacture [`OpsItemLimitExceededException`](crate::types::error::OpsItemLimitExceededException).
@@ -81,13 +85,17 @@ impl OpsItemLimitExceededExceptionBuilder {
     ///
     pub fn resource_types(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.resource_types.unwrap_or_default();
-                        v.push(input.into());
-                        self.resource_types = Some(v);
-                        self
+        v.push(input.into());
+        self.resource_types = Some(v);
+        self
     }
     #[allow(missing_docs)] // documentation missing in model
-    pub fn set_resource_types(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-        self.resource_types = input; self
+    pub fn set_resource_types(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
+        self.resource_types = input;
+        self
     }
     #[allow(missing_docs)] // documentation missing in model
     pub fn limit(mut self, input: i32) -> Self {
@@ -96,7 +104,8 @@ impl OpsItemLimitExceededExceptionBuilder {
     }
     #[allow(missing_docs)] // documentation missing in model
     pub fn set_limit(mut self, input: std::option::Option<i32>) -> Self {
-        self.limit = input; self
+        self.limit = input;
+        self
     }
     #[allow(missing_docs)] // documentation missing in model
     pub fn limit_type(mut self, input: impl Into<std::string::String>) -> Self {
@@ -105,7 +114,8 @@ impl OpsItemLimitExceededExceptionBuilder {
     }
     #[allow(missing_docs)] // documentation missing in model
     pub fn set_limit_type(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.limit_type = input; self
+        self.limit_type = input;
+        self
     }
     #[allow(missing_docs)] // documentation missing in model
     pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
@@ -114,33 +124,31 @@ impl OpsItemLimitExceededExceptionBuilder {
     }
     #[allow(missing_docs)] // documentation missing in model
     pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.message = input; self
+        self.message = input;
+        self
     }
     /// Sets error metadata
-                                            pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
-                                                self.meta = Some(meta);
-                                                self
-                                            }
-    
-                                            /// Sets error metadata
-                                            pub fn set_meta(&mut self, meta: std::option::Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
-                                                self.meta = meta;
-                                                self
-                                            }
+    pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
+        self.meta = Some(meta);
+        self
+    }
+
+    /// Sets error metadata
+    pub fn set_meta(
+        &mut self,
+        meta: std::option::Option<aws_smithy_types::error::ErrorMetadata>,
+    ) -> &mut Self {
+        self.meta = meta;
+        self
+    }
     /// Consumes the builder and constructs a [`OpsItemLimitExceededException`](crate::types::error::OpsItemLimitExceededException).
     pub fn build(self) -> crate::types::error::OpsItemLimitExceededException {
         crate::types::error::OpsItemLimitExceededException {
-            resource_types: self.resource_types
-            ,
-            limit: self.limit
-                .unwrap_or_default()
-            ,
-            limit_type: self.limit_type
-            ,
-            message: self.message
-            ,
+            resource_types: self.resource_types,
+            limit: self.limit.unwrap_or_default(),
+            limit_type: self.limit_type,
+            message: self.message,
             meta: self.meta.unwrap_or_default(),
         }
     }
 }
-

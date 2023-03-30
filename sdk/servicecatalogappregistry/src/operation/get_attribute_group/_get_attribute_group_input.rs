@@ -2,20 +2,21 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetAttributeGroupInput  {
+pub struct GetAttributeGroupInput {
     /// <p>The name or ID of the attribute group that holds the attributes to describe the application.</p>
     #[doc(hidden)]
     pub attribute_group: std::option::Option<std::string::String>,
 }
 impl GetAttributeGroupInput {
     /// <p>The name or ID of the attribute group that holds the attributes to describe the application.</p>
-    pub fn attribute_group(&self) -> std::option::Option<& str> {
+    pub fn attribute_group(&self) -> std::option::Option<&str> {
         self.attribute_group.as_deref()
     }
 }
 impl GetAttributeGroupInput {
     /// Creates a new builder-style object to manufacture [`GetAttributeGroupInput`](crate::operation::get_attribute_group::GetAttributeGroupInput).
-    pub fn builder() -> crate::operation::get_attribute_group::builders::GetAttributeGroupInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::get_attribute_group::builders::GetAttributeGroupInputBuilder {
         crate::operation::get_attribute_group::builders::GetAttributeGroupInputBuilder::default()
     }
 }
@@ -34,16 +35,20 @@ impl GetAttributeGroupInputBuilder {
     }
     /// <p>The name or ID of the attribute group that holds the attributes to describe the application.</p>
     pub fn set_attribute_group(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.attribute_group = input; self
+        self.attribute_group = input;
+        self
     }
     /// Consumes the builder and constructs a [`GetAttributeGroupInput`](crate::operation::get_attribute_group::GetAttributeGroupInput).
-    pub fn build(self) -> Result<crate::operation::get_attribute_group::GetAttributeGroupInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::get_attribute_group::GetAttributeGroupInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::get_attribute_group::GetAttributeGroupInput {
-                attribute_group: self.attribute_group
-                ,
-            }
+                attribute_group: self.attribute_group,
+            },
         )
     }
 }
-

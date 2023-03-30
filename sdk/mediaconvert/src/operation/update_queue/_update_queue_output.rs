@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateQueueOutput  {
+pub struct UpdateQueueOutput {
     /// You can use queues to manage the resources that are available to your AWS account for running multiple transcoding jobs at the same time. If you don't specify a queue, the service sends all jobs through the default queue. For more information, see https://docs.aws.amazon.com/mediaconvert/latest/ug/working-with-queues.html.
     #[doc(hidden)]
     pub queue: std::option::Option<crate::types::Queue>,
@@ -10,15 +10,15 @@ pub struct UpdateQueueOutput  {
 }
 impl UpdateQueueOutput {
     /// You can use queues to manage the resources that are available to your AWS account for running multiple transcoding jobs at the same time. If you don't specify a queue, the service sends all jobs through the default queue. For more information, see https://docs.aws.amazon.com/mediaconvert/latest/ug/working-with-queues.html.
-    pub fn queue(&self) -> std::option::Option<& crate::types::Queue> {
+    pub fn queue(&self) -> std::option::Option<&crate::types::Queue> {
         self.queue.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for UpdateQueueOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl UpdateQueueOutput {
     /// Creates a new builder-style object to manufacture [`UpdateQueueOutput`](crate::operation::update_queue::UpdateQueueOutput).
     pub fn builder() -> crate::operation::update_queue::builders::UpdateQueueOutputBuilder {
@@ -41,24 +41,23 @@ impl UpdateQueueOutputBuilder {
     }
     /// You can use queues to manage the resources that are available to your AWS account for running multiple transcoding jobs at the same time. If you don't specify a queue, the service sends all jobs through the default queue. For more information, see https://docs.aws.amazon.com/mediaconvert/latest/ug/working-with-queues.html.
     pub fn set_queue(mut self, input: std::option::Option<crate::types::Queue>) -> Self {
-        self.queue = input; self
+        self.queue = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`UpdateQueueOutput`](crate::operation::update_queue::UpdateQueueOutput).
     pub fn build(self) -> crate::operation::update_queue::UpdateQueueOutput {
         crate::operation::update_queue::UpdateQueueOutput {
-            queue: self.queue
-            ,
+            queue: self.queue,
             _request_id: self._request_id,
         }
     }
 }
-

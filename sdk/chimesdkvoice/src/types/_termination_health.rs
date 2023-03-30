@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct TerminationHealth  {
+pub struct TerminationHealth {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub timestamp: std::option::Option<aws_smithy_types::DateTime>,
@@ -12,11 +12,11 @@ pub struct TerminationHealth  {
 }
 impl TerminationHealth {
     #[allow(missing_docs)] // documentation missing in model
-    pub fn timestamp(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
+    pub fn timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.timestamp.as_ref()
     }
     #[allow(missing_docs)] // documentation missing in model
-    pub fn source(&self) -> std::option::Option<& str> {
+    pub fn source(&self) -> std::option::Option<&str> {
         self.source.as_deref()
     }
 }
@@ -42,7 +42,8 @@ impl TerminationHealthBuilder {
     }
     #[allow(missing_docs)] // documentation missing in model
     pub fn set_timestamp(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.timestamp = input; self
+        self.timestamp = input;
+        self
     }
     #[allow(missing_docs)] // documentation missing in model
     pub fn source(mut self, input: impl Into<std::string::String>) -> Self {
@@ -51,16 +52,14 @@ impl TerminationHealthBuilder {
     }
     #[allow(missing_docs)] // documentation missing in model
     pub fn set_source(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.source = input; self
+        self.source = input;
+        self
     }
     /// Consumes the builder and constructs a [`TerminationHealth`](crate::types::TerminationHealth).
     pub fn build(self) -> crate::types::TerminationHealth {
         crate::types::TerminationHealth {
-            timestamp: self.timestamp
-            ,
-            source: self.source
-            ,
+            timestamp: self.timestamp,
+            source: self.source,
         }
     }
 }
-

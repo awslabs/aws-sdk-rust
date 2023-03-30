@@ -216,7 +216,7 @@ mod tests {
         // ~ is only expanded as a single component (currently)
         let path = "~aws/config";
         assert_eq!(
-            expand_home(&path, false, &None).to_str().unwrap(),
+            expand_home(path, false, &None).to_str().unwrap(),
             "~aws/config"
         );
     }
@@ -336,7 +336,7 @@ mod tests {
     fn test_expand_home() {
         let path = "~/.aws/config";
         assert_eq!(
-            expand_home(&path, false, &Some("/user/foo".to_string()))
+            expand_home(path, false, &Some("/user/foo".to_string()))
                 .to_str()
                 .unwrap(),
             "/user/foo/.aws/config"
@@ -366,7 +366,7 @@ mod tests {
     fn test_expand_home_windows() {
         let path = "~/.aws/config";
         assert_eq!(
-            expand_home(&path, true, &Some("C:\\Users\\name".to_string()),)
+            expand_home(path, true, &Some("C:\\Users\\name".to_string()),)
                 .to_str()
                 .unwrap(),
             "C:\\Users\\name\\.aws\\config"

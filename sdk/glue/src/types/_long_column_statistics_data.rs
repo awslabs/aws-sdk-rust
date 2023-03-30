@@ -3,7 +3,7 @@
 /// <p>Defines column statistics supported for integer data columns.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct LongColumnStatisticsData  {
+pub struct LongColumnStatisticsData {
     /// <p>The lowest value in the column.</p>
     #[doc(hidden)]
     pub minimum_value: i64,
@@ -59,7 +59,8 @@ impl LongColumnStatisticsDataBuilder {
     }
     /// <p>The lowest value in the column.</p>
     pub fn set_minimum_value(mut self, input: std::option::Option<i64>) -> Self {
-        self.minimum_value = input; self
+        self.minimum_value = input;
+        self
     }
     /// <p>The highest value in the column.</p>
     pub fn maximum_value(mut self, input: i64) -> Self {
@@ -68,7 +69,8 @@ impl LongColumnStatisticsDataBuilder {
     }
     /// <p>The highest value in the column.</p>
     pub fn set_maximum_value(mut self, input: std::option::Option<i64>) -> Self {
-        self.maximum_value = input; self
+        self.maximum_value = input;
+        self
     }
     /// <p>The number of null values in the column.</p>
     pub fn number_of_nulls(mut self, input: i64) -> Self {
@@ -77,7 +79,8 @@ impl LongColumnStatisticsDataBuilder {
     }
     /// <p>The number of null values in the column.</p>
     pub fn set_number_of_nulls(mut self, input: std::option::Option<i64>) -> Self {
-        self.number_of_nulls = input; self
+        self.number_of_nulls = input;
+        self
     }
     /// <p>The number of distinct values in a column.</p>
     pub fn number_of_distinct_values(mut self, input: i64) -> Self {
@@ -86,24 +89,16 @@ impl LongColumnStatisticsDataBuilder {
     }
     /// <p>The number of distinct values in a column.</p>
     pub fn set_number_of_distinct_values(mut self, input: std::option::Option<i64>) -> Self {
-        self.number_of_distinct_values = input; self
+        self.number_of_distinct_values = input;
+        self
     }
     /// Consumes the builder and constructs a [`LongColumnStatisticsData`](crate::types::LongColumnStatisticsData).
     pub fn build(self) -> crate::types::LongColumnStatisticsData {
         crate::types::LongColumnStatisticsData {
-            minimum_value: self.minimum_value
-                .unwrap_or_default()
-            ,
-            maximum_value: self.maximum_value
-                .unwrap_or_default()
-            ,
-            number_of_nulls: self.number_of_nulls
-                .unwrap_or_default()
-            ,
-            number_of_distinct_values: self.number_of_distinct_values
-                .unwrap_or_default()
-            ,
+            minimum_value: self.minimum_value.unwrap_or_default(),
+            maximum_value: self.maximum_value.unwrap_or_default(),
+            number_of_nulls: self.number_of_nulls.unwrap_or_default(),
+            number_of_distinct_values: self.number_of_distinct_values.unwrap_or_default(),
         }
     }
 }
-

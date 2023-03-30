@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct UpdateDocumentInput  {
+pub struct UpdateDocumentInput {
     /// <p>Amazon WorkDocs authentication token. Not required when using AWS administrator credentials to access the API.</p>
     #[doc(hidden)]
     pub authentication_token: std::option::Option<std::string::String>,
@@ -21,27 +21,27 @@ pub struct UpdateDocumentInput  {
 }
 impl UpdateDocumentInput {
     /// <p>Amazon WorkDocs authentication token. Not required when using AWS administrator credentials to access the API.</p>
-    pub fn authentication_token(&self) -> std::option::Option<& str> {
+    pub fn authentication_token(&self) -> std::option::Option<&str> {
         self.authentication_token.as_deref()
     }
     /// <p>The ID of the document.</p>
-    pub fn document_id(&self) -> std::option::Option<& str> {
+    pub fn document_id(&self) -> std::option::Option<&str> {
         self.document_id.as_deref()
     }
     /// <p>The name of the document.</p>
-    pub fn name(&self) -> std::option::Option<& str> {
+    pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>The ID of the parent folder.</p>
-    pub fn parent_folder_id(&self) -> std::option::Option<& str> {
+    pub fn parent_folder_id(&self) -> std::option::Option<&str> {
         self.parent_folder_id.as_deref()
     }
     /// <p>The resource state of the document. Only ACTIVE and RECYCLED are supported.</p>
-    pub fn resource_state(&self) -> std::option::Option<& crate::types::ResourceStateType> {
+    pub fn resource_state(&self) -> std::option::Option<&crate::types::ResourceStateType> {
         self.resource_state.as_ref()
     }
 }
-impl  std::fmt::Debug for UpdateDocumentInput  {
+impl std::fmt::Debug for UpdateDocumentInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateDocumentInput");
         formatter.field("authentication_token", &"*** Sensitive Data Redacted ***");
@@ -76,8 +76,12 @@ impl UpdateDocumentInputBuilder {
         self
     }
     /// <p>Amazon WorkDocs authentication token. Not required when using AWS administrator credentials to access the API.</p>
-    pub fn set_authentication_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.authentication_token = input; self
+    pub fn set_authentication_token(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.authentication_token = input;
+        self
     }
     /// <p>The ID of the document.</p>
     pub fn document_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -86,7 +90,8 @@ impl UpdateDocumentInputBuilder {
     }
     /// <p>The ID of the document.</p>
     pub fn set_document_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.document_id = input; self
+        self.document_id = input;
+        self
     }
     /// <p>The name of the document.</p>
     pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -95,7 +100,8 @@ impl UpdateDocumentInputBuilder {
     }
     /// <p>The name of the document.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input; self
+        self.name = input;
+        self
     }
     /// <p>The ID of the parent folder.</p>
     pub fn parent_folder_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -104,7 +110,8 @@ impl UpdateDocumentInputBuilder {
     }
     /// <p>The ID of the parent folder.</p>
     pub fn set_parent_folder_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.parent_folder_id = input; self
+        self.parent_folder_id = input;
+        self
     }
     /// <p>The resource state of the document. Only ACTIVE and RECYCLED are supported.</p>
     pub fn resource_state(mut self, input: crate::types::ResourceStateType) -> Self {
@@ -112,25 +119,27 @@ impl UpdateDocumentInputBuilder {
         self
     }
     /// <p>The resource state of the document. Only ACTIVE and RECYCLED are supported.</p>
-    pub fn set_resource_state(mut self, input: std::option::Option<crate::types::ResourceStateType>) -> Self {
-        self.resource_state = input; self
+    pub fn set_resource_state(
+        mut self,
+        input: std::option::Option<crate::types::ResourceStateType>,
+    ) -> Self {
+        self.resource_state = input;
+        self
     }
     /// Consumes the builder and constructs a [`UpdateDocumentInput`](crate::operation::update_document::UpdateDocumentInput).
-    pub fn build(self) -> Result<crate::operation::update_document::UpdateDocumentInput, aws_smithy_http::operation::error::BuildError> {
-        Ok(
-            crate::operation::update_document::UpdateDocumentInput {
-                authentication_token: self.authentication_token
-                ,
-                document_id: self.document_id
-                ,
-                name: self.name
-                ,
-                parent_folder_id: self.parent_folder_id
-                ,
-                resource_state: self.resource_state
-                ,
-            }
-        )
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::update_document::UpdateDocumentInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        Ok(crate::operation::update_document::UpdateDocumentInput {
+            authentication_token: self.authentication_token,
+            document_id: self.document_id,
+            name: self.name,
+            parent_folder_id: self.parent_folder_id,
+            resource_state: self.resource_state,
+        })
     }
 }
 impl std::fmt::Debug for UpdateDocumentInputBuilder {
@@ -144,4 +153,3 @@ impl std::fmt::Debug for UpdateDocumentInputBuilder {
         formatter.finish()
     }
 }
-

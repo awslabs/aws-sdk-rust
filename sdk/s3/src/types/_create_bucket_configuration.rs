@@ -3,14 +3,16 @@
 /// <p>The configuration information for the bucket.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateBucketConfiguration  {
+pub struct CreateBucketConfiguration {
     /// <p>Specifies the Region where the bucket will be created. If you don't specify a Region, the bucket is created in the US East (N. Virginia) Region (us-east-1).</p>
     #[doc(hidden)]
     pub location_constraint: std::option::Option<crate::types::BucketLocationConstraint>,
 }
 impl CreateBucketConfiguration {
     /// <p>Specifies the Region where the bucket will be created. If you don't specify a Region, the bucket is created in the US East (N. Virginia) Region (us-east-1).</p>
-    pub fn location_constraint(&self) -> std::option::Option<& crate::types::BucketLocationConstraint> {
+    pub fn location_constraint(
+        &self,
+    ) -> std::option::Option<&crate::types::BucketLocationConstraint> {
         self.location_constraint.as_ref()
     }
 }
@@ -34,15 +36,17 @@ impl CreateBucketConfigurationBuilder {
         self
     }
     /// <p>Specifies the Region where the bucket will be created. If you don't specify a Region, the bucket is created in the US East (N. Virginia) Region (us-east-1).</p>
-    pub fn set_location_constraint(mut self, input: std::option::Option<crate::types::BucketLocationConstraint>) -> Self {
-        self.location_constraint = input; self
+    pub fn set_location_constraint(
+        mut self,
+        input: std::option::Option<crate::types::BucketLocationConstraint>,
+    ) -> Self {
+        self.location_constraint = input;
+        self
     }
     /// Consumes the builder and constructs a [`CreateBucketConfiguration`](crate::types::CreateBucketConfiguration).
     pub fn build(self) -> crate::types::CreateBucketConfiguration {
         crate::types::CreateBucketConfiguration {
-            location_constraint: self.location_constraint
-            ,
+            location_constraint: self.location_constraint,
         }
     }
 }
-

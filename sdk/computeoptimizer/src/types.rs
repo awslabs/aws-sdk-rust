@@ -388,4 +388,3 @@ pub mod builders;
 
 /// Error types that AWS Compute Optimizer can respond with.
 pub mod error;
-

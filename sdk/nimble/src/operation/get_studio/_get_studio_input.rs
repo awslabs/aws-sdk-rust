@@ -2,14 +2,14 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetStudioInput  {
+pub struct GetStudioInput {
     /// <p>The studio ID. </p>
     #[doc(hidden)]
     pub studio_id: std::option::Option<std::string::String>,
 }
 impl GetStudioInput {
     /// <p>The studio ID. </p>
-    pub fn studio_id(&self) -> std::option::Option<& str> {
+    pub fn studio_id(&self) -> std::option::Option<&str> {
         self.studio_id.as_deref()
     }
 }
@@ -34,16 +34,18 @@ impl GetStudioInputBuilder {
     }
     /// <p>The studio ID. </p>
     pub fn set_studio_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.studio_id = input; self
+        self.studio_id = input;
+        self
     }
     /// Consumes the builder and constructs a [`GetStudioInput`](crate::operation::get_studio::GetStudioInput).
-    pub fn build(self) -> Result<crate::operation::get_studio::GetStudioInput, aws_smithy_http::operation::error::BuildError> {
-        Ok(
-            crate::operation::get_studio::GetStudioInput {
-                studio_id: self.studio_id
-                ,
-            }
-        )
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::get_studio::GetStudioInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        Ok(crate::operation::get_studio::GetStudioInput {
+            studio_id: self.studio_id,
+        })
     }
 }
-

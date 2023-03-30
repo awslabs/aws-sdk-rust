@@ -3,7 +3,7 @@
 /// <p>Geospatial column group that denotes a hierarchy.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GeoSpatialColumnGroup  {
+pub struct GeoSpatialColumnGroup {
     /// <p>A display name for the hierarchy.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -16,15 +16,15 @@ pub struct GeoSpatialColumnGroup  {
 }
 impl GeoSpatialColumnGroup {
     /// <p>A display name for the hierarchy.</p>
-    pub fn name(&self) -> std::option::Option<& str> {
+    pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>Country code.</p>
-    pub fn country_code(&self) -> std::option::Option<& crate::types::GeoSpatialCountryCode> {
+    pub fn country_code(&self) -> std::option::Option<&crate::types::GeoSpatialCountryCode> {
         self.country_code.as_ref()
     }
     /// <p>Columns in this hierarchy.</p>
-    pub fn columns(&self) -> std::option::Option<& [std::string::String]> {
+    pub fn columns(&self) -> std::option::Option<&[std::string::String]> {
         self.columns.as_deref()
     }
 }
@@ -51,7 +51,8 @@ impl GeoSpatialColumnGroupBuilder {
     }
     /// <p>A display name for the hierarchy.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input; self
+        self.name = input;
+        self
     }
     /// <p>Country code.</p>
     pub fn country_code(mut self, input: crate::types::GeoSpatialCountryCode) -> Self {
@@ -59,8 +60,12 @@ impl GeoSpatialColumnGroupBuilder {
         self
     }
     /// <p>Country code.</p>
-    pub fn set_country_code(mut self, input: std::option::Option<crate::types::GeoSpatialCountryCode>) -> Self {
-        self.country_code = input; self
+    pub fn set_country_code(
+        mut self,
+        input: std::option::Option<crate::types::GeoSpatialCountryCode>,
+    ) -> Self {
+        self.country_code = input;
+        self
     }
     /// Appends an item to `columns`.
     ///
@@ -69,24 +74,24 @@ impl GeoSpatialColumnGroupBuilder {
     /// <p>Columns in this hierarchy.</p>
     pub fn columns(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.columns.unwrap_or_default();
-                        v.push(input.into());
-                        self.columns = Some(v);
-                        self
+        v.push(input.into());
+        self.columns = Some(v);
+        self
     }
     /// <p>Columns in this hierarchy.</p>
-    pub fn set_columns(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-        self.columns = input; self
+    pub fn set_columns(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
+        self.columns = input;
+        self
     }
     /// Consumes the builder and constructs a [`GeoSpatialColumnGroup`](crate::types::GeoSpatialColumnGroup).
     pub fn build(self) -> crate::types::GeoSpatialColumnGroup {
         crate::types::GeoSpatialColumnGroup {
-            name: self.name
-            ,
-            country_code: self.country_code
-            ,
-            columns: self.columns
-            ,
+            name: self.name,
+            country_code: self.country_code,
+            columns: self.columns,
         }
     }
 }
-

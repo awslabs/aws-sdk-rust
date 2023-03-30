@@ -4,49 +4,71 @@ pub use crate::operation::start_notebook_execution::_start_notebook_execution_ou
 pub use crate::operation::start_notebook_execution::_start_notebook_execution_input::StartNotebookExecutionInputBuilder;
 
 /// Fluent builder constructing a request to `StartNotebookExecution`.
-/// 
+///
 /// <p>Starts a notebook execution.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct StartNotebookExecutionFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::start_notebook_execution::builders::StartNotebookExecutionInputBuilder
-            }
-impl StartNotebookExecutionFluentBuilder  {
+    handle: std::sync::Arc<crate::client::Handle>,
+    inner: crate::operation::start_notebook_execution::builders::StartNotebookExecutionInputBuilder,
+}
+impl StartNotebookExecutionFluentBuilder {
     /// Creates a new `StartNotebookExecution`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
-                    /// sent. The operation's inner [http::Request] can be modified as well.
-                    pub async fn customize(self) -> std::result::Result<
-                        crate::client::customize::CustomizableOperation<crate::operation::start_notebook_execution::StartNotebookExecution, aws_http::retry::AwsResponseRetryClassifier,>,
-                        aws_smithy_http::result::SdkError<crate::operation::start_notebook_execution::StartNotebookExecutionError>
-                    >  {
-                        let handle = self.handle.clone();
-                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-                    }
-    
-                    /// Sends the request and returns the response.
-                    ///
-                    /// If an error occurs, an `SdkError` will be returned with additional details that
-                    /// can be matched against.
-                    ///
-                    /// By default, any retryable failures will be retried twice. Retry behavior
-                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                    /// set when configuring the client.
-                    pub async fn send(self) -> std::result::Result<crate::operation::start_notebook_execution::StartNotebookExecutionOutput, aws_smithy_http::result::SdkError<crate::operation::start_notebook_execution::StartNotebookExecutionError>>
-                     {
-                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&self.handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        self.handle.client.call(op).await
-                    }
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle,
+            inner: Default::default(),
+        }
+    }
+
+    /// Consume this builder, creating a customizable operation that can be modified before being
+    /// sent. The operation's inner [http::Request] can be modified as well.
+    pub async fn customize(
+        self,
+    ) -> std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::start_notebook_execution::StartNotebookExecution,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::result::SdkError<
+            crate::operation::start_notebook_execution::StartNotebookExecutionError,
+        >,
+    > {
+        let handle = self.handle.clone();
+        let operation = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+    }
+
+    /// Sends the request and returns the response.
+    ///
+    /// If an error occurs, an `SdkError` will be returned with additional details that
+    /// can be matched against.
+    ///
+    /// By default, any retryable failures will be retried twice. Retry behavior
+    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+    /// set when configuring the client.
+    pub async fn send(
+        self,
+    ) -> std::result::Result<
+        crate::operation::start_notebook_execution::StartNotebookExecutionOutput,
+        aws_smithy_http::result::SdkError<
+            crate::operation::start_notebook_execution::StartNotebookExecutionError,
+        >,
+    > {
+        let op = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&self.handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        self.handle.client.call(op).await
+    }
     /// <p>The unique identifier of the EMR Notebook to use for notebook execution.</p>
     pub fn editor_id(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.editor_id(input.into());
@@ -73,7 +95,10 @@ impl StartNotebookExecutionFluentBuilder  {
         self
     }
     /// <p>An optional name for the notebook execution.</p>
-    pub fn set_notebook_execution_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_notebook_execution_name(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_notebook_execution_name(input);
         self
     }
@@ -93,7 +118,10 @@ impl StartNotebookExecutionFluentBuilder  {
         self
     }
     /// <p>Specifies the execution engine (cluster) that runs the notebook execution.</p>
-    pub fn set_execution_engine(mut self, input: std::option::Option<crate::types::ExecutionEngineConfig>) -> Self {
+    pub fn set_execution_engine(
+        mut self,
+        input: std::option::Option<crate::types::ExecutionEngineConfig>,
+    ) -> Self {
         self.inner = self.inner.set_execution_engine(input);
         self
     }
@@ -108,12 +136,18 @@ impl StartNotebookExecutionFluentBuilder  {
         self
     }
     /// <p>The unique identifier of the Amazon EC2 security group to associate with the EMR Notebook for this notebook execution.</p>
-    pub fn notebook_instance_security_group_id(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn notebook_instance_security_group_id(
+        mut self,
+        input: impl Into<std::string::String>,
+    ) -> Self {
         self.inner = self.inner.notebook_instance_security_group_id(input.into());
         self
     }
     /// <p>The unique identifier of the Amazon EC2 security group to associate with the EMR Notebook for this notebook execution.</p>
-    pub fn set_notebook_instance_security_group_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_notebook_instance_security_group_id(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_notebook_instance_security_group_id(input);
         self
     }
@@ -127,9 +161,11 @@ impl StartNotebookExecutionFluentBuilder  {
         self
     }
     /// <p>A list of tags associated with a notebook execution. Tags are user-defined key-value pairs that consist of a required key string with a maximum of 128 characters and an optional value string with a maximum of 256 characters.</p>
-    pub fn set_tags(mut self, input: std::option::Option<std::vec::Vec<crate::types::Tag>>) -> Self {
+    pub fn set_tags(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::Tag>>,
+    ) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }
 }
-

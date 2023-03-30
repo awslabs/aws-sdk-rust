@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DetachCertificateFromDistributionOutput  {
+pub struct DetachCertificateFromDistributionOutput {
     /// <p>An object that describes the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
     #[doc(hidden)]
     pub operation: std::option::Option<crate::types::Operation>,
@@ -10,18 +10,18 @@ pub struct DetachCertificateFromDistributionOutput  {
 }
 impl DetachCertificateFromDistributionOutput {
     /// <p>An object that describes the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
-    pub fn operation(&self) -> std::option::Option<& crate::types::Operation> {
+    pub fn operation(&self) -> std::option::Option<&crate::types::Operation> {
         self.operation.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for DetachCertificateFromDistributionOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl DetachCertificateFromDistributionOutput {
     /// Creates a new builder-style object to manufacture [`DetachCertificateFromDistributionOutput`](crate::operation::detach_certificate_from_distribution::DetachCertificateFromDistributionOutput).
-    pub fn builder() -> crate::operation::detach_certificate_from_distribution::builders::DetachCertificateFromDistributionOutputBuilder {
+    pub fn builder() -> crate::operation::detach_certificate_from_distribution::builders::DetachCertificateFromDistributionOutputBuilder{
         crate::operation::detach_certificate_from_distribution::builders::DetachCertificateFromDistributionOutputBuilder::default()
     }
 }
@@ -41,19 +41,20 @@ impl DetachCertificateFromDistributionOutputBuilder {
     }
     /// <p>An object that describes the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
     pub fn set_operation(mut self, input: std::option::Option<crate::types::Operation>) -> Self {
-        self.operation = input; self
+        self.operation = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`DetachCertificateFromDistributionOutput`](crate::operation::detach_certificate_from_distribution::DetachCertificateFromDistributionOutput).
-    pub fn build(self) -> crate::operation::detach_certificate_from_distribution::DetachCertificateFromDistributionOutput {
+    pub fn build(self) -> crate::operation::detach_certificate_from_distribution::DetachCertificateFromDistributionOutput{
         crate::operation::detach_certificate_from_distribution::DetachCertificateFromDistributionOutput {
             operation: self.operation
             ,
@@ -61,4 +62,3 @@ impl DetachCertificateFromDistributionOutputBuilder {
         }
     }
 }
-

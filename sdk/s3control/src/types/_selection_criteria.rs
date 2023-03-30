@@ -3,30 +3,30 @@
 /// <p></p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SelectionCriteria  {
+pub struct SelectionCriteria {
     /// <p>A container for the delimiter of the selection criteria being used.</p>
     #[doc(hidden)]
     pub delimiter: std::option::Option<std::string::String>,
     /// <p>The max depth of the selection criteria</p>
     #[doc(hidden)]
     pub max_depth: i32,
-    /// <p>The minimum number of storage bytes percentage whose metrics will be selected.</p> <note> 
-    /// <p>You must choose a value greater than or equal to <code>1.0</code>.</p> 
+    /// <p>The minimum number of storage bytes percentage whose metrics will be selected.</p> <note>
+    /// <p>You must choose a value greater than or equal to <code>1.0</code>.</p>
     /// </note>
     #[doc(hidden)]
     pub min_storage_bytes_percentage: f64,
 }
 impl SelectionCriteria {
     /// <p>A container for the delimiter of the selection criteria being used.</p>
-    pub fn delimiter(&self) -> std::option::Option<& str> {
+    pub fn delimiter(&self) -> std::option::Option<&str> {
         self.delimiter.as_deref()
     }
     /// <p>The max depth of the selection criteria</p>
     pub fn max_depth(&self) -> i32 {
         self.max_depth
     }
-    /// <p>The minimum number of storage bytes percentage whose metrics will be selected.</p> <note> 
-    /// <p>You must choose a value greater than or equal to <code>1.0</code>.</p> 
+    /// <p>The minimum number of storage bytes percentage whose metrics will be selected.</p> <note>
+    /// <p>You must choose a value greater than or equal to <code>1.0</code>.</p>
     /// </note>
     pub fn min_storage_bytes_percentage(&self) -> f64 {
         self.min_storage_bytes_percentage
@@ -55,7 +55,8 @@ impl SelectionCriteriaBuilder {
     }
     /// <p>A container for the delimiter of the selection criteria being used.</p>
     pub fn set_delimiter(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.delimiter = input; self
+        self.delimiter = input;
+        self
     }
     /// <p>The max depth of the selection criteria</p>
     pub fn max_depth(mut self, input: i32) -> Self {
@@ -64,33 +65,29 @@ impl SelectionCriteriaBuilder {
     }
     /// <p>The max depth of the selection criteria</p>
     pub fn set_max_depth(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_depth = input; self
+        self.max_depth = input;
+        self
     }
-    /// <p>The minimum number of storage bytes percentage whose metrics will be selected.</p> <note> 
-    /// <p>You must choose a value greater than or equal to <code>1.0</code>.</p> 
+    /// <p>The minimum number of storage bytes percentage whose metrics will be selected.</p> <note>
+    /// <p>You must choose a value greater than or equal to <code>1.0</code>.</p>
     /// </note>
     pub fn min_storage_bytes_percentage(mut self, input: f64) -> Self {
         self.min_storage_bytes_percentage = Some(input);
         self
     }
-    /// <p>The minimum number of storage bytes percentage whose metrics will be selected.</p> <note> 
-    /// <p>You must choose a value greater than or equal to <code>1.0</code>.</p> 
+    /// <p>The minimum number of storage bytes percentage whose metrics will be selected.</p> <note>
+    /// <p>You must choose a value greater than or equal to <code>1.0</code>.</p>
     /// </note>
     pub fn set_min_storage_bytes_percentage(mut self, input: std::option::Option<f64>) -> Self {
-        self.min_storage_bytes_percentage = input; self
+        self.min_storage_bytes_percentage = input;
+        self
     }
     /// Consumes the builder and constructs a [`SelectionCriteria`](crate::types::SelectionCriteria).
     pub fn build(self) -> crate::types::SelectionCriteria {
         crate::types::SelectionCriteria {
-            delimiter: self.delimiter
-            ,
-            max_depth: self.max_depth
-                .unwrap_or_default()
-            ,
-            min_storage_bytes_percentage: self.min_storage_bytes_percentage
-                .unwrap_or_default()
-            ,
+            delimiter: self.delimiter,
+            max_depth: self.max_depth.unwrap_or_default(),
+            min_storage_bytes_percentage: self.min_storage_bytes_percentage.unwrap_or_default(),
         }
     }
 }
-

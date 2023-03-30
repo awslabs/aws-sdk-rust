@@ -3,7 +3,7 @@
 /// <p>Contains the results for the <code>CreateComputer</code> operation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateComputerOutput  {
+pub struct CreateComputerOutput {
     /// <p>A <code>Computer</code> object that represents the computer account.</p>
     #[doc(hidden)]
     pub computer: std::option::Option<crate::types::Computer>,
@@ -11,15 +11,15 @@ pub struct CreateComputerOutput  {
 }
 impl CreateComputerOutput {
     /// <p>A <code>Computer</code> object that represents the computer account.</p>
-    pub fn computer(&self) -> std::option::Option<& crate::types::Computer> {
+    pub fn computer(&self) -> std::option::Option<&crate::types::Computer> {
         self.computer.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for CreateComputerOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl CreateComputerOutput {
     /// Creates a new builder-style object to manufacture [`CreateComputerOutput`](crate::operation::create_computer::CreateComputerOutput).
     pub fn builder() -> crate::operation::create_computer::builders::CreateComputerOutputBuilder {
@@ -42,24 +42,23 @@ impl CreateComputerOutputBuilder {
     }
     /// <p>A <code>Computer</code> object that represents the computer account.</p>
     pub fn set_computer(mut self, input: std::option::Option<crate::types::Computer>) -> Self {
-        self.computer = input; self
+        self.computer = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`CreateComputerOutput`](crate::operation::create_computer::CreateComputerOutput).
     pub fn build(self) -> crate::operation::create_computer::CreateComputerOutput {
         crate::operation::create_computer::CreateComputerOutput {
-            computer: self.computer
-            ,
+            computer: self.computer,
             _request_id: self._request_id,
         }
     }
 }
-

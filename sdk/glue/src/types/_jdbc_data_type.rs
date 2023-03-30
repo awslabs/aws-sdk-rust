@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-/// 
+///
 /// Here is an example of how you can make a match expression forward-compatible:
-/// 
+///
 /// ```text
 /// # let jdbcdatatype = unimplemented!();
 /// match jdbcdatatype {
@@ -67,14 +67,22 @@
 /// Specifically, when `jdbcdatatype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `JdbcDataType::NewFeature` also yielding `"NewFeature"`.
-/// 
+///
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
 pub enum JdbcDataType {
     #[allow(missing_docs)] // documentation missing in model
     Array,
@@ -155,115 +163,156 @@ pub enum JdbcDataType {
     #[allow(missing_docs)] // documentation missing in model
     Varchar,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::primitives::UnknownVariantValue)
+    Unknown(crate::primitives::UnknownVariantValue),
 }
 impl std::convert::From<&str> for JdbcDataType {
-                fn from(s: &str) -> Self {
-                    match s {
-                        "ARRAY" => JdbcDataType::Array,
-"BIGINT" => JdbcDataType::Bigint,
-"BINARY" => JdbcDataType::Binary,
-"BIT" => JdbcDataType::Bit,
-"BLOB" => JdbcDataType::Blob,
-"BOOLEAN" => JdbcDataType::Boolean,
-"CHAR" => JdbcDataType::Char,
-"CLOB" => JdbcDataType::Clob,
-"DATALINK" => JdbcDataType::Datalink,
-"DATE" => JdbcDataType::Date,
-"DECIMAL" => JdbcDataType::Decimal,
-"DISTINCT" => JdbcDataType::Distinct,
-"DOUBLE" => JdbcDataType::Double,
-"FLOAT" => JdbcDataType::Float,
-"INTEGER" => JdbcDataType::Integer,
-"JAVA_OBJECT" => JdbcDataType::JavaObject,
-"LONGNVARCHAR" => JdbcDataType::Longnvarchar,
-"LONGVARBINARY" => JdbcDataType::Longvarbinary,
-"LONGVARCHAR" => JdbcDataType::Longvarchar,
-"NCHAR" => JdbcDataType::Nchar,
-"NCLOB" => JdbcDataType::Nclob,
-"NULL" => JdbcDataType::Null,
-"NUMERIC" => JdbcDataType::Numeric,
-"NVARCHAR" => JdbcDataType::Nvarchar,
-"OTHER" => JdbcDataType::Other,
-"REAL" => JdbcDataType::Real,
-"REF" => JdbcDataType::Ref,
-"REF_CURSOR" => JdbcDataType::RefCursor,
-"ROWID" => JdbcDataType::Rowid,
-"SMALLINT" => JdbcDataType::Smallint,
-"SQLXML" => JdbcDataType::Sqlxml,
-"STRUCT" => JdbcDataType::Struct,
-"TIME" => JdbcDataType::Time,
-"TIMESTAMP" => JdbcDataType::Timestamp,
-"TIMESTAMP_WITH_TIMEZONE" => JdbcDataType::TimestampWithTimezone,
-"TIME_WITH_TIMEZONE" => JdbcDataType::TimeWithTimezone,
-"TINYINT" => JdbcDataType::Tinyint,
-"VARBINARY" => JdbcDataType::Varbinary,
-"VARCHAR" => JdbcDataType::Varchar,
-other => JdbcDataType::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
-                    }
-                }
+    fn from(s: &str) -> Self {
+        match s {
+            "ARRAY" => JdbcDataType::Array,
+            "BIGINT" => JdbcDataType::Bigint,
+            "BINARY" => JdbcDataType::Binary,
+            "BIT" => JdbcDataType::Bit,
+            "BLOB" => JdbcDataType::Blob,
+            "BOOLEAN" => JdbcDataType::Boolean,
+            "CHAR" => JdbcDataType::Char,
+            "CLOB" => JdbcDataType::Clob,
+            "DATALINK" => JdbcDataType::Datalink,
+            "DATE" => JdbcDataType::Date,
+            "DECIMAL" => JdbcDataType::Decimal,
+            "DISTINCT" => JdbcDataType::Distinct,
+            "DOUBLE" => JdbcDataType::Double,
+            "FLOAT" => JdbcDataType::Float,
+            "INTEGER" => JdbcDataType::Integer,
+            "JAVA_OBJECT" => JdbcDataType::JavaObject,
+            "LONGNVARCHAR" => JdbcDataType::Longnvarchar,
+            "LONGVARBINARY" => JdbcDataType::Longvarbinary,
+            "LONGVARCHAR" => JdbcDataType::Longvarchar,
+            "NCHAR" => JdbcDataType::Nchar,
+            "NCLOB" => JdbcDataType::Nclob,
+            "NULL" => JdbcDataType::Null,
+            "NUMERIC" => JdbcDataType::Numeric,
+            "NVARCHAR" => JdbcDataType::Nvarchar,
+            "OTHER" => JdbcDataType::Other,
+            "REAL" => JdbcDataType::Real,
+            "REF" => JdbcDataType::Ref,
+            "REF_CURSOR" => JdbcDataType::RefCursor,
+            "ROWID" => JdbcDataType::Rowid,
+            "SMALLINT" => JdbcDataType::Smallint,
+            "SQLXML" => JdbcDataType::Sqlxml,
+            "STRUCT" => JdbcDataType::Struct,
+            "TIME" => JdbcDataType::Time,
+            "TIMESTAMP" => JdbcDataType::Timestamp,
+            "TIMESTAMP_WITH_TIMEZONE" => JdbcDataType::TimestampWithTimezone,
+            "TIME_WITH_TIMEZONE" => JdbcDataType::TimeWithTimezone,
+            "TINYINT" => JdbcDataType::Tinyint,
+            "VARBINARY" => JdbcDataType::Varbinary,
+            "VARCHAR" => JdbcDataType::Varchar,
+            other => {
+                JdbcDataType::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
             }
-impl std::str::FromStr for JdbcDataType {
-                type Err = std::convert::Infallible;
-
-                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-                    Ok(JdbcDataType::from(s))
-                }
-            }
-impl JdbcDataType {
-                /// Returns the `&str` value of the enum member.
-                pub fn as_str(&self) -> &str {
-                    match self {
-    JdbcDataType::Array => "ARRAY",
-    JdbcDataType::Bigint => "BIGINT",
-    JdbcDataType::Binary => "BINARY",
-    JdbcDataType::Bit => "BIT",
-    JdbcDataType::Blob => "BLOB",
-    JdbcDataType::Boolean => "BOOLEAN",
-    JdbcDataType::Char => "CHAR",
-    JdbcDataType::Clob => "CLOB",
-    JdbcDataType::Datalink => "DATALINK",
-    JdbcDataType::Date => "DATE",
-    JdbcDataType::Decimal => "DECIMAL",
-    JdbcDataType::Distinct => "DISTINCT",
-    JdbcDataType::Double => "DOUBLE",
-    JdbcDataType::Float => "FLOAT",
-    JdbcDataType::Integer => "INTEGER",
-    JdbcDataType::JavaObject => "JAVA_OBJECT",
-    JdbcDataType::Longnvarchar => "LONGNVARCHAR",
-    JdbcDataType::Longvarbinary => "LONGVARBINARY",
-    JdbcDataType::Longvarchar => "LONGVARCHAR",
-    JdbcDataType::Nchar => "NCHAR",
-    JdbcDataType::Nclob => "NCLOB",
-    JdbcDataType::Null => "NULL",
-    JdbcDataType::Numeric => "NUMERIC",
-    JdbcDataType::Nvarchar => "NVARCHAR",
-    JdbcDataType::Other => "OTHER",
-    JdbcDataType::Real => "REAL",
-    JdbcDataType::Ref => "REF",
-    JdbcDataType::RefCursor => "REF_CURSOR",
-    JdbcDataType::Rowid => "ROWID",
-    JdbcDataType::Smallint => "SMALLINT",
-    JdbcDataType::Sqlxml => "SQLXML",
-    JdbcDataType::Struct => "STRUCT",
-    JdbcDataType::Time => "TIME",
-    JdbcDataType::Timestamp => "TIMESTAMP",
-    JdbcDataType::TimestampWithTimezone => "TIMESTAMP_WITH_TIMEZONE",
-    JdbcDataType::TimeWithTimezone => "TIME_WITH_TIMEZONE",
-    JdbcDataType::Tinyint => "TINYINT",
-    JdbcDataType::Varbinary => "VARBINARY",
-    JdbcDataType::Varchar => "VARCHAR",
-    JdbcDataType::Unknown(value) => value.as_str()
+        }
+    }
 }
-                }
-                /// Returns all the `&str` representations of the enum members.
-                pub const fn values() -> &'static [&'static str] {
-                    &["ARRAY", "BIGINT", "BINARY", "BIT", "BLOB", "BOOLEAN", "CHAR", "CLOB", "DATALINK", "DATE", "DECIMAL", "DISTINCT", "DOUBLE", "FLOAT", "INTEGER", "JAVA_OBJECT", "LONGNVARCHAR", "LONGVARBINARY", "LONGVARCHAR", "NCHAR", "NCLOB", "NULL", "NUMERIC", "NVARCHAR", "OTHER", "REAL", "REF", "REF_CURSOR", "ROWID", "SMALLINT", "SQLXML", "STRUCT", "TIME", "TIMESTAMP", "TIMESTAMP_WITH_TIMEZONE", "TIME_WITH_TIMEZONE", "TINYINT", "VARBINARY", "VARCHAR"]
-                }
-            }
-impl AsRef<str> for JdbcDataType {
-                fn as_ref(&self) -> &str {
-                    self.as_str()
-                }
-            }
+impl std::str::FromStr for JdbcDataType {
+    type Err = std::convert::Infallible;
 
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(JdbcDataType::from(s))
+    }
+}
+impl JdbcDataType {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            JdbcDataType::Array => "ARRAY",
+            JdbcDataType::Bigint => "BIGINT",
+            JdbcDataType::Binary => "BINARY",
+            JdbcDataType::Bit => "BIT",
+            JdbcDataType::Blob => "BLOB",
+            JdbcDataType::Boolean => "BOOLEAN",
+            JdbcDataType::Char => "CHAR",
+            JdbcDataType::Clob => "CLOB",
+            JdbcDataType::Datalink => "DATALINK",
+            JdbcDataType::Date => "DATE",
+            JdbcDataType::Decimal => "DECIMAL",
+            JdbcDataType::Distinct => "DISTINCT",
+            JdbcDataType::Double => "DOUBLE",
+            JdbcDataType::Float => "FLOAT",
+            JdbcDataType::Integer => "INTEGER",
+            JdbcDataType::JavaObject => "JAVA_OBJECT",
+            JdbcDataType::Longnvarchar => "LONGNVARCHAR",
+            JdbcDataType::Longvarbinary => "LONGVARBINARY",
+            JdbcDataType::Longvarchar => "LONGVARCHAR",
+            JdbcDataType::Nchar => "NCHAR",
+            JdbcDataType::Nclob => "NCLOB",
+            JdbcDataType::Null => "NULL",
+            JdbcDataType::Numeric => "NUMERIC",
+            JdbcDataType::Nvarchar => "NVARCHAR",
+            JdbcDataType::Other => "OTHER",
+            JdbcDataType::Real => "REAL",
+            JdbcDataType::Ref => "REF",
+            JdbcDataType::RefCursor => "REF_CURSOR",
+            JdbcDataType::Rowid => "ROWID",
+            JdbcDataType::Smallint => "SMALLINT",
+            JdbcDataType::Sqlxml => "SQLXML",
+            JdbcDataType::Struct => "STRUCT",
+            JdbcDataType::Time => "TIME",
+            JdbcDataType::Timestamp => "TIMESTAMP",
+            JdbcDataType::TimestampWithTimezone => "TIMESTAMP_WITH_TIMEZONE",
+            JdbcDataType::TimeWithTimezone => "TIME_WITH_TIMEZONE",
+            JdbcDataType::Tinyint => "TINYINT",
+            JdbcDataType::Varbinary => "VARBINARY",
+            JdbcDataType::Varchar => "VARCHAR",
+            JdbcDataType::Unknown(value) => value.as_str(),
+        }
+    }
+    /// Returns all the `&str` representations of the enum members.
+    pub const fn values() -> &'static [&'static str] {
+        &[
+            "ARRAY",
+            "BIGINT",
+            "BINARY",
+            "BIT",
+            "BLOB",
+            "BOOLEAN",
+            "CHAR",
+            "CLOB",
+            "DATALINK",
+            "DATE",
+            "DECIMAL",
+            "DISTINCT",
+            "DOUBLE",
+            "FLOAT",
+            "INTEGER",
+            "JAVA_OBJECT",
+            "LONGNVARCHAR",
+            "LONGVARBINARY",
+            "LONGVARCHAR",
+            "NCHAR",
+            "NCLOB",
+            "NULL",
+            "NUMERIC",
+            "NVARCHAR",
+            "OTHER",
+            "REAL",
+            "REF",
+            "REF_CURSOR",
+            "ROWID",
+            "SMALLINT",
+            "SQLXML",
+            "STRUCT",
+            "TIME",
+            "TIMESTAMP",
+            "TIMESTAMP_WITH_TIMEZONE",
+            "TIME_WITH_TIMEZONE",
+            "TINYINT",
+            "VARBINARY",
+            "VARCHAR",
+        ]
+    }
+}
+impl AsRef<str> for JdbcDataType {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}

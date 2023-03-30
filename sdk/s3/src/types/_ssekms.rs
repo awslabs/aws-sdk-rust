@@ -3,18 +3,18 @@
 /// <p>Specifies the use of SSE-KMS to encrypt delivered inventory reports.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct Ssekms  {
+pub struct Ssekms {
     /// <p>Specifies the ID of the Amazon Web Services Key Management Service (Amazon Web Services KMS) symmetric customer managed key to use for encrypting inventory reports.</p>
     #[doc(hidden)]
     pub key_id: std::option::Option<std::string::String>,
 }
 impl Ssekms {
     /// <p>Specifies the ID of the Amazon Web Services Key Management Service (Amazon Web Services KMS) symmetric customer managed key to use for encrypting inventory reports.</p>
-    pub fn key_id(&self) -> std::option::Option<& str> {
+    pub fn key_id(&self) -> std::option::Option<&str> {
         self.key_id.as_deref()
     }
 }
-impl  std::fmt::Debug for Ssekms  {
+impl std::fmt::Debug for Ssekms {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("Ssekms");
         formatter.field("key_id", &"*** Sensitive Data Redacted ***");
@@ -42,13 +42,13 @@ impl SsekmsBuilder {
     }
     /// <p>Specifies the ID of the Amazon Web Services Key Management Service (Amazon Web Services KMS) symmetric customer managed key to use for encrypting inventory reports.</p>
     pub fn set_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.key_id = input; self
+        self.key_id = input;
+        self
     }
     /// Consumes the builder and constructs a [`Ssekms`](crate::types::Ssekms).
     pub fn build(self) -> crate::types::Ssekms {
         crate::types::Ssekms {
-            key_id: self.key_id
-            ,
+            key_id: self.key_id,
         }
     }
 }
@@ -59,4 +59,3 @@ impl std::fmt::Debug for SsekmsBuilder {
         formatter.finish()
     }
 }
-

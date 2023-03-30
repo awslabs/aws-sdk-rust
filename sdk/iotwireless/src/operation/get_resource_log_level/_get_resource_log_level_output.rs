@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetResourceLogLevelOutput  {
+pub struct GetResourceLogLevelOutput {
     /// <p>The log level for a log message. The log levels can be disabled, or set to <code>ERROR</code> to display less verbose logs containing only error information, or to <code>INFO</code> for more detailed logs.</p>
     #[doc(hidden)]
     pub log_level: std::option::Option<crate::types::LogLevel>,
@@ -10,18 +10,19 @@ pub struct GetResourceLogLevelOutput  {
 }
 impl GetResourceLogLevelOutput {
     /// <p>The log level for a log message. The log levels can be disabled, or set to <code>ERROR</code> to display less verbose logs containing only error information, or to <code>INFO</code> for more detailed logs.</p>
-    pub fn log_level(&self) -> std::option::Option<& crate::types::LogLevel> {
+    pub fn log_level(&self) -> std::option::Option<&crate::types::LogLevel> {
         self.log_level.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for GetResourceLogLevelOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl GetResourceLogLevelOutput {
     /// Creates a new builder-style object to manufacture [`GetResourceLogLevelOutput`](crate::operation::get_resource_log_level::GetResourceLogLevelOutput).
-    pub fn builder() -> crate::operation::get_resource_log_level::builders::GetResourceLogLevelOutputBuilder {
+    pub fn builder(
+    ) -> crate::operation::get_resource_log_level::builders::GetResourceLogLevelOutputBuilder {
         crate::operation::get_resource_log_level::builders::GetResourceLogLevelOutputBuilder::default()
     }
 }
@@ -41,24 +42,23 @@ impl GetResourceLogLevelOutputBuilder {
     }
     /// <p>The log level for a log message. The log levels can be disabled, or set to <code>ERROR</code> to display less verbose logs containing only error information, or to <code>INFO</code> for more detailed logs.</p>
     pub fn set_log_level(mut self, input: std::option::Option<crate::types::LogLevel>) -> Self {
-        self.log_level = input; self
+        self.log_level = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`GetResourceLogLevelOutput`](crate::operation::get_resource_log_level::GetResourceLogLevelOutput).
     pub fn build(self) -> crate::operation::get_resource_log_level::GetResourceLogLevelOutput {
         crate::operation::get_resource_log_level::GetResourceLogLevelOutput {
-            log_level: self.log_level
-            ,
+            log_level: self.log_level,
             _request_id: self._request_id,
         }
     }
 }
-

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListAppsOutput  {
+pub struct ListAppsOutput {
     /// <p>The application summaries.</p>
     #[doc(hidden)]
     pub apps: std::option::Option<std::vec::Vec<crate::types::AppSummary>>,
@@ -13,19 +13,19 @@ pub struct ListAppsOutput  {
 }
 impl ListAppsOutput {
     /// <p>The application summaries.</p>
-    pub fn apps(&self) -> std::option::Option<& [crate::types::AppSummary]> {
+    pub fn apps(&self) -> std::option::Option<&[crate::types::AppSummary]> {
         self.apps.as_deref()
     }
     /// <p>The token required to retrieve the next set of results. This value is null when there are no more results to return.</p>
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for ListAppsOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl ListAppsOutput {
     /// Creates a new builder-style object to manufacture [`ListAppsOutput`](crate::operation::list_apps::ListAppsOutput).
     pub fn builder() -> crate::operation::list_apps::builders::ListAppsOutputBuilder {
@@ -49,13 +49,17 @@ impl ListAppsOutputBuilder {
     /// <p>The application summaries.</p>
     pub fn apps(mut self, input: crate::types::AppSummary) -> Self {
         let mut v = self.apps.unwrap_or_default();
-                        v.push(input);
-                        self.apps = Some(v);
-                        self
+        v.push(input);
+        self.apps = Some(v);
+        self
     }
     /// <p>The application summaries.</p>
-    pub fn set_apps(mut self, input: std::option::Option<std::vec::Vec<crate::types::AppSummary>>) -> Self {
-        self.apps = input; self
+    pub fn set_apps(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::AppSummary>>,
+    ) -> Self {
+        self.apps = input;
+        self
     }
     /// <p>The token required to retrieve the next set of results. This value is null when there are no more results to return.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -64,26 +68,24 @@ impl ListAppsOutputBuilder {
     }
     /// <p>The token required to retrieve the next set of results. This value is null when there are no more results to return.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input; self
+        self.next_token = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`ListAppsOutput`](crate::operation::list_apps::ListAppsOutput).
     pub fn build(self) -> crate::operation::list_apps::ListAppsOutput {
         crate::operation::list_apps::ListAppsOutput {
-            apps: self.apps
-            ,
-            next_token: self.next_token
-            ,
+            apps: self.apps,
+            next_token: self.next_token,
             _request_id: self._request_id,
         }
     }
 }
-

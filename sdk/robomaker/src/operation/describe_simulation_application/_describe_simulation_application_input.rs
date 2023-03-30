@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeSimulationApplicationInput  {
+pub struct DescribeSimulationApplicationInput {
     /// <p>The application information for the simulation application.</p>
     #[doc(hidden)]
     pub application: std::option::Option<std::string::String>,
@@ -12,17 +12,17 @@ pub struct DescribeSimulationApplicationInput  {
 }
 impl DescribeSimulationApplicationInput {
     /// <p>The application information for the simulation application.</p>
-    pub fn application(&self) -> std::option::Option<& str> {
+    pub fn application(&self) -> std::option::Option<&str> {
         self.application.as_deref()
     }
     /// <p>The version of the simulation application to describe.</p>
-    pub fn application_version(&self) -> std::option::Option<& str> {
+    pub fn application_version(&self) -> std::option::Option<&str> {
         self.application_version.as_deref()
     }
 }
 impl DescribeSimulationApplicationInput {
     /// Creates a new builder-style object to manufacture [`DescribeSimulationApplicationInput`](crate::operation::describe_simulation_application::DescribeSimulationApplicationInput).
-    pub fn builder() -> crate::operation::describe_simulation_application::builders::DescribeSimulationApplicationInputBuilder {
+    pub fn builder() -> crate::operation::describe_simulation_application::builders::DescribeSimulationApplicationInputBuilder{
         crate::operation::describe_simulation_application::builders::DescribeSimulationApplicationInputBuilder::default()
     }
 }
@@ -42,7 +42,8 @@ impl DescribeSimulationApplicationInputBuilder {
     }
     /// <p>The application information for the simulation application.</p>
     pub fn set_application(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.application = input; self
+        self.application = input;
+        self
     }
     /// <p>The version of the simulation application to describe.</p>
     pub fn application_version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -50,19 +51,25 @@ impl DescribeSimulationApplicationInputBuilder {
         self
     }
     /// <p>The version of the simulation application to describe.</p>
-    pub fn set_application_version(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.application_version = input; self
+    pub fn set_application_version(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.application_version = input;
+        self
     }
     /// Consumes the builder and constructs a [`DescribeSimulationApplicationInput`](crate::operation::describe_simulation_application::DescribeSimulationApplicationInput).
-    pub fn build(self) -> Result<crate::operation::describe_simulation_application::DescribeSimulationApplicationInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::describe_simulation_application::DescribeSimulationApplicationInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::describe_simulation_application::DescribeSimulationApplicationInput {
-                application: self.application
-                ,
-                application_version: self.application_version
-                ,
-            }
+                application: self.application,
+                application_version: self.application_version,
+            },
         )
     }
 }
-

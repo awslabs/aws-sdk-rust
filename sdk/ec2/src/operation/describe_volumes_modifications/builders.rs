@@ -4,57 +4,79 @@ pub use crate::operation::describe_volumes_modifications::_describe_volumes_modi
 pub use crate::operation::describe_volumes_modifications::_describe_volumes_modifications_input::DescribeVolumesModificationsInputBuilder;
 
 /// Fluent builder constructing a request to `DescribeVolumesModifications`.
-/// 
-/// <p>Describes the most recent volume modification request for the specified EBS volumes.</p> 
-/// <p>If a volume has never been modified, some information in the output will be null. If a volume has been modified more than once, the output includes only the most recent modification request.</p> 
+///
+/// <p>Describes the most recent volume modification request for the specified EBS volumes.</p>
+/// <p>If a volume has never been modified, some information in the output will be null. If a volume has been modified more than once, the output includes only the most recent modification request.</p>
 /// <p>You can also use CloudWatch Events to check the status of a modification to an EBS volume. For information about CloudWatch Events, see the <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/events/">Amazon CloudWatch Events User Guide</a>. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/monitoring-volume-modifications.html">Monitor the progress of volume modifications</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeVolumesModificationsFluentBuilder {
                 handle: std::sync::Arc<crate::client::Handle>,
                 inner: crate::operation::describe_volumes_modifications::builders::DescribeVolumesModificationsInputBuilder
             }
-impl DescribeVolumesModificationsFluentBuilder  {
+impl DescribeVolumesModificationsFluentBuilder {
     /// Creates a new `DescribeVolumesModifications`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
-                    /// sent. The operation's inner [http::Request] can be modified as well.
-                    pub async fn customize(self) -> std::result::Result<
-                        crate::client::customize::CustomizableOperation<crate::operation::describe_volumes_modifications::DescribeVolumesModifications, aws_http::retry::AwsResponseRetryClassifier,>,
-                        aws_smithy_http::result::SdkError<crate::operation::describe_volumes_modifications::DescribeVolumesModificationsError>
-                    >  {
-                        let handle = self.handle.clone();
-                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-                    }
-    
-                    /// Sends the request and returns the response.
-                    ///
-                    /// If an error occurs, an `SdkError` will be returned with additional details that
-                    /// can be matched against.
-                    ///
-                    /// By default, any retryable failures will be retried twice. Retry behavior
-                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                    /// set when configuring the client.
-                    pub async fn send(self) -> std::result::Result<crate::operation::describe_volumes_modifications::DescribeVolumesModificationsOutput, aws_smithy_http::result::SdkError<crate::operation::describe_volumes_modifications::DescribeVolumesModificationsError>>
-                     {
-                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&self.handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        self.handle.client.call(op).await
-                    }
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle,
+            inner: Default::default(),
+        }
+    }
+
+    /// Consume this builder, creating a customizable operation that can be modified before being
+    /// sent. The operation's inner [http::Request] can be modified as well.
+    pub async fn customize(
+        self,
+    ) -> std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::describe_volumes_modifications::DescribeVolumesModifications,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::result::SdkError<
+            crate::operation::describe_volumes_modifications::DescribeVolumesModificationsError,
+        >,
+    > {
+        let handle = self.handle.clone();
+        let operation = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+    }
+
+    /// Sends the request and returns the response.
+    ///
+    /// If an error occurs, an `SdkError` will be returned with additional details that
+    /// can be matched against.
+    ///
+    /// By default, any retryable failures will be retried twice. Retry behavior
+    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+    /// set when configuring the client.
+    pub async fn send(
+        self,
+    ) -> std::result::Result<
+        crate::operation::describe_volumes_modifications::DescribeVolumesModificationsOutput,
+        aws_smithy_http::result::SdkError<
+            crate::operation::describe_volumes_modifications::DescribeVolumesModificationsError,
+        >,
+    > {
+        let op = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&self.handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        self.handle.client.call(op).await
+    }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::describe_volumes_modifications::paginator::DescribeVolumesModificationsPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::describe_volumes_modifications::paginator::DescribeVolumesModificationsPaginator {
-                            crate::operation::describe_volumes_modifications::paginator::DescribeVolumesModificationsPaginator::new(self.handle, self.inner)
-                        }
+    ///
+    /// Paginators are used by calling [`send().await`](crate::operation::describe_volumes_modifications::paginator::DescribeVolumesModificationsPaginator::send) which returns a `Stream`.
+    pub fn into_paginator(self) -> crate::operation::describe_volumes_modifications::paginator::DescribeVolumesModificationsPaginator{
+        crate::operation::describe_volumes_modifications::paginator::DescribeVolumesModificationsPaginator::new(self.handle, self.inner)
+    }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn dry_run(mut self, input: bool) -> Self {
         self.inner = self.inner.dry_run(input);
@@ -75,7 +97,10 @@ impl DescribeVolumesModificationsFluentBuilder  {
         self
     }
     /// <p>The IDs of the volumes.</p>
-    pub fn set_volume_ids(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+    pub fn set_volume_ids(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
         self.inner = self.inner.set_volume_ids(input);
         self
     }
@@ -83,39 +108,42 @@ impl DescribeVolumesModificationsFluentBuilder  {
     ///
     /// To override the contents of this collection use [`set_filters`](Self::set_filters).
     ///
-    /// <p>The filters.</p> 
-    /// <ul> 
-    /// <li> <p> <code>modification-state</code> - The current modification state (modifying | optimizing | completed | failed).</p> </li> 
-    /// <li> <p> <code>original-iops</code> - The original IOPS rate of the volume.</p> </li> 
-    /// <li> <p> <code>original-size</code> - The original size of the volume, in GiB.</p> </li> 
-    /// <li> <p> <code>original-volume-type</code> - The original volume type of the volume (standard | io1 | io2 | gp2 | sc1 | st1).</p> </li> 
-    /// <li> <p> <code>originalMultiAttachEnabled</code> - Indicates whether Multi-Attach support was enabled (true | false).</p> </li> 
-    /// <li> <p> <code>start-time</code> - The modification start time.</p> </li> 
-    /// <li> <p> <code>target-iops</code> - The target IOPS rate of the volume.</p> </li> 
-    /// <li> <p> <code>target-size</code> - The target size of the volume, in GiB.</p> </li> 
-    /// <li> <p> <code>target-volume-type</code> - The target volume type of the volume (standard | io1 | io2 | gp2 | sc1 | st1).</p> </li> 
-    /// <li> <p> <code>targetMultiAttachEnabled</code> - Indicates whether Multi-Attach support is to be enabled (true | false).</p> </li> 
-    /// <li> <p> <code>volume-id</code> - The ID of the volume.</p> </li> 
+    /// <p>The filters.</p>
+    /// <ul>
+    /// <li> <p> <code>modification-state</code> - The current modification state (modifying | optimizing | completed | failed).</p> </li>
+    /// <li> <p> <code>original-iops</code> - The original IOPS rate of the volume.</p> </li>
+    /// <li> <p> <code>original-size</code> - The original size of the volume, in GiB.</p> </li>
+    /// <li> <p> <code>original-volume-type</code> - The original volume type of the volume (standard | io1 | io2 | gp2 | sc1 | st1).</p> </li>
+    /// <li> <p> <code>originalMultiAttachEnabled</code> - Indicates whether Multi-Attach support was enabled (true | false).</p> </li>
+    /// <li> <p> <code>start-time</code> - The modification start time.</p> </li>
+    /// <li> <p> <code>target-iops</code> - The target IOPS rate of the volume.</p> </li>
+    /// <li> <p> <code>target-size</code> - The target size of the volume, in GiB.</p> </li>
+    /// <li> <p> <code>target-volume-type</code> - The target volume type of the volume (standard | io1 | io2 | gp2 | sc1 | st1).</p> </li>
+    /// <li> <p> <code>targetMultiAttachEnabled</code> - Indicates whether Multi-Attach support is to be enabled (true | false).</p> </li>
+    /// <li> <p> <code>volume-id</code> - The ID of the volume.</p> </li>
     /// </ul>
     pub fn filters(mut self, input: crate::types::Filter) -> Self {
         self.inner = self.inner.filters(input);
         self
     }
-    /// <p>The filters.</p> 
-    /// <ul> 
-    /// <li> <p> <code>modification-state</code> - The current modification state (modifying | optimizing | completed | failed).</p> </li> 
-    /// <li> <p> <code>original-iops</code> - The original IOPS rate of the volume.</p> </li> 
-    /// <li> <p> <code>original-size</code> - The original size of the volume, in GiB.</p> </li> 
-    /// <li> <p> <code>original-volume-type</code> - The original volume type of the volume (standard | io1 | io2 | gp2 | sc1 | st1).</p> </li> 
-    /// <li> <p> <code>originalMultiAttachEnabled</code> - Indicates whether Multi-Attach support was enabled (true | false).</p> </li> 
-    /// <li> <p> <code>start-time</code> - The modification start time.</p> </li> 
-    /// <li> <p> <code>target-iops</code> - The target IOPS rate of the volume.</p> </li> 
-    /// <li> <p> <code>target-size</code> - The target size of the volume, in GiB.</p> </li> 
-    /// <li> <p> <code>target-volume-type</code> - The target volume type of the volume (standard | io1 | io2 | gp2 | sc1 | st1).</p> </li> 
-    /// <li> <p> <code>targetMultiAttachEnabled</code> - Indicates whether Multi-Attach support is to be enabled (true | false).</p> </li> 
-    /// <li> <p> <code>volume-id</code> - The ID of the volume.</p> </li> 
+    /// <p>The filters.</p>
+    /// <ul>
+    /// <li> <p> <code>modification-state</code> - The current modification state (modifying | optimizing | completed | failed).</p> </li>
+    /// <li> <p> <code>original-iops</code> - The original IOPS rate of the volume.</p> </li>
+    /// <li> <p> <code>original-size</code> - The original size of the volume, in GiB.</p> </li>
+    /// <li> <p> <code>original-volume-type</code> - The original volume type of the volume (standard | io1 | io2 | gp2 | sc1 | st1).</p> </li>
+    /// <li> <p> <code>originalMultiAttachEnabled</code> - Indicates whether Multi-Attach support was enabled (true | false).</p> </li>
+    /// <li> <p> <code>start-time</code> - The modification start time.</p> </li>
+    /// <li> <p> <code>target-iops</code> - The target IOPS rate of the volume.</p> </li>
+    /// <li> <p> <code>target-size</code> - The target size of the volume, in GiB.</p> </li>
+    /// <li> <p> <code>target-volume-type</code> - The target volume type of the volume (standard | io1 | io2 | gp2 | sc1 | st1).</p> </li>
+    /// <li> <p> <code>targetMultiAttachEnabled</code> - Indicates whether Multi-Attach support is to be enabled (true | false).</p> </li>
+    /// <li> <p> <code>volume-id</code> - The ID of the volume.</p> </li>
     /// </ul>
-    pub fn set_filters(mut self, input: std::option::Option<std::vec::Vec<crate::types::Filter>>) -> Self {
+    pub fn set_filters(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::Filter>>,
+    ) -> Self {
         self.inner = self.inner.set_filters(input);
         self
     }
@@ -140,4 +168,3 @@ impl DescribeVolumesModificationsFluentBuilder  {
         self
     }
 }
-

@@ -3,7 +3,7 @@
 /// <p>Describes the resources available for a container instance.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Resource  {
+pub struct Resource {
     /// <p>The name of the resource, such as <code>CPU</code>, <code>MEMORY</code>, <code>PORTS</code>, <code>PORTS_UDP</code>, or a user-defined resource.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -25,11 +25,11 @@ pub struct Resource  {
 }
 impl Resource {
     /// <p>The name of the resource, such as <code>CPU</code>, <code>MEMORY</code>, <code>PORTS</code>, <code>PORTS_UDP</code>, or a user-defined resource.</p>
-    pub fn name(&self) -> std::option::Option<& str> {
+    pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>The type of the resource. Valid values: <code>INTEGER</code>, <code>DOUBLE</code>, <code>LONG</code>, or <code>STRINGSET</code>.</p>
-    pub fn r#type(&self) -> std::option::Option<& str> {
+    pub fn r#type(&self) -> std::option::Option<&str> {
         self.r#type.as_deref()
     }
     /// <p>When the <code>doubleValue</code> type is set, the value of the resource must be a double precision floating-point type.</p>
@@ -45,7 +45,7 @@ impl Resource {
         self.integer_value
     }
     /// <p>When the <code>stringSetValue</code> type is set, the value of the resource must be a string type.</p>
-    pub fn string_set_value(&self) -> std::option::Option<& [std::string::String]> {
+    pub fn string_set_value(&self) -> std::option::Option<&[std::string::String]> {
         self.string_set_value.as_deref()
     }
 }
@@ -75,7 +75,8 @@ impl ResourceBuilder {
     }
     /// <p>The name of the resource, such as <code>CPU</code>, <code>MEMORY</code>, <code>PORTS</code>, <code>PORTS_UDP</code>, or a user-defined resource.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input; self
+        self.name = input;
+        self
     }
     /// <p>The type of the resource. Valid values: <code>INTEGER</code>, <code>DOUBLE</code>, <code>LONG</code>, or <code>STRINGSET</code>.</p>
     pub fn r#type(mut self, input: impl Into<std::string::String>) -> Self {
@@ -84,7 +85,8 @@ impl ResourceBuilder {
     }
     /// <p>The type of the resource. Valid values: <code>INTEGER</code>, <code>DOUBLE</code>, <code>LONG</code>, or <code>STRINGSET</code>.</p>
     pub fn set_type(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.r#type = input; self
+        self.r#type = input;
+        self
     }
     /// <p>When the <code>doubleValue</code> type is set, the value of the resource must be a double precision floating-point type.</p>
     pub fn double_value(mut self, input: f64) -> Self {
@@ -93,7 +95,8 @@ impl ResourceBuilder {
     }
     /// <p>When the <code>doubleValue</code> type is set, the value of the resource must be a double precision floating-point type.</p>
     pub fn set_double_value(mut self, input: std::option::Option<f64>) -> Self {
-        self.double_value = input; self
+        self.double_value = input;
+        self
     }
     /// <p>When the <code>longValue</code> type is set, the value of the resource must be an extended precision floating-point type.</p>
     pub fn long_value(mut self, input: i64) -> Self {
@@ -102,7 +105,8 @@ impl ResourceBuilder {
     }
     /// <p>When the <code>longValue</code> type is set, the value of the resource must be an extended precision floating-point type.</p>
     pub fn set_long_value(mut self, input: std::option::Option<i64>) -> Self {
-        self.long_value = input; self
+        self.long_value = input;
+        self
     }
     /// <p>When the <code>integerValue</code> type is set, the value of the resource must be an integer.</p>
     pub fn integer_value(mut self, input: i32) -> Self {
@@ -111,7 +115,8 @@ impl ResourceBuilder {
     }
     /// <p>When the <code>integerValue</code> type is set, the value of the resource must be an integer.</p>
     pub fn set_integer_value(mut self, input: std::option::Option<i32>) -> Self {
-        self.integer_value = input; self
+        self.integer_value = input;
+        self
     }
     /// Appends an item to `string_set_value`.
     ///
@@ -120,33 +125,27 @@ impl ResourceBuilder {
     /// <p>When the <code>stringSetValue</code> type is set, the value of the resource must be a string type.</p>
     pub fn string_set_value(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.string_set_value.unwrap_or_default();
-                        v.push(input.into());
-                        self.string_set_value = Some(v);
-                        self
+        v.push(input.into());
+        self.string_set_value = Some(v);
+        self
     }
     /// <p>When the <code>stringSetValue</code> type is set, the value of the resource must be a string type.</p>
-    pub fn set_string_set_value(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-        self.string_set_value = input; self
+    pub fn set_string_set_value(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
+        self.string_set_value = input;
+        self
     }
     /// Consumes the builder and constructs a [`Resource`](crate::types::Resource).
     pub fn build(self) -> crate::types::Resource {
         crate::types::Resource {
-            name: self.name
-            ,
-            r#type: self.r#type
-            ,
-            double_value: self.double_value
-                .unwrap_or_default()
-            ,
-            long_value: self.long_value
-                .unwrap_or_default()
-            ,
-            integer_value: self.integer_value
-                .unwrap_or_default()
-            ,
-            string_set_value: self.string_set_value
-            ,
+            name: self.name,
+            r#type: self.r#type,
+            double_value: self.double_value.unwrap_or_default(),
+            long_value: self.long_value.unwrap_or_default(),
+            integer_value: self.integer_value.unwrap_or_default(),
+            string_set_value: self.string_set_value,
         }
     }
 }
-

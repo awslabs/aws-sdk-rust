@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-/// 
+///
 /// Here is an example of how you can make a match expression forward-compatible:
-/// 
+///
 /// ```text
 /// # let poolfiltername = unimplemented!();
 /// match poolfiltername {
@@ -35,14 +35,22 @@
 /// Specifically, when `poolfiltername` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `PoolFilterName::NewFeature` also yielding `"NewFeature"`.
-/// 
+///
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
 pub enum PoolFilterName {
     #[allow(missing_docs)] // documentation missing in model
     DeletionProtectionEnabled,
@@ -59,51 +67,60 @@ pub enum PoolFilterName {
     #[allow(missing_docs)] // documentation missing in model
     TwoWayEnabled,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::primitives::UnknownVariantValue)
+    Unknown(crate::primitives::UnknownVariantValue),
 }
 impl std::convert::From<&str> for PoolFilterName {
-                fn from(s: &str) -> Self {
-                    match s {
-                        "deletion-protection-enabled" => PoolFilterName::DeletionProtectionEnabled,
-"message-type" => PoolFilterName::MessageType,
-"opt-out-list-name" => PoolFilterName::OptOutListName,
-"self-managed-opt-outs-enabled" => PoolFilterName::SelfManagedOptOutsEnabled,
-"shared-routes-enabled" => PoolFilterName::SharedRoutesEnabled,
-"status" => PoolFilterName::Status,
-"two-way-enabled" => PoolFilterName::TwoWayEnabled,
-other => PoolFilterName::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
-                    }
-                }
+    fn from(s: &str) -> Self {
+        match s {
+            "deletion-protection-enabled" => PoolFilterName::DeletionProtectionEnabled,
+            "message-type" => PoolFilterName::MessageType,
+            "opt-out-list-name" => PoolFilterName::OptOutListName,
+            "self-managed-opt-outs-enabled" => PoolFilterName::SelfManagedOptOutsEnabled,
+            "shared-routes-enabled" => PoolFilterName::SharedRoutesEnabled,
+            "status" => PoolFilterName::Status,
+            "two-way-enabled" => PoolFilterName::TwoWayEnabled,
+            other => {
+                PoolFilterName::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
             }
-impl std::str::FromStr for PoolFilterName {
-                type Err = std::convert::Infallible;
-
-                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-                    Ok(PoolFilterName::from(s))
-                }
-            }
-impl PoolFilterName {
-                /// Returns the `&str` value of the enum member.
-                pub fn as_str(&self) -> &str {
-                    match self {
-    PoolFilterName::DeletionProtectionEnabled => "deletion-protection-enabled",
-    PoolFilterName::MessageType => "message-type",
-    PoolFilterName::OptOutListName => "opt-out-list-name",
-    PoolFilterName::SelfManagedOptOutsEnabled => "self-managed-opt-outs-enabled",
-    PoolFilterName::SharedRoutesEnabled => "shared-routes-enabled",
-    PoolFilterName::Status => "status",
-    PoolFilterName::TwoWayEnabled => "two-way-enabled",
-    PoolFilterName::Unknown(value) => value.as_str()
+        }
+    }
 }
-                }
-                /// Returns all the `&str` representations of the enum members.
-                pub const fn values() -> &'static [&'static str] {
-                    &["deletion-protection-enabled", "message-type", "opt-out-list-name", "self-managed-opt-outs-enabled", "shared-routes-enabled", "status", "two-way-enabled"]
-                }
-            }
-impl AsRef<str> for PoolFilterName {
-                fn as_ref(&self) -> &str {
-                    self.as_str()
-                }
-            }
+impl std::str::FromStr for PoolFilterName {
+    type Err = std::convert::Infallible;
 
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(PoolFilterName::from(s))
+    }
+}
+impl PoolFilterName {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            PoolFilterName::DeletionProtectionEnabled => "deletion-protection-enabled",
+            PoolFilterName::MessageType => "message-type",
+            PoolFilterName::OptOutListName => "opt-out-list-name",
+            PoolFilterName::SelfManagedOptOutsEnabled => "self-managed-opt-outs-enabled",
+            PoolFilterName::SharedRoutesEnabled => "shared-routes-enabled",
+            PoolFilterName::Status => "status",
+            PoolFilterName::TwoWayEnabled => "two-way-enabled",
+            PoolFilterName::Unknown(value) => value.as_str(),
+        }
+    }
+    /// Returns all the `&str` representations of the enum members.
+    pub const fn values() -> &'static [&'static str] {
+        &[
+            "deletion-protection-enabled",
+            "message-type",
+            "opt-out-list-name",
+            "self-managed-opt-outs-enabled",
+            "shared-routes-enabled",
+            "status",
+            "two-way-enabled",
+        ]
+    }
+}
+impl AsRef<str> for PoolFilterName {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}

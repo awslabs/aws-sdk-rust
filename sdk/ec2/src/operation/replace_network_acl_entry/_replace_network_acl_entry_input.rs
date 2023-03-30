@@ -2,14 +2,14 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ReplaceNetworkAclEntryInput  {
+pub struct ReplaceNetworkAclEntryInput {
     /// <p>The IPv4 network range to allow or deny, in CIDR notation (for example <code>172.16.0.0/24</code>).</p>
     #[doc(hidden)]
     pub cidr_block: std::option::Option<std::string::String>,
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     #[doc(hidden)]
     pub dry_run: std::option::Option<bool>,
-    /// <p>Indicates whether to replace the egress rule.</p> 
+    /// <p>Indicates whether to replace the egress rule.</p>
     /// <p>Default: If no value is specified, we replace the ingress rule.</p>
     #[doc(hidden)]
     pub egress: std::option::Option<bool>,
@@ -37,40 +37,40 @@ pub struct ReplaceNetworkAclEntryInput  {
 }
 impl ReplaceNetworkAclEntryInput {
     /// <p>The IPv4 network range to allow or deny, in CIDR notation (for example <code>172.16.0.0/24</code>).</p>
-    pub fn cidr_block(&self) -> std::option::Option<& str> {
+    pub fn cidr_block(&self) -> std::option::Option<&str> {
         self.cidr_block.as_deref()
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn dry_run(&self) -> std::option::Option<bool> {
         self.dry_run
     }
-    /// <p>Indicates whether to replace the egress rule.</p> 
+    /// <p>Indicates whether to replace the egress rule.</p>
     /// <p>Default: If no value is specified, we replace the ingress rule.</p>
     pub fn egress(&self) -> std::option::Option<bool> {
         self.egress
     }
     /// <p>ICMP protocol: The ICMP or ICMPv6 type and code. Required if specifying protocol 1 (ICMP) or protocol 58 (ICMPv6) with an IPv6 CIDR block.</p>
-    pub fn icmp_type_code(&self) -> std::option::Option<& crate::types::IcmpTypeCode> {
+    pub fn icmp_type_code(&self) -> std::option::Option<&crate::types::IcmpTypeCode> {
         self.icmp_type_code.as_ref()
     }
     /// <p>The IPv6 network range to allow or deny, in CIDR notation (for example <code>2001:bd8:1234:1a00::/64</code>).</p>
-    pub fn ipv6_cidr_block(&self) -> std::option::Option<& str> {
+    pub fn ipv6_cidr_block(&self) -> std::option::Option<&str> {
         self.ipv6_cidr_block.as_deref()
     }
     /// <p>The ID of the ACL.</p>
-    pub fn network_acl_id(&self) -> std::option::Option<& str> {
+    pub fn network_acl_id(&self) -> std::option::Option<&str> {
         self.network_acl_id.as_deref()
     }
     /// <p>TCP or UDP protocols: The range of ports the rule applies to. Required if specifying protocol 6 (TCP) or 17 (UDP).</p>
-    pub fn port_range(&self) -> std::option::Option<& crate::types::PortRange> {
+    pub fn port_range(&self) -> std::option::Option<&crate::types::PortRange> {
         self.port_range.as_ref()
     }
     /// <p>The protocol number. A value of "-1" means all protocols. If you specify "-1" or a protocol number other than "6" (TCP), "17" (UDP), or "1" (ICMP), traffic on all ports is allowed, regardless of any ports or ICMP types or codes that you specify. If you specify protocol "58" (ICMPv6) and specify an IPv4 CIDR block, traffic for all ICMP types and codes allowed, regardless of any that you specify. If you specify protocol "58" (ICMPv6) and specify an IPv6 CIDR block, you must specify an ICMP type and code.</p>
-    pub fn protocol(&self) -> std::option::Option<& str> {
+    pub fn protocol(&self) -> std::option::Option<&str> {
         self.protocol.as_deref()
     }
     /// <p>Indicates whether to allow or deny the traffic that matches the rule.</p>
-    pub fn rule_action(&self) -> std::option::Option<& crate::types::RuleAction> {
+    pub fn rule_action(&self) -> std::option::Option<&crate::types::RuleAction> {
         self.rule_action.as_ref()
     }
     /// <p>The rule number of the entry to replace.</p>
@@ -80,7 +80,9 @@ impl ReplaceNetworkAclEntryInput {
 }
 impl ReplaceNetworkAclEntryInput {
     /// Creates a new builder-style object to manufacture [`ReplaceNetworkAclEntryInput`](crate::operation::replace_network_acl_entry::ReplaceNetworkAclEntryInput).
-    pub fn builder() -> crate::operation::replace_network_acl_entry::builders::ReplaceNetworkAclEntryInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::replace_network_acl_entry::builders::ReplaceNetworkAclEntryInputBuilder
+    {
         crate::operation::replace_network_acl_entry::builders::ReplaceNetworkAclEntryInputBuilder::default()
     }
 }
@@ -108,7 +110,8 @@ impl ReplaceNetworkAclEntryInputBuilder {
     }
     /// <p>The IPv4 network range to allow or deny, in CIDR notation (for example <code>172.16.0.0/24</code>).</p>
     pub fn set_cidr_block(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.cidr_block = input; self
+        self.cidr_block = input;
+        self
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn dry_run(mut self, input: bool) -> Self {
@@ -117,18 +120,20 @@ impl ReplaceNetworkAclEntryInputBuilder {
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn set_dry_run(mut self, input: std::option::Option<bool>) -> Self {
-        self.dry_run = input; self
+        self.dry_run = input;
+        self
     }
-    /// <p>Indicates whether to replace the egress rule.</p> 
+    /// <p>Indicates whether to replace the egress rule.</p>
     /// <p>Default: If no value is specified, we replace the ingress rule.</p>
     pub fn egress(mut self, input: bool) -> Self {
         self.egress = Some(input);
         self
     }
-    /// <p>Indicates whether to replace the egress rule.</p> 
+    /// <p>Indicates whether to replace the egress rule.</p>
     /// <p>Default: If no value is specified, we replace the ingress rule.</p>
     pub fn set_egress(mut self, input: std::option::Option<bool>) -> Self {
-        self.egress = input; self
+        self.egress = input;
+        self
     }
     /// <p>ICMP protocol: The ICMP or ICMPv6 type and code. Required if specifying protocol 1 (ICMP) or protocol 58 (ICMPv6) with an IPv6 CIDR block.</p>
     pub fn icmp_type_code(mut self, input: crate::types::IcmpTypeCode) -> Self {
@@ -136,8 +141,12 @@ impl ReplaceNetworkAclEntryInputBuilder {
         self
     }
     /// <p>ICMP protocol: The ICMP or ICMPv6 type and code. Required if specifying protocol 1 (ICMP) or protocol 58 (ICMPv6) with an IPv6 CIDR block.</p>
-    pub fn set_icmp_type_code(mut self, input: std::option::Option<crate::types::IcmpTypeCode>) -> Self {
-        self.icmp_type_code = input; self
+    pub fn set_icmp_type_code(
+        mut self,
+        input: std::option::Option<crate::types::IcmpTypeCode>,
+    ) -> Self {
+        self.icmp_type_code = input;
+        self
     }
     /// <p>The IPv6 network range to allow or deny, in CIDR notation (for example <code>2001:bd8:1234:1a00::/64</code>).</p>
     pub fn ipv6_cidr_block(mut self, input: impl Into<std::string::String>) -> Self {
@@ -146,7 +155,8 @@ impl ReplaceNetworkAclEntryInputBuilder {
     }
     /// <p>The IPv6 network range to allow or deny, in CIDR notation (for example <code>2001:bd8:1234:1a00::/64</code>).</p>
     pub fn set_ipv6_cidr_block(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.ipv6_cidr_block = input; self
+        self.ipv6_cidr_block = input;
+        self
     }
     /// <p>The ID of the ACL.</p>
     pub fn network_acl_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -155,7 +165,8 @@ impl ReplaceNetworkAclEntryInputBuilder {
     }
     /// <p>The ID of the ACL.</p>
     pub fn set_network_acl_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.network_acl_id = input; self
+        self.network_acl_id = input;
+        self
     }
     /// <p>TCP or UDP protocols: The range of ports the rule applies to. Required if specifying protocol 6 (TCP) or 17 (UDP).</p>
     pub fn port_range(mut self, input: crate::types::PortRange) -> Self {
@@ -164,7 +175,8 @@ impl ReplaceNetworkAclEntryInputBuilder {
     }
     /// <p>TCP or UDP protocols: The range of ports the rule applies to. Required if specifying protocol 6 (TCP) or 17 (UDP).</p>
     pub fn set_port_range(mut self, input: std::option::Option<crate::types::PortRange>) -> Self {
-        self.port_range = input; self
+        self.port_range = input;
+        self
     }
     /// <p>The protocol number. A value of "-1" means all protocols. If you specify "-1" or a protocol number other than "6" (TCP), "17" (UDP), or "1" (ICMP), traffic on all ports is allowed, regardless of any ports or ICMP types or codes that you specify. If you specify protocol "58" (ICMPv6) and specify an IPv4 CIDR block, traffic for all ICMP types and codes allowed, regardless of any that you specify. If you specify protocol "58" (ICMPv6) and specify an IPv6 CIDR block, you must specify an ICMP type and code.</p>
     pub fn protocol(mut self, input: impl Into<std::string::String>) -> Self {
@@ -173,7 +185,8 @@ impl ReplaceNetworkAclEntryInputBuilder {
     }
     /// <p>The protocol number. A value of "-1" means all protocols. If you specify "-1" or a protocol number other than "6" (TCP), "17" (UDP), or "1" (ICMP), traffic on all ports is allowed, regardless of any ports or ICMP types or codes that you specify. If you specify protocol "58" (ICMPv6) and specify an IPv4 CIDR block, traffic for all ICMP types and codes allowed, regardless of any that you specify. If you specify protocol "58" (ICMPv6) and specify an IPv6 CIDR block, you must specify an ICMP type and code.</p>
     pub fn set_protocol(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.protocol = input; self
+        self.protocol = input;
+        self
     }
     /// <p>Indicates whether to allow or deny the traffic that matches the rule.</p>
     pub fn rule_action(mut self, input: crate::types::RuleAction) -> Self {
@@ -182,7 +195,8 @@ impl ReplaceNetworkAclEntryInputBuilder {
     }
     /// <p>Indicates whether to allow or deny the traffic that matches the rule.</p>
     pub fn set_rule_action(mut self, input: std::option::Option<crate::types::RuleAction>) -> Self {
-        self.rule_action = input; self
+        self.rule_action = input;
+        self
     }
     /// <p>The rule number of the entry to replace.</p>
     pub fn rule_number(mut self, input: i32) -> Self {
@@ -191,34 +205,29 @@ impl ReplaceNetworkAclEntryInputBuilder {
     }
     /// <p>The rule number of the entry to replace.</p>
     pub fn set_rule_number(mut self, input: std::option::Option<i32>) -> Self {
-        self.rule_number = input; self
+        self.rule_number = input;
+        self
     }
     /// Consumes the builder and constructs a [`ReplaceNetworkAclEntryInput`](crate::operation::replace_network_acl_entry::ReplaceNetworkAclEntryInput).
-    pub fn build(self) -> Result<crate::operation::replace_network_acl_entry::ReplaceNetworkAclEntryInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::replace_network_acl_entry::ReplaceNetworkAclEntryInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::replace_network_acl_entry::ReplaceNetworkAclEntryInput {
-                cidr_block: self.cidr_block
-                ,
-                dry_run: self.dry_run
-                ,
-                egress: self.egress
-                ,
-                icmp_type_code: self.icmp_type_code
-                ,
-                ipv6_cidr_block: self.ipv6_cidr_block
-                ,
-                network_acl_id: self.network_acl_id
-                ,
-                port_range: self.port_range
-                ,
-                protocol: self.protocol
-                ,
-                rule_action: self.rule_action
-                ,
-                rule_number: self.rule_number
-                ,
-            }
+                cidr_block: self.cidr_block,
+                dry_run: self.dry_run,
+                egress: self.egress,
+                icmp_type_code: self.icmp_type_code,
+                ipv6_cidr_block: self.ipv6_cidr_block,
+                network_acl_id: self.network_acl_id,
+                port_range: self.port_range,
+                protocol: self.protocol,
+                rule_action: self.rule_action,
+                rule_number: self.rule_number,
+            },
         )
     }
 }
-

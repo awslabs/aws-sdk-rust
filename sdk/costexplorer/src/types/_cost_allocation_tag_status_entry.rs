@@ -3,7 +3,7 @@
 /// <p>The cost allocation tag status. The status of a key can either be active or inactive. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CostAllocationTagStatusEntry  {
+pub struct CostAllocationTagStatusEntry {
     /// <p>The key for the cost allocation tag. </p>
     #[doc(hidden)]
     pub tag_key: std::option::Option<std::string::String>,
@@ -13,11 +13,11 @@ pub struct CostAllocationTagStatusEntry  {
 }
 impl CostAllocationTagStatusEntry {
     /// <p>The key for the cost allocation tag. </p>
-    pub fn tag_key(&self) -> std::option::Option<& str> {
+    pub fn tag_key(&self) -> std::option::Option<&str> {
         self.tag_key.as_deref()
     }
     /// <p>The status of a cost allocation tag. </p>
-    pub fn status(&self) -> std::option::Option<& crate::types::CostAllocationTagStatus> {
+    pub fn status(&self) -> std::option::Option<&crate::types::CostAllocationTagStatus> {
         self.status.as_ref()
     }
 }
@@ -43,7 +43,8 @@ impl CostAllocationTagStatusEntryBuilder {
     }
     /// <p>The key for the cost allocation tag. </p>
     pub fn set_tag_key(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.tag_key = input; self
+        self.tag_key = input;
+        self
     }
     /// <p>The status of a cost allocation tag. </p>
     pub fn status(mut self, input: crate::types::CostAllocationTagStatus) -> Self {
@@ -51,17 +52,18 @@ impl CostAllocationTagStatusEntryBuilder {
         self
     }
     /// <p>The status of a cost allocation tag. </p>
-    pub fn set_status(mut self, input: std::option::Option<crate::types::CostAllocationTagStatus>) -> Self {
-        self.status = input; self
+    pub fn set_status(
+        mut self,
+        input: std::option::Option<crate::types::CostAllocationTagStatus>,
+    ) -> Self {
+        self.status = input;
+        self
     }
     /// Consumes the builder and constructs a [`CostAllocationTagStatusEntry`](crate::types::CostAllocationTagStatusEntry).
     pub fn build(self) -> crate::types::CostAllocationTagStatusEntry {
         crate::types::CostAllocationTagStatusEntry {
-            tag_key: self.tag_key
-            ,
-            status: self.status
-            ,
+            tag_key: self.tag_key,
+            status: self.status,
         }
     }
 }
-

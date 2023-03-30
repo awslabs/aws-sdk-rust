@@ -3,7 +3,7 @@
 /// <p>A transform operation that removes tags associated with a column.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UntagColumnOperation  {
+pub struct UntagColumnOperation {
     /// <p>The column that this operation acts on.</p>
     #[doc(hidden)]
     pub column_name: std::option::Option<std::string::String>,
@@ -13,11 +13,11 @@ pub struct UntagColumnOperation  {
 }
 impl UntagColumnOperation {
     /// <p>The column that this operation acts on.</p>
-    pub fn column_name(&self) -> std::option::Option<& str> {
+    pub fn column_name(&self) -> std::option::Option<&str> {
         self.column_name.as_deref()
     }
     /// <p>The column tags to remove from this column.</p>
-    pub fn tag_names(&self) -> std::option::Option<& [crate::types::ColumnTagName]> {
+    pub fn tag_names(&self) -> std::option::Option<&[crate::types::ColumnTagName]> {
         self.tag_names.as_deref()
     }
 }
@@ -43,7 +43,8 @@ impl UntagColumnOperationBuilder {
     }
     /// <p>The column that this operation acts on.</p>
     pub fn set_column_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.column_name = input; self
+        self.column_name = input;
+        self
     }
     /// Appends an item to `tag_names`.
     ///
@@ -52,22 +53,23 @@ impl UntagColumnOperationBuilder {
     /// <p>The column tags to remove from this column.</p>
     pub fn tag_names(mut self, input: crate::types::ColumnTagName) -> Self {
         let mut v = self.tag_names.unwrap_or_default();
-                        v.push(input);
-                        self.tag_names = Some(v);
-                        self
+        v.push(input);
+        self.tag_names = Some(v);
+        self
     }
     /// <p>The column tags to remove from this column.</p>
-    pub fn set_tag_names(mut self, input: std::option::Option<std::vec::Vec<crate::types::ColumnTagName>>) -> Self {
-        self.tag_names = input; self
+    pub fn set_tag_names(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::ColumnTagName>>,
+    ) -> Self {
+        self.tag_names = input;
+        self
     }
     /// Consumes the builder and constructs a [`UntagColumnOperation`](crate::types::UntagColumnOperation).
     pub fn build(self) -> crate::types::UntagColumnOperation {
         crate::types::UntagColumnOperation {
-            column_name: self.column_name
-            ,
-            tag_names: self.tag_names
-            ,
+            column_name: self.column_name,
+            tag_names: self.tag_names,
         }
     }
 }
-

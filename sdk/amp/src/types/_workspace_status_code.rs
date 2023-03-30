@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-/// 
+///
 /// Here is an example of how you can make a match expression forward-compatible:
-/// 
+///
 /// ```text
 /// # let workspacestatuscode = unimplemented!();
 /// match workspacestatuscode {
@@ -33,14 +33,22 @@
 /// Specifically, when `workspacestatuscode` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `WorkspaceStatusCode::NewFeature` also yielding `"NewFeature"`.
-/// 
+///
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 /// State of a workspace.
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
 pub enum WorkspaceStatusCode {
     /// Workspace has been created and is usable.
     Active,
@@ -53,47 +61,54 @@ pub enum WorkspaceStatusCode {
     /// Workspace is being updated. Updates are allowed only when status is ACTIVE.
     Updating,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::primitives::UnknownVariantValue)
+    Unknown(crate::primitives::UnknownVariantValue),
 }
 impl std::convert::From<&str> for WorkspaceStatusCode {
-                fn from(s: &str) -> Self {
-                    match s {
-                        "ACTIVE" => WorkspaceStatusCode::Active,
-"CREATING" => WorkspaceStatusCode::Creating,
-"CREATION_FAILED" => WorkspaceStatusCode::CreationFailed,
-"DELETING" => WorkspaceStatusCode::Deleting,
-"UPDATING" => WorkspaceStatusCode::Updating,
-other => WorkspaceStatusCode::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
-                    }
-                }
-            }
-impl std::str::FromStr for WorkspaceStatusCode {
-                type Err = std::convert::Infallible;
-
-                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-                    Ok(WorkspaceStatusCode::from(s))
-                }
-            }
-impl WorkspaceStatusCode {
-                /// Returns the `&str` value of the enum member.
-                pub fn as_str(&self) -> &str {
-                    match self {
-    WorkspaceStatusCode::Active => "ACTIVE",
-    WorkspaceStatusCode::Creating => "CREATING",
-    WorkspaceStatusCode::CreationFailed => "CREATION_FAILED",
-    WorkspaceStatusCode::Deleting => "DELETING",
-    WorkspaceStatusCode::Updating => "UPDATING",
-    WorkspaceStatusCode::Unknown(value) => value.as_str()
+    fn from(s: &str) -> Self {
+        match s {
+            "ACTIVE" => WorkspaceStatusCode::Active,
+            "CREATING" => WorkspaceStatusCode::Creating,
+            "CREATION_FAILED" => WorkspaceStatusCode::CreationFailed,
+            "DELETING" => WorkspaceStatusCode::Deleting,
+            "UPDATING" => WorkspaceStatusCode::Updating,
+            other => WorkspaceStatusCode::Unknown(crate::primitives::UnknownVariantValue(
+                other.to_owned(),
+            )),
+        }
+    }
 }
-                }
-                /// Returns all the `&str` representations of the enum members.
-                pub const fn values() -> &'static [&'static str] {
-                    &["ACTIVE", "CREATING", "CREATION_FAILED", "DELETING", "UPDATING"]
-                }
-            }
-impl AsRef<str> for WorkspaceStatusCode {
-                fn as_ref(&self) -> &str {
-                    self.as_str()
-                }
-            }
+impl std::str::FromStr for WorkspaceStatusCode {
+    type Err = std::convert::Infallible;
 
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(WorkspaceStatusCode::from(s))
+    }
+}
+impl WorkspaceStatusCode {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            WorkspaceStatusCode::Active => "ACTIVE",
+            WorkspaceStatusCode::Creating => "CREATING",
+            WorkspaceStatusCode::CreationFailed => "CREATION_FAILED",
+            WorkspaceStatusCode::Deleting => "DELETING",
+            WorkspaceStatusCode::Updating => "UPDATING",
+            WorkspaceStatusCode::Unknown(value) => value.as_str(),
+        }
+    }
+    /// Returns all the `&str` representations of the enum members.
+    pub const fn values() -> &'static [&'static str] {
+        &[
+            "ACTIVE",
+            "CREATING",
+            "CREATION_FAILED",
+            "DELETING",
+            "UPDATING",
+        ]
+    }
+}
+impl AsRef<str> for WorkspaceStatusCode {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}

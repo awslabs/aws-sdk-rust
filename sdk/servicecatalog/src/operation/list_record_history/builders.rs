@@ -4,64 +4,86 @@ pub use crate::operation::list_record_history::_list_record_history_output::List
 pub use crate::operation::list_record_history::_list_record_history_input::ListRecordHistoryInputBuilder;
 
 /// Fluent builder constructing a request to `ListRecordHistory`.
-/// 
+///
 /// <p>Lists the specified requests or all performed requests.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListRecordHistoryFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::list_record_history::builders::ListRecordHistoryInputBuilder
-            }
-impl ListRecordHistoryFluentBuilder  {
+    handle: std::sync::Arc<crate::client::Handle>,
+    inner: crate::operation::list_record_history::builders::ListRecordHistoryInputBuilder,
+}
+impl ListRecordHistoryFluentBuilder {
     /// Creates a new `ListRecordHistory`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
-                    /// sent. The operation's inner [http::Request] can be modified as well.
-                    pub async fn customize(self) -> std::result::Result<
-                        crate::client::customize::CustomizableOperation<crate::operation::list_record_history::ListRecordHistory, aws_http::retry::AwsResponseRetryClassifier,>,
-                        aws_smithy_http::result::SdkError<crate::operation::list_record_history::ListRecordHistoryError>
-                    >  {
-                        let handle = self.handle.clone();
-                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-                    }
-    
-                    /// Sends the request and returns the response.
-                    ///
-                    /// If an error occurs, an `SdkError` will be returned with additional details that
-                    /// can be matched against.
-                    ///
-                    /// By default, any retryable failures will be retried twice. Retry behavior
-                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                    /// set when configuring the client.
-                    pub async fn send(self) -> std::result::Result<crate::operation::list_record_history::ListRecordHistoryOutput, aws_smithy_http::result::SdkError<crate::operation::list_record_history::ListRecordHistoryError>>
-                     {
-                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&self.handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        self.handle.client.call(op).await
-                    }
-    /// <p>The language code.</p> 
-    /// <ul> 
-    /// <li> <p> <code>en</code> - English (default)</p> </li> 
-    /// <li> <p> <code>jp</code> - Japanese</p> </li> 
-    /// <li> <p> <code>zh</code> - Chinese</p> </li> 
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle,
+            inner: Default::default(),
+        }
+    }
+
+    /// Consume this builder, creating a customizable operation that can be modified before being
+    /// sent. The operation's inner [http::Request] can be modified as well.
+    pub async fn customize(
+        self,
+    ) -> std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::list_record_history::ListRecordHistory,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::result::SdkError<
+            crate::operation::list_record_history::ListRecordHistoryError,
+        >,
+    > {
+        let handle = self.handle.clone();
+        let operation = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+    }
+
+    /// Sends the request and returns the response.
+    ///
+    /// If an error occurs, an `SdkError` will be returned with additional details that
+    /// can be matched against.
+    ///
+    /// By default, any retryable failures will be retried twice. Retry behavior
+    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+    /// set when configuring the client.
+    pub async fn send(
+        self,
+    ) -> std::result::Result<
+        crate::operation::list_record_history::ListRecordHistoryOutput,
+        aws_smithy_http::result::SdkError<
+            crate::operation::list_record_history::ListRecordHistoryError,
+        >,
+    > {
+        let op = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&self.handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        self.handle.client.call(op).await
+    }
+    /// <p>The language code.</p>
+    /// <ul>
+    /// <li> <p> <code>en</code> - English (default)</p> </li>
+    /// <li> <p> <code>jp</code> - Japanese</p> </li>
+    /// <li> <p> <code>zh</code> - Chinese</p> </li>
     /// </ul>
     pub fn accept_language(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.accept_language(input.into());
         self
     }
-    /// <p>The language code.</p> 
-    /// <ul> 
-    /// <li> <p> <code>en</code> - English (default)</p> </li> 
-    /// <li> <p> <code>jp</code> - Japanese</p> </li> 
-    /// <li> <p> <code>zh</code> - Chinese</p> </li> 
+    /// <p>The language code.</p>
+    /// <ul>
+    /// <li> <p> <code>en</code> - English (default)</p> </li>
+    /// <li> <p> <code>jp</code> - Japanese</p> </li>
+    /// <li> <p> <code>zh</code> - Chinese</p> </li>
     /// </ul>
     pub fn set_accept_language(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.inner = self.inner.set_accept_language(input);
@@ -73,7 +95,10 @@ impl ListRecordHistoryFluentBuilder  {
         self
     }
     /// <p>The access level to use to obtain results. The default is <code>User</code>.</p>
-    pub fn set_access_level_filter(mut self, input: std::option::Option<crate::types::AccessLevelFilter>) -> Self {
+    pub fn set_access_level_filter(
+        mut self,
+        input: std::option::Option<crate::types::AccessLevelFilter>,
+    ) -> Self {
         self.inner = self.inner.set_access_level_filter(input);
         self
     }
@@ -83,7 +108,10 @@ impl ListRecordHistoryFluentBuilder  {
         self
     }
     /// <p>The search filter to scope the results.</p>
-    pub fn set_search_filter(mut self, input: std::option::Option<crate::types::ListRecordHistorySearchFilter>) -> Self {
+    pub fn set_search_filter(
+        mut self,
+        input: std::option::Option<crate::types::ListRecordHistorySearchFilter>,
+    ) -> Self {
         self.inner = self.inner.set_search_filter(input);
         self
     }
@@ -108,4 +136,3 @@ impl ListRecordHistoryFluentBuilder  {
         self
     }
 }
-

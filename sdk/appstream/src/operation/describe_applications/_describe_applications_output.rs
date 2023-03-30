@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeApplicationsOutput  {
+pub struct DescribeApplicationsOutput {
     /// <p>The applications in the list.</p>
     #[doc(hidden)]
     pub applications: std::option::Option<std::vec::Vec<crate::types::Application>>,
@@ -13,22 +13,23 @@ pub struct DescribeApplicationsOutput  {
 }
 impl DescribeApplicationsOutput {
     /// <p>The applications in the list.</p>
-    pub fn applications(&self) -> std::option::Option<& [crate::types::Application]> {
+    pub fn applications(&self) -> std::option::Option<&[crate::types::Application]> {
         self.applications.as_deref()
     }
     /// <p>The pagination token used to retrieve the next page of results for this operation.</p>
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for DescribeApplicationsOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl DescribeApplicationsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeApplicationsOutput`](crate::operation::describe_applications::DescribeApplicationsOutput).
-    pub fn builder() -> crate::operation::describe_applications::builders::DescribeApplicationsOutputBuilder {
+    pub fn builder(
+    ) -> crate::operation::describe_applications::builders::DescribeApplicationsOutputBuilder {
         crate::operation::describe_applications::builders::DescribeApplicationsOutputBuilder::default()
     }
 }
@@ -49,13 +50,17 @@ impl DescribeApplicationsOutputBuilder {
     /// <p>The applications in the list.</p>
     pub fn applications(mut self, input: crate::types::Application) -> Self {
         let mut v = self.applications.unwrap_or_default();
-                        v.push(input);
-                        self.applications = Some(v);
-                        self
+        v.push(input);
+        self.applications = Some(v);
+        self
     }
     /// <p>The applications in the list.</p>
-    pub fn set_applications(mut self, input: std::option::Option<std::vec::Vec<crate::types::Application>>) -> Self {
-        self.applications = input; self
+    pub fn set_applications(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::Application>>,
+    ) -> Self {
+        self.applications = input;
+        self
     }
     /// <p>The pagination token used to retrieve the next page of results for this operation.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -64,26 +69,24 @@ impl DescribeApplicationsOutputBuilder {
     }
     /// <p>The pagination token used to retrieve the next page of results for this operation.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input; self
+        self.next_token = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`DescribeApplicationsOutput`](crate::operation::describe_applications::DescribeApplicationsOutput).
     pub fn build(self) -> crate::operation::describe_applications::DescribeApplicationsOutput {
         crate::operation::describe_applications::DescribeApplicationsOutput {
-            applications: self.applications
-            ,
-            next_token: self.next_token
-            ,
+            applications: self.applications,
+            next_token: self.next_token,
             _request_id: self._request_id,
         }
     }
 }
-

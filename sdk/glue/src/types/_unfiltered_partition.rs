@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UnfilteredPartition  {
+pub struct UnfilteredPartition {
     /// <p>Represents a slice of table data.</p>
     #[doc(hidden)]
     pub partition: std::option::Option<crate::types::Partition>,
@@ -15,11 +15,11 @@ pub struct UnfilteredPartition  {
 }
 impl UnfilteredPartition {
     /// <p>Represents a slice of table data.</p>
-    pub fn partition(&self) -> std::option::Option<& crate::types::Partition> {
+    pub fn partition(&self) -> std::option::Option<&crate::types::Partition> {
         self.partition.as_ref()
     }
     #[allow(missing_docs)] // documentation missing in model
-    pub fn authorized_columns(&self) -> std::option::Option<& [std::string::String]> {
+    pub fn authorized_columns(&self) -> std::option::Option<&[std::string::String]> {
         self.authorized_columns.as_deref()
     }
     #[allow(missing_docs)] // documentation missing in model
@@ -50,7 +50,8 @@ impl UnfilteredPartitionBuilder {
     }
     /// <p>Represents a slice of table data.</p>
     pub fn set_partition(mut self, input: std::option::Option<crate::types::Partition>) -> Self {
-        self.partition = input; self
+        self.partition = input;
+        self
     }
     /// Appends an item to `authorized_columns`.
     ///
@@ -58,13 +59,17 @@ impl UnfilteredPartitionBuilder {
     ///
     pub fn authorized_columns(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.authorized_columns.unwrap_or_default();
-                        v.push(input.into());
-                        self.authorized_columns = Some(v);
-                        self
+        v.push(input.into());
+        self.authorized_columns = Some(v);
+        self
     }
     #[allow(missing_docs)] // documentation missing in model
-    pub fn set_authorized_columns(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-        self.authorized_columns = input; self
+    pub fn set_authorized_columns(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
+        self.authorized_columns = input;
+        self
     }
     #[allow(missing_docs)] // documentation missing in model
     pub fn is_registered_with_lake_formation(mut self, input: bool) -> Self {
@@ -72,20 +77,21 @@ impl UnfilteredPartitionBuilder {
         self
     }
     #[allow(missing_docs)] // documentation missing in model
-    pub fn set_is_registered_with_lake_formation(mut self, input: std::option::Option<bool>) -> Self {
-        self.is_registered_with_lake_formation = input; self
+    pub fn set_is_registered_with_lake_formation(
+        mut self,
+        input: std::option::Option<bool>,
+    ) -> Self {
+        self.is_registered_with_lake_formation = input;
+        self
     }
     /// Consumes the builder and constructs a [`UnfilteredPartition`](crate::types::UnfilteredPartition).
     pub fn build(self) -> crate::types::UnfilteredPartition {
         crate::types::UnfilteredPartition {
-            partition: self.partition
-            ,
-            authorized_columns: self.authorized_columns
-            ,
-            is_registered_with_lake_formation: self.is_registered_with_lake_formation
-                .unwrap_or_default()
-            ,
+            partition: self.partition,
+            authorized_columns: self.authorized_columns,
+            is_registered_with_lake_formation: self
+                .is_registered_with_lake_formation
+                .unwrap_or_default(),
         }
     }
 }
-

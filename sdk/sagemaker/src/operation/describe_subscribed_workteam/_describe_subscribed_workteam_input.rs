@@ -2,20 +2,20 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeSubscribedWorkteamInput  {
+pub struct DescribeSubscribedWorkteamInput {
     /// <p>The Amazon Resource Name (ARN) of the subscribed work team to describe.</p>
     #[doc(hidden)]
     pub workteam_arn: std::option::Option<std::string::String>,
 }
 impl DescribeSubscribedWorkteamInput {
     /// <p>The Amazon Resource Name (ARN) of the subscribed work team to describe.</p>
-    pub fn workteam_arn(&self) -> std::option::Option<& str> {
+    pub fn workteam_arn(&self) -> std::option::Option<&str> {
         self.workteam_arn.as_deref()
     }
 }
 impl DescribeSubscribedWorkteamInput {
     /// Creates a new builder-style object to manufacture [`DescribeSubscribedWorkteamInput`](crate::operation::describe_subscribed_workteam::DescribeSubscribedWorkteamInput).
-    pub fn builder() -> crate::operation::describe_subscribed_workteam::builders::DescribeSubscribedWorkteamInputBuilder {
+    pub fn builder() -> crate::operation::describe_subscribed_workteam::builders::DescribeSubscribedWorkteamInputBuilder{
         crate::operation::describe_subscribed_workteam::builders::DescribeSubscribedWorkteamInputBuilder::default()
     }
 }
@@ -34,16 +34,20 @@ impl DescribeSubscribedWorkteamInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the subscribed work team to describe.</p>
     pub fn set_workteam_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.workteam_arn = input; self
+        self.workteam_arn = input;
+        self
     }
     /// Consumes the builder and constructs a [`DescribeSubscribedWorkteamInput`](crate::operation::describe_subscribed_workteam::DescribeSubscribedWorkteamInput).
-    pub fn build(self) -> Result<crate::operation::describe_subscribed_workteam::DescribeSubscribedWorkteamInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::describe_subscribed_workteam::DescribeSubscribedWorkteamInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::describe_subscribed_workteam::DescribeSubscribedWorkteamInput {
-                workteam_arn: self.workteam_arn
-                ,
-            }
+                workteam_arn: self.workteam_arn,
+            },
         )
     }
 }
-

@@ -2,26 +2,29 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateRecommenderConfigurationOutput  {
+pub struct UpdateRecommenderConfigurationOutput {
     /// <p>Provides information about Amazon Pinpoint configuration settings for retrieving and processing data from a recommender model.</p>
     #[doc(hidden)]
-    pub recommender_configuration_response: std::option::Option<crate::types::RecommenderConfigurationResponse>,
+    pub recommender_configuration_response:
+        std::option::Option<crate::types::RecommenderConfigurationResponse>,
     _request_id: Option<String>,
 }
 impl UpdateRecommenderConfigurationOutput {
     /// <p>Provides information about Amazon Pinpoint configuration settings for retrieving and processing data from a recommender model.</p>
-    pub fn recommender_configuration_response(&self) -> std::option::Option<& crate::types::RecommenderConfigurationResponse> {
+    pub fn recommender_configuration_response(
+        &self,
+    ) -> std::option::Option<&crate::types::RecommenderConfigurationResponse> {
         self.recommender_configuration_response.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for UpdateRecommenderConfigurationOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl UpdateRecommenderConfigurationOutput {
     /// Creates a new builder-style object to manufacture [`UpdateRecommenderConfigurationOutput`](crate::operation::update_recommender_configuration::UpdateRecommenderConfigurationOutput).
-    pub fn builder() -> crate::operation::update_recommender_configuration::builders::UpdateRecommenderConfigurationOutputBuilder {
+    pub fn builder() -> crate::operation::update_recommender_configuration::builders::UpdateRecommenderConfigurationOutputBuilder{
         crate::operation::update_recommender_configuration::builders::UpdateRecommenderConfigurationOutputBuilder::default()
     }
 }
@@ -30,35 +33,44 @@ impl UpdateRecommenderConfigurationOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct UpdateRecommenderConfigurationOutputBuilder {
-    pub(crate) recommender_configuration_response: std::option::Option<crate::types::RecommenderConfigurationResponse>,
+    pub(crate) recommender_configuration_response:
+        std::option::Option<crate::types::RecommenderConfigurationResponse>,
     _request_id: Option<String>,
 }
 impl UpdateRecommenderConfigurationOutputBuilder {
     /// <p>Provides information about Amazon Pinpoint configuration settings for retrieving and processing data from a recommender model.</p>
-    pub fn recommender_configuration_response(mut self, input: crate::types::RecommenderConfigurationResponse) -> Self {
+    pub fn recommender_configuration_response(
+        mut self,
+        input: crate::types::RecommenderConfigurationResponse,
+    ) -> Self {
         self.recommender_configuration_response = Some(input);
         self
     }
     /// <p>Provides information about Amazon Pinpoint configuration settings for retrieving and processing data from a recommender model.</p>
-    pub fn set_recommender_configuration_response(mut self, input: std::option::Option<crate::types::RecommenderConfigurationResponse>) -> Self {
-        self.recommender_configuration_response = input; self
+    pub fn set_recommender_configuration_response(
+        mut self,
+        input: std::option::Option<crate::types::RecommenderConfigurationResponse>,
+    ) -> Self {
+        self.recommender_configuration_response = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`UpdateRecommenderConfigurationOutput`](crate::operation::update_recommender_configuration::UpdateRecommenderConfigurationOutput).
-    pub fn build(self) -> crate::operation::update_recommender_configuration::UpdateRecommenderConfigurationOutput {
+    pub fn build(
+        self,
+    ) -> crate::operation::update_recommender_configuration::UpdateRecommenderConfigurationOutput
+    {
         crate::operation::update_recommender_configuration::UpdateRecommenderConfigurationOutput {
-            recommender_configuration_response: self.recommender_configuration_response
-            ,
+            recommender_configuration_response: self.recommender_configuration_response,
             _request_id: self._request_id,
         }
     }
 }
-

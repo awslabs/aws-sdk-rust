@@ -2,11 +2,10 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeTerminationPolicyTypesInput  {
-}
+pub struct DescribeTerminationPolicyTypesInput {}
 impl DescribeTerminationPolicyTypesInput {
     /// Creates a new builder-style object to manufacture [`DescribeTerminationPolicyTypesInput`](crate::operation::describe_termination_policy_types::DescribeTerminationPolicyTypesInput).
-    pub fn builder() -> crate::operation::describe_termination_policy_types::builders::DescribeTerminationPolicyTypesInputBuilder {
+    pub fn builder() -> crate::operation::describe_termination_policy_types::builders::DescribeTerminationPolicyTypesInputBuilder{
         crate::operation::describe_termination_policy_types::builders::DescribeTerminationPolicyTypesInputBuilder::default()
     }
 }
@@ -14,15 +13,18 @@ impl DescribeTerminationPolicyTypesInput {
 /// A builder for [`DescribeTerminationPolicyTypesInput`](crate::operation::describe_termination_policy_types::DescribeTerminationPolicyTypesInput).
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-pub struct DescribeTerminationPolicyTypesInputBuilder {
-}
+pub struct DescribeTerminationPolicyTypesInputBuilder {}
 impl DescribeTerminationPolicyTypesInputBuilder {
     /// Consumes the builder and constructs a [`DescribeTerminationPolicyTypesInput`](crate::operation::describe_termination_policy_types::DescribeTerminationPolicyTypesInput).
-    pub fn build(self) -> Result<crate::operation::describe_termination_policy_types::DescribeTerminationPolicyTypesInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::describe_termination_policy_types::DescribeTerminationPolicyTypesInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::describe_termination_policy_types::DescribeTerminationPolicyTypesInput {
             }
         )
     }
 }
-

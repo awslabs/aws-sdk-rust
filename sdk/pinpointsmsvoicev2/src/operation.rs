@@ -129,4 +129,3 @@ pub mod update_phone_number;
 
 /// Types for the `UpdatePool` operation.
 pub mod update_pool;
-

@@ -3,21 +3,26 @@
 /// <p>Join event configuration object for enabling or disabling topic.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct JoinEventConfiguration  {
+pub struct JoinEventConfiguration {
     /// <p>Join event configuration object for enabling or disabling LoRaWAN related event topics.</p>
     #[doc(hidden)]
     pub lo_ra_wan: std::option::Option<crate::types::LoRaWanJoinEventNotificationConfigurations>,
     /// <p>Denotes whether the wireless device ID join event topic is enabled or disabled.</p>
     #[doc(hidden)]
-    pub wireless_device_id_event_topic: std::option::Option<crate::types::EventNotificationTopicStatus>,
+    pub wireless_device_id_event_topic:
+        std::option::Option<crate::types::EventNotificationTopicStatus>,
 }
 impl JoinEventConfiguration {
     /// <p>Join event configuration object for enabling or disabling LoRaWAN related event topics.</p>
-    pub fn lo_ra_wan(&self) -> std::option::Option<& crate::types::LoRaWanJoinEventNotificationConfigurations> {
+    pub fn lo_ra_wan(
+        &self,
+    ) -> std::option::Option<&crate::types::LoRaWanJoinEventNotificationConfigurations> {
         self.lo_ra_wan.as_ref()
     }
     /// <p>Denotes whether the wireless device ID join event topic is enabled or disabled.</p>
-    pub fn wireless_device_id_event_topic(&self) -> std::option::Option<& crate::types::EventNotificationTopicStatus> {
+    pub fn wireless_device_id_event_topic(
+        &self,
+    ) -> std::option::Option<&crate::types::EventNotificationTopicStatus> {
         self.wireless_device_id_event_topic.as_ref()
     }
 }
@@ -32,36 +37,49 @@ impl JoinEventConfiguration {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct JoinEventConfigurationBuilder {
-    pub(crate) lo_ra_wan: std::option::Option<crate::types::LoRaWanJoinEventNotificationConfigurations>,
-    pub(crate) wireless_device_id_event_topic: std::option::Option<crate::types::EventNotificationTopicStatus>,
+    pub(crate) lo_ra_wan:
+        std::option::Option<crate::types::LoRaWanJoinEventNotificationConfigurations>,
+    pub(crate) wireless_device_id_event_topic:
+        std::option::Option<crate::types::EventNotificationTopicStatus>,
 }
 impl JoinEventConfigurationBuilder {
     /// <p>Join event configuration object for enabling or disabling LoRaWAN related event topics.</p>
-    pub fn lo_ra_wan(mut self, input: crate::types::LoRaWanJoinEventNotificationConfigurations) -> Self {
+    pub fn lo_ra_wan(
+        mut self,
+        input: crate::types::LoRaWanJoinEventNotificationConfigurations,
+    ) -> Self {
         self.lo_ra_wan = Some(input);
         self
     }
     /// <p>Join event configuration object for enabling or disabling LoRaWAN related event topics.</p>
-    pub fn set_lo_ra_wan(mut self, input: std::option::Option<crate::types::LoRaWanJoinEventNotificationConfigurations>) -> Self {
-        self.lo_ra_wan = input; self
+    pub fn set_lo_ra_wan(
+        mut self,
+        input: std::option::Option<crate::types::LoRaWanJoinEventNotificationConfigurations>,
+    ) -> Self {
+        self.lo_ra_wan = input;
+        self
     }
     /// <p>Denotes whether the wireless device ID join event topic is enabled or disabled.</p>
-    pub fn wireless_device_id_event_topic(mut self, input: crate::types::EventNotificationTopicStatus) -> Self {
+    pub fn wireless_device_id_event_topic(
+        mut self,
+        input: crate::types::EventNotificationTopicStatus,
+    ) -> Self {
         self.wireless_device_id_event_topic = Some(input);
         self
     }
     /// <p>Denotes whether the wireless device ID join event topic is enabled or disabled.</p>
-    pub fn set_wireless_device_id_event_topic(mut self, input: std::option::Option<crate::types::EventNotificationTopicStatus>) -> Self {
-        self.wireless_device_id_event_topic = input; self
+    pub fn set_wireless_device_id_event_topic(
+        mut self,
+        input: std::option::Option<crate::types::EventNotificationTopicStatus>,
+    ) -> Self {
+        self.wireless_device_id_event_topic = input;
+        self
     }
     /// Consumes the builder and constructs a [`JoinEventConfiguration`](crate::types::JoinEventConfiguration).
     pub fn build(self) -> crate::types::JoinEventConfiguration {
         crate::types::JoinEventConfiguration {
-            lo_ra_wan: self.lo_ra_wan
-            ,
-            wireless_device_id_event_topic: self.wireless_device_id_event_topic
-            ,
+            lo_ra_wan: self.lo_ra_wan,
+            wireless_device_id_event_topic: self.wireless_device_id_event_topic,
         }
     }
 }
-

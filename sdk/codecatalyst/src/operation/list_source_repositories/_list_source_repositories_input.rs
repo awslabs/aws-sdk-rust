@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListSourceRepositoriesInput  {
+pub struct ListSourceRepositoriesInput {
     /// <p>The name of the space.</p>
     #[doc(hidden)]
     pub space_name: std::option::Option<std::string::String>,
@@ -18,15 +18,15 @@ pub struct ListSourceRepositoriesInput  {
 }
 impl ListSourceRepositoriesInput {
     /// <p>The name of the space.</p>
-    pub fn space_name(&self) -> std::option::Option<& str> {
+    pub fn space_name(&self) -> std::option::Option<&str> {
         self.space_name.as_deref()
     }
     /// <p>The name of the project in the space.</p>
-    pub fn project_name(&self) -> std::option::Option<& str> {
+    pub fn project_name(&self) -> std::option::Option<&str> {
         self.project_name.as_deref()
     }
     /// <p>A token returned from a call to this API to indicate the next batch of results to return, if any.</p>
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
     /// <p>The maximum number of results to show in a single call to this API. If the number of results is larger than the number you specified, the response will include a <code>NextToken</code> element, which you can use to obtain additional results.</p>
@@ -36,7 +36,9 @@ impl ListSourceRepositoriesInput {
 }
 impl ListSourceRepositoriesInput {
     /// Creates a new builder-style object to manufacture [`ListSourceRepositoriesInput`](crate::operation::list_source_repositories::ListSourceRepositoriesInput).
-    pub fn builder() -> crate::operation::list_source_repositories::builders::ListSourceRepositoriesInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::list_source_repositories::builders::ListSourceRepositoriesInputBuilder
+    {
         crate::operation::list_source_repositories::builders::ListSourceRepositoriesInputBuilder::default()
     }
 }
@@ -58,7 +60,8 @@ impl ListSourceRepositoriesInputBuilder {
     }
     /// <p>The name of the space.</p>
     pub fn set_space_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.space_name = input; self
+        self.space_name = input;
+        self
     }
     /// <p>The name of the project in the space.</p>
     pub fn project_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -67,7 +70,8 @@ impl ListSourceRepositoriesInputBuilder {
     }
     /// <p>The name of the project in the space.</p>
     pub fn set_project_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.project_name = input; self
+        self.project_name = input;
+        self
     }
     /// <p>A token returned from a call to this API to indicate the next batch of results to return, if any.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -76,7 +80,8 @@ impl ListSourceRepositoriesInputBuilder {
     }
     /// <p>A token returned from a call to this API to indicate the next batch of results to return, if any.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input; self
+        self.next_token = input;
+        self
     }
     /// <p>The maximum number of results to show in a single call to this API. If the number of results is larger than the number you specified, the response will include a <code>NextToken</code> element, which you can use to obtain additional results.</p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -85,22 +90,23 @@ impl ListSourceRepositoriesInputBuilder {
     }
     /// <p>The maximum number of results to show in a single call to this API. If the number of results is larger than the number you specified, the response will include a <code>NextToken</code> element, which you can use to obtain additional results.</p>
     pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_results = input; self
+        self.max_results = input;
+        self
     }
     /// Consumes the builder and constructs a [`ListSourceRepositoriesInput`](crate::operation::list_source_repositories::ListSourceRepositoriesInput).
-    pub fn build(self) -> Result<crate::operation::list_source_repositories::ListSourceRepositoriesInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::list_source_repositories::ListSourceRepositoriesInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::list_source_repositories::ListSourceRepositoriesInput {
-                space_name: self.space_name
-                ,
-                project_name: self.project_name
-                ,
-                next_token: self.next_token
-                ,
-                max_results: self.max_results
-                ,
-            }
+                space_name: self.space_name,
+                project_name: self.project_name,
+                next_token: self.next_token,
+                max_results: self.max_results,
+            },
         )
     }
 }
-

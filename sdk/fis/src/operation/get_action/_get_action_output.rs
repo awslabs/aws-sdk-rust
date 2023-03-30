@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetActionOutput  {
+pub struct GetActionOutput {
     /// <p>Information about the action.</p>
     #[doc(hidden)]
     pub action: std::option::Option<crate::types::Action>,
@@ -10,15 +10,15 @@ pub struct GetActionOutput  {
 }
 impl GetActionOutput {
     /// <p>Information about the action.</p>
-    pub fn action(&self) -> std::option::Option<& crate::types::Action> {
+    pub fn action(&self) -> std::option::Option<&crate::types::Action> {
         self.action.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for GetActionOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl GetActionOutput {
     /// Creates a new builder-style object to manufacture [`GetActionOutput`](crate::operation::get_action::GetActionOutput).
     pub fn builder() -> crate::operation::get_action::builders::GetActionOutputBuilder {
@@ -41,24 +41,23 @@ impl GetActionOutputBuilder {
     }
     /// <p>Information about the action.</p>
     pub fn set_action(mut self, input: std::option::Option<crate::types::Action>) -> Self {
-        self.action = input; self
+        self.action = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`GetActionOutput`](crate::operation::get_action::GetActionOutput).
     pub fn build(self) -> crate::operation::get_action::GetActionOutput {
         crate::operation::get_action::GetActionOutput {
-            action: self.action
-            ,
+            action: self.action,
             _request_id: self._request_id,
         }
     }
 }
-

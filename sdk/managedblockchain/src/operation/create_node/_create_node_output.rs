@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateNodeOutput  {
+pub struct CreateNodeOutput {
     /// <p>The unique identifier of the node.</p>
     #[doc(hidden)]
     pub node_id: std::option::Option<std::string::String>,
@@ -10,15 +10,15 @@ pub struct CreateNodeOutput  {
 }
 impl CreateNodeOutput {
     /// <p>The unique identifier of the node.</p>
-    pub fn node_id(&self) -> std::option::Option<& str> {
+    pub fn node_id(&self) -> std::option::Option<&str> {
         self.node_id.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for CreateNodeOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl CreateNodeOutput {
     /// Creates a new builder-style object to manufacture [`CreateNodeOutput`](crate::operation::create_node::CreateNodeOutput).
     pub fn builder() -> crate::operation::create_node::builders::CreateNodeOutputBuilder {
@@ -41,24 +41,23 @@ impl CreateNodeOutputBuilder {
     }
     /// <p>The unique identifier of the node.</p>
     pub fn set_node_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.node_id = input; self
+        self.node_id = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`CreateNodeOutput`](crate::operation::create_node::CreateNodeOutput).
     pub fn build(self) -> crate::operation::create_node::CreateNodeOutput {
         crate::operation::create_node::CreateNodeOutput {
-            node_id: self.node_id
-            ,
+            node_id: self.node_id,
             _request_id: self._request_id,
         }
     }
 }
-

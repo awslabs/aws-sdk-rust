@@ -3,7 +3,7 @@
 /// <p></p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeMountTargetsOutput  {
+pub struct DescribeMountTargetsOutput {
     /// <p>If the request included the <code>Marker</code>, the response returns that value in this field.</p>
     #[doc(hidden)]
     pub marker: std::option::Option<std::string::String>,
@@ -17,26 +17,27 @@ pub struct DescribeMountTargetsOutput  {
 }
 impl DescribeMountTargetsOutput {
     /// <p>If the request included the <code>Marker</code>, the response returns that value in this field.</p>
-    pub fn marker(&self) -> std::option::Option<& str> {
+    pub fn marker(&self) -> std::option::Option<&str> {
         self.marker.as_deref()
     }
     /// <p>Returns the file system's mount targets as an array of <code>MountTargetDescription</code> objects.</p>
-    pub fn mount_targets(&self) -> std::option::Option<& [crate::types::MountTargetDescription]> {
+    pub fn mount_targets(&self) -> std::option::Option<&[crate::types::MountTargetDescription]> {
         self.mount_targets.as_deref()
     }
     /// <p>If a value is present, there are more mount targets to return. In a subsequent request, you can provide <code>Marker</code> in your request with this value to retrieve the next set of mount targets.</p>
-    pub fn next_marker(&self) -> std::option::Option<& str> {
+    pub fn next_marker(&self) -> std::option::Option<&str> {
         self.next_marker.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for DescribeMountTargetsOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl DescribeMountTargetsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeMountTargetsOutput`](crate::operation::describe_mount_targets::DescribeMountTargetsOutput).
-    pub fn builder() -> crate::operation::describe_mount_targets::builders::DescribeMountTargetsOutputBuilder {
+    pub fn builder(
+    ) -> crate::operation::describe_mount_targets::builders::DescribeMountTargetsOutputBuilder {
         crate::operation::describe_mount_targets::builders::DescribeMountTargetsOutputBuilder::default()
     }
 }
@@ -46,7 +47,8 @@ impl DescribeMountTargetsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct DescribeMountTargetsOutputBuilder {
     pub(crate) marker: std::option::Option<std::string::String>,
-    pub(crate) mount_targets: std::option::Option<std::vec::Vec<crate::types::MountTargetDescription>>,
+    pub(crate) mount_targets:
+        std::option::Option<std::vec::Vec<crate::types::MountTargetDescription>>,
     pub(crate) next_marker: std::option::Option<std::string::String>,
     _request_id: Option<String>,
 }
@@ -58,7 +60,8 @@ impl DescribeMountTargetsOutputBuilder {
     }
     /// <p>If the request included the <code>Marker</code>, the response returns that value in this field.</p>
     pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.marker = input; self
+        self.marker = input;
+        self
     }
     /// Appends an item to `mount_targets`.
     ///
@@ -67,13 +70,17 @@ impl DescribeMountTargetsOutputBuilder {
     /// <p>Returns the file system's mount targets as an array of <code>MountTargetDescription</code> objects.</p>
     pub fn mount_targets(mut self, input: crate::types::MountTargetDescription) -> Self {
         let mut v = self.mount_targets.unwrap_or_default();
-                        v.push(input);
-                        self.mount_targets = Some(v);
-                        self
+        v.push(input);
+        self.mount_targets = Some(v);
+        self
     }
     /// <p>Returns the file system's mount targets as an array of <code>MountTargetDescription</code> objects.</p>
-    pub fn set_mount_targets(mut self, input: std::option::Option<std::vec::Vec<crate::types::MountTargetDescription>>) -> Self {
-        self.mount_targets = input; self
+    pub fn set_mount_targets(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::MountTargetDescription>>,
+    ) -> Self {
+        self.mount_targets = input;
+        self
     }
     /// <p>If a value is present, there are more mount targets to return. In a subsequent request, you can provide <code>Marker</code> in your request with this value to retrieve the next set of mount targets.</p>
     pub fn next_marker(mut self, input: impl Into<std::string::String>) -> Self {
@@ -82,28 +89,25 @@ impl DescribeMountTargetsOutputBuilder {
     }
     /// <p>If a value is present, there are more mount targets to return. In a subsequent request, you can provide <code>Marker</code> in your request with this value to retrieve the next set of mount targets.</p>
     pub fn set_next_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_marker = input; self
+        self.next_marker = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`DescribeMountTargetsOutput`](crate::operation::describe_mount_targets::DescribeMountTargetsOutput).
     pub fn build(self) -> crate::operation::describe_mount_targets::DescribeMountTargetsOutput {
         crate::operation::describe_mount_targets::DescribeMountTargetsOutput {
-            marker: self.marker
-            ,
-            mount_targets: self.mount_targets
-            ,
-            next_marker: self.next_marker
-            ,
+            marker: self.marker,
+            mount_targets: self.mount_targets,
+            next_marker: self.next_marker,
             _request_id: self._request_id,
         }
     }
 }
-

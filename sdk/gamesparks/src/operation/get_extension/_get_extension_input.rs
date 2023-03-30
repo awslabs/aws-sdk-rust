@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetExtensionInput  {
+pub struct GetExtensionInput {
     /// <p>The namespace (qualifier) of the extension.</p>
     #[doc(hidden)]
     pub namespace: std::option::Option<std::string::String>,
@@ -12,11 +12,11 @@ pub struct GetExtensionInput  {
 }
 impl GetExtensionInput {
     /// <p>The namespace (qualifier) of the extension.</p>
-    pub fn namespace(&self) -> std::option::Option<& str> {
+    pub fn namespace(&self) -> std::option::Option<&str> {
         self.namespace.as_deref()
     }
     /// <p>The name of the extension.</p>
-    pub fn name(&self) -> std::option::Option<& str> {
+    pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
 }
@@ -42,7 +42,8 @@ impl GetExtensionInputBuilder {
     }
     /// <p>The namespace (qualifier) of the extension.</p>
     pub fn set_namespace(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.namespace = input; self
+        self.namespace = input;
+        self
     }
     /// <p>The name of the extension.</p>
     pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -51,18 +52,19 @@ impl GetExtensionInputBuilder {
     }
     /// <p>The name of the extension.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input; self
+        self.name = input;
+        self
     }
     /// Consumes the builder and constructs a [`GetExtensionInput`](crate::operation::get_extension::GetExtensionInput).
-    pub fn build(self) -> Result<crate::operation::get_extension::GetExtensionInput, aws_smithy_http::operation::error::BuildError> {
-        Ok(
-            crate::operation::get_extension::GetExtensionInput {
-                namespace: self.namespace
-                ,
-                name: self.name
-                ,
-            }
-        )
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::get_extension::GetExtensionInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        Ok(crate::operation::get_extension::GetExtensionInput {
+            namespace: self.namespace,
+            name: self.name,
+        })
     }
 }
-

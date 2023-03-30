@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateBatchPredictionJobInput  {
+pub struct CreateBatchPredictionJobInput {
     /// <p>The ID of the batch prediction job.</p>
     #[doc(hidden)]
     pub job_id: std::option::Option<std::string::String>,
@@ -21,7 +21,7 @@ pub struct CreateBatchPredictionJobInput  {
     /// <p>The detector version.</p>
     #[doc(hidden)]
     pub detector_version: std::option::Option<std::string::String>,
-    /// <p>The ARN of the IAM role to use for this job request.</p> 
+    /// <p>The ARN of the IAM role to use for this job request.</p>
     /// <p>The IAM Role must have read permissions to your input S3 bucket and write permissions to your output S3 bucket. For more information about bucket permissions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/example-policies-s3.html">User policy examples</a> in the <i>Amazon S3 User Guide</i>.</p>
     #[doc(hidden)]
     pub iam_role_arn: std::option::Option<std::string::String>,
@@ -31,42 +31,44 @@ pub struct CreateBatchPredictionJobInput  {
 }
 impl CreateBatchPredictionJobInput {
     /// <p>The ID of the batch prediction job.</p>
-    pub fn job_id(&self) -> std::option::Option<& str> {
+    pub fn job_id(&self) -> std::option::Option<&str> {
         self.job_id.as_deref()
     }
     /// <p>The Amazon S3 location of your training file.</p>
-    pub fn input_path(&self) -> std::option::Option<& str> {
+    pub fn input_path(&self) -> std::option::Option<&str> {
         self.input_path.as_deref()
     }
     /// <p>The Amazon S3 location of your output file.</p>
-    pub fn output_path(&self) -> std::option::Option<& str> {
+    pub fn output_path(&self) -> std::option::Option<&str> {
         self.output_path.as_deref()
     }
     /// <p>The name of the event type.</p>
-    pub fn event_type_name(&self) -> std::option::Option<& str> {
+    pub fn event_type_name(&self) -> std::option::Option<&str> {
         self.event_type_name.as_deref()
     }
     /// <p>The name of the detector.</p>
-    pub fn detector_name(&self) -> std::option::Option<& str> {
+    pub fn detector_name(&self) -> std::option::Option<&str> {
         self.detector_name.as_deref()
     }
     /// <p>The detector version.</p>
-    pub fn detector_version(&self) -> std::option::Option<& str> {
+    pub fn detector_version(&self) -> std::option::Option<&str> {
         self.detector_version.as_deref()
     }
-    /// <p>The ARN of the IAM role to use for this job request.</p> 
+    /// <p>The ARN of the IAM role to use for this job request.</p>
     /// <p>The IAM Role must have read permissions to your input S3 bucket and write permissions to your output S3 bucket. For more information about bucket permissions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/example-policies-s3.html">User policy examples</a> in the <i>Amazon S3 User Guide</i>.</p>
-    pub fn iam_role_arn(&self) -> std::option::Option<& str> {
+    pub fn iam_role_arn(&self) -> std::option::Option<&str> {
         self.iam_role_arn.as_deref()
     }
     /// <p>A collection of key and value pairs.</p>
-    pub fn tags(&self) -> std::option::Option<& [crate::types::Tag]> {
+    pub fn tags(&self) -> std::option::Option<&[crate::types::Tag]> {
         self.tags.as_deref()
     }
 }
 impl CreateBatchPredictionJobInput {
     /// Creates a new builder-style object to manufacture [`CreateBatchPredictionJobInput`](crate::operation::create_batch_prediction_job::CreateBatchPredictionJobInput).
-    pub fn builder() -> crate::operation::create_batch_prediction_job::builders::CreateBatchPredictionJobInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::create_batch_prediction_job::builders::CreateBatchPredictionJobInputBuilder
+    {
         crate::operation::create_batch_prediction_job::builders::CreateBatchPredictionJobInputBuilder::default()
     }
 }
@@ -92,7 +94,8 @@ impl CreateBatchPredictionJobInputBuilder {
     }
     /// <p>The ID of the batch prediction job.</p>
     pub fn set_job_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.job_id = input; self
+        self.job_id = input;
+        self
     }
     /// <p>The Amazon S3 location of your training file.</p>
     pub fn input_path(mut self, input: impl Into<std::string::String>) -> Self {
@@ -101,7 +104,8 @@ impl CreateBatchPredictionJobInputBuilder {
     }
     /// <p>The Amazon S3 location of your training file.</p>
     pub fn set_input_path(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.input_path = input; self
+        self.input_path = input;
+        self
     }
     /// <p>The Amazon S3 location of your output file.</p>
     pub fn output_path(mut self, input: impl Into<std::string::String>) -> Self {
@@ -110,7 +114,8 @@ impl CreateBatchPredictionJobInputBuilder {
     }
     /// <p>The Amazon S3 location of your output file.</p>
     pub fn set_output_path(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.output_path = input; self
+        self.output_path = input;
+        self
     }
     /// <p>The name of the event type.</p>
     pub fn event_type_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -119,7 +124,8 @@ impl CreateBatchPredictionJobInputBuilder {
     }
     /// <p>The name of the event type.</p>
     pub fn set_event_type_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.event_type_name = input; self
+        self.event_type_name = input;
+        self
     }
     /// <p>The name of the detector.</p>
     pub fn detector_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -128,7 +134,8 @@ impl CreateBatchPredictionJobInputBuilder {
     }
     /// <p>The name of the detector.</p>
     pub fn set_detector_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.detector_name = input; self
+        self.detector_name = input;
+        self
     }
     /// <p>The detector version.</p>
     pub fn detector_version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -137,18 +144,20 @@ impl CreateBatchPredictionJobInputBuilder {
     }
     /// <p>The detector version.</p>
     pub fn set_detector_version(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.detector_version = input; self
+        self.detector_version = input;
+        self
     }
-    /// <p>The ARN of the IAM role to use for this job request.</p> 
+    /// <p>The ARN of the IAM role to use for this job request.</p>
     /// <p>The IAM Role must have read permissions to your input S3 bucket and write permissions to your output S3 bucket. For more information about bucket permissions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/example-policies-s3.html">User policy examples</a> in the <i>Amazon S3 User Guide</i>.</p>
     pub fn iam_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
         self.iam_role_arn = Some(input.into());
         self
     }
-    /// <p>The ARN of the IAM role to use for this job request.</p> 
+    /// <p>The ARN of the IAM role to use for this job request.</p>
     /// <p>The IAM Role must have read permissions to your input S3 bucket and write permissions to your output S3 bucket. For more information about bucket permissions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/example-policies-s3.html">User policy examples</a> in the <i>Amazon S3 User Guide</i>.</p>
     pub fn set_iam_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.iam_role_arn = input; self
+        self.iam_role_arn = input;
+        self
     }
     /// Appends an item to `tags`.
     ///
@@ -157,36 +166,36 @@ impl CreateBatchPredictionJobInputBuilder {
     /// <p>A collection of key and value pairs.</p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
-                        v.push(input);
-                        self.tags = Some(v);
-                        self
+        v.push(input);
+        self.tags = Some(v);
+        self
     }
     /// <p>A collection of key and value pairs.</p>
-    pub fn set_tags(mut self, input: std::option::Option<std::vec::Vec<crate::types::Tag>>) -> Self {
-        self.tags = input; self
+    pub fn set_tags(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::Tag>>,
+    ) -> Self {
+        self.tags = input;
+        self
     }
     /// Consumes the builder and constructs a [`CreateBatchPredictionJobInput`](crate::operation::create_batch_prediction_job::CreateBatchPredictionJobInput).
-    pub fn build(self) -> Result<crate::operation::create_batch_prediction_job::CreateBatchPredictionJobInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::create_batch_prediction_job::CreateBatchPredictionJobInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::create_batch_prediction_job::CreateBatchPredictionJobInput {
-                job_id: self.job_id
-                ,
-                input_path: self.input_path
-                ,
-                output_path: self.output_path
-                ,
-                event_type_name: self.event_type_name
-                ,
-                detector_name: self.detector_name
-                ,
-                detector_version: self.detector_version
-                ,
-                iam_role_arn: self.iam_role_arn
-                ,
-                tags: self.tags
-                ,
-            }
+                job_id: self.job_id,
+                input_path: self.input_path,
+                output_path: self.output_path,
+                event_type_name: self.event_type_name,
+                detector_name: self.detector_name,
+                detector_version: self.detector_version,
+                iam_role_arn: self.iam_role_arn,
+                tags: self.tags,
+            },
         )
     }
 }
-

@@ -4,56 +4,81 @@ pub use crate::operation::create_prefetch_schedule::_create_prefetch_schedule_ou
 pub use crate::operation::create_prefetch_schedule::_create_prefetch_schedule_input::CreatePrefetchScheduleInputBuilder;
 
 /// Fluent builder constructing a request to `CreatePrefetchSchedule`.
-/// 
+///
 /// <p>Creates a prefetch schedule for a playback configuration. A prefetch schedule allows you to tell MediaTailor to fetch and prepare certain ads before an ad break happens. For more information about ad prefetching, see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/prefetching-ads.html">Using ad prefetching</a> in the <i>MediaTailor User Guide</i>.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct CreatePrefetchScheduleFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::create_prefetch_schedule::builders::CreatePrefetchScheduleInputBuilder
-            }
-impl CreatePrefetchScheduleFluentBuilder  {
+    handle: std::sync::Arc<crate::client::Handle>,
+    inner: crate::operation::create_prefetch_schedule::builders::CreatePrefetchScheduleInputBuilder,
+}
+impl CreatePrefetchScheduleFluentBuilder {
     /// Creates a new `CreatePrefetchSchedule`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
-                    /// sent. The operation's inner [http::Request] can be modified as well.
-                    pub async fn customize(self) -> std::result::Result<
-                        crate::client::customize::CustomizableOperation<crate::operation::create_prefetch_schedule::CreatePrefetchSchedule, aws_http::retry::AwsResponseRetryClassifier,>,
-                        aws_smithy_http::result::SdkError<crate::operation::create_prefetch_schedule::CreatePrefetchScheduleError>
-                    >  {
-                        let handle = self.handle.clone();
-                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-                    }
-    
-                    /// Sends the request and returns the response.
-                    ///
-                    /// If an error occurs, an `SdkError` will be returned with additional details that
-                    /// can be matched against.
-                    ///
-                    /// By default, any retryable failures will be retried twice. Retry behavior
-                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                    /// set when configuring the client.
-                    pub async fn send(self) -> std::result::Result<crate::operation::create_prefetch_schedule::CreatePrefetchScheduleOutput, aws_smithy_http::result::SdkError<crate::operation::create_prefetch_schedule::CreatePrefetchScheduleError>>
-                     {
-                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&self.handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        self.handle.client.call(op).await
-                    }
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle,
+            inner: Default::default(),
+        }
+    }
+
+    /// Consume this builder, creating a customizable operation that can be modified before being
+    /// sent. The operation's inner [http::Request] can be modified as well.
+    pub async fn customize(
+        self,
+    ) -> std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::create_prefetch_schedule::CreatePrefetchSchedule,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::result::SdkError<
+            crate::operation::create_prefetch_schedule::CreatePrefetchScheduleError,
+        >,
+    > {
+        let handle = self.handle.clone();
+        let operation = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+    }
+
+    /// Sends the request and returns the response.
+    ///
+    /// If an error occurs, an `SdkError` will be returned with additional details that
+    /// can be matched against.
+    ///
+    /// By default, any retryable failures will be retried twice. Retry behavior
+    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+    /// set when configuring the client.
+    pub async fn send(
+        self,
+    ) -> std::result::Result<
+        crate::operation::create_prefetch_schedule::CreatePrefetchScheduleOutput,
+        aws_smithy_http::result::SdkError<
+            crate::operation::create_prefetch_schedule::CreatePrefetchScheduleError,
+        >,
+    > {
+        let op = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&self.handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        self.handle.client.call(op).await
+    }
     /// <p>The configuration settings for MediaTailor's <i>consumption</i> of the prefetched ads from the ad decision server. Each consumption configuration contains an end time and an optional start time that define the <i>consumption window</i>. Prefetch schedules automatically expire no earlier than seven days after the end time.</p>
     pub fn consumption(mut self, input: crate::types::PrefetchConsumption) -> Self {
         self.inner = self.inner.consumption(input);
         self
     }
     /// <p>The configuration settings for MediaTailor's <i>consumption</i> of the prefetched ads from the ad decision server. Each consumption configuration contains an end time and an optional start time that define the <i>consumption window</i>. Prefetch schedules automatically expire no earlier than seven days after the end time.</p>
-    pub fn set_consumption(mut self, input: std::option::Option<crate::types::PrefetchConsumption>) -> Self {
+    pub fn set_consumption(
+        mut self,
+        input: std::option::Option<crate::types::PrefetchConsumption>,
+    ) -> Self {
         self.inner = self.inner.set_consumption(input);
         self
     }
@@ -73,7 +98,10 @@ impl CreatePrefetchScheduleFluentBuilder  {
         self
     }
     /// <p>The name to assign to the playback configuration.</p>
-    pub fn set_playback_configuration_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_playback_configuration_name(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_playback_configuration_name(input);
         self
     }
@@ -83,7 +111,10 @@ impl CreatePrefetchScheduleFluentBuilder  {
         self
     }
     /// <p>The configuration settings for retrieval of prefetched ads from the ad decision server. Only one set of prefetched ads will be retrieved and subsequently consumed for each ad break.</p>
-    pub fn set_retrieval(mut self, input: std::option::Option<crate::types::PrefetchRetrieval>) -> Self {
+    pub fn set_retrieval(
+        mut self,
+        input: std::option::Option<crate::types::PrefetchRetrieval>,
+    ) -> Self {
         self.inner = self.inner.set_retrieval(input);
         self
     }
@@ -98,4 +129,3 @@ impl CreatePrefetchScheduleFluentBuilder  {
         self
     }
 }
-

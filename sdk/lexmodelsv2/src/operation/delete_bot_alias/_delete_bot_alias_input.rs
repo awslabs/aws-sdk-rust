@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteBotAliasInput  {
+pub struct DeleteBotAliasInput {
     /// <p>The unique identifier of the bot alias to delete.</p>
     #[doc(hidden)]
     pub bot_alias_id: std::option::Option<std::string::String>,
@@ -15,11 +15,11 @@ pub struct DeleteBotAliasInput  {
 }
 impl DeleteBotAliasInput {
     /// <p>The unique identifier of the bot alias to delete.</p>
-    pub fn bot_alias_id(&self) -> std::option::Option<& str> {
+    pub fn bot_alias_id(&self) -> std::option::Option<&str> {
         self.bot_alias_id.as_deref()
     }
     /// <p>The unique identifier of the bot associated with the alias to delete.</p>
-    pub fn bot_id(&self) -> std::option::Option<& str> {
+    pub fn bot_id(&self) -> std::option::Option<&str> {
         self.bot_id.as_deref()
     }
     /// <p>When this parameter is true, Amazon Lex doesn't check to see if any other resource is using the alias before it is deleted.</p>
@@ -50,7 +50,8 @@ impl DeleteBotAliasInputBuilder {
     }
     /// <p>The unique identifier of the bot alias to delete.</p>
     pub fn set_bot_alias_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.bot_alias_id = input; self
+        self.bot_alias_id = input;
+        self
     }
     /// <p>The unique identifier of the bot associated with the alias to delete.</p>
     pub fn bot_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -59,7 +60,8 @@ impl DeleteBotAliasInputBuilder {
     }
     /// <p>The unique identifier of the bot associated with the alias to delete.</p>
     pub fn set_bot_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.bot_id = input; self
+        self.bot_id = input;
+        self
     }
     /// <p>When this parameter is true, Amazon Lex doesn't check to see if any other resource is using the alias before it is deleted.</p>
     pub fn skip_resource_in_use_check(mut self, input: bool) -> Self {
@@ -68,21 +70,20 @@ impl DeleteBotAliasInputBuilder {
     }
     /// <p>When this parameter is true, Amazon Lex doesn't check to see if any other resource is using the alias before it is deleted.</p>
     pub fn set_skip_resource_in_use_check(mut self, input: std::option::Option<bool>) -> Self {
-        self.skip_resource_in_use_check = input; self
+        self.skip_resource_in_use_check = input;
+        self
     }
     /// Consumes the builder and constructs a [`DeleteBotAliasInput`](crate::operation::delete_bot_alias::DeleteBotAliasInput).
-    pub fn build(self) -> Result<crate::operation::delete_bot_alias::DeleteBotAliasInput, aws_smithy_http::operation::error::BuildError> {
-        Ok(
-            crate::operation::delete_bot_alias::DeleteBotAliasInput {
-                bot_alias_id: self.bot_alias_id
-                ,
-                bot_id: self.bot_id
-                ,
-                skip_resource_in_use_check: self.skip_resource_in_use_check
-                    .unwrap_or_default()
-                ,
-            }
-        )
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::delete_bot_alias::DeleteBotAliasInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        Ok(crate::operation::delete_bot_alias::DeleteBotAliasInput {
+            bot_alias_id: self.bot_alias_id,
+            bot_id: self.bot_id,
+            skip_resource_in_use_check: self.skip_resource_in_use_check.unwrap_or_default(),
+        })
     }
 }
-

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetProtocolsListInput  {
+pub struct GetProtocolsListInput {
     /// <p>The ID of the Firewall Manager protocols list that you want the details for.</p>
     #[doc(hidden)]
     pub list_id: std::option::Option<std::string::String>,
@@ -12,7 +12,7 @@ pub struct GetProtocolsListInput  {
 }
 impl GetProtocolsListInput {
     /// <p>The ID of the Firewall Manager protocols list that you want the details for.</p>
-    pub fn list_id(&self) -> std::option::Option<& str> {
+    pub fn list_id(&self) -> std::option::Option<&str> {
         self.list_id.as_deref()
     }
     /// <p>Specifies whether the list to retrieve is a default list owned by Firewall Manager.</p>
@@ -22,7 +22,8 @@ impl GetProtocolsListInput {
 }
 impl GetProtocolsListInput {
     /// Creates a new builder-style object to manufacture [`GetProtocolsListInput`](crate::operation::get_protocols_list::GetProtocolsListInput).
-    pub fn builder() -> crate::operation::get_protocols_list::builders::GetProtocolsListInputBuilder {
+    pub fn builder() -> crate::operation::get_protocols_list::builders::GetProtocolsListInputBuilder
+    {
         crate::operation::get_protocols_list::builders::GetProtocolsListInputBuilder::default()
     }
 }
@@ -42,7 +43,8 @@ impl GetProtocolsListInputBuilder {
     }
     /// <p>The ID of the Firewall Manager protocols list that you want the details for.</p>
     pub fn set_list_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.list_id = input; self
+        self.list_id = input;
+        self
     }
     /// <p>Specifies whether the list to retrieve is a default list owned by Firewall Manager.</p>
     pub fn default_list(mut self, input: bool) -> Self {
@@ -51,19 +53,21 @@ impl GetProtocolsListInputBuilder {
     }
     /// <p>Specifies whether the list to retrieve is a default list owned by Firewall Manager.</p>
     pub fn set_default_list(mut self, input: std::option::Option<bool>) -> Self {
-        self.default_list = input; self
+        self.default_list = input;
+        self
     }
     /// Consumes the builder and constructs a [`GetProtocolsListInput`](crate::operation::get_protocols_list::GetProtocolsListInput).
-    pub fn build(self) -> Result<crate::operation::get_protocols_list::GetProtocolsListInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::get_protocols_list::GetProtocolsListInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::get_protocols_list::GetProtocolsListInput {
-                list_id: self.list_id
-                ,
-                default_list: self.default_list
-                    .unwrap_or_default()
-                ,
-            }
+                list_id: self.list_id,
+                default_list: self.default_list.unwrap_or_default(),
+            },
         )
     }
 }
-

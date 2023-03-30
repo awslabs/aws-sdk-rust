@@ -6,38 +6,58 @@ impl RegisterOrganizationDelegatedAdminInput {
     #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::register_organization_delegated_admin::RegisterOrganizationDelegatedAdmin, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::error::BuildError> {
-        let params_result = crate::endpoint::Params::builder().set_region(_config.region.as_ref().map(|r|r.as_ref().to_owned()))
-        .set_use_dual_stack(_config.use_dual_stack)
-        .set_use_fips(_config.use_fips)
-        .set_endpoint(_config.endpoint_url
-        .clone()).build()
-                                    .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
-                                let (endpoint_result, params) = match params_result {
-                                    Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
-                                    Err(e) => (Err(e), None)
-                                };
+    pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::register_organization_delegated_admin::RegisterOrganizationDelegatedAdmin, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::error::BuildError>{
+        let params_result = crate::endpoint::Params::builder()
+            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
+            .set_use_dual_stack(_config.use_dual_stack)
+            .set_use_fips(_config.use_fips)
+            .set_endpoint(_config.endpoint_url.clone())
+            .build()
+            .map_err(|err| {
+                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
+                    "could not construct endpoint parameters",
+                    err,
+                )
+            });
+        let (endpoint_result, params) = match params_result {
+            Ok(params) => (
+                _config.endpoint_resolver.resolve_endpoint(&params),
+                Some(params),
+            ),
+            Err(e) => (Err(e), None),
+        };
         let mut request = {
-            fn uri_base(_input: &crate::operation::register_organization_delegated_admin::RegisterOrganizationDelegatedAdminInput, output: &mut String) -> std::result::Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_base(
+                _input: &crate::operation::register_organization_delegated_admin::RegisterOrganizationDelegatedAdminInput,
+                output: &mut String,
+            ) -> std::result::Result<(), aws_smithy_http::operation::error::BuildError>
+            {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
-                            input: &crate::operation::register_organization_delegated_admin::RegisterOrganizationDelegatedAdminInput,
-                            builder: http::request::Builder
-                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
+                input: &crate::operation::register_organization_delegated_admin::RegisterOrganizationDelegatedAdminInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-amz-json-1.1");
             builder = aws_smithy_http::header::set_request_header_if_absent(
-                                builder,
-                                http::header::HeaderName::from_static("x-amz-target"),
-                                "CloudTrail_20131101.RegisterOrganizationDelegatedAdmin"
-                            );
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/x-amz-json-1.1",
+            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "CloudTrail_20131101.RegisterOrganizationDelegatedAdmin",
+            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
@@ -46,31 +66,48 @@ impl RegisterOrganizationDelegatedAdminInput {
             crate::protocol_serde::shape_register_organization_delegated_admin::ser_register_organization_delegated_admin_input(&self)?
         );
         if let Some(content_length) = body.content_length() {
-                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
-                            }
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request.properties_mut().insert(endpoint_result);
-        if let Some(params) = params { request.properties_mut().insert(params); }
-        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        if let Some(params) = params {
+            request.properties_mut().insert(params);
+        }
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-                                aws_types::os_shim_internal::Env::real(),
-                                crate::meta::API_METADATA.clone(),
-                            );
-                            if let Some(app_name) = _config.app_name() {
-                                user_agent = user_agent.with_app_name(app_name.clone());
-                            }
-                            request.properties_mut().insert(user_agent);
+            aws_types::os_shim_internal::Env::real(),
+            crate::meta::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
-                            if let Some(region) = &_config.region {
-                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
-                            }
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
         if let Some(region) = &_config.region {
-                                request.properties_mut().insert(region.clone());
-                            }
-        aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_credentials_cache(
+            &mut request.properties_mut(),
+            _config.credentials_cache.clone(),
+        );
         let op = aws_smithy_http::operation::Operation::new(request, crate::operation::register_organization_delegated_admin::RegisterOrganizationDelegatedAdmin::new())
                             .with_metadata(aws_smithy_http::operation::Metadata::new("RegisterOrganizationDelegatedAdmin", "cloudtrail"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
@@ -89,22 +126,24 @@ impl RegisterOrganizationDelegatedAdmin {
     }
 }
 impl aws_smithy_http::response::ParseStrictResponse for RegisterOrganizationDelegatedAdmin {
-                type Output = std::result::Result<crate::operation::register_organization_delegated_admin::RegisterOrganizationDelegatedAdminOutput, crate::operation::register_organization_delegated_admin::RegisterOrganizationDelegatedAdminError>;
-                fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
-                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
-                     if !response.status().is_success() && response.status().as_u16() != 200 {
-                        crate::protocol_serde::shape_register_organization_delegated_admin::de_register_organization_delegated_admin_http_error(response)
-                     } else {
-                        crate::protocol_serde::shape_register_organization_delegated_admin::de_register_organization_delegated_admin_http_response(response)
-                     }
-                }
-            }
+    type Output = std::result::Result<crate::operation::register_organization_delegated_admin::RegisterOrganizationDelegatedAdminOutput, crate::operation::register_organization_delegated_admin::RegisterOrganizationDelegatedAdminError>;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::protocol_serde::shape_register_organization_delegated_admin::de_register_organization_delegated_admin_http_error(response)
+        } else {
+            crate::protocol_serde::shape_register_organization_delegated_admin::de_register_organization_delegated_admin_http_response(response)
+        }
+    }
+}
 
 /// Do not use this.
-            ///
-            /// Operation `*Error/*ErrorKind` types were combined into a single `*Error` enum. The `.kind` field on `*Error` no longer exists and isn't needed anymore (you can just match on the error directly since it's an enum now).
-            #[deprecated(note = "Operation `*Error/*ErrorKind` types were combined into a single `*Error` enum. The `.kind` field on `*Error` no longer exists and isn't needed anymore (you can just match on the error directly since it's an enum now).")]
-            pub type RegisterOrganizationDelegatedAdminErrorKind = RegisterOrganizationDelegatedAdminError;
+///
+/// Operation `*Error/*ErrorKind` types were combined into a single `*Error` enum. The `.kind` field on `*Error` no longer exists and isn't needed anymore (you can just match on the error directly since it's an enum now).
+#[deprecated(
+    note = "Operation `*Error/*ErrorKind` types were combined into a single `*Error` enum. The `.kind` field on `*Error` no longer exists and isn't needed anymore (you can just match on the error directly since it's an enum now)."
+)]
+pub type RegisterOrganizationDelegatedAdminErrorKind = RegisterOrganizationDelegatedAdminError;
 /// Error type for the `RegisterOrganizationDelegatedAdminError` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -114,126 +153,110 @@ pub enum RegisterOrganizationDelegatedAdminError {
     /// <p>This exception is thrown when the account is already registered as the CloudTrail delegated administrator.</p>
     AccountRegisteredException(crate::types::error::AccountRegisteredException),
     /// <p>This exception is thrown when the management account of an organization is registered as the CloudTrail delegated administrator.</p>
-    CannotDelegateManagementAccountException(crate::types::error::CannotDelegateManagementAccountException),
+    CannotDelegateManagementAccountException(
+        crate::types::error::CannotDelegateManagementAccountException,
+    ),
     /// <p>This exception is thrown when trusted access has not been enabled between CloudTrail and Organizations. For more information, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_integrate_services.html">Enabling Trusted Access with Other Amazon Web Services Services</a> and <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/creating-an-organizational-trail-prepare.html">Prepare For Creating a Trail For Your Organization</a>. </p>
     CloudTrailAccessNotEnabledException(crate::types::error::CloudTrailAccessNotEnabledException),
     /// <p>This exception is thrown when the maximum number of CloudTrail delegated administrators is reached.</p>
-    DelegatedAdminAccountLimitExceededException(crate::types::error::DelegatedAdminAccountLimitExceededException),
+    DelegatedAdminAccountLimitExceededException(
+        crate::types::error::DelegatedAdminAccountLimitExceededException,
+    ),
     /// <p>This exception is thrown when the IAM user or role that is used to create the organization resource lacks one or more required permissions for creating an organization resource in a required service.</p>
-    InsufficientDependencyServiceAccessPermissionException(crate::types::error::InsufficientDependencyServiceAccessPermissionException),
+    InsufficientDependencyServiceAccessPermissionException(
+        crate::types::error::InsufficientDependencyServiceAccessPermissionException,
+    ),
     /// <p>The request includes a parameter that is not valid.</p>
     InvalidParameterException(crate::types::error::InvalidParameterException),
     /// <p> This exception is thrown when the account making the request is not the organization's management account. </p>
-    NotOrganizationManagementAccountException(crate::types::error::NotOrganizationManagementAccountException),
+    NotOrganizationManagementAccountException(
+        crate::types::error::NotOrganizationManagementAccountException,
+    ),
     /// <p>This exception is thrown when the requested operation is not permitted.</p>
     OperationNotPermittedException(crate::types::error::OperationNotPermittedException),
     /// <p>This exception is thrown when Organizations is not configured to support all features. All features must be enabled in Organizations to support creating an organization trail or event data store.</p>
-    OrganizationNotInAllFeaturesModeException(crate::types::error::OrganizationNotInAllFeaturesModeException),
+    OrganizationNotInAllFeaturesModeException(
+        crate::types::error::OrganizationNotInAllFeaturesModeException,
+    ),
     /// <p>This exception is thrown when the request is made from an Amazon Web Services account that is not a member of an organization. To make this request, sign in using the credentials of an account that belongs to an organization.</p>
     OrganizationsNotInUseException(crate::types::error::OrganizationsNotInUseException),
     /// <p>This exception is thrown when the requested operation is not supported.</p>
     UnsupportedOperationException(crate::types::error::UnsupportedOperationException),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-                    Unhandled(aws_smithy_types::error::Unhandled),
+    Unhandled(aws_smithy_types::error::Unhandled),
 }
 impl aws_smithy_http::result::CreateUnhandledError for RegisterOrganizationDelegatedAdminError {
-    
-                    fn create_unhandled_error(
-                        source: Box<dyn std::error::Error + Send + Sync + 'static>,
-                        meta: std::option::Option<aws_smithy_types::error::ErrorMetadata>
-                    ) -> Self
-                     {
+    fn create_unhandled_error(
+        source: Box<dyn std::error::Error + Send + Sync + 'static>,
+        meta: std::option::Option<aws_smithy_types::error::ErrorMetadata>,
+    ) -> Self {
         Self::Unhandled({
-                                let mut builder = aws_smithy_types::error::Unhandled::builder().source(source);
-                                builder.set_meta(meta);
-                                builder.build()
-                            })
+            let mut builder = aws_smithy_types::error::Unhandled::builder().source(source);
+            builder.set_meta(meta);
+            builder.build()
+        })
     }
 }
 impl std::fmt::Display for RegisterOrganizationDelegatedAdminError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match self {
-            Self::AccountNotFoundException(_inner) =>
-            _inner.fmt(f)
-            ,
-            Self::AccountRegisteredException(_inner) =>
-            _inner.fmt(f)
-            ,
-            Self::CannotDelegateManagementAccountException(_inner) =>
-            _inner.fmt(f)
-            ,
-            Self::CloudTrailAccessNotEnabledException(_inner) =>
-            _inner.fmt(f)
-            ,
-            Self::DelegatedAdminAccountLimitExceededException(_inner) =>
-            _inner.fmt(f)
-            ,
-            Self::InsufficientDependencyServiceAccessPermissionException(_inner) =>
-            _inner.fmt(f)
-            ,
-            Self::InvalidParameterException(_inner) =>
-            _inner.fmt(f)
-            ,
-            Self::NotOrganizationManagementAccountException(_inner) =>
-            _inner.fmt(f)
-            ,
-            Self::OperationNotPermittedException(_inner) =>
-            _inner.fmt(f)
-            ,
-            Self::OrganizationNotInAllFeaturesModeException(_inner) =>
-            _inner.fmt(f)
-            ,
-            Self::OrganizationsNotInUseException(_inner) =>
-            _inner.fmt(f)
-            ,
-            Self::UnsupportedOperationException(_inner) =>
-            _inner.fmt(f)
-            ,
-            Self::Unhandled(_inner) => {
-                _inner.fmt(f)
-            }
+            Self::AccountNotFoundException(_inner) => _inner.fmt(f),
+            Self::AccountRegisteredException(_inner) => _inner.fmt(f),
+            Self::CannotDelegateManagementAccountException(_inner) => _inner.fmt(f),
+            Self::CloudTrailAccessNotEnabledException(_inner) => _inner.fmt(f),
+            Self::DelegatedAdminAccountLimitExceededException(_inner) => _inner.fmt(f),
+            Self::InsufficientDependencyServiceAccessPermissionException(_inner) => _inner.fmt(f),
+            Self::InvalidParameterException(_inner) => _inner.fmt(f),
+            Self::NotOrganizationManagementAccountException(_inner) => _inner.fmt(f),
+            Self::OperationNotPermittedException(_inner) => _inner.fmt(f),
+            Self::OrganizationNotInAllFeaturesModeException(_inner) => _inner.fmt(f),
+            Self::OrganizationsNotInUseException(_inner) => _inner.fmt(f),
+            Self::UnsupportedOperationException(_inner) => _inner.fmt(f),
+            Self::Unhandled(_inner) => _inner.fmt(f),
         }
     }
 }
-impl aws_smithy_types::error::metadata::ProvideErrorMetadata for RegisterOrganizationDelegatedAdminError {
+impl aws_smithy_types::error::metadata::ProvideErrorMetadata
+    for RegisterOrganizationDelegatedAdminError
+{
     fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
         match self {
-            Self::AccountNotFoundException(_inner) =>
-            aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
-            ,
-            Self::AccountRegisteredException(_inner) =>
-            aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
-            ,
-            Self::CannotDelegateManagementAccountException(_inner) =>
-            aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
-            ,
-            Self::CloudTrailAccessNotEnabledException(_inner) =>
-            aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
-            ,
-            Self::DelegatedAdminAccountLimitExceededException(_inner) =>
-            aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
-            ,
-            Self::InsufficientDependencyServiceAccessPermissionException(_inner) =>
-            aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
-            ,
-            Self::InvalidParameterException(_inner) =>
-            aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
-            ,
-            Self::NotOrganizationManagementAccountException(_inner) =>
-            aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
-            ,
-            Self::OperationNotPermittedException(_inner) =>
-            aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
-            ,
-            Self::OrganizationNotInAllFeaturesModeException(_inner) =>
-            aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
-            ,
-            Self::OrganizationsNotInUseException(_inner) =>
-            aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
-            ,
-            Self::UnsupportedOperationException(_inner) =>
-            aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
-            ,
+            Self::AccountNotFoundException(_inner) => {
+                aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
+            }
+            Self::AccountRegisteredException(_inner) => {
+                aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
+            }
+            Self::CannotDelegateManagementAccountException(_inner) => {
+                aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
+            }
+            Self::CloudTrailAccessNotEnabledException(_inner) => {
+                aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
+            }
+            Self::DelegatedAdminAccountLimitExceededException(_inner) => {
+                aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
+            }
+            Self::InsufficientDependencyServiceAccessPermissionException(_inner) => {
+                aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
+            }
+            Self::InvalidParameterException(_inner) => {
+                aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
+            }
+            Self::NotOrganizationManagementAccountException(_inner) => {
+                aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
+            }
+            Self::OperationNotPermittedException(_inner) => {
+                aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
+            }
+            Self::OrganizationNotInAllFeaturesModeException(_inner) => {
+                aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
+            }
+            Self::OrganizationsNotInUseException(_inner) => {
+                aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
+            }
+            Self::UnsupportedOperationException(_inner) => {
+                aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
+            }
             Self::Unhandled(_inner) => {
                 aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
             }
@@ -255,18 +278,27 @@ impl aws_smithy_types::retry::ProvideErrorKind for RegisterOrganizationDelegated
 }
 impl RegisterOrganizationDelegatedAdminError {
     /// Creates the `RegisterOrganizationDelegatedAdminError::Unhandled` variant from any error type.
-                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-                        Self::Unhandled(aws_smithy_types::error::Unhandled::builder().source(err).build())
-                    }
-    
-                    /// Creates the `RegisterOrganizationDelegatedAdminError::Unhandled` variant from a `aws_smithy_types::error::ErrorMetadata`.
-                    pub fn generic(err: aws_smithy_types::error::ErrorMetadata) -> Self {
-                        Self::Unhandled(aws_smithy_types::error::Unhandled::builder().source(err.clone()).meta(err).build())
-                    }
-    /// 
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self::Unhandled(
+            aws_smithy_types::error::Unhandled::builder()
+                .source(err)
+                .build(),
+        )
+    }
+
+    /// Creates the `RegisterOrganizationDelegatedAdminError::Unhandled` variant from a `aws_smithy_types::error::ErrorMetadata`.
+    pub fn generic(err: aws_smithy_types::error::ErrorMetadata) -> Self {
+        Self::Unhandled(
+            aws_smithy_types::error::Unhandled::builder()
+                .source(err.clone())
+                .meta(err)
+                .build(),
+        )
+    }
+    ///
     /// Returns error metadata, which includes the error code, message,
     /// request ID, and potentially additional information.
-    /// 
+    ///
     pub fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
         use aws_smithy_types::error::metadata::ProvideErrorMetadata;
         match self {
@@ -307,7 +339,10 @@ impl RegisterOrganizationDelegatedAdminError {
     }
     /// Returns `true` if the error kind is `RegisterOrganizationDelegatedAdminError::InsufficientDependencyServiceAccessPermissionException`.
     pub fn is_insufficient_dependency_service_access_permission_exception(&self) -> bool {
-        matches!(self, Self::InsufficientDependencyServiceAccessPermissionException(_))
+        matches!(
+            self,
+            Self::InsufficientDependencyServiceAccessPermissionException(_)
+        )
     }
     /// Returns `true` if the error kind is `RegisterOrganizationDelegatedAdminError::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
@@ -337,45 +372,19 @@ impl RegisterOrganizationDelegatedAdminError {
 impl std::error::Error for RegisterOrganizationDelegatedAdminError {
     fn source(&self) -> std::option::Option<&(dyn std::error::Error + 'static)> {
         match self {
-            Self::AccountNotFoundException(_inner) =>
-            Some(_inner)
-            ,
-            Self::AccountRegisteredException(_inner) =>
-            Some(_inner)
-            ,
-            Self::CannotDelegateManagementAccountException(_inner) =>
-            Some(_inner)
-            ,
-            Self::CloudTrailAccessNotEnabledException(_inner) =>
-            Some(_inner)
-            ,
-            Self::DelegatedAdminAccountLimitExceededException(_inner) =>
-            Some(_inner)
-            ,
-            Self::InsufficientDependencyServiceAccessPermissionException(_inner) =>
-            Some(_inner)
-            ,
-            Self::InvalidParameterException(_inner) =>
-            Some(_inner)
-            ,
-            Self::NotOrganizationManagementAccountException(_inner) =>
-            Some(_inner)
-            ,
-            Self::OperationNotPermittedException(_inner) =>
-            Some(_inner)
-            ,
-            Self::OrganizationNotInAllFeaturesModeException(_inner) =>
-            Some(_inner)
-            ,
-            Self::OrganizationsNotInUseException(_inner) =>
-            Some(_inner)
-            ,
-            Self::UnsupportedOperationException(_inner) =>
-            Some(_inner)
-            ,
-            Self::Unhandled(_inner) => {
-                Some(_inner)
-            }
+            Self::AccountNotFoundException(_inner) => Some(_inner),
+            Self::AccountRegisteredException(_inner) => Some(_inner),
+            Self::CannotDelegateManagementAccountException(_inner) => Some(_inner),
+            Self::CloudTrailAccessNotEnabledException(_inner) => Some(_inner),
+            Self::DelegatedAdminAccountLimitExceededException(_inner) => Some(_inner),
+            Self::InsufficientDependencyServiceAccessPermissionException(_inner) => Some(_inner),
+            Self::InvalidParameterException(_inner) => Some(_inner),
+            Self::NotOrganizationManagementAccountException(_inner) => Some(_inner),
+            Self::OperationNotPermittedException(_inner) => Some(_inner),
+            Self::OrganizationNotInAllFeaturesModeException(_inner) => Some(_inner),
+            Self::OrganizationsNotInUseException(_inner) => Some(_inner),
+            Self::UnsupportedOperationException(_inner) => Some(_inner),
+            Self::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -390,4 +399,3 @@ mod _register_organization_delegated_admin_output;
 
 /// Builders
 pub mod builders;
-

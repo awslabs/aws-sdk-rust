@@ -3,7 +3,7 @@
 /// <p>Describes an additional detail for a path analysis.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AdditionalDetail  {
+pub struct AdditionalDetail {
     /// <p>The information type.</p>
     #[doc(hidden)]
     pub additional_detail_type: std::option::Option<std::string::String>,
@@ -13,11 +13,11 @@ pub struct AdditionalDetail  {
 }
 impl AdditionalDetail {
     /// <p>The information type.</p>
-    pub fn additional_detail_type(&self) -> std::option::Option<& str> {
+    pub fn additional_detail_type(&self) -> std::option::Option<&str> {
         self.additional_detail_type.as_deref()
     }
     /// <p>The path component.</p>
-    pub fn component(&self) -> std::option::Option<& crate::types::AnalysisComponent> {
+    pub fn component(&self) -> std::option::Option<&crate::types::AnalysisComponent> {
         self.component.as_ref()
     }
 }
@@ -42,8 +42,12 @@ impl AdditionalDetailBuilder {
         self
     }
     /// <p>The information type.</p>
-    pub fn set_additional_detail_type(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.additional_detail_type = input; self
+    pub fn set_additional_detail_type(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.additional_detail_type = input;
+        self
     }
     /// <p>The path component.</p>
     pub fn component(mut self, input: crate::types::AnalysisComponent) -> Self {
@@ -51,17 +55,18 @@ impl AdditionalDetailBuilder {
         self
     }
     /// <p>The path component.</p>
-    pub fn set_component(mut self, input: std::option::Option<crate::types::AnalysisComponent>) -> Self {
-        self.component = input; self
+    pub fn set_component(
+        mut self,
+        input: std::option::Option<crate::types::AnalysisComponent>,
+    ) -> Self {
+        self.component = input;
+        self
     }
     /// Consumes the builder and constructs a [`AdditionalDetail`](crate::types::AdditionalDetail).
     pub fn build(self) -> crate::types::AdditionalDetail {
         crate::types::AdditionalDetail {
-            additional_detail_type: self.additional_detail_type
-            ,
-            component: self.component
-            ,
+            additional_detail_type: self.additional_detail_type,
+            component: self.component,
         }
     }
 }
-

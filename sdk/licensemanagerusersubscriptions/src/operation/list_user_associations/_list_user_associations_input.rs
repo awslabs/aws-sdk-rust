@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListUserAssociationsInput  {
+pub struct ListUserAssociationsInput {
     /// <p>The ID of the EC2 instance, which provides user-based subscriptions.</p>
     #[doc(hidden)]
     pub instance_id: std::option::Option<std::string::String>,
@@ -21,11 +21,11 @@ pub struct ListUserAssociationsInput  {
 }
 impl ListUserAssociationsInput {
     /// <p>The ID of the EC2 instance, which provides user-based subscriptions.</p>
-    pub fn instance_id(&self) -> std::option::Option<& str> {
+    pub fn instance_id(&self) -> std::option::Option<&str> {
         self.instance_id.as_deref()
     }
     /// <p>An object that specifies details for the identity provider.</p>
-    pub fn identity_provider(&self) -> std::option::Option<& crate::types::IdentityProvider> {
+    pub fn identity_provider(&self) -> std::option::Option<&crate::types::IdentityProvider> {
         self.identity_provider.as_ref()
     }
     /// <p>Maximum number of results to return in a single call.</p>
@@ -33,17 +33,18 @@ impl ListUserAssociationsInput {
         self.max_results
     }
     /// <p>An array of structures that you can use to filter the results to those that match one or more sets of key-value pairs that you specify.</p>
-    pub fn filters(&self) -> std::option::Option<& [crate::types::Filter]> {
+    pub fn filters(&self) -> std::option::Option<&[crate::types::Filter]> {
         self.filters.as_deref()
     }
     /// <p>Token for the next set of results.</p>
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
 }
 impl ListUserAssociationsInput {
     /// Creates a new builder-style object to manufacture [`ListUserAssociationsInput`](crate::operation::list_user_associations::ListUserAssociationsInput).
-    pub fn builder() -> crate::operation::list_user_associations::builders::ListUserAssociationsInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::list_user_associations::builders::ListUserAssociationsInputBuilder {
         crate::operation::list_user_associations::builders::ListUserAssociationsInputBuilder::default()
     }
 }
@@ -66,7 +67,8 @@ impl ListUserAssociationsInputBuilder {
     }
     /// <p>The ID of the EC2 instance, which provides user-based subscriptions.</p>
     pub fn set_instance_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.instance_id = input; self
+        self.instance_id = input;
+        self
     }
     /// <p>An object that specifies details for the identity provider.</p>
     pub fn identity_provider(mut self, input: crate::types::IdentityProvider) -> Self {
@@ -74,8 +76,12 @@ impl ListUserAssociationsInputBuilder {
         self
     }
     /// <p>An object that specifies details for the identity provider.</p>
-    pub fn set_identity_provider(mut self, input: std::option::Option<crate::types::IdentityProvider>) -> Self {
-        self.identity_provider = input; self
+    pub fn set_identity_provider(
+        mut self,
+        input: std::option::Option<crate::types::IdentityProvider>,
+    ) -> Self {
+        self.identity_provider = input;
+        self
     }
     /// <p>Maximum number of results to return in a single call.</p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -84,7 +90,8 @@ impl ListUserAssociationsInputBuilder {
     }
     /// <p>Maximum number of results to return in a single call.</p>
     pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_results = input; self
+        self.max_results = input;
+        self
     }
     /// Appends an item to `filters`.
     ///
@@ -93,13 +100,17 @@ impl ListUserAssociationsInputBuilder {
     /// <p>An array of structures that you can use to filter the results to those that match one or more sets of key-value pairs that you specify.</p>
     pub fn filters(mut self, input: crate::types::Filter) -> Self {
         let mut v = self.filters.unwrap_or_default();
-                        v.push(input);
-                        self.filters = Some(v);
-                        self
+        v.push(input);
+        self.filters = Some(v);
+        self
     }
     /// <p>An array of structures that you can use to filter the results to those that match one or more sets of key-value pairs that you specify.</p>
-    pub fn set_filters(mut self, input: std::option::Option<std::vec::Vec<crate::types::Filter>>) -> Self {
-        self.filters = input; self
+    pub fn set_filters(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::Filter>>,
+    ) -> Self {
+        self.filters = input;
+        self
     }
     /// <p>Token for the next set of results.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -108,24 +119,24 @@ impl ListUserAssociationsInputBuilder {
     }
     /// <p>Token for the next set of results.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input; self
+        self.next_token = input;
+        self
     }
     /// Consumes the builder and constructs a [`ListUserAssociationsInput`](crate::operation::list_user_associations::ListUserAssociationsInput).
-    pub fn build(self) -> Result<crate::operation::list_user_associations::ListUserAssociationsInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::list_user_associations::ListUserAssociationsInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::list_user_associations::ListUserAssociationsInput {
-                instance_id: self.instance_id
-                ,
-                identity_provider: self.identity_provider
-                ,
-                max_results: self.max_results
-                ,
-                filters: self.filters
-                ,
-                next_token: self.next_token
-                ,
-            }
+                instance_id: self.instance_id,
+                identity_provider: self.identity_provider,
+                max_results: self.max_results,
+                filters: self.filters,
+                next_token: self.next_token,
+            },
         )
     }
 }
-

@@ -3,10 +3,11 @@
 /// <p></p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeConfigRuleEvaluationStatusOutput  {
+pub struct DescribeConfigRuleEvaluationStatusOutput {
     /// <p>Status information about your Config managed rules.</p>
     #[doc(hidden)]
-    pub config_rules_evaluation_status: std::option::Option<std::vec::Vec<crate::types::ConfigRuleEvaluationStatus>>,
+    pub config_rules_evaluation_status:
+        std::option::Option<std::vec::Vec<crate::types::ConfigRuleEvaluationStatus>>,
     /// <p>The string that you use in a subsequent request to get the next page of results in a paginated response.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
@@ -14,22 +15,24 @@ pub struct DescribeConfigRuleEvaluationStatusOutput  {
 }
 impl DescribeConfigRuleEvaluationStatusOutput {
     /// <p>Status information about your Config managed rules.</p>
-    pub fn config_rules_evaluation_status(&self) -> std::option::Option<& [crate::types::ConfigRuleEvaluationStatus]> {
+    pub fn config_rules_evaluation_status(
+        &self,
+    ) -> std::option::Option<&[crate::types::ConfigRuleEvaluationStatus]> {
         self.config_rules_evaluation_status.as_deref()
     }
     /// <p>The string that you use in a subsequent request to get the next page of results in a paginated response.</p>
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for DescribeConfigRuleEvaluationStatusOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl DescribeConfigRuleEvaluationStatusOutput {
     /// Creates a new builder-style object to manufacture [`DescribeConfigRuleEvaluationStatusOutput`](crate::operation::describe_config_rule_evaluation_status::DescribeConfigRuleEvaluationStatusOutput).
-    pub fn builder() -> crate::operation::describe_config_rule_evaluation_status::builders::DescribeConfigRuleEvaluationStatusOutputBuilder {
+    pub fn builder() -> crate::operation::describe_config_rule_evaluation_status::builders::DescribeConfigRuleEvaluationStatusOutputBuilder{
         crate::operation::describe_config_rule_evaluation_status::builders::DescribeConfigRuleEvaluationStatusOutputBuilder::default()
     }
 }
@@ -38,7 +41,8 @@ impl DescribeConfigRuleEvaluationStatusOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct DescribeConfigRuleEvaluationStatusOutputBuilder {
-    pub(crate) config_rules_evaluation_status: std::option::Option<std::vec::Vec<crate::types::ConfigRuleEvaluationStatus>>,
+    pub(crate) config_rules_evaluation_status:
+        std::option::Option<std::vec::Vec<crate::types::ConfigRuleEvaluationStatus>>,
     pub(crate) next_token: std::option::Option<std::string::String>,
     _request_id: Option<String>,
 }
@@ -48,15 +52,22 @@ impl DescribeConfigRuleEvaluationStatusOutputBuilder {
     /// To override the contents of this collection use [`set_config_rules_evaluation_status`](Self::set_config_rules_evaluation_status).
     ///
     /// <p>Status information about your Config managed rules.</p>
-    pub fn config_rules_evaluation_status(mut self, input: crate::types::ConfigRuleEvaluationStatus) -> Self {
+    pub fn config_rules_evaluation_status(
+        mut self,
+        input: crate::types::ConfigRuleEvaluationStatus,
+    ) -> Self {
         let mut v = self.config_rules_evaluation_status.unwrap_or_default();
-                        v.push(input);
-                        self.config_rules_evaluation_status = Some(v);
-                        self
+        v.push(input);
+        self.config_rules_evaluation_status = Some(v);
+        self
     }
     /// <p>Status information about your Config managed rules.</p>
-    pub fn set_config_rules_evaluation_status(mut self, input: std::option::Option<std::vec::Vec<crate::types::ConfigRuleEvaluationStatus>>) -> Self {
-        self.config_rules_evaluation_status = input; self
+    pub fn set_config_rules_evaluation_status(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::ConfigRuleEvaluationStatus>>,
+    ) -> Self {
+        self.config_rules_evaluation_status = input;
+        self
     }
     /// <p>The string that you use in a subsequent request to get the next page of results in a paginated response.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -65,19 +76,20 @@ impl DescribeConfigRuleEvaluationStatusOutputBuilder {
     }
     /// <p>The string that you use in a subsequent request to get the next page of results in a paginated response.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input; self
+        self.next_token = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`DescribeConfigRuleEvaluationStatusOutput`](crate::operation::describe_config_rule_evaluation_status::DescribeConfigRuleEvaluationStatusOutput).
-    pub fn build(self) -> crate::operation::describe_config_rule_evaluation_status::DescribeConfigRuleEvaluationStatusOutput {
+    pub fn build(self) -> crate::operation::describe_config_rule_evaluation_status::DescribeConfigRuleEvaluationStatusOutput{
         crate::operation::describe_config_rule_evaluation_status::DescribeConfigRuleEvaluationStatusOutput {
             config_rules_evaluation_status: self.config_rules_evaluation_status
             ,
@@ -87,4 +99,3 @@ impl DescribeConfigRuleEvaluationStatusOutputBuilder {
         }
     }
 }
-

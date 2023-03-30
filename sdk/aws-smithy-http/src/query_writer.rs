@@ -7,6 +7,7 @@ use crate::query::fmt_string as percent_encode_query;
 use http::Uri;
 
 /// Utility for updating the query string in a [`Uri`].
+#[allow(missing_debug_implementations)]
 pub struct QueryWriter {
     base_uri: Uri,
     new_path_and_query: String,

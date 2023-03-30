@@ -3,7 +3,7 @@
 /// <p>Details about a timeline event during an incident.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct EventSummary  {
+pub struct EventSummary {
     /// <p>The Amazon Resource Name (ARN) of the incident that the event happened during.</p>
     #[doc(hidden)]
     pub incident_record_arn: std::option::Option<std::string::String>,
@@ -25,27 +25,27 @@ pub struct EventSummary  {
 }
 impl EventSummary {
     /// <p>The Amazon Resource Name (ARN) of the incident that the event happened during.</p>
-    pub fn incident_record_arn(&self) -> std::option::Option<& str> {
+    pub fn incident_record_arn(&self) -> std::option::Option<&str> {
         self.incident_record_arn.as_deref()
     }
     /// <p>The timeline event ID.</p>
-    pub fn event_id(&self) -> std::option::Option<& str> {
+    pub fn event_id(&self) -> std::option::Option<&str> {
         self.event_id.as_deref()
     }
     /// <p>The time that the event occurred.</p>
-    pub fn event_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
+    pub fn event_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.event_time.as_ref()
     }
     /// <p>The time that the timeline event was last updated.</p>
-    pub fn event_updated_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
+    pub fn event_updated_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.event_updated_time.as_ref()
     }
     /// <p>The type of event. The timeline event must be <code>Custom Event</code>.</p>
-    pub fn event_type(&self) -> std::option::Option<& str> {
+    pub fn event_type(&self) -> std::option::Option<&str> {
         self.event_type.as_deref()
     }
     /// <p>A list of references in a <code>TimelineEvent</code>.</p>
-    pub fn event_references(&self) -> std::option::Option<& [crate::types::EventReference]> {
+    pub fn event_references(&self) -> std::option::Option<&[crate::types::EventReference]> {
         self.event_references.as_deref()
     }
 }
@@ -74,8 +74,12 @@ impl EventSummaryBuilder {
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the incident that the event happened during.</p>
-    pub fn set_incident_record_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.incident_record_arn = input; self
+    pub fn set_incident_record_arn(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.incident_record_arn = input;
+        self
     }
     /// <p>The timeline event ID.</p>
     pub fn event_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -84,7 +88,8 @@ impl EventSummaryBuilder {
     }
     /// <p>The timeline event ID.</p>
     pub fn set_event_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.event_id = input; self
+        self.event_id = input;
+        self
     }
     /// <p>The time that the event occurred.</p>
     pub fn event_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -92,8 +97,12 @@ impl EventSummaryBuilder {
         self
     }
     /// <p>The time that the event occurred.</p>
-    pub fn set_event_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.event_time = input; self
+    pub fn set_event_time(
+        mut self,
+        input: std::option::Option<aws_smithy_types::DateTime>,
+    ) -> Self {
+        self.event_time = input;
+        self
     }
     /// <p>The time that the timeline event was last updated.</p>
     pub fn event_updated_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -101,8 +110,12 @@ impl EventSummaryBuilder {
         self
     }
     /// <p>The time that the timeline event was last updated.</p>
-    pub fn set_event_updated_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.event_updated_time = input; self
+    pub fn set_event_updated_time(
+        mut self,
+        input: std::option::Option<aws_smithy_types::DateTime>,
+    ) -> Self {
+        self.event_updated_time = input;
+        self
     }
     /// <p>The type of event. The timeline event must be <code>Custom Event</code>.</p>
     pub fn event_type(mut self, input: impl Into<std::string::String>) -> Self {
@@ -111,7 +124,8 @@ impl EventSummaryBuilder {
     }
     /// <p>The type of event. The timeline event must be <code>Custom Event</code>.</p>
     pub fn set_event_type(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.event_type = input; self
+        self.event_type = input;
+        self
     }
     /// Appends an item to `event_references`.
     ///
@@ -120,30 +134,27 @@ impl EventSummaryBuilder {
     /// <p>A list of references in a <code>TimelineEvent</code>.</p>
     pub fn event_references(mut self, input: crate::types::EventReference) -> Self {
         let mut v = self.event_references.unwrap_or_default();
-                        v.push(input);
-                        self.event_references = Some(v);
-                        self
+        v.push(input);
+        self.event_references = Some(v);
+        self
     }
     /// <p>A list of references in a <code>TimelineEvent</code>.</p>
-    pub fn set_event_references(mut self, input: std::option::Option<std::vec::Vec<crate::types::EventReference>>) -> Self {
-        self.event_references = input; self
+    pub fn set_event_references(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::EventReference>>,
+    ) -> Self {
+        self.event_references = input;
+        self
     }
     /// Consumes the builder and constructs a [`EventSummary`](crate::types::EventSummary).
     pub fn build(self) -> crate::types::EventSummary {
         crate::types::EventSummary {
-            incident_record_arn: self.incident_record_arn
-            ,
-            event_id: self.event_id
-            ,
-            event_time: self.event_time
-            ,
-            event_updated_time: self.event_updated_time
-            ,
-            event_type: self.event_type
-            ,
-            event_references: self.event_references
-            ,
+            incident_record_arn: self.incident_record_arn,
+            event_id: self.event_id,
+            event_time: self.event_time,
+            event_updated_time: self.event_updated_time,
+            event_type: self.event_type,
+            event_references: self.event_references,
         }
     }
 }
-

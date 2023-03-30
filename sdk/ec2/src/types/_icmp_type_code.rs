@@ -3,7 +3,7 @@
 /// <p>Describes the ICMP type and code.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct IcmpTypeCode  {
+pub struct IcmpTypeCode {
     /// <p>The ICMP code. A value of -1 means all codes for the specified ICMP type.</p>
     #[doc(hidden)]
     pub code: std::option::Option<i32>,
@@ -43,7 +43,8 @@ impl IcmpTypeCodeBuilder {
     }
     /// <p>The ICMP code. A value of -1 means all codes for the specified ICMP type.</p>
     pub fn set_code(mut self, input: std::option::Option<i32>) -> Self {
-        self.code = input; self
+        self.code = input;
+        self
     }
     /// <p>The ICMP type. A value of -1 means all types.</p>
     pub fn r#type(mut self, input: i32) -> Self {
@@ -52,16 +53,14 @@ impl IcmpTypeCodeBuilder {
     }
     /// <p>The ICMP type. A value of -1 means all types.</p>
     pub fn set_type(mut self, input: std::option::Option<i32>) -> Self {
-        self.r#type = input; self
+        self.r#type = input;
+        self
     }
     /// Consumes the builder and constructs a [`IcmpTypeCode`](crate::types::IcmpTypeCode).
     pub fn build(self) -> crate::types::IcmpTypeCode {
         crate::types::IcmpTypeCode {
-            code: self.code
-            ,
-            r#type: self.r#type
-            ,
+            code: self.code,
+            r#type: self.r#type,
         }
     }
 }
-

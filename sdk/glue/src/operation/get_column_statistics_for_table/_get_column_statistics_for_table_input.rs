@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetColumnStatisticsForTableInput  {
+pub struct GetColumnStatisticsForTableInput {
     /// <p>The ID of the Data Catalog where the partitions in question reside. If none is supplied, the Amazon Web Services account ID is used by default.</p>
     #[doc(hidden)]
     pub catalog_id: std::option::Option<std::string::String>,
@@ -18,25 +18,25 @@ pub struct GetColumnStatisticsForTableInput  {
 }
 impl GetColumnStatisticsForTableInput {
     /// <p>The ID of the Data Catalog where the partitions in question reside. If none is supplied, the Amazon Web Services account ID is used by default.</p>
-    pub fn catalog_id(&self) -> std::option::Option<& str> {
+    pub fn catalog_id(&self) -> std::option::Option<&str> {
         self.catalog_id.as_deref()
     }
     /// <p>The name of the catalog database where the partitions reside.</p>
-    pub fn database_name(&self) -> std::option::Option<& str> {
+    pub fn database_name(&self) -> std::option::Option<&str> {
         self.database_name.as_deref()
     }
     /// <p>The name of the partitions' table.</p>
-    pub fn table_name(&self) -> std::option::Option<& str> {
+    pub fn table_name(&self) -> std::option::Option<&str> {
         self.table_name.as_deref()
     }
     /// <p>A list of the column names.</p>
-    pub fn column_names(&self) -> std::option::Option<& [std::string::String]> {
+    pub fn column_names(&self) -> std::option::Option<&[std::string::String]> {
         self.column_names.as_deref()
     }
 }
 impl GetColumnStatisticsForTableInput {
     /// Creates a new builder-style object to manufacture [`GetColumnStatisticsForTableInput`](crate::operation::get_column_statistics_for_table::GetColumnStatisticsForTableInput).
-    pub fn builder() -> crate::operation::get_column_statistics_for_table::builders::GetColumnStatisticsForTableInputBuilder {
+    pub fn builder() -> crate::operation::get_column_statistics_for_table::builders::GetColumnStatisticsForTableInputBuilder{
         crate::operation::get_column_statistics_for_table::builders::GetColumnStatisticsForTableInputBuilder::default()
     }
 }
@@ -58,7 +58,8 @@ impl GetColumnStatisticsForTableInputBuilder {
     }
     /// <p>The ID of the Data Catalog where the partitions in question reside. If none is supplied, the Amazon Web Services account ID is used by default.</p>
     pub fn set_catalog_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.catalog_id = input; self
+        self.catalog_id = input;
+        self
     }
     /// <p>The name of the catalog database where the partitions reside.</p>
     pub fn database_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -67,7 +68,8 @@ impl GetColumnStatisticsForTableInputBuilder {
     }
     /// <p>The name of the catalog database where the partitions reside.</p>
     pub fn set_database_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.database_name = input; self
+        self.database_name = input;
+        self
     }
     /// <p>The name of the partitions' table.</p>
     pub fn table_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -76,7 +78,8 @@ impl GetColumnStatisticsForTableInputBuilder {
     }
     /// <p>The name of the partitions' table.</p>
     pub fn set_table_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.table_name = input; self
+        self.table_name = input;
+        self
     }
     /// Appends an item to `column_names`.
     ///
@@ -85,28 +88,32 @@ impl GetColumnStatisticsForTableInputBuilder {
     /// <p>A list of the column names.</p>
     pub fn column_names(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.column_names.unwrap_or_default();
-                        v.push(input.into());
-                        self.column_names = Some(v);
-                        self
+        v.push(input.into());
+        self.column_names = Some(v);
+        self
     }
     /// <p>A list of the column names.</p>
-    pub fn set_column_names(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-        self.column_names = input; self
+    pub fn set_column_names(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
+        self.column_names = input;
+        self
     }
     /// Consumes the builder and constructs a [`GetColumnStatisticsForTableInput`](crate::operation::get_column_statistics_for_table::GetColumnStatisticsForTableInput).
-    pub fn build(self) -> Result<crate::operation::get_column_statistics_for_table::GetColumnStatisticsForTableInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::get_column_statistics_for_table::GetColumnStatisticsForTableInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::get_column_statistics_for_table::GetColumnStatisticsForTableInput {
-                catalog_id: self.catalog_id
-                ,
-                database_name: self.database_name
-                ,
-                table_name: self.table_name
-                ,
-                column_names: self.column_names
-                ,
-            }
+                catalog_id: self.catalog_id,
+                database_name: self.database_name,
+                table_name: self.table_name,
+                column_names: self.column_names,
+            },
         )
     }
 }
-

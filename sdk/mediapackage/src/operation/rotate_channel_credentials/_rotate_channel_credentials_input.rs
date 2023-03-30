@@ -3,20 +3,22 @@
 #[deprecated]
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct RotateChannelCredentialsInput  {
+pub struct RotateChannelCredentialsInput {
     /// The ID of the channel to update.
     #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
 }
 impl RotateChannelCredentialsInput {
     /// The ID of the channel to update.
-    pub fn id(&self) -> std::option::Option<& str> {
+    pub fn id(&self) -> std::option::Option<&str> {
         self.id.as_deref()
     }
 }
 impl RotateChannelCredentialsInput {
     /// Creates a new builder-style object to manufacture [`RotateChannelCredentialsInput`](crate::operation::rotate_channel_credentials::RotateChannelCredentialsInput).
-    pub fn builder() -> crate::operation::rotate_channel_credentials::builders::RotateChannelCredentialsInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::rotate_channel_credentials::builders::RotateChannelCredentialsInputBuilder
+    {
         crate::operation::rotate_channel_credentials::builders::RotateChannelCredentialsInputBuilder::default()
     }
 }
@@ -35,16 +37,20 @@ impl RotateChannelCredentialsInputBuilder {
     }
     /// The ID of the channel to update.
     pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.id = input; self
+        self.id = input;
+        self
     }
     /// Consumes the builder and constructs a [`RotateChannelCredentialsInput`](crate::operation::rotate_channel_credentials::RotateChannelCredentialsInput).
-    pub fn build(self) -> Result<crate::operation::rotate_channel_credentials::RotateChannelCredentialsInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::rotate_channel_credentials::RotateChannelCredentialsInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::rotate_channel_credentials::RotateChannelCredentialsInput {
-                id: self.id
-                ,
-            }
+                id: self.id,
+            },
         )
     }
 }
-

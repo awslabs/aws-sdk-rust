@@ -4,56 +4,82 @@ pub use crate::operation::create_edge_packaging_job::_create_edge_packaging_job_
 pub use crate::operation::create_edge_packaging_job::_create_edge_packaging_job_input::CreateEdgePackagingJobInputBuilder;
 
 /// Fluent builder constructing a request to `CreateEdgePackagingJob`.
-/// 
+///
 /// <p>Starts a SageMaker Edge Manager model packaging job. Edge Manager will use the model artifacts from the Amazon Simple Storage Service bucket that you specify. After the model has been packaged, Amazon SageMaker saves the resulting artifacts to an S3 bucket that you specify.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct CreateEdgePackagingJobFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::create_edge_packaging_job::builders::CreateEdgePackagingJobInputBuilder
-            }
-impl CreateEdgePackagingJobFluentBuilder  {
+    handle: std::sync::Arc<crate::client::Handle>,
+    inner:
+        crate::operation::create_edge_packaging_job::builders::CreateEdgePackagingJobInputBuilder,
+}
+impl CreateEdgePackagingJobFluentBuilder {
     /// Creates a new `CreateEdgePackagingJob`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
-                    /// sent. The operation's inner [http::Request] can be modified as well.
-                    pub async fn customize(self) -> std::result::Result<
-                        crate::client::customize::CustomizableOperation<crate::operation::create_edge_packaging_job::CreateEdgePackagingJob, aws_http::retry::AwsResponseRetryClassifier,>,
-                        aws_smithy_http::result::SdkError<crate::operation::create_edge_packaging_job::CreateEdgePackagingJobError>
-                    >  {
-                        let handle = self.handle.clone();
-                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-                    }
-    
-                    /// Sends the request and returns the response.
-                    ///
-                    /// If an error occurs, an `SdkError` will be returned with additional details that
-                    /// can be matched against.
-                    ///
-                    /// By default, any retryable failures will be retried twice. Retry behavior
-                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                    /// set when configuring the client.
-                    pub async fn send(self) -> std::result::Result<crate::operation::create_edge_packaging_job::CreateEdgePackagingJobOutput, aws_smithy_http::result::SdkError<crate::operation::create_edge_packaging_job::CreateEdgePackagingJobError>>
-                     {
-                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&self.handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        self.handle.client.call(op).await
-                    }
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle,
+            inner: Default::default(),
+        }
+    }
+
+    /// Consume this builder, creating a customizable operation that can be modified before being
+    /// sent. The operation's inner [http::Request] can be modified as well.
+    pub async fn customize(
+        self,
+    ) -> std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::create_edge_packaging_job::CreateEdgePackagingJob,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::result::SdkError<
+            crate::operation::create_edge_packaging_job::CreateEdgePackagingJobError,
+        >,
+    > {
+        let handle = self.handle.clone();
+        let operation = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+    }
+
+    /// Sends the request and returns the response.
+    ///
+    /// If an error occurs, an `SdkError` will be returned with additional details that
+    /// can be matched against.
+    ///
+    /// By default, any retryable failures will be retried twice. Retry behavior
+    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+    /// set when configuring the client.
+    pub async fn send(
+        self,
+    ) -> std::result::Result<
+        crate::operation::create_edge_packaging_job::CreateEdgePackagingJobOutput,
+        aws_smithy_http::result::SdkError<
+            crate::operation::create_edge_packaging_job::CreateEdgePackagingJobError,
+        >,
+    > {
+        let op = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&self.handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        self.handle.client.call(op).await
+    }
     /// <p>The name of the edge packaging job.</p>
     pub fn edge_packaging_job_name(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.edge_packaging_job_name(input.into());
         self
     }
     /// <p>The name of the edge packaging job.</p>
-    pub fn set_edge_packaging_job_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_edge_packaging_job_name(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_edge_packaging_job_name(input);
         self
     }
@@ -63,7 +89,10 @@ impl CreateEdgePackagingJobFluentBuilder  {
         self
     }
     /// <p>The name of the SageMaker Neo compilation job that will be used to locate model artifacts for packaging.</p>
-    pub fn set_compilation_job_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_compilation_job_name(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_compilation_job_name(input);
         self
     }
@@ -103,7 +132,10 @@ impl CreateEdgePackagingJobFluentBuilder  {
         self
     }
     /// <p>Provides information about the output location for the packaged model.</p>
-    pub fn set_output_config(mut self, input: std::option::Option<crate::types::EdgeOutputConfig>) -> Self {
+    pub fn set_output_config(
+        mut self,
+        input: std::option::Option<crate::types::EdgeOutputConfig>,
+    ) -> Self {
         self.inner = self.inner.set_output_config(input);
         self
     }
@@ -127,9 +159,11 @@ impl CreateEdgePackagingJobFluentBuilder  {
         self
     }
     /// <p>Creates tags for the packaging job.</p>
-    pub fn set_tags(mut self, input: std::option::Option<std::vec::Vec<crate::types::Tag>>) -> Self {
+    pub fn set_tags(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::Tag>>,
+    ) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }
 }
-

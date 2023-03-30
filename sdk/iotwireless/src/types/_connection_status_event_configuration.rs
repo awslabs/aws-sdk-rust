@@ -3,21 +3,28 @@
 /// <p>Connection status event configuration object for enabling or disabling topic.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ConnectionStatusEventConfiguration  {
+pub struct ConnectionStatusEventConfiguration {
     /// <p>Connection status event configuration object for enabling or disabling LoRaWAN related event topics.</p>
     #[doc(hidden)]
-    pub lo_ra_wan: std::option::Option<crate::types::LoRaWanConnectionStatusEventNotificationConfigurations>,
+    pub lo_ra_wan:
+        std::option::Option<crate::types::LoRaWanConnectionStatusEventNotificationConfigurations>,
     /// <p>Denotes whether the wireless gateway ID connection status event topic is enabled or disabled.</p>
     #[doc(hidden)]
-    pub wireless_gateway_id_event_topic: std::option::Option<crate::types::EventNotificationTopicStatus>,
+    pub wireless_gateway_id_event_topic:
+        std::option::Option<crate::types::EventNotificationTopicStatus>,
 }
 impl ConnectionStatusEventConfiguration {
     /// <p>Connection status event configuration object for enabling or disabling LoRaWAN related event topics.</p>
-    pub fn lo_ra_wan(&self) -> std::option::Option<& crate::types::LoRaWanConnectionStatusEventNotificationConfigurations> {
+    pub fn lo_ra_wan(
+        &self,
+    ) -> std::option::Option<&crate::types::LoRaWanConnectionStatusEventNotificationConfigurations>
+    {
         self.lo_ra_wan.as_ref()
     }
     /// <p>Denotes whether the wireless gateway ID connection status event topic is enabled or disabled.</p>
-    pub fn wireless_gateway_id_event_topic(&self) -> std::option::Option<& crate::types::EventNotificationTopicStatus> {
+    pub fn wireless_gateway_id_event_topic(
+        &self,
+    ) -> std::option::Option<&crate::types::EventNotificationTopicStatus> {
         self.wireless_gateway_id_event_topic.as_ref()
     }
 }
@@ -32,36 +39,51 @@ impl ConnectionStatusEventConfiguration {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct ConnectionStatusEventConfigurationBuilder {
-    pub(crate) lo_ra_wan: std::option::Option<crate::types::LoRaWanConnectionStatusEventNotificationConfigurations>,
-    pub(crate) wireless_gateway_id_event_topic: std::option::Option<crate::types::EventNotificationTopicStatus>,
+    pub(crate) lo_ra_wan:
+        std::option::Option<crate::types::LoRaWanConnectionStatusEventNotificationConfigurations>,
+    pub(crate) wireless_gateway_id_event_topic:
+        std::option::Option<crate::types::EventNotificationTopicStatus>,
 }
 impl ConnectionStatusEventConfigurationBuilder {
     /// <p>Connection status event configuration object for enabling or disabling LoRaWAN related event topics.</p>
-    pub fn lo_ra_wan(mut self, input: crate::types::LoRaWanConnectionStatusEventNotificationConfigurations) -> Self {
+    pub fn lo_ra_wan(
+        mut self,
+        input: crate::types::LoRaWanConnectionStatusEventNotificationConfigurations,
+    ) -> Self {
         self.lo_ra_wan = Some(input);
         self
     }
     /// <p>Connection status event configuration object for enabling or disabling LoRaWAN related event topics.</p>
-    pub fn set_lo_ra_wan(mut self, input: std::option::Option<crate::types::LoRaWanConnectionStatusEventNotificationConfigurations>) -> Self {
-        self.lo_ra_wan = input; self
+    pub fn set_lo_ra_wan(
+        mut self,
+        input: std::option::Option<
+            crate::types::LoRaWanConnectionStatusEventNotificationConfigurations,
+        >,
+    ) -> Self {
+        self.lo_ra_wan = input;
+        self
     }
     /// <p>Denotes whether the wireless gateway ID connection status event topic is enabled or disabled.</p>
-    pub fn wireless_gateway_id_event_topic(mut self, input: crate::types::EventNotificationTopicStatus) -> Self {
+    pub fn wireless_gateway_id_event_topic(
+        mut self,
+        input: crate::types::EventNotificationTopicStatus,
+    ) -> Self {
         self.wireless_gateway_id_event_topic = Some(input);
         self
     }
     /// <p>Denotes whether the wireless gateway ID connection status event topic is enabled or disabled.</p>
-    pub fn set_wireless_gateway_id_event_topic(mut self, input: std::option::Option<crate::types::EventNotificationTopicStatus>) -> Self {
-        self.wireless_gateway_id_event_topic = input; self
+    pub fn set_wireless_gateway_id_event_topic(
+        mut self,
+        input: std::option::Option<crate::types::EventNotificationTopicStatus>,
+    ) -> Self {
+        self.wireless_gateway_id_event_topic = input;
+        self
     }
     /// Consumes the builder and constructs a [`ConnectionStatusEventConfiguration`](crate::types::ConnectionStatusEventConfiguration).
     pub fn build(self) -> crate::types::ConnectionStatusEventConfiguration {
         crate::types::ConnectionStatusEventConfiguration {
-            lo_ra_wan: self.lo_ra_wan
-            ,
-            wireless_gateway_id_event_topic: self.wireless_gateway_id_event_topic
-            ,
+            lo_ra_wan: self.lo_ra_wan,
+            wireless_gateway_id_event_topic: self.wireless_gateway_id_event_topic,
         }
     }
 }
-

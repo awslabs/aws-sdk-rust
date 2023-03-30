@@ -3,20 +3,22 @@
 /// <p></p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteHsmConfigurationInput  {
+pub struct DeleteHsmConfigurationInput {
     /// <p>The identifier of the Amazon Redshift HSM configuration to be deleted.</p>
     #[doc(hidden)]
     pub hsm_configuration_identifier: std::option::Option<std::string::String>,
 }
 impl DeleteHsmConfigurationInput {
     /// <p>The identifier of the Amazon Redshift HSM configuration to be deleted.</p>
-    pub fn hsm_configuration_identifier(&self) -> std::option::Option<& str> {
+    pub fn hsm_configuration_identifier(&self) -> std::option::Option<&str> {
         self.hsm_configuration_identifier.as_deref()
     }
 }
 impl DeleteHsmConfigurationInput {
     /// Creates a new builder-style object to manufacture [`DeleteHsmConfigurationInput`](crate::operation::delete_hsm_configuration::DeleteHsmConfigurationInput).
-    pub fn builder() -> crate::operation::delete_hsm_configuration::builders::DeleteHsmConfigurationInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::delete_hsm_configuration::builders::DeleteHsmConfigurationInputBuilder
+    {
         crate::operation::delete_hsm_configuration::builders::DeleteHsmConfigurationInputBuilder::default()
     }
 }
@@ -34,17 +36,24 @@ impl DeleteHsmConfigurationInputBuilder {
         self
     }
     /// <p>The identifier of the Amazon Redshift HSM configuration to be deleted.</p>
-    pub fn set_hsm_configuration_identifier(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.hsm_configuration_identifier = input; self
+    pub fn set_hsm_configuration_identifier(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.hsm_configuration_identifier = input;
+        self
     }
     /// Consumes the builder and constructs a [`DeleteHsmConfigurationInput`](crate::operation::delete_hsm_configuration::DeleteHsmConfigurationInput).
-    pub fn build(self) -> Result<crate::operation::delete_hsm_configuration::DeleteHsmConfigurationInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::delete_hsm_configuration::DeleteHsmConfigurationInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::delete_hsm_configuration::DeleteHsmConfigurationInput {
-                hsm_configuration_identifier: self.hsm_configuration_identifier
-                ,
-            }
+                hsm_configuration_identifier: self.hsm_configuration_identifier,
+            },
         )
     }
 }
-

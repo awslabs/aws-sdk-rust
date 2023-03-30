@@ -3,17 +3,17 @@
 /// <p>The log configuration for the results of the execute command actions. The logs can be sent to CloudWatch Logs or an Amazon S3 bucket.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ExecuteCommandLogConfiguration  {
-    /// <p>The name of the CloudWatch log group to send logs to.</p> <note> 
-    /// <p>The CloudWatch log group must already be created.</p> 
+pub struct ExecuteCommandLogConfiguration {
+    /// <p>The name of the CloudWatch log group to send logs to.</p> <note>
+    /// <p>The CloudWatch log group must already be created.</p>
     /// </note>
     #[doc(hidden)]
     pub cloud_watch_log_group_name: std::option::Option<std::string::String>,
     /// <p>Determines whether to use encryption on the CloudWatch logs. If not specified, encryption will be disabled.</p>
     #[doc(hidden)]
     pub cloud_watch_encryption_enabled: bool,
-    /// <p>The name of the S3 bucket to send logs to.</p> <note> 
-    /// <p>The S3 bucket must already be created.</p> 
+    /// <p>The name of the S3 bucket to send logs to.</p> <note>
+    /// <p>The S3 bucket must already be created.</p>
     /// </note>
     #[doc(hidden)]
     pub s3_bucket_name: std::option::Option<std::string::String>,
@@ -25,20 +25,20 @@ pub struct ExecuteCommandLogConfiguration  {
     pub s3_key_prefix: std::option::Option<std::string::String>,
 }
 impl ExecuteCommandLogConfiguration {
-    /// <p>The name of the CloudWatch log group to send logs to.</p> <note> 
-    /// <p>The CloudWatch log group must already be created.</p> 
+    /// <p>The name of the CloudWatch log group to send logs to.</p> <note>
+    /// <p>The CloudWatch log group must already be created.</p>
     /// </note>
-    pub fn cloud_watch_log_group_name(&self) -> std::option::Option<& str> {
+    pub fn cloud_watch_log_group_name(&self) -> std::option::Option<&str> {
         self.cloud_watch_log_group_name.as_deref()
     }
     /// <p>Determines whether to use encryption on the CloudWatch logs. If not specified, encryption will be disabled.</p>
     pub fn cloud_watch_encryption_enabled(&self) -> bool {
         self.cloud_watch_encryption_enabled
     }
-    /// <p>The name of the S3 bucket to send logs to.</p> <note> 
-    /// <p>The S3 bucket must already be created.</p> 
+    /// <p>The name of the S3 bucket to send logs to.</p> <note>
+    /// <p>The S3 bucket must already be created.</p>
     /// </note>
-    pub fn s3_bucket_name(&self) -> std::option::Option<& str> {
+    pub fn s3_bucket_name(&self) -> std::option::Option<&str> {
         self.s3_bucket_name.as_deref()
     }
     /// <p>Determines whether to use encryption on the S3 logs. If not specified, encryption is not used.</p>
@@ -46,7 +46,7 @@ impl ExecuteCommandLogConfiguration {
         self.s3_encryption_enabled
     }
     /// <p>An optional folder in the S3 bucket to place logs in.</p>
-    pub fn s3_key_prefix(&self) -> std::option::Option<& str> {
+    pub fn s3_key_prefix(&self) -> std::option::Option<&str> {
         self.s3_key_prefix.as_deref()
     }
 }
@@ -68,18 +68,22 @@ pub struct ExecuteCommandLogConfigurationBuilder {
     pub(crate) s3_key_prefix: std::option::Option<std::string::String>,
 }
 impl ExecuteCommandLogConfigurationBuilder {
-    /// <p>The name of the CloudWatch log group to send logs to.</p> <note> 
-    /// <p>The CloudWatch log group must already be created.</p> 
+    /// <p>The name of the CloudWatch log group to send logs to.</p> <note>
+    /// <p>The CloudWatch log group must already be created.</p>
     /// </note>
     pub fn cloud_watch_log_group_name(mut self, input: impl Into<std::string::String>) -> Self {
         self.cloud_watch_log_group_name = Some(input.into());
         self
     }
-    /// <p>The name of the CloudWatch log group to send logs to.</p> <note> 
-    /// <p>The CloudWatch log group must already be created.</p> 
+    /// <p>The name of the CloudWatch log group to send logs to.</p> <note>
+    /// <p>The CloudWatch log group must already be created.</p>
     /// </note>
-    pub fn set_cloud_watch_log_group_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.cloud_watch_log_group_name = input; self
+    pub fn set_cloud_watch_log_group_name(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.cloud_watch_log_group_name = input;
+        self
     }
     /// <p>Determines whether to use encryption on the CloudWatch logs. If not specified, encryption will be disabled.</p>
     pub fn cloud_watch_encryption_enabled(mut self, input: bool) -> Self {
@@ -88,20 +92,22 @@ impl ExecuteCommandLogConfigurationBuilder {
     }
     /// <p>Determines whether to use encryption on the CloudWatch logs. If not specified, encryption will be disabled.</p>
     pub fn set_cloud_watch_encryption_enabled(mut self, input: std::option::Option<bool>) -> Self {
-        self.cloud_watch_encryption_enabled = input; self
+        self.cloud_watch_encryption_enabled = input;
+        self
     }
-    /// <p>The name of the S3 bucket to send logs to.</p> <note> 
-    /// <p>The S3 bucket must already be created.</p> 
+    /// <p>The name of the S3 bucket to send logs to.</p> <note>
+    /// <p>The S3 bucket must already be created.</p>
     /// </note>
     pub fn s3_bucket_name(mut self, input: impl Into<std::string::String>) -> Self {
         self.s3_bucket_name = Some(input.into());
         self
     }
-    /// <p>The name of the S3 bucket to send logs to.</p> <note> 
-    /// <p>The S3 bucket must already be created.</p> 
+    /// <p>The name of the S3 bucket to send logs to.</p> <note>
+    /// <p>The S3 bucket must already be created.</p>
     /// </note>
     pub fn set_s3_bucket_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.s3_bucket_name = input; self
+        self.s3_bucket_name = input;
+        self
     }
     /// <p>Determines whether to use encryption on the S3 logs. If not specified, encryption is not used.</p>
     pub fn s3_encryption_enabled(mut self, input: bool) -> Self {
@@ -110,7 +116,8 @@ impl ExecuteCommandLogConfigurationBuilder {
     }
     /// <p>Determines whether to use encryption on the S3 logs. If not specified, encryption is not used.</p>
     pub fn set_s3_encryption_enabled(mut self, input: std::option::Option<bool>) -> Self {
-        self.s3_encryption_enabled = input; self
+        self.s3_encryption_enabled = input;
+        self
     }
     /// <p>An optional folder in the S3 bucket to place logs in.</p>
     pub fn s3_key_prefix(mut self, input: impl Into<std::string::String>) -> Self {
@@ -119,24 +126,17 @@ impl ExecuteCommandLogConfigurationBuilder {
     }
     /// <p>An optional folder in the S3 bucket to place logs in.</p>
     pub fn set_s3_key_prefix(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.s3_key_prefix = input; self
+        self.s3_key_prefix = input;
+        self
     }
     /// Consumes the builder and constructs a [`ExecuteCommandLogConfiguration`](crate::types::ExecuteCommandLogConfiguration).
     pub fn build(self) -> crate::types::ExecuteCommandLogConfiguration {
         crate::types::ExecuteCommandLogConfiguration {
-            cloud_watch_log_group_name: self.cloud_watch_log_group_name
-            ,
-            cloud_watch_encryption_enabled: self.cloud_watch_encryption_enabled
-                .unwrap_or_default()
-            ,
-            s3_bucket_name: self.s3_bucket_name
-            ,
-            s3_encryption_enabled: self.s3_encryption_enabled
-                .unwrap_or_default()
-            ,
-            s3_key_prefix: self.s3_key_prefix
-            ,
+            cloud_watch_log_group_name: self.cloud_watch_log_group_name,
+            cloud_watch_encryption_enabled: self.cloud_watch_encryption_enabled.unwrap_or_default(),
+            s3_bucket_name: self.s3_bucket_name,
+            s3_encryption_enabled: self.s3_encryption_enabled.unwrap_or_default(),
+            s3_key_prefix: self.s3_key_prefix,
         }
     }
 }
-

@@ -3,7 +3,7 @@
 /// <p>Updates a given typed link’s attributes inside a <code>BatchRead</code> operation. Attributes to be updated must not contribute to the typed link’s identity, as defined by its <code>IdentityAttributeOrder</code>. For more information, see <code>UpdateLinkAttributes</code> and <code>BatchReadRequest$Operations</code>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct BatchUpdateLinkAttributes  {
+pub struct BatchUpdateLinkAttributes {
     /// <p>Allows a typed link specifier to be accepted as input.</p>
     #[doc(hidden)]
     pub typed_link_specifier: std::option::Option<crate::types::TypedLinkSpecifier>,
@@ -13,11 +13,11 @@ pub struct BatchUpdateLinkAttributes  {
 }
 impl BatchUpdateLinkAttributes {
     /// <p>Allows a typed link specifier to be accepted as input.</p>
-    pub fn typed_link_specifier(&self) -> std::option::Option<& crate::types::TypedLinkSpecifier> {
+    pub fn typed_link_specifier(&self) -> std::option::Option<&crate::types::TypedLinkSpecifier> {
         self.typed_link_specifier.as_ref()
     }
     /// <p>The attributes update structure.</p>
-    pub fn attribute_updates(&self) -> std::option::Option<& [crate::types::LinkAttributeUpdate]> {
+    pub fn attribute_updates(&self) -> std::option::Option<&[crate::types::LinkAttributeUpdate]> {
         self.attribute_updates.as_deref()
     }
 }
@@ -33,7 +33,8 @@ impl BatchUpdateLinkAttributes {
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct BatchUpdateLinkAttributesBuilder {
     pub(crate) typed_link_specifier: std::option::Option<crate::types::TypedLinkSpecifier>,
-    pub(crate) attribute_updates: std::option::Option<std::vec::Vec<crate::types::LinkAttributeUpdate>>,
+    pub(crate) attribute_updates:
+        std::option::Option<std::vec::Vec<crate::types::LinkAttributeUpdate>>,
 }
 impl BatchUpdateLinkAttributesBuilder {
     /// <p>Allows a typed link specifier to be accepted as input.</p>
@@ -42,8 +43,12 @@ impl BatchUpdateLinkAttributesBuilder {
         self
     }
     /// <p>Allows a typed link specifier to be accepted as input.</p>
-    pub fn set_typed_link_specifier(mut self, input: std::option::Option<crate::types::TypedLinkSpecifier>) -> Self {
-        self.typed_link_specifier = input; self
+    pub fn set_typed_link_specifier(
+        mut self,
+        input: std::option::Option<crate::types::TypedLinkSpecifier>,
+    ) -> Self {
+        self.typed_link_specifier = input;
+        self
     }
     /// Appends an item to `attribute_updates`.
     ///
@@ -52,22 +57,23 @@ impl BatchUpdateLinkAttributesBuilder {
     /// <p>The attributes update structure.</p>
     pub fn attribute_updates(mut self, input: crate::types::LinkAttributeUpdate) -> Self {
         let mut v = self.attribute_updates.unwrap_or_default();
-                        v.push(input);
-                        self.attribute_updates = Some(v);
-                        self
+        v.push(input);
+        self.attribute_updates = Some(v);
+        self
     }
     /// <p>The attributes update structure.</p>
-    pub fn set_attribute_updates(mut self, input: std::option::Option<std::vec::Vec<crate::types::LinkAttributeUpdate>>) -> Self {
-        self.attribute_updates = input; self
+    pub fn set_attribute_updates(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::LinkAttributeUpdate>>,
+    ) -> Self {
+        self.attribute_updates = input;
+        self
     }
     /// Consumes the builder and constructs a [`BatchUpdateLinkAttributes`](crate::types::BatchUpdateLinkAttributes).
     pub fn build(self) -> crate::types::BatchUpdateLinkAttributes {
         crate::types::BatchUpdateLinkAttributes {
-            typed_link_specifier: self.typed_link_specifier
-            ,
-            attribute_updates: self.attribute_updates
-            ,
+            typed_link_specifier: self.typed_link_specifier,
+            attribute_updates: self.attribute_updates,
         }
     }
 }
-

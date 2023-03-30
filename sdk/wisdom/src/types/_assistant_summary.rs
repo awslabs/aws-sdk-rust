@@ -3,7 +3,7 @@
 /// <p>Summary information about the assistant.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AssistantSummary  {
+pub struct AssistantSummary {
     /// <p>The identifier of the Wisdom assistant.</p>
     #[doc(hidden)]
     pub assistant_id: std::option::Option<std::string::String>,
@@ -24,42 +24,49 @@ pub struct AssistantSummary  {
     pub description: std::option::Option<std::string::String>,
     /// <p>The tags used to organize, track, or control access for this resource.</p>
     #[doc(hidden)]
-    pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub tags:
+        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The KMS key used for encryption.</p>
     #[doc(hidden)]
-    pub server_side_encryption_configuration: std::option::Option<crate::types::ServerSideEncryptionConfiguration>,
+    pub server_side_encryption_configuration:
+        std::option::Option<crate::types::ServerSideEncryptionConfiguration>,
 }
 impl AssistantSummary {
     /// <p>The identifier of the Wisdom assistant.</p>
-    pub fn assistant_id(&self) -> std::option::Option<& str> {
+    pub fn assistant_id(&self) -> std::option::Option<&str> {
         self.assistant_id.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the Wisdom assistant.</p>
-    pub fn assistant_arn(&self) -> std::option::Option<& str> {
+    pub fn assistant_arn(&self) -> std::option::Option<&str> {
         self.assistant_arn.as_deref()
     }
     /// <p>The name of the assistant.</p>
-    pub fn name(&self) -> std::option::Option<& str> {
+    pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>The type of the assistant.</p>
-    pub fn r#type(&self) -> std::option::Option<& crate::types::AssistantType> {
+    pub fn r#type(&self) -> std::option::Option<&crate::types::AssistantType> {
         self.r#type.as_ref()
     }
     /// <p>The status of the assistant.</p>
-    pub fn status(&self) -> std::option::Option<& crate::types::AssistantStatus> {
+    pub fn status(&self) -> std::option::Option<&crate::types::AssistantStatus> {
         self.status.as_ref()
     }
     /// <p>The description of the assistant.</p>
-    pub fn description(&self) -> std::option::Option<& str> {
+    pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
     /// <p>The tags used to organize, track, or control access for this resource.</p>
-    pub fn tags(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
         self.tags.as_ref()
     }
     /// <p>The KMS key used for encryption.</p>
-    pub fn server_side_encryption_configuration(&self) -> std::option::Option<& crate::types::ServerSideEncryptionConfiguration> {
+    pub fn server_side_encryption_configuration(
+        &self,
+    ) -> std::option::Option<&crate::types::ServerSideEncryptionConfiguration> {
         self.server_side_encryption_configuration.as_ref()
     }
 }
@@ -80,8 +87,10 @@ pub struct AssistantSummaryBuilder {
     pub(crate) r#type: std::option::Option<crate::types::AssistantType>,
     pub(crate) status: std::option::Option<crate::types::AssistantStatus>,
     pub(crate) description: std::option::Option<std::string::String>,
-    pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
-    pub(crate) server_side_encryption_configuration: std::option::Option<crate::types::ServerSideEncryptionConfiguration>,
+    pub(crate) tags:
+        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub(crate) server_side_encryption_configuration:
+        std::option::Option<crate::types::ServerSideEncryptionConfiguration>,
 }
 impl AssistantSummaryBuilder {
     /// <p>The identifier of the Wisdom assistant.</p>
@@ -91,7 +100,8 @@ impl AssistantSummaryBuilder {
     }
     /// <p>The identifier of the Wisdom assistant.</p>
     pub fn set_assistant_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.assistant_id = input; self
+        self.assistant_id = input;
+        self
     }
     /// <p>The Amazon Resource Name (ARN) of the Wisdom assistant.</p>
     pub fn assistant_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -100,7 +110,8 @@ impl AssistantSummaryBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the Wisdom assistant.</p>
     pub fn set_assistant_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.assistant_arn = input; self
+        self.assistant_arn = input;
+        self
     }
     /// <p>The name of the assistant.</p>
     pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -109,7 +120,8 @@ impl AssistantSummaryBuilder {
     }
     /// <p>The name of the assistant.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input; self
+        self.name = input;
+        self
     }
     /// <p>The type of the assistant.</p>
     pub fn r#type(mut self, input: crate::types::AssistantType) -> Self {
@@ -118,7 +130,8 @@ impl AssistantSummaryBuilder {
     }
     /// <p>The type of the assistant.</p>
     pub fn set_type(mut self, input: std::option::Option<crate::types::AssistantType>) -> Self {
-        self.r#type = input; self
+        self.r#type = input;
+        self
     }
     /// <p>The status of the assistant.</p>
     pub fn status(mut self, input: crate::types::AssistantStatus) -> Self {
@@ -127,7 +140,8 @@ impl AssistantSummaryBuilder {
     }
     /// <p>The status of the assistant.</p>
     pub fn set_status(mut self, input: std::option::Option<crate::types::AssistantStatus>) -> Self {
-        self.status = input; self
+        self.status = input;
+        self
     }
     /// <p>The description of the assistant.</p>
     pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -136,52 +150,61 @@ impl AssistantSummaryBuilder {
     }
     /// <p>The description of the assistant.</p>
     pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.description = input; self
+        self.description = input;
+        self
     }
     /// Adds a key-value pair to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// <p>The tags used to organize, track, or control access for this resource.</p>
-    pub fn tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
+    pub fn tags(
+        mut self,
+        k: impl Into<std::string::String>,
+        v: impl Into<std::string::String>,
+    ) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
-                        hash_map.insert(k.into(), v.into());
-                        self.tags = Some(hash_map);
-                        self
+        hash_map.insert(k.into(), v.into());
+        self.tags = Some(hash_map);
+        self
     }
     /// <p>The tags used to organize, track, or control access for this resource.</p>
-    pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
-        self.tags = input; self
+    pub fn set_tags(
+        mut self,
+        input: std::option::Option<
+            std::collections::HashMap<std::string::String, std::string::String>,
+        >,
+    ) -> Self {
+        self.tags = input;
+        self
     }
     /// <p>The KMS key used for encryption.</p>
-    pub fn server_side_encryption_configuration(mut self, input: crate::types::ServerSideEncryptionConfiguration) -> Self {
+    pub fn server_side_encryption_configuration(
+        mut self,
+        input: crate::types::ServerSideEncryptionConfiguration,
+    ) -> Self {
         self.server_side_encryption_configuration = Some(input);
         self
     }
     /// <p>The KMS key used for encryption.</p>
-    pub fn set_server_side_encryption_configuration(mut self, input: std::option::Option<crate::types::ServerSideEncryptionConfiguration>) -> Self {
-        self.server_side_encryption_configuration = input; self
+    pub fn set_server_side_encryption_configuration(
+        mut self,
+        input: std::option::Option<crate::types::ServerSideEncryptionConfiguration>,
+    ) -> Self {
+        self.server_side_encryption_configuration = input;
+        self
     }
     /// Consumes the builder and constructs a [`AssistantSummary`](crate::types::AssistantSummary).
     pub fn build(self) -> crate::types::AssistantSummary {
         crate::types::AssistantSummary {
-            assistant_id: self.assistant_id
-            ,
-            assistant_arn: self.assistant_arn
-            ,
-            name: self.name
-            ,
-            r#type: self.r#type
-            ,
-            status: self.status
-            ,
-            description: self.description
-            ,
-            tags: self.tags
-            ,
-            server_side_encryption_configuration: self.server_side_encryption_configuration
-            ,
+            assistant_id: self.assistant_id,
+            assistant_arn: self.assistant_arn,
+            name: self.name,
+            r#type: self.r#type,
+            status: self.status,
+            description: self.description,
+            tags: self.tags,
+            server_side_encryption_configuration: self.server_side_encryption_configuration,
         }
     }
 }
-

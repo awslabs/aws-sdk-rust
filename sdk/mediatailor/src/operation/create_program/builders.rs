@@ -4,49 +4,67 @@ pub use crate::operation::create_program::_create_program_output::CreateProgramO
 pub use crate::operation::create_program::_create_program_input::CreateProgramInputBuilder;
 
 /// Fluent builder constructing a request to `CreateProgram`.
-/// 
+///
 /// <p>Creates a program within a channel. For information about programs, see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/channel-assembly-programs.html">Working with programs</a> in the <i>MediaTailor User Guide</i>.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct CreateProgramFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::create_program::builders::CreateProgramInputBuilder
-            }
-impl CreateProgramFluentBuilder  {
+    handle: std::sync::Arc<crate::client::Handle>,
+    inner: crate::operation::create_program::builders::CreateProgramInputBuilder,
+}
+impl CreateProgramFluentBuilder {
     /// Creates a new `CreateProgram`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
-                    /// sent. The operation's inner [http::Request] can be modified as well.
-                    pub async fn customize(self) -> std::result::Result<
-                        crate::client::customize::CustomizableOperation<crate::operation::create_program::CreateProgram, aws_http::retry::AwsResponseRetryClassifier,>,
-                        aws_smithy_http::result::SdkError<crate::operation::create_program::CreateProgramError>
-                    >  {
-                        let handle = self.handle.clone();
-                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-                    }
-    
-                    /// Sends the request and returns the response.
-                    ///
-                    /// If an error occurs, an `SdkError` will be returned with additional details that
-                    /// can be matched against.
-                    ///
-                    /// By default, any retryable failures will be retried twice. Retry behavior
-                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                    /// set when configuring the client.
-                    pub async fn send(self) -> std::result::Result<crate::operation::create_program::CreateProgramOutput, aws_smithy_http::result::SdkError<crate::operation::create_program::CreateProgramError>>
-                     {
-                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&self.handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        self.handle.client.call(op).await
-                    }
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle,
+            inner: Default::default(),
+        }
+    }
+
+    /// Consume this builder, creating a customizable operation that can be modified before being
+    /// sent. The operation's inner [http::Request] can be modified as well.
+    pub async fn customize(
+        self,
+    ) -> std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::create_program::CreateProgram,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::result::SdkError<crate::operation::create_program::CreateProgramError>,
+    > {
+        let handle = self.handle.clone();
+        let operation = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+    }
+
+    /// Sends the request and returns the response.
+    ///
+    /// If an error occurs, an `SdkError` will be returned with additional details that
+    /// can be matched against.
+    ///
+    /// By default, any retryable failures will be retried twice. Retry behavior
+    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+    /// set when configuring the client.
+    pub async fn send(
+        self,
+    ) -> std::result::Result<
+        crate::operation::create_program::CreateProgramOutput,
+        aws_smithy_http::result::SdkError<crate::operation::create_program::CreateProgramError>,
+    > {
+        let op = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&self.handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        self.handle.client.call(op).await
+    }
     /// Appends an item to `AdBreaks`.
     ///
     /// To override the contents of this collection use [`set_ad_breaks`](Self::set_ad_breaks).
@@ -57,7 +75,10 @@ impl CreateProgramFluentBuilder  {
         self
     }
     /// <p>The ad break configuration settings.</p>
-    pub fn set_ad_breaks(mut self, input: std::option::Option<std::vec::Vec<crate::types::AdBreak>>) -> Self {
+    pub fn set_ad_breaks(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::AdBreak>>,
+    ) -> Self {
         self.inner = self.inner.set_ad_breaks(input);
         self
     }
@@ -97,7 +118,10 @@ impl CreateProgramFluentBuilder  {
         self
     }
     /// <p>The schedule configuration settings.</p>
-    pub fn set_schedule_configuration(mut self, input: std::option::Option<crate::types::ScheduleConfiguration>) -> Self {
+    pub fn set_schedule_configuration(
+        mut self,
+        input: std::option::Option<crate::types::ScheduleConfiguration>,
+    ) -> Self {
         self.inner = self.inner.set_schedule_configuration(input);
         self
     }
@@ -107,7 +131,10 @@ impl CreateProgramFluentBuilder  {
         self
     }
     /// <p>The name of the source location.</p>
-    pub fn set_source_location_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_source_location_name(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_source_location_name(input);
         self
     }
@@ -122,4 +149,3 @@ impl CreateProgramFluentBuilder  {
         self
     }
 }
-

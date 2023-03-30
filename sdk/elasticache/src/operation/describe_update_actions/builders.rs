@@ -4,62 +4,92 @@ pub use crate::operation::describe_update_actions::_describe_update_actions_outp
 pub use crate::operation::describe_update_actions::_describe_update_actions_input::DescribeUpdateActionsInputBuilder;
 
 /// Fluent builder constructing a request to `DescribeUpdateActions`.
-/// 
+///
 /// <p>Returns details of the update actions </p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeUpdateActionsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::describe_update_actions::builders::DescribeUpdateActionsInputBuilder
-            }
-impl DescribeUpdateActionsFluentBuilder  {
+    handle: std::sync::Arc<crate::client::Handle>,
+    inner: crate::operation::describe_update_actions::builders::DescribeUpdateActionsInputBuilder,
+}
+impl DescribeUpdateActionsFluentBuilder {
     /// Creates a new `DescribeUpdateActions`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
-                    /// sent. The operation's inner [http::Request] can be modified as well.
-                    pub async fn customize(self) -> std::result::Result<
-                        crate::client::customize::CustomizableOperation<crate::operation::describe_update_actions::DescribeUpdateActions, aws_http::retry::AwsResponseRetryClassifier,>,
-                        aws_smithy_http::result::SdkError<crate::operation::describe_update_actions::DescribeUpdateActionsError>
-                    >  {
-                        let handle = self.handle.clone();
-                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-                    }
-    
-                    /// Sends the request and returns the response.
-                    ///
-                    /// If an error occurs, an `SdkError` will be returned with additional details that
-                    /// can be matched against.
-                    ///
-                    /// By default, any retryable failures will be retried twice. Retry behavior
-                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                    /// set when configuring the client.
-                    pub async fn send(self) -> std::result::Result<crate::operation::describe_update_actions::DescribeUpdateActionsOutput, aws_smithy_http::result::SdkError<crate::operation::describe_update_actions::DescribeUpdateActionsError>>
-                     {
-                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&self.handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        self.handle.client.call(op).await
-                    }
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle,
+            inner: Default::default(),
+        }
+    }
+
+    /// Consume this builder, creating a customizable operation that can be modified before being
+    /// sent. The operation's inner [http::Request] can be modified as well.
+    pub async fn customize(
+        self,
+    ) -> std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::describe_update_actions::DescribeUpdateActions,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::result::SdkError<
+            crate::operation::describe_update_actions::DescribeUpdateActionsError,
+        >,
+    > {
+        let handle = self.handle.clone();
+        let operation = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+    }
+
+    /// Sends the request and returns the response.
+    ///
+    /// If an error occurs, an `SdkError` will be returned with additional details that
+    /// can be matched against.
+    ///
+    /// By default, any retryable failures will be retried twice. Retry behavior
+    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+    /// set when configuring the client.
+    pub async fn send(
+        self,
+    ) -> std::result::Result<
+        crate::operation::describe_update_actions::DescribeUpdateActionsOutput,
+        aws_smithy_http::result::SdkError<
+            crate::operation::describe_update_actions::DescribeUpdateActionsError,
+        >,
+    > {
+        let op = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&self.handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        self.handle.client.call(op).await
+    }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::describe_update_actions::paginator::DescribeUpdateActionsPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::describe_update_actions::paginator::DescribeUpdateActionsPaginator {
-                            crate::operation::describe_update_actions::paginator::DescribeUpdateActionsPaginator::new(self.handle, self.inner)
-                        }
+    ///
+    /// Paginators are used by calling [`send().await`](crate::operation::describe_update_actions::paginator::DescribeUpdateActionsPaginator::send) which returns a `Stream`.
+    pub fn into_paginator(
+        self,
+    ) -> crate::operation::describe_update_actions::paginator::DescribeUpdateActionsPaginator {
+        crate::operation::describe_update_actions::paginator::DescribeUpdateActionsPaginator::new(
+            self.handle,
+            self.inner,
+        )
+    }
     /// <p>The unique ID of the service update</p>
     pub fn service_update_name(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.service_update_name(input.into());
         self
     }
     /// <p>The unique ID of the service update</p>
-    pub fn set_service_update_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_service_update_name(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_service_update_name(input);
         self
     }
@@ -73,7 +103,10 @@ impl DescribeUpdateActionsFluentBuilder  {
         self
     }
     /// <p>The replication group IDs</p>
-    pub fn set_replication_group_ids(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+    pub fn set_replication_group_ids(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
         self.inner = self.inner.set_replication_group_ids(input);
         self
     }
@@ -87,7 +120,10 @@ impl DescribeUpdateActionsFluentBuilder  {
         self
     }
     /// <p>The cache cluster IDs</p>
-    pub fn set_cache_cluster_ids(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+    pub fn set_cache_cluster_ids(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
         self.inner = self.inner.set_cache_cluster_ids(input);
         self
     }
@@ -111,7 +147,10 @@ impl DescribeUpdateActionsFluentBuilder  {
         self
     }
     /// <p>The status of the service update</p>
-    pub fn set_service_update_status(mut self, input: std::option::Option<std::vec::Vec<crate::types::ServiceUpdateStatus>>) -> Self {
+    pub fn set_service_update_status(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::ServiceUpdateStatus>>,
+    ) -> Self {
         self.inner = self.inner.set_service_update_status(input);
         self
     }
@@ -121,7 +160,10 @@ impl DescribeUpdateActionsFluentBuilder  {
         self
     }
     /// <p>The range of time specified to search for service updates that are in available status</p>
-    pub fn set_service_update_time_range(mut self, input: std::option::Option<crate::types::TimeRangeFilter>) -> Self {
+    pub fn set_service_update_time_range(
+        mut self,
+        input: std::option::Option<crate::types::TimeRangeFilter>,
+    ) -> Self {
         self.inner = self.inner.set_service_update_time_range(input);
         self
     }
@@ -135,7 +177,10 @@ impl DescribeUpdateActionsFluentBuilder  {
         self
     }
     /// <p>The status of the update action.</p>
-    pub fn set_update_action_status(mut self, input: std::option::Option<std::vec::Vec<crate::types::UpdateActionStatus>>) -> Self {
+    pub fn set_update_action_status(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::UpdateActionStatus>>,
+    ) -> Self {
         self.inner = self.inner.set_update_action_status(input);
         self
     }
@@ -170,4 +215,3 @@ impl DescribeUpdateActionsFluentBuilder  {
         self
     }
 }
-

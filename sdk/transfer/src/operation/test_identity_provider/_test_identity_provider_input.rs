@@ -2,16 +2,16 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct TestIdentityProviderInput  {
+pub struct TestIdentityProviderInput {
     /// <p>A system-assigned identifier for a specific server. That server's user authentication method is tested with a user name and password.</p>
     #[doc(hidden)]
     pub server_id: std::option::Option<std::string::String>,
-    /// <p>The type of file transfer protocol to be tested.</p> 
-    /// <p>The available protocols are:</p> 
-    /// <ul> 
-    /// <li> <p>Secure Shell (SSH) File Transfer Protocol (SFTP)</p> </li> 
-    /// <li> <p>File Transfer Protocol Secure (FTPS)</p> </li> 
-    /// <li> <p>File Transfer Protocol (FTP)</p> </li> 
+    /// <p>The type of file transfer protocol to be tested.</p>
+    /// <p>The available protocols are:</p>
+    /// <ul>
+    /// <li> <p>Secure Shell (SSH) File Transfer Protocol (SFTP)</p> </li>
+    /// <li> <p>File Transfer Protocol Secure (FTPS)</p> </li>
+    /// <li> <p>File Transfer Protocol (FTP)</p> </li>
     /// </ul>
     #[doc(hidden)]
     pub server_protocol: std::option::Option<crate::types::Protocol>,
@@ -27,33 +27,33 @@ pub struct TestIdentityProviderInput  {
 }
 impl TestIdentityProviderInput {
     /// <p>A system-assigned identifier for a specific server. That server's user authentication method is tested with a user name and password.</p>
-    pub fn server_id(&self) -> std::option::Option<& str> {
+    pub fn server_id(&self) -> std::option::Option<&str> {
         self.server_id.as_deref()
     }
-    /// <p>The type of file transfer protocol to be tested.</p> 
-    /// <p>The available protocols are:</p> 
-    /// <ul> 
-    /// <li> <p>Secure Shell (SSH) File Transfer Protocol (SFTP)</p> </li> 
-    /// <li> <p>File Transfer Protocol Secure (FTPS)</p> </li> 
-    /// <li> <p>File Transfer Protocol (FTP)</p> </li> 
+    /// <p>The type of file transfer protocol to be tested.</p>
+    /// <p>The available protocols are:</p>
+    /// <ul>
+    /// <li> <p>Secure Shell (SSH) File Transfer Protocol (SFTP)</p> </li>
+    /// <li> <p>File Transfer Protocol Secure (FTPS)</p> </li>
+    /// <li> <p>File Transfer Protocol (FTP)</p> </li>
     /// </ul>
-    pub fn server_protocol(&self) -> std::option::Option<& crate::types::Protocol> {
+    pub fn server_protocol(&self) -> std::option::Option<&crate::types::Protocol> {
         self.server_protocol.as_ref()
     }
     /// <p>The source IP address of the user account to be tested.</p>
-    pub fn source_ip(&self) -> std::option::Option<& str> {
+    pub fn source_ip(&self) -> std::option::Option<&str> {
         self.source_ip.as_deref()
     }
     /// <p>The name of the user account to be tested.</p>
-    pub fn user_name(&self) -> std::option::Option<& str> {
+    pub fn user_name(&self) -> std::option::Option<&str> {
         self.user_name.as_deref()
     }
     /// <p>The password of the user account to be tested.</p>
-    pub fn user_password(&self) -> std::option::Option<& str> {
+    pub fn user_password(&self) -> std::option::Option<&str> {
         self.user_password.as_deref()
     }
 }
-impl  std::fmt::Debug for TestIdentityProviderInput  {
+impl std::fmt::Debug for TestIdentityProviderInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("TestIdentityProviderInput");
         formatter.field("server_id", &self.server_id);
@@ -66,7 +66,8 @@ impl  std::fmt::Debug for TestIdentityProviderInput  {
 }
 impl TestIdentityProviderInput {
     /// Creates a new builder-style object to manufacture [`TestIdentityProviderInput`](crate::operation::test_identity_provider::TestIdentityProviderInput).
-    pub fn builder() -> crate::operation::test_identity_provider::builders::TestIdentityProviderInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::test_identity_provider::builders::TestIdentityProviderInputBuilder {
         crate::operation::test_identity_provider::builders::TestIdentityProviderInputBuilder::default()
     }
 }
@@ -89,28 +90,33 @@ impl TestIdentityProviderInputBuilder {
     }
     /// <p>A system-assigned identifier for a specific server. That server's user authentication method is tested with a user name and password.</p>
     pub fn set_server_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.server_id = input; self
+        self.server_id = input;
+        self
     }
-    /// <p>The type of file transfer protocol to be tested.</p> 
-    /// <p>The available protocols are:</p> 
-    /// <ul> 
-    /// <li> <p>Secure Shell (SSH) File Transfer Protocol (SFTP)</p> </li> 
-    /// <li> <p>File Transfer Protocol Secure (FTPS)</p> </li> 
-    /// <li> <p>File Transfer Protocol (FTP)</p> </li> 
+    /// <p>The type of file transfer protocol to be tested.</p>
+    /// <p>The available protocols are:</p>
+    /// <ul>
+    /// <li> <p>Secure Shell (SSH) File Transfer Protocol (SFTP)</p> </li>
+    /// <li> <p>File Transfer Protocol Secure (FTPS)</p> </li>
+    /// <li> <p>File Transfer Protocol (FTP)</p> </li>
     /// </ul>
     pub fn server_protocol(mut self, input: crate::types::Protocol) -> Self {
         self.server_protocol = Some(input);
         self
     }
-    /// <p>The type of file transfer protocol to be tested.</p> 
-    /// <p>The available protocols are:</p> 
-    /// <ul> 
-    /// <li> <p>Secure Shell (SSH) File Transfer Protocol (SFTP)</p> </li> 
-    /// <li> <p>File Transfer Protocol Secure (FTPS)</p> </li> 
-    /// <li> <p>File Transfer Protocol (FTP)</p> </li> 
+    /// <p>The type of file transfer protocol to be tested.</p>
+    /// <p>The available protocols are:</p>
+    /// <ul>
+    /// <li> <p>Secure Shell (SSH) File Transfer Protocol (SFTP)</p> </li>
+    /// <li> <p>File Transfer Protocol Secure (FTPS)</p> </li>
+    /// <li> <p>File Transfer Protocol (FTP)</p> </li>
     /// </ul>
-    pub fn set_server_protocol(mut self, input: std::option::Option<crate::types::Protocol>) -> Self {
-        self.server_protocol = input; self
+    pub fn set_server_protocol(
+        mut self,
+        input: std::option::Option<crate::types::Protocol>,
+    ) -> Self {
+        self.server_protocol = input;
+        self
     }
     /// <p>The source IP address of the user account to be tested.</p>
     pub fn source_ip(mut self, input: impl Into<std::string::String>) -> Self {
@@ -119,7 +125,8 @@ impl TestIdentityProviderInputBuilder {
     }
     /// <p>The source IP address of the user account to be tested.</p>
     pub fn set_source_ip(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.source_ip = input; self
+        self.source_ip = input;
+        self
     }
     /// <p>The name of the user account to be tested.</p>
     pub fn user_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -128,7 +135,8 @@ impl TestIdentityProviderInputBuilder {
     }
     /// <p>The name of the user account to be tested.</p>
     pub fn set_user_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.user_name = input; self
+        self.user_name = input;
+        self
     }
     /// <p>The password of the user account to be tested.</p>
     pub fn user_password(mut self, input: impl Into<std::string::String>) -> Self {
@@ -137,23 +145,24 @@ impl TestIdentityProviderInputBuilder {
     }
     /// <p>The password of the user account to be tested.</p>
     pub fn set_user_password(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.user_password = input; self
+        self.user_password = input;
+        self
     }
     /// Consumes the builder and constructs a [`TestIdentityProviderInput`](crate::operation::test_identity_provider::TestIdentityProviderInput).
-    pub fn build(self) -> Result<crate::operation::test_identity_provider::TestIdentityProviderInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::test_identity_provider::TestIdentityProviderInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::test_identity_provider::TestIdentityProviderInput {
-                server_id: self.server_id
-                ,
-                server_protocol: self.server_protocol
-                ,
-                source_ip: self.source_ip
-                ,
-                user_name: self.user_name
-                ,
-                user_password: self.user_password
-                ,
-            }
+                server_id: self.server_id,
+                server_protocol: self.server_protocol,
+                source_ip: self.source_ip,
+                user_name: self.user_name,
+                user_password: self.user_password,
+            },
         )
     }
 }
@@ -168,4 +177,3 @@ impl std::fmt::Debug for TestIdentityProviderInputBuilder {
         formatter.finish()
     }
 }
-

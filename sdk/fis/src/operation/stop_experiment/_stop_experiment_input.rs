@@ -2,14 +2,14 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct StopExperimentInput  {
+pub struct StopExperimentInput {
     /// <p>The ID of the experiment.</p>
     #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
 }
 impl StopExperimentInput {
     /// <p>The ID of the experiment.</p>
-    pub fn id(&self) -> std::option::Option<& str> {
+    pub fn id(&self) -> std::option::Option<&str> {
         self.id.as_deref()
     }
 }
@@ -34,16 +34,16 @@ impl StopExperimentInputBuilder {
     }
     /// <p>The ID of the experiment.</p>
     pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.id = input; self
+        self.id = input;
+        self
     }
     /// Consumes the builder and constructs a [`StopExperimentInput`](crate::operation::stop_experiment::StopExperimentInput).
-    pub fn build(self) -> Result<crate::operation::stop_experiment::StopExperimentInput, aws_smithy_http::operation::error::BuildError> {
-        Ok(
-            crate::operation::stop_experiment::StopExperimentInput {
-                id: self.id
-                ,
-            }
-        )
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::stop_experiment::StopExperimentInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        Ok(crate::operation::stop_experiment::StopExperimentInput { id: self.id })
     }
 }
-

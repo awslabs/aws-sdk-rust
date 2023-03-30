@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListCertificateAuthoritiesInput  {
+pub struct ListCertificateAuthoritiesInput {
     /// <p>Use this parameter when paginating results in a subsequent request after you receive a response with truncated results. Set it to the value of the <code>NextToken</code> parameter from the response you just received.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
@@ -15,7 +15,7 @@ pub struct ListCertificateAuthoritiesInput  {
 }
 impl ListCertificateAuthoritiesInput {
     /// <p>Use this parameter when paginating results in a subsequent request after you receive a response with truncated results. Set it to the value of the <code>NextToken</code> parameter from the response you just received.</p>
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
     /// <p>Use this parameter when paginating results to specify the maximum number of items to return in the response on each page. If additional items exist beyond the number you specify, the <code>NextToken</code> element is sent in the response. Use this <code>NextToken</code> value in a subsequent request to retrieve additional items.</p>
@@ -23,13 +23,13 @@ impl ListCertificateAuthoritiesInput {
         self.max_results
     }
     /// <p>Use this parameter to filter the returned set of certificate authorities based on their owner. The default is SELF.</p>
-    pub fn resource_owner(&self) -> std::option::Option<& crate::types::ResourceOwner> {
+    pub fn resource_owner(&self) -> std::option::Option<&crate::types::ResourceOwner> {
         self.resource_owner.as_ref()
     }
 }
 impl ListCertificateAuthoritiesInput {
     /// Creates a new builder-style object to manufacture [`ListCertificateAuthoritiesInput`](crate::operation::list_certificate_authorities::ListCertificateAuthoritiesInput).
-    pub fn builder() -> crate::operation::list_certificate_authorities::builders::ListCertificateAuthoritiesInputBuilder {
+    pub fn builder() -> crate::operation::list_certificate_authorities::builders::ListCertificateAuthoritiesInputBuilder{
         crate::operation::list_certificate_authorities::builders::ListCertificateAuthoritiesInputBuilder::default()
     }
 }
@@ -50,7 +50,8 @@ impl ListCertificateAuthoritiesInputBuilder {
     }
     /// <p>Use this parameter when paginating results in a subsequent request after you receive a response with truncated results. Set it to the value of the <code>NextToken</code> parameter from the response you just received.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input; self
+        self.next_token = input;
+        self
     }
     /// <p>Use this parameter when paginating results to specify the maximum number of items to return in the response on each page. If additional items exist beyond the number you specify, the <code>NextToken</code> element is sent in the response. Use this <code>NextToken</code> value in a subsequent request to retrieve additional items.</p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -59,7 +60,8 @@ impl ListCertificateAuthoritiesInputBuilder {
     }
     /// <p>Use this parameter when paginating results to specify the maximum number of items to return in the response on each page. If additional items exist beyond the number you specify, the <code>NextToken</code> element is sent in the response. Use this <code>NextToken</code> value in a subsequent request to retrieve additional items.</p>
     pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_results = input; self
+        self.max_results = input;
+        self
     }
     /// <p>Use this parameter to filter the returned set of certificate authorities based on their owner. The default is SELF.</p>
     pub fn resource_owner(mut self, input: crate::types::ResourceOwner) -> Self {
@@ -67,21 +69,26 @@ impl ListCertificateAuthoritiesInputBuilder {
         self
     }
     /// <p>Use this parameter to filter the returned set of certificate authorities based on their owner. The default is SELF.</p>
-    pub fn set_resource_owner(mut self, input: std::option::Option<crate::types::ResourceOwner>) -> Self {
-        self.resource_owner = input; self
+    pub fn set_resource_owner(
+        mut self,
+        input: std::option::Option<crate::types::ResourceOwner>,
+    ) -> Self {
+        self.resource_owner = input;
+        self
     }
     /// Consumes the builder and constructs a [`ListCertificateAuthoritiesInput`](crate::operation::list_certificate_authorities::ListCertificateAuthoritiesInput).
-    pub fn build(self) -> Result<crate::operation::list_certificate_authorities::ListCertificateAuthoritiesInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::list_certificate_authorities::ListCertificateAuthoritiesInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::list_certificate_authorities::ListCertificateAuthoritiesInput {
-                next_token: self.next_token
-                ,
-                max_results: self.max_results
-                ,
-                resource_owner: self.resource_owner
-                ,
-            }
+                next_token: self.next_token,
+                max_results: self.max_results,
+                resource_owner: self.resource_owner,
+            },
         )
     }
 }
-

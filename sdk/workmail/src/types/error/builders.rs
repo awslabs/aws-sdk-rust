@@ -42,4 +42,3 @@ pub use crate::types::error::_invalid_custom_ses_configuration_exception::Invali
 pub use crate::types::error::_reserved_name_exception::ReservedNameExceptionBuilder;
 
 pub use crate::types::error::_directory_in_use_exception::DirectoryInUseExceptionBuilder;
-

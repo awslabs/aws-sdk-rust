@@ -3,7 +3,7 @@
 /// <p>Summary information for an Amazon Lookout for Vision dataset. For more information, see <code>DescribeDataset</code> and <code>ProjectDescription</code>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DatasetMetadata  {
+pub struct DatasetMetadata {
     /// <p>The type of the dataset.</p>
     #[doc(hidden)]
     pub dataset_type: std::option::Option<std::string::String>,
@@ -19,19 +19,19 @@ pub struct DatasetMetadata  {
 }
 impl DatasetMetadata {
     /// <p>The type of the dataset.</p>
-    pub fn dataset_type(&self) -> std::option::Option<& str> {
+    pub fn dataset_type(&self) -> std::option::Option<&str> {
         self.dataset_type.as_deref()
     }
     /// <p>The Unix timestamp for the date and time that the dataset was created. </p>
-    pub fn creation_timestamp(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
+    pub fn creation_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.creation_timestamp.as_ref()
     }
     /// <p>The status for the dataset.</p>
-    pub fn status(&self) -> std::option::Option<& crate::types::DatasetStatus> {
+    pub fn status(&self) -> std::option::Option<&crate::types::DatasetStatus> {
         self.status.as_ref()
     }
     /// <p>The status message for the dataset.</p>
-    pub fn status_message(&self) -> std::option::Option<& str> {
+    pub fn status_message(&self) -> std::option::Option<&str> {
         self.status_message.as_deref()
     }
 }
@@ -59,7 +59,8 @@ impl DatasetMetadataBuilder {
     }
     /// <p>The type of the dataset.</p>
     pub fn set_dataset_type(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.dataset_type = input; self
+        self.dataset_type = input;
+        self
     }
     /// <p>The Unix timestamp for the date and time that the dataset was created. </p>
     pub fn creation_timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -67,8 +68,12 @@ impl DatasetMetadataBuilder {
         self
     }
     /// <p>The Unix timestamp for the date and time that the dataset was created. </p>
-    pub fn set_creation_timestamp(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.creation_timestamp = input; self
+    pub fn set_creation_timestamp(
+        mut self,
+        input: std::option::Option<aws_smithy_types::DateTime>,
+    ) -> Self {
+        self.creation_timestamp = input;
+        self
     }
     /// <p>The status for the dataset.</p>
     pub fn status(mut self, input: crate::types::DatasetStatus) -> Self {
@@ -77,7 +82,8 @@ impl DatasetMetadataBuilder {
     }
     /// <p>The status for the dataset.</p>
     pub fn set_status(mut self, input: std::option::Option<crate::types::DatasetStatus>) -> Self {
-        self.status = input; self
+        self.status = input;
+        self
     }
     /// <p>The status message for the dataset.</p>
     pub fn status_message(mut self, input: impl Into<std::string::String>) -> Self {
@@ -86,20 +92,16 @@ impl DatasetMetadataBuilder {
     }
     /// <p>The status message for the dataset.</p>
     pub fn set_status_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.status_message = input; self
+        self.status_message = input;
+        self
     }
     /// Consumes the builder and constructs a [`DatasetMetadata`](crate::types::DatasetMetadata).
     pub fn build(self) -> crate::types::DatasetMetadata {
         crate::types::DatasetMetadata {
-            dataset_type: self.dataset_type
-            ,
-            creation_timestamp: self.creation_timestamp
-            ,
-            status: self.status
-            ,
-            status_message: self.status_message
-            ,
+            dataset_type: self.dataset_type,
+            creation_timestamp: self.creation_timestamp,
+            status: self.status,
+            status_message: self.status_message,
         }
     }
 }
-

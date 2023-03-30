@@ -3,20 +3,21 @@
 /// Placeholder documentation for DescribeReservationRequest
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeReservationInput  {
+pub struct DescribeReservationInput {
     /// Unique reservation ID, e.g. '1234567'
     #[doc(hidden)]
     pub reservation_id: std::option::Option<std::string::String>,
 }
 impl DescribeReservationInput {
     /// Unique reservation ID, e.g. '1234567'
-    pub fn reservation_id(&self) -> std::option::Option<& str> {
+    pub fn reservation_id(&self) -> std::option::Option<&str> {
         self.reservation_id.as_deref()
     }
 }
 impl DescribeReservationInput {
     /// Creates a new builder-style object to manufacture [`DescribeReservationInput`](crate::operation::describe_reservation::DescribeReservationInput).
-    pub fn builder() -> crate::operation::describe_reservation::builders::DescribeReservationInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::describe_reservation::builders::DescribeReservationInputBuilder {
         crate::operation::describe_reservation::builders::DescribeReservationInputBuilder::default()
     }
 }
@@ -35,16 +36,20 @@ impl DescribeReservationInputBuilder {
     }
     /// Unique reservation ID, e.g. '1234567'
     pub fn set_reservation_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.reservation_id = input; self
+        self.reservation_id = input;
+        self
     }
     /// Consumes the builder and constructs a [`DescribeReservationInput`](crate::operation::describe_reservation::DescribeReservationInput).
-    pub fn build(self) -> Result<crate::operation::describe_reservation::DescribeReservationInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::describe_reservation::DescribeReservationInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::describe_reservation::DescribeReservationInput {
-                reservation_id: self.reservation_id
-                ,
-            }
+                reservation_id: self.reservation_id,
+            },
         )
     }
 }
-

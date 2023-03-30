@@ -4,58 +4,84 @@ pub use crate::operation::create_db_cluster_endpoint::_create_db_cluster_endpoin
 pub use crate::operation::create_db_cluster_endpoint::_create_db_cluster_endpoint_input::CreateDbClusterEndpointInputBuilder;
 
 /// Fluent builder constructing a request to `CreateDBClusterEndpoint`.
-/// 
-/// <p>Creates a new custom endpoint and associates it with an Amazon Aurora DB cluster.</p> <note> 
-/// <p>This action applies only to Aurora DB clusters.</p> 
+///
+/// <p>Creates a new custom endpoint and associates it with an Amazon Aurora DB cluster.</p> <note>
+/// <p>This action applies only to Aurora DB clusters.</p>
 /// </note>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct CreateDBClusterEndpointFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::create_db_cluster_endpoint::builders::CreateDbClusterEndpointInputBuilder
-            }
-impl CreateDBClusterEndpointFluentBuilder  {
+    handle: std::sync::Arc<crate::client::Handle>,
+    inner:
+        crate::operation::create_db_cluster_endpoint::builders::CreateDbClusterEndpointInputBuilder,
+}
+impl CreateDBClusterEndpointFluentBuilder {
     /// Creates a new `CreateDBClusterEndpoint`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
-                    /// sent. The operation's inner [http::Request] can be modified as well.
-                    pub async fn customize(self) -> std::result::Result<
-                        crate::client::customize::CustomizableOperation<crate::operation::create_db_cluster_endpoint::CreateDBClusterEndpoint, aws_http::retry::AwsResponseRetryClassifier,>,
-                        aws_smithy_http::result::SdkError<crate::operation::create_db_cluster_endpoint::CreateDBClusterEndpointError>
-                    >  {
-                        let handle = self.handle.clone();
-                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-                    }
-    
-                    /// Sends the request and returns the response.
-                    ///
-                    /// If an error occurs, an `SdkError` will be returned with additional details that
-                    /// can be matched against.
-                    ///
-                    /// By default, any retryable failures will be retried twice. Retry behavior
-                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                    /// set when configuring the client.
-                    pub async fn send(self) -> std::result::Result<crate::operation::create_db_cluster_endpoint::CreateDbClusterEndpointOutput, aws_smithy_http::result::SdkError<crate::operation::create_db_cluster_endpoint::CreateDBClusterEndpointError>>
-                     {
-                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&self.handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        self.handle.client.call(op).await
-                    }
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle,
+            inner: Default::default(),
+        }
+    }
+
+    /// Consume this builder, creating a customizable operation that can be modified before being
+    /// sent. The operation's inner [http::Request] can be modified as well.
+    pub async fn customize(
+        self,
+    ) -> std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::create_db_cluster_endpoint::CreateDBClusterEndpoint,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::result::SdkError<
+            crate::operation::create_db_cluster_endpoint::CreateDBClusterEndpointError,
+        >,
+    > {
+        let handle = self.handle.clone();
+        let operation = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+    }
+
+    /// Sends the request and returns the response.
+    ///
+    /// If an error occurs, an `SdkError` will be returned with additional details that
+    /// can be matched against.
+    ///
+    /// By default, any retryable failures will be retried twice. Retry behavior
+    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+    /// set when configuring the client.
+    pub async fn send(
+        self,
+    ) -> std::result::Result<
+        crate::operation::create_db_cluster_endpoint::CreateDbClusterEndpointOutput,
+        aws_smithy_http::result::SdkError<
+            crate::operation::create_db_cluster_endpoint::CreateDBClusterEndpointError,
+        >,
+    > {
+        let op = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&self.handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        self.handle.client.call(op).await
+    }
     /// <p>The DB cluster identifier of the DB cluster associated with the endpoint. This parameter is stored as a lowercase string.</p>
     pub fn db_cluster_identifier(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.db_cluster_identifier(input.into());
         self
     }
     /// <p>The DB cluster identifier of the DB cluster associated with the endpoint. This parameter is stored as a lowercase string.</p>
-    pub fn set_db_cluster_identifier(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_db_cluster_identifier(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_db_cluster_identifier(input);
         self
     }
@@ -65,7 +91,10 @@ impl CreateDBClusterEndpointFluentBuilder  {
         self
     }
     /// <p>The identifier to use for the new endpoint. This parameter is stored as a lowercase string.</p>
-    pub fn set_db_cluster_endpoint_identifier(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_db_cluster_endpoint_identifier(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_db_cluster_endpoint_identifier(input);
         self
     }
@@ -89,7 +118,10 @@ impl CreateDBClusterEndpointFluentBuilder  {
         self
     }
     /// <p>List of DB instance identifiers that are part of the custom endpoint group.</p>
-    pub fn set_static_members(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+    pub fn set_static_members(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
         self.inner = self.inner.set_static_members(input);
         self
     }
@@ -103,7 +135,10 @@ impl CreateDBClusterEndpointFluentBuilder  {
         self
     }
     /// <p>List of DB instance identifiers that aren't part of the custom endpoint group. All other eligible instances are reachable through the custom endpoint. This parameter is relevant only if the list of static members is empty.</p>
-    pub fn set_excluded_members(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+    pub fn set_excluded_members(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
         self.inner = self.inner.set_excluded_members(input);
         self
     }
@@ -117,9 +152,11 @@ impl CreateDBClusterEndpointFluentBuilder  {
         self
     }
     /// <p>The tags to be assigned to the Amazon RDS resource.</p>
-    pub fn set_tags(mut self, input: std::option::Option<std::vec::Vec<crate::types::Tag>>) -> Self {
+    pub fn set_tags(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::Tag>>,
+    ) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }
 }
-

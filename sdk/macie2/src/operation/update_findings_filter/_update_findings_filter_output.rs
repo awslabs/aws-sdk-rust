@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateFindingsFilterOutput  {
+pub struct UpdateFindingsFilterOutput {
     /// <p>The Amazon Resource Name (ARN) of the filter that was updated.</p>
     #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
@@ -13,22 +13,23 @@ pub struct UpdateFindingsFilterOutput  {
 }
 impl UpdateFindingsFilterOutput {
     /// <p>The Amazon Resource Name (ARN) of the filter that was updated.</p>
-    pub fn arn(&self) -> std::option::Option<& str> {
+    pub fn arn(&self) -> std::option::Option<&str> {
         self.arn.as_deref()
     }
     /// <p>The unique identifier for the filter that was updated.</p>
-    pub fn id(&self) -> std::option::Option<& str> {
+    pub fn id(&self) -> std::option::Option<&str> {
         self.id.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for UpdateFindingsFilterOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl UpdateFindingsFilterOutput {
     /// Creates a new builder-style object to manufacture [`UpdateFindingsFilterOutput`](crate::operation::update_findings_filter::UpdateFindingsFilterOutput).
-    pub fn builder() -> crate::operation::update_findings_filter::builders::UpdateFindingsFilterOutputBuilder {
+    pub fn builder(
+    ) -> crate::operation::update_findings_filter::builders::UpdateFindingsFilterOutputBuilder {
         crate::operation::update_findings_filter::builders::UpdateFindingsFilterOutputBuilder::default()
     }
 }
@@ -49,7 +50,8 @@ impl UpdateFindingsFilterOutputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the filter that was updated.</p>
     pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.arn = input; self
+        self.arn = input;
+        self
     }
     /// <p>The unique identifier for the filter that was updated.</p>
     pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -58,26 +60,24 @@ impl UpdateFindingsFilterOutputBuilder {
     }
     /// <p>The unique identifier for the filter that was updated.</p>
     pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.id = input; self
+        self.id = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`UpdateFindingsFilterOutput`](crate::operation::update_findings_filter::UpdateFindingsFilterOutput).
     pub fn build(self) -> crate::operation::update_findings_filter::UpdateFindingsFilterOutput {
         crate::operation::update_findings_filter::UpdateFindingsFilterOutput {
-            arn: self.arn
-            ,
-            id: self.id
-            ,
+            arn: self.arn,
+            id: self.id,
             _request_id: self._request_id,
         }
     }
 }
-

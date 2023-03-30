@@ -3,7 +3,7 @@
 /// <p> The file used to structure and automate Audit Manager assessments for a given compliance standard. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AssessmentFramework  {
+pub struct AssessmentFramework {
     /// <p> The unique identifier for the framework. </p>
     #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
@@ -19,19 +19,19 @@ pub struct AssessmentFramework  {
 }
 impl AssessmentFramework {
     /// <p> The unique identifier for the framework. </p>
-    pub fn id(&self) -> std::option::Option<& str> {
+    pub fn id(&self) -> std::option::Option<&str> {
         self.id.as_deref()
     }
     /// <p> The Amazon Resource Name (ARN) of the framework. </p>
-    pub fn arn(&self) -> std::option::Option<& str> {
+    pub fn arn(&self) -> std::option::Option<&str> {
         self.arn.as_deref()
     }
     /// <p> The metadata of a framework, such as the name, ID, or description. </p>
-    pub fn metadata(&self) -> std::option::Option<& crate::types::FrameworkMetadata> {
+    pub fn metadata(&self) -> std::option::Option<&crate::types::FrameworkMetadata> {
         self.metadata.as_ref()
     }
     /// <p> The control sets that are associated with the framework. </p>
-    pub fn control_sets(&self) -> std::option::Option<& [crate::types::AssessmentControlSet]> {
+    pub fn control_sets(&self) -> std::option::Option<&[crate::types::AssessmentControlSet]> {
         self.control_sets.as_deref()
     }
 }
@@ -59,7 +59,8 @@ impl AssessmentFrameworkBuilder {
     }
     /// <p> The unique identifier for the framework. </p>
     pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.id = input; self
+        self.id = input;
+        self
     }
     /// <p> The Amazon Resource Name (ARN) of the framework. </p>
     pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -68,7 +69,8 @@ impl AssessmentFrameworkBuilder {
     }
     /// <p> The Amazon Resource Name (ARN) of the framework. </p>
     pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.arn = input; self
+        self.arn = input;
+        self
     }
     /// <p> The metadata of a framework, such as the name, ID, or description. </p>
     pub fn metadata(mut self, input: crate::types::FrameworkMetadata) -> Self {
@@ -76,8 +78,12 @@ impl AssessmentFrameworkBuilder {
         self
     }
     /// <p> The metadata of a framework, such as the name, ID, or description. </p>
-    pub fn set_metadata(mut self, input: std::option::Option<crate::types::FrameworkMetadata>) -> Self {
-        self.metadata = input; self
+    pub fn set_metadata(
+        mut self,
+        input: std::option::Option<crate::types::FrameworkMetadata>,
+    ) -> Self {
+        self.metadata = input;
+        self
     }
     /// Appends an item to `control_sets`.
     ///
@@ -86,26 +92,25 @@ impl AssessmentFrameworkBuilder {
     /// <p> The control sets that are associated with the framework. </p>
     pub fn control_sets(mut self, input: crate::types::AssessmentControlSet) -> Self {
         let mut v = self.control_sets.unwrap_or_default();
-                        v.push(input);
-                        self.control_sets = Some(v);
-                        self
+        v.push(input);
+        self.control_sets = Some(v);
+        self
     }
     /// <p> The control sets that are associated with the framework. </p>
-    pub fn set_control_sets(mut self, input: std::option::Option<std::vec::Vec<crate::types::AssessmentControlSet>>) -> Self {
-        self.control_sets = input; self
+    pub fn set_control_sets(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::AssessmentControlSet>>,
+    ) -> Self {
+        self.control_sets = input;
+        self
     }
     /// Consumes the builder and constructs a [`AssessmentFramework`](crate::types::AssessmentFramework).
     pub fn build(self) -> crate::types::AssessmentFramework {
         crate::types::AssessmentFramework {
-            id: self.id
-            ,
-            arn: self.arn
-            ,
-            metadata: self.metadata
-            ,
-            control_sets: self.control_sets
-            ,
+            id: self.id,
+            arn: self.arn,
+            metadata: self.metadata,
+            control_sets: self.control_sets,
         }
     }
 }
-

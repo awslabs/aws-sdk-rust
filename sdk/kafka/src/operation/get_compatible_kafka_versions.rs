@@ -6,26 +6,51 @@ impl GetCompatibleKafkaVersionsInput {
     #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::get_compatible_kafka_versions::GetCompatibleKafkaVersions, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::error::BuildError> {
-        let params_result = crate::endpoint::Params::builder().set_region(_config.region.as_ref().map(|r|r.as_ref().to_owned()))
-        .set_use_dual_stack(_config.use_dual_stack)
-        .set_use_fips(_config.use_fips)
-        .set_endpoint(_config.endpoint_url
-        .clone()).build()
-                                    .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
-                                let (endpoint_result, params) = match params_result {
-                                    Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
-                                    Err(e) => (Err(e), None)
-                                };
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::get_compatible_kafka_versions::GetCompatibleKafkaVersions,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        let params_result = crate::endpoint::Params::builder()
+            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
+            .set_use_dual_stack(_config.use_dual_stack)
+            .set_use_fips(_config.use_fips)
+            .set_endpoint(_config.endpoint_url.clone())
+            .build()
+            .map_err(|err| {
+                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
+                    "could not construct endpoint parameters",
+                    err,
+                )
+            });
+        let (endpoint_result, params) = match params_result {
+            Ok(params) => (
+                _config.endpoint_resolver.resolve_endpoint(&params),
+                Some(params),
+            ),
+            Err(e) => (Err(e), None),
+        };
         let mut request = {
-            fn uri_base(_input: &crate::operation::get_compatible_kafka_versions::GetCompatibleKafkaVersionsInput, output: &mut String) -> std::result::Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_base(
+                _input: &crate::operation::get_compatible_kafka_versions::GetCompatibleKafkaVersionsInput,
+                output: &mut String,
+            ) -> std::result::Result<(), aws_smithy_http::operation::error::BuildError>
+            {
                 write!(output, "/v1/compatible-kafka-versions").expect("formatting should succeed");
                 Ok(())
             }
-            fn uri_query(_input: &crate::operation::get_compatible_kafka_versions::GetCompatibleKafkaVersionsInput, mut output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_query(
+                _input: &crate::operation::get_compatible_kafka_versions::GetCompatibleKafkaVersionsInput,
+                mut output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_1) = &_input.cluster_arn {
-                     {
+                    {
                         query.push_kv("clusterArn", &aws_smithy_http::query::fmt_string(&inner_1));
                     }
                 }
@@ -33,9 +58,12 @@ impl GetCompatibleKafkaVersionsInput {
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
-                            input: &crate::operation::get_compatible_kafka_versions::GetCompatibleKafkaVersionsInput,
-                            builder: http::request::Builder
-                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
+                input: &crate::operation::get_compatible_kafka_versions::GetCompatibleKafkaVersionsInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -46,34 +74,51 @@ impl GetCompatibleKafkaVersionsInput {
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
-        let body = aws_smithy_http::body::SdkBody::from(
-            ""
-        );
+        let body = aws_smithy_http::body::SdkBody::from("");
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request.properties_mut().insert(endpoint_result);
-        if let Some(params) = params { request.properties_mut().insert(params); }
-        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        if let Some(params) = params {
+            request.properties_mut().insert(params);
+        }
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-                                aws_types::os_shim_internal::Env::real(),
-                                crate::meta::API_METADATA.clone(),
-                            );
-                            if let Some(app_name) = _config.app_name() {
-                                user_agent = user_agent.with_app_name(app_name.clone());
-                            }
-                            request.properties_mut().insert(user_agent);
+            aws_types::os_shim_internal::Env::real(),
+            crate::meta::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
-                            if let Some(region) = &_config.region {
-                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
-                            }
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
         if let Some(region) = &_config.region {
-                                request.properties_mut().insert(region.clone());
-                            }
-        aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
-        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::get_compatible_kafka_versions::GetCompatibleKafkaVersions::new())
-                            .with_metadata(aws_smithy_http::operation::Metadata::new("GetCompatibleKafkaVersions", "kafka"));
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_credentials_cache(
+            &mut request.properties_mut(),
+            _config.credentials_cache.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::get_compatible_kafka_versions::GetCompatibleKafkaVersions::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "GetCompatibleKafkaVersions",
+            "kafka",
+        ));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -90,22 +135,27 @@ impl GetCompatibleKafkaVersions {
     }
 }
 impl aws_smithy_http::response::ParseStrictResponse for GetCompatibleKafkaVersions {
-                type Output = std::result::Result<crate::operation::get_compatible_kafka_versions::GetCompatibleKafkaVersionsOutput, crate::operation::get_compatible_kafka_versions::GetCompatibleKafkaVersionsError>;
-                fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
-                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
-                     if !response.status().is_success() && response.status().as_u16() != 200 {
-                        crate::protocol_serde::shape_get_compatible_kafka_versions::de_get_compatible_kafka_versions_http_error(response)
-                     } else {
-                        crate::protocol_serde::shape_get_compatible_kafka_versions::de_get_compatible_kafka_versions_http_response(response)
-                     }
-                }
-            }
+    type Output = std::result::Result<
+        crate::operation::get_compatible_kafka_versions::GetCompatibleKafkaVersionsOutput,
+        crate::operation::get_compatible_kafka_versions::GetCompatibleKafkaVersionsError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::protocol_serde::shape_get_compatible_kafka_versions::de_get_compatible_kafka_versions_http_error(response)
+        } else {
+            crate::protocol_serde::shape_get_compatible_kafka_versions::de_get_compatible_kafka_versions_http_response(response)
+        }
+    }
+}
 
 /// Do not use this.
-            ///
-            /// Operation `*Error/*ErrorKind` types were combined into a single `*Error` enum. The `.kind` field on `*Error` no longer exists and isn't needed anymore (you can just match on the error directly since it's an enum now).
-            #[deprecated(note = "Operation `*Error/*ErrorKind` types were combined into a single `*Error` enum. The `.kind` field on `*Error` no longer exists and isn't needed anymore (you can just match on the error directly since it's an enum now).")]
-            pub type GetCompatibleKafkaVersionsErrorKind = GetCompatibleKafkaVersionsError;
+///
+/// Operation `*Error/*ErrorKind` types were combined into a single `*Error` enum. The `.kind` field on `*Error` no longer exists and isn't needed anymore (you can just match on the error directly since it's an enum now).
+#[deprecated(
+    note = "Operation `*Error/*ErrorKind` types were combined into a single `*Error` enum. The `.kind` field on `*Error` no longer exists and isn't needed anymore (you can just match on the error directly since it's an enum now)."
+)]
+pub type GetCompatibleKafkaVersionsErrorKind = GetCompatibleKafkaVersionsError;
 /// Error type for the `GetCompatibleKafkaVersionsError` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -125,87 +175,71 @@ pub enum GetCompatibleKafkaVersionsError {
     /// <p>Returns information about an error.</p>
     UnauthorizedException(crate::types::error::UnauthorizedException),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-                    Unhandled(aws_smithy_types::error::Unhandled),
+    Unhandled(aws_smithy_types::error::Unhandled),
 }
 impl aws_smithy_http::result::CreateUnhandledError for GetCompatibleKafkaVersionsError {
-    
-                    fn create_unhandled_error(
-                        source: Box<dyn std::error::Error + Send + Sync + 'static>,
-                        meta: std::option::Option<aws_smithy_types::error::ErrorMetadata>
-                    ) -> Self
-                     {
+    fn create_unhandled_error(
+        source: Box<dyn std::error::Error + Send + Sync + 'static>,
+        meta: std::option::Option<aws_smithy_types::error::ErrorMetadata>,
+    ) -> Self {
         Self::Unhandled({
-                                let mut builder = aws_smithy_types::error::Unhandled::builder().source(source);
-                                builder.set_meta(meta);
-                                builder.build()
-                            })
+            let mut builder = aws_smithy_types::error::Unhandled::builder().source(source);
+            builder.set_meta(meta);
+            builder.build()
+        })
     }
 }
 impl std::fmt::Display for GetCompatibleKafkaVersionsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match self {
-            Self::BadRequestException(_inner) =>
-            _inner.fmt(f)
-            ,
-            Self::ForbiddenException(_inner) =>
-            _inner.fmt(f)
-            ,
-            Self::InternalServerErrorException(_inner) =>
-            _inner.fmt(f)
-            ,
-            Self::NotFoundException(_inner) =>
-            _inner.fmt(f)
-            ,
-            Self::ServiceUnavailableException(_inner) =>
-            _inner.fmt(f)
-            ,
-            Self::TooManyRequestsException(_inner) =>
-            _inner.fmt(f)
-            ,
-            Self::UnauthorizedException(_inner) =>
-            _inner.fmt(f)
-            ,
-            Self::Unhandled(_inner) => {
-                _inner.fmt(f)
-            }
+            Self::BadRequestException(_inner) => _inner.fmt(f),
+            Self::ForbiddenException(_inner) => _inner.fmt(f),
+            Self::InternalServerErrorException(_inner) => _inner.fmt(f),
+            Self::NotFoundException(_inner) => _inner.fmt(f),
+            Self::ServiceUnavailableException(_inner) => _inner.fmt(f),
+            Self::TooManyRequestsException(_inner) => _inner.fmt(f),
+            Self::UnauthorizedException(_inner) => _inner.fmt(f),
+            Self::Unhandled(_inner) => _inner.fmt(f),
         }
     }
 }
 impl aws_smithy_types::error::metadata::ProvideErrorMetadata for GetCompatibleKafkaVersionsError {
     fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
         match self {
-            Self::BadRequestException(_inner) =>
-            aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
-            ,
-            Self::ForbiddenException(_inner) =>
-            aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
-            ,
-            Self::InternalServerErrorException(_inner) =>
-            aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
-            ,
-            Self::NotFoundException(_inner) =>
-            aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
-            ,
-            Self::ServiceUnavailableException(_inner) =>
-            aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
-            ,
-            Self::TooManyRequestsException(_inner) =>
-            aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
-            ,
-            Self::UnauthorizedException(_inner) =>
-            aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
-            ,
+            Self::BadRequestException(_inner) => {
+                aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
+            }
+            Self::ForbiddenException(_inner) => {
+                aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
+            }
+            Self::InternalServerErrorException(_inner) => {
+                aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
+            }
+            Self::NotFoundException(_inner) => {
+                aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
+            }
+            Self::ServiceUnavailableException(_inner) => {
+                aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
+            }
+            Self::TooManyRequestsException(_inner) => {
+                aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
+            }
+            Self::UnauthorizedException(_inner) => {
+                aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
+            }
             Self::Unhandled(_inner) => {
                 aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
             }
         }
     }
 }
-impl aws_http::request_id::RequestId for crate::operation::get_compatible_kafka_versions::GetCompatibleKafkaVersionsError {
-                            fn request_id(&self) -> Option<&str> {
-                                self.meta().request_id()
-                            }
-                        }
+impl aws_http::request_id::RequestId
+    for crate::operation::get_compatible_kafka_versions::GetCompatibleKafkaVersionsError
+{
+    fn request_id(&self) -> Option<&str> {
+        self.meta().request_id()
+    }
+}
 impl aws_smithy_types::retry::ProvideErrorKind for GetCompatibleKafkaVersionsError {
     fn code(&self) -> std::option::Option<&str> {
         aws_smithy_types::error::metadata::ProvideErrorMetadata::code(self)
@@ -216,18 +250,27 @@ impl aws_smithy_types::retry::ProvideErrorKind for GetCompatibleKafkaVersionsErr
 }
 impl GetCompatibleKafkaVersionsError {
     /// Creates the `GetCompatibleKafkaVersionsError::Unhandled` variant from any error type.
-                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-                        Self::Unhandled(aws_smithy_types::error::Unhandled::builder().source(err).build())
-                    }
-    
-                    /// Creates the `GetCompatibleKafkaVersionsError::Unhandled` variant from a `aws_smithy_types::error::ErrorMetadata`.
-                    pub fn generic(err: aws_smithy_types::error::ErrorMetadata) -> Self {
-                        Self::Unhandled(aws_smithy_types::error::Unhandled::builder().source(err.clone()).meta(err).build())
-                    }
-    /// 
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self::Unhandled(
+            aws_smithy_types::error::Unhandled::builder()
+                .source(err)
+                .build(),
+        )
+    }
+
+    /// Creates the `GetCompatibleKafkaVersionsError::Unhandled` variant from a `aws_smithy_types::error::ErrorMetadata`.
+    pub fn generic(err: aws_smithy_types::error::ErrorMetadata) -> Self {
+        Self::Unhandled(
+            aws_smithy_types::error::Unhandled::builder()
+                .source(err.clone())
+                .meta(err)
+                .build(),
+        )
+    }
+    ///
     /// Returns error metadata, which includes the error code, message,
     /// request ID, and potentially additional information.
-    /// 
+    ///
     pub fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
         use aws_smithy_types::error::metadata::ProvideErrorMetadata;
         match self {
@@ -273,30 +316,14 @@ impl GetCompatibleKafkaVersionsError {
 impl std::error::Error for GetCompatibleKafkaVersionsError {
     fn source(&self) -> std::option::Option<&(dyn std::error::Error + 'static)> {
         match self {
-            Self::BadRequestException(_inner) =>
-            Some(_inner)
-            ,
-            Self::ForbiddenException(_inner) =>
-            Some(_inner)
-            ,
-            Self::InternalServerErrorException(_inner) =>
-            Some(_inner)
-            ,
-            Self::NotFoundException(_inner) =>
-            Some(_inner)
-            ,
-            Self::ServiceUnavailableException(_inner) =>
-            Some(_inner)
-            ,
-            Self::TooManyRequestsException(_inner) =>
-            Some(_inner)
-            ,
-            Self::UnauthorizedException(_inner) =>
-            Some(_inner)
-            ,
-            Self::Unhandled(_inner) => {
-                Some(_inner)
-            }
+            Self::BadRequestException(_inner) => Some(_inner),
+            Self::ForbiddenException(_inner) => Some(_inner),
+            Self::InternalServerErrorException(_inner) => Some(_inner),
+            Self::NotFoundException(_inner) => Some(_inner),
+            Self::ServiceUnavailableException(_inner) => Some(_inner),
+            Self::TooManyRequestsException(_inner) => Some(_inner),
+            Self::UnauthorizedException(_inner) => Some(_inner),
+            Self::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -311,4 +338,3 @@ mod _get_compatible_kafka_versions_output;
 
 /// Builders
 pub mod builders;
-

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetResolverQueryLogConfigPolicyOutput  {
+pub struct GetResolverQueryLogConfigPolicyOutput {
     /// <p>Information about the query logging policy for the query logging configuration that you specified in a <code>GetResolverQueryLogConfigPolicy</code> request.</p>
     #[doc(hidden)]
     pub resolver_query_log_config_policy: std::option::Option<std::string::String>,
@@ -10,18 +10,18 @@ pub struct GetResolverQueryLogConfigPolicyOutput  {
 }
 impl GetResolverQueryLogConfigPolicyOutput {
     /// <p>Information about the query logging policy for the query logging configuration that you specified in a <code>GetResolverQueryLogConfigPolicy</code> request.</p>
-    pub fn resolver_query_log_config_policy(&self) -> std::option::Option<& str> {
+    pub fn resolver_query_log_config_policy(&self) -> std::option::Option<&str> {
         self.resolver_query_log_config_policy.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for GetResolverQueryLogConfigPolicyOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl GetResolverQueryLogConfigPolicyOutput {
     /// Creates a new builder-style object to manufacture [`GetResolverQueryLogConfigPolicyOutput`](crate::operation::get_resolver_query_log_config_policy::GetResolverQueryLogConfigPolicyOutput).
-    pub fn builder() -> crate::operation::get_resolver_query_log_config_policy::builders::GetResolverQueryLogConfigPolicyOutputBuilder {
+    pub fn builder() -> crate::operation::get_resolver_query_log_config_policy::builders::GetResolverQueryLogConfigPolicyOutputBuilder{
         crate::operation::get_resolver_query_log_config_policy::builders::GetResolverQueryLogConfigPolicyOutputBuilder::default()
     }
 }
@@ -35,25 +35,35 @@ pub struct GetResolverQueryLogConfigPolicyOutputBuilder {
 }
 impl GetResolverQueryLogConfigPolicyOutputBuilder {
     /// <p>Information about the query logging policy for the query logging configuration that you specified in a <code>GetResolverQueryLogConfigPolicy</code> request.</p>
-    pub fn resolver_query_log_config_policy(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn resolver_query_log_config_policy(
+        mut self,
+        input: impl Into<std::string::String>,
+    ) -> Self {
         self.resolver_query_log_config_policy = Some(input.into());
         self
     }
     /// <p>Information about the query logging policy for the query logging configuration that you specified in a <code>GetResolverQueryLogConfigPolicy</code> request.</p>
-    pub fn set_resolver_query_log_config_policy(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.resolver_query_log_config_policy = input; self
+    pub fn set_resolver_query_log_config_policy(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.resolver_query_log_config_policy = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`GetResolverQueryLogConfigPolicyOutput`](crate::operation::get_resolver_query_log_config_policy::GetResolverQueryLogConfigPolicyOutput).
-    pub fn build(self) -> crate::operation::get_resolver_query_log_config_policy::GetResolverQueryLogConfigPolicyOutput {
+    pub fn build(
+        self,
+    ) -> crate::operation::get_resolver_query_log_config_policy::GetResolverQueryLogConfigPolicyOutput
+    {
         crate::operation::get_resolver_query_log_config_policy::GetResolverQueryLogConfigPolicyOutput {
             resolver_query_log_config_policy: self.resolver_query_log_config_policy
             ,
@@ -61,4 +71,3 @@ impl GetResolverQueryLogConfigPolicyOutputBuilder {
         }
     }
 }
-

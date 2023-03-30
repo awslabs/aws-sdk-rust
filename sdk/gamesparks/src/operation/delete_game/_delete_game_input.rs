@@ -2,14 +2,14 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteGameInput  {
+pub struct DeleteGameInput {
     /// <p>The name of the game to delete.</p>
     #[doc(hidden)]
     pub game_name: std::option::Option<std::string::String>,
 }
 impl DeleteGameInput {
     /// <p>The name of the game to delete.</p>
-    pub fn game_name(&self) -> std::option::Option<& str> {
+    pub fn game_name(&self) -> std::option::Option<&str> {
         self.game_name.as_deref()
     }
 }
@@ -34,16 +34,18 @@ impl DeleteGameInputBuilder {
     }
     /// <p>The name of the game to delete.</p>
     pub fn set_game_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.game_name = input; self
+        self.game_name = input;
+        self
     }
     /// Consumes the builder and constructs a [`DeleteGameInput`](crate::operation::delete_game::DeleteGameInput).
-    pub fn build(self) -> Result<crate::operation::delete_game::DeleteGameInput, aws_smithy_http::operation::error::BuildError> {
-        Ok(
-            crate::operation::delete_game::DeleteGameInput {
-                game_name: self.game_name
-                ,
-            }
-        )
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::delete_game::DeleteGameInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        Ok(crate::operation::delete_game::DeleteGameInput {
+            game_name: self.game_name,
+        })
     }
 }
-

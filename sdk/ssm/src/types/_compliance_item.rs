@@ -3,7 +3,7 @@
 /// <p>Information about the compliance as defined by the resource type. For example, for a patch resource type, <code>Items</code> includes information about the PatchSeverity, Classification, and so on.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ComplianceItem  {
+pub struct ComplianceItem {
     /// <p>The compliance type. For example, Association (for a State Manager association), Patch, or Custom:<code>string</code> are all valid compliance types.</p>
     #[doc(hidden)]
     pub compliance_type: std::option::Option<std::string::String>,
@@ -30,43 +30,49 @@ pub struct ComplianceItem  {
     pub execution_summary: std::option::Option<crate::types::ComplianceExecutionSummary>,
     /// <p>A "Key": "Value" tag combination for the compliance item.</p>
     #[doc(hidden)]
-    pub details: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub details:
+        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl ComplianceItem {
     /// <p>The compliance type. For example, Association (for a State Manager association), Patch, or Custom:<code>string</code> are all valid compliance types.</p>
-    pub fn compliance_type(&self) -> std::option::Option<& str> {
+    pub fn compliance_type(&self) -> std::option::Option<&str> {
         self.compliance_type.as_deref()
     }
     /// <p>The type of resource. <code>ManagedInstance</code> is currently the only supported resource type.</p>
-    pub fn resource_type(&self) -> std::option::Option<& str> {
+    pub fn resource_type(&self) -> std::option::Option<&str> {
         self.resource_type.as_deref()
     }
     /// <p>An ID for the resource. For a managed node, this is the node ID.</p>
-    pub fn resource_id(&self) -> std::option::Option<& str> {
+    pub fn resource_id(&self) -> std::option::Option<&str> {
         self.resource_id.as_deref()
     }
     /// <p>An ID for the compliance item. For example, if the compliance item is a Windows patch, the ID could be the number of the KB article; for example: KB4010320.</p>
-    pub fn id(&self) -> std::option::Option<& str> {
+    pub fn id(&self) -> std::option::Option<&str> {
         self.id.as_deref()
     }
     /// <p>A title for the compliance item. For example, if the compliance item is a Windows patch, the title could be the title of the KB article for the patch; for example: Security Update for Active Directory Federation Services.</p>
-    pub fn title(&self) -> std::option::Option<& str> {
+    pub fn title(&self) -> std::option::Option<&str> {
         self.title.as_deref()
     }
     /// <p>The status of the compliance item. An item is either COMPLIANT, NON_COMPLIANT, or an empty string (for Windows patches that aren't applicable).</p>
-    pub fn status(&self) -> std::option::Option<& crate::types::ComplianceStatus> {
+    pub fn status(&self) -> std::option::Option<&crate::types::ComplianceStatus> {
         self.status.as_ref()
     }
     /// <p>The severity of the compliance status. Severity can be one of the following: Critical, High, Medium, Low, Informational, Unspecified.</p>
-    pub fn severity(&self) -> std::option::Option<& crate::types::ComplianceSeverity> {
+    pub fn severity(&self) -> std::option::Option<&crate::types::ComplianceSeverity> {
         self.severity.as_ref()
     }
     /// <p>A summary for the compliance item. The summary includes an execution ID, the execution type (for example, command), and the execution time.</p>
-    pub fn execution_summary(&self) -> std::option::Option<& crate::types::ComplianceExecutionSummary> {
+    pub fn execution_summary(
+        &self,
+    ) -> std::option::Option<&crate::types::ComplianceExecutionSummary> {
         self.execution_summary.as_ref()
     }
     /// <p>A "Key": "Value" tag combination for the compliance item.</p>
-    pub fn details(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
+    pub fn details(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
         self.details.as_ref()
     }
 }
@@ -89,7 +95,8 @@ pub struct ComplianceItemBuilder {
     pub(crate) status: std::option::Option<crate::types::ComplianceStatus>,
     pub(crate) severity: std::option::Option<crate::types::ComplianceSeverity>,
     pub(crate) execution_summary: std::option::Option<crate::types::ComplianceExecutionSummary>,
-    pub(crate) details: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub(crate) details:
+        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl ComplianceItemBuilder {
     /// <p>The compliance type. For example, Association (for a State Manager association), Patch, or Custom:<code>string</code> are all valid compliance types.</p>
@@ -99,7 +106,8 @@ impl ComplianceItemBuilder {
     }
     /// <p>The compliance type. For example, Association (for a State Manager association), Patch, or Custom:<code>string</code> are all valid compliance types.</p>
     pub fn set_compliance_type(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.compliance_type = input; self
+        self.compliance_type = input;
+        self
     }
     /// <p>The type of resource. <code>ManagedInstance</code> is currently the only supported resource type.</p>
     pub fn resource_type(mut self, input: impl Into<std::string::String>) -> Self {
@@ -108,7 +116,8 @@ impl ComplianceItemBuilder {
     }
     /// <p>The type of resource. <code>ManagedInstance</code> is currently the only supported resource type.</p>
     pub fn set_resource_type(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.resource_type = input; self
+        self.resource_type = input;
+        self
     }
     /// <p>An ID for the resource. For a managed node, this is the node ID.</p>
     pub fn resource_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -117,7 +126,8 @@ impl ComplianceItemBuilder {
     }
     /// <p>An ID for the resource. For a managed node, this is the node ID.</p>
     pub fn set_resource_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.resource_id = input; self
+        self.resource_id = input;
+        self
     }
     /// <p>An ID for the compliance item. For example, if the compliance item is a Windows patch, the ID could be the number of the KB article; for example: KB4010320.</p>
     pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -126,7 +136,8 @@ impl ComplianceItemBuilder {
     }
     /// <p>An ID for the compliance item. For example, if the compliance item is a Windows patch, the ID could be the number of the KB article; for example: KB4010320.</p>
     pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.id = input; self
+        self.id = input;
+        self
     }
     /// <p>A title for the compliance item. For example, if the compliance item is a Windows patch, the title could be the title of the KB article for the patch; for example: Security Update for Active Directory Federation Services.</p>
     pub fn title(mut self, input: impl Into<std::string::String>) -> Self {
@@ -135,7 +146,8 @@ impl ComplianceItemBuilder {
     }
     /// <p>A title for the compliance item. For example, if the compliance item is a Windows patch, the title could be the title of the KB article for the patch; for example: Security Update for Active Directory Federation Services.</p>
     pub fn set_title(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.title = input; self
+        self.title = input;
+        self
     }
     /// <p>The status of the compliance item. An item is either COMPLIANT, NON_COMPLIANT, or an empty string (for Windows patches that aren't applicable).</p>
     pub fn status(mut self, input: crate::types::ComplianceStatus) -> Self {
@@ -143,8 +155,12 @@ impl ComplianceItemBuilder {
         self
     }
     /// <p>The status of the compliance item. An item is either COMPLIANT, NON_COMPLIANT, or an empty string (for Windows patches that aren't applicable).</p>
-    pub fn set_status(mut self, input: std::option::Option<crate::types::ComplianceStatus>) -> Self {
-        self.status = input; self
+    pub fn set_status(
+        mut self,
+        input: std::option::Option<crate::types::ComplianceStatus>,
+    ) -> Self {
+        self.status = input;
+        self
     }
     /// <p>The severity of the compliance status. Severity can be one of the following: Critical, High, Medium, Low, Informational, Unspecified.</p>
     pub fn severity(mut self, input: crate::types::ComplianceSeverity) -> Self {
@@ -152,8 +168,12 @@ impl ComplianceItemBuilder {
         self
     }
     /// <p>The severity of the compliance status. Severity can be one of the following: Critical, High, Medium, Low, Informational, Unspecified.</p>
-    pub fn set_severity(mut self, input: std::option::Option<crate::types::ComplianceSeverity>) -> Self {
-        self.severity = input; self
+    pub fn set_severity(
+        mut self,
+        input: std::option::Option<crate::types::ComplianceSeverity>,
+    ) -> Self {
+        self.severity = input;
+        self
     }
     /// <p>A summary for the compliance item. The summary includes an execution ID, the execution type (for example, command), and the execution time.</p>
     pub fn execution_summary(mut self, input: crate::types::ComplianceExecutionSummary) -> Self {
@@ -161,46 +181,50 @@ impl ComplianceItemBuilder {
         self
     }
     /// <p>A summary for the compliance item. The summary includes an execution ID, the execution type (for example, command), and the execution time.</p>
-    pub fn set_execution_summary(mut self, input: std::option::Option<crate::types::ComplianceExecutionSummary>) -> Self {
-        self.execution_summary = input; self
+    pub fn set_execution_summary(
+        mut self,
+        input: std::option::Option<crate::types::ComplianceExecutionSummary>,
+    ) -> Self {
+        self.execution_summary = input;
+        self
     }
     /// Adds a key-value pair to `details`.
     ///
     /// To override the contents of this collection use [`set_details`](Self::set_details).
     ///
     /// <p>A "Key": "Value" tag combination for the compliance item.</p>
-    pub fn details(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
+    pub fn details(
+        mut self,
+        k: impl Into<std::string::String>,
+        v: impl Into<std::string::String>,
+    ) -> Self {
         let mut hash_map = self.details.unwrap_or_default();
-                        hash_map.insert(k.into(), v.into());
-                        self.details = Some(hash_map);
-                        self
+        hash_map.insert(k.into(), v.into());
+        self.details = Some(hash_map);
+        self
     }
     /// <p>A "Key": "Value" tag combination for the compliance item.</p>
-    pub fn set_details(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
-        self.details = input; self
+    pub fn set_details(
+        mut self,
+        input: std::option::Option<
+            std::collections::HashMap<std::string::String, std::string::String>,
+        >,
+    ) -> Self {
+        self.details = input;
+        self
     }
     /// Consumes the builder and constructs a [`ComplianceItem`](crate::types::ComplianceItem).
     pub fn build(self) -> crate::types::ComplianceItem {
         crate::types::ComplianceItem {
-            compliance_type: self.compliance_type
-            ,
-            resource_type: self.resource_type
-            ,
-            resource_id: self.resource_id
-            ,
-            id: self.id
-            ,
-            title: self.title
-            ,
-            status: self.status
-            ,
-            severity: self.severity
-            ,
-            execution_summary: self.execution_summary
-            ,
-            details: self.details
-            ,
+            compliance_type: self.compliance_type,
+            resource_type: self.resource_type,
+            resource_id: self.resource_id,
+            id: self.id,
+            title: self.title,
+            status: self.status,
+            severity: self.severity,
+            execution_summary: self.execution_summary,
+            details: self.details,
         }
     }
 }
-

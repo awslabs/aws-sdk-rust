@@ -3,14 +3,14 @@
 /// <p>Specifies how DataSync can access a location using the SMB protocol.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SmbMountOptions  {
+pub struct SmbMountOptions {
     /// <p>Specifies the SMB version that you want DataSync to use when mounting your SMB share. If you don't specify a version, DataSync defaults to <code>AUTOMATIC</code> and chooses a version based on negotiation with the SMB server.</p>
     #[doc(hidden)]
     pub version: std::option::Option<crate::types::SmbVersion>,
 }
 impl SmbMountOptions {
     /// <p>Specifies the SMB version that you want DataSync to use when mounting your SMB share. If you don't specify a version, DataSync defaults to <code>AUTOMATIC</code> and chooses a version based on negotiation with the SMB server.</p>
-    pub fn version(&self) -> std::option::Option<& crate::types::SmbVersion> {
+    pub fn version(&self) -> std::option::Option<&crate::types::SmbVersion> {
         self.version.as_ref()
     }
 }
@@ -35,14 +35,13 @@ impl SmbMountOptionsBuilder {
     }
     /// <p>Specifies the SMB version that you want DataSync to use when mounting your SMB share. If you don't specify a version, DataSync defaults to <code>AUTOMATIC</code> and chooses a version based on negotiation with the SMB server.</p>
     pub fn set_version(mut self, input: std::option::Option<crate::types::SmbVersion>) -> Self {
-        self.version = input; self
+        self.version = input;
+        self
     }
     /// Consumes the builder and constructs a [`SmbMountOptions`](crate::types::SmbMountOptions).
     pub fn build(self) -> crate::types::SmbMountOptions {
         crate::types::SmbMountOptions {
-            version: self.version
-            ,
+            version: self.version,
         }
     }
 }
-

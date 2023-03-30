@@ -3,7 +3,7 @@
 /// <p>The persistent application settings for users of a stack.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ApplicationSettings  {
+pub struct ApplicationSettings {
     /// <p>Enables or disables persistent application settings for users during their streaming sessions. </p>
     #[doc(hidden)]
     pub enabled: bool,
@@ -17,7 +17,7 @@ impl ApplicationSettings {
         self.enabled
     }
     /// <p>The path prefix for the S3 bucket where users’ persistent application settings are stored. You can allow the same persistent application settings to be used across multiple stacks by specifying the same settings group for each stack. </p>
-    pub fn settings_group(&self) -> std::option::Option<& str> {
+    pub fn settings_group(&self) -> std::option::Option<&str> {
         self.settings_group.as_deref()
     }
 }
@@ -43,7 +43,8 @@ impl ApplicationSettingsBuilder {
     }
     /// <p>Enables or disables persistent application settings for users during their streaming sessions. </p>
     pub fn set_enabled(mut self, input: std::option::Option<bool>) -> Self {
-        self.enabled = input; self
+        self.enabled = input;
+        self
     }
     /// <p>The path prefix for the S3 bucket where users’ persistent application settings are stored. You can allow the same persistent application settings to be used across multiple stacks by specifying the same settings group for each stack. </p>
     pub fn settings_group(mut self, input: impl Into<std::string::String>) -> Self {
@@ -52,17 +53,14 @@ impl ApplicationSettingsBuilder {
     }
     /// <p>The path prefix for the S3 bucket where users’ persistent application settings are stored. You can allow the same persistent application settings to be used across multiple stacks by specifying the same settings group for each stack. </p>
     pub fn set_settings_group(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.settings_group = input; self
+        self.settings_group = input;
+        self
     }
     /// Consumes the builder and constructs a [`ApplicationSettings`](crate::types::ApplicationSettings).
     pub fn build(self) -> crate::types::ApplicationSettings {
         crate::types::ApplicationSettings {
-            enabled: self.enabled
-                .unwrap_or_default()
-            ,
-            settings_group: self.settings_group
-            ,
+            enabled: self.enabled.unwrap_or_default(),
+            settings_group: self.settings_group,
         }
     }
 }
-

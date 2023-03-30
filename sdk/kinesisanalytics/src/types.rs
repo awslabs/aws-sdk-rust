@@ -228,4 +228,3 @@ pub mod builders;
 
 /// Error types that Amazon Kinesis Analytics can respond with.
 pub mod error;
-

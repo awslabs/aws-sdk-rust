@@ -3,7 +3,7 @@
 /// <p>Defines a resource that is not supported by Resilience Hub.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UnsupportedResource  {
+pub struct UnsupportedResource {
     /// <p>The logical resource identifier for the unsupported resource.</p>
     #[doc(hidden)]
     pub logical_resource_id: std::option::Option<crate::types::LogicalResourceId>,
@@ -16,15 +16,15 @@ pub struct UnsupportedResource  {
 }
 impl UnsupportedResource {
     /// <p>The logical resource identifier for the unsupported resource.</p>
-    pub fn logical_resource_id(&self) -> std::option::Option<& crate::types::LogicalResourceId> {
+    pub fn logical_resource_id(&self) -> std::option::Option<&crate::types::LogicalResourceId> {
         self.logical_resource_id.as_ref()
     }
     /// <p>The physical resource identifier for the unsupported resource.</p>
-    pub fn physical_resource_id(&self) -> std::option::Option<& crate::types::PhysicalResourceId> {
+    pub fn physical_resource_id(&self) -> std::option::Option<&crate::types::PhysicalResourceId> {
         self.physical_resource_id.as_ref()
     }
     /// <p>The type of resource.</p>
-    pub fn resource_type(&self) -> std::option::Option<& str> {
+    pub fn resource_type(&self) -> std::option::Option<&str> {
         self.resource_type.as_deref()
     }
 }
@@ -50,8 +50,12 @@ impl UnsupportedResourceBuilder {
         self
     }
     /// <p>The logical resource identifier for the unsupported resource.</p>
-    pub fn set_logical_resource_id(mut self, input: std::option::Option<crate::types::LogicalResourceId>) -> Self {
-        self.logical_resource_id = input; self
+    pub fn set_logical_resource_id(
+        mut self,
+        input: std::option::Option<crate::types::LogicalResourceId>,
+    ) -> Self {
+        self.logical_resource_id = input;
+        self
     }
     /// <p>The physical resource identifier for the unsupported resource.</p>
     pub fn physical_resource_id(mut self, input: crate::types::PhysicalResourceId) -> Self {
@@ -59,8 +63,12 @@ impl UnsupportedResourceBuilder {
         self
     }
     /// <p>The physical resource identifier for the unsupported resource.</p>
-    pub fn set_physical_resource_id(mut self, input: std::option::Option<crate::types::PhysicalResourceId>) -> Self {
-        self.physical_resource_id = input; self
+    pub fn set_physical_resource_id(
+        mut self,
+        input: std::option::Option<crate::types::PhysicalResourceId>,
+    ) -> Self {
+        self.physical_resource_id = input;
+        self
     }
     /// <p>The type of resource.</p>
     pub fn resource_type(mut self, input: impl Into<std::string::String>) -> Self {
@@ -69,18 +77,15 @@ impl UnsupportedResourceBuilder {
     }
     /// <p>The type of resource.</p>
     pub fn set_resource_type(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.resource_type = input; self
+        self.resource_type = input;
+        self
     }
     /// Consumes the builder and constructs a [`UnsupportedResource`](crate::types::UnsupportedResource).
     pub fn build(self) -> crate::types::UnsupportedResource {
         crate::types::UnsupportedResource {
-            logical_resource_id: self.logical_resource_id
-            ,
-            physical_resource_id: self.physical_resource_id
-            ,
-            resource_type: self.resource_type
-            ,
+            logical_resource_id: self.logical_resource_id,
+            physical_resource_id: self.physical_resource_id,
+            resource_type: self.resource_type,
         }
     }
 }
-

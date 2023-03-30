@@ -2,17 +2,18 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteControlPanelOutput  {
+pub struct DeleteControlPanelOutput {
     _request_id: Option<String>,
 }
 impl aws_http::request_id::RequestId for DeleteControlPanelOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl DeleteControlPanelOutput {
     /// Creates a new builder-style object to manufacture [`DeleteControlPanelOutput`](crate::operation::delete_control_panel::DeleteControlPanelOutput).
-    pub fn builder() -> crate::operation::delete_control_panel::builders::DeleteControlPanelOutputBuilder {
+    pub fn builder(
+    ) -> crate::operation::delete_control_panel::builders::DeleteControlPanelOutputBuilder {
         crate::operation::delete_control_panel::builders::DeleteControlPanelOutputBuilder::default()
     }
 }
@@ -25,14 +26,14 @@ pub struct DeleteControlPanelOutputBuilder {
 }
 impl DeleteControlPanelOutputBuilder {
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`DeleteControlPanelOutput`](crate::operation::delete_control_panel::DeleteControlPanelOutput).
     pub fn build(self) -> crate::operation::delete_control_panel::DeleteControlPanelOutput {
         crate::operation::delete_control_panel::DeleteControlPanelOutput {
@@ -40,4 +41,3 @@ impl DeleteControlPanelOutputBuilder {
         }
     }
 }
-

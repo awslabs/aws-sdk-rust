@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateAlarmModelOutput  {
+pub struct UpdateAlarmModelOutput {
     /// <p>The time the alarm model was created, in the Unix epoch format.</p>
     #[doc(hidden)]
     pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
@@ -15,12 +15,12 @@ pub struct UpdateAlarmModelOutput  {
     /// <p>The time the alarm model was last updated, in the Unix epoch format.</p>
     #[doc(hidden)]
     pub last_update_time: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>The status of the alarm model. The status can be one of the following values:</p> 
-    /// <ul> 
-    /// <li> <p> <code>ACTIVE</code> - The alarm model is active and it's ready to evaluate data.</p> </li> 
-    /// <li> <p> <code>ACTIVATING</code> - AWS IoT Events is activating your alarm model. Activating an alarm model can take up to a few minutes.</p> </li> 
-    /// <li> <p> <code>INACTIVE</code> - The alarm model is inactive, so it isn't ready to evaluate data. Check your alarm model information and update the alarm model.</p> </li> 
-    /// <li> <p> <code>FAILED</code> - You couldn't create or update the alarm model. Check your alarm model information and try again.</p> </li> 
+    /// <p>The status of the alarm model. The status can be one of the following values:</p>
+    /// <ul>
+    /// <li> <p> <code>ACTIVE</code> - The alarm model is active and it's ready to evaluate data.</p> </li>
+    /// <li> <p> <code>ACTIVATING</code> - AWS IoT Events is activating your alarm model. Activating an alarm model can take up to a few minutes.</p> </li>
+    /// <li> <p> <code>INACTIVE</code> - The alarm model is inactive, so it isn't ready to evaluate data. Check your alarm model information and update the alarm model.</p> </li>
+    /// <li> <p> <code>FAILED</code> - You couldn't create or update the alarm model. Check your alarm model information and try again.</p> </li>
     /// </ul>
     #[doc(hidden)]
     pub status: std::option::Option<crate::types::AlarmModelVersionStatus>,
@@ -28,40 +28,41 @@ pub struct UpdateAlarmModelOutput  {
 }
 impl UpdateAlarmModelOutput {
     /// <p>The time the alarm model was created, in the Unix epoch format.</p>
-    pub fn creation_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
+    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
     /// <p>The ARN of the alarm model. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
-    pub fn alarm_model_arn(&self) -> std::option::Option<& str> {
+    pub fn alarm_model_arn(&self) -> std::option::Option<&str> {
         self.alarm_model_arn.as_deref()
     }
     /// <p>The version of the alarm model.</p>
-    pub fn alarm_model_version(&self) -> std::option::Option<& str> {
+    pub fn alarm_model_version(&self) -> std::option::Option<&str> {
         self.alarm_model_version.as_deref()
     }
     /// <p>The time the alarm model was last updated, in the Unix epoch format.</p>
-    pub fn last_update_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
+    pub fn last_update_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_update_time.as_ref()
     }
-    /// <p>The status of the alarm model. The status can be one of the following values:</p> 
-    /// <ul> 
-    /// <li> <p> <code>ACTIVE</code> - The alarm model is active and it's ready to evaluate data.</p> </li> 
-    /// <li> <p> <code>ACTIVATING</code> - AWS IoT Events is activating your alarm model. Activating an alarm model can take up to a few minutes.</p> </li> 
-    /// <li> <p> <code>INACTIVE</code> - The alarm model is inactive, so it isn't ready to evaluate data. Check your alarm model information and update the alarm model.</p> </li> 
-    /// <li> <p> <code>FAILED</code> - You couldn't create or update the alarm model. Check your alarm model information and try again.</p> </li> 
+    /// <p>The status of the alarm model. The status can be one of the following values:</p>
+    /// <ul>
+    /// <li> <p> <code>ACTIVE</code> - The alarm model is active and it's ready to evaluate data.</p> </li>
+    /// <li> <p> <code>ACTIVATING</code> - AWS IoT Events is activating your alarm model. Activating an alarm model can take up to a few minutes.</p> </li>
+    /// <li> <p> <code>INACTIVE</code> - The alarm model is inactive, so it isn't ready to evaluate data. Check your alarm model information and update the alarm model.</p> </li>
+    /// <li> <p> <code>FAILED</code> - You couldn't create or update the alarm model. Check your alarm model information and try again.</p> </li>
     /// </ul>
-    pub fn status(&self) -> std::option::Option<& crate::types::AlarmModelVersionStatus> {
+    pub fn status(&self) -> std::option::Option<&crate::types::AlarmModelVersionStatus> {
         self.status.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for UpdateAlarmModelOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl UpdateAlarmModelOutput {
     /// Creates a new builder-style object to manufacture [`UpdateAlarmModelOutput`](crate::operation::update_alarm_model::UpdateAlarmModelOutput).
-    pub fn builder() -> crate::operation::update_alarm_model::builders::UpdateAlarmModelOutputBuilder {
+    pub fn builder() -> crate::operation::update_alarm_model::builders::UpdateAlarmModelOutputBuilder
+    {
         crate::operation::update_alarm_model::builders::UpdateAlarmModelOutputBuilder::default()
     }
 }
@@ -84,8 +85,12 @@ impl UpdateAlarmModelOutputBuilder {
         self
     }
     /// <p>The time the alarm model was created, in the Unix epoch format.</p>
-    pub fn set_creation_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.creation_time = input; self
+    pub fn set_creation_time(
+        mut self,
+        input: std::option::Option<aws_smithy_types::DateTime>,
+    ) -> Self {
+        self.creation_time = input;
+        self
     }
     /// <p>The ARN of the alarm model. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
     pub fn alarm_model_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -94,7 +99,8 @@ impl UpdateAlarmModelOutputBuilder {
     }
     /// <p>The ARN of the alarm model. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
     pub fn set_alarm_model_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.alarm_model_arn = input; self
+        self.alarm_model_arn = input;
+        self
     }
     /// <p>The version of the alarm model.</p>
     pub fn alarm_model_version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -102,8 +108,12 @@ impl UpdateAlarmModelOutputBuilder {
         self
     }
     /// <p>The version of the alarm model.</p>
-    pub fn set_alarm_model_version(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.alarm_model_version = input; self
+    pub fn set_alarm_model_version(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.alarm_model_version = input;
+        self
     }
     /// <p>The time the alarm model was last updated, in the Unix epoch format.</p>
     pub fn last_update_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -111,54 +121,56 @@ impl UpdateAlarmModelOutputBuilder {
         self
     }
     /// <p>The time the alarm model was last updated, in the Unix epoch format.</p>
-    pub fn set_last_update_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.last_update_time = input; self
+    pub fn set_last_update_time(
+        mut self,
+        input: std::option::Option<aws_smithy_types::DateTime>,
+    ) -> Self {
+        self.last_update_time = input;
+        self
     }
-    /// <p>The status of the alarm model. The status can be one of the following values:</p> 
-    /// <ul> 
-    /// <li> <p> <code>ACTIVE</code> - The alarm model is active and it's ready to evaluate data.</p> </li> 
-    /// <li> <p> <code>ACTIVATING</code> - AWS IoT Events is activating your alarm model. Activating an alarm model can take up to a few minutes.</p> </li> 
-    /// <li> <p> <code>INACTIVE</code> - The alarm model is inactive, so it isn't ready to evaluate data. Check your alarm model information and update the alarm model.</p> </li> 
-    /// <li> <p> <code>FAILED</code> - You couldn't create or update the alarm model. Check your alarm model information and try again.</p> </li> 
+    /// <p>The status of the alarm model. The status can be one of the following values:</p>
+    /// <ul>
+    /// <li> <p> <code>ACTIVE</code> - The alarm model is active and it's ready to evaluate data.</p> </li>
+    /// <li> <p> <code>ACTIVATING</code> - AWS IoT Events is activating your alarm model. Activating an alarm model can take up to a few minutes.</p> </li>
+    /// <li> <p> <code>INACTIVE</code> - The alarm model is inactive, so it isn't ready to evaluate data. Check your alarm model information and update the alarm model.</p> </li>
+    /// <li> <p> <code>FAILED</code> - You couldn't create or update the alarm model. Check your alarm model information and try again.</p> </li>
     /// </ul>
     pub fn status(mut self, input: crate::types::AlarmModelVersionStatus) -> Self {
         self.status = Some(input);
         self
     }
-    /// <p>The status of the alarm model. The status can be one of the following values:</p> 
-    /// <ul> 
-    /// <li> <p> <code>ACTIVE</code> - The alarm model is active and it's ready to evaluate data.</p> </li> 
-    /// <li> <p> <code>ACTIVATING</code> - AWS IoT Events is activating your alarm model. Activating an alarm model can take up to a few minutes.</p> </li> 
-    /// <li> <p> <code>INACTIVE</code> - The alarm model is inactive, so it isn't ready to evaluate data. Check your alarm model information and update the alarm model.</p> </li> 
-    /// <li> <p> <code>FAILED</code> - You couldn't create or update the alarm model. Check your alarm model information and try again.</p> </li> 
+    /// <p>The status of the alarm model. The status can be one of the following values:</p>
+    /// <ul>
+    /// <li> <p> <code>ACTIVE</code> - The alarm model is active and it's ready to evaluate data.</p> </li>
+    /// <li> <p> <code>ACTIVATING</code> - AWS IoT Events is activating your alarm model. Activating an alarm model can take up to a few minutes.</p> </li>
+    /// <li> <p> <code>INACTIVE</code> - The alarm model is inactive, so it isn't ready to evaluate data. Check your alarm model information and update the alarm model.</p> </li>
+    /// <li> <p> <code>FAILED</code> - You couldn't create or update the alarm model. Check your alarm model information and try again.</p> </li>
     /// </ul>
-    pub fn set_status(mut self, input: std::option::Option<crate::types::AlarmModelVersionStatus>) -> Self {
-        self.status = input; self
+    pub fn set_status(
+        mut self,
+        input: std::option::Option<crate::types::AlarmModelVersionStatus>,
+    ) -> Self {
+        self.status = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`UpdateAlarmModelOutput`](crate::operation::update_alarm_model::UpdateAlarmModelOutput).
     pub fn build(self) -> crate::operation::update_alarm_model::UpdateAlarmModelOutput {
         crate::operation::update_alarm_model::UpdateAlarmModelOutput {
-            creation_time: self.creation_time
-            ,
-            alarm_model_arn: self.alarm_model_arn
-            ,
-            alarm_model_version: self.alarm_model_version
-            ,
-            last_update_time: self.last_update_time
-            ,
-            status: self.status
-            ,
+            creation_time: self.creation_time,
+            alarm_model_arn: self.alarm_model_arn,
+            alarm_model_version: self.alarm_model_version,
+            last_update_time: self.last_update_time,
+            status: self.status,
             _request_id: self._request_id,
         }
     }
 }
-

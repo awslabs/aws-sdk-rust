@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-/// 
+///
 /// Here is an example of how you can make a match expression forward-compatible:
-/// 
+///
 /// ```text
 /// # let modelcardexportjobsortby = unimplemented!();
 /// match modelcardexportjobsortby {
@@ -31,14 +31,22 @@
 /// Specifically, when `modelcardexportjobsortby` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `ModelCardExportJobSortBy::NewFeature` also yielding `"NewFeature"`.
-/// 
+///
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 /// Attribute by which to sort returned export jobs.
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
 pub enum ModelCardExportJobSortBy {
     #[allow(missing_docs)] // documentation missing in model
     CreationTime,
@@ -47,43 +55,44 @@ pub enum ModelCardExportJobSortBy {
     #[allow(missing_docs)] // documentation missing in model
     Status,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::primitives::UnknownVariantValue)
+    Unknown(crate::primitives::UnknownVariantValue),
 }
 impl std::convert::From<&str> for ModelCardExportJobSortBy {
-                fn from(s: &str) -> Self {
-                    match s {
-                        "CreationTime" => ModelCardExportJobSortBy::CreationTime,
-"Name" => ModelCardExportJobSortBy::Name,
-"Status" => ModelCardExportJobSortBy::Status,
-other => ModelCardExportJobSortBy::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
-                    }
-                }
-            }
-impl std::str::FromStr for ModelCardExportJobSortBy {
-                type Err = std::convert::Infallible;
-
-                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-                    Ok(ModelCardExportJobSortBy::from(s))
-                }
-            }
-impl ModelCardExportJobSortBy {
-                /// Returns the `&str` value of the enum member.
-                pub fn as_str(&self) -> &str {
-                    match self {
-    ModelCardExportJobSortBy::CreationTime => "CreationTime",
-    ModelCardExportJobSortBy::Name => "Name",
-    ModelCardExportJobSortBy::Status => "Status",
-    ModelCardExportJobSortBy::Unknown(value) => value.as_str()
+    fn from(s: &str) -> Self {
+        match s {
+            "CreationTime" => ModelCardExportJobSortBy::CreationTime,
+            "Name" => ModelCardExportJobSortBy::Name,
+            "Status" => ModelCardExportJobSortBy::Status,
+            other => ModelCardExportJobSortBy::Unknown(crate::primitives::UnknownVariantValue(
+                other.to_owned(),
+            )),
+        }
+    }
 }
-                }
-                /// Returns all the `&str` representations of the enum members.
-                pub const fn values() -> &'static [&'static str] {
-                    &["CreationTime", "Name", "Status"]
-                }
-            }
-impl AsRef<str> for ModelCardExportJobSortBy {
-                fn as_ref(&self) -> &str {
-                    self.as_str()
-                }
-            }
+impl std::str::FromStr for ModelCardExportJobSortBy {
+    type Err = std::convert::Infallible;
 
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(ModelCardExportJobSortBy::from(s))
+    }
+}
+impl ModelCardExportJobSortBy {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            ModelCardExportJobSortBy::CreationTime => "CreationTime",
+            ModelCardExportJobSortBy::Name => "Name",
+            ModelCardExportJobSortBy::Status => "Status",
+            ModelCardExportJobSortBy::Unknown(value) => value.as_str(),
+        }
+    }
+    /// Returns all the `&str` representations of the enum members.
+    pub const fn values() -> &'static [&'static str] {
+        &["CreationTime", "Name", "Status"]
+    }
+}
+impl AsRef<str> for ModelCardExportJobSortBy {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}

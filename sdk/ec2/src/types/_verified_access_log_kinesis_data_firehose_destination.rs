@@ -3,7 +3,7 @@
 /// <p>Options for Kinesis as a logging destination.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct VerifiedAccessLogKinesisDataFirehoseDestination  {
+pub struct VerifiedAccessLogKinesisDataFirehoseDestination {
     /// <p>Indicates whether logging is enabled.</p>
     #[doc(hidden)]
     pub enabled: std::option::Option<bool>,
@@ -20,17 +20,20 @@ impl VerifiedAccessLogKinesisDataFirehoseDestination {
         self.enabled
     }
     /// <p>The delivery status.</p>
-    pub fn delivery_status(&self) -> std::option::Option<& crate::types::VerifiedAccessLogDeliveryStatus> {
+    pub fn delivery_status(
+        &self,
+    ) -> std::option::Option<&crate::types::VerifiedAccessLogDeliveryStatus> {
         self.delivery_status.as_ref()
     }
     /// <p>The ID of the delivery stream.</p>
-    pub fn delivery_stream(&self) -> std::option::Option<& str> {
+    pub fn delivery_stream(&self) -> std::option::Option<&str> {
         self.delivery_stream.as_deref()
     }
 }
 impl VerifiedAccessLogKinesisDataFirehoseDestination {
     /// Creates a new builder-style object to manufacture [`VerifiedAccessLogKinesisDataFirehoseDestination`](crate::types::VerifiedAccessLogKinesisDataFirehoseDestination).
-    pub fn builder() -> crate::types::builders::VerifiedAccessLogKinesisDataFirehoseDestinationBuilder {
+    pub fn builder(
+    ) -> crate::types::builders::VerifiedAccessLogKinesisDataFirehoseDestinationBuilder {
         crate::types::builders::VerifiedAccessLogKinesisDataFirehoseDestinationBuilder::default()
     }
 }
@@ -51,7 +54,8 @@ impl VerifiedAccessLogKinesisDataFirehoseDestinationBuilder {
     }
     /// <p>Indicates whether logging is enabled.</p>
     pub fn set_enabled(mut self, input: std::option::Option<bool>) -> Self {
-        self.enabled = input; self
+        self.enabled = input;
+        self
     }
     /// <p>The delivery status.</p>
     pub fn delivery_status(mut self, input: crate::types::VerifiedAccessLogDeliveryStatus) -> Self {
@@ -59,8 +63,12 @@ impl VerifiedAccessLogKinesisDataFirehoseDestinationBuilder {
         self
     }
     /// <p>The delivery status.</p>
-    pub fn set_delivery_status(mut self, input: std::option::Option<crate::types::VerifiedAccessLogDeliveryStatus>) -> Self {
-        self.delivery_status = input; self
+    pub fn set_delivery_status(
+        mut self,
+        input: std::option::Option<crate::types::VerifiedAccessLogDeliveryStatus>,
+    ) -> Self {
+        self.delivery_status = input;
+        self
     }
     /// <p>The ID of the delivery stream.</p>
     pub fn delivery_stream(mut self, input: impl Into<std::string::String>) -> Self {
@@ -69,18 +77,15 @@ impl VerifiedAccessLogKinesisDataFirehoseDestinationBuilder {
     }
     /// <p>The ID of the delivery stream.</p>
     pub fn set_delivery_stream(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.delivery_stream = input; self
+        self.delivery_stream = input;
+        self
     }
     /// Consumes the builder and constructs a [`VerifiedAccessLogKinesisDataFirehoseDestination`](crate::types::VerifiedAccessLogKinesisDataFirehoseDestination).
     pub fn build(self) -> crate::types::VerifiedAccessLogKinesisDataFirehoseDestination {
         crate::types::VerifiedAccessLogKinesisDataFirehoseDestination {
-            enabled: self.enabled
-            ,
-            delivery_status: self.delivery_status
-            ,
-            delivery_stream: self.delivery_stream
-            ,
+            enabled: self.enabled,
+            delivery_status: self.delivery_status,
+            delivery_stream: self.delivery_stream,
         }
     }
 }
-

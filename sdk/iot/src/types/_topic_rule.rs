@@ -3,7 +3,7 @@
 /// <p>Describes a rule.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct TopicRule  {
+pub struct TopicRule {
     /// <p>The name of the rule.</p>
     #[doc(hidden)]
     pub rule_name: std::option::Option<std::string::String>,
@@ -31,23 +31,23 @@ pub struct TopicRule  {
 }
 impl TopicRule {
     /// <p>The name of the rule.</p>
-    pub fn rule_name(&self) -> std::option::Option<& str> {
+    pub fn rule_name(&self) -> std::option::Option<&str> {
         self.rule_name.as_deref()
     }
     /// <p>The SQL statement used to query the topic. When using a SQL query with multiple lines, be sure to escape the newline characters.</p>
-    pub fn sql(&self) -> std::option::Option<& str> {
+    pub fn sql(&self) -> std::option::Option<&str> {
         self.sql.as_deref()
     }
     /// <p>The description of the rule.</p>
-    pub fn description(&self) -> std::option::Option<& str> {
+    pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
     /// <p>The date and time the rule was created.</p>
-    pub fn created_at(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
+    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
     /// <p>The actions associated with the rule.</p>
-    pub fn actions(&self) -> std::option::Option<& [crate::types::Action]> {
+    pub fn actions(&self) -> std::option::Option<&[crate::types::Action]> {
         self.actions.as_deref()
     }
     /// <p>Specifies whether the rule is disabled.</p>
@@ -55,11 +55,11 @@ impl TopicRule {
         self.rule_disabled
     }
     /// <p>The version of the SQL rules engine to use when evaluating the rule.</p>
-    pub fn aws_iot_sql_version(&self) -> std::option::Option<& str> {
+    pub fn aws_iot_sql_version(&self) -> std::option::Option<&str> {
         self.aws_iot_sql_version.as_deref()
     }
     /// <p>The action to perform when an error occurs.</p>
-    pub fn error_action(&self) -> std::option::Option<& crate::types::Action> {
+    pub fn error_action(&self) -> std::option::Option<&crate::types::Action> {
         self.error_action.as_ref()
     }
 }
@@ -91,7 +91,8 @@ impl TopicRuleBuilder {
     }
     /// <p>The name of the rule.</p>
     pub fn set_rule_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.rule_name = input; self
+        self.rule_name = input;
+        self
     }
     /// <p>The SQL statement used to query the topic. When using a SQL query with multiple lines, be sure to escape the newline characters.</p>
     pub fn sql(mut self, input: impl Into<std::string::String>) -> Self {
@@ -100,7 +101,8 @@ impl TopicRuleBuilder {
     }
     /// <p>The SQL statement used to query the topic. When using a SQL query with multiple lines, be sure to escape the newline characters.</p>
     pub fn set_sql(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.sql = input; self
+        self.sql = input;
+        self
     }
     /// <p>The description of the rule.</p>
     pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -109,7 +111,8 @@ impl TopicRuleBuilder {
     }
     /// <p>The description of the rule.</p>
     pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.description = input; self
+        self.description = input;
+        self
     }
     /// <p>The date and time the rule was created.</p>
     pub fn created_at(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -117,8 +120,12 @@ impl TopicRuleBuilder {
         self
     }
     /// <p>The date and time the rule was created.</p>
-    pub fn set_created_at(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.created_at = input; self
+    pub fn set_created_at(
+        mut self,
+        input: std::option::Option<aws_smithy_types::DateTime>,
+    ) -> Self {
+        self.created_at = input;
+        self
     }
     /// Appends an item to `actions`.
     ///
@@ -127,13 +134,17 @@ impl TopicRuleBuilder {
     /// <p>The actions associated with the rule.</p>
     pub fn actions(mut self, input: crate::types::Action) -> Self {
         let mut v = self.actions.unwrap_or_default();
-                        v.push(input);
-                        self.actions = Some(v);
-                        self
+        v.push(input);
+        self.actions = Some(v);
+        self
     }
     /// <p>The actions associated with the rule.</p>
-    pub fn set_actions(mut self, input: std::option::Option<std::vec::Vec<crate::types::Action>>) -> Self {
-        self.actions = input; self
+    pub fn set_actions(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::Action>>,
+    ) -> Self {
+        self.actions = input;
+        self
     }
     /// <p>Specifies whether the rule is disabled.</p>
     pub fn rule_disabled(mut self, input: bool) -> Self {
@@ -142,7 +153,8 @@ impl TopicRuleBuilder {
     }
     /// <p>Specifies whether the rule is disabled.</p>
     pub fn set_rule_disabled(mut self, input: std::option::Option<bool>) -> Self {
-        self.rule_disabled = input; self
+        self.rule_disabled = input;
+        self
     }
     /// <p>The version of the SQL rules engine to use when evaluating the rule.</p>
     pub fn aws_iot_sql_version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -150,8 +162,12 @@ impl TopicRuleBuilder {
         self
     }
     /// <p>The version of the SQL rules engine to use when evaluating the rule.</p>
-    pub fn set_aws_iot_sql_version(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.aws_iot_sql_version = input; self
+    pub fn set_aws_iot_sql_version(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.aws_iot_sql_version = input;
+        self
     }
     /// <p>The action to perform when an error occurs.</p>
     pub fn error_action(mut self, input: crate::types::Action) -> Self {
@@ -160,28 +176,20 @@ impl TopicRuleBuilder {
     }
     /// <p>The action to perform when an error occurs.</p>
     pub fn set_error_action(mut self, input: std::option::Option<crate::types::Action>) -> Self {
-        self.error_action = input; self
+        self.error_action = input;
+        self
     }
     /// Consumes the builder and constructs a [`TopicRule`](crate::types::TopicRule).
     pub fn build(self) -> crate::types::TopicRule {
         crate::types::TopicRule {
-            rule_name: self.rule_name
-            ,
-            sql: self.sql
-            ,
-            description: self.description
-            ,
-            created_at: self.created_at
-            ,
-            actions: self.actions
-            ,
-            rule_disabled: self.rule_disabled
-            ,
-            aws_iot_sql_version: self.aws_iot_sql_version
-            ,
-            error_action: self.error_action
-            ,
+            rule_name: self.rule_name,
+            sql: self.sql,
+            description: self.description,
+            created_at: self.created_at,
+            actions: self.actions,
+            rule_disabled: self.rule_disabled,
+            aws_iot_sql_version: self.aws_iot_sql_version,
+            error_action: self.error_action,
         }
     }
 }
-

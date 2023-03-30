@@ -2,20 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteConfigurationSetInput  {
+pub struct DeleteConfigurationSetInput {
     /// <p>The name of the configuration set or the configuration set ARN that you want to delete. The ConfigurationSetName and ConfigurationSetArn can be found using the <code>DescribeConfigurationSets</code> action.</p>
     #[doc(hidden)]
     pub configuration_set_name: std::option::Option<std::string::String>,
 }
 impl DeleteConfigurationSetInput {
     /// <p>The name of the configuration set or the configuration set ARN that you want to delete. The ConfigurationSetName and ConfigurationSetArn can be found using the <code>DescribeConfigurationSets</code> action.</p>
-    pub fn configuration_set_name(&self) -> std::option::Option<& str> {
+    pub fn configuration_set_name(&self) -> std::option::Option<&str> {
         self.configuration_set_name.as_deref()
     }
 }
 impl DeleteConfigurationSetInput {
     /// Creates a new builder-style object to manufacture [`DeleteConfigurationSetInput`](crate::operation::delete_configuration_set::DeleteConfigurationSetInput).
-    pub fn builder() -> crate::operation::delete_configuration_set::builders::DeleteConfigurationSetInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::delete_configuration_set::builders::DeleteConfigurationSetInputBuilder
+    {
         crate::operation::delete_configuration_set::builders::DeleteConfigurationSetInputBuilder::default()
     }
 }
@@ -33,17 +35,24 @@ impl DeleteConfigurationSetInputBuilder {
         self
     }
     /// <p>The name of the configuration set or the configuration set ARN that you want to delete. The ConfigurationSetName and ConfigurationSetArn can be found using the <code>DescribeConfigurationSets</code> action.</p>
-    pub fn set_configuration_set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.configuration_set_name = input; self
+    pub fn set_configuration_set_name(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.configuration_set_name = input;
+        self
     }
     /// Consumes the builder and constructs a [`DeleteConfigurationSetInput`](crate::operation::delete_configuration_set::DeleteConfigurationSetInput).
-    pub fn build(self) -> Result<crate::operation::delete_configuration_set::DeleteConfigurationSetInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::delete_configuration_set::DeleteConfigurationSetInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::delete_configuration_set::DeleteConfigurationSetInput {
-                configuration_set_name: self.configuration_set_name
-                ,
-            }
+                configuration_set_name: self.configuration_set_name,
+            },
         )
     }
 }
-

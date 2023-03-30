@@ -18,4 +18,3 @@ pub mod get_scaling_plan_resource_forecast_data;
 
 /// Types for the `UpdateScalingPlan` operation.
 pub mod update_scaling_plan;
-

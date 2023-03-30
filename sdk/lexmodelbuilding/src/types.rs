@@ -236,4 +236,3 @@ pub mod builders;
 
 /// Error types that Amazon Lex Model Building Service can respond with.
 pub mod error;
-

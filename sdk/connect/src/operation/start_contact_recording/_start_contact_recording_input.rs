@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct StartContactRecordingInput  {
+pub struct StartContactRecordingInput {
     /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
     #[doc(hidden)]
     pub instance_id: std::option::Option<std::string::String>,
@@ -14,29 +14,34 @@ pub struct StartContactRecordingInput  {
     pub initial_contact_id: std::option::Option<std::string::String>,
     /// <p>The person being recorded.</p>
     #[doc(hidden)]
-    pub voice_recording_configuration: std::option::Option<crate::types::VoiceRecordingConfiguration>,
+    pub voice_recording_configuration:
+        std::option::Option<crate::types::VoiceRecordingConfiguration>,
 }
 impl StartContactRecordingInput {
     /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
-    pub fn instance_id(&self) -> std::option::Option<& str> {
+    pub fn instance_id(&self) -> std::option::Option<&str> {
         self.instance_id.as_deref()
     }
     /// <p>The identifier of the contact.</p>
-    pub fn contact_id(&self) -> std::option::Option<& str> {
+    pub fn contact_id(&self) -> std::option::Option<&str> {
         self.contact_id.as_deref()
     }
     /// <p>The identifier of the contact. This is the identifier of the contact associated with the first interaction with the contact center.</p>
-    pub fn initial_contact_id(&self) -> std::option::Option<& str> {
+    pub fn initial_contact_id(&self) -> std::option::Option<&str> {
         self.initial_contact_id.as_deref()
     }
     /// <p>The person being recorded.</p>
-    pub fn voice_recording_configuration(&self) -> std::option::Option<& crate::types::VoiceRecordingConfiguration> {
+    pub fn voice_recording_configuration(
+        &self,
+    ) -> std::option::Option<&crate::types::VoiceRecordingConfiguration> {
         self.voice_recording_configuration.as_ref()
     }
 }
 impl StartContactRecordingInput {
     /// Creates a new builder-style object to manufacture [`StartContactRecordingInput`](crate::operation::start_contact_recording::StartContactRecordingInput).
-    pub fn builder() -> crate::operation::start_contact_recording::builders::StartContactRecordingInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::start_contact_recording::builders::StartContactRecordingInputBuilder
+    {
         crate::operation::start_contact_recording::builders::StartContactRecordingInputBuilder::default()
     }
 }
@@ -48,7 +53,8 @@ pub struct StartContactRecordingInputBuilder {
     pub(crate) instance_id: std::option::Option<std::string::String>,
     pub(crate) contact_id: std::option::Option<std::string::String>,
     pub(crate) initial_contact_id: std::option::Option<std::string::String>,
-    pub(crate) voice_recording_configuration: std::option::Option<crate::types::VoiceRecordingConfiguration>,
+    pub(crate) voice_recording_configuration:
+        std::option::Option<crate::types::VoiceRecordingConfiguration>,
 }
 impl StartContactRecordingInputBuilder {
     /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
@@ -58,7 +64,8 @@ impl StartContactRecordingInputBuilder {
     }
     /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
     pub fn set_instance_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.instance_id = input; self
+        self.instance_id = input;
+        self
     }
     /// <p>The identifier of the contact.</p>
     pub fn contact_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -67,7 +74,8 @@ impl StartContactRecordingInputBuilder {
     }
     /// <p>The identifier of the contact.</p>
     pub fn set_contact_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.contact_id = input; self
+        self.contact_id = input;
+        self
     }
     /// <p>The identifier of the contact. This is the identifier of the contact associated with the first interaction with the contact center.</p>
     pub fn initial_contact_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -75,32 +83,43 @@ impl StartContactRecordingInputBuilder {
         self
     }
     /// <p>The identifier of the contact. This is the identifier of the contact associated with the first interaction with the contact center.</p>
-    pub fn set_initial_contact_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.initial_contact_id = input; self
+    pub fn set_initial_contact_id(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.initial_contact_id = input;
+        self
     }
     /// <p>The person being recorded.</p>
-    pub fn voice_recording_configuration(mut self, input: crate::types::VoiceRecordingConfiguration) -> Self {
+    pub fn voice_recording_configuration(
+        mut self,
+        input: crate::types::VoiceRecordingConfiguration,
+    ) -> Self {
         self.voice_recording_configuration = Some(input);
         self
     }
     /// <p>The person being recorded.</p>
-    pub fn set_voice_recording_configuration(mut self, input: std::option::Option<crate::types::VoiceRecordingConfiguration>) -> Self {
-        self.voice_recording_configuration = input; self
+    pub fn set_voice_recording_configuration(
+        mut self,
+        input: std::option::Option<crate::types::VoiceRecordingConfiguration>,
+    ) -> Self {
+        self.voice_recording_configuration = input;
+        self
     }
     /// Consumes the builder and constructs a [`StartContactRecordingInput`](crate::operation::start_contact_recording::StartContactRecordingInput).
-    pub fn build(self) -> Result<crate::operation::start_contact_recording::StartContactRecordingInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::start_contact_recording::StartContactRecordingInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::start_contact_recording::StartContactRecordingInput {
-                instance_id: self.instance_id
-                ,
-                contact_id: self.contact_id
-                ,
-                initial_contact_id: self.initial_contact_id
-                ,
-                voice_recording_configuration: self.voice_recording_configuration
-                ,
-            }
+                instance_id: self.instance_id,
+                contact_id: self.contact_id,
+                initial_contact_id: self.initial_contact_id,
+                voice_recording_configuration: self.voice_recording_configuration,
+            },
         )
     }
 }
-

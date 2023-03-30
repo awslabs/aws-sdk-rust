@@ -3,7 +3,7 @@
 /// <p>Defines a resource mapping.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ResourceMapping  {
+pub struct ResourceMapping {
     /// <p>The name of the resource this resource is mapped to.</p>
     #[doc(hidden)]
     pub resource_name: std::option::Option<std::string::String>,
@@ -16,32 +16,32 @@ pub struct ResourceMapping  {
     /// <p>The name of the resource group this resource is mapped to.</p>
     #[doc(hidden)]
     pub resource_group_name: std::option::Option<std::string::String>,
-    /// <p>Specifies the type of resource mapping.</p> 
-    /// <dl> 
+    /// <p>Specifies the type of resource mapping.</p>
+    /// <dl>
     /// <dt>
     /// AppRegistryApp
-    /// </dt> 
-    /// <dd> 
-    /// <p>The resource is mapped to another application. The name of the application is contained in the <code>appRegistryAppName</code> property.</p> 
-    /// </dd> 
+    /// </dt>
+    /// <dd>
+    /// <p>The resource is mapped to another application. The name of the application is contained in the <code>appRegistryAppName</code> property.</p>
+    /// </dd>
     /// <dt>
     /// CfnStack
-    /// </dt> 
-    /// <dd> 
-    /// <p>The resource is mapped to a CloudFormation stack. The name of the CloudFormation stack is contained in the <code>logicalStackName</code> property.</p> 
-    /// </dd> 
+    /// </dt>
+    /// <dd>
+    /// <p>The resource is mapped to a CloudFormation stack. The name of the CloudFormation stack is contained in the <code>logicalStackName</code> property.</p>
+    /// </dd>
     /// <dt>
     /// Resource
-    /// </dt> 
-    /// <dd> 
-    /// <p>The resource is mapped to another resource. The name of the resource is contained in the <code>resourceName</code> property.</p> 
-    /// </dd> 
+    /// </dt>
+    /// <dd>
+    /// <p>The resource is mapped to another resource. The name of the resource is contained in the <code>resourceName</code> property.</p>
+    /// </dd>
     /// <dt>
     /// ResourceGroup
-    /// </dt> 
-    /// <dd> 
-    /// <p>The resource is mapped to a resource group. The name of the resource group is contained in the <code>resourceGroupName</code> property.</p> 
-    /// </dd> 
+    /// </dt>
+    /// <dd>
+    /// <p>The resource is mapped to a resource group. The name of the resource group is contained in the <code>resourceGroupName</code> property.</p>
+    /// </dd>
     /// </dl>
     #[doc(hidden)]
     pub mapping_type: std::option::Option<crate::types::ResourceMappingType>,
@@ -54,57 +54,57 @@ pub struct ResourceMapping  {
 }
 impl ResourceMapping {
     /// <p>The name of the resource this resource is mapped to.</p>
-    pub fn resource_name(&self) -> std::option::Option<& str> {
+    pub fn resource_name(&self) -> std::option::Option<&str> {
         self.resource_name.as_deref()
     }
     /// <p>The name of the CloudFormation stack this resource is mapped to.</p>
-    pub fn logical_stack_name(&self) -> std::option::Option<& str> {
+    pub fn logical_stack_name(&self) -> std::option::Option<&str> {
         self.logical_stack_name.as_deref()
     }
     /// <p>The name of the application this resource is mapped to.</p>
-    pub fn app_registry_app_name(&self) -> std::option::Option<& str> {
+    pub fn app_registry_app_name(&self) -> std::option::Option<&str> {
         self.app_registry_app_name.as_deref()
     }
     /// <p>The name of the resource group this resource is mapped to.</p>
-    pub fn resource_group_name(&self) -> std::option::Option<& str> {
+    pub fn resource_group_name(&self) -> std::option::Option<&str> {
         self.resource_group_name.as_deref()
     }
-    /// <p>Specifies the type of resource mapping.</p> 
-    /// <dl> 
+    /// <p>Specifies the type of resource mapping.</p>
+    /// <dl>
     /// <dt>
     /// AppRegistryApp
-    /// </dt> 
-    /// <dd> 
-    /// <p>The resource is mapped to another application. The name of the application is contained in the <code>appRegistryAppName</code> property.</p> 
-    /// </dd> 
+    /// </dt>
+    /// <dd>
+    /// <p>The resource is mapped to another application. The name of the application is contained in the <code>appRegistryAppName</code> property.</p>
+    /// </dd>
     /// <dt>
     /// CfnStack
-    /// </dt> 
-    /// <dd> 
-    /// <p>The resource is mapped to a CloudFormation stack. The name of the CloudFormation stack is contained in the <code>logicalStackName</code> property.</p> 
-    /// </dd> 
+    /// </dt>
+    /// <dd>
+    /// <p>The resource is mapped to a CloudFormation stack. The name of the CloudFormation stack is contained in the <code>logicalStackName</code> property.</p>
+    /// </dd>
     /// <dt>
     /// Resource
-    /// </dt> 
-    /// <dd> 
-    /// <p>The resource is mapped to another resource. The name of the resource is contained in the <code>resourceName</code> property.</p> 
-    /// </dd> 
+    /// </dt>
+    /// <dd>
+    /// <p>The resource is mapped to another resource. The name of the resource is contained in the <code>resourceName</code> property.</p>
+    /// </dd>
     /// <dt>
     /// ResourceGroup
-    /// </dt> 
-    /// <dd> 
-    /// <p>The resource is mapped to a resource group. The name of the resource group is contained in the <code>resourceGroupName</code> property.</p> 
-    /// </dd> 
+    /// </dt>
+    /// <dd>
+    /// <p>The resource is mapped to a resource group. The name of the resource group is contained in the <code>resourceGroupName</code> property.</p>
+    /// </dd>
     /// </dl>
-    pub fn mapping_type(&self) -> std::option::Option<& crate::types::ResourceMappingType> {
+    pub fn mapping_type(&self) -> std::option::Option<&crate::types::ResourceMappingType> {
         self.mapping_type.as_ref()
     }
     /// <p>The identifier of this resource.</p>
-    pub fn physical_resource_id(&self) -> std::option::Option<& crate::types::PhysicalResourceId> {
+    pub fn physical_resource_id(&self) -> std::option::Option<&crate::types::PhysicalResourceId> {
         self.physical_resource_id.as_ref()
     }
     /// <p> The short name of the Terraform source. </p>
-    pub fn terraform_source_name(&self) -> std::option::Option<& str> {
+    pub fn terraform_source_name(&self) -> std::option::Option<&str> {
         self.terraform_source_name.as_deref()
     }
 }
@@ -135,7 +135,8 @@ impl ResourceMappingBuilder {
     }
     /// <p>The name of the resource this resource is mapped to.</p>
     pub fn set_resource_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.resource_name = input; self
+        self.resource_name = input;
+        self
     }
     /// <p>The name of the CloudFormation stack this resource is mapped to.</p>
     pub fn logical_stack_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -143,8 +144,12 @@ impl ResourceMappingBuilder {
         self
     }
     /// <p>The name of the CloudFormation stack this resource is mapped to.</p>
-    pub fn set_logical_stack_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.logical_stack_name = input; self
+    pub fn set_logical_stack_name(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.logical_stack_name = input;
+        self
     }
     /// <p>The name of the application this resource is mapped to.</p>
     pub fn app_registry_app_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -152,8 +157,12 @@ impl ResourceMappingBuilder {
         self
     }
     /// <p>The name of the application this resource is mapped to.</p>
-    pub fn set_app_registry_app_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.app_registry_app_name = input; self
+    pub fn set_app_registry_app_name(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.app_registry_app_name = input;
+        self
     }
     /// <p>The name of the resource group this resource is mapped to.</p>
     pub fn resource_group_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -161,69 +170,77 @@ impl ResourceMappingBuilder {
         self
     }
     /// <p>The name of the resource group this resource is mapped to.</p>
-    pub fn set_resource_group_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.resource_group_name = input; self
+    pub fn set_resource_group_name(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.resource_group_name = input;
+        self
     }
-    /// <p>Specifies the type of resource mapping.</p> 
-    /// <dl> 
+    /// <p>Specifies the type of resource mapping.</p>
+    /// <dl>
     /// <dt>
     /// AppRegistryApp
-    /// </dt> 
-    /// <dd> 
-    /// <p>The resource is mapped to another application. The name of the application is contained in the <code>appRegistryAppName</code> property.</p> 
-    /// </dd> 
+    /// </dt>
+    /// <dd>
+    /// <p>The resource is mapped to another application. The name of the application is contained in the <code>appRegistryAppName</code> property.</p>
+    /// </dd>
     /// <dt>
     /// CfnStack
-    /// </dt> 
-    /// <dd> 
-    /// <p>The resource is mapped to a CloudFormation stack. The name of the CloudFormation stack is contained in the <code>logicalStackName</code> property.</p> 
-    /// </dd> 
+    /// </dt>
+    /// <dd>
+    /// <p>The resource is mapped to a CloudFormation stack. The name of the CloudFormation stack is contained in the <code>logicalStackName</code> property.</p>
+    /// </dd>
     /// <dt>
     /// Resource
-    /// </dt> 
-    /// <dd> 
-    /// <p>The resource is mapped to another resource. The name of the resource is contained in the <code>resourceName</code> property.</p> 
-    /// </dd> 
+    /// </dt>
+    /// <dd>
+    /// <p>The resource is mapped to another resource. The name of the resource is contained in the <code>resourceName</code> property.</p>
+    /// </dd>
     /// <dt>
     /// ResourceGroup
-    /// </dt> 
-    /// <dd> 
-    /// <p>The resource is mapped to a resource group. The name of the resource group is contained in the <code>resourceGroupName</code> property.</p> 
-    /// </dd> 
+    /// </dt>
+    /// <dd>
+    /// <p>The resource is mapped to a resource group. The name of the resource group is contained in the <code>resourceGroupName</code> property.</p>
+    /// </dd>
     /// </dl>
     pub fn mapping_type(mut self, input: crate::types::ResourceMappingType) -> Self {
         self.mapping_type = Some(input);
         self
     }
-    /// <p>Specifies the type of resource mapping.</p> 
-    /// <dl> 
+    /// <p>Specifies the type of resource mapping.</p>
+    /// <dl>
     /// <dt>
     /// AppRegistryApp
-    /// </dt> 
-    /// <dd> 
-    /// <p>The resource is mapped to another application. The name of the application is contained in the <code>appRegistryAppName</code> property.</p> 
-    /// </dd> 
+    /// </dt>
+    /// <dd>
+    /// <p>The resource is mapped to another application. The name of the application is contained in the <code>appRegistryAppName</code> property.</p>
+    /// </dd>
     /// <dt>
     /// CfnStack
-    /// </dt> 
-    /// <dd> 
-    /// <p>The resource is mapped to a CloudFormation stack. The name of the CloudFormation stack is contained in the <code>logicalStackName</code> property.</p> 
-    /// </dd> 
+    /// </dt>
+    /// <dd>
+    /// <p>The resource is mapped to a CloudFormation stack. The name of the CloudFormation stack is contained in the <code>logicalStackName</code> property.</p>
+    /// </dd>
     /// <dt>
     /// Resource
-    /// </dt> 
-    /// <dd> 
-    /// <p>The resource is mapped to another resource. The name of the resource is contained in the <code>resourceName</code> property.</p> 
-    /// </dd> 
+    /// </dt>
+    /// <dd>
+    /// <p>The resource is mapped to another resource. The name of the resource is contained in the <code>resourceName</code> property.</p>
+    /// </dd>
     /// <dt>
     /// ResourceGroup
-    /// </dt> 
-    /// <dd> 
-    /// <p>The resource is mapped to a resource group. The name of the resource group is contained in the <code>resourceGroupName</code> property.</p> 
-    /// </dd> 
+    /// </dt>
+    /// <dd>
+    /// <p>The resource is mapped to a resource group. The name of the resource group is contained in the <code>resourceGroupName</code> property.</p>
+    /// </dd>
     /// </dl>
-    pub fn set_mapping_type(mut self, input: std::option::Option<crate::types::ResourceMappingType>) -> Self {
-        self.mapping_type = input; self
+    pub fn set_mapping_type(
+        mut self,
+        input: std::option::Option<crate::types::ResourceMappingType>,
+    ) -> Self {
+        self.mapping_type = input;
+        self
     }
     /// <p>The identifier of this resource.</p>
     pub fn physical_resource_id(mut self, input: crate::types::PhysicalResourceId) -> Self {
@@ -231,8 +248,12 @@ impl ResourceMappingBuilder {
         self
     }
     /// <p>The identifier of this resource.</p>
-    pub fn set_physical_resource_id(mut self, input: std::option::Option<crate::types::PhysicalResourceId>) -> Self {
-        self.physical_resource_id = input; self
+    pub fn set_physical_resource_id(
+        mut self,
+        input: std::option::Option<crate::types::PhysicalResourceId>,
+    ) -> Self {
+        self.physical_resource_id = input;
+        self
     }
     /// <p> The short name of the Terraform source. </p>
     pub fn terraform_source_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -240,27 +261,23 @@ impl ResourceMappingBuilder {
         self
     }
     /// <p> The short name of the Terraform source. </p>
-    pub fn set_terraform_source_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.terraform_source_name = input; self
+    pub fn set_terraform_source_name(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.terraform_source_name = input;
+        self
     }
     /// Consumes the builder and constructs a [`ResourceMapping`](crate::types::ResourceMapping).
     pub fn build(self) -> crate::types::ResourceMapping {
         crate::types::ResourceMapping {
-            resource_name: self.resource_name
-            ,
-            logical_stack_name: self.logical_stack_name
-            ,
-            app_registry_app_name: self.app_registry_app_name
-            ,
-            resource_group_name: self.resource_group_name
-            ,
-            mapping_type: self.mapping_type
-            ,
-            physical_resource_id: self.physical_resource_id
-            ,
-            terraform_source_name: self.terraform_source_name
-            ,
+            resource_name: self.resource_name,
+            logical_stack_name: self.logical_stack_name,
+            app_registry_app_name: self.app_registry_app_name,
+            resource_group_name: self.resource_group_name,
+            mapping_type: self.mapping_type,
+            physical_resource_id: self.physical_resource_id,
+            terraform_source_name: self.terraform_source_name,
         }
     }
 }
-

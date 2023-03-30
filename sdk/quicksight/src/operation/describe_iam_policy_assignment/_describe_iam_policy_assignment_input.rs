@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeIamPolicyAssignmentInput  {
+pub struct DescribeIamPolicyAssignmentInput {
     /// <p>The ID of the Amazon Web Services account that contains the assignment that you want to describe.</p>
     #[doc(hidden)]
     pub aws_account_id: std::option::Option<std::string::String>,
@@ -15,21 +15,21 @@ pub struct DescribeIamPolicyAssignmentInput  {
 }
 impl DescribeIamPolicyAssignmentInput {
     /// <p>The ID of the Amazon Web Services account that contains the assignment that you want to describe.</p>
-    pub fn aws_account_id(&self) -> std::option::Option<& str> {
+    pub fn aws_account_id(&self) -> std::option::Option<&str> {
         self.aws_account_id.as_deref()
     }
     /// <p>The name of the assignment, also called a rule.</p>
-    pub fn assignment_name(&self) -> std::option::Option<& str> {
+    pub fn assignment_name(&self) -> std::option::Option<&str> {
         self.assignment_name.as_deref()
     }
     /// <p>The namespace that contains the assignment.</p>
-    pub fn namespace(&self) -> std::option::Option<& str> {
+    pub fn namespace(&self) -> std::option::Option<&str> {
         self.namespace.as_deref()
     }
 }
 impl DescribeIamPolicyAssignmentInput {
     /// Creates a new builder-style object to manufacture [`DescribeIamPolicyAssignmentInput`](crate::operation::describe_iam_policy_assignment::DescribeIamPolicyAssignmentInput).
-    pub fn builder() -> crate::operation::describe_iam_policy_assignment::builders::DescribeIamPolicyAssignmentInputBuilder {
+    pub fn builder() -> crate::operation::describe_iam_policy_assignment::builders::DescribeIamPolicyAssignmentInputBuilder{
         crate::operation::describe_iam_policy_assignment::builders::DescribeIamPolicyAssignmentInputBuilder::default()
     }
 }
@@ -50,7 +50,8 @@ impl DescribeIamPolicyAssignmentInputBuilder {
     }
     /// <p>The ID of the Amazon Web Services account that contains the assignment that you want to describe.</p>
     pub fn set_aws_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.aws_account_id = input; self
+        self.aws_account_id = input;
+        self
     }
     /// <p>The name of the assignment, also called a rule.</p>
     pub fn assignment_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -59,7 +60,8 @@ impl DescribeIamPolicyAssignmentInputBuilder {
     }
     /// <p>The name of the assignment, also called a rule.</p>
     pub fn set_assignment_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.assignment_name = input; self
+        self.assignment_name = input;
+        self
     }
     /// <p>The namespace that contains the assignment.</p>
     pub fn namespace(mut self, input: impl Into<std::string::String>) -> Self {
@@ -68,20 +70,22 @@ impl DescribeIamPolicyAssignmentInputBuilder {
     }
     /// <p>The namespace that contains the assignment.</p>
     pub fn set_namespace(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.namespace = input; self
+        self.namespace = input;
+        self
     }
     /// Consumes the builder and constructs a [`DescribeIamPolicyAssignmentInput`](crate::operation::describe_iam_policy_assignment::DescribeIamPolicyAssignmentInput).
-    pub fn build(self) -> Result<crate::operation::describe_iam_policy_assignment::DescribeIamPolicyAssignmentInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::describe_iam_policy_assignment::DescribeIamPolicyAssignmentInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::describe_iam_policy_assignment::DescribeIamPolicyAssignmentInput {
-                aws_account_id: self.aws_account_id
-                ,
-                assignment_name: self.assignment_name
-                ,
-                namespace: self.namespace
-                ,
-            }
+                aws_account_id: self.aws_account_id,
+                assignment_name: self.assignment_name,
+                namespace: self.namespace,
+            },
         )
     }
 }
-

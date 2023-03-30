@@ -3,7 +3,7 @@
 /// <p>A list of node configurations.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct NodeConfigurationOption  {
+pub struct NodeConfigurationOption {
     /// <p>The node type, such as, "ds2.8xlarge".</p>
     #[doc(hidden)]
     pub node_type: std::option::Option<std::string::String>,
@@ -19,7 +19,7 @@ pub struct NodeConfigurationOption  {
 }
 impl NodeConfigurationOption {
     /// <p>The node type, such as, "ds2.8xlarge".</p>
-    pub fn node_type(&self) -> std::option::Option<& str> {
+    pub fn node_type(&self) -> std::option::Option<&str> {
         self.node_type.as_deref()
     }
     /// <p>The number of nodes.</p>
@@ -31,7 +31,7 @@ impl NodeConfigurationOption {
         self.estimated_disk_utilization_percent
     }
     /// <p>The category of the node configuration recommendation.</p>
-    pub fn mode(&self) -> std::option::Option<& crate::types::Mode> {
+    pub fn mode(&self) -> std::option::Option<&crate::types::Mode> {
         self.mode.as_ref()
     }
 }
@@ -59,7 +59,8 @@ impl NodeConfigurationOptionBuilder {
     }
     /// <p>The node type, such as, "ds2.8xlarge".</p>
     pub fn set_node_type(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.node_type = input; self
+        self.node_type = input;
+        self
     }
     /// <p>The number of nodes.</p>
     pub fn number_of_nodes(mut self, input: i32) -> Self {
@@ -68,7 +69,8 @@ impl NodeConfigurationOptionBuilder {
     }
     /// <p>The number of nodes.</p>
     pub fn set_number_of_nodes(mut self, input: std::option::Option<i32>) -> Self {
-        self.number_of_nodes = input; self
+        self.number_of_nodes = input;
+        self
     }
     /// <p>The estimated disk utilizaton percentage.</p>
     pub fn estimated_disk_utilization_percent(mut self, input: f64) -> Self {
@@ -76,8 +78,12 @@ impl NodeConfigurationOptionBuilder {
         self
     }
     /// <p>The estimated disk utilizaton percentage.</p>
-    pub fn set_estimated_disk_utilization_percent(mut self, input: std::option::Option<f64>) -> Self {
-        self.estimated_disk_utilization_percent = input; self
+    pub fn set_estimated_disk_utilization_percent(
+        mut self,
+        input: std::option::Option<f64>,
+    ) -> Self {
+        self.estimated_disk_utilization_percent = input;
+        self
     }
     /// <p>The category of the node configuration recommendation.</p>
     pub fn mode(mut self, input: crate::types::Mode) -> Self {
@@ -86,21 +92,16 @@ impl NodeConfigurationOptionBuilder {
     }
     /// <p>The category of the node configuration recommendation.</p>
     pub fn set_mode(mut self, input: std::option::Option<crate::types::Mode>) -> Self {
-        self.mode = input; self
+        self.mode = input;
+        self
     }
     /// Consumes the builder and constructs a [`NodeConfigurationOption`](crate::types::NodeConfigurationOption).
     pub fn build(self) -> crate::types::NodeConfigurationOption {
         crate::types::NodeConfigurationOption {
-            node_type: self.node_type
-            ,
-            number_of_nodes: self.number_of_nodes
-                .unwrap_or_default()
-            ,
-            estimated_disk_utilization_percent: self.estimated_disk_utilization_percent
-            ,
-            mode: self.mode
-            ,
+            node_type: self.node_type,
+            number_of_nodes: self.number_of_nodes.unwrap_or_default(),
+            estimated_disk_utilization_percent: self.estimated_disk_utilization_percent,
+            mode: self.mode,
         }
     }
 }
-

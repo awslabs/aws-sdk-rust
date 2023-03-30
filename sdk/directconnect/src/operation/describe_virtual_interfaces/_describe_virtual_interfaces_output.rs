@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeVirtualInterfacesOutput  {
+pub struct DescribeVirtualInterfacesOutput {
     /// <p>The virtual interfaces</p>
     #[doc(hidden)]
     pub virtual_interfaces: std::option::Option<std::vec::Vec<crate::types::VirtualInterface>>,
@@ -10,18 +10,18 @@ pub struct DescribeVirtualInterfacesOutput  {
 }
 impl DescribeVirtualInterfacesOutput {
     /// <p>The virtual interfaces</p>
-    pub fn virtual_interfaces(&self) -> std::option::Option<& [crate::types::VirtualInterface]> {
+    pub fn virtual_interfaces(&self) -> std::option::Option<&[crate::types::VirtualInterface]> {
         self.virtual_interfaces.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for DescribeVirtualInterfacesOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl DescribeVirtualInterfacesOutput {
     /// Creates a new builder-style object to manufacture [`DescribeVirtualInterfacesOutput`](crate::operation::describe_virtual_interfaces::DescribeVirtualInterfacesOutput).
-    pub fn builder() -> crate::operation::describe_virtual_interfaces::builders::DescribeVirtualInterfacesOutputBuilder {
+    pub fn builder() -> crate::operation::describe_virtual_interfaces::builders::DescribeVirtualInterfacesOutputBuilder{
         crate::operation::describe_virtual_interfaces::builders::DescribeVirtualInterfacesOutputBuilder::default()
     }
 }
@@ -30,7 +30,8 @@ impl DescribeVirtualInterfacesOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct DescribeVirtualInterfacesOutputBuilder {
-    pub(crate) virtual_interfaces: std::option::Option<std::vec::Vec<crate::types::VirtualInterface>>,
+    pub(crate) virtual_interfaces:
+        std::option::Option<std::vec::Vec<crate::types::VirtualInterface>>,
     _request_id: Option<String>,
 }
 impl DescribeVirtualInterfacesOutputBuilder {
@@ -41,30 +42,34 @@ impl DescribeVirtualInterfacesOutputBuilder {
     /// <p>The virtual interfaces</p>
     pub fn virtual_interfaces(mut self, input: crate::types::VirtualInterface) -> Self {
         let mut v = self.virtual_interfaces.unwrap_or_default();
-                        v.push(input);
-                        self.virtual_interfaces = Some(v);
-                        self
+        v.push(input);
+        self.virtual_interfaces = Some(v);
+        self
     }
     /// <p>The virtual interfaces</p>
-    pub fn set_virtual_interfaces(mut self, input: std::option::Option<std::vec::Vec<crate::types::VirtualInterface>>) -> Self {
-        self.virtual_interfaces = input; self
+    pub fn set_virtual_interfaces(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::VirtualInterface>>,
+    ) -> Self {
+        self.virtual_interfaces = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`DescribeVirtualInterfacesOutput`](crate::operation::describe_virtual_interfaces::DescribeVirtualInterfacesOutput).
-    pub fn build(self) -> crate::operation::describe_virtual_interfaces::DescribeVirtualInterfacesOutput {
+    pub fn build(
+        self,
+    ) -> crate::operation::describe_virtual_interfaces::DescribeVirtualInterfacesOutput {
         crate::operation::describe_virtual_interfaces::DescribeVirtualInterfacesOutput {
-            virtual_interfaces: self.virtual_interfaces
-            ,
+            virtual_interfaces: self.virtual_interfaces,
             _request_id: self._request_id,
         }
     }
 }
-

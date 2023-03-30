@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetBlueprintRunsInput  {
+pub struct GetBlueprintRunsInput {
     /// <p>The name of the blueprint.</p>
     #[doc(hidden)]
     pub blueprint_name: std::option::Option<std::string::String>,
@@ -15,11 +15,11 @@ pub struct GetBlueprintRunsInput  {
 }
 impl GetBlueprintRunsInput {
     /// <p>The name of the blueprint.</p>
-    pub fn blueprint_name(&self) -> std::option::Option<& str> {
+    pub fn blueprint_name(&self) -> std::option::Option<&str> {
         self.blueprint_name.as_deref()
     }
     /// <p>A continuation token, if this is a continuation request.</p>
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
     /// <p>The maximum size of a list to return.</p>
@@ -29,7 +29,8 @@ impl GetBlueprintRunsInput {
 }
 impl GetBlueprintRunsInput {
     /// Creates a new builder-style object to manufacture [`GetBlueprintRunsInput`](crate::operation::get_blueprint_runs::GetBlueprintRunsInput).
-    pub fn builder() -> crate::operation::get_blueprint_runs::builders::GetBlueprintRunsInputBuilder {
+    pub fn builder() -> crate::operation::get_blueprint_runs::builders::GetBlueprintRunsInputBuilder
+    {
         crate::operation::get_blueprint_runs::builders::GetBlueprintRunsInputBuilder::default()
     }
 }
@@ -50,7 +51,8 @@ impl GetBlueprintRunsInputBuilder {
     }
     /// <p>The name of the blueprint.</p>
     pub fn set_blueprint_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.blueprint_name = input; self
+        self.blueprint_name = input;
+        self
     }
     /// <p>A continuation token, if this is a continuation request.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -59,7 +61,8 @@ impl GetBlueprintRunsInputBuilder {
     }
     /// <p>A continuation token, if this is a continuation request.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input; self
+        self.next_token = input;
+        self
     }
     /// <p>The maximum size of a list to return.</p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -68,20 +71,22 @@ impl GetBlueprintRunsInputBuilder {
     }
     /// <p>The maximum size of a list to return.</p>
     pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_results = input; self
+        self.max_results = input;
+        self
     }
     /// Consumes the builder and constructs a [`GetBlueprintRunsInput`](crate::operation::get_blueprint_runs::GetBlueprintRunsInput).
-    pub fn build(self) -> Result<crate::operation::get_blueprint_runs::GetBlueprintRunsInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::get_blueprint_runs::GetBlueprintRunsInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::get_blueprint_runs::GetBlueprintRunsInput {
-                blueprint_name: self.blueprint_name
-                ,
-                next_token: self.next_token
-                ,
-                max_results: self.max_results
-                ,
-            }
+                blueprint_name: self.blueprint_name,
+                next_token: self.next_token,
+                max_results: self.max_results,
+            },
         )
     }
 }
-

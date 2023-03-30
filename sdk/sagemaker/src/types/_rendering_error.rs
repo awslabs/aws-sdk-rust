@@ -3,7 +3,7 @@
 /// <p>A description of an error that occurred while rendering the template.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct RenderingError  {
+pub struct RenderingError {
     /// <p>A unique identifier for a specific class of errors.</p>
     #[doc(hidden)]
     pub code: std::option::Option<std::string::String>,
@@ -13,11 +13,11 @@ pub struct RenderingError  {
 }
 impl RenderingError {
     /// <p>A unique identifier for a specific class of errors.</p>
-    pub fn code(&self) -> std::option::Option<& str> {
+    pub fn code(&self) -> std::option::Option<&str> {
         self.code.as_deref()
     }
     /// <p>A human-readable message describing the error.</p>
-    pub fn message(&self) -> std::option::Option<& str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -43,7 +43,8 @@ impl RenderingErrorBuilder {
     }
     /// <p>A unique identifier for a specific class of errors.</p>
     pub fn set_code(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.code = input; self
+        self.code = input;
+        self
     }
     /// <p>A human-readable message describing the error.</p>
     pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
@@ -52,16 +53,14 @@ impl RenderingErrorBuilder {
     }
     /// <p>A human-readable message describing the error.</p>
     pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.message = input; self
+        self.message = input;
+        self
     }
     /// Consumes the builder and constructs a [`RenderingError`](crate::types::RenderingError).
     pub fn build(self) -> crate::types::RenderingError {
         crate::types::RenderingError {
-            code: self.code
-            ,
-            message: self.message
-            ,
+            code: self.code,
+            message: self.message,
         }
     }
 }
-

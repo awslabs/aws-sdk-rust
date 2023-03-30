@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteSecurityProfileInput  {
+pub struct DeleteSecurityProfileInput {
     /// <p>The name of the security profile to be deleted.</p>
     #[doc(hidden)]
     pub security_profile_name: std::option::Option<std::string::String>,
@@ -12,7 +12,7 @@ pub struct DeleteSecurityProfileInput  {
 }
 impl DeleteSecurityProfileInput {
     /// <p>The name of the security profile to be deleted.</p>
-    pub fn security_profile_name(&self) -> std::option::Option<& str> {
+    pub fn security_profile_name(&self) -> std::option::Option<&str> {
         self.security_profile_name.as_deref()
     }
     /// <p>The expected version of the security profile. A new version is generated whenever the security profile is updated. If you specify a value that is different from the actual version, a <code>VersionConflictException</code> is thrown.</p>
@@ -22,7 +22,9 @@ impl DeleteSecurityProfileInput {
 }
 impl DeleteSecurityProfileInput {
     /// Creates a new builder-style object to manufacture [`DeleteSecurityProfileInput`](crate::operation::delete_security_profile::DeleteSecurityProfileInput).
-    pub fn builder() -> crate::operation::delete_security_profile::builders::DeleteSecurityProfileInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::delete_security_profile::builders::DeleteSecurityProfileInputBuilder
+    {
         crate::operation::delete_security_profile::builders::DeleteSecurityProfileInputBuilder::default()
     }
 }
@@ -41,8 +43,12 @@ impl DeleteSecurityProfileInputBuilder {
         self
     }
     /// <p>The name of the security profile to be deleted.</p>
-    pub fn set_security_profile_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.security_profile_name = input; self
+    pub fn set_security_profile_name(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.security_profile_name = input;
+        self
     }
     /// <p>The expected version of the security profile. A new version is generated whenever the security profile is updated. If you specify a value that is different from the actual version, a <code>VersionConflictException</code> is thrown.</p>
     pub fn expected_version(mut self, input: i64) -> Self {
@@ -51,18 +57,21 @@ impl DeleteSecurityProfileInputBuilder {
     }
     /// <p>The expected version of the security profile. A new version is generated whenever the security profile is updated. If you specify a value that is different from the actual version, a <code>VersionConflictException</code> is thrown.</p>
     pub fn set_expected_version(mut self, input: std::option::Option<i64>) -> Self {
-        self.expected_version = input; self
+        self.expected_version = input;
+        self
     }
     /// Consumes the builder and constructs a [`DeleteSecurityProfileInput`](crate::operation::delete_security_profile::DeleteSecurityProfileInput).
-    pub fn build(self) -> Result<crate::operation::delete_security_profile::DeleteSecurityProfileInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::delete_security_profile::DeleteSecurityProfileInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::delete_security_profile::DeleteSecurityProfileInput {
-                security_profile_name: self.security_profile_name
-                ,
-                expected_version: self.expected_version
-                ,
-            }
+                security_profile_name: self.security_profile_name,
+                expected_version: self.expected_version,
+            },
         )
     }
 }
-

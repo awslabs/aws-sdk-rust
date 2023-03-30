@@ -3,14 +3,14 @@
 /// <p>The inventory item result attribute.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ResultAttribute  {
+pub struct ResultAttribute {
     /// <p>Name of the inventory item type. Valid value: <code>AWS:InstanceInformation</code>. Default Value: <code>AWS:InstanceInformation</code>.</p>
     #[doc(hidden)]
     pub type_name: std::option::Option<std::string::String>,
 }
 impl ResultAttribute {
     /// <p>Name of the inventory item type. Valid value: <code>AWS:InstanceInformation</code>. Default Value: <code>AWS:InstanceInformation</code>.</p>
-    pub fn type_name(&self) -> std::option::Option<& str> {
+    pub fn type_name(&self) -> std::option::Option<&str> {
         self.type_name.as_deref()
     }
 }
@@ -35,14 +35,13 @@ impl ResultAttributeBuilder {
     }
     /// <p>Name of the inventory item type. Valid value: <code>AWS:InstanceInformation</code>. Default Value: <code>AWS:InstanceInformation</code>.</p>
     pub fn set_type_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.type_name = input; self
+        self.type_name = input;
+        self
     }
     /// Consumes the builder and constructs a [`ResultAttribute`](crate::types::ResultAttribute).
     pub fn build(self) -> crate::types::ResultAttribute {
         crate::types::ResultAttribute {
-            type_name: self.type_name
-            ,
+            type_name: self.type_name,
         }
     }
 }
-

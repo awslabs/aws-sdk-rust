@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-/// 
+///
 /// Here is an example of how you can make a match expression forward-compatible:
-/// 
+///
 /// ```text
 /// # let windowsdeploymenttype = unimplemented!();
 /// match windowsdeploymenttype {
@@ -31,14 +31,22 @@
 /// Specifically, when `windowsdeploymenttype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `WindowsDeploymentType::NewFeature` also yielding `"NewFeature"`.
-/// 
+///
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
 pub enum WindowsDeploymentType {
     #[allow(missing_docs)] // documentation missing in model
     MultiAz1,
@@ -47,43 +55,44 @@ pub enum WindowsDeploymentType {
     #[allow(missing_docs)] // documentation missing in model
     SingleAz2,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::primitives::UnknownVariantValue)
+    Unknown(crate::primitives::UnknownVariantValue),
 }
 impl std::convert::From<&str> for WindowsDeploymentType {
-                fn from(s: &str) -> Self {
-                    match s {
-                        "MULTI_AZ_1" => WindowsDeploymentType::MultiAz1,
-"SINGLE_AZ_1" => WindowsDeploymentType::SingleAz1,
-"SINGLE_AZ_2" => WindowsDeploymentType::SingleAz2,
-other => WindowsDeploymentType::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
-                    }
-                }
-            }
-impl std::str::FromStr for WindowsDeploymentType {
-                type Err = std::convert::Infallible;
-
-                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-                    Ok(WindowsDeploymentType::from(s))
-                }
-            }
-impl WindowsDeploymentType {
-                /// Returns the `&str` value of the enum member.
-                pub fn as_str(&self) -> &str {
-                    match self {
-    WindowsDeploymentType::MultiAz1 => "MULTI_AZ_1",
-    WindowsDeploymentType::SingleAz1 => "SINGLE_AZ_1",
-    WindowsDeploymentType::SingleAz2 => "SINGLE_AZ_2",
-    WindowsDeploymentType::Unknown(value) => value.as_str()
+    fn from(s: &str) -> Self {
+        match s {
+            "MULTI_AZ_1" => WindowsDeploymentType::MultiAz1,
+            "SINGLE_AZ_1" => WindowsDeploymentType::SingleAz1,
+            "SINGLE_AZ_2" => WindowsDeploymentType::SingleAz2,
+            other => WindowsDeploymentType::Unknown(crate::primitives::UnknownVariantValue(
+                other.to_owned(),
+            )),
+        }
+    }
 }
-                }
-                /// Returns all the `&str` representations of the enum members.
-                pub const fn values() -> &'static [&'static str] {
-                    &["MULTI_AZ_1", "SINGLE_AZ_1", "SINGLE_AZ_2"]
-                }
-            }
-impl AsRef<str> for WindowsDeploymentType {
-                fn as_ref(&self) -> &str {
-                    self.as_str()
-                }
-            }
+impl std::str::FromStr for WindowsDeploymentType {
+    type Err = std::convert::Infallible;
 
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(WindowsDeploymentType::from(s))
+    }
+}
+impl WindowsDeploymentType {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            WindowsDeploymentType::MultiAz1 => "MULTI_AZ_1",
+            WindowsDeploymentType::SingleAz1 => "SINGLE_AZ_1",
+            WindowsDeploymentType::SingleAz2 => "SINGLE_AZ_2",
+            WindowsDeploymentType::Unknown(value) => value.as_str(),
+        }
+    }
+    /// Returns all the `&str` representations of the enum members.
+    pub const fn values() -> &'static [&'static str] {
+        &["MULTI_AZ_1", "SINGLE_AZ_1", "SINGLE_AZ_2"]
+    }
+}
+impl AsRef<str> for WindowsDeploymentType {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}

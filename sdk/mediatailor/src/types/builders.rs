@@ -76,4 +76,3 @@ pub use crate::types::_schedule_configuration::ScheduleConfigurationBuilder;
 pub use crate::types::_transition::TransitionBuilder;
 
 pub use crate::types::_alert::AlertBuilder;
-

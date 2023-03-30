@@ -3,7 +3,7 @@
 /// <p>Information about the VPC configuration used by the cluster control plane.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AwsEksClusterResourcesVpcConfigDetails  {
+pub struct AwsEksClusterResourcesVpcConfigDetails {
     /// <p>The security groups that are associated with the cross-account elastic network interfaces that are used to allow communication between your nodes and the Amazon EKS control plane.</p>
     #[doc(hidden)]
     pub security_group_ids: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -13,11 +13,11 @@ pub struct AwsEksClusterResourcesVpcConfigDetails  {
 }
 impl AwsEksClusterResourcesVpcConfigDetails {
     /// <p>The security groups that are associated with the cross-account elastic network interfaces that are used to allow communication between your nodes and the Amazon EKS control plane.</p>
-    pub fn security_group_ids(&self) -> std::option::Option<& [std::string::String]> {
+    pub fn security_group_ids(&self) -> std::option::Option<&[std::string::String]> {
         self.security_group_ids.as_deref()
     }
     /// <p>The subnets that are associated with the cluster.</p>
-    pub fn subnet_ids(&self) -> std::option::Option<& [std::string::String]> {
+    pub fn subnet_ids(&self) -> std::option::Option<&[std::string::String]> {
         self.subnet_ids.as_deref()
     }
 }
@@ -43,13 +43,17 @@ impl AwsEksClusterResourcesVpcConfigDetailsBuilder {
     /// <p>The security groups that are associated with the cross-account elastic network interfaces that are used to allow communication between your nodes and the Amazon EKS control plane.</p>
     pub fn security_group_ids(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.security_group_ids.unwrap_or_default();
-                        v.push(input.into());
-                        self.security_group_ids = Some(v);
-                        self
+        v.push(input.into());
+        self.security_group_ids = Some(v);
+        self
     }
     /// <p>The security groups that are associated with the cross-account elastic network interfaces that are used to allow communication between your nodes and the Amazon EKS control plane.</p>
-    pub fn set_security_group_ids(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-        self.security_group_ids = input; self
+    pub fn set_security_group_ids(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
+        self.security_group_ids = input;
+        self
     }
     /// Appends an item to `subnet_ids`.
     ///
@@ -58,22 +62,23 @@ impl AwsEksClusterResourcesVpcConfigDetailsBuilder {
     /// <p>The subnets that are associated with the cluster.</p>
     pub fn subnet_ids(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.subnet_ids.unwrap_or_default();
-                        v.push(input.into());
-                        self.subnet_ids = Some(v);
-                        self
+        v.push(input.into());
+        self.subnet_ids = Some(v);
+        self
     }
     /// <p>The subnets that are associated with the cluster.</p>
-    pub fn set_subnet_ids(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-        self.subnet_ids = input; self
+    pub fn set_subnet_ids(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
+        self.subnet_ids = input;
+        self
     }
     /// Consumes the builder and constructs a [`AwsEksClusterResourcesVpcConfigDetails`](crate::types::AwsEksClusterResourcesVpcConfigDetails).
     pub fn build(self) -> crate::types::AwsEksClusterResourcesVpcConfigDetails {
         crate::types::AwsEksClusterResourcesVpcConfigDetails {
-            security_group_ids: self.security_group_ids
-            ,
-            subnet_ids: self.subnet_ids
-            ,
+            security_group_ids: self.security_group_ids,
+            subnet_ids: self.subnet_ids,
         }
     }
 }
-

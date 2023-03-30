@@ -3,7 +3,7 @@
 /// <p>Represents a request to reorder the receipt rules within a receipt rule set. You use receipt rule sets to receive email with Amazon SES. For more information, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-concepts.html">Amazon SES Developer Guide</a>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ReorderReceiptRuleSetInput  {
+pub struct ReorderReceiptRuleSetInput {
     /// <p>The name of the receipt rule set to reorder.</p>
     #[doc(hidden)]
     pub rule_set_name: std::option::Option<std::string::String>,
@@ -13,17 +13,19 @@ pub struct ReorderReceiptRuleSetInput  {
 }
 impl ReorderReceiptRuleSetInput {
     /// <p>The name of the receipt rule set to reorder.</p>
-    pub fn rule_set_name(&self) -> std::option::Option<& str> {
+    pub fn rule_set_name(&self) -> std::option::Option<&str> {
         self.rule_set_name.as_deref()
     }
     /// <p>A list of the specified receipt rule set's receipt rules in the order that you want to put them.</p>
-    pub fn rule_names(&self) -> std::option::Option<& [std::string::String]> {
+    pub fn rule_names(&self) -> std::option::Option<&[std::string::String]> {
         self.rule_names.as_deref()
     }
 }
 impl ReorderReceiptRuleSetInput {
     /// Creates a new builder-style object to manufacture [`ReorderReceiptRuleSetInput`](crate::operation::reorder_receipt_rule_set::ReorderReceiptRuleSetInput).
-    pub fn builder() -> crate::operation::reorder_receipt_rule_set::builders::ReorderReceiptRuleSetInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::reorder_receipt_rule_set::builders::ReorderReceiptRuleSetInputBuilder
+    {
         crate::operation::reorder_receipt_rule_set::builders::ReorderReceiptRuleSetInputBuilder::default()
     }
 }
@@ -43,7 +45,8 @@ impl ReorderReceiptRuleSetInputBuilder {
     }
     /// <p>The name of the receipt rule set to reorder.</p>
     pub fn set_rule_set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.rule_set_name = input; self
+        self.rule_set_name = input;
+        self
     }
     /// Appends an item to `rule_names`.
     ///
@@ -52,24 +55,30 @@ impl ReorderReceiptRuleSetInputBuilder {
     /// <p>A list of the specified receipt rule set's receipt rules in the order that you want to put them.</p>
     pub fn rule_names(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.rule_names.unwrap_or_default();
-                        v.push(input.into());
-                        self.rule_names = Some(v);
-                        self
+        v.push(input.into());
+        self.rule_names = Some(v);
+        self
     }
     /// <p>A list of the specified receipt rule set's receipt rules in the order that you want to put them.</p>
-    pub fn set_rule_names(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-        self.rule_names = input; self
+    pub fn set_rule_names(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
+        self.rule_names = input;
+        self
     }
     /// Consumes the builder and constructs a [`ReorderReceiptRuleSetInput`](crate::operation::reorder_receipt_rule_set::ReorderReceiptRuleSetInput).
-    pub fn build(self) -> Result<crate::operation::reorder_receipt_rule_set::ReorderReceiptRuleSetInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::reorder_receipt_rule_set::ReorderReceiptRuleSetInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::reorder_receipt_rule_set::ReorderReceiptRuleSetInput {
-                rule_set_name: self.rule_set_name
-                ,
-                rule_names: self.rule_names
-                ,
-            }
+                rule_set_name: self.rule_set_name,
+                rule_names: self.rule_names,
+            },
         )
     }
 }
-

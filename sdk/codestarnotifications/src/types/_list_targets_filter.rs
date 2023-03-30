@@ -3,7 +3,7 @@
 /// <p>Information about a filter to apply to the list of returned targets. You can filter by target type, address, or status. For example, to filter results to notification rules that have active Chatbot topics as targets, you could specify a ListTargetsFilter Name as <code>TargetType</code> and a Value of <code>SNS</code>, and a Name of <code>TARGET_STATUS</code> and a Value of <code>ACTIVE</code>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListTargetsFilter  {
+pub struct ListTargetsFilter {
     /// <p>The name of the attribute you want to use to filter the returned targets.</p>
     #[doc(hidden)]
     pub name: std::option::Option<crate::types::ListTargetsFilterName>,
@@ -13,11 +13,11 @@ pub struct ListTargetsFilter  {
 }
 impl ListTargetsFilter {
     /// <p>The name of the attribute you want to use to filter the returned targets.</p>
-    pub fn name(&self) -> std::option::Option<& crate::types::ListTargetsFilterName> {
+    pub fn name(&self) -> std::option::Option<&crate::types::ListTargetsFilterName> {
         self.name.as_ref()
     }
     /// <p>The value of the attribute you want to use to filter the returned targets. For example, if you specify <code>SNS</code> for the Target type, you could specify an Amazon Resource Name (ARN) for a topic as the value.</p>
-    pub fn value(&self) -> std::option::Option<& str> {
+    pub fn value(&self) -> std::option::Option<&str> {
         self.value.as_deref()
     }
 }
@@ -42,8 +42,12 @@ impl ListTargetsFilterBuilder {
         self
     }
     /// <p>The name of the attribute you want to use to filter the returned targets.</p>
-    pub fn set_name(mut self, input: std::option::Option<crate::types::ListTargetsFilterName>) -> Self {
-        self.name = input; self
+    pub fn set_name(
+        mut self,
+        input: std::option::Option<crate::types::ListTargetsFilterName>,
+    ) -> Self {
+        self.name = input;
+        self
     }
     /// <p>The value of the attribute you want to use to filter the returned targets. For example, if you specify <code>SNS</code> for the Target type, you could specify an Amazon Resource Name (ARN) for a topic as the value.</p>
     pub fn value(mut self, input: impl Into<std::string::String>) -> Self {
@@ -52,16 +56,14 @@ impl ListTargetsFilterBuilder {
     }
     /// <p>The value of the attribute you want to use to filter the returned targets. For example, if you specify <code>SNS</code> for the Target type, you could specify an Amazon Resource Name (ARN) for a topic as the value.</p>
     pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.value = input; self
+        self.value = input;
+        self
     }
     /// Consumes the builder and constructs a [`ListTargetsFilter`](crate::types::ListTargetsFilter).
     pub fn build(self) -> crate::types::ListTargetsFilter {
         crate::types::ListTargetsFilter {
-            name: self.name
-            ,
-            value: self.value
-            ,
+            name: self.name,
+            value: self.value,
         }
     }
 }
-

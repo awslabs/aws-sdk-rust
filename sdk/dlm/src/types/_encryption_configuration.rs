@@ -3,7 +3,7 @@
 /// <p> <b>[Event-based policies only]</b> Specifies the encryption settings for cross-Region snapshot copies created by event-based policies.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct EncryptionConfiguration  {
+pub struct EncryptionConfiguration {
     /// <p>To encrypt a copy of an unencrypted snapshot when encryption by default is not enabled, enable encryption using this parameter. Copies of encrypted snapshots are encrypted, even if this parameter is false or when encryption by default is not enabled.</p>
     #[doc(hidden)]
     pub encrypted: std::option::Option<bool>,
@@ -17,7 +17,7 @@ impl EncryptionConfiguration {
         self.encrypted
     }
     /// <p>The Amazon Resource Name (ARN) of the KMS key to use for EBS encryption. If this parameter is not specified, the default KMS key for the account is used.</p>
-    pub fn cmk_arn(&self) -> std::option::Option<& str> {
+    pub fn cmk_arn(&self) -> std::option::Option<&str> {
         self.cmk_arn.as_deref()
     }
 }
@@ -43,7 +43,8 @@ impl EncryptionConfigurationBuilder {
     }
     /// <p>To encrypt a copy of an unencrypted snapshot when encryption by default is not enabled, enable encryption using this parameter. Copies of encrypted snapshots are encrypted, even if this parameter is false or when encryption by default is not enabled.</p>
     pub fn set_encrypted(mut self, input: std::option::Option<bool>) -> Self {
-        self.encrypted = input; self
+        self.encrypted = input;
+        self
     }
     /// <p>The Amazon Resource Name (ARN) of the KMS key to use for EBS encryption. If this parameter is not specified, the default KMS key for the account is used.</p>
     pub fn cmk_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -52,16 +53,14 @@ impl EncryptionConfigurationBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the KMS key to use for EBS encryption. If this parameter is not specified, the default KMS key for the account is used.</p>
     pub fn set_cmk_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.cmk_arn = input; self
+        self.cmk_arn = input;
+        self
     }
     /// Consumes the builder and constructs a [`EncryptionConfiguration`](crate::types::EncryptionConfiguration).
     pub fn build(self) -> crate::types::EncryptionConfiguration {
         crate::types::EncryptionConfiguration {
-            encrypted: self.encrypted
-            ,
-            cmk_arn: self.cmk_arn
-            ,
+            encrypted: self.encrypted,
+            cmk_arn: self.cmk_arn,
         }
     }
 }
-

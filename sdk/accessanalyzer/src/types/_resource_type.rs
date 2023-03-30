@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-/// 
+///
 /// Here is an example of how you can make a match expression forward-compatible:
-/// 
+///
 /// ```text
 /// # let resourcetype = unimplemented!();
 /// match resourcetype {
@@ -41,14 +41,22 @@
 /// Specifically, when `resourcetype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `ResourceType::NewFeature` also yielding `"NewFeature"`.
-/// 
+///
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
 pub enum ResourceType {
     #[allow(missing_docs)] // documentation missing in model
     AwsEc2Snapshot,
@@ -77,63 +85,78 @@ pub enum ResourceType {
     #[allow(missing_docs)] // documentation missing in model
     AwsSecretsmanagerSecret,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::primitives::UnknownVariantValue)
+    Unknown(crate::primitives::UnknownVariantValue),
 }
 impl std::convert::From<&str> for ResourceType {
-                fn from(s: &str) -> Self {
-                    match s {
-                        "AWS::EC2::Snapshot" => ResourceType::AwsEc2Snapshot,
-"AWS::ECR::Repository" => ResourceType::AwsEcrRepository,
-"AWS::EFS::FileSystem" => ResourceType::AwsEfsFilesystem,
-"AWS::IAM::Role" => ResourceType::AwsIamRole,
-"AWS::KMS::Key" => ResourceType::AwsKmsKey,
-"AWS::Lambda::Function" => ResourceType::AwsLambdaFunction,
-"AWS::Lambda::LayerVersion" => ResourceType::AwsLambdaLayerversion,
-"AWS::RDS::DBClusterSnapshot" => ResourceType::AwsRdsDbclustersnapshot,
-"AWS::RDS::DBSnapshot" => ResourceType::AwsRdsDbsnapshot,
-"AWS::S3::Bucket" => ResourceType::AwsS3Bucket,
-"AWS::SNS::Topic" => ResourceType::AwsSnsTopic,
-"AWS::SQS::Queue" => ResourceType::AwsSqsQueue,
-"AWS::SecretsManager::Secret" => ResourceType::AwsSecretsmanagerSecret,
-other => ResourceType::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
-                    }
-                }
+    fn from(s: &str) -> Self {
+        match s {
+            "AWS::EC2::Snapshot" => ResourceType::AwsEc2Snapshot,
+            "AWS::ECR::Repository" => ResourceType::AwsEcrRepository,
+            "AWS::EFS::FileSystem" => ResourceType::AwsEfsFilesystem,
+            "AWS::IAM::Role" => ResourceType::AwsIamRole,
+            "AWS::KMS::Key" => ResourceType::AwsKmsKey,
+            "AWS::Lambda::Function" => ResourceType::AwsLambdaFunction,
+            "AWS::Lambda::LayerVersion" => ResourceType::AwsLambdaLayerversion,
+            "AWS::RDS::DBClusterSnapshot" => ResourceType::AwsRdsDbclustersnapshot,
+            "AWS::RDS::DBSnapshot" => ResourceType::AwsRdsDbsnapshot,
+            "AWS::S3::Bucket" => ResourceType::AwsS3Bucket,
+            "AWS::SNS::Topic" => ResourceType::AwsSnsTopic,
+            "AWS::SQS::Queue" => ResourceType::AwsSqsQueue,
+            "AWS::SecretsManager::Secret" => ResourceType::AwsSecretsmanagerSecret,
+            other => {
+                ResourceType::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
             }
-impl std::str::FromStr for ResourceType {
-                type Err = std::convert::Infallible;
-
-                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-                    Ok(ResourceType::from(s))
-                }
-            }
-impl ResourceType {
-                /// Returns the `&str` value of the enum member.
-                pub fn as_str(&self) -> &str {
-                    match self {
-    ResourceType::AwsEc2Snapshot => "AWS::EC2::Snapshot",
-    ResourceType::AwsEcrRepository => "AWS::ECR::Repository",
-    ResourceType::AwsEfsFilesystem => "AWS::EFS::FileSystem",
-    ResourceType::AwsIamRole => "AWS::IAM::Role",
-    ResourceType::AwsKmsKey => "AWS::KMS::Key",
-    ResourceType::AwsLambdaFunction => "AWS::Lambda::Function",
-    ResourceType::AwsLambdaLayerversion => "AWS::Lambda::LayerVersion",
-    ResourceType::AwsRdsDbclustersnapshot => "AWS::RDS::DBClusterSnapshot",
-    ResourceType::AwsRdsDbsnapshot => "AWS::RDS::DBSnapshot",
-    ResourceType::AwsS3Bucket => "AWS::S3::Bucket",
-    ResourceType::AwsSnsTopic => "AWS::SNS::Topic",
-    ResourceType::AwsSqsQueue => "AWS::SQS::Queue",
-    ResourceType::AwsSecretsmanagerSecret => "AWS::SecretsManager::Secret",
-    ResourceType::Unknown(value) => value.as_str()
+        }
+    }
 }
-                }
-                /// Returns all the `&str` representations of the enum members.
-                pub const fn values() -> &'static [&'static str] {
-                    &["AWS::EC2::Snapshot", "AWS::ECR::Repository", "AWS::EFS::FileSystem", "AWS::IAM::Role", "AWS::KMS::Key", "AWS::Lambda::Function", "AWS::Lambda::LayerVersion", "AWS::RDS::DBClusterSnapshot", "AWS::RDS::DBSnapshot", "AWS::S3::Bucket", "AWS::SNS::Topic", "AWS::SQS::Queue", "AWS::SecretsManager::Secret"]
-                }
-            }
-impl AsRef<str> for ResourceType {
-                fn as_ref(&self) -> &str {
-                    self.as_str()
-                }
-            }
+impl std::str::FromStr for ResourceType {
+    type Err = std::convert::Infallible;
 
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(ResourceType::from(s))
+    }
+}
+impl ResourceType {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            ResourceType::AwsEc2Snapshot => "AWS::EC2::Snapshot",
+            ResourceType::AwsEcrRepository => "AWS::ECR::Repository",
+            ResourceType::AwsEfsFilesystem => "AWS::EFS::FileSystem",
+            ResourceType::AwsIamRole => "AWS::IAM::Role",
+            ResourceType::AwsKmsKey => "AWS::KMS::Key",
+            ResourceType::AwsLambdaFunction => "AWS::Lambda::Function",
+            ResourceType::AwsLambdaLayerversion => "AWS::Lambda::LayerVersion",
+            ResourceType::AwsRdsDbclustersnapshot => "AWS::RDS::DBClusterSnapshot",
+            ResourceType::AwsRdsDbsnapshot => "AWS::RDS::DBSnapshot",
+            ResourceType::AwsS3Bucket => "AWS::S3::Bucket",
+            ResourceType::AwsSnsTopic => "AWS::SNS::Topic",
+            ResourceType::AwsSqsQueue => "AWS::SQS::Queue",
+            ResourceType::AwsSecretsmanagerSecret => "AWS::SecretsManager::Secret",
+            ResourceType::Unknown(value) => value.as_str(),
+        }
+    }
+    /// Returns all the `&str` representations of the enum members.
+    pub const fn values() -> &'static [&'static str] {
+        &[
+            "AWS::EC2::Snapshot",
+            "AWS::ECR::Repository",
+            "AWS::EFS::FileSystem",
+            "AWS::IAM::Role",
+            "AWS::KMS::Key",
+            "AWS::Lambda::Function",
+            "AWS::Lambda::LayerVersion",
+            "AWS::RDS::DBClusterSnapshot",
+            "AWS::RDS::DBSnapshot",
+            "AWS::S3::Bucket",
+            "AWS::SNS::Topic",
+            "AWS::SQS::Queue",
+            "AWS::SecretsManager::Secret",
+        ]
+    }
+}
+impl AsRef<str> for ResourceType {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}

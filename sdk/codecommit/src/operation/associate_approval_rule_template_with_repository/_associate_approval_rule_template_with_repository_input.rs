@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AssociateApprovalRuleTemplateWithRepositoryInput  {
+pub struct AssociateApprovalRuleTemplateWithRepositoryInput {
     /// <p>The name for the approval rule template. </p>
     #[doc(hidden)]
     pub approval_rule_template_name: std::option::Option<std::string::String>,
@@ -12,17 +12,17 @@ pub struct AssociateApprovalRuleTemplateWithRepositoryInput  {
 }
 impl AssociateApprovalRuleTemplateWithRepositoryInput {
     /// <p>The name for the approval rule template. </p>
-    pub fn approval_rule_template_name(&self) -> std::option::Option<& str> {
+    pub fn approval_rule_template_name(&self) -> std::option::Option<&str> {
         self.approval_rule_template_name.as_deref()
     }
     /// <p>The name of the repository that you want to associate with the template.</p>
-    pub fn repository_name(&self) -> std::option::Option<& str> {
+    pub fn repository_name(&self) -> std::option::Option<&str> {
         self.repository_name.as_deref()
     }
 }
 impl AssociateApprovalRuleTemplateWithRepositoryInput {
     /// Creates a new builder-style object to manufacture [`AssociateApprovalRuleTemplateWithRepositoryInput`](crate::operation::associate_approval_rule_template_with_repository::AssociateApprovalRuleTemplateWithRepositoryInput).
-    pub fn builder() -> crate::operation::associate_approval_rule_template_with_repository::builders::AssociateApprovalRuleTemplateWithRepositoryInputBuilder {
+    pub fn builder() -> crate::operation::associate_approval_rule_template_with_repository::builders::AssociateApprovalRuleTemplateWithRepositoryInputBuilder{
         crate::operation::associate_approval_rule_template_with_repository::builders::AssociateApprovalRuleTemplateWithRepositoryInputBuilder::default()
     }
 }
@@ -41,8 +41,12 @@ impl AssociateApprovalRuleTemplateWithRepositoryInputBuilder {
         self
     }
     /// <p>The name for the approval rule template. </p>
-    pub fn set_approval_rule_template_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.approval_rule_template_name = input; self
+    pub fn set_approval_rule_template_name(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.approval_rule_template_name = input;
+        self
     }
     /// <p>The name of the repository that you want to associate with the template.</p>
     pub fn repository_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -51,10 +55,11 @@ impl AssociateApprovalRuleTemplateWithRepositoryInputBuilder {
     }
     /// <p>The name of the repository that you want to associate with the template.</p>
     pub fn set_repository_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.repository_name = input; self
+        self.repository_name = input;
+        self
     }
     /// Consumes the builder and constructs a [`AssociateApprovalRuleTemplateWithRepositoryInput`](crate::operation::associate_approval_rule_template_with_repository::AssociateApprovalRuleTemplateWithRepositoryInput).
-    pub fn build(self) -> Result<crate::operation::associate_approval_rule_template_with_repository::AssociateApprovalRuleTemplateWithRepositoryInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> Result<crate::operation::associate_approval_rule_template_with_repository::AssociateApprovalRuleTemplateWithRepositoryInput, aws_smithy_http::operation::error::BuildError>{
         Ok(
             crate::operation::associate_approval_rule_template_with_repository::AssociateApprovalRuleTemplateWithRepositoryInput {
                 approval_rule_template_name: self.approval_rule_template_name
@@ -65,4 +70,3 @@ impl AssociateApprovalRuleTemplateWithRepositoryInputBuilder {
         )
     }
 }
-

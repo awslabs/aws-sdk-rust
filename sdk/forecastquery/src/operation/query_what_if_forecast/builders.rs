@@ -4,56 +4,81 @@ pub use crate::operation::query_what_if_forecast::_query_what_if_forecast_output
 pub use crate::operation::query_what_if_forecast::_query_what_if_forecast_input::QueryWhatIfForecastInputBuilder;
 
 /// Fluent builder constructing a request to `QueryWhatIfForecast`.
-/// 
+///
 /// <p>Retrieves a what-if forecast.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct QueryWhatIfForecastFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::query_what_if_forecast::builders::QueryWhatIfForecastInputBuilder
-            }
-impl QueryWhatIfForecastFluentBuilder  {
+    handle: std::sync::Arc<crate::client::Handle>,
+    inner: crate::operation::query_what_if_forecast::builders::QueryWhatIfForecastInputBuilder,
+}
+impl QueryWhatIfForecastFluentBuilder {
     /// Creates a new `QueryWhatIfForecast`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
-                    /// sent. The operation's inner [http::Request] can be modified as well.
-                    pub async fn customize(self) -> std::result::Result<
-                        crate::client::customize::CustomizableOperation<crate::operation::query_what_if_forecast::QueryWhatIfForecast, aws_http::retry::AwsResponseRetryClassifier,>,
-                        aws_smithy_http::result::SdkError<crate::operation::query_what_if_forecast::QueryWhatIfForecastError>
-                    >  {
-                        let handle = self.handle.clone();
-                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-                    }
-    
-                    /// Sends the request and returns the response.
-                    ///
-                    /// If an error occurs, an `SdkError` will be returned with additional details that
-                    /// can be matched against.
-                    ///
-                    /// By default, any retryable failures will be retried twice. Retry behavior
-                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                    /// set when configuring the client.
-                    pub async fn send(self) -> std::result::Result<crate::operation::query_what_if_forecast::QueryWhatIfForecastOutput, aws_smithy_http::result::SdkError<crate::operation::query_what_if_forecast::QueryWhatIfForecastError>>
-                     {
-                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&self.handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        self.handle.client.call(op).await
-                    }
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle,
+            inner: Default::default(),
+        }
+    }
+
+    /// Consume this builder, creating a customizable operation that can be modified before being
+    /// sent. The operation's inner [http::Request] can be modified as well.
+    pub async fn customize(
+        self,
+    ) -> std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::query_what_if_forecast::QueryWhatIfForecast,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::result::SdkError<
+            crate::operation::query_what_if_forecast::QueryWhatIfForecastError,
+        >,
+    > {
+        let handle = self.handle.clone();
+        let operation = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+    }
+
+    /// Sends the request and returns the response.
+    ///
+    /// If an error occurs, an `SdkError` will be returned with additional details that
+    /// can be matched against.
+    ///
+    /// By default, any retryable failures will be retried twice. Retry behavior
+    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+    /// set when configuring the client.
+    pub async fn send(
+        self,
+    ) -> std::result::Result<
+        crate::operation::query_what_if_forecast::QueryWhatIfForecastOutput,
+        aws_smithy_http::result::SdkError<
+            crate::operation::query_what_if_forecast::QueryWhatIfForecastError,
+        >,
+    > {
+        let op = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&self.handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        self.handle.client.call(op).await
+    }
     /// <p>The Amazon Resource Name (ARN) of the what-if forecast to query.</p>
     pub fn what_if_forecast_arn(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.what_if_forecast_arn(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the what-if forecast to query.</p>
-    pub fn set_what_if_forecast_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_what_if_forecast_arn(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_what_if_forecast_arn(input);
         self
     }
@@ -81,17 +106,26 @@ impl QueryWhatIfForecastFluentBuilder  {
     ///
     /// To override the contents of this collection use [`set_filters`](Self::set_filters).
     ///
-    /// <p>The filtering criteria to apply when retrieving the forecast. For example, to get the forecast for <code>client_21</code> in the electricity usage dataset, specify the following:</p> 
-    /// <p> <code>{"item_id" : "client_21"}</code> </p> 
+    /// <p>The filtering criteria to apply when retrieving the forecast. For example, to get the forecast for <code>client_21</code> in the electricity usage dataset, specify the following:</p>
+    /// <p> <code>{"item_id" : "client_21"}</code> </p>
     /// <p>To get the full what-if forecast, use the <a href="https://docs.aws.amazon.com/en_us/forecast/latest/dg/API_CreateWhatIfForecastExport.html">CreateForecastExportJob</a> operation.</p>
-    pub fn filters(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
+    pub fn filters(
+        mut self,
+        k: impl Into<std::string::String>,
+        v: impl Into<std::string::String>,
+    ) -> Self {
         self.inner = self.inner.filters(k.into(), v.into());
         self
     }
-    /// <p>The filtering criteria to apply when retrieving the forecast. For example, to get the forecast for <code>client_21</code> in the electricity usage dataset, specify the following:</p> 
-    /// <p> <code>{"item_id" : "client_21"}</code> </p> 
+    /// <p>The filtering criteria to apply when retrieving the forecast. For example, to get the forecast for <code>client_21</code> in the electricity usage dataset, specify the following:</p>
+    /// <p> <code>{"item_id" : "client_21"}</code> </p>
     /// <p>To get the full what-if forecast, use the <a href="https://docs.aws.amazon.com/en_us/forecast/latest/dg/API_CreateWhatIfForecastExport.html">CreateForecastExportJob</a> operation.</p>
-    pub fn set_filters(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+    pub fn set_filters(
+        mut self,
+        input: std::option::Option<
+            std::collections::HashMap<std::string::String, std::string::String>,
+        >,
+    ) -> Self {
         self.inner = self.inner.set_filters(input);
         self
     }
@@ -106,4 +140,3 @@ impl QueryWhatIfForecastFluentBuilder  {
         self
     }
 }
-

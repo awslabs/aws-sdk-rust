@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateEntityRecognizerOutput  {
+pub struct CreateEntityRecognizerOutput {
     /// <p>The Amazon Resource Name (ARN) that identifies the entity recognizer.</p>
     #[doc(hidden)]
     pub entity_recognizer_arn: std::option::Option<std::string::String>,
@@ -10,18 +10,20 @@ pub struct CreateEntityRecognizerOutput  {
 }
 impl CreateEntityRecognizerOutput {
     /// <p>The Amazon Resource Name (ARN) that identifies the entity recognizer.</p>
-    pub fn entity_recognizer_arn(&self) -> std::option::Option<& str> {
+    pub fn entity_recognizer_arn(&self) -> std::option::Option<&str> {
         self.entity_recognizer_arn.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for CreateEntityRecognizerOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl CreateEntityRecognizerOutput {
     /// Creates a new builder-style object to manufacture [`CreateEntityRecognizerOutput`](crate::operation::create_entity_recognizer::CreateEntityRecognizerOutput).
-    pub fn builder() -> crate::operation::create_entity_recognizer::builders::CreateEntityRecognizerOutputBuilder {
+    pub fn builder(
+    ) -> crate::operation::create_entity_recognizer::builders::CreateEntityRecognizerOutputBuilder
+    {
         crate::operation::create_entity_recognizer::builders::CreateEntityRecognizerOutputBuilder::default()
     }
 }
@@ -40,25 +42,27 @@ impl CreateEntityRecognizerOutputBuilder {
         self
     }
     /// <p>The Amazon Resource Name (ARN) that identifies the entity recognizer.</p>
-    pub fn set_entity_recognizer_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.entity_recognizer_arn = input; self
+    pub fn set_entity_recognizer_arn(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.entity_recognizer_arn = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`CreateEntityRecognizerOutput`](crate::operation::create_entity_recognizer::CreateEntityRecognizerOutput).
     pub fn build(self) -> crate::operation::create_entity_recognizer::CreateEntityRecognizerOutput {
         crate::operation::create_entity_recognizer::CreateEntityRecognizerOutput {
-            entity_recognizer_arn: self.entity_recognizer_arn
-            ,
+            entity_recognizer_arn: self.entity_recognizer_arn,
             _request_id: self._request_id,
         }
     }
 }
-

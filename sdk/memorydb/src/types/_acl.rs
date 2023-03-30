@@ -3,7 +3,7 @@
 /// <p>An Access Control List. You can authenticate users with Access Contol Lists. ACLs enable you to control cluster access by grouping users. These Access control lists are designed as a way to organize access to clusters.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Acl  {
+pub struct Acl {
     /// <p>The name of the Access Control List</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -28,31 +28,31 @@ pub struct Acl  {
 }
 impl Acl {
     /// <p>The name of the Access Control List</p>
-    pub fn name(&self) -> std::option::Option<& str> {
+    pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>Indicates ACL status. Can be "creating", "active", "modifying", "deleting".</p>
-    pub fn status(&self) -> std::option::Option<& str> {
+    pub fn status(&self) -> std::option::Option<&str> {
         self.status.as_deref()
     }
     /// <p>The list of user names that belong to the ACL.</p>
-    pub fn user_names(&self) -> std::option::Option<& [std::string::String]> {
+    pub fn user_names(&self) -> std::option::Option<&[std::string::String]> {
         self.user_names.as_deref()
     }
     /// <p>The minimum engine version supported for the ACL</p>
-    pub fn minimum_engine_version(&self) -> std::option::Option<& str> {
+    pub fn minimum_engine_version(&self) -> std::option::Option<&str> {
         self.minimum_engine_version.as_deref()
     }
     /// <p>A list of updates being applied to the ACL.</p>
-    pub fn pending_changes(&self) -> std::option::Option<& crate::types::AclPendingChanges> {
+    pub fn pending_changes(&self) -> std::option::Option<&crate::types::AclPendingChanges> {
         self.pending_changes.as_ref()
     }
     /// <p>A list of clusters associated with the ACL.</p>
-    pub fn clusters(&self) -> std::option::Option<& [std::string::String]> {
+    pub fn clusters(&self) -> std::option::Option<&[std::string::String]> {
         self.clusters.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the ACL</p>
-    pub fn arn(&self) -> std::option::Option<& str> {
+    pub fn arn(&self) -> std::option::Option<&str> {
         self.arn.as_deref()
     }
 }
@@ -83,7 +83,8 @@ impl AclBuilder {
     }
     /// <p>The name of the Access Control List</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input; self
+        self.name = input;
+        self
     }
     /// <p>Indicates ACL status. Can be "creating", "active", "modifying", "deleting".</p>
     pub fn status(mut self, input: impl Into<std::string::String>) -> Self {
@@ -92,7 +93,8 @@ impl AclBuilder {
     }
     /// <p>Indicates ACL status. Can be "creating", "active", "modifying", "deleting".</p>
     pub fn set_status(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.status = input; self
+        self.status = input;
+        self
     }
     /// Appends an item to `user_names`.
     ///
@@ -101,13 +103,17 @@ impl AclBuilder {
     /// <p>The list of user names that belong to the ACL.</p>
     pub fn user_names(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.user_names.unwrap_or_default();
-                        v.push(input.into());
-                        self.user_names = Some(v);
-                        self
+        v.push(input.into());
+        self.user_names = Some(v);
+        self
     }
     /// <p>The list of user names that belong to the ACL.</p>
-    pub fn set_user_names(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-        self.user_names = input; self
+    pub fn set_user_names(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
+        self.user_names = input;
+        self
     }
     /// <p>The minimum engine version supported for the ACL</p>
     pub fn minimum_engine_version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -115,8 +121,12 @@ impl AclBuilder {
         self
     }
     /// <p>The minimum engine version supported for the ACL</p>
-    pub fn set_minimum_engine_version(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.minimum_engine_version = input; self
+    pub fn set_minimum_engine_version(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.minimum_engine_version = input;
+        self
     }
     /// <p>A list of updates being applied to the ACL.</p>
     pub fn pending_changes(mut self, input: crate::types::AclPendingChanges) -> Self {
@@ -124,8 +134,12 @@ impl AclBuilder {
         self
     }
     /// <p>A list of updates being applied to the ACL.</p>
-    pub fn set_pending_changes(mut self, input: std::option::Option<crate::types::AclPendingChanges>) -> Self {
-        self.pending_changes = input; self
+    pub fn set_pending_changes(
+        mut self,
+        input: std::option::Option<crate::types::AclPendingChanges>,
+    ) -> Self {
+        self.pending_changes = input;
+        self
     }
     /// Appends an item to `clusters`.
     ///
@@ -134,13 +148,17 @@ impl AclBuilder {
     /// <p>A list of clusters associated with the ACL.</p>
     pub fn clusters(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.clusters.unwrap_or_default();
-                        v.push(input.into());
-                        self.clusters = Some(v);
-                        self
+        v.push(input.into());
+        self.clusters = Some(v);
+        self
     }
     /// <p>A list of clusters associated with the ACL.</p>
-    pub fn set_clusters(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-        self.clusters = input; self
+    pub fn set_clusters(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
+        self.clusters = input;
+        self
     }
     /// <p>The Amazon Resource Name (ARN) of the ACL</p>
     pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -149,26 +167,19 @@ impl AclBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the ACL</p>
     pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.arn = input; self
+        self.arn = input;
+        self
     }
     /// Consumes the builder and constructs a [`Acl`](crate::types::Acl).
     pub fn build(self) -> crate::types::Acl {
         crate::types::Acl {
-            name: self.name
-            ,
-            status: self.status
-            ,
-            user_names: self.user_names
-            ,
-            minimum_engine_version: self.minimum_engine_version
-            ,
-            pending_changes: self.pending_changes
-            ,
-            clusters: self.clusters
-            ,
-            arn: self.arn
-            ,
+            name: self.name,
+            status: self.status,
+            user_names: self.user_names,
+            minimum_engine_version: self.minimum_engine_version,
+            pending_changes: self.pending_changes,
+            clusters: self.clusters,
+            arn: self.arn,
         }
     }
 }
-

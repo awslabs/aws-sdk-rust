@@ -2,20 +2,20 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct StopPiiEntitiesDetectionJobInput  {
+pub struct StopPiiEntitiesDetectionJobInput {
     /// <p>The identifier of the PII entities detection job to stop.</p>
     #[doc(hidden)]
     pub job_id: std::option::Option<std::string::String>,
 }
 impl StopPiiEntitiesDetectionJobInput {
     /// <p>The identifier of the PII entities detection job to stop.</p>
-    pub fn job_id(&self) -> std::option::Option<& str> {
+    pub fn job_id(&self) -> std::option::Option<&str> {
         self.job_id.as_deref()
     }
 }
 impl StopPiiEntitiesDetectionJobInput {
     /// Creates a new builder-style object to manufacture [`StopPiiEntitiesDetectionJobInput`](crate::operation::stop_pii_entities_detection_job::StopPiiEntitiesDetectionJobInput).
-    pub fn builder() -> crate::operation::stop_pii_entities_detection_job::builders::StopPiiEntitiesDetectionJobInputBuilder {
+    pub fn builder() -> crate::operation::stop_pii_entities_detection_job::builders::StopPiiEntitiesDetectionJobInputBuilder{
         crate::operation::stop_pii_entities_detection_job::builders::StopPiiEntitiesDetectionJobInputBuilder::default()
     }
 }
@@ -34,16 +34,20 @@ impl StopPiiEntitiesDetectionJobInputBuilder {
     }
     /// <p>The identifier of the PII entities detection job to stop.</p>
     pub fn set_job_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.job_id = input; self
+        self.job_id = input;
+        self
     }
     /// Consumes the builder and constructs a [`StopPiiEntitiesDetectionJobInput`](crate::operation::stop_pii_entities_detection_job::StopPiiEntitiesDetectionJobInput).
-    pub fn build(self) -> Result<crate::operation::stop_pii_entities_detection_job::StopPiiEntitiesDetectionJobInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::stop_pii_entities_detection_job::StopPiiEntitiesDetectionJobInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::stop_pii_entities_detection_job::StopPiiEntitiesDetectionJobInput {
-                job_id: self.job_id
-                ,
-            }
+                job_id: self.job_id,
+            },
         )
     }
 }
-

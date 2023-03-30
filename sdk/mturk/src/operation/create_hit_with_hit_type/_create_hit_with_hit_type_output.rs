@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateHitWithHitTypeOutput  {
+pub struct CreateHitWithHitTypeOutput {
     /// <p> Contains the newly created HIT data. For a description of the HIT data structure as it appears in responses, see the HIT Data Structure documentation. </p>
     #[doc(hidden)]
     pub hit: std::option::Option<crate::types::Hit>,
@@ -10,18 +10,20 @@ pub struct CreateHitWithHitTypeOutput  {
 }
 impl CreateHitWithHitTypeOutput {
     /// <p> Contains the newly created HIT data. For a description of the HIT data structure as it appears in responses, see the HIT Data Structure documentation. </p>
-    pub fn hit(&self) -> std::option::Option<& crate::types::Hit> {
+    pub fn hit(&self) -> std::option::Option<&crate::types::Hit> {
         self.hit.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for CreateHitWithHitTypeOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl CreateHitWithHitTypeOutput {
     /// Creates a new builder-style object to manufacture [`CreateHitWithHitTypeOutput`](crate::operation::create_hit_with_hit_type::CreateHitWithHitTypeOutput).
-    pub fn builder() -> crate::operation::create_hit_with_hit_type::builders::CreateHitWithHitTypeOutputBuilder {
+    pub fn builder(
+    ) -> crate::operation::create_hit_with_hit_type::builders::CreateHitWithHitTypeOutputBuilder
+    {
         crate::operation::create_hit_with_hit_type::builders::CreateHitWithHitTypeOutputBuilder::default()
     }
 }
@@ -41,24 +43,23 @@ impl CreateHitWithHitTypeOutputBuilder {
     }
     /// <p> Contains the newly created HIT data. For a description of the HIT data structure as it appears in responses, see the HIT Data Structure documentation. </p>
     pub fn set_hit(mut self, input: std::option::Option<crate::types::Hit>) -> Self {
-        self.hit = input; self
+        self.hit = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`CreateHitWithHitTypeOutput`](crate::operation::create_hit_with_hit_type::CreateHitWithHitTypeOutput).
     pub fn build(self) -> crate::operation::create_hit_with_hit_type::CreateHitWithHitTypeOutput {
         crate::operation::create_hit_with_hit_type::CreateHitWithHitTypeOutput {
-            hit: self.hit
-            ,
+            hit: self.hit,
             _request_id: self._request_id,
         }
     }
 }
-

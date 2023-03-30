@@ -3,7 +3,7 @@
 /// <p>The information about job driver for Spark submit.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct SparkSubmitJobDriver  {
+pub struct SparkSubmitJobDriver {
     /// <p>The entry point of job application.</p>
     #[doc(hidden)]
     pub entry_point: std::option::Option<std::string::String>,
@@ -16,24 +16,27 @@ pub struct SparkSubmitJobDriver  {
 }
 impl SparkSubmitJobDriver {
     /// <p>The entry point of job application.</p>
-    pub fn entry_point(&self) -> std::option::Option<& str> {
+    pub fn entry_point(&self) -> std::option::Option<&str> {
         self.entry_point.as_deref()
     }
     /// <p>The arguments for job application.</p>
-    pub fn entry_point_arguments(&self) -> std::option::Option<& [std::string::String]> {
+    pub fn entry_point_arguments(&self) -> std::option::Option<&[std::string::String]> {
         self.entry_point_arguments.as_deref()
     }
     /// <p>The Spark submit parameters that are used for job runs.</p>
-    pub fn spark_submit_parameters(&self) -> std::option::Option<& str> {
+    pub fn spark_submit_parameters(&self) -> std::option::Option<&str> {
         self.spark_submit_parameters.as_deref()
     }
 }
-impl  std::fmt::Debug for SparkSubmitJobDriver  {
+impl std::fmt::Debug for SparkSubmitJobDriver {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("SparkSubmitJobDriver");
         formatter.field("entry_point", &"*** Sensitive Data Redacted ***");
         formatter.field("entry_point_arguments", &self.entry_point_arguments);
-        formatter.field("spark_submit_parameters", &"*** Sensitive Data Redacted ***");
+        formatter.field(
+            "spark_submit_parameters",
+            &"*** Sensitive Data Redacted ***",
+        );
         formatter.finish()
     }
 }
@@ -60,7 +63,8 @@ impl SparkSubmitJobDriverBuilder {
     }
     /// <p>The entry point of job application.</p>
     pub fn set_entry_point(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.entry_point = input; self
+        self.entry_point = input;
+        self
     }
     /// Appends an item to `entry_point_arguments`.
     ///
@@ -69,13 +73,17 @@ impl SparkSubmitJobDriverBuilder {
     /// <p>The arguments for job application.</p>
     pub fn entry_point_arguments(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.entry_point_arguments.unwrap_or_default();
-                        v.push(input.into());
-                        self.entry_point_arguments = Some(v);
-                        self
+        v.push(input.into());
+        self.entry_point_arguments = Some(v);
+        self
     }
     /// <p>The arguments for job application.</p>
-    pub fn set_entry_point_arguments(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-        self.entry_point_arguments = input; self
+    pub fn set_entry_point_arguments(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
+        self.entry_point_arguments = input;
+        self
     }
     /// <p>The Spark submit parameters that are used for job runs.</p>
     pub fn spark_submit_parameters(mut self, input: impl Into<std::string::String>) -> Self {
@@ -83,18 +91,19 @@ impl SparkSubmitJobDriverBuilder {
         self
     }
     /// <p>The Spark submit parameters that are used for job runs.</p>
-    pub fn set_spark_submit_parameters(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.spark_submit_parameters = input; self
+    pub fn set_spark_submit_parameters(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.spark_submit_parameters = input;
+        self
     }
     /// Consumes the builder and constructs a [`SparkSubmitJobDriver`](crate::types::SparkSubmitJobDriver).
     pub fn build(self) -> crate::types::SparkSubmitJobDriver {
         crate::types::SparkSubmitJobDriver {
-            entry_point: self.entry_point
-            ,
-            entry_point_arguments: self.entry_point_arguments
-            ,
-            spark_submit_parameters: self.spark_submit_parameters
-            ,
+            entry_point: self.entry_point,
+            entry_point_arguments: self.entry_point_arguments,
+            spark_submit_parameters: self.spark_submit_parameters,
         }
     }
 }
@@ -103,8 +112,10 @@ impl std::fmt::Debug for SparkSubmitJobDriverBuilder {
         let mut formatter = f.debug_struct("SparkSubmitJobDriverBuilder");
         formatter.field("entry_point", &"*** Sensitive Data Redacted ***");
         formatter.field("entry_point_arguments", &self.entry_point_arguments);
-        formatter.field("spark_submit_parameters", &"*** Sensitive Data Redacted ***");
+        formatter.field(
+            "spark_submit_parameters",
+            &"*** Sensitive Data Redacted ***",
+        );
         formatter.finish()
     }
 }
-

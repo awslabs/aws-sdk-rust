@@ -3,7 +3,7 @@
 /// <p>Represents a collection of related data organized in columns and rows.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Table  {
+pub struct Table {
     /// <p>The table name. For Hive compatibility, this must be entirely lowercase.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -34,8 +34,8 @@ pub struct Table  {
     /// <p>A storage descriptor containing information about the physical storage of this table.</p>
     #[doc(hidden)]
     pub storage_descriptor: std::option::Option<crate::types::StorageDescriptor>,
-    /// <p>A list of columns by which the table is partitioned. Only primitive types are supported as partition keys.</p> 
-    /// <p>When you create a table used by Amazon Athena, and you do not specify any <code>partitionKeys</code>, you must at least set the value of <code>partitionKeys</code> to an empty list. For example:</p> 
+    /// <p>A list of columns by which the table is partitioned. Only primitive types are supported as partition keys.</p>
+    /// <p>When you create a table used by Amazon Athena, and you do not specify any <code>partitionKeys</code>, you must at least set the value of <code>partitionKeys</code> to an empty list. For example:</p>
     /// <p> <code>"PartitionKeys": []</code> </p>
     #[doc(hidden)]
     pub partition_keys: std::option::Option<std::vec::Vec<crate::types::Column>>,
@@ -50,7 +50,8 @@ pub struct Table  {
     pub table_type: std::option::Option<std::string::String>,
     /// <p>These key-value pairs define properties associated with the table.</p>
     #[doc(hidden)]
-    pub parameters: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub parameters:
+        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The person or entity who created the table.</p>
     #[doc(hidden)]
     pub created_by: std::option::Option<std::string::String>,
@@ -69,35 +70,35 @@ pub struct Table  {
 }
 impl Table {
     /// <p>The table name. For Hive compatibility, this must be entirely lowercase.</p>
-    pub fn name(&self) -> std::option::Option<& str> {
+    pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>The name of the database where the table metadata resides. For Hive compatibility, this must be all lowercase.</p>
-    pub fn database_name(&self) -> std::option::Option<& str> {
+    pub fn database_name(&self) -> std::option::Option<&str> {
         self.database_name.as_deref()
     }
     /// <p>A description of the table.</p>
-    pub fn description(&self) -> std::option::Option<& str> {
+    pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
     /// <p>The owner of the table.</p>
-    pub fn owner(&self) -> std::option::Option<& str> {
+    pub fn owner(&self) -> std::option::Option<&str> {
         self.owner.as_deref()
     }
     /// <p>The time when the table definition was created in the Data Catalog.</p>
-    pub fn create_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
+    pub fn create_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.create_time.as_ref()
     }
     /// <p>The last time that the table was updated.</p>
-    pub fn update_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
+    pub fn update_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.update_time.as_ref()
     }
     /// <p>The last time that the table was accessed. This is usually taken from HDFS, and might not be reliable.</p>
-    pub fn last_access_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
+    pub fn last_access_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_access_time.as_ref()
     }
     /// <p>The last time that column statistics were computed for this table.</p>
-    pub fn last_analyzed_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
+    pub fn last_analyzed_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_analyzed_time.as_ref()
     }
     /// <p>The retention time for this table.</p>
@@ -105,33 +106,36 @@ impl Table {
         self.retention
     }
     /// <p>A storage descriptor containing information about the physical storage of this table.</p>
-    pub fn storage_descriptor(&self) -> std::option::Option<& crate::types::StorageDescriptor> {
+    pub fn storage_descriptor(&self) -> std::option::Option<&crate::types::StorageDescriptor> {
         self.storage_descriptor.as_ref()
     }
-    /// <p>A list of columns by which the table is partitioned. Only primitive types are supported as partition keys.</p> 
-    /// <p>When you create a table used by Amazon Athena, and you do not specify any <code>partitionKeys</code>, you must at least set the value of <code>partitionKeys</code> to an empty list. For example:</p> 
+    /// <p>A list of columns by which the table is partitioned. Only primitive types are supported as partition keys.</p>
+    /// <p>When you create a table used by Amazon Athena, and you do not specify any <code>partitionKeys</code>, you must at least set the value of <code>partitionKeys</code> to an empty list. For example:</p>
     /// <p> <code>"PartitionKeys": []</code> </p>
-    pub fn partition_keys(&self) -> std::option::Option<& [crate::types::Column]> {
+    pub fn partition_keys(&self) -> std::option::Option<&[crate::types::Column]> {
         self.partition_keys.as_deref()
     }
     /// <p>If the table is a view, the original text of the view; otherwise <code>null</code>.</p>
-    pub fn view_original_text(&self) -> std::option::Option<& str> {
+    pub fn view_original_text(&self) -> std::option::Option<&str> {
         self.view_original_text.as_deref()
     }
     /// <p>If the table is a view, the expanded text of the view; otherwise <code>null</code>.</p>
-    pub fn view_expanded_text(&self) -> std::option::Option<& str> {
+    pub fn view_expanded_text(&self) -> std::option::Option<&str> {
         self.view_expanded_text.as_deref()
     }
     /// <p>The type of this table (<code>EXTERNAL_TABLE</code>, <code>VIRTUAL_VIEW</code>, etc.).</p>
-    pub fn table_type(&self) -> std::option::Option<& str> {
+    pub fn table_type(&self) -> std::option::Option<&str> {
         self.table_type.as_deref()
     }
     /// <p>These key-value pairs define properties associated with the table.</p>
-    pub fn parameters(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
+    pub fn parameters(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
         self.parameters.as_ref()
     }
     /// <p>The person or entity who created the table.</p>
-    pub fn created_by(&self) -> std::option::Option<& str> {
+    pub fn created_by(&self) -> std::option::Option<&str> {
         self.created_by.as_deref()
     }
     /// <p>Indicates whether the table has been registered with Lake Formation.</p>
@@ -139,15 +143,15 @@ impl Table {
         self.is_registered_with_lake_formation
     }
     /// <p>A <code>TableIdentifier</code> structure that describes a target table for resource linking.</p>
-    pub fn target_table(&self) -> std::option::Option<& crate::types::TableIdentifier> {
+    pub fn target_table(&self) -> std::option::Option<&crate::types::TableIdentifier> {
         self.target_table.as_ref()
     }
     /// <p>The ID of the Data Catalog in which the table resides.</p>
-    pub fn catalog_id(&self) -> std::option::Option<& str> {
+    pub fn catalog_id(&self) -> std::option::Option<&str> {
         self.catalog_id.as_deref()
     }
     /// <p>The ID of the table version.</p>
-    pub fn version_id(&self) -> std::option::Option<& str> {
+    pub fn version_id(&self) -> std::option::Option<&str> {
         self.version_id.as_deref()
     }
 }
@@ -176,7 +180,8 @@ pub struct TableBuilder {
     pub(crate) view_original_text: std::option::Option<std::string::String>,
     pub(crate) view_expanded_text: std::option::Option<std::string::String>,
     pub(crate) table_type: std::option::Option<std::string::String>,
-    pub(crate) parameters: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub(crate) parameters:
+        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     pub(crate) created_by: std::option::Option<std::string::String>,
     pub(crate) is_registered_with_lake_formation: std::option::Option<bool>,
     pub(crate) target_table: std::option::Option<crate::types::TableIdentifier>,
@@ -191,7 +196,8 @@ impl TableBuilder {
     }
     /// <p>The table name. For Hive compatibility, this must be entirely lowercase.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input; self
+        self.name = input;
+        self
     }
     /// <p>The name of the database where the table metadata resides. For Hive compatibility, this must be all lowercase.</p>
     pub fn database_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -200,7 +206,8 @@ impl TableBuilder {
     }
     /// <p>The name of the database where the table metadata resides. For Hive compatibility, this must be all lowercase.</p>
     pub fn set_database_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.database_name = input; self
+        self.database_name = input;
+        self
     }
     /// <p>A description of the table.</p>
     pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -209,7 +216,8 @@ impl TableBuilder {
     }
     /// <p>A description of the table.</p>
     pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.description = input; self
+        self.description = input;
+        self
     }
     /// <p>The owner of the table.</p>
     pub fn owner(mut self, input: impl Into<std::string::String>) -> Self {
@@ -218,7 +226,8 @@ impl TableBuilder {
     }
     /// <p>The owner of the table.</p>
     pub fn set_owner(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.owner = input; self
+        self.owner = input;
+        self
     }
     /// <p>The time when the table definition was created in the Data Catalog.</p>
     pub fn create_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -226,8 +235,12 @@ impl TableBuilder {
         self
     }
     /// <p>The time when the table definition was created in the Data Catalog.</p>
-    pub fn set_create_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.create_time = input; self
+    pub fn set_create_time(
+        mut self,
+        input: std::option::Option<aws_smithy_types::DateTime>,
+    ) -> Self {
+        self.create_time = input;
+        self
     }
     /// <p>The last time that the table was updated.</p>
     pub fn update_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -235,8 +248,12 @@ impl TableBuilder {
         self
     }
     /// <p>The last time that the table was updated.</p>
-    pub fn set_update_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.update_time = input; self
+    pub fn set_update_time(
+        mut self,
+        input: std::option::Option<aws_smithy_types::DateTime>,
+    ) -> Self {
+        self.update_time = input;
+        self
     }
     /// <p>The last time that the table was accessed. This is usually taken from HDFS, and might not be reliable.</p>
     pub fn last_access_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -244,8 +261,12 @@ impl TableBuilder {
         self
     }
     /// <p>The last time that the table was accessed. This is usually taken from HDFS, and might not be reliable.</p>
-    pub fn set_last_access_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.last_access_time = input; self
+    pub fn set_last_access_time(
+        mut self,
+        input: std::option::Option<aws_smithy_types::DateTime>,
+    ) -> Self {
+        self.last_access_time = input;
+        self
     }
     /// <p>The last time that column statistics were computed for this table.</p>
     pub fn last_analyzed_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -253,8 +274,12 @@ impl TableBuilder {
         self
     }
     /// <p>The last time that column statistics were computed for this table.</p>
-    pub fn set_last_analyzed_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.last_analyzed_time = input; self
+    pub fn set_last_analyzed_time(
+        mut self,
+        input: std::option::Option<aws_smithy_types::DateTime>,
+    ) -> Self {
+        self.last_analyzed_time = input;
+        self
     }
     /// <p>The retention time for this table.</p>
     pub fn retention(mut self, input: i32) -> Self {
@@ -263,7 +288,8 @@ impl TableBuilder {
     }
     /// <p>The retention time for this table.</p>
     pub fn set_retention(mut self, input: std::option::Option<i32>) -> Self {
-        self.retention = input; self
+        self.retention = input;
+        self
     }
     /// <p>A storage descriptor containing information about the physical storage of this table.</p>
     pub fn storage_descriptor(mut self, input: crate::types::StorageDescriptor) -> Self {
@@ -271,27 +297,35 @@ impl TableBuilder {
         self
     }
     /// <p>A storage descriptor containing information about the physical storage of this table.</p>
-    pub fn set_storage_descriptor(mut self, input: std::option::Option<crate::types::StorageDescriptor>) -> Self {
-        self.storage_descriptor = input; self
+    pub fn set_storage_descriptor(
+        mut self,
+        input: std::option::Option<crate::types::StorageDescriptor>,
+    ) -> Self {
+        self.storage_descriptor = input;
+        self
     }
     /// Appends an item to `partition_keys`.
     ///
     /// To override the contents of this collection use [`set_partition_keys`](Self::set_partition_keys).
     ///
-    /// <p>A list of columns by which the table is partitioned. Only primitive types are supported as partition keys.</p> 
-    /// <p>When you create a table used by Amazon Athena, and you do not specify any <code>partitionKeys</code>, you must at least set the value of <code>partitionKeys</code> to an empty list. For example:</p> 
+    /// <p>A list of columns by which the table is partitioned. Only primitive types are supported as partition keys.</p>
+    /// <p>When you create a table used by Amazon Athena, and you do not specify any <code>partitionKeys</code>, you must at least set the value of <code>partitionKeys</code> to an empty list. For example:</p>
     /// <p> <code>"PartitionKeys": []</code> </p>
     pub fn partition_keys(mut self, input: crate::types::Column) -> Self {
         let mut v = self.partition_keys.unwrap_or_default();
-                        v.push(input);
-                        self.partition_keys = Some(v);
-                        self
+        v.push(input);
+        self.partition_keys = Some(v);
+        self
     }
-    /// <p>A list of columns by which the table is partitioned. Only primitive types are supported as partition keys.</p> 
-    /// <p>When you create a table used by Amazon Athena, and you do not specify any <code>partitionKeys</code>, you must at least set the value of <code>partitionKeys</code> to an empty list. For example:</p> 
+    /// <p>A list of columns by which the table is partitioned. Only primitive types are supported as partition keys.</p>
+    /// <p>When you create a table used by Amazon Athena, and you do not specify any <code>partitionKeys</code>, you must at least set the value of <code>partitionKeys</code> to an empty list. For example:</p>
     /// <p> <code>"PartitionKeys": []</code> </p>
-    pub fn set_partition_keys(mut self, input: std::option::Option<std::vec::Vec<crate::types::Column>>) -> Self {
-        self.partition_keys = input; self
+    pub fn set_partition_keys(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::Column>>,
+    ) -> Self {
+        self.partition_keys = input;
+        self
     }
     /// <p>If the table is a view, the original text of the view; otherwise <code>null</code>.</p>
     pub fn view_original_text(mut self, input: impl Into<std::string::String>) -> Self {
@@ -299,8 +333,12 @@ impl TableBuilder {
         self
     }
     /// <p>If the table is a view, the original text of the view; otherwise <code>null</code>.</p>
-    pub fn set_view_original_text(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.view_original_text = input; self
+    pub fn set_view_original_text(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.view_original_text = input;
+        self
     }
     /// <p>If the table is a view, the expanded text of the view; otherwise <code>null</code>.</p>
     pub fn view_expanded_text(mut self, input: impl Into<std::string::String>) -> Self {
@@ -308,8 +346,12 @@ impl TableBuilder {
         self
     }
     /// <p>If the table is a view, the expanded text of the view; otherwise <code>null</code>.</p>
-    pub fn set_view_expanded_text(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.view_expanded_text = input; self
+    pub fn set_view_expanded_text(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.view_expanded_text = input;
+        self
     }
     /// <p>The type of this table (<code>EXTERNAL_TABLE</code>, <code>VIRTUAL_VIEW</code>, etc.).</p>
     pub fn table_type(mut self, input: impl Into<std::string::String>) -> Self {
@@ -318,22 +360,33 @@ impl TableBuilder {
     }
     /// <p>The type of this table (<code>EXTERNAL_TABLE</code>, <code>VIRTUAL_VIEW</code>, etc.).</p>
     pub fn set_table_type(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.table_type = input; self
+        self.table_type = input;
+        self
     }
     /// Adds a key-value pair to `parameters`.
     ///
     /// To override the contents of this collection use [`set_parameters`](Self::set_parameters).
     ///
     /// <p>These key-value pairs define properties associated with the table.</p>
-    pub fn parameters(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
+    pub fn parameters(
+        mut self,
+        k: impl Into<std::string::String>,
+        v: impl Into<std::string::String>,
+    ) -> Self {
         let mut hash_map = self.parameters.unwrap_or_default();
-                        hash_map.insert(k.into(), v.into());
-                        self.parameters = Some(hash_map);
-                        self
+        hash_map.insert(k.into(), v.into());
+        self.parameters = Some(hash_map);
+        self
     }
     /// <p>These key-value pairs define properties associated with the table.</p>
-    pub fn set_parameters(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
-        self.parameters = input; self
+    pub fn set_parameters(
+        mut self,
+        input: std::option::Option<
+            std::collections::HashMap<std::string::String, std::string::String>,
+        >,
+    ) -> Self {
+        self.parameters = input;
+        self
     }
     /// <p>The person or entity who created the table.</p>
     pub fn created_by(mut self, input: impl Into<std::string::String>) -> Self {
@@ -342,7 +395,8 @@ impl TableBuilder {
     }
     /// <p>The person or entity who created the table.</p>
     pub fn set_created_by(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.created_by = input; self
+        self.created_by = input;
+        self
     }
     /// <p>Indicates whether the table has been registered with Lake Formation.</p>
     pub fn is_registered_with_lake_formation(mut self, input: bool) -> Self {
@@ -350,8 +404,12 @@ impl TableBuilder {
         self
     }
     /// <p>Indicates whether the table has been registered with Lake Formation.</p>
-    pub fn set_is_registered_with_lake_formation(mut self, input: std::option::Option<bool>) -> Self {
-        self.is_registered_with_lake_formation = input; self
+    pub fn set_is_registered_with_lake_formation(
+        mut self,
+        input: std::option::Option<bool>,
+    ) -> Self {
+        self.is_registered_with_lake_formation = input;
+        self
     }
     /// <p>A <code>TableIdentifier</code> structure that describes a target table for resource linking.</p>
     pub fn target_table(mut self, input: crate::types::TableIdentifier) -> Self {
@@ -359,8 +417,12 @@ impl TableBuilder {
         self
     }
     /// <p>A <code>TableIdentifier</code> structure that describes a target table for resource linking.</p>
-    pub fn set_target_table(mut self, input: std::option::Option<crate::types::TableIdentifier>) -> Self {
-        self.target_table = input; self
+    pub fn set_target_table(
+        mut self,
+        input: std::option::Option<crate::types::TableIdentifier>,
+    ) -> Self {
+        self.target_table = input;
+        self
     }
     /// <p>The ID of the Data Catalog in which the table resides.</p>
     pub fn catalog_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -369,7 +431,8 @@ impl TableBuilder {
     }
     /// <p>The ID of the Data Catalog in which the table resides.</p>
     pub fn set_catalog_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.catalog_id = input; self
+        self.catalog_id = input;
+        self
     }
     /// <p>The ID of the table version.</p>
     pub fn version_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -378,54 +441,34 @@ impl TableBuilder {
     }
     /// <p>The ID of the table version.</p>
     pub fn set_version_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.version_id = input; self
+        self.version_id = input;
+        self
     }
     /// Consumes the builder and constructs a [`Table`](crate::types::Table).
     pub fn build(self) -> crate::types::Table {
         crate::types::Table {
-            name: self.name
-            ,
-            database_name: self.database_name
-            ,
-            description: self.description
-            ,
-            owner: self.owner
-            ,
-            create_time: self.create_time
-            ,
-            update_time: self.update_time
-            ,
-            last_access_time: self.last_access_time
-            ,
-            last_analyzed_time: self.last_analyzed_time
-            ,
-            retention: self.retention
-                .unwrap_or_default()
-            ,
-            storage_descriptor: self.storage_descriptor
-            ,
-            partition_keys: self.partition_keys
-            ,
-            view_original_text: self.view_original_text
-            ,
-            view_expanded_text: self.view_expanded_text
-            ,
-            table_type: self.table_type
-            ,
-            parameters: self.parameters
-            ,
-            created_by: self.created_by
-            ,
-            is_registered_with_lake_formation: self.is_registered_with_lake_formation
-                .unwrap_or_default()
-            ,
-            target_table: self.target_table
-            ,
-            catalog_id: self.catalog_id
-            ,
-            version_id: self.version_id
-            ,
+            name: self.name,
+            database_name: self.database_name,
+            description: self.description,
+            owner: self.owner,
+            create_time: self.create_time,
+            update_time: self.update_time,
+            last_access_time: self.last_access_time,
+            last_analyzed_time: self.last_analyzed_time,
+            retention: self.retention.unwrap_or_default(),
+            storage_descriptor: self.storage_descriptor,
+            partition_keys: self.partition_keys,
+            view_original_text: self.view_original_text,
+            view_expanded_text: self.view_expanded_text,
+            table_type: self.table_type,
+            parameters: self.parameters,
+            created_by: self.created_by,
+            is_registered_with_lake_formation: self
+                .is_registered_with_lake_formation
+                .unwrap_or_default(),
+            target_table: self.target_table,
+            catalog_id: self.catalog_id,
+            version_id: self.version_id,
         }
     }
 }
-

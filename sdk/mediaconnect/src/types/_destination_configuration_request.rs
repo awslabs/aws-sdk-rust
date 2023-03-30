@@ -3,7 +3,7 @@
 /// The transport parameters that you want to associate with an outbound media stream.
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DestinationConfigurationRequest  {
+pub struct DestinationConfigurationRequest {
     /// The IP address where you want MediaConnect to send contents of the media stream.
     #[doc(hidden)]
     pub destination_ip: std::option::Option<std::string::String>,
@@ -16,7 +16,7 @@ pub struct DestinationConfigurationRequest  {
 }
 impl DestinationConfigurationRequest {
     /// The IP address where you want MediaConnect to send contents of the media stream.
-    pub fn destination_ip(&self) -> std::option::Option<& str> {
+    pub fn destination_ip(&self) -> std::option::Option<&str> {
         self.destination_ip.as_deref()
     }
     /// The port that you want MediaConnect to use when it distributes the media stream to the output.
@@ -24,7 +24,7 @@ impl DestinationConfigurationRequest {
         self.destination_port
     }
     /// The VPC interface that you want to use for the media stream associated with the output.
-    pub fn interface(&self) -> std::option::Option<& crate::types::InterfaceRequest> {
+    pub fn interface(&self) -> std::option::Option<&crate::types::InterfaceRequest> {
         self.interface.as_ref()
     }
 }
@@ -51,7 +51,8 @@ impl DestinationConfigurationRequestBuilder {
     }
     /// The IP address where you want MediaConnect to send contents of the media stream.
     pub fn set_destination_ip(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.destination_ip = input; self
+        self.destination_ip = input;
+        self
     }
     /// The port that you want MediaConnect to use when it distributes the media stream to the output.
     pub fn destination_port(mut self, input: i32) -> Self {
@@ -60,7 +61,8 @@ impl DestinationConfigurationRequestBuilder {
     }
     /// The port that you want MediaConnect to use when it distributes the media stream to the output.
     pub fn set_destination_port(mut self, input: std::option::Option<i32>) -> Self {
-        self.destination_port = input; self
+        self.destination_port = input;
+        self
     }
     /// The VPC interface that you want to use for the media stream associated with the output.
     pub fn interface(mut self, input: crate::types::InterfaceRequest) -> Self {
@@ -68,20 +70,19 @@ impl DestinationConfigurationRequestBuilder {
         self
     }
     /// The VPC interface that you want to use for the media stream associated with the output.
-    pub fn set_interface(mut self, input: std::option::Option<crate::types::InterfaceRequest>) -> Self {
-        self.interface = input; self
+    pub fn set_interface(
+        mut self,
+        input: std::option::Option<crate::types::InterfaceRequest>,
+    ) -> Self {
+        self.interface = input;
+        self
     }
     /// Consumes the builder and constructs a [`DestinationConfigurationRequest`](crate::types::DestinationConfigurationRequest).
     pub fn build(self) -> crate::types::DestinationConfigurationRequest {
         crate::types::DestinationConfigurationRequest {
-            destination_ip: self.destination_ip
-            ,
-            destination_port: self.destination_port
-                .unwrap_or_default()
-            ,
-            interface: self.interface
-            ,
+            destination_ip: self.destination_ip,
+            destination_port: self.destination_port.unwrap_or_default(),
+            interface: self.interface,
         }
     }
 }
-

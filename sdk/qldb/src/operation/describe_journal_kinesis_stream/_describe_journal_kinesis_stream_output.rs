@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeJournalKinesisStreamOutput  {
+pub struct DescribeJournalKinesisStreamOutput {
     /// <p>Information about the QLDB journal stream returned by a <code>DescribeJournalS3Export</code> request.</p>
     #[doc(hidden)]
     pub stream: std::option::Option<crate::types::JournalKinesisStreamDescription>,
@@ -10,18 +10,18 @@ pub struct DescribeJournalKinesisStreamOutput  {
 }
 impl DescribeJournalKinesisStreamOutput {
     /// <p>Information about the QLDB journal stream returned by a <code>DescribeJournalS3Export</code> request.</p>
-    pub fn stream(&self) -> std::option::Option<& crate::types::JournalKinesisStreamDescription> {
+    pub fn stream(&self) -> std::option::Option<&crate::types::JournalKinesisStreamDescription> {
         self.stream.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for DescribeJournalKinesisStreamOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl DescribeJournalKinesisStreamOutput {
     /// Creates a new builder-style object to manufacture [`DescribeJournalKinesisStreamOutput`](crate::operation::describe_journal_kinesis_stream::DescribeJournalKinesisStreamOutput).
-    pub fn builder() -> crate::operation::describe_journal_kinesis_stream::builders::DescribeJournalKinesisStreamOutputBuilder {
+    pub fn builder() -> crate::operation::describe_journal_kinesis_stream::builders::DescribeJournalKinesisStreamOutputBuilder{
         crate::operation::describe_journal_kinesis_stream::builders::DescribeJournalKinesisStreamOutputBuilder::default()
     }
 }
@@ -40,25 +40,29 @@ impl DescribeJournalKinesisStreamOutputBuilder {
         self
     }
     /// <p>Information about the QLDB journal stream returned by a <code>DescribeJournalS3Export</code> request.</p>
-    pub fn set_stream(mut self, input: std::option::Option<crate::types::JournalKinesisStreamDescription>) -> Self {
-        self.stream = input; self
+    pub fn set_stream(
+        mut self,
+        input: std::option::Option<crate::types::JournalKinesisStreamDescription>,
+    ) -> Self {
+        self.stream = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`DescribeJournalKinesisStreamOutput`](crate::operation::describe_journal_kinesis_stream::DescribeJournalKinesisStreamOutput).
-    pub fn build(self) -> crate::operation::describe_journal_kinesis_stream::DescribeJournalKinesisStreamOutput {
+    pub fn build(
+        self,
+    ) -> crate::operation::describe_journal_kinesis_stream::DescribeJournalKinesisStreamOutput {
         crate::operation::describe_journal_kinesis_stream::DescribeJournalKinesisStreamOutput {
-            stream: self.stream
-            ,
+            stream: self.stream,
             _request_id: self._request_id,
         }
     }
 }
-

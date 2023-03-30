@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteBotInput  {
+pub struct DeleteBotInput {
     /// <p>The identifier of the bot to delete. </p>
     #[doc(hidden)]
     pub bot_id: std::option::Option<std::string::String>,
@@ -12,7 +12,7 @@ pub struct DeleteBotInput  {
 }
 impl DeleteBotInput {
     /// <p>The identifier of the bot to delete. </p>
-    pub fn bot_id(&self) -> std::option::Option<& str> {
+    pub fn bot_id(&self) -> std::option::Option<&str> {
         self.bot_id.as_deref()
     }
     /// <p>When <code>true</code>, Amazon Lex doesn't check to see if another resource, such as an alias, is using the bot before it is deleted.</p>
@@ -42,7 +42,8 @@ impl DeleteBotInputBuilder {
     }
     /// <p>The identifier of the bot to delete. </p>
     pub fn set_bot_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.bot_id = input; self
+        self.bot_id = input;
+        self
     }
     /// <p>When <code>true</code>, Amazon Lex doesn't check to see if another resource, such as an alias, is using the bot before it is deleted.</p>
     pub fn skip_resource_in_use_check(mut self, input: bool) -> Self {
@@ -51,19 +52,19 @@ impl DeleteBotInputBuilder {
     }
     /// <p>When <code>true</code>, Amazon Lex doesn't check to see if another resource, such as an alias, is using the bot before it is deleted.</p>
     pub fn set_skip_resource_in_use_check(mut self, input: std::option::Option<bool>) -> Self {
-        self.skip_resource_in_use_check = input; self
+        self.skip_resource_in_use_check = input;
+        self
     }
     /// Consumes the builder and constructs a [`DeleteBotInput`](crate::operation::delete_bot::DeleteBotInput).
-    pub fn build(self) -> Result<crate::operation::delete_bot::DeleteBotInput, aws_smithy_http::operation::error::BuildError> {
-        Ok(
-            crate::operation::delete_bot::DeleteBotInput {
-                bot_id: self.bot_id
-                ,
-                skip_resource_in_use_check: self.skip_resource_in_use_check
-                    .unwrap_or_default()
-                ,
-            }
-        )
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::delete_bot::DeleteBotInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        Ok(crate::operation::delete_bot::DeleteBotInput {
+            bot_id: self.bot_id,
+            skip_resource_in_use_check: self.skip_resource_in_use_check.unwrap_or_default(),
+        })
     }
 }
-

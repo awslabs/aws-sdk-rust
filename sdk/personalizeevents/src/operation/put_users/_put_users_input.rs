@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PutUsersInput  {
+pub struct PutUsersInput {
     /// <p>The Amazon Resource Name (ARN) of the Users dataset you are adding the user or users to.</p>
     #[doc(hidden)]
     pub dataset_arn: std::option::Option<std::string::String>,
@@ -12,11 +12,11 @@ pub struct PutUsersInput  {
 }
 impl PutUsersInput {
     /// <p>The Amazon Resource Name (ARN) of the Users dataset you are adding the user or users to.</p>
-    pub fn dataset_arn(&self) -> std::option::Option<& str> {
+    pub fn dataset_arn(&self) -> std::option::Option<&str> {
         self.dataset_arn.as_deref()
     }
     /// <p>A list of user data.</p>
-    pub fn users(&self) -> std::option::Option<& [crate::types::User]> {
+    pub fn users(&self) -> std::option::Option<&[crate::types::User]> {
         self.users.as_deref()
     }
 }
@@ -42,7 +42,8 @@ impl PutUsersInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the Users dataset you are adding the user or users to.</p>
     pub fn set_dataset_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.dataset_arn = input; self
+        self.dataset_arn = input;
+        self
     }
     /// Appends an item to `users`.
     ///
@@ -51,24 +52,28 @@ impl PutUsersInputBuilder {
     /// <p>A list of user data.</p>
     pub fn users(mut self, input: crate::types::User) -> Self {
         let mut v = self.users.unwrap_or_default();
-                        v.push(input);
-                        self.users = Some(v);
-                        self
+        v.push(input);
+        self.users = Some(v);
+        self
     }
     /// <p>A list of user data.</p>
-    pub fn set_users(mut self, input: std::option::Option<std::vec::Vec<crate::types::User>>) -> Self {
-        self.users = input; self
+    pub fn set_users(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::User>>,
+    ) -> Self {
+        self.users = input;
+        self
     }
     /// Consumes the builder and constructs a [`PutUsersInput`](crate::operation::put_users::PutUsersInput).
-    pub fn build(self) -> Result<crate::operation::put_users::PutUsersInput, aws_smithy_http::operation::error::BuildError> {
-        Ok(
-            crate::operation::put_users::PutUsersInput {
-                dataset_arn: self.dataset_arn
-                ,
-                users: self.users
-                ,
-            }
-        )
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::put_users::PutUsersInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        Ok(crate::operation::put_users::PutUsersInput {
+            dataset_arn: self.dataset_arn,
+            users: self.users,
+        })
     }
 }
-

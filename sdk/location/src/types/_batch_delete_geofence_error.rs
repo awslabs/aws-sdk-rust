@@ -3,7 +3,7 @@
 /// <p>Contains error details for each geofence that failed to delete from the geofence collection.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct BatchDeleteGeofenceError  {
+pub struct BatchDeleteGeofenceError {
     /// <p>The geofence associated with the error message.</p>
     #[doc(hidden)]
     pub geofence_id: std::option::Option<std::string::String>,
@@ -13,11 +13,11 @@ pub struct BatchDeleteGeofenceError  {
 }
 impl BatchDeleteGeofenceError {
     /// <p>The geofence associated with the error message.</p>
-    pub fn geofence_id(&self) -> std::option::Option<& str> {
+    pub fn geofence_id(&self) -> std::option::Option<&str> {
         self.geofence_id.as_deref()
     }
     /// <p>Contains details associated to the batch error.</p>
-    pub fn error(&self) -> std::option::Option<& crate::types::BatchItemError> {
+    pub fn error(&self) -> std::option::Option<&crate::types::BatchItemError> {
         self.error.as_ref()
     }
 }
@@ -43,7 +43,8 @@ impl BatchDeleteGeofenceErrorBuilder {
     }
     /// <p>The geofence associated with the error message.</p>
     pub fn set_geofence_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.geofence_id = input; self
+        self.geofence_id = input;
+        self
     }
     /// <p>Contains details associated to the batch error.</p>
     pub fn error(mut self, input: crate::types::BatchItemError) -> Self {
@@ -52,16 +53,14 @@ impl BatchDeleteGeofenceErrorBuilder {
     }
     /// <p>Contains details associated to the batch error.</p>
     pub fn set_error(mut self, input: std::option::Option<crate::types::BatchItemError>) -> Self {
-        self.error = input; self
+        self.error = input;
+        self
     }
     /// Consumes the builder and constructs a [`BatchDeleteGeofenceError`](crate::types::BatchDeleteGeofenceError).
     pub fn build(self) -> crate::types::BatchDeleteGeofenceError {
         crate::types::BatchDeleteGeofenceError {
-            geofence_id: self.geofence_id
-            ,
-            error: self.error
-            ,
+            geofence_id: self.geofence_id,
+            error: self.error,
         }
     }
 }
-

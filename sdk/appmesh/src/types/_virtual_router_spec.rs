@@ -3,14 +3,14 @@
 /// <p>An object that represents the specification of a virtual router.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct VirtualRouterSpec  {
+pub struct VirtualRouterSpec {
     /// <p>The listeners that the virtual router is expected to receive inbound traffic from. You can specify one listener.</p>
     #[doc(hidden)]
     pub listeners: std::option::Option<std::vec::Vec<crate::types::VirtualRouterListener>>,
 }
 impl VirtualRouterSpec {
     /// <p>The listeners that the virtual router is expected to receive inbound traffic from. You can specify one listener.</p>
-    pub fn listeners(&self) -> std::option::Option<& [crate::types::VirtualRouterListener]> {
+    pub fn listeners(&self) -> std::option::Option<&[crate::types::VirtualRouterListener]> {
         self.listeners.as_deref()
     }
 }
@@ -35,20 +35,22 @@ impl VirtualRouterSpecBuilder {
     /// <p>The listeners that the virtual router is expected to receive inbound traffic from. You can specify one listener.</p>
     pub fn listeners(mut self, input: crate::types::VirtualRouterListener) -> Self {
         let mut v = self.listeners.unwrap_or_default();
-                        v.push(input);
-                        self.listeners = Some(v);
-                        self
+        v.push(input);
+        self.listeners = Some(v);
+        self
     }
     /// <p>The listeners that the virtual router is expected to receive inbound traffic from. You can specify one listener.</p>
-    pub fn set_listeners(mut self, input: std::option::Option<std::vec::Vec<crate::types::VirtualRouterListener>>) -> Self {
-        self.listeners = input; self
+    pub fn set_listeners(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::VirtualRouterListener>>,
+    ) -> Self {
+        self.listeners = input;
+        self
     }
     /// Consumes the builder and constructs a [`VirtualRouterSpec`](crate::types::VirtualRouterSpec).
     pub fn build(self) -> crate::types::VirtualRouterSpec {
         crate::types::VirtualRouterSpec {
-            listeners: self.listeners
-            ,
+            listeners: self.listeners,
         }
     }
 }
-

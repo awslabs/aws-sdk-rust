@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetLicenseInput  {
+pub struct GetLicenseInput {
     /// <p>Amazon Resource Name (ARN) of the license.</p>
     #[doc(hidden)]
     pub license_arn: std::option::Option<std::string::String>,
@@ -12,11 +12,11 @@ pub struct GetLicenseInput  {
 }
 impl GetLicenseInput {
     /// <p>Amazon Resource Name (ARN) of the license.</p>
-    pub fn license_arn(&self) -> std::option::Option<& str> {
+    pub fn license_arn(&self) -> std::option::Option<&str> {
         self.license_arn.as_deref()
     }
     /// <p>License version.</p>
-    pub fn version(&self) -> std::option::Option<& str> {
+    pub fn version(&self) -> std::option::Option<&str> {
         self.version.as_deref()
     }
 }
@@ -42,7 +42,8 @@ impl GetLicenseInputBuilder {
     }
     /// <p>Amazon Resource Name (ARN) of the license.</p>
     pub fn set_license_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.license_arn = input; self
+        self.license_arn = input;
+        self
     }
     /// <p>License version.</p>
     pub fn version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -51,18 +52,19 @@ impl GetLicenseInputBuilder {
     }
     /// <p>License version.</p>
     pub fn set_version(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.version = input; self
+        self.version = input;
+        self
     }
     /// Consumes the builder and constructs a [`GetLicenseInput`](crate::operation::get_license::GetLicenseInput).
-    pub fn build(self) -> Result<crate::operation::get_license::GetLicenseInput, aws_smithy_http::operation::error::BuildError> {
-        Ok(
-            crate::operation::get_license::GetLicenseInput {
-                license_arn: self.license_arn
-                ,
-                version: self.version
-                ,
-            }
-        )
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::get_license::GetLicenseInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        Ok(crate::operation::get_license::GetLicenseInput {
+            license_arn: self.license_arn,
+            version: self.version,
+        })
     }
 }
-

@@ -3,7 +3,7 @@
 /// <p>Defines a hyperparameter to be used by an algorithm.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct HyperParameterSpecification  {
+pub struct HyperParameterSpecification {
     /// <p>The name of this hyperparameter. The name must be unique.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -28,19 +28,19 @@ pub struct HyperParameterSpecification  {
 }
 impl HyperParameterSpecification {
     /// <p>The name of this hyperparameter. The name must be unique.</p>
-    pub fn name(&self) -> std::option::Option<& str> {
+    pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>A brief description of the hyperparameter.</p>
-    pub fn description(&self) -> std::option::Option<& str> {
+    pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
     /// <p>The type of this hyperparameter. The valid types are <code>Integer</code>, <code>Continuous</code>, <code>Categorical</code>, and <code>FreeText</code>.</p>
-    pub fn r#type(&self) -> std::option::Option<& crate::types::ParameterType> {
+    pub fn r#type(&self) -> std::option::Option<&crate::types::ParameterType> {
         self.r#type.as_ref()
     }
     /// <p>The allowed range for this hyperparameter.</p>
-    pub fn range(&self) -> std::option::Option<& crate::types::ParameterRange> {
+    pub fn range(&self) -> std::option::Option<&crate::types::ParameterRange> {
         self.range.as_ref()
     }
     /// <p>Indicates whether this hyperparameter is tunable in a hyperparameter tuning job.</p>
@@ -52,7 +52,7 @@ impl HyperParameterSpecification {
         self.is_required
     }
     /// <p>The default value for this hyperparameter. If a default value is specified, a hyperparameter cannot be required.</p>
-    pub fn default_value(&self) -> std::option::Option<& str> {
+    pub fn default_value(&self) -> std::option::Option<&str> {
         self.default_value.as_deref()
     }
 }
@@ -83,7 +83,8 @@ impl HyperParameterSpecificationBuilder {
     }
     /// <p>The name of this hyperparameter. The name must be unique.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input; self
+        self.name = input;
+        self
     }
     /// <p>A brief description of the hyperparameter.</p>
     pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -92,7 +93,8 @@ impl HyperParameterSpecificationBuilder {
     }
     /// <p>A brief description of the hyperparameter.</p>
     pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.description = input; self
+        self.description = input;
+        self
     }
     /// <p>The type of this hyperparameter. The valid types are <code>Integer</code>, <code>Continuous</code>, <code>Categorical</code>, and <code>FreeText</code>.</p>
     pub fn r#type(mut self, input: crate::types::ParameterType) -> Self {
@@ -101,7 +103,8 @@ impl HyperParameterSpecificationBuilder {
     }
     /// <p>The type of this hyperparameter. The valid types are <code>Integer</code>, <code>Continuous</code>, <code>Categorical</code>, and <code>FreeText</code>.</p>
     pub fn set_type(mut self, input: std::option::Option<crate::types::ParameterType>) -> Self {
-        self.r#type = input; self
+        self.r#type = input;
+        self
     }
     /// <p>The allowed range for this hyperparameter.</p>
     pub fn range(mut self, input: crate::types::ParameterRange) -> Self {
@@ -110,7 +113,8 @@ impl HyperParameterSpecificationBuilder {
     }
     /// <p>The allowed range for this hyperparameter.</p>
     pub fn set_range(mut self, input: std::option::Option<crate::types::ParameterRange>) -> Self {
-        self.range = input; self
+        self.range = input;
+        self
     }
     /// <p>Indicates whether this hyperparameter is tunable in a hyperparameter tuning job.</p>
     pub fn is_tunable(mut self, input: bool) -> Self {
@@ -119,7 +123,8 @@ impl HyperParameterSpecificationBuilder {
     }
     /// <p>Indicates whether this hyperparameter is tunable in a hyperparameter tuning job.</p>
     pub fn set_is_tunable(mut self, input: std::option::Option<bool>) -> Self {
-        self.is_tunable = input; self
+        self.is_tunable = input;
+        self
     }
     /// <p>Indicates whether this hyperparameter is required.</p>
     pub fn is_required(mut self, input: bool) -> Self {
@@ -128,7 +133,8 @@ impl HyperParameterSpecificationBuilder {
     }
     /// <p>Indicates whether this hyperparameter is required.</p>
     pub fn set_is_required(mut self, input: std::option::Option<bool>) -> Self {
-        self.is_required = input; self
+        self.is_required = input;
+        self
     }
     /// <p>The default value for this hyperparameter. If a default value is specified, a hyperparameter cannot be required.</p>
     pub fn default_value(mut self, input: impl Into<std::string::String>) -> Self {
@@ -137,28 +143,19 @@ impl HyperParameterSpecificationBuilder {
     }
     /// <p>The default value for this hyperparameter. If a default value is specified, a hyperparameter cannot be required.</p>
     pub fn set_default_value(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.default_value = input; self
+        self.default_value = input;
+        self
     }
     /// Consumes the builder and constructs a [`HyperParameterSpecification`](crate::types::HyperParameterSpecification).
     pub fn build(self) -> crate::types::HyperParameterSpecification {
         crate::types::HyperParameterSpecification {
-            name: self.name
-            ,
-            description: self.description
-            ,
-            r#type: self.r#type
-            ,
-            range: self.range
-            ,
-            is_tunable: self.is_tunable
-                .unwrap_or_default()
-            ,
-            is_required: self.is_required
-                .unwrap_or_default()
-            ,
-            default_value: self.default_value
-            ,
+            name: self.name,
+            description: self.description,
+            r#type: self.r#type,
+            range: self.range,
+            is_tunable: self.is_tunable.unwrap_or_default(),
+            is_required: self.is_required.unwrap_or_default(),
+            default_value: self.default_value,
         }
     }
 }
-

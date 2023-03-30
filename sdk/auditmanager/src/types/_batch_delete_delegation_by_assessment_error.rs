@@ -3,7 +3,7 @@
 /// <p> An error entity for the <code>BatchDeleteDelegationByAssessment</code> API. This is used to provide more meaningful errors than a simple string message. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct BatchDeleteDelegationByAssessmentError  {
+pub struct BatchDeleteDelegationByAssessmentError {
     /// <p> The identifier for the delegation. </p>
     #[doc(hidden)]
     pub delegation_id: std::option::Option<std::string::String>,
@@ -16,15 +16,15 @@ pub struct BatchDeleteDelegationByAssessmentError  {
 }
 impl BatchDeleteDelegationByAssessmentError {
     /// <p> The identifier for the delegation. </p>
-    pub fn delegation_id(&self) -> std::option::Option<& str> {
+    pub fn delegation_id(&self) -> std::option::Option<&str> {
         self.delegation_id.as_deref()
     }
     /// <p> The error code that the <code>BatchDeleteDelegationByAssessment</code> API returned. </p>
-    pub fn error_code(&self) -> std::option::Option<& str> {
+    pub fn error_code(&self) -> std::option::Option<&str> {
         self.error_code.as_deref()
     }
     /// <p> The error message that the <code>BatchDeleteDelegationByAssessment</code> API returned. </p>
-    pub fn error_message(&self) -> std::option::Option<& str> {
+    pub fn error_message(&self) -> std::option::Option<&str> {
         self.error_message.as_deref()
     }
 }
@@ -51,7 +51,8 @@ impl BatchDeleteDelegationByAssessmentErrorBuilder {
     }
     /// <p> The identifier for the delegation. </p>
     pub fn set_delegation_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.delegation_id = input; self
+        self.delegation_id = input;
+        self
     }
     /// <p> The error code that the <code>BatchDeleteDelegationByAssessment</code> API returned. </p>
     pub fn error_code(mut self, input: impl Into<std::string::String>) -> Self {
@@ -60,7 +61,8 @@ impl BatchDeleteDelegationByAssessmentErrorBuilder {
     }
     /// <p> The error code that the <code>BatchDeleteDelegationByAssessment</code> API returned. </p>
     pub fn set_error_code(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.error_code = input; self
+        self.error_code = input;
+        self
     }
     /// <p> The error message that the <code>BatchDeleteDelegationByAssessment</code> API returned. </p>
     pub fn error_message(mut self, input: impl Into<std::string::String>) -> Self {
@@ -69,18 +71,15 @@ impl BatchDeleteDelegationByAssessmentErrorBuilder {
     }
     /// <p> The error message that the <code>BatchDeleteDelegationByAssessment</code> API returned. </p>
     pub fn set_error_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.error_message = input; self
+        self.error_message = input;
+        self
     }
     /// Consumes the builder and constructs a [`BatchDeleteDelegationByAssessmentError`](crate::types::BatchDeleteDelegationByAssessmentError).
     pub fn build(self) -> crate::types::BatchDeleteDelegationByAssessmentError {
         crate::types::BatchDeleteDelegationByAssessmentError {
-            delegation_id: self.delegation_id
-            ,
-            error_code: self.error_code
-            ,
-            error_message: self.error_message
-            ,
+            delegation_id: self.delegation_id,
+            error_code: self.error_code,
+            error_message: self.error_message,
         }
     }
 }
-

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct VoiceConnectorGroup  {
+pub struct VoiceConnectorGroup {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub voice_connector_group_id: std::option::Option<std::string::String>,
@@ -24,27 +24,29 @@ pub struct VoiceConnectorGroup  {
 }
 impl VoiceConnectorGroup {
     #[allow(missing_docs)] // documentation missing in model
-    pub fn voice_connector_group_id(&self) -> std::option::Option<& str> {
+    pub fn voice_connector_group_id(&self) -> std::option::Option<&str> {
         self.voice_connector_group_id.as_deref()
     }
     #[allow(missing_docs)] // documentation missing in model
-    pub fn name(&self) -> std::option::Option<& str> {
+    pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
     #[allow(missing_docs)] // documentation missing in model
-    pub fn voice_connector_items(&self) -> std::option::Option<& [crate::types::VoiceConnectorItem]> {
+    pub fn voice_connector_items(
+        &self,
+    ) -> std::option::Option<&[crate::types::VoiceConnectorItem]> {
         self.voice_connector_items.as_deref()
     }
     #[allow(missing_docs)] // documentation missing in model
-    pub fn created_timestamp(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
+    pub fn created_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created_timestamp.as_ref()
     }
     #[allow(missing_docs)] // documentation missing in model
-    pub fn updated_timestamp(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
+    pub fn updated_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.updated_timestamp.as_ref()
     }
     #[allow(missing_docs)] // documentation missing in model
-    pub fn voice_connector_group_arn(&self) -> std::option::Option<& str> {
+    pub fn voice_connector_group_arn(&self) -> std::option::Option<&str> {
         self.voice_connector_group_arn.as_deref()
     }
 }
@@ -61,7 +63,8 @@ impl VoiceConnectorGroup {
 pub struct VoiceConnectorGroupBuilder {
     pub(crate) voice_connector_group_id: std::option::Option<std::string::String>,
     pub(crate) name: std::option::Option<std::string::String>,
-    pub(crate) voice_connector_items: std::option::Option<std::vec::Vec<crate::types::VoiceConnectorItem>>,
+    pub(crate) voice_connector_items:
+        std::option::Option<std::vec::Vec<crate::types::VoiceConnectorItem>>,
     pub(crate) created_timestamp: std::option::Option<aws_smithy_types::DateTime>,
     pub(crate) updated_timestamp: std::option::Option<aws_smithy_types::DateTime>,
     pub(crate) voice_connector_group_arn: std::option::Option<std::string::String>,
@@ -73,8 +76,12 @@ impl VoiceConnectorGroupBuilder {
         self
     }
     #[allow(missing_docs)] // documentation missing in model
-    pub fn set_voice_connector_group_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.voice_connector_group_id = input; self
+    pub fn set_voice_connector_group_id(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.voice_connector_group_id = input;
+        self
     }
     #[allow(missing_docs)] // documentation missing in model
     pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -83,7 +90,8 @@ impl VoiceConnectorGroupBuilder {
     }
     #[allow(missing_docs)] // documentation missing in model
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input; self
+        self.name = input;
+        self
     }
     /// Appends an item to `voice_connector_items`.
     ///
@@ -91,13 +99,17 @@ impl VoiceConnectorGroupBuilder {
     ///
     pub fn voice_connector_items(mut self, input: crate::types::VoiceConnectorItem) -> Self {
         let mut v = self.voice_connector_items.unwrap_or_default();
-                        v.push(input);
-                        self.voice_connector_items = Some(v);
-                        self
+        v.push(input);
+        self.voice_connector_items = Some(v);
+        self
     }
     #[allow(missing_docs)] // documentation missing in model
-    pub fn set_voice_connector_items(mut self, input: std::option::Option<std::vec::Vec<crate::types::VoiceConnectorItem>>) -> Self {
-        self.voice_connector_items = input; self
+    pub fn set_voice_connector_items(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::VoiceConnectorItem>>,
+    ) -> Self {
+        self.voice_connector_items = input;
+        self
     }
     #[allow(missing_docs)] // documentation missing in model
     pub fn created_timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -105,8 +117,12 @@ impl VoiceConnectorGroupBuilder {
         self
     }
     #[allow(missing_docs)] // documentation missing in model
-    pub fn set_created_timestamp(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.created_timestamp = input; self
+    pub fn set_created_timestamp(
+        mut self,
+        input: std::option::Option<aws_smithy_types::DateTime>,
+    ) -> Self {
+        self.created_timestamp = input;
+        self
     }
     #[allow(missing_docs)] // documentation missing in model
     pub fn updated_timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -114,8 +130,12 @@ impl VoiceConnectorGroupBuilder {
         self
     }
     #[allow(missing_docs)] // documentation missing in model
-    pub fn set_updated_timestamp(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.updated_timestamp = input; self
+    pub fn set_updated_timestamp(
+        mut self,
+        input: std::option::Option<aws_smithy_types::DateTime>,
+    ) -> Self {
+        self.updated_timestamp = input;
+        self
     }
     #[allow(missing_docs)] // documentation missing in model
     pub fn voice_connector_group_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -123,25 +143,22 @@ impl VoiceConnectorGroupBuilder {
         self
     }
     #[allow(missing_docs)] // documentation missing in model
-    pub fn set_voice_connector_group_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.voice_connector_group_arn = input; self
+    pub fn set_voice_connector_group_arn(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.voice_connector_group_arn = input;
+        self
     }
     /// Consumes the builder and constructs a [`VoiceConnectorGroup`](crate::types::VoiceConnectorGroup).
     pub fn build(self) -> crate::types::VoiceConnectorGroup {
         crate::types::VoiceConnectorGroup {
-            voice_connector_group_id: self.voice_connector_group_id
-            ,
-            name: self.name
-            ,
-            voice_connector_items: self.voice_connector_items
-            ,
-            created_timestamp: self.created_timestamp
-            ,
-            updated_timestamp: self.updated_timestamp
-            ,
-            voice_connector_group_arn: self.voice_connector_group_arn
-            ,
+            voice_connector_group_id: self.voice_connector_group_id,
+            name: self.name,
+            voice_connector_items: self.voice_connector_items,
+            created_timestamp: self.created_timestamp,
+            updated_timestamp: self.updated_timestamp,
+            voice_connector_group_arn: self.voice_connector_group_arn,
         }
     }
 }
-

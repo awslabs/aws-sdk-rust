@@ -2,11 +2,11 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteRegistryPolicyInput  {
-}
+pub struct DeleteRegistryPolicyInput {}
 impl DeleteRegistryPolicyInput {
     /// Creates a new builder-style object to manufacture [`DeleteRegistryPolicyInput`](crate::operation::delete_registry_policy::DeleteRegistryPolicyInput).
-    pub fn builder() -> crate::operation::delete_registry_policy::builders::DeleteRegistryPolicyInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::delete_registry_policy::builders::DeleteRegistryPolicyInputBuilder {
         crate::operation::delete_registry_policy::builders::DeleteRegistryPolicyInputBuilder::default()
     }
 }
@@ -14,15 +14,15 @@ impl DeleteRegistryPolicyInput {
 /// A builder for [`DeleteRegistryPolicyInput`](crate::operation::delete_registry_policy::DeleteRegistryPolicyInput).
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-pub struct DeleteRegistryPolicyInputBuilder {
-}
+pub struct DeleteRegistryPolicyInputBuilder {}
 impl DeleteRegistryPolicyInputBuilder {
     /// Consumes the builder and constructs a [`DeleteRegistryPolicyInput`](crate::operation::delete_registry_policy::DeleteRegistryPolicyInput).
-    pub fn build(self) -> Result<crate::operation::delete_registry_policy::DeleteRegistryPolicyInput, aws_smithy_http::operation::error::BuildError> {
-        Ok(
-            crate::operation::delete_registry_policy::DeleteRegistryPolicyInput {
-            }
-        )
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::delete_registry_policy::DeleteRegistryPolicyInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        Ok(crate::operation::delete_registry_policy::DeleteRegistryPolicyInput {})
     }
 }
-

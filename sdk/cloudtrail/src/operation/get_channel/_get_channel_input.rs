@@ -2,14 +2,14 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetChannelInput  {
+pub struct GetChannelInput {
     /// <p>The ARN or <code>UUID</code> of a channel.</p>
     #[doc(hidden)]
     pub channel: std::option::Option<std::string::String>,
 }
 impl GetChannelInput {
     /// <p>The ARN or <code>UUID</code> of a channel.</p>
-    pub fn channel(&self) -> std::option::Option<& str> {
+    pub fn channel(&self) -> std::option::Option<&str> {
         self.channel.as_deref()
     }
 }
@@ -34,16 +34,18 @@ impl GetChannelInputBuilder {
     }
     /// <p>The ARN or <code>UUID</code> of a channel.</p>
     pub fn set_channel(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.channel = input; self
+        self.channel = input;
+        self
     }
     /// Consumes the builder and constructs a [`GetChannelInput`](crate::operation::get_channel::GetChannelInput).
-    pub fn build(self) -> Result<crate::operation::get_channel::GetChannelInput, aws_smithy_http::operation::error::BuildError> {
-        Ok(
-            crate::operation::get_channel::GetChannelInput {
-                channel: self.channel
-                ,
-            }
-        )
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::get_channel::GetChannelInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        Ok(crate::operation::get_channel::GetChannelInput {
+            channel: self.channel,
+        })
     }
 }
-

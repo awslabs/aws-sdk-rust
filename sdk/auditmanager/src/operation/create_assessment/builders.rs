@@ -4,49 +4,71 @@ pub use crate::operation::create_assessment::_create_assessment_output::CreateAs
 pub use crate::operation::create_assessment::_create_assessment_input::CreateAssessmentInputBuilder;
 
 /// Fluent builder constructing a request to `CreateAssessment`.
-/// 
+///
 /// <p> Creates an assessment in Audit Manager. </p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct CreateAssessmentFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::create_assessment::builders::CreateAssessmentInputBuilder
-            }
-impl CreateAssessmentFluentBuilder  {
+    handle: std::sync::Arc<crate::client::Handle>,
+    inner: crate::operation::create_assessment::builders::CreateAssessmentInputBuilder,
+}
+impl CreateAssessmentFluentBuilder {
     /// Creates a new `CreateAssessment`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
-                    /// sent. The operation's inner [http::Request] can be modified as well.
-                    pub async fn customize(self) -> std::result::Result<
-                        crate::client::customize::CustomizableOperation<crate::operation::create_assessment::CreateAssessment, aws_http::retry::AwsResponseRetryClassifier,>,
-                        aws_smithy_http::result::SdkError<crate::operation::create_assessment::CreateAssessmentError>
-                    >  {
-                        let handle = self.handle.clone();
-                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-                    }
-    
-                    /// Sends the request and returns the response.
-                    ///
-                    /// If an error occurs, an `SdkError` will be returned with additional details that
-                    /// can be matched against.
-                    ///
-                    /// By default, any retryable failures will be retried twice. Retry behavior
-                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                    /// set when configuring the client.
-                    pub async fn send(self) -> std::result::Result<crate::operation::create_assessment::CreateAssessmentOutput, aws_smithy_http::result::SdkError<crate::operation::create_assessment::CreateAssessmentError>>
-                     {
-                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&self.handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        self.handle.client.call(op).await
-                    }
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle,
+            inner: Default::default(),
+        }
+    }
+
+    /// Consume this builder, creating a customizable operation that can be modified before being
+    /// sent. The operation's inner [http::Request] can be modified as well.
+    pub async fn customize(
+        self,
+    ) -> std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::create_assessment::CreateAssessment,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::result::SdkError<
+            crate::operation::create_assessment::CreateAssessmentError,
+        >,
+    > {
+        let handle = self.handle.clone();
+        let operation = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+    }
+
+    /// Sends the request and returns the response.
+    ///
+    /// If an error occurs, an `SdkError` will be returned with additional details that
+    /// can be matched against.
+    ///
+    /// By default, any retryable failures will be retried twice. Retry behavior
+    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+    /// set when configuring the client.
+    pub async fn send(
+        self,
+    ) -> std::result::Result<
+        crate::operation::create_assessment::CreateAssessmentOutput,
+        aws_smithy_http::result::SdkError<
+            crate::operation::create_assessment::CreateAssessmentError,
+        >,
+    > {
+        let op = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&self.handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        self.handle.client.call(op).await
+    }
     /// <p> The name of the assessment to be created. </p>
     pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.name(input.into());
@@ -68,12 +90,18 @@ impl CreateAssessmentFluentBuilder  {
         self
     }
     /// <p> The assessment report storage destination for the assessment that's being created. </p>
-    pub fn assessment_reports_destination(mut self, input: crate::types::AssessmentReportsDestination) -> Self {
+    pub fn assessment_reports_destination(
+        mut self,
+        input: crate::types::AssessmentReportsDestination,
+    ) -> Self {
         self.inner = self.inner.assessment_reports_destination(input);
         self
     }
     /// <p> The assessment report storage destination for the assessment that's being created. </p>
-    pub fn set_assessment_reports_destination(mut self, input: std::option::Option<crate::types::AssessmentReportsDestination>) -> Self {
+    pub fn set_assessment_reports_destination(
+        mut self,
+        input: std::option::Option<crate::types::AssessmentReportsDestination>,
+    ) -> Self {
         self.inner = self.inner.set_assessment_reports_destination(input);
         self
     }
@@ -97,7 +125,10 @@ impl CreateAssessmentFluentBuilder  {
         self
     }
     /// <p> The list of roles for the assessment. </p>
-    pub fn set_roles(mut self, input: std::option::Option<std::vec::Vec<crate::types::Role>>) -> Self {
+    pub fn set_roles(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::Role>>,
+    ) -> Self {
         self.inner = self.inner.set_roles(input);
         self
     }
@@ -116,14 +147,22 @@ impl CreateAssessmentFluentBuilder  {
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// <p> The tags that are associated with the assessment. </p>
-    pub fn tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
+    pub fn tags(
+        mut self,
+        k: impl Into<std::string::String>,
+        v: impl Into<std::string::String>,
+    ) -> Self {
         self.inner = self.inner.tags(k.into(), v.into());
         self
     }
     /// <p> The tags that are associated with the assessment. </p>
-    pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+    pub fn set_tags(
+        mut self,
+        input: std::option::Option<
+            std::collections::HashMap<std::string::String, std::string::String>,
+        >,
+    ) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }
 }
-

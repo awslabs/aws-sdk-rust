@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateAnnotationStoreOutput  {
+pub struct UpdateAnnotationStoreOutput {
     /// <p>The store's ID.</p>
     #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
@@ -34,50 +34,52 @@ pub struct UpdateAnnotationStoreOutput  {
 }
 impl UpdateAnnotationStoreOutput {
     /// <p>The store's ID.</p>
-    pub fn id(&self) -> std::option::Option<& str> {
+    pub fn id(&self) -> std::option::Option<&str> {
         self.id.as_deref()
     }
     /// <p>The store's genome reference.</p>
-    pub fn reference(&self) -> std::option::Option<& crate::types::ReferenceItem> {
+    pub fn reference(&self) -> std::option::Option<&crate::types::ReferenceItem> {
         self.reference.as_ref()
     }
     /// <p>The store's status.</p>
-    pub fn status(&self) -> std::option::Option<& crate::types::StoreStatus> {
+    pub fn status(&self) -> std::option::Option<&crate::types::StoreStatus> {
         self.status.as_ref()
     }
     /// <p>The store's name.</p>
-    pub fn name(&self) -> std::option::Option<& str> {
+    pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>The store's description.</p>
-    pub fn description(&self) -> std::option::Option<& str> {
+    pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
     /// <p>When the store was created.</p>
-    pub fn creation_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
+    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
     /// <p>When the store was updated.</p>
-    pub fn update_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
+    pub fn update_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.update_time.as_ref()
     }
     /// <p>Parsing options for the store.</p>
-    pub fn store_options(&self) -> std::option::Option<& crate::types::StoreOptions> {
+    pub fn store_options(&self) -> std::option::Option<&crate::types::StoreOptions> {
         self.store_options.as_ref()
     }
     /// <p>The annotation file format of the store.</p>
-    pub fn store_format(&self) -> std::option::Option<& crate::types::StoreFormat> {
+    pub fn store_format(&self) -> std::option::Option<&crate::types::StoreFormat> {
         self.store_format.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for UpdateAnnotationStoreOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl UpdateAnnotationStoreOutput {
     /// Creates a new builder-style object to manufacture [`UpdateAnnotationStoreOutput`](crate::operation::update_annotation_store::UpdateAnnotationStoreOutput).
-    pub fn builder() -> crate::operation::update_annotation_store::builders::UpdateAnnotationStoreOutputBuilder {
+    pub fn builder(
+    ) -> crate::operation::update_annotation_store::builders::UpdateAnnotationStoreOutputBuilder
+    {
         crate::operation::update_annotation_store::builders::UpdateAnnotationStoreOutputBuilder::default()
     }
 }
@@ -105,7 +107,8 @@ impl UpdateAnnotationStoreOutputBuilder {
     }
     /// <p>The store's ID.</p>
     pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.id = input; self
+        self.id = input;
+        self
     }
     /// <p>The store's genome reference.</p>
     pub fn reference(mut self, input: crate::types::ReferenceItem) -> Self {
@@ -113,8 +116,12 @@ impl UpdateAnnotationStoreOutputBuilder {
         self
     }
     /// <p>The store's genome reference.</p>
-    pub fn set_reference(mut self, input: std::option::Option<crate::types::ReferenceItem>) -> Self {
-        self.reference = input; self
+    pub fn set_reference(
+        mut self,
+        input: std::option::Option<crate::types::ReferenceItem>,
+    ) -> Self {
+        self.reference = input;
+        self
     }
     /// <p>The store's status.</p>
     pub fn status(mut self, input: crate::types::StoreStatus) -> Self {
@@ -123,7 +130,8 @@ impl UpdateAnnotationStoreOutputBuilder {
     }
     /// <p>The store's status.</p>
     pub fn set_status(mut self, input: std::option::Option<crate::types::StoreStatus>) -> Self {
-        self.status = input; self
+        self.status = input;
+        self
     }
     /// <p>The store's name.</p>
     pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -132,7 +140,8 @@ impl UpdateAnnotationStoreOutputBuilder {
     }
     /// <p>The store's name.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input; self
+        self.name = input;
+        self
     }
     /// <p>The store's description.</p>
     pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -141,7 +150,8 @@ impl UpdateAnnotationStoreOutputBuilder {
     }
     /// <p>The store's description.</p>
     pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.description = input; self
+        self.description = input;
+        self
     }
     /// <p>When the store was created.</p>
     pub fn creation_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -149,8 +159,12 @@ impl UpdateAnnotationStoreOutputBuilder {
         self
     }
     /// <p>When the store was created.</p>
-    pub fn set_creation_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.creation_time = input; self
+    pub fn set_creation_time(
+        mut self,
+        input: std::option::Option<aws_smithy_types::DateTime>,
+    ) -> Self {
+        self.creation_time = input;
+        self
     }
     /// <p>When the store was updated.</p>
     pub fn update_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -158,8 +172,12 @@ impl UpdateAnnotationStoreOutputBuilder {
         self
     }
     /// <p>When the store was updated.</p>
-    pub fn set_update_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.update_time = input; self
+    pub fn set_update_time(
+        mut self,
+        input: std::option::Option<aws_smithy_types::DateTime>,
+    ) -> Self {
+        self.update_time = input;
+        self
     }
     /// <p>Parsing options for the store.</p>
     pub fn store_options(mut self, input: crate::types::StoreOptions) -> Self {
@@ -167,8 +185,12 @@ impl UpdateAnnotationStoreOutputBuilder {
         self
     }
     /// <p>Parsing options for the store.</p>
-    pub fn set_store_options(mut self, input: std::option::Option<crate::types::StoreOptions>) -> Self {
-        self.store_options = input; self
+    pub fn set_store_options(
+        mut self,
+        input: std::option::Option<crate::types::StoreOptions>,
+    ) -> Self {
+        self.store_options = input;
+        self
     }
     /// <p>The annotation file format of the store.</p>
     pub fn store_format(mut self, input: crate::types::StoreFormat) -> Self {
@@ -176,41 +198,35 @@ impl UpdateAnnotationStoreOutputBuilder {
         self
     }
     /// <p>The annotation file format of the store.</p>
-    pub fn set_store_format(mut self, input: std::option::Option<crate::types::StoreFormat>) -> Self {
-        self.store_format = input; self
+    pub fn set_store_format(
+        mut self,
+        input: std::option::Option<crate::types::StoreFormat>,
+    ) -> Self {
+        self.store_format = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`UpdateAnnotationStoreOutput`](crate::operation::update_annotation_store::UpdateAnnotationStoreOutput).
     pub fn build(self) -> crate::operation::update_annotation_store::UpdateAnnotationStoreOutput {
         crate::operation::update_annotation_store::UpdateAnnotationStoreOutput {
-            id: self.id
-            ,
-            reference: self.reference
-            ,
-            status: self.status
-            ,
-            name: self.name
-            ,
-            description: self.description
-            ,
-            creation_time: self.creation_time
-            ,
-            update_time: self.update_time
-            ,
-            store_options: self.store_options
-            ,
-            store_format: self.store_format
-            ,
+            id: self.id,
+            reference: self.reference,
+            status: self.status,
+            name: self.name,
+            description: self.description,
+            creation_time: self.creation_time,
+            update_time: self.update_time,
+            store_options: self.store_options,
+            store_format: self.store_format,
             _request_id: self._request_id,
         }
     }
 }
-

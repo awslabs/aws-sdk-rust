@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListLabelGroupsOutput  {
+pub struct ListLabelGroupsOutput {
     /// <p> An opaque pagination token indicating where to continue the listing of label groups. </p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
@@ -13,22 +13,23 @@ pub struct ListLabelGroupsOutput  {
 }
 impl ListLabelGroupsOutput {
     /// <p> An opaque pagination token indicating where to continue the listing of label groups. </p>
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
     /// <p> A summary of the label groups. </p>
-    pub fn label_group_summaries(&self) -> std::option::Option<& [crate::types::LabelGroupSummary]> {
+    pub fn label_group_summaries(&self) -> std::option::Option<&[crate::types::LabelGroupSummary]> {
         self.label_group_summaries.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for ListLabelGroupsOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl ListLabelGroupsOutput {
     /// Creates a new builder-style object to manufacture [`ListLabelGroupsOutput`](crate::operation::list_label_groups::ListLabelGroupsOutput).
-    pub fn builder() -> crate::operation::list_label_groups::builders::ListLabelGroupsOutputBuilder {
+    pub fn builder() -> crate::operation::list_label_groups::builders::ListLabelGroupsOutputBuilder
+    {
         crate::operation::list_label_groups::builders::ListLabelGroupsOutputBuilder::default()
     }
 }
@@ -38,7 +39,8 @@ impl ListLabelGroupsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct ListLabelGroupsOutputBuilder {
     pub(crate) next_token: std::option::Option<std::string::String>,
-    pub(crate) label_group_summaries: std::option::Option<std::vec::Vec<crate::types::LabelGroupSummary>>,
+    pub(crate) label_group_summaries:
+        std::option::Option<std::vec::Vec<crate::types::LabelGroupSummary>>,
     _request_id: Option<String>,
 }
 impl ListLabelGroupsOutputBuilder {
@@ -49,7 +51,8 @@ impl ListLabelGroupsOutputBuilder {
     }
     /// <p> An opaque pagination token indicating where to continue the listing of label groups. </p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input; self
+        self.next_token = input;
+        self
     }
     /// Appends an item to `label_group_summaries`.
     ///
@@ -58,32 +61,33 @@ impl ListLabelGroupsOutputBuilder {
     /// <p> A summary of the label groups. </p>
     pub fn label_group_summaries(mut self, input: crate::types::LabelGroupSummary) -> Self {
         let mut v = self.label_group_summaries.unwrap_or_default();
-                        v.push(input);
-                        self.label_group_summaries = Some(v);
-                        self
+        v.push(input);
+        self.label_group_summaries = Some(v);
+        self
     }
     /// <p> A summary of the label groups. </p>
-    pub fn set_label_group_summaries(mut self, input: std::option::Option<std::vec::Vec<crate::types::LabelGroupSummary>>) -> Self {
-        self.label_group_summaries = input; self
+    pub fn set_label_group_summaries(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::LabelGroupSummary>>,
+    ) -> Self {
+        self.label_group_summaries = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`ListLabelGroupsOutput`](crate::operation::list_label_groups::ListLabelGroupsOutput).
     pub fn build(self) -> crate::operation::list_label_groups::ListLabelGroupsOutput {
         crate::operation::list_label_groups::ListLabelGroupsOutput {
-            next_token: self.next_token
-            ,
-            label_group_summaries: self.label_group_summaries
-            ,
+            next_token: self.next_token,
+            label_group_summaries: self.label_group_summaries,
             _request_id: self._request_id,
         }
     }
 }
-

@@ -2,20 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteQueuedSavingsPlanInput  {
+pub struct DeleteQueuedSavingsPlanInput {
     /// <p>The ID of the Savings Plan.</p>
     #[doc(hidden)]
     pub savings_plan_id: std::option::Option<std::string::String>,
 }
 impl DeleteQueuedSavingsPlanInput {
     /// <p>The ID of the Savings Plan.</p>
-    pub fn savings_plan_id(&self) -> std::option::Option<& str> {
+    pub fn savings_plan_id(&self) -> std::option::Option<&str> {
         self.savings_plan_id.as_deref()
     }
 }
 impl DeleteQueuedSavingsPlanInput {
     /// Creates a new builder-style object to manufacture [`DeleteQueuedSavingsPlanInput`](crate::operation::delete_queued_savings_plan::DeleteQueuedSavingsPlanInput).
-    pub fn builder() -> crate::operation::delete_queued_savings_plan::builders::DeleteQueuedSavingsPlanInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::delete_queued_savings_plan::builders::DeleteQueuedSavingsPlanInputBuilder
+    {
         crate::operation::delete_queued_savings_plan::builders::DeleteQueuedSavingsPlanInputBuilder::default()
     }
 }
@@ -34,16 +36,20 @@ impl DeleteQueuedSavingsPlanInputBuilder {
     }
     /// <p>The ID of the Savings Plan.</p>
     pub fn set_savings_plan_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.savings_plan_id = input; self
+        self.savings_plan_id = input;
+        self
     }
     /// Consumes the builder and constructs a [`DeleteQueuedSavingsPlanInput`](crate::operation::delete_queued_savings_plan::DeleteQueuedSavingsPlanInput).
-    pub fn build(self) -> Result<crate::operation::delete_queued_savings_plan::DeleteQueuedSavingsPlanInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::delete_queued_savings_plan::DeleteQueuedSavingsPlanInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::delete_queued_savings_plan::DeleteQueuedSavingsPlanInput {
-                savings_plan_id: self.savings_plan_id
-                ,
-            }
+                savings_plan_id: self.savings_plan_id,
+            },
         )
     }
 }
-

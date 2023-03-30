@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetBrowserSettingsOutput  {
+pub struct GetBrowserSettingsOutput {
     /// <p>The browser settings.</p>
     #[doc(hidden)]
     pub browser_settings: std::option::Option<crate::types::BrowserSettings>,
@@ -10,18 +10,19 @@ pub struct GetBrowserSettingsOutput  {
 }
 impl GetBrowserSettingsOutput {
     /// <p>The browser settings.</p>
-    pub fn browser_settings(&self) -> std::option::Option<& crate::types::BrowserSettings> {
+    pub fn browser_settings(&self) -> std::option::Option<&crate::types::BrowserSettings> {
         self.browser_settings.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for GetBrowserSettingsOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl GetBrowserSettingsOutput {
     /// Creates a new builder-style object to manufacture [`GetBrowserSettingsOutput`](crate::operation::get_browser_settings::GetBrowserSettingsOutput).
-    pub fn builder() -> crate::operation::get_browser_settings::builders::GetBrowserSettingsOutputBuilder {
+    pub fn builder(
+    ) -> crate::operation::get_browser_settings::builders::GetBrowserSettingsOutputBuilder {
         crate::operation::get_browser_settings::builders::GetBrowserSettingsOutputBuilder::default()
     }
 }
@@ -40,25 +41,27 @@ impl GetBrowserSettingsOutputBuilder {
         self
     }
     /// <p>The browser settings.</p>
-    pub fn set_browser_settings(mut self, input: std::option::Option<crate::types::BrowserSettings>) -> Self {
-        self.browser_settings = input; self
+    pub fn set_browser_settings(
+        mut self,
+        input: std::option::Option<crate::types::BrowserSettings>,
+    ) -> Self {
+        self.browser_settings = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`GetBrowserSettingsOutput`](crate::operation::get_browser_settings::GetBrowserSettingsOutput).
     pub fn build(self) -> crate::operation::get_browser_settings::GetBrowserSettingsOutput {
         crate::operation::get_browser_settings::GetBrowserSettingsOutput {
-            browser_settings: self.browser_settings
-            ,
+            browser_settings: self.browser_settings,
             _request_id: self._request_id,
         }
     }
 }
-

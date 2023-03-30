@@ -3,7 +3,7 @@
 /// <p>Contains the response to a successful <code>UpdateSAMLProvider</code> request. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateSamlProviderOutput  {
+pub struct UpdateSamlProviderOutput {
     /// <p>The Amazon Resource Name (ARN) of the SAML provider that was updated.</p>
     #[doc(hidden)]
     pub saml_provider_arn: std::option::Option<std::string::String>,
@@ -11,18 +11,19 @@ pub struct UpdateSamlProviderOutput  {
 }
 impl UpdateSamlProviderOutput {
     /// <p>The Amazon Resource Name (ARN) of the SAML provider that was updated.</p>
-    pub fn saml_provider_arn(&self) -> std::option::Option<& str> {
+    pub fn saml_provider_arn(&self) -> std::option::Option<&str> {
         self.saml_provider_arn.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for UpdateSamlProviderOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl UpdateSamlProviderOutput {
     /// Creates a new builder-style object to manufacture [`UpdateSamlProviderOutput`](crate::operation::update_saml_provider::UpdateSamlProviderOutput).
-    pub fn builder() -> crate::operation::update_saml_provider::builders::UpdateSamlProviderOutputBuilder {
+    pub fn builder(
+    ) -> crate::operation::update_saml_provider::builders::UpdateSamlProviderOutputBuilder {
         crate::operation::update_saml_provider::builders::UpdateSamlProviderOutputBuilder::default()
     }
 }
@@ -41,25 +42,27 @@ impl UpdateSamlProviderOutputBuilder {
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the SAML provider that was updated.</p>
-    pub fn set_saml_provider_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.saml_provider_arn = input; self
+    pub fn set_saml_provider_arn(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.saml_provider_arn = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`UpdateSamlProviderOutput`](crate::operation::update_saml_provider::UpdateSamlProviderOutput).
     pub fn build(self) -> crate::operation::update_saml_provider::UpdateSamlProviderOutput {
         crate::operation::update_saml_provider::UpdateSamlProviderOutput {
-            saml_provider_arn: self.saml_provider_arn
-            ,
+            saml_provider_arn: self.saml_provider_arn,
             _request_id: self._request_id,
         }
     }
 }
-

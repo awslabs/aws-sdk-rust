@@ -2,20 +2,20 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct EnableVpcClassicLinkDnsSupportInput  {
+pub struct EnableVpcClassicLinkDnsSupportInput {
     /// <p>The ID of the VPC.</p>
     #[doc(hidden)]
     pub vpc_id: std::option::Option<std::string::String>,
 }
 impl EnableVpcClassicLinkDnsSupportInput {
     /// <p>The ID of the VPC.</p>
-    pub fn vpc_id(&self) -> std::option::Option<& str> {
+    pub fn vpc_id(&self) -> std::option::Option<&str> {
         self.vpc_id.as_deref()
     }
 }
 impl EnableVpcClassicLinkDnsSupportInput {
     /// Creates a new builder-style object to manufacture [`EnableVpcClassicLinkDnsSupportInput`](crate::operation::enable_vpc_classic_link_dns_support::EnableVpcClassicLinkDnsSupportInput).
-    pub fn builder() -> crate::operation::enable_vpc_classic_link_dns_support::builders::EnableVpcClassicLinkDnsSupportInputBuilder {
+    pub fn builder() -> crate::operation::enable_vpc_classic_link_dns_support::builders::EnableVpcClassicLinkDnsSupportInputBuilder{
         crate::operation::enable_vpc_classic_link_dns_support::builders::EnableVpcClassicLinkDnsSupportInputBuilder::default()
     }
 }
@@ -34,10 +34,16 @@ impl EnableVpcClassicLinkDnsSupportInputBuilder {
     }
     /// <p>The ID of the VPC.</p>
     pub fn set_vpc_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.vpc_id = input; self
+        self.vpc_id = input;
+        self
     }
     /// Consumes the builder and constructs a [`EnableVpcClassicLinkDnsSupportInput`](crate::operation::enable_vpc_classic_link_dns_support::EnableVpcClassicLinkDnsSupportInput).
-    pub fn build(self) -> Result<crate::operation::enable_vpc_classic_link_dns_support::EnableVpcClassicLinkDnsSupportInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::enable_vpc_classic_link_dns_support::EnableVpcClassicLinkDnsSupportInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::enable_vpc_classic_link_dns_support::EnableVpcClassicLinkDnsSupportInput {
                 vpc_id: self.vpc_id
@@ -46,4 +52,3 @@ impl EnableVpcClassicLinkDnsSupportInputBuilder {
         )
     }
 }
-

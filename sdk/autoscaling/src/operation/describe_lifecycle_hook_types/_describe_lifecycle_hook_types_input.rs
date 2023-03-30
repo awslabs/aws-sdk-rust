@@ -2,11 +2,10 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeLifecycleHookTypesInput  {
-}
+pub struct DescribeLifecycleHookTypesInput {}
 impl DescribeLifecycleHookTypesInput {
     /// Creates a new builder-style object to manufacture [`DescribeLifecycleHookTypesInput`](crate::operation::describe_lifecycle_hook_types::DescribeLifecycleHookTypesInput).
-    pub fn builder() -> crate::operation::describe_lifecycle_hook_types::builders::DescribeLifecycleHookTypesInputBuilder {
+    pub fn builder() -> crate::operation::describe_lifecycle_hook_types::builders::DescribeLifecycleHookTypesInputBuilder{
         crate::operation::describe_lifecycle_hook_types::builders::DescribeLifecycleHookTypesInputBuilder::default()
     }
 }
@@ -14,15 +13,15 @@ impl DescribeLifecycleHookTypesInput {
 /// A builder for [`DescribeLifecycleHookTypesInput`](crate::operation::describe_lifecycle_hook_types::DescribeLifecycleHookTypesInput).
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-pub struct DescribeLifecycleHookTypesInputBuilder {
-}
+pub struct DescribeLifecycleHookTypesInputBuilder {}
 impl DescribeLifecycleHookTypesInputBuilder {
     /// Consumes the builder and constructs a [`DescribeLifecycleHookTypesInput`](crate::operation::describe_lifecycle_hook_types::DescribeLifecycleHookTypesInput).
-    pub fn build(self) -> Result<crate::operation::describe_lifecycle_hook_types::DescribeLifecycleHookTypesInput, aws_smithy_http::operation::error::BuildError> {
-        Ok(
-            crate::operation::describe_lifecycle_hook_types::DescribeLifecycleHookTypesInput {
-            }
-        )
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::describe_lifecycle_hook_types::DescribeLifecycleHookTypesInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        Ok(crate::operation::describe_lifecycle_hook_types::DescribeLifecycleHookTypesInput {})
     }
 }
-

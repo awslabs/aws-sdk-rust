@@ -3,7 +3,7 @@
 /// <p>The PATCH request to update a usage plan of a given plan Id.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateUsagePlanInput  {
+pub struct UpdateUsagePlanInput {
     /// <p>The Id of the to-be-updated usage plan.</p>
     #[doc(hidden)]
     pub usage_plan_id: std::option::Option<std::string::String>,
@@ -13,11 +13,11 @@ pub struct UpdateUsagePlanInput  {
 }
 impl UpdateUsagePlanInput {
     /// <p>The Id of the to-be-updated usage plan.</p>
-    pub fn usage_plan_id(&self) -> std::option::Option<& str> {
+    pub fn usage_plan_id(&self) -> std::option::Option<&str> {
         self.usage_plan_id.as_deref()
     }
     /// <p>For more information about supported patch operations, see <a href="https://docs.aws.amazon.com/apigateway/latest/api/patch-operations.html">Patch Operations</a>.</p>
-    pub fn patch_operations(&self) -> std::option::Option<& [crate::types::PatchOperation]> {
+    pub fn patch_operations(&self) -> std::option::Option<&[crate::types::PatchOperation]> {
         self.patch_operations.as_deref()
     }
 }
@@ -43,7 +43,8 @@ impl UpdateUsagePlanInputBuilder {
     }
     /// <p>The Id of the to-be-updated usage plan.</p>
     pub fn set_usage_plan_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.usage_plan_id = input; self
+        self.usage_plan_id = input;
+        self
     }
     /// Appends an item to `patch_operations`.
     ///
@@ -52,24 +53,28 @@ impl UpdateUsagePlanInputBuilder {
     /// <p>For more information about supported patch operations, see <a href="https://docs.aws.amazon.com/apigateway/latest/api/patch-operations.html">Patch Operations</a>.</p>
     pub fn patch_operations(mut self, input: crate::types::PatchOperation) -> Self {
         let mut v = self.patch_operations.unwrap_or_default();
-                        v.push(input);
-                        self.patch_operations = Some(v);
-                        self
+        v.push(input);
+        self.patch_operations = Some(v);
+        self
     }
     /// <p>For more information about supported patch operations, see <a href="https://docs.aws.amazon.com/apigateway/latest/api/patch-operations.html">Patch Operations</a>.</p>
-    pub fn set_patch_operations(mut self, input: std::option::Option<std::vec::Vec<crate::types::PatchOperation>>) -> Self {
-        self.patch_operations = input; self
+    pub fn set_patch_operations(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::PatchOperation>>,
+    ) -> Self {
+        self.patch_operations = input;
+        self
     }
     /// Consumes the builder and constructs a [`UpdateUsagePlanInput`](crate::operation::update_usage_plan::UpdateUsagePlanInput).
-    pub fn build(self) -> Result<crate::operation::update_usage_plan::UpdateUsagePlanInput, aws_smithy_http::operation::error::BuildError> {
-        Ok(
-            crate::operation::update_usage_plan::UpdateUsagePlanInput {
-                usage_plan_id: self.usage_plan_id
-                ,
-                patch_operations: self.patch_operations
-                ,
-            }
-        )
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::update_usage_plan::UpdateUsagePlanInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        Ok(crate::operation::update_usage_plan::UpdateUsagePlanInput {
+            usage_plan_id: self.usage_plan_id,
+            patch_operations: self.patch_operations,
+        })
     }
 }
-

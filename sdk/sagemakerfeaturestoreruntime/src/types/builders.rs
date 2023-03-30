@@ -6,4 +6,3 @@ pub use crate::types::_batch_get_record_identifier::BatchGetRecordIdentifierBuil
 pub use crate::types::_batch_get_record_error::BatchGetRecordErrorBuilder;
 
 pub use crate::types::_batch_get_record_result_detail::BatchGetRecordResultDetailBuilder;
-

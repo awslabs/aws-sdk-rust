@@ -2,20 +2,21 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteDashboardsInput  {
+pub struct DeleteDashboardsInput {
     /// <p>The dashboards to be deleted. This parameter is required.</p>
     #[doc(hidden)]
     pub dashboard_names: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl DeleteDashboardsInput {
     /// <p>The dashboards to be deleted. This parameter is required.</p>
-    pub fn dashboard_names(&self) -> std::option::Option<& [std::string::String]> {
+    pub fn dashboard_names(&self) -> std::option::Option<&[std::string::String]> {
         self.dashboard_names.as_deref()
     }
 }
 impl DeleteDashboardsInput {
     /// Creates a new builder-style object to manufacture [`DeleteDashboardsInput`](crate::operation::delete_dashboards::DeleteDashboardsInput).
-    pub fn builder() -> crate::operation::delete_dashboards::builders::DeleteDashboardsInputBuilder {
+    pub fn builder() -> crate::operation::delete_dashboards::builders::DeleteDashboardsInputBuilder
+    {
         crate::operation::delete_dashboards::builders::DeleteDashboardsInputBuilder::default()
     }
 }
@@ -34,22 +35,27 @@ impl DeleteDashboardsInputBuilder {
     /// <p>The dashboards to be deleted. This parameter is required.</p>
     pub fn dashboard_names(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.dashboard_names.unwrap_or_default();
-                        v.push(input.into());
-                        self.dashboard_names = Some(v);
-                        self
+        v.push(input.into());
+        self.dashboard_names = Some(v);
+        self
     }
     /// <p>The dashboards to be deleted. This parameter is required.</p>
-    pub fn set_dashboard_names(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-        self.dashboard_names = input; self
+    pub fn set_dashboard_names(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
+        self.dashboard_names = input;
+        self
     }
     /// Consumes the builder and constructs a [`DeleteDashboardsInput`](crate::operation::delete_dashboards::DeleteDashboardsInput).
-    pub fn build(self) -> Result<crate::operation::delete_dashboards::DeleteDashboardsInput, aws_smithy_http::operation::error::BuildError> {
-        Ok(
-            crate::operation::delete_dashboards::DeleteDashboardsInput {
-                dashboard_names: self.dashboard_names
-                ,
-            }
-        )
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::delete_dashboards::DeleteDashboardsInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        Ok(crate::operation::delete_dashboards::DeleteDashboardsInput {
+            dashboard_names: self.dashboard_names,
+        })
     }
 }
-

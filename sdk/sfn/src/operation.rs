@@ -78,4 +78,3 @@ pub mod update_map_run;
 
 /// Types for the `UpdateStateMachine` operation.
 pub mod update_state_machine;
-

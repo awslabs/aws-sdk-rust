@@ -3,7 +3,7 @@
 /// <p> A representation of a resource association for a custom line item. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListResourcesAssociatedToCustomLineItemResponseElement  {
+pub struct ListResourcesAssociatedToCustomLineItemResponseElement {
     /// <p> The ARN of the associated resource. </p>
     #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
@@ -16,21 +16,22 @@ pub struct ListResourcesAssociatedToCustomLineItemResponseElement  {
 }
 impl ListResourcesAssociatedToCustomLineItemResponseElement {
     /// <p> The ARN of the associated resource. </p>
-    pub fn arn(&self) -> std::option::Option<& str> {
+    pub fn arn(&self) -> std::option::Option<&str> {
         self.arn.as_deref()
     }
     /// <p> The type of relationship between the custom line item and the associated resource. </p>
-    pub fn relationship(&self) -> std::option::Option<& crate::types::CustomLineItemRelationship> {
+    pub fn relationship(&self) -> std::option::Option<&crate::types::CustomLineItemRelationship> {
         self.relationship.as_ref()
     }
     /// <p>The end billing period of the associated resource.</p>
-    pub fn end_billing_period(&self) -> std::option::Option<& str> {
+    pub fn end_billing_period(&self) -> std::option::Option<&str> {
         self.end_billing_period.as_deref()
     }
 }
 impl ListResourcesAssociatedToCustomLineItemResponseElement {
     /// Creates a new builder-style object to manufacture [`ListResourcesAssociatedToCustomLineItemResponseElement`](crate::types::ListResourcesAssociatedToCustomLineItemResponseElement).
-    pub fn builder() -> crate::types::builders::ListResourcesAssociatedToCustomLineItemResponseElementBuilder {
+    pub fn builder(
+    ) -> crate::types::builders::ListResourcesAssociatedToCustomLineItemResponseElementBuilder {
         crate::types::builders::ListResourcesAssociatedToCustomLineItemResponseElementBuilder::default()
     }
 }
@@ -51,7 +52,8 @@ impl ListResourcesAssociatedToCustomLineItemResponseElementBuilder {
     }
     /// <p> The ARN of the associated resource. </p>
     pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.arn = input; self
+        self.arn = input;
+        self
     }
     /// <p> The type of relationship between the custom line item and the associated resource. </p>
     pub fn relationship(mut self, input: crate::types::CustomLineItemRelationship) -> Self {
@@ -59,8 +61,12 @@ impl ListResourcesAssociatedToCustomLineItemResponseElementBuilder {
         self
     }
     /// <p> The type of relationship between the custom line item and the associated resource. </p>
-    pub fn set_relationship(mut self, input: std::option::Option<crate::types::CustomLineItemRelationship>) -> Self {
-        self.relationship = input; self
+    pub fn set_relationship(
+        mut self,
+        input: std::option::Option<crate::types::CustomLineItemRelationship>,
+    ) -> Self {
+        self.relationship = input;
+        self
     }
     /// <p>The end billing period of the associated resource.</p>
     pub fn end_billing_period(mut self, input: impl Into<std::string::String>) -> Self {
@@ -68,19 +74,19 @@ impl ListResourcesAssociatedToCustomLineItemResponseElementBuilder {
         self
     }
     /// <p>The end billing period of the associated resource.</p>
-    pub fn set_end_billing_period(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.end_billing_period = input; self
+    pub fn set_end_billing_period(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.end_billing_period = input;
+        self
     }
     /// Consumes the builder and constructs a [`ListResourcesAssociatedToCustomLineItemResponseElement`](crate::types::ListResourcesAssociatedToCustomLineItemResponseElement).
     pub fn build(self) -> crate::types::ListResourcesAssociatedToCustomLineItemResponseElement {
         crate::types::ListResourcesAssociatedToCustomLineItemResponseElement {
-            arn: self.arn
-            ,
-            relationship: self.relationship
-            ,
-            end_billing_period: self.end_billing_period
-            ,
+            arn: self.arn,
+            relationship: self.relationship,
+            end_billing_period: self.end_billing_period,
         }
     }
 }
-

@@ -3,14 +3,14 @@
 /// <p>Information about tracking a shipment.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct TrackingInformation  {
+pub struct TrackingInformation {
     /// <p>The tracking number of the shipment.</p>
     #[doc(hidden)]
     pub tracking_number: std::option::Option<std::string::String>,
 }
 impl TrackingInformation {
     /// <p>The tracking number of the shipment.</p>
-    pub fn tracking_number(&self) -> std::option::Option<& str> {
+    pub fn tracking_number(&self) -> std::option::Option<&str> {
         self.tracking_number.as_deref()
     }
 }
@@ -35,14 +35,13 @@ impl TrackingInformationBuilder {
     }
     /// <p>The tracking number of the shipment.</p>
     pub fn set_tracking_number(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.tracking_number = input; self
+        self.tracking_number = input;
+        self
     }
     /// Consumes the builder and constructs a [`TrackingInformation`](crate::types::TrackingInformation).
     pub fn build(self) -> crate::types::TrackingInformation {
         crate::types::TrackingInformation {
-            tracking_number: self.tracking_number
-            ,
+            tracking_number: self.tracking_number,
         }
     }
 }
-

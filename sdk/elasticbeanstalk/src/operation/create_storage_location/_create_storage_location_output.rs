@@ -3,7 +3,7 @@
 /// <p>Results of a <code>CreateStorageLocationResult</code> call.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateStorageLocationOutput  {
+pub struct CreateStorageLocationOutput {
     /// <p>The name of the Amazon S3 bucket created.</p>
     #[doc(hidden)]
     pub s3_bucket: std::option::Option<std::string::String>,
@@ -11,18 +11,20 @@ pub struct CreateStorageLocationOutput  {
 }
 impl CreateStorageLocationOutput {
     /// <p>The name of the Amazon S3 bucket created.</p>
-    pub fn s3_bucket(&self) -> std::option::Option<& str> {
+    pub fn s3_bucket(&self) -> std::option::Option<&str> {
         self.s3_bucket.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for CreateStorageLocationOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl CreateStorageLocationOutput {
     /// Creates a new builder-style object to manufacture [`CreateStorageLocationOutput`](crate::operation::create_storage_location::CreateStorageLocationOutput).
-    pub fn builder() -> crate::operation::create_storage_location::builders::CreateStorageLocationOutputBuilder {
+    pub fn builder(
+    ) -> crate::operation::create_storage_location::builders::CreateStorageLocationOutputBuilder
+    {
         crate::operation::create_storage_location::builders::CreateStorageLocationOutputBuilder::default()
     }
 }
@@ -42,24 +44,23 @@ impl CreateStorageLocationOutputBuilder {
     }
     /// <p>The name of the Amazon S3 bucket created.</p>
     pub fn set_s3_bucket(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.s3_bucket = input; self
+        self.s3_bucket = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`CreateStorageLocationOutput`](crate::operation::create_storage_location::CreateStorageLocationOutput).
     pub fn build(self) -> crate::operation::create_storage_location::CreateStorageLocationOutput {
         crate::operation::create_storage_location::CreateStorageLocationOutput {
-            s3_bucket: self.s3_bucket
-            ,
+            s3_bucket: self.s3_bucket,
             _request_id: self._request_id,
         }
     }
 }
-

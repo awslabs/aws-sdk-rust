@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateOrderInput  {
+pub struct CreateOrderInput {
     /// <p> The ID or the Amazon Resource Name (ARN) of the Outpost. </p>
     #[doc(hidden)]
     pub outpost_identifier: std::option::Option<std::string::String>,
@@ -18,19 +18,19 @@ pub struct CreateOrderInput  {
 }
 impl CreateOrderInput {
     /// <p> The ID or the Amazon Resource Name (ARN) of the Outpost. </p>
-    pub fn outpost_identifier(&self) -> std::option::Option<& str> {
+    pub fn outpost_identifier(&self) -> std::option::Option<&str> {
         self.outpost_identifier.as_deref()
     }
     /// <p>The line items that make up the order.</p>
-    pub fn line_items(&self) -> std::option::Option<& [crate::types::LineItemRequest]> {
+    pub fn line_items(&self) -> std::option::Option<&[crate::types::LineItemRequest]> {
         self.line_items.as_deref()
     }
     /// <p>The payment option.</p>
-    pub fn payment_option(&self) -> std::option::Option<& crate::types::PaymentOption> {
+    pub fn payment_option(&self) -> std::option::Option<&crate::types::PaymentOption> {
         self.payment_option.as_ref()
     }
     /// <p>The payment terms.</p>
-    pub fn payment_term(&self) -> std::option::Option<& crate::types::PaymentTerm> {
+    pub fn payment_term(&self) -> std::option::Option<&crate::types::PaymentTerm> {
         self.payment_term.as_ref()
     }
 }
@@ -57,8 +57,12 @@ impl CreateOrderInputBuilder {
         self
     }
     /// <p> The ID or the Amazon Resource Name (ARN) of the Outpost. </p>
-    pub fn set_outpost_identifier(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.outpost_identifier = input; self
+    pub fn set_outpost_identifier(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.outpost_identifier = input;
+        self
     }
     /// Appends an item to `line_items`.
     ///
@@ -67,13 +71,17 @@ impl CreateOrderInputBuilder {
     /// <p>The line items that make up the order.</p>
     pub fn line_items(mut self, input: crate::types::LineItemRequest) -> Self {
         let mut v = self.line_items.unwrap_or_default();
-                        v.push(input);
-                        self.line_items = Some(v);
-                        self
+        v.push(input);
+        self.line_items = Some(v);
+        self
     }
     /// <p>The line items that make up the order.</p>
-    pub fn set_line_items(mut self, input: std::option::Option<std::vec::Vec<crate::types::LineItemRequest>>) -> Self {
-        self.line_items = input; self
+    pub fn set_line_items(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::LineItemRequest>>,
+    ) -> Self {
+        self.line_items = input;
+        self
     }
     /// <p>The payment option.</p>
     pub fn payment_option(mut self, input: crate::types::PaymentOption) -> Self {
@@ -81,8 +89,12 @@ impl CreateOrderInputBuilder {
         self
     }
     /// <p>The payment option.</p>
-    pub fn set_payment_option(mut self, input: std::option::Option<crate::types::PaymentOption>) -> Self {
-        self.payment_option = input; self
+    pub fn set_payment_option(
+        mut self,
+        input: std::option::Option<crate::types::PaymentOption>,
+    ) -> Self {
+        self.payment_option = input;
+        self
     }
     /// <p>The payment terms.</p>
     pub fn payment_term(mut self, input: crate::types::PaymentTerm) -> Self {
@@ -90,23 +102,25 @@ impl CreateOrderInputBuilder {
         self
     }
     /// <p>The payment terms.</p>
-    pub fn set_payment_term(mut self, input: std::option::Option<crate::types::PaymentTerm>) -> Self {
-        self.payment_term = input; self
+    pub fn set_payment_term(
+        mut self,
+        input: std::option::Option<crate::types::PaymentTerm>,
+    ) -> Self {
+        self.payment_term = input;
+        self
     }
     /// Consumes the builder and constructs a [`CreateOrderInput`](crate::operation::create_order::CreateOrderInput).
-    pub fn build(self) -> Result<crate::operation::create_order::CreateOrderInput, aws_smithy_http::operation::error::BuildError> {
-        Ok(
-            crate::operation::create_order::CreateOrderInput {
-                outpost_identifier: self.outpost_identifier
-                ,
-                line_items: self.line_items
-                ,
-                payment_option: self.payment_option
-                ,
-                payment_term: self.payment_term
-                ,
-            }
-        )
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::create_order::CreateOrderInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        Ok(crate::operation::create_order::CreateOrderInput {
+            outpost_identifier: self.outpost_identifier,
+            line_items: self.line_items,
+            payment_option: self.payment_option,
+            payment_term: self.payment_term,
+        })
     }
 }
-

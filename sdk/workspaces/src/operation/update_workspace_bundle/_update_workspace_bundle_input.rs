@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateWorkspaceBundleInput  {
+pub struct UpdateWorkspaceBundleInput {
     /// <p>The identifier of the bundle.</p>
     #[doc(hidden)]
     pub bundle_id: std::option::Option<std::string::String>,
@@ -12,17 +12,19 @@ pub struct UpdateWorkspaceBundleInput  {
 }
 impl UpdateWorkspaceBundleInput {
     /// <p>The identifier of the bundle.</p>
-    pub fn bundle_id(&self) -> std::option::Option<& str> {
+    pub fn bundle_id(&self) -> std::option::Option<&str> {
         self.bundle_id.as_deref()
     }
     /// <p>The identifier of the image.</p>
-    pub fn image_id(&self) -> std::option::Option<& str> {
+    pub fn image_id(&self) -> std::option::Option<&str> {
         self.image_id.as_deref()
     }
 }
 impl UpdateWorkspaceBundleInput {
     /// Creates a new builder-style object to manufacture [`UpdateWorkspaceBundleInput`](crate::operation::update_workspace_bundle::UpdateWorkspaceBundleInput).
-    pub fn builder() -> crate::operation::update_workspace_bundle::builders::UpdateWorkspaceBundleInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::update_workspace_bundle::builders::UpdateWorkspaceBundleInputBuilder
+    {
         crate::operation::update_workspace_bundle::builders::UpdateWorkspaceBundleInputBuilder::default()
     }
 }
@@ -42,7 +44,8 @@ impl UpdateWorkspaceBundleInputBuilder {
     }
     /// <p>The identifier of the bundle.</p>
     pub fn set_bundle_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.bundle_id = input; self
+        self.bundle_id = input;
+        self
     }
     /// <p>The identifier of the image.</p>
     pub fn image_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -51,18 +54,21 @@ impl UpdateWorkspaceBundleInputBuilder {
     }
     /// <p>The identifier of the image.</p>
     pub fn set_image_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.image_id = input; self
+        self.image_id = input;
+        self
     }
     /// Consumes the builder and constructs a [`UpdateWorkspaceBundleInput`](crate::operation::update_workspace_bundle::UpdateWorkspaceBundleInput).
-    pub fn build(self) -> Result<crate::operation::update_workspace_bundle::UpdateWorkspaceBundleInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::update_workspace_bundle::UpdateWorkspaceBundleInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::update_workspace_bundle::UpdateWorkspaceBundleInput {
-                bundle_id: self.bundle_id
-                ,
-                image_id: self.image_id
-                ,
-            }
+                bundle_id: self.bundle_id,
+                image_id: self.image_id,
+            },
         )
     }
 }
-

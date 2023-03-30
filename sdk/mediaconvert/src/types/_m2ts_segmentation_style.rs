@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-/// 
+///
 /// Here is an example of how you can make a match expression forward-compatible:
-/// 
+///
 /// ```text
 /// # let m2tssegmentationstyle = unimplemented!();
 /// match m2tssegmentationstyle {
@@ -30,55 +30,64 @@
 /// Specifically, when `m2tssegmentationstyle` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `M2tsSegmentationStyle::NewFeature` also yielding `"NewFeature"`.
-/// 
+///
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 /// The segmentation style parameter controls how segmentation markers are inserted into the transport stream. With avails, it is possible that segments may be truncated, which can influence where future segmentation markers are inserted. When a segmentation style of "reset_cadence" is selected and a segment is truncated due to an avail, we will reset the segmentation cadence. This means the subsequent segment will have a duration of of $segmentation_time seconds. When a segmentation style of "maintain_cadence" is selected and a segment is truncated due to an avail, we will not reset the segmentation cadence. This means the subsequent segment will likely be truncated as well. However, all segments after that will have a duration of $segmentation_time seconds. Note that EBP lookahead is a slight exception to this rule.
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
 pub enum M2tsSegmentationStyle {
     #[allow(missing_docs)] // documentation missing in model
     MaintainCadence,
     #[allow(missing_docs)] // documentation missing in model
     ResetCadence,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::primitives::UnknownVariantValue)
+    Unknown(crate::primitives::UnknownVariantValue),
 }
 impl std::convert::From<&str> for M2tsSegmentationStyle {
-                fn from(s: &str) -> Self {
-                    match s {
-                        "MAINTAIN_CADENCE" => M2tsSegmentationStyle::MaintainCadence,
-"RESET_CADENCE" => M2tsSegmentationStyle::ResetCadence,
-other => M2tsSegmentationStyle::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
-                    }
-                }
-            }
-impl std::str::FromStr for M2tsSegmentationStyle {
-                type Err = std::convert::Infallible;
-
-                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-                    Ok(M2tsSegmentationStyle::from(s))
-                }
-            }
-impl M2tsSegmentationStyle {
-                /// Returns the `&str` value of the enum member.
-                pub fn as_str(&self) -> &str {
-                    match self {
-    M2tsSegmentationStyle::MaintainCadence => "MAINTAIN_CADENCE",
-    M2tsSegmentationStyle::ResetCadence => "RESET_CADENCE",
-    M2tsSegmentationStyle::Unknown(value) => value.as_str()
+    fn from(s: &str) -> Self {
+        match s {
+            "MAINTAIN_CADENCE" => M2tsSegmentationStyle::MaintainCadence,
+            "RESET_CADENCE" => M2tsSegmentationStyle::ResetCadence,
+            other => M2tsSegmentationStyle::Unknown(crate::primitives::UnknownVariantValue(
+                other.to_owned(),
+            )),
+        }
+    }
 }
-                }
-                /// Returns all the `&str` representations of the enum members.
-                pub const fn values() -> &'static [&'static str] {
-                    &["MAINTAIN_CADENCE", "RESET_CADENCE"]
-                }
-            }
-impl AsRef<str> for M2tsSegmentationStyle {
-                fn as_ref(&self) -> &str {
-                    self.as_str()
-                }
-            }
+impl std::str::FromStr for M2tsSegmentationStyle {
+    type Err = std::convert::Infallible;
 
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(M2tsSegmentationStyle::from(s))
+    }
+}
+impl M2tsSegmentationStyle {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            M2tsSegmentationStyle::MaintainCadence => "MAINTAIN_CADENCE",
+            M2tsSegmentationStyle::ResetCadence => "RESET_CADENCE",
+            M2tsSegmentationStyle::Unknown(value) => value.as_str(),
+        }
+    }
+    /// Returns all the `&str` representations of the enum members.
+    pub const fn values() -> &'static [&'static str] {
+        &["MAINTAIN_CADENCE", "RESET_CADENCE"]
+    }
+}
+impl AsRef<str> for M2tsSegmentationStyle {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}

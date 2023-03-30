@@ -3,7 +3,7 @@
 /// <p>Path to Amazon S3 storage location for input data.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct S3DataInput  {
+pub struct S3DataInput {
     /// <p>The URL to the Amazon S3 input.</p>
     #[doc(hidden)]
     pub s3_uri: std::option::Option<std::string::String>,
@@ -16,15 +16,15 @@ pub struct S3DataInput  {
 }
 impl S3DataInput {
     /// <p>The URL to the Amazon S3 input.</p>
-    pub fn s3_uri(&self) -> std::option::Option<& str> {
+    pub fn s3_uri(&self) -> std::option::Option<&str> {
         self.s3_uri.as_deref()
     }
     /// <p></p>
-    pub fn metadata_provider(&self) -> std::option::Option<& crate::types::MetadataProvider> {
+    pub fn metadata_provider(&self) -> std::option::Option<&crate::types::MetadataProvider> {
         self.metadata_provider.as_ref()
     }
     /// <p>The Amazon Key Management Service (KMS) key ID for server-side encryption.</p>
-    pub fn kms_key_id(&self) -> std::option::Option<& str> {
+    pub fn kms_key_id(&self) -> std::option::Option<&str> {
         self.kms_key_id.as_deref()
     }
 }
@@ -51,7 +51,8 @@ impl S3DataInputBuilder {
     }
     /// <p>The URL to the Amazon S3 input.</p>
     pub fn set_s3_uri(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.s3_uri = input; self
+        self.s3_uri = input;
+        self
     }
     /// <p></p>
     pub fn metadata_provider(mut self, input: crate::types::MetadataProvider) -> Self {
@@ -59,8 +60,12 @@ impl S3DataInputBuilder {
         self
     }
     /// <p></p>
-    pub fn set_metadata_provider(mut self, input: std::option::Option<crate::types::MetadataProvider>) -> Self {
-        self.metadata_provider = input; self
+    pub fn set_metadata_provider(
+        mut self,
+        input: std::option::Option<crate::types::MetadataProvider>,
+    ) -> Self {
+        self.metadata_provider = input;
+        self
     }
     /// <p>The Amazon Key Management Service (KMS) key ID for server-side encryption.</p>
     pub fn kms_key_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -69,18 +74,15 @@ impl S3DataInputBuilder {
     }
     /// <p>The Amazon Key Management Service (KMS) key ID for server-side encryption.</p>
     pub fn set_kms_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.kms_key_id = input; self
+        self.kms_key_id = input;
+        self
     }
     /// Consumes the builder and constructs a [`S3DataInput`](crate::types::S3DataInput).
     pub fn build(self) -> crate::types::S3DataInput {
         crate::types::S3DataInput {
-            s3_uri: self.s3_uri
-            ,
-            metadata_provider: self.metadata_provider
-            ,
-            kms_key_id: self.kms_key_id
-            ,
+            s3_uri: self.s3_uri,
+            metadata_provider: self.metadata_provider,
+            kms_key_id: self.kms_key_id,
         }
     }
 }
-

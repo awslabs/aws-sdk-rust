@@ -3,14 +3,14 @@
 /// <p>Limits settings on protections for your subscription. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ProtectionLimits  {
+pub struct ProtectionLimits {
     /// <p>The maximum number of resource types that you can specify in a protection.</p>
     #[doc(hidden)]
     pub protected_resource_type_limits: std::option::Option<std::vec::Vec<crate::types::Limit>>,
 }
 impl ProtectionLimits {
     /// <p>The maximum number of resource types that you can specify in a protection.</p>
-    pub fn protected_resource_type_limits(&self) -> std::option::Option<& [crate::types::Limit]> {
+    pub fn protected_resource_type_limits(&self) -> std::option::Option<&[crate::types::Limit]> {
         self.protected_resource_type_limits.as_deref()
     }
 }
@@ -25,7 +25,8 @@ impl ProtectionLimits {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct ProtectionLimitsBuilder {
-    pub(crate) protected_resource_type_limits: std::option::Option<std::vec::Vec<crate::types::Limit>>,
+    pub(crate) protected_resource_type_limits:
+        std::option::Option<std::vec::Vec<crate::types::Limit>>,
 }
 impl ProtectionLimitsBuilder {
     /// Appends an item to `protected_resource_type_limits`.
@@ -35,20 +36,22 @@ impl ProtectionLimitsBuilder {
     /// <p>The maximum number of resource types that you can specify in a protection.</p>
     pub fn protected_resource_type_limits(mut self, input: crate::types::Limit) -> Self {
         let mut v = self.protected_resource_type_limits.unwrap_or_default();
-                        v.push(input);
-                        self.protected_resource_type_limits = Some(v);
-                        self
+        v.push(input);
+        self.protected_resource_type_limits = Some(v);
+        self
     }
     /// <p>The maximum number of resource types that you can specify in a protection.</p>
-    pub fn set_protected_resource_type_limits(mut self, input: std::option::Option<std::vec::Vec<crate::types::Limit>>) -> Self {
-        self.protected_resource_type_limits = input; self
+    pub fn set_protected_resource_type_limits(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::Limit>>,
+    ) -> Self {
+        self.protected_resource_type_limits = input;
+        self
     }
     /// Consumes the builder and constructs a [`ProtectionLimits`](crate::types::ProtectionLimits).
     pub fn build(self) -> crate::types::ProtectionLimits {
         crate::types::ProtectionLimits {
-            protected_resource_type_limits: self.protected_resource_type_limits
-            ,
+            protected_resource_type_limits: self.protected_resource_type_limits,
         }
     }
 }
-

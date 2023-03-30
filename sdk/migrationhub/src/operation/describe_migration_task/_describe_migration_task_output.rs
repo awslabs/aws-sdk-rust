@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeMigrationTaskOutput  {
+pub struct DescribeMigrationTaskOutput {
     /// <p>Object encapsulating information about the migration task.</p>
     #[doc(hidden)]
     pub migration_task: std::option::Option<crate::types::MigrationTask>,
@@ -10,18 +10,20 @@ pub struct DescribeMigrationTaskOutput  {
 }
 impl DescribeMigrationTaskOutput {
     /// <p>Object encapsulating information about the migration task.</p>
-    pub fn migration_task(&self) -> std::option::Option<& crate::types::MigrationTask> {
+    pub fn migration_task(&self) -> std::option::Option<&crate::types::MigrationTask> {
         self.migration_task.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for DescribeMigrationTaskOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl DescribeMigrationTaskOutput {
     /// Creates a new builder-style object to manufacture [`DescribeMigrationTaskOutput`](crate::operation::describe_migration_task::DescribeMigrationTaskOutput).
-    pub fn builder() -> crate::operation::describe_migration_task::builders::DescribeMigrationTaskOutputBuilder {
+    pub fn builder(
+    ) -> crate::operation::describe_migration_task::builders::DescribeMigrationTaskOutputBuilder
+    {
         crate::operation::describe_migration_task::builders::DescribeMigrationTaskOutputBuilder::default()
     }
 }
@@ -40,25 +42,27 @@ impl DescribeMigrationTaskOutputBuilder {
         self
     }
     /// <p>Object encapsulating information about the migration task.</p>
-    pub fn set_migration_task(mut self, input: std::option::Option<crate::types::MigrationTask>) -> Self {
-        self.migration_task = input; self
+    pub fn set_migration_task(
+        mut self,
+        input: std::option::Option<crate::types::MigrationTask>,
+    ) -> Self {
+        self.migration_task = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`DescribeMigrationTaskOutput`](crate::operation::describe_migration_task::DescribeMigrationTaskOutput).
     pub fn build(self) -> crate::operation::describe_migration_task::DescribeMigrationTaskOutput {
         crate::operation::describe_migration_task::DescribeMigrationTaskOutput {
-            migration_task: self.migration_task
-            ,
+            migration_task: self.migration_task,
             _request_id: self._request_id,
         }
     }
 }
-

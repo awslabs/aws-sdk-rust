@@ -3,7 +3,7 @@
 /// <p>Describes monthly data transfer rates and port information for an instance.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct InstanceNetworking  {
+pub struct InstanceNetworking {
     /// <p>The amount of data in GB allocated for monthly data transfers.</p>
     #[doc(hidden)]
     pub monthly_transfer: std::option::Option<crate::types::MonthlyTransfer>,
@@ -13,11 +13,11 @@ pub struct InstanceNetworking  {
 }
 impl InstanceNetworking {
     /// <p>The amount of data in GB allocated for monthly data transfers.</p>
-    pub fn monthly_transfer(&self) -> std::option::Option<& crate::types::MonthlyTransfer> {
+    pub fn monthly_transfer(&self) -> std::option::Option<&crate::types::MonthlyTransfer> {
         self.monthly_transfer.as_ref()
     }
     /// <p>An array of key-value pairs containing information about the ports on the instance.</p>
-    pub fn ports(&self) -> std::option::Option<& [crate::types::InstancePortInfo]> {
+    pub fn ports(&self) -> std::option::Option<&[crate::types::InstancePortInfo]> {
         self.ports.as_deref()
     }
 }
@@ -42,8 +42,12 @@ impl InstanceNetworkingBuilder {
         self
     }
     /// <p>The amount of data in GB allocated for monthly data transfers.</p>
-    pub fn set_monthly_transfer(mut self, input: std::option::Option<crate::types::MonthlyTransfer>) -> Self {
-        self.monthly_transfer = input; self
+    pub fn set_monthly_transfer(
+        mut self,
+        input: std::option::Option<crate::types::MonthlyTransfer>,
+    ) -> Self {
+        self.monthly_transfer = input;
+        self
     }
     /// Appends an item to `ports`.
     ///
@@ -52,22 +56,23 @@ impl InstanceNetworkingBuilder {
     /// <p>An array of key-value pairs containing information about the ports on the instance.</p>
     pub fn ports(mut self, input: crate::types::InstancePortInfo) -> Self {
         let mut v = self.ports.unwrap_or_default();
-                        v.push(input);
-                        self.ports = Some(v);
-                        self
+        v.push(input);
+        self.ports = Some(v);
+        self
     }
     /// <p>An array of key-value pairs containing information about the ports on the instance.</p>
-    pub fn set_ports(mut self, input: std::option::Option<std::vec::Vec<crate::types::InstancePortInfo>>) -> Self {
-        self.ports = input; self
+    pub fn set_ports(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::InstancePortInfo>>,
+    ) -> Self {
+        self.ports = input;
+        self
     }
     /// Consumes the builder and constructs a [`InstanceNetworking`](crate::types::InstanceNetworking).
     pub fn build(self) -> crate::types::InstanceNetworking {
         crate::types::InstanceNetworking {
-            monthly_transfer: self.monthly_transfer
-            ,
-            ports: self.ports
-            ,
+            monthly_transfer: self.monthly_transfer,
+            ports: self.ports,
         }
     }
 }
-

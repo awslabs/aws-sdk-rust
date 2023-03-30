@@ -3,7 +3,7 @@
 /// <p></p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateMountTargetInput  {
+pub struct CreateMountTargetInput {
     /// <p>The ID of the file system for which to create the mount target.</p>
     #[doc(hidden)]
     pub file_system_id: std::option::Option<std::string::String>,
@@ -19,25 +19,26 @@ pub struct CreateMountTargetInput  {
 }
 impl CreateMountTargetInput {
     /// <p>The ID of the file system for which to create the mount target.</p>
-    pub fn file_system_id(&self) -> std::option::Option<& str> {
+    pub fn file_system_id(&self) -> std::option::Option<&str> {
         self.file_system_id.as_deref()
     }
     /// <p>The ID of the subnet to add the mount target in. For file systems that use One Zone storage classes, use the subnet that is associated with the file system's Availability Zone.</p>
-    pub fn subnet_id(&self) -> std::option::Option<& str> {
+    pub fn subnet_id(&self) -> std::option::Option<&str> {
         self.subnet_id.as_deref()
     }
     /// <p>Valid IPv4 address within the address range of the specified subnet.</p>
-    pub fn ip_address(&self) -> std::option::Option<& str> {
+    pub fn ip_address(&self) -> std::option::Option<&str> {
         self.ip_address.as_deref()
     }
     /// <p>Up to five VPC security group IDs, of the form <code>sg-xxxxxxxx</code>. These must be for the same VPC as subnet specified.</p>
-    pub fn security_groups(&self) -> std::option::Option<& [std::string::String]> {
+    pub fn security_groups(&self) -> std::option::Option<&[std::string::String]> {
         self.security_groups.as_deref()
     }
 }
 impl CreateMountTargetInput {
     /// Creates a new builder-style object to manufacture [`CreateMountTargetInput`](crate::operation::create_mount_target::CreateMountTargetInput).
-    pub fn builder() -> crate::operation::create_mount_target::builders::CreateMountTargetInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::create_mount_target::builders::CreateMountTargetInputBuilder {
         crate::operation::create_mount_target::builders::CreateMountTargetInputBuilder::default()
     }
 }
@@ -59,7 +60,8 @@ impl CreateMountTargetInputBuilder {
     }
     /// <p>The ID of the file system for which to create the mount target.</p>
     pub fn set_file_system_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.file_system_id = input; self
+        self.file_system_id = input;
+        self
     }
     /// <p>The ID of the subnet to add the mount target in. For file systems that use One Zone storage classes, use the subnet that is associated with the file system's Availability Zone.</p>
     pub fn subnet_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -68,7 +70,8 @@ impl CreateMountTargetInputBuilder {
     }
     /// <p>The ID of the subnet to add the mount target in. For file systems that use One Zone storage classes, use the subnet that is associated with the file system's Availability Zone.</p>
     pub fn set_subnet_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.subnet_id = input; self
+        self.subnet_id = input;
+        self
     }
     /// <p>Valid IPv4 address within the address range of the specified subnet.</p>
     pub fn ip_address(mut self, input: impl Into<std::string::String>) -> Self {
@@ -77,7 +80,8 @@ impl CreateMountTargetInputBuilder {
     }
     /// <p>Valid IPv4 address within the address range of the specified subnet.</p>
     pub fn set_ip_address(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.ip_address = input; self
+        self.ip_address = input;
+        self
     }
     /// Appends an item to `security_groups`.
     ///
@@ -86,28 +90,32 @@ impl CreateMountTargetInputBuilder {
     /// <p>Up to five VPC security group IDs, of the form <code>sg-xxxxxxxx</code>. These must be for the same VPC as subnet specified.</p>
     pub fn security_groups(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.security_groups.unwrap_or_default();
-                        v.push(input.into());
-                        self.security_groups = Some(v);
-                        self
+        v.push(input.into());
+        self.security_groups = Some(v);
+        self
     }
     /// <p>Up to five VPC security group IDs, of the form <code>sg-xxxxxxxx</code>. These must be for the same VPC as subnet specified.</p>
-    pub fn set_security_groups(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-        self.security_groups = input; self
+    pub fn set_security_groups(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
+        self.security_groups = input;
+        self
     }
     /// Consumes the builder and constructs a [`CreateMountTargetInput`](crate::operation::create_mount_target::CreateMountTargetInput).
-    pub fn build(self) -> Result<crate::operation::create_mount_target::CreateMountTargetInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::create_mount_target::CreateMountTargetInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::create_mount_target::CreateMountTargetInput {
-                file_system_id: self.file_system_id
-                ,
-                subnet_id: self.subnet_id
-                ,
-                ip_address: self.ip_address
-                ,
-                security_groups: self.security_groups
-                ,
-            }
+                file_system_id: self.file_system_id,
+                subnet_id: self.subnet_id,
+                ip_address: self.ip_address,
+                security_groups: self.security_groups,
+            },
         )
     }
 }
-

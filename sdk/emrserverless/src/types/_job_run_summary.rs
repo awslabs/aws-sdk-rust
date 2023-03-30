@@ -3,7 +3,7 @@
 /// <p>The summary of attributes associated with a job run.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct JobRunSummary  {
+pub struct JobRunSummary {
     /// <p>The ID of the application the job is running on.</p>
     #[doc(hidden)]
     pub application_id: std::option::Option<std::string::String>,
@@ -43,51 +43,51 @@ pub struct JobRunSummary  {
 }
 impl JobRunSummary {
     /// <p>The ID of the application the job is running on.</p>
-    pub fn application_id(&self) -> std::option::Option<& str> {
+    pub fn application_id(&self) -> std::option::Option<&str> {
         self.application_id.as_deref()
     }
     /// <p>The ID of the job run.</p>
-    pub fn id(&self) -> std::option::Option<& str> {
+    pub fn id(&self) -> std::option::Option<&str> {
         self.id.as_deref()
     }
     /// <p>The optional job run name. This doesn't have to be unique.</p>
-    pub fn name(&self) -> std::option::Option<& str> {
+    pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>The ARN of the job run.</p>
-    pub fn arn(&self) -> std::option::Option<& str> {
+    pub fn arn(&self) -> std::option::Option<&str> {
         self.arn.as_deref()
     }
     /// <p>The user who created the job run.</p>
-    pub fn created_by(&self) -> std::option::Option<& str> {
+    pub fn created_by(&self) -> std::option::Option<&str> {
         self.created_by.as_deref()
     }
     /// <p>The date and time when the job run was created.</p>
-    pub fn created_at(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
+    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
     /// <p>The date and time when the job run was last updated.</p>
-    pub fn updated_at(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
+    pub fn updated_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.updated_at.as_ref()
     }
     /// <p>The execution role ARN of the job run.</p>
-    pub fn execution_role(&self) -> std::option::Option<& str> {
+    pub fn execution_role(&self) -> std::option::Option<&str> {
         self.execution_role.as_deref()
     }
     /// <p>The state of the job run.</p>
-    pub fn state(&self) -> std::option::Option<& crate::types::JobRunState> {
+    pub fn state(&self) -> std::option::Option<&crate::types::JobRunState> {
         self.state.as_ref()
     }
     /// <p>The state details of the job run.</p>
-    pub fn state_details(&self) -> std::option::Option<& str> {
+    pub fn state_details(&self) -> std::option::Option<&str> {
         self.state_details.as_deref()
     }
     /// <p>The EMR release associated with the application your job is running on.</p>
-    pub fn release_label(&self) -> std::option::Option<& str> {
+    pub fn release_label(&self) -> std::option::Option<&str> {
         self.release_label.as_deref()
     }
     /// <p>The type of job run, such as Spark or Hive.</p>
-    pub fn r#type(&self) -> std::option::Option<& str> {
+    pub fn r#type(&self) -> std::option::Option<&str> {
         self.r#type.as_deref()
     }
 }
@@ -123,7 +123,8 @@ impl JobRunSummaryBuilder {
     }
     /// <p>The ID of the application the job is running on.</p>
     pub fn set_application_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.application_id = input; self
+        self.application_id = input;
+        self
     }
     /// <p>The ID of the job run.</p>
     pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -132,7 +133,8 @@ impl JobRunSummaryBuilder {
     }
     /// <p>The ID of the job run.</p>
     pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.id = input; self
+        self.id = input;
+        self
     }
     /// <p>The optional job run name. This doesn't have to be unique.</p>
     pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -141,7 +143,8 @@ impl JobRunSummaryBuilder {
     }
     /// <p>The optional job run name. This doesn't have to be unique.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input; self
+        self.name = input;
+        self
     }
     /// <p>The ARN of the job run.</p>
     pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -150,7 +153,8 @@ impl JobRunSummaryBuilder {
     }
     /// <p>The ARN of the job run.</p>
     pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.arn = input; self
+        self.arn = input;
+        self
     }
     /// <p>The user who created the job run.</p>
     pub fn created_by(mut self, input: impl Into<std::string::String>) -> Self {
@@ -159,7 +163,8 @@ impl JobRunSummaryBuilder {
     }
     /// <p>The user who created the job run.</p>
     pub fn set_created_by(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.created_by = input; self
+        self.created_by = input;
+        self
     }
     /// <p>The date and time when the job run was created.</p>
     pub fn created_at(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -167,8 +172,12 @@ impl JobRunSummaryBuilder {
         self
     }
     /// <p>The date and time when the job run was created.</p>
-    pub fn set_created_at(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.created_at = input; self
+    pub fn set_created_at(
+        mut self,
+        input: std::option::Option<aws_smithy_types::DateTime>,
+    ) -> Self {
+        self.created_at = input;
+        self
     }
     /// <p>The date and time when the job run was last updated.</p>
     pub fn updated_at(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -176,8 +185,12 @@ impl JobRunSummaryBuilder {
         self
     }
     /// <p>The date and time when the job run was last updated.</p>
-    pub fn set_updated_at(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.updated_at = input; self
+    pub fn set_updated_at(
+        mut self,
+        input: std::option::Option<aws_smithy_types::DateTime>,
+    ) -> Self {
+        self.updated_at = input;
+        self
     }
     /// <p>The execution role ARN of the job run.</p>
     pub fn execution_role(mut self, input: impl Into<std::string::String>) -> Self {
@@ -186,7 +199,8 @@ impl JobRunSummaryBuilder {
     }
     /// <p>The execution role ARN of the job run.</p>
     pub fn set_execution_role(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.execution_role = input; self
+        self.execution_role = input;
+        self
     }
     /// <p>The state of the job run.</p>
     pub fn state(mut self, input: crate::types::JobRunState) -> Self {
@@ -195,7 +209,8 @@ impl JobRunSummaryBuilder {
     }
     /// <p>The state of the job run.</p>
     pub fn set_state(mut self, input: std::option::Option<crate::types::JobRunState>) -> Self {
-        self.state = input; self
+        self.state = input;
+        self
     }
     /// <p>The state details of the job run.</p>
     pub fn state_details(mut self, input: impl Into<std::string::String>) -> Self {
@@ -204,7 +219,8 @@ impl JobRunSummaryBuilder {
     }
     /// <p>The state details of the job run.</p>
     pub fn set_state_details(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.state_details = input; self
+        self.state_details = input;
+        self
     }
     /// <p>The EMR release associated with the application your job is running on.</p>
     pub fn release_label(mut self, input: impl Into<std::string::String>) -> Self {
@@ -213,7 +229,8 @@ impl JobRunSummaryBuilder {
     }
     /// <p>The EMR release associated with the application your job is running on.</p>
     pub fn set_release_label(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.release_label = input; self
+        self.release_label = input;
+        self
     }
     /// <p>The type of job run, such as Spark or Hive.</p>
     pub fn r#type(mut self, input: impl Into<std::string::String>) -> Self {
@@ -222,36 +239,24 @@ impl JobRunSummaryBuilder {
     }
     /// <p>The type of job run, such as Spark or Hive.</p>
     pub fn set_type(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.r#type = input; self
+        self.r#type = input;
+        self
     }
     /// Consumes the builder and constructs a [`JobRunSummary`](crate::types::JobRunSummary).
     pub fn build(self) -> crate::types::JobRunSummary {
         crate::types::JobRunSummary {
-            application_id: self.application_id
-            ,
-            id: self.id
-            ,
-            name: self.name
-            ,
-            arn: self.arn
-            ,
-            created_by: self.created_by
-            ,
-            created_at: self.created_at
-            ,
-            updated_at: self.updated_at
-            ,
-            execution_role: self.execution_role
-            ,
-            state: self.state
-            ,
-            state_details: self.state_details
-            ,
-            release_label: self.release_label
-            ,
-            r#type: self.r#type
-            ,
+            application_id: self.application_id,
+            id: self.id,
+            name: self.name,
+            arn: self.arn,
+            created_by: self.created_by,
+            created_at: self.created_at,
+            updated_at: self.updated_at,
+            execution_role: self.execution_role,
+            state: self.state,
+            state_details: self.state_details,
+            release_label: self.release_label,
+            r#type: self.r#type,
         }
     }
 }
-

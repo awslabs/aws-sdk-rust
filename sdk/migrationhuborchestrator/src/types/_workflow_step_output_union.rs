@@ -24,7 +24,11 @@ impl WorkflowStepOutputUnion {
     /// Tries to convert the enum instance into [`IntegerValue`](crate::types::WorkflowStepOutputUnion::IntegerValue), extracting the inner [`i32`](i32).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_integer_value(&self) -> std::result::Result<&i32, &Self> {
-        if let WorkflowStepOutputUnion::IntegerValue(val) = &self { Ok(val) } else { Err(self) }
+        if let WorkflowStepOutputUnion::IntegerValue(val) = &self {
+            Ok(val)
+        } else {
+            Err(self)
+        }
     }
     /// Returns true if this is a [`IntegerValue`](crate::types::WorkflowStepOutputUnion::IntegerValue).
     pub fn is_integer_value(&self) -> bool {
@@ -32,8 +36,14 @@ impl WorkflowStepOutputUnion {
     }
     /// Tries to convert the enum instance into [`ListOfStringValue`](crate::types::WorkflowStepOutputUnion::ListOfStringValue), extracting the inner [`Vec`](std::vec::Vec).
     /// Returns `Err(&Self)` if it can't be converted.
-    pub fn as_list_of_string_value(&self) -> std::result::Result<&std::vec::Vec<std::string::String>, &Self> {
-        if let WorkflowStepOutputUnion::ListOfStringValue(val) = &self { Ok(val) } else { Err(self) }
+    pub fn as_list_of_string_value(
+        &self,
+    ) -> std::result::Result<&std::vec::Vec<std::string::String>, &Self> {
+        if let WorkflowStepOutputUnion::ListOfStringValue(val) = &self {
+            Ok(val)
+        } else {
+            Err(self)
+        }
     }
     /// Returns true if this is a [`ListOfStringValue`](crate::types::WorkflowStepOutputUnion::ListOfStringValue).
     pub fn is_list_of_string_value(&self) -> bool {
@@ -42,7 +52,11 @@ impl WorkflowStepOutputUnion {
     /// Tries to convert the enum instance into [`StringValue`](crate::types::WorkflowStepOutputUnion::StringValue), extracting the inner [`String`](std::string::String).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_string_value(&self) -> std::result::Result<&std::string::String, &Self> {
-        if let WorkflowStepOutputUnion::StringValue(val) = &self { Ok(val) } else { Err(self) }
+        if let WorkflowStepOutputUnion::StringValue(val) = &self {
+            Ok(val)
+        } else {
+            Err(self)
+        }
     }
     /// Returns true if this is a [`StringValue`](crate::types::WorkflowStepOutputUnion::StringValue).
     pub fn is_string_value(&self) -> bool {
@@ -53,4 +67,3 @@ impl WorkflowStepOutputUnion {
         matches!(self, Self::Unknown)
     }
 }
-

@@ -2,8 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteDatalakeInput  {
-}
+pub struct DeleteDatalakeInput {}
 impl DeleteDatalakeInput {
     /// Creates a new builder-style object to manufacture [`DeleteDatalakeInput`](crate::operation::delete_datalake::DeleteDatalakeInput).
     pub fn builder() -> crate::operation::delete_datalake::builders::DeleteDatalakeInputBuilder {
@@ -14,15 +13,15 @@ impl DeleteDatalakeInput {
 /// A builder for [`DeleteDatalakeInput`](crate::operation::delete_datalake::DeleteDatalakeInput).
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-pub struct DeleteDatalakeInputBuilder {
-}
+pub struct DeleteDatalakeInputBuilder {}
 impl DeleteDatalakeInputBuilder {
     /// Consumes the builder and constructs a [`DeleteDatalakeInput`](crate::operation::delete_datalake::DeleteDatalakeInput).
-    pub fn build(self) -> Result<crate::operation::delete_datalake::DeleteDatalakeInput, aws_smithy_http::operation::error::BuildError> {
-        Ok(
-            crate::operation::delete_datalake::DeleteDatalakeInput {
-            }
-        )
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::delete_datalake::DeleteDatalakeInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        Ok(crate::operation::delete_datalake::DeleteDatalakeInput {})
     }
 }
-

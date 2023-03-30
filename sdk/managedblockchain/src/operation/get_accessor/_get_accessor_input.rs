@@ -2,14 +2,14 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetAccessorInput  {
+pub struct GetAccessorInput {
     /// <p>The unique identifier of the accessor.</p>
     #[doc(hidden)]
     pub accessor_id: std::option::Option<std::string::String>,
 }
 impl GetAccessorInput {
     /// <p>The unique identifier of the accessor.</p>
-    pub fn accessor_id(&self) -> std::option::Option<& str> {
+    pub fn accessor_id(&self) -> std::option::Option<&str> {
         self.accessor_id.as_deref()
     }
 }
@@ -34,16 +34,18 @@ impl GetAccessorInputBuilder {
     }
     /// <p>The unique identifier of the accessor.</p>
     pub fn set_accessor_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.accessor_id = input; self
+        self.accessor_id = input;
+        self
     }
     /// Consumes the builder and constructs a [`GetAccessorInput`](crate::operation::get_accessor::GetAccessorInput).
-    pub fn build(self) -> Result<crate::operation::get_accessor::GetAccessorInput, aws_smithy_http::operation::error::BuildError> {
-        Ok(
-            crate::operation::get_accessor::GetAccessorInput {
-                accessor_id: self.accessor_id
-                ,
-            }
-        )
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::get_accessor::GetAccessorInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        Ok(crate::operation::get_accessor::GetAccessorInput {
+            accessor_id: self.accessor_id,
+        })
     }
 }
-

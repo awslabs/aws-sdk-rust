@@ -81,4 +81,3 @@ pub mod update_contact;
 
 /// Types for the `UpdateContactChannel` operation.
 pub mod update_contact_channel;
-

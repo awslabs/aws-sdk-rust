@@ -2,20 +2,24 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PutLoggingConfigurationInput  {
+pub struct PutLoggingConfigurationInput {
     /// <p></p>
     #[doc(hidden)]
     pub logging_configuration: std::option::Option<crate::types::LoggingConfiguration>,
 }
 impl PutLoggingConfigurationInput {
     /// <p></p>
-    pub fn logging_configuration(&self) -> std::option::Option<& crate::types::LoggingConfiguration> {
+    pub fn logging_configuration(
+        &self,
+    ) -> std::option::Option<&crate::types::LoggingConfiguration> {
         self.logging_configuration.as_ref()
     }
 }
 impl PutLoggingConfigurationInput {
     /// Creates a new builder-style object to manufacture [`PutLoggingConfigurationInput`](crate::operation::put_logging_configuration::PutLoggingConfigurationInput).
-    pub fn builder() -> crate::operation::put_logging_configuration::builders::PutLoggingConfigurationInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::put_logging_configuration::builders::PutLoggingConfigurationInputBuilder
+    {
         crate::operation::put_logging_configuration::builders::PutLoggingConfigurationInputBuilder::default()
     }
 }
@@ -33,17 +37,24 @@ impl PutLoggingConfigurationInputBuilder {
         self
     }
     /// <p></p>
-    pub fn set_logging_configuration(mut self, input: std::option::Option<crate::types::LoggingConfiguration>) -> Self {
-        self.logging_configuration = input; self
+    pub fn set_logging_configuration(
+        mut self,
+        input: std::option::Option<crate::types::LoggingConfiguration>,
+    ) -> Self {
+        self.logging_configuration = input;
+        self
     }
     /// Consumes the builder and constructs a [`PutLoggingConfigurationInput`](crate::operation::put_logging_configuration::PutLoggingConfigurationInput).
-    pub fn build(self) -> Result<crate::operation::put_logging_configuration::PutLoggingConfigurationInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::put_logging_configuration::PutLoggingConfigurationInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::put_logging_configuration::PutLoggingConfigurationInput {
-                logging_configuration: self.logging_configuration
-                ,
-            }
+                logging_configuration: self.logging_configuration,
+            },
         )
     }
 }
-

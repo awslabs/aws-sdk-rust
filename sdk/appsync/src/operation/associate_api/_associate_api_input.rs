@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AssociateApiInput  {
+pub struct AssociateApiInput {
     /// <p>The domain name.</p>
     #[doc(hidden)]
     pub domain_name: std::option::Option<std::string::String>,
@@ -12,11 +12,11 @@ pub struct AssociateApiInput  {
 }
 impl AssociateApiInput {
     /// <p>The domain name.</p>
-    pub fn domain_name(&self) -> std::option::Option<& str> {
+    pub fn domain_name(&self) -> std::option::Option<&str> {
         self.domain_name.as_deref()
     }
     /// <p>The API ID.</p>
-    pub fn api_id(&self) -> std::option::Option<& str> {
+    pub fn api_id(&self) -> std::option::Option<&str> {
         self.api_id.as_deref()
     }
 }
@@ -42,7 +42,8 @@ impl AssociateApiInputBuilder {
     }
     /// <p>The domain name.</p>
     pub fn set_domain_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.domain_name = input; self
+        self.domain_name = input;
+        self
     }
     /// <p>The API ID.</p>
     pub fn api_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -51,18 +52,19 @@ impl AssociateApiInputBuilder {
     }
     /// <p>The API ID.</p>
     pub fn set_api_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.api_id = input; self
+        self.api_id = input;
+        self
     }
     /// Consumes the builder and constructs a [`AssociateApiInput`](crate::operation::associate_api::AssociateApiInput).
-    pub fn build(self) -> Result<crate::operation::associate_api::AssociateApiInput, aws_smithy_http::operation::error::BuildError> {
-        Ok(
-            crate::operation::associate_api::AssociateApiInput {
-                domain_name: self.domain_name
-                ,
-                api_id: self.api_id
-                ,
-            }
-        )
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::associate_api::AssociateApiInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        Ok(crate::operation::associate_api::AssociateApiInput {
+            domain_name: self.domain_name,
+            api_id: self.api_id,
+        })
     }
 }
-

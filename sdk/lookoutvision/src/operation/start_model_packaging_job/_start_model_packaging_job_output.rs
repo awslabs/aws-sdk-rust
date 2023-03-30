@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct StartModelPackagingJobOutput  {
+pub struct StartModelPackagingJobOutput {
     /// <p>The job name for the model packaging job. If you don't supply a job name in the <code>JobName</code> input parameter, the service creates a job name for you. </p>
     #[doc(hidden)]
     pub job_name: std::option::Option<std::string::String>,
@@ -10,18 +10,20 @@ pub struct StartModelPackagingJobOutput  {
 }
 impl StartModelPackagingJobOutput {
     /// <p>The job name for the model packaging job. If you don't supply a job name in the <code>JobName</code> input parameter, the service creates a job name for you. </p>
-    pub fn job_name(&self) -> std::option::Option<& str> {
+    pub fn job_name(&self) -> std::option::Option<&str> {
         self.job_name.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for StartModelPackagingJobOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl StartModelPackagingJobOutput {
     /// Creates a new builder-style object to manufacture [`StartModelPackagingJobOutput`](crate::operation::start_model_packaging_job::StartModelPackagingJobOutput).
-    pub fn builder() -> crate::operation::start_model_packaging_job::builders::StartModelPackagingJobOutputBuilder {
+    pub fn builder(
+    ) -> crate::operation::start_model_packaging_job::builders::StartModelPackagingJobOutputBuilder
+    {
         crate::operation::start_model_packaging_job::builders::StartModelPackagingJobOutputBuilder::default()
     }
 }
@@ -41,24 +43,25 @@ impl StartModelPackagingJobOutputBuilder {
     }
     /// <p>The job name for the model packaging job. If you don't supply a job name in the <code>JobName</code> input parameter, the service creates a job name for you. </p>
     pub fn set_job_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.job_name = input; self
+        self.job_name = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`StartModelPackagingJobOutput`](crate::operation::start_model_packaging_job::StartModelPackagingJobOutput).
-    pub fn build(self) -> crate::operation::start_model_packaging_job::StartModelPackagingJobOutput {
+    pub fn build(
+        self,
+    ) -> crate::operation::start_model_packaging_job::StartModelPackagingJobOutput {
         crate::operation::start_model_packaging_job::StartModelPackagingJobOutput {
-            job_name: self.job_name
-            ,
+            job_name: self.job_name,
             _request_id: self._request_id,
         }
     }
 }
-

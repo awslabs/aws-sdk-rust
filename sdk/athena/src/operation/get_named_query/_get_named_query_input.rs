@@ -2,14 +2,14 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetNamedQueryInput  {
+pub struct GetNamedQueryInput {
     /// <p>The unique ID of the query. Use <code>ListNamedQueries</code> to get query IDs.</p>
     #[doc(hidden)]
     pub named_query_id: std::option::Option<std::string::String>,
 }
 impl GetNamedQueryInput {
     /// <p>The unique ID of the query. Use <code>ListNamedQueries</code> to get query IDs.</p>
-    pub fn named_query_id(&self) -> std::option::Option<& str> {
+    pub fn named_query_id(&self) -> std::option::Option<&str> {
         self.named_query_id.as_deref()
     }
 }
@@ -34,16 +34,18 @@ impl GetNamedQueryInputBuilder {
     }
     /// <p>The unique ID of the query. Use <code>ListNamedQueries</code> to get query IDs.</p>
     pub fn set_named_query_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.named_query_id = input; self
+        self.named_query_id = input;
+        self
     }
     /// Consumes the builder and constructs a [`GetNamedQueryInput`](crate::operation::get_named_query::GetNamedQueryInput).
-    pub fn build(self) -> Result<crate::operation::get_named_query::GetNamedQueryInput, aws_smithy_http::operation::error::BuildError> {
-        Ok(
-            crate::operation::get_named_query::GetNamedQueryInput {
-                named_query_id: self.named_query_id
-                ,
-            }
-        )
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::get_named_query::GetNamedQueryInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        Ok(crate::operation::get_named_query::GetNamedQueryInput {
+            named_query_id: self.named_query_id,
+        })
     }
 }
-

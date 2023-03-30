@@ -3,12 +3,12 @@
 /// <p>The input for the <code>ListStackResource</code> action.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListStackResourcesInput  {
-    /// <p>The name or the unique stack ID that is associated with the stack, which aren't always interchangeable:</p> 
-    /// <ul> 
-    /// <li> <p>Running stacks: You can specify either the stack's name or its unique stack ID.</p> </li> 
-    /// <li> <p>Deleted stacks: You must specify the unique stack ID.</p> </li> 
-    /// </ul> 
+pub struct ListStackResourcesInput {
+    /// <p>The name or the unique stack ID that is associated with the stack, which aren't always interchangeable:</p>
+    /// <ul>
+    /// <li> <p>Running stacks: You can specify either the stack's name or its unique stack ID.</p> </li>
+    /// <li> <p>Deleted stacks: You must specify the unique stack ID.</p> </li>
+    /// </ul>
     /// <p>Default: There is no default value.</p>
     #[doc(hidden)]
     pub stack_name: std::option::Option<std::string::String>,
@@ -17,23 +17,24 @@ pub struct ListStackResourcesInput  {
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListStackResourcesInput {
-    /// <p>The name or the unique stack ID that is associated with the stack, which aren't always interchangeable:</p> 
-    /// <ul> 
-    /// <li> <p>Running stacks: You can specify either the stack's name or its unique stack ID.</p> </li> 
-    /// <li> <p>Deleted stacks: You must specify the unique stack ID.</p> </li> 
-    /// </ul> 
+    /// <p>The name or the unique stack ID that is associated with the stack, which aren't always interchangeable:</p>
+    /// <ul>
+    /// <li> <p>Running stacks: You can specify either the stack's name or its unique stack ID.</p> </li>
+    /// <li> <p>Deleted stacks: You must specify the unique stack ID.</p> </li>
+    /// </ul>
     /// <p>Default: There is no default value.</p>
-    pub fn stack_name(&self) -> std::option::Option<& str> {
+    pub fn stack_name(&self) -> std::option::Option<&str> {
         self.stack_name.as_deref()
     }
     /// <p>A string that identifies the next page of stack resources that you want to retrieve.</p>
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
 }
 impl ListStackResourcesInput {
     /// Creates a new builder-style object to manufacture [`ListStackResourcesInput`](crate::operation::list_stack_resources::ListStackResourcesInput).
-    pub fn builder() -> crate::operation::list_stack_resources::builders::ListStackResourcesInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::list_stack_resources::builders::ListStackResourcesInputBuilder {
         crate::operation::list_stack_resources::builders::ListStackResourcesInputBuilder::default()
     }
 }
@@ -46,24 +47,25 @@ pub struct ListStackResourcesInputBuilder {
     pub(crate) next_token: std::option::Option<std::string::String>,
 }
 impl ListStackResourcesInputBuilder {
-    /// <p>The name or the unique stack ID that is associated with the stack, which aren't always interchangeable:</p> 
-    /// <ul> 
-    /// <li> <p>Running stacks: You can specify either the stack's name or its unique stack ID.</p> </li> 
-    /// <li> <p>Deleted stacks: You must specify the unique stack ID.</p> </li> 
-    /// </ul> 
+    /// <p>The name or the unique stack ID that is associated with the stack, which aren't always interchangeable:</p>
+    /// <ul>
+    /// <li> <p>Running stacks: You can specify either the stack's name or its unique stack ID.</p> </li>
+    /// <li> <p>Deleted stacks: You must specify the unique stack ID.</p> </li>
+    /// </ul>
     /// <p>Default: There is no default value.</p>
     pub fn stack_name(mut self, input: impl Into<std::string::String>) -> Self {
         self.stack_name = Some(input.into());
         self
     }
-    /// <p>The name or the unique stack ID that is associated with the stack, which aren't always interchangeable:</p> 
-    /// <ul> 
-    /// <li> <p>Running stacks: You can specify either the stack's name or its unique stack ID.</p> </li> 
-    /// <li> <p>Deleted stacks: You must specify the unique stack ID.</p> </li> 
-    /// </ul> 
+    /// <p>The name or the unique stack ID that is associated with the stack, which aren't always interchangeable:</p>
+    /// <ul>
+    /// <li> <p>Running stacks: You can specify either the stack's name or its unique stack ID.</p> </li>
+    /// <li> <p>Deleted stacks: You must specify the unique stack ID.</p> </li>
+    /// </ul>
     /// <p>Default: There is no default value.</p>
     pub fn set_stack_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.stack_name = input; self
+        self.stack_name = input;
+        self
     }
     /// <p>A string that identifies the next page of stack resources that you want to retrieve.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -72,18 +74,21 @@ impl ListStackResourcesInputBuilder {
     }
     /// <p>A string that identifies the next page of stack resources that you want to retrieve.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input; self
+        self.next_token = input;
+        self
     }
     /// Consumes the builder and constructs a [`ListStackResourcesInput`](crate::operation::list_stack_resources::ListStackResourcesInput).
-    pub fn build(self) -> Result<crate::operation::list_stack_resources::ListStackResourcesInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::list_stack_resources::ListStackResourcesInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::list_stack_resources::ListStackResourcesInput {
-                stack_name: self.stack_name
-                ,
-                next_token: self.next_token
-                ,
-            }
+                stack_name: self.stack_name,
+                next_token: self.next_token,
+            },
         )
     }
 }
-

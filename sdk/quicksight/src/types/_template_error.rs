@@ -3,7 +3,7 @@
 /// <p>List of errors that occurred when the template version creation failed.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct TemplateError  {
+pub struct TemplateError {
     /// <p>Type of error.</p>
     #[doc(hidden)]
     pub r#type: std::option::Option<crate::types::TemplateErrorType>,
@@ -16,15 +16,15 @@ pub struct TemplateError  {
 }
 impl TemplateError {
     /// <p>Type of error.</p>
-    pub fn r#type(&self) -> std::option::Option<& crate::types::TemplateErrorType> {
+    pub fn r#type(&self) -> std::option::Option<&crate::types::TemplateErrorType> {
         self.r#type.as_ref()
     }
     /// <p>Description of the error type.</p>
-    pub fn message(&self) -> std::option::Option<& str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
     /// <p>An error path that shows which entities caused the template error.</p>
-    pub fn violated_entities(&self) -> std::option::Option<& [crate::types::Entity]> {
+    pub fn violated_entities(&self) -> std::option::Option<&[crate::types::Entity]> {
         self.violated_entities.as_deref()
     }
 }
@@ -51,7 +51,8 @@ impl TemplateErrorBuilder {
     }
     /// <p>Type of error.</p>
     pub fn set_type(mut self, input: std::option::Option<crate::types::TemplateErrorType>) -> Self {
-        self.r#type = input; self
+        self.r#type = input;
+        self
     }
     /// <p>Description of the error type.</p>
     pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
@@ -60,7 +61,8 @@ impl TemplateErrorBuilder {
     }
     /// <p>Description of the error type.</p>
     pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.message = input; self
+        self.message = input;
+        self
     }
     /// Appends an item to `violated_entities`.
     ///
@@ -69,24 +71,24 @@ impl TemplateErrorBuilder {
     /// <p>An error path that shows which entities caused the template error.</p>
     pub fn violated_entities(mut self, input: crate::types::Entity) -> Self {
         let mut v = self.violated_entities.unwrap_or_default();
-                        v.push(input);
-                        self.violated_entities = Some(v);
-                        self
+        v.push(input);
+        self.violated_entities = Some(v);
+        self
     }
     /// <p>An error path that shows which entities caused the template error.</p>
-    pub fn set_violated_entities(mut self, input: std::option::Option<std::vec::Vec<crate::types::Entity>>) -> Self {
-        self.violated_entities = input; self
+    pub fn set_violated_entities(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::Entity>>,
+    ) -> Self {
+        self.violated_entities = input;
+        self
     }
     /// Consumes the builder and constructs a [`TemplateError`](crate::types::TemplateError).
     pub fn build(self) -> crate::types::TemplateError {
         crate::types::TemplateError {
-            r#type: self.r#type
-            ,
-            message: self.message
-            ,
-            violated_entities: self.violated_entities
-            ,
+            r#type: self.r#type,
+            message: self.message,
+            violated_entities: self.violated_entities,
         }
     }
 }
-

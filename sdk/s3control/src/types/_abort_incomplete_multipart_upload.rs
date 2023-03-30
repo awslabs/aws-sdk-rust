@@ -3,7 +3,7 @@
 /// <p>The container for abort incomplete multipart upload</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AbortIncompleteMultipartUpload  {
+pub struct AbortIncompleteMultipartUpload {
     /// <p>Specifies the number of days after which Amazon S3 aborts an incomplete multipart upload to the Outposts bucket.</p>
     #[doc(hidden)]
     pub days_after_initiation: i32,
@@ -35,15 +35,13 @@ impl AbortIncompleteMultipartUploadBuilder {
     }
     /// <p>Specifies the number of days after which Amazon S3 aborts an incomplete multipart upload to the Outposts bucket.</p>
     pub fn set_days_after_initiation(mut self, input: std::option::Option<i32>) -> Self {
-        self.days_after_initiation = input; self
+        self.days_after_initiation = input;
+        self
     }
     /// Consumes the builder and constructs a [`AbortIncompleteMultipartUpload`](crate::types::AbortIncompleteMultipartUpload).
     pub fn build(self) -> crate::types::AbortIncompleteMultipartUpload {
         crate::types::AbortIncompleteMultipartUpload {
-            days_after_initiation: self.days_after_initiation
-                .unwrap_or_default()
-            ,
+            days_after_initiation: self.days_after_initiation.unwrap_or_default(),
         }
     }
 }
-

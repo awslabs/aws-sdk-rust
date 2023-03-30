@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteRobotApplicationInput  {
+pub struct DeleteRobotApplicationInput {
     /// <p>The Amazon Resource Name (ARN) of the the robot application.</p>
     #[doc(hidden)]
     pub application: std::option::Option<std::string::String>,
@@ -12,17 +12,19 @@ pub struct DeleteRobotApplicationInput  {
 }
 impl DeleteRobotApplicationInput {
     /// <p>The Amazon Resource Name (ARN) of the the robot application.</p>
-    pub fn application(&self) -> std::option::Option<& str> {
+    pub fn application(&self) -> std::option::Option<&str> {
         self.application.as_deref()
     }
     /// <p>The version of the robot application to delete.</p>
-    pub fn application_version(&self) -> std::option::Option<& str> {
+    pub fn application_version(&self) -> std::option::Option<&str> {
         self.application_version.as_deref()
     }
 }
 impl DeleteRobotApplicationInput {
     /// Creates a new builder-style object to manufacture [`DeleteRobotApplicationInput`](crate::operation::delete_robot_application::DeleteRobotApplicationInput).
-    pub fn builder() -> crate::operation::delete_robot_application::builders::DeleteRobotApplicationInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::delete_robot_application::builders::DeleteRobotApplicationInputBuilder
+    {
         crate::operation::delete_robot_application::builders::DeleteRobotApplicationInputBuilder::default()
     }
 }
@@ -42,7 +44,8 @@ impl DeleteRobotApplicationInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the the robot application.</p>
     pub fn set_application(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.application = input; self
+        self.application = input;
+        self
     }
     /// <p>The version of the robot application to delete.</p>
     pub fn application_version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -50,19 +53,25 @@ impl DeleteRobotApplicationInputBuilder {
         self
     }
     /// <p>The version of the robot application to delete.</p>
-    pub fn set_application_version(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.application_version = input; self
+    pub fn set_application_version(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.application_version = input;
+        self
     }
     /// Consumes the builder and constructs a [`DeleteRobotApplicationInput`](crate::operation::delete_robot_application::DeleteRobotApplicationInput).
-    pub fn build(self) -> Result<crate::operation::delete_robot_application::DeleteRobotApplicationInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::delete_robot_application::DeleteRobotApplicationInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::delete_robot_application::DeleteRobotApplicationInput {
-                application: self.application
-                ,
-                application_version: self.application_version
-                ,
-            }
+                application: self.application,
+                application_version: self.application_version,
+            },
         )
     }
 }
-

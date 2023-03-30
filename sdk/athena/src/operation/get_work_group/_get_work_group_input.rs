@@ -2,14 +2,14 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetWorkGroupInput  {
+pub struct GetWorkGroupInput {
     /// <p>The name of the workgroup.</p>
     #[doc(hidden)]
     pub work_group: std::option::Option<std::string::String>,
 }
 impl GetWorkGroupInput {
     /// <p>The name of the workgroup.</p>
-    pub fn work_group(&self) -> std::option::Option<& str> {
+    pub fn work_group(&self) -> std::option::Option<&str> {
         self.work_group.as_deref()
     }
 }
@@ -34,16 +34,18 @@ impl GetWorkGroupInputBuilder {
     }
     /// <p>The name of the workgroup.</p>
     pub fn set_work_group(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.work_group = input; self
+        self.work_group = input;
+        self
     }
     /// Consumes the builder and constructs a [`GetWorkGroupInput`](crate::operation::get_work_group::GetWorkGroupInput).
-    pub fn build(self) -> Result<crate::operation::get_work_group::GetWorkGroupInput, aws_smithy_http::operation::error::BuildError> {
-        Ok(
-            crate::operation::get_work_group::GetWorkGroupInput {
-                work_group: self.work_group
-                ,
-            }
-        )
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::get_work_group::GetWorkGroupInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        Ok(crate::operation::get_work_group::GetWorkGroupInput {
+            work_group: self.work_group,
+        })
     }
 }
-

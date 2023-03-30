@@ -3,23 +3,23 @@
 /// <p>In the response to a <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_CreateResolverQueryLogConfig.html">CreateResolverQueryLogConfig</a>, <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_DeleteResolverQueryLogConfig.html">DeleteResolverQueryLogConfig</a>, <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_GetResolverQueryLogConfig.html">GetResolverQueryLogConfig</a>, or <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_ListResolverQueryLogConfigs.html">ListResolverQueryLogConfigs</a> request, a complex type that contains settings for one query logging configuration.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ResolverQueryLogConfig  {
+pub struct ResolverQueryLogConfig {
     /// <p>The ID for the query logging configuration.</p>
     #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// <p>The Amazon Web Services account ID for the account that created the query logging configuration. </p>
     #[doc(hidden)]
     pub owner_id: std::option::Option<std::string::String>,
-    /// <p>The status of the specified query logging configuration. Valid values include the following:</p> 
-    /// <ul> 
-    /// <li> <p> <code>CREATING</code>: Resolver is creating the query logging configuration.</p> </li> 
-    /// <li> <p> <code>CREATED</code>: The query logging configuration was successfully created. Resolver is logging queries that originate in the specified VPC.</p> </li> 
-    /// <li> <p> <code>DELETING</code>: Resolver is deleting this query logging configuration.</p> </li> 
-    /// <li> <p> <code>FAILED</code>: Resolver can't deliver logs to the location that is specified in the query logging configuration. Here are two common causes:</p> 
-    /// <ul> 
-    /// <li> <p>The specified destination (for example, an Amazon S3 bucket) was deleted.</p> </li> 
-    /// <li> <p>Permissions don't allow sending logs to the destination.</p> </li> 
-    /// </ul> </li> 
+    /// <p>The status of the specified query logging configuration. Valid values include the following:</p>
+    /// <ul>
+    /// <li> <p> <code>CREATING</code>: Resolver is creating the query logging configuration.</p> </li>
+    /// <li> <p> <code>CREATED</code>: The query logging configuration was successfully created. Resolver is logging queries that originate in the specified VPC.</p> </li>
+    /// <li> <p> <code>DELETING</code>: Resolver is deleting this query logging configuration.</p> </li>
+    /// <li> <p> <code>FAILED</code>: Resolver can't deliver logs to the location that is specified in the query logging configuration. Here are two common causes:</p>
+    /// <ul>
+    /// <li> <p>The specified destination (for example, an Amazon S3 bucket) was deleted.</p> </li>
+    /// <li> <p>Permissions don't allow sending logs to the destination.</p> </li>
+    /// </ul> </li>
     /// </ul>
     #[doc(hidden)]
     pub status: std::option::Option<crate::types::ResolverQueryLogConfigStatus>,
@@ -47,29 +47,29 @@ pub struct ResolverQueryLogConfig  {
 }
 impl ResolverQueryLogConfig {
     /// <p>The ID for the query logging configuration.</p>
-    pub fn id(&self) -> std::option::Option<& str> {
+    pub fn id(&self) -> std::option::Option<&str> {
         self.id.as_deref()
     }
     /// <p>The Amazon Web Services account ID for the account that created the query logging configuration. </p>
-    pub fn owner_id(&self) -> std::option::Option<& str> {
+    pub fn owner_id(&self) -> std::option::Option<&str> {
         self.owner_id.as_deref()
     }
-    /// <p>The status of the specified query logging configuration. Valid values include the following:</p> 
-    /// <ul> 
-    /// <li> <p> <code>CREATING</code>: Resolver is creating the query logging configuration.</p> </li> 
-    /// <li> <p> <code>CREATED</code>: The query logging configuration was successfully created. Resolver is logging queries that originate in the specified VPC.</p> </li> 
-    /// <li> <p> <code>DELETING</code>: Resolver is deleting this query logging configuration.</p> </li> 
-    /// <li> <p> <code>FAILED</code>: Resolver can't deliver logs to the location that is specified in the query logging configuration. Here are two common causes:</p> 
-    /// <ul> 
-    /// <li> <p>The specified destination (for example, an Amazon S3 bucket) was deleted.</p> </li> 
-    /// <li> <p>Permissions don't allow sending logs to the destination.</p> </li> 
-    /// </ul> </li> 
+    /// <p>The status of the specified query logging configuration. Valid values include the following:</p>
+    /// <ul>
+    /// <li> <p> <code>CREATING</code>: Resolver is creating the query logging configuration.</p> </li>
+    /// <li> <p> <code>CREATED</code>: The query logging configuration was successfully created. Resolver is logging queries that originate in the specified VPC.</p> </li>
+    /// <li> <p> <code>DELETING</code>: Resolver is deleting this query logging configuration.</p> </li>
+    /// <li> <p> <code>FAILED</code>: Resolver can't deliver logs to the location that is specified in the query logging configuration. Here are two common causes:</p>
+    /// <ul>
+    /// <li> <p>The specified destination (for example, an Amazon S3 bucket) was deleted.</p> </li>
+    /// <li> <p>Permissions don't allow sending logs to the destination.</p> </li>
+    /// </ul> </li>
     /// </ul>
-    pub fn status(&self) -> std::option::Option<& crate::types::ResolverQueryLogConfigStatus> {
+    pub fn status(&self) -> std::option::Option<&crate::types::ResolverQueryLogConfigStatus> {
         self.status.as_ref()
     }
     /// <p>An indication of whether the query logging configuration is shared with other Amazon Web Services accounts, or was shared with the current account by another Amazon Web Services account. Sharing is configured through Resource Access Manager (RAM).</p>
-    pub fn share_status(&self) -> std::option::Option<& crate::types::ShareStatus> {
+    pub fn share_status(&self) -> std::option::Option<&crate::types::ShareStatus> {
         self.share_status.as_ref()
     }
     /// <p>The number of VPCs that are associated with the query logging configuration.</p>
@@ -77,23 +77,23 @@ impl ResolverQueryLogConfig {
         self.association_count
     }
     /// <p>The ARN for the query logging configuration.</p>
-    pub fn arn(&self) -> std::option::Option<& str> {
+    pub fn arn(&self) -> std::option::Option<&str> {
         self.arn.as_deref()
     }
     /// <p>The name of the query logging configuration. </p>
-    pub fn name(&self) -> std::option::Option<& str> {
+    pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>The ARN of the resource that you want Resolver to send query logs: an Amazon S3 bucket, a CloudWatch Logs log group, or a Kinesis Data Firehose delivery stream.</p>
-    pub fn destination_arn(&self) -> std::option::Option<& str> {
+    pub fn destination_arn(&self) -> std::option::Option<&str> {
         self.destination_arn.as_deref()
     }
     /// <p>A unique string that identifies the request that created the query logging configuration. The <code>CreatorRequestId</code> allows failed requests to be retried without the risk of running the operation twice.</p>
-    pub fn creator_request_id(&self) -> std::option::Option<& str> {
+    pub fn creator_request_id(&self) -> std::option::Option<&str> {
         self.creator_request_id.as_deref()
     }
     /// <p>The date and time that the query logging configuration was created, in Unix time format and Coordinated Universal Time (UTC).</p>
-    pub fn creation_time(&self) -> std::option::Option<& str> {
+    pub fn creation_time(&self) -> std::option::Option<&str> {
         self.creation_time.as_deref()
     }
 }
@@ -127,7 +127,8 @@ impl ResolverQueryLogConfigBuilder {
     }
     /// <p>The ID for the query logging configuration.</p>
     pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.id = input; self
+        self.id = input;
+        self
     }
     /// <p>The Amazon Web Services account ID for the account that created the query logging configuration. </p>
     pub fn owner_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -136,36 +137,41 @@ impl ResolverQueryLogConfigBuilder {
     }
     /// <p>The Amazon Web Services account ID for the account that created the query logging configuration. </p>
     pub fn set_owner_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.owner_id = input; self
+        self.owner_id = input;
+        self
     }
-    /// <p>The status of the specified query logging configuration. Valid values include the following:</p> 
-    /// <ul> 
-    /// <li> <p> <code>CREATING</code>: Resolver is creating the query logging configuration.</p> </li> 
-    /// <li> <p> <code>CREATED</code>: The query logging configuration was successfully created. Resolver is logging queries that originate in the specified VPC.</p> </li> 
-    /// <li> <p> <code>DELETING</code>: Resolver is deleting this query logging configuration.</p> </li> 
-    /// <li> <p> <code>FAILED</code>: Resolver can't deliver logs to the location that is specified in the query logging configuration. Here are two common causes:</p> 
-    /// <ul> 
-    /// <li> <p>The specified destination (for example, an Amazon S3 bucket) was deleted.</p> </li> 
-    /// <li> <p>Permissions don't allow sending logs to the destination.</p> </li> 
-    /// </ul> </li> 
+    /// <p>The status of the specified query logging configuration. Valid values include the following:</p>
+    /// <ul>
+    /// <li> <p> <code>CREATING</code>: Resolver is creating the query logging configuration.</p> </li>
+    /// <li> <p> <code>CREATED</code>: The query logging configuration was successfully created. Resolver is logging queries that originate in the specified VPC.</p> </li>
+    /// <li> <p> <code>DELETING</code>: Resolver is deleting this query logging configuration.</p> </li>
+    /// <li> <p> <code>FAILED</code>: Resolver can't deliver logs to the location that is specified in the query logging configuration. Here are two common causes:</p>
+    /// <ul>
+    /// <li> <p>The specified destination (for example, an Amazon S3 bucket) was deleted.</p> </li>
+    /// <li> <p>Permissions don't allow sending logs to the destination.</p> </li>
+    /// </ul> </li>
     /// </ul>
     pub fn status(mut self, input: crate::types::ResolverQueryLogConfigStatus) -> Self {
         self.status = Some(input);
         self
     }
-    /// <p>The status of the specified query logging configuration. Valid values include the following:</p> 
-    /// <ul> 
-    /// <li> <p> <code>CREATING</code>: Resolver is creating the query logging configuration.</p> </li> 
-    /// <li> <p> <code>CREATED</code>: The query logging configuration was successfully created. Resolver is logging queries that originate in the specified VPC.</p> </li> 
-    /// <li> <p> <code>DELETING</code>: Resolver is deleting this query logging configuration.</p> </li> 
-    /// <li> <p> <code>FAILED</code>: Resolver can't deliver logs to the location that is specified in the query logging configuration. Here are two common causes:</p> 
-    /// <ul> 
-    /// <li> <p>The specified destination (for example, an Amazon S3 bucket) was deleted.</p> </li> 
-    /// <li> <p>Permissions don't allow sending logs to the destination.</p> </li> 
-    /// </ul> </li> 
+    /// <p>The status of the specified query logging configuration. Valid values include the following:</p>
+    /// <ul>
+    /// <li> <p> <code>CREATING</code>: Resolver is creating the query logging configuration.</p> </li>
+    /// <li> <p> <code>CREATED</code>: The query logging configuration was successfully created. Resolver is logging queries that originate in the specified VPC.</p> </li>
+    /// <li> <p> <code>DELETING</code>: Resolver is deleting this query logging configuration.</p> </li>
+    /// <li> <p> <code>FAILED</code>: Resolver can't deliver logs to the location that is specified in the query logging configuration. Here are two common causes:</p>
+    /// <ul>
+    /// <li> <p>The specified destination (for example, an Amazon S3 bucket) was deleted.</p> </li>
+    /// <li> <p>Permissions don't allow sending logs to the destination.</p> </li>
+    /// </ul> </li>
     /// </ul>
-    pub fn set_status(mut self, input: std::option::Option<crate::types::ResolverQueryLogConfigStatus>) -> Self {
-        self.status = input; self
+    pub fn set_status(
+        mut self,
+        input: std::option::Option<crate::types::ResolverQueryLogConfigStatus>,
+    ) -> Self {
+        self.status = input;
+        self
     }
     /// <p>An indication of whether the query logging configuration is shared with other Amazon Web Services accounts, or was shared with the current account by another Amazon Web Services account. Sharing is configured through Resource Access Manager (RAM).</p>
     pub fn share_status(mut self, input: crate::types::ShareStatus) -> Self {
@@ -173,8 +179,12 @@ impl ResolverQueryLogConfigBuilder {
         self
     }
     /// <p>An indication of whether the query logging configuration is shared with other Amazon Web Services accounts, or was shared with the current account by another Amazon Web Services account. Sharing is configured through Resource Access Manager (RAM).</p>
-    pub fn set_share_status(mut self, input: std::option::Option<crate::types::ShareStatus>) -> Self {
-        self.share_status = input; self
+    pub fn set_share_status(
+        mut self,
+        input: std::option::Option<crate::types::ShareStatus>,
+    ) -> Self {
+        self.share_status = input;
+        self
     }
     /// <p>The number of VPCs that are associated with the query logging configuration.</p>
     pub fn association_count(mut self, input: i32) -> Self {
@@ -183,7 +193,8 @@ impl ResolverQueryLogConfigBuilder {
     }
     /// <p>The number of VPCs that are associated with the query logging configuration.</p>
     pub fn set_association_count(mut self, input: std::option::Option<i32>) -> Self {
-        self.association_count = input; self
+        self.association_count = input;
+        self
     }
     /// <p>The ARN for the query logging configuration.</p>
     pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -192,7 +203,8 @@ impl ResolverQueryLogConfigBuilder {
     }
     /// <p>The ARN for the query logging configuration.</p>
     pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.arn = input; self
+        self.arn = input;
+        self
     }
     /// <p>The name of the query logging configuration. </p>
     pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -201,7 +213,8 @@ impl ResolverQueryLogConfigBuilder {
     }
     /// <p>The name of the query logging configuration. </p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input; self
+        self.name = input;
+        self
     }
     /// <p>The ARN of the resource that you want Resolver to send query logs: an Amazon S3 bucket, a CloudWatch Logs log group, or a Kinesis Data Firehose delivery stream.</p>
     pub fn destination_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -210,7 +223,8 @@ impl ResolverQueryLogConfigBuilder {
     }
     /// <p>The ARN of the resource that you want Resolver to send query logs: an Amazon S3 bucket, a CloudWatch Logs log group, or a Kinesis Data Firehose delivery stream.</p>
     pub fn set_destination_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.destination_arn = input; self
+        self.destination_arn = input;
+        self
     }
     /// <p>A unique string that identifies the request that created the query logging configuration. The <code>CreatorRequestId</code> allows failed requests to be retried without the risk of running the operation twice.</p>
     pub fn creator_request_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -218,8 +232,12 @@ impl ResolverQueryLogConfigBuilder {
         self
     }
     /// <p>A unique string that identifies the request that created the query logging configuration. The <code>CreatorRequestId</code> allows failed requests to be retried without the risk of running the operation twice.</p>
-    pub fn set_creator_request_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.creator_request_id = input; self
+    pub fn set_creator_request_id(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.creator_request_id = input;
+        self
     }
     /// <p>The date and time that the query logging configuration was created, in Unix time format and Coordinated Universal Time (UTC).</p>
     pub fn creation_time(mut self, input: impl Into<std::string::String>) -> Self {
@@ -228,33 +246,22 @@ impl ResolverQueryLogConfigBuilder {
     }
     /// <p>The date and time that the query logging configuration was created, in Unix time format and Coordinated Universal Time (UTC).</p>
     pub fn set_creation_time(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.creation_time = input; self
+        self.creation_time = input;
+        self
     }
     /// Consumes the builder and constructs a [`ResolverQueryLogConfig`](crate::types::ResolverQueryLogConfig).
     pub fn build(self) -> crate::types::ResolverQueryLogConfig {
         crate::types::ResolverQueryLogConfig {
-            id: self.id
-            ,
-            owner_id: self.owner_id
-            ,
-            status: self.status
-            ,
-            share_status: self.share_status
-            ,
-            association_count: self.association_count
-                .unwrap_or_default()
-            ,
-            arn: self.arn
-            ,
-            name: self.name
-            ,
-            destination_arn: self.destination_arn
-            ,
-            creator_request_id: self.creator_request_id
-            ,
-            creation_time: self.creation_time
-            ,
+            id: self.id,
+            owner_id: self.owner_id,
+            status: self.status,
+            share_status: self.share_status,
+            association_count: self.association_count.unwrap_or_default(),
+            arn: self.arn,
+            name: self.name,
+            destination_arn: self.destination_arn,
+            creator_request_id: self.creator_request_id,
+            creation_time: self.creation_time,
         }
     }
 }
-

@@ -2,27 +2,27 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateBlueGreenDeploymentInput  {
-    /// <p>The name of the blue/green deployment.</p> 
-    /// <p>Constraints:</p> 
-    /// <ul> 
-    /// <li> <p>Can't be the same as an existing blue/green deployment name in the same account and Amazon Web Services Region.</p> </li> 
+pub struct CreateBlueGreenDeploymentInput {
+    /// <p>The name of the blue/green deployment.</p>
+    /// <p>Constraints:</p>
+    /// <ul>
+    /// <li> <p>Can't be the same as an existing blue/green deployment name in the same account and Amazon Web Services Region.</p> </li>
     /// </ul>
     #[doc(hidden)]
     pub blue_green_deployment_name: std::option::Option<std::string::String>,
-    /// <p>The Amazon Resource Name (ARN) of the source production database.</p> 
+    /// <p>The Amazon Resource Name (ARN) of the source production database.</p>
     /// <p>Specify the database that you want to clone. The blue/green deployment creates this database in the green environment. You can make updates to the database in the green environment, such as an engine version upgrade. When you are ready, you can switch the database in the green environment to be the production database.</p>
     #[doc(hidden)]
     pub source: std::option::Option<std::string::String>,
-    /// <p>The engine version of the database in the green environment.</p> 
+    /// <p>The engine version of the database in the green environment.</p>
     /// <p>Specify the engine version to upgrade to in the green environment.</p>
     #[doc(hidden)]
     pub target_engine_version: std::option::Option<std::string::String>,
-    /// <p>The DB parameter group associated with the DB instance in the green environment.</p> 
+    /// <p>The DB parameter group associated with the DB instance in the green environment.</p>
     /// <p>To test parameter changes, specify a DB parameter group that is different from the one associated with the source DB instance.</p>
     #[doc(hidden)]
     pub target_db_parameter_group_name: std::option::Option<std::string::String>,
-    /// <p>The DB cluster parameter group associated with the Aurora DB cluster in the green environment.</p> 
+    /// <p>The DB cluster parameter group associated with the Aurora DB cluster in the green environment.</p>
     /// <p>To test parameter changes, specify a DB cluster parameter group that is different from the one associated with the source DB cluster.</p>
     #[doc(hidden)]
     pub target_db_cluster_parameter_group_name: std::option::Option<std::string::String>,
@@ -31,42 +31,42 @@ pub struct CreateBlueGreenDeploymentInput  {
     pub tags: std::option::Option<std::vec::Vec<crate::types::Tag>>,
 }
 impl CreateBlueGreenDeploymentInput {
-    /// <p>The name of the blue/green deployment.</p> 
-    /// <p>Constraints:</p> 
-    /// <ul> 
-    /// <li> <p>Can't be the same as an existing blue/green deployment name in the same account and Amazon Web Services Region.</p> </li> 
+    /// <p>The name of the blue/green deployment.</p>
+    /// <p>Constraints:</p>
+    /// <ul>
+    /// <li> <p>Can't be the same as an existing blue/green deployment name in the same account and Amazon Web Services Region.</p> </li>
     /// </ul>
-    pub fn blue_green_deployment_name(&self) -> std::option::Option<& str> {
+    pub fn blue_green_deployment_name(&self) -> std::option::Option<&str> {
         self.blue_green_deployment_name.as_deref()
     }
-    /// <p>The Amazon Resource Name (ARN) of the source production database.</p> 
+    /// <p>The Amazon Resource Name (ARN) of the source production database.</p>
     /// <p>Specify the database that you want to clone. The blue/green deployment creates this database in the green environment. You can make updates to the database in the green environment, such as an engine version upgrade. When you are ready, you can switch the database in the green environment to be the production database.</p>
-    pub fn source(&self) -> std::option::Option<& str> {
+    pub fn source(&self) -> std::option::Option<&str> {
         self.source.as_deref()
     }
-    /// <p>The engine version of the database in the green environment.</p> 
+    /// <p>The engine version of the database in the green environment.</p>
     /// <p>Specify the engine version to upgrade to in the green environment.</p>
-    pub fn target_engine_version(&self) -> std::option::Option<& str> {
+    pub fn target_engine_version(&self) -> std::option::Option<&str> {
         self.target_engine_version.as_deref()
     }
-    /// <p>The DB parameter group associated with the DB instance in the green environment.</p> 
+    /// <p>The DB parameter group associated with the DB instance in the green environment.</p>
     /// <p>To test parameter changes, specify a DB parameter group that is different from the one associated with the source DB instance.</p>
-    pub fn target_db_parameter_group_name(&self) -> std::option::Option<& str> {
+    pub fn target_db_parameter_group_name(&self) -> std::option::Option<&str> {
         self.target_db_parameter_group_name.as_deref()
     }
-    /// <p>The DB cluster parameter group associated with the Aurora DB cluster in the green environment.</p> 
+    /// <p>The DB cluster parameter group associated with the Aurora DB cluster in the green environment.</p>
     /// <p>To test parameter changes, specify a DB cluster parameter group that is different from the one associated with the source DB cluster.</p>
-    pub fn target_db_cluster_parameter_group_name(&self) -> std::option::Option<& str> {
+    pub fn target_db_cluster_parameter_group_name(&self) -> std::option::Option<&str> {
         self.target_db_cluster_parameter_group_name.as_deref()
     }
     /// <p>Tags to assign to the blue/green deployment.</p>
-    pub fn tags(&self) -> std::option::Option<& [crate::types::Tag]> {
+    pub fn tags(&self) -> std::option::Option<&[crate::types::Tag]> {
         self.tags.as_deref()
     }
 }
 impl CreateBlueGreenDeploymentInput {
     /// Creates a new builder-style object to manufacture [`CreateBlueGreenDeploymentInput`](crate::operation::create_blue_green_deployment::CreateBlueGreenDeploymentInput).
-    pub fn builder() -> crate::operation::create_blue_green_deployment::builders::CreateBlueGreenDeploymentInputBuilder {
+    pub fn builder() -> crate::operation::create_blue_green_deployment::builders::CreateBlueGreenDeploymentInputBuilder{
         crate::operation::create_blue_green_deployment::builders::CreateBlueGreenDeploymentInputBuilder::default()
     }
 }
@@ -83,66 +83,86 @@ pub struct CreateBlueGreenDeploymentInputBuilder {
     pub(crate) tags: std::option::Option<std::vec::Vec<crate::types::Tag>>,
 }
 impl CreateBlueGreenDeploymentInputBuilder {
-    /// <p>The name of the blue/green deployment.</p> 
-    /// <p>Constraints:</p> 
-    /// <ul> 
-    /// <li> <p>Can't be the same as an existing blue/green deployment name in the same account and Amazon Web Services Region.</p> </li> 
+    /// <p>The name of the blue/green deployment.</p>
+    /// <p>Constraints:</p>
+    /// <ul>
+    /// <li> <p>Can't be the same as an existing blue/green deployment name in the same account and Amazon Web Services Region.</p> </li>
     /// </ul>
     pub fn blue_green_deployment_name(mut self, input: impl Into<std::string::String>) -> Self {
         self.blue_green_deployment_name = Some(input.into());
         self
     }
-    /// <p>The name of the blue/green deployment.</p> 
-    /// <p>Constraints:</p> 
-    /// <ul> 
-    /// <li> <p>Can't be the same as an existing blue/green deployment name in the same account and Amazon Web Services Region.</p> </li> 
+    /// <p>The name of the blue/green deployment.</p>
+    /// <p>Constraints:</p>
+    /// <ul>
+    /// <li> <p>Can't be the same as an existing blue/green deployment name in the same account and Amazon Web Services Region.</p> </li>
     /// </ul>
-    pub fn set_blue_green_deployment_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.blue_green_deployment_name = input; self
+    pub fn set_blue_green_deployment_name(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.blue_green_deployment_name = input;
+        self
     }
-    /// <p>The Amazon Resource Name (ARN) of the source production database.</p> 
+    /// <p>The Amazon Resource Name (ARN) of the source production database.</p>
     /// <p>Specify the database that you want to clone. The blue/green deployment creates this database in the green environment. You can make updates to the database in the green environment, such as an engine version upgrade. When you are ready, you can switch the database in the green environment to be the production database.</p>
     pub fn source(mut self, input: impl Into<std::string::String>) -> Self {
         self.source = Some(input.into());
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the source production database.</p> 
+    /// <p>The Amazon Resource Name (ARN) of the source production database.</p>
     /// <p>Specify the database that you want to clone. The blue/green deployment creates this database in the green environment. You can make updates to the database in the green environment, such as an engine version upgrade. When you are ready, you can switch the database in the green environment to be the production database.</p>
     pub fn set_source(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.source = input; self
+        self.source = input;
+        self
     }
-    /// <p>The engine version of the database in the green environment.</p> 
+    /// <p>The engine version of the database in the green environment.</p>
     /// <p>Specify the engine version to upgrade to in the green environment.</p>
     pub fn target_engine_version(mut self, input: impl Into<std::string::String>) -> Self {
         self.target_engine_version = Some(input.into());
         self
     }
-    /// <p>The engine version of the database in the green environment.</p> 
+    /// <p>The engine version of the database in the green environment.</p>
     /// <p>Specify the engine version to upgrade to in the green environment.</p>
-    pub fn set_target_engine_version(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.target_engine_version = input; self
+    pub fn set_target_engine_version(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.target_engine_version = input;
+        self
     }
-    /// <p>The DB parameter group associated with the DB instance in the green environment.</p> 
+    /// <p>The DB parameter group associated with the DB instance in the green environment.</p>
     /// <p>To test parameter changes, specify a DB parameter group that is different from the one associated with the source DB instance.</p>
     pub fn target_db_parameter_group_name(mut self, input: impl Into<std::string::String>) -> Self {
         self.target_db_parameter_group_name = Some(input.into());
         self
     }
-    /// <p>The DB parameter group associated with the DB instance in the green environment.</p> 
+    /// <p>The DB parameter group associated with the DB instance in the green environment.</p>
     /// <p>To test parameter changes, specify a DB parameter group that is different from the one associated with the source DB instance.</p>
-    pub fn set_target_db_parameter_group_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.target_db_parameter_group_name = input; self
+    pub fn set_target_db_parameter_group_name(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.target_db_parameter_group_name = input;
+        self
     }
-    /// <p>The DB cluster parameter group associated with the Aurora DB cluster in the green environment.</p> 
+    /// <p>The DB cluster parameter group associated with the Aurora DB cluster in the green environment.</p>
     /// <p>To test parameter changes, specify a DB cluster parameter group that is different from the one associated with the source DB cluster.</p>
-    pub fn target_db_cluster_parameter_group_name(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn target_db_cluster_parameter_group_name(
+        mut self,
+        input: impl Into<std::string::String>,
+    ) -> Self {
         self.target_db_cluster_parameter_group_name = Some(input.into());
         self
     }
-    /// <p>The DB cluster parameter group associated with the Aurora DB cluster in the green environment.</p> 
+    /// <p>The DB cluster parameter group associated with the Aurora DB cluster in the green environment.</p>
     /// <p>To test parameter changes, specify a DB cluster parameter group that is different from the one associated with the source DB cluster.</p>
-    pub fn set_target_db_cluster_parameter_group_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.target_db_cluster_parameter_group_name = input; self
+    pub fn set_target_db_cluster_parameter_group_name(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.target_db_cluster_parameter_group_name = input;
+        self
     }
     /// Appends an item to `tags`.
     ///
@@ -151,32 +171,34 @@ impl CreateBlueGreenDeploymentInputBuilder {
     /// <p>Tags to assign to the blue/green deployment.</p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
-                        v.push(input);
-                        self.tags = Some(v);
-                        self
+        v.push(input);
+        self.tags = Some(v);
+        self
     }
     /// <p>Tags to assign to the blue/green deployment.</p>
-    pub fn set_tags(mut self, input: std::option::Option<std::vec::Vec<crate::types::Tag>>) -> Self {
-        self.tags = input; self
+    pub fn set_tags(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::Tag>>,
+    ) -> Self {
+        self.tags = input;
+        self
     }
     /// Consumes the builder and constructs a [`CreateBlueGreenDeploymentInput`](crate::operation::create_blue_green_deployment::CreateBlueGreenDeploymentInput).
-    pub fn build(self) -> Result<crate::operation::create_blue_green_deployment::CreateBlueGreenDeploymentInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::create_blue_green_deployment::CreateBlueGreenDeploymentInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::create_blue_green_deployment::CreateBlueGreenDeploymentInput {
-                blue_green_deployment_name: self.blue_green_deployment_name
-                ,
-                source: self.source
-                ,
-                target_engine_version: self.target_engine_version
-                ,
-                target_db_parameter_group_name: self.target_db_parameter_group_name
-                ,
-                target_db_cluster_parameter_group_name: self.target_db_cluster_parameter_group_name
-                ,
-                tags: self.tags
-                ,
-            }
+                blue_green_deployment_name: self.blue_green_deployment_name,
+                source: self.source,
+                target_engine_version: self.target_engine_version,
+                target_db_parameter_group_name: self.target_db_parameter_group_name,
+                target_db_cluster_parameter_group_name: self.target_db_cluster_parameter_group_name,
+                tags: self.tags,
+            },
         )
     }
 }
-

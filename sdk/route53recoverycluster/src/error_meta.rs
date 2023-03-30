@@ -8,7 +8,9 @@ pub enum Error {
     /// <p>There was a conflict with this request. Try again.</p>
     ConflictException(crate::types::error::ConflictException),
     /// <p>The cluster endpoint isn't available. Try another cluster endpoint.</p>
-    EndpointTemporarilyUnavailableException(crate::types::error::EndpointTemporarilyUnavailableException),
+    EndpointTemporarilyUnavailableException(
+        crate::types::error::EndpointTemporarilyUnavailableException,
+    ),
     /// <p>There was an unexpected error during processing of the request.</p>
     InternalServerException(crate::types::error::InternalServerException),
     /// <p>The request references a routing control or control panel that was not found.</p>
@@ -20,7 +22,7 @@ pub enum Error {
     /// <p>There was a validation error on the request.</p>
     ValidationException(crate::types::error::ValidationException),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    Unhandled(aws_smithy_types::error::Unhandled)
+    Unhandled(aws_smithy_types::error::Unhandled),
 }
 impl std::fmt::Display for Error {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -33,20 +35,38 @@ impl std::fmt::Display for Error {
             Error::ServiceLimitExceededException(inner) => inner.fmt(f),
             Error::ThrottlingException(inner) => inner.fmt(f),
             Error::ValidationException(inner) => inner.fmt(f),
-            Error::Unhandled(inner) => inner.fmt(f)
+            Error::Unhandled(inner) => inner.fmt(f),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::operation::get_routing_control_state::GetRoutingControlStateError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::operation::get_routing_control_state::GetRoutingControlStateError, R>) -> Self {
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::get_routing_control_state::GetRoutingControlStateError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::get_routing_control_state::GetRoutingControlStateError,
+            R,
+        >,
+    ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
             _ => Error::Unhandled(
-                                            aws_smithy_types::error::Unhandled::builder()
-                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
-                                                .source(err)
-                                                .build()
-                                        ),
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
@@ -63,16 +83,34 @@ impl From<crate::operation::get_routing_control_state::GetRoutingControlStateErr
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::operation::list_routing_controls::ListRoutingControlsError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::operation::list_routing_controls::ListRoutingControlsError, R>) -> Self {
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::list_routing_controls::ListRoutingControlsError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::list_routing_controls::ListRoutingControlsError,
+            R,
+        >,
+    ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
             _ => Error::Unhandled(
-                                            aws_smithy_types::error::Unhandled::builder()
-                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
-                                                .source(err)
-                                                .build()
-                                        ),
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
@@ -89,21 +127,43 @@ impl From<crate::operation::list_routing_controls::ListRoutingControlsError> for
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::operation::update_routing_control_state::UpdateRoutingControlStateError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::operation::update_routing_control_state::UpdateRoutingControlStateError, R>) -> Self {
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::update_routing_control_state::UpdateRoutingControlStateError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::update_routing_control_state::UpdateRoutingControlStateError,
+            R,
+        >,
+    ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
             _ => Error::Unhandled(
-                                            aws_smithy_types::error::Unhandled::builder()
-                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
-                                                .source(err)
-                                                .build()
-                                        ),
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
-impl From<crate::operation::update_routing_control_state::UpdateRoutingControlStateError> for Error {
-    fn from(err: crate::operation::update_routing_control_state::UpdateRoutingControlStateError) -> Self {
+impl From<crate::operation::update_routing_control_state::UpdateRoutingControlStateError>
+    for Error
+{
+    fn from(
+        err: crate::operation::update_routing_control_state::UpdateRoutingControlStateError,
+    ) -> Self {
         match err {
             crate::operation::update_routing_control_state::UpdateRoutingControlStateError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
             crate::operation::update_routing_control_state::UpdateRoutingControlStateError::ConflictException(inner) => Error::ConflictException(inner),
@@ -116,21 +176,43 @@ impl From<crate::operation::update_routing_control_state::UpdateRoutingControlSt
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::operation::update_routing_control_states::UpdateRoutingControlStatesError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::operation::update_routing_control_states::UpdateRoutingControlStatesError, R>) -> Self {
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::update_routing_control_states::UpdateRoutingControlStatesError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::update_routing_control_states::UpdateRoutingControlStatesError,
+            R,
+        >,
+    ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
             _ => Error::Unhandled(
-                                            aws_smithy_types::error::Unhandled::builder()
-                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
-                                                .source(err)
-                                                .build()
-                                        ),
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
-impl From<crate::operation::update_routing_control_states::UpdateRoutingControlStatesError> for Error {
-    fn from(err: crate::operation::update_routing_control_states::UpdateRoutingControlStatesError) -> Self {
+impl From<crate::operation::update_routing_control_states::UpdateRoutingControlStatesError>
+    for Error
+{
+    fn from(
+        err: crate::operation::update_routing_control_states::UpdateRoutingControlStatesError,
+    ) -> Self {
         match err {
             crate::operation::update_routing_control_states::UpdateRoutingControlStatesError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
             crate::operation::update_routing_control_states::UpdateRoutingControlStatesError::ConflictException(inner) => Error::ConflictException(inner),
@@ -160,4 +242,3 @@ impl aws_http::request_id::RequestId for Error {
         }
     }
 }
-

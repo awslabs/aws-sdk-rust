@@ -3,7 +3,7 @@
 /// <p>Represents the response from the server to the request to list the user import jobs.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListUserImportJobsOutput  {
+pub struct ListUserImportJobsOutput {
     /// <p>The user import jobs.</p>
     #[doc(hidden)]
     pub user_import_jobs: std::option::Option<std::vec::Vec<crate::types::UserImportJobType>>,
@@ -14,23 +14,25 @@ pub struct ListUserImportJobsOutput  {
 }
 impl ListUserImportJobsOutput {
     /// <p>The user import jobs.</p>
-    pub fn user_import_jobs(&self) -> std::option::Option<& [crate::types::UserImportJobType]> {
+    pub fn user_import_jobs(&self) -> std::option::Option<&[crate::types::UserImportJobType]> {
         self.user_import_jobs.as_deref()
     }
     /// <p>An identifier that can be used to return the next set of user import jobs in the list.</p>
-    pub fn pagination_token(&self) -> std::option::Option<& str> {
+    pub fn pagination_token(&self) -> std::option::Option<&str> {
         self.pagination_token.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for ListUserImportJobsOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl ListUserImportJobsOutput {
     /// Creates a new builder-style object to manufacture [`ListUserImportJobsOutput`](crate::operation::list_user_import_jobs::ListUserImportJobsOutput).
-    pub fn builder() -> crate::operation::list_user_import_jobs::builders::ListUserImportJobsOutputBuilder {
-        crate::operation::list_user_import_jobs::builders::ListUserImportJobsOutputBuilder::default()
+    pub fn builder(
+    ) -> crate::operation::list_user_import_jobs::builders::ListUserImportJobsOutputBuilder {
+        crate::operation::list_user_import_jobs::builders::ListUserImportJobsOutputBuilder::default(
+        )
     }
 }
 
@@ -38,7 +40,8 @@ impl ListUserImportJobsOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct ListUserImportJobsOutputBuilder {
-    pub(crate) user_import_jobs: std::option::Option<std::vec::Vec<crate::types::UserImportJobType>>,
+    pub(crate) user_import_jobs:
+        std::option::Option<std::vec::Vec<crate::types::UserImportJobType>>,
     pub(crate) pagination_token: std::option::Option<std::string::String>,
     _request_id: Option<String>,
 }
@@ -50,13 +53,17 @@ impl ListUserImportJobsOutputBuilder {
     /// <p>The user import jobs.</p>
     pub fn user_import_jobs(mut self, input: crate::types::UserImportJobType) -> Self {
         let mut v = self.user_import_jobs.unwrap_or_default();
-                        v.push(input);
-                        self.user_import_jobs = Some(v);
-                        self
+        v.push(input);
+        self.user_import_jobs = Some(v);
+        self
     }
     /// <p>The user import jobs.</p>
-    pub fn set_user_import_jobs(mut self, input: std::option::Option<std::vec::Vec<crate::types::UserImportJobType>>) -> Self {
-        self.user_import_jobs = input; self
+    pub fn set_user_import_jobs(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::UserImportJobType>>,
+    ) -> Self {
+        self.user_import_jobs = input;
+        self
     }
     /// <p>An identifier that can be used to return the next set of user import jobs in the list.</p>
     pub fn pagination_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -65,26 +72,24 @@ impl ListUserImportJobsOutputBuilder {
     }
     /// <p>An identifier that can be used to return the next set of user import jobs in the list.</p>
     pub fn set_pagination_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.pagination_token = input; self
+        self.pagination_token = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`ListUserImportJobsOutput`](crate::operation::list_user_import_jobs::ListUserImportJobsOutput).
     pub fn build(self) -> crate::operation::list_user_import_jobs::ListUserImportJobsOutput {
         crate::operation::list_user_import_jobs::ListUserImportJobsOutput {
-            user_import_jobs: self.user_import_jobs
-            ,
-            pagination_token: self.pagination_token
-            ,
+            user_import_jobs: self.user_import_jobs,
+            pagination_token: self.pagination_token,
             _request_id: self._request_id,
         }
     }
 }
-

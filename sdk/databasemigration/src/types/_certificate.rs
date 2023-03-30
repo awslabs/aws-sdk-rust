@@ -3,7 +3,7 @@
 /// <p>The SSL certificate that can be used to encrypt connections between the endpoints and the replication instance.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Certificate  {
+pub struct Certificate {
     /// <p>A customer-assigned name for the certificate. Identifiers must begin with a letter and must contain only ASCII letters, digits, and hyphens. They can't end with a hyphen or contain two consecutive hyphens.</p>
     #[doc(hidden)]
     pub certificate_identifier: std::option::Option<std::string::String>,
@@ -37,39 +37,39 @@ pub struct Certificate  {
 }
 impl Certificate {
     /// <p>A customer-assigned name for the certificate. Identifiers must begin with a letter and must contain only ASCII letters, digits, and hyphens. They can't end with a hyphen or contain two consecutive hyphens.</p>
-    pub fn certificate_identifier(&self) -> std::option::Option<& str> {
+    pub fn certificate_identifier(&self) -> std::option::Option<&str> {
         self.certificate_identifier.as_deref()
     }
     /// <p>The date that the certificate was created.</p>
-    pub fn certificate_creation_date(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
+    pub fn certificate_creation_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.certificate_creation_date.as_ref()
     }
     /// <p>The contents of a <code>.pem</code> file, which contains an X.509 certificate.</p>
-    pub fn certificate_pem(&self) -> std::option::Option<& str> {
+    pub fn certificate_pem(&self) -> std::option::Option<&str> {
         self.certificate_pem.as_deref()
     }
     /// <p>The location of an imported Oracle Wallet certificate for use with SSL. Example: <code>filebase64("${path.root}/rds-ca-2019-root.sso")</code> </p>
-    pub fn certificate_wallet(&self) -> std::option::Option<& aws_smithy_types::Blob> {
+    pub fn certificate_wallet(&self) -> std::option::Option<&aws_smithy_types::Blob> {
         self.certificate_wallet.as_ref()
     }
     /// <p>The Amazon Resource Name (ARN) for the certificate.</p>
-    pub fn certificate_arn(&self) -> std::option::Option<& str> {
+    pub fn certificate_arn(&self) -> std::option::Option<&str> {
         self.certificate_arn.as_deref()
     }
     /// <p>The owner of the certificate.</p>
-    pub fn certificate_owner(&self) -> std::option::Option<& str> {
+    pub fn certificate_owner(&self) -> std::option::Option<&str> {
         self.certificate_owner.as_deref()
     }
     /// <p>The beginning date that the certificate is valid.</p>
-    pub fn valid_from_date(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
+    pub fn valid_from_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.valid_from_date.as_ref()
     }
     /// <p>The final date that the certificate is valid.</p>
-    pub fn valid_to_date(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
+    pub fn valid_to_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.valid_to_date.as_ref()
     }
     /// <p>The signing algorithm for the certificate.</p>
-    pub fn signing_algorithm(&self) -> std::option::Option<& str> {
+    pub fn signing_algorithm(&self) -> std::option::Option<&str> {
         self.signing_algorithm.as_deref()
     }
     /// <p>The key length of the cryptographic algorithm being used.</p>
@@ -106,8 +106,12 @@ impl CertificateBuilder {
         self
     }
     /// <p>A customer-assigned name for the certificate. Identifiers must begin with a letter and must contain only ASCII letters, digits, and hyphens. They can't end with a hyphen or contain two consecutive hyphens.</p>
-    pub fn set_certificate_identifier(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.certificate_identifier = input; self
+    pub fn set_certificate_identifier(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.certificate_identifier = input;
+        self
     }
     /// <p>The date that the certificate was created.</p>
     pub fn certificate_creation_date(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -115,8 +119,12 @@ impl CertificateBuilder {
         self
     }
     /// <p>The date that the certificate was created.</p>
-    pub fn set_certificate_creation_date(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.certificate_creation_date = input; self
+    pub fn set_certificate_creation_date(
+        mut self,
+        input: std::option::Option<aws_smithy_types::DateTime>,
+    ) -> Self {
+        self.certificate_creation_date = input;
+        self
     }
     /// <p>The contents of a <code>.pem</code> file, which contains an X.509 certificate.</p>
     pub fn certificate_pem(mut self, input: impl Into<std::string::String>) -> Self {
@@ -125,7 +133,8 @@ impl CertificateBuilder {
     }
     /// <p>The contents of a <code>.pem</code> file, which contains an X.509 certificate.</p>
     pub fn set_certificate_pem(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.certificate_pem = input; self
+        self.certificate_pem = input;
+        self
     }
     /// <p>The location of an imported Oracle Wallet certificate for use with SSL. Example: <code>filebase64("${path.root}/rds-ca-2019-root.sso")</code> </p>
     pub fn certificate_wallet(mut self, input: aws_smithy_types::Blob) -> Self {
@@ -133,8 +142,12 @@ impl CertificateBuilder {
         self
     }
     /// <p>The location of an imported Oracle Wallet certificate for use with SSL. Example: <code>filebase64("${path.root}/rds-ca-2019-root.sso")</code> </p>
-    pub fn set_certificate_wallet(mut self, input: std::option::Option<aws_smithy_types::Blob>) -> Self {
-        self.certificate_wallet = input; self
+    pub fn set_certificate_wallet(
+        mut self,
+        input: std::option::Option<aws_smithy_types::Blob>,
+    ) -> Self {
+        self.certificate_wallet = input;
+        self
     }
     /// <p>The Amazon Resource Name (ARN) for the certificate.</p>
     pub fn certificate_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -143,7 +156,8 @@ impl CertificateBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) for the certificate.</p>
     pub fn set_certificate_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.certificate_arn = input; self
+        self.certificate_arn = input;
+        self
     }
     /// <p>The owner of the certificate.</p>
     pub fn certificate_owner(mut self, input: impl Into<std::string::String>) -> Self {
@@ -151,8 +165,12 @@ impl CertificateBuilder {
         self
     }
     /// <p>The owner of the certificate.</p>
-    pub fn set_certificate_owner(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.certificate_owner = input; self
+    pub fn set_certificate_owner(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.certificate_owner = input;
+        self
     }
     /// <p>The beginning date that the certificate is valid.</p>
     pub fn valid_from_date(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -160,8 +178,12 @@ impl CertificateBuilder {
         self
     }
     /// <p>The beginning date that the certificate is valid.</p>
-    pub fn set_valid_from_date(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.valid_from_date = input; self
+    pub fn set_valid_from_date(
+        mut self,
+        input: std::option::Option<aws_smithy_types::DateTime>,
+    ) -> Self {
+        self.valid_from_date = input;
+        self
     }
     /// <p>The final date that the certificate is valid.</p>
     pub fn valid_to_date(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -169,8 +191,12 @@ impl CertificateBuilder {
         self
     }
     /// <p>The final date that the certificate is valid.</p>
-    pub fn set_valid_to_date(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.valid_to_date = input; self
+    pub fn set_valid_to_date(
+        mut self,
+        input: std::option::Option<aws_smithy_types::DateTime>,
+    ) -> Self {
+        self.valid_to_date = input;
+        self
     }
     /// <p>The signing algorithm for the certificate.</p>
     pub fn signing_algorithm(mut self, input: impl Into<std::string::String>) -> Self {
@@ -178,8 +204,12 @@ impl CertificateBuilder {
         self
     }
     /// <p>The signing algorithm for the certificate.</p>
-    pub fn set_signing_algorithm(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.signing_algorithm = input; self
+    pub fn set_signing_algorithm(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.signing_algorithm = input;
+        self
     }
     /// <p>The key length of the cryptographic algorithm being used.</p>
     pub fn key_length(mut self, input: i32) -> Self {
@@ -188,32 +218,22 @@ impl CertificateBuilder {
     }
     /// <p>The key length of the cryptographic algorithm being used.</p>
     pub fn set_key_length(mut self, input: std::option::Option<i32>) -> Self {
-        self.key_length = input; self
+        self.key_length = input;
+        self
     }
     /// Consumes the builder and constructs a [`Certificate`](crate::types::Certificate).
     pub fn build(self) -> crate::types::Certificate {
         crate::types::Certificate {
-            certificate_identifier: self.certificate_identifier
-            ,
-            certificate_creation_date: self.certificate_creation_date
-            ,
-            certificate_pem: self.certificate_pem
-            ,
-            certificate_wallet: self.certificate_wallet
-            ,
-            certificate_arn: self.certificate_arn
-            ,
-            certificate_owner: self.certificate_owner
-            ,
-            valid_from_date: self.valid_from_date
-            ,
-            valid_to_date: self.valid_to_date
-            ,
-            signing_algorithm: self.signing_algorithm
-            ,
-            key_length: self.key_length
-            ,
+            certificate_identifier: self.certificate_identifier,
+            certificate_creation_date: self.certificate_creation_date,
+            certificate_pem: self.certificate_pem,
+            certificate_wallet: self.certificate_wallet,
+            certificate_arn: self.certificate_arn,
+            certificate_owner: self.certificate_owner,
+            valid_from_date: self.valid_from_date,
+            valid_to_date: self.valid_to_date,
+            signing_algorithm: self.signing_algorithm,
+            key_length: self.key_length,
         }
     }
 }
-

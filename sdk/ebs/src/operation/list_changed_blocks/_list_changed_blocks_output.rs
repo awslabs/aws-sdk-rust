@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListChangedBlocksOutput  {
+pub struct ListChangedBlocksOutput {
     /// <p>An array of objects containing information about the changed blocks.</p>
     #[doc(hidden)]
     pub changed_blocks: std::option::Option<std::vec::Vec<crate::types::ChangedBlock>>,
@@ -22,11 +22,11 @@ pub struct ListChangedBlocksOutput  {
 }
 impl ListChangedBlocksOutput {
     /// <p>An array of objects containing information about the changed blocks.</p>
-    pub fn changed_blocks(&self) -> std::option::Option<& [crate::types::ChangedBlock]> {
+    pub fn changed_blocks(&self) -> std::option::Option<&[crate::types::ChangedBlock]> {
         self.changed_blocks.as_deref()
     }
     /// <p>The time when the <code>BlockToken</code> expires.</p>
-    pub fn expiry_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
+    pub fn expiry_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.expiry_time.as_ref()
     }
     /// <p>The size of the volume in GB.</p>
@@ -38,18 +38,19 @@ impl ListChangedBlocksOutput {
         self.block_size
     }
     /// <p>The token to use to retrieve the next page of results. This value is null when there are no more results to return.</p>
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for ListChangedBlocksOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl ListChangedBlocksOutput {
     /// Creates a new builder-style object to manufacture [`ListChangedBlocksOutput`](crate::operation::list_changed_blocks::ListChangedBlocksOutput).
-    pub fn builder() -> crate::operation::list_changed_blocks::builders::ListChangedBlocksOutputBuilder {
+    pub fn builder(
+    ) -> crate::operation::list_changed_blocks::builders::ListChangedBlocksOutputBuilder {
         crate::operation::list_changed_blocks::builders::ListChangedBlocksOutputBuilder::default()
     }
 }
@@ -73,13 +74,17 @@ impl ListChangedBlocksOutputBuilder {
     /// <p>An array of objects containing information about the changed blocks.</p>
     pub fn changed_blocks(mut self, input: crate::types::ChangedBlock) -> Self {
         let mut v = self.changed_blocks.unwrap_or_default();
-                        v.push(input);
-                        self.changed_blocks = Some(v);
-                        self
+        v.push(input);
+        self.changed_blocks = Some(v);
+        self
     }
     /// <p>An array of objects containing information about the changed blocks.</p>
-    pub fn set_changed_blocks(mut self, input: std::option::Option<std::vec::Vec<crate::types::ChangedBlock>>) -> Self {
-        self.changed_blocks = input; self
+    pub fn set_changed_blocks(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::ChangedBlock>>,
+    ) -> Self {
+        self.changed_blocks = input;
+        self
     }
     /// <p>The time when the <code>BlockToken</code> expires.</p>
     pub fn expiry_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -87,8 +92,12 @@ impl ListChangedBlocksOutputBuilder {
         self
     }
     /// <p>The time when the <code>BlockToken</code> expires.</p>
-    pub fn set_expiry_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.expiry_time = input; self
+    pub fn set_expiry_time(
+        mut self,
+        input: std::option::Option<aws_smithy_types::DateTime>,
+    ) -> Self {
+        self.expiry_time = input;
+        self
     }
     /// <p>The size of the volume in GB.</p>
     pub fn volume_size(mut self, input: i64) -> Self {
@@ -97,7 +106,8 @@ impl ListChangedBlocksOutputBuilder {
     }
     /// <p>The size of the volume in GB.</p>
     pub fn set_volume_size(mut self, input: std::option::Option<i64>) -> Self {
-        self.volume_size = input; self
+        self.volume_size = input;
+        self
     }
     /// <p>The size of the blocks in the snapshot, in bytes.</p>
     pub fn block_size(mut self, input: i32) -> Self {
@@ -106,7 +116,8 @@ impl ListChangedBlocksOutputBuilder {
     }
     /// <p>The size of the blocks in the snapshot, in bytes.</p>
     pub fn set_block_size(mut self, input: std::option::Option<i32>) -> Self {
-        self.block_size = input; self
+        self.block_size = input;
+        self
     }
     /// <p>The token to use to retrieve the next page of results. This value is null when there are no more results to return.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -115,32 +126,27 @@ impl ListChangedBlocksOutputBuilder {
     }
     /// <p>The token to use to retrieve the next page of results. This value is null when there are no more results to return.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input; self
+        self.next_token = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`ListChangedBlocksOutput`](crate::operation::list_changed_blocks::ListChangedBlocksOutput).
     pub fn build(self) -> crate::operation::list_changed_blocks::ListChangedBlocksOutput {
         crate::operation::list_changed_blocks::ListChangedBlocksOutput {
-            changed_blocks: self.changed_blocks
-            ,
-            expiry_time: self.expiry_time
-            ,
-            volume_size: self.volume_size
-            ,
-            block_size: self.block_size
-            ,
-            next_token: self.next_token
-            ,
+            changed_blocks: self.changed_blocks,
+            expiry_time: self.expiry_time,
+            volume_size: self.volume_size,
+            block_size: self.block_size,
+            next_token: self.next_token,
             _request_id: self._request_id,
         }
     }
 }
-

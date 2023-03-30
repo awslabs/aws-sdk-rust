@@ -2,20 +2,21 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteAttributeGroupInput  {
+pub struct DeleteAttributeGroupInput {
     /// <p>The name or ID of the attribute group that holds the attributes to describe the application.</p>
     #[doc(hidden)]
     pub attribute_group: std::option::Option<std::string::String>,
 }
 impl DeleteAttributeGroupInput {
     /// <p>The name or ID of the attribute group that holds the attributes to describe the application.</p>
-    pub fn attribute_group(&self) -> std::option::Option<& str> {
+    pub fn attribute_group(&self) -> std::option::Option<&str> {
         self.attribute_group.as_deref()
     }
 }
 impl DeleteAttributeGroupInput {
     /// Creates a new builder-style object to manufacture [`DeleteAttributeGroupInput`](crate::operation::delete_attribute_group::DeleteAttributeGroupInput).
-    pub fn builder() -> crate::operation::delete_attribute_group::builders::DeleteAttributeGroupInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::delete_attribute_group::builders::DeleteAttributeGroupInputBuilder {
         crate::operation::delete_attribute_group::builders::DeleteAttributeGroupInputBuilder::default()
     }
 }
@@ -34,16 +35,20 @@ impl DeleteAttributeGroupInputBuilder {
     }
     /// <p>The name or ID of the attribute group that holds the attributes to describe the application.</p>
     pub fn set_attribute_group(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.attribute_group = input; self
+        self.attribute_group = input;
+        self
     }
     /// Consumes the builder and constructs a [`DeleteAttributeGroupInput`](crate::operation::delete_attribute_group::DeleteAttributeGroupInput).
-    pub fn build(self) -> Result<crate::operation::delete_attribute_group::DeleteAttributeGroupInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::delete_attribute_group::DeleteAttributeGroupInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::delete_attribute_group::DeleteAttributeGroupInput {
-                attribute_group: self.attribute_group
-                ,
-            }
+                attribute_group: self.attribute_group,
+            },
         )
     }
 }
-

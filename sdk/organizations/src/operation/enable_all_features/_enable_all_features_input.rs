@@ -2,11 +2,11 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct EnableAllFeaturesInput  {
-}
+pub struct EnableAllFeaturesInput {}
 impl EnableAllFeaturesInput {
     /// Creates a new builder-style object to manufacture [`EnableAllFeaturesInput`](crate::operation::enable_all_features::EnableAllFeaturesInput).
-    pub fn builder() -> crate::operation::enable_all_features::builders::EnableAllFeaturesInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::enable_all_features::builders::EnableAllFeaturesInputBuilder {
         crate::operation::enable_all_features::builders::EnableAllFeaturesInputBuilder::default()
     }
 }
@@ -14,15 +14,15 @@ impl EnableAllFeaturesInput {
 /// A builder for [`EnableAllFeaturesInput`](crate::operation::enable_all_features::EnableAllFeaturesInput).
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-pub struct EnableAllFeaturesInputBuilder {
-}
+pub struct EnableAllFeaturesInputBuilder {}
 impl EnableAllFeaturesInputBuilder {
     /// Consumes the builder and constructs a [`EnableAllFeaturesInput`](crate::operation::enable_all_features::EnableAllFeaturesInput).
-    pub fn build(self) -> Result<crate::operation::enable_all_features::EnableAllFeaturesInput, aws_smithy_http::operation::error::BuildError> {
-        Ok(
-            crate::operation::enable_all_features::EnableAllFeaturesInput {
-            }
-        )
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::enable_all_features::EnableAllFeaturesInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        Ok(crate::operation::enable_all_features::EnableAllFeaturesInput {})
     }
 }
-

@@ -3,7 +3,7 @@
 /// <p>Defines a property predicate.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PropertyPredicate  {
+pub struct PropertyPredicate {
     /// <p>The key of the property.</p>
     #[doc(hidden)]
     pub key: std::option::Option<std::string::String>,
@@ -16,15 +16,15 @@ pub struct PropertyPredicate  {
 }
 impl PropertyPredicate {
     /// <p>The key of the property.</p>
-    pub fn key(&self) -> std::option::Option<& str> {
+    pub fn key(&self) -> std::option::Option<&str> {
         self.key.as_deref()
     }
     /// <p>The value of the property.</p>
-    pub fn value(&self) -> std::option::Option<& str> {
+    pub fn value(&self) -> std::option::Option<&str> {
         self.value.as_deref()
     }
     /// <p>The comparator used to compare this property to others.</p>
-    pub fn comparator(&self) -> std::option::Option<& crate::types::Comparator> {
+    pub fn comparator(&self) -> std::option::Option<&crate::types::Comparator> {
         self.comparator.as_ref()
     }
 }
@@ -51,7 +51,8 @@ impl PropertyPredicateBuilder {
     }
     /// <p>The key of the property.</p>
     pub fn set_key(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.key = input; self
+        self.key = input;
+        self
     }
     /// <p>The value of the property.</p>
     pub fn value(mut self, input: impl Into<std::string::String>) -> Self {
@@ -60,7 +61,8 @@ impl PropertyPredicateBuilder {
     }
     /// <p>The value of the property.</p>
     pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.value = input; self
+        self.value = input;
+        self
     }
     /// <p>The comparator used to compare this property to others.</p>
     pub fn comparator(mut self, input: crate::types::Comparator) -> Self {
@@ -69,18 +71,15 @@ impl PropertyPredicateBuilder {
     }
     /// <p>The comparator used to compare this property to others.</p>
     pub fn set_comparator(mut self, input: std::option::Option<crate::types::Comparator>) -> Self {
-        self.comparator = input; self
+        self.comparator = input;
+        self
     }
     /// Consumes the builder and constructs a [`PropertyPredicate`](crate::types::PropertyPredicate).
     pub fn build(self) -> crate::types::PropertyPredicate {
         crate::types::PropertyPredicate {
-            key: self.key
-            ,
-            value: self.value
-            ,
-            comparator: self.comparator
-            ,
+            key: self.key,
+            value: self.value,
+            comparator: self.comparator,
         }
     }
 }
-

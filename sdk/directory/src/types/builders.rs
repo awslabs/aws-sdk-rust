@@ -70,4 +70,3 @@ pub use crate::types::_attribute::AttributeBuilder;
 pub use crate::types::_directory_connect_settings::DirectoryConnectSettingsBuilder;
 
 pub use crate::types::_ip_route::IpRouteBuilder;
-

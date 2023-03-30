@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteHoursOfOperationInput  {
+pub struct DeleteHoursOfOperationInput {
     /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
     #[doc(hidden)]
     pub instance_id: std::option::Option<std::string::String>,
@@ -12,17 +12,19 @@ pub struct DeleteHoursOfOperationInput  {
 }
 impl DeleteHoursOfOperationInput {
     /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
-    pub fn instance_id(&self) -> std::option::Option<& str> {
+    pub fn instance_id(&self) -> std::option::Option<&str> {
         self.instance_id.as_deref()
     }
     /// <p>The identifier for the hours of operation.</p>
-    pub fn hours_of_operation_id(&self) -> std::option::Option<& str> {
+    pub fn hours_of_operation_id(&self) -> std::option::Option<&str> {
         self.hours_of_operation_id.as_deref()
     }
 }
 impl DeleteHoursOfOperationInput {
     /// Creates a new builder-style object to manufacture [`DeleteHoursOfOperationInput`](crate::operation::delete_hours_of_operation::DeleteHoursOfOperationInput).
-    pub fn builder() -> crate::operation::delete_hours_of_operation::builders::DeleteHoursOfOperationInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::delete_hours_of_operation::builders::DeleteHoursOfOperationInputBuilder
+    {
         crate::operation::delete_hours_of_operation::builders::DeleteHoursOfOperationInputBuilder::default()
     }
 }
@@ -42,7 +44,8 @@ impl DeleteHoursOfOperationInputBuilder {
     }
     /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
     pub fn set_instance_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.instance_id = input; self
+        self.instance_id = input;
+        self
     }
     /// <p>The identifier for the hours of operation.</p>
     pub fn hours_of_operation_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -50,19 +53,25 @@ impl DeleteHoursOfOperationInputBuilder {
         self
     }
     /// <p>The identifier for the hours of operation.</p>
-    pub fn set_hours_of_operation_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.hours_of_operation_id = input; self
+    pub fn set_hours_of_operation_id(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.hours_of_operation_id = input;
+        self
     }
     /// Consumes the builder and constructs a [`DeleteHoursOfOperationInput`](crate::operation::delete_hours_of_operation::DeleteHoursOfOperationInput).
-    pub fn build(self) -> Result<crate::operation::delete_hours_of_operation::DeleteHoursOfOperationInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::delete_hours_of_operation::DeleteHoursOfOperationInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::delete_hours_of_operation::DeleteHoursOfOperationInput {
-                instance_id: self.instance_id
-                ,
-                hours_of_operation_id: self.hours_of_operation_id
-                ,
-            }
+                instance_id: self.instance_id,
+                hours_of_operation_id: self.hours_of_operation_id,
+            },
         )
     }
 }
-

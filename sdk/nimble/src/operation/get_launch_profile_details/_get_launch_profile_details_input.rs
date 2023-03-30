@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetLaunchProfileDetailsInput  {
+pub struct GetLaunchProfileDetailsInput {
     /// <p>The ID of the launch profile used to control access from the streaming session.</p>
     #[doc(hidden)]
     pub launch_profile_id: std::option::Option<std::string::String>,
@@ -12,17 +12,19 @@ pub struct GetLaunchProfileDetailsInput  {
 }
 impl GetLaunchProfileDetailsInput {
     /// <p>The ID of the launch profile used to control access from the streaming session.</p>
-    pub fn launch_profile_id(&self) -> std::option::Option<& str> {
+    pub fn launch_profile_id(&self) -> std::option::Option<&str> {
         self.launch_profile_id.as_deref()
     }
     /// <p>The studio ID. </p>
-    pub fn studio_id(&self) -> std::option::Option<& str> {
+    pub fn studio_id(&self) -> std::option::Option<&str> {
         self.studio_id.as_deref()
     }
 }
 impl GetLaunchProfileDetailsInput {
     /// Creates a new builder-style object to manufacture [`GetLaunchProfileDetailsInput`](crate::operation::get_launch_profile_details::GetLaunchProfileDetailsInput).
-    pub fn builder() -> crate::operation::get_launch_profile_details::builders::GetLaunchProfileDetailsInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::get_launch_profile_details::builders::GetLaunchProfileDetailsInputBuilder
+    {
         crate::operation::get_launch_profile_details::builders::GetLaunchProfileDetailsInputBuilder::default()
     }
 }
@@ -41,8 +43,12 @@ impl GetLaunchProfileDetailsInputBuilder {
         self
     }
     /// <p>The ID of the launch profile used to control access from the streaming session.</p>
-    pub fn set_launch_profile_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.launch_profile_id = input; self
+    pub fn set_launch_profile_id(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.launch_profile_id = input;
+        self
     }
     /// <p>The studio ID. </p>
     pub fn studio_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -51,18 +57,21 @@ impl GetLaunchProfileDetailsInputBuilder {
     }
     /// <p>The studio ID. </p>
     pub fn set_studio_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.studio_id = input; self
+        self.studio_id = input;
+        self
     }
     /// Consumes the builder and constructs a [`GetLaunchProfileDetailsInput`](crate::operation::get_launch_profile_details::GetLaunchProfileDetailsInput).
-    pub fn build(self) -> Result<crate::operation::get_launch_profile_details::GetLaunchProfileDetailsInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::get_launch_profile_details::GetLaunchProfileDetailsInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::get_launch_profile_details::GetLaunchProfileDetailsInput {
-                launch_profile_id: self.launch_profile_id
-                ,
-                studio_id: self.studio_id
-                ,
-            }
+                launch_profile_id: self.launch_profile_id,
+                studio_id: self.studio_id,
+            },
         )
     }
 }
-

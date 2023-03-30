@@ -3,7 +3,7 @@
 /// <p>The ViewBilling response includes the following elements.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ViewBillingOutput  {
+pub struct ViewBillingOutput {
     /// <p>If there are more billing records than you specified for <code>MaxItems</code> in the request, submit another request and include the value of <code>NextPageMarker</code> in the value of <code>Marker</code>.</p>
     #[doc(hidden)]
     pub next_page_marker: std::option::Option<std::string::String>,
@@ -14,19 +14,19 @@ pub struct ViewBillingOutput  {
 }
 impl ViewBillingOutput {
     /// <p>If there are more billing records than you specified for <code>MaxItems</code> in the request, submit another request and include the value of <code>NextPageMarker</code> in the value of <code>Marker</code>.</p>
-    pub fn next_page_marker(&self) -> std::option::Option<& str> {
+    pub fn next_page_marker(&self) -> std::option::Option<&str> {
         self.next_page_marker.as_deref()
     }
     /// <p>A summary of billing records.</p>
-    pub fn billing_records(&self) -> std::option::Option<& [crate::types::BillingRecord]> {
+    pub fn billing_records(&self) -> std::option::Option<&[crate::types::BillingRecord]> {
         self.billing_records.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for ViewBillingOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl ViewBillingOutput {
     /// Creates a new builder-style object to manufacture [`ViewBillingOutput`](crate::operation::view_billing::ViewBillingOutput).
     pub fn builder() -> crate::operation::view_billing::builders::ViewBillingOutputBuilder {
@@ -50,7 +50,8 @@ impl ViewBillingOutputBuilder {
     }
     /// <p>If there are more billing records than you specified for <code>MaxItems</code> in the request, submit another request and include the value of <code>NextPageMarker</code> in the value of <code>Marker</code>.</p>
     pub fn set_next_page_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_page_marker = input; self
+        self.next_page_marker = input;
+        self
     }
     /// Appends an item to `billing_records`.
     ///
@@ -59,32 +60,33 @@ impl ViewBillingOutputBuilder {
     /// <p>A summary of billing records.</p>
     pub fn billing_records(mut self, input: crate::types::BillingRecord) -> Self {
         let mut v = self.billing_records.unwrap_or_default();
-                        v.push(input);
-                        self.billing_records = Some(v);
-                        self
+        v.push(input);
+        self.billing_records = Some(v);
+        self
     }
     /// <p>A summary of billing records.</p>
-    pub fn set_billing_records(mut self, input: std::option::Option<std::vec::Vec<crate::types::BillingRecord>>) -> Self {
-        self.billing_records = input; self
+    pub fn set_billing_records(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::BillingRecord>>,
+    ) -> Self {
+        self.billing_records = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`ViewBillingOutput`](crate::operation::view_billing::ViewBillingOutput).
     pub fn build(self) -> crate::operation::view_billing::ViewBillingOutput {
         crate::operation::view_billing::ViewBillingOutput {
-            next_page_marker: self.next_page_marker
-            ,
-            billing_records: self.billing_records
-            ,
+            next_page_marker: self.next_page_marker,
+            billing_records: self.billing_records,
             _request_id: self._request_id,
         }
     }
 }
-

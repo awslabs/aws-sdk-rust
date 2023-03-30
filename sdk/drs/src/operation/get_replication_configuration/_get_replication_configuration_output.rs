@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct GetReplicationConfigurationOutput  {
+pub struct GetReplicationConfigurationOutput {
     /// <p>The ID of the Source Server for this Replication Configuration.</p>
     #[doc(hidden)]
     pub source_server_id: std::option::Option<std::string::String>,
@@ -17,7 +17,8 @@ pub struct GetReplicationConfigurationOutput  {
     pub associate_default_security_group: std::option::Option<bool>,
     /// <p>The security group IDs that will be used by the replication server.</p>
     #[doc(hidden)]
-    pub replication_servers_security_groups_i_ds: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub replication_servers_security_groups_i_ds:
+        std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The instance type to be used for the replication server.</p>
     #[doc(hidden)]
     pub replication_server_instance_type: std::option::Option<std::string::String>,
@@ -26,10 +27,12 @@ pub struct GetReplicationConfigurationOutput  {
     pub use_dedicated_replication_server: std::option::Option<bool>,
     /// <p>The Staging Disk EBS volume type to be used during replication.</p>
     #[doc(hidden)]
-    pub default_large_staging_disk_type: std::option::Option<crate::types::ReplicationConfigurationDefaultLargeStagingDiskType>,
+    pub default_large_staging_disk_type:
+        std::option::Option<crate::types::ReplicationConfigurationDefaultLargeStagingDiskType>,
     /// <p>The configuration of the disks of the Source Server to be replicated.</p>
     #[doc(hidden)]
-    pub replicated_disks: std::option::Option<std::vec::Vec<crate::types::ReplicationConfigurationReplicatedDisk>>,
+    pub replicated_disks:
+        std::option::Option<std::vec::Vec<crate::types::ReplicationConfigurationReplicatedDisk>>,
     /// <p>The type of EBS encryption to be used during replication.</p>
     #[doc(hidden)]
     pub ebs_encryption: std::option::Option<crate::types::ReplicationConfigurationEbsEncryption>,
@@ -41,13 +44,15 @@ pub struct GetReplicationConfigurationOutput  {
     pub bandwidth_throttling: i64,
     /// <p>The data plane routing mechanism that will be used for replication.</p>
     #[doc(hidden)]
-    pub data_plane_routing: std::option::Option<crate::types::ReplicationConfigurationDataPlaneRouting>,
+    pub data_plane_routing:
+        std::option::Option<crate::types::ReplicationConfigurationDataPlaneRouting>,
     /// <p>Whether to create a Public IP for the Recovery Instance by default.</p>
     #[doc(hidden)]
     pub create_public_ip: std::option::Option<bool>,
     /// <p>A set of tags to be associated with all resources created in the replication staging area: EC2 replication server, EBS volumes, EBS snapshots, etc.</p>
     #[doc(hidden)]
-    pub staging_area_tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub staging_area_tags:
+        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The Point in time (PIT) policy to manage snapshots taken during replication.</p>
     #[doc(hidden)]
     pub pit_policy: std::option::Option<std::vec::Vec<crate::types::PitPolicyRule>>,
@@ -55,15 +60,15 @@ pub struct GetReplicationConfigurationOutput  {
 }
 impl GetReplicationConfigurationOutput {
     /// <p>The ID of the Source Server for this Replication Configuration.</p>
-    pub fn source_server_id(&self) -> std::option::Option<& str> {
+    pub fn source_server_id(&self) -> std::option::Option<&str> {
         self.source_server_id.as_deref()
     }
     /// <p>The name of the Replication Configuration.</p>
-    pub fn name(&self) -> std::option::Option<& str> {
+    pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>The subnet to be used by the replication staging area.</p>
-    pub fn staging_area_subnet_id(&self) -> std::option::Option<& str> {
+    pub fn staging_area_subnet_id(&self) -> std::option::Option<&str> {
         self.staging_area_subnet_id.as_deref()
     }
     /// <p>Whether to associate the default Elastic Disaster Recovery Security group with the Replication Configuration.</p>
@@ -71,11 +76,13 @@ impl GetReplicationConfigurationOutput {
         self.associate_default_security_group
     }
     /// <p>The security group IDs that will be used by the replication server.</p>
-    pub fn replication_servers_security_groups_i_ds(&self) -> std::option::Option<& [std::string::String]> {
+    pub fn replication_servers_security_groups_i_ds(
+        &self,
+    ) -> std::option::Option<&[std::string::String]> {
         self.replication_servers_security_groups_i_ds.as_deref()
     }
     /// <p>The instance type to be used for the replication server.</p>
-    pub fn replication_server_instance_type(&self) -> std::option::Option<& str> {
+    pub fn replication_server_instance_type(&self) -> std::option::Option<&str> {
         self.replication_server_instance_type.as_deref()
     }
     /// <p>Whether to use a dedicated Replication Server in the replication staging area.</p>
@@ -83,19 +90,26 @@ impl GetReplicationConfigurationOutput {
         self.use_dedicated_replication_server
     }
     /// <p>The Staging Disk EBS volume type to be used during replication.</p>
-    pub fn default_large_staging_disk_type(&self) -> std::option::Option<& crate::types::ReplicationConfigurationDefaultLargeStagingDiskType> {
+    pub fn default_large_staging_disk_type(
+        &self,
+    ) -> std::option::Option<&crate::types::ReplicationConfigurationDefaultLargeStagingDiskType>
+    {
         self.default_large_staging_disk_type.as_ref()
     }
     /// <p>The configuration of the disks of the Source Server to be replicated.</p>
-    pub fn replicated_disks(&self) -> std::option::Option<& [crate::types::ReplicationConfigurationReplicatedDisk]> {
+    pub fn replicated_disks(
+        &self,
+    ) -> std::option::Option<&[crate::types::ReplicationConfigurationReplicatedDisk]> {
         self.replicated_disks.as_deref()
     }
     /// <p>The type of EBS encryption to be used during replication.</p>
-    pub fn ebs_encryption(&self) -> std::option::Option<& crate::types::ReplicationConfigurationEbsEncryption> {
+    pub fn ebs_encryption(
+        &self,
+    ) -> std::option::Option<&crate::types::ReplicationConfigurationEbsEncryption> {
         self.ebs_encryption.as_ref()
     }
     /// <p>The ARN of the EBS encryption key to be used during replication.</p>
-    pub fn ebs_encryption_key_arn(&self) -> std::option::Option<& str> {
+    pub fn ebs_encryption_key_arn(&self) -> std::option::Option<&str> {
         self.ebs_encryption_key_arn.as_deref()
     }
     /// <p>Configure bandwidth throttling for the outbound data transfer rate of the Source Server in Mbps.</p>
@@ -103,7 +117,9 @@ impl GetReplicationConfigurationOutput {
         self.bandwidth_throttling
     }
     /// <p>The data plane routing mechanism that will be used for replication.</p>
-    pub fn data_plane_routing(&self) -> std::option::Option<& crate::types::ReplicationConfigurationDataPlaneRouting> {
+    pub fn data_plane_routing(
+        &self,
+    ) -> std::option::Option<&crate::types::ReplicationConfigurationDataPlaneRouting> {
         self.data_plane_routing.as_ref()
     }
     /// <p>Whether to create a Public IP for the Recovery Instance by default.</p>
@@ -111,25 +127,43 @@ impl GetReplicationConfigurationOutput {
         self.create_public_ip
     }
     /// <p>A set of tags to be associated with all resources created in the replication staging area: EC2 replication server, EBS volumes, EBS snapshots, etc.</p>
-    pub fn staging_area_tags(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
+    pub fn staging_area_tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
         self.staging_area_tags.as_ref()
     }
     /// <p>The Point in time (PIT) policy to manage snapshots taken during replication.</p>
-    pub fn pit_policy(&self) -> std::option::Option<& [crate::types::PitPolicyRule]> {
+    pub fn pit_policy(&self) -> std::option::Option<&[crate::types::PitPolicyRule]> {
         self.pit_policy.as_deref()
     }
 }
-impl  std::fmt::Debug for GetReplicationConfigurationOutput  {
+impl std::fmt::Debug for GetReplicationConfigurationOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetReplicationConfigurationOutput");
         formatter.field("source_server_id", &self.source_server_id);
         formatter.field("name", &self.name);
         formatter.field("staging_area_subnet_id", &self.staging_area_subnet_id);
-        formatter.field("associate_default_security_group", &self.associate_default_security_group);
-        formatter.field("replication_servers_security_groups_i_ds", &self.replication_servers_security_groups_i_ds);
-        formatter.field("replication_server_instance_type", &self.replication_server_instance_type);
-        formatter.field("use_dedicated_replication_server", &self.use_dedicated_replication_server);
-        formatter.field("default_large_staging_disk_type", &self.default_large_staging_disk_type);
+        formatter.field(
+            "associate_default_security_group",
+            &self.associate_default_security_group,
+        );
+        formatter.field(
+            "replication_servers_security_groups_i_ds",
+            &self.replication_servers_security_groups_i_ds,
+        );
+        formatter.field(
+            "replication_server_instance_type",
+            &self.replication_server_instance_type,
+        );
+        formatter.field(
+            "use_dedicated_replication_server",
+            &self.use_dedicated_replication_server,
+        );
+        formatter.field(
+            "default_large_staging_disk_type",
+            &self.default_large_staging_disk_type,
+        );
         formatter.field("replicated_disks", &self.replicated_disks);
         formatter.field("ebs_encryption", &self.ebs_encryption);
         formatter.field("ebs_encryption_key_arn", &self.ebs_encryption_key_arn);
@@ -143,13 +177,13 @@ impl  std::fmt::Debug for GetReplicationConfigurationOutput  {
     }
 }
 impl aws_http::request_id::RequestId for GetReplicationConfigurationOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl GetReplicationConfigurationOutput {
     /// Creates a new builder-style object to manufacture [`GetReplicationConfigurationOutput`](crate::operation::get_replication_configuration::GetReplicationConfigurationOutput).
-    pub fn builder() -> crate::operation::get_replication_configuration::builders::GetReplicationConfigurationOutputBuilder {
+    pub fn builder() -> crate::operation::get_replication_configuration::builders::GetReplicationConfigurationOutputBuilder{
         crate::operation::get_replication_configuration::builders::GetReplicationConfigurationOutputBuilder::default()
     }
 }
@@ -162,17 +196,23 @@ pub struct GetReplicationConfigurationOutputBuilder {
     pub(crate) name: std::option::Option<std::string::String>,
     pub(crate) staging_area_subnet_id: std::option::Option<std::string::String>,
     pub(crate) associate_default_security_group: std::option::Option<bool>,
-    pub(crate) replication_servers_security_groups_i_ds: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub(crate) replication_servers_security_groups_i_ds:
+        std::option::Option<std::vec::Vec<std::string::String>>,
     pub(crate) replication_server_instance_type: std::option::Option<std::string::String>,
     pub(crate) use_dedicated_replication_server: std::option::Option<bool>,
-    pub(crate) default_large_staging_disk_type: std::option::Option<crate::types::ReplicationConfigurationDefaultLargeStagingDiskType>,
-    pub(crate) replicated_disks: std::option::Option<std::vec::Vec<crate::types::ReplicationConfigurationReplicatedDisk>>,
-    pub(crate) ebs_encryption: std::option::Option<crate::types::ReplicationConfigurationEbsEncryption>,
+    pub(crate) default_large_staging_disk_type:
+        std::option::Option<crate::types::ReplicationConfigurationDefaultLargeStagingDiskType>,
+    pub(crate) replicated_disks:
+        std::option::Option<std::vec::Vec<crate::types::ReplicationConfigurationReplicatedDisk>>,
+    pub(crate) ebs_encryption:
+        std::option::Option<crate::types::ReplicationConfigurationEbsEncryption>,
     pub(crate) ebs_encryption_key_arn: std::option::Option<std::string::String>,
     pub(crate) bandwidth_throttling: std::option::Option<i64>,
-    pub(crate) data_plane_routing: std::option::Option<crate::types::ReplicationConfigurationDataPlaneRouting>,
+    pub(crate) data_plane_routing:
+        std::option::Option<crate::types::ReplicationConfigurationDataPlaneRouting>,
     pub(crate) create_public_ip: std::option::Option<bool>,
-    pub(crate) staging_area_tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub(crate) staging_area_tags:
+        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     pub(crate) pit_policy: std::option::Option<std::vec::Vec<crate::types::PitPolicyRule>>,
     _request_id: Option<String>,
 }
@@ -184,7 +224,8 @@ impl GetReplicationConfigurationOutputBuilder {
     }
     /// <p>The ID of the Source Server for this Replication Configuration.</p>
     pub fn set_source_server_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.source_server_id = input; self
+        self.source_server_id = input;
+        self
     }
     /// <p>The name of the Replication Configuration.</p>
     pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -193,7 +234,8 @@ impl GetReplicationConfigurationOutputBuilder {
     }
     /// <p>The name of the Replication Configuration.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input; self
+        self.name = input;
+        self
     }
     /// <p>The subnet to be used by the replication staging area.</p>
     pub fn staging_area_subnet_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -201,8 +243,12 @@ impl GetReplicationConfigurationOutputBuilder {
         self
     }
     /// <p>The subnet to be used by the replication staging area.</p>
-    pub fn set_staging_area_subnet_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.staging_area_subnet_id = input; self
+    pub fn set_staging_area_subnet_id(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.staging_area_subnet_id = input;
+        self
     }
     /// <p>Whether to associate the default Elastic Disaster Recovery Security group with the Replication Configuration.</p>
     pub fn associate_default_security_group(mut self, input: bool) -> Self {
@@ -210,32 +256,52 @@ impl GetReplicationConfigurationOutputBuilder {
         self
     }
     /// <p>Whether to associate the default Elastic Disaster Recovery Security group with the Replication Configuration.</p>
-    pub fn set_associate_default_security_group(mut self, input: std::option::Option<bool>) -> Self {
-        self.associate_default_security_group = input; self
+    pub fn set_associate_default_security_group(
+        mut self,
+        input: std::option::Option<bool>,
+    ) -> Self {
+        self.associate_default_security_group = input;
+        self
     }
     /// Appends an item to `replication_servers_security_groups_i_ds`.
     ///
     /// To override the contents of this collection use [`set_replication_servers_security_groups_i_ds`](Self::set_replication_servers_security_groups_i_ds).
     ///
     /// <p>The security group IDs that will be used by the replication server.</p>
-    pub fn replication_servers_security_groups_i_ds(mut self, input: impl Into<std::string::String>) -> Self {
-        let mut v = self.replication_servers_security_groups_i_ds.unwrap_or_default();
-                        v.push(input.into());
-                        self.replication_servers_security_groups_i_ds = Some(v);
-                        self
+    pub fn replication_servers_security_groups_i_ds(
+        mut self,
+        input: impl Into<std::string::String>,
+    ) -> Self {
+        let mut v = self
+            .replication_servers_security_groups_i_ds
+            .unwrap_or_default();
+        v.push(input.into());
+        self.replication_servers_security_groups_i_ds = Some(v);
+        self
     }
     /// <p>The security group IDs that will be used by the replication server.</p>
-    pub fn set_replication_servers_security_groups_i_ds(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-        self.replication_servers_security_groups_i_ds = input; self
+    pub fn set_replication_servers_security_groups_i_ds(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
+        self.replication_servers_security_groups_i_ds = input;
+        self
     }
     /// <p>The instance type to be used for the replication server.</p>
-    pub fn replication_server_instance_type(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn replication_server_instance_type(
+        mut self,
+        input: impl Into<std::string::String>,
+    ) -> Self {
         self.replication_server_instance_type = Some(input.into());
         self
     }
     /// <p>The instance type to be used for the replication server.</p>
-    pub fn set_replication_server_instance_type(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.replication_server_instance_type = input; self
+    pub fn set_replication_server_instance_type(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.replication_server_instance_type = input;
+        self
     }
     /// <p>Whether to use a dedicated Replication Server in the replication staging area.</p>
     pub fn use_dedicated_replication_server(mut self, input: bool) -> Self {
@@ -243,41 +309,70 @@ impl GetReplicationConfigurationOutputBuilder {
         self
     }
     /// <p>Whether to use a dedicated Replication Server in the replication staging area.</p>
-    pub fn set_use_dedicated_replication_server(mut self, input: std::option::Option<bool>) -> Self {
-        self.use_dedicated_replication_server = input; self
+    pub fn set_use_dedicated_replication_server(
+        mut self,
+        input: std::option::Option<bool>,
+    ) -> Self {
+        self.use_dedicated_replication_server = input;
+        self
     }
     /// <p>The Staging Disk EBS volume type to be used during replication.</p>
-    pub fn default_large_staging_disk_type(mut self, input: crate::types::ReplicationConfigurationDefaultLargeStagingDiskType) -> Self {
+    pub fn default_large_staging_disk_type(
+        mut self,
+        input: crate::types::ReplicationConfigurationDefaultLargeStagingDiskType,
+    ) -> Self {
         self.default_large_staging_disk_type = Some(input);
         self
     }
     /// <p>The Staging Disk EBS volume type to be used during replication.</p>
-    pub fn set_default_large_staging_disk_type(mut self, input: std::option::Option<crate::types::ReplicationConfigurationDefaultLargeStagingDiskType>) -> Self {
-        self.default_large_staging_disk_type = input; self
+    pub fn set_default_large_staging_disk_type(
+        mut self,
+        input: std::option::Option<
+            crate::types::ReplicationConfigurationDefaultLargeStagingDiskType,
+        >,
+    ) -> Self {
+        self.default_large_staging_disk_type = input;
+        self
     }
     /// Appends an item to `replicated_disks`.
     ///
     /// To override the contents of this collection use [`set_replicated_disks`](Self::set_replicated_disks).
     ///
     /// <p>The configuration of the disks of the Source Server to be replicated.</p>
-    pub fn replicated_disks(mut self, input: crate::types::ReplicationConfigurationReplicatedDisk) -> Self {
+    pub fn replicated_disks(
+        mut self,
+        input: crate::types::ReplicationConfigurationReplicatedDisk,
+    ) -> Self {
         let mut v = self.replicated_disks.unwrap_or_default();
-                        v.push(input);
-                        self.replicated_disks = Some(v);
-                        self
+        v.push(input);
+        self.replicated_disks = Some(v);
+        self
     }
     /// <p>The configuration of the disks of the Source Server to be replicated.</p>
-    pub fn set_replicated_disks(mut self, input: std::option::Option<std::vec::Vec<crate::types::ReplicationConfigurationReplicatedDisk>>) -> Self {
-        self.replicated_disks = input; self
+    pub fn set_replicated_disks(
+        mut self,
+        input: std::option::Option<
+            std::vec::Vec<crate::types::ReplicationConfigurationReplicatedDisk>,
+        >,
+    ) -> Self {
+        self.replicated_disks = input;
+        self
     }
     /// <p>The type of EBS encryption to be used during replication.</p>
-    pub fn ebs_encryption(mut self, input: crate::types::ReplicationConfigurationEbsEncryption) -> Self {
+    pub fn ebs_encryption(
+        mut self,
+        input: crate::types::ReplicationConfigurationEbsEncryption,
+    ) -> Self {
         self.ebs_encryption = Some(input);
         self
     }
     /// <p>The type of EBS encryption to be used during replication.</p>
-    pub fn set_ebs_encryption(mut self, input: std::option::Option<crate::types::ReplicationConfigurationEbsEncryption>) -> Self {
-        self.ebs_encryption = input; self
+    pub fn set_ebs_encryption(
+        mut self,
+        input: std::option::Option<crate::types::ReplicationConfigurationEbsEncryption>,
+    ) -> Self {
+        self.ebs_encryption = input;
+        self
     }
     /// <p>The ARN of the EBS encryption key to be used during replication.</p>
     pub fn ebs_encryption_key_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -285,8 +380,12 @@ impl GetReplicationConfigurationOutputBuilder {
         self
     }
     /// <p>The ARN of the EBS encryption key to be used during replication.</p>
-    pub fn set_ebs_encryption_key_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.ebs_encryption_key_arn = input; self
+    pub fn set_ebs_encryption_key_arn(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.ebs_encryption_key_arn = input;
+        self
     }
     /// <p>Configure bandwidth throttling for the outbound data transfer rate of the Source Server in Mbps.</p>
     pub fn bandwidth_throttling(mut self, input: i64) -> Self {
@@ -295,16 +394,24 @@ impl GetReplicationConfigurationOutputBuilder {
     }
     /// <p>Configure bandwidth throttling for the outbound data transfer rate of the Source Server in Mbps.</p>
     pub fn set_bandwidth_throttling(mut self, input: std::option::Option<i64>) -> Self {
-        self.bandwidth_throttling = input; self
+        self.bandwidth_throttling = input;
+        self
     }
     /// <p>The data plane routing mechanism that will be used for replication.</p>
-    pub fn data_plane_routing(mut self, input: crate::types::ReplicationConfigurationDataPlaneRouting) -> Self {
+    pub fn data_plane_routing(
+        mut self,
+        input: crate::types::ReplicationConfigurationDataPlaneRouting,
+    ) -> Self {
         self.data_plane_routing = Some(input);
         self
     }
     /// <p>The data plane routing mechanism that will be used for replication.</p>
-    pub fn set_data_plane_routing(mut self, input: std::option::Option<crate::types::ReplicationConfigurationDataPlaneRouting>) -> Self {
-        self.data_plane_routing = input; self
+    pub fn set_data_plane_routing(
+        mut self,
+        input: std::option::Option<crate::types::ReplicationConfigurationDataPlaneRouting>,
+    ) -> Self {
+        self.data_plane_routing = input;
+        self
     }
     /// <p>Whether to create a Public IP for the Recovery Instance by default.</p>
     pub fn create_public_ip(mut self, input: bool) -> Self {
@@ -313,22 +420,33 @@ impl GetReplicationConfigurationOutputBuilder {
     }
     /// <p>Whether to create a Public IP for the Recovery Instance by default.</p>
     pub fn set_create_public_ip(mut self, input: std::option::Option<bool>) -> Self {
-        self.create_public_ip = input; self
+        self.create_public_ip = input;
+        self
     }
     /// Adds a key-value pair to `staging_area_tags`.
     ///
     /// To override the contents of this collection use [`set_staging_area_tags`](Self::set_staging_area_tags).
     ///
     /// <p>A set of tags to be associated with all resources created in the replication staging area: EC2 replication server, EBS volumes, EBS snapshots, etc.</p>
-    pub fn staging_area_tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
+    pub fn staging_area_tags(
+        mut self,
+        k: impl Into<std::string::String>,
+        v: impl Into<std::string::String>,
+    ) -> Self {
         let mut hash_map = self.staging_area_tags.unwrap_or_default();
-                        hash_map.insert(k.into(), v.into());
-                        self.staging_area_tags = Some(hash_map);
-                        self
+        hash_map.insert(k.into(), v.into());
+        self.staging_area_tags = Some(hash_map);
+        self
     }
     /// <p>A set of tags to be associated with all resources created in the replication staging area: EC2 replication server, EBS volumes, EBS snapshots, etc.</p>
-    pub fn set_staging_area_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
-        self.staging_area_tags = input; self
+    pub fn set_staging_area_tags(
+        mut self,
+        input: std::option::Option<
+            std::collections::HashMap<std::string::String, std::string::String>,
+        >,
+    ) -> Self {
+        self.staging_area_tags = input;
+        self
     }
     /// Appends an item to `pit_policy`.
     ///
@@ -337,59 +455,48 @@ impl GetReplicationConfigurationOutputBuilder {
     /// <p>The Point in time (PIT) policy to manage snapshots taken during replication.</p>
     pub fn pit_policy(mut self, input: crate::types::PitPolicyRule) -> Self {
         let mut v = self.pit_policy.unwrap_or_default();
-                        v.push(input);
-                        self.pit_policy = Some(v);
-                        self
+        v.push(input);
+        self.pit_policy = Some(v);
+        self
     }
     /// <p>The Point in time (PIT) policy to manage snapshots taken during replication.</p>
-    pub fn set_pit_policy(mut self, input: std::option::Option<std::vec::Vec<crate::types::PitPolicyRule>>) -> Self {
-        self.pit_policy = input; self
+    pub fn set_pit_policy(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::PitPolicyRule>>,
+    ) -> Self {
+        self.pit_policy = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`GetReplicationConfigurationOutput`](crate::operation::get_replication_configuration::GetReplicationConfigurationOutput).
-    pub fn build(self) -> crate::operation::get_replication_configuration::GetReplicationConfigurationOutput {
+    pub fn build(
+        self,
+    ) -> crate::operation::get_replication_configuration::GetReplicationConfigurationOutput {
         crate::operation::get_replication_configuration::GetReplicationConfigurationOutput {
-            source_server_id: self.source_server_id
-            ,
-            name: self.name
-            ,
-            staging_area_subnet_id: self.staging_area_subnet_id
-            ,
-            associate_default_security_group: self.associate_default_security_group
-            ,
-            replication_servers_security_groups_i_ds: self.replication_servers_security_groups_i_ds
-            ,
-            replication_server_instance_type: self.replication_server_instance_type
-            ,
-            use_dedicated_replication_server: self.use_dedicated_replication_server
-            ,
-            default_large_staging_disk_type: self.default_large_staging_disk_type
-            ,
-            replicated_disks: self.replicated_disks
-            ,
-            ebs_encryption: self.ebs_encryption
-            ,
-            ebs_encryption_key_arn: self.ebs_encryption_key_arn
-            ,
-            bandwidth_throttling: self.bandwidth_throttling
-                .unwrap_or_default()
-            ,
-            data_plane_routing: self.data_plane_routing
-            ,
-            create_public_ip: self.create_public_ip
-            ,
-            staging_area_tags: self.staging_area_tags
-            ,
-            pit_policy: self.pit_policy
-            ,
+            source_server_id: self.source_server_id,
+            name: self.name,
+            staging_area_subnet_id: self.staging_area_subnet_id,
+            associate_default_security_group: self.associate_default_security_group,
+            replication_servers_security_groups_i_ds: self.replication_servers_security_groups_i_ds,
+            replication_server_instance_type: self.replication_server_instance_type,
+            use_dedicated_replication_server: self.use_dedicated_replication_server,
+            default_large_staging_disk_type: self.default_large_staging_disk_type,
+            replicated_disks: self.replicated_disks,
+            ebs_encryption: self.ebs_encryption,
+            ebs_encryption_key_arn: self.ebs_encryption_key_arn,
+            bandwidth_throttling: self.bandwidth_throttling.unwrap_or_default(),
+            data_plane_routing: self.data_plane_routing,
+            create_public_ip: self.create_public_ip,
+            staging_area_tags: self.staging_area_tags,
+            pit_policy: self.pit_policy,
             _request_id: self._request_id,
         }
     }
@@ -400,11 +507,26 @@ impl std::fmt::Debug for GetReplicationConfigurationOutputBuilder {
         formatter.field("source_server_id", &self.source_server_id);
         formatter.field("name", &self.name);
         formatter.field("staging_area_subnet_id", &self.staging_area_subnet_id);
-        formatter.field("associate_default_security_group", &self.associate_default_security_group);
-        formatter.field("replication_servers_security_groups_i_ds", &self.replication_servers_security_groups_i_ds);
-        formatter.field("replication_server_instance_type", &self.replication_server_instance_type);
-        formatter.field("use_dedicated_replication_server", &self.use_dedicated_replication_server);
-        formatter.field("default_large_staging_disk_type", &self.default_large_staging_disk_type);
+        formatter.field(
+            "associate_default_security_group",
+            &self.associate_default_security_group,
+        );
+        formatter.field(
+            "replication_servers_security_groups_i_ds",
+            &self.replication_servers_security_groups_i_ds,
+        );
+        formatter.field(
+            "replication_server_instance_type",
+            &self.replication_server_instance_type,
+        );
+        formatter.field(
+            "use_dedicated_replication_server",
+            &self.use_dedicated_replication_server,
+        );
+        formatter.field(
+            "default_large_staging_disk_type",
+            &self.default_large_staging_disk_type,
+        );
         formatter.field("replicated_disks", &self.replicated_disks);
         formatter.field("ebs_encryption", &self.ebs_encryption);
         formatter.field("ebs_encryption_key_arn", &self.ebs_encryption_key_arn);
@@ -417,4 +539,3 @@ impl std::fmt::Debug for GetReplicationConfigurationOutputBuilder {
         formatter.finish()
     }
 }
-

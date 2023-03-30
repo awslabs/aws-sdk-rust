@@ -3,7 +3,7 @@
 /// <p>Information regarding a detected signature on a page.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SignatureDetection  {
+pub struct SignatureDetection {
     /// <p>The confidence, from 0 to 100, in the predicted values for a detected signature.</p>
     #[doc(hidden)]
     pub confidence: std::option::Option<f32>,
@@ -17,7 +17,7 @@ impl SignatureDetection {
         self.confidence
     }
     /// <p>Information about where the following items are located on a document page: detected page, text, key-value pairs, tables, table cells, and selection elements.</p>
-    pub fn geometry(&self) -> std::option::Option<& crate::types::Geometry> {
+    pub fn geometry(&self) -> std::option::Option<&crate::types::Geometry> {
         self.geometry.as_ref()
     }
 }
@@ -43,7 +43,8 @@ impl SignatureDetectionBuilder {
     }
     /// <p>The confidence, from 0 to 100, in the predicted values for a detected signature.</p>
     pub fn set_confidence(mut self, input: std::option::Option<f32>) -> Self {
-        self.confidence = input; self
+        self.confidence = input;
+        self
     }
     /// <p>Information about where the following items are located on a document page: detected page, text, key-value pairs, tables, table cells, and selection elements.</p>
     pub fn geometry(mut self, input: crate::types::Geometry) -> Self {
@@ -52,16 +53,14 @@ impl SignatureDetectionBuilder {
     }
     /// <p>Information about where the following items are located on a document page: detected page, text, key-value pairs, tables, table cells, and selection elements.</p>
     pub fn set_geometry(mut self, input: std::option::Option<crate::types::Geometry>) -> Self {
-        self.geometry = input; self
+        self.geometry = input;
+        self
     }
     /// Consumes the builder and constructs a [`SignatureDetection`](crate::types::SignatureDetection).
     pub fn build(self) -> crate::types::SignatureDetection {
         crate::types::SignatureDetection {
-            confidence: self.confidence
-            ,
-            geometry: self.geometry
-            ,
+            confidence: self.confidence,
+            geometry: self.geometry,
         }
     }
 }
-

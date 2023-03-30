@@ -68,4 +68,3 @@ pub mod builders;
 
 /// Error types that AWS SSO Identity Store can respond with.
 pub mod error;
-

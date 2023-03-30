@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateDatasetEntriesInput  {
+pub struct UpdateDatasetEntriesInput {
     /// <p> The Amazon Resource Name (ARN) of the dataset that you want to update. </p>
     #[doc(hidden)]
     pub dataset_arn: std::option::Option<std::string::String>,
@@ -12,17 +12,18 @@ pub struct UpdateDatasetEntriesInput  {
 }
 impl UpdateDatasetEntriesInput {
     /// <p> The Amazon Resource Name (ARN) of the dataset that you want to update. </p>
-    pub fn dataset_arn(&self) -> std::option::Option<& str> {
+    pub fn dataset_arn(&self) -> std::option::Option<&str> {
         self.dataset_arn.as_deref()
     }
     /// <p> The changes that you want to make to the dataset. </p>
-    pub fn changes(&self) -> std::option::Option<& crate::types::DatasetChanges> {
+    pub fn changes(&self) -> std::option::Option<&crate::types::DatasetChanges> {
         self.changes.as_ref()
     }
 }
 impl UpdateDatasetEntriesInput {
     /// Creates a new builder-style object to manufacture [`UpdateDatasetEntriesInput`](crate::operation::update_dataset_entries::UpdateDatasetEntriesInput).
-    pub fn builder() -> crate::operation::update_dataset_entries::builders::UpdateDatasetEntriesInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::update_dataset_entries::builders::UpdateDatasetEntriesInputBuilder {
         crate::operation::update_dataset_entries::builders::UpdateDatasetEntriesInputBuilder::default()
     }
 }
@@ -42,7 +43,8 @@ impl UpdateDatasetEntriesInputBuilder {
     }
     /// <p> The Amazon Resource Name (ARN) of the dataset that you want to update. </p>
     pub fn set_dataset_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.dataset_arn = input; self
+        self.dataset_arn = input;
+        self
     }
     /// <p> The changes that you want to make to the dataset. </p>
     pub fn changes(mut self, input: crate::types::DatasetChanges) -> Self {
@@ -51,18 +53,21 @@ impl UpdateDatasetEntriesInputBuilder {
     }
     /// <p> The changes that you want to make to the dataset. </p>
     pub fn set_changes(mut self, input: std::option::Option<crate::types::DatasetChanges>) -> Self {
-        self.changes = input; self
+        self.changes = input;
+        self
     }
     /// Consumes the builder and constructs a [`UpdateDatasetEntriesInput`](crate::operation::update_dataset_entries::UpdateDatasetEntriesInput).
-    pub fn build(self) -> Result<crate::operation::update_dataset_entries::UpdateDatasetEntriesInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::update_dataset_entries::UpdateDatasetEntriesInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::update_dataset_entries::UpdateDatasetEntriesInput {
-                dataset_arn: self.dataset_arn
-                ,
-                changes: self.changes
-                ,
-            }
+                dataset_arn: self.dataset_arn,
+                changes: self.changes,
+            },
         )
     }
 }
-

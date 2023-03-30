@@ -3,14 +3,14 @@
 /// <p>A notification about the OpsItem.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct OpsItemNotification  {
+pub struct OpsItemNotification {
     /// <p>The Amazon Resource Name (ARN) of an Amazon Simple Notification Service (Amazon SNS) topic where notifications are sent when this OpsItem is edited or changed.</p>
     #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
 }
 impl OpsItemNotification {
     /// <p>The Amazon Resource Name (ARN) of an Amazon Simple Notification Service (Amazon SNS) topic where notifications are sent when this OpsItem is edited or changed.</p>
-    pub fn arn(&self) -> std::option::Option<& str> {
+    pub fn arn(&self) -> std::option::Option<&str> {
         self.arn.as_deref()
     }
 }
@@ -35,14 +35,11 @@ impl OpsItemNotificationBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of an Amazon Simple Notification Service (Amazon SNS) topic where notifications are sent when this OpsItem is edited or changed.</p>
     pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.arn = input; self
+        self.arn = input;
+        self
     }
     /// Consumes the builder and constructs a [`OpsItemNotification`](crate::types::OpsItemNotification).
     pub fn build(self) -> crate::types::OpsItemNotification {
-        crate::types::OpsItemNotification {
-            arn: self.arn
-            ,
-        }
+        crate::types::OpsItemNotification { arn: self.arn }
     }
 }
-

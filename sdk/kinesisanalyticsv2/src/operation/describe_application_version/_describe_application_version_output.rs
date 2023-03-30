@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeApplicationVersionOutput  {
+pub struct DescribeApplicationVersionOutput {
     /// <p>Describes the application, including the application Amazon Resource Name (ARN), status, latest version, and input and output configurations.</p>
     #[doc(hidden)]
     pub application_version_detail: std::option::Option<crate::types::ApplicationDetail>,
@@ -10,18 +10,20 @@ pub struct DescribeApplicationVersionOutput  {
 }
 impl DescribeApplicationVersionOutput {
     /// <p>Describes the application, including the application Amazon Resource Name (ARN), status, latest version, and input and output configurations.</p>
-    pub fn application_version_detail(&self) -> std::option::Option<& crate::types::ApplicationDetail> {
+    pub fn application_version_detail(
+        &self,
+    ) -> std::option::Option<&crate::types::ApplicationDetail> {
         self.application_version_detail.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for DescribeApplicationVersionOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl DescribeApplicationVersionOutput {
     /// Creates a new builder-style object to manufacture [`DescribeApplicationVersionOutput`](crate::operation::describe_application_version::DescribeApplicationVersionOutput).
-    pub fn builder() -> crate::operation::describe_application_version::builders::DescribeApplicationVersionOutputBuilder {
+    pub fn builder() -> crate::operation::describe_application_version::builders::DescribeApplicationVersionOutputBuilder{
         crate::operation::describe_application_version::builders::DescribeApplicationVersionOutputBuilder::default()
     }
 }
@@ -40,25 +42,29 @@ impl DescribeApplicationVersionOutputBuilder {
         self
     }
     /// <p>Describes the application, including the application Amazon Resource Name (ARN), status, latest version, and input and output configurations.</p>
-    pub fn set_application_version_detail(mut self, input: std::option::Option<crate::types::ApplicationDetail>) -> Self {
-        self.application_version_detail = input; self
+    pub fn set_application_version_detail(
+        mut self,
+        input: std::option::Option<crate::types::ApplicationDetail>,
+    ) -> Self {
+        self.application_version_detail = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`DescribeApplicationVersionOutput`](crate::operation::describe_application_version::DescribeApplicationVersionOutput).
-    pub fn build(self) -> crate::operation::describe_application_version::DescribeApplicationVersionOutput {
+    pub fn build(
+        self,
+    ) -> crate::operation::describe_application_version::DescribeApplicationVersionOutput {
         crate::operation::describe_application_version::DescribeApplicationVersionOutput {
-            application_version_detail: self.application_version_detail
-            ,
+            application_version_detail: self.application_version_detail,
             _request_id: self._request_id,
         }
     }
 }
-

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ExportServerEngineAttributeOutput  {
+pub struct ExportServerEngineAttributeOutput {
     /// <p>The requested engine attribute pair with attribute name and value.</p>
     #[doc(hidden)]
     pub engine_attribute: std::option::Option<crate::types::EngineAttribute>,
@@ -13,22 +13,22 @@ pub struct ExportServerEngineAttributeOutput  {
 }
 impl ExportServerEngineAttributeOutput {
     /// <p>The requested engine attribute pair with attribute name and value.</p>
-    pub fn engine_attribute(&self) -> std::option::Option<& crate::types::EngineAttribute> {
+    pub fn engine_attribute(&self) -> std::option::Option<&crate::types::EngineAttribute> {
         self.engine_attribute.as_ref()
     }
     /// <p>The server name used in the request.</p>
-    pub fn server_name(&self) -> std::option::Option<& str> {
+    pub fn server_name(&self) -> std::option::Option<&str> {
         self.server_name.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for ExportServerEngineAttributeOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl ExportServerEngineAttributeOutput {
     /// Creates a new builder-style object to manufacture [`ExportServerEngineAttributeOutput`](crate::operation::export_server_engine_attribute::ExportServerEngineAttributeOutput).
-    pub fn builder() -> crate::operation::export_server_engine_attribute::builders::ExportServerEngineAttributeOutputBuilder {
+    pub fn builder() -> crate::operation::export_server_engine_attribute::builders::ExportServerEngineAttributeOutputBuilder{
         crate::operation::export_server_engine_attribute::builders::ExportServerEngineAttributeOutputBuilder::default()
     }
 }
@@ -48,8 +48,12 @@ impl ExportServerEngineAttributeOutputBuilder {
         self
     }
     /// <p>The requested engine attribute pair with attribute name and value.</p>
-    pub fn set_engine_attribute(mut self, input: std::option::Option<crate::types::EngineAttribute>) -> Self {
-        self.engine_attribute = input; self
+    pub fn set_engine_attribute(
+        mut self,
+        input: std::option::Option<crate::types::EngineAttribute>,
+    ) -> Self {
+        self.engine_attribute = input;
+        self
     }
     /// <p>The server name used in the request.</p>
     pub fn server_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -58,26 +62,26 @@ impl ExportServerEngineAttributeOutputBuilder {
     }
     /// <p>The server name used in the request.</p>
     pub fn set_server_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.server_name = input; self
+        self.server_name = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`ExportServerEngineAttributeOutput`](crate::operation::export_server_engine_attribute::ExportServerEngineAttributeOutput).
-    pub fn build(self) -> crate::operation::export_server_engine_attribute::ExportServerEngineAttributeOutput {
+    pub fn build(
+        self,
+    ) -> crate::operation::export_server_engine_attribute::ExportServerEngineAttributeOutput {
         crate::operation::export_server_engine_attribute::ExportServerEngineAttributeOutput {
-            engine_attribute: self.engine_attribute
-            ,
-            server_name: self.server_name
-            ,
+            engine_attribute: self.engine_attribute,
+            server_name: self.server_name,
             _request_id: self._request_id,
         }
     }
 }
-

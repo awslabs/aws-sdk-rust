@@ -2,14 +2,14 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteLagInput  {
+pub struct DeleteLagInput {
     /// <p>The ID of the LAG.</p>
     #[doc(hidden)]
     pub lag_id: std::option::Option<std::string::String>,
 }
 impl DeleteLagInput {
     /// <p>The ID of the LAG.</p>
-    pub fn lag_id(&self) -> std::option::Option<& str> {
+    pub fn lag_id(&self) -> std::option::Option<&str> {
         self.lag_id.as_deref()
     }
 }
@@ -34,16 +34,18 @@ impl DeleteLagInputBuilder {
     }
     /// <p>The ID of the LAG.</p>
     pub fn set_lag_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.lag_id = input; self
+        self.lag_id = input;
+        self
     }
     /// Consumes the builder and constructs a [`DeleteLagInput`](crate::operation::delete_lag::DeleteLagInput).
-    pub fn build(self) -> Result<crate::operation::delete_lag::DeleteLagInput, aws_smithy_http::operation::error::BuildError> {
-        Ok(
-            crate::operation::delete_lag::DeleteLagInput {
-                lag_id: self.lag_id
-                ,
-            }
-        )
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::delete_lag::DeleteLagInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        Ok(crate::operation::delete_lag::DeleteLagInput {
+            lag_id: self.lag_id,
+        })
     }
 }
-

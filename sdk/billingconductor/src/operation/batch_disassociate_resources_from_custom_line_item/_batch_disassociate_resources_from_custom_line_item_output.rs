@@ -2,33 +2,39 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct BatchDisassociateResourcesFromCustomLineItemOutput  {
+pub struct BatchDisassociateResourcesFromCustomLineItemOutput {
     /// <p> A list of <code>DisassociateResourceResponseElement</code> for each resource that's been disassociated from a percentage custom line item successfully. </p>
     #[doc(hidden)]
-    pub successfully_disassociated_resources: std::option::Option<std::vec::Vec<crate::types::DisassociateResourceResponseElement>>,
+    pub successfully_disassociated_resources:
+        std::option::Option<std::vec::Vec<crate::types::DisassociateResourceResponseElement>>,
     /// <p> A list of <code>DisassociateResourceResponseElement</code> for each resource that failed disassociation from a percentage custom line item. </p>
     #[doc(hidden)]
-    pub failed_disassociated_resources: std::option::Option<std::vec::Vec<crate::types::DisassociateResourceResponseElement>>,
+    pub failed_disassociated_resources:
+        std::option::Option<std::vec::Vec<crate::types::DisassociateResourceResponseElement>>,
     _request_id: Option<String>,
 }
 impl BatchDisassociateResourcesFromCustomLineItemOutput {
     /// <p> A list of <code>DisassociateResourceResponseElement</code> for each resource that's been disassociated from a percentage custom line item successfully. </p>
-    pub fn successfully_disassociated_resources(&self) -> std::option::Option<& [crate::types::DisassociateResourceResponseElement]> {
+    pub fn successfully_disassociated_resources(
+        &self,
+    ) -> std::option::Option<&[crate::types::DisassociateResourceResponseElement]> {
         self.successfully_disassociated_resources.as_deref()
     }
     /// <p> A list of <code>DisassociateResourceResponseElement</code> for each resource that failed disassociation from a percentage custom line item. </p>
-    pub fn failed_disassociated_resources(&self) -> std::option::Option<& [crate::types::DisassociateResourceResponseElement]> {
+    pub fn failed_disassociated_resources(
+        &self,
+    ) -> std::option::Option<&[crate::types::DisassociateResourceResponseElement]> {
         self.failed_disassociated_resources.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for BatchDisassociateResourcesFromCustomLineItemOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl BatchDisassociateResourcesFromCustomLineItemOutput {
     /// Creates a new builder-style object to manufacture [`BatchDisassociateResourcesFromCustomLineItemOutput`](crate::operation::batch_disassociate_resources_from_custom_line_item::BatchDisassociateResourcesFromCustomLineItemOutput).
-    pub fn builder() -> crate::operation::batch_disassociate_resources_from_custom_line_item::builders::BatchDisassociateResourcesFromCustomLineItemOutputBuilder {
+    pub fn builder() -> crate::operation::batch_disassociate_resources_from_custom_line_item::builders::BatchDisassociateResourcesFromCustomLineItemOutputBuilder{
         crate::operation::batch_disassociate_resources_from_custom_line_item::builders::BatchDisassociateResourcesFromCustomLineItemOutputBuilder::default()
     }
 }
@@ -37,8 +43,10 @@ impl BatchDisassociateResourcesFromCustomLineItemOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct BatchDisassociateResourcesFromCustomLineItemOutputBuilder {
-    pub(crate) successfully_disassociated_resources: std::option::Option<std::vec::Vec<crate::types::DisassociateResourceResponseElement>>,
-    pub(crate) failed_disassociated_resources: std::option::Option<std::vec::Vec<crate::types::DisassociateResourceResponseElement>>,
+    pub(crate) successfully_disassociated_resources:
+        std::option::Option<std::vec::Vec<crate::types::DisassociateResourceResponseElement>>,
+    pub(crate) failed_disassociated_resources:
+        std::option::Option<std::vec::Vec<crate::types::DisassociateResourceResponseElement>>,
     _request_id: Option<String>,
 }
 impl BatchDisassociateResourcesFromCustomLineItemOutputBuilder {
@@ -47,42 +55,62 @@ impl BatchDisassociateResourcesFromCustomLineItemOutputBuilder {
     /// To override the contents of this collection use [`set_successfully_disassociated_resources`](Self::set_successfully_disassociated_resources).
     ///
     /// <p> A list of <code>DisassociateResourceResponseElement</code> for each resource that's been disassociated from a percentage custom line item successfully. </p>
-    pub fn successfully_disassociated_resources(mut self, input: crate::types::DisassociateResourceResponseElement) -> Self {
-        let mut v = self.successfully_disassociated_resources.unwrap_or_default();
-                        v.push(input);
-                        self.successfully_disassociated_resources = Some(v);
-                        self
+    pub fn successfully_disassociated_resources(
+        mut self,
+        input: crate::types::DisassociateResourceResponseElement,
+    ) -> Self {
+        let mut v = self
+            .successfully_disassociated_resources
+            .unwrap_or_default();
+        v.push(input);
+        self.successfully_disassociated_resources = Some(v);
+        self
     }
     /// <p> A list of <code>DisassociateResourceResponseElement</code> for each resource that's been disassociated from a percentage custom line item successfully. </p>
-    pub fn set_successfully_disassociated_resources(mut self, input: std::option::Option<std::vec::Vec<crate::types::DisassociateResourceResponseElement>>) -> Self {
-        self.successfully_disassociated_resources = input; self
+    pub fn set_successfully_disassociated_resources(
+        mut self,
+        input: std::option::Option<
+            std::vec::Vec<crate::types::DisassociateResourceResponseElement>,
+        >,
+    ) -> Self {
+        self.successfully_disassociated_resources = input;
+        self
     }
     /// Appends an item to `failed_disassociated_resources`.
     ///
     /// To override the contents of this collection use [`set_failed_disassociated_resources`](Self::set_failed_disassociated_resources).
     ///
     /// <p> A list of <code>DisassociateResourceResponseElement</code> for each resource that failed disassociation from a percentage custom line item. </p>
-    pub fn failed_disassociated_resources(mut self, input: crate::types::DisassociateResourceResponseElement) -> Self {
+    pub fn failed_disassociated_resources(
+        mut self,
+        input: crate::types::DisassociateResourceResponseElement,
+    ) -> Self {
         let mut v = self.failed_disassociated_resources.unwrap_or_default();
-                        v.push(input);
-                        self.failed_disassociated_resources = Some(v);
-                        self
+        v.push(input);
+        self.failed_disassociated_resources = Some(v);
+        self
     }
     /// <p> A list of <code>DisassociateResourceResponseElement</code> for each resource that failed disassociation from a percentage custom line item. </p>
-    pub fn set_failed_disassociated_resources(mut self, input: std::option::Option<std::vec::Vec<crate::types::DisassociateResourceResponseElement>>) -> Self {
-        self.failed_disassociated_resources = input; self
+    pub fn set_failed_disassociated_resources(
+        mut self,
+        input: std::option::Option<
+            std::vec::Vec<crate::types::DisassociateResourceResponseElement>,
+        >,
+    ) -> Self {
+        self.failed_disassociated_resources = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`BatchDisassociateResourcesFromCustomLineItemOutput`](crate::operation::batch_disassociate_resources_from_custom_line_item::BatchDisassociateResourcesFromCustomLineItemOutput).
-    pub fn build(self) -> crate::operation::batch_disassociate_resources_from_custom_line_item::BatchDisassociateResourcesFromCustomLineItemOutput {
+    pub fn build(self) -> crate::operation::batch_disassociate_resources_from_custom_line_item::BatchDisassociateResourcesFromCustomLineItemOutput{
         crate::operation::batch_disassociate_resources_from_custom_line_item::BatchDisassociateResourcesFromCustomLineItemOutput {
             successfully_disassociated_resources: self.successfully_disassociated_resources
             ,
@@ -92,4 +120,3 @@ impl BatchDisassociateResourcesFromCustomLineItemOutputBuilder {
         }
     }
 }
-

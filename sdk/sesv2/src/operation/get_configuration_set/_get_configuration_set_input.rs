@@ -3,21 +3,23 @@
 /// <p>A request to obtain information about a configuration set.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetConfigurationSetInput  {
+pub struct GetConfigurationSetInput {
     /// <p>The name of the configuration set.</p>
     #[doc(hidden)]
     pub configuration_set_name: std::option::Option<std::string::String>,
 }
 impl GetConfigurationSetInput {
     /// <p>The name of the configuration set.</p>
-    pub fn configuration_set_name(&self) -> std::option::Option<& str> {
+    pub fn configuration_set_name(&self) -> std::option::Option<&str> {
         self.configuration_set_name.as_deref()
     }
 }
 impl GetConfigurationSetInput {
     /// Creates a new builder-style object to manufacture [`GetConfigurationSetInput`](crate::operation::get_configuration_set::GetConfigurationSetInput).
-    pub fn builder() -> crate::operation::get_configuration_set::builders::GetConfigurationSetInputBuilder {
-        crate::operation::get_configuration_set::builders::GetConfigurationSetInputBuilder::default()
+    pub fn builder(
+    ) -> crate::operation::get_configuration_set::builders::GetConfigurationSetInputBuilder {
+        crate::operation::get_configuration_set::builders::GetConfigurationSetInputBuilder::default(
+        )
     }
 }
 
@@ -34,17 +36,24 @@ impl GetConfigurationSetInputBuilder {
         self
     }
     /// <p>The name of the configuration set.</p>
-    pub fn set_configuration_set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.configuration_set_name = input; self
+    pub fn set_configuration_set_name(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.configuration_set_name = input;
+        self
     }
     /// Consumes the builder and constructs a [`GetConfigurationSetInput`](crate::operation::get_configuration_set::GetConfigurationSetInput).
-    pub fn build(self) -> Result<crate::operation::get_configuration_set::GetConfigurationSetInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::get_configuration_set::GetConfigurationSetInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::get_configuration_set::GetConfigurationSetInput {
-                configuration_set_name: self.configuration_set_name
-                ,
-            }
+                configuration_set_name: self.configuration_set_name,
+            },
         )
     }
 }
-

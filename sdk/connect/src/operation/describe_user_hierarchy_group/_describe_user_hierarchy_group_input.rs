@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeUserHierarchyGroupInput  {
+pub struct DescribeUserHierarchyGroupInput {
     /// <p>The identifier of the hierarchy group.</p>
     #[doc(hidden)]
     pub hierarchy_group_id: std::option::Option<std::string::String>,
@@ -12,17 +12,17 @@ pub struct DescribeUserHierarchyGroupInput  {
 }
 impl DescribeUserHierarchyGroupInput {
     /// <p>The identifier of the hierarchy group.</p>
-    pub fn hierarchy_group_id(&self) -> std::option::Option<& str> {
+    pub fn hierarchy_group_id(&self) -> std::option::Option<&str> {
         self.hierarchy_group_id.as_deref()
     }
     /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
-    pub fn instance_id(&self) -> std::option::Option<& str> {
+    pub fn instance_id(&self) -> std::option::Option<&str> {
         self.instance_id.as_deref()
     }
 }
 impl DescribeUserHierarchyGroupInput {
     /// Creates a new builder-style object to manufacture [`DescribeUserHierarchyGroupInput`](crate::operation::describe_user_hierarchy_group::DescribeUserHierarchyGroupInput).
-    pub fn builder() -> crate::operation::describe_user_hierarchy_group::builders::DescribeUserHierarchyGroupInputBuilder {
+    pub fn builder() -> crate::operation::describe_user_hierarchy_group::builders::DescribeUserHierarchyGroupInputBuilder{
         crate::operation::describe_user_hierarchy_group::builders::DescribeUserHierarchyGroupInputBuilder::default()
     }
 }
@@ -41,8 +41,12 @@ impl DescribeUserHierarchyGroupInputBuilder {
         self
     }
     /// <p>The identifier of the hierarchy group.</p>
-    pub fn set_hierarchy_group_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.hierarchy_group_id = input; self
+    pub fn set_hierarchy_group_id(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.hierarchy_group_id = input;
+        self
     }
     /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
     pub fn instance_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -51,18 +55,21 @@ impl DescribeUserHierarchyGroupInputBuilder {
     }
     /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
     pub fn set_instance_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.instance_id = input; self
+        self.instance_id = input;
+        self
     }
     /// Consumes the builder and constructs a [`DescribeUserHierarchyGroupInput`](crate::operation::describe_user_hierarchy_group::DescribeUserHierarchyGroupInput).
-    pub fn build(self) -> Result<crate::operation::describe_user_hierarchy_group::DescribeUserHierarchyGroupInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::describe_user_hierarchy_group::DescribeUserHierarchyGroupInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::describe_user_hierarchy_group::DescribeUserHierarchyGroupInput {
-                hierarchy_group_id: self.hierarchy_group_id
-                ,
-                instance_id: self.instance_id
-                ,
-            }
+                hierarchy_group_id: self.hierarchy_group_id,
+                instance_id: self.instance_id,
+            },
         )
     }
 }
-

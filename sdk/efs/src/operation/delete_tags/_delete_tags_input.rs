@@ -3,7 +3,7 @@
 /// <p></p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteTagsInput  {
+pub struct DeleteTagsInput {
     /// <p>The ID of the file system whose tags you want to delete (String).</p>
     #[doc(hidden)]
     pub file_system_id: std::option::Option<std::string::String>,
@@ -13,11 +13,11 @@ pub struct DeleteTagsInput  {
 }
 impl DeleteTagsInput {
     /// <p>The ID of the file system whose tags you want to delete (String).</p>
-    pub fn file_system_id(&self) -> std::option::Option<& str> {
+    pub fn file_system_id(&self) -> std::option::Option<&str> {
         self.file_system_id.as_deref()
     }
     /// <p>A list of tag keys to delete.</p>
-    pub fn tag_keys(&self) -> std::option::Option<& [std::string::String]> {
+    pub fn tag_keys(&self) -> std::option::Option<&[std::string::String]> {
         self.tag_keys.as_deref()
     }
 }
@@ -43,7 +43,8 @@ impl DeleteTagsInputBuilder {
     }
     /// <p>The ID of the file system whose tags you want to delete (String).</p>
     pub fn set_file_system_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.file_system_id = input; self
+        self.file_system_id = input;
+        self
     }
     /// Appends an item to `tag_keys`.
     ///
@@ -52,24 +53,28 @@ impl DeleteTagsInputBuilder {
     /// <p>A list of tag keys to delete.</p>
     pub fn tag_keys(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.tag_keys.unwrap_or_default();
-                        v.push(input.into());
-                        self.tag_keys = Some(v);
-                        self
+        v.push(input.into());
+        self.tag_keys = Some(v);
+        self
     }
     /// <p>A list of tag keys to delete.</p>
-    pub fn set_tag_keys(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-        self.tag_keys = input; self
+    pub fn set_tag_keys(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
+        self.tag_keys = input;
+        self
     }
     /// Consumes the builder and constructs a [`DeleteTagsInput`](crate::operation::delete_tags::DeleteTagsInput).
-    pub fn build(self) -> Result<crate::operation::delete_tags::DeleteTagsInput, aws_smithy_http::operation::error::BuildError> {
-        Ok(
-            crate::operation::delete_tags::DeleteTagsInput {
-                file_system_id: self.file_system_id
-                ,
-                tag_keys: self.tag_keys
-                ,
-            }
-        )
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::delete_tags::DeleteTagsInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        Ok(crate::operation::delete_tags::DeleteTagsInput {
+            file_system_id: self.file_system_id,
+            tag_keys: self.tag_keys,
+        })
     }
 }
-

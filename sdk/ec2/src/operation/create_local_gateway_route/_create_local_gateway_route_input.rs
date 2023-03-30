@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateLocalGatewayRouteInput  {
+pub struct CreateLocalGatewayRouteInput {
     /// <p>The CIDR range used for destination matches. Routing decisions are based on the most specific match.</p>
     #[doc(hidden)]
     pub destination_cidr_block: std::option::Option<std::string::String>,
@@ -21,15 +21,15 @@ pub struct CreateLocalGatewayRouteInput  {
 }
 impl CreateLocalGatewayRouteInput {
     /// <p>The CIDR range used for destination matches. Routing decisions are based on the most specific match.</p>
-    pub fn destination_cidr_block(&self) -> std::option::Option<& str> {
+    pub fn destination_cidr_block(&self) -> std::option::Option<&str> {
         self.destination_cidr_block.as_deref()
     }
     /// <p>The ID of the local gateway route table.</p>
-    pub fn local_gateway_route_table_id(&self) -> std::option::Option<& str> {
+    pub fn local_gateway_route_table_id(&self) -> std::option::Option<&str> {
         self.local_gateway_route_table_id.as_deref()
     }
     /// <p>The ID of the virtual interface group.</p>
-    pub fn local_gateway_virtual_interface_group_id(&self) -> std::option::Option<& str> {
+    pub fn local_gateway_virtual_interface_group_id(&self) -> std::option::Option<&str> {
         self.local_gateway_virtual_interface_group_id.as_deref()
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
@@ -37,13 +37,15 @@ impl CreateLocalGatewayRouteInput {
         self.dry_run
     }
     /// <p>The ID of the network interface.</p>
-    pub fn network_interface_id(&self) -> std::option::Option<& str> {
+    pub fn network_interface_id(&self) -> std::option::Option<&str> {
         self.network_interface_id.as_deref()
     }
 }
 impl CreateLocalGatewayRouteInput {
     /// Creates a new builder-style object to manufacture [`CreateLocalGatewayRouteInput`](crate::operation::create_local_gateway_route::CreateLocalGatewayRouteInput).
-    pub fn builder() -> crate::operation::create_local_gateway_route::builders::CreateLocalGatewayRouteInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::create_local_gateway_route::builders::CreateLocalGatewayRouteInputBuilder
+    {
         crate::operation::create_local_gateway_route::builders::CreateLocalGatewayRouteInputBuilder::default()
     }
 }
@@ -65,8 +67,12 @@ impl CreateLocalGatewayRouteInputBuilder {
         self
     }
     /// <p>The CIDR range used for destination matches. Routing decisions are based on the most specific match.</p>
-    pub fn set_destination_cidr_block(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.destination_cidr_block = input; self
+    pub fn set_destination_cidr_block(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.destination_cidr_block = input;
+        self
     }
     /// <p>The ID of the local gateway route table.</p>
     pub fn local_gateway_route_table_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -74,17 +80,28 @@ impl CreateLocalGatewayRouteInputBuilder {
         self
     }
     /// <p>The ID of the local gateway route table.</p>
-    pub fn set_local_gateway_route_table_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.local_gateway_route_table_id = input; self
+    pub fn set_local_gateway_route_table_id(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.local_gateway_route_table_id = input;
+        self
     }
     /// <p>The ID of the virtual interface group.</p>
-    pub fn local_gateway_virtual_interface_group_id(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn local_gateway_virtual_interface_group_id(
+        mut self,
+        input: impl Into<std::string::String>,
+    ) -> Self {
         self.local_gateway_virtual_interface_group_id = Some(input.into());
         self
     }
     /// <p>The ID of the virtual interface group.</p>
-    pub fn set_local_gateway_virtual_interface_group_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.local_gateway_virtual_interface_group_id = input; self
+    pub fn set_local_gateway_virtual_interface_group_id(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.local_gateway_virtual_interface_group_id = input;
+        self
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn dry_run(mut self, input: bool) -> Self {
@@ -93,7 +110,8 @@ impl CreateLocalGatewayRouteInputBuilder {
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn set_dry_run(mut self, input: std::option::Option<bool>) -> Self {
-        self.dry_run = input; self
+        self.dry_run = input;
+        self
     }
     /// <p>The ID of the network interface.</p>
     pub fn network_interface_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -101,25 +119,29 @@ impl CreateLocalGatewayRouteInputBuilder {
         self
     }
     /// <p>The ID of the network interface.</p>
-    pub fn set_network_interface_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.network_interface_id = input; self
+    pub fn set_network_interface_id(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.network_interface_id = input;
+        self
     }
     /// Consumes the builder and constructs a [`CreateLocalGatewayRouteInput`](crate::operation::create_local_gateway_route::CreateLocalGatewayRouteInput).
-    pub fn build(self) -> Result<crate::operation::create_local_gateway_route::CreateLocalGatewayRouteInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::create_local_gateway_route::CreateLocalGatewayRouteInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::create_local_gateway_route::CreateLocalGatewayRouteInput {
-                destination_cidr_block: self.destination_cidr_block
-                ,
-                local_gateway_route_table_id: self.local_gateway_route_table_id
-                ,
-                local_gateway_virtual_interface_group_id: self.local_gateway_virtual_interface_group_id
-                ,
-                dry_run: self.dry_run
-                ,
-                network_interface_id: self.network_interface_id
-                ,
-            }
+                destination_cidr_block: self.destination_cidr_block,
+                local_gateway_route_table_id: self.local_gateway_route_table_id,
+                local_gateway_virtual_interface_group_id: self
+                    .local_gateway_virtual_interface_group_id,
+                dry_run: self.dry_run,
+                network_interface_id: self.network_interface_id,
+            },
         )
     }
 }
-

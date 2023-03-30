@@ -3,7 +3,7 @@
 /// <p></p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateConfigOutput  {
+pub struct UpdateConfigOutput {
     /// <p>UUID of a <code>Config</code>.</p>
     #[doc(hidden)]
     pub config_id: std::option::Option<std::string::String>,
@@ -17,23 +17,23 @@ pub struct UpdateConfigOutput  {
 }
 impl UpdateConfigOutput {
     /// <p>UUID of a <code>Config</code>.</p>
-    pub fn config_id(&self) -> std::option::Option<& str> {
+    pub fn config_id(&self) -> std::option::Option<&str> {
         self.config_id.as_deref()
     }
     /// <p>Type of a <code>Config</code>.</p>
-    pub fn config_type(&self) -> std::option::Option<& crate::types::ConfigCapabilityType> {
+    pub fn config_type(&self) -> std::option::Option<&crate::types::ConfigCapabilityType> {
         self.config_type.as_ref()
     }
     /// <p>ARN of a <code>Config</code>.</p>
-    pub fn config_arn(&self) -> std::option::Option<& str> {
+    pub fn config_arn(&self) -> std::option::Option<&str> {
         self.config_arn.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for UpdateConfigOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl UpdateConfigOutput {
     /// Creates a new builder-style object to manufacture [`UpdateConfigOutput`](crate::operation::update_config::UpdateConfigOutput).
     pub fn builder() -> crate::operation::update_config::builders::UpdateConfigOutputBuilder {
@@ -58,7 +58,8 @@ impl UpdateConfigOutputBuilder {
     }
     /// <p>UUID of a <code>Config</code>.</p>
     pub fn set_config_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.config_id = input; self
+        self.config_id = input;
+        self
     }
     /// <p>Type of a <code>Config</code>.</p>
     pub fn config_type(mut self, input: crate::types::ConfigCapabilityType) -> Self {
@@ -66,8 +67,12 @@ impl UpdateConfigOutputBuilder {
         self
     }
     /// <p>Type of a <code>Config</code>.</p>
-    pub fn set_config_type(mut self, input: std::option::Option<crate::types::ConfigCapabilityType>) -> Self {
-        self.config_type = input; self
+    pub fn set_config_type(
+        mut self,
+        input: std::option::Option<crate::types::ConfigCapabilityType>,
+    ) -> Self {
+        self.config_type = input;
+        self
     }
     /// <p>ARN of a <code>Config</code>.</p>
     pub fn config_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -76,28 +81,25 @@ impl UpdateConfigOutputBuilder {
     }
     /// <p>ARN of a <code>Config</code>.</p>
     pub fn set_config_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.config_arn = input; self
+        self.config_arn = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`UpdateConfigOutput`](crate::operation::update_config::UpdateConfigOutput).
     pub fn build(self) -> crate::operation::update_config::UpdateConfigOutput {
         crate::operation::update_config::UpdateConfigOutput {
-            config_id: self.config_id
-            ,
-            config_type: self.config_type
-            ,
-            config_arn: self.config_arn
-            ,
+            config_id: self.config_id,
+            config_type: self.config_type,
+            config_arn: self.config_arn,
             _request_id: self._request_id,
         }
     }
 }
-

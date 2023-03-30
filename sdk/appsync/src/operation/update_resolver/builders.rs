@@ -4,49 +4,67 @@ pub use crate::operation::update_resolver::_update_resolver_output::UpdateResolv
 pub use crate::operation::update_resolver::_update_resolver_input::UpdateResolverInputBuilder;
 
 /// Fluent builder constructing a request to `UpdateResolver`.
-/// 
+///
 /// <p>Updates a <code>Resolver</code> object.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct UpdateResolverFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::update_resolver::builders::UpdateResolverInputBuilder
-            }
-impl UpdateResolverFluentBuilder  {
+    handle: std::sync::Arc<crate::client::Handle>,
+    inner: crate::operation::update_resolver::builders::UpdateResolverInputBuilder,
+}
+impl UpdateResolverFluentBuilder {
     /// Creates a new `UpdateResolver`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
-                    /// sent. The operation's inner [http::Request] can be modified as well.
-                    pub async fn customize(self) -> std::result::Result<
-                        crate::client::customize::CustomizableOperation<crate::operation::update_resolver::UpdateResolver, aws_http::retry::AwsResponseRetryClassifier,>,
-                        aws_smithy_http::result::SdkError<crate::operation::update_resolver::UpdateResolverError>
-                    >  {
-                        let handle = self.handle.clone();
-                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-                    }
-    
-                    /// Sends the request and returns the response.
-                    ///
-                    /// If an error occurs, an `SdkError` will be returned with additional details that
-                    /// can be matched against.
-                    ///
-                    /// By default, any retryable failures will be retried twice. Retry behavior
-                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                    /// set when configuring the client.
-                    pub async fn send(self) -> std::result::Result<crate::operation::update_resolver::UpdateResolverOutput, aws_smithy_http::result::SdkError<crate::operation::update_resolver::UpdateResolverError>>
-                     {
-                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&self.handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        self.handle.client.call(op).await
-                    }
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle,
+            inner: Default::default(),
+        }
+    }
+
+    /// Consume this builder, creating a customizable operation that can be modified before being
+    /// sent. The operation's inner [http::Request] can be modified as well.
+    pub async fn customize(
+        self,
+    ) -> std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::update_resolver::UpdateResolver,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::result::SdkError<crate::operation::update_resolver::UpdateResolverError>,
+    > {
+        let handle = self.handle.clone();
+        let operation = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+    }
+
+    /// Sends the request and returns the response.
+    ///
+    /// If an error occurs, an `SdkError` will be returned with additional details that
+    /// can be matched against.
+    ///
+    /// By default, any retryable failures will be retried twice. Retry behavior
+    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+    /// set when configuring the client.
+    pub async fn send(
+        self,
+    ) -> std::result::Result<
+        crate::operation::update_resolver::UpdateResolverOutput,
+        aws_smithy_http::result::SdkError<crate::operation::update_resolver::UpdateResolverError>,
+    > {
+        let op = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&self.handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        self.handle.client.call(op).await
+    }
     /// <p>The API ID.</p>
     pub fn api_id(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.api_id(input.into());
@@ -87,17 +105,20 @@ impl UpdateResolverFluentBuilder  {
         self.inner = self.inner.set_data_source_name(input);
         self
     }
-    /// <p>The new request mapping template.</p> 
-    /// <p>A resolver uses a request mapping template to convert a GraphQL expression into a format that a data source can understand. Mapping templates are written in Apache Velocity Template Language (VTL).</p> 
+    /// <p>The new request mapping template.</p>
+    /// <p>A resolver uses a request mapping template to convert a GraphQL expression into a format that a data source can understand. Mapping templates are written in Apache Velocity Template Language (VTL).</p>
     /// <p>VTL request mapping templates are optional when using an Lambda data source. For all other data sources, VTL request and response mapping templates are required.</p>
     pub fn request_mapping_template(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.request_mapping_template(input.into());
         self
     }
-    /// <p>The new request mapping template.</p> 
-    /// <p>A resolver uses a request mapping template to convert a GraphQL expression into a format that a data source can understand. Mapping templates are written in Apache Velocity Template Language (VTL).</p> 
+    /// <p>The new request mapping template.</p>
+    /// <p>A resolver uses a request mapping template to convert a GraphQL expression into a format that a data source can understand. Mapping templates are written in Apache Velocity Template Language (VTL).</p>
     /// <p>VTL request mapping templates are optional when using an Lambda data source. For all other data sources, VTL request and response mapping templates are required.</p>
-    pub fn set_request_mapping_template(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_request_mapping_template(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_request_mapping_template(input);
         self
     }
@@ -107,23 +128,26 @@ impl UpdateResolverFluentBuilder  {
         self
     }
     /// <p>The new response mapping template.</p>
-    pub fn set_response_mapping_template(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_response_mapping_template(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_response_mapping_template(input);
         self
     }
-    /// <p>The resolver type.</p> 
-    /// <ul> 
-    /// <li> <p> <b>UNIT</b>: A UNIT resolver type. A UNIT resolver is the default resolver type. You can use a UNIT resolver to run a GraphQL query against a single data source.</p> </li> 
-    /// <li> <p> <b>PIPELINE</b>: A PIPELINE resolver type. You can use a PIPELINE resolver to invoke a series of <code>Function</code> objects in a serial manner. You can use a pipeline resolver to run a GraphQL query against multiple data sources.</p> </li> 
+    /// <p>The resolver type.</p>
+    /// <ul>
+    /// <li> <p> <b>UNIT</b>: A UNIT resolver type. A UNIT resolver is the default resolver type. You can use a UNIT resolver to run a GraphQL query against a single data source.</p> </li>
+    /// <li> <p> <b>PIPELINE</b>: A PIPELINE resolver type. You can use a PIPELINE resolver to invoke a series of <code>Function</code> objects in a serial manner. You can use a pipeline resolver to run a GraphQL query against multiple data sources.</p> </li>
     /// </ul>
     pub fn kind(mut self, input: crate::types::ResolverKind) -> Self {
         self.inner = self.inner.kind(input);
         self
     }
-    /// <p>The resolver type.</p> 
-    /// <ul> 
-    /// <li> <p> <b>UNIT</b>: A UNIT resolver type. A UNIT resolver is the default resolver type. You can use a UNIT resolver to run a GraphQL query against a single data source.</p> </li> 
-    /// <li> <p> <b>PIPELINE</b>: A PIPELINE resolver type. You can use a PIPELINE resolver to invoke a series of <code>Function</code> objects in a serial manner. You can use a pipeline resolver to run a GraphQL query against multiple data sources.</p> </li> 
+    /// <p>The resolver type.</p>
+    /// <ul>
+    /// <li> <p> <b>UNIT</b>: A UNIT resolver type. A UNIT resolver is the default resolver type. You can use a UNIT resolver to run a GraphQL query against a single data source.</p> </li>
+    /// <li> <p> <b>PIPELINE</b>: A PIPELINE resolver type. You can use a PIPELINE resolver to invoke a series of <code>Function</code> objects in a serial manner. You can use a pipeline resolver to run a GraphQL query against multiple data sources.</p> </li>
     /// </ul>
     pub fn set_kind(mut self, input: std::option::Option<crate::types::ResolverKind>) -> Self {
         self.inner = self.inner.set_kind(input);
@@ -135,7 +159,10 @@ impl UpdateResolverFluentBuilder  {
         self
     }
     /// <p>The <code>PipelineConfig</code>.</p>
-    pub fn set_pipeline_config(mut self, input: std::option::Option<crate::types::PipelineConfig>) -> Self {
+    pub fn set_pipeline_config(
+        mut self,
+        input: std::option::Option<crate::types::PipelineConfig>,
+    ) -> Self {
         self.inner = self.inner.set_pipeline_config(input);
         self
     }
@@ -155,7 +182,10 @@ impl UpdateResolverFluentBuilder  {
         self
     }
     /// <p>The caching configuration for the resolver.</p>
-    pub fn set_caching_config(mut self, input: std::option::Option<crate::types::CachingConfig>) -> Self {
+    pub fn set_caching_config(
+        mut self,
+        input: std::option::Option<crate::types::CachingConfig>,
+    ) -> Self {
         self.inner = self.inner.set_caching_config(input);
         self
     }
@@ -190,4 +220,3 @@ impl UpdateResolverFluentBuilder  {
         self
     }
 }
-

@@ -3,27 +3,27 @@
 /// <p>A ulimit to set in the container.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AwsEcsTaskDefinitionContainerDefinitionsUlimitsDetails  {
+pub struct AwsEcsTaskDefinitionContainerDefinitionsUlimitsDetails {
     /// <p>The hard limit for the ulimit type.</p>
     #[doc(hidden)]
     pub hard_limit: i32,
-    /// <p>The type of the ulimit. Valid values are as follows:</p> 
-    /// <ul> 
-    /// <li> <p> <code>core</code> </p> </li> 
-    /// <li> <p> <code>cpu</code> </p> </li> 
-    /// <li> <p> <code>data</code> </p> </li> 
-    /// <li> <p> <code>fsize</code> </p> </li> 
-    /// <li> <p> <code>locks</code> </p> </li> 
-    /// <li> <p> <code>memlock</code> </p> </li> 
-    /// <li> <p> <code>msgqueue</code> </p> </li> 
-    /// <li> <p> <code>nice</code> </p> </li> 
-    /// <li> <p> <code>nofile</code> </p> </li> 
-    /// <li> <p> <code>nproc</code> </p> </li> 
-    /// <li> <p> <code>rss</code> </p> </li> 
-    /// <li> <p> <code>rtprio</code> </p> </li> 
-    /// <li> <p> <code>rttime</code> </p> </li> 
-    /// <li> <p> <code>sigpending</code> </p> </li> 
-    /// <li> <p> <code>stack</code> </p> </li> 
+    /// <p>The type of the ulimit. Valid values are as follows:</p>
+    /// <ul>
+    /// <li> <p> <code>core</code> </p> </li>
+    /// <li> <p> <code>cpu</code> </p> </li>
+    /// <li> <p> <code>data</code> </p> </li>
+    /// <li> <p> <code>fsize</code> </p> </li>
+    /// <li> <p> <code>locks</code> </p> </li>
+    /// <li> <p> <code>memlock</code> </p> </li>
+    /// <li> <p> <code>msgqueue</code> </p> </li>
+    /// <li> <p> <code>nice</code> </p> </li>
+    /// <li> <p> <code>nofile</code> </p> </li>
+    /// <li> <p> <code>nproc</code> </p> </li>
+    /// <li> <p> <code>rss</code> </p> </li>
+    /// <li> <p> <code>rtprio</code> </p> </li>
+    /// <li> <p> <code>rttime</code> </p> </li>
+    /// <li> <p> <code>sigpending</code> </p> </li>
+    /// <li> <p> <code>stack</code> </p> </li>
     /// </ul>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -36,25 +36,25 @@ impl AwsEcsTaskDefinitionContainerDefinitionsUlimitsDetails {
     pub fn hard_limit(&self) -> i32 {
         self.hard_limit
     }
-    /// <p>The type of the ulimit. Valid values are as follows:</p> 
-    /// <ul> 
-    /// <li> <p> <code>core</code> </p> </li> 
-    /// <li> <p> <code>cpu</code> </p> </li> 
-    /// <li> <p> <code>data</code> </p> </li> 
-    /// <li> <p> <code>fsize</code> </p> </li> 
-    /// <li> <p> <code>locks</code> </p> </li> 
-    /// <li> <p> <code>memlock</code> </p> </li> 
-    /// <li> <p> <code>msgqueue</code> </p> </li> 
-    /// <li> <p> <code>nice</code> </p> </li> 
-    /// <li> <p> <code>nofile</code> </p> </li> 
-    /// <li> <p> <code>nproc</code> </p> </li> 
-    /// <li> <p> <code>rss</code> </p> </li> 
-    /// <li> <p> <code>rtprio</code> </p> </li> 
-    /// <li> <p> <code>rttime</code> </p> </li> 
-    /// <li> <p> <code>sigpending</code> </p> </li> 
-    /// <li> <p> <code>stack</code> </p> </li> 
+    /// <p>The type of the ulimit. Valid values are as follows:</p>
+    /// <ul>
+    /// <li> <p> <code>core</code> </p> </li>
+    /// <li> <p> <code>cpu</code> </p> </li>
+    /// <li> <p> <code>data</code> </p> </li>
+    /// <li> <p> <code>fsize</code> </p> </li>
+    /// <li> <p> <code>locks</code> </p> </li>
+    /// <li> <p> <code>memlock</code> </p> </li>
+    /// <li> <p> <code>msgqueue</code> </p> </li>
+    /// <li> <p> <code>nice</code> </p> </li>
+    /// <li> <p> <code>nofile</code> </p> </li>
+    /// <li> <p> <code>nproc</code> </p> </li>
+    /// <li> <p> <code>rss</code> </p> </li>
+    /// <li> <p> <code>rtprio</code> </p> </li>
+    /// <li> <p> <code>rttime</code> </p> </li>
+    /// <li> <p> <code>sigpending</code> </p> </li>
+    /// <li> <p> <code>stack</code> </p> </li>
     /// </ul>
-    pub fn name(&self) -> std::option::Option<& str> {
+    pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>The soft limit for the ulimit type.</p>
@@ -64,7 +64,8 @@ impl AwsEcsTaskDefinitionContainerDefinitionsUlimitsDetails {
 }
 impl AwsEcsTaskDefinitionContainerDefinitionsUlimitsDetails {
     /// Creates a new builder-style object to manufacture [`AwsEcsTaskDefinitionContainerDefinitionsUlimitsDetails`](crate::types::AwsEcsTaskDefinitionContainerDefinitionsUlimitsDetails).
-    pub fn builder() -> crate::types::builders::AwsEcsTaskDefinitionContainerDefinitionsUlimitsDetailsBuilder {
+    pub fn builder(
+    ) -> crate::types::builders::AwsEcsTaskDefinitionContainerDefinitionsUlimitsDetailsBuilder {
         crate::types::builders::AwsEcsTaskDefinitionContainerDefinitionsUlimitsDetailsBuilder::default()
     }
 }
@@ -85,50 +86,52 @@ impl AwsEcsTaskDefinitionContainerDefinitionsUlimitsDetailsBuilder {
     }
     /// <p>The hard limit for the ulimit type.</p>
     pub fn set_hard_limit(mut self, input: std::option::Option<i32>) -> Self {
-        self.hard_limit = input; self
+        self.hard_limit = input;
+        self
     }
-    /// <p>The type of the ulimit. Valid values are as follows:</p> 
-    /// <ul> 
-    /// <li> <p> <code>core</code> </p> </li> 
-    /// <li> <p> <code>cpu</code> </p> </li> 
-    /// <li> <p> <code>data</code> </p> </li> 
-    /// <li> <p> <code>fsize</code> </p> </li> 
-    /// <li> <p> <code>locks</code> </p> </li> 
-    /// <li> <p> <code>memlock</code> </p> </li> 
-    /// <li> <p> <code>msgqueue</code> </p> </li> 
-    /// <li> <p> <code>nice</code> </p> </li> 
-    /// <li> <p> <code>nofile</code> </p> </li> 
-    /// <li> <p> <code>nproc</code> </p> </li> 
-    /// <li> <p> <code>rss</code> </p> </li> 
-    /// <li> <p> <code>rtprio</code> </p> </li> 
-    /// <li> <p> <code>rttime</code> </p> </li> 
-    /// <li> <p> <code>sigpending</code> </p> </li> 
-    /// <li> <p> <code>stack</code> </p> </li> 
+    /// <p>The type of the ulimit. Valid values are as follows:</p>
+    /// <ul>
+    /// <li> <p> <code>core</code> </p> </li>
+    /// <li> <p> <code>cpu</code> </p> </li>
+    /// <li> <p> <code>data</code> </p> </li>
+    /// <li> <p> <code>fsize</code> </p> </li>
+    /// <li> <p> <code>locks</code> </p> </li>
+    /// <li> <p> <code>memlock</code> </p> </li>
+    /// <li> <p> <code>msgqueue</code> </p> </li>
+    /// <li> <p> <code>nice</code> </p> </li>
+    /// <li> <p> <code>nofile</code> </p> </li>
+    /// <li> <p> <code>nproc</code> </p> </li>
+    /// <li> <p> <code>rss</code> </p> </li>
+    /// <li> <p> <code>rtprio</code> </p> </li>
+    /// <li> <p> <code>rttime</code> </p> </li>
+    /// <li> <p> <code>sigpending</code> </p> </li>
+    /// <li> <p> <code>stack</code> </p> </li>
     /// </ul>
     pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
         self.name = Some(input.into());
         self
     }
-    /// <p>The type of the ulimit. Valid values are as follows:</p> 
-    /// <ul> 
-    /// <li> <p> <code>core</code> </p> </li> 
-    /// <li> <p> <code>cpu</code> </p> </li> 
-    /// <li> <p> <code>data</code> </p> </li> 
-    /// <li> <p> <code>fsize</code> </p> </li> 
-    /// <li> <p> <code>locks</code> </p> </li> 
-    /// <li> <p> <code>memlock</code> </p> </li> 
-    /// <li> <p> <code>msgqueue</code> </p> </li> 
-    /// <li> <p> <code>nice</code> </p> </li> 
-    /// <li> <p> <code>nofile</code> </p> </li> 
-    /// <li> <p> <code>nproc</code> </p> </li> 
-    /// <li> <p> <code>rss</code> </p> </li> 
-    /// <li> <p> <code>rtprio</code> </p> </li> 
-    /// <li> <p> <code>rttime</code> </p> </li> 
-    /// <li> <p> <code>sigpending</code> </p> </li> 
-    /// <li> <p> <code>stack</code> </p> </li> 
+    /// <p>The type of the ulimit. Valid values are as follows:</p>
+    /// <ul>
+    /// <li> <p> <code>core</code> </p> </li>
+    /// <li> <p> <code>cpu</code> </p> </li>
+    /// <li> <p> <code>data</code> </p> </li>
+    /// <li> <p> <code>fsize</code> </p> </li>
+    /// <li> <p> <code>locks</code> </p> </li>
+    /// <li> <p> <code>memlock</code> </p> </li>
+    /// <li> <p> <code>msgqueue</code> </p> </li>
+    /// <li> <p> <code>nice</code> </p> </li>
+    /// <li> <p> <code>nofile</code> </p> </li>
+    /// <li> <p> <code>nproc</code> </p> </li>
+    /// <li> <p> <code>rss</code> </p> </li>
+    /// <li> <p> <code>rtprio</code> </p> </li>
+    /// <li> <p> <code>rttime</code> </p> </li>
+    /// <li> <p> <code>sigpending</code> </p> </li>
+    /// <li> <p> <code>stack</code> </p> </li>
     /// </ul>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input; self
+        self.name = input;
+        self
     }
     /// <p>The soft limit for the ulimit type.</p>
     pub fn soft_limit(mut self, input: i32) -> Self {
@@ -137,20 +140,15 @@ impl AwsEcsTaskDefinitionContainerDefinitionsUlimitsDetailsBuilder {
     }
     /// <p>The soft limit for the ulimit type.</p>
     pub fn set_soft_limit(mut self, input: std::option::Option<i32>) -> Self {
-        self.soft_limit = input; self
+        self.soft_limit = input;
+        self
     }
     /// Consumes the builder and constructs a [`AwsEcsTaskDefinitionContainerDefinitionsUlimitsDetails`](crate::types::AwsEcsTaskDefinitionContainerDefinitionsUlimitsDetails).
     pub fn build(self) -> crate::types::AwsEcsTaskDefinitionContainerDefinitionsUlimitsDetails {
         crate::types::AwsEcsTaskDefinitionContainerDefinitionsUlimitsDetails {
-            hard_limit: self.hard_limit
-                .unwrap_or_default()
-            ,
-            name: self.name
-            ,
-            soft_limit: self.soft_limit
-                .unwrap_or_default()
-            ,
+            hard_limit: self.hard_limit.unwrap_or_default(),
+            name: self.name,
+            soft_limit: self.soft_limit.unwrap_or_default(),
         }
     }
 }
-

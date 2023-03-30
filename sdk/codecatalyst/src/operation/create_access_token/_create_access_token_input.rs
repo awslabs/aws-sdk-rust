@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateAccessTokenInput  {
+pub struct CreateAccessTokenInput {
     /// <p>The friendly name of the personal access token.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -12,17 +12,18 @@ pub struct CreateAccessTokenInput  {
 }
 impl CreateAccessTokenInput {
     /// <p>The friendly name of the personal access token.</p>
-    pub fn name(&self) -> std::option::Option<& str> {
+    pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>The date and time the personal access token expires, in coordinated universal time (UTC) timestamp format as specified in <a href="https://www.rfc-editor.org/rfc/rfc3339#section-5.6">RFC 3339</a>.</p>
-    pub fn expires_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
+    pub fn expires_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.expires_time.as_ref()
     }
 }
 impl CreateAccessTokenInput {
     /// Creates a new builder-style object to manufacture [`CreateAccessTokenInput`](crate::operation::create_access_token::CreateAccessTokenInput).
-    pub fn builder() -> crate::operation::create_access_token::builders::CreateAccessTokenInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::create_access_token::builders::CreateAccessTokenInputBuilder {
         crate::operation::create_access_token::builders::CreateAccessTokenInputBuilder::default()
     }
 }
@@ -42,7 +43,8 @@ impl CreateAccessTokenInputBuilder {
     }
     /// <p>The friendly name of the personal access token.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input; self
+        self.name = input;
+        self
     }
     /// <p>The date and time the personal access token expires, in coordinated universal time (UTC) timestamp format as specified in <a href="https://www.rfc-editor.org/rfc/rfc3339#section-5.6">RFC 3339</a>.</p>
     pub fn expires_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -50,19 +52,25 @@ impl CreateAccessTokenInputBuilder {
         self
     }
     /// <p>The date and time the personal access token expires, in coordinated universal time (UTC) timestamp format as specified in <a href="https://www.rfc-editor.org/rfc/rfc3339#section-5.6">RFC 3339</a>.</p>
-    pub fn set_expires_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.expires_time = input; self
+    pub fn set_expires_time(
+        mut self,
+        input: std::option::Option<aws_smithy_types::DateTime>,
+    ) -> Self {
+        self.expires_time = input;
+        self
     }
     /// Consumes the builder and constructs a [`CreateAccessTokenInput`](crate::operation::create_access_token::CreateAccessTokenInput).
-    pub fn build(self) -> Result<crate::operation::create_access_token::CreateAccessTokenInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::create_access_token::CreateAccessTokenInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::create_access_token::CreateAccessTokenInput {
-                name: self.name
-                ,
-                expires_time: self.expires_time
-                ,
-            }
+                name: self.name,
+                expires_time: self.expires_time,
+            },
         )
     }
 }
-

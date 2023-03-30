@@ -3,14 +3,14 @@
 /// <p>The ACM certificate that is used to sign your code.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SigningMaterial  {
+pub struct SigningMaterial {
     /// <p>The Amazon Resource Name (ARN) of the certificates that is used to sign your code.</p>
     #[doc(hidden)]
     pub certificate_arn: std::option::Option<std::string::String>,
 }
 impl SigningMaterial {
     /// <p>The Amazon Resource Name (ARN) of the certificates that is used to sign your code.</p>
-    pub fn certificate_arn(&self) -> std::option::Option<& str> {
+    pub fn certificate_arn(&self) -> std::option::Option<&str> {
         self.certificate_arn.as_deref()
     }
 }
@@ -35,14 +35,13 @@ impl SigningMaterialBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the certificates that is used to sign your code.</p>
     pub fn set_certificate_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.certificate_arn = input; self
+        self.certificate_arn = input;
+        self
     }
     /// Consumes the builder and constructs a [`SigningMaterial`](crate::types::SigningMaterial).
     pub fn build(self) -> crate::types::SigningMaterial {
         crate::types::SigningMaterial {
-            certificate_arn: self.certificate_arn
-            ,
+            certificate_arn: self.certificate_arn,
         }
     }
 }
-

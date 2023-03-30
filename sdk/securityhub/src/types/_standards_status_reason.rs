@@ -3,14 +3,14 @@
 /// <p>The reason for the current status of a standard subscription.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct StandardsStatusReason  {
+pub struct StandardsStatusReason {
     /// <p>The reason code that represents the reason for the current status of a standard subscription.</p>
     #[doc(hidden)]
     pub status_reason_code: std::option::Option<crate::types::StatusReasonCode>,
 }
 impl StandardsStatusReason {
     /// <p>The reason code that represents the reason for the current status of a standard subscription.</p>
-    pub fn status_reason_code(&self) -> std::option::Option<& crate::types::StatusReasonCode> {
+    pub fn status_reason_code(&self) -> std::option::Option<&crate::types::StatusReasonCode> {
         self.status_reason_code.as_ref()
     }
 }
@@ -34,15 +34,17 @@ impl StandardsStatusReasonBuilder {
         self
     }
     /// <p>The reason code that represents the reason for the current status of a standard subscription.</p>
-    pub fn set_status_reason_code(mut self, input: std::option::Option<crate::types::StatusReasonCode>) -> Self {
-        self.status_reason_code = input; self
+    pub fn set_status_reason_code(
+        mut self,
+        input: std::option::Option<crate::types::StatusReasonCode>,
+    ) -> Self {
+        self.status_reason_code = input;
+        self
     }
     /// Consumes the builder and constructs a [`StandardsStatusReason`](crate::types::StandardsStatusReason).
     pub fn build(self) -> crate::types::StandardsStatusReason {
         crate::types::StandardsStatusReason {
-            status_reason_code: self.status_reason_code
-            ,
+            status_reason_code: self.status_reason_code,
         }
     }
 }
-

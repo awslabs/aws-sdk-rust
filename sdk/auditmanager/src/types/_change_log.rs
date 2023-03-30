@@ -3,7 +3,7 @@
 /// <p> The record of a change within Audit Manager. For example, this could be the status change of an assessment or the delegation of a control set. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ChangeLog  {
+pub struct ChangeLog {
     /// <p> The object that was changed, such as an assessment, control, or control set. </p>
     #[doc(hidden)]
     pub object_type: std::option::Option<crate::types::ObjectTypeEnum>,
@@ -22,23 +22,23 @@ pub struct ChangeLog  {
 }
 impl ChangeLog {
     /// <p> The object that was changed, such as an assessment, control, or control set. </p>
-    pub fn object_type(&self) -> std::option::Option<& crate::types::ObjectTypeEnum> {
+    pub fn object_type(&self) -> std::option::Option<&crate::types::ObjectTypeEnum> {
         self.object_type.as_ref()
     }
     /// <p> The name of the object that changed. This could be the name of an assessment, control, or control set.</p>
-    pub fn object_name(&self) -> std::option::Option<& str> {
+    pub fn object_name(&self) -> std::option::Option<&str> {
         self.object_name.as_deref()
     }
     /// <p> The action that was performed. </p>
-    pub fn action(&self) -> std::option::Option<& crate::types::ActionEnum> {
+    pub fn action(&self) -> std::option::Option<&crate::types::ActionEnum> {
         self.action.as_ref()
     }
     /// <p> The time when the action was performed and the changelog record was created. </p>
-    pub fn created_at(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
+    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
     /// <p> The IAM user or role that performed the action. </p>
-    pub fn created_by(&self) -> std::option::Option<& str> {
+    pub fn created_by(&self) -> std::option::Option<&str> {
         self.created_by.as_deref()
     }
 }
@@ -66,8 +66,12 @@ impl ChangeLogBuilder {
         self
     }
     /// <p> The object that was changed, such as an assessment, control, or control set. </p>
-    pub fn set_object_type(mut self, input: std::option::Option<crate::types::ObjectTypeEnum>) -> Self {
-        self.object_type = input; self
+    pub fn set_object_type(
+        mut self,
+        input: std::option::Option<crate::types::ObjectTypeEnum>,
+    ) -> Self {
+        self.object_type = input;
+        self
     }
     /// <p> The name of the object that changed. This could be the name of an assessment, control, or control set.</p>
     pub fn object_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -76,7 +80,8 @@ impl ChangeLogBuilder {
     }
     /// <p> The name of the object that changed. This could be the name of an assessment, control, or control set.</p>
     pub fn set_object_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.object_name = input; self
+        self.object_name = input;
+        self
     }
     /// <p> The action that was performed. </p>
     pub fn action(mut self, input: crate::types::ActionEnum) -> Self {
@@ -85,7 +90,8 @@ impl ChangeLogBuilder {
     }
     /// <p> The action that was performed. </p>
     pub fn set_action(mut self, input: std::option::Option<crate::types::ActionEnum>) -> Self {
-        self.action = input; self
+        self.action = input;
+        self
     }
     /// <p> The time when the action was performed and the changelog record was created. </p>
     pub fn created_at(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -93,8 +99,12 @@ impl ChangeLogBuilder {
         self
     }
     /// <p> The time when the action was performed and the changelog record was created. </p>
-    pub fn set_created_at(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.created_at = input; self
+    pub fn set_created_at(
+        mut self,
+        input: std::option::Option<aws_smithy_types::DateTime>,
+    ) -> Self {
+        self.created_at = input;
+        self
     }
     /// <p> The IAM user or role that performed the action. </p>
     pub fn created_by(mut self, input: impl Into<std::string::String>) -> Self {
@@ -103,22 +113,17 @@ impl ChangeLogBuilder {
     }
     /// <p> The IAM user or role that performed the action. </p>
     pub fn set_created_by(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.created_by = input; self
+        self.created_by = input;
+        self
     }
     /// Consumes the builder and constructs a [`ChangeLog`](crate::types::ChangeLog).
     pub fn build(self) -> crate::types::ChangeLog {
         crate::types::ChangeLog {
-            object_type: self.object_type
-            ,
-            object_name: self.object_name
-            ,
-            action: self.action
-            ,
-            created_at: self.created_at
-            ,
-            created_by: self.created_by
-            ,
+            object_type: self.object_type,
+            object_name: self.object_name,
+            action: self.action,
+            created_at: self.created_at,
+            created_by: self.created_by,
         }
     }
 }
-

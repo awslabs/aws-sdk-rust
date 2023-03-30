@@ -3,14 +3,14 @@
 /// <p>The dynamic value of the resource.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ResourceValue  {
+pub struct ResourceValue {
     /// <p>The value is a resource ID.</p>
     #[doc(hidden)]
     pub value: std::option::Option<crate::types::ResourceValueType>,
 }
 impl ResourceValue {
     /// <p>The value is a resource ID.</p>
-    pub fn value(&self) -> std::option::Option<& crate::types::ResourceValueType> {
+    pub fn value(&self) -> std::option::Option<&crate::types::ResourceValueType> {
         self.value.as_ref()
     }
 }
@@ -34,15 +34,15 @@ impl ResourceValueBuilder {
         self
     }
     /// <p>The value is a resource ID.</p>
-    pub fn set_value(mut self, input: std::option::Option<crate::types::ResourceValueType>) -> Self {
-        self.value = input; self
+    pub fn set_value(
+        mut self,
+        input: std::option::Option<crate::types::ResourceValueType>,
+    ) -> Self {
+        self.value = input;
+        self
     }
     /// Consumes the builder and constructs a [`ResourceValue`](crate::types::ResourceValue).
     pub fn build(self) -> crate::types::ResourceValue {
-        crate::types::ResourceValue {
-            value: self.value
-            ,
-        }
+        crate::types::ResourceValue { value: self.value }
     }
 }
-

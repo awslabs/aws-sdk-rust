@@ -3,7 +3,7 @@
 /// <p>Contains information about the latest version of a component.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ComponentLatestVersion  {
+pub struct ComponentLatestVersion {
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the component version.</p>
     #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
@@ -25,27 +25,27 @@ pub struct ComponentLatestVersion  {
 }
 impl ComponentLatestVersion {
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the component version.</p>
-    pub fn arn(&self) -> std::option::Option<& str> {
+    pub fn arn(&self) -> std::option::Option<&str> {
         self.arn.as_deref()
     }
     /// <p>The version of the component.</p>
-    pub fn component_version(&self) -> std::option::Option<& str> {
+    pub fn component_version(&self) -> std::option::Option<&str> {
         self.component_version.as_deref()
     }
     /// <p>The time at which the component was created, expressed in ISO 8601 format.</p>
-    pub fn creation_timestamp(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
+    pub fn creation_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.creation_timestamp.as_ref()
     }
     /// <p>The description of the component version.</p>
-    pub fn description(&self) -> std::option::Option<& str> {
+    pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
     /// <p>The publisher of the component version.</p>
-    pub fn publisher(&self) -> std::option::Option<& str> {
+    pub fn publisher(&self) -> std::option::Option<&str> {
         self.publisher.as_deref()
     }
     /// <p>The platforms that the component version supports.</p>
-    pub fn platforms(&self) -> std::option::Option<& [crate::types::ComponentPlatform]> {
+    pub fn platforms(&self) -> std::option::Option<&[crate::types::ComponentPlatform]> {
         self.platforms.as_deref()
     }
 }
@@ -75,7 +75,8 @@ impl ComponentLatestVersionBuilder {
     }
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the component version.</p>
     pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.arn = input; self
+        self.arn = input;
+        self
     }
     /// <p>The version of the component.</p>
     pub fn component_version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -83,8 +84,12 @@ impl ComponentLatestVersionBuilder {
         self
     }
     /// <p>The version of the component.</p>
-    pub fn set_component_version(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.component_version = input; self
+    pub fn set_component_version(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.component_version = input;
+        self
     }
     /// <p>The time at which the component was created, expressed in ISO 8601 format.</p>
     pub fn creation_timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -92,8 +97,12 @@ impl ComponentLatestVersionBuilder {
         self
     }
     /// <p>The time at which the component was created, expressed in ISO 8601 format.</p>
-    pub fn set_creation_timestamp(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.creation_timestamp = input; self
+    pub fn set_creation_timestamp(
+        mut self,
+        input: std::option::Option<aws_smithy_types::DateTime>,
+    ) -> Self {
+        self.creation_timestamp = input;
+        self
     }
     /// <p>The description of the component version.</p>
     pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -102,7 +111,8 @@ impl ComponentLatestVersionBuilder {
     }
     /// <p>The description of the component version.</p>
     pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.description = input; self
+        self.description = input;
+        self
     }
     /// <p>The publisher of the component version.</p>
     pub fn publisher(mut self, input: impl Into<std::string::String>) -> Self {
@@ -111,7 +121,8 @@ impl ComponentLatestVersionBuilder {
     }
     /// <p>The publisher of the component version.</p>
     pub fn set_publisher(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.publisher = input; self
+        self.publisher = input;
+        self
     }
     /// Appends an item to `platforms`.
     ///
@@ -120,30 +131,27 @@ impl ComponentLatestVersionBuilder {
     /// <p>The platforms that the component version supports.</p>
     pub fn platforms(mut self, input: crate::types::ComponentPlatform) -> Self {
         let mut v = self.platforms.unwrap_or_default();
-                        v.push(input);
-                        self.platforms = Some(v);
-                        self
+        v.push(input);
+        self.platforms = Some(v);
+        self
     }
     /// <p>The platforms that the component version supports.</p>
-    pub fn set_platforms(mut self, input: std::option::Option<std::vec::Vec<crate::types::ComponentPlatform>>) -> Self {
-        self.platforms = input; self
+    pub fn set_platforms(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::ComponentPlatform>>,
+    ) -> Self {
+        self.platforms = input;
+        self
     }
     /// Consumes the builder and constructs a [`ComponentLatestVersion`](crate::types::ComponentLatestVersion).
     pub fn build(self) -> crate::types::ComponentLatestVersion {
         crate::types::ComponentLatestVersion {
-            arn: self.arn
-            ,
-            component_version: self.component_version
-            ,
-            creation_timestamp: self.creation_timestamp
-            ,
-            description: self.description
-            ,
-            publisher: self.publisher
-            ,
-            platforms: self.platforms
-            ,
+            arn: self.arn,
+            component_version: self.component_version,
+            creation_timestamp: self.creation_timestamp,
+            description: self.description,
+            publisher: self.publisher,
+            platforms: self.platforms,
         }
     }
 }
-

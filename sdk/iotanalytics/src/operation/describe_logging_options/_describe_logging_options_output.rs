@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeLoggingOptionsOutput  {
+pub struct DescribeLoggingOptionsOutput {
     /// <p>The current settings of the IoT Analytics logging options.</p>
     #[doc(hidden)]
     pub logging_options: std::option::Option<crate::types::LoggingOptions>,
@@ -10,18 +10,20 @@ pub struct DescribeLoggingOptionsOutput  {
 }
 impl DescribeLoggingOptionsOutput {
     /// <p>The current settings of the IoT Analytics logging options.</p>
-    pub fn logging_options(&self) -> std::option::Option<& crate::types::LoggingOptions> {
+    pub fn logging_options(&self) -> std::option::Option<&crate::types::LoggingOptions> {
         self.logging_options.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for DescribeLoggingOptionsOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl DescribeLoggingOptionsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeLoggingOptionsOutput`](crate::operation::describe_logging_options::DescribeLoggingOptionsOutput).
-    pub fn builder() -> crate::operation::describe_logging_options::builders::DescribeLoggingOptionsOutputBuilder {
+    pub fn builder(
+    ) -> crate::operation::describe_logging_options::builders::DescribeLoggingOptionsOutputBuilder
+    {
         crate::operation::describe_logging_options::builders::DescribeLoggingOptionsOutputBuilder::default()
     }
 }
@@ -40,25 +42,27 @@ impl DescribeLoggingOptionsOutputBuilder {
         self
     }
     /// <p>The current settings of the IoT Analytics logging options.</p>
-    pub fn set_logging_options(mut self, input: std::option::Option<crate::types::LoggingOptions>) -> Self {
-        self.logging_options = input; self
+    pub fn set_logging_options(
+        mut self,
+        input: std::option::Option<crate::types::LoggingOptions>,
+    ) -> Self {
+        self.logging_options = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`DescribeLoggingOptionsOutput`](crate::operation::describe_logging_options::DescribeLoggingOptionsOutput).
     pub fn build(self) -> crate::operation::describe_logging_options::DescribeLoggingOptionsOutput {
         crate::operation::describe_logging_options::DescribeLoggingOptionsOutput {
-            logging_options: self.logging_options
-            ,
+            logging_options: self.logging_options,
             _request_id: self._request_id,
         }
     }
 }
-

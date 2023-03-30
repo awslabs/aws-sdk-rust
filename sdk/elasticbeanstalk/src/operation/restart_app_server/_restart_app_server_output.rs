@@ -2,17 +2,18 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct RestartAppServerOutput  {
+pub struct RestartAppServerOutput {
     _request_id: Option<String>,
 }
 impl aws_http::request_id::RequestId for RestartAppServerOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl RestartAppServerOutput {
     /// Creates a new builder-style object to manufacture [`RestartAppServerOutput`](crate::operation::restart_app_server::RestartAppServerOutput).
-    pub fn builder() -> crate::operation::restart_app_server::builders::RestartAppServerOutputBuilder {
+    pub fn builder() -> crate::operation::restart_app_server::builders::RestartAppServerOutputBuilder
+    {
         crate::operation::restart_app_server::builders::RestartAppServerOutputBuilder::default()
     }
 }
@@ -25,14 +26,14 @@ pub struct RestartAppServerOutputBuilder {
 }
 impl RestartAppServerOutputBuilder {
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`RestartAppServerOutput`](crate::operation::restart_app_server::RestartAppServerOutput).
     pub fn build(self) -> crate::operation::restart_app_server::RestartAppServerOutput {
         crate::operation::restart_app_server::RestartAppServerOutput {
@@ -40,4 +41,3 @@ impl RestartAppServerOutputBuilder {
         }
     }
 }
-

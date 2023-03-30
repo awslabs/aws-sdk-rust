@@ -2,20 +2,21 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetTelemetryMetadataInput  {
+pub struct GetTelemetryMetadataInput {
     /// <p>The ARN that specifies the assessment run that has the telemetry data that you want to obtain.</p>
     #[doc(hidden)]
     pub assessment_run_arn: std::option::Option<std::string::String>,
 }
 impl GetTelemetryMetadataInput {
     /// <p>The ARN that specifies the assessment run that has the telemetry data that you want to obtain.</p>
-    pub fn assessment_run_arn(&self) -> std::option::Option<& str> {
+    pub fn assessment_run_arn(&self) -> std::option::Option<&str> {
         self.assessment_run_arn.as_deref()
     }
 }
 impl GetTelemetryMetadataInput {
     /// Creates a new builder-style object to manufacture [`GetTelemetryMetadataInput`](crate::operation::get_telemetry_metadata::GetTelemetryMetadataInput).
-    pub fn builder() -> crate::operation::get_telemetry_metadata::builders::GetTelemetryMetadataInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::get_telemetry_metadata::builders::GetTelemetryMetadataInputBuilder {
         crate::operation::get_telemetry_metadata::builders::GetTelemetryMetadataInputBuilder::default()
     }
 }
@@ -33,17 +34,24 @@ impl GetTelemetryMetadataInputBuilder {
         self
     }
     /// <p>The ARN that specifies the assessment run that has the telemetry data that you want to obtain.</p>
-    pub fn set_assessment_run_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.assessment_run_arn = input; self
+    pub fn set_assessment_run_arn(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.assessment_run_arn = input;
+        self
     }
     /// Consumes the builder and constructs a [`GetTelemetryMetadataInput`](crate::operation::get_telemetry_metadata::GetTelemetryMetadataInput).
-    pub fn build(self) -> Result<crate::operation::get_telemetry_metadata::GetTelemetryMetadataInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::get_telemetry_metadata::GetTelemetryMetadataInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::get_telemetry_metadata::GetTelemetryMetadataInput {
-                assessment_run_arn: self.assessment_run_arn
-                ,
-            }
+                assessment_run_arn: self.assessment_run_arn,
+            },
         )
     }
 }
-

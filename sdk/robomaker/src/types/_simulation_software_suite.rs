@@ -3,7 +3,7 @@
 /// <p>Information about a simulation software suite.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SimulationSoftwareSuite  {
+pub struct SimulationSoftwareSuite {
     /// <p>The name of the simulation software suite.</p>
     #[doc(hidden)]
     pub name: std::option::Option<crate::types::SimulationSoftwareSuiteType>,
@@ -13,11 +13,11 @@ pub struct SimulationSoftwareSuite  {
 }
 impl SimulationSoftwareSuite {
     /// <p>The name of the simulation software suite.</p>
-    pub fn name(&self) -> std::option::Option<& crate::types::SimulationSoftwareSuiteType> {
+    pub fn name(&self) -> std::option::Option<&crate::types::SimulationSoftwareSuiteType> {
         self.name.as_ref()
     }
     /// <p>The version of the simulation software suite.</p>
-    pub fn version(&self) -> std::option::Option<& str> {
+    pub fn version(&self) -> std::option::Option<&str> {
         self.version.as_deref()
     }
 }
@@ -42,8 +42,12 @@ impl SimulationSoftwareSuiteBuilder {
         self
     }
     /// <p>The name of the simulation software suite.</p>
-    pub fn set_name(mut self, input: std::option::Option<crate::types::SimulationSoftwareSuiteType>) -> Self {
-        self.name = input; self
+    pub fn set_name(
+        mut self,
+        input: std::option::Option<crate::types::SimulationSoftwareSuiteType>,
+    ) -> Self {
+        self.name = input;
+        self
     }
     /// <p>The version of the simulation software suite.</p>
     pub fn version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -52,16 +56,14 @@ impl SimulationSoftwareSuiteBuilder {
     }
     /// <p>The version of the simulation software suite.</p>
     pub fn set_version(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.version = input; self
+        self.version = input;
+        self
     }
     /// Consumes the builder and constructs a [`SimulationSoftwareSuite`](crate::types::SimulationSoftwareSuite).
     pub fn build(self) -> crate::types::SimulationSoftwareSuite {
         crate::types::SimulationSoftwareSuite {
-            name: self.name
-            ,
-            version: self.version
-            ,
+            name: self.name,
+            version: self.version,
         }
     }
 }
-

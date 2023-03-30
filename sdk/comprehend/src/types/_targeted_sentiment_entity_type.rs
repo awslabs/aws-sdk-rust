@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-/// 
+///
 /// Here is an example of how you can make a match expression forward-compatible:
-/// 
+///
 /// ```text
 /// # let targetedsentimententitytype = unimplemented!();
 /// match targetedsentimententitytype {
@@ -45,14 +45,22 @@
 /// Specifically, when `targetedsentimententitytype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `TargetedSentimentEntityType::NewFeature` also yielding `"NewFeature"`.
-/// 
+///
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
 pub enum TargetedSentimentEntityType {
     #[allow(missing_docs)] // documentation missing in model
     Attribute,
@@ -89,71 +97,90 @@ pub enum TargetedSentimentEntityType {
     #[allow(missing_docs)] // documentation missing in model
     Software,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::primitives::UnknownVariantValue)
+    Unknown(crate::primitives::UnknownVariantValue),
 }
 impl std::convert::From<&str> for TargetedSentimentEntityType {
-                fn from(s: &str) -> Self {
-                    match s {
-                        "ATTRIBUTE" => TargetedSentimentEntityType::Attribute,
-"BOOK" => TargetedSentimentEntityType::Book,
-"BRAND" => TargetedSentimentEntityType::Brand,
-"COMMERCIAL_ITEM" => TargetedSentimentEntityType::CommercialItem,
-"DATE" => TargetedSentimentEntityType::Date,
-"EVENT" => TargetedSentimentEntityType::Event,
-"FACILITY" => TargetedSentimentEntityType::Facility,
-"GAME" => TargetedSentimentEntityType::Game,
-"LOCATION" => TargetedSentimentEntityType::Location,
-"MOVIE" => TargetedSentimentEntityType::Movie,
-"MUSIC" => TargetedSentimentEntityType::Music,
-"ORGANIZATION" => TargetedSentimentEntityType::Organization,
-"OTHER" => TargetedSentimentEntityType::Other,
-"PERSON" => TargetedSentimentEntityType::Person,
-"PERSONAL_TITLE" => TargetedSentimentEntityType::PersonalTitle,
-"QUANTITY" => TargetedSentimentEntityType::Quantity,
-"SOFTWARE" => TargetedSentimentEntityType::Software,
-other => TargetedSentimentEntityType::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
-                    }
-                }
-            }
-impl std::str::FromStr for TargetedSentimentEntityType {
-                type Err = std::convert::Infallible;
-
-                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-                    Ok(TargetedSentimentEntityType::from(s))
-                }
-            }
-impl TargetedSentimentEntityType {
-                /// Returns the `&str` value of the enum member.
-                pub fn as_str(&self) -> &str {
-                    match self {
-    TargetedSentimentEntityType::Attribute => "ATTRIBUTE",
-    TargetedSentimentEntityType::Book => "BOOK",
-    TargetedSentimentEntityType::Brand => "BRAND",
-    TargetedSentimentEntityType::CommercialItem => "COMMERCIAL_ITEM",
-    TargetedSentimentEntityType::Date => "DATE",
-    TargetedSentimentEntityType::Event => "EVENT",
-    TargetedSentimentEntityType::Facility => "FACILITY",
-    TargetedSentimentEntityType::Game => "GAME",
-    TargetedSentimentEntityType::Location => "LOCATION",
-    TargetedSentimentEntityType::Movie => "MOVIE",
-    TargetedSentimentEntityType::Music => "MUSIC",
-    TargetedSentimentEntityType::Organization => "ORGANIZATION",
-    TargetedSentimentEntityType::Other => "OTHER",
-    TargetedSentimentEntityType::Person => "PERSON",
-    TargetedSentimentEntityType::PersonalTitle => "PERSONAL_TITLE",
-    TargetedSentimentEntityType::Quantity => "QUANTITY",
-    TargetedSentimentEntityType::Software => "SOFTWARE",
-    TargetedSentimentEntityType::Unknown(value) => value.as_str()
+    fn from(s: &str) -> Self {
+        match s {
+            "ATTRIBUTE" => TargetedSentimentEntityType::Attribute,
+            "BOOK" => TargetedSentimentEntityType::Book,
+            "BRAND" => TargetedSentimentEntityType::Brand,
+            "COMMERCIAL_ITEM" => TargetedSentimentEntityType::CommercialItem,
+            "DATE" => TargetedSentimentEntityType::Date,
+            "EVENT" => TargetedSentimentEntityType::Event,
+            "FACILITY" => TargetedSentimentEntityType::Facility,
+            "GAME" => TargetedSentimentEntityType::Game,
+            "LOCATION" => TargetedSentimentEntityType::Location,
+            "MOVIE" => TargetedSentimentEntityType::Movie,
+            "MUSIC" => TargetedSentimentEntityType::Music,
+            "ORGANIZATION" => TargetedSentimentEntityType::Organization,
+            "OTHER" => TargetedSentimentEntityType::Other,
+            "PERSON" => TargetedSentimentEntityType::Person,
+            "PERSONAL_TITLE" => TargetedSentimentEntityType::PersonalTitle,
+            "QUANTITY" => TargetedSentimentEntityType::Quantity,
+            "SOFTWARE" => TargetedSentimentEntityType::Software,
+            other => TargetedSentimentEntityType::Unknown(crate::primitives::UnknownVariantValue(
+                other.to_owned(),
+            )),
+        }
+    }
 }
-                }
-                /// Returns all the `&str` representations of the enum members.
-                pub const fn values() -> &'static [&'static str] {
-                    &["ATTRIBUTE", "BOOK", "BRAND", "COMMERCIAL_ITEM", "DATE", "EVENT", "FACILITY", "GAME", "LOCATION", "MOVIE", "MUSIC", "ORGANIZATION", "OTHER", "PERSON", "PERSONAL_TITLE", "QUANTITY", "SOFTWARE"]
-                }
-            }
-impl AsRef<str> for TargetedSentimentEntityType {
-                fn as_ref(&self) -> &str {
-                    self.as_str()
-                }
-            }
+impl std::str::FromStr for TargetedSentimentEntityType {
+    type Err = std::convert::Infallible;
 
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(TargetedSentimentEntityType::from(s))
+    }
+}
+impl TargetedSentimentEntityType {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            TargetedSentimentEntityType::Attribute => "ATTRIBUTE",
+            TargetedSentimentEntityType::Book => "BOOK",
+            TargetedSentimentEntityType::Brand => "BRAND",
+            TargetedSentimentEntityType::CommercialItem => "COMMERCIAL_ITEM",
+            TargetedSentimentEntityType::Date => "DATE",
+            TargetedSentimentEntityType::Event => "EVENT",
+            TargetedSentimentEntityType::Facility => "FACILITY",
+            TargetedSentimentEntityType::Game => "GAME",
+            TargetedSentimentEntityType::Location => "LOCATION",
+            TargetedSentimentEntityType::Movie => "MOVIE",
+            TargetedSentimentEntityType::Music => "MUSIC",
+            TargetedSentimentEntityType::Organization => "ORGANIZATION",
+            TargetedSentimentEntityType::Other => "OTHER",
+            TargetedSentimentEntityType::Person => "PERSON",
+            TargetedSentimentEntityType::PersonalTitle => "PERSONAL_TITLE",
+            TargetedSentimentEntityType::Quantity => "QUANTITY",
+            TargetedSentimentEntityType::Software => "SOFTWARE",
+            TargetedSentimentEntityType::Unknown(value) => value.as_str(),
+        }
+    }
+    /// Returns all the `&str` representations of the enum members.
+    pub const fn values() -> &'static [&'static str] {
+        &[
+            "ATTRIBUTE",
+            "BOOK",
+            "BRAND",
+            "COMMERCIAL_ITEM",
+            "DATE",
+            "EVENT",
+            "FACILITY",
+            "GAME",
+            "LOCATION",
+            "MOVIE",
+            "MUSIC",
+            "ORGANIZATION",
+            "OTHER",
+            "PERSON",
+            "PERSONAL_TITLE",
+            "QUANTITY",
+            "SOFTWARE",
+        ]
+    }
+}
+impl AsRef<str> for TargetedSentimentEntityType {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}

@@ -3,7 +3,7 @@
 /// <p>Contains metadata for a table.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct TableMetadata  {
+pub struct TableMetadata {
     /// <p>The name of the table.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -24,35 +24,39 @@ pub struct TableMetadata  {
     pub partition_keys: std::option::Option<std::vec::Vec<crate::types::Column>>,
     /// <p>A set of custom key/value pairs for table properties.</p>
     #[doc(hidden)]
-    pub parameters: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub parameters:
+        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl TableMetadata {
     /// <p>The name of the table.</p>
-    pub fn name(&self) -> std::option::Option<& str> {
+    pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>The time that the table was created.</p>
-    pub fn create_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
+    pub fn create_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.create_time.as_ref()
     }
     /// <p>The last time the table was accessed.</p>
-    pub fn last_access_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
+    pub fn last_access_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_access_time.as_ref()
     }
     /// <p>The type of table. In Athena, only <code>EXTERNAL_TABLE</code> is supported.</p>
-    pub fn table_type(&self) -> std::option::Option<& str> {
+    pub fn table_type(&self) -> std::option::Option<&str> {
         self.table_type.as_deref()
     }
     /// <p>A list of the columns in the table.</p>
-    pub fn columns(&self) -> std::option::Option<& [crate::types::Column]> {
+    pub fn columns(&self) -> std::option::Option<&[crate::types::Column]> {
         self.columns.as_deref()
     }
     /// <p>A list of the partition keys in the table.</p>
-    pub fn partition_keys(&self) -> std::option::Option<& [crate::types::Column]> {
+    pub fn partition_keys(&self) -> std::option::Option<&[crate::types::Column]> {
         self.partition_keys.as_deref()
     }
     /// <p>A set of custom key/value pairs for table properties.</p>
-    pub fn parameters(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
+    pub fn parameters(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
         self.parameters.as_ref()
     }
 }
@@ -73,7 +77,8 @@ pub struct TableMetadataBuilder {
     pub(crate) table_type: std::option::Option<std::string::String>,
     pub(crate) columns: std::option::Option<std::vec::Vec<crate::types::Column>>,
     pub(crate) partition_keys: std::option::Option<std::vec::Vec<crate::types::Column>>,
-    pub(crate) parameters: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub(crate) parameters:
+        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl TableMetadataBuilder {
     /// <p>The name of the table.</p>
@@ -83,7 +88,8 @@ impl TableMetadataBuilder {
     }
     /// <p>The name of the table.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input; self
+        self.name = input;
+        self
     }
     /// <p>The time that the table was created.</p>
     pub fn create_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -91,8 +97,12 @@ impl TableMetadataBuilder {
         self
     }
     /// <p>The time that the table was created.</p>
-    pub fn set_create_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.create_time = input; self
+    pub fn set_create_time(
+        mut self,
+        input: std::option::Option<aws_smithy_types::DateTime>,
+    ) -> Self {
+        self.create_time = input;
+        self
     }
     /// <p>The last time the table was accessed.</p>
     pub fn last_access_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -100,8 +110,12 @@ impl TableMetadataBuilder {
         self
     }
     /// <p>The last time the table was accessed.</p>
-    pub fn set_last_access_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.last_access_time = input; self
+    pub fn set_last_access_time(
+        mut self,
+        input: std::option::Option<aws_smithy_types::DateTime>,
+    ) -> Self {
+        self.last_access_time = input;
+        self
     }
     /// <p>The type of table. In Athena, only <code>EXTERNAL_TABLE</code> is supported.</p>
     pub fn table_type(mut self, input: impl Into<std::string::String>) -> Self {
@@ -110,7 +124,8 @@ impl TableMetadataBuilder {
     }
     /// <p>The type of table. In Athena, only <code>EXTERNAL_TABLE</code> is supported.</p>
     pub fn set_table_type(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.table_type = input; self
+        self.table_type = input;
+        self
     }
     /// Appends an item to `columns`.
     ///
@@ -119,13 +134,17 @@ impl TableMetadataBuilder {
     /// <p>A list of the columns in the table.</p>
     pub fn columns(mut self, input: crate::types::Column) -> Self {
         let mut v = self.columns.unwrap_or_default();
-                        v.push(input);
-                        self.columns = Some(v);
-                        self
+        v.push(input);
+        self.columns = Some(v);
+        self
     }
     /// <p>A list of the columns in the table.</p>
-    pub fn set_columns(mut self, input: std::option::Option<std::vec::Vec<crate::types::Column>>) -> Self {
-        self.columns = input; self
+    pub fn set_columns(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::Column>>,
+    ) -> Self {
+        self.columns = input;
+        self
     }
     /// Appends an item to `partition_keys`.
     ///
@@ -134,47 +153,53 @@ impl TableMetadataBuilder {
     /// <p>A list of the partition keys in the table.</p>
     pub fn partition_keys(mut self, input: crate::types::Column) -> Self {
         let mut v = self.partition_keys.unwrap_or_default();
-                        v.push(input);
-                        self.partition_keys = Some(v);
-                        self
+        v.push(input);
+        self.partition_keys = Some(v);
+        self
     }
     /// <p>A list of the partition keys in the table.</p>
-    pub fn set_partition_keys(mut self, input: std::option::Option<std::vec::Vec<crate::types::Column>>) -> Self {
-        self.partition_keys = input; self
+    pub fn set_partition_keys(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::Column>>,
+    ) -> Self {
+        self.partition_keys = input;
+        self
     }
     /// Adds a key-value pair to `parameters`.
     ///
     /// To override the contents of this collection use [`set_parameters`](Self::set_parameters).
     ///
     /// <p>A set of custom key/value pairs for table properties.</p>
-    pub fn parameters(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
+    pub fn parameters(
+        mut self,
+        k: impl Into<std::string::String>,
+        v: impl Into<std::string::String>,
+    ) -> Self {
         let mut hash_map = self.parameters.unwrap_or_default();
-                        hash_map.insert(k.into(), v.into());
-                        self.parameters = Some(hash_map);
-                        self
+        hash_map.insert(k.into(), v.into());
+        self.parameters = Some(hash_map);
+        self
     }
     /// <p>A set of custom key/value pairs for table properties.</p>
-    pub fn set_parameters(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
-        self.parameters = input; self
+    pub fn set_parameters(
+        mut self,
+        input: std::option::Option<
+            std::collections::HashMap<std::string::String, std::string::String>,
+        >,
+    ) -> Self {
+        self.parameters = input;
+        self
     }
     /// Consumes the builder and constructs a [`TableMetadata`](crate::types::TableMetadata).
     pub fn build(self) -> crate::types::TableMetadata {
         crate::types::TableMetadata {
-            name: self.name
-            ,
-            create_time: self.create_time
-            ,
-            last_access_time: self.last_access_time
-            ,
-            table_type: self.table_type
-            ,
-            columns: self.columns
-            ,
-            partition_keys: self.partition_keys
-            ,
-            parameters: self.parameters
-            ,
+            name: self.name,
+            create_time: self.create_time,
+            last_access_time: self.last_access_time,
+            table_type: self.table_type,
+            columns: self.columns,
+            partition_keys: self.partition_keys,
+            parameters: self.parameters,
         }
     }
 }
-

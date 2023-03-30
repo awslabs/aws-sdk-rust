@@ -2,20 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetVoiceConnectorGroupInput  {
+pub struct GetVoiceConnectorGroupInput {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub voice_connector_group_id: std::option::Option<std::string::String>,
 }
 impl GetVoiceConnectorGroupInput {
     #[allow(missing_docs)] // documentation missing in model
-    pub fn voice_connector_group_id(&self) -> std::option::Option<& str> {
+    pub fn voice_connector_group_id(&self) -> std::option::Option<&str> {
         self.voice_connector_group_id.as_deref()
     }
 }
 impl GetVoiceConnectorGroupInput {
     /// Creates a new builder-style object to manufacture [`GetVoiceConnectorGroupInput`](crate::operation::get_voice_connector_group::GetVoiceConnectorGroupInput).
-    pub fn builder() -> crate::operation::get_voice_connector_group::builders::GetVoiceConnectorGroupInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::get_voice_connector_group::builders::GetVoiceConnectorGroupInputBuilder
+    {
         crate::operation::get_voice_connector_group::builders::GetVoiceConnectorGroupInputBuilder::default()
     }
 }
@@ -33,17 +35,24 @@ impl GetVoiceConnectorGroupInputBuilder {
         self
     }
     #[allow(missing_docs)] // documentation missing in model
-    pub fn set_voice_connector_group_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.voice_connector_group_id = input; self
+    pub fn set_voice_connector_group_id(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.voice_connector_group_id = input;
+        self
     }
     /// Consumes the builder and constructs a [`GetVoiceConnectorGroupInput`](crate::operation::get_voice_connector_group::GetVoiceConnectorGroupInput).
-    pub fn build(self) -> Result<crate::operation::get_voice_connector_group::GetVoiceConnectorGroupInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::get_voice_connector_group::GetVoiceConnectorGroupInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::get_voice_connector_group::GetVoiceConnectorGroupInput {
-                voice_connector_group_id: self.voice_connector_group_id
-                ,
-            }
+                voice_connector_group_id: self.voice_connector_group_id,
+            },
         )
     }
 }
-

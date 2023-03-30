@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetWirelessGatewayCertificateOutput  {
+pub struct GetWirelessGatewayCertificateOutput {
     /// <p>The ID of the certificate associated with the wireless gateway.</p>
     #[doc(hidden)]
     pub iot_certificate_id: std::option::Option<std::string::String>,
@@ -13,22 +13,22 @@ pub struct GetWirelessGatewayCertificateOutput  {
 }
 impl GetWirelessGatewayCertificateOutput {
     /// <p>The ID of the certificate associated with the wireless gateway.</p>
-    pub fn iot_certificate_id(&self) -> std::option::Option<& str> {
+    pub fn iot_certificate_id(&self) -> std::option::Option<&str> {
         self.iot_certificate_id.as_deref()
     }
     /// <p>The ID of the certificate that is associated with the wireless gateway and used for the LoRaWANNetworkServer endpoint.</p>
-    pub fn lo_ra_wan_network_server_certificate_id(&self) -> std::option::Option<& str> {
+    pub fn lo_ra_wan_network_server_certificate_id(&self) -> std::option::Option<&str> {
         self.lo_ra_wan_network_server_certificate_id.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for GetWirelessGatewayCertificateOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl GetWirelessGatewayCertificateOutput {
     /// Creates a new builder-style object to manufacture [`GetWirelessGatewayCertificateOutput`](crate::operation::get_wireless_gateway_certificate::GetWirelessGatewayCertificateOutput).
-    pub fn builder() -> crate::operation::get_wireless_gateway_certificate::builders::GetWirelessGatewayCertificateOutputBuilder {
+    pub fn builder() -> crate::operation::get_wireless_gateway_certificate::builders::GetWirelessGatewayCertificateOutputBuilder{
         crate::operation::get_wireless_gateway_certificate::builders::GetWirelessGatewayCertificateOutputBuilder::default()
     }
 }
@@ -48,36 +48,47 @@ impl GetWirelessGatewayCertificateOutputBuilder {
         self
     }
     /// <p>The ID of the certificate associated with the wireless gateway.</p>
-    pub fn set_iot_certificate_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.iot_certificate_id = input; self
+    pub fn set_iot_certificate_id(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.iot_certificate_id = input;
+        self
     }
     /// <p>The ID of the certificate that is associated with the wireless gateway and used for the LoRaWANNetworkServer endpoint.</p>
-    pub fn lo_ra_wan_network_server_certificate_id(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn lo_ra_wan_network_server_certificate_id(
+        mut self,
+        input: impl Into<std::string::String>,
+    ) -> Self {
         self.lo_ra_wan_network_server_certificate_id = Some(input.into());
         self
     }
     /// <p>The ID of the certificate that is associated with the wireless gateway and used for the LoRaWANNetworkServer endpoint.</p>
-    pub fn set_lo_ra_wan_network_server_certificate_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.lo_ra_wan_network_server_certificate_id = input; self
+    pub fn set_lo_ra_wan_network_server_certificate_id(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.lo_ra_wan_network_server_certificate_id = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`GetWirelessGatewayCertificateOutput`](crate::operation::get_wireless_gateway_certificate::GetWirelessGatewayCertificateOutput).
-    pub fn build(self) -> crate::operation::get_wireless_gateway_certificate::GetWirelessGatewayCertificateOutput {
+    pub fn build(
+        self,
+    ) -> crate::operation::get_wireless_gateway_certificate::GetWirelessGatewayCertificateOutput
+    {
         crate::operation::get_wireless_gateway_certificate::GetWirelessGatewayCertificateOutput {
-            iot_certificate_id: self.iot_certificate_id
-            ,
-            lo_ra_wan_network_server_certificate_id: self.lo_ra_wan_network_server_certificate_id
-            ,
+            iot_certificate_id: self.iot_certificate_id,
+            lo_ra_wan_network_server_certificate_id: self.lo_ra_wan_network_server_certificate_id,
             _request_id: self._request_id,
         }
     }
 }
-

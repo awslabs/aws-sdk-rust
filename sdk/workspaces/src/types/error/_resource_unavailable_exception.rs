@@ -3,7 +3,7 @@
 /// <p>The specified resource is not available.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ResourceUnavailableException  {
+pub struct ResourceUnavailableException {
     /// <p>The exception error message.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
@@ -14,19 +14,21 @@ pub struct ResourceUnavailableException  {
 }
 impl ResourceUnavailableException {
     /// <p>The identifier of the resource that is not available.</p>
-    pub fn resource_id(&self) -> std::option::Option<& str> {
+    pub fn resource_id(&self) -> std::option::Option<&str> {
         self.resource_id.as_deref()
     }
 }
 impl ResourceUnavailableException {
     /// Returns the error message.
-                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
+    pub fn message(&self) -> std::option::Option<&str> {
+        self.message.as_deref()
+    }
 }
 impl std::fmt::Display for ResourceUnavailableException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "ResourceUnavailableException")?;
         if let Some(inner_1) = &self.message {
-             {
+            {
                 write!(f, ": {}", inner_1)?;
             }
         }
@@ -41,7 +43,9 @@ impl aws_http::request_id::RequestId for crate::types::error::ResourceUnavailabl
     }
 }
 impl aws_smithy_types::error::metadata::ProvideErrorMetadata for ResourceUnavailableException {
-    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata { &self.meta }
+    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
+        &self.meta
+    }
 }
 impl ResourceUnavailableException {
     /// Creates a new builder-style object to manufacture [`ResourceUnavailableException`](crate::types::error::ResourceUnavailableException).
@@ -66,7 +70,8 @@ impl ResourceUnavailableExceptionBuilder {
     }
     /// <p>The exception error message.</p>
     pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.message = input; self
+        self.message = input;
+        self
     }
     /// <p>The identifier of the resource that is not available.</p>
     pub fn resource_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -75,28 +80,29 @@ impl ResourceUnavailableExceptionBuilder {
     }
     /// <p>The identifier of the resource that is not available.</p>
     pub fn set_resource_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.resource_id = input; self
+        self.resource_id = input;
+        self
     }
     /// Sets error metadata
-                                            pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
-                                                self.meta = Some(meta);
-                                                self
-                                            }
-    
-                                            /// Sets error metadata
-                                            pub fn set_meta(&mut self, meta: std::option::Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
-                                                self.meta = meta;
-                                                self
-                                            }
+    pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
+        self.meta = Some(meta);
+        self
+    }
+
+    /// Sets error metadata
+    pub fn set_meta(
+        &mut self,
+        meta: std::option::Option<aws_smithy_types::error::ErrorMetadata>,
+    ) -> &mut Self {
+        self.meta = meta;
+        self
+    }
     /// Consumes the builder and constructs a [`ResourceUnavailableException`](crate::types::error::ResourceUnavailableException).
     pub fn build(self) -> crate::types::error::ResourceUnavailableException {
         crate::types::error::ResourceUnavailableException {
-            message: self.message
-            ,
-            resource_id: self.resource_id
-            ,
+            message: self.message,
+            resource_id: self.resource_id,
             meta: self.meta.unwrap_or_default(),
         }
     }
 }
-

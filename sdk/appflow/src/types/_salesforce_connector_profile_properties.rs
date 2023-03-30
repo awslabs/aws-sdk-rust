@@ -3,7 +3,7 @@
 /// <p> The connector-specific profile properties required when using Salesforce. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SalesforceConnectorProfileProperties  {
+pub struct SalesforceConnectorProfileProperties {
     /// <p> The location of the Salesforce resource. </p>
     #[doc(hidden)]
     pub instance_url: std::option::Option<std::string::String>,
@@ -13,7 +13,7 @@ pub struct SalesforceConnectorProfileProperties  {
 }
 impl SalesforceConnectorProfileProperties {
     /// <p> The location of the Salesforce resource. </p>
-    pub fn instance_url(&self) -> std::option::Option<& str> {
+    pub fn instance_url(&self) -> std::option::Option<&str> {
         self.instance_url.as_deref()
     }
     /// <p> Indicates whether the connector profile applies to a sandbox or production environment. </p>
@@ -43,7 +43,8 @@ impl SalesforceConnectorProfilePropertiesBuilder {
     }
     /// <p> The location of the Salesforce resource. </p>
     pub fn set_instance_url(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.instance_url = input; self
+        self.instance_url = input;
+        self
     }
     /// <p> Indicates whether the connector profile applies to a sandbox or production environment. </p>
     pub fn is_sandbox_environment(mut self, input: bool) -> Self {
@@ -52,17 +53,14 @@ impl SalesforceConnectorProfilePropertiesBuilder {
     }
     /// <p> Indicates whether the connector profile applies to a sandbox or production environment. </p>
     pub fn set_is_sandbox_environment(mut self, input: std::option::Option<bool>) -> Self {
-        self.is_sandbox_environment = input; self
+        self.is_sandbox_environment = input;
+        self
     }
     /// Consumes the builder and constructs a [`SalesforceConnectorProfileProperties`](crate::types::SalesforceConnectorProfileProperties).
     pub fn build(self) -> crate::types::SalesforceConnectorProfileProperties {
         crate::types::SalesforceConnectorProfileProperties {
-            instance_url: self.instance_url
-            ,
-            is_sandbox_environment: self.is_sandbox_environment
-                .unwrap_or_default()
-            ,
+            instance_url: self.instance_url,
+            is_sandbox_environment: self.is_sandbox_environment.unwrap_or_default(),
         }
     }
 }
-

@@ -20,4 +20,3 @@ pub use crate::types::error::_external_service_exception::ExternalServiceExcepti
 pub use crate::types::error::_developer_user_already_registered_exception::DeveloperUserAlreadyRegisteredExceptionBuilder;
 
 pub use crate::types::error::_invalid_identity_pool_configuration_exception::InvalidIdentityPoolConfigurationExceptionBuilder;
-

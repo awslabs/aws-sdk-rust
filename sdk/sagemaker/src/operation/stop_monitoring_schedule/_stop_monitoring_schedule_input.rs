@@ -2,20 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct StopMonitoringScheduleInput  {
+pub struct StopMonitoringScheduleInput {
     /// <p>The name of the schedule to stop.</p>
     #[doc(hidden)]
     pub monitoring_schedule_name: std::option::Option<std::string::String>,
 }
 impl StopMonitoringScheduleInput {
     /// <p>The name of the schedule to stop.</p>
-    pub fn monitoring_schedule_name(&self) -> std::option::Option<& str> {
+    pub fn monitoring_schedule_name(&self) -> std::option::Option<&str> {
         self.monitoring_schedule_name.as_deref()
     }
 }
 impl StopMonitoringScheduleInput {
     /// Creates a new builder-style object to manufacture [`StopMonitoringScheduleInput`](crate::operation::stop_monitoring_schedule::StopMonitoringScheduleInput).
-    pub fn builder() -> crate::operation::stop_monitoring_schedule::builders::StopMonitoringScheduleInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::stop_monitoring_schedule::builders::StopMonitoringScheduleInputBuilder
+    {
         crate::operation::stop_monitoring_schedule::builders::StopMonitoringScheduleInputBuilder::default()
     }
 }
@@ -33,17 +35,24 @@ impl StopMonitoringScheduleInputBuilder {
         self
     }
     /// <p>The name of the schedule to stop.</p>
-    pub fn set_monitoring_schedule_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.monitoring_schedule_name = input; self
+    pub fn set_monitoring_schedule_name(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.monitoring_schedule_name = input;
+        self
     }
     /// Consumes the builder and constructs a [`StopMonitoringScheduleInput`](crate::operation::stop_monitoring_schedule::StopMonitoringScheduleInput).
-    pub fn build(self) -> Result<crate::operation::stop_monitoring_schedule::StopMonitoringScheduleInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::stop_monitoring_schedule::StopMonitoringScheduleInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::stop_monitoring_schedule::StopMonitoringScheduleInput {
-                monitoring_schedule_name: self.monitoring_schedule_name
-                ,
-            }
+                monitoring_schedule_name: self.monitoring_schedule_name,
+            },
         )
     }
 }
-

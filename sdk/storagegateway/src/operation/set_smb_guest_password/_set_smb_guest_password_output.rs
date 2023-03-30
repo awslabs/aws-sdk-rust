@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SetSmbGuestPasswordOutput  {
+pub struct SetSmbGuestPasswordOutput {
     /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
     #[doc(hidden)]
     pub gateway_arn: std::option::Option<std::string::String>,
@@ -10,18 +10,19 @@ pub struct SetSmbGuestPasswordOutput  {
 }
 impl SetSmbGuestPasswordOutput {
     /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
-    pub fn gateway_arn(&self) -> std::option::Option<& str> {
+    pub fn gateway_arn(&self) -> std::option::Option<&str> {
         self.gateway_arn.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for SetSmbGuestPasswordOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl SetSmbGuestPasswordOutput {
     /// Creates a new builder-style object to manufacture [`SetSmbGuestPasswordOutput`](crate::operation::set_smb_guest_password::SetSmbGuestPasswordOutput).
-    pub fn builder() -> crate::operation::set_smb_guest_password::builders::SetSmbGuestPasswordOutputBuilder {
+    pub fn builder(
+    ) -> crate::operation::set_smb_guest_password::builders::SetSmbGuestPasswordOutputBuilder {
         crate::operation::set_smb_guest_password::builders::SetSmbGuestPasswordOutputBuilder::default()
     }
 }
@@ -41,24 +42,23 @@ impl SetSmbGuestPasswordOutputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
     pub fn set_gateway_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.gateway_arn = input; self
+        self.gateway_arn = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`SetSmbGuestPasswordOutput`](crate::operation::set_smb_guest_password::SetSmbGuestPasswordOutput).
     pub fn build(self) -> crate::operation::set_smb_guest_password::SetSmbGuestPasswordOutput {
         crate::operation::set_smb_guest_password::SetSmbGuestPasswordOutput {
-            gateway_arn: self.gateway_arn
-            ,
+            gateway_arn: self.gateway_arn,
             _request_id: self._request_id,
         }
     }
 }
-

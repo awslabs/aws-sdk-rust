@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateWorkGroupInput  {
+pub struct CreateWorkGroupInput {
     /// <p>The workgroup name.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -18,19 +18,19 @@ pub struct CreateWorkGroupInput  {
 }
 impl CreateWorkGroupInput {
     /// <p>The workgroup name.</p>
-    pub fn name(&self) -> std::option::Option<& str> {
+    pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>Contains configuration information for creating an Athena SQL workgroup, which includes the location in Amazon S3 where query results are stored, the encryption configuration, if any, used for encrypting query results, whether the Amazon CloudWatch Metrics are enabled for the workgroup, the limit for the amount of bytes scanned (cutoff) per query, if it is specified, and whether workgroup's settings (specified with <code>EnforceWorkGroupConfiguration</code>) in the <code>WorkGroupConfiguration</code> override client-side settings. See <code>WorkGroupConfiguration$EnforceWorkGroupConfiguration</code>.</p>
-    pub fn configuration(&self) -> std::option::Option<& crate::types::WorkGroupConfiguration> {
+    pub fn configuration(&self) -> std::option::Option<&crate::types::WorkGroupConfiguration> {
         self.configuration.as_ref()
     }
     /// <p>The workgroup description.</p>
-    pub fn description(&self) -> std::option::Option<& str> {
+    pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
     /// <p>A list of comma separated tags to add to the workgroup that is created.</p>
-    pub fn tags(&self) -> std::option::Option<& [crate::types::Tag]> {
+    pub fn tags(&self) -> std::option::Option<&[crate::types::Tag]> {
         self.tags.as_deref()
     }
 }
@@ -58,7 +58,8 @@ impl CreateWorkGroupInputBuilder {
     }
     /// <p>The workgroup name.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input; self
+        self.name = input;
+        self
     }
     /// <p>Contains configuration information for creating an Athena SQL workgroup, which includes the location in Amazon S3 where query results are stored, the encryption configuration, if any, used for encrypting query results, whether the Amazon CloudWatch Metrics are enabled for the workgroup, the limit for the amount of bytes scanned (cutoff) per query, if it is specified, and whether workgroup's settings (specified with <code>EnforceWorkGroupConfiguration</code>) in the <code>WorkGroupConfiguration</code> override client-side settings. See <code>WorkGroupConfiguration$EnforceWorkGroupConfiguration</code>.</p>
     pub fn configuration(mut self, input: crate::types::WorkGroupConfiguration) -> Self {
@@ -66,8 +67,12 @@ impl CreateWorkGroupInputBuilder {
         self
     }
     /// <p>Contains configuration information for creating an Athena SQL workgroup, which includes the location in Amazon S3 where query results are stored, the encryption configuration, if any, used for encrypting query results, whether the Amazon CloudWatch Metrics are enabled for the workgroup, the limit for the amount of bytes scanned (cutoff) per query, if it is specified, and whether workgroup's settings (specified with <code>EnforceWorkGroupConfiguration</code>) in the <code>WorkGroupConfiguration</code> override client-side settings. See <code>WorkGroupConfiguration$EnforceWorkGroupConfiguration</code>.</p>
-    pub fn set_configuration(mut self, input: std::option::Option<crate::types::WorkGroupConfiguration>) -> Self {
-        self.configuration = input; self
+    pub fn set_configuration(
+        mut self,
+        input: std::option::Option<crate::types::WorkGroupConfiguration>,
+    ) -> Self {
+        self.configuration = input;
+        self
     }
     /// <p>The workgroup description.</p>
     pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -76,7 +81,8 @@ impl CreateWorkGroupInputBuilder {
     }
     /// <p>The workgroup description.</p>
     pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.description = input; self
+        self.description = input;
+        self
     }
     /// Appends an item to `tags`.
     ///
@@ -85,28 +91,30 @@ impl CreateWorkGroupInputBuilder {
     /// <p>A list of comma separated tags to add to the workgroup that is created.</p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
-                        v.push(input);
-                        self.tags = Some(v);
-                        self
+        v.push(input);
+        self.tags = Some(v);
+        self
     }
     /// <p>A list of comma separated tags to add to the workgroup that is created.</p>
-    pub fn set_tags(mut self, input: std::option::Option<std::vec::Vec<crate::types::Tag>>) -> Self {
-        self.tags = input; self
+    pub fn set_tags(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::Tag>>,
+    ) -> Self {
+        self.tags = input;
+        self
     }
     /// Consumes the builder and constructs a [`CreateWorkGroupInput`](crate::operation::create_work_group::CreateWorkGroupInput).
-    pub fn build(self) -> Result<crate::operation::create_work_group::CreateWorkGroupInput, aws_smithy_http::operation::error::BuildError> {
-        Ok(
-            crate::operation::create_work_group::CreateWorkGroupInput {
-                name: self.name
-                ,
-                configuration: self.configuration
-                ,
-                description: self.description
-                ,
-                tags: self.tags
-                ,
-            }
-        )
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::create_work_group::CreateWorkGroupInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        Ok(crate::operation::create_work_group::CreateWorkGroupInput {
+            name: self.name,
+            configuration: self.configuration,
+            description: self.description,
+            tags: self.tags,
+        })
     }
 }
-

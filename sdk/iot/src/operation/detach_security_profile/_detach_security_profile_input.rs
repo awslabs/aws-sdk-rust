@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DetachSecurityProfileInput  {
+pub struct DetachSecurityProfileInput {
     /// <p>The security profile that is detached.</p>
     #[doc(hidden)]
     pub security_profile_name: std::option::Option<std::string::String>,
@@ -12,17 +12,19 @@ pub struct DetachSecurityProfileInput  {
 }
 impl DetachSecurityProfileInput {
     /// <p>The security profile that is detached.</p>
-    pub fn security_profile_name(&self) -> std::option::Option<& str> {
+    pub fn security_profile_name(&self) -> std::option::Option<&str> {
         self.security_profile_name.as_deref()
     }
     /// <p>The ARN of the thing group from which the security profile is detached.</p>
-    pub fn security_profile_target_arn(&self) -> std::option::Option<& str> {
+    pub fn security_profile_target_arn(&self) -> std::option::Option<&str> {
         self.security_profile_target_arn.as_deref()
     }
 }
 impl DetachSecurityProfileInput {
     /// Creates a new builder-style object to manufacture [`DetachSecurityProfileInput`](crate::operation::detach_security_profile::DetachSecurityProfileInput).
-    pub fn builder() -> crate::operation::detach_security_profile::builders::DetachSecurityProfileInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::detach_security_profile::builders::DetachSecurityProfileInputBuilder
+    {
         crate::operation::detach_security_profile::builders::DetachSecurityProfileInputBuilder::default()
     }
 }
@@ -41,8 +43,12 @@ impl DetachSecurityProfileInputBuilder {
         self
     }
     /// <p>The security profile that is detached.</p>
-    pub fn set_security_profile_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.security_profile_name = input; self
+    pub fn set_security_profile_name(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.security_profile_name = input;
+        self
     }
     /// <p>The ARN of the thing group from which the security profile is detached.</p>
     pub fn security_profile_target_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -50,19 +56,25 @@ impl DetachSecurityProfileInputBuilder {
         self
     }
     /// <p>The ARN of the thing group from which the security profile is detached.</p>
-    pub fn set_security_profile_target_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.security_profile_target_arn = input; self
+    pub fn set_security_profile_target_arn(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.security_profile_target_arn = input;
+        self
     }
     /// Consumes the builder and constructs a [`DetachSecurityProfileInput`](crate::operation::detach_security_profile::DetachSecurityProfileInput).
-    pub fn build(self) -> Result<crate::operation::detach_security_profile::DetachSecurityProfileInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::detach_security_profile::DetachSecurityProfileInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::detach_security_profile::DetachSecurityProfileInput {
-                security_profile_name: self.security_profile_name
-                ,
-                security_profile_target_arn: self.security_profile_target_arn
-                ,
-            }
+                security_profile_name: self.security_profile_name,
+                security_profile_target_arn: self.security_profile_target_arn,
+            },
         )
     }
 }
-

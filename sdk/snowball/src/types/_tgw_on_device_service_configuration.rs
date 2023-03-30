@@ -3,7 +3,7 @@
 /// <p>An object that represents the metadata and configuration settings for the Storage Gateway service Tape Gateway type on an Amazon Web Services Snow Family device.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct TgwOnDeviceServiceConfiguration  {
+pub struct TgwOnDeviceServiceConfiguration {
     /// <p>The maximum number of virtual tapes to store on one Snow Family device. Due to physical resource limitations, this value must be set to 80 for Snowball Edge.</p>
     #[doc(hidden)]
     pub storage_limit: i32,
@@ -17,7 +17,7 @@ impl TgwOnDeviceServiceConfiguration {
         self.storage_limit
     }
     /// <p>The scale unit of the virtual tapes on the device.</p>
-    pub fn storage_unit(&self) -> std::option::Option<& crate::types::StorageUnit> {
+    pub fn storage_unit(&self) -> std::option::Option<&crate::types::StorageUnit> {
         self.storage_unit.as_ref()
     }
 }
@@ -43,7 +43,8 @@ impl TgwOnDeviceServiceConfigurationBuilder {
     }
     /// <p>The maximum number of virtual tapes to store on one Snow Family device. Due to physical resource limitations, this value must be set to 80 for Snowball Edge.</p>
     pub fn set_storage_limit(mut self, input: std::option::Option<i32>) -> Self {
-        self.storage_limit = input; self
+        self.storage_limit = input;
+        self
     }
     /// <p>The scale unit of the virtual tapes on the device.</p>
     pub fn storage_unit(mut self, input: crate::types::StorageUnit) -> Self {
@@ -51,18 +52,18 @@ impl TgwOnDeviceServiceConfigurationBuilder {
         self
     }
     /// <p>The scale unit of the virtual tapes on the device.</p>
-    pub fn set_storage_unit(mut self, input: std::option::Option<crate::types::StorageUnit>) -> Self {
-        self.storage_unit = input; self
+    pub fn set_storage_unit(
+        mut self,
+        input: std::option::Option<crate::types::StorageUnit>,
+    ) -> Self {
+        self.storage_unit = input;
+        self
     }
     /// Consumes the builder and constructs a [`TgwOnDeviceServiceConfiguration`](crate::types::TgwOnDeviceServiceConfiguration).
     pub fn build(self) -> crate::types::TgwOnDeviceServiceConfiguration {
         crate::types::TgwOnDeviceServiceConfiguration {
-            storage_limit: self.storage_limit
-                .unwrap_or_default()
-            ,
-            storage_unit: self.storage_unit
-            ,
+            storage_limit: self.storage_limit.unwrap_or_default(),
+            storage_unit: self.storage_unit,
         }
     }
 }
-

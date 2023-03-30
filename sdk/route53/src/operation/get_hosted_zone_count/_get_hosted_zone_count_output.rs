@@ -3,7 +3,7 @@
 /// <p>A complex type that contains the response to a <code>GetHostedZoneCount</code> request.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetHostedZoneCountOutput  {
+pub struct GetHostedZoneCountOutput {
     /// <p>The total number of public and private hosted zones that are associated with the current Amazon Web Services account.</p>
     #[doc(hidden)]
     pub hosted_zone_count: std::option::Option<i64>,
@@ -16,14 +16,16 @@ impl GetHostedZoneCountOutput {
     }
 }
 impl aws_http::request_id::RequestId for GetHostedZoneCountOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl GetHostedZoneCountOutput {
     /// Creates a new builder-style object to manufacture [`GetHostedZoneCountOutput`](crate::operation::get_hosted_zone_count::GetHostedZoneCountOutput).
-    pub fn builder() -> crate::operation::get_hosted_zone_count::builders::GetHostedZoneCountOutputBuilder {
-        crate::operation::get_hosted_zone_count::builders::GetHostedZoneCountOutputBuilder::default()
+    pub fn builder(
+    ) -> crate::operation::get_hosted_zone_count::builders::GetHostedZoneCountOutputBuilder {
+        crate::operation::get_hosted_zone_count::builders::GetHostedZoneCountOutputBuilder::default(
+        )
     }
 }
 
@@ -42,24 +44,23 @@ impl GetHostedZoneCountOutputBuilder {
     }
     /// <p>The total number of public and private hosted zones that are associated with the current Amazon Web Services account.</p>
     pub fn set_hosted_zone_count(mut self, input: std::option::Option<i64>) -> Self {
-        self.hosted_zone_count = input; self
+        self.hosted_zone_count = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`GetHostedZoneCountOutput`](crate::operation::get_hosted_zone_count::GetHostedZoneCountOutput).
     pub fn build(self) -> crate::operation::get_hosted_zone_count::GetHostedZoneCountOutput {
         crate::operation::get_hosted_zone_count::GetHostedZoneCountOutput {
-            hosted_zone_count: self.hosted_zone_count
-            ,
+            hosted_zone_count: self.hosted_zone_count,
             _request_id: self._request_id,
         }
     }
 }
-

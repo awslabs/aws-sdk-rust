@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AttachDiskInput  {
+pub struct AttachDiskInput {
     /// <p>The unique Lightsail disk name (e.g., <code>my-disk</code>).</p>
     #[doc(hidden)]
     pub disk_name: std::option::Option<std::string::String>,
@@ -15,15 +15,15 @@ pub struct AttachDiskInput  {
 }
 impl AttachDiskInput {
     /// <p>The unique Lightsail disk name (e.g., <code>my-disk</code>).</p>
-    pub fn disk_name(&self) -> std::option::Option<& str> {
+    pub fn disk_name(&self) -> std::option::Option<&str> {
         self.disk_name.as_deref()
     }
     /// <p>The name of the Lightsail instance where you want to utilize the storage disk.</p>
-    pub fn instance_name(&self) -> std::option::Option<& str> {
+    pub fn instance_name(&self) -> std::option::Option<&str> {
         self.instance_name.as_deref()
     }
     /// <p>The disk path to expose to the instance (e.g., <code>/dev/xvdf</code>).</p>
-    pub fn disk_path(&self) -> std::option::Option<& str> {
+    pub fn disk_path(&self) -> std::option::Option<&str> {
         self.disk_path.as_deref()
     }
 }
@@ -50,7 +50,8 @@ impl AttachDiskInputBuilder {
     }
     /// <p>The unique Lightsail disk name (e.g., <code>my-disk</code>).</p>
     pub fn set_disk_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.disk_name = input; self
+        self.disk_name = input;
+        self
     }
     /// <p>The name of the Lightsail instance where you want to utilize the storage disk.</p>
     pub fn instance_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -59,7 +60,8 @@ impl AttachDiskInputBuilder {
     }
     /// <p>The name of the Lightsail instance where you want to utilize the storage disk.</p>
     pub fn set_instance_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.instance_name = input; self
+        self.instance_name = input;
+        self
     }
     /// <p>The disk path to expose to the instance (e.g., <code>/dev/xvdf</code>).</p>
     pub fn disk_path(mut self, input: impl Into<std::string::String>) -> Self {
@@ -68,20 +70,20 @@ impl AttachDiskInputBuilder {
     }
     /// <p>The disk path to expose to the instance (e.g., <code>/dev/xvdf</code>).</p>
     pub fn set_disk_path(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.disk_path = input; self
+        self.disk_path = input;
+        self
     }
     /// Consumes the builder and constructs a [`AttachDiskInput`](crate::operation::attach_disk::AttachDiskInput).
-    pub fn build(self) -> Result<crate::operation::attach_disk::AttachDiskInput, aws_smithy_http::operation::error::BuildError> {
-        Ok(
-            crate::operation::attach_disk::AttachDiskInput {
-                disk_name: self.disk_name
-                ,
-                instance_name: self.instance_name
-                ,
-                disk_path: self.disk_path
-                ,
-            }
-        )
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::attach_disk::AttachDiskInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        Ok(crate::operation::attach_disk::AttachDiskInput {
+            disk_name: self.disk_name,
+            instance_name: self.instance_name,
+            disk_path: self.disk_path,
+        })
     }
 }
-

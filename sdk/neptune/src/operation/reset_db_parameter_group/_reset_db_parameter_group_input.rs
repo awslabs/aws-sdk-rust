@@ -2,46 +2,48 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ResetDbParameterGroupInput  {
-    /// <p>The name of the DB parameter group.</p> 
-    /// <p>Constraints:</p> 
-    /// <ul> 
-    /// <li> <p>Must match the name of an existing DBParameterGroup.</p> </li> 
+pub struct ResetDbParameterGroupInput {
+    /// <p>The name of the DB parameter group.</p>
+    /// <p>Constraints:</p>
+    /// <ul>
+    /// <li> <p>Must match the name of an existing DBParameterGroup.</p> </li>
     /// </ul>
     #[doc(hidden)]
     pub db_parameter_group_name: std::option::Option<std::string::String>,
-    /// <p>Specifies whether (<code>true</code>) or not (<code>false</code>) to reset all parameters in the DB parameter group to default values.</p> 
+    /// <p>Specifies whether (<code>true</code>) or not (<code>false</code>) to reset all parameters in the DB parameter group to default values.</p>
     /// <p>Default: <code>true</code> </p>
     #[doc(hidden)]
     pub reset_all_parameters: bool,
-    /// <p>To reset the entire DB parameter group, specify the <code>DBParameterGroup</code> name and <code>ResetAllParameters</code> parameters. To reset specific parameters, provide a list of the following: <code>ParameterName</code> and <code>ApplyMethod</code>. A maximum of 20 parameters can be modified in a single request.</p> 
+    /// <p>To reset the entire DB parameter group, specify the <code>DBParameterGroup</code> name and <code>ResetAllParameters</code> parameters. To reset specific parameters, provide a list of the following: <code>ParameterName</code> and <code>ApplyMethod</code>. A maximum of 20 parameters can be modified in a single request.</p>
     /// <p>Valid Values (for Apply method): <code>pending-reboot</code> </p>
     #[doc(hidden)]
     pub parameters: std::option::Option<std::vec::Vec<crate::types::Parameter>>,
 }
 impl ResetDbParameterGroupInput {
-    /// <p>The name of the DB parameter group.</p> 
-    /// <p>Constraints:</p> 
-    /// <ul> 
-    /// <li> <p>Must match the name of an existing DBParameterGroup.</p> </li> 
+    /// <p>The name of the DB parameter group.</p>
+    /// <p>Constraints:</p>
+    /// <ul>
+    /// <li> <p>Must match the name of an existing DBParameterGroup.</p> </li>
     /// </ul>
-    pub fn db_parameter_group_name(&self) -> std::option::Option<& str> {
+    pub fn db_parameter_group_name(&self) -> std::option::Option<&str> {
         self.db_parameter_group_name.as_deref()
     }
-    /// <p>Specifies whether (<code>true</code>) or not (<code>false</code>) to reset all parameters in the DB parameter group to default values.</p> 
+    /// <p>Specifies whether (<code>true</code>) or not (<code>false</code>) to reset all parameters in the DB parameter group to default values.</p>
     /// <p>Default: <code>true</code> </p>
     pub fn reset_all_parameters(&self) -> bool {
         self.reset_all_parameters
     }
-    /// <p>To reset the entire DB parameter group, specify the <code>DBParameterGroup</code> name and <code>ResetAllParameters</code> parameters. To reset specific parameters, provide a list of the following: <code>ParameterName</code> and <code>ApplyMethod</code>. A maximum of 20 parameters can be modified in a single request.</p> 
+    /// <p>To reset the entire DB parameter group, specify the <code>DBParameterGroup</code> name and <code>ResetAllParameters</code> parameters. To reset specific parameters, provide a list of the following: <code>ParameterName</code> and <code>ApplyMethod</code>. A maximum of 20 parameters can be modified in a single request.</p>
     /// <p>Valid Values (for Apply method): <code>pending-reboot</code> </p>
-    pub fn parameters(&self) -> std::option::Option<& [crate::types::Parameter]> {
+    pub fn parameters(&self) -> std::option::Option<&[crate::types::Parameter]> {
         self.parameters.as_deref()
     }
 }
 impl ResetDbParameterGroupInput {
     /// Creates a new builder-style object to manufacture [`ResetDbParameterGroupInput`](crate::operation::reset_db_parameter_group::ResetDbParameterGroupInput).
-    pub fn builder() -> crate::operation::reset_db_parameter_group::builders::ResetDbParameterGroupInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::reset_db_parameter_group::builders::ResetDbParameterGroupInputBuilder
+    {
         crate::operation::reset_db_parameter_group::builders::ResetDbParameterGroupInputBuilder::default()
     }
 }
@@ -55,64 +57,73 @@ pub struct ResetDbParameterGroupInputBuilder {
     pub(crate) parameters: std::option::Option<std::vec::Vec<crate::types::Parameter>>,
 }
 impl ResetDbParameterGroupInputBuilder {
-    /// <p>The name of the DB parameter group.</p> 
-    /// <p>Constraints:</p> 
-    /// <ul> 
-    /// <li> <p>Must match the name of an existing DBParameterGroup.</p> </li> 
+    /// <p>The name of the DB parameter group.</p>
+    /// <p>Constraints:</p>
+    /// <ul>
+    /// <li> <p>Must match the name of an existing DBParameterGroup.</p> </li>
     /// </ul>
     pub fn db_parameter_group_name(mut self, input: impl Into<std::string::String>) -> Self {
         self.db_parameter_group_name = Some(input.into());
         self
     }
-    /// <p>The name of the DB parameter group.</p> 
-    /// <p>Constraints:</p> 
-    /// <ul> 
-    /// <li> <p>Must match the name of an existing DBParameterGroup.</p> </li> 
+    /// <p>The name of the DB parameter group.</p>
+    /// <p>Constraints:</p>
+    /// <ul>
+    /// <li> <p>Must match the name of an existing DBParameterGroup.</p> </li>
     /// </ul>
-    pub fn set_db_parameter_group_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.db_parameter_group_name = input; self
+    pub fn set_db_parameter_group_name(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.db_parameter_group_name = input;
+        self
     }
-    /// <p>Specifies whether (<code>true</code>) or not (<code>false</code>) to reset all parameters in the DB parameter group to default values.</p> 
+    /// <p>Specifies whether (<code>true</code>) or not (<code>false</code>) to reset all parameters in the DB parameter group to default values.</p>
     /// <p>Default: <code>true</code> </p>
     pub fn reset_all_parameters(mut self, input: bool) -> Self {
         self.reset_all_parameters = Some(input);
         self
     }
-    /// <p>Specifies whether (<code>true</code>) or not (<code>false</code>) to reset all parameters in the DB parameter group to default values.</p> 
+    /// <p>Specifies whether (<code>true</code>) or not (<code>false</code>) to reset all parameters in the DB parameter group to default values.</p>
     /// <p>Default: <code>true</code> </p>
     pub fn set_reset_all_parameters(mut self, input: std::option::Option<bool>) -> Self {
-        self.reset_all_parameters = input; self
+        self.reset_all_parameters = input;
+        self
     }
     /// Appends an item to `parameters`.
     ///
     /// To override the contents of this collection use [`set_parameters`](Self::set_parameters).
     ///
-    /// <p>To reset the entire DB parameter group, specify the <code>DBParameterGroup</code> name and <code>ResetAllParameters</code> parameters. To reset specific parameters, provide a list of the following: <code>ParameterName</code> and <code>ApplyMethod</code>. A maximum of 20 parameters can be modified in a single request.</p> 
+    /// <p>To reset the entire DB parameter group, specify the <code>DBParameterGroup</code> name and <code>ResetAllParameters</code> parameters. To reset specific parameters, provide a list of the following: <code>ParameterName</code> and <code>ApplyMethod</code>. A maximum of 20 parameters can be modified in a single request.</p>
     /// <p>Valid Values (for Apply method): <code>pending-reboot</code> </p>
     pub fn parameters(mut self, input: crate::types::Parameter) -> Self {
         let mut v = self.parameters.unwrap_or_default();
-                        v.push(input);
-                        self.parameters = Some(v);
-                        self
+        v.push(input);
+        self.parameters = Some(v);
+        self
     }
-    /// <p>To reset the entire DB parameter group, specify the <code>DBParameterGroup</code> name and <code>ResetAllParameters</code> parameters. To reset specific parameters, provide a list of the following: <code>ParameterName</code> and <code>ApplyMethod</code>. A maximum of 20 parameters can be modified in a single request.</p> 
+    /// <p>To reset the entire DB parameter group, specify the <code>DBParameterGroup</code> name and <code>ResetAllParameters</code> parameters. To reset specific parameters, provide a list of the following: <code>ParameterName</code> and <code>ApplyMethod</code>. A maximum of 20 parameters can be modified in a single request.</p>
     /// <p>Valid Values (for Apply method): <code>pending-reboot</code> </p>
-    pub fn set_parameters(mut self, input: std::option::Option<std::vec::Vec<crate::types::Parameter>>) -> Self {
-        self.parameters = input; self
+    pub fn set_parameters(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::Parameter>>,
+    ) -> Self {
+        self.parameters = input;
+        self
     }
     /// Consumes the builder and constructs a [`ResetDbParameterGroupInput`](crate::operation::reset_db_parameter_group::ResetDbParameterGroupInput).
-    pub fn build(self) -> Result<crate::operation::reset_db_parameter_group::ResetDbParameterGroupInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::reset_db_parameter_group::ResetDbParameterGroupInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::reset_db_parameter_group::ResetDbParameterGroupInput {
-                db_parameter_group_name: self.db_parameter_group_name
-                ,
-                reset_all_parameters: self.reset_all_parameters
-                    .unwrap_or_default()
-                ,
-                parameters: self.parameters
-                ,
-            }
+                db_parameter_group_name: self.db_parameter_group_name,
+                reset_all_parameters: self.reset_all_parameters.unwrap_or_default(),
+                parameters: self.parameters,
+            },
         )
     }
 }
-

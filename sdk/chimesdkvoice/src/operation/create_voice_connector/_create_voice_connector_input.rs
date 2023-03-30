@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateVoiceConnectorInput  {
+pub struct CreateVoiceConnectorInput {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -15,11 +15,11 @@ pub struct CreateVoiceConnectorInput  {
 }
 impl CreateVoiceConnectorInput {
     #[allow(missing_docs)] // documentation missing in model
-    pub fn name(&self) -> std::option::Option<& str> {
+    pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
     #[allow(missing_docs)] // documentation missing in model
-    pub fn aws_region(&self) -> std::option::Option<& crate::types::VoiceConnectorAwsRegion> {
+    pub fn aws_region(&self) -> std::option::Option<&crate::types::VoiceConnectorAwsRegion> {
         self.aws_region.as_ref()
     }
     #[allow(missing_docs)] // documentation missing in model
@@ -29,7 +29,8 @@ impl CreateVoiceConnectorInput {
 }
 impl CreateVoiceConnectorInput {
     /// Creates a new builder-style object to manufacture [`CreateVoiceConnectorInput`](crate::operation::create_voice_connector::CreateVoiceConnectorInput).
-    pub fn builder() -> crate::operation::create_voice_connector::builders::CreateVoiceConnectorInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::create_voice_connector::builders::CreateVoiceConnectorInputBuilder {
         crate::operation::create_voice_connector::builders::CreateVoiceConnectorInputBuilder::default()
     }
 }
@@ -50,7 +51,8 @@ impl CreateVoiceConnectorInputBuilder {
     }
     #[allow(missing_docs)] // documentation missing in model
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input; self
+        self.name = input;
+        self
     }
     #[allow(missing_docs)] // documentation missing in model
     pub fn aws_region(mut self, input: crate::types::VoiceConnectorAwsRegion) -> Self {
@@ -58,8 +60,12 @@ impl CreateVoiceConnectorInputBuilder {
         self
     }
     #[allow(missing_docs)] // documentation missing in model
-    pub fn set_aws_region(mut self, input: std::option::Option<crate::types::VoiceConnectorAwsRegion>) -> Self {
-        self.aws_region = input; self
+    pub fn set_aws_region(
+        mut self,
+        input: std::option::Option<crate::types::VoiceConnectorAwsRegion>,
+    ) -> Self {
+        self.aws_region = input;
+        self
     }
     #[allow(missing_docs)] // documentation missing in model
     pub fn require_encryption(mut self, input: bool) -> Self {
@@ -68,20 +74,22 @@ impl CreateVoiceConnectorInputBuilder {
     }
     #[allow(missing_docs)] // documentation missing in model
     pub fn set_require_encryption(mut self, input: std::option::Option<bool>) -> Self {
-        self.require_encryption = input; self
+        self.require_encryption = input;
+        self
     }
     /// Consumes the builder and constructs a [`CreateVoiceConnectorInput`](crate::operation::create_voice_connector::CreateVoiceConnectorInput).
-    pub fn build(self) -> Result<crate::operation::create_voice_connector::CreateVoiceConnectorInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::create_voice_connector::CreateVoiceConnectorInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::create_voice_connector::CreateVoiceConnectorInput {
-                name: self.name
-                ,
-                aws_region: self.aws_region
-                ,
-                require_encryption: self.require_encryption
-                ,
-            }
+                name: self.name,
+                aws_region: self.aws_region,
+                require_encryption: self.require_encryption,
+            },
         )
     }
 }
-

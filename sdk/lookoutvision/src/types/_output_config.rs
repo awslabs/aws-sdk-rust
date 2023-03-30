@@ -3,14 +3,14 @@
 /// <p>The S3 location where Amazon Lookout for Vision saves model training files.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct OutputConfig  {
+pub struct OutputConfig {
     /// <p>The S3 location for the output.</p>
     #[doc(hidden)]
     pub s3_location: std::option::Option<crate::types::S3Location>,
 }
 impl OutputConfig {
     /// <p>The S3 location for the output.</p>
-    pub fn s3_location(&self) -> std::option::Option<& crate::types::S3Location> {
+    pub fn s3_location(&self) -> std::option::Option<&crate::types::S3Location> {
         self.s3_location.as_ref()
     }
 }
@@ -35,14 +35,13 @@ impl OutputConfigBuilder {
     }
     /// <p>The S3 location for the output.</p>
     pub fn set_s3_location(mut self, input: std::option::Option<crate::types::S3Location>) -> Self {
-        self.s3_location = input; self
+        self.s3_location = input;
+        self
     }
     /// Consumes the builder and constructs a [`OutputConfig`](crate::types::OutputConfig).
     pub fn build(self) -> crate::types::OutputConfig {
         crate::types::OutputConfig {
-            s3_location: self.s3_location
-            ,
+            s3_location: self.s3_location,
         }
     }
 }
-

@@ -3,65 +3,65 @@
 /// <p>Represents a device.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Job  {
+pub struct Job {
     /// <p>The job's ARN.</p>
     #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>The job's name.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
-    /// <p>The job's type.</p> 
-    /// <p>Allowed values include the following:</p> 
-    /// <ul> 
-    /// <li> <p>BUILTIN_FUZZ</p> </li> 
-    /// <li> <p>BUILTIN_EXPLORER. For Android, an app explorer that traverses an Android app, interacting with it and capturing screenshots at the same time.</p> </li> 
-    /// <li> <p>APPIUM_JAVA_JUNIT</p> </li> 
-    /// <li> <p>APPIUM_JAVA_TESTNG</p> </li> 
-    /// <li> <p>APPIUM_PYTHON</p> </li> 
-    /// <li> <p>APPIUM_NODE</p> </li> 
-    /// <li> <p>APPIUM_RUBY</p> </li> 
-    /// <li> <p>APPIUM_WEB_JAVA_JUNIT</p> </li> 
-    /// <li> <p>APPIUM_WEB_JAVA_TESTNG</p> </li> 
-    /// <li> <p>APPIUM_WEB_PYTHON</p> </li> 
-    /// <li> <p>APPIUM_WEB_NODE</p> </li> 
-    /// <li> <p>APPIUM_WEB_RUBY</p> </li> 
-    /// <li> <p>CALABASH</p> </li> 
-    /// <li> <p>INSTRUMENTATION</p> </li> 
-    /// <li> <p>UIAUTOMATION</p> </li> 
-    /// <li> <p>UIAUTOMATOR</p> </li> 
-    /// <li> <p>XCTEST</p> </li> 
-    /// <li> <p>XCTEST_UI</p> </li> 
+    /// <p>The job's type.</p>
+    /// <p>Allowed values include the following:</p>
+    /// <ul>
+    /// <li> <p>BUILTIN_FUZZ</p> </li>
+    /// <li> <p>BUILTIN_EXPLORER. For Android, an app explorer that traverses an Android app, interacting with it and capturing screenshots at the same time.</p> </li>
+    /// <li> <p>APPIUM_JAVA_JUNIT</p> </li>
+    /// <li> <p>APPIUM_JAVA_TESTNG</p> </li>
+    /// <li> <p>APPIUM_PYTHON</p> </li>
+    /// <li> <p>APPIUM_NODE</p> </li>
+    /// <li> <p>APPIUM_RUBY</p> </li>
+    /// <li> <p>APPIUM_WEB_JAVA_JUNIT</p> </li>
+    /// <li> <p>APPIUM_WEB_JAVA_TESTNG</p> </li>
+    /// <li> <p>APPIUM_WEB_PYTHON</p> </li>
+    /// <li> <p>APPIUM_WEB_NODE</p> </li>
+    /// <li> <p>APPIUM_WEB_RUBY</p> </li>
+    /// <li> <p>CALABASH</p> </li>
+    /// <li> <p>INSTRUMENTATION</p> </li>
+    /// <li> <p>UIAUTOMATION</p> </li>
+    /// <li> <p>UIAUTOMATOR</p> </li>
+    /// <li> <p>XCTEST</p> </li>
+    /// <li> <p>XCTEST_UI</p> </li>
     /// </ul>
     #[doc(hidden)]
     pub r#type: std::option::Option<crate::types::TestType>,
     /// <p>When the job was created.</p>
     #[doc(hidden)]
     pub created: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>The job's status.</p> 
-    /// <p>Allowed values include:</p> 
-    /// <ul> 
-    /// <li> <p>PENDING</p> </li> 
-    /// <li> <p>PENDING_CONCURRENCY</p> </li> 
-    /// <li> <p>PENDING_DEVICE</p> </li> 
-    /// <li> <p>PROCESSING</p> </li> 
-    /// <li> <p>SCHEDULING</p> </li> 
-    /// <li> <p>PREPARING</p> </li> 
-    /// <li> <p>RUNNING</p> </li> 
-    /// <li> <p>COMPLETED</p> </li> 
-    /// <li> <p>STOPPING</p> </li> 
+    /// <p>The job's status.</p>
+    /// <p>Allowed values include:</p>
+    /// <ul>
+    /// <li> <p>PENDING</p> </li>
+    /// <li> <p>PENDING_CONCURRENCY</p> </li>
+    /// <li> <p>PENDING_DEVICE</p> </li>
+    /// <li> <p>PROCESSING</p> </li>
+    /// <li> <p>SCHEDULING</p> </li>
+    /// <li> <p>PREPARING</p> </li>
+    /// <li> <p>RUNNING</p> </li>
+    /// <li> <p>COMPLETED</p> </li>
+    /// <li> <p>STOPPING</p> </li>
     /// </ul>
     #[doc(hidden)]
     pub status: std::option::Option<crate::types::ExecutionStatus>,
-    /// <p>The job's result.</p> 
-    /// <p>Allowed values include:</p> 
-    /// <ul> 
-    /// <li> <p>PENDING</p> </li> 
-    /// <li> <p>PASSED</p> </li> 
-    /// <li> <p>WARNED</p> </li> 
-    /// <li> <p>FAILED</p> </li> 
-    /// <li> <p>SKIPPED</p> </li> 
-    /// <li> <p>ERRORED</p> </li> 
-    /// <li> <p>STOPPED</p> </li> 
+    /// <p>The job's result.</p>
+    /// <p>Allowed values include:</p>
+    /// <ul>
+    /// <li> <p>PENDING</p> </li>
+    /// <li> <p>PASSED</p> </li>
+    /// <li> <p>WARNED</p> </li>
+    /// <li> <p>FAILED</p> </li>
+    /// <li> <p>SKIPPED</p> </li>
+    /// <li> <p>ERRORED</p> </li>
+    /// <li> <p>STOPPED</p> </li>
     /// </ul>
     #[doc(hidden)]
     pub result: std::option::Option<crate::types::ExecutionResult>,
@@ -95,102 +95,102 @@ pub struct Job  {
 }
 impl Job {
     /// <p>The job's ARN.</p>
-    pub fn arn(&self) -> std::option::Option<& str> {
+    pub fn arn(&self) -> std::option::Option<&str> {
         self.arn.as_deref()
     }
     /// <p>The job's name.</p>
-    pub fn name(&self) -> std::option::Option<& str> {
+    pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
-    /// <p>The job's type.</p> 
-    /// <p>Allowed values include the following:</p> 
-    /// <ul> 
-    /// <li> <p>BUILTIN_FUZZ</p> </li> 
-    /// <li> <p>BUILTIN_EXPLORER. For Android, an app explorer that traverses an Android app, interacting with it and capturing screenshots at the same time.</p> </li> 
-    /// <li> <p>APPIUM_JAVA_JUNIT</p> </li> 
-    /// <li> <p>APPIUM_JAVA_TESTNG</p> </li> 
-    /// <li> <p>APPIUM_PYTHON</p> </li> 
-    /// <li> <p>APPIUM_NODE</p> </li> 
-    /// <li> <p>APPIUM_RUBY</p> </li> 
-    /// <li> <p>APPIUM_WEB_JAVA_JUNIT</p> </li> 
-    /// <li> <p>APPIUM_WEB_JAVA_TESTNG</p> </li> 
-    /// <li> <p>APPIUM_WEB_PYTHON</p> </li> 
-    /// <li> <p>APPIUM_WEB_NODE</p> </li> 
-    /// <li> <p>APPIUM_WEB_RUBY</p> </li> 
-    /// <li> <p>CALABASH</p> </li> 
-    /// <li> <p>INSTRUMENTATION</p> </li> 
-    /// <li> <p>UIAUTOMATION</p> </li> 
-    /// <li> <p>UIAUTOMATOR</p> </li> 
-    /// <li> <p>XCTEST</p> </li> 
-    /// <li> <p>XCTEST_UI</p> </li> 
+    /// <p>The job's type.</p>
+    /// <p>Allowed values include the following:</p>
+    /// <ul>
+    /// <li> <p>BUILTIN_FUZZ</p> </li>
+    /// <li> <p>BUILTIN_EXPLORER. For Android, an app explorer that traverses an Android app, interacting with it and capturing screenshots at the same time.</p> </li>
+    /// <li> <p>APPIUM_JAVA_JUNIT</p> </li>
+    /// <li> <p>APPIUM_JAVA_TESTNG</p> </li>
+    /// <li> <p>APPIUM_PYTHON</p> </li>
+    /// <li> <p>APPIUM_NODE</p> </li>
+    /// <li> <p>APPIUM_RUBY</p> </li>
+    /// <li> <p>APPIUM_WEB_JAVA_JUNIT</p> </li>
+    /// <li> <p>APPIUM_WEB_JAVA_TESTNG</p> </li>
+    /// <li> <p>APPIUM_WEB_PYTHON</p> </li>
+    /// <li> <p>APPIUM_WEB_NODE</p> </li>
+    /// <li> <p>APPIUM_WEB_RUBY</p> </li>
+    /// <li> <p>CALABASH</p> </li>
+    /// <li> <p>INSTRUMENTATION</p> </li>
+    /// <li> <p>UIAUTOMATION</p> </li>
+    /// <li> <p>UIAUTOMATOR</p> </li>
+    /// <li> <p>XCTEST</p> </li>
+    /// <li> <p>XCTEST_UI</p> </li>
     /// </ul>
-    pub fn r#type(&self) -> std::option::Option<& crate::types::TestType> {
+    pub fn r#type(&self) -> std::option::Option<&crate::types::TestType> {
         self.r#type.as_ref()
     }
     /// <p>When the job was created.</p>
-    pub fn created(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
+    pub fn created(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created.as_ref()
     }
-    /// <p>The job's status.</p> 
-    /// <p>Allowed values include:</p> 
-    /// <ul> 
-    /// <li> <p>PENDING</p> </li> 
-    /// <li> <p>PENDING_CONCURRENCY</p> </li> 
-    /// <li> <p>PENDING_DEVICE</p> </li> 
-    /// <li> <p>PROCESSING</p> </li> 
-    /// <li> <p>SCHEDULING</p> </li> 
-    /// <li> <p>PREPARING</p> </li> 
-    /// <li> <p>RUNNING</p> </li> 
-    /// <li> <p>COMPLETED</p> </li> 
-    /// <li> <p>STOPPING</p> </li> 
+    /// <p>The job's status.</p>
+    /// <p>Allowed values include:</p>
+    /// <ul>
+    /// <li> <p>PENDING</p> </li>
+    /// <li> <p>PENDING_CONCURRENCY</p> </li>
+    /// <li> <p>PENDING_DEVICE</p> </li>
+    /// <li> <p>PROCESSING</p> </li>
+    /// <li> <p>SCHEDULING</p> </li>
+    /// <li> <p>PREPARING</p> </li>
+    /// <li> <p>RUNNING</p> </li>
+    /// <li> <p>COMPLETED</p> </li>
+    /// <li> <p>STOPPING</p> </li>
     /// </ul>
-    pub fn status(&self) -> std::option::Option<& crate::types::ExecutionStatus> {
+    pub fn status(&self) -> std::option::Option<&crate::types::ExecutionStatus> {
         self.status.as_ref()
     }
-    /// <p>The job's result.</p> 
-    /// <p>Allowed values include:</p> 
-    /// <ul> 
-    /// <li> <p>PENDING</p> </li> 
-    /// <li> <p>PASSED</p> </li> 
-    /// <li> <p>WARNED</p> </li> 
-    /// <li> <p>FAILED</p> </li> 
-    /// <li> <p>SKIPPED</p> </li> 
-    /// <li> <p>ERRORED</p> </li> 
-    /// <li> <p>STOPPED</p> </li> 
+    /// <p>The job's result.</p>
+    /// <p>Allowed values include:</p>
+    /// <ul>
+    /// <li> <p>PENDING</p> </li>
+    /// <li> <p>PASSED</p> </li>
+    /// <li> <p>WARNED</p> </li>
+    /// <li> <p>FAILED</p> </li>
+    /// <li> <p>SKIPPED</p> </li>
+    /// <li> <p>ERRORED</p> </li>
+    /// <li> <p>STOPPED</p> </li>
     /// </ul>
-    pub fn result(&self) -> std::option::Option<& crate::types::ExecutionResult> {
+    pub fn result(&self) -> std::option::Option<&crate::types::ExecutionResult> {
         self.result.as_ref()
     }
     /// <p>The job's start time.</p>
-    pub fn started(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
+    pub fn started(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.started.as_ref()
     }
     /// <p>The job's stop time.</p>
-    pub fn stopped(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
+    pub fn stopped(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.stopped.as_ref()
     }
     /// <p>The job's result counters.</p>
-    pub fn counters(&self) -> std::option::Option<& crate::types::Counters> {
+    pub fn counters(&self) -> std::option::Option<&crate::types::Counters> {
         self.counters.as_ref()
     }
     /// <p>A message about the job's result.</p>
-    pub fn message(&self) -> std::option::Option<& str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
     /// <p>The device (phone or tablet).</p>
-    pub fn device(&self) -> std::option::Option<& crate::types::Device> {
+    pub fn device(&self) -> std::option::Option<&crate::types::Device> {
         self.device.as_ref()
     }
     /// <p>The ARN of the instance.</p>
-    pub fn instance_arn(&self) -> std::option::Option<& str> {
+    pub fn instance_arn(&self) -> std::option::Option<&str> {
         self.instance_arn.as_deref()
     }
     /// <p>Represents the total (metered or unmetered) minutes used by the job.</p>
-    pub fn device_minutes(&self) -> std::option::Option<& crate::types::DeviceMinutes> {
+    pub fn device_minutes(&self) -> std::option::Option<&crate::types::DeviceMinutes> {
         self.device_minutes.as_ref()
     }
     /// <p>The endpoint for streaming device video.</p>
-    pub fn video_endpoint(&self) -> std::option::Option<& str> {
+    pub fn video_endpoint(&self) -> std::option::Option<&str> {
         self.video_endpoint.as_deref()
     }
     /// <p>This value is set to true if video capture is enabled. Otherwise, it is set to false.</p>
@@ -233,7 +233,8 @@ impl JobBuilder {
     }
     /// <p>The job's ARN.</p>
     pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.arn = input; self
+        self.arn = input;
+        self
     }
     /// <p>The job's name.</p>
     pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -242,58 +243,60 @@ impl JobBuilder {
     }
     /// <p>The job's name.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input; self
+        self.name = input;
+        self
     }
-    /// <p>The job's type.</p> 
-    /// <p>Allowed values include the following:</p> 
-    /// <ul> 
-    /// <li> <p>BUILTIN_FUZZ</p> </li> 
-    /// <li> <p>BUILTIN_EXPLORER. For Android, an app explorer that traverses an Android app, interacting with it and capturing screenshots at the same time.</p> </li> 
-    /// <li> <p>APPIUM_JAVA_JUNIT</p> </li> 
-    /// <li> <p>APPIUM_JAVA_TESTNG</p> </li> 
-    /// <li> <p>APPIUM_PYTHON</p> </li> 
-    /// <li> <p>APPIUM_NODE</p> </li> 
-    /// <li> <p>APPIUM_RUBY</p> </li> 
-    /// <li> <p>APPIUM_WEB_JAVA_JUNIT</p> </li> 
-    /// <li> <p>APPIUM_WEB_JAVA_TESTNG</p> </li> 
-    /// <li> <p>APPIUM_WEB_PYTHON</p> </li> 
-    /// <li> <p>APPIUM_WEB_NODE</p> </li> 
-    /// <li> <p>APPIUM_WEB_RUBY</p> </li> 
-    /// <li> <p>CALABASH</p> </li> 
-    /// <li> <p>INSTRUMENTATION</p> </li> 
-    /// <li> <p>UIAUTOMATION</p> </li> 
-    /// <li> <p>UIAUTOMATOR</p> </li> 
-    /// <li> <p>XCTEST</p> </li> 
-    /// <li> <p>XCTEST_UI</p> </li> 
+    /// <p>The job's type.</p>
+    /// <p>Allowed values include the following:</p>
+    /// <ul>
+    /// <li> <p>BUILTIN_FUZZ</p> </li>
+    /// <li> <p>BUILTIN_EXPLORER. For Android, an app explorer that traverses an Android app, interacting with it and capturing screenshots at the same time.</p> </li>
+    /// <li> <p>APPIUM_JAVA_JUNIT</p> </li>
+    /// <li> <p>APPIUM_JAVA_TESTNG</p> </li>
+    /// <li> <p>APPIUM_PYTHON</p> </li>
+    /// <li> <p>APPIUM_NODE</p> </li>
+    /// <li> <p>APPIUM_RUBY</p> </li>
+    /// <li> <p>APPIUM_WEB_JAVA_JUNIT</p> </li>
+    /// <li> <p>APPIUM_WEB_JAVA_TESTNG</p> </li>
+    /// <li> <p>APPIUM_WEB_PYTHON</p> </li>
+    /// <li> <p>APPIUM_WEB_NODE</p> </li>
+    /// <li> <p>APPIUM_WEB_RUBY</p> </li>
+    /// <li> <p>CALABASH</p> </li>
+    /// <li> <p>INSTRUMENTATION</p> </li>
+    /// <li> <p>UIAUTOMATION</p> </li>
+    /// <li> <p>UIAUTOMATOR</p> </li>
+    /// <li> <p>XCTEST</p> </li>
+    /// <li> <p>XCTEST_UI</p> </li>
     /// </ul>
     pub fn r#type(mut self, input: crate::types::TestType) -> Self {
         self.r#type = Some(input);
         self
     }
-    /// <p>The job's type.</p> 
-    /// <p>Allowed values include the following:</p> 
-    /// <ul> 
-    /// <li> <p>BUILTIN_FUZZ</p> </li> 
-    /// <li> <p>BUILTIN_EXPLORER. For Android, an app explorer that traverses an Android app, interacting with it and capturing screenshots at the same time.</p> </li> 
-    /// <li> <p>APPIUM_JAVA_JUNIT</p> </li> 
-    /// <li> <p>APPIUM_JAVA_TESTNG</p> </li> 
-    /// <li> <p>APPIUM_PYTHON</p> </li> 
-    /// <li> <p>APPIUM_NODE</p> </li> 
-    /// <li> <p>APPIUM_RUBY</p> </li> 
-    /// <li> <p>APPIUM_WEB_JAVA_JUNIT</p> </li> 
-    /// <li> <p>APPIUM_WEB_JAVA_TESTNG</p> </li> 
-    /// <li> <p>APPIUM_WEB_PYTHON</p> </li> 
-    /// <li> <p>APPIUM_WEB_NODE</p> </li> 
-    /// <li> <p>APPIUM_WEB_RUBY</p> </li> 
-    /// <li> <p>CALABASH</p> </li> 
-    /// <li> <p>INSTRUMENTATION</p> </li> 
-    /// <li> <p>UIAUTOMATION</p> </li> 
-    /// <li> <p>UIAUTOMATOR</p> </li> 
-    /// <li> <p>XCTEST</p> </li> 
-    /// <li> <p>XCTEST_UI</p> </li> 
+    /// <p>The job's type.</p>
+    /// <p>Allowed values include the following:</p>
+    /// <ul>
+    /// <li> <p>BUILTIN_FUZZ</p> </li>
+    /// <li> <p>BUILTIN_EXPLORER. For Android, an app explorer that traverses an Android app, interacting with it and capturing screenshots at the same time.</p> </li>
+    /// <li> <p>APPIUM_JAVA_JUNIT</p> </li>
+    /// <li> <p>APPIUM_JAVA_TESTNG</p> </li>
+    /// <li> <p>APPIUM_PYTHON</p> </li>
+    /// <li> <p>APPIUM_NODE</p> </li>
+    /// <li> <p>APPIUM_RUBY</p> </li>
+    /// <li> <p>APPIUM_WEB_JAVA_JUNIT</p> </li>
+    /// <li> <p>APPIUM_WEB_JAVA_TESTNG</p> </li>
+    /// <li> <p>APPIUM_WEB_PYTHON</p> </li>
+    /// <li> <p>APPIUM_WEB_NODE</p> </li>
+    /// <li> <p>APPIUM_WEB_RUBY</p> </li>
+    /// <li> <p>CALABASH</p> </li>
+    /// <li> <p>INSTRUMENTATION</p> </li>
+    /// <li> <p>UIAUTOMATION</p> </li>
+    /// <li> <p>UIAUTOMATOR</p> </li>
+    /// <li> <p>XCTEST</p> </li>
+    /// <li> <p>XCTEST_UI</p> </li>
     /// </ul>
     pub fn set_type(mut self, input: std::option::Option<crate::types::TestType>) -> Self {
-        self.r#type = input; self
+        self.r#type = input;
+        self
     }
     /// <p>When the job was created.</p>
     pub fn created(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -302,69 +305,72 @@ impl JobBuilder {
     }
     /// <p>When the job was created.</p>
     pub fn set_created(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.created = input; self
+        self.created = input;
+        self
     }
-    /// <p>The job's status.</p> 
-    /// <p>Allowed values include:</p> 
-    /// <ul> 
-    /// <li> <p>PENDING</p> </li> 
-    /// <li> <p>PENDING_CONCURRENCY</p> </li> 
-    /// <li> <p>PENDING_DEVICE</p> </li> 
-    /// <li> <p>PROCESSING</p> </li> 
-    /// <li> <p>SCHEDULING</p> </li> 
-    /// <li> <p>PREPARING</p> </li> 
-    /// <li> <p>RUNNING</p> </li> 
-    /// <li> <p>COMPLETED</p> </li> 
-    /// <li> <p>STOPPING</p> </li> 
+    /// <p>The job's status.</p>
+    /// <p>Allowed values include:</p>
+    /// <ul>
+    /// <li> <p>PENDING</p> </li>
+    /// <li> <p>PENDING_CONCURRENCY</p> </li>
+    /// <li> <p>PENDING_DEVICE</p> </li>
+    /// <li> <p>PROCESSING</p> </li>
+    /// <li> <p>SCHEDULING</p> </li>
+    /// <li> <p>PREPARING</p> </li>
+    /// <li> <p>RUNNING</p> </li>
+    /// <li> <p>COMPLETED</p> </li>
+    /// <li> <p>STOPPING</p> </li>
     /// </ul>
     pub fn status(mut self, input: crate::types::ExecutionStatus) -> Self {
         self.status = Some(input);
         self
     }
-    /// <p>The job's status.</p> 
-    /// <p>Allowed values include:</p> 
-    /// <ul> 
-    /// <li> <p>PENDING</p> </li> 
-    /// <li> <p>PENDING_CONCURRENCY</p> </li> 
-    /// <li> <p>PENDING_DEVICE</p> </li> 
-    /// <li> <p>PROCESSING</p> </li> 
-    /// <li> <p>SCHEDULING</p> </li> 
-    /// <li> <p>PREPARING</p> </li> 
-    /// <li> <p>RUNNING</p> </li> 
-    /// <li> <p>COMPLETED</p> </li> 
-    /// <li> <p>STOPPING</p> </li> 
+    /// <p>The job's status.</p>
+    /// <p>Allowed values include:</p>
+    /// <ul>
+    /// <li> <p>PENDING</p> </li>
+    /// <li> <p>PENDING_CONCURRENCY</p> </li>
+    /// <li> <p>PENDING_DEVICE</p> </li>
+    /// <li> <p>PROCESSING</p> </li>
+    /// <li> <p>SCHEDULING</p> </li>
+    /// <li> <p>PREPARING</p> </li>
+    /// <li> <p>RUNNING</p> </li>
+    /// <li> <p>COMPLETED</p> </li>
+    /// <li> <p>STOPPING</p> </li>
     /// </ul>
     pub fn set_status(mut self, input: std::option::Option<crate::types::ExecutionStatus>) -> Self {
-        self.status = input; self
+        self.status = input;
+        self
     }
-    /// <p>The job's result.</p> 
-    /// <p>Allowed values include:</p> 
-    /// <ul> 
-    /// <li> <p>PENDING</p> </li> 
-    /// <li> <p>PASSED</p> </li> 
-    /// <li> <p>WARNED</p> </li> 
-    /// <li> <p>FAILED</p> </li> 
-    /// <li> <p>SKIPPED</p> </li> 
-    /// <li> <p>ERRORED</p> </li> 
-    /// <li> <p>STOPPED</p> </li> 
+    /// <p>The job's result.</p>
+    /// <p>Allowed values include:</p>
+    /// <ul>
+    /// <li> <p>PENDING</p> </li>
+    /// <li> <p>PASSED</p> </li>
+    /// <li> <p>WARNED</p> </li>
+    /// <li> <p>FAILED</p> </li>
+    /// <li> <p>SKIPPED</p> </li>
+    /// <li> <p>ERRORED</p> </li>
+    /// <li> <p>STOPPED</p> </li>
     /// </ul>
     pub fn result(mut self, input: crate::types::ExecutionResult) -> Self {
         self.result = Some(input);
         self
     }
-    /// <p>The job's result.</p> 
-    /// <p>Allowed values include:</p> 
-    /// <ul> 
-    /// <li> <p>PENDING</p> </li> 
-    /// <li> <p>PASSED</p> </li> 
-    /// <li> <p>WARNED</p> </li> 
-    /// <li> <p>FAILED</p> </li> 
-    /// <li> <p>SKIPPED</p> </li> 
-    /// <li> <p>ERRORED</p> </li> 
-    /// <li> <p>STOPPED</p> </li> 
+    /// <p>The job's result.</p>
+    /// <p>Allowed values include:</p>
+    /// <ul>
+    /// <li> <p>PENDING</p> </li>
+    /// <li> <p>PASSED</p> </li>
+    /// <li> <p>WARNED</p> </li>
+    /// <li> <p>FAILED</p> </li>
+    /// <li> <p>SKIPPED</p> </li>
+    /// <li> <p>ERRORED</p> </li>
+    /// <li> <p>STOPPED</p> </li>
     /// </ul>
     pub fn set_result(mut self, input: std::option::Option<crate::types::ExecutionResult>) -> Self {
-        self.result = input; self
+        self.result = input;
+        self
     }
     /// <p>The job's start time.</p>
     pub fn started(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -373,7 +379,8 @@ impl JobBuilder {
     }
     /// <p>The job's start time.</p>
     pub fn set_started(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.started = input; self
+        self.started = input;
+        self
     }
     /// <p>The job's stop time.</p>
     pub fn stopped(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -382,7 +389,8 @@ impl JobBuilder {
     }
     /// <p>The job's stop time.</p>
     pub fn set_stopped(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.stopped = input; self
+        self.stopped = input;
+        self
     }
     /// <p>The job's result counters.</p>
     pub fn counters(mut self, input: crate::types::Counters) -> Self {
@@ -391,7 +399,8 @@ impl JobBuilder {
     }
     /// <p>The job's result counters.</p>
     pub fn set_counters(mut self, input: std::option::Option<crate::types::Counters>) -> Self {
-        self.counters = input; self
+        self.counters = input;
+        self
     }
     /// <p>A message about the job's result.</p>
     pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
@@ -400,7 +409,8 @@ impl JobBuilder {
     }
     /// <p>A message about the job's result.</p>
     pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.message = input; self
+        self.message = input;
+        self
     }
     /// <p>The device (phone or tablet).</p>
     pub fn device(mut self, input: crate::types::Device) -> Self {
@@ -409,7 +419,8 @@ impl JobBuilder {
     }
     /// <p>The device (phone or tablet).</p>
     pub fn set_device(mut self, input: std::option::Option<crate::types::Device>) -> Self {
-        self.device = input; self
+        self.device = input;
+        self
     }
     /// <p>The ARN of the instance.</p>
     pub fn instance_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -418,7 +429,8 @@ impl JobBuilder {
     }
     /// <p>The ARN of the instance.</p>
     pub fn set_instance_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.instance_arn = input; self
+        self.instance_arn = input;
+        self
     }
     /// <p>Represents the total (metered or unmetered) minutes used by the job.</p>
     pub fn device_minutes(mut self, input: crate::types::DeviceMinutes) -> Self {
@@ -426,8 +438,12 @@ impl JobBuilder {
         self
     }
     /// <p>Represents the total (metered or unmetered) minutes used by the job.</p>
-    pub fn set_device_minutes(mut self, input: std::option::Option<crate::types::DeviceMinutes>) -> Self {
-        self.device_minutes = input; self
+    pub fn set_device_minutes(
+        mut self,
+        input: std::option::Option<crate::types::DeviceMinutes>,
+    ) -> Self {
+        self.device_minutes = input;
+        self
     }
     /// <p>The endpoint for streaming device video.</p>
     pub fn video_endpoint(mut self, input: impl Into<std::string::String>) -> Self {
@@ -436,7 +452,8 @@ impl JobBuilder {
     }
     /// <p>The endpoint for streaming device video.</p>
     pub fn set_video_endpoint(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.video_endpoint = input; self
+        self.video_endpoint = input;
+        self
     }
     /// <p>This value is set to true if video capture is enabled. Otherwise, it is set to false.</p>
     pub fn video_capture(mut self, input: bool) -> Self {
@@ -445,42 +462,27 @@ impl JobBuilder {
     }
     /// <p>This value is set to true if video capture is enabled. Otherwise, it is set to false.</p>
     pub fn set_video_capture(mut self, input: std::option::Option<bool>) -> Self {
-        self.video_capture = input; self
+        self.video_capture = input;
+        self
     }
     /// Consumes the builder and constructs a [`Job`](crate::types::Job).
     pub fn build(self) -> crate::types::Job {
         crate::types::Job {
-            arn: self.arn
-            ,
-            name: self.name
-            ,
-            r#type: self.r#type
-            ,
-            created: self.created
-            ,
-            status: self.status
-            ,
-            result: self.result
-            ,
-            started: self.started
-            ,
-            stopped: self.stopped
-            ,
-            counters: self.counters
-            ,
-            message: self.message
-            ,
-            device: self.device
-            ,
-            instance_arn: self.instance_arn
-            ,
-            device_minutes: self.device_minutes
-            ,
-            video_endpoint: self.video_endpoint
-            ,
-            video_capture: self.video_capture
-            ,
+            arn: self.arn,
+            name: self.name,
+            r#type: self.r#type,
+            created: self.created,
+            status: self.status,
+            result: self.result,
+            started: self.started,
+            stopped: self.stopped,
+            counters: self.counters,
+            message: self.message,
+            device: self.device,
+            instance_arn: self.instance_arn,
+            device_minutes: self.device_minutes,
+            video_endpoint: self.video_endpoint,
+            video_capture: self.video_capture,
         }
     }
 }
-

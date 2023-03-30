@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ReplaceRouteTableAssociationInput  {
+pub struct ReplaceRouteTableAssociationInput {
     /// <p>The association ID.</p>
     #[doc(hidden)]
     pub association_id: std::option::Option<std::string::String>,
@@ -15,7 +15,7 @@ pub struct ReplaceRouteTableAssociationInput  {
 }
 impl ReplaceRouteTableAssociationInput {
     /// <p>The association ID.</p>
-    pub fn association_id(&self) -> std::option::Option<& str> {
+    pub fn association_id(&self) -> std::option::Option<&str> {
         self.association_id.as_deref()
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
@@ -23,13 +23,13 @@ impl ReplaceRouteTableAssociationInput {
         self.dry_run
     }
     /// <p>The ID of the new route table to associate with the subnet.</p>
-    pub fn route_table_id(&self) -> std::option::Option<& str> {
+    pub fn route_table_id(&self) -> std::option::Option<&str> {
         self.route_table_id.as_deref()
     }
 }
 impl ReplaceRouteTableAssociationInput {
     /// Creates a new builder-style object to manufacture [`ReplaceRouteTableAssociationInput`](crate::operation::replace_route_table_association::ReplaceRouteTableAssociationInput).
-    pub fn builder() -> crate::operation::replace_route_table_association::builders::ReplaceRouteTableAssociationInputBuilder {
+    pub fn builder() -> crate::operation::replace_route_table_association::builders::ReplaceRouteTableAssociationInputBuilder{
         crate::operation::replace_route_table_association::builders::ReplaceRouteTableAssociationInputBuilder::default()
     }
 }
@@ -50,7 +50,8 @@ impl ReplaceRouteTableAssociationInputBuilder {
     }
     /// <p>The association ID.</p>
     pub fn set_association_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.association_id = input; self
+        self.association_id = input;
+        self
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn dry_run(mut self, input: bool) -> Self {
@@ -59,7 +60,8 @@ impl ReplaceRouteTableAssociationInputBuilder {
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn set_dry_run(mut self, input: std::option::Option<bool>) -> Self {
-        self.dry_run = input; self
+        self.dry_run = input;
+        self
     }
     /// <p>The ID of the new route table to associate with the subnet.</p>
     pub fn route_table_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -68,20 +70,22 @@ impl ReplaceRouteTableAssociationInputBuilder {
     }
     /// <p>The ID of the new route table to associate with the subnet.</p>
     pub fn set_route_table_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.route_table_id = input; self
+        self.route_table_id = input;
+        self
     }
     /// Consumes the builder and constructs a [`ReplaceRouteTableAssociationInput`](crate::operation::replace_route_table_association::ReplaceRouteTableAssociationInput).
-    pub fn build(self) -> Result<crate::operation::replace_route_table_association::ReplaceRouteTableAssociationInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::replace_route_table_association::ReplaceRouteTableAssociationInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::replace_route_table_association::ReplaceRouteTableAssociationInput {
-                association_id: self.association_id
-                ,
-                dry_run: self.dry_run
-                ,
-                route_table_id: self.route_table_id
-                ,
-            }
+                association_id: self.association_id,
+                dry_run: self.dry_run,
+                route_table_id: self.route_table_id,
+            },
         )
     }
 }
-

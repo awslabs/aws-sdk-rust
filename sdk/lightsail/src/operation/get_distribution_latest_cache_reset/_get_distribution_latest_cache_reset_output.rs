@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetDistributionLatestCacheResetOutput  {
+pub struct GetDistributionLatestCacheResetOutput {
     /// <p>The status of the last cache reset.</p>
     #[doc(hidden)]
     pub status: std::option::Option<std::string::String>,
@@ -13,22 +13,22 @@ pub struct GetDistributionLatestCacheResetOutput  {
 }
 impl GetDistributionLatestCacheResetOutput {
     /// <p>The status of the last cache reset.</p>
-    pub fn status(&self) -> std::option::Option<& str> {
+    pub fn status(&self) -> std::option::Option<&str> {
         self.status.as_deref()
     }
     /// <p>The timestamp of the last cache reset (e.g., <code>1479734909.17</code>) in Unix time format.</p>
-    pub fn create_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
+    pub fn create_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.create_time.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for GetDistributionLatestCacheResetOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl GetDistributionLatestCacheResetOutput {
     /// Creates a new builder-style object to manufacture [`GetDistributionLatestCacheResetOutput`](crate::operation::get_distribution_latest_cache_reset::GetDistributionLatestCacheResetOutput).
-    pub fn builder() -> crate::operation::get_distribution_latest_cache_reset::builders::GetDistributionLatestCacheResetOutputBuilder {
+    pub fn builder() -> crate::operation::get_distribution_latest_cache_reset::builders::GetDistributionLatestCacheResetOutputBuilder{
         crate::operation::get_distribution_latest_cache_reset::builders::GetDistributionLatestCacheResetOutputBuilder::default()
     }
 }
@@ -49,7 +49,8 @@ impl GetDistributionLatestCacheResetOutputBuilder {
     }
     /// <p>The status of the last cache reset.</p>
     pub fn set_status(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.status = input; self
+        self.status = input;
+        self
     }
     /// <p>The timestamp of the last cache reset (e.g., <code>1479734909.17</code>) in Unix time format.</p>
     pub fn create_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -57,20 +58,27 @@ impl GetDistributionLatestCacheResetOutputBuilder {
         self
     }
     /// <p>The timestamp of the last cache reset (e.g., <code>1479734909.17</code>) in Unix time format.</p>
-    pub fn set_create_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.create_time = input; self
+    pub fn set_create_time(
+        mut self,
+        input: std::option::Option<aws_smithy_types::DateTime>,
+    ) -> Self {
+        self.create_time = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`GetDistributionLatestCacheResetOutput`](crate::operation::get_distribution_latest_cache_reset::GetDistributionLatestCacheResetOutput).
-    pub fn build(self) -> crate::operation::get_distribution_latest_cache_reset::GetDistributionLatestCacheResetOutput {
+    pub fn build(
+        self,
+    ) -> crate::operation::get_distribution_latest_cache_reset::GetDistributionLatestCacheResetOutput
+    {
         crate::operation::get_distribution_latest_cache_reset::GetDistributionLatestCacheResetOutput {
             status: self.status
             ,
@@ -80,4 +88,3 @@ impl GetDistributionLatestCacheResetOutputBuilder {
         }
     }
 }
-

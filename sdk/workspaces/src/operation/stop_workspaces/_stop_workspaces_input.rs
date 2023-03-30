@@ -2,14 +2,14 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct StopWorkspacesInput  {
+pub struct StopWorkspacesInput {
     /// <p>The WorkSpaces to stop. You can specify up to 25 WorkSpaces.</p>
     #[doc(hidden)]
     pub stop_workspace_requests: std::option::Option<std::vec::Vec<crate::types::StopRequest>>,
 }
 impl StopWorkspacesInput {
     /// <p>The WorkSpaces to stop. You can specify up to 25 WorkSpaces.</p>
-    pub fn stop_workspace_requests(&self) -> std::option::Option<& [crate::types::StopRequest]> {
+    pub fn stop_workspace_requests(&self) -> std::option::Option<&[crate::types::StopRequest]> {
         self.stop_workspace_requests.as_deref()
     }
 }
@@ -24,7 +24,8 @@ impl StopWorkspacesInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct StopWorkspacesInputBuilder {
-    pub(crate) stop_workspace_requests: std::option::Option<std::vec::Vec<crate::types::StopRequest>>,
+    pub(crate) stop_workspace_requests:
+        std::option::Option<std::vec::Vec<crate::types::StopRequest>>,
 }
 impl StopWorkspacesInputBuilder {
     /// Appends an item to `stop_workspace_requests`.
@@ -34,22 +35,27 @@ impl StopWorkspacesInputBuilder {
     /// <p>The WorkSpaces to stop. You can specify up to 25 WorkSpaces.</p>
     pub fn stop_workspace_requests(mut self, input: crate::types::StopRequest) -> Self {
         let mut v = self.stop_workspace_requests.unwrap_or_default();
-                        v.push(input);
-                        self.stop_workspace_requests = Some(v);
-                        self
+        v.push(input);
+        self.stop_workspace_requests = Some(v);
+        self
     }
     /// <p>The WorkSpaces to stop. You can specify up to 25 WorkSpaces.</p>
-    pub fn set_stop_workspace_requests(mut self, input: std::option::Option<std::vec::Vec<crate::types::StopRequest>>) -> Self {
-        self.stop_workspace_requests = input; self
+    pub fn set_stop_workspace_requests(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::StopRequest>>,
+    ) -> Self {
+        self.stop_workspace_requests = input;
+        self
     }
     /// Consumes the builder and constructs a [`StopWorkspacesInput`](crate::operation::stop_workspaces::StopWorkspacesInput).
-    pub fn build(self) -> Result<crate::operation::stop_workspaces::StopWorkspacesInput, aws_smithy_http::operation::error::BuildError> {
-        Ok(
-            crate::operation::stop_workspaces::StopWorkspacesInput {
-                stop_workspace_requests: self.stop_workspace_requests
-                ,
-            }
-        )
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::stop_workspaces::StopWorkspacesInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        Ok(crate::operation::stop_workspaces::StopWorkspacesInput {
+            stop_workspace_requests: self.stop_workspace_requests,
+        })
     }
 }
-

@@ -142,4 +142,3 @@ pub use crate::types::error::_maximum_number_of_trails_exceeded_exception::Maxim
 pub use crate::types::error::_event_data_store_already_exists_exception::EventDataStoreAlreadyExistsExceptionBuilder;
 
 pub use crate::types::error::_inactive_query_exception::InactiveQueryExceptionBuilder;
-

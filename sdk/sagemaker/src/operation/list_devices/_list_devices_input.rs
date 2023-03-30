@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListDevicesInput  {
+pub struct ListDevicesInput {
     /// <p>The response from the last list when returning a list large enough to need tokening.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
@@ -21,7 +21,7 @@ pub struct ListDevicesInput  {
 }
 impl ListDevicesInput {
     /// <p>The response from the last list when returning a list large enough to need tokening.</p>
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
     /// <p>Maximum number of results to select.</p>
@@ -29,15 +29,15 @@ impl ListDevicesInput {
         self.max_results
     }
     /// <p>Select fleets where the job was updated after X</p>
-    pub fn latest_heartbeat_after(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
+    pub fn latest_heartbeat_after(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.latest_heartbeat_after.as_ref()
     }
     /// <p>A filter that searches devices that contains this name in any of their models.</p>
-    pub fn model_name(&self) -> std::option::Option<& str> {
+    pub fn model_name(&self) -> std::option::Option<&str> {
         self.model_name.as_deref()
     }
     /// <p>Filter for fleets containing this name in their device fleet name.</p>
-    pub fn device_fleet_name(&self) -> std::option::Option<& str> {
+    pub fn device_fleet_name(&self) -> std::option::Option<&str> {
         self.device_fleet_name.as_deref()
     }
 }
@@ -66,7 +66,8 @@ impl ListDevicesInputBuilder {
     }
     /// <p>The response from the last list when returning a list large enough to need tokening.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input; self
+        self.next_token = input;
+        self
     }
     /// <p>Maximum number of results to select.</p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -75,7 +76,8 @@ impl ListDevicesInputBuilder {
     }
     /// <p>Maximum number of results to select.</p>
     pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_results = input; self
+        self.max_results = input;
+        self
     }
     /// <p>Select fleets where the job was updated after X</p>
     pub fn latest_heartbeat_after(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -83,8 +85,12 @@ impl ListDevicesInputBuilder {
         self
     }
     /// <p>Select fleets where the job was updated after X</p>
-    pub fn set_latest_heartbeat_after(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.latest_heartbeat_after = input; self
+    pub fn set_latest_heartbeat_after(
+        mut self,
+        input: std::option::Option<aws_smithy_types::DateTime>,
+    ) -> Self {
+        self.latest_heartbeat_after = input;
+        self
     }
     /// <p>A filter that searches devices that contains this name in any of their models.</p>
     pub fn model_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -93,7 +99,8 @@ impl ListDevicesInputBuilder {
     }
     /// <p>A filter that searches devices that contains this name in any of their models.</p>
     pub fn set_model_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.model_name = input; self
+        self.model_name = input;
+        self
     }
     /// <p>Filter for fleets containing this name in their device fleet name.</p>
     pub fn device_fleet_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -101,25 +108,26 @@ impl ListDevicesInputBuilder {
         self
     }
     /// <p>Filter for fleets containing this name in their device fleet name.</p>
-    pub fn set_device_fleet_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.device_fleet_name = input; self
+    pub fn set_device_fleet_name(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.device_fleet_name = input;
+        self
     }
     /// Consumes the builder and constructs a [`ListDevicesInput`](crate::operation::list_devices::ListDevicesInput).
-    pub fn build(self) -> Result<crate::operation::list_devices::ListDevicesInput, aws_smithy_http::operation::error::BuildError> {
-        Ok(
-            crate::operation::list_devices::ListDevicesInput {
-                next_token: self.next_token
-                ,
-                max_results: self.max_results
-                ,
-                latest_heartbeat_after: self.latest_heartbeat_after
-                ,
-                model_name: self.model_name
-                ,
-                device_fleet_name: self.device_fleet_name
-                ,
-            }
-        )
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::list_devices::ListDevicesInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        Ok(crate::operation::list_devices::ListDevicesInput {
+            next_token: self.next_token,
+            max_results: self.max_results,
+            latest_heartbeat_after: self.latest_heartbeat_after,
+            model_name: self.model_name,
+            device_fleet_name: self.device_fleet_name,
+        })
     }
 }
-

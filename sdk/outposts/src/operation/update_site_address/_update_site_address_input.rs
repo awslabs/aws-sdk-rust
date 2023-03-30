@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateSiteAddressInput  {
+pub struct UpdateSiteAddressInput {
     /// <p> The ID or the Amazon Resource Name (ARN) of the site. </p>
     #[doc(hidden)]
     pub site_id: std::option::Option<std::string::String>,
@@ -15,21 +15,22 @@ pub struct UpdateSiteAddressInput  {
 }
 impl UpdateSiteAddressInput {
     /// <p> The ID or the Amazon Resource Name (ARN) of the site. </p>
-    pub fn site_id(&self) -> std::option::Option<& str> {
+    pub fn site_id(&self) -> std::option::Option<&str> {
         self.site_id.as_deref()
     }
     /// <p> The type of the address. </p>
-    pub fn address_type(&self) -> std::option::Option<& crate::types::AddressType> {
+    pub fn address_type(&self) -> std::option::Option<&crate::types::AddressType> {
         self.address_type.as_ref()
     }
     /// <p> The address for the site. </p>
-    pub fn address(&self) -> std::option::Option<& crate::types::Address> {
+    pub fn address(&self) -> std::option::Option<&crate::types::Address> {
         self.address.as_ref()
     }
 }
 impl UpdateSiteAddressInput {
     /// Creates a new builder-style object to manufacture [`UpdateSiteAddressInput`](crate::operation::update_site_address::UpdateSiteAddressInput).
-    pub fn builder() -> crate::operation::update_site_address::builders::UpdateSiteAddressInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::update_site_address::builders::UpdateSiteAddressInputBuilder {
         crate::operation::update_site_address::builders::UpdateSiteAddressInputBuilder::default()
     }
 }
@@ -50,7 +51,8 @@ impl UpdateSiteAddressInputBuilder {
     }
     /// <p> The ID or the Amazon Resource Name (ARN) of the site. </p>
     pub fn set_site_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.site_id = input; self
+        self.site_id = input;
+        self
     }
     /// <p> The type of the address. </p>
     pub fn address_type(mut self, input: crate::types::AddressType) -> Self {
@@ -58,8 +60,12 @@ impl UpdateSiteAddressInputBuilder {
         self
     }
     /// <p> The type of the address. </p>
-    pub fn set_address_type(mut self, input: std::option::Option<crate::types::AddressType>) -> Self {
-        self.address_type = input; self
+    pub fn set_address_type(
+        mut self,
+        input: std::option::Option<crate::types::AddressType>,
+    ) -> Self {
+        self.address_type = input;
+        self
     }
     /// <p> The address for the site. </p>
     pub fn address(mut self, input: crate::types::Address) -> Self {
@@ -68,20 +74,22 @@ impl UpdateSiteAddressInputBuilder {
     }
     /// <p> The address for the site. </p>
     pub fn set_address(mut self, input: std::option::Option<crate::types::Address>) -> Self {
-        self.address = input; self
+        self.address = input;
+        self
     }
     /// Consumes the builder and constructs a [`UpdateSiteAddressInput`](crate::operation::update_site_address::UpdateSiteAddressInput).
-    pub fn build(self) -> Result<crate::operation::update_site_address::UpdateSiteAddressInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::update_site_address::UpdateSiteAddressInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::update_site_address::UpdateSiteAddressInput {
-                site_id: self.site_id
-                ,
-                address_type: self.address_type
-                ,
-                address: self.address
-                ,
-            }
+                site_id: self.site_id,
+                address_type: self.address_type,
+                address: self.address,
+            },
         )
     }
 }
-

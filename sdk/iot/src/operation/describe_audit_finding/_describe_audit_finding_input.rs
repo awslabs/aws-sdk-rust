@@ -2,20 +2,21 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeAuditFindingInput  {
+pub struct DescribeAuditFindingInput {
     /// <p>A unique identifier for a single audit finding. You can use this identifier to apply mitigation actions to the finding.</p>
     #[doc(hidden)]
     pub finding_id: std::option::Option<std::string::String>,
 }
 impl DescribeAuditFindingInput {
     /// <p>A unique identifier for a single audit finding. You can use this identifier to apply mitigation actions to the finding.</p>
-    pub fn finding_id(&self) -> std::option::Option<& str> {
+    pub fn finding_id(&self) -> std::option::Option<&str> {
         self.finding_id.as_deref()
     }
 }
 impl DescribeAuditFindingInput {
     /// Creates a new builder-style object to manufacture [`DescribeAuditFindingInput`](crate::operation::describe_audit_finding::DescribeAuditFindingInput).
-    pub fn builder() -> crate::operation::describe_audit_finding::builders::DescribeAuditFindingInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::describe_audit_finding::builders::DescribeAuditFindingInputBuilder {
         crate::operation::describe_audit_finding::builders::DescribeAuditFindingInputBuilder::default()
     }
 }
@@ -34,16 +35,20 @@ impl DescribeAuditFindingInputBuilder {
     }
     /// <p>A unique identifier for a single audit finding. You can use this identifier to apply mitigation actions to the finding.</p>
     pub fn set_finding_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.finding_id = input; self
+        self.finding_id = input;
+        self
     }
     /// Consumes the builder and constructs a [`DescribeAuditFindingInput`](crate::operation::describe_audit_finding::DescribeAuditFindingInput).
-    pub fn build(self) -> Result<crate::operation::describe_audit_finding::DescribeAuditFindingInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::describe_audit_finding::DescribeAuditFindingInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::describe_audit_finding::DescribeAuditFindingInput {
-                finding_id: self.finding_id
-                ,
-            }
+                finding_id: self.finding_id,
+            },
         )
     }
 }
-

@@ -3,7 +3,7 @@
 /// <p>Represents a server.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Server  {
+pub struct Server {
     /// <p>The ID of the server.</p>
     #[doc(hidden)]
     pub server_id: std::option::Option<std::string::String>,
@@ -22,19 +22,19 @@ pub struct Server  {
 }
 impl Server {
     /// <p>The ID of the server.</p>
-    pub fn server_id(&self) -> std::option::Option<& str> {
+    pub fn server_id(&self) -> std::option::Option<&str> {
         self.server_id.as_deref()
     }
     /// <p>The type of server.</p>
-    pub fn server_type(&self) -> std::option::Option<& crate::types::ServerType> {
+    pub fn server_type(&self) -> std::option::Option<&crate::types::ServerType> {
         self.server_type.as_ref()
     }
     /// <p>Information about the VM server.</p>
-    pub fn vm_server(&self) -> std::option::Option<& crate::types::VmServer> {
+    pub fn vm_server(&self) -> std::option::Option<&crate::types::VmServer> {
         self.vm_server.as_ref()
     }
     /// <p>The ID of the replication job.</p>
-    pub fn replication_job_id(&self) -> std::option::Option<& str> {
+    pub fn replication_job_id(&self) -> std::option::Option<&str> {
         self.replication_job_id.as_deref()
     }
     /// <p>Indicates whether the replication job is deleted or failed.</p>
@@ -67,7 +67,8 @@ impl ServerBuilder {
     }
     /// <p>The ID of the server.</p>
     pub fn set_server_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.server_id = input; self
+        self.server_id = input;
+        self
     }
     /// <p>The type of server.</p>
     pub fn server_type(mut self, input: crate::types::ServerType) -> Self {
@@ -76,7 +77,8 @@ impl ServerBuilder {
     }
     /// <p>The type of server.</p>
     pub fn set_server_type(mut self, input: std::option::Option<crate::types::ServerType>) -> Self {
-        self.server_type = input; self
+        self.server_type = input;
+        self
     }
     /// <p>Information about the VM server.</p>
     pub fn vm_server(mut self, input: crate::types::VmServer) -> Self {
@@ -85,7 +87,8 @@ impl ServerBuilder {
     }
     /// <p>Information about the VM server.</p>
     pub fn set_vm_server(mut self, input: std::option::Option<crate::types::VmServer>) -> Self {
-        self.vm_server = input; self
+        self.vm_server = input;
+        self
     }
     /// <p>The ID of the replication job.</p>
     pub fn replication_job_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -93,8 +96,12 @@ impl ServerBuilder {
         self
     }
     /// <p>The ID of the replication job.</p>
-    pub fn set_replication_job_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.replication_job_id = input; self
+    pub fn set_replication_job_id(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.replication_job_id = input;
+        self
     }
     /// <p>Indicates whether the replication job is deleted or failed.</p>
     pub fn replication_job_terminated(mut self, input: bool) -> Self {
@@ -103,22 +110,17 @@ impl ServerBuilder {
     }
     /// <p>Indicates whether the replication job is deleted or failed.</p>
     pub fn set_replication_job_terminated(mut self, input: std::option::Option<bool>) -> Self {
-        self.replication_job_terminated = input; self
+        self.replication_job_terminated = input;
+        self
     }
     /// Consumes the builder and constructs a [`Server`](crate::types::Server).
     pub fn build(self) -> crate::types::Server {
         crate::types::Server {
-            server_id: self.server_id
-            ,
-            server_type: self.server_type
-            ,
-            vm_server: self.vm_server
-            ,
-            replication_job_id: self.replication_job_id
-            ,
-            replication_job_terminated: self.replication_job_terminated
-            ,
+            server_id: self.server_id,
+            server_type: self.server_type,
+            vm_server: self.vm_server,
+            replication_job_id: self.replication_job_id,
+            replication_job_terminated: self.replication_job_terminated,
         }
     }
 }
-

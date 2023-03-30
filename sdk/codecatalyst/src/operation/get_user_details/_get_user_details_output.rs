@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetUserDetailsOutput  {
+pub struct GetUserDetailsOutput {
     /// <p>The system-generated unique ID of the user.</p>
     #[doc(hidden)]
     pub user_id: std::option::Option<std::string::String>,
@@ -22,31 +22,31 @@ pub struct GetUserDetailsOutput  {
 }
 impl GetUserDetailsOutput {
     /// <p>The system-generated unique ID of the user.</p>
-    pub fn user_id(&self) -> std::option::Option<& str> {
+    pub fn user_id(&self) -> std::option::Option<&str> {
         self.user_id.as_deref()
     }
     /// <p>The name of the user as displayed in Amazon CodeCatalyst.</p>
-    pub fn user_name(&self) -> std::option::Option<& str> {
+    pub fn user_name(&self) -> std::option::Option<&str> {
         self.user_name.as_deref()
     }
     /// <p>The friendly name displayed for the user in Amazon CodeCatalyst.</p>
-    pub fn display_name(&self) -> std::option::Option<& str> {
+    pub fn display_name(&self) -> std::option::Option<&str> {
         self.display_name.as_deref()
     }
     /// <p>The email address provided by the user when they signed up.</p>
-    pub fn primary_email(&self) -> std::option::Option<& crate::types::EmailAddress> {
+    pub fn primary_email(&self) -> std::option::Option<&crate::types::EmailAddress> {
         self.primary_email.as_ref()
     }
     /// <p></p>
-    pub fn version(&self) -> std::option::Option<& str> {
+    pub fn version(&self) -> std::option::Option<&str> {
         self.version.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for GetUserDetailsOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl GetUserDetailsOutput {
     /// Creates a new builder-style object to manufacture [`GetUserDetailsOutput`](crate::operation::get_user_details::GetUserDetailsOutput).
     pub fn builder() -> crate::operation::get_user_details::builders::GetUserDetailsOutputBuilder {
@@ -73,7 +73,8 @@ impl GetUserDetailsOutputBuilder {
     }
     /// <p>The system-generated unique ID of the user.</p>
     pub fn set_user_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.user_id = input; self
+        self.user_id = input;
+        self
     }
     /// <p>The name of the user as displayed in Amazon CodeCatalyst.</p>
     pub fn user_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -82,7 +83,8 @@ impl GetUserDetailsOutputBuilder {
     }
     /// <p>The name of the user as displayed in Amazon CodeCatalyst.</p>
     pub fn set_user_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.user_name = input; self
+        self.user_name = input;
+        self
     }
     /// <p>The friendly name displayed for the user in Amazon CodeCatalyst.</p>
     pub fn display_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -91,7 +93,8 @@ impl GetUserDetailsOutputBuilder {
     }
     /// <p>The friendly name displayed for the user in Amazon CodeCatalyst.</p>
     pub fn set_display_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.display_name = input; self
+        self.display_name = input;
+        self
     }
     /// <p>The email address provided by the user when they signed up.</p>
     pub fn primary_email(mut self, input: crate::types::EmailAddress) -> Self {
@@ -99,8 +102,12 @@ impl GetUserDetailsOutputBuilder {
         self
     }
     /// <p>The email address provided by the user when they signed up.</p>
-    pub fn set_primary_email(mut self, input: std::option::Option<crate::types::EmailAddress>) -> Self {
-        self.primary_email = input; self
+    pub fn set_primary_email(
+        mut self,
+        input: std::option::Option<crate::types::EmailAddress>,
+    ) -> Self {
+        self.primary_email = input;
+        self
     }
     /// <p></p>
     pub fn version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -109,32 +116,27 @@ impl GetUserDetailsOutputBuilder {
     }
     /// <p></p>
     pub fn set_version(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.version = input; self
+        self.version = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`GetUserDetailsOutput`](crate::operation::get_user_details::GetUserDetailsOutput).
     pub fn build(self) -> crate::operation::get_user_details::GetUserDetailsOutput {
         crate::operation::get_user_details::GetUserDetailsOutput {
-            user_id: self.user_id
-            ,
-            user_name: self.user_name
-            ,
-            display_name: self.display_name
-            ,
-            primary_email: self.primary_email
-            ,
-            version: self.version
-            ,
+            user_id: self.user_id,
+            user_name: self.user_name,
+            display_name: self.display_name,
+            primary_email: self.primary_email,
+            version: self.version,
             _request_id: self._request_id,
         }
     }
 }
-

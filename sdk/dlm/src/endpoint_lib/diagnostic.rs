@@ -46,4 +46,3 @@ impl DiagnosticCollector {
         Self { last_error: None }
     }
 }
-

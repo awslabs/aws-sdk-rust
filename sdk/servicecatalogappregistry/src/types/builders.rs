@@ -24,4 +24,3 @@ pub use crate::types::_resource_integrations::ResourceIntegrationsBuilder;
 pub use crate::types::_resource_group::ResourceGroupBuilder;
 
 pub use crate::types::_integrations::IntegrationsBuilder;
-

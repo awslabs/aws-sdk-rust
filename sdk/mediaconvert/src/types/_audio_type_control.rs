@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-/// 
+///
 /// Here is an example of how you can make a match expression forward-compatible:
-/// 
+///
 /// ```text
 /// # let audiotypecontrol = unimplemented!();
 /// match audiotypecontrol {
@@ -30,55 +30,64 @@
 /// Specifically, when `audiotypecontrol` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `AudioTypeControl::NewFeature` also yielding `"NewFeature"`.
-/// 
+///
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 /// When set to FOLLOW_INPUT, if the input contains an ISO 639 audio_type, then that value is passed through to the output. If the input contains no ISO 639 audio_type, the value in Audio Type is included in the output. Otherwise the value in Audio Type is included in the output. Note that this field and audioType are both ignored if audioDescriptionBroadcasterMix is set to BROADCASTER_MIXED_AD.
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
 pub enum AudioTypeControl {
     #[allow(missing_docs)] // documentation missing in model
     FollowInput,
     #[allow(missing_docs)] // documentation missing in model
     UseConfigured,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::primitives::UnknownVariantValue)
+    Unknown(crate::primitives::UnknownVariantValue),
 }
 impl std::convert::From<&str> for AudioTypeControl {
-                fn from(s: &str) -> Self {
-                    match s {
-                        "FOLLOW_INPUT" => AudioTypeControl::FollowInput,
-"USE_CONFIGURED" => AudioTypeControl::UseConfigured,
-other => AudioTypeControl::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
-                    }
-                }
+    fn from(s: &str) -> Self {
+        match s {
+            "FOLLOW_INPUT" => AudioTypeControl::FollowInput,
+            "USE_CONFIGURED" => AudioTypeControl::UseConfigured,
+            other => {
+                AudioTypeControl::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
             }
-impl std::str::FromStr for AudioTypeControl {
-                type Err = std::convert::Infallible;
-
-                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-                    Ok(AudioTypeControl::from(s))
-                }
-            }
-impl AudioTypeControl {
-                /// Returns the `&str` value of the enum member.
-                pub fn as_str(&self) -> &str {
-                    match self {
-    AudioTypeControl::FollowInput => "FOLLOW_INPUT",
-    AudioTypeControl::UseConfigured => "USE_CONFIGURED",
-    AudioTypeControl::Unknown(value) => value.as_str()
+        }
+    }
 }
-                }
-                /// Returns all the `&str` representations of the enum members.
-                pub const fn values() -> &'static [&'static str] {
-                    &["FOLLOW_INPUT", "USE_CONFIGURED"]
-                }
-            }
-impl AsRef<str> for AudioTypeControl {
-                fn as_ref(&self) -> &str {
-                    self.as_str()
-                }
-            }
+impl std::str::FromStr for AudioTypeControl {
+    type Err = std::convert::Infallible;
 
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(AudioTypeControl::from(s))
+    }
+}
+impl AudioTypeControl {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            AudioTypeControl::FollowInput => "FOLLOW_INPUT",
+            AudioTypeControl::UseConfigured => "USE_CONFIGURED",
+            AudioTypeControl::Unknown(value) => value.as_str(),
+        }
+    }
+    /// Returns all the `&str` representations of the enum members.
+    pub const fn values() -> &'static [&'static str] {
+        &["FOLLOW_INPUT", "USE_CONFIGURED"]
+    }
+}
+impl AsRef<str> for AudioTypeControl {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}

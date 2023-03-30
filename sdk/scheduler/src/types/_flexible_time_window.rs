@@ -3,7 +3,7 @@
 /// <p>Allows you to configure a time window during which EventBridge Scheduler invokes the schedule.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct FlexibleTimeWindow  {
+pub struct FlexibleTimeWindow {
     /// <p>Determines whether the schedule is invoked within a flexible time window.</p>
     #[doc(hidden)]
     pub mode: std::option::Option<crate::types::FlexibleTimeWindowMode>,
@@ -13,7 +13,7 @@ pub struct FlexibleTimeWindow  {
 }
 impl FlexibleTimeWindow {
     /// <p>Determines whether the schedule is invoked within a flexible time window.</p>
-    pub fn mode(&self) -> std::option::Option<& crate::types::FlexibleTimeWindowMode> {
+    pub fn mode(&self) -> std::option::Option<&crate::types::FlexibleTimeWindowMode> {
         self.mode.as_ref()
     }
     /// <p>The maximum time window during which a schedule can be invoked.</p>
@@ -42,8 +42,12 @@ impl FlexibleTimeWindowBuilder {
         self
     }
     /// <p>Determines whether the schedule is invoked within a flexible time window.</p>
-    pub fn set_mode(mut self, input: std::option::Option<crate::types::FlexibleTimeWindowMode>) -> Self {
-        self.mode = input; self
+    pub fn set_mode(
+        mut self,
+        input: std::option::Option<crate::types::FlexibleTimeWindowMode>,
+    ) -> Self {
+        self.mode = input;
+        self
     }
     /// <p>The maximum time window during which a schedule can be invoked.</p>
     pub fn maximum_window_in_minutes(mut self, input: i32) -> Self {
@@ -52,16 +56,14 @@ impl FlexibleTimeWindowBuilder {
     }
     /// <p>The maximum time window during which a schedule can be invoked.</p>
     pub fn set_maximum_window_in_minutes(mut self, input: std::option::Option<i32>) -> Self {
-        self.maximum_window_in_minutes = input; self
+        self.maximum_window_in_minutes = input;
+        self
     }
     /// Consumes the builder and constructs a [`FlexibleTimeWindow`](crate::types::FlexibleTimeWindow).
     pub fn build(self) -> crate::types::FlexibleTimeWindow {
         crate::types::FlexibleTimeWindow {
-            mode: self.mode
-            ,
-            maximum_window_in_minutes: self.maximum_window_in_minutes
-            ,
+            mode: self.mode,
+            maximum_window_in_minutes: self.maximum_window_in_minutes,
         }
     }
 }
-

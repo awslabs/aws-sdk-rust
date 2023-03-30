@@ -3,7 +3,7 @@
 /// <p>An object that describes the endpoint of the signaling channel returned by the <code>GetSignalingChannelEndpoint</code> API.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ResourceEndpointListItem  {
+pub struct ResourceEndpointListItem {
     /// <p>The protocol of the signaling channel returned by the <code>GetSignalingChannelEndpoint</code> API.</p>
     #[doc(hidden)]
     pub protocol: std::option::Option<crate::types::ChannelProtocol>,
@@ -13,11 +13,11 @@ pub struct ResourceEndpointListItem  {
 }
 impl ResourceEndpointListItem {
     /// <p>The protocol of the signaling channel returned by the <code>GetSignalingChannelEndpoint</code> API.</p>
-    pub fn protocol(&self) -> std::option::Option<& crate::types::ChannelProtocol> {
+    pub fn protocol(&self) -> std::option::Option<&crate::types::ChannelProtocol> {
         self.protocol.as_ref()
     }
     /// <p>The endpoint of the signaling channel returned by the <code>GetSignalingChannelEndpoint</code> API.</p>
-    pub fn resource_endpoint(&self) -> std::option::Option<& str> {
+    pub fn resource_endpoint(&self) -> std::option::Option<&str> {
         self.resource_endpoint.as_deref()
     }
 }
@@ -42,8 +42,12 @@ impl ResourceEndpointListItemBuilder {
         self
     }
     /// <p>The protocol of the signaling channel returned by the <code>GetSignalingChannelEndpoint</code> API.</p>
-    pub fn set_protocol(mut self, input: std::option::Option<crate::types::ChannelProtocol>) -> Self {
-        self.protocol = input; self
+    pub fn set_protocol(
+        mut self,
+        input: std::option::Option<crate::types::ChannelProtocol>,
+    ) -> Self {
+        self.protocol = input;
+        self
     }
     /// <p>The endpoint of the signaling channel returned by the <code>GetSignalingChannelEndpoint</code> API.</p>
     pub fn resource_endpoint(mut self, input: impl Into<std::string::String>) -> Self {
@@ -51,17 +55,18 @@ impl ResourceEndpointListItemBuilder {
         self
     }
     /// <p>The endpoint of the signaling channel returned by the <code>GetSignalingChannelEndpoint</code> API.</p>
-    pub fn set_resource_endpoint(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.resource_endpoint = input; self
+    pub fn set_resource_endpoint(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.resource_endpoint = input;
+        self
     }
     /// Consumes the builder and constructs a [`ResourceEndpointListItem`](crate::types::ResourceEndpointListItem).
     pub fn build(self) -> crate::types::ResourceEndpointListItem {
         crate::types::ResourceEndpointListItem {
-            protocol: self.protocol
-            ,
-            resource_endpoint: self.resource_endpoint
-            ,
+            protocol: self.protocol,
+            resource_endpoint: self.resource_endpoint,
         }
     }
 }
-

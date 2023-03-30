@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ActivateDeviceIdentifierInput  {
+pub struct ActivateDeviceIdentifierInput {
     /// <p>The Amazon Resource Name (ARN) of the device identifier.</p>
     #[doc(hidden)]
     pub device_identifier_arn: std::option::Option<std::string::String>,
@@ -12,17 +12,19 @@ pub struct ActivateDeviceIdentifierInput  {
 }
 impl ActivateDeviceIdentifierInput {
     /// <p>The Amazon Resource Name (ARN) of the device identifier.</p>
-    pub fn device_identifier_arn(&self) -> std::option::Option<& str> {
+    pub fn device_identifier_arn(&self) -> std::option::Option<&str> {
         self.device_identifier_arn.as_deref()
     }
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html">How to ensure idempotency</a>.</p>
-    pub fn client_token(&self) -> std::option::Option<& str> {
+    pub fn client_token(&self) -> std::option::Option<&str> {
         self.client_token.as_deref()
     }
 }
 impl ActivateDeviceIdentifierInput {
     /// Creates a new builder-style object to manufacture [`ActivateDeviceIdentifierInput`](crate::operation::activate_device_identifier::ActivateDeviceIdentifierInput).
-    pub fn builder() -> crate::operation::activate_device_identifier::builders::ActivateDeviceIdentifierInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::activate_device_identifier::builders::ActivateDeviceIdentifierInputBuilder
+    {
         crate::operation::activate_device_identifier::builders::ActivateDeviceIdentifierInputBuilder::default()
     }
 }
@@ -41,8 +43,12 @@ impl ActivateDeviceIdentifierInputBuilder {
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the device identifier.</p>
-    pub fn set_device_identifier_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.device_identifier_arn = input; self
+    pub fn set_device_identifier_arn(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.device_identifier_arn = input;
+        self
     }
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html">How to ensure idempotency</a>.</p>
     pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -51,18 +57,21 @@ impl ActivateDeviceIdentifierInputBuilder {
     }
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html">How to ensure idempotency</a>.</p>
     pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.client_token = input; self
+        self.client_token = input;
+        self
     }
     /// Consumes the builder and constructs a [`ActivateDeviceIdentifierInput`](crate::operation::activate_device_identifier::ActivateDeviceIdentifierInput).
-    pub fn build(self) -> Result<crate::operation::activate_device_identifier::ActivateDeviceIdentifierInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::activate_device_identifier::ActivateDeviceIdentifierInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::activate_device_identifier::ActivateDeviceIdentifierInput {
-                device_identifier_arn: self.device_identifier_arn
-                ,
-                client_token: self.client_token
-                ,
-            }
+                device_identifier_arn: self.device_identifier_arn,
+                client_token: self.client_token,
+            },
         )
     }
 }
-

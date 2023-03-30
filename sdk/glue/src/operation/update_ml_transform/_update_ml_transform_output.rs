@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateMlTransformOutput  {
+pub struct UpdateMlTransformOutput {
     /// <p>The unique identifier for the transform that was updated.</p>
     #[doc(hidden)]
     pub transform_id: std::option::Option<std::string::String>,
@@ -10,18 +10,19 @@ pub struct UpdateMlTransformOutput  {
 }
 impl UpdateMlTransformOutput {
     /// <p>The unique identifier for the transform that was updated.</p>
-    pub fn transform_id(&self) -> std::option::Option<& str> {
+    pub fn transform_id(&self) -> std::option::Option<&str> {
         self.transform_id.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for UpdateMlTransformOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl UpdateMlTransformOutput {
     /// Creates a new builder-style object to manufacture [`UpdateMlTransformOutput`](crate::operation::update_ml_transform::UpdateMlTransformOutput).
-    pub fn builder() -> crate::operation::update_ml_transform::builders::UpdateMlTransformOutputBuilder {
+    pub fn builder(
+    ) -> crate::operation::update_ml_transform::builders::UpdateMlTransformOutputBuilder {
         crate::operation::update_ml_transform::builders::UpdateMlTransformOutputBuilder::default()
     }
 }
@@ -41,24 +42,23 @@ impl UpdateMlTransformOutputBuilder {
     }
     /// <p>The unique identifier for the transform that was updated.</p>
     pub fn set_transform_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.transform_id = input; self
+        self.transform_id = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`UpdateMlTransformOutput`](crate::operation::update_ml_transform::UpdateMlTransformOutput).
     pub fn build(self) -> crate::operation::update_ml_transform::UpdateMlTransformOutput {
         crate::operation::update_ml_transform::UpdateMlTransformOutput {
-            transform_id: self.transform_id
-            ,
+            transform_id: self.transform_id,
             _request_id: self._request_id,
         }
     }
 }
-

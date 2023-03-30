@@ -72,4 +72,3 @@ pub mod builders;
 
 /// Error types that AmazonMWAA can respond with.
 pub mod error;
-

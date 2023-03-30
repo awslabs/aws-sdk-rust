@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-/// 
+///
 /// Here is an example of how you can make a match expression forward-compatible:
-/// 
+///
 /// ```text
 /// # let captionsourcetype = unimplemented!();
 /// match captionsourcetype {
@@ -42,14 +42,22 @@
 /// Specifically, when `captionsourcetype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `CaptionSourceType::NewFeature` also yielding `"NewFeature"`.
-/// 
+///
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 /// Use Source (SourceType) to identify the format of your input captions.  The service cannot auto-detect caption format.
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
 pub enum CaptionSourceType {
     #[allow(missing_docs)] // documentation missing in model
     Ancillary,
@@ -80,65 +88,81 @@ pub enum CaptionSourceType {
     #[allow(missing_docs)] // documentation missing in model
     Webvtt,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::primitives::UnknownVariantValue)
+    Unknown(crate::primitives::UnknownVariantValue),
 }
 impl std::convert::From<&str> for CaptionSourceType {
-                fn from(s: &str) -> Self {
-                    match s {
-                        "ANCILLARY" => CaptionSourceType::Ancillary,
-"DVB_SUB" => CaptionSourceType::DvbSub,
-"EMBEDDED" => CaptionSourceType::Embedded,
-"IMSC" => CaptionSourceType::Imsc,
-"NULL_SOURCE" => CaptionSourceType::NullSource,
-"SCC" => CaptionSourceType::Scc,
-"SCTE20" => CaptionSourceType::Scte20,
-"SMI" => CaptionSourceType::Smi,
-"SMPTE_TT" => CaptionSourceType::SmpteTt,
-"SRT" => CaptionSourceType::Srt,
-"STL" => CaptionSourceType::Stl,
-"TELETEXT" => CaptionSourceType::Teletext,
-"TTML" => CaptionSourceType::Ttml,
-"WEBVTT" => CaptionSourceType::Webvtt,
-other => CaptionSourceType::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
-                    }
-                }
+    fn from(s: &str) -> Self {
+        match s {
+            "ANCILLARY" => CaptionSourceType::Ancillary,
+            "DVB_SUB" => CaptionSourceType::DvbSub,
+            "EMBEDDED" => CaptionSourceType::Embedded,
+            "IMSC" => CaptionSourceType::Imsc,
+            "NULL_SOURCE" => CaptionSourceType::NullSource,
+            "SCC" => CaptionSourceType::Scc,
+            "SCTE20" => CaptionSourceType::Scte20,
+            "SMI" => CaptionSourceType::Smi,
+            "SMPTE_TT" => CaptionSourceType::SmpteTt,
+            "SRT" => CaptionSourceType::Srt,
+            "STL" => CaptionSourceType::Stl,
+            "TELETEXT" => CaptionSourceType::Teletext,
+            "TTML" => CaptionSourceType::Ttml,
+            "WEBVTT" => CaptionSourceType::Webvtt,
+            other => {
+                CaptionSourceType::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
             }
-impl std::str::FromStr for CaptionSourceType {
-                type Err = std::convert::Infallible;
-
-                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-                    Ok(CaptionSourceType::from(s))
-                }
-            }
-impl CaptionSourceType {
-                /// Returns the `&str` value of the enum member.
-                pub fn as_str(&self) -> &str {
-                    match self {
-    CaptionSourceType::Ancillary => "ANCILLARY",
-    CaptionSourceType::DvbSub => "DVB_SUB",
-    CaptionSourceType::Embedded => "EMBEDDED",
-    CaptionSourceType::Imsc => "IMSC",
-    CaptionSourceType::NullSource => "NULL_SOURCE",
-    CaptionSourceType::Scc => "SCC",
-    CaptionSourceType::Scte20 => "SCTE20",
-    CaptionSourceType::Smi => "SMI",
-    CaptionSourceType::SmpteTt => "SMPTE_TT",
-    CaptionSourceType::Srt => "SRT",
-    CaptionSourceType::Stl => "STL",
-    CaptionSourceType::Teletext => "TELETEXT",
-    CaptionSourceType::Ttml => "TTML",
-    CaptionSourceType::Webvtt => "WEBVTT",
-    CaptionSourceType::Unknown(value) => value.as_str()
+        }
+    }
 }
-                }
-                /// Returns all the `&str` representations of the enum members.
-                pub const fn values() -> &'static [&'static str] {
-                    &["ANCILLARY", "DVB_SUB", "EMBEDDED", "IMSC", "NULL_SOURCE", "SCC", "SCTE20", "SMI", "SMPTE_TT", "SRT", "STL", "TELETEXT", "TTML", "WEBVTT"]
-                }
-            }
-impl AsRef<str> for CaptionSourceType {
-                fn as_ref(&self) -> &str {
-                    self.as_str()
-                }
-            }
+impl std::str::FromStr for CaptionSourceType {
+    type Err = std::convert::Infallible;
 
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(CaptionSourceType::from(s))
+    }
+}
+impl CaptionSourceType {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            CaptionSourceType::Ancillary => "ANCILLARY",
+            CaptionSourceType::DvbSub => "DVB_SUB",
+            CaptionSourceType::Embedded => "EMBEDDED",
+            CaptionSourceType::Imsc => "IMSC",
+            CaptionSourceType::NullSource => "NULL_SOURCE",
+            CaptionSourceType::Scc => "SCC",
+            CaptionSourceType::Scte20 => "SCTE20",
+            CaptionSourceType::Smi => "SMI",
+            CaptionSourceType::SmpteTt => "SMPTE_TT",
+            CaptionSourceType::Srt => "SRT",
+            CaptionSourceType::Stl => "STL",
+            CaptionSourceType::Teletext => "TELETEXT",
+            CaptionSourceType::Ttml => "TTML",
+            CaptionSourceType::Webvtt => "WEBVTT",
+            CaptionSourceType::Unknown(value) => value.as_str(),
+        }
+    }
+    /// Returns all the `&str` representations of the enum members.
+    pub const fn values() -> &'static [&'static str] {
+        &[
+            "ANCILLARY",
+            "DVB_SUB",
+            "EMBEDDED",
+            "IMSC",
+            "NULL_SOURCE",
+            "SCC",
+            "SCTE20",
+            "SMI",
+            "SMPTE_TT",
+            "SRT",
+            "STL",
+            "TELETEXT",
+            "TTML",
+            "WEBVTT",
+        ]
+    }
+}
+impl AsRef<str> for CaptionSourceType {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}

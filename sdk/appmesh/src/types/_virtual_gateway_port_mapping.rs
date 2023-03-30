@@ -3,7 +3,7 @@
 /// <p>An object that represents a port mapping.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct VirtualGatewayPortMapping  {
+pub struct VirtualGatewayPortMapping {
     /// <p>The port used for the port mapping. Specify one protocol.</p>
     #[doc(hidden)]
     pub port: i32,
@@ -17,7 +17,7 @@ impl VirtualGatewayPortMapping {
         self.port
     }
     /// <p>The protocol used for the port mapping.</p>
-    pub fn protocol(&self) -> std::option::Option<& crate::types::VirtualGatewayPortProtocol> {
+    pub fn protocol(&self) -> std::option::Option<&crate::types::VirtualGatewayPortProtocol> {
         self.protocol.as_ref()
     }
 }
@@ -43,7 +43,8 @@ impl VirtualGatewayPortMappingBuilder {
     }
     /// <p>The port used for the port mapping. Specify one protocol.</p>
     pub fn set_port(mut self, input: std::option::Option<i32>) -> Self {
-        self.port = input; self
+        self.port = input;
+        self
     }
     /// <p>The protocol used for the port mapping.</p>
     pub fn protocol(mut self, input: crate::types::VirtualGatewayPortProtocol) -> Self {
@@ -51,18 +52,18 @@ impl VirtualGatewayPortMappingBuilder {
         self
     }
     /// <p>The protocol used for the port mapping.</p>
-    pub fn set_protocol(mut self, input: std::option::Option<crate::types::VirtualGatewayPortProtocol>) -> Self {
-        self.protocol = input; self
+    pub fn set_protocol(
+        mut self,
+        input: std::option::Option<crate::types::VirtualGatewayPortProtocol>,
+    ) -> Self {
+        self.protocol = input;
+        self
     }
     /// Consumes the builder and constructs a [`VirtualGatewayPortMapping`](crate::types::VirtualGatewayPortMapping).
     pub fn build(self) -> crate::types::VirtualGatewayPortMapping {
         crate::types::VirtualGatewayPortMapping {
-            port: self.port
-                .unwrap_or_default()
-            ,
-            protocol: self.protocol
-            ,
+            port: self.port.unwrap_or_default(),
+            protocol: self.protocol,
         }
     }
 }
-

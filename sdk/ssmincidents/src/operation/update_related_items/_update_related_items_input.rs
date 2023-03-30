@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateRelatedItemsInput  {
+pub struct UpdateRelatedItemsInput {
     /// <p>A token ensuring that the operation is called only once with the specified details.</p>
     #[doc(hidden)]
     pub client_token: std::option::Option<std::string::String>,
@@ -15,21 +15,22 @@ pub struct UpdateRelatedItemsInput  {
 }
 impl UpdateRelatedItemsInput {
     /// <p>A token ensuring that the operation is called only once with the specified details.</p>
-    pub fn client_token(&self) -> std::option::Option<& str> {
+    pub fn client_token(&self) -> std::option::Option<&str> {
         self.client_token.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the incident record containing the related items you are updating.</p>
-    pub fn incident_record_arn(&self) -> std::option::Option<& str> {
+    pub fn incident_record_arn(&self) -> std::option::Option<&str> {
         self.incident_record_arn.as_deref()
     }
     /// <p>Details about the item you are adding or deleting.</p>
-    pub fn related_items_update(&self) -> std::option::Option<& crate::types::RelatedItemsUpdate> {
+    pub fn related_items_update(&self) -> std::option::Option<&crate::types::RelatedItemsUpdate> {
         self.related_items_update.as_ref()
     }
 }
 impl UpdateRelatedItemsInput {
     /// Creates a new builder-style object to manufacture [`UpdateRelatedItemsInput`](crate::operation::update_related_items::UpdateRelatedItemsInput).
-    pub fn builder() -> crate::operation::update_related_items::builders::UpdateRelatedItemsInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::update_related_items::builders::UpdateRelatedItemsInputBuilder {
         crate::operation::update_related_items::builders::UpdateRelatedItemsInputBuilder::default()
     }
 }
@@ -50,7 +51,8 @@ impl UpdateRelatedItemsInputBuilder {
     }
     /// <p>A token ensuring that the operation is called only once with the specified details.</p>
     pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.client_token = input; self
+        self.client_token = input;
+        self
     }
     /// <p>The Amazon Resource Name (ARN) of the incident record containing the related items you are updating.</p>
     pub fn incident_record_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -58,8 +60,12 @@ impl UpdateRelatedItemsInputBuilder {
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the incident record containing the related items you are updating.</p>
-    pub fn set_incident_record_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.incident_record_arn = input; self
+    pub fn set_incident_record_arn(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.incident_record_arn = input;
+        self
     }
     /// <p>Details about the item you are adding or deleting.</p>
     pub fn related_items_update(mut self, input: crate::types::RelatedItemsUpdate) -> Self {
@@ -67,21 +73,26 @@ impl UpdateRelatedItemsInputBuilder {
         self
     }
     /// <p>Details about the item you are adding or deleting.</p>
-    pub fn set_related_items_update(mut self, input: std::option::Option<crate::types::RelatedItemsUpdate>) -> Self {
-        self.related_items_update = input; self
+    pub fn set_related_items_update(
+        mut self,
+        input: std::option::Option<crate::types::RelatedItemsUpdate>,
+    ) -> Self {
+        self.related_items_update = input;
+        self
     }
     /// Consumes the builder and constructs a [`UpdateRelatedItemsInput`](crate::operation::update_related_items::UpdateRelatedItemsInput).
-    pub fn build(self) -> Result<crate::operation::update_related_items::UpdateRelatedItemsInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::update_related_items::UpdateRelatedItemsInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::update_related_items::UpdateRelatedItemsInput {
-                client_token: self.client_token
-                ,
-                incident_record_arn: self.incident_record_arn
-                ,
-                related_items_update: self.related_items_update
-                ,
-            }
+                client_token: self.client_token,
+                incident_record_arn: self.incident_record_arn,
+                related_items_update: self.related_items_update,
+            },
         )
     }
 }
-

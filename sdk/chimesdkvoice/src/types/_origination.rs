@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Origination  {
+pub struct Origination {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub routes: std::option::Option<std::vec::Vec<crate::types::OriginationRoute>>,
@@ -12,7 +12,7 @@ pub struct Origination  {
 }
 impl Origination {
     #[allow(missing_docs)] // documentation missing in model
-    pub fn routes(&self) -> std::option::Option<& [crate::types::OriginationRoute]> {
+    pub fn routes(&self) -> std::option::Option<&[crate::types::OriginationRoute]> {
         self.routes.as_deref()
     }
     #[allow(missing_docs)] // documentation missing in model
@@ -41,13 +41,17 @@ impl OriginationBuilder {
     ///
     pub fn routes(mut self, input: crate::types::OriginationRoute) -> Self {
         let mut v = self.routes.unwrap_or_default();
-                        v.push(input);
-                        self.routes = Some(v);
-                        self
+        v.push(input);
+        self.routes = Some(v);
+        self
     }
     #[allow(missing_docs)] // documentation missing in model
-    pub fn set_routes(mut self, input: std::option::Option<std::vec::Vec<crate::types::OriginationRoute>>) -> Self {
-        self.routes = input; self
+    pub fn set_routes(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::OriginationRoute>>,
+    ) -> Self {
+        self.routes = input;
+        self
     }
     #[allow(missing_docs)] // documentation missing in model
     pub fn disabled(mut self, input: bool) -> Self {
@@ -56,16 +60,14 @@ impl OriginationBuilder {
     }
     #[allow(missing_docs)] // documentation missing in model
     pub fn set_disabled(mut self, input: std::option::Option<bool>) -> Self {
-        self.disabled = input; self
+        self.disabled = input;
+        self
     }
     /// Consumes the builder and constructs a [`Origination`](crate::types::Origination).
     pub fn build(self) -> crate::types::Origination {
         crate::types::Origination {
-            routes: self.routes
-            ,
-            disabled: self.disabled
-            ,
+            routes: self.routes,
+            disabled: self.disabled,
         }
     }
 }
-

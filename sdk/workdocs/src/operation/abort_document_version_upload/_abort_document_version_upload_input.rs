@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct AbortDocumentVersionUploadInput  {
+pub struct AbortDocumentVersionUploadInput {
     /// <p>Amazon WorkDocs authentication token. Not required when using AWS administrator credentials to access the API.</p>
     #[doc(hidden)]
     pub authentication_token: std::option::Option<std::string::String>,
@@ -15,19 +15,19 @@ pub struct AbortDocumentVersionUploadInput  {
 }
 impl AbortDocumentVersionUploadInput {
     /// <p>Amazon WorkDocs authentication token. Not required when using AWS administrator credentials to access the API.</p>
-    pub fn authentication_token(&self) -> std::option::Option<& str> {
+    pub fn authentication_token(&self) -> std::option::Option<&str> {
         self.authentication_token.as_deref()
     }
     /// <p>The ID of the document.</p>
-    pub fn document_id(&self) -> std::option::Option<& str> {
+    pub fn document_id(&self) -> std::option::Option<&str> {
         self.document_id.as_deref()
     }
     /// <p>The ID of the version.</p>
-    pub fn version_id(&self) -> std::option::Option<& str> {
+    pub fn version_id(&self) -> std::option::Option<&str> {
         self.version_id.as_deref()
     }
 }
-impl  std::fmt::Debug for AbortDocumentVersionUploadInput  {
+impl std::fmt::Debug for AbortDocumentVersionUploadInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("AbortDocumentVersionUploadInput");
         formatter.field("authentication_token", &"*** Sensitive Data Redacted ***");
@@ -38,7 +38,7 @@ impl  std::fmt::Debug for AbortDocumentVersionUploadInput  {
 }
 impl AbortDocumentVersionUploadInput {
     /// Creates a new builder-style object to manufacture [`AbortDocumentVersionUploadInput`](crate::operation::abort_document_version_upload::AbortDocumentVersionUploadInput).
-    pub fn builder() -> crate::operation::abort_document_version_upload::builders::AbortDocumentVersionUploadInputBuilder {
+    pub fn builder() -> crate::operation::abort_document_version_upload::builders::AbortDocumentVersionUploadInputBuilder{
         crate::operation::abort_document_version_upload::builders::AbortDocumentVersionUploadInputBuilder::default()
     }
 }
@@ -58,8 +58,12 @@ impl AbortDocumentVersionUploadInputBuilder {
         self
     }
     /// <p>Amazon WorkDocs authentication token. Not required when using AWS administrator credentials to access the API.</p>
-    pub fn set_authentication_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.authentication_token = input; self
+    pub fn set_authentication_token(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.authentication_token = input;
+        self
     }
     /// <p>The ID of the document.</p>
     pub fn document_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -68,7 +72,8 @@ impl AbortDocumentVersionUploadInputBuilder {
     }
     /// <p>The ID of the document.</p>
     pub fn set_document_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.document_id = input; self
+        self.document_id = input;
+        self
     }
     /// <p>The ID of the version.</p>
     pub fn version_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -77,19 +82,22 @@ impl AbortDocumentVersionUploadInputBuilder {
     }
     /// <p>The ID of the version.</p>
     pub fn set_version_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.version_id = input; self
+        self.version_id = input;
+        self
     }
     /// Consumes the builder and constructs a [`AbortDocumentVersionUploadInput`](crate::operation::abort_document_version_upload::AbortDocumentVersionUploadInput).
-    pub fn build(self) -> Result<crate::operation::abort_document_version_upload::AbortDocumentVersionUploadInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::abort_document_version_upload::AbortDocumentVersionUploadInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::abort_document_version_upload::AbortDocumentVersionUploadInput {
-                authentication_token: self.authentication_token
-                ,
-                document_id: self.document_id
-                ,
-                version_id: self.version_id
-                ,
-            }
+                authentication_token: self.authentication_token,
+                document_id: self.document_id,
+                version_id: self.version_id,
+            },
         )
     }
 }
@@ -102,4 +110,3 @@ impl std::fmt::Debug for AbortDocumentVersionUploadInputBuilder {
         formatter.finish()
     }
 }
-

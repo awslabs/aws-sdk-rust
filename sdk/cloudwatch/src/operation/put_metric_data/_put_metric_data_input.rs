@@ -2,8 +2,8 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PutMetricDataInput  {
-    /// <p>The namespace for the metric data.</p> 
+pub struct PutMetricDataInput {
+    /// <p>The namespace for the metric data.</p>
     /// <p>To avoid conflicts with Amazon Web Services service namespaces, you should not specify a namespace that begins with <code>AWS/</code> </p>
     #[doc(hidden)]
     pub namespace: std::option::Option<std::string::String>,
@@ -12,13 +12,13 @@ pub struct PutMetricDataInput  {
     pub metric_data: std::option::Option<std::vec::Vec<crate::types::MetricDatum>>,
 }
 impl PutMetricDataInput {
-    /// <p>The namespace for the metric data.</p> 
+    /// <p>The namespace for the metric data.</p>
     /// <p>To avoid conflicts with Amazon Web Services service namespaces, you should not specify a namespace that begins with <code>AWS/</code> </p>
-    pub fn namespace(&self) -> std::option::Option<& str> {
+    pub fn namespace(&self) -> std::option::Option<&str> {
         self.namespace.as_deref()
     }
     /// <p>The data for the metric. The array can include no more than 1000 metrics per call.</p>
-    pub fn metric_data(&self) -> std::option::Option<& [crate::types::MetricDatum]> {
+    pub fn metric_data(&self) -> std::option::Option<&[crate::types::MetricDatum]> {
         self.metric_data.as_deref()
     }
 }
@@ -37,16 +37,17 @@ pub struct PutMetricDataInputBuilder {
     pub(crate) metric_data: std::option::Option<std::vec::Vec<crate::types::MetricDatum>>,
 }
 impl PutMetricDataInputBuilder {
-    /// <p>The namespace for the metric data.</p> 
+    /// <p>The namespace for the metric data.</p>
     /// <p>To avoid conflicts with Amazon Web Services service namespaces, you should not specify a namespace that begins with <code>AWS/</code> </p>
     pub fn namespace(mut self, input: impl Into<std::string::String>) -> Self {
         self.namespace = Some(input.into());
         self
     }
-    /// <p>The namespace for the metric data.</p> 
+    /// <p>The namespace for the metric data.</p>
     /// <p>To avoid conflicts with Amazon Web Services service namespaces, you should not specify a namespace that begins with <code>AWS/</code> </p>
     pub fn set_namespace(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.namespace = input; self
+        self.namespace = input;
+        self
     }
     /// Appends an item to `metric_data`.
     ///
@@ -55,24 +56,28 @@ impl PutMetricDataInputBuilder {
     /// <p>The data for the metric. The array can include no more than 1000 metrics per call.</p>
     pub fn metric_data(mut self, input: crate::types::MetricDatum) -> Self {
         let mut v = self.metric_data.unwrap_or_default();
-                        v.push(input);
-                        self.metric_data = Some(v);
-                        self
+        v.push(input);
+        self.metric_data = Some(v);
+        self
     }
     /// <p>The data for the metric. The array can include no more than 1000 metrics per call.</p>
-    pub fn set_metric_data(mut self, input: std::option::Option<std::vec::Vec<crate::types::MetricDatum>>) -> Self {
-        self.metric_data = input; self
+    pub fn set_metric_data(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::MetricDatum>>,
+    ) -> Self {
+        self.metric_data = input;
+        self
     }
     /// Consumes the builder and constructs a [`PutMetricDataInput`](crate::operation::put_metric_data::PutMetricDataInput).
-    pub fn build(self) -> Result<crate::operation::put_metric_data::PutMetricDataInput, aws_smithy_http::operation::error::BuildError> {
-        Ok(
-            crate::operation::put_metric_data::PutMetricDataInput {
-                namespace: self.namespace
-                ,
-                metric_data: self.metric_data
-                ,
-            }
-        )
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::put_metric_data::PutMetricDataInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        Ok(crate::operation::put_metric_data::PutMetricDataInput {
+            namespace: self.namespace,
+            metric_data: self.metric_data,
+        })
     }
 }
-

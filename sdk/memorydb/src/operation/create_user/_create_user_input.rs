@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateUserInput  {
+pub struct CreateUserInput {
     /// <p>The name of the user. This value must be unique as it also serves as the user identifier.</p>
     #[doc(hidden)]
     pub user_name: std::option::Option<std::string::String>,
@@ -18,19 +18,19 @@ pub struct CreateUserInput  {
 }
 impl CreateUserInput {
     /// <p>The name of the user. This value must be unique as it also serves as the user identifier.</p>
-    pub fn user_name(&self) -> std::option::Option<& str> {
+    pub fn user_name(&self) -> std::option::Option<&str> {
         self.user_name.as_deref()
     }
     /// <p>Denotes the user's authentication properties, such as whether it requires a password to authenticate.</p>
-    pub fn authentication_mode(&self) -> std::option::Option<& crate::types::AuthenticationMode> {
+    pub fn authentication_mode(&self) -> std::option::Option<&crate::types::AuthenticationMode> {
         self.authentication_mode.as_ref()
     }
     /// <p>Access permissions string used for this user.</p>
-    pub fn access_string(&self) -> std::option::Option<& str> {
+    pub fn access_string(&self) -> std::option::Option<&str> {
         self.access_string.as_deref()
     }
     /// <p>A list of tags to be added to this resource. A tag is a key-value pair. A tag key must be accompanied by a tag value, although null is accepted.</p>
-    pub fn tags(&self) -> std::option::Option<& [crate::types::Tag]> {
+    pub fn tags(&self) -> std::option::Option<&[crate::types::Tag]> {
         self.tags.as_deref()
     }
 }
@@ -58,7 +58,8 @@ impl CreateUserInputBuilder {
     }
     /// <p>The name of the user. This value must be unique as it also serves as the user identifier.</p>
     pub fn set_user_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.user_name = input; self
+        self.user_name = input;
+        self
     }
     /// <p>Denotes the user's authentication properties, such as whether it requires a password to authenticate.</p>
     pub fn authentication_mode(mut self, input: crate::types::AuthenticationMode) -> Self {
@@ -66,8 +67,12 @@ impl CreateUserInputBuilder {
         self
     }
     /// <p>Denotes the user's authentication properties, such as whether it requires a password to authenticate.</p>
-    pub fn set_authentication_mode(mut self, input: std::option::Option<crate::types::AuthenticationMode>) -> Self {
-        self.authentication_mode = input; self
+    pub fn set_authentication_mode(
+        mut self,
+        input: std::option::Option<crate::types::AuthenticationMode>,
+    ) -> Self {
+        self.authentication_mode = input;
+        self
     }
     /// <p>Access permissions string used for this user.</p>
     pub fn access_string(mut self, input: impl Into<std::string::String>) -> Self {
@@ -76,7 +81,8 @@ impl CreateUserInputBuilder {
     }
     /// <p>Access permissions string used for this user.</p>
     pub fn set_access_string(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.access_string = input; self
+        self.access_string = input;
+        self
     }
     /// Appends an item to `tags`.
     ///
@@ -85,28 +91,30 @@ impl CreateUserInputBuilder {
     /// <p>A list of tags to be added to this resource. A tag is a key-value pair. A tag key must be accompanied by a tag value, although null is accepted.</p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
-                        v.push(input);
-                        self.tags = Some(v);
-                        self
+        v.push(input);
+        self.tags = Some(v);
+        self
     }
     /// <p>A list of tags to be added to this resource. A tag is a key-value pair. A tag key must be accompanied by a tag value, although null is accepted.</p>
-    pub fn set_tags(mut self, input: std::option::Option<std::vec::Vec<crate::types::Tag>>) -> Self {
-        self.tags = input; self
+    pub fn set_tags(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::Tag>>,
+    ) -> Self {
+        self.tags = input;
+        self
     }
     /// Consumes the builder and constructs a [`CreateUserInput`](crate::operation::create_user::CreateUserInput).
-    pub fn build(self) -> Result<crate::operation::create_user::CreateUserInput, aws_smithy_http::operation::error::BuildError> {
-        Ok(
-            crate::operation::create_user::CreateUserInput {
-                user_name: self.user_name
-                ,
-                authentication_mode: self.authentication_mode
-                ,
-                access_string: self.access_string
-                ,
-                tags: self.tags
-                ,
-            }
-        )
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::create_user::CreateUserInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        Ok(crate::operation::create_user::CreateUserInput {
+            user_name: self.user_name,
+            authentication_mode: self.authentication_mode,
+            access_string: self.access_string,
+            tags: self.tags,
+        })
     }
 }
-

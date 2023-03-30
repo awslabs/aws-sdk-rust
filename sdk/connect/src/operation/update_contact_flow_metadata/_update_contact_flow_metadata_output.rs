@@ -2,17 +2,17 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateContactFlowMetadataOutput  {
+pub struct UpdateContactFlowMetadataOutput {
     _request_id: Option<String>,
 }
 impl aws_http::request_id::RequestId for UpdateContactFlowMetadataOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl UpdateContactFlowMetadataOutput {
     /// Creates a new builder-style object to manufacture [`UpdateContactFlowMetadataOutput`](crate::operation::update_contact_flow_metadata::UpdateContactFlowMetadataOutput).
-    pub fn builder() -> crate::operation::update_contact_flow_metadata::builders::UpdateContactFlowMetadataOutputBuilder {
+    pub fn builder() -> crate::operation::update_contact_flow_metadata::builders::UpdateContactFlowMetadataOutputBuilder{
         crate::operation::update_contact_flow_metadata::builders::UpdateContactFlowMetadataOutputBuilder::default()
     }
 }
@@ -25,19 +25,20 @@ pub struct UpdateContactFlowMetadataOutputBuilder {
 }
 impl UpdateContactFlowMetadataOutputBuilder {
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`UpdateContactFlowMetadataOutput`](crate::operation::update_contact_flow_metadata::UpdateContactFlowMetadataOutput).
-    pub fn build(self) -> crate::operation::update_contact_flow_metadata::UpdateContactFlowMetadataOutput {
+    pub fn build(
+        self,
+    ) -> crate::operation::update_contact_flow_metadata::UpdateContactFlowMetadataOutput {
         crate::operation::update_contact_flow_metadata::UpdateContactFlowMetadataOutput {
             _request_id: self._request_id,
         }
     }
 }
-

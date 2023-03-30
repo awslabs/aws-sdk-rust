@@ -26,7 +26,11 @@ impl MetricsFilter {
     /// Tries to convert the enum instance into [`AccessPointArn`](crate::types::MetricsFilter::AccessPointArn), extracting the inner [`String`](std::string::String).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_access_point_arn(&self) -> std::result::Result<&std::string::String, &Self> {
-        if let MetricsFilter::AccessPointArn(val) = &self { Ok(val) } else { Err(self) }
+        if let MetricsFilter::AccessPointArn(val) = &self {
+            Ok(val)
+        } else {
+            Err(self)
+        }
     }
     /// Returns true if this is a [`AccessPointArn`](crate::types::MetricsFilter::AccessPointArn).
     pub fn is_access_point_arn(&self) -> bool {
@@ -35,7 +39,11 @@ impl MetricsFilter {
     /// Tries to convert the enum instance into [`And`](crate::types::MetricsFilter::And), extracting the inner [`MetricsAndOperator`](crate::types::MetricsAndOperator).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_and(&self) -> std::result::Result<&crate::types::MetricsAndOperator, &Self> {
-        if let MetricsFilter::And(val) = &self { Ok(val) } else { Err(self) }
+        if let MetricsFilter::And(val) = &self {
+            Ok(val)
+        } else {
+            Err(self)
+        }
     }
     /// Returns true if this is a [`And`](crate::types::MetricsFilter::And).
     pub fn is_and(&self) -> bool {
@@ -44,7 +52,11 @@ impl MetricsFilter {
     /// Tries to convert the enum instance into [`Prefix`](crate::types::MetricsFilter::Prefix), extracting the inner [`String`](std::string::String).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_prefix(&self) -> std::result::Result<&std::string::String, &Self> {
-        if let MetricsFilter::Prefix(val) = &self { Ok(val) } else { Err(self) }
+        if let MetricsFilter::Prefix(val) = &self {
+            Ok(val)
+        } else {
+            Err(self)
+        }
     }
     /// Returns true if this is a [`Prefix`](crate::types::MetricsFilter::Prefix).
     pub fn is_prefix(&self) -> bool {
@@ -53,7 +65,11 @@ impl MetricsFilter {
     /// Tries to convert the enum instance into [`Tag`](crate::types::MetricsFilter::Tag), extracting the inner [`Tag`](crate::types::Tag).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_tag(&self) -> std::result::Result<&crate::types::Tag, &Self> {
-        if let MetricsFilter::Tag(val) = &self { Ok(val) } else { Err(self) }
+        if let MetricsFilter::Tag(val) = &self {
+            Ok(val)
+        } else {
+            Err(self)
+        }
     }
     /// Returns true if this is a [`Tag`](crate::types::MetricsFilter::Tag).
     pub fn is_tag(&self) -> bool {
@@ -64,4 +80,3 @@ impl MetricsFilter {
         matches!(self, Self::Unknown)
     }
 }
-

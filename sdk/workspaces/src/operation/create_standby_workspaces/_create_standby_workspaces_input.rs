@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateStandbyWorkspacesInput  {
+pub struct CreateStandbyWorkspacesInput {
     /// <p>The Region of the primary WorkSpace.</p>
     #[doc(hidden)]
     pub primary_region: std::option::Option<std::string::String>,
@@ -12,17 +12,19 @@ pub struct CreateStandbyWorkspacesInput  {
 }
 impl CreateStandbyWorkspacesInput {
     /// <p>The Region of the primary WorkSpace.</p>
-    pub fn primary_region(&self) -> std::option::Option<& str> {
+    pub fn primary_region(&self) -> std::option::Option<&str> {
         self.primary_region.as_deref()
     }
     /// <p>Information about the Standby WorkSpace to be created.</p>
-    pub fn standby_workspaces(&self) -> std::option::Option<& [crate::types::StandbyWorkspace]> {
+    pub fn standby_workspaces(&self) -> std::option::Option<&[crate::types::StandbyWorkspace]> {
         self.standby_workspaces.as_deref()
     }
 }
 impl CreateStandbyWorkspacesInput {
     /// Creates a new builder-style object to manufacture [`CreateStandbyWorkspacesInput`](crate::operation::create_standby_workspaces::CreateStandbyWorkspacesInput).
-    pub fn builder() -> crate::operation::create_standby_workspaces::builders::CreateStandbyWorkspacesInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::create_standby_workspaces::builders::CreateStandbyWorkspacesInputBuilder
+    {
         crate::operation::create_standby_workspaces::builders::CreateStandbyWorkspacesInputBuilder::default()
     }
 }
@@ -32,7 +34,8 @@ impl CreateStandbyWorkspacesInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct CreateStandbyWorkspacesInputBuilder {
     pub(crate) primary_region: std::option::Option<std::string::String>,
-    pub(crate) standby_workspaces: std::option::Option<std::vec::Vec<crate::types::StandbyWorkspace>>,
+    pub(crate) standby_workspaces:
+        std::option::Option<std::vec::Vec<crate::types::StandbyWorkspace>>,
 }
 impl CreateStandbyWorkspacesInputBuilder {
     /// <p>The Region of the primary WorkSpace.</p>
@@ -42,7 +45,8 @@ impl CreateStandbyWorkspacesInputBuilder {
     }
     /// <p>The Region of the primary WorkSpace.</p>
     pub fn set_primary_region(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.primary_region = input; self
+        self.primary_region = input;
+        self
     }
     /// Appends an item to `standby_workspaces`.
     ///
@@ -51,24 +55,30 @@ impl CreateStandbyWorkspacesInputBuilder {
     /// <p>Information about the Standby WorkSpace to be created.</p>
     pub fn standby_workspaces(mut self, input: crate::types::StandbyWorkspace) -> Self {
         let mut v = self.standby_workspaces.unwrap_or_default();
-                        v.push(input);
-                        self.standby_workspaces = Some(v);
-                        self
+        v.push(input);
+        self.standby_workspaces = Some(v);
+        self
     }
     /// <p>Information about the Standby WorkSpace to be created.</p>
-    pub fn set_standby_workspaces(mut self, input: std::option::Option<std::vec::Vec<crate::types::StandbyWorkspace>>) -> Self {
-        self.standby_workspaces = input; self
+    pub fn set_standby_workspaces(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::StandbyWorkspace>>,
+    ) -> Self {
+        self.standby_workspaces = input;
+        self
     }
     /// Consumes the builder and constructs a [`CreateStandbyWorkspacesInput`](crate::operation::create_standby_workspaces::CreateStandbyWorkspacesInput).
-    pub fn build(self) -> Result<crate::operation::create_standby_workspaces::CreateStandbyWorkspacesInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::create_standby_workspaces::CreateStandbyWorkspacesInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::create_standby_workspaces::CreateStandbyWorkspacesInput {
-                primary_region: self.primary_region
-                ,
-                standby_workspaces: self.standby_workspaces
-                ,
-            }
+                primary_region: self.primary_region,
+                standby_workspaces: self.standby_workspaces,
+            },
         )
     }
 }
-

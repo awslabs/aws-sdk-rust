@@ -3,33 +3,33 @@
 /// <p>The URL operation that opens a link to another webpage.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CustomActionUrlOperation  {
+pub struct CustomActionUrlOperation {
     /// <p>THe URL link of the <code>CustomActionURLOperation</code>.</p>
     #[doc(hidden)]
     pub url_template: std::option::Option<std::string::String>,
-    /// <p>The target of the <code>CustomActionURLOperation</code>.</p> 
-    /// <p>Valid values are defined as follows:</p> 
-    /// <ul> 
-    /// <li> <p> <code>NEW_TAB</code>: Opens the target URL in a new browser tab.</p> </li> 
-    /// <li> <p> <code>NEW_WINDOW</code>: Opens the target URL in a new browser window.</p> </li> 
-    /// <li> <p> <code>SAME_TAB</code>: Opens the target URL in the same browser tab.</p> </li> 
+    /// <p>The target of the <code>CustomActionURLOperation</code>.</p>
+    /// <p>Valid values are defined as follows:</p>
+    /// <ul>
+    /// <li> <p> <code>NEW_TAB</code>: Opens the target URL in a new browser tab.</p> </li>
+    /// <li> <p> <code>NEW_WINDOW</code>: Opens the target URL in a new browser window.</p> </li>
+    /// <li> <p> <code>SAME_TAB</code>: Opens the target URL in the same browser tab.</p> </li>
     /// </ul>
     #[doc(hidden)]
     pub url_target: std::option::Option<crate::types::UrlTargetConfiguration>,
 }
 impl CustomActionUrlOperation {
     /// <p>THe URL link of the <code>CustomActionURLOperation</code>.</p>
-    pub fn url_template(&self) -> std::option::Option<& str> {
+    pub fn url_template(&self) -> std::option::Option<&str> {
         self.url_template.as_deref()
     }
-    /// <p>The target of the <code>CustomActionURLOperation</code>.</p> 
-    /// <p>Valid values are defined as follows:</p> 
-    /// <ul> 
-    /// <li> <p> <code>NEW_TAB</code>: Opens the target URL in a new browser tab.</p> </li> 
-    /// <li> <p> <code>NEW_WINDOW</code>: Opens the target URL in a new browser window.</p> </li> 
-    /// <li> <p> <code>SAME_TAB</code>: Opens the target URL in the same browser tab.</p> </li> 
+    /// <p>The target of the <code>CustomActionURLOperation</code>.</p>
+    /// <p>Valid values are defined as follows:</p>
+    /// <ul>
+    /// <li> <p> <code>NEW_TAB</code>: Opens the target URL in a new browser tab.</p> </li>
+    /// <li> <p> <code>NEW_WINDOW</code>: Opens the target URL in a new browser window.</p> </li>
+    /// <li> <p> <code>SAME_TAB</code>: Opens the target URL in the same browser tab.</p> </li>
     /// </ul>
-    pub fn url_target(&self) -> std::option::Option<& crate::types::UrlTargetConfiguration> {
+    pub fn url_target(&self) -> std::option::Option<&crate::types::UrlTargetConfiguration> {
         self.url_target.as_ref()
     }
 }
@@ -55,37 +55,39 @@ impl CustomActionUrlOperationBuilder {
     }
     /// <p>THe URL link of the <code>CustomActionURLOperation</code>.</p>
     pub fn set_url_template(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.url_template = input; self
+        self.url_template = input;
+        self
     }
-    /// <p>The target of the <code>CustomActionURLOperation</code>.</p> 
-    /// <p>Valid values are defined as follows:</p> 
-    /// <ul> 
-    /// <li> <p> <code>NEW_TAB</code>: Opens the target URL in a new browser tab.</p> </li> 
-    /// <li> <p> <code>NEW_WINDOW</code>: Opens the target URL in a new browser window.</p> </li> 
-    /// <li> <p> <code>SAME_TAB</code>: Opens the target URL in the same browser tab.</p> </li> 
+    /// <p>The target of the <code>CustomActionURLOperation</code>.</p>
+    /// <p>Valid values are defined as follows:</p>
+    /// <ul>
+    /// <li> <p> <code>NEW_TAB</code>: Opens the target URL in a new browser tab.</p> </li>
+    /// <li> <p> <code>NEW_WINDOW</code>: Opens the target URL in a new browser window.</p> </li>
+    /// <li> <p> <code>SAME_TAB</code>: Opens the target URL in the same browser tab.</p> </li>
     /// </ul>
     pub fn url_target(mut self, input: crate::types::UrlTargetConfiguration) -> Self {
         self.url_target = Some(input);
         self
     }
-    /// <p>The target of the <code>CustomActionURLOperation</code>.</p> 
-    /// <p>Valid values are defined as follows:</p> 
-    /// <ul> 
-    /// <li> <p> <code>NEW_TAB</code>: Opens the target URL in a new browser tab.</p> </li> 
-    /// <li> <p> <code>NEW_WINDOW</code>: Opens the target URL in a new browser window.</p> </li> 
-    /// <li> <p> <code>SAME_TAB</code>: Opens the target URL in the same browser tab.</p> </li> 
+    /// <p>The target of the <code>CustomActionURLOperation</code>.</p>
+    /// <p>Valid values are defined as follows:</p>
+    /// <ul>
+    /// <li> <p> <code>NEW_TAB</code>: Opens the target URL in a new browser tab.</p> </li>
+    /// <li> <p> <code>NEW_WINDOW</code>: Opens the target URL in a new browser window.</p> </li>
+    /// <li> <p> <code>SAME_TAB</code>: Opens the target URL in the same browser tab.</p> </li>
     /// </ul>
-    pub fn set_url_target(mut self, input: std::option::Option<crate::types::UrlTargetConfiguration>) -> Self {
-        self.url_target = input; self
+    pub fn set_url_target(
+        mut self,
+        input: std::option::Option<crate::types::UrlTargetConfiguration>,
+    ) -> Self {
+        self.url_target = input;
+        self
     }
     /// Consumes the builder and constructs a [`CustomActionUrlOperation`](crate::types::CustomActionUrlOperation).
     pub fn build(self) -> crate::types::CustomActionUrlOperation {
         crate::types::CustomActionUrlOperation {
-            url_template: self.url_template
-            ,
-            url_target: self.url_target
-            ,
+            url_template: self.url_template,
+            url_target: self.url_target,
         }
     }
 }
-

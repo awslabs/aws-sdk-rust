@@ -4,62 +4,92 @@ pub use crate::operation::list_transform_jobs::_list_transform_jobs_output::List
 pub use crate::operation::list_transform_jobs::_list_transform_jobs_input::ListTransformJobsInputBuilder;
 
 /// Fluent builder constructing a request to `ListTransformJobs`.
-/// 
+///
 /// <p>Lists transform jobs.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListTransformJobsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::list_transform_jobs::builders::ListTransformJobsInputBuilder
-            }
-impl ListTransformJobsFluentBuilder  {
+    handle: std::sync::Arc<crate::client::Handle>,
+    inner: crate::operation::list_transform_jobs::builders::ListTransformJobsInputBuilder,
+}
+impl ListTransformJobsFluentBuilder {
     /// Creates a new `ListTransformJobs`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
-                    /// sent. The operation's inner [http::Request] can be modified as well.
-                    pub async fn customize(self) -> std::result::Result<
-                        crate::client::customize::CustomizableOperation<crate::operation::list_transform_jobs::ListTransformJobs, aws_http::retry::AwsResponseRetryClassifier,>,
-                        aws_smithy_http::result::SdkError<crate::operation::list_transform_jobs::ListTransformJobsError>
-                    >  {
-                        let handle = self.handle.clone();
-                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-                    }
-    
-                    /// Sends the request and returns the response.
-                    ///
-                    /// If an error occurs, an `SdkError` will be returned with additional details that
-                    /// can be matched against.
-                    ///
-                    /// By default, any retryable failures will be retried twice. Retry behavior
-                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                    /// set when configuring the client.
-                    pub async fn send(self) -> std::result::Result<crate::operation::list_transform_jobs::ListTransformJobsOutput, aws_smithy_http::result::SdkError<crate::operation::list_transform_jobs::ListTransformJobsError>>
-                     {
-                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&self.handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        self.handle.client.call(op).await
-                    }
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle,
+            inner: Default::default(),
+        }
+    }
+
+    /// Consume this builder, creating a customizable operation that can be modified before being
+    /// sent. The operation's inner [http::Request] can be modified as well.
+    pub async fn customize(
+        self,
+    ) -> std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::list_transform_jobs::ListTransformJobs,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::result::SdkError<
+            crate::operation::list_transform_jobs::ListTransformJobsError,
+        >,
+    > {
+        let handle = self.handle.clone();
+        let operation = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+    }
+
+    /// Sends the request and returns the response.
+    ///
+    /// If an error occurs, an `SdkError` will be returned with additional details that
+    /// can be matched against.
+    ///
+    /// By default, any retryable failures will be retried twice. Retry behavior
+    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+    /// set when configuring the client.
+    pub async fn send(
+        self,
+    ) -> std::result::Result<
+        crate::operation::list_transform_jobs::ListTransformJobsOutput,
+        aws_smithy_http::result::SdkError<
+            crate::operation::list_transform_jobs::ListTransformJobsError,
+        >,
+    > {
+        let op = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&self.handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        self.handle.client.call(op).await
+    }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::list_transform_jobs::paginator::ListTransformJobsPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::list_transform_jobs::paginator::ListTransformJobsPaginator {
-                            crate::operation::list_transform_jobs::paginator::ListTransformJobsPaginator::new(self.handle, self.inner)
-                        }
+    ///
+    /// Paginators are used by calling [`send().await`](crate::operation::list_transform_jobs::paginator::ListTransformJobsPaginator::send) which returns a `Stream`.
+    pub fn into_paginator(
+        self,
+    ) -> crate::operation::list_transform_jobs::paginator::ListTransformJobsPaginator {
+        crate::operation::list_transform_jobs::paginator::ListTransformJobsPaginator::new(
+            self.handle,
+            self.inner,
+        )
+    }
     /// <p>A filter that returns only transform jobs created after the specified time.</p>
     pub fn creation_time_after(mut self, input: aws_smithy_types::DateTime) -> Self {
         self.inner = self.inner.creation_time_after(input);
         self
     }
     /// <p>A filter that returns only transform jobs created after the specified time.</p>
-    pub fn set_creation_time_after(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+    pub fn set_creation_time_after(
+        mut self,
+        input: std::option::Option<aws_smithy_types::DateTime>,
+    ) -> Self {
         self.inner = self.inner.set_creation_time_after(input);
         self
     }
@@ -69,7 +99,10 @@ impl ListTransformJobsFluentBuilder  {
         self
     }
     /// <p>A filter that returns only transform jobs created before the specified time.</p>
-    pub fn set_creation_time_before(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+    pub fn set_creation_time_before(
+        mut self,
+        input: std::option::Option<aws_smithy_types::DateTime>,
+    ) -> Self {
         self.inner = self.inner.set_creation_time_before(input);
         self
     }
@@ -79,7 +112,10 @@ impl ListTransformJobsFluentBuilder  {
         self
     }
     /// <p>A filter that returns only transform jobs modified after the specified time.</p>
-    pub fn set_last_modified_time_after(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+    pub fn set_last_modified_time_after(
+        mut self,
+        input: std::option::Option<aws_smithy_types::DateTime>,
+    ) -> Self {
         self.inner = self.inner.set_last_modified_time_after(input);
         self
     }
@@ -89,7 +125,10 @@ impl ListTransformJobsFluentBuilder  {
         self
     }
     /// <p>A filter that returns only transform jobs modified before the specified time.</p>
-    pub fn set_last_modified_time_before(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+    pub fn set_last_modified_time_before(
+        mut self,
+        input: std::option::Option<aws_smithy_types::DateTime>,
+    ) -> Self {
         self.inner = self.inner.set_last_modified_time_before(input);
         self
     }
@@ -109,7 +148,10 @@ impl ListTransformJobsFluentBuilder  {
         self
     }
     /// <p>A filter that retrieves only transform jobs with a specific status.</p>
-    pub fn set_status_equals(mut self, input: std::option::Option<crate::types::TransformJobStatus>) -> Self {
+    pub fn set_status_equals(
+        mut self,
+        input: std::option::Option<crate::types::TransformJobStatus>,
+    ) -> Self {
         self.inner = self.inner.set_status_equals(input);
         self
     }
@@ -154,4 +196,3 @@ impl ListTransformJobsFluentBuilder  {
         self
     }
 }
-

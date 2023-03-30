@@ -3,7 +3,7 @@
 /// <p>Describes the networking features of the instance type.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct NetworkInfo  {
+pub struct NetworkInfo {
     /// <p>The network performance.</p>
     #[doc(hidden)]
     pub network_performance: std::option::Option<std::string::String>,
@@ -46,7 +46,7 @@ pub struct NetworkInfo  {
 }
 impl NetworkInfo {
     /// <p>The network performance.</p>
-    pub fn network_performance(&self) -> std::option::Option<& str> {
+    pub fn network_performance(&self) -> std::option::Option<&str> {
         self.network_performance.as_deref()
     }
     /// <p>The maximum number of network interfaces for the instance type.</p>
@@ -62,7 +62,7 @@ impl NetworkInfo {
         self.default_network_card_index
     }
     /// <p>Describes the network cards for the instance type.</p>
-    pub fn network_cards(&self) -> std::option::Option<& [crate::types::NetworkCardInfo]> {
+    pub fn network_cards(&self) -> std::option::Option<&[crate::types::NetworkCardInfo]> {
         self.network_cards.as_deref()
     }
     /// <p>The maximum number of IPv4 addresses per network interface.</p>
@@ -78,7 +78,7 @@ impl NetworkInfo {
         self.ipv6_supported
     }
     /// <p>Indicates whether Elastic Network Adapter (ENA) is supported.</p>
-    pub fn ena_support(&self) -> std::option::Option<& crate::types::EnaSupport> {
+    pub fn ena_support(&self) -> std::option::Option<&crate::types::EnaSupport> {
         self.ena_support.as_ref()
     }
     /// <p>Indicates whether Elastic Fabric Adapter (EFA) is supported.</p>
@@ -86,7 +86,7 @@ impl NetworkInfo {
         self.efa_supported
     }
     /// <p>Describes the Elastic Fabric Adapters for the instance type.</p>
-    pub fn efa_info(&self) -> std::option::Option<& crate::types::EfaInfo> {
+    pub fn efa_info(&self) -> std::option::Option<&crate::types::EfaInfo> {
         self.efa_info.as_ref()
     }
     /// <p>Indicates whether the instance type automatically encrypts in-transit traffic between instances.</p>
@@ -130,8 +130,12 @@ impl NetworkInfoBuilder {
         self
     }
     /// <p>The network performance.</p>
-    pub fn set_network_performance(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.network_performance = input; self
+    pub fn set_network_performance(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.network_performance = input;
+        self
     }
     /// <p>The maximum number of network interfaces for the instance type.</p>
     pub fn maximum_network_interfaces(mut self, input: i32) -> Self {
@@ -140,7 +144,8 @@ impl NetworkInfoBuilder {
     }
     /// <p>The maximum number of network interfaces for the instance type.</p>
     pub fn set_maximum_network_interfaces(mut self, input: std::option::Option<i32>) -> Self {
-        self.maximum_network_interfaces = input; self
+        self.maximum_network_interfaces = input;
+        self
     }
     /// <p>The maximum number of physical network cards that can be allocated to the instance.</p>
     pub fn maximum_network_cards(mut self, input: i32) -> Self {
@@ -149,7 +154,8 @@ impl NetworkInfoBuilder {
     }
     /// <p>The maximum number of physical network cards that can be allocated to the instance.</p>
     pub fn set_maximum_network_cards(mut self, input: std::option::Option<i32>) -> Self {
-        self.maximum_network_cards = input; self
+        self.maximum_network_cards = input;
+        self
     }
     /// <p>The index of the default network card, starting at 0.</p>
     pub fn default_network_card_index(mut self, input: i32) -> Self {
@@ -158,7 +164,8 @@ impl NetworkInfoBuilder {
     }
     /// <p>The index of the default network card, starting at 0.</p>
     pub fn set_default_network_card_index(mut self, input: std::option::Option<i32>) -> Self {
-        self.default_network_card_index = input; self
+        self.default_network_card_index = input;
+        self
     }
     /// Appends an item to `network_cards`.
     ///
@@ -167,13 +174,17 @@ impl NetworkInfoBuilder {
     /// <p>Describes the network cards for the instance type.</p>
     pub fn network_cards(mut self, input: crate::types::NetworkCardInfo) -> Self {
         let mut v = self.network_cards.unwrap_or_default();
-                        v.push(input);
-                        self.network_cards = Some(v);
-                        self
+        v.push(input);
+        self.network_cards = Some(v);
+        self
     }
     /// <p>Describes the network cards for the instance type.</p>
-    pub fn set_network_cards(mut self, input: std::option::Option<std::vec::Vec<crate::types::NetworkCardInfo>>) -> Self {
-        self.network_cards = input; self
+    pub fn set_network_cards(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::NetworkCardInfo>>,
+    ) -> Self {
+        self.network_cards = input;
+        self
     }
     /// <p>The maximum number of IPv4 addresses per network interface.</p>
     pub fn ipv4_addresses_per_interface(mut self, input: i32) -> Self {
@@ -182,7 +193,8 @@ impl NetworkInfoBuilder {
     }
     /// <p>The maximum number of IPv4 addresses per network interface.</p>
     pub fn set_ipv4_addresses_per_interface(mut self, input: std::option::Option<i32>) -> Self {
-        self.ipv4_addresses_per_interface = input; self
+        self.ipv4_addresses_per_interface = input;
+        self
     }
     /// <p>The maximum number of IPv6 addresses per network interface.</p>
     pub fn ipv6_addresses_per_interface(mut self, input: i32) -> Self {
@@ -191,7 +203,8 @@ impl NetworkInfoBuilder {
     }
     /// <p>The maximum number of IPv6 addresses per network interface.</p>
     pub fn set_ipv6_addresses_per_interface(mut self, input: std::option::Option<i32>) -> Self {
-        self.ipv6_addresses_per_interface = input; self
+        self.ipv6_addresses_per_interface = input;
+        self
     }
     /// <p>Indicates whether IPv6 is supported.</p>
     pub fn ipv6_supported(mut self, input: bool) -> Self {
@@ -200,7 +213,8 @@ impl NetworkInfoBuilder {
     }
     /// <p>Indicates whether IPv6 is supported.</p>
     pub fn set_ipv6_supported(mut self, input: std::option::Option<bool>) -> Self {
-        self.ipv6_supported = input; self
+        self.ipv6_supported = input;
+        self
     }
     /// <p>Indicates whether Elastic Network Adapter (ENA) is supported.</p>
     pub fn ena_support(mut self, input: crate::types::EnaSupport) -> Self {
@@ -209,7 +223,8 @@ impl NetworkInfoBuilder {
     }
     /// <p>Indicates whether Elastic Network Adapter (ENA) is supported.</p>
     pub fn set_ena_support(mut self, input: std::option::Option<crate::types::EnaSupport>) -> Self {
-        self.ena_support = input; self
+        self.ena_support = input;
+        self
     }
     /// <p>Indicates whether Elastic Fabric Adapter (EFA) is supported.</p>
     pub fn efa_supported(mut self, input: bool) -> Self {
@@ -218,7 +233,8 @@ impl NetworkInfoBuilder {
     }
     /// <p>Indicates whether Elastic Fabric Adapter (EFA) is supported.</p>
     pub fn set_efa_supported(mut self, input: std::option::Option<bool>) -> Self {
-        self.efa_supported = input; self
+        self.efa_supported = input;
+        self
     }
     /// <p>Describes the Elastic Fabric Adapters for the instance type.</p>
     pub fn efa_info(mut self, input: crate::types::EfaInfo) -> Self {
@@ -227,7 +243,8 @@ impl NetworkInfoBuilder {
     }
     /// <p>Describes the Elastic Fabric Adapters for the instance type.</p>
     pub fn set_efa_info(mut self, input: std::option::Option<crate::types::EfaInfo>) -> Self {
-        self.efa_info = input; self
+        self.efa_info = input;
+        self
     }
     /// <p>Indicates whether the instance type automatically encrypts in-transit traffic between instances.</p>
     pub fn encryption_in_transit_supported(mut self, input: bool) -> Self {
@@ -236,7 +253,8 @@ impl NetworkInfoBuilder {
     }
     /// <p>Indicates whether the instance type automatically encrypts in-transit traffic between instances.</p>
     pub fn set_encryption_in_transit_supported(mut self, input: std::option::Option<bool>) -> Self {
-        self.encryption_in_transit_supported = input; self
+        self.encryption_in_transit_supported = input;
+        self
     }
     /// <p>Indicates whether the instance type supports ENA Express. ENA Express uses Amazon Web Services Scalable Reliable Datagram (SRD) technology to increase the maximum bandwidth used per stream and minimize tail latency of network traffic between EC2 instances.</p>
     pub fn ena_srd_supported(mut self, input: bool) -> Self {
@@ -245,38 +263,25 @@ impl NetworkInfoBuilder {
     }
     /// <p>Indicates whether the instance type supports ENA Express. ENA Express uses Amazon Web Services Scalable Reliable Datagram (SRD) technology to increase the maximum bandwidth used per stream and minimize tail latency of network traffic between EC2 instances.</p>
     pub fn set_ena_srd_supported(mut self, input: std::option::Option<bool>) -> Self {
-        self.ena_srd_supported = input; self
+        self.ena_srd_supported = input;
+        self
     }
     /// Consumes the builder and constructs a [`NetworkInfo`](crate::types::NetworkInfo).
     pub fn build(self) -> crate::types::NetworkInfo {
         crate::types::NetworkInfo {
-            network_performance: self.network_performance
-            ,
-            maximum_network_interfaces: self.maximum_network_interfaces
-            ,
-            maximum_network_cards: self.maximum_network_cards
-            ,
-            default_network_card_index: self.default_network_card_index
-            ,
-            network_cards: self.network_cards
-            ,
-            ipv4_addresses_per_interface: self.ipv4_addresses_per_interface
-            ,
-            ipv6_addresses_per_interface: self.ipv6_addresses_per_interface
-            ,
-            ipv6_supported: self.ipv6_supported
-            ,
-            ena_support: self.ena_support
-            ,
-            efa_supported: self.efa_supported
-            ,
-            efa_info: self.efa_info
-            ,
-            encryption_in_transit_supported: self.encryption_in_transit_supported
-            ,
-            ena_srd_supported: self.ena_srd_supported
-            ,
+            network_performance: self.network_performance,
+            maximum_network_interfaces: self.maximum_network_interfaces,
+            maximum_network_cards: self.maximum_network_cards,
+            default_network_card_index: self.default_network_card_index,
+            network_cards: self.network_cards,
+            ipv4_addresses_per_interface: self.ipv4_addresses_per_interface,
+            ipv6_addresses_per_interface: self.ipv6_addresses_per_interface,
+            ipv6_supported: self.ipv6_supported,
+            ena_support: self.ena_support,
+            efa_supported: self.efa_supported,
+            efa_info: self.efa_info,
+            encryption_in_transit_supported: self.encryption_in_transit_supported,
+            ena_srd_supported: self.ena_srd_supported,
         }
     }
 }
-

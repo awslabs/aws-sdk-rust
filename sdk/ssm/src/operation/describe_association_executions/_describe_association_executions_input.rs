@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeAssociationExecutionsInput  {
+pub struct DescribeAssociationExecutionsInput {
     /// <p>The association ID for which you want to view execution history details.</p>
     #[doc(hidden)]
     pub association_id: std::option::Option<std::string::String>,
-    /// <p>Filters for the request. You can specify the following filters and values.</p> 
-    /// <p>ExecutionId (EQUAL)</p> 
-    /// <p>Status (EQUAL)</p> 
+    /// <p>Filters for the request. You can specify the following filters and values.</p>
+    /// <p>ExecutionId (EQUAL)</p>
+    /// <p>Status (EQUAL)</p>
     /// <p>CreatedTime (EQUAL, GREATER_THAN, LESS_THAN)</p>
     #[doc(hidden)]
     pub filters: std::option::Option<std::vec::Vec<crate::types::AssociationExecutionFilter>>,
@@ -21,14 +21,14 @@ pub struct DescribeAssociationExecutionsInput  {
 }
 impl DescribeAssociationExecutionsInput {
     /// <p>The association ID for which you want to view execution history details.</p>
-    pub fn association_id(&self) -> std::option::Option<& str> {
+    pub fn association_id(&self) -> std::option::Option<&str> {
         self.association_id.as_deref()
     }
-    /// <p>Filters for the request. You can specify the following filters and values.</p> 
-    /// <p>ExecutionId (EQUAL)</p> 
-    /// <p>Status (EQUAL)</p> 
+    /// <p>Filters for the request. You can specify the following filters and values.</p>
+    /// <p>ExecutionId (EQUAL)</p>
+    /// <p>Status (EQUAL)</p>
     /// <p>CreatedTime (EQUAL, GREATER_THAN, LESS_THAN)</p>
-    pub fn filters(&self) -> std::option::Option<& [crate::types::AssociationExecutionFilter]> {
+    pub fn filters(&self) -> std::option::Option<&[crate::types::AssociationExecutionFilter]> {
         self.filters.as_deref()
     }
     /// <p>The maximum number of items to return for this call. The call also returns a token that you can specify in a subsequent call to get the next set of results.</p>
@@ -36,13 +36,13 @@ impl DescribeAssociationExecutionsInput {
         self.max_results
     }
     /// <p>A token to start the list. Use this token to get the next set of results. </p>
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
 }
 impl DescribeAssociationExecutionsInput {
     /// Creates a new builder-style object to manufacture [`DescribeAssociationExecutionsInput`](crate::operation::describe_association_executions::DescribeAssociationExecutionsInput).
-    pub fn builder() -> crate::operation::describe_association_executions::builders::DescribeAssociationExecutionsInputBuilder {
+    pub fn builder() -> crate::operation::describe_association_executions::builders::DescribeAssociationExecutionsInputBuilder{
         crate::operation::describe_association_executions::builders::DescribeAssociationExecutionsInputBuilder::default()
     }
 }
@@ -52,7 +52,8 @@ impl DescribeAssociationExecutionsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct DescribeAssociationExecutionsInputBuilder {
     pub(crate) association_id: std::option::Option<std::string::String>,
-    pub(crate) filters: std::option::Option<std::vec::Vec<crate::types::AssociationExecutionFilter>>,
+    pub(crate) filters:
+        std::option::Option<std::vec::Vec<crate::types::AssociationExecutionFilter>>,
     pub(crate) max_results: std::option::Option<i32>,
     pub(crate) next_token: std::option::Option<std::string::String>,
 }
@@ -64,28 +65,33 @@ impl DescribeAssociationExecutionsInputBuilder {
     }
     /// <p>The association ID for which you want to view execution history details.</p>
     pub fn set_association_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.association_id = input; self
+        self.association_id = input;
+        self
     }
     /// Appends an item to `filters`.
     ///
     /// To override the contents of this collection use [`set_filters`](Self::set_filters).
     ///
-    /// <p>Filters for the request. You can specify the following filters and values.</p> 
-    /// <p>ExecutionId (EQUAL)</p> 
-    /// <p>Status (EQUAL)</p> 
+    /// <p>Filters for the request. You can specify the following filters and values.</p>
+    /// <p>ExecutionId (EQUAL)</p>
+    /// <p>Status (EQUAL)</p>
     /// <p>CreatedTime (EQUAL, GREATER_THAN, LESS_THAN)</p>
     pub fn filters(mut self, input: crate::types::AssociationExecutionFilter) -> Self {
         let mut v = self.filters.unwrap_or_default();
-                        v.push(input);
-                        self.filters = Some(v);
-                        self
+        v.push(input);
+        self.filters = Some(v);
+        self
     }
-    /// <p>Filters for the request. You can specify the following filters and values.</p> 
-    /// <p>ExecutionId (EQUAL)</p> 
-    /// <p>Status (EQUAL)</p> 
+    /// <p>Filters for the request. You can specify the following filters and values.</p>
+    /// <p>ExecutionId (EQUAL)</p>
+    /// <p>Status (EQUAL)</p>
     /// <p>CreatedTime (EQUAL, GREATER_THAN, LESS_THAN)</p>
-    pub fn set_filters(mut self, input: std::option::Option<std::vec::Vec<crate::types::AssociationExecutionFilter>>) -> Self {
-        self.filters = input; self
+    pub fn set_filters(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::AssociationExecutionFilter>>,
+    ) -> Self {
+        self.filters = input;
+        self
     }
     /// <p>The maximum number of items to return for this call. The call also returns a token that you can specify in a subsequent call to get the next set of results.</p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -94,7 +100,8 @@ impl DescribeAssociationExecutionsInputBuilder {
     }
     /// <p>The maximum number of items to return for this call. The call also returns a token that you can specify in a subsequent call to get the next set of results.</p>
     pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_results = input; self
+        self.max_results = input;
+        self
     }
     /// <p>A token to start the list. Use this token to get the next set of results. </p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -103,22 +110,23 @@ impl DescribeAssociationExecutionsInputBuilder {
     }
     /// <p>A token to start the list. Use this token to get the next set of results. </p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input; self
+        self.next_token = input;
+        self
     }
     /// Consumes the builder and constructs a [`DescribeAssociationExecutionsInput`](crate::operation::describe_association_executions::DescribeAssociationExecutionsInput).
-    pub fn build(self) -> Result<crate::operation::describe_association_executions::DescribeAssociationExecutionsInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::describe_association_executions::DescribeAssociationExecutionsInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::describe_association_executions::DescribeAssociationExecutionsInput {
-                association_id: self.association_id
-                ,
-                filters: self.filters
-                ,
-                max_results: self.max_results
-                ,
-                next_token: self.next_token
-                ,
-            }
+                association_id: self.association_id,
+                filters: self.filters,
+                max_results: self.max_results,
+                next_token: self.next_token,
+            },
         )
     }
 }
-

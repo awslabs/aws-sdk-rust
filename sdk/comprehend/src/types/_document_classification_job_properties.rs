@@ -3,11 +3,11 @@
 /// <p>Provides information about a document classification job.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DocumentClassificationJobProperties  {
+pub struct DocumentClassificationJobProperties {
     /// <p>The identifier assigned to the document classification job.</p>
     #[doc(hidden)]
     pub job_id: std::option::Option<std::string::String>,
-    /// <p>The Amazon Resource Name (ARN) of the document classification job. It is a unique, fully qualified identifier for the job. It includes the AWS account, Region, and the job ID. The format of the ARN is as follows:</p> 
+    /// <p>The Amazon Resource Name (ARN) of the document classification job. It is a unique, fully qualified identifier for the job. It includes the AWS account, Region, and the job ID. The format of the ARN is as follows:</p>
     /// <p> <code>arn:
     /// <partition>
     /// :comprehend:
@@ -18,8 +18,8 @@ pub struct DocumentClassificationJobProperties  {
     /// <job-id></job-id>
     /// </account-id>
     /// </region>
-    /// </partition></code> </p> 
-    /// <p>The following is an example job ARN:</p> 
+    /// </partition></code> </p>
+    /// <p>The following is an example job ARN:</p>
     /// <p> <code>arn:aws:comprehend:us-west-2:111122223333:document-classification-job/1234abcd12ab34cd56ef1234567890ab</code> </p>
     #[doc(hidden)]
     pub job_arn: std::option::Option<std::string::String>,
@@ -50,10 +50,10 @@ pub struct DocumentClassificationJobProperties  {
     /// <p>The Amazon Resource Name (ARN) of the AWS identity and Access Management (IAM) role that grants Amazon Comprehend read access to your input data.</p>
     #[doc(hidden)]
     pub data_access_role_arn: std::option::Option<std::string::String>,
-    /// <p>ID for the AWS Key Management Service (KMS) key that Amazon Comprehend uses to encrypt data on the storage volume attached to the ML compute instance(s) that process the analysis job. The VolumeKmsKeyId can be either of the following formats:</p> 
-    /// <ul> 
-    /// <li> <p>KMS Key ID: <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li> 
-    /// <li> <p>Amazon Resource Name (ARN) of a KMS Key: <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li> 
+    /// <p>ID for the AWS Key Management Service (KMS) key that Amazon Comprehend uses to encrypt data on the storage volume attached to the ML compute instance(s) that process the analysis job. The VolumeKmsKeyId can be either of the following formats:</p>
+    /// <ul>
+    /// <li> <p>KMS Key ID: <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li>
+    /// <li> <p>Amazon Resource Name (ARN) of a KMS Key: <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li>
     /// </ul>
     #[doc(hidden)]
     pub volume_kms_key_id: std::option::Option<std::string::String>,
@@ -63,10 +63,10 @@ pub struct DocumentClassificationJobProperties  {
 }
 impl DocumentClassificationJobProperties {
     /// <p>The identifier assigned to the document classification job.</p>
-    pub fn job_id(&self) -> std::option::Option<& str> {
+    pub fn job_id(&self) -> std::option::Option<&str> {
         self.job_id.as_deref()
     }
-    /// <p>The Amazon Resource Name (ARN) of the document classification job. It is a unique, fully qualified identifier for the job. It includes the AWS account, Region, and the job ID. The format of the ARN is as follows:</p> 
+    /// <p>The Amazon Resource Name (ARN) of the document classification job. It is a unique, fully qualified identifier for the job. It includes the AWS account, Region, and the job ID. The format of the ARN is as follows:</p>
     /// <p> <code>arn:
     /// <partition>
     /// :comprehend:
@@ -77,58 +77,58 @@ impl DocumentClassificationJobProperties {
     /// <job-id></job-id>
     /// </account-id>
     /// </region>
-    /// </partition></code> </p> 
-    /// <p>The following is an example job ARN:</p> 
+    /// </partition></code> </p>
+    /// <p>The following is an example job ARN:</p>
     /// <p> <code>arn:aws:comprehend:us-west-2:111122223333:document-classification-job/1234abcd12ab34cd56ef1234567890ab</code> </p>
-    pub fn job_arn(&self) -> std::option::Option<& str> {
+    pub fn job_arn(&self) -> std::option::Option<&str> {
         self.job_arn.as_deref()
     }
     /// <p>The name that you assigned to the document classification job.</p>
-    pub fn job_name(&self) -> std::option::Option<& str> {
+    pub fn job_name(&self) -> std::option::Option<&str> {
         self.job_name.as_deref()
     }
     /// <p>The current status of the document classification job. If the status is <code>FAILED</code>, the <code>Message</code> field shows the reason for the failure.</p>
-    pub fn job_status(&self) -> std::option::Option<& crate::types::JobStatus> {
+    pub fn job_status(&self) -> std::option::Option<&crate::types::JobStatus> {
         self.job_status.as_ref()
     }
     /// <p>A description of the status of the job.</p>
-    pub fn message(&self) -> std::option::Option<& str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
     /// <p>The time that the document classification job was submitted for processing.</p>
-    pub fn submit_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
+    pub fn submit_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.submit_time.as_ref()
     }
     /// <p>The time that the document classification job completed.</p>
-    pub fn end_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
+    pub fn end_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.end_time.as_ref()
     }
     /// <p>The Amazon Resource Name (ARN) that identifies the document classifier. </p>
-    pub fn document_classifier_arn(&self) -> std::option::Option<& str> {
+    pub fn document_classifier_arn(&self) -> std::option::Option<&str> {
         self.document_classifier_arn.as_deref()
     }
     /// <p>The input data configuration that you supplied when you created the document classification job.</p>
-    pub fn input_data_config(&self) -> std::option::Option<& crate::types::InputDataConfig> {
+    pub fn input_data_config(&self) -> std::option::Option<&crate::types::InputDataConfig> {
         self.input_data_config.as_ref()
     }
     /// <p>The output data configuration that you supplied when you created the document classification job.</p>
-    pub fn output_data_config(&self) -> std::option::Option<& crate::types::OutputDataConfig> {
+    pub fn output_data_config(&self) -> std::option::Option<&crate::types::OutputDataConfig> {
         self.output_data_config.as_ref()
     }
     /// <p>The Amazon Resource Name (ARN) of the AWS identity and Access Management (IAM) role that grants Amazon Comprehend read access to your input data.</p>
-    pub fn data_access_role_arn(&self) -> std::option::Option<& str> {
+    pub fn data_access_role_arn(&self) -> std::option::Option<&str> {
         self.data_access_role_arn.as_deref()
     }
-    /// <p>ID for the AWS Key Management Service (KMS) key that Amazon Comprehend uses to encrypt data on the storage volume attached to the ML compute instance(s) that process the analysis job. The VolumeKmsKeyId can be either of the following formats:</p> 
-    /// <ul> 
-    /// <li> <p>KMS Key ID: <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li> 
-    /// <li> <p>Amazon Resource Name (ARN) of a KMS Key: <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li> 
+    /// <p>ID for the AWS Key Management Service (KMS) key that Amazon Comprehend uses to encrypt data on the storage volume attached to the ML compute instance(s) that process the analysis job. The VolumeKmsKeyId can be either of the following formats:</p>
+    /// <ul>
+    /// <li> <p>KMS Key ID: <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li>
+    /// <li> <p>Amazon Resource Name (ARN) of a KMS Key: <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li>
     /// </ul>
-    pub fn volume_kms_key_id(&self) -> std::option::Option<& str> {
+    pub fn volume_kms_key_id(&self) -> std::option::Option<&str> {
         self.volume_kms_key_id.as_deref()
     }
     /// <p> Configuration parameters for a private Virtual Private Cloud (VPC) containing the resources you are using for your document classification job. For more information, see <a href="https://docs.aws.amazon.com/vppc/latest/userguide/what-is-amazon-vpc.html">Amazon VPC</a>. </p>
-    pub fn vpc_config(&self) -> std::option::Option<& crate::types::VpcConfig> {
+    pub fn vpc_config(&self) -> std::option::Option<&crate::types::VpcConfig> {
         self.vpc_config.as_ref()
     }
 }
@@ -165,9 +165,10 @@ impl DocumentClassificationJobPropertiesBuilder {
     }
     /// <p>The identifier assigned to the document classification job.</p>
     pub fn set_job_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.job_id = input; self
+        self.job_id = input;
+        self
     }
-    /// <p>The Amazon Resource Name (ARN) of the document classification job. It is a unique, fully qualified identifier for the job. It includes the AWS account, Region, and the job ID. The format of the ARN is as follows:</p> 
+    /// <p>The Amazon Resource Name (ARN) of the document classification job. It is a unique, fully qualified identifier for the job. It includes the AWS account, Region, and the job ID. The format of the ARN is as follows:</p>
     /// <p> <code>arn:
     /// <partition>
     /// :comprehend:
@@ -178,14 +179,14 @@ impl DocumentClassificationJobPropertiesBuilder {
     /// <job-id></job-id>
     /// </account-id>
     /// </region>
-    /// </partition></code> </p> 
-    /// <p>The following is an example job ARN:</p> 
+    /// </partition></code> </p>
+    /// <p>The following is an example job ARN:</p>
     /// <p> <code>arn:aws:comprehend:us-west-2:111122223333:document-classification-job/1234abcd12ab34cd56ef1234567890ab</code> </p>
     pub fn job_arn(mut self, input: impl Into<std::string::String>) -> Self {
         self.job_arn = Some(input.into());
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the document classification job. It is a unique, fully qualified identifier for the job. It includes the AWS account, Region, and the job ID. The format of the ARN is as follows:</p> 
+    /// <p>The Amazon Resource Name (ARN) of the document classification job. It is a unique, fully qualified identifier for the job. It includes the AWS account, Region, and the job ID. The format of the ARN is as follows:</p>
     /// <p> <code>arn:
     /// <partition>
     /// :comprehend:
@@ -196,11 +197,12 @@ impl DocumentClassificationJobPropertiesBuilder {
     /// <job-id></job-id>
     /// </account-id>
     /// </region>
-    /// </partition></code> </p> 
-    /// <p>The following is an example job ARN:</p> 
+    /// </partition></code> </p>
+    /// <p>The following is an example job ARN:</p>
     /// <p> <code>arn:aws:comprehend:us-west-2:111122223333:document-classification-job/1234abcd12ab34cd56ef1234567890ab</code> </p>
     pub fn set_job_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.job_arn = input; self
+        self.job_arn = input;
+        self
     }
     /// <p>The name that you assigned to the document classification job.</p>
     pub fn job_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -209,7 +211,8 @@ impl DocumentClassificationJobPropertiesBuilder {
     }
     /// <p>The name that you assigned to the document classification job.</p>
     pub fn set_job_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.job_name = input; self
+        self.job_name = input;
+        self
     }
     /// <p>The current status of the document classification job. If the status is <code>FAILED</code>, the <code>Message</code> field shows the reason for the failure.</p>
     pub fn job_status(mut self, input: crate::types::JobStatus) -> Self {
@@ -218,7 +221,8 @@ impl DocumentClassificationJobPropertiesBuilder {
     }
     /// <p>The current status of the document classification job. If the status is <code>FAILED</code>, the <code>Message</code> field shows the reason for the failure.</p>
     pub fn set_job_status(mut self, input: std::option::Option<crate::types::JobStatus>) -> Self {
-        self.job_status = input; self
+        self.job_status = input;
+        self
     }
     /// <p>A description of the status of the job.</p>
     pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
@@ -227,7 +231,8 @@ impl DocumentClassificationJobPropertiesBuilder {
     }
     /// <p>A description of the status of the job.</p>
     pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.message = input; self
+        self.message = input;
+        self
     }
     /// <p>The time that the document classification job was submitted for processing.</p>
     pub fn submit_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -235,8 +240,12 @@ impl DocumentClassificationJobPropertiesBuilder {
         self
     }
     /// <p>The time that the document classification job was submitted for processing.</p>
-    pub fn set_submit_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.submit_time = input; self
+    pub fn set_submit_time(
+        mut self,
+        input: std::option::Option<aws_smithy_types::DateTime>,
+    ) -> Self {
+        self.submit_time = input;
+        self
     }
     /// <p>The time that the document classification job completed.</p>
     pub fn end_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -245,7 +254,8 @@ impl DocumentClassificationJobPropertiesBuilder {
     }
     /// <p>The time that the document classification job completed.</p>
     pub fn set_end_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.end_time = input; self
+        self.end_time = input;
+        self
     }
     /// <p>The Amazon Resource Name (ARN) that identifies the document classifier. </p>
     pub fn document_classifier_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -253,8 +263,12 @@ impl DocumentClassificationJobPropertiesBuilder {
         self
     }
     /// <p>The Amazon Resource Name (ARN) that identifies the document classifier. </p>
-    pub fn set_document_classifier_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.document_classifier_arn = input; self
+    pub fn set_document_classifier_arn(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.document_classifier_arn = input;
+        self
     }
     /// <p>The input data configuration that you supplied when you created the document classification job.</p>
     pub fn input_data_config(mut self, input: crate::types::InputDataConfig) -> Self {
@@ -262,8 +276,12 @@ impl DocumentClassificationJobPropertiesBuilder {
         self
     }
     /// <p>The input data configuration that you supplied when you created the document classification job.</p>
-    pub fn set_input_data_config(mut self, input: std::option::Option<crate::types::InputDataConfig>) -> Self {
-        self.input_data_config = input; self
+    pub fn set_input_data_config(
+        mut self,
+        input: std::option::Option<crate::types::InputDataConfig>,
+    ) -> Self {
+        self.input_data_config = input;
+        self
     }
     /// <p>The output data configuration that you supplied when you created the document classification job.</p>
     pub fn output_data_config(mut self, input: crate::types::OutputDataConfig) -> Self {
@@ -271,8 +289,12 @@ impl DocumentClassificationJobPropertiesBuilder {
         self
     }
     /// <p>The output data configuration that you supplied when you created the document classification job.</p>
-    pub fn set_output_data_config(mut self, input: std::option::Option<crate::types::OutputDataConfig>) -> Self {
-        self.output_data_config = input; self
+    pub fn set_output_data_config(
+        mut self,
+        input: std::option::Option<crate::types::OutputDataConfig>,
+    ) -> Self {
+        self.output_data_config = input;
+        self
     }
     /// <p>The Amazon Resource Name (ARN) of the AWS identity and Access Management (IAM) role that grants Amazon Comprehend read access to your input data.</p>
     pub fn data_access_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -280,25 +302,33 @@ impl DocumentClassificationJobPropertiesBuilder {
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the AWS identity and Access Management (IAM) role that grants Amazon Comprehend read access to your input data.</p>
-    pub fn set_data_access_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.data_access_role_arn = input; self
+    pub fn set_data_access_role_arn(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.data_access_role_arn = input;
+        self
     }
-    /// <p>ID for the AWS Key Management Service (KMS) key that Amazon Comprehend uses to encrypt data on the storage volume attached to the ML compute instance(s) that process the analysis job. The VolumeKmsKeyId can be either of the following formats:</p> 
-    /// <ul> 
-    /// <li> <p>KMS Key ID: <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li> 
-    /// <li> <p>Amazon Resource Name (ARN) of a KMS Key: <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li> 
+    /// <p>ID for the AWS Key Management Service (KMS) key that Amazon Comprehend uses to encrypt data on the storage volume attached to the ML compute instance(s) that process the analysis job. The VolumeKmsKeyId can be either of the following formats:</p>
+    /// <ul>
+    /// <li> <p>KMS Key ID: <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li>
+    /// <li> <p>Amazon Resource Name (ARN) of a KMS Key: <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li>
     /// </ul>
     pub fn volume_kms_key_id(mut self, input: impl Into<std::string::String>) -> Self {
         self.volume_kms_key_id = Some(input.into());
         self
     }
-    /// <p>ID for the AWS Key Management Service (KMS) key that Amazon Comprehend uses to encrypt data on the storage volume attached to the ML compute instance(s) that process the analysis job. The VolumeKmsKeyId can be either of the following formats:</p> 
-    /// <ul> 
-    /// <li> <p>KMS Key ID: <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li> 
-    /// <li> <p>Amazon Resource Name (ARN) of a KMS Key: <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li> 
+    /// <p>ID for the AWS Key Management Service (KMS) key that Amazon Comprehend uses to encrypt data on the storage volume attached to the ML compute instance(s) that process the analysis job. The VolumeKmsKeyId can be either of the following formats:</p>
+    /// <ul>
+    /// <li> <p>KMS Key ID: <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li>
+    /// <li> <p>Amazon Resource Name (ARN) of a KMS Key: <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li>
     /// </ul>
-    pub fn set_volume_kms_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.volume_kms_key_id = input; self
+    pub fn set_volume_kms_key_id(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.volume_kms_key_id = input;
+        self
     }
     /// <p> Configuration parameters for a private Virtual Private Cloud (VPC) containing the resources you are using for your document classification job. For more information, see <a href="https://docs.aws.amazon.com/vppc/latest/userguide/what-is-amazon-vpc.html">Amazon VPC</a>. </p>
     pub fn vpc_config(mut self, input: crate::types::VpcConfig) -> Self {
@@ -307,38 +337,25 @@ impl DocumentClassificationJobPropertiesBuilder {
     }
     /// <p> Configuration parameters for a private Virtual Private Cloud (VPC) containing the resources you are using for your document classification job. For more information, see <a href="https://docs.aws.amazon.com/vppc/latest/userguide/what-is-amazon-vpc.html">Amazon VPC</a>. </p>
     pub fn set_vpc_config(mut self, input: std::option::Option<crate::types::VpcConfig>) -> Self {
-        self.vpc_config = input; self
+        self.vpc_config = input;
+        self
     }
     /// Consumes the builder and constructs a [`DocumentClassificationJobProperties`](crate::types::DocumentClassificationJobProperties).
     pub fn build(self) -> crate::types::DocumentClassificationJobProperties {
         crate::types::DocumentClassificationJobProperties {
-            job_id: self.job_id
-            ,
-            job_arn: self.job_arn
-            ,
-            job_name: self.job_name
-            ,
-            job_status: self.job_status
-            ,
-            message: self.message
-            ,
-            submit_time: self.submit_time
-            ,
-            end_time: self.end_time
-            ,
-            document_classifier_arn: self.document_classifier_arn
-            ,
-            input_data_config: self.input_data_config
-            ,
-            output_data_config: self.output_data_config
-            ,
-            data_access_role_arn: self.data_access_role_arn
-            ,
-            volume_kms_key_id: self.volume_kms_key_id
-            ,
-            vpc_config: self.vpc_config
-            ,
+            job_id: self.job_id,
+            job_arn: self.job_arn,
+            job_name: self.job_name,
+            job_status: self.job_status,
+            message: self.message,
+            submit_time: self.submit_time,
+            end_time: self.end_time,
+            document_classifier_arn: self.document_classifier_arn,
+            input_data_config: self.input_data_config,
+            output_data_config: self.output_data_config,
+            data_access_role_arn: self.data_access_role_arn,
+            volume_kms_key_id: self.volume_kms_key_id,
+            vpc_config: self.vpc_config,
         }
     }
 }
-

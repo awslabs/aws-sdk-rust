@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeSavingsPlansOfferingRatesOutput  {
+pub struct DescribeSavingsPlansOfferingRatesOutput {
     /// <p>Information about the Savings Plans offering rates.</p>
     #[doc(hidden)]
     pub search_results: std::option::Option<std::vec::Vec<crate::types::SavingsPlanOfferingRate>>,
@@ -13,22 +13,22 @@ pub struct DescribeSavingsPlansOfferingRatesOutput  {
 }
 impl DescribeSavingsPlansOfferingRatesOutput {
     /// <p>Information about the Savings Plans offering rates.</p>
-    pub fn search_results(&self) -> std::option::Option<& [crate::types::SavingsPlanOfferingRate]> {
+    pub fn search_results(&self) -> std::option::Option<&[crate::types::SavingsPlanOfferingRate]> {
         self.search_results.as_deref()
     }
     /// <p>The token to use to retrieve the next page of results. This value is null when there are no more results to return.</p>
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for DescribeSavingsPlansOfferingRatesOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl DescribeSavingsPlansOfferingRatesOutput {
     /// Creates a new builder-style object to manufacture [`DescribeSavingsPlansOfferingRatesOutput`](crate::operation::describe_savings_plans_offering_rates::DescribeSavingsPlansOfferingRatesOutput).
-    pub fn builder() -> crate::operation::describe_savings_plans_offering_rates::builders::DescribeSavingsPlansOfferingRatesOutputBuilder {
+    pub fn builder() -> crate::operation::describe_savings_plans_offering_rates::builders::DescribeSavingsPlansOfferingRatesOutputBuilder{
         crate::operation::describe_savings_plans_offering_rates::builders::DescribeSavingsPlansOfferingRatesOutputBuilder::default()
     }
 }
@@ -37,7 +37,8 @@ impl DescribeSavingsPlansOfferingRatesOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct DescribeSavingsPlansOfferingRatesOutputBuilder {
-    pub(crate) search_results: std::option::Option<std::vec::Vec<crate::types::SavingsPlanOfferingRate>>,
+    pub(crate) search_results:
+        std::option::Option<std::vec::Vec<crate::types::SavingsPlanOfferingRate>>,
     pub(crate) next_token: std::option::Option<std::string::String>,
     _request_id: Option<String>,
 }
@@ -49,13 +50,17 @@ impl DescribeSavingsPlansOfferingRatesOutputBuilder {
     /// <p>Information about the Savings Plans offering rates.</p>
     pub fn search_results(mut self, input: crate::types::SavingsPlanOfferingRate) -> Self {
         let mut v = self.search_results.unwrap_or_default();
-                        v.push(input);
-                        self.search_results = Some(v);
-                        self
+        v.push(input);
+        self.search_results = Some(v);
+        self
     }
     /// <p>Information about the Savings Plans offering rates.</p>
-    pub fn set_search_results(mut self, input: std::option::Option<std::vec::Vec<crate::types::SavingsPlanOfferingRate>>) -> Self {
-        self.search_results = input; self
+    pub fn set_search_results(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::SavingsPlanOfferingRate>>,
+    ) -> Self {
+        self.search_results = input;
+        self
     }
     /// <p>The token to use to retrieve the next page of results. This value is null when there are no more results to return.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -64,19 +69,20 @@ impl DescribeSavingsPlansOfferingRatesOutputBuilder {
     }
     /// <p>The token to use to retrieve the next page of results. This value is null when there are no more results to return.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input; self
+        self.next_token = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`DescribeSavingsPlansOfferingRatesOutput`](crate::operation::describe_savings_plans_offering_rates::DescribeSavingsPlansOfferingRatesOutput).
-    pub fn build(self) -> crate::operation::describe_savings_plans_offering_rates::DescribeSavingsPlansOfferingRatesOutput {
+    pub fn build(self) -> crate::operation::describe_savings_plans_offering_rates::DescribeSavingsPlansOfferingRatesOutput{
         crate::operation::describe_savings_plans_offering_rates::DescribeSavingsPlansOfferingRatesOutput {
             search_results: self.search_results
             ,
@@ -86,4 +92,3 @@ impl DescribeSavingsPlansOfferingRatesOutputBuilder {
         }
     }
 }
-

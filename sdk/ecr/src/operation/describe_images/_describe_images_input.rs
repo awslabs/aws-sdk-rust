@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeImagesInput  {
+pub struct DescribeImagesInput {
     /// <p>The Amazon Web Services account ID associated with the registry that contains the repository in which to describe images. If you do not specify a registry, the default registry is assumed.</p>
     #[doc(hidden)]
     pub registry_id: std::option::Option<std::string::String>,
@@ -24,19 +24,19 @@ pub struct DescribeImagesInput  {
 }
 impl DescribeImagesInput {
     /// <p>The Amazon Web Services account ID associated with the registry that contains the repository in which to describe images. If you do not specify a registry, the default registry is assumed.</p>
-    pub fn registry_id(&self) -> std::option::Option<& str> {
+    pub fn registry_id(&self) -> std::option::Option<&str> {
         self.registry_id.as_deref()
     }
     /// <p>The repository that contains the images to describe.</p>
-    pub fn repository_name(&self) -> std::option::Option<& str> {
+    pub fn repository_name(&self) -> std::option::Option<&str> {
         self.repository_name.as_deref()
     }
     /// <p>The list of image IDs for the requested repository.</p>
-    pub fn image_ids(&self) -> std::option::Option<& [crate::types::ImageIdentifier]> {
+    pub fn image_ids(&self) -> std::option::Option<&[crate::types::ImageIdentifier]> {
         self.image_ids.as_deref()
     }
     /// <p>The <code>nextToken</code> value returned from a previous paginated <code>DescribeImages</code> request where <code>maxResults</code> was used and the results exceeded the value of that parameter. Pagination continues from the end of the previous results that returned the <code>nextToken</code> value. This value is <code>null</code> when there are no more results to return. This option cannot be used when you specify images with <code>imageIds</code>.</p>
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
     /// <p>The maximum number of repository results returned by <code>DescribeImages</code> in paginated output. When this parameter is used, <code>DescribeImages</code> only returns <code>maxResults</code> results in a single page along with a <code>nextToken</code> response element. The remaining results of the initial request can be seen by sending another <code>DescribeImages</code> request with the returned <code>nextToken</code> value. This value can be between 1 and 1000. If this parameter is not used, then <code>DescribeImages</code> returns up to 100 results and a <code>nextToken</code> value, if applicable. This option cannot be used when you specify images with <code>imageIds</code>.</p>
@@ -44,7 +44,7 @@ impl DescribeImagesInput {
         self.max_results
     }
     /// <p>The filter key and value with which to filter your <code>DescribeImages</code> results.</p>
-    pub fn filter(&self) -> std::option::Option<& crate::types::DescribeImagesFilter> {
+    pub fn filter(&self) -> std::option::Option<&crate::types::DescribeImagesFilter> {
         self.filter.as_ref()
     }
 }
@@ -74,7 +74,8 @@ impl DescribeImagesInputBuilder {
     }
     /// <p>The Amazon Web Services account ID associated with the registry that contains the repository in which to describe images. If you do not specify a registry, the default registry is assumed.</p>
     pub fn set_registry_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.registry_id = input; self
+        self.registry_id = input;
+        self
     }
     /// <p>The repository that contains the images to describe.</p>
     pub fn repository_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -83,7 +84,8 @@ impl DescribeImagesInputBuilder {
     }
     /// <p>The repository that contains the images to describe.</p>
     pub fn set_repository_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.repository_name = input; self
+        self.repository_name = input;
+        self
     }
     /// Appends an item to `image_ids`.
     ///
@@ -92,13 +94,17 @@ impl DescribeImagesInputBuilder {
     /// <p>The list of image IDs for the requested repository.</p>
     pub fn image_ids(mut self, input: crate::types::ImageIdentifier) -> Self {
         let mut v = self.image_ids.unwrap_or_default();
-                        v.push(input);
-                        self.image_ids = Some(v);
-                        self
+        v.push(input);
+        self.image_ids = Some(v);
+        self
     }
     /// <p>The list of image IDs for the requested repository.</p>
-    pub fn set_image_ids(mut self, input: std::option::Option<std::vec::Vec<crate::types::ImageIdentifier>>) -> Self {
-        self.image_ids = input; self
+    pub fn set_image_ids(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::ImageIdentifier>>,
+    ) -> Self {
+        self.image_ids = input;
+        self
     }
     /// <p>The <code>nextToken</code> value returned from a previous paginated <code>DescribeImages</code> request where <code>maxResults</code> was used and the results exceeded the value of that parameter. Pagination continues from the end of the previous results that returned the <code>nextToken</code> value. This value is <code>null</code> when there are no more results to return. This option cannot be used when you specify images with <code>imageIds</code>.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -107,7 +113,8 @@ impl DescribeImagesInputBuilder {
     }
     /// <p>The <code>nextToken</code> value returned from a previous paginated <code>DescribeImages</code> request where <code>maxResults</code> was used and the results exceeded the value of that parameter. Pagination continues from the end of the previous results that returned the <code>nextToken</code> value. This value is <code>null</code> when there are no more results to return. This option cannot be used when you specify images with <code>imageIds</code>.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input; self
+        self.next_token = input;
+        self
     }
     /// <p>The maximum number of repository results returned by <code>DescribeImages</code> in paginated output. When this parameter is used, <code>DescribeImages</code> only returns <code>maxResults</code> results in a single page along with a <code>nextToken</code> response element. The remaining results of the initial request can be seen by sending another <code>DescribeImages</code> request with the returned <code>nextToken</code> value. This value can be between 1 and 1000. If this parameter is not used, then <code>DescribeImages</code> returns up to 100 results and a <code>nextToken</code> value, if applicable. This option cannot be used when you specify images with <code>imageIds</code>.</p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -116,7 +123,8 @@ impl DescribeImagesInputBuilder {
     }
     /// <p>The maximum number of repository results returned by <code>DescribeImages</code> in paginated output. When this parameter is used, <code>DescribeImages</code> only returns <code>maxResults</code> results in a single page along with a <code>nextToken</code> response element. The remaining results of the initial request can be seen by sending another <code>DescribeImages</code> request with the returned <code>nextToken</code> value. This value can be between 1 and 1000. If this parameter is not used, then <code>DescribeImages</code> returns up to 100 results and a <code>nextToken</code> value, if applicable. This option cannot be used when you specify images with <code>imageIds</code>.</p>
     pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_results = input; self
+        self.max_results = input;
+        self
     }
     /// <p>The filter key and value with which to filter your <code>DescribeImages</code> results.</p>
     pub fn filter(mut self, input: crate::types::DescribeImagesFilter) -> Self {
@@ -124,27 +132,27 @@ impl DescribeImagesInputBuilder {
         self
     }
     /// <p>The filter key and value with which to filter your <code>DescribeImages</code> results.</p>
-    pub fn set_filter(mut self, input: std::option::Option<crate::types::DescribeImagesFilter>) -> Self {
-        self.filter = input; self
+    pub fn set_filter(
+        mut self,
+        input: std::option::Option<crate::types::DescribeImagesFilter>,
+    ) -> Self {
+        self.filter = input;
+        self
     }
     /// Consumes the builder and constructs a [`DescribeImagesInput`](crate::operation::describe_images::DescribeImagesInput).
-    pub fn build(self) -> Result<crate::operation::describe_images::DescribeImagesInput, aws_smithy_http::operation::error::BuildError> {
-        Ok(
-            crate::operation::describe_images::DescribeImagesInput {
-                registry_id: self.registry_id
-                ,
-                repository_name: self.repository_name
-                ,
-                image_ids: self.image_ids
-                ,
-                next_token: self.next_token
-                ,
-                max_results: self.max_results
-                ,
-                filter: self.filter
-                ,
-            }
-        )
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::describe_images::DescribeImagesInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        Ok(crate::operation::describe_images::DescribeImagesInput {
+            registry_id: self.registry_id,
+            repository_name: self.repository_name,
+            image_ids: self.image_ids,
+            next_token: self.next_token,
+            max_results: self.max_results,
+            filter: self.filter,
+        })
     }
 }
-

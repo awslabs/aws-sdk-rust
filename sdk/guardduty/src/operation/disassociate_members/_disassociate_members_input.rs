@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DisassociateMembersInput  {
+pub struct DisassociateMembersInput {
     /// <p>The unique ID of the detector of the GuardDuty account whose members you want to disassociate from the administrator account.</p>
     #[doc(hidden)]
     pub detector_id: std::option::Option<std::string::String>,
@@ -12,17 +12,18 @@ pub struct DisassociateMembersInput  {
 }
 impl DisassociateMembersInput {
     /// <p>The unique ID of the detector of the GuardDuty account whose members you want to disassociate from the administrator account.</p>
-    pub fn detector_id(&self) -> std::option::Option<& str> {
+    pub fn detector_id(&self) -> std::option::Option<&str> {
         self.detector_id.as_deref()
     }
     /// <p>A list of account IDs of the GuardDuty member accounts that you want to disassociate from the administrator account.</p>
-    pub fn account_ids(&self) -> std::option::Option<& [std::string::String]> {
+    pub fn account_ids(&self) -> std::option::Option<&[std::string::String]> {
         self.account_ids.as_deref()
     }
 }
 impl DisassociateMembersInput {
     /// Creates a new builder-style object to manufacture [`DisassociateMembersInput`](crate::operation::disassociate_members::DisassociateMembersInput).
-    pub fn builder() -> crate::operation::disassociate_members::builders::DisassociateMembersInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::disassociate_members::builders::DisassociateMembersInputBuilder {
         crate::operation::disassociate_members::builders::DisassociateMembersInputBuilder::default()
     }
 }
@@ -42,7 +43,8 @@ impl DisassociateMembersInputBuilder {
     }
     /// <p>The unique ID of the detector of the GuardDuty account whose members you want to disassociate from the administrator account.</p>
     pub fn set_detector_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.detector_id = input; self
+        self.detector_id = input;
+        self
     }
     /// Appends an item to `account_ids`.
     ///
@@ -51,24 +53,30 @@ impl DisassociateMembersInputBuilder {
     /// <p>A list of account IDs of the GuardDuty member accounts that you want to disassociate from the administrator account.</p>
     pub fn account_ids(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.account_ids.unwrap_or_default();
-                        v.push(input.into());
-                        self.account_ids = Some(v);
-                        self
+        v.push(input.into());
+        self.account_ids = Some(v);
+        self
     }
     /// <p>A list of account IDs of the GuardDuty member accounts that you want to disassociate from the administrator account.</p>
-    pub fn set_account_ids(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-        self.account_ids = input; self
+    pub fn set_account_ids(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
+        self.account_ids = input;
+        self
     }
     /// Consumes the builder and constructs a [`DisassociateMembersInput`](crate::operation::disassociate_members::DisassociateMembersInput).
-    pub fn build(self) -> Result<crate::operation::disassociate_members::DisassociateMembersInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::disassociate_members::DisassociateMembersInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::disassociate_members::DisassociateMembersInput {
-                detector_id: self.detector_id
-                ,
-                account_ids: self.account_ids
-                ,
-            }
+                detector_id: self.detector_id,
+                account_ids: self.account_ids,
+            },
         )
     }
 }
-

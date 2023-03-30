@@ -14,4 +14,3 @@ pub use crate::types::error::_access_denied_exception::AccessDeniedExceptionBuil
 pub use crate::types::error::_throttling_exception::ThrottlingExceptionBuilder;
 
 pub use crate::types::error::_internal_server_exception::InternalServerExceptionBuilder;
-

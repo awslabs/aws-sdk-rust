@@ -3,7 +3,7 @@
 /// <p>Information about an space.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SpaceSummary  {
+pub struct SpaceSummary {
     /// <p> <i>We need to know what this is and the basic usage information so that third-party developers know how to use this data type.</i> </p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -19,19 +19,19 @@ pub struct SpaceSummary  {
 }
 impl SpaceSummary {
     /// <p> <i>We need to know what this is and the basic usage information so that third-party developers know how to use this data type.</i> </p>
-    pub fn name(&self) -> std::option::Option<& str> {
+    pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>The Amazon Web Services Region where the space exists.</p>
-    pub fn region_name(&self) -> std::option::Option<& str> {
+    pub fn region_name(&self) -> std::option::Option<&str> {
         self.region_name.as_deref()
     }
     /// <p>The friendly name of the space displayed to users.</p>
-    pub fn display_name(&self) -> std::option::Option<& str> {
+    pub fn display_name(&self) -> std::option::Option<&str> {
         self.display_name.as_deref()
     }
     /// <p>The description of the space.</p>
-    pub fn description(&self) -> std::option::Option<& str> {
+    pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
 }
@@ -59,7 +59,8 @@ impl SpaceSummaryBuilder {
     }
     /// <p> <i>We need to know what this is and the basic usage information so that third-party developers know how to use this data type.</i> </p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input; self
+        self.name = input;
+        self
     }
     /// <p>The Amazon Web Services Region where the space exists.</p>
     pub fn region_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -68,7 +69,8 @@ impl SpaceSummaryBuilder {
     }
     /// <p>The Amazon Web Services Region where the space exists.</p>
     pub fn set_region_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.region_name = input; self
+        self.region_name = input;
+        self
     }
     /// <p>The friendly name of the space displayed to users.</p>
     pub fn display_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -77,7 +79,8 @@ impl SpaceSummaryBuilder {
     }
     /// <p>The friendly name of the space displayed to users.</p>
     pub fn set_display_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.display_name = input; self
+        self.display_name = input;
+        self
     }
     /// <p>The description of the space.</p>
     pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -86,20 +89,16 @@ impl SpaceSummaryBuilder {
     }
     /// <p>The description of the space.</p>
     pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.description = input; self
+        self.description = input;
+        self
     }
     /// Consumes the builder and constructs a [`SpaceSummary`](crate::types::SpaceSummary).
     pub fn build(self) -> crate::types::SpaceSummary {
         crate::types::SpaceSummary {
-            name: self.name
-            ,
-            region_name: self.region_name
-            ,
-            display_name: self.display_name
-            ,
-            description: self.description
-            ,
+            name: self.name,
+            region_name: self.region_name,
+            display_name: self.display_name,
+            description: self.description,
         }
     }
 }
-

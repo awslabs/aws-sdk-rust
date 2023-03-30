@@ -3,7 +3,7 @@
 /// <p>A facet.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SchemaFacet  {
+pub struct SchemaFacet {
     /// <p>The ARN of the schema that contains the facet with no minor component. See <code>arns</code> and <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/schemas_inplaceschemaupgrade.html">In-Place Schema Upgrade</a> for a description of when to provide minor versions. If this value is set, FacetName must also be set.</p>
     #[doc(hidden)]
     pub schema_arn: std::option::Option<std::string::String>,
@@ -13,11 +13,11 @@ pub struct SchemaFacet  {
 }
 impl SchemaFacet {
     /// <p>The ARN of the schema that contains the facet with no minor component. See <code>arns</code> and <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/schemas_inplaceschemaupgrade.html">In-Place Schema Upgrade</a> for a description of when to provide minor versions. If this value is set, FacetName must also be set.</p>
-    pub fn schema_arn(&self) -> std::option::Option<& str> {
+    pub fn schema_arn(&self) -> std::option::Option<&str> {
         self.schema_arn.as_deref()
     }
     /// <p>The name of the facet. If this value is set, SchemaArn must also be set.</p>
-    pub fn facet_name(&self) -> std::option::Option<& str> {
+    pub fn facet_name(&self) -> std::option::Option<&str> {
         self.facet_name.as_deref()
     }
 }
@@ -43,7 +43,8 @@ impl SchemaFacetBuilder {
     }
     /// <p>The ARN of the schema that contains the facet with no minor component. See <code>arns</code> and <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/schemas_inplaceschemaupgrade.html">In-Place Schema Upgrade</a> for a description of when to provide minor versions. If this value is set, FacetName must also be set.</p>
     pub fn set_schema_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.schema_arn = input; self
+        self.schema_arn = input;
+        self
     }
     /// <p>The name of the facet. If this value is set, SchemaArn must also be set.</p>
     pub fn facet_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -52,16 +53,14 @@ impl SchemaFacetBuilder {
     }
     /// <p>The name of the facet. If this value is set, SchemaArn must also be set.</p>
     pub fn set_facet_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.facet_name = input; self
+        self.facet_name = input;
+        self
     }
     /// Consumes the builder and constructs a [`SchemaFacet`](crate::types::SchemaFacet).
     pub fn build(self) -> crate::types::SchemaFacet {
         crate::types::SchemaFacet {
-            schema_arn: self.schema_arn
-            ,
-            facet_name: self.facet_name
-            ,
+            schema_arn: self.schema_arn,
+            facet_name: self.facet_name,
         }
     }
 }
-

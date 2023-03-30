@@ -3,43 +3,43 @@
 /// <p>Describes an add-on that is enabled for an Amazon Lightsail resource.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AddOn  {
+pub struct AddOn {
     /// <p>The name of the add-on.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The status of the add-on.</p>
     #[doc(hidden)]
     pub status: std::option::Option<std::string::String>,
-    /// <p>The daily time when an automatic snapshot is created.</p> 
-    /// <p>The time shown is in <code>HH:00</code> format, and in Coordinated Universal Time (UTC).</p> 
+    /// <p>The daily time when an automatic snapshot is created.</p>
+    /// <p>The time shown is in <code>HH:00</code> format, and in Coordinated Universal Time (UTC).</p>
     /// <p>The snapshot is automatically created between the time shown and up to 45 minutes after.</p>
     #[doc(hidden)]
     pub snapshot_time_of_day: std::option::Option<std::string::String>,
-    /// <p>The next daily time an automatic snapshot will be created.</p> 
-    /// <p>The time shown is in <code>HH:00</code> format, and in Coordinated Universal Time (UTC).</p> 
+    /// <p>The next daily time an automatic snapshot will be created.</p>
+    /// <p>The time shown is in <code>HH:00</code> format, and in Coordinated Universal Time (UTC).</p>
     /// <p>The snapshot is automatically created between the time shown and up to 45 minutes after.</p>
     #[doc(hidden)]
     pub next_snapshot_time_of_day: std::option::Option<std::string::String>,
 }
 impl AddOn {
     /// <p>The name of the add-on.</p>
-    pub fn name(&self) -> std::option::Option<& str> {
+    pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>The status of the add-on.</p>
-    pub fn status(&self) -> std::option::Option<& str> {
+    pub fn status(&self) -> std::option::Option<&str> {
         self.status.as_deref()
     }
-    /// <p>The daily time when an automatic snapshot is created.</p> 
-    /// <p>The time shown is in <code>HH:00</code> format, and in Coordinated Universal Time (UTC).</p> 
+    /// <p>The daily time when an automatic snapshot is created.</p>
+    /// <p>The time shown is in <code>HH:00</code> format, and in Coordinated Universal Time (UTC).</p>
     /// <p>The snapshot is automatically created between the time shown and up to 45 minutes after.</p>
-    pub fn snapshot_time_of_day(&self) -> std::option::Option<& str> {
+    pub fn snapshot_time_of_day(&self) -> std::option::Option<&str> {
         self.snapshot_time_of_day.as_deref()
     }
-    /// <p>The next daily time an automatic snapshot will be created.</p> 
-    /// <p>The time shown is in <code>HH:00</code> format, and in Coordinated Universal Time (UTC).</p> 
+    /// <p>The next daily time an automatic snapshot will be created.</p>
+    /// <p>The time shown is in <code>HH:00</code> format, and in Coordinated Universal Time (UTC).</p>
     /// <p>The snapshot is automatically created between the time shown and up to 45 minutes after.</p>
-    pub fn next_snapshot_time_of_day(&self) -> std::option::Option<& str> {
+    pub fn next_snapshot_time_of_day(&self) -> std::option::Option<&str> {
         self.next_snapshot_time_of_day.as_deref()
     }
 }
@@ -67,7 +67,8 @@ impl AddOnBuilder {
     }
     /// <p>The name of the add-on.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input; self
+        self.name = input;
+        self
     }
     /// <p>The status of the add-on.</p>
     pub fn status(mut self, input: impl Into<std::string::String>) -> Self {
@@ -76,46 +77,50 @@ impl AddOnBuilder {
     }
     /// <p>The status of the add-on.</p>
     pub fn set_status(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.status = input; self
+        self.status = input;
+        self
     }
-    /// <p>The daily time when an automatic snapshot is created.</p> 
-    /// <p>The time shown is in <code>HH:00</code> format, and in Coordinated Universal Time (UTC).</p> 
+    /// <p>The daily time when an automatic snapshot is created.</p>
+    /// <p>The time shown is in <code>HH:00</code> format, and in Coordinated Universal Time (UTC).</p>
     /// <p>The snapshot is automatically created between the time shown and up to 45 minutes after.</p>
     pub fn snapshot_time_of_day(mut self, input: impl Into<std::string::String>) -> Self {
         self.snapshot_time_of_day = Some(input.into());
         self
     }
-    /// <p>The daily time when an automatic snapshot is created.</p> 
-    /// <p>The time shown is in <code>HH:00</code> format, and in Coordinated Universal Time (UTC).</p> 
+    /// <p>The daily time when an automatic snapshot is created.</p>
+    /// <p>The time shown is in <code>HH:00</code> format, and in Coordinated Universal Time (UTC).</p>
     /// <p>The snapshot is automatically created between the time shown and up to 45 minutes after.</p>
-    pub fn set_snapshot_time_of_day(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.snapshot_time_of_day = input; self
+    pub fn set_snapshot_time_of_day(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.snapshot_time_of_day = input;
+        self
     }
-    /// <p>The next daily time an automatic snapshot will be created.</p> 
-    /// <p>The time shown is in <code>HH:00</code> format, and in Coordinated Universal Time (UTC).</p> 
+    /// <p>The next daily time an automatic snapshot will be created.</p>
+    /// <p>The time shown is in <code>HH:00</code> format, and in Coordinated Universal Time (UTC).</p>
     /// <p>The snapshot is automatically created between the time shown and up to 45 minutes after.</p>
     pub fn next_snapshot_time_of_day(mut self, input: impl Into<std::string::String>) -> Self {
         self.next_snapshot_time_of_day = Some(input.into());
         self
     }
-    /// <p>The next daily time an automatic snapshot will be created.</p> 
-    /// <p>The time shown is in <code>HH:00</code> format, and in Coordinated Universal Time (UTC).</p> 
+    /// <p>The next daily time an automatic snapshot will be created.</p>
+    /// <p>The time shown is in <code>HH:00</code> format, and in Coordinated Universal Time (UTC).</p>
     /// <p>The snapshot is automatically created between the time shown and up to 45 minutes after.</p>
-    pub fn set_next_snapshot_time_of_day(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_snapshot_time_of_day = input; self
+    pub fn set_next_snapshot_time_of_day(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.next_snapshot_time_of_day = input;
+        self
     }
     /// Consumes the builder and constructs a [`AddOn`](crate::types::AddOn).
     pub fn build(self) -> crate::types::AddOn {
         crate::types::AddOn {
-            name: self.name
-            ,
-            status: self.status
-            ,
-            snapshot_time_of_day: self.snapshot_time_of_day
-            ,
-            next_snapshot_time_of_day: self.next_snapshot_time_of_day
-            ,
+            name: self.name,
+            status: self.status,
+            snapshot_time_of_day: self.snapshot_time_of_day,
+            next_snapshot_time_of_day: self.next_snapshot_time_of_day,
         }
     }
 }
-

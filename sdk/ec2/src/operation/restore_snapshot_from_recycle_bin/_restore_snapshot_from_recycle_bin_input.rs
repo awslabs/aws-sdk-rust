@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct RestoreSnapshotFromRecycleBinInput  {
+pub struct RestoreSnapshotFromRecycleBinInput {
     /// <p>The ID of the snapshot to restore.</p>
     #[doc(hidden)]
     pub snapshot_id: std::option::Option<std::string::String>,
@@ -12,7 +12,7 @@ pub struct RestoreSnapshotFromRecycleBinInput  {
 }
 impl RestoreSnapshotFromRecycleBinInput {
     /// <p>The ID of the snapshot to restore.</p>
-    pub fn snapshot_id(&self) -> std::option::Option<& str> {
+    pub fn snapshot_id(&self) -> std::option::Option<&str> {
         self.snapshot_id.as_deref()
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
@@ -22,7 +22,7 @@ impl RestoreSnapshotFromRecycleBinInput {
 }
 impl RestoreSnapshotFromRecycleBinInput {
     /// Creates a new builder-style object to manufacture [`RestoreSnapshotFromRecycleBinInput`](crate::operation::restore_snapshot_from_recycle_bin::RestoreSnapshotFromRecycleBinInput).
-    pub fn builder() -> crate::operation::restore_snapshot_from_recycle_bin::builders::RestoreSnapshotFromRecycleBinInputBuilder {
+    pub fn builder() -> crate::operation::restore_snapshot_from_recycle_bin::builders::RestoreSnapshotFromRecycleBinInputBuilder{
         crate::operation::restore_snapshot_from_recycle_bin::builders::RestoreSnapshotFromRecycleBinInputBuilder::default()
     }
 }
@@ -42,7 +42,8 @@ impl RestoreSnapshotFromRecycleBinInputBuilder {
     }
     /// <p>The ID of the snapshot to restore.</p>
     pub fn set_snapshot_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.snapshot_id = input; self
+        self.snapshot_id = input;
+        self
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn dry_run(mut self, input: bool) -> Self {
@@ -51,10 +52,16 @@ impl RestoreSnapshotFromRecycleBinInputBuilder {
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn set_dry_run(mut self, input: std::option::Option<bool>) -> Self {
-        self.dry_run = input; self
+        self.dry_run = input;
+        self
     }
     /// Consumes the builder and constructs a [`RestoreSnapshotFromRecycleBinInput`](crate::operation::restore_snapshot_from_recycle_bin::RestoreSnapshotFromRecycleBinInput).
-    pub fn build(self) -> Result<crate::operation::restore_snapshot_from_recycle_bin::RestoreSnapshotFromRecycleBinInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::restore_snapshot_from_recycle_bin::RestoreSnapshotFromRecycleBinInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::restore_snapshot_from_recycle_bin::RestoreSnapshotFromRecycleBinInput {
                 snapshot_id: self.snapshot_id
@@ -65,4 +72,3 @@ impl RestoreSnapshotFromRecycleBinInputBuilder {
         )
     }
 }
-

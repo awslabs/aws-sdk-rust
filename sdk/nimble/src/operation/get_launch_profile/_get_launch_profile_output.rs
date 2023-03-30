@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetLaunchProfileOutput  {
+pub struct GetLaunchProfileOutput {
     /// <p>The launch profile.</p>
     #[doc(hidden)]
     pub launch_profile: std::option::Option<crate::types::LaunchProfile>,
@@ -10,18 +10,19 @@ pub struct GetLaunchProfileOutput  {
 }
 impl GetLaunchProfileOutput {
     /// <p>The launch profile.</p>
-    pub fn launch_profile(&self) -> std::option::Option<& crate::types::LaunchProfile> {
+    pub fn launch_profile(&self) -> std::option::Option<&crate::types::LaunchProfile> {
         self.launch_profile.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for GetLaunchProfileOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl GetLaunchProfileOutput {
     /// Creates a new builder-style object to manufacture [`GetLaunchProfileOutput`](crate::operation::get_launch_profile::GetLaunchProfileOutput).
-    pub fn builder() -> crate::operation::get_launch_profile::builders::GetLaunchProfileOutputBuilder {
+    pub fn builder() -> crate::operation::get_launch_profile::builders::GetLaunchProfileOutputBuilder
+    {
         crate::operation::get_launch_profile::builders::GetLaunchProfileOutputBuilder::default()
     }
 }
@@ -40,25 +41,27 @@ impl GetLaunchProfileOutputBuilder {
         self
     }
     /// <p>The launch profile.</p>
-    pub fn set_launch_profile(mut self, input: std::option::Option<crate::types::LaunchProfile>) -> Self {
-        self.launch_profile = input; self
+    pub fn set_launch_profile(
+        mut self,
+        input: std::option::Option<crate::types::LaunchProfile>,
+    ) -> Self {
+        self.launch_profile = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`GetLaunchProfileOutput`](crate::operation::get_launch_profile::GetLaunchProfileOutput).
     pub fn build(self) -> crate::operation::get_launch_profile::GetLaunchProfileOutput {
         crate::operation::get_launch_profile::GetLaunchProfileOutput {
-            launch_profile: self.launch_profile
-            ,
+            launch_profile: self.launch_profile,
             _request_id: self._request_id,
         }
     }
 }
-

@@ -3,7 +3,7 @@
 /// <p>VectorEnrichmentJob export error details in response from GetVectorEnrichmentJob.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct VectorEnrichmentJobExportErrorDetails  {
+pub struct VectorEnrichmentJobExportErrorDetails {
     /// <p></p>
     #[doc(hidden)]
     pub r#type: std::option::Option<crate::types::VectorEnrichmentJobExportErrorType>,
@@ -13,11 +13,11 @@ pub struct VectorEnrichmentJobExportErrorDetails  {
 }
 impl VectorEnrichmentJobExportErrorDetails {
     /// <p></p>
-    pub fn r#type(&self) -> std::option::Option<& crate::types::VectorEnrichmentJobExportErrorType> {
+    pub fn r#type(&self) -> std::option::Option<&crate::types::VectorEnrichmentJobExportErrorType> {
         self.r#type.as_ref()
     }
     /// <p>The message providing details about the errors generated during the Vector Enrichment job.</p>
-    pub fn message(&self) -> std::option::Option<& str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -42,8 +42,12 @@ impl VectorEnrichmentJobExportErrorDetailsBuilder {
         self
     }
     /// <p></p>
-    pub fn set_type(mut self, input: std::option::Option<crate::types::VectorEnrichmentJobExportErrorType>) -> Self {
-        self.r#type = input; self
+    pub fn set_type(
+        mut self,
+        input: std::option::Option<crate::types::VectorEnrichmentJobExportErrorType>,
+    ) -> Self {
+        self.r#type = input;
+        self
     }
     /// <p>The message providing details about the errors generated during the Vector Enrichment job.</p>
     pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
@@ -52,16 +56,14 @@ impl VectorEnrichmentJobExportErrorDetailsBuilder {
     }
     /// <p>The message providing details about the errors generated during the Vector Enrichment job.</p>
     pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.message = input; self
+        self.message = input;
+        self
     }
     /// Consumes the builder and constructs a [`VectorEnrichmentJobExportErrorDetails`](crate::types::VectorEnrichmentJobExportErrorDetails).
     pub fn build(self) -> crate::types::VectorEnrichmentJobExportErrorDetails {
         crate::types::VectorEnrichmentJobExportErrorDetails {
-            r#type: self.r#type
-            ,
-            message: self.message
-            ,
+            r#type: self.r#type,
+            message: self.message,
         }
     }
 }
-

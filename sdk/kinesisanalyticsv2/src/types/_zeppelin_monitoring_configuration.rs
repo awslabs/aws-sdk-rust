@@ -3,14 +3,14 @@
 /// <p>Describes configuration parameters for Amazon CloudWatch logging for a Kinesis Data Analytics Studio notebook. For more information about CloudWatch logging, see <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/java/monitoring-overview.html">Monitoring</a>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ZeppelinMonitoringConfiguration  {
+pub struct ZeppelinMonitoringConfiguration {
     /// <p>The verbosity of the CloudWatch Logs for an application.</p>
     #[doc(hidden)]
     pub log_level: std::option::Option<crate::types::LogLevel>,
 }
 impl ZeppelinMonitoringConfiguration {
     /// <p>The verbosity of the CloudWatch Logs for an application.</p>
-    pub fn log_level(&self) -> std::option::Option<& crate::types::LogLevel> {
+    pub fn log_level(&self) -> std::option::Option<&crate::types::LogLevel> {
         self.log_level.as_ref()
     }
 }
@@ -35,14 +35,13 @@ impl ZeppelinMonitoringConfigurationBuilder {
     }
     /// <p>The verbosity of the CloudWatch Logs for an application.</p>
     pub fn set_log_level(mut self, input: std::option::Option<crate::types::LogLevel>) -> Self {
-        self.log_level = input; self
+        self.log_level = input;
+        self
     }
     /// Consumes the builder and constructs a [`ZeppelinMonitoringConfiguration`](crate::types::ZeppelinMonitoringConfiguration).
     pub fn build(self) -> crate::types::ZeppelinMonitoringConfiguration {
         crate::types::ZeppelinMonitoringConfiguration {
-            log_level: self.log_level
-            ,
+            log_level: self.log_level,
         }
     }
 }
-

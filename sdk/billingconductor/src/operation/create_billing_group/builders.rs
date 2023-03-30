@@ -4,49 +4,71 @@ pub use crate::operation::create_billing_group::_create_billing_group_output::Cr
 pub use crate::operation::create_billing_group::_create_billing_group_input::CreateBillingGroupInputBuilder;
 
 /// Fluent builder constructing a request to `CreateBillingGroup`.
-/// 
+///
 /// <p> Creates a billing group that resembles a consolidated billing family that Amazon Web Services charges, based off of the predefined pricing plan computation. </p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct CreateBillingGroupFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::create_billing_group::builders::CreateBillingGroupInputBuilder
-            }
-impl CreateBillingGroupFluentBuilder  {
+    handle: std::sync::Arc<crate::client::Handle>,
+    inner: crate::operation::create_billing_group::builders::CreateBillingGroupInputBuilder,
+}
+impl CreateBillingGroupFluentBuilder {
     /// Creates a new `CreateBillingGroup`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
-                    /// sent. The operation's inner [http::Request] can be modified as well.
-                    pub async fn customize(self) -> std::result::Result<
-                        crate::client::customize::CustomizableOperation<crate::operation::create_billing_group::CreateBillingGroup, aws_http::retry::AwsResponseRetryClassifier,>,
-                        aws_smithy_http::result::SdkError<crate::operation::create_billing_group::CreateBillingGroupError>
-                    >  {
-                        let handle = self.handle.clone();
-                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-                    }
-    
-                    /// Sends the request and returns the response.
-                    ///
-                    /// If an error occurs, an `SdkError` will be returned with additional details that
-                    /// can be matched against.
-                    ///
-                    /// By default, any retryable failures will be retried twice. Retry behavior
-                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                    /// set when configuring the client.
-                    pub async fn send(self) -> std::result::Result<crate::operation::create_billing_group::CreateBillingGroupOutput, aws_smithy_http::result::SdkError<crate::operation::create_billing_group::CreateBillingGroupError>>
-                     {
-                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&self.handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        self.handle.client.call(op).await
-                    }
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle,
+            inner: Default::default(),
+        }
+    }
+
+    /// Consume this builder, creating a customizable operation that can be modified before being
+    /// sent. The operation's inner [http::Request] can be modified as well.
+    pub async fn customize(
+        self,
+    ) -> std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::create_billing_group::CreateBillingGroup,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::result::SdkError<
+            crate::operation::create_billing_group::CreateBillingGroupError,
+        >,
+    > {
+        let handle = self.handle.clone();
+        let operation = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+    }
+
+    /// Sends the request and returns the response.
+    ///
+    /// If an error occurs, an `SdkError` will be returned with additional details that
+    /// can be matched against.
+    ///
+    /// By default, any retryable failures will be retried twice. Retry behavior
+    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+    /// set when configuring the client.
+    pub async fn send(
+        self,
+    ) -> std::result::Result<
+        crate::operation::create_billing_group::CreateBillingGroupOutput,
+        aws_smithy_http::result::SdkError<
+            crate::operation::create_billing_group::CreateBillingGroupError,
+        >,
+    > {
+        let op = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&self.handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        self.handle.client.call(op).await
+    }
     /// <p> The token that is needed to support idempotency. Idempotency isn't currently supported, but will be implemented in a future update. </p>
     pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.client_token(input.into());
@@ -73,7 +95,10 @@ impl CreateBillingGroupFluentBuilder  {
         self
     }
     /// <p> The set of accounts that will be under the billing group. The set of accounts resemble the linked accounts in a consolidated family. </p>
-    pub fn set_account_grouping(mut self, input: std::option::Option<crate::types::AccountGrouping>) -> Self {
+    pub fn set_account_grouping(
+        mut self,
+        input: std::option::Option<crate::types::AccountGrouping>,
+    ) -> Self {
         self.inner = self.inner.set_account_grouping(input);
         self
     }
@@ -83,7 +108,10 @@ impl CreateBillingGroupFluentBuilder  {
         self
     }
     /// <p> The preferences and settings that will be used to compute the Amazon Web Services charges for a billing group. </p>
-    pub fn set_computation_preference(mut self, input: std::option::Option<crate::types::ComputationPreference>) -> Self {
+    pub fn set_computation_preference(
+        mut self,
+        input: std::option::Option<crate::types::ComputationPreference>,
+    ) -> Self {
         self.inner = self.inner.set_computation_preference(input);
         self
     }
@@ -93,7 +121,10 @@ impl CreateBillingGroupFluentBuilder  {
         self
     }
     /// <p> The account ID that serves as the main account in a billing group. </p>
-    pub fn set_primary_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_primary_account_id(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_primary_account_id(input);
         self
     }
@@ -112,14 +143,22 @@ impl CreateBillingGroupFluentBuilder  {
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// <p> A map that contains tag keys and tag values that are attached to a billing group. This feature isn't available during the beta. </p>
-    pub fn tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
+    pub fn tags(
+        mut self,
+        k: impl Into<std::string::String>,
+        v: impl Into<std::string::String>,
+    ) -> Self {
         self.inner = self.inner.tags(k.into(), v.into());
         self
     }
     /// <p> A map that contains tag keys and tag values that are attached to a billing group. This feature isn't available during the beta. </p>
-    pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+    pub fn set_tags(
+        mut self,
+        input: std::option::Option<
+            std::collections::HashMap<std::string::String, std::string::String>,
+        >,
+    ) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }
 }
-

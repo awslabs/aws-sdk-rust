@@ -3,7 +3,7 @@
 /// <p>The details of process-related information about a finding.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ProcessDetails  {
+pub struct ProcessDetails {
     /// <p>The name of the process.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -16,22 +16,22 @@ pub struct ProcessDetails  {
     /// <p>The parent process ID.</p>
     #[doc(hidden)]
     pub parent_pid: i32,
-    /// <p>Indicates when the process was launched.</p> 
+    /// <p>Indicates when the process was launched.</p>
     /// <p>Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces. For example, <code>2020-03-22T13:22:13.933Z</code>.</p>
     #[doc(hidden)]
     pub launched_at: std::option::Option<std::string::String>,
-    /// <p>Indicates when the process was terminated.</p> 
+    /// <p>Indicates when the process was terminated.</p>
     /// <p>Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces. For example, <code>2020-03-22T13:22:13.933Z</code>.</p>
     #[doc(hidden)]
     pub terminated_at: std::option::Option<std::string::String>,
 }
 impl ProcessDetails {
     /// <p>The name of the process.</p>
-    pub fn name(&self) -> std::option::Option<& str> {
+    pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>The path to the process executable.</p>
-    pub fn path(&self) -> std::option::Option<& str> {
+    pub fn path(&self) -> std::option::Option<&str> {
         self.path.as_deref()
     }
     /// <p>The process ID.</p>
@@ -42,14 +42,14 @@ impl ProcessDetails {
     pub fn parent_pid(&self) -> i32 {
         self.parent_pid
     }
-    /// <p>Indicates when the process was launched.</p> 
+    /// <p>Indicates when the process was launched.</p>
     /// <p>Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces. For example, <code>2020-03-22T13:22:13.933Z</code>.</p>
-    pub fn launched_at(&self) -> std::option::Option<& str> {
+    pub fn launched_at(&self) -> std::option::Option<&str> {
         self.launched_at.as_deref()
     }
-    /// <p>Indicates when the process was terminated.</p> 
+    /// <p>Indicates when the process was terminated.</p>
     /// <p>Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces. For example, <code>2020-03-22T13:22:13.933Z</code>.</p>
-    pub fn terminated_at(&self) -> std::option::Option<& str> {
+    pub fn terminated_at(&self) -> std::option::Option<&str> {
         self.terminated_at.as_deref()
     }
 }
@@ -79,7 +79,8 @@ impl ProcessDetailsBuilder {
     }
     /// <p>The name of the process.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input; self
+        self.name = input;
+        self
     }
     /// <p>The path to the process executable.</p>
     pub fn path(mut self, input: impl Into<std::string::String>) -> Self {
@@ -88,7 +89,8 @@ impl ProcessDetailsBuilder {
     }
     /// <p>The path to the process executable.</p>
     pub fn set_path(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.path = input; self
+        self.path = input;
+        self
     }
     /// <p>The process ID.</p>
     pub fn pid(mut self, input: i32) -> Self {
@@ -97,7 +99,8 @@ impl ProcessDetailsBuilder {
     }
     /// <p>The process ID.</p>
     pub fn set_pid(mut self, input: std::option::Option<i32>) -> Self {
-        self.pid = input; self
+        self.pid = input;
+        self
     }
     /// <p>The parent process ID.</p>
     pub fn parent_pid(mut self, input: i32) -> Self {
@@ -106,48 +109,42 @@ impl ProcessDetailsBuilder {
     }
     /// <p>The parent process ID.</p>
     pub fn set_parent_pid(mut self, input: std::option::Option<i32>) -> Self {
-        self.parent_pid = input; self
+        self.parent_pid = input;
+        self
     }
-    /// <p>Indicates when the process was launched.</p> 
+    /// <p>Indicates when the process was launched.</p>
     /// <p>Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces. For example, <code>2020-03-22T13:22:13.933Z</code>.</p>
     pub fn launched_at(mut self, input: impl Into<std::string::String>) -> Self {
         self.launched_at = Some(input.into());
         self
     }
-    /// <p>Indicates when the process was launched.</p> 
+    /// <p>Indicates when the process was launched.</p>
     /// <p>Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces. For example, <code>2020-03-22T13:22:13.933Z</code>.</p>
     pub fn set_launched_at(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.launched_at = input; self
+        self.launched_at = input;
+        self
     }
-    /// <p>Indicates when the process was terminated.</p> 
+    /// <p>Indicates when the process was terminated.</p>
     /// <p>Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces. For example, <code>2020-03-22T13:22:13.933Z</code>.</p>
     pub fn terminated_at(mut self, input: impl Into<std::string::String>) -> Self {
         self.terminated_at = Some(input.into());
         self
     }
-    /// <p>Indicates when the process was terminated.</p> 
+    /// <p>Indicates when the process was terminated.</p>
     /// <p>Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces. For example, <code>2020-03-22T13:22:13.933Z</code>.</p>
     pub fn set_terminated_at(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.terminated_at = input; self
+        self.terminated_at = input;
+        self
     }
     /// Consumes the builder and constructs a [`ProcessDetails`](crate::types::ProcessDetails).
     pub fn build(self) -> crate::types::ProcessDetails {
         crate::types::ProcessDetails {
-            name: self.name
-            ,
-            path: self.path
-            ,
-            pid: self.pid
-                .unwrap_or_default()
-            ,
-            parent_pid: self.parent_pid
-                .unwrap_or_default()
-            ,
-            launched_at: self.launched_at
-            ,
-            terminated_at: self.terminated_at
-            ,
+            name: self.name,
+            path: self.path,
+            pid: self.pid.unwrap_or_default(),
+            parent_pid: self.parent_pid.unwrap_or_default(),
+            launched_at: self.launched_at,
+            terminated_at: self.terminated_at,
         }
     }
 }
-

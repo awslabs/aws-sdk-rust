@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-/// 
+///
 /// Here is an example of how you can make a match expression forward-compatible:
-/// 
+///
 /// ```text
 /// # let configurationitemstatus = unimplemented!();
 /// match configurationitemstatus {
@@ -33,14 +33,22 @@
 /// Specifically, when `configurationitemstatus` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `ConfigurationItemStatus::NewFeature` also yielding `"NewFeature"`.
-/// 
+///
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
 pub enum ConfigurationItemStatus {
     #[allow(missing_docs)] // documentation missing in model
     Ok,
@@ -53,47 +61,54 @@ pub enum ConfigurationItemStatus {
     #[allow(missing_docs)] // documentation missing in model
     ResourceNotRecorded,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::primitives::UnknownVariantValue)
+    Unknown(crate::primitives::UnknownVariantValue),
 }
 impl std::convert::From<&str> for ConfigurationItemStatus {
-                fn from(s: &str) -> Self {
-                    match s {
-                        "OK" => ConfigurationItemStatus::Ok,
-"ResourceDeleted" => ConfigurationItemStatus::ResourceDeleted,
-"ResourceDeletedNotRecorded" => ConfigurationItemStatus::ResourceDeletedNotRecorded,
-"ResourceDiscovered" => ConfigurationItemStatus::ResourceDiscovered,
-"ResourceNotRecorded" => ConfigurationItemStatus::ResourceNotRecorded,
-other => ConfigurationItemStatus::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
-                    }
-                }
-            }
-impl std::str::FromStr for ConfigurationItemStatus {
-                type Err = std::convert::Infallible;
-
-                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-                    Ok(ConfigurationItemStatus::from(s))
-                }
-            }
-impl ConfigurationItemStatus {
-                /// Returns the `&str` value of the enum member.
-                pub fn as_str(&self) -> &str {
-                    match self {
-    ConfigurationItemStatus::Ok => "OK",
-    ConfigurationItemStatus::ResourceDeleted => "ResourceDeleted",
-    ConfigurationItemStatus::ResourceDeletedNotRecorded => "ResourceDeletedNotRecorded",
-    ConfigurationItemStatus::ResourceDiscovered => "ResourceDiscovered",
-    ConfigurationItemStatus::ResourceNotRecorded => "ResourceNotRecorded",
-    ConfigurationItemStatus::Unknown(value) => value.as_str()
+    fn from(s: &str) -> Self {
+        match s {
+            "OK" => ConfigurationItemStatus::Ok,
+            "ResourceDeleted" => ConfigurationItemStatus::ResourceDeleted,
+            "ResourceDeletedNotRecorded" => ConfigurationItemStatus::ResourceDeletedNotRecorded,
+            "ResourceDiscovered" => ConfigurationItemStatus::ResourceDiscovered,
+            "ResourceNotRecorded" => ConfigurationItemStatus::ResourceNotRecorded,
+            other => ConfigurationItemStatus::Unknown(crate::primitives::UnknownVariantValue(
+                other.to_owned(),
+            )),
+        }
+    }
 }
-                }
-                /// Returns all the `&str` representations of the enum members.
-                pub const fn values() -> &'static [&'static str] {
-                    &["OK", "ResourceDeleted", "ResourceDeletedNotRecorded", "ResourceDiscovered", "ResourceNotRecorded"]
-                }
-            }
-impl AsRef<str> for ConfigurationItemStatus {
-                fn as_ref(&self) -> &str {
-                    self.as_str()
-                }
-            }
+impl std::str::FromStr for ConfigurationItemStatus {
+    type Err = std::convert::Infallible;
 
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(ConfigurationItemStatus::from(s))
+    }
+}
+impl ConfigurationItemStatus {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            ConfigurationItemStatus::Ok => "OK",
+            ConfigurationItemStatus::ResourceDeleted => "ResourceDeleted",
+            ConfigurationItemStatus::ResourceDeletedNotRecorded => "ResourceDeletedNotRecorded",
+            ConfigurationItemStatus::ResourceDiscovered => "ResourceDiscovered",
+            ConfigurationItemStatus::ResourceNotRecorded => "ResourceNotRecorded",
+            ConfigurationItemStatus::Unknown(value) => value.as_str(),
+        }
+    }
+    /// Returns all the `&str` representations of the enum members.
+    pub const fn values() -> &'static [&'static str] {
+        &[
+            "OK",
+            "ResourceDeleted",
+            "ResourceDeletedNotRecorded",
+            "ResourceDiscovered",
+            "ResourceNotRecorded",
+        ]
+    }
+}
+impl AsRef<str> for ConfigurationItemStatus {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateAssessmentTemplateOutput  {
+pub struct CreateAssessmentTemplateOutput {
     /// <p>The ARN that specifies the assessment template that is created.</p>
     #[doc(hidden)]
     pub assessment_template_arn: std::option::Option<std::string::String>,
@@ -10,18 +10,20 @@ pub struct CreateAssessmentTemplateOutput  {
 }
 impl CreateAssessmentTemplateOutput {
     /// <p>The ARN that specifies the assessment template that is created.</p>
-    pub fn assessment_template_arn(&self) -> std::option::Option<& str> {
+    pub fn assessment_template_arn(&self) -> std::option::Option<&str> {
         self.assessment_template_arn.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for CreateAssessmentTemplateOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl CreateAssessmentTemplateOutput {
     /// Creates a new builder-style object to manufacture [`CreateAssessmentTemplateOutput`](crate::operation::create_assessment_template::CreateAssessmentTemplateOutput).
-    pub fn builder() -> crate::operation::create_assessment_template::builders::CreateAssessmentTemplateOutputBuilder {
+    pub fn builder(
+    ) -> crate::operation::create_assessment_template::builders::CreateAssessmentTemplateOutputBuilder
+    {
         crate::operation::create_assessment_template::builders::CreateAssessmentTemplateOutputBuilder::default()
     }
 }
@@ -40,25 +42,29 @@ impl CreateAssessmentTemplateOutputBuilder {
         self
     }
     /// <p>The ARN that specifies the assessment template that is created.</p>
-    pub fn set_assessment_template_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.assessment_template_arn = input; self
+    pub fn set_assessment_template_arn(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.assessment_template_arn = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`CreateAssessmentTemplateOutput`](crate::operation::create_assessment_template::CreateAssessmentTemplateOutput).
-    pub fn build(self) -> crate::operation::create_assessment_template::CreateAssessmentTemplateOutput {
+    pub fn build(
+        self,
+    ) -> crate::operation::create_assessment_template::CreateAssessmentTemplateOutput {
         crate::operation::create_assessment_template::CreateAssessmentTemplateOutput {
-            assessment_template_arn: self.assessment_template_arn
-            ,
+            assessment_template_arn: self.assessment_template_arn,
             _request_id: self._request_id,
         }
     }
 }
-

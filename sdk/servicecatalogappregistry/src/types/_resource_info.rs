@@ -3,7 +3,7 @@
 /// <p>The information about the resource.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ResourceInfo  {
+pub struct ResourceInfo {
     /// <p>The name of the resource.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -19,19 +19,19 @@ pub struct ResourceInfo  {
 }
 impl ResourceInfo {
     /// <p>The name of the resource.</p>
-    pub fn name(&self) -> std::option::Option<& str> {
+    pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>The Amazon resource name (ARN) that specifies the resource across services.</p>
-    pub fn arn(&self) -> std::option::Option<& str> {
+    pub fn arn(&self) -> std::option::Option<&str> {
         self.arn.as_deref()
     }
     /// <p> Provides information about the Service Catalog App Registry resource type. </p>
-    pub fn resource_type(&self) -> std::option::Option<& crate::types::ResourceType> {
+    pub fn resource_type(&self) -> std::option::Option<&crate::types::ResourceType> {
         self.resource_type.as_ref()
     }
     /// <p> The details related to the resource. </p>
-    pub fn resource_details(&self) -> std::option::Option<& crate::types::ResourceDetails> {
+    pub fn resource_details(&self) -> std::option::Option<&crate::types::ResourceDetails> {
         self.resource_details.as_ref()
     }
 }
@@ -59,7 +59,8 @@ impl ResourceInfoBuilder {
     }
     /// <p>The name of the resource.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input; self
+        self.name = input;
+        self
     }
     /// <p>The Amazon resource name (ARN) that specifies the resource across services.</p>
     pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -68,7 +69,8 @@ impl ResourceInfoBuilder {
     }
     /// <p>The Amazon resource name (ARN) that specifies the resource across services.</p>
     pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.arn = input; self
+        self.arn = input;
+        self
     }
     /// <p> Provides information about the Service Catalog App Registry resource type. </p>
     pub fn resource_type(mut self, input: crate::types::ResourceType) -> Self {
@@ -76,8 +78,12 @@ impl ResourceInfoBuilder {
         self
     }
     /// <p> Provides information about the Service Catalog App Registry resource type. </p>
-    pub fn set_resource_type(mut self, input: std::option::Option<crate::types::ResourceType>) -> Self {
-        self.resource_type = input; self
+    pub fn set_resource_type(
+        mut self,
+        input: std::option::Option<crate::types::ResourceType>,
+    ) -> Self {
+        self.resource_type = input;
+        self
     }
     /// <p> The details related to the resource. </p>
     pub fn resource_details(mut self, input: crate::types::ResourceDetails) -> Self {
@@ -85,21 +91,20 @@ impl ResourceInfoBuilder {
         self
     }
     /// <p> The details related to the resource. </p>
-    pub fn set_resource_details(mut self, input: std::option::Option<crate::types::ResourceDetails>) -> Self {
-        self.resource_details = input; self
+    pub fn set_resource_details(
+        mut self,
+        input: std::option::Option<crate::types::ResourceDetails>,
+    ) -> Self {
+        self.resource_details = input;
+        self
     }
     /// Consumes the builder and constructs a [`ResourceInfo`](crate::types::ResourceInfo).
     pub fn build(self) -> crate::types::ResourceInfo {
         crate::types::ResourceInfo {
-            name: self.name
-            ,
-            arn: self.arn
-            ,
-            resource_type: self.resource_type
-            ,
-            resource_details: self.resource_details
-            ,
+            name: self.name,
+            arn: self.arn,
+            resource_type: self.resource_type,
+            resource_details: self.resource_details,
         }
     }
 }
-

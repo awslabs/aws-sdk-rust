@@ -3,7 +3,7 @@
 /// Non-retryable exception. Attempted to create already existing object or chunk. This message contains a checksum of already presented data.
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DataAlreadyExistsException  {
+pub struct DataAlreadyExistsException {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
@@ -17,23 +17,25 @@ pub struct DataAlreadyExistsException  {
 }
 impl DataAlreadyExistsException {
     /// Data checksum used
-    pub fn checksum(&self) -> std::option::Option<& str> {
+    pub fn checksum(&self) -> std::option::Option<&str> {
         self.checksum.as_deref()
     }
     /// Checksum algorithm used
-    pub fn checksum_algorithm(&self) -> std::option::Option<& str> {
+    pub fn checksum_algorithm(&self) -> std::option::Option<&str> {
         self.checksum_algorithm.as_deref()
     }
 }
 impl DataAlreadyExistsException {
     /// Returns the error message.
-                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
+    pub fn message(&self) -> std::option::Option<&str> {
+        self.message.as_deref()
+    }
 }
 impl std::fmt::Display for DataAlreadyExistsException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "DataAlreadyExistsException")?;
         if let Some(inner_1) = &self.message {
-             {
+            {
                 write!(f, ": {}", inner_1)?;
             }
         }
@@ -48,7 +50,9 @@ impl aws_http::request_id::RequestId for crate::types::error::DataAlreadyExistsE
     }
 }
 impl aws_smithy_types::error::metadata::ProvideErrorMetadata for DataAlreadyExistsException {
-    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata { &self.meta }
+    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
+        &self.meta
+    }
 }
 impl DataAlreadyExistsException {
     /// Creates a new builder-style object to manufacture [`DataAlreadyExistsException`](crate::types::error::DataAlreadyExistsException).
@@ -74,7 +78,8 @@ impl DataAlreadyExistsExceptionBuilder {
     }
     #[allow(missing_docs)] // documentation missing in model
     pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.message = input; self
+        self.message = input;
+        self
     }
     /// Data checksum used
     pub fn checksum(mut self, input: impl Into<std::string::String>) -> Self {
@@ -83,7 +88,8 @@ impl DataAlreadyExistsExceptionBuilder {
     }
     /// Data checksum used
     pub fn set_checksum(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.checksum = input; self
+        self.checksum = input;
+        self
     }
     /// Checksum algorithm used
     pub fn checksum_algorithm(mut self, input: impl Into<std::string::String>) -> Self {
@@ -91,31 +97,34 @@ impl DataAlreadyExistsExceptionBuilder {
         self
     }
     /// Checksum algorithm used
-    pub fn set_checksum_algorithm(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.checksum_algorithm = input; self
+    pub fn set_checksum_algorithm(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.checksum_algorithm = input;
+        self
     }
     /// Sets error metadata
-                                            pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
-                                                self.meta = Some(meta);
-                                                self
-                                            }
-    
-                                            /// Sets error metadata
-                                            pub fn set_meta(&mut self, meta: std::option::Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
-                                                self.meta = meta;
-                                                self
-                                            }
+    pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
+        self.meta = Some(meta);
+        self
+    }
+
+    /// Sets error metadata
+    pub fn set_meta(
+        &mut self,
+        meta: std::option::Option<aws_smithy_types::error::ErrorMetadata>,
+    ) -> &mut Self {
+        self.meta = meta;
+        self
+    }
     /// Consumes the builder and constructs a [`DataAlreadyExistsException`](crate::types::error::DataAlreadyExistsException).
     pub fn build(self) -> crate::types::error::DataAlreadyExistsException {
         crate::types::error::DataAlreadyExistsException {
-            message: self.message
-            ,
-            checksum: self.checksum
-            ,
-            checksum_algorithm: self.checksum_algorithm
-            ,
+            message: self.message,
+            checksum: self.checksum,
+            checksum_algorithm: self.checksum_algorithm,
             meta: self.meta.unwrap_or_default(),
         }
     }
 }
-

@@ -2,20 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeAutoPredictorInput  {
+pub struct DescribeAutoPredictorInput {
     /// <p>The Amazon Resource Name (ARN) of the predictor.</p>
     #[doc(hidden)]
     pub predictor_arn: std::option::Option<std::string::String>,
 }
 impl DescribeAutoPredictorInput {
     /// <p>The Amazon Resource Name (ARN) of the predictor.</p>
-    pub fn predictor_arn(&self) -> std::option::Option<& str> {
+    pub fn predictor_arn(&self) -> std::option::Option<&str> {
         self.predictor_arn.as_deref()
     }
 }
 impl DescribeAutoPredictorInput {
     /// Creates a new builder-style object to manufacture [`DescribeAutoPredictorInput`](crate::operation::describe_auto_predictor::DescribeAutoPredictorInput).
-    pub fn builder() -> crate::operation::describe_auto_predictor::builders::DescribeAutoPredictorInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::describe_auto_predictor::builders::DescribeAutoPredictorInputBuilder
+    {
         crate::operation::describe_auto_predictor::builders::DescribeAutoPredictorInputBuilder::default()
     }
 }
@@ -34,16 +36,20 @@ impl DescribeAutoPredictorInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the predictor.</p>
     pub fn set_predictor_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.predictor_arn = input; self
+        self.predictor_arn = input;
+        self
     }
     /// Consumes the builder and constructs a [`DescribeAutoPredictorInput`](crate::operation::describe_auto_predictor::DescribeAutoPredictorInput).
-    pub fn build(self) -> Result<crate::operation::describe_auto_predictor::DescribeAutoPredictorInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::describe_auto_predictor::DescribeAutoPredictorInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::describe_auto_predictor::DescribeAutoPredictorInput {
-                predictor_arn: self.predictor_arn
-                ,
-            }
+                predictor_arn: self.predictor_arn,
+            },
         )
     }
 }
-

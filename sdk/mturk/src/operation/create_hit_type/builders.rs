@@ -4,49 +4,67 @@ pub use crate::operation::create_hit_type::_create_hit_type_output::CreateHitTyp
 pub use crate::operation::create_hit_type::_create_hit_type_input::CreateHitTypeInputBuilder;
 
 /// Fluent builder constructing a request to `CreateHITType`.
-/// 
+///
 /// <p> The <code>CreateHITType</code> operation creates a new HIT type. This operation allows you to define a standard set of HIT properties to use when creating HITs. If you register a HIT type with values that match an existing HIT type, the HIT type ID of the existing type will be returned. </p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct CreateHITTypeFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::create_hit_type::builders::CreateHitTypeInputBuilder
-            }
-impl CreateHITTypeFluentBuilder  {
+    handle: std::sync::Arc<crate::client::Handle>,
+    inner: crate::operation::create_hit_type::builders::CreateHitTypeInputBuilder,
+}
+impl CreateHITTypeFluentBuilder {
     /// Creates a new `CreateHITType`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
-                    /// sent. The operation's inner [http::Request] can be modified as well.
-                    pub async fn customize(self) -> std::result::Result<
-                        crate::client::customize::CustomizableOperation<crate::operation::create_hit_type::CreateHITType, aws_http::retry::AwsResponseRetryClassifier,>,
-                        aws_smithy_http::result::SdkError<crate::operation::create_hit_type::CreateHITTypeError>
-                    >  {
-                        let handle = self.handle.clone();
-                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-                    }
-    
-                    /// Sends the request and returns the response.
-                    ///
-                    /// If an error occurs, an `SdkError` will be returned with additional details that
-                    /// can be matched against.
-                    ///
-                    /// By default, any retryable failures will be retried twice. Retry behavior
-                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                    /// set when configuring the client.
-                    pub async fn send(self) -> std::result::Result<crate::operation::create_hit_type::CreateHitTypeOutput, aws_smithy_http::result::SdkError<crate::operation::create_hit_type::CreateHITTypeError>>
-                     {
-                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&self.handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        self.handle.client.call(op).await
-                    }
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle,
+            inner: Default::default(),
+        }
+    }
+
+    /// Consume this builder, creating a customizable operation that can be modified before being
+    /// sent. The operation's inner [http::Request] can be modified as well.
+    pub async fn customize(
+        self,
+    ) -> std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::create_hit_type::CreateHITType,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::result::SdkError<crate::operation::create_hit_type::CreateHITTypeError>,
+    > {
+        let handle = self.handle.clone();
+        let operation = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+    }
+
+    /// Sends the request and returns the response.
+    ///
+    /// If an error occurs, an `SdkError` will be returned with additional details that
+    /// can be matched against.
+    ///
+    /// By default, any retryable failures will be retried twice. Retry behavior
+    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+    /// set when configuring the client.
+    pub async fn send(
+        self,
+    ) -> std::result::Result<
+        crate::operation::create_hit_type::CreateHitTypeOutput,
+        aws_smithy_http::result::SdkError<crate::operation::create_hit_type::CreateHITTypeError>,
+    > {
+        let op = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&self.handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        self.handle.client.call(op).await
+    }
     /// <p> The number of seconds after an assignment for the HIT has been submitted, after which the assignment is considered Approved automatically unless the Requester explicitly rejects it. </p>
     pub fn auto_approval_delay_in_seconds(mut self, input: i64) -> Self {
         self.inner = self.inner.auto_approval_delay_in_seconds(input);
@@ -112,14 +130,19 @@ impl CreateHITTypeFluentBuilder  {
     /// To override the contents of this collection use [`set_qualification_requirements`](Self::set_qualification_requirements).
     ///
     /// <p> Conditions that a Worker's Qualifications must meet in order to accept the HIT. A HIT can have between zero and ten Qualification requirements. All requirements must be met in order for a Worker to accept the HIT. Additionally, other actions can be restricted using the <code>ActionsGuarded</code> field on each <code>QualificationRequirement</code> structure. </p>
-    pub fn qualification_requirements(mut self, input: crate::types::QualificationRequirement) -> Self {
+    pub fn qualification_requirements(
+        mut self,
+        input: crate::types::QualificationRequirement,
+    ) -> Self {
         self.inner = self.inner.qualification_requirements(input);
         self
     }
     /// <p> Conditions that a Worker's Qualifications must meet in order to accept the HIT. A HIT can have between zero and ten Qualification requirements. All requirements must be met in order for a Worker to accept the HIT. Additionally, other actions can be restricted using the <code>ActionsGuarded</code> field on each <code>QualificationRequirement</code> structure. </p>
-    pub fn set_qualification_requirements(mut self, input: std::option::Option<std::vec::Vec<crate::types::QualificationRequirement>>) -> Self {
+    pub fn set_qualification_requirements(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::QualificationRequirement>>,
+    ) -> Self {
         self.inner = self.inner.set_qualification_requirements(input);
         self
     }
 }
-

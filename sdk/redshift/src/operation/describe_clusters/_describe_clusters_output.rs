@@ -3,7 +3,7 @@
 /// <p>Contains the output from the <code>DescribeClusters</code> action. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeClustersOutput  {
+pub struct DescribeClustersOutput {
     /// <p>A value that indicates the starting point for the next set of response records in a subsequent request. If a value is returned in a response, you can retrieve the next set of records by providing this returned marker value in the <code>Marker</code> parameter and retrying the command. If the <code>Marker</code> field is empty, all response records have been retrieved for the request. </p>
     #[doc(hidden)]
     pub marker: std::option::Option<std::string::String>,
@@ -14,22 +14,23 @@ pub struct DescribeClustersOutput  {
 }
 impl DescribeClustersOutput {
     /// <p>A value that indicates the starting point for the next set of response records in a subsequent request. If a value is returned in a response, you can retrieve the next set of records by providing this returned marker value in the <code>Marker</code> parameter and retrying the command. If the <code>Marker</code> field is empty, all response records have been retrieved for the request. </p>
-    pub fn marker(&self) -> std::option::Option<& str> {
+    pub fn marker(&self) -> std::option::Option<&str> {
         self.marker.as_deref()
     }
     /// <p>A list of <code>Cluster</code> objects, where each object describes one cluster. </p>
-    pub fn clusters(&self) -> std::option::Option<& [crate::types::Cluster]> {
+    pub fn clusters(&self) -> std::option::Option<&[crate::types::Cluster]> {
         self.clusters.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for DescribeClustersOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl DescribeClustersOutput {
     /// Creates a new builder-style object to manufacture [`DescribeClustersOutput`](crate::operation::describe_clusters::DescribeClustersOutput).
-    pub fn builder() -> crate::operation::describe_clusters::builders::DescribeClustersOutputBuilder {
+    pub fn builder() -> crate::operation::describe_clusters::builders::DescribeClustersOutputBuilder
+    {
         crate::operation::describe_clusters::builders::DescribeClustersOutputBuilder::default()
     }
 }
@@ -50,7 +51,8 @@ impl DescribeClustersOutputBuilder {
     }
     /// <p>A value that indicates the starting point for the next set of response records in a subsequent request. If a value is returned in a response, you can retrieve the next set of records by providing this returned marker value in the <code>Marker</code> parameter and retrying the command. If the <code>Marker</code> field is empty, all response records have been retrieved for the request. </p>
     pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.marker = input; self
+        self.marker = input;
+        self
     }
     /// Appends an item to `clusters`.
     ///
@@ -59,32 +61,33 @@ impl DescribeClustersOutputBuilder {
     /// <p>A list of <code>Cluster</code> objects, where each object describes one cluster. </p>
     pub fn clusters(mut self, input: crate::types::Cluster) -> Self {
         let mut v = self.clusters.unwrap_or_default();
-                        v.push(input);
-                        self.clusters = Some(v);
-                        self
+        v.push(input);
+        self.clusters = Some(v);
+        self
     }
     /// <p>A list of <code>Cluster</code> objects, where each object describes one cluster. </p>
-    pub fn set_clusters(mut self, input: std::option::Option<std::vec::Vec<crate::types::Cluster>>) -> Self {
-        self.clusters = input; self
+    pub fn set_clusters(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::Cluster>>,
+    ) -> Self {
+        self.clusters = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`DescribeClustersOutput`](crate::operation::describe_clusters::DescribeClustersOutput).
     pub fn build(self) -> crate::operation::describe_clusters::DescribeClustersOutput {
         crate::operation::describe_clusters::DescribeClustersOutput {
-            marker: self.marker
-            ,
-            clusters: self.clusters
-            ,
+            marker: self.marker,
+            clusters: self.clusters,
             _request_id: self._request_id,
         }
     }
 }
-

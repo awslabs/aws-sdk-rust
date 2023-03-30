@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteMeshOutput  {
+pub struct DeleteMeshOutput {
     /// <p>The service mesh that was deleted.</p>
     #[doc(hidden)]
     pub mesh: std::option::Option<crate::types::MeshData>,
@@ -10,15 +10,15 @@ pub struct DeleteMeshOutput  {
 }
 impl DeleteMeshOutput {
     /// <p>The service mesh that was deleted.</p>
-    pub fn mesh(&self) -> std::option::Option<& crate::types::MeshData> {
+    pub fn mesh(&self) -> std::option::Option<&crate::types::MeshData> {
         self.mesh.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for DeleteMeshOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl DeleteMeshOutput {
     /// Creates a new builder-style object to manufacture [`DeleteMeshOutput`](crate::operation::delete_mesh::DeleteMeshOutput).
     pub fn builder() -> crate::operation::delete_mesh::builders::DeleteMeshOutputBuilder {
@@ -41,24 +41,23 @@ impl DeleteMeshOutputBuilder {
     }
     /// <p>The service mesh that was deleted.</p>
     pub fn set_mesh(mut self, input: std::option::Option<crate::types::MeshData>) -> Self {
-        self.mesh = input; self
+        self.mesh = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`DeleteMeshOutput`](crate::operation::delete_mesh::DeleteMeshOutput).
     pub fn build(self) -> crate::operation::delete_mesh::DeleteMeshOutput {
         crate::operation::delete_mesh::DeleteMeshOutput {
-            mesh: self.mesh
-            ,
+            mesh: self.mesh,
             _request_id: self._request_id,
         }
     }
 }
-

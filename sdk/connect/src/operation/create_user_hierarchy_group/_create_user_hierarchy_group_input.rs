@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateUserHierarchyGroupInput  {
+pub struct CreateUserHierarchyGroupInput {
     /// <p>The name of the user hierarchy group. Must not be more than 100 characters.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -14,29 +14,35 @@ pub struct CreateUserHierarchyGroupInput  {
     pub instance_id: std::option::Option<std::string::String>,
     /// <p>The tags used to organize, track, or control access for this resource. For example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
     #[doc(hidden)]
-    pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub tags:
+        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl CreateUserHierarchyGroupInput {
     /// <p>The name of the user hierarchy group. Must not be more than 100 characters.</p>
-    pub fn name(&self) -> std::option::Option<& str> {
+    pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>The identifier for the parent hierarchy group. The user hierarchy is created at level one if the parent group ID is null.</p>
-    pub fn parent_group_id(&self) -> std::option::Option<& str> {
+    pub fn parent_group_id(&self) -> std::option::Option<&str> {
         self.parent_group_id.as_deref()
     }
     /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
-    pub fn instance_id(&self) -> std::option::Option<& str> {
+    pub fn instance_id(&self) -> std::option::Option<&str> {
         self.instance_id.as_deref()
     }
     /// <p>The tags used to organize, track, or control access for this resource. For example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
-    pub fn tags(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
         self.tags.as_ref()
     }
 }
 impl CreateUserHierarchyGroupInput {
     /// Creates a new builder-style object to manufacture [`CreateUserHierarchyGroupInput`](crate::operation::create_user_hierarchy_group::CreateUserHierarchyGroupInput).
-    pub fn builder() -> crate::operation::create_user_hierarchy_group::builders::CreateUserHierarchyGroupInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::create_user_hierarchy_group::builders::CreateUserHierarchyGroupInputBuilder
+    {
         crate::operation::create_user_hierarchy_group::builders::CreateUserHierarchyGroupInputBuilder::default()
     }
 }
@@ -48,7 +54,8 @@ pub struct CreateUserHierarchyGroupInputBuilder {
     pub(crate) name: std::option::Option<std::string::String>,
     pub(crate) parent_group_id: std::option::Option<std::string::String>,
     pub(crate) instance_id: std::option::Option<std::string::String>,
-    pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub(crate) tags:
+        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl CreateUserHierarchyGroupInputBuilder {
     /// <p>The name of the user hierarchy group. Must not be more than 100 characters.</p>
@@ -58,7 +65,8 @@ impl CreateUserHierarchyGroupInputBuilder {
     }
     /// <p>The name of the user hierarchy group. Must not be more than 100 characters.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input; self
+        self.name = input;
+        self
     }
     /// <p>The identifier for the parent hierarchy group. The user hierarchy is created at level one if the parent group ID is null.</p>
     pub fn parent_group_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -67,7 +75,8 @@ impl CreateUserHierarchyGroupInputBuilder {
     }
     /// <p>The identifier for the parent hierarchy group. The user hierarchy is created at level one if the parent group ID is null.</p>
     pub fn set_parent_group_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.parent_group_id = input; self
+        self.parent_group_id = input;
+        self
     }
     /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
     pub fn instance_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -76,37 +85,48 @@ impl CreateUserHierarchyGroupInputBuilder {
     }
     /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
     pub fn set_instance_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.instance_id = input; self
+        self.instance_id = input;
+        self
     }
     /// Adds a key-value pair to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// <p>The tags used to organize, track, or control access for this resource. For example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
-    pub fn tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
+    pub fn tags(
+        mut self,
+        k: impl Into<std::string::String>,
+        v: impl Into<std::string::String>,
+    ) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
-                        hash_map.insert(k.into(), v.into());
-                        self.tags = Some(hash_map);
-                        self
+        hash_map.insert(k.into(), v.into());
+        self.tags = Some(hash_map);
+        self
     }
     /// <p>The tags used to organize, track, or control access for this resource. For example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
-    pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
-        self.tags = input; self
+    pub fn set_tags(
+        mut self,
+        input: std::option::Option<
+            std::collections::HashMap<std::string::String, std::string::String>,
+        >,
+    ) -> Self {
+        self.tags = input;
+        self
     }
     /// Consumes the builder and constructs a [`CreateUserHierarchyGroupInput`](crate::operation::create_user_hierarchy_group::CreateUserHierarchyGroupInput).
-    pub fn build(self) -> Result<crate::operation::create_user_hierarchy_group::CreateUserHierarchyGroupInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::create_user_hierarchy_group::CreateUserHierarchyGroupInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::create_user_hierarchy_group::CreateUserHierarchyGroupInput {
-                name: self.name
-                ,
-                parent_group_id: self.parent_group_id
-                ,
-                instance_id: self.instance_id
-                ,
-                tags: self.tags
-                ,
-            }
+                name: self.name,
+                parent_group_id: self.parent_group_id,
+                instance_id: self.instance_id,
+                tags: self.tags,
+            },
         )
     }
 }
-

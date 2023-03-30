@@ -2,9 +2,9 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AddThingToBillingGroupInput  {
-    /// <p>The name of the billing group.</p> <note> 
-    /// <p>This call is asynchronous. It might take several seconds for the detachment to propagate.</p> 
+pub struct AddThingToBillingGroupInput {
+    /// <p>The name of the billing group.</p> <note>
+    /// <p>This call is asynchronous. It might take several seconds for the detachment to propagate.</p>
     /// </note>
     #[doc(hidden)]
     pub billing_group_name: std::option::Option<std::string::String>,
@@ -19,28 +19,30 @@ pub struct AddThingToBillingGroupInput  {
     pub thing_arn: std::option::Option<std::string::String>,
 }
 impl AddThingToBillingGroupInput {
-    /// <p>The name of the billing group.</p> <note> 
-    /// <p>This call is asynchronous. It might take several seconds for the detachment to propagate.</p> 
+    /// <p>The name of the billing group.</p> <note>
+    /// <p>This call is asynchronous. It might take several seconds for the detachment to propagate.</p>
     /// </note>
-    pub fn billing_group_name(&self) -> std::option::Option<& str> {
+    pub fn billing_group_name(&self) -> std::option::Option<&str> {
         self.billing_group_name.as_deref()
     }
     /// <p>The ARN of the billing group.</p>
-    pub fn billing_group_arn(&self) -> std::option::Option<& str> {
+    pub fn billing_group_arn(&self) -> std::option::Option<&str> {
         self.billing_group_arn.as_deref()
     }
     /// <p>The name of the thing to be added to the billing group.</p>
-    pub fn thing_name(&self) -> std::option::Option<& str> {
+    pub fn thing_name(&self) -> std::option::Option<&str> {
         self.thing_name.as_deref()
     }
     /// <p>The ARN of the thing to be added to the billing group.</p>
-    pub fn thing_arn(&self) -> std::option::Option<& str> {
+    pub fn thing_arn(&self) -> std::option::Option<&str> {
         self.thing_arn.as_deref()
     }
 }
 impl AddThingToBillingGroupInput {
     /// Creates a new builder-style object to manufacture [`AddThingToBillingGroupInput`](crate::operation::add_thing_to_billing_group::AddThingToBillingGroupInput).
-    pub fn builder() -> crate::operation::add_thing_to_billing_group::builders::AddThingToBillingGroupInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::add_thing_to_billing_group::builders::AddThingToBillingGroupInputBuilder
+    {
         crate::operation::add_thing_to_billing_group::builders::AddThingToBillingGroupInputBuilder::default()
     }
 }
@@ -55,18 +57,22 @@ pub struct AddThingToBillingGroupInputBuilder {
     pub(crate) thing_arn: std::option::Option<std::string::String>,
 }
 impl AddThingToBillingGroupInputBuilder {
-    /// <p>The name of the billing group.</p> <note> 
-    /// <p>This call is asynchronous. It might take several seconds for the detachment to propagate.</p> 
+    /// <p>The name of the billing group.</p> <note>
+    /// <p>This call is asynchronous. It might take several seconds for the detachment to propagate.</p>
     /// </note>
     pub fn billing_group_name(mut self, input: impl Into<std::string::String>) -> Self {
         self.billing_group_name = Some(input.into());
         self
     }
-    /// <p>The name of the billing group.</p> <note> 
-    /// <p>This call is asynchronous. It might take several seconds for the detachment to propagate.</p> 
+    /// <p>The name of the billing group.</p> <note>
+    /// <p>This call is asynchronous. It might take several seconds for the detachment to propagate.</p>
     /// </note>
-    pub fn set_billing_group_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.billing_group_name = input; self
+    pub fn set_billing_group_name(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.billing_group_name = input;
+        self
     }
     /// <p>The ARN of the billing group.</p>
     pub fn billing_group_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -74,8 +80,12 @@ impl AddThingToBillingGroupInputBuilder {
         self
     }
     /// <p>The ARN of the billing group.</p>
-    pub fn set_billing_group_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.billing_group_arn = input; self
+    pub fn set_billing_group_arn(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.billing_group_arn = input;
+        self
     }
     /// <p>The name of the thing to be added to the billing group.</p>
     pub fn thing_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -84,7 +94,8 @@ impl AddThingToBillingGroupInputBuilder {
     }
     /// <p>The name of the thing to be added to the billing group.</p>
     pub fn set_thing_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.thing_name = input; self
+        self.thing_name = input;
+        self
     }
     /// <p>The ARN of the thing to be added to the billing group.</p>
     pub fn thing_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -93,22 +104,23 @@ impl AddThingToBillingGroupInputBuilder {
     }
     /// <p>The ARN of the thing to be added to the billing group.</p>
     pub fn set_thing_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.thing_arn = input; self
+        self.thing_arn = input;
+        self
     }
     /// Consumes the builder and constructs a [`AddThingToBillingGroupInput`](crate::operation::add_thing_to_billing_group::AddThingToBillingGroupInput).
-    pub fn build(self) -> Result<crate::operation::add_thing_to_billing_group::AddThingToBillingGroupInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::add_thing_to_billing_group::AddThingToBillingGroupInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::add_thing_to_billing_group::AddThingToBillingGroupInput {
-                billing_group_name: self.billing_group_name
-                ,
-                billing_group_arn: self.billing_group_arn
-                ,
-                thing_name: self.thing_name
-                ,
-                thing_arn: self.thing_arn
-                ,
-            }
+                billing_group_name: self.billing_group_name,
+                billing_group_arn: self.billing_group_arn,
+                thing_name: self.thing_name,
+                thing_arn: self.thing_arn,
+            },
         )
     }
 }
-

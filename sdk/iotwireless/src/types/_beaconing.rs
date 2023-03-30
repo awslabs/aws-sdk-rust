@@ -3,7 +3,7 @@
 /// <p>Beaconing parameters for configuring the wireless gateways.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Beaconing  {
+pub struct Beaconing {
     /// <p>The data rate for gateways that are sending the beacons.</p>
     #[doc(hidden)]
     pub data_rate: std::option::Option<i32>,
@@ -17,7 +17,7 @@ impl Beaconing {
         self.data_rate
     }
     /// <p>The frequency list for the gateways to send the beacons.</p>
-    pub fn frequencies(&self) -> std::option::Option<& [i32]> {
+    pub fn frequencies(&self) -> std::option::Option<&[i32]> {
         self.frequencies.as_deref()
     }
 }
@@ -43,7 +43,8 @@ impl BeaconingBuilder {
     }
     /// <p>The data rate for gateways that are sending the beacons.</p>
     pub fn set_data_rate(mut self, input: std::option::Option<i32>) -> Self {
-        self.data_rate = input; self
+        self.data_rate = input;
+        self
     }
     /// Appends an item to `frequencies`.
     ///
@@ -52,22 +53,20 @@ impl BeaconingBuilder {
     /// <p>The frequency list for the gateways to send the beacons.</p>
     pub fn frequencies(mut self, input: i32) -> Self {
         let mut v = self.frequencies.unwrap_or_default();
-                        v.push(input);
-                        self.frequencies = Some(v);
-                        self
+        v.push(input);
+        self.frequencies = Some(v);
+        self
     }
     /// <p>The frequency list for the gateways to send the beacons.</p>
     pub fn set_frequencies(mut self, input: std::option::Option<std::vec::Vec<i32>>) -> Self {
-        self.frequencies = input; self
+        self.frequencies = input;
+        self
     }
     /// Consumes the builder and constructs a [`Beaconing`](crate::types::Beaconing).
     pub fn build(self) -> crate::types::Beaconing {
         crate::types::Beaconing {
-            data_rate: self.data_rate
-            ,
-            frequencies: self.frequencies
-            ,
+            data_rate: self.data_rate,
+            frequencies: self.frequencies,
         }
     }
 }
-

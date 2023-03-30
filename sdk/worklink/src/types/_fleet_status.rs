@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-/// 
+///
 /// Here is an example of how you can make a match expression forward-compatible:
-/// 
+///
 /// ```text
 /// # let fleetstatus = unimplemented!();
 /// match fleetstatus {
@@ -34,14 +34,22 @@
 /// Specifically, when `fleetstatus` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `FleetStatus::NewFeature` also yielding `"NewFeature"`.
-/// 
+///
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
 pub enum FleetStatus {
     #[allow(missing_docs)] // documentation missing in model
     Active,
@@ -56,49 +64,55 @@ pub enum FleetStatus {
     #[allow(missing_docs)] // documentation missing in model
     FailedToDelete,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::primitives::UnknownVariantValue)
+    Unknown(crate::primitives::UnknownVariantValue),
 }
 impl std::convert::From<&str> for FleetStatus {
-                fn from(s: &str) -> Self {
-                    match s {
-                        "ACTIVE" => FleetStatus::Active,
-"CREATING" => FleetStatus::Creating,
-"DELETED" => FleetStatus::Deleted,
-"DELETING" => FleetStatus::Deleting,
-"FAILED_TO_CREATE" => FleetStatus::FailedToCreate,
-"FAILED_TO_DELETE" => FleetStatus::FailedToDelete,
-other => FleetStatus::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
-                    }
-                }
-            }
-impl std::str::FromStr for FleetStatus {
-                type Err = std::convert::Infallible;
-
-                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-                    Ok(FleetStatus::from(s))
-                }
-            }
-impl FleetStatus {
-                /// Returns the `&str` value of the enum member.
-                pub fn as_str(&self) -> &str {
-                    match self {
-    FleetStatus::Active => "ACTIVE",
-    FleetStatus::Creating => "CREATING",
-    FleetStatus::Deleted => "DELETED",
-    FleetStatus::Deleting => "DELETING",
-    FleetStatus::FailedToCreate => "FAILED_TO_CREATE",
-    FleetStatus::FailedToDelete => "FAILED_TO_DELETE",
-    FleetStatus::Unknown(value) => value.as_str()
+    fn from(s: &str) -> Self {
+        match s {
+            "ACTIVE" => FleetStatus::Active,
+            "CREATING" => FleetStatus::Creating,
+            "DELETED" => FleetStatus::Deleted,
+            "DELETING" => FleetStatus::Deleting,
+            "FAILED_TO_CREATE" => FleetStatus::FailedToCreate,
+            "FAILED_TO_DELETE" => FleetStatus::FailedToDelete,
+            other => FleetStatus::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
+        }
+    }
 }
-                }
-                /// Returns all the `&str` representations of the enum members.
-                pub const fn values() -> &'static [&'static str] {
-                    &["ACTIVE", "CREATING", "DELETED", "DELETING", "FAILED_TO_CREATE", "FAILED_TO_DELETE"]
-                }
-            }
-impl AsRef<str> for FleetStatus {
-                fn as_ref(&self) -> &str {
-                    self.as_str()
-                }
-            }
+impl std::str::FromStr for FleetStatus {
+    type Err = std::convert::Infallible;
 
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(FleetStatus::from(s))
+    }
+}
+impl FleetStatus {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            FleetStatus::Active => "ACTIVE",
+            FleetStatus::Creating => "CREATING",
+            FleetStatus::Deleted => "DELETED",
+            FleetStatus::Deleting => "DELETING",
+            FleetStatus::FailedToCreate => "FAILED_TO_CREATE",
+            FleetStatus::FailedToDelete => "FAILED_TO_DELETE",
+            FleetStatus::Unknown(value) => value.as_str(),
+        }
+    }
+    /// Returns all the `&str` representations of the enum members.
+    pub const fn values() -> &'static [&'static str] {
+        &[
+            "ACTIVE",
+            "CREATING",
+            "DELETED",
+            "DELETING",
+            "FAILED_TO_CREATE",
+            "FAILED_TO_DELETE",
+        ]
+    }
+}
+impl AsRef<str> for FleetStatus {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}

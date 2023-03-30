@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AcceptInvitationInput  {
+pub struct AcceptInvitationInput {
     /// <p>The Amazon Web Services account ID for the account that sent the invitation.</p>
     #[doc(hidden)]
     pub administrator_account_id: std::option::Option<std::string::String>,
@@ -15,21 +15,22 @@ pub struct AcceptInvitationInput  {
 }
 impl AcceptInvitationInput {
     /// <p>The Amazon Web Services account ID for the account that sent the invitation.</p>
-    pub fn administrator_account_id(&self) -> std::option::Option<& str> {
+    pub fn administrator_account_id(&self) -> std::option::Option<&str> {
         self.administrator_account_id.as_deref()
     }
     /// <p>The unique identifier for the invitation to accept.</p>
-    pub fn invitation_id(&self) -> std::option::Option<& str> {
+    pub fn invitation_id(&self) -> std::option::Option<&str> {
         self.invitation_id.as_deref()
     }
     /// <p>(Deprecated) The Amazon Web Services account ID for the account that sent the invitation. This property has been replaced by the administratorAccountId property and is retained only for backward compatibility.</p>
-    pub fn master_account(&self) -> std::option::Option<& str> {
+    pub fn master_account(&self) -> std::option::Option<&str> {
         self.master_account.as_deref()
     }
 }
 impl AcceptInvitationInput {
     /// Creates a new builder-style object to manufacture [`AcceptInvitationInput`](crate::operation::accept_invitation::AcceptInvitationInput).
-    pub fn builder() -> crate::operation::accept_invitation::builders::AcceptInvitationInputBuilder {
+    pub fn builder() -> crate::operation::accept_invitation::builders::AcceptInvitationInputBuilder
+    {
         crate::operation::accept_invitation::builders::AcceptInvitationInputBuilder::default()
     }
 }
@@ -49,8 +50,12 @@ impl AcceptInvitationInputBuilder {
         self
     }
     /// <p>The Amazon Web Services account ID for the account that sent the invitation.</p>
-    pub fn set_administrator_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.administrator_account_id = input; self
+    pub fn set_administrator_account_id(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.administrator_account_id = input;
+        self
     }
     /// <p>The unique identifier for the invitation to accept.</p>
     pub fn invitation_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -59,7 +64,8 @@ impl AcceptInvitationInputBuilder {
     }
     /// <p>The unique identifier for the invitation to accept.</p>
     pub fn set_invitation_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.invitation_id = input; self
+        self.invitation_id = input;
+        self
     }
     /// <p>(Deprecated) The Amazon Web Services account ID for the account that sent the invitation. This property has been replaced by the administratorAccountId property and is retained only for backward compatibility.</p>
     pub fn master_account(mut self, input: impl Into<std::string::String>) -> Self {
@@ -68,20 +74,20 @@ impl AcceptInvitationInputBuilder {
     }
     /// <p>(Deprecated) The Amazon Web Services account ID for the account that sent the invitation. This property has been replaced by the administratorAccountId property and is retained only for backward compatibility.</p>
     pub fn set_master_account(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.master_account = input; self
+        self.master_account = input;
+        self
     }
     /// Consumes the builder and constructs a [`AcceptInvitationInput`](crate::operation::accept_invitation::AcceptInvitationInput).
-    pub fn build(self) -> Result<crate::operation::accept_invitation::AcceptInvitationInput, aws_smithy_http::operation::error::BuildError> {
-        Ok(
-            crate::operation::accept_invitation::AcceptInvitationInput {
-                administrator_account_id: self.administrator_account_id
-                ,
-                invitation_id: self.invitation_id
-                ,
-                master_account: self.master_account
-                ,
-            }
-        )
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::accept_invitation::AcceptInvitationInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        Ok(crate::operation::accept_invitation::AcceptInvitationInput {
+            administrator_account_id: self.administrator_account_id,
+            invitation_id: self.invitation_id,
+            master_account: self.master_account,
+        })
     }
 }
-

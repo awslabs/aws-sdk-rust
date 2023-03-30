@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListBudgetsForResourceOutput  {
+pub struct ListBudgetsForResourceOutput {
     /// <p>Information about the associated budgets.</p>
     #[doc(hidden)]
     pub budgets: std::option::Option<std::vec::Vec<crate::types::BudgetDetail>>,
@@ -13,22 +13,24 @@ pub struct ListBudgetsForResourceOutput  {
 }
 impl ListBudgetsForResourceOutput {
     /// <p>Information about the associated budgets.</p>
-    pub fn budgets(&self) -> std::option::Option<& [crate::types::BudgetDetail]> {
+    pub fn budgets(&self) -> std::option::Option<&[crate::types::BudgetDetail]> {
         self.budgets.as_deref()
     }
     /// <p>The page token to use to retrieve the next set of results. If there are no additional results, this value is null.</p>
-    pub fn next_page_token(&self) -> std::option::Option<& str> {
+    pub fn next_page_token(&self) -> std::option::Option<&str> {
         self.next_page_token.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for ListBudgetsForResourceOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl ListBudgetsForResourceOutput {
     /// Creates a new builder-style object to manufacture [`ListBudgetsForResourceOutput`](crate::operation::list_budgets_for_resource::ListBudgetsForResourceOutput).
-    pub fn builder() -> crate::operation::list_budgets_for_resource::builders::ListBudgetsForResourceOutputBuilder {
+    pub fn builder(
+    ) -> crate::operation::list_budgets_for_resource::builders::ListBudgetsForResourceOutputBuilder
+    {
         crate::operation::list_budgets_for_resource::builders::ListBudgetsForResourceOutputBuilder::default()
     }
 }
@@ -49,13 +51,17 @@ impl ListBudgetsForResourceOutputBuilder {
     /// <p>Information about the associated budgets.</p>
     pub fn budgets(mut self, input: crate::types::BudgetDetail) -> Self {
         let mut v = self.budgets.unwrap_or_default();
-                        v.push(input);
-                        self.budgets = Some(v);
-                        self
+        v.push(input);
+        self.budgets = Some(v);
+        self
     }
     /// <p>Information about the associated budgets.</p>
-    pub fn set_budgets(mut self, input: std::option::Option<std::vec::Vec<crate::types::BudgetDetail>>) -> Self {
-        self.budgets = input; self
+    pub fn set_budgets(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::BudgetDetail>>,
+    ) -> Self {
+        self.budgets = input;
+        self
     }
     /// <p>The page token to use to retrieve the next set of results. If there are no additional results, this value is null.</p>
     pub fn next_page_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -64,26 +70,26 @@ impl ListBudgetsForResourceOutputBuilder {
     }
     /// <p>The page token to use to retrieve the next set of results. If there are no additional results, this value is null.</p>
     pub fn set_next_page_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_page_token = input; self
+        self.next_page_token = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`ListBudgetsForResourceOutput`](crate::operation::list_budgets_for_resource::ListBudgetsForResourceOutput).
-    pub fn build(self) -> crate::operation::list_budgets_for_resource::ListBudgetsForResourceOutput {
+    pub fn build(
+        self,
+    ) -> crate::operation::list_budgets_for_resource::ListBudgetsForResourceOutput {
         crate::operation::list_budgets_for_resource::ListBudgetsForResourceOutput {
-            budgets: self.budgets
-            ,
-            next_page_token: self.next_page_token
-            ,
+            budgets: self.budgets,
+            next_page_token: self.next_page_token,
             _request_id: self._request_id,
         }
     }
 }
-

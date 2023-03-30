@@ -3,7 +3,7 @@
 /// <p>An object that defines the email template to use for an email message, and the values to use for any message variables in that template. An <i>email template</i> is a type of message template that contains content that you want to define, save, and reuse in email messages that you send.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Template  {
+pub struct Template {
     /// <p>The name of the template. You will refer to this name when you send email using the <code>SendTemplatedEmail</code> or <code>SendBulkTemplatedEmail</code> operations. </p>
     #[doc(hidden)]
     pub template_name: std::option::Option<std::string::String>,
@@ -16,15 +16,15 @@ pub struct Template  {
 }
 impl Template {
     /// <p>The name of the template. You will refer to this name when you send email using the <code>SendTemplatedEmail</code> or <code>SendBulkTemplatedEmail</code> operations. </p>
-    pub fn template_name(&self) -> std::option::Option<& str> {
+    pub fn template_name(&self) -> std::option::Option<&str> {
         self.template_name.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the template.</p>
-    pub fn template_arn(&self) -> std::option::Option<& str> {
+    pub fn template_arn(&self) -> std::option::Option<&str> {
         self.template_arn.as_deref()
     }
     /// <p>An object that defines the values to use for message variables in the template. This object is a set of key-value pairs. Each key defines a message variable in the template. The corresponding value defines the value to use for that variable.</p>
-    pub fn template_data(&self) -> std::option::Option<& str> {
+    pub fn template_data(&self) -> std::option::Option<&str> {
         self.template_data.as_deref()
     }
 }
@@ -51,7 +51,8 @@ impl TemplateBuilder {
     }
     /// <p>The name of the template. You will refer to this name when you send email using the <code>SendTemplatedEmail</code> or <code>SendBulkTemplatedEmail</code> operations. </p>
     pub fn set_template_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.template_name = input; self
+        self.template_name = input;
+        self
     }
     /// <p>The Amazon Resource Name (ARN) of the template.</p>
     pub fn template_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -60,7 +61,8 @@ impl TemplateBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the template.</p>
     pub fn set_template_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.template_arn = input; self
+        self.template_arn = input;
+        self
     }
     /// <p>An object that defines the values to use for message variables in the template. This object is a set of key-value pairs. Each key defines a message variable in the template. The corresponding value defines the value to use for that variable.</p>
     pub fn template_data(mut self, input: impl Into<std::string::String>) -> Self {
@@ -69,18 +71,15 @@ impl TemplateBuilder {
     }
     /// <p>An object that defines the values to use for message variables in the template. This object is a set of key-value pairs. Each key defines a message variable in the template. The corresponding value defines the value to use for that variable.</p>
     pub fn set_template_data(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.template_data = input; self
+        self.template_data = input;
+        self
     }
     /// Consumes the builder and constructs a [`Template`](crate::types::Template).
     pub fn build(self) -> crate::types::Template {
         crate::types::Template {
-            template_name: self.template_name
-            ,
-            template_arn: self.template_arn
-            ,
-            template_data: self.template_data
-            ,
+            template_name: self.template_name,
+            template_arn: self.template_arn,
+            template_data: self.template_data,
         }
     }
 }
-

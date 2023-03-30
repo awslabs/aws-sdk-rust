@@ -2,11 +2,11 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetSubscriptionStateInput  {
-}
+pub struct GetSubscriptionStateInput {}
 impl GetSubscriptionStateInput {
     /// Creates a new builder-style object to manufacture [`GetSubscriptionStateInput`](crate::operation::get_subscription_state::GetSubscriptionStateInput).
-    pub fn builder() -> crate::operation::get_subscription_state::builders::GetSubscriptionStateInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::get_subscription_state::builders::GetSubscriptionStateInputBuilder {
         crate::operation::get_subscription_state::builders::GetSubscriptionStateInputBuilder::default()
     }
 }
@@ -14,15 +14,15 @@ impl GetSubscriptionStateInput {
 /// A builder for [`GetSubscriptionStateInput`](crate::operation::get_subscription_state::GetSubscriptionStateInput).
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-pub struct GetSubscriptionStateInputBuilder {
-}
+pub struct GetSubscriptionStateInputBuilder {}
 impl GetSubscriptionStateInputBuilder {
     /// Consumes the builder and constructs a [`GetSubscriptionStateInput`](crate::operation::get_subscription_state::GetSubscriptionStateInput).
-    pub fn build(self) -> Result<crate::operation::get_subscription_state::GetSubscriptionStateInput, aws_smithy_http::operation::error::BuildError> {
-        Ok(
-            crate::operation::get_subscription_state::GetSubscriptionStateInput {
-            }
-        )
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::get_subscription_state::GetSubscriptionStateInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        Ok(crate::operation::get_subscription_state::GetSubscriptionStateInput {})
     }
 }
-

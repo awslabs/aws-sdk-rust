@@ -4,66 +4,88 @@ pub use crate::operation::provision_product::_provision_product_output::Provisio
 pub use crate::operation::provision_product::_provision_product_input::ProvisionProductInputBuilder;
 
 /// Fluent builder constructing a request to `ProvisionProduct`.
-/// 
-/// <p>Provisions the specified product.</p> 
-/// <p>A provisioned product is a resourced instance of a product. For example, provisioning a product based on a CloudFormation template launches a CloudFormation stack and its underlying resources. You can check the status of this request using <code>DescribeRecord</code>.</p> 
+///
+/// <p>Provisions the specified product.</p>
+/// <p>A provisioned product is a resourced instance of a product. For example, provisioning a product based on a CloudFormation template launches a CloudFormation stack and its underlying resources. You can check the status of this request using <code>DescribeRecord</code>.</p>
 /// <p>If the request contains a tag key with an empty list of values, there is a tag conflict for that key. Do not include conflicted keys as tags, or this causes the error "Parameter validation failed: Missing required parameter in Tags[<i>N</i>]:<i>Value</i>".</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ProvisionProductFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::provision_product::builders::ProvisionProductInputBuilder
-            }
-impl ProvisionProductFluentBuilder  {
+    handle: std::sync::Arc<crate::client::Handle>,
+    inner: crate::operation::provision_product::builders::ProvisionProductInputBuilder,
+}
+impl ProvisionProductFluentBuilder {
     /// Creates a new `ProvisionProduct`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
-                    /// sent. The operation's inner [http::Request] can be modified as well.
-                    pub async fn customize(self) -> std::result::Result<
-                        crate::client::customize::CustomizableOperation<crate::operation::provision_product::ProvisionProduct, aws_http::retry::AwsResponseRetryClassifier,>,
-                        aws_smithy_http::result::SdkError<crate::operation::provision_product::ProvisionProductError>
-                    >  {
-                        let handle = self.handle.clone();
-                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-                    }
-    
-                    /// Sends the request and returns the response.
-                    ///
-                    /// If an error occurs, an `SdkError` will be returned with additional details that
-                    /// can be matched against.
-                    ///
-                    /// By default, any retryable failures will be retried twice. Retry behavior
-                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                    /// set when configuring the client.
-                    pub async fn send(self) -> std::result::Result<crate::operation::provision_product::ProvisionProductOutput, aws_smithy_http::result::SdkError<crate::operation::provision_product::ProvisionProductError>>
-                     {
-                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&self.handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        self.handle.client.call(op).await
-                    }
-    /// <p>The language code.</p> 
-    /// <ul> 
-    /// <li> <p> <code>en</code> - English (default)</p> </li> 
-    /// <li> <p> <code>jp</code> - Japanese</p> </li> 
-    /// <li> <p> <code>zh</code> - Chinese</p> </li> 
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle,
+            inner: Default::default(),
+        }
+    }
+
+    /// Consume this builder, creating a customizable operation that can be modified before being
+    /// sent. The operation's inner [http::Request] can be modified as well.
+    pub async fn customize(
+        self,
+    ) -> std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::provision_product::ProvisionProduct,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::result::SdkError<
+            crate::operation::provision_product::ProvisionProductError,
+        >,
+    > {
+        let handle = self.handle.clone();
+        let operation = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+    }
+
+    /// Sends the request and returns the response.
+    ///
+    /// If an error occurs, an `SdkError` will be returned with additional details that
+    /// can be matched against.
+    ///
+    /// By default, any retryable failures will be retried twice. Retry behavior
+    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+    /// set when configuring the client.
+    pub async fn send(
+        self,
+    ) -> std::result::Result<
+        crate::operation::provision_product::ProvisionProductOutput,
+        aws_smithy_http::result::SdkError<
+            crate::operation::provision_product::ProvisionProductError,
+        >,
+    > {
+        let op = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&self.handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        self.handle.client.call(op).await
+    }
+    /// <p>The language code.</p>
+    /// <ul>
+    /// <li> <p> <code>en</code> - English (default)</p> </li>
+    /// <li> <p> <code>jp</code> - Japanese</p> </li>
+    /// <li> <p> <code>zh</code> - Chinese</p> </li>
     /// </ul>
     pub fn accept_language(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.accept_language(input.into());
         self
     }
-    /// <p>The language code.</p> 
-    /// <ul> 
-    /// <li> <p> <code>en</code> - English (default)</p> </li> 
-    /// <li> <p> <code>jp</code> - Japanese</p> </li> 
-    /// <li> <p> <code>zh</code> - Chinese</p> </li> 
+    /// <p>The language code.</p>
+    /// <ul>
+    /// <li> <p> <code>en</code> - English (default)</p> </li>
+    /// <li> <p> <code>jp</code> - Japanese</p> </li>
+    /// <li> <p> <code>zh</code> - Chinese</p> </li>
     /// </ul>
     pub fn set_accept_language(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.inner = self.inner.set_accept_language(input);
@@ -95,7 +117,10 @@ impl ProvisionProductFluentBuilder  {
         self
     }
     /// <p>The identifier of the provisioning artifact. You must provide the name or ID, but not both.</p>
-    pub fn set_provisioning_artifact_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_provisioning_artifact_id(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_provisioning_artifact_id(input);
         self
     }
@@ -105,7 +130,10 @@ impl ProvisionProductFluentBuilder  {
         self
     }
     /// <p>The name of the provisioning artifact. You must provide the name or ID, but not both.</p>
-    pub fn set_provisioning_artifact_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_provisioning_artifact_name(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_provisioning_artifact_name(input);
         self
     }
@@ -135,7 +163,10 @@ impl ProvisionProductFluentBuilder  {
         self
     }
     /// <p>A user-friendly name for the provisioned product. This value must be unique for the Amazon Web Services account and cannot be updated after the product is provisioned.</p>
-    pub fn set_provisioned_product_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_provisioned_product_name(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_provisioned_product_name(input);
         self
     }
@@ -149,17 +180,26 @@ impl ProvisionProductFluentBuilder  {
         self
     }
     /// <p>Parameters specified by the administrator that are required for provisioning the product.</p>
-    pub fn set_provisioning_parameters(mut self, input: std::option::Option<std::vec::Vec<crate::types::ProvisioningParameter>>) -> Self {
+    pub fn set_provisioning_parameters(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::ProvisioningParameter>>,
+    ) -> Self {
         self.inner = self.inner.set_provisioning_parameters(input);
         self
     }
     /// <p>An object that contains information about the provisioning preferences for a stack set.</p>
-    pub fn provisioning_preferences(mut self, input: crate::types::ProvisioningPreferences) -> Self {
+    pub fn provisioning_preferences(
+        mut self,
+        input: crate::types::ProvisioningPreferences,
+    ) -> Self {
         self.inner = self.inner.provisioning_preferences(input);
         self
     }
     /// <p>An object that contains information about the provisioning preferences for a stack set.</p>
-    pub fn set_provisioning_preferences(mut self, input: std::option::Option<crate::types::ProvisioningPreferences>) -> Self {
+    pub fn set_provisioning_preferences(
+        mut self,
+        input: std::option::Option<crate::types::ProvisioningPreferences>,
+    ) -> Self {
         self.inner = self.inner.set_provisioning_preferences(input);
         self
     }
@@ -173,7 +213,10 @@ impl ProvisionProductFluentBuilder  {
         self
     }
     /// <p>One or more tags.</p>
-    pub fn set_tags(mut self, input: std::option::Option<std::vec::Vec<crate::types::Tag>>) -> Self {
+    pub fn set_tags(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::Tag>>,
+    ) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }
@@ -187,7 +230,10 @@ impl ProvisionProductFluentBuilder  {
         self
     }
     /// <p>Passed to CloudFormation. The SNS topic ARNs to which to publish stack-related events.</p>
-    pub fn set_notification_arns(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+    pub fn set_notification_arns(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
         self.inner = self.inner.set_notification_arns(input);
         self
     }
@@ -202,4 +248,3 @@ impl ProvisionProductFluentBuilder  {
         self
     }
 }
-

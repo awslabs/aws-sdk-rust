@@ -3,14 +3,14 @@
 /// <p>A collection of the names of Amazon Web Services services.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ServiceCollection  {
+pub struct ServiceCollection {
     /// <p>An array of strings that each specifies the name of an Amazon Web Services service.</p>
     #[doc(hidden)]
     pub service_names: std::option::Option<std::vec::Vec<crate::types::ServiceName>>,
 }
 impl ServiceCollection {
     /// <p>An array of strings that each specifies the name of an Amazon Web Services service.</p>
-    pub fn service_names(&self) -> std::option::Option<& [crate::types::ServiceName]> {
+    pub fn service_names(&self) -> std::option::Option<&[crate::types::ServiceName]> {
         self.service_names.as_deref()
     }
 }
@@ -35,20 +35,22 @@ impl ServiceCollectionBuilder {
     /// <p>An array of strings that each specifies the name of an Amazon Web Services service.</p>
     pub fn service_names(mut self, input: crate::types::ServiceName) -> Self {
         let mut v = self.service_names.unwrap_or_default();
-                        v.push(input);
-                        self.service_names = Some(v);
-                        self
+        v.push(input);
+        self.service_names = Some(v);
+        self
     }
     /// <p>An array of strings that each specifies the name of an Amazon Web Services service.</p>
-    pub fn set_service_names(mut self, input: std::option::Option<std::vec::Vec<crate::types::ServiceName>>) -> Self {
-        self.service_names = input; self
+    pub fn set_service_names(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::ServiceName>>,
+    ) -> Self {
+        self.service_names = input;
+        self
     }
     /// Consumes the builder and constructs a [`ServiceCollection`](crate::types::ServiceCollection).
     pub fn build(self) -> crate::types::ServiceCollection {
         crate::types::ServiceCollection {
-            service_names: self.service_names
-            ,
+            service_names: self.service_names,
         }
     }
 }
-

@@ -3,14 +3,14 @@
 /// <p> Information about whether DevOps Guru is configured to create an OpsItem in Amazon Web Services Systems Manager OpsCenter for each created insight. You can use this to update the configuration.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct OpsCenterIntegrationConfig  {
+pub struct OpsCenterIntegrationConfig {
     /// <p> Specifies if DevOps Guru is enabled to create an Amazon Web Services Systems Manager OpsItem for each created insight. </p>
     #[doc(hidden)]
     pub opt_in_status: std::option::Option<crate::types::OptInStatus>,
 }
 impl OpsCenterIntegrationConfig {
     /// <p> Specifies if DevOps Guru is enabled to create an Amazon Web Services Systems Manager OpsItem for each created insight. </p>
-    pub fn opt_in_status(&self) -> std::option::Option<& crate::types::OptInStatus> {
+    pub fn opt_in_status(&self) -> std::option::Option<&crate::types::OptInStatus> {
         self.opt_in_status.as_ref()
     }
 }
@@ -34,15 +34,17 @@ impl OpsCenterIntegrationConfigBuilder {
         self
     }
     /// <p> Specifies if DevOps Guru is enabled to create an Amazon Web Services Systems Manager OpsItem for each created insight. </p>
-    pub fn set_opt_in_status(mut self, input: std::option::Option<crate::types::OptInStatus>) -> Self {
-        self.opt_in_status = input; self
+    pub fn set_opt_in_status(
+        mut self,
+        input: std::option::Option<crate::types::OptInStatus>,
+    ) -> Self {
+        self.opt_in_status = input;
+        self
     }
     /// Consumes the builder and constructs a [`OpsCenterIntegrationConfig`](crate::types::OpsCenterIntegrationConfig).
     pub fn build(self) -> crate::types::OpsCenterIntegrationConfig {
         crate::types::OpsCenterIntegrationConfig {
-            opt_in_status: self.opt_in_status
-            ,
+            opt_in_status: self.opt_in_status,
         }
     }
 }
-

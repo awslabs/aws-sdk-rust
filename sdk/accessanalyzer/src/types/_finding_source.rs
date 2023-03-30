@@ -3,7 +3,7 @@
 /// <p>The source of the finding. This indicates how the access that generated the finding is granted. It is populated for Amazon S3 bucket findings.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct FindingSource  {
+pub struct FindingSource {
     /// <p>Indicates the type of access that generated the finding.</p>
     #[doc(hidden)]
     pub r#type: std::option::Option<crate::types::FindingSourceType>,
@@ -13,11 +13,11 @@ pub struct FindingSource  {
 }
 impl FindingSource {
     /// <p>Indicates the type of access that generated the finding.</p>
-    pub fn r#type(&self) -> std::option::Option<& crate::types::FindingSourceType> {
+    pub fn r#type(&self) -> std::option::Option<&crate::types::FindingSourceType> {
         self.r#type.as_ref()
     }
     /// <p>Includes details about how the access that generated the finding is granted. This is populated for Amazon S3 bucket findings.</p>
-    pub fn detail(&self) -> std::option::Option<& crate::types::FindingSourceDetail> {
+    pub fn detail(&self) -> std::option::Option<&crate::types::FindingSourceDetail> {
         self.detail.as_ref()
     }
 }
@@ -43,7 +43,8 @@ impl FindingSourceBuilder {
     }
     /// <p>Indicates the type of access that generated the finding.</p>
     pub fn set_type(mut self, input: std::option::Option<crate::types::FindingSourceType>) -> Self {
-        self.r#type = input; self
+        self.r#type = input;
+        self
     }
     /// <p>Includes details about how the access that generated the finding is granted. This is populated for Amazon S3 bucket findings.</p>
     pub fn detail(mut self, input: crate::types::FindingSourceDetail) -> Self {
@@ -51,17 +52,18 @@ impl FindingSourceBuilder {
         self
     }
     /// <p>Includes details about how the access that generated the finding is granted. This is populated for Amazon S3 bucket findings.</p>
-    pub fn set_detail(mut self, input: std::option::Option<crate::types::FindingSourceDetail>) -> Self {
-        self.detail = input; self
+    pub fn set_detail(
+        mut self,
+        input: std::option::Option<crate::types::FindingSourceDetail>,
+    ) -> Self {
+        self.detail = input;
+        self
     }
     /// Consumes the builder and constructs a [`FindingSource`](crate::types::FindingSource).
     pub fn build(self) -> crate::types::FindingSource {
         crate::types::FindingSource {
-            r#type: self.r#type
-            ,
-            detail: self.detail
-            ,
+            r#type: self.r#type,
+            detail: self.detail,
         }
     }
 }
-

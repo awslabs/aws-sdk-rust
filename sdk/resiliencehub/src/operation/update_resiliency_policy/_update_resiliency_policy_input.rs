@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateResiliencyPolicyInput  {
+pub struct UpdateResiliencyPolicyInput {
     /// <p>The Amazon Resource Name (ARN) of the resiliency policy. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:resiliency-policy/<code>policy-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
     #[doc(hidden)]
     pub policy_arn: std::option::Option<std::string::String>,
@@ -20,37 +20,47 @@ pub struct UpdateResiliencyPolicyInput  {
     pub tier: std::option::Option<crate::types::ResiliencyPolicyTier>,
     /// <p>The type of resiliency policy to be created, including the recovery time objective (RTO) and recovery point objective (RPO) in seconds.</p>
     #[doc(hidden)]
-    pub policy: std::option::Option<std::collections::HashMap<crate::types::DisruptionType, crate::types::FailurePolicy>>,
+    pub policy: std::option::Option<
+        std::collections::HashMap<crate::types::DisruptionType, crate::types::FailurePolicy>,
+    >,
 }
 impl UpdateResiliencyPolicyInput {
     /// <p>The Amazon Resource Name (ARN) of the resiliency policy. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:resiliency-policy/<code>policy-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
-    pub fn policy_arn(&self) -> std::option::Option<& str> {
+    pub fn policy_arn(&self) -> std::option::Option<&str> {
         self.policy_arn.as_deref()
     }
     /// <p>The name of the policy</p>
-    pub fn policy_name(&self) -> std::option::Option<& str> {
+    pub fn policy_name(&self) -> std::option::Option<&str> {
         self.policy_name.as_deref()
     }
     /// <p>The description for the policy.</p>
-    pub fn policy_description(&self) -> std::option::Option<& str> {
+    pub fn policy_description(&self) -> std::option::Option<&str> {
         self.policy_description.as_deref()
     }
     /// <p>Specifies a high-level geographical location constraint for where your resilience policy data can be stored.</p>
-    pub fn data_location_constraint(&self) -> std::option::Option<& crate::types::DataLocationConstraint> {
+    pub fn data_location_constraint(
+        &self,
+    ) -> std::option::Option<&crate::types::DataLocationConstraint> {
         self.data_location_constraint.as_ref()
     }
     /// <p>The tier for this resiliency policy, ranging from the highest severity (<code>MissionCritical</code>) to lowest (<code>NonCritical</code>).</p>
-    pub fn tier(&self) -> std::option::Option<& crate::types::ResiliencyPolicyTier> {
+    pub fn tier(&self) -> std::option::Option<&crate::types::ResiliencyPolicyTier> {
         self.tier.as_ref()
     }
     /// <p>The type of resiliency policy to be created, including the recovery time objective (RTO) and recovery point objective (RPO) in seconds.</p>
-    pub fn policy(&self) -> std::option::Option<& std::collections::HashMap<crate::types::DisruptionType, crate::types::FailurePolicy>> {
+    pub fn policy(
+        &self,
+    ) -> std::option::Option<
+        &std::collections::HashMap<crate::types::DisruptionType, crate::types::FailurePolicy>,
+    > {
         self.policy.as_ref()
     }
 }
 impl UpdateResiliencyPolicyInput {
     /// Creates a new builder-style object to manufacture [`UpdateResiliencyPolicyInput`](crate::operation::update_resiliency_policy::UpdateResiliencyPolicyInput).
-    pub fn builder() -> crate::operation::update_resiliency_policy::builders::UpdateResiliencyPolicyInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::update_resiliency_policy::builders::UpdateResiliencyPolicyInputBuilder
+    {
         crate::operation::update_resiliency_policy::builders::UpdateResiliencyPolicyInputBuilder::default()
     }
 }
@@ -64,7 +74,9 @@ pub struct UpdateResiliencyPolicyInputBuilder {
     pub(crate) policy_description: std::option::Option<std::string::String>,
     pub(crate) data_location_constraint: std::option::Option<crate::types::DataLocationConstraint>,
     pub(crate) tier: std::option::Option<crate::types::ResiliencyPolicyTier>,
-    pub(crate) policy: std::option::Option<std::collections::HashMap<crate::types::DisruptionType, crate::types::FailurePolicy>>,
+    pub(crate) policy: std::option::Option<
+        std::collections::HashMap<crate::types::DisruptionType, crate::types::FailurePolicy>,
+    >,
 }
 impl UpdateResiliencyPolicyInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the resiliency policy. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:resiliency-policy/<code>policy-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
@@ -74,7 +86,8 @@ impl UpdateResiliencyPolicyInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the resiliency policy. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:resiliency-policy/<code>policy-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
     pub fn set_policy_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.policy_arn = input; self
+        self.policy_arn = input;
+        self
     }
     /// <p>The name of the policy</p>
     pub fn policy_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -83,7 +96,8 @@ impl UpdateResiliencyPolicyInputBuilder {
     }
     /// <p>The name of the policy</p>
     pub fn set_policy_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.policy_name = input; self
+        self.policy_name = input;
+        self
     }
     /// <p>The description for the policy.</p>
     pub fn policy_description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -91,8 +105,12 @@ impl UpdateResiliencyPolicyInputBuilder {
         self
     }
     /// <p>The description for the policy.</p>
-    pub fn set_policy_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.policy_description = input; self
+    pub fn set_policy_description(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.policy_description = input;
+        self
     }
     /// <p>Specifies a high-level geographical location constraint for where your resilience policy data can be stored.</p>
     pub fn data_location_constraint(mut self, input: crate::types::DataLocationConstraint) -> Self {
@@ -100,8 +118,12 @@ impl UpdateResiliencyPolicyInputBuilder {
         self
     }
     /// <p>Specifies a high-level geographical location constraint for where your resilience policy data can be stored.</p>
-    pub fn set_data_location_constraint(mut self, input: std::option::Option<crate::types::DataLocationConstraint>) -> Self {
-        self.data_location_constraint = input; self
+    pub fn set_data_location_constraint(
+        mut self,
+        input: std::option::Option<crate::types::DataLocationConstraint>,
+    ) -> Self {
+        self.data_location_constraint = input;
+        self
     }
     /// <p>The tier for this resiliency policy, ranging from the highest severity (<code>MissionCritical</code>) to lowest (<code>NonCritical</code>).</p>
     pub fn tier(mut self, input: crate::types::ResiliencyPolicyTier) -> Self {
@@ -109,42 +131,54 @@ impl UpdateResiliencyPolicyInputBuilder {
         self
     }
     /// <p>The tier for this resiliency policy, ranging from the highest severity (<code>MissionCritical</code>) to lowest (<code>NonCritical</code>).</p>
-    pub fn set_tier(mut self, input: std::option::Option<crate::types::ResiliencyPolicyTier>) -> Self {
-        self.tier = input; self
+    pub fn set_tier(
+        mut self,
+        input: std::option::Option<crate::types::ResiliencyPolicyTier>,
+    ) -> Self {
+        self.tier = input;
+        self
     }
     /// Adds a key-value pair to `policy`.
     ///
     /// To override the contents of this collection use [`set_policy`](Self::set_policy).
     ///
     /// <p>The type of resiliency policy to be created, including the recovery time objective (RTO) and recovery point objective (RPO) in seconds.</p>
-    pub fn policy(mut self, k: crate::types::DisruptionType, v: crate::types::FailurePolicy) -> Self {
+    pub fn policy(
+        mut self,
+        k: crate::types::DisruptionType,
+        v: crate::types::FailurePolicy,
+    ) -> Self {
         let mut hash_map = self.policy.unwrap_or_default();
-                        hash_map.insert(k, v);
-                        self.policy = Some(hash_map);
-                        self
+        hash_map.insert(k, v);
+        self.policy = Some(hash_map);
+        self
     }
     /// <p>The type of resiliency policy to be created, including the recovery time objective (RTO) and recovery point objective (RPO) in seconds.</p>
-    pub fn set_policy(mut self, input: std::option::Option<std::collections::HashMap<crate::types::DisruptionType, crate::types::FailurePolicy>>) -> Self {
-        self.policy = input; self
+    pub fn set_policy(
+        mut self,
+        input: std::option::Option<
+            std::collections::HashMap<crate::types::DisruptionType, crate::types::FailurePolicy>,
+        >,
+    ) -> Self {
+        self.policy = input;
+        self
     }
     /// Consumes the builder and constructs a [`UpdateResiliencyPolicyInput`](crate::operation::update_resiliency_policy::UpdateResiliencyPolicyInput).
-    pub fn build(self) -> Result<crate::operation::update_resiliency_policy::UpdateResiliencyPolicyInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::update_resiliency_policy::UpdateResiliencyPolicyInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::update_resiliency_policy::UpdateResiliencyPolicyInput {
-                policy_arn: self.policy_arn
-                ,
-                policy_name: self.policy_name
-                ,
-                policy_description: self.policy_description
-                ,
-                data_location_constraint: self.data_location_constraint
-                ,
-                tier: self.tier
-                ,
-                policy: self.policy
-                ,
-            }
+                policy_arn: self.policy_arn,
+                policy_name: self.policy_name,
+                policy_description: self.policy_description,
+                data_location_constraint: self.data_location_constraint,
+                tier: self.tier,
+                policy: self.policy,
+            },
         )
     }
 }
-

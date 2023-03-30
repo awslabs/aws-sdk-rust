@@ -3,7 +3,7 @@
 /// <p>An indication of whether a project creation or deletion is failed or successful.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ProjectStatus  {
+pub struct ProjectStatus {
     /// <p>The phase of completion for a project creation or deletion.</p>
     #[doc(hidden)]
     pub state: std::option::Option<std::string::String>,
@@ -13,11 +13,11 @@ pub struct ProjectStatus  {
 }
 impl ProjectStatus {
     /// <p>The phase of completion for a project creation or deletion.</p>
-    pub fn state(&self) -> std::option::Option<& str> {
+    pub fn state(&self) -> std::option::Option<&str> {
         self.state.as_deref()
     }
     /// <p>In the case of a project creation or deletion failure, a reason for the failure.</p>
-    pub fn reason(&self) -> std::option::Option<& str> {
+    pub fn reason(&self) -> std::option::Option<&str> {
         self.reason.as_deref()
     }
 }
@@ -43,7 +43,8 @@ impl ProjectStatusBuilder {
     }
     /// <p>The phase of completion for a project creation or deletion.</p>
     pub fn set_state(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.state = input; self
+        self.state = input;
+        self
     }
     /// <p>In the case of a project creation or deletion failure, a reason for the failure.</p>
     pub fn reason(mut self, input: impl Into<std::string::String>) -> Self {
@@ -52,16 +53,14 @@ impl ProjectStatusBuilder {
     }
     /// <p>In the case of a project creation or deletion failure, a reason for the failure.</p>
     pub fn set_reason(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.reason = input; self
+        self.reason = input;
+        self
     }
     /// Consumes the builder and constructs a [`ProjectStatus`](crate::types::ProjectStatus).
     pub fn build(self) -> crate::types::ProjectStatus {
         crate::types::ProjectStatus {
-            state: self.state
-            ,
-            reason: self.reason
-            ,
+            state: self.state,
+            reason: self.reason,
         }
     }
 }
-

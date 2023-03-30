@@ -4,7 +4,12 @@
  */
 
 #![allow(clippy::derive_partial_eq_without_eq)]
-#![warn(missing_debug_implementations, missing_docs, rustdoc::all)]
+#![warn(
+    missing_docs,
+    rustdoc::missing_crate_level_docs,
+    unreachable_pub,
+    rust_2018_idioms
+)]
 
 //! Smithy HTTP Auth Types
 

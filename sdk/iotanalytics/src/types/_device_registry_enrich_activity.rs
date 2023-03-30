@@ -3,7 +3,7 @@
 /// <p>An activity that adds data from the IoT device registry to your message.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeviceRegistryEnrichActivity  {
+pub struct DeviceRegistryEnrichActivity {
     /// <p>The name of the <code>deviceRegistryEnrich</code> activity.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -22,23 +22,23 @@ pub struct DeviceRegistryEnrichActivity  {
 }
 impl DeviceRegistryEnrichActivity {
     /// <p>The name of the <code>deviceRegistryEnrich</code> activity.</p>
-    pub fn name(&self) -> std::option::Option<& str> {
+    pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>The name of the attribute that is added to the message.</p>
-    pub fn attribute(&self) -> std::option::Option<& str> {
+    pub fn attribute(&self) -> std::option::Option<&str> {
         self.attribute.as_deref()
     }
     /// <p>The name of the IoT device whose registry information is added to the message.</p>
-    pub fn thing_name(&self) -> std::option::Option<& str> {
+    pub fn thing_name(&self) -> std::option::Option<&str> {
         self.thing_name.as_deref()
     }
     /// <p>The ARN of the role that allows access to the device's registry information.</p>
-    pub fn role_arn(&self) -> std::option::Option<& str> {
+    pub fn role_arn(&self) -> std::option::Option<&str> {
         self.role_arn.as_deref()
     }
     /// <p>The next activity in the pipeline.</p>
-    pub fn next(&self) -> std::option::Option<& str> {
+    pub fn next(&self) -> std::option::Option<&str> {
         self.next.as_deref()
     }
 }
@@ -67,7 +67,8 @@ impl DeviceRegistryEnrichActivityBuilder {
     }
     /// <p>The name of the <code>deviceRegistryEnrich</code> activity.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input; self
+        self.name = input;
+        self
     }
     /// <p>The name of the attribute that is added to the message.</p>
     pub fn attribute(mut self, input: impl Into<std::string::String>) -> Self {
@@ -76,7 +77,8 @@ impl DeviceRegistryEnrichActivityBuilder {
     }
     /// <p>The name of the attribute that is added to the message.</p>
     pub fn set_attribute(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.attribute = input; self
+        self.attribute = input;
+        self
     }
     /// <p>The name of the IoT device whose registry information is added to the message.</p>
     pub fn thing_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -85,7 +87,8 @@ impl DeviceRegistryEnrichActivityBuilder {
     }
     /// <p>The name of the IoT device whose registry information is added to the message.</p>
     pub fn set_thing_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.thing_name = input; self
+        self.thing_name = input;
+        self
     }
     /// <p>The ARN of the role that allows access to the device's registry information.</p>
     pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -94,7 +97,8 @@ impl DeviceRegistryEnrichActivityBuilder {
     }
     /// <p>The ARN of the role that allows access to the device's registry information.</p>
     pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.role_arn = input; self
+        self.role_arn = input;
+        self
     }
     /// <p>The next activity in the pipeline.</p>
     pub fn next(mut self, input: impl Into<std::string::String>) -> Self {
@@ -103,22 +107,17 @@ impl DeviceRegistryEnrichActivityBuilder {
     }
     /// <p>The next activity in the pipeline.</p>
     pub fn set_next(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next = input; self
+        self.next = input;
+        self
     }
     /// Consumes the builder and constructs a [`DeviceRegistryEnrichActivity`](crate::types::DeviceRegistryEnrichActivity).
     pub fn build(self) -> crate::types::DeviceRegistryEnrichActivity {
         crate::types::DeviceRegistryEnrichActivity {
-            name: self.name
-            ,
-            attribute: self.attribute
-            ,
-            thing_name: self.thing_name
-            ,
-            role_arn: self.role_arn
-            ,
-            next: self.next
-            ,
+            name: self.name,
+            attribute: self.attribute,
+            thing_name: self.thing_name,
+            role_arn: self.role_arn,
+            next: self.next,
         }
     }
 }
-

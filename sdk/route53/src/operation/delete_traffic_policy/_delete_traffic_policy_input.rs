@@ -3,7 +3,7 @@
 /// <p>A request to delete a specified traffic policy version.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteTrafficPolicyInput  {
+pub struct DeleteTrafficPolicyInput {
     /// <p>The ID of the traffic policy that you want to delete.</p>
     #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
@@ -13,7 +13,7 @@ pub struct DeleteTrafficPolicyInput  {
 }
 impl DeleteTrafficPolicyInput {
     /// <p>The ID of the traffic policy that you want to delete.</p>
-    pub fn id(&self) -> std::option::Option<& str> {
+    pub fn id(&self) -> std::option::Option<&str> {
         self.id.as_deref()
     }
     /// <p>The version number of the traffic policy that you want to delete.</p>
@@ -23,8 +23,10 @@ impl DeleteTrafficPolicyInput {
 }
 impl DeleteTrafficPolicyInput {
     /// Creates a new builder-style object to manufacture [`DeleteTrafficPolicyInput`](crate::operation::delete_traffic_policy::DeleteTrafficPolicyInput).
-    pub fn builder() -> crate::operation::delete_traffic_policy::builders::DeleteTrafficPolicyInputBuilder {
-        crate::operation::delete_traffic_policy::builders::DeleteTrafficPolicyInputBuilder::default()
+    pub fn builder(
+    ) -> crate::operation::delete_traffic_policy::builders::DeleteTrafficPolicyInputBuilder {
+        crate::operation::delete_traffic_policy::builders::DeleteTrafficPolicyInputBuilder::default(
+        )
     }
 }
 
@@ -43,7 +45,8 @@ impl DeleteTrafficPolicyInputBuilder {
     }
     /// <p>The ID of the traffic policy that you want to delete.</p>
     pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.id = input; self
+        self.id = input;
+        self
     }
     /// <p>The version number of the traffic policy that you want to delete.</p>
     pub fn version(mut self, input: i32) -> Self {
@@ -52,18 +55,21 @@ impl DeleteTrafficPolicyInputBuilder {
     }
     /// <p>The version number of the traffic policy that you want to delete.</p>
     pub fn set_version(mut self, input: std::option::Option<i32>) -> Self {
-        self.version = input; self
+        self.version = input;
+        self
     }
     /// Consumes the builder and constructs a [`DeleteTrafficPolicyInput`](crate::operation::delete_traffic_policy::DeleteTrafficPolicyInput).
-    pub fn build(self) -> Result<crate::operation::delete_traffic_policy::DeleteTrafficPolicyInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::delete_traffic_policy::DeleteTrafficPolicyInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::delete_traffic_policy::DeleteTrafficPolicyInput {
-                id: self.id
-                ,
-                version: self.version
-                ,
-            }
+                id: self.id,
+                version: self.version,
+            },
         )
     }
 }
-

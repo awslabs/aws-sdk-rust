@@ -4,50 +4,72 @@ pub use crate::operation::update_domain_contact::_update_domain_contact_output::
 pub use crate::operation::update_domain_contact::_update_domain_contact_input::UpdateDomainContactInputBuilder;
 
 /// Fluent builder constructing a request to `UpdateDomainContact`.
-/// 
-/// <p>This operation updates the contact information for a particular domain. You must specify information for at least one contact: registrant, administrator, or technical.</p> 
+///
+/// <p>This operation updates the contact information for a particular domain. You must specify information for at least one contact: registrant, administrator, or technical.</p>
 /// <p>If the update is successful, this method returns an operation ID that you can use to track the progress and completion of the operation. If the request is not completed successfully, the domain registrant will be notified by email.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct UpdateDomainContactFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::update_domain_contact::builders::UpdateDomainContactInputBuilder
-            }
-impl UpdateDomainContactFluentBuilder  {
+    handle: std::sync::Arc<crate::client::Handle>,
+    inner: crate::operation::update_domain_contact::builders::UpdateDomainContactInputBuilder,
+}
+impl UpdateDomainContactFluentBuilder {
     /// Creates a new `UpdateDomainContact`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
-                    /// sent. The operation's inner [http::Request] can be modified as well.
-                    pub async fn customize(self) -> std::result::Result<
-                        crate::client::customize::CustomizableOperation<crate::operation::update_domain_contact::UpdateDomainContact, aws_http::retry::AwsResponseRetryClassifier,>,
-                        aws_smithy_http::result::SdkError<crate::operation::update_domain_contact::UpdateDomainContactError>
-                    >  {
-                        let handle = self.handle.clone();
-                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-                    }
-    
-                    /// Sends the request and returns the response.
-                    ///
-                    /// If an error occurs, an `SdkError` will be returned with additional details that
-                    /// can be matched against.
-                    ///
-                    /// By default, any retryable failures will be retried twice. Retry behavior
-                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                    /// set when configuring the client.
-                    pub async fn send(self) -> std::result::Result<crate::operation::update_domain_contact::UpdateDomainContactOutput, aws_smithy_http::result::SdkError<crate::operation::update_domain_contact::UpdateDomainContactError>>
-                     {
-                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&self.handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        self.handle.client.call(op).await
-                    }
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle,
+            inner: Default::default(),
+        }
+    }
+
+    /// Consume this builder, creating a customizable operation that can be modified before being
+    /// sent. The operation's inner [http::Request] can be modified as well.
+    pub async fn customize(
+        self,
+    ) -> std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::update_domain_contact::UpdateDomainContact,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::result::SdkError<
+            crate::operation::update_domain_contact::UpdateDomainContactError,
+        >,
+    > {
+        let handle = self.handle.clone();
+        let operation = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+    }
+
+    /// Sends the request and returns the response.
+    ///
+    /// If an error occurs, an `SdkError` will be returned with additional details that
+    /// can be matched against.
+    ///
+    /// By default, any retryable failures will be retried twice. Retry behavior
+    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+    /// set when configuring the client.
+    pub async fn send(
+        self,
+    ) -> std::result::Result<
+        crate::operation::update_domain_contact::UpdateDomainContactOutput,
+        aws_smithy_http::result::SdkError<
+            crate::operation::update_domain_contact::UpdateDomainContactError,
+        >,
+    > {
+        let op = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&self.handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        self.handle.client.call(op).await
+    }
     /// <p>The name of the domain that you want to update contact information for.</p>
     pub fn domain_name(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.domain_name(input.into());
@@ -64,7 +86,10 @@ impl UpdateDomainContactFluentBuilder  {
         self
     }
     /// <p>Provides detailed contact information.</p>
-    pub fn set_admin_contact(mut self, input: std::option::Option<crate::types::ContactDetail>) -> Self {
+    pub fn set_admin_contact(
+        mut self,
+        input: std::option::Option<crate::types::ContactDetail>,
+    ) -> Self {
         self.inner = self.inner.set_admin_contact(input);
         self
     }
@@ -74,7 +99,10 @@ impl UpdateDomainContactFluentBuilder  {
         self
     }
     /// <p>Provides detailed contact information.</p>
-    pub fn set_registrant_contact(mut self, input: std::option::Option<crate::types::ContactDetail>) -> Self {
+    pub fn set_registrant_contact(
+        mut self,
+        input: std::option::Option<crate::types::ContactDetail>,
+    ) -> Self {
         self.inner = self.inner.set_registrant_contact(input);
         self
     }
@@ -84,7 +112,10 @@ impl UpdateDomainContactFluentBuilder  {
         self
     }
     /// <p>Provides detailed contact information.</p>
-    pub fn set_tech_contact(mut self, input: std::option::Option<crate::types::ContactDetail>) -> Self {
+    pub fn set_tech_contact(
+        mut self,
+        input: std::option::Option<crate::types::ContactDetail>,
+    ) -> Self {
         self.inner = self.inner.set_tech_contact(input);
         self
     }
@@ -99,4 +130,3 @@ impl UpdateDomainContactFluentBuilder  {
         self
     }
 }
-

@@ -21,7 +21,11 @@ impl AccessLog {
     /// Tries to convert the enum instance into [`File`](crate::types::AccessLog::File), extracting the inner [`FileAccessLog`](crate::types::FileAccessLog).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_file(&self) -> std::result::Result<&crate::types::FileAccessLog, &Self> {
-        if let AccessLog::File(val) = &self { Ok(val) } else { Err(self) }
+        if let AccessLog::File(val) = &self {
+            Ok(val)
+        } else {
+            Err(self)
+        }
     }
     /// Returns true if this is a [`File`](crate::types::AccessLog::File).
     pub fn is_file(&self) -> bool {
@@ -32,4 +36,3 @@ impl AccessLog {
         matches!(self, Self::Unknown)
     }
 }
-

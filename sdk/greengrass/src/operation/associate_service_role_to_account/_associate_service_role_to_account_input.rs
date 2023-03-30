@@ -2,20 +2,20 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AssociateServiceRoleToAccountInput  {
+pub struct AssociateServiceRoleToAccountInput {
     /// The ARN of the service role you wish to associate with your account.
     #[doc(hidden)]
     pub role_arn: std::option::Option<std::string::String>,
 }
 impl AssociateServiceRoleToAccountInput {
     /// The ARN of the service role you wish to associate with your account.
-    pub fn role_arn(&self) -> std::option::Option<& str> {
+    pub fn role_arn(&self) -> std::option::Option<&str> {
         self.role_arn.as_deref()
     }
 }
 impl AssociateServiceRoleToAccountInput {
     /// Creates a new builder-style object to manufacture [`AssociateServiceRoleToAccountInput`](crate::operation::associate_service_role_to_account::AssociateServiceRoleToAccountInput).
-    pub fn builder() -> crate::operation::associate_service_role_to_account::builders::AssociateServiceRoleToAccountInputBuilder {
+    pub fn builder() -> crate::operation::associate_service_role_to_account::builders::AssociateServiceRoleToAccountInputBuilder{
         crate::operation::associate_service_role_to_account::builders::AssociateServiceRoleToAccountInputBuilder::default()
     }
 }
@@ -34,10 +34,16 @@ impl AssociateServiceRoleToAccountInputBuilder {
     }
     /// The ARN of the service role you wish to associate with your account.
     pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.role_arn = input; self
+        self.role_arn = input;
+        self
     }
     /// Consumes the builder and constructs a [`AssociateServiceRoleToAccountInput`](crate::operation::associate_service_role_to_account::AssociateServiceRoleToAccountInput).
-    pub fn build(self) -> Result<crate::operation::associate_service_role_to_account::AssociateServiceRoleToAccountInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::associate_service_role_to_account::AssociateServiceRoleToAccountInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::associate_service_role_to_account::AssociateServiceRoleToAccountInput {
                 role_arn: self.role_arn
@@ -46,4 +52,3 @@ impl AssociateServiceRoleToAccountInputBuilder {
         )
     }
 }
-

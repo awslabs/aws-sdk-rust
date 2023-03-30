@@ -3,14 +3,14 @@
 /// <p></p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct RebootClusterInput  {
+pub struct RebootClusterInput {
     /// <p>The cluster identifier.</p>
     #[doc(hidden)]
     pub cluster_identifier: std::option::Option<std::string::String>,
 }
 impl RebootClusterInput {
     /// <p>The cluster identifier.</p>
-    pub fn cluster_identifier(&self) -> std::option::Option<& str> {
+    pub fn cluster_identifier(&self) -> std::option::Option<&str> {
         self.cluster_identifier.as_deref()
     }
 }
@@ -34,17 +34,22 @@ impl RebootClusterInputBuilder {
         self
     }
     /// <p>The cluster identifier.</p>
-    pub fn set_cluster_identifier(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.cluster_identifier = input; self
+    pub fn set_cluster_identifier(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.cluster_identifier = input;
+        self
     }
     /// Consumes the builder and constructs a [`RebootClusterInput`](crate::operation::reboot_cluster::RebootClusterInput).
-    pub fn build(self) -> Result<crate::operation::reboot_cluster::RebootClusterInput, aws_smithy_http::operation::error::BuildError> {
-        Ok(
-            crate::operation::reboot_cluster::RebootClusterInput {
-                cluster_identifier: self.cluster_identifier
-                ,
-            }
-        )
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::reboot_cluster::RebootClusterInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        Ok(crate::operation::reboot_cluster::RebootClusterInput {
+            cluster_identifier: self.cluster_identifier,
+        })
     }
 }
-

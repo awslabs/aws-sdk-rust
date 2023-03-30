@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateProjectInput  {
+pub struct CreateProjectInput {
     /// <p>The name of the project.</p>
     #[doc(hidden)]
     pub project_name: std::option::Option<std::string::String>,
@@ -11,26 +11,29 @@ pub struct CreateProjectInput  {
     pub project_description: std::option::Option<std::string::String>,
     /// <p>The product ID and provisioning artifact ID to provision a service catalog. The provisioning artifact ID will default to the latest provisioning artifact ID of the product, if you don't provide the provisioning artifact ID. For more information, see <a href="https://docs.aws.amazon.com/servicecatalog/latest/adminguide/introduction.html">What is Amazon Web Services Service Catalog</a>.</p>
     #[doc(hidden)]
-    pub service_catalog_provisioning_details: std::option::Option<crate::types::ServiceCatalogProvisioningDetails>,
+    pub service_catalog_provisioning_details:
+        std::option::Option<crate::types::ServiceCatalogProvisioningDetails>,
     /// <p>An array of key-value pairs that you want to use to organize and track your Amazon Web Services resource costs. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services resources</a> in the <i>Amazon Web Services General Reference Guide</i>.</p>
     #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::types::Tag>>,
 }
 impl CreateProjectInput {
     /// <p>The name of the project.</p>
-    pub fn project_name(&self) -> std::option::Option<& str> {
+    pub fn project_name(&self) -> std::option::Option<&str> {
         self.project_name.as_deref()
     }
     /// <p>A description for the project.</p>
-    pub fn project_description(&self) -> std::option::Option<& str> {
+    pub fn project_description(&self) -> std::option::Option<&str> {
         self.project_description.as_deref()
     }
     /// <p>The product ID and provisioning artifact ID to provision a service catalog. The provisioning artifact ID will default to the latest provisioning artifact ID of the product, if you don't provide the provisioning artifact ID. For more information, see <a href="https://docs.aws.amazon.com/servicecatalog/latest/adminguide/introduction.html">What is Amazon Web Services Service Catalog</a>.</p>
-    pub fn service_catalog_provisioning_details(&self) -> std::option::Option<& crate::types::ServiceCatalogProvisioningDetails> {
+    pub fn service_catalog_provisioning_details(
+        &self,
+    ) -> std::option::Option<&crate::types::ServiceCatalogProvisioningDetails> {
         self.service_catalog_provisioning_details.as_ref()
     }
     /// <p>An array of key-value pairs that you want to use to organize and track your Amazon Web Services resource costs. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services resources</a> in the <i>Amazon Web Services General Reference Guide</i>.</p>
-    pub fn tags(&self) -> std::option::Option<& [crate::types::Tag]> {
+    pub fn tags(&self) -> std::option::Option<&[crate::types::Tag]> {
         self.tags.as_deref()
     }
 }
@@ -47,7 +50,8 @@ impl CreateProjectInput {
 pub struct CreateProjectInputBuilder {
     pub(crate) project_name: std::option::Option<std::string::String>,
     pub(crate) project_description: std::option::Option<std::string::String>,
-    pub(crate) service_catalog_provisioning_details: std::option::Option<crate::types::ServiceCatalogProvisioningDetails>,
+    pub(crate) service_catalog_provisioning_details:
+        std::option::Option<crate::types::ServiceCatalogProvisioningDetails>,
     pub(crate) tags: std::option::Option<std::vec::Vec<crate::types::Tag>>,
 }
 impl CreateProjectInputBuilder {
@@ -58,7 +62,8 @@ impl CreateProjectInputBuilder {
     }
     /// <p>The name of the project.</p>
     pub fn set_project_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.project_name = input; self
+        self.project_name = input;
+        self
     }
     /// <p>A description for the project.</p>
     pub fn project_description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -66,17 +71,28 @@ impl CreateProjectInputBuilder {
         self
     }
     /// <p>A description for the project.</p>
-    pub fn set_project_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.project_description = input; self
+    pub fn set_project_description(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.project_description = input;
+        self
     }
     /// <p>The product ID and provisioning artifact ID to provision a service catalog. The provisioning artifact ID will default to the latest provisioning artifact ID of the product, if you don't provide the provisioning artifact ID. For more information, see <a href="https://docs.aws.amazon.com/servicecatalog/latest/adminguide/introduction.html">What is Amazon Web Services Service Catalog</a>.</p>
-    pub fn service_catalog_provisioning_details(mut self, input: crate::types::ServiceCatalogProvisioningDetails) -> Self {
+    pub fn service_catalog_provisioning_details(
+        mut self,
+        input: crate::types::ServiceCatalogProvisioningDetails,
+    ) -> Self {
         self.service_catalog_provisioning_details = Some(input);
         self
     }
     /// <p>The product ID and provisioning artifact ID to provision a service catalog. The provisioning artifact ID will default to the latest provisioning artifact ID of the product, if you don't provide the provisioning artifact ID. For more information, see <a href="https://docs.aws.amazon.com/servicecatalog/latest/adminguide/introduction.html">What is Amazon Web Services Service Catalog</a>.</p>
-    pub fn set_service_catalog_provisioning_details(mut self, input: std::option::Option<crate::types::ServiceCatalogProvisioningDetails>) -> Self {
-        self.service_catalog_provisioning_details = input; self
+    pub fn set_service_catalog_provisioning_details(
+        mut self,
+        input: std::option::Option<crate::types::ServiceCatalogProvisioningDetails>,
+    ) -> Self {
+        self.service_catalog_provisioning_details = input;
+        self
     }
     /// Appends an item to `tags`.
     ///
@@ -85,28 +101,30 @@ impl CreateProjectInputBuilder {
     /// <p>An array of key-value pairs that you want to use to organize and track your Amazon Web Services resource costs. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services resources</a> in the <i>Amazon Web Services General Reference Guide</i>.</p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
-                        v.push(input);
-                        self.tags = Some(v);
-                        self
+        v.push(input);
+        self.tags = Some(v);
+        self
     }
     /// <p>An array of key-value pairs that you want to use to organize and track your Amazon Web Services resource costs. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services resources</a> in the <i>Amazon Web Services General Reference Guide</i>.</p>
-    pub fn set_tags(mut self, input: std::option::Option<std::vec::Vec<crate::types::Tag>>) -> Self {
-        self.tags = input; self
+    pub fn set_tags(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::Tag>>,
+    ) -> Self {
+        self.tags = input;
+        self
     }
     /// Consumes the builder and constructs a [`CreateProjectInput`](crate::operation::create_project::CreateProjectInput).
-    pub fn build(self) -> Result<crate::operation::create_project::CreateProjectInput, aws_smithy_http::operation::error::BuildError> {
-        Ok(
-            crate::operation::create_project::CreateProjectInput {
-                project_name: self.project_name
-                ,
-                project_description: self.project_description
-                ,
-                service_catalog_provisioning_details: self.service_catalog_provisioning_details
-                ,
-                tags: self.tags
-                ,
-            }
-        )
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::create_project::CreateProjectInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        Ok(crate::operation::create_project::CreateProjectInput {
+            project_name: self.project_name,
+            project_description: self.project_description,
+            service_catalog_provisioning_details: self.service_catalog_provisioning_details,
+            tags: self.tags,
+        })
     }
 }
-

@@ -3,7 +3,7 @@
 /// <p>Returns details about a core network edge.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CoreNetworkSegmentEdgeIdentifier  {
+pub struct CoreNetworkSegmentEdgeIdentifier {
     /// <p>The ID of a core network.</p>
     #[doc(hidden)]
     pub core_network_id: std::option::Option<std::string::String>,
@@ -16,15 +16,15 @@ pub struct CoreNetworkSegmentEdgeIdentifier  {
 }
 impl CoreNetworkSegmentEdgeIdentifier {
     /// <p>The ID of a core network.</p>
-    pub fn core_network_id(&self) -> std::option::Option<& str> {
+    pub fn core_network_id(&self) -> std::option::Option<&str> {
         self.core_network_id.as_deref()
     }
     /// <p>The name of the segment edge.</p>
-    pub fn segment_name(&self) -> std::option::Option<& str> {
+    pub fn segment_name(&self) -> std::option::Option<&str> {
         self.segment_name.as_deref()
     }
     /// <p>The Region where the segment edge is located.</p>
-    pub fn edge_location(&self) -> std::option::Option<& str> {
+    pub fn edge_location(&self) -> std::option::Option<&str> {
         self.edge_location.as_deref()
     }
 }
@@ -51,7 +51,8 @@ impl CoreNetworkSegmentEdgeIdentifierBuilder {
     }
     /// <p>The ID of a core network.</p>
     pub fn set_core_network_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.core_network_id = input; self
+        self.core_network_id = input;
+        self
     }
     /// <p>The name of the segment edge.</p>
     pub fn segment_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -60,7 +61,8 @@ impl CoreNetworkSegmentEdgeIdentifierBuilder {
     }
     /// <p>The name of the segment edge.</p>
     pub fn set_segment_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.segment_name = input; self
+        self.segment_name = input;
+        self
     }
     /// <p>The Region where the segment edge is located.</p>
     pub fn edge_location(mut self, input: impl Into<std::string::String>) -> Self {
@@ -69,18 +71,15 @@ impl CoreNetworkSegmentEdgeIdentifierBuilder {
     }
     /// <p>The Region where the segment edge is located.</p>
     pub fn set_edge_location(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.edge_location = input; self
+        self.edge_location = input;
+        self
     }
     /// Consumes the builder and constructs a [`CoreNetworkSegmentEdgeIdentifier`](crate::types::CoreNetworkSegmentEdgeIdentifier).
     pub fn build(self) -> crate::types::CoreNetworkSegmentEdgeIdentifier {
         crate::types::CoreNetworkSegmentEdgeIdentifier {
-            core_network_id: self.core_network_id
-            ,
-            segment_name: self.segment_name
-            ,
-            edge_location: self.edge_location
-            ,
+            core_network_id: self.core_network_id,
+            segment_name: self.segment_name,
+            edge_location: self.edge_location,
         }
     }
 }
-

@@ -3,7 +3,7 @@
 /// <p>Specifies the minimum and maximum for the <code>BaselineEbsBandwidthMbps</code> object when you specify <code>InstanceRequirements</code> for an Auto Scaling group.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct BaselineEbsBandwidthMbpsRequest  {
+pub struct BaselineEbsBandwidthMbpsRequest {
     /// <p>The minimum value in Mbps.</p>
     #[doc(hidden)]
     pub min: std::option::Option<i32>,
@@ -43,7 +43,8 @@ impl BaselineEbsBandwidthMbpsRequestBuilder {
     }
     /// <p>The minimum value in Mbps.</p>
     pub fn set_min(mut self, input: std::option::Option<i32>) -> Self {
-        self.min = input; self
+        self.min = input;
+        self
     }
     /// <p>The maximum value in Mbps.</p>
     pub fn max(mut self, input: i32) -> Self {
@@ -52,16 +53,14 @@ impl BaselineEbsBandwidthMbpsRequestBuilder {
     }
     /// <p>The maximum value in Mbps.</p>
     pub fn set_max(mut self, input: std::option::Option<i32>) -> Self {
-        self.max = input; self
+        self.max = input;
+        self
     }
     /// Consumes the builder and constructs a [`BaselineEbsBandwidthMbpsRequest`](crate::types::BaselineEbsBandwidthMbpsRequest).
     pub fn build(self) -> crate::types::BaselineEbsBandwidthMbpsRequest {
         crate::types::BaselineEbsBandwidthMbpsRequest {
-            min: self.min
-            ,
-            max: self.max
-            ,
+            min: self.min,
+            max: self.max,
         }
     }
 }
-

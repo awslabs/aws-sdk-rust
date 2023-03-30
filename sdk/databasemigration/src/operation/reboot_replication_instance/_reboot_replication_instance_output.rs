@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct RebootReplicationInstanceOutput  {
+pub struct RebootReplicationInstanceOutput {
     /// <p>The replication instance that is being rebooted. </p>
     #[doc(hidden)]
     pub replication_instance: std::option::Option<crate::types::ReplicationInstance>,
@@ -10,18 +10,18 @@ pub struct RebootReplicationInstanceOutput  {
 }
 impl RebootReplicationInstanceOutput {
     /// <p>The replication instance that is being rebooted. </p>
-    pub fn replication_instance(&self) -> std::option::Option<& crate::types::ReplicationInstance> {
+    pub fn replication_instance(&self) -> std::option::Option<&crate::types::ReplicationInstance> {
         self.replication_instance.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for RebootReplicationInstanceOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl RebootReplicationInstanceOutput {
     /// Creates a new builder-style object to manufacture [`RebootReplicationInstanceOutput`](crate::operation::reboot_replication_instance::RebootReplicationInstanceOutput).
-    pub fn builder() -> crate::operation::reboot_replication_instance::builders::RebootReplicationInstanceOutputBuilder {
+    pub fn builder() -> crate::operation::reboot_replication_instance::builders::RebootReplicationInstanceOutputBuilder{
         crate::operation::reboot_replication_instance::builders::RebootReplicationInstanceOutputBuilder::default()
     }
 }
@@ -40,25 +40,29 @@ impl RebootReplicationInstanceOutputBuilder {
         self
     }
     /// <p>The replication instance that is being rebooted. </p>
-    pub fn set_replication_instance(mut self, input: std::option::Option<crate::types::ReplicationInstance>) -> Self {
-        self.replication_instance = input; self
+    pub fn set_replication_instance(
+        mut self,
+        input: std::option::Option<crate::types::ReplicationInstance>,
+    ) -> Self {
+        self.replication_instance = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`RebootReplicationInstanceOutput`](crate::operation::reboot_replication_instance::RebootReplicationInstanceOutput).
-    pub fn build(self) -> crate::operation::reboot_replication_instance::RebootReplicationInstanceOutput {
+    pub fn build(
+        self,
+    ) -> crate::operation::reboot_replication_instance::RebootReplicationInstanceOutput {
         crate::operation::reboot_replication_instance::RebootReplicationInstanceOutput {
-            replication_instance: self.replication_instance
-            ,
+            replication_instance: self.replication_instance,
             _request_id: self._request_id,
         }
     }
 }
-

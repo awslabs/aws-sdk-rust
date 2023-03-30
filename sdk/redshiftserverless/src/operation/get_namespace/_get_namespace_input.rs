@@ -2,14 +2,14 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetNamespaceInput  {
+pub struct GetNamespaceInput {
     /// <p>The name of the namespace to retrieve information for.</p>
     #[doc(hidden)]
     pub namespace_name: std::option::Option<std::string::String>,
 }
 impl GetNamespaceInput {
     /// <p>The name of the namespace to retrieve information for.</p>
-    pub fn namespace_name(&self) -> std::option::Option<& str> {
+    pub fn namespace_name(&self) -> std::option::Option<&str> {
         self.namespace_name.as_deref()
     }
 }
@@ -34,16 +34,18 @@ impl GetNamespaceInputBuilder {
     }
     /// <p>The name of the namespace to retrieve information for.</p>
     pub fn set_namespace_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.namespace_name = input; self
+        self.namespace_name = input;
+        self
     }
     /// Consumes the builder and constructs a [`GetNamespaceInput`](crate::operation::get_namespace::GetNamespaceInput).
-    pub fn build(self) -> Result<crate::operation::get_namespace::GetNamespaceInput, aws_smithy_http::operation::error::BuildError> {
-        Ok(
-            crate::operation::get_namespace::GetNamespaceInput {
-                namespace_name: self.namespace_name
-                ,
-            }
-        )
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::get_namespace::GetNamespaceInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        Ok(crate::operation::get_namespace::GetNamespaceInput {
+            namespace_name: self.namespace_name,
+        })
     }
 }
-

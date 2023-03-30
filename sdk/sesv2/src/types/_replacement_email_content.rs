@@ -3,14 +3,14 @@
 /// <p>The <code>ReplaceEmailContent</code> object to be used for a specific <code>BulkEmailEntry</code>. The <code>ReplacementTemplate</code> can be specified within this object.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ReplacementEmailContent  {
+pub struct ReplacementEmailContent {
     /// <p>The <code>ReplacementTemplate</code> associated with <code>ReplacementEmailContent</code>.</p>
     #[doc(hidden)]
     pub replacement_template: std::option::Option<crate::types::ReplacementTemplate>,
 }
 impl ReplacementEmailContent {
     /// <p>The <code>ReplacementTemplate</code> associated with <code>ReplacementEmailContent</code>.</p>
-    pub fn replacement_template(&self) -> std::option::Option<& crate::types::ReplacementTemplate> {
+    pub fn replacement_template(&self) -> std::option::Option<&crate::types::ReplacementTemplate> {
         self.replacement_template.as_ref()
     }
 }
@@ -34,15 +34,17 @@ impl ReplacementEmailContentBuilder {
         self
     }
     /// <p>The <code>ReplacementTemplate</code> associated with <code>ReplacementEmailContent</code>.</p>
-    pub fn set_replacement_template(mut self, input: std::option::Option<crate::types::ReplacementTemplate>) -> Self {
-        self.replacement_template = input; self
+    pub fn set_replacement_template(
+        mut self,
+        input: std::option::Option<crate::types::ReplacementTemplate>,
+    ) -> Self {
+        self.replacement_template = input;
+        self
     }
     /// Consumes the builder and constructs a [`ReplacementEmailContent`](crate::types::ReplacementEmailContent).
     pub fn build(self) -> crate::types::ReplacementEmailContent {
         crate::types::ReplacementEmailContent {
-            replacement_template: self.replacement_template
-            ,
+            replacement_template: self.replacement_template,
         }
     }
 }
-

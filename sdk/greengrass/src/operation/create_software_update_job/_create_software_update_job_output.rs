@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateSoftwareUpdateJobOutput  {
+pub struct CreateSoftwareUpdateJobOutput {
     /// The IoT Job ARN corresponding to this update.
     #[doc(hidden)]
     pub iot_job_arn: std::option::Option<std::string::String>,
@@ -16,26 +16,28 @@ pub struct CreateSoftwareUpdateJobOutput  {
 }
 impl CreateSoftwareUpdateJobOutput {
     /// The IoT Job ARN corresponding to this update.
-    pub fn iot_job_arn(&self) -> std::option::Option<& str> {
+    pub fn iot_job_arn(&self) -> std::option::Option<&str> {
         self.iot_job_arn.as_deref()
     }
     /// The IoT Job Id corresponding to this update.
-    pub fn iot_job_id(&self) -> std::option::Option<& str> {
+    pub fn iot_job_id(&self) -> std::option::Option<&str> {
         self.iot_job_id.as_deref()
     }
     /// The software version installed on the device or devices after the update.
-    pub fn platform_software_version(&self) -> std::option::Option<& str> {
+    pub fn platform_software_version(&self) -> std::option::Option<&str> {
         self.platform_software_version.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for CreateSoftwareUpdateJobOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl CreateSoftwareUpdateJobOutput {
     /// Creates a new builder-style object to manufacture [`CreateSoftwareUpdateJobOutput`](crate::operation::create_software_update_job::CreateSoftwareUpdateJobOutput).
-    pub fn builder() -> crate::operation::create_software_update_job::builders::CreateSoftwareUpdateJobOutputBuilder {
+    pub fn builder(
+    ) -> crate::operation::create_software_update_job::builders::CreateSoftwareUpdateJobOutputBuilder
+    {
         crate::operation::create_software_update_job::builders::CreateSoftwareUpdateJobOutputBuilder::default()
     }
 }
@@ -57,7 +59,8 @@ impl CreateSoftwareUpdateJobOutputBuilder {
     }
     /// The IoT Job ARN corresponding to this update.
     pub fn set_iot_job_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.iot_job_arn = input; self
+        self.iot_job_arn = input;
+        self
     }
     /// The IoT Job Id corresponding to this update.
     pub fn iot_job_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -66,7 +69,8 @@ impl CreateSoftwareUpdateJobOutputBuilder {
     }
     /// The IoT Job Id corresponding to this update.
     pub fn set_iot_job_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.iot_job_id = input; self
+        self.iot_job_id = input;
+        self
     }
     /// The software version installed on the device or devices after the update.
     pub fn platform_software_version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -74,29 +78,31 @@ impl CreateSoftwareUpdateJobOutputBuilder {
         self
     }
     /// The software version installed on the device or devices after the update.
-    pub fn set_platform_software_version(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.platform_software_version = input; self
+    pub fn set_platform_software_version(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.platform_software_version = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`CreateSoftwareUpdateJobOutput`](crate::operation::create_software_update_job::CreateSoftwareUpdateJobOutput).
-    pub fn build(self) -> crate::operation::create_software_update_job::CreateSoftwareUpdateJobOutput {
+    pub fn build(
+        self,
+    ) -> crate::operation::create_software_update_job::CreateSoftwareUpdateJobOutput {
         crate::operation::create_software_update_job::CreateSoftwareUpdateJobOutput {
-            iot_job_arn: self.iot_job_arn
-            ,
-            iot_job_id: self.iot_job_id
-            ,
-            platform_software_version: self.platform_software_version
-            ,
+            iot_job_arn: self.iot_job_arn,
+            iot_job_id: self.iot_job_id,
+            platform_software_version: self.platform_software_version,
             _request_id: self._request_id,
         }
     }
 }
-

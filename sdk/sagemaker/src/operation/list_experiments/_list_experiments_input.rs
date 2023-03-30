@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListExperimentsInput  {
+pub struct ListExperimentsInput {
     /// <p>A filter that returns only experiments created after the specified time.</p>
     #[doc(hidden)]
     pub created_after: std::option::Option<aws_smithy_types::DateTime>,
@@ -24,23 +24,23 @@ pub struct ListExperimentsInput  {
 }
 impl ListExperimentsInput {
     /// <p>A filter that returns only experiments created after the specified time.</p>
-    pub fn created_after(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
+    pub fn created_after(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created_after.as_ref()
     }
     /// <p>A filter that returns only experiments created before the specified time.</p>
-    pub fn created_before(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
+    pub fn created_before(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created_before.as_ref()
     }
     /// <p>The property used to sort results. The default value is <code>CreationTime</code>.</p>
-    pub fn sort_by(&self) -> std::option::Option<& crate::types::SortExperimentsBy> {
+    pub fn sort_by(&self) -> std::option::Option<&crate::types::SortExperimentsBy> {
         self.sort_by.as_ref()
     }
     /// <p>The sort order. The default value is <code>Descending</code>.</p>
-    pub fn sort_order(&self) -> std::option::Option<& crate::types::SortOrder> {
+    pub fn sort_order(&self) -> std::option::Option<&crate::types::SortOrder> {
         self.sort_order.as_ref()
     }
     /// <p>If the previous call to <code>ListExperiments</code> didn't return the full set of experiments, the call returns a token for getting the next set of experiments.</p>
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
     /// <p>The maximum number of experiments to return in the response. The default value is 10.</p>
@@ -73,8 +73,12 @@ impl ListExperimentsInputBuilder {
         self
     }
     /// <p>A filter that returns only experiments created after the specified time.</p>
-    pub fn set_created_after(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.created_after = input; self
+    pub fn set_created_after(
+        mut self,
+        input: std::option::Option<aws_smithy_types::DateTime>,
+    ) -> Self {
+        self.created_after = input;
+        self
     }
     /// <p>A filter that returns only experiments created before the specified time.</p>
     pub fn created_before(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -82,8 +86,12 @@ impl ListExperimentsInputBuilder {
         self
     }
     /// <p>A filter that returns only experiments created before the specified time.</p>
-    pub fn set_created_before(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.created_before = input; self
+    pub fn set_created_before(
+        mut self,
+        input: std::option::Option<aws_smithy_types::DateTime>,
+    ) -> Self {
+        self.created_before = input;
+        self
     }
     /// <p>The property used to sort results. The default value is <code>CreationTime</code>.</p>
     pub fn sort_by(mut self, input: crate::types::SortExperimentsBy) -> Self {
@@ -91,8 +99,12 @@ impl ListExperimentsInputBuilder {
         self
     }
     /// <p>The property used to sort results. The default value is <code>CreationTime</code>.</p>
-    pub fn set_sort_by(mut self, input: std::option::Option<crate::types::SortExperimentsBy>) -> Self {
-        self.sort_by = input; self
+    pub fn set_sort_by(
+        mut self,
+        input: std::option::Option<crate::types::SortExperimentsBy>,
+    ) -> Self {
+        self.sort_by = input;
+        self
     }
     /// <p>The sort order. The default value is <code>Descending</code>.</p>
     pub fn sort_order(mut self, input: crate::types::SortOrder) -> Self {
@@ -101,7 +113,8 @@ impl ListExperimentsInputBuilder {
     }
     /// <p>The sort order. The default value is <code>Descending</code>.</p>
     pub fn set_sort_order(mut self, input: std::option::Option<crate::types::SortOrder>) -> Self {
-        self.sort_order = input; self
+        self.sort_order = input;
+        self
     }
     /// <p>If the previous call to <code>ListExperiments</code> didn't return the full set of experiments, the call returns a token for getting the next set of experiments.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -110,7 +123,8 @@ impl ListExperimentsInputBuilder {
     }
     /// <p>If the previous call to <code>ListExperiments</code> didn't return the full set of experiments, the call returns a token for getting the next set of experiments.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input; self
+        self.next_token = input;
+        self
     }
     /// <p>The maximum number of experiments to return in the response. The default value is 10.</p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -119,26 +133,23 @@ impl ListExperimentsInputBuilder {
     }
     /// <p>The maximum number of experiments to return in the response. The default value is 10.</p>
     pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_results = input; self
+        self.max_results = input;
+        self
     }
     /// Consumes the builder and constructs a [`ListExperimentsInput`](crate::operation::list_experiments::ListExperimentsInput).
-    pub fn build(self) -> Result<crate::operation::list_experiments::ListExperimentsInput, aws_smithy_http::operation::error::BuildError> {
-        Ok(
-            crate::operation::list_experiments::ListExperimentsInput {
-                created_after: self.created_after
-                ,
-                created_before: self.created_before
-                ,
-                sort_by: self.sort_by
-                ,
-                sort_order: self.sort_order
-                ,
-                next_token: self.next_token
-                ,
-                max_results: self.max_results
-                ,
-            }
-        )
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::list_experiments::ListExperimentsInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        Ok(crate::operation::list_experiments::ListExperimentsInput {
+            created_after: self.created_after,
+            created_before: self.created_before,
+            sort_by: self.sort_by,
+            sort_order: self.sort_order,
+            next_token: self.next_token,
+            max_results: self.max_results,
+        })
     }
 }
-

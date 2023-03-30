@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-/// 
+///
 /// Here is an example of how you can make a match expression forward-compatible:
-/// 
+///
 /// ```text
 /// # let documentreadfeaturetypes = unimplemented!();
 /// match documentreadfeaturetypes {
@@ -30,12 +30,12 @@
 /// Specifically, when `documentreadfeaturetypes` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `DocumentReadFeatureTypes::NewFeature` also yielding `"NewFeature"`.
-/// 
+///
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
-/// <p>Specifies the type of Amazon Textract features to apply. If you chose <code>TEXTRACT_ANALYZE_DOCUMENT</code> 
+/// <p>Specifies the type of Amazon Textract features to apply. If you chose <code>TEXTRACT_ANALYZE_DOCUMENT</code>
 /// as the read action, you must specify one or both of the following values:</p>
 /// <ul>
 /// <li>
@@ -48,48 +48,57 @@
 /// </li>
 /// </ul>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
 pub enum DocumentReadFeatureTypes {
     #[allow(missing_docs)] // documentation missing in model
     Forms,
     #[allow(missing_docs)] // documentation missing in model
     Tables,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::primitives::UnknownVariantValue)
+    Unknown(crate::primitives::UnknownVariantValue),
 }
 impl std::convert::From<&str> for DocumentReadFeatureTypes {
-                fn from(s: &str) -> Self {
-                    match s {
-                        "FORMS" => DocumentReadFeatureTypes::Forms,
-"TABLES" => DocumentReadFeatureTypes::Tables,
-other => DocumentReadFeatureTypes::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
-                    }
-                }
-            }
-impl std::str::FromStr for DocumentReadFeatureTypes {
-                type Err = std::convert::Infallible;
-
-                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-                    Ok(DocumentReadFeatureTypes::from(s))
-                }
-            }
-impl DocumentReadFeatureTypes {
-                /// Returns the `&str` value of the enum member.
-                pub fn as_str(&self) -> &str {
-                    match self {
-    DocumentReadFeatureTypes::Forms => "FORMS",
-    DocumentReadFeatureTypes::Tables => "TABLES",
-    DocumentReadFeatureTypes::Unknown(value) => value.as_str()
+    fn from(s: &str) -> Self {
+        match s {
+            "FORMS" => DocumentReadFeatureTypes::Forms,
+            "TABLES" => DocumentReadFeatureTypes::Tables,
+            other => DocumentReadFeatureTypes::Unknown(crate::primitives::UnknownVariantValue(
+                other.to_owned(),
+            )),
+        }
+    }
 }
-                }
-                /// Returns all the `&str` representations of the enum members.
-                pub const fn values() -> &'static [&'static str] {
-                    &["FORMS", "TABLES"]
-                }
-            }
-impl AsRef<str> for DocumentReadFeatureTypes {
-                fn as_ref(&self) -> &str {
-                    self.as_str()
-                }
-            }
+impl std::str::FromStr for DocumentReadFeatureTypes {
+    type Err = std::convert::Infallible;
 
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(DocumentReadFeatureTypes::from(s))
+    }
+}
+impl DocumentReadFeatureTypes {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            DocumentReadFeatureTypes::Forms => "FORMS",
+            DocumentReadFeatureTypes::Tables => "TABLES",
+            DocumentReadFeatureTypes::Unknown(value) => value.as_str(),
+        }
+    }
+    /// Returns all the `&str` representations of the enum members.
+    pub const fn values() -> &'static [&'static str] {
+        &["FORMS", "TABLES"]
+    }
+}
+impl AsRef<str> for DocumentReadFeatureTypes {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}

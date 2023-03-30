@@ -2,14 +2,14 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct StartFlowInput  {
+pub struct StartFlowInput {
     /// The ARN of the flow that you want to start.
     #[doc(hidden)]
     pub flow_arn: std::option::Option<std::string::String>,
 }
 impl StartFlowInput {
     /// The ARN of the flow that you want to start.
-    pub fn flow_arn(&self) -> std::option::Option<& str> {
+    pub fn flow_arn(&self) -> std::option::Option<&str> {
         self.flow_arn.as_deref()
     }
 }
@@ -34,16 +34,18 @@ impl StartFlowInputBuilder {
     }
     /// The ARN of the flow that you want to start.
     pub fn set_flow_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.flow_arn = input; self
+        self.flow_arn = input;
+        self
     }
     /// Consumes the builder and constructs a [`StartFlowInput`](crate::operation::start_flow::StartFlowInput).
-    pub fn build(self) -> Result<crate::operation::start_flow::StartFlowInput, aws_smithy_http::operation::error::BuildError> {
-        Ok(
-            crate::operation::start_flow::StartFlowInput {
-                flow_arn: self.flow_arn
-                ,
-            }
-        )
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::start_flow::StartFlowInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        Ok(crate::operation::start_flow::StartFlowInput {
+            flow_arn: self.flow_arn,
+        })
     }
 }
-

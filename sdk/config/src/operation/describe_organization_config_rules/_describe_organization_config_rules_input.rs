@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeOrganizationConfigRulesInput  {
+pub struct DescribeOrganizationConfigRulesInput {
     /// <p>The names of organization Config rules for which you want details. If you do not specify any names, Config returns details for all your organization Config rules.</p>
     #[doc(hidden)]
     pub organization_config_rule_names: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -15,7 +15,7 @@ pub struct DescribeOrganizationConfigRulesInput  {
 }
 impl DescribeOrganizationConfigRulesInput {
     /// <p>The names of organization Config rules for which you want details. If you do not specify any names, Config returns details for all your organization Config rules.</p>
-    pub fn organization_config_rule_names(&self) -> std::option::Option<& [std::string::String]> {
+    pub fn organization_config_rule_names(&self) -> std::option::Option<&[std::string::String]> {
         self.organization_config_rule_names.as_deref()
     }
     /// <p>The maximum number of organization Config rules returned on each page. If you do no specify a number, Config uses the default. The default is 100.</p>
@@ -23,13 +23,13 @@ impl DescribeOrganizationConfigRulesInput {
         self.limit
     }
     /// <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response. </p>
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
 }
 impl DescribeOrganizationConfigRulesInput {
     /// Creates a new builder-style object to manufacture [`DescribeOrganizationConfigRulesInput`](crate::operation::describe_organization_config_rules::DescribeOrganizationConfigRulesInput).
-    pub fn builder() -> crate::operation::describe_organization_config_rules::builders::DescribeOrganizationConfigRulesInputBuilder {
+    pub fn builder() -> crate::operation::describe_organization_config_rules::builders::DescribeOrganizationConfigRulesInputBuilder{
         crate::operation::describe_organization_config_rules::builders::DescribeOrganizationConfigRulesInputBuilder::default()
     }
 }
@@ -38,7 +38,8 @@ impl DescribeOrganizationConfigRulesInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct DescribeOrganizationConfigRulesInputBuilder {
-    pub(crate) organization_config_rule_names: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub(crate) organization_config_rule_names:
+        std::option::Option<std::vec::Vec<std::string::String>>,
     pub(crate) limit: std::option::Option<i32>,
     pub(crate) next_token: std::option::Option<std::string::String>,
 }
@@ -50,13 +51,17 @@ impl DescribeOrganizationConfigRulesInputBuilder {
     /// <p>The names of organization Config rules for which you want details. If you do not specify any names, Config returns details for all your organization Config rules.</p>
     pub fn organization_config_rule_names(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.organization_config_rule_names.unwrap_or_default();
-                        v.push(input.into());
-                        self.organization_config_rule_names = Some(v);
-                        self
+        v.push(input.into());
+        self.organization_config_rule_names = Some(v);
+        self
     }
     /// <p>The names of organization Config rules for which you want details. If you do not specify any names, Config returns details for all your organization Config rules.</p>
-    pub fn set_organization_config_rule_names(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-        self.organization_config_rule_names = input; self
+    pub fn set_organization_config_rule_names(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
+        self.organization_config_rule_names = input;
+        self
     }
     /// <p>The maximum number of organization Config rules returned on each page. If you do no specify a number, Config uses the default. The default is 100.</p>
     pub fn limit(mut self, input: i32) -> Self {
@@ -65,7 +70,8 @@ impl DescribeOrganizationConfigRulesInputBuilder {
     }
     /// <p>The maximum number of organization Config rules returned on each page. If you do no specify a number, Config uses the default. The default is 100.</p>
     pub fn set_limit(mut self, input: std::option::Option<i32>) -> Self {
-        self.limit = input; self
+        self.limit = input;
+        self
     }
     /// <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response. </p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -74,10 +80,16 @@ impl DescribeOrganizationConfigRulesInputBuilder {
     }
     /// <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response. </p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input; self
+        self.next_token = input;
+        self
     }
     /// Consumes the builder and constructs a [`DescribeOrganizationConfigRulesInput`](crate::operation::describe_organization_config_rules::DescribeOrganizationConfigRulesInput).
-    pub fn build(self) -> Result<crate::operation::describe_organization_config_rules::DescribeOrganizationConfigRulesInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::describe_organization_config_rules::DescribeOrganizationConfigRulesInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::describe_organization_config_rules::DescribeOrganizationConfigRulesInput {
                 organization_config_rule_names: self.organization_config_rule_names
@@ -91,4 +103,3 @@ impl DescribeOrganizationConfigRulesInputBuilder {
         )
     }
 }
-

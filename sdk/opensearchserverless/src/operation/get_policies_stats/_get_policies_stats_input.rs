@@ -2,11 +2,11 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetPoliciesStatsInput  {
-}
+pub struct GetPoliciesStatsInput {}
 impl GetPoliciesStatsInput {
     /// Creates a new builder-style object to manufacture [`GetPoliciesStatsInput`](crate::operation::get_policies_stats::GetPoliciesStatsInput).
-    pub fn builder() -> crate::operation::get_policies_stats::builders::GetPoliciesStatsInputBuilder {
+    pub fn builder() -> crate::operation::get_policies_stats::builders::GetPoliciesStatsInputBuilder
+    {
         crate::operation::get_policies_stats::builders::GetPoliciesStatsInputBuilder::default()
     }
 }
@@ -14,15 +14,15 @@ impl GetPoliciesStatsInput {
 /// A builder for [`GetPoliciesStatsInput`](crate::operation::get_policies_stats::GetPoliciesStatsInput).
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-pub struct GetPoliciesStatsInputBuilder {
-}
+pub struct GetPoliciesStatsInputBuilder {}
 impl GetPoliciesStatsInputBuilder {
     /// Consumes the builder and constructs a [`GetPoliciesStatsInput`](crate::operation::get_policies_stats::GetPoliciesStatsInput).
-    pub fn build(self) -> Result<crate::operation::get_policies_stats::GetPoliciesStatsInput, aws_smithy_http::operation::error::BuildError> {
-        Ok(
-            crate::operation::get_policies_stats::GetPoliciesStatsInput {
-            }
-        )
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::get_policies_stats::GetPoliciesStatsInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        Ok(crate::operation::get_policies_stats::GetPoliciesStatsInput {})
     }
 }
-

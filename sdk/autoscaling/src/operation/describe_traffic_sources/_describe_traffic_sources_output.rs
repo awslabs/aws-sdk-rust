@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeTrafficSourcesOutput  {
+pub struct DescribeTrafficSourcesOutput {
     /// <p>Information about the traffic sources.</p>
     #[doc(hidden)]
     pub traffic_sources: std::option::Option<std::vec::Vec<crate::types::TrafficSourceState>>,
@@ -13,22 +13,24 @@ pub struct DescribeTrafficSourcesOutput  {
 }
 impl DescribeTrafficSourcesOutput {
     /// <p>Information about the traffic sources.</p>
-    pub fn traffic_sources(&self) -> std::option::Option<& [crate::types::TrafficSourceState]> {
+    pub fn traffic_sources(&self) -> std::option::Option<&[crate::types::TrafficSourceState]> {
         self.traffic_sources.as_deref()
     }
     /// <p>This string indicates that the response contains more items than can be returned in a single response. To receive additional items, specify this string for the <code>NextToken</code> value when requesting the next set of items. This value is null when there are no more items to return.</p>
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for DescribeTrafficSourcesOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl DescribeTrafficSourcesOutput {
     /// Creates a new builder-style object to manufacture [`DescribeTrafficSourcesOutput`](crate::operation::describe_traffic_sources::DescribeTrafficSourcesOutput).
-    pub fn builder() -> crate::operation::describe_traffic_sources::builders::DescribeTrafficSourcesOutputBuilder {
+    pub fn builder(
+    ) -> crate::operation::describe_traffic_sources::builders::DescribeTrafficSourcesOutputBuilder
+    {
         crate::operation::describe_traffic_sources::builders::DescribeTrafficSourcesOutputBuilder::default()
     }
 }
@@ -37,7 +39,8 @@ impl DescribeTrafficSourcesOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct DescribeTrafficSourcesOutputBuilder {
-    pub(crate) traffic_sources: std::option::Option<std::vec::Vec<crate::types::TrafficSourceState>>,
+    pub(crate) traffic_sources:
+        std::option::Option<std::vec::Vec<crate::types::TrafficSourceState>>,
     pub(crate) next_token: std::option::Option<std::string::String>,
     _request_id: Option<String>,
 }
@@ -49,13 +52,17 @@ impl DescribeTrafficSourcesOutputBuilder {
     /// <p>Information about the traffic sources.</p>
     pub fn traffic_sources(mut self, input: crate::types::TrafficSourceState) -> Self {
         let mut v = self.traffic_sources.unwrap_or_default();
-                        v.push(input);
-                        self.traffic_sources = Some(v);
-                        self
+        v.push(input);
+        self.traffic_sources = Some(v);
+        self
     }
     /// <p>Information about the traffic sources.</p>
-    pub fn set_traffic_sources(mut self, input: std::option::Option<std::vec::Vec<crate::types::TrafficSourceState>>) -> Self {
-        self.traffic_sources = input; self
+    pub fn set_traffic_sources(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::TrafficSourceState>>,
+    ) -> Self {
+        self.traffic_sources = input;
+        self
     }
     /// <p>This string indicates that the response contains more items than can be returned in a single response. To receive additional items, specify this string for the <code>NextToken</code> value when requesting the next set of items. This value is null when there are no more items to return.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -64,26 +71,24 @@ impl DescribeTrafficSourcesOutputBuilder {
     }
     /// <p>This string indicates that the response contains more items than can be returned in a single response. To receive additional items, specify this string for the <code>NextToken</code> value when requesting the next set of items. This value is null when there are no more items to return.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input; self
+        self.next_token = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`DescribeTrafficSourcesOutput`](crate::operation::describe_traffic_sources::DescribeTrafficSourcesOutput).
     pub fn build(self) -> crate::operation::describe_traffic_sources::DescribeTrafficSourcesOutput {
         crate::operation::describe_traffic_sources::DescribeTrafficSourcesOutput {
-            traffic_sources: self.traffic_sources
-            ,
-            next_token: self.next_token
-            ,
+            traffic_sources: self.traffic_sources,
+            next_token: self.next_token,
             _request_id: self._request_id,
         }
     }
 }
-

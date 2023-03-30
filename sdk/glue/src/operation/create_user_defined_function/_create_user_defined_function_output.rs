@@ -2,17 +2,17 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateUserDefinedFunctionOutput  {
+pub struct CreateUserDefinedFunctionOutput {
     _request_id: Option<String>,
 }
 impl aws_http::request_id::RequestId for CreateUserDefinedFunctionOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl CreateUserDefinedFunctionOutput {
     /// Creates a new builder-style object to manufacture [`CreateUserDefinedFunctionOutput`](crate::operation::create_user_defined_function::CreateUserDefinedFunctionOutput).
-    pub fn builder() -> crate::operation::create_user_defined_function::builders::CreateUserDefinedFunctionOutputBuilder {
+    pub fn builder() -> crate::operation::create_user_defined_function::builders::CreateUserDefinedFunctionOutputBuilder{
         crate::operation::create_user_defined_function::builders::CreateUserDefinedFunctionOutputBuilder::default()
     }
 }
@@ -25,19 +25,20 @@ pub struct CreateUserDefinedFunctionOutputBuilder {
 }
 impl CreateUserDefinedFunctionOutputBuilder {
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`CreateUserDefinedFunctionOutput`](crate::operation::create_user_defined_function::CreateUserDefinedFunctionOutput).
-    pub fn build(self) -> crate::operation::create_user_defined_function::CreateUserDefinedFunctionOutput {
+    pub fn build(
+        self,
+    ) -> crate::operation::create_user_defined_function::CreateUserDefinedFunctionOutput {
         crate::operation::create_user_defined_function::CreateUserDefinedFunctionOutput {
             _request_id: self._request_id,
         }
     }
 }
-

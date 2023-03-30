@@ -3,7 +3,7 @@
 /// <p>Object to store detailed field information.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetFieldResponse  {
+pub struct GetFieldResponse {
     /// <p>Unique identifier of the field.</p>
     #[doc(hidden)]
     pub field_id: std::option::Option<std::string::String>,
@@ -24,35 +24,41 @@ pub struct GetFieldResponse  {
     pub namespace: std::option::Option<crate::types::FieldNamespace>,
     /// <p>A map of of key-value pairs that represent tags on a resource. Tags are used to organize, track, or control access for this resource.</p>
     #[doc(hidden)]
-    pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::option::Option<std::string::String>>>,
+    pub tags: std::option::Option<
+        std::collections::HashMap<std::string::String, std::option::Option<std::string::String>>,
+    >,
 }
 impl GetFieldResponse {
     /// <p>Unique identifier of the field.</p>
-    pub fn field_id(&self) -> std::option::Option<& str> {
+    pub fn field_id(&self) -> std::option::Option<&str> {
         self.field_id.as_deref()
     }
     /// <p>Name of the field.</p>
-    pub fn name(&self) -> std::option::Option<& str> {
+    pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the field.</p>
-    pub fn field_arn(&self) -> std::option::Option<& str> {
+    pub fn field_arn(&self) -> std::option::Option<&str> {
         self.field_arn.as_deref()
     }
     /// <p>Description of the field.</p>
-    pub fn description(&self) -> std::option::Option<& str> {
+    pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
     /// <p>Type of the field.</p>
-    pub fn r#type(&self) -> std::option::Option<& crate::types::FieldType> {
+    pub fn r#type(&self) -> std::option::Option<&crate::types::FieldType> {
         self.r#type.as_ref()
     }
     /// <p>Namespace of the field.</p>
-    pub fn namespace(&self) -> std::option::Option<& crate::types::FieldNamespace> {
+    pub fn namespace(&self) -> std::option::Option<&crate::types::FieldNamespace> {
         self.namespace.as_ref()
     }
     /// <p>A map of of key-value pairs that represent tags on a resource. Tags are used to organize, track, or control access for this resource.</p>
-    pub fn tags(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::option::Option<std::string::String>>> {
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<
+        &std::collections::HashMap<std::string::String, std::option::Option<std::string::String>>,
+    > {
         self.tags.as_ref()
     }
 }
@@ -73,7 +79,9 @@ pub struct GetFieldResponseBuilder {
     pub(crate) description: std::option::Option<std::string::String>,
     pub(crate) r#type: std::option::Option<crate::types::FieldType>,
     pub(crate) namespace: std::option::Option<crate::types::FieldNamespace>,
-    pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::option::Option<std::string::String>>>,
+    pub(crate) tags: std::option::Option<
+        std::collections::HashMap<std::string::String, std::option::Option<std::string::String>>,
+    >,
 }
 impl GetFieldResponseBuilder {
     /// <p>Unique identifier of the field.</p>
@@ -83,7 +91,8 @@ impl GetFieldResponseBuilder {
     }
     /// <p>Unique identifier of the field.</p>
     pub fn set_field_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.field_id = input; self
+        self.field_id = input;
+        self
     }
     /// <p>Name of the field.</p>
     pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -92,7 +101,8 @@ impl GetFieldResponseBuilder {
     }
     /// <p>Name of the field.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input; self
+        self.name = input;
+        self
     }
     /// <p>The Amazon Resource Name (ARN) of the field.</p>
     pub fn field_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -101,7 +111,8 @@ impl GetFieldResponseBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the field.</p>
     pub fn set_field_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.field_arn = input; self
+        self.field_arn = input;
+        self
     }
     /// <p>Description of the field.</p>
     pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -110,7 +121,8 @@ impl GetFieldResponseBuilder {
     }
     /// <p>Description of the field.</p>
     pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.description = input; self
+        self.description = input;
+        self
     }
     /// <p>Type of the field.</p>
     pub fn r#type(mut self, input: crate::types::FieldType) -> Self {
@@ -119,7 +131,8 @@ impl GetFieldResponseBuilder {
     }
     /// <p>Type of the field.</p>
     pub fn set_type(mut self, input: std::option::Option<crate::types::FieldType>) -> Self {
-        self.r#type = input; self
+        self.r#type = input;
+        self
     }
     /// <p>Namespace of the field.</p>
     pub fn namespace(mut self, input: crate::types::FieldNamespace) -> Self {
@@ -127,42 +140,51 @@ impl GetFieldResponseBuilder {
         self
     }
     /// <p>Namespace of the field.</p>
-    pub fn set_namespace(mut self, input: std::option::Option<crate::types::FieldNamespace>) -> Self {
-        self.namespace = input; self
+    pub fn set_namespace(
+        mut self,
+        input: std::option::Option<crate::types::FieldNamespace>,
+    ) -> Self {
+        self.namespace = input;
+        self
     }
     /// Adds a key-value pair to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// <p>A map of of key-value pairs that represent tags on a resource. Tags are used to organize, track, or control access for this resource.</p>
-    pub fn tags(mut self, k: impl Into<std::string::String>, v: std::option::Option<std::string::String>) -> Self {
+    pub fn tags(
+        mut self,
+        k: impl Into<std::string::String>,
+        v: std::option::Option<std::string::String>,
+    ) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
-                        hash_map.insert(k.into(), v);
-                        self.tags = Some(hash_map);
-                        self
+        hash_map.insert(k.into(), v);
+        self.tags = Some(hash_map);
+        self
     }
     /// <p>A map of of key-value pairs that represent tags on a resource. Tags are used to organize, track, or control access for this resource.</p>
-    pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::option::Option<std::string::String>>>) -> Self {
-        self.tags = input; self
+    pub fn set_tags(
+        mut self,
+        input: std::option::Option<
+            std::collections::HashMap<
+                std::string::String,
+                std::option::Option<std::string::String>,
+            >,
+        >,
+    ) -> Self {
+        self.tags = input;
+        self
     }
     /// Consumes the builder and constructs a [`GetFieldResponse`](crate::types::GetFieldResponse).
     pub fn build(self) -> crate::types::GetFieldResponse {
         crate::types::GetFieldResponse {
-            field_id: self.field_id
-            ,
-            name: self.name
-            ,
-            field_arn: self.field_arn
-            ,
-            description: self.description
-            ,
-            r#type: self.r#type
-            ,
-            namespace: self.namespace
-            ,
-            tags: self.tags
-            ,
+            field_id: self.field_id,
+            name: self.name,
+            field_arn: self.field_arn,
+            description: self.description,
+            r#type: self.r#type,
+            namespace: self.namespace,
+            tags: self.tags,
         }
     }
 }
-

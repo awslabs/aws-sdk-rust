@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetResourcePolicyOutput  {
+pub struct GetResourcePolicyOutput {
     /// <p>Contains the requested policy document, in JSON format.</p>
     #[doc(hidden)]
     pub policy_in_json: std::option::Option<std::string::String>,
@@ -19,30 +19,31 @@ pub struct GetResourcePolicyOutput  {
 }
 impl GetResourcePolicyOutput {
     /// <p>Contains the requested policy document, in JSON format.</p>
-    pub fn policy_in_json(&self) -> std::option::Option<& str> {
+    pub fn policy_in_json(&self) -> std::option::Option<&str> {
         self.policy_in_json.as_deref()
     }
     /// <p>Contains the hash value associated with this policy.</p>
-    pub fn policy_hash(&self) -> std::option::Option<& str> {
+    pub fn policy_hash(&self) -> std::option::Option<&str> {
         self.policy_hash.as_deref()
     }
     /// <p>The date and time at which the policy was created.</p>
-    pub fn create_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
+    pub fn create_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.create_time.as_ref()
     }
     /// <p>The date and time at which the policy was last updated.</p>
-    pub fn update_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
+    pub fn update_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.update_time.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for GetResourcePolicyOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl GetResourcePolicyOutput {
     /// Creates a new builder-style object to manufacture [`GetResourcePolicyOutput`](crate::operation::get_resource_policy::GetResourcePolicyOutput).
-    pub fn builder() -> crate::operation::get_resource_policy::builders::GetResourcePolicyOutputBuilder {
+    pub fn builder(
+    ) -> crate::operation::get_resource_policy::builders::GetResourcePolicyOutputBuilder {
         crate::operation::get_resource_policy::builders::GetResourcePolicyOutputBuilder::default()
     }
 }
@@ -65,7 +66,8 @@ impl GetResourcePolicyOutputBuilder {
     }
     /// <p>Contains the requested policy document, in JSON format.</p>
     pub fn set_policy_in_json(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.policy_in_json = input; self
+        self.policy_in_json = input;
+        self
     }
     /// <p>Contains the hash value associated with this policy.</p>
     pub fn policy_hash(mut self, input: impl Into<std::string::String>) -> Self {
@@ -74,7 +76,8 @@ impl GetResourcePolicyOutputBuilder {
     }
     /// <p>Contains the hash value associated with this policy.</p>
     pub fn set_policy_hash(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.policy_hash = input; self
+        self.policy_hash = input;
+        self
     }
     /// <p>The date and time at which the policy was created.</p>
     pub fn create_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -82,8 +85,12 @@ impl GetResourcePolicyOutputBuilder {
         self
     }
     /// <p>The date and time at which the policy was created.</p>
-    pub fn set_create_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.create_time = input; self
+    pub fn set_create_time(
+        mut self,
+        input: std::option::Option<aws_smithy_types::DateTime>,
+    ) -> Self {
+        self.create_time = input;
+        self
     }
     /// <p>The date and time at which the policy was last updated.</p>
     pub fn update_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -91,31 +98,30 @@ impl GetResourcePolicyOutputBuilder {
         self
     }
     /// <p>The date and time at which the policy was last updated.</p>
-    pub fn set_update_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.update_time = input; self
+    pub fn set_update_time(
+        mut self,
+        input: std::option::Option<aws_smithy_types::DateTime>,
+    ) -> Self {
+        self.update_time = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`GetResourcePolicyOutput`](crate::operation::get_resource_policy::GetResourcePolicyOutput).
     pub fn build(self) -> crate::operation::get_resource_policy::GetResourcePolicyOutput {
         crate::operation::get_resource_policy::GetResourcePolicyOutput {
-            policy_in_json: self.policy_in_json
-            ,
-            policy_hash: self.policy_hash
-            ,
-            create_time: self.create_time
-            ,
-            update_time: self.update_time
-            ,
+            policy_in_json: self.policy_in_json,
+            policy_hash: self.policy_hash,
+            create_time: self.create_time,
+            update_time: self.update_time,
             _request_id: self._request_id,
         }
     }
 }
-

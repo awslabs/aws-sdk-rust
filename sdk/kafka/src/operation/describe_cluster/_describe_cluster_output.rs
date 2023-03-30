@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeClusterOutput  {
+pub struct DescribeClusterOutput {
     /// <p>The cluster information.</p>
     #[doc(hidden)]
     pub cluster_info: std::option::Option<crate::types::ClusterInfo>,
@@ -10,15 +10,15 @@ pub struct DescribeClusterOutput  {
 }
 impl DescribeClusterOutput {
     /// <p>The cluster information.</p>
-    pub fn cluster_info(&self) -> std::option::Option<& crate::types::ClusterInfo> {
+    pub fn cluster_info(&self) -> std::option::Option<&crate::types::ClusterInfo> {
         self.cluster_info.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for DescribeClusterOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl DescribeClusterOutput {
     /// Creates a new builder-style object to manufacture [`DescribeClusterOutput`](crate::operation::describe_cluster::DescribeClusterOutput).
     pub fn builder() -> crate::operation::describe_cluster::builders::DescribeClusterOutputBuilder {
@@ -40,25 +40,27 @@ impl DescribeClusterOutputBuilder {
         self
     }
     /// <p>The cluster information.</p>
-    pub fn set_cluster_info(mut self, input: std::option::Option<crate::types::ClusterInfo>) -> Self {
-        self.cluster_info = input; self
+    pub fn set_cluster_info(
+        mut self,
+        input: std::option::Option<crate::types::ClusterInfo>,
+    ) -> Self {
+        self.cluster_info = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`DescribeClusterOutput`](crate::operation::describe_cluster::DescribeClusterOutput).
     pub fn build(self) -> crate::operation::describe_cluster::DescribeClusterOutput {
         crate::operation::describe_cluster::DescribeClusterOutput {
-            cluster_info: self.cluster_info
-            ,
+            cluster_info: self.cluster_info,
             _request_id: self._request_id,
         }
     }
 }
-

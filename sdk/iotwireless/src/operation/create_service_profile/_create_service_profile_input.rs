@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateServiceProfileInput  {
+pub struct CreateServiceProfileInput {
     /// <p>The name of the new resource.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -18,25 +18,26 @@ pub struct CreateServiceProfileInput  {
 }
 impl CreateServiceProfileInput {
     /// <p>The name of the new resource.</p>
-    pub fn name(&self) -> std::option::Option<& str> {
+    pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>The service profile information to use to create the service profile.</p>
-    pub fn lo_ra_wan(&self) -> std::option::Option<& crate::types::LoRaWanServiceProfile> {
+    pub fn lo_ra_wan(&self) -> std::option::Option<&crate::types::LoRaWanServiceProfile> {
         self.lo_ra_wan.as_ref()
     }
     /// <p>The tags to attach to the new service profile. Tags are metadata that you can use to manage a resource.</p>
-    pub fn tags(&self) -> std::option::Option<& [crate::types::Tag]> {
+    pub fn tags(&self) -> std::option::Option<&[crate::types::Tag]> {
         self.tags.as_deref()
     }
     /// <p>Each resource must have a unique client request token. If you try to create a new resource with the same token as a resource that already exists, an exception occurs. If you omit this value, AWS SDKs will automatically generate a unique client request. </p>
-    pub fn client_request_token(&self) -> std::option::Option<& str> {
+    pub fn client_request_token(&self) -> std::option::Option<&str> {
         self.client_request_token.as_deref()
     }
 }
 impl CreateServiceProfileInput {
     /// Creates a new builder-style object to manufacture [`CreateServiceProfileInput`](crate::operation::create_service_profile::CreateServiceProfileInput).
-    pub fn builder() -> crate::operation::create_service_profile::builders::CreateServiceProfileInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::create_service_profile::builders::CreateServiceProfileInputBuilder {
         crate::operation::create_service_profile::builders::CreateServiceProfileInputBuilder::default()
     }
 }
@@ -58,7 +59,8 @@ impl CreateServiceProfileInputBuilder {
     }
     /// <p>The name of the new resource.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input; self
+        self.name = input;
+        self
     }
     /// <p>The service profile information to use to create the service profile.</p>
     pub fn lo_ra_wan(mut self, input: crate::types::LoRaWanServiceProfile) -> Self {
@@ -66,8 +68,12 @@ impl CreateServiceProfileInputBuilder {
         self
     }
     /// <p>The service profile information to use to create the service profile.</p>
-    pub fn set_lo_ra_wan(mut self, input: std::option::Option<crate::types::LoRaWanServiceProfile>) -> Self {
-        self.lo_ra_wan = input; self
+    pub fn set_lo_ra_wan(
+        mut self,
+        input: std::option::Option<crate::types::LoRaWanServiceProfile>,
+    ) -> Self {
+        self.lo_ra_wan = input;
+        self
     }
     /// Appends an item to `tags`.
     ///
@@ -76,13 +82,17 @@ impl CreateServiceProfileInputBuilder {
     /// <p>The tags to attach to the new service profile. Tags are metadata that you can use to manage a resource.</p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
-                        v.push(input);
-                        self.tags = Some(v);
-                        self
+        v.push(input);
+        self.tags = Some(v);
+        self
     }
     /// <p>The tags to attach to the new service profile. Tags are metadata that you can use to manage a resource.</p>
-    pub fn set_tags(mut self, input: std::option::Option<std::vec::Vec<crate::types::Tag>>) -> Self {
-        self.tags = input; self
+    pub fn set_tags(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::Tag>>,
+    ) -> Self {
+        self.tags = input;
+        self
     }
     /// <p>Each resource must have a unique client request token. If you try to create a new resource with the same token as a resource that already exists, an exception occurs. If you omit this value, AWS SDKs will automatically generate a unique client request. </p>
     pub fn client_request_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -90,23 +100,27 @@ impl CreateServiceProfileInputBuilder {
         self
     }
     /// <p>Each resource must have a unique client request token. If you try to create a new resource with the same token as a resource that already exists, an exception occurs. If you omit this value, AWS SDKs will automatically generate a unique client request. </p>
-    pub fn set_client_request_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.client_request_token = input; self
+    pub fn set_client_request_token(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.client_request_token = input;
+        self
     }
     /// Consumes the builder and constructs a [`CreateServiceProfileInput`](crate::operation::create_service_profile::CreateServiceProfileInput).
-    pub fn build(self) -> Result<crate::operation::create_service_profile::CreateServiceProfileInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::create_service_profile::CreateServiceProfileInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::create_service_profile::CreateServiceProfileInput {
-                name: self.name
-                ,
-                lo_ra_wan: self.lo_ra_wan
-                ,
-                tags: self.tags
-                ,
-                client_request_token: self.client_request_token
-                ,
-            }
+                name: self.name,
+                lo_ra_wan: self.lo_ra_wan,
+                tags: self.tags,
+                client_request_token: self.client_request_token,
+            },
         )
     }
 }
-

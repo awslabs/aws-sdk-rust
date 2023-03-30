@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-/// 
+///
 /// Here is an example of how you can make a match expression forward-compatible:
-/// 
+///
 /// ```text
 /// # let provisioningartifacttype = unimplemented!();
 /// match provisioningartifacttype {
@@ -31,14 +31,22 @@
 /// Specifically, when `provisioningartifacttype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `ProvisioningArtifactType::NewFeature` also yielding `"NewFeature"`.
-/// 
+///
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
 pub enum ProvisioningArtifactType {
     #[allow(missing_docs)] // documentation missing in model
     CloudFormationTemplate,
@@ -47,43 +55,48 @@ pub enum ProvisioningArtifactType {
     #[allow(missing_docs)] // documentation missing in model
     MarketplaceCar,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::primitives::UnknownVariantValue)
+    Unknown(crate::primitives::UnknownVariantValue),
 }
 impl std::convert::From<&str> for ProvisioningArtifactType {
-                fn from(s: &str) -> Self {
-                    match s {
-                        "CLOUD_FORMATION_TEMPLATE" => ProvisioningArtifactType::CloudFormationTemplate,
-"MARKETPLACE_AMI" => ProvisioningArtifactType::MarketplaceAmi,
-"MARKETPLACE_CAR" => ProvisioningArtifactType::MarketplaceCar,
-other => ProvisioningArtifactType::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
-                    }
-                }
-            }
-impl std::str::FromStr for ProvisioningArtifactType {
-                type Err = std::convert::Infallible;
-
-                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-                    Ok(ProvisioningArtifactType::from(s))
-                }
-            }
-impl ProvisioningArtifactType {
-                /// Returns the `&str` value of the enum member.
-                pub fn as_str(&self) -> &str {
-                    match self {
-    ProvisioningArtifactType::CloudFormationTemplate => "CLOUD_FORMATION_TEMPLATE",
-    ProvisioningArtifactType::MarketplaceAmi => "MARKETPLACE_AMI",
-    ProvisioningArtifactType::MarketplaceCar => "MARKETPLACE_CAR",
-    ProvisioningArtifactType::Unknown(value) => value.as_str()
+    fn from(s: &str) -> Self {
+        match s {
+            "CLOUD_FORMATION_TEMPLATE" => ProvisioningArtifactType::CloudFormationTemplate,
+            "MARKETPLACE_AMI" => ProvisioningArtifactType::MarketplaceAmi,
+            "MARKETPLACE_CAR" => ProvisioningArtifactType::MarketplaceCar,
+            other => ProvisioningArtifactType::Unknown(crate::primitives::UnknownVariantValue(
+                other.to_owned(),
+            )),
+        }
+    }
 }
-                }
-                /// Returns all the `&str` representations of the enum members.
-                pub const fn values() -> &'static [&'static str] {
-                    &["CLOUD_FORMATION_TEMPLATE", "MARKETPLACE_AMI", "MARKETPLACE_CAR"]
-                }
-            }
-impl AsRef<str> for ProvisioningArtifactType {
-                fn as_ref(&self) -> &str {
-                    self.as_str()
-                }
-            }
+impl std::str::FromStr for ProvisioningArtifactType {
+    type Err = std::convert::Infallible;
 
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(ProvisioningArtifactType::from(s))
+    }
+}
+impl ProvisioningArtifactType {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            ProvisioningArtifactType::CloudFormationTemplate => "CLOUD_FORMATION_TEMPLATE",
+            ProvisioningArtifactType::MarketplaceAmi => "MARKETPLACE_AMI",
+            ProvisioningArtifactType::MarketplaceCar => "MARKETPLACE_CAR",
+            ProvisioningArtifactType::Unknown(value) => value.as_str(),
+        }
+    }
+    /// Returns all the `&str` representations of the enum members.
+    pub const fn values() -> &'static [&'static str] {
+        &[
+            "CLOUD_FORMATION_TEMPLATE",
+            "MARKETPLACE_AMI",
+            "MARKETPLACE_CAR",
+        ]
+    }
+}
+impl AsRef<str> for ProvisioningArtifactType {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}

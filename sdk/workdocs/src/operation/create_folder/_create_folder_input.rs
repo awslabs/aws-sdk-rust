@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct CreateFolderInput  {
+pub struct CreateFolderInput {
     /// <p>Amazon WorkDocs authentication token. Not required when using AWS administrator credentials to access the API.</p>
     #[doc(hidden)]
     pub authentication_token: std::option::Option<std::string::String>,
@@ -15,19 +15,19 @@ pub struct CreateFolderInput  {
 }
 impl CreateFolderInput {
     /// <p>Amazon WorkDocs authentication token. Not required when using AWS administrator credentials to access the API.</p>
-    pub fn authentication_token(&self) -> std::option::Option<& str> {
+    pub fn authentication_token(&self) -> std::option::Option<&str> {
         self.authentication_token.as_deref()
     }
     /// <p>The name of the new folder.</p>
-    pub fn name(&self) -> std::option::Option<& str> {
+    pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>The ID of the parent folder.</p>
-    pub fn parent_folder_id(&self) -> std::option::Option<& str> {
+    pub fn parent_folder_id(&self) -> std::option::Option<&str> {
         self.parent_folder_id.as_deref()
     }
 }
-impl  std::fmt::Debug for CreateFolderInput  {
+impl std::fmt::Debug for CreateFolderInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateFolderInput");
         formatter.field("authentication_token", &"*** Sensitive Data Redacted ***");
@@ -58,8 +58,12 @@ impl CreateFolderInputBuilder {
         self
     }
     /// <p>Amazon WorkDocs authentication token. Not required when using AWS administrator credentials to access the API.</p>
-    pub fn set_authentication_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.authentication_token = input; self
+    pub fn set_authentication_token(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.authentication_token = input;
+        self
     }
     /// <p>The name of the new folder.</p>
     pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -68,7 +72,8 @@ impl CreateFolderInputBuilder {
     }
     /// <p>The name of the new folder.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input; self
+        self.name = input;
+        self
     }
     /// <p>The ID of the parent folder.</p>
     pub fn parent_folder_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -77,20 +82,21 @@ impl CreateFolderInputBuilder {
     }
     /// <p>The ID of the parent folder.</p>
     pub fn set_parent_folder_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.parent_folder_id = input; self
+        self.parent_folder_id = input;
+        self
     }
     /// Consumes the builder and constructs a [`CreateFolderInput`](crate::operation::create_folder::CreateFolderInput).
-    pub fn build(self) -> Result<crate::operation::create_folder::CreateFolderInput, aws_smithy_http::operation::error::BuildError> {
-        Ok(
-            crate::operation::create_folder::CreateFolderInput {
-                authentication_token: self.authentication_token
-                ,
-                name: self.name
-                ,
-                parent_folder_id: self.parent_folder_id
-                ,
-            }
-        )
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::create_folder::CreateFolderInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        Ok(crate::operation::create_folder::CreateFolderInput {
+            authentication_token: self.authentication_token,
+            name: self.name,
+            parent_folder_id: self.parent_folder_id,
+        })
     }
 }
 impl std::fmt::Debug for CreateFolderInputBuilder {
@@ -102,4 +108,3 @@ impl std::fmt::Debug for CreateFolderInputBuilder {
         formatter.finish()
     }
 }
-

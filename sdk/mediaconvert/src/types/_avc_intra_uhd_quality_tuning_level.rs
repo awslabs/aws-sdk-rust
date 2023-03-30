@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-/// 
+///
 /// Here is an example of how you can make a match expression forward-compatible:
-/// 
+///
 /// ```text
 /// # let avcintrauhdqualitytuninglevel = unimplemented!();
 /// match avcintrauhdqualitytuninglevel {
@@ -30,55 +30,64 @@
 /// Specifically, when `avcintrauhdqualitytuninglevel` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `AvcIntraUhdQualityTuningLevel::NewFeature` also yielding `"NewFeature"`.
-/// 
+///
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 /// Optional. Use Quality tuning level (qualityTuningLevel) to choose how many transcoding passes MediaConvert does with your video. When you choose Multi-pass (MULTI_PASS), your video quality is better and your output bitrate is more accurate. That is, the actual bitrate of your output is closer to the target bitrate defined in the specification. When you choose Single-pass (SINGLE_PASS), your encoding time is faster. The default behavior is Single-pass (SINGLE_PASS).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
 pub enum AvcIntraUhdQualityTuningLevel {
     #[allow(missing_docs)] // documentation missing in model
     MultiPass,
     #[allow(missing_docs)] // documentation missing in model
     SinglePass,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::primitives::UnknownVariantValue)
+    Unknown(crate::primitives::UnknownVariantValue),
 }
 impl std::convert::From<&str> for AvcIntraUhdQualityTuningLevel {
-                fn from(s: &str) -> Self {
-                    match s {
-                        "MULTI_PASS" => AvcIntraUhdQualityTuningLevel::MultiPass,
-"SINGLE_PASS" => AvcIntraUhdQualityTuningLevel::SinglePass,
-other => AvcIntraUhdQualityTuningLevel::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
-                    }
-                }
-            }
-impl std::str::FromStr for AvcIntraUhdQualityTuningLevel {
-                type Err = std::convert::Infallible;
-
-                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-                    Ok(AvcIntraUhdQualityTuningLevel::from(s))
-                }
-            }
-impl AvcIntraUhdQualityTuningLevel {
-                /// Returns the `&str` value of the enum member.
-                pub fn as_str(&self) -> &str {
-                    match self {
-    AvcIntraUhdQualityTuningLevel::MultiPass => "MULTI_PASS",
-    AvcIntraUhdQualityTuningLevel::SinglePass => "SINGLE_PASS",
-    AvcIntraUhdQualityTuningLevel::Unknown(value) => value.as_str()
+    fn from(s: &str) -> Self {
+        match s {
+            "MULTI_PASS" => AvcIntraUhdQualityTuningLevel::MultiPass,
+            "SINGLE_PASS" => AvcIntraUhdQualityTuningLevel::SinglePass,
+            other => AvcIntraUhdQualityTuningLevel::Unknown(
+                crate::primitives::UnknownVariantValue(other.to_owned()),
+            ),
+        }
+    }
 }
-                }
-                /// Returns all the `&str` representations of the enum members.
-                pub const fn values() -> &'static [&'static str] {
-                    &["MULTI_PASS", "SINGLE_PASS"]
-                }
-            }
-impl AsRef<str> for AvcIntraUhdQualityTuningLevel {
-                fn as_ref(&self) -> &str {
-                    self.as_str()
-                }
-            }
+impl std::str::FromStr for AvcIntraUhdQualityTuningLevel {
+    type Err = std::convert::Infallible;
 
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(AvcIntraUhdQualityTuningLevel::from(s))
+    }
+}
+impl AvcIntraUhdQualityTuningLevel {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            AvcIntraUhdQualityTuningLevel::MultiPass => "MULTI_PASS",
+            AvcIntraUhdQualityTuningLevel::SinglePass => "SINGLE_PASS",
+            AvcIntraUhdQualityTuningLevel::Unknown(value) => value.as_str(),
+        }
+    }
+    /// Returns all the `&str` representations of the enum members.
+    pub const fn values() -> &'static [&'static str] {
+        &["MULTI_PASS", "SINGLE_PASS"]
+    }
+}
+impl AsRef<str> for AvcIntraUhdQualityTuningLevel {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}

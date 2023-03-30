@@ -3,7 +3,7 @@
 /// <p>Describes a parameter in a cluster parameter group.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Parameter  {
+pub struct Parameter {
     /// <p>The name of the parameter.</p>
     #[doc(hidden)]
     pub parameter_name: std::option::Option<std::string::String>,
@@ -34,31 +34,31 @@ pub struct Parameter  {
 }
 impl Parameter {
     /// <p>The name of the parameter.</p>
-    pub fn parameter_name(&self) -> std::option::Option<& str> {
+    pub fn parameter_name(&self) -> std::option::Option<&str> {
         self.parameter_name.as_deref()
     }
     /// <p>The value of the parameter. If <code>ParameterName</code> is <code>wlm_json_configuration</code>, then the maximum size of <code>ParameterValue</code> is 8000 characters.</p>
-    pub fn parameter_value(&self) -> std::option::Option<& str> {
+    pub fn parameter_value(&self) -> std::option::Option<&str> {
         self.parameter_value.as_deref()
     }
     /// <p>A description of the parameter.</p>
-    pub fn description(&self) -> std::option::Option<& str> {
+    pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
     /// <p>The source of the parameter value, such as "engine-default" or "user".</p>
-    pub fn source(&self) -> std::option::Option<& str> {
+    pub fn source(&self) -> std::option::Option<&str> {
         self.source.as_deref()
     }
     /// <p>The data type of the parameter.</p>
-    pub fn data_type(&self) -> std::option::Option<& str> {
+    pub fn data_type(&self) -> std::option::Option<&str> {
         self.data_type.as_deref()
     }
     /// <p>The valid range of values for the parameter.</p>
-    pub fn allowed_values(&self) -> std::option::Option<& str> {
+    pub fn allowed_values(&self) -> std::option::Option<&str> {
         self.allowed_values.as_deref()
     }
     /// <p>Specifies how to apply the WLM configuration parameter. Some properties can be applied dynamically, while other properties require that any associated clusters be rebooted for the configuration changes to be applied. For more information about parameters and parameter groups, go to <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-parameter-groups.html">Amazon Redshift Parameter Groups</a> in the <i>Amazon Redshift Cluster Management Guide</i>.</p>
-    pub fn apply_type(&self) -> std::option::Option<& crate::types::ParameterApplyType> {
+    pub fn apply_type(&self) -> std::option::Option<&crate::types::ParameterApplyType> {
         self.apply_type.as_ref()
     }
     /// <p>If <code>true</code>, the parameter can be modified. Some parameters have security or operational implications that prevent them from being changed. </p>
@@ -66,7 +66,7 @@ impl Parameter {
         self.is_modifiable
     }
     /// <p>The earliest engine version to which the parameter can apply.</p>
-    pub fn minimum_engine_version(&self) -> std::option::Option<& str> {
+    pub fn minimum_engine_version(&self) -> std::option::Option<&str> {
         self.minimum_engine_version.as_deref()
     }
 }
@@ -99,7 +99,8 @@ impl ParameterBuilder {
     }
     /// <p>The name of the parameter.</p>
     pub fn set_parameter_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.parameter_name = input; self
+        self.parameter_name = input;
+        self
     }
     /// <p>The value of the parameter. If <code>ParameterName</code> is <code>wlm_json_configuration</code>, then the maximum size of <code>ParameterValue</code> is 8000 characters.</p>
     pub fn parameter_value(mut self, input: impl Into<std::string::String>) -> Self {
@@ -108,7 +109,8 @@ impl ParameterBuilder {
     }
     /// <p>The value of the parameter. If <code>ParameterName</code> is <code>wlm_json_configuration</code>, then the maximum size of <code>ParameterValue</code> is 8000 characters.</p>
     pub fn set_parameter_value(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.parameter_value = input; self
+        self.parameter_value = input;
+        self
     }
     /// <p>A description of the parameter.</p>
     pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -117,7 +119,8 @@ impl ParameterBuilder {
     }
     /// <p>A description of the parameter.</p>
     pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.description = input; self
+        self.description = input;
+        self
     }
     /// <p>The source of the parameter value, such as "engine-default" or "user".</p>
     pub fn source(mut self, input: impl Into<std::string::String>) -> Self {
@@ -126,7 +129,8 @@ impl ParameterBuilder {
     }
     /// <p>The source of the parameter value, such as "engine-default" or "user".</p>
     pub fn set_source(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.source = input; self
+        self.source = input;
+        self
     }
     /// <p>The data type of the parameter.</p>
     pub fn data_type(mut self, input: impl Into<std::string::String>) -> Self {
@@ -135,7 +139,8 @@ impl ParameterBuilder {
     }
     /// <p>The data type of the parameter.</p>
     pub fn set_data_type(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.data_type = input; self
+        self.data_type = input;
+        self
     }
     /// <p>The valid range of values for the parameter.</p>
     pub fn allowed_values(mut self, input: impl Into<std::string::String>) -> Self {
@@ -144,7 +149,8 @@ impl ParameterBuilder {
     }
     /// <p>The valid range of values for the parameter.</p>
     pub fn set_allowed_values(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.allowed_values = input; self
+        self.allowed_values = input;
+        self
     }
     /// <p>Specifies how to apply the WLM configuration parameter. Some properties can be applied dynamically, while other properties require that any associated clusters be rebooted for the configuration changes to be applied. For more information about parameters and parameter groups, go to <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-parameter-groups.html">Amazon Redshift Parameter Groups</a> in the <i>Amazon Redshift Cluster Management Guide</i>.</p>
     pub fn apply_type(mut self, input: crate::types::ParameterApplyType) -> Self {
@@ -152,8 +158,12 @@ impl ParameterBuilder {
         self
     }
     /// <p>Specifies how to apply the WLM configuration parameter. Some properties can be applied dynamically, while other properties require that any associated clusters be rebooted for the configuration changes to be applied. For more information about parameters and parameter groups, go to <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-parameter-groups.html">Amazon Redshift Parameter Groups</a> in the <i>Amazon Redshift Cluster Management Guide</i>.</p>
-    pub fn set_apply_type(mut self, input: std::option::Option<crate::types::ParameterApplyType>) -> Self {
-        self.apply_type = input; self
+    pub fn set_apply_type(
+        mut self,
+        input: std::option::Option<crate::types::ParameterApplyType>,
+    ) -> Self {
+        self.apply_type = input;
+        self
     }
     /// <p>If <code>true</code>, the parameter can be modified. Some parameters have security or operational implications that prevent them from being changed. </p>
     pub fn is_modifiable(mut self, input: bool) -> Self {
@@ -162,7 +172,8 @@ impl ParameterBuilder {
     }
     /// <p>If <code>true</code>, the parameter can be modified. Some parameters have security or operational implications that prevent them from being changed. </p>
     pub fn set_is_modifiable(mut self, input: std::option::Option<bool>) -> Self {
-        self.is_modifiable = input; self
+        self.is_modifiable = input;
+        self
     }
     /// <p>The earliest engine version to which the parameter can apply.</p>
     pub fn minimum_engine_version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -170,32 +181,25 @@ impl ParameterBuilder {
         self
     }
     /// <p>The earliest engine version to which the parameter can apply.</p>
-    pub fn set_minimum_engine_version(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.minimum_engine_version = input; self
+    pub fn set_minimum_engine_version(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.minimum_engine_version = input;
+        self
     }
     /// Consumes the builder and constructs a [`Parameter`](crate::types::Parameter).
     pub fn build(self) -> crate::types::Parameter {
         crate::types::Parameter {
-            parameter_name: self.parameter_name
-            ,
-            parameter_value: self.parameter_value
-            ,
-            description: self.description
-            ,
-            source: self.source
-            ,
-            data_type: self.data_type
-            ,
-            allowed_values: self.allowed_values
-            ,
-            apply_type: self.apply_type
-            ,
-            is_modifiable: self.is_modifiable
-                .unwrap_or_default()
-            ,
-            minimum_engine_version: self.minimum_engine_version
-            ,
+            parameter_name: self.parameter_name,
+            parameter_value: self.parameter_value,
+            description: self.description,
+            source: self.source,
+            data_type: self.data_type,
+            allowed_values: self.allowed_values,
+            apply_type: self.apply_type,
+            is_modifiable: self.is_modifiable.unwrap_or_default(),
+            minimum_engine_version: self.minimum_engine_version,
         }
     }
 }
-

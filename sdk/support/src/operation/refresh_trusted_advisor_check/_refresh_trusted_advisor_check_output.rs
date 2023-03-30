@@ -3,7 +3,7 @@
 /// <p>The current refresh status of a Trusted Advisor check.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct RefreshTrustedAdvisorCheckOutput  {
+pub struct RefreshTrustedAdvisorCheckOutput {
     /// <p>The current refresh status for a check, including the amount of time until the check is eligible for refresh.</p>
     #[doc(hidden)]
     pub status: std::option::Option<crate::types::TrustedAdvisorCheckRefreshStatus>,
@@ -11,18 +11,18 @@ pub struct RefreshTrustedAdvisorCheckOutput  {
 }
 impl RefreshTrustedAdvisorCheckOutput {
     /// <p>The current refresh status for a check, including the amount of time until the check is eligible for refresh.</p>
-    pub fn status(&self) -> std::option::Option<& crate::types::TrustedAdvisorCheckRefreshStatus> {
+    pub fn status(&self) -> std::option::Option<&crate::types::TrustedAdvisorCheckRefreshStatus> {
         self.status.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for RefreshTrustedAdvisorCheckOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl RefreshTrustedAdvisorCheckOutput {
     /// Creates a new builder-style object to manufacture [`RefreshTrustedAdvisorCheckOutput`](crate::operation::refresh_trusted_advisor_check::RefreshTrustedAdvisorCheckOutput).
-    pub fn builder() -> crate::operation::refresh_trusted_advisor_check::builders::RefreshTrustedAdvisorCheckOutputBuilder {
+    pub fn builder() -> crate::operation::refresh_trusted_advisor_check::builders::RefreshTrustedAdvisorCheckOutputBuilder{
         crate::operation::refresh_trusted_advisor_check::builders::RefreshTrustedAdvisorCheckOutputBuilder::default()
     }
 }
@@ -41,25 +41,29 @@ impl RefreshTrustedAdvisorCheckOutputBuilder {
         self
     }
     /// <p>The current refresh status for a check, including the amount of time until the check is eligible for refresh.</p>
-    pub fn set_status(mut self, input: std::option::Option<crate::types::TrustedAdvisorCheckRefreshStatus>) -> Self {
-        self.status = input; self
+    pub fn set_status(
+        mut self,
+        input: std::option::Option<crate::types::TrustedAdvisorCheckRefreshStatus>,
+    ) -> Self {
+        self.status = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`RefreshTrustedAdvisorCheckOutput`](crate::operation::refresh_trusted_advisor_check::RefreshTrustedAdvisorCheckOutput).
-    pub fn build(self) -> crate::operation::refresh_trusted_advisor_check::RefreshTrustedAdvisorCheckOutput {
+    pub fn build(
+        self,
+    ) -> crate::operation::refresh_trusted_advisor_check::RefreshTrustedAdvisorCheckOutput {
         crate::operation::refresh_trusted_advisor_check::RefreshTrustedAdvisorCheckOutput {
-            status: self.status
-            ,
+            status: self.status,
             _request_id: self._request_id,
         }
     }
 }
-

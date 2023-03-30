@@ -81,4 +81,3 @@ pub mod update_node;
 
 /// Types for the `VoteOnProposal` operation.
 pub mod vote_on_proposal;
-

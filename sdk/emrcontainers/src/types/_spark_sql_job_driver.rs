@@ -3,7 +3,7 @@
 /// <p>The job driver for job type.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct SparkSqlJobDriver  {
+pub struct SparkSqlJobDriver {
     /// <p>The SQL file to be executed.</p>
     #[doc(hidden)]
     pub entry_point: std::option::Option<std::string::String>,
@@ -13,15 +13,15 @@ pub struct SparkSqlJobDriver  {
 }
 impl SparkSqlJobDriver {
     /// <p>The SQL file to be executed.</p>
-    pub fn entry_point(&self) -> std::option::Option<& str> {
+    pub fn entry_point(&self) -> std::option::Option<&str> {
         self.entry_point.as_deref()
     }
     /// <p>The Spark parameters to be included in the Spark SQL command.</p>
-    pub fn spark_sql_parameters(&self) -> std::option::Option<& str> {
+    pub fn spark_sql_parameters(&self) -> std::option::Option<&str> {
         self.spark_sql_parameters.as_deref()
     }
 }
-impl  std::fmt::Debug for SparkSqlJobDriver  {
+impl std::fmt::Debug for SparkSqlJobDriver {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("SparkSqlJobDriver");
         formatter.field("entry_point", &"*** Sensitive Data Redacted ***");
@@ -51,7 +51,8 @@ impl SparkSqlJobDriverBuilder {
     }
     /// <p>The SQL file to be executed.</p>
     pub fn set_entry_point(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.entry_point = input; self
+        self.entry_point = input;
+        self
     }
     /// <p>The Spark parameters to be included in the Spark SQL command.</p>
     pub fn spark_sql_parameters(mut self, input: impl Into<std::string::String>) -> Self {
@@ -59,16 +60,18 @@ impl SparkSqlJobDriverBuilder {
         self
     }
     /// <p>The Spark parameters to be included in the Spark SQL command.</p>
-    pub fn set_spark_sql_parameters(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.spark_sql_parameters = input; self
+    pub fn set_spark_sql_parameters(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.spark_sql_parameters = input;
+        self
     }
     /// Consumes the builder and constructs a [`SparkSqlJobDriver`](crate::types::SparkSqlJobDriver).
     pub fn build(self) -> crate::types::SparkSqlJobDriver {
         crate::types::SparkSqlJobDriver {
-            entry_point: self.entry_point
-            ,
-            spark_sql_parameters: self.spark_sql_parameters
-            ,
+            entry_point: self.entry_point,
+            spark_sql_parameters: self.spark_sql_parameters,
         }
     }
 }
@@ -80,4 +83,3 @@ impl std::fmt::Debug for SparkSqlJobDriverBuilder {
         formatter.finish()
     }
 }
-

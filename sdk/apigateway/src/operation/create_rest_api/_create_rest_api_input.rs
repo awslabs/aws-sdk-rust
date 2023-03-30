@@ -3,7 +3,7 @@
 /// <p>The POST Request to add a new RestApi resource to your collection.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateRestApiInput  {
+pub struct CreateRestApiInput {
     /// <p>The name of the RestApi.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -33,30 +33,31 @@ pub struct CreateRestApiInput  {
     pub policy: std::option::Option<std::string::String>,
     /// <p>The key-value map of strings. The valid character set is [a-zA-Z+-=._:/]. The tag key can be up to 128 characters and must not start with <code>aws:</code>. The tag value can be up to 256 characters.</p>
     #[doc(hidden)]
-    pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub tags:
+        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>Specifies whether clients can invoke your API by using the default <code>execute-api</code> endpoint. By default, clients can invoke your API with the default <code>https://{api_id}.execute-api.{region}.amazonaws.com</code> endpoint. To require that clients use a custom domain name to invoke your API, disable the default endpoint</p>
     #[doc(hidden)]
     pub disable_execute_api_endpoint: bool,
 }
 impl CreateRestApiInput {
     /// <p>The name of the RestApi.</p>
-    pub fn name(&self) -> std::option::Option<& str> {
+    pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>The description of the RestApi.</p>
-    pub fn description(&self) -> std::option::Option<& str> {
+    pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
     /// <p>A version identifier for the API.</p>
-    pub fn version(&self) -> std::option::Option<& str> {
+    pub fn version(&self) -> std::option::Option<&str> {
         self.version.as_deref()
     }
     /// <p>The ID of the RestApi that you want to clone from.</p>
-    pub fn clone_from(&self) -> std::option::Option<& str> {
+    pub fn clone_from(&self) -> std::option::Option<&str> {
         self.clone_from.as_deref()
     }
     /// <p>The list of binary media types supported by the RestApi. By default, the RestApi supports only UTF-8-encoded text payloads.</p>
-    pub fn binary_media_types(&self) -> std::option::Option<& [std::string::String]> {
+    pub fn binary_media_types(&self) -> std::option::Option<&[std::string::String]> {
         self.binary_media_types.as_deref()
     }
     /// <p>A nullable integer that is used to enable compression (with non-negative between 0 and 10485760 (10M) bytes, inclusive) or disable compression (with a null value) on an API. When compression is enabled, compression or decompression is not applied on the payload if the payload size is smaller than this value. Setting it to zero allows compression for any payload size.</p>
@@ -64,19 +65,24 @@ impl CreateRestApiInput {
         self.minimum_compression_size
     }
     /// <p>The source of the API key for metering requests according to a usage plan. Valid values are: &gt;<code>HEADER</code> to read the API key from the <code>X-API-Key</code> header of a request. <code>AUTHORIZER</code> to read the API key from the <code>UsageIdentifierKey</code> from a custom authorizer.</p>
-    pub fn api_key_source(&self) -> std::option::Option<& crate::types::ApiKeySourceType> {
+    pub fn api_key_source(&self) -> std::option::Option<&crate::types::ApiKeySourceType> {
         self.api_key_source.as_ref()
     }
     /// <p>The endpoint configuration of this RestApi showing the endpoint types of the API. </p>
-    pub fn endpoint_configuration(&self) -> std::option::Option<& crate::types::EndpointConfiguration> {
+    pub fn endpoint_configuration(
+        &self,
+    ) -> std::option::Option<&crate::types::EndpointConfiguration> {
         self.endpoint_configuration.as_ref()
     }
     /// <p>A stringified JSON policy document that applies to this RestApi regardless of the caller and Method configuration.</p>
-    pub fn policy(&self) -> std::option::Option<& str> {
+    pub fn policy(&self) -> std::option::Option<&str> {
         self.policy.as_deref()
     }
     /// <p>The key-value map of strings. The valid character set is [a-zA-Z+-=._:/]. The tag key can be up to 128 characters and must not start with <code>aws:</code>. The tag value can be up to 256 characters.</p>
-    pub fn tags(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
         self.tags.as_ref()
     }
     /// <p>Specifies whether clients can invoke your API by using the default <code>execute-api</code> endpoint. By default, clients can invoke your API with the default <code>https://{api_id}.execute-api.{region}.amazonaws.com</code> endpoint. To require that clients use a custom domain name to invoke your API, disable the default endpoint</p>
@@ -104,7 +110,8 @@ pub struct CreateRestApiInputBuilder {
     pub(crate) api_key_source: std::option::Option<crate::types::ApiKeySourceType>,
     pub(crate) endpoint_configuration: std::option::Option<crate::types::EndpointConfiguration>,
     pub(crate) policy: std::option::Option<std::string::String>,
-    pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub(crate) tags:
+        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     pub(crate) disable_execute_api_endpoint: std::option::Option<bool>,
 }
 impl CreateRestApiInputBuilder {
@@ -115,7 +122,8 @@ impl CreateRestApiInputBuilder {
     }
     /// <p>The name of the RestApi.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input; self
+        self.name = input;
+        self
     }
     /// <p>The description of the RestApi.</p>
     pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -124,7 +132,8 @@ impl CreateRestApiInputBuilder {
     }
     /// <p>The description of the RestApi.</p>
     pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.description = input; self
+        self.description = input;
+        self
     }
     /// <p>A version identifier for the API.</p>
     pub fn version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -133,7 +142,8 @@ impl CreateRestApiInputBuilder {
     }
     /// <p>A version identifier for the API.</p>
     pub fn set_version(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.version = input; self
+        self.version = input;
+        self
     }
     /// <p>The ID of the RestApi that you want to clone from.</p>
     pub fn clone_from(mut self, input: impl Into<std::string::String>) -> Self {
@@ -142,7 +152,8 @@ impl CreateRestApiInputBuilder {
     }
     /// <p>The ID of the RestApi that you want to clone from.</p>
     pub fn set_clone_from(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.clone_from = input; self
+        self.clone_from = input;
+        self
     }
     /// Appends an item to `binary_media_types`.
     ///
@@ -151,13 +162,17 @@ impl CreateRestApiInputBuilder {
     /// <p>The list of binary media types supported by the RestApi. By default, the RestApi supports only UTF-8-encoded text payloads.</p>
     pub fn binary_media_types(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.binary_media_types.unwrap_or_default();
-                        v.push(input.into());
-                        self.binary_media_types = Some(v);
-                        self
+        v.push(input.into());
+        self.binary_media_types = Some(v);
+        self
     }
     /// <p>The list of binary media types supported by the RestApi. By default, the RestApi supports only UTF-8-encoded text payloads.</p>
-    pub fn set_binary_media_types(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-        self.binary_media_types = input; self
+    pub fn set_binary_media_types(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
+        self.binary_media_types = input;
+        self
     }
     /// <p>A nullable integer that is used to enable compression (with non-negative between 0 and 10485760 (10M) bytes, inclusive) or disable compression (with a null value) on an API. When compression is enabled, compression or decompression is not applied on the payload if the payload size is smaller than this value. Setting it to zero allows compression for any payload size.</p>
     pub fn minimum_compression_size(mut self, input: i32) -> Self {
@@ -166,7 +181,8 @@ impl CreateRestApiInputBuilder {
     }
     /// <p>A nullable integer that is used to enable compression (with non-negative between 0 and 10485760 (10M) bytes, inclusive) or disable compression (with a null value) on an API. When compression is enabled, compression or decompression is not applied on the payload if the payload size is smaller than this value. Setting it to zero allows compression for any payload size.</p>
     pub fn set_minimum_compression_size(mut self, input: std::option::Option<i32>) -> Self {
-        self.minimum_compression_size = input; self
+        self.minimum_compression_size = input;
+        self
     }
     /// <p>The source of the API key for metering requests according to a usage plan. Valid values are: &gt;<code>HEADER</code> to read the API key from the <code>X-API-Key</code> header of a request. <code>AUTHORIZER</code> to read the API key from the <code>UsageIdentifierKey</code> from a custom authorizer.</p>
     pub fn api_key_source(mut self, input: crate::types::ApiKeySourceType) -> Self {
@@ -174,8 +190,12 @@ impl CreateRestApiInputBuilder {
         self
     }
     /// <p>The source of the API key for metering requests according to a usage plan. Valid values are: &gt;<code>HEADER</code> to read the API key from the <code>X-API-Key</code> header of a request. <code>AUTHORIZER</code> to read the API key from the <code>UsageIdentifierKey</code> from a custom authorizer.</p>
-    pub fn set_api_key_source(mut self, input: std::option::Option<crate::types::ApiKeySourceType>) -> Self {
-        self.api_key_source = input; self
+    pub fn set_api_key_source(
+        mut self,
+        input: std::option::Option<crate::types::ApiKeySourceType>,
+    ) -> Self {
+        self.api_key_source = input;
+        self
     }
     /// <p>The endpoint configuration of this RestApi showing the endpoint types of the API. </p>
     pub fn endpoint_configuration(mut self, input: crate::types::EndpointConfiguration) -> Self {
@@ -183,8 +203,12 @@ impl CreateRestApiInputBuilder {
         self
     }
     /// <p>The endpoint configuration of this RestApi showing the endpoint types of the API. </p>
-    pub fn set_endpoint_configuration(mut self, input: std::option::Option<crate::types::EndpointConfiguration>) -> Self {
-        self.endpoint_configuration = input; self
+    pub fn set_endpoint_configuration(
+        mut self,
+        input: std::option::Option<crate::types::EndpointConfiguration>,
+    ) -> Self {
+        self.endpoint_configuration = input;
+        self
     }
     /// <p>A stringified JSON policy document that applies to this RestApi regardless of the caller and Method configuration.</p>
     pub fn policy(mut self, input: impl Into<std::string::String>) -> Self {
@@ -193,22 +217,33 @@ impl CreateRestApiInputBuilder {
     }
     /// <p>A stringified JSON policy document that applies to this RestApi regardless of the caller and Method configuration.</p>
     pub fn set_policy(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.policy = input; self
+        self.policy = input;
+        self
     }
     /// Adds a key-value pair to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// <p>The key-value map of strings. The valid character set is [a-zA-Z+-=._:/]. The tag key can be up to 128 characters and must not start with <code>aws:</code>. The tag value can be up to 256 characters.</p>
-    pub fn tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
+    pub fn tags(
+        mut self,
+        k: impl Into<std::string::String>,
+        v: impl Into<std::string::String>,
+    ) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
-                        hash_map.insert(k.into(), v.into());
-                        self.tags = Some(hash_map);
-                        self
+        hash_map.insert(k.into(), v.into());
+        self.tags = Some(hash_map);
+        self
     }
     /// <p>The key-value map of strings. The valid character set is [a-zA-Z+-=._:/]. The tag key can be up to 128 characters and must not start with <code>aws:</code>. The tag value can be up to 256 characters.</p>
-    pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
-        self.tags = input; self
+    pub fn set_tags(
+        mut self,
+        input: std::option::Option<
+            std::collections::HashMap<std::string::String, std::string::String>,
+        >,
+    ) -> Self {
+        self.tags = input;
+        self
     }
     /// <p>Specifies whether clients can invoke your API by using the default <code>execute-api</code> endpoint. By default, clients can invoke your API with the default <code>https://{api_id}.execute-api.{region}.amazonaws.com</code> endpoint. To require that clients use a custom domain name to invoke your API, disable the default endpoint</p>
     pub fn disable_execute_api_endpoint(mut self, input: bool) -> Self {
@@ -217,37 +252,28 @@ impl CreateRestApiInputBuilder {
     }
     /// <p>Specifies whether clients can invoke your API by using the default <code>execute-api</code> endpoint. By default, clients can invoke your API with the default <code>https://{api_id}.execute-api.{region}.amazonaws.com</code> endpoint. To require that clients use a custom domain name to invoke your API, disable the default endpoint</p>
     pub fn set_disable_execute_api_endpoint(mut self, input: std::option::Option<bool>) -> Self {
-        self.disable_execute_api_endpoint = input; self
+        self.disable_execute_api_endpoint = input;
+        self
     }
     /// Consumes the builder and constructs a [`CreateRestApiInput`](crate::operation::create_rest_api::CreateRestApiInput).
-    pub fn build(self) -> Result<crate::operation::create_rest_api::CreateRestApiInput, aws_smithy_http::operation::error::BuildError> {
-        Ok(
-            crate::operation::create_rest_api::CreateRestApiInput {
-                name: self.name
-                ,
-                description: self.description
-                ,
-                version: self.version
-                ,
-                clone_from: self.clone_from
-                ,
-                binary_media_types: self.binary_media_types
-                ,
-                minimum_compression_size: self.minimum_compression_size
-                ,
-                api_key_source: self.api_key_source
-                ,
-                endpoint_configuration: self.endpoint_configuration
-                ,
-                policy: self.policy
-                ,
-                tags: self.tags
-                ,
-                disable_execute_api_endpoint: self.disable_execute_api_endpoint
-                    .unwrap_or_default()
-                ,
-            }
-        )
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::create_rest_api::CreateRestApiInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        Ok(crate::operation::create_rest_api::CreateRestApiInput {
+            name: self.name,
+            description: self.description,
+            version: self.version,
+            clone_from: self.clone_from,
+            binary_media_types: self.binary_media_types,
+            minimum_compression_size: self.minimum_compression_size,
+            api_key_source: self.api_key_source,
+            endpoint_configuration: self.endpoint_configuration,
+            policy: self.policy,
+            tags: self.tags,
+            disable_execute_api_endpoint: self.disable_execute_api_endpoint.unwrap_or_default(),
+        })
     }
 }
-

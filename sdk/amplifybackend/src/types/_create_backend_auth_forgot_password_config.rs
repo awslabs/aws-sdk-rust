@@ -3,7 +3,7 @@
 /// <p><b>(DEPRECATED)</b> Describes the forgot password policy for authenticating into the Amplify app.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateBackendAuthForgotPasswordConfig  {
+pub struct CreateBackendAuthForgotPasswordConfig {
     /// <p><b>(DEPRECATED)</b> Describes which mode to use (either SMS or email) to deliver messages to app users who want to recover their password.</p>
     #[doc(hidden)]
     pub delivery_method: std::option::Option<crate::types::DeliveryMethod>,
@@ -16,15 +16,15 @@ pub struct CreateBackendAuthForgotPasswordConfig  {
 }
 impl CreateBackendAuthForgotPasswordConfig {
     /// <p><b>(DEPRECATED)</b> Describes which mode to use (either SMS or email) to deliver messages to app users who want to recover their password.</p>
-    pub fn delivery_method(&self) -> std::option::Option<& crate::types::DeliveryMethod> {
+    pub fn delivery_method(&self) -> std::option::Option<&crate::types::DeliveryMethod> {
         self.delivery_method.as_ref()
     }
     /// <p><b>(DEPRECATED)</b> The configuration for the email sent when an app user forgets their password.</p>
-    pub fn email_settings(&self) -> std::option::Option<& crate::types::EmailSettings> {
+    pub fn email_settings(&self) -> std::option::Option<&crate::types::EmailSettings> {
         self.email_settings.as_ref()
     }
     /// <p><b>(DEPRECATED)</b> The configuration for the SMS message sent when an app user forgets their password.</p>
-    pub fn sms_settings(&self) -> std::option::Option<& crate::types::SmsSettings> {
+    pub fn sms_settings(&self) -> std::option::Option<&crate::types::SmsSettings> {
         self.sms_settings.as_ref()
     }
 }
@@ -50,8 +50,12 @@ impl CreateBackendAuthForgotPasswordConfigBuilder {
         self
     }
     /// <p><b>(DEPRECATED)</b> Describes which mode to use (either SMS or email) to deliver messages to app users who want to recover their password.</p>
-    pub fn set_delivery_method(mut self, input: std::option::Option<crate::types::DeliveryMethod>) -> Self {
-        self.delivery_method = input; self
+    pub fn set_delivery_method(
+        mut self,
+        input: std::option::Option<crate::types::DeliveryMethod>,
+    ) -> Self {
+        self.delivery_method = input;
+        self
     }
     /// <p><b>(DEPRECATED)</b> The configuration for the email sent when an app user forgets their password.</p>
     pub fn email_settings(mut self, input: crate::types::EmailSettings) -> Self {
@@ -59,8 +63,12 @@ impl CreateBackendAuthForgotPasswordConfigBuilder {
         self
     }
     /// <p><b>(DEPRECATED)</b> The configuration for the email sent when an app user forgets their password.</p>
-    pub fn set_email_settings(mut self, input: std::option::Option<crate::types::EmailSettings>) -> Self {
-        self.email_settings = input; self
+    pub fn set_email_settings(
+        mut self,
+        input: std::option::Option<crate::types::EmailSettings>,
+    ) -> Self {
+        self.email_settings = input;
+        self
     }
     /// <p><b>(DEPRECATED)</b> The configuration for the SMS message sent when an app user forgets their password.</p>
     pub fn sms_settings(mut self, input: crate::types::SmsSettings) -> Self {
@@ -68,19 +76,19 @@ impl CreateBackendAuthForgotPasswordConfigBuilder {
         self
     }
     /// <p><b>(DEPRECATED)</b> The configuration for the SMS message sent when an app user forgets their password.</p>
-    pub fn set_sms_settings(mut self, input: std::option::Option<crate::types::SmsSettings>) -> Self {
-        self.sms_settings = input; self
+    pub fn set_sms_settings(
+        mut self,
+        input: std::option::Option<crate::types::SmsSettings>,
+    ) -> Self {
+        self.sms_settings = input;
+        self
     }
     /// Consumes the builder and constructs a [`CreateBackendAuthForgotPasswordConfig`](crate::types::CreateBackendAuthForgotPasswordConfig).
     pub fn build(self) -> crate::types::CreateBackendAuthForgotPasswordConfig {
         crate::types::CreateBackendAuthForgotPasswordConfig {
-            delivery_method: self.delivery_method
-            ,
-            email_settings: self.email_settings
-            ,
-            sms_settings: self.sms_settings
-            ,
+            delivery_method: self.delivery_method,
+            email_settings: self.email_settings,
+            sms_settings: self.sms_settings,
         }
     }
 }
-

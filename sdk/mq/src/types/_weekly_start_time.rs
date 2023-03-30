@@ -3,7 +3,7 @@
 /// <p>The scheduled time period relative to UTC during which Amazon MQ begins to apply pending updates or patches to the broker.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct WeeklyStartTime  {
+pub struct WeeklyStartTime {
     /// <p>Required. The day of the week.</p>
     #[doc(hidden)]
     pub day_of_week: std::option::Option<crate::types::DayOfWeek>,
@@ -16,15 +16,15 @@ pub struct WeeklyStartTime  {
 }
 impl WeeklyStartTime {
     /// <p>Required. The day of the week.</p>
-    pub fn day_of_week(&self) -> std::option::Option<& crate::types::DayOfWeek> {
+    pub fn day_of_week(&self) -> std::option::Option<&crate::types::DayOfWeek> {
         self.day_of_week.as_ref()
     }
     /// <p>Required. The time, in 24-hour format.</p>
-    pub fn time_of_day(&self) -> std::option::Option<& str> {
+    pub fn time_of_day(&self) -> std::option::Option<&str> {
         self.time_of_day.as_deref()
     }
     /// <p>The time zone, UTC by default, in either the Country/City format, or the UTC offset format.</p>
-    pub fn time_zone(&self) -> std::option::Option<& str> {
+    pub fn time_zone(&self) -> std::option::Option<&str> {
         self.time_zone.as_deref()
     }
 }
@@ -51,7 +51,8 @@ impl WeeklyStartTimeBuilder {
     }
     /// <p>Required. The day of the week.</p>
     pub fn set_day_of_week(mut self, input: std::option::Option<crate::types::DayOfWeek>) -> Self {
-        self.day_of_week = input; self
+        self.day_of_week = input;
+        self
     }
     /// <p>Required. The time, in 24-hour format.</p>
     pub fn time_of_day(mut self, input: impl Into<std::string::String>) -> Self {
@@ -60,7 +61,8 @@ impl WeeklyStartTimeBuilder {
     }
     /// <p>Required. The time, in 24-hour format.</p>
     pub fn set_time_of_day(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.time_of_day = input; self
+        self.time_of_day = input;
+        self
     }
     /// <p>The time zone, UTC by default, in either the Country/City format, or the UTC offset format.</p>
     pub fn time_zone(mut self, input: impl Into<std::string::String>) -> Self {
@@ -69,18 +71,15 @@ impl WeeklyStartTimeBuilder {
     }
     /// <p>The time zone, UTC by default, in either the Country/City format, or the UTC offset format.</p>
     pub fn set_time_zone(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.time_zone = input; self
+        self.time_zone = input;
+        self
     }
     /// Consumes the builder and constructs a [`WeeklyStartTime`](crate::types::WeeklyStartTime).
     pub fn build(self) -> crate::types::WeeklyStartTime {
         crate::types::WeeklyStartTime {
-            day_of_week: self.day_of_week
-            ,
-            time_of_day: self.time_of_day
-            ,
-            time_zone: self.time_zone
-            ,
+            day_of_week: self.day_of_week,
+            time_of_day: self.time_of_day,
+            time_zone: self.time_zone,
         }
     }
 }
-

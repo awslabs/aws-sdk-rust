@@ -3,7 +3,7 @@
 /// <p>Provides the forecast to meet the target for a particular date.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct WhatIfPointScenario  {
+pub struct WhatIfPointScenario {
     /// <p>The date that you need the forecast results for.</p>
     #[doc(hidden)]
     pub date: std::option::Option<aws_smithy_types::DateTime>,
@@ -13,7 +13,7 @@ pub struct WhatIfPointScenario  {
 }
 impl WhatIfPointScenario {
     /// <p>The date that you need the forecast results for.</p>
-    pub fn date(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
+    pub fn date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.date.as_ref()
     }
     /// <p>The target value that you want to meet for the provided date.</p>
@@ -43,7 +43,8 @@ impl WhatIfPointScenarioBuilder {
     }
     /// <p>The date that you need the forecast results for.</p>
     pub fn set_date(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.date = input; self
+        self.date = input;
+        self
     }
     /// <p>The target value that you want to meet for the provided date.</p>
     pub fn value(mut self, input: f64) -> Self {
@@ -52,17 +53,14 @@ impl WhatIfPointScenarioBuilder {
     }
     /// <p>The target value that you want to meet for the provided date.</p>
     pub fn set_value(mut self, input: std::option::Option<f64>) -> Self {
-        self.value = input; self
+        self.value = input;
+        self
     }
     /// Consumes the builder and constructs a [`WhatIfPointScenario`](crate::types::WhatIfPointScenario).
     pub fn build(self) -> crate::types::WhatIfPointScenario {
         crate::types::WhatIfPointScenario {
-            date: self.date
-            ,
-            value: self.value
-                .unwrap_or_default()
-            ,
+            date: self.date,
+            value: self.value.unwrap_or_default(),
         }
     }
 }
-

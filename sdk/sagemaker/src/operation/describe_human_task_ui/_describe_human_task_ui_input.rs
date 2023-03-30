@@ -2,21 +2,23 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeHumanTaskUiInput  {
+pub struct DescribeHumanTaskUiInput {
     /// <p>The name of the human task user interface (worker task template) you want information about.</p>
     #[doc(hidden)]
     pub human_task_ui_name: std::option::Option<std::string::String>,
 }
 impl DescribeHumanTaskUiInput {
     /// <p>The name of the human task user interface (worker task template) you want information about.</p>
-    pub fn human_task_ui_name(&self) -> std::option::Option<& str> {
+    pub fn human_task_ui_name(&self) -> std::option::Option<&str> {
         self.human_task_ui_name.as_deref()
     }
 }
 impl DescribeHumanTaskUiInput {
     /// Creates a new builder-style object to manufacture [`DescribeHumanTaskUiInput`](crate::operation::describe_human_task_ui::DescribeHumanTaskUiInput).
-    pub fn builder() -> crate::operation::describe_human_task_ui::builders::DescribeHumanTaskUiInputBuilder {
-        crate::operation::describe_human_task_ui::builders::DescribeHumanTaskUiInputBuilder::default()
+    pub fn builder(
+    ) -> crate::operation::describe_human_task_ui::builders::DescribeHumanTaskUiInputBuilder {
+        crate::operation::describe_human_task_ui::builders::DescribeHumanTaskUiInputBuilder::default(
+        )
     }
 }
 
@@ -33,17 +35,24 @@ impl DescribeHumanTaskUiInputBuilder {
         self
     }
     /// <p>The name of the human task user interface (worker task template) you want information about.</p>
-    pub fn set_human_task_ui_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.human_task_ui_name = input; self
+    pub fn set_human_task_ui_name(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.human_task_ui_name = input;
+        self
     }
     /// Consumes the builder and constructs a [`DescribeHumanTaskUiInput`](crate::operation::describe_human_task_ui::DescribeHumanTaskUiInput).
-    pub fn build(self) -> Result<crate::operation::describe_human_task_ui::DescribeHumanTaskUiInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::describe_human_task_ui::DescribeHumanTaskUiInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::describe_human_task_ui::DescribeHumanTaskUiInput {
-                human_task_ui_name: self.human_task_ui_name
-                ,
-            }
+                human_task_ui_name: self.human_task_ui_name,
+            },
         )
     }
 }
-

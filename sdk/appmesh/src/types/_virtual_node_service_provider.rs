@@ -3,14 +3,14 @@
 /// <p>An object that represents a virtual node service provider.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct VirtualNodeServiceProvider  {
+pub struct VirtualNodeServiceProvider {
     /// <p>The name of the virtual node that is acting as a service provider.</p>
     #[doc(hidden)]
     pub virtual_node_name: std::option::Option<std::string::String>,
 }
 impl VirtualNodeServiceProvider {
     /// <p>The name of the virtual node that is acting as a service provider.</p>
-    pub fn virtual_node_name(&self) -> std::option::Option<& str> {
+    pub fn virtual_node_name(&self) -> std::option::Option<&str> {
         self.virtual_node_name.as_deref()
     }
 }
@@ -34,15 +34,17 @@ impl VirtualNodeServiceProviderBuilder {
         self
     }
     /// <p>The name of the virtual node that is acting as a service provider.</p>
-    pub fn set_virtual_node_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.virtual_node_name = input; self
+    pub fn set_virtual_node_name(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.virtual_node_name = input;
+        self
     }
     /// Consumes the builder and constructs a [`VirtualNodeServiceProvider`](crate::types::VirtualNodeServiceProvider).
     pub fn build(self) -> crate::types::VirtualNodeServiceProvider {
         crate::types::VirtualNodeServiceProvider {
-            virtual_node_name: self.virtual_node_name
-            ,
+            virtual_node_name: self.virtual_node_name,
         }
     }
 }
-

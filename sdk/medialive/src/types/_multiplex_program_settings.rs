@@ -3,7 +3,7 @@
 /// Multiplex Program settings configuration.
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct MultiplexProgramSettings  {
+pub struct MultiplexProgramSettings {
     /// Indicates which pipeline is preferred by the multiplex for program ingest.
     #[doc(hidden)]
     pub preferred_channel_pipeline: std::option::Option<crate::types::PreferredChannelPipeline>,
@@ -19,7 +19,9 @@ pub struct MultiplexProgramSettings  {
 }
 impl MultiplexProgramSettings {
     /// Indicates which pipeline is preferred by the multiplex for program ingest.
-    pub fn preferred_channel_pipeline(&self) -> std::option::Option<& crate::types::PreferredChannelPipeline> {
+    pub fn preferred_channel_pipeline(
+        &self,
+    ) -> std::option::Option<&crate::types::PreferredChannelPipeline> {
         self.preferred_channel_pipeline.as_ref()
     }
     /// Unique program number.
@@ -27,11 +29,13 @@ impl MultiplexProgramSettings {
         self.program_number
     }
     /// Transport stream service descriptor configuration for the Multiplex program.
-    pub fn service_descriptor(&self) -> std::option::Option<& crate::types::MultiplexProgramServiceDescriptor> {
+    pub fn service_descriptor(
+        &self,
+    ) -> std::option::Option<&crate::types::MultiplexProgramServiceDescriptor> {
         self.service_descriptor.as_ref()
     }
     /// Program video settings configuration.
-    pub fn video_settings(&self) -> std::option::Option<& crate::types::MultiplexVideoSettings> {
+    pub fn video_settings(&self) -> std::option::Option<&crate::types::MultiplexVideoSettings> {
         self.video_settings.as_ref()
     }
 }
@@ -46,20 +50,29 @@ impl MultiplexProgramSettings {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct MultiplexProgramSettingsBuilder {
-    pub(crate) preferred_channel_pipeline: std::option::Option<crate::types::PreferredChannelPipeline>,
+    pub(crate) preferred_channel_pipeline:
+        std::option::Option<crate::types::PreferredChannelPipeline>,
     pub(crate) program_number: std::option::Option<i32>,
-    pub(crate) service_descriptor: std::option::Option<crate::types::MultiplexProgramServiceDescriptor>,
+    pub(crate) service_descriptor:
+        std::option::Option<crate::types::MultiplexProgramServiceDescriptor>,
     pub(crate) video_settings: std::option::Option<crate::types::MultiplexVideoSettings>,
 }
 impl MultiplexProgramSettingsBuilder {
     /// Indicates which pipeline is preferred by the multiplex for program ingest.
-    pub fn preferred_channel_pipeline(mut self, input: crate::types::PreferredChannelPipeline) -> Self {
+    pub fn preferred_channel_pipeline(
+        mut self,
+        input: crate::types::PreferredChannelPipeline,
+    ) -> Self {
         self.preferred_channel_pipeline = Some(input);
         self
     }
     /// Indicates which pipeline is preferred by the multiplex for program ingest.
-    pub fn set_preferred_channel_pipeline(mut self, input: std::option::Option<crate::types::PreferredChannelPipeline>) -> Self {
-        self.preferred_channel_pipeline = input; self
+    pub fn set_preferred_channel_pipeline(
+        mut self,
+        input: std::option::Option<crate::types::PreferredChannelPipeline>,
+    ) -> Self {
+        self.preferred_channel_pipeline = input;
+        self
     }
     /// Unique program number.
     pub fn program_number(mut self, input: i32) -> Self {
@@ -68,16 +81,24 @@ impl MultiplexProgramSettingsBuilder {
     }
     /// Unique program number.
     pub fn set_program_number(mut self, input: std::option::Option<i32>) -> Self {
-        self.program_number = input; self
+        self.program_number = input;
+        self
     }
     /// Transport stream service descriptor configuration for the Multiplex program.
-    pub fn service_descriptor(mut self, input: crate::types::MultiplexProgramServiceDescriptor) -> Self {
+    pub fn service_descriptor(
+        mut self,
+        input: crate::types::MultiplexProgramServiceDescriptor,
+    ) -> Self {
         self.service_descriptor = Some(input);
         self
     }
     /// Transport stream service descriptor configuration for the Multiplex program.
-    pub fn set_service_descriptor(mut self, input: std::option::Option<crate::types::MultiplexProgramServiceDescriptor>) -> Self {
-        self.service_descriptor = input; self
+    pub fn set_service_descriptor(
+        mut self,
+        input: std::option::Option<crate::types::MultiplexProgramServiceDescriptor>,
+    ) -> Self {
+        self.service_descriptor = input;
+        self
     }
     /// Program video settings configuration.
     pub fn video_settings(mut self, input: crate::types::MultiplexVideoSettings) -> Self {
@@ -85,22 +106,20 @@ impl MultiplexProgramSettingsBuilder {
         self
     }
     /// Program video settings configuration.
-    pub fn set_video_settings(mut self, input: std::option::Option<crate::types::MultiplexVideoSettings>) -> Self {
-        self.video_settings = input; self
+    pub fn set_video_settings(
+        mut self,
+        input: std::option::Option<crate::types::MultiplexVideoSettings>,
+    ) -> Self {
+        self.video_settings = input;
+        self
     }
     /// Consumes the builder and constructs a [`MultiplexProgramSettings`](crate::types::MultiplexProgramSettings).
     pub fn build(self) -> crate::types::MultiplexProgramSettings {
         crate::types::MultiplexProgramSettings {
-            preferred_channel_pipeline: self.preferred_channel_pipeline
-            ,
-            program_number: self.program_number
-                .unwrap_or_default()
-            ,
-            service_descriptor: self.service_descriptor
-            ,
-            video_settings: self.video_settings
-            ,
+            preferred_channel_pipeline: self.preferred_channel_pipeline,
+            program_number: self.program_number.unwrap_or_default(),
+            service_descriptor: self.service_descriptor,
+            video_settings: self.video_settings,
         }
     }
 }
-

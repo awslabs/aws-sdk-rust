@@ -3,7 +3,7 @@
 /// <p>The language code that represents the language identified in your audio, including the associated confidence score. If you enabled channel identification in your request and each channel contained a different language, you will have more than one <code>LanguageWithScore</code> result.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct LanguageWithScore  {
+pub struct LanguageWithScore {
     /// <p>The language code of the identified language.</p>
     #[doc(hidden)]
     pub language_code: std::option::Option<crate::types::LanguageCode>,
@@ -13,7 +13,7 @@ pub struct LanguageWithScore  {
 }
 impl LanguageWithScore {
     /// <p>The language code of the identified language.</p>
-    pub fn language_code(&self) -> std::option::Option<& crate::types::LanguageCode> {
+    pub fn language_code(&self) -> std::option::Option<&crate::types::LanguageCode> {
         self.language_code.as_ref()
     }
     /// <p>The confidence score associated with the identified language code. Confidence scores are values between zero and one; larger values indicate a higher confidence in the identified language.</p>
@@ -42,8 +42,12 @@ impl LanguageWithScoreBuilder {
         self
     }
     /// <p>The language code of the identified language.</p>
-    pub fn set_language_code(mut self, input: std::option::Option<crate::types::LanguageCode>) -> Self {
-        self.language_code = input; self
+    pub fn set_language_code(
+        mut self,
+        input: std::option::Option<crate::types::LanguageCode>,
+    ) -> Self {
+        self.language_code = input;
+        self
     }
     /// <p>The confidence score associated with the identified language code. Confidence scores are values between zero and one; larger values indicate a higher confidence in the identified language.</p>
     pub fn score(mut self, input: f64) -> Self {
@@ -52,17 +56,14 @@ impl LanguageWithScoreBuilder {
     }
     /// <p>The confidence score associated with the identified language code. Confidence scores are values between zero and one; larger values indicate a higher confidence in the identified language.</p>
     pub fn set_score(mut self, input: std::option::Option<f64>) -> Self {
-        self.score = input; self
+        self.score = input;
+        self
     }
     /// Consumes the builder and constructs a [`LanguageWithScore`](crate::types::LanguageWithScore).
     pub fn build(self) -> crate::types::LanguageWithScore {
         crate::types::LanguageWithScore {
-            language_code: self.language_code
-            ,
-            score: self.score
-                .unwrap_or_default()
-            ,
+            language_code: self.language_code,
+            score: self.score.unwrap_or_default(),
         }
     }
 }
-

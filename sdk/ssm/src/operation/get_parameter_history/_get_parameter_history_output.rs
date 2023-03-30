@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetParameterHistoryOutput  {
+pub struct GetParameterHistoryOutput {
     /// <p>A list of parameters returned by the request.</p>
     #[doc(hidden)]
     pub parameters: std::option::Option<std::vec::Vec<crate::types::ParameterHistory>>,
@@ -13,23 +13,25 @@ pub struct GetParameterHistoryOutput  {
 }
 impl GetParameterHistoryOutput {
     /// <p>A list of parameters returned by the request.</p>
-    pub fn parameters(&self) -> std::option::Option<& [crate::types::ParameterHistory]> {
+    pub fn parameters(&self) -> std::option::Option<&[crate::types::ParameterHistory]> {
         self.parameters.as_deref()
     }
     /// <p>The token to use when requesting the next set of items. If there are no additional items to return, the string is empty.</p>
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for GetParameterHistoryOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl GetParameterHistoryOutput {
     /// Creates a new builder-style object to manufacture [`GetParameterHistoryOutput`](crate::operation::get_parameter_history::GetParameterHistoryOutput).
-    pub fn builder() -> crate::operation::get_parameter_history::builders::GetParameterHistoryOutputBuilder {
-        crate::operation::get_parameter_history::builders::GetParameterHistoryOutputBuilder::default()
+    pub fn builder(
+    ) -> crate::operation::get_parameter_history::builders::GetParameterHistoryOutputBuilder {
+        crate::operation::get_parameter_history::builders::GetParameterHistoryOutputBuilder::default(
+        )
     }
 }
 
@@ -49,13 +51,17 @@ impl GetParameterHistoryOutputBuilder {
     /// <p>A list of parameters returned by the request.</p>
     pub fn parameters(mut self, input: crate::types::ParameterHistory) -> Self {
         let mut v = self.parameters.unwrap_or_default();
-                        v.push(input);
-                        self.parameters = Some(v);
-                        self
+        v.push(input);
+        self.parameters = Some(v);
+        self
     }
     /// <p>A list of parameters returned by the request.</p>
-    pub fn set_parameters(mut self, input: std::option::Option<std::vec::Vec<crate::types::ParameterHistory>>) -> Self {
-        self.parameters = input; self
+    pub fn set_parameters(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::ParameterHistory>>,
+    ) -> Self {
+        self.parameters = input;
+        self
     }
     /// <p>The token to use when requesting the next set of items. If there are no additional items to return, the string is empty.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -64,26 +70,24 @@ impl GetParameterHistoryOutputBuilder {
     }
     /// <p>The token to use when requesting the next set of items. If there are no additional items to return, the string is empty.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input; self
+        self.next_token = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`GetParameterHistoryOutput`](crate::operation::get_parameter_history::GetParameterHistoryOutput).
     pub fn build(self) -> crate::operation::get_parameter_history::GetParameterHistoryOutput {
         crate::operation::get_parameter_history::GetParameterHistoryOutput {
-            parameters: self.parameters
-            ,
-            next_token: self.next_token
-            ,
+            parameters: self.parameters,
+            next_token: self.next_token,
             _request_id: self._request_id,
         }
     }
 }
-

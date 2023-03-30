@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListSigningProfilesInput  {
+pub struct ListSigningProfilesInput {
     /// <p>Designates whether to include profiles with the status of <code>CANCELED</code>.</p>
     #[doc(hidden)]
     pub include_canceled: bool,
@@ -29,22 +29,24 @@ impl ListSigningProfilesInput {
         self.max_results
     }
     /// <p>Value for specifying the next set of paginated results to return. After you receive a response with truncated results, use this parameter in a subsequent request. Set it to the value of <code>nextToken</code> from the response that you just received.</p>
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
     /// <p>Filters results to return only signing jobs initiated for a specified signing platform.</p>
-    pub fn platform_id(&self) -> std::option::Option<& str> {
+    pub fn platform_id(&self) -> std::option::Option<&str> {
         self.platform_id.as_deref()
     }
     /// <p>Filters results to return only signing jobs with statuses in the specified list.</p>
-    pub fn statuses(&self) -> std::option::Option<& [crate::types::SigningProfileStatus]> {
+    pub fn statuses(&self) -> std::option::Option<&[crate::types::SigningProfileStatus]> {
         self.statuses.as_deref()
     }
 }
 impl ListSigningProfilesInput {
     /// Creates a new builder-style object to manufacture [`ListSigningProfilesInput`](crate::operation::list_signing_profiles::ListSigningProfilesInput).
-    pub fn builder() -> crate::operation::list_signing_profiles::builders::ListSigningProfilesInputBuilder {
-        crate::operation::list_signing_profiles::builders::ListSigningProfilesInputBuilder::default()
+    pub fn builder(
+    ) -> crate::operation::list_signing_profiles::builders::ListSigningProfilesInputBuilder {
+        crate::operation::list_signing_profiles::builders::ListSigningProfilesInputBuilder::default(
+        )
     }
 }
 
@@ -66,7 +68,8 @@ impl ListSigningProfilesInputBuilder {
     }
     /// <p>Designates whether to include profiles with the status of <code>CANCELED</code>.</p>
     pub fn set_include_canceled(mut self, input: std::option::Option<bool>) -> Self {
-        self.include_canceled = input; self
+        self.include_canceled = input;
+        self
     }
     /// <p>The maximum number of profiles to be returned.</p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -75,7 +78,8 @@ impl ListSigningProfilesInputBuilder {
     }
     /// <p>The maximum number of profiles to be returned.</p>
     pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_results = input; self
+        self.max_results = input;
+        self
     }
     /// <p>Value for specifying the next set of paginated results to return. After you receive a response with truncated results, use this parameter in a subsequent request. Set it to the value of <code>nextToken</code> from the response that you just received.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -84,7 +88,8 @@ impl ListSigningProfilesInputBuilder {
     }
     /// <p>Value for specifying the next set of paginated results to return. After you receive a response with truncated results, use this parameter in a subsequent request. Set it to the value of <code>nextToken</code> from the response that you just received.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input; self
+        self.next_token = input;
+        self
     }
     /// <p>Filters results to return only signing jobs initiated for a specified signing platform.</p>
     pub fn platform_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -93,7 +98,8 @@ impl ListSigningProfilesInputBuilder {
     }
     /// <p>Filters results to return only signing jobs initiated for a specified signing platform.</p>
     pub fn set_platform_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.platform_id = input; self
+        self.platform_id = input;
+        self
     }
     /// Appends an item to `statuses`.
     ///
@@ -102,31 +108,33 @@ impl ListSigningProfilesInputBuilder {
     /// <p>Filters results to return only signing jobs with statuses in the specified list.</p>
     pub fn statuses(mut self, input: crate::types::SigningProfileStatus) -> Self {
         let mut v = self.statuses.unwrap_or_default();
-                        v.push(input);
-                        self.statuses = Some(v);
-                        self
+        v.push(input);
+        self.statuses = Some(v);
+        self
     }
     /// <p>Filters results to return only signing jobs with statuses in the specified list.</p>
-    pub fn set_statuses(mut self, input: std::option::Option<std::vec::Vec<crate::types::SigningProfileStatus>>) -> Self {
-        self.statuses = input; self
+    pub fn set_statuses(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::SigningProfileStatus>>,
+    ) -> Self {
+        self.statuses = input;
+        self
     }
     /// Consumes the builder and constructs a [`ListSigningProfilesInput`](crate::operation::list_signing_profiles::ListSigningProfilesInput).
-    pub fn build(self) -> Result<crate::operation::list_signing_profiles::ListSigningProfilesInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::list_signing_profiles::ListSigningProfilesInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::list_signing_profiles::ListSigningProfilesInput {
-                include_canceled: self.include_canceled
-                    .unwrap_or_default()
-                ,
-                max_results: self.max_results
-                ,
-                next_token: self.next_token
-                ,
-                platform_id: self.platform_id
-                ,
-                statuses: self.statuses
-                ,
-            }
+                include_canceled: self.include_canceled.unwrap_or_default(),
+                max_results: self.max_results,
+                next_token: self.next_token,
+                platform_id: self.platform_id,
+                statuses: self.statuses,
+            },
         )
     }
 }
-

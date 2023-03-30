@@ -2,39 +2,39 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetMapSpritesInput  {
+pub struct GetMapSpritesInput {
     /// <p>The map resource associated with the sprite ﬁle.</p>
     #[doc(hidden)]
     pub map_name: std::option::Option<std::string::String>,
-    /// <p>The name of the sprite ﬁle. Use the following ﬁle names for the sprite sheet:</p> 
-    /// <ul> 
-    /// <li> <p> <code>sprites.png</code> </p> </li> 
-    /// <li> <p> <code>sprites@2x.png</code> for high pixel density displays</p> </li> 
-    /// </ul> 
-    /// <p>For the JSON document containing image offsets. Use the following ﬁle names:</p> 
-    /// <ul> 
-    /// <li> <p> <code>sprites.json</code> </p> </li> 
-    /// <li> <p> <code>sprites@2x.json</code> for high pixel density displays</p> </li> 
+    /// <p>The name of the sprite ﬁle. Use the following ﬁle names for the sprite sheet:</p>
+    /// <ul>
+    /// <li> <p> <code>sprites.png</code> </p> </li>
+    /// <li> <p> <code>sprites@2x.png</code> for high pixel density displays</p> </li>
+    /// </ul>
+    /// <p>For the JSON document containing image offsets. Use the following ﬁle names:</p>
+    /// <ul>
+    /// <li> <p> <code>sprites.json</code> </p> </li>
+    /// <li> <p> <code>sprites@2x.json</code> for high pixel density displays</p> </li>
     /// </ul>
     #[doc(hidden)]
     pub file_name: std::option::Option<std::string::String>,
 }
 impl GetMapSpritesInput {
     /// <p>The map resource associated with the sprite ﬁle.</p>
-    pub fn map_name(&self) -> std::option::Option<& str> {
+    pub fn map_name(&self) -> std::option::Option<&str> {
         self.map_name.as_deref()
     }
-    /// <p>The name of the sprite ﬁle. Use the following ﬁle names for the sprite sheet:</p> 
-    /// <ul> 
-    /// <li> <p> <code>sprites.png</code> </p> </li> 
-    /// <li> <p> <code>sprites@2x.png</code> for high pixel density displays</p> </li> 
-    /// </ul> 
-    /// <p>For the JSON document containing image offsets. Use the following ﬁle names:</p> 
-    /// <ul> 
-    /// <li> <p> <code>sprites.json</code> </p> </li> 
-    /// <li> <p> <code>sprites@2x.json</code> for high pixel density displays</p> </li> 
+    /// <p>The name of the sprite ﬁle. Use the following ﬁle names for the sprite sheet:</p>
+    /// <ul>
+    /// <li> <p> <code>sprites.png</code> </p> </li>
+    /// <li> <p> <code>sprites@2x.png</code> for high pixel density displays</p> </li>
     /// </ul>
-    pub fn file_name(&self) -> std::option::Option<& str> {
+    /// <p>For the JSON document containing image offsets. Use the following ﬁle names:</p>
+    /// <ul>
+    /// <li> <p> <code>sprites.json</code> </p> </li>
+    /// <li> <p> <code>sprites@2x.json</code> for high pixel density displays</p> </li>
+    /// </ul>
+    pub fn file_name(&self) -> std::option::Option<&str> {
         self.file_name.as_deref()
     }
 }
@@ -60,45 +60,47 @@ impl GetMapSpritesInputBuilder {
     }
     /// <p>The map resource associated with the sprite ﬁle.</p>
     pub fn set_map_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.map_name = input; self
+        self.map_name = input;
+        self
     }
-    /// <p>The name of the sprite ﬁle. Use the following ﬁle names for the sprite sheet:</p> 
-    /// <ul> 
-    /// <li> <p> <code>sprites.png</code> </p> </li> 
-    /// <li> <p> <code>sprites@2x.png</code> for high pixel density displays</p> </li> 
-    /// </ul> 
-    /// <p>For the JSON document containing image offsets. Use the following ﬁle names:</p> 
-    /// <ul> 
-    /// <li> <p> <code>sprites.json</code> </p> </li> 
-    /// <li> <p> <code>sprites@2x.json</code> for high pixel density displays</p> </li> 
+    /// <p>The name of the sprite ﬁle. Use the following ﬁle names for the sprite sheet:</p>
+    /// <ul>
+    /// <li> <p> <code>sprites.png</code> </p> </li>
+    /// <li> <p> <code>sprites@2x.png</code> for high pixel density displays</p> </li>
+    /// </ul>
+    /// <p>For the JSON document containing image offsets. Use the following ﬁle names:</p>
+    /// <ul>
+    /// <li> <p> <code>sprites.json</code> </p> </li>
+    /// <li> <p> <code>sprites@2x.json</code> for high pixel density displays</p> </li>
     /// </ul>
     pub fn file_name(mut self, input: impl Into<std::string::String>) -> Self {
         self.file_name = Some(input.into());
         self
     }
-    /// <p>The name of the sprite ﬁle. Use the following ﬁle names for the sprite sheet:</p> 
-    /// <ul> 
-    /// <li> <p> <code>sprites.png</code> </p> </li> 
-    /// <li> <p> <code>sprites@2x.png</code> for high pixel density displays</p> </li> 
-    /// </ul> 
-    /// <p>For the JSON document containing image offsets. Use the following ﬁle names:</p> 
-    /// <ul> 
-    /// <li> <p> <code>sprites.json</code> </p> </li> 
-    /// <li> <p> <code>sprites@2x.json</code> for high pixel density displays</p> </li> 
+    /// <p>The name of the sprite ﬁle. Use the following ﬁle names for the sprite sheet:</p>
+    /// <ul>
+    /// <li> <p> <code>sprites.png</code> </p> </li>
+    /// <li> <p> <code>sprites@2x.png</code> for high pixel density displays</p> </li>
+    /// </ul>
+    /// <p>For the JSON document containing image offsets. Use the following ﬁle names:</p>
+    /// <ul>
+    /// <li> <p> <code>sprites.json</code> </p> </li>
+    /// <li> <p> <code>sprites@2x.json</code> for high pixel density displays</p> </li>
     /// </ul>
     pub fn set_file_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.file_name = input; self
+        self.file_name = input;
+        self
     }
     /// Consumes the builder and constructs a [`GetMapSpritesInput`](crate::operation::get_map_sprites::GetMapSpritesInput).
-    pub fn build(self) -> Result<crate::operation::get_map_sprites::GetMapSpritesInput, aws_smithy_http::operation::error::BuildError> {
-        Ok(
-            crate::operation::get_map_sprites::GetMapSpritesInput {
-                map_name: self.map_name
-                ,
-                file_name: self.file_name
-                ,
-            }
-        )
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::get_map_sprites::GetMapSpritesInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        Ok(crate::operation::get_map_sprites::GetMapSpritesInput {
+            map_name: self.map_name,
+            file_name: self.file_name,
+        })
     }
 }
-

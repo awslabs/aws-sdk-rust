@@ -42,4 +42,3 @@ pub mod unshare_application;
 
 /// Types for the `UpdateApplication` operation.
 pub mod update_application;
-

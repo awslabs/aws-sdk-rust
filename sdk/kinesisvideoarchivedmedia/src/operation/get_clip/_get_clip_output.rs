@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
-pub struct GetClipOutput  {
+pub struct GetClipOutput {
     /// <p>The content type of the media in the requested clip.</p>
     #[doc(hidden)]
     pub content_type: std::option::Option<std::string::String>,
@@ -12,19 +12,19 @@ pub struct GetClipOutput  {
 }
 impl GetClipOutput {
     /// <p>The content type of the media in the requested clip.</p>
-    pub fn content_type(&self) -> std::option::Option<& str> {
+    pub fn content_type(&self) -> std::option::Option<&str> {
         self.content_type.as_deref()
     }
     /// <p>Traditional MP4 file that contains the media clip from the specified video stream. The output will contain the first 100 MB or the first 200 fragments from the specified start timestamp. For more information, see <a href="https://docs.aws.amazon.com/kinesisvideostreams/latest/dg/limits.html">Kinesis Video Streams Limits</a>. </p>
-    pub fn payload(&self) -> & aws_smithy_http::byte_stream::ByteStream {
+    pub fn payload(&self) -> &aws_smithy_http::byte_stream::ByteStream {
         &self.payload
     }
 }
 impl aws_http::request_id::RequestId for GetClipOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl GetClipOutput {
     /// Creates a new builder-style object to manufacture [`GetClipOutput`](crate::operation::get_clip::GetClipOutput).
     pub fn builder() -> crate::operation::get_clip::builders::GetClipOutputBuilder {
@@ -48,7 +48,8 @@ impl GetClipOutputBuilder {
     }
     /// <p>The content type of the media in the requested clip.</p>
     pub fn set_content_type(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.content_type = input; self
+        self.content_type = input;
+        self
     }
     /// <p>Traditional MP4 file that contains the media clip from the specified video stream. The output will contain the first 100 MB or the first 200 fragments from the specified start timestamp. For more information, see <a href="https://docs.aws.amazon.com/kinesisvideostreams/latest/dg/limits.html">Kinesis Video Streams Limits</a>. </p>
     pub fn payload(mut self, input: aws_smithy_http::byte_stream::ByteStream) -> Self {
@@ -56,28 +57,28 @@ impl GetClipOutputBuilder {
         self
     }
     /// <p>Traditional MP4 file that contains the media clip from the specified video stream. The output will contain the first 100 MB or the first 200 fragments from the specified start timestamp. For more information, see <a href="https://docs.aws.amazon.com/kinesisvideostreams/latest/dg/limits.html">Kinesis Video Streams Limits</a>. </p>
-    pub fn set_payload(mut self, input: std::option::Option<aws_smithy_http::byte_stream::ByteStream>) -> Self {
-        self.payload = input; self
+    pub fn set_payload(
+        mut self,
+        input: std::option::Option<aws_smithy_http::byte_stream::ByteStream>,
+    ) -> Self {
+        self.payload = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`GetClipOutput`](crate::operation::get_clip::GetClipOutput).
     pub fn build(self) -> crate::operation::get_clip::GetClipOutput {
         crate::operation::get_clip::GetClipOutput {
-            content_type: self.content_type
-            ,
-            payload: self.payload
-                .unwrap_or_default()
-            ,
+            content_type: self.content_type,
+            payload: self.payload.unwrap_or_default(),
             _request_id: self._request_id,
         }
     }
 }
-

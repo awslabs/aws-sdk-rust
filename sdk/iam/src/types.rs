@@ -288,4 +288,3 @@ pub mod builders;
 
 /// Error types that AWS Identity and Access Management can respond with.
 pub mod error;
-

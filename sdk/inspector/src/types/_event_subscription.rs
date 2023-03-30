@@ -3,7 +3,7 @@
 /// <p>This data type is used in the <code>Subscription</code> data type.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct EventSubscription  {
+pub struct EventSubscription {
     /// <p>The event for which Amazon Simple Notification Service (SNS) notifications are sent.</p>
     #[doc(hidden)]
     pub event: std::option::Option<crate::types::InspectorEvent>,
@@ -13,11 +13,11 @@ pub struct EventSubscription  {
 }
 impl EventSubscription {
     /// <p>The event for which Amazon Simple Notification Service (SNS) notifications are sent.</p>
-    pub fn event(&self) -> std::option::Option<& crate::types::InspectorEvent> {
+    pub fn event(&self) -> std::option::Option<&crate::types::InspectorEvent> {
         self.event.as_ref()
     }
     /// <p>The time at which <code>SubscribeToEvent</code> is called.</p>
-    pub fn subscribed_at(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
+    pub fn subscribed_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.subscribed_at.as_ref()
     }
 }
@@ -43,7 +43,8 @@ impl EventSubscriptionBuilder {
     }
     /// <p>The event for which Amazon Simple Notification Service (SNS) notifications are sent.</p>
     pub fn set_event(mut self, input: std::option::Option<crate::types::InspectorEvent>) -> Self {
-        self.event = input; self
+        self.event = input;
+        self
     }
     /// <p>The time at which <code>SubscribeToEvent</code> is called.</p>
     pub fn subscribed_at(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -51,17 +52,18 @@ impl EventSubscriptionBuilder {
         self
     }
     /// <p>The time at which <code>SubscribeToEvent</code> is called.</p>
-    pub fn set_subscribed_at(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.subscribed_at = input; self
+    pub fn set_subscribed_at(
+        mut self,
+        input: std::option::Option<aws_smithy_types::DateTime>,
+    ) -> Self {
+        self.subscribed_at = input;
+        self
     }
     /// Consumes the builder and constructs a [`EventSubscription`](crate::types::EventSubscription).
     pub fn build(self) -> crate::types::EventSubscription {
         crate::types::EventSubscription {
-            event: self.event
-            ,
-            subscribed_at: self.subscribed_at
-            ,
+            event: self.event,
+            subscribed_at: self.subscribed_at,
         }
     }
 }
-

@@ -3,7 +3,7 @@
 /// <p>Represents information about the remote access session.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct RemoteAccessSession  {
+pub struct RemoteAccessSession {
     /// <p>The Amazon Resource Name (ARN) of the remote access session.</p>
     #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
@@ -13,29 +13,29 @@ pub struct RemoteAccessSession  {
     /// <p>The date and time the remote access session was created.</p>
     #[doc(hidden)]
     pub created: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>The status of the remote access session. Can be any of the following:</p> 
-    /// <ul> 
-    /// <li> <p>PENDING.</p> </li> 
-    /// <li> <p>PENDING_CONCURRENCY.</p> </li> 
-    /// <li> <p>PENDING_DEVICE.</p> </li> 
-    /// <li> <p>PROCESSING.</p> </li> 
-    /// <li> <p>SCHEDULING.</p> </li> 
-    /// <li> <p>PREPARING.</p> </li> 
-    /// <li> <p>RUNNING.</p> </li> 
-    /// <li> <p>COMPLETED.</p> </li> 
-    /// <li> <p>STOPPING.</p> </li> 
+    /// <p>The status of the remote access session. Can be any of the following:</p>
+    /// <ul>
+    /// <li> <p>PENDING.</p> </li>
+    /// <li> <p>PENDING_CONCURRENCY.</p> </li>
+    /// <li> <p>PENDING_DEVICE.</p> </li>
+    /// <li> <p>PROCESSING.</p> </li>
+    /// <li> <p>SCHEDULING.</p> </li>
+    /// <li> <p>PREPARING.</p> </li>
+    /// <li> <p>RUNNING.</p> </li>
+    /// <li> <p>COMPLETED.</p> </li>
+    /// <li> <p>STOPPING.</p> </li>
     /// </ul>
     #[doc(hidden)]
     pub status: std::option::Option<crate::types::ExecutionStatus>,
-    /// <p>The result of the remote access session. Can be any of the following:</p> 
-    /// <ul> 
-    /// <li> <p>PENDING.</p> </li> 
-    /// <li> <p>PASSED.</p> </li> 
-    /// <li> <p>WARNED.</p> </li> 
-    /// <li> <p>FAILED.</p> </li> 
-    /// <li> <p>SKIPPED.</p> </li> 
-    /// <li> <p>ERRORED.</p> </li> 
-    /// <li> <p>STOPPED.</p> </li> 
+    /// <p>The result of the remote access session. Can be any of the following:</p>
+    /// <ul>
+    /// <li> <p>PENDING.</p> </li>
+    /// <li> <p>PASSED.</p> </li>
+    /// <li> <p>WARNED.</p> </li>
+    /// <li> <p>FAILED.</p> </li>
+    /// <li> <p>SKIPPED.</p> </li>
+    /// <li> <p>ERRORED.</p> </li>
+    /// <li> <p>STOPPED.</p> </li>
     /// </ul>
     #[doc(hidden)]
     pub result: std::option::Option<crate::types::ExecutionResult>,
@@ -54,7 +54,7 @@ pub struct RemoteAccessSession  {
     /// <p>The ARN of the instance.</p>
     #[doc(hidden)]
     pub instance_arn: std::option::Option<std::string::String>,
-    /// <p>This flag is set to <code>true</code> if remote debugging is enabled for the remote access session.</p> 
+    /// <p>This flag is set to <code>true</code> if remote debugging is enabled for the remote access session.</p>
     /// <p>Remote debugging is <a href="https://docs.aws.amazon.com/devicefarm/latest/developerguide/history.html">no longer supported</a>.</p>
     #[doc(hidden)]
     pub remote_debug_enabled: std::option::Option<bool>,
@@ -64,11 +64,11 @@ pub struct RemoteAccessSession  {
     /// <p>The ARN for the app to be recorded in the remote access session.</p>
     #[doc(hidden)]
     pub remote_record_app_arn: std::option::Option<std::string::String>,
-    /// <p>IP address of the EC2 host where you need to connect to remotely debug devices. Only returned if remote debugging is enabled for the remote access session.</p> 
+    /// <p>IP address of the EC2 host where you need to connect to remotely debug devices. Only returned if remote debugging is enabled for the remote access session.</p>
     /// <p>Remote debugging is <a href="https://docs.aws.amazon.com/devicefarm/latest/developerguide/history.html">no longer supported</a>.</p>
     #[doc(hidden)]
     pub host_address: std::option::Option<std::string::String>,
-    /// <p>Unique identifier of your client for the remote access session. Only returned if remote debugging is enabled for the remote access session.</p> 
+    /// <p>Unique identifier of your client for the remote access session. Only returned if remote debugging is enabled for the remote access session.</p>
     /// <p>Remote debugging is <a href="https://docs.aws.amazon.com/devicefarm/latest/developerguide/history.html">no longer supported</a>.</p>
     #[doc(hidden)]
     pub client_id: std::option::Option<std::string::String>,
@@ -81,19 +81,19 @@ pub struct RemoteAccessSession  {
     /// <p>The endpoint for the remote access sesssion.</p>
     #[doc(hidden)]
     pub endpoint: std::option::Option<std::string::String>,
-    /// <p>Unique device identifier for the remote device. Only returned if remote debugging is enabled for the remote access session.</p> 
+    /// <p>Unique device identifier for the remote device. Only returned if remote debugging is enabled for the remote access session.</p>
     /// <p>Remote debugging is <a href="https://docs.aws.amazon.com/devicefarm/latest/developerguide/history.html">no longer supported</a>.</p>
     #[doc(hidden)]
     pub device_udid: std::option::Option<std::string::String>,
-    /// <p>The interaction mode of the remote access session. Valid values are:</p> 
-    /// <ul> 
-    /// <li> <p>INTERACTIVE: You can interact with the iOS device by viewing, touching, and rotating the screen. You cannot run XCUITest framework-based tests in this mode.</p> </li> 
-    /// <li> <p>NO_VIDEO: You are connected to the device, but cannot interact with it or view the screen. This mode has the fastest test execution speed. You can run XCUITest framework-based tests in this mode.</p> </li> 
-    /// <li> <p>VIDEO_ONLY: You can view the screen, but cannot touch or rotate it. You can run XCUITest framework-based tests and watch the screen in this mode.</p> </li> 
+    /// <p>The interaction mode of the remote access session. Valid values are:</p>
+    /// <ul>
+    /// <li> <p>INTERACTIVE: You can interact with the iOS device by viewing, touching, and rotating the screen. You cannot run XCUITest framework-based tests in this mode.</p> </li>
+    /// <li> <p>NO_VIDEO: You are connected to the device, but cannot interact with it or view the screen. This mode has the fastest test execution speed. You can run XCUITest framework-based tests in this mode.</p> </li>
+    /// <li> <p>VIDEO_ONLY: You can view the screen, but cannot touch or rotate it. You can run XCUITest framework-based tests and watch the screen in this mode.</p> </li>
     /// </ul>
     #[doc(hidden)]
     pub interaction_mode: std::option::Option<crate::types::InteractionMode>,
-    /// <p>When set to <code>true</code>, for private devices, Device Farm does not sign your app again. For public devices, Device Farm always signs your apps again.</p> 
+    /// <p>When set to <code>true</code>, for private devices, Device Farm does not sign your app again. For public devices, Device Farm always signs your apps again.</p>
     /// <p>For more information about how Device Farm re-signs your apps, see <a href="http://aws.amazon.com/device-farm/faqs/">Do you modify my app?</a> in the <i>AWS Device Farm FAQs</i>.</p>
     #[doc(hidden)]
     pub skip_app_resign: std::option::Option<bool>,
@@ -103,66 +103,66 @@ pub struct RemoteAccessSession  {
 }
 impl RemoteAccessSession {
     /// <p>The Amazon Resource Name (ARN) of the remote access session.</p>
-    pub fn arn(&self) -> std::option::Option<& str> {
+    pub fn arn(&self) -> std::option::Option<&str> {
         self.arn.as_deref()
     }
     /// <p>The name of the remote access session.</p>
-    pub fn name(&self) -> std::option::Option<& str> {
+    pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>The date and time the remote access session was created.</p>
-    pub fn created(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
+    pub fn created(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created.as_ref()
     }
-    /// <p>The status of the remote access session. Can be any of the following:</p> 
-    /// <ul> 
-    /// <li> <p>PENDING.</p> </li> 
-    /// <li> <p>PENDING_CONCURRENCY.</p> </li> 
-    /// <li> <p>PENDING_DEVICE.</p> </li> 
-    /// <li> <p>PROCESSING.</p> </li> 
-    /// <li> <p>SCHEDULING.</p> </li> 
-    /// <li> <p>PREPARING.</p> </li> 
-    /// <li> <p>RUNNING.</p> </li> 
-    /// <li> <p>COMPLETED.</p> </li> 
-    /// <li> <p>STOPPING.</p> </li> 
+    /// <p>The status of the remote access session. Can be any of the following:</p>
+    /// <ul>
+    /// <li> <p>PENDING.</p> </li>
+    /// <li> <p>PENDING_CONCURRENCY.</p> </li>
+    /// <li> <p>PENDING_DEVICE.</p> </li>
+    /// <li> <p>PROCESSING.</p> </li>
+    /// <li> <p>SCHEDULING.</p> </li>
+    /// <li> <p>PREPARING.</p> </li>
+    /// <li> <p>RUNNING.</p> </li>
+    /// <li> <p>COMPLETED.</p> </li>
+    /// <li> <p>STOPPING.</p> </li>
     /// </ul>
-    pub fn status(&self) -> std::option::Option<& crate::types::ExecutionStatus> {
+    pub fn status(&self) -> std::option::Option<&crate::types::ExecutionStatus> {
         self.status.as_ref()
     }
-    /// <p>The result of the remote access session. Can be any of the following:</p> 
-    /// <ul> 
-    /// <li> <p>PENDING.</p> </li> 
-    /// <li> <p>PASSED.</p> </li> 
-    /// <li> <p>WARNED.</p> </li> 
-    /// <li> <p>FAILED.</p> </li> 
-    /// <li> <p>SKIPPED.</p> </li> 
-    /// <li> <p>ERRORED.</p> </li> 
-    /// <li> <p>STOPPED.</p> </li> 
+    /// <p>The result of the remote access session. Can be any of the following:</p>
+    /// <ul>
+    /// <li> <p>PENDING.</p> </li>
+    /// <li> <p>PASSED.</p> </li>
+    /// <li> <p>WARNED.</p> </li>
+    /// <li> <p>FAILED.</p> </li>
+    /// <li> <p>SKIPPED.</p> </li>
+    /// <li> <p>ERRORED.</p> </li>
+    /// <li> <p>STOPPED.</p> </li>
     /// </ul>
-    pub fn result(&self) -> std::option::Option<& crate::types::ExecutionResult> {
+    pub fn result(&self) -> std::option::Option<&crate::types::ExecutionResult> {
         self.result.as_ref()
     }
     /// <p>A message about the remote access session.</p>
-    pub fn message(&self) -> std::option::Option<& str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
     /// <p>The date and time the remote access session was started.</p>
-    pub fn started(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
+    pub fn started(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.started.as_ref()
     }
     /// <p>The date and time the remote access session was stopped.</p>
-    pub fn stopped(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
+    pub fn stopped(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.stopped.as_ref()
     }
     /// <p>The device (phone or tablet) used in the remote access session.</p>
-    pub fn device(&self) -> std::option::Option<& crate::types::Device> {
+    pub fn device(&self) -> std::option::Option<&crate::types::Device> {
         self.device.as_ref()
     }
     /// <p>The ARN of the instance.</p>
-    pub fn instance_arn(&self) -> std::option::Option<& str> {
+    pub fn instance_arn(&self) -> std::option::Option<&str> {
         self.instance_arn.as_deref()
     }
-    /// <p>This flag is set to <code>true</code> if remote debugging is enabled for the remote access session.</p> 
+    /// <p>This flag is set to <code>true</code> if remote debugging is enabled for the remote access session.</p>
     /// <p>Remote debugging is <a href="https://docs.aws.amazon.com/devicefarm/latest/developerguide/history.html">no longer supported</a>.</p>
     pub fn remote_debug_enabled(&self) -> std::option::Option<bool> {
         self.remote_debug_enabled
@@ -172,52 +172,52 @@ impl RemoteAccessSession {
         self.remote_record_enabled
     }
     /// <p>The ARN for the app to be recorded in the remote access session.</p>
-    pub fn remote_record_app_arn(&self) -> std::option::Option<& str> {
+    pub fn remote_record_app_arn(&self) -> std::option::Option<&str> {
         self.remote_record_app_arn.as_deref()
     }
-    /// <p>IP address of the EC2 host where you need to connect to remotely debug devices. Only returned if remote debugging is enabled for the remote access session.</p> 
+    /// <p>IP address of the EC2 host where you need to connect to remotely debug devices. Only returned if remote debugging is enabled for the remote access session.</p>
     /// <p>Remote debugging is <a href="https://docs.aws.amazon.com/devicefarm/latest/developerguide/history.html">no longer supported</a>.</p>
-    pub fn host_address(&self) -> std::option::Option<& str> {
+    pub fn host_address(&self) -> std::option::Option<&str> {
         self.host_address.as_deref()
     }
-    /// <p>Unique identifier of your client for the remote access session. Only returned if remote debugging is enabled for the remote access session.</p> 
+    /// <p>Unique identifier of your client for the remote access session. Only returned if remote debugging is enabled for the remote access session.</p>
     /// <p>Remote debugging is <a href="https://docs.aws.amazon.com/devicefarm/latest/developerguide/history.html">no longer supported</a>.</p>
-    pub fn client_id(&self) -> std::option::Option<& str> {
+    pub fn client_id(&self) -> std::option::Option<&str> {
         self.client_id.as_deref()
     }
     /// <p>The billing method of the remote access session. Possible values include <code>METERED</code> or <code>UNMETERED</code>. For more information about metered devices, see <a href="https://docs.aws.amazon.com/devicefarm/latest/developerguide/welcome.html#welcome-terminology">AWS Device Farm terminology</a>.</p>
-    pub fn billing_method(&self) -> std::option::Option<& crate::types::BillingMethod> {
+    pub fn billing_method(&self) -> std::option::Option<&crate::types::BillingMethod> {
         self.billing_method.as_ref()
     }
     /// <p>The number of minutes a device is used in a remote access session (including setup and teardown minutes).</p>
-    pub fn device_minutes(&self) -> std::option::Option<& crate::types::DeviceMinutes> {
+    pub fn device_minutes(&self) -> std::option::Option<&crate::types::DeviceMinutes> {
         self.device_minutes.as_ref()
     }
     /// <p>The endpoint for the remote access sesssion.</p>
-    pub fn endpoint(&self) -> std::option::Option<& str> {
+    pub fn endpoint(&self) -> std::option::Option<&str> {
         self.endpoint.as_deref()
     }
-    /// <p>Unique device identifier for the remote device. Only returned if remote debugging is enabled for the remote access session.</p> 
+    /// <p>Unique device identifier for the remote device. Only returned if remote debugging is enabled for the remote access session.</p>
     /// <p>Remote debugging is <a href="https://docs.aws.amazon.com/devicefarm/latest/developerguide/history.html">no longer supported</a>.</p>
-    pub fn device_udid(&self) -> std::option::Option<& str> {
+    pub fn device_udid(&self) -> std::option::Option<&str> {
         self.device_udid.as_deref()
     }
-    /// <p>The interaction mode of the remote access session. Valid values are:</p> 
-    /// <ul> 
-    /// <li> <p>INTERACTIVE: You can interact with the iOS device by viewing, touching, and rotating the screen. You cannot run XCUITest framework-based tests in this mode.</p> </li> 
-    /// <li> <p>NO_VIDEO: You are connected to the device, but cannot interact with it or view the screen. This mode has the fastest test execution speed. You can run XCUITest framework-based tests in this mode.</p> </li> 
-    /// <li> <p>VIDEO_ONLY: You can view the screen, but cannot touch or rotate it. You can run XCUITest framework-based tests and watch the screen in this mode.</p> </li> 
+    /// <p>The interaction mode of the remote access session. Valid values are:</p>
+    /// <ul>
+    /// <li> <p>INTERACTIVE: You can interact with the iOS device by viewing, touching, and rotating the screen. You cannot run XCUITest framework-based tests in this mode.</p> </li>
+    /// <li> <p>NO_VIDEO: You are connected to the device, but cannot interact with it or view the screen. This mode has the fastest test execution speed. You can run XCUITest framework-based tests in this mode.</p> </li>
+    /// <li> <p>VIDEO_ONLY: You can view the screen, but cannot touch or rotate it. You can run XCUITest framework-based tests and watch the screen in this mode.</p> </li>
     /// </ul>
-    pub fn interaction_mode(&self) -> std::option::Option<& crate::types::InteractionMode> {
+    pub fn interaction_mode(&self) -> std::option::Option<&crate::types::InteractionMode> {
         self.interaction_mode.as_ref()
     }
-    /// <p>When set to <code>true</code>, for private devices, Device Farm does not sign your app again. For public devices, Device Farm always signs your apps again.</p> 
+    /// <p>When set to <code>true</code>, for private devices, Device Farm does not sign your app again. For public devices, Device Farm always signs your apps again.</p>
     /// <p>For more information about how Device Farm re-signs your apps, see <a href="http://aws.amazon.com/device-farm/faqs/">Do you modify my app?</a> in the <i>AWS Device Farm FAQs</i>.</p>
     pub fn skip_app_resign(&self) -> std::option::Option<bool> {
         self.skip_app_resign
     }
     /// <p>The VPC security groups and subnets that are attached to a project.</p>
-    pub fn vpc_config(&self) -> std::option::Option<& crate::types::VpcConfig> {
+    pub fn vpc_config(&self) -> std::option::Option<&crate::types::VpcConfig> {
         self.vpc_config.as_ref()
     }
 }
@@ -263,7 +263,8 @@ impl RemoteAccessSessionBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the remote access session.</p>
     pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.arn = input; self
+        self.arn = input;
+        self
     }
     /// <p>The name of the remote access session.</p>
     pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -272,7 +273,8 @@ impl RemoteAccessSessionBuilder {
     }
     /// <p>The name of the remote access session.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input; self
+        self.name = input;
+        self
     }
     /// <p>The date and time the remote access session was created.</p>
     pub fn created(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -281,65 +283,68 @@ impl RemoteAccessSessionBuilder {
     }
     /// <p>The date and time the remote access session was created.</p>
     pub fn set_created(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.created = input; self
+        self.created = input;
+        self
     }
-    /// <p>The status of the remote access session. Can be any of the following:</p> 
-    /// <ul> 
-    /// <li> <p>PENDING.</p> </li> 
-    /// <li> <p>PENDING_CONCURRENCY.</p> </li> 
-    /// <li> <p>PENDING_DEVICE.</p> </li> 
-    /// <li> <p>PROCESSING.</p> </li> 
-    /// <li> <p>SCHEDULING.</p> </li> 
-    /// <li> <p>PREPARING.</p> </li> 
-    /// <li> <p>RUNNING.</p> </li> 
-    /// <li> <p>COMPLETED.</p> </li> 
-    /// <li> <p>STOPPING.</p> </li> 
+    /// <p>The status of the remote access session. Can be any of the following:</p>
+    /// <ul>
+    /// <li> <p>PENDING.</p> </li>
+    /// <li> <p>PENDING_CONCURRENCY.</p> </li>
+    /// <li> <p>PENDING_DEVICE.</p> </li>
+    /// <li> <p>PROCESSING.</p> </li>
+    /// <li> <p>SCHEDULING.</p> </li>
+    /// <li> <p>PREPARING.</p> </li>
+    /// <li> <p>RUNNING.</p> </li>
+    /// <li> <p>COMPLETED.</p> </li>
+    /// <li> <p>STOPPING.</p> </li>
     /// </ul>
     pub fn status(mut self, input: crate::types::ExecutionStatus) -> Self {
         self.status = Some(input);
         self
     }
-    /// <p>The status of the remote access session. Can be any of the following:</p> 
-    /// <ul> 
-    /// <li> <p>PENDING.</p> </li> 
-    /// <li> <p>PENDING_CONCURRENCY.</p> </li> 
-    /// <li> <p>PENDING_DEVICE.</p> </li> 
-    /// <li> <p>PROCESSING.</p> </li> 
-    /// <li> <p>SCHEDULING.</p> </li> 
-    /// <li> <p>PREPARING.</p> </li> 
-    /// <li> <p>RUNNING.</p> </li> 
-    /// <li> <p>COMPLETED.</p> </li> 
-    /// <li> <p>STOPPING.</p> </li> 
+    /// <p>The status of the remote access session. Can be any of the following:</p>
+    /// <ul>
+    /// <li> <p>PENDING.</p> </li>
+    /// <li> <p>PENDING_CONCURRENCY.</p> </li>
+    /// <li> <p>PENDING_DEVICE.</p> </li>
+    /// <li> <p>PROCESSING.</p> </li>
+    /// <li> <p>SCHEDULING.</p> </li>
+    /// <li> <p>PREPARING.</p> </li>
+    /// <li> <p>RUNNING.</p> </li>
+    /// <li> <p>COMPLETED.</p> </li>
+    /// <li> <p>STOPPING.</p> </li>
     /// </ul>
     pub fn set_status(mut self, input: std::option::Option<crate::types::ExecutionStatus>) -> Self {
-        self.status = input; self
+        self.status = input;
+        self
     }
-    /// <p>The result of the remote access session. Can be any of the following:</p> 
-    /// <ul> 
-    /// <li> <p>PENDING.</p> </li> 
-    /// <li> <p>PASSED.</p> </li> 
-    /// <li> <p>WARNED.</p> </li> 
-    /// <li> <p>FAILED.</p> </li> 
-    /// <li> <p>SKIPPED.</p> </li> 
-    /// <li> <p>ERRORED.</p> </li> 
-    /// <li> <p>STOPPED.</p> </li> 
+    /// <p>The result of the remote access session. Can be any of the following:</p>
+    /// <ul>
+    /// <li> <p>PENDING.</p> </li>
+    /// <li> <p>PASSED.</p> </li>
+    /// <li> <p>WARNED.</p> </li>
+    /// <li> <p>FAILED.</p> </li>
+    /// <li> <p>SKIPPED.</p> </li>
+    /// <li> <p>ERRORED.</p> </li>
+    /// <li> <p>STOPPED.</p> </li>
     /// </ul>
     pub fn result(mut self, input: crate::types::ExecutionResult) -> Self {
         self.result = Some(input);
         self
     }
-    /// <p>The result of the remote access session. Can be any of the following:</p> 
-    /// <ul> 
-    /// <li> <p>PENDING.</p> </li> 
-    /// <li> <p>PASSED.</p> </li> 
-    /// <li> <p>WARNED.</p> </li> 
-    /// <li> <p>FAILED.</p> </li> 
-    /// <li> <p>SKIPPED.</p> </li> 
-    /// <li> <p>ERRORED.</p> </li> 
-    /// <li> <p>STOPPED.</p> </li> 
+    /// <p>The result of the remote access session. Can be any of the following:</p>
+    /// <ul>
+    /// <li> <p>PENDING.</p> </li>
+    /// <li> <p>PASSED.</p> </li>
+    /// <li> <p>WARNED.</p> </li>
+    /// <li> <p>FAILED.</p> </li>
+    /// <li> <p>SKIPPED.</p> </li>
+    /// <li> <p>ERRORED.</p> </li>
+    /// <li> <p>STOPPED.</p> </li>
     /// </ul>
     pub fn set_result(mut self, input: std::option::Option<crate::types::ExecutionResult>) -> Self {
-        self.result = input; self
+        self.result = input;
+        self
     }
     /// <p>A message about the remote access session.</p>
     pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
@@ -348,7 +353,8 @@ impl RemoteAccessSessionBuilder {
     }
     /// <p>A message about the remote access session.</p>
     pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.message = input; self
+        self.message = input;
+        self
     }
     /// <p>The date and time the remote access session was started.</p>
     pub fn started(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -357,7 +363,8 @@ impl RemoteAccessSessionBuilder {
     }
     /// <p>The date and time the remote access session was started.</p>
     pub fn set_started(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.started = input; self
+        self.started = input;
+        self
     }
     /// <p>The date and time the remote access session was stopped.</p>
     pub fn stopped(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -366,7 +373,8 @@ impl RemoteAccessSessionBuilder {
     }
     /// <p>The date and time the remote access session was stopped.</p>
     pub fn set_stopped(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.stopped = input; self
+        self.stopped = input;
+        self
     }
     /// <p>The device (phone or tablet) used in the remote access session.</p>
     pub fn device(mut self, input: crate::types::Device) -> Self {
@@ -375,7 +383,8 @@ impl RemoteAccessSessionBuilder {
     }
     /// <p>The device (phone or tablet) used in the remote access session.</p>
     pub fn set_device(mut self, input: std::option::Option<crate::types::Device>) -> Self {
-        self.device = input; self
+        self.device = input;
+        self
     }
     /// <p>The ARN of the instance.</p>
     pub fn instance_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -384,18 +393,20 @@ impl RemoteAccessSessionBuilder {
     }
     /// <p>The ARN of the instance.</p>
     pub fn set_instance_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.instance_arn = input; self
+        self.instance_arn = input;
+        self
     }
-    /// <p>This flag is set to <code>true</code> if remote debugging is enabled for the remote access session.</p> 
+    /// <p>This flag is set to <code>true</code> if remote debugging is enabled for the remote access session.</p>
     /// <p>Remote debugging is <a href="https://docs.aws.amazon.com/devicefarm/latest/developerguide/history.html">no longer supported</a>.</p>
     pub fn remote_debug_enabled(mut self, input: bool) -> Self {
         self.remote_debug_enabled = Some(input);
         self
     }
-    /// <p>This flag is set to <code>true</code> if remote debugging is enabled for the remote access session.</p> 
+    /// <p>This flag is set to <code>true</code> if remote debugging is enabled for the remote access session.</p>
     /// <p>Remote debugging is <a href="https://docs.aws.amazon.com/devicefarm/latest/developerguide/history.html">no longer supported</a>.</p>
     pub fn set_remote_debug_enabled(mut self, input: std::option::Option<bool>) -> Self {
-        self.remote_debug_enabled = input; self
+        self.remote_debug_enabled = input;
+        self
     }
     /// <p>This flag is set to <code>true</code> if remote recording is enabled for the remote access session.</p>
     pub fn remote_record_enabled(mut self, input: bool) -> Self {
@@ -404,7 +415,8 @@ impl RemoteAccessSessionBuilder {
     }
     /// <p>This flag is set to <code>true</code> if remote recording is enabled for the remote access session.</p>
     pub fn set_remote_record_enabled(mut self, input: std::option::Option<bool>) -> Self {
-        self.remote_record_enabled = input; self
+        self.remote_record_enabled = input;
+        self
     }
     /// <p>The ARN for the app to be recorded in the remote access session.</p>
     pub fn remote_record_app_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -412,30 +424,36 @@ impl RemoteAccessSessionBuilder {
         self
     }
     /// <p>The ARN for the app to be recorded in the remote access session.</p>
-    pub fn set_remote_record_app_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.remote_record_app_arn = input; self
+    pub fn set_remote_record_app_arn(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.remote_record_app_arn = input;
+        self
     }
-    /// <p>IP address of the EC2 host where you need to connect to remotely debug devices. Only returned if remote debugging is enabled for the remote access session.</p> 
+    /// <p>IP address of the EC2 host where you need to connect to remotely debug devices. Only returned if remote debugging is enabled for the remote access session.</p>
     /// <p>Remote debugging is <a href="https://docs.aws.amazon.com/devicefarm/latest/developerguide/history.html">no longer supported</a>.</p>
     pub fn host_address(mut self, input: impl Into<std::string::String>) -> Self {
         self.host_address = Some(input.into());
         self
     }
-    /// <p>IP address of the EC2 host where you need to connect to remotely debug devices. Only returned if remote debugging is enabled for the remote access session.</p> 
+    /// <p>IP address of the EC2 host where you need to connect to remotely debug devices. Only returned if remote debugging is enabled for the remote access session.</p>
     /// <p>Remote debugging is <a href="https://docs.aws.amazon.com/devicefarm/latest/developerguide/history.html">no longer supported</a>.</p>
     pub fn set_host_address(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.host_address = input; self
+        self.host_address = input;
+        self
     }
-    /// <p>Unique identifier of your client for the remote access session. Only returned if remote debugging is enabled for the remote access session.</p> 
+    /// <p>Unique identifier of your client for the remote access session. Only returned if remote debugging is enabled for the remote access session.</p>
     /// <p>Remote debugging is <a href="https://docs.aws.amazon.com/devicefarm/latest/developerguide/history.html">no longer supported</a>.</p>
     pub fn client_id(mut self, input: impl Into<std::string::String>) -> Self {
         self.client_id = Some(input.into());
         self
     }
-    /// <p>Unique identifier of your client for the remote access session. Only returned if remote debugging is enabled for the remote access session.</p> 
+    /// <p>Unique identifier of your client for the remote access session. Only returned if remote debugging is enabled for the remote access session.</p>
     /// <p>Remote debugging is <a href="https://docs.aws.amazon.com/devicefarm/latest/developerguide/history.html">no longer supported</a>.</p>
     pub fn set_client_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.client_id = input; self
+        self.client_id = input;
+        self
     }
     /// <p>The billing method of the remote access session. Possible values include <code>METERED</code> or <code>UNMETERED</code>. For more information about metered devices, see <a href="https://docs.aws.amazon.com/devicefarm/latest/developerguide/welcome.html#welcome-terminology">AWS Device Farm terminology</a>.</p>
     pub fn billing_method(mut self, input: crate::types::BillingMethod) -> Self {
@@ -443,8 +461,12 @@ impl RemoteAccessSessionBuilder {
         self
     }
     /// <p>The billing method of the remote access session. Possible values include <code>METERED</code> or <code>UNMETERED</code>. For more information about metered devices, see <a href="https://docs.aws.amazon.com/devicefarm/latest/developerguide/welcome.html#welcome-terminology">AWS Device Farm terminology</a>.</p>
-    pub fn set_billing_method(mut self, input: std::option::Option<crate::types::BillingMethod>) -> Self {
-        self.billing_method = input; self
+    pub fn set_billing_method(
+        mut self,
+        input: std::option::Option<crate::types::BillingMethod>,
+    ) -> Self {
+        self.billing_method = input;
+        self
     }
     /// <p>The number of minutes a device is used in a remote access session (including setup and teardown minutes).</p>
     pub fn device_minutes(mut self, input: crate::types::DeviceMinutes) -> Self {
@@ -452,8 +474,12 @@ impl RemoteAccessSessionBuilder {
         self
     }
     /// <p>The number of minutes a device is used in a remote access session (including setup and teardown minutes).</p>
-    pub fn set_device_minutes(mut self, input: std::option::Option<crate::types::DeviceMinutes>) -> Self {
-        self.device_minutes = input; self
+    pub fn set_device_minutes(
+        mut self,
+        input: std::option::Option<crate::types::DeviceMinutes>,
+    ) -> Self {
+        self.device_minutes = input;
+        self
     }
     /// <p>The endpoint for the remote access sesssion.</p>
     pub fn endpoint(mut self, input: impl Into<std::string::String>) -> Self {
@@ -462,48 +488,55 @@ impl RemoteAccessSessionBuilder {
     }
     /// <p>The endpoint for the remote access sesssion.</p>
     pub fn set_endpoint(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.endpoint = input; self
+        self.endpoint = input;
+        self
     }
-    /// <p>Unique device identifier for the remote device. Only returned if remote debugging is enabled for the remote access session.</p> 
+    /// <p>Unique device identifier for the remote device. Only returned if remote debugging is enabled for the remote access session.</p>
     /// <p>Remote debugging is <a href="https://docs.aws.amazon.com/devicefarm/latest/developerguide/history.html">no longer supported</a>.</p>
     pub fn device_udid(mut self, input: impl Into<std::string::String>) -> Self {
         self.device_udid = Some(input.into());
         self
     }
-    /// <p>Unique device identifier for the remote device. Only returned if remote debugging is enabled for the remote access session.</p> 
+    /// <p>Unique device identifier for the remote device. Only returned if remote debugging is enabled for the remote access session.</p>
     /// <p>Remote debugging is <a href="https://docs.aws.amazon.com/devicefarm/latest/developerguide/history.html">no longer supported</a>.</p>
     pub fn set_device_udid(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.device_udid = input; self
+        self.device_udid = input;
+        self
     }
-    /// <p>The interaction mode of the remote access session. Valid values are:</p> 
-    /// <ul> 
-    /// <li> <p>INTERACTIVE: You can interact with the iOS device by viewing, touching, and rotating the screen. You cannot run XCUITest framework-based tests in this mode.</p> </li> 
-    /// <li> <p>NO_VIDEO: You are connected to the device, but cannot interact with it or view the screen. This mode has the fastest test execution speed. You can run XCUITest framework-based tests in this mode.</p> </li> 
-    /// <li> <p>VIDEO_ONLY: You can view the screen, but cannot touch or rotate it. You can run XCUITest framework-based tests and watch the screen in this mode.</p> </li> 
+    /// <p>The interaction mode of the remote access session. Valid values are:</p>
+    /// <ul>
+    /// <li> <p>INTERACTIVE: You can interact with the iOS device by viewing, touching, and rotating the screen. You cannot run XCUITest framework-based tests in this mode.</p> </li>
+    /// <li> <p>NO_VIDEO: You are connected to the device, but cannot interact with it or view the screen. This mode has the fastest test execution speed. You can run XCUITest framework-based tests in this mode.</p> </li>
+    /// <li> <p>VIDEO_ONLY: You can view the screen, but cannot touch or rotate it. You can run XCUITest framework-based tests and watch the screen in this mode.</p> </li>
     /// </ul>
     pub fn interaction_mode(mut self, input: crate::types::InteractionMode) -> Self {
         self.interaction_mode = Some(input);
         self
     }
-    /// <p>The interaction mode of the remote access session. Valid values are:</p> 
-    /// <ul> 
-    /// <li> <p>INTERACTIVE: You can interact with the iOS device by viewing, touching, and rotating the screen. You cannot run XCUITest framework-based tests in this mode.</p> </li> 
-    /// <li> <p>NO_VIDEO: You are connected to the device, but cannot interact with it or view the screen. This mode has the fastest test execution speed. You can run XCUITest framework-based tests in this mode.</p> </li> 
-    /// <li> <p>VIDEO_ONLY: You can view the screen, but cannot touch or rotate it. You can run XCUITest framework-based tests and watch the screen in this mode.</p> </li> 
+    /// <p>The interaction mode of the remote access session. Valid values are:</p>
+    /// <ul>
+    /// <li> <p>INTERACTIVE: You can interact with the iOS device by viewing, touching, and rotating the screen. You cannot run XCUITest framework-based tests in this mode.</p> </li>
+    /// <li> <p>NO_VIDEO: You are connected to the device, but cannot interact with it or view the screen. This mode has the fastest test execution speed. You can run XCUITest framework-based tests in this mode.</p> </li>
+    /// <li> <p>VIDEO_ONLY: You can view the screen, but cannot touch or rotate it. You can run XCUITest framework-based tests and watch the screen in this mode.</p> </li>
     /// </ul>
-    pub fn set_interaction_mode(mut self, input: std::option::Option<crate::types::InteractionMode>) -> Self {
-        self.interaction_mode = input; self
+    pub fn set_interaction_mode(
+        mut self,
+        input: std::option::Option<crate::types::InteractionMode>,
+    ) -> Self {
+        self.interaction_mode = input;
+        self
     }
-    /// <p>When set to <code>true</code>, for private devices, Device Farm does not sign your app again. For public devices, Device Farm always signs your apps again.</p> 
+    /// <p>When set to <code>true</code>, for private devices, Device Farm does not sign your app again. For public devices, Device Farm always signs your apps again.</p>
     /// <p>For more information about how Device Farm re-signs your apps, see <a href="http://aws.amazon.com/device-farm/faqs/">Do you modify my app?</a> in the <i>AWS Device Farm FAQs</i>.</p>
     pub fn skip_app_resign(mut self, input: bool) -> Self {
         self.skip_app_resign = Some(input);
         self
     }
-    /// <p>When set to <code>true</code>, for private devices, Device Farm does not sign your app again. For public devices, Device Farm always signs your apps again.</p> 
+    /// <p>When set to <code>true</code>, for private devices, Device Farm does not sign your app again. For public devices, Device Farm always signs your apps again.</p>
     /// <p>For more information about how Device Farm re-signs your apps, see <a href="http://aws.amazon.com/device-farm/faqs/">Do you modify my app?</a> in the <i>AWS Device Farm FAQs</i>.</p>
     pub fn set_skip_app_resign(mut self, input: std::option::Option<bool>) -> Self {
-        self.skip_app_resign = input; self
+        self.skip_app_resign = input;
+        self
     }
     /// <p>The VPC security groups and subnets that are attached to a project.</p>
     pub fn vpc_config(mut self, input: crate::types::VpcConfig) -> Self {
@@ -512,56 +545,34 @@ impl RemoteAccessSessionBuilder {
     }
     /// <p>The VPC security groups and subnets that are attached to a project.</p>
     pub fn set_vpc_config(mut self, input: std::option::Option<crate::types::VpcConfig>) -> Self {
-        self.vpc_config = input; self
+        self.vpc_config = input;
+        self
     }
     /// Consumes the builder and constructs a [`RemoteAccessSession`](crate::types::RemoteAccessSession).
     pub fn build(self) -> crate::types::RemoteAccessSession {
         crate::types::RemoteAccessSession {
-            arn: self.arn
-            ,
-            name: self.name
-            ,
-            created: self.created
-            ,
-            status: self.status
-            ,
-            result: self.result
-            ,
-            message: self.message
-            ,
-            started: self.started
-            ,
-            stopped: self.stopped
-            ,
-            device: self.device
-            ,
-            instance_arn: self.instance_arn
-            ,
-            remote_debug_enabled: self.remote_debug_enabled
-            ,
-            remote_record_enabled: self.remote_record_enabled
-            ,
-            remote_record_app_arn: self.remote_record_app_arn
-            ,
-            host_address: self.host_address
-            ,
-            client_id: self.client_id
-            ,
-            billing_method: self.billing_method
-            ,
-            device_minutes: self.device_minutes
-            ,
-            endpoint: self.endpoint
-            ,
-            device_udid: self.device_udid
-            ,
-            interaction_mode: self.interaction_mode
-            ,
-            skip_app_resign: self.skip_app_resign
-            ,
-            vpc_config: self.vpc_config
-            ,
+            arn: self.arn,
+            name: self.name,
+            created: self.created,
+            status: self.status,
+            result: self.result,
+            message: self.message,
+            started: self.started,
+            stopped: self.stopped,
+            device: self.device,
+            instance_arn: self.instance_arn,
+            remote_debug_enabled: self.remote_debug_enabled,
+            remote_record_enabled: self.remote_record_enabled,
+            remote_record_app_arn: self.remote_record_app_arn,
+            host_address: self.host_address,
+            client_id: self.client_id,
+            billing_method: self.billing_method,
+            device_minutes: self.device_minutes,
+            endpoint: self.endpoint,
+            device_udid: self.device_udid,
+            interaction_mode: self.interaction_mode,
+            skip_app_resign: self.skip_app_resign,
+            vpc_config: self.vpc_config,
         }
     }
 }
-

@@ -3,18 +3,18 @@
 /// <p>The configuration settings for the S3 bucket.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct S3BucketSinkConfiguration  {
+pub struct S3BucketSinkConfiguration {
     /// <p>The destination URL of the S3 bucket.</p>
     #[doc(hidden)]
     pub destination: std::option::Option<std::string::String>,
 }
 impl S3BucketSinkConfiguration {
     /// <p>The destination URL of the S3 bucket.</p>
-    pub fn destination(&self) -> std::option::Option<& str> {
+    pub fn destination(&self) -> std::option::Option<&str> {
         self.destination.as_deref()
     }
 }
-impl  std::fmt::Debug for S3BucketSinkConfiguration  {
+impl std::fmt::Debug for S3BucketSinkConfiguration {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("S3BucketSinkConfiguration");
         formatter.field("destination", &"*** Sensitive Data Redacted ***");
@@ -42,13 +42,13 @@ impl S3BucketSinkConfigurationBuilder {
     }
     /// <p>The destination URL of the S3 bucket.</p>
     pub fn set_destination(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.destination = input; self
+        self.destination = input;
+        self
     }
     /// Consumes the builder and constructs a [`S3BucketSinkConfiguration`](crate::types::S3BucketSinkConfiguration).
     pub fn build(self) -> crate::types::S3BucketSinkConfiguration {
         crate::types::S3BucketSinkConfiguration {
-            destination: self.destination
-            ,
+            destination: self.destination,
         }
     }
 }
@@ -59,4 +59,3 @@ impl std::fmt::Debug for S3BucketSinkConfigurationBuilder {
         formatter.finish()
     }
 }
-

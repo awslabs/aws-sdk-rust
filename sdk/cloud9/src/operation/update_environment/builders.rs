@@ -4,49 +4,71 @@ pub use crate::operation::update_environment::_update_environment_output::Update
 pub use crate::operation::update_environment::_update_environment_input::UpdateEnvironmentInputBuilder;
 
 /// Fluent builder constructing a request to `UpdateEnvironment`.
-/// 
+///
 /// <p>Changes the settings of an existing Cloud9 development environment.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct UpdateEnvironmentFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::update_environment::builders::UpdateEnvironmentInputBuilder
-            }
-impl UpdateEnvironmentFluentBuilder  {
+    handle: std::sync::Arc<crate::client::Handle>,
+    inner: crate::operation::update_environment::builders::UpdateEnvironmentInputBuilder,
+}
+impl UpdateEnvironmentFluentBuilder {
     /// Creates a new `UpdateEnvironment`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
-                    /// sent. The operation's inner [http::Request] can be modified as well.
-                    pub async fn customize(self) -> std::result::Result<
-                        crate::client::customize::CustomizableOperation<crate::operation::update_environment::UpdateEnvironment, aws_http::retry::AwsResponseRetryClassifier,>,
-                        aws_smithy_http::result::SdkError<crate::operation::update_environment::UpdateEnvironmentError>
-                    >  {
-                        let handle = self.handle.clone();
-                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-                    }
-    
-                    /// Sends the request and returns the response.
-                    ///
-                    /// If an error occurs, an `SdkError` will be returned with additional details that
-                    /// can be matched against.
-                    ///
-                    /// By default, any retryable failures will be retried twice. Retry behavior
-                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                    /// set when configuring the client.
-                    pub async fn send(self) -> std::result::Result<crate::operation::update_environment::UpdateEnvironmentOutput, aws_smithy_http::result::SdkError<crate::operation::update_environment::UpdateEnvironmentError>>
-                     {
-                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&self.handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        self.handle.client.call(op).await
-                    }
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle,
+            inner: Default::default(),
+        }
+    }
+
+    /// Consume this builder, creating a customizable operation that can be modified before being
+    /// sent. The operation's inner [http::Request] can be modified as well.
+    pub async fn customize(
+        self,
+    ) -> std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::update_environment::UpdateEnvironment,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::result::SdkError<
+            crate::operation::update_environment::UpdateEnvironmentError,
+        >,
+    > {
+        let handle = self.handle.clone();
+        let operation = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+    }
+
+    /// Sends the request and returns the response.
+    ///
+    /// If an error occurs, an `SdkError` will be returned with additional details that
+    /// can be matched against.
+    ///
+    /// By default, any retryable failures will be retried twice. Retry behavior
+    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+    /// set when configuring the client.
+    pub async fn send(
+        self,
+    ) -> std::result::Result<
+        crate::operation::update_environment::UpdateEnvironmentOutput,
+        aws_smithy_http::result::SdkError<
+            crate::operation::update_environment::UpdateEnvironmentError,
+        >,
+    > {
+        let op = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&self.handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        self.handle.client.call(op).await
+    }
     /// <p>The ID of the environment to change settings.</p>
     pub fn environment_id(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.environment_id(input.into());
@@ -77,27 +99,32 @@ impl UpdateEnvironmentFluentBuilder  {
         self.inner = self.inner.set_description(input);
         self
     }
-    /// <p>Allows the environment owner to turn on or turn off the Amazon Web Services managed temporary credentials for an Cloud9 environment by using one of the following values:</p> 
-    /// <ul> 
-    /// <li> <p> <code>ENABLE</code> </p> </li> 
-    /// <li> <p> <code>DISABLE</code> </p> </li> 
-    /// </ul> <note> 
-    /// <p>Only the environment owner can change the status of managed temporary credentials. An <code>AccessDeniedException</code> is thrown if an attempt to turn on or turn off managed temporary credentials is made by an account that's not the environment owner.</p> 
+    /// <p>Allows the environment owner to turn on or turn off the Amazon Web Services managed temporary credentials for an Cloud9 environment by using one of the following values:</p>
+    /// <ul>
+    /// <li> <p> <code>ENABLE</code> </p> </li>
+    /// <li> <p> <code>DISABLE</code> </p> </li>
+    /// </ul> <note>
+    /// <p>Only the environment owner can change the status of managed temporary credentials. An <code>AccessDeniedException</code> is thrown if an attempt to turn on or turn off managed temporary credentials is made by an account that's not the environment owner.</p>
     /// </note>
-    pub fn managed_credentials_action(mut self, input: crate::types::ManagedCredentialsAction) -> Self {
+    pub fn managed_credentials_action(
+        mut self,
+        input: crate::types::ManagedCredentialsAction,
+    ) -> Self {
         self.inner = self.inner.managed_credentials_action(input);
         self
     }
-    /// <p>Allows the environment owner to turn on or turn off the Amazon Web Services managed temporary credentials for an Cloud9 environment by using one of the following values:</p> 
-    /// <ul> 
-    /// <li> <p> <code>ENABLE</code> </p> </li> 
-    /// <li> <p> <code>DISABLE</code> </p> </li> 
-    /// </ul> <note> 
-    /// <p>Only the environment owner can change the status of managed temporary credentials. An <code>AccessDeniedException</code> is thrown if an attempt to turn on or turn off managed temporary credentials is made by an account that's not the environment owner.</p> 
+    /// <p>Allows the environment owner to turn on or turn off the Amazon Web Services managed temporary credentials for an Cloud9 environment by using one of the following values:</p>
+    /// <ul>
+    /// <li> <p> <code>ENABLE</code> </p> </li>
+    /// <li> <p> <code>DISABLE</code> </p> </li>
+    /// </ul> <note>
+    /// <p>Only the environment owner can change the status of managed temporary credentials. An <code>AccessDeniedException</code> is thrown if an attempt to turn on or turn off managed temporary credentials is made by an account that's not the environment owner.</p>
     /// </note>
-    pub fn set_managed_credentials_action(mut self, input: std::option::Option<crate::types::ManagedCredentialsAction>) -> Self {
+    pub fn set_managed_credentials_action(
+        mut self,
+        input: std::option::Option<crate::types::ManagedCredentialsAction>,
+    ) -> Self {
         self.inner = self.inner.set_managed_credentials_action(input);
         self
     }
 }
-

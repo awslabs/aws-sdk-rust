@@ -3,7 +3,7 @@
 /// <p>Contains information about the condition.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Condition  {
+pub struct Condition {
     /// <p>Represents the <i>equal</i> condition to be applied to a single field when querying for findings.</p>
     #[deprecated]
     #[doc(hidden)]
@@ -50,12 +50,12 @@ pub struct Condition  {
 impl Condition {
     /// <p>Represents the <i>equal</i> condition to be applied to a single field when querying for findings.</p>
     #[deprecated]
-    pub fn eq(&self) -> std::option::Option<& [std::string::String]> {
+    pub fn eq(&self) -> std::option::Option<&[std::string::String]> {
         self.eq.as_deref()
     }
     /// <p>Represents the <i>not equal</i> condition to be applied to a single field when querying for findings.</p>
     #[deprecated]
-    pub fn neq(&self) -> std::option::Option<& [std::string::String]> {
+    pub fn neq(&self) -> std::option::Option<&[std::string::String]> {
         self.neq.as_deref()
     }
     /// <p>Represents a <i>greater than</i> condition to be applied to a single field when querying for findings.</p>
@@ -79,11 +79,11 @@ impl Condition {
         self.lte
     }
     /// <p>Represents an <i>equal</i> <b></b> condition to be applied to a single field when querying for findings.</p>
-    pub fn equals(&self) -> std::option::Option<& [std::string::String]> {
+    pub fn equals(&self) -> std::option::Option<&[std::string::String]> {
         self.equals.as_deref()
     }
     /// <p>Represents a <i>not equal</i> <b></b> condition to be applied to a single field when querying for findings.</p>
-    pub fn not_equals(&self) -> std::option::Option<& [std::string::String]> {
+    pub fn not_equals(&self) -> std::option::Option<&[std::string::String]> {
         self.not_equals.as_deref()
     }
     /// <p>Represents a <i>greater than</i> condition to be applied to a single field when querying for findings.</p>
@@ -136,14 +136,18 @@ impl ConditionBuilder {
     #[deprecated]
     pub fn eq(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.eq.unwrap_or_default();
-                        v.push(input.into());
-                        self.eq = Some(v);
-                        self
+        v.push(input.into());
+        self.eq = Some(v);
+        self
     }
     /// <p>Represents the <i>equal</i> condition to be applied to a single field when querying for findings.</p>
     #[deprecated]
-    pub fn set_eq(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-        self.eq = input; self
+    pub fn set_eq(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
+        self.eq = input;
+        self
     }
     /// Appends an item to `neq`.
     ///
@@ -153,14 +157,18 @@ impl ConditionBuilder {
     #[deprecated]
     pub fn neq(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.neq.unwrap_or_default();
-                        v.push(input.into());
-                        self.neq = Some(v);
-                        self
+        v.push(input.into());
+        self.neq = Some(v);
+        self
     }
     /// <p>Represents the <i>not equal</i> condition to be applied to a single field when querying for findings.</p>
     #[deprecated]
-    pub fn set_neq(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-        self.neq = input; self
+    pub fn set_neq(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
+        self.neq = input;
+        self
     }
     /// <p>Represents a <i>greater than</i> condition to be applied to a single field when querying for findings.</p>
     #[deprecated]
@@ -171,7 +179,8 @@ impl ConditionBuilder {
     /// <p>Represents a <i>greater than</i> condition to be applied to a single field when querying for findings.</p>
     #[deprecated]
     pub fn set_gt(mut self, input: std::option::Option<i32>) -> Self {
-        self.gt = input; self
+        self.gt = input;
+        self
     }
     /// <p>Represents a <i>greater than or equal</i> condition to be applied to a single field when querying for findings.</p>
     #[deprecated]
@@ -182,7 +191,8 @@ impl ConditionBuilder {
     /// <p>Represents a <i>greater than or equal</i> condition to be applied to a single field when querying for findings.</p>
     #[deprecated]
     pub fn set_gte(mut self, input: std::option::Option<i32>) -> Self {
-        self.gte = input; self
+        self.gte = input;
+        self
     }
     /// <p>Represents a <i>less than</i> condition to be applied to a single field when querying for findings.</p>
     #[deprecated]
@@ -193,7 +203,8 @@ impl ConditionBuilder {
     /// <p>Represents a <i>less than</i> condition to be applied to a single field when querying for findings.</p>
     #[deprecated]
     pub fn set_lt(mut self, input: std::option::Option<i32>) -> Self {
-        self.lt = input; self
+        self.lt = input;
+        self
     }
     /// <p>Represents a <i>less than or equal</i> condition to be applied to a single field when querying for findings.</p>
     #[deprecated]
@@ -204,7 +215,8 @@ impl ConditionBuilder {
     /// <p>Represents a <i>less than or equal</i> condition to be applied to a single field when querying for findings.</p>
     #[deprecated]
     pub fn set_lte(mut self, input: std::option::Option<i32>) -> Self {
-        self.lte = input; self
+        self.lte = input;
+        self
     }
     /// Appends an item to `equals`.
     ///
@@ -213,13 +225,17 @@ impl ConditionBuilder {
     /// <p>Represents an <i>equal</i> <b></b> condition to be applied to a single field when querying for findings.</p>
     pub fn equals(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.equals.unwrap_or_default();
-                        v.push(input.into());
-                        self.equals = Some(v);
-                        self
+        v.push(input.into());
+        self.equals = Some(v);
+        self
     }
     /// <p>Represents an <i>equal</i> <b></b> condition to be applied to a single field when querying for findings.</p>
-    pub fn set_equals(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-        self.equals = input; self
+    pub fn set_equals(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
+        self.equals = input;
+        self
     }
     /// Appends an item to `not_equals`.
     ///
@@ -228,13 +244,17 @@ impl ConditionBuilder {
     /// <p>Represents a <i>not equal</i> <b></b> condition to be applied to a single field when querying for findings.</p>
     pub fn not_equals(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.not_equals.unwrap_or_default();
-                        v.push(input.into());
-                        self.not_equals = Some(v);
-                        self
+        v.push(input.into());
+        self.not_equals = Some(v);
+        self
     }
     /// <p>Represents a <i>not equal</i> <b></b> condition to be applied to a single field when querying for findings.</p>
-    pub fn set_not_equals(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-        self.not_equals = input; self
+    pub fn set_not_equals(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
+        self.not_equals = input;
+        self
     }
     /// <p>Represents a <i>greater than</i> condition to be applied to a single field when querying for findings.</p>
     pub fn greater_than(mut self, input: i64) -> Self {
@@ -243,7 +263,8 @@ impl ConditionBuilder {
     }
     /// <p>Represents a <i>greater than</i> condition to be applied to a single field when querying for findings.</p>
     pub fn set_greater_than(mut self, input: std::option::Option<i64>) -> Self {
-        self.greater_than = input; self
+        self.greater_than = input;
+        self
     }
     /// <p>Represents a <i>greater than or equal</i> condition to be applied to a single field when querying for findings.</p>
     pub fn greater_than_or_equal(mut self, input: i64) -> Self {
@@ -252,7 +273,8 @@ impl ConditionBuilder {
     }
     /// <p>Represents a <i>greater than or equal</i> condition to be applied to a single field when querying for findings.</p>
     pub fn set_greater_than_or_equal(mut self, input: std::option::Option<i64>) -> Self {
-        self.greater_than_or_equal = input; self
+        self.greater_than_or_equal = input;
+        self
     }
     /// <p>Represents a <i>less than</i> condition to be applied to a single field when querying for findings.</p>
     pub fn less_than(mut self, input: i64) -> Self {
@@ -261,7 +283,8 @@ impl ConditionBuilder {
     }
     /// <p>Represents a <i>less than</i> condition to be applied to a single field when querying for findings.</p>
     pub fn set_less_than(mut self, input: std::option::Option<i64>) -> Self {
-        self.less_than = input; self
+        self.less_than = input;
+        self
     }
     /// <p>Represents a <i>less than or equal</i> condition to be applied to a single field when querying for findings.</p>
     pub fn less_than_or_equal(mut self, input: i64) -> Self {
@@ -270,44 +293,24 @@ impl ConditionBuilder {
     }
     /// <p>Represents a <i>less than or equal</i> condition to be applied to a single field when querying for findings.</p>
     pub fn set_less_than_or_equal(mut self, input: std::option::Option<i64>) -> Self {
-        self.less_than_or_equal = input; self
+        self.less_than_or_equal = input;
+        self
     }
     /// Consumes the builder and constructs a [`Condition`](crate::types::Condition).
     pub fn build(self) -> crate::types::Condition {
         crate::types::Condition {
-            eq: self.eq
-            ,
-            neq: self.neq
-            ,
-            gt: self.gt
-                .unwrap_or_default()
-            ,
-            gte: self.gte
-                .unwrap_or_default()
-            ,
-            lt: self.lt
-                .unwrap_or_default()
-            ,
-            lte: self.lte
-                .unwrap_or_default()
-            ,
-            equals: self.equals
-            ,
-            not_equals: self.not_equals
-            ,
-            greater_than: self.greater_than
-                .unwrap_or_default()
-            ,
-            greater_than_or_equal: self.greater_than_or_equal
-                .unwrap_or_default()
-            ,
-            less_than: self.less_than
-                .unwrap_or_default()
-            ,
-            less_than_or_equal: self.less_than_or_equal
-                .unwrap_or_default()
-            ,
+            eq: self.eq,
+            neq: self.neq,
+            gt: self.gt.unwrap_or_default(),
+            gte: self.gte.unwrap_or_default(),
+            lt: self.lt.unwrap_or_default(),
+            lte: self.lte.unwrap_or_default(),
+            equals: self.equals,
+            not_equals: self.not_equals,
+            greater_than: self.greater_than.unwrap_or_default(),
+            greater_than_or_equal: self.greater_than_or_equal.unwrap_or_default(),
+            less_than: self.less_than.unwrap_or_default(),
+            less_than_or_equal: self.less_than_or_equal.unwrap_or_default(),
         }
     }
 }
-

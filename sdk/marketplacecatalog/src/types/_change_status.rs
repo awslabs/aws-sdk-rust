@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-/// 
+///
 /// Here is an example of how you can make a match expression forward-compatible:
-/// 
+///
 /// ```text
 /// # let changestatus = unimplemented!();
 /// match changestatus {
@@ -33,14 +33,22 @@
 /// Specifically, when `changestatus` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `ChangeStatus::NewFeature` also yielding `"NewFeature"`.
-/// 
+///
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
 pub enum ChangeStatus {
     #[allow(missing_docs)] // documentation missing in model
     Applying,
@@ -53,47 +61,48 @@ pub enum ChangeStatus {
     #[allow(missing_docs)] // documentation missing in model
     Succeeded,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::primitives::UnknownVariantValue)
+    Unknown(crate::primitives::UnknownVariantValue),
 }
 impl std::convert::From<&str> for ChangeStatus {
-                fn from(s: &str) -> Self {
-                    match s {
-                        "APPLYING" => ChangeStatus::Applying,
-"CANCELLED" => ChangeStatus::Cancelled,
-"FAILED" => ChangeStatus::Failed,
-"PREPARING" => ChangeStatus::Preparing,
-"SUCCEEDED" => ChangeStatus::Succeeded,
-other => ChangeStatus::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
-                    }
-                }
+    fn from(s: &str) -> Self {
+        match s {
+            "APPLYING" => ChangeStatus::Applying,
+            "CANCELLED" => ChangeStatus::Cancelled,
+            "FAILED" => ChangeStatus::Failed,
+            "PREPARING" => ChangeStatus::Preparing,
+            "SUCCEEDED" => ChangeStatus::Succeeded,
+            other => {
+                ChangeStatus::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
             }
-impl std::str::FromStr for ChangeStatus {
-                type Err = std::convert::Infallible;
-
-                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-                    Ok(ChangeStatus::from(s))
-                }
-            }
-impl ChangeStatus {
-                /// Returns the `&str` value of the enum member.
-                pub fn as_str(&self) -> &str {
-                    match self {
-    ChangeStatus::Applying => "APPLYING",
-    ChangeStatus::Cancelled => "CANCELLED",
-    ChangeStatus::Failed => "FAILED",
-    ChangeStatus::Preparing => "PREPARING",
-    ChangeStatus::Succeeded => "SUCCEEDED",
-    ChangeStatus::Unknown(value) => value.as_str()
+        }
+    }
 }
-                }
-                /// Returns all the `&str` representations of the enum members.
-                pub const fn values() -> &'static [&'static str] {
-                    &["APPLYING", "CANCELLED", "FAILED", "PREPARING", "SUCCEEDED"]
-                }
-            }
-impl AsRef<str> for ChangeStatus {
-                fn as_ref(&self) -> &str {
-                    self.as_str()
-                }
-            }
+impl std::str::FromStr for ChangeStatus {
+    type Err = std::convert::Infallible;
 
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(ChangeStatus::from(s))
+    }
+}
+impl ChangeStatus {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            ChangeStatus::Applying => "APPLYING",
+            ChangeStatus::Cancelled => "CANCELLED",
+            ChangeStatus::Failed => "FAILED",
+            ChangeStatus::Preparing => "PREPARING",
+            ChangeStatus::Succeeded => "SUCCEEDED",
+            ChangeStatus::Unknown(value) => value.as_str(),
+        }
+    }
+    /// Returns all the `&str` representations of the enum members.
+    pub const fn values() -> &'static [&'static str] {
+        &["APPLYING", "CANCELLED", "FAILED", "PREPARING", "SUCCEEDED"]
+    }
+}
+impl AsRef<str> for ChangeStatus {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}

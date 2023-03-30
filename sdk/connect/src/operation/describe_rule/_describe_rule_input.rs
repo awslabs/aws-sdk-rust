@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeRuleInput  {
+pub struct DescribeRuleInput {
     /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
     #[doc(hidden)]
     pub instance_id: std::option::Option<std::string::String>,
@@ -12,11 +12,11 @@ pub struct DescribeRuleInput  {
 }
 impl DescribeRuleInput {
     /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
-    pub fn instance_id(&self) -> std::option::Option<& str> {
+    pub fn instance_id(&self) -> std::option::Option<&str> {
         self.instance_id.as_deref()
     }
     /// <p>A unique identifier for the rule.</p>
-    pub fn rule_id(&self) -> std::option::Option<& str> {
+    pub fn rule_id(&self) -> std::option::Option<&str> {
         self.rule_id.as_deref()
     }
 }
@@ -42,7 +42,8 @@ impl DescribeRuleInputBuilder {
     }
     /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
     pub fn set_instance_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.instance_id = input; self
+        self.instance_id = input;
+        self
     }
     /// <p>A unique identifier for the rule.</p>
     pub fn rule_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -51,18 +52,19 @@ impl DescribeRuleInputBuilder {
     }
     /// <p>A unique identifier for the rule.</p>
     pub fn set_rule_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.rule_id = input; self
+        self.rule_id = input;
+        self
     }
     /// Consumes the builder and constructs a [`DescribeRuleInput`](crate::operation::describe_rule::DescribeRuleInput).
-    pub fn build(self) -> Result<crate::operation::describe_rule::DescribeRuleInput, aws_smithy_http::operation::error::BuildError> {
-        Ok(
-            crate::operation::describe_rule::DescribeRuleInput {
-                instance_id: self.instance_id
-                ,
-                rule_id: self.rule_id
-                ,
-            }
-        )
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::describe_rule::DescribeRuleInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        Ok(crate::operation::describe_rule::DescribeRuleInput {
+            instance_id: self.instance_id,
+            rule_id: self.rule_id,
+        })
     }
 }
-

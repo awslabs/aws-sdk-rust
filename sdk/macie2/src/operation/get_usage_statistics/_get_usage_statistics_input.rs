@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetUsageStatisticsInput  {
+pub struct GetUsageStatisticsInput {
     /// <p>An array of objects, one for each condition to use to filter the query results. If you specify more than one condition, Amazon Macie uses an AND operator to join the conditions.</p>
     #[doc(hidden)]
     pub filter_by: std::option::Option<std::vec::Vec<crate::types::UsageStatisticsFilter>>,
@@ -21,7 +21,7 @@ pub struct GetUsageStatisticsInput  {
 }
 impl GetUsageStatisticsInput {
     /// <p>An array of objects, one for each condition to use to filter the query results. If you specify more than one condition, Amazon Macie uses an AND operator to join the conditions.</p>
-    pub fn filter_by(&self) -> std::option::Option<& [crate::types::UsageStatisticsFilter]> {
+    pub fn filter_by(&self) -> std::option::Option<&[crate::types::UsageStatisticsFilter]> {
         self.filter_by.as_deref()
     }
     /// <p>The maximum number of items to include in each page of the response.</p>
@@ -29,21 +29,22 @@ impl GetUsageStatisticsInput {
         self.max_results
     }
     /// <p>The nextToken string that specifies which page of results to return in a paginated response.</p>
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
     /// <p>The criteria to use to sort the query results.</p>
-    pub fn sort_by(&self) -> std::option::Option<& crate::types::UsageStatisticsSortBy> {
+    pub fn sort_by(&self) -> std::option::Option<&crate::types::UsageStatisticsSortBy> {
         self.sort_by.as_ref()
     }
     /// <p>The inclusive time period to query usage data for. Valid values are: MONTH_TO_DATE, for the current calendar month to date; and, PAST_30_DAYS, for the preceding 30 days. If you don't specify a value, Amazon Macie provides usage data for the preceding 30 days.</p>
-    pub fn time_range(&self) -> std::option::Option<& crate::types::TimeRange> {
+    pub fn time_range(&self) -> std::option::Option<&crate::types::TimeRange> {
         self.time_range.as_ref()
     }
 }
 impl GetUsageStatisticsInput {
     /// Creates a new builder-style object to manufacture [`GetUsageStatisticsInput`](crate::operation::get_usage_statistics::GetUsageStatisticsInput).
-    pub fn builder() -> crate::operation::get_usage_statistics::builders::GetUsageStatisticsInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::get_usage_statistics::builders::GetUsageStatisticsInputBuilder {
         crate::operation::get_usage_statistics::builders::GetUsageStatisticsInputBuilder::default()
     }
 }
@@ -66,13 +67,17 @@ impl GetUsageStatisticsInputBuilder {
     /// <p>An array of objects, one for each condition to use to filter the query results. If you specify more than one condition, Amazon Macie uses an AND operator to join the conditions.</p>
     pub fn filter_by(mut self, input: crate::types::UsageStatisticsFilter) -> Self {
         let mut v = self.filter_by.unwrap_or_default();
-                        v.push(input);
-                        self.filter_by = Some(v);
-                        self
+        v.push(input);
+        self.filter_by = Some(v);
+        self
     }
     /// <p>An array of objects, one for each condition to use to filter the query results. If you specify more than one condition, Amazon Macie uses an AND operator to join the conditions.</p>
-    pub fn set_filter_by(mut self, input: std::option::Option<std::vec::Vec<crate::types::UsageStatisticsFilter>>) -> Self {
-        self.filter_by = input; self
+    pub fn set_filter_by(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::UsageStatisticsFilter>>,
+    ) -> Self {
+        self.filter_by = input;
+        self
     }
     /// <p>The maximum number of items to include in each page of the response.</p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -81,7 +86,8 @@ impl GetUsageStatisticsInputBuilder {
     }
     /// <p>The maximum number of items to include in each page of the response.</p>
     pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_results = input; self
+        self.max_results = input;
+        self
     }
     /// <p>The nextToken string that specifies which page of results to return in a paginated response.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -90,7 +96,8 @@ impl GetUsageStatisticsInputBuilder {
     }
     /// <p>The nextToken string that specifies which page of results to return in a paginated response.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input; self
+        self.next_token = input;
+        self
     }
     /// <p>The criteria to use to sort the query results.</p>
     pub fn sort_by(mut self, input: crate::types::UsageStatisticsSortBy) -> Self {
@@ -98,8 +105,12 @@ impl GetUsageStatisticsInputBuilder {
         self
     }
     /// <p>The criteria to use to sort the query results.</p>
-    pub fn set_sort_by(mut self, input: std::option::Option<crate::types::UsageStatisticsSortBy>) -> Self {
-        self.sort_by = input; self
+    pub fn set_sort_by(
+        mut self,
+        input: std::option::Option<crate::types::UsageStatisticsSortBy>,
+    ) -> Self {
+        self.sort_by = input;
+        self
     }
     /// <p>The inclusive time period to query usage data for. Valid values are: MONTH_TO_DATE, for the current calendar month to date; and, PAST_30_DAYS, for the preceding 30 days. If you don't specify a value, Amazon Macie provides usage data for the preceding 30 days.</p>
     pub fn time_range(mut self, input: crate::types::TimeRange) -> Self {
@@ -108,25 +119,24 @@ impl GetUsageStatisticsInputBuilder {
     }
     /// <p>The inclusive time period to query usage data for. Valid values are: MONTH_TO_DATE, for the current calendar month to date; and, PAST_30_DAYS, for the preceding 30 days. If you don't specify a value, Amazon Macie provides usage data for the preceding 30 days.</p>
     pub fn set_time_range(mut self, input: std::option::Option<crate::types::TimeRange>) -> Self {
-        self.time_range = input; self
+        self.time_range = input;
+        self
     }
     /// Consumes the builder and constructs a [`GetUsageStatisticsInput`](crate::operation::get_usage_statistics::GetUsageStatisticsInput).
-    pub fn build(self) -> Result<crate::operation::get_usage_statistics::GetUsageStatisticsInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::get_usage_statistics::GetUsageStatisticsInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::get_usage_statistics::GetUsageStatisticsInput {
-                filter_by: self.filter_by
-                ,
-                max_results: self.max_results
-                    .unwrap_or_default()
-                ,
-                next_token: self.next_token
-                ,
-                sort_by: self.sort_by
-                ,
-                time_range: self.time_range
-                ,
-            }
+                filter_by: self.filter_by,
+                max_results: self.max_results.unwrap_or_default(),
+                next_token: self.next_token,
+                sort_by: self.sort_by,
+                time_range: self.time_range,
+            },
         )
     }
 }
-

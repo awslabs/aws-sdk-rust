@@ -3,7 +3,7 @@
 /// <p>A complex type that contains information about the resource record sets that Amazon Route 53 created based on a specified traffic policy.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetTrafficPolicyInstanceCountOutput  {
+pub struct GetTrafficPolicyInstanceCountOutput {
     /// <p>The number of traffic policy instances that are associated with the current Amazon Web Services account.</p>
     #[doc(hidden)]
     pub traffic_policy_instance_count: std::option::Option<i32>,
@@ -16,13 +16,13 @@ impl GetTrafficPolicyInstanceCountOutput {
     }
 }
 impl aws_http::request_id::RequestId for GetTrafficPolicyInstanceCountOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl GetTrafficPolicyInstanceCountOutput {
     /// Creates a new builder-style object to manufacture [`GetTrafficPolicyInstanceCountOutput`](crate::operation::get_traffic_policy_instance_count::GetTrafficPolicyInstanceCountOutput).
-    pub fn builder() -> crate::operation::get_traffic_policy_instance_count::builders::GetTrafficPolicyInstanceCountOutputBuilder {
+    pub fn builder() -> crate::operation::get_traffic_policy_instance_count::builders::GetTrafficPolicyInstanceCountOutputBuilder{
         crate::operation::get_traffic_policy_instance_count::builders::GetTrafficPolicyInstanceCountOutputBuilder::default()
     }
 }
@@ -42,24 +42,26 @@ impl GetTrafficPolicyInstanceCountOutputBuilder {
     }
     /// <p>The number of traffic policy instances that are associated with the current Amazon Web Services account.</p>
     pub fn set_traffic_policy_instance_count(mut self, input: std::option::Option<i32>) -> Self {
-        self.traffic_policy_instance_count = input; self
+        self.traffic_policy_instance_count = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`GetTrafficPolicyInstanceCountOutput`](crate::operation::get_traffic_policy_instance_count::GetTrafficPolicyInstanceCountOutput).
-    pub fn build(self) -> crate::operation::get_traffic_policy_instance_count::GetTrafficPolicyInstanceCountOutput {
+    pub fn build(
+        self,
+    ) -> crate::operation::get_traffic_policy_instance_count::GetTrafficPolicyInstanceCountOutput
+    {
         crate::operation::get_traffic_policy_instance_count::GetTrafficPolicyInstanceCountOutput {
-            traffic_policy_instance_count: self.traffic_policy_instance_count
-            ,
+            traffic_policy_instance_count: self.traffic_policy_instance_count,
             _request_id: self._request_id,
         }
     }
 }
-

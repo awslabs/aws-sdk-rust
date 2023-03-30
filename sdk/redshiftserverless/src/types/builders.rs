@@ -26,4 +26,3 @@ pub use crate::types::_endpoint_access::EndpointAccessBuilder;
 pub use crate::types::_vpc_security_group_membership::VpcSecurityGroupMembershipBuilder;
 
 pub use crate::types::_resource_policy::ResourcePolicyBuilder;
-

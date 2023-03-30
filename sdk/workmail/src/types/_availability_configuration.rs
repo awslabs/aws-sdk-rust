@@ -3,7 +3,7 @@
 /// <p>List all the <code>AvailabilityConfiguration</code>'s for the given WorkMail organization.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AvailabilityConfiguration  {
+pub struct AvailabilityConfiguration {
     /// <p>Displays the domain to which the provider applies.</p>
     #[doc(hidden)]
     pub domain_name: std::option::Option<std::string::String>,
@@ -25,27 +25,31 @@ pub struct AvailabilityConfiguration  {
 }
 impl AvailabilityConfiguration {
     /// <p>Displays the domain to which the provider applies.</p>
-    pub fn domain_name(&self) -> std::option::Option<& str> {
+    pub fn domain_name(&self) -> std::option::Option<&str> {
         self.domain_name.as_deref()
     }
     /// <p>Displays the provider type that applies to this domain.</p>
-    pub fn provider_type(&self) -> std::option::Option<& crate::types::AvailabilityProviderType> {
+    pub fn provider_type(&self) -> std::option::Option<&crate::types::AvailabilityProviderType> {
         self.provider_type.as_ref()
     }
     /// <p>If <code>ProviderType</code> is <code>EWS</code>, then this field contains <code>RedactedEwsAvailabilityProvider</code>. Otherwise, it is not required.</p>
-    pub fn ews_provider(&self) -> std::option::Option<& crate::types::RedactedEwsAvailabilityProvider> {
+    pub fn ews_provider(
+        &self,
+    ) -> std::option::Option<&crate::types::RedactedEwsAvailabilityProvider> {
         self.ews_provider.as_ref()
     }
     /// <p>If ProviderType is <code>LAMBDA</code> then this field contains <code>LambdaAvailabilityProvider</code>. Otherwise, it is not required.</p>
-    pub fn lambda_provider(&self) -> std::option::Option<& crate::types::LambdaAvailabilityProvider> {
+    pub fn lambda_provider(
+        &self,
+    ) -> std::option::Option<&crate::types::LambdaAvailabilityProvider> {
         self.lambda_provider.as_ref()
     }
     /// <p>The date and time at which the availability configuration was created.</p>
-    pub fn date_created(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
+    pub fn date_created(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.date_created.as_ref()
     }
     /// <p>The date and time at which the availability configuration was last modified.</p>
-    pub fn date_modified(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
+    pub fn date_modified(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.date_modified.as_ref()
     }
 }
@@ -75,7 +79,8 @@ impl AvailabilityConfigurationBuilder {
     }
     /// <p>Displays the domain to which the provider applies.</p>
     pub fn set_domain_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.domain_name = input; self
+        self.domain_name = input;
+        self
     }
     /// <p>Displays the provider type that applies to this domain.</p>
     pub fn provider_type(mut self, input: crate::types::AvailabilityProviderType) -> Self {
@@ -83,8 +88,12 @@ impl AvailabilityConfigurationBuilder {
         self
     }
     /// <p>Displays the provider type that applies to this domain.</p>
-    pub fn set_provider_type(mut self, input: std::option::Option<crate::types::AvailabilityProviderType>) -> Self {
-        self.provider_type = input; self
+    pub fn set_provider_type(
+        mut self,
+        input: std::option::Option<crate::types::AvailabilityProviderType>,
+    ) -> Self {
+        self.provider_type = input;
+        self
     }
     /// <p>If <code>ProviderType</code> is <code>EWS</code>, then this field contains <code>RedactedEwsAvailabilityProvider</code>. Otherwise, it is not required.</p>
     pub fn ews_provider(mut self, input: crate::types::RedactedEwsAvailabilityProvider) -> Self {
@@ -92,8 +101,12 @@ impl AvailabilityConfigurationBuilder {
         self
     }
     /// <p>If <code>ProviderType</code> is <code>EWS</code>, then this field contains <code>RedactedEwsAvailabilityProvider</code>. Otherwise, it is not required.</p>
-    pub fn set_ews_provider(mut self, input: std::option::Option<crate::types::RedactedEwsAvailabilityProvider>) -> Self {
-        self.ews_provider = input; self
+    pub fn set_ews_provider(
+        mut self,
+        input: std::option::Option<crate::types::RedactedEwsAvailabilityProvider>,
+    ) -> Self {
+        self.ews_provider = input;
+        self
     }
     /// <p>If ProviderType is <code>LAMBDA</code> then this field contains <code>LambdaAvailabilityProvider</code>. Otherwise, it is not required.</p>
     pub fn lambda_provider(mut self, input: crate::types::LambdaAvailabilityProvider) -> Self {
@@ -101,8 +114,12 @@ impl AvailabilityConfigurationBuilder {
         self
     }
     /// <p>If ProviderType is <code>LAMBDA</code> then this field contains <code>LambdaAvailabilityProvider</code>. Otherwise, it is not required.</p>
-    pub fn set_lambda_provider(mut self, input: std::option::Option<crate::types::LambdaAvailabilityProvider>) -> Self {
-        self.lambda_provider = input; self
+    pub fn set_lambda_provider(
+        mut self,
+        input: std::option::Option<crate::types::LambdaAvailabilityProvider>,
+    ) -> Self {
+        self.lambda_provider = input;
+        self
     }
     /// <p>The date and time at which the availability configuration was created.</p>
     pub fn date_created(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -110,8 +127,12 @@ impl AvailabilityConfigurationBuilder {
         self
     }
     /// <p>The date and time at which the availability configuration was created.</p>
-    pub fn set_date_created(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.date_created = input; self
+    pub fn set_date_created(
+        mut self,
+        input: std::option::Option<aws_smithy_types::DateTime>,
+    ) -> Self {
+        self.date_created = input;
+        self
     }
     /// <p>The date and time at which the availability configuration was last modified.</p>
     pub fn date_modified(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -119,25 +140,22 @@ impl AvailabilityConfigurationBuilder {
         self
     }
     /// <p>The date and time at which the availability configuration was last modified.</p>
-    pub fn set_date_modified(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.date_modified = input; self
+    pub fn set_date_modified(
+        mut self,
+        input: std::option::Option<aws_smithy_types::DateTime>,
+    ) -> Self {
+        self.date_modified = input;
+        self
     }
     /// Consumes the builder and constructs a [`AvailabilityConfiguration`](crate::types::AvailabilityConfiguration).
     pub fn build(self) -> crate::types::AvailabilityConfiguration {
         crate::types::AvailabilityConfiguration {
-            domain_name: self.domain_name
-            ,
-            provider_type: self.provider_type
-            ,
-            ews_provider: self.ews_provider
-            ,
-            lambda_provider: self.lambda_provider
-            ,
-            date_created: self.date_created
-            ,
-            date_modified: self.date_modified
-            ,
+            domain_name: self.domain_name,
+            provider_type: self.provider_type,
+            ews_provider: self.ews_provider,
+            lambda_provider: self.lambda_provider,
+            date_created: self.date_created,
+            date_modified: self.date_modified,
         }
     }
 }
-

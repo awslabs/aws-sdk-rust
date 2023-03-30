@@ -3,7 +3,7 @@
 /// <p>Specifies a Relational database data source in the Glue Data Catalog.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct RelationalCatalogSource  {
+pub struct RelationalCatalogSource {
     /// <p>The name of the data source.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -16,15 +16,15 @@ pub struct RelationalCatalogSource  {
 }
 impl RelationalCatalogSource {
     /// <p>The name of the data source.</p>
-    pub fn name(&self) -> std::option::Option<& str> {
+    pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>The name of the database to read from.</p>
-    pub fn database(&self) -> std::option::Option<& str> {
+    pub fn database(&self) -> std::option::Option<&str> {
         self.database.as_deref()
     }
     /// <p>The name of the table in the database to read from.</p>
-    pub fn table(&self) -> std::option::Option<& str> {
+    pub fn table(&self) -> std::option::Option<&str> {
         self.table.as_deref()
     }
 }
@@ -51,7 +51,8 @@ impl RelationalCatalogSourceBuilder {
     }
     /// <p>The name of the data source.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input; self
+        self.name = input;
+        self
     }
     /// <p>The name of the database to read from.</p>
     pub fn database(mut self, input: impl Into<std::string::String>) -> Self {
@@ -60,7 +61,8 @@ impl RelationalCatalogSourceBuilder {
     }
     /// <p>The name of the database to read from.</p>
     pub fn set_database(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.database = input; self
+        self.database = input;
+        self
     }
     /// <p>The name of the table in the database to read from.</p>
     pub fn table(mut self, input: impl Into<std::string::String>) -> Self {
@@ -69,18 +71,15 @@ impl RelationalCatalogSourceBuilder {
     }
     /// <p>The name of the table in the database to read from.</p>
     pub fn set_table(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.table = input; self
+        self.table = input;
+        self
     }
     /// Consumes the builder and constructs a [`RelationalCatalogSource`](crate::types::RelationalCatalogSource).
     pub fn build(self) -> crate::types::RelationalCatalogSource {
         crate::types::RelationalCatalogSource {
-            name: self.name
-            ,
-            database: self.database
-            ,
-            table: self.table
-            ,
+            name: self.name,
+            database: self.database,
+            table: self.table,
         }
     }
 }
-

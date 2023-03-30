@@ -3,11 +3,11 @@
 /// <p>Node group (shard) configuration options. Each node group (shard) configuration has the following: <code>Slots</code>, <code>PrimaryAvailabilityZone</code>, <code>ReplicaAvailabilityZones</code>, <code>ReplicaCount</code>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct NodeGroupConfiguration  {
+pub struct NodeGroupConfiguration {
     /// <p>Either the ElastiCache for Redis supplied 4-digit id or a user supplied id for the node group these configuration values apply to.</p>
     #[doc(hidden)]
     pub node_group_id: std::option::Option<std::string::String>,
-    /// <p>A string that specifies the keyspace for a particular node group. Keyspaces range from 0 to 16,383. The string is in the format <code>startkey-endkey</code>.</p> 
+    /// <p>A string that specifies the keyspace for a particular node group. Keyspaces range from 0 to 16,383. The string is in the format <code>startkey-endkey</code>.</p>
     /// <p>Example: <code>"0-3999"</code> </p>
     #[doc(hidden)]
     pub slots: std::option::Option<std::string::String>,
@@ -29,12 +29,12 @@ pub struct NodeGroupConfiguration  {
 }
 impl NodeGroupConfiguration {
     /// <p>Either the ElastiCache for Redis supplied 4-digit id or a user supplied id for the node group these configuration values apply to.</p>
-    pub fn node_group_id(&self) -> std::option::Option<& str> {
+    pub fn node_group_id(&self) -> std::option::Option<&str> {
         self.node_group_id.as_deref()
     }
-    /// <p>A string that specifies the keyspace for a particular node group. Keyspaces range from 0 to 16,383. The string is in the format <code>startkey-endkey</code>.</p> 
+    /// <p>A string that specifies the keyspace for a particular node group. Keyspaces range from 0 to 16,383. The string is in the format <code>startkey-endkey</code>.</p>
     /// <p>Example: <code>"0-3999"</code> </p>
-    pub fn slots(&self) -> std::option::Option<& str> {
+    pub fn slots(&self) -> std::option::Option<&str> {
         self.slots.as_deref()
     }
     /// <p>The number of read replica nodes in this node group (shard).</p>
@@ -42,19 +42,19 @@ impl NodeGroupConfiguration {
         self.replica_count
     }
     /// <p>The Availability Zone where the primary node of this node group (shard) is launched.</p>
-    pub fn primary_availability_zone(&self) -> std::option::Option<& str> {
+    pub fn primary_availability_zone(&self) -> std::option::Option<&str> {
         self.primary_availability_zone.as_deref()
     }
     /// <p>A list of Availability Zones to be used for the read replicas. The number of Availability Zones in this list must match the value of <code>ReplicaCount</code> or <code>ReplicasPerNodeGroup</code> if not specified.</p>
-    pub fn replica_availability_zones(&self) -> std::option::Option<& [std::string::String]> {
+    pub fn replica_availability_zones(&self) -> std::option::Option<&[std::string::String]> {
         self.replica_availability_zones.as_deref()
     }
     /// <p>The outpost ARN of the primary node.</p>
-    pub fn primary_outpost_arn(&self) -> std::option::Option<& str> {
+    pub fn primary_outpost_arn(&self) -> std::option::Option<&str> {
         self.primary_outpost_arn.as_deref()
     }
     /// <p>The outpost ARN of the node replicas.</p>
-    pub fn replica_outpost_arns(&self) -> std::option::Option<& [std::string::String]> {
+    pub fn replica_outpost_arns(&self) -> std::option::Option<&[std::string::String]> {
         self.replica_outpost_arns.as_deref()
     }
 }
@@ -85,18 +85,20 @@ impl NodeGroupConfigurationBuilder {
     }
     /// <p>Either the ElastiCache for Redis supplied 4-digit id or a user supplied id for the node group these configuration values apply to.</p>
     pub fn set_node_group_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.node_group_id = input; self
+        self.node_group_id = input;
+        self
     }
-    /// <p>A string that specifies the keyspace for a particular node group. Keyspaces range from 0 to 16,383. The string is in the format <code>startkey-endkey</code>.</p> 
+    /// <p>A string that specifies the keyspace for a particular node group. Keyspaces range from 0 to 16,383. The string is in the format <code>startkey-endkey</code>.</p>
     /// <p>Example: <code>"0-3999"</code> </p>
     pub fn slots(mut self, input: impl Into<std::string::String>) -> Self {
         self.slots = Some(input.into());
         self
     }
-    /// <p>A string that specifies the keyspace for a particular node group. Keyspaces range from 0 to 16,383. The string is in the format <code>startkey-endkey</code>.</p> 
+    /// <p>A string that specifies the keyspace for a particular node group. Keyspaces range from 0 to 16,383. The string is in the format <code>startkey-endkey</code>.</p>
     /// <p>Example: <code>"0-3999"</code> </p>
     pub fn set_slots(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.slots = input; self
+        self.slots = input;
+        self
     }
     /// <p>The number of read replica nodes in this node group (shard).</p>
     pub fn replica_count(mut self, input: i32) -> Self {
@@ -105,7 +107,8 @@ impl NodeGroupConfigurationBuilder {
     }
     /// <p>The number of read replica nodes in this node group (shard).</p>
     pub fn set_replica_count(mut self, input: std::option::Option<i32>) -> Self {
-        self.replica_count = input; self
+        self.replica_count = input;
+        self
     }
     /// <p>The Availability Zone where the primary node of this node group (shard) is launched.</p>
     pub fn primary_availability_zone(mut self, input: impl Into<std::string::String>) -> Self {
@@ -113,8 +116,12 @@ impl NodeGroupConfigurationBuilder {
         self
     }
     /// <p>The Availability Zone where the primary node of this node group (shard) is launched.</p>
-    pub fn set_primary_availability_zone(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.primary_availability_zone = input; self
+    pub fn set_primary_availability_zone(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.primary_availability_zone = input;
+        self
     }
     /// Appends an item to `replica_availability_zones`.
     ///
@@ -123,13 +130,17 @@ impl NodeGroupConfigurationBuilder {
     /// <p>A list of Availability Zones to be used for the read replicas. The number of Availability Zones in this list must match the value of <code>ReplicaCount</code> or <code>ReplicasPerNodeGroup</code> if not specified.</p>
     pub fn replica_availability_zones(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.replica_availability_zones.unwrap_or_default();
-                        v.push(input.into());
-                        self.replica_availability_zones = Some(v);
-                        self
+        v.push(input.into());
+        self.replica_availability_zones = Some(v);
+        self
     }
     /// <p>A list of Availability Zones to be used for the read replicas. The number of Availability Zones in this list must match the value of <code>ReplicaCount</code> or <code>ReplicasPerNodeGroup</code> if not specified.</p>
-    pub fn set_replica_availability_zones(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-        self.replica_availability_zones = input; self
+    pub fn set_replica_availability_zones(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
+        self.replica_availability_zones = input;
+        self
     }
     /// <p>The outpost ARN of the primary node.</p>
     pub fn primary_outpost_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -137,8 +148,12 @@ impl NodeGroupConfigurationBuilder {
         self
     }
     /// <p>The outpost ARN of the primary node.</p>
-    pub fn set_primary_outpost_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.primary_outpost_arn = input; self
+    pub fn set_primary_outpost_arn(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.primary_outpost_arn = input;
+        self
     }
     /// Appends an item to `replica_outpost_arns`.
     ///
@@ -147,32 +162,28 @@ impl NodeGroupConfigurationBuilder {
     /// <p>The outpost ARN of the node replicas.</p>
     pub fn replica_outpost_arns(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.replica_outpost_arns.unwrap_or_default();
-                        v.push(input.into());
-                        self.replica_outpost_arns = Some(v);
-                        self
+        v.push(input.into());
+        self.replica_outpost_arns = Some(v);
+        self
     }
     /// <p>The outpost ARN of the node replicas.</p>
-    pub fn set_replica_outpost_arns(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-        self.replica_outpost_arns = input; self
+    pub fn set_replica_outpost_arns(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
+        self.replica_outpost_arns = input;
+        self
     }
     /// Consumes the builder and constructs a [`NodeGroupConfiguration`](crate::types::NodeGroupConfiguration).
     pub fn build(self) -> crate::types::NodeGroupConfiguration {
         crate::types::NodeGroupConfiguration {
-            node_group_id: self.node_group_id
-            ,
-            slots: self.slots
-            ,
-            replica_count: self.replica_count
-            ,
-            primary_availability_zone: self.primary_availability_zone
-            ,
-            replica_availability_zones: self.replica_availability_zones
-            ,
-            primary_outpost_arn: self.primary_outpost_arn
-            ,
-            replica_outpost_arns: self.replica_outpost_arns
-            ,
+            node_group_id: self.node_group_id,
+            slots: self.slots,
+            replica_count: self.replica_count,
+            primary_availability_zone: self.primary_availability_zone,
+            replica_availability_zones: self.replica_availability_zones,
+            primary_outpost_arn: self.primary_outpost_arn,
+            replica_outpost_arns: self.replica_outpost_arns,
         }
     }
 }
-

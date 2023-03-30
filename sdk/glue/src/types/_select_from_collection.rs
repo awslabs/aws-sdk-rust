@@ -3,7 +3,7 @@
 /// <p>Specifies a transform that chooses one <code>DynamicFrame</code> from a collection of <code>DynamicFrames</code>. The output is the selected <code>DynamicFrame</code> </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SelectFromCollection  {
+pub struct SelectFromCollection {
     /// <p>The name of the transform node.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -16,11 +16,11 @@ pub struct SelectFromCollection  {
 }
 impl SelectFromCollection {
     /// <p>The name of the transform node.</p>
-    pub fn name(&self) -> std::option::Option<& str> {
+    pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>The data inputs identified by their node names.</p>
-    pub fn inputs(&self) -> std::option::Option<& [std::string::String]> {
+    pub fn inputs(&self) -> std::option::Option<&[std::string::String]> {
         self.inputs.as_deref()
     }
     /// <p>The index for the DynamicFrame to be selected.</p>
@@ -51,7 +51,8 @@ impl SelectFromCollectionBuilder {
     }
     /// <p>The name of the transform node.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input; self
+        self.name = input;
+        self
     }
     /// Appends an item to `inputs`.
     ///
@@ -60,13 +61,17 @@ impl SelectFromCollectionBuilder {
     /// <p>The data inputs identified by their node names.</p>
     pub fn inputs(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.inputs.unwrap_or_default();
-                        v.push(input.into());
-                        self.inputs = Some(v);
-                        self
+        v.push(input.into());
+        self.inputs = Some(v);
+        self
     }
     /// <p>The data inputs identified by their node names.</p>
-    pub fn set_inputs(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-        self.inputs = input; self
+    pub fn set_inputs(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
+        self.inputs = input;
+        self
     }
     /// <p>The index for the DynamicFrame to be selected.</p>
     pub fn index(mut self, input: i32) -> Self {
@@ -75,19 +80,15 @@ impl SelectFromCollectionBuilder {
     }
     /// <p>The index for the DynamicFrame to be selected.</p>
     pub fn set_index(mut self, input: std::option::Option<i32>) -> Self {
-        self.index = input; self
+        self.index = input;
+        self
     }
     /// Consumes the builder and constructs a [`SelectFromCollection`](crate::types::SelectFromCollection).
     pub fn build(self) -> crate::types::SelectFromCollection {
         crate::types::SelectFromCollection {
-            name: self.name
-            ,
-            inputs: self.inputs
-            ,
-            index: self.index
-                .unwrap_or_default()
-            ,
+            name: self.name,
+            inputs: self.inputs,
+            index: self.index.unwrap_or_default(),
         }
     }
 }
-

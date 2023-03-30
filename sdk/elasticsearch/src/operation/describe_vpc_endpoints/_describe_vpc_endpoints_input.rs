@@ -3,20 +3,21 @@
 /// <p>Container for request parameters to the <code><code>DescribeVpcEndpoints</code></code> operation. Specifies the list of VPC endpoints to be described.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeVpcEndpointsInput  {
+pub struct DescribeVpcEndpointsInput {
     /// <p>The unique identifiers of the endpoints to get information about.</p>
     #[doc(hidden)]
     pub vpc_endpoint_ids: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl DescribeVpcEndpointsInput {
     /// <p>The unique identifiers of the endpoints to get information about.</p>
-    pub fn vpc_endpoint_ids(&self) -> std::option::Option<& [std::string::String]> {
+    pub fn vpc_endpoint_ids(&self) -> std::option::Option<&[std::string::String]> {
         self.vpc_endpoint_ids.as_deref()
     }
 }
 impl DescribeVpcEndpointsInput {
     /// Creates a new builder-style object to manufacture [`DescribeVpcEndpointsInput`](crate::operation::describe_vpc_endpoints::DescribeVpcEndpointsInput).
-    pub fn builder() -> crate::operation::describe_vpc_endpoints::builders::DescribeVpcEndpointsInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::describe_vpc_endpoints::builders::DescribeVpcEndpointsInputBuilder {
         crate::operation::describe_vpc_endpoints::builders::DescribeVpcEndpointsInputBuilder::default()
     }
 }
@@ -35,22 +36,29 @@ impl DescribeVpcEndpointsInputBuilder {
     /// <p>The unique identifiers of the endpoints to get information about.</p>
     pub fn vpc_endpoint_ids(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.vpc_endpoint_ids.unwrap_or_default();
-                        v.push(input.into());
-                        self.vpc_endpoint_ids = Some(v);
-                        self
+        v.push(input.into());
+        self.vpc_endpoint_ids = Some(v);
+        self
     }
     /// <p>The unique identifiers of the endpoints to get information about.</p>
-    pub fn set_vpc_endpoint_ids(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-        self.vpc_endpoint_ids = input; self
+    pub fn set_vpc_endpoint_ids(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
+        self.vpc_endpoint_ids = input;
+        self
     }
     /// Consumes the builder and constructs a [`DescribeVpcEndpointsInput`](crate::operation::describe_vpc_endpoints::DescribeVpcEndpointsInput).
-    pub fn build(self) -> Result<crate::operation::describe_vpc_endpoints::DescribeVpcEndpointsInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::describe_vpc_endpoints::DescribeVpcEndpointsInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::describe_vpc_endpoints::DescribeVpcEndpointsInput {
-                vpc_endpoint_ids: self.vpc_endpoint_ids
-                ,
-            }
+                vpc_endpoint_ids: self.vpc_endpoint_ids,
+            },
         )
     }
 }
-

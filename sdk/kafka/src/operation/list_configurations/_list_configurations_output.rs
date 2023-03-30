@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListConfigurationsOutput  {
+pub struct ListConfigurationsOutput {
     /// <p>An array of MSK configurations.</p>
     #[doc(hidden)]
     pub configurations: std::option::Option<std::vec::Vec<crate::types::Configuration>>,
@@ -13,22 +13,23 @@ pub struct ListConfigurationsOutput  {
 }
 impl ListConfigurationsOutput {
     /// <p>An array of MSK configurations.</p>
-    pub fn configurations(&self) -> std::option::Option<& [crate::types::Configuration]> {
+    pub fn configurations(&self) -> std::option::Option<&[crate::types::Configuration]> {
         self.configurations.as_deref()
     }
     /// <p>The paginated results marker. When the result of a ListConfigurations operation is truncated, the call returns NextToken in the response. To get another batch of configurations, provide this token in your next request.</p>
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for ListConfigurationsOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl ListConfigurationsOutput {
     /// Creates a new builder-style object to manufacture [`ListConfigurationsOutput`](crate::operation::list_configurations::ListConfigurationsOutput).
-    pub fn builder() -> crate::operation::list_configurations::builders::ListConfigurationsOutputBuilder {
+    pub fn builder(
+    ) -> crate::operation::list_configurations::builders::ListConfigurationsOutputBuilder {
         crate::operation::list_configurations::builders::ListConfigurationsOutputBuilder::default()
     }
 }
@@ -49,13 +50,17 @@ impl ListConfigurationsOutputBuilder {
     /// <p>An array of MSK configurations.</p>
     pub fn configurations(mut self, input: crate::types::Configuration) -> Self {
         let mut v = self.configurations.unwrap_or_default();
-                        v.push(input);
-                        self.configurations = Some(v);
-                        self
+        v.push(input);
+        self.configurations = Some(v);
+        self
     }
     /// <p>An array of MSK configurations.</p>
-    pub fn set_configurations(mut self, input: std::option::Option<std::vec::Vec<crate::types::Configuration>>) -> Self {
-        self.configurations = input; self
+    pub fn set_configurations(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::Configuration>>,
+    ) -> Self {
+        self.configurations = input;
+        self
     }
     /// <p>The paginated results marker. When the result of a ListConfigurations operation is truncated, the call returns NextToken in the response. To get another batch of configurations, provide this token in your next request.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -64,26 +69,24 @@ impl ListConfigurationsOutputBuilder {
     }
     /// <p>The paginated results marker. When the result of a ListConfigurations operation is truncated, the call returns NextToken in the response. To get another batch of configurations, provide this token in your next request.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input; self
+        self.next_token = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`ListConfigurationsOutput`](crate::operation::list_configurations::ListConfigurationsOutput).
     pub fn build(self) -> crate::operation::list_configurations::ListConfigurationsOutput {
         crate::operation::list_configurations::ListConfigurationsOutput {
-            configurations: self.configurations
-            ,
-            next_token: self.next_token
-            ,
+            configurations: self.configurations,
+            next_token: self.next_token,
             _request_id: self._request_id,
         }
     }
 }
-

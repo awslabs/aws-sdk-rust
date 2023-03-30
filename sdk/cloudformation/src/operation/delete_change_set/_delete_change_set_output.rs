@@ -3,17 +3,18 @@
 /// <p>The output for the <code>DeleteChangeSet</code> action.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteChangeSetOutput  {
+pub struct DeleteChangeSetOutput {
     _request_id: Option<String>,
 }
 impl aws_http::request_id::RequestId for DeleteChangeSetOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl DeleteChangeSetOutput {
     /// Creates a new builder-style object to manufacture [`DeleteChangeSetOutput`](crate::operation::delete_change_set::DeleteChangeSetOutput).
-    pub fn builder() -> crate::operation::delete_change_set::builders::DeleteChangeSetOutputBuilder {
+    pub fn builder() -> crate::operation::delete_change_set::builders::DeleteChangeSetOutputBuilder
+    {
         crate::operation::delete_change_set::builders::DeleteChangeSetOutputBuilder::default()
     }
 }
@@ -26,14 +27,14 @@ pub struct DeleteChangeSetOutputBuilder {
 }
 impl DeleteChangeSetOutputBuilder {
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`DeleteChangeSetOutput`](crate::operation::delete_change_set::DeleteChangeSetOutput).
     pub fn build(self) -> crate::operation::delete_change_set::DeleteChangeSetOutput {
         crate::operation::delete_change_set::DeleteChangeSetOutput {
@@ -41,4 +42,3 @@ impl DeleteChangeSetOutputBuilder {
         }
     }
 }
-

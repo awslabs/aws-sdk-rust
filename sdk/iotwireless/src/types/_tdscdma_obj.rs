@@ -3,7 +3,7 @@
 /// <p>TD-SCDMA object.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct TdscdmaObj  {
+pub struct TdscdmaObj {
     /// <p>Mobile Country Code.</p>
     #[doc(hidden)]
     pub mcc: std::option::Option<i32>,
@@ -50,7 +50,7 @@ impl TdscdmaObj {
         self.utran_cid
     }
     /// <p>TD-SCDMA local identification (local ID) information.</p>
-    pub fn tdscdma_local_id(&self) -> std::option::Option<& crate::types::TdscdmaLocalId> {
+    pub fn tdscdma_local_id(&self) -> std::option::Option<&crate::types::TdscdmaLocalId> {
         self.tdscdma_local_id.as_ref()
     }
     /// <p>TD-SCDMA Timing advance.</p>
@@ -66,7 +66,7 @@ impl TdscdmaObj {
         self.path_loss
     }
     /// <p>TD-SCDMA object for network measurement reports.</p>
-    pub fn tdscdma_nmr(&self) -> std::option::Option<& [crate::types::TdscdmaNmrObj]> {
+    pub fn tdscdma_nmr(&self) -> std::option::Option<&[crate::types::TdscdmaNmrObj]> {
         self.tdscdma_nmr.as_deref()
     }
 }
@@ -99,7 +99,8 @@ impl TdscdmaObjBuilder {
     }
     /// <p>Mobile Country Code.</p>
     pub fn set_mcc(mut self, input: std::option::Option<i32>) -> Self {
-        self.mcc = input; self
+        self.mcc = input;
+        self
     }
     /// <p>Mobile Network Code.</p>
     pub fn mnc(mut self, input: i32) -> Self {
@@ -108,7 +109,8 @@ impl TdscdmaObjBuilder {
     }
     /// <p>Mobile Network Code.</p>
     pub fn set_mnc(mut self, input: std::option::Option<i32>) -> Self {
-        self.mnc = input; self
+        self.mnc = input;
+        self
     }
     /// <p>Location Area Code.</p>
     pub fn lac(mut self, input: i32) -> Self {
@@ -117,7 +119,8 @@ impl TdscdmaObjBuilder {
     }
     /// <p>Location Area Code.</p>
     pub fn set_lac(mut self, input: std::option::Option<i32>) -> Self {
-        self.lac = input; self
+        self.lac = input;
+        self
     }
     /// <p>UTRAN (UMTS Terrestrial Radio Access Network) Cell Global Identifier.</p>
     pub fn utran_cid(mut self, input: i32) -> Self {
@@ -126,7 +129,8 @@ impl TdscdmaObjBuilder {
     }
     /// <p>UTRAN (UMTS Terrestrial Radio Access Network) Cell Global Identifier.</p>
     pub fn set_utran_cid(mut self, input: std::option::Option<i32>) -> Self {
-        self.utran_cid = input; self
+        self.utran_cid = input;
+        self
     }
     /// <p>TD-SCDMA local identification (local ID) information.</p>
     pub fn tdscdma_local_id(mut self, input: crate::types::TdscdmaLocalId) -> Self {
@@ -134,8 +138,12 @@ impl TdscdmaObjBuilder {
         self
     }
     /// <p>TD-SCDMA local identification (local ID) information.</p>
-    pub fn set_tdscdma_local_id(mut self, input: std::option::Option<crate::types::TdscdmaLocalId>) -> Self {
-        self.tdscdma_local_id = input; self
+    pub fn set_tdscdma_local_id(
+        mut self,
+        input: std::option::Option<crate::types::TdscdmaLocalId>,
+    ) -> Self {
+        self.tdscdma_local_id = input;
+        self
     }
     /// <p>TD-SCDMA Timing advance.</p>
     pub fn tdscdma_timing_advance(mut self, input: i32) -> Self {
@@ -144,7 +152,8 @@ impl TdscdmaObjBuilder {
     }
     /// <p>TD-SCDMA Timing advance.</p>
     pub fn set_tdscdma_timing_advance(mut self, input: std::option::Option<i32>) -> Self {
-        self.tdscdma_timing_advance = input; self
+        self.tdscdma_timing_advance = input;
+        self
     }
     /// <p>Signal power of the received signal (Received Signal Code Power), measured in decibel-milliwatts (dBm).</p>
     pub fn rscp(mut self, input: i32) -> Self {
@@ -153,7 +162,8 @@ impl TdscdmaObjBuilder {
     }
     /// <p>Signal power of the received signal (Received Signal Code Power), measured in decibel-milliwatts (dBm).</p>
     pub fn set_rscp(mut self, input: std::option::Option<i32>) -> Self {
-        self.rscp = input; self
+        self.rscp = input;
+        self
     }
     /// <p>Path loss, or path attenuation, is the reduction in power density of an electromagnetic wave as it propagates through space.</p>
     pub fn path_loss(mut self, input: i32) -> Self {
@@ -162,7 +172,8 @@ impl TdscdmaObjBuilder {
     }
     /// <p>Path loss, or path attenuation, is the reduction in power density of an electromagnetic wave as it propagates through space.</p>
     pub fn set_path_loss(mut self, input: std::option::Option<i32>) -> Self {
-        self.path_loss = input; self
+        self.path_loss = input;
+        self
     }
     /// Appends an item to `tdscdma_nmr`.
     ///
@@ -171,36 +182,30 @@ impl TdscdmaObjBuilder {
     /// <p>TD-SCDMA object for network measurement reports.</p>
     pub fn tdscdma_nmr(mut self, input: crate::types::TdscdmaNmrObj) -> Self {
         let mut v = self.tdscdma_nmr.unwrap_or_default();
-                        v.push(input);
-                        self.tdscdma_nmr = Some(v);
-                        self
+        v.push(input);
+        self.tdscdma_nmr = Some(v);
+        self
     }
     /// <p>TD-SCDMA object for network measurement reports.</p>
-    pub fn set_tdscdma_nmr(mut self, input: std::option::Option<std::vec::Vec<crate::types::TdscdmaNmrObj>>) -> Self {
-        self.tdscdma_nmr = input; self
+    pub fn set_tdscdma_nmr(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::TdscdmaNmrObj>>,
+    ) -> Self {
+        self.tdscdma_nmr = input;
+        self
     }
     /// Consumes the builder and constructs a [`TdscdmaObj`](crate::types::TdscdmaObj).
     pub fn build(self) -> crate::types::TdscdmaObj {
         crate::types::TdscdmaObj {
-            mcc: self.mcc
-            ,
-            mnc: self.mnc
-            ,
-            lac: self.lac
-            ,
-            utran_cid: self.utran_cid
-            ,
-            tdscdma_local_id: self.tdscdma_local_id
-            ,
-            tdscdma_timing_advance: self.tdscdma_timing_advance
-            ,
-            rscp: self.rscp
-            ,
-            path_loss: self.path_loss
-            ,
-            tdscdma_nmr: self.tdscdma_nmr
-            ,
+            mcc: self.mcc,
+            mnc: self.mnc,
+            lac: self.lac,
+            utran_cid: self.utran_cid,
+            tdscdma_local_id: self.tdscdma_local_id,
+            tdscdma_timing_advance: self.tdscdma_timing_advance,
+            rscp: self.rscp,
+            path_loss: self.path_loss,
+            tdscdma_nmr: self.tdscdma_nmr,
         }
     }
 }
-

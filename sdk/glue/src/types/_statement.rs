@@ -3,7 +3,7 @@
 /// <p>The statement or request for a particular action to occur in a session.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Statement  {
+pub struct Statement {
     /// <p>The ID of the statement.</p>
     #[doc(hidden)]
     pub id: i32,
@@ -32,15 +32,15 @@ impl Statement {
         self.id
     }
     /// <p>The execution code of the statement.</p>
-    pub fn code(&self) -> std::option::Option<& str> {
+    pub fn code(&self) -> std::option::Option<&str> {
         self.code.as_deref()
     }
     /// <p>The state while request is actioned.</p>
-    pub fn state(&self) -> std::option::Option<& crate::types::StatementState> {
+    pub fn state(&self) -> std::option::Option<&crate::types::StatementState> {
         self.state.as_ref()
     }
     /// <p>The output in JSON.</p>
-    pub fn output(&self) -> std::option::Option<& crate::types::StatementOutput> {
+    pub fn output(&self) -> std::option::Option<&crate::types::StatementOutput> {
         self.output.as_ref()
     }
     /// <p>The code execution progress.</p>
@@ -83,7 +83,8 @@ impl StatementBuilder {
     }
     /// <p>The ID of the statement.</p>
     pub fn set_id(mut self, input: std::option::Option<i32>) -> Self {
-        self.id = input; self
+        self.id = input;
+        self
     }
     /// <p>The execution code of the statement.</p>
     pub fn code(mut self, input: impl Into<std::string::String>) -> Self {
@@ -92,7 +93,8 @@ impl StatementBuilder {
     }
     /// <p>The execution code of the statement.</p>
     pub fn set_code(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.code = input; self
+        self.code = input;
+        self
     }
     /// <p>The state while request is actioned.</p>
     pub fn state(mut self, input: crate::types::StatementState) -> Self {
@@ -101,7 +103,8 @@ impl StatementBuilder {
     }
     /// <p>The state while request is actioned.</p>
     pub fn set_state(mut self, input: std::option::Option<crate::types::StatementState>) -> Self {
-        self.state = input; self
+        self.state = input;
+        self
     }
     /// <p>The output in JSON.</p>
     pub fn output(mut self, input: crate::types::StatementOutput) -> Self {
@@ -110,7 +113,8 @@ impl StatementBuilder {
     }
     /// <p>The output in JSON.</p>
     pub fn set_output(mut self, input: std::option::Option<crate::types::StatementOutput>) -> Self {
-        self.output = input; self
+        self.output = input;
+        self
     }
     /// <p>The code execution progress.</p>
     pub fn progress(mut self, input: f64) -> Self {
@@ -119,7 +123,8 @@ impl StatementBuilder {
     }
     /// <p>The code execution progress.</p>
     pub fn set_progress(mut self, input: std::option::Option<f64>) -> Self {
-        self.progress = input; self
+        self.progress = input;
+        self
     }
     /// <p>The unix time and date that the job definition was started.</p>
     pub fn started_on(mut self, input: i64) -> Self {
@@ -128,7 +133,8 @@ impl StatementBuilder {
     }
     /// <p>The unix time and date that the job definition was started.</p>
     pub fn set_started_on(mut self, input: std::option::Option<i64>) -> Self {
-        self.started_on = input; self
+        self.started_on = input;
+        self
     }
     /// <p>The unix time and date that the job definition was completed.</p>
     pub fn completed_on(mut self, input: i64) -> Self {
@@ -137,30 +143,19 @@ impl StatementBuilder {
     }
     /// <p>The unix time and date that the job definition was completed.</p>
     pub fn set_completed_on(mut self, input: std::option::Option<i64>) -> Self {
-        self.completed_on = input; self
+        self.completed_on = input;
+        self
     }
     /// Consumes the builder and constructs a [`Statement`](crate::types::Statement).
     pub fn build(self) -> crate::types::Statement {
         crate::types::Statement {
-            id: self.id
-                .unwrap_or_default()
-            ,
-            code: self.code
-            ,
-            state: self.state
-            ,
-            output: self.output
-            ,
-            progress: self.progress
-                .unwrap_or_default()
-            ,
-            started_on: self.started_on
-                .unwrap_or_default()
-            ,
-            completed_on: self.completed_on
-                .unwrap_or_default()
-            ,
+            id: self.id.unwrap_or_default(),
+            code: self.code,
+            state: self.state,
+            output: self.output,
+            progress: self.progress.unwrap_or_default(),
+            started_on: self.started_on.unwrap_or_default(),
+            completed_on: self.completed_on.unwrap_or_default(),
         }
     }
 }
-

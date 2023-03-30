@@ -4,76 +4,101 @@ pub use crate::operation::describe_snapshot_tier_status::_describe_snapshot_tier
 pub use crate::operation::describe_snapshot_tier_status::_describe_snapshot_tier_status_input::DescribeSnapshotTierStatusInputBuilder;
 
 /// Fluent builder constructing a request to `DescribeSnapshotTierStatus`.
-/// 
+///
 /// <p>Describes the storage tier status of one or more Amazon EBS snapshots.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeSnapshotTierStatusFluentBuilder {
                 handle: std::sync::Arc<crate::client::Handle>,
                 inner: crate::operation::describe_snapshot_tier_status::builders::DescribeSnapshotTierStatusInputBuilder
             }
-impl DescribeSnapshotTierStatusFluentBuilder  {
+impl DescribeSnapshotTierStatusFluentBuilder {
     /// Creates a new `DescribeSnapshotTierStatus`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
-                    /// sent. The operation's inner [http::Request] can be modified as well.
-                    pub async fn customize(self) -> std::result::Result<
-                        crate::client::customize::CustomizableOperation<crate::operation::describe_snapshot_tier_status::DescribeSnapshotTierStatus, aws_http::retry::AwsResponseRetryClassifier,>,
-                        aws_smithy_http::result::SdkError<crate::operation::describe_snapshot_tier_status::DescribeSnapshotTierStatusError>
-                    >  {
-                        let handle = self.handle.clone();
-                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-                    }
-    
-                    /// Sends the request and returns the response.
-                    ///
-                    /// If an error occurs, an `SdkError` will be returned with additional details that
-                    /// can be matched against.
-                    ///
-                    /// By default, any retryable failures will be retried twice. Retry behavior
-                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                    /// set when configuring the client.
-                    pub async fn send(self) -> std::result::Result<crate::operation::describe_snapshot_tier_status::DescribeSnapshotTierStatusOutput, aws_smithy_http::result::SdkError<crate::operation::describe_snapshot_tier_status::DescribeSnapshotTierStatusError>>
-                     {
-                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&self.handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        self.handle.client.call(op).await
-                    }
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle,
+            inner: Default::default(),
+        }
+    }
+
+    /// Consume this builder, creating a customizable operation that can be modified before being
+    /// sent. The operation's inner [http::Request] can be modified as well.
+    pub async fn customize(
+        self,
+    ) -> std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::describe_snapshot_tier_status::DescribeSnapshotTierStatus,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::result::SdkError<
+            crate::operation::describe_snapshot_tier_status::DescribeSnapshotTierStatusError,
+        >,
+    > {
+        let handle = self.handle.clone();
+        let operation = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+    }
+
+    /// Sends the request and returns the response.
+    ///
+    /// If an error occurs, an `SdkError` will be returned with additional details that
+    /// can be matched against.
+    ///
+    /// By default, any retryable failures will be retried twice. Retry behavior
+    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+    /// set when configuring the client.
+    pub async fn send(
+        self,
+    ) -> std::result::Result<
+        crate::operation::describe_snapshot_tier_status::DescribeSnapshotTierStatusOutput,
+        aws_smithy_http::result::SdkError<
+            crate::operation::describe_snapshot_tier_status::DescribeSnapshotTierStatusError,
+        >,
+    > {
+        let op = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&self.handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        self.handle.client.call(op).await
+    }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::describe_snapshot_tier_status::paginator::DescribeSnapshotTierStatusPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::describe_snapshot_tier_status::paginator::DescribeSnapshotTierStatusPaginator {
-                            crate::operation::describe_snapshot_tier_status::paginator::DescribeSnapshotTierStatusPaginator::new(self.handle, self.inner)
-                        }
+    ///
+    /// Paginators are used by calling [`send().await`](crate::operation::describe_snapshot_tier_status::paginator::DescribeSnapshotTierStatusPaginator::send) which returns a `Stream`.
+    pub fn into_paginator(self) -> crate::operation::describe_snapshot_tier_status::paginator::DescribeSnapshotTierStatusPaginator{
+        crate::operation::describe_snapshot_tier_status::paginator::DescribeSnapshotTierStatusPaginator::new(self.handle, self.inner)
+    }
     /// Appends an item to `Filters`.
     ///
     /// To override the contents of this collection use [`set_filters`](Self::set_filters).
     ///
-    /// <p>The filters.</p> 
-    /// <ul> 
-    /// <li> <p> <code>snapshot-id</code> - The snapshot ID.</p> </li> 
-    /// <li> <p> <code>volume-id</code> - The ID of the volume the snapshot is for.</p> </li> 
-    /// <li> <p> <code>last-tiering-operation</code> - The state of the last archive or restore action. (<code>archival-in-progress</code> | <code>archival-completed</code> | <code>archival-failed</code> | <code>permanent-restore-in-progress</code> | <code>permanent-restore-completed</code> | <code>permanent-restore-failed</code> | <code>temporary-restore-in-progress</code> | <code>temporary-restore-completed</code> | <code>temporary-restore-failed</code>)</p> </li> 
+    /// <p>The filters.</p>
+    /// <ul>
+    /// <li> <p> <code>snapshot-id</code> - The snapshot ID.</p> </li>
+    /// <li> <p> <code>volume-id</code> - The ID of the volume the snapshot is for.</p> </li>
+    /// <li> <p> <code>last-tiering-operation</code> - The state of the last archive or restore action. (<code>archival-in-progress</code> | <code>archival-completed</code> | <code>archival-failed</code> | <code>permanent-restore-in-progress</code> | <code>permanent-restore-completed</code> | <code>permanent-restore-failed</code> | <code>temporary-restore-in-progress</code> | <code>temporary-restore-completed</code> | <code>temporary-restore-failed</code>)</p> </li>
     /// </ul>
     pub fn filters(mut self, input: crate::types::Filter) -> Self {
         self.inner = self.inner.filters(input);
         self
     }
-    /// <p>The filters.</p> 
-    /// <ul> 
-    /// <li> <p> <code>snapshot-id</code> - The snapshot ID.</p> </li> 
-    /// <li> <p> <code>volume-id</code> - The ID of the volume the snapshot is for.</p> </li> 
-    /// <li> <p> <code>last-tiering-operation</code> - The state of the last archive or restore action. (<code>archival-in-progress</code> | <code>archival-completed</code> | <code>archival-failed</code> | <code>permanent-restore-in-progress</code> | <code>permanent-restore-completed</code> | <code>permanent-restore-failed</code> | <code>temporary-restore-in-progress</code> | <code>temporary-restore-completed</code> | <code>temporary-restore-failed</code>)</p> </li> 
+    /// <p>The filters.</p>
+    /// <ul>
+    /// <li> <p> <code>snapshot-id</code> - The snapshot ID.</p> </li>
+    /// <li> <p> <code>volume-id</code> - The ID of the volume the snapshot is for.</p> </li>
+    /// <li> <p> <code>last-tiering-operation</code> - The state of the last archive or restore action. (<code>archival-in-progress</code> | <code>archival-completed</code> | <code>archival-failed</code> | <code>permanent-restore-in-progress</code> | <code>permanent-restore-completed</code> | <code>permanent-restore-failed</code> | <code>temporary-restore-in-progress</code> | <code>temporary-restore-completed</code> | <code>temporary-restore-failed</code>)</p> </li>
     /// </ul>
-    pub fn set_filters(mut self, input: std::option::Option<std::vec::Vec<crate::types::Filter>>) -> Self {
+    pub fn set_filters(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::Filter>>,
+    ) -> Self {
         self.inner = self.inner.set_filters(input);
         self
     }
@@ -108,4 +133,3 @@ impl DescribeSnapshotTierStatusFluentBuilder  {
         self
     }
 }
-

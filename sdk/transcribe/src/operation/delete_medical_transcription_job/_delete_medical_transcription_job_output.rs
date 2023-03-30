@@ -2,17 +2,17 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteMedicalTranscriptionJobOutput  {
+pub struct DeleteMedicalTranscriptionJobOutput {
     _request_id: Option<String>,
 }
 impl aws_http::request_id::RequestId for DeleteMedicalTranscriptionJobOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl DeleteMedicalTranscriptionJobOutput {
     /// Creates a new builder-style object to manufacture [`DeleteMedicalTranscriptionJobOutput`](crate::operation::delete_medical_transcription_job::DeleteMedicalTranscriptionJobOutput).
-    pub fn builder() -> crate::operation::delete_medical_transcription_job::builders::DeleteMedicalTranscriptionJobOutputBuilder {
+    pub fn builder() -> crate::operation::delete_medical_transcription_job::builders::DeleteMedicalTranscriptionJobOutputBuilder{
         crate::operation::delete_medical_transcription_job::builders::DeleteMedicalTranscriptionJobOutputBuilder::default()
     }
 }
@@ -25,19 +25,21 @@ pub struct DeleteMedicalTranscriptionJobOutputBuilder {
 }
 impl DeleteMedicalTranscriptionJobOutputBuilder {
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`DeleteMedicalTranscriptionJobOutput`](crate::operation::delete_medical_transcription_job::DeleteMedicalTranscriptionJobOutput).
-    pub fn build(self) -> crate::operation::delete_medical_transcription_job::DeleteMedicalTranscriptionJobOutput {
+    pub fn build(
+        self,
+    ) -> crate::operation::delete_medical_transcription_job::DeleteMedicalTranscriptionJobOutput
+    {
         crate::operation::delete_medical_transcription_job::DeleteMedicalTranscriptionJobOutput {
             _request_id: self._request_id,
         }
     }
 }
-

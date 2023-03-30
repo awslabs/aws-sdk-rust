@@ -3,7 +3,7 @@
 /// <p>Stores the configuration information for a visual helper element for a form. A sectional element can be a header, a text block, or a divider. These elements are static and not associated with any data.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SectionalElement  {
+pub struct SectionalElement {
     /// <p>The type of sectional element. Valid values are <code>Heading</code>, <code>Text</code>, and <code>Divider</code>.</p>
     #[doc(hidden)]
     pub r#type: std::option::Option<std::string::String>,
@@ -22,15 +22,15 @@ pub struct SectionalElement  {
 }
 impl SectionalElement {
     /// <p>The type of sectional element. Valid values are <code>Heading</code>, <code>Text</code>, and <code>Divider</code>.</p>
-    pub fn r#type(&self) -> std::option::Option<& str> {
+    pub fn r#type(&self) -> std::option::Option<&str> {
         self.r#type.as_deref()
     }
     /// <p>Specifies the position of the text in a field for a <code>Text</code> sectional element.</p>
-    pub fn position(&self) -> std::option::Option<& crate::types::FieldPosition> {
+    pub fn position(&self) -> std::option::Option<&crate::types::FieldPosition> {
         self.position.as_ref()
     }
     /// <p>The text for a <code>Text</code> sectional element.</p>
-    pub fn text(&self) -> std::option::Option<& str> {
+    pub fn text(&self) -> std::option::Option<&str> {
         self.text.as_deref()
     }
     /// <p>Specifies the size of the font for a <code>Heading</code> sectional element. Valid values are <code>1 | 2 | 3 | 4 | 5 | 6</code>.</p>
@@ -38,7 +38,7 @@ impl SectionalElement {
         self.level
     }
     /// <p>Specifies the orientation for a <code>Divider</code> sectional element. Valid values are <code>horizontal</code> or <code>vertical</code>.</p>
-    pub fn orientation(&self) -> std::option::Option<& str> {
+    pub fn orientation(&self) -> std::option::Option<&str> {
         self.orientation.as_deref()
     }
 }
@@ -67,7 +67,8 @@ impl SectionalElementBuilder {
     }
     /// <p>The type of sectional element. Valid values are <code>Heading</code>, <code>Text</code>, and <code>Divider</code>.</p>
     pub fn set_type(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.r#type = input; self
+        self.r#type = input;
+        self
     }
     /// <p>Specifies the position of the text in a field for a <code>Text</code> sectional element.</p>
     pub fn position(mut self, input: crate::types::FieldPosition) -> Self {
@@ -76,7 +77,8 @@ impl SectionalElementBuilder {
     }
     /// <p>Specifies the position of the text in a field for a <code>Text</code> sectional element.</p>
     pub fn set_position(mut self, input: std::option::Option<crate::types::FieldPosition>) -> Self {
-        self.position = input; self
+        self.position = input;
+        self
     }
     /// <p>The text for a <code>Text</code> sectional element.</p>
     pub fn text(mut self, input: impl Into<std::string::String>) -> Self {
@@ -85,7 +87,8 @@ impl SectionalElementBuilder {
     }
     /// <p>The text for a <code>Text</code> sectional element.</p>
     pub fn set_text(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.text = input; self
+        self.text = input;
+        self
     }
     /// <p>Specifies the size of the font for a <code>Heading</code> sectional element. Valid values are <code>1 | 2 | 3 | 4 | 5 | 6</code>.</p>
     pub fn level(mut self, input: i32) -> Self {
@@ -94,7 +97,8 @@ impl SectionalElementBuilder {
     }
     /// <p>Specifies the size of the font for a <code>Heading</code> sectional element. Valid values are <code>1 | 2 | 3 | 4 | 5 | 6</code>.</p>
     pub fn set_level(mut self, input: std::option::Option<i32>) -> Self {
-        self.level = input; self
+        self.level = input;
+        self
     }
     /// <p>Specifies the orientation for a <code>Divider</code> sectional element. Valid values are <code>horizontal</code> or <code>vertical</code>.</p>
     pub fn orientation(mut self, input: impl Into<std::string::String>) -> Self {
@@ -103,22 +107,17 @@ impl SectionalElementBuilder {
     }
     /// <p>Specifies the orientation for a <code>Divider</code> sectional element. Valid values are <code>horizontal</code> or <code>vertical</code>.</p>
     pub fn set_orientation(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.orientation = input; self
+        self.orientation = input;
+        self
     }
     /// Consumes the builder and constructs a [`SectionalElement`](crate::types::SectionalElement).
     pub fn build(self) -> crate::types::SectionalElement {
         crate::types::SectionalElement {
-            r#type: self.r#type
-            ,
-            position: self.position
-            ,
-            text: self.text
-            ,
-            level: self.level
-            ,
-            orientation: self.orientation
-            ,
+            r#type: self.r#type,
+            position: self.position,
+            text: self.text,
+            level: self.level,
+            orientation: self.orientation,
         }
     }
 }
-

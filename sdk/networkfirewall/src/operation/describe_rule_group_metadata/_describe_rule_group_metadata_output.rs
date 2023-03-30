@@ -2,24 +2,24 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeRuleGroupMetadataOutput  {
-    /// <p>The descriptive name of the rule group. You can't change the name of a rule group after you create it.</p> 
+pub struct DescribeRuleGroupMetadataOutput {
+    /// <p>The descriptive name of the rule group. You can't change the name of a rule group after you create it.</p>
     /// <p>You must specify the ARN or the name, and you can specify both. </p>
     #[doc(hidden)]
     pub rule_group_arn: std::option::Option<std::string::String>,
-    /// <p>The descriptive name of the rule group. You can't change the name of a rule group after you create it.</p> 
+    /// <p>The descriptive name of the rule group. You can't change the name of a rule group after you create it.</p>
     /// <p>You must specify the ARN or the name, and you can specify both. </p>
     #[doc(hidden)]
     pub rule_group_name: std::option::Option<std::string::String>,
     /// <p>Returns the metadata objects for the specified rule group. </p>
     #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
-    /// <p>Indicates whether the rule group is stateless or stateful. If the rule group is stateless, it contains stateless rules. If it is stateful, it contains stateful rules. </p> <note> 
-    /// <p>This setting is required for requests that do not include the <code>RuleGroupARN</code>.</p> 
+    /// <p>Indicates whether the rule group is stateless or stateful. If the rule group is stateless, it contains stateless rules. If it is stateful, it contains stateful rules. </p> <note>
+    /// <p>This setting is required for requests that do not include the <code>RuleGroupARN</code>.</p>
     /// </note>
     #[doc(hidden)]
     pub r#type: std::option::Option<crate::types::RuleGroupType>,
-    /// <p>The maximum operating resources that this rule group can use. Rule group capacity is fixed at creation. When you update a rule group, you are limited to this capacity. When you reference a rule group from a firewall policy, Network Firewall reserves this capacity for the rule group. </p> 
+    /// <p>The maximum operating resources that this rule group can use. Rule group capacity is fixed at creation. When you update a rule group, you are limited to this capacity. When you reference a rule group from a firewall policy, Network Firewall reserves this capacity for the rule group. </p>
     /// <p>You can retrieve the capacity that would be required for a rule group before you create the rule group by calling <code>CreateRuleGroup</code> with <code>DryRun</code> set to <code>TRUE</code>. </p>
     #[doc(hidden)]
     pub capacity: std::option::Option<i32>,
@@ -32,48 +32,48 @@ pub struct DescribeRuleGroupMetadataOutput  {
     _request_id: Option<String>,
 }
 impl DescribeRuleGroupMetadataOutput {
-    /// <p>The descriptive name of the rule group. You can't change the name of a rule group after you create it.</p> 
+    /// <p>The descriptive name of the rule group. You can't change the name of a rule group after you create it.</p>
     /// <p>You must specify the ARN or the name, and you can specify both. </p>
-    pub fn rule_group_arn(&self) -> std::option::Option<& str> {
+    pub fn rule_group_arn(&self) -> std::option::Option<&str> {
         self.rule_group_arn.as_deref()
     }
-    /// <p>The descriptive name of the rule group. You can't change the name of a rule group after you create it.</p> 
+    /// <p>The descriptive name of the rule group. You can't change the name of a rule group after you create it.</p>
     /// <p>You must specify the ARN or the name, and you can specify both. </p>
-    pub fn rule_group_name(&self) -> std::option::Option<& str> {
+    pub fn rule_group_name(&self) -> std::option::Option<&str> {
         self.rule_group_name.as_deref()
     }
     /// <p>Returns the metadata objects for the specified rule group. </p>
-    pub fn description(&self) -> std::option::Option<& str> {
+    pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
-    /// <p>Indicates whether the rule group is stateless or stateful. If the rule group is stateless, it contains stateless rules. If it is stateful, it contains stateful rules. </p> <note> 
-    /// <p>This setting is required for requests that do not include the <code>RuleGroupARN</code>.</p> 
+    /// <p>Indicates whether the rule group is stateless or stateful. If the rule group is stateless, it contains stateless rules. If it is stateful, it contains stateful rules. </p> <note>
+    /// <p>This setting is required for requests that do not include the <code>RuleGroupARN</code>.</p>
     /// </note>
-    pub fn r#type(&self) -> std::option::Option<& crate::types::RuleGroupType> {
+    pub fn r#type(&self) -> std::option::Option<&crate::types::RuleGroupType> {
         self.r#type.as_ref()
     }
-    /// <p>The maximum operating resources that this rule group can use. Rule group capacity is fixed at creation. When you update a rule group, you are limited to this capacity. When you reference a rule group from a firewall policy, Network Firewall reserves this capacity for the rule group. </p> 
+    /// <p>The maximum operating resources that this rule group can use. Rule group capacity is fixed at creation. When you update a rule group, you are limited to this capacity. When you reference a rule group from a firewall policy, Network Firewall reserves this capacity for the rule group. </p>
     /// <p>You can retrieve the capacity that would be required for a rule group before you create the rule group by calling <code>CreateRuleGroup</code> with <code>DryRun</code> set to <code>TRUE</code>. </p>
     pub fn capacity(&self) -> std::option::Option<i32> {
         self.capacity
     }
     /// <p>Additional options governing how Network Firewall handles the rule group. You can only use these for stateful rule groups.</p>
-    pub fn stateful_rule_options(&self) -> std::option::Option<& crate::types::StatefulRuleOptions> {
+    pub fn stateful_rule_options(&self) -> std::option::Option<&crate::types::StatefulRuleOptions> {
         self.stateful_rule_options.as_ref()
     }
     /// <p>The last time that the rule group was changed.</p>
-    pub fn last_modified_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
+    pub fn last_modified_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_modified_time.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for DescribeRuleGroupMetadataOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl DescribeRuleGroupMetadataOutput {
     /// Creates a new builder-style object to manufacture [`DescribeRuleGroupMetadataOutput`](crate::operation::describe_rule_group_metadata::DescribeRuleGroupMetadataOutput).
-    pub fn builder() -> crate::operation::describe_rule_group_metadata::builders::DescribeRuleGroupMetadataOutputBuilder {
+    pub fn builder() -> crate::operation::describe_rule_group_metadata::builders::DescribeRuleGroupMetadataOutputBuilder{
         crate::operation::describe_rule_group_metadata::builders::DescribeRuleGroupMetadataOutputBuilder::default()
     }
 }
@@ -92,27 +92,29 @@ pub struct DescribeRuleGroupMetadataOutputBuilder {
     _request_id: Option<String>,
 }
 impl DescribeRuleGroupMetadataOutputBuilder {
-    /// <p>The descriptive name of the rule group. You can't change the name of a rule group after you create it.</p> 
+    /// <p>The descriptive name of the rule group. You can't change the name of a rule group after you create it.</p>
     /// <p>You must specify the ARN or the name, and you can specify both. </p>
     pub fn rule_group_arn(mut self, input: impl Into<std::string::String>) -> Self {
         self.rule_group_arn = Some(input.into());
         self
     }
-    /// <p>The descriptive name of the rule group. You can't change the name of a rule group after you create it.</p> 
+    /// <p>The descriptive name of the rule group. You can't change the name of a rule group after you create it.</p>
     /// <p>You must specify the ARN or the name, and you can specify both. </p>
     pub fn set_rule_group_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.rule_group_arn = input; self
+        self.rule_group_arn = input;
+        self
     }
-    /// <p>The descriptive name of the rule group. You can't change the name of a rule group after you create it.</p> 
+    /// <p>The descriptive name of the rule group. You can't change the name of a rule group after you create it.</p>
     /// <p>You must specify the ARN or the name, and you can specify both. </p>
     pub fn rule_group_name(mut self, input: impl Into<std::string::String>) -> Self {
         self.rule_group_name = Some(input.into());
         self
     }
-    /// <p>The descriptive name of the rule group. You can't change the name of a rule group after you create it.</p> 
+    /// <p>The descriptive name of the rule group. You can't change the name of a rule group after you create it.</p>
     /// <p>You must specify the ARN or the name, and you can specify both. </p>
     pub fn set_rule_group_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.rule_group_name = input; self
+        self.rule_group_name = input;
+        self
     }
     /// <p>Returns the metadata objects for the specified rule group. </p>
     pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -121,31 +123,34 @@ impl DescribeRuleGroupMetadataOutputBuilder {
     }
     /// <p>Returns the metadata objects for the specified rule group. </p>
     pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.description = input; self
+        self.description = input;
+        self
     }
-    /// <p>Indicates whether the rule group is stateless or stateful. If the rule group is stateless, it contains stateless rules. If it is stateful, it contains stateful rules. </p> <note> 
-    /// <p>This setting is required for requests that do not include the <code>RuleGroupARN</code>.</p> 
+    /// <p>Indicates whether the rule group is stateless or stateful. If the rule group is stateless, it contains stateless rules. If it is stateful, it contains stateful rules. </p> <note>
+    /// <p>This setting is required for requests that do not include the <code>RuleGroupARN</code>.</p>
     /// </note>
     pub fn r#type(mut self, input: crate::types::RuleGroupType) -> Self {
         self.r#type = Some(input);
         self
     }
-    /// <p>Indicates whether the rule group is stateless or stateful. If the rule group is stateless, it contains stateless rules. If it is stateful, it contains stateful rules. </p> <note> 
-    /// <p>This setting is required for requests that do not include the <code>RuleGroupARN</code>.</p> 
+    /// <p>Indicates whether the rule group is stateless or stateful. If the rule group is stateless, it contains stateless rules. If it is stateful, it contains stateful rules. </p> <note>
+    /// <p>This setting is required for requests that do not include the <code>RuleGroupARN</code>.</p>
     /// </note>
     pub fn set_type(mut self, input: std::option::Option<crate::types::RuleGroupType>) -> Self {
-        self.r#type = input; self
+        self.r#type = input;
+        self
     }
-    /// <p>The maximum operating resources that this rule group can use. Rule group capacity is fixed at creation. When you update a rule group, you are limited to this capacity. When you reference a rule group from a firewall policy, Network Firewall reserves this capacity for the rule group. </p> 
+    /// <p>The maximum operating resources that this rule group can use. Rule group capacity is fixed at creation. When you update a rule group, you are limited to this capacity. When you reference a rule group from a firewall policy, Network Firewall reserves this capacity for the rule group. </p>
     /// <p>You can retrieve the capacity that would be required for a rule group before you create the rule group by calling <code>CreateRuleGroup</code> with <code>DryRun</code> set to <code>TRUE</code>. </p>
     pub fn capacity(mut self, input: i32) -> Self {
         self.capacity = Some(input);
         self
     }
-    /// <p>The maximum operating resources that this rule group can use. Rule group capacity is fixed at creation. When you update a rule group, you are limited to this capacity. When you reference a rule group from a firewall policy, Network Firewall reserves this capacity for the rule group. </p> 
+    /// <p>The maximum operating resources that this rule group can use. Rule group capacity is fixed at creation. When you update a rule group, you are limited to this capacity. When you reference a rule group from a firewall policy, Network Firewall reserves this capacity for the rule group. </p>
     /// <p>You can retrieve the capacity that would be required for a rule group before you create the rule group by calling <code>CreateRuleGroup</code> with <code>DryRun</code> set to <code>TRUE</code>. </p>
     pub fn set_capacity(mut self, input: std::option::Option<i32>) -> Self {
-        self.capacity = input; self
+        self.capacity = input;
+        self
     }
     /// <p>Additional options governing how Network Firewall handles the rule group. You can only use these for stateful rule groups.</p>
     pub fn stateful_rule_options(mut self, input: crate::types::StatefulRuleOptions) -> Self {
@@ -153,8 +158,12 @@ impl DescribeRuleGroupMetadataOutputBuilder {
         self
     }
     /// <p>Additional options governing how Network Firewall handles the rule group. You can only use these for stateful rule groups.</p>
-    pub fn set_stateful_rule_options(mut self, input: std::option::Option<crate::types::StatefulRuleOptions>) -> Self {
-        self.stateful_rule_options = input; self
+    pub fn set_stateful_rule_options(
+        mut self,
+        input: std::option::Option<crate::types::StatefulRuleOptions>,
+    ) -> Self {
+        self.stateful_rule_options = input;
+        self
     }
     /// <p>The last time that the rule group was changed.</p>
     pub fn last_modified_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -162,37 +171,35 @@ impl DescribeRuleGroupMetadataOutputBuilder {
         self
     }
     /// <p>The last time that the rule group was changed.</p>
-    pub fn set_last_modified_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.last_modified_time = input; self
+    pub fn set_last_modified_time(
+        mut self,
+        input: std::option::Option<aws_smithy_types::DateTime>,
+    ) -> Self {
+        self.last_modified_time = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`DescribeRuleGroupMetadataOutput`](crate::operation::describe_rule_group_metadata::DescribeRuleGroupMetadataOutput).
-    pub fn build(self) -> crate::operation::describe_rule_group_metadata::DescribeRuleGroupMetadataOutput {
+    pub fn build(
+        self,
+    ) -> crate::operation::describe_rule_group_metadata::DescribeRuleGroupMetadataOutput {
         crate::operation::describe_rule_group_metadata::DescribeRuleGroupMetadataOutput {
-            rule_group_arn: self.rule_group_arn
-            ,
-            rule_group_name: self.rule_group_name
-            ,
-            description: self.description
-            ,
-            r#type: self.r#type
-            ,
-            capacity: self.capacity
-            ,
-            stateful_rule_options: self.stateful_rule_options
-            ,
-            last_modified_time: self.last_modified_time
-            ,
+            rule_group_arn: self.rule_group_arn,
+            rule_group_name: self.rule_group_name,
+            description: self.description,
+            r#type: self.r#type,
+            capacity: self.capacity,
+            stateful_rule_options: self.stateful_rule_options,
+            last_modified_time: self.last_modified_time,
             _request_id: self._request_id,
         }
     }
 }
-

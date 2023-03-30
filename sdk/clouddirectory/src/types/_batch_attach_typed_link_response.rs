@@ -3,14 +3,14 @@
 /// <p>Represents the output of a <code>AttachTypedLink</code> response operation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct BatchAttachTypedLinkResponse  {
+pub struct BatchAttachTypedLinkResponse {
     /// <p>Returns a typed link specifier as output.</p>
     #[doc(hidden)]
     pub typed_link_specifier: std::option::Option<crate::types::TypedLinkSpecifier>,
 }
 impl BatchAttachTypedLinkResponse {
     /// <p>Returns a typed link specifier as output.</p>
-    pub fn typed_link_specifier(&self) -> std::option::Option<& crate::types::TypedLinkSpecifier> {
+    pub fn typed_link_specifier(&self) -> std::option::Option<&crate::types::TypedLinkSpecifier> {
         self.typed_link_specifier.as_ref()
     }
 }
@@ -34,15 +34,17 @@ impl BatchAttachTypedLinkResponseBuilder {
         self
     }
     /// <p>Returns a typed link specifier as output.</p>
-    pub fn set_typed_link_specifier(mut self, input: std::option::Option<crate::types::TypedLinkSpecifier>) -> Self {
-        self.typed_link_specifier = input; self
+    pub fn set_typed_link_specifier(
+        mut self,
+        input: std::option::Option<crate::types::TypedLinkSpecifier>,
+    ) -> Self {
+        self.typed_link_specifier = input;
+        self
     }
     /// Consumes the builder and constructs a [`BatchAttachTypedLinkResponse`](crate::types::BatchAttachTypedLinkResponse).
     pub fn build(self) -> crate::types::BatchAttachTypedLinkResponse {
         crate::types::BatchAttachTypedLinkResponse {
-            typed_link_specifier: self.typed_link_specifier
-            ,
+            typed_link_specifier: self.typed_link_specifier,
         }
     }
 }
-

@@ -4,55 +4,82 @@ pub use crate::operation::list_edge_packaging_jobs::_list_edge_packaging_jobs_ou
 pub use crate::operation::list_edge_packaging_jobs::_list_edge_packaging_jobs_input::ListEdgePackagingJobsInputBuilder;
 
 /// Fluent builder constructing a request to `ListEdgePackagingJobs`.
-/// 
+///
 /// <p>Returns a list of edge packaging jobs.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListEdgePackagingJobsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::list_edge_packaging_jobs::builders::ListEdgePackagingJobsInputBuilder
-            }
-impl ListEdgePackagingJobsFluentBuilder  {
+    handle: std::sync::Arc<crate::client::Handle>,
+    inner: crate::operation::list_edge_packaging_jobs::builders::ListEdgePackagingJobsInputBuilder,
+}
+impl ListEdgePackagingJobsFluentBuilder {
     /// Creates a new `ListEdgePackagingJobs`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
-                    /// sent. The operation's inner [http::Request] can be modified as well.
-                    pub async fn customize(self) -> std::result::Result<
-                        crate::client::customize::CustomizableOperation<crate::operation::list_edge_packaging_jobs::ListEdgePackagingJobs, aws_http::retry::AwsResponseRetryClassifier,>,
-                        aws_smithy_http::result::SdkError<crate::operation::list_edge_packaging_jobs::ListEdgePackagingJobsError>
-                    >  {
-                        let handle = self.handle.clone();
-                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-                    }
-    
-                    /// Sends the request and returns the response.
-                    ///
-                    /// If an error occurs, an `SdkError` will be returned with additional details that
-                    /// can be matched against.
-                    ///
-                    /// By default, any retryable failures will be retried twice. Retry behavior
-                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                    /// set when configuring the client.
-                    pub async fn send(self) -> std::result::Result<crate::operation::list_edge_packaging_jobs::ListEdgePackagingJobsOutput, aws_smithy_http::result::SdkError<crate::operation::list_edge_packaging_jobs::ListEdgePackagingJobsError>>
-                     {
-                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&self.handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        self.handle.client.call(op).await
-                    }
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle,
+            inner: Default::default(),
+        }
+    }
+
+    /// Consume this builder, creating a customizable operation that can be modified before being
+    /// sent. The operation's inner [http::Request] can be modified as well.
+    pub async fn customize(
+        self,
+    ) -> std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::list_edge_packaging_jobs::ListEdgePackagingJobs,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::result::SdkError<
+            crate::operation::list_edge_packaging_jobs::ListEdgePackagingJobsError,
+        >,
+    > {
+        let handle = self.handle.clone();
+        let operation = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+    }
+
+    /// Sends the request and returns the response.
+    ///
+    /// If an error occurs, an `SdkError` will be returned with additional details that
+    /// can be matched against.
+    ///
+    /// By default, any retryable failures will be retried twice. Retry behavior
+    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+    /// set when configuring the client.
+    pub async fn send(
+        self,
+    ) -> std::result::Result<
+        crate::operation::list_edge_packaging_jobs::ListEdgePackagingJobsOutput,
+        aws_smithy_http::result::SdkError<
+            crate::operation::list_edge_packaging_jobs::ListEdgePackagingJobsError,
+        >,
+    > {
+        let op = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&self.handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        self.handle.client.call(op).await
+    }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::list_edge_packaging_jobs::paginator::ListEdgePackagingJobsPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::list_edge_packaging_jobs::paginator::ListEdgePackagingJobsPaginator {
-                            crate::operation::list_edge_packaging_jobs::paginator::ListEdgePackagingJobsPaginator::new(self.handle, self.inner)
-                        }
+    ///
+    /// Paginators are used by calling [`send().await`](crate::operation::list_edge_packaging_jobs::paginator::ListEdgePackagingJobsPaginator::send) which returns a `Stream`.
+    pub fn into_paginator(
+        self,
+    ) -> crate::operation::list_edge_packaging_jobs::paginator::ListEdgePackagingJobsPaginator {
+        crate::operation::list_edge_packaging_jobs::paginator::ListEdgePackagingJobsPaginator::new(
+            self.handle,
+            self.inner,
+        )
+    }
     /// <p>The response from the last list when returning a list large enough to need tokening.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
@@ -79,7 +106,10 @@ impl ListEdgePackagingJobsFluentBuilder  {
         self
     }
     /// <p>Select jobs where the job was created after specified time.</p>
-    pub fn set_creation_time_after(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+    pub fn set_creation_time_after(
+        mut self,
+        input: std::option::Option<aws_smithy_types::DateTime>,
+    ) -> Self {
         self.inner = self.inner.set_creation_time_after(input);
         self
     }
@@ -89,7 +119,10 @@ impl ListEdgePackagingJobsFluentBuilder  {
         self
     }
     /// <p>Select jobs where the job was created before specified time.</p>
-    pub fn set_creation_time_before(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+    pub fn set_creation_time_before(
+        mut self,
+        input: std::option::Option<aws_smithy_types::DateTime>,
+    ) -> Self {
         self.inner = self.inner.set_creation_time_before(input);
         self
     }
@@ -99,7 +132,10 @@ impl ListEdgePackagingJobsFluentBuilder  {
         self
     }
     /// <p>Select jobs where the job was updated after specified time.</p>
-    pub fn set_last_modified_time_after(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+    pub fn set_last_modified_time_after(
+        mut self,
+        input: std::option::Option<aws_smithy_types::DateTime>,
+    ) -> Self {
         self.inner = self.inner.set_last_modified_time_after(input);
         self
     }
@@ -109,7 +145,10 @@ impl ListEdgePackagingJobsFluentBuilder  {
         self
     }
     /// <p>Select jobs where the job was updated before specified time.</p>
-    pub fn set_last_modified_time_before(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+    pub fn set_last_modified_time_before(
+        mut self,
+        input: std::option::Option<aws_smithy_types::DateTime>,
+    ) -> Self {
         self.inner = self.inner.set_last_modified_time_before(input);
         self
     }
@@ -129,7 +168,10 @@ impl ListEdgePackagingJobsFluentBuilder  {
         self
     }
     /// <p>Filter for jobs where the model name contains this string.</p>
-    pub fn set_model_name_contains(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_model_name_contains(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_model_name_contains(input);
         self
     }
@@ -139,7 +181,10 @@ impl ListEdgePackagingJobsFluentBuilder  {
         self
     }
     /// <p>The job status to filter for.</p>
-    pub fn set_status_equals(mut self, input: std::option::Option<crate::types::EdgePackagingJobStatus>) -> Self {
+    pub fn set_status_equals(
+        mut self,
+        input: std::option::Option<crate::types::EdgePackagingJobStatus>,
+    ) -> Self {
         self.inner = self.inner.set_status_equals(input);
         self
     }
@@ -149,7 +194,10 @@ impl ListEdgePackagingJobsFluentBuilder  {
         self
     }
     /// <p>Use to specify what column to sort by.</p>
-    pub fn set_sort_by(mut self, input: std::option::Option<crate::types::ListEdgePackagingJobsSortBy>) -> Self {
+    pub fn set_sort_by(
+        mut self,
+        input: std::option::Option<crate::types::ListEdgePackagingJobsSortBy>,
+    ) -> Self {
         self.inner = self.inner.set_sort_by(input);
         self
     }
@@ -164,4 +212,3 @@ impl ListEdgePackagingJobsFluentBuilder  {
         self
     }
 }
-

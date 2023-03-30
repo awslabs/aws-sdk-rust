@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeServicesInput  {
+pub struct DescribeServicesInput {
     /// <p>A JSON-formatted list of service codes available for Amazon Web Services services.</p>
     #[doc(hidden)]
     pub service_code_list: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -12,17 +12,18 @@ pub struct DescribeServicesInput  {
 }
 impl DescribeServicesInput {
     /// <p>A JSON-formatted list of service codes available for Amazon Web Services services.</p>
-    pub fn service_code_list(&self) -> std::option::Option<& [std::string::String]> {
+    pub fn service_code_list(&self) -> std::option::Option<&[std::string::String]> {
         self.service_code_list.as_deref()
     }
     /// <p>The language in which Amazon Web Services Support handles the case. Amazon Web Services Support currently supports English ("en") and Japanese ("ja"). You must specify the ISO 639-1 code for the <code>language</code> parameter if you want support in that language.</p>
-    pub fn language(&self) -> std::option::Option<& str> {
+    pub fn language(&self) -> std::option::Option<&str> {
         self.language.as_deref()
     }
 }
 impl DescribeServicesInput {
     /// Creates a new builder-style object to manufacture [`DescribeServicesInput`](crate::operation::describe_services::DescribeServicesInput).
-    pub fn builder() -> crate::operation::describe_services::builders::DescribeServicesInputBuilder {
+    pub fn builder() -> crate::operation::describe_services::builders::DescribeServicesInputBuilder
+    {
         crate::operation::describe_services::builders::DescribeServicesInputBuilder::default()
     }
 }
@@ -42,13 +43,17 @@ impl DescribeServicesInputBuilder {
     /// <p>A JSON-formatted list of service codes available for Amazon Web Services services.</p>
     pub fn service_code_list(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.service_code_list.unwrap_or_default();
-                        v.push(input.into());
-                        self.service_code_list = Some(v);
-                        self
+        v.push(input.into());
+        self.service_code_list = Some(v);
+        self
     }
     /// <p>A JSON-formatted list of service codes available for Amazon Web Services services.</p>
-    pub fn set_service_code_list(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-        self.service_code_list = input; self
+    pub fn set_service_code_list(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
+        self.service_code_list = input;
+        self
     }
     /// <p>The language in which Amazon Web Services Support handles the case. Amazon Web Services Support currently supports English ("en") and Japanese ("ja"). You must specify the ISO 639-1 code for the <code>language</code> parameter if you want support in that language.</p>
     pub fn language(mut self, input: impl Into<std::string::String>) -> Self {
@@ -57,18 +62,19 @@ impl DescribeServicesInputBuilder {
     }
     /// <p>The language in which Amazon Web Services Support handles the case. Amazon Web Services Support currently supports English ("en") and Japanese ("ja"). You must specify the ISO 639-1 code for the <code>language</code> parameter if you want support in that language.</p>
     pub fn set_language(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.language = input; self
+        self.language = input;
+        self
     }
     /// Consumes the builder and constructs a [`DescribeServicesInput`](crate::operation::describe_services::DescribeServicesInput).
-    pub fn build(self) -> Result<crate::operation::describe_services::DescribeServicesInput, aws_smithy_http::operation::error::BuildError> {
-        Ok(
-            crate::operation::describe_services::DescribeServicesInput {
-                service_code_list: self.service_code_list
-                ,
-                language: self.language
-                ,
-            }
-        )
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::describe_services::DescribeServicesInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        Ok(crate::operation::describe_services::DescribeServicesInput {
+            service_code_list: self.service_code_list,
+            language: self.language,
+        })
     }
 }
-

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateRuleGroupOutput  {
+pub struct UpdateRuleGroupOutput {
     /// <p>A token used for optimistic locking. WAF returns this token to your <code>update</code> requests. You use <code>NextLockToken</code> in the same manner as you use <code>LockToken</code>. </p>
     #[doc(hidden)]
     pub next_lock_token: std::option::Option<std::string::String>,
@@ -10,18 +10,19 @@ pub struct UpdateRuleGroupOutput  {
 }
 impl UpdateRuleGroupOutput {
     /// <p>A token used for optimistic locking. WAF returns this token to your <code>update</code> requests. You use <code>NextLockToken</code> in the same manner as you use <code>LockToken</code>. </p>
-    pub fn next_lock_token(&self) -> std::option::Option<& str> {
+    pub fn next_lock_token(&self) -> std::option::Option<&str> {
         self.next_lock_token.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for UpdateRuleGroupOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl UpdateRuleGroupOutput {
     /// Creates a new builder-style object to manufacture [`UpdateRuleGroupOutput`](crate::operation::update_rule_group::UpdateRuleGroupOutput).
-    pub fn builder() -> crate::operation::update_rule_group::builders::UpdateRuleGroupOutputBuilder {
+    pub fn builder() -> crate::operation::update_rule_group::builders::UpdateRuleGroupOutputBuilder
+    {
         crate::operation::update_rule_group::builders::UpdateRuleGroupOutputBuilder::default()
     }
 }
@@ -41,24 +42,23 @@ impl UpdateRuleGroupOutputBuilder {
     }
     /// <p>A token used for optimistic locking. WAF returns this token to your <code>update</code> requests. You use <code>NextLockToken</code> in the same manner as you use <code>LockToken</code>. </p>
     pub fn set_next_lock_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_lock_token = input; self
+        self.next_lock_token = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`UpdateRuleGroupOutput`](crate::operation::update_rule_group::UpdateRuleGroupOutput).
     pub fn build(self) -> crate::operation::update_rule_group::UpdateRuleGroupOutput {
         crate::operation::update_rule_group::UpdateRuleGroupOutput {
-            next_lock_token: self.next_lock_token
-            ,
+            next_lock_token: self.next_lock_token,
             _request_id: self._request_id,
         }
     }
 }
-

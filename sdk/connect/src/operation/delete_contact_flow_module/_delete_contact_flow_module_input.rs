@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteContactFlowModuleInput  {
+pub struct DeleteContactFlowModuleInput {
     /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
     #[doc(hidden)]
     pub instance_id: std::option::Option<std::string::String>,
@@ -12,17 +12,19 @@ pub struct DeleteContactFlowModuleInput  {
 }
 impl DeleteContactFlowModuleInput {
     /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
-    pub fn instance_id(&self) -> std::option::Option<& str> {
+    pub fn instance_id(&self) -> std::option::Option<&str> {
         self.instance_id.as_deref()
     }
     /// <p>The identifier of the flow module.</p>
-    pub fn contact_flow_module_id(&self) -> std::option::Option<& str> {
+    pub fn contact_flow_module_id(&self) -> std::option::Option<&str> {
         self.contact_flow_module_id.as_deref()
     }
 }
 impl DeleteContactFlowModuleInput {
     /// Creates a new builder-style object to manufacture [`DeleteContactFlowModuleInput`](crate::operation::delete_contact_flow_module::DeleteContactFlowModuleInput).
-    pub fn builder() -> crate::operation::delete_contact_flow_module::builders::DeleteContactFlowModuleInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::delete_contact_flow_module::builders::DeleteContactFlowModuleInputBuilder
+    {
         crate::operation::delete_contact_flow_module::builders::DeleteContactFlowModuleInputBuilder::default()
     }
 }
@@ -42,7 +44,8 @@ impl DeleteContactFlowModuleInputBuilder {
     }
     /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
     pub fn set_instance_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.instance_id = input; self
+        self.instance_id = input;
+        self
     }
     /// <p>The identifier of the flow module.</p>
     pub fn contact_flow_module_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -50,19 +53,25 @@ impl DeleteContactFlowModuleInputBuilder {
         self
     }
     /// <p>The identifier of the flow module.</p>
-    pub fn set_contact_flow_module_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.contact_flow_module_id = input; self
+    pub fn set_contact_flow_module_id(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.contact_flow_module_id = input;
+        self
     }
     /// Consumes the builder and constructs a [`DeleteContactFlowModuleInput`](crate::operation::delete_contact_flow_module::DeleteContactFlowModuleInput).
-    pub fn build(self) -> Result<crate::operation::delete_contact_flow_module::DeleteContactFlowModuleInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::delete_contact_flow_module::DeleteContactFlowModuleInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::delete_contact_flow_module::DeleteContactFlowModuleInput {
-                instance_id: self.instance_id
-                ,
-                contact_flow_module_id: self.contact_flow_module_id
-                ,
-            }
+                instance_id: self.instance_id,
+                contact_flow_module_id: self.contact_flow_module_id,
+            },
         )
     }
 }
-

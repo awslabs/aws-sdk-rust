@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteApprovalRuleTemplateOutput  {
+pub struct DeleteApprovalRuleTemplateOutput {
     /// <p>The system-generated ID of the deleted approval rule template. If the template has been previously deleted, the only response is a 200 OK.</p>
     #[doc(hidden)]
     pub approval_rule_template_id: std::option::Option<std::string::String>,
@@ -10,18 +10,18 @@ pub struct DeleteApprovalRuleTemplateOutput  {
 }
 impl DeleteApprovalRuleTemplateOutput {
     /// <p>The system-generated ID of the deleted approval rule template. If the template has been previously deleted, the only response is a 200 OK.</p>
-    pub fn approval_rule_template_id(&self) -> std::option::Option<& str> {
+    pub fn approval_rule_template_id(&self) -> std::option::Option<&str> {
         self.approval_rule_template_id.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for DeleteApprovalRuleTemplateOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl DeleteApprovalRuleTemplateOutput {
     /// Creates a new builder-style object to manufacture [`DeleteApprovalRuleTemplateOutput`](crate::operation::delete_approval_rule_template::DeleteApprovalRuleTemplateOutput).
-    pub fn builder() -> crate::operation::delete_approval_rule_template::builders::DeleteApprovalRuleTemplateOutputBuilder {
+    pub fn builder() -> crate::operation::delete_approval_rule_template::builders::DeleteApprovalRuleTemplateOutputBuilder{
         crate::operation::delete_approval_rule_template::builders::DeleteApprovalRuleTemplateOutputBuilder::default()
     }
 }
@@ -40,25 +40,29 @@ impl DeleteApprovalRuleTemplateOutputBuilder {
         self
     }
     /// <p>The system-generated ID of the deleted approval rule template. If the template has been previously deleted, the only response is a 200 OK.</p>
-    pub fn set_approval_rule_template_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.approval_rule_template_id = input; self
+    pub fn set_approval_rule_template_id(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.approval_rule_template_id = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`DeleteApprovalRuleTemplateOutput`](crate::operation::delete_approval_rule_template::DeleteApprovalRuleTemplateOutput).
-    pub fn build(self) -> crate::operation::delete_approval_rule_template::DeleteApprovalRuleTemplateOutput {
+    pub fn build(
+        self,
+    ) -> crate::operation::delete_approval_rule_template::DeleteApprovalRuleTemplateOutput {
         crate::operation::delete_approval_rule_template::DeleteApprovalRuleTemplateOutput {
-            approval_rule_template_id: self.approval_rule_template_id
-            ,
+            approval_rule_template_id: self.approval_rule_template_id,
             _request_id: self._request_id,
         }
     }
 }
-

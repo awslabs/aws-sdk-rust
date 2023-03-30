@@ -3,7 +3,7 @@
 /// <p>Details about the recommended course of action to remediate the finding.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Recommendation  {
+pub struct Recommendation {
     /// <p>The URL address to the CVE remediation recommendations.</p>
     #[doc(hidden)]
     pub url: std::option::Option<std::string::String>,
@@ -13,11 +13,11 @@ pub struct Recommendation  {
 }
 impl Recommendation {
     /// <p>The URL address to the CVE remediation recommendations.</p>
-    pub fn url(&self) -> std::option::Option<& str> {
+    pub fn url(&self) -> std::option::Option<&str> {
         self.url.as_deref()
     }
     /// <p>The recommended course of action to remediate the finding.</p>
-    pub fn text(&self) -> std::option::Option<& str> {
+    pub fn text(&self) -> std::option::Option<&str> {
         self.text.as_deref()
     }
 }
@@ -43,7 +43,8 @@ impl RecommendationBuilder {
     }
     /// <p>The URL address to the CVE remediation recommendations.</p>
     pub fn set_url(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.url = input; self
+        self.url = input;
+        self
     }
     /// <p>The recommended course of action to remediate the finding.</p>
     pub fn text(mut self, input: impl Into<std::string::String>) -> Self {
@@ -52,16 +53,14 @@ impl RecommendationBuilder {
     }
     /// <p>The recommended course of action to remediate the finding.</p>
     pub fn set_text(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.text = input; self
+        self.text = input;
+        self
     }
     /// Consumes the builder and constructs a [`Recommendation`](crate::types::Recommendation).
     pub fn build(self) -> crate::types::Recommendation {
         crate::types::Recommendation {
-            url: self.url
-            ,
-            text: self.text
-            ,
+            url: self.url,
+            text: self.text,
         }
     }
 }
-

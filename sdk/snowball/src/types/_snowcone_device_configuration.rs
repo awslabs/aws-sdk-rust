@@ -3,14 +3,14 @@
 /// <p>Specifies the device configuration for an Snowcone job.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SnowconeDeviceConfiguration  {
+pub struct SnowconeDeviceConfiguration {
     /// <p>Configures the wireless connection for the Snowcone device.</p>
     #[doc(hidden)]
     pub wireless_connection: std::option::Option<crate::types::WirelessConnection>,
 }
 impl SnowconeDeviceConfiguration {
     /// <p>Configures the wireless connection for the Snowcone device.</p>
-    pub fn wireless_connection(&self) -> std::option::Option<& crate::types::WirelessConnection> {
+    pub fn wireless_connection(&self) -> std::option::Option<&crate::types::WirelessConnection> {
         self.wireless_connection.as_ref()
     }
 }
@@ -34,15 +34,17 @@ impl SnowconeDeviceConfigurationBuilder {
         self
     }
     /// <p>Configures the wireless connection for the Snowcone device.</p>
-    pub fn set_wireless_connection(mut self, input: std::option::Option<crate::types::WirelessConnection>) -> Self {
-        self.wireless_connection = input; self
+    pub fn set_wireless_connection(
+        mut self,
+        input: std::option::Option<crate::types::WirelessConnection>,
+    ) -> Self {
+        self.wireless_connection = input;
+        self
     }
     /// Consumes the builder and constructs a [`SnowconeDeviceConfiguration`](crate::types::SnowconeDeviceConfiguration).
     pub fn build(self) -> crate::types::SnowconeDeviceConfiguration {
         crate::types::SnowconeDeviceConfiguration {
-            wireless_connection: self.wireless_connection
-            ,
+            wireless_connection: self.wireless_connection,
         }
     }
 }
-

@@ -3,8 +3,8 @@
 /// <p>Represents a request to delete a sending authorization policy for an identity. Sending authorization is an Amazon SES feature that enables you to authorize other senders to use your identities. For information, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon SES Developer Guide</a>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteIdentityPolicyInput  {
-    /// <p>The identity that is associated with the policy that you want to delete. You can specify the identity by using its name or by using its Amazon Resource Name (ARN). Examples: <code>user@example.com</code>, <code>example.com</code>, <code>arn:aws:ses:us-east-1:123456789012:identity/example.com</code>.</p> 
+pub struct DeleteIdentityPolicyInput {
+    /// <p>The identity that is associated with the policy that you want to delete. You can specify the identity by using its name or by using its Amazon Resource Name (ARN). Examples: <code>user@example.com</code>, <code>example.com</code>, <code>arn:aws:ses:us-east-1:123456789012:identity/example.com</code>.</p>
     /// <p>To successfully call this API, you must own the identity.</p>
     #[doc(hidden)]
     pub identity: std::option::Option<std::string::String>,
@@ -13,19 +13,20 @@ pub struct DeleteIdentityPolicyInput  {
     pub policy_name: std::option::Option<std::string::String>,
 }
 impl DeleteIdentityPolicyInput {
-    /// <p>The identity that is associated with the policy that you want to delete. You can specify the identity by using its name or by using its Amazon Resource Name (ARN). Examples: <code>user@example.com</code>, <code>example.com</code>, <code>arn:aws:ses:us-east-1:123456789012:identity/example.com</code>.</p> 
+    /// <p>The identity that is associated with the policy that you want to delete. You can specify the identity by using its name or by using its Amazon Resource Name (ARN). Examples: <code>user@example.com</code>, <code>example.com</code>, <code>arn:aws:ses:us-east-1:123456789012:identity/example.com</code>.</p>
     /// <p>To successfully call this API, you must own the identity.</p>
-    pub fn identity(&self) -> std::option::Option<& str> {
+    pub fn identity(&self) -> std::option::Option<&str> {
         self.identity.as_deref()
     }
     /// <p>The name of the policy to be deleted.</p>
-    pub fn policy_name(&self) -> std::option::Option<& str> {
+    pub fn policy_name(&self) -> std::option::Option<&str> {
         self.policy_name.as_deref()
     }
 }
 impl DeleteIdentityPolicyInput {
     /// Creates a new builder-style object to manufacture [`DeleteIdentityPolicyInput`](crate::operation::delete_identity_policy::DeleteIdentityPolicyInput).
-    pub fn builder() -> crate::operation::delete_identity_policy::builders::DeleteIdentityPolicyInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::delete_identity_policy::builders::DeleteIdentityPolicyInputBuilder {
         crate::operation::delete_identity_policy::builders::DeleteIdentityPolicyInputBuilder::default()
     }
 }
@@ -38,16 +39,17 @@ pub struct DeleteIdentityPolicyInputBuilder {
     pub(crate) policy_name: std::option::Option<std::string::String>,
 }
 impl DeleteIdentityPolicyInputBuilder {
-    /// <p>The identity that is associated with the policy that you want to delete. You can specify the identity by using its name or by using its Amazon Resource Name (ARN). Examples: <code>user@example.com</code>, <code>example.com</code>, <code>arn:aws:ses:us-east-1:123456789012:identity/example.com</code>.</p> 
+    /// <p>The identity that is associated with the policy that you want to delete. You can specify the identity by using its name or by using its Amazon Resource Name (ARN). Examples: <code>user@example.com</code>, <code>example.com</code>, <code>arn:aws:ses:us-east-1:123456789012:identity/example.com</code>.</p>
     /// <p>To successfully call this API, you must own the identity.</p>
     pub fn identity(mut self, input: impl Into<std::string::String>) -> Self {
         self.identity = Some(input.into());
         self
     }
-    /// <p>The identity that is associated with the policy that you want to delete. You can specify the identity by using its name or by using its Amazon Resource Name (ARN). Examples: <code>user@example.com</code>, <code>example.com</code>, <code>arn:aws:ses:us-east-1:123456789012:identity/example.com</code>.</p> 
+    /// <p>The identity that is associated with the policy that you want to delete. You can specify the identity by using its name or by using its Amazon Resource Name (ARN). Examples: <code>user@example.com</code>, <code>example.com</code>, <code>arn:aws:ses:us-east-1:123456789012:identity/example.com</code>.</p>
     /// <p>To successfully call this API, you must own the identity.</p>
     pub fn set_identity(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.identity = input; self
+        self.identity = input;
+        self
     }
     /// <p>The name of the policy to be deleted.</p>
     pub fn policy_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -56,18 +58,21 @@ impl DeleteIdentityPolicyInputBuilder {
     }
     /// <p>The name of the policy to be deleted.</p>
     pub fn set_policy_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.policy_name = input; self
+        self.policy_name = input;
+        self
     }
     /// Consumes the builder and constructs a [`DeleteIdentityPolicyInput`](crate::operation::delete_identity_policy::DeleteIdentityPolicyInput).
-    pub fn build(self) -> Result<crate::operation::delete_identity_policy::DeleteIdentityPolicyInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::delete_identity_policy::DeleteIdentityPolicyInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::delete_identity_policy::DeleteIdentityPolicyInput {
-                identity: self.identity
-                ,
-                policy_name: self.policy_name
-                ,
-            }
+                identity: self.identity,
+                policy_name: self.policy_name,
+            },
         )
     }
 }
-

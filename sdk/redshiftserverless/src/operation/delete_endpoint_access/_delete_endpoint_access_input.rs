@@ -2,20 +2,21 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteEndpointAccessInput  {
+pub struct DeleteEndpointAccessInput {
     /// <p>The name of the VPC endpoint to delete.</p>
     #[doc(hidden)]
     pub endpoint_name: std::option::Option<std::string::String>,
 }
 impl DeleteEndpointAccessInput {
     /// <p>The name of the VPC endpoint to delete.</p>
-    pub fn endpoint_name(&self) -> std::option::Option<& str> {
+    pub fn endpoint_name(&self) -> std::option::Option<&str> {
         self.endpoint_name.as_deref()
     }
 }
 impl DeleteEndpointAccessInput {
     /// Creates a new builder-style object to manufacture [`DeleteEndpointAccessInput`](crate::operation::delete_endpoint_access::DeleteEndpointAccessInput).
-    pub fn builder() -> crate::operation::delete_endpoint_access::builders::DeleteEndpointAccessInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::delete_endpoint_access::builders::DeleteEndpointAccessInputBuilder {
         crate::operation::delete_endpoint_access::builders::DeleteEndpointAccessInputBuilder::default()
     }
 }
@@ -34,16 +35,20 @@ impl DeleteEndpointAccessInputBuilder {
     }
     /// <p>The name of the VPC endpoint to delete.</p>
     pub fn set_endpoint_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.endpoint_name = input; self
+        self.endpoint_name = input;
+        self
     }
     /// Consumes the builder and constructs a [`DeleteEndpointAccessInput`](crate::operation::delete_endpoint_access::DeleteEndpointAccessInput).
-    pub fn build(self) -> Result<crate::operation::delete_endpoint_access::DeleteEndpointAccessInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::delete_endpoint_access::DeleteEndpointAccessInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::delete_endpoint_access::DeleteEndpointAccessInput {
-                endpoint_name: self.endpoint_name
-                ,
-            }
+                endpoint_name: self.endpoint_name,
+            },
         )
     }
 }
-

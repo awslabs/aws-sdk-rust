@@ -3,7 +3,7 @@
 /// <p>Describes a local gateway virtual interface.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct LocalGatewayVirtualInterface  {
+pub struct LocalGatewayVirtualInterface {
     /// <p>The ID of the virtual interface.</p>
     #[doc(hidden)]
     pub local_gateway_virtual_interface_id: std::option::Option<std::string::String>,
@@ -34,11 +34,11 @@ pub struct LocalGatewayVirtualInterface  {
 }
 impl LocalGatewayVirtualInterface {
     /// <p>The ID of the virtual interface.</p>
-    pub fn local_gateway_virtual_interface_id(&self) -> std::option::Option<& str> {
+    pub fn local_gateway_virtual_interface_id(&self) -> std::option::Option<&str> {
         self.local_gateway_virtual_interface_id.as_deref()
     }
     /// <p>The ID of the local gateway.</p>
-    pub fn local_gateway_id(&self) -> std::option::Option<& str> {
+    pub fn local_gateway_id(&self) -> std::option::Option<&str> {
         self.local_gateway_id.as_deref()
     }
     /// <p>The ID of the VLAN.</p>
@@ -46,11 +46,11 @@ impl LocalGatewayVirtualInterface {
         self.vlan
     }
     /// <p>The local address.</p>
-    pub fn local_address(&self) -> std::option::Option<& str> {
+    pub fn local_address(&self) -> std::option::Option<&str> {
         self.local_address.as_deref()
     }
     /// <p>The peer address.</p>
-    pub fn peer_address(&self) -> std::option::Option<& str> {
+    pub fn peer_address(&self) -> std::option::Option<&str> {
         self.peer_address.as_deref()
     }
     /// <p>The Border Gateway Protocol (BGP) Autonomous System Number (ASN) of the local gateway.</p>
@@ -62,11 +62,11 @@ impl LocalGatewayVirtualInterface {
         self.peer_bgp_asn
     }
     /// <p>The ID of the Amazon Web Services account that owns the local gateway virtual interface.</p>
-    pub fn owner_id(&self) -> std::option::Option<& str> {
+    pub fn owner_id(&self) -> std::option::Option<&str> {
         self.owner_id.as_deref()
     }
     /// <p>The tags assigned to the virtual interface.</p>
-    pub fn tags(&self) -> std::option::Option<& [crate::types::Tag]> {
+    pub fn tags(&self) -> std::option::Option<&[crate::types::Tag]> {
         self.tags.as_deref()
     }
 }
@@ -93,13 +93,20 @@ pub struct LocalGatewayVirtualInterfaceBuilder {
 }
 impl LocalGatewayVirtualInterfaceBuilder {
     /// <p>The ID of the virtual interface.</p>
-    pub fn local_gateway_virtual_interface_id(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn local_gateway_virtual_interface_id(
+        mut self,
+        input: impl Into<std::string::String>,
+    ) -> Self {
         self.local_gateway_virtual_interface_id = Some(input.into());
         self
     }
     /// <p>The ID of the virtual interface.</p>
-    pub fn set_local_gateway_virtual_interface_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.local_gateway_virtual_interface_id = input; self
+    pub fn set_local_gateway_virtual_interface_id(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.local_gateway_virtual_interface_id = input;
+        self
     }
     /// <p>The ID of the local gateway.</p>
     pub fn local_gateway_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -108,7 +115,8 @@ impl LocalGatewayVirtualInterfaceBuilder {
     }
     /// <p>The ID of the local gateway.</p>
     pub fn set_local_gateway_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.local_gateway_id = input; self
+        self.local_gateway_id = input;
+        self
     }
     /// <p>The ID of the VLAN.</p>
     pub fn vlan(mut self, input: i32) -> Self {
@@ -117,7 +125,8 @@ impl LocalGatewayVirtualInterfaceBuilder {
     }
     /// <p>The ID of the VLAN.</p>
     pub fn set_vlan(mut self, input: std::option::Option<i32>) -> Self {
-        self.vlan = input; self
+        self.vlan = input;
+        self
     }
     /// <p>The local address.</p>
     pub fn local_address(mut self, input: impl Into<std::string::String>) -> Self {
@@ -126,7 +135,8 @@ impl LocalGatewayVirtualInterfaceBuilder {
     }
     /// <p>The local address.</p>
     pub fn set_local_address(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.local_address = input; self
+        self.local_address = input;
+        self
     }
     /// <p>The peer address.</p>
     pub fn peer_address(mut self, input: impl Into<std::string::String>) -> Self {
@@ -135,7 +145,8 @@ impl LocalGatewayVirtualInterfaceBuilder {
     }
     /// <p>The peer address.</p>
     pub fn set_peer_address(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.peer_address = input; self
+        self.peer_address = input;
+        self
     }
     /// <p>The Border Gateway Protocol (BGP) Autonomous System Number (ASN) of the local gateway.</p>
     pub fn local_bgp_asn(mut self, input: i32) -> Self {
@@ -144,7 +155,8 @@ impl LocalGatewayVirtualInterfaceBuilder {
     }
     /// <p>The Border Gateway Protocol (BGP) Autonomous System Number (ASN) of the local gateway.</p>
     pub fn set_local_bgp_asn(mut self, input: std::option::Option<i32>) -> Self {
-        self.local_bgp_asn = input; self
+        self.local_bgp_asn = input;
+        self
     }
     /// <p>The peer BGP ASN.</p>
     pub fn peer_bgp_asn(mut self, input: i32) -> Self {
@@ -153,7 +165,8 @@ impl LocalGatewayVirtualInterfaceBuilder {
     }
     /// <p>The peer BGP ASN.</p>
     pub fn set_peer_bgp_asn(mut self, input: std::option::Option<i32>) -> Self {
-        self.peer_bgp_asn = input; self
+        self.peer_bgp_asn = input;
+        self
     }
     /// <p>The ID of the Amazon Web Services account that owns the local gateway virtual interface.</p>
     pub fn owner_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -162,7 +175,8 @@ impl LocalGatewayVirtualInterfaceBuilder {
     }
     /// <p>The ID of the Amazon Web Services account that owns the local gateway virtual interface.</p>
     pub fn set_owner_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.owner_id = input; self
+        self.owner_id = input;
+        self
     }
     /// Appends an item to `tags`.
     ///
@@ -171,36 +185,30 @@ impl LocalGatewayVirtualInterfaceBuilder {
     /// <p>The tags assigned to the virtual interface.</p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
-                        v.push(input);
-                        self.tags = Some(v);
-                        self
+        v.push(input);
+        self.tags = Some(v);
+        self
     }
     /// <p>The tags assigned to the virtual interface.</p>
-    pub fn set_tags(mut self, input: std::option::Option<std::vec::Vec<crate::types::Tag>>) -> Self {
-        self.tags = input; self
+    pub fn set_tags(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::Tag>>,
+    ) -> Self {
+        self.tags = input;
+        self
     }
     /// Consumes the builder and constructs a [`LocalGatewayVirtualInterface`](crate::types::LocalGatewayVirtualInterface).
     pub fn build(self) -> crate::types::LocalGatewayVirtualInterface {
         crate::types::LocalGatewayVirtualInterface {
-            local_gateway_virtual_interface_id: self.local_gateway_virtual_interface_id
-            ,
-            local_gateway_id: self.local_gateway_id
-            ,
-            vlan: self.vlan
-            ,
-            local_address: self.local_address
-            ,
-            peer_address: self.peer_address
-            ,
-            local_bgp_asn: self.local_bgp_asn
-            ,
-            peer_bgp_asn: self.peer_bgp_asn
-            ,
-            owner_id: self.owner_id
-            ,
-            tags: self.tags
-            ,
+            local_gateway_virtual_interface_id: self.local_gateway_virtual_interface_id,
+            local_gateway_id: self.local_gateway_id,
+            vlan: self.vlan,
+            local_address: self.local_address,
+            peer_address: self.peer_address,
+            local_bgp_asn: self.local_bgp_asn,
+            peer_bgp_asn: self.peer_bgp_asn,
+            owner_id: self.owner_id,
+            tags: self.tags,
         }
     }
 }
-

@@ -2,20 +2,21 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AllocateStaticIpInput  {
+pub struct AllocateStaticIpInput {
     /// <p>The name of the static IP address.</p>
     #[doc(hidden)]
     pub static_ip_name: std::option::Option<std::string::String>,
 }
 impl AllocateStaticIpInput {
     /// <p>The name of the static IP address.</p>
-    pub fn static_ip_name(&self) -> std::option::Option<& str> {
+    pub fn static_ip_name(&self) -> std::option::Option<&str> {
         self.static_ip_name.as_deref()
     }
 }
 impl AllocateStaticIpInput {
     /// Creates a new builder-style object to manufacture [`AllocateStaticIpInput`](crate::operation::allocate_static_ip::AllocateStaticIpInput).
-    pub fn builder() -> crate::operation::allocate_static_ip::builders::AllocateStaticIpInputBuilder {
+    pub fn builder() -> crate::operation::allocate_static_ip::builders::AllocateStaticIpInputBuilder
+    {
         crate::operation::allocate_static_ip::builders::AllocateStaticIpInputBuilder::default()
     }
 }
@@ -34,16 +35,20 @@ impl AllocateStaticIpInputBuilder {
     }
     /// <p>The name of the static IP address.</p>
     pub fn set_static_ip_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.static_ip_name = input; self
+        self.static_ip_name = input;
+        self
     }
     /// Consumes the builder and constructs a [`AllocateStaticIpInput`](crate::operation::allocate_static_ip::AllocateStaticIpInput).
-    pub fn build(self) -> Result<crate::operation::allocate_static_ip::AllocateStaticIpInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::allocate_static_ip::AllocateStaticIpInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::allocate_static_ip::AllocateStaticIpInput {
-                static_ip_name: self.static_ip_name
-                ,
-            }
+                static_ip_name: self.static_ip_name,
+            },
         )
     }
 }
-

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeWorkspaceImagesInput  {
+pub struct DescribeWorkspaceImagesInput {
     /// <p>The identifier of the image.</p>
     #[doc(hidden)]
     pub image_ids: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -18,15 +18,15 @@ pub struct DescribeWorkspaceImagesInput  {
 }
 impl DescribeWorkspaceImagesInput {
     /// <p>The identifier of the image.</p>
-    pub fn image_ids(&self) -> std::option::Option<& [std::string::String]> {
+    pub fn image_ids(&self) -> std::option::Option<&[std::string::String]> {
         self.image_ids.as_deref()
     }
     /// <p>The type (owned or shared) of the image.</p>
-    pub fn image_type(&self) -> std::option::Option<& crate::types::ImageType> {
+    pub fn image_type(&self) -> std::option::Option<&crate::types::ImageType> {
         self.image_type.as_ref()
     }
     /// <p>If you received a <code>NextToken</code> from a previous call that was paginated, provide this token to receive the next set of results.</p>
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
     /// <p>The maximum number of items to return.</p>
@@ -36,7 +36,9 @@ impl DescribeWorkspaceImagesInput {
 }
 impl DescribeWorkspaceImagesInput {
     /// Creates a new builder-style object to manufacture [`DescribeWorkspaceImagesInput`](crate::operation::describe_workspace_images::DescribeWorkspaceImagesInput).
-    pub fn builder() -> crate::operation::describe_workspace_images::builders::DescribeWorkspaceImagesInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::describe_workspace_images::builders::DescribeWorkspaceImagesInputBuilder
+    {
         crate::operation::describe_workspace_images::builders::DescribeWorkspaceImagesInputBuilder::default()
     }
 }
@@ -58,13 +60,17 @@ impl DescribeWorkspaceImagesInputBuilder {
     /// <p>The identifier of the image.</p>
     pub fn image_ids(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.image_ids.unwrap_or_default();
-                        v.push(input.into());
-                        self.image_ids = Some(v);
-                        self
+        v.push(input.into());
+        self.image_ids = Some(v);
+        self
     }
     /// <p>The identifier of the image.</p>
-    pub fn set_image_ids(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-        self.image_ids = input; self
+    pub fn set_image_ids(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
+        self.image_ids = input;
+        self
     }
     /// <p>The type (owned or shared) of the image.</p>
     pub fn image_type(mut self, input: crate::types::ImageType) -> Self {
@@ -73,7 +79,8 @@ impl DescribeWorkspaceImagesInputBuilder {
     }
     /// <p>The type (owned or shared) of the image.</p>
     pub fn set_image_type(mut self, input: std::option::Option<crate::types::ImageType>) -> Self {
-        self.image_type = input; self
+        self.image_type = input;
+        self
     }
     /// <p>If you received a <code>NextToken</code> from a previous call that was paginated, provide this token to receive the next set of results.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -82,7 +89,8 @@ impl DescribeWorkspaceImagesInputBuilder {
     }
     /// <p>If you received a <code>NextToken</code> from a previous call that was paginated, provide this token to receive the next set of results.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input; self
+        self.next_token = input;
+        self
     }
     /// <p>The maximum number of items to return.</p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -91,22 +99,23 @@ impl DescribeWorkspaceImagesInputBuilder {
     }
     /// <p>The maximum number of items to return.</p>
     pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_results = input; self
+        self.max_results = input;
+        self
     }
     /// Consumes the builder and constructs a [`DescribeWorkspaceImagesInput`](crate::operation::describe_workspace_images::DescribeWorkspaceImagesInput).
-    pub fn build(self) -> Result<crate::operation::describe_workspace_images::DescribeWorkspaceImagesInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::describe_workspace_images::DescribeWorkspaceImagesInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::describe_workspace_images::DescribeWorkspaceImagesInput {
-                image_ids: self.image_ids
-                ,
-                image_type: self.image_type
-                ,
-                next_token: self.next_token
-                ,
-                max_results: self.max_results
-                ,
-            }
+                image_ids: self.image_ids,
+                image_type: self.image_type,
+                next_token: self.next_token,
+                max_results: self.max_results,
+            },
         )
     }
 }
-

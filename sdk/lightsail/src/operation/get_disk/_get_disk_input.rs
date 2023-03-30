@@ -2,14 +2,14 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetDiskInput  {
+pub struct GetDiskInput {
     /// <p>The name of the disk (e.g., <code>my-disk</code>).</p>
     #[doc(hidden)]
     pub disk_name: std::option::Option<std::string::String>,
 }
 impl GetDiskInput {
     /// <p>The name of the disk (e.g., <code>my-disk</code>).</p>
-    pub fn disk_name(&self) -> std::option::Option<& str> {
+    pub fn disk_name(&self) -> std::option::Option<&str> {
         self.disk_name.as_deref()
     }
 }
@@ -34,16 +34,18 @@ impl GetDiskInputBuilder {
     }
     /// <p>The name of the disk (e.g., <code>my-disk</code>).</p>
     pub fn set_disk_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.disk_name = input; self
+        self.disk_name = input;
+        self
     }
     /// Consumes the builder and constructs a [`GetDiskInput`](crate::operation::get_disk::GetDiskInput).
-    pub fn build(self) -> Result<crate::operation::get_disk::GetDiskInput, aws_smithy_http::operation::error::BuildError> {
-        Ok(
-            crate::operation::get_disk::GetDiskInput {
-                disk_name: self.disk_name
-                ,
-            }
-        )
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::get_disk::GetDiskInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        Ok(crate::operation::get_disk::GetDiskInput {
+            disk_name: self.disk_name,
+        })
     }
 }
-

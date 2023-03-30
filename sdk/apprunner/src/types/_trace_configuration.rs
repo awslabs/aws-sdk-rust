@@ -3,14 +3,14 @@
 /// <p>Describes the configuration of the tracing feature within an App Runner observability configuration.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct TraceConfiguration  {
+pub struct TraceConfiguration {
     /// <p>The implementation provider chosen for tracing App Runner services.</p>
     #[doc(hidden)]
     pub vendor: std::option::Option<crate::types::TracingVendor>,
 }
 impl TraceConfiguration {
     /// <p>The implementation provider chosen for tracing App Runner services.</p>
-    pub fn vendor(&self) -> std::option::Option<& crate::types::TracingVendor> {
+    pub fn vendor(&self) -> std::option::Option<&crate::types::TracingVendor> {
         self.vendor.as_ref()
     }
 }
@@ -35,14 +35,13 @@ impl TraceConfigurationBuilder {
     }
     /// <p>The implementation provider chosen for tracing App Runner services.</p>
     pub fn set_vendor(mut self, input: std::option::Option<crate::types::TracingVendor>) -> Self {
-        self.vendor = input; self
+        self.vendor = input;
+        self
     }
     /// Consumes the builder and constructs a [`TraceConfiguration`](crate::types::TraceConfiguration).
     pub fn build(self) -> crate::types::TraceConfiguration {
         crate::types::TraceConfiguration {
-            vendor: self.vendor
-            ,
+            vendor: self.vendor,
         }
     }
 }
-

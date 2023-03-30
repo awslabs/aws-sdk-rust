@@ -45,4 +45,3 @@ pub mod untag_resource;
 
 /// Types for the `UpdateLink` operation.
 pub mod update_link;
-

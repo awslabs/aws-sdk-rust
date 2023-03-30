@@ -4,57 +4,84 @@ pub use crate::operation::get_builtin_slot_types::_get_builtin_slot_types_output
 pub use crate::operation::get_builtin_slot_types::_get_builtin_slot_types_input::GetBuiltinSlotTypesInputBuilder;
 
 /// Fluent builder constructing a request to `GetBuiltinSlotTypes`.
-/// 
-/// <p>Gets a list of built-in slot types that meet the specified criteria.</p> 
-/// <p>For a list of built-in slot types, see <a href="https://developer.amazon.com/public/solutions/alexa/alexa-skills-kit/docs/built-in-intent-ref/slot-type-reference">Slot Type Reference</a> in the <i>Alexa Skills Kit</i>.</p> 
+///
+/// <p>Gets a list of built-in slot types that meet the specified criteria.</p>
+/// <p>For a list of built-in slot types, see <a href="https://developer.amazon.com/public/solutions/alexa/alexa-skills-kit/docs/built-in-intent-ref/slot-type-reference">Slot Type Reference</a> in the <i>Alexa Skills Kit</i>.</p>
 /// <p>This operation requires permission for the <code>lex:GetBuiltInSlotTypes</code> action.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct GetBuiltinSlotTypesFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::get_builtin_slot_types::builders::GetBuiltinSlotTypesInputBuilder
-            }
-impl GetBuiltinSlotTypesFluentBuilder  {
+    handle: std::sync::Arc<crate::client::Handle>,
+    inner: crate::operation::get_builtin_slot_types::builders::GetBuiltinSlotTypesInputBuilder,
+}
+impl GetBuiltinSlotTypesFluentBuilder {
     /// Creates a new `GetBuiltinSlotTypes`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
-                    /// sent. The operation's inner [http::Request] can be modified as well.
-                    pub async fn customize(self) -> std::result::Result<
-                        crate::client::customize::CustomizableOperation<crate::operation::get_builtin_slot_types::GetBuiltinSlotTypes, aws_http::retry::AwsResponseRetryClassifier,>,
-                        aws_smithy_http::result::SdkError<crate::operation::get_builtin_slot_types::GetBuiltinSlotTypesError>
-                    >  {
-                        let handle = self.handle.clone();
-                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-                    }
-    
-                    /// Sends the request and returns the response.
-                    ///
-                    /// If an error occurs, an `SdkError` will be returned with additional details that
-                    /// can be matched against.
-                    ///
-                    /// By default, any retryable failures will be retried twice. Retry behavior
-                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                    /// set when configuring the client.
-                    pub async fn send(self) -> std::result::Result<crate::operation::get_builtin_slot_types::GetBuiltinSlotTypesOutput, aws_smithy_http::result::SdkError<crate::operation::get_builtin_slot_types::GetBuiltinSlotTypesError>>
-                     {
-                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&self.handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        self.handle.client.call(op).await
-                    }
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle,
+            inner: Default::default(),
+        }
+    }
+
+    /// Consume this builder, creating a customizable operation that can be modified before being
+    /// sent. The operation's inner [http::Request] can be modified as well.
+    pub async fn customize(
+        self,
+    ) -> std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::get_builtin_slot_types::GetBuiltinSlotTypes,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::result::SdkError<
+            crate::operation::get_builtin_slot_types::GetBuiltinSlotTypesError,
+        >,
+    > {
+        let handle = self.handle.clone();
+        let operation = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+    }
+
+    /// Sends the request and returns the response.
+    ///
+    /// If an error occurs, an `SdkError` will be returned with additional details that
+    /// can be matched against.
+    ///
+    /// By default, any retryable failures will be retried twice. Retry behavior
+    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+    /// set when configuring the client.
+    pub async fn send(
+        self,
+    ) -> std::result::Result<
+        crate::operation::get_builtin_slot_types::GetBuiltinSlotTypesOutput,
+        aws_smithy_http::result::SdkError<
+            crate::operation::get_builtin_slot_types::GetBuiltinSlotTypesError,
+        >,
+    > {
+        let op = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&self.handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        self.handle.client.call(op).await
+    }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::get_builtin_slot_types::paginator::GetBuiltinSlotTypesPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::get_builtin_slot_types::paginator::GetBuiltinSlotTypesPaginator {
-                            crate::operation::get_builtin_slot_types::paginator::GetBuiltinSlotTypesPaginator::new(self.handle, self.inner)
-                        }
+    ///
+    /// Paginators are used by calling [`send().await`](crate::operation::get_builtin_slot_types::paginator::GetBuiltinSlotTypesPaginator::send) which returns a `Stream`.
+    pub fn into_paginator(
+        self,
+    ) -> crate::operation::get_builtin_slot_types::paginator::GetBuiltinSlotTypesPaginator {
+        crate::operation::get_builtin_slot_types::paginator::GetBuiltinSlotTypesPaginator::new(
+            self.handle,
+            self.inner,
+        )
+    }
     /// <p>A list of locales that the slot type supports.</p>
     pub fn locale(mut self, input: crate::types::Locale) -> Self {
         self.inner = self.inner.locale(input);
@@ -71,7 +98,10 @@ impl GetBuiltinSlotTypesFluentBuilder  {
         self
     }
     /// <p>Substring to match in built-in slot type signatures. A slot type will be returned if any part of its signature matches the substring. For example, "xyz" matches both "xyzabc" and "abcxyz."</p>
-    pub fn set_signature_contains(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_signature_contains(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_signature_contains(input);
         self
     }
@@ -96,4 +126,3 @@ impl GetBuiltinSlotTypesFluentBuilder  {
         self
     }
 }
-

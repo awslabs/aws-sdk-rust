@@ -3,7 +3,7 @@
 /// <p>Describes a deployment of a stack or app.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Deployment  {
+pub struct Deployment {
     /// <p>The deployment ID.</p>
     #[doc(hidden)]
     pub deployment_id: std::option::Option<std::string::String>,
@@ -31,16 +31,16 @@ pub struct Deployment  {
     /// <p>Used to specify a stack or deployment command.</p>
     #[doc(hidden)]
     pub command: std::option::Option<crate::types::DeploymentCommand>,
-    /// <p>The deployment status:</p> 
-    /// <ul> 
-    /// <li> <p>running</p> </li> 
-    /// <li> <p>successful</p> </li> 
-    /// <li> <p>failed</p> </li> 
+    /// <p>The deployment status:</p>
+    /// <ul>
+    /// <li> <p>running</p> </li>
+    /// <li> <p>successful</p> </li>
+    /// <li> <p>failed</p> </li>
     /// </ul>
     #[doc(hidden)]
     pub status: std::option::Option<std::string::String>,
-    /// <p>A string that contains user-defined custom JSON. It can be used to override the corresponding default stack configuration attribute values for stack or to pass data to recipes. The string should be in the following format:</p> 
-    /// <p> <code>"{\"key1\": \"value1\", \"key2\": \"value2\",...}"</code> </p> 
+    /// <p>A string that contains user-defined custom JSON. It can be used to override the corresponding default stack configuration attribute values for stack or to pass data to recipes. The string should be in the following format:</p>
+    /// <p> <code>"{\"key1\": \"value1\", \"key2\": \"value2\",...}"</code> </p>
     /// <p>For more information on custom JSON, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-json.html">Use Custom JSON to Modify the Stack Configuration Attributes</a>.</p>
     #[doc(hidden)]
     pub custom_json: std::option::Option<std::string::String>,
@@ -50,23 +50,23 @@ pub struct Deployment  {
 }
 impl Deployment {
     /// <p>The deployment ID.</p>
-    pub fn deployment_id(&self) -> std::option::Option<& str> {
+    pub fn deployment_id(&self) -> std::option::Option<&str> {
         self.deployment_id.as_deref()
     }
     /// <p>The stack ID.</p>
-    pub fn stack_id(&self) -> std::option::Option<& str> {
+    pub fn stack_id(&self) -> std::option::Option<&str> {
         self.stack_id.as_deref()
     }
     /// <p>The app ID.</p>
-    pub fn app_id(&self) -> std::option::Option<& str> {
+    pub fn app_id(&self) -> std::option::Option<&str> {
         self.app_id.as_deref()
     }
     /// <p>Date when the deployment was created.</p>
-    pub fn created_at(&self) -> std::option::Option<& str> {
+    pub fn created_at(&self) -> std::option::Option<&str> {
         self.created_at.as_deref()
     }
     /// <p>Date when the deployment completed.</p>
-    pub fn completed_at(&self) -> std::option::Option<& str> {
+    pub fn completed_at(&self) -> std::option::Option<&str> {
         self.completed_at.as_deref()
     }
     /// <p>The deployment duration.</p>
@@ -74,34 +74,34 @@ impl Deployment {
         self.duration
     }
     /// <p>The user's IAM ARN.</p>
-    pub fn iam_user_arn(&self) -> std::option::Option<& str> {
+    pub fn iam_user_arn(&self) -> std::option::Option<&str> {
         self.iam_user_arn.as_deref()
     }
     /// <p>A user-defined comment.</p>
-    pub fn comment(&self) -> std::option::Option<& str> {
+    pub fn comment(&self) -> std::option::Option<&str> {
         self.comment.as_deref()
     }
     /// <p>Used to specify a stack or deployment command.</p>
-    pub fn command(&self) -> std::option::Option<& crate::types::DeploymentCommand> {
+    pub fn command(&self) -> std::option::Option<&crate::types::DeploymentCommand> {
         self.command.as_ref()
     }
-    /// <p>The deployment status:</p> 
-    /// <ul> 
-    /// <li> <p>running</p> </li> 
-    /// <li> <p>successful</p> </li> 
-    /// <li> <p>failed</p> </li> 
+    /// <p>The deployment status:</p>
+    /// <ul>
+    /// <li> <p>running</p> </li>
+    /// <li> <p>successful</p> </li>
+    /// <li> <p>failed</p> </li>
     /// </ul>
-    pub fn status(&self) -> std::option::Option<& str> {
+    pub fn status(&self) -> std::option::Option<&str> {
         self.status.as_deref()
     }
-    /// <p>A string that contains user-defined custom JSON. It can be used to override the corresponding default stack configuration attribute values for stack or to pass data to recipes. The string should be in the following format:</p> 
-    /// <p> <code>"{\"key1\": \"value1\", \"key2\": \"value2\",...}"</code> </p> 
+    /// <p>A string that contains user-defined custom JSON. It can be used to override the corresponding default stack configuration attribute values for stack or to pass data to recipes. The string should be in the following format:</p>
+    /// <p> <code>"{\"key1\": \"value1\", \"key2\": \"value2\",...}"</code> </p>
     /// <p>For more information on custom JSON, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-json.html">Use Custom JSON to Modify the Stack Configuration Attributes</a>.</p>
-    pub fn custom_json(&self) -> std::option::Option<& str> {
+    pub fn custom_json(&self) -> std::option::Option<&str> {
         self.custom_json.as_deref()
     }
     /// <p>The IDs of the target instances.</p>
-    pub fn instance_ids(&self) -> std::option::Option<& [std::string::String]> {
+    pub fn instance_ids(&self) -> std::option::Option<&[std::string::String]> {
         self.instance_ids.as_deref()
     }
 }
@@ -137,7 +137,8 @@ impl DeploymentBuilder {
     }
     /// <p>The deployment ID.</p>
     pub fn set_deployment_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.deployment_id = input; self
+        self.deployment_id = input;
+        self
     }
     /// <p>The stack ID.</p>
     pub fn stack_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -146,7 +147,8 @@ impl DeploymentBuilder {
     }
     /// <p>The stack ID.</p>
     pub fn set_stack_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.stack_id = input; self
+        self.stack_id = input;
+        self
     }
     /// <p>The app ID.</p>
     pub fn app_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -155,7 +157,8 @@ impl DeploymentBuilder {
     }
     /// <p>The app ID.</p>
     pub fn set_app_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.app_id = input; self
+        self.app_id = input;
+        self
     }
     /// <p>Date when the deployment was created.</p>
     pub fn created_at(mut self, input: impl Into<std::string::String>) -> Self {
@@ -164,7 +167,8 @@ impl DeploymentBuilder {
     }
     /// <p>Date when the deployment was created.</p>
     pub fn set_created_at(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.created_at = input; self
+        self.created_at = input;
+        self
     }
     /// <p>Date when the deployment completed.</p>
     pub fn completed_at(mut self, input: impl Into<std::string::String>) -> Self {
@@ -173,7 +177,8 @@ impl DeploymentBuilder {
     }
     /// <p>Date when the deployment completed.</p>
     pub fn set_completed_at(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.completed_at = input; self
+        self.completed_at = input;
+        self
     }
     /// <p>The deployment duration.</p>
     pub fn duration(mut self, input: i32) -> Self {
@@ -182,7 +187,8 @@ impl DeploymentBuilder {
     }
     /// <p>The deployment duration.</p>
     pub fn set_duration(mut self, input: std::option::Option<i32>) -> Self {
-        self.duration = input; self
+        self.duration = input;
+        self
     }
     /// <p>The user's IAM ARN.</p>
     pub fn iam_user_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -191,7 +197,8 @@ impl DeploymentBuilder {
     }
     /// <p>The user's IAM ARN.</p>
     pub fn set_iam_user_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.iam_user_arn = input; self
+        self.iam_user_arn = input;
+        self
     }
     /// <p>A user-defined comment.</p>
     pub fn comment(mut self, input: impl Into<std::string::String>) -> Self {
@@ -200,7 +207,8 @@ impl DeploymentBuilder {
     }
     /// <p>A user-defined comment.</p>
     pub fn set_comment(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.comment = input; self
+        self.comment = input;
+        self
     }
     /// <p>Used to specify a stack or deployment command.</p>
     pub fn command(mut self, input: crate::types::DeploymentCommand) -> Self {
@@ -208,40 +216,46 @@ impl DeploymentBuilder {
         self
     }
     /// <p>Used to specify a stack or deployment command.</p>
-    pub fn set_command(mut self, input: std::option::Option<crate::types::DeploymentCommand>) -> Self {
-        self.command = input; self
+    pub fn set_command(
+        mut self,
+        input: std::option::Option<crate::types::DeploymentCommand>,
+    ) -> Self {
+        self.command = input;
+        self
     }
-    /// <p>The deployment status:</p> 
-    /// <ul> 
-    /// <li> <p>running</p> </li> 
-    /// <li> <p>successful</p> </li> 
-    /// <li> <p>failed</p> </li> 
+    /// <p>The deployment status:</p>
+    /// <ul>
+    /// <li> <p>running</p> </li>
+    /// <li> <p>successful</p> </li>
+    /// <li> <p>failed</p> </li>
     /// </ul>
     pub fn status(mut self, input: impl Into<std::string::String>) -> Self {
         self.status = Some(input.into());
         self
     }
-    /// <p>The deployment status:</p> 
-    /// <ul> 
-    /// <li> <p>running</p> </li> 
-    /// <li> <p>successful</p> </li> 
-    /// <li> <p>failed</p> </li> 
+    /// <p>The deployment status:</p>
+    /// <ul>
+    /// <li> <p>running</p> </li>
+    /// <li> <p>successful</p> </li>
+    /// <li> <p>failed</p> </li>
     /// </ul>
     pub fn set_status(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.status = input; self
+        self.status = input;
+        self
     }
-    /// <p>A string that contains user-defined custom JSON. It can be used to override the corresponding default stack configuration attribute values for stack or to pass data to recipes. The string should be in the following format:</p> 
-    /// <p> <code>"{\"key1\": \"value1\", \"key2\": \"value2\",...}"</code> </p> 
+    /// <p>A string that contains user-defined custom JSON. It can be used to override the corresponding default stack configuration attribute values for stack or to pass data to recipes. The string should be in the following format:</p>
+    /// <p> <code>"{\"key1\": \"value1\", \"key2\": \"value2\",...}"</code> </p>
     /// <p>For more information on custom JSON, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-json.html">Use Custom JSON to Modify the Stack Configuration Attributes</a>.</p>
     pub fn custom_json(mut self, input: impl Into<std::string::String>) -> Self {
         self.custom_json = Some(input.into());
         self
     }
-    /// <p>A string that contains user-defined custom JSON. It can be used to override the corresponding default stack configuration attribute values for stack or to pass data to recipes. The string should be in the following format:</p> 
-    /// <p> <code>"{\"key1\": \"value1\", \"key2\": \"value2\",...}"</code> </p> 
+    /// <p>A string that contains user-defined custom JSON. It can be used to override the corresponding default stack configuration attribute values for stack or to pass data to recipes. The string should be in the following format:</p>
+    /// <p> <code>"{\"key1\": \"value1\", \"key2\": \"value2\",...}"</code> </p>
     /// <p>For more information on custom JSON, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-json.html">Use Custom JSON to Modify the Stack Configuration Attributes</a>.</p>
     pub fn set_custom_json(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.custom_json = input; self
+        self.custom_json = input;
+        self
     }
     /// Appends an item to `instance_ids`.
     ///
@@ -250,42 +264,33 @@ impl DeploymentBuilder {
     /// <p>The IDs of the target instances.</p>
     pub fn instance_ids(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.instance_ids.unwrap_or_default();
-                        v.push(input.into());
-                        self.instance_ids = Some(v);
-                        self
+        v.push(input.into());
+        self.instance_ids = Some(v);
+        self
     }
     /// <p>The IDs of the target instances.</p>
-    pub fn set_instance_ids(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-        self.instance_ids = input; self
+    pub fn set_instance_ids(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
+        self.instance_ids = input;
+        self
     }
     /// Consumes the builder and constructs a [`Deployment`](crate::types::Deployment).
     pub fn build(self) -> crate::types::Deployment {
         crate::types::Deployment {
-            deployment_id: self.deployment_id
-            ,
-            stack_id: self.stack_id
-            ,
-            app_id: self.app_id
-            ,
-            created_at: self.created_at
-            ,
-            completed_at: self.completed_at
-            ,
-            duration: self.duration
-            ,
-            iam_user_arn: self.iam_user_arn
-            ,
-            comment: self.comment
-            ,
-            command: self.command
-            ,
-            status: self.status
-            ,
-            custom_json: self.custom_json
-            ,
-            instance_ids: self.instance_ids
-            ,
+            deployment_id: self.deployment_id,
+            stack_id: self.stack_id,
+            app_id: self.app_id,
+            created_at: self.created_at,
+            completed_at: self.completed_at,
+            duration: self.duration,
+            iam_user_arn: self.iam_user_arn,
+            comment: self.comment,
+            command: self.command,
+            status: self.status,
+            custom_json: self.custom_json,
+            instance_ids: self.instance_ids,
         }
     }
 }
-

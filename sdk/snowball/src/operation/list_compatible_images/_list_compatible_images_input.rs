@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListCompatibleImagesInput  {
+pub struct ListCompatibleImagesInput {
     /// <p>The maximum number of results for the list of compatible images. Currently, a Snowball Edge device can store 10 AMIs.</p>
     #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
@@ -16,13 +16,14 @@ impl ListCompatibleImagesInput {
         self.max_results
     }
     /// <p>HTTP requests are stateless. To identify what object comes "next" in the list of compatible images, you can specify a value for <code>NextToken</code> as the starting point for your list of returned images.</p>
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
 }
 impl ListCompatibleImagesInput {
     /// Creates a new builder-style object to manufacture [`ListCompatibleImagesInput`](crate::operation::list_compatible_images::ListCompatibleImagesInput).
-    pub fn builder() -> crate::operation::list_compatible_images::builders::ListCompatibleImagesInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::list_compatible_images::builders::ListCompatibleImagesInputBuilder {
         crate::operation::list_compatible_images::builders::ListCompatibleImagesInputBuilder::default()
     }
 }
@@ -42,7 +43,8 @@ impl ListCompatibleImagesInputBuilder {
     }
     /// <p>The maximum number of results for the list of compatible images. Currently, a Snowball Edge device can store 10 AMIs.</p>
     pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_results = input; self
+        self.max_results = input;
+        self
     }
     /// <p>HTTP requests are stateless. To identify what object comes "next" in the list of compatible images, you can specify a value for <code>NextToken</code> as the starting point for your list of returned images.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -51,18 +53,21 @@ impl ListCompatibleImagesInputBuilder {
     }
     /// <p>HTTP requests are stateless. To identify what object comes "next" in the list of compatible images, you can specify a value for <code>NextToken</code> as the starting point for your list of returned images.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input; self
+        self.next_token = input;
+        self
     }
     /// Consumes the builder and constructs a [`ListCompatibleImagesInput`](crate::operation::list_compatible_images::ListCompatibleImagesInput).
-    pub fn build(self) -> Result<crate::operation::list_compatible_images::ListCompatibleImagesInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::list_compatible_images::ListCompatibleImagesInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::list_compatible_images::ListCompatibleImagesInput {
-                max_results: self.max_results
-                ,
-                next_token: self.next_token
-                ,
-            }
+                max_results: self.max_results,
+                next_token: self.next_token,
+            },
         )
     }
 }
-

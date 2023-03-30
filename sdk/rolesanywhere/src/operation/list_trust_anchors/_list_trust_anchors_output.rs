@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListTrustAnchorsOutput  {
+pub struct ListTrustAnchorsOutput {
     /// <p>A token that indicates where the output should continue from, if a previous operation did not show all results. To get the next results, call the operation again with this value.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
@@ -13,22 +13,23 @@ pub struct ListTrustAnchorsOutput  {
 }
 impl ListTrustAnchorsOutput {
     /// <p>A token that indicates where the output should continue from, if a previous operation did not show all results. To get the next results, call the operation again with this value.</p>
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
     /// <p>A list of trust anchors.</p>
-    pub fn trust_anchors(&self) -> std::option::Option<& [crate::types::TrustAnchorDetail]> {
+    pub fn trust_anchors(&self) -> std::option::Option<&[crate::types::TrustAnchorDetail]> {
         self.trust_anchors.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for ListTrustAnchorsOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl ListTrustAnchorsOutput {
     /// Creates a new builder-style object to manufacture [`ListTrustAnchorsOutput`](crate::operation::list_trust_anchors::ListTrustAnchorsOutput).
-    pub fn builder() -> crate::operation::list_trust_anchors::builders::ListTrustAnchorsOutputBuilder {
+    pub fn builder() -> crate::operation::list_trust_anchors::builders::ListTrustAnchorsOutputBuilder
+    {
         crate::operation::list_trust_anchors::builders::ListTrustAnchorsOutputBuilder::default()
     }
 }
@@ -49,7 +50,8 @@ impl ListTrustAnchorsOutputBuilder {
     }
     /// <p>A token that indicates where the output should continue from, if a previous operation did not show all results. To get the next results, call the operation again with this value.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input; self
+        self.next_token = input;
+        self
     }
     /// Appends an item to `trust_anchors`.
     ///
@@ -58,32 +60,33 @@ impl ListTrustAnchorsOutputBuilder {
     /// <p>A list of trust anchors.</p>
     pub fn trust_anchors(mut self, input: crate::types::TrustAnchorDetail) -> Self {
         let mut v = self.trust_anchors.unwrap_or_default();
-                        v.push(input);
-                        self.trust_anchors = Some(v);
-                        self
+        v.push(input);
+        self.trust_anchors = Some(v);
+        self
     }
     /// <p>A list of trust anchors.</p>
-    pub fn set_trust_anchors(mut self, input: std::option::Option<std::vec::Vec<crate::types::TrustAnchorDetail>>) -> Self {
-        self.trust_anchors = input; self
+    pub fn set_trust_anchors(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::TrustAnchorDetail>>,
+    ) -> Self {
+        self.trust_anchors = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`ListTrustAnchorsOutput`](crate::operation::list_trust_anchors::ListTrustAnchorsOutput).
     pub fn build(self) -> crate::operation::list_trust_anchors::ListTrustAnchorsOutput {
         crate::operation::list_trust_anchors::ListTrustAnchorsOutput {
-            next_token: self.next_token
-            ,
-            trust_anchors: self.trust_anchors
-            ,
+            next_token: self.next_token,
+            trust_anchors: self.trust_anchors,
             _request_id: self._request_id,
         }
     }
 }
-

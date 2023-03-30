@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteNamespaceInput  {
+pub struct DeleteNamespaceInput {
     /// <p>The name of the namespace to delete.</p>
     #[doc(hidden)]
     pub namespace_name: std::option::Option<std::string::String>,
@@ -15,11 +15,11 @@ pub struct DeleteNamespaceInput  {
 }
 impl DeleteNamespaceInput {
     /// <p>The name of the namespace to delete.</p>
-    pub fn namespace_name(&self) -> std::option::Option<& str> {
+    pub fn namespace_name(&self) -> std::option::Option<&str> {
         self.namespace_name.as_deref()
     }
     /// <p>The name of the snapshot to be created before the namespace is deleted.</p>
-    pub fn final_snapshot_name(&self) -> std::option::Option<& str> {
+    pub fn final_snapshot_name(&self) -> std::option::Option<&str> {
         self.final_snapshot_name.as_deref()
     }
     /// <p>How long to retain the final snapshot.</p>
@@ -50,7 +50,8 @@ impl DeleteNamespaceInputBuilder {
     }
     /// <p>The name of the namespace to delete.</p>
     pub fn set_namespace_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.namespace_name = input; self
+        self.namespace_name = input;
+        self
     }
     /// <p>The name of the snapshot to be created before the namespace is deleted.</p>
     pub fn final_snapshot_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -58,8 +59,12 @@ impl DeleteNamespaceInputBuilder {
         self
     }
     /// <p>The name of the snapshot to be created before the namespace is deleted.</p>
-    pub fn set_final_snapshot_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.final_snapshot_name = input; self
+    pub fn set_final_snapshot_name(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.final_snapshot_name = input;
+        self
     }
     /// <p>How long to retain the final snapshot.</p>
     pub fn final_snapshot_retention_period(mut self, input: i32) -> Self {
@@ -68,20 +73,20 @@ impl DeleteNamespaceInputBuilder {
     }
     /// <p>How long to retain the final snapshot.</p>
     pub fn set_final_snapshot_retention_period(mut self, input: std::option::Option<i32>) -> Self {
-        self.final_snapshot_retention_period = input; self
+        self.final_snapshot_retention_period = input;
+        self
     }
     /// Consumes the builder and constructs a [`DeleteNamespaceInput`](crate::operation::delete_namespace::DeleteNamespaceInput).
-    pub fn build(self) -> Result<crate::operation::delete_namespace::DeleteNamespaceInput, aws_smithy_http::operation::error::BuildError> {
-        Ok(
-            crate::operation::delete_namespace::DeleteNamespaceInput {
-                namespace_name: self.namespace_name
-                ,
-                final_snapshot_name: self.final_snapshot_name
-                ,
-                final_snapshot_retention_period: self.final_snapshot_retention_period
-                ,
-            }
-        )
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::delete_namespace::DeleteNamespaceInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        Ok(crate::operation::delete_namespace::DeleteNamespaceInput {
+            namespace_name: self.namespace_name,
+            final_snapshot_name: self.final_snapshot_name,
+            final_snapshot_retention_period: self.final_snapshot_retention_period,
+        })
     }
 }
-

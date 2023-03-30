@@ -3,7 +3,7 @@
 /// <p>Represents the subnet associated with a cluster. This parameter refers to subnets defined in Amazon Virtual Private Cloud (Amazon VPC) and used with ElastiCache.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Subnet  {
+pub struct Subnet {
     /// <p>The unique identifier for the subnet.</p>
     #[doc(hidden)]
     pub subnet_identifier: std::option::Option<std::string::String>,
@@ -19,19 +19,19 @@ pub struct Subnet  {
 }
 impl Subnet {
     /// <p>The unique identifier for the subnet.</p>
-    pub fn subnet_identifier(&self) -> std::option::Option<& str> {
+    pub fn subnet_identifier(&self) -> std::option::Option<&str> {
         self.subnet_identifier.as_deref()
     }
     /// <p>The Availability Zone associated with the subnet.</p>
-    pub fn subnet_availability_zone(&self) -> std::option::Option<& crate::types::AvailabilityZone> {
+    pub fn subnet_availability_zone(&self) -> std::option::Option<&crate::types::AvailabilityZone> {
         self.subnet_availability_zone.as_ref()
     }
     /// <p>The outpost ARN of the subnet.</p>
-    pub fn subnet_outpost(&self) -> std::option::Option<& crate::types::SubnetOutpost> {
+    pub fn subnet_outpost(&self) -> std::option::Option<&crate::types::SubnetOutpost> {
         self.subnet_outpost.as_ref()
     }
     /// <p>Either <code>ipv4</code> | <code>ipv6</code> | <code>dual_stack</code>. IPv6 is supported for workloads using Redis engine version 6.2 onward or Memcached engine version 1.6.6 on all instances built on the <a href="https://aws.amazon.com/ec2/nitro/">Nitro system</a>.</p>
-    pub fn supported_network_types(&self) -> std::option::Option<& [crate::types::NetworkType]> {
+    pub fn supported_network_types(&self) -> std::option::Option<&[crate::types::NetworkType]> {
         self.supported_network_types.as_deref()
     }
 }
@@ -49,7 +49,8 @@ pub struct SubnetBuilder {
     pub(crate) subnet_identifier: std::option::Option<std::string::String>,
     pub(crate) subnet_availability_zone: std::option::Option<crate::types::AvailabilityZone>,
     pub(crate) subnet_outpost: std::option::Option<crate::types::SubnetOutpost>,
-    pub(crate) supported_network_types: std::option::Option<std::vec::Vec<crate::types::NetworkType>>,
+    pub(crate) supported_network_types:
+        std::option::Option<std::vec::Vec<crate::types::NetworkType>>,
 }
 impl SubnetBuilder {
     /// <p>The unique identifier for the subnet.</p>
@@ -58,8 +59,12 @@ impl SubnetBuilder {
         self
     }
     /// <p>The unique identifier for the subnet.</p>
-    pub fn set_subnet_identifier(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.subnet_identifier = input; self
+    pub fn set_subnet_identifier(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.subnet_identifier = input;
+        self
     }
     /// <p>The Availability Zone associated with the subnet.</p>
     pub fn subnet_availability_zone(mut self, input: crate::types::AvailabilityZone) -> Self {
@@ -67,8 +72,12 @@ impl SubnetBuilder {
         self
     }
     /// <p>The Availability Zone associated with the subnet.</p>
-    pub fn set_subnet_availability_zone(mut self, input: std::option::Option<crate::types::AvailabilityZone>) -> Self {
-        self.subnet_availability_zone = input; self
+    pub fn set_subnet_availability_zone(
+        mut self,
+        input: std::option::Option<crate::types::AvailabilityZone>,
+    ) -> Self {
+        self.subnet_availability_zone = input;
+        self
     }
     /// <p>The outpost ARN of the subnet.</p>
     pub fn subnet_outpost(mut self, input: crate::types::SubnetOutpost) -> Self {
@@ -76,8 +85,12 @@ impl SubnetBuilder {
         self
     }
     /// <p>The outpost ARN of the subnet.</p>
-    pub fn set_subnet_outpost(mut self, input: std::option::Option<crate::types::SubnetOutpost>) -> Self {
-        self.subnet_outpost = input; self
+    pub fn set_subnet_outpost(
+        mut self,
+        input: std::option::Option<crate::types::SubnetOutpost>,
+    ) -> Self {
+        self.subnet_outpost = input;
+        self
     }
     /// Appends an item to `supported_network_types`.
     ///
@@ -86,26 +99,25 @@ impl SubnetBuilder {
     /// <p>Either <code>ipv4</code> | <code>ipv6</code> | <code>dual_stack</code>. IPv6 is supported for workloads using Redis engine version 6.2 onward or Memcached engine version 1.6.6 on all instances built on the <a href="https://aws.amazon.com/ec2/nitro/">Nitro system</a>.</p>
     pub fn supported_network_types(mut self, input: crate::types::NetworkType) -> Self {
         let mut v = self.supported_network_types.unwrap_or_default();
-                        v.push(input);
-                        self.supported_network_types = Some(v);
-                        self
+        v.push(input);
+        self.supported_network_types = Some(v);
+        self
     }
     /// <p>Either <code>ipv4</code> | <code>ipv6</code> | <code>dual_stack</code>. IPv6 is supported for workloads using Redis engine version 6.2 onward or Memcached engine version 1.6.6 on all instances built on the <a href="https://aws.amazon.com/ec2/nitro/">Nitro system</a>.</p>
-    pub fn set_supported_network_types(mut self, input: std::option::Option<std::vec::Vec<crate::types::NetworkType>>) -> Self {
-        self.supported_network_types = input; self
+    pub fn set_supported_network_types(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::NetworkType>>,
+    ) -> Self {
+        self.supported_network_types = input;
+        self
     }
     /// Consumes the builder and constructs a [`Subnet`](crate::types::Subnet).
     pub fn build(self) -> crate::types::Subnet {
         crate::types::Subnet {
-            subnet_identifier: self.subnet_identifier
-            ,
-            subnet_availability_zone: self.subnet_availability_zone
-            ,
-            subnet_outpost: self.subnet_outpost
-            ,
-            supported_network_types: self.supported_network_types
-            ,
+            subnet_identifier: self.subnet_identifier,
+            subnet_availability_zone: self.subnet_availability_zone,
+            subnet_outpost: self.subnet_outpost,
+            supported_network_types: self.supported_network_types,
         }
     }
 }
-

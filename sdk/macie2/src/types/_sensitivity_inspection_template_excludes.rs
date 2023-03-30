@@ -3,14 +3,14 @@
 /// <p>Specifies managed data identifiers to exclude (not use) when performing automated sensitive data discovery for an Amazon Macie account. For information about the managed data identifiers that Amazon Macie currently provides, see <a href="https://docs.aws.amazon.com/macie/latest/user/managed-data-identifiers.html">Using managed data identifiers</a> in the <i>Amazon Macie User Guide</i>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SensitivityInspectionTemplateExcludes  {
+pub struct SensitivityInspectionTemplateExcludes {
     /// <p>An array of unique identifiers, one for each managed data identifier to exclude. To retrieve a list of valid values, use the ListManagedDataIdentifiers operation.</p>
     #[doc(hidden)]
     pub managed_data_identifier_ids: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl SensitivityInspectionTemplateExcludes {
     /// <p>An array of unique identifiers, one for each managed data identifier to exclude. To retrieve a list of valid values, use the ListManagedDataIdentifiers operation.</p>
-    pub fn managed_data_identifier_ids(&self) -> std::option::Option<& [std::string::String]> {
+    pub fn managed_data_identifier_ids(&self) -> std::option::Option<&[std::string::String]> {
         self.managed_data_identifier_ids.as_deref()
     }
 }
@@ -35,20 +35,22 @@ impl SensitivityInspectionTemplateExcludesBuilder {
     /// <p>An array of unique identifiers, one for each managed data identifier to exclude. To retrieve a list of valid values, use the ListManagedDataIdentifiers operation.</p>
     pub fn managed_data_identifier_ids(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.managed_data_identifier_ids.unwrap_or_default();
-                        v.push(input.into());
-                        self.managed_data_identifier_ids = Some(v);
-                        self
+        v.push(input.into());
+        self.managed_data_identifier_ids = Some(v);
+        self
     }
     /// <p>An array of unique identifiers, one for each managed data identifier to exclude. To retrieve a list of valid values, use the ListManagedDataIdentifiers operation.</p>
-    pub fn set_managed_data_identifier_ids(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-        self.managed_data_identifier_ids = input; self
+    pub fn set_managed_data_identifier_ids(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
+        self.managed_data_identifier_ids = input;
+        self
     }
     /// Consumes the builder and constructs a [`SensitivityInspectionTemplateExcludes`](crate::types::SensitivityInspectionTemplateExcludes).
     pub fn build(self) -> crate::types::SensitivityInspectionTemplateExcludes {
         crate::types::SensitivityInspectionTemplateExcludes {
-            managed_data_identifier_ids: self.managed_data_identifier_ids
-            ,
+            managed_data_identifier_ids: self.managed_data_identifier_ids,
         }
     }
 }
-

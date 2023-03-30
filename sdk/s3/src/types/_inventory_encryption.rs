@@ -3,7 +3,7 @@
 /// <p>Contains the type of server-side encryption used to encrypt the inventory results.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct InventoryEncryption  {
+pub struct InventoryEncryption {
     /// <p>Specifies the use of SSE-S3 to encrypt delivered inventory reports.</p>
     #[doc(hidden)]
     pub sses3: std::option::Option<crate::types::Sses3>,
@@ -13,11 +13,11 @@ pub struct InventoryEncryption  {
 }
 impl InventoryEncryption {
     /// <p>Specifies the use of SSE-S3 to encrypt delivered inventory reports.</p>
-    pub fn sses3(&self) -> std::option::Option<& crate::types::Sses3> {
+    pub fn sses3(&self) -> std::option::Option<&crate::types::Sses3> {
         self.sses3.as_ref()
     }
     /// <p>Specifies the use of SSE-KMS to encrypt delivered inventory reports.</p>
-    pub fn ssekms(&self) -> std::option::Option<& crate::types::Ssekms> {
+    pub fn ssekms(&self) -> std::option::Option<&crate::types::Ssekms> {
         self.ssekms.as_ref()
     }
 }
@@ -43,7 +43,8 @@ impl InventoryEncryptionBuilder {
     }
     /// <p>Specifies the use of SSE-S3 to encrypt delivered inventory reports.</p>
     pub fn set_sses3(mut self, input: std::option::Option<crate::types::Sses3>) -> Self {
-        self.sses3 = input; self
+        self.sses3 = input;
+        self
     }
     /// <p>Specifies the use of SSE-KMS to encrypt delivered inventory reports.</p>
     pub fn ssekms(mut self, input: crate::types::Ssekms) -> Self {
@@ -52,16 +53,14 @@ impl InventoryEncryptionBuilder {
     }
     /// <p>Specifies the use of SSE-KMS to encrypt delivered inventory reports.</p>
     pub fn set_ssekms(mut self, input: std::option::Option<crate::types::Ssekms>) -> Self {
-        self.ssekms = input; self
+        self.ssekms = input;
+        self
     }
     /// Consumes the builder and constructs a [`InventoryEncryption`](crate::types::InventoryEncryption).
     pub fn build(self) -> crate::types::InventoryEncryption {
         crate::types::InventoryEncryption {
-            sses3: self.sses3
-            ,
-            ssekms: self.ssekms
-            ,
+            sses3: self.sses3,
+            ssekms: self.ssekms,
         }
     }
 }
-

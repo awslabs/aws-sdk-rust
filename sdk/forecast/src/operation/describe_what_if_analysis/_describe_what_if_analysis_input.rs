@@ -2,20 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeWhatIfAnalysisInput  {
+pub struct DescribeWhatIfAnalysisInput {
     /// <p>The Amazon Resource Name (ARN) of the what-if analysis that you are interested in.</p>
     #[doc(hidden)]
     pub what_if_analysis_arn: std::option::Option<std::string::String>,
 }
 impl DescribeWhatIfAnalysisInput {
     /// <p>The Amazon Resource Name (ARN) of the what-if analysis that you are interested in.</p>
-    pub fn what_if_analysis_arn(&self) -> std::option::Option<& str> {
+    pub fn what_if_analysis_arn(&self) -> std::option::Option<&str> {
         self.what_if_analysis_arn.as_deref()
     }
 }
 impl DescribeWhatIfAnalysisInput {
     /// Creates a new builder-style object to manufacture [`DescribeWhatIfAnalysisInput`](crate::operation::describe_what_if_analysis::DescribeWhatIfAnalysisInput).
-    pub fn builder() -> crate::operation::describe_what_if_analysis::builders::DescribeWhatIfAnalysisInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::describe_what_if_analysis::builders::DescribeWhatIfAnalysisInputBuilder
+    {
         crate::operation::describe_what_if_analysis::builders::DescribeWhatIfAnalysisInputBuilder::default()
     }
 }
@@ -33,17 +35,24 @@ impl DescribeWhatIfAnalysisInputBuilder {
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the what-if analysis that you are interested in.</p>
-    pub fn set_what_if_analysis_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.what_if_analysis_arn = input; self
+    pub fn set_what_if_analysis_arn(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.what_if_analysis_arn = input;
+        self
     }
     /// Consumes the builder and constructs a [`DescribeWhatIfAnalysisInput`](crate::operation::describe_what_if_analysis::DescribeWhatIfAnalysisInput).
-    pub fn build(self) -> Result<crate::operation::describe_what_if_analysis::DescribeWhatIfAnalysisInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::describe_what_if_analysis::DescribeWhatIfAnalysisInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::describe_what_if_analysis::DescribeWhatIfAnalysisInput {
-                what_if_analysis_arn: self.what_if_analysis_arn
-                ,
-            }
+                what_if_analysis_arn: self.what_if_analysis_arn,
+            },
         )
     }
 }
-

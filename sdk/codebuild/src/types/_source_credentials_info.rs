@@ -3,7 +3,7 @@
 /// <p> Information about the credentials for a GitHub, GitHub Enterprise, or Bitbucket repository. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SourceCredentialsInfo  {
+pub struct SourceCredentialsInfo {
     /// <p> The Amazon Resource Name (ARN) of the token. </p>
     #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
@@ -16,15 +16,15 @@ pub struct SourceCredentialsInfo  {
 }
 impl SourceCredentialsInfo {
     /// <p> The Amazon Resource Name (ARN) of the token. </p>
-    pub fn arn(&self) -> std::option::Option<& str> {
+    pub fn arn(&self) -> std::option::Option<&str> {
         self.arn.as_deref()
     }
     /// <p> The type of source provider. The valid options are GITHUB, GITHUB_ENTERPRISE, or BITBUCKET. </p>
-    pub fn server_type(&self) -> std::option::Option<& crate::types::ServerType> {
+    pub fn server_type(&self) -> std::option::Option<&crate::types::ServerType> {
         self.server_type.as_ref()
     }
     /// <p> The type of authentication used by the credentials. Valid options are OAUTH, BASIC_AUTH, or PERSONAL_ACCESS_TOKEN. </p>
-    pub fn auth_type(&self) -> std::option::Option<& crate::types::AuthType> {
+    pub fn auth_type(&self) -> std::option::Option<&crate::types::AuthType> {
         self.auth_type.as_ref()
     }
 }
@@ -51,7 +51,8 @@ impl SourceCredentialsInfoBuilder {
     }
     /// <p> The Amazon Resource Name (ARN) of the token. </p>
     pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.arn = input; self
+        self.arn = input;
+        self
     }
     /// <p> The type of source provider. The valid options are GITHUB, GITHUB_ENTERPRISE, or BITBUCKET. </p>
     pub fn server_type(mut self, input: crate::types::ServerType) -> Self {
@@ -60,7 +61,8 @@ impl SourceCredentialsInfoBuilder {
     }
     /// <p> The type of source provider. The valid options are GITHUB, GITHUB_ENTERPRISE, or BITBUCKET. </p>
     pub fn set_server_type(mut self, input: std::option::Option<crate::types::ServerType>) -> Self {
-        self.server_type = input; self
+        self.server_type = input;
+        self
     }
     /// <p> The type of authentication used by the credentials. Valid options are OAUTH, BASIC_AUTH, or PERSONAL_ACCESS_TOKEN. </p>
     pub fn auth_type(mut self, input: crate::types::AuthType) -> Self {
@@ -69,18 +71,15 @@ impl SourceCredentialsInfoBuilder {
     }
     /// <p> The type of authentication used by the credentials. Valid options are OAUTH, BASIC_AUTH, or PERSONAL_ACCESS_TOKEN. </p>
     pub fn set_auth_type(mut self, input: std::option::Option<crate::types::AuthType>) -> Self {
-        self.auth_type = input; self
+        self.auth_type = input;
+        self
     }
     /// Consumes the builder and constructs a [`SourceCredentialsInfo`](crate::types::SourceCredentialsInfo).
     pub fn build(self) -> crate::types::SourceCredentialsInfo {
         crate::types::SourceCredentialsInfo {
-            arn: self.arn
-            ,
-            server_type: self.server_type
-            ,
-            auth_type: self.auth_type
-            ,
+            arn: self.arn,
+            server_type: self.server_type,
+            auth_type: self.auth_type,
         }
     }
 }
-

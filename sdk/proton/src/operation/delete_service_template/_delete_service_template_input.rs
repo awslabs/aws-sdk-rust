@@ -2,20 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteServiceTemplateInput  {
+pub struct DeleteServiceTemplateInput {
     /// <p>The name of the service template to delete.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
 }
 impl DeleteServiceTemplateInput {
     /// <p>The name of the service template to delete.</p>
-    pub fn name(&self) -> std::option::Option<& str> {
+    pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
 }
 impl DeleteServiceTemplateInput {
     /// Creates a new builder-style object to manufacture [`DeleteServiceTemplateInput`](crate::operation::delete_service_template::DeleteServiceTemplateInput).
-    pub fn builder() -> crate::operation::delete_service_template::builders::DeleteServiceTemplateInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::delete_service_template::builders::DeleteServiceTemplateInputBuilder
+    {
         crate::operation::delete_service_template::builders::DeleteServiceTemplateInputBuilder::default()
     }
 }
@@ -34,16 +36,20 @@ impl DeleteServiceTemplateInputBuilder {
     }
     /// <p>The name of the service template to delete.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input; self
+        self.name = input;
+        self
     }
     /// Consumes the builder and constructs a [`DeleteServiceTemplateInput`](crate::operation::delete_service_template::DeleteServiceTemplateInput).
-    pub fn build(self) -> Result<crate::operation::delete_service_template::DeleteServiceTemplateInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::delete_service_template::DeleteServiceTemplateInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::delete_service_template::DeleteServiceTemplateInput {
-                name: self.name
-                ,
-            }
+                name: self.name,
+            },
         )
     }
 }
-

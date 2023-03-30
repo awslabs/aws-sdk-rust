@@ -3,7 +3,7 @@
 /// <p>A control to display a horizontal toggle bar. This is used to change a value by sliding the toggle.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ParameterSliderControl  {
+pub struct ParameterSliderControl {
     /// <p>The ID of the <code>ParameterSliderControl</code>.</p>
     #[doc(hidden)]
     pub parameter_control_id: std::option::Option<std::string::String>,
@@ -28,19 +28,21 @@ pub struct ParameterSliderControl  {
 }
 impl ParameterSliderControl {
     /// <p>The ID of the <code>ParameterSliderControl</code>.</p>
-    pub fn parameter_control_id(&self) -> std::option::Option<& str> {
+    pub fn parameter_control_id(&self) -> std::option::Option<&str> {
         self.parameter_control_id.as_deref()
     }
     /// <p>The title of the <code>ParameterSliderControl</code>.</p>
-    pub fn title(&self) -> std::option::Option<& str> {
+    pub fn title(&self) -> std::option::Option<&str> {
         self.title.as_deref()
     }
     /// <p>The source parameter name of the <code>ParameterSliderControl</code>.</p>
-    pub fn source_parameter_name(&self) -> std::option::Option<& str> {
+    pub fn source_parameter_name(&self) -> std::option::Option<&str> {
         self.source_parameter_name.as_deref()
     }
     /// <p>The display options of a control.</p>
-    pub fn display_options(&self) -> std::option::Option<& crate::types::SliderControlDisplayOptions> {
+    pub fn display_options(
+        &self,
+    ) -> std::option::Option<&crate::types::SliderControlDisplayOptions> {
         self.display_options.as_ref()
     }
     /// <p>The smaller value that is displayed at the left of the slider.</p>
@@ -82,8 +84,12 @@ impl ParameterSliderControlBuilder {
         self
     }
     /// <p>The ID of the <code>ParameterSliderControl</code>.</p>
-    pub fn set_parameter_control_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.parameter_control_id = input; self
+    pub fn set_parameter_control_id(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.parameter_control_id = input;
+        self
     }
     /// <p>The title of the <code>ParameterSliderControl</code>.</p>
     pub fn title(mut self, input: impl Into<std::string::String>) -> Self {
@@ -92,7 +98,8 @@ impl ParameterSliderControlBuilder {
     }
     /// <p>The title of the <code>ParameterSliderControl</code>.</p>
     pub fn set_title(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.title = input; self
+        self.title = input;
+        self
     }
     /// <p>The source parameter name of the <code>ParameterSliderControl</code>.</p>
     pub fn source_parameter_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -100,8 +107,12 @@ impl ParameterSliderControlBuilder {
         self
     }
     /// <p>The source parameter name of the <code>ParameterSliderControl</code>.</p>
-    pub fn set_source_parameter_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.source_parameter_name = input; self
+    pub fn set_source_parameter_name(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.source_parameter_name = input;
+        self
     }
     /// <p>The display options of a control.</p>
     pub fn display_options(mut self, input: crate::types::SliderControlDisplayOptions) -> Self {
@@ -109,8 +120,12 @@ impl ParameterSliderControlBuilder {
         self
     }
     /// <p>The display options of a control.</p>
-    pub fn set_display_options(mut self, input: std::option::Option<crate::types::SliderControlDisplayOptions>) -> Self {
-        self.display_options = input; self
+    pub fn set_display_options(
+        mut self,
+        input: std::option::Option<crate::types::SliderControlDisplayOptions>,
+    ) -> Self {
+        self.display_options = input;
+        self
     }
     /// <p>The smaller value that is displayed at the left of the slider.</p>
     pub fn maximum_value(mut self, input: f64) -> Self {
@@ -119,7 +134,8 @@ impl ParameterSliderControlBuilder {
     }
     /// <p>The smaller value that is displayed at the left of the slider.</p>
     pub fn set_maximum_value(mut self, input: std::option::Option<f64>) -> Self {
-        self.maximum_value = input; self
+        self.maximum_value = input;
+        self
     }
     /// <p>The larger value that is displayed at the right of the slider.</p>
     pub fn minimum_value(mut self, input: f64) -> Self {
@@ -128,7 +144,8 @@ impl ParameterSliderControlBuilder {
     }
     /// <p>The larger value that is displayed at the right of the slider.</p>
     pub fn set_minimum_value(mut self, input: std::option::Option<f64>) -> Self {
-        self.minimum_value = input; self
+        self.minimum_value = input;
+        self
     }
     /// <p>The number of increments that the slider bar is divided into.</p>
     pub fn step_size(mut self, input: f64) -> Self {
@@ -137,29 +154,19 @@ impl ParameterSliderControlBuilder {
     }
     /// <p>The number of increments that the slider bar is divided into.</p>
     pub fn set_step_size(mut self, input: std::option::Option<f64>) -> Self {
-        self.step_size = input; self
+        self.step_size = input;
+        self
     }
     /// Consumes the builder and constructs a [`ParameterSliderControl`](crate::types::ParameterSliderControl).
     pub fn build(self) -> crate::types::ParameterSliderControl {
         crate::types::ParameterSliderControl {
-            parameter_control_id: self.parameter_control_id
-            ,
-            title: self.title
-            ,
-            source_parameter_name: self.source_parameter_name
-            ,
-            display_options: self.display_options
-            ,
-            maximum_value: self.maximum_value
-                .unwrap_or_default()
-            ,
-            minimum_value: self.minimum_value
-                .unwrap_or_default()
-            ,
-            step_size: self.step_size
-                .unwrap_or_default()
-            ,
+            parameter_control_id: self.parameter_control_id,
+            title: self.title,
+            source_parameter_name: self.source_parameter_name,
+            display_options: self.display_options,
+            maximum_value: self.maximum_value.unwrap_or_default(),
+            minimum_value: self.minimum_value.unwrap_or_default(),
+            step_size: self.step_size.unwrap_or_default(),
         }
     }
 }
-

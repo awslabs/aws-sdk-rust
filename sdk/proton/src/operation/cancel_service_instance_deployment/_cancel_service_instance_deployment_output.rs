@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CancelServiceInstanceDeploymentOutput  {
+pub struct CancelServiceInstanceDeploymentOutput {
     /// <p>The service instance summary data that's returned by Proton.</p>
     #[doc(hidden)]
     pub service_instance: std::option::Option<crate::types::ServiceInstance>,
@@ -10,18 +10,18 @@ pub struct CancelServiceInstanceDeploymentOutput  {
 }
 impl CancelServiceInstanceDeploymentOutput {
     /// <p>The service instance summary data that's returned by Proton.</p>
-    pub fn service_instance(&self) -> std::option::Option<& crate::types::ServiceInstance> {
+    pub fn service_instance(&self) -> std::option::Option<&crate::types::ServiceInstance> {
         self.service_instance.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for CancelServiceInstanceDeploymentOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl CancelServiceInstanceDeploymentOutput {
     /// Creates a new builder-style object to manufacture [`CancelServiceInstanceDeploymentOutput`](crate::operation::cancel_service_instance_deployment::CancelServiceInstanceDeploymentOutput).
-    pub fn builder() -> crate::operation::cancel_service_instance_deployment::builders::CancelServiceInstanceDeploymentOutputBuilder {
+    pub fn builder() -> crate::operation::cancel_service_instance_deployment::builders::CancelServiceInstanceDeploymentOutputBuilder{
         crate::operation::cancel_service_instance_deployment::builders::CancelServiceInstanceDeploymentOutputBuilder::default()
     }
 }
@@ -40,20 +40,27 @@ impl CancelServiceInstanceDeploymentOutputBuilder {
         self
     }
     /// <p>The service instance summary data that's returned by Proton.</p>
-    pub fn set_service_instance(mut self, input: std::option::Option<crate::types::ServiceInstance>) -> Self {
-        self.service_instance = input; self
+    pub fn set_service_instance(
+        mut self,
+        input: std::option::Option<crate::types::ServiceInstance>,
+    ) -> Self {
+        self.service_instance = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`CancelServiceInstanceDeploymentOutput`](crate::operation::cancel_service_instance_deployment::CancelServiceInstanceDeploymentOutput).
-    pub fn build(self) -> crate::operation::cancel_service_instance_deployment::CancelServiceInstanceDeploymentOutput {
+    pub fn build(
+        self,
+    ) -> crate::operation::cancel_service_instance_deployment::CancelServiceInstanceDeploymentOutput
+    {
         crate::operation::cancel_service_instance_deployment::CancelServiceInstanceDeploymentOutput {
             service_instance: self.service_instance
             ,
@@ -61,4 +68,3 @@ impl CancelServiceInstanceDeploymentOutputBuilder {
         }
     }
 }
-

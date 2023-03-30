@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListBulkDeploymentDetailedReportsOutput  {
+pub struct ListBulkDeploymentDetailedReportsOutput {
     /// A list of the individual group deployments in the bulk deployment operation.
     #[doc(hidden)]
     pub deployments: std::option::Option<std::vec::Vec<crate::types::BulkDeploymentResult>>,
@@ -13,22 +13,22 @@ pub struct ListBulkDeploymentDetailedReportsOutput  {
 }
 impl ListBulkDeploymentDetailedReportsOutput {
     /// A list of the individual group deployments in the bulk deployment operation.
-    pub fn deployments(&self) -> std::option::Option<& [crate::types::BulkDeploymentResult]> {
+    pub fn deployments(&self) -> std::option::Option<&[crate::types::BulkDeploymentResult]> {
         self.deployments.as_deref()
     }
     /// The token for the next set of results, or ''null'' if there are no additional results.
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for ListBulkDeploymentDetailedReportsOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl ListBulkDeploymentDetailedReportsOutput {
     /// Creates a new builder-style object to manufacture [`ListBulkDeploymentDetailedReportsOutput`](crate::operation::list_bulk_deployment_detailed_reports::ListBulkDeploymentDetailedReportsOutput).
-    pub fn builder() -> crate::operation::list_bulk_deployment_detailed_reports::builders::ListBulkDeploymentDetailedReportsOutputBuilder {
+    pub fn builder() -> crate::operation::list_bulk_deployment_detailed_reports::builders::ListBulkDeploymentDetailedReportsOutputBuilder{
         crate::operation::list_bulk_deployment_detailed_reports::builders::ListBulkDeploymentDetailedReportsOutputBuilder::default()
     }
 }
@@ -49,13 +49,17 @@ impl ListBulkDeploymentDetailedReportsOutputBuilder {
     /// A list of the individual group deployments in the bulk deployment operation.
     pub fn deployments(mut self, input: crate::types::BulkDeploymentResult) -> Self {
         let mut v = self.deployments.unwrap_or_default();
-                        v.push(input);
-                        self.deployments = Some(v);
-                        self
+        v.push(input);
+        self.deployments = Some(v);
+        self
     }
     /// A list of the individual group deployments in the bulk deployment operation.
-    pub fn set_deployments(mut self, input: std::option::Option<std::vec::Vec<crate::types::BulkDeploymentResult>>) -> Self {
-        self.deployments = input; self
+    pub fn set_deployments(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::BulkDeploymentResult>>,
+    ) -> Self {
+        self.deployments = input;
+        self
     }
     /// The token for the next set of results, or ''null'' if there are no additional results.
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -64,19 +68,20 @@ impl ListBulkDeploymentDetailedReportsOutputBuilder {
     }
     /// The token for the next set of results, or ''null'' if there are no additional results.
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input; self
+        self.next_token = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`ListBulkDeploymentDetailedReportsOutput`](crate::operation::list_bulk_deployment_detailed_reports::ListBulkDeploymentDetailedReportsOutput).
-    pub fn build(self) -> crate::operation::list_bulk_deployment_detailed_reports::ListBulkDeploymentDetailedReportsOutput {
+    pub fn build(self) -> crate::operation::list_bulk_deployment_detailed_reports::ListBulkDeploymentDetailedReportsOutput{
         crate::operation::list_bulk_deployment_detailed_reports::ListBulkDeploymentDetailedReportsOutput {
             deployments: self.deployments
             ,
@@ -86,4 +91,3 @@ impl ListBulkDeploymentDetailedReportsOutputBuilder {
         }
     }
 }
-

@@ -4,49 +4,67 @@ pub use crate::operation::update_document::_update_document_output::UpdateDocume
 pub use crate::operation::update_document::_update_document_input::UpdateDocumentInputBuilder;
 
 /// Fluent builder constructing a request to `UpdateDocument`.
-/// 
+///
 /// <p>Updates one or more values for an SSM document.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct UpdateDocumentFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::update_document::builders::UpdateDocumentInputBuilder
-            }
-impl UpdateDocumentFluentBuilder  {
+    handle: std::sync::Arc<crate::client::Handle>,
+    inner: crate::operation::update_document::builders::UpdateDocumentInputBuilder,
+}
+impl UpdateDocumentFluentBuilder {
     /// Creates a new `UpdateDocument`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
-                    /// sent. The operation's inner [http::Request] can be modified as well.
-                    pub async fn customize(self) -> std::result::Result<
-                        crate::client::customize::CustomizableOperation<crate::operation::update_document::UpdateDocument, aws_http::retry::AwsResponseRetryClassifier,>,
-                        aws_smithy_http::result::SdkError<crate::operation::update_document::UpdateDocumentError>
-                    >  {
-                        let handle = self.handle.clone();
-                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-                    }
-    
-                    /// Sends the request and returns the response.
-                    ///
-                    /// If an error occurs, an `SdkError` will be returned with additional details that
-                    /// can be matched against.
-                    ///
-                    /// By default, any retryable failures will be retried twice. Retry behavior
-                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                    /// set when configuring the client.
-                    pub async fn send(self) -> std::result::Result<crate::operation::update_document::UpdateDocumentOutput, aws_smithy_http::result::SdkError<crate::operation::update_document::UpdateDocumentError>>
-                     {
-                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&self.handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        self.handle.client.call(op).await
-                    }
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle,
+            inner: Default::default(),
+        }
+    }
+
+    /// Consume this builder, creating a customizable operation that can be modified before being
+    /// sent. The operation's inner [http::Request] can be modified as well.
+    pub async fn customize(
+        self,
+    ) -> std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::update_document::UpdateDocument,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::result::SdkError<crate::operation::update_document::UpdateDocumentError>,
+    > {
+        let handle = self.handle.clone();
+        let operation = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+    }
+
+    /// Sends the request and returns the response.
+    ///
+    /// If an error occurs, an `SdkError` will be returned with additional details that
+    /// can be matched against.
+    ///
+    /// By default, any retryable failures will be retried twice. Retry behavior
+    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+    /// set when configuring the client.
+    pub async fn send(
+        self,
+    ) -> std::result::Result<
+        crate::operation::update_document::UpdateDocumentOutput,
+        aws_smithy_http::result::SdkError<crate::operation::update_document::UpdateDocumentError>,
+    > {
+        let op = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&self.handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        self.handle.client.call(op).await
+    }
     /// <p>A valid JSON or YAML string.</p>
     pub fn content(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.content(input.into());
@@ -67,7 +85,10 @@ impl UpdateDocumentFluentBuilder  {
         self
     }
     /// <p>A list of key-value pairs that describe attachments to a version of a document.</p>
-    pub fn set_attachments(mut self, input: std::option::Option<std::vec::Vec<crate::types::AttachmentsSource>>) -> Self {
+    pub fn set_attachments(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::AttachmentsSource>>,
+    ) -> Self {
         self.inner = self.inner.set_attachments(input);
         self
     }
@@ -101,15 +122,15 @@ impl UpdateDocumentFluentBuilder  {
         self.inner = self.inner.set_version_name(input);
         self
     }
-    /// <p>The version of the document that you want to update. Currently, Systems Manager supports updating only the latest version of the document. You can specify the version number of the latest version or use the <code>$LATEST</code> variable.</p> <note> 
-    /// <p>If you change a document version for a State Manager association, Systems Manager immediately runs the association unless you previously specifed the <code>apply-only-at-cron-interval</code> parameter.</p> 
+    /// <p>The version of the document that you want to update. Currently, Systems Manager supports updating only the latest version of the document. You can specify the version number of the latest version or use the <code>$LATEST</code> variable.</p> <note>
+    /// <p>If you change a document version for a State Manager association, Systems Manager immediately runs the association unless you previously specifed the <code>apply-only-at-cron-interval</code> parameter.</p>
     /// </note>
     pub fn document_version(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.document_version(input.into());
         self
     }
-    /// <p>The version of the document that you want to update. Currently, Systems Manager supports updating only the latest version of the document. You can specify the version number of the latest version or use the <code>$LATEST</code> variable.</p> <note> 
-    /// <p>If you change a document version for a State Manager association, Systems Manager immediately runs the association unless you previously specifed the <code>apply-only-at-cron-interval</code> parameter.</p> 
+    /// <p>The version of the document that you want to update. Currently, Systems Manager supports updating only the latest version of the document. You can specify the version number of the latest version or use the <code>$LATEST</code> variable.</p> <note>
+    /// <p>If you change a document version for a State Manager association, Systems Manager immediately runs the association unless you previously specifed the <code>apply-only-at-cron-interval</code> parameter.</p>
     /// </note>
     pub fn set_document_version(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.inner = self.inner.set_document_version(input);
@@ -121,7 +142,10 @@ impl UpdateDocumentFluentBuilder  {
         self
     }
     /// <p>Specify the document format for the new document version. Systems Manager supports JSON and YAML documents. JSON is the default format.</p>
-    pub fn set_document_format(mut self, input: std::option::Option<crate::types::DocumentFormat>) -> Self {
+    pub fn set_document_format(
+        mut self,
+        input: std::option::Option<crate::types::DocumentFormat>,
+    ) -> Self {
         self.inner = self.inner.set_document_format(input);
         self
     }
@@ -136,4 +160,3 @@ impl UpdateDocumentFluentBuilder  {
         self
     }
 }
-

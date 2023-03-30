@@ -4,49 +4,71 @@ pub use crate::operation::remove_layer_version_permission::_remove_layer_version
 pub use crate::operation::remove_layer_version_permission::_remove_layer_version_permission_input::RemoveLayerVersionPermissionInputBuilder;
 
 /// Fluent builder constructing a request to `RemoveLayerVersionPermission`.
-/// 
+///
 /// <p>Removes a statement from the permissions policy for a version of an <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html">Lambda layer</a>. For more information, see <code>AddLayerVersionPermission</code>.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct RemoveLayerVersionPermissionFluentBuilder {
                 handle: std::sync::Arc<crate::client::Handle>,
                 inner: crate::operation::remove_layer_version_permission::builders::RemoveLayerVersionPermissionInputBuilder
             }
-impl RemoveLayerVersionPermissionFluentBuilder  {
+impl RemoveLayerVersionPermissionFluentBuilder {
     /// Creates a new `RemoveLayerVersionPermission`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
-                    /// sent. The operation's inner [http::Request] can be modified as well.
-                    pub async fn customize(self) -> std::result::Result<
-                        crate::client::customize::CustomizableOperation<crate::operation::remove_layer_version_permission::RemoveLayerVersionPermission, aws_http::retry::AwsResponseRetryClassifier,>,
-                        aws_smithy_http::result::SdkError<crate::operation::remove_layer_version_permission::RemoveLayerVersionPermissionError>
-                    >  {
-                        let handle = self.handle.clone();
-                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-                    }
-    
-                    /// Sends the request and returns the response.
-                    ///
-                    /// If an error occurs, an `SdkError` will be returned with additional details that
-                    /// can be matched against.
-                    ///
-                    /// By default, any retryable failures will be retried twice. Retry behavior
-                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                    /// set when configuring the client.
-                    pub async fn send(self) -> std::result::Result<crate::operation::remove_layer_version_permission::RemoveLayerVersionPermissionOutput, aws_smithy_http::result::SdkError<crate::operation::remove_layer_version_permission::RemoveLayerVersionPermissionError>>
-                     {
-                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&self.handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        self.handle.client.call(op).await
-                    }
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle,
+            inner: Default::default(),
+        }
+    }
+
+    /// Consume this builder, creating a customizable operation that can be modified before being
+    /// sent. The operation's inner [http::Request] can be modified as well.
+    pub async fn customize(
+        self,
+    ) -> std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::remove_layer_version_permission::RemoveLayerVersionPermission,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::result::SdkError<
+            crate::operation::remove_layer_version_permission::RemoveLayerVersionPermissionError,
+        >,
+    > {
+        let handle = self.handle.clone();
+        let operation = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+    }
+
+    /// Sends the request and returns the response.
+    ///
+    /// If an error occurs, an `SdkError` will be returned with additional details that
+    /// can be matched against.
+    ///
+    /// By default, any retryable failures will be retried twice. Retry behavior
+    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+    /// set when configuring the client.
+    pub async fn send(
+        self,
+    ) -> std::result::Result<
+        crate::operation::remove_layer_version_permission::RemoveLayerVersionPermissionOutput,
+        aws_smithy_http::result::SdkError<
+            crate::operation::remove_layer_version_permission::RemoveLayerVersionPermissionError,
+        >,
+    > {
+        let op = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&self.handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        self.handle.client.call(op).await
+    }
     /// <p>The name or Amazon Resource Name (ARN) of the layer.</p>
     pub fn layer_name(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.layer_name(input.into());
@@ -88,4 +110,3 @@ impl RemoveLayerVersionPermissionFluentBuilder  {
         self
     }
 }
-

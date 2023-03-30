@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateGameConfigurationOutput  {
+pub struct UpdateGameConfigurationOutput {
     /// <p>Details about the game configuration.</p>
     #[doc(hidden)]
     pub game_configuration: std::option::Option<crate::types::GameConfigurationDetails>,
@@ -10,18 +10,22 @@ pub struct UpdateGameConfigurationOutput  {
 }
 impl UpdateGameConfigurationOutput {
     /// <p>Details about the game configuration.</p>
-    pub fn game_configuration(&self) -> std::option::Option<& crate::types::GameConfigurationDetails> {
+    pub fn game_configuration(
+        &self,
+    ) -> std::option::Option<&crate::types::GameConfigurationDetails> {
         self.game_configuration.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for UpdateGameConfigurationOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl UpdateGameConfigurationOutput {
     /// Creates a new builder-style object to manufacture [`UpdateGameConfigurationOutput`](crate::operation::update_game_configuration::UpdateGameConfigurationOutput).
-    pub fn builder() -> crate::operation::update_game_configuration::builders::UpdateGameConfigurationOutputBuilder {
+    pub fn builder(
+    ) -> crate::operation::update_game_configuration::builders::UpdateGameConfigurationOutputBuilder
+    {
         crate::operation::update_game_configuration::builders::UpdateGameConfigurationOutputBuilder::default()
     }
 }
@@ -40,25 +44,29 @@ impl UpdateGameConfigurationOutputBuilder {
         self
     }
     /// <p>Details about the game configuration.</p>
-    pub fn set_game_configuration(mut self, input: std::option::Option<crate::types::GameConfigurationDetails>) -> Self {
-        self.game_configuration = input; self
+    pub fn set_game_configuration(
+        mut self,
+        input: std::option::Option<crate::types::GameConfigurationDetails>,
+    ) -> Self {
+        self.game_configuration = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`UpdateGameConfigurationOutput`](crate::operation::update_game_configuration::UpdateGameConfigurationOutput).
-    pub fn build(self) -> crate::operation::update_game_configuration::UpdateGameConfigurationOutput {
+    pub fn build(
+        self,
+    ) -> crate::operation::update_game_configuration::UpdateGameConfigurationOutput {
         crate::operation::update_game_configuration::UpdateGameConfigurationOutput {
-            game_configuration: self.game_configuration
-            ,
+            game_configuration: self.game_configuration,
             _request_id: self._request_id,
         }
     }
 }
-

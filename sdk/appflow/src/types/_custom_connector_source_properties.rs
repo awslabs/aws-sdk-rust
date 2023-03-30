@@ -3,21 +3,25 @@
 /// <p>The properties that are applied when the custom connector is being used as a source.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CustomConnectorSourceProperties  {
+pub struct CustomConnectorSourceProperties {
     /// <p>The entity specified in the custom connector as a source in the flow.</p>
     #[doc(hidden)]
     pub entity_name: std::option::Option<std::string::String>,
     /// <p>Custom properties that are required to use the custom connector as a source.</p>
     #[doc(hidden)]
-    pub custom_properties: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub custom_properties:
+        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl CustomConnectorSourceProperties {
     /// <p>The entity specified in the custom connector as a source in the flow.</p>
-    pub fn entity_name(&self) -> std::option::Option<& str> {
+    pub fn entity_name(&self) -> std::option::Option<&str> {
         self.entity_name.as_deref()
     }
     /// <p>Custom properties that are required to use the custom connector as a source.</p>
-    pub fn custom_properties(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
+    pub fn custom_properties(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
         self.custom_properties.as_ref()
     }
 }
@@ -33,7 +37,8 @@ impl CustomConnectorSourceProperties {
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct CustomConnectorSourcePropertiesBuilder {
     pub(crate) entity_name: std::option::Option<std::string::String>,
-    pub(crate) custom_properties: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub(crate) custom_properties:
+        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl CustomConnectorSourcePropertiesBuilder {
     /// <p>The entity specified in the custom connector as a source in the flow.</p>
@@ -43,31 +48,39 @@ impl CustomConnectorSourcePropertiesBuilder {
     }
     /// <p>The entity specified in the custom connector as a source in the flow.</p>
     pub fn set_entity_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.entity_name = input; self
+        self.entity_name = input;
+        self
     }
     /// Adds a key-value pair to `custom_properties`.
     ///
     /// To override the contents of this collection use [`set_custom_properties`](Self::set_custom_properties).
     ///
     /// <p>Custom properties that are required to use the custom connector as a source.</p>
-    pub fn custom_properties(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
+    pub fn custom_properties(
+        mut self,
+        k: impl Into<std::string::String>,
+        v: impl Into<std::string::String>,
+    ) -> Self {
         let mut hash_map = self.custom_properties.unwrap_or_default();
-                        hash_map.insert(k.into(), v.into());
-                        self.custom_properties = Some(hash_map);
-                        self
+        hash_map.insert(k.into(), v.into());
+        self.custom_properties = Some(hash_map);
+        self
     }
     /// <p>Custom properties that are required to use the custom connector as a source.</p>
-    pub fn set_custom_properties(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
-        self.custom_properties = input; self
+    pub fn set_custom_properties(
+        mut self,
+        input: std::option::Option<
+            std::collections::HashMap<std::string::String, std::string::String>,
+        >,
+    ) -> Self {
+        self.custom_properties = input;
+        self
     }
     /// Consumes the builder and constructs a [`CustomConnectorSourceProperties`](crate::types::CustomConnectorSourceProperties).
     pub fn build(self) -> crate::types::CustomConnectorSourceProperties {
         crate::types::CustomConnectorSourceProperties {
-            entity_name: self.entity_name
-            ,
-            custom_properties: self.custom_properties
-            ,
+            entity_name: self.entity_name,
+            custom_properties: self.custom_properties,
         }
     }
 }
-

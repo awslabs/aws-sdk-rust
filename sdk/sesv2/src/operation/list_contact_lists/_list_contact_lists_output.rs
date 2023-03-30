@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListContactListsOutput  {
+pub struct ListContactListsOutput {
     /// <p>The available contact lists.</p>
     #[doc(hidden)]
     pub contact_lists: std::option::Option<std::vec::Vec<crate::types::ContactList>>,
@@ -13,22 +13,23 @@ pub struct ListContactListsOutput  {
 }
 impl ListContactListsOutput {
     /// <p>The available contact lists.</p>
-    pub fn contact_lists(&self) -> std::option::Option<& [crate::types::ContactList]> {
+    pub fn contact_lists(&self) -> std::option::Option<&[crate::types::ContactList]> {
         self.contact_lists.as_deref()
     }
     /// <p>A string token indicating that there might be additional contact lists available to be listed. Copy this token to a subsequent call to <code>ListContactLists</code> with the same parameters to retrieve the next page of contact lists.</p>
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for ListContactListsOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl ListContactListsOutput {
     /// Creates a new builder-style object to manufacture [`ListContactListsOutput`](crate::operation::list_contact_lists::ListContactListsOutput).
-    pub fn builder() -> crate::operation::list_contact_lists::builders::ListContactListsOutputBuilder {
+    pub fn builder() -> crate::operation::list_contact_lists::builders::ListContactListsOutputBuilder
+    {
         crate::operation::list_contact_lists::builders::ListContactListsOutputBuilder::default()
     }
 }
@@ -49,13 +50,17 @@ impl ListContactListsOutputBuilder {
     /// <p>The available contact lists.</p>
     pub fn contact_lists(mut self, input: crate::types::ContactList) -> Self {
         let mut v = self.contact_lists.unwrap_or_default();
-                        v.push(input);
-                        self.contact_lists = Some(v);
-                        self
+        v.push(input);
+        self.contact_lists = Some(v);
+        self
     }
     /// <p>The available contact lists.</p>
-    pub fn set_contact_lists(mut self, input: std::option::Option<std::vec::Vec<crate::types::ContactList>>) -> Self {
-        self.contact_lists = input; self
+    pub fn set_contact_lists(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::ContactList>>,
+    ) -> Self {
+        self.contact_lists = input;
+        self
     }
     /// <p>A string token indicating that there might be additional contact lists available to be listed. Copy this token to a subsequent call to <code>ListContactLists</code> with the same parameters to retrieve the next page of contact lists.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -64,26 +69,24 @@ impl ListContactListsOutputBuilder {
     }
     /// <p>A string token indicating that there might be additional contact lists available to be listed. Copy this token to a subsequent call to <code>ListContactLists</code> with the same parameters to retrieve the next page of contact lists.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input; self
+        self.next_token = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`ListContactListsOutput`](crate::operation::list_contact_lists::ListContactListsOutput).
     pub fn build(self) -> crate::operation::list_contact_lists::ListContactListsOutput {
         crate::operation::list_contact_lists::ListContactListsOutput {
-            contact_lists: self.contact_lists
-            ,
-            next_token: self.next_token
-            ,
+            contact_lists: self.contact_lists,
+            next_token: self.next_token,
             _request_id: self._request_id,
         }
     }
 }
-

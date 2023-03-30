@@ -3,7 +3,7 @@
 /// <p>Contains information on a recommendation filter, including its ARN, status, and filter expression.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct Filter  {
+pub struct Filter {
     /// <p>The name of the filter.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -31,39 +31,39 @@ pub struct Filter  {
 }
 impl Filter {
     /// <p>The name of the filter.</p>
-    pub fn name(&self) -> std::option::Option<& str> {
+    pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>The ARN of the filter.</p>
-    pub fn filter_arn(&self) -> std::option::Option<& str> {
+    pub fn filter_arn(&self) -> std::option::Option<&str> {
         self.filter_arn.as_deref()
     }
     /// <p>The time at which the filter was created.</p>
-    pub fn creation_date_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
+    pub fn creation_date_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.creation_date_time.as_ref()
     }
     /// <p>The time at which the filter was last updated.</p>
-    pub fn last_updated_date_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
+    pub fn last_updated_date_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_updated_date_time.as_ref()
     }
     /// <p>The ARN of the dataset group to which the filter belongs.</p>
-    pub fn dataset_group_arn(&self) -> std::option::Option<& str> {
+    pub fn dataset_group_arn(&self) -> std::option::Option<&str> {
         self.dataset_group_arn.as_deref()
     }
     /// <p>If the filter failed, the reason for its failure.</p>
-    pub fn failure_reason(&self) -> std::option::Option<& str> {
+    pub fn failure_reason(&self) -> std::option::Option<&str> {
         self.failure_reason.as_deref()
     }
     /// <p>Specifies the type of item interactions to filter out of recommendation results. The filter expression must follow specific format rules. For information about filter expression structure and syntax, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/filter-expressions.html">Filter expressions</a>.</p>
-    pub fn filter_expression(&self) -> std::option::Option<& str> {
+    pub fn filter_expression(&self) -> std::option::Option<&str> {
         self.filter_expression.as_deref()
     }
     /// <p>The status of the filter.</p>
-    pub fn status(&self) -> std::option::Option<& str> {
+    pub fn status(&self) -> std::option::Option<&str> {
         self.status.as_deref()
     }
 }
-impl  std::fmt::Debug for Filter  {
+impl std::fmt::Debug for Filter {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("Filter");
         formatter.field("name", &self.name);
@@ -105,7 +105,8 @@ impl FilterBuilder {
     }
     /// <p>The name of the filter.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input; self
+        self.name = input;
+        self
     }
     /// <p>The ARN of the filter.</p>
     pub fn filter_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -114,7 +115,8 @@ impl FilterBuilder {
     }
     /// <p>The ARN of the filter.</p>
     pub fn set_filter_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.filter_arn = input; self
+        self.filter_arn = input;
+        self
     }
     /// <p>The time at which the filter was created.</p>
     pub fn creation_date_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -122,8 +124,12 @@ impl FilterBuilder {
         self
     }
     /// <p>The time at which the filter was created.</p>
-    pub fn set_creation_date_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.creation_date_time = input; self
+    pub fn set_creation_date_time(
+        mut self,
+        input: std::option::Option<aws_smithy_types::DateTime>,
+    ) -> Self {
+        self.creation_date_time = input;
+        self
     }
     /// <p>The time at which the filter was last updated.</p>
     pub fn last_updated_date_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -131,8 +137,12 @@ impl FilterBuilder {
         self
     }
     /// <p>The time at which the filter was last updated.</p>
-    pub fn set_last_updated_date_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.last_updated_date_time = input; self
+    pub fn set_last_updated_date_time(
+        mut self,
+        input: std::option::Option<aws_smithy_types::DateTime>,
+    ) -> Self {
+        self.last_updated_date_time = input;
+        self
     }
     /// <p>The ARN of the dataset group to which the filter belongs.</p>
     pub fn dataset_group_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -140,8 +150,12 @@ impl FilterBuilder {
         self
     }
     /// <p>The ARN of the dataset group to which the filter belongs.</p>
-    pub fn set_dataset_group_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.dataset_group_arn = input; self
+    pub fn set_dataset_group_arn(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.dataset_group_arn = input;
+        self
     }
     /// <p>If the filter failed, the reason for its failure.</p>
     pub fn failure_reason(mut self, input: impl Into<std::string::String>) -> Self {
@@ -150,7 +164,8 @@ impl FilterBuilder {
     }
     /// <p>If the filter failed, the reason for its failure.</p>
     pub fn set_failure_reason(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.failure_reason = input; self
+        self.failure_reason = input;
+        self
     }
     /// <p>Specifies the type of item interactions to filter out of recommendation results. The filter expression must follow specific format rules. For information about filter expression structure and syntax, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/filter-expressions.html">Filter expressions</a>.</p>
     pub fn filter_expression(mut self, input: impl Into<std::string::String>) -> Self {
@@ -158,8 +173,12 @@ impl FilterBuilder {
         self
     }
     /// <p>Specifies the type of item interactions to filter out of recommendation results. The filter expression must follow specific format rules. For information about filter expression structure and syntax, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/filter-expressions.html">Filter expressions</a>.</p>
-    pub fn set_filter_expression(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.filter_expression = input; self
+    pub fn set_filter_expression(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.filter_expression = input;
+        self
     }
     /// <p>The status of the filter.</p>
     pub fn status(mut self, input: impl Into<std::string::String>) -> Self {
@@ -168,27 +187,20 @@ impl FilterBuilder {
     }
     /// <p>The status of the filter.</p>
     pub fn set_status(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.status = input; self
+        self.status = input;
+        self
     }
     /// Consumes the builder and constructs a [`Filter`](crate::types::Filter).
     pub fn build(self) -> crate::types::Filter {
         crate::types::Filter {
-            name: self.name
-            ,
-            filter_arn: self.filter_arn
-            ,
-            creation_date_time: self.creation_date_time
-            ,
-            last_updated_date_time: self.last_updated_date_time
-            ,
-            dataset_group_arn: self.dataset_group_arn
-            ,
-            failure_reason: self.failure_reason
-            ,
-            filter_expression: self.filter_expression
-            ,
-            status: self.status
-            ,
+            name: self.name,
+            filter_arn: self.filter_arn,
+            creation_date_time: self.creation_date_time,
+            last_updated_date_time: self.last_updated_date_time,
+            dataset_group_arn: self.dataset_group_arn,
+            failure_reason: self.failure_reason,
+            filter_expression: self.filter_expression,
+            status: self.status,
         }
     }
 }
@@ -206,4 +218,3 @@ impl std::fmt::Debug for FilterBuilder {
         formatter.finish()
     }
 }
-

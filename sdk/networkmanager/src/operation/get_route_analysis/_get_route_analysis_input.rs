@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetRouteAnalysisInput  {
+pub struct GetRouteAnalysisInput {
     /// <p>The ID of the global network.</p>
     #[doc(hidden)]
     pub global_network_id: std::option::Option<std::string::String>,
@@ -12,17 +12,18 @@ pub struct GetRouteAnalysisInput  {
 }
 impl GetRouteAnalysisInput {
     /// <p>The ID of the global network.</p>
-    pub fn global_network_id(&self) -> std::option::Option<& str> {
+    pub fn global_network_id(&self) -> std::option::Option<&str> {
         self.global_network_id.as_deref()
     }
     /// <p>The ID of the route analysis.</p>
-    pub fn route_analysis_id(&self) -> std::option::Option<& str> {
+    pub fn route_analysis_id(&self) -> std::option::Option<&str> {
         self.route_analysis_id.as_deref()
     }
 }
 impl GetRouteAnalysisInput {
     /// Creates a new builder-style object to manufacture [`GetRouteAnalysisInput`](crate::operation::get_route_analysis::GetRouteAnalysisInput).
-    pub fn builder() -> crate::operation::get_route_analysis::builders::GetRouteAnalysisInputBuilder {
+    pub fn builder() -> crate::operation::get_route_analysis::builders::GetRouteAnalysisInputBuilder
+    {
         crate::operation::get_route_analysis::builders::GetRouteAnalysisInputBuilder::default()
     }
 }
@@ -41,8 +42,12 @@ impl GetRouteAnalysisInputBuilder {
         self
     }
     /// <p>The ID of the global network.</p>
-    pub fn set_global_network_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.global_network_id = input; self
+    pub fn set_global_network_id(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.global_network_id = input;
+        self
     }
     /// <p>The ID of the route analysis.</p>
     pub fn route_analysis_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -50,19 +55,25 @@ impl GetRouteAnalysisInputBuilder {
         self
     }
     /// <p>The ID of the route analysis.</p>
-    pub fn set_route_analysis_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.route_analysis_id = input; self
+    pub fn set_route_analysis_id(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.route_analysis_id = input;
+        self
     }
     /// Consumes the builder and constructs a [`GetRouteAnalysisInput`](crate::operation::get_route_analysis::GetRouteAnalysisInput).
-    pub fn build(self) -> Result<crate::operation::get_route_analysis::GetRouteAnalysisInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::get_route_analysis::GetRouteAnalysisInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::get_route_analysis::GetRouteAnalysisInput {
-                global_network_id: self.global_network_id
-                ,
-                route_analysis_id: self.route_analysis_id
-                ,
-            }
+                global_network_id: self.global_network_id,
+                route_analysis_id: self.route_analysis_id,
+            },
         )
     }
 }
-

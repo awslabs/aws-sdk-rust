@@ -3,14 +3,14 @@
 /// <p>The content configuration object's data channel.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DataChannelConcatenationConfiguration  {
+pub struct DataChannelConcatenationConfiguration {
     /// <p>Enables or disables the configuration object.</p>
     #[doc(hidden)]
     pub state: std::option::Option<crate::types::ArtifactsConcatenationState>,
 }
 impl DataChannelConcatenationConfiguration {
     /// <p>Enables or disables the configuration object.</p>
-    pub fn state(&self) -> std::option::Option<& crate::types::ArtifactsConcatenationState> {
+    pub fn state(&self) -> std::option::Option<&crate::types::ArtifactsConcatenationState> {
         self.state.as_ref()
     }
 }
@@ -34,15 +34,15 @@ impl DataChannelConcatenationConfigurationBuilder {
         self
     }
     /// <p>Enables or disables the configuration object.</p>
-    pub fn set_state(mut self, input: std::option::Option<crate::types::ArtifactsConcatenationState>) -> Self {
-        self.state = input; self
+    pub fn set_state(
+        mut self,
+        input: std::option::Option<crate::types::ArtifactsConcatenationState>,
+    ) -> Self {
+        self.state = input;
+        self
     }
     /// Consumes the builder and constructs a [`DataChannelConcatenationConfiguration`](crate::types::DataChannelConcatenationConfiguration).
     pub fn build(self) -> crate::types::DataChannelConcatenationConfiguration {
-        crate::types::DataChannelConcatenationConfiguration {
-            state: self.state
-            ,
-        }
+        crate::types::DataChannelConcatenationConfiguration { state: self.state }
     }
 }
-

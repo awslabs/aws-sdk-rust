@@ -3,14 +3,14 @@
 /// <p>LoRaWAN object for list functions.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct LoRaWanListDevice  {
+pub struct LoRaWanListDevice {
     /// <p>The DevEUI value.</p>
     #[doc(hidden)]
     pub dev_eui: std::option::Option<std::string::String>,
 }
 impl LoRaWanListDevice {
     /// <p>The DevEUI value.</p>
-    pub fn dev_eui(&self) -> std::option::Option<& str> {
+    pub fn dev_eui(&self) -> std::option::Option<&str> {
         self.dev_eui.as_deref()
     }
 }
@@ -35,14 +35,13 @@ impl LoRaWanListDeviceBuilder {
     }
     /// <p>The DevEUI value.</p>
     pub fn set_dev_eui(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.dev_eui = input; self
+        self.dev_eui = input;
+        self
     }
     /// Consumes the builder and constructs a [`LoRaWanListDevice`](crate::types::LoRaWanListDevice).
     pub fn build(self) -> crate::types::LoRaWanListDevice {
         crate::types::LoRaWanListDevice {
-            dev_eui: self.dev_eui
-            ,
+            dev_eui: self.dev_eui,
         }
     }
 }
-

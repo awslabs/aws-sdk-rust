@@ -3,7 +3,7 @@
 /// <p>An Firewall Manager protocols list.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ProtocolsListData  {
+pub struct ProtocolsListData {
     /// <p>The ID of the Firewall Manager protocols list.</p>
     #[doc(hidden)]
     pub list_id: std::option::Option<std::string::String>,
@@ -24,35 +24,41 @@ pub struct ProtocolsListData  {
     pub protocols_list: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>A map of previous version numbers to their corresponding protocol arrays.</p>
     #[doc(hidden)]
-    pub previous_protocols_list: std::option::Option<std::collections::HashMap<std::string::String, std::vec::Vec<std::string::String>>>,
+    pub previous_protocols_list: std::option::Option<
+        std::collections::HashMap<std::string::String, std::vec::Vec<std::string::String>>,
+    >,
 }
 impl ProtocolsListData {
     /// <p>The ID of the Firewall Manager protocols list.</p>
-    pub fn list_id(&self) -> std::option::Option<& str> {
+    pub fn list_id(&self) -> std::option::Option<&str> {
         self.list_id.as_deref()
     }
     /// <p>The name of the Firewall Manager protocols list.</p>
-    pub fn list_name(&self) -> std::option::Option<& str> {
+    pub fn list_name(&self) -> std::option::Option<&str> {
         self.list_name.as_deref()
     }
     /// <p>A unique identifier for each update to the list. When you update the list, the update token must match the token of the current version of the application list. You can retrieve the update token by getting the list. </p>
-    pub fn list_update_token(&self) -> std::option::Option<& str> {
+    pub fn list_update_token(&self) -> std::option::Option<&str> {
         self.list_update_token.as_deref()
     }
     /// <p>The time that the Firewall Manager protocols list was created.</p>
-    pub fn create_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
+    pub fn create_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.create_time.as_ref()
     }
     /// <p>The time that the Firewall Manager protocols list was last updated.</p>
-    pub fn last_update_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
+    pub fn last_update_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_update_time.as_ref()
     }
     /// <p>An array of protocols in the Firewall Manager protocols list.</p>
-    pub fn protocols_list(&self) -> std::option::Option<& [std::string::String]> {
+    pub fn protocols_list(&self) -> std::option::Option<&[std::string::String]> {
         self.protocols_list.as_deref()
     }
     /// <p>A map of previous version numbers to their corresponding protocol arrays.</p>
-    pub fn previous_protocols_list(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::vec::Vec<std::string::String>>> {
+    pub fn previous_protocols_list(
+        &self,
+    ) -> std::option::Option<
+        &std::collections::HashMap<std::string::String, std::vec::Vec<std::string::String>>,
+    > {
         self.previous_protocols_list.as_ref()
     }
 }
@@ -73,7 +79,9 @@ pub struct ProtocolsListDataBuilder {
     pub(crate) create_time: std::option::Option<aws_smithy_types::DateTime>,
     pub(crate) last_update_time: std::option::Option<aws_smithy_types::DateTime>,
     pub(crate) protocols_list: std::option::Option<std::vec::Vec<std::string::String>>,
-    pub(crate) previous_protocols_list: std::option::Option<std::collections::HashMap<std::string::String, std::vec::Vec<std::string::String>>>,
+    pub(crate) previous_protocols_list: std::option::Option<
+        std::collections::HashMap<std::string::String, std::vec::Vec<std::string::String>>,
+    >,
 }
 impl ProtocolsListDataBuilder {
     /// <p>The ID of the Firewall Manager protocols list.</p>
@@ -83,7 +91,8 @@ impl ProtocolsListDataBuilder {
     }
     /// <p>The ID of the Firewall Manager protocols list.</p>
     pub fn set_list_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.list_id = input; self
+        self.list_id = input;
+        self
     }
     /// <p>The name of the Firewall Manager protocols list.</p>
     pub fn list_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -92,7 +101,8 @@ impl ProtocolsListDataBuilder {
     }
     /// <p>The name of the Firewall Manager protocols list.</p>
     pub fn set_list_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.list_name = input; self
+        self.list_name = input;
+        self
     }
     /// <p>A unique identifier for each update to the list. When you update the list, the update token must match the token of the current version of the application list. You can retrieve the update token by getting the list. </p>
     pub fn list_update_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -100,8 +110,12 @@ impl ProtocolsListDataBuilder {
         self
     }
     /// <p>A unique identifier for each update to the list. When you update the list, the update token must match the token of the current version of the application list. You can retrieve the update token by getting the list. </p>
-    pub fn set_list_update_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.list_update_token = input; self
+    pub fn set_list_update_token(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.list_update_token = input;
+        self
     }
     /// <p>The time that the Firewall Manager protocols list was created.</p>
     pub fn create_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -109,8 +123,12 @@ impl ProtocolsListDataBuilder {
         self
     }
     /// <p>The time that the Firewall Manager protocols list was created.</p>
-    pub fn set_create_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.create_time = input; self
+    pub fn set_create_time(
+        mut self,
+        input: std::option::Option<aws_smithy_types::DateTime>,
+    ) -> Self {
+        self.create_time = input;
+        self
     }
     /// <p>The time that the Firewall Manager protocols list was last updated.</p>
     pub fn last_update_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -118,8 +136,12 @@ impl ProtocolsListDataBuilder {
         self
     }
     /// <p>The time that the Firewall Manager protocols list was last updated.</p>
-    pub fn set_last_update_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.last_update_time = input; self
+    pub fn set_last_update_time(
+        mut self,
+        input: std::option::Option<aws_smithy_types::DateTime>,
+    ) -> Self {
+        self.last_update_time = input;
+        self
     }
     /// Appends an item to `protocols_list`.
     ///
@@ -128,47 +150,53 @@ impl ProtocolsListDataBuilder {
     /// <p>An array of protocols in the Firewall Manager protocols list.</p>
     pub fn protocols_list(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.protocols_list.unwrap_or_default();
-                        v.push(input.into());
-                        self.protocols_list = Some(v);
-                        self
+        v.push(input.into());
+        self.protocols_list = Some(v);
+        self
     }
     /// <p>An array of protocols in the Firewall Manager protocols list.</p>
-    pub fn set_protocols_list(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-        self.protocols_list = input; self
+    pub fn set_protocols_list(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
+        self.protocols_list = input;
+        self
     }
     /// Adds a key-value pair to `previous_protocols_list`.
     ///
     /// To override the contents of this collection use [`set_previous_protocols_list`](Self::set_previous_protocols_list).
     ///
     /// <p>A map of previous version numbers to their corresponding protocol arrays.</p>
-    pub fn previous_protocols_list(mut self, k: impl Into<std::string::String>, v: std::vec::Vec<std::string::String>) -> Self {
+    pub fn previous_protocols_list(
+        mut self,
+        k: impl Into<std::string::String>,
+        v: std::vec::Vec<std::string::String>,
+    ) -> Self {
         let mut hash_map = self.previous_protocols_list.unwrap_or_default();
-                        hash_map.insert(k.into(), v);
-                        self.previous_protocols_list = Some(hash_map);
-                        self
+        hash_map.insert(k.into(), v);
+        self.previous_protocols_list = Some(hash_map);
+        self
     }
     /// <p>A map of previous version numbers to their corresponding protocol arrays.</p>
-    pub fn set_previous_protocols_list(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::vec::Vec<std::string::String>>>) -> Self {
-        self.previous_protocols_list = input; self
+    pub fn set_previous_protocols_list(
+        mut self,
+        input: std::option::Option<
+            std::collections::HashMap<std::string::String, std::vec::Vec<std::string::String>>,
+        >,
+    ) -> Self {
+        self.previous_protocols_list = input;
+        self
     }
     /// Consumes the builder and constructs a [`ProtocolsListData`](crate::types::ProtocolsListData).
     pub fn build(self) -> crate::types::ProtocolsListData {
         crate::types::ProtocolsListData {
-            list_id: self.list_id
-            ,
-            list_name: self.list_name
-            ,
-            list_update_token: self.list_update_token
-            ,
-            create_time: self.create_time
-            ,
-            last_update_time: self.last_update_time
-            ,
-            protocols_list: self.protocols_list
-            ,
-            previous_protocols_list: self.previous_protocols_list
-            ,
+            list_id: self.list_id,
+            list_name: self.list_name,
+            list_update_token: self.list_update_token,
+            create_time: self.create_time,
+            last_update_time: self.last_update_time,
+            protocols_list: self.protocols_list,
+            previous_protocols_list: self.previous_protocols_list,
         }
     }
 }
-

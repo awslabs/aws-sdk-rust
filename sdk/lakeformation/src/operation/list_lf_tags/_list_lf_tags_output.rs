@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListLfTagsOutput  {
+pub struct ListLfTagsOutput {
     /// <p>A list of LF-tags that the requested has permission to view.</p>
     #[doc(hidden)]
     pub lf_tags: std::option::Option<std::vec::Vec<crate::types::LfTagPair>>,
@@ -13,19 +13,19 @@ pub struct ListLfTagsOutput  {
 }
 impl ListLfTagsOutput {
     /// <p>A list of LF-tags that the requested has permission to view.</p>
-    pub fn lf_tags(&self) -> std::option::Option<& [crate::types::LfTagPair]> {
+    pub fn lf_tags(&self) -> std::option::Option<&[crate::types::LfTagPair]> {
         self.lf_tags.as_deref()
     }
     /// <p>A continuation token, present if the current list segment is not the last.</p>
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for ListLfTagsOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl ListLfTagsOutput {
     /// Creates a new builder-style object to manufacture [`ListLfTagsOutput`](crate::operation::list_lf_tags::ListLfTagsOutput).
     pub fn builder() -> crate::operation::list_lf_tags::builders::ListLfTagsOutputBuilder {
@@ -49,13 +49,17 @@ impl ListLfTagsOutputBuilder {
     /// <p>A list of LF-tags that the requested has permission to view.</p>
     pub fn lf_tags(mut self, input: crate::types::LfTagPair) -> Self {
         let mut v = self.lf_tags.unwrap_or_default();
-                        v.push(input);
-                        self.lf_tags = Some(v);
-                        self
+        v.push(input);
+        self.lf_tags = Some(v);
+        self
     }
     /// <p>A list of LF-tags that the requested has permission to view.</p>
-    pub fn set_lf_tags(mut self, input: std::option::Option<std::vec::Vec<crate::types::LfTagPair>>) -> Self {
-        self.lf_tags = input; self
+    pub fn set_lf_tags(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::LfTagPair>>,
+    ) -> Self {
+        self.lf_tags = input;
+        self
     }
     /// <p>A continuation token, present if the current list segment is not the last.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -64,26 +68,24 @@ impl ListLfTagsOutputBuilder {
     }
     /// <p>A continuation token, present if the current list segment is not the last.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input; self
+        self.next_token = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`ListLfTagsOutput`](crate::operation::list_lf_tags::ListLfTagsOutput).
     pub fn build(self) -> crate::operation::list_lf_tags::ListLfTagsOutput {
         crate::operation::list_lf_tags::ListLfTagsOutput {
-            lf_tags: self.lf_tags
-            ,
-            next_token: self.next_token
-            ,
+            lf_tags: self.lf_tags,
+            next_token: self.next_token,
             _request_id: self._request_id,
         }
     }
 }
-

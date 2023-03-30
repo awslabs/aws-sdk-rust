@@ -3,7 +3,7 @@
 /// <p>Represents the input of a <code>ListStreams</code> operation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListStreamsInput  {
+pub struct ListStreamsInput {
     /// <p>If this parameter is provided, then only the streams associated with this table name are returned.</p>
     #[doc(hidden)]
     pub table_name: std::option::Option<std::string::String>,
@@ -16,7 +16,7 @@ pub struct ListStreamsInput  {
 }
 impl ListStreamsInput {
     /// <p>If this parameter is provided, then only the streams associated with this table name are returned.</p>
-    pub fn table_name(&self) -> std::option::Option<& str> {
+    pub fn table_name(&self) -> std::option::Option<&str> {
         self.table_name.as_deref()
     }
     /// <p>The maximum number of streams to return. The upper limit is 100.</p>
@@ -24,7 +24,7 @@ impl ListStreamsInput {
         self.limit
     }
     /// <p>The ARN (Amazon Resource Name) of the first item that this operation will evaluate. Use the value that was returned for <code>LastEvaluatedStreamArn</code> in the previous operation. </p>
-    pub fn exclusive_start_stream_arn(&self) -> std::option::Option<& str> {
+    pub fn exclusive_start_stream_arn(&self) -> std::option::Option<&str> {
         self.exclusive_start_stream_arn.as_deref()
     }
 }
@@ -51,7 +51,8 @@ impl ListStreamsInputBuilder {
     }
     /// <p>If this parameter is provided, then only the streams associated with this table name are returned.</p>
     pub fn set_table_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.table_name = input; self
+        self.table_name = input;
+        self
     }
     /// <p>The maximum number of streams to return. The upper limit is 100.</p>
     pub fn limit(mut self, input: i32) -> Self {
@@ -60,7 +61,8 @@ impl ListStreamsInputBuilder {
     }
     /// <p>The maximum number of streams to return. The upper limit is 100.</p>
     pub fn set_limit(mut self, input: std::option::Option<i32>) -> Self {
-        self.limit = input; self
+        self.limit = input;
+        self
     }
     /// <p>The ARN (Amazon Resource Name) of the first item that this operation will evaluate. Use the value that was returned for <code>LastEvaluatedStreamArn</code> in the previous operation. </p>
     pub fn exclusive_start_stream_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -68,21 +70,24 @@ impl ListStreamsInputBuilder {
         self
     }
     /// <p>The ARN (Amazon Resource Name) of the first item that this operation will evaluate. Use the value that was returned for <code>LastEvaluatedStreamArn</code> in the previous operation. </p>
-    pub fn set_exclusive_start_stream_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.exclusive_start_stream_arn = input; self
+    pub fn set_exclusive_start_stream_arn(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.exclusive_start_stream_arn = input;
+        self
     }
     /// Consumes the builder and constructs a [`ListStreamsInput`](crate::operation::list_streams::ListStreamsInput).
-    pub fn build(self) -> Result<crate::operation::list_streams::ListStreamsInput, aws_smithy_http::operation::error::BuildError> {
-        Ok(
-            crate::operation::list_streams::ListStreamsInput {
-                table_name: self.table_name
-                ,
-                limit: self.limit
-                ,
-                exclusive_start_stream_arn: self.exclusive_start_stream_arn
-                ,
-            }
-        )
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::list_streams::ListStreamsInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        Ok(crate::operation::list_streams::ListStreamsInput {
+            table_name: self.table_name,
+            limit: self.limit,
+            exclusive_start_stream_arn: self.exclusive_start_stream_arn,
+        })
     }
 }
-

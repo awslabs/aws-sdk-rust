@@ -3,7 +3,7 @@
 /// Request body for UpdateMonitoring.
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateMonitoringInput  {
+pub struct UpdateMonitoringInput {
     /// <p>The Amazon Resource Name (ARN) that uniquely identifies the cluster.</p>
     #[doc(hidden)]
     pub cluster_arn: std::option::Option<std::string::String>,
@@ -22,29 +22,30 @@ pub struct UpdateMonitoringInput  {
 }
 impl UpdateMonitoringInput {
     /// <p>The Amazon Resource Name (ARN) that uniquely identifies the cluster.</p>
-    pub fn cluster_arn(&self) -> std::option::Option<& str> {
+    pub fn cluster_arn(&self) -> std::option::Option<&str> {
         self.cluster_arn.as_deref()
     }
     /// <p>The version of the MSK cluster to update. Cluster versions aren't simple numbers. You can describe an MSK cluster to find its version. When this update operation is successful, it generates a new cluster version.</p>
-    pub fn current_version(&self) -> std::option::Option<& str> {
+    pub fn current_version(&self) -> std::option::Option<&str> {
         self.current_version.as_deref()
     }
     /// <p>Specifies which Apache Kafka metrics Amazon MSK gathers and sends to Amazon CloudWatch for this cluster.</p>
-    pub fn enhanced_monitoring(&self) -> std::option::Option<& crate::types::EnhancedMonitoring> {
+    pub fn enhanced_monitoring(&self) -> std::option::Option<&crate::types::EnhancedMonitoring> {
         self.enhanced_monitoring.as_ref()
     }
     /// <p>The settings for open monitoring.</p>
-    pub fn open_monitoring(&self) -> std::option::Option<& crate::types::OpenMonitoringInfo> {
+    pub fn open_monitoring(&self) -> std::option::Option<&crate::types::OpenMonitoringInfo> {
         self.open_monitoring.as_ref()
     }
     #[allow(missing_docs)] // documentation missing in model
-    pub fn logging_info(&self) -> std::option::Option<& crate::types::LoggingInfo> {
+    pub fn logging_info(&self) -> std::option::Option<&crate::types::LoggingInfo> {
         self.logging_info.as_ref()
     }
 }
 impl UpdateMonitoringInput {
     /// Creates a new builder-style object to manufacture [`UpdateMonitoringInput`](crate::operation::update_monitoring::UpdateMonitoringInput).
-    pub fn builder() -> crate::operation::update_monitoring::builders::UpdateMonitoringInputBuilder {
+    pub fn builder() -> crate::operation::update_monitoring::builders::UpdateMonitoringInputBuilder
+    {
         crate::operation::update_monitoring::builders::UpdateMonitoringInputBuilder::default()
     }
 }
@@ -67,7 +68,8 @@ impl UpdateMonitoringInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) that uniquely identifies the cluster.</p>
     pub fn set_cluster_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.cluster_arn = input; self
+        self.cluster_arn = input;
+        self
     }
     /// <p>The version of the MSK cluster to update. Cluster versions aren't simple numbers. You can describe an MSK cluster to find its version. When this update operation is successful, it generates a new cluster version.</p>
     pub fn current_version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -76,7 +78,8 @@ impl UpdateMonitoringInputBuilder {
     }
     /// <p>The version of the MSK cluster to update. Cluster versions aren't simple numbers. You can describe an MSK cluster to find its version. When this update operation is successful, it generates a new cluster version.</p>
     pub fn set_current_version(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.current_version = input; self
+        self.current_version = input;
+        self
     }
     /// <p>Specifies which Apache Kafka metrics Amazon MSK gathers and sends to Amazon CloudWatch for this cluster.</p>
     pub fn enhanced_monitoring(mut self, input: crate::types::EnhancedMonitoring) -> Self {
@@ -84,8 +87,12 @@ impl UpdateMonitoringInputBuilder {
         self
     }
     /// <p>Specifies which Apache Kafka metrics Amazon MSK gathers and sends to Amazon CloudWatch for this cluster.</p>
-    pub fn set_enhanced_monitoring(mut self, input: std::option::Option<crate::types::EnhancedMonitoring>) -> Self {
-        self.enhanced_monitoring = input; self
+    pub fn set_enhanced_monitoring(
+        mut self,
+        input: std::option::Option<crate::types::EnhancedMonitoring>,
+    ) -> Self {
+        self.enhanced_monitoring = input;
+        self
     }
     /// <p>The settings for open monitoring.</p>
     pub fn open_monitoring(mut self, input: crate::types::OpenMonitoringInfo) -> Self {
@@ -93,8 +100,12 @@ impl UpdateMonitoringInputBuilder {
         self
     }
     /// <p>The settings for open monitoring.</p>
-    pub fn set_open_monitoring(mut self, input: std::option::Option<crate::types::OpenMonitoringInfo>) -> Self {
-        self.open_monitoring = input; self
+    pub fn set_open_monitoring(
+        mut self,
+        input: std::option::Option<crate::types::OpenMonitoringInfo>,
+    ) -> Self {
+        self.open_monitoring = input;
+        self
     }
     #[allow(missing_docs)] // documentation missing in model
     pub fn logging_info(mut self, input: crate::types::LoggingInfo) -> Self {
@@ -102,25 +113,26 @@ impl UpdateMonitoringInputBuilder {
         self
     }
     #[allow(missing_docs)] // documentation missing in model
-    pub fn set_logging_info(mut self, input: std::option::Option<crate::types::LoggingInfo>) -> Self {
-        self.logging_info = input; self
+    pub fn set_logging_info(
+        mut self,
+        input: std::option::Option<crate::types::LoggingInfo>,
+    ) -> Self {
+        self.logging_info = input;
+        self
     }
     /// Consumes the builder and constructs a [`UpdateMonitoringInput`](crate::operation::update_monitoring::UpdateMonitoringInput).
-    pub fn build(self) -> Result<crate::operation::update_monitoring::UpdateMonitoringInput, aws_smithy_http::operation::error::BuildError> {
-        Ok(
-            crate::operation::update_monitoring::UpdateMonitoringInput {
-                cluster_arn: self.cluster_arn
-                ,
-                current_version: self.current_version
-                ,
-                enhanced_monitoring: self.enhanced_monitoring
-                ,
-                open_monitoring: self.open_monitoring
-                ,
-                logging_info: self.logging_info
-                ,
-            }
-        )
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::update_monitoring::UpdateMonitoringInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        Ok(crate::operation::update_monitoring::UpdateMonitoringInput {
+            cluster_arn: self.cluster_arn,
+            current_version: self.current_version,
+            enhanced_monitoring: self.enhanced_monitoring,
+            open_monitoring: self.open_monitoring,
+            logging_info: self.logging_info,
+        })
     }
 }
-

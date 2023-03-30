@@ -4,66 +4,98 @@ pub use crate::operation::create_model_package_group::_create_model_package_grou
 pub use crate::operation::create_model_package_group::_create_model_package_group_input::CreateModelPackageGroupInputBuilder;
 
 /// Fluent builder constructing a request to `CreateModelPackageGroup`.
-/// 
+///
 /// <p>Creates a model group. A model group contains a group of model versions.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct CreateModelPackageGroupFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::create_model_package_group::builders::CreateModelPackageGroupInputBuilder
-            }
-impl CreateModelPackageGroupFluentBuilder  {
+    handle: std::sync::Arc<crate::client::Handle>,
+    inner:
+        crate::operation::create_model_package_group::builders::CreateModelPackageGroupInputBuilder,
+}
+impl CreateModelPackageGroupFluentBuilder {
     /// Creates a new `CreateModelPackageGroup`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
-                    /// sent. The operation's inner [http::Request] can be modified as well.
-                    pub async fn customize(self) -> std::result::Result<
-                        crate::client::customize::CustomizableOperation<crate::operation::create_model_package_group::CreateModelPackageGroup, aws_http::retry::AwsResponseRetryClassifier,>,
-                        aws_smithy_http::result::SdkError<crate::operation::create_model_package_group::CreateModelPackageGroupError>
-                    >  {
-                        let handle = self.handle.clone();
-                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-                    }
-    
-                    /// Sends the request and returns the response.
-                    ///
-                    /// If an error occurs, an `SdkError` will be returned with additional details that
-                    /// can be matched against.
-                    ///
-                    /// By default, any retryable failures will be retried twice. Retry behavior
-                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                    /// set when configuring the client.
-                    pub async fn send(self) -> std::result::Result<crate::operation::create_model_package_group::CreateModelPackageGroupOutput, aws_smithy_http::result::SdkError<crate::operation::create_model_package_group::CreateModelPackageGroupError>>
-                     {
-                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&self.handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        self.handle.client.call(op).await
-                    }
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle,
+            inner: Default::default(),
+        }
+    }
+
+    /// Consume this builder, creating a customizable operation that can be modified before being
+    /// sent. The operation's inner [http::Request] can be modified as well.
+    pub async fn customize(
+        self,
+    ) -> std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::create_model_package_group::CreateModelPackageGroup,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::result::SdkError<
+            crate::operation::create_model_package_group::CreateModelPackageGroupError,
+        >,
+    > {
+        let handle = self.handle.clone();
+        let operation = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+    }
+
+    /// Sends the request and returns the response.
+    ///
+    /// If an error occurs, an `SdkError` will be returned with additional details that
+    /// can be matched against.
+    ///
+    /// By default, any retryable failures will be retried twice. Retry behavior
+    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+    /// set when configuring the client.
+    pub async fn send(
+        self,
+    ) -> std::result::Result<
+        crate::operation::create_model_package_group::CreateModelPackageGroupOutput,
+        aws_smithy_http::result::SdkError<
+            crate::operation::create_model_package_group::CreateModelPackageGroupError,
+        >,
+    > {
+        let op = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&self.handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        self.handle.client.call(op).await
+    }
     /// <p>The name of the model group.</p>
     pub fn model_package_group_name(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.model_package_group_name(input.into());
         self
     }
     /// <p>The name of the model group.</p>
-    pub fn set_model_package_group_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_model_package_group_name(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_model_package_group_name(input);
         self
     }
     /// <p>A description for the model group.</p>
-    pub fn model_package_group_description(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn model_package_group_description(
+        mut self,
+        input: impl Into<std::string::String>,
+    ) -> Self {
         self.inner = self.inner.model_package_group_description(input.into());
         self
     }
     /// <p>A description for the model group.</p>
-    pub fn set_model_package_group_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_model_package_group_description(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_model_package_group_description(input);
         self
     }
@@ -77,9 +109,11 @@ impl CreateModelPackageGroupFluentBuilder  {
         self
     }
     /// <p>A list of key value pairs associated with the model group. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services resources</a> in the <i>Amazon Web Services General Reference Guide</i>.</p>
-    pub fn set_tags(mut self, input: std::option::Option<std::vec::Vec<crate::types::Tag>>) -> Self {
+    pub fn set_tags(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::Tag>>,
+    ) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }
 }
-

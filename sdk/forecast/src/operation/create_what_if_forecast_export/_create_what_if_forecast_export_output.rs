@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateWhatIfForecastExportOutput  {
+pub struct CreateWhatIfForecastExportOutput {
     /// <p>The Amazon Resource Name (ARN) of the what-if forecast.</p>
     #[doc(hidden)]
     pub what_if_forecast_export_arn: std::option::Option<std::string::String>,
@@ -10,18 +10,18 @@ pub struct CreateWhatIfForecastExportOutput  {
 }
 impl CreateWhatIfForecastExportOutput {
     /// <p>The Amazon Resource Name (ARN) of the what-if forecast.</p>
-    pub fn what_if_forecast_export_arn(&self) -> std::option::Option<& str> {
+    pub fn what_if_forecast_export_arn(&self) -> std::option::Option<&str> {
         self.what_if_forecast_export_arn.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for CreateWhatIfForecastExportOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl CreateWhatIfForecastExportOutput {
     /// Creates a new builder-style object to manufacture [`CreateWhatIfForecastExportOutput`](crate::operation::create_what_if_forecast_export::CreateWhatIfForecastExportOutput).
-    pub fn builder() -> crate::operation::create_what_if_forecast_export::builders::CreateWhatIfForecastExportOutputBuilder {
+    pub fn builder() -> crate::operation::create_what_if_forecast_export::builders::CreateWhatIfForecastExportOutputBuilder{
         crate::operation::create_what_if_forecast_export::builders::CreateWhatIfForecastExportOutputBuilder::default()
     }
 }
@@ -40,25 +40,29 @@ impl CreateWhatIfForecastExportOutputBuilder {
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the what-if forecast.</p>
-    pub fn set_what_if_forecast_export_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.what_if_forecast_export_arn = input; self
+    pub fn set_what_if_forecast_export_arn(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.what_if_forecast_export_arn = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`CreateWhatIfForecastExportOutput`](crate::operation::create_what_if_forecast_export::CreateWhatIfForecastExportOutput).
-    pub fn build(self) -> crate::operation::create_what_if_forecast_export::CreateWhatIfForecastExportOutput {
+    pub fn build(
+        self,
+    ) -> crate::operation::create_what_if_forecast_export::CreateWhatIfForecastExportOutput {
         crate::operation::create_what_if_forecast_export::CreateWhatIfForecastExportOutput {
-            what_if_forecast_export_arn: self.what_if_forecast_export_arn
-            ,
+            what_if_forecast_export_arn: self.what_if_forecast_export_arn,
             _request_id: self._request_id,
         }
     }
 }
-

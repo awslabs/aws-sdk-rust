@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateS3ResourcesOutput  {
+pub struct UpdateS3ResourcesOutput {
     /// <p>(Discontinued) The S3 resources whose classification types can't be updated. An error code and an error message are provided for each failed item.</p>
     #[doc(hidden)]
     pub failed_s3_resources: std::option::Option<std::vec::Vec<crate::types::FailedS3Resource>>,
@@ -10,18 +10,19 @@ pub struct UpdateS3ResourcesOutput  {
 }
 impl UpdateS3ResourcesOutput {
     /// <p>(Discontinued) The S3 resources whose classification types can't be updated. An error code and an error message are provided for each failed item.</p>
-    pub fn failed_s3_resources(&self) -> std::option::Option<& [crate::types::FailedS3Resource]> {
+    pub fn failed_s3_resources(&self) -> std::option::Option<&[crate::types::FailedS3Resource]> {
         self.failed_s3_resources.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for UpdateS3ResourcesOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl UpdateS3ResourcesOutput {
     /// Creates a new builder-style object to manufacture [`UpdateS3ResourcesOutput`](crate::operation::update_s3_resources::UpdateS3ResourcesOutput).
-    pub fn builder() -> crate::operation::update_s3_resources::builders::UpdateS3ResourcesOutputBuilder {
+    pub fn builder(
+    ) -> crate::operation::update_s3_resources::builders::UpdateS3ResourcesOutputBuilder {
         crate::operation::update_s3_resources::builders::UpdateS3ResourcesOutputBuilder::default()
     }
 }
@@ -30,7 +31,8 @@ impl UpdateS3ResourcesOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct UpdateS3ResourcesOutputBuilder {
-    pub(crate) failed_s3_resources: std::option::Option<std::vec::Vec<crate::types::FailedS3Resource>>,
+    pub(crate) failed_s3_resources:
+        std::option::Option<std::vec::Vec<crate::types::FailedS3Resource>>,
     _request_id: Option<String>,
 }
 impl UpdateS3ResourcesOutputBuilder {
@@ -41,30 +43,32 @@ impl UpdateS3ResourcesOutputBuilder {
     /// <p>(Discontinued) The S3 resources whose classification types can't be updated. An error code and an error message are provided for each failed item.</p>
     pub fn failed_s3_resources(mut self, input: crate::types::FailedS3Resource) -> Self {
         let mut v = self.failed_s3_resources.unwrap_or_default();
-                        v.push(input);
-                        self.failed_s3_resources = Some(v);
-                        self
+        v.push(input);
+        self.failed_s3_resources = Some(v);
+        self
     }
     /// <p>(Discontinued) The S3 resources whose classification types can't be updated. An error code and an error message are provided for each failed item.</p>
-    pub fn set_failed_s3_resources(mut self, input: std::option::Option<std::vec::Vec<crate::types::FailedS3Resource>>) -> Self {
-        self.failed_s3_resources = input; self
+    pub fn set_failed_s3_resources(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::FailedS3Resource>>,
+    ) -> Self {
+        self.failed_s3_resources = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`UpdateS3ResourcesOutput`](crate::operation::update_s3_resources::UpdateS3ResourcesOutput).
     pub fn build(self) -> crate::operation::update_s3_resources::UpdateS3ResourcesOutput {
         crate::operation::update_s3_resources::UpdateS3ResourcesOutput {
-            failed_s3_resources: self.failed_s3_resources
-            ,
+            failed_s3_resources: self.failed_s3_resources,
             _request_id: self._request_id,
         }
     }
 }
-

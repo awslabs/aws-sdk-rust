@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateSubscriptionNotificationConfigurationInput  {
+pub struct UpdateSubscriptionNotificationConfigurationInput {
     /// <p>The subscription ID for which the subscription notification is specified. </p>
     #[doc(hidden)]
     pub subscription_id: std::option::Option<std::string::String>,
@@ -27,23 +27,23 @@ pub struct UpdateSubscriptionNotificationConfigurationInput  {
 }
 impl UpdateSubscriptionNotificationConfigurationInput {
     /// <p>The subscription ID for which the subscription notification is specified. </p>
-    pub fn subscription_id(&self) -> std::option::Option<& str> {
+    pub fn subscription_id(&self) -> std::option::Option<&str> {
         self.subscription_id.as_deref()
     }
     /// <p>The subscription endpoint in Security Lake.</p>
-    pub fn subscription_endpoint(&self) -> std::option::Option<& str> {
+    pub fn subscription_endpoint(&self) -> std::option::Option<&str> {
         self.subscription_endpoint.as_deref()
     }
     /// <p>The key name for the subscription notification.</p>
-    pub fn https_api_key_name(&self) -> std::option::Option<& str> {
+    pub fn https_api_key_name(&self) -> std::option::Option<&str> {
         self.https_api_key_name.as_deref()
     }
     /// <p>The key value for the subscription notification.</p>
-    pub fn https_api_key_value(&self) -> std::option::Option<& str> {
+    pub fn https_api_key_value(&self) -> std::option::Option<&str> {
         self.https_api_key_value.as_deref()
     }
     /// <p>The HTTPS method used for the subscription notification. </p>
-    pub fn https_method(&self) -> std::option::Option<& crate::types::HttpsMethod> {
+    pub fn https_method(&self) -> std::option::Option<&crate::types::HttpsMethod> {
         self.https_method.as_ref()
     }
     /// <p>Create a new subscription notification for the specified subscription ID in Amazon Security Lake.</p>
@@ -51,13 +51,13 @@ impl UpdateSubscriptionNotificationConfigurationInput {
         self.create_sqs
     }
     /// <p>The Amazon Resource Name (ARN) specifying the role of the subscriber. </p>
-    pub fn role_arn(&self) -> std::option::Option<& str> {
+    pub fn role_arn(&self) -> std::option::Option<&str> {
         self.role_arn.as_deref()
     }
 }
 impl UpdateSubscriptionNotificationConfigurationInput {
     /// Creates a new builder-style object to manufacture [`UpdateSubscriptionNotificationConfigurationInput`](crate::operation::update_subscription_notification_configuration::UpdateSubscriptionNotificationConfigurationInput).
-    pub fn builder() -> crate::operation::update_subscription_notification_configuration::builders::UpdateSubscriptionNotificationConfigurationInputBuilder {
+    pub fn builder() -> crate::operation::update_subscription_notification_configuration::builders::UpdateSubscriptionNotificationConfigurationInputBuilder{
         crate::operation::update_subscription_notification_configuration::builders::UpdateSubscriptionNotificationConfigurationInputBuilder::default()
     }
 }
@@ -82,7 +82,8 @@ impl UpdateSubscriptionNotificationConfigurationInputBuilder {
     }
     /// <p>The subscription ID for which the subscription notification is specified. </p>
     pub fn set_subscription_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.subscription_id = input; self
+        self.subscription_id = input;
+        self
     }
     /// <p>The subscription endpoint in Security Lake.</p>
     pub fn subscription_endpoint(mut self, input: impl Into<std::string::String>) -> Self {
@@ -90,8 +91,12 @@ impl UpdateSubscriptionNotificationConfigurationInputBuilder {
         self
     }
     /// <p>The subscription endpoint in Security Lake.</p>
-    pub fn set_subscription_endpoint(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.subscription_endpoint = input; self
+    pub fn set_subscription_endpoint(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.subscription_endpoint = input;
+        self
     }
     /// <p>The key name for the subscription notification.</p>
     pub fn https_api_key_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -99,8 +104,12 @@ impl UpdateSubscriptionNotificationConfigurationInputBuilder {
         self
     }
     /// <p>The key name for the subscription notification.</p>
-    pub fn set_https_api_key_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.https_api_key_name = input; self
+    pub fn set_https_api_key_name(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.https_api_key_name = input;
+        self
     }
     /// <p>The key value for the subscription notification.</p>
     pub fn https_api_key_value(mut self, input: impl Into<std::string::String>) -> Self {
@@ -108,8 +117,12 @@ impl UpdateSubscriptionNotificationConfigurationInputBuilder {
         self
     }
     /// <p>The key value for the subscription notification.</p>
-    pub fn set_https_api_key_value(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.https_api_key_value = input; self
+    pub fn set_https_api_key_value(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.https_api_key_value = input;
+        self
     }
     /// <p>The HTTPS method used for the subscription notification. </p>
     pub fn https_method(mut self, input: crate::types::HttpsMethod) -> Self {
@@ -117,8 +130,12 @@ impl UpdateSubscriptionNotificationConfigurationInputBuilder {
         self
     }
     /// <p>The HTTPS method used for the subscription notification. </p>
-    pub fn set_https_method(mut self, input: std::option::Option<crate::types::HttpsMethod>) -> Self {
-        self.https_method = input; self
+    pub fn set_https_method(
+        mut self,
+        input: std::option::Option<crate::types::HttpsMethod>,
+    ) -> Self {
+        self.https_method = input;
+        self
     }
     /// <p>Create a new subscription notification for the specified subscription ID in Amazon Security Lake.</p>
     pub fn create_sqs(mut self, input: bool) -> Self {
@@ -127,7 +144,8 @@ impl UpdateSubscriptionNotificationConfigurationInputBuilder {
     }
     /// <p>Create a new subscription notification for the specified subscription ID in Amazon Security Lake.</p>
     pub fn set_create_sqs(mut self, input: std::option::Option<bool>) -> Self {
-        self.create_sqs = input; self
+        self.create_sqs = input;
+        self
     }
     /// <p>The Amazon Resource Name (ARN) specifying the role of the subscriber. </p>
     pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -136,10 +154,11 @@ impl UpdateSubscriptionNotificationConfigurationInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) specifying the role of the subscriber. </p>
     pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.role_arn = input; self
+        self.role_arn = input;
+        self
     }
     /// Consumes the builder and constructs a [`UpdateSubscriptionNotificationConfigurationInput`](crate::operation::update_subscription_notification_configuration::UpdateSubscriptionNotificationConfigurationInput).
-    pub fn build(self) -> Result<crate::operation::update_subscription_notification_configuration::UpdateSubscriptionNotificationConfigurationInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> Result<crate::operation::update_subscription_notification_configuration::UpdateSubscriptionNotificationConfigurationInput, aws_smithy_http::operation::error::BuildError>{
         Ok(
             crate::operation::update_subscription_notification_configuration::UpdateSubscriptionNotificationConfigurationInput {
                 subscription_id: self.subscription_id
@@ -160,4 +179,3 @@ impl UpdateSubscriptionNotificationConfigurationInputBuilder {
         )
     }
 }
-

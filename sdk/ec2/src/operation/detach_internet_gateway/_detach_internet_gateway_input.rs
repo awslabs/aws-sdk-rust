@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DetachInternetGatewayInput  {
+pub struct DetachInternetGatewayInput {
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     #[doc(hidden)]
     pub dry_run: std::option::Option<bool>,
@@ -19,17 +19,19 @@ impl DetachInternetGatewayInput {
         self.dry_run
     }
     /// <p>The ID of the internet gateway.</p>
-    pub fn internet_gateway_id(&self) -> std::option::Option<& str> {
+    pub fn internet_gateway_id(&self) -> std::option::Option<&str> {
         self.internet_gateway_id.as_deref()
     }
     /// <p>The ID of the VPC.</p>
-    pub fn vpc_id(&self) -> std::option::Option<& str> {
+    pub fn vpc_id(&self) -> std::option::Option<&str> {
         self.vpc_id.as_deref()
     }
 }
 impl DetachInternetGatewayInput {
     /// Creates a new builder-style object to manufacture [`DetachInternetGatewayInput`](crate::operation::detach_internet_gateway::DetachInternetGatewayInput).
-    pub fn builder() -> crate::operation::detach_internet_gateway::builders::DetachInternetGatewayInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::detach_internet_gateway::builders::DetachInternetGatewayInputBuilder
+    {
         crate::operation::detach_internet_gateway::builders::DetachInternetGatewayInputBuilder::default()
     }
 }
@@ -50,7 +52,8 @@ impl DetachInternetGatewayInputBuilder {
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn set_dry_run(mut self, input: std::option::Option<bool>) -> Self {
-        self.dry_run = input; self
+        self.dry_run = input;
+        self
     }
     /// <p>The ID of the internet gateway.</p>
     pub fn internet_gateway_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -58,8 +61,12 @@ impl DetachInternetGatewayInputBuilder {
         self
     }
     /// <p>The ID of the internet gateway.</p>
-    pub fn set_internet_gateway_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.internet_gateway_id = input; self
+    pub fn set_internet_gateway_id(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.internet_gateway_id = input;
+        self
     }
     /// <p>The ID of the VPC.</p>
     pub fn vpc_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -68,20 +75,22 @@ impl DetachInternetGatewayInputBuilder {
     }
     /// <p>The ID of the VPC.</p>
     pub fn set_vpc_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.vpc_id = input; self
+        self.vpc_id = input;
+        self
     }
     /// Consumes the builder and constructs a [`DetachInternetGatewayInput`](crate::operation::detach_internet_gateway::DetachInternetGatewayInput).
-    pub fn build(self) -> Result<crate::operation::detach_internet_gateway::DetachInternetGatewayInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::detach_internet_gateway::DetachInternetGatewayInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::detach_internet_gateway::DetachInternetGatewayInput {
-                dry_run: self.dry_run
-                ,
-                internet_gateway_id: self.internet_gateway_id
-                ,
-                vpc_id: self.vpc_id
-                ,
-            }
+                dry_run: self.dry_run,
+                internet_gateway_id: self.internet_gateway_id,
+                vpc_id: self.vpc_id,
+            },
         )
     }
 }
-

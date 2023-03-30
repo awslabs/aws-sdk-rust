@@ -25,7 +25,7 @@ struct RequestTimeoutError {
 }
 
 impl RequestTimeoutError {
-    pub fn new(kind: &'static str, duration: Duration) -> Self {
+    fn new(kind: &'static str, duration: Duration) -> Self {
         Self { kind, duration }
     }
 }
@@ -59,7 +59,7 @@ pub(crate) struct ClientTimeoutParams {
 }
 
 impl ClientTimeoutParams {
-    pub fn new(
+    pub(crate) fn new(
         timeout_config: &OperationTimeoutConfig,
         async_sleep: Option<Arc<dyn AsyncSleep>>,
     ) -> Self {

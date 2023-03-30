@@ -3,7 +3,7 @@
 /// <p>The configuration information that will be updated for this workgroup, which includes the location in Amazon S3 where query results are stored, the encryption option, if any, used for query results, whether the Amazon CloudWatch Metrics are enabled for the workgroup, whether the workgroup settings override the client-side settings, and the data usage limit for the amount of bytes scanned per query, if it is specified.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct WorkGroupConfigurationUpdates  {
+pub struct WorkGroupConfigurationUpdates {
     /// <p>If set to "true", the settings for the workgroup override client-side settings. If set to "false" client-side settings are used. For more information, see <a href="https://docs.aws.amazon.com/athena/latest/ug/workgroups-settings-override.html">Workgroup Settings Override Client-Side Settings</a>.</p>
     #[doc(hidden)]
     pub enforce_work_group_configuration: std::option::Option<bool>,
@@ -36,7 +36,8 @@ pub struct WorkGroupConfigurationUpdates  {
     pub execution_role: std::option::Option<std::string::String>,
     /// <p>Specifies the KMS key that is used to encrypt the user's data stores in Athena.</p>
     #[doc(hidden)]
-    pub customer_content_encryption_configuration: std::option::Option<crate::types::CustomerContentEncryptionConfiguration>,
+    pub customer_content_encryption_configuration:
+        std::option::Option<crate::types::CustomerContentEncryptionConfiguration>,
 }
 impl WorkGroupConfigurationUpdates {
     /// <p>If set to "true", the settings for the workgroup override client-side settings. If set to "false" client-side settings are used. For more information, see <a href="https://docs.aws.amazon.com/athena/latest/ug/workgroups-settings-override.html">Workgroup Settings Override Client-Side Settings</a>.</p>
@@ -44,7 +45,9 @@ impl WorkGroupConfigurationUpdates {
         self.enforce_work_group_configuration
     }
     /// <p>The result configuration information about the queries in this workgroup that will be updated. Includes the updated results location and an updated option for encrypting query results.</p>
-    pub fn result_configuration_updates(&self) -> std::option::Option<& crate::types::ResultConfigurationUpdates> {
+    pub fn result_configuration_updates(
+        &self,
+    ) -> std::option::Option<&crate::types::ResultConfigurationUpdates> {
         self.result_configuration_updates.as_ref()
     }
     /// <p>Indicates whether this workgroup enables publishing metrics to Amazon CloudWatch.</p>
@@ -64,7 +67,7 @@ impl WorkGroupConfigurationUpdates {
         self.requester_pays_enabled
     }
     /// <p>The engine version requested when a workgroup is updated. After the update, all queries on the workgroup run on the requested engine version. If no value was previously set, the default is Auto. Queries on the <code>AmazonAthenaPreviewFunctionality</code> workgroup run on the preview engine regardless of this setting.</p>
-    pub fn engine_version(&self) -> std::option::Option<& crate::types::EngineVersion> {
+    pub fn engine_version(&self) -> std::option::Option<&crate::types::EngineVersion> {
         self.engine_version.as_ref()
     }
     /// <p>Removes content encryption configuration for a workgroup.</p>
@@ -72,15 +75,17 @@ impl WorkGroupConfigurationUpdates {
         self.remove_customer_content_encryption_configuration
     }
     /// <p>Contains a user defined string in JSON format for a Spark-enabled workgroup.</p>
-    pub fn additional_configuration(&self) -> std::option::Option<& str> {
+    pub fn additional_configuration(&self) -> std::option::Option<&str> {
         self.additional_configuration.as_deref()
     }
     /// <p>Contains the ARN of the execution role for the workgroup</p>
-    pub fn execution_role(&self) -> std::option::Option<& str> {
+    pub fn execution_role(&self) -> std::option::Option<&str> {
         self.execution_role.as_deref()
     }
     /// <p>Specifies the KMS key that is used to encrypt the user's data stores in Athena.</p>
-    pub fn customer_content_encryption_configuration(&self) -> std::option::Option<& crate::types::CustomerContentEncryptionConfiguration> {
+    pub fn customer_content_encryption_configuration(
+        &self,
+    ) -> std::option::Option<&crate::types::CustomerContentEncryptionConfiguration> {
         self.customer_content_encryption_configuration.as_ref()
     }
 }
@@ -96,7 +101,8 @@ impl WorkGroupConfigurationUpdates {
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct WorkGroupConfigurationUpdatesBuilder {
     pub(crate) enforce_work_group_configuration: std::option::Option<bool>,
-    pub(crate) result_configuration_updates: std::option::Option<crate::types::ResultConfigurationUpdates>,
+    pub(crate) result_configuration_updates:
+        std::option::Option<crate::types::ResultConfigurationUpdates>,
     pub(crate) publish_cloud_watch_metrics_enabled: std::option::Option<bool>,
     pub(crate) bytes_scanned_cutoff_per_query: std::option::Option<i64>,
     pub(crate) remove_bytes_scanned_cutoff_per_query: std::option::Option<bool>,
@@ -105,7 +111,8 @@ pub struct WorkGroupConfigurationUpdatesBuilder {
     pub(crate) remove_customer_content_encryption_configuration: std::option::Option<bool>,
     pub(crate) additional_configuration: std::option::Option<std::string::String>,
     pub(crate) execution_role: std::option::Option<std::string::String>,
-    pub(crate) customer_content_encryption_configuration: std::option::Option<crate::types::CustomerContentEncryptionConfiguration>,
+    pub(crate) customer_content_encryption_configuration:
+        std::option::Option<crate::types::CustomerContentEncryptionConfiguration>,
 }
 impl WorkGroupConfigurationUpdatesBuilder {
     /// <p>If set to "true", the settings for the workgroup override client-side settings. If set to "false" client-side settings are used. For more information, see <a href="https://docs.aws.amazon.com/athena/latest/ug/workgroups-settings-override.html">Workgroup Settings Override Client-Side Settings</a>.</p>
@@ -114,17 +121,28 @@ impl WorkGroupConfigurationUpdatesBuilder {
         self
     }
     /// <p>If set to "true", the settings for the workgroup override client-side settings. If set to "false" client-side settings are used. For more information, see <a href="https://docs.aws.amazon.com/athena/latest/ug/workgroups-settings-override.html">Workgroup Settings Override Client-Side Settings</a>.</p>
-    pub fn set_enforce_work_group_configuration(mut self, input: std::option::Option<bool>) -> Self {
-        self.enforce_work_group_configuration = input; self
+    pub fn set_enforce_work_group_configuration(
+        mut self,
+        input: std::option::Option<bool>,
+    ) -> Self {
+        self.enforce_work_group_configuration = input;
+        self
     }
     /// <p>The result configuration information about the queries in this workgroup that will be updated. Includes the updated results location and an updated option for encrypting query results.</p>
-    pub fn result_configuration_updates(mut self, input: crate::types::ResultConfigurationUpdates) -> Self {
+    pub fn result_configuration_updates(
+        mut self,
+        input: crate::types::ResultConfigurationUpdates,
+    ) -> Self {
         self.result_configuration_updates = Some(input);
         self
     }
     /// <p>The result configuration information about the queries in this workgroup that will be updated. Includes the updated results location and an updated option for encrypting query results.</p>
-    pub fn set_result_configuration_updates(mut self, input: std::option::Option<crate::types::ResultConfigurationUpdates>) -> Self {
-        self.result_configuration_updates = input; self
+    pub fn set_result_configuration_updates(
+        mut self,
+        input: std::option::Option<crate::types::ResultConfigurationUpdates>,
+    ) -> Self {
+        self.result_configuration_updates = input;
+        self
     }
     /// <p>Indicates whether this workgroup enables publishing metrics to Amazon CloudWatch.</p>
     pub fn publish_cloud_watch_metrics_enabled(mut self, input: bool) -> Self {
@@ -132,8 +150,12 @@ impl WorkGroupConfigurationUpdatesBuilder {
         self
     }
     /// <p>Indicates whether this workgroup enables publishing metrics to Amazon CloudWatch.</p>
-    pub fn set_publish_cloud_watch_metrics_enabled(mut self, input: std::option::Option<bool>) -> Self {
-        self.publish_cloud_watch_metrics_enabled = input; self
+    pub fn set_publish_cloud_watch_metrics_enabled(
+        mut self,
+        input: std::option::Option<bool>,
+    ) -> Self {
+        self.publish_cloud_watch_metrics_enabled = input;
+        self
     }
     /// <p>The upper limit (cutoff) for the amount of bytes a single query in a workgroup is allowed to scan.</p>
     pub fn bytes_scanned_cutoff_per_query(mut self, input: i64) -> Self {
@@ -142,7 +164,8 @@ impl WorkGroupConfigurationUpdatesBuilder {
     }
     /// <p>The upper limit (cutoff) for the amount of bytes a single query in a workgroup is allowed to scan.</p>
     pub fn set_bytes_scanned_cutoff_per_query(mut self, input: std::option::Option<i64>) -> Self {
-        self.bytes_scanned_cutoff_per_query = input; self
+        self.bytes_scanned_cutoff_per_query = input;
+        self
     }
     /// <p>Indicates that the data usage control limit per query is removed. <code>WorkGroupConfiguration$BytesScannedCutoffPerQuery</code> </p>
     pub fn remove_bytes_scanned_cutoff_per_query(mut self, input: bool) -> Self {
@@ -150,8 +173,12 @@ impl WorkGroupConfigurationUpdatesBuilder {
         self
     }
     /// <p>Indicates that the data usage control limit per query is removed. <code>WorkGroupConfiguration$BytesScannedCutoffPerQuery</code> </p>
-    pub fn set_remove_bytes_scanned_cutoff_per_query(mut self, input: std::option::Option<bool>) -> Self {
-        self.remove_bytes_scanned_cutoff_per_query = input; self
+    pub fn set_remove_bytes_scanned_cutoff_per_query(
+        mut self,
+        input: std::option::Option<bool>,
+    ) -> Self {
+        self.remove_bytes_scanned_cutoff_per_query = input;
+        self
     }
     /// <p>If set to <code>true</code>, allows members assigned to a workgroup to specify Amazon S3 Requester Pays buckets in queries. If set to <code>false</code>, workgroup members cannot query data from Requester Pays buckets, and queries that retrieve data from Requester Pays buckets cause an error. The default is <code>false</code>. For more information about Requester Pays buckets, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/RequesterPaysBuckets.html">Requester Pays Buckets</a> in the <i>Amazon Simple Storage Service Developer Guide</i>.</p>
     pub fn requester_pays_enabled(mut self, input: bool) -> Self {
@@ -160,7 +187,8 @@ impl WorkGroupConfigurationUpdatesBuilder {
     }
     /// <p>If set to <code>true</code>, allows members assigned to a workgroup to specify Amazon S3 Requester Pays buckets in queries. If set to <code>false</code>, workgroup members cannot query data from Requester Pays buckets, and queries that retrieve data from Requester Pays buckets cause an error. The default is <code>false</code>. For more information about Requester Pays buckets, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/RequesterPaysBuckets.html">Requester Pays Buckets</a> in the <i>Amazon Simple Storage Service Developer Guide</i>.</p>
     pub fn set_requester_pays_enabled(mut self, input: std::option::Option<bool>) -> Self {
-        self.requester_pays_enabled = input; self
+        self.requester_pays_enabled = input;
+        self
     }
     /// <p>The engine version requested when a workgroup is updated. After the update, all queries on the workgroup run on the requested engine version. If no value was previously set, the default is Auto. Queries on the <code>AmazonAthenaPreviewFunctionality</code> workgroup run on the preview engine regardless of this setting.</p>
     pub fn engine_version(mut self, input: crate::types::EngineVersion) -> Self {
@@ -168,8 +196,12 @@ impl WorkGroupConfigurationUpdatesBuilder {
         self
     }
     /// <p>The engine version requested when a workgroup is updated. After the update, all queries on the workgroup run on the requested engine version. If no value was previously set, the default is Auto. Queries on the <code>AmazonAthenaPreviewFunctionality</code> workgroup run on the preview engine regardless of this setting.</p>
-    pub fn set_engine_version(mut self, input: std::option::Option<crate::types::EngineVersion>) -> Self {
-        self.engine_version = input; self
+    pub fn set_engine_version(
+        mut self,
+        input: std::option::Option<crate::types::EngineVersion>,
+    ) -> Self {
+        self.engine_version = input;
+        self
     }
     /// <p>Removes content encryption configuration for a workgroup.</p>
     pub fn remove_customer_content_encryption_configuration(mut self, input: bool) -> Self {
@@ -177,8 +209,12 @@ impl WorkGroupConfigurationUpdatesBuilder {
         self
     }
     /// <p>Removes content encryption configuration for a workgroup.</p>
-    pub fn set_remove_customer_content_encryption_configuration(mut self, input: std::option::Option<bool>) -> Self {
-        self.remove_customer_content_encryption_configuration = input; self
+    pub fn set_remove_customer_content_encryption_configuration(
+        mut self,
+        input: std::option::Option<bool>,
+    ) -> Self {
+        self.remove_customer_content_encryption_configuration = input;
+        self
     }
     /// <p>Contains a user defined string in JSON format for a Spark-enabled workgroup.</p>
     pub fn additional_configuration(mut self, input: impl Into<std::string::String>) -> Self {
@@ -186,8 +222,12 @@ impl WorkGroupConfigurationUpdatesBuilder {
         self
     }
     /// <p>Contains a user defined string in JSON format for a Spark-enabled workgroup.</p>
-    pub fn set_additional_configuration(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.additional_configuration = input; self
+    pub fn set_additional_configuration(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.additional_configuration = input;
+        self
     }
     /// <p>Contains the ARN of the execution role for the workgroup</p>
     pub fn execution_role(mut self, input: impl Into<std::string::String>) -> Self {
@@ -196,43 +236,41 @@ impl WorkGroupConfigurationUpdatesBuilder {
     }
     /// <p>Contains the ARN of the execution role for the workgroup</p>
     pub fn set_execution_role(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.execution_role = input; self
+        self.execution_role = input;
+        self
     }
     /// <p>Specifies the KMS key that is used to encrypt the user's data stores in Athena.</p>
-    pub fn customer_content_encryption_configuration(mut self, input: crate::types::CustomerContentEncryptionConfiguration) -> Self {
+    pub fn customer_content_encryption_configuration(
+        mut self,
+        input: crate::types::CustomerContentEncryptionConfiguration,
+    ) -> Self {
         self.customer_content_encryption_configuration = Some(input);
         self
     }
     /// <p>Specifies the KMS key that is used to encrypt the user's data stores in Athena.</p>
-    pub fn set_customer_content_encryption_configuration(mut self, input: std::option::Option<crate::types::CustomerContentEncryptionConfiguration>) -> Self {
-        self.customer_content_encryption_configuration = input; self
+    pub fn set_customer_content_encryption_configuration(
+        mut self,
+        input: std::option::Option<crate::types::CustomerContentEncryptionConfiguration>,
+    ) -> Self {
+        self.customer_content_encryption_configuration = input;
+        self
     }
     /// Consumes the builder and constructs a [`WorkGroupConfigurationUpdates`](crate::types::WorkGroupConfigurationUpdates).
     pub fn build(self) -> crate::types::WorkGroupConfigurationUpdates {
         crate::types::WorkGroupConfigurationUpdates {
-            enforce_work_group_configuration: self.enforce_work_group_configuration
-            ,
-            result_configuration_updates: self.result_configuration_updates
-            ,
-            publish_cloud_watch_metrics_enabled: self.publish_cloud_watch_metrics_enabled
-            ,
-            bytes_scanned_cutoff_per_query: self.bytes_scanned_cutoff_per_query
-            ,
-            remove_bytes_scanned_cutoff_per_query: self.remove_bytes_scanned_cutoff_per_query
-            ,
-            requester_pays_enabled: self.requester_pays_enabled
-            ,
-            engine_version: self.engine_version
-            ,
-            remove_customer_content_encryption_configuration: self.remove_customer_content_encryption_configuration
-            ,
-            additional_configuration: self.additional_configuration
-            ,
-            execution_role: self.execution_role
-            ,
-            customer_content_encryption_configuration: self.customer_content_encryption_configuration
-            ,
+            enforce_work_group_configuration: self.enforce_work_group_configuration,
+            result_configuration_updates: self.result_configuration_updates,
+            publish_cloud_watch_metrics_enabled: self.publish_cloud_watch_metrics_enabled,
+            bytes_scanned_cutoff_per_query: self.bytes_scanned_cutoff_per_query,
+            remove_bytes_scanned_cutoff_per_query: self.remove_bytes_scanned_cutoff_per_query,
+            requester_pays_enabled: self.requester_pays_enabled,
+            engine_version: self.engine_version,
+            remove_customer_content_encryption_configuration: self
+                .remove_customer_content_encryption_configuration,
+            additional_configuration: self.additional_configuration,
+            execution_role: self.execution_role,
+            customer_content_encryption_configuration: self
+                .customer_content_encryption_configuration,
         }
     }
 }
-

@@ -2,33 +2,36 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateResolverConfigInput  {
+pub struct UpdateResolverConfigInput {
     /// <p>Resource ID of the Amazon VPC that you want to update the Resolver configuration for.</p>
     #[doc(hidden)]
     pub resource_id: std::option::Option<std::string::String>,
-    /// <p>Indicates whether or not the Resolver will create autodefined rules for reverse DNS lookups. This is enabled by default. Disabling this option will also affect EC2-Classic instances using ClassicLink. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-classiclink.html">ClassicLink</a> in the <i>Amazon EC2 guide</i>.</p> <note> 
-    /// <p>It can take some time for the status change to be completed.</p> 
-    /// </note> 
+    /// <p>Indicates whether or not the Resolver will create autodefined rules for reverse DNS lookups. This is enabled by default. Disabling this option will also affect EC2-Classic instances using ClassicLink. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-classiclink.html">ClassicLink</a> in the <i>Amazon EC2 guide</i>.</p> <note>
+    /// <p>It can take some time for the status change to be completed.</p>
+    /// </note>
     /// <p></p>
     #[doc(hidden)]
     pub autodefined_reverse_flag: std::option::Option<crate::types::AutodefinedReverseFlag>,
 }
 impl UpdateResolverConfigInput {
     /// <p>Resource ID of the Amazon VPC that you want to update the Resolver configuration for.</p>
-    pub fn resource_id(&self) -> std::option::Option<& str> {
+    pub fn resource_id(&self) -> std::option::Option<&str> {
         self.resource_id.as_deref()
     }
-    /// <p>Indicates whether or not the Resolver will create autodefined rules for reverse DNS lookups. This is enabled by default. Disabling this option will also affect EC2-Classic instances using ClassicLink. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-classiclink.html">ClassicLink</a> in the <i>Amazon EC2 guide</i>.</p> <note> 
-    /// <p>It can take some time for the status change to be completed.</p> 
-    /// </note> 
+    /// <p>Indicates whether or not the Resolver will create autodefined rules for reverse DNS lookups. This is enabled by default. Disabling this option will also affect EC2-Classic instances using ClassicLink. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-classiclink.html">ClassicLink</a> in the <i>Amazon EC2 guide</i>.</p> <note>
+    /// <p>It can take some time for the status change to be completed.</p>
+    /// </note>
     /// <p></p>
-    pub fn autodefined_reverse_flag(&self) -> std::option::Option<& crate::types::AutodefinedReverseFlag> {
+    pub fn autodefined_reverse_flag(
+        &self,
+    ) -> std::option::Option<&crate::types::AutodefinedReverseFlag> {
         self.autodefined_reverse_flag.as_ref()
     }
 }
 impl UpdateResolverConfigInput {
     /// Creates a new builder-style object to manufacture [`UpdateResolverConfigInput`](crate::operation::update_resolver_config::UpdateResolverConfigInput).
-    pub fn builder() -> crate::operation::update_resolver_config::builders::UpdateResolverConfigInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::update_resolver_config::builders::UpdateResolverConfigInputBuilder {
         crate::operation::update_resolver_config::builders::UpdateResolverConfigInputBuilder::default()
     }
 }
@@ -48,33 +51,40 @@ impl UpdateResolverConfigInputBuilder {
     }
     /// <p>Resource ID of the Amazon VPC that you want to update the Resolver configuration for.</p>
     pub fn set_resource_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.resource_id = input; self
+        self.resource_id = input;
+        self
     }
-    /// <p>Indicates whether or not the Resolver will create autodefined rules for reverse DNS lookups. This is enabled by default. Disabling this option will also affect EC2-Classic instances using ClassicLink. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-classiclink.html">ClassicLink</a> in the <i>Amazon EC2 guide</i>.</p> <note> 
-    /// <p>It can take some time for the status change to be completed.</p> 
-    /// </note> 
+    /// <p>Indicates whether or not the Resolver will create autodefined rules for reverse DNS lookups. This is enabled by default. Disabling this option will also affect EC2-Classic instances using ClassicLink. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-classiclink.html">ClassicLink</a> in the <i>Amazon EC2 guide</i>.</p> <note>
+    /// <p>It can take some time for the status change to be completed.</p>
+    /// </note>
     /// <p></p>
     pub fn autodefined_reverse_flag(mut self, input: crate::types::AutodefinedReverseFlag) -> Self {
         self.autodefined_reverse_flag = Some(input);
         self
     }
-    /// <p>Indicates whether or not the Resolver will create autodefined rules for reverse DNS lookups. This is enabled by default. Disabling this option will also affect EC2-Classic instances using ClassicLink. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-classiclink.html">ClassicLink</a> in the <i>Amazon EC2 guide</i>.</p> <note> 
-    /// <p>It can take some time for the status change to be completed.</p> 
-    /// </note> 
+    /// <p>Indicates whether or not the Resolver will create autodefined rules for reverse DNS lookups. This is enabled by default. Disabling this option will also affect EC2-Classic instances using ClassicLink. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-classiclink.html">ClassicLink</a> in the <i>Amazon EC2 guide</i>.</p> <note>
+    /// <p>It can take some time for the status change to be completed.</p>
+    /// </note>
     /// <p></p>
-    pub fn set_autodefined_reverse_flag(mut self, input: std::option::Option<crate::types::AutodefinedReverseFlag>) -> Self {
-        self.autodefined_reverse_flag = input; self
+    pub fn set_autodefined_reverse_flag(
+        mut self,
+        input: std::option::Option<crate::types::AutodefinedReverseFlag>,
+    ) -> Self {
+        self.autodefined_reverse_flag = input;
+        self
     }
     /// Consumes the builder and constructs a [`UpdateResolverConfigInput`](crate::operation::update_resolver_config::UpdateResolverConfigInput).
-    pub fn build(self) -> Result<crate::operation::update_resolver_config::UpdateResolverConfigInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::update_resolver_config::UpdateResolverConfigInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::update_resolver_config::UpdateResolverConfigInput {
-                resource_id: self.resource_id
-                ,
-                autodefined_reverse_flag: self.autodefined_reverse_flag
-                ,
-            }
+                resource_id: self.resource_id,
+                autodefined_reverse_flag: self.autodefined_reverse_flag,
+            },
         )
     }
 }
-

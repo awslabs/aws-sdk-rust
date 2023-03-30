@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeDataSharesForConsumerOutput  {
+pub struct DescribeDataSharesForConsumerOutput {
     /// <p>Shows the results of datashares available for consumers.</p>
     #[doc(hidden)]
     pub data_shares: std::option::Option<std::vec::Vec<crate::types::DataShare>>,
@@ -13,22 +13,22 @@ pub struct DescribeDataSharesForConsumerOutput  {
 }
 impl DescribeDataSharesForConsumerOutput {
     /// <p>Shows the results of datashares available for consumers.</p>
-    pub fn data_shares(&self) -> std::option::Option<& [crate::types::DataShare]> {
+    pub fn data_shares(&self) -> std::option::Option<&[crate::types::DataShare]> {
         self.data_shares.as_deref()
     }
     /// <p>An optional parameter that specifies the starting point to return a set of response records. When the results of a <code>DescribeDataSharesForConsumer</code> request exceed the value specified in <code>MaxRecords</code>, Amazon Web Services returns a value in the <code>Marker</code> field of the response. You can retrieve the next set of response records by providing the returned marker value in the <code>Marker</code> parameter and retrying the request. </p>
-    pub fn marker(&self) -> std::option::Option<& str> {
+    pub fn marker(&self) -> std::option::Option<&str> {
         self.marker.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for DescribeDataSharesForConsumerOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl DescribeDataSharesForConsumerOutput {
     /// Creates a new builder-style object to manufacture [`DescribeDataSharesForConsumerOutput`](crate::operation::describe_data_shares_for_consumer::DescribeDataSharesForConsumerOutput).
-    pub fn builder() -> crate::operation::describe_data_shares_for_consumer::builders::DescribeDataSharesForConsumerOutputBuilder {
+    pub fn builder() -> crate::operation::describe_data_shares_for_consumer::builders::DescribeDataSharesForConsumerOutputBuilder{
         crate::operation::describe_data_shares_for_consumer::builders::DescribeDataSharesForConsumerOutputBuilder::default()
     }
 }
@@ -49,13 +49,17 @@ impl DescribeDataSharesForConsumerOutputBuilder {
     /// <p>Shows the results of datashares available for consumers.</p>
     pub fn data_shares(mut self, input: crate::types::DataShare) -> Self {
         let mut v = self.data_shares.unwrap_or_default();
-                        v.push(input);
-                        self.data_shares = Some(v);
-                        self
+        v.push(input);
+        self.data_shares = Some(v);
+        self
     }
     /// <p>Shows the results of datashares available for consumers.</p>
-    pub fn set_data_shares(mut self, input: std::option::Option<std::vec::Vec<crate::types::DataShare>>) -> Self {
-        self.data_shares = input; self
+    pub fn set_data_shares(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::DataShare>>,
+    ) -> Self {
+        self.data_shares = input;
+        self
     }
     /// <p>An optional parameter that specifies the starting point to return a set of response records. When the results of a <code>DescribeDataSharesForConsumer</code> request exceed the value specified in <code>MaxRecords</code>, Amazon Web Services returns a value in the <code>Marker</code> field of the response. You can retrieve the next set of response records by providing the returned marker value in the <code>Marker</code> parameter and retrying the request. </p>
     pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
@@ -64,26 +68,27 @@ impl DescribeDataSharesForConsumerOutputBuilder {
     }
     /// <p>An optional parameter that specifies the starting point to return a set of response records. When the results of a <code>DescribeDataSharesForConsumer</code> request exceed the value specified in <code>MaxRecords</code>, Amazon Web Services returns a value in the <code>Marker</code> field of the response. You can retrieve the next set of response records by providing the returned marker value in the <code>Marker</code> parameter and retrying the request. </p>
     pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.marker = input; self
+        self.marker = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`DescribeDataSharesForConsumerOutput`](crate::operation::describe_data_shares_for_consumer::DescribeDataSharesForConsumerOutput).
-    pub fn build(self) -> crate::operation::describe_data_shares_for_consumer::DescribeDataSharesForConsumerOutput {
+    pub fn build(
+        self,
+    ) -> crate::operation::describe_data_shares_for_consumer::DescribeDataSharesForConsumerOutput
+    {
         crate::operation::describe_data_shares_for_consumer::DescribeDataSharesForConsumerOutput {
-            data_shares: self.data_shares
-            ,
-            marker: self.marker
-            ,
+            data_shares: self.data_shares,
+            marker: self.marker,
             _request_id: self._request_id,
         }
     }
 }
-

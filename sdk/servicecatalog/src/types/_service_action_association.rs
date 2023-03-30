@@ -3,7 +3,7 @@
 /// <p>A self-service action association consisting of the Action ID, the Product ID, and the Provisioning Artifact ID.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ServiceActionAssociation  {
+pub struct ServiceActionAssociation {
     /// <p>The self-service action identifier. For example, <code>act-fs7abcd89wxyz</code>.</p>
     #[doc(hidden)]
     pub service_action_id: std::option::Option<std::string::String>,
@@ -16,15 +16,15 @@ pub struct ServiceActionAssociation  {
 }
 impl ServiceActionAssociation {
     /// <p>The self-service action identifier. For example, <code>act-fs7abcd89wxyz</code>.</p>
-    pub fn service_action_id(&self) -> std::option::Option<& str> {
+    pub fn service_action_id(&self) -> std::option::Option<&str> {
         self.service_action_id.as_deref()
     }
     /// <p>The product identifier. For example, <code>prod-abcdzk7xy33qa</code>.</p>
-    pub fn product_id(&self) -> std::option::Option<& str> {
+    pub fn product_id(&self) -> std::option::Option<&str> {
         self.product_id.as_deref()
     }
     /// <p>The identifier of the provisioning artifact. For example, <code>pa-4abcdjnxjj6ne</code>.</p>
-    pub fn provisioning_artifact_id(&self) -> std::option::Option<& str> {
+    pub fn provisioning_artifact_id(&self) -> std::option::Option<&str> {
         self.provisioning_artifact_id.as_deref()
     }
 }
@@ -50,8 +50,12 @@ impl ServiceActionAssociationBuilder {
         self
     }
     /// <p>The self-service action identifier. For example, <code>act-fs7abcd89wxyz</code>.</p>
-    pub fn set_service_action_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.service_action_id = input; self
+    pub fn set_service_action_id(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.service_action_id = input;
+        self
     }
     /// <p>The product identifier. For example, <code>prod-abcdzk7xy33qa</code>.</p>
     pub fn product_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -60,7 +64,8 @@ impl ServiceActionAssociationBuilder {
     }
     /// <p>The product identifier. For example, <code>prod-abcdzk7xy33qa</code>.</p>
     pub fn set_product_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.product_id = input; self
+        self.product_id = input;
+        self
     }
     /// <p>The identifier of the provisioning artifact. For example, <code>pa-4abcdjnxjj6ne</code>.</p>
     pub fn provisioning_artifact_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -68,19 +73,19 @@ impl ServiceActionAssociationBuilder {
         self
     }
     /// <p>The identifier of the provisioning artifact. For example, <code>pa-4abcdjnxjj6ne</code>.</p>
-    pub fn set_provisioning_artifact_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.provisioning_artifact_id = input; self
+    pub fn set_provisioning_artifact_id(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.provisioning_artifact_id = input;
+        self
     }
     /// Consumes the builder and constructs a [`ServiceActionAssociation`](crate::types::ServiceActionAssociation).
     pub fn build(self) -> crate::types::ServiceActionAssociation {
         crate::types::ServiceActionAssociation {
-            service_action_id: self.service_action_id
-            ,
-            product_id: self.product_id
-            ,
-            provisioning_artifact_id: self.provisioning_artifact_id
-            ,
+            service_action_id: self.service_action_id,
+            product_id: self.product_id,
+            provisioning_artifact_id: self.provisioning_artifact_id,
         }
     }
 }
-

@@ -3,7 +3,7 @@
 /// <p>Provides information that defines a SAP ASE endpoint.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct SybaseSettings  {
+pub struct SybaseSettings {
     /// <p>Database name for the endpoint.</p>
     #[doc(hidden)]
     pub database_name: std::option::Option<std::string::String>,
@@ -19,8 +19,8 @@ pub struct SybaseSettings  {
     /// <p>Endpoint connection user name.</p>
     #[doc(hidden)]
     pub username: std::option::Option<std::string::String>,
-    /// <p>The full Amazon Resource Name (ARN) of the IAM role that specifies DMS as the trusted entity and grants the required permissions to access the value in <code>SecretsManagerSecret</code>. The role must allow the <code>iam:PassRole</code> action. <code>SecretsManagerSecret</code> has the value of the Amazon Web Services Secrets Manager secret that allows access to the SAP ASE endpoint.</p> <note> 
-    /// <p>You can specify one of two sets of values for these permissions. You can specify the values for this setting and <code>SecretsManagerSecretId</code>. Or you can specify clear-text values for <code>UserName</code>, <code>Password</code>, <code>ServerName</code>, and <code>Port</code>. You can't specify both. For more information on creating this <code>SecretsManagerSecret</code> and the <code>SecretsManagerAccessRoleArn</code> and <code>SecretsManagerSecretId</code> required to access it, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Security.html#security-iam-secretsmanager">Using secrets to access Database Migration Service resources</a> in the <i>Database Migration Service User Guide</i>.</p> 
+    /// <p>The full Amazon Resource Name (ARN) of the IAM role that specifies DMS as the trusted entity and grants the required permissions to access the value in <code>SecretsManagerSecret</code>. The role must allow the <code>iam:PassRole</code> action. <code>SecretsManagerSecret</code> has the value of the Amazon Web Services Secrets Manager secret that allows access to the SAP ASE endpoint.</p> <note>
+    /// <p>You can specify one of two sets of values for these permissions. You can specify the values for this setting and <code>SecretsManagerSecretId</code>. Or you can specify clear-text values for <code>UserName</code>, <code>Password</code>, <code>ServerName</code>, and <code>Port</code>. You can't specify both. For more information on creating this <code>SecretsManagerSecret</code> and the <code>SecretsManagerAccessRoleArn</code> and <code>SecretsManagerSecretId</code> required to access it, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Security.html#security-iam-secretsmanager">Using secrets to access Database Migration Service resources</a> in the <i>Database Migration Service User Guide</i>.</p>
     /// </note>
     #[doc(hidden)]
     pub secrets_manager_access_role_arn: std::option::Option<std::string::String>,
@@ -30,11 +30,11 @@ pub struct SybaseSettings  {
 }
 impl SybaseSettings {
     /// <p>Database name for the endpoint.</p>
-    pub fn database_name(&self) -> std::option::Option<& str> {
+    pub fn database_name(&self) -> std::option::Option<&str> {
         self.database_name.as_deref()
     }
     /// <p>Endpoint connection password.</p>
-    pub fn password(&self) -> std::option::Option<& str> {
+    pub fn password(&self) -> std::option::Option<&str> {
         self.password.as_deref()
     }
     /// <p>Endpoint TCP port. The default is 5000.</p>
@@ -42,25 +42,25 @@ impl SybaseSettings {
         self.port
     }
     /// <p>Fully qualified domain name of the endpoint.</p>
-    pub fn server_name(&self) -> std::option::Option<& str> {
+    pub fn server_name(&self) -> std::option::Option<&str> {
         self.server_name.as_deref()
     }
     /// <p>Endpoint connection user name.</p>
-    pub fn username(&self) -> std::option::Option<& str> {
+    pub fn username(&self) -> std::option::Option<&str> {
         self.username.as_deref()
     }
-    /// <p>The full Amazon Resource Name (ARN) of the IAM role that specifies DMS as the trusted entity and grants the required permissions to access the value in <code>SecretsManagerSecret</code>. The role must allow the <code>iam:PassRole</code> action. <code>SecretsManagerSecret</code> has the value of the Amazon Web Services Secrets Manager secret that allows access to the SAP ASE endpoint.</p> <note> 
-    /// <p>You can specify one of two sets of values for these permissions. You can specify the values for this setting and <code>SecretsManagerSecretId</code>. Or you can specify clear-text values for <code>UserName</code>, <code>Password</code>, <code>ServerName</code>, and <code>Port</code>. You can't specify both. For more information on creating this <code>SecretsManagerSecret</code> and the <code>SecretsManagerAccessRoleArn</code> and <code>SecretsManagerSecretId</code> required to access it, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Security.html#security-iam-secretsmanager">Using secrets to access Database Migration Service resources</a> in the <i>Database Migration Service User Guide</i>.</p> 
+    /// <p>The full Amazon Resource Name (ARN) of the IAM role that specifies DMS as the trusted entity and grants the required permissions to access the value in <code>SecretsManagerSecret</code>. The role must allow the <code>iam:PassRole</code> action. <code>SecretsManagerSecret</code> has the value of the Amazon Web Services Secrets Manager secret that allows access to the SAP ASE endpoint.</p> <note>
+    /// <p>You can specify one of two sets of values for these permissions. You can specify the values for this setting and <code>SecretsManagerSecretId</code>. Or you can specify clear-text values for <code>UserName</code>, <code>Password</code>, <code>ServerName</code>, and <code>Port</code>. You can't specify both. For more information on creating this <code>SecretsManagerSecret</code> and the <code>SecretsManagerAccessRoleArn</code> and <code>SecretsManagerSecretId</code> required to access it, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Security.html#security-iam-secretsmanager">Using secrets to access Database Migration Service resources</a> in the <i>Database Migration Service User Guide</i>.</p>
     /// </note>
-    pub fn secrets_manager_access_role_arn(&self) -> std::option::Option<& str> {
+    pub fn secrets_manager_access_role_arn(&self) -> std::option::Option<&str> {
         self.secrets_manager_access_role_arn.as_deref()
     }
     /// <p>The full ARN, partial ARN, or friendly name of the <code>SecretsManagerSecret</code> that contains the SAP SAE endpoint connection details.</p>
-    pub fn secrets_manager_secret_id(&self) -> std::option::Option<& str> {
+    pub fn secrets_manager_secret_id(&self) -> std::option::Option<&str> {
         self.secrets_manager_secret_id.as_deref()
     }
 }
-impl  std::fmt::Debug for SybaseSettings  {
+impl std::fmt::Debug for SybaseSettings {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("SybaseSettings");
         formatter.field("database_name", &self.database_name);
@@ -68,7 +68,10 @@ impl  std::fmt::Debug for SybaseSettings  {
         formatter.field("port", &self.port);
         formatter.field("server_name", &self.server_name);
         formatter.field("username", &self.username);
-        formatter.field("secrets_manager_access_role_arn", &self.secrets_manager_access_role_arn);
+        formatter.field(
+            "secrets_manager_access_role_arn",
+            &self.secrets_manager_access_role_arn,
+        );
         formatter.field("secrets_manager_secret_id", &self.secrets_manager_secret_id);
         formatter.finish()
     }
@@ -100,7 +103,8 @@ impl SybaseSettingsBuilder {
     }
     /// <p>Database name for the endpoint.</p>
     pub fn set_database_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.database_name = input; self
+        self.database_name = input;
+        self
     }
     /// <p>Endpoint connection password.</p>
     pub fn password(mut self, input: impl Into<std::string::String>) -> Self {
@@ -109,7 +113,8 @@ impl SybaseSettingsBuilder {
     }
     /// <p>Endpoint connection password.</p>
     pub fn set_password(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.password = input; self
+        self.password = input;
+        self
     }
     /// <p>Endpoint TCP port. The default is 5000.</p>
     pub fn port(mut self, input: i32) -> Self {
@@ -118,7 +123,8 @@ impl SybaseSettingsBuilder {
     }
     /// <p>Endpoint TCP port. The default is 5000.</p>
     pub fn set_port(mut self, input: std::option::Option<i32>) -> Self {
-        self.port = input; self
+        self.port = input;
+        self
     }
     /// <p>Fully qualified domain name of the endpoint.</p>
     pub fn server_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -127,7 +133,8 @@ impl SybaseSettingsBuilder {
     }
     /// <p>Fully qualified domain name of the endpoint.</p>
     pub fn set_server_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.server_name = input; self
+        self.server_name = input;
+        self
     }
     /// <p>Endpoint connection user name.</p>
     pub fn username(mut self, input: impl Into<std::string::String>) -> Self {
@@ -136,20 +143,28 @@ impl SybaseSettingsBuilder {
     }
     /// <p>Endpoint connection user name.</p>
     pub fn set_username(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.username = input; self
+        self.username = input;
+        self
     }
-    /// <p>The full Amazon Resource Name (ARN) of the IAM role that specifies DMS as the trusted entity and grants the required permissions to access the value in <code>SecretsManagerSecret</code>. The role must allow the <code>iam:PassRole</code> action. <code>SecretsManagerSecret</code> has the value of the Amazon Web Services Secrets Manager secret that allows access to the SAP ASE endpoint.</p> <note> 
-    /// <p>You can specify one of two sets of values for these permissions. You can specify the values for this setting and <code>SecretsManagerSecretId</code>. Or you can specify clear-text values for <code>UserName</code>, <code>Password</code>, <code>ServerName</code>, and <code>Port</code>. You can't specify both. For more information on creating this <code>SecretsManagerSecret</code> and the <code>SecretsManagerAccessRoleArn</code> and <code>SecretsManagerSecretId</code> required to access it, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Security.html#security-iam-secretsmanager">Using secrets to access Database Migration Service resources</a> in the <i>Database Migration Service User Guide</i>.</p> 
+    /// <p>The full Amazon Resource Name (ARN) of the IAM role that specifies DMS as the trusted entity and grants the required permissions to access the value in <code>SecretsManagerSecret</code>. The role must allow the <code>iam:PassRole</code> action. <code>SecretsManagerSecret</code> has the value of the Amazon Web Services Secrets Manager secret that allows access to the SAP ASE endpoint.</p> <note>
+    /// <p>You can specify one of two sets of values for these permissions. You can specify the values for this setting and <code>SecretsManagerSecretId</code>. Or you can specify clear-text values for <code>UserName</code>, <code>Password</code>, <code>ServerName</code>, and <code>Port</code>. You can't specify both. For more information on creating this <code>SecretsManagerSecret</code> and the <code>SecretsManagerAccessRoleArn</code> and <code>SecretsManagerSecretId</code> required to access it, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Security.html#security-iam-secretsmanager">Using secrets to access Database Migration Service resources</a> in the <i>Database Migration Service User Guide</i>.</p>
     /// </note>
-    pub fn secrets_manager_access_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn secrets_manager_access_role_arn(
+        mut self,
+        input: impl Into<std::string::String>,
+    ) -> Self {
         self.secrets_manager_access_role_arn = Some(input.into());
         self
     }
-    /// <p>The full Amazon Resource Name (ARN) of the IAM role that specifies DMS as the trusted entity and grants the required permissions to access the value in <code>SecretsManagerSecret</code>. The role must allow the <code>iam:PassRole</code> action. <code>SecretsManagerSecret</code> has the value of the Amazon Web Services Secrets Manager secret that allows access to the SAP ASE endpoint.</p> <note> 
-    /// <p>You can specify one of two sets of values for these permissions. You can specify the values for this setting and <code>SecretsManagerSecretId</code>. Or you can specify clear-text values for <code>UserName</code>, <code>Password</code>, <code>ServerName</code>, and <code>Port</code>. You can't specify both. For more information on creating this <code>SecretsManagerSecret</code> and the <code>SecretsManagerAccessRoleArn</code> and <code>SecretsManagerSecretId</code> required to access it, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Security.html#security-iam-secretsmanager">Using secrets to access Database Migration Service resources</a> in the <i>Database Migration Service User Guide</i>.</p> 
+    /// <p>The full Amazon Resource Name (ARN) of the IAM role that specifies DMS as the trusted entity and grants the required permissions to access the value in <code>SecretsManagerSecret</code>. The role must allow the <code>iam:PassRole</code> action. <code>SecretsManagerSecret</code> has the value of the Amazon Web Services Secrets Manager secret that allows access to the SAP ASE endpoint.</p> <note>
+    /// <p>You can specify one of two sets of values for these permissions. You can specify the values for this setting and <code>SecretsManagerSecretId</code>. Or you can specify clear-text values for <code>UserName</code>, <code>Password</code>, <code>ServerName</code>, and <code>Port</code>. You can't specify both. For more information on creating this <code>SecretsManagerSecret</code> and the <code>SecretsManagerAccessRoleArn</code> and <code>SecretsManagerSecretId</code> required to access it, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Security.html#security-iam-secretsmanager">Using secrets to access Database Migration Service resources</a> in the <i>Database Migration Service User Guide</i>.</p>
     /// </note>
-    pub fn set_secrets_manager_access_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.secrets_manager_access_role_arn = input; self
+    pub fn set_secrets_manager_access_role_arn(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.secrets_manager_access_role_arn = input;
+        self
     }
     /// <p>The full ARN, partial ARN, or friendly name of the <code>SecretsManagerSecret</code> that contains the SAP SAE endpoint connection details.</p>
     pub fn secrets_manager_secret_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -157,26 +172,23 @@ impl SybaseSettingsBuilder {
         self
     }
     /// <p>The full ARN, partial ARN, or friendly name of the <code>SecretsManagerSecret</code> that contains the SAP SAE endpoint connection details.</p>
-    pub fn set_secrets_manager_secret_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.secrets_manager_secret_id = input; self
+    pub fn set_secrets_manager_secret_id(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.secrets_manager_secret_id = input;
+        self
     }
     /// Consumes the builder and constructs a [`SybaseSettings`](crate::types::SybaseSettings).
     pub fn build(self) -> crate::types::SybaseSettings {
         crate::types::SybaseSettings {
-            database_name: self.database_name
-            ,
-            password: self.password
-            ,
-            port: self.port
-            ,
-            server_name: self.server_name
-            ,
-            username: self.username
-            ,
-            secrets_manager_access_role_arn: self.secrets_manager_access_role_arn
-            ,
-            secrets_manager_secret_id: self.secrets_manager_secret_id
-            ,
+            database_name: self.database_name,
+            password: self.password,
+            port: self.port,
+            server_name: self.server_name,
+            username: self.username,
+            secrets_manager_access_role_arn: self.secrets_manager_access_role_arn,
+            secrets_manager_secret_id: self.secrets_manager_secret_id,
         }
     }
 }
@@ -188,9 +200,11 @@ impl std::fmt::Debug for SybaseSettingsBuilder {
         formatter.field("port", &self.port);
         formatter.field("server_name", &self.server_name);
         formatter.field("username", &self.username);
-        formatter.field("secrets_manager_access_role_arn", &self.secrets_manager_access_role_arn);
+        formatter.field(
+            "secrets_manager_access_role_arn",
+            &self.secrets_manager_access_role_arn,
+        );
         formatter.field("secrets_manager_secret_id", &self.secrets_manager_secret_id);
         formatter.finish()
     }
 }
-

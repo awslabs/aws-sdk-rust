@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListGatewaysOutput  {
+pub struct ListGatewaysOutput {
     /// <p>A list of your gateways.</p>
     #[doc(hidden)]
     pub gateways: std::option::Option<std::vec::Vec<crate::types::Gateway>>,
@@ -13,19 +13,19 @@ pub struct ListGatewaysOutput  {
 }
 impl ListGatewaysOutput {
     /// <p>A list of your gateways.</p>
-    pub fn gateways(&self) -> std::option::Option<& [crate::types::Gateway]> {
+    pub fn gateways(&self) -> std::option::Option<&[crate::types::Gateway]> {
         self.gateways.as_deref()
     }
     /// <p>The next item following a partial list of returned resources. For example, if a request is made to return <code>maxResults</code> number of resources, <code>NextToken</code> allows you to return more items in your list starting at the location pointed to by the next token.</p>
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for ListGatewaysOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl ListGatewaysOutput {
     /// Creates a new builder-style object to manufacture [`ListGatewaysOutput`](crate::operation::list_gateways::ListGatewaysOutput).
     pub fn builder() -> crate::operation::list_gateways::builders::ListGatewaysOutputBuilder {
@@ -49,13 +49,17 @@ impl ListGatewaysOutputBuilder {
     /// <p>A list of your gateways.</p>
     pub fn gateways(mut self, input: crate::types::Gateway) -> Self {
         let mut v = self.gateways.unwrap_or_default();
-                        v.push(input);
-                        self.gateways = Some(v);
-                        self
+        v.push(input);
+        self.gateways = Some(v);
+        self
     }
     /// <p>A list of your gateways.</p>
-    pub fn set_gateways(mut self, input: std::option::Option<std::vec::Vec<crate::types::Gateway>>) -> Self {
-        self.gateways = input; self
+    pub fn set_gateways(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::Gateway>>,
+    ) -> Self {
+        self.gateways = input;
+        self
     }
     /// <p>The next item following a partial list of returned resources. For example, if a request is made to return <code>maxResults</code> number of resources, <code>NextToken</code> allows you to return more items in your list starting at the location pointed to by the next token.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -64,26 +68,24 @@ impl ListGatewaysOutputBuilder {
     }
     /// <p>The next item following a partial list of returned resources. For example, if a request is made to return <code>maxResults</code> number of resources, <code>NextToken</code> allows you to return more items in your list starting at the location pointed to by the next token.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input; self
+        self.next_token = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`ListGatewaysOutput`](crate::operation::list_gateways::ListGatewaysOutput).
     pub fn build(self) -> crate::operation::list_gateways::ListGatewaysOutput {
         crate::operation::list_gateways::ListGatewaysOutput {
-            gateways: self.gateways
-            ,
-            next_token: self.next_token
-            ,
+            gateways: self.gateways,
+            next_token: self.next_token,
             _request_id: self._request_id,
         }
     }
 }
-

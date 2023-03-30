@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SearchInput  {
+pub struct SearchInput {
     /// <p>The name of the Amazon SageMaker resource to search for.</p>
     #[doc(hidden)]
     pub resource: std::option::Option<crate::types::ResourceType>,
@@ -24,23 +24,23 @@ pub struct SearchInput  {
 }
 impl SearchInput {
     /// <p>The name of the Amazon SageMaker resource to search for.</p>
-    pub fn resource(&self) -> std::option::Option<& crate::types::ResourceType> {
+    pub fn resource(&self) -> std::option::Option<&crate::types::ResourceType> {
         self.resource.as_ref()
     }
     /// <p>A Boolean conditional statement. Resources must satisfy this condition to be included in search results. You must provide at least one subexpression, filter, or nested filter. The maximum number of recursive <code>SubExpressions</code>, <code>NestedFilters</code>, and <code>Filters</code> that can be included in a <code>SearchExpression</code> object is 50.</p>
-    pub fn search_expression(&self) -> std::option::Option<& crate::types::SearchExpression> {
+    pub fn search_expression(&self) -> std::option::Option<&crate::types::SearchExpression> {
         self.search_expression.as_ref()
     }
     /// <p>The name of the resource property used to sort the <code>SearchResults</code>. The default is <code>LastModifiedTime</code>.</p>
-    pub fn sort_by(&self) -> std::option::Option<& str> {
+    pub fn sort_by(&self) -> std::option::Option<&str> {
         self.sort_by.as_deref()
     }
     /// <p>How <code>SearchResults</code> are ordered. Valid values are <code>Ascending</code> or <code>Descending</code>. The default is <code>Descending</code>.</p>
-    pub fn sort_order(&self) -> std::option::Option<& crate::types::SearchSortOrder> {
+    pub fn sort_order(&self) -> std::option::Option<&crate::types::SearchSortOrder> {
         self.sort_order.as_ref()
     }
     /// <p>If more than <code>MaxResults</code> resources match the specified <code>SearchExpression</code>, the response includes a <code>NextToken</code>. The <code>NextToken</code> can be passed to the next <code>SearchRequest</code> to continue retrieving results.</p>
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
     /// <p>The maximum number of results to return.</p>
@@ -74,7 +74,8 @@ impl SearchInputBuilder {
     }
     /// <p>The name of the Amazon SageMaker resource to search for.</p>
     pub fn set_resource(mut self, input: std::option::Option<crate::types::ResourceType>) -> Self {
-        self.resource = input; self
+        self.resource = input;
+        self
     }
     /// <p>A Boolean conditional statement. Resources must satisfy this condition to be included in search results. You must provide at least one subexpression, filter, or nested filter. The maximum number of recursive <code>SubExpressions</code>, <code>NestedFilters</code>, and <code>Filters</code> that can be included in a <code>SearchExpression</code> object is 50.</p>
     pub fn search_expression(mut self, input: crate::types::SearchExpression) -> Self {
@@ -82,8 +83,12 @@ impl SearchInputBuilder {
         self
     }
     /// <p>A Boolean conditional statement. Resources must satisfy this condition to be included in search results. You must provide at least one subexpression, filter, or nested filter. The maximum number of recursive <code>SubExpressions</code>, <code>NestedFilters</code>, and <code>Filters</code> that can be included in a <code>SearchExpression</code> object is 50.</p>
-    pub fn set_search_expression(mut self, input: std::option::Option<crate::types::SearchExpression>) -> Self {
-        self.search_expression = input; self
+    pub fn set_search_expression(
+        mut self,
+        input: std::option::Option<crate::types::SearchExpression>,
+    ) -> Self {
+        self.search_expression = input;
+        self
     }
     /// <p>The name of the resource property used to sort the <code>SearchResults</code>. The default is <code>LastModifiedTime</code>.</p>
     pub fn sort_by(mut self, input: impl Into<std::string::String>) -> Self {
@@ -92,7 +97,8 @@ impl SearchInputBuilder {
     }
     /// <p>The name of the resource property used to sort the <code>SearchResults</code>. The default is <code>LastModifiedTime</code>.</p>
     pub fn set_sort_by(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.sort_by = input; self
+        self.sort_by = input;
+        self
     }
     /// <p>How <code>SearchResults</code> are ordered. Valid values are <code>Ascending</code> or <code>Descending</code>. The default is <code>Descending</code>.</p>
     pub fn sort_order(mut self, input: crate::types::SearchSortOrder) -> Self {
@@ -100,8 +106,12 @@ impl SearchInputBuilder {
         self
     }
     /// <p>How <code>SearchResults</code> are ordered. Valid values are <code>Ascending</code> or <code>Descending</code>. The default is <code>Descending</code>.</p>
-    pub fn set_sort_order(mut self, input: std::option::Option<crate::types::SearchSortOrder>) -> Self {
-        self.sort_order = input; self
+    pub fn set_sort_order(
+        mut self,
+        input: std::option::Option<crate::types::SearchSortOrder>,
+    ) -> Self {
+        self.sort_order = input;
+        self
     }
     /// <p>If more than <code>MaxResults</code> resources match the specified <code>SearchExpression</code>, the response includes a <code>NextToken</code>. The <code>NextToken</code> can be passed to the next <code>SearchRequest</code> to continue retrieving results.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -110,7 +120,8 @@ impl SearchInputBuilder {
     }
     /// <p>If more than <code>MaxResults</code> resources match the specified <code>SearchExpression</code>, the response includes a <code>NextToken</code>. The <code>NextToken</code> can be passed to the next <code>SearchRequest</code> to continue retrieving results.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input; self
+        self.next_token = input;
+        self
     }
     /// <p>The maximum number of results to return.</p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -119,26 +130,21 @@ impl SearchInputBuilder {
     }
     /// <p>The maximum number of results to return.</p>
     pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_results = input; self
+        self.max_results = input;
+        self
     }
     /// Consumes the builder and constructs a [`SearchInput`](crate::operation::search::SearchInput).
-    pub fn build(self) -> Result<crate::operation::search::SearchInput, aws_smithy_http::operation::error::BuildError> {
-        Ok(
-            crate::operation::search::SearchInput {
-                resource: self.resource
-                ,
-                search_expression: self.search_expression
-                ,
-                sort_by: self.sort_by
-                ,
-                sort_order: self.sort_order
-                ,
-                next_token: self.next_token
-                ,
-                max_results: self.max_results
-                ,
-            }
-        )
+    pub fn build(
+        self,
+    ) -> Result<crate::operation::search::SearchInput, aws_smithy_http::operation::error::BuildError>
+    {
+        Ok(crate::operation::search::SearchInput {
+            resource: self.resource,
+            search_expression: self.search_expression,
+            sort_by: self.sort_by,
+            sort_order: self.sort_order,
+            next_token: self.next_token,
+            max_results: self.max_results,
+        })
     }
 }
-

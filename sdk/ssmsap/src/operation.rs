@@ -51,4 +51,3 @@ pub mod untag_resource;
 
 /// Types for the `UpdateApplicationSettings` operation.
 pub mod update_application_settings;
-

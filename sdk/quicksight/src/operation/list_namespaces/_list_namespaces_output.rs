@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListNamespacesOutput  {
+pub struct ListNamespacesOutput {
     /// <p>The information about the namespaces in this Amazon Web Services account. The response includes the namespace ARN, name, Amazon Web Services Region, notification email address, creation status, and identity store.</p>
     #[doc(hidden)]
     pub namespaces: std::option::Option<std::vec::Vec<crate::types::NamespaceInfoV2>>,
@@ -19,15 +19,15 @@ pub struct ListNamespacesOutput  {
 }
 impl ListNamespacesOutput {
     /// <p>The information about the namespaces in this Amazon Web Services account. The response includes the namespace ARN, name, Amazon Web Services Region, notification email address, creation status, and identity store.</p>
-    pub fn namespaces(&self) -> std::option::Option<& [crate::types::NamespaceInfoV2]> {
+    pub fn namespaces(&self) -> std::option::Option<&[crate::types::NamespaceInfoV2]> {
         self.namespaces.as_deref()
     }
     /// <p>A unique pagination token that can be used in a subsequent request. Receiving <code>NextToken</code> in your response inticates that there is more data that can be returned. To receive the data, make another <code>ListNamespaces</code> API call with the returned token to retrieve the next page of data. Each token is valid for 24 hours. If you try to make a <code>ListNamespaces</code> API call with an expired token, you will receive a <code>HTTP 400 InvalidNextTokenException</code> error.</p>
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
     /// <p>The Amazon Web Services request ID for this operation.</p>
-    pub fn request_id(&self) -> std::option::Option<& str> {
+    pub fn request_id(&self) -> std::option::Option<&str> {
         self.request_id.as_deref()
     }
     /// <p>The HTTP status of the request.</p>
@@ -36,10 +36,10 @@ impl ListNamespacesOutput {
     }
 }
 impl aws_http::request_id::RequestId for ListNamespacesOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl ListNamespacesOutput {
     /// Creates a new builder-style object to manufacture [`ListNamespacesOutput`](crate::operation::list_namespaces::ListNamespacesOutput).
     pub fn builder() -> crate::operation::list_namespaces::builders::ListNamespacesOutputBuilder {
@@ -65,13 +65,17 @@ impl ListNamespacesOutputBuilder {
     /// <p>The information about the namespaces in this Amazon Web Services account. The response includes the namespace ARN, name, Amazon Web Services Region, notification email address, creation status, and identity store.</p>
     pub fn namespaces(mut self, input: crate::types::NamespaceInfoV2) -> Self {
         let mut v = self.namespaces.unwrap_or_default();
-                        v.push(input);
-                        self.namespaces = Some(v);
-                        self
+        v.push(input);
+        self.namespaces = Some(v);
+        self
     }
     /// <p>The information about the namespaces in this Amazon Web Services account. The response includes the namespace ARN, name, Amazon Web Services Region, notification email address, creation status, and identity store.</p>
-    pub fn set_namespaces(mut self, input: std::option::Option<std::vec::Vec<crate::types::NamespaceInfoV2>>) -> Self {
-        self.namespaces = input; self
+    pub fn set_namespaces(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::NamespaceInfoV2>>,
+    ) -> Self {
+        self.namespaces = input;
+        self
     }
     /// <p>A unique pagination token that can be used in a subsequent request. Receiving <code>NextToken</code> in your response inticates that there is more data that can be returned. To receive the data, make another <code>ListNamespaces</code> API call with the returned token to retrieve the next page of data. Each token is valid for 24 hours. If you try to make a <code>ListNamespaces</code> API call with an expired token, you will receive a <code>HTTP 400 InvalidNextTokenException</code> error.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -80,7 +84,8 @@ impl ListNamespacesOutputBuilder {
     }
     /// <p>A unique pagination token that can be used in a subsequent request. Receiving <code>NextToken</code> in your response inticates that there is more data that can be returned. To receive the data, make another <code>ListNamespaces</code> API call with the returned token to retrieve the next page of data. Each token is valid for 24 hours. If you try to make a <code>ListNamespaces</code> API call with an expired token, you will receive a <code>HTTP 400 InvalidNextTokenException</code> error.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input; self
+        self.next_token = input;
+        self
     }
     /// <p>The Amazon Web Services request ID for this operation.</p>
     pub fn request_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -89,7 +94,8 @@ impl ListNamespacesOutputBuilder {
     }
     /// <p>The Amazon Web Services request ID for this operation.</p>
     pub fn set_request_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.request_id = input; self
+        self.request_id = input;
+        self
     }
     /// <p>The HTTP status of the request.</p>
     pub fn status(mut self, input: i32) -> Self {
@@ -98,31 +104,26 @@ impl ListNamespacesOutputBuilder {
     }
     /// <p>The HTTP status of the request.</p>
     pub fn set_status(mut self, input: std::option::Option<i32>) -> Self {
-        self.status = input; self
+        self.status = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`ListNamespacesOutput`](crate::operation::list_namespaces::ListNamespacesOutput).
     pub fn build(self) -> crate::operation::list_namespaces::ListNamespacesOutput {
         crate::operation::list_namespaces::ListNamespacesOutput {
-            namespaces: self.namespaces
-            ,
-            next_token: self.next_token
-            ,
-            request_id: self.request_id
-            ,
-            status: self.status
-                .unwrap_or_default()
-            ,
+            namespaces: self.namespaces,
+            next_token: self.next_token,
+            request_id: self.request_id,
+            status: self.status.unwrap_or_default(),
             _request_id: self._request_id,
         }
     }
 }
-

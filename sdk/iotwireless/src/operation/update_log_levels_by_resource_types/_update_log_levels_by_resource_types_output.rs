@@ -2,17 +2,17 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateLogLevelsByResourceTypesOutput  {
+pub struct UpdateLogLevelsByResourceTypesOutput {
     _request_id: Option<String>,
 }
 impl aws_http::request_id::RequestId for UpdateLogLevelsByResourceTypesOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl UpdateLogLevelsByResourceTypesOutput {
     /// Creates a new builder-style object to manufacture [`UpdateLogLevelsByResourceTypesOutput`](crate::operation::update_log_levels_by_resource_types::UpdateLogLevelsByResourceTypesOutput).
-    pub fn builder() -> crate::operation::update_log_levels_by_resource_types::builders::UpdateLogLevelsByResourceTypesOutputBuilder {
+    pub fn builder() -> crate::operation::update_log_levels_by_resource_types::builders::UpdateLogLevelsByResourceTypesOutputBuilder{
         crate::operation::update_log_levels_by_resource_types::builders::UpdateLogLevelsByResourceTypesOutputBuilder::default()
     }
 }
@@ -25,19 +25,21 @@ pub struct UpdateLogLevelsByResourceTypesOutputBuilder {
 }
 impl UpdateLogLevelsByResourceTypesOutputBuilder {
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`UpdateLogLevelsByResourceTypesOutput`](crate::operation::update_log_levels_by_resource_types::UpdateLogLevelsByResourceTypesOutput).
-    pub fn build(self) -> crate::operation::update_log_levels_by_resource_types::UpdateLogLevelsByResourceTypesOutput {
+    pub fn build(
+        self,
+    ) -> crate::operation::update_log_levels_by_resource_types::UpdateLogLevelsByResourceTypesOutput
+    {
         crate::operation::update_log_levels_by_resource_types::UpdateLogLevelsByResourceTypesOutput {
             _request_id: self._request_id,
         }
     }
 }
-

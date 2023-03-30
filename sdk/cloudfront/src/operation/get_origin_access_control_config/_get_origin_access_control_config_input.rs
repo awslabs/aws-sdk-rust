@@ -2,20 +2,20 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetOriginAccessControlConfigInput  {
+pub struct GetOriginAccessControlConfigInput {
     /// <p>The unique identifier of the origin access control.</p>
     #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
 }
 impl GetOriginAccessControlConfigInput {
     /// <p>The unique identifier of the origin access control.</p>
-    pub fn id(&self) -> std::option::Option<& str> {
+    pub fn id(&self) -> std::option::Option<&str> {
         self.id.as_deref()
     }
 }
 impl GetOriginAccessControlConfigInput {
     /// Creates a new builder-style object to manufacture [`GetOriginAccessControlConfigInput`](crate::operation::get_origin_access_control_config::GetOriginAccessControlConfigInput).
-    pub fn builder() -> crate::operation::get_origin_access_control_config::builders::GetOriginAccessControlConfigInputBuilder {
+    pub fn builder() -> crate::operation::get_origin_access_control_config::builders::GetOriginAccessControlConfigInputBuilder{
         crate::operation::get_origin_access_control_config::builders::GetOriginAccessControlConfigInputBuilder::default()
     }
 }
@@ -34,16 +34,20 @@ impl GetOriginAccessControlConfigInputBuilder {
     }
     /// <p>The unique identifier of the origin access control.</p>
     pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.id = input; self
+        self.id = input;
+        self
     }
     /// Consumes the builder and constructs a [`GetOriginAccessControlConfigInput`](crate::operation::get_origin_access_control_config::GetOriginAccessControlConfigInput).
-    pub fn build(self) -> Result<crate::operation::get_origin_access_control_config::GetOriginAccessControlConfigInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::get_origin_access_control_config::GetOriginAccessControlConfigInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::get_origin_access_control_config::GetOriginAccessControlConfigInput {
-                id: self.id
-                ,
-            }
+                id: self.id,
+            },
         )
     }
 }
-

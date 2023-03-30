@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetMigrationsOutput  {
+pub struct GetMigrationsOutput {
     /// <p>An array of summaries for migrations from Amazon Lex V1 to Amazon Lex V2. To see details of the migration, use the <code>migrationId</code> from the summary in a call to the operation.</p>
     #[doc(hidden)]
     pub migration_summaries: std::option::Option<std::vec::Vec<crate::types::MigrationSummary>>,
@@ -13,19 +13,19 @@ pub struct GetMigrationsOutput  {
 }
 impl GetMigrationsOutput {
     /// <p>An array of summaries for migrations from Amazon Lex V1 to Amazon Lex V2. To see details of the migration, use the <code>migrationId</code> from the summary in a call to the operation.</p>
-    pub fn migration_summaries(&self) -> std::option::Option<& [crate::types::MigrationSummary]> {
+    pub fn migration_summaries(&self) -> std::option::Option<&[crate::types::MigrationSummary]> {
         self.migration_summaries.as_deref()
     }
     /// <p>If the response is truncated, it includes a pagination token that you can specify in your next request to fetch the next page of migrations.</p>
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for GetMigrationsOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl GetMigrationsOutput {
     /// Creates a new builder-style object to manufacture [`GetMigrationsOutput`](crate::operation::get_migrations::GetMigrationsOutput).
     pub fn builder() -> crate::operation::get_migrations::builders::GetMigrationsOutputBuilder {
@@ -37,7 +37,8 @@ impl GetMigrationsOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct GetMigrationsOutputBuilder {
-    pub(crate) migration_summaries: std::option::Option<std::vec::Vec<crate::types::MigrationSummary>>,
+    pub(crate) migration_summaries:
+        std::option::Option<std::vec::Vec<crate::types::MigrationSummary>>,
     pub(crate) next_token: std::option::Option<std::string::String>,
     _request_id: Option<String>,
 }
@@ -49,13 +50,17 @@ impl GetMigrationsOutputBuilder {
     /// <p>An array of summaries for migrations from Amazon Lex V1 to Amazon Lex V2. To see details of the migration, use the <code>migrationId</code> from the summary in a call to the operation.</p>
     pub fn migration_summaries(mut self, input: crate::types::MigrationSummary) -> Self {
         let mut v = self.migration_summaries.unwrap_or_default();
-                        v.push(input);
-                        self.migration_summaries = Some(v);
-                        self
+        v.push(input);
+        self.migration_summaries = Some(v);
+        self
     }
     /// <p>An array of summaries for migrations from Amazon Lex V1 to Amazon Lex V2. To see details of the migration, use the <code>migrationId</code> from the summary in a call to the operation.</p>
-    pub fn set_migration_summaries(mut self, input: std::option::Option<std::vec::Vec<crate::types::MigrationSummary>>) -> Self {
-        self.migration_summaries = input; self
+    pub fn set_migration_summaries(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::MigrationSummary>>,
+    ) -> Self {
+        self.migration_summaries = input;
+        self
     }
     /// <p>If the response is truncated, it includes a pagination token that you can specify in your next request to fetch the next page of migrations.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -64,26 +69,24 @@ impl GetMigrationsOutputBuilder {
     }
     /// <p>If the response is truncated, it includes a pagination token that you can specify in your next request to fetch the next page of migrations.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input; self
+        self.next_token = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`GetMigrationsOutput`](crate::operation::get_migrations::GetMigrationsOutput).
     pub fn build(self) -> crate::operation::get_migrations::GetMigrationsOutput {
         crate::operation::get_migrations::GetMigrationsOutput {
-            migration_summaries: self.migration_summaries
-            ,
-            next_token: self.next_token
-            ,
+            migration_summaries: self.migration_summaries,
+            next_token: self.next_token,
             _request_id: self._request_id,
         }
     }
 }
-

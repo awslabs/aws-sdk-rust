@@ -3,14 +3,14 @@
 /// <p>The stages that an escalation plan or engagement plan engages contacts and contact methods in.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Plan  {
+pub struct Plan {
     /// <p>A list of stages that the escalation plan or engagement plan uses to engage contacts and contact methods.</p>
     #[doc(hidden)]
     pub stages: std::option::Option<std::vec::Vec<crate::types::Stage>>,
 }
 impl Plan {
     /// <p>A list of stages that the escalation plan or engagement plan uses to engage contacts and contact methods.</p>
-    pub fn stages(&self) -> std::option::Option<& [crate::types::Stage]> {
+    pub fn stages(&self) -> std::option::Option<&[crate::types::Stage]> {
         self.stages.as_deref()
     }
 }
@@ -35,20 +35,22 @@ impl PlanBuilder {
     /// <p>A list of stages that the escalation plan or engagement plan uses to engage contacts and contact methods.</p>
     pub fn stages(mut self, input: crate::types::Stage) -> Self {
         let mut v = self.stages.unwrap_or_default();
-                        v.push(input);
-                        self.stages = Some(v);
-                        self
+        v.push(input);
+        self.stages = Some(v);
+        self
     }
     /// <p>A list of stages that the escalation plan or engagement plan uses to engage contacts and contact methods.</p>
-    pub fn set_stages(mut self, input: std::option::Option<std::vec::Vec<crate::types::Stage>>) -> Self {
-        self.stages = input; self
+    pub fn set_stages(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::Stage>>,
+    ) -> Self {
+        self.stages = input;
+        self
     }
     /// Consumes the builder and constructs a [`Plan`](crate::types::Plan).
     pub fn build(self) -> crate::types::Plan {
         crate::types::Plan {
-            stages: self.stages
-            ,
+            stages: self.stages,
         }
     }
 }
-

@@ -193,7 +193,7 @@ pub(crate) mod http_date {
         let mut out = String::with_capacity(32);
         fn push_digit(out: &mut String, digit: u8) {
             debug_assert!(digit < 10);
-            out.push((b'0' + digit as u8) as char);
+            out.push((b'0' + digit) as char);
         }
 
         out.push_str(weekday);

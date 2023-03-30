@@ -3,16 +3,16 @@
 /// <p></p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PurgeQueueInput  {
-    /// <p>The URL of the queue from which the <code>PurgeQueue</code> action deletes messages.</p> 
+pub struct PurgeQueueInput {
+    /// <p>The URL of the queue from which the <code>PurgeQueue</code> action deletes messages.</p>
     /// <p>Queue URLs and names are case-sensitive.</p>
     #[doc(hidden)]
     pub queue_url: std::option::Option<std::string::String>,
 }
 impl PurgeQueueInput {
-    /// <p>The URL of the queue from which the <code>PurgeQueue</code> action deletes messages.</p> 
+    /// <p>The URL of the queue from which the <code>PurgeQueue</code> action deletes messages.</p>
     /// <p>Queue URLs and names are case-sensitive.</p>
-    pub fn queue_url(&self) -> std::option::Option<& str> {
+    pub fn queue_url(&self) -> std::option::Option<&str> {
         self.queue_url.as_deref()
     }
 }
@@ -30,25 +30,27 @@ pub struct PurgeQueueInputBuilder {
     pub(crate) queue_url: std::option::Option<std::string::String>,
 }
 impl PurgeQueueInputBuilder {
-    /// <p>The URL of the queue from which the <code>PurgeQueue</code> action deletes messages.</p> 
+    /// <p>The URL of the queue from which the <code>PurgeQueue</code> action deletes messages.</p>
     /// <p>Queue URLs and names are case-sensitive.</p>
     pub fn queue_url(mut self, input: impl Into<std::string::String>) -> Self {
         self.queue_url = Some(input.into());
         self
     }
-    /// <p>The URL of the queue from which the <code>PurgeQueue</code> action deletes messages.</p> 
+    /// <p>The URL of the queue from which the <code>PurgeQueue</code> action deletes messages.</p>
     /// <p>Queue URLs and names are case-sensitive.</p>
     pub fn set_queue_url(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.queue_url = input; self
+        self.queue_url = input;
+        self
     }
     /// Consumes the builder and constructs a [`PurgeQueueInput`](crate::operation::purge_queue::PurgeQueueInput).
-    pub fn build(self) -> Result<crate::operation::purge_queue::PurgeQueueInput, aws_smithy_http::operation::error::BuildError> {
-        Ok(
-            crate::operation::purge_queue::PurgeQueueInput {
-                queue_url: self.queue_url
-                ,
-            }
-        )
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::purge_queue::PurgeQueueInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        Ok(crate::operation::purge_queue::PurgeQueueInput {
+            queue_url: self.queue_url,
+        })
     }
 }
-

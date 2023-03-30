@@ -3,7 +3,7 @@
 /// <p>Batch condition that must be met (specified number of events received or batch time window expired) before EventBridge event trigger fires.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct EventBatchingCondition  {
+pub struct EventBatchingCondition {
     /// <p>Number of events that must be received from Amazon EventBridge before EventBridge event trigger fires.</p>
     #[doc(hidden)]
     pub batch_size: i32,
@@ -43,7 +43,8 @@ impl EventBatchingConditionBuilder {
     }
     /// <p>Number of events that must be received from Amazon EventBridge before EventBridge event trigger fires.</p>
     pub fn set_batch_size(mut self, input: std::option::Option<i32>) -> Self {
-        self.batch_size = input; self
+        self.batch_size = input;
+        self
     }
     /// <p>Window of time in seconds after which EventBridge event trigger fires. Window starts when first event is received.</p>
     pub fn batch_window(mut self, input: i32) -> Self {
@@ -52,17 +53,14 @@ impl EventBatchingConditionBuilder {
     }
     /// <p>Window of time in seconds after which EventBridge event trigger fires. Window starts when first event is received.</p>
     pub fn set_batch_window(mut self, input: std::option::Option<i32>) -> Self {
-        self.batch_window = input; self
+        self.batch_window = input;
+        self
     }
     /// Consumes the builder and constructs a [`EventBatchingCondition`](crate::types::EventBatchingCondition).
     pub fn build(self) -> crate::types::EventBatchingCondition {
         crate::types::EventBatchingCondition {
-            batch_size: self.batch_size
-                .unwrap_or_default()
-            ,
-            batch_window: self.batch_window
-            ,
+            batch_size: self.batch_size.unwrap_or_default(),
+            batch_window: self.batch_window,
         }
     }
 }
-

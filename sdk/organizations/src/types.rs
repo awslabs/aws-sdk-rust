@@ -172,4 +172,3 @@ pub mod builders;
 
 /// Error types that AWS Organizations can respond with.
 pub mod error;
-

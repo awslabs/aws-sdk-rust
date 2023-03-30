@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateAppInput  {
+pub struct UpdateAppInput {
     /// <p>The Amazon Resource Name (ARN) of the application. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
     #[doc(hidden)]
     pub app_arn: std::option::Option<std::string::String>,
@@ -21,15 +21,15 @@ pub struct UpdateAppInput  {
 }
 impl UpdateAppInput {
     /// <p>The Amazon Resource Name (ARN) of the application. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
-    pub fn app_arn(&self) -> std::option::Option<& str> {
+    pub fn app_arn(&self) -> std::option::Option<&str> {
         self.app_arn.as_deref()
     }
     /// <p>The optional description for an app.</p>
-    pub fn description(&self) -> std::option::Option<& str> {
+    pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the resiliency policy. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:resiliency-policy/<code>policy-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
-    pub fn policy_arn(&self) -> std::option::Option<& str> {
+    pub fn policy_arn(&self) -> std::option::Option<&str> {
         self.policy_arn.as_deref()
     }
     /// <p>Specifies if the resiliency policy ARN should be cleared.</p>
@@ -37,7 +37,9 @@ impl UpdateAppInput {
         self.clear_resiliency_policy_arn
     }
     /// <p> Assessment execution schedule with 'Daily' or 'Disabled' values. </p>
-    pub fn assessment_schedule(&self) -> std::option::Option<& crate::types::AppAssessmentScheduleType> {
+    pub fn assessment_schedule(
+        &self,
+    ) -> std::option::Option<&crate::types::AppAssessmentScheduleType> {
         self.assessment_schedule.as_ref()
     }
 }
@@ -66,7 +68,8 @@ impl UpdateAppInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the application. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
     pub fn set_app_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.app_arn = input; self
+        self.app_arn = input;
+        self
     }
     /// <p>The optional description for an app.</p>
     pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -75,7 +78,8 @@ impl UpdateAppInputBuilder {
     }
     /// <p>The optional description for an app.</p>
     pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.description = input; self
+        self.description = input;
+        self
     }
     /// <p>The Amazon Resource Name (ARN) of the resiliency policy. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:resiliency-policy/<code>policy-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
     pub fn policy_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -84,7 +88,8 @@ impl UpdateAppInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the resiliency policy. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:resiliency-policy/<code>policy-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
     pub fn set_policy_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.policy_arn = input; self
+        self.policy_arn = input;
+        self
     }
     /// <p>Specifies if the resiliency policy ARN should be cleared.</p>
     pub fn clear_resiliency_policy_arn(mut self, input: bool) -> Self {
@@ -93,7 +98,8 @@ impl UpdateAppInputBuilder {
     }
     /// <p>Specifies if the resiliency policy ARN should be cleared.</p>
     pub fn set_clear_resiliency_policy_arn(mut self, input: std::option::Option<bool>) -> Self {
-        self.clear_resiliency_policy_arn = input; self
+        self.clear_resiliency_policy_arn = input;
+        self
     }
     /// <p> Assessment execution schedule with 'Daily' or 'Disabled' values. </p>
     pub fn assessment_schedule(mut self, input: crate::types::AppAssessmentScheduleType) -> Self {
@@ -101,25 +107,26 @@ impl UpdateAppInputBuilder {
         self
     }
     /// <p> Assessment execution schedule with 'Daily' or 'Disabled' values. </p>
-    pub fn set_assessment_schedule(mut self, input: std::option::Option<crate::types::AppAssessmentScheduleType>) -> Self {
-        self.assessment_schedule = input; self
+    pub fn set_assessment_schedule(
+        mut self,
+        input: std::option::Option<crate::types::AppAssessmentScheduleType>,
+    ) -> Self {
+        self.assessment_schedule = input;
+        self
     }
     /// Consumes the builder and constructs a [`UpdateAppInput`](crate::operation::update_app::UpdateAppInput).
-    pub fn build(self) -> Result<crate::operation::update_app::UpdateAppInput, aws_smithy_http::operation::error::BuildError> {
-        Ok(
-            crate::operation::update_app::UpdateAppInput {
-                app_arn: self.app_arn
-                ,
-                description: self.description
-                ,
-                policy_arn: self.policy_arn
-                ,
-                clear_resiliency_policy_arn: self.clear_resiliency_policy_arn
-                ,
-                assessment_schedule: self.assessment_schedule
-                ,
-            }
-        )
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::update_app::UpdateAppInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        Ok(crate::operation::update_app::UpdateAppInput {
+            app_arn: self.app_arn,
+            description: self.description,
+            policy_arn: self.policy_arn,
+            clear_resiliency_policy_arn: self.clear_resiliency_policy_arn,
+            assessment_schedule: self.assessment_schedule,
+        })
     }
 }
-

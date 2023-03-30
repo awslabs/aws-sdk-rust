@@ -3,14 +3,14 @@
 /// <p> The set of tiering configurations for the pricing rule. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateTieringInput  {
+pub struct CreateTieringInput {
     /// <p> The possible Amazon Web Services Free Tier configurations. </p>
     #[doc(hidden)]
     pub free_tier: std::option::Option<crate::types::CreateFreeTierConfig>,
 }
 impl CreateTieringInput {
     /// <p> The possible Amazon Web Services Free Tier configurations. </p>
-    pub fn free_tier(&self) -> std::option::Option<& crate::types::CreateFreeTierConfig> {
+    pub fn free_tier(&self) -> std::option::Option<&crate::types::CreateFreeTierConfig> {
         self.free_tier.as_ref()
     }
 }
@@ -34,15 +34,17 @@ impl CreateTieringInputBuilder {
         self
     }
     /// <p> The possible Amazon Web Services Free Tier configurations. </p>
-    pub fn set_free_tier(mut self, input: std::option::Option<crate::types::CreateFreeTierConfig>) -> Self {
-        self.free_tier = input; self
+    pub fn set_free_tier(
+        mut self,
+        input: std::option::Option<crate::types::CreateFreeTierConfig>,
+    ) -> Self {
+        self.free_tier = input;
+        self
     }
     /// Consumes the builder and constructs a [`CreateTieringInput`](crate::types::CreateTieringInput).
     pub fn build(self) -> crate::types::CreateTieringInput {
         crate::types::CreateTieringInput {
-            free_tier: self.free_tier
-            ,
+            free_tier: self.free_tier,
         }
     }
 }
-

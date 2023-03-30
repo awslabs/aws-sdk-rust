@@ -4,49 +4,67 @@ pub use crate::operation::update_flow::_update_flow_output::UpdateFlowOutputBuil
 pub use crate::operation::update_flow::_update_flow_input::UpdateFlowInputBuilder;
 
 /// Fluent builder constructing a request to `UpdateFlow`.
-/// 
+///
 /// <p> Updates an existing flow. </p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct UpdateFlowFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::update_flow::builders::UpdateFlowInputBuilder
-            }
-impl UpdateFlowFluentBuilder  {
+    handle: std::sync::Arc<crate::client::Handle>,
+    inner: crate::operation::update_flow::builders::UpdateFlowInputBuilder,
+}
+impl UpdateFlowFluentBuilder {
     /// Creates a new `UpdateFlow`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
-                    /// sent. The operation's inner [http::Request] can be modified as well.
-                    pub async fn customize(self) -> std::result::Result<
-                        crate::client::customize::CustomizableOperation<crate::operation::update_flow::UpdateFlow, aws_http::retry::AwsResponseRetryClassifier,>,
-                        aws_smithy_http::result::SdkError<crate::operation::update_flow::UpdateFlowError>
-                    >  {
-                        let handle = self.handle.clone();
-                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-                    }
-    
-                    /// Sends the request and returns the response.
-                    ///
-                    /// If an error occurs, an `SdkError` will be returned with additional details that
-                    /// can be matched against.
-                    ///
-                    /// By default, any retryable failures will be retried twice. Retry behavior
-                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                    /// set when configuring the client.
-                    pub async fn send(self) -> std::result::Result<crate::operation::update_flow::UpdateFlowOutput, aws_smithy_http::result::SdkError<crate::operation::update_flow::UpdateFlowError>>
-                     {
-                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&self.handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        self.handle.client.call(op).await
-                    }
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle,
+            inner: Default::default(),
+        }
+    }
+
+    /// Consume this builder, creating a customizable operation that can be modified before being
+    /// sent. The operation's inner [http::Request] can be modified as well.
+    pub async fn customize(
+        self,
+    ) -> std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::update_flow::UpdateFlow,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::result::SdkError<crate::operation::update_flow::UpdateFlowError>,
+    > {
+        let handle = self.handle.clone();
+        let operation = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+    }
+
+    /// Sends the request and returns the response.
+    ///
+    /// If an error occurs, an `SdkError` will be returned with additional details that
+    /// can be matched against.
+    ///
+    /// By default, any retryable failures will be retried twice. Retry behavior
+    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+    /// set when configuring the client.
+    pub async fn send(
+        self,
+    ) -> std::result::Result<
+        crate::operation::update_flow::UpdateFlowOutput,
+        aws_smithy_http::result::SdkError<crate::operation::update_flow::UpdateFlowError>,
+    > {
+        let op = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&self.handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        self.handle.client.call(op).await
+    }
     /// <p> The specified name of the flow. Spaces are not allowed. Use underscores (_) or hyphens (-) only. </p>
     pub fn flow_name(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.flow_name(input.into());
@@ -73,7 +91,10 @@ impl UpdateFlowFluentBuilder  {
         self
     }
     /// <p> The trigger settings that determine how and when the flow runs. </p>
-    pub fn set_trigger_config(mut self, input: std::option::Option<crate::types::TriggerConfig>) -> Self {
+    pub fn set_trigger_config(
+        mut self,
+        input: std::option::Option<crate::types::TriggerConfig>,
+    ) -> Self {
         self.inner = self.inner.set_trigger_config(input);
         self
     }
@@ -83,7 +104,10 @@ impl UpdateFlowFluentBuilder  {
         self
     }
     /// <p> Contains information about the configuration of the source connector used in the flow. </p>
-    pub fn set_source_flow_config(mut self, input: std::option::Option<crate::types::SourceFlowConfig>) -> Self {
+    pub fn set_source_flow_config(
+        mut self,
+        input: std::option::Option<crate::types::SourceFlowConfig>,
+    ) -> Self {
         self.inner = self.inner.set_source_flow_config(input);
         self
     }
@@ -92,12 +116,18 @@ impl UpdateFlowFluentBuilder  {
     /// To override the contents of this collection use [`set_destination_flow_config_list`](Self::set_destination_flow_config_list).
     ///
     /// <p> The configuration that controls how Amazon AppFlow transfers data to the destination connector. </p>
-    pub fn destination_flow_config_list(mut self, input: crate::types::DestinationFlowConfig) -> Self {
+    pub fn destination_flow_config_list(
+        mut self,
+        input: crate::types::DestinationFlowConfig,
+    ) -> Self {
         self.inner = self.inner.destination_flow_config_list(input);
         self
     }
     /// <p> The configuration that controls how Amazon AppFlow transfers data to the destination connector. </p>
-    pub fn set_destination_flow_config_list(mut self, input: std::option::Option<std::vec::Vec<crate::types::DestinationFlowConfig>>) -> Self {
+    pub fn set_destination_flow_config_list(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::DestinationFlowConfig>>,
+    ) -> Self {
         self.inner = self.inner.set_destination_flow_config_list(input);
         self
     }
@@ -111,7 +141,10 @@ impl UpdateFlowFluentBuilder  {
         self
     }
     /// <p> A list of tasks that Amazon AppFlow performs while transferring the data in the flow run. </p>
-    pub fn set_tasks(mut self, input: std::option::Option<std::vec::Vec<crate::types::Task>>) -> Self {
+    pub fn set_tasks(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::Task>>,
+    ) -> Self {
         self.inner = self.inner.set_tasks(input);
         self
     }
@@ -121,9 +154,11 @@ impl UpdateFlowFluentBuilder  {
         self
     }
     /// <p>Specifies the configuration that Amazon AppFlow uses when it catalogs the data that's transferred by the associated flow. When Amazon AppFlow catalogs the data from a flow, it stores metadata in a data catalog.</p>
-    pub fn set_metadata_catalog_config(mut self, input: std::option::Option<crate::types::MetadataCatalogConfig>) -> Self {
+    pub fn set_metadata_catalog_config(
+        mut self,
+        input: std::option::Option<crate::types::MetadataCatalogConfig>,
+    ) -> Self {
         self.inner = self.inner.set_metadata_catalog_config(input);
         self
     }
 }
-

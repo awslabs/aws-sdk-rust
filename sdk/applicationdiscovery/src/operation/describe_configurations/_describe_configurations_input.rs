@@ -2,20 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeConfigurationsInput  {
+pub struct DescribeConfigurationsInput {
     /// <p>One or more configuration IDs.</p>
     #[doc(hidden)]
     pub configuration_ids: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl DescribeConfigurationsInput {
     /// <p>One or more configuration IDs.</p>
-    pub fn configuration_ids(&self) -> std::option::Option<& [std::string::String]> {
+    pub fn configuration_ids(&self) -> std::option::Option<&[std::string::String]> {
         self.configuration_ids.as_deref()
     }
 }
 impl DescribeConfigurationsInput {
     /// Creates a new builder-style object to manufacture [`DescribeConfigurationsInput`](crate::operation::describe_configurations::DescribeConfigurationsInput).
-    pub fn builder() -> crate::operation::describe_configurations::builders::DescribeConfigurationsInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::describe_configurations::builders::DescribeConfigurationsInputBuilder
+    {
         crate::operation::describe_configurations::builders::DescribeConfigurationsInputBuilder::default()
     }
 }
@@ -34,22 +36,29 @@ impl DescribeConfigurationsInputBuilder {
     /// <p>One or more configuration IDs.</p>
     pub fn configuration_ids(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.configuration_ids.unwrap_or_default();
-                        v.push(input.into());
-                        self.configuration_ids = Some(v);
-                        self
+        v.push(input.into());
+        self.configuration_ids = Some(v);
+        self
     }
     /// <p>One or more configuration IDs.</p>
-    pub fn set_configuration_ids(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-        self.configuration_ids = input; self
+    pub fn set_configuration_ids(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
+        self.configuration_ids = input;
+        self
     }
     /// Consumes the builder and constructs a [`DescribeConfigurationsInput`](crate::operation::describe_configurations::DescribeConfigurationsInput).
-    pub fn build(self) -> Result<crate::operation::describe_configurations::DescribeConfigurationsInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::describe_configurations::DescribeConfigurationsInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::describe_configurations::DescribeConfigurationsInput {
-                configuration_ids: self.configuration_ids
-                ,
-            }
+                configuration_ids: self.configuration_ids,
+            },
         )
     }
 }
-

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeApplicationStateOutput  {
+pub struct DescribeApplicationStateOutput {
     /// <p>Status of the application - Not Started, In-Progress, Complete.</p>
     #[doc(hidden)]
     pub application_status: std::option::Option<crate::types::ApplicationStatus>,
@@ -13,22 +13,24 @@ pub struct DescribeApplicationStateOutput  {
 }
 impl DescribeApplicationStateOutput {
     /// <p>Status of the application - Not Started, In-Progress, Complete.</p>
-    pub fn application_status(&self) -> std::option::Option<& crate::types::ApplicationStatus> {
+    pub fn application_status(&self) -> std::option::Option<&crate::types::ApplicationStatus> {
         self.application_status.as_ref()
     }
     /// <p>The timestamp when the application status was last updated.</p>
-    pub fn last_updated_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
+    pub fn last_updated_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_updated_time.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for DescribeApplicationStateOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl DescribeApplicationStateOutput {
     /// Creates a new builder-style object to manufacture [`DescribeApplicationStateOutput`](crate::operation::describe_application_state::DescribeApplicationStateOutput).
-    pub fn builder() -> crate::operation::describe_application_state::builders::DescribeApplicationStateOutputBuilder {
+    pub fn builder(
+    ) -> crate::operation::describe_application_state::builders::DescribeApplicationStateOutputBuilder
+    {
         crate::operation::describe_application_state::builders::DescribeApplicationStateOutputBuilder::default()
     }
 }
@@ -48,8 +50,12 @@ impl DescribeApplicationStateOutputBuilder {
         self
     }
     /// <p>Status of the application - Not Started, In-Progress, Complete.</p>
-    pub fn set_application_status(mut self, input: std::option::Option<crate::types::ApplicationStatus>) -> Self {
-        self.application_status = input; self
+    pub fn set_application_status(
+        mut self,
+        input: std::option::Option<crate::types::ApplicationStatus>,
+    ) -> Self {
+        self.application_status = input;
+        self
     }
     /// <p>The timestamp when the application status was last updated.</p>
     pub fn last_updated_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -57,27 +63,30 @@ impl DescribeApplicationStateOutputBuilder {
         self
     }
     /// <p>The timestamp when the application status was last updated.</p>
-    pub fn set_last_updated_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.last_updated_time = input; self
+    pub fn set_last_updated_time(
+        mut self,
+        input: std::option::Option<aws_smithy_types::DateTime>,
+    ) -> Self {
+        self.last_updated_time = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`DescribeApplicationStateOutput`](crate::operation::describe_application_state::DescribeApplicationStateOutput).
-    pub fn build(self) -> crate::operation::describe_application_state::DescribeApplicationStateOutput {
+    pub fn build(
+        self,
+    ) -> crate::operation::describe_application_state::DescribeApplicationStateOutput {
         crate::operation::describe_application_state::DescribeApplicationStateOutput {
-            application_status: self.application_status
-            ,
-            last_updated_time: self.last_updated_time
-            ,
+            application_status: self.application_status,
+            last_updated_time: self.last_updated_time,
             _request_id: self._request_id,
         }
     }
 }
-

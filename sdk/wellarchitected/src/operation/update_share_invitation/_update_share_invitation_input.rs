@@ -3,7 +3,7 @@
 /// <p>Input for Update Share Invitation</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateShareInvitationInput  {
+pub struct UpdateShareInvitationInput {
     /// <p>The ID assigned to the share invitation.</p>
     #[doc(hidden)]
     pub share_invitation_id: std::option::Option<std::string::String>,
@@ -13,17 +13,21 @@ pub struct UpdateShareInvitationInput  {
 }
 impl UpdateShareInvitationInput {
     /// <p>The ID assigned to the share invitation.</p>
-    pub fn share_invitation_id(&self) -> std::option::Option<& str> {
+    pub fn share_invitation_id(&self) -> std::option::Option<&str> {
         self.share_invitation_id.as_deref()
     }
     /// <p>Share invitation action taken by contributor.</p>
-    pub fn share_invitation_action(&self) -> std::option::Option<& crate::types::ShareInvitationAction> {
+    pub fn share_invitation_action(
+        &self,
+    ) -> std::option::Option<&crate::types::ShareInvitationAction> {
         self.share_invitation_action.as_ref()
     }
 }
 impl UpdateShareInvitationInput {
     /// Creates a new builder-style object to manufacture [`UpdateShareInvitationInput`](crate::operation::update_share_invitation::UpdateShareInvitationInput).
-    pub fn builder() -> crate::operation::update_share_invitation::builders::UpdateShareInvitationInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::update_share_invitation::builders::UpdateShareInvitationInputBuilder
+    {
         crate::operation::update_share_invitation::builders::UpdateShareInvitationInputBuilder::default()
     }
 }
@@ -42,8 +46,12 @@ impl UpdateShareInvitationInputBuilder {
         self
     }
     /// <p>The ID assigned to the share invitation.</p>
-    pub fn set_share_invitation_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.share_invitation_id = input; self
+    pub fn set_share_invitation_id(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.share_invitation_id = input;
+        self
     }
     /// <p>Share invitation action taken by contributor.</p>
     pub fn share_invitation_action(mut self, input: crate::types::ShareInvitationAction) -> Self {
@@ -51,19 +59,25 @@ impl UpdateShareInvitationInputBuilder {
         self
     }
     /// <p>Share invitation action taken by contributor.</p>
-    pub fn set_share_invitation_action(mut self, input: std::option::Option<crate::types::ShareInvitationAction>) -> Self {
-        self.share_invitation_action = input; self
+    pub fn set_share_invitation_action(
+        mut self,
+        input: std::option::Option<crate::types::ShareInvitationAction>,
+    ) -> Self {
+        self.share_invitation_action = input;
+        self
     }
     /// Consumes the builder and constructs a [`UpdateShareInvitationInput`](crate::operation::update_share_invitation::UpdateShareInvitationInput).
-    pub fn build(self) -> Result<crate::operation::update_share_invitation::UpdateShareInvitationInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::update_share_invitation::UpdateShareInvitationInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::update_share_invitation::UpdateShareInvitationInput {
-                share_invitation_id: self.share_invitation_id
-                ,
-                share_invitation_action: self.share_invitation_action
-                ,
-            }
+                share_invitation_id: self.share_invitation_id,
+                share_invitation_action: self.share_invitation_action,
+            },
         )
     }
 }
-

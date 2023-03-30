@@ -210,4 +210,3 @@ pub mod update_traffic_policy_comment;
 
 /// Types for the `UpdateTrafficPolicyInstance` operation.
 pub mod update_traffic_policy_instance;
-

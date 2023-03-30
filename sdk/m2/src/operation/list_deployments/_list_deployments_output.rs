@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListDeploymentsOutput  {
+pub struct ListDeploymentsOutput {
     /// <p>The list of deployments that is returned.</p>
     #[doc(hidden)]
     pub deployments: std::option::Option<std::vec::Vec<crate::types::DeploymentSummary>>,
@@ -13,19 +13,19 @@ pub struct ListDeploymentsOutput  {
 }
 impl ListDeploymentsOutput {
     /// <p>The list of deployments that is returned.</p>
-    pub fn deployments(&self) -> std::option::Option<& [crate::types::DeploymentSummary]> {
+    pub fn deployments(&self) -> std::option::Option<&[crate::types::DeploymentSummary]> {
         self.deployments.as_deref()
     }
     /// <p>If there are more items to return, this contains a token that is passed to a subsequent call to this operation to retrieve the next set of items.</p>
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for ListDeploymentsOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl ListDeploymentsOutput {
     /// Creates a new builder-style object to manufacture [`ListDeploymentsOutput`](crate::operation::list_deployments::ListDeploymentsOutput).
     pub fn builder() -> crate::operation::list_deployments::builders::ListDeploymentsOutputBuilder {
@@ -49,13 +49,17 @@ impl ListDeploymentsOutputBuilder {
     /// <p>The list of deployments that is returned.</p>
     pub fn deployments(mut self, input: crate::types::DeploymentSummary) -> Self {
         let mut v = self.deployments.unwrap_or_default();
-                        v.push(input);
-                        self.deployments = Some(v);
-                        self
+        v.push(input);
+        self.deployments = Some(v);
+        self
     }
     /// <p>The list of deployments that is returned.</p>
-    pub fn set_deployments(mut self, input: std::option::Option<std::vec::Vec<crate::types::DeploymentSummary>>) -> Self {
-        self.deployments = input; self
+    pub fn set_deployments(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::DeploymentSummary>>,
+    ) -> Self {
+        self.deployments = input;
+        self
     }
     /// <p>If there are more items to return, this contains a token that is passed to a subsequent call to this operation to retrieve the next set of items.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -64,26 +68,24 @@ impl ListDeploymentsOutputBuilder {
     }
     /// <p>If there are more items to return, this contains a token that is passed to a subsequent call to this operation to retrieve the next set of items.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input; self
+        self.next_token = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`ListDeploymentsOutput`](crate::operation::list_deployments::ListDeploymentsOutput).
     pub fn build(self) -> crate::operation::list_deployments::ListDeploymentsOutput {
         crate::operation::list_deployments::ListDeploymentsOutput {
-            deployments: self.deployments
-            ,
-            next_token: self.next_token
-            ,
+            deployments: self.deployments,
+            next_token: self.next_token,
             _request_id: self._request_id,
         }
     }
 }
-

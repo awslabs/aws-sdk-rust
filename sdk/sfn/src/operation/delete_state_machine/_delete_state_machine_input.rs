@@ -2,20 +2,21 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteStateMachineInput  {
+pub struct DeleteStateMachineInput {
     /// <p>The Amazon Resource Name (ARN) of the state machine to delete.</p>
     #[doc(hidden)]
     pub state_machine_arn: std::option::Option<std::string::String>,
 }
 impl DeleteStateMachineInput {
     /// <p>The Amazon Resource Name (ARN) of the state machine to delete.</p>
-    pub fn state_machine_arn(&self) -> std::option::Option<& str> {
+    pub fn state_machine_arn(&self) -> std::option::Option<&str> {
         self.state_machine_arn.as_deref()
     }
 }
 impl DeleteStateMachineInput {
     /// Creates a new builder-style object to manufacture [`DeleteStateMachineInput`](crate::operation::delete_state_machine::DeleteStateMachineInput).
-    pub fn builder() -> crate::operation::delete_state_machine::builders::DeleteStateMachineInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::delete_state_machine::builders::DeleteStateMachineInputBuilder {
         crate::operation::delete_state_machine::builders::DeleteStateMachineInputBuilder::default()
     }
 }
@@ -33,17 +34,24 @@ impl DeleteStateMachineInputBuilder {
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the state machine to delete.</p>
-    pub fn set_state_machine_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.state_machine_arn = input; self
+    pub fn set_state_machine_arn(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.state_machine_arn = input;
+        self
     }
     /// Consumes the builder and constructs a [`DeleteStateMachineInput`](crate::operation::delete_state_machine::DeleteStateMachineInput).
-    pub fn build(self) -> Result<crate::operation::delete_state_machine::DeleteStateMachineInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::delete_state_machine::DeleteStateMachineInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::delete_state_machine::DeleteStateMachineInput {
-                state_machine_arn: self.state_machine_arn
-                ,
-            }
+                state_machine_arn: self.state_machine_arn,
+            },
         )
     }
 }
-

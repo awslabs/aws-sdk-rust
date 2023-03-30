@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteApplicationInput  {
+pub struct DeleteApplicationInput {
     /// <p>The name of the application to delete.</p>
     #[doc(hidden)]
     pub application_name: std::option::Option<std::string::String>,
@@ -12,17 +12,18 @@ pub struct DeleteApplicationInput  {
 }
 impl DeleteApplicationInput {
     /// <p>The name of the application to delete.</p>
-    pub fn application_name(&self) -> std::option::Option<& str> {
+    pub fn application_name(&self) -> std::option::Option<&str> {
         self.application_name.as_deref()
     }
     /// <p>Use the <code>DescribeApplication</code> operation to get this value.</p>
-    pub fn create_timestamp(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
+    pub fn create_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.create_timestamp.as_ref()
     }
 }
 impl DeleteApplicationInput {
     /// Creates a new builder-style object to manufacture [`DeleteApplicationInput`](crate::operation::delete_application::DeleteApplicationInput).
-    pub fn builder() -> crate::operation::delete_application::builders::DeleteApplicationInputBuilder {
+    pub fn builder() -> crate::operation::delete_application::builders::DeleteApplicationInputBuilder
+    {
         crate::operation::delete_application::builders::DeleteApplicationInputBuilder::default()
     }
 }
@@ -42,7 +43,8 @@ impl DeleteApplicationInputBuilder {
     }
     /// <p>The name of the application to delete.</p>
     pub fn set_application_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.application_name = input; self
+        self.application_name = input;
+        self
     }
     /// <p>Use the <code>DescribeApplication</code> operation to get this value.</p>
     pub fn create_timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -50,19 +52,25 @@ impl DeleteApplicationInputBuilder {
         self
     }
     /// <p>Use the <code>DescribeApplication</code> operation to get this value.</p>
-    pub fn set_create_timestamp(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.create_timestamp = input; self
+    pub fn set_create_timestamp(
+        mut self,
+        input: std::option::Option<aws_smithy_types::DateTime>,
+    ) -> Self {
+        self.create_timestamp = input;
+        self
     }
     /// Consumes the builder and constructs a [`DeleteApplicationInput`](crate::operation::delete_application::DeleteApplicationInput).
-    pub fn build(self) -> Result<crate::operation::delete_application::DeleteApplicationInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::delete_application::DeleteApplicationInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::delete_application::DeleteApplicationInput {
-                application_name: self.application_name
-                ,
-                create_timestamp: self.create_timestamp
-                ,
-            }
+                application_name: self.application_name,
+                create_timestamp: self.create_timestamp,
+            },
         )
     }
 }
-

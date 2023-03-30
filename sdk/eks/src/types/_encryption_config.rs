@@ -3,7 +3,7 @@
 /// <p>The encryption configuration for the cluster.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct EncryptionConfig  {
+pub struct EncryptionConfig {
     /// <p>Specifies the resources to be encrypted. The only supported value is "secrets".</p>
     #[doc(hidden)]
     pub resources: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -13,11 +13,11 @@ pub struct EncryptionConfig  {
 }
 impl EncryptionConfig {
     /// <p>Specifies the resources to be encrypted. The only supported value is "secrets".</p>
-    pub fn resources(&self) -> std::option::Option<& [std::string::String]> {
+    pub fn resources(&self) -> std::option::Option<&[std::string::String]> {
         self.resources.as_deref()
     }
     /// <p>Key Management Service (KMS) key. Either the ARN or the alias can be used.</p>
-    pub fn provider(&self) -> std::option::Option<& crate::types::Provider> {
+    pub fn provider(&self) -> std::option::Option<&crate::types::Provider> {
         self.provider.as_ref()
     }
 }
@@ -43,13 +43,17 @@ impl EncryptionConfigBuilder {
     /// <p>Specifies the resources to be encrypted. The only supported value is "secrets".</p>
     pub fn resources(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.resources.unwrap_or_default();
-                        v.push(input.into());
-                        self.resources = Some(v);
-                        self
+        v.push(input.into());
+        self.resources = Some(v);
+        self
     }
     /// <p>Specifies the resources to be encrypted. The only supported value is "secrets".</p>
-    pub fn set_resources(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-        self.resources = input; self
+    pub fn set_resources(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
+        self.resources = input;
+        self
     }
     /// <p>Key Management Service (KMS) key. Either the ARN or the alias can be used.</p>
     pub fn provider(mut self, input: crate::types::Provider) -> Self {
@@ -58,16 +62,14 @@ impl EncryptionConfigBuilder {
     }
     /// <p>Key Management Service (KMS) key. Either the ARN or the alias can be used.</p>
     pub fn set_provider(mut self, input: std::option::Option<crate::types::Provider>) -> Self {
-        self.provider = input; self
+        self.provider = input;
+        self
     }
     /// Consumes the builder and constructs a [`EncryptionConfig`](crate::types::EncryptionConfig).
     pub fn build(self) -> crate::types::EncryptionConfig {
         crate::types::EncryptionConfig {
-            resources: self.resources
-            ,
-            provider: self.provider
-            ,
+            resources: self.resources,
+            provider: self.provider,
         }
     }
 }
-

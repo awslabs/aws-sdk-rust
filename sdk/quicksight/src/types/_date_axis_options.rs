@@ -3,14 +3,14 @@
 /// <p>The options that determine how a date axis is displayed.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DateAxisOptions  {
+pub struct DateAxisOptions {
     /// <p>Determines whether or not missing dates are displayed.</p>
     #[doc(hidden)]
     pub missing_date_visibility: std::option::Option<crate::types::Visibility>,
 }
 impl DateAxisOptions {
     /// <p>Determines whether or not missing dates are displayed.</p>
-    pub fn missing_date_visibility(&self) -> std::option::Option<& crate::types::Visibility> {
+    pub fn missing_date_visibility(&self) -> std::option::Option<&crate::types::Visibility> {
         self.missing_date_visibility.as_ref()
     }
 }
@@ -34,15 +34,17 @@ impl DateAxisOptionsBuilder {
         self
     }
     /// <p>Determines whether or not missing dates are displayed.</p>
-    pub fn set_missing_date_visibility(mut self, input: std::option::Option<crate::types::Visibility>) -> Self {
-        self.missing_date_visibility = input; self
+    pub fn set_missing_date_visibility(
+        mut self,
+        input: std::option::Option<crate::types::Visibility>,
+    ) -> Self {
+        self.missing_date_visibility = input;
+        self
     }
     /// Consumes the builder and constructs a [`DateAxisOptions`](crate::types::DateAxisOptions).
     pub fn build(self) -> crate::types::DateAxisOptions {
         crate::types::DateAxisOptions {
-            missing_date_visibility: self.missing_date_visibility
-            ,
+            missing_date_visibility: self.missing_date_visibility,
         }
     }
 }
-

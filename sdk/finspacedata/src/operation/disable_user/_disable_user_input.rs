@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DisableUserInput  {
+pub struct DisableUserInput {
     /// <p>The unique identifier for the user account that you want to disable.</p>
     #[doc(hidden)]
     pub user_id: std::option::Option<std::string::String>,
@@ -12,11 +12,11 @@ pub struct DisableUserInput  {
 }
 impl DisableUserInput {
     /// <p>The unique identifier for the user account that you want to disable.</p>
-    pub fn user_id(&self) -> std::option::Option<& str> {
+    pub fn user_id(&self) -> std::option::Option<&str> {
         self.user_id.as_deref()
     }
     /// <p>A token that ensures idempotency. This token expires in 10 minutes.</p>
-    pub fn client_token(&self) -> std::option::Option<& str> {
+    pub fn client_token(&self) -> std::option::Option<&str> {
         self.client_token.as_deref()
     }
 }
@@ -42,7 +42,8 @@ impl DisableUserInputBuilder {
     }
     /// <p>The unique identifier for the user account that you want to disable.</p>
     pub fn set_user_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.user_id = input; self
+        self.user_id = input;
+        self
     }
     /// <p>A token that ensures idempotency. This token expires in 10 minutes.</p>
     pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -51,18 +52,19 @@ impl DisableUserInputBuilder {
     }
     /// <p>A token that ensures idempotency. This token expires in 10 minutes.</p>
     pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.client_token = input; self
+        self.client_token = input;
+        self
     }
     /// Consumes the builder and constructs a [`DisableUserInput`](crate::operation::disable_user::DisableUserInput).
-    pub fn build(self) -> Result<crate::operation::disable_user::DisableUserInput, aws_smithy_http::operation::error::BuildError> {
-        Ok(
-            crate::operation::disable_user::DisableUserInput {
-                user_id: self.user_id
-                ,
-                client_token: self.client_token
-                ,
-            }
-        )
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::disable_user::DisableUserInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        Ok(crate::operation::disable_user::DisableUserInput {
+            user_id: self.user_id,
+            client_token: self.client_token,
+        })
     }
 }
-

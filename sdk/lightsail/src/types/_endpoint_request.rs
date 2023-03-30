@@ -3,7 +3,7 @@
 /// <p>Describes the settings of a public endpoint for an Amazon Lightsail container service.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct EndpointRequest  {
+pub struct EndpointRequest {
     /// <p>The name of the container for the endpoint.</p>
     #[doc(hidden)]
     pub container_name: std::option::Option<std::string::String>,
@@ -16,7 +16,7 @@ pub struct EndpointRequest  {
 }
 impl EndpointRequest {
     /// <p>The name of the container for the endpoint.</p>
-    pub fn container_name(&self) -> std::option::Option<& str> {
+    pub fn container_name(&self) -> std::option::Option<&str> {
         self.container_name.as_deref()
     }
     /// <p>The port of the container to which traffic is forwarded to.</p>
@@ -24,7 +24,9 @@ impl EndpointRequest {
         self.container_port
     }
     /// <p>An object that describes the health check configuration of the container.</p>
-    pub fn health_check(&self) -> std::option::Option<& crate::types::ContainerServiceHealthCheckConfig> {
+    pub fn health_check(
+        &self,
+    ) -> std::option::Option<&crate::types::ContainerServiceHealthCheckConfig> {
         self.health_check.as_ref()
     }
 }
@@ -51,7 +53,8 @@ impl EndpointRequestBuilder {
     }
     /// <p>The name of the container for the endpoint.</p>
     pub fn set_container_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.container_name = input; self
+        self.container_name = input;
+        self
     }
     /// <p>The port of the container to which traffic is forwarded to.</p>
     pub fn container_port(mut self, input: i32) -> Self {
@@ -60,7 +63,8 @@ impl EndpointRequestBuilder {
     }
     /// <p>The port of the container to which traffic is forwarded to.</p>
     pub fn set_container_port(mut self, input: std::option::Option<i32>) -> Self {
-        self.container_port = input; self
+        self.container_port = input;
+        self
     }
     /// <p>An object that describes the health check configuration of the container.</p>
     pub fn health_check(mut self, input: crate::types::ContainerServiceHealthCheckConfig) -> Self {
@@ -68,19 +72,19 @@ impl EndpointRequestBuilder {
         self
     }
     /// <p>An object that describes the health check configuration of the container.</p>
-    pub fn set_health_check(mut self, input: std::option::Option<crate::types::ContainerServiceHealthCheckConfig>) -> Self {
-        self.health_check = input; self
+    pub fn set_health_check(
+        mut self,
+        input: std::option::Option<crate::types::ContainerServiceHealthCheckConfig>,
+    ) -> Self {
+        self.health_check = input;
+        self
     }
     /// Consumes the builder and constructs a [`EndpointRequest`](crate::types::EndpointRequest).
     pub fn build(self) -> crate::types::EndpointRequest {
         crate::types::EndpointRequest {
-            container_name: self.container_name
-            ,
-            container_port: self.container_port
-            ,
-            health_check: self.health_check
-            ,
+            container_name: self.container_name,
+            container_port: self.container_port,
+            health_check: self.health_check,
         }
     }
 }
-

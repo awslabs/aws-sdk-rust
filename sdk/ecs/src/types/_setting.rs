@@ -3,7 +3,7 @@
 /// <p>The current account setting for a resource.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Setting  {
+pub struct Setting {
     /// <p>The Amazon ECS resource name.</p>
     #[doc(hidden)]
     pub name: std::option::Option<crate::types::SettingName>,
@@ -16,15 +16,15 @@ pub struct Setting  {
 }
 impl Setting {
     /// <p>The Amazon ECS resource name.</p>
-    pub fn name(&self) -> std::option::Option<& crate::types::SettingName> {
+    pub fn name(&self) -> std::option::Option<&crate::types::SettingName> {
         self.name.as_ref()
     }
     /// <p>Determines whether the account setting is enabled or disabled for the specified resource.</p>
-    pub fn value(&self) -> std::option::Option<& str> {
+    pub fn value(&self) -> std::option::Option<&str> {
         self.value.as_deref()
     }
     /// <p>The ARN of the principal. It can be an IAM user, IAM role, or the root user. If this field is omitted, the authenticated user is assumed.</p>
-    pub fn principal_arn(&self) -> std::option::Option<& str> {
+    pub fn principal_arn(&self) -> std::option::Option<&str> {
         self.principal_arn.as_deref()
     }
 }
@@ -51,7 +51,8 @@ impl SettingBuilder {
     }
     /// <p>The Amazon ECS resource name.</p>
     pub fn set_name(mut self, input: std::option::Option<crate::types::SettingName>) -> Self {
-        self.name = input; self
+        self.name = input;
+        self
     }
     /// <p>Determines whether the account setting is enabled or disabled for the specified resource.</p>
     pub fn value(mut self, input: impl Into<std::string::String>) -> Self {
@@ -60,7 +61,8 @@ impl SettingBuilder {
     }
     /// <p>Determines whether the account setting is enabled or disabled for the specified resource.</p>
     pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.value = input; self
+        self.value = input;
+        self
     }
     /// <p>The ARN of the principal. It can be an IAM user, IAM role, or the root user. If this field is omitted, the authenticated user is assumed.</p>
     pub fn principal_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -69,18 +71,15 @@ impl SettingBuilder {
     }
     /// <p>The ARN of the principal. It can be an IAM user, IAM role, or the root user. If this field is omitted, the authenticated user is assumed.</p>
     pub fn set_principal_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.principal_arn = input; self
+        self.principal_arn = input;
+        self
     }
     /// Consumes the builder and constructs a [`Setting`](crate::types::Setting).
     pub fn build(self) -> crate::types::Setting {
         crate::types::Setting {
-            name: self.name
-            ,
-            value: self.value
-            ,
-            principal_arn: self.principal_arn
-            ,
+            name: self.name,
+            value: self.value,
+            principal_arn: self.principal_arn,
         }
     }
 }
-

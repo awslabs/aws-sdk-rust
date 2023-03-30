@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateDevicesInput  {
+pub struct UpdateDevicesInput {
     /// <p>The name of the fleet the devices belong to.</p>
     #[doc(hidden)]
     pub device_fleet_name: std::option::Option<std::string::String>,
@@ -12,11 +12,11 @@ pub struct UpdateDevicesInput  {
 }
 impl UpdateDevicesInput {
     /// <p>The name of the fleet the devices belong to.</p>
-    pub fn device_fleet_name(&self) -> std::option::Option<& str> {
+    pub fn device_fleet_name(&self) -> std::option::Option<&str> {
         self.device_fleet_name.as_deref()
     }
     /// <p>List of devices to register with Edge Manager agent.</p>
-    pub fn devices(&self) -> std::option::Option<& [crate::types::Device]> {
+    pub fn devices(&self) -> std::option::Option<&[crate::types::Device]> {
         self.devices.as_deref()
     }
 }
@@ -41,8 +41,12 @@ impl UpdateDevicesInputBuilder {
         self
     }
     /// <p>The name of the fleet the devices belong to.</p>
-    pub fn set_device_fleet_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.device_fleet_name = input; self
+    pub fn set_device_fleet_name(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.device_fleet_name = input;
+        self
     }
     /// Appends an item to `devices`.
     ///
@@ -51,24 +55,28 @@ impl UpdateDevicesInputBuilder {
     /// <p>List of devices to register with Edge Manager agent.</p>
     pub fn devices(mut self, input: crate::types::Device) -> Self {
         let mut v = self.devices.unwrap_or_default();
-                        v.push(input);
-                        self.devices = Some(v);
-                        self
+        v.push(input);
+        self.devices = Some(v);
+        self
     }
     /// <p>List of devices to register with Edge Manager agent.</p>
-    pub fn set_devices(mut self, input: std::option::Option<std::vec::Vec<crate::types::Device>>) -> Self {
-        self.devices = input; self
+    pub fn set_devices(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::Device>>,
+    ) -> Self {
+        self.devices = input;
+        self
     }
     /// Consumes the builder and constructs a [`UpdateDevicesInput`](crate::operation::update_devices::UpdateDevicesInput).
-    pub fn build(self) -> Result<crate::operation::update_devices::UpdateDevicesInput, aws_smithy_http::operation::error::BuildError> {
-        Ok(
-            crate::operation::update_devices::UpdateDevicesInput {
-                device_fleet_name: self.device_fleet_name
-                ,
-                devices: self.devices
-                ,
-            }
-        )
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::update_devices::UpdateDevicesInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        Ok(crate::operation::update_devices::UpdateDevicesInput {
+            device_fleet_name: self.device_fleet_name,
+            devices: self.devices,
+        })
     }
 }
-

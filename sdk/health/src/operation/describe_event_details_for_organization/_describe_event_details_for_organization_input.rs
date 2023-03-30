@@ -2,27 +2,30 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeEventDetailsForOrganizationInput  {
+pub struct DescribeEventDetailsForOrganizationInput {
     /// <p>A set of JSON elements that includes the <code>awsAccountId</code> and the <code>eventArn</code>.</p>
     #[doc(hidden)]
-    pub organization_event_detail_filters: std::option::Option<std::vec::Vec<crate::types::EventAccountFilter>>,
+    pub organization_event_detail_filters:
+        std::option::Option<std::vec::Vec<crate::types::EventAccountFilter>>,
     /// <p>The locale (language) to return information in. English (en) is the default and the only supported value at this time.</p>
     #[doc(hidden)]
     pub locale: std::option::Option<std::string::String>,
 }
 impl DescribeEventDetailsForOrganizationInput {
     /// <p>A set of JSON elements that includes the <code>awsAccountId</code> and the <code>eventArn</code>.</p>
-    pub fn organization_event_detail_filters(&self) -> std::option::Option<& [crate::types::EventAccountFilter]> {
+    pub fn organization_event_detail_filters(
+        &self,
+    ) -> std::option::Option<&[crate::types::EventAccountFilter]> {
         self.organization_event_detail_filters.as_deref()
     }
     /// <p>The locale (language) to return information in. English (en) is the default and the only supported value at this time.</p>
-    pub fn locale(&self) -> std::option::Option<& str> {
+    pub fn locale(&self) -> std::option::Option<&str> {
         self.locale.as_deref()
     }
 }
 impl DescribeEventDetailsForOrganizationInput {
     /// Creates a new builder-style object to manufacture [`DescribeEventDetailsForOrganizationInput`](crate::operation::describe_event_details_for_organization::DescribeEventDetailsForOrganizationInput).
-    pub fn builder() -> crate::operation::describe_event_details_for_organization::builders::DescribeEventDetailsForOrganizationInputBuilder {
+    pub fn builder() -> crate::operation::describe_event_details_for_organization::builders::DescribeEventDetailsForOrganizationInputBuilder{
         crate::operation::describe_event_details_for_organization::builders::DescribeEventDetailsForOrganizationInputBuilder::default()
     }
 }
@@ -31,7 +34,8 @@ impl DescribeEventDetailsForOrganizationInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct DescribeEventDetailsForOrganizationInputBuilder {
-    pub(crate) organization_event_detail_filters: std::option::Option<std::vec::Vec<crate::types::EventAccountFilter>>,
+    pub(crate) organization_event_detail_filters:
+        std::option::Option<std::vec::Vec<crate::types::EventAccountFilter>>,
     pub(crate) locale: std::option::Option<std::string::String>,
 }
 impl DescribeEventDetailsForOrganizationInputBuilder {
@@ -40,15 +44,22 @@ impl DescribeEventDetailsForOrganizationInputBuilder {
     /// To override the contents of this collection use [`set_organization_event_detail_filters`](Self::set_organization_event_detail_filters).
     ///
     /// <p>A set of JSON elements that includes the <code>awsAccountId</code> and the <code>eventArn</code>.</p>
-    pub fn organization_event_detail_filters(mut self, input: crate::types::EventAccountFilter) -> Self {
+    pub fn organization_event_detail_filters(
+        mut self,
+        input: crate::types::EventAccountFilter,
+    ) -> Self {
         let mut v = self.organization_event_detail_filters.unwrap_or_default();
-                        v.push(input);
-                        self.organization_event_detail_filters = Some(v);
-                        self
+        v.push(input);
+        self.organization_event_detail_filters = Some(v);
+        self
     }
     /// <p>A set of JSON elements that includes the <code>awsAccountId</code> and the <code>eventArn</code>.</p>
-    pub fn set_organization_event_detail_filters(mut self, input: std::option::Option<std::vec::Vec<crate::types::EventAccountFilter>>) -> Self {
-        self.organization_event_detail_filters = input; self
+    pub fn set_organization_event_detail_filters(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::EventAccountFilter>>,
+    ) -> Self {
+        self.organization_event_detail_filters = input;
+        self
     }
     /// <p>The locale (language) to return information in. English (en) is the default and the only supported value at this time.</p>
     pub fn locale(mut self, input: impl Into<std::string::String>) -> Self {
@@ -57,10 +68,11 @@ impl DescribeEventDetailsForOrganizationInputBuilder {
     }
     /// <p>The locale (language) to return information in. English (en) is the default and the only supported value at this time.</p>
     pub fn set_locale(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.locale = input; self
+        self.locale = input;
+        self
     }
     /// Consumes the builder and constructs a [`DescribeEventDetailsForOrganizationInput`](crate::operation::describe_event_details_for_organization::DescribeEventDetailsForOrganizationInput).
-    pub fn build(self) -> Result<crate::operation::describe_event_details_for_organization::DescribeEventDetailsForOrganizationInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> Result<crate::operation::describe_event_details_for_organization::DescribeEventDetailsForOrganizationInput, aws_smithy_http::operation::error::BuildError>{
         Ok(
             crate::operation::describe_event_details_for_organization::DescribeEventDetailsForOrganizationInput {
                 organization_event_detail_filters: self.organization_event_detail_filters
@@ -71,4 +83,3 @@ impl DescribeEventDetailsForOrganizationInputBuilder {
         )
     }
 }
-

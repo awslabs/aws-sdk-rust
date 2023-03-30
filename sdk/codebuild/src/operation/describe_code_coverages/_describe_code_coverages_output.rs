@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeCodeCoveragesOutput  {
+pub struct DescribeCodeCoveragesOutput {
     /// <p>If there are more items to return, this contains a token that is passed to a subsequent call to <code>DescribeCodeCoverages</code> to retrieve the next set of items.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
@@ -13,22 +13,24 @@ pub struct DescribeCodeCoveragesOutput  {
 }
 impl DescribeCodeCoveragesOutput {
     /// <p>If there are more items to return, this contains a token that is passed to a subsequent call to <code>DescribeCodeCoverages</code> to retrieve the next set of items.</p>
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
     /// <p>An array of <code>CodeCoverage</code> objects that contain the results.</p>
-    pub fn code_coverages(&self) -> std::option::Option<& [crate::types::CodeCoverage]> {
+    pub fn code_coverages(&self) -> std::option::Option<&[crate::types::CodeCoverage]> {
         self.code_coverages.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for DescribeCodeCoveragesOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl DescribeCodeCoveragesOutput {
     /// Creates a new builder-style object to manufacture [`DescribeCodeCoveragesOutput`](crate::operation::describe_code_coverages::DescribeCodeCoveragesOutput).
-    pub fn builder() -> crate::operation::describe_code_coverages::builders::DescribeCodeCoveragesOutputBuilder {
+    pub fn builder(
+    ) -> crate::operation::describe_code_coverages::builders::DescribeCodeCoveragesOutputBuilder
+    {
         crate::operation::describe_code_coverages::builders::DescribeCodeCoveragesOutputBuilder::default()
     }
 }
@@ -49,7 +51,8 @@ impl DescribeCodeCoveragesOutputBuilder {
     }
     /// <p>If there are more items to return, this contains a token that is passed to a subsequent call to <code>DescribeCodeCoverages</code> to retrieve the next set of items.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input; self
+        self.next_token = input;
+        self
     }
     /// Appends an item to `code_coverages`.
     ///
@@ -58,32 +61,33 @@ impl DescribeCodeCoveragesOutputBuilder {
     /// <p>An array of <code>CodeCoverage</code> objects that contain the results.</p>
     pub fn code_coverages(mut self, input: crate::types::CodeCoverage) -> Self {
         let mut v = self.code_coverages.unwrap_or_default();
-                        v.push(input);
-                        self.code_coverages = Some(v);
-                        self
+        v.push(input);
+        self.code_coverages = Some(v);
+        self
     }
     /// <p>An array of <code>CodeCoverage</code> objects that contain the results.</p>
-    pub fn set_code_coverages(mut self, input: std::option::Option<std::vec::Vec<crate::types::CodeCoverage>>) -> Self {
-        self.code_coverages = input; self
+    pub fn set_code_coverages(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::CodeCoverage>>,
+    ) -> Self {
+        self.code_coverages = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`DescribeCodeCoveragesOutput`](crate::operation::describe_code_coverages::DescribeCodeCoveragesOutput).
     pub fn build(self) -> crate::operation::describe_code_coverages::DescribeCodeCoveragesOutput {
         crate::operation::describe_code_coverages::DescribeCodeCoveragesOutput {
-            next_token: self.next_token
-            ,
-            code_coverages: self.code_coverages
-            ,
+            next_token: self.next_token,
+            code_coverages: self.code_coverages,
             _request_id: self._request_id,
         }
     }
 }
-

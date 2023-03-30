@@ -3,14 +3,14 @@
 /// <p>Describes the DNS options for an endpoint.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DnsOptions  {
+pub struct DnsOptions {
     /// <p>The DNS records created for the endpoint.</p>
     #[doc(hidden)]
     pub dns_record_ip_type: std::option::Option<crate::types::DnsRecordIpType>,
 }
 impl DnsOptions {
     /// <p>The DNS records created for the endpoint.</p>
-    pub fn dns_record_ip_type(&self) -> std::option::Option<& crate::types::DnsRecordIpType> {
+    pub fn dns_record_ip_type(&self) -> std::option::Option<&crate::types::DnsRecordIpType> {
         self.dns_record_ip_type.as_ref()
     }
 }
@@ -34,15 +34,17 @@ impl DnsOptionsBuilder {
         self
     }
     /// <p>The DNS records created for the endpoint.</p>
-    pub fn set_dns_record_ip_type(mut self, input: std::option::Option<crate::types::DnsRecordIpType>) -> Self {
-        self.dns_record_ip_type = input; self
+    pub fn set_dns_record_ip_type(
+        mut self,
+        input: std::option::Option<crate::types::DnsRecordIpType>,
+    ) -> Self {
+        self.dns_record_ip_type = input;
+        self
     }
     /// Consumes the builder and constructs a [`DnsOptions`](crate::types::DnsOptions).
     pub fn build(self) -> crate::types::DnsOptions {
         crate::types::DnsOptions {
-            dns_record_ip_type: self.dns_record_ip_type
-            ,
+            dns_record_ip_type: self.dns_record_ip_type,
         }
     }
 }
-

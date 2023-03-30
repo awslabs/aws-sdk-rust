@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct RegisterRdsDbInstanceInput  {
+pub struct RegisterRdsDbInstanceInput {
     /// <p>The stack ID.</p>
     #[doc(hidden)]
     pub stack_id: std::option::Option<std::string::String>,
@@ -18,25 +18,27 @@ pub struct RegisterRdsDbInstanceInput  {
 }
 impl RegisterRdsDbInstanceInput {
     /// <p>The stack ID.</p>
-    pub fn stack_id(&self) -> std::option::Option<& str> {
+    pub fn stack_id(&self) -> std::option::Option<&str> {
         self.stack_id.as_deref()
     }
     /// <p>The Amazon RDS instance's ARN.</p>
-    pub fn rds_db_instance_arn(&self) -> std::option::Option<& str> {
+    pub fn rds_db_instance_arn(&self) -> std::option::Option<&str> {
         self.rds_db_instance_arn.as_deref()
     }
     /// <p>The database's master user name.</p>
-    pub fn db_user(&self) -> std::option::Option<& str> {
+    pub fn db_user(&self) -> std::option::Option<&str> {
         self.db_user.as_deref()
     }
     /// <p>The database password.</p>
-    pub fn db_password(&self) -> std::option::Option<& str> {
+    pub fn db_password(&self) -> std::option::Option<&str> {
         self.db_password.as_deref()
     }
 }
 impl RegisterRdsDbInstanceInput {
     /// Creates a new builder-style object to manufacture [`RegisterRdsDbInstanceInput`](crate::operation::register_rds_db_instance::RegisterRdsDbInstanceInput).
-    pub fn builder() -> crate::operation::register_rds_db_instance::builders::RegisterRdsDbInstanceInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::register_rds_db_instance::builders::RegisterRdsDbInstanceInputBuilder
+    {
         crate::operation::register_rds_db_instance::builders::RegisterRdsDbInstanceInputBuilder::default()
     }
 }
@@ -58,7 +60,8 @@ impl RegisterRdsDbInstanceInputBuilder {
     }
     /// <p>The stack ID.</p>
     pub fn set_stack_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.stack_id = input; self
+        self.stack_id = input;
+        self
     }
     /// <p>The Amazon RDS instance's ARN.</p>
     pub fn rds_db_instance_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -66,8 +69,12 @@ impl RegisterRdsDbInstanceInputBuilder {
         self
     }
     /// <p>The Amazon RDS instance's ARN.</p>
-    pub fn set_rds_db_instance_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.rds_db_instance_arn = input; self
+    pub fn set_rds_db_instance_arn(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.rds_db_instance_arn = input;
+        self
     }
     /// <p>The database's master user name.</p>
     pub fn db_user(mut self, input: impl Into<std::string::String>) -> Self {
@@ -76,7 +83,8 @@ impl RegisterRdsDbInstanceInputBuilder {
     }
     /// <p>The database's master user name.</p>
     pub fn set_db_user(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.db_user = input; self
+        self.db_user = input;
+        self
     }
     /// <p>The database password.</p>
     pub fn db_password(mut self, input: impl Into<std::string::String>) -> Self {
@@ -85,22 +93,23 @@ impl RegisterRdsDbInstanceInputBuilder {
     }
     /// <p>The database password.</p>
     pub fn set_db_password(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.db_password = input; self
+        self.db_password = input;
+        self
     }
     /// Consumes the builder and constructs a [`RegisterRdsDbInstanceInput`](crate::operation::register_rds_db_instance::RegisterRdsDbInstanceInput).
-    pub fn build(self) -> Result<crate::operation::register_rds_db_instance::RegisterRdsDbInstanceInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::register_rds_db_instance::RegisterRdsDbInstanceInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::register_rds_db_instance::RegisterRdsDbInstanceInput {
-                stack_id: self.stack_id
-                ,
-                rds_db_instance_arn: self.rds_db_instance_arn
-                ,
-                db_user: self.db_user
-                ,
-                db_password: self.db_password
-                ,
-            }
+                stack_id: self.stack_id,
+                rds_db_instance_arn: self.rds_db_instance_arn,
+                db_user: self.db_user,
+                db_password: self.db_password,
+            },
         )
     }
 }
-

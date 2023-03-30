@@ -3,7 +3,7 @@
 /// <p>One or more aggregators for viewing counts of OpsData using different dimensions such as <code>Source</code>, <code>CreatedTime</code>, or <code>Source and CreatedTime</code>, to name a few.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct OpsAggregator  {
+pub struct OpsAggregator {
     /// <p>Either a <code>Range</code> or <code>Count</code> aggregator for limiting an OpsData summary.</p>
     #[doc(hidden)]
     pub aggregator_type: std::option::Option<std::string::String>,
@@ -15,7 +15,8 @@ pub struct OpsAggregator  {
     pub attribute_name: std::option::Option<std::string::String>,
     /// <p>The aggregator value.</p>
     #[doc(hidden)]
-    pub values: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub values:
+        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The aggregator filters.</p>
     #[doc(hidden)]
     pub filters: std::option::Option<std::vec::Vec<crate::types::OpsFilter>>,
@@ -25,27 +26,30 @@ pub struct OpsAggregator  {
 }
 impl OpsAggregator {
     /// <p>Either a <code>Range</code> or <code>Count</code> aggregator for limiting an OpsData summary.</p>
-    pub fn aggregator_type(&self) -> std::option::Option<& str> {
+    pub fn aggregator_type(&self) -> std::option::Option<&str> {
         self.aggregator_type.as_deref()
     }
     /// <p>The data type name to use for viewing counts of OpsData.</p>
-    pub fn type_name(&self) -> std::option::Option<& str> {
+    pub fn type_name(&self) -> std::option::Option<&str> {
         self.type_name.as_deref()
     }
     /// <p>The name of an OpsData attribute on which to limit the count of OpsData.</p>
-    pub fn attribute_name(&self) -> std::option::Option<& str> {
+    pub fn attribute_name(&self) -> std::option::Option<&str> {
         self.attribute_name.as_deref()
     }
     /// <p>The aggregator value.</p>
-    pub fn values(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
+    pub fn values(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
         self.values.as_ref()
     }
     /// <p>The aggregator filters.</p>
-    pub fn filters(&self) -> std::option::Option<& [crate::types::OpsFilter]> {
+    pub fn filters(&self) -> std::option::Option<&[crate::types::OpsFilter]> {
         self.filters.as_deref()
     }
     /// <p>A nested aggregator for viewing counts of OpsData.</p>
-    pub fn aggregators(&self) -> std::option::Option<& [crate::types::OpsAggregator]> {
+    pub fn aggregators(&self) -> std::option::Option<&[crate::types::OpsAggregator]> {
         self.aggregators.as_deref()
     }
 }
@@ -63,7 +67,8 @@ pub struct OpsAggregatorBuilder {
     pub(crate) aggregator_type: std::option::Option<std::string::String>,
     pub(crate) type_name: std::option::Option<std::string::String>,
     pub(crate) attribute_name: std::option::Option<std::string::String>,
-    pub(crate) values: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub(crate) values:
+        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     pub(crate) filters: std::option::Option<std::vec::Vec<crate::types::OpsFilter>>,
     pub(crate) aggregators: std::option::Option<std::vec::Vec<crate::types::OpsAggregator>>,
 }
@@ -75,7 +80,8 @@ impl OpsAggregatorBuilder {
     }
     /// <p>Either a <code>Range</code> or <code>Count</code> aggregator for limiting an OpsData summary.</p>
     pub fn set_aggregator_type(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.aggregator_type = input; self
+        self.aggregator_type = input;
+        self
     }
     /// <p>The data type name to use for viewing counts of OpsData.</p>
     pub fn type_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -84,7 +90,8 @@ impl OpsAggregatorBuilder {
     }
     /// <p>The data type name to use for viewing counts of OpsData.</p>
     pub fn set_type_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.type_name = input; self
+        self.type_name = input;
+        self
     }
     /// <p>The name of an OpsData attribute on which to limit the count of OpsData.</p>
     pub fn attribute_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -93,22 +100,33 @@ impl OpsAggregatorBuilder {
     }
     /// <p>The name of an OpsData attribute on which to limit the count of OpsData.</p>
     pub fn set_attribute_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.attribute_name = input; self
+        self.attribute_name = input;
+        self
     }
     /// Adds a key-value pair to `values`.
     ///
     /// To override the contents of this collection use [`set_values`](Self::set_values).
     ///
     /// <p>The aggregator value.</p>
-    pub fn values(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
+    pub fn values(
+        mut self,
+        k: impl Into<std::string::String>,
+        v: impl Into<std::string::String>,
+    ) -> Self {
         let mut hash_map = self.values.unwrap_or_default();
-                        hash_map.insert(k.into(), v.into());
-                        self.values = Some(hash_map);
-                        self
+        hash_map.insert(k.into(), v.into());
+        self.values = Some(hash_map);
+        self
     }
     /// <p>The aggregator value.</p>
-    pub fn set_values(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
-        self.values = input; self
+    pub fn set_values(
+        mut self,
+        input: std::option::Option<
+            std::collections::HashMap<std::string::String, std::string::String>,
+        >,
+    ) -> Self {
+        self.values = input;
+        self
     }
     /// Appends an item to `filters`.
     ///
@@ -117,13 +135,17 @@ impl OpsAggregatorBuilder {
     /// <p>The aggregator filters.</p>
     pub fn filters(mut self, input: crate::types::OpsFilter) -> Self {
         let mut v = self.filters.unwrap_or_default();
-                        v.push(input);
-                        self.filters = Some(v);
-                        self
+        v.push(input);
+        self.filters = Some(v);
+        self
     }
     /// <p>The aggregator filters.</p>
-    pub fn set_filters(mut self, input: std::option::Option<std::vec::Vec<crate::types::OpsFilter>>) -> Self {
-        self.filters = input; self
+    pub fn set_filters(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::OpsFilter>>,
+    ) -> Self {
+        self.filters = input;
+        self
     }
     /// Appends an item to `aggregators`.
     ///
@@ -132,30 +154,27 @@ impl OpsAggregatorBuilder {
     /// <p>A nested aggregator for viewing counts of OpsData.</p>
     pub fn aggregators(mut self, input: crate::types::OpsAggregator) -> Self {
         let mut v = self.aggregators.unwrap_or_default();
-                        v.push(input);
-                        self.aggregators = Some(v);
-                        self
+        v.push(input);
+        self.aggregators = Some(v);
+        self
     }
     /// <p>A nested aggregator for viewing counts of OpsData.</p>
-    pub fn set_aggregators(mut self, input: std::option::Option<std::vec::Vec<crate::types::OpsAggregator>>) -> Self {
-        self.aggregators = input; self
+    pub fn set_aggregators(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::OpsAggregator>>,
+    ) -> Self {
+        self.aggregators = input;
+        self
     }
     /// Consumes the builder and constructs a [`OpsAggregator`](crate::types::OpsAggregator).
     pub fn build(self) -> crate::types::OpsAggregator {
         crate::types::OpsAggregator {
-            aggregator_type: self.aggregator_type
-            ,
-            type_name: self.type_name
-            ,
-            attribute_name: self.attribute_name
-            ,
-            values: self.values
-            ,
-            filters: self.filters
-            ,
-            aggregators: self.aggregators
-            ,
+            aggregator_type: self.aggregator_type,
+            type_name: self.type_name,
+            attribute_name: self.attribute_name,
+            values: self.values,
+            filters: self.filters,
+            aggregators: self.aggregators,
         }
     }
 }
-

@@ -3,7 +3,7 @@
 /// <p>A ProfileObjectType instance.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListProfileObjectTypeItem  {
+pub struct ListProfileObjectTypeItem {
     /// <p>The name of the profile object type.</p>
     #[doc(hidden)]
     pub object_type_name: std::option::Option<std::string::String>,
@@ -18,27 +18,31 @@ pub struct ListProfileObjectTypeItem  {
     pub last_updated_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The tags used to organize, track, or control access for this resource.</p>
     #[doc(hidden)]
-    pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub tags:
+        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl ListProfileObjectTypeItem {
     /// <p>The name of the profile object type.</p>
-    pub fn object_type_name(&self) -> std::option::Option<& str> {
+    pub fn object_type_name(&self) -> std::option::Option<&str> {
         self.object_type_name.as_deref()
     }
     /// <p>Description of the profile object type.</p>
-    pub fn description(&self) -> std::option::Option<& str> {
+    pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
     /// <p>The timestamp of when the domain was created.</p>
-    pub fn created_at(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
+    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
     /// <p>The timestamp of when the domain was most recently edited.</p>
-    pub fn last_updated_at(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
+    pub fn last_updated_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_updated_at.as_ref()
     }
     /// <p>The tags used to organize, track, or control access for this resource.</p>
-    pub fn tags(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
         self.tags.as_ref()
     }
 }
@@ -57,7 +61,8 @@ pub struct ListProfileObjectTypeItemBuilder {
     pub(crate) description: std::option::Option<std::string::String>,
     pub(crate) created_at: std::option::Option<aws_smithy_types::DateTime>,
     pub(crate) last_updated_at: std::option::Option<aws_smithy_types::DateTime>,
-    pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub(crate) tags:
+        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl ListProfileObjectTypeItemBuilder {
     /// <p>The name of the profile object type.</p>
@@ -67,7 +72,8 @@ impl ListProfileObjectTypeItemBuilder {
     }
     /// <p>The name of the profile object type.</p>
     pub fn set_object_type_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.object_type_name = input; self
+        self.object_type_name = input;
+        self
     }
     /// <p>Description of the profile object type.</p>
     pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -76,7 +82,8 @@ impl ListProfileObjectTypeItemBuilder {
     }
     /// <p>Description of the profile object type.</p>
     pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.description = input; self
+        self.description = input;
+        self
     }
     /// <p>The timestamp of when the domain was created.</p>
     pub fn created_at(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -84,8 +91,12 @@ impl ListProfileObjectTypeItemBuilder {
         self
     }
     /// <p>The timestamp of when the domain was created.</p>
-    pub fn set_created_at(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.created_at = input; self
+    pub fn set_created_at(
+        mut self,
+        input: std::option::Option<aws_smithy_types::DateTime>,
+    ) -> Self {
+        self.created_at = input;
+        self
     }
     /// <p>The timestamp of when the domain was most recently edited.</p>
     pub fn last_updated_at(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -93,38 +104,46 @@ impl ListProfileObjectTypeItemBuilder {
         self
     }
     /// <p>The timestamp of when the domain was most recently edited.</p>
-    pub fn set_last_updated_at(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.last_updated_at = input; self
+    pub fn set_last_updated_at(
+        mut self,
+        input: std::option::Option<aws_smithy_types::DateTime>,
+    ) -> Self {
+        self.last_updated_at = input;
+        self
     }
     /// Adds a key-value pair to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// <p>The tags used to organize, track, or control access for this resource.</p>
-    pub fn tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
+    pub fn tags(
+        mut self,
+        k: impl Into<std::string::String>,
+        v: impl Into<std::string::String>,
+    ) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
-                        hash_map.insert(k.into(), v.into());
-                        self.tags = Some(hash_map);
-                        self
+        hash_map.insert(k.into(), v.into());
+        self.tags = Some(hash_map);
+        self
     }
     /// <p>The tags used to organize, track, or control access for this resource.</p>
-    pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
-        self.tags = input; self
+    pub fn set_tags(
+        mut self,
+        input: std::option::Option<
+            std::collections::HashMap<std::string::String, std::string::String>,
+        >,
+    ) -> Self {
+        self.tags = input;
+        self
     }
     /// Consumes the builder and constructs a [`ListProfileObjectTypeItem`](crate::types::ListProfileObjectTypeItem).
     pub fn build(self) -> crate::types::ListProfileObjectTypeItem {
         crate::types::ListProfileObjectTypeItem {
-            object_type_name: self.object_type_name
-            ,
-            description: self.description
-            ,
-            created_at: self.created_at
-            ,
-            last_updated_at: self.last_updated_at
-            ,
-            tags: self.tags
-            ,
+            object_type_name: self.object_type_name,
+            description: self.description,
+            created_at: self.created_at,
+            last_updated_at: self.last_updated_at,
+            tags: self.tags,
         }
     }
 }
-

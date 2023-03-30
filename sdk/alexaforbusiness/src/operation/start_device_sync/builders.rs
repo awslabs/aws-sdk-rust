@@ -4,56 +4,78 @@ pub use crate::operation::start_device_sync::_start_device_sync_output::StartDev
 pub use crate::operation::start_device_sync::_start_device_sync_input::StartDeviceSyncInputBuilder;
 
 /// Fluent builder constructing a request to `StartDeviceSync`.
-/// 
-/// <p>Resets a device and its account to the known default settings. This clears all information and settings set by previous users in the following ways:</p> 
-/// <ul> 
-/// <li> <p>Bluetooth - This unpairs all bluetooth devices paired with your echo device.</p> </li> 
-/// <li> <p>Volume - This resets the echo device's volume to the default value.</p> </li> 
-/// <li> <p>Notifications - This clears all notifications from your echo device.</p> </li> 
-/// <li> <p>Lists - This clears all to-do items from your echo device.</p> </li> 
-/// <li> <p>Settings - This internally syncs the room's profile (if the device is assigned to a room), contacts, address books, delegation access for account linking, and communications (if enabled on the room profile).</p> </li> 
+///
+/// <p>Resets a device and its account to the known default settings. This clears all information and settings set by previous users in the following ways:</p>
+/// <ul>
+/// <li> <p>Bluetooth - This unpairs all bluetooth devices paired with your echo device.</p> </li>
+/// <li> <p>Volume - This resets the echo device's volume to the default value.</p> </li>
+/// <li> <p>Notifications - This clears all notifications from your echo device.</p> </li>
+/// <li> <p>Lists - This clears all to-do items from your echo device.</p> </li>
+/// <li> <p>Settings - This internally syncs the room's profile (if the device is assigned to a room), contacts, address books, delegation access for account linking, and communications (if enabled on the room profile).</p> </li>
 /// </ul>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct StartDeviceSyncFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::start_device_sync::builders::StartDeviceSyncInputBuilder
-            }
-impl StartDeviceSyncFluentBuilder  {
+    handle: std::sync::Arc<crate::client::Handle>,
+    inner: crate::operation::start_device_sync::builders::StartDeviceSyncInputBuilder,
+}
+impl StartDeviceSyncFluentBuilder {
     /// Creates a new `StartDeviceSync`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
-                    /// sent. The operation's inner [http::Request] can be modified as well.
-                    pub async fn customize(self) -> std::result::Result<
-                        crate::client::customize::CustomizableOperation<crate::operation::start_device_sync::StartDeviceSync, aws_http::retry::AwsResponseRetryClassifier,>,
-                        aws_smithy_http::result::SdkError<crate::operation::start_device_sync::StartDeviceSyncError>
-                    >  {
-                        let handle = self.handle.clone();
-                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-                    }
-    
-                    /// Sends the request and returns the response.
-                    ///
-                    /// If an error occurs, an `SdkError` will be returned with additional details that
-                    /// can be matched against.
-                    ///
-                    /// By default, any retryable failures will be retried twice. Retry behavior
-                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                    /// set when configuring the client.
-                    pub async fn send(self) -> std::result::Result<crate::operation::start_device_sync::StartDeviceSyncOutput, aws_smithy_http::result::SdkError<crate::operation::start_device_sync::StartDeviceSyncError>>
-                     {
-                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&self.handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        self.handle.client.call(op).await
-                    }
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle,
+            inner: Default::default(),
+        }
+    }
+
+    /// Consume this builder, creating a customizable operation that can be modified before being
+    /// sent. The operation's inner [http::Request] can be modified as well.
+    pub async fn customize(
+        self,
+    ) -> std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::start_device_sync::StartDeviceSync,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::result::SdkError<
+            crate::operation::start_device_sync::StartDeviceSyncError,
+        >,
+    > {
+        let handle = self.handle.clone();
+        let operation = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+    }
+
+    /// Sends the request and returns the response.
+    ///
+    /// If an error occurs, an `SdkError` will be returned with additional details that
+    /// can be matched against.
+    ///
+    /// By default, any retryable failures will be retried twice. Retry behavior
+    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+    /// set when configuring the client.
+    pub async fn send(
+        self,
+    ) -> std::result::Result<
+        crate::operation::start_device_sync::StartDeviceSyncOutput,
+        aws_smithy_http::result::SdkError<
+            crate::operation::start_device_sync::StartDeviceSyncError,
+        >,
+    > {
+        let op = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&self.handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        self.handle.client.call(op).await
+    }
     /// <p>The ARN of the room with which the device to sync is associated. Required.</p>
     pub fn room_arn(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.room_arn(input.into());
@@ -84,9 +106,11 @@ impl StartDeviceSyncFluentBuilder  {
         self
     }
     /// <p>Request structure to start the device sync. Required.</p>
-    pub fn set_features(mut self, input: std::option::Option<std::vec::Vec<crate::types::Feature>>) -> Self {
+    pub fn set_features(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::Feature>>,
+    ) -> Self {
         self.inner = self.inner.set_features(input);
         self
     }
 }
-

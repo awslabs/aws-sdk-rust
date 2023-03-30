@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateServiceActionOutput  {
+pub struct CreateServiceActionOutput {
     /// <p>An object containing information about the self-service action.</p>
     #[doc(hidden)]
     pub service_action_detail: std::option::Option<crate::types::ServiceActionDetail>,
@@ -10,19 +10,21 @@ pub struct CreateServiceActionOutput  {
 }
 impl CreateServiceActionOutput {
     /// <p>An object containing information about the self-service action.</p>
-    pub fn service_action_detail(&self) -> std::option::Option<& crate::types::ServiceActionDetail> {
+    pub fn service_action_detail(&self) -> std::option::Option<&crate::types::ServiceActionDetail> {
         self.service_action_detail.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for CreateServiceActionOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl CreateServiceActionOutput {
     /// Creates a new builder-style object to manufacture [`CreateServiceActionOutput`](crate::operation::create_service_action::CreateServiceActionOutput).
-    pub fn builder() -> crate::operation::create_service_action::builders::CreateServiceActionOutputBuilder {
-        crate::operation::create_service_action::builders::CreateServiceActionOutputBuilder::default()
+    pub fn builder(
+    ) -> crate::operation::create_service_action::builders::CreateServiceActionOutputBuilder {
+        crate::operation::create_service_action::builders::CreateServiceActionOutputBuilder::default(
+        )
     }
 }
 
@@ -40,25 +42,27 @@ impl CreateServiceActionOutputBuilder {
         self
     }
     /// <p>An object containing information about the self-service action.</p>
-    pub fn set_service_action_detail(mut self, input: std::option::Option<crate::types::ServiceActionDetail>) -> Self {
-        self.service_action_detail = input; self
+    pub fn set_service_action_detail(
+        mut self,
+        input: std::option::Option<crate::types::ServiceActionDetail>,
+    ) -> Self {
+        self.service_action_detail = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`CreateServiceActionOutput`](crate::operation::create_service_action::CreateServiceActionOutput).
     pub fn build(self) -> crate::operation::create_service_action::CreateServiceActionOutput {
         crate::operation::create_service_action::CreateServiceActionOutput {
-            service_action_detail: self.service_action_detail
-            ,
+            service_action_detail: self.service_action_detail,
             _request_id: self._request_id,
         }
     }
 }
-

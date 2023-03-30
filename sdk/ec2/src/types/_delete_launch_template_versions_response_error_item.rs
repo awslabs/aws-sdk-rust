@@ -3,7 +3,7 @@
 /// <p>Describes a launch template version that could not be deleted.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteLaunchTemplateVersionsResponseErrorItem  {
+pub struct DeleteLaunchTemplateVersionsResponseErrorItem {
     /// <p>The ID of the launch template.</p>
     #[doc(hidden)]
     pub launch_template_id: std::option::Option<std::string::String>,
@@ -19,11 +19,11 @@ pub struct DeleteLaunchTemplateVersionsResponseErrorItem  {
 }
 impl DeleteLaunchTemplateVersionsResponseErrorItem {
     /// <p>The ID of the launch template.</p>
-    pub fn launch_template_id(&self) -> std::option::Option<& str> {
+    pub fn launch_template_id(&self) -> std::option::Option<&str> {
         self.launch_template_id.as_deref()
     }
     /// <p>The name of the launch template.</p>
-    pub fn launch_template_name(&self) -> std::option::Option<& str> {
+    pub fn launch_template_name(&self) -> std::option::Option<&str> {
         self.launch_template_name.as_deref()
     }
     /// <p>The version number of the launch template.</p>
@@ -31,13 +31,14 @@ impl DeleteLaunchTemplateVersionsResponseErrorItem {
         self.version_number
     }
     /// <p>Information about the error.</p>
-    pub fn response_error(&self) -> std::option::Option<& crate::types::ResponseError> {
+    pub fn response_error(&self) -> std::option::Option<&crate::types::ResponseError> {
         self.response_error.as_ref()
     }
 }
 impl DeleteLaunchTemplateVersionsResponseErrorItem {
     /// Creates a new builder-style object to manufacture [`DeleteLaunchTemplateVersionsResponseErrorItem`](crate::types::DeleteLaunchTemplateVersionsResponseErrorItem).
-    pub fn builder() -> crate::types::builders::DeleteLaunchTemplateVersionsResponseErrorItemBuilder {
+    pub fn builder() -> crate::types::builders::DeleteLaunchTemplateVersionsResponseErrorItemBuilder
+    {
         crate::types::builders::DeleteLaunchTemplateVersionsResponseErrorItemBuilder::default()
     }
 }
@@ -58,8 +59,12 @@ impl DeleteLaunchTemplateVersionsResponseErrorItemBuilder {
         self
     }
     /// <p>The ID of the launch template.</p>
-    pub fn set_launch_template_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.launch_template_id = input; self
+    pub fn set_launch_template_id(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.launch_template_id = input;
+        self
     }
     /// <p>The name of the launch template.</p>
     pub fn launch_template_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -67,8 +72,12 @@ impl DeleteLaunchTemplateVersionsResponseErrorItemBuilder {
         self
     }
     /// <p>The name of the launch template.</p>
-    pub fn set_launch_template_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.launch_template_name = input; self
+    pub fn set_launch_template_name(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.launch_template_name = input;
+        self
     }
     /// <p>The version number of the launch template.</p>
     pub fn version_number(mut self, input: i64) -> Self {
@@ -77,7 +86,8 @@ impl DeleteLaunchTemplateVersionsResponseErrorItemBuilder {
     }
     /// <p>The version number of the launch template.</p>
     pub fn set_version_number(mut self, input: std::option::Option<i64>) -> Self {
-        self.version_number = input; self
+        self.version_number = input;
+        self
     }
     /// <p>Information about the error.</p>
     pub fn response_error(mut self, input: crate::types::ResponseError) -> Self {
@@ -85,21 +95,20 @@ impl DeleteLaunchTemplateVersionsResponseErrorItemBuilder {
         self
     }
     /// <p>Information about the error.</p>
-    pub fn set_response_error(mut self, input: std::option::Option<crate::types::ResponseError>) -> Self {
-        self.response_error = input; self
+    pub fn set_response_error(
+        mut self,
+        input: std::option::Option<crate::types::ResponseError>,
+    ) -> Self {
+        self.response_error = input;
+        self
     }
     /// Consumes the builder and constructs a [`DeleteLaunchTemplateVersionsResponseErrorItem`](crate::types::DeleteLaunchTemplateVersionsResponseErrorItem).
     pub fn build(self) -> crate::types::DeleteLaunchTemplateVersionsResponseErrorItem {
         crate::types::DeleteLaunchTemplateVersionsResponseErrorItem {
-            launch_template_id: self.launch_template_id
-            ,
-            launch_template_name: self.launch_template_name
-            ,
-            version_number: self.version_number
-            ,
-            response_error: self.response_error
-            ,
+            launch_template_id: self.launch_template_id,
+            launch_template_name: self.launch_template_name,
+            version_number: self.version_number,
+            response_error: self.response_error,
         }
     }
 }
-

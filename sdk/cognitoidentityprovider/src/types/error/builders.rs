@@ -80,4 +80,3 @@ pub use crate::types::error::_group_exists_exception::GroupExistsExceptionBuilde
 pub use crate::types::error::_too_many_failed_attempts_exception::TooManyFailedAttemptsExceptionBuilder;
 
 pub use crate::types::error::_unsupported_user_state_exception::UnsupportedUserStateExceptionBuilder;
-

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeJobLogItemsInput  {
+pub struct DescribeJobLogItemsInput {
     /// <p>Request to describe Job log job ID.</p>
     #[doc(hidden)]
     pub job_id: std::option::Option<std::string::String>,
@@ -15,7 +15,7 @@ pub struct DescribeJobLogItemsInput  {
 }
 impl DescribeJobLogItemsInput {
     /// <p>Request to describe Job log job ID.</p>
-    pub fn job_id(&self) -> std::option::Option<& str> {
+    pub fn job_id(&self) -> std::option::Option<&str> {
         self.job_id.as_deref()
     }
     /// <p>Request to describe Job log item maximum results.</p>
@@ -23,14 +23,16 @@ impl DescribeJobLogItemsInput {
         self.max_results
     }
     /// <p>Request to describe Job log next token.</p>
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
 }
 impl DescribeJobLogItemsInput {
     /// Creates a new builder-style object to manufacture [`DescribeJobLogItemsInput`](crate::operation::describe_job_log_items::DescribeJobLogItemsInput).
-    pub fn builder() -> crate::operation::describe_job_log_items::builders::DescribeJobLogItemsInputBuilder {
-        crate::operation::describe_job_log_items::builders::DescribeJobLogItemsInputBuilder::default()
+    pub fn builder(
+    ) -> crate::operation::describe_job_log_items::builders::DescribeJobLogItemsInputBuilder {
+        crate::operation::describe_job_log_items::builders::DescribeJobLogItemsInputBuilder::default(
+        )
     }
 }
 
@@ -50,7 +52,8 @@ impl DescribeJobLogItemsInputBuilder {
     }
     /// <p>Request to describe Job log job ID.</p>
     pub fn set_job_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.job_id = input; self
+        self.job_id = input;
+        self
     }
     /// <p>Request to describe Job log item maximum results.</p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -59,7 +62,8 @@ impl DescribeJobLogItemsInputBuilder {
     }
     /// <p>Request to describe Job log item maximum results.</p>
     pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_results = input; self
+        self.max_results = input;
+        self
     }
     /// <p>Request to describe Job log next token.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -68,21 +72,22 @@ impl DescribeJobLogItemsInputBuilder {
     }
     /// <p>Request to describe Job log next token.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input; self
+        self.next_token = input;
+        self
     }
     /// Consumes the builder and constructs a [`DescribeJobLogItemsInput`](crate::operation::describe_job_log_items::DescribeJobLogItemsInput).
-    pub fn build(self) -> Result<crate::operation::describe_job_log_items::DescribeJobLogItemsInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::describe_job_log_items::DescribeJobLogItemsInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::describe_job_log_items::DescribeJobLogItemsInput {
-                job_id: self.job_id
-                ,
-                max_results: self.max_results
-                    .unwrap_or_default()
-                ,
-                next_token: self.next_token
-                ,
-            }
+                job_id: self.job_id,
+                max_results: self.max_results.unwrap_or_default(),
+                next_token: self.next_token,
+            },
         )
     }
 }
-

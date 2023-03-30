@@ -4,49 +4,71 @@ pub use crate::operation::create_image_recipe::_create_image_recipe_output::Crea
 pub use crate::operation::create_image_recipe::_create_image_recipe_input::CreateImageRecipeInputBuilder;
 
 /// Fluent builder constructing a request to `CreateImageRecipe`.
-/// 
+///
 /// <p> Creates a new image recipe. Image recipes define how images are configured, tested, and assessed.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct CreateImageRecipeFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::create_image_recipe::builders::CreateImageRecipeInputBuilder
-            }
-impl CreateImageRecipeFluentBuilder  {
+    handle: std::sync::Arc<crate::client::Handle>,
+    inner: crate::operation::create_image_recipe::builders::CreateImageRecipeInputBuilder,
+}
+impl CreateImageRecipeFluentBuilder {
     /// Creates a new `CreateImageRecipe`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
-                    /// sent. The operation's inner [http::Request] can be modified as well.
-                    pub async fn customize(self) -> std::result::Result<
-                        crate::client::customize::CustomizableOperation<crate::operation::create_image_recipe::CreateImageRecipe, aws_http::retry::AwsResponseRetryClassifier,>,
-                        aws_smithy_http::result::SdkError<crate::operation::create_image_recipe::CreateImageRecipeError>
-                    >  {
-                        let handle = self.handle.clone();
-                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-                    }
-    
-                    /// Sends the request and returns the response.
-                    ///
-                    /// If an error occurs, an `SdkError` will be returned with additional details that
-                    /// can be matched against.
-                    ///
-                    /// By default, any retryable failures will be retried twice. Retry behavior
-                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                    /// set when configuring the client.
-                    pub async fn send(self) -> std::result::Result<crate::operation::create_image_recipe::CreateImageRecipeOutput, aws_smithy_http::result::SdkError<crate::operation::create_image_recipe::CreateImageRecipeError>>
-                     {
-                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&self.handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        self.handle.client.call(op).await
-                    }
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle,
+            inner: Default::default(),
+        }
+    }
+
+    /// Consume this builder, creating a customizable operation that can be modified before being
+    /// sent. The operation's inner [http::Request] can be modified as well.
+    pub async fn customize(
+        self,
+    ) -> std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::create_image_recipe::CreateImageRecipe,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::result::SdkError<
+            crate::operation::create_image_recipe::CreateImageRecipeError,
+        >,
+    > {
+        let handle = self.handle.clone();
+        let operation = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+    }
+
+    /// Sends the request and returns the response.
+    ///
+    /// If an error occurs, an `SdkError` will be returned with additional details that
+    /// can be matched against.
+    ///
+    /// By default, any retryable failures will be retried twice. Retry behavior
+    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+    /// set when configuring the client.
+    pub async fn send(
+        self,
+    ) -> std::result::Result<
+        crate::operation::create_image_recipe::CreateImageRecipeOutput,
+        aws_smithy_http::result::SdkError<
+            crate::operation::create_image_recipe::CreateImageRecipeError,
+        >,
+    > {
+        let op = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&self.handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        self.handle.client.call(op).await
+    }
     /// <p> The name of the image recipe.</p>
     pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.name(input.into());
@@ -67,7 +89,7 @@ impl CreateImageRecipeFluentBuilder  {
         self.inner = self.inner.set_description(input);
         self
     }
-    /// <p>The semantic version of the image recipe. This version follows the semantic version syntax.</p> <note> 
+    /// <p>The semantic version of the image recipe. This version follows the semantic version syntax.</p> <note>
     /// <p>The semantic version has four nodes: <major>
     /// .
     /// <minor>
@@ -79,15 +101,15 @@ impl CreateImageRecipeFluentBuilder  {
     /// </build>
     /// </patch>
     /// </minor>
-    /// </major></p> 
-    /// <p> <b>Assignment:</b> For the first three nodes you can assign any positive integer value, including zero, with an upper limit of 2^30-1, or 1073741823 for each node. Image Builder automatically assigns the build number to the fourth node.</p> 
-    /// <p> <b>Patterns:</b> You can use any numeric pattern that adheres to the assignment requirements for the nodes that you can assign. For example, you might choose a software version pattern, such as 1.0.0, or a date, such as 2021.01.01.</p> 
+    /// </major></p>
+    /// <p> <b>Assignment:</b> For the first three nodes you can assign any positive integer value, including zero, with an upper limit of 2^30-1, or 1073741823 for each node. Image Builder automatically assigns the build number to the fourth node.</p>
+    /// <p> <b>Patterns:</b> You can use any numeric pattern that adheres to the assignment requirements for the nodes that you can assign. For example, you might choose a software version pattern, such as 1.0.0, or a date, such as 2021.01.01.</p>
     /// </note>
     pub fn semantic_version(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.semantic_version(input.into());
         self
     }
-    /// <p>The semantic version of the image recipe. This version follows the semantic version syntax.</p> <note> 
+    /// <p>The semantic version of the image recipe. This version follows the semantic version syntax.</p> <note>
     /// <p>The semantic version has four nodes: <major>
     /// .
     /// <minor>
@@ -99,9 +121,9 @@ impl CreateImageRecipeFluentBuilder  {
     /// </build>
     /// </patch>
     /// </minor>
-    /// </major></p> 
-    /// <p> <b>Assignment:</b> For the first three nodes you can assign any positive integer value, including zero, with an upper limit of 2^30-1, or 1073741823 for each node. Image Builder automatically assigns the build number to the fourth node.</p> 
-    /// <p> <b>Patterns:</b> You can use any numeric pattern that adheres to the assignment requirements for the nodes that you can assign. For example, you might choose a software version pattern, such as 1.0.0, or a date, such as 2021.01.01.</p> 
+    /// </major></p>
+    /// <p> <b>Assignment:</b> For the first three nodes you can assign any positive integer value, including zero, with an upper limit of 2^30-1, or 1073741823 for each node. Image Builder automatically assigns the build number to the fourth node.</p>
+    /// <p> <b>Patterns:</b> You can use any numeric pattern that adheres to the assignment requirements for the nodes that you can assign. For example, you might choose a software version pattern, such as 1.0.0, or a date, such as 2021.01.01.</p>
     /// </note>
     pub fn set_semantic_version(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.inner = self.inner.set_semantic_version(input);
@@ -117,7 +139,10 @@ impl CreateImageRecipeFluentBuilder  {
         self
     }
     /// <p>The components included in the image recipe.</p>
-    pub fn set_components(mut self, input: std::option::Option<std::vec::Vec<crate::types::ComponentConfiguration>>) -> Self {
+    pub fn set_components(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::ComponentConfiguration>>,
+    ) -> Self {
         self.inner = self.inner.set_components(input);
         self
     }
@@ -136,12 +161,18 @@ impl CreateImageRecipeFluentBuilder  {
     /// To override the contents of this collection use [`set_block_device_mappings`](Self::set_block_device_mappings).
     ///
     /// <p>The block device mappings of the image recipe.</p>
-    pub fn block_device_mappings(mut self, input: crate::types::InstanceBlockDeviceMapping) -> Self {
+    pub fn block_device_mappings(
+        mut self,
+        input: crate::types::InstanceBlockDeviceMapping,
+    ) -> Self {
         self.inner = self.inner.block_device_mappings(input);
         self
     }
     /// <p>The block device mappings of the image recipe.</p>
-    pub fn set_block_device_mappings(mut self, input: std::option::Option<std::vec::Vec<crate::types::InstanceBlockDeviceMapping>>) -> Self {
+    pub fn set_block_device_mappings(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::InstanceBlockDeviceMapping>>,
+    ) -> Self {
         self.inner = self.inner.set_block_device_mappings(input);
         self
     }
@@ -150,12 +181,21 @@ impl CreateImageRecipeFluentBuilder  {
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// <p> The tags of the image recipe.</p>
-    pub fn tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
+    pub fn tags(
+        mut self,
+        k: impl Into<std::string::String>,
+        v: impl Into<std::string::String>,
+    ) -> Self {
         self.inner = self.inner.tags(k.into(), v.into());
         self
     }
     /// <p> The tags of the image recipe.</p>
-    pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+    pub fn set_tags(
+        mut self,
+        input: std::option::Option<
+            std::collections::HashMap<std::string::String, std::string::String>,
+        >,
+    ) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }
@@ -165,17 +205,26 @@ impl CreateImageRecipeFluentBuilder  {
         self
     }
     /// <p>The working directory used during build and test workflows.</p>
-    pub fn set_working_directory(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_working_directory(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_working_directory(input);
         self
     }
     /// <p>Specify additional settings and launch scripts for your build instances.</p>
-    pub fn additional_instance_configuration(mut self, input: crate::types::AdditionalInstanceConfiguration) -> Self {
+    pub fn additional_instance_configuration(
+        mut self,
+        input: crate::types::AdditionalInstanceConfiguration,
+    ) -> Self {
         self.inner = self.inner.additional_instance_configuration(input);
         self
     }
     /// <p>Specify additional settings and launch scripts for your build instances.</p>
-    pub fn set_additional_instance_configuration(mut self, input: std::option::Option<crate::types::AdditionalInstanceConfiguration>) -> Self {
+    pub fn set_additional_instance_configuration(
+        mut self,
+        input: std::option::Option<crate::types::AdditionalInstanceConfiguration>,
+    ) -> Self {
         self.inner = self.inner.set_additional_instance_configuration(input);
         self
     }
@@ -190,4 +239,3 @@ impl CreateImageRecipeFluentBuilder  {
         self
     }
 }
-

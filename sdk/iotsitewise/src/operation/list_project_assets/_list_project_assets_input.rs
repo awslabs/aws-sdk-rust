@@ -2,28 +2,28 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListProjectAssetsInput  {
+pub struct ListProjectAssetsInput {
     /// <p>The ID of the project.</p>
     #[doc(hidden)]
     pub project_id: std::option::Option<std::string::String>,
     /// <p>The token to be used for the next set of paginated results.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
-    /// <p>The maximum number of results to return for each paginated request.</p> 
+    /// <p>The maximum number of results to return for each paginated request.</p>
     /// <p>Default: 50</p>
     #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
 }
 impl ListProjectAssetsInput {
     /// <p>The ID of the project.</p>
-    pub fn project_id(&self) -> std::option::Option<& str> {
+    pub fn project_id(&self) -> std::option::Option<&str> {
         self.project_id.as_deref()
     }
     /// <p>The token to be used for the next set of paginated results.</p>
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// <p>The maximum number of results to return for each paginated request.</p> 
+    /// <p>The maximum number of results to return for each paginated request.</p>
     /// <p>Default: 50</p>
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
@@ -31,7 +31,8 @@ impl ListProjectAssetsInput {
 }
 impl ListProjectAssetsInput {
     /// Creates a new builder-style object to manufacture [`ListProjectAssetsInput`](crate::operation::list_project_assets::ListProjectAssetsInput).
-    pub fn builder() -> crate::operation::list_project_assets::builders::ListProjectAssetsInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::list_project_assets::builders::ListProjectAssetsInputBuilder {
         crate::operation::list_project_assets::builders::ListProjectAssetsInputBuilder::default()
     }
 }
@@ -52,7 +53,8 @@ impl ListProjectAssetsInputBuilder {
     }
     /// <p>The ID of the project.</p>
     pub fn set_project_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.project_id = input; self
+        self.project_id = input;
+        self
     }
     /// <p>The token to be used for the next set of paginated results.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -61,31 +63,34 @@ impl ListProjectAssetsInputBuilder {
     }
     /// <p>The token to be used for the next set of paginated results.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input; self
+        self.next_token = input;
+        self
     }
-    /// <p>The maximum number of results to return for each paginated request.</p> 
+    /// <p>The maximum number of results to return for each paginated request.</p>
     /// <p>Default: 50</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.max_results = Some(input);
         self
     }
-    /// <p>The maximum number of results to return for each paginated request.</p> 
+    /// <p>The maximum number of results to return for each paginated request.</p>
     /// <p>Default: 50</p>
     pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_results = input; self
+        self.max_results = input;
+        self
     }
     /// Consumes the builder and constructs a [`ListProjectAssetsInput`](crate::operation::list_project_assets::ListProjectAssetsInput).
-    pub fn build(self) -> Result<crate::operation::list_project_assets::ListProjectAssetsInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::list_project_assets::ListProjectAssetsInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::list_project_assets::ListProjectAssetsInput {
-                project_id: self.project_id
-                ,
-                next_token: self.next_token
-                ,
-                max_results: self.max_results
-                ,
-            }
+                project_id: self.project_id,
+                next_token: self.next_token,
+                max_results: self.max_results,
+            },
         )
     }
 }
-

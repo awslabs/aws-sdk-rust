@@ -3,37 +3,37 @@
 /// <p>The filter criteria to use in determining the requests returned.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ResourceRequestStatusFilter  {
+pub struct ResourceRequestStatusFilter {
     /// <p>The operation types to include in the filter.</p>
     #[doc(hidden)]
     pub operations: std::option::Option<std::vec::Vec<crate::types::Operation>>,
-    /// <p>The operation statuses to include in the filter.</p> 
-    /// <ul> 
-    /// <li> <p> <code>PENDING</code>: The operation has been requested, but not yet initiated.</p> </li> 
-    /// <li> <p> <code>IN_PROGRESS</code>: The operation is in progress.</p> </li> 
-    /// <li> <p> <code>SUCCESS</code>: The operation completed.</p> </li> 
-    /// <li> <p> <code>FAILED</code>: The operation failed.</p> </li> 
-    /// <li> <p> <code>CANCEL_IN_PROGRESS</code>: The operation is in the process of being canceled.</p> </li> 
-    /// <li> <p> <code>CANCEL_COMPLETE</code>: The operation has been canceled.</p> </li> 
+    /// <p>The operation statuses to include in the filter.</p>
+    /// <ul>
+    /// <li> <p> <code>PENDING</code>: The operation has been requested, but not yet initiated.</p> </li>
+    /// <li> <p> <code>IN_PROGRESS</code>: The operation is in progress.</p> </li>
+    /// <li> <p> <code>SUCCESS</code>: The operation completed.</p> </li>
+    /// <li> <p> <code>FAILED</code>: The operation failed.</p> </li>
+    /// <li> <p> <code>CANCEL_IN_PROGRESS</code>: The operation is in the process of being canceled.</p> </li>
+    /// <li> <p> <code>CANCEL_COMPLETE</code>: The operation has been canceled.</p> </li>
     /// </ul>
     #[doc(hidden)]
     pub operation_statuses: std::option::Option<std::vec::Vec<crate::types::OperationStatus>>,
 }
 impl ResourceRequestStatusFilter {
     /// <p>The operation types to include in the filter.</p>
-    pub fn operations(&self) -> std::option::Option<& [crate::types::Operation]> {
+    pub fn operations(&self) -> std::option::Option<&[crate::types::Operation]> {
         self.operations.as_deref()
     }
-    /// <p>The operation statuses to include in the filter.</p> 
-    /// <ul> 
-    /// <li> <p> <code>PENDING</code>: The operation has been requested, but not yet initiated.</p> </li> 
-    /// <li> <p> <code>IN_PROGRESS</code>: The operation is in progress.</p> </li> 
-    /// <li> <p> <code>SUCCESS</code>: The operation completed.</p> </li> 
-    /// <li> <p> <code>FAILED</code>: The operation failed.</p> </li> 
-    /// <li> <p> <code>CANCEL_IN_PROGRESS</code>: The operation is in the process of being canceled.</p> </li> 
-    /// <li> <p> <code>CANCEL_COMPLETE</code>: The operation has been canceled.</p> </li> 
+    /// <p>The operation statuses to include in the filter.</p>
+    /// <ul>
+    /// <li> <p> <code>PENDING</code>: The operation has been requested, but not yet initiated.</p> </li>
+    /// <li> <p> <code>IN_PROGRESS</code>: The operation is in progress.</p> </li>
+    /// <li> <p> <code>SUCCESS</code>: The operation completed.</p> </li>
+    /// <li> <p> <code>FAILED</code>: The operation failed.</p> </li>
+    /// <li> <p> <code>CANCEL_IN_PROGRESS</code>: The operation is in the process of being canceled.</p> </li>
+    /// <li> <p> <code>CANCEL_COMPLETE</code>: The operation has been canceled.</p> </li>
     /// </ul>
-    pub fn operation_statuses(&self) -> std::option::Option<& [crate::types::OperationStatus]> {
+    pub fn operation_statuses(&self) -> std::option::Option<&[crate::types::OperationStatus]> {
         self.operation_statuses.as_deref()
     }
 }
@@ -49,7 +49,8 @@ impl ResourceRequestStatusFilter {
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct ResourceRequestStatusFilterBuilder {
     pub(crate) operations: std::option::Option<std::vec::Vec<crate::types::Operation>>,
-    pub(crate) operation_statuses: std::option::Option<std::vec::Vec<crate::types::OperationStatus>>,
+    pub(crate) operation_statuses:
+        std::option::Option<std::vec::Vec<crate::types::OperationStatus>>,
 }
 impl ResourceRequestStatusFilterBuilder {
     /// Appends an item to `operations`.
@@ -59,53 +60,58 @@ impl ResourceRequestStatusFilterBuilder {
     /// <p>The operation types to include in the filter.</p>
     pub fn operations(mut self, input: crate::types::Operation) -> Self {
         let mut v = self.operations.unwrap_or_default();
-                        v.push(input);
-                        self.operations = Some(v);
-                        self
+        v.push(input);
+        self.operations = Some(v);
+        self
     }
     /// <p>The operation types to include in the filter.</p>
-    pub fn set_operations(mut self, input: std::option::Option<std::vec::Vec<crate::types::Operation>>) -> Self {
-        self.operations = input; self
+    pub fn set_operations(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::Operation>>,
+    ) -> Self {
+        self.operations = input;
+        self
     }
     /// Appends an item to `operation_statuses`.
     ///
     /// To override the contents of this collection use [`set_operation_statuses`](Self::set_operation_statuses).
     ///
-    /// <p>The operation statuses to include in the filter.</p> 
-    /// <ul> 
-    /// <li> <p> <code>PENDING</code>: The operation has been requested, but not yet initiated.</p> </li> 
-    /// <li> <p> <code>IN_PROGRESS</code>: The operation is in progress.</p> </li> 
-    /// <li> <p> <code>SUCCESS</code>: The operation completed.</p> </li> 
-    /// <li> <p> <code>FAILED</code>: The operation failed.</p> </li> 
-    /// <li> <p> <code>CANCEL_IN_PROGRESS</code>: The operation is in the process of being canceled.</p> </li> 
-    /// <li> <p> <code>CANCEL_COMPLETE</code>: The operation has been canceled.</p> </li> 
+    /// <p>The operation statuses to include in the filter.</p>
+    /// <ul>
+    /// <li> <p> <code>PENDING</code>: The operation has been requested, but not yet initiated.</p> </li>
+    /// <li> <p> <code>IN_PROGRESS</code>: The operation is in progress.</p> </li>
+    /// <li> <p> <code>SUCCESS</code>: The operation completed.</p> </li>
+    /// <li> <p> <code>FAILED</code>: The operation failed.</p> </li>
+    /// <li> <p> <code>CANCEL_IN_PROGRESS</code>: The operation is in the process of being canceled.</p> </li>
+    /// <li> <p> <code>CANCEL_COMPLETE</code>: The operation has been canceled.</p> </li>
     /// </ul>
     pub fn operation_statuses(mut self, input: crate::types::OperationStatus) -> Self {
         let mut v = self.operation_statuses.unwrap_or_default();
-                        v.push(input);
-                        self.operation_statuses = Some(v);
-                        self
+        v.push(input);
+        self.operation_statuses = Some(v);
+        self
     }
-    /// <p>The operation statuses to include in the filter.</p> 
-    /// <ul> 
-    /// <li> <p> <code>PENDING</code>: The operation has been requested, but not yet initiated.</p> </li> 
-    /// <li> <p> <code>IN_PROGRESS</code>: The operation is in progress.</p> </li> 
-    /// <li> <p> <code>SUCCESS</code>: The operation completed.</p> </li> 
-    /// <li> <p> <code>FAILED</code>: The operation failed.</p> </li> 
-    /// <li> <p> <code>CANCEL_IN_PROGRESS</code>: The operation is in the process of being canceled.</p> </li> 
-    /// <li> <p> <code>CANCEL_COMPLETE</code>: The operation has been canceled.</p> </li> 
+    /// <p>The operation statuses to include in the filter.</p>
+    /// <ul>
+    /// <li> <p> <code>PENDING</code>: The operation has been requested, but not yet initiated.</p> </li>
+    /// <li> <p> <code>IN_PROGRESS</code>: The operation is in progress.</p> </li>
+    /// <li> <p> <code>SUCCESS</code>: The operation completed.</p> </li>
+    /// <li> <p> <code>FAILED</code>: The operation failed.</p> </li>
+    /// <li> <p> <code>CANCEL_IN_PROGRESS</code>: The operation is in the process of being canceled.</p> </li>
+    /// <li> <p> <code>CANCEL_COMPLETE</code>: The operation has been canceled.</p> </li>
     /// </ul>
-    pub fn set_operation_statuses(mut self, input: std::option::Option<std::vec::Vec<crate::types::OperationStatus>>) -> Self {
-        self.operation_statuses = input; self
+    pub fn set_operation_statuses(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::OperationStatus>>,
+    ) -> Self {
+        self.operation_statuses = input;
+        self
     }
     /// Consumes the builder and constructs a [`ResourceRequestStatusFilter`](crate::types::ResourceRequestStatusFilter).
     pub fn build(self) -> crate::types::ResourceRequestStatusFilter {
         crate::types::ResourceRequestStatusFilter {
-            operations: self.operations
-            ,
-            operation_statuses: self.operation_statuses
-            ,
+            operations: self.operations,
+            operation_statuses: self.operation_statuses,
         }
     }
 }
-

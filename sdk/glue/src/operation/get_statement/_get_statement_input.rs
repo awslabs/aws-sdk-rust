@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetStatementInput  {
+pub struct GetStatementInput {
     /// <p>The Session ID of the statement.</p>
     #[doc(hidden)]
     pub session_id: std::option::Option<std::string::String>,
@@ -15,7 +15,7 @@ pub struct GetStatementInput  {
 }
 impl GetStatementInput {
     /// <p>The Session ID of the statement.</p>
-    pub fn session_id(&self) -> std::option::Option<& str> {
+    pub fn session_id(&self) -> std::option::Option<&str> {
         self.session_id.as_deref()
     }
     /// <p>The Id of the statement.</p>
@@ -23,7 +23,7 @@ impl GetStatementInput {
         self.id
     }
     /// <p>The origin of the request.</p>
-    pub fn request_origin(&self) -> std::option::Option<& str> {
+    pub fn request_origin(&self) -> std::option::Option<&str> {
         self.request_origin.as_deref()
     }
 }
@@ -50,7 +50,8 @@ impl GetStatementInputBuilder {
     }
     /// <p>The Session ID of the statement.</p>
     pub fn set_session_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.session_id = input; self
+        self.session_id = input;
+        self
     }
     /// <p>The Id of the statement.</p>
     pub fn id(mut self, input: i32) -> Self {
@@ -59,7 +60,8 @@ impl GetStatementInputBuilder {
     }
     /// <p>The Id of the statement.</p>
     pub fn set_id(mut self, input: std::option::Option<i32>) -> Self {
-        self.id = input; self
+        self.id = input;
+        self
     }
     /// <p>The origin of the request.</p>
     pub fn request_origin(mut self, input: impl Into<std::string::String>) -> Self {
@@ -68,21 +70,20 @@ impl GetStatementInputBuilder {
     }
     /// <p>The origin of the request.</p>
     pub fn set_request_origin(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.request_origin = input; self
+        self.request_origin = input;
+        self
     }
     /// Consumes the builder and constructs a [`GetStatementInput`](crate::operation::get_statement::GetStatementInput).
-    pub fn build(self) -> Result<crate::operation::get_statement::GetStatementInput, aws_smithy_http::operation::error::BuildError> {
-        Ok(
-            crate::operation::get_statement::GetStatementInput {
-                session_id: self.session_id
-                ,
-                id: self.id
-                    .unwrap_or_default()
-                ,
-                request_origin: self.request_origin
-                ,
-            }
-        )
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::get_statement::GetStatementInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        Ok(crate::operation::get_statement::GetStatementInput {
+            session_id: self.session_id,
+            id: self.id.unwrap_or_default(),
+            request_origin: self.request_origin,
+        })
     }
 }
-

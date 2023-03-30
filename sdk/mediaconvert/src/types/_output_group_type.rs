@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-/// 
+///
 /// Here is an example of how you can make a match expression forward-compatible:
-/// 
+///
 /// ```text
 /// # let outputgrouptype = unimplemented!();
 /// match outputgrouptype {
@@ -33,14 +33,22 @@
 /// Specifically, when `outputgrouptype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `OutputGroupType::NewFeature` also yielding `"NewFeature"`.
-/// 
+///
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 /// Type of output group (File group, Apple HLS, DASH ISO, Microsoft Smooth Streaming, CMAF)
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
 pub enum OutputGroupType {
     #[allow(missing_docs)] // documentation missing in model
     CmafGroupSettings,
@@ -53,47 +61,54 @@ pub enum OutputGroupType {
     #[allow(missing_docs)] // documentation missing in model
     MsSmoothGroupSettings,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::primitives::UnknownVariantValue)
+    Unknown(crate::primitives::UnknownVariantValue),
 }
 impl std::convert::From<&str> for OutputGroupType {
-                fn from(s: &str) -> Self {
-                    match s {
-                        "CMAF_GROUP_SETTINGS" => OutputGroupType::CmafGroupSettings,
-"DASH_ISO_GROUP_SETTINGS" => OutputGroupType::DashIsoGroupSettings,
-"FILE_GROUP_SETTINGS" => OutputGroupType::FileGroupSettings,
-"HLS_GROUP_SETTINGS" => OutputGroupType::HlsGroupSettings,
-"MS_SMOOTH_GROUP_SETTINGS" => OutputGroupType::MsSmoothGroupSettings,
-other => OutputGroupType::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
-                    }
-                }
+    fn from(s: &str) -> Self {
+        match s {
+            "CMAF_GROUP_SETTINGS" => OutputGroupType::CmafGroupSettings,
+            "DASH_ISO_GROUP_SETTINGS" => OutputGroupType::DashIsoGroupSettings,
+            "FILE_GROUP_SETTINGS" => OutputGroupType::FileGroupSettings,
+            "HLS_GROUP_SETTINGS" => OutputGroupType::HlsGroupSettings,
+            "MS_SMOOTH_GROUP_SETTINGS" => OutputGroupType::MsSmoothGroupSettings,
+            other => {
+                OutputGroupType::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
             }
-impl std::str::FromStr for OutputGroupType {
-                type Err = std::convert::Infallible;
-
-                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-                    Ok(OutputGroupType::from(s))
-                }
-            }
-impl OutputGroupType {
-                /// Returns the `&str` value of the enum member.
-                pub fn as_str(&self) -> &str {
-                    match self {
-    OutputGroupType::CmafGroupSettings => "CMAF_GROUP_SETTINGS",
-    OutputGroupType::DashIsoGroupSettings => "DASH_ISO_GROUP_SETTINGS",
-    OutputGroupType::FileGroupSettings => "FILE_GROUP_SETTINGS",
-    OutputGroupType::HlsGroupSettings => "HLS_GROUP_SETTINGS",
-    OutputGroupType::MsSmoothGroupSettings => "MS_SMOOTH_GROUP_SETTINGS",
-    OutputGroupType::Unknown(value) => value.as_str()
+        }
+    }
 }
-                }
-                /// Returns all the `&str` representations of the enum members.
-                pub const fn values() -> &'static [&'static str] {
-                    &["CMAF_GROUP_SETTINGS", "DASH_ISO_GROUP_SETTINGS", "FILE_GROUP_SETTINGS", "HLS_GROUP_SETTINGS", "MS_SMOOTH_GROUP_SETTINGS"]
-                }
-            }
-impl AsRef<str> for OutputGroupType {
-                fn as_ref(&self) -> &str {
-                    self.as_str()
-                }
-            }
+impl std::str::FromStr for OutputGroupType {
+    type Err = std::convert::Infallible;
 
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(OutputGroupType::from(s))
+    }
+}
+impl OutputGroupType {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            OutputGroupType::CmafGroupSettings => "CMAF_GROUP_SETTINGS",
+            OutputGroupType::DashIsoGroupSettings => "DASH_ISO_GROUP_SETTINGS",
+            OutputGroupType::FileGroupSettings => "FILE_GROUP_SETTINGS",
+            OutputGroupType::HlsGroupSettings => "HLS_GROUP_SETTINGS",
+            OutputGroupType::MsSmoothGroupSettings => "MS_SMOOTH_GROUP_SETTINGS",
+            OutputGroupType::Unknown(value) => value.as_str(),
+        }
+    }
+    /// Returns all the `&str` representations of the enum members.
+    pub const fn values() -> &'static [&'static str] {
+        &[
+            "CMAF_GROUP_SETTINGS",
+            "DASH_ISO_GROUP_SETTINGS",
+            "FILE_GROUP_SETTINGS",
+            "HLS_GROUP_SETTINGS",
+            "MS_SMOOTH_GROUP_SETTINGS",
+        ]
+    }
+}
+impl AsRef<str> for OutputGroupType {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}

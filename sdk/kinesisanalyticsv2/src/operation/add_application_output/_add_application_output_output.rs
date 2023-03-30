@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AddApplicationOutputOutput  {
+pub struct AddApplicationOutputOutput {
     /// <p>The application Amazon Resource Name (ARN).</p>
     #[doc(hidden)]
     pub application_arn: std::option::Option<std::string::String>,
@@ -16,7 +16,7 @@ pub struct AddApplicationOutputOutput  {
 }
 impl AddApplicationOutputOutput {
     /// <p>The application Amazon Resource Name (ARN).</p>
-    pub fn application_arn(&self) -> std::option::Option<& str> {
+    pub fn application_arn(&self) -> std::option::Option<&str> {
         self.application_arn.as_deref()
     }
     /// <p>The updated application version ID. Kinesis Data Analytics increments this ID when the application is updated.</p>
@@ -24,18 +24,19 @@ impl AddApplicationOutputOutput {
         self.application_version_id
     }
     /// <p>Describes the application output configuration. For more information, see <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works-output.html">Configuring Application Output</a>. </p>
-    pub fn output_descriptions(&self) -> std::option::Option<& [crate::types::OutputDescription]> {
+    pub fn output_descriptions(&self) -> std::option::Option<&[crate::types::OutputDescription]> {
         self.output_descriptions.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for AddApplicationOutputOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl AddApplicationOutputOutput {
     /// Creates a new builder-style object to manufacture [`AddApplicationOutputOutput`](crate::operation::add_application_output::AddApplicationOutputOutput).
-    pub fn builder() -> crate::operation::add_application_output::builders::AddApplicationOutputOutputBuilder {
+    pub fn builder(
+    ) -> crate::operation::add_application_output::builders::AddApplicationOutputOutputBuilder {
         crate::operation::add_application_output::builders::AddApplicationOutputOutputBuilder::default()
     }
 }
@@ -46,7 +47,8 @@ impl AddApplicationOutputOutput {
 pub struct AddApplicationOutputOutputBuilder {
     pub(crate) application_arn: std::option::Option<std::string::String>,
     pub(crate) application_version_id: std::option::Option<i64>,
-    pub(crate) output_descriptions: std::option::Option<std::vec::Vec<crate::types::OutputDescription>>,
+    pub(crate) output_descriptions:
+        std::option::Option<std::vec::Vec<crate::types::OutputDescription>>,
     _request_id: Option<String>,
 }
 impl AddApplicationOutputOutputBuilder {
@@ -57,7 +59,8 @@ impl AddApplicationOutputOutputBuilder {
     }
     /// <p>The application Amazon Resource Name (ARN).</p>
     pub fn set_application_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.application_arn = input; self
+        self.application_arn = input;
+        self
     }
     /// <p>The updated application version ID. Kinesis Data Analytics increments this ID when the application is updated.</p>
     pub fn application_version_id(mut self, input: i64) -> Self {
@@ -66,7 +69,8 @@ impl AddApplicationOutputOutputBuilder {
     }
     /// <p>The updated application version ID. Kinesis Data Analytics increments this ID when the application is updated.</p>
     pub fn set_application_version_id(mut self, input: std::option::Option<i64>) -> Self {
-        self.application_version_id = input; self
+        self.application_version_id = input;
+        self
     }
     /// Appends an item to `output_descriptions`.
     ///
@@ -75,34 +79,34 @@ impl AddApplicationOutputOutputBuilder {
     /// <p>Describes the application output configuration. For more information, see <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works-output.html">Configuring Application Output</a>. </p>
     pub fn output_descriptions(mut self, input: crate::types::OutputDescription) -> Self {
         let mut v = self.output_descriptions.unwrap_or_default();
-                        v.push(input);
-                        self.output_descriptions = Some(v);
-                        self
+        v.push(input);
+        self.output_descriptions = Some(v);
+        self
     }
     /// <p>Describes the application output configuration. For more information, see <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works-output.html">Configuring Application Output</a>. </p>
-    pub fn set_output_descriptions(mut self, input: std::option::Option<std::vec::Vec<crate::types::OutputDescription>>) -> Self {
-        self.output_descriptions = input; self
+    pub fn set_output_descriptions(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::OutputDescription>>,
+    ) -> Self {
+        self.output_descriptions = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`AddApplicationOutputOutput`](crate::operation::add_application_output::AddApplicationOutputOutput).
     pub fn build(self) -> crate::operation::add_application_output::AddApplicationOutputOutput {
         crate::operation::add_application_output::AddApplicationOutputOutput {
-            application_arn: self.application_arn
-            ,
-            application_version_id: self.application_version_id
-            ,
-            output_descriptions: self.output_descriptions
-            ,
+            application_arn: self.application_arn,
+            application_version_id: self.application_version_id,
+            output_descriptions: self.output_descriptions,
             _request_id: self._request_id,
         }
     }
 }
-

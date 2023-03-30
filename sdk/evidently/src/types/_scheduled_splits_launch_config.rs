@@ -3,14 +3,14 @@
 /// <p>An array of structures that define the traffic allocation percentages among the feature variations during each step of a launch. This also defines the start time of each step.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ScheduledSplitsLaunchConfig  {
+pub struct ScheduledSplitsLaunchConfig {
     /// <p>An array of structures that define the traffic allocation percentages among the feature variations during each step of the launch. This also defines the start time of each step.</p>
     #[doc(hidden)]
     pub steps: std::option::Option<std::vec::Vec<crate::types::ScheduledSplitConfig>>,
 }
 impl ScheduledSplitsLaunchConfig {
     /// <p>An array of structures that define the traffic allocation percentages among the feature variations during each step of the launch. This also defines the start time of each step.</p>
-    pub fn steps(&self) -> std::option::Option<& [crate::types::ScheduledSplitConfig]> {
+    pub fn steps(&self) -> std::option::Option<&[crate::types::ScheduledSplitConfig]> {
         self.steps.as_deref()
     }
 }
@@ -35,20 +35,20 @@ impl ScheduledSplitsLaunchConfigBuilder {
     /// <p>An array of structures that define the traffic allocation percentages among the feature variations during each step of the launch. This also defines the start time of each step.</p>
     pub fn steps(mut self, input: crate::types::ScheduledSplitConfig) -> Self {
         let mut v = self.steps.unwrap_or_default();
-                        v.push(input);
-                        self.steps = Some(v);
-                        self
+        v.push(input);
+        self.steps = Some(v);
+        self
     }
     /// <p>An array of structures that define the traffic allocation percentages among the feature variations during each step of the launch. This also defines the start time of each step.</p>
-    pub fn set_steps(mut self, input: std::option::Option<std::vec::Vec<crate::types::ScheduledSplitConfig>>) -> Self {
-        self.steps = input; self
+    pub fn set_steps(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::ScheduledSplitConfig>>,
+    ) -> Self {
+        self.steps = input;
+        self
     }
     /// Consumes the builder and constructs a [`ScheduledSplitsLaunchConfig`](crate::types::ScheduledSplitsLaunchConfig).
     pub fn build(self) -> crate::types::ScheduledSplitsLaunchConfig {
-        crate::types::ScheduledSplitsLaunchConfig {
-            steps: self.steps
-            ,
-        }
+        crate::types::ScheduledSplitsLaunchConfig { steps: self.steps }
     }
 }
-

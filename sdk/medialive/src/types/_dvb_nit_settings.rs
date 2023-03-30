@@ -3,7 +3,7 @@
 /// DVB Network Information Table (NIT)
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DvbNitSettings  {
+pub struct DvbNitSettings {
     /// The numeric value placed in the Network Information Table (NIT).
     #[doc(hidden)]
     pub network_id: i32,
@@ -20,7 +20,7 @@ impl DvbNitSettings {
         self.network_id
     }
     /// The network name text placed in the networkNameDescriptor inside the Network Information Table. Maximum length is 256 characters.
-    pub fn network_name(&self) -> std::option::Option<& str> {
+    pub fn network_name(&self) -> std::option::Option<&str> {
         self.network_name.as_deref()
     }
     /// The number of milliseconds between instances of this table in the output transport stream.
@@ -51,7 +51,8 @@ impl DvbNitSettingsBuilder {
     }
     /// The numeric value placed in the Network Information Table (NIT).
     pub fn set_network_id(mut self, input: std::option::Option<i32>) -> Self {
-        self.network_id = input; self
+        self.network_id = input;
+        self
     }
     /// The network name text placed in the networkNameDescriptor inside the Network Information Table. Maximum length is 256 characters.
     pub fn network_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -60,7 +61,8 @@ impl DvbNitSettingsBuilder {
     }
     /// The network name text placed in the networkNameDescriptor inside the Network Information Table. Maximum length is 256 characters.
     pub fn set_network_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.network_name = input; self
+        self.network_name = input;
+        self
     }
     /// The number of milliseconds between instances of this table in the output transport stream.
     pub fn rep_interval(mut self, input: i32) -> Self {
@@ -69,20 +71,15 @@ impl DvbNitSettingsBuilder {
     }
     /// The number of milliseconds between instances of this table in the output transport stream.
     pub fn set_rep_interval(mut self, input: std::option::Option<i32>) -> Self {
-        self.rep_interval = input; self
+        self.rep_interval = input;
+        self
     }
     /// Consumes the builder and constructs a [`DvbNitSettings`](crate::types::DvbNitSettings).
     pub fn build(self) -> crate::types::DvbNitSettings {
         crate::types::DvbNitSettings {
-            network_id: self.network_id
-                .unwrap_or_default()
-            ,
-            network_name: self.network_name
-            ,
-            rep_interval: self.rep_interval
-                .unwrap_or_default()
-            ,
+            network_id: self.network_id.unwrap_or_default(),
+            network_name: self.network_name,
+            rep_interval: self.rep_interval.unwrap_or_default(),
         }
     }
 }
-

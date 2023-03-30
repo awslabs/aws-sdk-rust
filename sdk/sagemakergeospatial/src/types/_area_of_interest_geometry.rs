@@ -21,8 +21,14 @@ pub enum AreaOfInterestGeometry {
 impl AreaOfInterestGeometry {
     /// Tries to convert the enum instance into [`MultiPolygonGeometry`](crate::types::AreaOfInterestGeometry::MultiPolygonGeometry), extracting the inner [`MultiPolygonGeometryInput`](crate::types::MultiPolygonGeometryInput).
     /// Returns `Err(&Self)` if it can't be converted.
-    pub fn as_multi_polygon_geometry(&self) -> std::result::Result<&crate::types::MultiPolygonGeometryInput, &Self> {
-        if let AreaOfInterestGeometry::MultiPolygonGeometry(val) = &self { Ok(val) } else { Err(self) }
+    pub fn as_multi_polygon_geometry(
+        &self,
+    ) -> std::result::Result<&crate::types::MultiPolygonGeometryInput, &Self> {
+        if let AreaOfInterestGeometry::MultiPolygonGeometry(val) = &self {
+            Ok(val)
+        } else {
+            Err(self)
+        }
     }
     /// Returns true if this is a [`MultiPolygonGeometry`](crate::types::AreaOfInterestGeometry::MultiPolygonGeometry).
     pub fn is_multi_polygon_geometry(&self) -> bool {
@@ -30,8 +36,14 @@ impl AreaOfInterestGeometry {
     }
     /// Tries to convert the enum instance into [`PolygonGeometry`](crate::types::AreaOfInterestGeometry::PolygonGeometry), extracting the inner [`PolygonGeometryInput`](crate::types::PolygonGeometryInput).
     /// Returns `Err(&Self)` if it can't be converted.
-    pub fn as_polygon_geometry(&self) -> std::result::Result<&crate::types::PolygonGeometryInput, &Self> {
-        if let AreaOfInterestGeometry::PolygonGeometry(val) = &self { Ok(val) } else { Err(self) }
+    pub fn as_polygon_geometry(
+        &self,
+    ) -> std::result::Result<&crate::types::PolygonGeometryInput, &Self> {
+        if let AreaOfInterestGeometry::PolygonGeometry(val) = &self {
+            Ok(val)
+        } else {
+            Err(self)
+        }
     }
     /// Returns true if this is a [`PolygonGeometry`](crate::types::AreaOfInterestGeometry::PolygonGeometry).
     pub fn is_polygon_geometry(&self) -> bool {
@@ -42,4 +54,3 @@ impl AreaOfInterestGeometry {
         matches!(self, Self::Unknown)
     }
 }
-

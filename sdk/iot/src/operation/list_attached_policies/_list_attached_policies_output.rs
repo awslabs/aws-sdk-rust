@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListAttachedPoliciesOutput  {
+pub struct ListAttachedPoliciesOutput {
     /// <p>The policies.</p>
     #[doc(hidden)]
     pub policies: std::option::Option<std::vec::Vec<crate::types::Policy>>,
@@ -13,22 +13,23 @@ pub struct ListAttachedPoliciesOutput  {
 }
 impl ListAttachedPoliciesOutput {
     /// <p>The policies.</p>
-    pub fn policies(&self) -> std::option::Option<& [crate::types::Policy]> {
+    pub fn policies(&self) -> std::option::Option<&[crate::types::Policy]> {
         self.policies.as_deref()
     }
     /// <p>The token to retrieve the next set of results, or ``null`` if there are no more results.</p>
-    pub fn next_marker(&self) -> std::option::Option<& str> {
+    pub fn next_marker(&self) -> std::option::Option<&str> {
         self.next_marker.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for ListAttachedPoliciesOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl ListAttachedPoliciesOutput {
     /// Creates a new builder-style object to manufacture [`ListAttachedPoliciesOutput`](crate::operation::list_attached_policies::ListAttachedPoliciesOutput).
-    pub fn builder() -> crate::operation::list_attached_policies::builders::ListAttachedPoliciesOutputBuilder {
+    pub fn builder(
+    ) -> crate::operation::list_attached_policies::builders::ListAttachedPoliciesOutputBuilder {
         crate::operation::list_attached_policies::builders::ListAttachedPoliciesOutputBuilder::default()
     }
 }
@@ -49,13 +50,17 @@ impl ListAttachedPoliciesOutputBuilder {
     /// <p>The policies.</p>
     pub fn policies(mut self, input: crate::types::Policy) -> Self {
         let mut v = self.policies.unwrap_or_default();
-                        v.push(input);
-                        self.policies = Some(v);
-                        self
+        v.push(input);
+        self.policies = Some(v);
+        self
     }
     /// <p>The policies.</p>
-    pub fn set_policies(mut self, input: std::option::Option<std::vec::Vec<crate::types::Policy>>) -> Self {
-        self.policies = input; self
+    pub fn set_policies(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::Policy>>,
+    ) -> Self {
+        self.policies = input;
+        self
     }
     /// <p>The token to retrieve the next set of results, or ``null`` if there are no more results.</p>
     pub fn next_marker(mut self, input: impl Into<std::string::String>) -> Self {
@@ -64,26 +69,24 @@ impl ListAttachedPoliciesOutputBuilder {
     }
     /// <p>The token to retrieve the next set of results, or ``null`` if there are no more results.</p>
     pub fn set_next_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_marker = input; self
+        self.next_marker = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`ListAttachedPoliciesOutput`](crate::operation::list_attached_policies::ListAttachedPoliciesOutput).
     pub fn build(self) -> crate::operation::list_attached_policies::ListAttachedPoliciesOutput {
         crate::operation::list_attached_policies::ListAttachedPoliciesOutput {
-            policies: self.policies
-            ,
-            next_marker: self.next_marker
-            ,
+            policies: self.policies,
+            next_marker: self.next_marker,
             _request_id: self._request_id,
         }
     }
 }
-

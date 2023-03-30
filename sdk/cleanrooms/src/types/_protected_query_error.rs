@@ -3,7 +3,7 @@
 /// <p>Details of errors thrown by the protected query.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ProtectedQueryError  {
+pub struct ProtectedQueryError {
     /// <p>A description of why the query failed.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
@@ -13,11 +13,11 @@ pub struct ProtectedQueryError  {
 }
 impl ProtectedQueryError {
     /// <p>A description of why the query failed.</p>
-    pub fn message(&self) -> std::option::Option<& str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
     /// <p>An error code for the error.</p>
-    pub fn code(&self) -> std::option::Option<& str> {
+    pub fn code(&self) -> std::option::Option<&str> {
         self.code.as_deref()
     }
 }
@@ -43,7 +43,8 @@ impl ProtectedQueryErrorBuilder {
     }
     /// <p>A description of why the query failed.</p>
     pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.message = input; self
+        self.message = input;
+        self
     }
     /// <p>An error code for the error.</p>
     pub fn code(mut self, input: impl Into<std::string::String>) -> Self {
@@ -52,16 +53,14 @@ impl ProtectedQueryErrorBuilder {
     }
     /// <p>An error code for the error.</p>
     pub fn set_code(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.code = input; self
+        self.code = input;
+        self
     }
     /// Consumes the builder and constructs a [`ProtectedQueryError`](crate::types::ProtectedQueryError).
     pub fn build(self) -> crate::types::ProtectedQueryError {
         crate::types::ProtectedQueryError {
-            message: self.message
-            ,
-            code: self.code
-            ,
+            message: self.message,
+            code: self.code,
         }
     }
 }
-

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetContactListOutput  {
+pub struct GetContactListOutput {
     /// <p>The name of the contact list.</p>
     #[doc(hidden)]
     pub contact_list_name: std::option::Option<std::string::String>,
@@ -25,35 +25,35 @@ pub struct GetContactListOutput  {
 }
 impl GetContactListOutput {
     /// <p>The name of the contact list.</p>
-    pub fn contact_list_name(&self) -> std::option::Option<& str> {
+    pub fn contact_list_name(&self) -> std::option::Option<&str> {
         self.contact_list_name.as_deref()
     }
     /// <p>An interest group, theme, or label within a list. A contact list can have multiple topics.</p>
-    pub fn topics(&self) -> std::option::Option<& [crate::types::Topic]> {
+    pub fn topics(&self) -> std::option::Option<&[crate::types::Topic]> {
         self.topics.as_deref()
     }
     /// <p>A description of what the contact list is about.</p>
-    pub fn description(&self) -> std::option::Option<& str> {
+    pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
     /// <p>A timestamp noting when the contact list was created.</p>
-    pub fn created_timestamp(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
+    pub fn created_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created_timestamp.as_ref()
     }
     /// <p>A timestamp noting the last time the contact list was updated.</p>
-    pub fn last_updated_timestamp(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
+    pub fn last_updated_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_updated_timestamp.as_ref()
     }
     /// <p>The tags associated with a contact list.</p>
-    pub fn tags(&self) -> std::option::Option<& [crate::types::Tag]> {
+    pub fn tags(&self) -> std::option::Option<&[crate::types::Tag]> {
         self.tags.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for GetContactListOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl GetContactListOutput {
     /// Creates a new builder-style object to manufacture [`GetContactListOutput`](crate::operation::get_contact_list::GetContactListOutput).
     pub fn builder() -> crate::operation::get_contact_list::builders::GetContactListOutputBuilder {
@@ -80,8 +80,12 @@ impl GetContactListOutputBuilder {
         self
     }
     /// <p>The name of the contact list.</p>
-    pub fn set_contact_list_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.contact_list_name = input; self
+    pub fn set_contact_list_name(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.contact_list_name = input;
+        self
     }
     /// Appends an item to `topics`.
     ///
@@ -90,13 +94,17 @@ impl GetContactListOutputBuilder {
     /// <p>An interest group, theme, or label within a list. A contact list can have multiple topics.</p>
     pub fn topics(mut self, input: crate::types::Topic) -> Self {
         let mut v = self.topics.unwrap_or_default();
-                        v.push(input);
-                        self.topics = Some(v);
-                        self
+        v.push(input);
+        self.topics = Some(v);
+        self
     }
     /// <p>An interest group, theme, or label within a list. A contact list can have multiple topics.</p>
-    pub fn set_topics(mut self, input: std::option::Option<std::vec::Vec<crate::types::Topic>>) -> Self {
-        self.topics = input; self
+    pub fn set_topics(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::Topic>>,
+    ) -> Self {
+        self.topics = input;
+        self
     }
     /// <p>A description of what the contact list is about.</p>
     pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -105,7 +113,8 @@ impl GetContactListOutputBuilder {
     }
     /// <p>A description of what the contact list is about.</p>
     pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.description = input; self
+        self.description = input;
+        self
     }
     /// <p>A timestamp noting when the contact list was created.</p>
     pub fn created_timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -113,8 +122,12 @@ impl GetContactListOutputBuilder {
         self
     }
     /// <p>A timestamp noting when the contact list was created.</p>
-    pub fn set_created_timestamp(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.created_timestamp = input; self
+    pub fn set_created_timestamp(
+        mut self,
+        input: std::option::Option<aws_smithy_types::DateTime>,
+    ) -> Self {
+        self.created_timestamp = input;
+        self
     }
     /// <p>A timestamp noting the last time the contact list was updated.</p>
     pub fn last_updated_timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -122,8 +135,12 @@ impl GetContactListOutputBuilder {
         self
     }
     /// <p>A timestamp noting the last time the contact list was updated.</p>
-    pub fn set_last_updated_timestamp(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.last_updated_timestamp = input; self
+    pub fn set_last_updated_timestamp(
+        mut self,
+        input: std::option::Option<aws_smithy_types::DateTime>,
+    ) -> Self {
+        self.last_updated_timestamp = input;
+        self
     }
     /// Appends an item to `tags`.
     ///
@@ -132,40 +149,37 @@ impl GetContactListOutputBuilder {
     /// <p>The tags associated with a contact list.</p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
-                        v.push(input);
-                        self.tags = Some(v);
-                        self
+        v.push(input);
+        self.tags = Some(v);
+        self
     }
     /// <p>The tags associated with a contact list.</p>
-    pub fn set_tags(mut self, input: std::option::Option<std::vec::Vec<crate::types::Tag>>) -> Self {
-        self.tags = input; self
+    pub fn set_tags(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::Tag>>,
+    ) -> Self {
+        self.tags = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`GetContactListOutput`](crate::operation::get_contact_list::GetContactListOutput).
     pub fn build(self) -> crate::operation::get_contact_list::GetContactListOutput {
         crate::operation::get_contact_list::GetContactListOutput {
-            contact_list_name: self.contact_list_name
-            ,
-            topics: self.topics
-            ,
-            description: self.description
-            ,
-            created_timestamp: self.created_timestamp
-            ,
-            last_updated_timestamp: self.last_updated_timestamp
-            ,
-            tags: self.tags
-            ,
+            contact_list_name: self.contact_list_name,
+            topics: self.topics,
+            description: self.description,
+            created_timestamp: self.created_timestamp,
+            last_updated_timestamp: self.last_updated_timestamp,
+            tags: self.tags,
             _request_id: self._request_id,
         }
     }
 }
-

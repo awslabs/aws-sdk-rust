@@ -3,7 +3,7 @@
 /// <p>Sets up the flow definition the image will be sent to if one of the conditions is met. You can also set certain attributes of the image before review.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct HumanLoopConfig  {
+pub struct HumanLoopConfig {
     /// <p>The name of the human review used for this image. This should be kept unique within a region.</p>
     #[doc(hidden)]
     pub human_loop_name: std::option::Option<std::string::String>,
@@ -16,15 +16,15 @@ pub struct HumanLoopConfig  {
 }
 impl HumanLoopConfig {
     /// <p>The name of the human review used for this image. This should be kept unique within a region.</p>
-    pub fn human_loop_name(&self) -> std::option::Option<& str> {
+    pub fn human_loop_name(&self) -> std::option::Option<&str> {
         self.human_loop_name.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the flow definition. You can create a flow definition by using the Amazon Sagemaker <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/API_CreateFlowDefinition.html">CreateFlowDefinition</a> Operation. </p>
-    pub fn flow_definition_arn(&self) -> std::option::Option<& str> {
+    pub fn flow_definition_arn(&self) -> std::option::Option<&str> {
         self.flow_definition_arn.as_deref()
     }
     /// <p>Sets attributes of the input data.</p>
-    pub fn data_attributes(&self) -> std::option::Option<& crate::types::HumanLoopDataAttributes> {
+    pub fn data_attributes(&self) -> std::option::Option<&crate::types::HumanLoopDataAttributes> {
         self.data_attributes.as_ref()
     }
 }
@@ -51,7 +51,8 @@ impl HumanLoopConfigBuilder {
     }
     /// <p>The name of the human review used for this image. This should be kept unique within a region.</p>
     pub fn set_human_loop_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.human_loop_name = input; self
+        self.human_loop_name = input;
+        self
     }
     /// <p>The Amazon Resource Name (ARN) of the flow definition. You can create a flow definition by using the Amazon Sagemaker <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/API_CreateFlowDefinition.html">CreateFlowDefinition</a> Operation. </p>
     pub fn flow_definition_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -59,8 +60,12 @@ impl HumanLoopConfigBuilder {
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the flow definition. You can create a flow definition by using the Amazon Sagemaker <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/API_CreateFlowDefinition.html">CreateFlowDefinition</a> Operation. </p>
-    pub fn set_flow_definition_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.flow_definition_arn = input; self
+    pub fn set_flow_definition_arn(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.flow_definition_arn = input;
+        self
     }
     /// <p>Sets attributes of the input data.</p>
     pub fn data_attributes(mut self, input: crate::types::HumanLoopDataAttributes) -> Self {
@@ -68,19 +73,19 @@ impl HumanLoopConfigBuilder {
         self
     }
     /// <p>Sets attributes of the input data.</p>
-    pub fn set_data_attributes(mut self, input: std::option::Option<crate::types::HumanLoopDataAttributes>) -> Self {
-        self.data_attributes = input; self
+    pub fn set_data_attributes(
+        mut self,
+        input: std::option::Option<crate::types::HumanLoopDataAttributes>,
+    ) -> Self {
+        self.data_attributes = input;
+        self
     }
     /// Consumes the builder and constructs a [`HumanLoopConfig`](crate::types::HumanLoopConfig).
     pub fn build(self) -> crate::types::HumanLoopConfig {
         crate::types::HumanLoopConfig {
-            human_loop_name: self.human_loop_name
-            ,
-            flow_definition_arn: self.flow_definition_arn
-            ,
-            data_attributes: self.data_attributes
-            ,
+            human_loop_name: self.human_loop_name,
+            flow_definition_arn: self.flow_definition_arn,
+            data_attributes: self.data_attributes,
         }
     }
 }
-

@@ -3,7 +3,7 @@
 /// <p>A filter for read sets.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ReadSetFilter  {
+pub struct ReadSetFilter {
     /// <p>A name to filter on.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -22,23 +22,23 @@ pub struct ReadSetFilter  {
 }
 impl ReadSetFilter {
     /// <p>A name to filter on.</p>
-    pub fn name(&self) -> std::option::Option<& str> {
+    pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>A status to filter on.</p>
-    pub fn status(&self) -> std::option::Option<& crate::types::ReadSetStatus> {
+    pub fn status(&self) -> std::option::Option<&crate::types::ReadSetStatus> {
         self.status.as_ref()
     }
     /// <p>A genome reference ARN to filter on.</p>
-    pub fn reference_arn(&self) -> std::option::Option<& str> {
+    pub fn reference_arn(&self) -> std::option::Option<&str> {
         self.reference_arn.as_deref()
     }
     /// <p>The filter's start date.</p>
-    pub fn created_after(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
+    pub fn created_after(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created_after.as_ref()
     }
     /// <p>The filter's end date.</p>
-    pub fn created_before(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
+    pub fn created_before(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created_before.as_ref()
     }
 }
@@ -67,7 +67,8 @@ impl ReadSetFilterBuilder {
     }
     /// <p>A name to filter on.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input; self
+        self.name = input;
+        self
     }
     /// <p>A status to filter on.</p>
     pub fn status(mut self, input: crate::types::ReadSetStatus) -> Self {
@@ -76,7 +77,8 @@ impl ReadSetFilterBuilder {
     }
     /// <p>A status to filter on.</p>
     pub fn set_status(mut self, input: std::option::Option<crate::types::ReadSetStatus>) -> Self {
-        self.status = input; self
+        self.status = input;
+        self
     }
     /// <p>A genome reference ARN to filter on.</p>
     pub fn reference_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -85,7 +87,8 @@ impl ReadSetFilterBuilder {
     }
     /// <p>A genome reference ARN to filter on.</p>
     pub fn set_reference_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.reference_arn = input; self
+        self.reference_arn = input;
+        self
     }
     /// <p>The filter's start date.</p>
     pub fn created_after(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -93,8 +96,12 @@ impl ReadSetFilterBuilder {
         self
     }
     /// <p>The filter's start date.</p>
-    pub fn set_created_after(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.created_after = input; self
+    pub fn set_created_after(
+        mut self,
+        input: std::option::Option<aws_smithy_types::DateTime>,
+    ) -> Self {
+        self.created_after = input;
+        self
     }
     /// <p>The filter's end date.</p>
     pub fn created_before(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -102,23 +109,21 @@ impl ReadSetFilterBuilder {
         self
     }
     /// <p>The filter's end date.</p>
-    pub fn set_created_before(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.created_before = input; self
+    pub fn set_created_before(
+        mut self,
+        input: std::option::Option<aws_smithy_types::DateTime>,
+    ) -> Self {
+        self.created_before = input;
+        self
     }
     /// Consumes the builder and constructs a [`ReadSetFilter`](crate::types::ReadSetFilter).
     pub fn build(self) -> crate::types::ReadSetFilter {
         crate::types::ReadSetFilter {
-            name: self.name
-            ,
-            status: self.status
-            ,
-            reference_arn: self.reference_arn
-            ,
-            created_after: self.created_after
-            ,
-            created_before: self.created_before
-            ,
+            name: self.name,
+            status: self.status,
+            reference_arn: self.reference_arn,
+            created_after: self.created_after,
+            created_before: self.created_before,
         }
     }
 }
-

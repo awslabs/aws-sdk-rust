@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ModifyFleetOutput  {
+pub struct ModifyFleetOutput {
     /// <p>If the request succeeds, the response returns <code>true</code>. If the request fails, no response is returned, and instead an error message is returned.</p>
     #[doc(hidden)]
     pub r#return: std::option::Option<bool>,
@@ -15,10 +15,10 @@ impl ModifyFleetOutput {
     }
 }
 impl aws_http::request_id::RequestId for ModifyFleetOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl ModifyFleetOutput {
     /// Creates a new builder-style object to manufacture [`ModifyFleetOutput`](crate::operation::modify_fleet::ModifyFleetOutput).
     pub fn builder() -> crate::operation::modify_fleet::builders::ModifyFleetOutputBuilder {
@@ -41,24 +41,23 @@ impl ModifyFleetOutputBuilder {
     }
     /// <p>If the request succeeds, the response returns <code>true</code>. If the request fails, no response is returned, and instead an error message is returned.</p>
     pub fn set_return(mut self, input: std::option::Option<bool>) -> Self {
-        self.r#return = input; self
+        self.r#return = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`ModifyFleetOutput`](crate::operation::modify_fleet::ModifyFleetOutput).
     pub fn build(self) -> crate::operation::modify_fleet::ModifyFleetOutput {
         crate::operation::modify_fleet::ModifyFleetOutput {
-            r#return: self.r#return
-            ,
+            r#return: self.r#return,
             _request_id: self._request_id,
         }
     }
 }
-

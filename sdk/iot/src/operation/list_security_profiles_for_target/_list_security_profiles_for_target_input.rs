@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListSecurityProfilesForTargetInput  {
+pub struct ListSecurityProfilesForTargetInput {
     /// <p>The token for the next set of results.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
@@ -18,7 +18,7 @@ pub struct ListSecurityProfilesForTargetInput  {
 }
 impl ListSecurityProfilesForTargetInput {
     /// <p>The token for the next set of results.</p>
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
     /// <p>The maximum number of results to return at one time.</p>
@@ -30,13 +30,13 @@ impl ListSecurityProfilesForTargetInput {
         self.recursive
     }
     /// <p>The ARN of the target (thing group) whose attached security profiles you want to get.</p>
-    pub fn security_profile_target_arn(&self) -> std::option::Option<& str> {
+    pub fn security_profile_target_arn(&self) -> std::option::Option<&str> {
         self.security_profile_target_arn.as_deref()
     }
 }
 impl ListSecurityProfilesForTargetInput {
     /// Creates a new builder-style object to manufacture [`ListSecurityProfilesForTargetInput`](crate::operation::list_security_profiles_for_target::ListSecurityProfilesForTargetInput).
-    pub fn builder() -> crate::operation::list_security_profiles_for_target::builders::ListSecurityProfilesForTargetInputBuilder {
+    pub fn builder() -> crate::operation::list_security_profiles_for_target::builders::ListSecurityProfilesForTargetInputBuilder{
         crate::operation::list_security_profiles_for_target::builders::ListSecurityProfilesForTargetInputBuilder::default()
     }
 }
@@ -58,7 +58,8 @@ impl ListSecurityProfilesForTargetInputBuilder {
     }
     /// <p>The token for the next set of results.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input; self
+        self.next_token = input;
+        self
     }
     /// <p>The maximum number of results to return at one time.</p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -67,7 +68,8 @@ impl ListSecurityProfilesForTargetInputBuilder {
     }
     /// <p>The maximum number of results to return at one time.</p>
     pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_results = input; self
+        self.max_results = input;
+        self
     }
     /// <p>If true, return child groups too.</p>
     pub fn recursive(mut self, input: bool) -> Self {
@@ -76,7 +78,8 @@ impl ListSecurityProfilesForTargetInputBuilder {
     }
     /// <p>If true, return child groups too.</p>
     pub fn set_recursive(mut self, input: std::option::Option<bool>) -> Self {
-        self.recursive = input; self
+        self.recursive = input;
+        self
     }
     /// <p>The ARN of the target (thing group) whose attached security profiles you want to get.</p>
     pub fn security_profile_target_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -84,11 +87,20 @@ impl ListSecurityProfilesForTargetInputBuilder {
         self
     }
     /// <p>The ARN of the target (thing group) whose attached security profiles you want to get.</p>
-    pub fn set_security_profile_target_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.security_profile_target_arn = input; self
+    pub fn set_security_profile_target_arn(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.security_profile_target_arn = input;
+        self
     }
     /// Consumes the builder and constructs a [`ListSecurityProfilesForTargetInput`](crate::operation::list_security_profiles_for_target::ListSecurityProfilesForTargetInput).
-    pub fn build(self) -> Result<crate::operation::list_security_profiles_for_target::ListSecurityProfilesForTargetInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::list_security_profiles_for_target::ListSecurityProfilesForTargetInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::list_security_profiles_for_target::ListSecurityProfilesForTargetInput {
                 next_token: self.next_token
@@ -104,4 +116,3 @@ impl ListSecurityProfilesForTargetInputBuilder {
         )
     }
 }
-

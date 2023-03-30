@@ -4,55 +4,73 @@ pub use crate::operation::list_rooms::_list_rooms_output::ListRoomsOutputBuilder
 pub use crate::operation::list_rooms::_list_rooms_input::ListRoomsInputBuilder;
 
 /// Fluent builder constructing a request to `ListRooms`.
-/// 
+///
 /// <p>Gets summary information about all your rooms in the AWS region where the API request is processed. Results are sorted in descending order of <code>updateTime</code>.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListRoomsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::list_rooms::builders::ListRoomsInputBuilder
-            }
-impl ListRoomsFluentBuilder  {
+    handle: std::sync::Arc<crate::client::Handle>,
+    inner: crate::operation::list_rooms::builders::ListRoomsInputBuilder,
+}
+impl ListRoomsFluentBuilder {
     /// Creates a new `ListRooms`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
-                    /// sent. The operation's inner [http::Request] can be modified as well.
-                    pub async fn customize(self) -> std::result::Result<
-                        crate::client::customize::CustomizableOperation<crate::operation::list_rooms::ListRooms, aws_http::retry::AwsResponseRetryClassifier,>,
-                        aws_smithy_http::result::SdkError<crate::operation::list_rooms::ListRoomsError>
-                    >  {
-                        let handle = self.handle.clone();
-                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-                    }
-    
-                    /// Sends the request and returns the response.
-                    ///
-                    /// If an error occurs, an `SdkError` will be returned with additional details that
-                    /// can be matched against.
-                    ///
-                    /// By default, any retryable failures will be retried twice. Retry behavior
-                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                    /// set when configuring the client.
-                    pub async fn send(self) -> std::result::Result<crate::operation::list_rooms::ListRoomsOutput, aws_smithy_http::result::SdkError<crate::operation::list_rooms::ListRoomsError>>
-                     {
-                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&self.handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        self.handle.client.call(op).await
-                    }
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle,
+            inner: Default::default(),
+        }
+    }
+
+    /// Consume this builder, creating a customizable operation that can be modified before being
+    /// sent. The operation's inner [http::Request] can be modified as well.
+    pub async fn customize(
+        self,
+    ) -> std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::list_rooms::ListRooms,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::result::SdkError<crate::operation::list_rooms::ListRoomsError>,
+    > {
+        let handle = self.handle.clone();
+        let operation = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+    }
+
+    /// Sends the request and returns the response.
+    ///
+    /// If an error occurs, an `SdkError` will be returned with additional details that
+    /// can be matched against.
+    ///
+    /// By default, any retryable failures will be retried twice. Retry behavior
+    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+    /// set when configuring the client.
+    pub async fn send(
+        self,
+    ) -> std::result::Result<
+        crate::operation::list_rooms::ListRoomsOutput,
+        aws_smithy_http::result::SdkError<crate::operation::list_rooms::ListRoomsError>,
+    > {
+        let op = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&self.handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        self.handle.client.call(op).await
+    }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::list_rooms::paginator::ListRoomsPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::list_rooms::paginator::ListRoomsPaginator {
-                            crate::operation::list_rooms::paginator::ListRoomsPaginator::new(self.handle, self.inner)
-                        }
+    ///
+    /// Paginators are used by calling [`send().await`](crate::operation::list_rooms::paginator::ListRoomsPaginator::send) which returns a `Stream`.
+    pub fn into_paginator(self) -> crate::operation::list_rooms::paginator::ListRoomsPaginator {
+        crate::operation::list_rooms::paginator::ListRoomsPaginator::new(self.handle, self.inner)
+    }
     /// <p>Filters the list to match the specified room name.</p>
     pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.name(input.into());
@@ -89,19 +107,27 @@ impl ListRoomsFluentBuilder  {
         self
     }
     /// <p>Filters the list to match the specified message review handler URI.</p>
-    pub fn set_message_review_handler_uri(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_message_review_handler_uri(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_message_review_handler_uri(input);
         self
     }
     /// <p>Logging-configuration identifier.</p>
-    pub fn logging_configuration_identifier(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn logging_configuration_identifier(
+        mut self,
+        input: impl Into<std::string::String>,
+    ) -> Self {
         self.inner = self.inner.logging_configuration_identifier(input.into());
         self
     }
     /// <p>Logging-configuration identifier.</p>
-    pub fn set_logging_configuration_identifier(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_logging_configuration_identifier(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_logging_configuration_identifier(input);
         self
     }
 }
-

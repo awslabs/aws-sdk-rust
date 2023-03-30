@@ -3,7 +3,7 @@
 /// <p>Error in data replication.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct RecoveryInstanceDataReplicationError  {
+pub struct RecoveryInstanceDataReplicationError {
     /// <p>Error in data replication.</p>
     #[doc(hidden)]
     pub error: std::option::Option<crate::types::FailbackReplicationError>,
@@ -13,11 +13,11 @@ pub struct RecoveryInstanceDataReplicationError  {
 }
 impl RecoveryInstanceDataReplicationError {
     /// <p>Error in data replication.</p>
-    pub fn error(&self) -> std::option::Option<& crate::types::FailbackReplicationError> {
+    pub fn error(&self) -> std::option::Option<&crate::types::FailbackReplicationError> {
         self.error.as_ref()
     }
     /// <p>Error in data replication.</p>
-    pub fn raw_error(&self) -> std::option::Option<& str> {
+    pub fn raw_error(&self) -> std::option::Option<&str> {
         self.raw_error.as_deref()
     }
 }
@@ -42,8 +42,12 @@ impl RecoveryInstanceDataReplicationErrorBuilder {
         self
     }
     /// <p>Error in data replication.</p>
-    pub fn set_error(mut self, input: std::option::Option<crate::types::FailbackReplicationError>) -> Self {
-        self.error = input; self
+    pub fn set_error(
+        mut self,
+        input: std::option::Option<crate::types::FailbackReplicationError>,
+    ) -> Self {
+        self.error = input;
+        self
     }
     /// <p>Error in data replication.</p>
     pub fn raw_error(mut self, input: impl Into<std::string::String>) -> Self {
@@ -52,16 +56,14 @@ impl RecoveryInstanceDataReplicationErrorBuilder {
     }
     /// <p>Error in data replication.</p>
     pub fn set_raw_error(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.raw_error = input; self
+        self.raw_error = input;
+        self
     }
     /// Consumes the builder and constructs a [`RecoveryInstanceDataReplicationError`](crate::types::RecoveryInstanceDataReplicationError).
     pub fn build(self) -> crate::types::RecoveryInstanceDataReplicationError {
         crate::types::RecoveryInstanceDataReplicationError {
-            error: self.error
-            ,
-            raw_error: self.raw_error
-            ,
+            error: self.error,
+            raw_error: self.raw_error,
         }
     }
 }
-

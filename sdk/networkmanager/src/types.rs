@@ -368,4 +368,3 @@ pub mod builders;
 
 /// Error types that AWS Network Manager can respond with.
 pub mod error;
-

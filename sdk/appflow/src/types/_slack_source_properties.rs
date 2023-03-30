@@ -3,14 +3,14 @@
 /// <p> The properties that are applied when Slack is being used as a source. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SlackSourceProperties  {
+pub struct SlackSourceProperties {
     /// <p> The object specified in the Slack flow source. </p>
     #[doc(hidden)]
     pub object: std::option::Option<std::string::String>,
 }
 impl SlackSourceProperties {
     /// <p> The object specified in the Slack flow source. </p>
-    pub fn object(&self) -> std::option::Option<& str> {
+    pub fn object(&self) -> std::option::Option<&str> {
         self.object.as_deref()
     }
 }
@@ -35,14 +35,13 @@ impl SlackSourcePropertiesBuilder {
     }
     /// <p> The object specified in the Slack flow source. </p>
     pub fn set_object(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.object = input; self
+        self.object = input;
+        self
     }
     /// Consumes the builder and constructs a [`SlackSourceProperties`](crate::types::SlackSourceProperties).
     pub fn build(self) -> crate::types::SlackSourceProperties {
         crate::types::SlackSourceProperties {
-            object: self.object
-            ,
+            object: self.object,
         }
     }
 }
-

@@ -2,10 +2,11 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct BatchGetDocumentStatusOutput  {
+pub struct BatchGetDocumentStatusOutput {
     /// <p>A list of documents that Amazon Kendra couldn't get the status for. The list includes the ID of the document and the reason that the status couldn't be found.</p>
     #[doc(hidden)]
-    pub errors: std::option::Option<std::vec::Vec<crate::types::BatchGetDocumentStatusResponseError>>,
+    pub errors:
+        std::option::Option<std::vec::Vec<crate::types::BatchGetDocumentStatusResponseError>>,
     /// <p>The status of documents. The status indicates if the document is waiting to be indexed, is in the process of indexing, has completed indexing, or failed indexing. If a document failed indexing, the status provides the reason why.</p>
     #[doc(hidden)]
     pub document_status_list: std::option::Option<std::vec::Vec<crate::types::Status>>,
@@ -13,22 +14,26 @@ pub struct BatchGetDocumentStatusOutput  {
 }
 impl BatchGetDocumentStatusOutput {
     /// <p>A list of documents that Amazon Kendra couldn't get the status for. The list includes the ID of the document and the reason that the status couldn't be found.</p>
-    pub fn errors(&self) -> std::option::Option<& [crate::types::BatchGetDocumentStatusResponseError]> {
+    pub fn errors(
+        &self,
+    ) -> std::option::Option<&[crate::types::BatchGetDocumentStatusResponseError]> {
         self.errors.as_deref()
     }
     /// <p>The status of documents. The status indicates if the document is waiting to be indexed, is in the process of indexing, has completed indexing, or failed indexing. If a document failed indexing, the status provides the reason why.</p>
-    pub fn document_status_list(&self) -> std::option::Option<& [crate::types::Status]> {
+    pub fn document_status_list(&self) -> std::option::Option<&[crate::types::Status]> {
         self.document_status_list.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for BatchGetDocumentStatusOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl BatchGetDocumentStatusOutput {
     /// Creates a new builder-style object to manufacture [`BatchGetDocumentStatusOutput`](crate::operation::batch_get_document_status::BatchGetDocumentStatusOutput).
-    pub fn builder() -> crate::operation::batch_get_document_status::builders::BatchGetDocumentStatusOutputBuilder {
+    pub fn builder(
+    ) -> crate::operation::batch_get_document_status::builders::BatchGetDocumentStatusOutputBuilder
+    {
         crate::operation::batch_get_document_status::builders::BatchGetDocumentStatusOutputBuilder::default()
     }
 }
@@ -37,7 +42,8 @@ impl BatchGetDocumentStatusOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct BatchGetDocumentStatusOutputBuilder {
-    pub(crate) errors: std::option::Option<std::vec::Vec<crate::types::BatchGetDocumentStatusResponseError>>,
+    pub(crate) errors:
+        std::option::Option<std::vec::Vec<crate::types::BatchGetDocumentStatusResponseError>>,
     pub(crate) document_status_list: std::option::Option<std::vec::Vec<crate::types::Status>>,
     _request_id: Option<String>,
 }
@@ -49,13 +55,19 @@ impl BatchGetDocumentStatusOutputBuilder {
     /// <p>A list of documents that Amazon Kendra couldn't get the status for. The list includes the ID of the document and the reason that the status couldn't be found.</p>
     pub fn errors(mut self, input: crate::types::BatchGetDocumentStatusResponseError) -> Self {
         let mut v = self.errors.unwrap_or_default();
-                        v.push(input);
-                        self.errors = Some(v);
-                        self
+        v.push(input);
+        self.errors = Some(v);
+        self
     }
     /// <p>A list of documents that Amazon Kendra couldn't get the status for. The list includes the ID of the document and the reason that the status couldn't be found.</p>
-    pub fn set_errors(mut self, input: std::option::Option<std::vec::Vec<crate::types::BatchGetDocumentStatusResponseError>>) -> Self {
-        self.errors = input; self
+    pub fn set_errors(
+        mut self,
+        input: std::option::Option<
+            std::vec::Vec<crate::types::BatchGetDocumentStatusResponseError>,
+        >,
+    ) -> Self {
+        self.errors = input;
+        self
     }
     /// Appends an item to `document_status_list`.
     ///
@@ -64,32 +76,35 @@ impl BatchGetDocumentStatusOutputBuilder {
     /// <p>The status of documents. The status indicates if the document is waiting to be indexed, is in the process of indexing, has completed indexing, or failed indexing. If a document failed indexing, the status provides the reason why.</p>
     pub fn document_status_list(mut self, input: crate::types::Status) -> Self {
         let mut v = self.document_status_list.unwrap_or_default();
-                        v.push(input);
-                        self.document_status_list = Some(v);
-                        self
+        v.push(input);
+        self.document_status_list = Some(v);
+        self
     }
     /// <p>The status of documents. The status indicates if the document is waiting to be indexed, is in the process of indexing, has completed indexing, or failed indexing. If a document failed indexing, the status provides the reason why.</p>
-    pub fn set_document_status_list(mut self, input: std::option::Option<std::vec::Vec<crate::types::Status>>) -> Self {
-        self.document_status_list = input; self
+    pub fn set_document_status_list(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::Status>>,
+    ) -> Self {
+        self.document_status_list = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`BatchGetDocumentStatusOutput`](crate::operation::batch_get_document_status::BatchGetDocumentStatusOutput).
-    pub fn build(self) -> crate::operation::batch_get_document_status::BatchGetDocumentStatusOutput {
+    pub fn build(
+        self,
+    ) -> crate::operation::batch_get_document_status::BatchGetDocumentStatusOutput {
         crate::operation::batch_get_document_status::BatchGetDocumentStatusOutput {
-            errors: self.errors
-            ,
-            document_status_list: self.document_status_list
-            ,
+            errors: self.errors,
+            document_status_list: self.document_status_list,
             _request_id: self._request_id,
         }
     }
 }
-

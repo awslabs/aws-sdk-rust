@@ -2,11 +2,11 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetDatalakeStatusOutput  {
+pub struct GetDatalakeStatusOutput {
     /// <p>The list of enabled accounts and enabled sources.</p>
     #[doc(hidden)]
     pub account_sources_list: std::option::Option<std::vec::Vec<crate::types::AccountSources>>,
-    /// <p>Lists if there are more results available. The value of nextToken is a unique pagination token for each page. Repeat the call using the returned token to retrieve the next page. Keep all other arguments unchanged. </p> 
+    /// <p>Lists if there are more results available. The value of nextToken is a unique pagination token for each page. Repeat the call using the returned token to retrieve the next page. Keep all other arguments unchanged. </p>
     /// <p>Each pagination token expires after 24 hours. Using an expired pagination token will return an HTTP 400 InvalidToken error.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
@@ -14,23 +14,24 @@ pub struct GetDatalakeStatusOutput  {
 }
 impl GetDatalakeStatusOutput {
     /// <p>The list of enabled accounts and enabled sources.</p>
-    pub fn account_sources_list(&self) -> std::option::Option<& [crate::types::AccountSources]> {
+    pub fn account_sources_list(&self) -> std::option::Option<&[crate::types::AccountSources]> {
         self.account_sources_list.as_deref()
     }
-    /// <p>Lists if there are more results available. The value of nextToken is a unique pagination token for each page. Repeat the call using the returned token to retrieve the next page. Keep all other arguments unchanged. </p> 
+    /// <p>Lists if there are more results available. The value of nextToken is a unique pagination token for each page. Repeat the call using the returned token to retrieve the next page. Keep all other arguments unchanged. </p>
     /// <p>Each pagination token expires after 24 hours. Using an expired pagination token will return an HTTP 400 InvalidToken error.</p>
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for GetDatalakeStatusOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl GetDatalakeStatusOutput {
     /// Creates a new builder-style object to manufacture [`GetDatalakeStatusOutput`](crate::operation::get_datalake_status::GetDatalakeStatusOutput).
-    pub fn builder() -> crate::operation::get_datalake_status::builders::GetDatalakeStatusOutputBuilder {
+    pub fn builder(
+    ) -> crate::operation::get_datalake_status::builders::GetDatalakeStatusOutputBuilder {
         crate::operation::get_datalake_status::builders::GetDatalakeStatusOutputBuilder::default()
     }
 }
@@ -39,7 +40,8 @@ impl GetDatalakeStatusOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct GetDatalakeStatusOutputBuilder {
-    pub(crate) account_sources_list: std::option::Option<std::vec::Vec<crate::types::AccountSources>>,
+    pub(crate) account_sources_list:
+        std::option::Option<std::vec::Vec<crate::types::AccountSources>>,
     pub(crate) next_token: std::option::Option<std::string::String>,
     _request_id: Option<String>,
 }
@@ -51,43 +53,45 @@ impl GetDatalakeStatusOutputBuilder {
     /// <p>The list of enabled accounts and enabled sources.</p>
     pub fn account_sources_list(mut self, input: crate::types::AccountSources) -> Self {
         let mut v = self.account_sources_list.unwrap_or_default();
-                        v.push(input);
-                        self.account_sources_list = Some(v);
-                        self
+        v.push(input);
+        self.account_sources_list = Some(v);
+        self
     }
     /// <p>The list of enabled accounts and enabled sources.</p>
-    pub fn set_account_sources_list(mut self, input: std::option::Option<std::vec::Vec<crate::types::AccountSources>>) -> Self {
-        self.account_sources_list = input; self
+    pub fn set_account_sources_list(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::AccountSources>>,
+    ) -> Self {
+        self.account_sources_list = input;
+        self
     }
-    /// <p>Lists if there are more results available. The value of nextToken is a unique pagination token for each page. Repeat the call using the returned token to retrieve the next page. Keep all other arguments unchanged. </p> 
+    /// <p>Lists if there are more results available. The value of nextToken is a unique pagination token for each page. Repeat the call using the returned token to retrieve the next page. Keep all other arguments unchanged. </p>
     /// <p>Each pagination token expires after 24 hours. Using an expired pagination token will return an HTTP 400 InvalidToken error.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
         self.next_token = Some(input.into());
         self
     }
-    /// <p>Lists if there are more results available. The value of nextToken is a unique pagination token for each page. Repeat the call using the returned token to retrieve the next page. Keep all other arguments unchanged. </p> 
+    /// <p>Lists if there are more results available. The value of nextToken is a unique pagination token for each page. Repeat the call using the returned token to retrieve the next page. Keep all other arguments unchanged. </p>
     /// <p>Each pagination token expires after 24 hours. Using an expired pagination token will return an HTTP 400 InvalidToken error.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input; self
+        self.next_token = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`GetDatalakeStatusOutput`](crate::operation::get_datalake_status::GetDatalakeStatusOutput).
     pub fn build(self) -> crate::operation::get_datalake_status::GetDatalakeStatusOutput {
         crate::operation::get_datalake_status::GetDatalakeStatusOutput {
-            account_sources_list: self.account_sources_list
-            ,
-            next_token: self.next_token
-            ,
+            account_sources_list: self.account_sources_list,
+            next_token: self.next_token,
             _request_id: self._request_id,
         }
     }
 }
-

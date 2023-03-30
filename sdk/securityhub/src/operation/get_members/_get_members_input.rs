@@ -2,14 +2,14 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetMembersInput  {
+pub struct GetMembersInput {
     /// <p>The list of account IDs for the Security Hub member accounts to return the details for. </p>
     #[doc(hidden)]
     pub account_ids: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl GetMembersInput {
     /// <p>The list of account IDs for the Security Hub member accounts to return the details for. </p>
-    pub fn account_ids(&self) -> std::option::Option<& [std::string::String]> {
+    pub fn account_ids(&self) -> std::option::Option<&[std::string::String]> {
         self.account_ids.as_deref()
     }
 }
@@ -34,22 +34,27 @@ impl GetMembersInputBuilder {
     /// <p>The list of account IDs for the Security Hub member accounts to return the details for. </p>
     pub fn account_ids(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.account_ids.unwrap_or_default();
-                        v.push(input.into());
-                        self.account_ids = Some(v);
-                        self
+        v.push(input.into());
+        self.account_ids = Some(v);
+        self
     }
     /// <p>The list of account IDs for the Security Hub member accounts to return the details for. </p>
-    pub fn set_account_ids(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-        self.account_ids = input; self
+    pub fn set_account_ids(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
+        self.account_ids = input;
+        self
     }
     /// Consumes the builder and constructs a [`GetMembersInput`](crate::operation::get_members::GetMembersInput).
-    pub fn build(self) -> Result<crate::operation::get_members::GetMembersInput, aws_smithy_http::operation::error::BuildError> {
-        Ok(
-            crate::operation::get_members::GetMembersInput {
-                account_ids: self.account_ids
-                ,
-            }
-        )
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::get_members::GetMembersInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        Ok(crate::operation::get_members::GetMembersInput {
+            account_ids: self.account_ids,
+        })
     }
 }
-

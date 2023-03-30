@@ -4,50 +4,72 @@ pub use crate::operation::admin_forget_device::_admin_forget_device_output::Admi
 pub use crate::operation::admin_forget_device::_admin_forget_device_input::AdminForgetDeviceInputBuilder;
 
 /// Fluent builder constructing a request to `AdminForgetDevice`.
-/// 
-/// <p>Forgets the device, as an administrator.</p> 
+///
+/// <p>Forgets the device, as an administrator.</p>
 /// <p>Calling this action requires developer credentials.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct AdminForgetDeviceFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::admin_forget_device::builders::AdminForgetDeviceInputBuilder
-            }
-impl AdminForgetDeviceFluentBuilder  {
+    handle: std::sync::Arc<crate::client::Handle>,
+    inner: crate::operation::admin_forget_device::builders::AdminForgetDeviceInputBuilder,
+}
+impl AdminForgetDeviceFluentBuilder {
     /// Creates a new `AdminForgetDevice`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
-                    /// sent. The operation's inner [http::Request] can be modified as well.
-                    pub async fn customize(self) -> std::result::Result<
-                        crate::client::customize::CustomizableOperation<crate::operation::admin_forget_device::AdminForgetDevice, aws_http::retry::AwsResponseRetryClassifier,>,
-                        aws_smithy_http::result::SdkError<crate::operation::admin_forget_device::AdminForgetDeviceError>
-                    >  {
-                        let handle = self.handle.clone();
-                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-                    }
-    
-                    /// Sends the request and returns the response.
-                    ///
-                    /// If an error occurs, an `SdkError` will be returned with additional details that
-                    /// can be matched against.
-                    ///
-                    /// By default, any retryable failures will be retried twice. Retry behavior
-                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                    /// set when configuring the client.
-                    pub async fn send(self) -> std::result::Result<crate::operation::admin_forget_device::AdminForgetDeviceOutput, aws_smithy_http::result::SdkError<crate::operation::admin_forget_device::AdminForgetDeviceError>>
-                     {
-                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&self.handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        self.handle.client.call(op).await
-                    }
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle,
+            inner: Default::default(),
+        }
+    }
+
+    /// Consume this builder, creating a customizable operation that can be modified before being
+    /// sent. The operation's inner [http::Request] can be modified as well.
+    pub async fn customize(
+        self,
+    ) -> std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::admin_forget_device::AdminForgetDevice,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::result::SdkError<
+            crate::operation::admin_forget_device::AdminForgetDeviceError,
+        >,
+    > {
+        let handle = self.handle.clone();
+        let operation = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+    }
+
+    /// Sends the request and returns the response.
+    ///
+    /// If an error occurs, an `SdkError` will be returned with additional details that
+    /// can be matched against.
+    ///
+    /// By default, any retryable failures will be retried twice. Retry behavior
+    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+    /// set when configuring the client.
+    pub async fn send(
+        self,
+    ) -> std::result::Result<
+        crate::operation::admin_forget_device::AdminForgetDeviceOutput,
+        aws_smithy_http::result::SdkError<
+            crate::operation::admin_forget_device::AdminForgetDeviceError,
+        >,
+    > {
+        let op = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&self.handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        self.handle.client.call(op).await
+    }
     /// <p>The user pool ID.</p>
     pub fn user_pool_id(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.user_pool_id(input.into());
@@ -79,4 +101,3 @@ impl AdminForgetDeviceFluentBuilder  {
         self
     }
 }
-

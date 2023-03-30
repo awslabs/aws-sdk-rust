@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListApplicationVersionsInput  {
+pub struct ListApplicationVersionsInput {
     /// <p>A pagination token returned from a previous call to this operation. This specifies the next item to return. To return to the beginning of the list, exclude this parameter.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
@@ -15,7 +15,7 @@ pub struct ListApplicationVersionsInput  {
 }
 impl ListApplicationVersionsInput {
     /// <p>A pagination token returned from a previous call to this operation. This specifies the next item to return. To return to the beginning of the list, exclude this parameter.</p>
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
     /// <p>The maximum number of application versions to return.</p>
@@ -23,13 +23,15 @@ impl ListApplicationVersionsInput {
         self.max_results
     }
     /// <p>The unique identifier of the application.</p>
-    pub fn application_id(&self) -> std::option::Option<& str> {
+    pub fn application_id(&self) -> std::option::Option<&str> {
         self.application_id.as_deref()
     }
 }
 impl ListApplicationVersionsInput {
     /// Creates a new builder-style object to manufacture [`ListApplicationVersionsInput`](crate::operation::list_application_versions::ListApplicationVersionsInput).
-    pub fn builder() -> crate::operation::list_application_versions::builders::ListApplicationVersionsInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::list_application_versions::builders::ListApplicationVersionsInputBuilder
+    {
         crate::operation::list_application_versions::builders::ListApplicationVersionsInputBuilder::default()
     }
 }
@@ -50,7 +52,8 @@ impl ListApplicationVersionsInputBuilder {
     }
     /// <p>A pagination token returned from a previous call to this operation. This specifies the next item to return. To return to the beginning of the list, exclude this parameter.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input; self
+        self.next_token = input;
+        self
     }
     /// <p>The maximum number of application versions to return.</p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -59,7 +62,8 @@ impl ListApplicationVersionsInputBuilder {
     }
     /// <p>The maximum number of application versions to return.</p>
     pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_results = input; self
+        self.max_results = input;
+        self
     }
     /// <p>The unique identifier of the application.</p>
     pub fn application_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -68,20 +72,22 @@ impl ListApplicationVersionsInputBuilder {
     }
     /// <p>The unique identifier of the application.</p>
     pub fn set_application_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.application_id = input; self
+        self.application_id = input;
+        self
     }
     /// Consumes the builder and constructs a [`ListApplicationVersionsInput`](crate::operation::list_application_versions::ListApplicationVersionsInput).
-    pub fn build(self) -> Result<crate::operation::list_application_versions::ListApplicationVersionsInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::list_application_versions::ListApplicationVersionsInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::list_application_versions::ListApplicationVersionsInput {
-                next_token: self.next_token
-                ,
-                max_results: self.max_results
-                ,
-                application_id: self.application_id
-                ,
-            }
+                next_token: self.next_token,
+                max_results: self.max_results,
+                application_id: self.application_id,
+            },
         )
     }
 }
-

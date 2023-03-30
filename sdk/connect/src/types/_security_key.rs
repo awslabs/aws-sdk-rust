@@ -3,7 +3,7 @@
 /// <p>Configuration information of the security key.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SecurityKey  {
+pub struct SecurityKey {
     /// <p>The existing association identifier that uniquely identifies the resource type and storage config for the given instance ID.</p>
     #[doc(hidden)]
     pub association_id: std::option::Option<std::string::String>,
@@ -16,15 +16,15 @@ pub struct SecurityKey  {
 }
 impl SecurityKey {
     /// <p>The existing association identifier that uniquely identifies the resource type and storage config for the given instance ID.</p>
-    pub fn association_id(&self) -> std::option::Option<& str> {
+    pub fn association_id(&self) -> std::option::Option<&str> {
         self.association_id.as_deref()
     }
     /// <p>The key of the security key.</p>
-    pub fn key(&self) -> std::option::Option<& str> {
+    pub fn key(&self) -> std::option::Option<&str> {
         self.key.as_deref()
     }
     /// <p>When the security key was created.</p>
-    pub fn creation_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
+    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
 }
@@ -51,7 +51,8 @@ impl SecurityKeyBuilder {
     }
     /// <p>The existing association identifier that uniquely identifies the resource type and storage config for the given instance ID.</p>
     pub fn set_association_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.association_id = input; self
+        self.association_id = input;
+        self
     }
     /// <p>The key of the security key.</p>
     pub fn key(mut self, input: impl Into<std::string::String>) -> Self {
@@ -60,7 +61,8 @@ impl SecurityKeyBuilder {
     }
     /// <p>The key of the security key.</p>
     pub fn set_key(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.key = input; self
+        self.key = input;
+        self
     }
     /// <p>When the security key was created.</p>
     pub fn creation_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -68,19 +70,19 @@ impl SecurityKeyBuilder {
         self
     }
     /// <p>When the security key was created.</p>
-    pub fn set_creation_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.creation_time = input; self
+    pub fn set_creation_time(
+        mut self,
+        input: std::option::Option<aws_smithy_types::DateTime>,
+    ) -> Self {
+        self.creation_time = input;
+        self
     }
     /// Consumes the builder and constructs a [`SecurityKey`](crate::types::SecurityKey).
     pub fn build(self) -> crate::types::SecurityKey {
         crate::types::SecurityKey {
-            association_id: self.association_id
-            ,
-            key: self.key
-            ,
-            creation_time: self.creation_time
-            ,
+            association_id: self.association_id,
+            key: self.key,
+            creation_time: self.creation_time,
         }
     }
 }
-

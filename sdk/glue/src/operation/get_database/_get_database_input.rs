@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetDatabaseInput  {
+pub struct GetDatabaseInput {
     /// <p>The ID of the Data Catalog in which the database resides. If none is provided, the Amazon Web Services account ID is used by default.</p>
     #[doc(hidden)]
     pub catalog_id: std::option::Option<std::string::String>,
@@ -12,11 +12,11 @@ pub struct GetDatabaseInput  {
 }
 impl GetDatabaseInput {
     /// <p>The ID of the Data Catalog in which the database resides. If none is provided, the Amazon Web Services account ID is used by default.</p>
-    pub fn catalog_id(&self) -> std::option::Option<& str> {
+    pub fn catalog_id(&self) -> std::option::Option<&str> {
         self.catalog_id.as_deref()
     }
     /// <p>The name of the database to retrieve. For Hive compatibility, this should be all lowercase.</p>
-    pub fn name(&self) -> std::option::Option<& str> {
+    pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
 }
@@ -42,7 +42,8 @@ impl GetDatabaseInputBuilder {
     }
     /// <p>The ID of the Data Catalog in which the database resides. If none is provided, the Amazon Web Services account ID is used by default.</p>
     pub fn set_catalog_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.catalog_id = input; self
+        self.catalog_id = input;
+        self
     }
     /// <p>The name of the database to retrieve. For Hive compatibility, this should be all lowercase.</p>
     pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -51,18 +52,19 @@ impl GetDatabaseInputBuilder {
     }
     /// <p>The name of the database to retrieve. For Hive compatibility, this should be all lowercase.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input; self
+        self.name = input;
+        self
     }
     /// Consumes the builder and constructs a [`GetDatabaseInput`](crate::operation::get_database::GetDatabaseInput).
-    pub fn build(self) -> Result<crate::operation::get_database::GetDatabaseInput, aws_smithy_http::operation::error::BuildError> {
-        Ok(
-            crate::operation::get_database::GetDatabaseInput {
-                catalog_id: self.catalog_id
-                ,
-                name: self.name
-                ,
-            }
-        )
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::get_database::GetDatabaseInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        Ok(crate::operation::get_database::GetDatabaseInput {
+            catalog_id: self.catalog_id,
+            name: self.name,
+        })
     }
 }
-

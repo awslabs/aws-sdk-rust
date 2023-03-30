@@ -4,56 +4,81 @@ pub use crate::operation::update_cost_category_definition::_update_cost_category
 pub use crate::operation::update_cost_category_definition::_update_cost_category_definition_input::UpdateCostCategoryDefinitionInputBuilder;
 
 /// Fluent builder constructing a request to `UpdateCostCategoryDefinition`.
-/// 
+///
 /// <p>Updates an existing Cost Category. Changes made to the Cost Category rules will be used to categorize the current month’s expenses and future expenses. This won’t change categorization for the previous months.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct UpdateCostCategoryDefinitionFluentBuilder {
                 handle: std::sync::Arc<crate::client::Handle>,
                 inner: crate::operation::update_cost_category_definition::builders::UpdateCostCategoryDefinitionInputBuilder
             }
-impl UpdateCostCategoryDefinitionFluentBuilder  {
+impl UpdateCostCategoryDefinitionFluentBuilder {
     /// Creates a new `UpdateCostCategoryDefinition`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
-                    /// sent. The operation's inner [http::Request] can be modified as well.
-                    pub async fn customize(self) -> std::result::Result<
-                        crate::client::customize::CustomizableOperation<crate::operation::update_cost_category_definition::UpdateCostCategoryDefinition, aws_http::retry::AwsResponseRetryClassifier,>,
-                        aws_smithy_http::result::SdkError<crate::operation::update_cost_category_definition::UpdateCostCategoryDefinitionError>
-                    >  {
-                        let handle = self.handle.clone();
-                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-                    }
-    
-                    /// Sends the request and returns the response.
-                    ///
-                    /// If an error occurs, an `SdkError` will be returned with additional details that
-                    /// can be matched against.
-                    ///
-                    /// By default, any retryable failures will be retried twice. Retry behavior
-                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                    /// set when configuring the client.
-                    pub async fn send(self) -> std::result::Result<crate::operation::update_cost_category_definition::UpdateCostCategoryDefinitionOutput, aws_smithy_http::result::SdkError<crate::operation::update_cost_category_definition::UpdateCostCategoryDefinitionError>>
-                     {
-                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&self.handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        self.handle.client.call(op).await
-                    }
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle,
+            inner: Default::default(),
+        }
+    }
+
+    /// Consume this builder, creating a customizable operation that can be modified before being
+    /// sent. The operation's inner [http::Request] can be modified as well.
+    pub async fn customize(
+        self,
+    ) -> std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::update_cost_category_definition::UpdateCostCategoryDefinition,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::result::SdkError<
+            crate::operation::update_cost_category_definition::UpdateCostCategoryDefinitionError,
+        >,
+    > {
+        let handle = self.handle.clone();
+        let operation = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+    }
+
+    /// Sends the request and returns the response.
+    ///
+    /// If an error occurs, an `SdkError` will be returned with additional details that
+    /// can be matched against.
+    ///
+    /// By default, any retryable failures will be retried twice. Retry behavior
+    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+    /// set when configuring the client.
+    pub async fn send(
+        self,
+    ) -> std::result::Result<
+        crate::operation::update_cost_category_definition::UpdateCostCategoryDefinitionOutput,
+        aws_smithy_http::result::SdkError<
+            crate::operation::update_cost_category_definition::UpdateCostCategoryDefinitionError,
+        >,
+    > {
+        let op = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&self.handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        self.handle.client.call(op).await
+    }
     /// <p>The unique identifier for your Cost Category.</p>
     pub fn cost_category_arn(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.cost_category_arn(input.into());
         self
     }
     /// <p>The unique identifier for your Cost Category.</p>
-    pub fn set_cost_category_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_cost_category_arn(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_cost_category_arn(input);
         self
     }
@@ -73,7 +98,10 @@ impl UpdateCostCategoryDefinitionFluentBuilder  {
         self
     }
     /// <p>The rule schema version in this particular Cost Category.</p>
-    pub fn set_rule_version(mut self, input: std::option::Option<crate::types::CostCategoryRuleVersion>) -> Self {
+    pub fn set_rule_version(
+        mut self,
+        input: std::option::Option<crate::types::CostCategoryRuleVersion>,
+    ) -> Self {
         self.inner = self.inner.set_rule_version(input);
         self
     }
@@ -87,7 +115,10 @@ impl UpdateCostCategoryDefinitionFluentBuilder  {
         self
     }
     /// <p>The <code>Expression</code> object used to categorize costs. For more information, see <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_CostCategoryRule.html">CostCategoryRule </a>. </p>
-    pub fn set_rules(mut self, input: std::option::Option<std::vec::Vec<crate::types::CostCategoryRule>>) -> Self {
+    pub fn set_rules(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::CostCategoryRule>>,
+    ) -> Self {
         self.inner = self.inner.set_rules(input);
         self
     }
@@ -111,9 +142,11 @@ impl UpdateCostCategoryDefinitionFluentBuilder  {
         self
     }
     /// <p> The split charge rules used to allocate your charges between your Cost Category values. </p>
-    pub fn set_split_charge_rules(mut self, input: std::option::Option<std::vec::Vec<crate::types::CostCategorySplitChargeRule>>) -> Self {
+    pub fn set_split_charge_rules(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::CostCategorySplitChargeRule>>,
+    ) -> Self {
         self.inner = self.inner.set_split_charge_rules(input);
         self
     }
 }
-

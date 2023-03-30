@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeBudgetActionOutput  {
+pub struct DescribeBudgetActionOutput {
     /// <p>The account ID of the user. It's a 12-digit number.</p>
     #[doc(hidden)]
     pub account_id: std::option::Option<std::string::String>,
@@ -16,26 +16,27 @@ pub struct DescribeBudgetActionOutput  {
 }
 impl DescribeBudgetActionOutput {
     /// <p>The account ID of the user. It's a 12-digit number.</p>
-    pub fn account_id(&self) -> std::option::Option<& str> {
+    pub fn account_id(&self) -> std::option::Option<&str> {
         self.account_id.as_deref()
     }
     /// <p> A string that represents the budget name. The ":" and "\" characters aren't allowed.</p>
-    pub fn budget_name(&self) -> std::option::Option<& str> {
+    pub fn budget_name(&self) -> std::option::Option<&str> {
         self.budget_name.as_deref()
     }
     /// <p> A budget action resource. </p>
-    pub fn action(&self) -> std::option::Option<& crate::types::Action> {
+    pub fn action(&self) -> std::option::Option<&crate::types::Action> {
         self.action.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for DescribeBudgetActionOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl DescribeBudgetActionOutput {
     /// Creates a new builder-style object to manufacture [`DescribeBudgetActionOutput`](crate::operation::describe_budget_action::DescribeBudgetActionOutput).
-    pub fn builder() -> crate::operation::describe_budget_action::builders::DescribeBudgetActionOutputBuilder {
+    pub fn builder(
+    ) -> crate::operation::describe_budget_action::builders::DescribeBudgetActionOutputBuilder {
         crate::operation::describe_budget_action::builders::DescribeBudgetActionOutputBuilder::default()
     }
 }
@@ -57,7 +58,8 @@ impl DescribeBudgetActionOutputBuilder {
     }
     /// <p>The account ID of the user. It's a 12-digit number.</p>
     pub fn set_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.account_id = input; self
+        self.account_id = input;
+        self
     }
     /// <p> A string that represents the budget name. The ":" and "\" characters aren't allowed.</p>
     pub fn budget_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -66,7 +68,8 @@ impl DescribeBudgetActionOutputBuilder {
     }
     /// <p> A string that represents the budget name. The ":" and "\" characters aren't allowed.</p>
     pub fn set_budget_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.budget_name = input; self
+        self.budget_name = input;
+        self
     }
     /// <p> A budget action resource. </p>
     pub fn action(mut self, input: crate::types::Action) -> Self {
@@ -75,28 +78,25 @@ impl DescribeBudgetActionOutputBuilder {
     }
     /// <p> A budget action resource. </p>
     pub fn set_action(mut self, input: std::option::Option<crate::types::Action>) -> Self {
-        self.action = input; self
+        self.action = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`DescribeBudgetActionOutput`](crate::operation::describe_budget_action::DescribeBudgetActionOutput).
     pub fn build(self) -> crate::operation::describe_budget_action::DescribeBudgetActionOutput {
         crate::operation::describe_budget_action::DescribeBudgetActionOutput {
-            account_id: self.account_id
-            ,
-            budget_name: self.budget_name
-            ,
-            action: self.action
-            ,
+            account_id: self.account_id,
+            budget_name: self.budget_name,
+            action: self.action,
             _request_id: self._request_id,
         }
     }
 }
-

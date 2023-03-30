@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DisableAddressTransferInput  {
+pub struct DisableAddressTransferInput {
     /// <p>The allocation ID of an Elastic IP address.</p>
     #[doc(hidden)]
     pub allocation_id: std::option::Option<std::string::String>,
@@ -12,7 +12,7 @@ pub struct DisableAddressTransferInput  {
 }
 impl DisableAddressTransferInput {
     /// <p>The allocation ID of an Elastic IP address.</p>
-    pub fn allocation_id(&self) -> std::option::Option<& str> {
+    pub fn allocation_id(&self) -> std::option::Option<&str> {
         self.allocation_id.as_deref()
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
@@ -22,7 +22,9 @@ impl DisableAddressTransferInput {
 }
 impl DisableAddressTransferInput {
     /// Creates a new builder-style object to manufacture [`DisableAddressTransferInput`](crate::operation::disable_address_transfer::DisableAddressTransferInput).
-    pub fn builder() -> crate::operation::disable_address_transfer::builders::DisableAddressTransferInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::disable_address_transfer::builders::DisableAddressTransferInputBuilder
+    {
         crate::operation::disable_address_transfer::builders::DisableAddressTransferInputBuilder::default()
     }
 }
@@ -42,7 +44,8 @@ impl DisableAddressTransferInputBuilder {
     }
     /// <p>The allocation ID of an Elastic IP address.</p>
     pub fn set_allocation_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.allocation_id = input; self
+        self.allocation_id = input;
+        self
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn dry_run(mut self, input: bool) -> Self {
@@ -51,18 +54,21 @@ impl DisableAddressTransferInputBuilder {
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn set_dry_run(mut self, input: std::option::Option<bool>) -> Self {
-        self.dry_run = input; self
+        self.dry_run = input;
+        self
     }
     /// Consumes the builder and constructs a [`DisableAddressTransferInput`](crate::operation::disable_address_transfer::DisableAddressTransferInput).
-    pub fn build(self) -> Result<crate::operation::disable_address_transfer::DisableAddressTransferInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::disable_address_transfer::DisableAddressTransferInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::disable_address_transfer::DisableAddressTransferInput {
-                allocation_id: self.allocation_id
-                ,
-                dry_run: self.dry_run
-                ,
-            }
+                allocation_id: self.allocation_id,
+                dry_run: self.dry_run,
+            },
         )
     }
 }
-

@@ -3,7 +3,7 @@
 /// <p>Returns information about a target for a pull request.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Target  {
+pub struct Target {
     /// <p>The name of the repository that contains the pull request.</p>
     #[doc(hidden)]
     pub repository_name: std::option::Option<std::string::String>,
@@ -16,15 +16,15 @@ pub struct Target  {
 }
 impl Target {
     /// <p>The name of the repository that contains the pull request.</p>
-    pub fn repository_name(&self) -> std::option::Option<& str> {
+    pub fn repository_name(&self) -> std::option::Option<&str> {
         self.repository_name.as_deref()
     }
     /// <p>The branch of the repository that contains the changes for the pull request. Also known as the source branch.</p>
-    pub fn source_reference(&self) -> std::option::Option<& str> {
+    pub fn source_reference(&self) -> std::option::Option<&str> {
         self.source_reference.as_deref()
     }
     /// <p>The branch of the repository where the pull request changes are merged. Also known as the destination branch.</p>
-    pub fn destination_reference(&self) -> std::option::Option<& str> {
+    pub fn destination_reference(&self) -> std::option::Option<&str> {
         self.destination_reference.as_deref()
     }
 }
@@ -51,7 +51,8 @@ impl TargetBuilder {
     }
     /// <p>The name of the repository that contains the pull request.</p>
     pub fn set_repository_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.repository_name = input; self
+        self.repository_name = input;
+        self
     }
     /// <p>The branch of the repository that contains the changes for the pull request. Also known as the source branch.</p>
     pub fn source_reference(mut self, input: impl Into<std::string::String>) -> Self {
@@ -60,7 +61,8 @@ impl TargetBuilder {
     }
     /// <p>The branch of the repository that contains the changes for the pull request. Also known as the source branch.</p>
     pub fn set_source_reference(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.source_reference = input; self
+        self.source_reference = input;
+        self
     }
     /// <p>The branch of the repository where the pull request changes are merged. Also known as the destination branch.</p>
     pub fn destination_reference(mut self, input: impl Into<std::string::String>) -> Self {
@@ -68,19 +70,19 @@ impl TargetBuilder {
         self
     }
     /// <p>The branch of the repository where the pull request changes are merged. Also known as the destination branch.</p>
-    pub fn set_destination_reference(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.destination_reference = input; self
+    pub fn set_destination_reference(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.destination_reference = input;
+        self
     }
     /// Consumes the builder and constructs a [`Target`](crate::types::Target).
     pub fn build(self) -> crate::types::Target {
         crate::types::Target {
-            repository_name: self.repository_name
-            ,
-            source_reference: self.source_reference
-            ,
-            destination_reference: self.destination_reference
-            ,
+            repository_name: self.repository_name,
+            source_reference: self.source_reference,
+            destination_reference: self.destination_reference,
         }
     }
 }
-

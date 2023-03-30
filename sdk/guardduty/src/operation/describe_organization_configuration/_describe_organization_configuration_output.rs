@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeOrganizationConfigurationOutput  {
+pub struct DescribeOrganizationConfigurationOutput {
     /// <p>Indicates whether GuardDuty is automatically enabled for accounts added to the organization.</p>
     #[doc(hidden)]
     pub auto_enable: bool,
@@ -24,18 +24,20 @@ impl DescribeOrganizationConfigurationOutput {
         self.member_account_limit_reached
     }
     /// <p>Describes which data sources are enabled automatically for member accounts.</p>
-    pub fn data_sources(&self) -> std::option::Option<& crate::types::OrganizationDataSourceConfigurationsResult> {
+    pub fn data_sources(
+        &self,
+    ) -> std::option::Option<&crate::types::OrganizationDataSourceConfigurationsResult> {
         self.data_sources.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for DescribeOrganizationConfigurationOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl DescribeOrganizationConfigurationOutput {
     /// Creates a new builder-style object to manufacture [`DescribeOrganizationConfigurationOutput`](crate::operation::describe_organization_configuration::DescribeOrganizationConfigurationOutput).
-    pub fn builder() -> crate::operation::describe_organization_configuration::builders::DescribeOrganizationConfigurationOutputBuilder {
+    pub fn builder() -> crate::operation::describe_organization_configuration::builders::DescribeOrganizationConfigurationOutputBuilder{
         crate::operation::describe_organization_configuration::builders::DescribeOrganizationConfigurationOutputBuilder::default()
     }
 }
@@ -46,7 +48,8 @@ impl DescribeOrganizationConfigurationOutput {
 pub struct DescribeOrganizationConfigurationOutputBuilder {
     pub(crate) auto_enable: std::option::Option<bool>,
     pub(crate) member_account_limit_reached: std::option::Option<bool>,
-    pub(crate) data_sources: std::option::Option<crate::types::OrganizationDataSourceConfigurationsResult>,
+    pub(crate) data_sources:
+        std::option::Option<crate::types::OrganizationDataSourceConfigurationsResult>,
     _request_id: Option<String>,
 }
 impl DescribeOrganizationConfigurationOutputBuilder {
@@ -57,7 +60,8 @@ impl DescribeOrganizationConfigurationOutputBuilder {
     }
     /// <p>Indicates whether GuardDuty is automatically enabled for accounts added to the organization.</p>
     pub fn set_auto_enable(mut self, input: std::option::Option<bool>) -> Self {
-        self.auto_enable = input; self
+        self.auto_enable = input;
+        self
     }
     /// <p>Indicates whether the maximum number of allowed member accounts are already associated with the delegated administrator account for your organization.</p>
     pub fn member_account_limit_reached(mut self, input: bool) -> Self {
@@ -66,28 +70,36 @@ impl DescribeOrganizationConfigurationOutputBuilder {
     }
     /// <p>Indicates whether the maximum number of allowed member accounts are already associated with the delegated administrator account for your organization.</p>
     pub fn set_member_account_limit_reached(mut self, input: std::option::Option<bool>) -> Self {
-        self.member_account_limit_reached = input; self
+        self.member_account_limit_reached = input;
+        self
     }
     /// <p>Describes which data sources are enabled automatically for member accounts.</p>
-    pub fn data_sources(mut self, input: crate::types::OrganizationDataSourceConfigurationsResult) -> Self {
+    pub fn data_sources(
+        mut self,
+        input: crate::types::OrganizationDataSourceConfigurationsResult,
+    ) -> Self {
         self.data_sources = Some(input);
         self
     }
     /// <p>Describes which data sources are enabled automatically for member accounts.</p>
-    pub fn set_data_sources(mut self, input: std::option::Option<crate::types::OrganizationDataSourceConfigurationsResult>) -> Self {
-        self.data_sources = input; self
+    pub fn set_data_sources(
+        mut self,
+        input: std::option::Option<crate::types::OrganizationDataSourceConfigurationsResult>,
+    ) -> Self {
+        self.data_sources = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`DescribeOrganizationConfigurationOutput`](crate::operation::describe_organization_configuration::DescribeOrganizationConfigurationOutput).
-    pub fn build(self) -> crate::operation::describe_organization_configuration::DescribeOrganizationConfigurationOutput {
+    pub fn build(self) -> crate::operation::describe_organization_configuration::DescribeOrganizationConfigurationOutput{
         crate::operation::describe_organization_configuration::DescribeOrganizationConfigurationOutput {
             auto_enable: self.auto_enable
                 .unwrap_or_default()
@@ -101,4 +113,3 @@ impl DescribeOrganizationConfigurationOutputBuilder {
         }
     }
 }
-

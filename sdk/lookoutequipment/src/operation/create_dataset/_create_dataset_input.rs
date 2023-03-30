@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateDatasetInput  {
+pub struct CreateDatasetInput {
     /// <p>The name of the dataset being created. </p>
     #[doc(hidden)]
     pub dataset_name: std::option::Option<std::string::String>,
@@ -21,23 +21,23 @@ pub struct CreateDatasetInput  {
 }
 impl CreateDatasetInput {
     /// <p>The name of the dataset being created. </p>
-    pub fn dataset_name(&self) -> std::option::Option<& str> {
+    pub fn dataset_name(&self) -> std::option::Option<&str> {
         self.dataset_name.as_deref()
     }
     /// <p>A JSON description of the data that is in each time series dataset, including names, column names, and data types. </p>
-    pub fn dataset_schema(&self) -> std::option::Option<& crate::types::DatasetSchema> {
+    pub fn dataset_schema(&self) -> std::option::Option<&crate::types::DatasetSchema> {
         self.dataset_schema.as_ref()
     }
     /// <p>Provides the identifier of the KMS key used to encrypt dataset data by Amazon Lookout for Equipment. </p>
-    pub fn server_side_kms_key_id(&self) -> std::option::Option<& str> {
+    pub fn server_side_kms_key_id(&self) -> std::option::Option<&str> {
         self.server_side_kms_key_id.as_deref()
     }
     /// <p> A unique identifier for the request. If you do not set the client request token, Amazon Lookout for Equipment generates one. </p>
-    pub fn client_token(&self) -> std::option::Option<& str> {
+    pub fn client_token(&self) -> std::option::Option<&str> {
         self.client_token.as_deref()
     }
     /// <p>Any tags associated with the ingested data described in the dataset. </p>
-    pub fn tags(&self) -> std::option::Option<& [crate::types::Tag]> {
+    pub fn tags(&self) -> std::option::Option<&[crate::types::Tag]> {
         self.tags.as_deref()
     }
 }
@@ -66,7 +66,8 @@ impl CreateDatasetInputBuilder {
     }
     /// <p>The name of the dataset being created. </p>
     pub fn set_dataset_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.dataset_name = input; self
+        self.dataset_name = input;
+        self
     }
     /// <p>A JSON description of the data that is in each time series dataset, including names, column names, and data types. </p>
     pub fn dataset_schema(mut self, input: crate::types::DatasetSchema) -> Self {
@@ -74,8 +75,12 @@ impl CreateDatasetInputBuilder {
         self
     }
     /// <p>A JSON description of the data that is in each time series dataset, including names, column names, and data types. </p>
-    pub fn set_dataset_schema(mut self, input: std::option::Option<crate::types::DatasetSchema>) -> Self {
-        self.dataset_schema = input; self
+    pub fn set_dataset_schema(
+        mut self,
+        input: std::option::Option<crate::types::DatasetSchema>,
+    ) -> Self {
+        self.dataset_schema = input;
+        self
     }
     /// <p>Provides the identifier of the KMS key used to encrypt dataset data by Amazon Lookout for Equipment. </p>
     pub fn server_side_kms_key_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -83,8 +88,12 @@ impl CreateDatasetInputBuilder {
         self
     }
     /// <p>Provides the identifier of the KMS key used to encrypt dataset data by Amazon Lookout for Equipment. </p>
-    pub fn set_server_side_kms_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.server_side_kms_key_id = input; self
+    pub fn set_server_side_kms_key_id(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.server_side_kms_key_id = input;
+        self
     }
     /// <p> A unique identifier for the request. If you do not set the client request token, Amazon Lookout for Equipment generates one. </p>
     pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -93,7 +102,8 @@ impl CreateDatasetInputBuilder {
     }
     /// <p> A unique identifier for the request. If you do not set the client request token, Amazon Lookout for Equipment generates one. </p>
     pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.client_token = input; self
+        self.client_token = input;
+        self
     }
     /// Appends an item to `tags`.
     ///
@@ -102,30 +112,31 @@ impl CreateDatasetInputBuilder {
     /// <p>Any tags associated with the ingested data described in the dataset. </p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
-                        v.push(input);
-                        self.tags = Some(v);
-                        self
+        v.push(input);
+        self.tags = Some(v);
+        self
     }
     /// <p>Any tags associated with the ingested data described in the dataset. </p>
-    pub fn set_tags(mut self, input: std::option::Option<std::vec::Vec<crate::types::Tag>>) -> Self {
-        self.tags = input; self
+    pub fn set_tags(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::Tag>>,
+    ) -> Self {
+        self.tags = input;
+        self
     }
     /// Consumes the builder and constructs a [`CreateDatasetInput`](crate::operation::create_dataset::CreateDatasetInput).
-    pub fn build(self) -> Result<crate::operation::create_dataset::CreateDatasetInput, aws_smithy_http::operation::error::BuildError> {
-        Ok(
-            crate::operation::create_dataset::CreateDatasetInput {
-                dataset_name: self.dataset_name
-                ,
-                dataset_schema: self.dataset_schema
-                ,
-                server_side_kms_key_id: self.server_side_kms_key_id
-                ,
-                client_token: self.client_token
-                ,
-                tags: self.tags
-                ,
-            }
-        )
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::create_dataset::CreateDatasetInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        Ok(crate::operation::create_dataset::CreateDatasetInput {
+            dataset_name: self.dataset_name,
+            dataset_schema: self.dataset_schema,
+            server_side_kms_key_id: self.server_side_kms_key_id,
+            client_token: self.client_token,
+            tags: self.tags,
+        })
     }
 }
-

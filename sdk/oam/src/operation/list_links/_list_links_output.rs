@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListLinksOutput  {
+pub struct ListLinksOutput {
     /// <p>An array of structures that contain the information about the returned links.</p>
     #[doc(hidden)]
     pub items: std::option::Option<std::vec::Vec<crate::types::ListLinksItem>>,
@@ -13,19 +13,19 @@ pub struct ListLinksOutput  {
 }
 impl ListLinksOutput {
     /// <p>An array of structures that contain the information about the returned links.</p>
-    pub fn items(&self) -> std::option::Option<& [crate::types::ListLinksItem]> {
+    pub fn items(&self) -> std::option::Option<&[crate::types::ListLinksItem]> {
         self.items.as_deref()
     }
     /// <p>The token to use when requesting the next set of links.</p>
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for ListLinksOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl ListLinksOutput {
     /// Creates a new builder-style object to manufacture [`ListLinksOutput`](crate::operation::list_links::ListLinksOutput).
     pub fn builder() -> crate::operation::list_links::builders::ListLinksOutputBuilder {
@@ -49,13 +49,17 @@ impl ListLinksOutputBuilder {
     /// <p>An array of structures that contain the information about the returned links.</p>
     pub fn items(mut self, input: crate::types::ListLinksItem) -> Self {
         let mut v = self.items.unwrap_or_default();
-                        v.push(input);
-                        self.items = Some(v);
-                        self
+        v.push(input);
+        self.items = Some(v);
+        self
     }
     /// <p>An array of structures that contain the information about the returned links.</p>
-    pub fn set_items(mut self, input: std::option::Option<std::vec::Vec<crate::types::ListLinksItem>>) -> Self {
-        self.items = input; self
+    pub fn set_items(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::ListLinksItem>>,
+    ) -> Self {
+        self.items = input;
+        self
     }
     /// <p>The token to use when requesting the next set of links.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -64,26 +68,24 @@ impl ListLinksOutputBuilder {
     }
     /// <p>The token to use when requesting the next set of links.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input; self
+        self.next_token = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`ListLinksOutput`](crate::operation::list_links::ListLinksOutput).
     pub fn build(self) -> crate::operation::list_links::ListLinksOutput {
         crate::operation::list_links::ListLinksOutput {
-            items: self.items
-            ,
-            next_token: self.next_token
-            ,
+            items: self.items,
+            next_token: self.next_token,
             _request_id: self._request_id,
         }
     }
 }
-

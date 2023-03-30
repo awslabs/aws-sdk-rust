@@ -3,31 +3,31 @@
 /// <p>Represents an attribute for describing the key schema for the table and indexes.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AttributeDefinition  {
+pub struct AttributeDefinition {
     /// <p>A name for the attribute.</p>
     #[doc(hidden)]
     pub attribute_name: std::option::Option<std::string::String>,
-    /// <p>The data type for the attribute, where:</p> 
-    /// <ul> 
-    /// <li> <p> <code>S</code> - the attribute is of type String</p> </li> 
-    /// <li> <p> <code>N</code> - the attribute is of type Number</p> </li> 
-    /// <li> <p> <code>B</code> - the attribute is of type Binary</p> </li> 
+    /// <p>The data type for the attribute, where:</p>
+    /// <ul>
+    /// <li> <p> <code>S</code> - the attribute is of type String</p> </li>
+    /// <li> <p> <code>N</code> - the attribute is of type Number</p> </li>
+    /// <li> <p> <code>B</code> - the attribute is of type Binary</p> </li>
     /// </ul>
     #[doc(hidden)]
     pub attribute_type: std::option::Option<crate::types::ScalarAttributeType>,
 }
 impl AttributeDefinition {
     /// <p>A name for the attribute.</p>
-    pub fn attribute_name(&self) -> std::option::Option<& str> {
+    pub fn attribute_name(&self) -> std::option::Option<&str> {
         self.attribute_name.as_deref()
     }
-    /// <p>The data type for the attribute, where:</p> 
-    /// <ul> 
-    /// <li> <p> <code>S</code> - the attribute is of type String</p> </li> 
-    /// <li> <p> <code>N</code> - the attribute is of type Number</p> </li> 
-    /// <li> <p> <code>B</code> - the attribute is of type Binary</p> </li> 
+    /// <p>The data type for the attribute, where:</p>
+    /// <ul>
+    /// <li> <p> <code>S</code> - the attribute is of type String</p> </li>
+    /// <li> <p> <code>N</code> - the attribute is of type Number</p> </li>
+    /// <li> <p> <code>B</code> - the attribute is of type Binary</p> </li>
     /// </ul>
-    pub fn attribute_type(&self) -> std::option::Option<& crate::types::ScalarAttributeType> {
+    pub fn attribute_type(&self) -> std::option::Option<&crate::types::ScalarAttributeType> {
         self.attribute_type.as_ref()
     }
 }
@@ -53,35 +53,37 @@ impl AttributeDefinitionBuilder {
     }
     /// <p>A name for the attribute.</p>
     pub fn set_attribute_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.attribute_name = input; self
+        self.attribute_name = input;
+        self
     }
-    /// <p>The data type for the attribute, where:</p> 
-    /// <ul> 
-    /// <li> <p> <code>S</code> - the attribute is of type String</p> </li> 
-    /// <li> <p> <code>N</code> - the attribute is of type Number</p> </li> 
-    /// <li> <p> <code>B</code> - the attribute is of type Binary</p> </li> 
+    /// <p>The data type for the attribute, where:</p>
+    /// <ul>
+    /// <li> <p> <code>S</code> - the attribute is of type String</p> </li>
+    /// <li> <p> <code>N</code> - the attribute is of type Number</p> </li>
+    /// <li> <p> <code>B</code> - the attribute is of type Binary</p> </li>
     /// </ul>
     pub fn attribute_type(mut self, input: crate::types::ScalarAttributeType) -> Self {
         self.attribute_type = Some(input);
         self
     }
-    /// <p>The data type for the attribute, where:</p> 
-    /// <ul> 
-    /// <li> <p> <code>S</code> - the attribute is of type String</p> </li> 
-    /// <li> <p> <code>N</code> - the attribute is of type Number</p> </li> 
-    /// <li> <p> <code>B</code> - the attribute is of type Binary</p> </li> 
+    /// <p>The data type for the attribute, where:</p>
+    /// <ul>
+    /// <li> <p> <code>S</code> - the attribute is of type String</p> </li>
+    /// <li> <p> <code>N</code> - the attribute is of type Number</p> </li>
+    /// <li> <p> <code>B</code> - the attribute is of type Binary</p> </li>
     /// </ul>
-    pub fn set_attribute_type(mut self, input: std::option::Option<crate::types::ScalarAttributeType>) -> Self {
-        self.attribute_type = input; self
+    pub fn set_attribute_type(
+        mut self,
+        input: std::option::Option<crate::types::ScalarAttributeType>,
+    ) -> Self {
+        self.attribute_type = input;
+        self
     }
     /// Consumes the builder and constructs a [`AttributeDefinition`](crate::types::AttributeDefinition).
     pub fn build(self) -> crate::types::AttributeDefinition {
         crate::types::AttributeDefinition {
-            attribute_name: self.attribute_name
-            ,
-            attribute_type: self.attribute_type
-            ,
+            attribute_name: self.attribute_name,
+            attribute_type: self.attribute_type,
         }
     }
 }
-

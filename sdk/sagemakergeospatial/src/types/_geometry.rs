@@ -3,7 +3,7 @@
 /// <p></p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Geometry  {
+pub struct Geometry {
     /// <p></p>
     #[doc(hidden)]
     pub r#type: std::option::Option<std::string::String>,
@@ -13,11 +13,11 @@ pub struct Geometry  {
 }
 impl Geometry {
     /// <p></p>
-    pub fn r#type(&self) -> std::option::Option<& str> {
+    pub fn r#type(&self) -> std::option::Option<&str> {
         self.r#type.as_deref()
     }
     /// <p></p>
-    pub fn coordinates(&self) -> std::option::Option<& [std::vec::Vec<std::vec::Vec<f64>>]> {
+    pub fn coordinates(&self) -> std::option::Option<&[std::vec::Vec<std::vec::Vec<f64>>]> {
         self.coordinates.as_deref()
     }
 }
@@ -43,7 +43,8 @@ impl GeometryBuilder {
     }
     /// <p></p>
     pub fn set_type(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.r#type = input; self
+        self.r#type = input;
+        self
     }
     /// Appends an item to `coordinates`.
     ///
@@ -52,22 +53,23 @@ impl GeometryBuilder {
     /// <p></p>
     pub fn coordinates(mut self, input: std::vec::Vec<std::vec::Vec<f64>>) -> Self {
         let mut v = self.coordinates.unwrap_or_default();
-                        v.push(input);
-                        self.coordinates = Some(v);
-                        self
+        v.push(input);
+        self.coordinates = Some(v);
+        self
     }
     /// <p></p>
-    pub fn set_coordinates(mut self, input: std::option::Option<std::vec::Vec<std::vec::Vec<std::vec::Vec<f64>>>>) -> Self {
-        self.coordinates = input; self
+    pub fn set_coordinates(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::vec::Vec<std::vec::Vec<f64>>>>,
+    ) -> Self {
+        self.coordinates = input;
+        self
     }
     /// Consumes the builder and constructs a [`Geometry`](crate::types::Geometry).
     pub fn build(self) -> crate::types::Geometry {
         crate::types::Geometry {
-            r#type: self.r#type
-            ,
-            coordinates: self.coordinates
-            ,
+            r#type: self.r#type,
+            coordinates: self.coordinates,
         }
     }
 }
-

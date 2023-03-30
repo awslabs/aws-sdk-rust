@@ -2,20 +2,21 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteJobTemplateInput  {
+pub struct DeleteJobTemplateInput {
     /// <p>The ID of the job template that will be deleted.</p>
     #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
 }
 impl DeleteJobTemplateInput {
     /// <p>The ID of the job template that will be deleted.</p>
-    pub fn id(&self) -> std::option::Option<& str> {
+    pub fn id(&self) -> std::option::Option<&str> {
         self.id.as_deref()
     }
 }
 impl DeleteJobTemplateInput {
     /// Creates a new builder-style object to manufacture [`DeleteJobTemplateInput`](crate::operation::delete_job_template::DeleteJobTemplateInput).
-    pub fn builder() -> crate::operation::delete_job_template::builders::DeleteJobTemplateInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::delete_job_template::builders::DeleteJobTemplateInputBuilder {
         crate::operation::delete_job_template::builders::DeleteJobTemplateInputBuilder::default()
     }
 }
@@ -34,16 +35,16 @@ impl DeleteJobTemplateInputBuilder {
     }
     /// <p>The ID of the job template that will be deleted.</p>
     pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.id = input; self
+        self.id = input;
+        self
     }
     /// Consumes the builder and constructs a [`DeleteJobTemplateInput`](crate::operation::delete_job_template::DeleteJobTemplateInput).
-    pub fn build(self) -> Result<crate::operation::delete_job_template::DeleteJobTemplateInput, aws_smithy_http::operation::error::BuildError> {
-        Ok(
-            crate::operation::delete_job_template::DeleteJobTemplateInput {
-                id: self.id
-                ,
-            }
-        )
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::delete_job_template::DeleteJobTemplateInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        Ok(crate::operation::delete_job_template::DeleteJobTemplateInput { id: self.id })
     }
 }
-

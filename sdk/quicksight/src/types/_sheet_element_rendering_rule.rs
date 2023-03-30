@@ -3,25 +3,28 @@
 /// <p>The rendering rules of a sheet that uses a free-form layout.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct SheetElementRenderingRule  {
+pub struct SheetElementRenderingRule {
     /// <p>The expression of the rendering rules of a sheet.</p>
     #[doc(hidden)]
     pub expression: std::option::Option<std::string::String>,
     /// <p>The override configuration of the rendering rules of a sheet.</p>
     #[doc(hidden)]
-    pub configuration_overrides: std::option::Option<crate::types::SheetElementConfigurationOverrides>,
+    pub configuration_overrides:
+        std::option::Option<crate::types::SheetElementConfigurationOverrides>,
 }
 impl SheetElementRenderingRule {
     /// <p>The expression of the rendering rules of a sheet.</p>
-    pub fn expression(&self) -> std::option::Option<& str> {
+    pub fn expression(&self) -> std::option::Option<&str> {
         self.expression.as_deref()
     }
     /// <p>The override configuration of the rendering rules of a sheet.</p>
-    pub fn configuration_overrides(&self) -> std::option::Option<& crate::types::SheetElementConfigurationOverrides> {
+    pub fn configuration_overrides(
+        &self,
+    ) -> std::option::Option<&crate::types::SheetElementConfigurationOverrides> {
         self.configuration_overrides.as_ref()
     }
 }
-impl  std::fmt::Debug for SheetElementRenderingRule  {
+impl std::fmt::Debug for SheetElementRenderingRule {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("SheetElementRenderingRule");
         formatter.field("expression", &"*** Sensitive Data Redacted ***");
@@ -41,7 +44,8 @@ impl SheetElementRenderingRule {
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
 pub struct SheetElementRenderingRuleBuilder {
     pub(crate) expression: std::option::Option<std::string::String>,
-    pub(crate) configuration_overrides: std::option::Option<crate::types::SheetElementConfigurationOverrides>,
+    pub(crate) configuration_overrides:
+        std::option::Option<crate::types::SheetElementConfigurationOverrides>,
 }
 impl SheetElementRenderingRuleBuilder {
     /// <p>The expression of the rendering rules of a sheet.</p>
@@ -51,24 +55,30 @@ impl SheetElementRenderingRuleBuilder {
     }
     /// <p>The expression of the rendering rules of a sheet.</p>
     pub fn set_expression(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.expression = input; self
+        self.expression = input;
+        self
     }
     /// <p>The override configuration of the rendering rules of a sheet.</p>
-    pub fn configuration_overrides(mut self, input: crate::types::SheetElementConfigurationOverrides) -> Self {
+    pub fn configuration_overrides(
+        mut self,
+        input: crate::types::SheetElementConfigurationOverrides,
+    ) -> Self {
         self.configuration_overrides = Some(input);
         self
     }
     /// <p>The override configuration of the rendering rules of a sheet.</p>
-    pub fn set_configuration_overrides(mut self, input: std::option::Option<crate::types::SheetElementConfigurationOverrides>) -> Self {
-        self.configuration_overrides = input; self
+    pub fn set_configuration_overrides(
+        mut self,
+        input: std::option::Option<crate::types::SheetElementConfigurationOverrides>,
+    ) -> Self {
+        self.configuration_overrides = input;
+        self
     }
     /// Consumes the builder and constructs a [`SheetElementRenderingRule`](crate::types::SheetElementRenderingRule).
     pub fn build(self) -> crate::types::SheetElementRenderingRule {
         crate::types::SheetElementRenderingRule {
-            expression: self.expression
-            ,
-            configuration_overrides: self.configuration_overrides
-            ,
+            expression: self.expression,
+            configuration_overrides: self.configuration_overrides,
         }
     }
 }
@@ -80,4 +90,3 @@ impl std::fmt::Debug for SheetElementRenderingRuleBuilder {
         formatter.finish()
     }
 }
-

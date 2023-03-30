@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListAvailableManagedRuleGroupVersionsOutput  {
+pub struct ListAvailableManagedRuleGroupVersionsOutput {
     /// <p>When you request a list of objects with a <code>Limit</code> setting, if the number of objects that are still available for retrieval exceeds the limit, WAF returns a <code>NextMarker</code> value in the response. To retrieve the next batch of objects, provide the marker from the prior call in your next request.</p>
     #[doc(hidden)]
     pub next_marker: std::option::Option<std::string::String>,
@@ -16,26 +16,26 @@ pub struct ListAvailableManagedRuleGroupVersionsOutput  {
 }
 impl ListAvailableManagedRuleGroupVersionsOutput {
     /// <p>When you request a list of objects with a <code>Limit</code> setting, if the number of objects that are still available for retrieval exceeds the limit, WAF returns a <code>NextMarker</code> value in the response. To retrieve the next batch of objects, provide the marker from the prior call in your next request.</p>
-    pub fn next_marker(&self) -> std::option::Option<& str> {
+    pub fn next_marker(&self) -> std::option::Option<&str> {
         self.next_marker.as_deref()
     }
     /// <p>The versions that are currently available for the specified managed rule group. </p>
-    pub fn versions(&self) -> std::option::Option<& [crate::types::ManagedRuleGroupVersion]> {
+    pub fn versions(&self) -> std::option::Option<&[crate::types::ManagedRuleGroupVersion]> {
         self.versions.as_deref()
     }
     /// <p>The name of the version that's currently set as the default. </p>
-    pub fn current_default_version(&self) -> std::option::Option<& str> {
+    pub fn current_default_version(&self) -> std::option::Option<&str> {
         self.current_default_version.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for ListAvailableManagedRuleGroupVersionsOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl ListAvailableManagedRuleGroupVersionsOutput {
     /// Creates a new builder-style object to manufacture [`ListAvailableManagedRuleGroupVersionsOutput`](crate::operation::list_available_managed_rule_group_versions::ListAvailableManagedRuleGroupVersionsOutput).
-    pub fn builder() -> crate::operation::list_available_managed_rule_group_versions::builders::ListAvailableManagedRuleGroupVersionsOutputBuilder {
+    pub fn builder() -> crate::operation::list_available_managed_rule_group_versions::builders::ListAvailableManagedRuleGroupVersionsOutputBuilder{
         crate::operation::list_available_managed_rule_group_versions::builders::ListAvailableManagedRuleGroupVersionsOutputBuilder::default()
     }
 }
@@ -57,7 +57,8 @@ impl ListAvailableManagedRuleGroupVersionsOutputBuilder {
     }
     /// <p>When you request a list of objects with a <code>Limit</code> setting, if the number of objects that are still available for retrieval exceeds the limit, WAF returns a <code>NextMarker</code> value in the response. To retrieve the next batch of objects, provide the marker from the prior call in your next request.</p>
     pub fn set_next_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_marker = input; self
+        self.next_marker = input;
+        self
     }
     /// Appends an item to `versions`.
     ///
@@ -66,13 +67,17 @@ impl ListAvailableManagedRuleGroupVersionsOutputBuilder {
     /// <p>The versions that are currently available for the specified managed rule group. </p>
     pub fn versions(mut self, input: crate::types::ManagedRuleGroupVersion) -> Self {
         let mut v = self.versions.unwrap_or_default();
-                        v.push(input);
-                        self.versions = Some(v);
-                        self
+        v.push(input);
+        self.versions = Some(v);
+        self
     }
     /// <p>The versions that are currently available for the specified managed rule group. </p>
-    pub fn set_versions(mut self, input: std::option::Option<std::vec::Vec<crate::types::ManagedRuleGroupVersion>>) -> Self {
-        self.versions = input; self
+    pub fn set_versions(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::ManagedRuleGroupVersion>>,
+    ) -> Self {
+        self.versions = input;
+        self
     }
     /// <p>The name of the version that's currently set as the default. </p>
     pub fn current_default_version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -80,20 +85,24 @@ impl ListAvailableManagedRuleGroupVersionsOutputBuilder {
         self
     }
     /// <p>The name of the version that's currently set as the default. </p>
-    pub fn set_current_default_version(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.current_default_version = input; self
+    pub fn set_current_default_version(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.current_default_version = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`ListAvailableManagedRuleGroupVersionsOutput`](crate::operation::list_available_managed_rule_group_versions::ListAvailableManagedRuleGroupVersionsOutput).
-    pub fn build(self) -> crate::operation::list_available_managed_rule_group_versions::ListAvailableManagedRuleGroupVersionsOutput {
+    pub fn build(self) -> crate::operation::list_available_managed_rule_group_versions::ListAvailableManagedRuleGroupVersionsOutput{
         crate::operation::list_available_managed_rule_group_versions::ListAvailableManagedRuleGroupVersionsOutput {
             next_marker: self.next_marker
             ,
@@ -105,4 +114,3 @@ impl ListAvailableManagedRuleGroupVersionsOutputBuilder {
         }
     }
 }
-

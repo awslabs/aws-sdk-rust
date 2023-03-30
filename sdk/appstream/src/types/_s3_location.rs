@@ -3,7 +3,7 @@
 /// <p>Describes the S3 location.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct S3Location  {
+pub struct S3Location {
     /// <p>The S3 bucket of the S3 object.</p>
     #[doc(hidden)]
     pub s3_bucket: std::option::Option<std::string::String>,
@@ -13,11 +13,11 @@ pub struct S3Location  {
 }
 impl S3Location {
     /// <p>The S3 bucket of the S3 object.</p>
-    pub fn s3_bucket(&self) -> std::option::Option<& str> {
+    pub fn s3_bucket(&self) -> std::option::Option<&str> {
         self.s3_bucket.as_deref()
     }
     /// <p>The S3 key of the S3 object.</p>
-    pub fn s3_key(&self) -> std::option::Option<& str> {
+    pub fn s3_key(&self) -> std::option::Option<&str> {
         self.s3_key.as_deref()
     }
 }
@@ -43,7 +43,8 @@ impl S3LocationBuilder {
     }
     /// <p>The S3 bucket of the S3 object.</p>
     pub fn set_s3_bucket(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.s3_bucket = input; self
+        self.s3_bucket = input;
+        self
     }
     /// <p>The S3 key of the S3 object.</p>
     pub fn s3_key(mut self, input: impl Into<std::string::String>) -> Self {
@@ -52,16 +53,14 @@ impl S3LocationBuilder {
     }
     /// <p>The S3 key of the S3 object.</p>
     pub fn set_s3_key(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.s3_key = input; self
+        self.s3_key = input;
+        self
     }
     /// Consumes the builder and constructs a [`S3Location`](crate::types::S3Location).
     pub fn build(self) -> crate::types::S3Location {
         crate::types::S3Location {
-            s3_bucket: self.s3_bucket
-            ,
-            s3_key: self.s3_key
-            ,
+            s3_bucket: self.s3_bucket,
+            s3_key: self.s3_key,
         }
     }
 }
-

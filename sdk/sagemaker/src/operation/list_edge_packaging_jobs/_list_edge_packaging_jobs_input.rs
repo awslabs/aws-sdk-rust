@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListEdgePackagingJobsInput  {
+pub struct ListEdgePackagingJobsInput {
     /// <p>The response from the last list when returning a list large enough to need tokening.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
@@ -39,7 +39,7 @@ pub struct ListEdgePackagingJobsInput  {
 }
 impl ListEdgePackagingJobsInput {
     /// <p>The response from the last list when returning a list large enough to need tokening.</p>
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
     /// <p>Maximum number of results to select.</p>
@@ -47,45 +47,47 @@ impl ListEdgePackagingJobsInput {
         self.max_results
     }
     /// <p>Select jobs where the job was created after specified time.</p>
-    pub fn creation_time_after(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
+    pub fn creation_time_after(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.creation_time_after.as_ref()
     }
     /// <p>Select jobs where the job was created before specified time.</p>
-    pub fn creation_time_before(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
+    pub fn creation_time_before(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.creation_time_before.as_ref()
     }
     /// <p>Select jobs where the job was updated after specified time.</p>
-    pub fn last_modified_time_after(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
+    pub fn last_modified_time_after(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_modified_time_after.as_ref()
     }
     /// <p>Select jobs where the job was updated before specified time.</p>
-    pub fn last_modified_time_before(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
+    pub fn last_modified_time_before(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_modified_time_before.as_ref()
     }
     /// <p>Filter for jobs containing this name in their packaging job name.</p>
-    pub fn name_contains(&self) -> std::option::Option<& str> {
+    pub fn name_contains(&self) -> std::option::Option<&str> {
         self.name_contains.as_deref()
     }
     /// <p>Filter for jobs where the model name contains this string.</p>
-    pub fn model_name_contains(&self) -> std::option::Option<& str> {
+    pub fn model_name_contains(&self) -> std::option::Option<&str> {
         self.model_name_contains.as_deref()
     }
     /// <p>The job status to filter for.</p>
-    pub fn status_equals(&self) -> std::option::Option<& crate::types::EdgePackagingJobStatus> {
+    pub fn status_equals(&self) -> std::option::Option<&crate::types::EdgePackagingJobStatus> {
         self.status_equals.as_ref()
     }
     /// <p>Use to specify what column to sort by.</p>
-    pub fn sort_by(&self) -> std::option::Option<& crate::types::ListEdgePackagingJobsSortBy> {
+    pub fn sort_by(&self) -> std::option::Option<&crate::types::ListEdgePackagingJobsSortBy> {
         self.sort_by.as_ref()
     }
     /// <p>What direction to sort by.</p>
-    pub fn sort_order(&self) -> std::option::Option<& crate::types::SortOrder> {
+    pub fn sort_order(&self) -> std::option::Option<&crate::types::SortOrder> {
         self.sort_order.as_ref()
     }
 }
 impl ListEdgePackagingJobsInput {
     /// Creates a new builder-style object to manufacture [`ListEdgePackagingJobsInput`](crate::operation::list_edge_packaging_jobs::ListEdgePackagingJobsInput).
-    pub fn builder() -> crate::operation::list_edge_packaging_jobs::builders::ListEdgePackagingJobsInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::list_edge_packaging_jobs::builders::ListEdgePackagingJobsInputBuilder
+    {
         crate::operation::list_edge_packaging_jobs::builders::ListEdgePackagingJobsInputBuilder::default()
     }
 }
@@ -114,7 +116,8 @@ impl ListEdgePackagingJobsInputBuilder {
     }
     /// <p>The response from the last list when returning a list large enough to need tokening.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input; self
+        self.next_token = input;
+        self
     }
     /// <p>Maximum number of results to select.</p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -123,7 +126,8 @@ impl ListEdgePackagingJobsInputBuilder {
     }
     /// <p>Maximum number of results to select.</p>
     pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_results = input; self
+        self.max_results = input;
+        self
     }
     /// <p>Select jobs where the job was created after specified time.</p>
     pub fn creation_time_after(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -131,8 +135,12 @@ impl ListEdgePackagingJobsInputBuilder {
         self
     }
     /// <p>Select jobs where the job was created after specified time.</p>
-    pub fn set_creation_time_after(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.creation_time_after = input; self
+    pub fn set_creation_time_after(
+        mut self,
+        input: std::option::Option<aws_smithy_types::DateTime>,
+    ) -> Self {
+        self.creation_time_after = input;
+        self
     }
     /// <p>Select jobs where the job was created before specified time.</p>
     pub fn creation_time_before(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -140,8 +148,12 @@ impl ListEdgePackagingJobsInputBuilder {
         self
     }
     /// <p>Select jobs where the job was created before specified time.</p>
-    pub fn set_creation_time_before(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.creation_time_before = input; self
+    pub fn set_creation_time_before(
+        mut self,
+        input: std::option::Option<aws_smithy_types::DateTime>,
+    ) -> Self {
+        self.creation_time_before = input;
+        self
     }
     /// <p>Select jobs where the job was updated after specified time.</p>
     pub fn last_modified_time_after(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -149,8 +161,12 @@ impl ListEdgePackagingJobsInputBuilder {
         self
     }
     /// <p>Select jobs where the job was updated after specified time.</p>
-    pub fn set_last_modified_time_after(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.last_modified_time_after = input; self
+    pub fn set_last_modified_time_after(
+        mut self,
+        input: std::option::Option<aws_smithy_types::DateTime>,
+    ) -> Self {
+        self.last_modified_time_after = input;
+        self
     }
     /// <p>Select jobs where the job was updated before specified time.</p>
     pub fn last_modified_time_before(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -158,8 +174,12 @@ impl ListEdgePackagingJobsInputBuilder {
         self
     }
     /// <p>Select jobs where the job was updated before specified time.</p>
-    pub fn set_last_modified_time_before(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.last_modified_time_before = input; self
+    pub fn set_last_modified_time_before(
+        mut self,
+        input: std::option::Option<aws_smithy_types::DateTime>,
+    ) -> Self {
+        self.last_modified_time_before = input;
+        self
     }
     /// <p>Filter for jobs containing this name in their packaging job name.</p>
     pub fn name_contains(mut self, input: impl Into<std::string::String>) -> Self {
@@ -168,7 +188,8 @@ impl ListEdgePackagingJobsInputBuilder {
     }
     /// <p>Filter for jobs containing this name in their packaging job name.</p>
     pub fn set_name_contains(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name_contains = input; self
+        self.name_contains = input;
+        self
     }
     /// <p>Filter for jobs where the model name contains this string.</p>
     pub fn model_name_contains(mut self, input: impl Into<std::string::String>) -> Self {
@@ -176,8 +197,12 @@ impl ListEdgePackagingJobsInputBuilder {
         self
     }
     /// <p>Filter for jobs where the model name contains this string.</p>
-    pub fn set_model_name_contains(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.model_name_contains = input; self
+    pub fn set_model_name_contains(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.model_name_contains = input;
+        self
     }
     /// <p>The job status to filter for.</p>
     pub fn status_equals(mut self, input: crate::types::EdgePackagingJobStatus) -> Self {
@@ -185,8 +210,12 @@ impl ListEdgePackagingJobsInputBuilder {
         self
     }
     /// <p>The job status to filter for.</p>
-    pub fn set_status_equals(mut self, input: std::option::Option<crate::types::EdgePackagingJobStatus>) -> Self {
-        self.status_equals = input; self
+    pub fn set_status_equals(
+        mut self,
+        input: std::option::Option<crate::types::EdgePackagingJobStatus>,
+    ) -> Self {
+        self.status_equals = input;
+        self
     }
     /// <p>Use to specify what column to sort by.</p>
     pub fn sort_by(mut self, input: crate::types::ListEdgePackagingJobsSortBy) -> Self {
@@ -194,8 +223,12 @@ impl ListEdgePackagingJobsInputBuilder {
         self
     }
     /// <p>Use to specify what column to sort by.</p>
-    pub fn set_sort_by(mut self, input: std::option::Option<crate::types::ListEdgePackagingJobsSortBy>) -> Self {
-        self.sort_by = input; self
+    pub fn set_sort_by(
+        mut self,
+        input: std::option::Option<crate::types::ListEdgePackagingJobsSortBy>,
+    ) -> Self {
+        self.sort_by = input;
+        self
     }
     /// <p>What direction to sort by.</p>
     pub fn sort_order(mut self, input: crate::types::SortOrder) -> Self {
@@ -204,36 +237,30 @@ impl ListEdgePackagingJobsInputBuilder {
     }
     /// <p>What direction to sort by.</p>
     pub fn set_sort_order(mut self, input: std::option::Option<crate::types::SortOrder>) -> Self {
-        self.sort_order = input; self
+        self.sort_order = input;
+        self
     }
     /// Consumes the builder and constructs a [`ListEdgePackagingJobsInput`](crate::operation::list_edge_packaging_jobs::ListEdgePackagingJobsInput).
-    pub fn build(self) -> Result<crate::operation::list_edge_packaging_jobs::ListEdgePackagingJobsInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::list_edge_packaging_jobs::ListEdgePackagingJobsInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::list_edge_packaging_jobs::ListEdgePackagingJobsInput {
-                next_token: self.next_token
-                ,
-                max_results: self.max_results
-                ,
-                creation_time_after: self.creation_time_after
-                ,
-                creation_time_before: self.creation_time_before
-                ,
-                last_modified_time_after: self.last_modified_time_after
-                ,
-                last_modified_time_before: self.last_modified_time_before
-                ,
-                name_contains: self.name_contains
-                ,
-                model_name_contains: self.model_name_contains
-                ,
-                status_equals: self.status_equals
-                ,
-                sort_by: self.sort_by
-                ,
-                sort_order: self.sort_order
-                ,
-            }
+                next_token: self.next_token,
+                max_results: self.max_results,
+                creation_time_after: self.creation_time_after,
+                creation_time_before: self.creation_time_before,
+                last_modified_time_after: self.last_modified_time_after,
+                last_modified_time_before: self.last_modified_time_before,
+                name_contains: self.name_contains,
+                model_name_contains: self.model_name_contains,
+                status_equals: self.status_equals,
+                sort_by: self.sort_by,
+                sort_order: self.sort_order,
+            },
         )
     }
 }
-

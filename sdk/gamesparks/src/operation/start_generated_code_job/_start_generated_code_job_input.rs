@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct StartGeneratedCodeJobInput  {
+pub struct StartGeneratedCodeJobInput {
     /// <p>The name of the game.</p>
     #[doc(hidden)]
     pub game_name: std::option::Option<std::string::String>,
@@ -15,21 +15,23 @@ pub struct StartGeneratedCodeJobInput  {
 }
 impl StartGeneratedCodeJobInput {
     /// <p>The name of the game.</p>
-    pub fn game_name(&self) -> std::option::Option<& str> {
+    pub fn game_name(&self) -> std::option::Option<&str> {
         self.game_name.as_deref()
     }
     /// <p>The identifier of the snapshot for which to generate code.</p>
-    pub fn snapshot_id(&self) -> std::option::Option<& str> {
+    pub fn snapshot_id(&self) -> std::option::Option<&str> {
         self.snapshot_id.as_deref()
     }
     /// <p>Properties of the generator to use for the job.</p>
-    pub fn generator(&self) -> std::option::Option<& crate::types::Generator> {
+    pub fn generator(&self) -> std::option::Option<&crate::types::Generator> {
         self.generator.as_ref()
     }
 }
 impl StartGeneratedCodeJobInput {
     /// Creates a new builder-style object to manufacture [`StartGeneratedCodeJobInput`](crate::operation::start_generated_code_job::StartGeneratedCodeJobInput).
-    pub fn builder() -> crate::operation::start_generated_code_job::builders::StartGeneratedCodeJobInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::start_generated_code_job::builders::StartGeneratedCodeJobInputBuilder
+    {
         crate::operation::start_generated_code_job::builders::StartGeneratedCodeJobInputBuilder::default()
     }
 }
@@ -50,7 +52,8 @@ impl StartGeneratedCodeJobInputBuilder {
     }
     /// <p>The name of the game.</p>
     pub fn set_game_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.game_name = input; self
+        self.game_name = input;
+        self
     }
     /// <p>The identifier of the snapshot for which to generate code.</p>
     pub fn snapshot_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -59,7 +62,8 @@ impl StartGeneratedCodeJobInputBuilder {
     }
     /// <p>The identifier of the snapshot for which to generate code.</p>
     pub fn set_snapshot_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.snapshot_id = input; self
+        self.snapshot_id = input;
+        self
     }
     /// <p>Properties of the generator to use for the job.</p>
     pub fn generator(mut self, input: crate::types::Generator) -> Self {
@@ -68,20 +72,22 @@ impl StartGeneratedCodeJobInputBuilder {
     }
     /// <p>Properties of the generator to use for the job.</p>
     pub fn set_generator(mut self, input: std::option::Option<crate::types::Generator>) -> Self {
-        self.generator = input; self
+        self.generator = input;
+        self
     }
     /// Consumes the builder and constructs a [`StartGeneratedCodeJobInput`](crate::operation::start_generated_code_job::StartGeneratedCodeJobInput).
-    pub fn build(self) -> Result<crate::operation::start_generated_code_job::StartGeneratedCodeJobInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::start_generated_code_job::StartGeneratedCodeJobInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::start_generated_code_job::StartGeneratedCodeJobInput {
-                game_name: self.game_name
-                ,
-                snapshot_id: self.snapshot_id
-                ,
-                generator: self.generator
-                ,
-            }
+                game_name: self.game_name,
+                snapshot_id: self.snapshot_id,
+                generator: self.generator,
+            },
         )
     }
 }
-

@@ -40,4 +40,3 @@ pub use crate::types::_firewall_domain_list::FirewallDomainListBuilder;
 pub use crate::types::_ip_address_update::IpAddressUpdateBuilder;
 
 pub use crate::types::_ip_address_request::IpAddressRequestBuilder;
-

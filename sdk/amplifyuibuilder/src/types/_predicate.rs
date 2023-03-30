@@ -3,7 +3,7 @@
 /// <p>Stores information for generating Amplify DataStore queries. Use a <code>Predicate</code> to retrieve a subset of the data in a collection.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Predicate  {
+pub struct Predicate {
     /// <p>A list of predicates to combine logically.</p>
     #[doc(hidden)]
     pub or: std::option::Option<std::vec::Vec<crate::types::Predicate>>,
@@ -22,23 +22,23 @@ pub struct Predicate  {
 }
 impl Predicate {
     /// <p>A list of predicates to combine logically.</p>
-    pub fn or(&self) -> std::option::Option<& [crate::types::Predicate]> {
+    pub fn or(&self) -> std::option::Option<&[crate::types::Predicate]> {
         self.or.as_deref()
     }
     /// <p>A list of predicates to combine logically.</p>
-    pub fn and(&self) -> std::option::Option<& [crate::types::Predicate]> {
+    pub fn and(&self) -> std::option::Option<&[crate::types::Predicate]> {
         self.and.as_deref()
     }
     /// <p>The field to query.</p>
-    pub fn field(&self) -> std::option::Option<& str> {
+    pub fn field(&self) -> std::option::Option<&str> {
         self.field.as_deref()
     }
     /// <p>The operator to use to perform the evaluation.</p>
-    pub fn operator(&self) -> std::option::Option<& str> {
+    pub fn operator(&self) -> std::option::Option<&str> {
         self.operator.as_deref()
     }
     /// <p>The value to use when performing the evaluation.</p>
-    pub fn operand(&self) -> std::option::Option<& str> {
+    pub fn operand(&self) -> std::option::Option<&str> {
         self.operand.as_deref()
     }
 }
@@ -67,13 +67,17 @@ impl PredicateBuilder {
     /// <p>A list of predicates to combine logically.</p>
     pub fn or(mut self, input: crate::types::Predicate) -> Self {
         let mut v = self.or.unwrap_or_default();
-                        v.push(input);
-                        self.or = Some(v);
-                        self
+        v.push(input);
+        self.or = Some(v);
+        self
     }
     /// <p>A list of predicates to combine logically.</p>
-    pub fn set_or(mut self, input: std::option::Option<std::vec::Vec<crate::types::Predicate>>) -> Self {
-        self.or = input; self
+    pub fn set_or(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::Predicate>>,
+    ) -> Self {
+        self.or = input;
+        self
     }
     /// Appends an item to `and`.
     ///
@@ -82,13 +86,17 @@ impl PredicateBuilder {
     /// <p>A list of predicates to combine logically.</p>
     pub fn and(mut self, input: crate::types::Predicate) -> Self {
         let mut v = self.and.unwrap_or_default();
-                        v.push(input);
-                        self.and = Some(v);
-                        self
+        v.push(input);
+        self.and = Some(v);
+        self
     }
     /// <p>A list of predicates to combine logically.</p>
-    pub fn set_and(mut self, input: std::option::Option<std::vec::Vec<crate::types::Predicate>>) -> Self {
-        self.and = input; self
+    pub fn set_and(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::Predicate>>,
+    ) -> Self {
+        self.and = input;
+        self
     }
     /// <p>The field to query.</p>
     pub fn field(mut self, input: impl Into<std::string::String>) -> Self {
@@ -97,7 +105,8 @@ impl PredicateBuilder {
     }
     /// <p>The field to query.</p>
     pub fn set_field(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.field = input; self
+        self.field = input;
+        self
     }
     /// <p>The operator to use to perform the evaluation.</p>
     pub fn operator(mut self, input: impl Into<std::string::String>) -> Self {
@@ -106,7 +115,8 @@ impl PredicateBuilder {
     }
     /// <p>The operator to use to perform the evaluation.</p>
     pub fn set_operator(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.operator = input; self
+        self.operator = input;
+        self
     }
     /// <p>The value to use when performing the evaluation.</p>
     pub fn operand(mut self, input: impl Into<std::string::String>) -> Self {
@@ -115,22 +125,17 @@ impl PredicateBuilder {
     }
     /// <p>The value to use when performing the evaluation.</p>
     pub fn set_operand(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.operand = input; self
+        self.operand = input;
+        self
     }
     /// Consumes the builder and constructs a [`Predicate`](crate::types::Predicate).
     pub fn build(self) -> crate::types::Predicate {
         crate::types::Predicate {
-            or: self.or
-            ,
-            and: self.and
-            ,
-            field: self.field
-            ,
-            operator: self.operator
-            ,
-            operand: self.operand
-            ,
+            or: self.or,
+            and: self.and,
+            field: self.field,
+            operator: self.operator,
+            operand: self.operand,
         }
     }
 }
-

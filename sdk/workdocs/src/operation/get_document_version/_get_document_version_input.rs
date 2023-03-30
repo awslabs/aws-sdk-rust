@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct GetDocumentVersionInput  {
+pub struct GetDocumentVersionInput {
     /// <p>Amazon WorkDocs authentication token. Not required when using AWS administrator credentials to access the API.</p>
     #[doc(hidden)]
     pub authentication_token: std::option::Option<std::string::String>,
@@ -21,19 +21,19 @@ pub struct GetDocumentVersionInput  {
 }
 impl GetDocumentVersionInput {
     /// <p>Amazon WorkDocs authentication token. Not required when using AWS administrator credentials to access the API.</p>
-    pub fn authentication_token(&self) -> std::option::Option<& str> {
+    pub fn authentication_token(&self) -> std::option::Option<&str> {
         self.authentication_token.as_deref()
     }
     /// <p>The ID of the document.</p>
-    pub fn document_id(&self) -> std::option::Option<& str> {
+    pub fn document_id(&self) -> std::option::Option<&str> {
         self.document_id.as_deref()
     }
     /// <p>The version ID of the document.</p>
-    pub fn version_id(&self) -> std::option::Option<& str> {
+    pub fn version_id(&self) -> std::option::Option<&str> {
         self.version_id.as_deref()
     }
     /// <p>A comma-separated list of values. Specify "SOURCE" to include a URL for the source document.</p>
-    pub fn fields(&self) -> std::option::Option<& str> {
+    pub fn fields(&self) -> std::option::Option<&str> {
         self.fields.as_deref()
     }
     /// <p>Set this to TRUE to include custom metadata in the response.</p>
@@ -41,7 +41,7 @@ impl GetDocumentVersionInput {
         self.include_custom_metadata
     }
 }
-impl  std::fmt::Debug for GetDocumentVersionInput  {
+impl std::fmt::Debug for GetDocumentVersionInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetDocumentVersionInput");
         formatter.field("authentication_token", &"*** Sensitive Data Redacted ***");
@@ -54,7 +54,8 @@ impl  std::fmt::Debug for GetDocumentVersionInput  {
 }
 impl GetDocumentVersionInput {
     /// Creates a new builder-style object to manufacture [`GetDocumentVersionInput`](crate::operation::get_document_version::GetDocumentVersionInput).
-    pub fn builder() -> crate::operation::get_document_version::builders::GetDocumentVersionInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::get_document_version::builders::GetDocumentVersionInputBuilder {
         crate::operation::get_document_version::builders::GetDocumentVersionInputBuilder::default()
     }
 }
@@ -76,8 +77,12 @@ impl GetDocumentVersionInputBuilder {
         self
     }
     /// <p>Amazon WorkDocs authentication token. Not required when using AWS administrator credentials to access the API.</p>
-    pub fn set_authentication_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.authentication_token = input; self
+    pub fn set_authentication_token(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.authentication_token = input;
+        self
     }
     /// <p>The ID of the document.</p>
     pub fn document_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -86,7 +91,8 @@ impl GetDocumentVersionInputBuilder {
     }
     /// <p>The ID of the document.</p>
     pub fn set_document_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.document_id = input; self
+        self.document_id = input;
+        self
     }
     /// <p>The version ID of the document.</p>
     pub fn version_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -95,7 +101,8 @@ impl GetDocumentVersionInputBuilder {
     }
     /// <p>The version ID of the document.</p>
     pub fn set_version_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.version_id = input; self
+        self.version_id = input;
+        self
     }
     /// <p>A comma-separated list of values. Specify "SOURCE" to include a URL for the source document.</p>
     pub fn fields(mut self, input: impl Into<std::string::String>) -> Self {
@@ -104,7 +111,8 @@ impl GetDocumentVersionInputBuilder {
     }
     /// <p>A comma-separated list of values. Specify "SOURCE" to include a URL for the source document.</p>
     pub fn set_fields(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.fields = input; self
+        self.fields = input;
+        self
     }
     /// <p>Set this to TRUE to include custom metadata in the response.</p>
     pub fn include_custom_metadata(mut self, input: bool) -> Self {
@@ -113,24 +121,24 @@ impl GetDocumentVersionInputBuilder {
     }
     /// <p>Set this to TRUE to include custom metadata in the response.</p>
     pub fn set_include_custom_metadata(mut self, input: std::option::Option<bool>) -> Self {
-        self.include_custom_metadata = input; self
+        self.include_custom_metadata = input;
+        self
     }
     /// Consumes the builder and constructs a [`GetDocumentVersionInput`](crate::operation::get_document_version::GetDocumentVersionInput).
-    pub fn build(self) -> Result<crate::operation::get_document_version::GetDocumentVersionInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::get_document_version::GetDocumentVersionInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::get_document_version::GetDocumentVersionInput {
-                authentication_token: self.authentication_token
-                ,
-                document_id: self.document_id
-                ,
-                version_id: self.version_id
-                ,
-                fields: self.fields
-                ,
-                include_custom_metadata: self.include_custom_metadata
-                    .unwrap_or_default()
-                ,
-            }
+                authentication_token: self.authentication_token,
+                document_id: self.document_id,
+                version_id: self.version_id,
+                fields: self.fields,
+                include_custom_metadata: self.include_custom_metadata.unwrap_or_default(),
+            },
         )
     }
 }
@@ -145,4 +153,3 @@ impl std::fmt::Debug for GetDocumentVersionInputBuilder {
         formatter.finish()
     }
 }
-

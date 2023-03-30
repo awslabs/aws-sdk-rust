@@ -2,20 +2,20 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeDataQualityJobDefinitionInput  {
+pub struct DescribeDataQualityJobDefinitionInput {
     /// <p>The name of the data quality monitoring job definition to describe.</p>
     #[doc(hidden)]
     pub job_definition_name: std::option::Option<std::string::String>,
 }
 impl DescribeDataQualityJobDefinitionInput {
     /// <p>The name of the data quality monitoring job definition to describe.</p>
-    pub fn job_definition_name(&self) -> std::option::Option<& str> {
+    pub fn job_definition_name(&self) -> std::option::Option<&str> {
         self.job_definition_name.as_deref()
     }
 }
 impl DescribeDataQualityJobDefinitionInput {
     /// Creates a new builder-style object to manufacture [`DescribeDataQualityJobDefinitionInput`](crate::operation::describe_data_quality_job_definition::DescribeDataQualityJobDefinitionInput).
-    pub fn builder() -> crate::operation::describe_data_quality_job_definition::builders::DescribeDataQualityJobDefinitionInputBuilder {
+    pub fn builder() -> crate::operation::describe_data_quality_job_definition::builders::DescribeDataQualityJobDefinitionInputBuilder{
         crate::operation::describe_data_quality_job_definition::builders::DescribeDataQualityJobDefinitionInputBuilder::default()
     }
 }
@@ -33,11 +33,15 @@ impl DescribeDataQualityJobDefinitionInputBuilder {
         self
     }
     /// <p>The name of the data quality monitoring job definition to describe.</p>
-    pub fn set_job_definition_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.job_definition_name = input; self
+    pub fn set_job_definition_name(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.job_definition_name = input;
+        self
     }
     /// Consumes the builder and constructs a [`DescribeDataQualityJobDefinitionInput`](crate::operation::describe_data_quality_job_definition::DescribeDataQualityJobDefinitionInput).
-    pub fn build(self) -> Result<crate::operation::describe_data_quality_job_definition::DescribeDataQualityJobDefinitionInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> Result<crate::operation::describe_data_quality_job_definition::DescribeDataQualityJobDefinitionInput, aws_smithy_http::operation::error::BuildError>{
         Ok(
             crate::operation::describe_data_quality_job_definition::DescribeDataQualityJobDefinitionInput {
                 job_definition_name: self.job_definition_name
@@ -46,4 +50,3 @@ impl DescribeDataQualityJobDefinitionInputBuilder {
         )
     }
 }
-

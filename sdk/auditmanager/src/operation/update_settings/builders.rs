@@ -4,49 +4,67 @@ pub use crate::operation::update_settings::_update_settings_output::UpdateSettin
 pub use crate::operation::update_settings::_update_settings_input::UpdateSettingsInputBuilder;
 
 /// Fluent builder constructing a request to `UpdateSettings`.
-/// 
+///
 /// <p> Updates Audit Manager settings for the current user account. </p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct UpdateSettingsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::update_settings::builders::UpdateSettingsInputBuilder
-            }
-impl UpdateSettingsFluentBuilder  {
+    handle: std::sync::Arc<crate::client::Handle>,
+    inner: crate::operation::update_settings::builders::UpdateSettingsInputBuilder,
+}
+impl UpdateSettingsFluentBuilder {
     /// Creates a new `UpdateSettings`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
-                    /// sent. The operation's inner [http::Request] can be modified as well.
-                    pub async fn customize(self) -> std::result::Result<
-                        crate::client::customize::CustomizableOperation<crate::operation::update_settings::UpdateSettings, aws_http::retry::AwsResponseRetryClassifier,>,
-                        aws_smithy_http::result::SdkError<crate::operation::update_settings::UpdateSettingsError>
-                    >  {
-                        let handle = self.handle.clone();
-                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-                    }
-    
-                    /// Sends the request and returns the response.
-                    ///
-                    /// If an error occurs, an `SdkError` will be returned with additional details that
-                    /// can be matched against.
-                    ///
-                    /// By default, any retryable failures will be retried twice. Retry behavior
-                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                    /// set when configuring the client.
-                    pub async fn send(self) -> std::result::Result<crate::operation::update_settings::UpdateSettingsOutput, aws_smithy_http::result::SdkError<crate::operation::update_settings::UpdateSettingsError>>
-                     {
-                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&self.handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        self.handle.client.call(op).await
-                    }
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle,
+            inner: Default::default(),
+        }
+    }
+
+    /// Consume this builder, creating a customizable operation that can be modified before being
+    /// sent. The operation's inner [http::Request] can be modified as well.
+    pub async fn customize(
+        self,
+    ) -> std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::update_settings::UpdateSettings,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::result::SdkError<crate::operation::update_settings::UpdateSettingsError>,
+    > {
+        let handle = self.handle.clone();
+        let operation = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+    }
+
+    /// Sends the request and returns the response.
+    ///
+    /// If an error occurs, an `SdkError` will be returned with additional details that
+    /// can be matched against.
+    ///
+    /// By default, any retryable failures will be retried twice. Retry behavior
+    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+    /// set when configuring the client.
+    pub async fn send(
+        self,
+    ) -> std::result::Result<
+        crate::operation::update_settings::UpdateSettingsOutput,
+        aws_smithy_http::result::SdkError<crate::operation::update_settings::UpdateSettingsError>,
+    > {
+        let op = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&self.handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        self.handle.client.call(op).await
+    }
     /// <p> The Amazon Simple Notification Service (Amazon SNS) topic that Audit Manager sends notifications to. </p>
     pub fn sns_topic(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.sns_topic(input.into());
@@ -58,12 +76,18 @@ impl UpdateSettingsFluentBuilder  {
         self
     }
     /// <p> The default storage destination for assessment reports. </p>
-    pub fn default_assessment_reports_destination(mut self, input: crate::types::AssessmentReportsDestination) -> Self {
+    pub fn default_assessment_reports_destination(
+        mut self,
+        input: crate::types::AssessmentReportsDestination,
+    ) -> Self {
         self.inner = self.inner.default_assessment_reports_destination(input);
         self
     }
     /// <p> The default storage destination for assessment reports. </p>
-    pub fn set_default_assessment_reports_destination(mut self, input: std::option::Option<crate::types::AssessmentReportsDestination>) -> Self {
+    pub fn set_default_assessment_reports_destination(
+        mut self,
+        input: std::option::Option<crate::types::AssessmentReportsDestination>,
+    ) -> Self {
         self.inner = self.inner.set_default_assessment_reports_destination(input);
         self
     }
@@ -77,7 +101,10 @@ impl UpdateSettingsFluentBuilder  {
         self
     }
     /// <p> A list of the default audit owners. </p>
-    pub fn set_default_process_owners(mut self, input: std::option::Option<std::vec::Vec<crate::types::Role>>) -> Self {
+    pub fn set_default_process_owners(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::Role>>,
+    ) -> Self {
         self.inner = self.inner.set_default_process_owners(input);
         self
     }
@@ -91,15 +118,15 @@ impl UpdateSettingsFluentBuilder  {
         self.inner = self.inner.set_kms_key(input);
         self
     }
-    /// <p>Specifies whether the evidence finder feature is enabled. Change this attribute to enable or disable evidence finder.</p> <important> 
-    /// <p>When you use this attribute to disable evidence finder, Audit Manager deletes the event data store that’s used to query your evidence data. As a result, you can’t re-enable evidence finder and use the feature again. Your only alternative is to <a href="https://docs.aws.amazon.com/audit-manager/latest/APIReference/API_DeregisterAccount.html">deregister</a> and then <a href="https://docs.aws.amazon.com/audit-manager/latest/APIReference/API_RegisterAccount.html">re-register</a> Audit Manager. </p> 
+    /// <p>Specifies whether the evidence finder feature is enabled. Change this attribute to enable or disable evidence finder.</p> <important>
+    /// <p>When you use this attribute to disable evidence finder, Audit Manager deletes the event data store that’s used to query your evidence data. As a result, you can’t re-enable evidence finder and use the feature again. Your only alternative is to <a href="https://docs.aws.amazon.com/audit-manager/latest/APIReference/API_DeregisterAccount.html">deregister</a> and then <a href="https://docs.aws.amazon.com/audit-manager/latest/APIReference/API_RegisterAccount.html">re-register</a> Audit Manager. </p>
     /// </important>
     pub fn evidence_finder_enabled(mut self, input: bool) -> Self {
         self.inner = self.inner.evidence_finder_enabled(input);
         self
     }
-    /// <p>Specifies whether the evidence finder feature is enabled. Change this attribute to enable or disable evidence finder.</p> <important> 
-    /// <p>When you use this attribute to disable evidence finder, Audit Manager deletes the event data store that’s used to query your evidence data. As a result, you can’t re-enable evidence finder and use the feature again. Your only alternative is to <a href="https://docs.aws.amazon.com/audit-manager/latest/APIReference/API_DeregisterAccount.html">deregister</a> and then <a href="https://docs.aws.amazon.com/audit-manager/latest/APIReference/API_RegisterAccount.html">re-register</a> Audit Manager. </p> 
+    /// <p>Specifies whether the evidence finder feature is enabled. Change this attribute to enable or disable evidence finder.</p> <important>
+    /// <p>When you use this attribute to disable evidence finder, Audit Manager deletes the event data store that’s used to query your evidence data. As a result, you can’t re-enable evidence finder and use the feature again. Your only alternative is to <a href="https://docs.aws.amazon.com/audit-manager/latest/APIReference/API_DeregisterAccount.html">deregister</a> and then <a href="https://docs.aws.amazon.com/audit-manager/latest/APIReference/API_RegisterAccount.html">re-register</a> Audit Manager. </p>
     /// </important>
     pub fn set_evidence_finder_enabled(mut self, input: std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_evidence_finder_enabled(input);
@@ -111,9 +138,11 @@ impl UpdateSettingsFluentBuilder  {
         self
     }
     /// <p>The deregistration policy for your Audit Manager data. You can use this attribute to determine how your data is handled when you deregister Audit Manager.</p>
-    pub fn set_deregistration_policy(mut self, input: std::option::Option<crate::types::DeregistrationPolicy>) -> Self {
+    pub fn set_deregistration_policy(
+        mut self,
+        input: std::option::Option<crate::types::DeregistrationPolicy>,
+    ) -> Self {
         self.inner = self.inner.set_deregistration_policy(input);
         self
     }
 }
-

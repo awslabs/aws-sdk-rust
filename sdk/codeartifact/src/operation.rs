@@ -108,4 +108,3 @@ pub mod update_package_versions_status;
 
 /// Types for the `UpdateRepository` operation.
 pub mod update_repository;
-

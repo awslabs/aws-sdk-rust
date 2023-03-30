@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetBotChannelAssociationInput  {
+pub struct GetBotChannelAssociationInput {
     /// <p>The name of the association between the bot and the channel. The name is case sensitive. </p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -15,21 +15,23 @@ pub struct GetBotChannelAssociationInput  {
 }
 impl GetBotChannelAssociationInput {
     /// <p>The name of the association between the bot and the channel. The name is case sensitive. </p>
-    pub fn name(&self) -> std::option::Option<& str> {
+    pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>The name of the Amazon Lex bot.</p>
-    pub fn bot_name(&self) -> std::option::Option<& str> {
+    pub fn bot_name(&self) -> std::option::Option<&str> {
         self.bot_name.as_deref()
     }
     /// <p>An alias pointing to the specific version of the Amazon Lex bot to which this association is being made.</p>
-    pub fn bot_alias(&self) -> std::option::Option<& str> {
+    pub fn bot_alias(&self) -> std::option::Option<&str> {
         self.bot_alias.as_deref()
     }
 }
 impl GetBotChannelAssociationInput {
     /// Creates a new builder-style object to manufacture [`GetBotChannelAssociationInput`](crate::operation::get_bot_channel_association::GetBotChannelAssociationInput).
-    pub fn builder() -> crate::operation::get_bot_channel_association::builders::GetBotChannelAssociationInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::get_bot_channel_association::builders::GetBotChannelAssociationInputBuilder
+    {
         crate::operation::get_bot_channel_association::builders::GetBotChannelAssociationInputBuilder::default()
     }
 }
@@ -50,7 +52,8 @@ impl GetBotChannelAssociationInputBuilder {
     }
     /// <p>The name of the association between the bot and the channel. The name is case sensitive. </p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input; self
+        self.name = input;
+        self
     }
     /// <p>The name of the Amazon Lex bot.</p>
     pub fn bot_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -59,7 +62,8 @@ impl GetBotChannelAssociationInputBuilder {
     }
     /// <p>The name of the Amazon Lex bot.</p>
     pub fn set_bot_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.bot_name = input; self
+        self.bot_name = input;
+        self
     }
     /// <p>An alias pointing to the specific version of the Amazon Lex bot to which this association is being made.</p>
     pub fn bot_alias(mut self, input: impl Into<std::string::String>) -> Self {
@@ -68,20 +72,22 @@ impl GetBotChannelAssociationInputBuilder {
     }
     /// <p>An alias pointing to the specific version of the Amazon Lex bot to which this association is being made.</p>
     pub fn set_bot_alias(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.bot_alias = input; self
+        self.bot_alias = input;
+        self
     }
     /// Consumes the builder and constructs a [`GetBotChannelAssociationInput`](crate::operation::get_bot_channel_association::GetBotChannelAssociationInput).
-    pub fn build(self) -> Result<crate::operation::get_bot_channel_association::GetBotChannelAssociationInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::get_bot_channel_association::GetBotChannelAssociationInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::get_bot_channel_association::GetBotChannelAssociationInput {
-                name: self.name
-                ,
-                bot_name: self.bot_name
-                ,
-                bot_alias: self.bot_alias
-                ,
-            }
+                name: self.name,
+                bot_name: self.bot_name,
+                bot_alias: self.bot_alias,
+            },
         )
     }
 }
-

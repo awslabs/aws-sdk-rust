@@ -3,24 +3,24 @@
 /// <p>The parameters for using a Lambda function as a target.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PipeTargetLambdaFunctionParameters  {
-    /// <p>Choose from the following options.</p> 
-    /// <ul> 
-    /// <li> <p> <code>RequestResponse</code> (default) - Invoke the function synchronously. Keep the connection open until the function returns a response or times out. The API response includes the function response and additional data.</p> </li> 
-    /// <li> <p> <code>Event</code> - Invoke the function asynchronously. Send events that fail multiple times to the function's dead-letter queue (if it's configured). The API response only includes a status code.</p> </li> 
-    /// <li> <p> <code>DryRun</code> - Validate parameter values and verify that the user or role has permission to invoke the function.</p> </li> 
+pub struct PipeTargetLambdaFunctionParameters {
+    /// <p>Choose from the following options.</p>
+    /// <ul>
+    /// <li> <p> <code>RequestResponse</code> (default) - Invoke the function synchronously. Keep the connection open until the function returns a response or times out. The API response includes the function response and additional data.</p> </li>
+    /// <li> <p> <code>Event</code> - Invoke the function asynchronously. Send events that fail multiple times to the function's dead-letter queue (if it's configured). The API response only includes a status code.</p> </li>
+    /// <li> <p> <code>DryRun</code> - Validate parameter values and verify that the user or role has permission to invoke the function.</p> </li>
     /// </ul>
     #[doc(hidden)]
     pub invocation_type: std::option::Option<crate::types::PipeTargetInvocationType>,
 }
 impl PipeTargetLambdaFunctionParameters {
-    /// <p>Choose from the following options.</p> 
-    /// <ul> 
-    /// <li> <p> <code>RequestResponse</code> (default) - Invoke the function synchronously. Keep the connection open until the function returns a response or times out. The API response includes the function response and additional data.</p> </li> 
-    /// <li> <p> <code>Event</code> - Invoke the function asynchronously. Send events that fail multiple times to the function's dead-letter queue (if it's configured). The API response only includes a status code.</p> </li> 
-    /// <li> <p> <code>DryRun</code> - Validate parameter values and verify that the user or role has permission to invoke the function.</p> </li> 
+    /// <p>Choose from the following options.</p>
+    /// <ul>
+    /// <li> <p> <code>RequestResponse</code> (default) - Invoke the function synchronously. Keep the connection open until the function returns a response or times out. The API response includes the function response and additional data.</p> </li>
+    /// <li> <p> <code>Event</code> - Invoke the function asynchronously. Send events that fail multiple times to the function's dead-letter queue (if it's configured). The API response only includes a status code.</p> </li>
+    /// <li> <p> <code>DryRun</code> - Validate parameter values and verify that the user or role has permission to invoke the function.</p> </li>
     /// </ul>
-    pub fn invocation_type(&self) -> std::option::Option<& crate::types::PipeTargetInvocationType> {
+    pub fn invocation_type(&self) -> std::option::Option<&crate::types::PipeTargetInvocationType> {
         self.invocation_type.as_ref()
     }
 }
@@ -38,31 +38,33 @@ pub struct PipeTargetLambdaFunctionParametersBuilder {
     pub(crate) invocation_type: std::option::Option<crate::types::PipeTargetInvocationType>,
 }
 impl PipeTargetLambdaFunctionParametersBuilder {
-    /// <p>Choose from the following options.</p> 
-    /// <ul> 
-    /// <li> <p> <code>RequestResponse</code> (default) - Invoke the function synchronously. Keep the connection open until the function returns a response or times out. The API response includes the function response and additional data.</p> </li> 
-    /// <li> <p> <code>Event</code> - Invoke the function asynchronously. Send events that fail multiple times to the function's dead-letter queue (if it's configured). The API response only includes a status code.</p> </li> 
-    /// <li> <p> <code>DryRun</code> - Validate parameter values and verify that the user or role has permission to invoke the function.</p> </li> 
+    /// <p>Choose from the following options.</p>
+    /// <ul>
+    /// <li> <p> <code>RequestResponse</code> (default) - Invoke the function synchronously. Keep the connection open until the function returns a response or times out. The API response includes the function response and additional data.</p> </li>
+    /// <li> <p> <code>Event</code> - Invoke the function asynchronously. Send events that fail multiple times to the function's dead-letter queue (if it's configured). The API response only includes a status code.</p> </li>
+    /// <li> <p> <code>DryRun</code> - Validate parameter values and verify that the user or role has permission to invoke the function.</p> </li>
     /// </ul>
     pub fn invocation_type(mut self, input: crate::types::PipeTargetInvocationType) -> Self {
         self.invocation_type = Some(input);
         self
     }
-    /// <p>Choose from the following options.</p> 
-    /// <ul> 
-    /// <li> <p> <code>RequestResponse</code> (default) - Invoke the function synchronously. Keep the connection open until the function returns a response or times out. The API response includes the function response and additional data.</p> </li> 
-    /// <li> <p> <code>Event</code> - Invoke the function asynchronously. Send events that fail multiple times to the function's dead-letter queue (if it's configured). The API response only includes a status code.</p> </li> 
-    /// <li> <p> <code>DryRun</code> - Validate parameter values and verify that the user or role has permission to invoke the function.</p> </li> 
+    /// <p>Choose from the following options.</p>
+    /// <ul>
+    /// <li> <p> <code>RequestResponse</code> (default) - Invoke the function synchronously. Keep the connection open until the function returns a response or times out. The API response includes the function response and additional data.</p> </li>
+    /// <li> <p> <code>Event</code> - Invoke the function asynchronously. Send events that fail multiple times to the function's dead-letter queue (if it's configured). The API response only includes a status code.</p> </li>
+    /// <li> <p> <code>DryRun</code> - Validate parameter values and verify that the user or role has permission to invoke the function.</p> </li>
     /// </ul>
-    pub fn set_invocation_type(mut self, input: std::option::Option<crate::types::PipeTargetInvocationType>) -> Self {
-        self.invocation_type = input; self
+    pub fn set_invocation_type(
+        mut self,
+        input: std::option::Option<crate::types::PipeTargetInvocationType>,
+    ) -> Self {
+        self.invocation_type = input;
+        self
     }
     /// Consumes the builder and constructs a [`PipeTargetLambdaFunctionParameters`](crate::types::PipeTargetLambdaFunctionParameters).
     pub fn build(self) -> crate::types::PipeTargetLambdaFunctionParameters {
         crate::types::PipeTargetLambdaFunctionParameters {
-            invocation_type: self.invocation_type
-            ,
+            invocation_type: self.invocation_type,
         }
     }
 }
-

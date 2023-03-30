@@ -20,4 +20,3 @@ pub use crate::types::error::_resource_limit_exceeded_exception::ResourceLimitEx
 pub use crate::types::error::_unprocessable_entity_exception::UnprocessableEntityExceptionBuilder;
 
 pub use crate::types::error::_access_denied_exception::AccessDeniedExceptionBuilder;
-

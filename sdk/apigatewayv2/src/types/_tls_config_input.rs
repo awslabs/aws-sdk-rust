@@ -3,14 +3,14 @@
 /// <p>The TLS configuration for a private integration. If you specify a TLS configuration, private integration traffic uses the HTTPS protocol. Supported only for HTTP APIs.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct TlsConfigInput  {
+pub struct TlsConfigInput {
     /// <p>If you specify a server name, API Gateway uses it to verify the hostname on the integration's certificate. The server name is also included in the TLS handshake to support Server Name Indication (SNI) or virtual hosting.</p>
     #[doc(hidden)]
     pub server_name_to_verify: std::option::Option<std::string::String>,
 }
 impl TlsConfigInput {
     /// <p>If you specify a server name, API Gateway uses it to verify the hostname on the integration's certificate. The server name is also included in the TLS handshake to support Server Name Indication (SNI) or virtual hosting.</p>
-    pub fn server_name_to_verify(&self) -> std::option::Option<& str> {
+    pub fn server_name_to_verify(&self) -> std::option::Option<&str> {
         self.server_name_to_verify.as_deref()
     }
 }
@@ -34,15 +34,17 @@ impl TlsConfigInputBuilder {
         self
     }
     /// <p>If you specify a server name, API Gateway uses it to verify the hostname on the integration's certificate. The server name is also included in the TLS handshake to support Server Name Indication (SNI) or virtual hosting.</p>
-    pub fn set_server_name_to_verify(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.server_name_to_verify = input; self
+    pub fn set_server_name_to_verify(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.server_name_to_verify = input;
+        self
     }
     /// Consumes the builder and constructs a [`TlsConfigInput`](crate::types::TlsConfigInput).
     pub fn build(self) -> crate::types::TlsConfigInput {
         crate::types::TlsConfigInput {
-            server_name_to_verify: self.server_name_to_verify
-            ,
+            server_name_to_verify: self.server_name_to_verify,
         }
     }
 }
-

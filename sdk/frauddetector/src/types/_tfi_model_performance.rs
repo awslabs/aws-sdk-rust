@@ -3,7 +3,7 @@
 /// <p> The Transaction Fraud Insights (TFI) model performance score. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct TfiModelPerformance  {
+pub struct TfiModelPerformance {
     /// <p> The area under the curve (auc). This summarizes the total positive rate (tpr) and false positive rate (FPR) across all possible model score thresholds. </p>
     #[doc(hidden)]
     pub auc: std::option::Option<f32>,
@@ -35,14 +35,11 @@ impl TfiModelPerformanceBuilder {
     }
     /// <p> The area under the curve (auc). This summarizes the total positive rate (tpr) and false positive rate (FPR) across all possible model score thresholds. </p>
     pub fn set_auc(mut self, input: std::option::Option<f32>) -> Self {
-        self.auc = input; self
+        self.auc = input;
+        self
     }
     /// Consumes the builder and constructs a [`TfiModelPerformance`](crate::types::TfiModelPerformance).
     pub fn build(self) -> crate::types::TfiModelPerformance {
-        crate::types::TfiModelPerformance {
-            auc: self.auc
-            ,
-        }
+        crate::types::TfiModelPerformance { auc: self.auc }
     }
 }
-

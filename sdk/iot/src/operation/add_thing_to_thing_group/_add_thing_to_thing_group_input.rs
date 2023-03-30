@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AddThingToThingGroupInput  {
+pub struct AddThingToThingGroupInput {
     /// <p>The name of the group to which you are adding a thing.</p>
     #[doc(hidden)]
     pub thing_group_name: std::option::Option<std::string::String>,
@@ -21,19 +21,19 @@ pub struct AddThingToThingGroupInput  {
 }
 impl AddThingToThingGroupInput {
     /// <p>The name of the group to which you are adding a thing.</p>
-    pub fn thing_group_name(&self) -> std::option::Option<& str> {
+    pub fn thing_group_name(&self) -> std::option::Option<&str> {
         self.thing_group_name.as_deref()
     }
     /// <p>The ARN of the group to which you are adding a thing.</p>
-    pub fn thing_group_arn(&self) -> std::option::Option<& str> {
+    pub fn thing_group_arn(&self) -> std::option::Option<&str> {
         self.thing_group_arn.as_deref()
     }
     /// <p>The name of the thing to add to a group.</p>
-    pub fn thing_name(&self) -> std::option::Option<& str> {
+    pub fn thing_name(&self) -> std::option::Option<&str> {
         self.thing_name.as_deref()
     }
     /// <p>The ARN of the thing to add to a group.</p>
-    pub fn thing_arn(&self) -> std::option::Option<& str> {
+    pub fn thing_arn(&self) -> std::option::Option<&str> {
         self.thing_arn.as_deref()
     }
     /// <p>Override dynamic thing groups with static thing groups when 10-group limit is reached. If a thing belongs to 10 thing groups, and one or more of those groups are dynamic thing groups, adding a thing to a static group removes the thing from the last dynamic group.</p>
@@ -43,7 +43,9 @@ impl AddThingToThingGroupInput {
 }
 impl AddThingToThingGroupInput {
     /// Creates a new builder-style object to manufacture [`AddThingToThingGroupInput`](crate::operation::add_thing_to_thing_group::AddThingToThingGroupInput).
-    pub fn builder() -> crate::operation::add_thing_to_thing_group::builders::AddThingToThingGroupInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::add_thing_to_thing_group::builders::AddThingToThingGroupInputBuilder
+    {
         crate::operation::add_thing_to_thing_group::builders::AddThingToThingGroupInputBuilder::default()
     }
 }
@@ -66,7 +68,8 @@ impl AddThingToThingGroupInputBuilder {
     }
     /// <p>The name of the group to which you are adding a thing.</p>
     pub fn set_thing_group_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.thing_group_name = input; self
+        self.thing_group_name = input;
+        self
     }
     /// <p>The ARN of the group to which you are adding a thing.</p>
     pub fn thing_group_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -75,7 +78,8 @@ impl AddThingToThingGroupInputBuilder {
     }
     /// <p>The ARN of the group to which you are adding a thing.</p>
     pub fn set_thing_group_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.thing_group_arn = input; self
+        self.thing_group_arn = input;
+        self
     }
     /// <p>The name of the thing to add to a group.</p>
     pub fn thing_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -84,7 +88,8 @@ impl AddThingToThingGroupInputBuilder {
     }
     /// <p>The name of the thing to add to a group.</p>
     pub fn set_thing_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.thing_name = input; self
+        self.thing_name = input;
+        self
     }
     /// <p>The ARN of the thing to add to a group.</p>
     pub fn thing_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -93,7 +98,8 @@ impl AddThingToThingGroupInputBuilder {
     }
     /// <p>The ARN of the thing to add to a group.</p>
     pub fn set_thing_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.thing_arn = input; self
+        self.thing_arn = input;
+        self
     }
     /// <p>Override dynamic thing groups with static thing groups when 10-group limit is reached. If a thing belongs to 10 thing groups, and one or more of those groups are dynamic thing groups, adding a thing to a static group removes the thing from the last dynamic group.</p>
     pub fn override_dynamic_groups(mut self, input: bool) -> Self {
@@ -102,25 +108,24 @@ impl AddThingToThingGroupInputBuilder {
     }
     /// <p>Override dynamic thing groups with static thing groups when 10-group limit is reached. If a thing belongs to 10 thing groups, and one or more of those groups are dynamic thing groups, adding a thing to a static group removes the thing from the last dynamic group.</p>
     pub fn set_override_dynamic_groups(mut self, input: std::option::Option<bool>) -> Self {
-        self.override_dynamic_groups = input; self
+        self.override_dynamic_groups = input;
+        self
     }
     /// Consumes the builder and constructs a [`AddThingToThingGroupInput`](crate::operation::add_thing_to_thing_group::AddThingToThingGroupInput).
-    pub fn build(self) -> Result<crate::operation::add_thing_to_thing_group::AddThingToThingGroupInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::add_thing_to_thing_group::AddThingToThingGroupInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::add_thing_to_thing_group::AddThingToThingGroupInput {
-                thing_group_name: self.thing_group_name
-                ,
-                thing_group_arn: self.thing_group_arn
-                ,
-                thing_name: self.thing_name
-                ,
-                thing_arn: self.thing_arn
-                ,
-                override_dynamic_groups: self.override_dynamic_groups
-                    .unwrap_or_default()
-                ,
-            }
+                thing_group_name: self.thing_group_name,
+                thing_group_arn: self.thing_group_arn,
+                thing_name: self.thing_name,
+                thing_arn: self.thing_arn,
+                override_dynamic_groups: self.override_dynamic_groups.unwrap_or_default(),
+            },
         )
     }
 }
-

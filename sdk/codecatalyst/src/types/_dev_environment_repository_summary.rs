@@ -3,7 +3,7 @@
 /// <p>Information about the source repsitory for a Dev Environment. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DevEnvironmentRepositorySummary  {
+pub struct DevEnvironmentRepositorySummary {
     /// <p>The name of the source repository.</p>
     #[doc(hidden)]
     pub repository_name: std::option::Option<std::string::String>,
@@ -13,11 +13,11 @@ pub struct DevEnvironmentRepositorySummary  {
 }
 impl DevEnvironmentRepositorySummary {
     /// <p>The name of the source repository.</p>
-    pub fn repository_name(&self) -> std::option::Option<& str> {
+    pub fn repository_name(&self) -> std::option::Option<&str> {
         self.repository_name.as_deref()
     }
     /// <p>The name of the branch in a source repository cloned into the Dev Environment. </p>
-    pub fn branch_name(&self) -> std::option::Option<& str> {
+    pub fn branch_name(&self) -> std::option::Option<&str> {
         self.branch_name.as_deref()
     }
 }
@@ -43,7 +43,8 @@ impl DevEnvironmentRepositorySummaryBuilder {
     }
     /// <p>The name of the source repository.</p>
     pub fn set_repository_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.repository_name = input; self
+        self.repository_name = input;
+        self
     }
     /// <p>The name of the branch in a source repository cloned into the Dev Environment. </p>
     pub fn branch_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -52,16 +53,14 @@ impl DevEnvironmentRepositorySummaryBuilder {
     }
     /// <p>The name of the branch in a source repository cloned into the Dev Environment. </p>
     pub fn set_branch_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.branch_name = input; self
+        self.branch_name = input;
+        self
     }
     /// Consumes the builder and constructs a [`DevEnvironmentRepositorySummary`](crate::types::DevEnvironmentRepositorySummary).
     pub fn build(self) -> crate::types::DevEnvironmentRepositorySummary {
         crate::types::DevEnvironmentRepositorySummary {
-            repository_name: self.repository_name
-            ,
-            branch_name: self.branch_name
-            ,
+            repository_name: self.repository_name,
+            branch_name: self.branch_name,
         }
     }
 }
-

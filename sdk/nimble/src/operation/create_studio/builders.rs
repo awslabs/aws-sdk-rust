@@ -4,57 +4,75 @@ pub use crate::operation::create_studio::_create_studio_output::CreateStudioOutp
 pub use crate::operation::create_studio::_create_studio_input::CreateStudioInputBuilder;
 
 /// Fluent builder constructing a request to `CreateStudio`.
-/// 
-/// <p>Create a new studio.</p> 
-/// <p>When creating a studio, two IAM roles must be provided: the admin role and the user role. These roles are assumed by your users when they log in to the Nimble Studio portal.</p> 
-/// <p>The user role must have the <code>AmazonNimbleStudio-StudioUser</code> managed policy attached for the portal to function properly.</p> 
-/// <p>The admin role must have the <code>AmazonNimbleStudio-StudioAdmin</code> managed policy attached for the portal to function properly.</p> 
-/// <p>You may optionally specify a KMS key in the <code>StudioEncryptionConfiguration</code>.</p> 
-/// <p>In Nimble Studio, resource names, descriptions, initialization scripts, and other data you provide are always encrypted at rest using an KMS key. By default, this key is owned by Amazon Web Services and managed on your behalf. You may provide your own KMS key when calling <code>CreateStudio</code> to encrypt this data using a key you own and manage.</p> 
-/// <p>When providing an KMS key during studio creation, Nimble Studio creates KMS grants in your account to provide your studio user and admin roles access to these KMS keys.</p> 
-/// <p>If you delete this grant, the studio will no longer be accessible to your portal users.</p> 
+///
+/// <p>Create a new studio.</p>
+/// <p>When creating a studio, two IAM roles must be provided: the admin role and the user role. These roles are assumed by your users when they log in to the Nimble Studio portal.</p>
+/// <p>The user role must have the <code>AmazonNimbleStudio-StudioUser</code> managed policy attached for the portal to function properly.</p>
+/// <p>The admin role must have the <code>AmazonNimbleStudio-StudioAdmin</code> managed policy attached for the portal to function properly.</p>
+/// <p>You may optionally specify a KMS key in the <code>StudioEncryptionConfiguration</code>.</p>
+/// <p>In Nimble Studio, resource names, descriptions, initialization scripts, and other data you provide are always encrypted at rest using an KMS key. By default, this key is owned by Amazon Web Services and managed on your behalf. You may provide your own KMS key when calling <code>CreateStudio</code> to encrypt this data using a key you own and manage.</p>
+/// <p>When providing an KMS key during studio creation, Nimble Studio creates KMS grants in your account to provide your studio user and admin roles access to these KMS keys.</p>
+/// <p>If you delete this grant, the studio will no longer be accessible to your portal users.</p>
 /// <p>If you delete the studio KMS key, your studio will no longer be accessible.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct CreateStudioFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::create_studio::builders::CreateStudioInputBuilder
-            }
-impl CreateStudioFluentBuilder  {
+    handle: std::sync::Arc<crate::client::Handle>,
+    inner: crate::operation::create_studio::builders::CreateStudioInputBuilder,
+}
+impl CreateStudioFluentBuilder {
     /// Creates a new `CreateStudio`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
-                    /// sent. The operation's inner [http::Request] can be modified as well.
-                    pub async fn customize(self) -> std::result::Result<
-                        crate::client::customize::CustomizableOperation<crate::operation::create_studio::CreateStudio, aws_http::retry::AwsResponseRetryClassifier,>,
-                        aws_smithy_http::result::SdkError<crate::operation::create_studio::CreateStudioError>
-                    >  {
-                        let handle = self.handle.clone();
-                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-                    }
-    
-                    /// Sends the request and returns the response.
-                    ///
-                    /// If an error occurs, an `SdkError` will be returned with additional details that
-                    /// can be matched against.
-                    ///
-                    /// By default, any retryable failures will be retried twice. Retry behavior
-                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                    /// set when configuring the client.
-                    pub async fn send(self) -> std::result::Result<crate::operation::create_studio::CreateStudioOutput, aws_smithy_http::result::SdkError<crate::operation::create_studio::CreateStudioError>>
-                     {
-                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&self.handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        self.handle.client.call(op).await
-                    }
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle,
+            inner: Default::default(),
+        }
+    }
+
+    /// Consume this builder, creating a customizable operation that can be modified before being
+    /// sent. The operation's inner [http::Request] can be modified as well.
+    pub async fn customize(
+        self,
+    ) -> std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::create_studio::CreateStudio,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::result::SdkError<crate::operation::create_studio::CreateStudioError>,
+    > {
+        let handle = self.handle.clone();
+        let operation = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+    }
+
+    /// Sends the request and returns the response.
+    ///
+    /// If an error occurs, an `SdkError` will be returned with additional details that
+    /// can be matched against.
+    ///
+    /// By default, any retryable failures will be retried twice. Retry behavior
+    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+    /// set when configuring the client.
+    pub async fn send(
+        self,
+    ) -> std::result::Result<
+        crate::operation::create_studio::CreateStudioOutput,
+        aws_smithy_http::result::SdkError<crate::operation::create_studio::CreateStudioError>,
+    > {
+        let op = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&self.handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        self.handle.client.call(op).await
+    }
     /// <p>The IAM role that studio admins will assume when logging in to the Nimble Studio portal.</p>
     pub fn admin_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.admin_role_arn(input.into());
@@ -86,12 +104,18 @@ impl CreateStudioFluentBuilder  {
         self
     }
     /// <p>The studio encryption configuration.</p>
-    pub fn studio_encryption_configuration(mut self, input: crate::types::StudioEncryptionConfiguration) -> Self {
+    pub fn studio_encryption_configuration(
+        mut self,
+        input: crate::types::StudioEncryptionConfiguration,
+    ) -> Self {
         self.inner = self.inner.studio_encryption_configuration(input);
         self
     }
     /// <p>The studio encryption configuration.</p>
-    pub fn set_studio_encryption_configuration(mut self, input: std::option::Option<crate::types::StudioEncryptionConfiguration>) -> Self {
+    pub fn set_studio_encryption_configuration(
+        mut self,
+        input: std::option::Option<crate::types::StudioEncryptionConfiguration>,
+    ) -> Self {
         self.inner = self.inner.set_studio_encryption_configuration(input);
         self
     }
@@ -110,12 +134,21 @@ impl CreateStudioFluentBuilder  {
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// <p>A collection of labels, in the form of key-value pairs, that apply to this resource.</p>
-    pub fn tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
+    pub fn tags(
+        mut self,
+        k: impl Into<std::string::String>,
+        v: impl Into<std::string::String>,
+    ) -> Self {
         self.inner = self.inner.tags(k.into(), v.into());
         self
     }
     /// <p>A collection of labels, in the form of key-value pairs, that apply to this resource.</p>
-    pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+    pub fn set_tags(
+        mut self,
+        input: std::option::Option<
+            std::collections::HashMap<std::string::String, std::string::String>,
+        >,
+    ) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }
@@ -130,4 +163,3 @@ impl CreateStudioFluentBuilder  {
         self
     }
 }
-

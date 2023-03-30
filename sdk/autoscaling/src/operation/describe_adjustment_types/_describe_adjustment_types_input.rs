@@ -2,11 +2,12 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeAdjustmentTypesInput  {
-}
+pub struct DescribeAdjustmentTypesInput {}
 impl DescribeAdjustmentTypesInput {
     /// Creates a new builder-style object to manufacture [`DescribeAdjustmentTypesInput`](crate::operation::describe_adjustment_types::DescribeAdjustmentTypesInput).
-    pub fn builder() -> crate::operation::describe_adjustment_types::builders::DescribeAdjustmentTypesInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::describe_adjustment_types::builders::DescribeAdjustmentTypesInputBuilder
+    {
         crate::operation::describe_adjustment_types::builders::DescribeAdjustmentTypesInputBuilder::default()
     }
 }
@@ -14,15 +15,15 @@ impl DescribeAdjustmentTypesInput {
 /// A builder for [`DescribeAdjustmentTypesInput`](crate::operation::describe_adjustment_types::DescribeAdjustmentTypesInput).
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-pub struct DescribeAdjustmentTypesInputBuilder {
-}
+pub struct DescribeAdjustmentTypesInputBuilder {}
 impl DescribeAdjustmentTypesInputBuilder {
     /// Consumes the builder and constructs a [`DescribeAdjustmentTypesInput`](crate::operation::describe_adjustment_types::DescribeAdjustmentTypesInput).
-    pub fn build(self) -> Result<crate::operation::describe_adjustment_types::DescribeAdjustmentTypesInput, aws_smithy_http::operation::error::BuildError> {
-        Ok(
-            crate::operation::describe_adjustment_types::DescribeAdjustmentTypesInput {
-            }
-        )
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::describe_adjustment_types::DescribeAdjustmentTypesInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        Ok(crate::operation::describe_adjustment_types::DescribeAdjustmentTypesInput {})
     }
 }
-

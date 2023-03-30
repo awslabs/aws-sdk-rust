@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct GetVpnConnectionDeviceSampleConfigurationOutput  {
+pub struct GetVpnConnectionDeviceSampleConfigurationOutput {
     /// <p>Sample configuration file for the specified customer gateway device.</p>
     #[doc(hidden)]
     pub vpn_connection_device_sample_configuration: std::option::Option<std::string::String>,
@@ -10,26 +10,29 @@ pub struct GetVpnConnectionDeviceSampleConfigurationOutput  {
 }
 impl GetVpnConnectionDeviceSampleConfigurationOutput {
     /// <p>Sample configuration file for the specified customer gateway device.</p>
-    pub fn vpn_connection_device_sample_configuration(&self) -> std::option::Option<& str> {
+    pub fn vpn_connection_device_sample_configuration(&self) -> std::option::Option<&str> {
         self.vpn_connection_device_sample_configuration.as_deref()
     }
 }
-impl  std::fmt::Debug for GetVpnConnectionDeviceSampleConfigurationOutput  {
+impl std::fmt::Debug for GetVpnConnectionDeviceSampleConfigurationOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetVpnConnectionDeviceSampleConfigurationOutput");
-        formatter.field("vpn_connection_device_sample_configuration", &"*** Sensitive Data Redacted ***");
+        formatter.field(
+            "vpn_connection_device_sample_configuration",
+            &"*** Sensitive Data Redacted ***",
+        );
         formatter.field("_request_id", &self._request_id);
         formatter.finish()
     }
 }
 impl aws_http::request_id::RequestId for GetVpnConnectionDeviceSampleConfigurationOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl GetVpnConnectionDeviceSampleConfigurationOutput {
     /// Creates a new builder-style object to manufacture [`GetVpnConnectionDeviceSampleConfigurationOutput`](crate::operation::get_vpn_connection_device_sample_configuration::GetVpnConnectionDeviceSampleConfigurationOutput).
-    pub fn builder() -> crate::operation::get_vpn_connection_device_sample_configuration::builders::GetVpnConnectionDeviceSampleConfigurationOutputBuilder {
+    pub fn builder() -> crate::operation::get_vpn_connection_device_sample_configuration::builders::GetVpnConnectionDeviceSampleConfigurationOutputBuilder{
         crate::operation::get_vpn_connection_device_sample_configuration::builders::GetVpnConnectionDeviceSampleConfigurationOutputBuilder::default()
     }
 }
@@ -43,25 +46,32 @@ pub struct GetVpnConnectionDeviceSampleConfigurationOutputBuilder {
 }
 impl GetVpnConnectionDeviceSampleConfigurationOutputBuilder {
     /// <p>Sample configuration file for the specified customer gateway device.</p>
-    pub fn vpn_connection_device_sample_configuration(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn vpn_connection_device_sample_configuration(
+        mut self,
+        input: impl Into<std::string::String>,
+    ) -> Self {
         self.vpn_connection_device_sample_configuration = Some(input.into());
         self
     }
     /// <p>Sample configuration file for the specified customer gateway device.</p>
-    pub fn set_vpn_connection_device_sample_configuration(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.vpn_connection_device_sample_configuration = input; self
+    pub fn set_vpn_connection_device_sample_configuration(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.vpn_connection_device_sample_configuration = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`GetVpnConnectionDeviceSampleConfigurationOutput`](crate::operation::get_vpn_connection_device_sample_configuration::GetVpnConnectionDeviceSampleConfigurationOutput).
-    pub fn build(self) -> crate::operation::get_vpn_connection_device_sample_configuration::GetVpnConnectionDeviceSampleConfigurationOutput {
+    pub fn build(self) -> crate::operation::get_vpn_connection_device_sample_configuration::GetVpnConnectionDeviceSampleConfigurationOutput{
         crate::operation::get_vpn_connection_device_sample_configuration::GetVpnConnectionDeviceSampleConfigurationOutput {
             vpn_connection_device_sample_configuration: self.vpn_connection_device_sample_configuration
             ,
@@ -71,10 +81,13 @@ impl GetVpnConnectionDeviceSampleConfigurationOutputBuilder {
 }
 impl std::fmt::Debug for GetVpnConnectionDeviceSampleConfigurationOutputBuilder {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetVpnConnectionDeviceSampleConfigurationOutputBuilder");
-        formatter.field("vpn_connection_device_sample_configuration", &"*** Sensitive Data Redacted ***");
+        let mut formatter =
+            f.debug_struct("GetVpnConnectionDeviceSampleConfigurationOutputBuilder");
+        formatter.field(
+            "vpn_connection_device_sample_configuration",
+            &"*** Sensitive Data Redacted ***",
+        );
         formatter.field("_request_id", &self._request_id);
         formatter.finish()
     }
 }
-

@@ -3,7 +3,7 @@
 /// <p>The settings of your MFA configuration for the backend of your Amplify project.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Settings  {
+pub struct Settings {
     /// <p>The supported MFA types.</p>
     #[doc(hidden)]
     pub mfa_types: std::option::Option<std::vec::Vec<crate::types::MfaTypesElement>>,
@@ -13,11 +13,11 @@ pub struct Settings  {
 }
 impl Settings {
     /// <p>The supported MFA types.</p>
-    pub fn mfa_types(&self) -> std::option::Option<& [crate::types::MfaTypesElement]> {
+    pub fn mfa_types(&self) -> std::option::Option<&[crate::types::MfaTypesElement]> {
         self.mfa_types.as_deref()
     }
     /// <p>The body of the SMS message.</p>
-    pub fn sms_message(&self) -> std::option::Option<& str> {
+    pub fn sms_message(&self) -> std::option::Option<&str> {
         self.sms_message.as_deref()
     }
 }
@@ -43,13 +43,17 @@ impl SettingsBuilder {
     /// <p>The supported MFA types.</p>
     pub fn mfa_types(mut self, input: crate::types::MfaTypesElement) -> Self {
         let mut v = self.mfa_types.unwrap_or_default();
-                        v.push(input);
-                        self.mfa_types = Some(v);
-                        self
+        v.push(input);
+        self.mfa_types = Some(v);
+        self
     }
     /// <p>The supported MFA types.</p>
-    pub fn set_mfa_types(mut self, input: std::option::Option<std::vec::Vec<crate::types::MfaTypesElement>>) -> Self {
-        self.mfa_types = input; self
+    pub fn set_mfa_types(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::MfaTypesElement>>,
+    ) -> Self {
+        self.mfa_types = input;
+        self
     }
     /// <p>The body of the SMS message.</p>
     pub fn sms_message(mut self, input: impl Into<std::string::String>) -> Self {
@@ -58,16 +62,14 @@ impl SettingsBuilder {
     }
     /// <p>The body of the SMS message.</p>
     pub fn set_sms_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.sms_message = input; self
+        self.sms_message = input;
+        self
     }
     /// Consumes the builder and constructs a [`Settings`](crate::types::Settings).
     pub fn build(self) -> crate::types::Settings {
         crate::types::Settings {
-            mfa_types: self.mfa_types
-            ,
-            sms_message: self.sms_message
-            ,
+            mfa_types: self.mfa_types,
+            sms_message: self.sms_message,
         }
     }
 }
-

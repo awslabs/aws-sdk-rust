@@ -3,14 +3,14 @@
 /// <p>The Amazon S3 data source.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AutoMls3DataSource  {
-    /// <p>The data type.</p> 
-    /// <p>A ManifestFile should have the format shown below:</p> 
-    /// <p> <code>[ {"prefix": "s3://DOC-EXAMPLE-BUCKET/DOC-EXAMPLE-FOLDER/DOC-EXAMPLE-PREFIX/"}, </code> </p> 
-    /// <p> <code>"DOC-EXAMPLE-RELATIVE-PATH/DOC-EXAMPLE-FOLDER/DATA-1",</code> </p> 
-    /// <p> <code>"DOC-EXAMPLE-RELATIVE-PATH/DOC-EXAMPLE-FOLDER/DATA-2",</code> </p> 
-    /// <p> <code>... "DOC-EXAMPLE-RELATIVE-PATH/DOC-EXAMPLE-FOLDER/DATA-N" ]</code> </p> 
-    /// <p>An S3Prefix should have the following format: </p> 
+pub struct AutoMls3DataSource {
+    /// <p>The data type.</p>
+    /// <p>A ManifestFile should have the format shown below:</p>
+    /// <p> <code>[ {"prefix": "s3://DOC-EXAMPLE-BUCKET/DOC-EXAMPLE-FOLDER/DOC-EXAMPLE-PREFIX/"}, </code> </p>
+    /// <p> <code>"DOC-EXAMPLE-RELATIVE-PATH/DOC-EXAMPLE-FOLDER/DATA-1",</code> </p>
+    /// <p> <code>"DOC-EXAMPLE-RELATIVE-PATH/DOC-EXAMPLE-FOLDER/DATA-2",</code> </p>
+    /// <p> <code>... "DOC-EXAMPLE-RELATIVE-PATH/DOC-EXAMPLE-FOLDER/DATA-N" ]</code> </p>
+    /// <p>An S3Prefix should have the following format: </p>
     /// <p> <code>s3://DOC-EXAMPLE-BUCKET/DOC-EXAMPLE-FOLDER-OR-FILE</code> </p>
     #[doc(hidden)]
     pub s3_data_type: std::option::Option<crate::types::AutoMls3DataType>,
@@ -19,19 +19,19 @@ pub struct AutoMls3DataSource  {
     pub s3_uri: std::option::Option<std::string::String>,
 }
 impl AutoMls3DataSource {
-    /// <p>The data type.</p> 
-    /// <p>A ManifestFile should have the format shown below:</p> 
-    /// <p> <code>[ {"prefix": "s3://DOC-EXAMPLE-BUCKET/DOC-EXAMPLE-FOLDER/DOC-EXAMPLE-PREFIX/"}, </code> </p> 
-    /// <p> <code>"DOC-EXAMPLE-RELATIVE-PATH/DOC-EXAMPLE-FOLDER/DATA-1",</code> </p> 
-    /// <p> <code>"DOC-EXAMPLE-RELATIVE-PATH/DOC-EXAMPLE-FOLDER/DATA-2",</code> </p> 
-    /// <p> <code>... "DOC-EXAMPLE-RELATIVE-PATH/DOC-EXAMPLE-FOLDER/DATA-N" ]</code> </p> 
-    /// <p>An S3Prefix should have the following format: </p> 
+    /// <p>The data type.</p>
+    /// <p>A ManifestFile should have the format shown below:</p>
+    /// <p> <code>[ {"prefix": "s3://DOC-EXAMPLE-BUCKET/DOC-EXAMPLE-FOLDER/DOC-EXAMPLE-PREFIX/"}, </code> </p>
+    /// <p> <code>"DOC-EXAMPLE-RELATIVE-PATH/DOC-EXAMPLE-FOLDER/DATA-1",</code> </p>
+    /// <p> <code>"DOC-EXAMPLE-RELATIVE-PATH/DOC-EXAMPLE-FOLDER/DATA-2",</code> </p>
+    /// <p> <code>... "DOC-EXAMPLE-RELATIVE-PATH/DOC-EXAMPLE-FOLDER/DATA-N" ]</code> </p>
+    /// <p>An S3Prefix should have the following format: </p>
     /// <p> <code>s3://DOC-EXAMPLE-BUCKET/DOC-EXAMPLE-FOLDER-OR-FILE</code> </p>
-    pub fn s3_data_type(&self) -> std::option::Option<& crate::types::AutoMls3DataType> {
+    pub fn s3_data_type(&self) -> std::option::Option<&crate::types::AutoMls3DataType> {
         self.s3_data_type.as_ref()
     }
     /// <p>The URL to the Amazon S3 data source.</p>
-    pub fn s3_uri(&self) -> std::option::Option<& str> {
+    pub fn s3_uri(&self) -> std::option::Option<&str> {
         self.s3_uri.as_deref()
     }
 }
@@ -50,28 +50,32 @@ pub struct AutoMls3DataSourceBuilder {
     pub(crate) s3_uri: std::option::Option<std::string::String>,
 }
 impl AutoMls3DataSourceBuilder {
-    /// <p>The data type.</p> 
-    /// <p>A ManifestFile should have the format shown below:</p> 
-    /// <p> <code>[ {"prefix": "s3://DOC-EXAMPLE-BUCKET/DOC-EXAMPLE-FOLDER/DOC-EXAMPLE-PREFIX/"}, </code> </p> 
-    /// <p> <code>"DOC-EXAMPLE-RELATIVE-PATH/DOC-EXAMPLE-FOLDER/DATA-1",</code> </p> 
-    /// <p> <code>"DOC-EXAMPLE-RELATIVE-PATH/DOC-EXAMPLE-FOLDER/DATA-2",</code> </p> 
-    /// <p> <code>... "DOC-EXAMPLE-RELATIVE-PATH/DOC-EXAMPLE-FOLDER/DATA-N" ]</code> </p> 
-    /// <p>An S3Prefix should have the following format: </p> 
+    /// <p>The data type.</p>
+    /// <p>A ManifestFile should have the format shown below:</p>
+    /// <p> <code>[ {"prefix": "s3://DOC-EXAMPLE-BUCKET/DOC-EXAMPLE-FOLDER/DOC-EXAMPLE-PREFIX/"}, </code> </p>
+    /// <p> <code>"DOC-EXAMPLE-RELATIVE-PATH/DOC-EXAMPLE-FOLDER/DATA-1",</code> </p>
+    /// <p> <code>"DOC-EXAMPLE-RELATIVE-PATH/DOC-EXAMPLE-FOLDER/DATA-2",</code> </p>
+    /// <p> <code>... "DOC-EXAMPLE-RELATIVE-PATH/DOC-EXAMPLE-FOLDER/DATA-N" ]</code> </p>
+    /// <p>An S3Prefix should have the following format: </p>
     /// <p> <code>s3://DOC-EXAMPLE-BUCKET/DOC-EXAMPLE-FOLDER-OR-FILE</code> </p>
     pub fn s3_data_type(mut self, input: crate::types::AutoMls3DataType) -> Self {
         self.s3_data_type = Some(input);
         self
     }
-    /// <p>The data type.</p> 
-    /// <p>A ManifestFile should have the format shown below:</p> 
-    /// <p> <code>[ {"prefix": "s3://DOC-EXAMPLE-BUCKET/DOC-EXAMPLE-FOLDER/DOC-EXAMPLE-PREFIX/"}, </code> </p> 
-    /// <p> <code>"DOC-EXAMPLE-RELATIVE-PATH/DOC-EXAMPLE-FOLDER/DATA-1",</code> </p> 
-    /// <p> <code>"DOC-EXAMPLE-RELATIVE-PATH/DOC-EXAMPLE-FOLDER/DATA-2",</code> </p> 
-    /// <p> <code>... "DOC-EXAMPLE-RELATIVE-PATH/DOC-EXAMPLE-FOLDER/DATA-N" ]</code> </p> 
-    /// <p>An S3Prefix should have the following format: </p> 
+    /// <p>The data type.</p>
+    /// <p>A ManifestFile should have the format shown below:</p>
+    /// <p> <code>[ {"prefix": "s3://DOC-EXAMPLE-BUCKET/DOC-EXAMPLE-FOLDER/DOC-EXAMPLE-PREFIX/"}, </code> </p>
+    /// <p> <code>"DOC-EXAMPLE-RELATIVE-PATH/DOC-EXAMPLE-FOLDER/DATA-1",</code> </p>
+    /// <p> <code>"DOC-EXAMPLE-RELATIVE-PATH/DOC-EXAMPLE-FOLDER/DATA-2",</code> </p>
+    /// <p> <code>... "DOC-EXAMPLE-RELATIVE-PATH/DOC-EXAMPLE-FOLDER/DATA-N" ]</code> </p>
+    /// <p>An S3Prefix should have the following format: </p>
     /// <p> <code>s3://DOC-EXAMPLE-BUCKET/DOC-EXAMPLE-FOLDER-OR-FILE</code> </p>
-    pub fn set_s3_data_type(mut self, input: std::option::Option<crate::types::AutoMls3DataType>) -> Self {
-        self.s3_data_type = input; self
+    pub fn set_s3_data_type(
+        mut self,
+        input: std::option::Option<crate::types::AutoMls3DataType>,
+    ) -> Self {
+        self.s3_data_type = input;
+        self
     }
     /// <p>The URL to the Amazon S3 data source.</p>
     pub fn s3_uri(mut self, input: impl Into<std::string::String>) -> Self {
@@ -80,16 +84,14 @@ impl AutoMls3DataSourceBuilder {
     }
     /// <p>The URL to the Amazon S3 data source.</p>
     pub fn set_s3_uri(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.s3_uri = input; self
+        self.s3_uri = input;
+        self
     }
     /// Consumes the builder and constructs a [`AutoMls3DataSource`](crate::types::AutoMls3DataSource).
     pub fn build(self) -> crate::types::AutoMls3DataSource {
         crate::types::AutoMls3DataSource {
-            s3_data_type: self.s3_data_type
-            ,
-            s3_uri: self.s3_uri
-            ,
+            s3_data_type: self.s3_data_type,
+            s3_uri: self.s3_uri,
         }
     }
 }
-

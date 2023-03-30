@@ -3,7 +3,7 @@
 /// <p>Describes an Amazon RDS instance.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct RdsDbInstance  {
+pub struct RdsDbInstance {
     /// <p>The instance's ARN.</p>
     #[doc(hidden)]
     pub rds_db_instance_arn: std::option::Option<std::string::String>,
@@ -34,35 +34,35 @@ pub struct RdsDbInstance  {
 }
 impl RdsDbInstance {
     /// <p>The instance's ARN.</p>
-    pub fn rds_db_instance_arn(&self) -> std::option::Option<& str> {
+    pub fn rds_db_instance_arn(&self) -> std::option::Option<&str> {
         self.rds_db_instance_arn.as_deref()
     }
     /// <p>The DB instance identifier.</p>
-    pub fn db_instance_identifier(&self) -> std::option::Option<& str> {
+    pub fn db_instance_identifier(&self) -> std::option::Option<&str> {
         self.db_instance_identifier.as_deref()
     }
     /// <p>The master user name.</p>
-    pub fn db_user(&self) -> std::option::Option<& str> {
+    pub fn db_user(&self) -> std::option::Option<&str> {
         self.db_user.as_deref()
     }
     /// <p>AWS OpsWorks Stacks returns <code>*****FILTERED*****</code> instead of the actual value.</p>
-    pub fn db_password(&self) -> std::option::Option<& str> {
+    pub fn db_password(&self) -> std::option::Option<&str> {
         self.db_password.as_deref()
     }
     /// <p>The instance's AWS region.</p>
-    pub fn region(&self) -> std::option::Option<& str> {
+    pub fn region(&self) -> std::option::Option<&str> {
         self.region.as_deref()
     }
     /// <p>The instance's address.</p>
-    pub fn address(&self) -> std::option::Option<& str> {
+    pub fn address(&self) -> std::option::Option<&str> {
         self.address.as_deref()
     }
     /// <p>The instance's database engine.</p>
-    pub fn engine(&self) -> std::option::Option<& str> {
+    pub fn engine(&self) -> std::option::Option<&str> {
         self.engine.as_deref()
     }
     /// <p>The ID of the stack with which the instance is registered.</p>
-    pub fn stack_id(&self) -> std::option::Option<& str> {
+    pub fn stack_id(&self) -> std::option::Option<&str> {
         self.stack_id.as_deref()
     }
     /// <p>Set to <code>true</code> if AWS OpsWorks Stacks is unable to discover the Amazon RDS instance. AWS OpsWorks Stacks attempts to discover the instance only once. If this value is set to <code>true</code>, you must deregister the instance, and then register it again.</p>
@@ -98,8 +98,12 @@ impl RdsDbInstanceBuilder {
         self
     }
     /// <p>The instance's ARN.</p>
-    pub fn set_rds_db_instance_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.rds_db_instance_arn = input; self
+    pub fn set_rds_db_instance_arn(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.rds_db_instance_arn = input;
+        self
     }
     /// <p>The DB instance identifier.</p>
     pub fn db_instance_identifier(mut self, input: impl Into<std::string::String>) -> Self {
@@ -107,8 +111,12 @@ impl RdsDbInstanceBuilder {
         self
     }
     /// <p>The DB instance identifier.</p>
-    pub fn set_db_instance_identifier(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.db_instance_identifier = input; self
+    pub fn set_db_instance_identifier(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.db_instance_identifier = input;
+        self
     }
     /// <p>The master user name.</p>
     pub fn db_user(mut self, input: impl Into<std::string::String>) -> Self {
@@ -117,7 +125,8 @@ impl RdsDbInstanceBuilder {
     }
     /// <p>The master user name.</p>
     pub fn set_db_user(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.db_user = input; self
+        self.db_user = input;
+        self
     }
     /// <p>AWS OpsWorks Stacks returns <code>*****FILTERED*****</code> instead of the actual value.</p>
     pub fn db_password(mut self, input: impl Into<std::string::String>) -> Self {
@@ -126,7 +135,8 @@ impl RdsDbInstanceBuilder {
     }
     /// <p>AWS OpsWorks Stacks returns <code>*****FILTERED*****</code> instead of the actual value.</p>
     pub fn set_db_password(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.db_password = input; self
+        self.db_password = input;
+        self
     }
     /// <p>The instance's AWS region.</p>
     pub fn region(mut self, input: impl Into<std::string::String>) -> Self {
@@ -135,7 +145,8 @@ impl RdsDbInstanceBuilder {
     }
     /// <p>The instance's AWS region.</p>
     pub fn set_region(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.region = input; self
+        self.region = input;
+        self
     }
     /// <p>The instance's address.</p>
     pub fn address(mut self, input: impl Into<std::string::String>) -> Self {
@@ -144,7 +155,8 @@ impl RdsDbInstanceBuilder {
     }
     /// <p>The instance's address.</p>
     pub fn set_address(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.address = input; self
+        self.address = input;
+        self
     }
     /// <p>The instance's database engine.</p>
     pub fn engine(mut self, input: impl Into<std::string::String>) -> Self {
@@ -153,7 +165,8 @@ impl RdsDbInstanceBuilder {
     }
     /// <p>The instance's database engine.</p>
     pub fn set_engine(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.engine = input; self
+        self.engine = input;
+        self
     }
     /// <p>The ID of the stack with which the instance is registered.</p>
     pub fn stack_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -162,7 +175,8 @@ impl RdsDbInstanceBuilder {
     }
     /// <p>The ID of the stack with which the instance is registered.</p>
     pub fn set_stack_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.stack_id = input; self
+        self.stack_id = input;
+        self
     }
     /// <p>Set to <code>true</code> if AWS OpsWorks Stacks is unable to discover the Amazon RDS instance. AWS OpsWorks Stacks attempts to discover the instance only once. If this value is set to <code>true</code>, you must deregister the instance, and then register it again.</p>
     pub fn missing_on_rds(mut self, input: bool) -> Self {
@@ -171,30 +185,21 @@ impl RdsDbInstanceBuilder {
     }
     /// <p>Set to <code>true</code> if AWS OpsWorks Stacks is unable to discover the Amazon RDS instance. AWS OpsWorks Stacks attempts to discover the instance only once. If this value is set to <code>true</code>, you must deregister the instance, and then register it again.</p>
     pub fn set_missing_on_rds(mut self, input: std::option::Option<bool>) -> Self {
-        self.missing_on_rds = input; self
+        self.missing_on_rds = input;
+        self
     }
     /// Consumes the builder and constructs a [`RdsDbInstance`](crate::types::RdsDbInstance).
     pub fn build(self) -> crate::types::RdsDbInstance {
         crate::types::RdsDbInstance {
-            rds_db_instance_arn: self.rds_db_instance_arn
-            ,
-            db_instance_identifier: self.db_instance_identifier
-            ,
-            db_user: self.db_user
-            ,
-            db_password: self.db_password
-            ,
-            region: self.region
-            ,
-            address: self.address
-            ,
-            engine: self.engine
-            ,
-            stack_id: self.stack_id
-            ,
-            missing_on_rds: self.missing_on_rds
-            ,
+            rds_db_instance_arn: self.rds_db_instance_arn,
+            db_instance_identifier: self.db_instance_identifier,
+            db_user: self.db_user,
+            db_password: self.db_password,
+            region: self.region,
+            address: self.address,
+            engine: self.engine,
+            stack_id: self.stack_id,
+            missing_on_rds: self.missing_on_rds,
         }
     }
 }
-

@@ -3,7 +3,7 @@
 /// <p>The container repository where the output container image is stored.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct TargetContainerRepository  {
+pub struct TargetContainerRepository {
     /// <p>Specifies the service in which this image was registered.</p>
     #[doc(hidden)]
     pub service: std::option::Option<crate::types::ContainerRepositoryService>,
@@ -13,11 +13,11 @@ pub struct TargetContainerRepository  {
 }
 impl TargetContainerRepository {
     /// <p>Specifies the service in which this image was registered.</p>
-    pub fn service(&self) -> std::option::Option<& crate::types::ContainerRepositoryService> {
+    pub fn service(&self) -> std::option::Option<&crate::types::ContainerRepositoryService> {
         self.service.as_ref()
     }
     /// <p>The name of the container repository where the output container image is stored. This name is prefixed by the repository location.</p>
-    pub fn repository_name(&self) -> std::option::Option<& str> {
+    pub fn repository_name(&self) -> std::option::Option<&str> {
         self.repository_name.as_deref()
     }
 }
@@ -42,8 +42,12 @@ impl TargetContainerRepositoryBuilder {
         self
     }
     /// <p>Specifies the service in which this image was registered.</p>
-    pub fn set_service(mut self, input: std::option::Option<crate::types::ContainerRepositoryService>) -> Self {
-        self.service = input; self
+    pub fn set_service(
+        mut self,
+        input: std::option::Option<crate::types::ContainerRepositoryService>,
+    ) -> Self {
+        self.service = input;
+        self
     }
     /// <p>The name of the container repository where the output container image is stored. This name is prefixed by the repository location.</p>
     pub fn repository_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -52,16 +56,14 @@ impl TargetContainerRepositoryBuilder {
     }
     /// <p>The name of the container repository where the output container image is stored. This name is prefixed by the repository location.</p>
     pub fn set_repository_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.repository_name = input; self
+        self.repository_name = input;
+        self
     }
     /// Consumes the builder and constructs a [`TargetContainerRepository`](crate::types::TargetContainerRepository).
     pub fn build(self) -> crate::types::TargetContainerRepository {
         crate::types::TargetContainerRepository {
-            service: self.service
-            ,
-            repository_name: self.repository_name
-            ,
+            service: self.service,
+            repository_name: self.repository_name,
         }
     }
 }
-

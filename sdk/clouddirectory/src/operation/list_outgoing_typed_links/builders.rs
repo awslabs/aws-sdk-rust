@@ -4,49 +4,72 @@ pub use crate::operation::list_outgoing_typed_links::_list_outgoing_typed_links_
 pub use crate::operation::list_outgoing_typed_links::_list_outgoing_typed_links_input::ListOutgoingTypedLinksInputBuilder;
 
 /// Fluent builder constructing a request to `ListOutgoingTypedLinks`.
-/// 
+///
 /// <p>Returns a paginated list of all the outgoing <code>TypedLinkSpecifier</code> information for an object. It also supports filtering by typed link facet and identity attributes. For more information, see <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/directory_objects_links.html#directory_objects_links_typedlink">Typed Links</a>.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListOutgoingTypedLinksFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::list_outgoing_typed_links::builders::ListOutgoingTypedLinksInputBuilder
-            }
-impl ListOutgoingTypedLinksFluentBuilder  {
+    handle: std::sync::Arc<crate::client::Handle>,
+    inner:
+        crate::operation::list_outgoing_typed_links::builders::ListOutgoingTypedLinksInputBuilder,
+}
+impl ListOutgoingTypedLinksFluentBuilder {
     /// Creates a new `ListOutgoingTypedLinks`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
-                    /// sent. The operation's inner [http::Request] can be modified as well.
-                    pub async fn customize(self) -> std::result::Result<
-                        crate::client::customize::CustomizableOperation<crate::operation::list_outgoing_typed_links::ListOutgoingTypedLinks, aws_http::retry::AwsResponseRetryClassifier,>,
-                        aws_smithy_http::result::SdkError<crate::operation::list_outgoing_typed_links::ListOutgoingTypedLinksError>
-                    >  {
-                        let handle = self.handle.clone();
-                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-                    }
-    
-                    /// Sends the request and returns the response.
-                    ///
-                    /// If an error occurs, an `SdkError` will be returned with additional details that
-                    /// can be matched against.
-                    ///
-                    /// By default, any retryable failures will be retried twice. Retry behavior
-                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                    /// set when configuring the client.
-                    pub async fn send(self) -> std::result::Result<crate::operation::list_outgoing_typed_links::ListOutgoingTypedLinksOutput, aws_smithy_http::result::SdkError<crate::operation::list_outgoing_typed_links::ListOutgoingTypedLinksError>>
-                     {
-                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&self.handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        self.handle.client.call(op).await
-                    }
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle,
+            inner: Default::default(),
+        }
+    }
+
+    /// Consume this builder, creating a customizable operation that can be modified before being
+    /// sent. The operation's inner [http::Request] can be modified as well.
+    pub async fn customize(
+        self,
+    ) -> std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::list_outgoing_typed_links::ListOutgoingTypedLinks,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::result::SdkError<
+            crate::operation::list_outgoing_typed_links::ListOutgoingTypedLinksError,
+        >,
+    > {
+        let handle = self.handle.clone();
+        let operation = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+    }
+
+    /// Sends the request and returns the response.
+    ///
+    /// If an error occurs, an `SdkError` will be returned with additional details that
+    /// can be matched against.
+    ///
+    /// By default, any retryable failures will be retried twice. Retry behavior
+    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+    /// set when configuring the client.
+    pub async fn send(
+        self,
+    ) -> std::result::Result<
+        crate::operation::list_outgoing_typed_links::ListOutgoingTypedLinksOutput,
+        aws_smithy_http::result::SdkError<
+            crate::operation::list_outgoing_typed_links::ListOutgoingTypedLinksError,
+        >,
+    > {
+        let op = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&self.handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        self.handle.client.call(op).await
+    }
     /// <p>The Amazon Resource Name (ARN) of the directory where you want to list the typed links.</p>
     pub fn directory_arn(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.directory_arn(input.into());
@@ -63,7 +86,10 @@ impl ListOutgoingTypedLinksFluentBuilder  {
         self
     }
     /// <p>A reference that identifies the object whose attributes will be listed.</p>
-    pub fn set_object_reference(mut self, input: std::option::Option<crate::types::ObjectReference>) -> Self {
+    pub fn set_object_reference(
+        mut self,
+        input: std::option::Option<crate::types::ObjectReference>,
+    ) -> Self {
         self.inner = self.inner.set_object_reference(input);
         self
     }
@@ -77,7 +103,10 @@ impl ListOutgoingTypedLinksFluentBuilder  {
         self
     }
     /// <p>Provides range filters for multiple attributes. When providing ranges to typed link selection, any inexact ranges must be specified at the end. Any attributes that do not have a range specified are presumed to match the entire range.</p>
-    pub fn set_filter_attribute_ranges(mut self, input: std::option::Option<std::vec::Vec<crate::types::TypedLinkAttributeRange>>) -> Self {
+    pub fn set_filter_attribute_ranges(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::TypedLinkAttributeRange>>,
+    ) -> Self {
         self.inner = self.inner.set_filter_attribute_ranges(input);
         self
     }
@@ -87,7 +116,10 @@ impl ListOutgoingTypedLinksFluentBuilder  {
         self
     }
     /// <p>Filters are interpreted in the order of the attributes defined on the typed link facet, not the order they are supplied to any API calls.</p>
-    pub fn set_filter_typed_link(mut self, input: std::option::Option<crate::types::TypedLinkSchemaAndFacetName>) -> Self {
+    pub fn set_filter_typed_link(
+        mut self,
+        input: std::option::Option<crate::types::TypedLinkSchemaAndFacetName>,
+    ) -> Self {
         self.inner = self.inner.set_filter_typed_link(input);
         self
     }
@@ -117,9 +149,11 @@ impl ListOutgoingTypedLinksFluentBuilder  {
         self
     }
     /// <p>The consistency level to execute the request at.</p>
-    pub fn set_consistency_level(mut self, input: std::option::Option<crate::types::ConsistencyLevel>) -> Self {
+    pub fn set_consistency_level(
+        mut self,
+        input: std::option::Option<crate::types::ConsistencyLevel>,
+    ) -> Self {
         self.inner = self.inner.set_consistency_level(input);
         self
     }
 }
-

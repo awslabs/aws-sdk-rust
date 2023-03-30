@@ -27,8 +27,14 @@ pub enum ArrayValue {
 impl ArrayValue {
     /// Tries to convert the enum instance into [`ArrayValues`](crate::types::ArrayValue::ArrayValues), extracting the inner [`Vec`](std::vec::Vec).
     /// Returns `Err(&Self)` if it can't be converted.
-    pub fn as_array_values(&self) -> std::result::Result<&std::vec::Vec<crate::types::ArrayValue>, &Self> {
-        if let ArrayValue::ArrayValues(val) = &self { Ok(val) } else { Err(self) }
+    pub fn as_array_values(
+        &self,
+    ) -> std::result::Result<&std::vec::Vec<crate::types::ArrayValue>, &Self> {
+        if let ArrayValue::ArrayValues(val) = &self {
+            Ok(val)
+        } else {
+            Err(self)
+        }
     }
     /// Returns true if this is a [`ArrayValues`](crate::types::ArrayValue::ArrayValues).
     pub fn is_array_values(&self) -> bool {
@@ -37,7 +43,11 @@ impl ArrayValue {
     /// Tries to convert the enum instance into [`BooleanValues`](crate::types::ArrayValue::BooleanValues), extracting the inner [`Vec`](std::vec::Vec).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_boolean_values(&self) -> std::result::Result<&std::vec::Vec<bool>, &Self> {
-        if let ArrayValue::BooleanValues(val) = &self { Ok(val) } else { Err(self) }
+        if let ArrayValue::BooleanValues(val) = &self {
+            Ok(val)
+        } else {
+            Err(self)
+        }
     }
     /// Returns true if this is a [`BooleanValues`](crate::types::ArrayValue::BooleanValues).
     pub fn is_boolean_values(&self) -> bool {
@@ -46,7 +56,11 @@ impl ArrayValue {
     /// Tries to convert the enum instance into [`DoubleValues`](crate::types::ArrayValue::DoubleValues), extracting the inner [`Vec`](std::vec::Vec).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_double_values(&self) -> std::result::Result<&std::vec::Vec<f64>, &Self> {
-        if let ArrayValue::DoubleValues(val) = &self { Ok(val) } else { Err(self) }
+        if let ArrayValue::DoubleValues(val) = &self {
+            Ok(val)
+        } else {
+            Err(self)
+        }
     }
     /// Returns true if this is a [`DoubleValues`](crate::types::ArrayValue::DoubleValues).
     pub fn is_double_values(&self) -> bool {
@@ -55,7 +69,11 @@ impl ArrayValue {
     /// Tries to convert the enum instance into [`LongValues`](crate::types::ArrayValue::LongValues), extracting the inner [`Vec`](std::vec::Vec).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_long_values(&self) -> std::result::Result<&std::vec::Vec<i64>, &Self> {
-        if let ArrayValue::LongValues(val) = &self { Ok(val) } else { Err(self) }
+        if let ArrayValue::LongValues(val) = &self {
+            Ok(val)
+        } else {
+            Err(self)
+        }
     }
     /// Returns true if this is a [`LongValues`](crate::types::ArrayValue::LongValues).
     pub fn is_long_values(&self) -> bool {
@@ -63,8 +81,14 @@ impl ArrayValue {
     }
     /// Tries to convert the enum instance into [`StringValues`](crate::types::ArrayValue::StringValues), extracting the inner [`Vec`](std::vec::Vec).
     /// Returns `Err(&Self)` if it can't be converted.
-    pub fn as_string_values(&self) -> std::result::Result<&std::vec::Vec<std::string::String>, &Self> {
-        if let ArrayValue::StringValues(val) = &self { Ok(val) } else { Err(self) }
+    pub fn as_string_values(
+        &self,
+    ) -> std::result::Result<&std::vec::Vec<std::string::String>, &Self> {
+        if let ArrayValue::StringValues(val) = &self {
+            Ok(val)
+        } else {
+            Err(self)
+        }
     }
     /// Returns true if this is a [`StringValues`](crate::types::ArrayValue::StringValues).
     pub fn is_string_values(&self) -> bool {
@@ -75,4 +99,3 @@ impl ArrayValue {
         matches!(self, Self::Unknown)
     }
 }
-

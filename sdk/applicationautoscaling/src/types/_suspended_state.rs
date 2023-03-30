@@ -3,7 +3,7 @@
 /// <p>Specifies whether the scaling activities for a scalable target are in a suspended state. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SuspendedState  {
+pub struct SuspendedState {
     /// <p>Whether scale in by a target tracking scaling policy or a step scaling policy is suspended. Set the value to <code>true</code> if you don't want Application Auto Scaling to remove capacity when a scaling policy is triggered. The default is <code>false</code>. </p>
     #[doc(hidden)]
     pub dynamic_scaling_in_suspended: std::option::Option<bool>,
@@ -51,7 +51,8 @@ impl SuspendedStateBuilder {
     }
     /// <p>Whether scale in by a target tracking scaling policy or a step scaling policy is suspended. Set the value to <code>true</code> if you don't want Application Auto Scaling to remove capacity when a scaling policy is triggered. The default is <code>false</code>. </p>
     pub fn set_dynamic_scaling_in_suspended(mut self, input: std::option::Option<bool>) -> Self {
-        self.dynamic_scaling_in_suspended = input; self
+        self.dynamic_scaling_in_suspended = input;
+        self
     }
     /// <p>Whether scale out by a target tracking scaling policy or a step scaling policy is suspended. Set the value to <code>true</code> if you don't want Application Auto Scaling to add capacity when a scaling policy is triggered. The default is <code>false</code>. </p>
     pub fn dynamic_scaling_out_suspended(mut self, input: bool) -> Self {
@@ -60,7 +61,8 @@ impl SuspendedStateBuilder {
     }
     /// <p>Whether scale out by a target tracking scaling policy or a step scaling policy is suspended. Set the value to <code>true</code> if you don't want Application Auto Scaling to add capacity when a scaling policy is triggered. The default is <code>false</code>. </p>
     pub fn set_dynamic_scaling_out_suspended(mut self, input: std::option::Option<bool>) -> Self {
-        self.dynamic_scaling_out_suspended = input; self
+        self.dynamic_scaling_out_suspended = input;
+        self
     }
     /// <p>Whether scheduled scaling is suspended. Set the value to <code>true</code> if you don't want Application Auto Scaling to add or remove capacity by initiating scheduled actions. The default is <code>false</code>. </p>
     pub fn scheduled_scaling_suspended(mut self, input: bool) -> Self {
@@ -69,18 +71,15 @@ impl SuspendedStateBuilder {
     }
     /// <p>Whether scheduled scaling is suspended. Set the value to <code>true</code> if you don't want Application Auto Scaling to add or remove capacity by initiating scheduled actions. The default is <code>false</code>. </p>
     pub fn set_scheduled_scaling_suspended(mut self, input: std::option::Option<bool>) -> Self {
-        self.scheduled_scaling_suspended = input; self
+        self.scheduled_scaling_suspended = input;
+        self
     }
     /// Consumes the builder and constructs a [`SuspendedState`](crate::types::SuspendedState).
     pub fn build(self) -> crate::types::SuspendedState {
         crate::types::SuspendedState {
-            dynamic_scaling_in_suspended: self.dynamic_scaling_in_suspended
-            ,
-            dynamic_scaling_out_suspended: self.dynamic_scaling_out_suspended
-            ,
-            scheduled_scaling_suspended: self.scheduled_scaling_suspended
-            ,
+            dynamic_scaling_in_suspended: self.dynamic_scaling_in_suspended,
+            dynamic_scaling_out_suspended: self.dynamic_scaling_out_suspended,
+            scheduled_scaling_suspended: self.scheduled_scaling_suspended,
         }
     }
 }
-

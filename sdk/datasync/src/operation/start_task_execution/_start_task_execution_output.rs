@@ -3,7 +3,7 @@
 /// <p>StartTaskExecutionResponse</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct StartTaskExecutionOutput  {
+pub struct StartTaskExecutionOutput {
     /// <p>The ARN of the running task execution.</p>
     #[doc(hidden)]
     pub task_execution_arn: std::option::Option<std::string::String>,
@@ -11,18 +11,19 @@ pub struct StartTaskExecutionOutput  {
 }
 impl StartTaskExecutionOutput {
     /// <p>The ARN of the running task execution.</p>
-    pub fn task_execution_arn(&self) -> std::option::Option<& str> {
+    pub fn task_execution_arn(&self) -> std::option::Option<&str> {
         self.task_execution_arn.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for StartTaskExecutionOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl StartTaskExecutionOutput {
     /// Creates a new builder-style object to manufacture [`StartTaskExecutionOutput`](crate::operation::start_task_execution::StartTaskExecutionOutput).
-    pub fn builder() -> crate::operation::start_task_execution::builders::StartTaskExecutionOutputBuilder {
+    pub fn builder(
+    ) -> crate::operation::start_task_execution::builders::StartTaskExecutionOutputBuilder {
         crate::operation::start_task_execution::builders::StartTaskExecutionOutputBuilder::default()
     }
 }
@@ -41,25 +42,27 @@ impl StartTaskExecutionOutputBuilder {
         self
     }
     /// <p>The ARN of the running task execution.</p>
-    pub fn set_task_execution_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.task_execution_arn = input; self
+    pub fn set_task_execution_arn(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.task_execution_arn = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`StartTaskExecutionOutput`](crate::operation::start_task_execution::StartTaskExecutionOutput).
     pub fn build(self) -> crate::operation::start_task_execution::StartTaskExecutionOutput {
         crate::operation::start_task_execution::StartTaskExecutionOutput {
-            task_execution_arn: self.task_execution_arn
-            ,
+            task_execution_arn: self.task_execution_arn,
             _request_id: self._request_id,
         }
     }
 }
-

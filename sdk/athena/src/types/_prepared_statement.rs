@@ -3,7 +3,7 @@
 /// <p>A prepared SQL statement for use with Athena.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PreparedStatement  {
+pub struct PreparedStatement {
     /// <p>The name of the prepared statement.</p>
     #[doc(hidden)]
     pub statement_name: std::option::Option<std::string::String>,
@@ -22,23 +22,23 @@ pub struct PreparedStatement  {
 }
 impl PreparedStatement {
     /// <p>The name of the prepared statement.</p>
-    pub fn statement_name(&self) -> std::option::Option<& str> {
+    pub fn statement_name(&self) -> std::option::Option<&str> {
         self.statement_name.as_deref()
     }
     /// <p>The query string for the prepared statement.</p>
-    pub fn query_statement(&self) -> std::option::Option<& str> {
+    pub fn query_statement(&self) -> std::option::Option<&str> {
         self.query_statement.as_deref()
     }
     /// <p>The name of the workgroup to which the prepared statement belongs.</p>
-    pub fn work_group_name(&self) -> std::option::Option<& str> {
+    pub fn work_group_name(&self) -> std::option::Option<&str> {
         self.work_group_name.as_deref()
     }
     /// <p>The description of the prepared statement.</p>
-    pub fn description(&self) -> std::option::Option<& str> {
+    pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
     /// <p>The last modified time of the prepared statement.</p>
-    pub fn last_modified_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
+    pub fn last_modified_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_modified_time.as_ref()
     }
 }
@@ -67,7 +67,8 @@ impl PreparedStatementBuilder {
     }
     /// <p>The name of the prepared statement.</p>
     pub fn set_statement_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.statement_name = input; self
+        self.statement_name = input;
+        self
     }
     /// <p>The query string for the prepared statement.</p>
     pub fn query_statement(mut self, input: impl Into<std::string::String>) -> Self {
@@ -76,7 +77,8 @@ impl PreparedStatementBuilder {
     }
     /// <p>The query string for the prepared statement.</p>
     pub fn set_query_statement(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.query_statement = input; self
+        self.query_statement = input;
+        self
     }
     /// <p>The name of the workgroup to which the prepared statement belongs.</p>
     pub fn work_group_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -85,7 +87,8 @@ impl PreparedStatementBuilder {
     }
     /// <p>The name of the workgroup to which the prepared statement belongs.</p>
     pub fn set_work_group_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.work_group_name = input; self
+        self.work_group_name = input;
+        self
     }
     /// <p>The description of the prepared statement.</p>
     pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -94,7 +97,8 @@ impl PreparedStatementBuilder {
     }
     /// <p>The description of the prepared statement.</p>
     pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.description = input; self
+        self.description = input;
+        self
     }
     /// <p>The last modified time of the prepared statement.</p>
     pub fn last_modified_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -102,23 +106,21 @@ impl PreparedStatementBuilder {
         self
     }
     /// <p>The last modified time of the prepared statement.</p>
-    pub fn set_last_modified_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.last_modified_time = input; self
+    pub fn set_last_modified_time(
+        mut self,
+        input: std::option::Option<aws_smithy_types::DateTime>,
+    ) -> Self {
+        self.last_modified_time = input;
+        self
     }
     /// Consumes the builder and constructs a [`PreparedStatement`](crate::types::PreparedStatement).
     pub fn build(self) -> crate::types::PreparedStatement {
         crate::types::PreparedStatement {
-            statement_name: self.statement_name
-            ,
-            query_statement: self.query_statement
-            ,
-            work_group_name: self.work_group_name
-            ,
-            description: self.description
-            ,
-            last_modified_time: self.last_modified_time
-            ,
+            statement_name: self.statement_name,
+            query_statement: self.query_statement,
+            work_group_name: self.work_group_name,
+            description: self.description,
+            last_modified_time: self.last_modified_time,
         }
     }
 }
-

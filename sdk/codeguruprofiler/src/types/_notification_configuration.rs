@@ -3,14 +3,14 @@
 /// <p>The configuration for notifications stored for each profiling group. This includes up to to two channels and a list of event publishers associated with each channel.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct NotificationConfiguration  {
+pub struct NotificationConfiguration {
     /// <p>List of up to two channels to be used for sending notifications for events detected from the application profile.</p>
     #[doc(hidden)]
     pub channels: std::option::Option<std::vec::Vec<crate::types::Channel>>,
 }
 impl NotificationConfiguration {
     /// <p>List of up to two channels to be used for sending notifications for events detected from the application profile.</p>
-    pub fn channels(&self) -> std::option::Option<& [crate::types::Channel]> {
+    pub fn channels(&self) -> std::option::Option<&[crate::types::Channel]> {
         self.channels.as_deref()
     }
 }
@@ -35,20 +35,22 @@ impl NotificationConfigurationBuilder {
     /// <p>List of up to two channels to be used for sending notifications for events detected from the application profile.</p>
     pub fn channels(mut self, input: crate::types::Channel) -> Self {
         let mut v = self.channels.unwrap_or_default();
-                        v.push(input);
-                        self.channels = Some(v);
-                        self
+        v.push(input);
+        self.channels = Some(v);
+        self
     }
     /// <p>List of up to two channels to be used for sending notifications for events detected from the application profile.</p>
-    pub fn set_channels(mut self, input: std::option::Option<std::vec::Vec<crate::types::Channel>>) -> Self {
-        self.channels = input; self
+    pub fn set_channels(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::Channel>>,
+    ) -> Self {
+        self.channels = input;
+        self
     }
     /// Consumes the builder and constructs a [`NotificationConfiguration`](crate::types::NotificationConfiguration).
     pub fn build(self) -> crate::types::NotificationConfiguration {
         crate::types::NotificationConfiguration {
-            channels: self.channels
-            ,
+            channels: self.channels,
         }
     }
 }
-

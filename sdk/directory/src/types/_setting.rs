@@ -3,8 +3,8 @@
 /// <p>Contains information about the configurable settings for a directory.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Setting  {
-    /// <p>The name of the directory setting. For example:</p> 
+pub struct Setting {
+    /// <p>The name of the directory setting. For example:</p>
     /// <p> <code>TLS_1_0</code> </p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -13,13 +13,13 @@ pub struct Setting  {
     pub value: std::option::Option<std::string::String>,
 }
 impl Setting {
-    /// <p>The name of the directory setting. For example:</p> 
+    /// <p>The name of the directory setting. For example:</p>
     /// <p> <code>TLS_1_0</code> </p>
-    pub fn name(&self) -> std::option::Option<& str> {
+    pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>The value of the directory setting for which to retrieve information. For example, for <code>TLS_1_0</code>, the valid values are: <code>Enable</code> and <code>Disable</code>.</p>
-    pub fn value(&self) -> std::option::Option<& str> {
+    pub fn value(&self) -> std::option::Option<&str> {
         self.value.as_deref()
     }
 }
@@ -38,16 +38,17 @@ pub struct SettingBuilder {
     pub(crate) value: std::option::Option<std::string::String>,
 }
 impl SettingBuilder {
-    /// <p>The name of the directory setting. For example:</p> 
+    /// <p>The name of the directory setting. For example:</p>
     /// <p> <code>TLS_1_0</code> </p>
     pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
         self.name = Some(input.into());
         self
     }
-    /// <p>The name of the directory setting. For example:</p> 
+    /// <p>The name of the directory setting. For example:</p>
     /// <p> <code>TLS_1_0</code> </p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input; self
+        self.name = input;
+        self
     }
     /// <p>The value of the directory setting for which to retrieve information. For example, for <code>TLS_1_0</code>, the valid values are: <code>Enable</code> and <code>Disable</code>.</p>
     pub fn value(mut self, input: impl Into<std::string::String>) -> Self {
@@ -56,16 +57,14 @@ impl SettingBuilder {
     }
     /// <p>The value of the directory setting for which to retrieve information. For example, for <code>TLS_1_0</code>, the valid values are: <code>Enable</code> and <code>Disable</code>.</p>
     pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.value = input; self
+        self.value = input;
+        self
     }
     /// Consumes the builder and constructs a [`Setting`](crate::types::Setting).
     pub fn build(self) -> crate::types::Setting {
         crate::types::Setting {
-            name: self.name
-            ,
-            value: self.value
-            ,
+            name: self.name,
+            value: self.value,
         }
     }
 }
-

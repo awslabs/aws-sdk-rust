@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListTrackerConsumersOutput  {
+pub struct ListTrackerConsumersOutput {
     /// <p>Contains the list of geofence collection ARNs associated to the tracker resource.</p>
     #[doc(hidden)]
     pub consumer_arns: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -13,22 +13,23 @@ pub struct ListTrackerConsumersOutput  {
 }
 impl ListTrackerConsumersOutput {
     /// <p>Contains the list of geofence collection ARNs associated to the tracker resource.</p>
-    pub fn consumer_arns(&self) -> std::option::Option<& [std::string::String]> {
+    pub fn consumer_arns(&self) -> std::option::Option<&[std::string::String]> {
         self.consumer_arns.as_deref()
     }
     /// <p>A pagination token indicating there are additional pages available. You can use the token in a following request to fetch the next set of results. </p>
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for ListTrackerConsumersOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl ListTrackerConsumersOutput {
     /// Creates a new builder-style object to manufacture [`ListTrackerConsumersOutput`](crate::operation::list_tracker_consumers::ListTrackerConsumersOutput).
-    pub fn builder() -> crate::operation::list_tracker_consumers::builders::ListTrackerConsumersOutputBuilder {
+    pub fn builder(
+    ) -> crate::operation::list_tracker_consumers::builders::ListTrackerConsumersOutputBuilder {
         crate::operation::list_tracker_consumers::builders::ListTrackerConsumersOutputBuilder::default()
     }
 }
@@ -49,13 +50,17 @@ impl ListTrackerConsumersOutputBuilder {
     /// <p>Contains the list of geofence collection ARNs associated to the tracker resource.</p>
     pub fn consumer_arns(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.consumer_arns.unwrap_or_default();
-                        v.push(input.into());
-                        self.consumer_arns = Some(v);
-                        self
+        v.push(input.into());
+        self.consumer_arns = Some(v);
+        self
     }
     /// <p>Contains the list of geofence collection ARNs associated to the tracker resource.</p>
-    pub fn set_consumer_arns(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-        self.consumer_arns = input; self
+    pub fn set_consumer_arns(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
+        self.consumer_arns = input;
+        self
     }
     /// <p>A pagination token indicating there are additional pages available. You can use the token in a following request to fetch the next set of results. </p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -64,26 +69,24 @@ impl ListTrackerConsumersOutputBuilder {
     }
     /// <p>A pagination token indicating there are additional pages available. You can use the token in a following request to fetch the next set of results. </p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input; self
+        self.next_token = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`ListTrackerConsumersOutput`](crate::operation::list_tracker_consumers::ListTrackerConsumersOutput).
     pub fn build(self) -> crate::operation::list_tracker_consumers::ListTrackerConsumersOutput {
         crate::operation::list_tracker_consumers::ListTrackerConsumersOutput {
-            consumer_arns: self.consumer_arns
-            ,
-            next_token: self.next_token
-            ,
+            consumer_arns: self.consumer_arns,
+            next_token: self.next_token,
             _request_id: self._request_id,
         }
     }
 }
-

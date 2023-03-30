@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct ResetUserPasswordInput  {
+pub struct ResetUserPasswordInput {
     /// <p>Identifier of the Managed Microsoft AD or Simple AD directory in which the user resides.</p>
     #[doc(hidden)]
     pub directory_id: std::option::Option<std::string::String>,
@@ -15,19 +15,19 @@ pub struct ResetUserPasswordInput  {
 }
 impl ResetUserPasswordInput {
     /// <p>Identifier of the Managed Microsoft AD or Simple AD directory in which the user resides.</p>
-    pub fn directory_id(&self) -> std::option::Option<& str> {
+    pub fn directory_id(&self) -> std::option::Option<&str> {
         self.directory_id.as_deref()
     }
     /// <p>The user name of the user whose password will be reset.</p>
-    pub fn user_name(&self) -> std::option::Option<& str> {
+    pub fn user_name(&self) -> std::option::Option<&str> {
         self.user_name.as_deref()
     }
     /// <p>The new password that will be reset.</p>
-    pub fn new_password(&self) -> std::option::Option<& str> {
+    pub fn new_password(&self) -> std::option::Option<&str> {
         self.new_password.as_deref()
     }
 }
-impl  std::fmt::Debug for ResetUserPasswordInput  {
+impl std::fmt::Debug for ResetUserPasswordInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ResetUserPasswordInput");
         formatter.field("directory_id", &self.directory_id);
@@ -38,7 +38,8 @@ impl  std::fmt::Debug for ResetUserPasswordInput  {
 }
 impl ResetUserPasswordInput {
     /// Creates a new builder-style object to manufacture [`ResetUserPasswordInput`](crate::operation::reset_user_password::ResetUserPasswordInput).
-    pub fn builder() -> crate::operation::reset_user_password::builders::ResetUserPasswordInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::reset_user_password::builders::ResetUserPasswordInputBuilder {
         crate::operation::reset_user_password::builders::ResetUserPasswordInputBuilder::default()
     }
 }
@@ -59,7 +60,8 @@ impl ResetUserPasswordInputBuilder {
     }
     /// <p>Identifier of the Managed Microsoft AD or Simple AD directory in which the user resides.</p>
     pub fn set_directory_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.directory_id = input; self
+        self.directory_id = input;
+        self
     }
     /// <p>The user name of the user whose password will be reset.</p>
     pub fn user_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -68,7 +70,8 @@ impl ResetUserPasswordInputBuilder {
     }
     /// <p>The user name of the user whose password will be reset.</p>
     pub fn set_user_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.user_name = input; self
+        self.user_name = input;
+        self
     }
     /// <p>The new password that will be reset.</p>
     pub fn new_password(mut self, input: impl Into<std::string::String>) -> Self {
@@ -77,19 +80,22 @@ impl ResetUserPasswordInputBuilder {
     }
     /// <p>The new password that will be reset.</p>
     pub fn set_new_password(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.new_password = input; self
+        self.new_password = input;
+        self
     }
     /// Consumes the builder and constructs a [`ResetUserPasswordInput`](crate::operation::reset_user_password::ResetUserPasswordInput).
-    pub fn build(self) -> Result<crate::operation::reset_user_password::ResetUserPasswordInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::reset_user_password::ResetUserPasswordInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::reset_user_password::ResetUserPasswordInput {
-                directory_id: self.directory_id
-                ,
-                user_name: self.user_name
-                ,
-                new_password: self.new_password
-                ,
-            }
+                directory_id: self.directory_id,
+                user_name: self.user_name,
+                new_password: self.new_password,
+            },
         )
     }
 }
@@ -102,4 +108,3 @@ impl std::fmt::Debug for ResetUserPasswordInputBuilder {
         formatter.finish()
     }
 }
-

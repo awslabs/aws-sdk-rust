@@ -3,14 +3,14 @@
 /// <p>The request body for S3Buckets.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListS3BucketsInput  {
+pub struct ListS3BucketsInput {
     /// <p>Reserved for future use.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListS3BucketsInput {
     /// <p>Reserved for future use.</p>
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
 }
@@ -35,16 +35,18 @@ impl ListS3BucketsInputBuilder {
     }
     /// <p>Reserved for future use.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input; self
+        self.next_token = input;
+        self
     }
     /// Consumes the builder and constructs a [`ListS3BucketsInput`](crate::operation::list_s3_buckets::ListS3BucketsInput).
-    pub fn build(self) -> Result<crate::operation::list_s3_buckets::ListS3BucketsInput, aws_smithy_http::operation::error::BuildError> {
-        Ok(
-            crate::operation::list_s3_buckets::ListS3BucketsInput {
-                next_token: self.next_token
-                ,
-            }
-        )
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::list_s3_buckets::ListS3BucketsInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        Ok(crate::operation::list_s3_buckets::ListS3BucketsInput {
+            next_token: self.next_token,
+        })
     }
 }
-

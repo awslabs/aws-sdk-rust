@@ -2,17 +2,19 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SignalWorkflowExecutionOutput  {
+pub struct SignalWorkflowExecutionOutput {
     _request_id: Option<String>,
 }
 impl aws_http::request_id::RequestId for SignalWorkflowExecutionOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl SignalWorkflowExecutionOutput {
     /// Creates a new builder-style object to manufacture [`SignalWorkflowExecutionOutput`](crate::operation::signal_workflow_execution::SignalWorkflowExecutionOutput).
-    pub fn builder() -> crate::operation::signal_workflow_execution::builders::SignalWorkflowExecutionOutputBuilder {
+    pub fn builder(
+    ) -> crate::operation::signal_workflow_execution::builders::SignalWorkflowExecutionOutputBuilder
+    {
         crate::operation::signal_workflow_execution::builders::SignalWorkflowExecutionOutputBuilder::default()
     }
 }
@@ -25,19 +27,20 @@ pub struct SignalWorkflowExecutionOutputBuilder {
 }
 impl SignalWorkflowExecutionOutputBuilder {
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`SignalWorkflowExecutionOutput`](crate::operation::signal_workflow_execution::SignalWorkflowExecutionOutput).
-    pub fn build(self) -> crate::operation::signal_workflow_execution::SignalWorkflowExecutionOutput {
+    pub fn build(
+        self,
+    ) -> crate::operation::signal_workflow_execution::SignalWorkflowExecutionOutput {
         crate::operation::signal_workflow_execution::SignalWorkflowExecutionOutput {
             _request_id: self._request_id,
         }
     }
 }
-

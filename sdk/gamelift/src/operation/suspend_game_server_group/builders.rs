@@ -4,63 +4,89 @@ pub use crate::operation::suspend_game_server_group::_suspend_game_server_group_
 pub use crate::operation::suspend_game_server_group::_suspend_game_server_group_input::SuspendGameServerGroupInputBuilder;
 
 /// Fluent builder constructing a request to `SuspendGameServerGroup`.
-/// 
-/// <p> <b>This operation is used with the GameLift FleetIQ solution and game server groups.</b> </p> 
-/// <p>Temporarily stops activity on a game server group without terminating instances or the game server group. You can restart activity by calling <a href="gamelift/latest/apireference/API_ResumeGameServerGroup.html">ResumeGameServerGroup</a>. You can suspend the following activity:</p> 
-/// <ul> 
-/// <li> <p> <b>Instance type replacement</b> - This activity evaluates the current game hosting viability of all Spot instance types that are defined for the game server group. It updates the Auto Scaling group to remove nonviable Spot Instance types, which have a higher chance of game server interruptions. It then balances capacity across the remaining viable Spot Instance types. When this activity is suspended, the Auto Scaling group continues with its current balance, regardless of viability. Instance protection, utilization metrics, and capacity scaling activities continue to be active. </p> </li> 
-/// </ul> 
-/// <p>To suspend activity, specify a game server group ARN and the type of activity to be suspended. If successful, a <code>GameServerGroup</code> object is returned showing that the activity is listed in <code>SuspendedActions</code>.</p> 
-/// <p> <b>Learn more</b> </p> 
+///
+/// <p> <b>This operation is used with the GameLift FleetIQ solution and game server groups.</b> </p>
+/// <p>Temporarily stops activity on a game server group without terminating instances or the game server group. You can restart activity by calling <a href="gamelift/latest/apireference/API_ResumeGameServerGroup.html">ResumeGameServerGroup</a>. You can suspend the following activity:</p>
+/// <ul>
+/// <li> <p> <b>Instance type replacement</b> - This activity evaluates the current game hosting viability of all Spot instance types that are defined for the game server group. It updates the Auto Scaling group to remove nonviable Spot Instance types, which have a higher chance of game server interruptions. It then balances capacity across the remaining viable Spot Instance types. When this activity is suspended, the Auto Scaling group continues with its current balance, regardless of viability. Instance protection, utilization metrics, and capacity scaling activities continue to be active. </p> </li>
+/// </ul>
+/// <p>To suspend activity, specify a game server group ARN and the type of activity to be suspended. If successful, a <code>GameServerGroup</code> object is returned showing that the activity is listed in <code>SuspendedActions</code>.</p>
+/// <p> <b>Learn more</b> </p>
 /// <p> <a href="https://docs.aws.amazon.com/gamelift/latest/fleetiqguide/gsg-intro.html">GameLift FleetIQ Guide</a> </p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct SuspendGameServerGroupFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::suspend_game_server_group::builders::SuspendGameServerGroupInputBuilder
-            }
-impl SuspendGameServerGroupFluentBuilder  {
+    handle: std::sync::Arc<crate::client::Handle>,
+    inner:
+        crate::operation::suspend_game_server_group::builders::SuspendGameServerGroupInputBuilder,
+}
+impl SuspendGameServerGroupFluentBuilder {
     /// Creates a new `SuspendGameServerGroup`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
-                    /// sent. The operation's inner [http::Request] can be modified as well.
-                    pub async fn customize(self) -> std::result::Result<
-                        crate::client::customize::CustomizableOperation<crate::operation::suspend_game_server_group::SuspendGameServerGroup, aws_http::retry::AwsResponseRetryClassifier,>,
-                        aws_smithy_http::result::SdkError<crate::operation::suspend_game_server_group::SuspendGameServerGroupError>
-                    >  {
-                        let handle = self.handle.clone();
-                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-                    }
-    
-                    /// Sends the request and returns the response.
-                    ///
-                    /// If an error occurs, an `SdkError` will be returned with additional details that
-                    /// can be matched against.
-                    ///
-                    /// By default, any retryable failures will be retried twice. Retry behavior
-                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                    /// set when configuring the client.
-                    pub async fn send(self) -> std::result::Result<crate::operation::suspend_game_server_group::SuspendGameServerGroupOutput, aws_smithy_http::result::SdkError<crate::operation::suspend_game_server_group::SuspendGameServerGroupError>>
-                     {
-                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&self.handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        self.handle.client.call(op).await
-                    }
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle,
+            inner: Default::default(),
+        }
+    }
+
+    /// Consume this builder, creating a customizable operation that can be modified before being
+    /// sent. The operation's inner [http::Request] can be modified as well.
+    pub async fn customize(
+        self,
+    ) -> std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::suspend_game_server_group::SuspendGameServerGroup,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::result::SdkError<
+            crate::operation::suspend_game_server_group::SuspendGameServerGroupError,
+        >,
+    > {
+        let handle = self.handle.clone();
+        let operation = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+    }
+
+    /// Sends the request and returns the response.
+    ///
+    /// If an error occurs, an `SdkError` will be returned with additional details that
+    /// can be matched against.
+    ///
+    /// By default, any retryable failures will be retried twice. Retry behavior
+    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+    /// set when configuring the client.
+    pub async fn send(
+        self,
+    ) -> std::result::Result<
+        crate::operation::suspend_game_server_group::SuspendGameServerGroupOutput,
+        aws_smithy_http::result::SdkError<
+            crate::operation::suspend_game_server_group::SuspendGameServerGroupError,
+        >,
+    > {
+        let op = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&self.handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        self.handle.client.call(op).await
+    }
     /// <p>A unique identifier for the game server group. Use either the name or ARN value.</p>
     pub fn game_server_group_name(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.game_server_group_name(input.into());
         self
     }
     /// <p>A unique identifier for the game server group. Use either the name or ARN value.</p>
-    pub fn set_game_server_group_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_game_server_group_name(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_game_server_group_name(input);
         self
     }
@@ -74,9 +100,11 @@ impl SuspendGameServerGroupFluentBuilder  {
         self
     }
     /// <p>The activity to suspend for this game server group.</p>
-    pub fn set_suspend_actions(mut self, input: std::option::Option<std::vec::Vec<crate::types::GameServerGroupAction>>) -> Self {
+    pub fn set_suspend_actions(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::GameServerGroupAction>>,
+    ) -> Self {
         self.inner = self.inner.set_suspend_actions(input);
         self
     }
 }
-

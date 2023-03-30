@@ -4,49 +4,67 @@ pub use crate::operation::create_control::_create_control_output::CreateControlO
 pub use crate::operation::create_control::_create_control_input::CreateControlInputBuilder;
 
 /// Fluent builder constructing a request to `CreateControl`.
-/// 
+///
 /// <p> Creates a new custom control in Audit Manager. </p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct CreateControlFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::create_control::builders::CreateControlInputBuilder
-            }
-impl CreateControlFluentBuilder  {
+    handle: std::sync::Arc<crate::client::Handle>,
+    inner: crate::operation::create_control::builders::CreateControlInputBuilder,
+}
+impl CreateControlFluentBuilder {
     /// Creates a new `CreateControl`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
-                    /// sent. The operation's inner [http::Request] can be modified as well.
-                    pub async fn customize(self) -> std::result::Result<
-                        crate::client::customize::CustomizableOperation<crate::operation::create_control::CreateControl, aws_http::retry::AwsResponseRetryClassifier,>,
-                        aws_smithy_http::result::SdkError<crate::operation::create_control::CreateControlError>
-                    >  {
-                        let handle = self.handle.clone();
-                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-                    }
-    
-                    /// Sends the request and returns the response.
-                    ///
-                    /// If an error occurs, an `SdkError` will be returned with additional details that
-                    /// can be matched against.
-                    ///
-                    /// By default, any retryable failures will be retried twice. Retry behavior
-                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                    /// set when configuring the client.
-                    pub async fn send(self) -> std::result::Result<crate::operation::create_control::CreateControlOutput, aws_smithy_http::result::SdkError<crate::operation::create_control::CreateControlError>>
-                     {
-                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&self.handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        self.handle.client.call(op).await
-                    }
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle,
+            inner: Default::default(),
+        }
+    }
+
+    /// Consume this builder, creating a customizable operation that can be modified before being
+    /// sent. The operation's inner [http::Request] can be modified as well.
+    pub async fn customize(
+        self,
+    ) -> std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::create_control::CreateControl,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::result::SdkError<crate::operation::create_control::CreateControlError>,
+    > {
+        let handle = self.handle.clone();
+        let operation = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+    }
+
+    /// Sends the request and returns the response.
+    ///
+    /// If an error occurs, an `SdkError` will be returned with additional details that
+    /// can be matched against.
+    ///
+    /// By default, any retryable failures will be retried twice. Retry behavior
+    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+    /// set when configuring the client.
+    pub async fn send(
+        self,
+    ) -> std::result::Result<
+        crate::operation::create_control::CreateControlOutput,
+        aws_smithy_http::result::SdkError<crate::operation::create_control::CreateControlError>,
+    > {
+        let op = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&self.handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        self.handle.client.call(op).await
+    }
     /// <p> The name of the control. </p>
     pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.name(input.into());
@@ -73,7 +91,10 @@ impl CreateControlFluentBuilder  {
         self
     }
     /// <p> The steps to follow to determine if the control is satisfied. </p>
-    pub fn set_testing_information(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_testing_information(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_testing_information(input);
         self
     }
@@ -83,7 +104,10 @@ impl CreateControlFluentBuilder  {
         self
     }
     /// <p> The title of the action plan for remediating the control. </p>
-    pub fn set_action_plan_title(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_action_plan_title(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_action_plan_title(input);
         self
     }
@@ -93,7 +117,10 @@ impl CreateControlFluentBuilder  {
         self
     }
     /// <p> The recommended actions to carry out if the control isn't fulfilled. </p>
-    pub fn set_action_plan_instructions(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_action_plan_instructions(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_action_plan_instructions(input);
         self
     }
@@ -102,12 +129,18 @@ impl CreateControlFluentBuilder  {
     /// To override the contents of this collection use [`set_control_mapping_sources`](Self::set_control_mapping_sources).
     ///
     /// <p> The data mapping sources for the control. </p>
-    pub fn control_mapping_sources(mut self, input: crate::types::CreateControlMappingSource) -> Self {
+    pub fn control_mapping_sources(
+        mut self,
+        input: crate::types::CreateControlMappingSource,
+    ) -> Self {
         self.inner = self.inner.control_mapping_sources(input);
         self
     }
     /// <p> The data mapping sources for the control. </p>
-    pub fn set_control_mapping_sources(mut self, input: std::option::Option<std::vec::Vec<crate::types::CreateControlMappingSource>>) -> Self {
+    pub fn set_control_mapping_sources(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::CreateControlMappingSource>>,
+    ) -> Self {
         self.inner = self.inner.set_control_mapping_sources(input);
         self
     }
@@ -116,14 +149,22 @@ impl CreateControlFluentBuilder  {
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// <p> The tags that are associated with the control. </p>
-    pub fn tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
+    pub fn tags(
+        mut self,
+        k: impl Into<std::string::String>,
+        v: impl Into<std::string::String>,
+    ) -> Self {
         self.inner = self.inner.tags(k.into(), v.into());
         self
     }
     /// <p> The tags that are associated with the control. </p>
-    pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+    pub fn set_tags(
+        mut self,
+        input: std::option::Option<
+            std::collections::HashMap<std::string::String, std::string::String>,
+        >,
+    ) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }
 }
-

@@ -3,7 +3,7 @@
 /// <p>The summary of a gateway.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GatewaySummary  {
+pub struct GatewaySummary {
     /// <p>The ARN of the gateway.</p>
     #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
@@ -22,23 +22,23 @@ pub struct GatewaySummary  {
 }
 impl GatewaySummary {
     /// <p>The ARN of the gateway.</p>
-    pub fn arn(&self) -> std::option::Option<& str> {
+    pub fn arn(&self) -> std::option::Option<&str> {
         self.arn.as_deref()
     }
     /// <p>The name of the gateway.</p>
-    pub fn name(&self) -> std::option::Option<& str> {
+    pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>The description of the gateway.</p>
-    pub fn description(&self) -> std::option::Option<& str> {
+    pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
     /// <p>The ARN of the gateway group that the gateway is associated to.</p>
-    pub fn gateway_group_arn(&self) -> std::option::Option<& str> {
+    pub fn gateway_group_arn(&self) -> std::option::Option<&str> {
         self.gateway_group_arn.as_deref()
     }
     /// <p>The software version of the gateway. The gateway automatically updates its software version during normal operation.</p>
-    pub fn software_version(&self) -> std::option::Option<& str> {
+    pub fn software_version(&self) -> std::option::Option<&str> {
         self.software_version.as_deref()
     }
 }
@@ -67,7 +67,8 @@ impl GatewaySummaryBuilder {
     }
     /// <p>The ARN of the gateway.</p>
     pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.arn = input; self
+        self.arn = input;
+        self
     }
     /// <p>The name of the gateway.</p>
     pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -76,7 +77,8 @@ impl GatewaySummaryBuilder {
     }
     /// <p>The name of the gateway.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input; self
+        self.name = input;
+        self
     }
     /// <p>The description of the gateway.</p>
     pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -85,7 +87,8 @@ impl GatewaySummaryBuilder {
     }
     /// <p>The description of the gateway.</p>
     pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.description = input; self
+        self.description = input;
+        self
     }
     /// <p>The ARN of the gateway group that the gateway is associated to.</p>
     pub fn gateway_group_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -93,8 +96,12 @@ impl GatewaySummaryBuilder {
         self
     }
     /// <p>The ARN of the gateway group that the gateway is associated to.</p>
-    pub fn set_gateway_group_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.gateway_group_arn = input; self
+    pub fn set_gateway_group_arn(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.gateway_group_arn = input;
+        self
     }
     /// <p>The software version of the gateway. The gateway automatically updates its software version during normal operation.</p>
     pub fn software_version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -103,22 +110,17 @@ impl GatewaySummaryBuilder {
     }
     /// <p>The software version of the gateway. The gateway automatically updates its software version during normal operation.</p>
     pub fn set_software_version(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.software_version = input; self
+        self.software_version = input;
+        self
     }
     /// Consumes the builder and constructs a [`GatewaySummary`](crate::types::GatewaySummary).
     pub fn build(self) -> crate::types::GatewaySummary {
         crate::types::GatewaySummary {
-            arn: self.arn
-            ,
-            name: self.name
-            ,
-            description: self.description
-            ,
-            gateway_group_arn: self.gateway_group_arn
-            ,
-            software_version: self.software_version
-            ,
+            arn: self.arn,
+            name: self.name,
+            description: self.description,
+            gateway_group_arn: self.gateway_group_arn,
+            software_version: self.software_version,
         }
     }
 }
-

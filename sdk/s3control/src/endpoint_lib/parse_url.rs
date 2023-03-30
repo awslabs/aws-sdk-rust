@@ -112,4 +112,3 @@ mod test {
         assert_eq!(parse_url(url, &mut DiagnosticCollector::new()), None);
     }
 }
-

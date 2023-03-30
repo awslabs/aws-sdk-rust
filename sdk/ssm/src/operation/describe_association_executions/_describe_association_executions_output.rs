@@ -2,10 +2,11 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeAssociationExecutionsOutput  {
+pub struct DescribeAssociationExecutionsOutput {
     /// <p>A list of the executions for the specified association ID.</p>
     #[doc(hidden)]
-    pub association_executions: std::option::Option<std::vec::Vec<crate::types::AssociationExecution>>,
+    pub association_executions:
+        std::option::Option<std::vec::Vec<crate::types::AssociationExecution>>,
     /// <p>The token for the next set of items to return. Use this token to get the next set of results.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
@@ -13,22 +14,24 @@ pub struct DescribeAssociationExecutionsOutput  {
 }
 impl DescribeAssociationExecutionsOutput {
     /// <p>A list of the executions for the specified association ID.</p>
-    pub fn association_executions(&self) -> std::option::Option<& [crate::types::AssociationExecution]> {
+    pub fn association_executions(
+        &self,
+    ) -> std::option::Option<&[crate::types::AssociationExecution]> {
         self.association_executions.as_deref()
     }
     /// <p>The token for the next set of items to return. Use this token to get the next set of results.</p>
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for DescribeAssociationExecutionsOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl DescribeAssociationExecutionsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeAssociationExecutionsOutput`](crate::operation::describe_association_executions::DescribeAssociationExecutionsOutput).
-    pub fn builder() -> crate::operation::describe_association_executions::builders::DescribeAssociationExecutionsOutputBuilder {
+    pub fn builder() -> crate::operation::describe_association_executions::builders::DescribeAssociationExecutionsOutputBuilder{
         crate::operation::describe_association_executions::builders::DescribeAssociationExecutionsOutputBuilder::default()
     }
 }
@@ -37,7 +40,8 @@ impl DescribeAssociationExecutionsOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct DescribeAssociationExecutionsOutputBuilder {
-    pub(crate) association_executions: std::option::Option<std::vec::Vec<crate::types::AssociationExecution>>,
+    pub(crate) association_executions:
+        std::option::Option<std::vec::Vec<crate::types::AssociationExecution>>,
     pub(crate) next_token: std::option::Option<std::string::String>,
     _request_id: Option<String>,
 }
@@ -49,13 +53,17 @@ impl DescribeAssociationExecutionsOutputBuilder {
     /// <p>A list of the executions for the specified association ID.</p>
     pub fn association_executions(mut self, input: crate::types::AssociationExecution) -> Self {
         let mut v = self.association_executions.unwrap_or_default();
-                        v.push(input);
-                        self.association_executions = Some(v);
-                        self
+        v.push(input);
+        self.association_executions = Some(v);
+        self
     }
     /// <p>A list of the executions for the specified association ID.</p>
-    pub fn set_association_executions(mut self, input: std::option::Option<std::vec::Vec<crate::types::AssociationExecution>>) -> Self {
-        self.association_executions = input; self
+    pub fn set_association_executions(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::AssociationExecution>>,
+    ) -> Self {
+        self.association_executions = input;
+        self
     }
     /// <p>The token for the next set of items to return. Use this token to get the next set of results.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -64,26 +72,27 @@ impl DescribeAssociationExecutionsOutputBuilder {
     }
     /// <p>The token for the next set of items to return. Use this token to get the next set of results.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input; self
+        self.next_token = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`DescribeAssociationExecutionsOutput`](crate::operation::describe_association_executions::DescribeAssociationExecutionsOutput).
-    pub fn build(self) -> crate::operation::describe_association_executions::DescribeAssociationExecutionsOutput {
+    pub fn build(
+        self,
+    ) -> crate::operation::describe_association_executions::DescribeAssociationExecutionsOutput
+    {
         crate::operation::describe_association_executions::DescribeAssociationExecutionsOutput {
-            association_executions: self.association_executions
-            ,
-            next_token: self.next_token
-            ,
+            association_executions: self.association_executions,
+            next_token: self.next_token,
             _request_id: self._request_id,
         }
     }
 }
-

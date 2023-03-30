@@ -2,20 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetTargetResourceTypeInput  {
+pub struct GetTargetResourceTypeInput {
     /// <p>The resource type.</p>
     #[doc(hidden)]
     pub resource_type: std::option::Option<std::string::String>,
 }
 impl GetTargetResourceTypeInput {
     /// <p>The resource type.</p>
-    pub fn resource_type(&self) -> std::option::Option<& str> {
+    pub fn resource_type(&self) -> std::option::Option<&str> {
         self.resource_type.as_deref()
     }
 }
 impl GetTargetResourceTypeInput {
     /// Creates a new builder-style object to manufacture [`GetTargetResourceTypeInput`](crate::operation::get_target_resource_type::GetTargetResourceTypeInput).
-    pub fn builder() -> crate::operation::get_target_resource_type::builders::GetTargetResourceTypeInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::get_target_resource_type::builders::GetTargetResourceTypeInputBuilder
+    {
         crate::operation::get_target_resource_type::builders::GetTargetResourceTypeInputBuilder::default()
     }
 }
@@ -34,16 +36,20 @@ impl GetTargetResourceTypeInputBuilder {
     }
     /// <p>The resource type.</p>
     pub fn set_resource_type(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.resource_type = input; self
+        self.resource_type = input;
+        self
     }
     /// Consumes the builder and constructs a [`GetTargetResourceTypeInput`](crate::operation::get_target_resource_type::GetTargetResourceTypeInput).
-    pub fn build(self) -> Result<crate::operation::get_target_resource_type::GetTargetResourceTypeInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::get_target_resource_type::GetTargetResourceTypeInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::get_target_resource_type::GetTargetResourceTypeInput {
-                resource_type: self.resource_type
-                ,
-            }
+                resource_type: self.resource_type,
+            },
         )
     }
 }
-

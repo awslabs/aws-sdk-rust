@@ -3,12 +3,12 @@
 /// <p>The style configuration of the reference line.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ReferenceLineStyleConfiguration  {
-    /// <p>The pattern type of the line style. Choose one of the following options:</p> 
-    /// <ul> 
-    /// <li> <p> <code>SOLID</code> </p> </li> 
-    /// <li> <p> <code>DASHED</code> </p> </li> 
-    /// <li> <p> <code>DOTTED</code> </p> </li> 
+pub struct ReferenceLineStyleConfiguration {
+    /// <p>The pattern type of the line style. Choose one of the following options:</p>
+    /// <ul>
+    /// <li> <p> <code>SOLID</code> </p> </li>
+    /// <li> <p> <code>DASHED</code> </p> </li>
+    /// <li> <p> <code>DOTTED</code> </p> </li>
     /// </ul>
     #[doc(hidden)]
     pub pattern: std::option::Option<crate::types::ReferenceLinePatternType>,
@@ -17,17 +17,17 @@ pub struct ReferenceLineStyleConfiguration  {
     pub color: std::option::Option<std::string::String>,
 }
 impl ReferenceLineStyleConfiguration {
-    /// <p>The pattern type of the line style. Choose one of the following options:</p> 
-    /// <ul> 
-    /// <li> <p> <code>SOLID</code> </p> </li> 
-    /// <li> <p> <code>DASHED</code> </p> </li> 
-    /// <li> <p> <code>DOTTED</code> </p> </li> 
+    /// <p>The pattern type of the line style. Choose one of the following options:</p>
+    /// <ul>
+    /// <li> <p> <code>SOLID</code> </p> </li>
+    /// <li> <p> <code>DASHED</code> </p> </li>
+    /// <li> <p> <code>DOTTED</code> </p> </li>
     /// </ul>
-    pub fn pattern(&self) -> std::option::Option<& crate::types::ReferenceLinePatternType> {
+    pub fn pattern(&self) -> std::option::Option<&crate::types::ReferenceLinePatternType> {
         self.pattern.as_ref()
     }
     /// <p>The hex color of the reference line.</p>
-    pub fn color(&self) -> std::option::Option<& str> {
+    pub fn color(&self) -> std::option::Option<&str> {
         self.color.as_deref()
     }
 }
@@ -46,24 +46,28 @@ pub struct ReferenceLineStyleConfigurationBuilder {
     pub(crate) color: std::option::Option<std::string::String>,
 }
 impl ReferenceLineStyleConfigurationBuilder {
-    /// <p>The pattern type of the line style. Choose one of the following options:</p> 
-    /// <ul> 
-    /// <li> <p> <code>SOLID</code> </p> </li> 
-    /// <li> <p> <code>DASHED</code> </p> </li> 
-    /// <li> <p> <code>DOTTED</code> </p> </li> 
+    /// <p>The pattern type of the line style. Choose one of the following options:</p>
+    /// <ul>
+    /// <li> <p> <code>SOLID</code> </p> </li>
+    /// <li> <p> <code>DASHED</code> </p> </li>
+    /// <li> <p> <code>DOTTED</code> </p> </li>
     /// </ul>
     pub fn pattern(mut self, input: crate::types::ReferenceLinePatternType) -> Self {
         self.pattern = Some(input);
         self
     }
-    /// <p>The pattern type of the line style. Choose one of the following options:</p> 
-    /// <ul> 
-    /// <li> <p> <code>SOLID</code> </p> </li> 
-    /// <li> <p> <code>DASHED</code> </p> </li> 
-    /// <li> <p> <code>DOTTED</code> </p> </li> 
+    /// <p>The pattern type of the line style. Choose one of the following options:</p>
+    /// <ul>
+    /// <li> <p> <code>SOLID</code> </p> </li>
+    /// <li> <p> <code>DASHED</code> </p> </li>
+    /// <li> <p> <code>DOTTED</code> </p> </li>
     /// </ul>
-    pub fn set_pattern(mut self, input: std::option::Option<crate::types::ReferenceLinePatternType>) -> Self {
-        self.pattern = input; self
+    pub fn set_pattern(
+        mut self,
+        input: std::option::Option<crate::types::ReferenceLinePatternType>,
+    ) -> Self {
+        self.pattern = input;
+        self
     }
     /// <p>The hex color of the reference line.</p>
     pub fn color(mut self, input: impl Into<std::string::String>) -> Self {
@@ -72,16 +76,14 @@ impl ReferenceLineStyleConfigurationBuilder {
     }
     /// <p>The hex color of the reference line.</p>
     pub fn set_color(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.color = input; self
+        self.color = input;
+        self
     }
     /// Consumes the builder and constructs a [`ReferenceLineStyleConfiguration`](crate::types::ReferenceLineStyleConfiguration).
     pub fn build(self) -> crate::types::ReferenceLineStyleConfiguration {
         crate::types::ReferenceLineStyleConfiguration {
-            pattern: self.pattern
-            ,
-            color: self.color
-            ,
+            pattern: self.pattern,
+            color: self.color,
         }
     }
 }
-

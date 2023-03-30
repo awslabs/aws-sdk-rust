@@ -3,7 +3,7 @@
 /// <p>The input to the SetVisibleToAllUsers action.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SetVisibleToAllUsersInput  {
+pub struct SetVisibleToAllUsersInput {
     /// <p>The unique identifier of the job flow (cluster).</p>
     #[doc(hidden)]
     pub job_flow_ids: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -13,7 +13,7 @@ pub struct SetVisibleToAllUsersInput  {
 }
 impl SetVisibleToAllUsersInput {
     /// <p>The unique identifier of the job flow (cluster).</p>
-    pub fn job_flow_ids(&self) -> std::option::Option<& [std::string::String]> {
+    pub fn job_flow_ids(&self) -> std::option::Option<&[std::string::String]> {
         self.job_flow_ids.as_deref()
     }
     /// <p>A value of <code>true</code> indicates that an IAM principal in the Amazon Web Services account can perform EMR actions on the cluster that the IAM policies attached to the principal allow. A value of <code>false</code> indicates that only the IAM principal that created the cluster and the Amazon Web Services root user can perform EMR actions on the cluster.</p>
@@ -23,7 +23,9 @@ impl SetVisibleToAllUsersInput {
 }
 impl SetVisibleToAllUsersInput {
     /// Creates a new builder-style object to manufacture [`SetVisibleToAllUsersInput`](crate::operation::set_visible_to_all_users::SetVisibleToAllUsersInput).
-    pub fn builder() -> crate::operation::set_visible_to_all_users::builders::SetVisibleToAllUsersInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::set_visible_to_all_users::builders::SetVisibleToAllUsersInputBuilder
+    {
         crate::operation::set_visible_to_all_users::builders::SetVisibleToAllUsersInputBuilder::default()
     }
 }
@@ -43,13 +45,17 @@ impl SetVisibleToAllUsersInputBuilder {
     /// <p>The unique identifier of the job flow (cluster).</p>
     pub fn job_flow_ids(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.job_flow_ids.unwrap_or_default();
-                        v.push(input.into());
-                        self.job_flow_ids = Some(v);
-                        self
+        v.push(input.into());
+        self.job_flow_ids = Some(v);
+        self
     }
     /// <p>The unique identifier of the job flow (cluster).</p>
-    pub fn set_job_flow_ids(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-        self.job_flow_ids = input; self
+    pub fn set_job_flow_ids(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
+        self.job_flow_ids = input;
+        self
     }
     /// <p>A value of <code>true</code> indicates that an IAM principal in the Amazon Web Services account can perform EMR actions on the cluster that the IAM policies attached to the principal allow. A value of <code>false</code> indicates that only the IAM principal that created the cluster and the Amazon Web Services root user can perform EMR actions on the cluster.</p>
     pub fn visible_to_all_users(mut self, input: bool) -> Self {
@@ -58,19 +64,21 @@ impl SetVisibleToAllUsersInputBuilder {
     }
     /// <p>A value of <code>true</code> indicates that an IAM principal in the Amazon Web Services account can perform EMR actions on the cluster that the IAM policies attached to the principal allow. A value of <code>false</code> indicates that only the IAM principal that created the cluster and the Amazon Web Services root user can perform EMR actions on the cluster.</p>
     pub fn set_visible_to_all_users(mut self, input: std::option::Option<bool>) -> Self {
-        self.visible_to_all_users = input; self
+        self.visible_to_all_users = input;
+        self
     }
     /// Consumes the builder and constructs a [`SetVisibleToAllUsersInput`](crate::operation::set_visible_to_all_users::SetVisibleToAllUsersInput).
-    pub fn build(self) -> Result<crate::operation::set_visible_to_all_users::SetVisibleToAllUsersInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::set_visible_to_all_users::SetVisibleToAllUsersInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::set_visible_to_all_users::SetVisibleToAllUsersInput {
-                job_flow_ids: self.job_flow_ids
-                ,
-                visible_to_all_users: self.visible_to_all_users
-                    .unwrap_or_default()
-                ,
-            }
+                job_flow_ids: self.job_flow_ids,
+                visible_to_all_users: self.visible_to_all_users.unwrap_or_default(),
+            },
         )
     }
 }
-

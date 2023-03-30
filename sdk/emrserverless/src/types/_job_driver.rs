@@ -22,7 +22,11 @@ impl JobDriver {
     /// Tries to convert the enum instance into [`Hive`](crate::types::JobDriver::Hive), extracting the inner [`Hive`](crate::types::Hive).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_hive(&self) -> std::result::Result<&crate::types::Hive, &Self> {
-        if let JobDriver::Hive(val) = &self { Ok(val) } else { Err(self) }
+        if let JobDriver::Hive(val) = &self {
+            Ok(val)
+        } else {
+            Err(self)
+        }
     }
     /// Returns true if this is a [`Hive`](crate::types::JobDriver::Hive).
     pub fn is_hive(&self) -> bool {
@@ -31,7 +35,11 @@ impl JobDriver {
     /// Tries to convert the enum instance into [`SparkSubmit`](crate::types::JobDriver::SparkSubmit), extracting the inner [`SparkSubmit`](crate::types::SparkSubmit).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_spark_submit(&self) -> std::result::Result<&crate::types::SparkSubmit, &Self> {
-        if let JobDriver::SparkSubmit(val) = &self { Ok(val) } else { Err(self) }
+        if let JobDriver::SparkSubmit(val) = &self {
+            Ok(val)
+        } else {
+            Err(self)
+        }
     }
     /// Returns true if this is a [`SparkSubmit`](crate::types::JobDriver::SparkSubmit).
     pub fn is_spark_submit(&self) -> bool {
@@ -42,4 +50,3 @@ impl JobDriver {
         matches!(self, Self::Unknown)
     }
 }
-

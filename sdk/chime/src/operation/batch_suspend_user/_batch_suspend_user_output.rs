@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct BatchSuspendUserOutput  {
+pub struct BatchSuspendUserOutput {
     /// <p>If the <code>BatchSuspendUser</code> action fails for one or more of the user IDs in the request, a list of the user IDs is returned, along with error codes and error messages.</p>
     #[doc(hidden)]
     pub user_errors: std::option::Option<std::vec::Vec<crate::types::UserError>>,
@@ -10,18 +10,19 @@ pub struct BatchSuspendUserOutput  {
 }
 impl BatchSuspendUserOutput {
     /// <p>If the <code>BatchSuspendUser</code> action fails for one or more of the user IDs in the request, a list of the user IDs is returned, along with error codes and error messages.</p>
-    pub fn user_errors(&self) -> std::option::Option<& [crate::types::UserError]> {
+    pub fn user_errors(&self) -> std::option::Option<&[crate::types::UserError]> {
         self.user_errors.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for BatchSuspendUserOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl BatchSuspendUserOutput {
     /// Creates a new builder-style object to manufacture [`BatchSuspendUserOutput`](crate::operation::batch_suspend_user::BatchSuspendUserOutput).
-    pub fn builder() -> crate::operation::batch_suspend_user::builders::BatchSuspendUserOutputBuilder {
+    pub fn builder() -> crate::operation::batch_suspend_user::builders::BatchSuspendUserOutputBuilder
+    {
         crate::operation::batch_suspend_user::builders::BatchSuspendUserOutputBuilder::default()
     }
 }
@@ -41,30 +42,32 @@ impl BatchSuspendUserOutputBuilder {
     /// <p>If the <code>BatchSuspendUser</code> action fails for one or more of the user IDs in the request, a list of the user IDs is returned, along with error codes and error messages.</p>
     pub fn user_errors(mut self, input: crate::types::UserError) -> Self {
         let mut v = self.user_errors.unwrap_or_default();
-                        v.push(input);
-                        self.user_errors = Some(v);
-                        self
+        v.push(input);
+        self.user_errors = Some(v);
+        self
     }
     /// <p>If the <code>BatchSuspendUser</code> action fails for one or more of the user IDs in the request, a list of the user IDs is returned, along with error codes and error messages.</p>
-    pub fn set_user_errors(mut self, input: std::option::Option<std::vec::Vec<crate::types::UserError>>) -> Self {
-        self.user_errors = input; self
+    pub fn set_user_errors(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::UserError>>,
+    ) -> Self {
+        self.user_errors = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`BatchSuspendUserOutput`](crate::operation::batch_suspend_user::BatchSuspendUserOutput).
     pub fn build(self) -> crate::operation::batch_suspend_user::BatchSuspendUserOutput {
         crate::operation::batch_suspend_user::BatchSuspendUserOutput {
-            user_errors: self.user_errors
-            ,
+            user_errors: self.user_errors,
             _request_id: self._request_id,
         }
     }
 }
-

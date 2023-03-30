@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateResourceProfileInput  {
+pub struct UpdateResourceProfileInput {
     /// <p>The Amazon Resource Name (ARN) of the S3 bucket that the request applies to.</p>
     #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
@@ -12,7 +12,7 @@ pub struct UpdateResourceProfileInput  {
 }
 impl UpdateResourceProfileInput {
     /// <p>The Amazon Resource Name (ARN) of the S3 bucket that the request applies to.</p>
-    pub fn resource_arn(&self) -> std::option::Option<& str> {
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
         self.resource_arn.as_deref()
     }
     /// <p>The new sensitivity score for the bucket. Valid values are: 100, assign the maximum score and apply the <i>Sensitive</i> label to the bucket; and, null (empty), assign a score that Amazon Macie calculates automatically after you submit the request.</p>
@@ -22,7 +22,9 @@ impl UpdateResourceProfileInput {
 }
 impl UpdateResourceProfileInput {
     /// Creates a new builder-style object to manufacture [`UpdateResourceProfileInput`](crate::operation::update_resource_profile::UpdateResourceProfileInput).
-    pub fn builder() -> crate::operation::update_resource_profile::builders::UpdateResourceProfileInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::update_resource_profile::builders::UpdateResourceProfileInputBuilder
+    {
         crate::operation::update_resource_profile::builders::UpdateResourceProfileInputBuilder::default()
     }
 }
@@ -42,7 +44,8 @@ impl UpdateResourceProfileInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the S3 bucket that the request applies to.</p>
     pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.resource_arn = input; self
+        self.resource_arn = input;
+        self
     }
     /// <p>The new sensitivity score for the bucket. Valid values are: 100, assign the maximum score and apply the <i>Sensitive</i> label to the bucket; and, null (empty), assign a score that Amazon Macie calculates automatically after you submit the request.</p>
     pub fn sensitivity_score_override(mut self, input: i32) -> Self {
@@ -51,19 +54,21 @@ impl UpdateResourceProfileInputBuilder {
     }
     /// <p>The new sensitivity score for the bucket. Valid values are: 100, assign the maximum score and apply the <i>Sensitive</i> label to the bucket; and, null (empty), assign a score that Amazon Macie calculates automatically after you submit the request.</p>
     pub fn set_sensitivity_score_override(mut self, input: std::option::Option<i32>) -> Self {
-        self.sensitivity_score_override = input; self
+        self.sensitivity_score_override = input;
+        self
     }
     /// Consumes the builder and constructs a [`UpdateResourceProfileInput`](crate::operation::update_resource_profile::UpdateResourceProfileInput).
-    pub fn build(self) -> Result<crate::operation::update_resource_profile::UpdateResourceProfileInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::update_resource_profile::UpdateResourceProfileInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::update_resource_profile::UpdateResourceProfileInput {
-                resource_arn: self.resource_arn
-                ,
-                sensitivity_score_override: self.sensitivity_score_override
-                    .unwrap_or_default()
-                ,
-            }
+                resource_arn: self.resource_arn,
+                sensitivity_score_override: self.sensitivity_score_override.unwrap_or_default(),
+            },
         )
     }
 }
-

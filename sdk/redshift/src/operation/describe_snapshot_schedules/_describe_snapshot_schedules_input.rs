@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeSnapshotSchedulesInput  {
+pub struct DescribeSnapshotSchedulesInput {
     /// <p>The unique identifier for the cluster whose snapshot schedules you want to view.</p>
     #[doc(hidden)]
     pub cluster_identifier: std::option::Option<std::string::String>,
@@ -24,23 +24,23 @@ pub struct DescribeSnapshotSchedulesInput  {
 }
 impl DescribeSnapshotSchedulesInput {
     /// <p>The unique identifier for the cluster whose snapshot schedules you want to view.</p>
-    pub fn cluster_identifier(&self) -> std::option::Option<& str> {
+    pub fn cluster_identifier(&self) -> std::option::Option<&str> {
         self.cluster_identifier.as_deref()
     }
     /// <p>A unique identifier for a snapshot schedule.</p>
-    pub fn schedule_identifier(&self) -> std::option::Option<& str> {
+    pub fn schedule_identifier(&self) -> std::option::Option<&str> {
         self.schedule_identifier.as_deref()
     }
     /// <p>The key value for a snapshot schedule tag.</p>
-    pub fn tag_keys(&self) -> std::option::Option<& [std::string::String]> {
+    pub fn tag_keys(&self) -> std::option::Option<&[std::string::String]> {
         self.tag_keys.as_deref()
     }
     /// <p>The value corresponding to the key of the snapshot schedule tag.</p>
-    pub fn tag_values(&self) -> std::option::Option<& [std::string::String]> {
+    pub fn tag_values(&self) -> std::option::Option<&[std::string::String]> {
         self.tag_values.as_deref()
     }
     /// <p>A value that indicates the starting point for the next set of response records in a subsequent request. If a value is returned in a response, you can retrieve the next set of records by providing this returned marker value in the <code>marker</code> parameter and retrying the command. If the <code>marker</code> field is empty, all response records have been retrieved for the request.</p>
-    pub fn marker(&self) -> std::option::Option<& str> {
+    pub fn marker(&self) -> std::option::Option<&str> {
         self.marker.as_deref()
     }
     /// <p>The maximum number or response records to return in each call. If the number of remaining response records exceeds the specified <code>MaxRecords</code> value, a value is returned in a <code>marker</code> field of the response. You can retrieve the next set of records by retrying the command with the returned <code>marker</code> value.</p>
@@ -50,7 +50,7 @@ impl DescribeSnapshotSchedulesInput {
 }
 impl DescribeSnapshotSchedulesInput {
     /// Creates a new builder-style object to manufacture [`DescribeSnapshotSchedulesInput`](crate::operation::describe_snapshot_schedules::DescribeSnapshotSchedulesInput).
-    pub fn builder() -> crate::operation::describe_snapshot_schedules::builders::DescribeSnapshotSchedulesInputBuilder {
+    pub fn builder() -> crate::operation::describe_snapshot_schedules::builders::DescribeSnapshotSchedulesInputBuilder{
         crate::operation::describe_snapshot_schedules::builders::DescribeSnapshotSchedulesInputBuilder::default()
     }
 }
@@ -73,8 +73,12 @@ impl DescribeSnapshotSchedulesInputBuilder {
         self
     }
     /// <p>The unique identifier for the cluster whose snapshot schedules you want to view.</p>
-    pub fn set_cluster_identifier(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.cluster_identifier = input; self
+    pub fn set_cluster_identifier(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.cluster_identifier = input;
+        self
     }
     /// <p>A unique identifier for a snapshot schedule.</p>
     pub fn schedule_identifier(mut self, input: impl Into<std::string::String>) -> Self {
@@ -82,8 +86,12 @@ impl DescribeSnapshotSchedulesInputBuilder {
         self
     }
     /// <p>A unique identifier for a snapshot schedule.</p>
-    pub fn set_schedule_identifier(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.schedule_identifier = input; self
+    pub fn set_schedule_identifier(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.schedule_identifier = input;
+        self
     }
     /// Appends an item to `tag_keys`.
     ///
@@ -92,13 +100,17 @@ impl DescribeSnapshotSchedulesInputBuilder {
     /// <p>The key value for a snapshot schedule tag.</p>
     pub fn tag_keys(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.tag_keys.unwrap_or_default();
-                        v.push(input.into());
-                        self.tag_keys = Some(v);
-                        self
+        v.push(input.into());
+        self.tag_keys = Some(v);
+        self
     }
     /// <p>The key value for a snapshot schedule tag.</p>
-    pub fn set_tag_keys(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-        self.tag_keys = input; self
+    pub fn set_tag_keys(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
+        self.tag_keys = input;
+        self
     }
     /// Appends an item to `tag_values`.
     ///
@@ -107,13 +119,17 @@ impl DescribeSnapshotSchedulesInputBuilder {
     /// <p>The value corresponding to the key of the snapshot schedule tag.</p>
     pub fn tag_values(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.tag_values.unwrap_or_default();
-                        v.push(input.into());
-                        self.tag_values = Some(v);
-                        self
+        v.push(input.into());
+        self.tag_values = Some(v);
+        self
     }
     /// <p>The value corresponding to the key of the snapshot schedule tag.</p>
-    pub fn set_tag_values(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-        self.tag_values = input; self
+    pub fn set_tag_values(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
+        self.tag_values = input;
+        self
     }
     /// <p>A value that indicates the starting point for the next set of response records in a subsequent request. If a value is returned in a response, you can retrieve the next set of records by providing this returned marker value in the <code>marker</code> parameter and retrying the command. If the <code>marker</code> field is empty, all response records have been retrieved for the request.</p>
     pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
@@ -122,7 +138,8 @@ impl DescribeSnapshotSchedulesInputBuilder {
     }
     /// <p>A value that indicates the starting point for the next set of response records in a subsequent request. If a value is returned in a response, you can retrieve the next set of records by providing this returned marker value in the <code>marker</code> parameter and retrying the command. If the <code>marker</code> field is empty, all response records have been retrieved for the request.</p>
     pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.marker = input; self
+        self.marker = input;
+        self
     }
     /// <p>The maximum number or response records to return in each call. If the number of remaining response records exceeds the specified <code>MaxRecords</code> value, a value is returned in a <code>marker</code> field of the response. You can retrieve the next set of records by retrying the command with the returned <code>marker</code> value.</p>
     pub fn max_records(mut self, input: i32) -> Self {
@@ -131,26 +148,25 @@ impl DescribeSnapshotSchedulesInputBuilder {
     }
     /// <p>The maximum number or response records to return in each call. If the number of remaining response records exceeds the specified <code>MaxRecords</code> value, a value is returned in a <code>marker</code> field of the response. You can retrieve the next set of records by retrying the command with the returned <code>marker</code> value.</p>
     pub fn set_max_records(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_records = input; self
+        self.max_records = input;
+        self
     }
     /// Consumes the builder and constructs a [`DescribeSnapshotSchedulesInput`](crate::operation::describe_snapshot_schedules::DescribeSnapshotSchedulesInput).
-    pub fn build(self) -> Result<crate::operation::describe_snapshot_schedules::DescribeSnapshotSchedulesInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::describe_snapshot_schedules::DescribeSnapshotSchedulesInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::describe_snapshot_schedules::DescribeSnapshotSchedulesInput {
-                cluster_identifier: self.cluster_identifier
-                ,
-                schedule_identifier: self.schedule_identifier
-                ,
-                tag_keys: self.tag_keys
-                ,
-                tag_values: self.tag_values
-                ,
-                marker: self.marker
-                ,
-                max_records: self.max_records
-                ,
-            }
+                cluster_identifier: self.cluster_identifier,
+                schedule_identifier: self.schedule_identifier,
+                tag_keys: self.tag_keys,
+                tag_values: self.tag_values,
+                marker: self.marker,
+                max_records: self.max_records,
+            },
         )
     }
 }
-

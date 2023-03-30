@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct ActivateUserInput  {
+pub struct ActivateUserInput {
     /// <p>The ID of the user.</p>
     #[doc(hidden)]
     pub user_id: std::option::Option<std::string::String>,
@@ -12,15 +12,15 @@ pub struct ActivateUserInput  {
 }
 impl ActivateUserInput {
     /// <p>The ID of the user.</p>
-    pub fn user_id(&self) -> std::option::Option<& str> {
+    pub fn user_id(&self) -> std::option::Option<&str> {
         self.user_id.as_deref()
     }
     /// <p>Amazon WorkDocs authentication token. Not required when using AWS administrator credentials to access the API.</p>
-    pub fn authentication_token(&self) -> std::option::Option<& str> {
+    pub fn authentication_token(&self) -> std::option::Option<&str> {
         self.authentication_token.as_deref()
     }
 }
-impl  std::fmt::Debug for ActivateUserInput  {
+impl std::fmt::Debug for ActivateUserInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ActivateUserInput");
         formatter.field("user_id", &self.user_id);
@@ -50,7 +50,8 @@ impl ActivateUserInputBuilder {
     }
     /// <p>The ID of the user.</p>
     pub fn set_user_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.user_id = input; self
+        self.user_id = input;
+        self
     }
     /// <p>Amazon WorkDocs authentication token. Not required when using AWS administrator credentials to access the API.</p>
     pub fn authentication_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -58,19 +59,24 @@ impl ActivateUserInputBuilder {
         self
     }
     /// <p>Amazon WorkDocs authentication token. Not required when using AWS administrator credentials to access the API.</p>
-    pub fn set_authentication_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.authentication_token = input; self
+    pub fn set_authentication_token(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.authentication_token = input;
+        self
     }
     /// Consumes the builder and constructs a [`ActivateUserInput`](crate::operation::activate_user::ActivateUserInput).
-    pub fn build(self) -> Result<crate::operation::activate_user::ActivateUserInput, aws_smithy_http::operation::error::BuildError> {
-        Ok(
-            crate::operation::activate_user::ActivateUserInput {
-                user_id: self.user_id
-                ,
-                authentication_token: self.authentication_token
-                ,
-            }
-        )
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::activate_user::ActivateUserInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        Ok(crate::operation::activate_user::ActivateUserInput {
+            user_id: self.user_id,
+            authentication_token: self.authentication_token,
+        })
     }
 }
 impl std::fmt::Debug for ActivateUserInputBuilder {
@@ -81,4 +87,3 @@ impl std::fmt::Debug for ActivateUserInputBuilder {
         formatter.finish()
     }
 }
-

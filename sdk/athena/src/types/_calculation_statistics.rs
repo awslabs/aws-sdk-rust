@@ -3,7 +3,7 @@
 /// <p>Contains statistics for a notebook calculation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CalculationStatistics  {
+pub struct CalculationStatistics {
     /// <p>The data processing unit execution time in milliseconds for the calculation.</p>
     #[doc(hidden)]
     pub dpu_execution_in_millis: std::option::Option<i64>,
@@ -17,7 +17,7 @@ impl CalculationStatistics {
         self.dpu_execution_in_millis
     }
     /// <p>The progress of the calculation.</p>
-    pub fn progress(&self) -> std::option::Option<& str> {
+    pub fn progress(&self) -> std::option::Option<&str> {
         self.progress.as_deref()
     }
 }
@@ -43,7 +43,8 @@ impl CalculationStatisticsBuilder {
     }
     /// <p>The data processing unit execution time in milliseconds for the calculation.</p>
     pub fn set_dpu_execution_in_millis(mut self, input: std::option::Option<i64>) -> Self {
-        self.dpu_execution_in_millis = input; self
+        self.dpu_execution_in_millis = input;
+        self
     }
     /// <p>The progress of the calculation.</p>
     pub fn progress(mut self, input: impl Into<std::string::String>) -> Self {
@@ -52,16 +53,14 @@ impl CalculationStatisticsBuilder {
     }
     /// <p>The progress of the calculation.</p>
     pub fn set_progress(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.progress = input; self
+        self.progress = input;
+        self
     }
     /// Consumes the builder and constructs a [`CalculationStatistics`](crate::types::CalculationStatistics).
     pub fn build(self) -> crate::types::CalculationStatistics {
         crate::types::CalculationStatistics {
-            dpu_execution_in_millis: self.dpu_execution_in_millis
-            ,
-            progress: self.progress
-            ,
+            dpu_execution_in_millis: self.dpu_execution_in_millis,
+            progress: self.progress,
         }
     }
 }
-

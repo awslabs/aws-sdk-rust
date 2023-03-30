@@ -4,50 +4,59 @@ pub use crate::operation::modify_vpc_endpoint_service_configuration::_modify_vpc
 pub use crate::operation::modify_vpc_endpoint_service_configuration::_modify_vpc_endpoint_service_configuration_input::ModifyVpcEndpointServiceConfigurationInputBuilder;
 
 /// Fluent builder constructing a request to `ModifyVpcEndpointServiceConfiguration`.
-/// 
-/// <p>Modifies the attributes of your VPC endpoint service configuration. You can change the Network Load Balancers or Gateway Load Balancers for your service, and you can specify whether acceptance is required for requests to connect to your endpoint service through an interface VPC endpoint.</p> 
+///
+/// <p>Modifies the attributes of your VPC endpoint service configuration. You can change the Network Load Balancers or Gateway Load Balancers for your service, and you can specify whether acceptance is required for requests to connect to your endpoint service through an interface VPC endpoint.</p>
 /// <p>If you set or modify the private DNS name, you must prove that you own the private DNS domain name.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ModifyVpcEndpointServiceConfigurationFluentBuilder {
                 handle: std::sync::Arc<crate::client::Handle>,
                 inner: crate::operation::modify_vpc_endpoint_service_configuration::builders::ModifyVpcEndpointServiceConfigurationInputBuilder
             }
-impl ModifyVpcEndpointServiceConfigurationFluentBuilder  {
+impl ModifyVpcEndpointServiceConfigurationFluentBuilder {
     /// Creates a new `ModifyVpcEndpointServiceConfiguration`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
-                    /// sent. The operation's inner [http::Request] can be modified as well.
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle,
+            inner: Default::default(),
+        }
+    }
+
+    /// Consume this builder, creating a customizable operation that can be modified before being
+    /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::modify_vpc_endpoint_service_configuration::ModifyVpcEndpointServiceConfiguration, aws_http::retry::AwsResponseRetryClassifier,>,
                         aws_smithy_http::result::SdkError<crate::operation::modify_vpc_endpoint_service_configuration::ModifyVpcEndpointServiceConfigurationError>
-                    >  {
-                        let handle = self.handle.clone();
-                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-                    }
-    
-                    /// Sends the request and returns the response.
-                    ///
-                    /// If an error occurs, an `SdkError` will be returned with additional details that
-                    /// can be matched against.
-                    ///
-                    /// By default, any retryable failures will be retried twice. Retry behavior
-                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                    /// set when configuring the client.
+    >{
+        let handle = self.handle.clone();
+        let operation = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+    }
+
+    /// Sends the request and returns the response.
+    ///
+    /// If an error occurs, an `SdkError` will be returned with additional details that
+    /// can be matched against.
+    ///
+    /// By default, any retryable failures will be retried twice. Retry behavior
+    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+    /// set when configuring the client.
                     pub async fn send(self) -> std::result::Result<crate::operation::modify_vpc_endpoint_service_configuration::ModifyVpcEndpointServiceConfigurationOutput, aws_smithy_http::result::SdkError<crate::operation::modify_vpc_endpoint_service_configuration::ModifyVpcEndpointServiceConfigurationError>>
                      {
-                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&self.handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        self.handle.client.call(op).await
-                    }
+        let op = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&self.handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        self.handle.client.call(op).await
+    }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn dry_run(mut self, input: bool) -> Self {
         self.inner = self.inner.dry_run(input);
@@ -108,7 +117,10 @@ impl ModifyVpcEndpointServiceConfigurationFluentBuilder  {
         self
     }
     /// <p>The Amazon Resource Names (ARNs) of Network Load Balancers to add to your service configuration.</p>
-    pub fn set_add_network_load_balancer_arns(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+    pub fn set_add_network_load_balancer_arns(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
         self.inner = self.inner.set_add_network_load_balancer_arns(input);
         self
     }
@@ -117,12 +129,18 @@ impl ModifyVpcEndpointServiceConfigurationFluentBuilder  {
     /// To override the contents of this collection use [`set_remove_network_load_balancer_arns`](Self::set_remove_network_load_balancer_arns).
     ///
     /// <p>The Amazon Resource Names (ARNs) of Network Load Balancers to remove from your service configuration.</p>
-    pub fn remove_network_load_balancer_arns(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn remove_network_load_balancer_arns(
+        mut self,
+        input: impl Into<std::string::String>,
+    ) -> Self {
         self.inner = self.inner.remove_network_load_balancer_arns(input.into());
         self
     }
     /// <p>The Amazon Resource Names (ARNs) of Network Load Balancers to remove from your service configuration.</p>
-    pub fn set_remove_network_load_balancer_arns(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+    pub fn set_remove_network_load_balancer_arns(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
         self.inner = self.inner.set_remove_network_load_balancer_arns(input);
         self
     }
@@ -136,7 +154,10 @@ impl ModifyVpcEndpointServiceConfigurationFluentBuilder  {
         self
     }
     /// <p>The Amazon Resource Names (ARNs) of Gateway Load Balancers to add to your service configuration.</p>
-    pub fn set_add_gateway_load_balancer_arns(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+    pub fn set_add_gateway_load_balancer_arns(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
         self.inner = self.inner.set_add_gateway_load_balancer_arns(input);
         self
     }
@@ -145,12 +166,18 @@ impl ModifyVpcEndpointServiceConfigurationFluentBuilder  {
     /// To override the contents of this collection use [`set_remove_gateway_load_balancer_arns`](Self::set_remove_gateway_load_balancer_arns).
     ///
     /// <p>The Amazon Resource Names (ARNs) of Gateway Load Balancers to remove from your service configuration.</p>
-    pub fn remove_gateway_load_balancer_arns(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn remove_gateway_load_balancer_arns(
+        mut self,
+        input: impl Into<std::string::String>,
+    ) -> Self {
         self.inner = self.inner.remove_gateway_load_balancer_arns(input.into());
         self
     }
     /// <p>The Amazon Resource Names (ARNs) of Gateway Load Balancers to remove from your service configuration.</p>
-    pub fn set_remove_gateway_load_balancer_arns(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+    pub fn set_remove_gateway_load_balancer_arns(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
         self.inner = self.inner.set_remove_gateway_load_balancer_arns(input);
         self
     }
@@ -164,7 +191,10 @@ impl ModifyVpcEndpointServiceConfigurationFluentBuilder  {
         self
     }
     /// <p>The IP address types to add to your service configuration.</p>
-    pub fn set_add_supported_ip_address_types(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+    pub fn set_add_supported_ip_address_types(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
         self.inner = self.inner.set_add_supported_ip_address_types(input);
         self
     }
@@ -173,14 +203,19 @@ impl ModifyVpcEndpointServiceConfigurationFluentBuilder  {
     /// To override the contents of this collection use [`set_remove_supported_ip_address_types`](Self::set_remove_supported_ip_address_types).
     ///
     /// <p>The IP address types to remove from your service configuration.</p>
-    pub fn remove_supported_ip_address_types(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn remove_supported_ip_address_types(
+        mut self,
+        input: impl Into<std::string::String>,
+    ) -> Self {
         self.inner = self.inner.remove_supported_ip_address_types(input.into());
         self
     }
     /// <p>The IP address types to remove from your service configuration.</p>
-    pub fn set_remove_supported_ip_address_types(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+    pub fn set_remove_supported_ip_address_types(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
         self.inner = self.inner.set_remove_supported_ip_address_types(input);
         self
     }
 }
-

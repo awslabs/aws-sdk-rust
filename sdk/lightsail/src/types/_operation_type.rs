@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-/// 
+///
 /// Here is an example of how you can make a match expression forward-compatible:
-/// 
+///
 /// ```text
 /// # let operationtype = unimplemented!();
 /// match operationtype {
@@ -108,14 +108,22 @@
 /// Specifically, when `operationtype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `OperationType::NewFeature` also yielding `"NewFeature"`.
-/// 
+///
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
 pub enum OperationType {
     #[allow(missing_docs)] // documentation missing in model
     AllocateStaticIp,
@@ -278,197 +286,291 @@ pub enum OperationType {
     #[allow(missing_docs)] // documentation missing in model
     UpdateRelationalDatabaseParameters,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::primitives::UnknownVariantValue)
+    Unknown(crate::primitives::UnknownVariantValue),
 }
 impl std::convert::From<&str> for OperationType {
-                fn from(s: &str) -> Self {
-                    match s {
-                        "AllocateStaticIp" => OperationType::AllocateStaticIp,
-"AttachCertificateToDistribution" => OperationType::AttachCertificateToDistribution,
-"AttachDisk" => OperationType::AttachDisk,
-"AttachInstancesToLoadBalancer" => OperationType::AttachInstancesToLoadBalancer,
-"AttachLoadBalancerTlsCertificate" => OperationType::AttachLoadBalancerTlsCertificate,
-"AttachStaticIp" => OperationType::AttachStaticIp,
-"CloseInstancePublicPorts" => OperationType::CloseInstancePublicPorts,
-"CreateBucket" => OperationType::CreateBucket,
-"CreateBucketAccessKey" => OperationType::CreateBucketAccessKey,
-"CreateCertificate" => OperationType::CreateCertificate,
-"CreateContactMethod" => OperationType::CreateContactMethod,
-"CreateContainerService" => OperationType::CreateContainerService,
-"CreateContainerServiceDeployment" => OperationType::CreateContainerServiceDeployment,
-"CreateContainerServiceRegistryLogin" => OperationType::CreateContainerServiceRegistryLogin,
-"CreateDisk" => OperationType::CreateDisk,
-"CreateDiskFromSnapshot" => OperationType::CreateDiskFromSnapshot,
-"CreateDiskSnapshot" => OperationType::CreateDiskSnapshot,
-"CreateDistribution" => OperationType::CreateDistribution,
-"CreateDomain" => OperationType::CreateDomain,
-"CreateInstance" => OperationType::CreateInstance,
-"CreateInstanceSnapshot" => OperationType::CreateInstanceSnapshot,
-"CreateInstancesFromSnapshot" => OperationType::CreateInstancesFromSnapshot,
-"CreateLoadBalancer" => OperationType::CreateLoadBalancer,
-"CreateLoadBalancerTlsCertificate" => OperationType::CreateLoadBalancerTlsCertificate,
-"CreateRelationalDatabase" => OperationType::CreateRelationalDatabase,
-"CreateRelationalDatabaseFromSnapshot" => OperationType::CreateRelationalDatabaseFromSnapshot,
-"CreateRelationalDatabaseSnapshot" => OperationType::CreateRelationalDatabaseSnapshot,
-"DeleteAlarm" => OperationType::DeleteAlarm,
-"DeleteBucket" => OperationType::DeleteBucket,
-"DeleteBucketAccessKey" => OperationType::DeleteBucketAccessKey,
-"DeleteCertificate" => OperationType::DeleteCertificate,
-"DeleteContactMethod" => OperationType::DeleteContactMethod,
-"DeleteContainerImage" => OperationType::DeleteContainerImage,
-"DeleteContainerService" => OperationType::DeleteContainerService,
-"DeleteDisk" => OperationType::DeleteDisk,
-"DeleteDiskSnapshot" => OperationType::DeleteDiskSnapshot,
-"DeleteDistribution" => OperationType::DeleteDistribution,
-"DeleteDomain" => OperationType::DeleteDomain,
-"DeleteDomainEntry" => OperationType::DeleteDomainEntry,
-"DeleteInstance" => OperationType::DeleteInstance,
-"DeleteInstanceSnapshot" => OperationType::DeleteInstanceSnapshot,
-"DeleteKnownHostKeys" => OperationType::DeleteKnownHostKeys,
-"DeleteLoadBalancer" => OperationType::DeleteLoadBalancer,
-"DeleteLoadBalancerTlsCertificate" => OperationType::DeleteLoadBalancerTlsCertificate,
-"DeleteRelationalDatabase" => OperationType::DeleteRelationalDatabase,
-"DeleteRelationalDatabaseSnapshot" => OperationType::DeleteRelationalDatabaseSnapshot,
-"DetachCertificateFromDistribution" => OperationType::DetachCertificateFromDistribution,
-"DetachDisk" => OperationType::DetachDisk,
-"DetachInstancesFromLoadBalancer" => OperationType::DetachInstancesFromLoadBalancer,
-"DetachStaticIp" => OperationType::DetachStaticIp,
-"DisableAddOn" => OperationType::DisableAddOn,
-"EnableAddOn" => OperationType::EnableAddOn,
-"GetAlarms" => OperationType::GetAlarms,
-"GetContactMethods" => OperationType::GetContactMethods,
-"OpenInstancePublicPorts" => OperationType::OpenInstancePublicPorts,
-"PutAlarm" => OperationType::PutAlarm,
-"PutInstancePublicPorts" => OperationType::PutInstancePublicPorts,
-"RebootInstance" => OperationType::RebootInstance,
-"RebootRelationalDatabase" => OperationType::RebootRelationalDatabase,
-"RegisterContainerImage" => OperationType::RegisterContainerImage,
-"ReleaseStaticIp" => OperationType::ReleaseStaticIp,
-"ResetDistributionCache" => OperationType::ResetDistributionCache,
-"SendContactMethodVerification" => OperationType::SendContactMethodVerification,
-"SetIpAddressType" => OperationType::SetIpAddressType,
-"SetResourceAccessForBucket" => OperationType::SetResourceAccessForBucket,
-"StartInstance" => OperationType::StartInstance,
-"StartRelationalDatabase" => OperationType::StartRelationalDatabase,
-"StopInstance" => OperationType::StopInstance,
-"StopRelationalDatabase" => OperationType::StopRelationalDatabase,
-"TestAlarm" => OperationType::TestAlarm,
-"UpdateBucket" => OperationType::UpdateBucket,
-"UpdateBucketBundle" => OperationType::UpdateBucketBundle,
-"UpdateContainerService" => OperationType::UpdateContainerService,
-"UpdateDistribution" => OperationType::UpdateDistribution,
-"UpdateDistributionBundle" => OperationType::UpdateDistributionBundle,
-"UpdateDomainEntry" => OperationType::UpdateDomainEntry,
-"UpdateInstanceMetadataOptions" => OperationType::UpdateInstanceMetadataOptions,
-"UpdateLoadBalancerAttribute" => OperationType::UpdateLoadBalancerAttribute,
-"UpdateRelationalDatabase" => OperationType::UpdateRelationalDatabase,
-"UpdateRelationalDatabaseParameters" => OperationType::UpdateRelationalDatabaseParameters,
-other => OperationType::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
-                    }
-                }
+    fn from(s: &str) -> Self {
+        match s {
+            "AllocateStaticIp" => OperationType::AllocateStaticIp,
+            "AttachCertificateToDistribution" => OperationType::AttachCertificateToDistribution,
+            "AttachDisk" => OperationType::AttachDisk,
+            "AttachInstancesToLoadBalancer" => OperationType::AttachInstancesToLoadBalancer,
+            "AttachLoadBalancerTlsCertificate" => OperationType::AttachLoadBalancerTlsCertificate,
+            "AttachStaticIp" => OperationType::AttachStaticIp,
+            "CloseInstancePublicPorts" => OperationType::CloseInstancePublicPorts,
+            "CreateBucket" => OperationType::CreateBucket,
+            "CreateBucketAccessKey" => OperationType::CreateBucketAccessKey,
+            "CreateCertificate" => OperationType::CreateCertificate,
+            "CreateContactMethod" => OperationType::CreateContactMethod,
+            "CreateContainerService" => OperationType::CreateContainerService,
+            "CreateContainerServiceDeployment" => OperationType::CreateContainerServiceDeployment,
+            "CreateContainerServiceRegistryLogin" => {
+                OperationType::CreateContainerServiceRegistryLogin
             }
-impl std::str::FromStr for OperationType {
-                type Err = std::convert::Infallible;
-
-                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-                    Ok(OperationType::from(s))
-                }
+            "CreateDisk" => OperationType::CreateDisk,
+            "CreateDiskFromSnapshot" => OperationType::CreateDiskFromSnapshot,
+            "CreateDiskSnapshot" => OperationType::CreateDiskSnapshot,
+            "CreateDistribution" => OperationType::CreateDistribution,
+            "CreateDomain" => OperationType::CreateDomain,
+            "CreateInstance" => OperationType::CreateInstance,
+            "CreateInstanceSnapshot" => OperationType::CreateInstanceSnapshot,
+            "CreateInstancesFromSnapshot" => OperationType::CreateInstancesFromSnapshot,
+            "CreateLoadBalancer" => OperationType::CreateLoadBalancer,
+            "CreateLoadBalancerTlsCertificate" => OperationType::CreateLoadBalancerTlsCertificate,
+            "CreateRelationalDatabase" => OperationType::CreateRelationalDatabase,
+            "CreateRelationalDatabaseFromSnapshot" => {
+                OperationType::CreateRelationalDatabaseFromSnapshot
             }
-impl OperationType {
-                /// Returns the `&str` value of the enum member.
-                pub fn as_str(&self) -> &str {
-                    match self {
-    OperationType::AllocateStaticIp => "AllocateStaticIp",
-    OperationType::AttachCertificateToDistribution => "AttachCertificateToDistribution",
-    OperationType::AttachDisk => "AttachDisk",
-    OperationType::AttachInstancesToLoadBalancer => "AttachInstancesToLoadBalancer",
-    OperationType::AttachLoadBalancerTlsCertificate => "AttachLoadBalancerTlsCertificate",
-    OperationType::AttachStaticIp => "AttachStaticIp",
-    OperationType::CloseInstancePublicPorts => "CloseInstancePublicPorts",
-    OperationType::CreateBucket => "CreateBucket",
-    OperationType::CreateBucketAccessKey => "CreateBucketAccessKey",
-    OperationType::CreateCertificate => "CreateCertificate",
-    OperationType::CreateContactMethod => "CreateContactMethod",
-    OperationType::CreateContainerService => "CreateContainerService",
-    OperationType::CreateContainerServiceDeployment => "CreateContainerServiceDeployment",
-    OperationType::CreateContainerServiceRegistryLogin => "CreateContainerServiceRegistryLogin",
-    OperationType::CreateDisk => "CreateDisk",
-    OperationType::CreateDiskFromSnapshot => "CreateDiskFromSnapshot",
-    OperationType::CreateDiskSnapshot => "CreateDiskSnapshot",
-    OperationType::CreateDistribution => "CreateDistribution",
-    OperationType::CreateDomain => "CreateDomain",
-    OperationType::CreateInstance => "CreateInstance",
-    OperationType::CreateInstanceSnapshot => "CreateInstanceSnapshot",
-    OperationType::CreateInstancesFromSnapshot => "CreateInstancesFromSnapshot",
-    OperationType::CreateLoadBalancer => "CreateLoadBalancer",
-    OperationType::CreateLoadBalancerTlsCertificate => "CreateLoadBalancerTlsCertificate",
-    OperationType::CreateRelationalDatabase => "CreateRelationalDatabase",
-    OperationType::CreateRelationalDatabaseFromSnapshot => "CreateRelationalDatabaseFromSnapshot",
-    OperationType::CreateRelationalDatabaseSnapshot => "CreateRelationalDatabaseSnapshot",
-    OperationType::DeleteAlarm => "DeleteAlarm",
-    OperationType::DeleteBucket => "DeleteBucket",
-    OperationType::DeleteBucketAccessKey => "DeleteBucketAccessKey",
-    OperationType::DeleteCertificate => "DeleteCertificate",
-    OperationType::DeleteContactMethod => "DeleteContactMethod",
-    OperationType::DeleteContainerImage => "DeleteContainerImage",
-    OperationType::DeleteContainerService => "DeleteContainerService",
-    OperationType::DeleteDisk => "DeleteDisk",
-    OperationType::DeleteDiskSnapshot => "DeleteDiskSnapshot",
-    OperationType::DeleteDistribution => "DeleteDistribution",
-    OperationType::DeleteDomain => "DeleteDomain",
-    OperationType::DeleteDomainEntry => "DeleteDomainEntry",
-    OperationType::DeleteInstance => "DeleteInstance",
-    OperationType::DeleteInstanceSnapshot => "DeleteInstanceSnapshot",
-    OperationType::DeleteKnownHostKeys => "DeleteKnownHostKeys",
-    OperationType::DeleteLoadBalancer => "DeleteLoadBalancer",
-    OperationType::DeleteLoadBalancerTlsCertificate => "DeleteLoadBalancerTlsCertificate",
-    OperationType::DeleteRelationalDatabase => "DeleteRelationalDatabase",
-    OperationType::DeleteRelationalDatabaseSnapshot => "DeleteRelationalDatabaseSnapshot",
-    OperationType::DetachCertificateFromDistribution => "DetachCertificateFromDistribution",
-    OperationType::DetachDisk => "DetachDisk",
-    OperationType::DetachInstancesFromLoadBalancer => "DetachInstancesFromLoadBalancer",
-    OperationType::DetachStaticIp => "DetachStaticIp",
-    OperationType::DisableAddOn => "DisableAddOn",
-    OperationType::EnableAddOn => "EnableAddOn",
-    OperationType::GetAlarms => "GetAlarms",
-    OperationType::GetContactMethods => "GetContactMethods",
-    OperationType::OpenInstancePublicPorts => "OpenInstancePublicPorts",
-    OperationType::PutAlarm => "PutAlarm",
-    OperationType::PutInstancePublicPorts => "PutInstancePublicPorts",
-    OperationType::RebootInstance => "RebootInstance",
-    OperationType::RebootRelationalDatabase => "RebootRelationalDatabase",
-    OperationType::RegisterContainerImage => "RegisterContainerImage",
-    OperationType::ReleaseStaticIp => "ReleaseStaticIp",
-    OperationType::ResetDistributionCache => "ResetDistributionCache",
-    OperationType::SendContactMethodVerification => "SendContactMethodVerification",
-    OperationType::SetIpAddressType => "SetIpAddressType",
-    OperationType::SetResourceAccessForBucket => "SetResourceAccessForBucket",
-    OperationType::StartInstance => "StartInstance",
-    OperationType::StartRelationalDatabase => "StartRelationalDatabase",
-    OperationType::StopInstance => "StopInstance",
-    OperationType::StopRelationalDatabase => "StopRelationalDatabase",
-    OperationType::TestAlarm => "TestAlarm",
-    OperationType::UpdateBucket => "UpdateBucket",
-    OperationType::UpdateBucketBundle => "UpdateBucketBundle",
-    OperationType::UpdateContainerService => "UpdateContainerService",
-    OperationType::UpdateDistribution => "UpdateDistribution",
-    OperationType::UpdateDistributionBundle => "UpdateDistributionBundle",
-    OperationType::UpdateDomainEntry => "UpdateDomainEntry",
-    OperationType::UpdateInstanceMetadataOptions => "UpdateInstanceMetadataOptions",
-    OperationType::UpdateLoadBalancerAttribute => "UpdateLoadBalancerAttribute",
-    OperationType::UpdateRelationalDatabase => "UpdateRelationalDatabase",
-    OperationType::UpdateRelationalDatabaseParameters => "UpdateRelationalDatabaseParameters",
-    OperationType::Unknown(value) => value.as_str()
+            "CreateRelationalDatabaseSnapshot" => OperationType::CreateRelationalDatabaseSnapshot,
+            "DeleteAlarm" => OperationType::DeleteAlarm,
+            "DeleteBucket" => OperationType::DeleteBucket,
+            "DeleteBucketAccessKey" => OperationType::DeleteBucketAccessKey,
+            "DeleteCertificate" => OperationType::DeleteCertificate,
+            "DeleteContactMethod" => OperationType::DeleteContactMethod,
+            "DeleteContainerImage" => OperationType::DeleteContainerImage,
+            "DeleteContainerService" => OperationType::DeleteContainerService,
+            "DeleteDisk" => OperationType::DeleteDisk,
+            "DeleteDiskSnapshot" => OperationType::DeleteDiskSnapshot,
+            "DeleteDistribution" => OperationType::DeleteDistribution,
+            "DeleteDomain" => OperationType::DeleteDomain,
+            "DeleteDomainEntry" => OperationType::DeleteDomainEntry,
+            "DeleteInstance" => OperationType::DeleteInstance,
+            "DeleteInstanceSnapshot" => OperationType::DeleteInstanceSnapshot,
+            "DeleteKnownHostKeys" => OperationType::DeleteKnownHostKeys,
+            "DeleteLoadBalancer" => OperationType::DeleteLoadBalancer,
+            "DeleteLoadBalancerTlsCertificate" => OperationType::DeleteLoadBalancerTlsCertificate,
+            "DeleteRelationalDatabase" => OperationType::DeleteRelationalDatabase,
+            "DeleteRelationalDatabaseSnapshot" => OperationType::DeleteRelationalDatabaseSnapshot,
+            "DetachCertificateFromDistribution" => OperationType::DetachCertificateFromDistribution,
+            "DetachDisk" => OperationType::DetachDisk,
+            "DetachInstancesFromLoadBalancer" => OperationType::DetachInstancesFromLoadBalancer,
+            "DetachStaticIp" => OperationType::DetachStaticIp,
+            "DisableAddOn" => OperationType::DisableAddOn,
+            "EnableAddOn" => OperationType::EnableAddOn,
+            "GetAlarms" => OperationType::GetAlarms,
+            "GetContactMethods" => OperationType::GetContactMethods,
+            "OpenInstancePublicPorts" => OperationType::OpenInstancePublicPorts,
+            "PutAlarm" => OperationType::PutAlarm,
+            "PutInstancePublicPorts" => OperationType::PutInstancePublicPorts,
+            "RebootInstance" => OperationType::RebootInstance,
+            "RebootRelationalDatabase" => OperationType::RebootRelationalDatabase,
+            "RegisterContainerImage" => OperationType::RegisterContainerImage,
+            "ReleaseStaticIp" => OperationType::ReleaseStaticIp,
+            "ResetDistributionCache" => OperationType::ResetDistributionCache,
+            "SendContactMethodVerification" => OperationType::SendContactMethodVerification,
+            "SetIpAddressType" => OperationType::SetIpAddressType,
+            "SetResourceAccessForBucket" => OperationType::SetResourceAccessForBucket,
+            "StartInstance" => OperationType::StartInstance,
+            "StartRelationalDatabase" => OperationType::StartRelationalDatabase,
+            "StopInstance" => OperationType::StopInstance,
+            "StopRelationalDatabase" => OperationType::StopRelationalDatabase,
+            "TestAlarm" => OperationType::TestAlarm,
+            "UpdateBucket" => OperationType::UpdateBucket,
+            "UpdateBucketBundle" => OperationType::UpdateBucketBundle,
+            "UpdateContainerService" => OperationType::UpdateContainerService,
+            "UpdateDistribution" => OperationType::UpdateDistribution,
+            "UpdateDistributionBundle" => OperationType::UpdateDistributionBundle,
+            "UpdateDomainEntry" => OperationType::UpdateDomainEntry,
+            "UpdateInstanceMetadataOptions" => OperationType::UpdateInstanceMetadataOptions,
+            "UpdateLoadBalancerAttribute" => OperationType::UpdateLoadBalancerAttribute,
+            "UpdateRelationalDatabase" => OperationType::UpdateRelationalDatabase,
+            "UpdateRelationalDatabaseParameters" => {
+                OperationType::UpdateRelationalDatabaseParameters
+            }
+            other => {
+                OperationType::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
+            }
+        }
+    }
 }
-                }
-                /// Returns all the `&str` representations of the enum members.
-                pub const fn values() -> &'static [&'static str] {
-                    &["AllocateStaticIp", "AttachCertificateToDistribution", "AttachDisk", "AttachInstancesToLoadBalancer", "AttachLoadBalancerTlsCertificate", "AttachStaticIp", "CloseInstancePublicPorts", "CreateBucket", "CreateBucketAccessKey", "CreateCertificate", "CreateContactMethod", "CreateContainerService", "CreateContainerServiceDeployment", "CreateContainerServiceRegistryLogin", "CreateDisk", "CreateDiskFromSnapshot", "CreateDiskSnapshot", "CreateDistribution", "CreateDomain", "CreateInstance", "CreateInstanceSnapshot", "CreateInstancesFromSnapshot", "CreateLoadBalancer", "CreateLoadBalancerTlsCertificate", "CreateRelationalDatabase", "CreateRelationalDatabaseFromSnapshot", "CreateRelationalDatabaseSnapshot", "DeleteAlarm", "DeleteBucket", "DeleteBucketAccessKey", "DeleteCertificate", "DeleteContactMethod", "DeleteContainerImage", "DeleteContainerService", "DeleteDisk", "DeleteDiskSnapshot", "DeleteDistribution", "DeleteDomain", "DeleteDomainEntry", "DeleteInstance", "DeleteInstanceSnapshot", "DeleteKnownHostKeys", "DeleteLoadBalancer", "DeleteLoadBalancerTlsCertificate", "DeleteRelationalDatabase", "DeleteRelationalDatabaseSnapshot", "DetachCertificateFromDistribution", "DetachDisk", "DetachInstancesFromLoadBalancer", "DetachStaticIp", "DisableAddOn", "EnableAddOn", "GetAlarms", "GetContactMethods", "OpenInstancePublicPorts", "PutAlarm", "PutInstancePublicPorts", "RebootInstance", "RebootRelationalDatabase", "RegisterContainerImage", "ReleaseStaticIp", "ResetDistributionCache", "SendContactMethodVerification", "SetIpAddressType", "SetResourceAccessForBucket", "StartInstance", "StartRelationalDatabase", "StopInstance", "StopRelationalDatabase", "TestAlarm", "UpdateBucket", "UpdateBucketBundle", "UpdateContainerService", "UpdateDistribution", "UpdateDistributionBundle", "UpdateDomainEntry", "UpdateInstanceMetadataOptions", "UpdateLoadBalancerAttribute", "UpdateRelationalDatabase", "UpdateRelationalDatabaseParameters"]
-                }
-            }
-impl AsRef<str> for OperationType {
-                fn as_ref(&self) -> &str {
-                    self.as_str()
-                }
-            }
+impl std::str::FromStr for OperationType {
+    type Err = std::convert::Infallible;
 
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(OperationType::from(s))
+    }
+}
+impl OperationType {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            OperationType::AllocateStaticIp => "AllocateStaticIp",
+            OperationType::AttachCertificateToDistribution => "AttachCertificateToDistribution",
+            OperationType::AttachDisk => "AttachDisk",
+            OperationType::AttachInstancesToLoadBalancer => "AttachInstancesToLoadBalancer",
+            OperationType::AttachLoadBalancerTlsCertificate => "AttachLoadBalancerTlsCertificate",
+            OperationType::AttachStaticIp => "AttachStaticIp",
+            OperationType::CloseInstancePublicPorts => "CloseInstancePublicPorts",
+            OperationType::CreateBucket => "CreateBucket",
+            OperationType::CreateBucketAccessKey => "CreateBucketAccessKey",
+            OperationType::CreateCertificate => "CreateCertificate",
+            OperationType::CreateContactMethod => "CreateContactMethod",
+            OperationType::CreateContainerService => "CreateContainerService",
+            OperationType::CreateContainerServiceDeployment => "CreateContainerServiceDeployment",
+            OperationType::CreateContainerServiceRegistryLogin => {
+                "CreateContainerServiceRegistryLogin"
+            }
+            OperationType::CreateDisk => "CreateDisk",
+            OperationType::CreateDiskFromSnapshot => "CreateDiskFromSnapshot",
+            OperationType::CreateDiskSnapshot => "CreateDiskSnapshot",
+            OperationType::CreateDistribution => "CreateDistribution",
+            OperationType::CreateDomain => "CreateDomain",
+            OperationType::CreateInstance => "CreateInstance",
+            OperationType::CreateInstanceSnapshot => "CreateInstanceSnapshot",
+            OperationType::CreateInstancesFromSnapshot => "CreateInstancesFromSnapshot",
+            OperationType::CreateLoadBalancer => "CreateLoadBalancer",
+            OperationType::CreateLoadBalancerTlsCertificate => "CreateLoadBalancerTlsCertificate",
+            OperationType::CreateRelationalDatabase => "CreateRelationalDatabase",
+            OperationType::CreateRelationalDatabaseFromSnapshot => {
+                "CreateRelationalDatabaseFromSnapshot"
+            }
+            OperationType::CreateRelationalDatabaseSnapshot => "CreateRelationalDatabaseSnapshot",
+            OperationType::DeleteAlarm => "DeleteAlarm",
+            OperationType::DeleteBucket => "DeleteBucket",
+            OperationType::DeleteBucketAccessKey => "DeleteBucketAccessKey",
+            OperationType::DeleteCertificate => "DeleteCertificate",
+            OperationType::DeleteContactMethod => "DeleteContactMethod",
+            OperationType::DeleteContainerImage => "DeleteContainerImage",
+            OperationType::DeleteContainerService => "DeleteContainerService",
+            OperationType::DeleteDisk => "DeleteDisk",
+            OperationType::DeleteDiskSnapshot => "DeleteDiskSnapshot",
+            OperationType::DeleteDistribution => "DeleteDistribution",
+            OperationType::DeleteDomain => "DeleteDomain",
+            OperationType::DeleteDomainEntry => "DeleteDomainEntry",
+            OperationType::DeleteInstance => "DeleteInstance",
+            OperationType::DeleteInstanceSnapshot => "DeleteInstanceSnapshot",
+            OperationType::DeleteKnownHostKeys => "DeleteKnownHostKeys",
+            OperationType::DeleteLoadBalancer => "DeleteLoadBalancer",
+            OperationType::DeleteLoadBalancerTlsCertificate => "DeleteLoadBalancerTlsCertificate",
+            OperationType::DeleteRelationalDatabase => "DeleteRelationalDatabase",
+            OperationType::DeleteRelationalDatabaseSnapshot => "DeleteRelationalDatabaseSnapshot",
+            OperationType::DetachCertificateFromDistribution => "DetachCertificateFromDistribution",
+            OperationType::DetachDisk => "DetachDisk",
+            OperationType::DetachInstancesFromLoadBalancer => "DetachInstancesFromLoadBalancer",
+            OperationType::DetachStaticIp => "DetachStaticIp",
+            OperationType::DisableAddOn => "DisableAddOn",
+            OperationType::EnableAddOn => "EnableAddOn",
+            OperationType::GetAlarms => "GetAlarms",
+            OperationType::GetContactMethods => "GetContactMethods",
+            OperationType::OpenInstancePublicPorts => "OpenInstancePublicPorts",
+            OperationType::PutAlarm => "PutAlarm",
+            OperationType::PutInstancePublicPorts => "PutInstancePublicPorts",
+            OperationType::RebootInstance => "RebootInstance",
+            OperationType::RebootRelationalDatabase => "RebootRelationalDatabase",
+            OperationType::RegisterContainerImage => "RegisterContainerImage",
+            OperationType::ReleaseStaticIp => "ReleaseStaticIp",
+            OperationType::ResetDistributionCache => "ResetDistributionCache",
+            OperationType::SendContactMethodVerification => "SendContactMethodVerification",
+            OperationType::SetIpAddressType => "SetIpAddressType",
+            OperationType::SetResourceAccessForBucket => "SetResourceAccessForBucket",
+            OperationType::StartInstance => "StartInstance",
+            OperationType::StartRelationalDatabase => "StartRelationalDatabase",
+            OperationType::StopInstance => "StopInstance",
+            OperationType::StopRelationalDatabase => "StopRelationalDatabase",
+            OperationType::TestAlarm => "TestAlarm",
+            OperationType::UpdateBucket => "UpdateBucket",
+            OperationType::UpdateBucketBundle => "UpdateBucketBundle",
+            OperationType::UpdateContainerService => "UpdateContainerService",
+            OperationType::UpdateDistribution => "UpdateDistribution",
+            OperationType::UpdateDistributionBundle => "UpdateDistributionBundle",
+            OperationType::UpdateDomainEntry => "UpdateDomainEntry",
+            OperationType::UpdateInstanceMetadataOptions => "UpdateInstanceMetadataOptions",
+            OperationType::UpdateLoadBalancerAttribute => "UpdateLoadBalancerAttribute",
+            OperationType::UpdateRelationalDatabase => "UpdateRelationalDatabase",
+            OperationType::UpdateRelationalDatabaseParameters => {
+                "UpdateRelationalDatabaseParameters"
+            }
+            OperationType::Unknown(value) => value.as_str(),
+        }
+    }
+    /// Returns all the `&str` representations of the enum members.
+    pub const fn values() -> &'static [&'static str] {
+        &[
+            "AllocateStaticIp",
+            "AttachCertificateToDistribution",
+            "AttachDisk",
+            "AttachInstancesToLoadBalancer",
+            "AttachLoadBalancerTlsCertificate",
+            "AttachStaticIp",
+            "CloseInstancePublicPorts",
+            "CreateBucket",
+            "CreateBucketAccessKey",
+            "CreateCertificate",
+            "CreateContactMethod",
+            "CreateContainerService",
+            "CreateContainerServiceDeployment",
+            "CreateContainerServiceRegistryLogin",
+            "CreateDisk",
+            "CreateDiskFromSnapshot",
+            "CreateDiskSnapshot",
+            "CreateDistribution",
+            "CreateDomain",
+            "CreateInstance",
+            "CreateInstanceSnapshot",
+            "CreateInstancesFromSnapshot",
+            "CreateLoadBalancer",
+            "CreateLoadBalancerTlsCertificate",
+            "CreateRelationalDatabase",
+            "CreateRelationalDatabaseFromSnapshot",
+            "CreateRelationalDatabaseSnapshot",
+            "DeleteAlarm",
+            "DeleteBucket",
+            "DeleteBucketAccessKey",
+            "DeleteCertificate",
+            "DeleteContactMethod",
+            "DeleteContainerImage",
+            "DeleteContainerService",
+            "DeleteDisk",
+            "DeleteDiskSnapshot",
+            "DeleteDistribution",
+            "DeleteDomain",
+            "DeleteDomainEntry",
+            "DeleteInstance",
+            "DeleteInstanceSnapshot",
+            "DeleteKnownHostKeys",
+            "DeleteLoadBalancer",
+            "DeleteLoadBalancerTlsCertificate",
+            "DeleteRelationalDatabase",
+            "DeleteRelationalDatabaseSnapshot",
+            "DetachCertificateFromDistribution",
+            "DetachDisk",
+            "DetachInstancesFromLoadBalancer",
+            "DetachStaticIp",
+            "DisableAddOn",
+            "EnableAddOn",
+            "GetAlarms",
+            "GetContactMethods",
+            "OpenInstancePublicPorts",
+            "PutAlarm",
+            "PutInstancePublicPorts",
+            "RebootInstance",
+            "RebootRelationalDatabase",
+            "RegisterContainerImage",
+            "ReleaseStaticIp",
+            "ResetDistributionCache",
+            "SendContactMethodVerification",
+            "SetIpAddressType",
+            "SetResourceAccessForBucket",
+            "StartInstance",
+            "StartRelationalDatabase",
+            "StopInstance",
+            "StopRelationalDatabase",
+            "TestAlarm",
+            "UpdateBucket",
+            "UpdateBucketBundle",
+            "UpdateContainerService",
+            "UpdateDistribution",
+            "UpdateDistributionBundle",
+            "UpdateDomainEntry",
+            "UpdateInstanceMetadataOptions",
+            "UpdateLoadBalancerAttribute",
+            "UpdateRelationalDatabase",
+            "UpdateRelationalDatabaseParameters",
+        ]
+    }
+}
+impl AsRef<str> for OperationType {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}

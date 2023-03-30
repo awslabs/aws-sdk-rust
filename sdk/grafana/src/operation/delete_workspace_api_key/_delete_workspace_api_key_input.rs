@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteWorkspaceApiKeyInput  {
+pub struct DeleteWorkspaceApiKeyInput {
     /// <p>The name of the API key to delete.</p>
     #[doc(hidden)]
     pub key_name: std::option::Option<std::string::String>,
@@ -12,17 +12,19 @@ pub struct DeleteWorkspaceApiKeyInput  {
 }
 impl DeleteWorkspaceApiKeyInput {
     /// <p>The name of the API key to delete.</p>
-    pub fn key_name(&self) -> std::option::Option<& str> {
+    pub fn key_name(&self) -> std::option::Option<&str> {
         self.key_name.as_deref()
     }
     /// <p>The ID of the workspace to delete.</p>
-    pub fn workspace_id(&self) -> std::option::Option<& str> {
+    pub fn workspace_id(&self) -> std::option::Option<&str> {
         self.workspace_id.as_deref()
     }
 }
 impl DeleteWorkspaceApiKeyInput {
     /// Creates a new builder-style object to manufacture [`DeleteWorkspaceApiKeyInput`](crate::operation::delete_workspace_api_key::DeleteWorkspaceApiKeyInput).
-    pub fn builder() -> crate::operation::delete_workspace_api_key::builders::DeleteWorkspaceApiKeyInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::delete_workspace_api_key::builders::DeleteWorkspaceApiKeyInputBuilder
+    {
         crate::operation::delete_workspace_api_key::builders::DeleteWorkspaceApiKeyInputBuilder::default()
     }
 }
@@ -42,7 +44,8 @@ impl DeleteWorkspaceApiKeyInputBuilder {
     }
     /// <p>The name of the API key to delete.</p>
     pub fn set_key_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.key_name = input; self
+        self.key_name = input;
+        self
     }
     /// <p>The ID of the workspace to delete.</p>
     pub fn workspace_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -51,18 +54,21 @@ impl DeleteWorkspaceApiKeyInputBuilder {
     }
     /// <p>The ID of the workspace to delete.</p>
     pub fn set_workspace_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.workspace_id = input; self
+        self.workspace_id = input;
+        self
     }
     /// Consumes the builder and constructs a [`DeleteWorkspaceApiKeyInput`](crate::operation::delete_workspace_api_key::DeleteWorkspaceApiKeyInput).
-    pub fn build(self) -> Result<crate::operation::delete_workspace_api_key::DeleteWorkspaceApiKeyInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::delete_workspace_api_key::DeleteWorkspaceApiKeyInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::delete_workspace_api_key::DeleteWorkspaceApiKeyInput {
-                key_name: self.key_name
-                ,
-                workspace_id: self.workspace_id
-                ,
-            }
+                key_name: self.key_name,
+                workspace_id: self.workspace_id,
+            },
         )
     }
 }
-

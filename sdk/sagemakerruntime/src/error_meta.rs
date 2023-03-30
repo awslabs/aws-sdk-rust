@@ -16,7 +16,7 @@ pub enum Error {
     /// <p> Inspect your request and try again. </p>
     ValidationError(crate::types::error::ValidationError),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    Unhandled(aws_smithy_types::error::Unhandled)
+    Unhandled(aws_smithy_types::error::Unhandled),
 }
 impl std::fmt::Display for Error {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -27,46 +27,96 @@ impl std::fmt::Display for Error {
             Error::ModelNotReadyException(inner) => inner.fmt(f),
             Error::ServiceUnavailable(inner) => inner.fmt(f),
             Error::ValidationError(inner) => inner.fmt(f),
-            Error::Unhandled(inner) => inner.fmt(f)
+            Error::Unhandled(inner) => inner.fmt(f),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::operation::invoke_endpoint::InvokeEndpointError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::operation::invoke_endpoint::InvokeEndpointError, R>) -> Self {
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::invoke_endpoint::InvokeEndpointError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::invoke_endpoint::InvokeEndpointError,
+            R,
+        >,
+    ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
             _ => Error::Unhandled(
-                                            aws_smithy_types::error::Unhandled::builder()
-                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
-                                                .source(err)
-                                                .build()
-                                        ),
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::operation::invoke_endpoint::InvokeEndpointError> for Error {
     fn from(err: crate::operation::invoke_endpoint::InvokeEndpointError) -> Self {
         match err {
-            crate::operation::invoke_endpoint::InvokeEndpointError::InternalDependencyException(inner) => Error::InternalDependencyException(inner),
-            crate::operation::invoke_endpoint::InvokeEndpointError::InternalFailure(inner) => Error::InternalFailure(inner),
-            crate::operation::invoke_endpoint::InvokeEndpointError::ModelError(inner) => Error::ModelError(inner),
-            crate::operation::invoke_endpoint::InvokeEndpointError::ModelNotReadyException(inner) => Error::ModelNotReadyException(inner),
-            crate::operation::invoke_endpoint::InvokeEndpointError::ServiceUnavailable(inner) => Error::ServiceUnavailable(inner),
-            crate::operation::invoke_endpoint::InvokeEndpointError::ValidationError(inner) => Error::ValidationError(inner),
-            crate::operation::invoke_endpoint::InvokeEndpointError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::invoke_endpoint::InvokeEndpointError::InternalDependencyException(
+                inner,
+            ) => Error::InternalDependencyException(inner),
+            crate::operation::invoke_endpoint::InvokeEndpointError::InternalFailure(inner) => {
+                Error::InternalFailure(inner)
+            }
+            crate::operation::invoke_endpoint::InvokeEndpointError::ModelError(inner) => {
+                Error::ModelError(inner)
+            }
+            crate::operation::invoke_endpoint::InvokeEndpointError::ModelNotReadyException(
+                inner,
+            ) => Error::ModelNotReadyException(inner),
+            crate::operation::invoke_endpoint::InvokeEndpointError::ServiceUnavailable(inner) => {
+                Error::ServiceUnavailable(inner)
+            }
+            crate::operation::invoke_endpoint::InvokeEndpointError::ValidationError(inner) => {
+                Error::ValidationError(inner)
+            }
+            crate::operation::invoke_endpoint::InvokeEndpointError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::operation::invoke_endpoint_async::InvokeEndpointAsyncError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::operation::invoke_endpoint_async::InvokeEndpointAsyncError, R>) -> Self {
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::invoke_endpoint_async::InvokeEndpointAsyncError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::invoke_endpoint_async::InvokeEndpointAsyncError,
+            R,
+        >,
+    ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
             _ => Error::Unhandled(
-                                            aws_smithy_types::error::Unhandled::builder()
-                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
-                                                .source(err)
-                                                .build()
-                                        ),
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
@@ -94,4 +144,3 @@ impl aws_http::request_id::RequestId for Error {
         }
     }
 }
-

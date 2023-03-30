@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct StreamingConfiguration  {
+pub struct StreamingConfiguration {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub data_retention_in_hours: std::option::Option<i32>,
@@ -11,7 +11,8 @@ pub struct StreamingConfiguration  {
     pub disabled: std::option::Option<bool>,
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
-    pub streaming_notification_targets: std::option::Option<std::vec::Vec<crate::types::StreamingNotificationTarget>>,
+    pub streaming_notification_targets:
+        std::option::Option<std::vec::Vec<crate::types::StreamingNotificationTarget>>,
 }
 impl StreamingConfiguration {
     #[allow(missing_docs)] // documentation missing in model
@@ -23,7 +24,9 @@ impl StreamingConfiguration {
         self.disabled
     }
     #[allow(missing_docs)] // documentation missing in model
-    pub fn streaming_notification_targets(&self) -> std::option::Option<& [crate::types::StreamingNotificationTarget]> {
+    pub fn streaming_notification_targets(
+        &self,
+    ) -> std::option::Option<&[crate::types::StreamingNotificationTarget]> {
         self.streaming_notification_targets.as_deref()
     }
 }
@@ -40,7 +43,8 @@ impl StreamingConfiguration {
 pub struct StreamingConfigurationBuilder {
     pub(crate) data_retention_in_hours: std::option::Option<i32>,
     pub(crate) disabled: std::option::Option<bool>,
-    pub(crate) streaming_notification_targets: std::option::Option<std::vec::Vec<crate::types::StreamingNotificationTarget>>,
+    pub(crate) streaming_notification_targets:
+        std::option::Option<std::vec::Vec<crate::types::StreamingNotificationTarget>>,
 }
 impl StreamingConfigurationBuilder {
     #[allow(missing_docs)] // documentation missing in model
@@ -50,7 +54,8 @@ impl StreamingConfigurationBuilder {
     }
     #[allow(missing_docs)] // documentation missing in model
     pub fn set_data_retention_in_hours(mut self, input: std::option::Option<i32>) -> Self {
-        self.data_retention_in_hours = input; self
+        self.data_retention_in_hours = input;
+        self
     }
     #[allow(missing_docs)] // documentation missing in model
     pub fn disabled(mut self, input: bool) -> Self {
@@ -59,32 +64,36 @@ impl StreamingConfigurationBuilder {
     }
     #[allow(missing_docs)] // documentation missing in model
     pub fn set_disabled(mut self, input: std::option::Option<bool>) -> Self {
-        self.disabled = input; self
+        self.disabled = input;
+        self
     }
     /// Appends an item to `streaming_notification_targets`.
     ///
     /// To override the contents of this collection use [`set_streaming_notification_targets`](Self::set_streaming_notification_targets).
     ///
-    pub fn streaming_notification_targets(mut self, input: crate::types::StreamingNotificationTarget) -> Self {
+    pub fn streaming_notification_targets(
+        mut self,
+        input: crate::types::StreamingNotificationTarget,
+    ) -> Self {
         let mut v = self.streaming_notification_targets.unwrap_or_default();
-                        v.push(input);
-                        self.streaming_notification_targets = Some(v);
-                        self
+        v.push(input);
+        self.streaming_notification_targets = Some(v);
+        self
     }
     #[allow(missing_docs)] // documentation missing in model
-    pub fn set_streaming_notification_targets(mut self, input: std::option::Option<std::vec::Vec<crate::types::StreamingNotificationTarget>>) -> Self {
-        self.streaming_notification_targets = input; self
+    pub fn set_streaming_notification_targets(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::StreamingNotificationTarget>>,
+    ) -> Self {
+        self.streaming_notification_targets = input;
+        self
     }
     /// Consumes the builder and constructs a [`StreamingConfiguration`](crate::types::StreamingConfiguration).
     pub fn build(self) -> crate::types::StreamingConfiguration {
         crate::types::StreamingConfiguration {
-            data_retention_in_hours: self.data_retention_in_hours
-            ,
-            disabled: self.disabled
-            ,
-            streaming_notification_targets: self.streaming_notification_targets
-            ,
+            data_retention_in_hours: self.data_retention_in_hours,
+            disabled: self.disabled,
+            streaming_notification_targets: self.streaming_notification_targets,
         }
     }
 }
-

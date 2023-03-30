@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateBotAliasOutput  {
+pub struct CreateBotAliasOutput {
     /// <p>The unique identifier of the bot alias.</p>
     #[doc(hidden)]
     pub bot_alias_id: std::option::Option<std::string::String>,
@@ -17,7 +17,9 @@ pub struct CreateBotAliasOutput  {
     pub bot_version: std::option::Option<std::string::String>,
     /// <p>Configuration information for a specific locale.</p>
     #[doc(hidden)]
-    pub bot_alias_locale_settings: std::option::Option<std::collections::HashMap<std::string::String, crate::types::BotAliasLocaleSettings>>,
+    pub bot_alias_locale_settings: std::option::Option<
+        std::collections::HashMap<std::string::String, crate::types::BotAliasLocaleSettings>,
+    >,
     /// <p>The conversation log settings specified for the alias.</p>
     #[doc(hidden)]
     pub conversation_log_settings: std::option::Option<crate::types::ConversationLogSettings>,
@@ -35,60 +37,72 @@ pub struct CreateBotAliasOutput  {
     pub creation_date_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>A list of tags associated with the bot alias.</p>
     #[doc(hidden)]
-    pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub tags:
+        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     _request_id: Option<String>,
 }
 impl CreateBotAliasOutput {
     /// <p>The unique identifier of the bot alias.</p>
-    pub fn bot_alias_id(&self) -> std::option::Option<& str> {
+    pub fn bot_alias_id(&self) -> std::option::Option<&str> {
         self.bot_alias_id.as_deref()
     }
     /// <p>The name specified for the bot alias.</p>
-    pub fn bot_alias_name(&self) -> std::option::Option<& str> {
+    pub fn bot_alias_name(&self) -> std::option::Option<&str> {
         self.bot_alias_name.as_deref()
     }
     /// <p>The description specified for the bot alias.</p>
-    pub fn description(&self) -> std::option::Option<& str> {
+    pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
     /// <p>The version of the bot associated with this alias.</p>
-    pub fn bot_version(&self) -> std::option::Option<& str> {
+    pub fn bot_version(&self) -> std::option::Option<&str> {
         self.bot_version.as_deref()
     }
     /// <p>Configuration information for a specific locale.</p>
-    pub fn bot_alias_locale_settings(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, crate::types::BotAliasLocaleSettings>> {
+    pub fn bot_alias_locale_settings(
+        &self,
+    ) -> std::option::Option<
+        &std::collections::HashMap<std::string::String, crate::types::BotAliasLocaleSettings>,
+    > {
         self.bot_alias_locale_settings.as_ref()
     }
     /// <p>The conversation log settings specified for the alias.</p>
-    pub fn conversation_log_settings(&self) -> std::option::Option<& crate::types::ConversationLogSettings> {
+    pub fn conversation_log_settings(
+        &self,
+    ) -> std::option::Option<&crate::types::ConversationLogSettings> {
         self.conversation_log_settings.as_ref()
     }
     /// <p>Determines whether Amazon Lex will use Amazon Comprehend to detect the sentiment of user utterances.</p>
-    pub fn sentiment_analysis_settings(&self) -> std::option::Option<& crate::types::SentimentAnalysisSettings> {
+    pub fn sentiment_analysis_settings(
+        &self,
+    ) -> std::option::Option<&crate::types::SentimentAnalysisSettings> {
         self.sentiment_analysis_settings.as_ref()
     }
     /// <p>The current status of the alias. The alias is first put into the <code>Creating</code> state. When the alias is ready to be used, it is put into the <code>Available</code> state. You can use the <code>DescribeBotAlias</code> operation to get the current state of an alias.</p>
-    pub fn bot_alias_status(&self) -> std::option::Option<& crate::types::BotAliasStatus> {
+    pub fn bot_alias_status(&self) -> std::option::Option<&crate::types::BotAliasStatus> {
         self.bot_alias_status.as_ref()
     }
     /// <p>The unique identifier of the bot that this alias applies to.</p>
-    pub fn bot_id(&self) -> std::option::Option<& str> {
+    pub fn bot_id(&self) -> std::option::Option<&str> {
         self.bot_id.as_deref()
     }
     /// <p>A Unix timestamp indicating the date and time that the bot alias was created.</p>
-    pub fn creation_date_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
+    pub fn creation_date_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.creation_date_time.as_ref()
     }
     /// <p>A list of tags associated with the bot alias.</p>
-    pub fn tags(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
         self.tags.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for CreateBotAliasOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl CreateBotAliasOutput {
     /// Creates a new builder-style object to manufacture [`CreateBotAliasOutput`](crate::operation::create_bot_alias::CreateBotAliasOutput).
     pub fn builder() -> crate::operation::create_bot_alias::builders::CreateBotAliasOutputBuilder {
@@ -104,13 +118,18 @@ pub struct CreateBotAliasOutputBuilder {
     pub(crate) bot_alias_name: std::option::Option<std::string::String>,
     pub(crate) description: std::option::Option<std::string::String>,
     pub(crate) bot_version: std::option::Option<std::string::String>,
-    pub(crate) bot_alias_locale_settings: std::option::Option<std::collections::HashMap<std::string::String, crate::types::BotAliasLocaleSettings>>,
-    pub(crate) conversation_log_settings: std::option::Option<crate::types::ConversationLogSettings>,
-    pub(crate) sentiment_analysis_settings: std::option::Option<crate::types::SentimentAnalysisSettings>,
+    pub(crate) bot_alias_locale_settings: std::option::Option<
+        std::collections::HashMap<std::string::String, crate::types::BotAliasLocaleSettings>,
+    >,
+    pub(crate) conversation_log_settings:
+        std::option::Option<crate::types::ConversationLogSettings>,
+    pub(crate) sentiment_analysis_settings:
+        std::option::Option<crate::types::SentimentAnalysisSettings>,
     pub(crate) bot_alias_status: std::option::Option<crate::types::BotAliasStatus>,
     pub(crate) bot_id: std::option::Option<std::string::String>,
     pub(crate) creation_date_time: std::option::Option<aws_smithy_types::DateTime>,
-    pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub(crate) tags:
+        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     _request_id: Option<String>,
 }
 impl CreateBotAliasOutputBuilder {
@@ -121,7 +140,8 @@ impl CreateBotAliasOutputBuilder {
     }
     /// <p>The unique identifier of the bot alias.</p>
     pub fn set_bot_alias_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.bot_alias_id = input; self
+        self.bot_alias_id = input;
+        self
     }
     /// <p>The name specified for the bot alias.</p>
     pub fn bot_alias_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -130,7 +150,8 @@ impl CreateBotAliasOutputBuilder {
     }
     /// <p>The name specified for the bot alias.</p>
     pub fn set_bot_alias_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.bot_alias_name = input; self
+        self.bot_alias_name = input;
+        self
     }
     /// <p>The description specified for the bot alias.</p>
     pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -139,7 +160,8 @@ impl CreateBotAliasOutputBuilder {
     }
     /// <p>The description specified for the bot alias.</p>
     pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.description = input; self
+        self.description = input;
+        self
     }
     /// <p>The version of the bot associated with this alias.</p>
     pub fn bot_version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -148,40 +170,65 @@ impl CreateBotAliasOutputBuilder {
     }
     /// <p>The version of the bot associated with this alias.</p>
     pub fn set_bot_version(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.bot_version = input; self
+        self.bot_version = input;
+        self
     }
     /// Adds a key-value pair to `bot_alias_locale_settings`.
     ///
     /// To override the contents of this collection use [`set_bot_alias_locale_settings`](Self::set_bot_alias_locale_settings).
     ///
     /// <p>Configuration information for a specific locale.</p>
-    pub fn bot_alias_locale_settings(mut self, k: impl Into<std::string::String>, v: crate::types::BotAliasLocaleSettings) -> Self {
+    pub fn bot_alias_locale_settings(
+        mut self,
+        k: impl Into<std::string::String>,
+        v: crate::types::BotAliasLocaleSettings,
+    ) -> Self {
         let mut hash_map = self.bot_alias_locale_settings.unwrap_or_default();
-                        hash_map.insert(k.into(), v);
-                        self.bot_alias_locale_settings = Some(hash_map);
-                        self
+        hash_map.insert(k.into(), v);
+        self.bot_alias_locale_settings = Some(hash_map);
+        self
     }
     /// <p>Configuration information for a specific locale.</p>
-    pub fn set_bot_alias_locale_settings(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, crate::types::BotAliasLocaleSettings>>) -> Self {
-        self.bot_alias_locale_settings = input; self
+    pub fn set_bot_alias_locale_settings(
+        mut self,
+        input: std::option::Option<
+            std::collections::HashMap<std::string::String, crate::types::BotAliasLocaleSettings>,
+        >,
+    ) -> Self {
+        self.bot_alias_locale_settings = input;
+        self
     }
     /// <p>The conversation log settings specified for the alias.</p>
-    pub fn conversation_log_settings(mut self, input: crate::types::ConversationLogSettings) -> Self {
+    pub fn conversation_log_settings(
+        mut self,
+        input: crate::types::ConversationLogSettings,
+    ) -> Self {
         self.conversation_log_settings = Some(input);
         self
     }
     /// <p>The conversation log settings specified for the alias.</p>
-    pub fn set_conversation_log_settings(mut self, input: std::option::Option<crate::types::ConversationLogSettings>) -> Self {
-        self.conversation_log_settings = input; self
+    pub fn set_conversation_log_settings(
+        mut self,
+        input: std::option::Option<crate::types::ConversationLogSettings>,
+    ) -> Self {
+        self.conversation_log_settings = input;
+        self
     }
     /// <p>Determines whether Amazon Lex will use Amazon Comprehend to detect the sentiment of user utterances.</p>
-    pub fn sentiment_analysis_settings(mut self, input: crate::types::SentimentAnalysisSettings) -> Self {
+    pub fn sentiment_analysis_settings(
+        mut self,
+        input: crate::types::SentimentAnalysisSettings,
+    ) -> Self {
         self.sentiment_analysis_settings = Some(input);
         self
     }
     /// <p>Determines whether Amazon Lex will use Amazon Comprehend to detect the sentiment of user utterances.</p>
-    pub fn set_sentiment_analysis_settings(mut self, input: std::option::Option<crate::types::SentimentAnalysisSettings>) -> Self {
-        self.sentiment_analysis_settings = input; self
+    pub fn set_sentiment_analysis_settings(
+        mut self,
+        input: std::option::Option<crate::types::SentimentAnalysisSettings>,
+    ) -> Self {
+        self.sentiment_analysis_settings = input;
+        self
     }
     /// <p>The current status of the alias. The alias is first put into the <code>Creating</code> state. When the alias is ready to be used, it is put into the <code>Available</code> state. You can use the <code>DescribeBotAlias</code> operation to get the current state of an alias.</p>
     pub fn bot_alias_status(mut self, input: crate::types::BotAliasStatus) -> Self {
@@ -189,8 +236,12 @@ impl CreateBotAliasOutputBuilder {
         self
     }
     /// <p>The current status of the alias. The alias is first put into the <code>Creating</code> state. When the alias is ready to be used, it is put into the <code>Available</code> state. You can use the <code>DescribeBotAlias</code> operation to get the current state of an alias.</p>
-    pub fn set_bot_alias_status(mut self, input: std::option::Option<crate::types::BotAliasStatus>) -> Self {
-        self.bot_alias_status = input; self
+    pub fn set_bot_alias_status(
+        mut self,
+        input: std::option::Option<crate::types::BotAliasStatus>,
+    ) -> Self {
+        self.bot_alias_status = input;
+        self
     }
     /// <p>The unique identifier of the bot that this alias applies to.</p>
     pub fn bot_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -199,7 +250,8 @@ impl CreateBotAliasOutputBuilder {
     }
     /// <p>The unique identifier of the bot that this alias applies to.</p>
     pub fn set_bot_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.bot_id = input; self
+        self.bot_id = input;
+        self
     }
     /// <p>A Unix timestamp indicating the date and time that the bot alias was created.</p>
     pub fn creation_date_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -207,60 +259,62 @@ impl CreateBotAliasOutputBuilder {
         self
     }
     /// <p>A Unix timestamp indicating the date and time that the bot alias was created.</p>
-    pub fn set_creation_date_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.creation_date_time = input; self
+    pub fn set_creation_date_time(
+        mut self,
+        input: std::option::Option<aws_smithy_types::DateTime>,
+    ) -> Self {
+        self.creation_date_time = input;
+        self
     }
     /// Adds a key-value pair to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// <p>A list of tags associated with the bot alias.</p>
-    pub fn tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
+    pub fn tags(
+        mut self,
+        k: impl Into<std::string::String>,
+        v: impl Into<std::string::String>,
+    ) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
-                        hash_map.insert(k.into(), v.into());
-                        self.tags = Some(hash_map);
-                        self
+        hash_map.insert(k.into(), v.into());
+        self.tags = Some(hash_map);
+        self
     }
     /// <p>A list of tags associated with the bot alias.</p>
-    pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
-        self.tags = input; self
+    pub fn set_tags(
+        mut self,
+        input: std::option::Option<
+            std::collections::HashMap<std::string::String, std::string::String>,
+        >,
+    ) -> Self {
+        self.tags = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`CreateBotAliasOutput`](crate::operation::create_bot_alias::CreateBotAliasOutput).
     pub fn build(self) -> crate::operation::create_bot_alias::CreateBotAliasOutput {
         crate::operation::create_bot_alias::CreateBotAliasOutput {
-            bot_alias_id: self.bot_alias_id
-            ,
-            bot_alias_name: self.bot_alias_name
-            ,
-            description: self.description
-            ,
-            bot_version: self.bot_version
-            ,
-            bot_alias_locale_settings: self.bot_alias_locale_settings
-            ,
-            conversation_log_settings: self.conversation_log_settings
-            ,
-            sentiment_analysis_settings: self.sentiment_analysis_settings
-            ,
-            bot_alias_status: self.bot_alias_status
-            ,
-            bot_id: self.bot_id
-            ,
-            creation_date_time: self.creation_date_time
-            ,
-            tags: self.tags
-            ,
+            bot_alias_id: self.bot_alias_id,
+            bot_alias_name: self.bot_alias_name,
+            description: self.description,
+            bot_version: self.bot_version,
+            bot_alias_locale_settings: self.bot_alias_locale_settings,
+            conversation_log_settings: self.conversation_log_settings,
+            sentiment_analysis_settings: self.sentiment_analysis_settings,
+            bot_alias_status: self.bot_alias_status,
+            bot_id: self.bot_id,
+            creation_date_time: self.creation_date_time,
+            tags: self.tags,
             _request_id: self._request_id,
         }
     }
 }
-

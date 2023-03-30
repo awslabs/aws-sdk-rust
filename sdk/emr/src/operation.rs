@@ -159,4 +159,3 @@ pub mod update_studio;
 
 /// Types for the `UpdateStudioSessionMapping` operation.
 pub mod update_studio_session_mapping;
-

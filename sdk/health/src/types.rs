@@ -96,4 +96,3 @@ pub mod builders;
 
 /// Error types that AWS Health APIs and Notifications can respond with.
 pub mod error;
-

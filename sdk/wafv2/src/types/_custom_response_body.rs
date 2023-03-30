@@ -3,25 +3,25 @@
 /// <p>The response body to use in a custom response to a web request. This is referenced by key from <code>CustomResponse</code> <code>CustomResponseBodyKey</code>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CustomResponseBody  {
+pub struct CustomResponseBody {
     /// <p>The type of content in the payload that you are defining in the <code>Content</code> string.</p>
     #[doc(hidden)]
     pub content_type: std::option::Option<crate::types::ResponseContentType>,
-    /// <p>The payload of the custom response. </p> 
-    /// <p>You can use JSON escape strings in JSON content. To do this, you must specify JSON content in the <code>ContentType</code> setting. </p> 
+    /// <p>The payload of the custom response. </p>
+    /// <p>You can use JSON escape strings in JSON content. To do this, you must specify JSON content in the <code>ContentType</code> setting. </p>
     /// <p>For information about the limits on count and size for custom request and response settings, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">WAF quotas</a> in the <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">WAF Developer Guide</a>. </p>
     #[doc(hidden)]
     pub content: std::option::Option<std::string::String>,
 }
 impl CustomResponseBody {
     /// <p>The type of content in the payload that you are defining in the <code>Content</code> string.</p>
-    pub fn content_type(&self) -> std::option::Option<& crate::types::ResponseContentType> {
+    pub fn content_type(&self) -> std::option::Option<&crate::types::ResponseContentType> {
         self.content_type.as_ref()
     }
-    /// <p>The payload of the custom response. </p> 
-    /// <p>You can use JSON escape strings in JSON content. To do this, you must specify JSON content in the <code>ContentType</code> setting. </p> 
+    /// <p>The payload of the custom response. </p>
+    /// <p>You can use JSON escape strings in JSON content. To do this, you must specify JSON content in the <code>ContentType</code> setting. </p>
     /// <p>For information about the limits on count and size for custom request and response settings, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">WAF quotas</a> in the <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">WAF Developer Guide</a>. </p>
-    pub fn content(&self) -> std::option::Option<& str> {
+    pub fn content(&self) -> std::option::Option<&str> {
         self.content.as_deref()
     }
 }
@@ -46,30 +46,32 @@ impl CustomResponseBodyBuilder {
         self
     }
     /// <p>The type of content in the payload that you are defining in the <code>Content</code> string.</p>
-    pub fn set_content_type(mut self, input: std::option::Option<crate::types::ResponseContentType>) -> Self {
-        self.content_type = input; self
+    pub fn set_content_type(
+        mut self,
+        input: std::option::Option<crate::types::ResponseContentType>,
+    ) -> Self {
+        self.content_type = input;
+        self
     }
-    /// <p>The payload of the custom response. </p> 
-    /// <p>You can use JSON escape strings in JSON content. To do this, you must specify JSON content in the <code>ContentType</code> setting. </p> 
+    /// <p>The payload of the custom response. </p>
+    /// <p>You can use JSON escape strings in JSON content. To do this, you must specify JSON content in the <code>ContentType</code> setting. </p>
     /// <p>For information about the limits on count and size for custom request and response settings, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">WAF quotas</a> in the <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">WAF Developer Guide</a>. </p>
     pub fn content(mut self, input: impl Into<std::string::String>) -> Self {
         self.content = Some(input.into());
         self
     }
-    /// <p>The payload of the custom response. </p> 
-    /// <p>You can use JSON escape strings in JSON content. To do this, you must specify JSON content in the <code>ContentType</code> setting. </p> 
+    /// <p>The payload of the custom response. </p>
+    /// <p>You can use JSON escape strings in JSON content. To do this, you must specify JSON content in the <code>ContentType</code> setting. </p>
     /// <p>For information about the limits on count and size for custom request and response settings, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">WAF quotas</a> in the <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">WAF Developer Guide</a>. </p>
     pub fn set_content(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.content = input; self
+        self.content = input;
+        self
     }
     /// Consumes the builder and constructs a [`CustomResponseBody`](crate::types::CustomResponseBody).
     pub fn build(self) -> crate::types::CustomResponseBody {
         crate::types::CustomResponseBody {
-            content_type: self.content_type
-            ,
-            content: self.content
-            ,
+            content_type: self.content_type,
+            content: self.content,
         }
     }
 }
-

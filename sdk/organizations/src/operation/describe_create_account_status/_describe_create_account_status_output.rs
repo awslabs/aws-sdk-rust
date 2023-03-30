@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeCreateAccountStatusOutput  {
+pub struct DescribeCreateAccountStatusOutput {
     /// <p>A structure that contains the current status of an account creation request.</p>
     #[doc(hidden)]
     pub create_account_status: std::option::Option<crate::types::CreateAccountStatus>,
@@ -10,18 +10,18 @@ pub struct DescribeCreateAccountStatusOutput  {
 }
 impl DescribeCreateAccountStatusOutput {
     /// <p>A structure that contains the current status of an account creation request.</p>
-    pub fn create_account_status(&self) -> std::option::Option<& crate::types::CreateAccountStatus> {
+    pub fn create_account_status(&self) -> std::option::Option<&crate::types::CreateAccountStatus> {
         self.create_account_status.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for DescribeCreateAccountStatusOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl DescribeCreateAccountStatusOutput {
     /// Creates a new builder-style object to manufacture [`DescribeCreateAccountStatusOutput`](crate::operation::describe_create_account_status::DescribeCreateAccountStatusOutput).
-    pub fn builder() -> crate::operation::describe_create_account_status::builders::DescribeCreateAccountStatusOutputBuilder {
+    pub fn builder() -> crate::operation::describe_create_account_status::builders::DescribeCreateAccountStatusOutputBuilder{
         crate::operation::describe_create_account_status::builders::DescribeCreateAccountStatusOutputBuilder::default()
     }
 }
@@ -40,25 +40,29 @@ impl DescribeCreateAccountStatusOutputBuilder {
         self
     }
     /// <p>A structure that contains the current status of an account creation request.</p>
-    pub fn set_create_account_status(mut self, input: std::option::Option<crate::types::CreateAccountStatus>) -> Self {
-        self.create_account_status = input; self
+    pub fn set_create_account_status(
+        mut self,
+        input: std::option::Option<crate::types::CreateAccountStatus>,
+    ) -> Self {
+        self.create_account_status = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`DescribeCreateAccountStatusOutput`](crate::operation::describe_create_account_status::DescribeCreateAccountStatusOutput).
-    pub fn build(self) -> crate::operation::describe_create_account_status::DescribeCreateAccountStatusOutput {
+    pub fn build(
+        self,
+    ) -> crate::operation::describe_create_account_status::DescribeCreateAccountStatusOutput {
         crate::operation::describe_create_account_status::DescribeCreateAccountStatusOutput {
-            create_account_status: self.create_account_status
-            ,
+            create_account_status: self.create_account_status,
             _request_id: self._request_id,
         }
     }
 }
-

@@ -3,7 +3,7 @@
 /// <p>A VpcConfig object that specifies the VPC that you want your workforce to connect to.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct WorkforceVpcConfigResponse  {
+pub struct WorkforceVpcConfigResponse {
     /// <p>The ID of the VPC that the workforce uses for communication.</p>
     #[doc(hidden)]
     pub vpc_id: std::option::Option<std::string::String>,
@@ -19,19 +19,19 @@ pub struct WorkforceVpcConfigResponse  {
 }
 impl WorkforceVpcConfigResponse {
     /// <p>The ID of the VPC that the workforce uses for communication.</p>
-    pub fn vpc_id(&self) -> std::option::Option<& str> {
+    pub fn vpc_id(&self) -> std::option::Option<&str> {
         self.vpc_id.as_deref()
     }
     /// <p>The VPC security group IDs, in the form sg-xxxxxxxx. The security groups must be for the same VPC as specified in the subnet.</p>
-    pub fn security_group_ids(&self) -> std::option::Option<& [std::string::String]> {
+    pub fn security_group_ids(&self) -> std::option::Option<&[std::string::String]> {
         self.security_group_ids.as_deref()
     }
     /// <p>The ID of the subnets in the VPC that you want to connect.</p>
-    pub fn subnets(&self) -> std::option::Option<& [std::string::String]> {
+    pub fn subnets(&self) -> std::option::Option<&[std::string::String]> {
         self.subnets.as_deref()
     }
     /// <p>The IDs for the VPC service endpoints of your VPC workforce when it is created and updated.</p>
-    pub fn vpc_endpoint_id(&self) -> std::option::Option<& str> {
+    pub fn vpc_endpoint_id(&self) -> std::option::Option<&str> {
         self.vpc_endpoint_id.as_deref()
     }
 }
@@ -59,7 +59,8 @@ impl WorkforceVpcConfigResponseBuilder {
     }
     /// <p>The ID of the VPC that the workforce uses for communication.</p>
     pub fn set_vpc_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.vpc_id = input; self
+        self.vpc_id = input;
+        self
     }
     /// Appends an item to `security_group_ids`.
     ///
@@ -68,13 +69,17 @@ impl WorkforceVpcConfigResponseBuilder {
     /// <p>The VPC security group IDs, in the form sg-xxxxxxxx. The security groups must be for the same VPC as specified in the subnet.</p>
     pub fn security_group_ids(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.security_group_ids.unwrap_or_default();
-                        v.push(input.into());
-                        self.security_group_ids = Some(v);
-                        self
+        v.push(input.into());
+        self.security_group_ids = Some(v);
+        self
     }
     /// <p>The VPC security group IDs, in the form sg-xxxxxxxx. The security groups must be for the same VPC as specified in the subnet.</p>
-    pub fn set_security_group_ids(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-        self.security_group_ids = input; self
+    pub fn set_security_group_ids(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
+        self.security_group_ids = input;
+        self
     }
     /// Appends an item to `subnets`.
     ///
@@ -83,13 +88,17 @@ impl WorkforceVpcConfigResponseBuilder {
     /// <p>The ID of the subnets in the VPC that you want to connect.</p>
     pub fn subnets(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.subnets.unwrap_or_default();
-                        v.push(input.into());
-                        self.subnets = Some(v);
-                        self
+        v.push(input.into());
+        self.subnets = Some(v);
+        self
     }
     /// <p>The ID of the subnets in the VPC that you want to connect.</p>
-    pub fn set_subnets(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-        self.subnets = input; self
+    pub fn set_subnets(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
+        self.subnets = input;
+        self
     }
     /// <p>The IDs for the VPC service endpoints of your VPC workforce when it is created and updated.</p>
     pub fn vpc_endpoint_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -98,20 +107,16 @@ impl WorkforceVpcConfigResponseBuilder {
     }
     /// <p>The IDs for the VPC service endpoints of your VPC workforce when it is created and updated.</p>
     pub fn set_vpc_endpoint_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.vpc_endpoint_id = input; self
+        self.vpc_endpoint_id = input;
+        self
     }
     /// Consumes the builder and constructs a [`WorkforceVpcConfigResponse`](crate::types::WorkforceVpcConfigResponse).
     pub fn build(self) -> crate::types::WorkforceVpcConfigResponse {
         crate::types::WorkforceVpcConfigResponse {
-            vpc_id: self.vpc_id
-            ,
-            security_group_ids: self.security_group_ids
-            ,
-            subnets: self.subnets
-            ,
-            vpc_endpoint_id: self.vpc_endpoint_id
-            ,
+            vpc_id: self.vpc_id,
+            security_group_ids: self.security_group_ids,
+            subnets: self.subnets,
+            vpc_endpoint_id: self.vpc_endpoint_id,
         }
     }
 }
-

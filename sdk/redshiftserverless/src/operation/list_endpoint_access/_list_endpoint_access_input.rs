@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListEndpointAccessInput  {
+pub struct ListEndpointAccessInput {
     /// <p>If your initial <code>ListEndpointAccess</code> operation returns a <code>nextToken</code>, you can include the returned <code>nextToken</code> in following <code>ListEndpointAccess</code> operations, which returns results in the next page.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
@@ -18,7 +18,7 @@ pub struct ListEndpointAccessInput  {
 }
 impl ListEndpointAccessInput {
     /// <p>If your initial <code>ListEndpointAccess</code> operation returns a <code>nextToken</code>, you can include the returned <code>nextToken</code> in following <code>ListEndpointAccess</code> operations, which returns results in the next page.</p>
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
     /// <p>An optional parameter that specifies the maximum number of results to return. You can use <code>nextToken</code> to display the next page of results.</p>
@@ -26,17 +26,18 @@ impl ListEndpointAccessInput {
         self.max_results
     }
     /// <p>The name of the workgroup associated with the VPC endpoint to return.</p>
-    pub fn workgroup_name(&self) -> std::option::Option<& str> {
+    pub fn workgroup_name(&self) -> std::option::Option<&str> {
         self.workgroup_name.as_deref()
     }
     /// <p>The unique identifier of the virtual private cloud with access to Amazon Redshift Serverless.</p>
-    pub fn vpc_id(&self) -> std::option::Option<& str> {
+    pub fn vpc_id(&self) -> std::option::Option<&str> {
         self.vpc_id.as_deref()
     }
 }
 impl ListEndpointAccessInput {
     /// Creates a new builder-style object to manufacture [`ListEndpointAccessInput`](crate::operation::list_endpoint_access::ListEndpointAccessInput).
-    pub fn builder() -> crate::operation::list_endpoint_access::builders::ListEndpointAccessInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::list_endpoint_access::builders::ListEndpointAccessInputBuilder {
         crate::operation::list_endpoint_access::builders::ListEndpointAccessInputBuilder::default()
     }
 }
@@ -58,7 +59,8 @@ impl ListEndpointAccessInputBuilder {
     }
     /// <p>If your initial <code>ListEndpointAccess</code> operation returns a <code>nextToken</code>, you can include the returned <code>nextToken</code> in following <code>ListEndpointAccess</code> operations, which returns results in the next page.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input; self
+        self.next_token = input;
+        self
     }
     /// <p>An optional parameter that specifies the maximum number of results to return. You can use <code>nextToken</code> to display the next page of results.</p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -67,7 +69,8 @@ impl ListEndpointAccessInputBuilder {
     }
     /// <p>An optional parameter that specifies the maximum number of results to return. You can use <code>nextToken</code> to display the next page of results.</p>
     pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_results = input; self
+        self.max_results = input;
+        self
     }
     /// <p>The name of the workgroup associated with the VPC endpoint to return.</p>
     pub fn workgroup_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -76,7 +79,8 @@ impl ListEndpointAccessInputBuilder {
     }
     /// <p>The name of the workgroup associated with the VPC endpoint to return.</p>
     pub fn set_workgroup_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.workgroup_name = input; self
+        self.workgroup_name = input;
+        self
     }
     /// <p>The unique identifier of the virtual private cloud with access to Amazon Redshift Serverless.</p>
     pub fn vpc_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -85,22 +89,23 @@ impl ListEndpointAccessInputBuilder {
     }
     /// <p>The unique identifier of the virtual private cloud with access to Amazon Redshift Serverless.</p>
     pub fn set_vpc_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.vpc_id = input; self
+        self.vpc_id = input;
+        self
     }
     /// Consumes the builder and constructs a [`ListEndpointAccessInput`](crate::operation::list_endpoint_access::ListEndpointAccessInput).
-    pub fn build(self) -> Result<crate::operation::list_endpoint_access::ListEndpointAccessInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::list_endpoint_access::ListEndpointAccessInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::list_endpoint_access::ListEndpointAccessInput {
-                next_token: self.next_token
-                ,
-                max_results: self.max_results
-                ,
-                workgroup_name: self.workgroup_name
-                ,
-                vpc_id: self.vpc_id
-                ,
-            }
+                next_token: self.next_token,
+                max_results: self.max_results,
+                workgroup_name: self.workgroup_name,
+                vpc_id: self.vpc_id,
+            },
         )
     }
 }
-

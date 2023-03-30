@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteVolumeInput  {
+pub struct DeleteVolumeInput {
     /// <p>(Optional) An idempotency token for resource creation, in a string of up to 64 ASCII characters. This token is automatically filled on your behalf when you use the Command Line Interface (CLI) or an Amazon Web Services SDK.</p>
     #[doc(hidden)]
     pub client_request_token: std::option::Option<std::string::String>,
@@ -18,19 +18,23 @@ pub struct DeleteVolumeInput  {
 }
 impl DeleteVolumeInput {
     /// <p>(Optional) An idempotency token for resource creation, in a string of up to 64 ASCII characters. This token is automatically filled on your behalf when you use the Command Line Interface (CLI) or an Amazon Web Services SDK.</p>
-    pub fn client_request_token(&self) -> std::option::Option<& str> {
+    pub fn client_request_token(&self) -> std::option::Option<&str> {
         self.client_request_token.as_deref()
     }
     /// <p>The ID of the volume that you are deleting.</p>
-    pub fn volume_id(&self) -> std::option::Option<& str> {
+    pub fn volume_id(&self) -> std::option::Option<&str> {
         self.volume_id.as_deref()
     }
     /// <p>For Amazon FSx for ONTAP volumes, specify whether to take a final backup of the volume and apply tags to the backup. To apply tags to the backup, you must have the <code>fsx:TagResource</code> permission.</p>
-    pub fn ontap_configuration(&self) -> std::option::Option<& crate::types::DeleteVolumeOntapConfiguration> {
+    pub fn ontap_configuration(
+        &self,
+    ) -> std::option::Option<&crate::types::DeleteVolumeOntapConfiguration> {
         self.ontap_configuration.as_ref()
     }
     /// <p>For Amazon FSx for OpenZFS volumes, specify whether to delete all child volumes and snapshots.</p>
-    pub fn open_zfs_configuration(&self) -> std::option::Option<& crate::types::DeleteVolumeOpenZfsConfiguration> {
+    pub fn open_zfs_configuration(
+        &self,
+    ) -> std::option::Option<&crate::types::DeleteVolumeOpenZfsConfiguration> {
         self.open_zfs_configuration.as_ref()
     }
 }
@@ -47,8 +51,10 @@ impl DeleteVolumeInput {
 pub struct DeleteVolumeInputBuilder {
     pub(crate) client_request_token: std::option::Option<std::string::String>,
     pub(crate) volume_id: std::option::Option<std::string::String>,
-    pub(crate) ontap_configuration: std::option::Option<crate::types::DeleteVolumeOntapConfiguration>,
-    pub(crate) open_zfs_configuration: std::option::Option<crate::types::DeleteVolumeOpenZfsConfiguration>,
+    pub(crate) ontap_configuration:
+        std::option::Option<crate::types::DeleteVolumeOntapConfiguration>,
+    pub(crate) open_zfs_configuration:
+        std::option::Option<crate::types::DeleteVolumeOpenZfsConfiguration>,
 }
 impl DeleteVolumeInputBuilder {
     /// <p>(Optional) An idempotency token for resource creation, in a string of up to 64 ASCII characters. This token is automatically filled on your behalf when you use the Command Line Interface (CLI) or an Amazon Web Services SDK.</p>
@@ -57,8 +63,12 @@ impl DeleteVolumeInputBuilder {
         self
     }
     /// <p>(Optional) An idempotency token for resource creation, in a string of up to 64 ASCII characters. This token is automatically filled on your behalf when you use the Command Line Interface (CLI) or an Amazon Web Services SDK.</p>
-    pub fn set_client_request_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.client_request_token = input; self
+    pub fn set_client_request_token(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.client_request_token = input;
+        self
     }
     /// <p>The ID of the volume that you are deleting.</p>
     pub fn volume_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -67,40 +77,53 @@ impl DeleteVolumeInputBuilder {
     }
     /// <p>The ID of the volume that you are deleting.</p>
     pub fn set_volume_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.volume_id = input; self
+        self.volume_id = input;
+        self
     }
     /// <p>For Amazon FSx for ONTAP volumes, specify whether to take a final backup of the volume and apply tags to the backup. To apply tags to the backup, you must have the <code>fsx:TagResource</code> permission.</p>
-    pub fn ontap_configuration(mut self, input: crate::types::DeleteVolumeOntapConfiguration) -> Self {
+    pub fn ontap_configuration(
+        mut self,
+        input: crate::types::DeleteVolumeOntapConfiguration,
+    ) -> Self {
         self.ontap_configuration = Some(input);
         self
     }
     /// <p>For Amazon FSx for ONTAP volumes, specify whether to take a final backup of the volume and apply tags to the backup. To apply tags to the backup, you must have the <code>fsx:TagResource</code> permission.</p>
-    pub fn set_ontap_configuration(mut self, input: std::option::Option<crate::types::DeleteVolumeOntapConfiguration>) -> Self {
-        self.ontap_configuration = input; self
+    pub fn set_ontap_configuration(
+        mut self,
+        input: std::option::Option<crate::types::DeleteVolumeOntapConfiguration>,
+    ) -> Self {
+        self.ontap_configuration = input;
+        self
     }
     /// <p>For Amazon FSx for OpenZFS volumes, specify whether to delete all child volumes and snapshots.</p>
-    pub fn open_zfs_configuration(mut self, input: crate::types::DeleteVolumeOpenZfsConfiguration) -> Self {
+    pub fn open_zfs_configuration(
+        mut self,
+        input: crate::types::DeleteVolumeOpenZfsConfiguration,
+    ) -> Self {
         self.open_zfs_configuration = Some(input);
         self
     }
     /// <p>For Amazon FSx for OpenZFS volumes, specify whether to delete all child volumes and snapshots.</p>
-    pub fn set_open_zfs_configuration(mut self, input: std::option::Option<crate::types::DeleteVolumeOpenZfsConfiguration>) -> Self {
-        self.open_zfs_configuration = input; self
+    pub fn set_open_zfs_configuration(
+        mut self,
+        input: std::option::Option<crate::types::DeleteVolumeOpenZfsConfiguration>,
+    ) -> Self {
+        self.open_zfs_configuration = input;
+        self
     }
     /// Consumes the builder and constructs a [`DeleteVolumeInput`](crate::operation::delete_volume::DeleteVolumeInput).
-    pub fn build(self) -> Result<crate::operation::delete_volume::DeleteVolumeInput, aws_smithy_http::operation::error::BuildError> {
-        Ok(
-            crate::operation::delete_volume::DeleteVolumeInput {
-                client_request_token: self.client_request_token
-                ,
-                volume_id: self.volume_id
-                ,
-                ontap_configuration: self.ontap_configuration
-                ,
-                open_zfs_configuration: self.open_zfs_configuration
-                ,
-            }
-        )
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::delete_volume::DeleteVolumeInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        Ok(crate::operation::delete_volume::DeleteVolumeInput {
+            client_request_token: self.client_request_token,
+            volume_id: self.volume_id,
+            ontap_configuration: self.ontap_configuration,
+            open_zfs_configuration: self.open_zfs_configuration,
+        })
     }
 }
-

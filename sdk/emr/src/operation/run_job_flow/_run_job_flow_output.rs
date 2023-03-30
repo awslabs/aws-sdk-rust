@@ -3,7 +3,7 @@
 /// <p> The result of the <code>RunJobFlow</code> operation. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct RunJobFlowOutput  {
+pub struct RunJobFlowOutput {
     /// <p>A unique identifier for the job flow.</p>
     #[doc(hidden)]
     pub job_flow_id: std::option::Option<std::string::String>,
@@ -14,19 +14,19 @@ pub struct RunJobFlowOutput  {
 }
 impl RunJobFlowOutput {
     /// <p>A unique identifier for the job flow.</p>
-    pub fn job_flow_id(&self) -> std::option::Option<& str> {
+    pub fn job_flow_id(&self) -> std::option::Option<&str> {
         self.job_flow_id.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the cluster.</p>
-    pub fn cluster_arn(&self) -> std::option::Option<& str> {
+    pub fn cluster_arn(&self) -> std::option::Option<&str> {
         self.cluster_arn.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for RunJobFlowOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl RunJobFlowOutput {
     /// Creates a new builder-style object to manufacture [`RunJobFlowOutput`](crate::operation::run_job_flow::RunJobFlowOutput).
     pub fn builder() -> crate::operation::run_job_flow::builders::RunJobFlowOutputBuilder {
@@ -50,7 +50,8 @@ impl RunJobFlowOutputBuilder {
     }
     /// <p>A unique identifier for the job flow.</p>
     pub fn set_job_flow_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.job_flow_id = input; self
+        self.job_flow_id = input;
+        self
     }
     /// <p>The Amazon Resource Name (ARN) of the cluster.</p>
     pub fn cluster_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -59,26 +60,24 @@ impl RunJobFlowOutputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the cluster.</p>
     pub fn set_cluster_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.cluster_arn = input; self
+        self.cluster_arn = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`RunJobFlowOutput`](crate::operation::run_job_flow::RunJobFlowOutput).
     pub fn build(self) -> crate::operation::run_job_flow::RunJobFlowOutput {
         crate::operation::run_job_flow::RunJobFlowOutput {
-            job_flow_id: self.job_flow_id
-            ,
-            cluster_arn: self.cluster_arn
-            ,
+            job_flow_id: self.job_flow_id,
+            cluster_arn: self.cluster_arn,
             _request_id: self._request_id,
         }
     }
 }
-

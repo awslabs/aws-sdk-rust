@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct StartConnectionOutput  {
+pub struct StartConnectionOutput {
     /// <p> The ID of the connection. </p>
     #[doc(hidden)]
     pub connection_id: std::option::Option<std::string::String>,
@@ -13,19 +13,19 @@ pub struct StartConnectionOutput  {
 }
 impl StartConnectionOutput {
     /// <p> The ID of the connection. </p>
-    pub fn connection_id(&self) -> std::option::Option<& str> {
+    pub fn connection_id(&self) -> std::option::Option<&str> {
         self.connection_id.as_deref()
     }
     /// <p> The underlay IP address. </p>
-    pub fn underlay_ip_address(&self) -> std::option::Option<& str> {
+    pub fn underlay_ip_address(&self) -> std::option::Option<&str> {
         self.underlay_ip_address.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for StartConnectionOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl StartConnectionOutput {
     /// Creates a new builder-style object to manufacture [`StartConnectionOutput`](crate::operation::start_connection::StartConnectionOutput).
     pub fn builder() -> crate::operation::start_connection::builders::StartConnectionOutputBuilder {
@@ -49,7 +49,8 @@ impl StartConnectionOutputBuilder {
     }
     /// <p> The ID of the connection. </p>
     pub fn set_connection_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.connection_id = input; self
+        self.connection_id = input;
+        self
     }
     /// <p> The underlay IP address. </p>
     pub fn underlay_ip_address(mut self, input: impl Into<std::string::String>) -> Self {
@@ -57,27 +58,28 @@ impl StartConnectionOutputBuilder {
         self
     }
     /// <p> The underlay IP address. </p>
-    pub fn set_underlay_ip_address(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.underlay_ip_address = input; self
+    pub fn set_underlay_ip_address(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.underlay_ip_address = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`StartConnectionOutput`](crate::operation::start_connection::StartConnectionOutput).
     pub fn build(self) -> crate::operation::start_connection::StartConnectionOutput {
         crate::operation::start_connection::StartConnectionOutput {
-            connection_id: self.connection_id
-            ,
-            underlay_ip_address: self.underlay_ip_address
-            ,
+            connection_id: self.connection_id,
+            underlay_ip_address: self.underlay_ip_address,
             _request_id: self._request_id,
         }
     }
 }
-

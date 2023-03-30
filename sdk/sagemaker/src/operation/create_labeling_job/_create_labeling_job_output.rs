@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateLabelingJobOutput  {
+pub struct CreateLabelingJobOutput {
     /// <p>The Amazon Resource Name (ARN) of the labeling job. You use this ARN to identify the labeling job.</p>
     #[doc(hidden)]
     pub labeling_job_arn: std::option::Option<std::string::String>,
@@ -10,18 +10,19 @@ pub struct CreateLabelingJobOutput  {
 }
 impl CreateLabelingJobOutput {
     /// <p>The Amazon Resource Name (ARN) of the labeling job. You use this ARN to identify the labeling job.</p>
-    pub fn labeling_job_arn(&self) -> std::option::Option<& str> {
+    pub fn labeling_job_arn(&self) -> std::option::Option<&str> {
         self.labeling_job_arn.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for CreateLabelingJobOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl CreateLabelingJobOutput {
     /// Creates a new builder-style object to manufacture [`CreateLabelingJobOutput`](crate::operation::create_labeling_job::CreateLabelingJobOutput).
-    pub fn builder() -> crate::operation::create_labeling_job::builders::CreateLabelingJobOutputBuilder {
+    pub fn builder(
+    ) -> crate::operation::create_labeling_job::builders::CreateLabelingJobOutputBuilder {
         crate::operation::create_labeling_job::builders::CreateLabelingJobOutputBuilder::default()
     }
 }
@@ -41,24 +42,23 @@ impl CreateLabelingJobOutputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the labeling job. You use this ARN to identify the labeling job.</p>
     pub fn set_labeling_job_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.labeling_job_arn = input; self
+        self.labeling_job_arn = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`CreateLabelingJobOutput`](crate::operation::create_labeling_job::CreateLabelingJobOutput).
     pub fn build(self) -> crate::operation::create_labeling_job::CreateLabelingJobOutput {
         crate::operation::create_labeling_job::CreateLabelingJobOutput {
-            labeling_job_arn: self.labeling_job_arn
-            ,
+            labeling_job_arn: self.labeling_job_arn,
             _request_id: self._request_id,
         }
     }
 }
-

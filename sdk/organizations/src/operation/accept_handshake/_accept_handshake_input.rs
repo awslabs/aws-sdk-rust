@@ -2,16 +2,16 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AcceptHandshakeInput  {
-    /// <p>The unique identifier (ID) of the handshake that you want to accept.</p> 
+pub struct AcceptHandshakeInput {
+    /// <p>The unique identifier (ID) of the handshake that you want to accept.</p>
     /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for handshake ID string requires "h-" followed by from 8 to 32 lowercase letters or digits.</p>
     #[doc(hidden)]
     pub handshake_id: std::option::Option<std::string::String>,
 }
 impl AcceptHandshakeInput {
-    /// <p>The unique identifier (ID) of the handshake that you want to accept.</p> 
+    /// <p>The unique identifier (ID) of the handshake that you want to accept.</p>
     /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for handshake ID string requires "h-" followed by from 8 to 32 lowercase letters or digits.</p>
-    pub fn handshake_id(&self) -> std::option::Option<& str> {
+    pub fn handshake_id(&self) -> std::option::Option<&str> {
         self.handshake_id.as_deref()
     }
 }
@@ -29,25 +29,27 @@ pub struct AcceptHandshakeInputBuilder {
     pub(crate) handshake_id: std::option::Option<std::string::String>,
 }
 impl AcceptHandshakeInputBuilder {
-    /// <p>The unique identifier (ID) of the handshake that you want to accept.</p> 
+    /// <p>The unique identifier (ID) of the handshake that you want to accept.</p>
     /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for handshake ID string requires "h-" followed by from 8 to 32 lowercase letters or digits.</p>
     pub fn handshake_id(mut self, input: impl Into<std::string::String>) -> Self {
         self.handshake_id = Some(input.into());
         self
     }
-    /// <p>The unique identifier (ID) of the handshake that you want to accept.</p> 
+    /// <p>The unique identifier (ID) of the handshake that you want to accept.</p>
     /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for handshake ID string requires "h-" followed by from 8 to 32 lowercase letters or digits.</p>
     pub fn set_handshake_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.handshake_id = input; self
+        self.handshake_id = input;
+        self
     }
     /// Consumes the builder and constructs a [`AcceptHandshakeInput`](crate::operation::accept_handshake::AcceptHandshakeInput).
-    pub fn build(self) -> Result<crate::operation::accept_handshake::AcceptHandshakeInput, aws_smithy_http::operation::error::BuildError> {
-        Ok(
-            crate::operation::accept_handshake::AcceptHandshakeInput {
-                handshake_id: self.handshake_id
-                ,
-            }
-        )
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::accept_handshake::AcceptHandshakeInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        Ok(crate::operation::accept_handshake::AcceptHandshakeInput {
+            handshake_id: self.handshake_id,
+        })
     }
 }
-

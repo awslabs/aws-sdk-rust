@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdatePricingPlanInput  {
+pub struct UpdatePricingPlanInput {
     /// <p>The pricing mode.</p>
     #[doc(hidden)]
     pub pricing_mode: std::option::Option<crate::types::PricingMode>,
@@ -12,17 +12,18 @@ pub struct UpdatePricingPlanInput  {
 }
 impl UpdatePricingPlanInput {
     /// <p>The pricing mode.</p>
-    pub fn pricing_mode(&self) -> std::option::Option<& crate::types::PricingMode> {
+    pub fn pricing_mode(&self) -> std::option::Option<&crate::types::PricingMode> {
         self.pricing_mode.as_ref()
     }
     /// <p>The bundle names.</p>
-    pub fn bundle_names(&self) -> std::option::Option<& [std::string::String]> {
+    pub fn bundle_names(&self) -> std::option::Option<&[std::string::String]> {
         self.bundle_names.as_deref()
     }
 }
 impl UpdatePricingPlanInput {
     /// Creates a new builder-style object to manufacture [`UpdatePricingPlanInput`](crate::operation::update_pricing_plan::UpdatePricingPlanInput).
-    pub fn builder() -> crate::operation::update_pricing_plan::builders::UpdatePricingPlanInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::update_pricing_plan::builders::UpdatePricingPlanInputBuilder {
         crate::operation::update_pricing_plan::builders::UpdatePricingPlanInputBuilder::default()
     }
 }
@@ -41,8 +42,12 @@ impl UpdatePricingPlanInputBuilder {
         self
     }
     /// <p>The pricing mode.</p>
-    pub fn set_pricing_mode(mut self, input: std::option::Option<crate::types::PricingMode>) -> Self {
-        self.pricing_mode = input; self
+    pub fn set_pricing_mode(
+        mut self,
+        input: std::option::Option<crate::types::PricingMode>,
+    ) -> Self {
+        self.pricing_mode = input;
+        self
     }
     /// Appends an item to `bundle_names`.
     ///
@@ -51,24 +56,30 @@ impl UpdatePricingPlanInputBuilder {
     /// <p>The bundle names.</p>
     pub fn bundle_names(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.bundle_names.unwrap_or_default();
-                        v.push(input.into());
-                        self.bundle_names = Some(v);
-                        self
+        v.push(input.into());
+        self.bundle_names = Some(v);
+        self
     }
     /// <p>The bundle names.</p>
-    pub fn set_bundle_names(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-        self.bundle_names = input; self
+    pub fn set_bundle_names(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
+        self.bundle_names = input;
+        self
     }
     /// Consumes the builder and constructs a [`UpdatePricingPlanInput`](crate::operation::update_pricing_plan::UpdatePricingPlanInput).
-    pub fn build(self) -> Result<crate::operation::update_pricing_plan::UpdatePricingPlanInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::update_pricing_plan::UpdatePricingPlanInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::update_pricing_plan::UpdatePricingPlanInput {
-                pricing_mode: self.pricing_mode
-                ,
-                bundle_names: self.bundle_names
-                ,
-            }
+                pricing_mode: self.pricing_mode,
+                bundle_names: self.bundle_names,
+            },
         )
     }
 }
-

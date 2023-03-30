@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeFileCachesOutput  {
+pub struct DescribeFileCachesOutput {
     /// <p>The response object for the <code>DescribeFileCaches</code> operation.</p>
     #[doc(hidden)]
     pub file_caches: std::option::Option<std::vec::Vec<crate::types::FileCache>>,
@@ -13,22 +13,23 @@ pub struct DescribeFileCachesOutput  {
 }
 impl DescribeFileCachesOutput {
     /// <p>The response object for the <code>DescribeFileCaches</code> operation.</p>
-    pub fn file_caches(&self) -> std::option::Option<& [crate::types::FileCache]> {
+    pub fn file_caches(&self) -> std::option::Option<&[crate::types::FileCache]> {
         self.file_caches.as_deref()
     }
     /// <p>(Optional) Opaque pagination token returned from a previous operation (String). If present, this token indicates from what point you can continue processing the request, where the previous <code>NextToken</code> value left off.</p>
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for DescribeFileCachesOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl DescribeFileCachesOutput {
     /// Creates a new builder-style object to manufacture [`DescribeFileCachesOutput`](crate::operation::describe_file_caches::DescribeFileCachesOutput).
-    pub fn builder() -> crate::operation::describe_file_caches::builders::DescribeFileCachesOutputBuilder {
+    pub fn builder(
+    ) -> crate::operation::describe_file_caches::builders::DescribeFileCachesOutputBuilder {
         crate::operation::describe_file_caches::builders::DescribeFileCachesOutputBuilder::default()
     }
 }
@@ -49,13 +50,17 @@ impl DescribeFileCachesOutputBuilder {
     /// <p>The response object for the <code>DescribeFileCaches</code> operation.</p>
     pub fn file_caches(mut self, input: crate::types::FileCache) -> Self {
         let mut v = self.file_caches.unwrap_or_default();
-                        v.push(input);
-                        self.file_caches = Some(v);
-                        self
+        v.push(input);
+        self.file_caches = Some(v);
+        self
     }
     /// <p>The response object for the <code>DescribeFileCaches</code> operation.</p>
-    pub fn set_file_caches(mut self, input: std::option::Option<std::vec::Vec<crate::types::FileCache>>) -> Self {
-        self.file_caches = input; self
+    pub fn set_file_caches(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::FileCache>>,
+    ) -> Self {
+        self.file_caches = input;
+        self
     }
     /// <p>(Optional) Opaque pagination token returned from a previous operation (String). If present, this token indicates from what point you can continue processing the request, where the previous <code>NextToken</code> value left off.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -64,26 +69,24 @@ impl DescribeFileCachesOutputBuilder {
     }
     /// <p>(Optional) Opaque pagination token returned from a previous operation (String). If present, this token indicates from what point you can continue processing the request, where the previous <code>NextToken</code> value left off.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input; self
+        self.next_token = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`DescribeFileCachesOutput`](crate::operation::describe_file_caches::DescribeFileCachesOutput).
     pub fn build(self) -> crate::operation::describe_file_caches::DescribeFileCachesOutput {
         crate::operation::describe_file_caches::DescribeFileCachesOutput {
-            file_caches: self.file_caches
-            ,
-            next_token: self.next_token
-            ,
+            file_caches: self.file_caches,
+            next_token: self.next_token,
             _request_id: self._request_id,
         }
     }
 }
-

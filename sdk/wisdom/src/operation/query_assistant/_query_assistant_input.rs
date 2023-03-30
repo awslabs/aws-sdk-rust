@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct QueryAssistantInput  {
+pub struct QueryAssistantInput {
     /// <p>The identifier of the Wisdom assistant. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
     #[doc(hidden)]
     pub assistant_id: std::option::Option<std::string::String>,
@@ -18,15 +18,15 @@ pub struct QueryAssistantInput  {
 }
 impl QueryAssistantInput {
     /// <p>The identifier of the Wisdom assistant. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
-    pub fn assistant_id(&self) -> std::option::Option<& str> {
+    pub fn assistant_id(&self) -> std::option::Option<&str> {
         self.assistant_id.as_deref()
     }
     /// <p>The text to search for.</p>
-    pub fn query_text(&self) -> std::option::Option<& str> {
+    pub fn query_text(&self) -> std::option::Option<&str> {
         self.query_text.as_deref()
     }
     /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
     /// <p>The maximum number of results to return per page.</p>
@@ -34,7 +34,7 @@ impl QueryAssistantInput {
         self.max_results
     }
 }
-impl  std::fmt::Debug for QueryAssistantInput  {
+impl std::fmt::Debug for QueryAssistantInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("QueryAssistantInput");
         formatter.field("assistant_id", &self.assistant_id);
@@ -68,7 +68,8 @@ impl QueryAssistantInputBuilder {
     }
     /// <p>The identifier of the Wisdom assistant. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
     pub fn set_assistant_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.assistant_id = input; self
+        self.assistant_id = input;
+        self
     }
     /// <p>The text to search for.</p>
     pub fn query_text(mut self, input: impl Into<std::string::String>) -> Self {
@@ -77,7 +78,8 @@ impl QueryAssistantInputBuilder {
     }
     /// <p>The text to search for.</p>
     pub fn set_query_text(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.query_text = input; self
+        self.query_text = input;
+        self
     }
     /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -86,7 +88,8 @@ impl QueryAssistantInputBuilder {
     }
     /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input; self
+        self.next_token = input;
+        self
     }
     /// <p>The maximum number of results to return per page.</p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -95,22 +98,22 @@ impl QueryAssistantInputBuilder {
     }
     /// <p>The maximum number of results to return per page.</p>
     pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_results = input; self
+        self.max_results = input;
+        self
     }
     /// Consumes the builder and constructs a [`QueryAssistantInput`](crate::operation::query_assistant::QueryAssistantInput).
-    pub fn build(self) -> Result<crate::operation::query_assistant::QueryAssistantInput, aws_smithy_http::operation::error::BuildError> {
-        Ok(
-            crate::operation::query_assistant::QueryAssistantInput {
-                assistant_id: self.assistant_id
-                ,
-                query_text: self.query_text
-                ,
-                next_token: self.next_token
-                ,
-                max_results: self.max_results
-                ,
-            }
-        )
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::query_assistant::QueryAssistantInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        Ok(crate::operation::query_assistant::QueryAssistantInput {
+            assistant_id: self.assistant_id,
+            query_text: self.query_text,
+            next_token: self.next_token,
+            max_results: self.max_results,
+        })
     }
 }
 impl std::fmt::Debug for QueryAssistantInputBuilder {
@@ -123,4 +126,3 @@ impl std::fmt::Debug for QueryAssistantInputBuilder {
         formatter.finish()
     }
 }
-

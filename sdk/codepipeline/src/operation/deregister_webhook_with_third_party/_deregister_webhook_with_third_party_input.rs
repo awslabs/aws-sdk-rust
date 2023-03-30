@@ -2,20 +2,20 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeregisterWebhookWithThirdPartyInput  {
+pub struct DeregisterWebhookWithThirdPartyInput {
     /// <p>The name of the webhook you want to deregister.</p>
     #[doc(hidden)]
     pub webhook_name: std::option::Option<std::string::String>,
 }
 impl DeregisterWebhookWithThirdPartyInput {
     /// <p>The name of the webhook you want to deregister.</p>
-    pub fn webhook_name(&self) -> std::option::Option<& str> {
+    pub fn webhook_name(&self) -> std::option::Option<&str> {
         self.webhook_name.as_deref()
     }
 }
 impl DeregisterWebhookWithThirdPartyInput {
     /// Creates a new builder-style object to manufacture [`DeregisterWebhookWithThirdPartyInput`](crate::operation::deregister_webhook_with_third_party::DeregisterWebhookWithThirdPartyInput).
-    pub fn builder() -> crate::operation::deregister_webhook_with_third_party::builders::DeregisterWebhookWithThirdPartyInputBuilder {
+    pub fn builder() -> crate::operation::deregister_webhook_with_third_party::builders::DeregisterWebhookWithThirdPartyInputBuilder{
         crate::operation::deregister_webhook_with_third_party::builders::DeregisterWebhookWithThirdPartyInputBuilder::default()
     }
 }
@@ -34,10 +34,16 @@ impl DeregisterWebhookWithThirdPartyInputBuilder {
     }
     /// <p>The name of the webhook you want to deregister.</p>
     pub fn set_webhook_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.webhook_name = input; self
+        self.webhook_name = input;
+        self
     }
     /// Consumes the builder and constructs a [`DeregisterWebhookWithThirdPartyInput`](crate::operation::deregister_webhook_with_third_party::DeregisterWebhookWithThirdPartyInput).
-    pub fn build(self) -> Result<crate::operation::deregister_webhook_with_third_party::DeregisterWebhookWithThirdPartyInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::deregister_webhook_with_third_party::DeregisterWebhookWithThirdPartyInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::deregister_webhook_with_third_party::DeregisterWebhookWithThirdPartyInput {
                 webhook_name: self.webhook_name
@@ -46,4 +52,3 @@ impl DeregisterWebhookWithThirdPartyInputBuilder {
         )
     }
 }
-

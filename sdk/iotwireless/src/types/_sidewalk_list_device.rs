@@ -3,7 +3,7 @@
 /// <p>Sidewalk object used by list functions.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SidewalkListDevice  {
+pub struct SidewalkListDevice {
     /// <p>The Sidewalk Amazon ID.</p>
     #[doc(hidden)]
     pub amazon_id: std::option::Option<std::string::String>,
@@ -19,19 +19,19 @@ pub struct SidewalkListDevice  {
 }
 impl SidewalkListDevice {
     /// <p>The Sidewalk Amazon ID.</p>
-    pub fn amazon_id(&self) -> std::option::Option<& str> {
+    pub fn amazon_id(&self) -> std::option::Option<&str> {
         self.amazon_id.as_deref()
     }
     /// <p>The sidewalk device identification.</p>
-    pub fn sidewalk_id(&self) -> std::option::Option<& str> {
+    pub fn sidewalk_id(&self) -> std::option::Option<&str> {
         self.sidewalk_id.as_deref()
     }
     /// <p>The Sidewalk manufacturing series number.</p>
-    pub fn sidewalk_manufacturing_sn(&self) -> std::option::Option<& str> {
+    pub fn sidewalk_manufacturing_sn(&self) -> std::option::Option<&str> {
         self.sidewalk_manufacturing_sn.as_deref()
     }
     /// <p>The sidewalk device certificates for Ed25519 and P256r1.</p>
-    pub fn device_certificates(&self) -> std::option::Option<& [crate::types::CertificateList]> {
+    pub fn device_certificates(&self) -> std::option::Option<&[crate::types::CertificateList]> {
         self.device_certificates.as_deref()
     }
 }
@@ -49,7 +49,8 @@ pub struct SidewalkListDeviceBuilder {
     pub(crate) amazon_id: std::option::Option<std::string::String>,
     pub(crate) sidewalk_id: std::option::Option<std::string::String>,
     pub(crate) sidewalk_manufacturing_sn: std::option::Option<std::string::String>,
-    pub(crate) device_certificates: std::option::Option<std::vec::Vec<crate::types::CertificateList>>,
+    pub(crate) device_certificates:
+        std::option::Option<std::vec::Vec<crate::types::CertificateList>>,
 }
 impl SidewalkListDeviceBuilder {
     /// <p>The Sidewalk Amazon ID.</p>
@@ -59,7 +60,8 @@ impl SidewalkListDeviceBuilder {
     }
     /// <p>The Sidewalk Amazon ID.</p>
     pub fn set_amazon_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.amazon_id = input; self
+        self.amazon_id = input;
+        self
     }
     /// <p>The sidewalk device identification.</p>
     pub fn sidewalk_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -68,7 +70,8 @@ impl SidewalkListDeviceBuilder {
     }
     /// <p>The sidewalk device identification.</p>
     pub fn set_sidewalk_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.sidewalk_id = input; self
+        self.sidewalk_id = input;
+        self
     }
     /// <p>The Sidewalk manufacturing series number.</p>
     pub fn sidewalk_manufacturing_sn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -76,8 +79,12 @@ impl SidewalkListDeviceBuilder {
         self
     }
     /// <p>The Sidewalk manufacturing series number.</p>
-    pub fn set_sidewalk_manufacturing_sn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.sidewalk_manufacturing_sn = input; self
+    pub fn set_sidewalk_manufacturing_sn(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.sidewalk_manufacturing_sn = input;
+        self
     }
     /// Appends an item to `device_certificates`.
     ///
@@ -86,26 +93,25 @@ impl SidewalkListDeviceBuilder {
     /// <p>The sidewalk device certificates for Ed25519 and P256r1.</p>
     pub fn device_certificates(mut self, input: crate::types::CertificateList) -> Self {
         let mut v = self.device_certificates.unwrap_or_default();
-                        v.push(input);
-                        self.device_certificates = Some(v);
-                        self
+        v.push(input);
+        self.device_certificates = Some(v);
+        self
     }
     /// <p>The sidewalk device certificates for Ed25519 and P256r1.</p>
-    pub fn set_device_certificates(mut self, input: std::option::Option<std::vec::Vec<crate::types::CertificateList>>) -> Self {
-        self.device_certificates = input; self
+    pub fn set_device_certificates(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::CertificateList>>,
+    ) -> Self {
+        self.device_certificates = input;
+        self
     }
     /// Consumes the builder and constructs a [`SidewalkListDevice`](crate::types::SidewalkListDevice).
     pub fn build(self) -> crate::types::SidewalkListDevice {
         crate::types::SidewalkListDevice {
-            amazon_id: self.amazon_id
-            ,
-            sidewalk_id: self.sidewalk_id
-            ,
-            sidewalk_manufacturing_sn: self.sidewalk_manufacturing_sn
-            ,
-            device_certificates: self.device_certificates
-            ,
+            amazon_id: self.amazon_id,
+            sidewalk_id: self.sidewalk_id,
+            sidewalk_manufacturing_sn: self.sidewalk_manufacturing_sn,
+            device_certificates: self.device_certificates,
         }
     }
 }
-

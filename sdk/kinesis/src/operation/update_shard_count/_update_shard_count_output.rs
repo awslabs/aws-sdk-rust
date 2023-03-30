@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateShardCountOutput  {
+pub struct UpdateShardCountOutput {
     /// <p>The name of the stream.</p>
     #[doc(hidden)]
     pub stream_name: std::option::Option<std::string::String>,
@@ -19,7 +19,7 @@ pub struct UpdateShardCountOutput  {
 }
 impl UpdateShardCountOutput {
     /// <p>The name of the stream.</p>
-    pub fn stream_name(&self) -> std::option::Option<& str> {
+    pub fn stream_name(&self) -> std::option::Option<&str> {
         self.stream_name.as_deref()
     }
     /// <p>The current number of shards.</p>
@@ -31,18 +31,19 @@ impl UpdateShardCountOutput {
         self.target_shard_count
     }
     /// <p>The ARN of the stream.</p>
-    pub fn stream_arn(&self) -> std::option::Option<& str> {
+    pub fn stream_arn(&self) -> std::option::Option<&str> {
         self.stream_arn.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for UpdateShardCountOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl UpdateShardCountOutput {
     /// Creates a new builder-style object to manufacture [`UpdateShardCountOutput`](crate::operation::update_shard_count::UpdateShardCountOutput).
-    pub fn builder() -> crate::operation::update_shard_count::builders::UpdateShardCountOutputBuilder {
+    pub fn builder() -> crate::operation::update_shard_count::builders::UpdateShardCountOutputBuilder
+    {
         crate::operation::update_shard_count::builders::UpdateShardCountOutputBuilder::default()
     }
 }
@@ -65,7 +66,8 @@ impl UpdateShardCountOutputBuilder {
     }
     /// <p>The name of the stream.</p>
     pub fn set_stream_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.stream_name = input; self
+        self.stream_name = input;
+        self
     }
     /// <p>The current number of shards.</p>
     pub fn current_shard_count(mut self, input: i32) -> Self {
@@ -74,7 +76,8 @@ impl UpdateShardCountOutputBuilder {
     }
     /// <p>The current number of shards.</p>
     pub fn set_current_shard_count(mut self, input: std::option::Option<i32>) -> Self {
-        self.current_shard_count = input; self
+        self.current_shard_count = input;
+        self
     }
     /// <p>The updated number of shards.</p>
     pub fn target_shard_count(mut self, input: i32) -> Self {
@@ -83,7 +86,8 @@ impl UpdateShardCountOutputBuilder {
     }
     /// <p>The updated number of shards.</p>
     pub fn set_target_shard_count(mut self, input: std::option::Option<i32>) -> Self {
-        self.target_shard_count = input; self
+        self.target_shard_count = input;
+        self
     }
     /// <p>The ARN of the stream.</p>
     pub fn stream_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -92,30 +96,26 @@ impl UpdateShardCountOutputBuilder {
     }
     /// <p>The ARN of the stream.</p>
     pub fn set_stream_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.stream_arn = input; self
+        self.stream_arn = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`UpdateShardCountOutput`](crate::operation::update_shard_count::UpdateShardCountOutput).
     pub fn build(self) -> crate::operation::update_shard_count::UpdateShardCountOutput {
         crate::operation::update_shard_count::UpdateShardCountOutput {
-            stream_name: self.stream_name
-            ,
-            current_shard_count: self.current_shard_count
-            ,
-            target_shard_count: self.target_shard_count
-            ,
-            stream_arn: self.stream_arn
-            ,
+            stream_name: self.stream_name,
+            current_shard_count: self.current_shard_count,
+            target_shard_count: self.target_shard_count,
+            stream_arn: self.stream_arn,
             _request_id: self._request_id,
         }
     }
 }
-

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PutScalingPolicyOutput  {
+pub struct PutScalingPolicyOutput {
     /// <p>The Amazon Resource Name (ARN) of the resulting scaling policy.</p>
     #[doc(hidden)]
     pub policy_arn: std::option::Option<std::string::String>,
@@ -13,22 +13,23 @@ pub struct PutScalingPolicyOutput  {
 }
 impl PutScalingPolicyOutput {
     /// <p>The Amazon Resource Name (ARN) of the resulting scaling policy.</p>
-    pub fn policy_arn(&self) -> std::option::Option<& str> {
+    pub fn policy_arn(&self) -> std::option::Option<&str> {
         self.policy_arn.as_deref()
     }
     /// <p>The CloudWatch alarms created for the target tracking scaling policy.</p>
-    pub fn alarms(&self) -> std::option::Option<& [crate::types::Alarm]> {
+    pub fn alarms(&self) -> std::option::Option<&[crate::types::Alarm]> {
         self.alarms.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for PutScalingPolicyOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl PutScalingPolicyOutput {
     /// Creates a new builder-style object to manufacture [`PutScalingPolicyOutput`](crate::operation::put_scaling_policy::PutScalingPolicyOutput).
-    pub fn builder() -> crate::operation::put_scaling_policy::builders::PutScalingPolicyOutputBuilder {
+    pub fn builder() -> crate::operation::put_scaling_policy::builders::PutScalingPolicyOutputBuilder
+    {
         crate::operation::put_scaling_policy::builders::PutScalingPolicyOutputBuilder::default()
     }
 }
@@ -49,7 +50,8 @@ impl PutScalingPolicyOutputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the resulting scaling policy.</p>
     pub fn set_policy_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.policy_arn = input; self
+        self.policy_arn = input;
+        self
     }
     /// Appends an item to `alarms`.
     ///
@@ -58,32 +60,33 @@ impl PutScalingPolicyOutputBuilder {
     /// <p>The CloudWatch alarms created for the target tracking scaling policy.</p>
     pub fn alarms(mut self, input: crate::types::Alarm) -> Self {
         let mut v = self.alarms.unwrap_or_default();
-                        v.push(input);
-                        self.alarms = Some(v);
-                        self
+        v.push(input);
+        self.alarms = Some(v);
+        self
     }
     /// <p>The CloudWatch alarms created for the target tracking scaling policy.</p>
-    pub fn set_alarms(mut self, input: std::option::Option<std::vec::Vec<crate::types::Alarm>>) -> Self {
-        self.alarms = input; self
+    pub fn set_alarms(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::Alarm>>,
+    ) -> Self {
+        self.alarms = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`PutScalingPolicyOutput`](crate::operation::put_scaling_policy::PutScalingPolicyOutput).
     pub fn build(self) -> crate::operation::put_scaling_policy::PutScalingPolicyOutput {
         crate::operation::put_scaling_policy::PutScalingPolicyOutput {
-            policy_arn: self.policy_arn
-            ,
-            alarms: self.alarms
-            ,
+            policy_arn: self.policy_arn,
+            alarms: self.alarms,
             _request_id: self._request_id,
         }
     }
 }
-

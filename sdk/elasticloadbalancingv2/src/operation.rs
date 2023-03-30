@@ -102,4 +102,3 @@ pub mod set_security_groups;
 
 /// Types for the `SetSubnets` operation.
 pub mod set_subnets;
-

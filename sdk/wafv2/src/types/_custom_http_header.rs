@@ -3,8 +3,8 @@
 /// <p>A custom header for custom request and response handling. This is used in <code>CustomResponse</code> and <code>CustomRequestHandling</code>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CustomHttpHeader  {
-    /// <p>The name of the custom header. </p> 
+pub struct CustomHttpHeader {
+    /// <p>The name of the custom header. </p>
     /// <p>For custom request header insertion, when WAF inserts the header into the request, it prefixes this name <code>x-amzn-waf-</code>, to avoid confusion with the headers that are already in the request. For example, for the header name <code>sample</code>, WAF inserts the header <code>x-amzn-waf-sample</code>.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -13,13 +13,13 @@ pub struct CustomHttpHeader  {
     pub value: std::option::Option<std::string::String>,
 }
 impl CustomHttpHeader {
-    /// <p>The name of the custom header. </p> 
+    /// <p>The name of the custom header. </p>
     /// <p>For custom request header insertion, when WAF inserts the header into the request, it prefixes this name <code>x-amzn-waf-</code>, to avoid confusion with the headers that are already in the request. For example, for the header name <code>sample</code>, WAF inserts the header <code>x-amzn-waf-sample</code>.</p>
-    pub fn name(&self) -> std::option::Option<& str> {
+    pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>The value of the custom header.</p>
-    pub fn value(&self) -> std::option::Option<& str> {
+    pub fn value(&self) -> std::option::Option<&str> {
         self.value.as_deref()
     }
 }
@@ -38,16 +38,17 @@ pub struct CustomHttpHeaderBuilder {
     pub(crate) value: std::option::Option<std::string::String>,
 }
 impl CustomHttpHeaderBuilder {
-    /// <p>The name of the custom header. </p> 
+    /// <p>The name of the custom header. </p>
     /// <p>For custom request header insertion, when WAF inserts the header into the request, it prefixes this name <code>x-amzn-waf-</code>, to avoid confusion with the headers that are already in the request. For example, for the header name <code>sample</code>, WAF inserts the header <code>x-amzn-waf-sample</code>.</p>
     pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
         self.name = Some(input.into());
         self
     }
-    /// <p>The name of the custom header. </p> 
+    /// <p>The name of the custom header. </p>
     /// <p>For custom request header insertion, when WAF inserts the header into the request, it prefixes this name <code>x-amzn-waf-</code>, to avoid confusion with the headers that are already in the request. For example, for the header name <code>sample</code>, WAF inserts the header <code>x-amzn-waf-sample</code>.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input; self
+        self.name = input;
+        self
     }
     /// <p>The value of the custom header.</p>
     pub fn value(mut self, input: impl Into<std::string::String>) -> Self {
@@ -56,16 +57,14 @@ impl CustomHttpHeaderBuilder {
     }
     /// <p>The value of the custom header.</p>
     pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.value = input; self
+        self.value = input;
+        self
     }
     /// Consumes the builder and constructs a [`CustomHttpHeader`](crate::types::CustomHttpHeader).
     pub fn build(self) -> crate::types::CustomHttpHeader {
         crate::types::CustomHttpHeader {
-            name: self.name
-            ,
-            value: self.value
-            ,
+            name: self.name,
+            value: self.value,
         }
     }
 }
-

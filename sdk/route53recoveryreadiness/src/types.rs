@@ -68,4 +68,3 @@ pub mod builders;
 
 /// Error types that AWS Route53 Recovery Readiness can respond with.
 pub mod error;
-

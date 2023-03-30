@@ -3,14 +3,14 @@
 /// <p></p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PropertyFilter  {
+pub struct PropertyFilter {
     /// <p></p>
     #[doc(hidden)]
     pub property: std::option::Option<crate::types::Property>,
 }
 impl PropertyFilter {
     /// <p></p>
-    pub fn property(&self) -> std::option::Option<& crate::types::Property> {
+    pub fn property(&self) -> std::option::Option<&crate::types::Property> {
         self.property.as_ref()
     }
 }
@@ -35,14 +35,13 @@ impl PropertyFilterBuilder {
     }
     /// <p></p>
     pub fn set_property(mut self, input: std::option::Option<crate::types::Property>) -> Self {
-        self.property = input; self
+        self.property = input;
+        self
     }
     /// Consumes the builder and constructs a [`PropertyFilter`](crate::types::PropertyFilter).
     pub fn build(self) -> crate::types::PropertyFilter {
         crate::types::PropertyFilter {
-            property: self.property
-            ,
+            property: self.property,
         }
     }
 }
-

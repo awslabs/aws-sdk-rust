@@ -414,4 +414,3 @@ pub mod update_resource_data_sync;
 
 /// Types for the `UpdateServiceSetting` operation.
 pub mod update_service_setting;
-

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListAttributesOutput  {
+pub struct ListAttributesOutput {
     /// <p>A list of attribute objects that meet the criteria of the request.</p>
     #[doc(hidden)]
     pub attributes: std::option::Option<std::vec::Vec<crate::types::Attribute>>,
@@ -13,19 +13,19 @@ pub struct ListAttributesOutput  {
 }
 impl ListAttributesOutput {
     /// <p>A list of attribute objects that meet the criteria of the request.</p>
-    pub fn attributes(&self) -> std::option::Option<& [crate::types::Attribute]> {
+    pub fn attributes(&self) -> std::option::Option<&[crate::types::Attribute]> {
         self.attributes.as_deref()
     }
     /// <p>The <code>nextToken</code> value to include in a future <code>ListAttributes</code> request. When the results of a <code>ListAttributes</code> request exceed <code>maxResults</code>, this value can be used to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for ListAttributesOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl ListAttributesOutput {
     /// Creates a new builder-style object to manufacture [`ListAttributesOutput`](crate::operation::list_attributes::ListAttributesOutput).
     pub fn builder() -> crate::operation::list_attributes::builders::ListAttributesOutputBuilder {
@@ -49,13 +49,17 @@ impl ListAttributesOutputBuilder {
     /// <p>A list of attribute objects that meet the criteria of the request.</p>
     pub fn attributes(mut self, input: crate::types::Attribute) -> Self {
         let mut v = self.attributes.unwrap_or_default();
-                        v.push(input);
-                        self.attributes = Some(v);
-                        self
+        v.push(input);
+        self.attributes = Some(v);
+        self
     }
     /// <p>A list of attribute objects that meet the criteria of the request.</p>
-    pub fn set_attributes(mut self, input: std::option::Option<std::vec::Vec<crate::types::Attribute>>) -> Self {
-        self.attributes = input; self
+    pub fn set_attributes(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::Attribute>>,
+    ) -> Self {
+        self.attributes = input;
+        self
     }
     /// <p>The <code>nextToken</code> value to include in a future <code>ListAttributes</code> request. When the results of a <code>ListAttributes</code> request exceed <code>maxResults</code>, this value can be used to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -64,26 +68,24 @@ impl ListAttributesOutputBuilder {
     }
     /// <p>The <code>nextToken</code> value to include in a future <code>ListAttributes</code> request. When the results of a <code>ListAttributes</code> request exceed <code>maxResults</code>, this value can be used to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input; self
+        self.next_token = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`ListAttributesOutput`](crate::operation::list_attributes::ListAttributesOutput).
     pub fn build(self) -> crate::operation::list_attributes::ListAttributesOutput {
         crate::operation::list_attributes::ListAttributesOutput {
-            attributes: self.attributes
-            ,
-            next_token: self.next_token
-            ,
+            attributes: self.attributes,
+            next_token: self.next_token,
             _request_id: self._request_id,
         }
     }
 }
-

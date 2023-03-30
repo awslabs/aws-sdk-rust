@@ -3,7 +3,7 @@
 /// <p> Entity that comprises information on categorical values in data. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CategoricalValues  {
+pub struct CategoricalValues {
     /// <p> Indicates whether there is a potential data issue related to categorical values. </p>
     #[doc(hidden)]
     pub status: std::option::Option<crate::types::StatisticalIssueStatus>,
@@ -13,7 +13,7 @@ pub struct CategoricalValues  {
 }
 impl CategoricalValues {
     /// <p> Indicates whether there is a potential data issue related to categorical values. </p>
-    pub fn status(&self) -> std::option::Option<& crate::types::StatisticalIssueStatus> {
+    pub fn status(&self) -> std::option::Option<&crate::types::StatisticalIssueStatus> {
         self.status.as_ref()
     }
     /// <p> Indicates the number of categories in the data. </p>
@@ -42,8 +42,12 @@ impl CategoricalValuesBuilder {
         self
     }
     /// <p> Indicates whether there is a potential data issue related to categorical values. </p>
-    pub fn set_status(mut self, input: std::option::Option<crate::types::StatisticalIssueStatus>) -> Self {
-        self.status = input; self
+    pub fn set_status(
+        mut self,
+        input: std::option::Option<crate::types::StatisticalIssueStatus>,
+    ) -> Self {
+        self.status = input;
+        self
     }
     /// <p> Indicates the number of categories in the data. </p>
     pub fn number_of_category(mut self, input: i32) -> Self {
@@ -52,16 +56,14 @@ impl CategoricalValuesBuilder {
     }
     /// <p> Indicates the number of categories in the data. </p>
     pub fn set_number_of_category(mut self, input: std::option::Option<i32>) -> Self {
-        self.number_of_category = input; self
+        self.number_of_category = input;
+        self
     }
     /// Consumes the builder and constructs a [`CategoricalValues`](crate::types::CategoricalValues).
     pub fn build(self) -> crate::types::CategoricalValues {
         crate::types::CategoricalValues {
-            status: self.status
-            ,
-            number_of_category: self.number_of_category
-            ,
+            status: self.status,
+            number_of_category: self.number_of_category,
         }
     }
 }
-

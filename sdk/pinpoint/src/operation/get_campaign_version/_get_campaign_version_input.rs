@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetCampaignVersionInput  {
+pub struct GetCampaignVersionInput {
     /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
     #[doc(hidden)]
     pub application_id: std::option::Option<std::string::String>,
@@ -15,21 +15,22 @@ pub struct GetCampaignVersionInput  {
 }
 impl GetCampaignVersionInput {
     /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
-    pub fn application_id(&self) -> std::option::Option<& str> {
+    pub fn application_id(&self) -> std::option::Option<&str> {
         self.application_id.as_deref()
     }
     /// <p>The unique identifier for the campaign.</p>
-    pub fn campaign_id(&self) -> std::option::Option<& str> {
+    pub fn campaign_id(&self) -> std::option::Option<&str> {
         self.campaign_id.as_deref()
     }
     /// <p>The unique version number (Version property) for the campaign version.</p>
-    pub fn version(&self) -> std::option::Option<& str> {
+    pub fn version(&self) -> std::option::Option<&str> {
         self.version.as_deref()
     }
 }
 impl GetCampaignVersionInput {
     /// Creates a new builder-style object to manufacture [`GetCampaignVersionInput`](crate::operation::get_campaign_version::GetCampaignVersionInput).
-    pub fn builder() -> crate::operation::get_campaign_version::builders::GetCampaignVersionInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::get_campaign_version::builders::GetCampaignVersionInputBuilder {
         crate::operation::get_campaign_version::builders::GetCampaignVersionInputBuilder::default()
     }
 }
@@ -50,7 +51,8 @@ impl GetCampaignVersionInputBuilder {
     }
     /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
     pub fn set_application_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.application_id = input; self
+        self.application_id = input;
+        self
     }
     /// <p>The unique identifier for the campaign.</p>
     pub fn campaign_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -59,7 +61,8 @@ impl GetCampaignVersionInputBuilder {
     }
     /// <p>The unique identifier for the campaign.</p>
     pub fn set_campaign_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.campaign_id = input; self
+        self.campaign_id = input;
+        self
     }
     /// <p>The unique version number (Version property) for the campaign version.</p>
     pub fn version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -68,20 +71,22 @@ impl GetCampaignVersionInputBuilder {
     }
     /// <p>The unique version number (Version property) for the campaign version.</p>
     pub fn set_version(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.version = input; self
+        self.version = input;
+        self
     }
     /// Consumes the builder and constructs a [`GetCampaignVersionInput`](crate::operation::get_campaign_version::GetCampaignVersionInput).
-    pub fn build(self) -> Result<crate::operation::get_campaign_version::GetCampaignVersionInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::get_campaign_version::GetCampaignVersionInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::get_campaign_version::GetCampaignVersionInput {
-                application_id: self.application_id
-                ,
-                campaign_id: self.campaign_id
-                ,
-                version: self.version
-                ,
-            }
+                application_id: self.application_id,
+                campaign_id: self.campaign_id,
+                version: self.version,
+            },
         )
     }
 }
-

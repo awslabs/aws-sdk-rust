@@ -3,7 +3,7 @@
 /// <p>Details about a location in a multi-location fleet.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct LocationAttributes  {
+pub struct LocationAttributes {
     /// <p>A fleet location and its current life-cycle state.</p>
     #[doc(hidden)]
     pub location_state: std::option::Option<crate::types::LocationState>,
@@ -16,15 +16,15 @@ pub struct LocationAttributes  {
 }
 impl LocationAttributes {
     /// <p>A fleet location and its current life-cycle state.</p>
-    pub fn location_state(&self) -> std::option::Option<& crate::types::LocationState> {
+    pub fn location_state(&self) -> std::option::Option<&crate::types::LocationState> {
         self.location_state.as_ref()
     }
     /// <p>A list of fleet actions that have been suspended in the fleet location.</p>
-    pub fn stopped_actions(&self) -> std::option::Option<& [crate::types::FleetAction]> {
+    pub fn stopped_actions(&self) -> std::option::Option<&[crate::types::FleetAction]> {
         self.stopped_actions.as_deref()
     }
     /// <p>The status of fleet activity updates to the location. The status <code>PENDING_UPDATE</code> indicates that <code>StopFleetActions</code> or <code>StartFleetActions</code> has been requested but the update has not yet been completed for the location.</p>
-    pub fn update_status(&self) -> std::option::Option<& crate::types::LocationUpdateStatus> {
+    pub fn update_status(&self) -> std::option::Option<&crate::types::LocationUpdateStatus> {
         self.update_status.as_ref()
     }
 }
@@ -50,8 +50,12 @@ impl LocationAttributesBuilder {
         self
     }
     /// <p>A fleet location and its current life-cycle state.</p>
-    pub fn set_location_state(mut self, input: std::option::Option<crate::types::LocationState>) -> Self {
-        self.location_state = input; self
+    pub fn set_location_state(
+        mut self,
+        input: std::option::Option<crate::types::LocationState>,
+    ) -> Self {
+        self.location_state = input;
+        self
     }
     /// Appends an item to `stopped_actions`.
     ///
@@ -60,13 +64,17 @@ impl LocationAttributesBuilder {
     /// <p>A list of fleet actions that have been suspended in the fleet location.</p>
     pub fn stopped_actions(mut self, input: crate::types::FleetAction) -> Self {
         let mut v = self.stopped_actions.unwrap_or_default();
-                        v.push(input);
-                        self.stopped_actions = Some(v);
-                        self
+        v.push(input);
+        self.stopped_actions = Some(v);
+        self
     }
     /// <p>A list of fleet actions that have been suspended in the fleet location.</p>
-    pub fn set_stopped_actions(mut self, input: std::option::Option<std::vec::Vec<crate::types::FleetAction>>) -> Self {
-        self.stopped_actions = input; self
+    pub fn set_stopped_actions(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::FleetAction>>,
+    ) -> Self {
+        self.stopped_actions = input;
+        self
     }
     /// <p>The status of fleet activity updates to the location. The status <code>PENDING_UPDATE</code> indicates that <code>StopFleetActions</code> or <code>StartFleetActions</code> has been requested but the update has not yet been completed for the location.</p>
     pub fn update_status(mut self, input: crate::types::LocationUpdateStatus) -> Self {
@@ -74,19 +82,19 @@ impl LocationAttributesBuilder {
         self
     }
     /// <p>The status of fleet activity updates to the location. The status <code>PENDING_UPDATE</code> indicates that <code>StopFleetActions</code> or <code>StartFleetActions</code> has been requested but the update has not yet been completed for the location.</p>
-    pub fn set_update_status(mut self, input: std::option::Option<crate::types::LocationUpdateStatus>) -> Self {
-        self.update_status = input; self
+    pub fn set_update_status(
+        mut self,
+        input: std::option::Option<crate::types::LocationUpdateStatus>,
+    ) -> Self {
+        self.update_status = input;
+        self
     }
     /// Consumes the builder and constructs a [`LocationAttributes`](crate::types::LocationAttributes).
     pub fn build(self) -> crate::types::LocationAttributes {
         crate::types::LocationAttributes {
-            location_state: self.location_state
-            ,
-            stopped_actions: self.stopped_actions
-            ,
-            update_status: self.update_status
-            ,
+            location_state: self.location_state,
+            stopped_actions: self.stopped_actions,
+            update_status: self.update_status,
         }
     }
 }
-

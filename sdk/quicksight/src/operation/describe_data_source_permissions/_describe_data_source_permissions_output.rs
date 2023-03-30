@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeDataSourcePermissionsOutput  {
+pub struct DescribeDataSourcePermissionsOutput {
     /// <p>The Amazon Resource Name (ARN) of the data source.</p>
     #[doc(hidden)]
     pub data_source_arn: std::option::Option<std::string::String>,
@@ -22,19 +22,19 @@ pub struct DescribeDataSourcePermissionsOutput  {
 }
 impl DescribeDataSourcePermissionsOutput {
     /// <p>The Amazon Resource Name (ARN) of the data source.</p>
-    pub fn data_source_arn(&self) -> std::option::Option<& str> {
+    pub fn data_source_arn(&self) -> std::option::Option<&str> {
         self.data_source_arn.as_deref()
     }
     /// <p>The ID of the data source. This ID is unique per Amazon Web Services Region for each Amazon Web Services account.</p>
-    pub fn data_source_id(&self) -> std::option::Option<& str> {
+    pub fn data_source_id(&self) -> std::option::Option<&str> {
         self.data_source_id.as_deref()
     }
     /// <p>A list of resource permissions on the data source.</p>
-    pub fn permissions(&self) -> std::option::Option<& [crate::types::ResourcePermission]> {
+    pub fn permissions(&self) -> std::option::Option<&[crate::types::ResourcePermission]> {
         self.permissions.as_deref()
     }
     /// <p>The Amazon Web Services request ID for this operation.</p>
-    pub fn request_id(&self) -> std::option::Option<& str> {
+    pub fn request_id(&self) -> std::option::Option<&str> {
         self.request_id.as_deref()
     }
     /// <p>The HTTP status of the request.</p>
@@ -43,13 +43,13 @@ impl DescribeDataSourcePermissionsOutput {
     }
 }
 impl aws_http::request_id::RequestId for DescribeDataSourcePermissionsOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl DescribeDataSourcePermissionsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeDataSourcePermissionsOutput`](crate::operation::describe_data_source_permissions::DescribeDataSourcePermissionsOutput).
-    pub fn builder() -> crate::operation::describe_data_source_permissions::builders::DescribeDataSourcePermissionsOutputBuilder {
+    pub fn builder() -> crate::operation::describe_data_source_permissions::builders::DescribeDataSourcePermissionsOutputBuilder{
         crate::operation::describe_data_source_permissions::builders::DescribeDataSourcePermissionsOutputBuilder::default()
     }
 }
@@ -73,7 +73,8 @@ impl DescribeDataSourcePermissionsOutputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the data source.</p>
     pub fn set_data_source_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.data_source_arn = input; self
+        self.data_source_arn = input;
+        self
     }
     /// <p>The ID of the data source. This ID is unique per Amazon Web Services Region for each Amazon Web Services account.</p>
     pub fn data_source_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -82,7 +83,8 @@ impl DescribeDataSourcePermissionsOutputBuilder {
     }
     /// <p>The ID of the data source. This ID is unique per Amazon Web Services Region for each Amazon Web Services account.</p>
     pub fn set_data_source_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.data_source_id = input; self
+        self.data_source_id = input;
+        self
     }
     /// Appends an item to `permissions`.
     ///
@@ -91,13 +93,17 @@ impl DescribeDataSourcePermissionsOutputBuilder {
     /// <p>A list of resource permissions on the data source.</p>
     pub fn permissions(mut self, input: crate::types::ResourcePermission) -> Self {
         let mut v = self.permissions.unwrap_or_default();
-                        v.push(input);
-                        self.permissions = Some(v);
-                        self
+        v.push(input);
+        self.permissions = Some(v);
+        self
     }
     /// <p>A list of resource permissions on the data source.</p>
-    pub fn set_permissions(mut self, input: std::option::Option<std::vec::Vec<crate::types::ResourcePermission>>) -> Self {
-        self.permissions = input; self
+    pub fn set_permissions(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::ResourcePermission>>,
+    ) -> Self {
+        self.permissions = input;
+        self
     }
     /// <p>The Amazon Web Services request ID for this operation.</p>
     pub fn request_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -106,7 +112,8 @@ impl DescribeDataSourcePermissionsOutputBuilder {
     }
     /// <p>The Amazon Web Services request ID for this operation.</p>
     pub fn set_request_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.request_id = input; self
+        self.request_id = input;
+        self
     }
     /// <p>The HTTP status of the request.</p>
     pub fn status(mut self, input: i32) -> Self {
@@ -115,33 +122,30 @@ impl DescribeDataSourcePermissionsOutputBuilder {
     }
     /// <p>The HTTP status of the request.</p>
     pub fn set_status(mut self, input: std::option::Option<i32>) -> Self {
-        self.status = input; self
+        self.status = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`DescribeDataSourcePermissionsOutput`](crate::operation::describe_data_source_permissions::DescribeDataSourcePermissionsOutput).
-    pub fn build(self) -> crate::operation::describe_data_source_permissions::DescribeDataSourcePermissionsOutput {
+    pub fn build(
+        self,
+    ) -> crate::operation::describe_data_source_permissions::DescribeDataSourcePermissionsOutput
+    {
         crate::operation::describe_data_source_permissions::DescribeDataSourcePermissionsOutput {
-            data_source_arn: self.data_source_arn
-            ,
-            data_source_id: self.data_source_id
-            ,
-            permissions: self.permissions
-            ,
-            request_id: self.request_id
-            ,
-            status: self.status
-                .unwrap_or_default()
-            ,
+            data_source_arn: self.data_source_arn,
+            data_source_id: self.data_source_id,
+            permissions: self.permissions,
+            request_id: self.request_id,
+            status: self.status.unwrap_or_default(),
             _request_id: self._request_id,
         }
     }
 }
-

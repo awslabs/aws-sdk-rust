@@ -3,20 +3,22 @@
 /// <p>A request to delete a dedicated IP pool.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteDedicatedIpPoolInput  {
+pub struct DeleteDedicatedIpPoolInput {
     /// <p>The name of the dedicated IP pool that you want to delete.</p>
     #[doc(hidden)]
     pub pool_name: std::option::Option<std::string::String>,
 }
 impl DeleteDedicatedIpPoolInput {
     /// <p>The name of the dedicated IP pool that you want to delete.</p>
-    pub fn pool_name(&self) -> std::option::Option<& str> {
+    pub fn pool_name(&self) -> std::option::Option<&str> {
         self.pool_name.as_deref()
     }
 }
 impl DeleteDedicatedIpPoolInput {
     /// Creates a new builder-style object to manufacture [`DeleteDedicatedIpPoolInput`](crate::operation::delete_dedicated_ip_pool::DeleteDedicatedIpPoolInput).
-    pub fn builder() -> crate::operation::delete_dedicated_ip_pool::builders::DeleteDedicatedIpPoolInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::delete_dedicated_ip_pool::builders::DeleteDedicatedIpPoolInputBuilder
+    {
         crate::operation::delete_dedicated_ip_pool::builders::DeleteDedicatedIpPoolInputBuilder::default()
     }
 }
@@ -35,16 +37,20 @@ impl DeleteDedicatedIpPoolInputBuilder {
     }
     /// <p>The name of the dedicated IP pool that you want to delete.</p>
     pub fn set_pool_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.pool_name = input; self
+        self.pool_name = input;
+        self
     }
     /// Consumes the builder and constructs a [`DeleteDedicatedIpPoolInput`](crate::operation::delete_dedicated_ip_pool::DeleteDedicatedIpPoolInput).
-    pub fn build(self) -> Result<crate::operation::delete_dedicated_ip_pool::DeleteDedicatedIpPoolInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::delete_dedicated_ip_pool::DeleteDedicatedIpPoolInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::delete_dedicated_ip_pool::DeleteDedicatedIpPoolInput {
-                pool_name: self.pool_name
-                ,
-            }
+                pool_name: self.pool_name,
+            },
         )
     }
 }
-

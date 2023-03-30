@@ -3,7 +3,7 @@
 /// <p>Contains information about an asset model property.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AssetModelProperty  {
+pub struct AssetModelProperty {
     /// <p>The ID of the asset model property.</p>
     #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
@@ -25,27 +25,27 @@ pub struct AssetModelProperty  {
 }
 impl AssetModelProperty {
     /// <p>The ID of the asset model property.</p>
-    pub fn id(&self) -> std::option::Option<& str> {
+    pub fn id(&self) -> std::option::Option<&str> {
         self.id.as_deref()
     }
     /// <p>The name of the asset model property.</p>
-    pub fn name(&self) -> std::option::Option<& str> {
+    pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>The data type of the asset model property.</p>
-    pub fn data_type(&self) -> std::option::Option<& crate::types::PropertyDataType> {
+    pub fn data_type(&self) -> std::option::Option<&crate::types::PropertyDataType> {
         self.data_type.as_ref()
     }
     /// <p>The data type of the structure for this property. This parameter exists on properties that have the <code>STRUCT</code> data type.</p>
-    pub fn data_type_spec(&self) -> std::option::Option<& str> {
+    pub fn data_type_spec(&self) -> std::option::Option<&str> {
         self.data_type_spec.as_deref()
     }
     /// <p>The unit of the asset model property, such as <code>Newtons</code> or <code>RPM</code>.</p>
-    pub fn unit(&self) -> std::option::Option<& str> {
+    pub fn unit(&self) -> std::option::Option<&str> {
         self.unit.as_deref()
     }
     /// <p>The property type (see <code>PropertyType</code>).</p>
-    pub fn r#type(&self) -> std::option::Option<& crate::types::PropertyType> {
+    pub fn r#type(&self) -> std::option::Option<&crate::types::PropertyType> {
         self.r#type.as_ref()
     }
 }
@@ -75,7 +75,8 @@ impl AssetModelPropertyBuilder {
     }
     /// <p>The ID of the asset model property.</p>
     pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.id = input; self
+        self.id = input;
+        self
     }
     /// <p>The name of the asset model property.</p>
     pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -84,7 +85,8 @@ impl AssetModelPropertyBuilder {
     }
     /// <p>The name of the asset model property.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input; self
+        self.name = input;
+        self
     }
     /// <p>The data type of the asset model property.</p>
     pub fn data_type(mut self, input: crate::types::PropertyDataType) -> Self {
@@ -92,8 +94,12 @@ impl AssetModelPropertyBuilder {
         self
     }
     /// <p>The data type of the asset model property.</p>
-    pub fn set_data_type(mut self, input: std::option::Option<crate::types::PropertyDataType>) -> Self {
-        self.data_type = input; self
+    pub fn set_data_type(
+        mut self,
+        input: std::option::Option<crate::types::PropertyDataType>,
+    ) -> Self {
+        self.data_type = input;
+        self
     }
     /// <p>The data type of the structure for this property. This parameter exists on properties that have the <code>STRUCT</code> data type.</p>
     pub fn data_type_spec(mut self, input: impl Into<std::string::String>) -> Self {
@@ -102,7 +108,8 @@ impl AssetModelPropertyBuilder {
     }
     /// <p>The data type of the structure for this property. This parameter exists on properties that have the <code>STRUCT</code> data type.</p>
     pub fn set_data_type_spec(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.data_type_spec = input; self
+        self.data_type_spec = input;
+        self
     }
     /// <p>The unit of the asset model property, such as <code>Newtons</code> or <code>RPM</code>.</p>
     pub fn unit(mut self, input: impl Into<std::string::String>) -> Self {
@@ -111,7 +118,8 @@ impl AssetModelPropertyBuilder {
     }
     /// <p>The unit of the asset model property, such as <code>Newtons</code> or <code>RPM</code>.</p>
     pub fn set_unit(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.unit = input; self
+        self.unit = input;
+        self
     }
     /// <p>The property type (see <code>PropertyType</code>).</p>
     pub fn r#type(mut self, input: crate::types::PropertyType) -> Self {
@@ -120,24 +128,18 @@ impl AssetModelPropertyBuilder {
     }
     /// <p>The property type (see <code>PropertyType</code>).</p>
     pub fn set_type(mut self, input: std::option::Option<crate::types::PropertyType>) -> Self {
-        self.r#type = input; self
+        self.r#type = input;
+        self
     }
     /// Consumes the builder and constructs a [`AssetModelProperty`](crate::types::AssetModelProperty).
     pub fn build(self) -> crate::types::AssetModelProperty {
         crate::types::AssetModelProperty {
-            id: self.id
-            ,
-            name: self.name
-            ,
-            data_type: self.data_type
-            ,
-            data_type_spec: self.data_type_spec
-            ,
-            unit: self.unit
-            ,
-            r#type: self.r#type
-            ,
+            id: self.id,
+            name: self.name,
+            data_type: self.data_type,
+            data_type_spec: self.data_type_spec,
+            unit: self.unit,
+            r#type: self.r#type,
         }
     }
 }
-

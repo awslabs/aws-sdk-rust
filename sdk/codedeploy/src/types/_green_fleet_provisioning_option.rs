@@ -3,22 +3,22 @@
 /// <p>Information about the instances that belong to the replacement environment in a blue/green deployment.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GreenFleetProvisioningOption  {
-    /// <p>The method used to add instances to a replacement environment.</p> 
-    /// <ul> 
-    /// <li> <p> <code>DISCOVER_EXISTING</code>: Use instances that already exist or will be created manually.</p> </li> 
-    /// <li> <p> <code>COPY_AUTO_SCALING_GROUP</code>: Use settings from a specified Auto Scaling group to define and create instances in a new Auto Scaling group.</p> </li> 
+pub struct GreenFleetProvisioningOption {
+    /// <p>The method used to add instances to a replacement environment.</p>
+    /// <ul>
+    /// <li> <p> <code>DISCOVER_EXISTING</code>: Use instances that already exist or will be created manually.</p> </li>
+    /// <li> <p> <code>COPY_AUTO_SCALING_GROUP</code>: Use settings from a specified Auto Scaling group to define and create instances in a new Auto Scaling group.</p> </li>
     /// </ul>
     #[doc(hidden)]
     pub action: std::option::Option<crate::types::GreenFleetProvisioningAction>,
 }
 impl GreenFleetProvisioningOption {
-    /// <p>The method used to add instances to a replacement environment.</p> 
-    /// <ul> 
-    /// <li> <p> <code>DISCOVER_EXISTING</code>: Use instances that already exist or will be created manually.</p> </li> 
-    /// <li> <p> <code>COPY_AUTO_SCALING_GROUP</code>: Use settings from a specified Auto Scaling group to define and create instances in a new Auto Scaling group.</p> </li> 
+    /// <p>The method used to add instances to a replacement environment.</p>
+    /// <ul>
+    /// <li> <p> <code>DISCOVER_EXISTING</code>: Use instances that already exist or will be created manually.</p> </li>
+    /// <li> <p> <code>COPY_AUTO_SCALING_GROUP</code>: Use settings from a specified Auto Scaling group to define and create instances in a new Auto Scaling group.</p> </li>
     /// </ul>
-    pub fn action(&self) -> std::option::Option<& crate::types::GreenFleetProvisioningAction> {
+    pub fn action(&self) -> std::option::Option<&crate::types::GreenFleetProvisioningAction> {
         self.action.as_ref()
     }
 }
@@ -36,29 +36,31 @@ pub struct GreenFleetProvisioningOptionBuilder {
     pub(crate) action: std::option::Option<crate::types::GreenFleetProvisioningAction>,
 }
 impl GreenFleetProvisioningOptionBuilder {
-    /// <p>The method used to add instances to a replacement environment.</p> 
-    /// <ul> 
-    /// <li> <p> <code>DISCOVER_EXISTING</code>: Use instances that already exist or will be created manually.</p> </li> 
-    /// <li> <p> <code>COPY_AUTO_SCALING_GROUP</code>: Use settings from a specified Auto Scaling group to define and create instances in a new Auto Scaling group.</p> </li> 
+    /// <p>The method used to add instances to a replacement environment.</p>
+    /// <ul>
+    /// <li> <p> <code>DISCOVER_EXISTING</code>: Use instances that already exist or will be created manually.</p> </li>
+    /// <li> <p> <code>COPY_AUTO_SCALING_GROUP</code>: Use settings from a specified Auto Scaling group to define and create instances in a new Auto Scaling group.</p> </li>
     /// </ul>
     pub fn action(mut self, input: crate::types::GreenFleetProvisioningAction) -> Self {
         self.action = Some(input);
         self
     }
-    /// <p>The method used to add instances to a replacement environment.</p> 
-    /// <ul> 
-    /// <li> <p> <code>DISCOVER_EXISTING</code>: Use instances that already exist or will be created manually.</p> </li> 
-    /// <li> <p> <code>COPY_AUTO_SCALING_GROUP</code>: Use settings from a specified Auto Scaling group to define and create instances in a new Auto Scaling group.</p> </li> 
+    /// <p>The method used to add instances to a replacement environment.</p>
+    /// <ul>
+    /// <li> <p> <code>DISCOVER_EXISTING</code>: Use instances that already exist or will be created manually.</p> </li>
+    /// <li> <p> <code>COPY_AUTO_SCALING_GROUP</code>: Use settings from a specified Auto Scaling group to define and create instances in a new Auto Scaling group.</p> </li>
     /// </ul>
-    pub fn set_action(mut self, input: std::option::Option<crate::types::GreenFleetProvisioningAction>) -> Self {
-        self.action = input; self
+    pub fn set_action(
+        mut self,
+        input: std::option::Option<crate::types::GreenFleetProvisioningAction>,
+    ) -> Self {
+        self.action = input;
+        self
     }
     /// Consumes the builder and constructs a [`GreenFleetProvisioningOption`](crate::types::GreenFleetProvisioningOption).
     pub fn build(self) -> crate::types::GreenFleetProvisioningOption {
         crate::types::GreenFleetProvisioningOption {
-            action: self.action
-            ,
+            action: self.action,
         }
     }
 }
-

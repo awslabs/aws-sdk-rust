@@ -3,7 +3,7 @@
 /// <p>Shows the final value for the objective metric for a training job that was launched by a hyperparameter tuning job. You define the objective metric in the <code>HyperParameterTuningJobObjective</code> parameter of <code>HyperParameterTuningJobConfig</code>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct FinalHyperParameterTuningJobObjectiveMetric  {
+pub struct FinalHyperParameterTuningJobObjectiveMetric {
     /// <p>Whether to minimize or maximize the objective metric. Valid values are Minimize and Maximize.</p>
     #[doc(hidden)]
     pub r#type: std::option::Option<crate::types::HyperParameterTuningJobObjectiveType>,
@@ -16,11 +16,13 @@ pub struct FinalHyperParameterTuningJobObjectiveMetric  {
 }
 impl FinalHyperParameterTuningJobObjectiveMetric {
     /// <p>Whether to minimize or maximize the objective metric. Valid values are Minimize and Maximize.</p>
-    pub fn r#type(&self) -> std::option::Option<& crate::types::HyperParameterTuningJobObjectiveType> {
+    pub fn r#type(
+        &self,
+    ) -> std::option::Option<&crate::types::HyperParameterTuningJobObjectiveType> {
         self.r#type.as_ref()
     }
     /// <p>The name of the objective metric.</p>
-    pub fn metric_name(&self) -> std::option::Option<& str> {
+    pub fn metric_name(&self) -> std::option::Option<&str> {
         self.metric_name.as_deref()
     }
     /// <p>The value of the objective metric.</p>
@@ -50,8 +52,12 @@ impl FinalHyperParameterTuningJobObjectiveMetricBuilder {
         self
     }
     /// <p>Whether to minimize or maximize the objective metric. Valid values are Minimize and Maximize.</p>
-    pub fn set_type(mut self, input: std::option::Option<crate::types::HyperParameterTuningJobObjectiveType>) -> Self {
-        self.r#type = input; self
+    pub fn set_type(
+        mut self,
+        input: std::option::Option<crate::types::HyperParameterTuningJobObjectiveType>,
+    ) -> Self {
+        self.r#type = input;
+        self
     }
     /// <p>The name of the objective metric.</p>
     pub fn metric_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -60,7 +66,8 @@ impl FinalHyperParameterTuningJobObjectiveMetricBuilder {
     }
     /// <p>The name of the objective metric.</p>
     pub fn set_metric_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.metric_name = input; self
+        self.metric_name = input;
+        self
     }
     /// <p>The value of the objective metric.</p>
     pub fn value(mut self, input: f32) -> Self {
@@ -69,19 +76,15 @@ impl FinalHyperParameterTuningJobObjectiveMetricBuilder {
     }
     /// <p>The value of the objective metric.</p>
     pub fn set_value(mut self, input: std::option::Option<f32>) -> Self {
-        self.value = input; self
+        self.value = input;
+        self
     }
     /// Consumes the builder and constructs a [`FinalHyperParameterTuningJobObjectiveMetric`](crate::types::FinalHyperParameterTuningJobObjectiveMetric).
     pub fn build(self) -> crate::types::FinalHyperParameterTuningJobObjectiveMetric {
         crate::types::FinalHyperParameterTuningJobObjectiveMetric {
-            r#type: self.r#type
-            ,
-            metric_name: self.metric_name
-            ,
-            value: self.value
-                .unwrap_or_default()
-            ,
+            r#type: self.r#type,
+            metric_name: self.metric_name,
+            value: self.value.unwrap_or_default(),
         }
     }
 }
-

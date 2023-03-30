@@ -3,7 +3,7 @@
 /// <p>Contains details produced as a result of performing known fraudster risk analysis on a speaker.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct KnownFraudsterRisk  {
+pub struct KnownFraudsterRisk {
     /// <p>The score indicating the likelihood the speaker is a known fraudster.</p>
     #[doc(hidden)]
     pub risk_score: std::option::Option<i32>,
@@ -17,7 +17,7 @@ impl KnownFraudsterRisk {
         self.risk_score
     }
     /// <p>The identifier of the fraudster that is the closest match to the speaker. If there are no fraudsters registered in a given domain, or if there are no fraudsters with a non-zero RiskScore, this value is <code>null</code>.</p>
-    pub fn generated_fraudster_id(&self) -> std::option::Option<& str> {
+    pub fn generated_fraudster_id(&self) -> std::option::Option<&str> {
         self.generated_fraudster_id.as_deref()
     }
 }
@@ -43,7 +43,8 @@ impl KnownFraudsterRiskBuilder {
     }
     /// <p>The score indicating the likelihood the speaker is a known fraudster.</p>
     pub fn set_risk_score(mut self, input: std::option::Option<i32>) -> Self {
-        self.risk_score = input; self
+        self.risk_score = input;
+        self
     }
     /// <p>The identifier of the fraudster that is the closest match to the speaker. If there are no fraudsters registered in a given domain, or if there are no fraudsters with a non-zero RiskScore, this value is <code>null</code>.</p>
     pub fn generated_fraudster_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -51,17 +52,18 @@ impl KnownFraudsterRiskBuilder {
         self
     }
     /// <p>The identifier of the fraudster that is the closest match to the speaker. If there are no fraudsters registered in a given domain, or if there are no fraudsters with a non-zero RiskScore, this value is <code>null</code>.</p>
-    pub fn set_generated_fraudster_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.generated_fraudster_id = input; self
+    pub fn set_generated_fraudster_id(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.generated_fraudster_id = input;
+        self
     }
     /// Consumes the builder and constructs a [`KnownFraudsterRisk`](crate::types::KnownFraudsterRisk).
     pub fn build(self) -> crate::types::KnownFraudsterRisk {
         crate::types::KnownFraudsterRisk {
-            risk_score: self.risk_score
-            ,
-            generated_fraudster_id: self.generated_fraudster_id
-            ,
+            risk_score: self.risk_score,
+            generated_fraudster_id: self.generated_fraudster_id,
         }
     }
 }
-

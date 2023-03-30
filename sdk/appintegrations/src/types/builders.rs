@@ -10,4 +10,3 @@ pub use crate::types::_data_integration_summary::DataIntegrationSummaryBuilder;
 pub use crate::types::_data_integration_association_summary::DataIntegrationAssociationSummaryBuilder;
 
 pub use crate::types::_schedule_configuration::ScheduleConfigurationBuilder;
-

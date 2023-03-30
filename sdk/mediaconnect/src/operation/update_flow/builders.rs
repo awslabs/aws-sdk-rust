@@ -4,49 +4,67 @@ pub use crate::operation::update_flow::_update_flow_output::UpdateFlowOutputBuil
 pub use crate::operation::update_flow::_update_flow_input::UpdateFlowInputBuilder;
 
 /// Fluent builder constructing a request to `UpdateFlow`.
-/// 
+///
 /// Updates flow
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct UpdateFlowFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::update_flow::builders::UpdateFlowInputBuilder
-            }
-impl UpdateFlowFluentBuilder  {
+    handle: std::sync::Arc<crate::client::Handle>,
+    inner: crate::operation::update_flow::builders::UpdateFlowInputBuilder,
+}
+impl UpdateFlowFluentBuilder {
     /// Creates a new `UpdateFlow`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
-                    /// sent. The operation's inner [http::Request] can be modified as well.
-                    pub async fn customize(self) -> std::result::Result<
-                        crate::client::customize::CustomizableOperation<crate::operation::update_flow::UpdateFlow, aws_http::retry::AwsResponseRetryClassifier,>,
-                        aws_smithy_http::result::SdkError<crate::operation::update_flow::UpdateFlowError>
-                    >  {
-                        let handle = self.handle.clone();
-                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-                    }
-    
-                    /// Sends the request and returns the response.
-                    ///
-                    /// If an error occurs, an `SdkError` will be returned with additional details that
-                    /// can be matched against.
-                    ///
-                    /// By default, any retryable failures will be retried twice. Retry behavior
-                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                    /// set when configuring the client.
-                    pub async fn send(self) -> std::result::Result<crate::operation::update_flow::UpdateFlowOutput, aws_smithy_http::result::SdkError<crate::operation::update_flow::UpdateFlowError>>
-                     {
-                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&self.handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        self.handle.client.call(op).await
-                    }
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle,
+            inner: Default::default(),
+        }
+    }
+
+    /// Consume this builder, creating a customizable operation that can be modified before being
+    /// sent. The operation's inner [http::Request] can be modified as well.
+    pub async fn customize(
+        self,
+    ) -> std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::update_flow::UpdateFlow,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::result::SdkError<crate::operation::update_flow::UpdateFlowError>,
+    > {
+        let handle = self.handle.clone();
+        let operation = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+    }
+
+    /// Sends the request and returns the response.
+    ///
+    /// If an error occurs, an `SdkError` will be returned with additional details that
+    /// can be matched against.
+    ///
+    /// By default, any retryable failures will be retried twice. Retry behavior
+    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+    /// set when configuring the client.
+    pub async fn send(
+        self,
+    ) -> std::result::Result<
+        crate::operation::update_flow::UpdateFlowOutput,
+        aws_smithy_http::result::SdkError<crate::operation::update_flow::UpdateFlowError>,
+    > {
+        let op = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&self.handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        self.handle.client.call(op).await
+    }
     /// The flow that you want to update.
     pub fn flow_arn(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.flow_arn(input.into());
@@ -63,7 +81,10 @@ impl UpdateFlowFluentBuilder  {
         self
     }
     /// The settings for source failover.
-    pub fn set_source_failover_config(mut self, input: std::option::Option<crate::types::UpdateFailoverConfig>) -> Self {
+    pub fn set_source_failover_config(
+        mut self,
+        input: std::option::Option<crate::types::UpdateFailoverConfig>,
+    ) -> Self {
         self.inner = self.inner.set_source_failover_config(input);
         self
     }
@@ -73,9 +94,11 @@ impl UpdateFlowFluentBuilder  {
         self
     }
     /// Update maintenance setting for a flow
-    pub fn set_maintenance(mut self, input: std::option::Option<crate::types::UpdateMaintenance>) -> Self {
+    pub fn set_maintenance(
+        mut self,
+        input: std::option::Option<crate::types::UpdateMaintenance>,
+    ) -> Self {
         self.inner = self.inner.set_maintenance(input);
         self
     }
 }
-

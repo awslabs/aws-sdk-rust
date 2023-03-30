@@ -3,7 +3,7 @@
 /// <p>Information about a time zone. Includes the name of the time zone and the offset from UTC in seconds.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct TimeZone  {
+pub struct TimeZone {
     /// <p>The name of the time zone, following the <a href="https://www.iana.org/time-zones"> IANA time zone standard</a>. For example, <code>America/Los_Angeles</code>.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -13,7 +13,7 @@ pub struct TimeZone  {
 }
 impl TimeZone {
     /// <p>The name of the time zone, following the <a href="https://www.iana.org/time-zones"> IANA time zone standard</a>. For example, <code>America/Los_Angeles</code>.</p>
-    pub fn name(&self) -> std::option::Option<& str> {
+    pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>The time zone's offset, in seconds, from UTC.</p>
@@ -43,7 +43,8 @@ impl TimeZoneBuilder {
     }
     /// <p>The name of the time zone, following the <a href="https://www.iana.org/time-zones"> IANA time zone standard</a>. For example, <code>America/Los_Angeles</code>.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input; self
+        self.name = input;
+        self
     }
     /// <p>The time zone's offset, in seconds, from UTC.</p>
     pub fn offset(mut self, input: i32) -> Self {
@@ -52,16 +53,14 @@ impl TimeZoneBuilder {
     }
     /// <p>The time zone's offset, in seconds, from UTC.</p>
     pub fn set_offset(mut self, input: std::option::Option<i32>) -> Self {
-        self.offset = input; self
+        self.offset = input;
+        self
     }
     /// Consumes the builder and constructs a [`TimeZone`](crate::types::TimeZone).
     pub fn build(self) -> crate::types::TimeZone {
         crate::types::TimeZone {
-            name: self.name
-            ,
-            offset: self.offset
-            ,
+            name: self.name,
+            offset: self.offset,
         }
     }
 }
-

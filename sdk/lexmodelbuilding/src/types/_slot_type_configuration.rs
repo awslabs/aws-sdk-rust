@@ -3,14 +3,16 @@
 /// <p>Provides configuration information for a slot type.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SlotTypeConfiguration  {
+pub struct SlotTypeConfiguration {
     /// <p>A regular expression used to validate the value of a slot.</p>
     #[doc(hidden)]
     pub regex_configuration: std::option::Option<crate::types::SlotTypeRegexConfiguration>,
 }
 impl SlotTypeConfiguration {
     /// <p>A regular expression used to validate the value of a slot.</p>
-    pub fn regex_configuration(&self) -> std::option::Option<& crate::types::SlotTypeRegexConfiguration> {
+    pub fn regex_configuration(
+        &self,
+    ) -> std::option::Option<&crate::types::SlotTypeRegexConfiguration> {
         self.regex_configuration.as_ref()
     }
 }
@@ -34,15 +36,17 @@ impl SlotTypeConfigurationBuilder {
         self
     }
     /// <p>A regular expression used to validate the value of a slot.</p>
-    pub fn set_regex_configuration(mut self, input: std::option::Option<crate::types::SlotTypeRegexConfiguration>) -> Self {
-        self.regex_configuration = input; self
+    pub fn set_regex_configuration(
+        mut self,
+        input: std::option::Option<crate::types::SlotTypeRegexConfiguration>,
+    ) -> Self {
+        self.regex_configuration = input;
+        self
     }
     /// Consumes the builder and constructs a [`SlotTypeConfiguration`](crate::types::SlotTypeConfiguration).
     pub fn build(self) -> crate::types::SlotTypeConfiguration {
         crate::types::SlotTypeConfiguration {
-            regex_configuration: self.regex_configuration
-            ,
+            regex_configuration: self.regex_configuration,
         }
     }
 }
-

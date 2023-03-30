@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-/// 
+///
 /// Here is an example of how you can make a match expression forward-compatible:
-/// 
+///
 /// ```text
 /// # let udptimedmetadataid3frame = unimplemented!();
 /// match udptimedmetadataid3frame {
@@ -31,14 +31,22 @@
 /// Specifically, when `udptimedmetadataid3frame` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `UdpTimedMetadataId3Frame::NewFeature` also yielding `"NewFeature"`.
-/// 
+///
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 /// Udp Timed Metadata Id3 Frame
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
 pub enum UdpTimedMetadataId3Frame {
     #[allow(missing_docs)] // documentation missing in model
     None,
@@ -47,43 +55,44 @@ pub enum UdpTimedMetadataId3Frame {
     #[allow(missing_docs)] // documentation missing in model
     Tdrl,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::primitives::UnknownVariantValue)
+    Unknown(crate::primitives::UnknownVariantValue),
 }
 impl std::convert::From<&str> for UdpTimedMetadataId3Frame {
-                fn from(s: &str) -> Self {
-                    match s {
-                        "NONE" => UdpTimedMetadataId3Frame::None,
-"PRIV" => UdpTimedMetadataId3Frame::Priv,
-"TDRL" => UdpTimedMetadataId3Frame::Tdrl,
-other => UdpTimedMetadataId3Frame::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
-                    }
-                }
-            }
-impl std::str::FromStr for UdpTimedMetadataId3Frame {
-                type Err = std::convert::Infallible;
-
-                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-                    Ok(UdpTimedMetadataId3Frame::from(s))
-                }
-            }
-impl UdpTimedMetadataId3Frame {
-                /// Returns the `&str` value of the enum member.
-                pub fn as_str(&self) -> &str {
-                    match self {
-    UdpTimedMetadataId3Frame::None => "NONE",
-    UdpTimedMetadataId3Frame::Priv => "PRIV",
-    UdpTimedMetadataId3Frame::Tdrl => "TDRL",
-    UdpTimedMetadataId3Frame::Unknown(value) => value.as_str()
+    fn from(s: &str) -> Self {
+        match s {
+            "NONE" => UdpTimedMetadataId3Frame::None,
+            "PRIV" => UdpTimedMetadataId3Frame::Priv,
+            "TDRL" => UdpTimedMetadataId3Frame::Tdrl,
+            other => UdpTimedMetadataId3Frame::Unknown(crate::primitives::UnknownVariantValue(
+                other.to_owned(),
+            )),
+        }
+    }
 }
-                }
-                /// Returns all the `&str` representations of the enum members.
-                pub const fn values() -> &'static [&'static str] {
-                    &["NONE", "PRIV", "TDRL"]
-                }
-            }
-impl AsRef<str> for UdpTimedMetadataId3Frame {
-                fn as_ref(&self) -> &str {
-                    self.as_str()
-                }
-            }
+impl std::str::FromStr for UdpTimedMetadataId3Frame {
+    type Err = std::convert::Infallible;
 
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(UdpTimedMetadataId3Frame::from(s))
+    }
+}
+impl UdpTimedMetadataId3Frame {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            UdpTimedMetadataId3Frame::None => "NONE",
+            UdpTimedMetadataId3Frame::Priv => "PRIV",
+            UdpTimedMetadataId3Frame::Tdrl => "TDRL",
+            UdpTimedMetadataId3Frame::Unknown(value) => value.as_str(),
+        }
+    }
+    /// Returns all the `&str` representations of the enum members.
+    pub const fn values() -> &'static [&'static str] {
+        &["NONE", "PRIV", "TDRL"]
+    }
+}
+impl AsRef<str> for UdpTimedMetadataId3Frame {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}

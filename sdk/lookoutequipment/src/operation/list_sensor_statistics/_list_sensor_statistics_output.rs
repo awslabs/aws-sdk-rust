@@ -2,10 +2,11 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListSensorStatisticsOutput  {
+pub struct ListSensorStatisticsOutput {
     /// <p>Provides ingestion-based statistics regarding the specified sensor with respect to various validation types, such as whether data exists, the number and percentage of missing values, and the number and percentage of duplicate timestamps. </p>
     #[doc(hidden)]
-    pub sensor_statistics_summaries: std::option::Option<std::vec::Vec<crate::types::SensorStatisticsSummary>>,
+    pub sensor_statistics_summaries:
+        std::option::Option<std::vec::Vec<crate::types::SensorStatisticsSummary>>,
     /// <p>An opaque pagination token indicating where to continue the listing of sensor statistics. </p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
@@ -13,22 +14,25 @@ pub struct ListSensorStatisticsOutput  {
 }
 impl ListSensorStatisticsOutput {
     /// <p>Provides ingestion-based statistics regarding the specified sensor with respect to various validation types, such as whether data exists, the number and percentage of missing values, and the number and percentage of duplicate timestamps. </p>
-    pub fn sensor_statistics_summaries(&self) -> std::option::Option<& [crate::types::SensorStatisticsSummary]> {
+    pub fn sensor_statistics_summaries(
+        &self,
+    ) -> std::option::Option<&[crate::types::SensorStatisticsSummary]> {
         self.sensor_statistics_summaries.as_deref()
     }
     /// <p>An opaque pagination token indicating where to continue the listing of sensor statistics. </p>
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for ListSensorStatisticsOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl ListSensorStatisticsOutput {
     /// Creates a new builder-style object to manufacture [`ListSensorStatisticsOutput`](crate::operation::list_sensor_statistics::ListSensorStatisticsOutput).
-    pub fn builder() -> crate::operation::list_sensor_statistics::builders::ListSensorStatisticsOutputBuilder {
+    pub fn builder(
+    ) -> crate::operation::list_sensor_statistics::builders::ListSensorStatisticsOutputBuilder {
         crate::operation::list_sensor_statistics::builders::ListSensorStatisticsOutputBuilder::default()
     }
 }
@@ -37,7 +41,8 @@ impl ListSensorStatisticsOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct ListSensorStatisticsOutputBuilder {
-    pub(crate) sensor_statistics_summaries: std::option::Option<std::vec::Vec<crate::types::SensorStatisticsSummary>>,
+    pub(crate) sensor_statistics_summaries:
+        std::option::Option<std::vec::Vec<crate::types::SensorStatisticsSummary>>,
     pub(crate) next_token: std::option::Option<std::string::String>,
     _request_id: Option<String>,
 }
@@ -47,15 +52,22 @@ impl ListSensorStatisticsOutputBuilder {
     /// To override the contents of this collection use [`set_sensor_statistics_summaries`](Self::set_sensor_statistics_summaries).
     ///
     /// <p>Provides ingestion-based statistics regarding the specified sensor with respect to various validation types, such as whether data exists, the number and percentage of missing values, and the number and percentage of duplicate timestamps. </p>
-    pub fn sensor_statistics_summaries(mut self, input: crate::types::SensorStatisticsSummary) -> Self {
+    pub fn sensor_statistics_summaries(
+        mut self,
+        input: crate::types::SensorStatisticsSummary,
+    ) -> Self {
         let mut v = self.sensor_statistics_summaries.unwrap_or_default();
-                        v.push(input);
-                        self.sensor_statistics_summaries = Some(v);
-                        self
+        v.push(input);
+        self.sensor_statistics_summaries = Some(v);
+        self
     }
     /// <p>Provides ingestion-based statistics regarding the specified sensor with respect to various validation types, such as whether data exists, the number and percentage of missing values, and the number and percentage of duplicate timestamps. </p>
-    pub fn set_sensor_statistics_summaries(mut self, input: std::option::Option<std::vec::Vec<crate::types::SensorStatisticsSummary>>) -> Self {
-        self.sensor_statistics_summaries = input; self
+    pub fn set_sensor_statistics_summaries(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::SensorStatisticsSummary>>,
+    ) -> Self {
+        self.sensor_statistics_summaries = input;
+        self
     }
     /// <p>An opaque pagination token indicating where to continue the listing of sensor statistics. </p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -64,26 +76,24 @@ impl ListSensorStatisticsOutputBuilder {
     }
     /// <p>An opaque pagination token indicating where to continue the listing of sensor statistics. </p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input; self
+        self.next_token = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`ListSensorStatisticsOutput`](crate::operation::list_sensor_statistics::ListSensorStatisticsOutput).
     pub fn build(self) -> crate::operation::list_sensor_statistics::ListSensorStatisticsOutput {
         crate::operation::list_sensor_statistics::ListSensorStatisticsOutput {
-            sensor_statistics_summaries: self.sensor_statistics_summaries
-            ,
-            next_token: self.next_token
-            ,
+            sensor_statistics_summaries: self.sensor_statistics_summaries,
+            next_token: self.next_token,
             _request_id: self._request_id,
         }
     }
 }
-

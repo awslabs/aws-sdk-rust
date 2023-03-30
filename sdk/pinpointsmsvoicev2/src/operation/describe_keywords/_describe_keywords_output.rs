@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeKeywordsOutput  {
+pub struct DescribeKeywordsOutput {
     /// <p>The PhoneNumberArn or PoolArn that is associated with the OriginationIdentity. </p>
     #[doc(hidden)]
     pub origination_identity_arn: std::option::Option<std::string::String>,
@@ -19,30 +19,31 @@ pub struct DescribeKeywordsOutput  {
 }
 impl DescribeKeywordsOutput {
     /// <p>The PhoneNumberArn or PoolArn that is associated with the OriginationIdentity. </p>
-    pub fn origination_identity_arn(&self) -> std::option::Option<& str> {
+    pub fn origination_identity_arn(&self) -> std::option::Option<&str> {
         self.origination_identity_arn.as_deref()
     }
     /// <p>The PhoneNumberId or PoolId that is associated with the OriginationIdentity.</p>
-    pub fn origination_identity(&self) -> std::option::Option<& str> {
+    pub fn origination_identity(&self) -> std::option::Option<&str> {
         self.origination_identity.as_deref()
     }
     /// <p>An array of KeywordInformation objects that contain the results.</p>
-    pub fn keywords(&self) -> std::option::Option<& [crate::types::KeywordInformation]> {
+    pub fn keywords(&self) -> std::option::Option<&[crate::types::KeywordInformation]> {
         self.keywords.as_deref()
     }
     /// <p>The token to be used for the next set of paginated results. If this field is empty then there are no more results.</p>
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for DescribeKeywordsOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl DescribeKeywordsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeKeywordsOutput`](crate::operation::describe_keywords::DescribeKeywordsOutput).
-    pub fn builder() -> crate::operation::describe_keywords::builders::DescribeKeywordsOutputBuilder {
+    pub fn builder() -> crate::operation::describe_keywords::builders::DescribeKeywordsOutputBuilder
+    {
         crate::operation::describe_keywords::builders::DescribeKeywordsOutputBuilder::default()
     }
 }
@@ -64,8 +65,12 @@ impl DescribeKeywordsOutputBuilder {
         self
     }
     /// <p>The PhoneNumberArn or PoolArn that is associated with the OriginationIdentity. </p>
-    pub fn set_origination_identity_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.origination_identity_arn = input; self
+    pub fn set_origination_identity_arn(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.origination_identity_arn = input;
+        self
     }
     /// <p>The PhoneNumberId or PoolId that is associated with the OriginationIdentity.</p>
     pub fn origination_identity(mut self, input: impl Into<std::string::String>) -> Self {
@@ -73,8 +78,12 @@ impl DescribeKeywordsOutputBuilder {
         self
     }
     /// <p>The PhoneNumberId or PoolId that is associated with the OriginationIdentity.</p>
-    pub fn set_origination_identity(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.origination_identity = input; self
+    pub fn set_origination_identity(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.origination_identity = input;
+        self
     }
     /// Appends an item to `keywords`.
     ///
@@ -83,13 +92,17 @@ impl DescribeKeywordsOutputBuilder {
     /// <p>An array of KeywordInformation objects that contain the results.</p>
     pub fn keywords(mut self, input: crate::types::KeywordInformation) -> Self {
         let mut v = self.keywords.unwrap_or_default();
-                        v.push(input);
-                        self.keywords = Some(v);
-                        self
+        v.push(input);
+        self.keywords = Some(v);
+        self
     }
     /// <p>An array of KeywordInformation objects that contain the results.</p>
-    pub fn set_keywords(mut self, input: std::option::Option<std::vec::Vec<crate::types::KeywordInformation>>) -> Self {
-        self.keywords = input; self
+    pub fn set_keywords(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::KeywordInformation>>,
+    ) -> Self {
+        self.keywords = input;
+        self
     }
     /// <p>The token to be used for the next set of paginated results. If this field is empty then there are no more results.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -98,30 +111,26 @@ impl DescribeKeywordsOutputBuilder {
     }
     /// <p>The token to be used for the next set of paginated results. If this field is empty then there are no more results.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input; self
+        self.next_token = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`DescribeKeywordsOutput`](crate::operation::describe_keywords::DescribeKeywordsOutput).
     pub fn build(self) -> crate::operation::describe_keywords::DescribeKeywordsOutput {
         crate::operation::describe_keywords::DescribeKeywordsOutput {
-            origination_identity_arn: self.origination_identity_arn
-            ,
-            origination_identity: self.origination_identity
-            ,
-            keywords: self.keywords
-            ,
-            next_token: self.next_token
-            ,
+            origination_identity_arn: self.origination_identity_arn,
+            origination_identity: self.origination_identity,
+            keywords: self.keywords,
+            next_token: self.next_token,
             _request_id: self._request_id,
         }
     }
 }
-

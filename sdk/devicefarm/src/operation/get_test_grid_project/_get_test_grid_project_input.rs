@@ -2,20 +2,21 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetTestGridProjectInput  {
+pub struct GetTestGridProjectInput {
     /// <p>The ARN of the Selenium testing project, from either <code>CreateTestGridProject</code> or <code>ListTestGridProjects</code>.</p>
     #[doc(hidden)]
     pub project_arn: std::option::Option<std::string::String>,
 }
 impl GetTestGridProjectInput {
     /// <p>The ARN of the Selenium testing project, from either <code>CreateTestGridProject</code> or <code>ListTestGridProjects</code>.</p>
-    pub fn project_arn(&self) -> std::option::Option<& str> {
+    pub fn project_arn(&self) -> std::option::Option<&str> {
         self.project_arn.as_deref()
     }
 }
 impl GetTestGridProjectInput {
     /// Creates a new builder-style object to manufacture [`GetTestGridProjectInput`](crate::operation::get_test_grid_project::GetTestGridProjectInput).
-    pub fn builder() -> crate::operation::get_test_grid_project::builders::GetTestGridProjectInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::get_test_grid_project::builders::GetTestGridProjectInputBuilder {
         crate::operation::get_test_grid_project::builders::GetTestGridProjectInputBuilder::default()
     }
 }
@@ -34,16 +35,20 @@ impl GetTestGridProjectInputBuilder {
     }
     /// <p>The ARN of the Selenium testing project, from either <code>CreateTestGridProject</code> or <code>ListTestGridProjects</code>.</p>
     pub fn set_project_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.project_arn = input; self
+        self.project_arn = input;
+        self
     }
     /// Consumes the builder and constructs a [`GetTestGridProjectInput`](crate::operation::get_test_grid_project::GetTestGridProjectInput).
-    pub fn build(self) -> Result<crate::operation::get_test_grid_project::GetTestGridProjectInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::get_test_grid_project::GetTestGridProjectInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::get_test_grid_project::GetTestGridProjectInput {
-                project_arn: self.project_arn
-                ,
-            }
+                project_arn: self.project_arn,
+            },
         )
     }
 }
-

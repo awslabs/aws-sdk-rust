@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeTagOptionOutput  {
+pub struct DescribeTagOptionOutput {
     /// <p>Information about the TagOption.</p>
     #[doc(hidden)]
     pub tag_option_detail: std::option::Option<crate::types::TagOptionDetail>,
@@ -10,18 +10,19 @@ pub struct DescribeTagOptionOutput  {
 }
 impl DescribeTagOptionOutput {
     /// <p>Information about the TagOption.</p>
-    pub fn tag_option_detail(&self) -> std::option::Option<& crate::types::TagOptionDetail> {
+    pub fn tag_option_detail(&self) -> std::option::Option<&crate::types::TagOptionDetail> {
         self.tag_option_detail.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for DescribeTagOptionOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl DescribeTagOptionOutput {
     /// Creates a new builder-style object to manufacture [`DescribeTagOptionOutput`](crate::operation::describe_tag_option::DescribeTagOptionOutput).
-    pub fn builder() -> crate::operation::describe_tag_option::builders::DescribeTagOptionOutputBuilder {
+    pub fn builder(
+    ) -> crate::operation::describe_tag_option::builders::DescribeTagOptionOutputBuilder {
         crate::operation::describe_tag_option::builders::DescribeTagOptionOutputBuilder::default()
     }
 }
@@ -40,25 +41,27 @@ impl DescribeTagOptionOutputBuilder {
         self
     }
     /// <p>Information about the TagOption.</p>
-    pub fn set_tag_option_detail(mut self, input: std::option::Option<crate::types::TagOptionDetail>) -> Self {
-        self.tag_option_detail = input; self
+    pub fn set_tag_option_detail(
+        mut self,
+        input: std::option::Option<crate::types::TagOptionDetail>,
+    ) -> Self {
+        self.tag_option_detail = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`DescribeTagOptionOutput`](crate::operation::describe_tag_option::DescribeTagOptionOutput).
     pub fn build(self) -> crate::operation::describe_tag_option::DescribeTagOptionOutput {
         crate::operation::describe_tag_option::DescribeTagOptionOutput {
-            tag_option_detail: self.tag_option_detail
-            ,
+            tag_option_detail: self.tag_option_detail,
             _request_id: self._request_id,
         }
     }
 }
-

@@ -3,7 +3,7 @@
 /// <p> Customer's consent for the owner change request. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Consent  {
+pub struct Consent {
     /// <p> Maximum amount the customer agreed to accept. </p>
     #[doc(hidden)]
     pub max_price: f64,
@@ -17,7 +17,7 @@ impl Consent {
         self.max_price
     }
     /// <p> Currency for the <code>MaxPrice</code>. </p>
-    pub fn currency(&self) -> std::option::Option<& str> {
+    pub fn currency(&self) -> std::option::Option<&str> {
         self.currency.as_deref()
     }
 }
@@ -43,7 +43,8 @@ impl ConsentBuilder {
     }
     /// <p> Maximum amount the customer agreed to accept. </p>
     pub fn set_max_price(mut self, input: std::option::Option<f64>) -> Self {
-        self.max_price = input; self
+        self.max_price = input;
+        self
     }
     /// <p> Currency for the <code>MaxPrice</code>. </p>
     pub fn currency(mut self, input: impl Into<std::string::String>) -> Self {
@@ -52,17 +53,14 @@ impl ConsentBuilder {
     }
     /// <p> Currency for the <code>MaxPrice</code>. </p>
     pub fn set_currency(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.currency = input; self
+        self.currency = input;
+        self
     }
     /// Consumes the builder and constructs a [`Consent`](crate::types::Consent).
     pub fn build(self) -> crate::types::Consent {
         crate::types::Consent {
-            max_price: self.max_price
-                .unwrap_or_default()
-            ,
-            currency: self.currency
-            ,
+            max_price: self.max_price.unwrap_or_default(),
+            currency: self.currency,
         }
     }
 }
-

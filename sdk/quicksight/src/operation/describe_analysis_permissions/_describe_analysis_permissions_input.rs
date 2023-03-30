@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeAnalysisPermissionsInput  {
+pub struct DescribeAnalysisPermissionsInput {
     /// <p>The ID of the Amazon Web Services account that contains the analysis whose permissions you're describing. You must be using the Amazon Web Services account that the analysis is in.</p>
     #[doc(hidden)]
     pub aws_account_id: std::option::Option<std::string::String>,
@@ -12,17 +12,17 @@ pub struct DescribeAnalysisPermissionsInput  {
 }
 impl DescribeAnalysisPermissionsInput {
     /// <p>The ID of the Amazon Web Services account that contains the analysis whose permissions you're describing. You must be using the Amazon Web Services account that the analysis is in.</p>
-    pub fn aws_account_id(&self) -> std::option::Option<& str> {
+    pub fn aws_account_id(&self) -> std::option::Option<&str> {
         self.aws_account_id.as_deref()
     }
     /// <p>The ID of the analysis whose permissions you're describing. The ID is part of the analysis URL.</p>
-    pub fn analysis_id(&self) -> std::option::Option<& str> {
+    pub fn analysis_id(&self) -> std::option::Option<&str> {
         self.analysis_id.as_deref()
     }
 }
 impl DescribeAnalysisPermissionsInput {
     /// Creates a new builder-style object to manufacture [`DescribeAnalysisPermissionsInput`](crate::operation::describe_analysis_permissions::DescribeAnalysisPermissionsInput).
-    pub fn builder() -> crate::operation::describe_analysis_permissions::builders::DescribeAnalysisPermissionsInputBuilder {
+    pub fn builder() -> crate::operation::describe_analysis_permissions::builders::DescribeAnalysisPermissionsInputBuilder{
         crate::operation::describe_analysis_permissions::builders::DescribeAnalysisPermissionsInputBuilder::default()
     }
 }
@@ -42,7 +42,8 @@ impl DescribeAnalysisPermissionsInputBuilder {
     }
     /// <p>The ID of the Amazon Web Services account that contains the analysis whose permissions you're describing. You must be using the Amazon Web Services account that the analysis is in.</p>
     pub fn set_aws_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.aws_account_id = input; self
+        self.aws_account_id = input;
+        self
     }
     /// <p>The ID of the analysis whose permissions you're describing. The ID is part of the analysis URL.</p>
     pub fn analysis_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -51,18 +52,21 @@ impl DescribeAnalysisPermissionsInputBuilder {
     }
     /// <p>The ID of the analysis whose permissions you're describing. The ID is part of the analysis URL.</p>
     pub fn set_analysis_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.analysis_id = input; self
+        self.analysis_id = input;
+        self
     }
     /// Consumes the builder and constructs a [`DescribeAnalysisPermissionsInput`](crate::operation::describe_analysis_permissions::DescribeAnalysisPermissionsInput).
-    pub fn build(self) -> Result<crate::operation::describe_analysis_permissions::DescribeAnalysisPermissionsInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::describe_analysis_permissions::DescribeAnalysisPermissionsInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::describe_analysis_permissions::DescribeAnalysisPermissionsInput {
-                aws_account_id: self.aws_account_id
-                ,
-                analysis_id: self.analysis_id
-                ,
-            }
+                aws_account_id: self.aws_account_id,
+                analysis_id: self.analysis_id,
+            },
         )
     }
 }
-

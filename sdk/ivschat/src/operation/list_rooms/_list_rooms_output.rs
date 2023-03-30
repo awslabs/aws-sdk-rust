@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListRoomsOutput  {
+pub struct ListRoomsOutput {
     /// <p>List of the matching rooms (summary information only).</p>
     #[doc(hidden)]
     pub rooms: std::option::Option<std::vec::Vec<crate::types::RoomSummary>>,
@@ -13,19 +13,19 @@ pub struct ListRoomsOutput  {
 }
 impl ListRoomsOutput {
     /// <p>List of the matching rooms (summary information only).</p>
-    pub fn rooms(&self) -> std::option::Option<& [crate::types::RoomSummary]> {
+    pub fn rooms(&self) -> std::option::Option<&[crate::types::RoomSummary]> {
         self.rooms.as_deref()
     }
     /// <p>If there are more rooms than <code>maxResults</code>, use <code>nextToken</code> in the request to get the next set.</p>
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for ListRoomsOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl ListRoomsOutput {
     /// Creates a new builder-style object to manufacture [`ListRoomsOutput`](crate::operation::list_rooms::ListRoomsOutput).
     pub fn builder() -> crate::operation::list_rooms::builders::ListRoomsOutputBuilder {
@@ -49,13 +49,17 @@ impl ListRoomsOutputBuilder {
     /// <p>List of the matching rooms (summary information only).</p>
     pub fn rooms(mut self, input: crate::types::RoomSummary) -> Self {
         let mut v = self.rooms.unwrap_or_default();
-                        v.push(input);
-                        self.rooms = Some(v);
-                        self
+        v.push(input);
+        self.rooms = Some(v);
+        self
     }
     /// <p>List of the matching rooms (summary information only).</p>
-    pub fn set_rooms(mut self, input: std::option::Option<std::vec::Vec<crate::types::RoomSummary>>) -> Self {
-        self.rooms = input; self
+    pub fn set_rooms(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::RoomSummary>>,
+    ) -> Self {
+        self.rooms = input;
+        self
     }
     /// <p>If there are more rooms than <code>maxResults</code>, use <code>nextToken</code> in the request to get the next set.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -64,26 +68,24 @@ impl ListRoomsOutputBuilder {
     }
     /// <p>If there are more rooms than <code>maxResults</code>, use <code>nextToken</code> in the request to get the next set.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input; self
+        self.next_token = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`ListRoomsOutput`](crate::operation::list_rooms::ListRoomsOutput).
     pub fn build(self) -> crate::operation::list_rooms::ListRoomsOutput {
         crate::operation::list_rooms::ListRoomsOutput {
-            rooms: self.rooms
-            ,
-            next_token: self.next_token
-            ,
+            rooms: self.rooms,
+            next_token: self.next_token,
             _request_id: self._request_id,
         }
     }
 }
-

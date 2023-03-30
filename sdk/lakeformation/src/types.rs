@@ -228,4 +228,3 @@ pub mod builders;
 
 /// Error types that AWS Lake Formation can respond with.
 pub mod error;
-

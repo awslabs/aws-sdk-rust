@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListGlobalTablesOutput  {
+pub struct ListGlobalTablesOutput {
     /// <p>List of global table names.</p>
     #[doc(hidden)]
     pub global_tables: std::option::Option<std::vec::Vec<crate::types::GlobalTable>>,
@@ -13,22 +13,23 @@ pub struct ListGlobalTablesOutput  {
 }
 impl ListGlobalTablesOutput {
     /// <p>List of global table names.</p>
-    pub fn global_tables(&self) -> std::option::Option<& [crate::types::GlobalTable]> {
+    pub fn global_tables(&self) -> std::option::Option<&[crate::types::GlobalTable]> {
         self.global_tables.as_deref()
     }
     /// <p>Last evaluated global table name.</p>
-    pub fn last_evaluated_global_table_name(&self) -> std::option::Option<& str> {
+    pub fn last_evaluated_global_table_name(&self) -> std::option::Option<&str> {
         self.last_evaluated_global_table_name.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for ListGlobalTablesOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl ListGlobalTablesOutput {
     /// Creates a new builder-style object to manufacture [`ListGlobalTablesOutput`](crate::operation::list_global_tables::ListGlobalTablesOutput).
-    pub fn builder() -> crate::operation::list_global_tables::builders::ListGlobalTablesOutputBuilder {
+    pub fn builder() -> crate::operation::list_global_tables::builders::ListGlobalTablesOutputBuilder
+    {
         crate::operation::list_global_tables::builders::ListGlobalTablesOutputBuilder::default()
     }
 }
@@ -49,41 +50,49 @@ impl ListGlobalTablesOutputBuilder {
     /// <p>List of global table names.</p>
     pub fn global_tables(mut self, input: crate::types::GlobalTable) -> Self {
         let mut v = self.global_tables.unwrap_or_default();
-                        v.push(input);
-                        self.global_tables = Some(v);
-                        self
+        v.push(input);
+        self.global_tables = Some(v);
+        self
     }
     /// <p>List of global table names.</p>
-    pub fn set_global_tables(mut self, input: std::option::Option<std::vec::Vec<crate::types::GlobalTable>>) -> Self {
-        self.global_tables = input; self
+    pub fn set_global_tables(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::GlobalTable>>,
+    ) -> Self {
+        self.global_tables = input;
+        self
     }
     /// <p>Last evaluated global table name.</p>
-    pub fn last_evaluated_global_table_name(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn last_evaluated_global_table_name(
+        mut self,
+        input: impl Into<std::string::String>,
+    ) -> Self {
         self.last_evaluated_global_table_name = Some(input.into());
         self
     }
     /// <p>Last evaluated global table name.</p>
-    pub fn set_last_evaluated_global_table_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.last_evaluated_global_table_name = input; self
+    pub fn set_last_evaluated_global_table_name(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.last_evaluated_global_table_name = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`ListGlobalTablesOutput`](crate::operation::list_global_tables::ListGlobalTablesOutput).
     pub fn build(self) -> crate::operation::list_global_tables::ListGlobalTablesOutput {
         crate::operation::list_global_tables::ListGlobalTablesOutput {
-            global_tables: self.global_tables
-            ,
-            last_evaluated_global_table_name: self.last_evaluated_global_table_name
-            ,
+            global_tables: self.global_tables,
+            last_evaluated_global_table_name: self.last_evaluated_global_table_name,
             _request_id: self._request_id,
         }
     }
 }
-

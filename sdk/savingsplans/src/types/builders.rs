@@ -22,4 +22,3 @@ pub use crate::types::_savings_plan_rate::SavingsPlanRateBuilder;
 pub use crate::types::_savings_plan_rate_property::SavingsPlanRatePropertyBuilder;
 
 pub use crate::types::_savings_plan_rate_filter::SavingsPlanRateFilterBuilder;
-

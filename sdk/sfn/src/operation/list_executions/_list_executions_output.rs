@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListExecutionsOutput  {
+pub struct ListExecutionsOutput {
     /// <p>The list of matching executions.</p>
     #[doc(hidden)]
     pub executions: std::option::Option<std::vec::Vec<crate::types::ExecutionListItem>>,
@@ -13,19 +13,19 @@ pub struct ListExecutionsOutput  {
 }
 impl ListExecutionsOutput {
     /// <p>The list of matching executions.</p>
-    pub fn executions(&self) -> std::option::Option<& [crate::types::ExecutionListItem]> {
+    pub fn executions(&self) -> std::option::Option<&[crate::types::ExecutionListItem]> {
         self.executions.as_deref()
     }
     /// <p>If <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours. Using an expired pagination token will return an <i>HTTP 400 InvalidToken</i> error.</p>
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for ListExecutionsOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl ListExecutionsOutput {
     /// Creates a new builder-style object to manufacture [`ListExecutionsOutput`](crate::operation::list_executions::ListExecutionsOutput).
     pub fn builder() -> crate::operation::list_executions::builders::ListExecutionsOutputBuilder {
@@ -49,13 +49,17 @@ impl ListExecutionsOutputBuilder {
     /// <p>The list of matching executions.</p>
     pub fn executions(mut self, input: crate::types::ExecutionListItem) -> Self {
         let mut v = self.executions.unwrap_or_default();
-                        v.push(input);
-                        self.executions = Some(v);
-                        self
+        v.push(input);
+        self.executions = Some(v);
+        self
     }
     /// <p>The list of matching executions.</p>
-    pub fn set_executions(mut self, input: std::option::Option<std::vec::Vec<crate::types::ExecutionListItem>>) -> Self {
-        self.executions = input; self
+    pub fn set_executions(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::ExecutionListItem>>,
+    ) -> Self {
+        self.executions = input;
+        self
     }
     /// <p>If <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours. Using an expired pagination token will return an <i>HTTP 400 InvalidToken</i> error.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -64,26 +68,24 @@ impl ListExecutionsOutputBuilder {
     }
     /// <p>If <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours. Using an expired pagination token will return an <i>HTTP 400 InvalidToken</i> error.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input; self
+        self.next_token = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`ListExecutionsOutput`](crate::operation::list_executions::ListExecutionsOutput).
     pub fn build(self) -> crate::operation::list_executions::ListExecutionsOutput {
         crate::operation::list_executions::ListExecutionsOutput {
-            executions: self.executions
-            ,
-            next_token: self.next_token
-            ,
+            executions: self.executions,
+            next_token: self.next_token,
             _request_id: self._request_id,
         }
     }
 }
-

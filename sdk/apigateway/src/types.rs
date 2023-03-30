@@ -232,4 +232,3 @@ pub mod builders;
 
 /// Error types that Amazon API Gateway can respond with.
 pub mod error;
-

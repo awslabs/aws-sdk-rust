@@ -3,20 +3,20 @@
 /// <p>Input for DeletePlatformApplication action.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeletePlatformApplicationInput  {
+pub struct DeletePlatformApplicationInput {
     /// <p>PlatformApplicationArn of platform application object to delete.</p>
     #[doc(hidden)]
     pub platform_application_arn: std::option::Option<std::string::String>,
 }
 impl DeletePlatformApplicationInput {
     /// <p>PlatformApplicationArn of platform application object to delete.</p>
-    pub fn platform_application_arn(&self) -> std::option::Option<& str> {
+    pub fn platform_application_arn(&self) -> std::option::Option<&str> {
         self.platform_application_arn.as_deref()
     }
 }
 impl DeletePlatformApplicationInput {
     /// Creates a new builder-style object to manufacture [`DeletePlatformApplicationInput`](crate::operation::delete_platform_application::DeletePlatformApplicationInput).
-    pub fn builder() -> crate::operation::delete_platform_application::builders::DeletePlatformApplicationInputBuilder {
+    pub fn builder() -> crate::operation::delete_platform_application::builders::DeletePlatformApplicationInputBuilder{
         crate::operation::delete_platform_application::builders::DeletePlatformApplicationInputBuilder::default()
     }
 }
@@ -34,17 +34,24 @@ impl DeletePlatformApplicationInputBuilder {
         self
     }
     /// <p>PlatformApplicationArn of platform application object to delete.</p>
-    pub fn set_platform_application_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.platform_application_arn = input; self
+    pub fn set_platform_application_arn(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.platform_application_arn = input;
+        self
     }
     /// Consumes the builder and constructs a [`DeletePlatformApplicationInput`](crate::operation::delete_platform_application::DeletePlatformApplicationInput).
-    pub fn build(self) -> Result<crate::operation::delete_platform_application::DeletePlatformApplicationInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::delete_platform_application::DeletePlatformApplicationInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::delete_platform_application::DeletePlatformApplicationInput {
-                platform_application_arn: self.platform_application_arn
-                ,
-            }
+                platform_application_arn: self.platform_application_arn,
+            },
         )
     }
 }
-

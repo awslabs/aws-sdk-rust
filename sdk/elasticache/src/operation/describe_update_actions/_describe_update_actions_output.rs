@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeUpdateActionsOutput  {
+pub struct DescribeUpdateActionsOutput {
     /// <p>An optional marker returned from a prior request. Use this marker for pagination of results from this operation. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
     #[doc(hidden)]
     pub marker: std::option::Option<std::string::String>,
@@ -13,22 +13,24 @@ pub struct DescribeUpdateActionsOutput  {
 }
 impl DescribeUpdateActionsOutput {
     /// <p>An optional marker returned from a prior request. Use this marker for pagination of results from this operation. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
-    pub fn marker(&self) -> std::option::Option<& str> {
+    pub fn marker(&self) -> std::option::Option<&str> {
         self.marker.as_deref()
     }
     /// <p>Returns a list of update actions</p>
-    pub fn update_actions(&self) -> std::option::Option<& [crate::types::UpdateAction]> {
+    pub fn update_actions(&self) -> std::option::Option<&[crate::types::UpdateAction]> {
         self.update_actions.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for DescribeUpdateActionsOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl DescribeUpdateActionsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeUpdateActionsOutput`](crate::operation::describe_update_actions::DescribeUpdateActionsOutput).
-    pub fn builder() -> crate::operation::describe_update_actions::builders::DescribeUpdateActionsOutputBuilder {
+    pub fn builder(
+    ) -> crate::operation::describe_update_actions::builders::DescribeUpdateActionsOutputBuilder
+    {
         crate::operation::describe_update_actions::builders::DescribeUpdateActionsOutputBuilder::default()
     }
 }
@@ -49,7 +51,8 @@ impl DescribeUpdateActionsOutputBuilder {
     }
     /// <p>An optional marker returned from a prior request. Use this marker for pagination of results from this operation. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
     pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.marker = input; self
+        self.marker = input;
+        self
     }
     /// Appends an item to `update_actions`.
     ///
@@ -58,32 +61,33 @@ impl DescribeUpdateActionsOutputBuilder {
     /// <p>Returns a list of update actions</p>
     pub fn update_actions(mut self, input: crate::types::UpdateAction) -> Self {
         let mut v = self.update_actions.unwrap_or_default();
-                        v.push(input);
-                        self.update_actions = Some(v);
-                        self
+        v.push(input);
+        self.update_actions = Some(v);
+        self
     }
     /// <p>Returns a list of update actions</p>
-    pub fn set_update_actions(mut self, input: std::option::Option<std::vec::Vec<crate::types::UpdateAction>>) -> Self {
-        self.update_actions = input; self
+    pub fn set_update_actions(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::UpdateAction>>,
+    ) -> Self {
+        self.update_actions = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`DescribeUpdateActionsOutput`](crate::operation::describe_update_actions::DescribeUpdateActionsOutput).
     pub fn build(self) -> crate::operation::describe_update_actions::DescribeUpdateActionsOutput {
         crate::operation::describe_update_actions::DescribeUpdateActionsOutput {
-            marker: self.marker
-            ,
-            update_actions: self.update_actions
-            ,
+            marker: self.marker,
+            update_actions: self.update_actions,
             _request_id: self._request_id,
         }
     }
 }
-

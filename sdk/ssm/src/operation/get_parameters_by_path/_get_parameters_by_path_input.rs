@@ -2,18 +2,18 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetParametersByPathInput  {
+pub struct GetParametersByPathInput {
     /// <p>The hierarchy for the parameter. Hierarchies start with a forward slash (/). The hierarchy is the parameter name except the last part of the parameter. For the API call to succeed, the last part of the parameter name can't be in the path. A parameter name hierarchy can have a maximum of 15 levels. Here is an example of a hierarchy: <code>/Finance/Prod/IAD/WinServ2016/license33 </code> </p>
     #[doc(hidden)]
     pub path: std::option::Option<std::string::String>,
-    /// <p>Retrieve all parameters within a hierarchy.</p> <important> 
-    /// <p>If a user has access to a path, then the user can access all levels of that path. For example, if a user has permission to access path <code>/a</code>, then the user can also access <code>/a/b</code>. Even if a user has explicitly been denied access in IAM for parameter <code>/a/b</code>, they can still call the GetParametersByPath API operation recursively for <code>/a</code> and view <code>/a/b</code>.</p> 
+    /// <p>Retrieve all parameters within a hierarchy.</p> <important>
+    /// <p>If a user has access to a path, then the user can access all levels of that path. For example, if a user has permission to access path <code>/a</code>, then the user can also access <code>/a/b</code>. Even if a user has explicitly been denied access in IAM for parameter <code>/a/b</code>, they can still call the GetParametersByPath API operation recursively for <code>/a</code> and view <code>/a/b</code>.</p>
     /// </important>
     #[doc(hidden)]
     pub recursive: std::option::Option<bool>,
-    /// <p>Filters to limit the request results.</p> <note> 
-    /// <p>The following <code>Key</code> values are supported for <code>GetParametersByPath</code>: <code>Type</code>, <code>KeyId</code>, and <code>Label</code>.</p> 
-    /// <p>The following <code>Key</code> values aren't supported for <code>GetParametersByPath</code>: <code>tag</code>, <code>DataType</code>, <code>Name</code>, <code>Path</code>, and <code>Tier</code>.</p> 
+    /// <p>Filters to limit the request results.</p> <note>
+    /// <p>The following <code>Key</code> values are supported for <code>GetParametersByPath</code>: <code>Type</code>, <code>KeyId</code>, and <code>Label</code>.</p>
+    /// <p>The following <code>Key</code> values aren't supported for <code>GetParametersByPath</code>: <code>tag</code>, <code>DataType</code>, <code>Name</code>, <code>Path</code>, and <code>Tier</code>.</p>
     /// </note>
     #[doc(hidden)]
     pub parameter_filters: std::option::Option<std::vec::Vec<crate::types::ParameterStringFilter>>,
@@ -29,20 +29,20 @@ pub struct GetParametersByPathInput  {
 }
 impl GetParametersByPathInput {
     /// <p>The hierarchy for the parameter. Hierarchies start with a forward slash (/). The hierarchy is the parameter name except the last part of the parameter. For the API call to succeed, the last part of the parameter name can't be in the path. A parameter name hierarchy can have a maximum of 15 levels. Here is an example of a hierarchy: <code>/Finance/Prod/IAD/WinServ2016/license33 </code> </p>
-    pub fn path(&self) -> std::option::Option<& str> {
+    pub fn path(&self) -> std::option::Option<&str> {
         self.path.as_deref()
     }
-    /// <p>Retrieve all parameters within a hierarchy.</p> <important> 
-    /// <p>If a user has access to a path, then the user can access all levels of that path. For example, if a user has permission to access path <code>/a</code>, then the user can also access <code>/a/b</code>. Even if a user has explicitly been denied access in IAM for parameter <code>/a/b</code>, they can still call the GetParametersByPath API operation recursively for <code>/a</code> and view <code>/a/b</code>.</p> 
+    /// <p>Retrieve all parameters within a hierarchy.</p> <important>
+    /// <p>If a user has access to a path, then the user can access all levels of that path. For example, if a user has permission to access path <code>/a</code>, then the user can also access <code>/a/b</code>. Even if a user has explicitly been denied access in IAM for parameter <code>/a/b</code>, they can still call the GetParametersByPath API operation recursively for <code>/a</code> and view <code>/a/b</code>.</p>
     /// </important>
     pub fn recursive(&self) -> std::option::Option<bool> {
         self.recursive
     }
-    /// <p>Filters to limit the request results.</p> <note> 
-    /// <p>The following <code>Key</code> values are supported for <code>GetParametersByPath</code>: <code>Type</code>, <code>KeyId</code>, and <code>Label</code>.</p> 
-    /// <p>The following <code>Key</code> values aren't supported for <code>GetParametersByPath</code>: <code>tag</code>, <code>DataType</code>, <code>Name</code>, <code>Path</code>, and <code>Tier</code>.</p> 
+    /// <p>Filters to limit the request results.</p> <note>
+    /// <p>The following <code>Key</code> values are supported for <code>GetParametersByPath</code>: <code>Type</code>, <code>KeyId</code>, and <code>Label</code>.</p>
+    /// <p>The following <code>Key</code> values aren't supported for <code>GetParametersByPath</code>: <code>tag</code>, <code>DataType</code>, <code>Name</code>, <code>Path</code>, and <code>Tier</code>.</p>
     /// </note>
-    pub fn parameter_filters(&self) -> std::option::Option<& [crate::types::ParameterStringFilter]> {
+    pub fn parameter_filters(&self) -> std::option::Option<&[crate::types::ParameterStringFilter]> {
         self.parameter_filters.as_deref()
     }
     /// <p>Retrieve all parameters in a hierarchy with their value decrypted.</p>
@@ -54,14 +54,16 @@ impl GetParametersByPathInput {
         self.max_results
     }
     /// <p>A token to start the list. Use this token to get the next set of results. </p>
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
 }
 impl GetParametersByPathInput {
     /// Creates a new builder-style object to manufacture [`GetParametersByPathInput`](crate::operation::get_parameters_by_path::GetParametersByPathInput).
-    pub fn builder() -> crate::operation::get_parameters_by_path::builders::GetParametersByPathInputBuilder {
-        crate::operation::get_parameters_by_path::builders::GetParametersByPathInputBuilder::default()
+    pub fn builder(
+    ) -> crate::operation::get_parameters_by_path::builders::GetParametersByPathInputBuilder {
+        crate::operation::get_parameters_by_path::builders::GetParametersByPathInputBuilder::default(
+        )
     }
 }
 
@@ -71,7 +73,8 @@ impl GetParametersByPathInput {
 pub struct GetParametersByPathInputBuilder {
     pub(crate) path: std::option::Option<std::string::String>,
     pub(crate) recursive: std::option::Option<bool>,
-    pub(crate) parameter_filters: std::option::Option<std::vec::Vec<crate::types::ParameterStringFilter>>,
+    pub(crate) parameter_filters:
+        std::option::Option<std::vec::Vec<crate::types::ParameterStringFilter>>,
     pub(crate) with_decryption: std::option::Option<bool>,
     pub(crate) max_results: std::option::Option<i32>,
     pub(crate) next_token: std::option::Option<std::string::String>,
@@ -84,41 +87,47 @@ impl GetParametersByPathInputBuilder {
     }
     /// <p>The hierarchy for the parameter. Hierarchies start with a forward slash (/). The hierarchy is the parameter name except the last part of the parameter. For the API call to succeed, the last part of the parameter name can't be in the path. A parameter name hierarchy can have a maximum of 15 levels. Here is an example of a hierarchy: <code>/Finance/Prod/IAD/WinServ2016/license33 </code> </p>
     pub fn set_path(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.path = input; self
+        self.path = input;
+        self
     }
-    /// <p>Retrieve all parameters within a hierarchy.</p> <important> 
-    /// <p>If a user has access to a path, then the user can access all levels of that path. For example, if a user has permission to access path <code>/a</code>, then the user can also access <code>/a/b</code>. Even if a user has explicitly been denied access in IAM for parameter <code>/a/b</code>, they can still call the GetParametersByPath API operation recursively for <code>/a</code> and view <code>/a/b</code>.</p> 
+    /// <p>Retrieve all parameters within a hierarchy.</p> <important>
+    /// <p>If a user has access to a path, then the user can access all levels of that path. For example, if a user has permission to access path <code>/a</code>, then the user can also access <code>/a/b</code>. Even if a user has explicitly been denied access in IAM for parameter <code>/a/b</code>, they can still call the GetParametersByPath API operation recursively for <code>/a</code> and view <code>/a/b</code>.</p>
     /// </important>
     pub fn recursive(mut self, input: bool) -> Self {
         self.recursive = Some(input);
         self
     }
-    /// <p>Retrieve all parameters within a hierarchy.</p> <important> 
-    /// <p>If a user has access to a path, then the user can access all levels of that path. For example, if a user has permission to access path <code>/a</code>, then the user can also access <code>/a/b</code>. Even if a user has explicitly been denied access in IAM for parameter <code>/a/b</code>, they can still call the GetParametersByPath API operation recursively for <code>/a</code> and view <code>/a/b</code>.</p> 
+    /// <p>Retrieve all parameters within a hierarchy.</p> <important>
+    /// <p>If a user has access to a path, then the user can access all levels of that path. For example, if a user has permission to access path <code>/a</code>, then the user can also access <code>/a/b</code>. Even if a user has explicitly been denied access in IAM for parameter <code>/a/b</code>, they can still call the GetParametersByPath API operation recursively for <code>/a</code> and view <code>/a/b</code>.</p>
     /// </important>
     pub fn set_recursive(mut self, input: std::option::Option<bool>) -> Self {
-        self.recursive = input; self
+        self.recursive = input;
+        self
     }
     /// Appends an item to `parameter_filters`.
     ///
     /// To override the contents of this collection use [`set_parameter_filters`](Self::set_parameter_filters).
     ///
-    /// <p>Filters to limit the request results.</p> <note> 
-    /// <p>The following <code>Key</code> values are supported for <code>GetParametersByPath</code>: <code>Type</code>, <code>KeyId</code>, and <code>Label</code>.</p> 
-    /// <p>The following <code>Key</code> values aren't supported for <code>GetParametersByPath</code>: <code>tag</code>, <code>DataType</code>, <code>Name</code>, <code>Path</code>, and <code>Tier</code>.</p> 
+    /// <p>Filters to limit the request results.</p> <note>
+    /// <p>The following <code>Key</code> values are supported for <code>GetParametersByPath</code>: <code>Type</code>, <code>KeyId</code>, and <code>Label</code>.</p>
+    /// <p>The following <code>Key</code> values aren't supported for <code>GetParametersByPath</code>: <code>tag</code>, <code>DataType</code>, <code>Name</code>, <code>Path</code>, and <code>Tier</code>.</p>
     /// </note>
     pub fn parameter_filters(mut self, input: crate::types::ParameterStringFilter) -> Self {
         let mut v = self.parameter_filters.unwrap_or_default();
-                        v.push(input);
-                        self.parameter_filters = Some(v);
-                        self
+        v.push(input);
+        self.parameter_filters = Some(v);
+        self
     }
-    /// <p>Filters to limit the request results.</p> <note> 
-    /// <p>The following <code>Key</code> values are supported for <code>GetParametersByPath</code>: <code>Type</code>, <code>KeyId</code>, and <code>Label</code>.</p> 
-    /// <p>The following <code>Key</code> values aren't supported for <code>GetParametersByPath</code>: <code>tag</code>, <code>DataType</code>, <code>Name</code>, <code>Path</code>, and <code>Tier</code>.</p> 
+    /// <p>Filters to limit the request results.</p> <note>
+    /// <p>The following <code>Key</code> values are supported for <code>GetParametersByPath</code>: <code>Type</code>, <code>KeyId</code>, and <code>Label</code>.</p>
+    /// <p>The following <code>Key</code> values aren't supported for <code>GetParametersByPath</code>: <code>tag</code>, <code>DataType</code>, <code>Name</code>, <code>Path</code>, and <code>Tier</code>.</p>
     /// </note>
-    pub fn set_parameter_filters(mut self, input: std::option::Option<std::vec::Vec<crate::types::ParameterStringFilter>>) -> Self {
-        self.parameter_filters = input; self
+    pub fn set_parameter_filters(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::ParameterStringFilter>>,
+    ) -> Self {
+        self.parameter_filters = input;
+        self
     }
     /// <p>Retrieve all parameters in a hierarchy with their value decrypted.</p>
     pub fn with_decryption(mut self, input: bool) -> Self {
@@ -127,7 +136,8 @@ impl GetParametersByPathInputBuilder {
     }
     /// <p>Retrieve all parameters in a hierarchy with their value decrypted.</p>
     pub fn set_with_decryption(mut self, input: std::option::Option<bool>) -> Self {
-        self.with_decryption = input; self
+        self.with_decryption = input;
+        self
     }
     /// <p>The maximum number of items to return for this call. The call also returns a token that you can specify in a subsequent call to get the next set of results.</p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -136,7 +146,8 @@ impl GetParametersByPathInputBuilder {
     }
     /// <p>The maximum number of items to return for this call. The call also returns a token that you can specify in a subsequent call to get the next set of results.</p>
     pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_results = input; self
+        self.max_results = input;
+        self
     }
     /// <p>A token to start the list. Use this token to get the next set of results. </p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -145,26 +156,25 @@ impl GetParametersByPathInputBuilder {
     }
     /// <p>A token to start the list. Use this token to get the next set of results. </p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input; self
+        self.next_token = input;
+        self
     }
     /// Consumes the builder and constructs a [`GetParametersByPathInput`](crate::operation::get_parameters_by_path::GetParametersByPathInput).
-    pub fn build(self) -> Result<crate::operation::get_parameters_by_path::GetParametersByPathInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::get_parameters_by_path::GetParametersByPathInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::get_parameters_by_path::GetParametersByPathInput {
-                path: self.path
-                ,
-                recursive: self.recursive
-                ,
-                parameter_filters: self.parameter_filters
-                ,
-                with_decryption: self.with_decryption
-                ,
-                max_results: self.max_results
-                ,
-                next_token: self.next_token
-                ,
-            }
+                path: self.path,
+                recursive: self.recursive,
+                parameter_filters: self.parameter_filters,
+                with_decryption: self.with_decryption,
+                max_results: self.max_results,
+                next_token: self.next_token,
+            },
         )
     }
 }
-

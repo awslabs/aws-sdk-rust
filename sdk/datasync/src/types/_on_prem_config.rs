@@ -3,14 +3,14 @@
 /// <p>A list of Amazon Resource Names (ARNs) of agents to use for a Network File System (NFS) location.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct OnPremConfig  {
+pub struct OnPremConfig {
     /// <p>ARNs of the agents to use for an NFS location.</p>
     #[doc(hidden)]
     pub agent_arns: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl OnPremConfig {
     /// <p>ARNs of the agents to use for an NFS location.</p>
-    pub fn agent_arns(&self) -> std::option::Option<& [std::string::String]> {
+    pub fn agent_arns(&self) -> std::option::Option<&[std::string::String]> {
         self.agent_arns.as_deref()
     }
 }
@@ -35,20 +35,22 @@ impl OnPremConfigBuilder {
     /// <p>ARNs of the agents to use for an NFS location.</p>
     pub fn agent_arns(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.agent_arns.unwrap_or_default();
-                        v.push(input.into());
-                        self.agent_arns = Some(v);
-                        self
+        v.push(input.into());
+        self.agent_arns = Some(v);
+        self
     }
     /// <p>ARNs of the agents to use for an NFS location.</p>
-    pub fn set_agent_arns(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-        self.agent_arns = input; self
+    pub fn set_agent_arns(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
+        self.agent_arns = input;
+        self
     }
     /// Consumes the builder and constructs a [`OnPremConfig`](crate::types::OnPremConfig).
     pub fn build(self) -> crate::types::OnPremConfig {
         crate::types::OnPremConfig {
-            agent_arns: self.agent_arns
-            ,
+            agent_arns: self.agent_arns,
         }
     }
 }
-

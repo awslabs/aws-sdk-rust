@@ -2,17 +2,19 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteWhatIfAnalysisOutput  {
+pub struct DeleteWhatIfAnalysisOutput {
     _request_id: Option<String>,
 }
 impl aws_http::request_id::RequestId for DeleteWhatIfAnalysisOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl DeleteWhatIfAnalysisOutput {
     /// Creates a new builder-style object to manufacture [`DeleteWhatIfAnalysisOutput`](crate::operation::delete_what_if_analysis::DeleteWhatIfAnalysisOutput).
-    pub fn builder() -> crate::operation::delete_what_if_analysis::builders::DeleteWhatIfAnalysisOutputBuilder {
+    pub fn builder(
+    ) -> crate::operation::delete_what_if_analysis::builders::DeleteWhatIfAnalysisOutputBuilder
+    {
         crate::operation::delete_what_if_analysis::builders::DeleteWhatIfAnalysisOutputBuilder::default()
     }
 }
@@ -25,14 +27,14 @@ pub struct DeleteWhatIfAnalysisOutputBuilder {
 }
 impl DeleteWhatIfAnalysisOutputBuilder {
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`DeleteWhatIfAnalysisOutput`](crate::operation::delete_what_if_analysis::DeleteWhatIfAnalysisOutput).
     pub fn build(self) -> crate::operation::delete_what_if_analysis::DeleteWhatIfAnalysisOutput {
         crate::operation::delete_what_if_analysis::DeleteWhatIfAnalysisOutput {
@@ -40,4 +42,3 @@ impl DeleteWhatIfAnalysisOutputBuilder {
         }
     }
 }
-

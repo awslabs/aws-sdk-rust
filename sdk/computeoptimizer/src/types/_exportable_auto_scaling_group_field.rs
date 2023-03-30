@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-/// 
+///
 /// Here is an example of how you can make a match expression forward-compatible:
-/// 
+///
 /// ```text
 /// # let exportableautoscalinggroupfield = unimplemented!();
 /// match exportableautoscalinggroupfield {
@@ -82,14 +82,22 @@
 /// Specifically, when `exportableautoscalinggroupfield` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `ExportableAutoScalingGroupField::NewFeature` also yielding `"NewFeature"`.
-/// 
+///
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
 pub enum ExportableAutoScalingGroupField {
     #[allow(missing_docs)] // documentation missing in model
     AccountId,
@@ -200,11 +208,11 @@ pub enum ExportableAutoScalingGroupField {
     #[allow(missing_docs)] // documentation missing in model
     UtilizationMetricsNetworkPacketsOutPerSecondMaximum,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::primitives::UnknownVariantValue)
+    Unknown(crate::primitives::UnknownVariantValue),
 }
 impl std::convert::From<&str> for ExportableAutoScalingGroupField {
-                fn from(s: &str) -> Self {
-                    match s {
+    fn from(s: &str) -> Self {
+        match s {
                         "AccountId" => ExportableAutoScalingGroupField::AccountId,
 "AutoScalingGroupArn" => ExportableAutoScalingGroupField::AutoScalingGroupArn,
 "AutoScalingGroupName" => ExportableAutoScalingGroupField::AutoScalingGroupName,
@@ -261,19 +269,19 @@ impl std::convert::From<&str> for ExportableAutoScalingGroupField {
 "UtilizationMetricsNetworkPacketsOutPerSecondMaximum" => ExportableAutoScalingGroupField::UtilizationMetricsNetworkPacketsOutPerSecondMaximum,
 other => ExportableAutoScalingGroupField::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
                     }
-                }
-            }
+    }
+}
 impl std::str::FromStr for ExportableAutoScalingGroupField {
-                type Err = std::convert::Infallible;
+    type Err = std::convert::Infallible;
 
-                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-                    Ok(ExportableAutoScalingGroupField::from(s))
-                }
-            }
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(ExportableAutoScalingGroupField::from(s))
+    }
+}
 impl ExportableAutoScalingGroupField {
-                /// Returns the `&str` value of the enum member.
-                pub fn as_str(&self) -> &str {
-                    match self {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
     ExportableAutoScalingGroupField::AccountId => "AccountId",
     ExportableAutoScalingGroupField::AutoScalingGroupArn => "AutoScalingGroupArn",
     ExportableAutoScalingGroupField::AutoScalingGroupName => "AutoScalingGroupName",
@@ -330,15 +338,69 @@ impl ExportableAutoScalingGroupField {
     ExportableAutoScalingGroupField::UtilizationMetricsNetworkPacketsOutPerSecondMaximum => "UtilizationMetricsNetworkPacketsOutPerSecondMaximum",
     ExportableAutoScalingGroupField::Unknown(value) => value.as_str()
 }
-                }
-                /// Returns all the `&str` representations of the enum members.
-                pub const fn values() -> &'static [&'static str] {
-                    &["AccountId", "AutoScalingGroupArn", "AutoScalingGroupName", "CurrentConfigurationDesiredCapacity", "CurrentConfigurationInstanceType", "CurrentConfigurationMaxSize", "CurrentConfigurationMinSize", "CurrentMemory", "CurrentNetwork", "CurrentOnDemandPrice", "CurrentPerformanceRisk", "CurrentStandardOneYearNoUpfrontReservedPrice", "CurrentStandardThreeYearNoUpfrontReservedPrice", "CurrentStorage", "CurrentVCpus", "EffectiveRecommendationPreferencesCpuVendorArchitectures", "EffectiveRecommendationPreferencesEnhancedInfrastructureMetrics", "EffectiveRecommendationPreferencesInferredWorkloadTypes", "Finding", "InferredWorkloadTypes", "LastRefreshTimestamp", "LookbackPeriodInDays", "RecommendationOptionsConfigurationDesiredCapacity", "RecommendationOptionsConfigurationInstanceType", "RecommendationOptionsConfigurationMaxSize", "RecommendationOptionsConfigurationMinSize", "RecommendationOptionsEstimatedMonthlySavingsCurrency", "RecommendationOptionsEstimatedMonthlySavingsValue", "RecommendationOptionsMemory", "RecommendationOptionsMigrationEffort", "RecommendationOptionsNetwork", "RecommendationOptionsOnDemandPrice", "RecommendationOptionsPerformanceRisk", "RecommendationOptionsProjectedUtilizationMetricsCpuMaximum", "RecommendationOptionsProjectedUtilizationMetricsMemoryMaximum", "RecommendationOptionsSavingsOpportunityPercentage", "RecommendationOptionsStandardOneYearNoUpfrontReservedPrice", "RecommendationOptionsStandardThreeYearNoUpfrontReservedPrice", "RecommendationOptionsStorage", "RecommendationOptionsVcpus", "UtilizationMetricsCpuMaximum", "UtilizationMetricsDiskReadBytesPerSecondMaximum", "UtilizationMetricsDiskReadOpsPerSecondMaximum", "UtilizationMetricsDiskWriteBytesPerSecondMaximum", "UtilizationMetricsDiskWriteOpsPerSecondMaximum", "UtilizationMetricsEbsReadBytesPerSecondMaximum", "UtilizationMetricsEbsReadOpsPerSecondMaximum", "UtilizationMetricsEbsWriteBytesPerSecondMaximum", "UtilizationMetricsEbsWriteOpsPerSecondMaximum", "UtilizationMetricsMemoryMaximum", "UtilizationMetricsNetworkInBytesPerSecondMaximum", "UtilizationMetricsNetworkOutBytesPerSecondMaximum", "UtilizationMetricsNetworkPacketsInPerSecondMaximum", "UtilizationMetricsNetworkPacketsOutPerSecondMaximum"]
-                }
-            }
+    }
+    /// Returns all the `&str` representations of the enum members.
+    pub const fn values() -> &'static [&'static str] {
+        &[
+            "AccountId",
+            "AutoScalingGroupArn",
+            "AutoScalingGroupName",
+            "CurrentConfigurationDesiredCapacity",
+            "CurrentConfigurationInstanceType",
+            "CurrentConfigurationMaxSize",
+            "CurrentConfigurationMinSize",
+            "CurrentMemory",
+            "CurrentNetwork",
+            "CurrentOnDemandPrice",
+            "CurrentPerformanceRisk",
+            "CurrentStandardOneYearNoUpfrontReservedPrice",
+            "CurrentStandardThreeYearNoUpfrontReservedPrice",
+            "CurrentStorage",
+            "CurrentVCpus",
+            "EffectiveRecommendationPreferencesCpuVendorArchitectures",
+            "EffectiveRecommendationPreferencesEnhancedInfrastructureMetrics",
+            "EffectiveRecommendationPreferencesInferredWorkloadTypes",
+            "Finding",
+            "InferredWorkloadTypes",
+            "LastRefreshTimestamp",
+            "LookbackPeriodInDays",
+            "RecommendationOptionsConfigurationDesiredCapacity",
+            "RecommendationOptionsConfigurationInstanceType",
+            "RecommendationOptionsConfigurationMaxSize",
+            "RecommendationOptionsConfigurationMinSize",
+            "RecommendationOptionsEstimatedMonthlySavingsCurrency",
+            "RecommendationOptionsEstimatedMonthlySavingsValue",
+            "RecommendationOptionsMemory",
+            "RecommendationOptionsMigrationEffort",
+            "RecommendationOptionsNetwork",
+            "RecommendationOptionsOnDemandPrice",
+            "RecommendationOptionsPerformanceRisk",
+            "RecommendationOptionsProjectedUtilizationMetricsCpuMaximum",
+            "RecommendationOptionsProjectedUtilizationMetricsMemoryMaximum",
+            "RecommendationOptionsSavingsOpportunityPercentage",
+            "RecommendationOptionsStandardOneYearNoUpfrontReservedPrice",
+            "RecommendationOptionsStandardThreeYearNoUpfrontReservedPrice",
+            "RecommendationOptionsStorage",
+            "RecommendationOptionsVcpus",
+            "UtilizationMetricsCpuMaximum",
+            "UtilizationMetricsDiskReadBytesPerSecondMaximum",
+            "UtilizationMetricsDiskReadOpsPerSecondMaximum",
+            "UtilizationMetricsDiskWriteBytesPerSecondMaximum",
+            "UtilizationMetricsDiskWriteOpsPerSecondMaximum",
+            "UtilizationMetricsEbsReadBytesPerSecondMaximum",
+            "UtilizationMetricsEbsReadOpsPerSecondMaximum",
+            "UtilizationMetricsEbsWriteBytesPerSecondMaximum",
+            "UtilizationMetricsEbsWriteOpsPerSecondMaximum",
+            "UtilizationMetricsMemoryMaximum",
+            "UtilizationMetricsNetworkInBytesPerSecondMaximum",
+            "UtilizationMetricsNetworkOutBytesPerSecondMaximum",
+            "UtilizationMetricsNetworkPacketsInPerSecondMaximum",
+            "UtilizationMetricsNetworkPacketsOutPerSecondMaximum",
+        ]
+    }
+}
 impl AsRef<str> for ExportableAutoScalingGroupField {
-                fn as_ref(&self) -> &str {
-                    self.as_str()
-                }
-            }
-
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}

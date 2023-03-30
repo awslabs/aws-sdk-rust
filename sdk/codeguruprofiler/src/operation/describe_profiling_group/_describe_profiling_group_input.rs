@@ -3,20 +3,22 @@
 /// <p>The structure representing the describeProfilingGroupRequest.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeProfilingGroupInput  {
+pub struct DescribeProfilingGroupInput {
     /// <p> The name of the profiling group to get information about. </p>
     #[doc(hidden)]
     pub profiling_group_name: std::option::Option<std::string::String>,
 }
 impl DescribeProfilingGroupInput {
     /// <p> The name of the profiling group to get information about. </p>
-    pub fn profiling_group_name(&self) -> std::option::Option<& str> {
+    pub fn profiling_group_name(&self) -> std::option::Option<&str> {
         self.profiling_group_name.as_deref()
     }
 }
 impl DescribeProfilingGroupInput {
     /// Creates a new builder-style object to manufacture [`DescribeProfilingGroupInput`](crate::operation::describe_profiling_group::DescribeProfilingGroupInput).
-    pub fn builder() -> crate::operation::describe_profiling_group::builders::DescribeProfilingGroupInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::describe_profiling_group::builders::DescribeProfilingGroupInputBuilder
+    {
         crate::operation::describe_profiling_group::builders::DescribeProfilingGroupInputBuilder::default()
     }
 }
@@ -34,17 +36,24 @@ impl DescribeProfilingGroupInputBuilder {
         self
     }
     /// <p> The name of the profiling group to get information about. </p>
-    pub fn set_profiling_group_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.profiling_group_name = input; self
+    pub fn set_profiling_group_name(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.profiling_group_name = input;
+        self
     }
     /// Consumes the builder and constructs a [`DescribeProfilingGroupInput`](crate::operation::describe_profiling_group::DescribeProfilingGroupInput).
-    pub fn build(self) -> Result<crate::operation::describe_profiling_group::DescribeProfilingGroupInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::describe_profiling_group::DescribeProfilingGroupInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::describe_profiling_group::DescribeProfilingGroupInput {
-                profiling_group_name: self.profiling_group_name
-                ,
-            }
+                profiling_group_name: self.profiling_group_name,
+            },
         )
     }
 }
-

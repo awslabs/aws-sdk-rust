@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-/// 
+///
 /// Here is an example of how you can make a match expression forward-compatible:
-/// 
+///
 /// ```text
 /// # let ipampoolcidrstate = unimplemented!();
 /// match ipampoolcidrstate {
@@ -36,14 +36,22 @@
 /// Specifically, when `ipampoolcidrstate` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `IpamPoolCidrState::NewFeature` also yielding `"NewFeature"`.
-/// 
+///
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
 pub enum IpamPoolCidrState {
     #[allow(missing_docs)] // documentation missing in model
     Deprovisioned,
@@ -62,53 +70,63 @@ pub enum IpamPoolCidrState {
     #[allow(missing_docs)] // documentation missing in model
     Provisioned,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::primitives::UnknownVariantValue)
+    Unknown(crate::primitives::UnknownVariantValue),
 }
 impl std::convert::From<&str> for IpamPoolCidrState {
-                fn from(s: &str) -> Self {
-                    match s {
-                        "deprovisioned" => IpamPoolCidrState::Deprovisioned,
-"failed-deprovision" => IpamPoolCidrState::FailedDeprovision,
-"failed-import" => IpamPoolCidrState::FailedImport,
-"failed-provision" => IpamPoolCidrState::FailedProvision,
-"pending-deprovision" => IpamPoolCidrState::PendingDeprovision,
-"pending-import" => IpamPoolCidrState::PendingImport,
-"pending-provision" => IpamPoolCidrState::PendingProvision,
-"provisioned" => IpamPoolCidrState::Provisioned,
-other => IpamPoolCidrState::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
-                    }
-                }
+    fn from(s: &str) -> Self {
+        match s {
+            "deprovisioned" => IpamPoolCidrState::Deprovisioned,
+            "failed-deprovision" => IpamPoolCidrState::FailedDeprovision,
+            "failed-import" => IpamPoolCidrState::FailedImport,
+            "failed-provision" => IpamPoolCidrState::FailedProvision,
+            "pending-deprovision" => IpamPoolCidrState::PendingDeprovision,
+            "pending-import" => IpamPoolCidrState::PendingImport,
+            "pending-provision" => IpamPoolCidrState::PendingProvision,
+            "provisioned" => IpamPoolCidrState::Provisioned,
+            other => {
+                IpamPoolCidrState::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
             }
-impl std::str::FromStr for IpamPoolCidrState {
-                type Err = std::convert::Infallible;
-
-                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-                    Ok(IpamPoolCidrState::from(s))
-                }
-            }
-impl IpamPoolCidrState {
-                /// Returns the `&str` value of the enum member.
-                pub fn as_str(&self) -> &str {
-                    match self {
-    IpamPoolCidrState::Deprovisioned => "deprovisioned",
-    IpamPoolCidrState::FailedDeprovision => "failed-deprovision",
-    IpamPoolCidrState::FailedImport => "failed-import",
-    IpamPoolCidrState::FailedProvision => "failed-provision",
-    IpamPoolCidrState::PendingDeprovision => "pending-deprovision",
-    IpamPoolCidrState::PendingImport => "pending-import",
-    IpamPoolCidrState::PendingProvision => "pending-provision",
-    IpamPoolCidrState::Provisioned => "provisioned",
-    IpamPoolCidrState::Unknown(value) => value.as_str()
+        }
+    }
 }
-                }
-                /// Returns all the `&str` representations of the enum members.
-                pub const fn values() -> &'static [&'static str] {
-                    &["deprovisioned", "failed-deprovision", "failed-import", "failed-provision", "pending-deprovision", "pending-import", "pending-provision", "provisioned"]
-                }
-            }
-impl AsRef<str> for IpamPoolCidrState {
-                fn as_ref(&self) -> &str {
-                    self.as_str()
-                }
-            }
+impl std::str::FromStr for IpamPoolCidrState {
+    type Err = std::convert::Infallible;
 
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(IpamPoolCidrState::from(s))
+    }
+}
+impl IpamPoolCidrState {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            IpamPoolCidrState::Deprovisioned => "deprovisioned",
+            IpamPoolCidrState::FailedDeprovision => "failed-deprovision",
+            IpamPoolCidrState::FailedImport => "failed-import",
+            IpamPoolCidrState::FailedProvision => "failed-provision",
+            IpamPoolCidrState::PendingDeprovision => "pending-deprovision",
+            IpamPoolCidrState::PendingImport => "pending-import",
+            IpamPoolCidrState::PendingProvision => "pending-provision",
+            IpamPoolCidrState::Provisioned => "provisioned",
+            IpamPoolCidrState::Unknown(value) => value.as_str(),
+        }
+    }
+    /// Returns all the `&str` representations of the enum members.
+    pub const fn values() -> &'static [&'static str] {
+        &[
+            "deprovisioned",
+            "failed-deprovision",
+            "failed-import",
+            "failed-provision",
+            "pending-deprovision",
+            "pending-import",
+            "pending-provision",
+            "provisioned",
+        ]
+    }
+}
+impl AsRef<str> for IpamPoolCidrState {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}

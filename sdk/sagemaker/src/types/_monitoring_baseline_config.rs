@@ -3,7 +3,7 @@
 /// <p>Configuration for monitoring constraints and monitoring statistics. These baseline resources are compared against the results of the current job from the series of jobs scheduled to collect data periodically.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct MonitoringBaselineConfig  {
+pub struct MonitoringBaselineConfig {
     /// <p>The name of the job that performs baselining for the monitoring job.</p>
     #[doc(hidden)]
     pub baselining_job_name: std::option::Option<std::string::String>,
@@ -16,15 +16,19 @@ pub struct MonitoringBaselineConfig  {
 }
 impl MonitoringBaselineConfig {
     /// <p>The name of the job that performs baselining for the monitoring job.</p>
-    pub fn baselining_job_name(&self) -> std::option::Option<& str> {
+    pub fn baselining_job_name(&self) -> std::option::Option<&str> {
         self.baselining_job_name.as_deref()
     }
     /// <p>The baseline constraint file in Amazon S3 that the current monitoring job should validated against.</p>
-    pub fn constraints_resource(&self) -> std::option::Option<& crate::types::MonitoringConstraintsResource> {
+    pub fn constraints_resource(
+        &self,
+    ) -> std::option::Option<&crate::types::MonitoringConstraintsResource> {
         self.constraints_resource.as_ref()
     }
     /// <p>The baseline statistics file in Amazon S3 that the current monitoring job should be validated against.</p>
-    pub fn statistics_resource(&self) -> std::option::Option<& crate::types::MonitoringStatisticsResource> {
+    pub fn statistics_resource(
+        &self,
+    ) -> std::option::Option<&crate::types::MonitoringStatisticsResource> {
         self.statistics_resource.as_ref()
     }
 }
@@ -40,7 +44,8 @@ impl MonitoringBaselineConfig {
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct MonitoringBaselineConfigBuilder {
     pub(crate) baselining_job_name: std::option::Option<std::string::String>,
-    pub(crate) constraints_resource: std::option::Option<crate::types::MonitoringConstraintsResource>,
+    pub(crate) constraints_resource:
+        std::option::Option<crate::types::MonitoringConstraintsResource>,
     pub(crate) statistics_resource: std::option::Option<crate::types::MonitoringStatisticsResource>,
 }
 impl MonitoringBaselineConfigBuilder {
@@ -50,37 +55,51 @@ impl MonitoringBaselineConfigBuilder {
         self
     }
     /// <p>The name of the job that performs baselining for the monitoring job.</p>
-    pub fn set_baselining_job_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.baselining_job_name = input; self
+    pub fn set_baselining_job_name(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.baselining_job_name = input;
+        self
     }
     /// <p>The baseline constraint file in Amazon S3 that the current monitoring job should validated against.</p>
-    pub fn constraints_resource(mut self, input: crate::types::MonitoringConstraintsResource) -> Self {
+    pub fn constraints_resource(
+        mut self,
+        input: crate::types::MonitoringConstraintsResource,
+    ) -> Self {
         self.constraints_resource = Some(input);
         self
     }
     /// <p>The baseline constraint file in Amazon S3 that the current monitoring job should validated against.</p>
-    pub fn set_constraints_resource(mut self, input: std::option::Option<crate::types::MonitoringConstraintsResource>) -> Self {
-        self.constraints_resource = input; self
+    pub fn set_constraints_resource(
+        mut self,
+        input: std::option::Option<crate::types::MonitoringConstraintsResource>,
+    ) -> Self {
+        self.constraints_resource = input;
+        self
     }
     /// <p>The baseline statistics file in Amazon S3 that the current monitoring job should be validated against.</p>
-    pub fn statistics_resource(mut self, input: crate::types::MonitoringStatisticsResource) -> Self {
+    pub fn statistics_resource(
+        mut self,
+        input: crate::types::MonitoringStatisticsResource,
+    ) -> Self {
         self.statistics_resource = Some(input);
         self
     }
     /// <p>The baseline statistics file in Amazon S3 that the current monitoring job should be validated against.</p>
-    pub fn set_statistics_resource(mut self, input: std::option::Option<crate::types::MonitoringStatisticsResource>) -> Self {
-        self.statistics_resource = input; self
+    pub fn set_statistics_resource(
+        mut self,
+        input: std::option::Option<crate::types::MonitoringStatisticsResource>,
+    ) -> Self {
+        self.statistics_resource = input;
+        self
     }
     /// Consumes the builder and constructs a [`MonitoringBaselineConfig`](crate::types::MonitoringBaselineConfig).
     pub fn build(self) -> crate::types::MonitoringBaselineConfig {
         crate::types::MonitoringBaselineConfig {
-            baselining_job_name: self.baselining_job_name
-            ,
-            constraints_resource: self.constraints_resource
-            ,
-            statistics_resource: self.statistics_resource
-            ,
+            baselining_job_name: self.baselining_job_name,
+            constraints_resource: self.constraints_resource,
+            statistics_resource: self.statistics_resource,
         }
     }
 }
-

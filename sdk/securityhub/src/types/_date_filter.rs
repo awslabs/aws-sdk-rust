@@ -3,7 +3,7 @@
 /// <p>A date filter for querying findings.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DateFilter  {
+pub struct DateFilter {
     /// <p>A start date for the date filter.</p>
     #[doc(hidden)]
     pub start: std::option::Option<std::string::String>,
@@ -16,15 +16,15 @@ pub struct DateFilter  {
 }
 impl DateFilter {
     /// <p>A start date for the date filter.</p>
-    pub fn start(&self) -> std::option::Option<& str> {
+    pub fn start(&self) -> std::option::Option<&str> {
         self.start.as_deref()
     }
     /// <p>An end date for the date filter.</p>
-    pub fn end(&self) -> std::option::Option<& str> {
+    pub fn end(&self) -> std::option::Option<&str> {
         self.end.as_deref()
     }
     /// <p>A date range for the date filter.</p>
-    pub fn date_range(&self) -> std::option::Option<& crate::types::DateRange> {
+    pub fn date_range(&self) -> std::option::Option<&crate::types::DateRange> {
         self.date_range.as_ref()
     }
 }
@@ -51,7 +51,8 @@ impl DateFilterBuilder {
     }
     /// <p>A start date for the date filter.</p>
     pub fn set_start(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.start = input; self
+        self.start = input;
+        self
     }
     /// <p>An end date for the date filter.</p>
     pub fn end(mut self, input: impl Into<std::string::String>) -> Self {
@@ -60,7 +61,8 @@ impl DateFilterBuilder {
     }
     /// <p>An end date for the date filter.</p>
     pub fn set_end(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.end = input; self
+        self.end = input;
+        self
     }
     /// <p>A date range for the date filter.</p>
     pub fn date_range(mut self, input: crate::types::DateRange) -> Self {
@@ -69,18 +71,15 @@ impl DateFilterBuilder {
     }
     /// <p>A date range for the date filter.</p>
     pub fn set_date_range(mut self, input: std::option::Option<crate::types::DateRange>) -> Self {
-        self.date_range = input; self
+        self.date_range = input;
+        self
     }
     /// Consumes the builder and constructs a [`DateFilter`](crate::types::DateFilter).
     pub fn build(self) -> crate::types::DateFilter {
         crate::types::DateFilter {
-            start: self.start
-            ,
-            end: self.end
-            ,
-            date_range: self.date_range
-            ,
+            start: self.start,
+            end: self.end,
+            date_range: self.date_range,
         }
     }
 }
-

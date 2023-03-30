@@ -2,17 +2,18 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateMailboxQuotaOutput  {
+pub struct UpdateMailboxQuotaOutput {
     _request_id: Option<String>,
 }
 impl aws_http::request_id::RequestId for UpdateMailboxQuotaOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl UpdateMailboxQuotaOutput {
     /// Creates a new builder-style object to manufacture [`UpdateMailboxQuotaOutput`](crate::operation::update_mailbox_quota::UpdateMailboxQuotaOutput).
-    pub fn builder() -> crate::operation::update_mailbox_quota::builders::UpdateMailboxQuotaOutputBuilder {
+    pub fn builder(
+    ) -> crate::operation::update_mailbox_quota::builders::UpdateMailboxQuotaOutputBuilder {
         crate::operation::update_mailbox_quota::builders::UpdateMailboxQuotaOutputBuilder::default()
     }
 }
@@ -25,14 +26,14 @@ pub struct UpdateMailboxQuotaOutputBuilder {
 }
 impl UpdateMailboxQuotaOutputBuilder {
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`UpdateMailboxQuotaOutput`](crate::operation::update_mailbox_quota::UpdateMailboxQuotaOutput).
     pub fn build(self) -> crate::operation::update_mailbox_quota::UpdateMailboxQuotaOutput {
         crate::operation::update_mailbox_quota::UpdateMailboxQuotaOutput {
@@ -40,4 +41,3 @@ impl UpdateMailboxQuotaOutputBuilder {
         }
     }
 }
-

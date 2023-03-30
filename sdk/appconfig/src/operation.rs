@@ -129,4 +129,3 @@ pub mod update_extension_association;
 
 /// Types for the `ValidateConfiguration` operation.
 pub mod validate_configuration;
-

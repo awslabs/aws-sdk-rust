@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListVirtualNodesOutput  {
+pub struct ListVirtualNodesOutput {
     /// <p>The list of existing virtual nodes for the specified service mesh.</p>
     #[doc(hidden)]
     pub virtual_nodes: std::option::Option<std::vec::Vec<crate::types::VirtualNodeRef>>,
@@ -13,22 +13,23 @@ pub struct ListVirtualNodesOutput  {
 }
 impl ListVirtualNodesOutput {
     /// <p>The list of existing virtual nodes for the specified service mesh.</p>
-    pub fn virtual_nodes(&self) -> std::option::Option<& [crate::types::VirtualNodeRef]> {
+    pub fn virtual_nodes(&self) -> std::option::Option<&[crate::types::VirtualNodeRef]> {
         self.virtual_nodes.as_deref()
     }
     /// <p>The <code>nextToken</code> value to include in a future <code>ListVirtualNodes</code> request. When the results of a <code>ListVirtualNodes</code> request exceed <code>limit</code>, you can use this value to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for ListVirtualNodesOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl ListVirtualNodesOutput {
     /// Creates a new builder-style object to manufacture [`ListVirtualNodesOutput`](crate::operation::list_virtual_nodes::ListVirtualNodesOutput).
-    pub fn builder() -> crate::operation::list_virtual_nodes::builders::ListVirtualNodesOutputBuilder {
+    pub fn builder() -> crate::operation::list_virtual_nodes::builders::ListVirtualNodesOutputBuilder
+    {
         crate::operation::list_virtual_nodes::builders::ListVirtualNodesOutputBuilder::default()
     }
 }
@@ -49,13 +50,17 @@ impl ListVirtualNodesOutputBuilder {
     /// <p>The list of existing virtual nodes for the specified service mesh.</p>
     pub fn virtual_nodes(mut self, input: crate::types::VirtualNodeRef) -> Self {
         let mut v = self.virtual_nodes.unwrap_or_default();
-                        v.push(input);
-                        self.virtual_nodes = Some(v);
-                        self
+        v.push(input);
+        self.virtual_nodes = Some(v);
+        self
     }
     /// <p>The list of existing virtual nodes for the specified service mesh.</p>
-    pub fn set_virtual_nodes(mut self, input: std::option::Option<std::vec::Vec<crate::types::VirtualNodeRef>>) -> Self {
-        self.virtual_nodes = input; self
+    pub fn set_virtual_nodes(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::VirtualNodeRef>>,
+    ) -> Self {
+        self.virtual_nodes = input;
+        self
     }
     /// <p>The <code>nextToken</code> value to include in a future <code>ListVirtualNodes</code> request. When the results of a <code>ListVirtualNodes</code> request exceed <code>limit</code>, you can use this value to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -64,26 +69,24 @@ impl ListVirtualNodesOutputBuilder {
     }
     /// <p>The <code>nextToken</code> value to include in a future <code>ListVirtualNodes</code> request. When the results of a <code>ListVirtualNodes</code> request exceed <code>limit</code>, you can use this value to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input; self
+        self.next_token = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`ListVirtualNodesOutput`](crate::operation::list_virtual_nodes::ListVirtualNodesOutput).
     pub fn build(self) -> crate::operation::list_virtual_nodes::ListVirtualNodesOutput {
         crate::operation::list_virtual_nodes::ListVirtualNodesOutput {
-            virtual_nodes: self.virtual_nodes
-            ,
-            next_token: self.next_token
-            ,
+            virtual_nodes: self.virtual_nodes,
+            next_token: self.next_token,
             _request_id: self._request_id,
         }
     }
 }
-

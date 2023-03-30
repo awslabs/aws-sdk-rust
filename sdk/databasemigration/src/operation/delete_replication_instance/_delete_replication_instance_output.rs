@@ -3,7 +3,7 @@
 /// <p></p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteReplicationInstanceOutput  {
+pub struct DeleteReplicationInstanceOutput {
     /// <p>The replication instance that was deleted.</p>
     #[doc(hidden)]
     pub replication_instance: std::option::Option<crate::types::ReplicationInstance>,
@@ -11,18 +11,18 @@ pub struct DeleteReplicationInstanceOutput  {
 }
 impl DeleteReplicationInstanceOutput {
     /// <p>The replication instance that was deleted.</p>
-    pub fn replication_instance(&self) -> std::option::Option<& crate::types::ReplicationInstance> {
+    pub fn replication_instance(&self) -> std::option::Option<&crate::types::ReplicationInstance> {
         self.replication_instance.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for DeleteReplicationInstanceOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl DeleteReplicationInstanceOutput {
     /// Creates a new builder-style object to manufacture [`DeleteReplicationInstanceOutput`](crate::operation::delete_replication_instance::DeleteReplicationInstanceOutput).
-    pub fn builder() -> crate::operation::delete_replication_instance::builders::DeleteReplicationInstanceOutputBuilder {
+    pub fn builder() -> crate::operation::delete_replication_instance::builders::DeleteReplicationInstanceOutputBuilder{
         crate::operation::delete_replication_instance::builders::DeleteReplicationInstanceOutputBuilder::default()
     }
 }
@@ -41,25 +41,29 @@ impl DeleteReplicationInstanceOutputBuilder {
         self
     }
     /// <p>The replication instance that was deleted.</p>
-    pub fn set_replication_instance(mut self, input: std::option::Option<crate::types::ReplicationInstance>) -> Self {
-        self.replication_instance = input; self
+    pub fn set_replication_instance(
+        mut self,
+        input: std::option::Option<crate::types::ReplicationInstance>,
+    ) -> Self {
+        self.replication_instance = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`DeleteReplicationInstanceOutput`](crate::operation::delete_replication_instance::DeleteReplicationInstanceOutput).
-    pub fn build(self) -> crate::operation::delete_replication_instance::DeleteReplicationInstanceOutput {
+    pub fn build(
+        self,
+    ) -> crate::operation::delete_replication_instance::DeleteReplicationInstanceOutput {
         crate::operation::delete_replication_instance::DeleteReplicationInstanceOutput {
-            replication_instance: self.replication_instance
-            ,
+            replication_instance: self.replication_instance,
             _request_id: self._request_id,
         }
     }
 }
-

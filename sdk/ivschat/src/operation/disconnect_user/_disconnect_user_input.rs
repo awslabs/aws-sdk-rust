@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DisconnectUserInput  {
+pub struct DisconnectUserInput {
     /// <p>Identifier of the room from which the user's clients should be disconnected. Currently this must be an ARN.</p>
     #[doc(hidden)]
     pub room_identifier: std::option::Option<std::string::String>,
@@ -15,15 +15,15 @@ pub struct DisconnectUserInput  {
 }
 impl DisconnectUserInput {
     /// <p>Identifier of the room from which the user's clients should be disconnected. Currently this must be an ARN.</p>
-    pub fn room_identifier(&self) -> std::option::Option<& str> {
+    pub fn room_identifier(&self) -> std::option::Option<&str> {
         self.room_identifier.as_deref()
     }
     /// <p>ID of the user (connection) to disconnect from the room.</p>
-    pub fn user_id(&self) -> std::option::Option<& str> {
+    pub fn user_id(&self) -> std::option::Option<&str> {
         self.user_id.as_deref()
     }
     /// <p>Reason for disconnecting the user.</p>
-    pub fn reason(&self) -> std::option::Option<& str> {
+    pub fn reason(&self) -> std::option::Option<&str> {
         self.reason.as_deref()
     }
 }
@@ -50,7 +50,8 @@ impl DisconnectUserInputBuilder {
     }
     /// <p>Identifier of the room from which the user's clients should be disconnected. Currently this must be an ARN.</p>
     pub fn set_room_identifier(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.room_identifier = input; self
+        self.room_identifier = input;
+        self
     }
     /// <p>ID of the user (connection) to disconnect from the room.</p>
     pub fn user_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -59,7 +60,8 @@ impl DisconnectUserInputBuilder {
     }
     /// <p>ID of the user (connection) to disconnect from the room.</p>
     pub fn set_user_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.user_id = input; self
+        self.user_id = input;
+        self
     }
     /// <p>Reason for disconnecting the user.</p>
     pub fn reason(mut self, input: impl Into<std::string::String>) -> Self {
@@ -68,20 +70,20 @@ impl DisconnectUserInputBuilder {
     }
     /// <p>Reason for disconnecting the user.</p>
     pub fn set_reason(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.reason = input; self
+        self.reason = input;
+        self
     }
     /// Consumes the builder and constructs a [`DisconnectUserInput`](crate::operation::disconnect_user::DisconnectUserInput).
-    pub fn build(self) -> Result<crate::operation::disconnect_user::DisconnectUserInput, aws_smithy_http::operation::error::BuildError> {
-        Ok(
-            crate::operation::disconnect_user::DisconnectUserInput {
-                room_identifier: self.room_identifier
-                ,
-                user_id: self.user_id
-                ,
-                reason: self.reason
-                ,
-            }
-        )
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::disconnect_user::DisconnectUserInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        Ok(crate::operation::disconnect_user::DisconnectUserInput {
+            room_identifier: self.room_identifier,
+            user_id: self.user_id,
+            reason: self.reason,
+        })
     }
 }
-

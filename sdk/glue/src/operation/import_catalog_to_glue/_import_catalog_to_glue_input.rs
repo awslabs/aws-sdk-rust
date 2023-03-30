@@ -2,21 +2,23 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ImportCatalogToGlueInput  {
+pub struct ImportCatalogToGlueInput {
     /// <p>The ID of the catalog to import. Currently, this should be the Amazon Web Services account ID.</p>
     #[doc(hidden)]
     pub catalog_id: std::option::Option<std::string::String>,
 }
 impl ImportCatalogToGlueInput {
     /// <p>The ID of the catalog to import. Currently, this should be the Amazon Web Services account ID.</p>
-    pub fn catalog_id(&self) -> std::option::Option<& str> {
+    pub fn catalog_id(&self) -> std::option::Option<&str> {
         self.catalog_id.as_deref()
     }
 }
 impl ImportCatalogToGlueInput {
     /// Creates a new builder-style object to manufacture [`ImportCatalogToGlueInput`](crate::operation::import_catalog_to_glue::ImportCatalogToGlueInput).
-    pub fn builder() -> crate::operation::import_catalog_to_glue::builders::ImportCatalogToGlueInputBuilder {
-        crate::operation::import_catalog_to_glue::builders::ImportCatalogToGlueInputBuilder::default()
+    pub fn builder(
+    ) -> crate::operation::import_catalog_to_glue::builders::ImportCatalogToGlueInputBuilder {
+        crate::operation::import_catalog_to_glue::builders::ImportCatalogToGlueInputBuilder::default(
+        )
     }
 }
 
@@ -34,16 +36,20 @@ impl ImportCatalogToGlueInputBuilder {
     }
     /// <p>The ID of the catalog to import. Currently, this should be the Amazon Web Services account ID.</p>
     pub fn set_catalog_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.catalog_id = input; self
+        self.catalog_id = input;
+        self
     }
     /// Consumes the builder and constructs a [`ImportCatalogToGlueInput`](crate::operation::import_catalog_to_glue::ImportCatalogToGlueInput).
-    pub fn build(self) -> Result<crate::operation::import_catalog_to_glue::ImportCatalogToGlueInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::import_catalog_to_glue::ImportCatalogToGlueInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::import_catalog_to_glue::ImportCatalogToGlueInput {
-                catalog_id: self.catalog_id
-                ,
-            }
+                catalog_id: self.catalog_id,
+            },
         )
     }
 }
-

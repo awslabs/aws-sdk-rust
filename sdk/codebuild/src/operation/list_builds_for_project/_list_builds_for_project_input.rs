@@ -2,16 +2,16 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListBuildsForProjectInput  {
+pub struct ListBuildsForProjectInput {
     /// <p>The name of the CodeBuild project.</p>
     #[doc(hidden)]
     pub project_name: std::option::Option<std::string::String>,
-    /// <p>The order to sort the results in. The results are sorted by build number, not the build identifier. If this is not specified, the results are sorted in descending order.</p> 
-    /// <p>Valid values include:</p> 
-    /// <ul> 
-    /// <li> <p> <code>ASCENDING</code>: List the build identifiers in ascending order, by build number.</p> </li> 
-    /// <li> <p> <code>DESCENDING</code>: List the build identifiers in descending order, by build number.</p> </li> 
-    /// </ul> 
+    /// <p>The order to sort the results in. The results are sorted by build number, not the build identifier. If this is not specified, the results are sorted in descending order.</p>
+    /// <p>Valid values include:</p>
+    /// <ul>
+    /// <li> <p> <code>ASCENDING</code>: List the build identifiers in ascending order, by build number.</p> </li>
+    /// <li> <p> <code>DESCENDING</code>: List the build identifiers in descending order, by build number.</p> </li>
+    /// </ul>
     /// <p>If the project has more than 100 builds, setting the sort order will result in an error. </p>
     #[doc(hidden)]
     pub sort_order: std::option::Option<crate::types::SortOrderType>,
@@ -21,27 +21,28 @@ pub struct ListBuildsForProjectInput  {
 }
 impl ListBuildsForProjectInput {
     /// <p>The name of the CodeBuild project.</p>
-    pub fn project_name(&self) -> std::option::Option<& str> {
+    pub fn project_name(&self) -> std::option::Option<&str> {
         self.project_name.as_deref()
     }
-    /// <p>The order to sort the results in. The results are sorted by build number, not the build identifier. If this is not specified, the results are sorted in descending order.</p> 
-    /// <p>Valid values include:</p> 
-    /// <ul> 
-    /// <li> <p> <code>ASCENDING</code>: List the build identifiers in ascending order, by build number.</p> </li> 
-    /// <li> <p> <code>DESCENDING</code>: List the build identifiers in descending order, by build number.</p> </li> 
-    /// </ul> 
+    /// <p>The order to sort the results in. The results are sorted by build number, not the build identifier. If this is not specified, the results are sorted in descending order.</p>
+    /// <p>Valid values include:</p>
+    /// <ul>
+    /// <li> <p> <code>ASCENDING</code>: List the build identifiers in ascending order, by build number.</p> </li>
+    /// <li> <p> <code>DESCENDING</code>: List the build identifiers in descending order, by build number.</p> </li>
+    /// </ul>
     /// <p>If the project has more than 100 builds, setting the sort order will result in an error. </p>
-    pub fn sort_order(&self) -> std::option::Option<& crate::types::SortOrderType> {
+    pub fn sort_order(&self) -> std::option::Option<&crate::types::SortOrderType> {
         self.sort_order.as_ref()
     }
     /// <p>During a previous call, if there are more than 100 items in the list, only the first 100 items are returned, along with a unique string called a <i>nextToken</i>. To get the next batch of items in the list, call this operation again, adding the next token to the call. To get all of the items in the list, keep calling this operation with each subsequent next token that is returned, until no more next tokens are returned.</p>
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
 }
 impl ListBuildsForProjectInput {
     /// Creates a new builder-style object to manufacture [`ListBuildsForProjectInput`](crate::operation::list_builds_for_project::ListBuildsForProjectInput).
-    pub fn builder() -> crate::operation::list_builds_for_project::builders::ListBuildsForProjectInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::list_builds_for_project::builders::ListBuildsForProjectInputBuilder {
         crate::operation::list_builds_for_project::builders::ListBuildsForProjectInputBuilder::default()
     }
 }
@@ -62,28 +63,33 @@ impl ListBuildsForProjectInputBuilder {
     }
     /// <p>The name of the CodeBuild project.</p>
     pub fn set_project_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.project_name = input; self
+        self.project_name = input;
+        self
     }
-    /// <p>The order to sort the results in. The results are sorted by build number, not the build identifier. If this is not specified, the results are sorted in descending order.</p> 
-    /// <p>Valid values include:</p> 
-    /// <ul> 
-    /// <li> <p> <code>ASCENDING</code>: List the build identifiers in ascending order, by build number.</p> </li> 
-    /// <li> <p> <code>DESCENDING</code>: List the build identifiers in descending order, by build number.</p> </li> 
-    /// </ul> 
+    /// <p>The order to sort the results in. The results are sorted by build number, not the build identifier. If this is not specified, the results are sorted in descending order.</p>
+    /// <p>Valid values include:</p>
+    /// <ul>
+    /// <li> <p> <code>ASCENDING</code>: List the build identifiers in ascending order, by build number.</p> </li>
+    /// <li> <p> <code>DESCENDING</code>: List the build identifiers in descending order, by build number.</p> </li>
+    /// </ul>
     /// <p>If the project has more than 100 builds, setting the sort order will result in an error. </p>
     pub fn sort_order(mut self, input: crate::types::SortOrderType) -> Self {
         self.sort_order = Some(input);
         self
     }
-    /// <p>The order to sort the results in. The results are sorted by build number, not the build identifier. If this is not specified, the results are sorted in descending order.</p> 
-    /// <p>Valid values include:</p> 
-    /// <ul> 
-    /// <li> <p> <code>ASCENDING</code>: List the build identifiers in ascending order, by build number.</p> </li> 
-    /// <li> <p> <code>DESCENDING</code>: List the build identifiers in descending order, by build number.</p> </li> 
-    /// </ul> 
+    /// <p>The order to sort the results in. The results are sorted by build number, not the build identifier. If this is not specified, the results are sorted in descending order.</p>
+    /// <p>Valid values include:</p>
+    /// <ul>
+    /// <li> <p> <code>ASCENDING</code>: List the build identifiers in ascending order, by build number.</p> </li>
+    /// <li> <p> <code>DESCENDING</code>: List the build identifiers in descending order, by build number.</p> </li>
+    /// </ul>
     /// <p>If the project has more than 100 builds, setting the sort order will result in an error. </p>
-    pub fn set_sort_order(mut self, input: std::option::Option<crate::types::SortOrderType>) -> Self {
-        self.sort_order = input; self
+    pub fn set_sort_order(
+        mut self,
+        input: std::option::Option<crate::types::SortOrderType>,
+    ) -> Self {
+        self.sort_order = input;
+        self
     }
     /// <p>During a previous call, if there are more than 100 items in the list, only the first 100 items are returned, along with a unique string called a <i>nextToken</i>. To get the next batch of items in the list, call this operation again, adding the next token to the call. To get all of the items in the list, keep calling this operation with each subsequent next token that is returned, until no more next tokens are returned.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -92,20 +98,22 @@ impl ListBuildsForProjectInputBuilder {
     }
     /// <p>During a previous call, if there are more than 100 items in the list, only the first 100 items are returned, along with a unique string called a <i>nextToken</i>. To get the next batch of items in the list, call this operation again, adding the next token to the call. To get all of the items in the list, keep calling this operation with each subsequent next token that is returned, until no more next tokens are returned.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input; self
+        self.next_token = input;
+        self
     }
     /// Consumes the builder and constructs a [`ListBuildsForProjectInput`](crate::operation::list_builds_for_project::ListBuildsForProjectInput).
-    pub fn build(self) -> Result<crate::operation::list_builds_for_project::ListBuildsForProjectInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::list_builds_for_project::ListBuildsForProjectInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::list_builds_for_project::ListBuildsForProjectInput {
-                project_name: self.project_name
-                ,
-                sort_order: self.sort_order
-                ,
-                next_token: self.next_token
-                ,
-            }
+                project_name: self.project_name,
+                sort_order: self.sort_order,
+                next_token: self.next_token,
+            },
         )
     }
 }
-

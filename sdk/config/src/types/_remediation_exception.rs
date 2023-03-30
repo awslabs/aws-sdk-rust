@@ -3,7 +3,7 @@
 /// <p>An object that represents the details about the remediation exception. The details include the rule name, an explanation of an exception, the time when the exception will be deleted, the resource ID, and resource type. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct RemediationException  {
+pub struct RemediationException {
     /// <p>The name of the Config rule.</p>
     #[doc(hidden)]
     pub config_rule_name: std::option::Option<std::string::String>,
@@ -22,23 +22,23 @@ pub struct RemediationException  {
 }
 impl RemediationException {
     /// <p>The name of the Config rule.</p>
-    pub fn config_rule_name(&self) -> std::option::Option<& str> {
+    pub fn config_rule_name(&self) -> std::option::Option<&str> {
         self.config_rule_name.as_deref()
     }
     /// <p>The type of a resource.</p>
-    pub fn resource_type(&self) -> std::option::Option<& str> {
+    pub fn resource_type(&self) -> std::option::Option<&str> {
         self.resource_type.as_deref()
     }
     /// <p>The ID of the resource (for example., sg-xxxxxx).</p>
-    pub fn resource_id(&self) -> std::option::Option<& str> {
+    pub fn resource_id(&self) -> std::option::Option<&str> {
         self.resource_id.as_deref()
     }
     /// <p>An explanation of an remediation exception.</p>
-    pub fn message(&self) -> std::option::Option<& str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
     /// <p>The time when the remediation exception will be deleted.</p>
-    pub fn expiration_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
+    pub fn expiration_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.expiration_time.as_ref()
     }
 }
@@ -67,7 +67,8 @@ impl RemediationExceptionBuilder {
     }
     /// <p>The name of the Config rule.</p>
     pub fn set_config_rule_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.config_rule_name = input; self
+        self.config_rule_name = input;
+        self
     }
     /// <p>The type of a resource.</p>
     pub fn resource_type(mut self, input: impl Into<std::string::String>) -> Self {
@@ -76,7 +77,8 @@ impl RemediationExceptionBuilder {
     }
     /// <p>The type of a resource.</p>
     pub fn set_resource_type(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.resource_type = input; self
+        self.resource_type = input;
+        self
     }
     /// <p>The ID of the resource (for example., sg-xxxxxx).</p>
     pub fn resource_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -85,7 +87,8 @@ impl RemediationExceptionBuilder {
     }
     /// <p>The ID of the resource (for example., sg-xxxxxx).</p>
     pub fn set_resource_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.resource_id = input; self
+        self.resource_id = input;
+        self
     }
     /// <p>An explanation of an remediation exception.</p>
     pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
@@ -94,7 +97,8 @@ impl RemediationExceptionBuilder {
     }
     /// <p>An explanation of an remediation exception.</p>
     pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.message = input; self
+        self.message = input;
+        self
     }
     /// <p>The time when the remediation exception will be deleted.</p>
     pub fn expiration_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -102,23 +106,21 @@ impl RemediationExceptionBuilder {
         self
     }
     /// <p>The time when the remediation exception will be deleted.</p>
-    pub fn set_expiration_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.expiration_time = input; self
+    pub fn set_expiration_time(
+        mut self,
+        input: std::option::Option<aws_smithy_types::DateTime>,
+    ) -> Self {
+        self.expiration_time = input;
+        self
     }
     /// Consumes the builder and constructs a [`RemediationException`](crate::types::RemediationException).
     pub fn build(self) -> crate::types::RemediationException {
         crate::types::RemediationException {
-            config_rule_name: self.config_rule_name
-            ,
-            resource_type: self.resource_type
-            ,
-            resource_id: self.resource_id
-            ,
-            message: self.message
-            ,
-            expiration_time: self.expiration_time
-            ,
+            config_rule_name: self.config_rule_name,
+            resource_type: self.resource_type,
+            resource_id: self.resource_id,
+            message: self.message,
+            expiration_time: self.expiration_time,
         }
     }
 }
-

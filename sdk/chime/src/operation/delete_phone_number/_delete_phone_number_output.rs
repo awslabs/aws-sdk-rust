@@ -2,17 +2,18 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeletePhoneNumberOutput  {
+pub struct DeletePhoneNumberOutput {
     _request_id: Option<String>,
 }
 impl aws_http::request_id::RequestId for DeletePhoneNumberOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl DeletePhoneNumberOutput {
     /// Creates a new builder-style object to manufacture [`DeletePhoneNumberOutput`](crate::operation::delete_phone_number::DeletePhoneNumberOutput).
-    pub fn builder() -> crate::operation::delete_phone_number::builders::DeletePhoneNumberOutputBuilder {
+    pub fn builder(
+    ) -> crate::operation::delete_phone_number::builders::DeletePhoneNumberOutputBuilder {
         crate::operation::delete_phone_number::builders::DeletePhoneNumberOutputBuilder::default()
     }
 }
@@ -25,14 +26,14 @@ pub struct DeletePhoneNumberOutputBuilder {
 }
 impl DeletePhoneNumberOutputBuilder {
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`DeletePhoneNumberOutput`](crate::operation::delete_phone_number::DeletePhoneNumberOutput).
     pub fn build(self) -> crate::operation::delete_phone_number::DeletePhoneNumberOutput {
         crate::operation::delete_phone_number::DeletePhoneNumberOutput {
@@ -40,4 +41,3 @@ impl DeletePhoneNumberOutputBuilder {
         }
     }
 }
-

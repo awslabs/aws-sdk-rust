@@ -1076,4 +1076,3 @@ pub use crate::types::_severity_update::SeverityUpdateBuilder;
 pub use crate::types::_import_findings_error::ImportFindingsErrorBuilder;
 
 pub use crate::types::_standards_subscription_request::StandardsSubscriptionRequestBuilder;
-

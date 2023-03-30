@@ -3,7 +3,7 @@
 /// The option to configure log subscription.
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ConfigureLogsInput  {
+pub struct ConfigureLogsInput {
     /// Configure egress access logging.
     #[doc(hidden)]
     pub egress_access_logs: std::option::Option<crate::types::EgressAccessLogs>,
@@ -13,11 +13,11 @@ pub struct ConfigureLogsInput  {
 }
 impl ConfigureLogsInput {
     /// Configure egress access logging.
-    pub fn egress_access_logs(&self) -> std::option::Option<& crate::types::EgressAccessLogs> {
+    pub fn egress_access_logs(&self) -> std::option::Option<&crate::types::EgressAccessLogs> {
         self.egress_access_logs.as_ref()
     }
     /// The ID of a MediaPackage VOD PackagingGroup resource.
-    pub fn id(&self) -> std::option::Option<& str> {
+    pub fn id(&self) -> std::option::Option<&str> {
         self.id.as_deref()
     }
 }
@@ -42,8 +42,12 @@ impl ConfigureLogsInputBuilder {
         self
     }
     /// Configure egress access logging.
-    pub fn set_egress_access_logs(mut self, input: std::option::Option<crate::types::EgressAccessLogs>) -> Self {
-        self.egress_access_logs = input; self
+    pub fn set_egress_access_logs(
+        mut self,
+        input: std::option::Option<crate::types::EgressAccessLogs>,
+    ) -> Self {
+        self.egress_access_logs = input;
+        self
     }
     /// The ID of a MediaPackage VOD PackagingGroup resource.
     pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -52,18 +56,19 @@ impl ConfigureLogsInputBuilder {
     }
     /// The ID of a MediaPackage VOD PackagingGroup resource.
     pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.id = input; self
+        self.id = input;
+        self
     }
     /// Consumes the builder and constructs a [`ConfigureLogsInput`](crate::operation::configure_logs::ConfigureLogsInput).
-    pub fn build(self) -> Result<crate::operation::configure_logs::ConfigureLogsInput, aws_smithy_http::operation::error::BuildError> {
-        Ok(
-            crate::operation::configure_logs::ConfigureLogsInput {
-                egress_access_logs: self.egress_access_logs
-                ,
-                id: self.id
-                ,
-            }
-        )
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::configure_logs::ConfigureLogsInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        Ok(crate::operation::configure_logs::ConfigureLogsInput {
+            egress_access_logs: self.egress_access_logs,
+            id: self.id,
+        })
     }
 }
-

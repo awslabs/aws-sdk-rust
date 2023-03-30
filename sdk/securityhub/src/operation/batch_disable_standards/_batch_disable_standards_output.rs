@@ -2,26 +2,31 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct BatchDisableStandardsOutput  {
+pub struct BatchDisableStandardsOutput {
     /// <p>The details of the standards subscriptions that were disabled.</p>
     #[doc(hidden)]
-    pub standards_subscriptions: std::option::Option<std::vec::Vec<crate::types::StandardsSubscription>>,
+    pub standards_subscriptions:
+        std::option::Option<std::vec::Vec<crate::types::StandardsSubscription>>,
     _request_id: Option<String>,
 }
 impl BatchDisableStandardsOutput {
     /// <p>The details of the standards subscriptions that were disabled.</p>
-    pub fn standards_subscriptions(&self) -> std::option::Option<& [crate::types::StandardsSubscription]> {
+    pub fn standards_subscriptions(
+        &self,
+    ) -> std::option::Option<&[crate::types::StandardsSubscription]> {
         self.standards_subscriptions.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for BatchDisableStandardsOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl BatchDisableStandardsOutput {
     /// Creates a new builder-style object to manufacture [`BatchDisableStandardsOutput`](crate::operation::batch_disable_standards::BatchDisableStandardsOutput).
-    pub fn builder() -> crate::operation::batch_disable_standards::builders::BatchDisableStandardsOutputBuilder {
+    pub fn builder(
+    ) -> crate::operation::batch_disable_standards::builders::BatchDisableStandardsOutputBuilder
+    {
         crate::operation::batch_disable_standards::builders::BatchDisableStandardsOutputBuilder::default()
     }
 }
@@ -30,7 +35,8 @@ impl BatchDisableStandardsOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct BatchDisableStandardsOutputBuilder {
-    pub(crate) standards_subscriptions: std::option::Option<std::vec::Vec<crate::types::StandardsSubscription>>,
+    pub(crate) standards_subscriptions:
+        std::option::Option<std::vec::Vec<crate::types::StandardsSubscription>>,
     _request_id: Option<String>,
 }
 impl BatchDisableStandardsOutputBuilder {
@@ -41,30 +47,32 @@ impl BatchDisableStandardsOutputBuilder {
     /// <p>The details of the standards subscriptions that were disabled.</p>
     pub fn standards_subscriptions(mut self, input: crate::types::StandardsSubscription) -> Self {
         let mut v = self.standards_subscriptions.unwrap_or_default();
-                        v.push(input);
-                        self.standards_subscriptions = Some(v);
-                        self
+        v.push(input);
+        self.standards_subscriptions = Some(v);
+        self
     }
     /// <p>The details of the standards subscriptions that were disabled.</p>
-    pub fn set_standards_subscriptions(mut self, input: std::option::Option<std::vec::Vec<crate::types::StandardsSubscription>>) -> Self {
-        self.standards_subscriptions = input; self
+    pub fn set_standards_subscriptions(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::StandardsSubscription>>,
+    ) -> Self {
+        self.standards_subscriptions = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`BatchDisableStandardsOutput`](crate::operation::batch_disable_standards::BatchDisableStandardsOutput).
     pub fn build(self) -> crate::operation::batch_disable_standards::BatchDisableStandardsOutput {
         crate::operation::batch_disable_standards::BatchDisableStandardsOutput {
-            standards_subscriptions: self.standards_subscriptions
-            ,
+            standards_subscriptions: self.standards_subscriptions,
             _request_id: self._request_id,
         }
     }
 }
-

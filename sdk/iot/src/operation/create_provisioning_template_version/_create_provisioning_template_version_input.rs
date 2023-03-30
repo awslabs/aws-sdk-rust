@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateProvisioningTemplateVersionInput  {
+pub struct CreateProvisioningTemplateVersionInput {
     /// <p>The name of the provisioning template.</p>
     #[doc(hidden)]
     pub template_name: std::option::Option<std::string::String>,
@@ -15,11 +15,11 @@ pub struct CreateProvisioningTemplateVersionInput  {
 }
 impl CreateProvisioningTemplateVersionInput {
     /// <p>The name of the provisioning template.</p>
-    pub fn template_name(&self) -> std::option::Option<& str> {
+    pub fn template_name(&self) -> std::option::Option<&str> {
         self.template_name.as_deref()
     }
     /// <p>The JSON formatted contents of the provisioning template.</p>
-    pub fn template_body(&self) -> std::option::Option<& str> {
+    pub fn template_body(&self) -> std::option::Option<&str> {
         self.template_body.as_deref()
     }
     /// <p>Sets a fleet provision template version as the default version.</p>
@@ -29,7 +29,7 @@ impl CreateProvisioningTemplateVersionInput {
 }
 impl CreateProvisioningTemplateVersionInput {
     /// Creates a new builder-style object to manufacture [`CreateProvisioningTemplateVersionInput`](crate::operation::create_provisioning_template_version::CreateProvisioningTemplateVersionInput).
-    pub fn builder() -> crate::operation::create_provisioning_template_version::builders::CreateProvisioningTemplateVersionInputBuilder {
+    pub fn builder() -> crate::operation::create_provisioning_template_version::builders::CreateProvisioningTemplateVersionInputBuilder{
         crate::operation::create_provisioning_template_version::builders::CreateProvisioningTemplateVersionInputBuilder::default()
     }
 }
@@ -50,7 +50,8 @@ impl CreateProvisioningTemplateVersionInputBuilder {
     }
     /// <p>The name of the provisioning template.</p>
     pub fn set_template_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.template_name = input; self
+        self.template_name = input;
+        self
     }
     /// <p>The JSON formatted contents of the provisioning template.</p>
     pub fn template_body(mut self, input: impl Into<std::string::String>) -> Self {
@@ -59,7 +60,8 @@ impl CreateProvisioningTemplateVersionInputBuilder {
     }
     /// <p>The JSON formatted contents of the provisioning template.</p>
     pub fn set_template_body(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.template_body = input; self
+        self.template_body = input;
+        self
     }
     /// <p>Sets a fleet provision template version as the default version.</p>
     pub fn set_as_default(mut self, input: bool) -> Self {
@@ -68,10 +70,11 @@ impl CreateProvisioningTemplateVersionInputBuilder {
     }
     /// <p>Sets a fleet provision template version as the default version.</p>
     pub fn set_set_as_default(mut self, input: std::option::Option<bool>) -> Self {
-        self.set_as_default = input; self
+        self.set_as_default = input;
+        self
     }
     /// Consumes the builder and constructs a [`CreateProvisioningTemplateVersionInput`](crate::operation::create_provisioning_template_version::CreateProvisioningTemplateVersionInput).
-    pub fn build(self) -> Result<crate::operation::create_provisioning_template_version::CreateProvisioningTemplateVersionInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> Result<crate::operation::create_provisioning_template_version::CreateProvisioningTemplateVersionInput, aws_smithy_http::operation::error::BuildError>{
         Ok(
             crate::operation::create_provisioning_template_version::CreateProvisioningTemplateVersionInput {
                 template_name: self.template_name
@@ -85,4 +88,3 @@ impl CreateProvisioningTemplateVersionInputBuilder {
         )
     }
 }
-

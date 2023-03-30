@@ -2,14 +2,14 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetRoomInput  {
+pub struct GetRoomInput {
     /// <p>The ARN of the room for which to request details. Required.</p>
     #[doc(hidden)]
     pub room_arn: std::option::Option<std::string::String>,
 }
 impl GetRoomInput {
     /// <p>The ARN of the room for which to request details. Required.</p>
-    pub fn room_arn(&self) -> std::option::Option<& str> {
+    pub fn room_arn(&self) -> std::option::Option<&str> {
         self.room_arn.as_deref()
     }
 }
@@ -34,16 +34,18 @@ impl GetRoomInputBuilder {
     }
     /// <p>The ARN of the room for which to request details. Required.</p>
     pub fn set_room_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.room_arn = input; self
+        self.room_arn = input;
+        self
     }
     /// Consumes the builder and constructs a [`GetRoomInput`](crate::operation::get_room::GetRoomInput).
-    pub fn build(self) -> Result<crate::operation::get_room::GetRoomInput, aws_smithy_http::operation::error::BuildError> {
-        Ok(
-            crate::operation::get_room::GetRoomInput {
-                room_arn: self.room_arn
-                ,
-            }
-        )
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::get_room::GetRoomInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        Ok(crate::operation::get_room::GetRoomInput {
+            room_arn: self.room_arn,
+        })
     }
 }
-

@@ -3,7 +3,7 @@
 /// <p>Detailed information about an activity type.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ActivityTypeInfo  {
+pub struct ActivityTypeInfo {
     /// <p>The <code>ActivityType</code> type structure representing the activity type.</p>
     #[doc(hidden)]
     pub activity_type: std::option::Option<crate::types::ActivityType>,
@@ -22,23 +22,23 @@ pub struct ActivityTypeInfo  {
 }
 impl ActivityTypeInfo {
     /// <p>The <code>ActivityType</code> type structure representing the activity type.</p>
-    pub fn activity_type(&self) -> std::option::Option<& crate::types::ActivityType> {
+    pub fn activity_type(&self) -> std::option::Option<&crate::types::ActivityType> {
         self.activity_type.as_ref()
     }
     /// <p>The current status of the activity type.</p>
-    pub fn status(&self) -> std::option::Option<& crate::types::RegistrationStatus> {
+    pub fn status(&self) -> std::option::Option<&crate::types::RegistrationStatus> {
         self.status.as_ref()
     }
     /// <p>The description of the activity type provided in <code>RegisterActivityType</code>.</p>
-    pub fn description(&self) -> std::option::Option<& str> {
+    pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
     /// <p>The date and time this activity type was created through <code>RegisterActivityType</code>.</p>
-    pub fn creation_date(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
+    pub fn creation_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.creation_date.as_ref()
     }
     /// <p>If DEPRECATED, the date and time <code>DeprecateActivityType</code> was called.</p>
-    pub fn deprecation_date(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
+    pub fn deprecation_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.deprecation_date.as_ref()
     }
 }
@@ -66,8 +66,12 @@ impl ActivityTypeInfoBuilder {
         self
     }
     /// <p>The <code>ActivityType</code> type structure representing the activity type.</p>
-    pub fn set_activity_type(mut self, input: std::option::Option<crate::types::ActivityType>) -> Self {
-        self.activity_type = input; self
+    pub fn set_activity_type(
+        mut self,
+        input: std::option::Option<crate::types::ActivityType>,
+    ) -> Self {
+        self.activity_type = input;
+        self
     }
     /// <p>The current status of the activity type.</p>
     pub fn status(mut self, input: crate::types::RegistrationStatus) -> Self {
@@ -75,8 +79,12 @@ impl ActivityTypeInfoBuilder {
         self
     }
     /// <p>The current status of the activity type.</p>
-    pub fn set_status(mut self, input: std::option::Option<crate::types::RegistrationStatus>) -> Self {
-        self.status = input; self
+    pub fn set_status(
+        mut self,
+        input: std::option::Option<crate::types::RegistrationStatus>,
+    ) -> Self {
+        self.status = input;
+        self
     }
     /// <p>The description of the activity type provided in <code>RegisterActivityType</code>.</p>
     pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -85,7 +93,8 @@ impl ActivityTypeInfoBuilder {
     }
     /// <p>The description of the activity type provided in <code>RegisterActivityType</code>.</p>
     pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.description = input; self
+        self.description = input;
+        self
     }
     /// <p>The date and time this activity type was created through <code>RegisterActivityType</code>.</p>
     pub fn creation_date(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -93,8 +102,12 @@ impl ActivityTypeInfoBuilder {
         self
     }
     /// <p>The date and time this activity type was created through <code>RegisterActivityType</code>.</p>
-    pub fn set_creation_date(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.creation_date = input; self
+    pub fn set_creation_date(
+        mut self,
+        input: std::option::Option<aws_smithy_types::DateTime>,
+    ) -> Self {
+        self.creation_date = input;
+        self
     }
     /// <p>If DEPRECATED, the date and time <code>DeprecateActivityType</code> was called.</p>
     pub fn deprecation_date(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -102,23 +115,21 @@ impl ActivityTypeInfoBuilder {
         self
     }
     /// <p>If DEPRECATED, the date and time <code>DeprecateActivityType</code> was called.</p>
-    pub fn set_deprecation_date(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.deprecation_date = input; self
+    pub fn set_deprecation_date(
+        mut self,
+        input: std::option::Option<aws_smithy_types::DateTime>,
+    ) -> Self {
+        self.deprecation_date = input;
+        self
     }
     /// Consumes the builder and constructs a [`ActivityTypeInfo`](crate::types::ActivityTypeInfo).
     pub fn build(self) -> crate::types::ActivityTypeInfo {
         crate::types::ActivityTypeInfo {
-            activity_type: self.activity_type
-            ,
-            status: self.status
-            ,
-            description: self.description
-            ,
-            creation_date: self.creation_date
-            ,
-            deprecation_date: self.deprecation_date
-            ,
+            activity_type: self.activity_type,
+            status: self.status,
+            description: self.description,
+            creation_date: self.creation_date,
+            deprecation_date: self.deprecation_date,
         }
     }
 }
-

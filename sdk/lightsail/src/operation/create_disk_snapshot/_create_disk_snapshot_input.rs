@@ -2,51 +2,52 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateDiskSnapshotInput  {
-    /// <p>The unique name of the source disk (e.g., <code>Disk-Virginia-1</code>).</p> <note> 
-    /// <p>This parameter cannot be defined together with the <code>instance name</code> parameter. The <code>disk name</code> and <code>instance name</code> parameters are mutually exclusive.</p> 
+pub struct CreateDiskSnapshotInput {
+    /// <p>The unique name of the source disk (e.g., <code>Disk-Virginia-1</code>).</p> <note>
+    /// <p>This parameter cannot be defined together with the <code>instance name</code> parameter. The <code>disk name</code> and <code>instance name</code> parameters are mutually exclusive.</p>
     /// </note>
     #[doc(hidden)]
     pub disk_name: std::option::Option<std::string::String>,
     /// <p>The name of the destination disk snapshot (e.g., <code>my-disk-snapshot</code>) based on the source disk.</p>
     #[doc(hidden)]
     pub disk_snapshot_name: std::option::Option<std::string::String>,
-    /// <p>The unique name of the source instance (e.g., <code>Amazon_Linux-512MB-Virginia-1</code>). When this is defined, a snapshot of the instance's system volume is created.</p> <note> 
-    /// <p>This parameter cannot be defined together with the <code>disk name</code> parameter. The <code>instance name</code> and <code>disk name</code> parameters are mutually exclusive.</p> 
+    /// <p>The unique name of the source instance (e.g., <code>Amazon_Linux-512MB-Virginia-1</code>). When this is defined, a snapshot of the instance's system volume is created.</p> <note>
+    /// <p>This parameter cannot be defined together with the <code>disk name</code> parameter. The <code>instance name</code> and <code>disk name</code> parameters are mutually exclusive.</p>
     /// </note>
     #[doc(hidden)]
     pub instance_name: std::option::Option<std::string::String>,
-    /// <p>The tag keys and optional values to add to the resource during create.</p> 
+    /// <p>The tag keys and optional values to add to the resource during create.</p>
     /// <p>Use the <code>TagResource</code> action to tag a resource after it's created.</p>
     #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::types::Tag>>,
 }
 impl CreateDiskSnapshotInput {
-    /// <p>The unique name of the source disk (e.g., <code>Disk-Virginia-1</code>).</p> <note> 
-    /// <p>This parameter cannot be defined together with the <code>instance name</code> parameter. The <code>disk name</code> and <code>instance name</code> parameters are mutually exclusive.</p> 
+    /// <p>The unique name of the source disk (e.g., <code>Disk-Virginia-1</code>).</p> <note>
+    /// <p>This parameter cannot be defined together with the <code>instance name</code> parameter. The <code>disk name</code> and <code>instance name</code> parameters are mutually exclusive.</p>
     /// </note>
-    pub fn disk_name(&self) -> std::option::Option<& str> {
+    pub fn disk_name(&self) -> std::option::Option<&str> {
         self.disk_name.as_deref()
     }
     /// <p>The name of the destination disk snapshot (e.g., <code>my-disk-snapshot</code>) based on the source disk.</p>
-    pub fn disk_snapshot_name(&self) -> std::option::Option<& str> {
+    pub fn disk_snapshot_name(&self) -> std::option::Option<&str> {
         self.disk_snapshot_name.as_deref()
     }
-    /// <p>The unique name of the source instance (e.g., <code>Amazon_Linux-512MB-Virginia-1</code>). When this is defined, a snapshot of the instance's system volume is created.</p> <note> 
-    /// <p>This parameter cannot be defined together with the <code>disk name</code> parameter. The <code>instance name</code> and <code>disk name</code> parameters are mutually exclusive.</p> 
+    /// <p>The unique name of the source instance (e.g., <code>Amazon_Linux-512MB-Virginia-1</code>). When this is defined, a snapshot of the instance's system volume is created.</p> <note>
+    /// <p>This parameter cannot be defined together with the <code>disk name</code> parameter. The <code>instance name</code> and <code>disk name</code> parameters are mutually exclusive.</p>
     /// </note>
-    pub fn instance_name(&self) -> std::option::Option<& str> {
+    pub fn instance_name(&self) -> std::option::Option<&str> {
         self.instance_name.as_deref()
     }
-    /// <p>The tag keys and optional values to add to the resource during create.</p> 
+    /// <p>The tag keys and optional values to add to the resource during create.</p>
     /// <p>Use the <code>TagResource</code> action to tag a resource after it's created.</p>
-    pub fn tags(&self) -> std::option::Option<& [crate::types::Tag]> {
+    pub fn tags(&self) -> std::option::Option<&[crate::types::Tag]> {
         self.tags.as_deref()
     }
 }
 impl CreateDiskSnapshotInput {
     /// Creates a new builder-style object to manufacture [`CreateDiskSnapshotInput`](crate::operation::create_disk_snapshot::CreateDiskSnapshotInput).
-    pub fn builder() -> crate::operation::create_disk_snapshot::builders::CreateDiskSnapshotInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::create_disk_snapshot::builders::CreateDiskSnapshotInputBuilder {
         crate::operation::create_disk_snapshot::builders::CreateDiskSnapshotInputBuilder::default()
     }
 }
@@ -61,18 +62,19 @@ pub struct CreateDiskSnapshotInputBuilder {
     pub(crate) tags: std::option::Option<std::vec::Vec<crate::types::Tag>>,
 }
 impl CreateDiskSnapshotInputBuilder {
-    /// <p>The unique name of the source disk (e.g., <code>Disk-Virginia-1</code>).</p> <note> 
-    /// <p>This parameter cannot be defined together with the <code>instance name</code> parameter. The <code>disk name</code> and <code>instance name</code> parameters are mutually exclusive.</p> 
+    /// <p>The unique name of the source disk (e.g., <code>Disk-Virginia-1</code>).</p> <note>
+    /// <p>This parameter cannot be defined together with the <code>instance name</code> parameter. The <code>disk name</code> and <code>instance name</code> parameters are mutually exclusive.</p>
     /// </note>
     pub fn disk_name(mut self, input: impl Into<std::string::String>) -> Self {
         self.disk_name = Some(input.into());
         self
     }
-    /// <p>The unique name of the source disk (e.g., <code>Disk-Virginia-1</code>).</p> <note> 
-    /// <p>This parameter cannot be defined together with the <code>instance name</code> parameter. The <code>disk name</code> and <code>instance name</code> parameters are mutually exclusive.</p> 
+    /// <p>The unique name of the source disk (e.g., <code>Disk-Virginia-1</code>).</p> <note>
+    /// <p>This parameter cannot be defined together with the <code>instance name</code> parameter. The <code>disk name</code> and <code>instance name</code> parameters are mutually exclusive.</p>
     /// </note>
     pub fn set_disk_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.disk_name = input; self
+        self.disk_name = input;
+        self
     }
     /// <p>The name of the destination disk snapshot (e.g., <code>my-disk-snapshot</code>) based on the source disk.</p>
     pub fn disk_snapshot_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -80,53 +82,62 @@ impl CreateDiskSnapshotInputBuilder {
         self
     }
     /// <p>The name of the destination disk snapshot (e.g., <code>my-disk-snapshot</code>) based on the source disk.</p>
-    pub fn set_disk_snapshot_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.disk_snapshot_name = input; self
+    pub fn set_disk_snapshot_name(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.disk_snapshot_name = input;
+        self
     }
-    /// <p>The unique name of the source instance (e.g., <code>Amazon_Linux-512MB-Virginia-1</code>). When this is defined, a snapshot of the instance's system volume is created.</p> <note> 
-    /// <p>This parameter cannot be defined together with the <code>disk name</code> parameter. The <code>instance name</code> and <code>disk name</code> parameters are mutually exclusive.</p> 
+    /// <p>The unique name of the source instance (e.g., <code>Amazon_Linux-512MB-Virginia-1</code>). When this is defined, a snapshot of the instance's system volume is created.</p> <note>
+    /// <p>This parameter cannot be defined together with the <code>disk name</code> parameter. The <code>instance name</code> and <code>disk name</code> parameters are mutually exclusive.</p>
     /// </note>
     pub fn instance_name(mut self, input: impl Into<std::string::String>) -> Self {
         self.instance_name = Some(input.into());
         self
     }
-    /// <p>The unique name of the source instance (e.g., <code>Amazon_Linux-512MB-Virginia-1</code>). When this is defined, a snapshot of the instance's system volume is created.</p> <note> 
-    /// <p>This parameter cannot be defined together with the <code>disk name</code> parameter. The <code>instance name</code> and <code>disk name</code> parameters are mutually exclusive.</p> 
+    /// <p>The unique name of the source instance (e.g., <code>Amazon_Linux-512MB-Virginia-1</code>). When this is defined, a snapshot of the instance's system volume is created.</p> <note>
+    /// <p>This parameter cannot be defined together with the <code>disk name</code> parameter. The <code>instance name</code> and <code>disk name</code> parameters are mutually exclusive.</p>
     /// </note>
     pub fn set_instance_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.instance_name = input; self
+        self.instance_name = input;
+        self
     }
     /// Appends an item to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
-    /// <p>The tag keys and optional values to add to the resource during create.</p> 
+    /// <p>The tag keys and optional values to add to the resource during create.</p>
     /// <p>Use the <code>TagResource</code> action to tag a resource after it's created.</p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
-                        v.push(input);
-                        self.tags = Some(v);
-                        self
+        v.push(input);
+        self.tags = Some(v);
+        self
     }
-    /// <p>The tag keys and optional values to add to the resource during create.</p> 
+    /// <p>The tag keys and optional values to add to the resource during create.</p>
     /// <p>Use the <code>TagResource</code> action to tag a resource after it's created.</p>
-    pub fn set_tags(mut self, input: std::option::Option<std::vec::Vec<crate::types::Tag>>) -> Self {
-        self.tags = input; self
+    pub fn set_tags(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::Tag>>,
+    ) -> Self {
+        self.tags = input;
+        self
     }
     /// Consumes the builder and constructs a [`CreateDiskSnapshotInput`](crate::operation::create_disk_snapshot::CreateDiskSnapshotInput).
-    pub fn build(self) -> Result<crate::operation::create_disk_snapshot::CreateDiskSnapshotInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::create_disk_snapshot::CreateDiskSnapshotInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::create_disk_snapshot::CreateDiskSnapshotInput {
-                disk_name: self.disk_name
-                ,
-                disk_snapshot_name: self.disk_snapshot_name
-                ,
-                instance_name: self.instance_name
-                ,
-                tags: self.tags
-                ,
-            }
+                disk_name: self.disk_name,
+                disk_snapshot_name: self.disk_snapshot_name,
+                instance_name: self.instance_name,
+                tags: self.tags,
+            },
         )
     }
 }
-

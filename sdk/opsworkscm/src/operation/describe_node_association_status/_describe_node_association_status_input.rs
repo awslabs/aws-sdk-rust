@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeNodeAssociationStatusInput  {
+pub struct DescribeNodeAssociationStatusInput {
     /// <p>The token returned in either the AssociateNodeResponse or the DisassociateNodeResponse. </p>
     #[doc(hidden)]
     pub node_association_status_token: std::option::Option<std::string::String>,
@@ -12,17 +12,17 @@ pub struct DescribeNodeAssociationStatusInput  {
 }
 impl DescribeNodeAssociationStatusInput {
     /// <p>The token returned in either the AssociateNodeResponse or the DisassociateNodeResponse. </p>
-    pub fn node_association_status_token(&self) -> std::option::Option<& str> {
+    pub fn node_association_status_token(&self) -> std::option::Option<&str> {
         self.node_association_status_token.as_deref()
     }
     /// <p>The name of the server from which to disassociate the node. </p>
-    pub fn server_name(&self) -> std::option::Option<& str> {
+    pub fn server_name(&self) -> std::option::Option<&str> {
         self.server_name.as_deref()
     }
 }
 impl DescribeNodeAssociationStatusInput {
     /// Creates a new builder-style object to manufacture [`DescribeNodeAssociationStatusInput`](crate::operation::describe_node_association_status::DescribeNodeAssociationStatusInput).
-    pub fn builder() -> crate::operation::describe_node_association_status::builders::DescribeNodeAssociationStatusInputBuilder {
+    pub fn builder() -> crate::operation::describe_node_association_status::builders::DescribeNodeAssociationStatusInputBuilder{
         crate::operation::describe_node_association_status::builders::DescribeNodeAssociationStatusInputBuilder::default()
     }
 }
@@ -41,8 +41,12 @@ impl DescribeNodeAssociationStatusInputBuilder {
         self
     }
     /// <p>The token returned in either the AssociateNodeResponse or the DisassociateNodeResponse. </p>
-    pub fn set_node_association_status_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.node_association_status_token = input; self
+    pub fn set_node_association_status_token(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.node_association_status_token = input;
+        self
     }
     /// <p>The name of the server from which to disassociate the node. </p>
     pub fn server_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -51,10 +55,16 @@ impl DescribeNodeAssociationStatusInputBuilder {
     }
     /// <p>The name of the server from which to disassociate the node. </p>
     pub fn set_server_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.server_name = input; self
+        self.server_name = input;
+        self
     }
     /// Consumes the builder and constructs a [`DescribeNodeAssociationStatusInput`](crate::operation::describe_node_association_status::DescribeNodeAssociationStatusInput).
-    pub fn build(self) -> Result<crate::operation::describe_node_association_status::DescribeNodeAssociationStatusInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::describe_node_association_status::DescribeNodeAssociationStatusInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::describe_node_association_status::DescribeNodeAssociationStatusInput {
                 node_association_status_token: self.node_association_status_token
@@ -65,4 +75,3 @@ impl DescribeNodeAssociationStatusInputBuilder {
         )
     }
 }
-

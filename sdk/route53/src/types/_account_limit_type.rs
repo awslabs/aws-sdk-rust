@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-/// 
+///
 /// Here is an example of how you can make a match expression forward-compatible:
-/// 
+///
 /// ```text
 /// # let accountlimittype = unimplemented!();
 /// match accountlimittype {
@@ -33,14 +33,22 @@
 /// Specifically, when `accountlimittype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `AccountLimitType::NewFeature` also yielding `"NewFeature"`.
-/// 
+///
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
 pub enum AccountLimitType {
     #[allow(missing_docs)] // documentation missing in model
     MaxHealthChecksByOwner,
@@ -53,47 +61,62 @@ pub enum AccountLimitType {
     #[allow(missing_docs)] // documentation missing in model
     MaxTrafficPolicyInstancesByOwner,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::primitives::UnknownVariantValue)
+    Unknown(crate::primitives::UnknownVariantValue),
 }
 impl std::convert::From<&str> for AccountLimitType {
-                fn from(s: &str) -> Self {
-                    match s {
-                        "MAX_HEALTH_CHECKS_BY_OWNER" => AccountLimitType::MaxHealthChecksByOwner,
-"MAX_HOSTED_ZONES_BY_OWNER" => AccountLimitType::MaxHostedZonesByOwner,
-"MAX_REUSABLE_DELEGATION_SETS_BY_OWNER" => AccountLimitType::MaxReusableDelegationSetsByOwner,
-"MAX_TRAFFIC_POLICIES_BY_OWNER" => AccountLimitType::MaxTrafficPoliciesByOwner,
-"MAX_TRAFFIC_POLICY_INSTANCES_BY_OWNER" => AccountLimitType::MaxTrafficPolicyInstancesByOwner,
-other => AccountLimitType::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
-                    }
-                }
+    fn from(s: &str) -> Self {
+        match s {
+            "MAX_HEALTH_CHECKS_BY_OWNER" => AccountLimitType::MaxHealthChecksByOwner,
+            "MAX_HOSTED_ZONES_BY_OWNER" => AccountLimitType::MaxHostedZonesByOwner,
+            "MAX_REUSABLE_DELEGATION_SETS_BY_OWNER" => {
+                AccountLimitType::MaxReusableDelegationSetsByOwner
             }
-impl std::str::FromStr for AccountLimitType {
-                type Err = std::convert::Infallible;
-
-                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-                    Ok(AccountLimitType::from(s))
-                }
+            "MAX_TRAFFIC_POLICIES_BY_OWNER" => AccountLimitType::MaxTrafficPoliciesByOwner,
+            "MAX_TRAFFIC_POLICY_INSTANCES_BY_OWNER" => {
+                AccountLimitType::MaxTrafficPolicyInstancesByOwner
             }
-impl AccountLimitType {
-                /// Returns the `&str` value of the enum member.
-                pub fn as_str(&self) -> &str {
-                    match self {
-    AccountLimitType::MaxHealthChecksByOwner => "MAX_HEALTH_CHECKS_BY_OWNER",
-    AccountLimitType::MaxHostedZonesByOwner => "MAX_HOSTED_ZONES_BY_OWNER",
-    AccountLimitType::MaxReusableDelegationSetsByOwner => "MAX_REUSABLE_DELEGATION_SETS_BY_OWNER",
-    AccountLimitType::MaxTrafficPoliciesByOwner => "MAX_TRAFFIC_POLICIES_BY_OWNER",
-    AccountLimitType::MaxTrafficPolicyInstancesByOwner => "MAX_TRAFFIC_POLICY_INSTANCES_BY_OWNER",
-    AccountLimitType::Unknown(value) => value.as_str()
+            other => {
+                AccountLimitType::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
+            }
+        }
+    }
 }
-                }
-                /// Returns all the `&str` representations of the enum members.
-                pub const fn values() -> &'static [&'static str] {
-                    &["MAX_HEALTH_CHECKS_BY_OWNER", "MAX_HOSTED_ZONES_BY_OWNER", "MAX_REUSABLE_DELEGATION_SETS_BY_OWNER", "MAX_TRAFFIC_POLICIES_BY_OWNER", "MAX_TRAFFIC_POLICY_INSTANCES_BY_OWNER"]
-                }
-            }
-impl AsRef<str> for AccountLimitType {
-                fn as_ref(&self) -> &str {
-                    self.as_str()
-                }
-            }
+impl std::str::FromStr for AccountLimitType {
+    type Err = std::convert::Infallible;
 
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(AccountLimitType::from(s))
+    }
+}
+impl AccountLimitType {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            AccountLimitType::MaxHealthChecksByOwner => "MAX_HEALTH_CHECKS_BY_OWNER",
+            AccountLimitType::MaxHostedZonesByOwner => "MAX_HOSTED_ZONES_BY_OWNER",
+            AccountLimitType::MaxReusableDelegationSetsByOwner => {
+                "MAX_REUSABLE_DELEGATION_SETS_BY_OWNER"
+            }
+            AccountLimitType::MaxTrafficPoliciesByOwner => "MAX_TRAFFIC_POLICIES_BY_OWNER",
+            AccountLimitType::MaxTrafficPolicyInstancesByOwner => {
+                "MAX_TRAFFIC_POLICY_INSTANCES_BY_OWNER"
+            }
+            AccountLimitType::Unknown(value) => value.as_str(),
+        }
+    }
+    /// Returns all the `&str` representations of the enum members.
+    pub const fn values() -> &'static [&'static str] {
+        &[
+            "MAX_HEALTH_CHECKS_BY_OWNER",
+            "MAX_HOSTED_ZONES_BY_OWNER",
+            "MAX_REUSABLE_DELEGATION_SETS_BY_OWNER",
+            "MAX_TRAFFIC_POLICIES_BY_OWNER",
+            "MAX_TRAFFIC_POLICY_INSTANCES_BY_OWNER",
+        ]
+    }
+}
+impl AsRef<str> for AccountLimitType {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}

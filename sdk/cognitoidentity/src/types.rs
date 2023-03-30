@@ -52,4 +52,3 @@ pub mod builders;
 
 /// Error types that Amazon Cognito Identity can respond with.
 pub mod error;
-

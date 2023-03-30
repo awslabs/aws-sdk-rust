@@ -3,11 +3,11 @@
 /// <p>Provides information about alerts and warnings that Amazon Lex sends during a migration. The alerts include information about how to resolve the issue.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct MigrationAlert  {
-    /// <p>The type of alert. There are two kinds of alerts:</p> 
-    /// <ul> 
-    /// <li> <p> <code>ERROR</code> - There was an issue with the migration that can't be resolved. The migration stops.</p> </li> 
-    /// <li> <p> <code>WARN</code> - There was an issue with the migration that requires manual changes to the new Amazon Lex V2 bot. The migration continues.</p> </li> 
+pub struct MigrationAlert {
+    /// <p>The type of alert. There are two kinds of alerts:</p>
+    /// <ul>
+    /// <li> <p> <code>ERROR</code> - There was an issue with the migration that can't be resolved. The migration stops.</p> </li>
+    /// <li> <p> <code>WARN</code> - There was an issue with the migration that requires manual changes to the new Amazon Lex V2 bot. The migration continues.</p> </li>
     /// </ul>
     #[doc(hidden)]
     pub r#type: std::option::Option<crate::types::MigrationAlertType>,
@@ -22,24 +22,24 @@ pub struct MigrationAlert  {
     pub reference_ur_ls: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl MigrationAlert {
-    /// <p>The type of alert. There are two kinds of alerts:</p> 
-    /// <ul> 
-    /// <li> <p> <code>ERROR</code> - There was an issue with the migration that can't be resolved. The migration stops.</p> </li> 
-    /// <li> <p> <code>WARN</code> - There was an issue with the migration that requires manual changes to the new Amazon Lex V2 bot. The migration continues.</p> </li> 
+    /// <p>The type of alert. There are two kinds of alerts:</p>
+    /// <ul>
+    /// <li> <p> <code>ERROR</code> - There was an issue with the migration that can't be resolved. The migration stops.</p> </li>
+    /// <li> <p> <code>WARN</code> - There was an issue with the migration that requires manual changes to the new Amazon Lex V2 bot. The migration continues.</p> </li>
     /// </ul>
-    pub fn r#type(&self) -> std::option::Option<& crate::types::MigrationAlertType> {
+    pub fn r#type(&self) -> std::option::Option<&crate::types::MigrationAlertType> {
         self.r#type.as_ref()
     }
     /// <p>A message that describes why the alert was issued.</p>
-    pub fn message(&self) -> std::option::Option<& str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
     /// <p>Additional details about the alert.</p>
-    pub fn details(&self) -> std::option::Option<& [std::string::String]> {
+    pub fn details(&self) -> std::option::Option<&[std::string::String]> {
         self.details.as_deref()
     }
     /// <p>A link to the Amazon Lex documentation that describes how to resolve the alert.</p>
-    pub fn reference_ur_ls(&self) -> std::option::Option<& [std::string::String]> {
+    pub fn reference_ur_ls(&self) -> std::option::Option<&[std::string::String]> {
         self.reference_ur_ls.as_deref()
     }
 }
@@ -60,22 +60,26 @@ pub struct MigrationAlertBuilder {
     pub(crate) reference_ur_ls: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl MigrationAlertBuilder {
-    /// <p>The type of alert. There are two kinds of alerts:</p> 
-    /// <ul> 
-    /// <li> <p> <code>ERROR</code> - There was an issue with the migration that can't be resolved. The migration stops.</p> </li> 
-    /// <li> <p> <code>WARN</code> - There was an issue with the migration that requires manual changes to the new Amazon Lex V2 bot. The migration continues.</p> </li> 
+    /// <p>The type of alert. There are two kinds of alerts:</p>
+    /// <ul>
+    /// <li> <p> <code>ERROR</code> - There was an issue with the migration that can't be resolved. The migration stops.</p> </li>
+    /// <li> <p> <code>WARN</code> - There was an issue with the migration that requires manual changes to the new Amazon Lex V2 bot. The migration continues.</p> </li>
     /// </ul>
     pub fn r#type(mut self, input: crate::types::MigrationAlertType) -> Self {
         self.r#type = Some(input);
         self
     }
-    /// <p>The type of alert. There are two kinds of alerts:</p> 
-    /// <ul> 
-    /// <li> <p> <code>ERROR</code> - There was an issue with the migration that can't be resolved. The migration stops.</p> </li> 
-    /// <li> <p> <code>WARN</code> - There was an issue with the migration that requires manual changes to the new Amazon Lex V2 bot. The migration continues.</p> </li> 
+    /// <p>The type of alert. There are two kinds of alerts:</p>
+    /// <ul>
+    /// <li> <p> <code>ERROR</code> - There was an issue with the migration that can't be resolved. The migration stops.</p> </li>
+    /// <li> <p> <code>WARN</code> - There was an issue with the migration that requires manual changes to the new Amazon Lex V2 bot. The migration continues.</p> </li>
     /// </ul>
-    pub fn set_type(mut self, input: std::option::Option<crate::types::MigrationAlertType>) -> Self {
-        self.r#type = input; self
+    pub fn set_type(
+        mut self,
+        input: std::option::Option<crate::types::MigrationAlertType>,
+    ) -> Self {
+        self.r#type = input;
+        self
     }
     /// <p>A message that describes why the alert was issued.</p>
     pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
@@ -84,7 +88,8 @@ impl MigrationAlertBuilder {
     }
     /// <p>A message that describes why the alert was issued.</p>
     pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.message = input; self
+        self.message = input;
+        self
     }
     /// Appends an item to `details`.
     ///
@@ -93,13 +98,17 @@ impl MigrationAlertBuilder {
     /// <p>Additional details about the alert.</p>
     pub fn details(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.details.unwrap_or_default();
-                        v.push(input.into());
-                        self.details = Some(v);
-                        self
+        v.push(input.into());
+        self.details = Some(v);
+        self
     }
     /// <p>Additional details about the alert.</p>
-    pub fn set_details(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-        self.details = input; self
+    pub fn set_details(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
+        self.details = input;
+        self
     }
     /// Appends an item to `reference_ur_ls`.
     ///
@@ -108,26 +117,25 @@ impl MigrationAlertBuilder {
     /// <p>A link to the Amazon Lex documentation that describes how to resolve the alert.</p>
     pub fn reference_ur_ls(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.reference_ur_ls.unwrap_or_default();
-                        v.push(input.into());
-                        self.reference_ur_ls = Some(v);
-                        self
+        v.push(input.into());
+        self.reference_ur_ls = Some(v);
+        self
     }
     /// <p>A link to the Amazon Lex documentation that describes how to resolve the alert.</p>
-    pub fn set_reference_ur_ls(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-        self.reference_ur_ls = input; self
+    pub fn set_reference_ur_ls(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
+        self.reference_ur_ls = input;
+        self
     }
     /// Consumes the builder and constructs a [`MigrationAlert`](crate::types::MigrationAlert).
     pub fn build(self) -> crate::types::MigrationAlert {
         crate::types::MigrationAlert {
-            r#type: self.r#type
-            ,
-            message: self.message
-            ,
-            details: self.details
-            ,
-            reference_ur_ls: self.reference_ur_ls
-            ,
+            r#type: self.r#type,
+            message: self.message,
+            details: self.details,
+            reference_ur_ls: self.reference_ur_ls,
         }
     }
 }
-

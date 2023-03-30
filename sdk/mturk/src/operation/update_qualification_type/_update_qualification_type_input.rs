@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateQualificationTypeInput  {
+pub struct UpdateQualificationTypeInput {
     /// <p>The ID of the Qualification type to update.</p>
     #[doc(hidden)]
     pub qualification_type_id: std::option::Option<std::string::String>,
@@ -12,8 +12,8 @@ pub struct UpdateQualificationTypeInput  {
     /// <p>The new status of the Qualification type - Active | Inactive</p>
     #[doc(hidden)]
     pub qualification_type_status: std::option::Option<crate::types::QualificationTypeStatus>,
-    /// <p>The questions for the Qualification test a Worker must answer correctly to obtain a Qualification of this type. If this parameter is specified, <code>TestDurationInSeconds</code> must also be specified.</p> 
-    /// <p>Constraints: Must not be longer than 65535 bytes. Must be a QuestionForm data structure. This parameter cannot be specified if AutoGranted is true.</p> 
+    /// <p>The questions for the Qualification test a Worker must answer correctly to obtain a Qualification of this type. If this parameter is specified, <code>TestDurationInSeconds</code> must also be specified.</p>
+    /// <p>Constraints: Must not be longer than 65535 bytes. Must be a QuestionForm data structure. This parameter cannot be specified if AutoGranted is true.</p>
     /// <p>Constraints: None. If not specified, the Worker may request the Qualification without answering any questions.</p>
     #[doc(hidden)]
     pub test: std::option::Option<std::string::String>,
@@ -26,7 +26,7 @@ pub struct UpdateQualificationTypeInput  {
     /// <p>The amount of time, in seconds, that Workers must wait after requesting a Qualification of the specified Qualification type before they can retry the Qualification request. It is not possible to disable retries for a Qualification type after it has been created with retries enabled. If you want to disable retries, you must dispose of the existing retry-enabled Qualification type using DisposeQualificationType and then create a new Qualification type with retries disabled using CreateQualificationType.</p>
     #[doc(hidden)]
     pub retry_delay_in_seconds: std::option::Option<i64>,
-    /// <p>Specifies whether requests for the Qualification type are granted immediately, without prompting the Worker with a Qualification test.</p> 
+    /// <p>Specifies whether requests for the Qualification type are granted immediately, without prompting the Worker with a Qualification test.</p>
     /// <p>Constraints: If the Test parameter is specified, this parameter cannot be true.</p>
     #[doc(hidden)]
     pub auto_granted: std::option::Option<bool>,
@@ -36,25 +36,27 @@ pub struct UpdateQualificationTypeInput  {
 }
 impl UpdateQualificationTypeInput {
     /// <p>The ID of the Qualification type to update.</p>
-    pub fn qualification_type_id(&self) -> std::option::Option<& str> {
+    pub fn qualification_type_id(&self) -> std::option::Option<&str> {
         self.qualification_type_id.as_deref()
     }
     /// <p>The new description of the Qualification type.</p>
-    pub fn description(&self) -> std::option::Option<& str> {
+    pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
     /// <p>The new status of the Qualification type - Active | Inactive</p>
-    pub fn qualification_type_status(&self) -> std::option::Option<& crate::types::QualificationTypeStatus> {
+    pub fn qualification_type_status(
+        &self,
+    ) -> std::option::Option<&crate::types::QualificationTypeStatus> {
         self.qualification_type_status.as_ref()
     }
-    /// <p>The questions for the Qualification test a Worker must answer correctly to obtain a Qualification of this type. If this parameter is specified, <code>TestDurationInSeconds</code> must also be specified.</p> 
-    /// <p>Constraints: Must not be longer than 65535 bytes. Must be a QuestionForm data structure. This parameter cannot be specified if AutoGranted is true.</p> 
+    /// <p>The questions for the Qualification test a Worker must answer correctly to obtain a Qualification of this type. If this parameter is specified, <code>TestDurationInSeconds</code> must also be specified.</p>
+    /// <p>Constraints: Must not be longer than 65535 bytes. Must be a QuestionForm data structure. This parameter cannot be specified if AutoGranted is true.</p>
     /// <p>Constraints: None. If not specified, the Worker may request the Qualification without answering any questions.</p>
-    pub fn test(&self) -> std::option::Option<& str> {
+    pub fn test(&self) -> std::option::Option<&str> {
         self.test.as_deref()
     }
     /// <p>The answers to the Qualification test specified in the Test parameter, in the form of an AnswerKey data structure.</p>
-    pub fn answer_key(&self) -> std::option::Option<& str> {
+    pub fn answer_key(&self) -> std::option::Option<&str> {
         self.answer_key.as_deref()
     }
     /// <p>The number of seconds the Worker has to complete the Qualification test, starting from the time the Worker requests the Qualification.</p>
@@ -65,7 +67,7 @@ impl UpdateQualificationTypeInput {
     pub fn retry_delay_in_seconds(&self) -> std::option::Option<i64> {
         self.retry_delay_in_seconds
     }
-    /// <p>Specifies whether requests for the Qualification type are granted immediately, without prompting the Worker with a Qualification test.</p> 
+    /// <p>Specifies whether requests for the Qualification type are granted immediately, without prompting the Worker with a Qualification test.</p>
     /// <p>Constraints: If the Test parameter is specified, this parameter cannot be true.</p>
     pub fn auto_granted(&self) -> std::option::Option<bool> {
         self.auto_granted
@@ -77,7 +79,9 @@ impl UpdateQualificationTypeInput {
 }
 impl UpdateQualificationTypeInput {
     /// Creates a new builder-style object to manufacture [`UpdateQualificationTypeInput`](crate::operation::update_qualification_type::UpdateQualificationTypeInput).
-    pub fn builder() -> crate::operation::update_qualification_type::builders::UpdateQualificationTypeInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::update_qualification_type::builders::UpdateQualificationTypeInputBuilder
+    {
         crate::operation::update_qualification_type::builders::UpdateQualificationTypeInputBuilder::default()
     }
 }
@@ -88,7 +92,8 @@ impl UpdateQualificationTypeInput {
 pub struct UpdateQualificationTypeInputBuilder {
     pub(crate) qualification_type_id: std::option::Option<std::string::String>,
     pub(crate) description: std::option::Option<std::string::String>,
-    pub(crate) qualification_type_status: std::option::Option<crate::types::QualificationTypeStatus>,
+    pub(crate) qualification_type_status:
+        std::option::Option<crate::types::QualificationTypeStatus>,
     pub(crate) test: std::option::Option<std::string::String>,
     pub(crate) answer_key: std::option::Option<std::string::String>,
     pub(crate) test_duration_in_seconds: std::option::Option<i64>,
@@ -103,8 +108,12 @@ impl UpdateQualificationTypeInputBuilder {
         self
     }
     /// <p>The ID of the Qualification type to update.</p>
-    pub fn set_qualification_type_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.qualification_type_id = input; self
+    pub fn set_qualification_type_id(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.qualification_type_id = input;
+        self
     }
     /// <p>The new description of the Qualification type.</p>
     pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -113,29 +122,38 @@ impl UpdateQualificationTypeInputBuilder {
     }
     /// <p>The new description of the Qualification type.</p>
     pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.description = input; self
+        self.description = input;
+        self
     }
     /// <p>The new status of the Qualification type - Active | Inactive</p>
-    pub fn qualification_type_status(mut self, input: crate::types::QualificationTypeStatus) -> Self {
+    pub fn qualification_type_status(
+        mut self,
+        input: crate::types::QualificationTypeStatus,
+    ) -> Self {
         self.qualification_type_status = Some(input);
         self
     }
     /// <p>The new status of the Qualification type - Active | Inactive</p>
-    pub fn set_qualification_type_status(mut self, input: std::option::Option<crate::types::QualificationTypeStatus>) -> Self {
-        self.qualification_type_status = input; self
+    pub fn set_qualification_type_status(
+        mut self,
+        input: std::option::Option<crate::types::QualificationTypeStatus>,
+    ) -> Self {
+        self.qualification_type_status = input;
+        self
     }
-    /// <p>The questions for the Qualification test a Worker must answer correctly to obtain a Qualification of this type. If this parameter is specified, <code>TestDurationInSeconds</code> must also be specified.</p> 
-    /// <p>Constraints: Must not be longer than 65535 bytes. Must be a QuestionForm data structure. This parameter cannot be specified if AutoGranted is true.</p> 
+    /// <p>The questions for the Qualification test a Worker must answer correctly to obtain a Qualification of this type. If this parameter is specified, <code>TestDurationInSeconds</code> must also be specified.</p>
+    /// <p>Constraints: Must not be longer than 65535 bytes. Must be a QuestionForm data structure. This parameter cannot be specified if AutoGranted is true.</p>
     /// <p>Constraints: None. If not specified, the Worker may request the Qualification without answering any questions.</p>
     pub fn test(mut self, input: impl Into<std::string::String>) -> Self {
         self.test = Some(input.into());
         self
     }
-    /// <p>The questions for the Qualification test a Worker must answer correctly to obtain a Qualification of this type. If this parameter is specified, <code>TestDurationInSeconds</code> must also be specified.</p> 
-    /// <p>Constraints: Must not be longer than 65535 bytes. Must be a QuestionForm data structure. This parameter cannot be specified if AutoGranted is true.</p> 
+    /// <p>The questions for the Qualification test a Worker must answer correctly to obtain a Qualification of this type. If this parameter is specified, <code>TestDurationInSeconds</code> must also be specified.</p>
+    /// <p>Constraints: Must not be longer than 65535 bytes. Must be a QuestionForm data structure. This parameter cannot be specified if AutoGranted is true.</p>
     /// <p>Constraints: None. If not specified, the Worker may request the Qualification without answering any questions.</p>
     pub fn set_test(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.test = input; self
+        self.test = input;
+        self
     }
     /// <p>The answers to the Qualification test specified in the Test parameter, in the form of an AnswerKey data structure.</p>
     pub fn answer_key(mut self, input: impl Into<std::string::String>) -> Self {
@@ -144,7 +162,8 @@ impl UpdateQualificationTypeInputBuilder {
     }
     /// <p>The answers to the Qualification test specified in the Test parameter, in the form of an AnswerKey data structure.</p>
     pub fn set_answer_key(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.answer_key = input; self
+        self.answer_key = input;
+        self
     }
     /// <p>The number of seconds the Worker has to complete the Qualification test, starting from the time the Worker requests the Qualification.</p>
     pub fn test_duration_in_seconds(mut self, input: i64) -> Self {
@@ -153,7 +172,8 @@ impl UpdateQualificationTypeInputBuilder {
     }
     /// <p>The number of seconds the Worker has to complete the Qualification test, starting from the time the Worker requests the Qualification.</p>
     pub fn set_test_duration_in_seconds(mut self, input: std::option::Option<i64>) -> Self {
-        self.test_duration_in_seconds = input; self
+        self.test_duration_in_seconds = input;
+        self
     }
     /// <p>The amount of time, in seconds, that Workers must wait after requesting a Qualification of the specified Qualification type before they can retry the Qualification request. It is not possible to disable retries for a Qualification type after it has been created with retries enabled. If you want to disable retries, you must dispose of the existing retry-enabled Qualification type using DisposeQualificationType and then create a new Qualification type with retries disabled using CreateQualificationType.</p>
     pub fn retry_delay_in_seconds(mut self, input: i64) -> Self {
@@ -162,18 +182,20 @@ impl UpdateQualificationTypeInputBuilder {
     }
     /// <p>The amount of time, in seconds, that Workers must wait after requesting a Qualification of the specified Qualification type before they can retry the Qualification request. It is not possible to disable retries for a Qualification type after it has been created with retries enabled. If you want to disable retries, you must dispose of the existing retry-enabled Qualification type using DisposeQualificationType and then create a new Qualification type with retries disabled using CreateQualificationType.</p>
     pub fn set_retry_delay_in_seconds(mut self, input: std::option::Option<i64>) -> Self {
-        self.retry_delay_in_seconds = input; self
+        self.retry_delay_in_seconds = input;
+        self
     }
-    /// <p>Specifies whether requests for the Qualification type are granted immediately, without prompting the Worker with a Qualification test.</p> 
+    /// <p>Specifies whether requests for the Qualification type are granted immediately, without prompting the Worker with a Qualification test.</p>
     /// <p>Constraints: If the Test parameter is specified, this parameter cannot be true.</p>
     pub fn auto_granted(mut self, input: bool) -> Self {
         self.auto_granted = Some(input);
         self
     }
-    /// <p>Specifies whether requests for the Qualification type are granted immediately, without prompting the Worker with a Qualification test.</p> 
+    /// <p>Specifies whether requests for the Qualification type are granted immediately, without prompting the Worker with a Qualification test.</p>
     /// <p>Constraints: If the Test parameter is specified, this parameter cannot be true.</p>
     pub fn set_auto_granted(mut self, input: std::option::Option<bool>) -> Self {
-        self.auto_granted = input; self
+        self.auto_granted = input;
+        self
     }
     /// <p>The Qualification value to use for automatically granted Qualifications. This parameter is used only if the AutoGranted parameter is true.</p>
     pub fn auto_granted_value(mut self, input: i32) -> Self {
@@ -182,32 +204,28 @@ impl UpdateQualificationTypeInputBuilder {
     }
     /// <p>The Qualification value to use for automatically granted Qualifications. This parameter is used only if the AutoGranted parameter is true.</p>
     pub fn set_auto_granted_value(mut self, input: std::option::Option<i32>) -> Self {
-        self.auto_granted_value = input; self
+        self.auto_granted_value = input;
+        self
     }
     /// Consumes the builder and constructs a [`UpdateQualificationTypeInput`](crate::operation::update_qualification_type::UpdateQualificationTypeInput).
-    pub fn build(self) -> Result<crate::operation::update_qualification_type::UpdateQualificationTypeInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::update_qualification_type::UpdateQualificationTypeInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::update_qualification_type::UpdateQualificationTypeInput {
-                qualification_type_id: self.qualification_type_id
-                ,
-                description: self.description
-                ,
-                qualification_type_status: self.qualification_type_status
-                ,
-                test: self.test
-                ,
-                answer_key: self.answer_key
-                ,
-                test_duration_in_seconds: self.test_duration_in_seconds
-                ,
-                retry_delay_in_seconds: self.retry_delay_in_seconds
-                ,
-                auto_granted: self.auto_granted
-                ,
-                auto_granted_value: self.auto_granted_value
-                ,
-            }
+                qualification_type_id: self.qualification_type_id,
+                description: self.description,
+                qualification_type_status: self.qualification_type_status,
+                test: self.test,
+                answer_key: self.answer_key,
+                test_duration_in_seconds: self.test_duration_in_seconds,
+                retry_delay_in_seconds: self.retry_delay_in_seconds,
+                auto_granted: self.auto_granted,
+                auto_granted_value: self.auto_granted_value,
+            },
         )
     }
 }
-

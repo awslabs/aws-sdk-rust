@@ -3,7 +3,7 @@
 /// <p>Specifies the details of a governed table.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct TableObject  {
+pub struct TableObject {
     /// <p>The Amazon S3 location of the object.</p>
     #[doc(hidden)]
     pub uri: std::option::Option<std::string::String>,
@@ -16,11 +16,11 @@ pub struct TableObject  {
 }
 impl TableObject {
     /// <p>The Amazon S3 location of the object.</p>
-    pub fn uri(&self) -> std::option::Option<& str> {
+    pub fn uri(&self) -> std::option::Option<&str> {
         self.uri.as_deref()
     }
     /// <p>The Amazon S3 ETag of the object. Returned by <code>GetTableObjects</code> for validation and used to identify changes to the underlying data.</p>
-    pub fn e_tag(&self) -> std::option::Option<& str> {
+    pub fn e_tag(&self) -> std::option::Option<&str> {
         self.e_tag.as_deref()
     }
     /// <p>The size of the Amazon S3 object in bytes.</p>
@@ -51,7 +51,8 @@ impl TableObjectBuilder {
     }
     /// <p>The Amazon S3 location of the object.</p>
     pub fn set_uri(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.uri = input; self
+        self.uri = input;
+        self
     }
     /// <p>The Amazon S3 ETag of the object. Returned by <code>GetTableObjects</code> for validation and used to identify changes to the underlying data.</p>
     pub fn e_tag(mut self, input: impl Into<std::string::String>) -> Self {
@@ -60,7 +61,8 @@ impl TableObjectBuilder {
     }
     /// <p>The Amazon S3 ETag of the object. Returned by <code>GetTableObjects</code> for validation and used to identify changes to the underlying data.</p>
     pub fn set_e_tag(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.e_tag = input; self
+        self.e_tag = input;
+        self
     }
     /// <p>The size of the Amazon S3 object in bytes.</p>
     pub fn size(mut self, input: i64) -> Self {
@@ -69,19 +71,15 @@ impl TableObjectBuilder {
     }
     /// <p>The size of the Amazon S3 object in bytes.</p>
     pub fn set_size(mut self, input: std::option::Option<i64>) -> Self {
-        self.size = input; self
+        self.size = input;
+        self
     }
     /// Consumes the builder and constructs a [`TableObject`](crate::types::TableObject).
     pub fn build(self) -> crate::types::TableObject {
         crate::types::TableObject {
-            uri: self.uri
-            ,
-            e_tag: self.e_tag
-            ,
-            size: self.size
-                .unwrap_or_default()
-            ,
+            uri: self.uri,
+            e_tag: self.e_tag,
+            size: self.size.unwrap_or_default(),
         }
     }
 }
-

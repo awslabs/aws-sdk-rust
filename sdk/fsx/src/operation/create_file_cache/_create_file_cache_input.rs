@@ -2,8 +2,8 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateFileCacheInput  {
-    /// <p>An idempotency token for resource creation, in a string of up to 64 ASCII characters. This token is automatically filled on your behalf when you use the Command Line Interface (CLI) or an Amazon Web Services SDK.</p> 
+pub struct CreateFileCacheInput {
+    /// <p>An idempotency token for resource creation, in a string of up to 64 ASCII characters. This token is automatically filled on your behalf when you use the Command Line Interface (CLI) or an Amazon Web Services SDK.</p>
     /// <p>By using the idempotent operation, you can retry a <code>CreateFileCache</code> operation without the risk of creating an extra cache. This approach can be useful when an initial call fails in a way that makes it unclear whether a cache was created. Examples are if a transport level timeout occurred, or your connection was reset. If you use the same client request token and the initial call created a cache, the client receives success as long as the parameters are the same.</p>
     #[doc(hidden)]
     pub client_request_token: std::option::Option<std::string::String>,
@@ -34,28 +34,29 @@ pub struct CreateFileCacheInput  {
     /// <p>The configuration for the Amazon File Cache resource being created.</p>
     #[doc(hidden)]
     pub lustre_configuration: std::option::Option<crate::types::CreateFileCacheLustreConfiguration>,
-    /// <p>A list of up to 8 configurations for data repository associations (DRAs) to be created during the cache creation. The DRAs link the cache to either an Amazon S3 data repository or a Network File System (NFS) data repository that supports the NFSv3 protocol.</p> 
-    /// <p>The DRA configurations must meet the following requirements:</p> 
-    /// <ul> 
-    /// <li> <p>All configurations on the list must be of the same data repository type, either all S3 or all NFS. A cache can't link to different data repository types at the same time.</p> </li> 
-    /// <li> <p>An NFS DRA must link to an NFS file system that supports the NFSv3 protocol.</p> </li> 
-    /// </ul> 
+    /// <p>A list of up to 8 configurations for data repository associations (DRAs) to be created during the cache creation. The DRAs link the cache to either an Amazon S3 data repository or a Network File System (NFS) data repository that supports the NFSv3 protocol.</p>
+    /// <p>The DRA configurations must meet the following requirements:</p>
+    /// <ul>
+    /// <li> <p>All configurations on the list must be of the same data repository type, either all S3 or all NFS. A cache can't link to different data repository types at the same time.</p> </li>
+    /// <li> <p>An NFS DRA must link to an NFS file system that supports the NFSv3 protocol.</p> </li>
+    /// </ul>
     /// <p>DRA automatic import and automatic export is not supported.</p>
     #[doc(hidden)]
-    pub data_repository_associations: std::option::Option<std::vec::Vec<crate::types::FileCacheDataRepositoryAssociation>>,
+    pub data_repository_associations:
+        std::option::Option<std::vec::Vec<crate::types::FileCacheDataRepositoryAssociation>>,
 }
 impl CreateFileCacheInput {
-    /// <p>An idempotency token for resource creation, in a string of up to 64 ASCII characters. This token is automatically filled on your behalf when you use the Command Line Interface (CLI) or an Amazon Web Services SDK.</p> 
+    /// <p>An idempotency token for resource creation, in a string of up to 64 ASCII characters. This token is automatically filled on your behalf when you use the Command Line Interface (CLI) or an Amazon Web Services SDK.</p>
     /// <p>By using the idempotent operation, you can retry a <code>CreateFileCache</code> operation without the risk of creating an extra cache. This approach can be useful when an initial call fails in a way that makes it unclear whether a cache was created. Examples are if a transport level timeout occurred, or your connection was reset. If you use the same client request token and the initial call created a cache, the client receives success as long as the parameters are the same.</p>
-    pub fn client_request_token(&self) -> std::option::Option<& str> {
+    pub fn client_request_token(&self) -> std::option::Option<&str> {
         self.client_request_token.as_deref()
     }
     /// <p>The type of cache that you're creating, which must be <code>LUSTRE</code>.</p>
-    pub fn file_cache_type(&self) -> std::option::Option<& crate::types::FileCacheType> {
+    pub fn file_cache_type(&self) -> std::option::Option<&crate::types::FileCacheType> {
         self.file_cache_type.as_ref()
     }
     /// <p>Sets the Lustre version for the cache that you're creating, which must be <code>2.12</code>.</p>
-    pub fn file_cache_type_version(&self) -> std::option::Option<& str> {
+    pub fn file_cache_type_version(&self) -> std::option::Option<&str> {
         self.file_cache_type_version.as_deref()
     }
     /// <p>The storage capacity of the cache in gibibytes (GiB). Valid values are 1200 GiB, 2400 GiB, and increments of 2400 GiB.</p>
@@ -63,15 +64,15 @@ impl CreateFileCacheInput {
         self.storage_capacity
     }
     /// <p>A list of subnet IDs that the cache will be accessible from. You can specify only one subnet ID in a call to the <code>CreateFileCache</code> operation.</p>
-    pub fn subnet_ids(&self) -> std::option::Option<& [std::string::String]> {
+    pub fn subnet_ids(&self) -> std::option::Option<&[std::string::String]> {
         self.subnet_ids.as_deref()
     }
     /// <p>A list of IDs specifying the security groups to apply to all network interfaces created for Amazon File Cache access. This list isn't returned in later requests to describe the cache.</p>
-    pub fn security_group_ids(&self) -> std::option::Option<& [std::string::String]> {
+    pub fn security_group_ids(&self) -> std::option::Option<&[std::string::String]> {
         self.security_group_ids.as_deref()
     }
     /// <p>A list of <code>Tag</code> values, with a maximum of 50 elements.</p>
-    pub fn tags(&self) -> std::option::Option<& [crate::types::Tag]> {
+    pub fn tags(&self) -> std::option::Option<&[crate::types::Tag]> {
         self.tags.as_deref()
     }
     /// <p>A boolean flag indicating whether tags for the cache should be copied to data repository associations. This value defaults to false.</p>
@@ -79,21 +80,25 @@ impl CreateFileCacheInput {
         self.copy_tags_to_data_repository_associations
     }
     /// <p>Specifies the ID of the Key Management Service (KMS) key to use for encrypting data on an Amazon File Cache. If a <code>KmsKeyId</code> isn't specified, the Amazon FSx-managed KMS key for your account is used. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/APIReference/API_Encrypt.html">Encrypt</a> in the <i>Key Management Service API Reference</i>.</p>
-    pub fn kms_key_id(&self) -> std::option::Option<& str> {
+    pub fn kms_key_id(&self) -> std::option::Option<&str> {
         self.kms_key_id.as_deref()
     }
     /// <p>The configuration for the Amazon File Cache resource being created.</p>
-    pub fn lustre_configuration(&self) -> std::option::Option<& crate::types::CreateFileCacheLustreConfiguration> {
+    pub fn lustre_configuration(
+        &self,
+    ) -> std::option::Option<&crate::types::CreateFileCacheLustreConfiguration> {
         self.lustre_configuration.as_ref()
     }
-    /// <p>A list of up to 8 configurations for data repository associations (DRAs) to be created during the cache creation. The DRAs link the cache to either an Amazon S3 data repository or a Network File System (NFS) data repository that supports the NFSv3 protocol.</p> 
-    /// <p>The DRA configurations must meet the following requirements:</p> 
-    /// <ul> 
-    /// <li> <p>All configurations on the list must be of the same data repository type, either all S3 or all NFS. A cache can't link to different data repository types at the same time.</p> </li> 
-    /// <li> <p>An NFS DRA must link to an NFS file system that supports the NFSv3 protocol.</p> </li> 
-    /// </ul> 
+    /// <p>A list of up to 8 configurations for data repository associations (DRAs) to be created during the cache creation. The DRAs link the cache to either an Amazon S3 data repository or a Network File System (NFS) data repository that supports the NFSv3 protocol.</p>
+    /// <p>The DRA configurations must meet the following requirements:</p>
+    /// <ul>
+    /// <li> <p>All configurations on the list must be of the same data repository type, either all S3 or all NFS. A cache can't link to different data repository types at the same time.</p> </li>
+    /// <li> <p>An NFS DRA must link to an NFS file system that supports the NFSv3 protocol.</p> </li>
+    /// </ul>
     /// <p>DRA automatic import and automatic export is not supported.</p>
-    pub fn data_repository_associations(&self) -> std::option::Option<& [crate::types::FileCacheDataRepositoryAssociation]> {
+    pub fn data_repository_associations(
+        &self,
+    ) -> std::option::Option<&[crate::types::FileCacheDataRepositoryAssociation]> {
         self.data_repository_associations.as_deref()
     }
 }
@@ -117,20 +122,26 @@ pub struct CreateFileCacheInputBuilder {
     pub(crate) tags: std::option::Option<std::vec::Vec<crate::types::Tag>>,
     pub(crate) copy_tags_to_data_repository_associations: std::option::Option<bool>,
     pub(crate) kms_key_id: std::option::Option<std::string::String>,
-    pub(crate) lustre_configuration: std::option::Option<crate::types::CreateFileCacheLustreConfiguration>,
-    pub(crate) data_repository_associations: std::option::Option<std::vec::Vec<crate::types::FileCacheDataRepositoryAssociation>>,
+    pub(crate) lustre_configuration:
+        std::option::Option<crate::types::CreateFileCacheLustreConfiguration>,
+    pub(crate) data_repository_associations:
+        std::option::Option<std::vec::Vec<crate::types::FileCacheDataRepositoryAssociation>>,
 }
 impl CreateFileCacheInputBuilder {
-    /// <p>An idempotency token for resource creation, in a string of up to 64 ASCII characters. This token is automatically filled on your behalf when you use the Command Line Interface (CLI) or an Amazon Web Services SDK.</p> 
+    /// <p>An idempotency token for resource creation, in a string of up to 64 ASCII characters. This token is automatically filled on your behalf when you use the Command Line Interface (CLI) or an Amazon Web Services SDK.</p>
     /// <p>By using the idempotent operation, you can retry a <code>CreateFileCache</code> operation without the risk of creating an extra cache. This approach can be useful when an initial call fails in a way that makes it unclear whether a cache was created. Examples are if a transport level timeout occurred, or your connection was reset. If you use the same client request token and the initial call created a cache, the client receives success as long as the parameters are the same.</p>
     pub fn client_request_token(mut self, input: impl Into<std::string::String>) -> Self {
         self.client_request_token = Some(input.into());
         self
     }
-    /// <p>An idempotency token for resource creation, in a string of up to 64 ASCII characters. This token is automatically filled on your behalf when you use the Command Line Interface (CLI) or an Amazon Web Services SDK.</p> 
+    /// <p>An idempotency token for resource creation, in a string of up to 64 ASCII characters. This token is automatically filled on your behalf when you use the Command Line Interface (CLI) or an Amazon Web Services SDK.</p>
     /// <p>By using the idempotent operation, you can retry a <code>CreateFileCache</code> operation without the risk of creating an extra cache. This approach can be useful when an initial call fails in a way that makes it unclear whether a cache was created. Examples are if a transport level timeout occurred, or your connection was reset. If you use the same client request token and the initial call created a cache, the client receives success as long as the parameters are the same.</p>
-    pub fn set_client_request_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.client_request_token = input; self
+    pub fn set_client_request_token(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.client_request_token = input;
+        self
     }
     /// <p>The type of cache that you're creating, which must be <code>LUSTRE</code>.</p>
     pub fn file_cache_type(mut self, input: crate::types::FileCacheType) -> Self {
@@ -138,8 +149,12 @@ impl CreateFileCacheInputBuilder {
         self
     }
     /// <p>The type of cache that you're creating, which must be <code>LUSTRE</code>.</p>
-    pub fn set_file_cache_type(mut self, input: std::option::Option<crate::types::FileCacheType>) -> Self {
-        self.file_cache_type = input; self
+    pub fn set_file_cache_type(
+        mut self,
+        input: std::option::Option<crate::types::FileCacheType>,
+    ) -> Self {
+        self.file_cache_type = input;
+        self
     }
     /// <p>Sets the Lustre version for the cache that you're creating, which must be <code>2.12</code>.</p>
     pub fn file_cache_type_version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -147,8 +162,12 @@ impl CreateFileCacheInputBuilder {
         self
     }
     /// <p>Sets the Lustre version for the cache that you're creating, which must be <code>2.12</code>.</p>
-    pub fn set_file_cache_type_version(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.file_cache_type_version = input; self
+    pub fn set_file_cache_type_version(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.file_cache_type_version = input;
+        self
     }
     /// <p>The storage capacity of the cache in gibibytes (GiB). Valid values are 1200 GiB, 2400 GiB, and increments of 2400 GiB.</p>
     pub fn storage_capacity(mut self, input: i32) -> Self {
@@ -157,7 +176,8 @@ impl CreateFileCacheInputBuilder {
     }
     /// <p>The storage capacity of the cache in gibibytes (GiB). Valid values are 1200 GiB, 2400 GiB, and increments of 2400 GiB.</p>
     pub fn set_storage_capacity(mut self, input: std::option::Option<i32>) -> Self {
-        self.storage_capacity = input; self
+        self.storage_capacity = input;
+        self
     }
     /// Appends an item to `subnet_ids`.
     ///
@@ -166,13 +186,17 @@ impl CreateFileCacheInputBuilder {
     /// <p>A list of subnet IDs that the cache will be accessible from. You can specify only one subnet ID in a call to the <code>CreateFileCache</code> operation.</p>
     pub fn subnet_ids(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.subnet_ids.unwrap_or_default();
-                        v.push(input.into());
-                        self.subnet_ids = Some(v);
-                        self
+        v.push(input.into());
+        self.subnet_ids = Some(v);
+        self
     }
     /// <p>A list of subnet IDs that the cache will be accessible from. You can specify only one subnet ID in a call to the <code>CreateFileCache</code> operation.</p>
-    pub fn set_subnet_ids(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-        self.subnet_ids = input; self
+    pub fn set_subnet_ids(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
+        self.subnet_ids = input;
+        self
     }
     /// Appends an item to `security_group_ids`.
     ///
@@ -181,13 +205,17 @@ impl CreateFileCacheInputBuilder {
     /// <p>A list of IDs specifying the security groups to apply to all network interfaces created for Amazon File Cache access. This list isn't returned in later requests to describe the cache.</p>
     pub fn security_group_ids(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.security_group_ids.unwrap_or_default();
-                        v.push(input.into());
-                        self.security_group_ids = Some(v);
-                        self
+        v.push(input.into());
+        self.security_group_ids = Some(v);
+        self
     }
     /// <p>A list of IDs specifying the security groups to apply to all network interfaces created for Amazon File Cache access. This list isn't returned in later requests to describe the cache.</p>
-    pub fn set_security_group_ids(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-        self.security_group_ids = input; self
+    pub fn set_security_group_ids(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
+        self.security_group_ids = input;
+        self
     }
     /// Appends an item to `tags`.
     ///
@@ -196,13 +224,17 @@ impl CreateFileCacheInputBuilder {
     /// <p>A list of <code>Tag</code> values, with a maximum of 50 elements.</p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
-                        v.push(input);
-                        self.tags = Some(v);
-                        self
+        v.push(input);
+        self.tags = Some(v);
+        self
     }
     /// <p>A list of <code>Tag</code> values, with a maximum of 50 elements.</p>
-    pub fn set_tags(mut self, input: std::option::Option<std::vec::Vec<crate::types::Tag>>) -> Self {
-        self.tags = input; self
+    pub fn set_tags(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::Tag>>,
+    ) -> Self {
+        self.tags = input;
+        self
     }
     /// <p>A boolean flag indicating whether tags for the cache should be copied to data repository associations. This value defaults to false.</p>
     pub fn copy_tags_to_data_repository_associations(mut self, input: bool) -> Self {
@@ -210,8 +242,12 @@ impl CreateFileCacheInputBuilder {
         self
     }
     /// <p>A boolean flag indicating whether tags for the cache should be copied to data repository associations. This value defaults to false.</p>
-    pub fn set_copy_tags_to_data_repository_associations(mut self, input: std::option::Option<bool>) -> Self {
-        self.copy_tags_to_data_repository_associations = input; self
+    pub fn set_copy_tags_to_data_repository_associations(
+        mut self,
+        input: std::option::Option<bool>,
+    ) -> Self {
+        self.copy_tags_to_data_repository_associations = input;
+        self
     }
     /// <p>Specifies the ID of the Key Management Service (KMS) key to use for encrypting data on an Amazon File Cache. If a <code>KmsKeyId</code> isn't specified, the Amazon FSx-managed KMS key for your account is used. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/APIReference/API_Encrypt.html">Encrypt</a> in the <i>Key Management Service API Reference</i>.</p>
     pub fn kms_key_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -220,72 +256,79 @@ impl CreateFileCacheInputBuilder {
     }
     /// <p>Specifies the ID of the Key Management Service (KMS) key to use for encrypting data on an Amazon File Cache. If a <code>KmsKeyId</code> isn't specified, the Amazon FSx-managed KMS key for your account is used. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/APIReference/API_Encrypt.html">Encrypt</a> in the <i>Key Management Service API Reference</i>.</p>
     pub fn set_kms_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.kms_key_id = input; self
+        self.kms_key_id = input;
+        self
     }
     /// <p>The configuration for the Amazon File Cache resource being created.</p>
-    pub fn lustre_configuration(mut self, input: crate::types::CreateFileCacheLustreConfiguration) -> Self {
+    pub fn lustre_configuration(
+        mut self,
+        input: crate::types::CreateFileCacheLustreConfiguration,
+    ) -> Self {
         self.lustre_configuration = Some(input);
         self
     }
     /// <p>The configuration for the Amazon File Cache resource being created.</p>
-    pub fn set_lustre_configuration(mut self, input: std::option::Option<crate::types::CreateFileCacheLustreConfiguration>) -> Self {
-        self.lustre_configuration = input; self
+    pub fn set_lustre_configuration(
+        mut self,
+        input: std::option::Option<crate::types::CreateFileCacheLustreConfiguration>,
+    ) -> Self {
+        self.lustre_configuration = input;
+        self
     }
     /// Appends an item to `data_repository_associations`.
     ///
     /// To override the contents of this collection use [`set_data_repository_associations`](Self::set_data_repository_associations).
     ///
-    /// <p>A list of up to 8 configurations for data repository associations (DRAs) to be created during the cache creation. The DRAs link the cache to either an Amazon S3 data repository or a Network File System (NFS) data repository that supports the NFSv3 protocol.</p> 
-    /// <p>The DRA configurations must meet the following requirements:</p> 
-    /// <ul> 
-    /// <li> <p>All configurations on the list must be of the same data repository type, either all S3 or all NFS. A cache can't link to different data repository types at the same time.</p> </li> 
-    /// <li> <p>An NFS DRA must link to an NFS file system that supports the NFSv3 protocol.</p> </li> 
-    /// </ul> 
+    /// <p>A list of up to 8 configurations for data repository associations (DRAs) to be created during the cache creation. The DRAs link the cache to either an Amazon S3 data repository or a Network File System (NFS) data repository that supports the NFSv3 protocol.</p>
+    /// <p>The DRA configurations must meet the following requirements:</p>
+    /// <ul>
+    /// <li> <p>All configurations on the list must be of the same data repository type, either all S3 or all NFS. A cache can't link to different data repository types at the same time.</p> </li>
+    /// <li> <p>An NFS DRA must link to an NFS file system that supports the NFSv3 protocol.</p> </li>
+    /// </ul>
     /// <p>DRA automatic import and automatic export is not supported.</p>
-    pub fn data_repository_associations(mut self, input: crate::types::FileCacheDataRepositoryAssociation) -> Self {
+    pub fn data_repository_associations(
+        mut self,
+        input: crate::types::FileCacheDataRepositoryAssociation,
+    ) -> Self {
         let mut v = self.data_repository_associations.unwrap_or_default();
-                        v.push(input);
-                        self.data_repository_associations = Some(v);
-                        self
+        v.push(input);
+        self.data_repository_associations = Some(v);
+        self
     }
-    /// <p>A list of up to 8 configurations for data repository associations (DRAs) to be created during the cache creation. The DRAs link the cache to either an Amazon S3 data repository or a Network File System (NFS) data repository that supports the NFSv3 protocol.</p> 
-    /// <p>The DRA configurations must meet the following requirements:</p> 
-    /// <ul> 
-    /// <li> <p>All configurations on the list must be of the same data repository type, either all S3 or all NFS. A cache can't link to different data repository types at the same time.</p> </li> 
-    /// <li> <p>An NFS DRA must link to an NFS file system that supports the NFSv3 protocol.</p> </li> 
-    /// </ul> 
+    /// <p>A list of up to 8 configurations for data repository associations (DRAs) to be created during the cache creation. The DRAs link the cache to either an Amazon S3 data repository or a Network File System (NFS) data repository that supports the NFSv3 protocol.</p>
+    /// <p>The DRA configurations must meet the following requirements:</p>
+    /// <ul>
+    /// <li> <p>All configurations on the list must be of the same data repository type, either all S3 or all NFS. A cache can't link to different data repository types at the same time.</p> </li>
+    /// <li> <p>An NFS DRA must link to an NFS file system that supports the NFSv3 protocol.</p> </li>
+    /// </ul>
     /// <p>DRA automatic import and automatic export is not supported.</p>
-    pub fn set_data_repository_associations(mut self, input: std::option::Option<std::vec::Vec<crate::types::FileCacheDataRepositoryAssociation>>) -> Self {
-        self.data_repository_associations = input; self
+    pub fn set_data_repository_associations(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::FileCacheDataRepositoryAssociation>>,
+    ) -> Self {
+        self.data_repository_associations = input;
+        self
     }
     /// Consumes the builder and constructs a [`CreateFileCacheInput`](crate::operation::create_file_cache::CreateFileCacheInput).
-    pub fn build(self) -> Result<crate::operation::create_file_cache::CreateFileCacheInput, aws_smithy_http::operation::error::BuildError> {
-        Ok(
-            crate::operation::create_file_cache::CreateFileCacheInput {
-                client_request_token: self.client_request_token
-                ,
-                file_cache_type: self.file_cache_type
-                ,
-                file_cache_type_version: self.file_cache_type_version
-                ,
-                storage_capacity: self.storage_capacity
-                ,
-                subnet_ids: self.subnet_ids
-                ,
-                security_group_ids: self.security_group_ids
-                ,
-                tags: self.tags
-                ,
-                copy_tags_to_data_repository_associations: self.copy_tags_to_data_repository_associations
-                ,
-                kms_key_id: self.kms_key_id
-                ,
-                lustre_configuration: self.lustre_configuration
-                ,
-                data_repository_associations: self.data_repository_associations
-                ,
-            }
-        )
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::create_file_cache::CreateFileCacheInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        Ok(crate::operation::create_file_cache::CreateFileCacheInput {
+            client_request_token: self.client_request_token,
+            file_cache_type: self.file_cache_type,
+            file_cache_type_version: self.file_cache_type_version,
+            storage_capacity: self.storage_capacity,
+            subnet_ids: self.subnet_ids,
+            security_group_ids: self.security_group_ids,
+            tags: self.tags,
+            copy_tags_to_data_repository_associations: self
+                .copy_tags_to_data_repository_associations,
+            kms_key_id: self.kms_key_id,
+            lustre_configuration: self.lustre_configuration,
+            data_repository_associations: self.data_repository_associations,
+        })
     }
 }
-

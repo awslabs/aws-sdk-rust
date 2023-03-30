@@ -3,33 +3,36 @@
 /// <p>Data returned by the <b>DescribeEventSubscriptions</b> action.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeEventSubscriptionsOutput  {
+pub struct DescribeEventSubscriptionsOutput {
     /// <p>An optional pagination token provided by a previous DescribeOrderableDBInstanceOptions request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
     #[doc(hidden)]
     pub marker: std::option::Option<std::string::String>,
     /// <p>A list of EventSubscriptions data types.</p>
     #[doc(hidden)]
-    pub event_subscriptions_list: std::option::Option<std::vec::Vec<crate::types::EventSubscription>>,
+    pub event_subscriptions_list:
+        std::option::Option<std::vec::Vec<crate::types::EventSubscription>>,
     _request_id: Option<String>,
 }
 impl DescribeEventSubscriptionsOutput {
     /// <p>An optional pagination token provided by a previous DescribeOrderableDBInstanceOptions request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
-    pub fn marker(&self) -> std::option::Option<& str> {
+    pub fn marker(&self) -> std::option::Option<&str> {
         self.marker.as_deref()
     }
     /// <p>A list of EventSubscriptions data types.</p>
-    pub fn event_subscriptions_list(&self) -> std::option::Option<& [crate::types::EventSubscription]> {
+    pub fn event_subscriptions_list(
+        &self,
+    ) -> std::option::Option<&[crate::types::EventSubscription]> {
         self.event_subscriptions_list.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for DescribeEventSubscriptionsOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl DescribeEventSubscriptionsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeEventSubscriptionsOutput`](crate::operation::describe_event_subscriptions::DescribeEventSubscriptionsOutput).
-    pub fn builder() -> crate::operation::describe_event_subscriptions::builders::DescribeEventSubscriptionsOutputBuilder {
+    pub fn builder() -> crate::operation::describe_event_subscriptions::builders::DescribeEventSubscriptionsOutputBuilder{
         crate::operation::describe_event_subscriptions::builders::DescribeEventSubscriptionsOutputBuilder::default()
     }
 }
@@ -39,7 +42,8 @@ impl DescribeEventSubscriptionsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct DescribeEventSubscriptionsOutputBuilder {
     pub(crate) marker: std::option::Option<std::string::String>,
-    pub(crate) event_subscriptions_list: std::option::Option<std::vec::Vec<crate::types::EventSubscription>>,
+    pub(crate) event_subscriptions_list:
+        std::option::Option<std::vec::Vec<crate::types::EventSubscription>>,
     _request_id: Option<String>,
 }
 impl DescribeEventSubscriptionsOutputBuilder {
@@ -50,7 +54,8 @@ impl DescribeEventSubscriptionsOutputBuilder {
     }
     /// <p>An optional pagination token provided by a previous DescribeOrderableDBInstanceOptions request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
     pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.marker = input; self
+        self.marker = input;
+        self
     }
     /// Appends an item to `event_subscriptions_list`.
     ///
@@ -59,32 +64,35 @@ impl DescribeEventSubscriptionsOutputBuilder {
     /// <p>A list of EventSubscriptions data types.</p>
     pub fn event_subscriptions_list(mut self, input: crate::types::EventSubscription) -> Self {
         let mut v = self.event_subscriptions_list.unwrap_or_default();
-                        v.push(input);
-                        self.event_subscriptions_list = Some(v);
-                        self
+        v.push(input);
+        self.event_subscriptions_list = Some(v);
+        self
     }
     /// <p>A list of EventSubscriptions data types.</p>
-    pub fn set_event_subscriptions_list(mut self, input: std::option::Option<std::vec::Vec<crate::types::EventSubscription>>) -> Self {
-        self.event_subscriptions_list = input; self
+    pub fn set_event_subscriptions_list(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::EventSubscription>>,
+    ) -> Self {
+        self.event_subscriptions_list = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`DescribeEventSubscriptionsOutput`](crate::operation::describe_event_subscriptions::DescribeEventSubscriptionsOutput).
-    pub fn build(self) -> crate::operation::describe_event_subscriptions::DescribeEventSubscriptionsOutput {
+    pub fn build(
+        self,
+    ) -> crate::operation::describe_event_subscriptions::DescribeEventSubscriptionsOutput {
         crate::operation::describe_event_subscriptions::DescribeEventSubscriptionsOutput {
-            marker: self.marker
-            ,
-            event_subscriptions_list: self.event_subscriptions_list
-            ,
+            marker: self.marker,
+            event_subscriptions_list: self.event_subscriptions_list,
             _request_id: self._request_id,
         }
     }
 }
-

@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-/// 
+///
 /// Here is an example of how you can make a match expression forward-compatible:
-/// 
+///
 /// ```text
 /// # let reportinstancereasoncodes = unimplemented!();
 /// match reportinstancereasoncodes {
@@ -37,14 +37,22 @@
 /// Specifically, when `reportinstancereasoncodes` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `ReportInstanceReasonCodes::NewFeature` also yielding `"NewFeature"`.
-/// 
+///
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
 pub enum ReportInstanceReasonCodes {
     #[allow(missing_docs)] // documentation missing in model
     InstanceStuckInState,
@@ -65,55 +73,66 @@ pub enum ReportInstanceReasonCodes {
     #[allow(missing_docs)] // documentation missing in model
     Unresponsive,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::primitives::UnknownVariantValue)
+    Unknown(crate::primitives::UnknownVariantValue),
 }
 impl std::convert::From<&str> for ReportInstanceReasonCodes {
-                fn from(s: &str) -> Self {
-                    match s {
-                        "instance-stuck-in-state" => ReportInstanceReasonCodes::InstanceStuckInState,
-"not-accepting-credentials" => ReportInstanceReasonCodes::NotAcceptingCredentials,
-"other" => ReportInstanceReasonCodes::Other,
-"password-not-available" => ReportInstanceReasonCodes::PasswordNotAvailable,
-"performance-ebs-volume" => ReportInstanceReasonCodes::PerformanceEbsVolume,
-"performance-instance-store" => ReportInstanceReasonCodes::PerformanceInstanceStore,
-"performance-network" => ReportInstanceReasonCodes::PerformanceNetwork,
-"performance-other" => ReportInstanceReasonCodes::PerformanceOther,
-"unresponsive" => ReportInstanceReasonCodes::Unresponsive,
-other => ReportInstanceReasonCodes::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
-                    }
-                }
-            }
-impl std::str::FromStr for ReportInstanceReasonCodes {
-                type Err = std::convert::Infallible;
-
-                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-                    Ok(ReportInstanceReasonCodes::from(s))
-                }
-            }
-impl ReportInstanceReasonCodes {
-                /// Returns the `&str` value of the enum member.
-                pub fn as_str(&self) -> &str {
-                    match self {
-    ReportInstanceReasonCodes::InstanceStuckInState => "instance-stuck-in-state",
-    ReportInstanceReasonCodes::NotAcceptingCredentials => "not-accepting-credentials",
-    ReportInstanceReasonCodes::Other => "other",
-    ReportInstanceReasonCodes::PasswordNotAvailable => "password-not-available",
-    ReportInstanceReasonCodes::PerformanceEbsVolume => "performance-ebs-volume",
-    ReportInstanceReasonCodes::PerformanceInstanceStore => "performance-instance-store",
-    ReportInstanceReasonCodes::PerformanceNetwork => "performance-network",
-    ReportInstanceReasonCodes::PerformanceOther => "performance-other",
-    ReportInstanceReasonCodes::Unresponsive => "unresponsive",
-    ReportInstanceReasonCodes::Unknown(value) => value.as_str()
+    fn from(s: &str) -> Self {
+        match s {
+            "instance-stuck-in-state" => ReportInstanceReasonCodes::InstanceStuckInState,
+            "not-accepting-credentials" => ReportInstanceReasonCodes::NotAcceptingCredentials,
+            "other" => ReportInstanceReasonCodes::Other,
+            "password-not-available" => ReportInstanceReasonCodes::PasswordNotAvailable,
+            "performance-ebs-volume" => ReportInstanceReasonCodes::PerformanceEbsVolume,
+            "performance-instance-store" => ReportInstanceReasonCodes::PerformanceInstanceStore,
+            "performance-network" => ReportInstanceReasonCodes::PerformanceNetwork,
+            "performance-other" => ReportInstanceReasonCodes::PerformanceOther,
+            "unresponsive" => ReportInstanceReasonCodes::Unresponsive,
+            other => ReportInstanceReasonCodes::Unknown(crate::primitives::UnknownVariantValue(
+                other.to_owned(),
+            )),
+        }
+    }
 }
-                }
-                /// Returns all the `&str` representations of the enum members.
-                pub const fn values() -> &'static [&'static str] {
-                    &["instance-stuck-in-state", "not-accepting-credentials", "other", "password-not-available", "performance-ebs-volume", "performance-instance-store", "performance-network", "performance-other", "unresponsive"]
-                }
-            }
-impl AsRef<str> for ReportInstanceReasonCodes {
-                fn as_ref(&self) -> &str {
-                    self.as_str()
-                }
-            }
+impl std::str::FromStr for ReportInstanceReasonCodes {
+    type Err = std::convert::Infallible;
 
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(ReportInstanceReasonCodes::from(s))
+    }
+}
+impl ReportInstanceReasonCodes {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            ReportInstanceReasonCodes::InstanceStuckInState => "instance-stuck-in-state",
+            ReportInstanceReasonCodes::NotAcceptingCredentials => "not-accepting-credentials",
+            ReportInstanceReasonCodes::Other => "other",
+            ReportInstanceReasonCodes::PasswordNotAvailable => "password-not-available",
+            ReportInstanceReasonCodes::PerformanceEbsVolume => "performance-ebs-volume",
+            ReportInstanceReasonCodes::PerformanceInstanceStore => "performance-instance-store",
+            ReportInstanceReasonCodes::PerformanceNetwork => "performance-network",
+            ReportInstanceReasonCodes::PerformanceOther => "performance-other",
+            ReportInstanceReasonCodes::Unresponsive => "unresponsive",
+            ReportInstanceReasonCodes::Unknown(value) => value.as_str(),
+        }
+    }
+    /// Returns all the `&str` representations of the enum members.
+    pub const fn values() -> &'static [&'static str] {
+        &[
+            "instance-stuck-in-state",
+            "not-accepting-credentials",
+            "other",
+            "password-not-available",
+            "performance-ebs-volume",
+            "performance-instance-store",
+            "performance-network",
+            "performance-other",
+            "unresponsive",
+        ]
+    }
+}
+impl AsRef<str> for ReportInstanceReasonCodes {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}

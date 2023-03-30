@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeAggregateIdFormatInput  {
+pub struct DescribeAggregateIdFormatInput {
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     #[doc(hidden)]
     pub dry_run: std::option::Option<bool>,
@@ -15,7 +15,7 @@ impl DescribeAggregateIdFormatInput {
 }
 impl DescribeAggregateIdFormatInput {
     /// Creates a new builder-style object to manufacture [`DescribeAggregateIdFormatInput`](crate::operation::describe_aggregate_id_format::DescribeAggregateIdFormatInput).
-    pub fn builder() -> crate::operation::describe_aggregate_id_format::builders::DescribeAggregateIdFormatInputBuilder {
+    pub fn builder() -> crate::operation::describe_aggregate_id_format::builders::DescribeAggregateIdFormatInputBuilder{
         crate::operation::describe_aggregate_id_format::builders::DescribeAggregateIdFormatInputBuilder::default()
     }
 }
@@ -34,16 +34,20 @@ impl DescribeAggregateIdFormatInputBuilder {
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn set_dry_run(mut self, input: std::option::Option<bool>) -> Self {
-        self.dry_run = input; self
+        self.dry_run = input;
+        self
     }
     /// Consumes the builder and constructs a [`DescribeAggregateIdFormatInput`](crate::operation::describe_aggregate_id_format::DescribeAggregateIdFormatInput).
-    pub fn build(self) -> Result<crate::operation::describe_aggregate_id_format::DescribeAggregateIdFormatInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::describe_aggregate_id_format::DescribeAggregateIdFormatInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::describe_aggregate_id_format::DescribeAggregateIdFormatInput {
-                dry_run: self.dry_run
-                ,
-            }
+                dry_run: self.dry_run,
+            },
         )
     }
 }
-

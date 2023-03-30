@@ -3,7 +3,7 @@
 /// <p>Configures the display properties of the given text.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct FontConfiguration  {
+pub struct FontConfiguration {
     /// <p>The option that determines the text display size.</p>
     #[doc(hidden)]
     pub font_size: std::option::Option<crate::types::FontSize>,
@@ -22,23 +22,23 @@ pub struct FontConfiguration  {
 }
 impl FontConfiguration {
     /// <p>The option that determines the text display size.</p>
-    pub fn font_size(&self) -> std::option::Option<& crate::types::FontSize> {
+    pub fn font_size(&self) -> std::option::Option<&crate::types::FontSize> {
         self.font_size.as_ref()
     }
     /// <p>Determines the appearance of decorative lines on the text.</p>
-    pub fn font_decoration(&self) -> std::option::Option<& crate::types::FontDecoration> {
+    pub fn font_decoration(&self) -> std::option::Option<&crate::types::FontDecoration> {
         self.font_decoration.as_ref()
     }
     /// <p>Determines the color of the text.</p>
-    pub fn font_color(&self) -> std::option::Option<& str> {
+    pub fn font_color(&self) -> std::option::Option<&str> {
         self.font_color.as_deref()
     }
     /// <p>The option that determines the text display weight, or boldness.</p>
-    pub fn font_weight(&self) -> std::option::Option<& crate::types::FontWeight> {
+    pub fn font_weight(&self) -> std::option::Option<&crate::types::FontWeight> {
         self.font_weight.as_ref()
     }
     /// <p>Determines the text display face that is inherited by the given font family.</p>
-    pub fn font_style(&self) -> std::option::Option<& crate::types::FontStyle> {
+    pub fn font_style(&self) -> std::option::Option<&crate::types::FontStyle> {
         self.font_style.as_ref()
     }
 }
@@ -67,7 +67,8 @@ impl FontConfigurationBuilder {
     }
     /// <p>The option that determines the text display size.</p>
     pub fn set_font_size(mut self, input: std::option::Option<crate::types::FontSize>) -> Self {
-        self.font_size = input; self
+        self.font_size = input;
+        self
     }
     /// <p>Determines the appearance of decorative lines on the text.</p>
     pub fn font_decoration(mut self, input: crate::types::FontDecoration) -> Self {
@@ -75,8 +76,12 @@ impl FontConfigurationBuilder {
         self
     }
     /// <p>Determines the appearance of decorative lines on the text.</p>
-    pub fn set_font_decoration(mut self, input: std::option::Option<crate::types::FontDecoration>) -> Self {
-        self.font_decoration = input; self
+    pub fn set_font_decoration(
+        mut self,
+        input: std::option::Option<crate::types::FontDecoration>,
+    ) -> Self {
+        self.font_decoration = input;
+        self
     }
     /// <p>Determines the color of the text.</p>
     pub fn font_color(mut self, input: impl Into<std::string::String>) -> Self {
@@ -85,7 +90,8 @@ impl FontConfigurationBuilder {
     }
     /// <p>Determines the color of the text.</p>
     pub fn set_font_color(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.font_color = input; self
+        self.font_color = input;
+        self
     }
     /// <p>The option that determines the text display weight, or boldness.</p>
     pub fn font_weight(mut self, input: crate::types::FontWeight) -> Self {
@@ -94,7 +100,8 @@ impl FontConfigurationBuilder {
     }
     /// <p>The option that determines the text display weight, or boldness.</p>
     pub fn set_font_weight(mut self, input: std::option::Option<crate::types::FontWeight>) -> Self {
-        self.font_weight = input; self
+        self.font_weight = input;
+        self
     }
     /// <p>Determines the text display face that is inherited by the given font family.</p>
     pub fn font_style(mut self, input: crate::types::FontStyle) -> Self {
@@ -103,22 +110,17 @@ impl FontConfigurationBuilder {
     }
     /// <p>Determines the text display face that is inherited by the given font family.</p>
     pub fn set_font_style(mut self, input: std::option::Option<crate::types::FontStyle>) -> Self {
-        self.font_style = input; self
+        self.font_style = input;
+        self
     }
     /// Consumes the builder and constructs a [`FontConfiguration`](crate::types::FontConfiguration).
     pub fn build(self) -> crate::types::FontConfiguration {
         crate::types::FontConfiguration {
-            font_size: self.font_size
-            ,
-            font_decoration: self.font_decoration
-            ,
-            font_color: self.font_color
-            ,
-            font_weight: self.font_weight
-            ,
-            font_style: self.font_style
-            ,
+            font_size: self.font_size,
+            font_decoration: self.font_decoration,
+            font_color: self.font_color,
+            font_weight: self.font_weight,
+            font_style: self.font_style,
         }
     }
 }
-

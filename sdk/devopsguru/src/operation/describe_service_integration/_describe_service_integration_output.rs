@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeServiceIntegrationOutput  {
+pub struct DescribeServiceIntegrationOutput {
     /// <p> Information about the integration of DevOps Guru with another Amazon Web Services service, such as Amazon Web Services Systems Manager. </p>
     #[doc(hidden)]
     pub service_integration: std::option::Option<crate::types::ServiceIntegrationConfig>,
@@ -10,18 +10,20 @@ pub struct DescribeServiceIntegrationOutput  {
 }
 impl DescribeServiceIntegrationOutput {
     /// <p> Information about the integration of DevOps Guru with another Amazon Web Services service, such as Amazon Web Services Systems Manager. </p>
-    pub fn service_integration(&self) -> std::option::Option<& crate::types::ServiceIntegrationConfig> {
+    pub fn service_integration(
+        &self,
+    ) -> std::option::Option<&crate::types::ServiceIntegrationConfig> {
         self.service_integration.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for DescribeServiceIntegrationOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl DescribeServiceIntegrationOutput {
     /// Creates a new builder-style object to manufacture [`DescribeServiceIntegrationOutput`](crate::operation::describe_service_integration::DescribeServiceIntegrationOutput).
-    pub fn builder() -> crate::operation::describe_service_integration::builders::DescribeServiceIntegrationOutputBuilder {
+    pub fn builder() -> crate::operation::describe_service_integration::builders::DescribeServiceIntegrationOutputBuilder{
         crate::operation::describe_service_integration::builders::DescribeServiceIntegrationOutputBuilder::default()
     }
 }
@@ -40,25 +42,29 @@ impl DescribeServiceIntegrationOutputBuilder {
         self
     }
     /// <p> Information about the integration of DevOps Guru with another Amazon Web Services service, such as Amazon Web Services Systems Manager. </p>
-    pub fn set_service_integration(mut self, input: std::option::Option<crate::types::ServiceIntegrationConfig>) -> Self {
-        self.service_integration = input; self
+    pub fn set_service_integration(
+        mut self,
+        input: std::option::Option<crate::types::ServiceIntegrationConfig>,
+    ) -> Self {
+        self.service_integration = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`DescribeServiceIntegrationOutput`](crate::operation::describe_service_integration::DescribeServiceIntegrationOutput).
-    pub fn build(self) -> crate::operation::describe_service_integration::DescribeServiceIntegrationOutput {
+    pub fn build(
+        self,
+    ) -> crate::operation::describe_service_integration::DescribeServiceIntegrationOutput {
         crate::operation::describe_service_integration::DescribeServiceIntegrationOutput {
-            service_integration: self.service_integration
-            ,
+            service_integration: self.service_integration,
             _request_id: self._request_id,
         }
     }
 }
-

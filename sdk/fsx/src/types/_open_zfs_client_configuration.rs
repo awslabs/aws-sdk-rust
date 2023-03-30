@@ -3,29 +3,29 @@
 /// <p>Specifies who can mount an OpenZFS file system and the options available while mounting the file system.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct OpenZfsClientConfiguration  {
+pub struct OpenZfsClientConfiguration {
     /// <p>A value that specifies who can mount the file system. You can provide a wildcard character (<code>*</code>), an IP address (<code>0.0.0.0</code>), or a CIDR address (<code>192.0.2.0/24</code>). By default, Amazon FSx uses the wildcard character when specifying the client. </p>
     #[doc(hidden)]
     pub clients: std::option::Option<std::string::String>,
-    /// <p>The options to use when mounting the file system. For a list of options that you can use with Network File System (NFS), see the <a href="https://linux.die.net/man/5/exports">exports(5) - Linux man page</a>. When choosing your options, consider the following:</p> 
-    /// <ul> 
-    /// <li> <p> <code>crossmnt</code> is used by default. If you don't specify <code>crossmnt</code> when changing the client configuration, you won't be able to see or access snapshots in your file system's snapshot directory.</p> </li> 
-    /// <li> <p> <code>sync</code> is used by default. If you instead specify <code>async</code>, the system acknowledges writes before writing to disk. If the system crashes before the writes are finished, you lose the unwritten data. </p> </li> 
+    /// <p>The options to use when mounting the file system. For a list of options that you can use with Network File System (NFS), see the <a href="https://linux.die.net/man/5/exports">exports(5) - Linux man page</a>. When choosing your options, consider the following:</p>
+    /// <ul>
+    /// <li> <p> <code>crossmnt</code> is used by default. If you don't specify <code>crossmnt</code> when changing the client configuration, you won't be able to see or access snapshots in your file system's snapshot directory.</p> </li>
+    /// <li> <p> <code>sync</code> is used by default. If you instead specify <code>async</code>, the system acknowledges writes before writing to disk. If the system crashes before the writes are finished, you lose the unwritten data. </p> </li>
     /// </ul>
     #[doc(hidden)]
     pub options: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl OpenZfsClientConfiguration {
     /// <p>A value that specifies who can mount the file system. You can provide a wildcard character (<code>*</code>), an IP address (<code>0.0.0.0</code>), or a CIDR address (<code>192.0.2.0/24</code>). By default, Amazon FSx uses the wildcard character when specifying the client. </p>
-    pub fn clients(&self) -> std::option::Option<& str> {
+    pub fn clients(&self) -> std::option::Option<&str> {
         self.clients.as_deref()
     }
-    /// <p>The options to use when mounting the file system. For a list of options that you can use with Network File System (NFS), see the <a href="https://linux.die.net/man/5/exports">exports(5) - Linux man page</a>. When choosing your options, consider the following:</p> 
-    /// <ul> 
-    /// <li> <p> <code>crossmnt</code> is used by default. If you don't specify <code>crossmnt</code> when changing the client configuration, you won't be able to see or access snapshots in your file system's snapshot directory.</p> </li> 
-    /// <li> <p> <code>sync</code> is used by default. If you instead specify <code>async</code>, the system acknowledges writes before writing to disk. If the system crashes before the writes are finished, you lose the unwritten data. </p> </li> 
+    /// <p>The options to use when mounting the file system. For a list of options that you can use with Network File System (NFS), see the <a href="https://linux.die.net/man/5/exports">exports(5) - Linux man page</a>. When choosing your options, consider the following:</p>
+    /// <ul>
+    /// <li> <p> <code>crossmnt</code> is used by default. If you don't specify <code>crossmnt</code> when changing the client configuration, you won't be able to see or access snapshots in your file system's snapshot directory.</p> </li>
+    /// <li> <p> <code>sync</code> is used by default. If you instead specify <code>async</code>, the system acknowledges writes before writing to disk. If the system crashes before the writes are finished, you lose the unwritten data. </p> </li>
     /// </ul>
-    pub fn options(&self) -> std::option::Option<& [std::string::String]> {
+    pub fn options(&self) -> std::option::Option<&[std::string::String]> {
         self.options.as_deref()
     }
 }
@@ -51,39 +51,41 @@ impl OpenZfsClientConfigurationBuilder {
     }
     /// <p>A value that specifies who can mount the file system. You can provide a wildcard character (<code>*</code>), an IP address (<code>0.0.0.0</code>), or a CIDR address (<code>192.0.2.0/24</code>). By default, Amazon FSx uses the wildcard character when specifying the client. </p>
     pub fn set_clients(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.clients = input; self
+        self.clients = input;
+        self
     }
     /// Appends an item to `options`.
     ///
     /// To override the contents of this collection use [`set_options`](Self::set_options).
     ///
-    /// <p>The options to use when mounting the file system. For a list of options that you can use with Network File System (NFS), see the <a href="https://linux.die.net/man/5/exports">exports(5) - Linux man page</a>. When choosing your options, consider the following:</p> 
-    /// <ul> 
-    /// <li> <p> <code>crossmnt</code> is used by default. If you don't specify <code>crossmnt</code> when changing the client configuration, you won't be able to see or access snapshots in your file system's snapshot directory.</p> </li> 
-    /// <li> <p> <code>sync</code> is used by default. If you instead specify <code>async</code>, the system acknowledges writes before writing to disk. If the system crashes before the writes are finished, you lose the unwritten data. </p> </li> 
+    /// <p>The options to use when mounting the file system. For a list of options that you can use with Network File System (NFS), see the <a href="https://linux.die.net/man/5/exports">exports(5) - Linux man page</a>. When choosing your options, consider the following:</p>
+    /// <ul>
+    /// <li> <p> <code>crossmnt</code> is used by default. If you don't specify <code>crossmnt</code> when changing the client configuration, you won't be able to see or access snapshots in your file system's snapshot directory.</p> </li>
+    /// <li> <p> <code>sync</code> is used by default. If you instead specify <code>async</code>, the system acknowledges writes before writing to disk. If the system crashes before the writes are finished, you lose the unwritten data. </p> </li>
     /// </ul>
     pub fn options(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.options.unwrap_or_default();
-                        v.push(input.into());
-                        self.options = Some(v);
-                        self
+        v.push(input.into());
+        self.options = Some(v);
+        self
     }
-    /// <p>The options to use when mounting the file system. For a list of options that you can use with Network File System (NFS), see the <a href="https://linux.die.net/man/5/exports">exports(5) - Linux man page</a>. When choosing your options, consider the following:</p> 
-    /// <ul> 
-    /// <li> <p> <code>crossmnt</code> is used by default. If you don't specify <code>crossmnt</code> when changing the client configuration, you won't be able to see or access snapshots in your file system's snapshot directory.</p> </li> 
-    /// <li> <p> <code>sync</code> is used by default. If you instead specify <code>async</code>, the system acknowledges writes before writing to disk. If the system crashes before the writes are finished, you lose the unwritten data. </p> </li> 
+    /// <p>The options to use when mounting the file system. For a list of options that you can use with Network File System (NFS), see the <a href="https://linux.die.net/man/5/exports">exports(5) - Linux man page</a>. When choosing your options, consider the following:</p>
+    /// <ul>
+    /// <li> <p> <code>crossmnt</code> is used by default. If you don't specify <code>crossmnt</code> when changing the client configuration, you won't be able to see or access snapshots in your file system's snapshot directory.</p> </li>
+    /// <li> <p> <code>sync</code> is used by default. If you instead specify <code>async</code>, the system acknowledges writes before writing to disk. If the system crashes before the writes are finished, you lose the unwritten data. </p> </li>
     /// </ul>
-    pub fn set_options(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-        self.options = input; self
+    pub fn set_options(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
+        self.options = input;
+        self
     }
     /// Consumes the builder and constructs a [`OpenZfsClientConfiguration`](crate::types::OpenZfsClientConfiguration).
     pub fn build(self) -> crate::types::OpenZfsClientConfiguration {
         crate::types::OpenZfsClientConfiguration {
-            clients: self.clients
-            ,
-            options: self.options
-            ,
+            clients: self.clients,
+            options: self.options,
         }
     }
 }
-

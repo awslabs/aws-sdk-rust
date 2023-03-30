@@ -2,12 +2,12 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateAnomalySubscriptionInput  {
+pub struct UpdateAnomalySubscriptionInput {
     /// <p>A cost anomaly subscription Amazon Resource Name (ARN). </p>
     #[doc(hidden)]
     pub subscription_arn: std::option::Option<std::string::String>,
-    /// <p>(deprecated)</p> 
-    /// <p>The update to the threshold value for receiving notifications. </p> 
+    /// <p>(deprecated)</p>
+    /// <p>The update to the threshold value for receiving notifications. </p>
     /// <p>This field has been deprecated. To update a threshold, use ThresholdExpression. Continued use of Threshold will be treated as shorthand syntax for a ThresholdExpression.</p>
     #[deprecated(note = "Threshold has been deprecated in favor of ThresholdExpression")]
     #[doc(hidden)]
@@ -24,60 +24,60 @@ pub struct UpdateAnomalySubscriptionInput  {
     /// <p>The new name of the subscription. </p>
     #[doc(hidden)]
     pub subscription_name: std::option::Option<std::string::String>,
-    /// <p>The update to the <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Expression.html">Expression</a> object used to specify the anomalies that you want to generate alerts for. This supports dimensions and nested expressions. The supported dimensions are <code>ANOMALY_TOTAL_IMPACT_ABSOLUTE</code> and <code>ANOMALY_TOTAL_IMPACT_PERCENTAGE</code>. The supported nested expression types are <code>AND</code> and <code>OR</code>. The match option <code>GREATER_THAN_OR_EQUAL</code> is required. Values must be numbers between 0 and 10,000,000,000.</p> 
-    /// <p>The following are examples of valid ThresholdExpressions:</p> 
-    /// <ul> 
-    /// <li> <p>Absolute threshold: <code>{ "Dimensions": { "Key": "ANOMALY_TOTAL_IMPACT_ABSOLUTE", "MatchOptions": [ "GREATER_THAN_OR_EQUAL" ], "Values": [ "100" ] } }</code> </p> </li> 
-    /// <li> <p>Percentage threshold: <code>{ "Dimensions": { "Key": "ANOMALY_TOTAL_IMPACT_PERCENTAGE", "MatchOptions": [ "GREATER_THAN_OR_EQUAL" ], "Values": [ "100" ] } }</code> </p> </li> 
-    /// <li> <p> <code>AND</code> two thresholds together: <code>{ "And": [ { "Dimensions": { "Key": "ANOMALY_TOTAL_IMPACT_ABSOLUTE", "MatchOptions": [ "GREATER_THAN_OR_EQUAL" ], "Values": [ "100" ] } }, { "Dimensions": { "Key": "ANOMALY_TOTAL_IMPACT_PERCENTAGE", "MatchOptions": [ "GREATER_THAN_OR_EQUAL" ], "Values": [ "100" ] } } ] }</code> </p> </li> 
-    /// <li> <p> <code>OR</code> two thresholds together: <code>{ "Or": [ { "Dimensions": { "Key": "ANOMALY_TOTAL_IMPACT_ABSOLUTE", "MatchOptions": [ "GREATER_THAN_OR_EQUAL" ], "Values": [ "100" ] } }, { "Dimensions": { "Key": "ANOMALY_TOTAL_IMPACT_PERCENTAGE", "MatchOptions": [ "GREATER_THAN_OR_EQUAL" ], "Values": [ "100" ] } } ] }</code> </p> </li> 
+    /// <p>The update to the <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Expression.html">Expression</a> object used to specify the anomalies that you want to generate alerts for. This supports dimensions and nested expressions. The supported dimensions are <code>ANOMALY_TOTAL_IMPACT_ABSOLUTE</code> and <code>ANOMALY_TOTAL_IMPACT_PERCENTAGE</code>. The supported nested expression types are <code>AND</code> and <code>OR</code>. The match option <code>GREATER_THAN_OR_EQUAL</code> is required. Values must be numbers between 0 and 10,000,000,000.</p>
+    /// <p>The following are examples of valid ThresholdExpressions:</p>
+    /// <ul>
+    /// <li> <p>Absolute threshold: <code>{ "Dimensions": { "Key": "ANOMALY_TOTAL_IMPACT_ABSOLUTE", "MatchOptions": [ "GREATER_THAN_OR_EQUAL" ], "Values": [ "100" ] } }</code> </p> </li>
+    /// <li> <p>Percentage threshold: <code>{ "Dimensions": { "Key": "ANOMALY_TOTAL_IMPACT_PERCENTAGE", "MatchOptions": [ "GREATER_THAN_OR_EQUAL" ], "Values": [ "100" ] } }</code> </p> </li>
+    /// <li> <p> <code>AND</code> two thresholds together: <code>{ "And": [ { "Dimensions": { "Key": "ANOMALY_TOTAL_IMPACT_ABSOLUTE", "MatchOptions": [ "GREATER_THAN_OR_EQUAL" ], "Values": [ "100" ] } }, { "Dimensions": { "Key": "ANOMALY_TOTAL_IMPACT_PERCENTAGE", "MatchOptions": [ "GREATER_THAN_OR_EQUAL" ], "Values": [ "100" ] } } ] }</code> </p> </li>
+    /// <li> <p> <code>OR</code> two thresholds together: <code>{ "Or": [ { "Dimensions": { "Key": "ANOMALY_TOTAL_IMPACT_ABSOLUTE", "MatchOptions": [ "GREATER_THAN_OR_EQUAL" ], "Values": [ "100" ] } }, { "Dimensions": { "Key": "ANOMALY_TOTAL_IMPACT_PERCENTAGE", "MatchOptions": [ "GREATER_THAN_OR_EQUAL" ], "Values": [ "100" ] } } ] }</code> </p> </li>
     /// </ul>
     #[doc(hidden)]
     pub threshold_expression: std::option::Option<crate::types::Expression>,
 }
 impl UpdateAnomalySubscriptionInput {
     /// <p>A cost anomaly subscription Amazon Resource Name (ARN). </p>
-    pub fn subscription_arn(&self) -> std::option::Option<& str> {
+    pub fn subscription_arn(&self) -> std::option::Option<&str> {
         self.subscription_arn.as_deref()
     }
-    /// <p>(deprecated)</p> 
-    /// <p>The update to the threshold value for receiving notifications. </p> 
+    /// <p>(deprecated)</p>
+    /// <p>The update to the threshold value for receiving notifications. </p>
     /// <p>This field has been deprecated. To update a threshold, use ThresholdExpression. Continued use of Threshold will be treated as shorthand syntax for a ThresholdExpression.</p>
     #[deprecated(note = "Threshold has been deprecated in favor of ThresholdExpression")]
     pub fn threshold(&self) -> std::option::Option<f64> {
         self.threshold
     }
     /// <p>The update to the frequency value that subscribers receive notifications. </p>
-    pub fn frequency(&self) -> std::option::Option<& crate::types::AnomalySubscriptionFrequency> {
+    pub fn frequency(&self) -> std::option::Option<&crate::types::AnomalySubscriptionFrequency> {
         self.frequency.as_ref()
     }
     /// <p>A list of cost anomaly monitor ARNs. </p>
-    pub fn monitor_arn_list(&self) -> std::option::Option<& [std::string::String]> {
+    pub fn monitor_arn_list(&self) -> std::option::Option<&[std::string::String]> {
         self.monitor_arn_list.as_deref()
     }
     /// <p>The update to the subscriber list. </p>
-    pub fn subscribers(&self) -> std::option::Option<& [crate::types::Subscriber]> {
+    pub fn subscribers(&self) -> std::option::Option<&[crate::types::Subscriber]> {
         self.subscribers.as_deref()
     }
     /// <p>The new name of the subscription. </p>
-    pub fn subscription_name(&self) -> std::option::Option<& str> {
+    pub fn subscription_name(&self) -> std::option::Option<&str> {
         self.subscription_name.as_deref()
     }
-    /// <p>The update to the <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Expression.html">Expression</a> object used to specify the anomalies that you want to generate alerts for. This supports dimensions and nested expressions. The supported dimensions are <code>ANOMALY_TOTAL_IMPACT_ABSOLUTE</code> and <code>ANOMALY_TOTAL_IMPACT_PERCENTAGE</code>. The supported nested expression types are <code>AND</code> and <code>OR</code>. The match option <code>GREATER_THAN_OR_EQUAL</code> is required. Values must be numbers between 0 and 10,000,000,000.</p> 
-    /// <p>The following are examples of valid ThresholdExpressions:</p> 
-    /// <ul> 
-    /// <li> <p>Absolute threshold: <code>{ "Dimensions": { "Key": "ANOMALY_TOTAL_IMPACT_ABSOLUTE", "MatchOptions": [ "GREATER_THAN_OR_EQUAL" ], "Values": [ "100" ] } }</code> </p> </li> 
-    /// <li> <p>Percentage threshold: <code>{ "Dimensions": { "Key": "ANOMALY_TOTAL_IMPACT_PERCENTAGE", "MatchOptions": [ "GREATER_THAN_OR_EQUAL" ], "Values": [ "100" ] } }</code> </p> </li> 
-    /// <li> <p> <code>AND</code> two thresholds together: <code>{ "And": [ { "Dimensions": { "Key": "ANOMALY_TOTAL_IMPACT_ABSOLUTE", "MatchOptions": [ "GREATER_THAN_OR_EQUAL" ], "Values": [ "100" ] } }, { "Dimensions": { "Key": "ANOMALY_TOTAL_IMPACT_PERCENTAGE", "MatchOptions": [ "GREATER_THAN_OR_EQUAL" ], "Values": [ "100" ] } } ] }</code> </p> </li> 
-    /// <li> <p> <code>OR</code> two thresholds together: <code>{ "Or": [ { "Dimensions": { "Key": "ANOMALY_TOTAL_IMPACT_ABSOLUTE", "MatchOptions": [ "GREATER_THAN_OR_EQUAL" ], "Values": [ "100" ] } }, { "Dimensions": { "Key": "ANOMALY_TOTAL_IMPACT_PERCENTAGE", "MatchOptions": [ "GREATER_THAN_OR_EQUAL" ], "Values": [ "100" ] } } ] }</code> </p> </li> 
+    /// <p>The update to the <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Expression.html">Expression</a> object used to specify the anomalies that you want to generate alerts for. This supports dimensions and nested expressions. The supported dimensions are <code>ANOMALY_TOTAL_IMPACT_ABSOLUTE</code> and <code>ANOMALY_TOTAL_IMPACT_PERCENTAGE</code>. The supported nested expression types are <code>AND</code> and <code>OR</code>. The match option <code>GREATER_THAN_OR_EQUAL</code> is required. Values must be numbers between 0 and 10,000,000,000.</p>
+    /// <p>The following are examples of valid ThresholdExpressions:</p>
+    /// <ul>
+    /// <li> <p>Absolute threshold: <code>{ "Dimensions": { "Key": "ANOMALY_TOTAL_IMPACT_ABSOLUTE", "MatchOptions": [ "GREATER_THAN_OR_EQUAL" ], "Values": [ "100" ] } }</code> </p> </li>
+    /// <li> <p>Percentage threshold: <code>{ "Dimensions": { "Key": "ANOMALY_TOTAL_IMPACT_PERCENTAGE", "MatchOptions": [ "GREATER_THAN_OR_EQUAL" ], "Values": [ "100" ] } }</code> </p> </li>
+    /// <li> <p> <code>AND</code> two thresholds together: <code>{ "And": [ { "Dimensions": { "Key": "ANOMALY_TOTAL_IMPACT_ABSOLUTE", "MatchOptions": [ "GREATER_THAN_OR_EQUAL" ], "Values": [ "100" ] } }, { "Dimensions": { "Key": "ANOMALY_TOTAL_IMPACT_PERCENTAGE", "MatchOptions": [ "GREATER_THAN_OR_EQUAL" ], "Values": [ "100" ] } } ] }</code> </p> </li>
+    /// <li> <p> <code>OR</code> two thresholds together: <code>{ "Or": [ { "Dimensions": { "Key": "ANOMALY_TOTAL_IMPACT_ABSOLUTE", "MatchOptions": [ "GREATER_THAN_OR_EQUAL" ], "Values": [ "100" ] } }, { "Dimensions": { "Key": "ANOMALY_TOTAL_IMPACT_PERCENTAGE", "MatchOptions": [ "GREATER_THAN_OR_EQUAL" ], "Values": [ "100" ] } } ] }</code> </p> </li>
     /// </ul>
-    pub fn threshold_expression(&self) -> std::option::Option<& crate::types::Expression> {
+    pub fn threshold_expression(&self) -> std::option::Option<&crate::types::Expression> {
         self.threshold_expression.as_ref()
     }
 }
 impl UpdateAnomalySubscriptionInput {
     /// Creates a new builder-style object to manufacture [`UpdateAnomalySubscriptionInput`](crate::operation::update_anomaly_subscription::UpdateAnomalySubscriptionInput).
-    pub fn builder() -> crate::operation::update_anomaly_subscription::builders::UpdateAnomalySubscriptionInputBuilder {
+    pub fn builder() -> crate::operation::update_anomaly_subscription::builders::UpdateAnomalySubscriptionInputBuilder{
         crate::operation::update_anomaly_subscription::builders::UpdateAnomalySubscriptionInputBuilder::default()
     }
 }
@@ -102,22 +102,24 @@ impl UpdateAnomalySubscriptionInputBuilder {
     }
     /// <p>A cost anomaly subscription Amazon Resource Name (ARN). </p>
     pub fn set_subscription_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.subscription_arn = input; self
+        self.subscription_arn = input;
+        self
     }
-    /// <p>(deprecated)</p> 
-    /// <p>The update to the threshold value for receiving notifications. </p> 
+    /// <p>(deprecated)</p>
+    /// <p>The update to the threshold value for receiving notifications. </p>
     /// <p>This field has been deprecated. To update a threshold, use ThresholdExpression. Continued use of Threshold will be treated as shorthand syntax for a ThresholdExpression.</p>
     #[deprecated(note = "Threshold has been deprecated in favor of ThresholdExpression")]
     pub fn threshold(mut self, input: f64) -> Self {
         self.threshold = Some(input);
         self
     }
-    /// <p>(deprecated)</p> 
-    /// <p>The update to the threshold value for receiving notifications. </p> 
+    /// <p>(deprecated)</p>
+    /// <p>The update to the threshold value for receiving notifications. </p>
     /// <p>This field has been deprecated. To update a threshold, use ThresholdExpression. Continued use of Threshold will be treated as shorthand syntax for a ThresholdExpression.</p>
     #[deprecated(note = "Threshold has been deprecated in favor of ThresholdExpression")]
     pub fn set_threshold(mut self, input: std::option::Option<f64>) -> Self {
-        self.threshold = input; self
+        self.threshold = input;
+        self
     }
     /// <p>The update to the frequency value that subscribers receive notifications. </p>
     pub fn frequency(mut self, input: crate::types::AnomalySubscriptionFrequency) -> Self {
@@ -125,8 +127,12 @@ impl UpdateAnomalySubscriptionInputBuilder {
         self
     }
     /// <p>The update to the frequency value that subscribers receive notifications. </p>
-    pub fn set_frequency(mut self, input: std::option::Option<crate::types::AnomalySubscriptionFrequency>) -> Self {
-        self.frequency = input; self
+    pub fn set_frequency(
+        mut self,
+        input: std::option::Option<crate::types::AnomalySubscriptionFrequency>,
+    ) -> Self {
+        self.frequency = input;
+        self
     }
     /// Appends an item to `monitor_arn_list`.
     ///
@@ -135,13 +141,17 @@ impl UpdateAnomalySubscriptionInputBuilder {
     /// <p>A list of cost anomaly monitor ARNs. </p>
     pub fn monitor_arn_list(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.monitor_arn_list.unwrap_or_default();
-                        v.push(input.into());
-                        self.monitor_arn_list = Some(v);
-                        self
+        v.push(input.into());
+        self.monitor_arn_list = Some(v);
+        self
     }
     /// <p>A list of cost anomaly monitor ARNs. </p>
-    pub fn set_monitor_arn_list(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-        self.monitor_arn_list = input; self
+    pub fn set_monitor_arn_list(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
+        self.monitor_arn_list = input;
+        self
     }
     /// Appends an item to `subscribers`.
     ///
@@ -150,13 +160,17 @@ impl UpdateAnomalySubscriptionInputBuilder {
     /// <p>The update to the subscriber list. </p>
     pub fn subscribers(mut self, input: crate::types::Subscriber) -> Self {
         let mut v = self.subscribers.unwrap_or_default();
-                        v.push(input);
-                        self.subscribers = Some(v);
-                        self
+        v.push(input);
+        self.subscribers = Some(v);
+        self
     }
     /// <p>The update to the subscriber list. </p>
-    pub fn set_subscribers(mut self, input: std::option::Option<std::vec::Vec<crate::types::Subscriber>>) -> Self {
-        self.subscribers = input; self
+    pub fn set_subscribers(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::Subscriber>>,
+    ) -> Self {
+        self.subscribers = input;
+        self
     }
     /// <p>The new name of the subscription. </p>
     pub fn subscription_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -164,52 +178,57 @@ impl UpdateAnomalySubscriptionInputBuilder {
         self
     }
     /// <p>The new name of the subscription. </p>
-    pub fn set_subscription_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.subscription_name = input; self
+    pub fn set_subscription_name(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.subscription_name = input;
+        self
     }
-    /// <p>The update to the <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Expression.html">Expression</a> object used to specify the anomalies that you want to generate alerts for. This supports dimensions and nested expressions. The supported dimensions are <code>ANOMALY_TOTAL_IMPACT_ABSOLUTE</code> and <code>ANOMALY_TOTAL_IMPACT_PERCENTAGE</code>. The supported nested expression types are <code>AND</code> and <code>OR</code>. The match option <code>GREATER_THAN_OR_EQUAL</code> is required. Values must be numbers between 0 and 10,000,000,000.</p> 
-    /// <p>The following are examples of valid ThresholdExpressions:</p> 
-    /// <ul> 
-    /// <li> <p>Absolute threshold: <code>{ "Dimensions": { "Key": "ANOMALY_TOTAL_IMPACT_ABSOLUTE", "MatchOptions": [ "GREATER_THAN_OR_EQUAL" ], "Values": [ "100" ] } }</code> </p> </li> 
-    /// <li> <p>Percentage threshold: <code>{ "Dimensions": { "Key": "ANOMALY_TOTAL_IMPACT_PERCENTAGE", "MatchOptions": [ "GREATER_THAN_OR_EQUAL" ], "Values": [ "100" ] } }</code> </p> </li> 
-    /// <li> <p> <code>AND</code> two thresholds together: <code>{ "And": [ { "Dimensions": { "Key": "ANOMALY_TOTAL_IMPACT_ABSOLUTE", "MatchOptions": [ "GREATER_THAN_OR_EQUAL" ], "Values": [ "100" ] } }, { "Dimensions": { "Key": "ANOMALY_TOTAL_IMPACT_PERCENTAGE", "MatchOptions": [ "GREATER_THAN_OR_EQUAL" ], "Values": [ "100" ] } } ] }</code> </p> </li> 
-    /// <li> <p> <code>OR</code> two thresholds together: <code>{ "Or": [ { "Dimensions": { "Key": "ANOMALY_TOTAL_IMPACT_ABSOLUTE", "MatchOptions": [ "GREATER_THAN_OR_EQUAL" ], "Values": [ "100" ] } }, { "Dimensions": { "Key": "ANOMALY_TOTAL_IMPACT_PERCENTAGE", "MatchOptions": [ "GREATER_THAN_OR_EQUAL" ], "Values": [ "100" ] } } ] }</code> </p> </li> 
+    /// <p>The update to the <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Expression.html">Expression</a> object used to specify the anomalies that you want to generate alerts for. This supports dimensions and nested expressions. The supported dimensions are <code>ANOMALY_TOTAL_IMPACT_ABSOLUTE</code> and <code>ANOMALY_TOTAL_IMPACT_PERCENTAGE</code>. The supported nested expression types are <code>AND</code> and <code>OR</code>. The match option <code>GREATER_THAN_OR_EQUAL</code> is required. Values must be numbers between 0 and 10,000,000,000.</p>
+    /// <p>The following are examples of valid ThresholdExpressions:</p>
+    /// <ul>
+    /// <li> <p>Absolute threshold: <code>{ "Dimensions": { "Key": "ANOMALY_TOTAL_IMPACT_ABSOLUTE", "MatchOptions": [ "GREATER_THAN_OR_EQUAL" ], "Values": [ "100" ] } }</code> </p> </li>
+    /// <li> <p>Percentage threshold: <code>{ "Dimensions": { "Key": "ANOMALY_TOTAL_IMPACT_PERCENTAGE", "MatchOptions": [ "GREATER_THAN_OR_EQUAL" ], "Values": [ "100" ] } }</code> </p> </li>
+    /// <li> <p> <code>AND</code> two thresholds together: <code>{ "And": [ { "Dimensions": { "Key": "ANOMALY_TOTAL_IMPACT_ABSOLUTE", "MatchOptions": [ "GREATER_THAN_OR_EQUAL" ], "Values": [ "100" ] } }, { "Dimensions": { "Key": "ANOMALY_TOTAL_IMPACT_PERCENTAGE", "MatchOptions": [ "GREATER_THAN_OR_EQUAL" ], "Values": [ "100" ] } } ] }</code> </p> </li>
+    /// <li> <p> <code>OR</code> two thresholds together: <code>{ "Or": [ { "Dimensions": { "Key": "ANOMALY_TOTAL_IMPACT_ABSOLUTE", "MatchOptions": [ "GREATER_THAN_OR_EQUAL" ], "Values": [ "100" ] } }, { "Dimensions": { "Key": "ANOMALY_TOTAL_IMPACT_PERCENTAGE", "MatchOptions": [ "GREATER_THAN_OR_EQUAL" ], "Values": [ "100" ] } } ] }</code> </p> </li>
     /// </ul>
     pub fn threshold_expression(mut self, input: crate::types::Expression) -> Self {
         self.threshold_expression = Some(input);
         self
     }
-    /// <p>The update to the <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Expression.html">Expression</a> object used to specify the anomalies that you want to generate alerts for. This supports dimensions and nested expressions. The supported dimensions are <code>ANOMALY_TOTAL_IMPACT_ABSOLUTE</code> and <code>ANOMALY_TOTAL_IMPACT_PERCENTAGE</code>. The supported nested expression types are <code>AND</code> and <code>OR</code>. The match option <code>GREATER_THAN_OR_EQUAL</code> is required. Values must be numbers between 0 and 10,000,000,000.</p> 
-    /// <p>The following are examples of valid ThresholdExpressions:</p> 
-    /// <ul> 
-    /// <li> <p>Absolute threshold: <code>{ "Dimensions": { "Key": "ANOMALY_TOTAL_IMPACT_ABSOLUTE", "MatchOptions": [ "GREATER_THAN_OR_EQUAL" ], "Values": [ "100" ] } }</code> </p> </li> 
-    /// <li> <p>Percentage threshold: <code>{ "Dimensions": { "Key": "ANOMALY_TOTAL_IMPACT_PERCENTAGE", "MatchOptions": [ "GREATER_THAN_OR_EQUAL" ], "Values": [ "100" ] } }</code> </p> </li> 
-    /// <li> <p> <code>AND</code> two thresholds together: <code>{ "And": [ { "Dimensions": { "Key": "ANOMALY_TOTAL_IMPACT_ABSOLUTE", "MatchOptions": [ "GREATER_THAN_OR_EQUAL" ], "Values": [ "100" ] } }, { "Dimensions": { "Key": "ANOMALY_TOTAL_IMPACT_PERCENTAGE", "MatchOptions": [ "GREATER_THAN_OR_EQUAL" ], "Values": [ "100" ] } } ] }</code> </p> </li> 
-    /// <li> <p> <code>OR</code> two thresholds together: <code>{ "Or": [ { "Dimensions": { "Key": "ANOMALY_TOTAL_IMPACT_ABSOLUTE", "MatchOptions": [ "GREATER_THAN_OR_EQUAL" ], "Values": [ "100" ] } }, { "Dimensions": { "Key": "ANOMALY_TOTAL_IMPACT_PERCENTAGE", "MatchOptions": [ "GREATER_THAN_OR_EQUAL" ], "Values": [ "100" ] } } ] }</code> </p> </li> 
+    /// <p>The update to the <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Expression.html">Expression</a> object used to specify the anomalies that you want to generate alerts for. This supports dimensions and nested expressions. The supported dimensions are <code>ANOMALY_TOTAL_IMPACT_ABSOLUTE</code> and <code>ANOMALY_TOTAL_IMPACT_PERCENTAGE</code>. The supported nested expression types are <code>AND</code> and <code>OR</code>. The match option <code>GREATER_THAN_OR_EQUAL</code> is required. Values must be numbers between 0 and 10,000,000,000.</p>
+    /// <p>The following are examples of valid ThresholdExpressions:</p>
+    /// <ul>
+    /// <li> <p>Absolute threshold: <code>{ "Dimensions": { "Key": "ANOMALY_TOTAL_IMPACT_ABSOLUTE", "MatchOptions": [ "GREATER_THAN_OR_EQUAL" ], "Values": [ "100" ] } }</code> </p> </li>
+    /// <li> <p>Percentage threshold: <code>{ "Dimensions": { "Key": "ANOMALY_TOTAL_IMPACT_PERCENTAGE", "MatchOptions": [ "GREATER_THAN_OR_EQUAL" ], "Values": [ "100" ] } }</code> </p> </li>
+    /// <li> <p> <code>AND</code> two thresholds together: <code>{ "And": [ { "Dimensions": { "Key": "ANOMALY_TOTAL_IMPACT_ABSOLUTE", "MatchOptions": [ "GREATER_THAN_OR_EQUAL" ], "Values": [ "100" ] } }, { "Dimensions": { "Key": "ANOMALY_TOTAL_IMPACT_PERCENTAGE", "MatchOptions": [ "GREATER_THAN_OR_EQUAL" ], "Values": [ "100" ] } } ] }</code> </p> </li>
+    /// <li> <p> <code>OR</code> two thresholds together: <code>{ "Or": [ { "Dimensions": { "Key": "ANOMALY_TOTAL_IMPACT_ABSOLUTE", "MatchOptions": [ "GREATER_THAN_OR_EQUAL" ], "Values": [ "100" ] } }, { "Dimensions": { "Key": "ANOMALY_TOTAL_IMPACT_PERCENTAGE", "MatchOptions": [ "GREATER_THAN_OR_EQUAL" ], "Values": [ "100" ] } } ] }</code> </p> </li>
     /// </ul>
-    pub fn set_threshold_expression(mut self, input: std::option::Option<crate::types::Expression>) -> Self {
-        self.threshold_expression = input; self
+    pub fn set_threshold_expression(
+        mut self,
+        input: std::option::Option<crate::types::Expression>,
+    ) -> Self {
+        self.threshold_expression = input;
+        self
     }
     /// Consumes the builder and constructs a [`UpdateAnomalySubscriptionInput`](crate::operation::update_anomaly_subscription::UpdateAnomalySubscriptionInput).
-    pub fn build(self) -> Result<crate::operation::update_anomaly_subscription::UpdateAnomalySubscriptionInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::update_anomaly_subscription::UpdateAnomalySubscriptionInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::update_anomaly_subscription::UpdateAnomalySubscriptionInput {
-                subscription_arn: self.subscription_arn
-                ,
-                threshold: self.threshold
-                ,
-                frequency: self.frequency
-                ,
-                monitor_arn_list: self.monitor_arn_list
-                ,
-                subscribers: self.subscribers
-                ,
-                subscription_name: self.subscription_name
-                ,
-                threshold_expression: self.threshold_expression
-                ,
-            }
+                subscription_arn: self.subscription_arn,
+                threshold: self.threshold,
+                frequency: self.frequency,
+                monitor_arn_list: self.monitor_arn_list,
+                subscribers: self.subscribers,
+                subscription_name: self.subscription_name,
+                threshold_expression: self.threshold_expression,
+            },
         )
     }
 }
-

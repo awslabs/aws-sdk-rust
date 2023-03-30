@@ -3,7 +3,7 @@
 /// <p>The client is not authenticated.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ForbiddenException  {
+pub struct ForbiddenException {
     /// <p>403</p>
     #[doc(hidden)]
     pub error_code: std::option::Option<std::string::String>,
@@ -14,19 +14,21 @@ pub struct ForbiddenException  {
 }
 impl ForbiddenException {
     /// <p>403</p>
-    pub fn error_code(&self) -> std::option::Option<& str> {
+    pub fn error_code(&self) -> std::option::Option<&str> {
         self.error_code.as_deref()
     }
 }
 impl ForbiddenException {
     /// Returns the error message.
-                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
+    pub fn message(&self) -> std::option::Option<&str> {
+        self.message.as_deref()
+    }
 }
 impl std::fmt::Display for ForbiddenException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "ForbiddenException")?;
         if let Some(inner_1) = &self.message {
-             {
+            {
                 write!(f, ": {}", inner_1)?;
             }
         }
@@ -41,7 +43,9 @@ impl aws_http::request_id::RequestId for crate::types::error::ForbiddenException
     }
 }
 impl aws_smithy_types::error::metadata::ProvideErrorMetadata for ForbiddenException {
-    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata { &self.meta }
+    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
+        &self.meta
+    }
 }
 impl ForbiddenException {
     /// Creates a new builder-style object to manufacture [`ForbiddenException`](crate::types::error::ForbiddenException).
@@ -66,7 +70,8 @@ impl ForbiddenExceptionBuilder {
     }
     /// <p>403</p>
     pub fn set_error_code(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.error_code = input; self
+        self.error_code = input;
+        self
     }
     /// <p>The client is not authenticated.</p>
     pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
@@ -75,28 +80,29 @@ impl ForbiddenExceptionBuilder {
     }
     /// <p>The client is not authenticated.</p>
     pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.message = input; self
+        self.message = input;
+        self
     }
     /// Sets error metadata
-                                            pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
-                                                self.meta = Some(meta);
-                                                self
-                                            }
-    
-                                            /// Sets error metadata
-                                            pub fn set_meta(&mut self, meta: std::option::Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
-                                                self.meta = meta;
-                                                self
-                                            }
+    pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
+        self.meta = Some(meta);
+        self
+    }
+
+    /// Sets error metadata
+    pub fn set_meta(
+        &mut self,
+        meta: std::option::Option<aws_smithy_types::error::ErrorMetadata>,
+    ) -> &mut Self {
+        self.meta = meta;
+        self
+    }
     /// Consumes the builder and constructs a [`ForbiddenException`](crate::types::error::ForbiddenException).
     pub fn build(self) -> crate::types::error::ForbiddenException {
         crate::types::error::ForbiddenException {
-            error_code: self.error_code
-            ,
-            message: self.message
-            ,
+            error_code: self.error_code,
+            message: self.message,
             meta: self.meta.unwrap_or_default(),
         }
     }
 }
-

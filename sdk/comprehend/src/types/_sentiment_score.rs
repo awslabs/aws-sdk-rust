@@ -3,7 +3,7 @@
 /// <p>Describes the level of confidence that Amazon Comprehend has in the accuracy of its detection of sentiments.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SentimentScore  {
+pub struct SentimentScore {
     /// <p>The level of confidence that Amazon Comprehend has in the accuracy of its detection of the <code>POSITIVE</code> sentiment.</p>
     #[doc(hidden)]
     pub positive: std::option::Option<f32>,
@@ -59,7 +59,8 @@ impl SentimentScoreBuilder {
     }
     /// <p>The level of confidence that Amazon Comprehend has in the accuracy of its detection of the <code>POSITIVE</code> sentiment.</p>
     pub fn set_positive(mut self, input: std::option::Option<f32>) -> Self {
-        self.positive = input; self
+        self.positive = input;
+        self
     }
     /// <p>The level of confidence that Amazon Comprehend has in the accuracy of its detection of the <code>NEGATIVE</code> sentiment.</p>
     pub fn negative(mut self, input: f32) -> Self {
@@ -68,7 +69,8 @@ impl SentimentScoreBuilder {
     }
     /// <p>The level of confidence that Amazon Comprehend has in the accuracy of its detection of the <code>NEGATIVE</code> sentiment.</p>
     pub fn set_negative(mut self, input: std::option::Option<f32>) -> Self {
-        self.negative = input; self
+        self.negative = input;
+        self
     }
     /// <p>The level of confidence that Amazon Comprehend has in the accuracy of its detection of the <code>NEUTRAL</code> sentiment.</p>
     pub fn neutral(mut self, input: f32) -> Self {
@@ -77,7 +79,8 @@ impl SentimentScoreBuilder {
     }
     /// <p>The level of confidence that Amazon Comprehend has in the accuracy of its detection of the <code>NEUTRAL</code> sentiment.</p>
     pub fn set_neutral(mut self, input: std::option::Option<f32>) -> Self {
-        self.neutral = input; self
+        self.neutral = input;
+        self
     }
     /// <p>The level of confidence that Amazon Comprehend has in the accuracy of its detection of the <code>MIXED</code> sentiment.</p>
     pub fn mixed(mut self, input: f32) -> Self {
@@ -86,20 +89,16 @@ impl SentimentScoreBuilder {
     }
     /// <p>The level of confidence that Amazon Comprehend has in the accuracy of its detection of the <code>MIXED</code> sentiment.</p>
     pub fn set_mixed(mut self, input: std::option::Option<f32>) -> Self {
-        self.mixed = input; self
+        self.mixed = input;
+        self
     }
     /// Consumes the builder and constructs a [`SentimentScore`](crate::types::SentimentScore).
     pub fn build(self) -> crate::types::SentimentScore {
         crate::types::SentimentScore {
-            positive: self.positive
-            ,
-            negative: self.negative
-            ,
-            neutral: self.neutral
-            ,
-            mixed: self.mixed
-            ,
+            positive: self.positive,
+            negative: self.negative,
+            neutral: self.neutral,
+            mixed: self.mixed,
         }
     }
 }
-

@@ -3,14 +3,14 @@
 /// <p>Defines under what conditions SageMaker creates a human loop. Used within . See for the required format of activation conditions.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct HumanLoopActivationConditionsConfig  {
+pub struct HumanLoopActivationConditionsConfig {
     /// <p>JSON expressing use-case specific conditions declaratively. If any condition is matched, atomic tasks are created against the configured work team. The set of conditions is different for Rekognition and Textract. For more information about how to structure the JSON, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/a2i-human-fallback-conditions-json-schema.html">JSON Schema for Human Loop Activation Conditions in Amazon Augmented AI</a> in the <i>Amazon SageMaker Developer Guide</i>.</p>
     #[doc(hidden)]
     pub human_loop_activation_conditions: std::option::Option<std::string::String>,
 }
 impl HumanLoopActivationConditionsConfig {
     /// <p>JSON expressing use-case specific conditions declaratively. If any condition is matched, atomic tasks are created against the configured work team. The set of conditions is different for Rekognition and Textract. For more information about how to structure the JSON, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/a2i-human-fallback-conditions-json-schema.html">JSON Schema for Human Loop Activation Conditions in Amazon Augmented AI</a> in the <i>Amazon SageMaker Developer Guide</i>.</p>
-    pub fn human_loop_activation_conditions(&self) -> std::option::Option<& str> {
+    pub fn human_loop_activation_conditions(&self) -> std::option::Option<&str> {
         self.human_loop_activation_conditions.as_deref()
     }
 }
@@ -29,20 +29,25 @@ pub struct HumanLoopActivationConditionsConfigBuilder {
 }
 impl HumanLoopActivationConditionsConfigBuilder {
     /// <p>JSON expressing use-case specific conditions declaratively. If any condition is matched, atomic tasks are created against the configured work team. The set of conditions is different for Rekognition and Textract. For more information about how to structure the JSON, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/a2i-human-fallback-conditions-json-schema.html">JSON Schema for Human Loop Activation Conditions in Amazon Augmented AI</a> in the <i>Amazon SageMaker Developer Guide</i>.</p>
-    pub fn human_loop_activation_conditions(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn human_loop_activation_conditions(
+        mut self,
+        input: impl Into<std::string::String>,
+    ) -> Self {
         self.human_loop_activation_conditions = Some(input.into());
         self
     }
     /// <p>JSON expressing use-case specific conditions declaratively. If any condition is matched, atomic tasks are created against the configured work team. The set of conditions is different for Rekognition and Textract. For more information about how to structure the JSON, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/a2i-human-fallback-conditions-json-schema.html">JSON Schema for Human Loop Activation Conditions in Amazon Augmented AI</a> in the <i>Amazon SageMaker Developer Guide</i>.</p>
-    pub fn set_human_loop_activation_conditions(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.human_loop_activation_conditions = input; self
+    pub fn set_human_loop_activation_conditions(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.human_loop_activation_conditions = input;
+        self
     }
     /// Consumes the builder and constructs a [`HumanLoopActivationConditionsConfig`](crate::types::HumanLoopActivationConditionsConfig).
     pub fn build(self) -> crate::types::HumanLoopActivationConditionsConfig {
         crate::types::HumanLoopActivationConditionsConfig {
-            human_loop_activation_conditions: self.human_loop_activation_conditions
-            ,
+            human_loop_activation_conditions: self.human_loop_activation_conditions,
         }
     }
 }
-

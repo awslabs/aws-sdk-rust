@@ -3,7 +3,7 @@
 /// <p>The parameters for Presto.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PrestoParameters  {
+pub struct PrestoParameters {
     /// <p>Host.</p>
     #[doc(hidden)]
     pub host: std::option::Option<std::string::String>,
@@ -16,7 +16,7 @@ pub struct PrestoParameters  {
 }
 impl PrestoParameters {
     /// <p>Host.</p>
-    pub fn host(&self) -> std::option::Option<& str> {
+    pub fn host(&self) -> std::option::Option<&str> {
         self.host.as_deref()
     }
     /// <p>Port.</p>
@@ -24,7 +24,7 @@ impl PrestoParameters {
         self.port
     }
     /// <p>Catalog.</p>
-    pub fn catalog(&self) -> std::option::Option<& str> {
+    pub fn catalog(&self) -> std::option::Option<&str> {
         self.catalog.as_deref()
     }
 }
@@ -51,7 +51,8 @@ impl PrestoParametersBuilder {
     }
     /// <p>Host.</p>
     pub fn set_host(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.host = input; self
+        self.host = input;
+        self
     }
     /// <p>Port.</p>
     pub fn port(mut self, input: i32) -> Self {
@@ -60,7 +61,8 @@ impl PrestoParametersBuilder {
     }
     /// <p>Port.</p>
     pub fn set_port(mut self, input: std::option::Option<i32>) -> Self {
-        self.port = input; self
+        self.port = input;
+        self
     }
     /// <p>Catalog.</p>
     pub fn catalog(mut self, input: impl Into<std::string::String>) -> Self {
@@ -69,19 +71,15 @@ impl PrestoParametersBuilder {
     }
     /// <p>Catalog.</p>
     pub fn set_catalog(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.catalog = input; self
+        self.catalog = input;
+        self
     }
     /// Consumes the builder and constructs a [`PrestoParameters`](crate::types::PrestoParameters).
     pub fn build(self) -> crate::types::PrestoParameters {
         crate::types::PrestoParameters {
-            host: self.host
-            ,
-            port: self.port
-                .unwrap_or_default()
-            ,
-            catalog: self.catalog
-            ,
+            host: self.host,
+            port: self.port.unwrap_or_default(),
+            catalog: self.catalog,
         }
     }
 }
-

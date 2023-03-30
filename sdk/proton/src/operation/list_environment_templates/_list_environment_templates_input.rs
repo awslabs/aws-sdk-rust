@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListEnvironmentTemplatesInput  {
+pub struct ListEnvironmentTemplatesInput {
     /// <p>A token that indicates the location of the next environment template in the array of environment templates, after the list of environment templates that was previously requested.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
@@ -12,7 +12,7 @@ pub struct ListEnvironmentTemplatesInput  {
 }
 impl ListEnvironmentTemplatesInput {
     /// <p>A token that indicates the location of the next environment template in the array of environment templates, after the list of environment templates that was previously requested.</p>
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
     /// <p>The maximum number of environment templates to list.</p>
@@ -22,7 +22,9 @@ impl ListEnvironmentTemplatesInput {
 }
 impl ListEnvironmentTemplatesInput {
     /// Creates a new builder-style object to manufacture [`ListEnvironmentTemplatesInput`](crate::operation::list_environment_templates::ListEnvironmentTemplatesInput).
-    pub fn builder() -> crate::operation::list_environment_templates::builders::ListEnvironmentTemplatesInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::list_environment_templates::builders::ListEnvironmentTemplatesInputBuilder
+    {
         crate::operation::list_environment_templates::builders::ListEnvironmentTemplatesInputBuilder::default()
     }
 }
@@ -42,7 +44,8 @@ impl ListEnvironmentTemplatesInputBuilder {
     }
     /// <p>A token that indicates the location of the next environment template in the array of environment templates, after the list of environment templates that was previously requested.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input; self
+        self.next_token = input;
+        self
     }
     /// <p>The maximum number of environment templates to list.</p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -51,18 +54,21 @@ impl ListEnvironmentTemplatesInputBuilder {
     }
     /// <p>The maximum number of environment templates to list.</p>
     pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_results = input; self
+        self.max_results = input;
+        self
     }
     /// Consumes the builder and constructs a [`ListEnvironmentTemplatesInput`](crate::operation::list_environment_templates::ListEnvironmentTemplatesInput).
-    pub fn build(self) -> Result<crate::operation::list_environment_templates::ListEnvironmentTemplatesInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::list_environment_templates::ListEnvironmentTemplatesInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::list_environment_templates::ListEnvironmentTemplatesInput {
-                next_token: self.next_token
-                ,
-                max_results: self.max_results
-                ,
-            }
+                next_token: self.next_token,
+                max_results: self.max_results,
+            },
         )
     }
 }
-

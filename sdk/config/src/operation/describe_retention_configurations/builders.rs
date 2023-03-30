@@ -4,72 +4,84 @@ pub use crate::operation::describe_retention_configurations::_describe_retention
 pub use crate::operation::describe_retention_configurations::_describe_retention_configurations_input::DescribeRetentionConfigurationsInputBuilder;
 
 /// Fluent builder constructing a request to `DescribeRetentionConfigurations`.
-/// 
-/// <p>Returns the details of one or more retention configurations. If the retention configuration name is not specified, this action returns the details for all the retention configurations for that account.</p> <note> 
-/// <p>Currently, Config supports only one retention configuration per region in your account.</p> 
+///
+/// <p>Returns the details of one or more retention configurations. If the retention configuration name is not specified, this action returns the details for all the retention configurations for that account.</p> <note>
+/// <p>Currently, Config supports only one retention configuration per region in your account.</p>
 /// </note>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeRetentionConfigurationsFluentBuilder {
                 handle: std::sync::Arc<crate::client::Handle>,
                 inner: crate::operation::describe_retention_configurations::builders::DescribeRetentionConfigurationsInputBuilder
             }
-impl DescribeRetentionConfigurationsFluentBuilder  {
+impl DescribeRetentionConfigurationsFluentBuilder {
     /// Creates a new `DescribeRetentionConfigurations`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
-                    /// sent. The operation's inner [http::Request] can be modified as well.
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle,
+            inner: Default::default(),
+        }
+    }
+
+    /// Consume this builder, creating a customizable operation that can be modified before being
+    /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::describe_retention_configurations::DescribeRetentionConfigurations, aws_http::retry::AwsResponseRetryClassifier,>,
                         aws_smithy_http::result::SdkError<crate::operation::describe_retention_configurations::DescribeRetentionConfigurationsError>
-                    >  {
-                        let handle = self.handle.clone();
-                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-                    }
-    
-                    /// Sends the request and returns the response.
-                    ///
-                    /// If an error occurs, an `SdkError` will be returned with additional details that
-                    /// can be matched against.
-                    ///
-                    /// By default, any retryable failures will be retried twice. Retry behavior
-                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                    /// set when configuring the client.
+    >{
+        let handle = self.handle.clone();
+        let operation = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+    }
+
+    /// Sends the request and returns the response.
+    ///
+    /// If an error occurs, an `SdkError` will be returned with additional details that
+    /// can be matched against.
+    ///
+    /// By default, any retryable failures will be retried twice. Retry behavior
+    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+    /// set when configuring the client.
                     pub async fn send(self) -> std::result::Result<crate::operation::describe_retention_configurations::DescribeRetentionConfigurationsOutput, aws_smithy_http::result::SdkError<crate::operation::describe_retention_configurations::DescribeRetentionConfigurationsError>>
                      {
-                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&self.handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        self.handle.client.call(op).await
-                    }
+        let op = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&self.handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        self.handle.client.call(op).await
+    }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::describe_retention_configurations::paginator::DescribeRetentionConfigurationsPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::describe_retention_configurations::paginator::DescribeRetentionConfigurationsPaginator {
-                            crate::operation::describe_retention_configurations::paginator::DescribeRetentionConfigurationsPaginator::new(self.handle, self.inner)
-                        }
+    ///
+    /// Paginators are used by calling [`send().await`](crate::operation::describe_retention_configurations::paginator::DescribeRetentionConfigurationsPaginator::send) which returns a `Stream`.
+    pub fn into_paginator(self) -> crate::operation::describe_retention_configurations::paginator::DescribeRetentionConfigurationsPaginator{
+        crate::operation::describe_retention_configurations::paginator::DescribeRetentionConfigurationsPaginator::new(self.handle, self.inner)
+    }
     /// Appends an item to `RetentionConfigurationNames`.
     ///
     /// To override the contents of this collection use [`set_retention_configuration_names`](Self::set_retention_configuration_names).
     ///
-    /// <p>A list of names of retention configurations for which you want details. If you do not specify a name, Config returns details for all the retention configurations for that account.</p> <note> 
-    /// <p>Currently, Config supports only one retention configuration per region in your account.</p> 
+    /// <p>A list of names of retention configurations for which you want details. If you do not specify a name, Config returns details for all the retention configurations for that account.</p> <note>
+    /// <p>Currently, Config supports only one retention configuration per region in your account.</p>
     /// </note>
     pub fn retention_configuration_names(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.retention_configuration_names(input.into());
         self
     }
-    /// <p>A list of names of retention configurations for which you want details. If you do not specify a name, Config returns details for all the retention configurations for that account.</p> <note> 
-    /// <p>Currently, Config supports only one retention configuration per region in your account.</p> 
+    /// <p>A list of names of retention configurations for which you want details. If you do not specify a name, Config returns details for all the retention configurations for that account.</p> <note>
+    /// <p>Currently, Config supports only one retention configuration per region in your account.</p>
     /// </note>
-    pub fn set_retention_configuration_names(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+    pub fn set_retention_configuration_names(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
         self.inner = self.inner.set_retention_configuration_names(input);
         self
     }
@@ -84,4 +96,3 @@ impl DescribeRetentionConfigurationsFluentBuilder  {
         self
     }
 }
-

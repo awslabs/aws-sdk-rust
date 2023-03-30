@@ -3,7 +3,7 @@
 /// <p>Container for the parameters required to enable cold storage for an OpenSearch Service domain. For more information, see <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/cold-storage.html">Cold storage for Amazon OpenSearch Service</a>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ColdStorageOptions  {
+pub struct ColdStorageOptions {
     /// <p>Whether to enable or disable cold storage on the domain.</p>
     #[doc(hidden)]
     pub enabled: std::option::Option<bool>,
@@ -35,14 +35,13 @@ impl ColdStorageOptionsBuilder {
     }
     /// <p>Whether to enable or disable cold storage on the domain.</p>
     pub fn set_enabled(mut self, input: std::option::Option<bool>) -> Self {
-        self.enabled = input; self
+        self.enabled = input;
+        self
     }
     /// Consumes the builder and constructs a [`ColdStorageOptions`](crate::types::ColdStorageOptions).
     pub fn build(self) -> crate::types::ColdStorageOptions {
         crate::types::ColdStorageOptions {
-            enabled: self.enabled
-            ,
+            enabled: self.enabled,
         }
     }
 }
-

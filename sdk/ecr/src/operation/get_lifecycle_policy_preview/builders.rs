@@ -4,55 +4,80 @@ pub use crate::operation::get_lifecycle_policy_preview::_get_lifecycle_policy_pr
 pub use crate::operation::get_lifecycle_policy_preview::_get_lifecycle_policy_preview_input::GetLifecyclePolicyPreviewInputBuilder;
 
 /// Fluent builder constructing a request to `GetLifecyclePolicyPreview`.
-/// 
+///
 /// <p>Retrieves the results of the lifecycle policy preview request for the specified repository.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct GetLifecyclePolicyPreviewFluentBuilder {
                 handle: std::sync::Arc<crate::client::Handle>,
                 inner: crate::operation::get_lifecycle_policy_preview::builders::GetLifecyclePolicyPreviewInputBuilder
             }
-impl GetLifecyclePolicyPreviewFluentBuilder  {
+impl GetLifecyclePolicyPreviewFluentBuilder {
     /// Creates a new `GetLifecyclePolicyPreview`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
-                    /// sent. The operation's inner [http::Request] can be modified as well.
-                    pub async fn customize(self) -> std::result::Result<
-                        crate::client::customize::CustomizableOperation<crate::operation::get_lifecycle_policy_preview::GetLifecyclePolicyPreview, aws_http::retry::AwsResponseRetryClassifier,>,
-                        aws_smithy_http::result::SdkError<crate::operation::get_lifecycle_policy_preview::GetLifecyclePolicyPreviewError>
-                    >  {
-                        let handle = self.handle.clone();
-                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-                    }
-    
-                    /// Sends the request and returns the response.
-                    ///
-                    /// If an error occurs, an `SdkError` will be returned with additional details that
-                    /// can be matched against.
-                    ///
-                    /// By default, any retryable failures will be retried twice. Retry behavior
-                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                    /// set when configuring the client.
-                    pub async fn send(self) -> std::result::Result<crate::operation::get_lifecycle_policy_preview::GetLifecyclePolicyPreviewOutput, aws_smithy_http::result::SdkError<crate::operation::get_lifecycle_policy_preview::GetLifecyclePolicyPreviewError>>
-                     {
-                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&self.handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        self.handle.client.call(op).await
-                    }
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle,
+            inner: Default::default(),
+        }
+    }
+
+    /// Consume this builder, creating a customizable operation that can be modified before being
+    /// sent. The operation's inner [http::Request] can be modified as well.
+    pub async fn customize(
+        self,
+    ) -> std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::get_lifecycle_policy_preview::GetLifecyclePolicyPreview,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::result::SdkError<
+            crate::operation::get_lifecycle_policy_preview::GetLifecyclePolicyPreviewError,
+        >,
+    > {
+        let handle = self.handle.clone();
+        let operation = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+    }
+
+    /// Sends the request and returns the response.
+    ///
+    /// If an error occurs, an `SdkError` will be returned with additional details that
+    /// can be matched against.
+    ///
+    /// By default, any retryable failures will be retried twice. Retry behavior
+    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+    /// set when configuring the client.
+    pub async fn send(
+        self,
+    ) -> std::result::Result<
+        crate::operation::get_lifecycle_policy_preview::GetLifecyclePolicyPreviewOutput,
+        aws_smithy_http::result::SdkError<
+            crate::operation::get_lifecycle_policy_preview::GetLifecyclePolicyPreviewError,
+        >,
+    > {
+        let op = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&self.handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        self.handle.client.call(op).await
+    }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::get_lifecycle_policy_preview::paginator::GetLifecyclePolicyPreviewPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::get_lifecycle_policy_preview::paginator::GetLifecyclePolicyPreviewPaginator {
-                            crate::operation::get_lifecycle_policy_preview::paginator::GetLifecyclePolicyPreviewPaginator::new(self.handle, self.inner)
-                        }
+    ///
+    /// Paginators are used by calling [`send().await`](crate::operation::get_lifecycle_policy_preview::paginator::GetLifecyclePolicyPreviewPaginator::send) which returns a `Stream`.
+    pub fn into_paginator(
+        self,
+    ) -> crate::operation::get_lifecycle_policy_preview::paginator::GetLifecyclePolicyPreviewPaginator
+    {
+        crate::operation::get_lifecycle_policy_preview::paginator::GetLifecyclePolicyPreviewPaginator::new(self.handle, self.inner)
+    }
     /// <p>The Amazon Web Services account ID associated with the registry that contains the repository. If you do not specify a registry, the default registry is assumed.</p>
     pub fn registry_id(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.registry_id(input.into());
@@ -83,7 +108,10 @@ impl GetLifecyclePolicyPreviewFluentBuilder  {
         self
     }
     /// <p>The list of imageIDs to be included.</p>
-    pub fn set_image_ids(mut self, input: std::option::Option<std::vec::Vec<crate::types::ImageIdentifier>>) -> Self {
+    pub fn set_image_ids(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::ImageIdentifier>>,
+    ) -> Self {
         self.inner = self.inner.set_image_ids(input);
         self
     }
@@ -113,9 +141,11 @@ impl GetLifecyclePolicyPreviewFluentBuilder  {
         self
     }
     /// <p>An optional parameter that filters results based on image tag status and all tags, if tagged.</p>
-    pub fn set_filter(mut self, input: std::option::Option<crate::types::LifecyclePolicyPreviewFilter>) -> Self {
+    pub fn set_filter(
+        mut self,
+        input: std::option::Option<crate::types::LifecyclePolicyPreviewFilter>,
+    ) -> Self {
         self.inner = self.inner.set_filter(input);
         self
     }
 }
-

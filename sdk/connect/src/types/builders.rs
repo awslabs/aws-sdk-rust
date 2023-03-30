@@ -282,4 +282,3 @@ pub use crate::types::_agent_info::AgentInfoBuilder;
 pub use crate::types::_queue_info::QueueInfoBuilder;
 
 pub use crate::types::_agent_status::AgentStatusBuilder;
-

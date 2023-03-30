@@ -3,7 +3,7 @@
 /// <p>Describes a resource relationship.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Relationship  {
+pub struct Relationship {
     /// <p>The ARN of the resource.</p>
     #[doc(hidden)]
     pub from: std::option::Option<std::string::String>,
@@ -13,11 +13,11 @@ pub struct Relationship  {
 }
 impl Relationship {
     /// <p>The ARN of the resource.</p>
-    pub fn from(&self) -> std::option::Option<& str> {
+    pub fn from(&self) -> std::option::Option<&str> {
         self.from.as_deref()
     }
     /// <p>The ARN of the resource.</p>
-    pub fn to(&self) -> std::option::Option<& str> {
+    pub fn to(&self) -> std::option::Option<&str> {
         self.to.as_deref()
     }
 }
@@ -43,7 +43,8 @@ impl RelationshipBuilder {
     }
     /// <p>The ARN of the resource.</p>
     pub fn set_from(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.from = input; self
+        self.from = input;
+        self
     }
     /// <p>The ARN of the resource.</p>
     pub fn to(mut self, input: impl Into<std::string::String>) -> Self {
@@ -52,16 +53,14 @@ impl RelationshipBuilder {
     }
     /// <p>The ARN of the resource.</p>
     pub fn set_to(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.to = input; self
+        self.to = input;
+        self
     }
     /// Consumes the builder and constructs a [`Relationship`](crate::types::Relationship).
     pub fn build(self) -> crate::types::Relationship {
         crate::types::Relationship {
-            from: self.from
-            ,
-            to: self.to
-            ,
+            from: self.from,
+            to: self.to,
         }
     }
 }
-

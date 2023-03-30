@@ -2,20 +2,21 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeTransactionInput  {
+pub struct DescribeTransactionInput {
     /// <p>The transaction for which to return status.</p>
     #[doc(hidden)]
     pub transaction_id: std::option::Option<std::string::String>,
 }
 impl DescribeTransactionInput {
     /// <p>The transaction for which to return status.</p>
-    pub fn transaction_id(&self) -> std::option::Option<& str> {
+    pub fn transaction_id(&self) -> std::option::Option<&str> {
         self.transaction_id.as_deref()
     }
 }
 impl DescribeTransactionInput {
     /// Creates a new builder-style object to manufacture [`DescribeTransactionInput`](crate::operation::describe_transaction::DescribeTransactionInput).
-    pub fn builder() -> crate::operation::describe_transaction::builders::DescribeTransactionInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::describe_transaction::builders::DescribeTransactionInputBuilder {
         crate::operation::describe_transaction::builders::DescribeTransactionInputBuilder::default()
     }
 }
@@ -34,16 +35,20 @@ impl DescribeTransactionInputBuilder {
     }
     /// <p>The transaction for which to return status.</p>
     pub fn set_transaction_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.transaction_id = input; self
+        self.transaction_id = input;
+        self
     }
     /// Consumes the builder and constructs a [`DescribeTransactionInput`](crate::operation::describe_transaction::DescribeTransactionInput).
-    pub fn build(self) -> Result<crate::operation::describe_transaction::DescribeTransactionInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::describe_transaction::DescribeTransactionInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::describe_transaction::DescribeTransactionInput {
-                transaction_id: self.transaction_id
-                ,
-            }
+                transaction_id: self.transaction_id,
+            },
         )
     }
 }
-

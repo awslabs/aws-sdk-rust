@@ -3,17 +3,17 @@
 /// <p>Contains the output for CreateAppCookieStickinessPolicy.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateAppCookieStickinessPolicyOutput  {
+pub struct CreateAppCookieStickinessPolicyOutput {
     _request_id: Option<String>,
 }
 impl aws_http::request_id::RequestId for CreateAppCookieStickinessPolicyOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl CreateAppCookieStickinessPolicyOutput {
     /// Creates a new builder-style object to manufacture [`CreateAppCookieStickinessPolicyOutput`](crate::operation::create_app_cookie_stickiness_policy::CreateAppCookieStickinessPolicyOutput).
-    pub fn builder() -> crate::operation::create_app_cookie_stickiness_policy::builders::CreateAppCookieStickinessPolicyOutputBuilder {
+    pub fn builder() -> crate::operation::create_app_cookie_stickiness_policy::builders::CreateAppCookieStickinessPolicyOutputBuilder{
         crate::operation::create_app_cookie_stickiness_policy::builders::CreateAppCookieStickinessPolicyOutputBuilder::default()
     }
 }
@@ -26,19 +26,21 @@ pub struct CreateAppCookieStickinessPolicyOutputBuilder {
 }
 impl CreateAppCookieStickinessPolicyOutputBuilder {
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`CreateAppCookieStickinessPolicyOutput`](crate::operation::create_app_cookie_stickiness_policy::CreateAppCookieStickinessPolicyOutput).
-    pub fn build(self) -> crate::operation::create_app_cookie_stickiness_policy::CreateAppCookieStickinessPolicyOutput {
+    pub fn build(
+        self,
+    ) -> crate::operation::create_app_cookie_stickiness_policy::CreateAppCookieStickinessPolicyOutput
+    {
         crate::operation::create_app_cookie_stickiness_policy::CreateAppCookieStickinessPolicyOutput {
             _request_id: self._request_id,
         }
     }
 }
-

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateEventIntegrationInput  {
+pub struct CreateEventIntegrationInput {
     /// <p>The name of the event integration.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -20,37 +20,43 @@ pub struct CreateEventIntegrationInput  {
     pub client_token: std::option::Option<std::string::String>,
     /// <p>One or more tags.</p>
     #[doc(hidden)]
-    pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub tags:
+        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl CreateEventIntegrationInput {
     /// <p>The name of the event integration.</p>
-    pub fn name(&self) -> std::option::Option<& str> {
+    pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>The description of the event integration.</p>
-    pub fn description(&self) -> std::option::Option<& str> {
+    pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
     /// <p>The event filter.</p>
-    pub fn event_filter(&self) -> std::option::Option<& crate::types::EventFilter> {
+    pub fn event_filter(&self) -> std::option::Option<&crate::types::EventFilter> {
         self.event_filter.as_ref()
     }
     /// <p>The EventBridge bus.</p>
-    pub fn event_bridge_bus(&self) -> std::option::Option<& str> {
+    pub fn event_bridge_bus(&self) -> std::option::Option<&str> {
         self.event_bridge_bus.as_deref()
     }
     /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
-    pub fn client_token(&self) -> std::option::Option<& str> {
+    pub fn client_token(&self) -> std::option::Option<&str> {
         self.client_token.as_deref()
     }
     /// <p>One or more tags.</p>
-    pub fn tags(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
         self.tags.as_ref()
     }
 }
 impl CreateEventIntegrationInput {
     /// Creates a new builder-style object to manufacture [`CreateEventIntegrationInput`](crate::operation::create_event_integration::CreateEventIntegrationInput).
-    pub fn builder() -> crate::operation::create_event_integration::builders::CreateEventIntegrationInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::create_event_integration::builders::CreateEventIntegrationInputBuilder
+    {
         crate::operation::create_event_integration::builders::CreateEventIntegrationInputBuilder::default()
     }
 }
@@ -64,7 +70,8 @@ pub struct CreateEventIntegrationInputBuilder {
     pub(crate) event_filter: std::option::Option<crate::types::EventFilter>,
     pub(crate) event_bridge_bus: std::option::Option<std::string::String>,
     pub(crate) client_token: std::option::Option<std::string::String>,
-    pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub(crate) tags:
+        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl CreateEventIntegrationInputBuilder {
     /// <p>The name of the event integration.</p>
@@ -74,7 +81,8 @@ impl CreateEventIntegrationInputBuilder {
     }
     /// <p>The name of the event integration.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input; self
+        self.name = input;
+        self
     }
     /// <p>The description of the event integration.</p>
     pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -83,7 +91,8 @@ impl CreateEventIntegrationInputBuilder {
     }
     /// <p>The description of the event integration.</p>
     pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.description = input; self
+        self.description = input;
+        self
     }
     /// <p>The event filter.</p>
     pub fn event_filter(mut self, input: crate::types::EventFilter) -> Self {
@@ -91,8 +100,12 @@ impl CreateEventIntegrationInputBuilder {
         self
     }
     /// <p>The event filter.</p>
-    pub fn set_event_filter(mut self, input: std::option::Option<crate::types::EventFilter>) -> Self {
-        self.event_filter = input; self
+    pub fn set_event_filter(
+        mut self,
+        input: std::option::Option<crate::types::EventFilter>,
+    ) -> Self {
+        self.event_filter = input;
+        self
     }
     /// <p>The EventBridge bus.</p>
     pub fn event_bridge_bus(mut self, input: impl Into<std::string::String>) -> Self {
@@ -101,7 +114,8 @@ impl CreateEventIntegrationInputBuilder {
     }
     /// <p>The EventBridge bus.</p>
     pub fn set_event_bridge_bus(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.event_bridge_bus = input; self
+        self.event_bridge_bus = input;
+        self
     }
     /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
     pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -110,41 +124,50 @@ impl CreateEventIntegrationInputBuilder {
     }
     /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
     pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.client_token = input; self
+        self.client_token = input;
+        self
     }
     /// Adds a key-value pair to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// <p>One or more tags.</p>
-    pub fn tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
+    pub fn tags(
+        mut self,
+        k: impl Into<std::string::String>,
+        v: impl Into<std::string::String>,
+    ) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
-                        hash_map.insert(k.into(), v.into());
-                        self.tags = Some(hash_map);
-                        self
+        hash_map.insert(k.into(), v.into());
+        self.tags = Some(hash_map);
+        self
     }
     /// <p>One or more tags.</p>
-    pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
-        self.tags = input; self
+    pub fn set_tags(
+        mut self,
+        input: std::option::Option<
+            std::collections::HashMap<std::string::String, std::string::String>,
+        >,
+    ) -> Self {
+        self.tags = input;
+        self
     }
     /// Consumes the builder and constructs a [`CreateEventIntegrationInput`](crate::operation::create_event_integration::CreateEventIntegrationInput).
-    pub fn build(self) -> Result<crate::operation::create_event_integration::CreateEventIntegrationInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::create_event_integration::CreateEventIntegrationInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::create_event_integration::CreateEventIntegrationInput {
-                name: self.name
-                ,
-                description: self.description
-                ,
-                event_filter: self.event_filter
-                ,
-                event_bridge_bus: self.event_bridge_bus
-                ,
-                client_token: self.client_token
-                ,
-                tags: self.tags
-                ,
-            }
+                name: self.name,
+                description: self.description,
+                event_filter: self.event_filter,
+                event_bridge_bus: self.event_bridge_bus,
+                client_token: self.client_token,
+                tags: self.tags,
+            },
         )
     }
 }
-

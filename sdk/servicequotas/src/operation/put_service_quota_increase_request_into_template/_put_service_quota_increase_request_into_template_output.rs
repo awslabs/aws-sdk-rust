@@ -2,26 +2,29 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PutServiceQuotaIncreaseRequestIntoTemplateOutput  {
+pub struct PutServiceQuotaIncreaseRequestIntoTemplateOutput {
     /// <p>Information about the quota increase request.</p>
     #[doc(hidden)]
-    pub service_quota_increase_request_in_template: std::option::Option<crate::types::ServiceQuotaIncreaseRequestInTemplate>,
+    pub service_quota_increase_request_in_template:
+        std::option::Option<crate::types::ServiceQuotaIncreaseRequestInTemplate>,
     _request_id: Option<String>,
 }
 impl PutServiceQuotaIncreaseRequestIntoTemplateOutput {
     /// <p>Information about the quota increase request.</p>
-    pub fn service_quota_increase_request_in_template(&self) -> std::option::Option<& crate::types::ServiceQuotaIncreaseRequestInTemplate> {
+    pub fn service_quota_increase_request_in_template(
+        &self,
+    ) -> std::option::Option<&crate::types::ServiceQuotaIncreaseRequestInTemplate> {
         self.service_quota_increase_request_in_template.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for PutServiceQuotaIncreaseRequestIntoTemplateOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl PutServiceQuotaIncreaseRequestIntoTemplateOutput {
     /// Creates a new builder-style object to manufacture [`PutServiceQuotaIncreaseRequestIntoTemplateOutput`](crate::operation::put_service_quota_increase_request_into_template::PutServiceQuotaIncreaseRequestIntoTemplateOutput).
-    pub fn builder() -> crate::operation::put_service_quota_increase_request_into_template::builders::PutServiceQuotaIncreaseRequestIntoTemplateOutputBuilder {
+    pub fn builder() -> crate::operation::put_service_quota_increase_request_into_template::builders::PutServiceQuotaIncreaseRequestIntoTemplateOutputBuilder{
         crate::operation::put_service_quota_increase_request_into_template::builders::PutServiceQuotaIncreaseRequestIntoTemplateOutputBuilder::default()
     }
 }
@@ -30,30 +33,38 @@ impl PutServiceQuotaIncreaseRequestIntoTemplateOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct PutServiceQuotaIncreaseRequestIntoTemplateOutputBuilder {
-    pub(crate) service_quota_increase_request_in_template: std::option::Option<crate::types::ServiceQuotaIncreaseRequestInTemplate>,
+    pub(crate) service_quota_increase_request_in_template:
+        std::option::Option<crate::types::ServiceQuotaIncreaseRequestInTemplate>,
     _request_id: Option<String>,
 }
 impl PutServiceQuotaIncreaseRequestIntoTemplateOutputBuilder {
     /// <p>Information about the quota increase request.</p>
-    pub fn service_quota_increase_request_in_template(mut self, input: crate::types::ServiceQuotaIncreaseRequestInTemplate) -> Self {
+    pub fn service_quota_increase_request_in_template(
+        mut self,
+        input: crate::types::ServiceQuotaIncreaseRequestInTemplate,
+    ) -> Self {
         self.service_quota_increase_request_in_template = Some(input);
         self
     }
     /// <p>Information about the quota increase request.</p>
-    pub fn set_service_quota_increase_request_in_template(mut self, input: std::option::Option<crate::types::ServiceQuotaIncreaseRequestInTemplate>) -> Self {
-        self.service_quota_increase_request_in_template = input; self
+    pub fn set_service_quota_increase_request_in_template(
+        mut self,
+        input: std::option::Option<crate::types::ServiceQuotaIncreaseRequestInTemplate>,
+    ) -> Self {
+        self.service_quota_increase_request_in_template = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`PutServiceQuotaIncreaseRequestIntoTemplateOutput`](crate::operation::put_service_quota_increase_request_into_template::PutServiceQuotaIncreaseRequestIntoTemplateOutput).
-    pub fn build(self) -> crate::operation::put_service_quota_increase_request_into_template::PutServiceQuotaIncreaseRequestIntoTemplateOutput {
+    pub fn build(self) -> crate::operation::put_service_quota_increase_request_into_template::PutServiceQuotaIncreaseRequestIntoTemplateOutput{
         crate::operation::put_service_quota_increase_request_into_template::PutServiceQuotaIncreaseRequestIntoTemplateOutput {
             service_quota_increase_request_in_template: self.service_quota_increase_request_in_template
             ,
@@ -61,4 +72,3 @@ impl PutServiceQuotaIncreaseRequestIntoTemplateOutputBuilder {
         }
     }
 }
-

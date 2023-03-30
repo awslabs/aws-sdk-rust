@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListSpeechSynthesisTasksInput  {
+pub struct ListSpeechSynthesisTasksInput {
     /// <p>Maximum number of speech synthesis tasks returned in a List operation.</p>
     #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
@@ -19,17 +19,19 @@ impl ListSpeechSynthesisTasksInput {
         self.max_results
     }
     /// <p>The pagination token to use in the next request to continue the listing of speech synthesis tasks. </p>
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
     /// <p>Status of the speech synthesis tasks returned in a List operation</p>
-    pub fn status(&self) -> std::option::Option<& crate::types::TaskStatus> {
+    pub fn status(&self) -> std::option::Option<&crate::types::TaskStatus> {
         self.status.as_ref()
     }
 }
 impl ListSpeechSynthesisTasksInput {
     /// Creates a new builder-style object to manufacture [`ListSpeechSynthesisTasksInput`](crate::operation::list_speech_synthesis_tasks::ListSpeechSynthesisTasksInput).
-    pub fn builder() -> crate::operation::list_speech_synthesis_tasks::builders::ListSpeechSynthesisTasksInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::list_speech_synthesis_tasks::builders::ListSpeechSynthesisTasksInputBuilder
+    {
         crate::operation::list_speech_synthesis_tasks::builders::ListSpeechSynthesisTasksInputBuilder::default()
     }
 }
@@ -50,7 +52,8 @@ impl ListSpeechSynthesisTasksInputBuilder {
     }
     /// <p>Maximum number of speech synthesis tasks returned in a List operation.</p>
     pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_results = input; self
+        self.max_results = input;
+        self
     }
     /// <p>The pagination token to use in the next request to continue the listing of speech synthesis tasks. </p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -59,7 +62,8 @@ impl ListSpeechSynthesisTasksInputBuilder {
     }
     /// <p>The pagination token to use in the next request to continue the listing of speech synthesis tasks. </p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input; self
+        self.next_token = input;
+        self
     }
     /// <p>Status of the speech synthesis tasks returned in a List operation</p>
     pub fn status(mut self, input: crate::types::TaskStatus) -> Self {
@@ -68,20 +72,22 @@ impl ListSpeechSynthesisTasksInputBuilder {
     }
     /// <p>Status of the speech synthesis tasks returned in a List operation</p>
     pub fn set_status(mut self, input: std::option::Option<crate::types::TaskStatus>) -> Self {
-        self.status = input; self
+        self.status = input;
+        self
     }
     /// Consumes the builder and constructs a [`ListSpeechSynthesisTasksInput`](crate::operation::list_speech_synthesis_tasks::ListSpeechSynthesisTasksInput).
-    pub fn build(self) -> Result<crate::operation::list_speech_synthesis_tasks::ListSpeechSynthesisTasksInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::list_speech_synthesis_tasks::ListSpeechSynthesisTasksInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::list_speech_synthesis_tasks::ListSpeechSynthesisTasksInput {
-                max_results: self.max_results
-                ,
-                next_token: self.next_token
-                ,
-                status: self.status
-                ,
-            }
+                max_results: self.max_results,
+                next_token: self.next_token,
+                status: self.status,
+            },
         )
     }
 }
-

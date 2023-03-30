@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListFragmentsOutput  {
+pub struct ListFragmentsOutput {
     /// <p>A list of archived <code>Fragment</code> objects from the stream that meet the selector criteria. Results are in no specific order, even across pages.</p>
     #[doc(hidden)]
     pub fragments: std::option::Option<std::vec::Vec<crate::types::Fragment>>,
@@ -13,19 +13,19 @@ pub struct ListFragmentsOutput  {
 }
 impl ListFragmentsOutput {
     /// <p>A list of archived <code>Fragment</code> objects from the stream that meet the selector criteria. Results are in no specific order, even across pages.</p>
-    pub fn fragments(&self) -> std::option::Option<& [crate::types::Fragment]> {
+    pub fn fragments(&self) -> std::option::Option<&[crate::types::Fragment]> {
         self.fragments.as_deref()
     }
     /// <p>If the returned list is truncated, the operation returns this token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for ListFragmentsOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl ListFragmentsOutput {
     /// Creates a new builder-style object to manufacture [`ListFragmentsOutput`](crate::operation::list_fragments::ListFragmentsOutput).
     pub fn builder() -> crate::operation::list_fragments::builders::ListFragmentsOutputBuilder {
@@ -49,13 +49,17 @@ impl ListFragmentsOutputBuilder {
     /// <p>A list of archived <code>Fragment</code> objects from the stream that meet the selector criteria. Results are in no specific order, even across pages.</p>
     pub fn fragments(mut self, input: crate::types::Fragment) -> Self {
         let mut v = self.fragments.unwrap_or_default();
-                        v.push(input);
-                        self.fragments = Some(v);
-                        self
+        v.push(input);
+        self.fragments = Some(v);
+        self
     }
     /// <p>A list of archived <code>Fragment</code> objects from the stream that meet the selector criteria. Results are in no specific order, even across pages.</p>
-    pub fn set_fragments(mut self, input: std::option::Option<std::vec::Vec<crate::types::Fragment>>) -> Self {
-        self.fragments = input; self
+    pub fn set_fragments(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::Fragment>>,
+    ) -> Self {
+        self.fragments = input;
+        self
     }
     /// <p>If the returned list is truncated, the operation returns this token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -64,26 +68,24 @@ impl ListFragmentsOutputBuilder {
     }
     /// <p>If the returned list is truncated, the operation returns this token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input; self
+        self.next_token = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`ListFragmentsOutput`](crate::operation::list_fragments::ListFragmentsOutput).
     pub fn build(self) -> crate::operation::list_fragments::ListFragmentsOutput {
         crate::operation::list_fragments::ListFragmentsOutput {
-            fragments: self.fragments
-            ,
-            next_token: self.next_token
-            ,
+            fragments: self.fragments,
+            next_token: self.next_token,
             _request_id: self._request_id,
         }
     }
 }
-

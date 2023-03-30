@@ -2,10 +2,11 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListNotebookExecutionsOutput  {
+pub struct ListNotebookExecutionsOutput {
     /// <p>A list of notebook executions.</p>
     #[doc(hidden)]
-    pub notebook_executions: std::option::Option<std::vec::Vec<crate::types::NotebookExecutionSummary>>,
+    pub notebook_executions:
+        std::option::Option<std::vec::Vec<crate::types::NotebookExecutionSummary>>,
     /// <p>A pagination token that a subsequent <code>ListNotebookExecutions</code> can use to determine the next set of results to retrieve.</p>
     #[doc(hidden)]
     pub marker: std::option::Option<std::string::String>,
@@ -13,22 +14,26 @@ pub struct ListNotebookExecutionsOutput  {
 }
 impl ListNotebookExecutionsOutput {
     /// <p>A list of notebook executions.</p>
-    pub fn notebook_executions(&self) -> std::option::Option<& [crate::types::NotebookExecutionSummary]> {
+    pub fn notebook_executions(
+        &self,
+    ) -> std::option::Option<&[crate::types::NotebookExecutionSummary]> {
         self.notebook_executions.as_deref()
     }
     /// <p>A pagination token that a subsequent <code>ListNotebookExecutions</code> can use to determine the next set of results to retrieve.</p>
-    pub fn marker(&self) -> std::option::Option<& str> {
+    pub fn marker(&self) -> std::option::Option<&str> {
         self.marker.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for ListNotebookExecutionsOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl ListNotebookExecutionsOutput {
     /// Creates a new builder-style object to manufacture [`ListNotebookExecutionsOutput`](crate::operation::list_notebook_executions::ListNotebookExecutionsOutput).
-    pub fn builder() -> crate::operation::list_notebook_executions::builders::ListNotebookExecutionsOutputBuilder {
+    pub fn builder(
+    ) -> crate::operation::list_notebook_executions::builders::ListNotebookExecutionsOutputBuilder
+    {
         crate::operation::list_notebook_executions::builders::ListNotebookExecutionsOutputBuilder::default()
     }
 }
@@ -37,7 +42,8 @@ impl ListNotebookExecutionsOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct ListNotebookExecutionsOutputBuilder {
-    pub(crate) notebook_executions: std::option::Option<std::vec::Vec<crate::types::NotebookExecutionSummary>>,
+    pub(crate) notebook_executions:
+        std::option::Option<std::vec::Vec<crate::types::NotebookExecutionSummary>>,
     pub(crate) marker: std::option::Option<std::string::String>,
     _request_id: Option<String>,
 }
@@ -49,13 +55,17 @@ impl ListNotebookExecutionsOutputBuilder {
     /// <p>A list of notebook executions.</p>
     pub fn notebook_executions(mut self, input: crate::types::NotebookExecutionSummary) -> Self {
         let mut v = self.notebook_executions.unwrap_or_default();
-                        v.push(input);
-                        self.notebook_executions = Some(v);
-                        self
+        v.push(input);
+        self.notebook_executions = Some(v);
+        self
     }
     /// <p>A list of notebook executions.</p>
-    pub fn set_notebook_executions(mut self, input: std::option::Option<std::vec::Vec<crate::types::NotebookExecutionSummary>>) -> Self {
-        self.notebook_executions = input; self
+    pub fn set_notebook_executions(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::NotebookExecutionSummary>>,
+    ) -> Self {
+        self.notebook_executions = input;
+        self
     }
     /// <p>A pagination token that a subsequent <code>ListNotebookExecutions</code> can use to determine the next set of results to retrieve.</p>
     pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
@@ -64,26 +74,24 @@ impl ListNotebookExecutionsOutputBuilder {
     }
     /// <p>A pagination token that a subsequent <code>ListNotebookExecutions</code> can use to determine the next set of results to retrieve.</p>
     pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.marker = input; self
+        self.marker = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`ListNotebookExecutionsOutput`](crate::operation::list_notebook_executions::ListNotebookExecutionsOutput).
     pub fn build(self) -> crate::operation::list_notebook_executions::ListNotebookExecutionsOutput {
         crate::operation::list_notebook_executions::ListNotebookExecutionsOutput {
-            notebook_executions: self.notebook_executions
-            ,
-            marker: self.marker
-            ,
+            notebook_executions: self.notebook_executions,
+            marker: self.marker,
             _request_id: self._request_id,
         }
     }
 }
-

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListRunGroupsInput  {
+pub struct ListRunGroupsInput {
     /// <p>The run groups' name.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -15,11 +15,11 @@ pub struct ListRunGroupsInput  {
 }
 impl ListRunGroupsInput {
     /// <p>The run groups' name.</p>
-    pub fn name(&self) -> std::option::Option<& str> {
+    pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>Specify the pagination token from a previous request to retrieve the next page of results.</p>
-    pub fn starting_token(&self) -> std::option::Option<& str> {
+    pub fn starting_token(&self) -> std::option::Option<&str> {
         self.starting_token.as_deref()
     }
     /// <p>The maximum number of run groups to return in one page of results.</p>
@@ -50,7 +50,8 @@ impl ListRunGroupsInputBuilder {
     }
     /// <p>The run groups' name.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input; self
+        self.name = input;
+        self
     }
     /// <p>Specify the pagination token from a previous request to retrieve the next page of results.</p>
     pub fn starting_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -59,7 +60,8 @@ impl ListRunGroupsInputBuilder {
     }
     /// <p>Specify the pagination token from a previous request to retrieve the next page of results.</p>
     pub fn set_starting_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.starting_token = input; self
+        self.starting_token = input;
+        self
     }
     /// <p>The maximum number of run groups to return in one page of results.</p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -68,20 +70,20 @@ impl ListRunGroupsInputBuilder {
     }
     /// <p>The maximum number of run groups to return in one page of results.</p>
     pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_results = input; self
+        self.max_results = input;
+        self
     }
     /// Consumes the builder and constructs a [`ListRunGroupsInput`](crate::operation::list_run_groups::ListRunGroupsInput).
-    pub fn build(self) -> Result<crate::operation::list_run_groups::ListRunGroupsInput, aws_smithy_http::operation::error::BuildError> {
-        Ok(
-            crate::operation::list_run_groups::ListRunGroupsInput {
-                name: self.name
-                ,
-                starting_token: self.starting_token
-                ,
-                max_results: self.max_results
-                ,
-            }
-        )
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::list_run_groups::ListRunGroupsInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        Ok(crate::operation::list_run_groups::ListRunGroupsInput {
+            name: self.name,
+            starting_token: self.starting_token,
+            max_results: self.max_results,
+        })
     }
 }
-

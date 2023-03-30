@@ -3,17 +3,17 @@
 /// <p>Output of a list answers call.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListAnswersOutput  {
+pub struct ListAnswersOutput {
     /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
     #[doc(hidden)]
     pub workload_id: std::option::Option<std::string::String>,
-    /// <p>The milestone number.</p> 
+    /// <p>The milestone number.</p>
     /// <p>A workload can have a maximum of 100 milestones.</p>
     #[doc(hidden)]
     pub milestone_number: i32,
-    /// <p>The alias of the lens.</p> 
-    /// <p>For Amazon Web Services official lenses, this is either the lens alias, such as <code>serverless</code>, or the lens ARN, such as <code>arn:aws:wellarchitected:us-west-2::lens/serverless</code>.</p> 
-    /// <p>For custom lenses, this is the lens ARN, such as <code>arn:aws:wellarchitected:us-east-1:123456789012:lens/my-lens</code>. </p> 
+    /// <p>The alias of the lens.</p>
+    /// <p>For Amazon Web Services official lenses, this is either the lens alias, such as <code>serverless</code>, or the lens ARN, such as <code>arn:aws:wellarchitected:us-west-2::lens/serverless</code>.</p>
+    /// <p>For custom lenses, this is the lens ARN, such as <code>arn:aws:wellarchitected:us-east-1:123456789012:lens/my-lens</code>. </p>
     /// <p>Each lens is identified by its <code>LensSummary$LensAlias</code>.</p>
     #[doc(hidden)]
     pub lens_alias: std::option::Option<std::string::String>,
@@ -30,39 +30,39 @@ pub struct ListAnswersOutput  {
 }
 impl ListAnswersOutput {
     /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
-    pub fn workload_id(&self) -> std::option::Option<& str> {
+    pub fn workload_id(&self) -> std::option::Option<&str> {
         self.workload_id.as_deref()
     }
-    /// <p>The milestone number.</p> 
+    /// <p>The milestone number.</p>
     /// <p>A workload can have a maximum of 100 milestones.</p>
     pub fn milestone_number(&self) -> i32 {
         self.milestone_number
     }
-    /// <p>The alias of the lens.</p> 
-    /// <p>For Amazon Web Services official lenses, this is either the lens alias, such as <code>serverless</code>, or the lens ARN, such as <code>arn:aws:wellarchitected:us-west-2::lens/serverless</code>.</p> 
-    /// <p>For custom lenses, this is the lens ARN, such as <code>arn:aws:wellarchitected:us-east-1:123456789012:lens/my-lens</code>. </p> 
+    /// <p>The alias of the lens.</p>
+    /// <p>For Amazon Web Services official lenses, this is either the lens alias, such as <code>serverless</code>, or the lens ARN, such as <code>arn:aws:wellarchitected:us-west-2::lens/serverless</code>.</p>
+    /// <p>For custom lenses, this is the lens ARN, such as <code>arn:aws:wellarchitected:us-east-1:123456789012:lens/my-lens</code>. </p>
     /// <p>Each lens is identified by its <code>LensSummary$LensAlias</code>.</p>
-    pub fn lens_alias(&self) -> std::option::Option<& str> {
+    pub fn lens_alias(&self) -> std::option::Option<&str> {
         self.lens_alias.as_deref()
     }
     /// <p>The ARN for the lens.</p>
-    pub fn lens_arn(&self) -> std::option::Option<& str> {
+    pub fn lens_arn(&self) -> std::option::Option<&str> {
         self.lens_arn.as_deref()
     }
     /// <p>List of answer summaries of lens review in a workload.</p>
-    pub fn answer_summaries(&self) -> std::option::Option<& [crate::types::AnswerSummary]> {
+    pub fn answer_summaries(&self) -> std::option::Option<&[crate::types::AnswerSummary]> {
         self.answer_summaries.as_deref()
     }
     /// <p>The token to use to retrieve the next set of results.</p>
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for ListAnswersOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl ListAnswersOutput {
     /// Creates a new builder-style object to manufacture [`ListAnswersOutput`](crate::operation::list_answers::ListAnswersOutput).
     pub fn builder() -> crate::operation::list_answers::builders::ListAnswersOutputBuilder {
@@ -90,33 +90,36 @@ impl ListAnswersOutputBuilder {
     }
     /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
     pub fn set_workload_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.workload_id = input; self
+        self.workload_id = input;
+        self
     }
-    /// <p>The milestone number.</p> 
+    /// <p>The milestone number.</p>
     /// <p>A workload can have a maximum of 100 milestones.</p>
     pub fn milestone_number(mut self, input: i32) -> Self {
         self.milestone_number = Some(input);
         self
     }
-    /// <p>The milestone number.</p> 
+    /// <p>The milestone number.</p>
     /// <p>A workload can have a maximum of 100 milestones.</p>
     pub fn set_milestone_number(mut self, input: std::option::Option<i32>) -> Self {
-        self.milestone_number = input; self
+        self.milestone_number = input;
+        self
     }
-    /// <p>The alias of the lens.</p> 
-    /// <p>For Amazon Web Services official lenses, this is either the lens alias, such as <code>serverless</code>, or the lens ARN, such as <code>arn:aws:wellarchitected:us-west-2::lens/serverless</code>.</p> 
-    /// <p>For custom lenses, this is the lens ARN, such as <code>arn:aws:wellarchitected:us-east-1:123456789012:lens/my-lens</code>. </p> 
+    /// <p>The alias of the lens.</p>
+    /// <p>For Amazon Web Services official lenses, this is either the lens alias, such as <code>serverless</code>, or the lens ARN, such as <code>arn:aws:wellarchitected:us-west-2::lens/serverless</code>.</p>
+    /// <p>For custom lenses, this is the lens ARN, such as <code>arn:aws:wellarchitected:us-east-1:123456789012:lens/my-lens</code>. </p>
     /// <p>Each lens is identified by its <code>LensSummary$LensAlias</code>.</p>
     pub fn lens_alias(mut self, input: impl Into<std::string::String>) -> Self {
         self.lens_alias = Some(input.into());
         self
     }
-    /// <p>The alias of the lens.</p> 
-    /// <p>For Amazon Web Services official lenses, this is either the lens alias, such as <code>serverless</code>, or the lens ARN, such as <code>arn:aws:wellarchitected:us-west-2::lens/serverless</code>.</p> 
-    /// <p>For custom lenses, this is the lens ARN, such as <code>arn:aws:wellarchitected:us-east-1:123456789012:lens/my-lens</code>. </p> 
+    /// <p>The alias of the lens.</p>
+    /// <p>For Amazon Web Services official lenses, this is either the lens alias, such as <code>serverless</code>, or the lens ARN, such as <code>arn:aws:wellarchitected:us-west-2::lens/serverless</code>.</p>
+    /// <p>For custom lenses, this is the lens ARN, such as <code>arn:aws:wellarchitected:us-east-1:123456789012:lens/my-lens</code>. </p>
     /// <p>Each lens is identified by its <code>LensSummary$LensAlias</code>.</p>
     pub fn set_lens_alias(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.lens_alias = input; self
+        self.lens_alias = input;
+        self
     }
     /// <p>The ARN for the lens.</p>
     pub fn lens_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -125,7 +128,8 @@ impl ListAnswersOutputBuilder {
     }
     /// <p>The ARN for the lens.</p>
     pub fn set_lens_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.lens_arn = input; self
+        self.lens_arn = input;
+        self
     }
     /// Appends an item to `answer_summaries`.
     ///
@@ -134,13 +138,17 @@ impl ListAnswersOutputBuilder {
     /// <p>List of answer summaries of lens review in a workload.</p>
     pub fn answer_summaries(mut self, input: crate::types::AnswerSummary) -> Self {
         let mut v = self.answer_summaries.unwrap_or_default();
-                        v.push(input);
-                        self.answer_summaries = Some(v);
-                        self
+        v.push(input);
+        self.answer_summaries = Some(v);
+        self
     }
     /// <p>List of answer summaries of lens review in a workload.</p>
-    pub fn set_answer_summaries(mut self, input: std::option::Option<std::vec::Vec<crate::types::AnswerSummary>>) -> Self {
-        self.answer_summaries = input; self
+    pub fn set_answer_summaries(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::AnswerSummary>>,
+    ) -> Self {
+        self.answer_summaries = input;
+        self
     }
     /// <p>The token to use to retrieve the next set of results.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -149,35 +157,28 @@ impl ListAnswersOutputBuilder {
     }
     /// <p>The token to use to retrieve the next set of results.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input; self
+        self.next_token = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`ListAnswersOutput`](crate::operation::list_answers::ListAnswersOutput).
     pub fn build(self) -> crate::operation::list_answers::ListAnswersOutput {
         crate::operation::list_answers::ListAnswersOutput {
-            workload_id: self.workload_id
-            ,
-            milestone_number: self.milestone_number
-                .unwrap_or_default()
-            ,
-            lens_alias: self.lens_alias
-            ,
-            lens_arn: self.lens_arn
-            ,
-            answer_summaries: self.answer_summaries
-            ,
-            next_token: self.next_token
-            ,
+            workload_id: self.workload_id,
+            milestone_number: self.milestone_number.unwrap_or_default(),
+            lens_alias: self.lens_alias,
+            lens_arn: self.lens_arn,
+            answer_summaries: self.answer_summaries,
+            next_token: self.next_token,
             _request_id: self._request_id,
         }
     }
 }
-

@@ -3,14 +3,14 @@
 /// <p>The authorization method used to send messages.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct HttpAuthorization  {
+pub struct HttpAuthorization {
     /// <p>Use Sig V4 authorization. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">Signature Version 4 Signing Process</a>.</p>
     #[doc(hidden)]
     pub sigv4: std::option::Option<crate::types::SigV4Authorization>,
 }
 impl HttpAuthorization {
     /// <p>Use Sig V4 authorization. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">Signature Version 4 Signing Process</a>.</p>
-    pub fn sigv4(&self) -> std::option::Option<& crate::types::SigV4Authorization> {
+    pub fn sigv4(&self) -> std::option::Option<&crate::types::SigV4Authorization> {
         self.sigv4.as_ref()
     }
 }
@@ -34,15 +34,15 @@ impl HttpAuthorizationBuilder {
         self
     }
     /// <p>Use Sig V4 authorization. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">Signature Version 4 Signing Process</a>.</p>
-    pub fn set_sigv4(mut self, input: std::option::Option<crate::types::SigV4Authorization>) -> Self {
-        self.sigv4 = input; self
+    pub fn set_sigv4(
+        mut self,
+        input: std::option::Option<crate::types::SigV4Authorization>,
+    ) -> Self {
+        self.sigv4 = input;
+        self
     }
     /// Consumes the builder and constructs a [`HttpAuthorization`](crate::types::HttpAuthorization).
     pub fn build(self) -> crate::types::HttpAuthorization {
-        crate::types::HttpAuthorization {
-            sigv4: self.sigv4
-            ,
-        }
+        crate::types::HttpAuthorization { sigv4: self.sigv4 }
     }
 }
-

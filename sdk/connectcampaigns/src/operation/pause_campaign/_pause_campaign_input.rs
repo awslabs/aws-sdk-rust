@@ -3,14 +3,14 @@
 /// PauseCampaignRequest
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PauseCampaignInput  {
+pub struct PauseCampaignInput {
     /// Identifier representing a Campaign
     #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
 }
 impl PauseCampaignInput {
     /// Identifier representing a Campaign
-    pub fn id(&self) -> std::option::Option<& str> {
+    pub fn id(&self) -> std::option::Option<&str> {
         self.id.as_deref()
     }
 }
@@ -35,16 +35,16 @@ impl PauseCampaignInputBuilder {
     }
     /// Identifier representing a Campaign
     pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.id = input; self
+        self.id = input;
+        self
     }
     /// Consumes the builder and constructs a [`PauseCampaignInput`](crate::operation::pause_campaign::PauseCampaignInput).
-    pub fn build(self) -> Result<crate::operation::pause_campaign::PauseCampaignInput, aws_smithy_http::operation::error::BuildError> {
-        Ok(
-            crate::operation::pause_campaign::PauseCampaignInput {
-                id: self.id
-                ,
-            }
-        )
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::pause_campaign::PauseCampaignInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        Ok(crate::operation::pause_campaign::PauseCampaignInput { id: self.id })
     }
 }
-

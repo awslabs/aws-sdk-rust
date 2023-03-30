@@ -3,7 +3,7 @@
 /// Nielsen Naes Ii Nw
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct NielsenNaesIiNw  {
+pub struct NielsenNaesIiNw {
     /// Enter the check digit string for the watermark
     #[doc(hidden)]
     pub check_digit_string: std::option::Option<std::string::String>,
@@ -13,7 +13,7 @@ pub struct NielsenNaesIiNw  {
 }
 impl NielsenNaesIiNw {
     /// Enter the check digit string for the watermark
-    pub fn check_digit_string(&self) -> std::option::Option<& str> {
+    pub fn check_digit_string(&self) -> std::option::Option<&str> {
         self.check_digit_string.as_deref()
     }
     /// Enter the Nielsen Source ID (SID) to include in the watermark
@@ -42,8 +42,12 @@ impl NielsenNaesIiNwBuilder {
         self
     }
     /// Enter the check digit string for the watermark
-    pub fn set_check_digit_string(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.check_digit_string = input; self
+    pub fn set_check_digit_string(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.check_digit_string = input;
+        self
     }
     /// Enter the Nielsen Source ID (SID) to include in the watermark
     pub fn sid(mut self, input: f64) -> Self {
@@ -52,17 +56,14 @@ impl NielsenNaesIiNwBuilder {
     }
     /// Enter the Nielsen Source ID (SID) to include in the watermark
     pub fn set_sid(mut self, input: std::option::Option<f64>) -> Self {
-        self.sid = input; self
+        self.sid = input;
+        self
     }
     /// Consumes the builder and constructs a [`NielsenNaesIiNw`](crate::types::NielsenNaesIiNw).
     pub fn build(self) -> crate::types::NielsenNaesIiNw {
         crate::types::NielsenNaesIiNw {
-            check_digit_string: self.check_digit_string
-            ,
-            sid: self.sid
-                .unwrap_or_default()
-            ,
+            check_digit_string: self.check_digit_string,
+            sid: self.sid.unwrap_or_default(),
         }
     }
 }
-

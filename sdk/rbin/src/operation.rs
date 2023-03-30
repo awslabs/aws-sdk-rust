@@ -30,4 +30,3 @@ pub mod untag_resource;
 
 /// Types for the `UpdateRule` operation.
 pub mod update_rule;
-

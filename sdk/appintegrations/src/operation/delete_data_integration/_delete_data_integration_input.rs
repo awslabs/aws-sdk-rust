@@ -2,20 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteDataIntegrationInput  {
+pub struct DeleteDataIntegrationInput {
     /// <p>A unique identifier for the DataIntegration.</p>
     #[doc(hidden)]
     pub data_integration_identifier: std::option::Option<std::string::String>,
 }
 impl DeleteDataIntegrationInput {
     /// <p>A unique identifier for the DataIntegration.</p>
-    pub fn data_integration_identifier(&self) -> std::option::Option<& str> {
+    pub fn data_integration_identifier(&self) -> std::option::Option<&str> {
         self.data_integration_identifier.as_deref()
     }
 }
 impl DeleteDataIntegrationInput {
     /// Creates a new builder-style object to manufacture [`DeleteDataIntegrationInput`](crate::operation::delete_data_integration::DeleteDataIntegrationInput).
-    pub fn builder() -> crate::operation::delete_data_integration::builders::DeleteDataIntegrationInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::delete_data_integration::builders::DeleteDataIntegrationInputBuilder
+    {
         crate::operation::delete_data_integration::builders::DeleteDataIntegrationInputBuilder::default()
     }
 }
@@ -33,17 +35,24 @@ impl DeleteDataIntegrationInputBuilder {
         self
     }
     /// <p>A unique identifier for the DataIntegration.</p>
-    pub fn set_data_integration_identifier(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.data_integration_identifier = input; self
+    pub fn set_data_integration_identifier(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.data_integration_identifier = input;
+        self
     }
     /// Consumes the builder and constructs a [`DeleteDataIntegrationInput`](crate::operation::delete_data_integration::DeleteDataIntegrationInput).
-    pub fn build(self) -> Result<crate::operation::delete_data_integration::DeleteDataIntegrationInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::delete_data_integration::DeleteDataIntegrationInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::delete_data_integration::DeleteDataIntegrationInput {
-                data_integration_identifier: self.data_integration_identifier
-                ,
-            }
+                data_integration_identifier: self.data_integration_identifier,
+            },
         )
     }
 }
-

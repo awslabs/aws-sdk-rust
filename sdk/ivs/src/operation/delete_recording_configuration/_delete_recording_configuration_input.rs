@@ -2,20 +2,20 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteRecordingConfigurationInput  {
+pub struct DeleteRecordingConfigurationInput {
     /// <p>ARN of the recording configuration to be deleted.</p>
     #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
 }
 impl DeleteRecordingConfigurationInput {
     /// <p>ARN of the recording configuration to be deleted.</p>
-    pub fn arn(&self) -> std::option::Option<& str> {
+    pub fn arn(&self) -> std::option::Option<&str> {
         self.arn.as_deref()
     }
 }
 impl DeleteRecordingConfigurationInput {
     /// Creates a new builder-style object to manufacture [`DeleteRecordingConfigurationInput`](crate::operation::delete_recording_configuration::DeleteRecordingConfigurationInput).
-    pub fn builder() -> crate::operation::delete_recording_configuration::builders::DeleteRecordingConfigurationInputBuilder {
+    pub fn builder() -> crate::operation::delete_recording_configuration::builders::DeleteRecordingConfigurationInputBuilder{
         crate::operation::delete_recording_configuration::builders::DeleteRecordingConfigurationInputBuilder::default()
     }
 }
@@ -34,16 +34,20 @@ impl DeleteRecordingConfigurationInputBuilder {
     }
     /// <p>ARN of the recording configuration to be deleted.</p>
     pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.arn = input; self
+        self.arn = input;
+        self
     }
     /// Consumes the builder and constructs a [`DeleteRecordingConfigurationInput`](crate::operation::delete_recording_configuration::DeleteRecordingConfigurationInput).
-    pub fn build(self) -> Result<crate::operation::delete_recording_configuration::DeleteRecordingConfigurationInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::delete_recording_configuration::DeleteRecordingConfigurationInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::delete_recording_configuration::DeleteRecordingConfigurationInput {
-                arn: self.arn
-                ,
-            }
+                arn: self.arn,
+            },
         )
     }
 }
-

@@ -3,7 +3,7 @@
 /// <p>A group of signals that are defined in a hierarchical structure.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Branch  {
+pub struct Branch {
     /// <p>The fully qualified name of the branch. For example, the fully qualified name of a branch might be <code>Vehicle.Body.Engine</code>.</p>
     #[doc(hidden)]
     pub fully_qualified_name: std::option::Option<std::string::String>,
@@ -13,11 +13,11 @@ pub struct Branch  {
 }
 impl Branch {
     /// <p>The fully qualified name of the branch. For example, the fully qualified name of a branch might be <code>Vehicle.Body.Engine</code>.</p>
-    pub fn fully_qualified_name(&self) -> std::option::Option<& str> {
+    pub fn fully_qualified_name(&self) -> std::option::Option<&str> {
         self.fully_qualified_name.as_deref()
     }
     /// <p>A brief description of the branch.</p>
-    pub fn description(&self) -> std::option::Option<& str> {
+    pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
 }
@@ -42,8 +42,12 @@ impl BranchBuilder {
         self
     }
     /// <p>The fully qualified name of the branch. For example, the fully qualified name of a branch might be <code>Vehicle.Body.Engine</code>.</p>
-    pub fn set_fully_qualified_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.fully_qualified_name = input; self
+    pub fn set_fully_qualified_name(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.fully_qualified_name = input;
+        self
     }
     /// <p>A brief description of the branch.</p>
     pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -52,16 +56,14 @@ impl BranchBuilder {
     }
     /// <p>A brief description of the branch.</p>
     pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.description = input; self
+        self.description = input;
+        self
     }
     /// Consumes the builder and constructs a [`Branch`](crate::types::Branch).
     pub fn build(self) -> crate::types::Branch {
         crate::types::Branch {
-            fully_qualified_name: self.fully_qualified_name
-            ,
-            description: self.description
-            ,
+            fully_qualified_name: self.fully_qualified_name,
+            description: self.description,
         }
     }
 }
-

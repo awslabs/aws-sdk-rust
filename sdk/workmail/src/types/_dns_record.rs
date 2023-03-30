@@ -3,7 +3,7 @@
 /// <p>A DNS record uploaded to your DNS provider.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DnsRecord  {
+pub struct DnsRecord {
     /// <p>The RFC 1035 record type. Possible values: <code>CNAME</code>, <code>A</code>, <code>MX</code>.</p>
     #[doc(hidden)]
     pub r#type: std::option::Option<std::string::String>,
@@ -16,15 +16,15 @@ pub struct DnsRecord  {
 }
 impl DnsRecord {
     /// <p>The RFC 1035 record type. Possible values: <code>CNAME</code>, <code>A</code>, <code>MX</code>.</p>
-    pub fn r#type(&self) -> std::option::Option<& str> {
+    pub fn r#type(&self) -> std::option::Option<&str> {
         self.r#type.as_deref()
     }
     /// <p>The DNS hostname.- For example, <code>domain.example.com</code>.</p>
-    pub fn hostname(&self) -> std::option::Option<& str> {
+    pub fn hostname(&self) -> std::option::Option<&str> {
         self.hostname.as_deref()
     }
     /// <p>The value returned by the DNS for a query to that hostname and record type.</p>
-    pub fn value(&self) -> std::option::Option<& str> {
+    pub fn value(&self) -> std::option::Option<&str> {
         self.value.as_deref()
     }
 }
@@ -51,7 +51,8 @@ impl DnsRecordBuilder {
     }
     /// <p>The RFC 1035 record type. Possible values: <code>CNAME</code>, <code>A</code>, <code>MX</code>.</p>
     pub fn set_type(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.r#type = input; self
+        self.r#type = input;
+        self
     }
     /// <p>The DNS hostname.- For example, <code>domain.example.com</code>.</p>
     pub fn hostname(mut self, input: impl Into<std::string::String>) -> Self {
@@ -60,7 +61,8 @@ impl DnsRecordBuilder {
     }
     /// <p>The DNS hostname.- For example, <code>domain.example.com</code>.</p>
     pub fn set_hostname(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.hostname = input; self
+        self.hostname = input;
+        self
     }
     /// <p>The value returned by the DNS for a query to that hostname and record type.</p>
     pub fn value(mut self, input: impl Into<std::string::String>) -> Self {
@@ -69,18 +71,15 @@ impl DnsRecordBuilder {
     }
     /// <p>The value returned by the DNS for a query to that hostname and record type.</p>
     pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.value = input; self
+        self.value = input;
+        self
     }
     /// Consumes the builder and constructs a [`DnsRecord`](crate::types::DnsRecord).
     pub fn build(self) -> crate::types::DnsRecord {
         crate::types::DnsRecord {
-            r#type: self.r#type
-            ,
-            hostname: self.hostname
-            ,
-            value: self.value
-            ,
+            r#type: self.r#type,
+            hostname: self.hostname,
+            value: self.value,
         }
     }
 }
-

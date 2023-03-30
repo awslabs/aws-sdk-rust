@@ -3,7 +3,7 @@
 /// <p>The impersonation rule that matched the input.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ImpersonationMatchedRule  {
+pub struct ImpersonationMatchedRule {
     /// <p>The ID of the rule that matched the input</p>
     #[doc(hidden)]
     pub impersonation_rule_id: std::option::Option<std::string::String>,
@@ -13,11 +13,11 @@ pub struct ImpersonationMatchedRule  {
 }
 impl ImpersonationMatchedRule {
     /// <p>The ID of the rule that matched the input</p>
-    pub fn impersonation_rule_id(&self) -> std::option::Option<& str> {
+    pub fn impersonation_rule_id(&self) -> std::option::Option<&str> {
         self.impersonation_rule_id.as_deref()
     }
     /// <p>The name of the rule that matched the input.</p>
-    pub fn name(&self) -> std::option::Option<& str> {
+    pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
 }
@@ -42,8 +42,12 @@ impl ImpersonationMatchedRuleBuilder {
         self
     }
     /// <p>The ID of the rule that matched the input</p>
-    pub fn set_impersonation_rule_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.impersonation_rule_id = input; self
+    pub fn set_impersonation_rule_id(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.impersonation_rule_id = input;
+        self
     }
     /// <p>The name of the rule that matched the input.</p>
     pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -52,16 +56,14 @@ impl ImpersonationMatchedRuleBuilder {
     }
     /// <p>The name of the rule that matched the input.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input; self
+        self.name = input;
+        self
     }
     /// Consumes the builder and constructs a [`ImpersonationMatchedRule`](crate::types::ImpersonationMatchedRule).
     pub fn build(self) -> crate::types::ImpersonationMatchedRule {
         crate::types::ImpersonationMatchedRule {
-            impersonation_rule_id: self.impersonation_rule_id
-            ,
-            name: self.name
-            ,
+            impersonation_rule_id: self.impersonation_rule_id,
+            name: self.name,
         }
     }
 }
-

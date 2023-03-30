@@ -183,4 +183,3 @@ pub mod update_job_priority;
 
 /// Types for the `UpdateJobStatus` operation.
 pub mod update_job_status;
-

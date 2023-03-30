@@ -3,7 +3,7 @@
 /// <p>Information about a shot detection segment detected in a video. For more information, see <code>SegmentDetection</code>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ShotSegment  {
+pub struct ShotSegment {
     /// <p>An Identifier for a shot detection segment detected in a video. </p>
     #[doc(hidden)]
     pub index: std::option::Option<i64>,
@@ -43,7 +43,8 @@ impl ShotSegmentBuilder {
     }
     /// <p>An Identifier for a shot detection segment detected in a video. </p>
     pub fn set_index(mut self, input: std::option::Option<i64>) -> Self {
-        self.index = input; self
+        self.index = input;
+        self
     }
     /// <p>The confidence that Amazon Rekognition Video has in the accuracy of the detected segment.</p>
     pub fn confidence(mut self, input: f32) -> Self {
@@ -52,16 +53,14 @@ impl ShotSegmentBuilder {
     }
     /// <p>The confidence that Amazon Rekognition Video has in the accuracy of the detected segment.</p>
     pub fn set_confidence(mut self, input: std::option::Option<f32>) -> Self {
-        self.confidence = input; self
+        self.confidence = input;
+        self
     }
     /// Consumes the builder and constructs a [`ShotSegment`](crate::types::ShotSegment).
     pub fn build(self) -> crate::types::ShotSegment {
         crate::types::ShotSegment {
-            index: self.index
-            ,
-            confidence: self.confidence
-            ,
+            index: self.index,
+            confidence: self.confidence,
         }
     }
 }
-

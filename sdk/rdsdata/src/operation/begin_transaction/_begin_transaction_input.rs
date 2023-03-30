@@ -3,7 +3,7 @@
 /// <p>The request parameters represent the input of a request to start a SQL transaction.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct BeginTransactionInput  {
+pub struct BeginTransactionInput {
     /// <p>The Amazon Resource Name (ARN) of the Aurora Serverless DB cluster.</p>
     #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
@@ -19,25 +19,26 @@ pub struct BeginTransactionInput  {
 }
 impl BeginTransactionInput {
     /// <p>The Amazon Resource Name (ARN) of the Aurora Serverless DB cluster.</p>
-    pub fn resource_arn(&self) -> std::option::Option<& str> {
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
         self.resource_arn.as_deref()
     }
     /// <p>The name or ARN of the secret that enables access to the DB cluster.</p>
-    pub fn secret_arn(&self) -> std::option::Option<& str> {
+    pub fn secret_arn(&self) -> std::option::Option<&str> {
         self.secret_arn.as_deref()
     }
     /// <p>The name of the database.</p>
-    pub fn database(&self) -> std::option::Option<& str> {
+    pub fn database(&self) -> std::option::Option<&str> {
         self.database.as_deref()
     }
     /// <p>The name of the database schema.</p>
-    pub fn schema(&self) -> std::option::Option<& str> {
+    pub fn schema(&self) -> std::option::Option<&str> {
         self.schema.as_deref()
     }
 }
 impl BeginTransactionInput {
     /// Creates a new builder-style object to manufacture [`BeginTransactionInput`](crate::operation::begin_transaction::BeginTransactionInput).
-    pub fn builder() -> crate::operation::begin_transaction::builders::BeginTransactionInputBuilder {
+    pub fn builder() -> crate::operation::begin_transaction::builders::BeginTransactionInputBuilder
+    {
         crate::operation::begin_transaction::builders::BeginTransactionInputBuilder::default()
     }
 }
@@ -59,7 +60,8 @@ impl BeginTransactionInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the Aurora Serverless DB cluster.</p>
     pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.resource_arn = input; self
+        self.resource_arn = input;
+        self
     }
     /// <p>The name or ARN of the secret that enables access to the DB cluster.</p>
     pub fn secret_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -68,7 +70,8 @@ impl BeginTransactionInputBuilder {
     }
     /// <p>The name or ARN of the secret that enables access to the DB cluster.</p>
     pub fn set_secret_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.secret_arn = input; self
+        self.secret_arn = input;
+        self
     }
     /// <p>The name of the database.</p>
     pub fn database(mut self, input: impl Into<std::string::String>) -> Self {
@@ -77,7 +80,8 @@ impl BeginTransactionInputBuilder {
     }
     /// <p>The name of the database.</p>
     pub fn set_database(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.database = input; self
+        self.database = input;
+        self
     }
     /// <p>The name of the database schema.</p>
     pub fn schema(mut self, input: impl Into<std::string::String>) -> Self {
@@ -86,22 +90,21 @@ impl BeginTransactionInputBuilder {
     }
     /// <p>The name of the database schema.</p>
     pub fn set_schema(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.schema = input; self
+        self.schema = input;
+        self
     }
     /// Consumes the builder and constructs a [`BeginTransactionInput`](crate::operation::begin_transaction::BeginTransactionInput).
-    pub fn build(self) -> Result<crate::operation::begin_transaction::BeginTransactionInput, aws_smithy_http::operation::error::BuildError> {
-        Ok(
-            crate::operation::begin_transaction::BeginTransactionInput {
-                resource_arn: self.resource_arn
-                ,
-                secret_arn: self.secret_arn
-                ,
-                database: self.database
-                ,
-                schema: self.schema
-                ,
-            }
-        )
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::begin_transaction::BeginTransactionInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        Ok(crate::operation::begin_transaction::BeginTransactionInput {
+            resource_arn: self.resource_arn,
+            secret_arn: self.secret_arn,
+            database: self.database,
+            schema: self.schema,
+        })
     }
 }
-

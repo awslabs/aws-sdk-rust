@@ -3,7 +3,7 @@
 /// <p>Describes the virtual private server (or <i>instance</i>) status.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct InstanceState  {
+pub struct InstanceState {
     /// <p>The status code for the instance.</p>
     #[doc(hidden)]
     pub code: std::option::Option<i32>,
@@ -17,7 +17,7 @@ impl InstanceState {
         self.code
     }
     /// <p>The state of the instance (e.g., <code>running</code> or <code>pending</code>).</p>
-    pub fn name(&self) -> std::option::Option<& str> {
+    pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
 }
@@ -43,7 +43,8 @@ impl InstanceStateBuilder {
     }
     /// <p>The status code for the instance.</p>
     pub fn set_code(mut self, input: std::option::Option<i32>) -> Self {
-        self.code = input; self
+        self.code = input;
+        self
     }
     /// <p>The state of the instance (e.g., <code>running</code> or <code>pending</code>).</p>
     pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -52,16 +53,14 @@ impl InstanceStateBuilder {
     }
     /// <p>The state of the instance (e.g., <code>running</code> or <code>pending</code>).</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input; self
+        self.name = input;
+        self
     }
     /// Consumes the builder and constructs a [`InstanceState`](crate::types::InstanceState).
     pub fn build(self) -> crate::types::InstanceState {
         crate::types::InstanceState {
-            code: self.code
-            ,
-            name: self.name
-            ,
+            code: self.code,
+            name: self.name,
         }
     }
 }
-

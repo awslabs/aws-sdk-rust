@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeReturnShippingLabelOutput  {
+pub struct DescribeReturnShippingLabelOutput {
     /// <p>The status information of the task on a Snow device that is being returned to Amazon Web Services.</p>
     #[doc(hidden)]
     pub status: std::option::Option<crate::types::ShippingLabelStatus>,
@@ -16,26 +16,26 @@ pub struct DescribeReturnShippingLabelOutput  {
 }
 impl DescribeReturnShippingLabelOutput {
     /// <p>The status information of the task on a Snow device that is being returned to Amazon Web Services.</p>
-    pub fn status(&self) -> std::option::Option<& crate::types::ShippingLabelStatus> {
+    pub fn status(&self) -> std::option::Option<&crate::types::ShippingLabelStatus> {
         self.status.as_ref()
     }
     /// <p>The expiration date of the current return shipping label.</p>
-    pub fn expiration_date(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
+    pub fn expiration_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.expiration_date.as_ref()
     }
     /// <p>The pre-signed Amazon S3 URI used to download the return shipping label.</p>
-    pub fn return_shipping_label_uri(&self) -> std::option::Option<& str> {
+    pub fn return_shipping_label_uri(&self) -> std::option::Option<&str> {
         self.return_shipping_label_uri.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for DescribeReturnShippingLabelOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl DescribeReturnShippingLabelOutput {
     /// Creates a new builder-style object to manufacture [`DescribeReturnShippingLabelOutput`](crate::operation::describe_return_shipping_label::DescribeReturnShippingLabelOutput).
-    pub fn builder() -> crate::operation::describe_return_shipping_label::builders::DescribeReturnShippingLabelOutputBuilder {
+    pub fn builder() -> crate::operation::describe_return_shipping_label::builders::DescribeReturnShippingLabelOutputBuilder{
         crate::operation::describe_return_shipping_label::builders::DescribeReturnShippingLabelOutputBuilder::default()
     }
 }
@@ -56,8 +56,12 @@ impl DescribeReturnShippingLabelOutputBuilder {
         self
     }
     /// <p>The status information of the task on a Snow device that is being returned to Amazon Web Services.</p>
-    pub fn set_status(mut self, input: std::option::Option<crate::types::ShippingLabelStatus>) -> Self {
-        self.status = input; self
+    pub fn set_status(
+        mut self,
+        input: std::option::Option<crate::types::ShippingLabelStatus>,
+    ) -> Self {
+        self.status = input;
+        self
     }
     /// <p>The expiration date of the current return shipping label.</p>
     pub fn expiration_date(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -65,8 +69,12 @@ impl DescribeReturnShippingLabelOutputBuilder {
         self
     }
     /// <p>The expiration date of the current return shipping label.</p>
-    pub fn set_expiration_date(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.expiration_date = input; self
+    pub fn set_expiration_date(
+        mut self,
+        input: std::option::Option<aws_smithy_types::DateTime>,
+    ) -> Self {
+        self.expiration_date = input;
+        self
     }
     /// <p>The pre-signed Amazon S3 URI used to download the return shipping label.</p>
     pub fn return_shipping_label_uri(mut self, input: impl Into<std::string::String>) -> Self {
@@ -74,29 +82,31 @@ impl DescribeReturnShippingLabelOutputBuilder {
         self
     }
     /// <p>The pre-signed Amazon S3 URI used to download the return shipping label.</p>
-    pub fn set_return_shipping_label_uri(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.return_shipping_label_uri = input; self
+    pub fn set_return_shipping_label_uri(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.return_shipping_label_uri = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`DescribeReturnShippingLabelOutput`](crate::operation::describe_return_shipping_label::DescribeReturnShippingLabelOutput).
-    pub fn build(self) -> crate::operation::describe_return_shipping_label::DescribeReturnShippingLabelOutput {
+    pub fn build(
+        self,
+    ) -> crate::operation::describe_return_shipping_label::DescribeReturnShippingLabelOutput {
         crate::operation::describe_return_shipping_label::DescribeReturnShippingLabelOutput {
-            status: self.status
-            ,
-            expiration_date: self.expiration_date
-            ,
-            return_shipping_label_uri: self.return_shipping_label_uri
-            ,
+            status: self.status,
+            expiration_date: self.expiration_date,
+            return_shipping_label_uri: self.return_shipping_label_uri,
             _request_id: self._request_id,
         }
     }
 }
-

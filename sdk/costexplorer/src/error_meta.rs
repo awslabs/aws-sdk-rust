@@ -28,7 +28,7 @@ pub enum Error {
     /// <p>Cost Explorer was unable to identify the usage unit. Provide <code>UsageType/UsageTypeGroup</code> filter selections that contain matching units, for example: <code>hours</code>.</p>
     UnresolvableUsageUnitException(crate::types::error::UnresolvableUsageUnitException),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    Unhandled(aws_smithy_types::error::Unhandled)
+    Unhandled(aws_smithy_types::error::Unhandled),
 }
 impl std::fmt::Display for Error {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -45,20 +45,38 @@ impl std::fmt::Display for Error {
             Error::UnknownMonitorException(inner) => inner.fmt(f),
             Error::UnknownSubscriptionException(inner) => inner.fmt(f),
             Error::UnresolvableUsageUnitException(inner) => inner.fmt(f),
-            Error::Unhandled(inner) => inner.fmt(f)
+            Error::Unhandled(inner) => inner.fmt(f),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::operation::create_anomaly_monitor::CreateAnomalyMonitorError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::operation::create_anomaly_monitor::CreateAnomalyMonitorError, R>) -> Self {
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::create_anomaly_monitor::CreateAnomalyMonitorError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::create_anomaly_monitor::CreateAnomalyMonitorError,
+            R,
+        >,
+    ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
             _ => Error::Unhandled(
-                                            aws_smithy_types::error::Unhandled::builder()
-                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
-                                                .source(err)
-                                                .build()
-                                        ),
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
@@ -70,21 +88,41 @@ impl From<crate::operation::create_anomaly_monitor::CreateAnomalyMonitorError> f
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::operation::create_anomaly_subscription::CreateAnomalySubscriptionError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::operation::create_anomaly_subscription::CreateAnomalySubscriptionError, R>) -> Self {
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::create_anomaly_subscription::CreateAnomalySubscriptionError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::create_anomaly_subscription::CreateAnomalySubscriptionError,
+            R,
+        >,
+    ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
             _ => Error::Unhandled(
-                                            aws_smithy_types::error::Unhandled::builder()
-                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
-                                                .source(err)
-                                                .build()
-                                        ),
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::operation::create_anomaly_subscription::CreateAnomalySubscriptionError> for Error {
-    fn from(err: crate::operation::create_anomaly_subscription::CreateAnomalySubscriptionError) -> Self {
+    fn from(
+        err: crate::operation::create_anomaly_subscription::CreateAnomalySubscriptionError,
+    ) -> Self {
         match err {
             crate::operation::create_anomaly_subscription::CreateAnomalySubscriptionError::LimitExceededException(inner) => Error::LimitExceededException(inner),
             crate::operation::create_anomaly_subscription::CreateAnomalySubscriptionError::UnknownMonitorException(inner) => Error::UnknownMonitorException(inner),
@@ -92,21 +130,43 @@ impl From<crate::operation::create_anomaly_subscription::CreateAnomalySubscripti
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::operation::create_cost_category_definition::CreateCostCategoryDefinitionError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::operation::create_cost_category_definition::CreateCostCategoryDefinitionError, R>) -> Self {
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::create_cost_category_definition::CreateCostCategoryDefinitionError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::create_cost_category_definition::CreateCostCategoryDefinitionError,
+            R,
+        >,
+    ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
             _ => Error::Unhandled(
-                                            aws_smithy_types::error::Unhandled::builder()
-                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
-                                                .source(err)
-                                                .build()
-                                        ),
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
-impl From<crate::operation::create_cost_category_definition::CreateCostCategoryDefinitionError> for Error {
-    fn from(err: crate::operation::create_cost_category_definition::CreateCostCategoryDefinitionError) -> Self {
+impl From<crate::operation::create_cost_category_definition::CreateCostCategoryDefinitionError>
+    for Error
+{
+    fn from(
+        err: crate::operation::create_cost_category_definition::CreateCostCategoryDefinitionError,
+    ) -> Self {
         match err {
             crate::operation::create_cost_category_definition::CreateCostCategoryDefinitionError::LimitExceededException(inner) => Error::LimitExceededException(inner),
             crate::operation::create_cost_category_definition::CreateCostCategoryDefinitionError::ServiceQuotaExceededException(inner) => Error::ServiceQuotaExceededException(inner),
@@ -114,16 +174,34 @@ impl From<crate::operation::create_cost_category_definition::CreateCostCategoryD
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::operation::delete_anomaly_monitor::DeleteAnomalyMonitorError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::operation::delete_anomaly_monitor::DeleteAnomalyMonitorError, R>) -> Self {
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::delete_anomaly_monitor::DeleteAnomalyMonitorError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::delete_anomaly_monitor::DeleteAnomalyMonitorError,
+            R,
+        >,
+    ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
             _ => Error::Unhandled(
-                                            aws_smithy_types::error::Unhandled::builder()
-                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
-                                                .source(err)
-                                                .build()
-                                        ),
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
@@ -136,21 +214,41 @@ impl From<crate::operation::delete_anomaly_monitor::DeleteAnomalyMonitorError> f
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::operation::delete_anomaly_subscription::DeleteAnomalySubscriptionError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::operation::delete_anomaly_subscription::DeleteAnomalySubscriptionError, R>) -> Self {
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::delete_anomaly_subscription::DeleteAnomalySubscriptionError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::delete_anomaly_subscription::DeleteAnomalySubscriptionError,
+            R,
+        >,
+    ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
             _ => Error::Unhandled(
-                                            aws_smithy_types::error::Unhandled::builder()
-                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
-                                                .source(err)
-                                                .build()
-                                        ),
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::operation::delete_anomaly_subscription::DeleteAnomalySubscriptionError> for Error {
-    fn from(err: crate::operation::delete_anomaly_subscription::DeleteAnomalySubscriptionError) -> Self {
+    fn from(
+        err: crate::operation::delete_anomaly_subscription::DeleteAnomalySubscriptionError,
+    ) -> Self {
         match err {
             crate::operation::delete_anomaly_subscription::DeleteAnomalySubscriptionError::LimitExceededException(inner) => Error::LimitExceededException(inner),
             crate::operation::delete_anomaly_subscription::DeleteAnomalySubscriptionError::UnknownSubscriptionException(inner) => Error::UnknownSubscriptionException(inner),
@@ -158,21 +256,43 @@ impl From<crate::operation::delete_anomaly_subscription::DeleteAnomalySubscripti
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::operation::delete_cost_category_definition::DeleteCostCategoryDefinitionError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::operation::delete_cost_category_definition::DeleteCostCategoryDefinitionError, R>) -> Self {
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::delete_cost_category_definition::DeleteCostCategoryDefinitionError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::delete_cost_category_definition::DeleteCostCategoryDefinitionError,
+            R,
+        >,
+    ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
             _ => Error::Unhandled(
-                                            aws_smithy_types::error::Unhandled::builder()
-                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
-                                                .source(err)
-                                                .build()
-                                        ),
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
-impl From<crate::operation::delete_cost_category_definition::DeleteCostCategoryDefinitionError> for Error {
-    fn from(err: crate::operation::delete_cost_category_definition::DeleteCostCategoryDefinitionError) -> Self {
+impl From<crate::operation::delete_cost_category_definition::DeleteCostCategoryDefinitionError>
+    for Error
+{
+    fn from(
+        err: crate::operation::delete_cost_category_definition::DeleteCostCategoryDefinitionError,
+    ) -> Self {
         match err {
             crate::operation::delete_cost_category_definition::DeleteCostCategoryDefinitionError::LimitExceededException(inner) => Error::LimitExceededException(inner),
             crate::operation::delete_cost_category_definition::DeleteCostCategoryDefinitionError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
@@ -193,8 +313,12 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::operation::describe_cost_c
         }
     }
 }
-impl From<crate::operation::describe_cost_category_definition::DescribeCostCategoryDefinitionError> for Error {
-    fn from(err: crate::operation::describe_cost_category_definition::DescribeCostCategoryDefinitionError) -> Self {
+impl From<crate::operation::describe_cost_category_definition::DescribeCostCategoryDefinitionError>
+    for Error
+{
+    fn from(
+        err: crate::operation::describe_cost_category_definition::DescribeCostCategoryDefinitionError,
+    ) -> Self {
         match err {
             crate::operation::describe_cost_category_definition::DescribeCostCategoryDefinitionError::LimitExceededException(inner) => Error::LimitExceededException(inner),
             crate::operation::describe_cost_category_definition::DescribeCostCategoryDefinitionError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
@@ -202,38 +326,76 @@ impl From<crate::operation::describe_cost_category_definition::DescribeCostCateg
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::operation::get_anomalies::GetAnomaliesError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::operation::get_anomalies::GetAnomaliesError, R>) -> Self {
+impl<R>
+    From<aws_smithy_http::result::SdkError<crate::operation::get_anomalies::GetAnomaliesError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::get_anomalies::GetAnomaliesError,
+            R,
+        >,
+    ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
             _ => Error::Unhandled(
-                                            aws_smithy_types::error::Unhandled::builder()
-                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
-                                                .source(err)
-                                                .build()
-                                        ),
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::operation::get_anomalies::GetAnomaliesError> for Error {
     fn from(err: crate::operation::get_anomalies::GetAnomaliesError) -> Self {
         match err {
-            crate::operation::get_anomalies::GetAnomaliesError::InvalidNextTokenException(inner) => Error::InvalidNextTokenException(inner),
-            crate::operation::get_anomalies::GetAnomaliesError::LimitExceededException(inner) => Error::LimitExceededException(inner),
-            crate::operation::get_anomalies::GetAnomaliesError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::get_anomalies::GetAnomaliesError::InvalidNextTokenException(
+                inner,
+            ) => Error::InvalidNextTokenException(inner),
+            crate::operation::get_anomalies::GetAnomaliesError::LimitExceededException(inner) => {
+                Error::LimitExceededException(inner)
+            }
+            crate::operation::get_anomalies::GetAnomaliesError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::operation::get_anomaly_monitors::GetAnomalyMonitorsError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::operation::get_anomaly_monitors::GetAnomalyMonitorsError, R>) -> Self {
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::get_anomaly_monitors::GetAnomalyMonitorsError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::get_anomaly_monitors::GetAnomalyMonitorsError,
+            R,
+        >,
+    ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
             _ => Error::Unhandled(
-                                            aws_smithy_types::error::Unhandled::builder()
-                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
-                                                .source(err)
-                                                .build()
-                                        ),
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
@@ -247,21 +409,41 @@ impl From<crate::operation::get_anomaly_monitors::GetAnomalyMonitorsError> for E
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::operation::get_anomaly_subscriptions::GetAnomalySubscriptionsError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::operation::get_anomaly_subscriptions::GetAnomalySubscriptionsError, R>) -> Self {
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::get_anomaly_subscriptions::GetAnomalySubscriptionsError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::get_anomaly_subscriptions::GetAnomalySubscriptionsError,
+            R,
+        >,
+    ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
             _ => Error::Unhandled(
-                                            aws_smithy_types::error::Unhandled::builder()
-                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
-                                                .source(err)
-                                                .build()
-                                        ),
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::operation::get_anomaly_subscriptions::GetAnomalySubscriptionsError> for Error {
-    fn from(err: crate::operation::get_anomaly_subscriptions::GetAnomalySubscriptionsError) -> Self {
+    fn from(
+        err: crate::operation::get_anomaly_subscriptions::GetAnomalySubscriptionsError,
+    ) -> Self {
         match err {
             crate::operation::get_anomaly_subscriptions::GetAnomalySubscriptionsError::InvalidNextTokenException(inner) => Error::InvalidNextTokenException(inner),
             crate::operation::get_anomaly_subscriptions::GetAnomalySubscriptionsError::LimitExceededException(inner) => Error::LimitExceededException(inner),
@@ -270,16 +452,34 @@ impl From<crate::operation::get_anomaly_subscriptions::GetAnomalySubscriptionsEr
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::operation::get_cost_and_usage::GetCostAndUsageError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::operation::get_cost_and_usage::GetCostAndUsageError, R>) -> Self {
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::get_cost_and_usage::GetCostAndUsageError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::get_cost_and_usage::GetCostAndUsageError,
+            R,
+        >,
+    ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
             _ => Error::Unhandled(
-                                            aws_smithy_types::error::Unhandled::builder()
-                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
-                                                .source(err)
-                                                .build()
-                                        ),
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
@@ -295,21 +495,43 @@ impl From<crate::operation::get_cost_and_usage::GetCostAndUsageError> for Error 
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::operation::get_cost_and_usage_with_resources::GetCostAndUsageWithResourcesError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::operation::get_cost_and_usage_with_resources::GetCostAndUsageWithResourcesError, R>) -> Self {
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::get_cost_and_usage_with_resources::GetCostAndUsageWithResourcesError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::get_cost_and_usage_with_resources::GetCostAndUsageWithResourcesError,
+            R,
+        >,
+    ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
             _ => Error::Unhandled(
-                                            aws_smithy_types::error::Unhandled::builder()
-                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
-                                                .source(err)
-                                                .build()
-                                        ),
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
-impl From<crate::operation::get_cost_and_usage_with_resources::GetCostAndUsageWithResourcesError> for Error {
-    fn from(err: crate::operation::get_cost_and_usage_with_resources::GetCostAndUsageWithResourcesError) -> Self {
+impl From<crate::operation::get_cost_and_usage_with_resources::GetCostAndUsageWithResourcesError>
+    for Error
+{
+    fn from(
+        err: crate::operation::get_cost_and_usage_with_resources::GetCostAndUsageWithResourcesError,
+    ) -> Self {
         match err {
             crate::operation::get_cost_and_usage_with_resources::GetCostAndUsageWithResourcesError::BillExpirationException(inner) => Error::BillExpirationException(inner),
             crate::operation::get_cost_and_usage_with_resources::GetCostAndUsageWithResourcesError::DataUnavailableException(inner) => Error::DataUnavailableException(inner),
@@ -320,16 +542,34 @@ impl From<crate::operation::get_cost_and_usage_with_resources::GetCostAndUsageWi
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::operation::get_cost_categories::GetCostCategoriesError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::operation::get_cost_categories::GetCostCategoriesError, R>) -> Self {
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::get_cost_categories::GetCostCategoriesError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::get_cost_categories::GetCostCategoriesError,
+            R,
+        >,
+    ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
             _ => Error::Unhandled(
-                                            aws_smithy_types::error::Unhandled::builder()
-                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
-                                                .source(err)
-                                                .build()
-                                        ),
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
@@ -345,38 +585,80 @@ impl From<crate::operation::get_cost_categories::GetCostCategoriesError> for Err
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::operation::get_cost_forecast::GetCostForecastError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::operation::get_cost_forecast::GetCostForecastError, R>) -> Self {
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::get_cost_forecast::GetCostForecastError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::get_cost_forecast::GetCostForecastError,
+            R,
+        >,
+    ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
             _ => Error::Unhandled(
-                                            aws_smithy_types::error::Unhandled::builder()
-                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
-                                                .source(err)
-                                                .build()
-                                        ),
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::operation::get_cost_forecast::GetCostForecastError> for Error {
     fn from(err: crate::operation::get_cost_forecast::GetCostForecastError) -> Self {
         match err {
-            crate::operation::get_cost_forecast::GetCostForecastError::DataUnavailableException(inner) => Error::DataUnavailableException(inner),
-            crate::operation::get_cost_forecast::GetCostForecastError::LimitExceededException(inner) => Error::LimitExceededException(inner),
-            crate::operation::get_cost_forecast::GetCostForecastError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::get_cost_forecast::GetCostForecastError::DataUnavailableException(
+                inner,
+            ) => Error::DataUnavailableException(inner),
+            crate::operation::get_cost_forecast::GetCostForecastError::LimitExceededException(
+                inner,
+            ) => Error::LimitExceededException(inner),
+            crate::operation::get_cost_forecast::GetCostForecastError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::operation::get_dimension_values::GetDimensionValuesError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::operation::get_dimension_values::GetDimensionValuesError, R>) -> Self {
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::get_dimension_values::GetDimensionValuesError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::get_dimension_values::GetDimensionValuesError,
+            R,
+        >,
+    ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
             _ => Error::Unhandled(
-                                            aws_smithy_types::error::Unhandled::builder()
-                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
-                                                .source(err)
-                                                .build()
-                                        ),
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
@@ -392,16 +674,34 @@ impl From<crate::operation::get_dimension_values::GetDimensionValuesError> for E
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::operation::get_reservation_coverage::GetReservationCoverageError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::operation::get_reservation_coverage::GetReservationCoverageError, R>) -> Self {
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::get_reservation_coverage::GetReservationCoverageError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::get_reservation_coverage::GetReservationCoverageError,
+            R,
+        >,
+    ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
             _ => Error::Unhandled(
-                                            aws_smithy_types::error::Unhandled::builder()
-                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
-                                                .source(err)
-                                                .build()
-                                        ),
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
@@ -438,21 +738,41 @@ impl From<crate::operation::get_reservation_purchase_recommendation::GetReservat
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::operation::get_reservation_utilization::GetReservationUtilizationError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::operation::get_reservation_utilization::GetReservationUtilizationError, R>) -> Self {
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::get_reservation_utilization::GetReservationUtilizationError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::get_reservation_utilization::GetReservationUtilizationError,
+            R,
+        >,
+    ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
             _ => Error::Unhandled(
-                                            aws_smithy_types::error::Unhandled::builder()
-                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
-                                                .source(err)
-                                                .build()
-                                        ),
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::operation::get_reservation_utilization::GetReservationUtilizationError> for Error {
-    fn from(err: crate::operation::get_reservation_utilization::GetReservationUtilizationError) -> Self {
+    fn from(
+        err: crate::operation::get_reservation_utilization::GetReservationUtilizationError,
+    ) -> Self {
         match err {
             crate::operation::get_reservation_utilization::GetReservationUtilizationError::DataUnavailableException(inner) => Error::DataUnavailableException(inner),
             crate::operation::get_reservation_utilization::GetReservationUtilizationError::InvalidNextTokenException(inner) => Error::InvalidNextTokenException(inner),
@@ -461,21 +781,43 @@ impl From<crate::operation::get_reservation_utilization::GetReservationUtilizati
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::operation::get_rightsizing_recommendation::GetRightsizingRecommendationError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::operation::get_rightsizing_recommendation::GetRightsizingRecommendationError, R>) -> Self {
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::get_rightsizing_recommendation::GetRightsizingRecommendationError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::get_rightsizing_recommendation::GetRightsizingRecommendationError,
+            R,
+        >,
+    ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
             _ => Error::Unhandled(
-                                            aws_smithy_types::error::Unhandled::builder()
-                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
-                                                .source(err)
-                                                .build()
-                                        ),
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
-impl From<crate::operation::get_rightsizing_recommendation::GetRightsizingRecommendationError> for Error {
-    fn from(err: crate::operation::get_rightsizing_recommendation::GetRightsizingRecommendationError) -> Self {
+impl From<crate::operation::get_rightsizing_recommendation::GetRightsizingRecommendationError>
+    for Error
+{
+    fn from(
+        err: crate::operation::get_rightsizing_recommendation::GetRightsizingRecommendationError,
+    ) -> Self {
         match err {
             crate::operation::get_rightsizing_recommendation::GetRightsizingRecommendationError::InvalidNextTokenException(inner) => Error::InvalidNextTokenException(inner),
             crate::operation::get_rightsizing_recommendation::GetRightsizingRecommendationError::LimitExceededException(inner) => Error::LimitExceededException(inner),
@@ -483,21 +825,41 @@ impl From<crate::operation::get_rightsizing_recommendation::GetRightsizingRecomm
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::operation::get_savings_plans_coverage::GetSavingsPlansCoverageError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::operation::get_savings_plans_coverage::GetSavingsPlansCoverageError, R>) -> Self {
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::get_savings_plans_coverage::GetSavingsPlansCoverageError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::get_savings_plans_coverage::GetSavingsPlansCoverageError,
+            R,
+        >,
+    ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
             _ => Error::Unhandled(
-                                            aws_smithy_types::error::Unhandled::builder()
-                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
-                                                .source(err)
-                                                .build()
-                                        ),
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::operation::get_savings_plans_coverage::GetSavingsPlansCoverageError> for Error {
-    fn from(err: crate::operation::get_savings_plans_coverage::GetSavingsPlansCoverageError) -> Self {
+    fn from(
+        err: crate::operation::get_savings_plans_coverage::GetSavingsPlansCoverageError,
+    ) -> Self {
         match err {
             crate::operation::get_savings_plans_coverage::GetSavingsPlansCoverageError::DataUnavailableException(inner) => Error::DataUnavailableException(inner),
             crate::operation::get_savings_plans_coverage::GetSavingsPlansCoverageError::InvalidNextTokenException(inner) => Error::InvalidNextTokenException(inner),
@@ -528,21 +890,43 @@ impl From<crate::operation::get_savings_plans_purchase_recommendation::GetSaving
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::operation::get_savings_plans_utilization::GetSavingsPlansUtilizationError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::operation::get_savings_plans_utilization::GetSavingsPlansUtilizationError, R>) -> Self {
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::get_savings_plans_utilization::GetSavingsPlansUtilizationError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::get_savings_plans_utilization::GetSavingsPlansUtilizationError,
+            R,
+        >,
+    ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
             _ => Error::Unhandled(
-                                            aws_smithy_types::error::Unhandled::builder()
-                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
-                                                .source(err)
-                                                .build()
-                                        ),
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
-impl From<crate::operation::get_savings_plans_utilization::GetSavingsPlansUtilizationError> for Error {
-    fn from(err: crate::operation::get_savings_plans_utilization::GetSavingsPlansUtilizationError) -> Self {
+impl From<crate::operation::get_savings_plans_utilization::GetSavingsPlansUtilizationError>
+    for Error
+{
+    fn from(
+        err: crate::operation::get_savings_plans_utilization::GetSavingsPlansUtilizationError,
+    ) -> Self {
         match err {
             crate::operation::get_savings_plans_utilization::GetSavingsPlansUtilizationError::DataUnavailableException(inner) => Error::DataUnavailableException(inner),
             crate::operation::get_savings_plans_utilization::GetSavingsPlansUtilizationError::LimitExceededException(inner) => Error::LimitExceededException(inner),
@@ -573,41 +957,79 @@ impl From<crate::operation::get_savings_plans_utilization_details::GetSavingsPla
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::operation::get_tags::GetTagsError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::operation::get_tags::GetTagsError, R>) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::get_tags::GetTagsError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<crate::operation::get_tags::GetTagsError, R>,
+    ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
             _ => Error::Unhandled(
-                                            aws_smithy_types::error::Unhandled::builder()
-                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
-                                                .source(err)
-                                                .build()
-                                        ),
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::operation::get_tags::GetTagsError> for Error {
     fn from(err: crate::operation::get_tags::GetTagsError) -> Self {
         match err {
-            crate::operation::get_tags::GetTagsError::BillExpirationException(inner) => Error::BillExpirationException(inner),
-            crate::operation::get_tags::GetTagsError::DataUnavailableException(inner) => Error::DataUnavailableException(inner),
-            crate::operation::get_tags::GetTagsError::InvalidNextTokenException(inner) => Error::InvalidNextTokenException(inner),
-            crate::operation::get_tags::GetTagsError::LimitExceededException(inner) => Error::LimitExceededException(inner),
-            crate::operation::get_tags::GetTagsError::RequestChangedException(inner) => Error::RequestChangedException(inner),
+            crate::operation::get_tags::GetTagsError::BillExpirationException(inner) => {
+                Error::BillExpirationException(inner)
+            }
+            crate::operation::get_tags::GetTagsError::DataUnavailableException(inner) => {
+                Error::DataUnavailableException(inner)
+            }
+            crate::operation::get_tags::GetTagsError::InvalidNextTokenException(inner) => {
+                Error::InvalidNextTokenException(inner)
+            }
+            crate::operation::get_tags::GetTagsError::LimitExceededException(inner) => {
+                Error::LimitExceededException(inner)
+            }
+            crate::operation::get_tags::GetTagsError::RequestChangedException(inner) => {
+                Error::RequestChangedException(inner)
+            }
             crate::operation::get_tags::GetTagsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::operation::get_usage_forecast::GetUsageForecastError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::operation::get_usage_forecast::GetUsageForecastError, R>) -> Self {
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::get_usage_forecast::GetUsageForecastError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::get_usage_forecast::GetUsageForecastError,
+            R,
+        >,
+    ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
             _ => Error::Unhandled(
-                                            aws_smithy_types::error::Unhandled::builder()
-                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
-                                                .source(err)
-                                                .build()
-                                        ),
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
@@ -621,16 +1043,34 @@ impl From<crate::operation::get_usage_forecast::GetUsageForecastError> for Error
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::operation::list_cost_allocation_tags::ListCostAllocationTagsError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::operation::list_cost_allocation_tags::ListCostAllocationTagsError, R>) -> Self {
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::list_cost_allocation_tags::ListCostAllocationTagsError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::list_cost_allocation_tags::ListCostAllocationTagsError,
+            R,
+        >,
+    ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
             _ => Error::Unhandled(
-                                            aws_smithy_types::error::Unhandled::builder()
-                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
-                                                .source(err)
-                                                .build()
-                                        ),
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
@@ -643,21 +1083,43 @@ impl From<crate::operation::list_cost_allocation_tags::ListCostAllocationTagsErr
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::operation::list_cost_category_definitions::ListCostCategoryDefinitionsError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::operation::list_cost_category_definitions::ListCostCategoryDefinitionsError, R>) -> Self {
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::list_cost_category_definitions::ListCostCategoryDefinitionsError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::list_cost_category_definitions::ListCostCategoryDefinitionsError,
+            R,
+        >,
+    ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
             _ => Error::Unhandled(
-                                            aws_smithy_types::error::Unhandled::builder()
-                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
-                                                .source(err)
-                                                .build()
-                                        ),
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
-impl From<crate::operation::list_cost_category_definitions::ListCostCategoryDefinitionsError> for Error {
-    fn from(err: crate::operation::list_cost_category_definitions::ListCostCategoryDefinitionsError) -> Self {
+impl From<crate::operation::list_cost_category_definitions::ListCostCategoryDefinitionsError>
+    for Error
+{
+    fn from(
+        err: crate::operation::list_cost_category_definitions::ListCostCategoryDefinitionsError,
+    ) -> Self {
         match err {
             crate::operation::list_cost_category_definitions::ListCostCategoryDefinitionsError::LimitExceededException(inner) => Error::LimitExceededException(inner),
             crate::operation::list_cost_category_definitions::ListCostCategoryDefinitionsError::Unhandled(inner) => Error::Unhandled(inner),
@@ -686,16 +1148,34 @@ impl From<crate::operation::list_savings_plans_purchase_recommendation_generatio
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::operation::list_tags_for_resource::ListTagsForResourceError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::operation::list_tags_for_resource::ListTagsForResourceError, R>) -> Self {
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::list_tags_for_resource::ListTagsForResourceError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::list_tags_for_resource::ListTagsForResourceError,
+            R,
+        >,
+    ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
             _ => Error::Unhandled(
-                                            aws_smithy_types::error::Unhandled::builder()
-                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
-                                                .source(err)
-                                                .build()
-                                        ),
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
@@ -708,16 +1188,34 @@ impl From<crate::operation::list_tags_for_resource::ListTagsForResourceError> fo
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::operation::provide_anomaly_feedback::ProvideAnomalyFeedbackError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::operation::provide_anomaly_feedback::ProvideAnomalyFeedbackError, R>) -> Self {
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::provide_anomaly_feedback::ProvideAnomalyFeedbackError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::provide_anomaly_feedback::ProvideAnomalyFeedbackError,
+            R,
+        >,
+    ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
             _ => Error::Unhandled(
-                                            aws_smithy_types::error::Unhandled::builder()
-                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
-                                                .source(err)
-                                                .build()
-                                        ),
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
@@ -752,61 +1250,117 @@ impl From<crate::operation::start_savings_plans_purchase_recommendation_generati
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::operation::tag_resource::TagResourceError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::operation::tag_resource::TagResourceError, R>) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::tag_resource::TagResourceError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<crate::operation::tag_resource::TagResourceError, R>,
+    ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
             _ => Error::Unhandled(
-                                            aws_smithy_types::error::Unhandled::builder()
-                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
-                                                .source(err)
-                                                .build()
-                                        ),
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::operation::tag_resource::TagResourceError> for Error {
     fn from(err: crate::operation::tag_resource::TagResourceError) -> Self {
         match err {
-            crate::operation::tag_resource::TagResourceError::LimitExceededException(inner) => Error::LimitExceededException(inner),
-            crate::operation::tag_resource::TagResourceError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
-            crate::operation::tag_resource::TagResourceError::TooManyTagsException(inner) => Error::TooManyTagsException(inner),
-            crate::operation::tag_resource::TagResourceError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::tag_resource::TagResourceError::LimitExceededException(inner) => {
+                Error::LimitExceededException(inner)
+            }
+            crate::operation::tag_resource::TagResourceError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::tag_resource::TagResourceError::TooManyTagsException(inner) => {
+                Error::TooManyTagsException(inner)
+            }
+            crate::operation::tag_resource::TagResourceError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::operation::untag_resource::UntagResourceError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::operation::untag_resource::UntagResourceError, R>) -> Self {
+impl<R>
+    From<aws_smithy_http::result::SdkError<crate::operation::untag_resource::UntagResourceError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::untag_resource::UntagResourceError,
+            R,
+        >,
+    ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
             _ => Error::Unhandled(
-                                            aws_smithy_types::error::Unhandled::builder()
-                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
-                                                .source(err)
-                                                .build()
-                                        ),
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::operation::untag_resource::UntagResourceError> for Error {
     fn from(err: crate::operation::untag_resource::UntagResourceError) -> Self {
         match err {
-            crate::operation::untag_resource::UntagResourceError::LimitExceededException(inner) => Error::LimitExceededException(inner),
-            crate::operation::untag_resource::UntagResourceError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
-            crate::operation::untag_resource::UntagResourceError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::untag_resource::UntagResourceError::LimitExceededException(inner) => {
+                Error::LimitExceededException(inner)
+            }
+            crate::operation::untag_resource::UntagResourceError::ResourceNotFoundException(
+                inner,
+            ) => Error::ResourceNotFoundException(inner),
+            crate::operation::untag_resource::UntagResourceError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::operation::update_anomaly_monitor::UpdateAnomalyMonitorError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::operation::update_anomaly_monitor::UpdateAnomalyMonitorError, R>) -> Self {
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::update_anomaly_monitor::UpdateAnomalyMonitorError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::update_anomaly_monitor::UpdateAnomalyMonitorError,
+            R,
+        >,
+    ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
             _ => Error::Unhandled(
-                                            aws_smithy_types::error::Unhandled::builder()
-                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
-                                                .source(err)
-                                                .build()
-                                        ),
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
@@ -819,21 +1373,41 @@ impl From<crate::operation::update_anomaly_monitor::UpdateAnomalyMonitorError> f
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::operation::update_anomaly_subscription::UpdateAnomalySubscriptionError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::operation::update_anomaly_subscription::UpdateAnomalySubscriptionError, R>) -> Self {
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::update_anomaly_subscription::UpdateAnomalySubscriptionError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::update_anomaly_subscription::UpdateAnomalySubscriptionError,
+            R,
+        >,
+    ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
             _ => Error::Unhandled(
-                                            aws_smithy_types::error::Unhandled::builder()
-                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
-                                                .source(err)
-                                                .build()
-                                        ),
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::operation::update_anomaly_subscription::UpdateAnomalySubscriptionError> for Error {
-    fn from(err: crate::operation::update_anomaly_subscription::UpdateAnomalySubscriptionError) -> Self {
+    fn from(
+        err: crate::operation::update_anomaly_subscription::UpdateAnomalySubscriptionError,
+    ) -> Self {
         match err {
             crate::operation::update_anomaly_subscription::UpdateAnomalySubscriptionError::LimitExceededException(inner) => Error::LimitExceededException(inner),
             crate::operation::update_anomaly_subscription::UpdateAnomalySubscriptionError::UnknownMonitorException(inner) => Error::UnknownMonitorException(inner),
@@ -855,29 +1429,55 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::operation::update_cost_all
         }
     }
 }
-impl From<crate::operation::update_cost_allocation_tags_status::UpdateCostAllocationTagsStatusError> for Error {
-    fn from(err: crate::operation::update_cost_allocation_tags_status::UpdateCostAllocationTagsStatusError) -> Self {
+impl From<crate::operation::update_cost_allocation_tags_status::UpdateCostAllocationTagsStatusError>
+    for Error
+{
+    fn from(
+        err: crate::operation::update_cost_allocation_tags_status::UpdateCostAllocationTagsStatusError,
+    ) -> Self {
         match err {
             crate::operation::update_cost_allocation_tags_status::UpdateCostAllocationTagsStatusError::LimitExceededException(inner) => Error::LimitExceededException(inner),
             crate::operation::update_cost_allocation_tags_status::UpdateCostAllocationTagsStatusError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::operation::update_cost_category_definition::UpdateCostCategoryDefinitionError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::operation::update_cost_category_definition::UpdateCostCategoryDefinitionError, R>) -> Self {
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::update_cost_category_definition::UpdateCostCategoryDefinitionError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::update_cost_category_definition::UpdateCostCategoryDefinitionError,
+            R,
+        >,
+    ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
             _ => Error::Unhandled(
-                                            aws_smithy_types::error::Unhandled::builder()
-                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
-                                                .source(err)
-                                                .build()
-                                        ),
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
-impl From<crate::operation::update_cost_category_definition::UpdateCostCategoryDefinitionError> for Error {
-    fn from(err: crate::operation::update_cost_category_definition::UpdateCostCategoryDefinitionError) -> Self {
+impl From<crate::operation::update_cost_category_definition::UpdateCostCategoryDefinitionError>
+    for Error
+{
+    fn from(
+        err: crate::operation::update_cost_category_definition::UpdateCostCategoryDefinitionError,
+    ) -> Self {
         match err {
             crate::operation::update_cost_category_definition::UpdateCostCategoryDefinitionError::LimitExceededException(inner) => Error::LimitExceededException(inner),
             crate::operation::update_cost_category_definition::UpdateCostCategoryDefinitionError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
@@ -906,4 +1506,3 @@ impl aws_http::request_id::RequestId for Error {
         }
     }
 }
-

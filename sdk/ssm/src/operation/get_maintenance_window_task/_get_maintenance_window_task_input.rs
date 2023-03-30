@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetMaintenanceWindowTaskInput  {
+pub struct GetMaintenanceWindowTaskInput {
     /// <p>The maintenance window ID that includes the task to retrieve.</p>
     #[doc(hidden)]
     pub window_id: std::option::Option<std::string::String>,
@@ -12,17 +12,19 @@ pub struct GetMaintenanceWindowTaskInput  {
 }
 impl GetMaintenanceWindowTaskInput {
     /// <p>The maintenance window ID that includes the task to retrieve.</p>
-    pub fn window_id(&self) -> std::option::Option<& str> {
+    pub fn window_id(&self) -> std::option::Option<&str> {
         self.window_id.as_deref()
     }
     /// <p>The maintenance window task ID to retrieve.</p>
-    pub fn window_task_id(&self) -> std::option::Option<& str> {
+    pub fn window_task_id(&self) -> std::option::Option<&str> {
         self.window_task_id.as_deref()
     }
 }
 impl GetMaintenanceWindowTaskInput {
     /// Creates a new builder-style object to manufacture [`GetMaintenanceWindowTaskInput`](crate::operation::get_maintenance_window_task::GetMaintenanceWindowTaskInput).
-    pub fn builder() -> crate::operation::get_maintenance_window_task::builders::GetMaintenanceWindowTaskInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::get_maintenance_window_task::builders::GetMaintenanceWindowTaskInputBuilder
+    {
         crate::operation::get_maintenance_window_task::builders::GetMaintenanceWindowTaskInputBuilder::default()
     }
 }
@@ -42,7 +44,8 @@ impl GetMaintenanceWindowTaskInputBuilder {
     }
     /// <p>The maintenance window ID that includes the task to retrieve.</p>
     pub fn set_window_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.window_id = input; self
+        self.window_id = input;
+        self
     }
     /// <p>The maintenance window task ID to retrieve.</p>
     pub fn window_task_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -51,18 +54,21 @@ impl GetMaintenanceWindowTaskInputBuilder {
     }
     /// <p>The maintenance window task ID to retrieve.</p>
     pub fn set_window_task_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.window_task_id = input; self
+        self.window_task_id = input;
+        self
     }
     /// Consumes the builder and constructs a [`GetMaintenanceWindowTaskInput`](crate::operation::get_maintenance_window_task::GetMaintenanceWindowTaskInput).
-    pub fn build(self) -> Result<crate::operation::get_maintenance_window_task::GetMaintenanceWindowTaskInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::get_maintenance_window_task::GetMaintenanceWindowTaskInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::get_maintenance_window_task::GetMaintenanceWindowTaskInput {
-                window_id: self.window_id
-                ,
-                window_task_id: self.window_task_id
-                ,
-            }
+                window_id: self.window_id,
+                window_task_id: self.window_task_id,
+            },
         )
     }
 }
-

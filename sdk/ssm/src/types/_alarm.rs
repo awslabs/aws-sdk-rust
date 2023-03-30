@@ -3,14 +3,14 @@
 /// <p>A CloudWatch alarm you apply to an automation or command.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Alarm  {
+pub struct Alarm {
     /// <p>The name of your CloudWatch alarm.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
 }
 impl Alarm {
     /// <p>The name of your CloudWatch alarm.</p>
-    pub fn name(&self) -> std::option::Option<& str> {
+    pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
 }
@@ -35,14 +35,11 @@ impl AlarmBuilder {
     }
     /// <p>The name of your CloudWatch alarm.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input; self
+        self.name = input;
+        self
     }
     /// Consumes the builder and constructs a [`Alarm`](crate::types::Alarm).
     pub fn build(self) -> crate::types::Alarm {
-        crate::types::Alarm {
-            name: self.name
-            ,
-        }
+        crate::types::Alarm { name: self.name }
     }
 }
-

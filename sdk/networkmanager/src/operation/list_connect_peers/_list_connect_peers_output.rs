@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListConnectPeersOutput  {
+pub struct ListConnectPeersOutput {
     /// <p>Describes the Connect peers.</p>
     #[doc(hidden)]
     pub connect_peers: std::option::Option<std::vec::Vec<crate::types::ConnectPeerSummary>>,
@@ -13,22 +13,23 @@ pub struct ListConnectPeersOutput  {
 }
 impl ListConnectPeersOutput {
     /// <p>Describes the Connect peers.</p>
-    pub fn connect_peers(&self) -> std::option::Option<& [crate::types::ConnectPeerSummary]> {
+    pub fn connect_peers(&self) -> std::option::Option<&[crate::types::ConnectPeerSummary]> {
         self.connect_peers.as_deref()
     }
     /// <p>The token for the next page of results.</p>
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for ListConnectPeersOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl ListConnectPeersOutput {
     /// Creates a new builder-style object to manufacture [`ListConnectPeersOutput`](crate::operation::list_connect_peers::ListConnectPeersOutput).
-    pub fn builder() -> crate::operation::list_connect_peers::builders::ListConnectPeersOutputBuilder {
+    pub fn builder() -> crate::operation::list_connect_peers::builders::ListConnectPeersOutputBuilder
+    {
         crate::operation::list_connect_peers::builders::ListConnectPeersOutputBuilder::default()
     }
 }
@@ -49,13 +50,17 @@ impl ListConnectPeersOutputBuilder {
     /// <p>Describes the Connect peers.</p>
     pub fn connect_peers(mut self, input: crate::types::ConnectPeerSummary) -> Self {
         let mut v = self.connect_peers.unwrap_or_default();
-                        v.push(input);
-                        self.connect_peers = Some(v);
-                        self
+        v.push(input);
+        self.connect_peers = Some(v);
+        self
     }
     /// <p>Describes the Connect peers.</p>
-    pub fn set_connect_peers(mut self, input: std::option::Option<std::vec::Vec<crate::types::ConnectPeerSummary>>) -> Self {
-        self.connect_peers = input; self
+    pub fn set_connect_peers(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::ConnectPeerSummary>>,
+    ) -> Self {
+        self.connect_peers = input;
+        self
     }
     /// <p>The token for the next page of results.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -64,26 +69,24 @@ impl ListConnectPeersOutputBuilder {
     }
     /// <p>The token for the next page of results.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input; self
+        self.next_token = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`ListConnectPeersOutput`](crate::operation::list_connect_peers::ListConnectPeersOutput).
     pub fn build(self) -> crate::operation::list_connect_peers::ListConnectPeersOutput {
         crate::operation::list_connect_peers::ListConnectPeersOutput {
-            connect_peers: self.connect_peers
-            ,
-            next_token: self.next_token
-            ,
+            connect_peers: self.connect_peers,
+            next_token: self.next_token,
             _request_id: self._request_id,
         }
     }
 }
-

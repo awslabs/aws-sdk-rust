@@ -4,51 +4,73 @@ pub use crate::operation::list_tags_for_stream::_list_tags_for_stream_output::Li
 pub use crate::operation::list_tags_for_stream::_list_tags_for_stream_input::ListTagsForStreamInputBuilder;
 
 /// Fluent builder constructing a request to `ListTagsForStream`.
-/// 
-/// <p>Lists the tags for the specified Kinesis data stream. This operation has a limit of five transactions per second per account.</p> <note> 
-/// <p>When invoking this API, it is recommended you use the <code>StreamARN</code> input parameter rather than the <code>StreamName</code> input parameter.</p> 
+///
+/// <p>Lists the tags for the specified Kinesis data stream. This operation has a limit of five transactions per second per account.</p> <note>
+/// <p>When invoking this API, it is recommended you use the <code>StreamARN</code> input parameter rather than the <code>StreamName</code> input parameter.</p>
 /// </note>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListTagsForStreamFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::list_tags_for_stream::builders::ListTagsForStreamInputBuilder
-            }
-impl ListTagsForStreamFluentBuilder  {
+    handle: std::sync::Arc<crate::client::Handle>,
+    inner: crate::operation::list_tags_for_stream::builders::ListTagsForStreamInputBuilder,
+}
+impl ListTagsForStreamFluentBuilder {
     /// Creates a new `ListTagsForStream`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
-                    /// sent. The operation's inner [http::Request] can be modified as well.
-                    pub async fn customize(self) -> std::result::Result<
-                        crate::client::customize::CustomizableOperation<crate::operation::list_tags_for_stream::ListTagsForStream, aws_http::retry::AwsResponseRetryClassifier,>,
-                        aws_smithy_http::result::SdkError<crate::operation::list_tags_for_stream::ListTagsForStreamError>
-                    >  {
-                        let handle = self.handle.clone();
-                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-                    }
-    
-                    /// Sends the request and returns the response.
-                    ///
-                    /// If an error occurs, an `SdkError` will be returned with additional details that
-                    /// can be matched against.
-                    ///
-                    /// By default, any retryable failures will be retried twice. Retry behavior
-                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                    /// set when configuring the client.
-                    pub async fn send(self) -> std::result::Result<crate::operation::list_tags_for_stream::ListTagsForStreamOutput, aws_smithy_http::result::SdkError<crate::operation::list_tags_for_stream::ListTagsForStreamError>>
-                     {
-                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&self.handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        self.handle.client.call(op).await
-                    }
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle,
+            inner: Default::default(),
+        }
+    }
+
+    /// Consume this builder, creating a customizable operation that can be modified before being
+    /// sent. The operation's inner [http::Request] can be modified as well.
+    pub async fn customize(
+        self,
+    ) -> std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::list_tags_for_stream::ListTagsForStream,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::result::SdkError<
+            crate::operation::list_tags_for_stream::ListTagsForStreamError,
+        >,
+    > {
+        let handle = self.handle.clone();
+        let operation = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+    }
+
+    /// Sends the request and returns the response.
+    ///
+    /// If an error occurs, an `SdkError` will be returned with additional details that
+    /// can be matched against.
+    ///
+    /// By default, any retryable failures will be retried twice. Retry behavior
+    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+    /// set when configuring the client.
+    pub async fn send(
+        self,
+    ) -> std::result::Result<
+        crate::operation::list_tags_for_stream::ListTagsForStreamOutput,
+        aws_smithy_http::result::SdkError<
+            crate::operation::list_tags_for_stream::ListTagsForStreamError,
+        >,
+    > {
+        let op = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&self.handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        self.handle.client.call(op).await
+    }
     /// <p>The name of the stream.</p>
     pub fn stream_name(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.stream_name(input.into());
@@ -65,7 +87,10 @@ impl ListTagsForStreamFluentBuilder  {
         self
     }
     /// <p>The key to use as the starting point for the list of tags. If this parameter is set, <code>ListTagsForStream</code> gets all tags that occur after <code>ExclusiveStartTagKey</code>. </p>
-    pub fn set_exclusive_start_tag_key(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_exclusive_start_tag_key(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_exclusive_start_tag_key(input);
         self
     }
@@ -90,4 +115,3 @@ impl ListTagsForStreamFluentBuilder  {
         self
     }
 }
-

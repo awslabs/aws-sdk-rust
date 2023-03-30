@@ -2,12 +2,12 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListCommandsInput  {
+pub struct ListCommandsInput {
     /// <p>(Optional) If provided, lists only the specified command.</p>
     #[doc(hidden)]
     pub command_id: std::option::Option<std::string::String>,
-    /// <p>(Optional) Lists commands issued against this managed node ID.</p> <note> 
-    /// <p>You can't specify a managed node ID in the same command that you specify <code>Status</code> = <code>Pending</code>. This is because the command hasn't reached the managed node yet.</p> 
+    /// <p>(Optional) Lists commands issued against this managed node ID.</p> <note>
+    /// <p>You can't specify a managed node ID in the same command that you specify <code>Status</code> = <code>Pending</code>. This is because the command hasn't reached the managed node yet.</p>
     /// </note>
     #[doc(hidden)]
     pub instance_id: std::option::Option<std::string::String>,
@@ -23,13 +23,13 @@ pub struct ListCommandsInput  {
 }
 impl ListCommandsInput {
     /// <p>(Optional) If provided, lists only the specified command.</p>
-    pub fn command_id(&self) -> std::option::Option<& str> {
+    pub fn command_id(&self) -> std::option::Option<&str> {
         self.command_id.as_deref()
     }
-    /// <p>(Optional) Lists commands issued against this managed node ID.</p> <note> 
-    /// <p>You can't specify a managed node ID in the same command that you specify <code>Status</code> = <code>Pending</code>. This is because the command hasn't reached the managed node yet.</p> 
+    /// <p>(Optional) Lists commands issued against this managed node ID.</p> <note>
+    /// <p>You can't specify a managed node ID in the same command that you specify <code>Status</code> = <code>Pending</code>. This is because the command hasn't reached the managed node yet.</p>
     /// </note>
-    pub fn instance_id(&self) -> std::option::Option<& str> {
+    pub fn instance_id(&self) -> std::option::Option<&str> {
         self.instance_id.as_deref()
     }
     /// <p>(Optional) The maximum number of items to return for this call. The call also returns a token that you can specify in a subsequent call to get the next set of results.</p>
@@ -37,11 +37,11 @@ impl ListCommandsInput {
         self.max_results
     }
     /// <p>(Optional) The token for the next set of items to return. (You received this token from a previous call.)</p>
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
     /// <p>(Optional) One or more filters. Use a filter to return a more specific list of results. </p>
-    pub fn filters(&self) -> std::option::Option<& [crate::types::CommandFilter]> {
+    pub fn filters(&self) -> std::option::Option<&[crate::types::CommandFilter]> {
         self.filters.as_deref()
     }
 }
@@ -70,20 +70,22 @@ impl ListCommandsInputBuilder {
     }
     /// <p>(Optional) If provided, lists only the specified command.</p>
     pub fn set_command_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.command_id = input; self
+        self.command_id = input;
+        self
     }
-    /// <p>(Optional) Lists commands issued against this managed node ID.</p> <note> 
-    /// <p>You can't specify a managed node ID in the same command that you specify <code>Status</code> = <code>Pending</code>. This is because the command hasn't reached the managed node yet.</p> 
+    /// <p>(Optional) Lists commands issued against this managed node ID.</p> <note>
+    /// <p>You can't specify a managed node ID in the same command that you specify <code>Status</code> = <code>Pending</code>. This is because the command hasn't reached the managed node yet.</p>
     /// </note>
     pub fn instance_id(mut self, input: impl Into<std::string::String>) -> Self {
         self.instance_id = Some(input.into());
         self
     }
-    /// <p>(Optional) Lists commands issued against this managed node ID.</p> <note> 
-    /// <p>You can't specify a managed node ID in the same command that you specify <code>Status</code> = <code>Pending</code>. This is because the command hasn't reached the managed node yet.</p> 
+    /// <p>(Optional) Lists commands issued against this managed node ID.</p> <note>
+    /// <p>You can't specify a managed node ID in the same command that you specify <code>Status</code> = <code>Pending</code>. This is because the command hasn't reached the managed node yet.</p>
     /// </note>
     pub fn set_instance_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.instance_id = input; self
+        self.instance_id = input;
+        self
     }
     /// <p>(Optional) The maximum number of items to return for this call. The call also returns a token that you can specify in a subsequent call to get the next set of results.</p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -92,7 +94,8 @@ impl ListCommandsInputBuilder {
     }
     /// <p>(Optional) The maximum number of items to return for this call. The call also returns a token that you can specify in a subsequent call to get the next set of results.</p>
     pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_results = input; self
+        self.max_results = input;
+        self
     }
     /// <p>(Optional) The token for the next set of items to return. (You received this token from a previous call.)</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -101,7 +104,8 @@ impl ListCommandsInputBuilder {
     }
     /// <p>(Optional) The token for the next set of items to return. (You received this token from a previous call.)</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input; self
+        self.next_token = input;
+        self
     }
     /// Appends an item to `filters`.
     ///
@@ -110,30 +114,31 @@ impl ListCommandsInputBuilder {
     /// <p>(Optional) One or more filters. Use a filter to return a more specific list of results. </p>
     pub fn filters(mut self, input: crate::types::CommandFilter) -> Self {
         let mut v = self.filters.unwrap_or_default();
-                        v.push(input);
-                        self.filters = Some(v);
-                        self
+        v.push(input);
+        self.filters = Some(v);
+        self
     }
     /// <p>(Optional) One or more filters. Use a filter to return a more specific list of results. </p>
-    pub fn set_filters(mut self, input: std::option::Option<std::vec::Vec<crate::types::CommandFilter>>) -> Self {
-        self.filters = input; self
+    pub fn set_filters(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::CommandFilter>>,
+    ) -> Self {
+        self.filters = input;
+        self
     }
     /// Consumes the builder and constructs a [`ListCommandsInput`](crate::operation::list_commands::ListCommandsInput).
-    pub fn build(self) -> Result<crate::operation::list_commands::ListCommandsInput, aws_smithy_http::operation::error::BuildError> {
-        Ok(
-            crate::operation::list_commands::ListCommandsInput {
-                command_id: self.command_id
-                ,
-                instance_id: self.instance_id
-                ,
-                max_results: self.max_results
-                ,
-                next_token: self.next_token
-                ,
-                filters: self.filters
-                ,
-            }
-        )
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::list_commands::ListCommandsInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        Ok(crate::operation::list_commands::ListCommandsInput {
+            command_id: self.command_id,
+            instance_id: self.instance_id,
+            max_results: self.max_results,
+            next_token: self.next_token,
+            filters: self.filters,
+        })
     }
 }
-

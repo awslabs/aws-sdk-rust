@@ -2,12 +2,12 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetClipInput  {
-    /// <p>The name of the stream for which to retrieve the media clip. </p> 
+pub struct GetClipInput {
+    /// <p>The name of the stream for which to retrieve the media clip. </p>
     /// <p>You must specify either the StreamName or the StreamARN. </p>
     #[doc(hidden)]
     pub stream_name: std::option::Option<std::string::String>,
-    /// <p>The Amazon Resource Name (ARN) of the stream for which to retrieve the media clip. </p> 
+    /// <p>The Amazon Resource Name (ARN) of the stream for which to retrieve the media clip. </p>
     /// <p>You must specify either the StreamName or the StreamARN. </p>
     #[doc(hidden)]
     pub stream_arn: std::option::Option<std::string::String>,
@@ -16,18 +16,20 @@ pub struct GetClipInput  {
     pub clip_fragment_selector: std::option::Option<crate::types::ClipFragmentSelector>,
 }
 impl GetClipInput {
-    /// <p>The name of the stream for which to retrieve the media clip. </p> 
+    /// <p>The name of the stream for which to retrieve the media clip. </p>
     /// <p>You must specify either the StreamName or the StreamARN. </p>
-    pub fn stream_name(&self) -> std::option::Option<& str> {
+    pub fn stream_name(&self) -> std::option::Option<&str> {
         self.stream_name.as_deref()
     }
-    /// <p>The Amazon Resource Name (ARN) of the stream for which to retrieve the media clip. </p> 
+    /// <p>The Amazon Resource Name (ARN) of the stream for which to retrieve the media clip. </p>
     /// <p>You must specify either the StreamName or the StreamARN. </p>
-    pub fn stream_arn(&self) -> std::option::Option<& str> {
+    pub fn stream_arn(&self) -> std::option::Option<&str> {
         self.stream_arn.as_deref()
     }
     /// <p>The time range of the requested clip and the source of the timestamps.</p>
-    pub fn clip_fragment_selector(&self) -> std::option::Option<& crate::types::ClipFragmentSelector> {
+    pub fn clip_fragment_selector(
+        &self,
+    ) -> std::option::Option<&crate::types::ClipFragmentSelector> {
         self.clip_fragment_selector.as_ref()
     }
 }
@@ -47,27 +49,29 @@ pub struct GetClipInputBuilder {
     pub(crate) clip_fragment_selector: std::option::Option<crate::types::ClipFragmentSelector>,
 }
 impl GetClipInputBuilder {
-    /// <p>The name of the stream for which to retrieve the media clip. </p> 
+    /// <p>The name of the stream for which to retrieve the media clip. </p>
     /// <p>You must specify either the StreamName or the StreamARN. </p>
     pub fn stream_name(mut self, input: impl Into<std::string::String>) -> Self {
         self.stream_name = Some(input.into());
         self
     }
-    /// <p>The name of the stream for which to retrieve the media clip. </p> 
+    /// <p>The name of the stream for which to retrieve the media clip. </p>
     /// <p>You must specify either the StreamName or the StreamARN. </p>
     pub fn set_stream_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.stream_name = input; self
+        self.stream_name = input;
+        self
     }
-    /// <p>The Amazon Resource Name (ARN) of the stream for which to retrieve the media clip. </p> 
+    /// <p>The Amazon Resource Name (ARN) of the stream for which to retrieve the media clip. </p>
     /// <p>You must specify either the StreamName or the StreamARN. </p>
     pub fn stream_arn(mut self, input: impl Into<std::string::String>) -> Self {
         self.stream_arn = Some(input.into());
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the stream for which to retrieve the media clip. </p> 
+    /// <p>The Amazon Resource Name (ARN) of the stream for which to retrieve the media clip. </p>
     /// <p>You must specify either the StreamName or the StreamARN. </p>
     pub fn set_stream_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.stream_arn = input; self
+        self.stream_arn = input;
+        self
     }
     /// <p>The time range of the requested clip and the source of the timestamps.</p>
     pub fn clip_fragment_selector(mut self, input: crate::types::ClipFragmentSelector) -> Self {
@@ -75,21 +79,24 @@ impl GetClipInputBuilder {
         self
     }
     /// <p>The time range of the requested clip and the source of the timestamps.</p>
-    pub fn set_clip_fragment_selector(mut self, input: std::option::Option<crate::types::ClipFragmentSelector>) -> Self {
-        self.clip_fragment_selector = input; self
+    pub fn set_clip_fragment_selector(
+        mut self,
+        input: std::option::Option<crate::types::ClipFragmentSelector>,
+    ) -> Self {
+        self.clip_fragment_selector = input;
+        self
     }
     /// Consumes the builder and constructs a [`GetClipInput`](crate::operation::get_clip::GetClipInput).
-    pub fn build(self) -> Result<crate::operation::get_clip::GetClipInput, aws_smithy_http::operation::error::BuildError> {
-        Ok(
-            crate::operation::get_clip::GetClipInput {
-                stream_name: self.stream_name
-                ,
-                stream_arn: self.stream_arn
-                ,
-                clip_fragment_selector: self.clip_fragment_selector
-                ,
-            }
-        )
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::get_clip::GetClipInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        Ok(crate::operation::get_clip::GetClipInput {
+            stream_name: self.stream_name,
+            stream_arn: self.stream_arn,
+            clip_fragment_selector: self.clip_fragment_selector,
+        })
     }
 }
-

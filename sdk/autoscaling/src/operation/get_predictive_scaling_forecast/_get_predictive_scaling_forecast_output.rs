@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetPredictiveScalingForecastOutput  {
+pub struct GetPredictiveScalingForecastOutput {
     /// <p>The load forecast.</p>
     #[doc(hidden)]
     pub load_forecast: std::option::Option<std::vec::Vec<crate::types::LoadForecast>>,
@@ -16,26 +16,26 @@ pub struct GetPredictiveScalingForecastOutput  {
 }
 impl GetPredictiveScalingForecastOutput {
     /// <p>The load forecast.</p>
-    pub fn load_forecast(&self) -> std::option::Option<& [crate::types::LoadForecast]> {
+    pub fn load_forecast(&self) -> std::option::Option<&[crate::types::LoadForecast]> {
         self.load_forecast.as_deref()
     }
     /// <p>The capacity forecast.</p>
-    pub fn capacity_forecast(&self) -> std::option::Option<& crate::types::CapacityForecast> {
+    pub fn capacity_forecast(&self) -> std::option::Option<&crate::types::CapacityForecast> {
         self.capacity_forecast.as_ref()
     }
     /// <p>The time the forecast was made.</p>
-    pub fn update_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
+    pub fn update_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.update_time.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for GetPredictiveScalingForecastOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl GetPredictiveScalingForecastOutput {
     /// Creates a new builder-style object to manufacture [`GetPredictiveScalingForecastOutput`](crate::operation::get_predictive_scaling_forecast::GetPredictiveScalingForecastOutput).
-    pub fn builder() -> crate::operation::get_predictive_scaling_forecast::builders::GetPredictiveScalingForecastOutputBuilder {
+    pub fn builder() -> crate::operation::get_predictive_scaling_forecast::builders::GetPredictiveScalingForecastOutputBuilder{
         crate::operation::get_predictive_scaling_forecast::builders::GetPredictiveScalingForecastOutputBuilder::default()
     }
 }
@@ -57,13 +57,17 @@ impl GetPredictiveScalingForecastOutputBuilder {
     /// <p>The load forecast.</p>
     pub fn load_forecast(mut self, input: crate::types::LoadForecast) -> Self {
         let mut v = self.load_forecast.unwrap_or_default();
-                        v.push(input);
-                        self.load_forecast = Some(v);
-                        self
+        v.push(input);
+        self.load_forecast = Some(v);
+        self
     }
     /// <p>The load forecast.</p>
-    pub fn set_load_forecast(mut self, input: std::option::Option<std::vec::Vec<crate::types::LoadForecast>>) -> Self {
-        self.load_forecast = input; self
+    pub fn set_load_forecast(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::LoadForecast>>,
+    ) -> Self {
+        self.load_forecast = input;
+        self
     }
     /// <p>The capacity forecast.</p>
     pub fn capacity_forecast(mut self, input: crate::types::CapacityForecast) -> Self {
@@ -71,8 +75,12 @@ impl GetPredictiveScalingForecastOutputBuilder {
         self
     }
     /// <p>The capacity forecast.</p>
-    pub fn set_capacity_forecast(mut self, input: std::option::Option<crate::types::CapacityForecast>) -> Self {
-        self.capacity_forecast = input; self
+    pub fn set_capacity_forecast(
+        mut self,
+        input: std::option::Option<crate::types::CapacityForecast>,
+    ) -> Self {
+        self.capacity_forecast = input;
+        self
     }
     /// <p>The time the forecast was made.</p>
     pub fn update_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -80,29 +88,31 @@ impl GetPredictiveScalingForecastOutputBuilder {
         self
     }
     /// <p>The time the forecast was made.</p>
-    pub fn set_update_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.update_time = input; self
+    pub fn set_update_time(
+        mut self,
+        input: std::option::Option<aws_smithy_types::DateTime>,
+    ) -> Self {
+        self.update_time = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`GetPredictiveScalingForecastOutput`](crate::operation::get_predictive_scaling_forecast::GetPredictiveScalingForecastOutput).
-    pub fn build(self) -> crate::operation::get_predictive_scaling_forecast::GetPredictiveScalingForecastOutput {
+    pub fn build(
+        self,
+    ) -> crate::operation::get_predictive_scaling_forecast::GetPredictiveScalingForecastOutput {
         crate::operation::get_predictive_scaling_forecast::GetPredictiveScalingForecastOutput {
-            load_forecast: self.load_forecast
-            ,
-            capacity_forecast: self.capacity_forecast
-            ,
-            update_time: self.update_time
-            ,
+            load_forecast: self.load_forecast,
+            capacity_forecast: self.capacity_forecast,
+            update_time: self.update_time,
             _request_id: self._request_id,
         }
     }
 }
-

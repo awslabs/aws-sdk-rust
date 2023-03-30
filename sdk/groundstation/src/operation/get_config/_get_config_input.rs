@@ -3,7 +3,7 @@
 /// <p></p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetConfigInput  {
+pub struct GetConfigInput {
     /// <p>UUID of a <code>Config</code>.</p>
     #[doc(hidden)]
     pub config_id: std::option::Option<std::string::String>,
@@ -13,11 +13,11 @@ pub struct GetConfigInput  {
 }
 impl GetConfigInput {
     /// <p>UUID of a <code>Config</code>.</p>
-    pub fn config_id(&self) -> std::option::Option<& str> {
+    pub fn config_id(&self) -> std::option::Option<&str> {
         self.config_id.as_deref()
     }
     /// <p>Type of a <code>Config</code>.</p>
-    pub fn config_type(&self) -> std::option::Option<& crate::types::ConfigCapabilityType> {
+    pub fn config_type(&self) -> std::option::Option<&crate::types::ConfigCapabilityType> {
         self.config_type.as_ref()
     }
 }
@@ -43,7 +43,8 @@ impl GetConfigInputBuilder {
     }
     /// <p>UUID of a <code>Config</code>.</p>
     pub fn set_config_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.config_id = input; self
+        self.config_id = input;
+        self
     }
     /// <p>Type of a <code>Config</code>.</p>
     pub fn config_type(mut self, input: crate::types::ConfigCapabilityType) -> Self {
@@ -51,19 +52,23 @@ impl GetConfigInputBuilder {
         self
     }
     /// <p>Type of a <code>Config</code>.</p>
-    pub fn set_config_type(mut self, input: std::option::Option<crate::types::ConfigCapabilityType>) -> Self {
-        self.config_type = input; self
+    pub fn set_config_type(
+        mut self,
+        input: std::option::Option<crate::types::ConfigCapabilityType>,
+    ) -> Self {
+        self.config_type = input;
+        self
     }
     /// Consumes the builder and constructs a [`GetConfigInput`](crate::operation::get_config::GetConfigInput).
-    pub fn build(self) -> Result<crate::operation::get_config::GetConfigInput, aws_smithy_http::operation::error::BuildError> {
-        Ok(
-            crate::operation::get_config::GetConfigInput {
-                config_id: self.config_id
-                ,
-                config_type: self.config_type
-                ,
-            }
-        )
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::get_config::GetConfigInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        Ok(crate::operation::get_config::GetConfigInput {
+            config_id: self.config_id,
+            config_type: self.config_type,
+        })
     }
 }
-

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListStreamsOutput  {
+pub struct ListStreamsOutput {
     /// <p>List of streams.</p>
     #[doc(hidden)]
     pub streams: std::option::Option<std::vec::Vec<crate::types::StreamSummary>>,
@@ -13,19 +13,19 @@ pub struct ListStreamsOutput  {
 }
 impl ListStreamsOutput {
     /// <p>List of streams.</p>
-    pub fn streams(&self) -> std::option::Option<& [crate::types::StreamSummary]> {
+    pub fn streams(&self) -> std::option::Option<&[crate::types::StreamSummary]> {
         self.streams.as_deref()
     }
     /// <p>If there are more streams than <code>maxResults</code>, use <code>nextToken</code> in the request to get the next set.</p>
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for ListStreamsOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl ListStreamsOutput {
     /// Creates a new builder-style object to manufacture [`ListStreamsOutput`](crate::operation::list_streams::ListStreamsOutput).
     pub fn builder() -> crate::operation::list_streams::builders::ListStreamsOutputBuilder {
@@ -49,13 +49,17 @@ impl ListStreamsOutputBuilder {
     /// <p>List of streams.</p>
     pub fn streams(mut self, input: crate::types::StreamSummary) -> Self {
         let mut v = self.streams.unwrap_or_default();
-                        v.push(input);
-                        self.streams = Some(v);
-                        self
+        v.push(input);
+        self.streams = Some(v);
+        self
     }
     /// <p>List of streams.</p>
-    pub fn set_streams(mut self, input: std::option::Option<std::vec::Vec<crate::types::StreamSummary>>) -> Self {
-        self.streams = input; self
+    pub fn set_streams(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::StreamSummary>>,
+    ) -> Self {
+        self.streams = input;
+        self
     }
     /// <p>If there are more streams than <code>maxResults</code>, use <code>nextToken</code> in the request to get the next set.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -64,26 +68,24 @@ impl ListStreamsOutputBuilder {
     }
     /// <p>If there are more streams than <code>maxResults</code>, use <code>nextToken</code> in the request to get the next set.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input; self
+        self.next_token = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`ListStreamsOutput`](crate::operation::list_streams::ListStreamsOutput).
     pub fn build(self) -> crate::operation::list_streams::ListStreamsOutput {
         crate::operation::list_streams::ListStreamsOutput {
-            streams: self.streams
-            ,
-            next_token: self.next_token
-            ,
+            streams: self.streams,
+            next_token: self.next_token,
             _request_id: self._request_id,
         }
     }
 }
-

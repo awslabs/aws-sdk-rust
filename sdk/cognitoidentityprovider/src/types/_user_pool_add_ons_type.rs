@@ -3,14 +3,16 @@
 /// <p>The user pool add-ons type.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UserPoolAddOnsType  {
+pub struct UserPoolAddOnsType {
     /// <p>The advanced security mode.</p>
     #[doc(hidden)]
     pub advanced_security_mode: std::option::Option<crate::types::AdvancedSecurityModeType>,
 }
 impl UserPoolAddOnsType {
     /// <p>The advanced security mode.</p>
-    pub fn advanced_security_mode(&self) -> std::option::Option<& crate::types::AdvancedSecurityModeType> {
+    pub fn advanced_security_mode(
+        &self,
+    ) -> std::option::Option<&crate::types::AdvancedSecurityModeType> {
         self.advanced_security_mode.as_ref()
     }
 }
@@ -34,15 +36,17 @@ impl UserPoolAddOnsTypeBuilder {
         self
     }
     /// <p>The advanced security mode.</p>
-    pub fn set_advanced_security_mode(mut self, input: std::option::Option<crate::types::AdvancedSecurityModeType>) -> Self {
-        self.advanced_security_mode = input; self
+    pub fn set_advanced_security_mode(
+        mut self,
+        input: std::option::Option<crate::types::AdvancedSecurityModeType>,
+    ) -> Self {
+        self.advanced_security_mode = input;
+        self
     }
     /// Consumes the builder and constructs a [`UserPoolAddOnsType`](crate::types::UserPoolAddOnsType).
     pub fn build(self) -> crate::types::UserPoolAddOnsType {
         crate::types::UserPoolAddOnsType {
-            advanced_security_mode: self.advanced_security_mode
-            ,
+            advanced_security_mode: self.advanced_security_mode,
         }
     }
 }
-

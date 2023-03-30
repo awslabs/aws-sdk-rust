@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ValidateResourcePolicyInput  {
+pub struct ValidateResourcePolicyInput {
     /// <p>This field is reserved for internal use.</p>
     #[doc(hidden)]
     pub secret_id: std::option::Option<std::string::String>,
@@ -12,17 +12,19 @@ pub struct ValidateResourcePolicyInput  {
 }
 impl ValidateResourcePolicyInput {
     /// <p>This field is reserved for internal use.</p>
-    pub fn secret_id(&self) -> std::option::Option<& str> {
+    pub fn secret_id(&self) -> std::option::Option<&str> {
         self.secret_id.as_deref()
     }
     /// <p>A JSON-formatted string that contains an Amazon Web Services resource-based policy. The policy in the string identifies who can access or manage this secret and its versions. For example policies, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/auth-and-access_examples.html">Permissions policy examples</a>.</p>
-    pub fn resource_policy(&self) -> std::option::Option<& str> {
+    pub fn resource_policy(&self) -> std::option::Option<&str> {
         self.resource_policy.as_deref()
     }
 }
 impl ValidateResourcePolicyInput {
     /// Creates a new builder-style object to manufacture [`ValidateResourcePolicyInput`](crate::operation::validate_resource_policy::ValidateResourcePolicyInput).
-    pub fn builder() -> crate::operation::validate_resource_policy::builders::ValidateResourcePolicyInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::validate_resource_policy::builders::ValidateResourcePolicyInputBuilder
+    {
         crate::operation::validate_resource_policy::builders::ValidateResourcePolicyInputBuilder::default()
     }
 }
@@ -42,7 +44,8 @@ impl ValidateResourcePolicyInputBuilder {
     }
     /// <p>This field is reserved for internal use.</p>
     pub fn set_secret_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.secret_id = input; self
+        self.secret_id = input;
+        self
     }
     /// <p>A JSON-formatted string that contains an Amazon Web Services resource-based policy. The policy in the string identifies who can access or manage this secret and its versions. For example policies, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/auth-and-access_examples.html">Permissions policy examples</a>.</p>
     pub fn resource_policy(mut self, input: impl Into<std::string::String>) -> Self {
@@ -51,18 +54,21 @@ impl ValidateResourcePolicyInputBuilder {
     }
     /// <p>A JSON-formatted string that contains an Amazon Web Services resource-based policy. The policy in the string identifies who can access or manage this secret and its versions. For example policies, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/auth-and-access_examples.html">Permissions policy examples</a>.</p>
     pub fn set_resource_policy(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.resource_policy = input; self
+        self.resource_policy = input;
+        self
     }
     /// Consumes the builder and constructs a [`ValidateResourcePolicyInput`](crate::operation::validate_resource_policy::ValidateResourcePolicyInput).
-    pub fn build(self) -> Result<crate::operation::validate_resource_policy::ValidateResourcePolicyInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::validate_resource_policy::ValidateResourcePolicyInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::validate_resource_policy::ValidateResourcePolicyInput {
-                secret_id: self.secret_id
-                ,
-                resource_policy: self.resource_policy
-                ,
-            }
+                secret_id: self.secret_id,
+                resource_policy: self.resource_policy,
+            },
         )
     }
 }
-

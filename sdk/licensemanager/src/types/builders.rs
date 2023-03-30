@@ -72,4 +72,3 @@ pub use crate::types::_entitlement_usage::EntitlementUsageBuilder;
 pub use crate::types::_issuer::IssuerBuilder;
 
 pub use crate::types::_entitlement_data::EntitlementDataBuilder;
-

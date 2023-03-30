@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetFindingsInput  {
+pub struct GetFindingsInput {
     /// <p>An array of strings that lists the unique identifiers for the findings to retrieve. You can specify as many as 50 unique identifiers in this array.</p>
     #[doc(hidden)]
     pub finding_ids: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -12,11 +12,11 @@ pub struct GetFindingsInput  {
 }
 impl GetFindingsInput {
     /// <p>An array of strings that lists the unique identifiers for the findings to retrieve. You can specify as many as 50 unique identifiers in this array.</p>
-    pub fn finding_ids(&self) -> std::option::Option<& [std::string::String]> {
+    pub fn finding_ids(&self) -> std::option::Option<&[std::string::String]> {
         self.finding_ids.as_deref()
     }
     /// <p>The criteria for sorting the results of the request.</p>
-    pub fn sort_criteria(&self) -> std::option::Option<& crate::types::SortCriteria> {
+    pub fn sort_criteria(&self) -> std::option::Option<&crate::types::SortCriteria> {
         self.sort_criteria.as_ref()
     }
 }
@@ -42,13 +42,17 @@ impl GetFindingsInputBuilder {
     /// <p>An array of strings that lists the unique identifiers for the findings to retrieve. You can specify as many as 50 unique identifiers in this array.</p>
     pub fn finding_ids(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.finding_ids.unwrap_or_default();
-                        v.push(input.into());
-                        self.finding_ids = Some(v);
-                        self
+        v.push(input.into());
+        self.finding_ids = Some(v);
+        self
     }
     /// <p>An array of strings that lists the unique identifiers for the findings to retrieve. You can specify as many as 50 unique identifiers in this array.</p>
-    pub fn set_finding_ids(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-        self.finding_ids = input; self
+    pub fn set_finding_ids(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
+        self.finding_ids = input;
+        self
     }
     /// <p>The criteria for sorting the results of the request.</p>
     pub fn sort_criteria(mut self, input: crate::types::SortCriteria) -> Self {
@@ -56,19 +60,23 @@ impl GetFindingsInputBuilder {
         self
     }
     /// <p>The criteria for sorting the results of the request.</p>
-    pub fn set_sort_criteria(mut self, input: std::option::Option<crate::types::SortCriteria>) -> Self {
-        self.sort_criteria = input; self
+    pub fn set_sort_criteria(
+        mut self,
+        input: std::option::Option<crate::types::SortCriteria>,
+    ) -> Self {
+        self.sort_criteria = input;
+        self
     }
     /// Consumes the builder and constructs a [`GetFindingsInput`](crate::operation::get_findings::GetFindingsInput).
-    pub fn build(self) -> Result<crate::operation::get_findings::GetFindingsInput, aws_smithy_http::operation::error::BuildError> {
-        Ok(
-            crate::operation::get_findings::GetFindingsInput {
-                finding_ids: self.finding_ids
-                ,
-                sort_criteria: self.sort_criteria
-                ,
-            }
-        )
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::get_findings::GetFindingsInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        Ok(crate::operation::get_findings::GetFindingsInput {
+            finding_ids: self.finding_ids,
+            sort_criteria: self.sort_criteria,
+        })
     }
 }
-

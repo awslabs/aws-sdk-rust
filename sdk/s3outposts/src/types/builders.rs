@@ -2,4 +2,3 @@
 pub use crate::types::_endpoint::EndpointBuilder;
 
 pub use crate::types::_network_interface::NetworkInterfaceBuilder;
-

@@ -2,12 +2,12 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct BatchModifyClusterSnapshotsInput  {
+pub struct BatchModifyClusterSnapshotsInput {
     /// <p>A list of snapshot identifiers you want to modify.</p>
     #[doc(hidden)]
     pub snapshot_identifier_list: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>The number of days that a manual snapshot is retained. If you specify the value -1, the manual snapshot is retained indefinitely.</p> 
-    /// <p>The number must be either -1 or an integer between 1 and 3,653.</p> 
+    /// <p>The number of days that a manual snapshot is retained. If you specify the value -1, the manual snapshot is retained indefinitely.</p>
+    /// <p>The number must be either -1 or an integer between 1 and 3,653.</p>
     /// <p>If you decrease the manual snapshot retention period from its current value, existing manual snapshots that fall outside of the new retention period will return an error. If you want to suppress the errors and delete the snapshots, use the force option. </p>
     #[doc(hidden)]
     pub manual_snapshot_retention_period: std::option::Option<i32>,
@@ -17,11 +17,11 @@ pub struct BatchModifyClusterSnapshotsInput  {
 }
 impl BatchModifyClusterSnapshotsInput {
     /// <p>A list of snapshot identifiers you want to modify.</p>
-    pub fn snapshot_identifier_list(&self) -> std::option::Option<& [std::string::String]> {
+    pub fn snapshot_identifier_list(&self) -> std::option::Option<&[std::string::String]> {
         self.snapshot_identifier_list.as_deref()
     }
-    /// <p>The number of days that a manual snapshot is retained. If you specify the value -1, the manual snapshot is retained indefinitely.</p> 
-    /// <p>The number must be either -1 or an integer between 1 and 3,653.</p> 
+    /// <p>The number of days that a manual snapshot is retained. If you specify the value -1, the manual snapshot is retained indefinitely.</p>
+    /// <p>The number must be either -1 or an integer between 1 and 3,653.</p>
     /// <p>If you decrease the manual snapshot retention period from its current value, existing manual snapshots that fall outside of the new retention period will return an error. If you want to suppress the errors and delete the snapshots, use the force option. </p>
     pub fn manual_snapshot_retention_period(&self) -> std::option::Option<i32> {
         self.manual_snapshot_retention_period
@@ -33,7 +33,7 @@ impl BatchModifyClusterSnapshotsInput {
 }
 impl BatchModifyClusterSnapshotsInput {
     /// Creates a new builder-style object to manufacture [`BatchModifyClusterSnapshotsInput`](crate::operation::batch_modify_cluster_snapshots::BatchModifyClusterSnapshotsInput).
-    pub fn builder() -> crate::operation::batch_modify_cluster_snapshots::builders::BatchModifyClusterSnapshotsInputBuilder {
+    pub fn builder() -> crate::operation::batch_modify_cluster_snapshots::builders::BatchModifyClusterSnapshotsInputBuilder{
         crate::operation::batch_modify_cluster_snapshots::builders::BatchModifyClusterSnapshotsInputBuilder::default()
     }
 }
@@ -54,26 +54,31 @@ impl BatchModifyClusterSnapshotsInputBuilder {
     /// <p>A list of snapshot identifiers you want to modify.</p>
     pub fn snapshot_identifier_list(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.snapshot_identifier_list.unwrap_or_default();
-                        v.push(input.into());
-                        self.snapshot_identifier_list = Some(v);
-                        self
+        v.push(input.into());
+        self.snapshot_identifier_list = Some(v);
+        self
     }
     /// <p>A list of snapshot identifiers you want to modify.</p>
-    pub fn set_snapshot_identifier_list(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-        self.snapshot_identifier_list = input; self
+    pub fn set_snapshot_identifier_list(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
+        self.snapshot_identifier_list = input;
+        self
     }
-    /// <p>The number of days that a manual snapshot is retained. If you specify the value -1, the manual snapshot is retained indefinitely.</p> 
-    /// <p>The number must be either -1 or an integer between 1 and 3,653.</p> 
+    /// <p>The number of days that a manual snapshot is retained. If you specify the value -1, the manual snapshot is retained indefinitely.</p>
+    /// <p>The number must be either -1 or an integer between 1 and 3,653.</p>
     /// <p>If you decrease the manual snapshot retention period from its current value, existing manual snapshots that fall outside of the new retention period will return an error. If you want to suppress the errors and delete the snapshots, use the force option. </p>
     pub fn manual_snapshot_retention_period(mut self, input: i32) -> Self {
         self.manual_snapshot_retention_period = Some(input);
         self
     }
-    /// <p>The number of days that a manual snapshot is retained. If you specify the value -1, the manual snapshot is retained indefinitely.</p> 
-    /// <p>The number must be either -1 or an integer between 1 and 3,653.</p> 
+    /// <p>The number of days that a manual snapshot is retained. If you specify the value -1, the manual snapshot is retained indefinitely.</p>
+    /// <p>The number must be either -1 or an integer between 1 and 3,653.</p>
     /// <p>If you decrease the manual snapshot retention period from its current value, existing manual snapshots that fall outside of the new retention period will return an error. If you want to suppress the errors and delete the snapshots, use the force option. </p>
     pub fn set_manual_snapshot_retention_period(mut self, input: std::option::Option<i32>) -> Self {
-        self.manual_snapshot_retention_period = input; self
+        self.manual_snapshot_retention_period = input;
+        self
     }
     /// <p>A boolean value indicating whether to override an exception if the retention period has passed. </p>
     pub fn force(mut self, input: bool) -> Self {
@@ -82,21 +87,22 @@ impl BatchModifyClusterSnapshotsInputBuilder {
     }
     /// <p>A boolean value indicating whether to override an exception if the retention period has passed. </p>
     pub fn set_force(mut self, input: std::option::Option<bool>) -> Self {
-        self.force = input; self
+        self.force = input;
+        self
     }
     /// Consumes the builder and constructs a [`BatchModifyClusterSnapshotsInput`](crate::operation::batch_modify_cluster_snapshots::BatchModifyClusterSnapshotsInput).
-    pub fn build(self) -> Result<crate::operation::batch_modify_cluster_snapshots::BatchModifyClusterSnapshotsInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::batch_modify_cluster_snapshots::BatchModifyClusterSnapshotsInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::batch_modify_cluster_snapshots::BatchModifyClusterSnapshotsInput {
-                snapshot_identifier_list: self.snapshot_identifier_list
-                ,
-                manual_snapshot_retention_period: self.manual_snapshot_retention_period
-                ,
-                force: self.force
-                    .unwrap_or_default()
-                ,
-            }
+                snapshot_identifier_list: self.snapshot_identifier_list,
+                manual_snapshot_retention_period: self.manual_snapshot_retention_period,
+                force: self.force.unwrap_or_default(),
+            },
         )
     }
 }
-

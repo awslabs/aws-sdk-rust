@@ -2,8 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetDefaultViewInput  {
-}
+pub struct GetDefaultViewInput {}
 impl GetDefaultViewInput {
     /// Creates a new builder-style object to manufacture [`GetDefaultViewInput`](crate::operation::get_default_view::GetDefaultViewInput).
     pub fn builder() -> crate::operation::get_default_view::builders::GetDefaultViewInputBuilder {
@@ -14,15 +13,15 @@ impl GetDefaultViewInput {
 /// A builder for [`GetDefaultViewInput`](crate::operation::get_default_view::GetDefaultViewInput).
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-pub struct GetDefaultViewInputBuilder {
-}
+pub struct GetDefaultViewInputBuilder {}
 impl GetDefaultViewInputBuilder {
     /// Consumes the builder and constructs a [`GetDefaultViewInput`](crate::operation::get_default_view::GetDefaultViewInput).
-    pub fn build(self) -> Result<crate::operation::get_default_view::GetDefaultViewInput, aws_smithy_http::operation::error::BuildError> {
-        Ok(
-            crate::operation::get_default_view::GetDefaultViewInput {
-            }
-        )
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::get_default_view::GetDefaultViewInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        Ok(crate::operation::get_default_view::GetDefaultViewInput {})
     }
 }
-

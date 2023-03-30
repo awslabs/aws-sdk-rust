@@ -3,14 +3,14 @@
 /// <p>An inline policy that is embedded in the role.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AwsIamRolePolicy  {
+pub struct AwsIamRolePolicy {
     /// <p>The name of the policy.</p>
     #[doc(hidden)]
     pub policy_name: std::option::Option<std::string::String>,
 }
 impl AwsIamRolePolicy {
     /// <p>The name of the policy.</p>
-    pub fn policy_name(&self) -> std::option::Option<& str> {
+    pub fn policy_name(&self) -> std::option::Option<&str> {
         self.policy_name.as_deref()
     }
 }
@@ -35,14 +35,13 @@ impl AwsIamRolePolicyBuilder {
     }
     /// <p>The name of the policy.</p>
     pub fn set_policy_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.policy_name = input; self
+        self.policy_name = input;
+        self
     }
     /// Consumes the builder and constructs a [`AwsIamRolePolicy`](crate::types::AwsIamRolePolicy).
     pub fn build(self) -> crate::types::AwsIamRolePolicy {
         crate::types::AwsIamRolePolicy {
-            policy_name: self.policy_name
-            ,
+            policy_name: self.policy_name,
         }
     }
 }
-

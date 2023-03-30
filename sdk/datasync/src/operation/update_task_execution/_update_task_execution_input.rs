@@ -2,30 +2,32 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateTaskExecutionInput  {
+pub struct UpdateTaskExecutionInput {
     /// <p>The Amazon Resource Name (ARN) of the specific task execution that is being updated. </p>
     #[doc(hidden)]
     pub task_execution_arn: std::option::Option<std::string::String>,
-    /// <p>Configures your DataSync task settings. These options include how DataSync handles files, objects, and their associated metadata. You also can specify how DataSync verifies data integrity, set bandwidth limits for your task, among other options.</p> 
+    /// <p>Configures your DataSync task settings. These options include how DataSync handles files, objects, and their associated metadata. You also can specify how DataSync verifies data integrity, set bandwidth limits for your task, among other options.</p>
     /// <p>Each task setting has a default value. Unless you need to, you don't have to configure any of these <code>Options</code> before starting your task.</p>
     #[doc(hidden)]
     pub options: std::option::Option<crate::types::Options>,
 }
 impl UpdateTaskExecutionInput {
     /// <p>The Amazon Resource Name (ARN) of the specific task execution that is being updated. </p>
-    pub fn task_execution_arn(&self) -> std::option::Option<& str> {
+    pub fn task_execution_arn(&self) -> std::option::Option<&str> {
         self.task_execution_arn.as_deref()
     }
-    /// <p>Configures your DataSync task settings. These options include how DataSync handles files, objects, and their associated metadata. You also can specify how DataSync verifies data integrity, set bandwidth limits for your task, among other options.</p> 
+    /// <p>Configures your DataSync task settings. These options include how DataSync handles files, objects, and their associated metadata. You also can specify how DataSync verifies data integrity, set bandwidth limits for your task, among other options.</p>
     /// <p>Each task setting has a default value. Unless you need to, you don't have to configure any of these <code>Options</code> before starting your task.</p>
-    pub fn options(&self) -> std::option::Option<& crate::types::Options> {
+    pub fn options(&self) -> std::option::Option<&crate::types::Options> {
         self.options.as_ref()
     }
 }
 impl UpdateTaskExecutionInput {
     /// Creates a new builder-style object to manufacture [`UpdateTaskExecutionInput`](crate::operation::update_task_execution::UpdateTaskExecutionInput).
-    pub fn builder() -> crate::operation::update_task_execution::builders::UpdateTaskExecutionInputBuilder {
-        crate::operation::update_task_execution::builders::UpdateTaskExecutionInputBuilder::default()
+    pub fn builder(
+    ) -> crate::operation::update_task_execution::builders::UpdateTaskExecutionInputBuilder {
+        crate::operation::update_task_execution::builders::UpdateTaskExecutionInputBuilder::default(
+        )
     }
 }
 
@@ -43,30 +45,37 @@ impl UpdateTaskExecutionInputBuilder {
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the specific task execution that is being updated. </p>
-    pub fn set_task_execution_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.task_execution_arn = input; self
+    pub fn set_task_execution_arn(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.task_execution_arn = input;
+        self
     }
-    /// <p>Configures your DataSync task settings. These options include how DataSync handles files, objects, and their associated metadata. You also can specify how DataSync verifies data integrity, set bandwidth limits for your task, among other options.</p> 
+    /// <p>Configures your DataSync task settings. These options include how DataSync handles files, objects, and their associated metadata. You also can specify how DataSync verifies data integrity, set bandwidth limits for your task, among other options.</p>
     /// <p>Each task setting has a default value. Unless you need to, you don't have to configure any of these <code>Options</code> before starting your task.</p>
     pub fn options(mut self, input: crate::types::Options) -> Self {
         self.options = Some(input);
         self
     }
-    /// <p>Configures your DataSync task settings. These options include how DataSync handles files, objects, and their associated metadata. You also can specify how DataSync verifies data integrity, set bandwidth limits for your task, among other options.</p> 
+    /// <p>Configures your DataSync task settings. These options include how DataSync handles files, objects, and their associated metadata. You also can specify how DataSync verifies data integrity, set bandwidth limits for your task, among other options.</p>
     /// <p>Each task setting has a default value. Unless you need to, you don't have to configure any of these <code>Options</code> before starting your task.</p>
     pub fn set_options(mut self, input: std::option::Option<crate::types::Options>) -> Self {
-        self.options = input; self
+        self.options = input;
+        self
     }
     /// Consumes the builder and constructs a [`UpdateTaskExecutionInput`](crate::operation::update_task_execution::UpdateTaskExecutionInput).
-    pub fn build(self) -> Result<crate::operation::update_task_execution::UpdateTaskExecutionInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::update_task_execution::UpdateTaskExecutionInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::update_task_execution::UpdateTaskExecutionInput {
-                task_execution_arn: self.task_execution_arn
-                ,
-                options: self.options
-                ,
-            }
+                task_execution_arn: self.task_execution_arn,
+                options: self.options,
+            },
         )
     }
 }
-

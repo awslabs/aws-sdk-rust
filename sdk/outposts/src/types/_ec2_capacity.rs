@@ -3,7 +3,7 @@
 /// <p> Information about EC2 capacity. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Ec2Capacity  {
+pub struct Ec2Capacity {
     /// <p> The family of the EC2 capacity. </p>
     #[doc(hidden)]
     pub family: std::option::Option<std::string::String>,
@@ -16,15 +16,15 @@ pub struct Ec2Capacity  {
 }
 impl Ec2Capacity {
     /// <p> The family of the EC2 capacity. </p>
-    pub fn family(&self) -> std::option::Option<& str> {
+    pub fn family(&self) -> std::option::Option<&str> {
         self.family.as_deref()
     }
     /// <p> The maximum size of the EC2 capacity. </p>
-    pub fn max_size(&self) -> std::option::Option<& str> {
+    pub fn max_size(&self) -> std::option::Option<&str> {
         self.max_size.as_deref()
     }
     /// <p> The quantity of the EC2 capacity. </p>
-    pub fn quantity(&self) -> std::option::Option<& str> {
+    pub fn quantity(&self) -> std::option::Option<&str> {
         self.quantity.as_deref()
     }
 }
@@ -51,7 +51,8 @@ impl Ec2CapacityBuilder {
     }
     /// <p> The family of the EC2 capacity. </p>
     pub fn set_family(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.family = input; self
+        self.family = input;
+        self
     }
     /// <p> The maximum size of the EC2 capacity. </p>
     pub fn max_size(mut self, input: impl Into<std::string::String>) -> Self {
@@ -60,7 +61,8 @@ impl Ec2CapacityBuilder {
     }
     /// <p> The maximum size of the EC2 capacity. </p>
     pub fn set_max_size(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.max_size = input; self
+        self.max_size = input;
+        self
     }
     /// <p> The quantity of the EC2 capacity. </p>
     pub fn quantity(mut self, input: impl Into<std::string::String>) -> Self {
@@ -69,18 +71,15 @@ impl Ec2CapacityBuilder {
     }
     /// <p> The quantity of the EC2 capacity. </p>
     pub fn set_quantity(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.quantity = input; self
+        self.quantity = input;
+        self
     }
     /// Consumes the builder and constructs a [`Ec2Capacity`](crate::types::Ec2Capacity).
     pub fn build(self) -> crate::types::Ec2Capacity {
         crate::types::Ec2Capacity {
-            family: self.family
-            ,
-            max_size: self.max_size
-            ,
-            quantity: self.quantity
-            ,
+            family: self.family,
+            max_size: self.max_size,
+            quantity: self.quantity,
         }
     }
 }
-

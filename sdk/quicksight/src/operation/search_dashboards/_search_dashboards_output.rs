@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SearchDashboardsOutput  {
+pub struct SearchDashboardsOutput {
     /// <p>The list of dashboards owned by the user specified in <code>Filters</code> in your request.</p>
     #[doc(hidden)]
     pub dashboard_summary_list: std::option::Option<std::vec::Vec<crate::types::DashboardSummary>>,
@@ -19,11 +19,11 @@ pub struct SearchDashboardsOutput  {
 }
 impl SearchDashboardsOutput {
     /// <p>The list of dashboards owned by the user specified in <code>Filters</code> in your request.</p>
-    pub fn dashboard_summary_list(&self) -> std::option::Option<& [crate::types::DashboardSummary]> {
+    pub fn dashboard_summary_list(&self) -> std::option::Option<&[crate::types::DashboardSummary]> {
         self.dashboard_summary_list.as_deref()
     }
     /// <p>The token for the next set of results, or null if there are no more results.</p>
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
     /// <p>The HTTP status of the request.</p>
@@ -31,18 +31,19 @@ impl SearchDashboardsOutput {
         self.status
     }
     /// <p>The Amazon Web Services request ID for this operation.</p>
-    pub fn request_id(&self) -> std::option::Option<& str> {
+    pub fn request_id(&self) -> std::option::Option<&str> {
         self.request_id.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for SearchDashboardsOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl SearchDashboardsOutput {
     /// Creates a new builder-style object to manufacture [`SearchDashboardsOutput`](crate::operation::search_dashboards::SearchDashboardsOutput).
-    pub fn builder() -> crate::operation::search_dashboards::builders::SearchDashboardsOutputBuilder {
+    pub fn builder() -> crate::operation::search_dashboards::builders::SearchDashboardsOutputBuilder
+    {
         crate::operation::search_dashboards::builders::SearchDashboardsOutputBuilder::default()
     }
 }
@@ -51,7 +52,8 @@ impl SearchDashboardsOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct SearchDashboardsOutputBuilder {
-    pub(crate) dashboard_summary_list: std::option::Option<std::vec::Vec<crate::types::DashboardSummary>>,
+    pub(crate) dashboard_summary_list:
+        std::option::Option<std::vec::Vec<crate::types::DashboardSummary>>,
     pub(crate) next_token: std::option::Option<std::string::String>,
     pub(crate) status: std::option::Option<i32>,
     pub(crate) request_id: std::option::Option<std::string::String>,
@@ -65,13 +67,17 @@ impl SearchDashboardsOutputBuilder {
     /// <p>The list of dashboards owned by the user specified in <code>Filters</code> in your request.</p>
     pub fn dashboard_summary_list(mut self, input: crate::types::DashboardSummary) -> Self {
         let mut v = self.dashboard_summary_list.unwrap_or_default();
-                        v.push(input);
-                        self.dashboard_summary_list = Some(v);
-                        self
+        v.push(input);
+        self.dashboard_summary_list = Some(v);
+        self
     }
     /// <p>The list of dashboards owned by the user specified in <code>Filters</code> in your request.</p>
-    pub fn set_dashboard_summary_list(mut self, input: std::option::Option<std::vec::Vec<crate::types::DashboardSummary>>) -> Self {
-        self.dashboard_summary_list = input; self
+    pub fn set_dashboard_summary_list(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::DashboardSummary>>,
+    ) -> Self {
+        self.dashboard_summary_list = input;
+        self
     }
     /// <p>The token for the next set of results, or null if there are no more results.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -80,7 +86,8 @@ impl SearchDashboardsOutputBuilder {
     }
     /// <p>The token for the next set of results, or null if there are no more results.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input; self
+        self.next_token = input;
+        self
     }
     /// <p>The HTTP status of the request.</p>
     pub fn status(mut self, input: i32) -> Self {
@@ -89,7 +96,8 @@ impl SearchDashboardsOutputBuilder {
     }
     /// <p>The HTTP status of the request.</p>
     pub fn set_status(mut self, input: std::option::Option<i32>) -> Self {
-        self.status = input; self
+        self.status = input;
+        self
     }
     /// <p>The Amazon Web Services request ID for this operation.</p>
     pub fn request_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -98,31 +106,26 @@ impl SearchDashboardsOutputBuilder {
     }
     /// <p>The Amazon Web Services request ID for this operation.</p>
     pub fn set_request_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.request_id = input; self
+        self.request_id = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`SearchDashboardsOutput`](crate::operation::search_dashboards::SearchDashboardsOutput).
     pub fn build(self) -> crate::operation::search_dashboards::SearchDashboardsOutput {
         crate::operation::search_dashboards::SearchDashboardsOutput {
-            dashboard_summary_list: self.dashboard_summary_list
-            ,
-            next_token: self.next_token
-            ,
-            status: self.status
-                .unwrap_or_default()
-            ,
-            request_id: self.request_id
-            ,
+            dashboard_summary_list: self.dashboard_summary_list,
+            next_token: self.next_token,
+            status: self.status.unwrap_or_default(),
+            request_id: self.request_id,
             _request_id: self._request_id,
         }
     }
 }
-

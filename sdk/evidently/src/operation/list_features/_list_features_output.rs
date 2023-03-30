@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListFeaturesOutput  {
+pub struct ListFeaturesOutput {
     /// <p>An array of structures that contain the configuration details of the features in the specified project.</p>
     #[doc(hidden)]
     pub features: std::option::Option<std::vec::Vec<crate::types::FeatureSummary>>,
@@ -13,19 +13,19 @@ pub struct ListFeaturesOutput  {
 }
 impl ListFeaturesOutput {
     /// <p>An array of structures that contain the configuration details of the features in the specified project.</p>
-    pub fn features(&self) -> std::option::Option<& [crate::types::FeatureSummary]> {
+    pub fn features(&self) -> std::option::Option<&[crate::types::FeatureSummary]> {
         self.features.as_deref()
     }
     /// <p>The token to use in a subsequent <code>ListFeatures</code> operation to return the next set of results.</p>
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for ListFeaturesOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl ListFeaturesOutput {
     /// Creates a new builder-style object to manufacture [`ListFeaturesOutput`](crate::operation::list_features::ListFeaturesOutput).
     pub fn builder() -> crate::operation::list_features::builders::ListFeaturesOutputBuilder {
@@ -49,13 +49,17 @@ impl ListFeaturesOutputBuilder {
     /// <p>An array of structures that contain the configuration details of the features in the specified project.</p>
     pub fn features(mut self, input: crate::types::FeatureSummary) -> Self {
         let mut v = self.features.unwrap_or_default();
-                        v.push(input);
-                        self.features = Some(v);
-                        self
+        v.push(input);
+        self.features = Some(v);
+        self
     }
     /// <p>An array of structures that contain the configuration details of the features in the specified project.</p>
-    pub fn set_features(mut self, input: std::option::Option<std::vec::Vec<crate::types::FeatureSummary>>) -> Self {
-        self.features = input; self
+    pub fn set_features(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::FeatureSummary>>,
+    ) -> Self {
+        self.features = input;
+        self
     }
     /// <p>The token to use in a subsequent <code>ListFeatures</code> operation to return the next set of results.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -64,26 +68,24 @@ impl ListFeaturesOutputBuilder {
     }
     /// <p>The token to use in a subsequent <code>ListFeatures</code> operation to return the next set of results.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input; self
+        self.next_token = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`ListFeaturesOutput`](crate::operation::list_features::ListFeaturesOutput).
     pub fn build(self) -> crate::operation::list_features::ListFeaturesOutput {
         crate::operation::list_features::ListFeaturesOutput {
-            features: self.features
-            ,
-            next_token: self.next_token
-            ,
+            features: self.features,
+            next_token: self.next_token,
             _request_id: self._request_id,
         }
     }
 }
-

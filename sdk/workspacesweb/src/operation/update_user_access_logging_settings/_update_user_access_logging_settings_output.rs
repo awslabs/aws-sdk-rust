@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateUserAccessLoggingSettingsOutput  {
+pub struct UpdateUserAccessLoggingSettingsOutput {
     /// <p>The user access logging settings.</p>
     #[doc(hidden)]
     pub user_access_logging_settings: std::option::Option<crate::types::UserAccessLoggingSettings>,
@@ -10,18 +10,20 @@ pub struct UpdateUserAccessLoggingSettingsOutput  {
 }
 impl UpdateUserAccessLoggingSettingsOutput {
     /// <p>The user access logging settings.</p>
-    pub fn user_access_logging_settings(&self) -> std::option::Option<& crate::types::UserAccessLoggingSettings> {
+    pub fn user_access_logging_settings(
+        &self,
+    ) -> std::option::Option<&crate::types::UserAccessLoggingSettings> {
         self.user_access_logging_settings.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for UpdateUserAccessLoggingSettingsOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl UpdateUserAccessLoggingSettingsOutput {
     /// Creates a new builder-style object to manufacture [`UpdateUserAccessLoggingSettingsOutput`](crate::operation::update_user_access_logging_settings::UpdateUserAccessLoggingSettingsOutput).
-    pub fn builder() -> crate::operation::update_user_access_logging_settings::builders::UpdateUserAccessLoggingSettingsOutputBuilder {
+    pub fn builder() -> crate::operation::update_user_access_logging_settings::builders::UpdateUserAccessLoggingSettingsOutputBuilder{
         crate::operation::update_user_access_logging_settings::builders::UpdateUserAccessLoggingSettingsOutputBuilder::default()
     }
 }
@@ -30,30 +32,41 @@ impl UpdateUserAccessLoggingSettingsOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct UpdateUserAccessLoggingSettingsOutputBuilder {
-    pub(crate) user_access_logging_settings: std::option::Option<crate::types::UserAccessLoggingSettings>,
+    pub(crate) user_access_logging_settings:
+        std::option::Option<crate::types::UserAccessLoggingSettings>,
     _request_id: Option<String>,
 }
 impl UpdateUserAccessLoggingSettingsOutputBuilder {
     /// <p>The user access logging settings.</p>
-    pub fn user_access_logging_settings(mut self, input: crate::types::UserAccessLoggingSettings) -> Self {
+    pub fn user_access_logging_settings(
+        mut self,
+        input: crate::types::UserAccessLoggingSettings,
+    ) -> Self {
         self.user_access_logging_settings = Some(input);
         self
     }
     /// <p>The user access logging settings.</p>
-    pub fn set_user_access_logging_settings(mut self, input: std::option::Option<crate::types::UserAccessLoggingSettings>) -> Self {
-        self.user_access_logging_settings = input; self
+    pub fn set_user_access_logging_settings(
+        mut self,
+        input: std::option::Option<crate::types::UserAccessLoggingSettings>,
+    ) -> Self {
+        self.user_access_logging_settings = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`UpdateUserAccessLoggingSettingsOutput`](crate::operation::update_user_access_logging_settings::UpdateUserAccessLoggingSettingsOutput).
-    pub fn build(self) -> crate::operation::update_user_access_logging_settings::UpdateUserAccessLoggingSettingsOutput {
+    pub fn build(
+        self,
+    ) -> crate::operation::update_user_access_logging_settings::UpdateUserAccessLoggingSettingsOutput
+    {
         crate::operation::update_user_access_logging_settings::UpdateUserAccessLoggingSettingsOutput {
             user_access_logging_settings: self.user_access_logging_settings
             ,
@@ -61,4 +74,3 @@ impl UpdateUserAccessLoggingSettingsOutputBuilder {
         }
     }
 }
-

@@ -3,7 +3,7 @@
 /// <p>Describes a target network that is associated with a Client VPN endpoint. A target network is a subnet in a VPC.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AssociatedTargetNetwork  {
+pub struct AssociatedTargetNetwork {
     /// <p>The ID of the subnet.</p>
     #[doc(hidden)]
     pub network_id: std::option::Option<std::string::String>,
@@ -13,11 +13,11 @@ pub struct AssociatedTargetNetwork  {
 }
 impl AssociatedTargetNetwork {
     /// <p>The ID of the subnet.</p>
-    pub fn network_id(&self) -> std::option::Option<& str> {
+    pub fn network_id(&self) -> std::option::Option<&str> {
         self.network_id.as_deref()
     }
     /// <p>The target network type.</p>
-    pub fn network_type(&self) -> std::option::Option<& crate::types::AssociatedNetworkType> {
+    pub fn network_type(&self) -> std::option::Option<&crate::types::AssociatedNetworkType> {
         self.network_type.as_ref()
     }
 }
@@ -43,7 +43,8 @@ impl AssociatedTargetNetworkBuilder {
     }
     /// <p>The ID of the subnet.</p>
     pub fn set_network_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.network_id = input; self
+        self.network_id = input;
+        self
     }
     /// <p>The target network type.</p>
     pub fn network_type(mut self, input: crate::types::AssociatedNetworkType) -> Self {
@@ -51,17 +52,18 @@ impl AssociatedTargetNetworkBuilder {
         self
     }
     /// <p>The target network type.</p>
-    pub fn set_network_type(mut self, input: std::option::Option<crate::types::AssociatedNetworkType>) -> Self {
-        self.network_type = input; self
+    pub fn set_network_type(
+        mut self,
+        input: std::option::Option<crate::types::AssociatedNetworkType>,
+    ) -> Self {
+        self.network_type = input;
+        self
     }
     /// Consumes the builder and constructs a [`AssociatedTargetNetwork`](crate::types::AssociatedTargetNetwork).
     pub fn build(self) -> crate::types::AssociatedTargetNetwork {
         crate::types::AssociatedTargetNetwork {
-            network_id: self.network_id
-            ,
-            network_type: self.network_type
-            ,
+            network_id: self.network_id,
+            network_type: self.network_type,
         }
     }
 }
-

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct DescribeGroupOutput  {
+pub struct DescribeGroupOutput {
     /// <p>The identifier for a group in the identity store.</p>
     #[doc(hidden)]
     pub group_id: std::option::Option<std::string::String>,
@@ -22,27 +22,27 @@ pub struct DescribeGroupOutput  {
 }
 impl DescribeGroupOutput {
     /// <p>The identifier for a group in the identity store.</p>
-    pub fn group_id(&self) -> std::option::Option<& str> {
+    pub fn group_id(&self) -> std::option::Option<&str> {
         self.group_id.as_deref()
     }
     /// <p>The group’s display name value. The length limit is 1,024 characters. This value can consist of letters, accented characters, symbols, numbers, punctuation, tab, new line, carriage return, space, and nonbreaking space in this attribute. This value is specified at the time that the group is created and stored as an attribute of the group object in the identity store.</p>
-    pub fn display_name(&self) -> std::option::Option<& str> {
+    pub fn display_name(&self) -> std::option::Option<&str> {
         self.display_name.as_deref()
     }
     /// <p>A list of <code>ExternalId</code> objects that contains the identifiers issued to this resource by an external identity provider.</p>
-    pub fn external_ids(&self) -> std::option::Option<& [crate::types::ExternalId]> {
+    pub fn external_ids(&self) -> std::option::Option<&[crate::types::ExternalId]> {
         self.external_ids.as_deref()
     }
     /// <p>A string containing a description of the group.</p>
-    pub fn description(&self) -> std::option::Option<& str> {
+    pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
     /// <p>The globally unique identifier for the identity store.</p>
-    pub fn identity_store_id(&self) -> std::option::Option<& str> {
+    pub fn identity_store_id(&self) -> std::option::Option<&str> {
         self.identity_store_id.as_deref()
     }
 }
-impl  std::fmt::Debug for DescribeGroupOutput  {
+impl std::fmt::Debug for DescribeGroupOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeGroupOutput");
         formatter.field("group_id", &self.group_id);
@@ -55,10 +55,10 @@ impl  std::fmt::Debug for DescribeGroupOutput  {
     }
 }
 impl aws_http::request_id::RequestId for DescribeGroupOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl DescribeGroupOutput {
     /// Creates a new builder-style object to manufacture [`DescribeGroupOutput`](crate::operation::describe_group::DescribeGroupOutput).
     pub fn builder() -> crate::operation::describe_group::builders::DescribeGroupOutputBuilder {
@@ -85,7 +85,8 @@ impl DescribeGroupOutputBuilder {
     }
     /// <p>The identifier for a group in the identity store.</p>
     pub fn set_group_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.group_id = input; self
+        self.group_id = input;
+        self
     }
     /// <p>The group’s display name value. The length limit is 1,024 characters. This value can consist of letters, accented characters, symbols, numbers, punctuation, tab, new line, carriage return, space, and nonbreaking space in this attribute. This value is specified at the time that the group is created and stored as an attribute of the group object in the identity store.</p>
     pub fn display_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -94,7 +95,8 @@ impl DescribeGroupOutputBuilder {
     }
     /// <p>The group’s display name value. The length limit is 1,024 characters. This value can consist of letters, accented characters, symbols, numbers, punctuation, tab, new line, carriage return, space, and nonbreaking space in this attribute. This value is specified at the time that the group is created and stored as an attribute of the group object in the identity store.</p>
     pub fn set_display_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.display_name = input; self
+        self.display_name = input;
+        self
     }
     /// Appends an item to `external_ids`.
     ///
@@ -103,13 +105,17 @@ impl DescribeGroupOutputBuilder {
     /// <p>A list of <code>ExternalId</code> objects that contains the identifiers issued to this resource by an external identity provider.</p>
     pub fn external_ids(mut self, input: crate::types::ExternalId) -> Self {
         let mut v = self.external_ids.unwrap_or_default();
-                        v.push(input);
-                        self.external_ids = Some(v);
-                        self
+        v.push(input);
+        self.external_ids = Some(v);
+        self
     }
     /// <p>A list of <code>ExternalId</code> objects that contains the identifiers issued to this resource by an external identity provider.</p>
-    pub fn set_external_ids(mut self, input: std::option::Option<std::vec::Vec<crate::types::ExternalId>>) -> Self {
-        self.external_ids = input; self
+    pub fn set_external_ids(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::ExternalId>>,
+    ) -> Self {
+        self.external_ids = input;
+        self
     }
     /// <p>A string containing a description of the group.</p>
     pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -118,7 +124,8 @@ impl DescribeGroupOutputBuilder {
     }
     /// <p>A string containing a description of the group.</p>
     pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.description = input; self
+        self.description = input;
+        self
     }
     /// <p>The globally unique identifier for the identity store.</p>
     pub fn identity_store_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -126,31 +133,30 @@ impl DescribeGroupOutputBuilder {
         self
     }
     /// <p>The globally unique identifier for the identity store.</p>
-    pub fn set_identity_store_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.identity_store_id = input; self
+    pub fn set_identity_store_id(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.identity_store_id = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`DescribeGroupOutput`](crate::operation::describe_group::DescribeGroupOutput).
     pub fn build(self) -> crate::operation::describe_group::DescribeGroupOutput {
         crate::operation::describe_group::DescribeGroupOutput {
-            group_id: self.group_id
-            ,
-            display_name: self.display_name
-            ,
-            external_ids: self.external_ids
-            ,
-            description: self.description
-            ,
-            identity_store_id: self.identity_store_id
-            ,
+            group_id: self.group_id,
+            display_name: self.display_name,
+            external_ids: self.external_ids,
+            description: self.description,
+            identity_store_id: self.identity_store_id,
             _request_id: self._request_id,
         }
     }
@@ -167,4 +173,3 @@ impl std::fmt::Debug for DescribeGroupOutputBuilder {
         formatter.finish()
     }
 }
-

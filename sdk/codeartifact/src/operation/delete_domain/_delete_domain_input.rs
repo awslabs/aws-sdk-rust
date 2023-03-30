@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteDomainInput  {
+pub struct DeleteDomainInput {
     /// <p> The name of the domain to delete. </p>
     #[doc(hidden)]
     pub domain: std::option::Option<std::string::String>,
@@ -12,11 +12,11 @@ pub struct DeleteDomainInput  {
 }
 impl DeleteDomainInput {
     /// <p> The name of the domain to delete. </p>
-    pub fn domain(&self) -> std::option::Option<& str> {
+    pub fn domain(&self) -> std::option::Option<&str> {
         self.domain.as_deref()
     }
     /// <p> The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. </p>
-    pub fn domain_owner(&self) -> std::option::Option<& str> {
+    pub fn domain_owner(&self) -> std::option::Option<&str> {
         self.domain_owner.as_deref()
     }
 }
@@ -42,7 +42,8 @@ impl DeleteDomainInputBuilder {
     }
     /// <p> The name of the domain to delete. </p>
     pub fn set_domain(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.domain = input; self
+        self.domain = input;
+        self
     }
     /// <p> The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. </p>
     pub fn domain_owner(mut self, input: impl Into<std::string::String>) -> Self {
@@ -51,18 +52,19 @@ impl DeleteDomainInputBuilder {
     }
     /// <p> The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. </p>
     pub fn set_domain_owner(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.domain_owner = input; self
+        self.domain_owner = input;
+        self
     }
     /// Consumes the builder and constructs a [`DeleteDomainInput`](crate::operation::delete_domain::DeleteDomainInput).
-    pub fn build(self) -> Result<crate::operation::delete_domain::DeleteDomainInput, aws_smithy_http::operation::error::BuildError> {
-        Ok(
-            crate::operation::delete_domain::DeleteDomainInput {
-                domain: self.domain
-                ,
-                domain_owner: self.domain_owner
-                ,
-            }
-        )
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::delete_domain::DeleteDomainInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        Ok(crate::operation::delete_domain::DeleteDomainInput {
+            domain: self.domain,
+            domain_owner: self.domain_owner,
+        })
     }
 }
-

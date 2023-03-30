@@ -3,7 +3,7 @@
 /// <p>An object that contains details about the metadata for an Amazon ECR resource.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ResourceScanMetadata  {
+pub struct ResourceScanMetadata {
     /// <p>An object that contains details about the repository an Amazon ECR image resides in.</p>
     #[doc(hidden)]
     pub ecr_repository: std::option::Option<crate::types::EcrRepositoryMetadata>,
@@ -19,19 +19,19 @@ pub struct ResourceScanMetadata  {
 }
 impl ResourceScanMetadata {
     /// <p>An object that contains details about the repository an Amazon ECR image resides in.</p>
-    pub fn ecr_repository(&self) -> std::option::Option<& crate::types::EcrRepositoryMetadata> {
+    pub fn ecr_repository(&self) -> std::option::Option<&crate::types::EcrRepositoryMetadata> {
         self.ecr_repository.as_ref()
     }
     /// <p>An object that contains details about the container metadata for an Amazon ECR image.</p>
-    pub fn ecr_image(&self) -> std::option::Option<& crate::types::EcrContainerImageMetadata> {
+    pub fn ecr_image(&self) -> std::option::Option<&crate::types::EcrContainerImageMetadata> {
         self.ecr_image.as_ref()
     }
     /// <p>An object that contains metadata details for an Amazon EC2 instance.</p>
-    pub fn ec2(&self) -> std::option::Option<& crate::types::Ec2Metadata> {
+    pub fn ec2(&self) -> std::option::Option<&crate::types::Ec2Metadata> {
         self.ec2.as_ref()
     }
     /// <p>An object that contains metadata details for an AWS Lambda function.</p>
-    pub fn lambda_function(&self) -> std::option::Option<& crate::types::LambdaFunctionMetadata> {
+    pub fn lambda_function(&self) -> std::option::Option<&crate::types::LambdaFunctionMetadata> {
         self.lambda_function.as_ref()
     }
 }
@@ -58,8 +58,12 @@ impl ResourceScanMetadataBuilder {
         self
     }
     /// <p>An object that contains details about the repository an Amazon ECR image resides in.</p>
-    pub fn set_ecr_repository(mut self, input: std::option::Option<crate::types::EcrRepositoryMetadata>) -> Self {
-        self.ecr_repository = input; self
+    pub fn set_ecr_repository(
+        mut self,
+        input: std::option::Option<crate::types::EcrRepositoryMetadata>,
+    ) -> Self {
+        self.ecr_repository = input;
+        self
     }
     /// <p>An object that contains details about the container metadata for an Amazon ECR image.</p>
     pub fn ecr_image(mut self, input: crate::types::EcrContainerImageMetadata) -> Self {
@@ -67,8 +71,12 @@ impl ResourceScanMetadataBuilder {
         self
     }
     /// <p>An object that contains details about the container metadata for an Amazon ECR image.</p>
-    pub fn set_ecr_image(mut self, input: std::option::Option<crate::types::EcrContainerImageMetadata>) -> Self {
-        self.ecr_image = input; self
+    pub fn set_ecr_image(
+        mut self,
+        input: std::option::Option<crate::types::EcrContainerImageMetadata>,
+    ) -> Self {
+        self.ecr_image = input;
+        self
     }
     /// <p>An object that contains metadata details for an Amazon EC2 instance.</p>
     pub fn ec2(mut self, input: crate::types::Ec2Metadata) -> Self {
@@ -77,7 +85,8 @@ impl ResourceScanMetadataBuilder {
     }
     /// <p>An object that contains metadata details for an Amazon EC2 instance.</p>
     pub fn set_ec2(mut self, input: std::option::Option<crate::types::Ec2Metadata>) -> Self {
-        self.ec2 = input; self
+        self.ec2 = input;
+        self
     }
     /// <p>An object that contains metadata details for an AWS Lambda function.</p>
     pub fn lambda_function(mut self, input: crate::types::LambdaFunctionMetadata) -> Self {
@@ -85,21 +94,20 @@ impl ResourceScanMetadataBuilder {
         self
     }
     /// <p>An object that contains metadata details for an AWS Lambda function.</p>
-    pub fn set_lambda_function(mut self, input: std::option::Option<crate::types::LambdaFunctionMetadata>) -> Self {
-        self.lambda_function = input; self
+    pub fn set_lambda_function(
+        mut self,
+        input: std::option::Option<crate::types::LambdaFunctionMetadata>,
+    ) -> Self {
+        self.lambda_function = input;
+        self
     }
     /// Consumes the builder and constructs a [`ResourceScanMetadata`](crate::types::ResourceScanMetadata).
     pub fn build(self) -> crate::types::ResourceScanMetadata {
         crate::types::ResourceScanMetadata {
-            ecr_repository: self.ecr_repository
-            ,
-            ecr_image: self.ecr_image
-            ,
-            ec2: self.ec2
-            ,
-            lambda_function: self.lambda_function
-            ,
+            ecr_repository: self.ecr_repository,
+            ecr_image: self.ecr_image,
+            ec2: self.ec2,
+            lambda_function: self.lambda_function,
         }
     }
 }
-

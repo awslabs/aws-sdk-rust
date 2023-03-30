@@ -4,55 +4,64 @@ pub use crate::operation::describe_budget_performance_history::_describe_budget_
 pub use crate::operation::describe_budget_performance_history::_describe_budget_performance_history_input::DescribeBudgetPerformanceHistoryInputBuilder;
 
 /// Fluent builder constructing a request to `DescribeBudgetPerformanceHistory`.
-/// 
+///
 /// <p>Describes the history for <code>DAILY</code>, <code>MONTHLY</code>, and <code>QUARTERLY</code> budgets. Budget history isn't available for <code>ANNUAL</code> budgets.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeBudgetPerformanceHistoryFluentBuilder {
                 handle: std::sync::Arc<crate::client::Handle>,
                 inner: crate::operation::describe_budget_performance_history::builders::DescribeBudgetPerformanceHistoryInputBuilder
             }
-impl DescribeBudgetPerformanceHistoryFluentBuilder  {
+impl DescribeBudgetPerformanceHistoryFluentBuilder {
     /// Creates a new `DescribeBudgetPerformanceHistory`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
-                    /// sent. The operation's inner [http::Request] can be modified as well.
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle,
+            inner: Default::default(),
+        }
+    }
+
+    /// Consume this builder, creating a customizable operation that can be modified before being
+    /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::describe_budget_performance_history::DescribeBudgetPerformanceHistory, aws_http::retry::AwsResponseRetryClassifier,>,
                         aws_smithy_http::result::SdkError<crate::operation::describe_budget_performance_history::DescribeBudgetPerformanceHistoryError>
-                    >  {
-                        let handle = self.handle.clone();
-                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-                    }
-    
-                    /// Sends the request and returns the response.
-                    ///
-                    /// If an error occurs, an `SdkError` will be returned with additional details that
-                    /// can be matched against.
-                    ///
-                    /// By default, any retryable failures will be retried twice. Retry behavior
-                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                    /// set when configuring the client.
+    >{
+        let handle = self.handle.clone();
+        let operation = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+    }
+
+    /// Sends the request and returns the response.
+    ///
+    /// If an error occurs, an `SdkError` will be returned with additional details that
+    /// can be matched against.
+    ///
+    /// By default, any retryable failures will be retried twice. Retry behavior
+    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+    /// set when configuring the client.
                     pub async fn send(self) -> std::result::Result<crate::operation::describe_budget_performance_history::DescribeBudgetPerformanceHistoryOutput, aws_smithy_http::result::SdkError<crate::operation::describe_budget_performance_history::DescribeBudgetPerformanceHistoryError>>
                      {
-                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&self.handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        self.handle.client.call(op).await
-                    }
+        let op = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&self.handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        self.handle.client.call(op).await
+    }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::describe_budget_performance_history::paginator::DescribeBudgetPerformanceHistoryPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::describe_budget_performance_history::paginator::DescribeBudgetPerformanceHistoryPaginator {
-                            crate::operation::describe_budget_performance_history::paginator::DescribeBudgetPerformanceHistoryPaginator::new(self.handle, self.inner)
-                        }
+    ///
+    /// Paginators are used by calling [`send().await`](crate::operation::describe_budget_performance_history::paginator::DescribeBudgetPerformanceHistoryPaginator::send) which returns a `Stream`.
+    pub fn into_paginator(self) -> crate::operation::describe_budget_performance_history::paginator::DescribeBudgetPerformanceHistoryPaginator{
+        crate::operation::describe_budget_performance_history::paginator::DescribeBudgetPerformanceHistoryPaginator::new(self.handle, self.inner)
+    }
     /// <p>The account ID of the user. It's a 12-digit number.</p>
     pub fn account_id(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.account_id(input.into());
@@ -104,4 +113,3 @@ impl DescribeBudgetPerformanceHistoryFluentBuilder  {
         self
     }
 }
-

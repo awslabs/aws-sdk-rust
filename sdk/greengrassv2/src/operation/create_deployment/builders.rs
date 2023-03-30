@@ -4,52 +4,74 @@ pub use crate::operation::create_deployment::_create_deployment_output::CreateDe
 pub use crate::operation::create_deployment::_create_deployment_input::CreateDeploymentInputBuilder;
 
 /// Fluent builder constructing a request to `CreateDeployment`.
-/// 
-/// <p>Creates a continuous deployment for a target, which is a Greengrass core device or group of core devices. When you add a new core device to a group of core devices that has a deployment, IoT Greengrass deploys that group's deployment to the new device.</p> 
-/// <p>You can define one deployment for each target. When you create a new deployment for a target that has an existing deployment, you replace the previous deployment. IoT Greengrass applies the new deployment to the target devices.</p> 
-/// <p>Every deployment has a revision number that indicates how many deployment revisions you define for a target. Use this operation to create a new revision of an existing deployment.</p> 
+///
+/// <p>Creates a continuous deployment for a target, which is a Greengrass core device or group of core devices. When you add a new core device to a group of core devices that has a deployment, IoT Greengrass deploys that group's deployment to the new device.</p>
+/// <p>You can define one deployment for each target. When you create a new deployment for a target that has an existing deployment, you replace the previous deployment. IoT Greengrass applies the new deployment to the target devices.</p>
+/// <p>Every deployment has a revision number that indicates how many deployment revisions you define for a target. Use this operation to create a new revision of an existing deployment.</p>
 /// <p>For more information, see the <a href="https://docs.aws.amazon.com/greengrass/v2/developerguide/create-deployments.html">Create deployments</a> in the <i>IoT Greengrass V2 Developer Guide</i>.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct CreateDeploymentFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::create_deployment::builders::CreateDeploymentInputBuilder
-            }
-impl CreateDeploymentFluentBuilder  {
+    handle: std::sync::Arc<crate::client::Handle>,
+    inner: crate::operation::create_deployment::builders::CreateDeploymentInputBuilder,
+}
+impl CreateDeploymentFluentBuilder {
     /// Creates a new `CreateDeployment`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
-                    /// sent. The operation's inner [http::Request] can be modified as well.
-                    pub async fn customize(self) -> std::result::Result<
-                        crate::client::customize::CustomizableOperation<crate::operation::create_deployment::CreateDeployment, aws_http::retry::AwsResponseRetryClassifier,>,
-                        aws_smithy_http::result::SdkError<crate::operation::create_deployment::CreateDeploymentError>
-                    >  {
-                        let handle = self.handle.clone();
-                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-                    }
-    
-                    /// Sends the request and returns the response.
-                    ///
-                    /// If an error occurs, an `SdkError` will be returned with additional details that
-                    /// can be matched against.
-                    ///
-                    /// By default, any retryable failures will be retried twice. Retry behavior
-                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                    /// set when configuring the client.
-                    pub async fn send(self) -> std::result::Result<crate::operation::create_deployment::CreateDeploymentOutput, aws_smithy_http::result::SdkError<crate::operation::create_deployment::CreateDeploymentError>>
-                     {
-                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&self.handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        self.handle.client.call(op).await
-                    }
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle,
+            inner: Default::default(),
+        }
+    }
+
+    /// Consume this builder, creating a customizable operation that can be modified before being
+    /// sent. The operation's inner [http::Request] can be modified as well.
+    pub async fn customize(
+        self,
+    ) -> std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::create_deployment::CreateDeployment,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::result::SdkError<
+            crate::operation::create_deployment::CreateDeploymentError,
+        >,
+    > {
+        let handle = self.handle.clone();
+        let operation = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+    }
+
+    /// Sends the request and returns the response.
+    ///
+    /// If an error occurs, an `SdkError` will be returned with additional details that
+    /// can be matched against.
+    ///
+    /// By default, any retryable failures will be retried twice. Retry behavior
+    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+    /// set when configuring the client.
+    pub async fn send(
+        self,
+    ) -> std::result::Result<
+        crate::operation::create_deployment::CreateDeploymentOutput,
+        aws_smithy_http::result::SdkError<
+            crate::operation::create_deployment::CreateDeploymentError,
+        >,
+    > {
+        let op = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&self.handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        self.handle.client.call(op).await
+    }
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the target IoT thing or thing group. When creating a subdeployment, the targetARN can only be a thing group.</p>
     pub fn target_arn(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.target_arn(input.into());
@@ -75,22 +97,40 @@ impl CreateDeploymentFluentBuilder  {
     /// To override the contents of this collection use [`set_components`](Self::set_components).
     ///
     /// <p>The components to deploy. This is a dictionary, where each key is the name of a component, and each key's value is the version and configuration to deploy for that component.</p>
-    pub fn components(mut self, k: impl Into<std::string::String>, v: crate::types::ComponentDeploymentSpecification) -> Self {
+    pub fn components(
+        mut self,
+        k: impl Into<std::string::String>,
+        v: crate::types::ComponentDeploymentSpecification,
+    ) -> Self {
         self.inner = self.inner.components(k.into(), v);
         self
     }
     /// <p>The components to deploy. This is a dictionary, where each key is the name of a component, and each key's value is the version and configuration to deploy for that component.</p>
-    pub fn set_components(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, crate::types::ComponentDeploymentSpecification>>) -> Self {
+    pub fn set_components(
+        mut self,
+        input: std::option::Option<
+            std::collections::HashMap<
+                std::string::String,
+                crate::types::ComponentDeploymentSpecification,
+            >,
+        >,
+    ) -> Self {
         self.inner = self.inner.set_components(input);
         self
     }
     /// <p>The job configuration for the deployment configuration. The job configuration specifies the rollout, timeout, and stop configurations for the deployment configuration.</p>
-    pub fn iot_job_configuration(mut self, input: crate::types::DeploymentIoTJobConfiguration) -> Self {
+    pub fn iot_job_configuration(
+        mut self,
+        input: crate::types::DeploymentIoTJobConfiguration,
+    ) -> Self {
         self.inner = self.inner.iot_job_configuration(input);
         self
     }
     /// <p>The job configuration for the deployment configuration. The job configuration specifies the rollout, timeout, and stop configurations for the deployment configuration.</p>
-    pub fn set_iot_job_configuration(mut self, input: std::option::Option<crate::types::DeploymentIoTJobConfiguration>) -> Self {
+    pub fn set_iot_job_configuration(
+        mut self,
+        input: std::option::Option<crate::types::DeploymentIoTJobConfiguration>,
+    ) -> Self {
         self.inner = self.inner.set_iot_job_configuration(input);
         self
     }
@@ -100,7 +140,10 @@ impl CreateDeploymentFluentBuilder  {
         self
     }
     /// <p>The deployment policies for the deployment. These policies define how the deployment updates components and handles failure.</p>
-    pub fn set_deployment_policies(mut self, input: std::option::Option<crate::types::DeploymentPolicies>) -> Self {
+    pub fn set_deployment_policies(
+        mut self,
+        input: std::option::Option<crate::types::DeploymentPolicies>,
+    ) -> Self {
         self.inner = self.inner.set_deployment_policies(input);
         self
     }
@@ -110,7 +153,10 @@ impl CreateDeploymentFluentBuilder  {
         self
     }
     /// <p>The parent deployment's target <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> within a subdeployment.</p>
-    pub fn set_parent_target_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_parent_target_arn(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_parent_target_arn(input);
         self
     }
@@ -119,12 +165,21 @@ impl CreateDeploymentFluentBuilder  {
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// <p>A list of key-value pairs that contain metadata for the resource. For more information, see <a href="https://docs.aws.amazon.com/greengrass/v2/developerguide/tag-resources.html">Tag your resources</a> in the <i>IoT Greengrass V2 Developer Guide</i>.</p>
-    pub fn tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
+    pub fn tags(
+        mut self,
+        k: impl Into<std::string::String>,
+        v: impl Into<std::string::String>,
+    ) -> Self {
         self.inner = self.inner.tags(k.into(), v.into());
         self
     }
     /// <p>A list of key-value pairs that contain metadata for the resource. For more information, see <a href="https://docs.aws.amazon.com/greengrass/v2/developerguide/tag-resources.html">Tag your resources</a> in the <i>IoT Greengrass V2 Developer Guide</i>.</p>
-    pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+    pub fn set_tags(
+        mut self,
+        input: std::option::Option<
+            std::collections::HashMap<std::string::String, std::string::String>,
+        >,
+    ) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }
@@ -139,4 +194,3 @@ impl CreateDeploymentFluentBuilder  {
         self
     }
 }
-

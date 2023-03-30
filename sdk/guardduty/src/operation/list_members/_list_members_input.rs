@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListMembersInput  {
+pub struct ListMembersInput {
     /// <p>The unique ID of the detector the member is associated with.</p>
     #[doc(hidden)]
     pub detector_id: std::option::Option<std::string::String>,
@@ -18,7 +18,7 @@ pub struct ListMembersInput  {
 }
 impl ListMembersInput {
     /// <p>The unique ID of the detector the member is associated with.</p>
-    pub fn detector_id(&self) -> std::option::Option<& str> {
+    pub fn detector_id(&self) -> std::option::Option<&str> {
         self.detector_id.as_deref()
     }
     /// <p>You can use this parameter to indicate the maximum number of items you want in the response. The default value is 50. The maximum value is 50.</p>
@@ -26,11 +26,11 @@ impl ListMembersInput {
         self.max_results
     }
     /// <p>You can use this parameter when paginating results. Set the value of this parameter to null on your first call to the list action. For subsequent calls to the action, fill nextToken in the request with the value of NextToken from the previous response to continue listing data.</p>
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
     /// <p>Specifies whether to only return associated members or to return all members (including members who haven't been invited yet or have been disassociated). Member accounts must have been previously associated with the GuardDuty administrator account using <a href="https://docs.aws.amazon.com/guardduty/latest/APIReference/API_CreateMembers.html"> <code>Create Members</code> </a>. </p>
-    pub fn only_associated(&self) -> std::option::Option<& str> {
+    pub fn only_associated(&self) -> std::option::Option<&str> {
         self.only_associated.as_deref()
     }
 }
@@ -58,7 +58,8 @@ impl ListMembersInputBuilder {
     }
     /// <p>The unique ID of the detector the member is associated with.</p>
     pub fn set_detector_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.detector_id = input; self
+        self.detector_id = input;
+        self
     }
     /// <p>You can use this parameter to indicate the maximum number of items you want in the response. The default value is 50. The maximum value is 50.</p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -67,7 +68,8 @@ impl ListMembersInputBuilder {
     }
     /// <p>You can use this parameter to indicate the maximum number of items you want in the response. The default value is 50. The maximum value is 50.</p>
     pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_results = input; self
+        self.max_results = input;
+        self
     }
     /// <p>You can use this parameter when paginating results. Set the value of this parameter to null on your first call to the list action. For subsequent calls to the action, fill nextToken in the request with the value of NextToken from the previous response to continue listing data.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -76,7 +78,8 @@ impl ListMembersInputBuilder {
     }
     /// <p>You can use this parameter when paginating results. Set the value of this parameter to null on your first call to the list action. For subsequent calls to the action, fill nextToken in the request with the value of NextToken from the previous response to continue listing data.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input; self
+        self.next_token = input;
+        self
     }
     /// <p>Specifies whether to only return associated members or to return all members (including members who haven't been invited yet or have been disassociated). Member accounts must have been previously associated with the GuardDuty administrator account using <a href="https://docs.aws.amazon.com/guardduty/latest/APIReference/API_CreateMembers.html"> <code>Create Members</code> </a>. </p>
     pub fn only_associated(mut self, input: impl Into<std::string::String>) -> Self {
@@ -85,23 +88,21 @@ impl ListMembersInputBuilder {
     }
     /// <p>Specifies whether to only return associated members or to return all members (including members who haven't been invited yet or have been disassociated). Member accounts must have been previously associated with the GuardDuty administrator account using <a href="https://docs.aws.amazon.com/guardduty/latest/APIReference/API_CreateMembers.html"> <code>Create Members</code> </a>. </p>
     pub fn set_only_associated(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.only_associated = input; self
+        self.only_associated = input;
+        self
     }
     /// Consumes the builder and constructs a [`ListMembersInput`](crate::operation::list_members::ListMembersInput).
-    pub fn build(self) -> Result<crate::operation::list_members::ListMembersInput, aws_smithy_http::operation::error::BuildError> {
-        Ok(
-            crate::operation::list_members::ListMembersInput {
-                detector_id: self.detector_id
-                ,
-                max_results: self.max_results
-                    .unwrap_or_default()
-                ,
-                next_token: self.next_token
-                ,
-                only_associated: self.only_associated
-                ,
-            }
-        )
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::list_members::ListMembersInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        Ok(crate::operation::list_members::ListMembersInput {
+            detector_id: self.detector_id,
+            max_results: self.max_results.unwrap_or_default(),
+            next_token: self.next_token,
+            only_associated: self.only_associated,
+        })
     }
 }
-

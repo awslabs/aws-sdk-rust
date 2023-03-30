@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateSubscriberInput  {
+pub struct CreateSubscriberInput {
     /// <p>The supported Amazon Web Services from which logs and events are collected. Security Lake supports log and event collection for natively supported Amazon Web Services.</p>
     #[doc(hidden)]
     pub source_types: std::option::Option<std::vec::Vec<crate::types::SourceType>>,
@@ -24,33 +24,34 @@ pub struct CreateSubscriberInput  {
 }
 impl CreateSubscriberInput {
     /// <p>The supported Amazon Web Services from which logs and events are collected. Security Lake supports log and event collection for natively supported Amazon Web Services.</p>
-    pub fn source_types(&self) -> std::option::Option<& [crate::types::SourceType]> {
+    pub fn source_types(&self) -> std::option::Option<&[crate::types::SourceType]> {
         self.source_types.as_deref()
     }
     /// <p>The Amazon Web Services account ID used to access your data.</p>
-    pub fn account_id(&self) -> std::option::Option<& str> {
+    pub fn account_id(&self) -> std::option::Option<&str> {
         self.account_id.as_deref()
     }
     /// <p>The external ID of the subscriber. This lets the user that is assuming the role assert the circumstances in which they are operating. It also provides a way for the account owner to permit the role to be assumed only under specific circumstances.</p>
-    pub fn external_id(&self) -> std::option::Option<& str> {
+    pub fn external_id(&self) -> std::option::Option<&str> {
         self.external_id.as_deref()
     }
     /// <p>The Amazon S3 or Lake Formation access type.</p>
-    pub fn access_types(&self) -> std::option::Option<& [crate::types::AccessType]> {
+    pub fn access_types(&self) -> std::option::Option<&[crate::types::AccessType]> {
         self.access_types.as_deref()
     }
     /// <p>The name of your Security Lake subscriber account.</p>
-    pub fn subscriber_name(&self) -> std::option::Option<& str> {
+    pub fn subscriber_name(&self) -> std::option::Option<&str> {
         self.subscriber_name.as_deref()
     }
     /// <p>The description for your subscriber account in Security Lake. </p>
-    pub fn subscriber_description(&self) -> std::option::Option<& str> {
+    pub fn subscriber_description(&self) -> std::option::Option<&str> {
         self.subscriber_description.as_deref()
     }
 }
 impl CreateSubscriberInput {
     /// Creates a new builder-style object to manufacture [`CreateSubscriberInput`](crate::operation::create_subscriber::CreateSubscriberInput).
-    pub fn builder() -> crate::operation::create_subscriber::builders::CreateSubscriberInputBuilder {
+    pub fn builder() -> crate::operation::create_subscriber::builders::CreateSubscriberInputBuilder
+    {
         crate::operation::create_subscriber::builders::CreateSubscriberInputBuilder::default()
     }
 }
@@ -74,13 +75,17 @@ impl CreateSubscriberInputBuilder {
     /// <p>The supported Amazon Web Services from which logs and events are collected. Security Lake supports log and event collection for natively supported Amazon Web Services.</p>
     pub fn source_types(mut self, input: crate::types::SourceType) -> Self {
         let mut v = self.source_types.unwrap_or_default();
-                        v.push(input);
-                        self.source_types = Some(v);
-                        self
+        v.push(input);
+        self.source_types = Some(v);
+        self
     }
     /// <p>The supported Amazon Web Services from which logs and events are collected. Security Lake supports log and event collection for natively supported Amazon Web Services.</p>
-    pub fn set_source_types(mut self, input: std::option::Option<std::vec::Vec<crate::types::SourceType>>) -> Self {
-        self.source_types = input; self
+    pub fn set_source_types(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::SourceType>>,
+    ) -> Self {
+        self.source_types = input;
+        self
     }
     /// <p>The Amazon Web Services account ID used to access your data.</p>
     pub fn account_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -89,7 +94,8 @@ impl CreateSubscriberInputBuilder {
     }
     /// <p>The Amazon Web Services account ID used to access your data.</p>
     pub fn set_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.account_id = input; self
+        self.account_id = input;
+        self
     }
     /// <p>The external ID of the subscriber. This lets the user that is assuming the role assert the circumstances in which they are operating. It also provides a way for the account owner to permit the role to be assumed only under specific circumstances.</p>
     pub fn external_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -98,7 +104,8 @@ impl CreateSubscriberInputBuilder {
     }
     /// <p>The external ID of the subscriber. This lets the user that is assuming the role assert the circumstances in which they are operating. It also provides a way for the account owner to permit the role to be assumed only under specific circumstances.</p>
     pub fn set_external_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.external_id = input; self
+        self.external_id = input;
+        self
     }
     /// Appends an item to `access_types`.
     ///
@@ -107,13 +114,17 @@ impl CreateSubscriberInputBuilder {
     /// <p>The Amazon S3 or Lake Formation access type.</p>
     pub fn access_types(mut self, input: crate::types::AccessType) -> Self {
         let mut v = self.access_types.unwrap_or_default();
-                        v.push(input);
-                        self.access_types = Some(v);
-                        self
+        v.push(input);
+        self.access_types = Some(v);
+        self
     }
     /// <p>The Amazon S3 or Lake Formation access type.</p>
-    pub fn set_access_types(mut self, input: std::option::Option<std::vec::Vec<crate::types::AccessType>>) -> Self {
-        self.access_types = input; self
+    pub fn set_access_types(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::AccessType>>,
+    ) -> Self {
+        self.access_types = input;
+        self
     }
     /// <p>The name of your Security Lake subscriber account.</p>
     pub fn subscriber_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -122,7 +133,8 @@ impl CreateSubscriberInputBuilder {
     }
     /// <p>The name of your Security Lake subscriber account.</p>
     pub fn set_subscriber_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.subscriber_name = input; self
+        self.subscriber_name = input;
+        self
     }
     /// <p>The description for your subscriber account in Security Lake. </p>
     pub fn subscriber_description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -130,27 +142,27 @@ impl CreateSubscriberInputBuilder {
         self
     }
     /// <p>The description for your subscriber account in Security Lake. </p>
-    pub fn set_subscriber_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.subscriber_description = input; self
+    pub fn set_subscriber_description(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.subscriber_description = input;
+        self
     }
     /// Consumes the builder and constructs a [`CreateSubscriberInput`](crate::operation::create_subscriber::CreateSubscriberInput).
-    pub fn build(self) -> Result<crate::operation::create_subscriber::CreateSubscriberInput, aws_smithy_http::operation::error::BuildError> {
-        Ok(
-            crate::operation::create_subscriber::CreateSubscriberInput {
-                source_types: self.source_types
-                ,
-                account_id: self.account_id
-                ,
-                external_id: self.external_id
-                ,
-                access_types: self.access_types
-                ,
-                subscriber_name: self.subscriber_name
-                ,
-                subscriber_description: self.subscriber_description
-                ,
-            }
-        )
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::create_subscriber::CreateSubscriberInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        Ok(crate::operation::create_subscriber::CreateSubscriberInput {
+            source_types: self.source_types,
+            account_id: self.account_id,
+            external_id: self.external_id,
+            access_types: self.access_types,
+            subscriber_name: self.subscriber_name,
+            subscriber_description: self.subscriber_description,
+        })
     }
 }
-

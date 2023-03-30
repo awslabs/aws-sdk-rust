@@ -242,4 +242,3 @@ pub use crate::types::_http_gateway_route_prefix_rewrite::HttpGatewayRoutePrefix
 pub use crate::types::_http_gateway_route_match::HttpGatewayRouteMatchBuilder;
 
 pub use crate::types::_http_gateway_route_header::HttpGatewayRouteHeaderBuilder;
-

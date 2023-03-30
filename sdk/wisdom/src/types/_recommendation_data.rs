@@ -3,7 +3,7 @@
 /// <p>Information about the recommendation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct RecommendationData  {
+pub struct RecommendationData {
     /// <p>The identifier of the recommendation.</p>
     #[doc(hidden)]
     pub recommendation_id: std::option::Option<std::string::String>,
@@ -22,11 +22,11 @@ pub struct RecommendationData  {
 }
 impl RecommendationData {
     /// <p>The identifier of the recommendation.</p>
-    pub fn recommendation_id(&self) -> std::option::Option<& str> {
+    pub fn recommendation_id(&self) -> std::option::Option<&str> {
         self.recommendation_id.as_deref()
     }
     /// <p>The recommended document.</p>
-    pub fn document(&self) -> std::option::Option<& crate::types::Document> {
+    pub fn document(&self) -> std::option::Option<&crate::types::Document> {
         self.document.as_ref()
     }
     /// <p>The relevance score of the recommendation.</p>
@@ -34,11 +34,11 @@ impl RecommendationData {
         self.relevance_score
     }
     /// <p>The relevance level of the recommendation.</p>
-    pub fn relevance_level(&self) -> std::option::Option<& crate::types::RelevanceLevel> {
+    pub fn relevance_level(&self) -> std::option::Option<&crate::types::RelevanceLevel> {
         self.relevance_level.as_ref()
     }
     /// <p>The type of recommendation.</p>
-    pub fn r#type(&self) -> std::option::Option<& crate::types::RecommendationType> {
+    pub fn r#type(&self) -> std::option::Option<&crate::types::RecommendationType> {
         self.r#type.as_ref()
     }
 }
@@ -66,8 +66,12 @@ impl RecommendationDataBuilder {
         self
     }
     /// <p>The identifier of the recommendation.</p>
-    pub fn set_recommendation_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.recommendation_id = input; self
+    pub fn set_recommendation_id(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.recommendation_id = input;
+        self
     }
     /// <p>The recommended document.</p>
     pub fn document(mut self, input: crate::types::Document) -> Self {
@@ -76,7 +80,8 @@ impl RecommendationDataBuilder {
     }
     /// <p>The recommended document.</p>
     pub fn set_document(mut self, input: std::option::Option<crate::types::Document>) -> Self {
-        self.document = input; self
+        self.document = input;
+        self
     }
     /// <p>The relevance score of the recommendation.</p>
     pub fn relevance_score(mut self, input: f64) -> Self {
@@ -85,7 +90,8 @@ impl RecommendationDataBuilder {
     }
     /// <p>The relevance score of the recommendation.</p>
     pub fn set_relevance_score(mut self, input: std::option::Option<f64>) -> Self {
-        self.relevance_score = input; self
+        self.relevance_score = input;
+        self
     }
     /// <p>The relevance level of the recommendation.</p>
     pub fn relevance_level(mut self, input: crate::types::RelevanceLevel) -> Self {
@@ -93,8 +99,12 @@ impl RecommendationDataBuilder {
         self
     }
     /// <p>The relevance level of the recommendation.</p>
-    pub fn set_relevance_level(mut self, input: std::option::Option<crate::types::RelevanceLevel>) -> Self {
-        self.relevance_level = input; self
+    pub fn set_relevance_level(
+        mut self,
+        input: std::option::Option<crate::types::RelevanceLevel>,
+    ) -> Self {
+        self.relevance_level = input;
+        self
     }
     /// <p>The type of recommendation.</p>
     pub fn r#type(mut self, input: crate::types::RecommendationType) -> Self {
@@ -102,24 +112,21 @@ impl RecommendationDataBuilder {
         self
     }
     /// <p>The type of recommendation.</p>
-    pub fn set_type(mut self, input: std::option::Option<crate::types::RecommendationType>) -> Self {
-        self.r#type = input; self
+    pub fn set_type(
+        mut self,
+        input: std::option::Option<crate::types::RecommendationType>,
+    ) -> Self {
+        self.r#type = input;
+        self
     }
     /// Consumes the builder and constructs a [`RecommendationData`](crate::types::RecommendationData).
     pub fn build(self) -> crate::types::RecommendationData {
         crate::types::RecommendationData {
-            recommendation_id: self.recommendation_id
-            ,
-            document: self.document
-            ,
-            relevance_score: self.relevance_score
-                .unwrap_or_default()
-            ,
-            relevance_level: self.relevance_level
-            ,
-            r#type: self.r#type
-            ,
+            recommendation_id: self.recommendation_id,
+            document: self.document,
+            relevance_score: self.relevance_score.unwrap_or_default(),
+            relevance_level: self.relevance_level,
+            r#type: self.r#type,
         }
     }
 }
-

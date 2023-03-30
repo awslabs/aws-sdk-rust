@@ -3,7 +3,7 @@
 /// <p>The details of the rule.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct RuleDetail  {
+pub struct RuleDetail {
     /// <p>The rule ID.</p>
     #[doc(hidden)]
     pub rule_id: std::option::Option<std::string::String>,
@@ -37,47 +37,47 @@ pub struct RuleDetail  {
 }
 impl RuleDetail {
     /// <p>The rule ID.</p>
-    pub fn rule_id(&self) -> std::option::Option<& str> {
+    pub fn rule_id(&self) -> std::option::Option<&str> {
         self.rule_id.as_deref()
     }
     /// <p>The rule description.</p>
-    pub fn description(&self) -> std::option::Option<& str> {
+    pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
     /// <p>The detector for which the rule is associated.</p>
-    pub fn detector_id(&self) -> std::option::Option<& str> {
+    pub fn detector_id(&self) -> std::option::Option<&str> {
         self.detector_id.as_deref()
     }
     /// <p>The rule version.</p>
-    pub fn rule_version(&self) -> std::option::Option<& str> {
+    pub fn rule_version(&self) -> std::option::Option<&str> {
         self.rule_version.as_deref()
     }
     /// <p>The rule expression.</p>
-    pub fn expression(&self) -> std::option::Option<& str> {
+    pub fn expression(&self) -> std::option::Option<&str> {
         self.expression.as_deref()
     }
     /// <p>The rule language.</p>
-    pub fn language(&self) -> std::option::Option<& crate::types::Language> {
+    pub fn language(&self) -> std::option::Option<&crate::types::Language> {
         self.language.as_ref()
     }
     /// <p>The rule outcomes.</p>
-    pub fn outcomes(&self) -> std::option::Option<& [std::string::String]> {
+    pub fn outcomes(&self) -> std::option::Option<&[std::string::String]> {
         self.outcomes.as_deref()
     }
     /// <p>Timestamp of the last time the rule was updated.</p>
-    pub fn last_updated_time(&self) -> std::option::Option<& str> {
+    pub fn last_updated_time(&self) -> std::option::Option<&str> {
         self.last_updated_time.as_deref()
     }
     /// <p>The timestamp of when the rule was created.</p>
-    pub fn created_time(&self) -> std::option::Option<& str> {
+    pub fn created_time(&self) -> std::option::Option<&str> {
         self.created_time.as_deref()
     }
     /// <p>The rule ARN.</p>
-    pub fn arn(&self) -> std::option::Option<& str> {
+    pub fn arn(&self) -> std::option::Option<&str> {
         self.arn.as_deref()
     }
 }
-impl  std::fmt::Debug for RuleDetail  {
+impl std::fmt::Debug for RuleDetail {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("RuleDetail");
         formatter.field("rule_id", &self.rule_id);
@@ -123,7 +123,8 @@ impl RuleDetailBuilder {
     }
     /// <p>The rule ID.</p>
     pub fn set_rule_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.rule_id = input; self
+        self.rule_id = input;
+        self
     }
     /// <p>The rule description.</p>
     pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -132,7 +133,8 @@ impl RuleDetailBuilder {
     }
     /// <p>The rule description.</p>
     pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.description = input; self
+        self.description = input;
+        self
     }
     /// <p>The detector for which the rule is associated.</p>
     pub fn detector_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -141,7 +143,8 @@ impl RuleDetailBuilder {
     }
     /// <p>The detector for which the rule is associated.</p>
     pub fn set_detector_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.detector_id = input; self
+        self.detector_id = input;
+        self
     }
     /// <p>The rule version.</p>
     pub fn rule_version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -150,7 +153,8 @@ impl RuleDetailBuilder {
     }
     /// <p>The rule version.</p>
     pub fn set_rule_version(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.rule_version = input; self
+        self.rule_version = input;
+        self
     }
     /// <p>The rule expression.</p>
     pub fn expression(mut self, input: impl Into<std::string::String>) -> Self {
@@ -159,7 +163,8 @@ impl RuleDetailBuilder {
     }
     /// <p>The rule expression.</p>
     pub fn set_expression(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.expression = input; self
+        self.expression = input;
+        self
     }
     /// <p>The rule language.</p>
     pub fn language(mut self, input: crate::types::Language) -> Self {
@@ -168,7 +173,8 @@ impl RuleDetailBuilder {
     }
     /// <p>The rule language.</p>
     pub fn set_language(mut self, input: std::option::Option<crate::types::Language>) -> Self {
-        self.language = input; self
+        self.language = input;
+        self
     }
     /// Appends an item to `outcomes`.
     ///
@@ -177,13 +183,17 @@ impl RuleDetailBuilder {
     /// <p>The rule outcomes.</p>
     pub fn outcomes(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.outcomes.unwrap_or_default();
-                        v.push(input.into());
-                        self.outcomes = Some(v);
-                        self
+        v.push(input.into());
+        self.outcomes = Some(v);
+        self
     }
     /// <p>The rule outcomes.</p>
-    pub fn set_outcomes(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-        self.outcomes = input; self
+    pub fn set_outcomes(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
+        self.outcomes = input;
+        self
     }
     /// <p>Timestamp of the last time the rule was updated.</p>
     pub fn last_updated_time(mut self, input: impl Into<std::string::String>) -> Self {
@@ -191,8 +201,12 @@ impl RuleDetailBuilder {
         self
     }
     /// <p>Timestamp of the last time the rule was updated.</p>
-    pub fn set_last_updated_time(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.last_updated_time = input; self
+    pub fn set_last_updated_time(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.last_updated_time = input;
+        self
     }
     /// <p>The timestamp of when the rule was created.</p>
     pub fn created_time(mut self, input: impl Into<std::string::String>) -> Self {
@@ -201,7 +215,8 @@ impl RuleDetailBuilder {
     }
     /// <p>The timestamp of when the rule was created.</p>
     pub fn set_created_time(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.created_time = input; self
+        self.created_time = input;
+        self
     }
     /// <p>The rule ARN.</p>
     pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -210,31 +225,22 @@ impl RuleDetailBuilder {
     }
     /// <p>The rule ARN.</p>
     pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.arn = input; self
+        self.arn = input;
+        self
     }
     /// Consumes the builder and constructs a [`RuleDetail`](crate::types::RuleDetail).
     pub fn build(self) -> crate::types::RuleDetail {
         crate::types::RuleDetail {
-            rule_id: self.rule_id
-            ,
-            description: self.description
-            ,
-            detector_id: self.detector_id
-            ,
-            rule_version: self.rule_version
-            ,
-            expression: self.expression
-            ,
-            language: self.language
-            ,
-            outcomes: self.outcomes
-            ,
-            last_updated_time: self.last_updated_time
-            ,
-            created_time: self.created_time
-            ,
-            arn: self.arn
-            ,
+            rule_id: self.rule_id,
+            description: self.description,
+            detector_id: self.detector_id,
+            rule_version: self.rule_version,
+            expression: self.expression,
+            language: self.language,
+            outcomes: self.outcomes,
+            last_updated_time: self.last_updated_time,
+            created_time: self.created_time,
+            arn: self.arn,
         }
     }
 }
@@ -254,4 +260,3 @@ impl std::fmt::Debug for RuleDetailBuilder {
         formatter.finish()
     }
 }
-

@@ -2,14 +2,14 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetOtaUpdateInput  {
+pub struct GetOtaUpdateInput {
     /// <p>The OTA update ID.</p>
     #[doc(hidden)]
     pub ota_update_id: std::option::Option<std::string::String>,
 }
 impl GetOtaUpdateInput {
     /// <p>The OTA update ID.</p>
-    pub fn ota_update_id(&self) -> std::option::Option<& str> {
+    pub fn ota_update_id(&self) -> std::option::Option<&str> {
         self.ota_update_id.as_deref()
     }
 }
@@ -34,16 +34,18 @@ impl GetOtaUpdateInputBuilder {
     }
     /// <p>The OTA update ID.</p>
     pub fn set_ota_update_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.ota_update_id = input; self
+        self.ota_update_id = input;
+        self
     }
     /// Consumes the builder and constructs a [`GetOtaUpdateInput`](crate::operation::get_ota_update::GetOtaUpdateInput).
-    pub fn build(self) -> Result<crate::operation::get_ota_update::GetOtaUpdateInput, aws_smithy_http::operation::error::BuildError> {
-        Ok(
-            crate::operation::get_ota_update::GetOtaUpdateInput {
-                ota_update_id: self.ota_update_id
-                ,
-            }
-        )
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::get_ota_update::GetOtaUpdateInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        Ok(crate::operation::get_ota_update::GetOtaUpdateInput {
+            ota_update_id: self.ota_update_id,
+        })
     }
 }
-

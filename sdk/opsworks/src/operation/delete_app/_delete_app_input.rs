@@ -2,14 +2,14 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteAppInput  {
+pub struct DeleteAppInput {
     /// <p>The app ID.</p>
     #[doc(hidden)]
     pub app_id: std::option::Option<std::string::String>,
 }
 impl DeleteAppInput {
     /// <p>The app ID.</p>
-    pub fn app_id(&self) -> std::option::Option<& str> {
+    pub fn app_id(&self) -> std::option::Option<&str> {
         self.app_id.as_deref()
     }
 }
@@ -34,16 +34,18 @@ impl DeleteAppInputBuilder {
     }
     /// <p>The app ID.</p>
     pub fn set_app_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.app_id = input; self
+        self.app_id = input;
+        self
     }
     /// Consumes the builder and constructs a [`DeleteAppInput`](crate::operation::delete_app::DeleteAppInput).
-    pub fn build(self) -> Result<crate::operation::delete_app::DeleteAppInput, aws_smithy_http::operation::error::BuildError> {
-        Ok(
-            crate::operation::delete_app::DeleteAppInput {
-                app_id: self.app_id
-                ,
-            }
-        )
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::delete_app::DeleteAppInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        Ok(crate::operation::delete_app::DeleteAppInput {
+            app_id: self.app_id,
+        })
     }
 }
-

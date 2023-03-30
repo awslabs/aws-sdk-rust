@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ModifyRuleInput  {
+pub struct ModifyRuleInput {
     /// <p>The Amazon Resource Name (ARN) of the rule.</p>
     #[doc(hidden)]
     pub rule_arn: std::option::Option<std::string::String>,
@@ -15,15 +15,15 @@ pub struct ModifyRuleInput  {
 }
 impl ModifyRuleInput {
     /// <p>The Amazon Resource Name (ARN) of the rule.</p>
-    pub fn rule_arn(&self) -> std::option::Option<& str> {
+    pub fn rule_arn(&self) -> std::option::Option<&str> {
         self.rule_arn.as_deref()
     }
     /// <p>The conditions.</p>
-    pub fn conditions(&self) -> std::option::Option<& [crate::types::RuleCondition]> {
+    pub fn conditions(&self) -> std::option::Option<&[crate::types::RuleCondition]> {
         self.conditions.as_deref()
     }
     /// <p>The actions.</p>
-    pub fn actions(&self) -> std::option::Option<& [crate::types::Action]> {
+    pub fn actions(&self) -> std::option::Option<&[crate::types::Action]> {
         self.actions.as_deref()
     }
 }
@@ -50,7 +50,8 @@ impl ModifyRuleInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the rule.</p>
     pub fn set_rule_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.rule_arn = input; self
+        self.rule_arn = input;
+        self
     }
     /// Appends an item to `conditions`.
     ///
@@ -59,13 +60,17 @@ impl ModifyRuleInputBuilder {
     /// <p>The conditions.</p>
     pub fn conditions(mut self, input: crate::types::RuleCondition) -> Self {
         let mut v = self.conditions.unwrap_or_default();
-                        v.push(input);
-                        self.conditions = Some(v);
-                        self
+        v.push(input);
+        self.conditions = Some(v);
+        self
     }
     /// <p>The conditions.</p>
-    pub fn set_conditions(mut self, input: std::option::Option<std::vec::Vec<crate::types::RuleCondition>>) -> Self {
-        self.conditions = input; self
+    pub fn set_conditions(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::RuleCondition>>,
+    ) -> Self {
+        self.conditions = input;
+        self
     }
     /// Appends an item to `actions`.
     ///
@@ -74,26 +79,29 @@ impl ModifyRuleInputBuilder {
     /// <p>The actions.</p>
     pub fn actions(mut self, input: crate::types::Action) -> Self {
         let mut v = self.actions.unwrap_or_default();
-                        v.push(input);
-                        self.actions = Some(v);
-                        self
+        v.push(input);
+        self.actions = Some(v);
+        self
     }
     /// <p>The actions.</p>
-    pub fn set_actions(mut self, input: std::option::Option<std::vec::Vec<crate::types::Action>>) -> Self {
-        self.actions = input; self
+    pub fn set_actions(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::Action>>,
+    ) -> Self {
+        self.actions = input;
+        self
     }
     /// Consumes the builder and constructs a [`ModifyRuleInput`](crate::operation::modify_rule::ModifyRuleInput).
-    pub fn build(self) -> Result<crate::operation::modify_rule::ModifyRuleInput, aws_smithy_http::operation::error::BuildError> {
-        Ok(
-            crate::operation::modify_rule::ModifyRuleInput {
-                rule_arn: self.rule_arn
-                ,
-                conditions: self.conditions
-                ,
-                actions: self.actions
-                ,
-            }
-        )
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::modify_rule::ModifyRuleInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        Ok(crate::operation::modify_rule::ModifyRuleInput {
+            rule_arn: self.rule_arn,
+            conditions: self.conditions,
+            actions: self.actions,
+        })
     }
 }
-

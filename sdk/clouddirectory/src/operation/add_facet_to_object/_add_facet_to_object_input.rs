@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AddFacetToObjectInput  {
+pub struct AddFacetToObjectInput {
     /// <p>The Amazon Resource Name (ARN) that is associated with the <code>Directory</code> where the object resides. For more information, see <code>arns</code>.</p>
     #[doc(hidden)]
     pub directory_arn: std::option::Option<std::string::String>,
@@ -11,32 +11,36 @@ pub struct AddFacetToObjectInput  {
     pub schema_facet: std::option::Option<crate::types::SchemaFacet>,
     /// <p>Attributes on the facet that you are adding to the object.</p>
     #[doc(hidden)]
-    pub object_attribute_list: std::option::Option<std::vec::Vec<crate::types::AttributeKeyAndValue>>,
+    pub object_attribute_list:
+        std::option::Option<std::vec::Vec<crate::types::AttributeKeyAndValue>>,
     /// <p>A reference to the object you are adding the specified facet to.</p>
     #[doc(hidden)]
     pub object_reference: std::option::Option<crate::types::ObjectReference>,
 }
 impl AddFacetToObjectInput {
     /// <p>The Amazon Resource Name (ARN) that is associated with the <code>Directory</code> where the object resides. For more information, see <code>arns</code>.</p>
-    pub fn directory_arn(&self) -> std::option::Option<& str> {
+    pub fn directory_arn(&self) -> std::option::Option<&str> {
         self.directory_arn.as_deref()
     }
     /// <p>Identifiers for the facet that you are adding to the object. See <code>SchemaFacet</code> for details.</p>
-    pub fn schema_facet(&self) -> std::option::Option<& crate::types::SchemaFacet> {
+    pub fn schema_facet(&self) -> std::option::Option<&crate::types::SchemaFacet> {
         self.schema_facet.as_ref()
     }
     /// <p>Attributes on the facet that you are adding to the object.</p>
-    pub fn object_attribute_list(&self) -> std::option::Option<& [crate::types::AttributeKeyAndValue]> {
+    pub fn object_attribute_list(
+        &self,
+    ) -> std::option::Option<&[crate::types::AttributeKeyAndValue]> {
         self.object_attribute_list.as_deref()
     }
     /// <p>A reference to the object you are adding the specified facet to.</p>
-    pub fn object_reference(&self) -> std::option::Option<& crate::types::ObjectReference> {
+    pub fn object_reference(&self) -> std::option::Option<&crate::types::ObjectReference> {
         self.object_reference.as_ref()
     }
 }
 impl AddFacetToObjectInput {
     /// Creates a new builder-style object to manufacture [`AddFacetToObjectInput`](crate::operation::add_facet_to_object::AddFacetToObjectInput).
-    pub fn builder() -> crate::operation::add_facet_to_object::builders::AddFacetToObjectInputBuilder {
+    pub fn builder() -> crate::operation::add_facet_to_object::builders::AddFacetToObjectInputBuilder
+    {
         crate::operation::add_facet_to_object::builders::AddFacetToObjectInputBuilder::default()
     }
 }
@@ -47,7 +51,8 @@ impl AddFacetToObjectInput {
 pub struct AddFacetToObjectInputBuilder {
     pub(crate) directory_arn: std::option::Option<std::string::String>,
     pub(crate) schema_facet: std::option::Option<crate::types::SchemaFacet>,
-    pub(crate) object_attribute_list: std::option::Option<std::vec::Vec<crate::types::AttributeKeyAndValue>>,
+    pub(crate) object_attribute_list:
+        std::option::Option<std::vec::Vec<crate::types::AttributeKeyAndValue>>,
     pub(crate) object_reference: std::option::Option<crate::types::ObjectReference>,
 }
 impl AddFacetToObjectInputBuilder {
@@ -58,7 +63,8 @@ impl AddFacetToObjectInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) that is associated with the <code>Directory</code> where the object resides. For more information, see <code>arns</code>.</p>
     pub fn set_directory_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.directory_arn = input; self
+        self.directory_arn = input;
+        self
     }
     /// <p>Identifiers for the facet that you are adding to the object. See <code>SchemaFacet</code> for details.</p>
     pub fn schema_facet(mut self, input: crate::types::SchemaFacet) -> Self {
@@ -66,8 +72,12 @@ impl AddFacetToObjectInputBuilder {
         self
     }
     /// <p>Identifiers for the facet that you are adding to the object. See <code>SchemaFacet</code> for details.</p>
-    pub fn set_schema_facet(mut self, input: std::option::Option<crate::types::SchemaFacet>) -> Self {
-        self.schema_facet = input; self
+    pub fn set_schema_facet(
+        mut self,
+        input: std::option::Option<crate::types::SchemaFacet>,
+    ) -> Self {
+        self.schema_facet = input;
+        self
     }
     /// Appends an item to `object_attribute_list`.
     ///
@@ -76,13 +86,17 @@ impl AddFacetToObjectInputBuilder {
     /// <p>Attributes on the facet that you are adding to the object.</p>
     pub fn object_attribute_list(mut self, input: crate::types::AttributeKeyAndValue) -> Self {
         let mut v = self.object_attribute_list.unwrap_or_default();
-                        v.push(input);
-                        self.object_attribute_list = Some(v);
-                        self
+        v.push(input);
+        self.object_attribute_list = Some(v);
+        self
     }
     /// <p>Attributes on the facet that you are adding to the object.</p>
-    pub fn set_object_attribute_list(mut self, input: std::option::Option<std::vec::Vec<crate::types::AttributeKeyAndValue>>) -> Self {
-        self.object_attribute_list = input; self
+    pub fn set_object_attribute_list(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::AttributeKeyAndValue>>,
+    ) -> Self {
+        self.object_attribute_list = input;
+        self
     }
     /// <p>A reference to the object you are adding the specified facet to.</p>
     pub fn object_reference(mut self, input: crate::types::ObjectReference) -> Self {
@@ -90,23 +104,27 @@ impl AddFacetToObjectInputBuilder {
         self
     }
     /// <p>A reference to the object you are adding the specified facet to.</p>
-    pub fn set_object_reference(mut self, input: std::option::Option<crate::types::ObjectReference>) -> Self {
-        self.object_reference = input; self
+    pub fn set_object_reference(
+        mut self,
+        input: std::option::Option<crate::types::ObjectReference>,
+    ) -> Self {
+        self.object_reference = input;
+        self
     }
     /// Consumes the builder and constructs a [`AddFacetToObjectInput`](crate::operation::add_facet_to_object::AddFacetToObjectInput).
-    pub fn build(self) -> Result<crate::operation::add_facet_to_object::AddFacetToObjectInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::add_facet_to_object::AddFacetToObjectInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::add_facet_to_object::AddFacetToObjectInput {
-                directory_arn: self.directory_arn
-                ,
-                schema_facet: self.schema_facet
-                ,
-                object_attribute_list: self.object_attribute_list
-                ,
-                object_reference: self.object_reference
-                ,
-            }
+                directory_arn: self.directory_arn,
+                schema_facet: self.schema_facet,
+                object_attribute_list: self.object_attribute_list,
+                object_reference: self.object_reference,
+            },
         )
     }
 }
-

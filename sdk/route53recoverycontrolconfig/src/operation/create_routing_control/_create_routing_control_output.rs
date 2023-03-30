@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateRoutingControlOutput  {
+pub struct CreateRoutingControlOutput {
     /// <p>The routing control that is created.</p>
     #[doc(hidden)]
     pub routing_control: std::option::Option<crate::types::RoutingControl>,
@@ -10,18 +10,19 @@ pub struct CreateRoutingControlOutput  {
 }
 impl CreateRoutingControlOutput {
     /// <p>The routing control that is created.</p>
-    pub fn routing_control(&self) -> std::option::Option<& crate::types::RoutingControl> {
+    pub fn routing_control(&self) -> std::option::Option<&crate::types::RoutingControl> {
         self.routing_control.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for CreateRoutingControlOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl CreateRoutingControlOutput {
     /// Creates a new builder-style object to manufacture [`CreateRoutingControlOutput`](crate::operation::create_routing_control::CreateRoutingControlOutput).
-    pub fn builder() -> crate::operation::create_routing_control::builders::CreateRoutingControlOutputBuilder {
+    pub fn builder(
+    ) -> crate::operation::create_routing_control::builders::CreateRoutingControlOutputBuilder {
         crate::operation::create_routing_control::builders::CreateRoutingControlOutputBuilder::default()
     }
 }
@@ -40,25 +41,27 @@ impl CreateRoutingControlOutputBuilder {
         self
     }
     /// <p>The routing control that is created.</p>
-    pub fn set_routing_control(mut self, input: std::option::Option<crate::types::RoutingControl>) -> Self {
-        self.routing_control = input; self
+    pub fn set_routing_control(
+        mut self,
+        input: std::option::Option<crate::types::RoutingControl>,
+    ) -> Self {
+        self.routing_control = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`CreateRoutingControlOutput`](crate::operation::create_routing_control::CreateRoutingControlOutput).
     pub fn build(self) -> crate::operation::create_routing_control::CreateRoutingControlOutput {
         crate::operation::create_routing_control::CreateRoutingControlOutput {
-            routing_control: self.routing_control
-            ,
+            routing_control: self.routing_control,
             _request_id: self._request_id,
         }
     }
 }
-

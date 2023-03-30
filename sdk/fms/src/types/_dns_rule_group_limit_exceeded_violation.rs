@@ -3,7 +3,7 @@
 /// <p>The VPC that Firewall Manager was applying a DNS Fireall policy to reached the limit for associated DNS Firewall rule groups. Firewall Manager tried to associate another rule group with the VPC and failed due to the limit. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DnsRuleGroupLimitExceededViolation  {
+pub struct DnsRuleGroupLimitExceededViolation {
     /// <p>Information about the VPC ID. </p>
     #[doc(hidden)]
     pub violation_target: std::option::Option<std::string::String>,
@@ -16,11 +16,11 @@ pub struct DnsRuleGroupLimitExceededViolation  {
 }
 impl DnsRuleGroupLimitExceededViolation {
     /// <p>Information about the VPC ID. </p>
-    pub fn violation_target(&self) -> std::option::Option<& str> {
+    pub fn violation_target(&self) -> std::option::Option<&str> {
         self.violation_target.as_deref()
     }
     /// <p>A description of the violation that specifies the rule group and VPC.</p>
-    pub fn violation_target_description(&self) -> std::option::Option<& str> {
+    pub fn violation_target_description(&self) -> std::option::Option<&str> {
         self.violation_target_description.as_deref()
     }
     /// <p>The number of rule groups currently associated with the VPC. </p>
@@ -51,7 +51,8 @@ impl DnsRuleGroupLimitExceededViolationBuilder {
     }
     /// <p>Information about the VPC ID. </p>
     pub fn set_violation_target(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.violation_target = input; self
+        self.violation_target = input;
+        self
     }
     /// <p>A description of the violation that specifies the rule group and VPC.</p>
     pub fn violation_target_description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -59,8 +60,12 @@ impl DnsRuleGroupLimitExceededViolationBuilder {
         self
     }
     /// <p>A description of the violation that specifies the rule group and VPC.</p>
-    pub fn set_violation_target_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.violation_target_description = input; self
+    pub fn set_violation_target_description(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.violation_target_description = input;
+        self
     }
     /// <p>The number of rule groups currently associated with the VPC. </p>
     pub fn number_of_rule_groups_already_associated(mut self, input: i32) -> Self {
@@ -68,20 +73,21 @@ impl DnsRuleGroupLimitExceededViolationBuilder {
         self
     }
     /// <p>The number of rule groups currently associated with the VPC. </p>
-    pub fn set_number_of_rule_groups_already_associated(mut self, input: std::option::Option<i32>) -> Self {
-        self.number_of_rule_groups_already_associated = input; self
+    pub fn set_number_of_rule_groups_already_associated(
+        mut self,
+        input: std::option::Option<i32>,
+    ) -> Self {
+        self.number_of_rule_groups_already_associated = input;
+        self
     }
     /// Consumes the builder and constructs a [`DnsRuleGroupLimitExceededViolation`](crate::types::DnsRuleGroupLimitExceededViolation).
     pub fn build(self) -> crate::types::DnsRuleGroupLimitExceededViolation {
         crate::types::DnsRuleGroupLimitExceededViolation {
-            violation_target: self.violation_target
-            ,
-            violation_target_description: self.violation_target_description
-            ,
-            number_of_rule_groups_already_associated: self.number_of_rule_groups_already_associated
-                .unwrap_or_default()
-            ,
+            violation_target: self.violation_target,
+            violation_target_description: self.violation_target_description,
+            number_of_rule_groups_already_associated: self
+                .number_of_rule_groups_already_associated
+                .unwrap_or_default(),
         }
     }
 }
-

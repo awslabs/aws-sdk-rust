@@ -3,7 +3,7 @@
 /// <p>Object for a group of fields and associated properties.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct FieldGroup  {
+pub struct FieldGroup {
     /// <p>Name of the field group.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -13,11 +13,11 @@ pub struct FieldGroup  {
 }
 impl FieldGroup {
     /// <p>Name of the field group.</p>
-    pub fn name(&self) -> std::option::Option<& str> {
+    pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>Represents an ordered list containing field related information.</p>
-    pub fn fields(&self) -> std::option::Option<& [crate::types::FieldItem]> {
+    pub fn fields(&self) -> std::option::Option<&[crate::types::FieldItem]> {
         self.fields.as_deref()
     }
 }
@@ -43,7 +43,8 @@ impl FieldGroupBuilder {
     }
     /// <p>Name of the field group.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input; self
+        self.name = input;
+        self
     }
     /// Appends an item to `fields`.
     ///
@@ -52,22 +53,23 @@ impl FieldGroupBuilder {
     /// <p>Represents an ordered list containing field related information.</p>
     pub fn fields(mut self, input: crate::types::FieldItem) -> Self {
         let mut v = self.fields.unwrap_or_default();
-                        v.push(input);
-                        self.fields = Some(v);
-                        self
+        v.push(input);
+        self.fields = Some(v);
+        self
     }
     /// <p>Represents an ordered list containing field related information.</p>
-    pub fn set_fields(mut self, input: std::option::Option<std::vec::Vec<crate::types::FieldItem>>) -> Self {
-        self.fields = input; self
+    pub fn set_fields(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::FieldItem>>,
+    ) -> Self {
+        self.fields = input;
+        self
     }
     /// Consumes the builder and constructs a [`FieldGroup`](crate::types::FieldGroup).
     pub fn build(self) -> crate::types::FieldGroup {
         crate::types::FieldGroup {
-            name: self.name
-            ,
-            fields: self.fields
-            ,
+            name: self.name,
+            fields: self.fields,
         }
     }
 }
-

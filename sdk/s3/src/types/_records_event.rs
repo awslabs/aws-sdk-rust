@@ -3,14 +3,14 @@
 /// <p>The container for the records event.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct RecordsEvent  {
+pub struct RecordsEvent {
     /// <p>The byte array of partial, one or more result records.</p>
     #[doc(hidden)]
     pub payload: std::option::Option<aws_smithy_types::Blob>,
 }
 impl RecordsEvent {
     /// <p>The byte array of partial, one or more result records.</p>
-    pub fn payload(&self) -> std::option::Option<& aws_smithy_types::Blob> {
+    pub fn payload(&self) -> std::option::Option<&aws_smithy_types::Blob> {
         self.payload.as_ref()
     }
 }
@@ -35,14 +35,13 @@ impl RecordsEventBuilder {
     }
     /// <p>The byte array of partial, one or more result records.</p>
     pub fn set_payload(mut self, input: std::option::Option<aws_smithy_types::Blob>) -> Self {
-        self.payload = input; self
+        self.payload = input;
+        self
     }
     /// Consumes the builder and constructs a [`RecordsEvent`](crate::types::RecordsEvent).
     pub fn build(self) -> crate::types::RecordsEvent {
         crate::types::RecordsEvent {
-            payload: self.payload
-            ,
+            payload: self.payload,
         }
     }
 }
-

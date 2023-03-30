@@ -4,56 +4,81 @@ pub use crate::operation::update_profile_job::_update_profile_job_output::Update
 pub use crate::operation::update_profile_job::_update_profile_job_input::UpdateProfileJobInputBuilder;
 
 /// Fluent builder constructing a request to `UpdateProfileJob`.
-/// 
+///
 /// <p>Modifies the definition of an existing profile job.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct UpdateProfileJobFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::update_profile_job::builders::UpdateProfileJobInputBuilder
-            }
-impl UpdateProfileJobFluentBuilder  {
+    handle: std::sync::Arc<crate::client::Handle>,
+    inner: crate::operation::update_profile_job::builders::UpdateProfileJobInputBuilder,
+}
+impl UpdateProfileJobFluentBuilder {
     /// Creates a new `UpdateProfileJob`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
-                    /// sent. The operation's inner [http::Request] can be modified as well.
-                    pub async fn customize(self) -> std::result::Result<
-                        crate::client::customize::CustomizableOperation<crate::operation::update_profile_job::UpdateProfileJob, aws_http::retry::AwsResponseRetryClassifier,>,
-                        aws_smithy_http::result::SdkError<crate::operation::update_profile_job::UpdateProfileJobError>
-                    >  {
-                        let handle = self.handle.clone();
-                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-                    }
-    
-                    /// Sends the request and returns the response.
-                    ///
-                    /// If an error occurs, an `SdkError` will be returned with additional details that
-                    /// can be matched against.
-                    ///
-                    /// By default, any retryable failures will be retried twice. Retry behavior
-                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                    /// set when configuring the client.
-                    pub async fn send(self) -> std::result::Result<crate::operation::update_profile_job::UpdateProfileJobOutput, aws_smithy_http::result::SdkError<crate::operation::update_profile_job::UpdateProfileJobError>>
-                     {
-                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&self.handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        self.handle.client.call(op).await
-                    }
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle,
+            inner: Default::default(),
+        }
+    }
+
+    /// Consume this builder, creating a customizable operation that can be modified before being
+    /// sent. The operation's inner [http::Request] can be modified as well.
+    pub async fn customize(
+        self,
+    ) -> std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::update_profile_job::UpdateProfileJob,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::result::SdkError<
+            crate::operation::update_profile_job::UpdateProfileJobError,
+        >,
+    > {
+        let handle = self.handle.clone();
+        let operation = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+    }
+
+    /// Sends the request and returns the response.
+    ///
+    /// If an error occurs, an `SdkError` will be returned with additional details that
+    /// can be matched against.
+    ///
+    /// By default, any retryable failures will be retried twice. Retry behavior
+    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+    /// set when configuring the client.
+    pub async fn send(
+        self,
+    ) -> std::result::Result<
+        crate::operation::update_profile_job::UpdateProfileJobOutput,
+        aws_smithy_http::result::SdkError<
+            crate::operation::update_profile_job::UpdateProfileJobError,
+        >,
+    > {
+        let op = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&self.handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        self.handle.client.call(op).await
+    }
     /// <p>Configuration for profile jobs. Used to select columns, do evaluations, and override default parameters of evaluations. When configuration is null, the profile job will run with default settings.</p>
     pub fn configuration(mut self, input: crate::types::ProfileConfiguration) -> Self {
         self.inner = self.inner.configuration(input);
         self
     }
     /// <p>Configuration for profile jobs. Used to select columns, do evaluations, and override default parameters of evaluations. When configuration is null, the profile job will run with default settings.</p>
-    pub fn set_configuration(mut self, input: std::option::Option<crate::types::ProfileConfiguration>) -> Self {
+    pub fn set_configuration(
+        mut self,
+        input: std::option::Option<crate::types::ProfileConfiguration>,
+    ) -> Self {
         self.inner = self.inner.set_configuration(input);
         self
     }
@@ -63,25 +88,31 @@ impl UpdateProfileJobFluentBuilder  {
         self
     }
     /// <p>The Amazon Resource Name (ARN) of an encryption key that is used to protect the job.</p>
-    pub fn set_encryption_key_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_encryption_key_arn(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_encryption_key_arn(input);
         self
     }
-    /// <p>The encryption mode for the job, which can be one of the following:</p> 
-    /// <ul> 
-    /// <li> <p> <code>SSE-KMS</code> - Server-side encryption with keys managed by KMS.</p> </li> 
-    /// <li> <p> <code>SSE-S3</code> - Server-side encryption with keys managed by Amazon S3.</p> </li> 
+    /// <p>The encryption mode for the job, which can be one of the following:</p>
+    /// <ul>
+    /// <li> <p> <code>SSE-KMS</code> - Server-side encryption with keys managed by KMS.</p> </li>
+    /// <li> <p> <code>SSE-S3</code> - Server-side encryption with keys managed by Amazon S3.</p> </li>
     /// </ul>
     pub fn encryption_mode(mut self, input: crate::types::EncryptionMode) -> Self {
         self.inner = self.inner.encryption_mode(input);
         self
     }
-    /// <p>The encryption mode for the job, which can be one of the following:</p> 
-    /// <ul> 
-    /// <li> <p> <code>SSE-KMS</code> - Server-side encryption with keys managed by KMS.</p> </li> 
-    /// <li> <p> <code>SSE-S3</code> - Server-side encryption with keys managed by Amazon S3.</p> </li> 
+    /// <p>The encryption mode for the job, which can be one of the following:</p>
+    /// <ul>
+    /// <li> <p> <code>SSE-KMS</code> - Server-side encryption with keys managed by KMS.</p> </li>
+    /// <li> <p> <code>SSE-S3</code> - Server-side encryption with keys managed by Amazon S3.</p> </li>
     /// </ul>
-    pub fn set_encryption_mode(mut self, input: std::option::Option<crate::types::EncryptionMode>) -> Self {
+    pub fn set_encryption_mode(
+        mut self,
+        input: std::option::Option<crate::types::EncryptionMode>,
+    ) -> Self {
         self.inner = self.inner.set_encryption_mode(input);
         self
     }
@@ -101,7 +132,10 @@ impl UpdateProfileJobFluentBuilder  {
         self
     }
     /// <p>Enables or disables Amazon CloudWatch logging for the job. If logging is enabled, CloudWatch writes one log stream for each job run.</p>
-    pub fn set_log_subscription(mut self, input: std::option::Option<crate::types::LogSubscription>) -> Self {
+    pub fn set_log_subscription(
+        mut self,
+        input: std::option::Option<crate::types::LogSubscription>,
+    ) -> Self {
         self.inner = self.inner.set_log_subscription(input);
         self
     }
@@ -131,7 +165,10 @@ impl UpdateProfileJobFluentBuilder  {
         self
     }
     /// <p>Represents an Amazon S3 location (bucket name, bucket owner, and object key) where DataBrew can read input data, or write output from a job.</p>
-    pub fn set_output_location(mut self, input: std::option::Option<crate::types::S3Location>) -> Self {
+    pub fn set_output_location(
+        mut self,
+        input: std::option::Option<crate::types::S3Location>,
+    ) -> Self {
         self.inner = self.inner.set_output_location(input);
         self
     }
@@ -140,12 +177,18 @@ impl UpdateProfileJobFluentBuilder  {
     /// To override the contents of this collection use [`set_validation_configurations`](Self::set_validation_configurations).
     ///
     /// <p>List of validation configurations that are applied to the profile job.</p>
-    pub fn validation_configurations(mut self, input: crate::types::ValidationConfiguration) -> Self {
+    pub fn validation_configurations(
+        mut self,
+        input: crate::types::ValidationConfiguration,
+    ) -> Self {
         self.inner = self.inner.validation_configurations(input);
         self
     }
     /// <p>List of validation configurations that are applied to the profile job.</p>
-    pub fn set_validation_configurations(mut self, input: std::option::Option<std::vec::Vec<crate::types::ValidationConfiguration>>) -> Self {
+    pub fn set_validation_configurations(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::ValidationConfiguration>>,
+    ) -> Self {
         self.inner = self.inner.set_validation_configurations(input);
         self
     }
@@ -180,4 +223,3 @@ impl UpdateProfileJobFluentBuilder  {
         self
     }
 }
-

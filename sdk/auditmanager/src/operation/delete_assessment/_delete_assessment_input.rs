@@ -2,20 +2,21 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteAssessmentInput  {
+pub struct DeleteAssessmentInput {
     /// <p> The identifier for the assessment. </p>
     #[doc(hidden)]
     pub assessment_id: std::option::Option<std::string::String>,
 }
 impl DeleteAssessmentInput {
     /// <p> The identifier for the assessment. </p>
-    pub fn assessment_id(&self) -> std::option::Option<& str> {
+    pub fn assessment_id(&self) -> std::option::Option<&str> {
         self.assessment_id.as_deref()
     }
 }
 impl DeleteAssessmentInput {
     /// Creates a new builder-style object to manufacture [`DeleteAssessmentInput`](crate::operation::delete_assessment::DeleteAssessmentInput).
-    pub fn builder() -> crate::operation::delete_assessment::builders::DeleteAssessmentInputBuilder {
+    pub fn builder() -> crate::operation::delete_assessment::builders::DeleteAssessmentInputBuilder
+    {
         crate::operation::delete_assessment::builders::DeleteAssessmentInputBuilder::default()
     }
 }
@@ -34,16 +35,18 @@ impl DeleteAssessmentInputBuilder {
     }
     /// <p> The identifier for the assessment. </p>
     pub fn set_assessment_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.assessment_id = input; self
+        self.assessment_id = input;
+        self
     }
     /// Consumes the builder and constructs a [`DeleteAssessmentInput`](crate::operation::delete_assessment::DeleteAssessmentInput).
-    pub fn build(self) -> Result<crate::operation::delete_assessment::DeleteAssessmentInput, aws_smithy_http::operation::error::BuildError> {
-        Ok(
-            crate::operation::delete_assessment::DeleteAssessmentInput {
-                assessment_id: self.assessment_id
-                ,
-            }
-        )
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::delete_assessment::DeleteAssessmentInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        Ok(crate::operation::delete_assessment::DeleteAssessmentInput {
+            assessment_id: self.assessment_id,
+        })
     }
 }
-

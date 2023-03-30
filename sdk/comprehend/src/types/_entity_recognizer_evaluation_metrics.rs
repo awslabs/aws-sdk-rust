@@ -3,7 +3,7 @@
 /// <p>Detailed information about the accuracy of an entity recognizer. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct EntityRecognizerEvaluationMetrics  {
+pub struct EntityRecognizerEvaluationMetrics {
     /// <p>A measure of the usefulness of the recognizer results in the test data. High precision means that the recognizer returned substantially more relevant results than irrelevant ones. </p>
     #[doc(hidden)]
     pub precision: std::option::Option<f64>,
@@ -51,7 +51,8 @@ impl EntityRecognizerEvaluationMetricsBuilder {
     }
     /// <p>A measure of the usefulness of the recognizer results in the test data. High precision means that the recognizer returned substantially more relevant results than irrelevant ones. </p>
     pub fn set_precision(mut self, input: std::option::Option<f64>) -> Self {
-        self.precision = input; self
+        self.precision = input;
+        self
     }
     /// <p>A measure of how complete the recognizer results are for the test data. High recall means that the recognizer returned most of the relevant results.</p>
     pub fn recall(mut self, input: f64) -> Self {
@@ -60,7 +61,8 @@ impl EntityRecognizerEvaluationMetricsBuilder {
     }
     /// <p>A measure of how complete the recognizer results are for the test data. High recall means that the recognizer returned most of the relevant results.</p>
     pub fn set_recall(mut self, input: std::option::Option<f64>) -> Self {
-        self.recall = input; self
+        self.recall = input;
+        self
     }
     /// <p>A measure of how accurate the recognizer results are for the test data. It is derived from the <code>Precision</code> and <code>Recall</code> values. The <code>F1Score</code> is the harmonic average of the two scores. For plain text entity recognizer models, the range is 0 to 100, where 100 is the best score. For PDF/Word entity recognizer models, the range is 0 to 1, where 1 is the best score. </p>
     pub fn f1_score(mut self, input: f64) -> Self {
@@ -69,18 +71,15 @@ impl EntityRecognizerEvaluationMetricsBuilder {
     }
     /// <p>A measure of how accurate the recognizer results are for the test data. It is derived from the <code>Precision</code> and <code>Recall</code> values. The <code>F1Score</code> is the harmonic average of the two scores. For plain text entity recognizer models, the range is 0 to 100, where 100 is the best score. For PDF/Word entity recognizer models, the range is 0 to 1, where 1 is the best score. </p>
     pub fn set_f1_score(mut self, input: std::option::Option<f64>) -> Self {
-        self.f1_score = input; self
+        self.f1_score = input;
+        self
     }
     /// Consumes the builder and constructs a [`EntityRecognizerEvaluationMetrics`](crate::types::EntityRecognizerEvaluationMetrics).
     pub fn build(self) -> crate::types::EntityRecognizerEvaluationMetrics {
         crate::types::EntityRecognizerEvaluationMetrics {
-            precision: self.precision
-            ,
-            recall: self.recall
-            ,
-            f1_score: self.f1_score
-            ,
+            precision: self.precision,
+            recall: self.recall,
+            f1_score: self.f1_score,
         }
     }
 }
-

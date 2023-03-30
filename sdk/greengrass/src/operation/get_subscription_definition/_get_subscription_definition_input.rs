@@ -2,20 +2,20 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetSubscriptionDefinitionInput  {
+pub struct GetSubscriptionDefinitionInput {
     /// The ID of the subscription definition.
     #[doc(hidden)]
     pub subscription_definition_id: std::option::Option<std::string::String>,
 }
 impl GetSubscriptionDefinitionInput {
     /// The ID of the subscription definition.
-    pub fn subscription_definition_id(&self) -> std::option::Option<& str> {
+    pub fn subscription_definition_id(&self) -> std::option::Option<&str> {
         self.subscription_definition_id.as_deref()
     }
 }
 impl GetSubscriptionDefinitionInput {
     /// Creates a new builder-style object to manufacture [`GetSubscriptionDefinitionInput`](crate::operation::get_subscription_definition::GetSubscriptionDefinitionInput).
-    pub fn builder() -> crate::operation::get_subscription_definition::builders::GetSubscriptionDefinitionInputBuilder {
+    pub fn builder() -> crate::operation::get_subscription_definition::builders::GetSubscriptionDefinitionInputBuilder{
         crate::operation::get_subscription_definition::builders::GetSubscriptionDefinitionInputBuilder::default()
     }
 }
@@ -33,17 +33,24 @@ impl GetSubscriptionDefinitionInputBuilder {
         self
     }
     /// The ID of the subscription definition.
-    pub fn set_subscription_definition_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.subscription_definition_id = input; self
+    pub fn set_subscription_definition_id(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.subscription_definition_id = input;
+        self
     }
     /// Consumes the builder and constructs a [`GetSubscriptionDefinitionInput`](crate::operation::get_subscription_definition::GetSubscriptionDefinitionInput).
-    pub fn build(self) -> Result<crate::operation::get_subscription_definition::GetSubscriptionDefinitionInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::get_subscription_definition::GetSubscriptionDefinitionInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::get_subscription_definition::GetSubscriptionDefinitionInput {
-                subscription_definition_id: self.subscription_definition_id
-                ,
-            }
+                subscription_definition_id: self.subscription_definition_id,
+            },
         )
     }
 }
-

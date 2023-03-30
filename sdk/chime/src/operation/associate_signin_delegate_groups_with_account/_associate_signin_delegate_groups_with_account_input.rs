@@ -2,27 +2,30 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AssociateSigninDelegateGroupsWithAccountInput  {
+pub struct AssociateSigninDelegateGroupsWithAccountInput {
     /// <p>The Amazon Chime account ID.</p>
     #[doc(hidden)]
     pub account_id: std::option::Option<std::string::String>,
     /// <p>The sign-in delegate groups.</p>
     #[doc(hidden)]
-    pub signin_delegate_groups: std::option::Option<std::vec::Vec<crate::types::SigninDelegateGroup>>,
+    pub signin_delegate_groups:
+        std::option::Option<std::vec::Vec<crate::types::SigninDelegateGroup>>,
 }
 impl AssociateSigninDelegateGroupsWithAccountInput {
     /// <p>The Amazon Chime account ID.</p>
-    pub fn account_id(&self) -> std::option::Option<& str> {
+    pub fn account_id(&self) -> std::option::Option<&str> {
         self.account_id.as_deref()
     }
     /// <p>The sign-in delegate groups.</p>
-    pub fn signin_delegate_groups(&self) -> std::option::Option<& [crate::types::SigninDelegateGroup]> {
+    pub fn signin_delegate_groups(
+        &self,
+    ) -> std::option::Option<&[crate::types::SigninDelegateGroup]> {
         self.signin_delegate_groups.as_deref()
     }
 }
 impl AssociateSigninDelegateGroupsWithAccountInput {
     /// Creates a new builder-style object to manufacture [`AssociateSigninDelegateGroupsWithAccountInput`](crate::operation::associate_signin_delegate_groups_with_account::AssociateSigninDelegateGroupsWithAccountInput).
-    pub fn builder() -> crate::operation::associate_signin_delegate_groups_with_account::builders::AssociateSigninDelegateGroupsWithAccountInputBuilder {
+    pub fn builder() -> crate::operation::associate_signin_delegate_groups_with_account::builders::AssociateSigninDelegateGroupsWithAccountInputBuilder{
         crate::operation::associate_signin_delegate_groups_with_account::builders::AssociateSigninDelegateGroupsWithAccountInputBuilder::default()
     }
 }
@@ -32,7 +35,8 @@ impl AssociateSigninDelegateGroupsWithAccountInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct AssociateSigninDelegateGroupsWithAccountInputBuilder {
     pub(crate) account_id: std::option::Option<std::string::String>,
-    pub(crate) signin_delegate_groups: std::option::Option<std::vec::Vec<crate::types::SigninDelegateGroup>>,
+    pub(crate) signin_delegate_groups:
+        std::option::Option<std::vec::Vec<crate::types::SigninDelegateGroup>>,
 }
 impl AssociateSigninDelegateGroupsWithAccountInputBuilder {
     /// <p>The Amazon Chime account ID.</p>
@@ -42,7 +46,8 @@ impl AssociateSigninDelegateGroupsWithAccountInputBuilder {
     }
     /// <p>The Amazon Chime account ID.</p>
     pub fn set_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.account_id = input; self
+        self.account_id = input;
+        self
     }
     /// Appends an item to `signin_delegate_groups`.
     ///
@@ -51,16 +56,20 @@ impl AssociateSigninDelegateGroupsWithAccountInputBuilder {
     /// <p>The sign-in delegate groups.</p>
     pub fn signin_delegate_groups(mut self, input: crate::types::SigninDelegateGroup) -> Self {
         let mut v = self.signin_delegate_groups.unwrap_or_default();
-                        v.push(input);
-                        self.signin_delegate_groups = Some(v);
-                        self
+        v.push(input);
+        self.signin_delegate_groups = Some(v);
+        self
     }
     /// <p>The sign-in delegate groups.</p>
-    pub fn set_signin_delegate_groups(mut self, input: std::option::Option<std::vec::Vec<crate::types::SigninDelegateGroup>>) -> Self {
-        self.signin_delegate_groups = input; self
+    pub fn set_signin_delegate_groups(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::SigninDelegateGroup>>,
+    ) -> Self {
+        self.signin_delegate_groups = input;
+        self
     }
     /// Consumes the builder and constructs a [`AssociateSigninDelegateGroupsWithAccountInput`](crate::operation::associate_signin_delegate_groups_with_account::AssociateSigninDelegateGroupsWithAccountInput).
-    pub fn build(self) -> Result<crate::operation::associate_signin_delegate_groups_with_account::AssociateSigninDelegateGroupsWithAccountInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> Result<crate::operation::associate_signin_delegate_groups_with_account::AssociateSigninDelegateGroupsWithAccountInput, aws_smithy_http::operation::error::BuildError>{
         Ok(
             crate::operation::associate_signin_delegate_groups_with_account::AssociateSigninDelegateGroupsWithAccountInput {
                 account_id: self.account_id
@@ -71,4 +80,3 @@ impl AssociateSigninDelegateGroupsWithAccountInputBuilder {
         )
     }
 }
-

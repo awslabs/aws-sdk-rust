@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CancelServiceInstanceDeploymentInput  {
+pub struct CancelServiceInstanceDeploymentInput {
     /// <p>The name of the service instance with the deployment to cancel.</p>
     #[doc(hidden)]
     pub service_instance_name: std::option::Option<std::string::String>,
@@ -12,17 +12,17 @@ pub struct CancelServiceInstanceDeploymentInput  {
 }
 impl CancelServiceInstanceDeploymentInput {
     /// <p>The name of the service instance with the deployment to cancel.</p>
-    pub fn service_instance_name(&self) -> std::option::Option<& str> {
+    pub fn service_instance_name(&self) -> std::option::Option<&str> {
         self.service_instance_name.as_deref()
     }
     /// <p>The name of the service with the service instance deployment to cancel.</p>
-    pub fn service_name(&self) -> std::option::Option<& str> {
+    pub fn service_name(&self) -> std::option::Option<&str> {
         self.service_name.as_deref()
     }
 }
 impl CancelServiceInstanceDeploymentInput {
     /// Creates a new builder-style object to manufacture [`CancelServiceInstanceDeploymentInput`](crate::operation::cancel_service_instance_deployment::CancelServiceInstanceDeploymentInput).
-    pub fn builder() -> crate::operation::cancel_service_instance_deployment::builders::CancelServiceInstanceDeploymentInputBuilder {
+    pub fn builder() -> crate::operation::cancel_service_instance_deployment::builders::CancelServiceInstanceDeploymentInputBuilder{
         crate::operation::cancel_service_instance_deployment::builders::CancelServiceInstanceDeploymentInputBuilder::default()
     }
 }
@@ -41,8 +41,12 @@ impl CancelServiceInstanceDeploymentInputBuilder {
         self
     }
     /// <p>The name of the service instance with the deployment to cancel.</p>
-    pub fn set_service_instance_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.service_instance_name = input; self
+    pub fn set_service_instance_name(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.service_instance_name = input;
+        self
     }
     /// <p>The name of the service with the service instance deployment to cancel.</p>
     pub fn service_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -51,10 +55,16 @@ impl CancelServiceInstanceDeploymentInputBuilder {
     }
     /// <p>The name of the service with the service instance deployment to cancel.</p>
     pub fn set_service_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.service_name = input; self
+        self.service_name = input;
+        self
     }
     /// Consumes the builder and constructs a [`CancelServiceInstanceDeploymentInput`](crate::operation::cancel_service_instance_deployment::CancelServiceInstanceDeploymentInput).
-    pub fn build(self) -> Result<crate::operation::cancel_service_instance_deployment::CancelServiceInstanceDeploymentInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::cancel_service_instance_deployment::CancelServiceInstanceDeploymentInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::cancel_service_instance_deployment::CancelServiceInstanceDeploymentInput {
                 service_instance_name: self.service_instance_name
@@ -65,4 +75,3 @@ impl CancelServiceInstanceDeploymentInputBuilder {
         )
     }
 }
-

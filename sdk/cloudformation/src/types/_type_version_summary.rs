@@ -3,7 +3,7 @@
 /// <p>Contains summary information about a specific version of a CloudFormation extension.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct TypeVersionSummary  {
+pub struct TypeVersionSummary {
     /// <p>The kind of extension.</p>
     #[doc(hidden)]
     pub r#type: std::option::Option<crate::types::RegistryType>,
@@ -13,7 +13,7 @@ pub struct TypeVersionSummary  {
     /// <p>The ID of a specific version of the extension. The version ID is the value at the end of the Amazon Resource Name (ARN) assigned to the extension version when it's registered.</p>
     #[doc(hidden)]
     pub version_id: std::option::Option<std::string::String>,
-    /// <p>Whether the specified extension version is set as the default version.</p> 
+    /// <p>Whether the specified extension version is set as the default version.</p>
     /// <p>This applies only to private extensions you have registered in your account, and extensions published by Amazon. For public third-party extensions, CloudFormation returns <code>null</code>.</p>
     #[doc(hidden)]
     pub is_default_version: std::option::Option<bool>,
@@ -26,44 +26,44 @@ pub struct TypeVersionSummary  {
     /// <p>The description of the extension version.</p>
     #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
-    /// <p>For public extensions that have been activated for this account and region, the version of the public extension to be used for CloudFormation operations in this account and region. For any extensions other than activated third-arty extensions, CloudFormation returns <code>null</code>.</p> 
+    /// <p>For public extensions that have been activated for this account and region, the version of the public extension to be used for CloudFormation operations in this account and region. For any extensions other than activated third-arty extensions, CloudFormation returns <code>null</code>.</p>
     /// <p>How you specified <code>AutoUpdate</code> when enabling the extension affects whether CloudFormation automatically updates the extension in this account and region when a new version is released. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/registry-public.html#registry-public-enable-auto">Setting CloudFormation to automatically use new versions of extensions</a> in the <i>CloudFormation User Guide</i>.</p>
     #[doc(hidden)]
     pub public_version_number: std::option::Option<std::string::String>,
 }
 impl TypeVersionSummary {
     /// <p>The kind of extension.</p>
-    pub fn r#type(&self) -> std::option::Option<& crate::types::RegistryType> {
+    pub fn r#type(&self) -> std::option::Option<&crate::types::RegistryType> {
         self.r#type.as_ref()
     }
     /// <p>The name of the extension.</p>
-    pub fn type_name(&self) -> std::option::Option<& str> {
+    pub fn type_name(&self) -> std::option::Option<&str> {
         self.type_name.as_deref()
     }
     /// <p>The ID of a specific version of the extension. The version ID is the value at the end of the Amazon Resource Name (ARN) assigned to the extension version when it's registered.</p>
-    pub fn version_id(&self) -> std::option::Option<& str> {
+    pub fn version_id(&self) -> std::option::Option<&str> {
         self.version_id.as_deref()
     }
-    /// <p>Whether the specified extension version is set as the default version.</p> 
+    /// <p>Whether the specified extension version is set as the default version.</p>
     /// <p>This applies only to private extensions you have registered in your account, and extensions published by Amazon. For public third-party extensions, CloudFormation returns <code>null</code>.</p>
     pub fn is_default_version(&self) -> std::option::Option<bool> {
         self.is_default_version
     }
     /// <p>The Amazon Resource Name (ARN) of the extension version.</p>
-    pub fn arn(&self) -> std::option::Option<& str> {
+    pub fn arn(&self) -> std::option::Option<&str> {
         self.arn.as_deref()
     }
     /// <p>When the version was registered.</p>
-    pub fn time_created(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
+    pub fn time_created(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.time_created.as_ref()
     }
     /// <p>The description of the extension version.</p>
-    pub fn description(&self) -> std::option::Option<& str> {
+    pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
-    /// <p>For public extensions that have been activated for this account and region, the version of the public extension to be used for CloudFormation operations in this account and region. For any extensions other than activated third-arty extensions, CloudFormation returns <code>null</code>.</p> 
+    /// <p>For public extensions that have been activated for this account and region, the version of the public extension to be used for CloudFormation operations in this account and region. For any extensions other than activated third-arty extensions, CloudFormation returns <code>null</code>.</p>
     /// <p>How you specified <code>AutoUpdate</code> when enabling the extension affects whether CloudFormation automatically updates the extension in this account and region when a new version is released. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/registry-public.html#registry-public-enable-auto">Setting CloudFormation to automatically use new versions of extensions</a> in the <i>CloudFormation User Guide</i>.</p>
-    pub fn public_version_number(&self) -> std::option::Option<& str> {
+    pub fn public_version_number(&self) -> std::option::Option<&str> {
         self.public_version_number.as_deref()
     }
 }
@@ -95,7 +95,8 @@ impl TypeVersionSummaryBuilder {
     }
     /// <p>The kind of extension.</p>
     pub fn set_type(mut self, input: std::option::Option<crate::types::RegistryType>) -> Self {
-        self.r#type = input; self
+        self.r#type = input;
+        self
     }
     /// <p>The name of the extension.</p>
     pub fn type_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -104,7 +105,8 @@ impl TypeVersionSummaryBuilder {
     }
     /// <p>The name of the extension.</p>
     pub fn set_type_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.type_name = input; self
+        self.type_name = input;
+        self
     }
     /// <p>The ID of a specific version of the extension. The version ID is the value at the end of the Amazon Resource Name (ARN) assigned to the extension version when it's registered.</p>
     pub fn version_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -113,18 +115,20 @@ impl TypeVersionSummaryBuilder {
     }
     /// <p>The ID of a specific version of the extension. The version ID is the value at the end of the Amazon Resource Name (ARN) assigned to the extension version when it's registered.</p>
     pub fn set_version_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.version_id = input; self
+        self.version_id = input;
+        self
     }
-    /// <p>Whether the specified extension version is set as the default version.</p> 
+    /// <p>Whether the specified extension version is set as the default version.</p>
     /// <p>This applies only to private extensions you have registered in your account, and extensions published by Amazon. For public third-party extensions, CloudFormation returns <code>null</code>.</p>
     pub fn is_default_version(mut self, input: bool) -> Self {
         self.is_default_version = Some(input);
         self
     }
-    /// <p>Whether the specified extension version is set as the default version.</p> 
+    /// <p>Whether the specified extension version is set as the default version.</p>
     /// <p>This applies only to private extensions you have registered in your account, and extensions published by Amazon. For public third-party extensions, CloudFormation returns <code>null</code>.</p>
     pub fn set_is_default_version(mut self, input: std::option::Option<bool>) -> Self {
-        self.is_default_version = input; self
+        self.is_default_version = input;
+        self
     }
     /// <p>The Amazon Resource Name (ARN) of the extension version.</p>
     pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -133,7 +137,8 @@ impl TypeVersionSummaryBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the extension version.</p>
     pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.arn = input; self
+        self.arn = input;
+        self
     }
     /// <p>When the version was registered.</p>
     pub fn time_created(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -141,8 +146,12 @@ impl TypeVersionSummaryBuilder {
         self
     }
     /// <p>When the version was registered.</p>
-    pub fn set_time_created(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.time_created = input; self
+    pub fn set_time_created(
+        mut self,
+        input: std::option::Option<aws_smithy_types::DateTime>,
+    ) -> Self {
+        self.time_created = input;
+        self
     }
     /// <p>The description of the extension version.</p>
     pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -151,39 +160,35 @@ impl TypeVersionSummaryBuilder {
     }
     /// <p>The description of the extension version.</p>
     pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.description = input; self
+        self.description = input;
+        self
     }
-    /// <p>For public extensions that have been activated for this account and region, the version of the public extension to be used for CloudFormation operations in this account and region. For any extensions other than activated third-arty extensions, CloudFormation returns <code>null</code>.</p> 
+    /// <p>For public extensions that have been activated for this account and region, the version of the public extension to be used for CloudFormation operations in this account and region. For any extensions other than activated third-arty extensions, CloudFormation returns <code>null</code>.</p>
     /// <p>How you specified <code>AutoUpdate</code> when enabling the extension affects whether CloudFormation automatically updates the extension in this account and region when a new version is released. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/registry-public.html#registry-public-enable-auto">Setting CloudFormation to automatically use new versions of extensions</a> in the <i>CloudFormation User Guide</i>.</p>
     pub fn public_version_number(mut self, input: impl Into<std::string::String>) -> Self {
         self.public_version_number = Some(input.into());
         self
     }
-    /// <p>For public extensions that have been activated for this account and region, the version of the public extension to be used for CloudFormation operations in this account and region. For any extensions other than activated third-arty extensions, CloudFormation returns <code>null</code>.</p> 
+    /// <p>For public extensions that have been activated for this account and region, the version of the public extension to be used for CloudFormation operations in this account and region. For any extensions other than activated third-arty extensions, CloudFormation returns <code>null</code>.</p>
     /// <p>How you specified <code>AutoUpdate</code> when enabling the extension affects whether CloudFormation automatically updates the extension in this account and region when a new version is released. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/registry-public.html#registry-public-enable-auto">Setting CloudFormation to automatically use new versions of extensions</a> in the <i>CloudFormation User Guide</i>.</p>
-    pub fn set_public_version_number(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.public_version_number = input; self
+    pub fn set_public_version_number(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.public_version_number = input;
+        self
     }
     /// Consumes the builder and constructs a [`TypeVersionSummary`](crate::types::TypeVersionSummary).
     pub fn build(self) -> crate::types::TypeVersionSummary {
         crate::types::TypeVersionSummary {
-            r#type: self.r#type
-            ,
-            type_name: self.type_name
-            ,
-            version_id: self.version_id
-            ,
-            is_default_version: self.is_default_version
-            ,
-            arn: self.arn
-            ,
-            time_created: self.time_created
-            ,
-            description: self.description
-            ,
-            public_version_number: self.public_version_number
-            ,
+            r#type: self.r#type,
+            type_name: self.type_name,
+            version_id: self.version_id,
+            is_default_version: self.is_default_version,
+            arn: self.arn,
+            time_created: self.time_created,
+            description: self.description,
+            public_version_number: self.public_version_number,
         }
     }
 }
-

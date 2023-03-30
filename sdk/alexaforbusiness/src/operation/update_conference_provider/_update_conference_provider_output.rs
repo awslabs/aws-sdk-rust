@@ -2,17 +2,19 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateConferenceProviderOutput  {
+pub struct UpdateConferenceProviderOutput {
     _request_id: Option<String>,
 }
 impl aws_http::request_id::RequestId for UpdateConferenceProviderOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl UpdateConferenceProviderOutput {
     /// Creates a new builder-style object to manufacture [`UpdateConferenceProviderOutput`](crate::operation::update_conference_provider::UpdateConferenceProviderOutput).
-    pub fn builder() -> crate::operation::update_conference_provider::builders::UpdateConferenceProviderOutputBuilder {
+    pub fn builder(
+    ) -> crate::operation::update_conference_provider::builders::UpdateConferenceProviderOutputBuilder
+    {
         crate::operation::update_conference_provider::builders::UpdateConferenceProviderOutputBuilder::default()
     }
 }
@@ -25,19 +27,20 @@ pub struct UpdateConferenceProviderOutputBuilder {
 }
 impl UpdateConferenceProviderOutputBuilder {
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`UpdateConferenceProviderOutput`](crate::operation::update_conference_provider::UpdateConferenceProviderOutput).
-    pub fn build(self) -> crate::operation::update_conference_provider::UpdateConferenceProviderOutput {
+    pub fn build(
+        self,
+    ) -> crate::operation::update_conference_provider::UpdateConferenceProviderOutput {
         crate::operation::update_conference_provider::UpdateConferenceProviderOutput {
             _request_id: self._request_id,
         }
     }
 }
-

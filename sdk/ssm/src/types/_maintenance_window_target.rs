@@ -3,7 +3,7 @@
 /// <p>The target registered with the maintenance window.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct MaintenanceWindowTarget  {
+pub struct MaintenanceWindowTarget {
     /// <p>The ID of the maintenance window to register the target with.</p>
     #[doc(hidden)]
     pub window_id: std::option::Option<std::string::String>,
@@ -13,14 +13,14 @@ pub struct MaintenanceWindowTarget  {
     /// <p>The type of target that is being registered with the maintenance window.</p>
     #[doc(hidden)]
     pub resource_type: std::option::Option<crate::types::MaintenanceWindowResourceType>,
-    /// <p>The targets, either managed nodes or tags.</p> 
-    /// <p>Specify managed nodes using the following format:</p> 
+    /// <p>The targets, either managed nodes or tags.</p>
+    /// <p>Specify managed nodes using the following format:</p>
     /// <p> <code>Key=instanceids,Values=
     /// <instanceid1>
     /// ,
     /// <instanceid2></instanceid2>
-    /// </instanceid1></code> </p> 
-    /// <p>Tags are specified using the following format:</p> 
+    /// </instanceid1></code> </p>
+    /// <p>Tags are specified using the following format:</p>
     /// <p> <code>Key=
     /// <tag name>
     /// ,Values=
@@ -40,47 +40,49 @@ pub struct MaintenanceWindowTarget  {
 }
 impl MaintenanceWindowTarget {
     /// <p>The ID of the maintenance window to register the target with.</p>
-    pub fn window_id(&self) -> std::option::Option<& str> {
+    pub fn window_id(&self) -> std::option::Option<&str> {
         self.window_id.as_deref()
     }
     /// <p>The ID of the target.</p>
-    pub fn window_target_id(&self) -> std::option::Option<& str> {
+    pub fn window_target_id(&self) -> std::option::Option<&str> {
         self.window_target_id.as_deref()
     }
     /// <p>The type of target that is being registered with the maintenance window.</p>
-    pub fn resource_type(&self) -> std::option::Option<& crate::types::MaintenanceWindowResourceType> {
+    pub fn resource_type(
+        &self,
+    ) -> std::option::Option<&crate::types::MaintenanceWindowResourceType> {
         self.resource_type.as_ref()
     }
-    /// <p>The targets, either managed nodes or tags.</p> 
-    /// <p>Specify managed nodes using the following format:</p> 
+    /// <p>The targets, either managed nodes or tags.</p>
+    /// <p>Specify managed nodes using the following format:</p>
     /// <p> <code>Key=instanceids,Values=
     /// <instanceid1>
     /// ,
     /// <instanceid2></instanceid2>
-    /// </instanceid1></code> </p> 
-    /// <p>Tags are specified using the following format:</p> 
+    /// </instanceid1></code> </p>
+    /// <p>Tags are specified using the following format:</p>
     /// <p> <code>Key=
     /// <tag name>
     /// ,Values=
     /// <tag value></tag>
     /// </tag></code>.</p>
-    pub fn targets(&self) -> std::option::Option<& [crate::types::Target]> {
+    pub fn targets(&self) -> std::option::Option<&[crate::types::Target]> {
         self.targets.as_deref()
     }
     /// <p>A user-provided value that will be included in any Amazon CloudWatch Events events that are raised while running tasks for these targets in this maintenance window.</p>
-    pub fn owner_information(&self) -> std::option::Option<& str> {
+    pub fn owner_information(&self) -> std::option::Option<&str> {
         self.owner_information.as_deref()
     }
     /// <p>The name for the maintenance window target.</p>
-    pub fn name(&self) -> std::option::Option<& str> {
+    pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>A description for the target.</p>
-    pub fn description(&self) -> std::option::Option<& str> {
+    pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
 }
-impl  std::fmt::Debug for MaintenanceWindowTarget  {
+impl std::fmt::Debug for MaintenanceWindowTarget {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("MaintenanceWindowTarget");
         formatter.field("window_id", &self.window_id);
@@ -120,7 +122,8 @@ impl MaintenanceWindowTargetBuilder {
     }
     /// <p>The ID of the maintenance window to register the target with.</p>
     pub fn set_window_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.window_id = input; self
+        self.window_id = input;
+        self
     }
     /// <p>The ID of the target.</p>
     pub fn window_target_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -129,7 +132,8 @@ impl MaintenanceWindowTargetBuilder {
     }
     /// <p>The ID of the target.</p>
     pub fn set_window_target_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.window_target_id = input; self
+        self.window_target_id = input;
+        self
     }
     /// <p>The type of target that is being registered with the maintenance window.</p>
     pub fn resource_type(mut self, input: crate::types::MaintenanceWindowResourceType) -> Self {
@@ -137,21 +141,25 @@ impl MaintenanceWindowTargetBuilder {
         self
     }
     /// <p>The type of target that is being registered with the maintenance window.</p>
-    pub fn set_resource_type(mut self, input: std::option::Option<crate::types::MaintenanceWindowResourceType>) -> Self {
-        self.resource_type = input; self
+    pub fn set_resource_type(
+        mut self,
+        input: std::option::Option<crate::types::MaintenanceWindowResourceType>,
+    ) -> Self {
+        self.resource_type = input;
+        self
     }
     /// Appends an item to `targets`.
     ///
     /// To override the contents of this collection use [`set_targets`](Self::set_targets).
     ///
-    /// <p>The targets, either managed nodes or tags.</p> 
-    /// <p>Specify managed nodes using the following format:</p> 
+    /// <p>The targets, either managed nodes or tags.</p>
+    /// <p>Specify managed nodes using the following format:</p>
     /// <p> <code>Key=instanceids,Values=
     /// <instanceid1>
     /// ,
     /// <instanceid2></instanceid2>
-    /// </instanceid1></code> </p> 
-    /// <p>Tags are specified using the following format:</p> 
+    /// </instanceid1></code> </p>
+    /// <p>Tags are specified using the following format:</p>
     /// <p> <code>Key=
     /// <tag name>
     /// ,Values=
@@ -159,25 +167,29 @@ impl MaintenanceWindowTargetBuilder {
     /// </tag></code>.</p>
     pub fn targets(mut self, input: crate::types::Target) -> Self {
         let mut v = self.targets.unwrap_or_default();
-                        v.push(input);
-                        self.targets = Some(v);
-                        self
+        v.push(input);
+        self.targets = Some(v);
+        self
     }
-    /// <p>The targets, either managed nodes or tags.</p> 
-    /// <p>Specify managed nodes using the following format:</p> 
+    /// <p>The targets, either managed nodes or tags.</p>
+    /// <p>Specify managed nodes using the following format:</p>
     /// <p> <code>Key=instanceids,Values=
     /// <instanceid1>
     /// ,
     /// <instanceid2></instanceid2>
-    /// </instanceid1></code> </p> 
-    /// <p>Tags are specified using the following format:</p> 
+    /// </instanceid1></code> </p>
+    /// <p>Tags are specified using the following format:</p>
     /// <p> <code>Key=
     /// <tag name>
     /// ,Values=
     /// <tag value></tag>
     /// </tag></code>.</p>
-    pub fn set_targets(mut self, input: std::option::Option<std::vec::Vec<crate::types::Target>>) -> Self {
-        self.targets = input; self
+    pub fn set_targets(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::Target>>,
+    ) -> Self {
+        self.targets = input;
+        self
     }
     /// <p>A user-provided value that will be included in any Amazon CloudWatch Events events that are raised while running tasks for these targets in this maintenance window.</p>
     pub fn owner_information(mut self, input: impl Into<std::string::String>) -> Self {
@@ -185,8 +197,12 @@ impl MaintenanceWindowTargetBuilder {
         self
     }
     /// <p>A user-provided value that will be included in any Amazon CloudWatch Events events that are raised while running tasks for these targets in this maintenance window.</p>
-    pub fn set_owner_information(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.owner_information = input; self
+    pub fn set_owner_information(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.owner_information = input;
+        self
     }
     /// <p>The name for the maintenance window target.</p>
     pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -195,7 +211,8 @@ impl MaintenanceWindowTargetBuilder {
     }
     /// <p>The name for the maintenance window target.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input; self
+        self.name = input;
+        self
     }
     /// <p>A description for the target.</p>
     pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -204,25 +221,19 @@ impl MaintenanceWindowTargetBuilder {
     }
     /// <p>A description for the target.</p>
     pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.description = input; self
+        self.description = input;
+        self
     }
     /// Consumes the builder and constructs a [`MaintenanceWindowTarget`](crate::types::MaintenanceWindowTarget).
     pub fn build(self) -> crate::types::MaintenanceWindowTarget {
         crate::types::MaintenanceWindowTarget {
-            window_id: self.window_id
-            ,
-            window_target_id: self.window_target_id
-            ,
-            resource_type: self.resource_type
-            ,
-            targets: self.targets
-            ,
-            owner_information: self.owner_information
-            ,
-            name: self.name
-            ,
-            description: self.description
-            ,
+            window_id: self.window_id,
+            window_target_id: self.window_target_id,
+            resource_type: self.resource_type,
+            targets: self.targets,
+            owner_information: self.owner_information,
+            name: self.name,
+            description: self.description,
         }
     }
 }
@@ -239,4 +250,3 @@ impl std::fmt::Debug for MaintenanceWindowTargetBuilder {
         formatter.finish()
     }
 }
-

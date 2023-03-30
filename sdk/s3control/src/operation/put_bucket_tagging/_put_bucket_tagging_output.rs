@@ -2,17 +2,18 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PutBucketTaggingOutput  {
+pub struct PutBucketTaggingOutput {
     _request_id: Option<String>,
 }
 impl aws_http::request_id::RequestId for PutBucketTaggingOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl PutBucketTaggingOutput {
     /// Creates a new builder-style object to manufacture [`PutBucketTaggingOutput`](crate::operation::put_bucket_tagging::PutBucketTaggingOutput).
-    pub fn builder() -> crate::operation::put_bucket_tagging::builders::PutBucketTaggingOutputBuilder {
+    pub fn builder() -> crate::operation::put_bucket_tagging::builders::PutBucketTaggingOutputBuilder
+    {
         crate::operation::put_bucket_tagging::builders::PutBucketTaggingOutputBuilder::default()
     }
 }
@@ -25,14 +26,14 @@ pub struct PutBucketTaggingOutputBuilder {
 }
 impl PutBucketTaggingOutputBuilder {
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`PutBucketTaggingOutput`](crate::operation::put_bucket_tagging::PutBucketTaggingOutput).
     pub fn build(self) -> crate::operation::put_bucket_tagging::PutBucketTaggingOutput {
         crate::operation::put_bucket_tagging::PutBucketTaggingOutput {
@@ -40,4 +41,3 @@ impl PutBucketTaggingOutputBuilder {
         }
     }
 }
-

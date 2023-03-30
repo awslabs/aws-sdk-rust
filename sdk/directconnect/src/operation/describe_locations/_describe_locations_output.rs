@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeLocationsOutput  {
+pub struct DescribeLocationsOutput {
     /// <p>The locations.</p>
     #[doc(hidden)]
     pub locations: std::option::Option<std::vec::Vec<crate::types::Location>>,
@@ -10,18 +10,19 @@ pub struct DescribeLocationsOutput  {
 }
 impl DescribeLocationsOutput {
     /// <p>The locations.</p>
-    pub fn locations(&self) -> std::option::Option<& [crate::types::Location]> {
+    pub fn locations(&self) -> std::option::Option<&[crate::types::Location]> {
         self.locations.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for DescribeLocationsOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl DescribeLocationsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeLocationsOutput`](crate::operation::describe_locations::DescribeLocationsOutput).
-    pub fn builder() -> crate::operation::describe_locations::builders::DescribeLocationsOutputBuilder {
+    pub fn builder(
+    ) -> crate::operation::describe_locations::builders::DescribeLocationsOutputBuilder {
         crate::operation::describe_locations::builders::DescribeLocationsOutputBuilder::default()
     }
 }
@@ -41,30 +42,32 @@ impl DescribeLocationsOutputBuilder {
     /// <p>The locations.</p>
     pub fn locations(mut self, input: crate::types::Location) -> Self {
         let mut v = self.locations.unwrap_or_default();
-                        v.push(input);
-                        self.locations = Some(v);
-                        self
+        v.push(input);
+        self.locations = Some(v);
+        self
     }
     /// <p>The locations.</p>
-    pub fn set_locations(mut self, input: std::option::Option<std::vec::Vec<crate::types::Location>>) -> Self {
-        self.locations = input; self
+    pub fn set_locations(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::Location>>,
+    ) -> Self {
+        self.locations = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`DescribeLocationsOutput`](crate::operation::describe_locations::DescribeLocationsOutput).
     pub fn build(self) -> crate::operation::describe_locations::DescribeLocationsOutput {
         crate::operation::describe_locations::DescribeLocationsOutput {
-            locations: self.locations
-            ,
+            locations: self.locations,
             _request_id: self._request_id,
         }
     }
 }
-

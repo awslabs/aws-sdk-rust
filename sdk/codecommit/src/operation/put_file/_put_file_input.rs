@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PutFileInput  {
+pub struct PutFileInput {
     /// <p>The name of the repository where you want to add or update the file.</p>
     #[doc(hidden)]
     pub repository_name: std::option::Option<std::string::String>,
@@ -12,15 +12,15 @@ pub struct PutFileInput  {
     /// <p>The content of the file, in binary object format. </p>
     #[doc(hidden)]
     pub file_content: std::option::Option<aws_smithy_types::Blob>,
-    /// <p>The name of the file you want to add or update, including the relative path to the file in the repository.</p> <note> 
-    /// <p>If the path does not currently exist in the repository, the path is created as part of adding the file.</p> 
+    /// <p>The name of the file you want to add or update, including the relative path to the file in the repository.</p> <note>
+    /// <p>If the path does not currently exist in the repository, the path is created as part of adding the file.</p>
     /// </note>
     #[doc(hidden)]
     pub file_path: std::option::Option<std::string::String>,
     /// <p>The file mode permissions of the blob. Valid file mode permissions are listed here.</p>
     #[doc(hidden)]
     pub file_mode: std::option::Option<crate::types::FileModeTypeEnum>,
-    /// <p>The full commit ID of the head commit in the branch where you want to add or update the file. If this is an empty repository, no commit ID is required. If this is not an empty repository, a commit ID is required. </p> 
+    /// <p>The full commit ID of the head commit in the branch where you want to add or update the file. If this is an empty repository, no commit ID is required. If this is not an empty repository, a commit ID is required. </p>
     /// <p>The commit ID must match the ID of the head commit at the time of the operation. Otherwise, an error occurs, and the file is not added or updated.</p>
     #[doc(hidden)]
     pub parent_commit_id: std::option::Option<std::string::String>,
@@ -36,42 +36,42 @@ pub struct PutFileInput  {
 }
 impl PutFileInput {
     /// <p>The name of the repository where you want to add or update the file.</p>
-    pub fn repository_name(&self) -> std::option::Option<& str> {
+    pub fn repository_name(&self) -> std::option::Option<&str> {
         self.repository_name.as_deref()
     }
     /// <p>The name of the branch where you want to add or update the file. If this is an empty repository, this branch is created.</p>
-    pub fn branch_name(&self) -> std::option::Option<& str> {
+    pub fn branch_name(&self) -> std::option::Option<&str> {
         self.branch_name.as_deref()
     }
     /// <p>The content of the file, in binary object format. </p>
-    pub fn file_content(&self) -> std::option::Option<& aws_smithy_types::Blob> {
+    pub fn file_content(&self) -> std::option::Option<&aws_smithy_types::Blob> {
         self.file_content.as_ref()
     }
-    /// <p>The name of the file you want to add or update, including the relative path to the file in the repository.</p> <note> 
-    /// <p>If the path does not currently exist in the repository, the path is created as part of adding the file.</p> 
+    /// <p>The name of the file you want to add or update, including the relative path to the file in the repository.</p> <note>
+    /// <p>If the path does not currently exist in the repository, the path is created as part of adding the file.</p>
     /// </note>
-    pub fn file_path(&self) -> std::option::Option<& str> {
+    pub fn file_path(&self) -> std::option::Option<&str> {
         self.file_path.as_deref()
     }
     /// <p>The file mode permissions of the blob. Valid file mode permissions are listed here.</p>
-    pub fn file_mode(&self) -> std::option::Option<& crate::types::FileModeTypeEnum> {
+    pub fn file_mode(&self) -> std::option::Option<&crate::types::FileModeTypeEnum> {
         self.file_mode.as_ref()
     }
-    /// <p>The full commit ID of the head commit in the branch where you want to add or update the file. If this is an empty repository, no commit ID is required. If this is not an empty repository, a commit ID is required. </p> 
+    /// <p>The full commit ID of the head commit in the branch where you want to add or update the file. If this is an empty repository, no commit ID is required. If this is not an empty repository, a commit ID is required. </p>
     /// <p>The commit ID must match the ID of the head commit at the time of the operation. Otherwise, an error occurs, and the file is not added or updated.</p>
-    pub fn parent_commit_id(&self) -> std::option::Option<& str> {
+    pub fn parent_commit_id(&self) -> std::option::Option<&str> {
         self.parent_commit_id.as_deref()
     }
     /// <p>A message about why this file was added or updated. Although it is optional, a message makes the commit history for your repository more useful.</p>
-    pub fn commit_message(&self) -> std::option::Option<& str> {
+    pub fn commit_message(&self) -> std::option::Option<&str> {
         self.commit_message.as_deref()
     }
     /// <p>The name of the person adding or updating the file. Although it is optional, a name makes the commit history for your repository more useful.</p>
-    pub fn name(&self) -> std::option::Option<& str> {
+    pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>An email address for the person adding or updating the file.</p>
-    pub fn email(&self) -> std::option::Option<& str> {
+    pub fn email(&self) -> std::option::Option<&str> {
         self.email.as_deref()
     }
 }
@@ -104,7 +104,8 @@ impl PutFileInputBuilder {
     }
     /// <p>The name of the repository where you want to add or update the file.</p>
     pub fn set_repository_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.repository_name = input; self
+        self.repository_name = input;
+        self
     }
     /// <p>The name of the branch where you want to add or update the file. If this is an empty repository, this branch is created.</p>
     pub fn branch_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -113,7 +114,8 @@ impl PutFileInputBuilder {
     }
     /// <p>The name of the branch where you want to add or update the file. If this is an empty repository, this branch is created.</p>
     pub fn set_branch_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.branch_name = input; self
+        self.branch_name = input;
+        self
     }
     /// <p>The content of the file, in binary object format. </p>
     pub fn file_content(mut self, input: aws_smithy_types::Blob) -> Self {
@@ -122,20 +124,22 @@ impl PutFileInputBuilder {
     }
     /// <p>The content of the file, in binary object format. </p>
     pub fn set_file_content(mut self, input: std::option::Option<aws_smithy_types::Blob>) -> Self {
-        self.file_content = input; self
+        self.file_content = input;
+        self
     }
-    /// <p>The name of the file you want to add or update, including the relative path to the file in the repository.</p> <note> 
-    /// <p>If the path does not currently exist in the repository, the path is created as part of adding the file.</p> 
+    /// <p>The name of the file you want to add or update, including the relative path to the file in the repository.</p> <note>
+    /// <p>If the path does not currently exist in the repository, the path is created as part of adding the file.</p>
     /// </note>
     pub fn file_path(mut self, input: impl Into<std::string::String>) -> Self {
         self.file_path = Some(input.into());
         self
     }
-    /// <p>The name of the file you want to add or update, including the relative path to the file in the repository.</p> <note> 
-    /// <p>If the path does not currently exist in the repository, the path is created as part of adding the file.</p> 
+    /// <p>The name of the file you want to add or update, including the relative path to the file in the repository.</p> <note>
+    /// <p>If the path does not currently exist in the repository, the path is created as part of adding the file.</p>
     /// </note>
     pub fn set_file_path(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.file_path = input; self
+        self.file_path = input;
+        self
     }
     /// <p>The file mode permissions of the blob. Valid file mode permissions are listed here.</p>
     pub fn file_mode(mut self, input: crate::types::FileModeTypeEnum) -> Self {
@@ -143,19 +147,24 @@ impl PutFileInputBuilder {
         self
     }
     /// <p>The file mode permissions of the blob. Valid file mode permissions are listed here.</p>
-    pub fn set_file_mode(mut self, input: std::option::Option<crate::types::FileModeTypeEnum>) -> Self {
-        self.file_mode = input; self
+    pub fn set_file_mode(
+        mut self,
+        input: std::option::Option<crate::types::FileModeTypeEnum>,
+    ) -> Self {
+        self.file_mode = input;
+        self
     }
-    /// <p>The full commit ID of the head commit in the branch where you want to add or update the file. If this is an empty repository, no commit ID is required. If this is not an empty repository, a commit ID is required. </p> 
+    /// <p>The full commit ID of the head commit in the branch where you want to add or update the file. If this is an empty repository, no commit ID is required. If this is not an empty repository, a commit ID is required. </p>
     /// <p>The commit ID must match the ID of the head commit at the time of the operation. Otherwise, an error occurs, and the file is not added or updated.</p>
     pub fn parent_commit_id(mut self, input: impl Into<std::string::String>) -> Self {
         self.parent_commit_id = Some(input.into());
         self
     }
-    /// <p>The full commit ID of the head commit in the branch where you want to add or update the file. If this is an empty repository, no commit ID is required. If this is not an empty repository, a commit ID is required. </p> 
+    /// <p>The full commit ID of the head commit in the branch where you want to add or update the file. If this is an empty repository, no commit ID is required. If this is not an empty repository, a commit ID is required. </p>
     /// <p>The commit ID must match the ID of the head commit at the time of the operation. Otherwise, an error occurs, and the file is not added or updated.</p>
     pub fn set_parent_commit_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.parent_commit_id = input; self
+        self.parent_commit_id = input;
+        self
     }
     /// <p>A message about why this file was added or updated. Although it is optional, a message makes the commit history for your repository more useful.</p>
     pub fn commit_message(mut self, input: impl Into<std::string::String>) -> Self {
@@ -164,7 +173,8 @@ impl PutFileInputBuilder {
     }
     /// <p>A message about why this file was added or updated. Although it is optional, a message makes the commit history for your repository more useful.</p>
     pub fn set_commit_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.commit_message = input; self
+        self.commit_message = input;
+        self
     }
     /// <p>The name of the person adding or updating the file. Although it is optional, a name makes the commit history for your repository more useful.</p>
     pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -173,7 +183,8 @@ impl PutFileInputBuilder {
     }
     /// <p>The name of the person adding or updating the file. Although it is optional, a name makes the commit history for your repository more useful.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input; self
+        self.name = input;
+        self
     }
     /// <p>An email address for the person adding or updating the file.</p>
     pub fn email(mut self, input: impl Into<std::string::String>) -> Self {
@@ -182,32 +193,26 @@ impl PutFileInputBuilder {
     }
     /// <p>An email address for the person adding or updating the file.</p>
     pub fn set_email(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.email = input; self
+        self.email = input;
+        self
     }
     /// Consumes the builder and constructs a [`PutFileInput`](crate::operation::put_file::PutFileInput).
-    pub fn build(self) -> Result<crate::operation::put_file::PutFileInput, aws_smithy_http::operation::error::BuildError> {
-        Ok(
-            crate::operation::put_file::PutFileInput {
-                repository_name: self.repository_name
-                ,
-                branch_name: self.branch_name
-                ,
-                file_content: self.file_content
-                ,
-                file_path: self.file_path
-                ,
-                file_mode: self.file_mode
-                ,
-                parent_commit_id: self.parent_commit_id
-                ,
-                commit_message: self.commit_message
-                ,
-                name: self.name
-                ,
-                email: self.email
-                ,
-            }
-        )
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::put_file::PutFileInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        Ok(crate::operation::put_file::PutFileInput {
+            repository_name: self.repository_name,
+            branch_name: self.branch_name,
+            file_content: self.file_content,
+            file_path: self.file_path,
+            file_mode: self.file_mode,
+            parent_commit_id: self.parent_commit_id,
+            commit_message: self.commit_message,
+            name: self.name,
+            email: self.email,
+        })
     }
 }
-

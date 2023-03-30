@@ -3,7 +3,7 @@
 /// <p>Represents information about the state of an action.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ActionState  {
+pub struct ActionState {
     /// <p>The name of the action.</p>
     #[doc(hidden)]
     pub action_name: std::option::Option<std::string::String>,
@@ -22,23 +22,23 @@ pub struct ActionState  {
 }
 impl ActionState {
     /// <p>The name of the action.</p>
-    pub fn action_name(&self) -> std::option::Option<& str> {
+    pub fn action_name(&self) -> std::option::Option<&str> {
         self.action_name.as_deref()
     }
     /// <p>Represents information about the version (or revision) of an action.</p>
-    pub fn current_revision(&self) -> std::option::Option<& crate::types::ActionRevision> {
+    pub fn current_revision(&self) -> std::option::Option<&crate::types::ActionRevision> {
         self.current_revision.as_ref()
     }
     /// <p>Represents information about the run of an action.</p>
-    pub fn latest_execution(&self) -> std::option::Option<& crate::types::ActionExecution> {
+    pub fn latest_execution(&self) -> std::option::Option<&crate::types::ActionExecution> {
         self.latest_execution.as_ref()
     }
     /// <p>A URL link for more information about the state of the action, such as a deployment group details page.</p>
-    pub fn entity_url(&self) -> std::option::Option<& str> {
+    pub fn entity_url(&self) -> std::option::Option<&str> {
         self.entity_url.as_deref()
     }
     /// <p>A URL link for more information about the revision, such as a commit details page.</p>
-    pub fn revision_url(&self) -> std::option::Option<& str> {
+    pub fn revision_url(&self) -> std::option::Option<&str> {
         self.revision_url.as_deref()
     }
 }
@@ -67,7 +67,8 @@ impl ActionStateBuilder {
     }
     /// <p>The name of the action.</p>
     pub fn set_action_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.action_name = input; self
+        self.action_name = input;
+        self
     }
     /// <p>Represents information about the version (or revision) of an action.</p>
     pub fn current_revision(mut self, input: crate::types::ActionRevision) -> Self {
@@ -75,8 +76,12 @@ impl ActionStateBuilder {
         self
     }
     /// <p>Represents information about the version (or revision) of an action.</p>
-    pub fn set_current_revision(mut self, input: std::option::Option<crate::types::ActionRevision>) -> Self {
-        self.current_revision = input; self
+    pub fn set_current_revision(
+        mut self,
+        input: std::option::Option<crate::types::ActionRevision>,
+    ) -> Self {
+        self.current_revision = input;
+        self
     }
     /// <p>Represents information about the run of an action.</p>
     pub fn latest_execution(mut self, input: crate::types::ActionExecution) -> Self {
@@ -84,8 +89,12 @@ impl ActionStateBuilder {
         self
     }
     /// <p>Represents information about the run of an action.</p>
-    pub fn set_latest_execution(mut self, input: std::option::Option<crate::types::ActionExecution>) -> Self {
-        self.latest_execution = input; self
+    pub fn set_latest_execution(
+        mut self,
+        input: std::option::Option<crate::types::ActionExecution>,
+    ) -> Self {
+        self.latest_execution = input;
+        self
     }
     /// <p>A URL link for more information about the state of the action, such as a deployment group details page.</p>
     pub fn entity_url(mut self, input: impl Into<std::string::String>) -> Self {
@@ -94,7 +103,8 @@ impl ActionStateBuilder {
     }
     /// <p>A URL link for more information about the state of the action, such as a deployment group details page.</p>
     pub fn set_entity_url(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.entity_url = input; self
+        self.entity_url = input;
+        self
     }
     /// <p>A URL link for more information about the revision, such as a commit details page.</p>
     pub fn revision_url(mut self, input: impl Into<std::string::String>) -> Self {
@@ -103,22 +113,17 @@ impl ActionStateBuilder {
     }
     /// <p>A URL link for more information about the revision, such as a commit details page.</p>
     pub fn set_revision_url(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.revision_url = input; self
+        self.revision_url = input;
+        self
     }
     /// Consumes the builder and constructs a [`ActionState`](crate::types::ActionState).
     pub fn build(self) -> crate::types::ActionState {
         crate::types::ActionState {
-            action_name: self.action_name
-            ,
-            current_revision: self.current_revision
-            ,
-            latest_execution: self.latest_execution
-            ,
-            entity_url: self.entity_url
-            ,
-            revision_url: self.revision_url
-            ,
+            action_name: self.action_name,
+            current_revision: self.current_revision,
+            latest_execution: self.latest_execution,
+            entity_url: self.entity_url,
+            revision_url: self.revision_url,
         }
     }
 }
-

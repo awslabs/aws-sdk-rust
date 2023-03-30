@@ -2,10 +2,11 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeIamInstanceProfileAssociationsOutput  {
+pub struct DescribeIamInstanceProfileAssociationsOutput {
     /// <p>Information about the IAM instance profile associations.</p>
     #[doc(hidden)]
-    pub iam_instance_profile_associations: std::option::Option<std::vec::Vec<crate::types::IamInstanceProfileAssociation>>,
+    pub iam_instance_profile_associations:
+        std::option::Option<std::vec::Vec<crate::types::IamInstanceProfileAssociation>>,
     /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
@@ -13,22 +14,24 @@ pub struct DescribeIamInstanceProfileAssociationsOutput  {
 }
 impl DescribeIamInstanceProfileAssociationsOutput {
     /// <p>Information about the IAM instance profile associations.</p>
-    pub fn iam_instance_profile_associations(&self) -> std::option::Option<& [crate::types::IamInstanceProfileAssociation]> {
+    pub fn iam_instance_profile_associations(
+        &self,
+    ) -> std::option::Option<&[crate::types::IamInstanceProfileAssociation]> {
         self.iam_instance_profile_associations.as_deref()
     }
     /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for DescribeIamInstanceProfileAssociationsOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl DescribeIamInstanceProfileAssociationsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeIamInstanceProfileAssociationsOutput`](crate::operation::describe_iam_instance_profile_associations::DescribeIamInstanceProfileAssociationsOutput).
-    pub fn builder() -> crate::operation::describe_iam_instance_profile_associations::builders::DescribeIamInstanceProfileAssociationsOutputBuilder {
+    pub fn builder() -> crate::operation::describe_iam_instance_profile_associations::builders::DescribeIamInstanceProfileAssociationsOutputBuilder{
         crate::operation::describe_iam_instance_profile_associations::builders::DescribeIamInstanceProfileAssociationsOutputBuilder::default()
     }
 }
@@ -37,7 +40,8 @@ impl DescribeIamInstanceProfileAssociationsOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct DescribeIamInstanceProfileAssociationsOutputBuilder {
-    pub(crate) iam_instance_profile_associations: std::option::Option<std::vec::Vec<crate::types::IamInstanceProfileAssociation>>,
+    pub(crate) iam_instance_profile_associations:
+        std::option::Option<std::vec::Vec<crate::types::IamInstanceProfileAssociation>>,
     pub(crate) next_token: std::option::Option<std::string::String>,
     _request_id: Option<String>,
 }
@@ -47,15 +51,22 @@ impl DescribeIamInstanceProfileAssociationsOutputBuilder {
     /// To override the contents of this collection use [`set_iam_instance_profile_associations`](Self::set_iam_instance_profile_associations).
     ///
     /// <p>Information about the IAM instance profile associations.</p>
-    pub fn iam_instance_profile_associations(mut self, input: crate::types::IamInstanceProfileAssociation) -> Self {
+    pub fn iam_instance_profile_associations(
+        mut self,
+        input: crate::types::IamInstanceProfileAssociation,
+    ) -> Self {
         let mut v = self.iam_instance_profile_associations.unwrap_or_default();
-                        v.push(input);
-                        self.iam_instance_profile_associations = Some(v);
-                        self
+        v.push(input);
+        self.iam_instance_profile_associations = Some(v);
+        self
     }
     /// <p>Information about the IAM instance profile associations.</p>
-    pub fn set_iam_instance_profile_associations(mut self, input: std::option::Option<std::vec::Vec<crate::types::IamInstanceProfileAssociation>>) -> Self {
-        self.iam_instance_profile_associations = input; self
+    pub fn set_iam_instance_profile_associations(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::IamInstanceProfileAssociation>>,
+    ) -> Self {
+        self.iam_instance_profile_associations = input;
+        self
     }
     /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -64,19 +75,20 @@ impl DescribeIamInstanceProfileAssociationsOutputBuilder {
     }
     /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input; self
+        self.next_token = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`DescribeIamInstanceProfileAssociationsOutput`](crate::operation::describe_iam_instance_profile_associations::DescribeIamInstanceProfileAssociationsOutput).
-    pub fn build(self) -> crate::operation::describe_iam_instance_profile_associations::DescribeIamInstanceProfileAssociationsOutput {
+    pub fn build(self) -> crate::operation::describe_iam_instance_profile_associations::DescribeIamInstanceProfileAssociationsOutput{
         crate::operation::describe_iam_instance_profile_associations::DescribeIamInstanceProfileAssociationsOutput {
             iam_instance_profile_associations: self.iam_instance_profile_associations
             ,
@@ -86,4 +98,3 @@ impl DescribeIamInstanceProfileAssociationsOutputBuilder {
         }
     }
 }
-

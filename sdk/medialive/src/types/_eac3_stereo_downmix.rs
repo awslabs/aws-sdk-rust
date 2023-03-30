@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-/// 
+///
 /// Here is an example of how you can make a match expression forward-compatible:
-/// 
+///
 /// ```text
 /// # let eac3stereodownmix = unimplemented!();
 /// match eac3stereodownmix {
@@ -32,14 +32,22 @@
 /// Specifically, when `eac3stereodownmix` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `Eac3StereoDownmix::NewFeature` also yielding `"NewFeature"`.
-/// 
+///
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 /// Eac3 Stereo Downmix
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
 pub enum Eac3StereoDownmix {
     #[allow(missing_docs)] // documentation missing in model
     Dpl2,
@@ -50,45 +58,46 @@ pub enum Eac3StereoDownmix {
     #[allow(missing_docs)] // documentation missing in model
     NotIndicated,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::primitives::UnknownVariantValue)
+    Unknown(crate::primitives::UnknownVariantValue),
 }
 impl std::convert::From<&str> for Eac3StereoDownmix {
-                fn from(s: &str) -> Self {
-                    match s {
-                        "DPL2" => Eac3StereoDownmix::Dpl2,
-"LO_RO" => Eac3StereoDownmix::LoRo,
-"LT_RT" => Eac3StereoDownmix::LtRt,
-"NOT_INDICATED" => Eac3StereoDownmix::NotIndicated,
-other => Eac3StereoDownmix::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
-                    }
-                }
+    fn from(s: &str) -> Self {
+        match s {
+            "DPL2" => Eac3StereoDownmix::Dpl2,
+            "LO_RO" => Eac3StereoDownmix::LoRo,
+            "LT_RT" => Eac3StereoDownmix::LtRt,
+            "NOT_INDICATED" => Eac3StereoDownmix::NotIndicated,
+            other => {
+                Eac3StereoDownmix::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
             }
-impl std::str::FromStr for Eac3StereoDownmix {
-                type Err = std::convert::Infallible;
-
-                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-                    Ok(Eac3StereoDownmix::from(s))
-                }
-            }
-impl Eac3StereoDownmix {
-                /// Returns the `&str` value of the enum member.
-                pub fn as_str(&self) -> &str {
-                    match self {
-    Eac3StereoDownmix::Dpl2 => "DPL2",
-    Eac3StereoDownmix::LoRo => "LO_RO",
-    Eac3StereoDownmix::LtRt => "LT_RT",
-    Eac3StereoDownmix::NotIndicated => "NOT_INDICATED",
-    Eac3StereoDownmix::Unknown(value) => value.as_str()
+        }
+    }
 }
-                }
-                /// Returns all the `&str` representations of the enum members.
-                pub const fn values() -> &'static [&'static str] {
-                    &["DPL2", "LO_RO", "LT_RT", "NOT_INDICATED"]
-                }
-            }
-impl AsRef<str> for Eac3StereoDownmix {
-                fn as_ref(&self) -> &str {
-                    self.as_str()
-                }
-            }
+impl std::str::FromStr for Eac3StereoDownmix {
+    type Err = std::convert::Infallible;
 
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(Eac3StereoDownmix::from(s))
+    }
+}
+impl Eac3StereoDownmix {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            Eac3StereoDownmix::Dpl2 => "DPL2",
+            Eac3StereoDownmix::LoRo => "LO_RO",
+            Eac3StereoDownmix::LtRt => "LT_RT",
+            Eac3StereoDownmix::NotIndicated => "NOT_INDICATED",
+            Eac3StereoDownmix::Unknown(value) => value.as_str(),
+        }
+    }
+    /// Returns all the `&str` representations of the enum members.
+    pub const fn values() -> &'static [&'static str] {
+        &["DPL2", "LO_RO", "LT_RT", "NOT_INDICATED"]
+    }
+}
+impl AsRef<str> for Eac3StereoDownmix {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}

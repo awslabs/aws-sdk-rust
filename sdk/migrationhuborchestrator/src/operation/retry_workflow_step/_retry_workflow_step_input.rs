@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct RetryWorkflowStepInput  {
+pub struct RetryWorkflowStepInput {
     /// <p>The ID of the migration workflow.</p>
     #[doc(hidden)]
     pub workflow_id: std::option::Option<std::string::String>,
@@ -15,21 +15,22 @@ pub struct RetryWorkflowStepInput  {
 }
 impl RetryWorkflowStepInput {
     /// <p>The ID of the migration workflow.</p>
-    pub fn workflow_id(&self) -> std::option::Option<& str> {
+    pub fn workflow_id(&self) -> std::option::Option<&str> {
         self.workflow_id.as_deref()
     }
     /// <p>The ID of the step group.</p>
-    pub fn step_group_id(&self) -> std::option::Option<& str> {
+    pub fn step_group_id(&self) -> std::option::Option<&str> {
         self.step_group_id.as_deref()
     }
     /// <p>The ID of the step.</p>
-    pub fn id(&self) -> std::option::Option<& str> {
+    pub fn id(&self) -> std::option::Option<&str> {
         self.id.as_deref()
     }
 }
 impl RetryWorkflowStepInput {
     /// Creates a new builder-style object to manufacture [`RetryWorkflowStepInput`](crate::operation::retry_workflow_step::RetryWorkflowStepInput).
-    pub fn builder() -> crate::operation::retry_workflow_step::builders::RetryWorkflowStepInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::retry_workflow_step::builders::RetryWorkflowStepInputBuilder {
         crate::operation::retry_workflow_step::builders::RetryWorkflowStepInputBuilder::default()
     }
 }
@@ -50,7 +51,8 @@ impl RetryWorkflowStepInputBuilder {
     }
     /// <p>The ID of the migration workflow.</p>
     pub fn set_workflow_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.workflow_id = input; self
+        self.workflow_id = input;
+        self
     }
     /// <p>The ID of the step group.</p>
     pub fn step_group_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -59,7 +61,8 @@ impl RetryWorkflowStepInputBuilder {
     }
     /// <p>The ID of the step group.</p>
     pub fn set_step_group_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.step_group_id = input; self
+        self.step_group_id = input;
+        self
     }
     /// <p>The ID of the step.</p>
     pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -68,20 +71,22 @@ impl RetryWorkflowStepInputBuilder {
     }
     /// <p>The ID of the step.</p>
     pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.id = input; self
+        self.id = input;
+        self
     }
     /// Consumes the builder and constructs a [`RetryWorkflowStepInput`](crate::operation::retry_workflow_step::RetryWorkflowStepInput).
-    pub fn build(self) -> Result<crate::operation::retry_workflow_step::RetryWorkflowStepInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::retry_workflow_step::RetryWorkflowStepInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::retry_workflow_step::RetryWorkflowStepInput {
-                workflow_id: self.workflow_id
-                ,
-                step_group_id: self.step_group_id
-                ,
-                id: self.id
-                ,
-            }
+                workflow_id: self.workflow_id,
+                step_group_id: self.step_group_id,
+                id: self.id,
+            },
         )
     }
 }
-

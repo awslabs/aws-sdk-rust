@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-/// 
+///
 /// Here is an example of how you can make a match expression forward-compatible:
-/// 
+///
 /// ```text
 /// # let connectortype = unimplemented!();
 /// match connectortype {
@@ -52,14 +52,22 @@
 /// Specifically, when `connectortype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `ConnectorType::NewFeature` also yielding `"NewFeature"`.
-/// 
+///
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
 pub enum ConnectorType {
     #[allow(missing_docs)] // documentation missing in model
     Amplitude,
@@ -110,85 +118,111 @@ pub enum ConnectorType {
     #[allow(missing_docs)] // documentation missing in model
     Zendesk,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::primitives::UnknownVariantValue)
+    Unknown(crate::primitives::UnknownVariantValue),
 }
 impl std::convert::From<&str> for ConnectorType {
-                fn from(s: &str) -> Self {
-                    match s {
-                        "Amplitude" => ConnectorType::Amplitude,
-"CustomConnector" => ConnectorType::Customconnector,
-"CustomerProfiles" => ConnectorType::Customerprofiles,
-"Datadog" => ConnectorType::Datadog,
-"Dynatrace" => ConnectorType::Dynatrace,
-"EventBridge" => ConnectorType::Eventbridge,
-"Googleanalytics" => ConnectorType::Googleanalytics,
-"Honeycode" => ConnectorType::Honeycode,
-"Infornexus" => ConnectorType::Infornexus,
-"LookoutMetrics" => ConnectorType::Lookoutmetrics,
-"Marketo" => ConnectorType::Marketo,
-"Pardot" => ConnectorType::Pardot,
-"Redshift" => ConnectorType::Redshift,
-"S3" => ConnectorType::S3,
-"SAPOData" => ConnectorType::Sapodata,
-"Salesforce" => ConnectorType::Salesforce,
-"Servicenow" => ConnectorType::Servicenow,
-"Singular" => ConnectorType::Singular,
-"Slack" => ConnectorType::Slack,
-"Snowflake" => ConnectorType::Snowflake,
-"Trendmicro" => ConnectorType::Trendmicro,
-"Upsolver" => ConnectorType::Upsolver,
-"Veeva" => ConnectorType::Veeva,
-"Zendesk" => ConnectorType::Zendesk,
-other => ConnectorType::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
-                    }
-                }
+    fn from(s: &str) -> Self {
+        match s {
+            "Amplitude" => ConnectorType::Amplitude,
+            "CustomConnector" => ConnectorType::Customconnector,
+            "CustomerProfiles" => ConnectorType::Customerprofiles,
+            "Datadog" => ConnectorType::Datadog,
+            "Dynatrace" => ConnectorType::Dynatrace,
+            "EventBridge" => ConnectorType::Eventbridge,
+            "Googleanalytics" => ConnectorType::Googleanalytics,
+            "Honeycode" => ConnectorType::Honeycode,
+            "Infornexus" => ConnectorType::Infornexus,
+            "LookoutMetrics" => ConnectorType::Lookoutmetrics,
+            "Marketo" => ConnectorType::Marketo,
+            "Pardot" => ConnectorType::Pardot,
+            "Redshift" => ConnectorType::Redshift,
+            "S3" => ConnectorType::S3,
+            "SAPOData" => ConnectorType::Sapodata,
+            "Salesforce" => ConnectorType::Salesforce,
+            "Servicenow" => ConnectorType::Servicenow,
+            "Singular" => ConnectorType::Singular,
+            "Slack" => ConnectorType::Slack,
+            "Snowflake" => ConnectorType::Snowflake,
+            "Trendmicro" => ConnectorType::Trendmicro,
+            "Upsolver" => ConnectorType::Upsolver,
+            "Veeva" => ConnectorType::Veeva,
+            "Zendesk" => ConnectorType::Zendesk,
+            other => {
+                ConnectorType::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
             }
-impl std::str::FromStr for ConnectorType {
-                type Err = std::convert::Infallible;
-
-                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-                    Ok(ConnectorType::from(s))
-                }
-            }
-impl ConnectorType {
-                /// Returns the `&str` value of the enum member.
-                pub fn as_str(&self) -> &str {
-                    match self {
-    ConnectorType::Amplitude => "Amplitude",
-    ConnectorType::Customconnector => "CustomConnector",
-    ConnectorType::Customerprofiles => "CustomerProfiles",
-    ConnectorType::Datadog => "Datadog",
-    ConnectorType::Dynatrace => "Dynatrace",
-    ConnectorType::Eventbridge => "EventBridge",
-    ConnectorType::Googleanalytics => "Googleanalytics",
-    ConnectorType::Honeycode => "Honeycode",
-    ConnectorType::Infornexus => "Infornexus",
-    ConnectorType::Lookoutmetrics => "LookoutMetrics",
-    ConnectorType::Marketo => "Marketo",
-    ConnectorType::Pardot => "Pardot",
-    ConnectorType::Redshift => "Redshift",
-    ConnectorType::S3 => "S3",
-    ConnectorType::Sapodata => "SAPOData",
-    ConnectorType::Salesforce => "Salesforce",
-    ConnectorType::Servicenow => "Servicenow",
-    ConnectorType::Singular => "Singular",
-    ConnectorType::Slack => "Slack",
-    ConnectorType::Snowflake => "Snowflake",
-    ConnectorType::Trendmicro => "Trendmicro",
-    ConnectorType::Upsolver => "Upsolver",
-    ConnectorType::Veeva => "Veeva",
-    ConnectorType::Zendesk => "Zendesk",
-    ConnectorType::Unknown(value) => value.as_str()
+        }
+    }
 }
-                }
-                /// Returns all the `&str` representations of the enum members.
-                pub const fn values() -> &'static [&'static str] {
-                    &["Amplitude", "CustomConnector", "CustomerProfiles", "Datadog", "Dynatrace", "EventBridge", "Googleanalytics", "Honeycode", "Infornexus", "LookoutMetrics", "Marketo", "Pardot", "Redshift", "S3", "SAPOData", "Salesforce", "Servicenow", "Singular", "Slack", "Snowflake", "Trendmicro", "Upsolver", "Veeva", "Zendesk"]
-                }
-            }
-impl AsRef<str> for ConnectorType {
-                fn as_ref(&self) -> &str {
-                    self.as_str()
-                }
-            }
+impl std::str::FromStr for ConnectorType {
+    type Err = std::convert::Infallible;
 
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(ConnectorType::from(s))
+    }
+}
+impl ConnectorType {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            ConnectorType::Amplitude => "Amplitude",
+            ConnectorType::Customconnector => "CustomConnector",
+            ConnectorType::Customerprofiles => "CustomerProfiles",
+            ConnectorType::Datadog => "Datadog",
+            ConnectorType::Dynatrace => "Dynatrace",
+            ConnectorType::Eventbridge => "EventBridge",
+            ConnectorType::Googleanalytics => "Googleanalytics",
+            ConnectorType::Honeycode => "Honeycode",
+            ConnectorType::Infornexus => "Infornexus",
+            ConnectorType::Lookoutmetrics => "LookoutMetrics",
+            ConnectorType::Marketo => "Marketo",
+            ConnectorType::Pardot => "Pardot",
+            ConnectorType::Redshift => "Redshift",
+            ConnectorType::S3 => "S3",
+            ConnectorType::Sapodata => "SAPOData",
+            ConnectorType::Salesforce => "Salesforce",
+            ConnectorType::Servicenow => "Servicenow",
+            ConnectorType::Singular => "Singular",
+            ConnectorType::Slack => "Slack",
+            ConnectorType::Snowflake => "Snowflake",
+            ConnectorType::Trendmicro => "Trendmicro",
+            ConnectorType::Upsolver => "Upsolver",
+            ConnectorType::Veeva => "Veeva",
+            ConnectorType::Zendesk => "Zendesk",
+            ConnectorType::Unknown(value) => value.as_str(),
+        }
+    }
+    /// Returns all the `&str` representations of the enum members.
+    pub const fn values() -> &'static [&'static str] {
+        &[
+            "Amplitude",
+            "CustomConnector",
+            "CustomerProfiles",
+            "Datadog",
+            "Dynatrace",
+            "EventBridge",
+            "Googleanalytics",
+            "Honeycode",
+            "Infornexus",
+            "LookoutMetrics",
+            "Marketo",
+            "Pardot",
+            "Redshift",
+            "S3",
+            "SAPOData",
+            "Salesforce",
+            "Servicenow",
+            "Singular",
+            "Slack",
+            "Snowflake",
+            "Trendmicro",
+            "Upsolver",
+            "Veeva",
+            "Zendesk",
+        ]
+    }
+}
+impl AsRef<str> for ConnectorType {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}

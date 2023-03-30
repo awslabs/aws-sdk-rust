@@ -21,7 +21,11 @@ impl AutomationExecution {
     /// Tries to convert the enum instance into [`SsmExecutionArn`](crate::types::AutomationExecution::SsmExecutionArn), extracting the inner [`String`](std::string::String).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_ssm_execution_arn(&self) -> std::result::Result<&std::string::String, &Self> {
-        if let AutomationExecution::SsmExecutionArn(val) = &self { Ok(val) } else { Err(self) }
+        if let AutomationExecution::SsmExecutionArn(val) = &self {
+            Ok(val)
+        } else {
+            Err(self)
+        }
     }
     /// Returns true if this is a [`SsmExecutionArn`](crate::types::AutomationExecution::SsmExecutionArn).
     pub fn is_ssm_execution_arn(&self) -> bool {
@@ -32,4 +36,3 @@ impl AutomationExecution {
         matches!(self, Self::Unknown)
     }
 }
-

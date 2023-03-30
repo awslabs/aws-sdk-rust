@@ -3,7 +3,7 @@
 /// <p>Contains the data for a real-time metric.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CurrentMetricData  {
+pub struct CurrentMetricData {
     /// <p>Information about the metric.</p>
     #[doc(hidden)]
     pub metric: std::option::Option<crate::types::CurrentMetric>,
@@ -13,7 +13,7 @@ pub struct CurrentMetricData  {
 }
 impl CurrentMetricData {
     /// <p>Information about the metric.</p>
-    pub fn metric(&self) -> std::option::Option<& crate::types::CurrentMetric> {
+    pub fn metric(&self) -> std::option::Option<&crate::types::CurrentMetric> {
         self.metric.as_ref()
     }
     /// <p>The value of the metric.</p>
@@ -43,7 +43,8 @@ impl CurrentMetricDataBuilder {
     }
     /// <p>Information about the metric.</p>
     pub fn set_metric(mut self, input: std::option::Option<crate::types::CurrentMetric>) -> Self {
-        self.metric = input; self
+        self.metric = input;
+        self
     }
     /// <p>The value of the metric.</p>
     pub fn value(mut self, input: f64) -> Self {
@@ -52,16 +53,14 @@ impl CurrentMetricDataBuilder {
     }
     /// <p>The value of the metric.</p>
     pub fn set_value(mut self, input: std::option::Option<f64>) -> Self {
-        self.value = input; self
+        self.value = input;
+        self
     }
     /// Consumes the builder and constructs a [`CurrentMetricData`](crate::types::CurrentMetricData).
     pub fn build(self) -> crate::types::CurrentMetricData {
         crate::types::CurrentMetricData {
-            metric: self.metric
-            ,
-            value: self.value
-            ,
+            metric: self.metric,
+            value: self.value,
         }
     }
 }
-

@@ -3,7 +3,7 @@
 /// <p>Contains information about a component version that is compatible to run on a Greengrass core device.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ResolvedComponentVersion  {
+pub struct ResolvedComponentVersion {
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the component version.</p>
     #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
@@ -16,11 +16,11 @@ pub struct ResolvedComponentVersion  {
     /// <p>The recipe of the component version.</p>
     #[doc(hidden)]
     pub recipe: std::option::Option<aws_smithy_types::Blob>,
-    /// <p>The vendor guidance state for the component version. This state indicates whether the component version has any issues that you should consider before you deploy it. The vendor guidance state can be:</p> 
-    /// <ul> 
-    /// <li> <p> <code>ACTIVE</code> – This component version is available and recommended for use.</p> </li> 
-    /// <li> <p> <code>DISCONTINUED</code> – This component version has been discontinued by its publisher. You can deploy this component version, but we recommend that you use a different version of this component.</p> </li> 
-    /// <li> <p> <code>DELETED</code> – This component version has been deleted by its publisher, so you can't deploy it. If you have any existing deployments that specify this component version, those deployments will fail.</p> </li> 
+    /// <p>The vendor guidance state for the component version. This state indicates whether the component version has any issues that you should consider before you deploy it. The vendor guidance state can be:</p>
+    /// <ul>
+    /// <li> <p> <code>ACTIVE</code> – This component version is available and recommended for use.</p> </li>
+    /// <li> <p> <code>DISCONTINUED</code> – This component version has been discontinued by its publisher. You can deploy this component version, but we recommend that you use a different version of this component.</p> </li>
+    /// <li> <p> <code>DELETED</code> – This component version has been deleted by its publisher, so you can't deploy it. If you have any existing deployments that specify this component version, those deployments will fail.</p> </li>
     /// </ul>
     #[doc(hidden)]
     pub vendor_guidance: std::option::Option<crate::types::VendorGuidance>,
@@ -30,32 +30,32 @@ pub struct ResolvedComponentVersion  {
 }
 impl ResolvedComponentVersion {
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the component version.</p>
-    pub fn arn(&self) -> std::option::Option<& str> {
+    pub fn arn(&self) -> std::option::Option<&str> {
         self.arn.as_deref()
     }
     /// <p>The name of the component.</p>
-    pub fn component_name(&self) -> std::option::Option<& str> {
+    pub fn component_name(&self) -> std::option::Option<&str> {
         self.component_name.as_deref()
     }
     /// <p>The version of the component.</p>
-    pub fn component_version(&self) -> std::option::Option<& str> {
+    pub fn component_version(&self) -> std::option::Option<&str> {
         self.component_version.as_deref()
     }
     /// <p>The recipe of the component version.</p>
-    pub fn recipe(&self) -> std::option::Option<& aws_smithy_types::Blob> {
+    pub fn recipe(&self) -> std::option::Option<&aws_smithy_types::Blob> {
         self.recipe.as_ref()
     }
-    /// <p>The vendor guidance state for the component version. This state indicates whether the component version has any issues that you should consider before you deploy it. The vendor guidance state can be:</p> 
-    /// <ul> 
-    /// <li> <p> <code>ACTIVE</code> – This component version is available and recommended for use.</p> </li> 
-    /// <li> <p> <code>DISCONTINUED</code> – This component version has been discontinued by its publisher. You can deploy this component version, but we recommend that you use a different version of this component.</p> </li> 
-    /// <li> <p> <code>DELETED</code> – This component version has been deleted by its publisher, so you can't deploy it. If you have any existing deployments that specify this component version, those deployments will fail.</p> </li> 
+    /// <p>The vendor guidance state for the component version. This state indicates whether the component version has any issues that you should consider before you deploy it. The vendor guidance state can be:</p>
+    /// <ul>
+    /// <li> <p> <code>ACTIVE</code> – This component version is available and recommended for use.</p> </li>
+    /// <li> <p> <code>DISCONTINUED</code> – This component version has been discontinued by its publisher. You can deploy this component version, but we recommend that you use a different version of this component.</p> </li>
+    /// <li> <p> <code>DELETED</code> – This component version has been deleted by its publisher, so you can't deploy it. If you have any existing deployments that specify this component version, those deployments will fail.</p> </li>
     /// </ul>
-    pub fn vendor_guidance(&self) -> std::option::Option<& crate::types::VendorGuidance> {
+    pub fn vendor_guidance(&self) -> std::option::Option<&crate::types::VendorGuidance> {
         self.vendor_guidance.as_ref()
     }
     /// <p>A message that communicates details about the vendor guidance state of the component version. This message communicates why a component version is discontinued or deleted.</p>
-    pub fn message(&self) -> std::option::Option<& str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -85,7 +85,8 @@ impl ResolvedComponentVersionBuilder {
     }
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the component version.</p>
     pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.arn = input; self
+        self.arn = input;
+        self
     }
     /// <p>The name of the component.</p>
     pub fn component_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -94,7 +95,8 @@ impl ResolvedComponentVersionBuilder {
     }
     /// <p>The name of the component.</p>
     pub fn set_component_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.component_name = input; self
+        self.component_name = input;
+        self
     }
     /// <p>The version of the component.</p>
     pub fn component_version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -102,8 +104,12 @@ impl ResolvedComponentVersionBuilder {
         self
     }
     /// <p>The version of the component.</p>
-    pub fn set_component_version(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.component_version = input; self
+    pub fn set_component_version(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.component_version = input;
+        self
     }
     /// <p>The recipe of the component version.</p>
     pub fn recipe(mut self, input: aws_smithy_types::Blob) -> Self {
@@ -112,26 +118,31 @@ impl ResolvedComponentVersionBuilder {
     }
     /// <p>The recipe of the component version.</p>
     pub fn set_recipe(mut self, input: std::option::Option<aws_smithy_types::Blob>) -> Self {
-        self.recipe = input; self
+        self.recipe = input;
+        self
     }
-    /// <p>The vendor guidance state for the component version. This state indicates whether the component version has any issues that you should consider before you deploy it. The vendor guidance state can be:</p> 
-    /// <ul> 
-    /// <li> <p> <code>ACTIVE</code> – This component version is available and recommended for use.</p> </li> 
-    /// <li> <p> <code>DISCONTINUED</code> – This component version has been discontinued by its publisher. You can deploy this component version, but we recommend that you use a different version of this component.</p> </li> 
-    /// <li> <p> <code>DELETED</code> – This component version has been deleted by its publisher, so you can't deploy it. If you have any existing deployments that specify this component version, those deployments will fail.</p> </li> 
+    /// <p>The vendor guidance state for the component version. This state indicates whether the component version has any issues that you should consider before you deploy it. The vendor guidance state can be:</p>
+    /// <ul>
+    /// <li> <p> <code>ACTIVE</code> – This component version is available and recommended for use.</p> </li>
+    /// <li> <p> <code>DISCONTINUED</code> – This component version has been discontinued by its publisher. You can deploy this component version, but we recommend that you use a different version of this component.</p> </li>
+    /// <li> <p> <code>DELETED</code> – This component version has been deleted by its publisher, so you can't deploy it. If you have any existing deployments that specify this component version, those deployments will fail.</p> </li>
     /// </ul>
     pub fn vendor_guidance(mut self, input: crate::types::VendorGuidance) -> Self {
         self.vendor_guidance = Some(input);
         self
     }
-    /// <p>The vendor guidance state for the component version. This state indicates whether the component version has any issues that you should consider before you deploy it. The vendor guidance state can be:</p> 
-    /// <ul> 
-    /// <li> <p> <code>ACTIVE</code> – This component version is available and recommended for use.</p> </li> 
-    /// <li> <p> <code>DISCONTINUED</code> – This component version has been discontinued by its publisher. You can deploy this component version, but we recommend that you use a different version of this component.</p> </li> 
-    /// <li> <p> <code>DELETED</code> – This component version has been deleted by its publisher, so you can't deploy it. If you have any existing deployments that specify this component version, those deployments will fail.</p> </li> 
+    /// <p>The vendor guidance state for the component version. This state indicates whether the component version has any issues that you should consider before you deploy it. The vendor guidance state can be:</p>
+    /// <ul>
+    /// <li> <p> <code>ACTIVE</code> – This component version is available and recommended for use.</p> </li>
+    /// <li> <p> <code>DISCONTINUED</code> – This component version has been discontinued by its publisher. You can deploy this component version, but we recommend that you use a different version of this component.</p> </li>
+    /// <li> <p> <code>DELETED</code> – This component version has been deleted by its publisher, so you can't deploy it. If you have any existing deployments that specify this component version, those deployments will fail.</p> </li>
     /// </ul>
-    pub fn set_vendor_guidance(mut self, input: std::option::Option<crate::types::VendorGuidance>) -> Self {
-        self.vendor_guidance = input; self
+    pub fn set_vendor_guidance(
+        mut self,
+        input: std::option::Option<crate::types::VendorGuidance>,
+    ) -> Self {
+        self.vendor_guidance = input;
+        self
     }
     /// <p>A message that communicates details about the vendor guidance state of the component version. This message communicates why a component version is discontinued or deleted.</p>
     pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
@@ -140,24 +151,18 @@ impl ResolvedComponentVersionBuilder {
     }
     /// <p>A message that communicates details about the vendor guidance state of the component version. This message communicates why a component version is discontinued or deleted.</p>
     pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.message = input; self
+        self.message = input;
+        self
     }
     /// Consumes the builder and constructs a [`ResolvedComponentVersion`](crate::types::ResolvedComponentVersion).
     pub fn build(self) -> crate::types::ResolvedComponentVersion {
         crate::types::ResolvedComponentVersion {
-            arn: self.arn
-            ,
-            component_name: self.component_name
-            ,
-            component_version: self.component_version
-            ,
-            recipe: self.recipe
-            ,
-            vendor_guidance: self.vendor_guidance
-            ,
-            message: self.message
-            ,
+            arn: self.arn,
+            component_name: self.component_name,
+            component_version: self.component_version,
+            recipe: self.recipe,
+            vendor_guidance: self.vendor_guidance,
+            message: self.message,
         }
     }
 }
-

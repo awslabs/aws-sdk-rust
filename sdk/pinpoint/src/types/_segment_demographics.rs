@@ -3,7 +3,7 @@
 /// <p>Specifies demographic-based dimension settings for including or excluding endpoints from a segment. These settings derive from characteristics of endpoint devices, such as platform, make, and model.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SegmentDemographics  {
+pub struct SegmentDemographics {
     /// <p>The app version criteria for the segment.</p>
     #[doc(hidden)]
     pub app_version: std::option::Option<crate::types::SetDimension>,
@@ -25,27 +25,27 @@ pub struct SegmentDemographics  {
 }
 impl SegmentDemographics {
     /// <p>The app version criteria for the segment.</p>
-    pub fn app_version(&self) -> std::option::Option<& crate::types::SetDimension> {
+    pub fn app_version(&self) -> std::option::Option<&crate::types::SetDimension> {
         self.app_version.as_ref()
     }
     /// <p>The channel criteria for the segment.</p>
-    pub fn channel(&self) -> std::option::Option<& crate::types::SetDimension> {
+    pub fn channel(&self) -> std::option::Option<&crate::types::SetDimension> {
         self.channel.as_ref()
     }
     /// <p>The device type criteria for the segment.</p>
-    pub fn device_type(&self) -> std::option::Option<& crate::types::SetDimension> {
+    pub fn device_type(&self) -> std::option::Option<&crate::types::SetDimension> {
         self.device_type.as_ref()
     }
     /// <p>The device make criteria for the segment.</p>
-    pub fn make(&self) -> std::option::Option<& crate::types::SetDimension> {
+    pub fn make(&self) -> std::option::Option<&crate::types::SetDimension> {
         self.make.as_ref()
     }
     /// <p>The device model criteria for the segment.</p>
-    pub fn model(&self) -> std::option::Option<& crate::types::SetDimension> {
+    pub fn model(&self) -> std::option::Option<&crate::types::SetDimension> {
         self.model.as_ref()
     }
     /// <p>The device platform criteria for the segment.</p>
-    pub fn platform(&self) -> std::option::Option<& crate::types::SetDimension> {
+    pub fn platform(&self) -> std::option::Option<&crate::types::SetDimension> {
         self.platform.as_ref()
     }
 }
@@ -74,8 +74,12 @@ impl SegmentDemographicsBuilder {
         self
     }
     /// <p>The app version criteria for the segment.</p>
-    pub fn set_app_version(mut self, input: std::option::Option<crate::types::SetDimension>) -> Self {
-        self.app_version = input; self
+    pub fn set_app_version(
+        mut self,
+        input: std::option::Option<crate::types::SetDimension>,
+    ) -> Self {
+        self.app_version = input;
+        self
     }
     /// <p>The channel criteria for the segment.</p>
     pub fn channel(mut self, input: crate::types::SetDimension) -> Self {
@@ -84,7 +88,8 @@ impl SegmentDemographicsBuilder {
     }
     /// <p>The channel criteria for the segment.</p>
     pub fn set_channel(mut self, input: std::option::Option<crate::types::SetDimension>) -> Self {
-        self.channel = input; self
+        self.channel = input;
+        self
     }
     /// <p>The device type criteria for the segment.</p>
     pub fn device_type(mut self, input: crate::types::SetDimension) -> Self {
@@ -92,8 +97,12 @@ impl SegmentDemographicsBuilder {
         self
     }
     /// <p>The device type criteria for the segment.</p>
-    pub fn set_device_type(mut self, input: std::option::Option<crate::types::SetDimension>) -> Self {
-        self.device_type = input; self
+    pub fn set_device_type(
+        mut self,
+        input: std::option::Option<crate::types::SetDimension>,
+    ) -> Self {
+        self.device_type = input;
+        self
     }
     /// <p>The device make criteria for the segment.</p>
     pub fn make(mut self, input: crate::types::SetDimension) -> Self {
@@ -102,7 +111,8 @@ impl SegmentDemographicsBuilder {
     }
     /// <p>The device make criteria for the segment.</p>
     pub fn set_make(mut self, input: std::option::Option<crate::types::SetDimension>) -> Self {
-        self.make = input; self
+        self.make = input;
+        self
     }
     /// <p>The device model criteria for the segment.</p>
     pub fn model(mut self, input: crate::types::SetDimension) -> Self {
@@ -111,7 +121,8 @@ impl SegmentDemographicsBuilder {
     }
     /// <p>The device model criteria for the segment.</p>
     pub fn set_model(mut self, input: std::option::Option<crate::types::SetDimension>) -> Self {
-        self.model = input; self
+        self.model = input;
+        self
     }
     /// <p>The device platform criteria for the segment.</p>
     pub fn platform(mut self, input: crate::types::SetDimension) -> Self {
@@ -120,24 +131,18 @@ impl SegmentDemographicsBuilder {
     }
     /// <p>The device platform criteria for the segment.</p>
     pub fn set_platform(mut self, input: std::option::Option<crate::types::SetDimension>) -> Self {
-        self.platform = input; self
+        self.platform = input;
+        self
     }
     /// Consumes the builder and constructs a [`SegmentDemographics`](crate::types::SegmentDemographics).
     pub fn build(self) -> crate::types::SegmentDemographics {
         crate::types::SegmentDemographics {
-            app_version: self.app_version
-            ,
-            channel: self.channel
-            ,
-            device_type: self.device_type
-            ,
-            make: self.make
-            ,
-            model: self.model
-            ,
-            platform: self.platform
-            ,
+            app_version: self.app_version,
+            channel: self.channel,
+            device_type: self.device_type,
+            make: self.make,
+            model: self.model,
+            platform: self.platform,
         }
     }
 }
-

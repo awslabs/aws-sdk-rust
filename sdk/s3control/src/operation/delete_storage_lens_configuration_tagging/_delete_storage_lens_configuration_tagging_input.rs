@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteStorageLensConfigurationTaggingInput  {
+pub struct DeleteStorageLensConfigurationTaggingInput {
     /// <p>The ID of the S3 Storage Lens configuration.</p>
     #[doc(hidden)]
     pub config_id: std::option::Option<std::string::String>,
@@ -12,17 +12,17 @@ pub struct DeleteStorageLensConfigurationTaggingInput  {
 }
 impl DeleteStorageLensConfigurationTaggingInput {
     /// <p>The ID of the S3 Storage Lens configuration.</p>
-    pub fn config_id(&self) -> std::option::Option<& str> {
+    pub fn config_id(&self) -> std::option::Option<&str> {
         self.config_id.as_deref()
     }
     /// <p>The account ID of the requester.</p>
-    pub fn account_id(&self) -> std::option::Option<& str> {
+    pub fn account_id(&self) -> std::option::Option<&str> {
         self.account_id.as_deref()
     }
 }
 impl DeleteStorageLensConfigurationTaggingInput {
     /// Creates a new builder-style object to manufacture [`DeleteStorageLensConfigurationTaggingInput`](crate::operation::delete_storage_lens_configuration_tagging::DeleteStorageLensConfigurationTaggingInput).
-    pub fn builder() -> crate::operation::delete_storage_lens_configuration_tagging::builders::DeleteStorageLensConfigurationTaggingInputBuilder {
+    pub fn builder() -> crate::operation::delete_storage_lens_configuration_tagging::builders::DeleteStorageLensConfigurationTaggingInputBuilder{
         crate::operation::delete_storage_lens_configuration_tagging::builders::DeleteStorageLensConfigurationTaggingInputBuilder::default()
     }
 }
@@ -42,7 +42,8 @@ impl DeleteStorageLensConfigurationTaggingInputBuilder {
     }
     /// <p>The ID of the S3 Storage Lens configuration.</p>
     pub fn set_config_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.config_id = input; self
+        self.config_id = input;
+        self
     }
     /// <p>The account ID of the requester.</p>
     pub fn account_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -51,10 +52,11 @@ impl DeleteStorageLensConfigurationTaggingInputBuilder {
     }
     /// <p>The account ID of the requester.</p>
     pub fn set_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.account_id = input; self
+        self.account_id = input;
+        self
     }
     /// Consumes the builder and constructs a [`DeleteStorageLensConfigurationTaggingInput`](crate::operation::delete_storage_lens_configuration_tagging::DeleteStorageLensConfigurationTaggingInput).
-    pub fn build(self) -> Result<crate::operation::delete_storage_lens_configuration_tagging::DeleteStorageLensConfigurationTaggingInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> Result<crate::operation::delete_storage_lens_configuration_tagging::DeleteStorageLensConfigurationTaggingInput, aws_smithy_http::operation::error::BuildError>{
         Ok(
             crate::operation::delete_storage_lens_configuration_tagging::DeleteStorageLensConfigurationTaggingInput {
                 config_id: self.config_id
@@ -65,4 +67,3 @@ impl DeleteStorageLensConfigurationTaggingInputBuilder {
         )
     }
 }
-

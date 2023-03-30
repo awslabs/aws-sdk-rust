@@ -30,4 +30,3 @@ pub use crate::types::_software_information::SoftwareInformationBuilder;
 pub use crate::types::_capacity::CapacityBuilder;
 
 pub use crate::types::_physical_network_interface::PhysicalNetworkInterfaceBuilder;
-

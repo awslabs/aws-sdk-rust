@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DisassociateAddressInput  {
+pub struct DisassociateAddressInput {
     /// <p>[EC2-VPC] The association ID. Required for EC2-VPC.</p>
     #[doc(hidden)]
     pub association_id: std::option::Option<std::string::String>,
@@ -15,11 +15,11 @@ pub struct DisassociateAddressInput  {
 }
 impl DisassociateAddressInput {
     /// <p>[EC2-VPC] The association ID. Required for EC2-VPC.</p>
-    pub fn association_id(&self) -> std::option::Option<& str> {
+    pub fn association_id(&self) -> std::option::Option<&str> {
         self.association_id.as_deref()
     }
     /// <p>[EC2-Classic] The Elastic IP address. Required for EC2-Classic.</p>
-    pub fn public_ip(&self) -> std::option::Option<& str> {
+    pub fn public_ip(&self) -> std::option::Option<&str> {
         self.public_ip.as_deref()
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
@@ -29,7 +29,8 @@ impl DisassociateAddressInput {
 }
 impl DisassociateAddressInput {
     /// Creates a new builder-style object to manufacture [`DisassociateAddressInput`](crate::operation::disassociate_address::DisassociateAddressInput).
-    pub fn builder() -> crate::operation::disassociate_address::builders::DisassociateAddressInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::disassociate_address::builders::DisassociateAddressInputBuilder {
         crate::operation::disassociate_address::builders::DisassociateAddressInputBuilder::default()
     }
 }
@@ -50,7 +51,8 @@ impl DisassociateAddressInputBuilder {
     }
     /// <p>[EC2-VPC] The association ID. Required for EC2-VPC.</p>
     pub fn set_association_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.association_id = input; self
+        self.association_id = input;
+        self
     }
     /// <p>[EC2-Classic] The Elastic IP address. Required for EC2-Classic.</p>
     pub fn public_ip(mut self, input: impl Into<std::string::String>) -> Self {
@@ -59,7 +61,8 @@ impl DisassociateAddressInputBuilder {
     }
     /// <p>[EC2-Classic] The Elastic IP address. Required for EC2-Classic.</p>
     pub fn set_public_ip(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.public_ip = input; self
+        self.public_ip = input;
+        self
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn dry_run(mut self, input: bool) -> Self {
@@ -68,20 +71,22 @@ impl DisassociateAddressInputBuilder {
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn set_dry_run(mut self, input: std::option::Option<bool>) -> Self {
-        self.dry_run = input; self
+        self.dry_run = input;
+        self
     }
     /// Consumes the builder and constructs a [`DisassociateAddressInput`](crate::operation::disassociate_address::DisassociateAddressInput).
-    pub fn build(self) -> Result<crate::operation::disassociate_address::DisassociateAddressInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::disassociate_address::DisassociateAddressInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::disassociate_address::DisassociateAddressInput {
-                association_id: self.association_id
-                ,
-                public_ip: self.public_ip
-                ,
-                dry_run: self.dry_run
-                ,
-            }
+                association_id: self.association_id,
+                public_ip: self.public_ip,
+                dry_run: self.dry_run,
+            },
         )
     }
 }
-

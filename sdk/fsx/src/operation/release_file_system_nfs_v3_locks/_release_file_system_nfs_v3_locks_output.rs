@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ReleaseFileSystemNfsV3LocksOutput  {
+pub struct ReleaseFileSystemNfsV3LocksOutput {
     /// <p>A description of a specific Amazon FSx file system.</p>
     #[doc(hidden)]
     pub file_system: std::option::Option<crate::types::FileSystem>,
@@ -10,18 +10,18 @@ pub struct ReleaseFileSystemNfsV3LocksOutput  {
 }
 impl ReleaseFileSystemNfsV3LocksOutput {
     /// <p>A description of a specific Amazon FSx file system.</p>
-    pub fn file_system(&self) -> std::option::Option<& crate::types::FileSystem> {
+    pub fn file_system(&self) -> std::option::Option<&crate::types::FileSystem> {
         self.file_system.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for ReleaseFileSystemNfsV3LocksOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl ReleaseFileSystemNfsV3LocksOutput {
     /// Creates a new builder-style object to manufacture [`ReleaseFileSystemNfsV3LocksOutput`](crate::operation::release_file_system_nfs_v3_locks::ReleaseFileSystemNfsV3LocksOutput).
-    pub fn builder() -> crate::operation::release_file_system_nfs_v3_locks::builders::ReleaseFileSystemNfsV3LocksOutputBuilder {
+    pub fn builder() -> crate::operation::release_file_system_nfs_v3_locks::builders::ReleaseFileSystemNfsV3LocksOutputBuilder{
         crate::operation::release_file_system_nfs_v3_locks::builders::ReleaseFileSystemNfsV3LocksOutputBuilder::default()
     }
 }
@@ -41,24 +41,25 @@ impl ReleaseFileSystemNfsV3LocksOutputBuilder {
     }
     /// <p>A description of a specific Amazon FSx file system.</p>
     pub fn set_file_system(mut self, input: std::option::Option<crate::types::FileSystem>) -> Self {
-        self.file_system = input; self
+        self.file_system = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`ReleaseFileSystemNfsV3LocksOutput`](crate::operation::release_file_system_nfs_v3_locks::ReleaseFileSystemNfsV3LocksOutput).
-    pub fn build(self) -> crate::operation::release_file_system_nfs_v3_locks::ReleaseFileSystemNfsV3LocksOutput {
+    pub fn build(
+        self,
+    ) -> crate::operation::release_file_system_nfs_v3_locks::ReleaseFileSystemNfsV3LocksOutput {
         crate::operation::release_file_system_nfs_v3_locks::ReleaseFileSystemNfsV3LocksOutput {
-            file_system: self.file_system
-            ,
+            file_system: self.file_system,
             _request_id: self._request_id,
         }
     }
 }
-

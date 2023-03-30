@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateDefaultSubnetOutput  {
+pub struct CreateDefaultSubnetOutput {
     /// <p>Information about the subnet.</p>
     #[doc(hidden)]
     pub subnet: std::option::Option<crate::types::Subnet>,
@@ -10,19 +10,21 @@ pub struct CreateDefaultSubnetOutput  {
 }
 impl CreateDefaultSubnetOutput {
     /// <p>Information about the subnet.</p>
-    pub fn subnet(&self) -> std::option::Option<& crate::types::Subnet> {
+    pub fn subnet(&self) -> std::option::Option<&crate::types::Subnet> {
         self.subnet.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for CreateDefaultSubnetOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl CreateDefaultSubnetOutput {
     /// Creates a new builder-style object to manufacture [`CreateDefaultSubnetOutput`](crate::operation::create_default_subnet::CreateDefaultSubnetOutput).
-    pub fn builder() -> crate::operation::create_default_subnet::builders::CreateDefaultSubnetOutputBuilder {
-        crate::operation::create_default_subnet::builders::CreateDefaultSubnetOutputBuilder::default()
+    pub fn builder(
+    ) -> crate::operation::create_default_subnet::builders::CreateDefaultSubnetOutputBuilder {
+        crate::operation::create_default_subnet::builders::CreateDefaultSubnetOutputBuilder::default(
+        )
     }
 }
 
@@ -41,24 +43,23 @@ impl CreateDefaultSubnetOutputBuilder {
     }
     /// <p>Information about the subnet.</p>
     pub fn set_subnet(mut self, input: std::option::Option<crate::types::Subnet>) -> Self {
-        self.subnet = input; self
+        self.subnet = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`CreateDefaultSubnetOutput`](crate::operation::create_default_subnet::CreateDefaultSubnetOutput).
     pub fn build(self) -> crate::operation::create_default_subnet::CreateDefaultSubnetOutput {
         crate::operation::create_default_subnet::CreateDefaultSubnetOutput {
-            subnet: self.subnet
-            ,
+            subnet: self.subnet,
             _request_id: self._request_id,
         }
     }
 }
-

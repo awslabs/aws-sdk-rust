@@ -3,7 +3,7 @@
 /// <p>An Lambda layer.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AwsLambdaFunctionLayer  {
+pub struct AwsLambdaFunctionLayer {
     /// <p>The ARN of the function layer.</p>
     #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
@@ -13,7 +13,7 @@ pub struct AwsLambdaFunctionLayer  {
 }
 impl AwsLambdaFunctionLayer {
     /// <p>The ARN of the function layer.</p>
-    pub fn arn(&self) -> std::option::Option<& str> {
+    pub fn arn(&self) -> std::option::Option<&str> {
         self.arn.as_deref()
     }
     /// <p>The size of the layer archive in bytes.</p>
@@ -43,7 +43,8 @@ impl AwsLambdaFunctionLayerBuilder {
     }
     /// <p>The ARN of the function layer.</p>
     pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.arn = input; self
+        self.arn = input;
+        self
     }
     /// <p>The size of the layer archive in bytes.</p>
     pub fn code_size(mut self, input: i32) -> Self {
@@ -52,17 +53,14 @@ impl AwsLambdaFunctionLayerBuilder {
     }
     /// <p>The size of the layer archive in bytes.</p>
     pub fn set_code_size(mut self, input: std::option::Option<i32>) -> Self {
-        self.code_size = input; self
+        self.code_size = input;
+        self
     }
     /// Consumes the builder and constructs a [`AwsLambdaFunctionLayer`](crate::types::AwsLambdaFunctionLayer).
     pub fn build(self) -> crate::types::AwsLambdaFunctionLayer {
         crate::types::AwsLambdaFunctionLayer {
-            arn: self.arn
-            ,
-            code_size: self.code_size
-                .unwrap_or_default()
-            ,
+            arn: self.arn,
+            code_size: self.code_size.unwrap_or_default(),
         }
     }
 }
-

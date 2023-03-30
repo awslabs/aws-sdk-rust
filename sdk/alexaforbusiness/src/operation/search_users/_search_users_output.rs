@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SearchUsersOutput  {
+pub struct SearchUsersOutput {
     /// <p>The users that meet the specified set of filter criteria, in sort order.</p>
     #[doc(hidden)]
     pub users: std::option::Option<std::vec::Vec<crate::types::UserData>>,
@@ -16,11 +16,11 @@ pub struct SearchUsersOutput  {
 }
 impl SearchUsersOutput {
     /// <p>The users that meet the specified set of filter criteria, in sort order.</p>
-    pub fn users(&self) -> std::option::Option<& [crate::types::UserData]> {
+    pub fn users(&self) -> std::option::Option<&[crate::types::UserData]> {
         self.users.as_deref()
     }
     /// <p>The token returned to indicate that there is more data available.</p>
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
     /// <p>The total number of users returned.</p>
@@ -29,10 +29,10 @@ impl SearchUsersOutput {
     }
 }
 impl aws_http::request_id::RequestId for SearchUsersOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl SearchUsersOutput {
     /// Creates a new builder-style object to manufacture [`SearchUsersOutput`](crate::operation::search_users::SearchUsersOutput).
     pub fn builder() -> crate::operation::search_users::builders::SearchUsersOutputBuilder {
@@ -57,13 +57,17 @@ impl SearchUsersOutputBuilder {
     /// <p>The users that meet the specified set of filter criteria, in sort order.</p>
     pub fn users(mut self, input: crate::types::UserData) -> Self {
         let mut v = self.users.unwrap_or_default();
-                        v.push(input);
-                        self.users = Some(v);
-                        self
+        v.push(input);
+        self.users = Some(v);
+        self
     }
     /// <p>The users that meet the specified set of filter criteria, in sort order.</p>
-    pub fn set_users(mut self, input: std::option::Option<std::vec::Vec<crate::types::UserData>>) -> Self {
-        self.users = input; self
+    pub fn set_users(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::UserData>>,
+    ) -> Self {
+        self.users = input;
+        self
     }
     /// <p>The token returned to indicate that there is more data available.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -72,7 +76,8 @@ impl SearchUsersOutputBuilder {
     }
     /// <p>The token returned to indicate that there is more data available.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input; self
+        self.next_token = input;
+        self
     }
     /// <p>The total number of users returned.</p>
     pub fn total_count(mut self, input: i32) -> Self {
@@ -81,28 +86,25 @@ impl SearchUsersOutputBuilder {
     }
     /// <p>The total number of users returned.</p>
     pub fn set_total_count(mut self, input: std::option::Option<i32>) -> Self {
-        self.total_count = input; self
+        self.total_count = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`SearchUsersOutput`](crate::operation::search_users::SearchUsersOutput).
     pub fn build(self) -> crate::operation::search_users::SearchUsersOutput {
         crate::operation::search_users::SearchUsersOutput {
-            users: self.users
-            ,
-            next_token: self.next_token
-            ,
-            total_count: self.total_count
-            ,
+            users: self.users,
+            next_token: self.next_token,
+            total_count: self.total_count,
             _request_id: self._request_id,
         }
     }
 }
-

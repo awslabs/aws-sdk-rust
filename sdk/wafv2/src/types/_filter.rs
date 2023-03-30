@@ -3,7 +3,7 @@
 /// <p>A single logging filter, used in <code>LoggingFilter</code>. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Filter  {
+pub struct Filter {
     /// <p>How to handle logs that satisfy the filter's conditions and requirement. </p>
     #[doc(hidden)]
     pub behavior: std::option::Option<crate::types::FilterBehavior>,
@@ -16,15 +16,15 @@ pub struct Filter  {
 }
 impl Filter {
     /// <p>How to handle logs that satisfy the filter's conditions and requirement. </p>
-    pub fn behavior(&self) -> std::option::Option<& crate::types::FilterBehavior> {
+    pub fn behavior(&self) -> std::option::Option<&crate::types::FilterBehavior> {
         self.behavior.as_ref()
     }
     /// <p>Logic to apply to the filtering conditions. You can specify that, in order to satisfy the filter, a log must match all conditions or must match at least one condition.</p>
-    pub fn requirement(&self) -> std::option::Option<& crate::types::FilterRequirement> {
+    pub fn requirement(&self) -> std::option::Option<&crate::types::FilterRequirement> {
         self.requirement.as_ref()
     }
     /// <p>Match conditions for the filter.</p>
-    pub fn conditions(&self) -> std::option::Option<& [crate::types::Condition]> {
+    pub fn conditions(&self) -> std::option::Option<&[crate::types::Condition]> {
         self.conditions.as_deref()
     }
 }
@@ -50,8 +50,12 @@ impl FilterBuilder {
         self
     }
     /// <p>How to handle logs that satisfy the filter's conditions and requirement. </p>
-    pub fn set_behavior(mut self, input: std::option::Option<crate::types::FilterBehavior>) -> Self {
-        self.behavior = input; self
+    pub fn set_behavior(
+        mut self,
+        input: std::option::Option<crate::types::FilterBehavior>,
+    ) -> Self {
+        self.behavior = input;
+        self
     }
     /// <p>Logic to apply to the filtering conditions. You can specify that, in order to satisfy the filter, a log must match all conditions or must match at least one condition.</p>
     pub fn requirement(mut self, input: crate::types::FilterRequirement) -> Self {
@@ -59,8 +63,12 @@ impl FilterBuilder {
         self
     }
     /// <p>Logic to apply to the filtering conditions. You can specify that, in order to satisfy the filter, a log must match all conditions or must match at least one condition.</p>
-    pub fn set_requirement(mut self, input: std::option::Option<crate::types::FilterRequirement>) -> Self {
-        self.requirement = input; self
+    pub fn set_requirement(
+        mut self,
+        input: std::option::Option<crate::types::FilterRequirement>,
+    ) -> Self {
+        self.requirement = input;
+        self
     }
     /// Appends an item to `conditions`.
     ///
@@ -69,24 +77,24 @@ impl FilterBuilder {
     /// <p>Match conditions for the filter.</p>
     pub fn conditions(mut self, input: crate::types::Condition) -> Self {
         let mut v = self.conditions.unwrap_or_default();
-                        v.push(input);
-                        self.conditions = Some(v);
-                        self
+        v.push(input);
+        self.conditions = Some(v);
+        self
     }
     /// <p>Match conditions for the filter.</p>
-    pub fn set_conditions(mut self, input: std::option::Option<std::vec::Vec<crate::types::Condition>>) -> Self {
-        self.conditions = input; self
+    pub fn set_conditions(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::Condition>>,
+    ) -> Self {
+        self.conditions = input;
+        self
     }
     /// Consumes the builder and constructs a [`Filter`](crate::types::Filter).
     pub fn build(self) -> crate::types::Filter {
         crate::types::Filter {
-            behavior: self.behavior
-            ,
-            requirement: self.requirement
-            ,
-            conditions: self.conditions
-            ,
+            behavior: self.behavior,
+            requirement: self.requirement,
+            conditions: self.conditions,
         }
     }
 }
-

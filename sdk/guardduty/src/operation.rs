@@ -195,4 +195,3 @@ pub mod update_publishing_destination;
 
 /// Types for the `UpdateThreatIntelSet` operation.
 pub mod update_threat_intel_set;
-

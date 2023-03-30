@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeBrokerOutput  {
+pub struct DescribeBrokerOutput {
     /// <p>A list of actions required for a broker.</p>
     #[doc(hidden)]
     pub actions_required: std::option::Option<std::vec::Vec<crate::types::ActionRequired>>,
@@ -86,7 +86,8 @@ pub struct DescribeBrokerOutput  {
     pub subnet_ids: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The list of all tags associated with this broker.</p>
     #[doc(hidden)]
-    pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub tags:
+        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The list of all broker usernames for the specified broker.</p>
     #[doc(hidden)]
     pub users: std::option::Option<std::vec::Vec<crate::types::UserSummary>>,
@@ -94,11 +95,13 @@ pub struct DescribeBrokerOutput  {
 }
 impl DescribeBrokerOutput {
     /// <p>A list of actions required for a broker.</p>
-    pub fn actions_required(&self) -> std::option::Option<& [crate::types::ActionRequired]> {
+    pub fn actions_required(&self) -> std::option::Option<&[crate::types::ActionRequired]> {
         self.actions_required.as_deref()
     }
     /// <p>The authentication strategy used to secure the broker. The default is SIMPLE.</p>
-    pub fn authentication_strategy(&self) -> std::option::Option<& crate::types::AuthenticationStrategy> {
+    pub fn authentication_strategy(
+        &self,
+    ) -> std::option::Option<&crate::types::AuthenticationStrategy> {
         self.authentication_strategy.as_ref()
     }
     /// <p>Enables automatic upgrades to new minor versions for brokers, as new versions are released and supported by Amazon MQ. Automatic upgrades occur during the scheduled maintenance window of the broker or after a manual broker reboot.</p>
@@ -106,83 +109,91 @@ impl DescribeBrokerOutput {
         self.auto_minor_version_upgrade
     }
     /// <p>The broker's Amazon Resource Name (ARN).</p>
-    pub fn broker_arn(&self) -> std::option::Option<& str> {
+    pub fn broker_arn(&self) -> std::option::Option<&str> {
         self.broker_arn.as_deref()
     }
     /// <p>The unique ID that Amazon MQ generates for the broker.</p>
-    pub fn broker_id(&self) -> std::option::Option<& str> {
+    pub fn broker_id(&self) -> std::option::Option<&str> {
         self.broker_id.as_deref()
     }
     /// <p>A list of information about allocated brokers.</p>
-    pub fn broker_instances(&self) -> std::option::Option<& [crate::types::BrokerInstance]> {
+    pub fn broker_instances(&self) -> std::option::Option<&[crate::types::BrokerInstance]> {
         self.broker_instances.as_deref()
     }
     /// <p>The broker's name. This value must be unique in your AWS account, 1-50 characters long, must contain only letters, numbers, dashes, and underscores, and must not contain white spaces, brackets, wildcard characters, or special characters.</p>
-    pub fn broker_name(&self) -> std::option::Option<& str> {
+    pub fn broker_name(&self) -> std::option::Option<&str> {
         self.broker_name.as_deref()
     }
     /// <p>The broker's status.</p>
-    pub fn broker_state(&self) -> std::option::Option<& crate::types::BrokerState> {
+    pub fn broker_state(&self) -> std::option::Option<&crate::types::BrokerState> {
         self.broker_state.as_ref()
     }
     /// <p>The list of all revisions for the specified configuration.</p>
-    pub fn configurations(&self) -> std::option::Option<& crate::types::Configurations> {
+    pub fn configurations(&self) -> std::option::Option<&crate::types::Configurations> {
         self.configurations.as_ref()
     }
     /// <p>The time when the broker was created.</p>
-    pub fn created(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
+    pub fn created(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created.as_ref()
     }
     /// <p>The broker's deployment mode.</p>
-    pub fn deployment_mode(&self) -> std::option::Option<& crate::types::DeploymentMode> {
+    pub fn deployment_mode(&self) -> std::option::Option<&crate::types::DeploymentMode> {
         self.deployment_mode.as_ref()
     }
     /// <p>Encryption options for the broker. Does not apply to RabbitMQ brokers.</p>
-    pub fn encryption_options(&self) -> std::option::Option<& crate::types::EncryptionOptions> {
+    pub fn encryption_options(&self) -> std::option::Option<&crate::types::EncryptionOptions> {
         self.encryption_options.as_ref()
     }
     /// <p>The type of broker engine. Currently, Amazon MQ supports ACTIVEMQ and RABBITMQ.</p>
-    pub fn engine_type(&self) -> std::option::Option<& crate::types::EngineType> {
+    pub fn engine_type(&self) -> std::option::Option<&crate::types::EngineType> {
         self.engine_type.as_ref()
     }
     /// <p>The broker engine's version. For a list of supported engine versions, see <a href="https://docs.aws.amazon.com//amazon-mq/latest/developer-guide/broker-engine.html">Supported engines</a>.</p>
-    pub fn engine_version(&self) -> std::option::Option<& str> {
+    pub fn engine_version(&self) -> std::option::Option<&str> {
         self.engine_version.as_deref()
     }
     /// <p>The broker's instance type.</p>
-    pub fn host_instance_type(&self) -> std::option::Option<& str> {
+    pub fn host_instance_type(&self) -> std::option::Option<&str> {
         self.host_instance_type.as_deref()
     }
     /// <p>The metadata of the LDAP server used to authenticate and authorize connections to the broker.</p>
-    pub fn ldap_server_metadata(&self) -> std::option::Option<& crate::types::LdapServerMetadataOutput> {
+    pub fn ldap_server_metadata(
+        &self,
+    ) -> std::option::Option<&crate::types::LdapServerMetadataOutput> {
         self.ldap_server_metadata.as_ref()
     }
     /// <p>The list of information about logs currently enabled and pending to be deployed for the specified broker.</p>
-    pub fn logs(&self) -> std::option::Option<& crate::types::LogsSummary> {
+    pub fn logs(&self) -> std::option::Option<&crate::types::LogsSummary> {
         self.logs.as_ref()
     }
     /// <p>The parameters that determine the WeeklyStartTime.</p>
-    pub fn maintenance_window_start_time(&self) -> std::option::Option<& crate::types::WeeklyStartTime> {
+    pub fn maintenance_window_start_time(
+        &self,
+    ) -> std::option::Option<&crate::types::WeeklyStartTime> {
         self.maintenance_window_start_time.as_ref()
     }
     /// <p>The authentication strategy that will be applied when the broker is rebooted. The default is SIMPLE.</p>
-    pub fn pending_authentication_strategy(&self) -> std::option::Option<& crate::types::AuthenticationStrategy> {
+    pub fn pending_authentication_strategy(
+        &self,
+    ) -> std::option::Option<&crate::types::AuthenticationStrategy> {
         self.pending_authentication_strategy.as_ref()
     }
     /// <p>The broker engine version to upgrade to. For a list of supported engine versions, see <a href="https://docs.aws.amazon.com//amazon-mq/latest/developer-guide/broker-engine.html">Supported engines</a>.</p>
-    pub fn pending_engine_version(&self) -> std::option::Option<& str> {
+    pub fn pending_engine_version(&self) -> std::option::Option<&str> {
         self.pending_engine_version.as_deref()
     }
     /// <p>The broker's host instance type to upgrade to. For a list of supported instance types, see <a href="https://docs.aws.amazon.com//amazon-mq/latest/developer-guide/broker.html#broker-instance-types">Broker instance types</a>.</p>
-    pub fn pending_host_instance_type(&self) -> std::option::Option<& str> {
+    pub fn pending_host_instance_type(&self) -> std::option::Option<&str> {
         self.pending_host_instance_type.as_deref()
     }
     /// <p>The metadata of the LDAP server that will be used to authenticate and authorize connections to the broker after it is rebooted.</p>
-    pub fn pending_ldap_server_metadata(&self) -> std::option::Option<& crate::types::LdapServerMetadataOutput> {
+    pub fn pending_ldap_server_metadata(
+        &self,
+    ) -> std::option::Option<&crate::types::LdapServerMetadataOutput> {
         self.pending_ldap_server_metadata.as_ref()
     }
     /// <p>The list of pending security groups to authorize connections to brokers.</p>
-    pub fn pending_security_groups(&self) -> std::option::Option<& [std::string::String]> {
+    pub fn pending_security_groups(&self) -> std::option::Option<&[std::string::String]> {
         self.pending_security_groups.as_deref()
     }
     /// <p>Enables connections from applications outside of the VPC that hosts the broker's subnets.</p>
@@ -190,31 +201,34 @@ impl DescribeBrokerOutput {
         self.publicly_accessible
     }
     /// <p>The list of rules (1 minimum, 125 maximum) that authorize connections to brokers.</p>
-    pub fn security_groups(&self) -> std::option::Option<& [std::string::String]> {
+    pub fn security_groups(&self) -> std::option::Option<&[std::string::String]> {
         self.security_groups.as_deref()
     }
     /// <p>The broker's storage type.</p>
-    pub fn storage_type(&self) -> std::option::Option<& crate::types::BrokerStorageType> {
+    pub fn storage_type(&self) -> std::option::Option<&crate::types::BrokerStorageType> {
         self.storage_type.as_ref()
     }
     /// <p>The list of groups that define which subnets and IP ranges the broker can use from different Availability Zones.</p>
-    pub fn subnet_ids(&self) -> std::option::Option<& [std::string::String]> {
+    pub fn subnet_ids(&self) -> std::option::Option<&[std::string::String]> {
         self.subnet_ids.as_deref()
     }
     /// <p>The list of all tags associated with this broker.</p>
-    pub fn tags(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
         self.tags.as_ref()
     }
     /// <p>The list of all broker usernames for the specified broker.</p>
-    pub fn users(&self) -> std::option::Option<& [crate::types::UserSummary]> {
+    pub fn users(&self) -> std::option::Option<&[crate::types::UserSummary]> {
         self.users.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for DescribeBrokerOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl DescribeBrokerOutput {
     /// Creates a new builder-style object to manufacture [`DescribeBrokerOutput`](crate::operation::describe_broker::DescribeBrokerOutput).
     pub fn builder() -> crate::operation::describe_broker::builders::DescribeBrokerOutputBuilder {
@@ -244,16 +258,19 @@ pub struct DescribeBrokerOutputBuilder {
     pub(crate) ldap_server_metadata: std::option::Option<crate::types::LdapServerMetadataOutput>,
     pub(crate) logs: std::option::Option<crate::types::LogsSummary>,
     pub(crate) maintenance_window_start_time: std::option::Option<crate::types::WeeklyStartTime>,
-    pub(crate) pending_authentication_strategy: std::option::Option<crate::types::AuthenticationStrategy>,
+    pub(crate) pending_authentication_strategy:
+        std::option::Option<crate::types::AuthenticationStrategy>,
     pub(crate) pending_engine_version: std::option::Option<std::string::String>,
     pub(crate) pending_host_instance_type: std::option::Option<std::string::String>,
-    pub(crate) pending_ldap_server_metadata: std::option::Option<crate::types::LdapServerMetadataOutput>,
+    pub(crate) pending_ldap_server_metadata:
+        std::option::Option<crate::types::LdapServerMetadataOutput>,
     pub(crate) pending_security_groups: std::option::Option<std::vec::Vec<std::string::String>>,
     pub(crate) publicly_accessible: std::option::Option<bool>,
     pub(crate) security_groups: std::option::Option<std::vec::Vec<std::string::String>>,
     pub(crate) storage_type: std::option::Option<crate::types::BrokerStorageType>,
     pub(crate) subnet_ids: std::option::Option<std::vec::Vec<std::string::String>>,
-    pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub(crate) tags:
+        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     pub(crate) users: std::option::Option<std::vec::Vec<crate::types::UserSummary>>,
     _request_id: Option<String>,
 }
@@ -265,13 +282,17 @@ impl DescribeBrokerOutputBuilder {
     /// <p>A list of actions required for a broker.</p>
     pub fn actions_required(mut self, input: crate::types::ActionRequired) -> Self {
         let mut v = self.actions_required.unwrap_or_default();
-                        v.push(input);
-                        self.actions_required = Some(v);
-                        self
+        v.push(input);
+        self.actions_required = Some(v);
+        self
     }
     /// <p>A list of actions required for a broker.</p>
-    pub fn set_actions_required(mut self, input: std::option::Option<std::vec::Vec<crate::types::ActionRequired>>) -> Self {
-        self.actions_required = input; self
+    pub fn set_actions_required(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::ActionRequired>>,
+    ) -> Self {
+        self.actions_required = input;
+        self
     }
     /// <p>The authentication strategy used to secure the broker. The default is SIMPLE.</p>
     pub fn authentication_strategy(mut self, input: crate::types::AuthenticationStrategy) -> Self {
@@ -279,8 +300,12 @@ impl DescribeBrokerOutputBuilder {
         self
     }
     /// <p>The authentication strategy used to secure the broker. The default is SIMPLE.</p>
-    pub fn set_authentication_strategy(mut self, input: std::option::Option<crate::types::AuthenticationStrategy>) -> Self {
-        self.authentication_strategy = input; self
+    pub fn set_authentication_strategy(
+        mut self,
+        input: std::option::Option<crate::types::AuthenticationStrategy>,
+    ) -> Self {
+        self.authentication_strategy = input;
+        self
     }
     /// <p>Enables automatic upgrades to new minor versions for brokers, as new versions are released and supported by Amazon MQ. Automatic upgrades occur during the scheduled maintenance window of the broker or after a manual broker reboot.</p>
     pub fn auto_minor_version_upgrade(mut self, input: bool) -> Self {
@@ -289,7 +314,8 @@ impl DescribeBrokerOutputBuilder {
     }
     /// <p>Enables automatic upgrades to new minor versions for brokers, as new versions are released and supported by Amazon MQ. Automatic upgrades occur during the scheduled maintenance window of the broker or after a manual broker reboot.</p>
     pub fn set_auto_minor_version_upgrade(mut self, input: std::option::Option<bool>) -> Self {
-        self.auto_minor_version_upgrade = input; self
+        self.auto_minor_version_upgrade = input;
+        self
     }
     /// <p>The broker's Amazon Resource Name (ARN).</p>
     pub fn broker_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -298,7 +324,8 @@ impl DescribeBrokerOutputBuilder {
     }
     /// <p>The broker's Amazon Resource Name (ARN).</p>
     pub fn set_broker_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.broker_arn = input; self
+        self.broker_arn = input;
+        self
     }
     /// <p>The unique ID that Amazon MQ generates for the broker.</p>
     pub fn broker_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -307,7 +334,8 @@ impl DescribeBrokerOutputBuilder {
     }
     /// <p>The unique ID that Amazon MQ generates for the broker.</p>
     pub fn set_broker_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.broker_id = input; self
+        self.broker_id = input;
+        self
     }
     /// Appends an item to `broker_instances`.
     ///
@@ -316,13 +344,17 @@ impl DescribeBrokerOutputBuilder {
     /// <p>A list of information about allocated brokers.</p>
     pub fn broker_instances(mut self, input: crate::types::BrokerInstance) -> Self {
         let mut v = self.broker_instances.unwrap_or_default();
-                        v.push(input);
-                        self.broker_instances = Some(v);
-                        self
+        v.push(input);
+        self.broker_instances = Some(v);
+        self
     }
     /// <p>A list of information about allocated brokers.</p>
-    pub fn set_broker_instances(mut self, input: std::option::Option<std::vec::Vec<crate::types::BrokerInstance>>) -> Self {
-        self.broker_instances = input; self
+    pub fn set_broker_instances(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::BrokerInstance>>,
+    ) -> Self {
+        self.broker_instances = input;
+        self
     }
     /// <p>The broker's name. This value must be unique in your AWS account, 1-50 characters long, must contain only letters, numbers, dashes, and underscores, and must not contain white spaces, brackets, wildcard characters, or special characters.</p>
     pub fn broker_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -331,7 +363,8 @@ impl DescribeBrokerOutputBuilder {
     }
     /// <p>The broker's name. This value must be unique in your AWS account, 1-50 characters long, must contain only letters, numbers, dashes, and underscores, and must not contain white spaces, brackets, wildcard characters, or special characters.</p>
     pub fn set_broker_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.broker_name = input; self
+        self.broker_name = input;
+        self
     }
     /// <p>The broker's status.</p>
     pub fn broker_state(mut self, input: crate::types::BrokerState) -> Self {
@@ -339,8 +372,12 @@ impl DescribeBrokerOutputBuilder {
         self
     }
     /// <p>The broker's status.</p>
-    pub fn set_broker_state(mut self, input: std::option::Option<crate::types::BrokerState>) -> Self {
-        self.broker_state = input; self
+    pub fn set_broker_state(
+        mut self,
+        input: std::option::Option<crate::types::BrokerState>,
+    ) -> Self {
+        self.broker_state = input;
+        self
     }
     /// <p>The list of all revisions for the specified configuration.</p>
     pub fn configurations(mut self, input: crate::types::Configurations) -> Self {
@@ -348,8 +385,12 @@ impl DescribeBrokerOutputBuilder {
         self
     }
     /// <p>The list of all revisions for the specified configuration.</p>
-    pub fn set_configurations(mut self, input: std::option::Option<crate::types::Configurations>) -> Self {
-        self.configurations = input; self
+    pub fn set_configurations(
+        mut self,
+        input: std::option::Option<crate::types::Configurations>,
+    ) -> Self {
+        self.configurations = input;
+        self
     }
     /// <p>The time when the broker was created.</p>
     pub fn created(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -358,7 +399,8 @@ impl DescribeBrokerOutputBuilder {
     }
     /// <p>The time when the broker was created.</p>
     pub fn set_created(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.created = input; self
+        self.created = input;
+        self
     }
     /// <p>The broker's deployment mode.</p>
     pub fn deployment_mode(mut self, input: crate::types::DeploymentMode) -> Self {
@@ -366,8 +408,12 @@ impl DescribeBrokerOutputBuilder {
         self
     }
     /// <p>The broker's deployment mode.</p>
-    pub fn set_deployment_mode(mut self, input: std::option::Option<crate::types::DeploymentMode>) -> Self {
-        self.deployment_mode = input; self
+    pub fn set_deployment_mode(
+        mut self,
+        input: std::option::Option<crate::types::DeploymentMode>,
+    ) -> Self {
+        self.deployment_mode = input;
+        self
     }
     /// <p>Encryption options for the broker. Does not apply to RabbitMQ brokers.</p>
     pub fn encryption_options(mut self, input: crate::types::EncryptionOptions) -> Self {
@@ -375,8 +421,12 @@ impl DescribeBrokerOutputBuilder {
         self
     }
     /// <p>Encryption options for the broker. Does not apply to RabbitMQ brokers.</p>
-    pub fn set_encryption_options(mut self, input: std::option::Option<crate::types::EncryptionOptions>) -> Self {
-        self.encryption_options = input; self
+    pub fn set_encryption_options(
+        mut self,
+        input: std::option::Option<crate::types::EncryptionOptions>,
+    ) -> Self {
+        self.encryption_options = input;
+        self
     }
     /// <p>The type of broker engine. Currently, Amazon MQ supports ACTIVEMQ and RABBITMQ.</p>
     pub fn engine_type(mut self, input: crate::types::EngineType) -> Self {
@@ -385,7 +435,8 @@ impl DescribeBrokerOutputBuilder {
     }
     /// <p>The type of broker engine. Currently, Amazon MQ supports ACTIVEMQ and RABBITMQ.</p>
     pub fn set_engine_type(mut self, input: std::option::Option<crate::types::EngineType>) -> Self {
-        self.engine_type = input; self
+        self.engine_type = input;
+        self
     }
     /// <p>The broker engine's version. For a list of supported engine versions, see <a href="https://docs.aws.amazon.com//amazon-mq/latest/developer-guide/broker-engine.html">Supported engines</a>.</p>
     pub fn engine_version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -394,7 +445,8 @@ impl DescribeBrokerOutputBuilder {
     }
     /// <p>The broker engine's version. For a list of supported engine versions, see <a href="https://docs.aws.amazon.com//amazon-mq/latest/developer-guide/broker-engine.html">Supported engines</a>.</p>
     pub fn set_engine_version(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.engine_version = input; self
+        self.engine_version = input;
+        self
     }
     /// <p>The broker's instance type.</p>
     pub fn host_instance_type(mut self, input: impl Into<std::string::String>) -> Self {
@@ -402,8 +454,12 @@ impl DescribeBrokerOutputBuilder {
         self
     }
     /// <p>The broker's instance type.</p>
-    pub fn set_host_instance_type(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.host_instance_type = input; self
+    pub fn set_host_instance_type(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.host_instance_type = input;
+        self
     }
     /// <p>The metadata of the LDAP server used to authenticate and authorize connections to the broker.</p>
     pub fn ldap_server_metadata(mut self, input: crate::types::LdapServerMetadataOutput) -> Self {
@@ -411,8 +467,12 @@ impl DescribeBrokerOutputBuilder {
         self
     }
     /// <p>The metadata of the LDAP server used to authenticate and authorize connections to the broker.</p>
-    pub fn set_ldap_server_metadata(mut self, input: std::option::Option<crate::types::LdapServerMetadataOutput>) -> Self {
-        self.ldap_server_metadata = input; self
+    pub fn set_ldap_server_metadata(
+        mut self,
+        input: std::option::Option<crate::types::LdapServerMetadataOutput>,
+    ) -> Self {
+        self.ldap_server_metadata = input;
+        self
     }
     /// <p>The list of information about logs currently enabled and pending to be deployed for the specified broker.</p>
     pub fn logs(mut self, input: crate::types::LogsSummary) -> Self {
@@ -421,7 +481,8 @@ impl DescribeBrokerOutputBuilder {
     }
     /// <p>The list of information about logs currently enabled and pending to be deployed for the specified broker.</p>
     pub fn set_logs(mut self, input: std::option::Option<crate::types::LogsSummary>) -> Self {
-        self.logs = input; self
+        self.logs = input;
+        self
     }
     /// <p>The parameters that determine the WeeklyStartTime.</p>
     pub fn maintenance_window_start_time(mut self, input: crate::types::WeeklyStartTime) -> Self {
@@ -429,17 +490,28 @@ impl DescribeBrokerOutputBuilder {
         self
     }
     /// <p>The parameters that determine the WeeklyStartTime.</p>
-    pub fn set_maintenance_window_start_time(mut self, input: std::option::Option<crate::types::WeeklyStartTime>) -> Self {
-        self.maintenance_window_start_time = input; self
+    pub fn set_maintenance_window_start_time(
+        mut self,
+        input: std::option::Option<crate::types::WeeklyStartTime>,
+    ) -> Self {
+        self.maintenance_window_start_time = input;
+        self
     }
     /// <p>The authentication strategy that will be applied when the broker is rebooted. The default is SIMPLE.</p>
-    pub fn pending_authentication_strategy(mut self, input: crate::types::AuthenticationStrategy) -> Self {
+    pub fn pending_authentication_strategy(
+        mut self,
+        input: crate::types::AuthenticationStrategy,
+    ) -> Self {
         self.pending_authentication_strategy = Some(input);
         self
     }
     /// <p>The authentication strategy that will be applied when the broker is rebooted. The default is SIMPLE.</p>
-    pub fn set_pending_authentication_strategy(mut self, input: std::option::Option<crate::types::AuthenticationStrategy>) -> Self {
-        self.pending_authentication_strategy = input; self
+    pub fn set_pending_authentication_strategy(
+        mut self,
+        input: std::option::Option<crate::types::AuthenticationStrategy>,
+    ) -> Self {
+        self.pending_authentication_strategy = input;
+        self
     }
     /// <p>The broker engine version to upgrade to. For a list of supported engine versions, see <a href="https://docs.aws.amazon.com//amazon-mq/latest/developer-guide/broker-engine.html">Supported engines</a>.</p>
     pub fn pending_engine_version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -447,8 +519,12 @@ impl DescribeBrokerOutputBuilder {
         self
     }
     /// <p>The broker engine version to upgrade to. For a list of supported engine versions, see <a href="https://docs.aws.amazon.com//amazon-mq/latest/developer-guide/broker-engine.html">Supported engines</a>.</p>
-    pub fn set_pending_engine_version(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.pending_engine_version = input; self
+    pub fn set_pending_engine_version(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.pending_engine_version = input;
+        self
     }
     /// <p>The broker's host instance type to upgrade to. For a list of supported instance types, see <a href="https://docs.aws.amazon.com//amazon-mq/latest/developer-guide/broker.html#broker-instance-types">Broker instance types</a>.</p>
     pub fn pending_host_instance_type(mut self, input: impl Into<std::string::String>) -> Self {
@@ -456,17 +532,28 @@ impl DescribeBrokerOutputBuilder {
         self
     }
     /// <p>The broker's host instance type to upgrade to. For a list of supported instance types, see <a href="https://docs.aws.amazon.com//amazon-mq/latest/developer-guide/broker.html#broker-instance-types">Broker instance types</a>.</p>
-    pub fn set_pending_host_instance_type(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.pending_host_instance_type = input; self
+    pub fn set_pending_host_instance_type(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.pending_host_instance_type = input;
+        self
     }
     /// <p>The metadata of the LDAP server that will be used to authenticate and authorize connections to the broker after it is rebooted.</p>
-    pub fn pending_ldap_server_metadata(mut self, input: crate::types::LdapServerMetadataOutput) -> Self {
+    pub fn pending_ldap_server_metadata(
+        mut self,
+        input: crate::types::LdapServerMetadataOutput,
+    ) -> Self {
         self.pending_ldap_server_metadata = Some(input);
         self
     }
     /// <p>The metadata of the LDAP server that will be used to authenticate and authorize connections to the broker after it is rebooted.</p>
-    pub fn set_pending_ldap_server_metadata(mut self, input: std::option::Option<crate::types::LdapServerMetadataOutput>) -> Self {
-        self.pending_ldap_server_metadata = input; self
+    pub fn set_pending_ldap_server_metadata(
+        mut self,
+        input: std::option::Option<crate::types::LdapServerMetadataOutput>,
+    ) -> Self {
+        self.pending_ldap_server_metadata = input;
+        self
     }
     /// Appends an item to `pending_security_groups`.
     ///
@@ -475,13 +562,17 @@ impl DescribeBrokerOutputBuilder {
     /// <p>The list of pending security groups to authorize connections to brokers.</p>
     pub fn pending_security_groups(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.pending_security_groups.unwrap_or_default();
-                        v.push(input.into());
-                        self.pending_security_groups = Some(v);
-                        self
+        v.push(input.into());
+        self.pending_security_groups = Some(v);
+        self
     }
     /// <p>The list of pending security groups to authorize connections to brokers.</p>
-    pub fn set_pending_security_groups(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-        self.pending_security_groups = input; self
+    pub fn set_pending_security_groups(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
+        self.pending_security_groups = input;
+        self
     }
     /// <p>Enables connections from applications outside of the VPC that hosts the broker's subnets.</p>
     pub fn publicly_accessible(mut self, input: bool) -> Self {
@@ -490,7 +581,8 @@ impl DescribeBrokerOutputBuilder {
     }
     /// <p>Enables connections from applications outside of the VPC that hosts the broker's subnets.</p>
     pub fn set_publicly_accessible(mut self, input: std::option::Option<bool>) -> Self {
-        self.publicly_accessible = input; self
+        self.publicly_accessible = input;
+        self
     }
     /// Appends an item to `security_groups`.
     ///
@@ -499,13 +591,17 @@ impl DescribeBrokerOutputBuilder {
     /// <p>The list of rules (1 minimum, 125 maximum) that authorize connections to brokers.</p>
     pub fn security_groups(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.security_groups.unwrap_or_default();
-                        v.push(input.into());
-                        self.security_groups = Some(v);
-                        self
+        v.push(input.into());
+        self.security_groups = Some(v);
+        self
     }
     /// <p>The list of rules (1 minimum, 125 maximum) that authorize connections to brokers.</p>
-    pub fn set_security_groups(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-        self.security_groups = input; self
+    pub fn set_security_groups(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
+        self.security_groups = input;
+        self
     }
     /// <p>The broker's storage type.</p>
     pub fn storage_type(mut self, input: crate::types::BrokerStorageType) -> Self {
@@ -513,8 +609,12 @@ impl DescribeBrokerOutputBuilder {
         self
     }
     /// <p>The broker's storage type.</p>
-    pub fn set_storage_type(mut self, input: std::option::Option<crate::types::BrokerStorageType>) -> Self {
-        self.storage_type = input; self
+    pub fn set_storage_type(
+        mut self,
+        input: std::option::Option<crate::types::BrokerStorageType>,
+    ) -> Self {
+        self.storage_type = input;
+        self
     }
     /// Appends an item to `subnet_ids`.
     ///
@@ -523,28 +623,42 @@ impl DescribeBrokerOutputBuilder {
     /// <p>The list of groups that define which subnets and IP ranges the broker can use from different Availability Zones.</p>
     pub fn subnet_ids(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.subnet_ids.unwrap_or_default();
-                        v.push(input.into());
-                        self.subnet_ids = Some(v);
-                        self
+        v.push(input.into());
+        self.subnet_ids = Some(v);
+        self
     }
     /// <p>The list of groups that define which subnets and IP ranges the broker can use from different Availability Zones.</p>
-    pub fn set_subnet_ids(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-        self.subnet_ids = input; self
+    pub fn set_subnet_ids(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
+        self.subnet_ids = input;
+        self
     }
     /// Adds a key-value pair to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// <p>The list of all tags associated with this broker.</p>
-    pub fn tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
+    pub fn tags(
+        mut self,
+        k: impl Into<std::string::String>,
+        v: impl Into<std::string::String>,
+    ) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
-                        hash_map.insert(k.into(), v.into());
-                        self.tags = Some(hash_map);
-                        self
+        hash_map.insert(k.into(), v.into());
+        self.tags = Some(hash_map);
+        self
     }
     /// <p>The list of all tags associated with this broker.</p>
-    pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
-        self.tags = input; self
+    pub fn set_tags(
+        mut self,
+        input: std::option::Option<
+            std::collections::HashMap<std::string::String, std::string::String>,
+        >,
+    ) -> Self {
+        self.tags = input;
+        self
     }
     /// Appends an item to `users`.
     ///
@@ -553,88 +667,60 @@ impl DescribeBrokerOutputBuilder {
     /// <p>The list of all broker usernames for the specified broker.</p>
     pub fn users(mut self, input: crate::types::UserSummary) -> Self {
         let mut v = self.users.unwrap_or_default();
-                        v.push(input);
-                        self.users = Some(v);
-                        self
+        v.push(input);
+        self.users = Some(v);
+        self
     }
     /// <p>The list of all broker usernames for the specified broker.</p>
-    pub fn set_users(mut self, input: std::option::Option<std::vec::Vec<crate::types::UserSummary>>) -> Self {
-        self.users = input; self
+    pub fn set_users(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::UserSummary>>,
+    ) -> Self {
+        self.users = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`DescribeBrokerOutput`](crate::operation::describe_broker::DescribeBrokerOutput).
     pub fn build(self) -> crate::operation::describe_broker::DescribeBrokerOutput {
         crate::operation::describe_broker::DescribeBrokerOutput {
-            actions_required: self.actions_required
-            ,
-            authentication_strategy: self.authentication_strategy
-            ,
-            auto_minor_version_upgrade: self.auto_minor_version_upgrade
-                .unwrap_or_default()
-            ,
-            broker_arn: self.broker_arn
-            ,
-            broker_id: self.broker_id
-            ,
-            broker_instances: self.broker_instances
-            ,
-            broker_name: self.broker_name
-            ,
-            broker_state: self.broker_state
-            ,
-            configurations: self.configurations
-            ,
-            created: self.created
-            ,
-            deployment_mode: self.deployment_mode
-            ,
-            encryption_options: self.encryption_options
-            ,
-            engine_type: self.engine_type
-            ,
-            engine_version: self.engine_version
-            ,
-            host_instance_type: self.host_instance_type
-            ,
-            ldap_server_metadata: self.ldap_server_metadata
-            ,
-            logs: self.logs
-            ,
-            maintenance_window_start_time: self.maintenance_window_start_time
-            ,
-            pending_authentication_strategy: self.pending_authentication_strategy
-            ,
-            pending_engine_version: self.pending_engine_version
-            ,
-            pending_host_instance_type: self.pending_host_instance_type
-            ,
-            pending_ldap_server_metadata: self.pending_ldap_server_metadata
-            ,
-            pending_security_groups: self.pending_security_groups
-            ,
-            publicly_accessible: self.publicly_accessible
-                .unwrap_or_default()
-            ,
-            security_groups: self.security_groups
-            ,
-            storage_type: self.storage_type
-            ,
-            subnet_ids: self.subnet_ids
-            ,
-            tags: self.tags
-            ,
-            users: self.users
-            ,
+            actions_required: self.actions_required,
+            authentication_strategy: self.authentication_strategy,
+            auto_minor_version_upgrade: self.auto_minor_version_upgrade.unwrap_or_default(),
+            broker_arn: self.broker_arn,
+            broker_id: self.broker_id,
+            broker_instances: self.broker_instances,
+            broker_name: self.broker_name,
+            broker_state: self.broker_state,
+            configurations: self.configurations,
+            created: self.created,
+            deployment_mode: self.deployment_mode,
+            encryption_options: self.encryption_options,
+            engine_type: self.engine_type,
+            engine_version: self.engine_version,
+            host_instance_type: self.host_instance_type,
+            ldap_server_metadata: self.ldap_server_metadata,
+            logs: self.logs,
+            maintenance_window_start_time: self.maintenance_window_start_time,
+            pending_authentication_strategy: self.pending_authentication_strategy,
+            pending_engine_version: self.pending_engine_version,
+            pending_host_instance_type: self.pending_host_instance_type,
+            pending_ldap_server_metadata: self.pending_ldap_server_metadata,
+            pending_security_groups: self.pending_security_groups,
+            publicly_accessible: self.publicly_accessible.unwrap_or_default(),
+            security_groups: self.security_groups,
+            storage_type: self.storage_type,
+            subnet_ids: self.subnet_ids,
+            tags: self.tags,
+            users: self.users,
             _request_id: self._request_id,
         }
     }
 }
-

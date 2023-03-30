@@ -3,15 +3,15 @@
 /// <p>l An error associated with package. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PackageVersionError  {
-    /// <p> The error code associated with the error. Valid error codes are: </p> 
-    /// <ul> 
-    /// <li> <p> <code>ALREADY_EXISTS</code> </p> </li> 
-    /// <li> <p> <code>MISMATCHED_REVISION</code> </p> </li> 
-    /// <li> <p> <code>MISMATCHED_STATUS</code> </p> </li> 
-    /// <li> <p> <code>NOT_ALLOWED</code> </p> </li> 
-    /// <li> <p> <code>NOT_FOUND</code> </p> </li> 
-    /// <li> <p> <code>SKIPPED</code> </p> </li> 
+pub struct PackageVersionError {
+    /// <p> The error code associated with the error. Valid error codes are: </p>
+    /// <ul>
+    /// <li> <p> <code>ALREADY_EXISTS</code> </p> </li>
+    /// <li> <p> <code>MISMATCHED_REVISION</code> </p> </li>
+    /// <li> <p> <code>MISMATCHED_STATUS</code> </p> </li>
+    /// <li> <p> <code>NOT_ALLOWED</code> </p> </li>
+    /// <li> <p> <code>NOT_FOUND</code> </p> </li>
+    /// <li> <p> <code>SKIPPED</code> </p> </li>
     /// </ul>
     #[doc(hidden)]
     pub error_code: std::option::Option<crate::types::PackageVersionErrorCode>,
@@ -20,20 +20,20 @@ pub struct PackageVersionError  {
     pub error_message: std::option::Option<std::string::String>,
 }
 impl PackageVersionError {
-    /// <p> The error code associated with the error. Valid error codes are: </p> 
-    /// <ul> 
-    /// <li> <p> <code>ALREADY_EXISTS</code> </p> </li> 
-    /// <li> <p> <code>MISMATCHED_REVISION</code> </p> </li> 
-    /// <li> <p> <code>MISMATCHED_STATUS</code> </p> </li> 
-    /// <li> <p> <code>NOT_ALLOWED</code> </p> </li> 
-    /// <li> <p> <code>NOT_FOUND</code> </p> </li> 
-    /// <li> <p> <code>SKIPPED</code> </p> </li> 
+    /// <p> The error code associated with the error. Valid error codes are: </p>
+    /// <ul>
+    /// <li> <p> <code>ALREADY_EXISTS</code> </p> </li>
+    /// <li> <p> <code>MISMATCHED_REVISION</code> </p> </li>
+    /// <li> <p> <code>MISMATCHED_STATUS</code> </p> </li>
+    /// <li> <p> <code>NOT_ALLOWED</code> </p> </li>
+    /// <li> <p> <code>NOT_FOUND</code> </p> </li>
+    /// <li> <p> <code>SKIPPED</code> </p> </li>
     /// </ul>
-    pub fn error_code(&self) -> std::option::Option<& crate::types::PackageVersionErrorCode> {
+    pub fn error_code(&self) -> std::option::Option<&crate::types::PackageVersionErrorCode> {
         self.error_code.as_ref()
     }
     /// <p> The error message associated with the error. </p>
-    pub fn error_message(&self) -> std::option::Option<& str> {
+    pub fn error_message(&self) -> std::option::Option<&str> {
         self.error_message.as_deref()
     }
 }
@@ -52,30 +52,34 @@ pub struct PackageVersionErrorBuilder {
     pub(crate) error_message: std::option::Option<std::string::String>,
 }
 impl PackageVersionErrorBuilder {
-    /// <p> The error code associated with the error. Valid error codes are: </p> 
-    /// <ul> 
-    /// <li> <p> <code>ALREADY_EXISTS</code> </p> </li> 
-    /// <li> <p> <code>MISMATCHED_REVISION</code> </p> </li> 
-    /// <li> <p> <code>MISMATCHED_STATUS</code> </p> </li> 
-    /// <li> <p> <code>NOT_ALLOWED</code> </p> </li> 
-    /// <li> <p> <code>NOT_FOUND</code> </p> </li> 
-    /// <li> <p> <code>SKIPPED</code> </p> </li> 
+    /// <p> The error code associated with the error. Valid error codes are: </p>
+    /// <ul>
+    /// <li> <p> <code>ALREADY_EXISTS</code> </p> </li>
+    /// <li> <p> <code>MISMATCHED_REVISION</code> </p> </li>
+    /// <li> <p> <code>MISMATCHED_STATUS</code> </p> </li>
+    /// <li> <p> <code>NOT_ALLOWED</code> </p> </li>
+    /// <li> <p> <code>NOT_FOUND</code> </p> </li>
+    /// <li> <p> <code>SKIPPED</code> </p> </li>
     /// </ul>
     pub fn error_code(mut self, input: crate::types::PackageVersionErrorCode) -> Self {
         self.error_code = Some(input);
         self
     }
-    /// <p> The error code associated with the error. Valid error codes are: </p> 
-    /// <ul> 
-    /// <li> <p> <code>ALREADY_EXISTS</code> </p> </li> 
-    /// <li> <p> <code>MISMATCHED_REVISION</code> </p> </li> 
-    /// <li> <p> <code>MISMATCHED_STATUS</code> </p> </li> 
-    /// <li> <p> <code>NOT_ALLOWED</code> </p> </li> 
-    /// <li> <p> <code>NOT_FOUND</code> </p> </li> 
-    /// <li> <p> <code>SKIPPED</code> </p> </li> 
+    /// <p> The error code associated with the error. Valid error codes are: </p>
+    /// <ul>
+    /// <li> <p> <code>ALREADY_EXISTS</code> </p> </li>
+    /// <li> <p> <code>MISMATCHED_REVISION</code> </p> </li>
+    /// <li> <p> <code>MISMATCHED_STATUS</code> </p> </li>
+    /// <li> <p> <code>NOT_ALLOWED</code> </p> </li>
+    /// <li> <p> <code>NOT_FOUND</code> </p> </li>
+    /// <li> <p> <code>SKIPPED</code> </p> </li>
     /// </ul>
-    pub fn set_error_code(mut self, input: std::option::Option<crate::types::PackageVersionErrorCode>) -> Self {
-        self.error_code = input; self
+    pub fn set_error_code(
+        mut self,
+        input: std::option::Option<crate::types::PackageVersionErrorCode>,
+    ) -> Self {
+        self.error_code = input;
+        self
     }
     /// <p> The error message associated with the error. </p>
     pub fn error_message(mut self, input: impl Into<std::string::String>) -> Self {
@@ -84,16 +88,14 @@ impl PackageVersionErrorBuilder {
     }
     /// <p> The error message associated with the error. </p>
     pub fn set_error_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.error_message = input; self
+        self.error_message = input;
+        self
     }
     /// Consumes the builder and constructs a [`PackageVersionError`](crate::types::PackageVersionError).
     pub fn build(self) -> crate::types::PackageVersionError {
         crate::types::PackageVersionError {
-            error_code: self.error_code
-            ,
-            error_message: self.error_message
-            ,
+            error_code: self.error_code,
+            error_message: self.error_message,
         }
     }
 }
-

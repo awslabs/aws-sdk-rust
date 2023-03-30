@@ -3,7 +3,7 @@
 /// <p>The result of a <code>DefineSuggester</code> request. Contains the status of the newly-configured suggester.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DefineSuggesterOutput  {
+pub struct DefineSuggesterOutput {
     /// <p>The value of a <code>Suggester</code> and its current status.</p>
     #[doc(hidden)]
     pub suggester: std::option::Option<crate::types::SuggesterStatus>,
@@ -11,15 +11,15 @@ pub struct DefineSuggesterOutput  {
 }
 impl DefineSuggesterOutput {
     /// <p>The value of a <code>Suggester</code> and its current status.</p>
-    pub fn suggester(&self) -> std::option::Option<& crate::types::SuggesterStatus> {
+    pub fn suggester(&self) -> std::option::Option<&crate::types::SuggesterStatus> {
         self.suggester.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for DefineSuggesterOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl DefineSuggesterOutput {
     /// Creates a new builder-style object to manufacture [`DefineSuggesterOutput`](crate::operation::define_suggester::DefineSuggesterOutput).
     pub fn builder() -> crate::operation::define_suggester::builders::DefineSuggesterOutputBuilder {
@@ -41,25 +41,27 @@ impl DefineSuggesterOutputBuilder {
         self
     }
     /// <p>The value of a <code>Suggester</code> and its current status.</p>
-    pub fn set_suggester(mut self, input: std::option::Option<crate::types::SuggesterStatus>) -> Self {
-        self.suggester = input; self
+    pub fn set_suggester(
+        mut self,
+        input: std::option::Option<crate::types::SuggesterStatus>,
+    ) -> Self {
+        self.suggester = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`DefineSuggesterOutput`](crate::operation::define_suggester::DefineSuggesterOutput).
     pub fn build(self) -> crate::operation::define_suggester::DefineSuggesterOutput {
         crate::operation::define_suggester::DefineSuggesterOutput {
-            suggester: self.suggester
-            ,
+            suggester: self.suggester,
             _request_id: self._request_id,
         }
     }
 }
-

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetAnomaliesOutput  {
+pub struct GetAnomaliesOutput {
     /// <p>A list of cost anomalies. </p>
     #[doc(hidden)]
     pub anomalies: std::option::Option<std::vec::Vec<crate::types::Anomaly>>,
@@ -13,19 +13,19 @@ pub struct GetAnomaliesOutput  {
 }
 impl GetAnomaliesOutput {
     /// <p>A list of cost anomalies. </p>
-    pub fn anomalies(&self) -> std::option::Option<& [crate::types::Anomaly]> {
+    pub fn anomalies(&self) -> std::option::Option<&[crate::types::Anomaly]> {
         self.anomalies.as_deref()
     }
     /// <p>The token to retrieve the next set of results. Amazon Web Services provides the token when the response from a previous call has more results than the maximum page size. </p>
-    pub fn next_page_token(&self) -> std::option::Option<& str> {
+    pub fn next_page_token(&self) -> std::option::Option<&str> {
         self.next_page_token.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for GetAnomaliesOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl GetAnomaliesOutput {
     /// Creates a new builder-style object to manufacture [`GetAnomaliesOutput`](crate::operation::get_anomalies::GetAnomaliesOutput).
     pub fn builder() -> crate::operation::get_anomalies::builders::GetAnomaliesOutputBuilder {
@@ -49,13 +49,17 @@ impl GetAnomaliesOutputBuilder {
     /// <p>A list of cost anomalies. </p>
     pub fn anomalies(mut self, input: crate::types::Anomaly) -> Self {
         let mut v = self.anomalies.unwrap_or_default();
-                        v.push(input);
-                        self.anomalies = Some(v);
-                        self
+        v.push(input);
+        self.anomalies = Some(v);
+        self
     }
     /// <p>A list of cost anomalies. </p>
-    pub fn set_anomalies(mut self, input: std::option::Option<std::vec::Vec<crate::types::Anomaly>>) -> Self {
-        self.anomalies = input; self
+    pub fn set_anomalies(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::Anomaly>>,
+    ) -> Self {
+        self.anomalies = input;
+        self
     }
     /// <p>The token to retrieve the next set of results. Amazon Web Services provides the token when the response from a previous call has more results than the maximum page size. </p>
     pub fn next_page_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -64,26 +68,24 @@ impl GetAnomaliesOutputBuilder {
     }
     /// <p>The token to retrieve the next set of results. Amazon Web Services provides the token when the response from a previous call has more results than the maximum page size. </p>
     pub fn set_next_page_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_page_token = input; self
+        self.next_page_token = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`GetAnomaliesOutput`](crate::operation::get_anomalies::GetAnomaliesOutput).
     pub fn build(self) -> crate::operation::get_anomalies::GetAnomaliesOutput {
         crate::operation::get_anomalies::GetAnomaliesOutput {
-            anomalies: self.anomalies
-            ,
-            next_page_token: self.next_page_token
-            ,
+            anomalies: self.anomalies,
+            next_page_token: self.next_page_token,
             _request_id: self._request_id,
         }
     }
 }
-

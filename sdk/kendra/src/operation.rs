@@ -180,4 +180,3 @@ pub mod update_query_suggestions_config;
 
 /// Types for the `UpdateThesaurus` operation.
 pub mod update_thesaurus;
-

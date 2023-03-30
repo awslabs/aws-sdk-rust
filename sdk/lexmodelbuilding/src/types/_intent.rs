@@ -3,7 +3,7 @@
 /// <p>Identifies the specific version of an intent.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Intent  {
+pub struct Intent {
     /// <p>The name of the intent.</p>
     #[doc(hidden)]
     pub intent_name: std::option::Option<std::string::String>,
@@ -13,11 +13,11 @@ pub struct Intent  {
 }
 impl Intent {
     /// <p>The name of the intent.</p>
-    pub fn intent_name(&self) -> std::option::Option<& str> {
+    pub fn intent_name(&self) -> std::option::Option<&str> {
         self.intent_name.as_deref()
     }
     /// <p>The version of the intent.</p>
-    pub fn intent_version(&self) -> std::option::Option<& str> {
+    pub fn intent_version(&self) -> std::option::Option<&str> {
         self.intent_version.as_deref()
     }
 }
@@ -43,7 +43,8 @@ impl IntentBuilder {
     }
     /// <p>The name of the intent.</p>
     pub fn set_intent_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.intent_name = input; self
+        self.intent_name = input;
+        self
     }
     /// <p>The version of the intent.</p>
     pub fn intent_version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -52,16 +53,14 @@ impl IntentBuilder {
     }
     /// <p>The version of the intent.</p>
     pub fn set_intent_version(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.intent_version = input; self
+        self.intent_version = input;
+        self
     }
     /// Consumes the builder and constructs a [`Intent`](crate::types::Intent).
     pub fn build(self) -> crate::types::Intent {
         crate::types::Intent {
-            intent_name: self.intent_name
-            ,
-            intent_version: self.intent_version
-            ,
+            intent_name: self.intent_name,
+            intent_version: self.intent_version,
         }
     }
 }
-

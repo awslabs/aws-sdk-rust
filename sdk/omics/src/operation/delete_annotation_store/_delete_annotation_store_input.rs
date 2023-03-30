@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteAnnotationStoreInput  {
+pub struct DeleteAnnotationStoreInput {
     /// <p>The store's name.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -12,7 +12,7 @@ pub struct DeleteAnnotationStoreInput  {
 }
 impl DeleteAnnotationStoreInput {
     /// <p>The store's name.</p>
-    pub fn name(&self) -> std::option::Option<& str> {
+    pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>Whether to force deletion.</p>
@@ -22,7 +22,9 @@ impl DeleteAnnotationStoreInput {
 }
 impl DeleteAnnotationStoreInput {
     /// Creates a new builder-style object to manufacture [`DeleteAnnotationStoreInput`](crate::operation::delete_annotation_store::DeleteAnnotationStoreInput).
-    pub fn builder() -> crate::operation::delete_annotation_store::builders::DeleteAnnotationStoreInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::delete_annotation_store::builders::DeleteAnnotationStoreInputBuilder
+    {
         crate::operation::delete_annotation_store::builders::DeleteAnnotationStoreInputBuilder::default()
     }
 }
@@ -42,7 +44,8 @@ impl DeleteAnnotationStoreInputBuilder {
     }
     /// <p>The store's name.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input; self
+        self.name = input;
+        self
     }
     /// <p>Whether to force deletion.</p>
     pub fn force(mut self, input: bool) -> Self {
@@ -51,18 +54,21 @@ impl DeleteAnnotationStoreInputBuilder {
     }
     /// <p>Whether to force deletion.</p>
     pub fn set_force(mut self, input: std::option::Option<bool>) -> Self {
-        self.force = input; self
+        self.force = input;
+        self
     }
     /// Consumes the builder and constructs a [`DeleteAnnotationStoreInput`](crate::operation::delete_annotation_store::DeleteAnnotationStoreInput).
-    pub fn build(self) -> Result<crate::operation::delete_annotation_store::DeleteAnnotationStoreInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::delete_annotation_store::DeleteAnnotationStoreInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::delete_annotation_store::DeleteAnnotationStoreInput {
-                name: self.name
-                ,
-                force: self.force
-                ,
-            }
+                name: self.name,
+                force: self.force,
+            },
         )
     }
 }
-

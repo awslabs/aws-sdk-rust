@@ -2,17 +2,19 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct EnableAwsServiceAccessOutput  {
+pub struct EnableAwsServiceAccessOutput {
     _request_id: Option<String>,
 }
 impl aws_http::request_id::RequestId for EnableAwsServiceAccessOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl EnableAwsServiceAccessOutput {
     /// Creates a new builder-style object to manufacture [`EnableAwsServiceAccessOutput`](crate::operation::enable_aws_service_access::EnableAwsServiceAccessOutput).
-    pub fn builder() -> crate::operation::enable_aws_service_access::builders::EnableAwsServiceAccessOutputBuilder {
+    pub fn builder(
+    ) -> crate::operation::enable_aws_service_access::builders::EnableAwsServiceAccessOutputBuilder
+    {
         crate::operation::enable_aws_service_access::builders::EnableAwsServiceAccessOutputBuilder::default()
     }
 }
@@ -25,19 +27,20 @@ pub struct EnableAwsServiceAccessOutputBuilder {
 }
 impl EnableAwsServiceAccessOutputBuilder {
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`EnableAwsServiceAccessOutput`](crate::operation::enable_aws_service_access::EnableAwsServiceAccessOutput).
-    pub fn build(self) -> crate::operation::enable_aws_service_access::EnableAwsServiceAccessOutput {
+    pub fn build(
+        self,
+    ) -> crate::operation::enable_aws_service_access::EnableAwsServiceAccessOutput {
         crate::operation::enable_aws_service_access::EnableAwsServiceAccessOutput {
             _request_id: self._request_id,
         }
     }
 }
-

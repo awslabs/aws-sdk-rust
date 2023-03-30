@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeAppVersionResourcesResolutionStatusInput  {
+pub struct DescribeAppVersionResourcesResolutionStatusInput {
     /// <p>The Amazon Resource Name (ARN) of the application. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
     #[doc(hidden)]
     pub app_arn: std::option::Option<std::string::String>,
@@ -15,21 +15,21 @@ pub struct DescribeAppVersionResourcesResolutionStatusInput  {
 }
 impl DescribeAppVersionResourcesResolutionStatusInput {
     /// <p>The Amazon Resource Name (ARN) of the application. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
-    pub fn app_arn(&self) -> std::option::Option<& str> {
+    pub fn app_arn(&self) -> std::option::Option<&str> {
         self.app_arn.as_deref()
     }
     /// <p>The version of the application.</p>
-    pub fn app_version(&self) -> std::option::Option<& str> {
+    pub fn app_version(&self) -> std::option::Option<&str> {
         self.app_version.as_deref()
     }
     /// <p>The identifier for a specific resolution.</p>
-    pub fn resolution_id(&self) -> std::option::Option<& str> {
+    pub fn resolution_id(&self) -> std::option::Option<&str> {
         self.resolution_id.as_deref()
     }
 }
 impl DescribeAppVersionResourcesResolutionStatusInput {
     /// Creates a new builder-style object to manufacture [`DescribeAppVersionResourcesResolutionStatusInput`](crate::operation::describe_app_version_resources_resolution_status::DescribeAppVersionResourcesResolutionStatusInput).
-    pub fn builder() -> crate::operation::describe_app_version_resources_resolution_status::builders::DescribeAppVersionResourcesResolutionStatusInputBuilder {
+    pub fn builder() -> crate::operation::describe_app_version_resources_resolution_status::builders::DescribeAppVersionResourcesResolutionStatusInputBuilder{
         crate::operation::describe_app_version_resources_resolution_status::builders::DescribeAppVersionResourcesResolutionStatusInputBuilder::default()
     }
 }
@@ -50,7 +50,8 @@ impl DescribeAppVersionResourcesResolutionStatusInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the application. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
     pub fn set_app_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.app_arn = input; self
+        self.app_arn = input;
+        self
     }
     /// <p>The version of the application.</p>
     pub fn app_version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -59,7 +60,8 @@ impl DescribeAppVersionResourcesResolutionStatusInputBuilder {
     }
     /// <p>The version of the application.</p>
     pub fn set_app_version(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.app_version = input; self
+        self.app_version = input;
+        self
     }
     /// <p>The identifier for a specific resolution.</p>
     pub fn resolution_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -68,10 +70,11 @@ impl DescribeAppVersionResourcesResolutionStatusInputBuilder {
     }
     /// <p>The identifier for a specific resolution.</p>
     pub fn set_resolution_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.resolution_id = input; self
+        self.resolution_id = input;
+        self
     }
     /// Consumes the builder and constructs a [`DescribeAppVersionResourcesResolutionStatusInput`](crate::operation::describe_app_version_resources_resolution_status::DescribeAppVersionResourcesResolutionStatusInput).
-    pub fn build(self) -> Result<crate::operation::describe_app_version_resources_resolution_status::DescribeAppVersionResourcesResolutionStatusInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> Result<crate::operation::describe_app_version_resources_resolution_status::DescribeAppVersionResourcesResolutionStatusInput, aws_smithy_http::operation::error::BuildError>{
         Ok(
             crate::operation::describe_app_version_resources_resolution_status::DescribeAppVersionResourcesResolutionStatusInput {
                 app_arn: self.app_arn
@@ -84,4 +87,3 @@ impl DescribeAppVersionResourcesResolutionStatusInputBuilder {
         )
     }
 }
-

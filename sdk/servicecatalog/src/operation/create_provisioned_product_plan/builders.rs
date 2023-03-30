@@ -4,67 +4,89 @@ pub use crate::operation::create_provisioned_product_plan::_create_provisioned_p
 pub use crate::operation::create_provisioned_product_plan::_create_provisioned_product_plan_input::CreateProvisionedProductPlanInputBuilder;
 
 /// Fluent builder constructing a request to `CreateProvisionedProductPlan`.
-/// 
-/// <p>Creates a plan.</p> 
-/// <p>A plan includes the list of resources to be created (when provisioning a new product) or modified (when updating a provisioned product) when the plan is executed.</p> 
-/// <p>You can create one plan for each provisioned product. To create a plan for an existing provisioned product, the product status must be AVAILABLE or TAINTED.</p> 
+///
+/// <p>Creates a plan.</p>
+/// <p>A plan includes the list of resources to be created (when provisioning a new product) or modified (when updating a provisioned product) when the plan is executed.</p>
+/// <p>You can create one plan for each provisioned product. To create a plan for an existing provisioned product, the product status must be AVAILABLE or TAINTED.</p>
 /// <p>To view the resource changes in the change set, use <code>DescribeProvisionedProductPlan</code>. To create or modify the provisioned product, use <code>ExecuteProvisionedProductPlan</code>.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct CreateProvisionedProductPlanFluentBuilder {
                 handle: std::sync::Arc<crate::client::Handle>,
                 inner: crate::operation::create_provisioned_product_plan::builders::CreateProvisionedProductPlanInputBuilder
             }
-impl CreateProvisionedProductPlanFluentBuilder  {
+impl CreateProvisionedProductPlanFluentBuilder {
     /// Creates a new `CreateProvisionedProductPlan`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
-                    /// sent. The operation's inner [http::Request] can be modified as well.
-                    pub async fn customize(self) -> std::result::Result<
-                        crate::client::customize::CustomizableOperation<crate::operation::create_provisioned_product_plan::CreateProvisionedProductPlan, aws_http::retry::AwsResponseRetryClassifier,>,
-                        aws_smithy_http::result::SdkError<crate::operation::create_provisioned_product_plan::CreateProvisionedProductPlanError>
-                    >  {
-                        let handle = self.handle.clone();
-                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-                    }
-    
-                    /// Sends the request and returns the response.
-                    ///
-                    /// If an error occurs, an `SdkError` will be returned with additional details that
-                    /// can be matched against.
-                    ///
-                    /// By default, any retryable failures will be retried twice. Retry behavior
-                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                    /// set when configuring the client.
-                    pub async fn send(self) -> std::result::Result<crate::operation::create_provisioned_product_plan::CreateProvisionedProductPlanOutput, aws_smithy_http::result::SdkError<crate::operation::create_provisioned_product_plan::CreateProvisionedProductPlanError>>
-                     {
-                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&self.handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        self.handle.client.call(op).await
-                    }
-    /// <p>The language code.</p> 
-    /// <ul> 
-    /// <li> <p> <code>en</code> - English (default)</p> </li> 
-    /// <li> <p> <code>jp</code> - Japanese</p> </li> 
-    /// <li> <p> <code>zh</code> - Chinese</p> </li> 
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle,
+            inner: Default::default(),
+        }
+    }
+
+    /// Consume this builder, creating a customizable operation that can be modified before being
+    /// sent. The operation's inner [http::Request] can be modified as well.
+    pub async fn customize(
+        self,
+    ) -> std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::create_provisioned_product_plan::CreateProvisionedProductPlan,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::result::SdkError<
+            crate::operation::create_provisioned_product_plan::CreateProvisionedProductPlanError,
+        >,
+    > {
+        let handle = self.handle.clone();
+        let operation = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+    }
+
+    /// Sends the request and returns the response.
+    ///
+    /// If an error occurs, an `SdkError` will be returned with additional details that
+    /// can be matched against.
+    ///
+    /// By default, any retryable failures will be retried twice. Retry behavior
+    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+    /// set when configuring the client.
+    pub async fn send(
+        self,
+    ) -> std::result::Result<
+        crate::operation::create_provisioned_product_plan::CreateProvisionedProductPlanOutput,
+        aws_smithy_http::result::SdkError<
+            crate::operation::create_provisioned_product_plan::CreateProvisionedProductPlanError,
+        >,
+    > {
+        let op = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&self.handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        self.handle.client.call(op).await
+    }
+    /// <p>The language code.</p>
+    /// <ul>
+    /// <li> <p> <code>en</code> - English (default)</p> </li>
+    /// <li> <p> <code>jp</code> - Japanese</p> </li>
+    /// <li> <p> <code>zh</code> - Chinese</p> </li>
     /// </ul>
     pub fn accept_language(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.accept_language(input.into());
         self
     }
-    /// <p>The language code.</p> 
-    /// <ul> 
-    /// <li> <p> <code>en</code> - English (default)</p> </li> 
-    /// <li> <p> <code>jp</code> - Japanese</p> </li> 
-    /// <li> <p> <code>zh</code> - Chinese</p> </li> 
+    /// <p>The language code.</p>
+    /// <ul>
+    /// <li> <p> <code>en</code> - English (default)</p> </li>
+    /// <li> <p> <code>jp</code> - Japanese</p> </li>
+    /// <li> <p> <code>zh</code> - Chinese</p> </li>
     /// </ul>
     pub fn set_accept_language(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.inner = self.inner.set_accept_language(input);
@@ -86,7 +108,10 @@ impl CreateProvisionedProductPlanFluentBuilder  {
         self
     }
     /// <p>The plan type.</p>
-    pub fn set_plan_type(mut self, input: std::option::Option<crate::types::ProvisionedProductPlanType>) -> Self {
+    pub fn set_plan_type(
+        mut self,
+        input: std::option::Option<crate::types::ProvisionedProductPlanType>,
+    ) -> Self {
         self.inner = self.inner.set_plan_type(input);
         self
     }
@@ -100,7 +125,10 @@ impl CreateProvisionedProductPlanFluentBuilder  {
         self
     }
     /// <p>Passed to CloudFormation. The SNS topic ARNs to which to publish stack-related events.</p>
-    pub fn set_notification_arns(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+    pub fn set_notification_arns(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
         self.inner = self.inner.set_notification_arns(input);
         self
     }
@@ -130,7 +158,10 @@ impl CreateProvisionedProductPlanFluentBuilder  {
         self
     }
     /// <p>A user-friendly name for the provisioned product. This value must be unique for the Amazon Web Services account and cannot be updated after the product is provisioned.</p>
-    pub fn set_provisioned_product_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_provisioned_product_name(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_provisioned_product_name(input);
         self
     }
@@ -140,7 +171,10 @@ impl CreateProvisionedProductPlanFluentBuilder  {
         self
     }
     /// <p>The identifier of the provisioning artifact.</p>
-    pub fn set_provisioning_artifact_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_provisioning_artifact_id(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_provisioning_artifact_id(input);
         self
     }
@@ -149,12 +183,18 @@ impl CreateProvisionedProductPlanFluentBuilder  {
     /// To override the contents of this collection use [`set_provisioning_parameters`](Self::set_provisioning_parameters).
     ///
     /// <p>Parameters specified by the administrator that are required for provisioning the product.</p>
-    pub fn provisioning_parameters(mut self, input: crate::types::UpdateProvisioningParameter) -> Self {
+    pub fn provisioning_parameters(
+        mut self,
+        input: crate::types::UpdateProvisioningParameter,
+    ) -> Self {
         self.inner = self.inner.provisioning_parameters(input);
         self
     }
     /// <p>Parameters specified by the administrator that are required for provisioning the product.</p>
-    pub fn set_provisioning_parameters(mut self, input: std::option::Option<std::vec::Vec<crate::types::UpdateProvisioningParameter>>) -> Self {
+    pub fn set_provisioning_parameters(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::UpdateProvisioningParameter>>,
+    ) -> Self {
         self.inner = self.inner.set_provisioning_parameters(input);
         self
     }
@@ -164,7 +204,10 @@ impl CreateProvisionedProductPlanFluentBuilder  {
         self
     }
     /// <p>A unique identifier that you provide to ensure idempotency. If multiple requests differ only by the idempotency token, the same response is returned for each repeated request.</p>
-    pub fn set_idempotency_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_idempotency_token(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_idempotency_token(input);
         self
     }
@@ -172,17 +215,19 @@ impl CreateProvisionedProductPlanFluentBuilder  {
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
-    /// <p>One or more tags.</p> 
+    /// <p>One or more tags.</p>
     /// <p>If the plan is for an existing provisioned product, the product must have a <code>RESOURCE_UPDATE</code> constraint with <code>TagUpdatesOnProvisionedProduct</code> set to <code>ALLOWED</code> to allow tag updates.</p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         self.inner = self.inner.tags(input);
         self
     }
-    /// <p>One or more tags.</p> 
+    /// <p>One or more tags.</p>
     /// <p>If the plan is for an existing provisioned product, the product must have a <code>RESOURCE_UPDATE</code> constraint with <code>TagUpdatesOnProvisionedProduct</code> set to <code>ALLOWED</code> to allow tag updates.</p>
-    pub fn set_tags(mut self, input: std::option::Option<std::vec::Vec<crate::types::Tag>>) -> Self {
+    pub fn set_tags(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::Tag>>,
+    ) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }
 }
-

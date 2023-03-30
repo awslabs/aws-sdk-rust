@@ -4,51 +4,74 @@ pub use crate::operation::update_maintenance_window::_update_maintenance_window_
 pub use crate::operation::update_maintenance_window::_update_maintenance_window_input::UpdateMaintenanceWindowInputBuilder;
 
 /// Fluent builder constructing a request to `UpdateMaintenanceWindow`.
-/// 
-/// <p>Updates an existing maintenance window. Only specified parameters are modified.</p> <note> 
-/// <p>The value you specify for <code>Duration</code> determines the specific end time for the maintenance window based on the time it begins. No maintenance window tasks are permitted to start after the resulting endtime minus the number of hours you specify for <code>Cutoff</code>. For example, if the maintenance window starts at 3 PM, the duration is three hours, and the value you specify for <code>Cutoff</code> is one hour, no maintenance window tasks can start after 5 PM.</p> 
+///
+/// <p>Updates an existing maintenance window. Only specified parameters are modified.</p> <note>
+/// <p>The value you specify for <code>Duration</code> determines the specific end time for the maintenance window based on the time it begins. No maintenance window tasks are permitted to start after the resulting endtime minus the number of hours you specify for <code>Cutoff</code>. For example, if the maintenance window starts at 3 PM, the duration is three hours, and the value you specify for <code>Cutoff</code> is one hour, no maintenance window tasks can start after 5 PM.</p>
 /// </note>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct UpdateMaintenanceWindowFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::update_maintenance_window::builders::UpdateMaintenanceWindowInputBuilder
-            }
-impl UpdateMaintenanceWindowFluentBuilder  {
+    handle: std::sync::Arc<crate::client::Handle>,
+    inner:
+        crate::operation::update_maintenance_window::builders::UpdateMaintenanceWindowInputBuilder,
+}
+impl UpdateMaintenanceWindowFluentBuilder {
     /// Creates a new `UpdateMaintenanceWindow`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
-                    /// sent. The operation's inner [http::Request] can be modified as well.
-                    pub async fn customize(self) -> std::result::Result<
-                        crate::client::customize::CustomizableOperation<crate::operation::update_maintenance_window::UpdateMaintenanceWindow, aws_http::retry::AwsResponseRetryClassifier,>,
-                        aws_smithy_http::result::SdkError<crate::operation::update_maintenance_window::UpdateMaintenanceWindowError>
-                    >  {
-                        let handle = self.handle.clone();
-                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-                    }
-    
-                    /// Sends the request and returns the response.
-                    ///
-                    /// If an error occurs, an `SdkError` will be returned with additional details that
-                    /// can be matched against.
-                    ///
-                    /// By default, any retryable failures will be retried twice. Retry behavior
-                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                    /// set when configuring the client.
-                    pub async fn send(self) -> std::result::Result<crate::operation::update_maintenance_window::UpdateMaintenanceWindowOutput, aws_smithy_http::result::SdkError<crate::operation::update_maintenance_window::UpdateMaintenanceWindowError>>
-                     {
-                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&self.handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        self.handle.client.call(op).await
-                    }
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle,
+            inner: Default::default(),
+        }
+    }
+
+    /// Consume this builder, creating a customizable operation that can be modified before being
+    /// sent. The operation's inner [http::Request] can be modified as well.
+    pub async fn customize(
+        self,
+    ) -> std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::update_maintenance_window::UpdateMaintenanceWindow,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::result::SdkError<
+            crate::operation::update_maintenance_window::UpdateMaintenanceWindowError,
+        >,
+    > {
+        let handle = self.handle.clone();
+        let operation = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+    }
+
+    /// Sends the request and returns the response.
+    ///
+    /// If an error occurs, an `SdkError` will be returned with additional details that
+    /// can be matched against.
+    ///
+    /// By default, any retryable failures will be retried twice. Retry behavior
+    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+    /// set when configuring the client.
+    pub async fn send(
+        self,
+    ) -> std::result::Result<
+        crate::operation::update_maintenance_window::UpdateMaintenanceWindowOutput,
+        aws_smithy_http::result::SdkError<
+            crate::operation::update_maintenance_window::UpdateMaintenanceWindowError,
+        >,
+    > {
+        let op = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&self.handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        self.handle.client.call(op).await
+    }
     /// <p>The ID of the maintenance window to update.</p>
     pub fn window_id(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.window_id(input.into());
@@ -115,21 +138,24 @@ impl UpdateMaintenanceWindowFluentBuilder  {
         self
     }
     /// <p>The time zone that the scheduled maintenance window executions are based on, in Internet Assigned Numbers Authority (IANA) format. For example: "America/Los_Angeles", "UTC", or "Asia/Seoul". For more information, see the <a href="https://www.iana.org/time-zones">Time Zone Database</a> on the IANA website.</p>
-    pub fn set_schedule_timezone(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_schedule_timezone(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_schedule_timezone(input);
         self
     }
-    /// <p>The number of days to wait after the date and time specified by a cron expression before running the maintenance window.</p> 
-    /// <p>For example, the following cron expression schedules a maintenance window to run the third Tuesday of every month at 11:30 PM.</p> 
-    /// <p> <code>cron(30 23 ? * TUE#3 *)</code> </p> 
+    /// <p>The number of days to wait after the date and time specified by a cron expression before running the maintenance window.</p>
+    /// <p>For example, the following cron expression schedules a maintenance window to run the third Tuesday of every month at 11:30 PM.</p>
+    /// <p> <code>cron(30 23 ? * TUE#3 *)</code> </p>
     /// <p>If the schedule offset is <code>2</code>, the maintenance window won't run until two days later.</p>
     pub fn schedule_offset(mut self, input: i32) -> Self {
         self.inner = self.inner.schedule_offset(input);
         self
     }
-    /// <p>The number of days to wait after the date and time specified by a cron expression before running the maintenance window.</p> 
-    /// <p>For example, the following cron expression schedules a maintenance window to run the third Tuesday of every month at 11:30 PM.</p> 
-    /// <p> <code>cron(30 23 ? * TUE#3 *)</code> </p> 
+    /// <p>The number of days to wait after the date and time specified by a cron expression before running the maintenance window.</p>
+    /// <p>For example, the following cron expression schedules a maintenance window to run the third Tuesday of every month at 11:30 PM.</p>
+    /// <p> <code>cron(30 23 ? * TUE#3 *)</code> </p>
     /// <p>If the schedule offset is <code>2</code>, the maintenance window won't run until two days later.</p>
     pub fn set_schedule_offset(mut self, input: std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_schedule_offset(input);
@@ -186,4 +212,3 @@ impl UpdateMaintenanceWindowFluentBuilder  {
         self
     }
 }
-

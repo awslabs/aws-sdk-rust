@@ -3,14 +3,14 @@
 /// <p>Contains information about the account level permissions on the S3 bucket.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AccountLevelPermissions  {
+pub struct AccountLevelPermissions {
     /// <p>Describes the S3 Block Public Access settings of the bucket's parent account.</p>
     #[doc(hidden)]
     pub block_public_access: std::option::Option<crate::types::BlockPublicAccess>,
 }
 impl AccountLevelPermissions {
     /// <p>Describes the S3 Block Public Access settings of the bucket's parent account.</p>
-    pub fn block_public_access(&self) -> std::option::Option<& crate::types::BlockPublicAccess> {
+    pub fn block_public_access(&self) -> std::option::Option<&crate::types::BlockPublicAccess> {
         self.block_public_access.as_ref()
     }
 }
@@ -34,15 +34,17 @@ impl AccountLevelPermissionsBuilder {
         self
     }
     /// <p>Describes the S3 Block Public Access settings of the bucket's parent account.</p>
-    pub fn set_block_public_access(mut self, input: std::option::Option<crate::types::BlockPublicAccess>) -> Self {
-        self.block_public_access = input; self
+    pub fn set_block_public_access(
+        mut self,
+        input: std::option::Option<crate::types::BlockPublicAccess>,
+    ) -> Self {
+        self.block_public_access = input;
+        self
     }
     /// Consumes the builder and constructs a [`AccountLevelPermissions`](crate::types::AccountLevelPermissions).
     pub fn build(self) -> crate::types::AccountLevelPermissions {
         crate::types::AccountLevelPermissions {
-            block_public_access: self.block_public_access
-            ,
+            block_public_access: self.block_public_access,
         }
     }
 }
-

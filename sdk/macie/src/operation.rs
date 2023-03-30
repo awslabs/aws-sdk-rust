@@ -21,4 +21,3 @@ pub mod list_s3_resources;
 
 /// Types for the `UpdateS3Resources` operation.
 pub mod update_s3_resources;
-

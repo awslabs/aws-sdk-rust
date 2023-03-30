@@ -2,20 +2,20 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteProvisioningTemplateInput  {
+pub struct DeleteProvisioningTemplateInput {
     /// <p>The name of the fleet provision template to delete.</p>
     #[doc(hidden)]
     pub template_name: std::option::Option<std::string::String>,
 }
 impl DeleteProvisioningTemplateInput {
     /// <p>The name of the fleet provision template to delete.</p>
-    pub fn template_name(&self) -> std::option::Option<& str> {
+    pub fn template_name(&self) -> std::option::Option<&str> {
         self.template_name.as_deref()
     }
 }
 impl DeleteProvisioningTemplateInput {
     /// Creates a new builder-style object to manufacture [`DeleteProvisioningTemplateInput`](crate::operation::delete_provisioning_template::DeleteProvisioningTemplateInput).
-    pub fn builder() -> crate::operation::delete_provisioning_template::builders::DeleteProvisioningTemplateInputBuilder {
+    pub fn builder() -> crate::operation::delete_provisioning_template::builders::DeleteProvisioningTemplateInputBuilder{
         crate::operation::delete_provisioning_template::builders::DeleteProvisioningTemplateInputBuilder::default()
     }
 }
@@ -34,16 +34,20 @@ impl DeleteProvisioningTemplateInputBuilder {
     }
     /// <p>The name of the fleet provision template to delete.</p>
     pub fn set_template_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.template_name = input; self
+        self.template_name = input;
+        self
     }
     /// Consumes the builder and constructs a [`DeleteProvisioningTemplateInput`](crate::operation::delete_provisioning_template::DeleteProvisioningTemplateInput).
-    pub fn build(self) -> Result<crate::operation::delete_provisioning_template::DeleteProvisioningTemplateInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::delete_provisioning_template::DeleteProvisioningTemplateInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::delete_provisioning_template::DeleteProvisioningTemplateInput {
-                template_name: self.template_name
-                ,
-            }
+                template_name: self.template_name,
+            },
         )
     }
 }
-

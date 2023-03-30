@@ -3,7 +3,7 @@
 /// <p>Information about rows for a data set SPICE ingestion.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct RowInfo  {
+pub struct RowInfo {
     /// <p>The number of rows that were ingested.</p>
     #[doc(hidden)]
     pub rows_ingested: std::option::Option<i64>,
@@ -51,7 +51,8 @@ impl RowInfoBuilder {
     }
     /// <p>The number of rows that were ingested.</p>
     pub fn set_rows_ingested(mut self, input: std::option::Option<i64>) -> Self {
-        self.rows_ingested = input; self
+        self.rows_ingested = input;
+        self
     }
     /// <p>The number of rows that were not ingested.</p>
     pub fn rows_dropped(mut self, input: i64) -> Self {
@@ -60,7 +61,8 @@ impl RowInfoBuilder {
     }
     /// <p>The number of rows that were not ingested.</p>
     pub fn set_rows_dropped(mut self, input: std::option::Option<i64>) -> Self {
-        self.rows_dropped = input; self
+        self.rows_dropped = input;
+        self
     }
     /// <p>The total number of rows in the dataset.</p>
     pub fn total_rows_in_dataset(mut self, input: i64) -> Self {
@@ -69,18 +71,15 @@ impl RowInfoBuilder {
     }
     /// <p>The total number of rows in the dataset.</p>
     pub fn set_total_rows_in_dataset(mut self, input: std::option::Option<i64>) -> Self {
-        self.total_rows_in_dataset = input; self
+        self.total_rows_in_dataset = input;
+        self
     }
     /// Consumes the builder and constructs a [`RowInfo`](crate::types::RowInfo).
     pub fn build(self) -> crate::types::RowInfo {
         crate::types::RowInfo {
-            rows_ingested: self.rows_ingested
-            ,
-            rows_dropped: self.rows_dropped
-            ,
-            total_rows_in_dataset: self.total_rows_in_dataset
-            ,
+            rows_ingested: self.rows_ingested,
+            rows_dropped: self.rows_dropped,
+            total_rows_in_dataset: self.total_rows_in_dataset,
         }
     }
 }
-

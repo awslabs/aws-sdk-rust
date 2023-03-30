@@ -2,20 +2,20 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListMobileDeviceAccessRulesInput  {
+pub struct ListMobileDeviceAccessRulesInput {
     /// <p>The WorkMail organization for which to list the rules.</p>
     #[doc(hidden)]
     pub organization_id: std::option::Option<std::string::String>,
 }
 impl ListMobileDeviceAccessRulesInput {
     /// <p>The WorkMail organization for which to list the rules.</p>
-    pub fn organization_id(&self) -> std::option::Option<& str> {
+    pub fn organization_id(&self) -> std::option::Option<&str> {
         self.organization_id.as_deref()
     }
 }
 impl ListMobileDeviceAccessRulesInput {
     /// Creates a new builder-style object to manufacture [`ListMobileDeviceAccessRulesInput`](crate::operation::list_mobile_device_access_rules::ListMobileDeviceAccessRulesInput).
-    pub fn builder() -> crate::operation::list_mobile_device_access_rules::builders::ListMobileDeviceAccessRulesInputBuilder {
+    pub fn builder() -> crate::operation::list_mobile_device_access_rules::builders::ListMobileDeviceAccessRulesInputBuilder{
         crate::operation::list_mobile_device_access_rules::builders::ListMobileDeviceAccessRulesInputBuilder::default()
     }
 }
@@ -34,16 +34,20 @@ impl ListMobileDeviceAccessRulesInputBuilder {
     }
     /// <p>The WorkMail organization for which to list the rules.</p>
     pub fn set_organization_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.organization_id = input; self
+        self.organization_id = input;
+        self
     }
     /// Consumes the builder and constructs a [`ListMobileDeviceAccessRulesInput`](crate::operation::list_mobile_device_access_rules::ListMobileDeviceAccessRulesInput).
-    pub fn build(self) -> Result<crate::operation::list_mobile_device_access_rules::ListMobileDeviceAccessRulesInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::list_mobile_device_access_rules::ListMobileDeviceAccessRulesInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::list_mobile_device_access_rules::ListMobileDeviceAccessRulesInput {
-                organization_id: self.organization_id
-                ,
-            }
+                organization_id: self.organization_id,
+            },
         )
     }
 }
-

@@ -3,7 +3,7 @@
 /// <p>The contact that Incident Manager is engaging during an incident.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ContactTargetInfo  {
+pub struct ContactTargetInfo {
     /// <p>The Amazon Resource Name (ARN) of the contact.</p>
     #[doc(hidden)]
     pub contact_id: std::option::Option<std::string::String>,
@@ -13,7 +13,7 @@ pub struct ContactTargetInfo  {
 }
 impl ContactTargetInfo {
     /// <p>The Amazon Resource Name (ARN) of the contact.</p>
-    pub fn contact_id(&self) -> std::option::Option<& str> {
+    pub fn contact_id(&self) -> std::option::Option<&str> {
         self.contact_id.as_deref()
     }
     /// <p>A Boolean value determining if the contact's acknowledgement stops the progress of stages in the plan.</p>
@@ -43,7 +43,8 @@ impl ContactTargetInfoBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the contact.</p>
     pub fn set_contact_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.contact_id = input; self
+        self.contact_id = input;
+        self
     }
     /// <p>A Boolean value determining if the contact's acknowledgement stops the progress of stages in the plan.</p>
     pub fn is_essential(mut self, input: bool) -> Self {
@@ -52,16 +53,14 @@ impl ContactTargetInfoBuilder {
     }
     /// <p>A Boolean value determining if the contact's acknowledgement stops the progress of stages in the plan.</p>
     pub fn set_is_essential(mut self, input: std::option::Option<bool>) -> Self {
-        self.is_essential = input; self
+        self.is_essential = input;
+        self
     }
     /// Consumes the builder and constructs a [`ContactTargetInfo`](crate::types::ContactTargetInfo).
     pub fn build(self) -> crate::types::ContactTargetInfo {
         crate::types::ContactTargetInfo {
-            contact_id: self.contact_id
-            ,
-            is_essential: self.is_essential
-            ,
+            contact_id: self.contact_id,
+            is_essential: self.is_essential,
         }
     }
 }
-

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateLfTagInput  {
+pub struct UpdateLfTagInput {
     /// <p>The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your Lake Formation environment. </p>
     #[doc(hidden)]
     pub catalog_id: std::option::Option<std::string::String>,
@@ -18,19 +18,19 @@ pub struct UpdateLfTagInput  {
 }
 impl UpdateLfTagInput {
     /// <p>The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your Lake Formation environment. </p>
-    pub fn catalog_id(&self) -> std::option::Option<& str> {
+    pub fn catalog_id(&self) -> std::option::Option<&str> {
         self.catalog_id.as_deref()
     }
     /// <p>The key-name for the LF-tag for which to add or delete values.</p>
-    pub fn tag_key(&self) -> std::option::Option<& str> {
+    pub fn tag_key(&self) -> std::option::Option<&str> {
         self.tag_key.as_deref()
     }
     /// <p>A list of LF-tag values to delete from the LF-tag.</p>
-    pub fn tag_values_to_delete(&self) -> std::option::Option<& [std::string::String]> {
+    pub fn tag_values_to_delete(&self) -> std::option::Option<&[std::string::String]> {
         self.tag_values_to_delete.as_deref()
     }
     /// <p>A list of LF-tag values to add from the LF-tag.</p>
-    pub fn tag_values_to_add(&self) -> std::option::Option<& [std::string::String]> {
+    pub fn tag_values_to_add(&self) -> std::option::Option<&[std::string::String]> {
         self.tag_values_to_add.as_deref()
     }
 }
@@ -58,7 +58,8 @@ impl UpdateLfTagInputBuilder {
     }
     /// <p>The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your Lake Formation environment. </p>
     pub fn set_catalog_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.catalog_id = input; self
+        self.catalog_id = input;
+        self
     }
     /// <p>The key-name for the LF-tag for which to add or delete values.</p>
     pub fn tag_key(mut self, input: impl Into<std::string::String>) -> Self {
@@ -67,7 +68,8 @@ impl UpdateLfTagInputBuilder {
     }
     /// <p>The key-name for the LF-tag for which to add or delete values.</p>
     pub fn set_tag_key(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.tag_key = input; self
+        self.tag_key = input;
+        self
     }
     /// Appends an item to `tag_values_to_delete`.
     ///
@@ -76,13 +78,17 @@ impl UpdateLfTagInputBuilder {
     /// <p>A list of LF-tag values to delete from the LF-tag.</p>
     pub fn tag_values_to_delete(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.tag_values_to_delete.unwrap_or_default();
-                        v.push(input.into());
-                        self.tag_values_to_delete = Some(v);
-                        self
+        v.push(input.into());
+        self.tag_values_to_delete = Some(v);
+        self
     }
     /// <p>A list of LF-tag values to delete from the LF-tag.</p>
-    pub fn set_tag_values_to_delete(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-        self.tag_values_to_delete = input; self
+    pub fn set_tag_values_to_delete(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
+        self.tag_values_to_delete = input;
+        self
     }
     /// Appends an item to `tag_values_to_add`.
     ///
@@ -91,28 +97,30 @@ impl UpdateLfTagInputBuilder {
     /// <p>A list of LF-tag values to add from the LF-tag.</p>
     pub fn tag_values_to_add(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.tag_values_to_add.unwrap_or_default();
-                        v.push(input.into());
-                        self.tag_values_to_add = Some(v);
-                        self
+        v.push(input.into());
+        self.tag_values_to_add = Some(v);
+        self
     }
     /// <p>A list of LF-tag values to add from the LF-tag.</p>
-    pub fn set_tag_values_to_add(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-        self.tag_values_to_add = input; self
+    pub fn set_tag_values_to_add(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
+        self.tag_values_to_add = input;
+        self
     }
     /// Consumes the builder and constructs a [`UpdateLfTagInput`](crate::operation::update_lf_tag::UpdateLfTagInput).
-    pub fn build(self) -> Result<crate::operation::update_lf_tag::UpdateLfTagInput, aws_smithy_http::operation::error::BuildError> {
-        Ok(
-            crate::operation::update_lf_tag::UpdateLfTagInput {
-                catalog_id: self.catalog_id
-                ,
-                tag_key: self.tag_key
-                ,
-                tag_values_to_delete: self.tag_values_to_delete
-                ,
-                tag_values_to_add: self.tag_values_to_add
-                ,
-            }
-        )
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::update_lf_tag::UpdateLfTagInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        Ok(crate::operation::update_lf_tag::UpdateLfTagInput {
+            catalog_id: self.catalog_id,
+            tag_key: self.tag_key,
+            tag_values_to_delete: self.tag_values_to_delete,
+            tag_values_to_add: self.tag_values_to_add,
+        })
     }
 }
-

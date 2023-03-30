@@ -219,4 +219,3 @@ pub mod untag_resource;
 
 /// Types for the `UpdateEndpoint` operation.
 pub mod update_endpoint;
-

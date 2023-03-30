@@ -3,7 +3,7 @@
 /// <p>Details about an Secrets Manager secret.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AwsSecretsManagerSecretDetails  {
+pub struct AwsSecretsManagerSecretDetails {
     /// <p>Defines the rotation schedule for the secret.</p>
     #[doc(hidden)]
     pub rotation_rules: std::option::Option<crate::types::AwsSecretsManagerSecretRotationRules>,
@@ -31,7 +31,9 @@ pub struct AwsSecretsManagerSecretDetails  {
 }
 impl AwsSecretsManagerSecretDetails {
     /// <p>Defines the rotation schedule for the secret.</p>
-    pub fn rotation_rules(&self) -> std::option::Option<& crate::types::AwsSecretsManagerSecretRotationRules> {
+    pub fn rotation_rules(
+        &self,
+    ) -> std::option::Option<&crate::types::AwsSecretsManagerSecretRotationRules> {
         self.rotation_rules.as_ref()
     }
     /// <p>Whether the rotation occurred within the specified rotation frequency.</p>
@@ -39,7 +41,7 @@ impl AwsSecretsManagerSecretDetails {
         self.rotation_occurred_within_frequency
     }
     /// <p>The ARN, Key ID, or alias of the KMS key used to encrypt the <code>SecretString</code> or <code>SecretBinary</code> values for versions of this secret.</p>
-    pub fn kms_key_id(&self) -> std::option::Option<& str> {
+    pub fn kms_key_id(&self) -> std::option::Option<&str> {
         self.kms_key_id.as_deref()
     }
     /// <p>Whether rotation is enabled.</p>
@@ -47,7 +49,7 @@ impl AwsSecretsManagerSecretDetails {
         self.rotation_enabled
     }
     /// <p>The ARN of the Lambda function that rotates the secret.</p>
-    pub fn rotation_lambda_arn(&self) -> std::option::Option<& str> {
+    pub fn rotation_lambda_arn(&self) -> std::option::Option<&str> {
         self.rotation_lambda_arn.as_deref()
     }
     /// <p>Whether the secret is deleted.</p>
@@ -55,11 +57,11 @@ impl AwsSecretsManagerSecretDetails {
         self.deleted
     }
     /// <p>The name of the secret.</p>
-    pub fn name(&self) -> std::option::Option<& str> {
+    pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>The user-provided description of the secret.</p>
-    pub fn description(&self) -> std::option::Option<& str> {
+    pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
 }
@@ -74,7 +76,8 @@ impl AwsSecretsManagerSecretDetails {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct AwsSecretsManagerSecretDetailsBuilder {
-    pub(crate) rotation_rules: std::option::Option<crate::types::AwsSecretsManagerSecretRotationRules>,
+    pub(crate) rotation_rules:
+        std::option::Option<crate::types::AwsSecretsManagerSecretRotationRules>,
     pub(crate) rotation_occurred_within_frequency: std::option::Option<bool>,
     pub(crate) kms_key_id: std::option::Option<std::string::String>,
     pub(crate) rotation_enabled: std::option::Option<bool>,
@@ -85,13 +88,20 @@ pub struct AwsSecretsManagerSecretDetailsBuilder {
 }
 impl AwsSecretsManagerSecretDetailsBuilder {
     /// <p>Defines the rotation schedule for the secret.</p>
-    pub fn rotation_rules(mut self, input: crate::types::AwsSecretsManagerSecretRotationRules) -> Self {
+    pub fn rotation_rules(
+        mut self,
+        input: crate::types::AwsSecretsManagerSecretRotationRules,
+    ) -> Self {
         self.rotation_rules = Some(input);
         self
     }
     /// <p>Defines the rotation schedule for the secret.</p>
-    pub fn set_rotation_rules(mut self, input: std::option::Option<crate::types::AwsSecretsManagerSecretRotationRules>) -> Self {
-        self.rotation_rules = input; self
+    pub fn set_rotation_rules(
+        mut self,
+        input: std::option::Option<crate::types::AwsSecretsManagerSecretRotationRules>,
+    ) -> Self {
+        self.rotation_rules = input;
+        self
     }
     /// <p>Whether the rotation occurred within the specified rotation frequency.</p>
     pub fn rotation_occurred_within_frequency(mut self, input: bool) -> Self {
@@ -99,8 +109,12 @@ impl AwsSecretsManagerSecretDetailsBuilder {
         self
     }
     /// <p>Whether the rotation occurred within the specified rotation frequency.</p>
-    pub fn set_rotation_occurred_within_frequency(mut self, input: std::option::Option<bool>) -> Self {
-        self.rotation_occurred_within_frequency = input; self
+    pub fn set_rotation_occurred_within_frequency(
+        mut self,
+        input: std::option::Option<bool>,
+    ) -> Self {
+        self.rotation_occurred_within_frequency = input;
+        self
     }
     /// <p>The ARN, Key ID, or alias of the KMS key used to encrypt the <code>SecretString</code> or <code>SecretBinary</code> values for versions of this secret.</p>
     pub fn kms_key_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -109,7 +123,8 @@ impl AwsSecretsManagerSecretDetailsBuilder {
     }
     /// <p>The ARN, Key ID, or alias of the KMS key used to encrypt the <code>SecretString</code> or <code>SecretBinary</code> values for versions of this secret.</p>
     pub fn set_kms_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.kms_key_id = input; self
+        self.kms_key_id = input;
+        self
     }
     /// <p>Whether rotation is enabled.</p>
     pub fn rotation_enabled(mut self, input: bool) -> Self {
@@ -118,7 +133,8 @@ impl AwsSecretsManagerSecretDetailsBuilder {
     }
     /// <p>Whether rotation is enabled.</p>
     pub fn set_rotation_enabled(mut self, input: std::option::Option<bool>) -> Self {
-        self.rotation_enabled = input; self
+        self.rotation_enabled = input;
+        self
     }
     /// <p>The ARN of the Lambda function that rotates the secret.</p>
     pub fn rotation_lambda_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -126,8 +142,12 @@ impl AwsSecretsManagerSecretDetailsBuilder {
         self
     }
     /// <p>The ARN of the Lambda function that rotates the secret.</p>
-    pub fn set_rotation_lambda_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.rotation_lambda_arn = input; self
+    pub fn set_rotation_lambda_arn(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.rotation_lambda_arn = input;
+        self
     }
     /// <p>Whether the secret is deleted.</p>
     pub fn deleted(mut self, input: bool) -> Self {
@@ -136,7 +156,8 @@ impl AwsSecretsManagerSecretDetailsBuilder {
     }
     /// <p>Whether the secret is deleted.</p>
     pub fn set_deleted(mut self, input: std::option::Option<bool>) -> Self {
-        self.deleted = input; self
+        self.deleted = input;
+        self
     }
     /// <p>The name of the secret.</p>
     pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -145,7 +166,8 @@ impl AwsSecretsManagerSecretDetailsBuilder {
     }
     /// <p>The name of the secret.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input; self
+        self.name = input;
+        self
     }
     /// <p>The user-provided description of the secret.</p>
     pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -154,31 +176,22 @@ impl AwsSecretsManagerSecretDetailsBuilder {
     }
     /// <p>The user-provided description of the secret.</p>
     pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.description = input; self
+        self.description = input;
+        self
     }
     /// Consumes the builder and constructs a [`AwsSecretsManagerSecretDetails`](crate::types::AwsSecretsManagerSecretDetails).
     pub fn build(self) -> crate::types::AwsSecretsManagerSecretDetails {
         crate::types::AwsSecretsManagerSecretDetails {
-            rotation_rules: self.rotation_rules
-            ,
-            rotation_occurred_within_frequency: self.rotation_occurred_within_frequency
-                .unwrap_or_default()
-            ,
-            kms_key_id: self.kms_key_id
-            ,
-            rotation_enabled: self.rotation_enabled
-                .unwrap_or_default()
-            ,
-            rotation_lambda_arn: self.rotation_lambda_arn
-            ,
-            deleted: self.deleted
-                .unwrap_or_default()
-            ,
-            name: self.name
-            ,
-            description: self.description
-            ,
+            rotation_rules: self.rotation_rules,
+            rotation_occurred_within_frequency: self
+                .rotation_occurred_within_frequency
+                .unwrap_or_default(),
+            kms_key_id: self.kms_key_id,
+            rotation_enabled: self.rotation_enabled.unwrap_or_default(),
+            rotation_lambda_arn: self.rotation_lambda_arn,
+            deleted: self.deleted.unwrap_or_default(),
+            name: self.name,
+            description: self.description,
         }
     }
 }
-

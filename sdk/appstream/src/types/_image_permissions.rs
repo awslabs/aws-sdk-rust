@@ -3,7 +3,7 @@
 /// <p>Describes the permissions for an image. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ImagePermissions  {
+pub struct ImagePermissions {
     /// <p>Indicates whether the image can be used for a fleet.</p>
     #[doc(hidden)]
     pub allow_fleet: std::option::Option<bool>,
@@ -43,7 +43,8 @@ impl ImagePermissionsBuilder {
     }
     /// <p>Indicates whether the image can be used for a fleet.</p>
     pub fn set_allow_fleet(mut self, input: std::option::Option<bool>) -> Self {
-        self.allow_fleet = input; self
+        self.allow_fleet = input;
+        self
     }
     /// <p>Indicates whether the image can be used for an image builder.</p>
     pub fn allow_image_builder(mut self, input: bool) -> Self {
@@ -52,16 +53,14 @@ impl ImagePermissionsBuilder {
     }
     /// <p>Indicates whether the image can be used for an image builder.</p>
     pub fn set_allow_image_builder(mut self, input: std::option::Option<bool>) -> Self {
-        self.allow_image_builder = input; self
+        self.allow_image_builder = input;
+        self
     }
     /// Consumes the builder and constructs a [`ImagePermissions`](crate::types::ImagePermissions).
     pub fn build(self) -> crate::types::ImagePermissions {
         crate::types::ImagePermissions {
-            allow_fleet: self.allow_fleet
-            ,
-            allow_image_builder: self.allow_image_builder
-            ,
+            allow_fleet: self.allow_fleet,
+            allow_image_builder: self.allow_image_builder,
         }
     }
 }
-

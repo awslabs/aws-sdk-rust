@@ -3,7 +3,7 @@
 /// <p></p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ModifyReplicationSubnetGroupInput  {
+pub struct ModifyReplicationSubnetGroupInput {
     /// <p>The name of the replication instance subnet group.</p>
     #[doc(hidden)]
     pub replication_subnet_group_identifier: std::option::Option<std::string::String>,
@@ -16,21 +16,21 @@ pub struct ModifyReplicationSubnetGroupInput  {
 }
 impl ModifyReplicationSubnetGroupInput {
     /// <p>The name of the replication instance subnet group.</p>
-    pub fn replication_subnet_group_identifier(&self) -> std::option::Option<& str> {
+    pub fn replication_subnet_group_identifier(&self) -> std::option::Option<&str> {
         self.replication_subnet_group_identifier.as_deref()
     }
     /// <p>A description for the replication instance subnet group.</p>
-    pub fn replication_subnet_group_description(&self) -> std::option::Option<& str> {
+    pub fn replication_subnet_group_description(&self) -> std::option::Option<&str> {
         self.replication_subnet_group_description.as_deref()
     }
     /// <p>A list of subnet IDs.</p>
-    pub fn subnet_ids(&self) -> std::option::Option<& [std::string::String]> {
+    pub fn subnet_ids(&self) -> std::option::Option<&[std::string::String]> {
         self.subnet_ids.as_deref()
     }
 }
 impl ModifyReplicationSubnetGroupInput {
     /// Creates a new builder-style object to manufacture [`ModifyReplicationSubnetGroupInput`](crate::operation::modify_replication_subnet_group::ModifyReplicationSubnetGroupInput).
-    pub fn builder() -> crate::operation::modify_replication_subnet_group::builders::ModifyReplicationSubnetGroupInputBuilder {
+    pub fn builder() -> crate::operation::modify_replication_subnet_group::builders::ModifyReplicationSubnetGroupInputBuilder{
         crate::operation::modify_replication_subnet_group::builders::ModifyReplicationSubnetGroupInputBuilder::default()
     }
 }
@@ -45,22 +45,36 @@ pub struct ModifyReplicationSubnetGroupInputBuilder {
 }
 impl ModifyReplicationSubnetGroupInputBuilder {
     /// <p>The name of the replication instance subnet group.</p>
-    pub fn replication_subnet_group_identifier(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn replication_subnet_group_identifier(
+        mut self,
+        input: impl Into<std::string::String>,
+    ) -> Self {
         self.replication_subnet_group_identifier = Some(input.into());
         self
     }
     /// <p>The name of the replication instance subnet group.</p>
-    pub fn set_replication_subnet_group_identifier(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.replication_subnet_group_identifier = input; self
+    pub fn set_replication_subnet_group_identifier(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.replication_subnet_group_identifier = input;
+        self
     }
     /// <p>A description for the replication instance subnet group.</p>
-    pub fn replication_subnet_group_description(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn replication_subnet_group_description(
+        mut self,
+        input: impl Into<std::string::String>,
+    ) -> Self {
         self.replication_subnet_group_description = Some(input.into());
         self
     }
     /// <p>A description for the replication instance subnet group.</p>
-    pub fn set_replication_subnet_group_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.replication_subnet_group_description = input; self
+    pub fn set_replication_subnet_group_description(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.replication_subnet_group_description = input;
+        self
     }
     /// Appends an item to `subnet_ids`.
     ///
@@ -69,26 +83,31 @@ impl ModifyReplicationSubnetGroupInputBuilder {
     /// <p>A list of subnet IDs.</p>
     pub fn subnet_ids(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.subnet_ids.unwrap_or_default();
-                        v.push(input.into());
-                        self.subnet_ids = Some(v);
-                        self
+        v.push(input.into());
+        self.subnet_ids = Some(v);
+        self
     }
     /// <p>A list of subnet IDs.</p>
-    pub fn set_subnet_ids(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-        self.subnet_ids = input; self
+    pub fn set_subnet_ids(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
+        self.subnet_ids = input;
+        self
     }
     /// Consumes the builder and constructs a [`ModifyReplicationSubnetGroupInput`](crate::operation::modify_replication_subnet_group::ModifyReplicationSubnetGroupInput).
-    pub fn build(self) -> Result<crate::operation::modify_replication_subnet_group::ModifyReplicationSubnetGroupInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::modify_replication_subnet_group::ModifyReplicationSubnetGroupInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::modify_replication_subnet_group::ModifyReplicationSubnetGroupInput {
-                replication_subnet_group_identifier: self.replication_subnet_group_identifier
-                ,
-                replication_subnet_group_description: self.replication_subnet_group_description
-                ,
-                subnet_ids: self.subnet_ids
-                ,
-            }
+                replication_subnet_group_identifier: self.replication_subnet_group_identifier,
+                replication_subnet_group_description: self.replication_subnet_group_description,
+                subnet_ids: self.subnet_ids,
+            },
         )
     }
 }
-

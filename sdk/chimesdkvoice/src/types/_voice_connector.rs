@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct VoiceConnector  {
+pub struct VoiceConnector {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub voice_connector_id: std::option::Option<std::string::String>,
@@ -30,19 +30,19 @@ pub struct VoiceConnector  {
 }
 impl VoiceConnector {
     #[allow(missing_docs)] // documentation missing in model
-    pub fn voice_connector_id(&self) -> std::option::Option<& str> {
+    pub fn voice_connector_id(&self) -> std::option::Option<&str> {
         self.voice_connector_id.as_deref()
     }
     #[allow(missing_docs)] // documentation missing in model
-    pub fn aws_region(&self) -> std::option::Option<& crate::types::VoiceConnectorAwsRegion> {
+    pub fn aws_region(&self) -> std::option::Option<&crate::types::VoiceConnectorAwsRegion> {
         self.aws_region.as_ref()
     }
     #[allow(missing_docs)] // documentation missing in model
-    pub fn name(&self) -> std::option::Option<& str> {
+    pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
     #[allow(missing_docs)] // documentation missing in model
-    pub fn outbound_host_name(&self) -> std::option::Option<& str> {
+    pub fn outbound_host_name(&self) -> std::option::Option<&str> {
         self.outbound_host_name.as_deref()
     }
     #[allow(missing_docs)] // documentation missing in model
@@ -50,15 +50,15 @@ impl VoiceConnector {
         self.require_encryption
     }
     #[allow(missing_docs)] // documentation missing in model
-    pub fn created_timestamp(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
+    pub fn created_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created_timestamp.as_ref()
     }
     #[allow(missing_docs)] // documentation missing in model
-    pub fn updated_timestamp(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
+    pub fn updated_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.updated_timestamp.as_ref()
     }
     #[allow(missing_docs)] // documentation missing in model
-    pub fn voice_connector_arn(&self) -> std::option::Option<& str> {
+    pub fn voice_connector_arn(&self) -> std::option::Option<&str> {
         self.voice_connector_arn.as_deref()
     }
 }
@@ -89,8 +89,12 @@ impl VoiceConnectorBuilder {
         self
     }
     #[allow(missing_docs)] // documentation missing in model
-    pub fn set_voice_connector_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.voice_connector_id = input; self
+    pub fn set_voice_connector_id(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.voice_connector_id = input;
+        self
     }
     #[allow(missing_docs)] // documentation missing in model
     pub fn aws_region(mut self, input: crate::types::VoiceConnectorAwsRegion) -> Self {
@@ -98,8 +102,12 @@ impl VoiceConnectorBuilder {
         self
     }
     #[allow(missing_docs)] // documentation missing in model
-    pub fn set_aws_region(mut self, input: std::option::Option<crate::types::VoiceConnectorAwsRegion>) -> Self {
-        self.aws_region = input; self
+    pub fn set_aws_region(
+        mut self,
+        input: std::option::Option<crate::types::VoiceConnectorAwsRegion>,
+    ) -> Self {
+        self.aws_region = input;
+        self
     }
     #[allow(missing_docs)] // documentation missing in model
     pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -108,7 +116,8 @@ impl VoiceConnectorBuilder {
     }
     #[allow(missing_docs)] // documentation missing in model
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input; self
+        self.name = input;
+        self
     }
     #[allow(missing_docs)] // documentation missing in model
     pub fn outbound_host_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -116,8 +125,12 @@ impl VoiceConnectorBuilder {
         self
     }
     #[allow(missing_docs)] // documentation missing in model
-    pub fn set_outbound_host_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.outbound_host_name = input; self
+    pub fn set_outbound_host_name(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.outbound_host_name = input;
+        self
     }
     #[allow(missing_docs)] // documentation missing in model
     pub fn require_encryption(mut self, input: bool) -> Self {
@@ -126,7 +139,8 @@ impl VoiceConnectorBuilder {
     }
     #[allow(missing_docs)] // documentation missing in model
     pub fn set_require_encryption(mut self, input: std::option::Option<bool>) -> Self {
-        self.require_encryption = input; self
+        self.require_encryption = input;
+        self
     }
     #[allow(missing_docs)] // documentation missing in model
     pub fn created_timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -134,8 +148,12 @@ impl VoiceConnectorBuilder {
         self
     }
     #[allow(missing_docs)] // documentation missing in model
-    pub fn set_created_timestamp(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.created_timestamp = input; self
+    pub fn set_created_timestamp(
+        mut self,
+        input: std::option::Option<aws_smithy_types::DateTime>,
+    ) -> Self {
+        self.created_timestamp = input;
+        self
     }
     #[allow(missing_docs)] // documentation missing in model
     pub fn updated_timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -143,8 +161,12 @@ impl VoiceConnectorBuilder {
         self
     }
     #[allow(missing_docs)] // documentation missing in model
-    pub fn set_updated_timestamp(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.updated_timestamp = input; self
+    pub fn set_updated_timestamp(
+        mut self,
+        input: std::option::Option<aws_smithy_types::DateTime>,
+    ) -> Self {
+        self.updated_timestamp = input;
+        self
     }
     #[allow(missing_docs)] // documentation missing in model
     pub fn voice_connector_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -152,29 +174,24 @@ impl VoiceConnectorBuilder {
         self
     }
     #[allow(missing_docs)] // documentation missing in model
-    pub fn set_voice_connector_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.voice_connector_arn = input; self
+    pub fn set_voice_connector_arn(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.voice_connector_arn = input;
+        self
     }
     /// Consumes the builder and constructs a [`VoiceConnector`](crate::types::VoiceConnector).
     pub fn build(self) -> crate::types::VoiceConnector {
         crate::types::VoiceConnector {
-            voice_connector_id: self.voice_connector_id
-            ,
-            aws_region: self.aws_region
-            ,
-            name: self.name
-            ,
-            outbound_host_name: self.outbound_host_name
-            ,
-            require_encryption: self.require_encryption
-            ,
-            created_timestamp: self.created_timestamp
-            ,
-            updated_timestamp: self.updated_timestamp
-            ,
-            voice_connector_arn: self.voice_connector_arn
-            ,
+            voice_connector_id: self.voice_connector_id,
+            aws_region: self.aws_region,
+            name: self.name,
+            outbound_host_name: self.outbound_host_name,
+            require_encryption: self.require_encryption,
+            created_timestamp: self.created_timestamp,
+            updated_timestamp: self.updated_timestamp,
+            voice_connector_arn: self.voice_connector_arn,
         }
     }
 }
-

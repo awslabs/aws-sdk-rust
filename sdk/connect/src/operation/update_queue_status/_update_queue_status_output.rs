@@ -2,17 +2,18 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateQueueStatusOutput  {
+pub struct UpdateQueueStatusOutput {
     _request_id: Option<String>,
 }
 impl aws_http::request_id::RequestId for UpdateQueueStatusOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl UpdateQueueStatusOutput {
     /// Creates a new builder-style object to manufacture [`UpdateQueueStatusOutput`](crate::operation::update_queue_status::UpdateQueueStatusOutput).
-    pub fn builder() -> crate::operation::update_queue_status::builders::UpdateQueueStatusOutputBuilder {
+    pub fn builder(
+    ) -> crate::operation::update_queue_status::builders::UpdateQueueStatusOutputBuilder {
         crate::operation::update_queue_status::builders::UpdateQueueStatusOutputBuilder::default()
     }
 }
@@ -25,14 +26,14 @@ pub struct UpdateQueueStatusOutputBuilder {
 }
 impl UpdateQueueStatusOutputBuilder {
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`UpdateQueueStatusOutput`](crate::operation::update_queue_status::UpdateQueueStatusOutput).
     pub fn build(self) -> crate::operation::update_queue_status::UpdateQueueStatusOutput {
         crate::operation::update_queue_status::UpdateQueueStatusOutput {
@@ -40,4 +41,3 @@ impl UpdateQueueStatusOutputBuilder {
         }
     }
 }
-

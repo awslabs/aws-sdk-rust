@@ -36,4 +36,3 @@ pub mod untag_resource;
 
 /// Types for the `UpdateSchedule` operation.
 pub mod update_schedule;
-

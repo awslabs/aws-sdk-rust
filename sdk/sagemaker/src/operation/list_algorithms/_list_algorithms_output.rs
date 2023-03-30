@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListAlgorithmsOutput  {
+pub struct ListAlgorithmsOutput {
     /// <p>&gt;An array of <code>AlgorithmSummary</code> objects, each of which lists an algorithm.</p>
     #[doc(hidden)]
     pub algorithm_summary_list: std::option::Option<std::vec::Vec<crate::types::AlgorithmSummary>>,
@@ -13,19 +13,19 @@ pub struct ListAlgorithmsOutput  {
 }
 impl ListAlgorithmsOutput {
     /// <p>&gt;An array of <code>AlgorithmSummary</code> objects, each of which lists an algorithm.</p>
-    pub fn algorithm_summary_list(&self) -> std::option::Option<& [crate::types::AlgorithmSummary]> {
+    pub fn algorithm_summary_list(&self) -> std::option::Option<&[crate::types::AlgorithmSummary]> {
         self.algorithm_summary_list.as_deref()
     }
     /// <p>If the response is truncated, SageMaker returns this token. To retrieve the next set of algorithms, use it in the subsequent request.</p>
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for ListAlgorithmsOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl ListAlgorithmsOutput {
     /// Creates a new builder-style object to manufacture [`ListAlgorithmsOutput`](crate::operation::list_algorithms::ListAlgorithmsOutput).
     pub fn builder() -> crate::operation::list_algorithms::builders::ListAlgorithmsOutputBuilder {
@@ -37,7 +37,8 @@ impl ListAlgorithmsOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct ListAlgorithmsOutputBuilder {
-    pub(crate) algorithm_summary_list: std::option::Option<std::vec::Vec<crate::types::AlgorithmSummary>>,
+    pub(crate) algorithm_summary_list:
+        std::option::Option<std::vec::Vec<crate::types::AlgorithmSummary>>,
     pub(crate) next_token: std::option::Option<std::string::String>,
     _request_id: Option<String>,
 }
@@ -49,13 +50,17 @@ impl ListAlgorithmsOutputBuilder {
     /// <p>&gt;An array of <code>AlgorithmSummary</code> objects, each of which lists an algorithm.</p>
     pub fn algorithm_summary_list(mut self, input: crate::types::AlgorithmSummary) -> Self {
         let mut v = self.algorithm_summary_list.unwrap_or_default();
-                        v.push(input);
-                        self.algorithm_summary_list = Some(v);
-                        self
+        v.push(input);
+        self.algorithm_summary_list = Some(v);
+        self
     }
     /// <p>&gt;An array of <code>AlgorithmSummary</code> objects, each of which lists an algorithm.</p>
-    pub fn set_algorithm_summary_list(mut self, input: std::option::Option<std::vec::Vec<crate::types::AlgorithmSummary>>) -> Self {
-        self.algorithm_summary_list = input; self
+    pub fn set_algorithm_summary_list(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::AlgorithmSummary>>,
+    ) -> Self {
+        self.algorithm_summary_list = input;
+        self
     }
     /// <p>If the response is truncated, SageMaker returns this token. To retrieve the next set of algorithms, use it in the subsequent request.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -64,26 +69,24 @@ impl ListAlgorithmsOutputBuilder {
     }
     /// <p>If the response is truncated, SageMaker returns this token. To retrieve the next set of algorithms, use it in the subsequent request.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input; self
+        self.next_token = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`ListAlgorithmsOutput`](crate::operation::list_algorithms::ListAlgorithmsOutput).
     pub fn build(self) -> crate::operation::list_algorithms::ListAlgorithmsOutput {
         crate::operation::list_algorithms::ListAlgorithmsOutput {
-            algorithm_summary_list: self.algorithm_summary_list
-            ,
-            next_token: self.next_token
-            ,
+            algorithm_summary_list: self.algorithm_summary_list,
+            next_token: self.next_token,
             _request_id: self._request_id,
         }
     }
 }
-

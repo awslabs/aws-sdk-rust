@@ -4,49 +4,71 @@ pub use crate::operation::update_related_items::_update_related_items_output::Up
 pub use crate::operation::update_related_items::_update_related_items_input::UpdateRelatedItemsInputBuilder;
 
 /// Fluent builder constructing a request to `UpdateRelatedItems`.
-/// 
+///
 /// <p>Add or remove related items from the related items tab of an incident record.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct UpdateRelatedItemsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::update_related_items::builders::UpdateRelatedItemsInputBuilder
-            }
-impl UpdateRelatedItemsFluentBuilder  {
+    handle: std::sync::Arc<crate::client::Handle>,
+    inner: crate::operation::update_related_items::builders::UpdateRelatedItemsInputBuilder,
+}
+impl UpdateRelatedItemsFluentBuilder {
     /// Creates a new `UpdateRelatedItems`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
-                    /// sent. The operation's inner [http::Request] can be modified as well.
-                    pub async fn customize(self) -> std::result::Result<
-                        crate::client::customize::CustomizableOperation<crate::operation::update_related_items::UpdateRelatedItems, aws_http::retry::AwsResponseRetryClassifier,>,
-                        aws_smithy_http::result::SdkError<crate::operation::update_related_items::UpdateRelatedItemsError>
-                    >  {
-                        let handle = self.handle.clone();
-                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-                    }
-    
-                    /// Sends the request and returns the response.
-                    ///
-                    /// If an error occurs, an `SdkError` will be returned with additional details that
-                    /// can be matched against.
-                    ///
-                    /// By default, any retryable failures will be retried twice. Retry behavior
-                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                    /// set when configuring the client.
-                    pub async fn send(self) -> std::result::Result<crate::operation::update_related_items::UpdateRelatedItemsOutput, aws_smithy_http::result::SdkError<crate::operation::update_related_items::UpdateRelatedItemsError>>
-                     {
-                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&self.handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        self.handle.client.call(op).await
-                    }
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle,
+            inner: Default::default(),
+        }
+    }
+
+    /// Consume this builder, creating a customizable operation that can be modified before being
+    /// sent. The operation's inner [http::Request] can be modified as well.
+    pub async fn customize(
+        self,
+    ) -> std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::update_related_items::UpdateRelatedItems,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::result::SdkError<
+            crate::operation::update_related_items::UpdateRelatedItemsError,
+        >,
+    > {
+        let handle = self.handle.clone();
+        let operation = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+    }
+
+    /// Sends the request and returns the response.
+    ///
+    /// If an error occurs, an `SdkError` will be returned with additional details that
+    /// can be matched against.
+    ///
+    /// By default, any retryable failures will be retried twice. Retry behavior
+    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+    /// set when configuring the client.
+    pub async fn send(
+        self,
+    ) -> std::result::Result<
+        crate::operation::update_related_items::UpdateRelatedItemsOutput,
+        aws_smithy_http::result::SdkError<
+            crate::operation::update_related_items::UpdateRelatedItemsError,
+        >,
+    > {
+        let op = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&self.handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        self.handle.client.call(op).await
+    }
     /// <p>A token ensuring that the operation is called only once with the specified details.</p>
     pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.client_token(input.into());
@@ -63,7 +85,10 @@ impl UpdateRelatedItemsFluentBuilder  {
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the incident record containing the related items you are updating.</p>
-    pub fn set_incident_record_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_incident_record_arn(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_incident_record_arn(input);
         self
     }
@@ -73,9 +98,11 @@ impl UpdateRelatedItemsFluentBuilder  {
         self
     }
     /// <p>Details about the item you are adding or deleting.</p>
-    pub fn set_related_items_update(mut self, input: std::option::Option<crate::types::RelatedItemsUpdate>) -> Self {
+    pub fn set_related_items_update(
+        mut self,
+        input: std::option::Option<crate::types::RelatedItemsUpdate>,
+    ) -> Self {
         self.inner = self.inner.set_related_items_update(input);
         self
     }
 }
-

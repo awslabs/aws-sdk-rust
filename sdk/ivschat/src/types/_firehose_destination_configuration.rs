@@ -3,14 +3,14 @@
 /// <p>Specifies a Kinesis Firehose location where chat logs will be stored.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct FirehoseDestinationConfiguration  {
+pub struct FirehoseDestinationConfiguration {
     /// <p>Name of the Amazon Kinesis Firehose delivery stream where chat activity will be logged.</p>
     #[doc(hidden)]
     pub delivery_stream_name: std::option::Option<std::string::String>,
 }
 impl FirehoseDestinationConfiguration {
     /// <p>Name of the Amazon Kinesis Firehose delivery stream where chat activity will be logged.</p>
-    pub fn delivery_stream_name(&self) -> std::option::Option<& str> {
+    pub fn delivery_stream_name(&self) -> std::option::Option<&str> {
         self.delivery_stream_name.as_deref()
     }
 }
@@ -34,15 +34,17 @@ impl FirehoseDestinationConfigurationBuilder {
         self
     }
     /// <p>Name of the Amazon Kinesis Firehose delivery stream where chat activity will be logged.</p>
-    pub fn set_delivery_stream_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.delivery_stream_name = input; self
+    pub fn set_delivery_stream_name(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.delivery_stream_name = input;
+        self
     }
     /// Consumes the builder and constructs a [`FirehoseDestinationConfiguration`](crate::types::FirehoseDestinationConfiguration).
     pub fn build(self) -> crate::types::FirehoseDestinationConfiguration {
         crate::types::FirehoseDestinationConfiguration {
-            delivery_stream_name: self.delivery_stream_name
-            ,
+            delivery_stream_name: self.delivery_stream_name,
         }
     }
 }
-

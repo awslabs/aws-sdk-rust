@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteScalingPolicyInput  {
+pub struct DeleteScalingPolicyInput {
     /// <p>A descriptive label that is associated with a fleet's scaling policy. Policy names do not need to be unique.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -12,18 +12,20 @@ pub struct DeleteScalingPolicyInput  {
 }
 impl DeleteScalingPolicyInput {
     /// <p>A descriptive label that is associated with a fleet's scaling policy. Policy names do not need to be unique.</p>
-    pub fn name(&self) -> std::option::Option<& str> {
+    pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>A unique identifier for the fleet to be deleted. You can use either the fleet ID or ARN value.</p>
-    pub fn fleet_id(&self) -> std::option::Option<& str> {
+    pub fn fleet_id(&self) -> std::option::Option<&str> {
         self.fleet_id.as_deref()
     }
 }
 impl DeleteScalingPolicyInput {
     /// Creates a new builder-style object to manufacture [`DeleteScalingPolicyInput`](crate::operation::delete_scaling_policy::DeleteScalingPolicyInput).
-    pub fn builder() -> crate::operation::delete_scaling_policy::builders::DeleteScalingPolicyInputBuilder {
-        crate::operation::delete_scaling_policy::builders::DeleteScalingPolicyInputBuilder::default()
+    pub fn builder(
+    ) -> crate::operation::delete_scaling_policy::builders::DeleteScalingPolicyInputBuilder {
+        crate::operation::delete_scaling_policy::builders::DeleteScalingPolicyInputBuilder::default(
+        )
     }
 }
 
@@ -42,7 +44,8 @@ impl DeleteScalingPolicyInputBuilder {
     }
     /// <p>A descriptive label that is associated with a fleet's scaling policy. Policy names do not need to be unique.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input; self
+        self.name = input;
+        self
     }
     /// <p>A unique identifier for the fleet to be deleted. You can use either the fleet ID or ARN value.</p>
     pub fn fleet_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -51,18 +54,21 @@ impl DeleteScalingPolicyInputBuilder {
     }
     /// <p>A unique identifier for the fleet to be deleted. You can use either the fleet ID or ARN value.</p>
     pub fn set_fleet_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.fleet_id = input; self
+        self.fleet_id = input;
+        self
     }
     /// Consumes the builder and constructs a [`DeleteScalingPolicyInput`](crate::operation::delete_scaling_policy::DeleteScalingPolicyInput).
-    pub fn build(self) -> Result<crate::operation::delete_scaling_policy::DeleteScalingPolicyInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::delete_scaling_policy::DeleteScalingPolicyInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::delete_scaling_policy::DeleteScalingPolicyInput {
-                name: self.name
-                ,
-                fleet_id: self.fleet_id
-                ,
-            }
+                name: self.name,
+                fleet_id: self.fleet_id,
+            },
         )
     }
 }
-

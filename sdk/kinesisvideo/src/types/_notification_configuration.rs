@@ -3,7 +3,7 @@
 /// <p>The structure that contains the notification information for the KVS images delivery. If this parameter is null, the configuration will be deleted from the stream.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct NotificationConfiguration  {
+pub struct NotificationConfiguration {
     /// <p>Indicates if a notification configuration is enabled or disabled.</p>
     #[doc(hidden)]
     pub status: std::option::Option<crate::types::ConfigurationStatus>,
@@ -13,11 +13,13 @@ pub struct NotificationConfiguration  {
 }
 impl NotificationConfiguration {
     /// <p>Indicates if a notification configuration is enabled or disabled.</p>
-    pub fn status(&self) -> std::option::Option<& crate::types::ConfigurationStatus> {
+    pub fn status(&self) -> std::option::Option<&crate::types::ConfigurationStatus> {
         self.status.as_ref()
     }
     /// <p>The destination information required to deliver a notification to a customer.</p>
-    pub fn destination_config(&self) -> std::option::Option<& crate::types::NotificationDestinationConfig> {
+    pub fn destination_config(
+        &self,
+    ) -> std::option::Option<&crate::types::NotificationDestinationConfig> {
         self.destination_config.as_ref()
     }
 }
@@ -42,26 +44,34 @@ impl NotificationConfigurationBuilder {
         self
     }
     /// <p>Indicates if a notification configuration is enabled or disabled.</p>
-    pub fn set_status(mut self, input: std::option::Option<crate::types::ConfigurationStatus>) -> Self {
-        self.status = input; self
+    pub fn set_status(
+        mut self,
+        input: std::option::Option<crate::types::ConfigurationStatus>,
+    ) -> Self {
+        self.status = input;
+        self
     }
     /// <p>The destination information required to deliver a notification to a customer.</p>
-    pub fn destination_config(mut self, input: crate::types::NotificationDestinationConfig) -> Self {
+    pub fn destination_config(
+        mut self,
+        input: crate::types::NotificationDestinationConfig,
+    ) -> Self {
         self.destination_config = Some(input);
         self
     }
     /// <p>The destination information required to deliver a notification to a customer.</p>
-    pub fn set_destination_config(mut self, input: std::option::Option<crate::types::NotificationDestinationConfig>) -> Self {
-        self.destination_config = input; self
+    pub fn set_destination_config(
+        mut self,
+        input: std::option::Option<crate::types::NotificationDestinationConfig>,
+    ) -> Self {
+        self.destination_config = input;
+        self
     }
     /// Consumes the builder and constructs a [`NotificationConfiguration`](crate::types::NotificationConfiguration).
     pub fn build(self) -> crate::types::NotificationConfiguration {
         crate::types::NotificationConfiguration {
-            status: self.status
-            ,
-            destination_config: self.destination_config
-            ,
+            status: self.status,
+            destination_config: self.destination_config,
         }
     }
 }
-

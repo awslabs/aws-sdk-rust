@@ -3,7 +3,7 @@
 /// <p>Details about what caused the incident to be created in Incident Manager.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct TriggerDetails  {
+pub struct TriggerDetails {
     /// <p>Identifies the service that sourced the event. All events sourced from within Amazon Web Services begin with "<code>aws.</code>" Customer-generated events can have any value here, as long as it doesn't begin with "<code>aws.</code>" We recommend the use of Java package-name style reverse domain-name strings. </p>
     #[doc(hidden)]
     pub source: std::option::Option<std::string::String>,
@@ -19,19 +19,19 @@ pub struct TriggerDetails  {
 }
 impl TriggerDetails {
     /// <p>Identifies the service that sourced the event. All events sourced from within Amazon Web Services begin with "<code>aws.</code>" Customer-generated events can have any value here, as long as it doesn't begin with "<code>aws.</code>" We recommend the use of Java package-name style reverse domain-name strings. </p>
-    pub fn source(&self) -> std::option::Option<& str> {
+    pub fn source(&self) -> std::option::Option<&str> {
         self.source.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the source that detected the incident.</p>
-    pub fn trigger_arn(&self) -> std::option::Option<& str> {
+    pub fn trigger_arn(&self) -> std::option::Option<&str> {
         self.trigger_arn.as_deref()
     }
     /// <p>The time that the incident was detected.</p>
-    pub fn timestamp(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
+    pub fn timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.timestamp.as_ref()
     }
     /// <p>Raw data passed from either Amazon EventBridge, Amazon CloudWatch, or Incident Manager when an incident is created.</p>
-    pub fn raw_data(&self) -> std::option::Option<& str> {
+    pub fn raw_data(&self) -> std::option::Option<&str> {
         self.raw_data.as_deref()
     }
 }
@@ -59,7 +59,8 @@ impl TriggerDetailsBuilder {
     }
     /// <p>Identifies the service that sourced the event. All events sourced from within Amazon Web Services begin with "<code>aws.</code>" Customer-generated events can have any value here, as long as it doesn't begin with "<code>aws.</code>" We recommend the use of Java package-name style reverse domain-name strings. </p>
     pub fn set_source(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.source = input; self
+        self.source = input;
+        self
     }
     /// <p>The Amazon Resource Name (ARN) of the source that detected the incident.</p>
     pub fn trigger_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -68,7 +69,8 @@ impl TriggerDetailsBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the source that detected the incident.</p>
     pub fn set_trigger_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.trigger_arn = input; self
+        self.trigger_arn = input;
+        self
     }
     /// <p>The time that the incident was detected.</p>
     pub fn timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -77,7 +79,8 @@ impl TriggerDetailsBuilder {
     }
     /// <p>The time that the incident was detected.</p>
     pub fn set_timestamp(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.timestamp = input; self
+        self.timestamp = input;
+        self
     }
     /// <p>Raw data passed from either Amazon EventBridge, Amazon CloudWatch, or Incident Manager when an incident is created.</p>
     pub fn raw_data(mut self, input: impl Into<std::string::String>) -> Self {
@@ -86,20 +89,16 @@ impl TriggerDetailsBuilder {
     }
     /// <p>Raw data passed from either Amazon EventBridge, Amazon CloudWatch, or Incident Manager when an incident is created.</p>
     pub fn set_raw_data(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.raw_data = input; self
+        self.raw_data = input;
+        self
     }
     /// Consumes the builder and constructs a [`TriggerDetails`](crate::types::TriggerDetails).
     pub fn build(self) -> crate::types::TriggerDetails {
         crate::types::TriggerDetails {
-            source: self.source
-            ,
-            trigger_arn: self.trigger_arn
-            ,
-            timestamp: self.timestamp
-            ,
-            raw_data: self.raw_data
-            ,
+            source: self.source,
+            trigger_arn: self.trigger_arn,
+            timestamp: self.timestamp,
+            raw_data: self.raw_data,
         }
     }
 }
-

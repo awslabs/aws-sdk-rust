@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateConfigurationOutput  {
+pub struct CreateConfigurationOutput {
     /// <p>The Amazon Resource Name (ARN) of the configuration.</p>
     #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
@@ -22,35 +22,37 @@ pub struct CreateConfigurationOutput  {
 }
 impl CreateConfigurationOutput {
     /// <p>The Amazon Resource Name (ARN) of the configuration.</p>
-    pub fn arn(&self) -> std::option::Option<& str> {
+    pub fn arn(&self) -> std::option::Option<&str> {
         self.arn.as_deref()
     }
     /// <p>The time when the configuration was created.</p>
-    pub fn creation_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
+    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
     /// <p>Latest revision of the configuration.</p>
-    pub fn latest_revision(&self) -> std::option::Option<& crate::types::ConfigurationRevision> {
+    pub fn latest_revision(&self) -> std::option::Option<&crate::types::ConfigurationRevision> {
         self.latest_revision.as_ref()
     }
     /// <p>The name of the configuration.</p>
-    pub fn name(&self) -> std::option::Option<& str> {
+    pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>The state of the configuration. The possible states are ACTIVE, DELETING, and DELETE_FAILED. </p>
-    pub fn state(&self) -> std::option::Option<& crate::types::ConfigurationState> {
+    pub fn state(&self) -> std::option::Option<&crate::types::ConfigurationState> {
         self.state.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for CreateConfigurationOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl CreateConfigurationOutput {
     /// Creates a new builder-style object to manufacture [`CreateConfigurationOutput`](crate::operation::create_configuration::CreateConfigurationOutput).
-    pub fn builder() -> crate::operation::create_configuration::builders::CreateConfigurationOutputBuilder {
-        crate::operation::create_configuration::builders::CreateConfigurationOutputBuilder::default()
+    pub fn builder(
+    ) -> crate::operation::create_configuration::builders::CreateConfigurationOutputBuilder {
+        crate::operation::create_configuration::builders::CreateConfigurationOutputBuilder::default(
+        )
     }
 }
 
@@ -73,7 +75,8 @@ impl CreateConfigurationOutputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the configuration.</p>
     pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.arn = input; self
+        self.arn = input;
+        self
     }
     /// <p>The time when the configuration was created.</p>
     pub fn creation_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -81,8 +84,12 @@ impl CreateConfigurationOutputBuilder {
         self
     }
     /// <p>The time when the configuration was created.</p>
-    pub fn set_creation_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.creation_time = input; self
+    pub fn set_creation_time(
+        mut self,
+        input: std::option::Option<aws_smithy_types::DateTime>,
+    ) -> Self {
+        self.creation_time = input;
+        self
     }
     /// <p>Latest revision of the configuration.</p>
     pub fn latest_revision(mut self, input: crate::types::ConfigurationRevision) -> Self {
@@ -90,8 +97,12 @@ impl CreateConfigurationOutputBuilder {
         self
     }
     /// <p>Latest revision of the configuration.</p>
-    pub fn set_latest_revision(mut self, input: std::option::Option<crate::types::ConfigurationRevision>) -> Self {
-        self.latest_revision = input; self
+    pub fn set_latest_revision(
+        mut self,
+        input: std::option::Option<crate::types::ConfigurationRevision>,
+    ) -> Self {
+        self.latest_revision = input;
+        self
     }
     /// <p>The name of the configuration.</p>
     pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -100,7 +111,8 @@ impl CreateConfigurationOutputBuilder {
     }
     /// <p>The name of the configuration.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input; self
+        self.name = input;
+        self
     }
     /// <p>The state of the configuration. The possible states are ACTIVE, DELETING, and DELETE_FAILED. </p>
     pub fn state(mut self, input: crate::types::ConfigurationState) -> Self {
@@ -108,33 +120,31 @@ impl CreateConfigurationOutputBuilder {
         self
     }
     /// <p>The state of the configuration. The possible states are ACTIVE, DELETING, and DELETE_FAILED. </p>
-    pub fn set_state(mut self, input: std::option::Option<crate::types::ConfigurationState>) -> Self {
-        self.state = input; self
+    pub fn set_state(
+        mut self,
+        input: std::option::Option<crate::types::ConfigurationState>,
+    ) -> Self {
+        self.state = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`CreateConfigurationOutput`](crate::operation::create_configuration::CreateConfigurationOutput).
     pub fn build(self) -> crate::operation::create_configuration::CreateConfigurationOutput {
         crate::operation::create_configuration::CreateConfigurationOutput {
-            arn: self.arn
-            ,
-            creation_time: self.creation_time
-            ,
-            latest_revision: self.latest_revision
-            ,
-            name: self.name
-            ,
-            state: self.state
-            ,
+            arn: self.arn,
+            creation_time: self.creation_time,
+            latest_revision: self.latest_revision,
+            name: self.name,
+            state: self.state,
             _request_id: self._request_id,
         }
     }
 }
-

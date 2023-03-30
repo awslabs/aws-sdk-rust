@@ -2,34 +2,37 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct BatchGetAssetPropertyAggregatesInput  {
+pub struct BatchGetAssetPropertyAggregatesInput {
     /// <p>The list of asset property aggregate entries for the batch get request. You can specify up to 16 entries per request.</p>
     #[doc(hidden)]
-    pub entries: std::option::Option<std::vec::Vec<crate::types::BatchGetAssetPropertyAggregatesEntry>>,
+    pub entries:
+        std::option::Option<std::vec::Vec<crate::types::BatchGetAssetPropertyAggregatesEntry>>,
     /// <p>The token to be used for the next set of paginated results.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
-    /// <p>The maximum number of results to return for each paginated request. A result set is returned in the two cases, whichever occurs first.</p> 
-    /// <ul> 
-    /// <li> <p>The size of the result set is less than 1 MB.</p> </li> 
-    /// <li> <p>The number of data points in the result set is less than the value of <code>maxResults</code>. The maximum value of <code>maxResults</code> is 4000.</p> </li> 
+    /// <p>The maximum number of results to return for each paginated request. A result set is returned in the two cases, whichever occurs first.</p>
+    /// <ul>
+    /// <li> <p>The size of the result set is less than 1 MB.</p> </li>
+    /// <li> <p>The number of data points in the result set is less than the value of <code>maxResults</code>. The maximum value of <code>maxResults</code> is 4000.</p> </li>
     /// </ul>
     #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
 }
 impl BatchGetAssetPropertyAggregatesInput {
     /// <p>The list of asset property aggregate entries for the batch get request. You can specify up to 16 entries per request.</p>
-    pub fn entries(&self) -> std::option::Option<& [crate::types::BatchGetAssetPropertyAggregatesEntry]> {
+    pub fn entries(
+        &self,
+    ) -> std::option::Option<&[crate::types::BatchGetAssetPropertyAggregatesEntry]> {
         self.entries.as_deref()
     }
     /// <p>The token to be used for the next set of paginated results.</p>
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// <p>The maximum number of results to return for each paginated request. A result set is returned in the two cases, whichever occurs first.</p> 
-    /// <ul> 
-    /// <li> <p>The size of the result set is less than 1 MB.</p> </li> 
-    /// <li> <p>The number of data points in the result set is less than the value of <code>maxResults</code>. The maximum value of <code>maxResults</code> is 4000.</p> </li> 
+    /// <p>The maximum number of results to return for each paginated request. A result set is returned in the two cases, whichever occurs first.</p>
+    /// <ul>
+    /// <li> <p>The size of the result set is less than 1 MB.</p> </li>
+    /// <li> <p>The number of data points in the result set is less than the value of <code>maxResults</code>. The maximum value of <code>maxResults</code> is 4000.</p> </li>
     /// </ul>
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
@@ -37,7 +40,7 @@ impl BatchGetAssetPropertyAggregatesInput {
 }
 impl BatchGetAssetPropertyAggregatesInput {
     /// Creates a new builder-style object to manufacture [`BatchGetAssetPropertyAggregatesInput`](crate::operation::batch_get_asset_property_aggregates::BatchGetAssetPropertyAggregatesInput).
-    pub fn builder() -> crate::operation::batch_get_asset_property_aggregates::builders::BatchGetAssetPropertyAggregatesInputBuilder {
+    pub fn builder() -> crate::operation::batch_get_asset_property_aggregates::builders::BatchGetAssetPropertyAggregatesInputBuilder{
         crate::operation::batch_get_asset_property_aggregates::builders::BatchGetAssetPropertyAggregatesInputBuilder::default()
     }
 }
@@ -46,7 +49,8 @@ impl BatchGetAssetPropertyAggregatesInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct BatchGetAssetPropertyAggregatesInputBuilder {
-    pub(crate) entries: std::option::Option<std::vec::Vec<crate::types::BatchGetAssetPropertyAggregatesEntry>>,
+    pub(crate) entries:
+        std::option::Option<std::vec::Vec<crate::types::BatchGetAssetPropertyAggregatesEntry>>,
     pub(crate) next_token: std::option::Option<std::string::String>,
     pub(crate) max_results: std::option::Option<i32>,
 }
@@ -58,13 +62,19 @@ impl BatchGetAssetPropertyAggregatesInputBuilder {
     /// <p>The list of asset property aggregate entries for the batch get request. You can specify up to 16 entries per request.</p>
     pub fn entries(mut self, input: crate::types::BatchGetAssetPropertyAggregatesEntry) -> Self {
         let mut v = self.entries.unwrap_or_default();
-                        v.push(input);
-                        self.entries = Some(v);
-                        self
+        v.push(input);
+        self.entries = Some(v);
+        self
     }
     /// <p>The list of asset property aggregate entries for the batch get request. You can specify up to 16 entries per request.</p>
-    pub fn set_entries(mut self, input: std::option::Option<std::vec::Vec<crate::types::BatchGetAssetPropertyAggregatesEntry>>) -> Self {
-        self.entries = input; self
+    pub fn set_entries(
+        mut self,
+        input: std::option::Option<
+            std::vec::Vec<crate::types::BatchGetAssetPropertyAggregatesEntry>,
+        >,
+    ) -> Self {
+        self.entries = input;
+        self
     }
     /// <p>The token to be used for the next set of paginated results.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -73,27 +83,34 @@ impl BatchGetAssetPropertyAggregatesInputBuilder {
     }
     /// <p>The token to be used for the next set of paginated results.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input; self
+        self.next_token = input;
+        self
     }
-    /// <p>The maximum number of results to return for each paginated request. A result set is returned in the two cases, whichever occurs first.</p> 
-    /// <ul> 
-    /// <li> <p>The size of the result set is less than 1 MB.</p> </li> 
-    /// <li> <p>The number of data points in the result set is less than the value of <code>maxResults</code>. The maximum value of <code>maxResults</code> is 4000.</p> </li> 
+    /// <p>The maximum number of results to return for each paginated request. A result set is returned in the two cases, whichever occurs first.</p>
+    /// <ul>
+    /// <li> <p>The size of the result set is less than 1 MB.</p> </li>
+    /// <li> <p>The number of data points in the result set is less than the value of <code>maxResults</code>. The maximum value of <code>maxResults</code> is 4000.</p> </li>
     /// </ul>
     pub fn max_results(mut self, input: i32) -> Self {
         self.max_results = Some(input);
         self
     }
-    /// <p>The maximum number of results to return for each paginated request. A result set is returned in the two cases, whichever occurs first.</p> 
-    /// <ul> 
-    /// <li> <p>The size of the result set is less than 1 MB.</p> </li> 
-    /// <li> <p>The number of data points in the result set is less than the value of <code>maxResults</code>. The maximum value of <code>maxResults</code> is 4000.</p> </li> 
+    /// <p>The maximum number of results to return for each paginated request. A result set is returned in the two cases, whichever occurs first.</p>
+    /// <ul>
+    /// <li> <p>The size of the result set is less than 1 MB.</p> </li>
+    /// <li> <p>The number of data points in the result set is less than the value of <code>maxResults</code>. The maximum value of <code>maxResults</code> is 4000.</p> </li>
     /// </ul>
     pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_results = input; self
+        self.max_results = input;
+        self
     }
     /// Consumes the builder and constructs a [`BatchGetAssetPropertyAggregatesInput`](crate::operation::batch_get_asset_property_aggregates::BatchGetAssetPropertyAggregatesInput).
-    pub fn build(self) -> Result<crate::operation::batch_get_asset_property_aggregates::BatchGetAssetPropertyAggregatesInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::batch_get_asset_property_aggregates::BatchGetAssetPropertyAggregatesInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::batch_get_asset_property_aggregates::BatchGetAssetPropertyAggregatesInput {
                 entries: self.entries
@@ -106,4 +123,3 @@ impl BatchGetAssetPropertyAggregatesInputBuilder {
         )
     }
 }
-

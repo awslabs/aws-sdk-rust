@@ -22,4 +22,3 @@ pub use crate::types::_network_resource::NetworkResourceBuilder;
 pub use crate::types::_position::PositionBuilder;
 
 pub use crate::types::_device_identifier::DeviceIdentifierBuilder;
-

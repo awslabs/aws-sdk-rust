@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SetDefaultMessageTypeInput  {
+pub struct SetDefaultMessageTypeInput {
     /// <p>The configuration set to update with a new default message type. This field can be the ConsigurationSetName or ConfigurationSetArn.</p>
     #[doc(hidden)]
     pub configuration_set_name: std::option::Option<std::string::String>,
@@ -12,17 +12,19 @@ pub struct SetDefaultMessageTypeInput  {
 }
 impl SetDefaultMessageTypeInput {
     /// <p>The configuration set to update with a new default message type. This field can be the ConsigurationSetName or ConfigurationSetArn.</p>
-    pub fn configuration_set_name(&self) -> std::option::Option<& str> {
+    pub fn configuration_set_name(&self) -> std::option::Option<&str> {
         self.configuration_set_name.as_deref()
     }
     /// <p>The type of message. Valid values are TRANSACTIONAL for messages that are critical or time-sensitive and PROMOTIONAL for messages that aren't critical or time-sensitive.</p>
-    pub fn message_type(&self) -> std::option::Option<& crate::types::MessageType> {
+    pub fn message_type(&self) -> std::option::Option<&crate::types::MessageType> {
         self.message_type.as_ref()
     }
 }
 impl SetDefaultMessageTypeInput {
     /// Creates a new builder-style object to manufacture [`SetDefaultMessageTypeInput`](crate::operation::set_default_message_type::SetDefaultMessageTypeInput).
-    pub fn builder() -> crate::operation::set_default_message_type::builders::SetDefaultMessageTypeInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::set_default_message_type::builders::SetDefaultMessageTypeInputBuilder
+    {
         crate::operation::set_default_message_type::builders::SetDefaultMessageTypeInputBuilder::default()
     }
 }
@@ -41,8 +43,12 @@ impl SetDefaultMessageTypeInputBuilder {
         self
     }
     /// <p>The configuration set to update with a new default message type. This field can be the ConsigurationSetName or ConfigurationSetArn.</p>
-    pub fn set_configuration_set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.configuration_set_name = input; self
+    pub fn set_configuration_set_name(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.configuration_set_name = input;
+        self
     }
     /// <p>The type of message. Valid values are TRANSACTIONAL for messages that are critical or time-sensitive and PROMOTIONAL for messages that aren't critical or time-sensitive.</p>
     pub fn message_type(mut self, input: crate::types::MessageType) -> Self {
@@ -50,19 +56,25 @@ impl SetDefaultMessageTypeInputBuilder {
         self
     }
     /// <p>The type of message. Valid values are TRANSACTIONAL for messages that are critical or time-sensitive and PROMOTIONAL for messages that aren't critical or time-sensitive.</p>
-    pub fn set_message_type(mut self, input: std::option::Option<crate::types::MessageType>) -> Self {
-        self.message_type = input; self
+    pub fn set_message_type(
+        mut self,
+        input: std::option::Option<crate::types::MessageType>,
+    ) -> Self {
+        self.message_type = input;
+        self
     }
     /// Consumes the builder and constructs a [`SetDefaultMessageTypeInput`](crate::operation::set_default_message_type::SetDefaultMessageTypeInput).
-    pub fn build(self) -> Result<crate::operation::set_default_message_type::SetDefaultMessageTypeInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::set_default_message_type::SetDefaultMessageTypeInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::set_default_message_type::SetDefaultMessageTypeInput {
-                configuration_set_name: self.configuration_set_name
-                ,
-                message_type: self.message_type
-                ,
-            }
+                configuration_set_name: self.configuration_set_name,
+                message_type: self.message_type,
+            },
         )
     }
 }
-

@@ -3,7 +3,7 @@
 /// <p>Contains the total usage with the corresponding currency unit for that value.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Total  {
+pub struct Total {
     /// <p>The total usage.</p>
     #[doc(hidden)]
     pub amount: std::option::Option<std::string::String>,
@@ -13,11 +13,11 @@ pub struct Total  {
 }
 impl Total {
     /// <p>The total usage.</p>
-    pub fn amount(&self) -> std::option::Option<& str> {
+    pub fn amount(&self) -> std::option::Option<&str> {
         self.amount.as_deref()
     }
     /// <p>The currency unit that the amount is given in.</p>
-    pub fn unit(&self) -> std::option::Option<& str> {
+    pub fn unit(&self) -> std::option::Option<&str> {
         self.unit.as_deref()
     }
 }
@@ -43,7 +43,8 @@ impl TotalBuilder {
     }
     /// <p>The total usage.</p>
     pub fn set_amount(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.amount = input; self
+        self.amount = input;
+        self
     }
     /// <p>The currency unit that the amount is given in.</p>
     pub fn unit(mut self, input: impl Into<std::string::String>) -> Self {
@@ -52,16 +53,14 @@ impl TotalBuilder {
     }
     /// <p>The currency unit that the amount is given in.</p>
     pub fn set_unit(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.unit = input; self
+        self.unit = input;
+        self
     }
     /// Consumes the builder and constructs a [`Total`](crate::types::Total).
     pub fn build(self) -> crate::types::Total {
         crate::types::Total {
-            amount: self.amount
-            ,
-            unit: self.unit
-            ,
+            amount: self.amount,
+            unit: self.unit,
         }
     }
 }
-

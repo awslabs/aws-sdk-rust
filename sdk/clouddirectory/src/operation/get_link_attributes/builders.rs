@@ -4,49 +4,71 @@ pub use crate::operation::get_link_attributes::_get_link_attributes_output::GetL
 pub use crate::operation::get_link_attributes::_get_link_attributes_input::GetLinkAttributesInputBuilder;
 
 /// Fluent builder constructing a request to `GetLinkAttributes`.
-/// 
+///
 /// <p>Retrieves attributes that are associated with a typed link.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct GetLinkAttributesFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::get_link_attributes::builders::GetLinkAttributesInputBuilder
-            }
-impl GetLinkAttributesFluentBuilder  {
+    handle: std::sync::Arc<crate::client::Handle>,
+    inner: crate::operation::get_link_attributes::builders::GetLinkAttributesInputBuilder,
+}
+impl GetLinkAttributesFluentBuilder {
     /// Creates a new `GetLinkAttributes`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
-                    /// sent. The operation's inner [http::Request] can be modified as well.
-                    pub async fn customize(self) -> std::result::Result<
-                        crate::client::customize::CustomizableOperation<crate::operation::get_link_attributes::GetLinkAttributes, aws_http::retry::AwsResponseRetryClassifier,>,
-                        aws_smithy_http::result::SdkError<crate::operation::get_link_attributes::GetLinkAttributesError>
-                    >  {
-                        let handle = self.handle.clone();
-                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-                    }
-    
-                    /// Sends the request and returns the response.
-                    ///
-                    /// If an error occurs, an `SdkError` will be returned with additional details that
-                    /// can be matched against.
-                    ///
-                    /// By default, any retryable failures will be retried twice. Retry behavior
-                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                    /// set when configuring the client.
-                    pub async fn send(self) -> std::result::Result<crate::operation::get_link_attributes::GetLinkAttributesOutput, aws_smithy_http::result::SdkError<crate::operation::get_link_attributes::GetLinkAttributesError>>
-                     {
-                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&self.handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        self.handle.client.call(op).await
-                    }
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle,
+            inner: Default::default(),
+        }
+    }
+
+    /// Consume this builder, creating a customizable operation that can be modified before being
+    /// sent. The operation's inner [http::Request] can be modified as well.
+    pub async fn customize(
+        self,
+    ) -> std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::get_link_attributes::GetLinkAttributes,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::result::SdkError<
+            crate::operation::get_link_attributes::GetLinkAttributesError,
+        >,
+    > {
+        let handle = self.handle.clone();
+        let operation = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+    }
+
+    /// Sends the request and returns the response.
+    ///
+    /// If an error occurs, an `SdkError` will be returned with additional details that
+    /// can be matched against.
+    ///
+    /// By default, any retryable failures will be retried twice. Retry behavior
+    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+    /// set when configuring the client.
+    pub async fn send(
+        self,
+    ) -> std::result::Result<
+        crate::operation::get_link_attributes::GetLinkAttributesOutput,
+        aws_smithy_http::result::SdkError<
+            crate::operation::get_link_attributes::GetLinkAttributesError,
+        >,
+    > {
+        let op = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&self.handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        self.handle.client.call(op).await
+    }
     /// <p>The Amazon Resource Name (ARN) that is associated with the Directory where the typed link resides. For more information, see <code>arns</code> or <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/directory_objects_links.html#directory_objects_links_typedlink">Typed Links</a>.</p>
     pub fn directory_arn(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.directory_arn(input.into());
@@ -63,7 +85,10 @@ impl GetLinkAttributesFluentBuilder  {
         self
     }
     /// <p>Allows a typed link specifier to be accepted as input.</p>
-    pub fn set_typed_link_specifier(mut self, input: std::option::Option<crate::types::TypedLinkSpecifier>) -> Self {
+    pub fn set_typed_link_specifier(
+        mut self,
+        input: std::option::Option<crate::types::TypedLinkSpecifier>,
+    ) -> Self {
         self.inner = self.inner.set_typed_link_specifier(input);
         self
     }
@@ -77,7 +102,10 @@ impl GetLinkAttributesFluentBuilder  {
         self
     }
     /// <p>A list of attribute names whose values will be retrieved.</p>
-    pub fn set_attribute_names(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+    pub fn set_attribute_names(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
         self.inner = self.inner.set_attribute_names(input);
         self
     }
@@ -87,9 +115,11 @@ impl GetLinkAttributesFluentBuilder  {
         self
     }
     /// <p>The consistency level at which to retrieve the attributes on a typed link.</p>
-    pub fn set_consistency_level(mut self, input: std::option::Option<crate::types::ConsistencyLevel>) -> Self {
+    pub fn set_consistency_level(
+        mut self,
+        input: std::option::Option<crate::types::ConsistencyLevel>,
+    ) -> Self {
         self.inner = self.inner.set_consistency_level(input);
         self
     }
 }
-

@@ -3,7 +3,7 @@
 /// <p>In a <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_CreateResolverRule.html">CreateResolverRule</a> request, an array of the IPs that you want to forward DNS queries to.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct TargetAddress  {
+pub struct TargetAddress {
     /// <p>One IP address that you want to forward DNS queries to. You can specify only IPv4 addresses.</p>
     #[doc(hidden)]
     pub ip: std::option::Option<std::string::String>,
@@ -13,7 +13,7 @@ pub struct TargetAddress  {
 }
 impl TargetAddress {
     /// <p>One IP address that you want to forward DNS queries to. You can specify only IPv4 addresses.</p>
-    pub fn ip(&self) -> std::option::Option<& str> {
+    pub fn ip(&self) -> std::option::Option<&str> {
         self.ip.as_deref()
     }
     /// <p>The port at <code>Ip</code> that you want to forward DNS queries to.</p>
@@ -43,7 +43,8 @@ impl TargetAddressBuilder {
     }
     /// <p>One IP address that you want to forward DNS queries to. You can specify only IPv4 addresses.</p>
     pub fn set_ip(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.ip = input; self
+        self.ip = input;
+        self
     }
     /// <p>The port at <code>Ip</code> that you want to forward DNS queries to.</p>
     pub fn port(mut self, input: i32) -> Self {
@@ -52,16 +53,14 @@ impl TargetAddressBuilder {
     }
     /// <p>The port at <code>Ip</code> that you want to forward DNS queries to.</p>
     pub fn set_port(mut self, input: std::option::Option<i32>) -> Self {
-        self.port = input; self
+        self.port = input;
+        self
     }
     /// Consumes the builder and constructs a [`TargetAddress`](crate::types::TargetAddress).
     pub fn build(self) -> crate::types::TargetAddress {
         crate::types::TargetAddress {
-            ip: self.ip
-            ,
-            port: self.port
-            ,
+            ip: self.ip,
+            port: self.port,
         }
     }
 }
-

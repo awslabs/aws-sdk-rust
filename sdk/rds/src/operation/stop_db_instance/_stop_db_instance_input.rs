@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct StopDbInstanceInput  {
+pub struct StopDbInstanceInput {
     /// <p>The user-supplied instance identifier.</p>
     #[doc(hidden)]
     pub db_instance_identifier: std::option::Option<std::string::String>,
@@ -12,11 +12,11 @@ pub struct StopDbInstanceInput  {
 }
 impl StopDbInstanceInput {
     /// <p>The user-supplied instance identifier.</p>
-    pub fn db_instance_identifier(&self) -> std::option::Option<& str> {
+    pub fn db_instance_identifier(&self) -> std::option::Option<&str> {
         self.db_instance_identifier.as_deref()
     }
     /// <p>The user-supplied instance identifier of the DB Snapshot created immediately before the DB instance is stopped.</p>
-    pub fn db_snapshot_identifier(&self) -> std::option::Option<& str> {
+    pub fn db_snapshot_identifier(&self) -> std::option::Option<&str> {
         self.db_snapshot_identifier.as_deref()
     }
 }
@@ -41,8 +41,12 @@ impl StopDbInstanceInputBuilder {
         self
     }
     /// <p>The user-supplied instance identifier.</p>
-    pub fn set_db_instance_identifier(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.db_instance_identifier = input; self
+    pub fn set_db_instance_identifier(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.db_instance_identifier = input;
+        self
     }
     /// <p>The user-supplied instance identifier of the DB Snapshot created immediately before the DB instance is stopped.</p>
     pub fn db_snapshot_identifier(mut self, input: impl Into<std::string::String>) -> Self {
@@ -50,19 +54,23 @@ impl StopDbInstanceInputBuilder {
         self
     }
     /// <p>The user-supplied instance identifier of the DB Snapshot created immediately before the DB instance is stopped.</p>
-    pub fn set_db_snapshot_identifier(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.db_snapshot_identifier = input; self
+    pub fn set_db_snapshot_identifier(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.db_snapshot_identifier = input;
+        self
     }
     /// Consumes the builder and constructs a [`StopDbInstanceInput`](crate::operation::stop_db_instance::StopDbInstanceInput).
-    pub fn build(self) -> Result<crate::operation::stop_db_instance::StopDbInstanceInput, aws_smithy_http::operation::error::BuildError> {
-        Ok(
-            crate::operation::stop_db_instance::StopDbInstanceInput {
-                db_instance_identifier: self.db_instance_identifier
-                ,
-                db_snapshot_identifier: self.db_snapshot_identifier
-                ,
-            }
-        )
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::stop_db_instance::StopDbInstanceInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        Ok(crate::operation::stop_db_instance::StopDbInstanceInput {
+            db_instance_identifier: self.db_instance_identifier,
+            db_snapshot_identifier: self.db_snapshot_identifier,
+        })
     }
 }
-

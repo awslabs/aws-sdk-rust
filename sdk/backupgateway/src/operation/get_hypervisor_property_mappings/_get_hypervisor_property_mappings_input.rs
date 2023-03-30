@@ -2,20 +2,20 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetHypervisorPropertyMappingsInput  {
+pub struct GetHypervisorPropertyMappingsInput {
     /// <p>The Amazon Resource Name (ARN) of the hypervisor.</p>
     #[doc(hidden)]
     pub hypervisor_arn: std::option::Option<std::string::String>,
 }
 impl GetHypervisorPropertyMappingsInput {
     /// <p>The Amazon Resource Name (ARN) of the hypervisor.</p>
-    pub fn hypervisor_arn(&self) -> std::option::Option<& str> {
+    pub fn hypervisor_arn(&self) -> std::option::Option<&str> {
         self.hypervisor_arn.as_deref()
     }
 }
 impl GetHypervisorPropertyMappingsInput {
     /// Creates a new builder-style object to manufacture [`GetHypervisorPropertyMappingsInput`](crate::operation::get_hypervisor_property_mappings::GetHypervisorPropertyMappingsInput).
-    pub fn builder() -> crate::operation::get_hypervisor_property_mappings::builders::GetHypervisorPropertyMappingsInputBuilder {
+    pub fn builder() -> crate::operation::get_hypervisor_property_mappings::builders::GetHypervisorPropertyMappingsInputBuilder{
         crate::operation::get_hypervisor_property_mappings::builders::GetHypervisorPropertyMappingsInputBuilder::default()
     }
 }
@@ -34,10 +34,16 @@ impl GetHypervisorPropertyMappingsInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the hypervisor.</p>
     pub fn set_hypervisor_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.hypervisor_arn = input; self
+        self.hypervisor_arn = input;
+        self
     }
     /// Consumes the builder and constructs a [`GetHypervisorPropertyMappingsInput`](crate::operation::get_hypervisor_property_mappings::GetHypervisorPropertyMappingsInput).
-    pub fn build(self) -> Result<crate::operation::get_hypervisor_property_mappings::GetHypervisorPropertyMappingsInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::get_hypervisor_property_mappings::GetHypervisorPropertyMappingsInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::get_hypervisor_property_mappings::GetHypervisorPropertyMappingsInput {
                 hypervisor_arn: self.hypervisor_arn
@@ -46,4 +52,3 @@ impl GetHypervisorPropertyMappingsInputBuilder {
         )
     }
 }
-

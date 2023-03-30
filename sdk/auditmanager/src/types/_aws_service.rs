@@ -3,14 +3,14 @@
 /// <p> An Amazon Web Service such as Amazon S3 or CloudTrail. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AwsService  {
+pub struct AwsService {
     /// <p> The name of the Amazon Web Service. </p>
     #[doc(hidden)]
     pub service_name: std::option::Option<std::string::String>,
 }
 impl AwsService {
     /// <p> The name of the Amazon Web Service. </p>
-    pub fn service_name(&self) -> std::option::Option<& str> {
+    pub fn service_name(&self) -> std::option::Option<&str> {
         self.service_name.as_deref()
     }
 }
@@ -35,14 +35,13 @@ impl AwsServiceBuilder {
     }
     /// <p> The name of the Amazon Web Service. </p>
     pub fn set_service_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.service_name = input; self
+        self.service_name = input;
+        self
     }
     /// Consumes the builder and constructs a [`AwsService`](crate::types::AwsService).
     pub fn build(self) -> crate::types::AwsService {
         crate::types::AwsService {
-            service_name: self.service_name
-            ,
+            service_name: self.service_name,
         }
     }
 }
-

@@ -2,10 +2,11 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeScheduledActionsOutput  {
+pub struct DescribeScheduledActionsOutput {
     /// <p>The scheduled actions.</p>
     #[doc(hidden)]
-    pub scheduled_update_group_actions: std::option::Option<std::vec::Vec<crate::types::ScheduledUpdateGroupAction>>,
+    pub scheduled_update_group_actions:
+        std::option::Option<std::vec::Vec<crate::types::ScheduledUpdateGroupAction>>,
     /// <p>A string that indicates that the response contains more items than can be returned in a single response. To receive additional items, specify this string for the <code>NextToken</code> value when requesting the next set of items. This value is null when there are no more items to return.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
@@ -13,22 +14,26 @@ pub struct DescribeScheduledActionsOutput  {
 }
 impl DescribeScheduledActionsOutput {
     /// <p>The scheduled actions.</p>
-    pub fn scheduled_update_group_actions(&self) -> std::option::Option<& [crate::types::ScheduledUpdateGroupAction]> {
+    pub fn scheduled_update_group_actions(
+        &self,
+    ) -> std::option::Option<&[crate::types::ScheduledUpdateGroupAction]> {
         self.scheduled_update_group_actions.as_deref()
     }
     /// <p>A string that indicates that the response contains more items than can be returned in a single response. To receive additional items, specify this string for the <code>NextToken</code> value when requesting the next set of items. This value is null when there are no more items to return.</p>
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for DescribeScheduledActionsOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl DescribeScheduledActionsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeScheduledActionsOutput`](crate::operation::describe_scheduled_actions::DescribeScheduledActionsOutput).
-    pub fn builder() -> crate::operation::describe_scheduled_actions::builders::DescribeScheduledActionsOutputBuilder {
+    pub fn builder(
+    ) -> crate::operation::describe_scheduled_actions::builders::DescribeScheduledActionsOutputBuilder
+    {
         crate::operation::describe_scheduled_actions::builders::DescribeScheduledActionsOutputBuilder::default()
     }
 }
@@ -37,7 +42,8 @@ impl DescribeScheduledActionsOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct DescribeScheduledActionsOutputBuilder {
-    pub(crate) scheduled_update_group_actions: std::option::Option<std::vec::Vec<crate::types::ScheduledUpdateGroupAction>>,
+    pub(crate) scheduled_update_group_actions:
+        std::option::Option<std::vec::Vec<crate::types::ScheduledUpdateGroupAction>>,
     pub(crate) next_token: std::option::Option<std::string::String>,
     _request_id: Option<String>,
 }
@@ -47,15 +53,22 @@ impl DescribeScheduledActionsOutputBuilder {
     /// To override the contents of this collection use [`set_scheduled_update_group_actions`](Self::set_scheduled_update_group_actions).
     ///
     /// <p>The scheduled actions.</p>
-    pub fn scheduled_update_group_actions(mut self, input: crate::types::ScheduledUpdateGroupAction) -> Self {
+    pub fn scheduled_update_group_actions(
+        mut self,
+        input: crate::types::ScheduledUpdateGroupAction,
+    ) -> Self {
         let mut v = self.scheduled_update_group_actions.unwrap_or_default();
-                        v.push(input);
-                        self.scheduled_update_group_actions = Some(v);
-                        self
+        v.push(input);
+        self.scheduled_update_group_actions = Some(v);
+        self
     }
     /// <p>The scheduled actions.</p>
-    pub fn set_scheduled_update_group_actions(mut self, input: std::option::Option<std::vec::Vec<crate::types::ScheduledUpdateGroupAction>>) -> Self {
-        self.scheduled_update_group_actions = input; self
+    pub fn set_scheduled_update_group_actions(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::ScheduledUpdateGroupAction>>,
+    ) -> Self {
+        self.scheduled_update_group_actions = input;
+        self
     }
     /// <p>A string that indicates that the response contains more items than can be returned in a single response. To receive additional items, specify this string for the <code>NextToken</code> value when requesting the next set of items. This value is null when there are no more items to return.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -64,26 +77,26 @@ impl DescribeScheduledActionsOutputBuilder {
     }
     /// <p>A string that indicates that the response contains more items than can be returned in a single response. To receive additional items, specify this string for the <code>NextToken</code> value when requesting the next set of items. This value is null when there are no more items to return.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input; self
+        self.next_token = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`DescribeScheduledActionsOutput`](crate::operation::describe_scheduled_actions::DescribeScheduledActionsOutput).
-    pub fn build(self) -> crate::operation::describe_scheduled_actions::DescribeScheduledActionsOutput {
+    pub fn build(
+        self,
+    ) -> crate::operation::describe_scheduled_actions::DescribeScheduledActionsOutput {
         crate::operation::describe_scheduled_actions::DescribeScheduledActionsOutput {
-            scheduled_update_group_actions: self.scheduled_update_group_actions
-            ,
-            next_token: self.next_token
-            ,
+            scheduled_update_group_actions: self.scheduled_update_group_actions,
+            next_token: self.next_token,
             _request_id: self._request_id,
         }
     }
 }
-

@@ -3,7 +3,7 @@
 /// <p>Contains cross-zone load balancing settings for the load balancer.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AwsElbLoadBalancerCrossZoneLoadBalancing  {
+pub struct AwsElbLoadBalancerCrossZoneLoadBalancing {
     /// <p>Indicates whether cross-zone load balancing is enabled for the load balancer.</p>
     #[doc(hidden)]
     pub enabled: bool,
@@ -35,15 +35,13 @@ impl AwsElbLoadBalancerCrossZoneLoadBalancingBuilder {
     }
     /// <p>Indicates whether cross-zone load balancing is enabled for the load balancer.</p>
     pub fn set_enabled(mut self, input: std::option::Option<bool>) -> Self {
-        self.enabled = input; self
+        self.enabled = input;
+        self
     }
     /// Consumes the builder and constructs a [`AwsElbLoadBalancerCrossZoneLoadBalancing`](crate::types::AwsElbLoadBalancerCrossZoneLoadBalancing).
     pub fn build(self) -> crate::types::AwsElbLoadBalancerCrossZoneLoadBalancing {
         crate::types::AwsElbLoadBalancerCrossZoneLoadBalancing {
-            enabled: self.enabled
-                .unwrap_or_default()
-            ,
+            enabled: self.enabled.unwrap_or_default(),
         }
     }
 }
-

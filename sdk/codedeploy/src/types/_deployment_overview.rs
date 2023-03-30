@@ -3,7 +3,7 @@
 /// <p>Information about the deployment status of the instances in the deployment.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeploymentOverview  {
+pub struct DeploymentOverview {
     /// <p>The number of instances in the deployment in a pending state.</p>
     #[doc(hidden)]
     pub pending: i64,
@@ -75,7 +75,8 @@ impl DeploymentOverviewBuilder {
     }
     /// <p>The number of instances in the deployment in a pending state.</p>
     pub fn set_pending(mut self, input: std::option::Option<i64>) -> Self {
-        self.pending = input; self
+        self.pending = input;
+        self
     }
     /// <p>The number of instances in which the deployment is in progress.</p>
     pub fn in_progress(mut self, input: i64) -> Self {
@@ -84,7 +85,8 @@ impl DeploymentOverviewBuilder {
     }
     /// <p>The number of instances in which the deployment is in progress.</p>
     pub fn set_in_progress(mut self, input: std::option::Option<i64>) -> Self {
-        self.in_progress = input; self
+        self.in_progress = input;
+        self
     }
     /// <p>The number of instances in the deployment to which revisions have been successfully deployed.</p>
     pub fn succeeded(mut self, input: i64) -> Self {
@@ -93,7 +95,8 @@ impl DeploymentOverviewBuilder {
     }
     /// <p>The number of instances in the deployment to which revisions have been successfully deployed.</p>
     pub fn set_succeeded(mut self, input: std::option::Option<i64>) -> Self {
-        self.succeeded = input; self
+        self.succeeded = input;
+        self
     }
     /// <p>The number of instances in the deployment in a failed state.</p>
     pub fn failed(mut self, input: i64) -> Self {
@@ -102,7 +105,8 @@ impl DeploymentOverviewBuilder {
     }
     /// <p>The number of instances in the deployment in a failed state.</p>
     pub fn set_failed(mut self, input: std::option::Option<i64>) -> Self {
-        self.failed = input; self
+        self.failed = input;
+        self
     }
     /// <p>The number of instances in the deployment in a skipped state.</p>
     pub fn skipped(mut self, input: i64) -> Self {
@@ -111,7 +115,8 @@ impl DeploymentOverviewBuilder {
     }
     /// <p>The number of instances in the deployment in a skipped state.</p>
     pub fn set_skipped(mut self, input: std::option::Option<i64>) -> Self {
-        self.skipped = input; self
+        self.skipped = input;
+        self
     }
     /// <p>The number of instances in a replacement environment ready to receive traffic in a blue/green deployment.</p>
     pub fn ready(mut self, input: i64) -> Self {
@@ -120,30 +125,18 @@ impl DeploymentOverviewBuilder {
     }
     /// <p>The number of instances in a replacement environment ready to receive traffic in a blue/green deployment.</p>
     pub fn set_ready(mut self, input: std::option::Option<i64>) -> Self {
-        self.ready = input; self
+        self.ready = input;
+        self
     }
     /// Consumes the builder and constructs a [`DeploymentOverview`](crate::types::DeploymentOverview).
     pub fn build(self) -> crate::types::DeploymentOverview {
         crate::types::DeploymentOverview {
-            pending: self.pending
-                .unwrap_or_default()
-            ,
-            in_progress: self.in_progress
-                .unwrap_or_default()
-            ,
-            succeeded: self.succeeded
-                .unwrap_or_default()
-            ,
-            failed: self.failed
-                .unwrap_or_default()
-            ,
-            skipped: self.skipped
-                .unwrap_or_default()
-            ,
-            ready: self.ready
-                .unwrap_or_default()
-            ,
+            pending: self.pending.unwrap_or_default(),
+            in_progress: self.in_progress.unwrap_or_default(),
+            succeeded: self.succeeded.unwrap_or_default(),
+            failed: self.failed.unwrap_or_default(),
+            skipped: self.skipped.unwrap_or_default(),
+            ready: self.ready.unwrap_or_default(),
         }
     }
 }
-

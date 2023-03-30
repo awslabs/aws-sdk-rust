@@ -3,7 +3,7 @@
 /// <p>Container for the parameters to the <code><code>DeleteAnalysisScheme</code></code> operation. Specifies the name of the domain you want to update and the analysis scheme you want to delete. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteAnalysisSchemeInput  {
+pub struct DeleteAnalysisSchemeInput {
     /// <p>A string that represents the name of a domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen).</p>
     #[doc(hidden)]
     pub domain_name: std::option::Option<std::string::String>,
@@ -13,17 +13,18 @@ pub struct DeleteAnalysisSchemeInput  {
 }
 impl DeleteAnalysisSchemeInput {
     /// <p>A string that represents the name of a domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen).</p>
-    pub fn domain_name(&self) -> std::option::Option<& str> {
+    pub fn domain_name(&self) -> std::option::Option<&str> {
         self.domain_name.as_deref()
     }
     /// <p>The name of the analysis scheme you want to delete.</p>
-    pub fn analysis_scheme_name(&self) -> std::option::Option<& str> {
+    pub fn analysis_scheme_name(&self) -> std::option::Option<&str> {
         self.analysis_scheme_name.as_deref()
     }
 }
 impl DeleteAnalysisSchemeInput {
     /// Creates a new builder-style object to manufacture [`DeleteAnalysisSchemeInput`](crate::operation::delete_analysis_scheme::DeleteAnalysisSchemeInput).
-    pub fn builder() -> crate::operation::delete_analysis_scheme::builders::DeleteAnalysisSchemeInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::delete_analysis_scheme::builders::DeleteAnalysisSchemeInputBuilder {
         crate::operation::delete_analysis_scheme::builders::DeleteAnalysisSchemeInputBuilder::default()
     }
 }
@@ -43,7 +44,8 @@ impl DeleteAnalysisSchemeInputBuilder {
     }
     /// <p>A string that represents the name of a domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen).</p>
     pub fn set_domain_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.domain_name = input; self
+        self.domain_name = input;
+        self
     }
     /// <p>The name of the analysis scheme you want to delete.</p>
     pub fn analysis_scheme_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -51,19 +53,25 @@ impl DeleteAnalysisSchemeInputBuilder {
         self
     }
     /// <p>The name of the analysis scheme you want to delete.</p>
-    pub fn set_analysis_scheme_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.analysis_scheme_name = input; self
+    pub fn set_analysis_scheme_name(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.analysis_scheme_name = input;
+        self
     }
     /// Consumes the builder and constructs a [`DeleteAnalysisSchemeInput`](crate::operation::delete_analysis_scheme::DeleteAnalysisSchemeInput).
-    pub fn build(self) -> Result<crate::operation::delete_analysis_scheme::DeleteAnalysisSchemeInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::delete_analysis_scheme::DeleteAnalysisSchemeInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::delete_analysis_scheme::DeleteAnalysisSchemeInput {
-                domain_name: self.domain_name
-                ,
-                analysis_scheme_name: self.analysis_scheme_name
-                ,
-            }
+                domain_name: self.domain_name,
+                analysis_scheme_name: self.analysis_scheme_name,
+            },
         )
     }
 }
-

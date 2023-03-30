@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateDirectConnectGatewayInput  {
+pub struct CreateDirectConnectGatewayInput {
     /// <p>The name of the Direct Connect gateway.</p>
     #[doc(hidden)]
     pub direct_connect_gateway_name: std::option::Option<std::string::String>,
@@ -12,7 +12,7 @@ pub struct CreateDirectConnectGatewayInput  {
 }
 impl CreateDirectConnectGatewayInput {
     /// <p>The name of the Direct Connect gateway.</p>
-    pub fn direct_connect_gateway_name(&self) -> std::option::Option<& str> {
+    pub fn direct_connect_gateway_name(&self) -> std::option::Option<&str> {
         self.direct_connect_gateway_name.as_deref()
     }
     /// <p>The autonomous system number (ASN) for Border Gateway Protocol (BGP) to be configured on the Amazon side of the connection. The ASN must be in the private range of 64,512 to 65,534 or 4,200,000,000 to 4,294,967,294. The default is 64512.</p>
@@ -22,7 +22,7 @@ impl CreateDirectConnectGatewayInput {
 }
 impl CreateDirectConnectGatewayInput {
     /// Creates a new builder-style object to manufacture [`CreateDirectConnectGatewayInput`](crate::operation::create_direct_connect_gateway::CreateDirectConnectGatewayInput).
-    pub fn builder() -> crate::operation::create_direct_connect_gateway::builders::CreateDirectConnectGatewayInputBuilder {
+    pub fn builder() -> crate::operation::create_direct_connect_gateway::builders::CreateDirectConnectGatewayInputBuilder{
         crate::operation::create_direct_connect_gateway::builders::CreateDirectConnectGatewayInputBuilder::default()
     }
 }
@@ -41,8 +41,12 @@ impl CreateDirectConnectGatewayInputBuilder {
         self
     }
     /// <p>The name of the Direct Connect gateway.</p>
-    pub fn set_direct_connect_gateway_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.direct_connect_gateway_name = input; self
+    pub fn set_direct_connect_gateway_name(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.direct_connect_gateway_name = input;
+        self
     }
     /// <p>The autonomous system number (ASN) for Border Gateway Protocol (BGP) to be configured on the Amazon side of the connection. The ASN must be in the private range of 64,512 to 65,534 or 4,200,000,000 to 4,294,967,294. The default is 64512.</p>
     pub fn amazon_side_asn(mut self, input: i64) -> Self {
@@ -51,18 +55,21 @@ impl CreateDirectConnectGatewayInputBuilder {
     }
     /// <p>The autonomous system number (ASN) for Border Gateway Protocol (BGP) to be configured on the Amazon side of the connection. The ASN must be in the private range of 64,512 to 65,534 or 4,200,000,000 to 4,294,967,294. The default is 64512.</p>
     pub fn set_amazon_side_asn(mut self, input: std::option::Option<i64>) -> Self {
-        self.amazon_side_asn = input; self
+        self.amazon_side_asn = input;
+        self
     }
     /// Consumes the builder and constructs a [`CreateDirectConnectGatewayInput`](crate::operation::create_direct_connect_gateway::CreateDirectConnectGatewayInput).
-    pub fn build(self) -> Result<crate::operation::create_direct_connect_gateway::CreateDirectConnectGatewayInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::create_direct_connect_gateway::CreateDirectConnectGatewayInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::create_direct_connect_gateway::CreateDirectConnectGatewayInput {
-                direct_connect_gateway_name: self.direct_connect_gateway_name
-                ,
-                amazon_side_asn: self.amazon_side_asn
-                ,
-            }
+                direct_connect_gateway_name: self.direct_connect_gateway_name,
+                amazon_side_asn: self.amazon_side_asn,
+            },
         )
     }
 }
-

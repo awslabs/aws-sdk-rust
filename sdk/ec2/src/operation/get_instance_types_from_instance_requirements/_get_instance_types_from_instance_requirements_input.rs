@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetInstanceTypesFromInstanceRequirementsInput  {
+pub struct GetInstanceTypesFromInstanceRequirementsInput {
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     #[doc(hidden)]
     pub dry_run: std::option::Option<bool>,
@@ -28,15 +28,17 @@ impl GetInstanceTypesFromInstanceRequirementsInput {
         self.dry_run
     }
     /// <p>The processor architecture type.</p>
-    pub fn architecture_types(&self) -> std::option::Option<& [crate::types::ArchitectureType]> {
+    pub fn architecture_types(&self) -> std::option::Option<&[crate::types::ArchitectureType]> {
         self.architecture_types.as_deref()
     }
     /// <p>The virtualization type.</p>
-    pub fn virtualization_types(&self) -> std::option::Option<& [crate::types::VirtualizationType]> {
+    pub fn virtualization_types(&self) -> std::option::Option<&[crate::types::VirtualizationType]> {
         self.virtualization_types.as_deref()
     }
     /// <p>The attributes required for the instance types.</p>
-    pub fn instance_requirements(&self) -> std::option::Option<& crate::types::InstanceRequirementsRequest> {
+    pub fn instance_requirements(
+        &self,
+    ) -> std::option::Option<&crate::types::InstanceRequirementsRequest> {
         self.instance_requirements.as_ref()
     }
     /// <p>The maximum number of results to return in a single call. Specify a value between 1 and  1000. The default value is 1000. To retrieve the remaining results, make another call with  the returned <code>NextToken</code> value.</p>
@@ -44,13 +46,13 @@ impl GetInstanceTypesFromInstanceRequirementsInput {
         self.max_results
     }
     /// <p>The token for the next set of results.</p>
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
 }
 impl GetInstanceTypesFromInstanceRequirementsInput {
     /// Creates a new builder-style object to manufacture [`GetInstanceTypesFromInstanceRequirementsInput`](crate::operation::get_instance_types_from_instance_requirements::GetInstanceTypesFromInstanceRequirementsInput).
-    pub fn builder() -> crate::operation::get_instance_types_from_instance_requirements::builders::GetInstanceTypesFromInstanceRequirementsInputBuilder {
+    pub fn builder() -> crate::operation::get_instance_types_from_instance_requirements::builders::GetInstanceTypesFromInstanceRequirementsInputBuilder{
         crate::operation::get_instance_types_from_instance_requirements::builders::GetInstanceTypesFromInstanceRequirementsInputBuilder::default()
     }
 }
@@ -60,9 +62,12 @@ impl GetInstanceTypesFromInstanceRequirementsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct GetInstanceTypesFromInstanceRequirementsInputBuilder {
     pub(crate) dry_run: std::option::Option<bool>,
-    pub(crate) architecture_types: std::option::Option<std::vec::Vec<crate::types::ArchitectureType>>,
-    pub(crate) virtualization_types: std::option::Option<std::vec::Vec<crate::types::VirtualizationType>>,
-    pub(crate) instance_requirements: std::option::Option<crate::types::InstanceRequirementsRequest>,
+    pub(crate) architecture_types:
+        std::option::Option<std::vec::Vec<crate::types::ArchitectureType>>,
+    pub(crate) virtualization_types:
+        std::option::Option<std::vec::Vec<crate::types::VirtualizationType>>,
+    pub(crate) instance_requirements:
+        std::option::Option<crate::types::InstanceRequirementsRequest>,
     pub(crate) max_results: std::option::Option<i32>,
     pub(crate) next_token: std::option::Option<std::string::String>,
 }
@@ -74,7 +79,8 @@ impl GetInstanceTypesFromInstanceRequirementsInputBuilder {
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn set_dry_run(mut self, input: std::option::Option<bool>) -> Self {
-        self.dry_run = input; self
+        self.dry_run = input;
+        self
     }
     /// Appends an item to `architecture_types`.
     ///
@@ -83,13 +89,17 @@ impl GetInstanceTypesFromInstanceRequirementsInputBuilder {
     /// <p>The processor architecture type.</p>
     pub fn architecture_types(mut self, input: crate::types::ArchitectureType) -> Self {
         let mut v = self.architecture_types.unwrap_or_default();
-                        v.push(input);
-                        self.architecture_types = Some(v);
-                        self
+        v.push(input);
+        self.architecture_types = Some(v);
+        self
     }
     /// <p>The processor architecture type.</p>
-    pub fn set_architecture_types(mut self, input: std::option::Option<std::vec::Vec<crate::types::ArchitectureType>>) -> Self {
-        self.architecture_types = input; self
+    pub fn set_architecture_types(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::ArchitectureType>>,
+    ) -> Self {
+        self.architecture_types = input;
+        self
     }
     /// Appends an item to `virtualization_types`.
     ///
@@ -98,22 +108,33 @@ impl GetInstanceTypesFromInstanceRequirementsInputBuilder {
     /// <p>The virtualization type.</p>
     pub fn virtualization_types(mut self, input: crate::types::VirtualizationType) -> Self {
         let mut v = self.virtualization_types.unwrap_or_default();
-                        v.push(input);
-                        self.virtualization_types = Some(v);
-                        self
+        v.push(input);
+        self.virtualization_types = Some(v);
+        self
     }
     /// <p>The virtualization type.</p>
-    pub fn set_virtualization_types(mut self, input: std::option::Option<std::vec::Vec<crate::types::VirtualizationType>>) -> Self {
-        self.virtualization_types = input; self
+    pub fn set_virtualization_types(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::VirtualizationType>>,
+    ) -> Self {
+        self.virtualization_types = input;
+        self
     }
     /// <p>The attributes required for the instance types.</p>
-    pub fn instance_requirements(mut self, input: crate::types::InstanceRequirementsRequest) -> Self {
+    pub fn instance_requirements(
+        mut self,
+        input: crate::types::InstanceRequirementsRequest,
+    ) -> Self {
         self.instance_requirements = Some(input);
         self
     }
     /// <p>The attributes required for the instance types.</p>
-    pub fn set_instance_requirements(mut self, input: std::option::Option<crate::types::InstanceRequirementsRequest>) -> Self {
-        self.instance_requirements = input; self
+    pub fn set_instance_requirements(
+        mut self,
+        input: std::option::Option<crate::types::InstanceRequirementsRequest>,
+    ) -> Self {
+        self.instance_requirements = input;
+        self
     }
     /// <p>The maximum number of results to return in a single call. Specify a value between 1 and  1000. The default value is 1000. To retrieve the remaining results, make another call with  the returned <code>NextToken</code> value.</p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -122,7 +143,8 @@ impl GetInstanceTypesFromInstanceRequirementsInputBuilder {
     }
     /// <p>The maximum number of results to return in a single call. Specify a value between 1 and  1000. The default value is 1000. To retrieve the remaining results, make another call with  the returned <code>NextToken</code> value.</p>
     pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_results = input; self
+        self.max_results = input;
+        self
     }
     /// <p>The token for the next set of results.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -131,10 +153,11 @@ impl GetInstanceTypesFromInstanceRequirementsInputBuilder {
     }
     /// <p>The token for the next set of results.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input; self
+        self.next_token = input;
+        self
     }
     /// Consumes the builder and constructs a [`GetInstanceTypesFromInstanceRequirementsInput`](crate::operation::get_instance_types_from_instance_requirements::GetInstanceTypesFromInstanceRequirementsInput).
-    pub fn build(self) -> Result<crate::operation::get_instance_types_from_instance_requirements::GetInstanceTypesFromInstanceRequirementsInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> Result<crate::operation::get_instance_types_from_instance_requirements::GetInstanceTypesFromInstanceRequirementsInput, aws_smithy_http::operation::error::BuildError>{
         Ok(
             crate::operation::get_instance_types_from_instance_requirements::GetInstanceTypesFromInstanceRequirementsInput {
                 dry_run: self.dry_run
@@ -153,4 +176,3 @@ impl GetInstanceTypesFromInstanceRequirementsInputBuilder {
         )
     }
 }
-

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeTargetGroupsInput  {
+pub struct DescribeTargetGroupsInput {
     /// <p>The Amazon Resource Name (ARN) of the load balancer.</p>
     #[doc(hidden)]
     pub load_balancer_arn: std::option::Option<std::string::String>,
@@ -21,19 +21,19 @@ pub struct DescribeTargetGroupsInput  {
 }
 impl DescribeTargetGroupsInput {
     /// <p>The Amazon Resource Name (ARN) of the load balancer.</p>
-    pub fn load_balancer_arn(&self) -> std::option::Option<& str> {
+    pub fn load_balancer_arn(&self) -> std::option::Option<&str> {
         self.load_balancer_arn.as_deref()
     }
     /// <p>The Amazon Resource Names (ARN) of the target groups.</p>
-    pub fn target_group_arns(&self) -> std::option::Option<& [std::string::String]> {
+    pub fn target_group_arns(&self) -> std::option::Option<&[std::string::String]> {
         self.target_group_arns.as_deref()
     }
     /// <p>The names of the target groups.</p>
-    pub fn names(&self) -> std::option::Option<& [std::string::String]> {
+    pub fn names(&self) -> std::option::Option<&[std::string::String]> {
         self.names.as_deref()
     }
     /// <p>The marker for the next set of results. (You received this marker from a previous call.)</p>
-    pub fn marker(&self) -> std::option::Option<& str> {
+    pub fn marker(&self) -> std::option::Option<&str> {
         self.marker.as_deref()
     }
     /// <p>The maximum number of results to return with this call.</p>
@@ -43,7 +43,8 @@ impl DescribeTargetGroupsInput {
 }
 impl DescribeTargetGroupsInput {
     /// Creates a new builder-style object to manufacture [`DescribeTargetGroupsInput`](crate::operation::describe_target_groups::DescribeTargetGroupsInput).
-    pub fn builder() -> crate::operation::describe_target_groups::builders::DescribeTargetGroupsInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::describe_target_groups::builders::DescribeTargetGroupsInputBuilder {
         crate::operation::describe_target_groups::builders::DescribeTargetGroupsInputBuilder::default()
     }
 }
@@ -65,8 +66,12 @@ impl DescribeTargetGroupsInputBuilder {
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the load balancer.</p>
-    pub fn set_load_balancer_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.load_balancer_arn = input; self
+    pub fn set_load_balancer_arn(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.load_balancer_arn = input;
+        self
     }
     /// Appends an item to `target_group_arns`.
     ///
@@ -75,13 +80,17 @@ impl DescribeTargetGroupsInputBuilder {
     /// <p>The Amazon Resource Names (ARN) of the target groups.</p>
     pub fn target_group_arns(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.target_group_arns.unwrap_or_default();
-                        v.push(input.into());
-                        self.target_group_arns = Some(v);
-                        self
+        v.push(input.into());
+        self.target_group_arns = Some(v);
+        self
     }
     /// <p>The Amazon Resource Names (ARN) of the target groups.</p>
-    pub fn set_target_group_arns(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-        self.target_group_arns = input; self
+    pub fn set_target_group_arns(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
+        self.target_group_arns = input;
+        self
     }
     /// Appends an item to `names`.
     ///
@@ -90,13 +99,17 @@ impl DescribeTargetGroupsInputBuilder {
     /// <p>The names of the target groups.</p>
     pub fn names(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.names.unwrap_or_default();
-                        v.push(input.into());
-                        self.names = Some(v);
-                        self
+        v.push(input.into());
+        self.names = Some(v);
+        self
     }
     /// <p>The names of the target groups.</p>
-    pub fn set_names(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-        self.names = input; self
+    pub fn set_names(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
+        self.names = input;
+        self
     }
     /// <p>The marker for the next set of results. (You received this marker from a previous call.)</p>
     pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
@@ -105,7 +118,8 @@ impl DescribeTargetGroupsInputBuilder {
     }
     /// <p>The marker for the next set of results. (You received this marker from a previous call.)</p>
     pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.marker = input; self
+        self.marker = input;
+        self
     }
     /// <p>The maximum number of results to return with this call.</p>
     pub fn page_size(mut self, input: i32) -> Self {
@@ -114,24 +128,24 @@ impl DescribeTargetGroupsInputBuilder {
     }
     /// <p>The maximum number of results to return with this call.</p>
     pub fn set_page_size(mut self, input: std::option::Option<i32>) -> Self {
-        self.page_size = input; self
+        self.page_size = input;
+        self
     }
     /// Consumes the builder and constructs a [`DescribeTargetGroupsInput`](crate::operation::describe_target_groups::DescribeTargetGroupsInput).
-    pub fn build(self) -> Result<crate::operation::describe_target_groups::DescribeTargetGroupsInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::describe_target_groups::DescribeTargetGroupsInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::describe_target_groups::DescribeTargetGroupsInput {
-                load_balancer_arn: self.load_balancer_arn
-                ,
-                target_group_arns: self.target_group_arns
-                ,
-                names: self.names
-                ,
-                marker: self.marker
-                ,
-                page_size: self.page_size
-                ,
-            }
+                load_balancer_arn: self.load_balancer_arn,
+                target_group_arns: self.target_group_arns,
+                names: self.names,
+                marker: self.marker,
+                page_size: self.page_size,
+            },
         )
     }
 }
-

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct BatchGetVariableOutput  {
+pub struct BatchGetVariableOutput {
     /// <p>The returned variables.</p>
     #[doc(hidden)]
     pub variables: std::option::Option<std::vec::Vec<crate::types::Variable>>,
@@ -13,22 +13,23 @@ pub struct BatchGetVariableOutput  {
 }
 impl BatchGetVariableOutput {
     /// <p>The returned variables.</p>
-    pub fn variables(&self) -> std::option::Option<& [crate::types::Variable]> {
+    pub fn variables(&self) -> std::option::Option<&[crate::types::Variable]> {
         self.variables.as_deref()
     }
     /// <p>The errors from the request.</p>
-    pub fn errors(&self) -> std::option::Option<& [crate::types::BatchGetVariableError]> {
+    pub fn errors(&self) -> std::option::Option<&[crate::types::BatchGetVariableError]> {
         self.errors.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for BatchGetVariableOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl BatchGetVariableOutput {
     /// Creates a new builder-style object to manufacture [`BatchGetVariableOutput`](crate::operation::batch_get_variable::BatchGetVariableOutput).
-    pub fn builder() -> crate::operation::batch_get_variable::builders::BatchGetVariableOutputBuilder {
+    pub fn builder() -> crate::operation::batch_get_variable::builders::BatchGetVariableOutputBuilder
+    {
         crate::operation::batch_get_variable::builders::BatchGetVariableOutputBuilder::default()
     }
 }
@@ -49,13 +50,17 @@ impl BatchGetVariableOutputBuilder {
     /// <p>The returned variables.</p>
     pub fn variables(mut self, input: crate::types::Variable) -> Self {
         let mut v = self.variables.unwrap_or_default();
-                        v.push(input);
-                        self.variables = Some(v);
-                        self
+        v.push(input);
+        self.variables = Some(v);
+        self
     }
     /// <p>The returned variables.</p>
-    pub fn set_variables(mut self, input: std::option::Option<std::vec::Vec<crate::types::Variable>>) -> Self {
-        self.variables = input; self
+    pub fn set_variables(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::Variable>>,
+    ) -> Self {
+        self.variables = input;
+        self
     }
     /// Appends an item to `errors`.
     ///
@@ -64,32 +69,33 @@ impl BatchGetVariableOutputBuilder {
     /// <p>The errors from the request.</p>
     pub fn errors(mut self, input: crate::types::BatchGetVariableError) -> Self {
         let mut v = self.errors.unwrap_or_default();
-                        v.push(input);
-                        self.errors = Some(v);
-                        self
+        v.push(input);
+        self.errors = Some(v);
+        self
     }
     /// <p>The errors from the request.</p>
-    pub fn set_errors(mut self, input: std::option::Option<std::vec::Vec<crate::types::BatchGetVariableError>>) -> Self {
-        self.errors = input; self
+    pub fn set_errors(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::BatchGetVariableError>>,
+    ) -> Self {
+        self.errors = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`BatchGetVariableOutput`](crate::operation::batch_get_variable::BatchGetVariableOutput).
     pub fn build(self) -> crate::operation::batch_get_variable::BatchGetVariableOutput {
         crate::operation::batch_get_variable::BatchGetVariableOutput {
-            variables: self.variables
-            ,
-            errors: self.errors
-            ,
+            variables: self.variables,
+            errors: self.errors,
             _request_id: self._request_id,
         }
     }
 }
-

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PutObjectOutput  {
+pub struct PutObjectOutput {
     /// Inline chunk checksum
     #[doc(hidden)]
     pub inline_chunk_checksum: std::option::Option<std::string::String>,
@@ -19,27 +19,31 @@ pub struct PutObjectOutput  {
 }
 impl PutObjectOutput {
     /// Inline chunk checksum
-    pub fn inline_chunk_checksum(&self) -> std::option::Option<& str> {
+    pub fn inline_chunk_checksum(&self) -> std::option::Option<&str> {
         self.inline_chunk_checksum.as_deref()
     }
     /// Inline chunk checksum algorithm
-    pub fn inline_chunk_checksum_algorithm(&self) -> std::option::Option<& crate::types::DataChecksumAlgorithm> {
+    pub fn inline_chunk_checksum_algorithm(
+        &self,
+    ) -> std::option::Option<&crate::types::DataChecksumAlgorithm> {
         self.inline_chunk_checksum_algorithm.as_ref()
     }
     /// object checksum
-    pub fn object_checksum(&self) -> std::option::Option<& str> {
+    pub fn object_checksum(&self) -> std::option::Option<&str> {
         self.object_checksum.as_deref()
     }
     /// object checksum algorithm
-    pub fn object_checksum_algorithm(&self) -> std::option::Option<& crate::types::SummaryChecksumAlgorithm> {
+    pub fn object_checksum_algorithm(
+        &self,
+    ) -> std::option::Option<&crate::types::SummaryChecksumAlgorithm> {
         self.object_checksum_algorithm.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for PutObjectOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl PutObjectOutput {
     /// Creates a new builder-style object to manufacture [`PutObjectOutput`](crate::operation::put_object::PutObjectOutput).
     pub fn builder() -> crate::operation::put_object::builders::PutObjectOutputBuilder {
@@ -52,9 +56,11 @@ impl PutObjectOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct PutObjectOutputBuilder {
     pub(crate) inline_chunk_checksum: std::option::Option<std::string::String>,
-    pub(crate) inline_chunk_checksum_algorithm: std::option::Option<crate::types::DataChecksumAlgorithm>,
+    pub(crate) inline_chunk_checksum_algorithm:
+        std::option::Option<crate::types::DataChecksumAlgorithm>,
     pub(crate) object_checksum: std::option::Option<std::string::String>,
-    pub(crate) object_checksum_algorithm: std::option::Option<crate::types::SummaryChecksumAlgorithm>,
+    pub(crate) object_checksum_algorithm:
+        std::option::Option<crate::types::SummaryChecksumAlgorithm>,
     _request_id: Option<String>,
 }
 impl PutObjectOutputBuilder {
@@ -64,17 +70,28 @@ impl PutObjectOutputBuilder {
         self
     }
     /// Inline chunk checksum
-    pub fn set_inline_chunk_checksum(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.inline_chunk_checksum = input; self
+    pub fn set_inline_chunk_checksum(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.inline_chunk_checksum = input;
+        self
     }
     /// Inline chunk checksum algorithm
-    pub fn inline_chunk_checksum_algorithm(mut self, input: crate::types::DataChecksumAlgorithm) -> Self {
+    pub fn inline_chunk_checksum_algorithm(
+        mut self,
+        input: crate::types::DataChecksumAlgorithm,
+    ) -> Self {
         self.inline_chunk_checksum_algorithm = Some(input);
         self
     }
     /// Inline chunk checksum algorithm
-    pub fn set_inline_chunk_checksum_algorithm(mut self, input: std::option::Option<crate::types::DataChecksumAlgorithm>) -> Self {
-        self.inline_chunk_checksum_algorithm = input; self
+    pub fn set_inline_chunk_checksum_algorithm(
+        mut self,
+        input: std::option::Option<crate::types::DataChecksumAlgorithm>,
+    ) -> Self {
+        self.inline_chunk_checksum_algorithm = input;
+        self
     }
     /// object checksum
     pub fn object_checksum(mut self, input: impl Into<std::string::String>) -> Self {
@@ -83,39 +100,42 @@ impl PutObjectOutputBuilder {
     }
     /// object checksum
     pub fn set_object_checksum(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.object_checksum = input; self
+        self.object_checksum = input;
+        self
     }
     /// object checksum algorithm
-    pub fn object_checksum_algorithm(mut self, input: crate::types::SummaryChecksumAlgorithm) -> Self {
+    pub fn object_checksum_algorithm(
+        mut self,
+        input: crate::types::SummaryChecksumAlgorithm,
+    ) -> Self {
         self.object_checksum_algorithm = Some(input);
         self
     }
     /// object checksum algorithm
-    pub fn set_object_checksum_algorithm(mut self, input: std::option::Option<crate::types::SummaryChecksumAlgorithm>) -> Self {
-        self.object_checksum_algorithm = input; self
+    pub fn set_object_checksum_algorithm(
+        mut self,
+        input: std::option::Option<crate::types::SummaryChecksumAlgorithm>,
+    ) -> Self {
+        self.object_checksum_algorithm = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`PutObjectOutput`](crate::operation::put_object::PutObjectOutput).
     pub fn build(self) -> crate::operation::put_object::PutObjectOutput {
         crate::operation::put_object::PutObjectOutput {
-            inline_chunk_checksum: self.inline_chunk_checksum
-            ,
-            inline_chunk_checksum_algorithm: self.inline_chunk_checksum_algorithm
-            ,
-            object_checksum: self.object_checksum
-            ,
-            object_checksum_algorithm: self.object_checksum_algorithm
-            ,
+            inline_chunk_checksum: self.inline_chunk_checksum,
+            inline_chunk_checksum_algorithm: self.inline_chunk_checksum_algorithm,
+            object_checksum: self.object_checksum,
+            object_checksum_algorithm: self.object_checksum_algorithm,
             _request_id: self._request_id,
         }
     }
 }
-

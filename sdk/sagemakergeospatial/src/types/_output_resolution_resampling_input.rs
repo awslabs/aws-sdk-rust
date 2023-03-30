@@ -3,14 +3,14 @@
 /// <p></p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct OutputResolutionResamplingInput  {
+pub struct OutputResolutionResamplingInput {
     /// <p></p>
     #[doc(hidden)]
     pub user_defined: std::option::Option<crate::types::UserDefined>,
 }
 impl OutputResolutionResamplingInput {
     /// <p></p>
-    pub fn user_defined(&self) -> std::option::Option<& crate::types::UserDefined> {
+    pub fn user_defined(&self) -> std::option::Option<&crate::types::UserDefined> {
         self.user_defined.as_ref()
     }
 }
@@ -34,15 +34,17 @@ impl OutputResolutionResamplingInputBuilder {
         self
     }
     /// <p></p>
-    pub fn set_user_defined(mut self, input: std::option::Option<crate::types::UserDefined>) -> Self {
-        self.user_defined = input; self
+    pub fn set_user_defined(
+        mut self,
+        input: std::option::Option<crate::types::UserDefined>,
+    ) -> Self {
+        self.user_defined = input;
+        self
     }
     /// Consumes the builder and constructs a [`OutputResolutionResamplingInput`](crate::types::OutputResolutionResamplingInput).
     pub fn build(self) -> crate::types::OutputResolutionResamplingInput {
         crate::types::OutputResolutionResamplingInput {
-            user_defined: self.user_defined
-            ,
+            user_defined: self.user_defined,
         }
     }
 }
-

@@ -3,7 +3,7 @@
 /// <p>Specifies the destination, format and type of the logs. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct LogDeliveryConfigurationRequest  {
+pub struct LogDeliveryConfigurationRequest {
     /// <p>Refers to <a href="https://redis.io/commands/slowlog">slow-log</a> or engine-log..</p>
     #[doc(hidden)]
     pub log_type: std::option::Option<crate::types::LogType>,
@@ -22,19 +22,19 @@ pub struct LogDeliveryConfigurationRequest  {
 }
 impl LogDeliveryConfigurationRequest {
     /// <p>Refers to <a href="https://redis.io/commands/slowlog">slow-log</a> or engine-log..</p>
-    pub fn log_type(&self) -> std::option::Option<& crate::types::LogType> {
+    pub fn log_type(&self) -> std::option::Option<&crate::types::LogType> {
         self.log_type.as_ref()
     }
     /// <p>Specify either <code>cloudwatch-logs</code> or <code>kinesis-firehose</code> as the destination type.</p>
-    pub fn destination_type(&self) -> std::option::Option<& crate::types::DestinationType> {
+    pub fn destination_type(&self) -> std::option::Option<&crate::types::DestinationType> {
         self.destination_type.as_ref()
     }
     /// <p>Configuration details of either a CloudWatch Logs destination or Kinesis Data Firehose destination.</p>
-    pub fn destination_details(&self) -> std::option::Option<& crate::types::DestinationDetails> {
+    pub fn destination_details(&self) -> std::option::Option<&crate::types::DestinationDetails> {
         self.destination_details.as_ref()
     }
     /// <p>Specifies either JSON or TEXT</p>
-    pub fn log_format(&self) -> std::option::Option<& crate::types::LogFormat> {
+    pub fn log_format(&self) -> std::option::Option<&crate::types::LogFormat> {
         self.log_format.as_ref()
     }
     /// <p>Specify if log delivery is enabled. Default <code>true</code>.</p>
@@ -67,7 +67,8 @@ impl LogDeliveryConfigurationRequestBuilder {
     }
     /// <p>Refers to <a href="https://redis.io/commands/slowlog">slow-log</a> or engine-log..</p>
     pub fn set_log_type(mut self, input: std::option::Option<crate::types::LogType>) -> Self {
-        self.log_type = input; self
+        self.log_type = input;
+        self
     }
     /// <p>Specify either <code>cloudwatch-logs</code> or <code>kinesis-firehose</code> as the destination type.</p>
     pub fn destination_type(mut self, input: crate::types::DestinationType) -> Self {
@@ -75,8 +76,12 @@ impl LogDeliveryConfigurationRequestBuilder {
         self
     }
     /// <p>Specify either <code>cloudwatch-logs</code> or <code>kinesis-firehose</code> as the destination type.</p>
-    pub fn set_destination_type(mut self, input: std::option::Option<crate::types::DestinationType>) -> Self {
-        self.destination_type = input; self
+    pub fn set_destination_type(
+        mut self,
+        input: std::option::Option<crate::types::DestinationType>,
+    ) -> Self {
+        self.destination_type = input;
+        self
     }
     /// <p>Configuration details of either a CloudWatch Logs destination or Kinesis Data Firehose destination.</p>
     pub fn destination_details(mut self, input: crate::types::DestinationDetails) -> Self {
@@ -84,8 +89,12 @@ impl LogDeliveryConfigurationRequestBuilder {
         self
     }
     /// <p>Configuration details of either a CloudWatch Logs destination or Kinesis Data Firehose destination.</p>
-    pub fn set_destination_details(mut self, input: std::option::Option<crate::types::DestinationDetails>) -> Self {
-        self.destination_details = input; self
+    pub fn set_destination_details(
+        mut self,
+        input: std::option::Option<crate::types::DestinationDetails>,
+    ) -> Self {
+        self.destination_details = input;
+        self
     }
     /// <p>Specifies either JSON or TEXT</p>
     pub fn log_format(mut self, input: crate::types::LogFormat) -> Self {
@@ -94,7 +103,8 @@ impl LogDeliveryConfigurationRequestBuilder {
     }
     /// <p>Specifies either JSON or TEXT</p>
     pub fn set_log_format(mut self, input: std::option::Option<crate::types::LogFormat>) -> Self {
-        self.log_format = input; self
+        self.log_format = input;
+        self
     }
     /// <p>Specify if log delivery is enabled. Default <code>true</code>.</p>
     pub fn enabled(mut self, input: bool) -> Self {
@@ -103,22 +113,17 @@ impl LogDeliveryConfigurationRequestBuilder {
     }
     /// <p>Specify if log delivery is enabled. Default <code>true</code>.</p>
     pub fn set_enabled(mut self, input: std::option::Option<bool>) -> Self {
-        self.enabled = input; self
+        self.enabled = input;
+        self
     }
     /// Consumes the builder and constructs a [`LogDeliveryConfigurationRequest`](crate::types::LogDeliveryConfigurationRequest).
     pub fn build(self) -> crate::types::LogDeliveryConfigurationRequest {
         crate::types::LogDeliveryConfigurationRequest {
-            log_type: self.log_type
-            ,
-            destination_type: self.destination_type
-            ,
-            destination_details: self.destination_details
-            ,
-            log_format: self.log_format
-            ,
-            enabled: self.enabled
-            ,
+            log_type: self.log_type,
+            destination_type: self.destination_type,
+            destination_details: self.destination_details,
+            log_format: self.log_format,
+            enabled: self.enabled,
         }
     }
 }
-

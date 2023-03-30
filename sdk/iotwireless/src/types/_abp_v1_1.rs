@@ -3,7 +3,7 @@
 /// <p>ABP device object for LoRaWAN specification v1.1</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AbpV11  {
+pub struct AbpV11 {
     /// <p>The DevAddr value.</p>
     #[doc(hidden)]
     pub dev_addr: std::option::Option<std::string::String>,
@@ -16,11 +16,11 @@ pub struct AbpV11  {
 }
 impl AbpV11 {
     /// <p>The DevAddr value.</p>
-    pub fn dev_addr(&self) -> std::option::Option<& str> {
+    pub fn dev_addr(&self) -> std::option::Option<&str> {
         self.dev_addr.as_deref()
     }
     /// <p>Session keys for ABP v1.1</p>
-    pub fn session_keys(&self) -> std::option::Option<& crate::types::SessionKeysAbpV11> {
+    pub fn session_keys(&self) -> std::option::Option<&crate::types::SessionKeysAbpV11> {
         self.session_keys.as_ref()
     }
     /// <p>The FCnt init value.</p>
@@ -51,7 +51,8 @@ impl AbpV11Builder {
     }
     /// <p>The DevAddr value.</p>
     pub fn set_dev_addr(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.dev_addr = input; self
+        self.dev_addr = input;
+        self
     }
     /// <p>Session keys for ABP v1.1</p>
     pub fn session_keys(mut self, input: crate::types::SessionKeysAbpV11) -> Self {
@@ -59,8 +60,12 @@ impl AbpV11Builder {
         self
     }
     /// <p>Session keys for ABP v1.1</p>
-    pub fn set_session_keys(mut self, input: std::option::Option<crate::types::SessionKeysAbpV11>) -> Self {
-        self.session_keys = input; self
+    pub fn set_session_keys(
+        mut self,
+        input: std::option::Option<crate::types::SessionKeysAbpV11>,
+    ) -> Self {
+        self.session_keys = input;
+        self
     }
     /// <p>The FCnt init value.</p>
     pub fn f_cnt_start(mut self, input: i32) -> Self {
@@ -69,18 +74,15 @@ impl AbpV11Builder {
     }
     /// <p>The FCnt init value.</p>
     pub fn set_f_cnt_start(mut self, input: std::option::Option<i32>) -> Self {
-        self.f_cnt_start = input; self
+        self.f_cnt_start = input;
+        self
     }
     /// Consumes the builder and constructs a [`AbpV11`](crate::types::AbpV11).
     pub fn build(self) -> crate::types::AbpV11 {
         crate::types::AbpV11 {
-            dev_addr: self.dev_addr
-            ,
-            session_keys: self.session_keys
-            ,
-            f_cnt_start: self.f_cnt_start
-            ,
+            dev_addr: self.dev_addr,
+            session_keys: self.session_keys,
+            f_cnt_start: self.f_cnt_start,
         }
     }
 }
-

@@ -3,14 +3,14 @@
 /// <p>The differences between the base and latest versions of the lens.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct VersionDifferences  {
+pub struct VersionDifferences {
     /// <p>The differences between the base and latest versions of the lens.</p>
     #[doc(hidden)]
     pub pillar_differences: std::option::Option<std::vec::Vec<crate::types::PillarDifference>>,
 }
 impl VersionDifferences {
     /// <p>The differences between the base and latest versions of the lens.</p>
-    pub fn pillar_differences(&self) -> std::option::Option<& [crate::types::PillarDifference]> {
+    pub fn pillar_differences(&self) -> std::option::Option<&[crate::types::PillarDifference]> {
         self.pillar_differences.as_deref()
     }
 }
@@ -25,7 +25,8 @@ impl VersionDifferences {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct VersionDifferencesBuilder {
-    pub(crate) pillar_differences: std::option::Option<std::vec::Vec<crate::types::PillarDifference>>,
+    pub(crate) pillar_differences:
+        std::option::Option<std::vec::Vec<crate::types::PillarDifference>>,
 }
 impl VersionDifferencesBuilder {
     /// Appends an item to `pillar_differences`.
@@ -35,20 +36,22 @@ impl VersionDifferencesBuilder {
     /// <p>The differences between the base and latest versions of the lens.</p>
     pub fn pillar_differences(mut self, input: crate::types::PillarDifference) -> Self {
         let mut v = self.pillar_differences.unwrap_or_default();
-                        v.push(input);
-                        self.pillar_differences = Some(v);
-                        self
+        v.push(input);
+        self.pillar_differences = Some(v);
+        self
     }
     /// <p>The differences between the base and latest versions of the lens.</p>
-    pub fn set_pillar_differences(mut self, input: std::option::Option<std::vec::Vec<crate::types::PillarDifference>>) -> Self {
-        self.pillar_differences = input; self
+    pub fn set_pillar_differences(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::PillarDifference>>,
+    ) -> Self {
+        self.pillar_differences = input;
+        self
     }
     /// Consumes the builder and constructs a [`VersionDifferences`](crate::types::VersionDifferences).
     pub fn build(self) -> crate::types::VersionDifferences {
         crate::types::VersionDifferences {
-            pillar_differences: self.pillar_differences
-            ,
+            pillar_differences: self.pillar_differences,
         }
     }
 }
-

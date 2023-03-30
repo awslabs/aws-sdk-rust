@@ -2,17 +2,21 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct EnableSecurityHubInput  {
+pub struct EnableSecurityHubInput {
     /// <p>The tags to add to the hub resource when you enable Security Hub.</p>
     #[doc(hidden)]
-    pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub tags:
+        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>Whether to enable the security standards that Security Hub has designated as automatically enabled. If you do not provide a value for <code>EnableDefaultStandards</code>, it is set to <code>true</code>. To not enable the automatically enabled standards, set <code>EnableDefaultStandards</code> to <code>false</code>.</p>
     #[doc(hidden)]
     pub enable_default_standards: bool,
 }
 impl EnableSecurityHubInput {
     /// <p>The tags to add to the hub resource when you enable Security Hub.</p>
-    pub fn tags(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
         self.tags.as_ref()
     }
     /// <p>Whether to enable the security standards that Security Hub has designated as automatically enabled. If you do not provide a value for <code>EnableDefaultStandards</code>, it is set to <code>true</code>. To not enable the automatically enabled standards, set <code>EnableDefaultStandards</code> to <code>false</code>.</p>
@@ -22,7 +26,8 @@ impl EnableSecurityHubInput {
 }
 impl EnableSecurityHubInput {
     /// Creates a new builder-style object to manufacture [`EnableSecurityHubInput`](crate::operation::enable_security_hub::EnableSecurityHubInput).
-    pub fn builder() -> crate::operation::enable_security_hub::builders::EnableSecurityHubInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::enable_security_hub::builders::EnableSecurityHubInputBuilder {
         crate::operation::enable_security_hub::builders::EnableSecurityHubInputBuilder::default()
     }
 }
@@ -31,7 +36,8 @@ impl EnableSecurityHubInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct EnableSecurityHubInputBuilder {
-    pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub(crate) tags:
+        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     pub(crate) enable_default_standards: std::option::Option<bool>,
 }
 impl EnableSecurityHubInputBuilder {
@@ -40,15 +46,25 @@ impl EnableSecurityHubInputBuilder {
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// <p>The tags to add to the hub resource when you enable Security Hub.</p>
-    pub fn tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
+    pub fn tags(
+        mut self,
+        k: impl Into<std::string::String>,
+        v: impl Into<std::string::String>,
+    ) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
-                        hash_map.insert(k.into(), v.into());
-                        self.tags = Some(hash_map);
-                        self
+        hash_map.insert(k.into(), v.into());
+        self.tags = Some(hash_map);
+        self
     }
     /// <p>The tags to add to the hub resource when you enable Security Hub.</p>
-    pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
-        self.tags = input; self
+    pub fn set_tags(
+        mut self,
+        input: std::option::Option<
+            std::collections::HashMap<std::string::String, std::string::String>,
+        >,
+    ) -> Self {
+        self.tags = input;
+        self
     }
     /// <p>Whether to enable the security standards that Security Hub has designated as automatically enabled. If you do not provide a value for <code>EnableDefaultStandards</code>, it is set to <code>true</code>. To not enable the automatically enabled standards, set <code>EnableDefaultStandards</code> to <code>false</code>.</p>
     pub fn enable_default_standards(mut self, input: bool) -> Self {
@@ -57,19 +73,21 @@ impl EnableSecurityHubInputBuilder {
     }
     /// <p>Whether to enable the security standards that Security Hub has designated as automatically enabled. If you do not provide a value for <code>EnableDefaultStandards</code>, it is set to <code>true</code>. To not enable the automatically enabled standards, set <code>EnableDefaultStandards</code> to <code>false</code>.</p>
     pub fn set_enable_default_standards(mut self, input: std::option::Option<bool>) -> Self {
-        self.enable_default_standards = input; self
+        self.enable_default_standards = input;
+        self
     }
     /// Consumes the builder and constructs a [`EnableSecurityHubInput`](crate::operation::enable_security_hub::EnableSecurityHubInput).
-    pub fn build(self) -> Result<crate::operation::enable_security_hub::EnableSecurityHubInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::enable_security_hub::EnableSecurityHubInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::enable_security_hub::EnableSecurityHubInput {
-                tags: self.tags
-                ,
-                enable_default_standards: self.enable_default_standards
-                    .unwrap_or_default()
-                ,
-            }
+                tags: self.tags,
+                enable_default_standards: self.enable_default_standards.unwrap_or_default(),
+            },
         )
     }
 }
-

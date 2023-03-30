@@ -3,7 +3,7 @@
 /// <p>Contains the parameters for DeleteVpnConnectionRoute.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteVpnConnectionRouteInput  {
+pub struct DeleteVpnConnectionRouteInput {
     /// <p>The CIDR block associated with the local subnet of the customer network.</p>
     #[doc(hidden)]
     pub destination_cidr_block: std::option::Option<std::string::String>,
@@ -13,17 +13,19 @@ pub struct DeleteVpnConnectionRouteInput  {
 }
 impl DeleteVpnConnectionRouteInput {
     /// <p>The CIDR block associated with the local subnet of the customer network.</p>
-    pub fn destination_cidr_block(&self) -> std::option::Option<& str> {
+    pub fn destination_cidr_block(&self) -> std::option::Option<&str> {
         self.destination_cidr_block.as_deref()
     }
     /// <p>The ID of the VPN connection.</p>
-    pub fn vpn_connection_id(&self) -> std::option::Option<& str> {
+    pub fn vpn_connection_id(&self) -> std::option::Option<&str> {
         self.vpn_connection_id.as_deref()
     }
 }
 impl DeleteVpnConnectionRouteInput {
     /// Creates a new builder-style object to manufacture [`DeleteVpnConnectionRouteInput`](crate::operation::delete_vpn_connection_route::DeleteVpnConnectionRouteInput).
-    pub fn builder() -> crate::operation::delete_vpn_connection_route::builders::DeleteVpnConnectionRouteInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::delete_vpn_connection_route::builders::DeleteVpnConnectionRouteInputBuilder
+    {
         crate::operation::delete_vpn_connection_route::builders::DeleteVpnConnectionRouteInputBuilder::default()
     }
 }
@@ -42,8 +44,12 @@ impl DeleteVpnConnectionRouteInputBuilder {
         self
     }
     /// <p>The CIDR block associated with the local subnet of the customer network.</p>
-    pub fn set_destination_cidr_block(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.destination_cidr_block = input; self
+    pub fn set_destination_cidr_block(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.destination_cidr_block = input;
+        self
     }
     /// <p>The ID of the VPN connection.</p>
     pub fn vpn_connection_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -51,19 +57,25 @@ impl DeleteVpnConnectionRouteInputBuilder {
         self
     }
     /// <p>The ID of the VPN connection.</p>
-    pub fn set_vpn_connection_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.vpn_connection_id = input; self
+    pub fn set_vpn_connection_id(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.vpn_connection_id = input;
+        self
     }
     /// Consumes the builder and constructs a [`DeleteVpnConnectionRouteInput`](crate::operation::delete_vpn_connection_route::DeleteVpnConnectionRouteInput).
-    pub fn build(self) -> Result<crate::operation::delete_vpn_connection_route::DeleteVpnConnectionRouteInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::delete_vpn_connection_route::DeleteVpnConnectionRouteInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::delete_vpn_connection_route::DeleteVpnConnectionRouteInput {
-                destination_cidr_block: self.destination_cidr_block
-                ,
-                vpn_connection_id: self.vpn_connection_id
-                ,
-            }
+                destination_cidr_block: self.destination_cidr_block,
+                vpn_connection_id: self.vpn_connection_id,
+            },
         )
     }
 }
-

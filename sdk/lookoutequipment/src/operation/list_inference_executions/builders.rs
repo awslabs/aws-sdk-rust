@@ -4,55 +4,81 @@ pub use crate::operation::list_inference_executions::_list_inference_executions_
 pub use crate::operation::list_inference_executions::_list_inference_executions_input::ListInferenceExecutionsInputBuilder;
 
 /// Fluent builder constructing a request to `ListInferenceExecutions`.
-/// 
+///
 /// <p> Lists all inference executions that have been performed by the specified inference scheduler. </p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListInferenceExecutionsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::list_inference_executions::builders::ListInferenceExecutionsInputBuilder
-            }
-impl ListInferenceExecutionsFluentBuilder  {
+    handle: std::sync::Arc<crate::client::Handle>,
+    inner:
+        crate::operation::list_inference_executions::builders::ListInferenceExecutionsInputBuilder,
+}
+impl ListInferenceExecutionsFluentBuilder {
     /// Creates a new `ListInferenceExecutions`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
-                    /// sent. The operation's inner [http::Request] can be modified as well.
-                    pub async fn customize(self) -> std::result::Result<
-                        crate::client::customize::CustomizableOperation<crate::operation::list_inference_executions::ListInferenceExecutions, aws_http::retry::AwsResponseRetryClassifier,>,
-                        aws_smithy_http::result::SdkError<crate::operation::list_inference_executions::ListInferenceExecutionsError>
-                    >  {
-                        let handle = self.handle.clone();
-                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-                    }
-    
-                    /// Sends the request and returns the response.
-                    ///
-                    /// If an error occurs, an `SdkError` will be returned with additional details that
-                    /// can be matched against.
-                    ///
-                    /// By default, any retryable failures will be retried twice. Retry behavior
-                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                    /// set when configuring the client.
-                    pub async fn send(self) -> std::result::Result<crate::operation::list_inference_executions::ListInferenceExecutionsOutput, aws_smithy_http::result::SdkError<crate::operation::list_inference_executions::ListInferenceExecutionsError>>
-                     {
-                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&self.handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        self.handle.client.call(op).await
-                    }
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle,
+            inner: Default::default(),
+        }
+    }
+
+    /// Consume this builder, creating a customizable operation that can be modified before being
+    /// sent. The operation's inner [http::Request] can be modified as well.
+    pub async fn customize(
+        self,
+    ) -> std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::list_inference_executions::ListInferenceExecutions,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::result::SdkError<
+            crate::operation::list_inference_executions::ListInferenceExecutionsError,
+        >,
+    > {
+        let handle = self.handle.clone();
+        let operation = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+    }
+
+    /// Sends the request and returns the response.
+    ///
+    /// If an error occurs, an `SdkError` will be returned with additional details that
+    /// can be matched against.
+    ///
+    /// By default, any retryable failures will be retried twice. Retry behavior
+    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+    /// set when configuring the client.
+    pub async fn send(
+        self,
+    ) -> std::result::Result<
+        crate::operation::list_inference_executions::ListInferenceExecutionsOutput,
+        aws_smithy_http::result::SdkError<
+            crate::operation::list_inference_executions::ListInferenceExecutionsError,
+        >,
+    > {
+        let op = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&self.handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        self.handle.client.call(op).await
+    }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::list_inference_executions::paginator::ListInferenceExecutionsPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::list_inference_executions::paginator::ListInferenceExecutionsPaginator {
-                            crate::operation::list_inference_executions::paginator::ListInferenceExecutionsPaginator::new(self.handle, self.inner)
-                        }
+    ///
+    /// Paginators are used by calling [`send().await`](crate::operation::list_inference_executions::paginator::ListInferenceExecutionsPaginator::send) which returns a `Stream`.
+    pub fn into_paginator(
+        self,
+    ) -> crate::operation::list_inference_executions::paginator::ListInferenceExecutionsPaginator
+    {
+        crate::operation::list_inference_executions::paginator::ListInferenceExecutionsPaginator::new(self.handle, self.inner)
+    }
     /// <p>An opaque pagination token indicating where to continue the listing of inference executions.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
@@ -79,7 +105,10 @@ impl ListInferenceExecutionsFluentBuilder  {
         self
     }
     /// <p>The name of the inference scheduler for the inference execution listed. </p>
-    pub fn set_inference_scheduler_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_inference_scheduler_name(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_inference_scheduler_name(input);
         self
     }
@@ -89,7 +118,10 @@ impl ListInferenceExecutionsFluentBuilder  {
         self
     }
     /// <p>The time reference in the inferenced dataset after which Amazon Lookout for Equipment started the inference execution. </p>
-    pub fn set_data_start_time_after(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+    pub fn set_data_start_time_after(
+        mut self,
+        input: std::option::Option<aws_smithy_types::DateTime>,
+    ) -> Self {
         self.inner = self.inner.set_data_start_time_after(input);
         self
     }
@@ -99,7 +131,10 @@ impl ListInferenceExecutionsFluentBuilder  {
         self
     }
     /// <p>The time reference in the inferenced dataset before which Amazon Lookout for Equipment stopped the inference execution. </p>
-    pub fn set_data_end_time_before(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+    pub fn set_data_end_time_before(
+        mut self,
+        input: std::option::Option<aws_smithy_types::DateTime>,
+    ) -> Self {
         self.inner = self.inner.set_data_end_time_before(input);
         self
     }
@@ -109,9 +144,11 @@ impl ListInferenceExecutionsFluentBuilder  {
         self
     }
     /// <p>The status of the inference execution. </p>
-    pub fn set_status(mut self, input: std::option::Option<crate::types::InferenceExecutionStatus>) -> Self {
+    pub fn set_status(
+        mut self,
+        input: std::option::Option<crate::types::InferenceExecutionStatus>,
+    ) -> Self {
         self.inner = self.inner.set_status(input);
         self
     }
 }
-

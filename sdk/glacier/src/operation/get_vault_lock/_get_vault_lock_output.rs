@@ -3,7 +3,7 @@
 /// <p>Contains the Amazon S3 Glacier response to your request.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetVaultLockOutput  {
+pub struct GetVaultLockOutput {
     /// <p>The vault lock policy as a JSON string, which uses "\" as an escape character.</p>
     #[doc(hidden)]
     pub policy: std::option::Option<std::string::String>,
@@ -20,27 +20,27 @@ pub struct GetVaultLockOutput  {
 }
 impl GetVaultLockOutput {
     /// <p>The vault lock policy as a JSON string, which uses "\" as an escape character.</p>
-    pub fn policy(&self) -> std::option::Option<& str> {
+    pub fn policy(&self) -> std::option::Option<&str> {
         self.policy.as_deref()
     }
     /// <p>The state of the vault lock. <code>InProgress</code> or <code>Locked</code>.</p>
-    pub fn state(&self) -> std::option::Option<& str> {
+    pub fn state(&self) -> std::option::Option<&str> {
         self.state.as_deref()
     }
     /// <p>The UTC date and time at which the lock ID expires. This value can be <code>null</code> if the vault lock is in a <code>Locked</code> state.</p>
-    pub fn expiration_date(&self) -> std::option::Option<& str> {
+    pub fn expiration_date(&self) -> std::option::Option<&str> {
         self.expiration_date.as_deref()
     }
     /// <p>The UTC date and time at which the vault lock was put into the <code>InProgress</code> state.</p>
-    pub fn creation_date(&self) -> std::option::Option<& str> {
+    pub fn creation_date(&self) -> std::option::Option<&str> {
         self.creation_date.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for GetVaultLockOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl GetVaultLockOutput {
     /// Creates a new builder-style object to manufacture [`GetVaultLockOutput`](crate::operation::get_vault_lock::GetVaultLockOutput).
     pub fn builder() -> crate::operation::get_vault_lock::builders::GetVaultLockOutputBuilder {
@@ -66,7 +66,8 @@ impl GetVaultLockOutputBuilder {
     }
     /// <p>The vault lock policy as a JSON string, which uses "\" as an escape character.</p>
     pub fn set_policy(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.policy = input; self
+        self.policy = input;
+        self
     }
     /// <p>The state of the vault lock. <code>InProgress</code> or <code>Locked</code>.</p>
     pub fn state(mut self, input: impl Into<std::string::String>) -> Self {
@@ -75,7 +76,8 @@ impl GetVaultLockOutputBuilder {
     }
     /// <p>The state of the vault lock. <code>InProgress</code> or <code>Locked</code>.</p>
     pub fn set_state(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.state = input; self
+        self.state = input;
+        self
     }
     /// <p>The UTC date and time at which the lock ID expires. This value can be <code>null</code> if the vault lock is in a <code>Locked</code> state.</p>
     pub fn expiration_date(mut self, input: impl Into<std::string::String>) -> Self {
@@ -84,7 +86,8 @@ impl GetVaultLockOutputBuilder {
     }
     /// <p>The UTC date and time at which the lock ID expires. This value can be <code>null</code> if the vault lock is in a <code>Locked</code> state.</p>
     pub fn set_expiration_date(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.expiration_date = input; self
+        self.expiration_date = input;
+        self
     }
     /// <p>The UTC date and time at which the vault lock was put into the <code>InProgress</code> state.</p>
     pub fn creation_date(mut self, input: impl Into<std::string::String>) -> Self {
@@ -93,30 +96,26 @@ impl GetVaultLockOutputBuilder {
     }
     /// <p>The UTC date and time at which the vault lock was put into the <code>InProgress</code> state.</p>
     pub fn set_creation_date(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.creation_date = input; self
+        self.creation_date = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`GetVaultLockOutput`](crate::operation::get_vault_lock::GetVaultLockOutput).
     pub fn build(self) -> crate::operation::get_vault_lock::GetVaultLockOutput {
         crate::operation::get_vault_lock::GetVaultLockOutput {
-            policy: self.policy
-            ,
-            state: self.state
-            ,
-            expiration_date: self.expiration_date
-            ,
-            creation_date: self.creation_date
-            ,
+            policy: self.policy,
+            state: self.state,
+            expiration_date: self.expiration_date,
+            creation_date: self.creation_date,
             _request_id: self._request_id,
         }
     }
 }
-

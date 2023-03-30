@@ -3,20 +3,21 @@
 /// <p>Input for ListSubscriptions action.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListSubscriptionsInput  {
+pub struct ListSubscriptionsInput {
     /// <p>Token returned by the previous <code>ListSubscriptions</code> request.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListSubscriptionsInput {
     /// <p>Token returned by the previous <code>ListSubscriptions</code> request.</p>
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
 }
 impl ListSubscriptionsInput {
     /// Creates a new builder-style object to manufacture [`ListSubscriptionsInput`](crate::operation::list_subscriptions::ListSubscriptionsInput).
-    pub fn builder() -> crate::operation::list_subscriptions::builders::ListSubscriptionsInputBuilder {
+    pub fn builder() -> crate::operation::list_subscriptions::builders::ListSubscriptionsInputBuilder
+    {
         crate::operation::list_subscriptions::builders::ListSubscriptionsInputBuilder::default()
     }
 }
@@ -35,16 +36,20 @@ impl ListSubscriptionsInputBuilder {
     }
     /// <p>Token returned by the previous <code>ListSubscriptions</code> request.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input; self
+        self.next_token = input;
+        self
     }
     /// Consumes the builder and constructs a [`ListSubscriptionsInput`](crate::operation::list_subscriptions::ListSubscriptionsInput).
-    pub fn build(self) -> Result<crate::operation::list_subscriptions::ListSubscriptionsInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::list_subscriptions::ListSubscriptionsInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::list_subscriptions::ListSubscriptionsInput {
-                next_token: self.next_token
-                ,
-            }
+                next_token: self.next_token,
+            },
         )
     }
 }
-

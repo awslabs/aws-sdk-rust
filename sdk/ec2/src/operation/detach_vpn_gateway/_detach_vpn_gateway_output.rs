@@ -2,17 +2,18 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DetachVpnGatewayOutput  {
+pub struct DetachVpnGatewayOutput {
     _request_id: Option<String>,
 }
 impl aws_http::request_id::RequestId for DetachVpnGatewayOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl DetachVpnGatewayOutput {
     /// Creates a new builder-style object to manufacture [`DetachVpnGatewayOutput`](crate::operation::detach_vpn_gateway::DetachVpnGatewayOutput).
-    pub fn builder() -> crate::operation::detach_vpn_gateway::builders::DetachVpnGatewayOutputBuilder {
+    pub fn builder() -> crate::operation::detach_vpn_gateway::builders::DetachVpnGatewayOutputBuilder
+    {
         crate::operation::detach_vpn_gateway::builders::DetachVpnGatewayOutputBuilder::default()
     }
 }
@@ -25,14 +26,14 @@ pub struct DetachVpnGatewayOutputBuilder {
 }
 impl DetachVpnGatewayOutputBuilder {
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`DetachVpnGatewayOutput`](crate::operation::detach_vpn_gateway::DetachVpnGatewayOutput).
     pub fn build(self) -> crate::operation::detach_vpn_gateway::DetachVpnGatewayOutput {
         crate::operation::detach_vpn_gateway::DetachVpnGatewayOutput {
@@ -40,4 +41,3 @@ impl DetachVpnGatewayOutputBuilder {
         }
     }
 }
-

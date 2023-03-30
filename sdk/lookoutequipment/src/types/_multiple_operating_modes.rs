@@ -3,14 +3,14 @@
 /// <p> Entity that comprises information on operating modes in data. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct MultipleOperatingModes  {
+pub struct MultipleOperatingModes {
     /// <p> Indicates whether there is a potential data issue related to having multiple operating modes. </p>
     #[doc(hidden)]
     pub status: std::option::Option<crate::types::StatisticalIssueStatus>,
 }
 impl MultipleOperatingModes {
     /// <p> Indicates whether there is a potential data issue related to having multiple operating modes. </p>
-    pub fn status(&self) -> std::option::Option<& crate::types::StatisticalIssueStatus> {
+    pub fn status(&self) -> std::option::Option<&crate::types::StatisticalIssueStatus> {
         self.status.as_ref()
     }
 }
@@ -34,15 +34,17 @@ impl MultipleOperatingModesBuilder {
         self
     }
     /// <p> Indicates whether there is a potential data issue related to having multiple operating modes. </p>
-    pub fn set_status(mut self, input: std::option::Option<crate::types::StatisticalIssueStatus>) -> Self {
-        self.status = input; self
+    pub fn set_status(
+        mut self,
+        input: std::option::Option<crate::types::StatisticalIssueStatus>,
+    ) -> Self {
+        self.status = input;
+        self
     }
     /// Consumes the builder and constructs a [`MultipleOperatingModes`](crate::types::MultipleOperatingModes).
     pub fn build(self) -> crate::types::MultipleOperatingModes {
         crate::types::MultipleOperatingModes {
-            status: self.status
-            ,
+            status: self.status,
         }
     }
 }
-

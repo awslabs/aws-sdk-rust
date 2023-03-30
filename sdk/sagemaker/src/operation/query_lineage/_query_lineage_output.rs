@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct QueryLineageOutput  {
+pub struct QueryLineageOutput {
     /// <p>A list of vertices connected to the start entity(ies) in the lineage graph.</p>
     #[doc(hidden)]
     pub vertices: std::option::Option<std::vec::Vec<crate::types::Vertex>>,
@@ -16,23 +16,23 @@ pub struct QueryLineageOutput  {
 }
 impl QueryLineageOutput {
     /// <p>A list of vertices connected to the start entity(ies) in the lineage graph.</p>
-    pub fn vertices(&self) -> std::option::Option<& [crate::types::Vertex]> {
+    pub fn vertices(&self) -> std::option::Option<&[crate::types::Vertex]> {
         self.vertices.as_deref()
     }
     /// <p>A list of edges that connect vertices in the response.</p>
-    pub fn edges(&self) -> std::option::Option<& [crate::types::Edge]> {
+    pub fn edges(&self) -> std::option::Option<&[crate::types::Edge]> {
         self.edges.as_deref()
     }
     /// <p>Limits the number of vertices in the response. Use the <code>NextToken</code> in a response to to retrieve the next page of results.</p>
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for QueryLineageOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl QueryLineageOutput {
     /// Creates a new builder-style object to manufacture [`QueryLineageOutput`](crate::operation::query_lineage::QueryLineageOutput).
     pub fn builder() -> crate::operation::query_lineage::builders::QueryLineageOutputBuilder {
@@ -57,13 +57,17 @@ impl QueryLineageOutputBuilder {
     /// <p>A list of vertices connected to the start entity(ies) in the lineage graph.</p>
     pub fn vertices(mut self, input: crate::types::Vertex) -> Self {
         let mut v = self.vertices.unwrap_or_default();
-                        v.push(input);
-                        self.vertices = Some(v);
-                        self
+        v.push(input);
+        self.vertices = Some(v);
+        self
     }
     /// <p>A list of vertices connected to the start entity(ies) in the lineage graph.</p>
-    pub fn set_vertices(mut self, input: std::option::Option<std::vec::Vec<crate::types::Vertex>>) -> Self {
-        self.vertices = input; self
+    pub fn set_vertices(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::Vertex>>,
+    ) -> Self {
+        self.vertices = input;
+        self
     }
     /// Appends an item to `edges`.
     ///
@@ -72,13 +76,17 @@ impl QueryLineageOutputBuilder {
     /// <p>A list of edges that connect vertices in the response.</p>
     pub fn edges(mut self, input: crate::types::Edge) -> Self {
         let mut v = self.edges.unwrap_or_default();
-                        v.push(input);
-                        self.edges = Some(v);
-                        self
+        v.push(input);
+        self.edges = Some(v);
+        self
     }
     /// <p>A list of edges that connect vertices in the response.</p>
-    pub fn set_edges(mut self, input: std::option::Option<std::vec::Vec<crate::types::Edge>>) -> Self {
-        self.edges = input; self
+    pub fn set_edges(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::Edge>>,
+    ) -> Self {
+        self.edges = input;
+        self
     }
     /// <p>Limits the number of vertices in the response. Use the <code>NextToken</code> in a response to to retrieve the next page of results.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -87,28 +95,25 @@ impl QueryLineageOutputBuilder {
     }
     /// <p>Limits the number of vertices in the response. Use the <code>NextToken</code> in a response to to retrieve the next page of results.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input; self
+        self.next_token = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`QueryLineageOutput`](crate::operation::query_lineage::QueryLineageOutput).
     pub fn build(self) -> crate::operation::query_lineage::QueryLineageOutput {
         crate::operation::query_lineage::QueryLineageOutput {
-            vertices: self.vertices
-            ,
-            edges: self.edges
-            ,
-            next_token: self.next_token
-            ,
+            vertices: self.vertices,
+            edges: self.edges,
+            next_token: self.next_token,
             _request_id: self._request_id,
         }
     }
 }
-

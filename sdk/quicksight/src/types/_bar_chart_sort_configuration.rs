@@ -3,7 +3,7 @@
 /// <p>sort-configuration-description</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct BarChartSortConfiguration  {
+pub struct BarChartSortConfiguration {
     /// <p>The sort configuration of category fields.</p>
     #[doc(hidden)]
     pub category_sort: std::option::Option<std::vec::Vec<crate::types::FieldSortOptions>>,
@@ -21,31 +21,36 @@ pub struct BarChartSortConfiguration  {
     pub small_multiples_sort: std::option::Option<std::vec::Vec<crate::types::FieldSortOptions>>,
     /// <p>The limit on the number of small multiples panels that are displayed.</p>
     #[doc(hidden)]
-    pub small_multiples_limit_configuration: std::option::Option<crate::types::ItemsLimitConfiguration>,
+    pub small_multiples_limit_configuration:
+        std::option::Option<crate::types::ItemsLimitConfiguration>,
 }
 impl BarChartSortConfiguration {
     /// <p>The sort configuration of category fields.</p>
-    pub fn category_sort(&self) -> std::option::Option<& [crate::types::FieldSortOptions]> {
+    pub fn category_sort(&self) -> std::option::Option<&[crate::types::FieldSortOptions]> {
         self.category_sort.as_deref()
     }
     /// <p>The limit on the number of categories displayed in a bar chart.</p>
-    pub fn category_items_limit(&self) -> std::option::Option<& crate::types::ItemsLimitConfiguration> {
+    pub fn category_items_limit(
+        &self,
+    ) -> std::option::Option<&crate::types::ItemsLimitConfiguration> {
         self.category_items_limit.as_ref()
     }
     /// <p>The sort configuration of color fields in a bar chart.</p>
-    pub fn color_sort(&self) -> std::option::Option<& [crate::types::FieldSortOptions]> {
+    pub fn color_sort(&self) -> std::option::Option<&[crate::types::FieldSortOptions]> {
         self.color_sort.as_deref()
     }
     /// <p>The limit on the number of values displayed in a bar chart.</p>
-    pub fn color_items_limit(&self) -> std::option::Option<& crate::types::ItemsLimitConfiguration> {
+    pub fn color_items_limit(&self) -> std::option::Option<&crate::types::ItemsLimitConfiguration> {
         self.color_items_limit.as_ref()
     }
     /// <p>The sort configuration of the small multiples field.</p>
-    pub fn small_multiples_sort(&self) -> std::option::Option<& [crate::types::FieldSortOptions]> {
+    pub fn small_multiples_sort(&self) -> std::option::Option<&[crate::types::FieldSortOptions]> {
         self.small_multiples_sort.as_deref()
     }
     /// <p>The limit on the number of small multiples panels that are displayed.</p>
-    pub fn small_multiples_limit_configuration(&self) -> std::option::Option<& crate::types::ItemsLimitConfiguration> {
+    pub fn small_multiples_limit_configuration(
+        &self,
+    ) -> std::option::Option<&crate::types::ItemsLimitConfiguration> {
         self.small_multiples_limit_configuration.as_ref()
     }
 }
@@ -64,8 +69,10 @@ pub struct BarChartSortConfigurationBuilder {
     pub(crate) category_items_limit: std::option::Option<crate::types::ItemsLimitConfiguration>,
     pub(crate) color_sort: std::option::Option<std::vec::Vec<crate::types::FieldSortOptions>>,
     pub(crate) color_items_limit: std::option::Option<crate::types::ItemsLimitConfiguration>,
-    pub(crate) small_multiples_sort: std::option::Option<std::vec::Vec<crate::types::FieldSortOptions>>,
-    pub(crate) small_multiples_limit_configuration: std::option::Option<crate::types::ItemsLimitConfiguration>,
+    pub(crate) small_multiples_sort:
+        std::option::Option<std::vec::Vec<crate::types::FieldSortOptions>>,
+    pub(crate) small_multiples_limit_configuration:
+        std::option::Option<crate::types::ItemsLimitConfiguration>,
 }
 impl BarChartSortConfigurationBuilder {
     /// Appends an item to `category_sort`.
@@ -75,13 +82,17 @@ impl BarChartSortConfigurationBuilder {
     /// <p>The sort configuration of category fields.</p>
     pub fn category_sort(mut self, input: crate::types::FieldSortOptions) -> Self {
         let mut v = self.category_sort.unwrap_or_default();
-                        v.push(input);
-                        self.category_sort = Some(v);
-                        self
+        v.push(input);
+        self.category_sort = Some(v);
+        self
     }
     /// <p>The sort configuration of category fields.</p>
-    pub fn set_category_sort(mut self, input: std::option::Option<std::vec::Vec<crate::types::FieldSortOptions>>) -> Self {
-        self.category_sort = input; self
+    pub fn set_category_sort(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::FieldSortOptions>>,
+    ) -> Self {
+        self.category_sort = input;
+        self
     }
     /// <p>The limit on the number of categories displayed in a bar chart.</p>
     pub fn category_items_limit(mut self, input: crate::types::ItemsLimitConfiguration) -> Self {
@@ -89,8 +100,12 @@ impl BarChartSortConfigurationBuilder {
         self
     }
     /// <p>The limit on the number of categories displayed in a bar chart.</p>
-    pub fn set_category_items_limit(mut self, input: std::option::Option<crate::types::ItemsLimitConfiguration>) -> Self {
-        self.category_items_limit = input; self
+    pub fn set_category_items_limit(
+        mut self,
+        input: std::option::Option<crate::types::ItemsLimitConfiguration>,
+    ) -> Self {
+        self.category_items_limit = input;
+        self
     }
     /// Appends an item to `color_sort`.
     ///
@@ -99,13 +114,17 @@ impl BarChartSortConfigurationBuilder {
     /// <p>The sort configuration of color fields in a bar chart.</p>
     pub fn color_sort(mut self, input: crate::types::FieldSortOptions) -> Self {
         let mut v = self.color_sort.unwrap_or_default();
-                        v.push(input);
-                        self.color_sort = Some(v);
-                        self
+        v.push(input);
+        self.color_sort = Some(v);
+        self
     }
     /// <p>The sort configuration of color fields in a bar chart.</p>
-    pub fn set_color_sort(mut self, input: std::option::Option<std::vec::Vec<crate::types::FieldSortOptions>>) -> Self {
-        self.color_sort = input; self
+    pub fn set_color_sort(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::FieldSortOptions>>,
+    ) -> Self {
+        self.color_sort = input;
+        self
     }
     /// <p>The limit on the number of values displayed in a bar chart.</p>
     pub fn color_items_limit(mut self, input: crate::types::ItemsLimitConfiguration) -> Self {
@@ -113,8 +132,12 @@ impl BarChartSortConfigurationBuilder {
         self
     }
     /// <p>The limit on the number of values displayed in a bar chart.</p>
-    pub fn set_color_items_limit(mut self, input: std::option::Option<crate::types::ItemsLimitConfiguration>) -> Self {
-        self.color_items_limit = input; self
+    pub fn set_color_items_limit(
+        mut self,
+        input: std::option::Option<crate::types::ItemsLimitConfiguration>,
+    ) -> Self {
+        self.color_items_limit = input;
+        self
     }
     /// Appends an item to `small_multiples_sort`.
     ///
@@ -123,39 +146,43 @@ impl BarChartSortConfigurationBuilder {
     /// <p>The sort configuration of the small multiples field.</p>
     pub fn small_multiples_sort(mut self, input: crate::types::FieldSortOptions) -> Self {
         let mut v = self.small_multiples_sort.unwrap_or_default();
-                        v.push(input);
-                        self.small_multiples_sort = Some(v);
-                        self
+        v.push(input);
+        self.small_multiples_sort = Some(v);
+        self
     }
     /// <p>The sort configuration of the small multiples field.</p>
-    pub fn set_small_multiples_sort(mut self, input: std::option::Option<std::vec::Vec<crate::types::FieldSortOptions>>) -> Self {
-        self.small_multiples_sort = input; self
+    pub fn set_small_multiples_sort(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::FieldSortOptions>>,
+    ) -> Self {
+        self.small_multiples_sort = input;
+        self
     }
     /// <p>The limit on the number of small multiples panels that are displayed.</p>
-    pub fn small_multiples_limit_configuration(mut self, input: crate::types::ItemsLimitConfiguration) -> Self {
+    pub fn small_multiples_limit_configuration(
+        mut self,
+        input: crate::types::ItemsLimitConfiguration,
+    ) -> Self {
         self.small_multiples_limit_configuration = Some(input);
         self
     }
     /// <p>The limit on the number of small multiples panels that are displayed.</p>
-    pub fn set_small_multiples_limit_configuration(mut self, input: std::option::Option<crate::types::ItemsLimitConfiguration>) -> Self {
-        self.small_multiples_limit_configuration = input; self
+    pub fn set_small_multiples_limit_configuration(
+        mut self,
+        input: std::option::Option<crate::types::ItemsLimitConfiguration>,
+    ) -> Self {
+        self.small_multiples_limit_configuration = input;
+        self
     }
     /// Consumes the builder and constructs a [`BarChartSortConfiguration`](crate::types::BarChartSortConfiguration).
     pub fn build(self) -> crate::types::BarChartSortConfiguration {
         crate::types::BarChartSortConfiguration {
-            category_sort: self.category_sort
-            ,
-            category_items_limit: self.category_items_limit
-            ,
-            color_sort: self.color_sort
-            ,
-            color_items_limit: self.color_items_limit
-            ,
-            small_multiples_sort: self.small_multiples_sort
-            ,
-            small_multiples_limit_configuration: self.small_multiples_limit_configuration
-            ,
+            category_sort: self.category_sort,
+            category_items_limit: self.category_items_limit,
+            color_sort: self.color_sort,
+            color_items_limit: self.color_items_limit,
+            small_multiples_sort: self.small_multiples_sort,
+            small_multiples_limit_configuration: self.small_multiples_limit_configuration,
         }
     }
 }
-

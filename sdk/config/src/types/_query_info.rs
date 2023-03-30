@@ -3,14 +3,14 @@
 /// <p>Details about the query.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct QueryInfo  {
+pub struct QueryInfo {
     /// <p>Returns a <code>FieldInfo</code> object.</p>
     #[doc(hidden)]
     pub select_fields: std::option::Option<std::vec::Vec<crate::types::FieldInfo>>,
 }
 impl QueryInfo {
     /// <p>Returns a <code>FieldInfo</code> object.</p>
-    pub fn select_fields(&self) -> std::option::Option<& [crate::types::FieldInfo]> {
+    pub fn select_fields(&self) -> std::option::Option<&[crate::types::FieldInfo]> {
         self.select_fields.as_deref()
     }
 }
@@ -35,20 +35,22 @@ impl QueryInfoBuilder {
     /// <p>Returns a <code>FieldInfo</code> object.</p>
     pub fn select_fields(mut self, input: crate::types::FieldInfo) -> Self {
         let mut v = self.select_fields.unwrap_or_default();
-                        v.push(input);
-                        self.select_fields = Some(v);
-                        self
+        v.push(input);
+        self.select_fields = Some(v);
+        self
     }
     /// <p>Returns a <code>FieldInfo</code> object.</p>
-    pub fn set_select_fields(mut self, input: std::option::Option<std::vec::Vec<crate::types::FieldInfo>>) -> Self {
-        self.select_fields = input; self
+    pub fn set_select_fields(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::FieldInfo>>,
+    ) -> Self {
+        self.select_fields = input;
+        self
     }
     /// Consumes the builder and constructs a [`QueryInfo`](crate::types::QueryInfo).
     pub fn build(self) -> crate::types::QueryInfo {
         crate::types::QueryInfo {
-            select_fields: self.select_fields
-            ,
+            select_fields: self.select_fields,
         }
     }
 }
-

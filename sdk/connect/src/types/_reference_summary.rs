@@ -30,7 +30,11 @@ impl ReferenceSummary {
     /// Tries to convert the enum instance into [`Attachment`](crate::types::ReferenceSummary::Attachment), extracting the inner [`AttachmentReference`](crate::types::AttachmentReference).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_attachment(&self) -> std::result::Result<&crate::types::AttachmentReference, &Self> {
-        if let ReferenceSummary::Attachment(val) = &self { Ok(val) } else { Err(self) }
+        if let ReferenceSummary::Attachment(val) = &self {
+            Ok(val)
+        } else {
+            Err(self)
+        }
     }
     /// Returns true if this is a [`Attachment`](crate::types::ReferenceSummary::Attachment).
     pub fn is_attachment(&self) -> bool {
@@ -39,7 +43,11 @@ impl ReferenceSummary {
     /// Tries to convert the enum instance into [`Date`](crate::types::ReferenceSummary::Date), extracting the inner [`DateReference`](crate::types::DateReference).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_date(&self) -> std::result::Result<&crate::types::DateReference, &Self> {
-        if let ReferenceSummary::Date(val) = &self { Ok(val) } else { Err(self) }
+        if let ReferenceSummary::Date(val) = &self {
+            Ok(val)
+        } else {
+            Err(self)
+        }
     }
     /// Returns true if this is a [`Date`](crate::types::ReferenceSummary::Date).
     pub fn is_date(&self) -> bool {
@@ -48,7 +56,11 @@ impl ReferenceSummary {
     /// Tries to convert the enum instance into [`Email`](crate::types::ReferenceSummary::Email), extracting the inner [`EmailReference`](crate::types::EmailReference).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_email(&self) -> std::result::Result<&crate::types::EmailReference, &Self> {
-        if let ReferenceSummary::Email(val) = &self { Ok(val) } else { Err(self) }
+        if let ReferenceSummary::Email(val) = &self {
+            Ok(val)
+        } else {
+            Err(self)
+        }
     }
     /// Returns true if this is a [`Email`](crate::types::ReferenceSummary::Email).
     pub fn is_email(&self) -> bool {
@@ -57,7 +69,11 @@ impl ReferenceSummary {
     /// Tries to convert the enum instance into [`Number`](crate::types::ReferenceSummary::Number), extracting the inner [`NumberReference`](crate::types::NumberReference).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_number(&self) -> std::result::Result<&crate::types::NumberReference, &Self> {
-        if let ReferenceSummary::Number(val) = &self { Ok(val) } else { Err(self) }
+        if let ReferenceSummary::Number(val) = &self {
+            Ok(val)
+        } else {
+            Err(self)
+        }
     }
     /// Returns true if this is a [`Number`](crate::types::ReferenceSummary::Number).
     pub fn is_number(&self) -> bool {
@@ -66,7 +82,11 @@ impl ReferenceSummary {
     /// Tries to convert the enum instance into [`String`](crate::types::ReferenceSummary::String), extracting the inner [`StringReference`](crate::types::StringReference).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_string(&self) -> std::result::Result<&crate::types::StringReference, &Self> {
-        if let ReferenceSummary::String(val) = &self { Ok(val) } else { Err(self) }
+        if let ReferenceSummary::String(val) = &self {
+            Ok(val)
+        } else {
+            Err(self)
+        }
     }
     /// Returns true if this is a [`String`](crate::types::ReferenceSummary::String).
     pub fn is_string(&self) -> bool {
@@ -75,7 +95,11 @@ impl ReferenceSummary {
     /// Tries to convert the enum instance into [`Url`](crate::types::ReferenceSummary::Url), extracting the inner [`UrlReference`](crate::types::UrlReference).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_url(&self) -> std::result::Result<&crate::types::UrlReference, &Self> {
-        if let ReferenceSummary::Url(val) = &self { Ok(val) } else { Err(self) }
+        if let ReferenceSummary::Url(val) = &self {
+            Ok(val)
+        } else {
+            Err(self)
+        }
     }
     /// Returns true if this is a [`Url`](crate::types::ReferenceSummary::Url).
     pub fn is_url(&self) -> bool {
@@ -86,4 +110,3 @@ impl ReferenceSummary {
         matches!(self, Self::Unknown)
     }
 }
-

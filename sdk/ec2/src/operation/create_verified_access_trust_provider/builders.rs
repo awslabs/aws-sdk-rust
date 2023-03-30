@@ -4,56 +4,68 @@ pub use crate::operation::create_verified_access_trust_provider::_create_verifie
 pub use crate::operation::create_verified_access_trust_provider::_create_verified_access_trust_provider_input::CreateVerifiedAccessTrustProviderInputBuilder;
 
 /// Fluent builder constructing a request to `CreateVerifiedAccessTrustProvider`.
-/// 
+///
 /// <p>A trust provider is a third-party entity that creates, maintains, and manages identity information for users and devices. When an application request is made, the identity information sent by the trust provider will be evaluated by Amazon Web Services Verified Access, before allowing or denying the application request.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct CreateVerifiedAccessTrustProviderFluentBuilder {
                 handle: std::sync::Arc<crate::client::Handle>,
                 inner: crate::operation::create_verified_access_trust_provider::builders::CreateVerifiedAccessTrustProviderInputBuilder
             }
-impl CreateVerifiedAccessTrustProviderFluentBuilder  {
+impl CreateVerifiedAccessTrustProviderFluentBuilder {
     /// Creates a new `CreateVerifiedAccessTrustProvider`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
-                    /// sent. The operation's inner [http::Request] can be modified as well.
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle,
+            inner: Default::default(),
+        }
+    }
+
+    /// Consume this builder, creating a customizable operation that can be modified before being
+    /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::create_verified_access_trust_provider::CreateVerifiedAccessTrustProvider, aws_http::retry::AwsResponseRetryClassifier,>,
                         aws_smithy_http::result::SdkError<crate::operation::create_verified_access_trust_provider::CreateVerifiedAccessTrustProviderError>
-                    >  {
-                        let handle = self.handle.clone();
-                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-                    }
-    
-                    /// Sends the request and returns the response.
-                    ///
-                    /// If an error occurs, an `SdkError` will be returned with additional details that
-                    /// can be matched against.
-                    ///
-                    /// By default, any retryable failures will be retried twice. Retry behavior
-                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                    /// set when configuring the client.
+    >{
+        let handle = self.handle.clone();
+        let operation = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+    }
+
+    /// Sends the request and returns the response.
+    ///
+    /// If an error occurs, an `SdkError` will be returned with additional details that
+    /// can be matched against.
+    ///
+    /// By default, any retryable failures will be retried twice. Retry behavior
+    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+    /// set when configuring the client.
                     pub async fn send(self) -> std::result::Result<crate::operation::create_verified_access_trust_provider::CreateVerifiedAccessTrustProviderOutput, aws_smithy_http::result::SdkError<crate::operation::create_verified_access_trust_provider::CreateVerifiedAccessTrustProviderError>>
                      {
-                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&self.handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        self.handle.client.call(op).await
-                    }
+        let op = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&self.handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        self.handle.client.call(op).await
+    }
     /// <p>The type of trust provider can be either user or device-based.</p>
     pub fn trust_provider_type(mut self, input: crate::types::TrustProviderType) -> Self {
         self.inner = self.inner.trust_provider_type(input);
         self
     }
     /// <p>The type of trust provider can be either user or device-based.</p>
-    pub fn set_trust_provider_type(mut self, input: std::option::Option<crate::types::TrustProviderType>) -> Self {
+    pub fn set_trust_provider_type(
+        mut self,
+        input: std::option::Option<crate::types::TrustProviderType>,
+    ) -> Self {
         self.inner = self.inner.set_trust_provider_type(input);
         self
     }
@@ -63,37 +75,58 @@ impl CreateVerifiedAccessTrustProviderFluentBuilder  {
         self
     }
     /// <p>The type of user-based trust provider.</p>
-    pub fn set_user_trust_provider_type(mut self, input: std::option::Option<crate::types::UserTrustProviderType>) -> Self {
+    pub fn set_user_trust_provider_type(
+        mut self,
+        input: std::option::Option<crate::types::UserTrustProviderType>,
+    ) -> Self {
         self.inner = self.inner.set_user_trust_provider_type(input);
         self
     }
     /// <p>The type of device-based trust provider.</p>
-    pub fn device_trust_provider_type(mut self, input: crate::types::DeviceTrustProviderType) -> Self {
+    pub fn device_trust_provider_type(
+        mut self,
+        input: crate::types::DeviceTrustProviderType,
+    ) -> Self {
         self.inner = self.inner.device_trust_provider_type(input);
         self
     }
     /// <p>The type of device-based trust provider.</p>
-    pub fn set_device_trust_provider_type(mut self, input: std::option::Option<crate::types::DeviceTrustProviderType>) -> Self {
+    pub fn set_device_trust_provider_type(
+        mut self,
+        input: std::option::Option<crate::types::DeviceTrustProviderType>,
+    ) -> Self {
         self.inner = self.inner.set_device_trust_provider_type(input);
         self
     }
     /// <p>The OpenID Connect details for an <code>oidc</code>-type, user-identity based trust provider.</p>
-    pub fn oidc_options(mut self, input: crate::types::CreateVerifiedAccessTrustProviderOidcOptions) -> Self {
+    pub fn oidc_options(
+        mut self,
+        input: crate::types::CreateVerifiedAccessTrustProviderOidcOptions,
+    ) -> Self {
         self.inner = self.inner.oidc_options(input);
         self
     }
     /// <p>The OpenID Connect details for an <code>oidc</code>-type, user-identity based trust provider.</p>
-    pub fn set_oidc_options(mut self, input: std::option::Option<crate::types::CreateVerifiedAccessTrustProviderOidcOptions>) -> Self {
+    pub fn set_oidc_options(
+        mut self,
+        input: std::option::Option<crate::types::CreateVerifiedAccessTrustProviderOidcOptions>,
+    ) -> Self {
         self.inner = self.inner.set_oidc_options(input);
         self
     }
     /// <p>The options for device identity based trust providers.</p>
-    pub fn device_options(mut self, input: crate::types::CreateVerifiedAccessTrustProviderDeviceOptions) -> Self {
+    pub fn device_options(
+        mut self,
+        input: crate::types::CreateVerifiedAccessTrustProviderDeviceOptions,
+    ) -> Self {
         self.inner = self.inner.device_options(input);
         self
     }
     /// <p>The options for device identity based trust providers.</p>
-    pub fn set_device_options(mut self, input: std::option::Option<crate::types::CreateVerifiedAccessTrustProviderDeviceOptions>) -> Self {
+    pub fn set_device_options(
+        mut self,
+        input: std::option::Option<crate::types::CreateVerifiedAccessTrustProviderDeviceOptions>,
+    ) -> Self {
         self.inner = self.inner.set_device_options(input);
         self
     }
@@ -103,7 +136,10 @@ impl CreateVerifiedAccessTrustProviderFluentBuilder  {
         self
     }
     /// <p>The identifier to be used when working with policy rules.</p>
-    pub fn set_policy_reference_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_policy_reference_name(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_policy_reference_name(input);
         self
     }
@@ -127,7 +163,10 @@ impl CreateVerifiedAccessTrustProviderFluentBuilder  {
         self
     }
     /// <p>The tags to assign to the Amazon Web Services Verified Access trust provider.</p>
-    pub fn set_tag_specifications(mut self, input: std::option::Option<std::vec::Vec<crate::types::TagSpecification>>) -> Self {
+    pub fn set_tag_specifications(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::TagSpecification>>,
+    ) -> Self {
         self.inner = self.inner.set_tag_specifications(input);
         self
     }
@@ -152,4 +191,3 @@ impl CreateVerifiedAccessTrustProviderFluentBuilder  {
         self
     }
 }
-

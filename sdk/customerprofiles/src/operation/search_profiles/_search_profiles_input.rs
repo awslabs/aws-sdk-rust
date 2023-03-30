@@ -2,11 +2,11 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SearchProfilesInput  {
+pub struct SearchProfilesInput {
     /// <p>The pagination token from the previous SearchProfiles API call.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
-    /// <p>The maximum number of objects returned per page.</p> 
+    /// <p>The maximum number of objects returned per page.</p>
     /// <p>The default is 20 if this parameter is not included in the request.</p>
     #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
@@ -21,51 +21,54 @@ pub struct SearchProfilesInput  {
     pub values: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>A list of <code>AdditionalSearchKey</code> objects that are each searchable identifiers of a profile. Each <code>AdditionalSearchKey</code> object contains a <code>KeyName</code> and a list of <code>Values</code> associated with that specific key (i.e., a key-value(s) pair). These additional search keys will be used in conjunction with the <code>LogicalOperator</code> and the required <code>KeyName</code> and <code>Values</code> parameters to search for profiles that satisfy the search criteria. </p>
     #[doc(hidden)]
-    pub additional_search_keys: std::option::Option<std::vec::Vec<crate::types::AdditionalSearchKey>>,
-    /// <p>Relationship between all specified search keys that will be used to search for profiles. This includes the required <code>KeyName</code> and <code>Values</code> parameters as well as any key-value(s) pairs specified in the <code>AdditionalSearchKeys</code> list.</p> 
-    /// <p>This parameter influences which profiles will be returned in the response in the following manner:</p> 
-    /// <ul> 
-    /// <li> <p> <code>AND</code> - The response only includes profiles that match all of the search keys.</p> </li> 
-    /// <li> <p> <code>OR</code> - The response includes profiles that match at least one of the search keys.</p> </li> 
-    /// </ul> 
+    pub additional_search_keys:
+        std::option::Option<std::vec::Vec<crate::types::AdditionalSearchKey>>,
+    /// <p>Relationship between all specified search keys that will be used to search for profiles. This includes the required <code>KeyName</code> and <code>Values</code> parameters as well as any key-value(s) pairs specified in the <code>AdditionalSearchKeys</code> list.</p>
+    /// <p>This parameter influences which profiles will be returned in the response in the following manner:</p>
+    /// <ul>
+    /// <li> <p> <code>AND</code> - The response only includes profiles that match all of the search keys.</p> </li>
+    /// <li> <p> <code>OR</code> - The response includes profiles that match at least one of the search keys.</p> </li>
+    /// </ul>
     /// <p>The <code>OR</code> relationship is the default behavior if this parameter is not included in the request.</p>
     #[doc(hidden)]
     pub logical_operator: std::option::Option<crate::types::LogicalOperator>,
 }
 impl SearchProfilesInput {
     /// <p>The pagination token from the previous SearchProfiles API call.</p>
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// <p>The maximum number of objects returned per page.</p> 
+    /// <p>The maximum number of objects returned per page.</p>
     /// <p>The default is 20 if this parameter is not included in the request.</p>
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
     /// <p>The unique name of the domain.</p>
-    pub fn domain_name(&self) -> std::option::Option<& str> {
+    pub fn domain_name(&self) -> std::option::Option<&str> {
         self.domain_name.as_deref()
     }
     /// <p>A searchable identifier of a customer profile. The predefined keys you can use to search include: _account, _profileId, _assetId, _caseId, _orderId, _fullName, _phone, _email, _ctrContactId, _marketoLeadId, _salesforceAccountId, _salesforceContactId, _salesforceAssetId, _zendeskUserId, _zendeskExternalId, _zendeskTicketId, _serviceNowSystemId, _serviceNowIncidentId, _segmentUserId, _shopifyCustomerId, _shopifyOrderId.</p>
-    pub fn key_name(&self) -> std::option::Option<& str> {
+    pub fn key_name(&self) -> std::option::Option<&str> {
         self.key_name.as_deref()
     }
     /// <p>A list of key values.</p>
-    pub fn values(&self) -> std::option::Option<& [std::string::String]> {
+    pub fn values(&self) -> std::option::Option<&[std::string::String]> {
         self.values.as_deref()
     }
     /// <p>A list of <code>AdditionalSearchKey</code> objects that are each searchable identifiers of a profile. Each <code>AdditionalSearchKey</code> object contains a <code>KeyName</code> and a list of <code>Values</code> associated with that specific key (i.e., a key-value(s) pair). These additional search keys will be used in conjunction with the <code>LogicalOperator</code> and the required <code>KeyName</code> and <code>Values</code> parameters to search for profiles that satisfy the search criteria. </p>
-    pub fn additional_search_keys(&self) -> std::option::Option<& [crate::types::AdditionalSearchKey]> {
+    pub fn additional_search_keys(
+        &self,
+    ) -> std::option::Option<&[crate::types::AdditionalSearchKey]> {
         self.additional_search_keys.as_deref()
     }
-    /// <p>Relationship between all specified search keys that will be used to search for profiles. This includes the required <code>KeyName</code> and <code>Values</code> parameters as well as any key-value(s) pairs specified in the <code>AdditionalSearchKeys</code> list.</p> 
-    /// <p>This parameter influences which profiles will be returned in the response in the following manner:</p> 
-    /// <ul> 
-    /// <li> <p> <code>AND</code> - The response only includes profiles that match all of the search keys.</p> </li> 
-    /// <li> <p> <code>OR</code> - The response includes profiles that match at least one of the search keys.</p> </li> 
-    /// </ul> 
+    /// <p>Relationship between all specified search keys that will be used to search for profiles. This includes the required <code>KeyName</code> and <code>Values</code> parameters as well as any key-value(s) pairs specified in the <code>AdditionalSearchKeys</code> list.</p>
+    /// <p>This parameter influences which profiles will be returned in the response in the following manner:</p>
+    /// <ul>
+    /// <li> <p> <code>AND</code> - The response only includes profiles that match all of the search keys.</p> </li>
+    /// <li> <p> <code>OR</code> - The response includes profiles that match at least one of the search keys.</p> </li>
+    /// </ul>
     /// <p>The <code>OR</code> relationship is the default behavior if this parameter is not included in the request.</p>
-    pub fn logical_operator(&self) -> std::option::Option<& crate::types::LogicalOperator> {
+    pub fn logical_operator(&self) -> std::option::Option<&crate::types::LogicalOperator> {
         self.logical_operator.as_ref()
     }
 }
@@ -85,7 +88,8 @@ pub struct SearchProfilesInputBuilder {
     pub(crate) domain_name: std::option::Option<std::string::String>,
     pub(crate) key_name: std::option::Option<std::string::String>,
     pub(crate) values: std::option::Option<std::vec::Vec<std::string::String>>,
-    pub(crate) additional_search_keys: std::option::Option<std::vec::Vec<crate::types::AdditionalSearchKey>>,
+    pub(crate) additional_search_keys:
+        std::option::Option<std::vec::Vec<crate::types::AdditionalSearchKey>>,
     pub(crate) logical_operator: std::option::Option<crate::types::LogicalOperator>,
 }
 impl SearchProfilesInputBuilder {
@@ -96,18 +100,20 @@ impl SearchProfilesInputBuilder {
     }
     /// <p>The pagination token from the previous SearchProfiles API call.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input; self
+        self.next_token = input;
+        self
     }
-    /// <p>The maximum number of objects returned per page.</p> 
+    /// <p>The maximum number of objects returned per page.</p>
     /// <p>The default is 20 if this parameter is not included in the request.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.max_results = Some(input);
         self
     }
-    /// <p>The maximum number of objects returned per page.</p> 
+    /// <p>The maximum number of objects returned per page.</p>
     /// <p>The default is 20 if this parameter is not included in the request.</p>
     pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_results = input; self
+        self.max_results = input;
+        self
     }
     /// <p>The unique name of the domain.</p>
     pub fn domain_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -116,7 +122,8 @@ impl SearchProfilesInputBuilder {
     }
     /// <p>The unique name of the domain.</p>
     pub fn set_domain_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.domain_name = input; self
+        self.domain_name = input;
+        self
     }
     /// <p>A searchable identifier of a customer profile. The predefined keys you can use to search include: _account, _profileId, _assetId, _caseId, _orderId, _fullName, _phone, _email, _ctrContactId, _marketoLeadId, _salesforceAccountId, _salesforceContactId, _salesforceAssetId, _zendeskUserId, _zendeskExternalId, _zendeskTicketId, _serviceNowSystemId, _serviceNowIncidentId, _segmentUserId, _shopifyCustomerId, _shopifyOrderId.</p>
     pub fn key_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -125,7 +132,8 @@ impl SearchProfilesInputBuilder {
     }
     /// <p>A searchable identifier of a customer profile. The predefined keys you can use to search include: _account, _profileId, _assetId, _caseId, _orderId, _fullName, _phone, _email, _ctrContactId, _marketoLeadId, _salesforceAccountId, _salesforceContactId, _salesforceAssetId, _zendeskUserId, _zendeskExternalId, _zendeskTicketId, _serviceNowSystemId, _serviceNowIncidentId, _segmentUserId, _shopifyCustomerId, _shopifyOrderId.</p>
     pub fn set_key_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.key_name = input; self
+        self.key_name = input;
+        self
     }
     /// Appends an item to `values`.
     ///
@@ -134,13 +142,17 @@ impl SearchProfilesInputBuilder {
     /// <p>A list of key values.</p>
     pub fn values(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.values.unwrap_or_default();
-                        v.push(input.into());
-                        self.values = Some(v);
-                        self
+        v.push(input.into());
+        self.values = Some(v);
+        self
     }
     /// <p>A list of key values.</p>
-    pub fn set_values(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-        self.values = input; self
+    pub fn set_values(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
+        self.values = input;
+        self
     }
     /// Appends an item to `additional_search_keys`.
     ///
@@ -149,55 +161,58 @@ impl SearchProfilesInputBuilder {
     /// <p>A list of <code>AdditionalSearchKey</code> objects that are each searchable identifiers of a profile. Each <code>AdditionalSearchKey</code> object contains a <code>KeyName</code> and a list of <code>Values</code> associated with that specific key (i.e., a key-value(s) pair). These additional search keys will be used in conjunction with the <code>LogicalOperator</code> and the required <code>KeyName</code> and <code>Values</code> parameters to search for profiles that satisfy the search criteria. </p>
     pub fn additional_search_keys(mut self, input: crate::types::AdditionalSearchKey) -> Self {
         let mut v = self.additional_search_keys.unwrap_or_default();
-                        v.push(input);
-                        self.additional_search_keys = Some(v);
-                        self
+        v.push(input);
+        self.additional_search_keys = Some(v);
+        self
     }
     /// <p>A list of <code>AdditionalSearchKey</code> objects that are each searchable identifiers of a profile. Each <code>AdditionalSearchKey</code> object contains a <code>KeyName</code> and a list of <code>Values</code> associated with that specific key (i.e., a key-value(s) pair). These additional search keys will be used in conjunction with the <code>LogicalOperator</code> and the required <code>KeyName</code> and <code>Values</code> parameters to search for profiles that satisfy the search criteria. </p>
-    pub fn set_additional_search_keys(mut self, input: std::option::Option<std::vec::Vec<crate::types::AdditionalSearchKey>>) -> Self {
-        self.additional_search_keys = input; self
+    pub fn set_additional_search_keys(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::AdditionalSearchKey>>,
+    ) -> Self {
+        self.additional_search_keys = input;
+        self
     }
-    /// <p>Relationship between all specified search keys that will be used to search for profiles. This includes the required <code>KeyName</code> and <code>Values</code> parameters as well as any key-value(s) pairs specified in the <code>AdditionalSearchKeys</code> list.</p> 
-    /// <p>This parameter influences which profiles will be returned in the response in the following manner:</p> 
-    /// <ul> 
-    /// <li> <p> <code>AND</code> - The response only includes profiles that match all of the search keys.</p> </li> 
-    /// <li> <p> <code>OR</code> - The response includes profiles that match at least one of the search keys.</p> </li> 
-    /// </ul> 
+    /// <p>Relationship between all specified search keys that will be used to search for profiles. This includes the required <code>KeyName</code> and <code>Values</code> parameters as well as any key-value(s) pairs specified in the <code>AdditionalSearchKeys</code> list.</p>
+    /// <p>This parameter influences which profiles will be returned in the response in the following manner:</p>
+    /// <ul>
+    /// <li> <p> <code>AND</code> - The response only includes profiles that match all of the search keys.</p> </li>
+    /// <li> <p> <code>OR</code> - The response includes profiles that match at least one of the search keys.</p> </li>
+    /// </ul>
     /// <p>The <code>OR</code> relationship is the default behavior if this parameter is not included in the request.</p>
     pub fn logical_operator(mut self, input: crate::types::LogicalOperator) -> Self {
         self.logical_operator = Some(input);
         self
     }
-    /// <p>Relationship between all specified search keys that will be used to search for profiles. This includes the required <code>KeyName</code> and <code>Values</code> parameters as well as any key-value(s) pairs specified in the <code>AdditionalSearchKeys</code> list.</p> 
-    /// <p>This parameter influences which profiles will be returned in the response in the following manner:</p> 
-    /// <ul> 
-    /// <li> <p> <code>AND</code> - The response only includes profiles that match all of the search keys.</p> </li> 
-    /// <li> <p> <code>OR</code> - The response includes profiles that match at least one of the search keys.</p> </li> 
-    /// </ul> 
+    /// <p>Relationship between all specified search keys that will be used to search for profiles. This includes the required <code>KeyName</code> and <code>Values</code> parameters as well as any key-value(s) pairs specified in the <code>AdditionalSearchKeys</code> list.</p>
+    /// <p>This parameter influences which profiles will be returned in the response in the following manner:</p>
+    /// <ul>
+    /// <li> <p> <code>AND</code> - The response only includes profiles that match all of the search keys.</p> </li>
+    /// <li> <p> <code>OR</code> - The response includes profiles that match at least one of the search keys.</p> </li>
+    /// </ul>
     /// <p>The <code>OR</code> relationship is the default behavior if this parameter is not included in the request.</p>
-    pub fn set_logical_operator(mut self, input: std::option::Option<crate::types::LogicalOperator>) -> Self {
-        self.logical_operator = input; self
+    pub fn set_logical_operator(
+        mut self,
+        input: std::option::Option<crate::types::LogicalOperator>,
+    ) -> Self {
+        self.logical_operator = input;
+        self
     }
     /// Consumes the builder and constructs a [`SearchProfilesInput`](crate::operation::search_profiles::SearchProfilesInput).
-    pub fn build(self) -> Result<crate::operation::search_profiles::SearchProfilesInput, aws_smithy_http::operation::error::BuildError> {
-        Ok(
-            crate::operation::search_profiles::SearchProfilesInput {
-                next_token: self.next_token
-                ,
-                max_results: self.max_results
-                ,
-                domain_name: self.domain_name
-                ,
-                key_name: self.key_name
-                ,
-                values: self.values
-                ,
-                additional_search_keys: self.additional_search_keys
-                ,
-                logical_operator: self.logical_operator
-                ,
-            }
-        )
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::search_profiles::SearchProfilesInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        Ok(crate::operation::search_profiles::SearchProfilesInput {
+            next_token: self.next_token,
+            max_results: self.max_results,
+            domain_name: self.domain_name,
+            key_name: self.key_name,
+            values: self.values,
+            additional_search_keys: self.additional_search_keys,
+            logical_operator: self.logical_operator,
+        })
     }
 }
-

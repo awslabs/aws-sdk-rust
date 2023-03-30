@@ -3,7 +3,7 @@
 /// <p>A single resource returned as part of the <code>Search</code> API response.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SearchRecord  {
+pub struct SearchRecord {
     /// <p>The properties of a training job.</p>
     #[doc(hidden)]
     pub training_job: std::option::Option<crate::types::TrainingJob>,
@@ -42,7 +42,8 @@ pub struct SearchRecord  {
     pub feature_metadata: std::option::Option<crate::types::FeatureMetadata>,
     /// <p>The properties of a hyperparameter tuning job.</p>
     #[doc(hidden)]
-    pub hyper_parameter_tuning_job: std::option::Option<crate::types::HyperParameterTuningJobSearchEntity>,
+    pub hyper_parameter_tuning_job:
+        std::option::Option<crate::types::HyperParameterTuningJobSearchEntity>,
     /// <p>A model displayed in the Amazon SageMaker Model Dashboard.</p>
     #[doc(hidden)]
     pub model: std::option::Option<crate::types::ModelDashboardModel>,
@@ -52,63 +53,65 @@ pub struct SearchRecord  {
 }
 impl SearchRecord {
     /// <p>The properties of a training job.</p>
-    pub fn training_job(&self) -> std::option::Option<& crate::types::TrainingJob> {
+    pub fn training_job(&self) -> std::option::Option<&crate::types::TrainingJob> {
         self.training_job.as_ref()
     }
     /// <p>The properties of an experiment.</p>
-    pub fn experiment(&self) -> std::option::Option<& crate::types::Experiment> {
+    pub fn experiment(&self) -> std::option::Option<&crate::types::Experiment> {
         self.experiment.as_ref()
     }
     /// <p>The properties of a trial.</p>
-    pub fn trial(&self) -> std::option::Option<& crate::types::Trial> {
+    pub fn trial(&self) -> std::option::Option<&crate::types::Trial> {
         self.trial.as_ref()
     }
     /// <p>The properties of a trial component.</p>
-    pub fn trial_component(&self) -> std::option::Option<& crate::types::TrialComponent> {
+    pub fn trial_component(&self) -> std::option::Option<&crate::types::TrialComponent> {
         self.trial_component.as_ref()
     }
     /// <p>A hosted endpoint for real-time inference.</p>
-    pub fn endpoint(&self) -> std::option::Option<& crate::types::Endpoint> {
+    pub fn endpoint(&self) -> std::option::Option<&crate::types::Endpoint> {
         self.endpoint.as_ref()
     }
     /// <p>A versioned model that can be deployed for SageMaker inference.</p>
-    pub fn model_package(&self) -> std::option::Option<& crate::types::ModelPackage> {
+    pub fn model_package(&self) -> std::option::Option<&crate::types::ModelPackage> {
         self.model_package.as_ref()
     }
     /// <p>A group of versioned models in the model registry.</p>
-    pub fn model_package_group(&self) -> std::option::Option<& crate::types::ModelPackageGroup> {
+    pub fn model_package_group(&self) -> std::option::Option<&crate::types::ModelPackageGroup> {
         self.model_package_group.as_ref()
     }
     /// <p>A SageMaker Model Building Pipeline instance.</p>
-    pub fn pipeline(&self) -> std::option::Option<& crate::types::Pipeline> {
+    pub fn pipeline(&self) -> std::option::Option<&crate::types::Pipeline> {
         self.pipeline.as_ref()
     }
     /// <p>An execution of a pipeline.</p>
-    pub fn pipeline_execution(&self) -> std::option::Option<& crate::types::PipelineExecution> {
+    pub fn pipeline_execution(&self) -> std::option::Option<&crate::types::PipelineExecution> {
         self.pipeline_execution.as_ref()
     }
     /// <p>Amazon SageMaker Feature Store stores features in a collection called Feature Group. A Feature Group can be visualized as a table which has rows, with a unique identifier for each row where each column in the table is a feature. In principle, a Feature Group is composed of features and values per features.</p>
-    pub fn feature_group(&self) -> std::option::Option<& crate::types::FeatureGroup> {
+    pub fn feature_group(&self) -> std::option::Option<&crate::types::FeatureGroup> {
         self.feature_group.as_ref()
     }
     /// <p>The properties of a project.</p>
-    pub fn project(&self) -> std::option::Option<& crate::types::Project> {
+    pub fn project(&self) -> std::option::Option<&crate::types::Project> {
         self.project.as_ref()
     }
     /// <p>The feature metadata used to search through the features.</p>
-    pub fn feature_metadata(&self) -> std::option::Option<& crate::types::FeatureMetadata> {
+    pub fn feature_metadata(&self) -> std::option::Option<&crate::types::FeatureMetadata> {
         self.feature_metadata.as_ref()
     }
     /// <p>The properties of a hyperparameter tuning job.</p>
-    pub fn hyper_parameter_tuning_job(&self) -> std::option::Option<& crate::types::HyperParameterTuningJobSearchEntity> {
+    pub fn hyper_parameter_tuning_job(
+        &self,
+    ) -> std::option::Option<&crate::types::HyperParameterTuningJobSearchEntity> {
         self.hyper_parameter_tuning_job.as_ref()
     }
     /// <p>A model displayed in the Amazon SageMaker Model Dashboard.</p>
-    pub fn model(&self) -> std::option::Option<& crate::types::ModelDashboardModel> {
+    pub fn model(&self) -> std::option::Option<&crate::types::ModelDashboardModel> {
         self.model.as_ref()
     }
     /// <p>An Amazon SageMaker Model Card that documents details about a machine learning model.</p>
-    pub fn model_card(&self) -> std::option::Option<& crate::types::ModelCard> {
+    pub fn model_card(&self) -> std::option::Option<&crate::types::ModelCard> {
         self.model_card.as_ref()
     }
 }
@@ -135,7 +138,8 @@ pub struct SearchRecordBuilder {
     pub(crate) feature_group: std::option::Option<crate::types::FeatureGroup>,
     pub(crate) project: std::option::Option<crate::types::Project>,
     pub(crate) feature_metadata: std::option::Option<crate::types::FeatureMetadata>,
-    pub(crate) hyper_parameter_tuning_job: std::option::Option<crate::types::HyperParameterTuningJobSearchEntity>,
+    pub(crate) hyper_parameter_tuning_job:
+        std::option::Option<crate::types::HyperParameterTuningJobSearchEntity>,
     pub(crate) model: std::option::Option<crate::types::ModelDashboardModel>,
     pub(crate) model_card: std::option::Option<crate::types::ModelCard>,
 }
@@ -146,8 +150,12 @@ impl SearchRecordBuilder {
         self
     }
     /// <p>The properties of a training job.</p>
-    pub fn set_training_job(mut self, input: std::option::Option<crate::types::TrainingJob>) -> Self {
-        self.training_job = input; self
+    pub fn set_training_job(
+        mut self,
+        input: std::option::Option<crate::types::TrainingJob>,
+    ) -> Self {
+        self.training_job = input;
+        self
     }
     /// <p>The properties of an experiment.</p>
     pub fn experiment(mut self, input: crate::types::Experiment) -> Self {
@@ -156,7 +164,8 @@ impl SearchRecordBuilder {
     }
     /// <p>The properties of an experiment.</p>
     pub fn set_experiment(mut self, input: std::option::Option<crate::types::Experiment>) -> Self {
-        self.experiment = input; self
+        self.experiment = input;
+        self
     }
     /// <p>The properties of a trial.</p>
     pub fn trial(mut self, input: crate::types::Trial) -> Self {
@@ -165,7 +174,8 @@ impl SearchRecordBuilder {
     }
     /// <p>The properties of a trial.</p>
     pub fn set_trial(mut self, input: std::option::Option<crate::types::Trial>) -> Self {
-        self.trial = input; self
+        self.trial = input;
+        self
     }
     /// <p>The properties of a trial component.</p>
     pub fn trial_component(mut self, input: crate::types::TrialComponent) -> Self {
@@ -173,8 +183,12 @@ impl SearchRecordBuilder {
         self
     }
     /// <p>The properties of a trial component.</p>
-    pub fn set_trial_component(mut self, input: std::option::Option<crate::types::TrialComponent>) -> Self {
-        self.trial_component = input; self
+    pub fn set_trial_component(
+        mut self,
+        input: std::option::Option<crate::types::TrialComponent>,
+    ) -> Self {
+        self.trial_component = input;
+        self
     }
     /// <p>A hosted endpoint for real-time inference.</p>
     pub fn endpoint(mut self, input: crate::types::Endpoint) -> Self {
@@ -183,7 +197,8 @@ impl SearchRecordBuilder {
     }
     /// <p>A hosted endpoint for real-time inference.</p>
     pub fn set_endpoint(mut self, input: std::option::Option<crate::types::Endpoint>) -> Self {
-        self.endpoint = input; self
+        self.endpoint = input;
+        self
     }
     /// <p>A versioned model that can be deployed for SageMaker inference.</p>
     pub fn model_package(mut self, input: crate::types::ModelPackage) -> Self {
@@ -191,8 +206,12 @@ impl SearchRecordBuilder {
         self
     }
     /// <p>A versioned model that can be deployed for SageMaker inference.</p>
-    pub fn set_model_package(mut self, input: std::option::Option<crate::types::ModelPackage>) -> Self {
-        self.model_package = input; self
+    pub fn set_model_package(
+        mut self,
+        input: std::option::Option<crate::types::ModelPackage>,
+    ) -> Self {
+        self.model_package = input;
+        self
     }
     /// <p>A group of versioned models in the model registry.</p>
     pub fn model_package_group(mut self, input: crate::types::ModelPackageGroup) -> Self {
@@ -200,8 +219,12 @@ impl SearchRecordBuilder {
         self
     }
     /// <p>A group of versioned models in the model registry.</p>
-    pub fn set_model_package_group(mut self, input: std::option::Option<crate::types::ModelPackageGroup>) -> Self {
-        self.model_package_group = input; self
+    pub fn set_model_package_group(
+        mut self,
+        input: std::option::Option<crate::types::ModelPackageGroup>,
+    ) -> Self {
+        self.model_package_group = input;
+        self
     }
     /// <p>A SageMaker Model Building Pipeline instance.</p>
     pub fn pipeline(mut self, input: crate::types::Pipeline) -> Self {
@@ -210,7 +233,8 @@ impl SearchRecordBuilder {
     }
     /// <p>A SageMaker Model Building Pipeline instance.</p>
     pub fn set_pipeline(mut self, input: std::option::Option<crate::types::Pipeline>) -> Self {
-        self.pipeline = input; self
+        self.pipeline = input;
+        self
     }
     /// <p>An execution of a pipeline.</p>
     pub fn pipeline_execution(mut self, input: crate::types::PipelineExecution) -> Self {
@@ -218,8 +242,12 @@ impl SearchRecordBuilder {
         self
     }
     /// <p>An execution of a pipeline.</p>
-    pub fn set_pipeline_execution(mut self, input: std::option::Option<crate::types::PipelineExecution>) -> Self {
-        self.pipeline_execution = input; self
+    pub fn set_pipeline_execution(
+        mut self,
+        input: std::option::Option<crate::types::PipelineExecution>,
+    ) -> Self {
+        self.pipeline_execution = input;
+        self
     }
     /// <p>Amazon SageMaker Feature Store stores features in a collection called Feature Group. A Feature Group can be visualized as a table which has rows, with a unique identifier for each row where each column in the table is a feature. In principle, a Feature Group is composed of features and values per features.</p>
     pub fn feature_group(mut self, input: crate::types::FeatureGroup) -> Self {
@@ -227,8 +255,12 @@ impl SearchRecordBuilder {
         self
     }
     /// <p>Amazon SageMaker Feature Store stores features in a collection called Feature Group. A Feature Group can be visualized as a table which has rows, with a unique identifier for each row where each column in the table is a feature. In principle, a Feature Group is composed of features and values per features.</p>
-    pub fn set_feature_group(mut self, input: std::option::Option<crate::types::FeatureGroup>) -> Self {
-        self.feature_group = input; self
+    pub fn set_feature_group(
+        mut self,
+        input: std::option::Option<crate::types::FeatureGroup>,
+    ) -> Self {
+        self.feature_group = input;
+        self
     }
     /// <p>The properties of a project.</p>
     pub fn project(mut self, input: crate::types::Project) -> Self {
@@ -237,7 +269,8 @@ impl SearchRecordBuilder {
     }
     /// <p>The properties of a project.</p>
     pub fn set_project(mut self, input: std::option::Option<crate::types::Project>) -> Self {
-        self.project = input; self
+        self.project = input;
+        self
     }
     /// <p>The feature metadata used to search through the features.</p>
     pub fn feature_metadata(mut self, input: crate::types::FeatureMetadata) -> Self {
@@ -245,17 +278,28 @@ impl SearchRecordBuilder {
         self
     }
     /// <p>The feature metadata used to search through the features.</p>
-    pub fn set_feature_metadata(mut self, input: std::option::Option<crate::types::FeatureMetadata>) -> Self {
-        self.feature_metadata = input; self
+    pub fn set_feature_metadata(
+        mut self,
+        input: std::option::Option<crate::types::FeatureMetadata>,
+    ) -> Self {
+        self.feature_metadata = input;
+        self
     }
     /// <p>The properties of a hyperparameter tuning job.</p>
-    pub fn hyper_parameter_tuning_job(mut self, input: crate::types::HyperParameterTuningJobSearchEntity) -> Self {
+    pub fn hyper_parameter_tuning_job(
+        mut self,
+        input: crate::types::HyperParameterTuningJobSearchEntity,
+    ) -> Self {
         self.hyper_parameter_tuning_job = Some(input);
         self
     }
     /// <p>The properties of a hyperparameter tuning job.</p>
-    pub fn set_hyper_parameter_tuning_job(mut self, input: std::option::Option<crate::types::HyperParameterTuningJobSearchEntity>) -> Self {
-        self.hyper_parameter_tuning_job = input; self
+    pub fn set_hyper_parameter_tuning_job(
+        mut self,
+        input: std::option::Option<crate::types::HyperParameterTuningJobSearchEntity>,
+    ) -> Self {
+        self.hyper_parameter_tuning_job = input;
+        self
     }
     /// <p>A model displayed in the Amazon SageMaker Model Dashboard.</p>
     pub fn model(mut self, input: crate::types::ModelDashboardModel) -> Self {
@@ -263,8 +307,12 @@ impl SearchRecordBuilder {
         self
     }
     /// <p>A model displayed in the Amazon SageMaker Model Dashboard.</p>
-    pub fn set_model(mut self, input: std::option::Option<crate::types::ModelDashboardModel>) -> Self {
-        self.model = input; self
+    pub fn set_model(
+        mut self,
+        input: std::option::Option<crate::types::ModelDashboardModel>,
+    ) -> Self {
+        self.model = input;
+        self
     }
     /// <p>An Amazon SageMaker Model Card that documents details about a machine learning model.</p>
     pub fn model_card(mut self, input: crate::types::ModelCard) -> Self {
@@ -273,42 +321,27 @@ impl SearchRecordBuilder {
     }
     /// <p>An Amazon SageMaker Model Card that documents details about a machine learning model.</p>
     pub fn set_model_card(mut self, input: std::option::Option<crate::types::ModelCard>) -> Self {
-        self.model_card = input; self
+        self.model_card = input;
+        self
     }
     /// Consumes the builder and constructs a [`SearchRecord`](crate::types::SearchRecord).
     pub fn build(self) -> crate::types::SearchRecord {
         crate::types::SearchRecord {
-            training_job: self.training_job
-            ,
-            experiment: self.experiment
-            ,
-            trial: self.trial
-            ,
-            trial_component: self.trial_component
-            ,
-            endpoint: self.endpoint
-            ,
-            model_package: self.model_package
-            ,
-            model_package_group: self.model_package_group
-            ,
-            pipeline: self.pipeline
-            ,
-            pipeline_execution: self.pipeline_execution
-            ,
-            feature_group: self.feature_group
-            ,
-            project: self.project
-            ,
-            feature_metadata: self.feature_metadata
-            ,
-            hyper_parameter_tuning_job: self.hyper_parameter_tuning_job
-            ,
-            model: self.model
-            ,
-            model_card: self.model_card
-            ,
+            training_job: self.training_job,
+            experiment: self.experiment,
+            trial: self.trial,
+            trial_component: self.trial_component,
+            endpoint: self.endpoint,
+            model_package: self.model_package,
+            model_package_group: self.model_package_group,
+            pipeline: self.pipeline,
+            pipeline_execution: self.pipeline_execution,
+            feature_group: self.feature_group,
+            project: self.project,
+            feature_metadata: self.feature_metadata,
+            hyper_parameter_tuning_job: self.hyper_parameter_tuning_job,
+            model: self.model,
+            model_card: self.model_card,
         }
     }
 }
-

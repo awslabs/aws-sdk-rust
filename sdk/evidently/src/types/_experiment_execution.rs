@@ -3,7 +3,7 @@
 /// <p>This structure contains the date and time that the experiment started and ended.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ExperimentExecution  {
+pub struct ExperimentExecution {
     /// <p>The date and time that the experiment started.</p>
     #[doc(hidden)]
     pub started_time: std::option::Option<aws_smithy_types::DateTime>,
@@ -13,11 +13,11 @@ pub struct ExperimentExecution  {
 }
 impl ExperimentExecution {
     /// <p>The date and time that the experiment started.</p>
-    pub fn started_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
+    pub fn started_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.started_time.as_ref()
     }
     /// <p>The date and time that the experiment ended.</p>
-    pub fn ended_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
+    pub fn ended_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.ended_time.as_ref()
     }
 }
@@ -42,8 +42,12 @@ impl ExperimentExecutionBuilder {
         self
     }
     /// <p>The date and time that the experiment started.</p>
-    pub fn set_started_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.started_time = input; self
+    pub fn set_started_time(
+        mut self,
+        input: std::option::Option<aws_smithy_types::DateTime>,
+    ) -> Self {
+        self.started_time = input;
+        self
     }
     /// <p>The date and time that the experiment ended.</p>
     pub fn ended_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -51,17 +55,18 @@ impl ExperimentExecutionBuilder {
         self
     }
     /// <p>The date and time that the experiment ended.</p>
-    pub fn set_ended_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.ended_time = input; self
+    pub fn set_ended_time(
+        mut self,
+        input: std::option::Option<aws_smithy_types::DateTime>,
+    ) -> Self {
+        self.ended_time = input;
+        self
     }
     /// Consumes the builder and constructs a [`ExperimentExecution`](crate::types::ExperimentExecution).
     pub fn build(self) -> crate::types::ExperimentExecution {
         crate::types::ExperimentExecution {
-            started_time: self.started_time
-            ,
-            ended_time: self.ended_time
-            ,
+            started_time: self.started_time,
+            ended_time: self.ended_time,
         }
     }
 }
-

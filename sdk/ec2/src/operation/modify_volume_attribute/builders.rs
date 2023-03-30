@@ -4,58 +4,83 @@ pub use crate::operation::modify_volume_attribute::_modify_volume_attribute_outp
 pub use crate::operation::modify_volume_attribute::_modify_volume_attribute_input::ModifyVolumeAttributeInputBuilder;
 
 /// Fluent builder constructing a request to `ModifyVolumeAttribute`.
-/// 
-/// <p>Modifies a volume attribute.</p> 
-/// <p>By default, all I/O operations for the volume are suspended when the data on the volume is determined to be potentially inconsistent, to prevent undetectable, latent data corruption. The I/O access to the volume can be resumed by first enabling I/O access and then checking the data consistency on your volume.</p> 
+///
+/// <p>Modifies a volume attribute.</p>
+/// <p>By default, all I/O operations for the volume are suspended when the data on the volume is determined to be potentially inconsistent, to prevent undetectable, latent data corruption. The I/O access to the volume can be resumed by first enabling I/O access and then checking the data consistency on your volume.</p>
 /// <p>You can change the default behavior to resume I/O operations. We recommend that you change this only for boot volumes or for volumes that are stateless or disposable.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ModifyVolumeAttributeFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::modify_volume_attribute::builders::ModifyVolumeAttributeInputBuilder
-            }
-impl ModifyVolumeAttributeFluentBuilder  {
+    handle: std::sync::Arc<crate::client::Handle>,
+    inner: crate::operation::modify_volume_attribute::builders::ModifyVolumeAttributeInputBuilder,
+}
+impl ModifyVolumeAttributeFluentBuilder {
     /// Creates a new `ModifyVolumeAttribute`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
-                    /// sent. The operation's inner [http::Request] can be modified as well.
-                    pub async fn customize(self) -> std::result::Result<
-                        crate::client::customize::CustomizableOperation<crate::operation::modify_volume_attribute::ModifyVolumeAttribute, aws_http::retry::AwsResponseRetryClassifier,>,
-                        aws_smithy_http::result::SdkError<crate::operation::modify_volume_attribute::ModifyVolumeAttributeError>
-                    >  {
-                        let handle = self.handle.clone();
-                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-                    }
-    
-                    /// Sends the request and returns the response.
-                    ///
-                    /// If an error occurs, an `SdkError` will be returned with additional details that
-                    /// can be matched against.
-                    ///
-                    /// By default, any retryable failures will be retried twice. Retry behavior
-                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                    /// set when configuring the client.
-                    pub async fn send(self) -> std::result::Result<crate::operation::modify_volume_attribute::ModifyVolumeAttributeOutput, aws_smithy_http::result::SdkError<crate::operation::modify_volume_attribute::ModifyVolumeAttributeError>>
-                     {
-                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&self.handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        self.handle.client.call(op).await
-                    }
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle,
+            inner: Default::default(),
+        }
+    }
+
+    /// Consume this builder, creating a customizable operation that can be modified before being
+    /// sent. The operation's inner [http::Request] can be modified as well.
+    pub async fn customize(
+        self,
+    ) -> std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::modify_volume_attribute::ModifyVolumeAttribute,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::result::SdkError<
+            crate::operation::modify_volume_attribute::ModifyVolumeAttributeError,
+        >,
+    > {
+        let handle = self.handle.clone();
+        let operation = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+    }
+
+    /// Sends the request and returns the response.
+    ///
+    /// If an error occurs, an `SdkError` will be returned with additional details that
+    /// can be matched against.
+    ///
+    /// By default, any retryable failures will be retried twice. Retry behavior
+    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+    /// set when configuring the client.
+    pub async fn send(
+        self,
+    ) -> std::result::Result<
+        crate::operation::modify_volume_attribute::ModifyVolumeAttributeOutput,
+        aws_smithy_http::result::SdkError<
+            crate::operation::modify_volume_attribute::ModifyVolumeAttributeError,
+        >,
+    > {
+        let op = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&self.handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        self.handle.client.call(op).await
+    }
     /// <p>Indicates whether the volume should be auto-enabled for I/O operations.</p>
     pub fn auto_enable_io(mut self, input: crate::types::AttributeBooleanValue) -> Self {
         self.inner = self.inner.auto_enable_io(input);
         self
     }
     /// <p>Indicates whether the volume should be auto-enabled for I/O operations.</p>
-    pub fn set_auto_enable_io(mut self, input: std::option::Option<crate::types::AttributeBooleanValue>) -> Self {
+    pub fn set_auto_enable_io(
+        mut self,
+        input: std::option::Option<crate::types::AttributeBooleanValue>,
+    ) -> Self {
         self.inner = self.inner.set_auto_enable_io(input);
         self
     }
@@ -80,4 +105,3 @@ impl ModifyVolumeAttributeFluentBuilder  {
         self
     }
 }
-

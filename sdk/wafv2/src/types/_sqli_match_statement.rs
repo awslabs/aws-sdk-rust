@@ -3,34 +3,34 @@
 /// <p>A rule statement that inspects for malicious SQL code. Attackers insert malicious SQL code into web requests to do things like modify your database or extract data from it. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SqliMatchStatement  {
+pub struct SqliMatchStatement {
     /// <p>The part of the web request that you want WAF to inspect. </p>
     #[doc(hidden)]
     pub field_to_match: std::option::Option<crate::types::FieldToMatch>,
     /// <p>Text transformations eliminate some of the unusual formatting that attackers use in web requests in an effort to bypass detection. If you specify one or more transformations in a rule statement, WAF performs all transformations on the content of the request component identified by <code>FieldToMatch</code>, starting from the lowest priority setting, before inspecting the content for a match.</p>
     #[doc(hidden)]
     pub text_transformations: std::option::Option<std::vec::Vec<crate::types::TextTransformation>>,
-    /// <p>The sensitivity that you want WAF to use to inspect for SQL injection attacks. </p> 
-    /// <p> <code>HIGH</code> detects more attacks, but might generate more false positives, especially if your web requests frequently contain unusual strings. For information about identifying and mitigating false positives, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/web-acl-testing.html">Testing and tuning</a> in the <i>WAF Developer Guide</i>.</p> 
-    /// <p> <code>LOW</code> is generally a better choice for resources that already have other protections against SQL injection attacks or that have a low tolerance for false positives. </p> 
+    /// <p>The sensitivity that you want WAF to use to inspect for SQL injection attacks. </p>
+    /// <p> <code>HIGH</code> detects more attacks, but might generate more false positives, especially if your web requests frequently contain unusual strings. For information about identifying and mitigating false positives, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/web-acl-testing.html">Testing and tuning</a> in the <i>WAF Developer Guide</i>.</p>
+    /// <p> <code>LOW</code> is generally a better choice for resources that already have other protections against SQL injection attacks or that have a low tolerance for false positives. </p>
     /// <p>Default: <code>LOW</code> </p>
     #[doc(hidden)]
     pub sensitivity_level: std::option::Option<crate::types::SensitivityLevel>,
 }
 impl SqliMatchStatement {
     /// <p>The part of the web request that you want WAF to inspect. </p>
-    pub fn field_to_match(&self) -> std::option::Option<& crate::types::FieldToMatch> {
+    pub fn field_to_match(&self) -> std::option::Option<&crate::types::FieldToMatch> {
         self.field_to_match.as_ref()
     }
     /// <p>Text transformations eliminate some of the unusual formatting that attackers use in web requests in an effort to bypass detection. If you specify one or more transformations in a rule statement, WAF performs all transformations on the content of the request component identified by <code>FieldToMatch</code>, starting from the lowest priority setting, before inspecting the content for a match.</p>
-    pub fn text_transformations(&self) -> std::option::Option<& [crate::types::TextTransformation]> {
+    pub fn text_transformations(&self) -> std::option::Option<&[crate::types::TextTransformation]> {
         self.text_transformations.as_deref()
     }
-    /// <p>The sensitivity that you want WAF to use to inspect for SQL injection attacks. </p> 
-    /// <p> <code>HIGH</code> detects more attacks, but might generate more false positives, especially if your web requests frequently contain unusual strings. For information about identifying and mitigating false positives, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/web-acl-testing.html">Testing and tuning</a> in the <i>WAF Developer Guide</i>.</p> 
-    /// <p> <code>LOW</code> is generally a better choice for resources that already have other protections against SQL injection attacks or that have a low tolerance for false positives. </p> 
+    /// <p>The sensitivity that you want WAF to use to inspect for SQL injection attacks. </p>
+    /// <p> <code>HIGH</code> detects more attacks, but might generate more false positives, especially if your web requests frequently contain unusual strings. For information about identifying and mitigating false positives, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/web-acl-testing.html">Testing and tuning</a> in the <i>WAF Developer Guide</i>.</p>
+    /// <p> <code>LOW</code> is generally a better choice for resources that already have other protections against SQL injection attacks or that have a low tolerance for false positives. </p>
     /// <p>Default: <code>LOW</code> </p>
-    pub fn sensitivity_level(&self) -> std::option::Option<& crate::types::SensitivityLevel> {
+    pub fn sensitivity_level(&self) -> std::option::Option<&crate::types::SensitivityLevel> {
         self.sensitivity_level.as_ref()
     }
 }
@@ -46,7 +46,8 @@ impl SqliMatchStatement {
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct SqliMatchStatementBuilder {
     pub(crate) field_to_match: std::option::Option<crate::types::FieldToMatch>,
-    pub(crate) text_transformations: std::option::Option<std::vec::Vec<crate::types::TextTransformation>>,
+    pub(crate) text_transformations:
+        std::option::Option<std::vec::Vec<crate::types::TextTransformation>>,
     pub(crate) sensitivity_level: std::option::Option<crate::types::SensitivityLevel>,
 }
 impl SqliMatchStatementBuilder {
@@ -56,8 +57,12 @@ impl SqliMatchStatementBuilder {
         self
     }
     /// <p>The part of the web request that you want WAF to inspect. </p>
-    pub fn set_field_to_match(mut self, input: std::option::Option<crate::types::FieldToMatch>) -> Self {
-        self.field_to_match = input; self
+    pub fn set_field_to_match(
+        mut self,
+        input: std::option::Option<crate::types::FieldToMatch>,
+    ) -> Self {
+        self.field_to_match = input;
+        self
     }
     /// Appends an item to `text_transformations`.
     ///
@@ -66,39 +71,43 @@ impl SqliMatchStatementBuilder {
     /// <p>Text transformations eliminate some of the unusual formatting that attackers use in web requests in an effort to bypass detection. If you specify one or more transformations in a rule statement, WAF performs all transformations on the content of the request component identified by <code>FieldToMatch</code>, starting from the lowest priority setting, before inspecting the content for a match.</p>
     pub fn text_transformations(mut self, input: crate::types::TextTransformation) -> Self {
         let mut v = self.text_transformations.unwrap_or_default();
-                        v.push(input);
-                        self.text_transformations = Some(v);
-                        self
+        v.push(input);
+        self.text_transformations = Some(v);
+        self
     }
     /// <p>Text transformations eliminate some of the unusual formatting that attackers use in web requests in an effort to bypass detection. If you specify one or more transformations in a rule statement, WAF performs all transformations on the content of the request component identified by <code>FieldToMatch</code>, starting from the lowest priority setting, before inspecting the content for a match.</p>
-    pub fn set_text_transformations(mut self, input: std::option::Option<std::vec::Vec<crate::types::TextTransformation>>) -> Self {
-        self.text_transformations = input; self
+    pub fn set_text_transformations(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::TextTransformation>>,
+    ) -> Self {
+        self.text_transformations = input;
+        self
     }
-    /// <p>The sensitivity that you want WAF to use to inspect for SQL injection attacks. </p> 
-    /// <p> <code>HIGH</code> detects more attacks, but might generate more false positives, especially if your web requests frequently contain unusual strings. For information about identifying and mitigating false positives, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/web-acl-testing.html">Testing and tuning</a> in the <i>WAF Developer Guide</i>.</p> 
-    /// <p> <code>LOW</code> is generally a better choice for resources that already have other protections against SQL injection attacks or that have a low tolerance for false positives. </p> 
+    /// <p>The sensitivity that you want WAF to use to inspect for SQL injection attacks. </p>
+    /// <p> <code>HIGH</code> detects more attacks, but might generate more false positives, especially if your web requests frequently contain unusual strings. For information about identifying and mitigating false positives, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/web-acl-testing.html">Testing and tuning</a> in the <i>WAF Developer Guide</i>.</p>
+    /// <p> <code>LOW</code> is generally a better choice for resources that already have other protections against SQL injection attacks or that have a low tolerance for false positives. </p>
     /// <p>Default: <code>LOW</code> </p>
     pub fn sensitivity_level(mut self, input: crate::types::SensitivityLevel) -> Self {
         self.sensitivity_level = Some(input);
         self
     }
-    /// <p>The sensitivity that you want WAF to use to inspect for SQL injection attacks. </p> 
-    /// <p> <code>HIGH</code> detects more attacks, but might generate more false positives, especially if your web requests frequently contain unusual strings. For information about identifying and mitigating false positives, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/web-acl-testing.html">Testing and tuning</a> in the <i>WAF Developer Guide</i>.</p> 
-    /// <p> <code>LOW</code> is generally a better choice for resources that already have other protections against SQL injection attacks or that have a low tolerance for false positives. </p> 
+    /// <p>The sensitivity that you want WAF to use to inspect for SQL injection attacks. </p>
+    /// <p> <code>HIGH</code> detects more attacks, but might generate more false positives, especially if your web requests frequently contain unusual strings. For information about identifying and mitigating false positives, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/web-acl-testing.html">Testing and tuning</a> in the <i>WAF Developer Guide</i>.</p>
+    /// <p> <code>LOW</code> is generally a better choice for resources that already have other protections against SQL injection attacks or that have a low tolerance for false positives. </p>
     /// <p>Default: <code>LOW</code> </p>
-    pub fn set_sensitivity_level(mut self, input: std::option::Option<crate::types::SensitivityLevel>) -> Self {
-        self.sensitivity_level = input; self
+    pub fn set_sensitivity_level(
+        mut self,
+        input: std::option::Option<crate::types::SensitivityLevel>,
+    ) -> Self {
+        self.sensitivity_level = input;
+        self
     }
     /// Consumes the builder and constructs a [`SqliMatchStatement`](crate::types::SqliMatchStatement).
     pub fn build(self) -> crate::types::SqliMatchStatement {
         crate::types::SqliMatchStatement {
-            field_to_match: self.field_to_match
-            ,
-            text_transformations: self.text_transformations
-            ,
-            sensitivity_level: self.sensitivity_level
-            ,
+            field_to_match: self.field_to_match,
+            text_transformations: self.text_transformations,
+            sensitivity_level: self.sensitivity_level,
         }
     }
 }
-

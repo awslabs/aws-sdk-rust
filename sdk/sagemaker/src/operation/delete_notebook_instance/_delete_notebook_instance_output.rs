@@ -2,17 +2,19 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteNotebookInstanceOutput  {
+pub struct DeleteNotebookInstanceOutput {
     _request_id: Option<String>,
 }
 impl aws_http::request_id::RequestId for DeleteNotebookInstanceOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl DeleteNotebookInstanceOutput {
     /// Creates a new builder-style object to manufacture [`DeleteNotebookInstanceOutput`](crate::operation::delete_notebook_instance::DeleteNotebookInstanceOutput).
-    pub fn builder() -> crate::operation::delete_notebook_instance::builders::DeleteNotebookInstanceOutputBuilder {
+    pub fn builder(
+    ) -> crate::operation::delete_notebook_instance::builders::DeleteNotebookInstanceOutputBuilder
+    {
         crate::operation::delete_notebook_instance::builders::DeleteNotebookInstanceOutputBuilder::default()
     }
 }
@@ -25,14 +27,14 @@ pub struct DeleteNotebookInstanceOutputBuilder {
 }
 impl DeleteNotebookInstanceOutputBuilder {
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`DeleteNotebookInstanceOutput`](crate::operation::delete_notebook_instance::DeleteNotebookInstanceOutput).
     pub fn build(self) -> crate::operation::delete_notebook_instance::DeleteNotebookInstanceOutput {
         crate::operation::delete_notebook_instance::DeleteNotebookInstanceOutput {
@@ -40,4 +42,3 @@ impl DeleteNotebookInstanceOutputBuilder {
         }
     }
 }
-

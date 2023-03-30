@@ -2,20 +2,20 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteVoiceConnectorGroupInput  {
+pub struct DeleteVoiceConnectorGroupInput {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub voice_connector_group_id: std::option::Option<std::string::String>,
 }
 impl DeleteVoiceConnectorGroupInput {
     #[allow(missing_docs)] // documentation missing in model
-    pub fn voice_connector_group_id(&self) -> std::option::Option<& str> {
+    pub fn voice_connector_group_id(&self) -> std::option::Option<&str> {
         self.voice_connector_group_id.as_deref()
     }
 }
 impl DeleteVoiceConnectorGroupInput {
     /// Creates a new builder-style object to manufacture [`DeleteVoiceConnectorGroupInput`](crate::operation::delete_voice_connector_group::DeleteVoiceConnectorGroupInput).
-    pub fn builder() -> crate::operation::delete_voice_connector_group::builders::DeleteVoiceConnectorGroupInputBuilder {
+    pub fn builder() -> crate::operation::delete_voice_connector_group::builders::DeleteVoiceConnectorGroupInputBuilder{
         crate::operation::delete_voice_connector_group::builders::DeleteVoiceConnectorGroupInputBuilder::default()
     }
 }
@@ -33,17 +33,24 @@ impl DeleteVoiceConnectorGroupInputBuilder {
         self
     }
     #[allow(missing_docs)] // documentation missing in model
-    pub fn set_voice_connector_group_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.voice_connector_group_id = input; self
+    pub fn set_voice_connector_group_id(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.voice_connector_group_id = input;
+        self
     }
     /// Consumes the builder and constructs a [`DeleteVoiceConnectorGroupInput`](crate::operation::delete_voice_connector_group::DeleteVoiceConnectorGroupInput).
-    pub fn build(self) -> Result<crate::operation::delete_voice_connector_group::DeleteVoiceConnectorGroupInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::delete_voice_connector_group::DeleteVoiceConnectorGroupInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::delete_voice_connector_group::DeleteVoiceConnectorGroupInput {
-                voice_connector_group_id: self.voice_connector_group_id
-                ,
-            }
+                voice_connector_group_id: self.voice_connector_group_id,
+            },
         )
     }
 }
-

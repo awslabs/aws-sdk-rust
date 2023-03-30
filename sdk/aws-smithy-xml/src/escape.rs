@@ -10,7 +10,7 @@ const ESCAPES: &[char] = &[
     '&', '\'', '\"', '<', '>', '\u{00D}', '\u{00A}', '\u{0085}', '\u{2028}',
 ];
 
-pub fn escape(s: &str) -> Cow<str> {
+pub(crate) fn escape(s: &str) -> Cow<'_, str> {
     let mut remaining = s;
     if !s.contains(ESCAPES) {
         return Cow::Borrowed(s);

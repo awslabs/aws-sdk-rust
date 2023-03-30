@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListSubscriptionDefinitionsInput  {
+pub struct ListSubscriptionDefinitionsInput {
     /// The maximum number of results to be returned per request.
     #[doc(hidden)]
     pub max_results: std::option::Option<std::string::String>,
@@ -12,17 +12,17 @@ pub struct ListSubscriptionDefinitionsInput  {
 }
 impl ListSubscriptionDefinitionsInput {
     /// The maximum number of results to be returned per request.
-    pub fn max_results(&self) -> std::option::Option<& str> {
+    pub fn max_results(&self) -> std::option::Option<&str> {
         self.max_results.as_deref()
     }
     /// The token for the next set of results, or ''null'' if there are no additional results.
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
 }
 impl ListSubscriptionDefinitionsInput {
     /// Creates a new builder-style object to manufacture [`ListSubscriptionDefinitionsInput`](crate::operation::list_subscription_definitions::ListSubscriptionDefinitionsInput).
-    pub fn builder() -> crate::operation::list_subscription_definitions::builders::ListSubscriptionDefinitionsInputBuilder {
+    pub fn builder() -> crate::operation::list_subscription_definitions::builders::ListSubscriptionDefinitionsInputBuilder{
         crate::operation::list_subscription_definitions::builders::ListSubscriptionDefinitionsInputBuilder::default()
     }
 }
@@ -42,7 +42,8 @@ impl ListSubscriptionDefinitionsInputBuilder {
     }
     /// The maximum number of results to be returned per request.
     pub fn set_max_results(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.max_results = input; self
+        self.max_results = input;
+        self
     }
     /// The token for the next set of results, or ''null'' if there are no additional results.
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -51,18 +52,21 @@ impl ListSubscriptionDefinitionsInputBuilder {
     }
     /// The token for the next set of results, or ''null'' if there are no additional results.
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input; self
+        self.next_token = input;
+        self
     }
     /// Consumes the builder and constructs a [`ListSubscriptionDefinitionsInput`](crate::operation::list_subscription_definitions::ListSubscriptionDefinitionsInput).
-    pub fn build(self) -> Result<crate::operation::list_subscription_definitions::ListSubscriptionDefinitionsInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::list_subscription_definitions::ListSubscriptionDefinitionsInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::list_subscription_definitions::ListSubscriptionDefinitionsInput {
-                max_results: self.max_results
-                ,
-                next_token: self.next_token
-                ,
-            }
+                max_results: self.max_results,
+                next_token: self.next_token,
+            },
         )
     }
 }
-

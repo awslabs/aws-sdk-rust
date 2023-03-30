@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateRobotApplicationInput  {
+pub struct CreateRobotApplicationInput {
     /// <p>The name of the robot application.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -14,36 +14,42 @@ pub struct CreateRobotApplicationInput  {
     pub robot_software_suite: std::option::Option<crate::types::RobotSoftwareSuite>,
     /// <p>A map that contains tag keys and tag values that are attached to the robot application.</p>
     #[doc(hidden)]
-    pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub tags:
+        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The object that contains that URI of the Docker image that you use for your robot application.</p>
     #[doc(hidden)]
     pub environment: std::option::Option<crate::types::Environment>,
 }
 impl CreateRobotApplicationInput {
     /// <p>The name of the robot application.</p>
-    pub fn name(&self) -> std::option::Option<& str> {
+    pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>The sources of the robot application.</p>
-    pub fn sources(&self) -> std::option::Option<& [crate::types::SourceConfig]> {
+    pub fn sources(&self) -> std::option::Option<&[crate::types::SourceConfig]> {
         self.sources.as_deref()
     }
     /// <p>The robot software suite (ROS distribuition) used by the robot application.</p>
-    pub fn robot_software_suite(&self) -> std::option::Option<& crate::types::RobotSoftwareSuite> {
+    pub fn robot_software_suite(&self) -> std::option::Option<&crate::types::RobotSoftwareSuite> {
         self.robot_software_suite.as_ref()
     }
     /// <p>A map that contains tag keys and tag values that are attached to the robot application.</p>
-    pub fn tags(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
         self.tags.as_ref()
     }
     /// <p>The object that contains that URI of the Docker image that you use for your robot application.</p>
-    pub fn environment(&self) -> std::option::Option<& crate::types::Environment> {
+    pub fn environment(&self) -> std::option::Option<&crate::types::Environment> {
         self.environment.as_ref()
     }
 }
 impl CreateRobotApplicationInput {
     /// Creates a new builder-style object to manufacture [`CreateRobotApplicationInput`](crate::operation::create_robot_application::CreateRobotApplicationInput).
-    pub fn builder() -> crate::operation::create_robot_application::builders::CreateRobotApplicationInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::create_robot_application::builders::CreateRobotApplicationInputBuilder
+    {
         crate::operation::create_robot_application::builders::CreateRobotApplicationInputBuilder::default()
     }
 }
@@ -55,7 +61,8 @@ pub struct CreateRobotApplicationInputBuilder {
     pub(crate) name: std::option::Option<std::string::String>,
     pub(crate) sources: std::option::Option<std::vec::Vec<crate::types::SourceConfig>>,
     pub(crate) robot_software_suite: std::option::Option<crate::types::RobotSoftwareSuite>,
-    pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub(crate) tags:
+        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     pub(crate) environment: std::option::Option<crate::types::Environment>,
 }
 impl CreateRobotApplicationInputBuilder {
@@ -66,7 +73,8 @@ impl CreateRobotApplicationInputBuilder {
     }
     /// <p>The name of the robot application.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input; self
+        self.name = input;
+        self
     }
     /// Appends an item to `sources`.
     ///
@@ -75,13 +83,17 @@ impl CreateRobotApplicationInputBuilder {
     /// <p>The sources of the robot application.</p>
     pub fn sources(mut self, input: crate::types::SourceConfig) -> Self {
         let mut v = self.sources.unwrap_or_default();
-                        v.push(input);
-                        self.sources = Some(v);
-                        self
+        v.push(input);
+        self.sources = Some(v);
+        self
     }
     /// <p>The sources of the robot application.</p>
-    pub fn set_sources(mut self, input: std::option::Option<std::vec::Vec<crate::types::SourceConfig>>) -> Self {
-        self.sources = input; self
+    pub fn set_sources(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::SourceConfig>>,
+    ) -> Self {
+        self.sources = input;
+        self
     }
     /// <p>The robot software suite (ROS distribuition) used by the robot application.</p>
     pub fn robot_software_suite(mut self, input: crate::types::RobotSoftwareSuite) -> Self {
@@ -89,23 +101,37 @@ impl CreateRobotApplicationInputBuilder {
         self
     }
     /// <p>The robot software suite (ROS distribuition) used by the robot application.</p>
-    pub fn set_robot_software_suite(mut self, input: std::option::Option<crate::types::RobotSoftwareSuite>) -> Self {
-        self.robot_software_suite = input; self
+    pub fn set_robot_software_suite(
+        mut self,
+        input: std::option::Option<crate::types::RobotSoftwareSuite>,
+    ) -> Self {
+        self.robot_software_suite = input;
+        self
     }
     /// Adds a key-value pair to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// <p>A map that contains tag keys and tag values that are attached to the robot application.</p>
-    pub fn tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
+    pub fn tags(
+        mut self,
+        k: impl Into<std::string::String>,
+        v: impl Into<std::string::String>,
+    ) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
-                        hash_map.insert(k.into(), v.into());
-                        self.tags = Some(hash_map);
-                        self
+        hash_map.insert(k.into(), v.into());
+        self.tags = Some(hash_map);
+        self
     }
     /// <p>A map that contains tag keys and tag values that are attached to the robot application.</p>
-    pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
-        self.tags = input; self
+    pub fn set_tags(
+        mut self,
+        input: std::option::Option<
+            std::collections::HashMap<std::string::String, std::string::String>,
+        >,
+    ) -> Self {
+        self.tags = input;
+        self
     }
     /// <p>The object that contains that URI of the Docker image that you use for your robot application.</p>
     pub fn environment(mut self, input: crate::types::Environment) -> Self {
@@ -113,25 +139,28 @@ impl CreateRobotApplicationInputBuilder {
         self
     }
     /// <p>The object that contains that URI of the Docker image that you use for your robot application.</p>
-    pub fn set_environment(mut self, input: std::option::Option<crate::types::Environment>) -> Self {
-        self.environment = input; self
+    pub fn set_environment(
+        mut self,
+        input: std::option::Option<crate::types::Environment>,
+    ) -> Self {
+        self.environment = input;
+        self
     }
     /// Consumes the builder and constructs a [`CreateRobotApplicationInput`](crate::operation::create_robot_application::CreateRobotApplicationInput).
-    pub fn build(self) -> Result<crate::operation::create_robot_application::CreateRobotApplicationInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::create_robot_application::CreateRobotApplicationInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::create_robot_application::CreateRobotApplicationInput {
-                name: self.name
-                ,
-                sources: self.sources
-                ,
-                robot_software_suite: self.robot_software_suite
-                ,
-                tags: self.tags
-                ,
-                environment: self.environment
-                ,
-            }
+                name: self.name,
+                sources: self.sources,
+                robot_software_suite: self.robot_software_suite,
+                tags: self.tags,
+                environment: self.environment,
+            },
         )
     }
 }
-

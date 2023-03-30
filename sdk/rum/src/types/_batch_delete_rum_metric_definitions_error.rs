@@ -3,7 +3,7 @@
 /// <p>A structure that defines one error caused by a <a href="https://docs.aws.amazon.com/cloudwatchrum/latest/APIReference/API_BatchDeleteRumMetricsDefinitions.html">BatchCreateRumMetricsDefinitions</a> operation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct BatchDeleteRumMetricDefinitionsError  {
+pub struct BatchDeleteRumMetricDefinitionsError {
     /// <p>The ID of the metric definition that caused this error.</p>
     #[doc(hidden)]
     pub metric_definition_id: std::option::Option<std::string::String>,
@@ -16,15 +16,15 @@ pub struct BatchDeleteRumMetricDefinitionsError  {
 }
 impl BatchDeleteRumMetricDefinitionsError {
     /// <p>The ID of the metric definition that caused this error.</p>
-    pub fn metric_definition_id(&self) -> std::option::Option<& str> {
+    pub fn metric_definition_id(&self) -> std::option::Option<&str> {
         self.metric_definition_id.as_deref()
     }
     /// <p>The error code.</p>
-    pub fn error_code(&self) -> std::option::Option<& str> {
+    pub fn error_code(&self) -> std::option::Option<&str> {
         self.error_code.as_deref()
     }
     /// <p>The error message for this metric definition.</p>
-    pub fn error_message(&self) -> std::option::Option<& str> {
+    pub fn error_message(&self) -> std::option::Option<&str> {
         self.error_message.as_deref()
     }
 }
@@ -50,8 +50,12 @@ impl BatchDeleteRumMetricDefinitionsErrorBuilder {
         self
     }
     /// <p>The ID of the metric definition that caused this error.</p>
-    pub fn set_metric_definition_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.metric_definition_id = input; self
+    pub fn set_metric_definition_id(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.metric_definition_id = input;
+        self
     }
     /// <p>The error code.</p>
     pub fn error_code(mut self, input: impl Into<std::string::String>) -> Self {
@@ -60,7 +64,8 @@ impl BatchDeleteRumMetricDefinitionsErrorBuilder {
     }
     /// <p>The error code.</p>
     pub fn set_error_code(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.error_code = input; self
+        self.error_code = input;
+        self
     }
     /// <p>The error message for this metric definition.</p>
     pub fn error_message(mut self, input: impl Into<std::string::String>) -> Self {
@@ -69,18 +74,15 @@ impl BatchDeleteRumMetricDefinitionsErrorBuilder {
     }
     /// <p>The error message for this metric definition.</p>
     pub fn set_error_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.error_message = input; self
+        self.error_message = input;
+        self
     }
     /// Consumes the builder and constructs a [`BatchDeleteRumMetricDefinitionsError`](crate::types::BatchDeleteRumMetricDefinitionsError).
     pub fn build(self) -> crate::types::BatchDeleteRumMetricDefinitionsError {
         crate::types::BatchDeleteRumMetricDefinitionsError {
-            metric_definition_id: self.metric_definition_id
-            ,
-            error_code: self.error_code
-            ,
-            error_message: self.error_message
-            ,
+            metric_definition_id: self.metric_definition_id,
+            error_code: self.error_code,
+            error_message: self.error_message,
         }
     }
 }
-

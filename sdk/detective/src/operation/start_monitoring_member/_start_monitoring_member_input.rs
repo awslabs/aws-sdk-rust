@@ -2,29 +2,31 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct StartMonitoringMemberInput  {
+pub struct StartMonitoringMemberInput {
     /// <p>The ARN of the behavior graph.</p>
     #[doc(hidden)]
     pub graph_arn: std::option::Option<std::string::String>,
-    /// <p>The account ID of the member account to try to enable.</p> 
+    /// <p>The account ID of the member account to try to enable.</p>
     /// <p>The account must be an invited member account with a status of <code>ACCEPTED_BUT_DISABLED</code>. </p>
     #[doc(hidden)]
     pub account_id: std::option::Option<std::string::String>,
 }
 impl StartMonitoringMemberInput {
     /// <p>The ARN of the behavior graph.</p>
-    pub fn graph_arn(&self) -> std::option::Option<& str> {
+    pub fn graph_arn(&self) -> std::option::Option<&str> {
         self.graph_arn.as_deref()
     }
-    /// <p>The account ID of the member account to try to enable.</p> 
+    /// <p>The account ID of the member account to try to enable.</p>
     /// <p>The account must be an invited member account with a status of <code>ACCEPTED_BUT_DISABLED</code>. </p>
-    pub fn account_id(&self) -> std::option::Option<& str> {
+    pub fn account_id(&self) -> std::option::Option<&str> {
         self.account_id.as_deref()
     }
 }
 impl StartMonitoringMemberInput {
     /// Creates a new builder-style object to manufacture [`StartMonitoringMemberInput`](crate::operation::start_monitoring_member::StartMonitoringMemberInput).
-    pub fn builder() -> crate::operation::start_monitoring_member::builders::StartMonitoringMemberInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::start_monitoring_member::builders::StartMonitoringMemberInputBuilder
+    {
         crate::operation::start_monitoring_member::builders::StartMonitoringMemberInputBuilder::default()
     }
 }
@@ -44,29 +46,33 @@ impl StartMonitoringMemberInputBuilder {
     }
     /// <p>The ARN of the behavior graph.</p>
     pub fn set_graph_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.graph_arn = input; self
+        self.graph_arn = input;
+        self
     }
-    /// <p>The account ID of the member account to try to enable.</p> 
+    /// <p>The account ID of the member account to try to enable.</p>
     /// <p>The account must be an invited member account with a status of <code>ACCEPTED_BUT_DISABLED</code>. </p>
     pub fn account_id(mut self, input: impl Into<std::string::String>) -> Self {
         self.account_id = Some(input.into());
         self
     }
-    /// <p>The account ID of the member account to try to enable.</p> 
+    /// <p>The account ID of the member account to try to enable.</p>
     /// <p>The account must be an invited member account with a status of <code>ACCEPTED_BUT_DISABLED</code>. </p>
     pub fn set_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.account_id = input; self
+        self.account_id = input;
+        self
     }
     /// Consumes the builder and constructs a [`StartMonitoringMemberInput`](crate::operation::start_monitoring_member::StartMonitoringMemberInput).
-    pub fn build(self) -> Result<crate::operation::start_monitoring_member::StartMonitoringMemberInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::start_monitoring_member::StartMonitoringMemberInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::start_monitoring_member::StartMonitoringMemberInput {
-                graph_arn: self.graph_arn
-                ,
-                account_id: self.account_id
-                ,
-            }
+                graph_arn: self.graph_arn,
+                account_id: self.account_id,
+            },
         )
     }
 }
-

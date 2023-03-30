@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetDataQualityMetricsInput  {
+pub struct GetDataQualityMetricsInput {
     /// <p>The Amazon Resource Name (ARN) of the anomaly detector that you want to investigate.</p>
     #[doc(hidden)]
     pub anomaly_detector_arn: std::option::Option<std::string::String>,
@@ -12,17 +12,19 @@ pub struct GetDataQualityMetricsInput  {
 }
 impl GetDataQualityMetricsInput {
     /// <p>The Amazon Resource Name (ARN) of the anomaly detector that you want to investigate.</p>
-    pub fn anomaly_detector_arn(&self) -> std::option::Option<& str> {
+    pub fn anomaly_detector_arn(&self) -> std::option::Option<&str> {
         self.anomaly_detector_arn.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of a specific data quality metric set.</p>
-    pub fn metric_set_arn(&self) -> std::option::Option<& str> {
+    pub fn metric_set_arn(&self) -> std::option::Option<&str> {
         self.metric_set_arn.as_deref()
     }
 }
 impl GetDataQualityMetricsInput {
     /// Creates a new builder-style object to manufacture [`GetDataQualityMetricsInput`](crate::operation::get_data_quality_metrics::GetDataQualityMetricsInput).
-    pub fn builder() -> crate::operation::get_data_quality_metrics::builders::GetDataQualityMetricsInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::get_data_quality_metrics::builders::GetDataQualityMetricsInputBuilder
+    {
         crate::operation::get_data_quality_metrics::builders::GetDataQualityMetricsInputBuilder::default()
     }
 }
@@ -41,8 +43,12 @@ impl GetDataQualityMetricsInputBuilder {
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the anomaly detector that you want to investigate.</p>
-    pub fn set_anomaly_detector_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.anomaly_detector_arn = input; self
+    pub fn set_anomaly_detector_arn(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.anomaly_detector_arn = input;
+        self
     }
     /// <p>The Amazon Resource Name (ARN) of a specific data quality metric set.</p>
     pub fn metric_set_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -51,18 +57,21 @@ impl GetDataQualityMetricsInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of a specific data quality metric set.</p>
     pub fn set_metric_set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.metric_set_arn = input; self
+        self.metric_set_arn = input;
+        self
     }
     /// Consumes the builder and constructs a [`GetDataQualityMetricsInput`](crate::operation::get_data_quality_metrics::GetDataQualityMetricsInput).
-    pub fn build(self) -> Result<crate::operation::get_data_quality_metrics::GetDataQualityMetricsInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::get_data_quality_metrics::GetDataQualityMetricsInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::get_data_quality_metrics::GetDataQualityMetricsInput {
-                anomaly_detector_arn: self.anomaly_detector_arn
-                ,
-                metric_set_arn: self.metric_set_arn
-                ,
-            }
+                anomaly_detector_arn: self.anomaly_detector_arn,
+                metric_set_arn: self.metric_set_arn,
+            },
         )
     }
 }
-

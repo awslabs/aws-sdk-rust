@@ -3,7 +3,7 @@
 /// <p>The resource policy that allows Incident Manager to perform actions on resources on your behalf.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ResourcePolicy  {
+pub struct ResourcePolicy {
     /// <p>The JSON blob that describes the policy.</p>
     #[doc(hidden)]
     pub policy_document: std::option::Option<std::string::String>,
@@ -16,15 +16,15 @@ pub struct ResourcePolicy  {
 }
 impl ResourcePolicy {
     /// <p>The JSON blob that describes the policy.</p>
-    pub fn policy_document(&self) -> std::option::Option<& str> {
+    pub fn policy_document(&self) -> std::option::Option<&str> {
         self.policy_document.as_deref()
     }
     /// <p>The ID of the resource policy.</p>
-    pub fn policy_id(&self) -> std::option::Option<& str> {
+    pub fn policy_id(&self) -> std::option::Option<&str> {
         self.policy_id.as_deref()
     }
     /// <p>The Amazon Web Services Region that policy allows resources to be used in.</p>
-    pub fn ram_resource_share_region(&self) -> std::option::Option<& str> {
+    pub fn ram_resource_share_region(&self) -> std::option::Option<&str> {
         self.ram_resource_share_region.as_deref()
     }
 }
@@ -51,7 +51,8 @@ impl ResourcePolicyBuilder {
     }
     /// <p>The JSON blob that describes the policy.</p>
     pub fn set_policy_document(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.policy_document = input; self
+        self.policy_document = input;
+        self
     }
     /// <p>The ID of the resource policy.</p>
     pub fn policy_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -60,7 +61,8 @@ impl ResourcePolicyBuilder {
     }
     /// <p>The ID of the resource policy.</p>
     pub fn set_policy_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.policy_id = input; self
+        self.policy_id = input;
+        self
     }
     /// <p>The Amazon Web Services Region that policy allows resources to be used in.</p>
     pub fn ram_resource_share_region(mut self, input: impl Into<std::string::String>) -> Self {
@@ -68,19 +70,19 @@ impl ResourcePolicyBuilder {
         self
     }
     /// <p>The Amazon Web Services Region that policy allows resources to be used in.</p>
-    pub fn set_ram_resource_share_region(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.ram_resource_share_region = input; self
+    pub fn set_ram_resource_share_region(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.ram_resource_share_region = input;
+        self
     }
     /// Consumes the builder and constructs a [`ResourcePolicy`](crate::types::ResourcePolicy).
     pub fn build(self) -> crate::types::ResourcePolicy {
         crate::types::ResourcePolicy {
-            policy_document: self.policy_document
-            ,
-            policy_id: self.policy_id
-            ,
-            ram_resource_share_region: self.ram_resource_share_region
-            ,
+            policy_document: self.policy_document,
+            policy_id: self.policy_id,
+            ram_resource_share_region: self.ram_resource_share_region,
         }
     }
 }
-

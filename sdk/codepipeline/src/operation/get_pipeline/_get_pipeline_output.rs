@@ -3,7 +3,7 @@
 /// <p>Represents the output of a <code>GetPipeline</code> action.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetPipelineOutput  {
+pub struct GetPipelineOutput {
     /// <p>Represents the structure of actions and stages to be performed in the pipeline. </p>
     #[doc(hidden)]
     pub pipeline: std::option::Option<crate::types::PipelineDeclaration>,
@@ -14,19 +14,19 @@ pub struct GetPipelineOutput  {
 }
 impl GetPipelineOutput {
     /// <p>Represents the structure of actions and stages to be performed in the pipeline. </p>
-    pub fn pipeline(&self) -> std::option::Option<& crate::types::PipelineDeclaration> {
+    pub fn pipeline(&self) -> std::option::Option<&crate::types::PipelineDeclaration> {
         self.pipeline.as_ref()
     }
     /// <p>Represents the pipeline metadata information returned as part of the output of a <code>GetPipeline</code> action.</p>
-    pub fn metadata(&self) -> std::option::Option<& crate::types::PipelineMetadata> {
+    pub fn metadata(&self) -> std::option::Option<&crate::types::PipelineMetadata> {
         self.metadata.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for GetPipelineOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl GetPipelineOutput {
     /// Creates a new builder-style object to manufacture [`GetPipelineOutput`](crate::operation::get_pipeline::GetPipelineOutput).
     pub fn builder() -> crate::operation::get_pipeline::builders::GetPipelineOutputBuilder {
@@ -49,8 +49,12 @@ impl GetPipelineOutputBuilder {
         self
     }
     /// <p>Represents the structure of actions and stages to be performed in the pipeline. </p>
-    pub fn set_pipeline(mut self, input: std::option::Option<crate::types::PipelineDeclaration>) -> Self {
-        self.pipeline = input; self
+    pub fn set_pipeline(
+        mut self,
+        input: std::option::Option<crate::types::PipelineDeclaration>,
+    ) -> Self {
+        self.pipeline = input;
+        self
     }
     /// <p>Represents the pipeline metadata information returned as part of the output of a <code>GetPipeline</code> action.</p>
     pub fn metadata(mut self, input: crate::types::PipelineMetadata) -> Self {
@@ -58,27 +62,28 @@ impl GetPipelineOutputBuilder {
         self
     }
     /// <p>Represents the pipeline metadata information returned as part of the output of a <code>GetPipeline</code> action.</p>
-    pub fn set_metadata(mut self, input: std::option::Option<crate::types::PipelineMetadata>) -> Self {
-        self.metadata = input; self
+    pub fn set_metadata(
+        mut self,
+        input: std::option::Option<crate::types::PipelineMetadata>,
+    ) -> Self {
+        self.metadata = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`GetPipelineOutput`](crate::operation::get_pipeline::GetPipelineOutput).
     pub fn build(self) -> crate::operation::get_pipeline::GetPipelineOutput {
         crate::operation::get_pipeline::GetPipelineOutput {
-            pipeline: self.pipeline
-            ,
-            metadata: self.metadata
-            ,
+            pipeline: self.pipeline,
+            metadata: self.metadata,
             _request_id: self._request_id,
         }
     }
 }
-

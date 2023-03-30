@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ApplySecurityGroupsToClientVpnTargetNetworkOutput  {
+pub struct ApplySecurityGroupsToClientVpnTargetNetworkOutput {
     /// <p>The IDs of the applied security groups.</p>
     #[doc(hidden)]
     pub security_group_ids: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -10,18 +10,18 @@ pub struct ApplySecurityGroupsToClientVpnTargetNetworkOutput  {
 }
 impl ApplySecurityGroupsToClientVpnTargetNetworkOutput {
     /// <p>The IDs of the applied security groups.</p>
-    pub fn security_group_ids(&self) -> std::option::Option<& [std::string::String]> {
+    pub fn security_group_ids(&self) -> std::option::Option<&[std::string::String]> {
         self.security_group_ids.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for ApplySecurityGroupsToClientVpnTargetNetworkOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl ApplySecurityGroupsToClientVpnTargetNetworkOutput {
     /// Creates a new builder-style object to manufacture [`ApplySecurityGroupsToClientVpnTargetNetworkOutput`](crate::operation::apply_security_groups_to_client_vpn_target_network::ApplySecurityGroupsToClientVpnTargetNetworkOutput).
-    pub fn builder() -> crate::operation::apply_security_groups_to_client_vpn_target_network::builders::ApplySecurityGroupsToClientVpnTargetNetworkOutputBuilder {
+    pub fn builder() -> crate::operation::apply_security_groups_to_client_vpn_target_network::builders::ApplySecurityGroupsToClientVpnTargetNetworkOutputBuilder{
         crate::operation::apply_security_groups_to_client_vpn_target_network::builders::ApplySecurityGroupsToClientVpnTargetNetworkOutputBuilder::default()
     }
 }
@@ -41,25 +41,29 @@ impl ApplySecurityGroupsToClientVpnTargetNetworkOutputBuilder {
     /// <p>The IDs of the applied security groups.</p>
     pub fn security_group_ids(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.security_group_ids.unwrap_or_default();
-                        v.push(input.into());
-                        self.security_group_ids = Some(v);
-                        self
+        v.push(input.into());
+        self.security_group_ids = Some(v);
+        self
     }
     /// <p>The IDs of the applied security groups.</p>
-    pub fn set_security_group_ids(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-        self.security_group_ids = input; self
+    pub fn set_security_group_ids(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
+        self.security_group_ids = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`ApplySecurityGroupsToClientVpnTargetNetworkOutput`](crate::operation::apply_security_groups_to_client_vpn_target_network::ApplySecurityGroupsToClientVpnTargetNetworkOutput).
-    pub fn build(self) -> crate::operation::apply_security_groups_to_client_vpn_target_network::ApplySecurityGroupsToClientVpnTargetNetworkOutput {
+    pub fn build(self) -> crate::operation::apply_security_groups_to_client_vpn_target_network::ApplySecurityGroupsToClientVpnTargetNetworkOutput{
         crate::operation::apply_security_groups_to_client_vpn_target_network::ApplySecurityGroupsToClientVpnTargetNetworkOutput {
             security_group_ids: self.security_group_ids
             ,
@@ -67,4 +71,3 @@ impl ApplySecurityGroupsToClientVpnTargetNetworkOutputBuilder {
         }
     }
 }
-

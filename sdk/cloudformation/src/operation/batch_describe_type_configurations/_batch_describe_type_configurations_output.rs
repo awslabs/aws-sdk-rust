@@ -2,40 +2,49 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct BatchDescribeTypeConfigurationsOutput  {
+pub struct BatchDescribeTypeConfigurationsOutput {
     /// <p>A list of information concerning any errors generated during the setting of the specified configurations.</p>
     #[doc(hidden)]
-    pub errors: std::option::Option<std::vec::Vec<crate::types::BatchDescribeTypeConfigurationsError>>,
+    pub errors:
+        std::option::Option<std::vec::Vec<crate::types::BatchDescribeTypeConfigurationsError>>,
     /// <p>A list of any of the specified extension configurations that CloudFormation could not process for any reason.</p>
     #[doc(hidden)]
-    pub unprocessed_type_configurations: std::option::Option<std::vec::Vec<crate::types::TypeConfigurationIdentifier>>,
+    pub unprocessed_type_configurations:
+        std::option::Option<std::vec::Vec<crate::types::TypeConfigurationIdentifier>>,
     /// <p>A list of any of the specified extension configurations from the CloudFormation registry.</p>
     #[doc(hidden)]
-    pub type_configurations: std::option::Option<std::vec::Vec<crate::types::TypeConfigurationDetails>>,
+    pub type_configurations:
+        std::option::Option<std::vec::Vec<crate::types::TypeConfigurationDetails>>,
     _request_id: Option<String>,
 }
 impl BatchDescribeTypeConfigurationsOutput {
     /// <p>A list of information concerning any errors generated during the setting of the specified configurations.</p>
-    pub fn errors(&self) -> std::option::Option<& [crate::types::BatchDescribeTypeConfigurationsError]> {
+    pub fn errors(
+        &self,
+    ) -> std::option::Option<&[crate::types::BatchDescribeTypeConfigurationsError]> {
         self.errors.as_deref()
     }
     /// <p>A list of any of the specified extension configurations that CloudFormation could not process for any reason.</p>
-    pub fn unprocessed_type_configurations(&self) -> std::option::Option<& [crate::types::TypeConfigurationIdentifier]> {
+    pub fn unprocessed_type_configurations(
+        &self,
+    ) -> std::option::Option<&[crate::types::TypeConfigurationIdentifier]> {
         self.unprocessed_type_configurations.as_deref()
     }
     /// <p>A list of any of the specified extension configurations from the CloudFormation registry.</p>
-    pub fn type_configurations(&self) -> std::option::Option<& [crate::types::TypeConfigurationDetails]> {
+    pub fn type_configurations(
+        &self,
+    ) -> std::option::Option<&[crate::types::TypeConfigurationDetails]> {
         self.type_configurations.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for BatchDescribeTypeConfigurationsOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl BatchDescribeTypeConfigurationsOutput {
     /// Creates a new builder-style object to manufacture [`BatchDescribeTypeConfigurationsOutput`](crate::operation::batch_describe_type_configurations::BatchDescribeTypeConfigurationsOutput).
-    pub fn builder() -> crate::operation::batch_describe_type_configurations::builders::BatchDescribeTypeConfigurationsOutputBuilder {
+    pub fn builder() -> crate::operation::batch_describe_type_configurations::builders::BatchDescribeTypeConfigurationsOutputBuilder{
         crate::operation::batch_describe_type_configurations::builders::BatchDescribeTypeConfigurationsOutputBuilder::default()
     }
 }
@@ -44,9 +53,12 @@ impl BatchDescribeTypeConfigurationsOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct BatchDescribeTypeConfigurationsOutputBuilder {
-    pub(crate) errors: std::option::Option<std::vec::Vec<crate::types::BatchDescribeTypeConfigurationsError>>,
-    pub(crate) unprocessed_type_configurations: std::option::Option<std::vec::Vec<crate::types::TypeConfigurationIdentifier>>,
-    pub(crate) type_configurations: std::option::Option<std::vec::Vec<crate::types::TypeConfigurationDetails>>,
+    pub(crate) errors:
+        std::option::Option<std::vec::Vec<crate::types::BatchDescribeTypeConfigurationsError>>,
+    pub(crate) unprocessed_type_configurations:
+        std::option::Option<std::vec::Vec<crate::types::TypeConfigurationIdentifier>>,
+    pub(crate) type_configurations:
+        std::option::Option<std::vec::Vec<crate::types::TypeConfigurationDetails>>,
     _request_id: Option<String>,
 }
 impl BatchDescribeTypeConfigurationsOutputBuilder {
@@ -57,28 +69,41 @@ impl BatchDescribeTypeConfigurationsOutputBuilder {
     /// <p>A list of information concerning any errors generated during the setting of the specified configurations.</p>
     pub fn errors(mut self, input: crate::types::BatchDescribeTypeConfigurationsError) -> Self {
         let mut v = self.errors.unwrap_or_default();
-                        v.push(input);
-                        self.errors = Some(v);
-                        self
+        v.push(input);
+        self.errors = Some(v);
+        self
     }
     /// <p>A list of information concerning any errors generated during the setting of the specified configurations.</p>
-    pub fn set_errors(mut self, input: std::option::Option<std::vec::Vec<crate::types::BatchDescribeTypeConfigurationsError>>) -> Self {
-        self.errors = input; self
+    pub fn set_errors(
+        mut self,
+        input: std::option::Option<
+            std::vec::Vec<crate::types::BatchDescribeTypeConfigurationsError>,
+        >,
+    ) -> Self {
+        self.errors = input;
+        self
     }
     /// Appends an item to `unprocessed_type_configurations`.
     ///
     /// To override the contents of this collection use [`set_unprocessed_type_configurations`](Self::set_unprocessed_type_configurations).
     ///
     /// <p>A list of any of the specified extension configurations that CloudFormation could not process for any reason.</p>
-    pub fn unprocessed_type_configurations(mut self, input: crate::types::TypeConfigurationIdentifier) -> Self {
+    pub fn unprocessed_type_configurations(
+        mut self,
+        input: crate::types::TypeConfigurationIdentifier,
+    ) -> Self {
         let mut v = self.unprocessed_type_configurations.unwrap_or_default();
-                        v.push(input);
-                        self.unprocessed_type_configurations = Some(v);
-                        self
+        v.push(input);
+        self.unprocessed_type_configurations = Some(v);
+        self
     }
     /// <p>A list of any of the specified extension configurations that CloudFormation could not process for any reason.</p>
-    pub fn set_unprocessed_type_configurations(mut self, input: std::option::Option<std::vec::Vec<crate::types::TypeConfigurationIdentifier>>) -> Self {
-        self.unprocessed_type_configurations = input; self
+    pub fn set_unprocessed_type_configurations(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::TypeConfigurationIdentifier>>,
+    ) -> Self {
+        self.unprocessed_type_configurations = input;
+        self
     }
     /// Appends an item to `type_configurations`.
     ///
@@ -87,25 +112,32 @@ impl BatchDescribeTypeConfigurationsOutputBuilder {
     /// <p>A list of any of the specified extension configurations from the CloudFormation registry.</p>
     pub fn type_configurations(mut self, input: crate::types::TypeConfigurationDetails) -> Self {
         let mut v = self.type_configurations.unwrap_or_default();
-                        v.push(input);
-                        self.type_configurations = Some(v);
-                        self
+        v.push(input);
+        self.type_configurations = Some(v);
+        self
     }
     /// <p>A list of any of the specified extension configurations from the CloudFormation registry.</p>
-    pub fn set_type_configurations(mut self, input: std::option::Option<std::vec::Vec<crate::types::TypeConfigurationDetails>>) -> Self {
-        self.type_configurations = input; self
+    pub fn set_type_configurations(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::TypeConfigurationDetails>>,
+    ) -> Self {
+        self.type_configurations = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`BatchDescribeTypeConfigurationsOutput`](crate::operation::batch_describe_type_configurations::BatchDescribeTypeConfigurationsOutput).
-    pub fn build(self) -> crate::operation::batch_describe_type_configurations::BatchDescribeTypeConfigurationsOutput {
+    pub fn build(
+        self,
+    ) -> crate::operation::batch_describe_type_configurations::BatchDescribeTypeConfigurationsOutput
+    {
         crate::operation::batch_describe_type_configurations::BatchDescribeTypeConfigurationsOutput {
             errors: self.errors
             ,
@@ -117,4 +149,3 @@ impl BatchDescribeTypeConfigurationsOutputBuilder {
         }
     }
 }
-

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListOrganizationAdminAccountsOutput  {
+pub struct ListOrganizationAdminAccountsOutput {
     /// <p>The list of Detective administrator accounts.</p>
     #[doc(hidden)]
     pub administrators: std::option::Option<std::vec::Vec<crate::types::Administrator>>,
@@ -13,22 +13,22 @@ pub struct ListOrganizationAdminAccountsOutput  {
 }
 impl ListOrganizationAdminAccountsOutput {
     /// <p>The list of Detective administrator accounts.</p>
-    pub fn administrators(&self) -> std::option::Option<& [crate::types::Administrator]> {
+    pub fn administrators(&self) -> std::option::Option<&[crate::types::Administrator]> {
         self.administrators.as_deref()
     }
     /// <p>If there are more accounts remaining in the results, then this is the pagination token to use to request the next page of accounts.</p>
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for ListOrganizationAdminAccountsOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl ListOrganizationAdminAccountsOutput {
     /// Creates a new builder-style object to manufacture [`ListOrganizationAdminAccountsOutput`](crate::operation::list_organization_admin_accounts::ListOrganizationAdminAccountsOutput).
-    pub fn builder() -> crate::operation::list_organization_admin_accounts::builders::ListOrganizationAdminAccountsOutputBuilder {
+    pub fn builder() -> crate::operation::list_organization_admin_accounts::builders::ListOrganizationAdminAccountsOutputBuilder{
         crate::operation::list_organization_admin_accounts::builders::ListOrganizationAdminAccountsOutputBuilder::default()
     }
 }
@@ -49,13 +49,17 @@ impl ListOrganizationAdminAccountsOutputBuilder {
     /// <p>The list of Detective administrator accounts.</p>
     pub fn administrators(mut self, input: crate::types::Administrator) -> Self {
         let mut v = self.administrators.unwrap_or_default();
-                        v.push(input);
-                        self.administrators = Some(v);
-                        self
+        v.push(input);
+        self.administrators = Some(v);
+        self
     }
     /// <p>The list of Detective administrator accounts.</p>
-    pub fn set_administrators(mut self, input: std::option::Option<std::vec::Vec<crate::types::Administrator>>) -> Self {
-        self.administrators = input; self
+    pub fn set_administrators(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::Administrator>>,
+    ) -> Self {
+        self.administrators = input;
+        self
     }
     /// <p>If there are more accounts remaining in the results, then this is the pagination token to use to request the next page of accounts.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -64,26 +68,27 @@ impl ListOrganizationAdminAccountsOutputBuilder {
     }
     /// <p>If there are more accounts remaining in the results, then this is the pagination token to use to request the next page of accounts.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input; self
+        self.next_token = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`ListOrganizationAdminAccountsOutput`](crate::operation::list_organization_admin_accounts::ListOrganizationAdminAccountsOutput).
-    pub fn build(self) -> crate::operation::list_organization_admin_accounts::ListOrganizationAdminAccountsOutput {
+    pub fn build(
+        self,
+    ) -> crate::operation::list_organization_admin_accounts::ListOrganizationAdminAccountsOutput
+    {
         crate::operation::list_organization_admin_accounts::ListOrganizationAdminAccountsOutput {
-            administrators: self.administrators
-            ,
-            next_token: self.next_token
-            ,
+            administrators: self.administrators,
+            next_token: self.next_token,
             _request_id: self._request_id,
         }
     }
 }
-

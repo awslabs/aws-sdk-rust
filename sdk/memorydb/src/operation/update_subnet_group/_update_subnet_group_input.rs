@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateSubnetGroupInput  {
+pub struct UpdateSubnetGroupInput {
     /// <p>The name of the subnet group</p>
     #[doc(hidden)]
     pub subnet_group_name: std::option::Option<std::string::String>,
@@ -15,21 +15,22 @@ pub struct UpdateSubnetGroupInput  {
 }
 impl UpdateSubnetGroupInput {
     /// <p>The name of the subnet group</p>
-    pub fn subnet_group_name(&self) -> std::option::Option<& str> {
+    pub fn subnet_group_name(&self) -> std::option::Option<&str> {
         self.subnet_group_name.as_deref()
     }
     /// <p>A description of the subnet group</p>
-    pub fn description(&self) -> std::option::Option<& str> {
+    pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
     /// <p>The EC2 subnet IDs for the subnet group.</p>
-    pub fn subnet_ids(&self) -> std::option::Option<& [std::string::String]> {
+    pub fn subnet_ids(&self) -> std::option::Option<&[std::string::String]> {
         self.subnet_ids.as_deref()
     }
 }
 impl UpdateSubnetGroupInput {
     /// Creates a new builder-style object to manufacture [`UpdateSubnetGroupInput`](crate::operation::update_subnet_group::UpdateSubnetGroupInput).
-    pub fn builder() -> crate::operation::update_subnet_group::builders::UpdateSubnetGroupInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::update_subnet_group::builders::UpdateSubnetGroupInputBuilder {
         crate::operation::update_subnet_group::builders::UpdateSubnetGroupInputBuilder::default()
     }
 }
@@ -49,8 +50,12 @@ impl UpdateSubnetGroupInputBuilder {
         self
     }
     /// <p>The name of the subnet group</p>
-    pub fn set_subnet_group_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.subnet_group_name = input; self
+    pub fn set_subnet_group_name(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.subnet_group_name = input;
+        self
     }
     /// <p>A description of the subnet group</p>
     pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -59,7 +64,8 @@ impl UpdateSubnetGroupInputBuilder {
     }
     /// <p>A description of the subnet group</p>
     pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.description = input; self
+        self.description = input;
+        self
     }
     /// Appends an item to `subnet_ids`.
     ///
@@ -68,26 +74,31 @@ impl UpdateSubnetGroupInputBuilder {
     /// <p>The EC2 subnet IDs for the subnet group.</p>
     pub fn subnet_ids(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.subnet_ids.unwrap_or_default();
-                        v.push(input.into());
-                        self.subnet_ids = Some(v);
-                        self
+        v.push(input.into());
+        self.subnet_ids = Some(v);
+        self
     }
     /// <p>The EC2 subnet IDs for the subnet group.</p>
-    pub fn set_subnet_ids(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-        self.subnet_ids = input; self
+    pub fn set_subnet_ids(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
+        self.subnet_ids = input;
+        self
     }
     /// Consumes the builder and constructs a [`UpdateSubnetGroupInput`](crate::operation::update_subnet_group::UpdateSubnetGroupInput).
-    pub fn build(self) -> Result<crate::operation::update_subnet_group::UpdateSubnetGroupInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::update_subnet_group::UpdateSubnetGroupInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::update_subnet_group::UpdateSubnetGroupInput {
-                subnet_group_name: self.subnet_group_name
-                ,
-                description: self.description
-                ,
-                subnet_ids: self.subnet_ids
-                ,
-            }
+                subnet_group_name: self.subnet_group_name,
+                description: self.description,
+                subnet_ids: self.subnet_ids,
+            },
         )
     }
 }
-

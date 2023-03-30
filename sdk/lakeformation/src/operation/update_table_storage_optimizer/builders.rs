@@ -4,49 +4,71 @@ pub use crate::operation::update_table_storage_optimizer::_update_table_storage_
 pub use crate::operation::update_table_storage_optimizer::_update_table_storage_optimizer_input::UpdateTableStorageOptimizerInputBuilder;
 
 /// Fluent builder constructing a request to `UpdateTableStorageOptimizer`.
-/// 
+///
 /// <p>Updates the configuration of the storage optimizers for a table.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct UpdateTableStorageOptimizerFluentBuilder {
                 handle: std::sync::Arc<crate::client::Handle>,
                 inner: crate::operation::update_table_storage_optimizer::builders::UpdateTableStorageOptimizerInputBuilder
             }
-impl UpdateTableStorageOptimizerFluentBuilder  {
+impl UpdateTableStorageOptimizerFluentBuilder {
     /// Creates a new `UpdateTableStorageOptimizer`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
-                    /// sent. The operation's inner [http::Request] can be modified as well.
-                    pub async fn customize(self) -> std::result::Result<
-                        crate::client::customize::CustomizableOperation<crate::operation::update_table_storage_optimizer::UpdateTableStorageOptimizer, aws_http::retry::AwsResponseRetryClassifier,>,
-                        aws_smithy_http::result::SdkError<crate::operation::update_table_storage_optimizer::UpdateTableStorageOptimizerError>
-                    >  {
-                        let handle = self.handle.clone();
-                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-                    }
-    
-                    /// Sends the request and returns the response.
-                    ///
-                    /// If an error occurs, an `SdkError` will be returned with additional details that
-                    /// can be matched against.
-                    ///
-                    /// By default, any retryable failures will be retried twice. Retry behavior
-                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                    /// set when configuring the client.
-                    pub async fn send(self) -> std::result::Result<crate::operation::update_table_storage_optimizer::UpdateTableStorageOptimizerOutput, aws_smithy_http::result::SdkError<crate::operation::update_table_storage_optimizer::UpdateTableStorageOptimizerError>>
-                     {
-                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&self.handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        self.handle.client.call(op).await
-                    }
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle,
+            inner: Default::default(),
+        }
+    }
+
+    /// Consume this builder, creating a customizable operation that can be modified before being
+    /// sent. The operation's inner [http::Request] can be modified as well.
+    pub async fn customize(
+        self,
+    ) -> std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::update_table_storage_optimizer::UpdateTableStorageOptimizer,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::result::SdkError<
+            crate::operation::update_table_storage_optimizer::UpdateTableStorageOptimizerError,
+        >,
+    > {
+        let handle = self.handle.clone();
+        let operation = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+    }
+
+    /// Sends the request and returns the response.
+    ///
+    /// If an error occurs, an `SdkError` will be returned with additional details that
+    /// can be matched against.
+    ///
+    /// By default, any retryable failures will be retried twice. Retry behavior
+    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+    /// set when configuring the client.
+    pub async fn send(
+        self,
+    ) -> std::result::Result<
+        crate::operation::update_table_storage_optimizer::UpdateTableStorageOptimizerOutput,
+        aws_smithy_http::result::SdkError<
+            crate::operation::update_table_storage_optimizer::UpdateTableStorageOptimizerError,
+        >,
+    > {
+        let op = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&self.handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        self.handle.client.call(op).await
+    }
     /// <p>The Catalog ID of the table.</p>
     pub fn catalog_id(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.catalog_id(input.into());
@@ -82,14 +104,25 @@ impl UpdateTableStorageOptimizerFluentBuilder  {
     /// To override the contents of this collection use [`set_storage_optimizer_config`](Self::set_storage_optimizer_config).
     ///
     /// <p>Name of the table for which to enable the storage optimizer.</p>
-    pub fn storage_optimizer_config(mut self, k: crate::types::OptimizerType, v: std::collections::HashMap<std::string::String, std::string::String>) -> Self {
+    pub fn storage_optimizer_config(
+        mut self,
+        k: crate::types::OptimizerType,
+        v: std::collections::HashMap<std::string::String, std::string::String>,
+    ) -> Self {
         self.inner = self.inner.storage_optimizer_config(k, v);
         self
     }
     /// <p>Name of the table for which to enable the storage optimizer.</p>
-    pub fn set_storage_optimizer_config(mut self, input: std::option::Option<std::collections::HashMap<crate::types::OptimizerType, std::collections::HashMap<std::string::String, std::string::String>>>) -> Self {
+    pub fn set_storage_optimizer_config(
+        mut self,
+        input: std::option::Option<
+            std::collections::HashMap<
+                crate::types::OptimizerType,
+                std::collections::HashMap<std::string::String, std::string::String>,
+            >,
+        >,
+    ) -> Self {
         self.inner = self.inner.set_storage_optimizer_config(input);
         self
     }
 }
-

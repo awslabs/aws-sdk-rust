@@ -4,64 +4,73 @@ pub use crate::operation::describe_orderable_cluster_options::_describe_orderabl
 pub use crate::operation::describe_orderable_cluster_options::_describe_orderable_cluster_options_input::DescribeOrderableClusterOptionsInputBuilder;
 
 /// Fluent builder constructing a request to `DescribeOrderableClusterOptions`.
-/// 
+///
 /// <p>Returns a list of orderable cluster options. Before you create a new cluster you can use this operation to find what options are available, such as the EC2 Availability Zones (AZ) in the specific Amazon Web Services Region that you can specify, and the node types you can request. The node types differ by available storage, memory, CPU and price. With the cost involved you might want to obtain a list of cluster options in the specific region and specify values when creating a cluster. For more information about managing clusters, go to <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html">Amazon Redshift Clusters</a> in the <i>Amazon Redshift Cluster Management Guide</i>.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeOrderableClusterOptionsFluentBuilder {
                 handle: std::sync::Arc<crate::client::Handle>,
                 inner: crate::operation::describe_orderable_cluster_options::builders::DescribeOrderableClusterOptionsInputBuilder
             }
-impl DescribeOrderableClusterOptionsFluentBuilder  {
+impl DescribeOrderableClusterOptionsFluentBuilder {
     /// Creates a new `DescribeOrderableClusterOptions`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
-                    /// sent. The operation's inner [http::Request] can be modified as well.
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle,
+            inner: Default::default(),
+        }
+    }
+
+    /// Consume this builder, creating a customizable operation that can be modified before being
+    /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::describe_orderable_cluster_options::DescribeOrderableClusterOptions, aws_http::retry::AwsResponseRetryClassifier,>,
                         aws_smithy_http::result::SdkError<crate::operation::describe_orderable_cluster_options::DescribeOrderableClusterOptionsError>
-                    >  {
-                        let handle = self.handle.clone();
-                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-                    }
-    
-                    /// Sends the request and returns the response.
-                    ///
-                    /// If an error occurs, an `SdkError` will be returned with additional details that
-                    /// can be matched against.
-                    ///
-                    /// By default, any retryable failures will be retried twice. Retry behavior
-                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                    /// set when configuring the client.
+    >{
+        let handle = self.handle.clone();
+        let operation = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+    }
+
+    /// Sends the request and returns the response.
+    ///
+    /// If an error occurs, an `SdkError` will be returned with additional details that
+    /// can be matched against.
+    ///
+    /// By default, any retryable failures will be retried twice. Retry behavior
+    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+    /// set when configuring the client.
                     pub async fn send(self) -> std::result::Result<crate::operation::describe_orderable_cluster_options::DescribeOrderableClusterOptionsOutput, aws_smithy_http::result::SdkError<crate::operation::describe_orderable_cluster_options::DescribeOrderableClusterOptionsError>>
                      {
-                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&self.handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        self.handle.client.call(op).await
-                    }
+        let op = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&self.handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        self.handle.client.call(op).await
+    }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::describe_orderable_cluster_options::paginator::DescribeOrderableClusterOptionsPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::describe_orderable_cluster_options::paginator::DescribeOrderableClusterOptionsPaginator {
-                            crate::operation::describe_orderable_cluster_options::paginator::DescribeOrderableClusterOptionsPaginator::new(self.handle, self.inner)
-                        }
-    /// <p>The version filter value. Specify this parameter to show only the available offerings matching the specified version.</p> 
-    /// <p>Default: All versions.</p> 
+    ///
+    /// Paginators are used by calling [`send().await`](crate::operation::describe_orderable_cluster_options::paginator::DescribeOrderableClusterOptionsPaginator::send) which returns a `Stream`.
+    pub fn into_paginator(self) -> crate::operation::describe_orderable_cluster_options::paginator::DescribeOrderableClusterOptionsPaginator{
+        crate::operation::describe_orderable_cluster_options::paginator::DescribeOrderableClusterOptionsPaginator::new(self.handle, self.inner)
+    }
+    /// <p>The version filter value. Specify this parameter to show only the available offerings matching the specified version.</p>
+    /// <p>Default: All versions.</p>
     /// <p>Constraints: Must be one of the version returned from <code>DescribeClusterVersions</code>.</p>
     pub fn cluster_version(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.cluster_version(input.into());
         self
     }
-    /// <p>The version filter value. Specify this parameter to show only the available offerings matching the specified version.</p> 
-    /// <p>Default: All versions.</p> 
+    /// <p>The version filter value. Specify this parameter to show only the available offerings matching the specified version.</p>
+    /// <p>Default: All versions.</p>
     /// <p>Constraints: Must be one of the version returned from <code>DescribeClusterVersions</code>.</p>
     pub fn set_cluster_version(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.inner = self.inner.set_cluster_version(input);
@@ -77,15 +86,15 @@ impl DescribeOrderableClusterOptionsFluentBuilder  {
         self.inner = self.inner.set_node_type(input);
         self
     }
-    /// <p>The maximum number of response records to return in each call. If the number of remaining response records exceeds the specified <code>MaxRecords</code> value, a value is returned in a <code>marker</code> field of the response. You can retrieve the next set of records by retrying the command with the returned marker value. </p> 
-    /// <p>Default: <code>100</code> </p> 
+    /// <p>The maximum number of response records to return in each call. If the number of remaining response records exceeds the specified <code>MaxRecords</code> value, a value is returned in a <code>marker</code> field of the response. You can retrieve the next set of records by retrying the command with the returned marker value. </p>
+    /// <p>Default: <code>100</code> </p>
     /// <p>Constraints: minimum 20, maximum 100.</p>
     pub fn max_records(mut self, input: i32) -> Self {
         self.inner = self.inner.max_records(input);
         self
     }
-    /// <p>The maximum number of response records to return in each call. If the number of remaining response records exceeds the specified <code>MaxRecords</code> value, a value is returned in a <code>marker</code> field of the response. You can retrieve the next set of records by retrying the command with the returned marker value. </p> 
-    /// <p>Default: <code>100</code> </p> 
+    /// <p>The maximum number of response records to return in each call. If the number of remaining response records exceeds the specified <code>MaxRecords</code> value, a value is returned in a <code>marker</code> field of the response. You can retrieve the next set of records by retrying the command with the returned marker value. </p>
+    /// <p>Default: <code>100</code> </p>
     /// <p>Constraints: minimum 20, maximum 100.</p>
     pub fn set_max_records(mut self, input: std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_records(input);
@@ -102,4 +111,3 @@ impl DescribeOrderableClusterOptionsFluentBuilder  {
         self
     }
 }
-

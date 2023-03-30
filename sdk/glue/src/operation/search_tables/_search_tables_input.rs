@@ -2,18 +2,18 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SearchTablesInput  {
+pub struct SearchTablesInput {
     /// <p>A unique identifier, consisting of <code> <i>account_id</i> </code>.</p>
     #[doc(hidden)]
     pub catalog_id: std::option::Option<std::string::String>,
     /// <p>A continuation token, included if this is a continuation call.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
-    /// <p>A list of key-value pairs, and a comparator used to filter the search results. Returns all entities matching the predicate.</p> 
+    /// <p>A list of key-value pairs, and a comparator used to filter the search results. Returns all entities matching the predicate.</p>
     /// <p>The <code>Comparator</code> member of the <code>PropertyPredicate</code> struct is used only for time fields, and can be omitted for other field types. Also, when comparing string values, such as when <code>Key=Name</code>, a fuzzy match algorithm is used. The <code>Key</code> field (for example, the value of the <code>Name</code> field) is split on certain punctuation characters, for example, -, :, #, etc. into tokens. Then each token is exact-match compared with the <code>Value</code> member of <code>PropertyPredicate</code>. For example, if <code>Key=Name</code> and <code>Value=link</code>, tables named <code>customer-link</code> and <code>xx-link-yy</code> are returned, but <code>xxlinkyy</code> is not returned.</p>
     #[doc(hidden)]
     pub filters: std::option::Option<std::vec::Vec<crate::types::PropertyPredicate>>,
-    /// <p>A string used for a text search.</p> 
+    /// <p>A string used for a text search.</p>
     /// <p>Specifying a value in quotes filters based on an exact match to the value.</p>
     #[doc(hidden)]
     pub search_text: std::option::Option<std::string::String>,
@@ -23,47 +23,47 @@ pub struct SearchTablesInput  {
     /// <p>The maximum number of tables to return in a single response.</p>
     #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
-    /// <p>Allows you to specify that you want to search the tables shared with your account. The allowable values are <code>FOREIGN</code> or <code>ALL</code>. </p> 
-    /// <ul> 
-    /// <li> <p>If set to <code>FOREIGN</code>, will search the tables shared with your account. </p> </li> 
-    /// <li> <p>If set to <code>ALL</code>, will search the tables shared with your account, as well as the tables in yor local account. </p> </li> 
+    /// <p>Allows you to specify that you want to search the tables shared with your account. The allowable values are <code>FOREIGN</code> or <code>ALL</code>. </p>
+    /// <ul>
+    /// <li> <p>If set to <code>FOREIGN</code>, will search the tables shared with your account. </p> </li>
+    /// <li> <p>If set to <code>ALL</code>, will search the tables shared with your account, as well as the tables in yor local account. </p> </li>
     /// </ul>
     #[doc(hidden)]
     pub resource_share_type: std::option::Option<crate::types::ResourceShareType>,
 }
 impl SearchTablesInput {
     /// <p>A unique identifier, consisting of <code> <i>account_id</i> </code>.</p>
-    pub fn catalog_id(&self) -> std::option::Option<& str> {
+    pub fn catalog_id(&self) -> std::option::Option<&str> {
         self.catalog_id.as_deref()
     }
     /// <p>A continuation token, included if this is a continuation call.</p>
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// <p>A list of key-value pairs, and a comparator used to filter the search results. Returns all entities matching the predicate.</p> 
+    /// <p>A list of key-value pairs, and a comparator used to filter the search results. Returns all entities matching the predicate.</p>
     /// <p>The <code>Comparator</code> member of the <code>PropertyPredicate</code> struct is used only for time fields, and can be omitted for other field types. Also, when comparing string values, such as when <code>Key=Name</code>, a fuzzy match algorithm is used. The <code>Key</code> field (for example, the value of the <code>Name</code> field) is split on certain punctuation characters, for example, -, :, #, etc. into tokens. Then each token is exact-match compared with the <code>Value</code> member of <code>PropertyPredicate</code>. For example, if <code>Key=Name</code> and <code>Value=link</code>, tables named <code>customer-link</code> and <code>xx-link-yy</code> are returned, but <code>xxlinkyy</code> is not returned.</p>
-    pub fn filters(&self) -> std::option::Option<& [crate::types::PropertyPredicate]> {
+    pub fn filters(&self) -> std::option::Option<&[crate::types::PropertyPredicate]> {
         self.filters.as_deref()
     }
-    /// <p>A string used for a text search.</p> 
+    /// <p>A string used for a text search.</p>
     /// <p>Specifying a value in quotes filters based on an exact match to the value.</p>
-    pub fn search_text(&self) -> std::option::Option<& str> {
+    pub fn search_text(&self) -> std::option::Option<&str> {
         self.search_text.as_deref()
     }
     /// <p>A list of criteria for sorting the results by a field name, in an ascending or descending order.</p>
-    pub fn sort_criteria(&self) -> std::option::Option<& [crate::types::SortCriterion]> {
+    pub fn sort_criteria(&self) -> std::option::Option<&[crate::types::SortCriterion]> {
         self.sort_criteria.as_deref()
     }
     /// <p>The maximum number of tables to return in a single response.</p>
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
-    /// <p>Allows you to specify that you want to search the tables shared with your account. The allowable values are <code>FOREIGN</code> or <code>ALL</code>. </p> 
-    /// <ul> 
-    /// <li> <p>If set to <code>FOREIGN</code>, will search the tables shared with your account. </p> </li> 
-    /// <li> <p>If set to <code>ALL</code>, will search the tables shared with your account, as well as the tables in yor local account. </p> </li> 
+    /// <p>Allows you to specify that you want to search the tables shared with your account. The allowable values are <code>FOREIGN</code> or <code>ALL</code>. </p>
+    /// <ul>
+    /// <li> <p>If set to <code>FOREIGN</code>, will search the tables shared with your account. </p> </li>
+    /// <li> <p>If set to <code>ALL</code>, will search the tables shared with your account, as well as the tables in yor local account. </p> </li>
     /// </ul>
-    pub fn resource_share_type(&self) -> std::option::Option<& crate::types::ResourceShareType> {
+    pub fn resource_share_type(&self) -> std::option::Option<&crate::types::ResourceShareType> {
         self.resource_share_type.as_ref()
     }
 }
@@ -94,7 +94,8 @@ impl SearchTablesInputBuilder {
     }
     /// <p>A unique identifier, consisting of <code> <i>account_id</i> </code>.</p>
     pub fn set_catalog_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.catalog_id = input; self
+        self.catalog_id = input;
+        self
     }
     /// <p>A continuation token, included if this is a continuation call.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -103,35 +104,41 @@ impl SearchTablesInputBuilder {
     }
     /// <p>A continuation token, included if this is a continuation call.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input; self
+        self.next_token = input;
+        self
     }
     /// Appends an item to `filters`.
     ///
     /// To override the contents of this collection use [`set_filters`](Self::set_filters).
     ///
-    /// <p>A list of key-value pairs, and a comparator used to filter the search results. Returns all entities matching the predicate.</p> 
+    /// <p>A list of key-value pairs, and a comparator used to filter the search results. Returns all entities matching the predicate.</p>
     /// <p>The <code>Comparator</code> member of the <code>PropertyPredicate</code> struct is used only for time fields, and can be omitted for other field types. Also, when comparing string values, such as when <code>Key=Name</code>, a fuzzy match algorithm is used. The <code>Key</code> field (for example, the value of the <code>Name</code> field) is split on certain punctuation characters, for example, -, :, #, etc. into tokens. Then each token is exact-match compared with the <code>Value</code> member of <code>PropertyPredicate</code>. For example, if <code>Key=Name</code> and <code>Value=link</code>, tables named <code>customer-link</code> and <code>xx-link-yy</code> are returned, but <code>xxlinkyy</code> is not returned.</p>
     pub fn filters(mut self, input: crate::types::PropertyPredicate) -> Self {
         let mut v = self.filters.unwrap_or_default();
-                        v.push(input);
-                        self.filters = Some(v);
-                        self
+        v.push(input);
+        self.filters = Some(v);
+        self
     }
-    /// <p>A list of key-value pairs, and a comparator used to filter the search results. Returns all entities matching the predicate.</p> 
+    /// <p>A list of key-value pairs, and a comparator used to filter the search results. Returns all entities matching the predicate.</p>
     /// <p>The <code>Comparator</code> member of the <code>PropertyPredicate</code> struct is used only for time fields, and can be omitted for other field types. Also, when comparing string values, such as when <code>Key=Name</code>, a fuzzy match algorithm is used. The <code>Key</code> field (for example, the value of the <code>Name</code> field) is split on certain punctuation characters, for example, -, :, #, etc. into tokens. Then each token is exact-match compared with the <code>Value</code> member of <code>PropertyPredicate</code>. For example, if <code>Key=Name</code> and <code>Value=link</code>, tables named <code>customer-link</code> and <code>xx-link-yy</code> are returned, but <code>xxlinkyy</code> is not returned.</p>
-    pub fn set_filters(mut self, input: std::option::Option<std::vec::Vec<crate::types::PropertyPredicate>>) -> Self {
-        self.filters = input; self
+    pub fn set_filters(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::PropertyPredicate>>,
+    ) -> Self {
+        self.filters = input;
+        self
     }
-    /// <p>A string used for a text search.</p> 
+    /// <p>A string used for a text search.</p>
     /// <p>Specifying a value in quotes filters based on an exact match to the value.</p>
     pub fn search_text(mut self, input: impl Into<std::string::String>) -> Self {
         self.search_text = Some(input.into());
         self
     }
-    /// <p>A string used for a text search.</p> 
+    /// <p>A string used for a text search.</p>
     /// <p>Specifying a value in quotes filters based on an exact match to the value.</p>
     pub fn set_search_text(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.search_text = input; self
+        self.search_text = input;
+        self
     }
     /// Appends an item to `sort_criteria`.
     ///
@@ -140,13 +147,17 @@ impl SearchTablesInputBuilder {
     /// <p>A list of criteria for sorting the results by a field name, in an ascending or descending order.</p>
     pub fn sort_criteria(mut self, input: crate::types::SortCriterion) -> Self {
         let mut v = self.sort_criteria.unwrap_or_default();
-                        v.push(input);
-                        self.sort_criteria = Some(v);
-                        self
+        v.push(input);
+        self.sort_criteria = Some(v);
+        self
     }
     /// <p>A list of criteria for sorting the results by a field name, in an ascending or descending order.</p>
-    pub fn set_sort_criteria(mut self, input: std::option::Option<std::vec::Vec<crate::types::SortCriterion>>) -> Self {
-        self.sort_criteria = input; self
+    pub fn set_sort_criteria(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::SortCriterion>>,
+    ) -> Self {
+        self.sort_criteria = input;
+        self
     }
     /// <p>The maximum number of tables to return in a single response.</p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -155,45 +166,45 @@ impl SearchTablesInputBuilder {
     }
     /// <p>The maximum number of tables to return in a single response.</p>
     pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_results = input; self
+        self.max_results = input;
+        self
     }
-    /// <p>Allows you to specify that you want to search the tables shared with your account. The allowable values are <code>FOREIGN</code> or <code>ALL</code>. </p> 
-    /// <ul> 
-    /// <li> <p>If set to <code>FOREIGN</code>, will search the tables shared with your account. </p> </li> 
-    /// <li> <p>If set to <code>ALL</code>, will search the tables shared with your account, as well as the tables in yor local account. </p> </li> 
+    /// <p>Allows you to specify that you want to search the tables shared with your account. The allowable values are <code>FOREIGN</code> or <code>ALL</code>. </p>
+    /// <ul>
+    /// <li> <p>If set to <code>FOREIGN</code>, will search the tables shared with your account. </p> </li>
+    /// <li> <p>If set to <code>ALL</code>, will search the tables shared with your account, as well as the tables in yor local account. </p> </li>
     /// </ul>
     pub fn resource_share_type(mut self, input: crate::types::ResourceShareType) -> Self {
         self.resource_share_type = Some(input);
         self
     }
-    /// <p>Allows you to specify that you want to search the tables shared with your account. The allowable values are <code>FOREIGN</code> or <code>ALL</code>. </p> 
-    /// <ul> 
-    /// <li> <p>If set to <code>FOREIGN</code>, will search the tables shared with your account. </p> </li> 
-    /// <li> <p>If set to <code>ALL</code>, will search the tables shared with your account, as well as the tables in yor local account. </p> </li> 
+    /// <p>Allows you to specify that you want to search the tables shared with your account. The allowable values are <code>FOREIGN</code> or <code>ALL</code>. </p>
+    /// <ul>
+    /// <li> <p>If set to <code>FOREIGN</code>, will search the tables shared with your account. </p> </li>
+    /// <li> <p>If set to <code>ALL</code>, will search the tables shared with your account, as well as the tables in yor local account. </p> </li>
     /// </ul>
-    pub fn set_resource_share_type(mut self, input: std::option::Option<crate::types::ResourceShareType>) -> Self {
-        self.resource_share_type = input; self
+    pub fn set_resource_share_type(
+        mut self,
+        input: std::option::Option<crate::types::ResourceShareType>,
+    ) -> Self {
+        self.resource_share_type = input;
+        self
     }
     /// Consumes the builder and constructs a [`SearchTablesInput`](crate::operation::search_tables::SearchTablesInput).
-    pub fn build(self) -> Result<crate::operation::search_tables::SearchTablesInput, aws_smithy_http::operation::error::BuildError> {
-        Ok(
-            crate::operation::search_tables::SearchTablesInput {
-                catalog_id: self.catalog_id
-                ,
-                next_token: self.next_token
-                ,
-                filters: self.filters
-                ,
-                search_text: self.search_text
-                ,
-                sort_criteria: self.sort_criteria
-                ,
-                max_results: self.max_results
-                ,
-                resource_share_type: self.resource_share_type
-                ,
-            }
-        )
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::search_tables::SearchTablesInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        Ok(crate::operation::search_tables::SearchTablesInput {
+            catalog_id: self.catalog_id,
+            next_token: self.next_token,
+            filters: self.filters,
+            search_text: self.search_text,
+            sort_criteria: self.sort_criteria,
+            max_results: self.max_results,
+            resource_share_type: self.resource_share_type,
+        })
     }
 }
-

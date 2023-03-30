@@ -3,7 +3,7 @@
 /// <p>Describes a product code.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ProductCode  {
+pub struct ProductCode {
     /// <p>The product code.</p>
     #[doc(hidden)]
     pub product_code_id: std::option::Option<std::string::String>,
@@ -13,11 +13,11 @@ pub struct ProductCode  {
 }
 impl ProductCode {
     /// <p>The product code.</p>
-    pub fn product_code_id(&self) -> std::option::Option<& str> {
+    pub fn product_code_id(&self) -> std::option::Option<&str> {
         self.product_code_id.as_deref()
     }
     /// <p>The type of product code.</p>
-    pub fn product_code_type(&self) -> std::option::Option<& crate::types::ProductCodeValues> {
+    pub fn product_code_type(&self) -> std::option::Option<&crate::types::ProductCodeValues> {
         self.product_code_type.as_ref()
     }
 }
@@ -43,7 +43,8 @@ impl ProductCodeBuilder {
     }
     /// <p>The product code.</p>
     pub fn set_product_code_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.product_code_id = input; self
+        self.product_code_id = input;
+        self
     }
     /// <p>The type of product code.</p>
     pub fn product_code_type(mut self, input: crate::types::ProductCodeValues) -> Self {
@@ -51,17 +52,18 @@ impl ProductCodeBuilder {
         self
     }
     /// <p>The type of product code.</p>
-    pub fn set_product_code_type(mut self, input: std::option::Option<crate::types::ProductCodeValues>) -> Self {
-        self.product_code_type = input; self
+    pub fn set_product_code_type(
+        mut self,
+        input: std::option::Option<crate::types::ProductCodeValues>,
+    ) -> Self {
+        self.product_code_type = input;
+        self
     }
     /// Consumes the builder and constructs a [`ProductCode`](crate::types::ProductCode).
     pub fn build(self) -> crate::types::ProductCode {
         crate::types::ProductCode {
-            product_code_id: self.product_code_id
-            ,
-            product_code_type: self.product_code_type
-            ,
+            product_code_id: self.product_code_id,
+            product_code_type: self.product_code_type,
         }
     }
 }
-

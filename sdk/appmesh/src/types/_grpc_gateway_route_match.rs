@@ -3,7 +3,7 @@
 /// <p>An object that represents the criteria for determining a request match.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GrpcGatewayRouteMatch  {
+pub struct GrpcGatewayRouteMatch {
     /// <p>The fully qualified domain name for the service to match from the request.</p>
     #[doc(hidden)]
     pub service_name: std::option::Option<std::string::String>,
@@ -19,15 +19,15 @@ pub struct GrpcGatewayRouteMatch  {
 }
 impl GrpcGatewayRouteMatch {
     /// <p>The fully qualified domain name for the service to match from the request.</p>
-    pub fn service_name(&self) -> std::option::Option<& str> {
+    pub fn service_name(&self) -> std::option::Option<&str> {
         self.service_name.as_deref()
     }
     /// <p>The gateway route host name to be matched on.</p>
-    pub fn hostname(&self) -> std::option::Option<& crate::types::GatewayRouteHostnameMatch> {
+    pub fn hostname(&self) -> std::option::Option<&crate::types::GatewayRouteHostnameMatch> {
         self.hostname.as_ref()
     }
     /// <p>The gateway route metadata to be matched on.</p>
-    pub fn metadata(&self) -> std::option::Option<& [crate::types::GrpcGatewayRouteMetadata]> {
+    pub fn metadata(&self) -> std::option::Option<&[crate::types::GrpcGatewayRouteMetadata]> {
         self.metadata.as_deref()
     }
     /// <p>The port number to match from the request.</p>
@@ -59,7 +59,8 @@ impl GrpcGatewayRouteMatchBuilder {
     }
     /// <p>The fully qualified domain name for the service to match from the request.</p>
     pub fn set_service_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.service_name = input; self
+        self.service_name = input;
+        self
     }
     /// <p>The gateway route host name to be matched on.</p>
     pub fn hostname(mut self, input: crate::types::GatewayRouteHostnameMatch) -> Self {
@@ -67,8 +68,12 @@ impl GrpcGatewayRouteMatchBuilder {
         self
     }
     /// <p>The gateway route host name to be matched on.</p>
-    pub fn set_hostname(mut self, input: std::option::Option<crate::types::GatewayRouteHostnameMatch>) -> Self {
-        self.hostname = input; self
+    pub fn set_hostname(
+        mut self,
+        input: std::option::Option<crate::types::GatewayRouteHostnameMatch>,
+    ) -> Self {
+        self.hostname = input;
+        self
     }
     /// Appends an item to `metadata`.
     ///
@@ -77,13 +82,17 @@ impl GrpcGatewayRouteMatchBuilder {
     /// <p>The gateway route metadata to be matched on.</p>
     pub fn metadata(mut self, input: crate::types::GrpcGatewayRouteMetadata) -> Self {
         let mut v = self.metadata.unwrap_or_default();
-                        v.push(input);
-                        self.metadata = Some(v);
-                        self
+        v.push(input);
+        self.metadata = Some(v);
+        self
     }
     /// <p>The gateway route metadata to be matched on.</p>
-    pub fn set_metadata(mut self, input: std::option::Option<std::vec::Vec<crate::types::GrpcGatewayRouteMetadata>>) -> Self {
-        self.metadata = input; self
+    pub fn set_metadata(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::GrpcGatewayRouteMetadata>>,
+    ) -> Self {
+        self.metadata = input;
+        self
     }
     /// <p>The port number to match from the request.</p>
     pub fn port(mut self, input: i32) -> Self {
@@ -92,20 +101,16 @@ impl GrpcGatewayRouteMatchBuilder {
     }
     /// <p>The port number to match from the request.</p>
     pub fn set_port(mut self, input: std::option::Option<i32>) -> Self {
-        self.port = input; self
+        self.port = input;
+        self
     }
     /// Consumes the builder and constructs a [`GrpcGatewayRouteMatch`](crate::types::GrpcGatewayRouteMatch).
     pub fn build(self) -> crate::types::GrpcGatewayRouteMatch {
         crate::types::GrpcGatewayRouteMatch {
-            service_name: self.service_name
-            ,
-            hostname: self.hostname
-            ,
-            metadata: self.metadata
-            ,
-            port: self.port
-            ,
+            service_name: self.service_name,
+            hostname: self.hostname,
+            metadata: self.metadata,
+            port: self.port,
         }
     }
 }
-

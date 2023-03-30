@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListSubjectsOutput  {
+pub struct ListSubjectsOutput {
     /// <p>A list of subjects.</p>
     #[doc(hidden)]
     pub subjects: std::option::Option<std::vec::Vec<crate::types::SubjectSummary>>,
@@ -13,19 +13,19 @@ pub struct ListSubjectsOutput  {
 }
 impl ListSubjectsOutput {
     /// <p>A list of subjects.</p>
-    pub fn subjects(&self) -> std::option::Option<& [crate::types::SubjectSummary]> {
+    pub fn subjects(&self) -> std::option::Option<&[crate::types::SubjectSummary]> {
         self.subjects.as_deref()
     }
     /// <p>A token that indicates where the output should continue from, if a previous operation did not show all results. To get the next results, call the operation again with this value.</p>
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for ListSubjectsOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl ListSubjectsOutput {
     /// Creates a new builder-style object to manufacture [`ListSubjectsOutput`](crate::operation::list_subjects::ListSubjectsOutput).
     pub fn builder() -> crate::operation::list_subjects::builders::ListSubjectsOutputBuilder {
@@ -49,13 +49,17 @@ impl ListSubjectsOutputBuilder {
     /// <p>A list of subjects.</p>
     pub fn subjects(mut self, input: crate::types::SubjectSummary) -> Self {
         let mut v = self.subjects.unwrap_or_default();
-                        v.push(input);
-                        self.subjects = Some(v);
-                        self
+        v.push(input);
+        self.subjects = Some(v);
+        self
     }
     /// <p>A list of subjects.</p>
-    pub fn set_subjects(mut self, input: std::option::Option<std::vec::Vec<crate::types::SubjectSummary>>) -> Self {
-        self.subjects = input; self
+    pub fn set_subjects(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::SubjectSummary>>,
+    ) -> Self {
+        self.subjects = input;
+        self
     }
     /// <p>A token that indicates where the output should continue from, if a previous operation did not show all results. To get the next results, call the operation again with this value.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -64,26 +68,24 @@ impl ListSubjectsOutputBuilder {
     }
     /// <p>A token that indicates where the output should continue from, if a previous operation did not show all results. To get the next results, call the operation again with this value.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input; self
+        self.next_token = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`ListSubjectsOutput`](crate::operation::list_subjects::ListSubjectsOutput).
     pub fn build(self) -> crate::operation::list_subjects::ListSubjectsOutput {
         crate::operation::list_subjects::ListSubjectsOutput {
-            subjects: self.subjects
-            ,
-            next_token: self.next_token
-            ,
+            subjects: self.subjects,
+            next_token: self.next_token,
             _request_id: self._request_id,
         }
     }
 }
-

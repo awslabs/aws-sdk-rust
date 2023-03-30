@@ -3,14 +3,14 @@
 /// <p>Information about how AWS Ground Station should configure an antenna for downlink during a contact.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AntennaDownlinkConfig  {
+pub struct AntennaDownlinkConfig {
     /// <p>Object that describes a spectral <code>Config</code>.</p>
     #[doc(hidden)]
     pub spectrum_config: std::option::Option<crate::types::SpectrumConfig>,
 }
 impl AntennaDownlinkConfig {
     /// <p>Object that describes a spectral <code>Config</code>.</p>
-    pub fn spectrum_config(&self) -> std::option::Option<& crate::types::SpectrumConfig> {
+    pub fn spectrum_config(&self) -> std::option::Option<&crate::types::SpectrumConfig> {
         self.spectrum_config.as_ref()
     }
 }
@@ -34,15 +34,17 @@ impl AntennaDownlinkConfigBuilder {
         self
     }
     /// <p>Object that describes a spectral <code>Config</code>.</p>
-    pub fn set_spectrum_config(mut self, input: std::option::Option<crate::types::SpectrumConfig>) -> Self {
-        self.spectrum_config = input; self
+    pub fn set_spectrum_config(
+        mut self,
+        input: std::option::Option<crate::types::SpectrumConfig>,
+    ) -> Self {
+        self.spectrum_config = input;
+        self
     }
     /// Consumes the builder and constructs a [`AntennaDownlinkConfig`](crate::types::AntennaDownlinkConfig).
     pub fn build(self) -> crate::types::AntennaDownlinkConfig {
         crate::types::AntennaDownlinkConfig {
-            spectrum_config: self.spectrum_config
-            ,
+            spectrum_config: self.spectrum_config,
         }
     }
 }
-

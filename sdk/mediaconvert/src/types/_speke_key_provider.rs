@@ -3,7 +3,7 @@
 /// If your output group type is HLS, DASH, or Microsoft Smooth, use these settings when doing DRM encryption with a SPEKE-compliant key provider. If your output group type is CMAF, use the SpekeKeyProviderCmaf settings instead.
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SpekeKeyProvider  {
+pub struct SpekeKeyProvider {
     /// If you want your key provider to encrypt the content keys that it provides to MediaConvert, set up a certificate with a master key using AWS Certificate Manager. Specify the certificate's Amazon Resource Name (ARN) here.
     #[doc(hidden)]
     pub certificate_arn: std::option::Option<std::string::String>,
@@ -19,19 +19,19 @@ pub struct SpekeKeyProvider  {
 }
 impl SpekeKeyProvider {
     /// If you want your key provider to encrypt the content keys that it provides to MediaConvert, set up a certificate with a master key using AWS Certificate Manager. Specify the certificate's Amazon Resource Name (ARN) here.
-    pub fn certificate_arn(&self) -> std::option::Option<& str> {
+    pub fn certificate_arn(&self) -> std::option::Option<&str> {
         self.certificate_arn.as_deref()
     }
     /// Specify the resource ID that your SPEKE-compliant key provider uses to identify this content.
-    pub fn resource_id(&self) -> std::option::Option<& str> {
+    pub fn resource_id(&self) -> std::option::Option<&str> {
         self.resource_id.as_deref()
     }
     /// Relates to SPEKE implementation. DRM system identifiers. DASH output groups support a max of two system ids. Other group types support one system id. See https://dashif.org/identifiers/content_protection/ for more details.
-    pub fn system_ids(&self) -> std::option::Option<& [std::string::String]> {
+    pub fn system_ids(&self) -> std::option::Option<&[std::string::String]> {
         self.system_ids.as_deref()
     }
     /// Specify the URL to the key server that your SPEKE-compliant DRM key provider uses to provide keys for encrypting your content.
-    pub fn url(&self) -> std::option::Option<& str> {
+    pub fn url(&self) -> std::option::Option<&str> {
         self.url.as_deref()
     }
 }
@@ -59,7 +59,8 @@ impl SpekeKeyProviderBuilder {
     }
     /// If you want your key provider to encrypt the content keys that it provides to MediaConvert, set up a certificate with a master key using AWS Certificate Manager. Specify the certificate's Amazon Resource Name (ARN) here.
     pub fn set_certificate_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.certificate_arn = input; self
+        self.certificate_arn = input;
+        self
     }
     /// Specify the resource ID that your SPEKE-compliant key provider uses to identify this content.
     pub fn resource_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -68,7 +69,8 @@ impl SpekeKeyProviderBuilder {
     }
     /// Specify the resource ID that your SPEKE-compliant key provider uses to identify this content.
     pub fn set_resource_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.resource_id = input; self
+        self.resource_id = input;
+        self
     }
     /// Appends an item to `system_ids`.
     ///
@@ -77,13 +79,17 @@ impl SpekeKeyProviderBuilder {
     /// Relates to SPEKE implementation. DRM system identifiers. DASH output groups support a max of two system ids. Other group types support one system id. See https://dashif.org/identifiers/content_protection/ for more details.
     pub fn system_ids(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.system_ids.unwrap_or_default();
-                        v.push(input.into());
-                        self.system_ids = Some(v);
-                        self
+        v.push(input.into());
+        self.system_ids = Some(v);
+        self
     }
     /// Relates to SPEKE implementation. DRM system identifiers. DASH output groups support a max of two system ids. Other group types support one system id. See https://dashif.org/identifiers/content_protection/ for more details.
-    pub fn set_system_ids(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-        self.system_ids = input; self
+    pub fn set_system_ids(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
+        self.system_ids = input;
+        self
     }
     /// Specify the URL to the key server that your SPEKE-compliant DRM key provider uses to provide keys for encrypting your content.
     pub fn url(mut self, input: impl Into<std::string::String>) -> Self {
@@ -92,20 +98,16 @@ impl SpekeKeyProviderBuilder {
     }
     /// Specify the URL to the key server that your SPEKE-compliant DRM key provider uses to provide keys for encrypting your content.
     pub fn set_url(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.url = input; self
+        self.url = input;
+        self
     }
     /// Consumes the builder and constructs a [`SpekeKeyProvider`](crate::types::SpekeKeyProvider).
     pub fn build(self) -> crate::types::SpekeKeyProvider {
         crate::types::SpekeKeyProvider {
-            certificate_arn: self.certificate_arn
-            ,
-            resource_id: self.resource_id
-            ,
-            system_ids: self.system_ids
-            ,
-            url: self.url
-            ,
+            certificate_arn: self.certificate_arn,
+            resource_id: self.resource_id,
+            system_ids: self.system_ids,
+            url: self.url,
         }
     }
 }
-

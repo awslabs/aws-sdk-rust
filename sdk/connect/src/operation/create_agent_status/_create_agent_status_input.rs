@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateAgentStatusInput  {
+pub struct CreateAgentStatusInput {
     /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
     #[doc(hidden)]
     pub instance_id: std::option::Option<std::string::String>,
@@ -20,23 +20,24 @@ pub struct CreateAgentStatusInput  {
     pub display_order: std::option::Option<i32>,
     /// <p>The tags used to organize, track, or control access for this resource. For example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
     #[doc(hidden)]
-    pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub tags:
+        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl CreateAgentStatusInput {
     /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
-    pub fn instance_id(&self) -> std::option::Option<& str> {
+    pub fn instance_id(&self) -> std::option::Option<&str> {
         self.instance_id.as_deref()
     }
     /// <p>The name of the status.</p>
-    pub fn name(&self) -> std::option::Option<& str> {
+    pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>The description of the status.</p>
-    pub fn description(&self) -> std::option::Option<& str> {
+    pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
     /// <p>The state of the status.</p>
-    pub fn state(&self) -> std::option::Option<& crate::types::AgentStatusState> {
+    pub fn state(&self) -> std::option::Option<&crate::types::AgentStatusState> {
         self.state.as_ref()
     }
     /// <p>The display order of the status.</p>
@@ -44,13 +45,17 @@ impl CreateAgentStatusInput {
         self.display_order
     }
     /// <p>The tags used to organize, track, or control access for this resource. For example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
-    pub fn tags(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
         self.tags.as_ref()
     }
 }
 impl CreateAgentStatusInput {
     /// Creates a new builder-style object to manufacture [`CreateAgentStatusInput`](crate::operation::create_agent_status::CreateAgentStatusInput).
-    pub fn builder() -> crate::operation::create_agent_status::builders::CreateAgentStatusInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::create_agent_status::builders::CreateAgentStatusInputBuilder {
         crate::operation::create_agent_status::builders::CreateAgentStatusInputBuilder::default()
     }
 }
@@ -64,7 +69,8 @@ pub struct CreateAgentStatusInputBuilder {
     pub(crate) description: std::option::Option<std::string::String>,
     pub(crate) state: std::option::Option<crate::types::AgentStatusState>,
     pub(crate) display_order: std::option::Option<i32>,
-    pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub(crate) tags:
+        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl CreateAgentStatusInputBuilder {
     /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
@@ -74,7 +80,8 @@ impl CreateAgentStatusInputBuilder {
     }
     /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
     pub fn set_instance_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.instance_id = input; self
+        self.instance_id = input;
+        self
     }
     /// <p>The name of the status.</p>
     pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -83,7 +90,8 @@ impl CreateAgentStatusInputBuilder {
     }
     /// <p>The name of the status.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input; self
+        self.name = input;
+        self
     }
     /// <p>The description of the status.</p>
     pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -92,7 +100,8 @@ impl CreateAgentStatusInputBuilder {
     }
     /// <p>The description of the status.</p>
     pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.description = input; self
+        self.description = input;
+        self
     }
     /// <p>The state of the status.</p>
     pub fn state(mut self, input: crate::types::AgentStatusState) -> Self {
@@ -101,7 +110,8 @@ impl CreateAgentStatusInputBuilder {
     }
     /// <p>The state of the status.</p>
     pub fn set_state(mut self, input: std::option::Option<crate::types::AgentStatusState>) -> Self {
-        self.state = input; self
+        self.state = input;
+        self
     }
     /// <p>The display order of the status.</p>
     pub fn display_order(mut self, input: i32) -> Self {
@@ -110,41 +120,50 @@ impl CreateAgentStatusInputBuilder {
     }
     /// <p>The display order of the status.</p>
     pub fn set_display_order(mut self, input: std::option::Option<i32>) -> Self {
-        self.display_order = input; self
+        self.display_order = input;
+        self
     }
     /// Adds a key-value pair to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// <p>The tags used to organize, track, or control access for this resource. For example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
-    pub fn tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
+    pub fn tags(
+        mut self,
+        k: impl Into<std::string::String>,
+        v: impl Into<std::string::String>,
+    ) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
-                        hash_map.insert(k.into(), v.into());
-                        self.tags = Some(hash_map);
-                        self
+        hash_map.insert(k.into(), v.into());
+        self.tags = Some(hash_map);
+        self
     }
     /// <p>The tags used to organize, track, or control access for this resource. For example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
-    pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
-        self.tags = input; self
+    pub fn set_tags(
+        mut self,
+        input: std::option::Option<
+            std::collections::HashMap<std::string::String, std::string::String>,
+        >,
+    ) -> Self {
+        self.tags = input;
+        self
     }
     /// Consumes the builder and constructs a [`CreateAgentStatusInput`](crate::operation::create_agent_status::CreateAgentStatusInput).
-    pub fn build(self) -> Result<crate::operation::create_agent_status::CreateAgentStatusInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::create_agent_status::CreateAgentStatusInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::create_agent_status::CreateAgentStatusInput {
-                instance_id: self.instance_id
-                ,
-                name: self.name
-                ,
-                description: self.description
-                ,
-                state: self.state
-                ,
-                display_order: self.display_order
-                ,
-                tags: self.tags
-                ,
-            }
+                instance_id: self.instance_id,
+                name: self.name,
+                description: self.description,
+                state: self.state,
+                display_order: self.display_order,
+                tags: self.tags,
+            },
         )
     }
 }
-

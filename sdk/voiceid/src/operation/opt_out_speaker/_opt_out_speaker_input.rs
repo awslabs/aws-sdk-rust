@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct OptOutSpeakerInput  {
+pub struct OptOutSpeakerInput {
     /// <p>The identifier of the domain containing the speaker.</p>
     #[doc(hidden)]
     pub domain_id: std::option::Option<std::string::String>,
@@ -12,15 +12,15 @@ pub struct OptOutSpeakerInput  {
 }
 impl OptOutSpeakerInput {
     /// <p>The identifier of the domain containing the speaker.</p>
-    pub fn domain_id(&self) -> std::option::Option<& str> {
+    pub fn domain_id(&self) -> std::option::Option<&str> {
         self.domain_id.as_deref()
     }
     /// <p>The identifier of the speaker you want opted-out.</p>
-    pub fn speaker_id(&self) -> std::option::Option<& str> {
+    pub fn speaker_id(&self) -> std::option::Option<&str> {
         self.speaker_id.as_deref()
     }
 }
-impl  std::fmt::Debug for OptOutSpeakerInput  {
+impl std::fmt::Debug for OptOutSpeakerInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("OptOutSpeakerInput");
         formatter.field("domain_id", &self.domain_id);
@@ -50,7 +50,8 @@ impl OptOutSpeakerInputBuilder {
     }
     /// <p>The identifier of the domain containing the speaker.</p>
     pub fn set_domain_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.domain_id = input; self
+        self.domain_id = input;
+        self
     }
     /// <p>The identifier of the speaker you want opted-out.</p>
     pub fn speaker_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -59,18 +60,20 @@ impl OptOutSpeakerInputBuilder {
     }
     /// <p>The identifier of the speaker you want opted-out.</p>
     pub fn set_speaker_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.speaker_id = input; self
+        self.speaker_id = input;
+        self
     }
     /// Consumes the builder and constructs a [`OptOutSpeakerInput`](crate::operation::opt_out_speaker::OptOutSpeakerInput).
-    pub fn build(self) -> Result<crate::operation::opt_out_speaker::OptOutSpeakerInput, aws_smithy_http::operation::error::BuildError> {
-        Ok(
-            crate::operation::opt_out_speaker::OptOutSpeakerInput {
-                domain_id: self.domain_id
-                ,
-                speaker_id: self.speaker_id
-                ,
-            }
-        )
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::opt_out_speaker::OptOutSpeakerInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        Ok(crate::operation::opt_out_speaker::OptOutSpeakerInput {
+            domain_id: self.domain_id,
+            speaker_id: self.speaker_id,
+        })
     }
 }
 impl std::fmt::Debug for OptOutSpeakerInputBuilder {
@@ -81,4 +84,3 @@ impl std::fmt::Debug for OptOutSpeakerInputBuilder {
         formatter.finish()
     }
 }
-

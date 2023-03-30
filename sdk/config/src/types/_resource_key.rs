@@ -3,7 +3,7 @@
 /// <p>The details that identify a resource within Config, including the resource type and resource ID.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ResourceKey  {
+pub struct ResourceKey {
     /// <p>The resource type.</p>
     #[doc(hidden)]
     pub resource_type: std::option::Option<crate::types::ResourceType>,
@@ -13,11 +13,11 @@ pub struct ResourceKey  {
 }
 impl ResourceKey {
     /// <p>The resource type.</p>
-    pub fn resource_type(&self) -> std::option::Option<& crate::types::ResourceType> {
+    pub fn resource_type(&self) -> std::option::Option<&crate::types::ResourceType> {
         self.resource_type.as_ref()
     }
     /// <p>The ID of the resource (for example., sg-xxxxxx). </p>
-    pub fn resource_id(&self) -> std::option::Option<& str> {
+    pub fn resource_id(&self) -> std::option::Option<&str> {
         self.resource_id.as_deref()
     }
 }
@@ -42,8 +42,12 @@ impl ResourceKeyBuilder {
         self
     }
     /// <p>The resource type.</p>
-    pub fn set_resource_type(mut self, input: std::option::Option<crate::types::ResourceType>) -> Self {
-        self.resource_type = input; self
+    pub fn set_resource_type(
+        mut self,
+        input: std::option::Option<crate::types::ResourceType>,
+    ) -> Self {
+        self.resource_type = input;
+        self
     }
     /// <p>The ID of the resource (for example., sg-xxxxxx). </p>
     pub fn resource_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -52,16 +56,14 @@ impl ResourceKeyBuilder {
     }
     /// <p>The ID of the resource (for example., sg-xxxxxx). </p>
     pub fn set_resource_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.resource_id = input; self
+        self.resource_id = input;
+        self
     }
     /// Consumes the builder and constructs a [`ResourceKey`](crate::types::ResourceKey).
     pub fn build(self) -> crate::types::ResourceKey {
         crate::types::ResourceKey {
-            resource_type: self.resource_type
-            ,
-            resource_id: self.resource_id
-            ,
+            resource_type: self.resource_type,
+            resource_id: self.resource_id,
         }
     }
 }
-

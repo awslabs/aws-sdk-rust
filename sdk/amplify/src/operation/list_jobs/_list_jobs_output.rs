@@ -3,7 +3,7 @@
 /// <p> The maximum number of records to list in a single response. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListJobsOutput  {
+pub struct ListJobsOutput {
     /// <p> The result structure for the list job result request. </p>
     #[doc(hidden)]
     pub job_summaries: std::option::Option<std::vec::Vec<crate::types::JobSummary>>,
@@ -14,19 +14,19 @@ pub struct ListJobsOutput  {
 }
 impl ListJobsOutput {
     /// <p> The result structure for the list job result request. </p>
-    pub fn job_summaries(&self) -> std::option::Option<& [crate::types::JobSummary]> {
+    pub fn job_summaries(&self) -> std::option::Option<&[crate::types::JobSummary]> {
         self.job_summaries.as_deref()
     }
     /// <p> A pagination token. If non-null the pagination token is returned in a result. Pass its value in another request to retrieve more entries. </p>
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for ListJobsOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl ListJobsOutput {
     /// Creates a new builder-style object to manufacture [`ListJobsOutput`](crate::operation::list_jobs::ListJobsOutput).
     pub fn builder() -> crate::operation::list_jobs::builders::ListJobsOutputBuilder {
@@ -50,13 +50,17 @@ impl ListJobsOutputBuilder {
     /// <p> The result structure for the list job result request. </p>
     pub fn job_summaries(mut self, input: crate::types::JobSummary) -> Self {
         let mut v = self.job_summaries.unwrap_or_default();
-                        v.push(input);
-                        self.job_summaries = Some(v);
-                        self
+        v.push(input);
+        self.job_summaries = Some(v);
+        self
     }
     /// <p> The result structure for the list job result request. </p>
-    pub fn set_job_summaries(mut self, input: std::option::Option<std::vec::Vec<crate::types::JobSummary>>) -> Self {
-        self.job_summaries = input; self
+    pub fn set_job_summaries(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::JobSummary>>,
+    ) -> Self {
+        self.job_summaries = input;
+        self
     }
     /// <p> A pagination token. If non-null the pagination token is returned in a result. Pass its value in another request to retrieve more entries. </p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -65,26 +69,24 @@ impl ListJobsOutputBuilder {
     }
     /// <p> A pagination token. If non-null the pagination token is returned in a result. Pass its value in another request to retrieve more entries. </p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input; self
+        self.next_token = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`ListJobsOutput`](crate::operation::list_jobs::ListJobsOutput).
     pub fn build(self) -> crate::operation::list_jobs::ListJobsOutput {
         crate::operation::list_jobs::ListJobsOutput {
-            job_summaries: self.job_summaries
-            ,
-            next_token: self.next_token
-            ,
+            job_summaries: self.job_summaries,
+            next_token: self.next_token,
             _request_id: self._request_id,
         }
     }
 }
-

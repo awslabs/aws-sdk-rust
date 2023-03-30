@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetEffectivePoliciesInput  {
+pub struct GetEffectivePoliciesInput {
     /// <p>The principal. Valid principals are CertificateArn (arn:aws:iot:<i>region</i>:<i>accountId</i>:cert/<i>certificateId</i>), thingGroupArn (arn:aws:iot:<i>region</i>:<i>accountId</i>:thinggroup/<i>groupName</i>) and CognitoId (<i>region</i>:<i>id</i>).</p>
     #[doc(hidden)]
     pub principal: std::option::Option<std::string::String>,
@@ -15,21 +15,22 @@ pub struct GetEffectivePoliciesInput  {
 }
 impl GetEffectivePoliciesInput {
     /// <p>The principal. Valid principals are CertificateArn (arn:aws:iot:<i>region</i>:<i>accountId</i>:cert/<i>certificateId</i>), thingGroupArn (arn:aws:iot:<i>region</i>:<i>accountId</i>:thinggroup/<i>groupName</i>) and CognitoId (<i>region</i>:<i>id</i>).</p>
-    pub fn principal(&self) -> std::option::Option<& str> {
+    pub fn principal(&self) -> std::option::Option<&str> {
         self.principal.as_deref()
     }
     /// <p>The Cognito identity pool ID.</p>
-    pub fn cognito_identity_pool_id(&self) -> std::option::Option<& str> {
+    pub fn cognito_identity_pool_id(&self) -> std::option::Option<&str> {
         self.cognito_identity_pool_id.as_deref()
     }
     /// <p>The thing name.</p>
-    pub fn thing_name(&self) -> std::option::Option<& str> {
+    pub fn thing_name(&self) -> std::option::Option<&str> {
         self.thing_name.as_deref()
     }
 }
 impl GetEffectivePoliciesInput {
     /// Creates a new builder-style object to manufacture [`GetEffectivePoliciesInput`](crate::operation::get_effective_policies::GetEffectivePoliciesInput).
-    pub fn builder() -> crate::operation::get_effective_policies::builders::GetEffectivePoliciesInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::get_effective_policies::builders::GetEffectivePoliciesInputBuilder {
         crate::operation::get_effective_policies::builders::GetEffectivePoliciesInputBuilder::default()
     }
 }
@@ -50,7 +51,8 @@ impl GetEffectivePoliciesInputBuilder {
     }
     /// <p>The principal. Valid principals are CertificateArn (arn:aws:iot:<i>region</i>:<i>accountId</i>:cert/<i>certificateId</i>), thingGroupArn (arn:aws:iot:<i>region</i>:<i>accountId</i>:thinggroup/<i>groupName</i>) and CognitoId (<i>region</i>:<i>id</i>).</p>
     pub fn set_principal(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.principal = input; self
+        self.principal = input;
+        self
     }
     /// <p>The Cognito identity pool ID.</p>
     pub fn cognito_identity_pool_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -58,8 +60,12 @@ impl GetEffectivePoliciesInputBuilder {
         self
     }
     /// <p>The Cognito identity pool ID.</p>
-    pub fn set_cognito_identity_pool_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.cognito_identity_pool_id = input; self
+    pub fn set_cognito_identity_pool_id(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.cognito_identity_pool_id = input;
+        self
     }
     /// <p>The thing name.</p>
     pub fn thing_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -68,20 +74,22 @@ impl GetEffectivePoliciesInputBuilder {
     }
     /// <p>The thing name.</p>
     pub fn set_thing_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.thing_name = input; self
+        self.thing_name = input;
+        self
     }
     /// Consumes the builder and constructs a [`GetEffectivePoliciesInput`](crate::operation::get_effective_policies::GetEffectivePoliciesInput).
-    pub fn build(self) -> Result<crate::operation::get_effective_policies::GetEffectivePoliciesInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::get_effective_policies::GetEffectivePoliciesInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::get_effective_policies::GetEffectivePoliciesInput {
-                principal: self.principal
-                ,
-                cognito_identity_pool_id: self.cognito_identity_pool_id
-                ,
-                thing_name: self.thing_name
-                ,
-            }
+                principal: self.principal,
+                cognito_identity_pool_id: self.cognito_identity_pool_id,
+                thing_name: self.thing_name,
+            },
         )
     }
 }
-

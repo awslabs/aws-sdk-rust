@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdatePrivateDnsNamespaceInput  {
+pub struct UpdatePrivateDnsNamespaceInput {
     /// <p>The ID of the namespace that you want to update.</p>
     #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
@@ -15,21 +15,21 @@ pub struct UpdatePrivateDnsNamespaceInput  {
 }
 impl UpdatePrivateDnsNamespaceInput {
     /// <p>The ID of the namespace that you want to update.</p>
-    pub fn id(&self) -> std::option::Option<& str> {
+    pub fn id(&self) -> std::option::Option<&str> {
         self.id.as_deref()
     }
     /// <p>A unique string that identifies the request and that allows failed <code>UpdatePrivateDnsNamespace</code> requests to be retried without the risk of running the operation twice. <code>UpdaterRequestId</code> can be any unique string (for example, a date/timestamp).</p>
-    pub fn updater_request_id(&self) -> std::option::Option<& str> {
+    pub fn updater_request_id(&self) -> std::option::Option<&str> {
         self.updater_request_id.as_deref()
     }
     /// <p>Updated properties for the private DNS namespace.</p>
-    pub fn namespace(&self) -> std::option::Option<& crate::types::PrivateDnsNamespaceChange> {
+    pub fn namespace(&self) -> std::option::Option<&crate::types::PrivateDnsNamespaceChange> {
         self.namespace.as_ref()
     }
 }
 impl UpdatePrivateDnsNamespaceInput {
     /// Creates a new builder-style object to manufacture [`UpdatePrivateDnsNamespaceInput`](crate::operation::update_private_dns_namespace::UpdatePrivateDnsNamespaceInput).
-    pub fn builder() -> crate::operation::update_private_dns_namespace::builders::UpdatePrivateDnsNamespaceInputBuilder {
+    pub fn builder() -> crate::operation::update_private_dns_namespace::builders::UpdatePrivateDnsNamespaceInputBuilder{
         crate::operation::update_private_dns_namespace::builders::UpdatePrivateDnsNamespaceInputBuilder::default()
     }
 }
@@ -50,7 +50,8 @@ impl UpdatePrivateDnsNamespaceInputBuilder {
     }
     /// <p>The ID of the namespace that you want to update.</p>
     pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.id = input; self
+        self.id = input;
+        self
     }
     /// <p>A unique string that identifies the request and that allows failed <code>UpdatePrivateDnsNamespace</code> requests to be retried without the risk of running the operation twice. <code>UpdaterRequestId</code> can be any unique string (for example, a date/timestamp).</p>
     pub fn updater_request_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -58,8 +59,12 @@ impl UpdatePrivateDnsNamespaceInputBuilder {
         self
     }
     /// <p>A unique string that identifies the request and that allows failed <code>UpdatePrivateDnsNamespace</code> requests to be retried without the risk of running the operation twice. <code>UpdaterRequestId</code> can be any unique string (for example, a date/timestamp).</p>
-    pub fn set_updater_request_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.updater_request_id = input; self
+    pub fn set_updater_request_id(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.updater_request_id = input;
+        self
     }
     /// <p>Updated properties for the private DNS namespace.</p>
     pub fn namespace(mut self, input: crate::types::PrivateDnsNamespaceChange) -> Self {
@@ -67,21 +72,26 @@ impl UpdatePrivateDnsNamespaceInputBuilder {
         self
     }
     /// <p>Updated properties for the private DNS namespace.</p>
-    pub fn set_namespace(mut self, input: std::option::Option<crate::types::PrivateDnsNamespaceChange>) -> Self {
-        self.namespace = input; self
+    pub fn set_namespace(
+        mut self,
+        input: std::option::Option<crate::types::PrivateDnsNamespaceChange>,
+    ) -> Self {
+        self.namespace = input;
+        self
     }
     /// Consumes the builder and constructs a [`UpdatePrivateDnsNamespaceInput`](crate::operation::update_private_dns_namespace::UpdatePrivateDnsNamespaceInput).
-    pub fn build(self) -> Result<crate::operation::update_private_dns_namespace::UpdatePrivateDnsNamespaceInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::update_private_dns_namespace::UpdatePrivateDnsNamespaceInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::update_private_dns_namespace::UpdatePrivateDnsNamespaceInput {
-                id: self.id
-                ,
-                updater_request_id: self.updater_request_id
-                ,
-                namespace: self.namespace
-                ,
-            }
+                id: self.id,
+                updater_request_id: self.updater_request_id,
+                namespace: self.namespace,
+            },
         )
     }
 }
-

@@ -2,17 +2,19 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AssociateDrtLogBucketOutput  {
+pub struct AssociateDrtLogBucketOutput {
     _request_id: Option<String>,
 }
 impl aws_http::request_id::RequestId for AssociateDrtLogBucketOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl AssociateDrtLogBucketOutput {
     /// Creates a new builder-style object to manufacture [`AssociateDrtLogBucketOutput`](crate::operation::associate_drt_log_bucket::AssociateDrtLogBucketOutput).
-    pub fn builder() -> crate::operation::associate_drt_log_bucket::builders::AssociateDrtLogBucketOutputBuilder {
+    pub fn builder(
+    ) -> crate::operation::associate_drt_log_bucket::builders::AssociateDrtLogBucketOutputBuilder
+    {
         crate::operation::associate_drt_log_bucket::builders::AssociateDrtLogBucketOutputBuilder::default()
     }
 }
@@ -25,14 +27,14 @@ pub struct AssociateDrtLogBucketOutputBuilder {
 }
 impl AssociateDrtLogBucketOutputBuilder {
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`AssociateDrtLogBucketOutput`](crate::operation::associate_drt_log_bucket::AssociateDrtLogBucketOutput).
     pub fn build(self) -> crate::operation::associate_drt_log_bucket::AssociateDrtLogBucketOutput {
         crate::operation::associate_drt_log_bucket::AssociateDrtLogBucketOutput {
@@ -40,4 +42,3 @@ impl AssociateDrtLogBucketOutputBuilder {
         }
     }
 }
-

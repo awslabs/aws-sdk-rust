@@ -3,7 +3,7 @@
 /// <p>Contains details of a coverage map filter.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CoverageMapFilter  {
+pub struct CoverageMapFilter {
     /// <p>The operator to compare coverage on.</p>
     #[doc(hidden)]
     pub comparison: std::option::Option<crate::types::CoverageMapComparison>,
@@ -16,15 +16,15 @@ pub struct CoverageMapFilter  {
 }
 impl CoverageMapFilter {
     /// <p>The operator to compare coverage on.</p>
-    pub fn comparison(&self) -> std::option::Option<& crate::types::CoverageMapComparison> {
+    pub fn comparison(&self) -> std::option::Option<&crate::types::CoverageMapComparison> {
         self.comparison.as_ref()
     }
     /// <p>The tag key associated with the coverage map filter.</p>
-    pub fn key(&self) -> std::option::Option<& str> {
+    pub fn key(&self) -> std::option::Option<&str> {
         self.key.as_deref()
     }
     /// <p>The tag value associated with the coverage map filter.</p>
-    pub fn value(&self) -> std::option::Option<& str> {
+    pub fn value(&self) -> std::option::Option<&str> {
         self.value.as_deref()
     }
 }
@@ -50,8 +50,12 @@ impl CoverageMapFilterBuilder {
         self
     }
     /// <p>The operator to compare coverage on.</p>
-    pub fn set_comparison(mut self, input: std::option::Option<crate::types::CoverageMapComparison>) -> Self {
-        self.comparison = input; self
+    pub fn set_comparison(
+        mut self,
+        input: std::option::Option<crate::types::CoverageMapComparison>,
+    ) -> Self {
+        self.comparison = input;
+        self
     }
     /// <p>The tag key associated with the coverage map filter.</p>
     pub fn key(mut self, input: impl Into<std::string::String>) -> Self {
@@ -60,7 +64,8 @@ impl CoverageMapFilterBuilder {
     }
     /// <p>The tag key associated with the coverage map filter.</p>
     pub fn set_key(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.key = input; self
+        self.key = input;
+        self
     }
     /// <p>The tag value associated with the coverage map filter.</p>
     pub fn value(mut self, input: impl Into<std::string::String>) -> Self {
@@ -69,18 +74,15 @@ impl CoverageMapFilterBuilder {
     }
     /// <p>The tag value associated with the coverage map filter.</p>
     pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.value = input; self
+        self.value = input;
+        self
     }
     /// Consumes the builder and constructs a [`CoverageMapFilter`](crate::types::CoverageMapFilter).
     pub fn build(self) -> crate::types::CoverageMapFilter {
         crate::types::CoverageMapFilter {
-            comparison: self.comparison
-            ,
-            key: self.key
-            ,
-            value: self.value
-            ,
+            comparison: self.comparison,
+            key: self.key,
+            value: self.value,
         }
     }
 }
-

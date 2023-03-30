@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateGraphqlApiInput  {
+pub struct CreateGraphqlApiInput {
     /// <p>A user-supplied name for the <code>GraphqlApi</code>.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -20,10 +20,12 @@ pub struct CreateGraphqlApiInput  {
     pub open_id_connect_config: std::option::Option<crate::types::OpenIdConnectConfig>,
     /// <p>A <code>TagMap</code> object.</p>
     #[doc(hidden)]
-    pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub tags:
+        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>A list of additional authentication providers for the <code>GraphqlApi</code> API.</p>
     #[doc(hidden)]
-    pub additional_authentication_providers: std::option::Option<std::vec::Vec<crate::types::AdditionalAuthenticationProvider>>,
+    pub additional_authentication_providers:
+        std::option::Option<std::vec::Vec<crate::types::AdditionalAuthenticationProvider>>,
     /// <p>A flag indicating whether to use X-Ray tracing for the <code>GraphqlApi</code>.</p>
     #[doc(hidden)]
     pub xray_enabled: bool,
@@ -33,31 +35,38 @@ pub struct CreateGraphqlApiInput  {
 }
 impl CreateGraphqlApiInput {
     /// <p>A user-supplied name for the <code>GraphqlApi</code>.</p>
-    pub fn name(&self) -> std::option::Option<& str> {
+    pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>The Amazon CloudWatch Logs configuration.</p>
-    pub fn log_config(&self) -> std::option::Option<& crate::types::LogConfig> {
+    pub fn log_config(&self) -> std::option::Option<&crate::types::LogConfig> {
         self.log_config.as_ref()
     }
     /// <p>The authentication type: API key, Identity and Access Management (IAM), OpenID Connect (OIDC), Amazon Cognito user pools, or Lambda.</p>
-    pub fn authentication_type(&self) -> std::option::Option<& crate::types::AuthenticationType> {
+    pub fn authentication_type(&self) -> std::option::Option<&crate::types::AuthenticationType> {
         self.authentication_type.as_ref()
     }
     /// <p>The Amazon Cognito user pool configuration.</p>
-    pub fn user_pool_config(&self) -> std::option::Option<& crate::types::UserPoolConfig> {
+    pub fn user_pool_config(&self) -> std::option::Option<&crate::types::UserPoolConfig> {
         self.user_pool_config.as_ref()
     }
     /// <p>The OIDC configuration.</p>
-    pub fn open_id_connect_config(&self) -> std::option::Option<& crate::types::OpenIdConnectConfig> {
+    pub fn open_id_connect_config(
+        &self,
+    ) -> std::option::Option<&crate::types::OpenIdConnectConfig> {
         self.open_id_connect_config.as_ref()
     }
     /// <p>A <code>TagMap</code> object.</p>
-    pub fn tags(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
         self.tags.as_ref()
     }
     /// <p>A list of additional authentication providers for the <code>GraphqlApi</code> API.</p>
-    pub fn additional_authentication_providers(&self) -> std::option::Option<& [crate::types::AdditionalAuthenticationProvider]> {
+    pub fn additional_authentication_providers(
+        &self,
+    ) -> std::option::Option<&[crate::types::AdditionalAuthenticationProvider]> {
         self.additional_authentication_providers.as_deref()
     }
     /// <p>A flag indicating whether to use X-Ray tracing for the <code>GraphqlApi</code>.</p>
@@ -65,13 +74,16 @@ impl CreateGraphqlApiInput {
         self.xray_enabled
     }
     /// <p>Configuration for Lambda function authorization.</p>
-    pub fn lambda_authorizer_config(&self) -> std::option::Option<& crate::types::LambdaAuthorizerConfig> {
+    pub fn lambda_authorizer_config(
+        &self,
+    ) -> std::option::Option<&crate::types::LambdaAuthorizerConfig> {
         self.lambda_authorizer_config.as_ref()
     }
 }
 impl CreateGraphqlApiInput {
     /// Creates a new builder-style object to manufacture [`CreateGraphqlApiInput`](crate::operation::create_graphql_api::CreateGraphqlApiInput).
-    pub fn builder() -> crate::operation::create_graphql_api::builders::CreateGraphqlApiInputBuilder {
+    pub fn builder() -> crate::operation::create_graphql_api::builders::CreateGraphqlApiInputBuilder
+    {
         crate::operation::create_graphql_api::builders::CreateGraphqlApiInputBuilder::default()
     }
 }
@@ -85,8 +97,10 @@ pub struct CreateGraphqlApiInputBuilder {
     pub(crate) authentication_type: std::option::Option<crate::types::AuthenticationType>,
     pub(crate) user_pool_config: std::option::Option<crate::types::UserPoolConfig>,
     pub(crate) open_id_connect_config: std::option::Option<crate::types::OpenIdConnectConfig>,
-    pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
-    pub(crate) additional_authentication_providers: std::option::Option<std::vec::Vec<crate::types::AdditionalAuthenticationProvider>>,
+    pub(crate) tags:
+        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub(crate) additional_authentication_providers:
+        std::option::Option<std::vec::Vec<crate::types::AdditionalAuthenticationProvider>>,
     pub(crate) xray_enabled: std::option::Option<bool>,
     pub(crate) lambda_authorizer_config: std::option::Option<crate::types::LambdaAuthorizerConfig>,
 }
@@ -98,7 +112,8 @@ impl CreateGraphqlApiInputBuilder {
     }
     /// <p>A user-supplied name for the <code>GraphqlApi</code>.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input; self
+        self.name = input;
+        self
     }
     /// <p>The Amazon CloudWatch Logs configuration.</p>
     pub fn log_config(mut self, input: crate::types::LogConfig) -> Self {
@@ -107,7 +122,8 @@ impl CreateGraphqlApiInputBuilder {
     }
     /// <p>The Amazon CloudWatch Logs configuration.</p>
     pub fn set_log_config(mut self, input: std::option::Option<crate::types::LogConfig>) -> Self {
-        self.log_config = input; self
+        self.log_config = input;
+        self
     }
     /// <p>The authentication type: API key, Identity and Access Management (IAM), OpenID Connect (OIDC), Amazon Cognito user pools, or Lambda.</p>
     pub fn authentication_type(mut self, input: crate::types::AuthenticationType) -> Self {
@@ -115,8 +131,12 @@ impl CreateGraphqlApiInputBuilder {
         self
     }
     /// <p>The authentication type: API key, Identity and Access Management (IAM), OpenID Connect (OIDC), Amazon Cognito user pools, or Lambda.</p>
-    pub fn set_authentication_type(mut self, input: std::option::Option<crate::types::AuthenticationType>) -> Self {
-        self.authentication_type = input; self
+    pub fn set_authentication_type(
+        mut self,
+        input: std::option::Option<crate::types::AuthenticationType>,
+    ) -> Self {
+        self.authentication_type = input;
+        self
     }
     /// <p>The Amazon Cognito user pool configuration.</p>
     pub fn user_pool_config(mut self, input: crate::types::UserPoolConfig) -> Self {
@@ -124,8 +144,12 @@ impl CreateGraphqlApiInputBuilder {
         self
     }
     /// <p>The Amazon Cognito user pool configuration.</p>
-    pub fn set_user_pool_config(mut self, input: std::option::Option<crate::types::UserPoolConfig>) -> Self {
-        self.user_pool_config = input; self
+    pub fn set_user_pool_config(
+        mut self,
+        input: std::option::Option<crate::types::UserPoolConfig>,
+    ) -> Self {
+        self.user_pool_config = input;
+        self
     }
     /// <p>The OIDC configuration.</p>
     pub fn open_id_connect_config(mut self, input: crate::types::OpenIdConnectConfig) -> Self {
@@ -133,38 +157,59 @@ impl CreateGraphqlApiInputBuilder {
         self
     }
     /// <p>The OIDC configuration.</p>
-    pub fn set_open_id_connect_config(mut self, input: std::option::Option<crate::types::OpenIdConnectConfig>) -> Self {
-        self.open_id_connect_config = input; self
+    pub fn set_open_id_connect_config(
+        mut self,
+        input: std::option::Option<crate::types::OpenIdConnectConfig>,
+    ) -> Self {
+        self.open_id_connect_config = input;
+        self
     }
     /// Adds a key-value pair to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// <p>A <code>TagMap</code> object.</p>
-    pub fn tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
+    pub fn tags(
+        mut self,
+        k: impl Into<std::string::String>,
+        v: impl Into<std::string::String>,
+    ) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
-                        hash_map.insert(k.into(), v.into());
-                        self.tags = Some(hash_map);
-                        self
+        hash_map.insert(k.into(), v.into());
+        self.tags = Some(hash_map);
+        self
     }
     /// <p>A <code>TagMap</code> object.</p>
-    pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
-        self.tags = input; self
+    pub fn set_tags(
+        mut self,
+        input: std::option::Option<
+            std::collections::HashMap<std::string::String, std::string::String>,
+        >,
+    ) -> Self {
+        self.tags = input;
+        self
     }
     /// Appends an item to `additional_authentication_providers`.
     ///
     /// To override the contents of this collection use [`set_additional_authentication_providers`](Self::set_additional_authentication_providers).
     ///
     /// <p>A list of additional authentication providers for the <code>GraphqlApi</code> API.</p>
-    pub fn additional_authentication_providers(mut self, input: crate::types::AdditionalAuthenticationProvider) -> Self {
+    pub fn additional_authentication_providers(
+        mut self,
+        input: crate::types::AdditionalAuthenticationProvider,
+    ) -> Self {
         let mut v = self.additional_authentication_providers.unwrap_or_default();
-                        v.push(input);
-                        self.additional_authentication_providers = Some(v);
-                        self
+        v.push(input);
+        self.additional_authentication_providers = Some(v);
+        self
     }
     /// <p>A list of additional authentication providers for the <code>GraphqlApi</code> API.</p>
-    pub fn set_additional_authentication_providers(mut self, input: std::option::Option<std::vec::Vec<crate::types::AdditionalAuthenticationProvider>>) -> Self {
-        self.additional_authentication_providers = input; self
+    pub fn set_additional_authentication_providers(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::AdditionalAuthenticationProvider>>,
+    ) -> Self {
+        self.additional_authentication_providers = input;
+        self
     }
     /// <p>A flag indicating whether to use X-Ray tracing for the <code>GraphqlApi</code>.</p>
     pub fn xray_enabled(mut self, input: bool) -> Self {
@@ -173,7 +218,8 @@ impl CreateGraphqlApiInputBuilder {
     }
     /// <p>A flag indicating whether to use X-Ray tracing for the <code>GraphqlApi</code>.</p>
     pub fn set_xray_enabled(mut self, input: std::option::Option<bool>) -> Self {
-        self.xray_enabled = input; self
+        self.xray_enabled = input;
+        self
     }
     /// <p>Configuration for Lambda function authorization.</p>
     pub fn lambda_authorizer_config(mut self, input: crate::types::LambdaAuthorizerConfig) -> Self {
@@ -181,34 +227,32 @@ impl CreateGraphqlApiInputBuilder {
         self
     }
     /// <p>Configuration for Lambda function authorization.</p>
-    pub fn set_lambda_authorizer_config(mut self, input: std::option::Option<crate::types::LambdaAuthorizerConfig>) -> Self {
-        self.lambda_authorizer_config = input; self
+    pub fn set_lambda_authorizer_config(
+        mut self,
+        input: std::option::Option<crate::types::LambdaAuthorizerConfig>,
+    ) -> Self {
+        self.lambda_authorizer_config = input;
+        self
     }
     /// Consumes the builder and constructs a [`CreateGraphqlApiInput`](crate::operation::create_graphql_api::CreateGraphqlApiInput).
-    pub fn build(self) -> Result<crate::operation::create_graphql_api::CreateGraphqlApiInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::create_graphql_api::CreateGraphqlApiInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::create_graphql_api::CreateGraphqlApiInput {
-                name: self.name
-                ,
-                log_config: self.log_config
-                ,
-                authentication_type: self.authentication_type
-                ,
-                user_pool_config: self.user_pool_config
-                ,
-                open_id_connect_config: self.open_id_connect_config
-                ,
-                tags: self.tags
-                ,
-                additional_authentication_providers: self.additional_authentication_providers
-                ,
-                xray_enabled: self.xray_enabled
-                    .unwrap_or_default()
-                ,
-                lambda_authorizer_config: self.lambda_authorizer_config
-                ,
-            }
+                name: self.name,
+                log_config: self.log_config,
+                authentication_type: self.authentication_type,
+                user_pool_config: self.user_pool_config,
+                open_id_connect_config: self.open_id_connect_config,
+                tags: self.tags,
+                additional_authentication_providers: self.additional_authentication_providers,
+                xray_enabled: self.xray_enabled.unwrap_or_default(),
+                lambda_authorizer_config: self.lambda_authorizer_config,
+            },
         )
     }
 }
-

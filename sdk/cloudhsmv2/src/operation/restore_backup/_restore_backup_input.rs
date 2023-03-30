@@ -2,14 +2,14 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct RestoreBackupInput  {
+pub struct RestoreBackupInput {
     /// <p>The ID of the backup to be restored. To find the ID of a backup, use the <code>DescribeBackups</code> operation.</p>
     #[doc(hidden)]
     pub backup_id: std::option::Option<std::string::String>,
 }
 impl RestoreBackupInput {
     /// <p>The ID of the backup to be restored. To find the ID of a backup, use the <code>DescribeBackups</code> operation.</p>
-    pub fn backup_id(&self) -> std::option::Option<& str> {
+    pub fn backup_id(&self) -> std::option::Option<&str> {
         self.backup_id.as_deref()
     }
 }
@@ -34,16 +34,18 @@ impl RestoreBackupInputBuilder {
     }
     /// <p>The ID of the backup to be restored. To find the ID of a backup, use the <code>DescribeBackups</code> operation.</p>
     pub fn set_backup_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.backup_id = input; self
+        self.backup_id = input;
+        self
     }
     /// Consumes the builder and constructs a [`RestoreBackupInput`](crate::operation::restore_backup::RestoreBackupInput).
-    pub fn build(self) -> Result<crate::operation::restore_backup::RestoreBackupInput, aws_smithy_http::operation::error::BuildError> {
-        Ok(
-            crate::operation::restore_backup::RestoreBackupInput {
-                backup_id: self.backup_id
-                ,
-            }
-        )
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::restore_backup::RestoreBackupInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        Ok(crate::operation::restore_backup::RestoreBackupInput {
+            backup_id: self.backup_id,
+        })
     }
 }
-

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateClusterSecurityGroupOutput  {
+pub struct CreateClusterSecurityGroupOutput {
     /// <p>Describes a security group.</p>
     #[doc(hidden)]
     pub cluster_security_group: std::option::Option<crate::types::ClusterSecurityGroup>,
@@ -10,18 +10,20 @@ pub struct CreateClusterSecurityGroupOutput  {
 }
 impl CreateClusterSecurityGroupOutput {
     /// <p>Describes a security group.</p>
-    pub fn cluster_security_group(&self) -> std::option::Option<& crate::types::ClusterSecurityGroup> {
+    pub fn cluster_security_group(
+        &self,
+    ) -> std::option::Option<&crate::types::ClusterSecurityGroup> {
         self.cluster_security_group.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for CreateClusterSecurityGroupOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl CreateClusterSecurityGroupOutput {
     /// Creates a new builder-style object to manufacture [`CreateClusterSecurityGroupOutput`](crate::operation::create_cluster_security_group::CreateClusterSecurityGroupOutput).
-    pub fn builder() -> crate::operation::create_cluster_security_group::builders::CreateClusterSecurityGroupOutputBuilder {
+    pub fn builder() -> crate::operation::create_cluster_security_group::builders::CreateClusterSecurityGroupOutputBuilder{
         crate::operation::create_cluster_security_group::builders::CreateClusterSecurityGroupOutputBuilder::default()
     }
 }
@@ -40,25 +42,29 @@ impl CreateClusterSecurityGroupOutputBuilder {
         self
     }
     /// <p>Describes a security group.</p>
-    pub fn set_cluster_security_group(mut self, input: std::option::Option<crate::types::ClusterSecurityGroup>) -> Self {
-        self.cluster_security_group = input; self
+    pub fn set_cluster_security_group(
+        mut self,
+        input: std::option::Option<crate::types::ClusterSecurityGroup>,
+    ) -> Self {
+        self.cluster_security_group = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`CreateClusterSecurityGroupOutput`](crate::operation::create_cluster_security_group::CreateClusterSecurityGroupOutput).
-    pub fn build(self) -> crate::operation::create_cluster_security_group::CreateClusterSecurityGroupOutput {
+    pub fn build(
+        self,
+    ) -> crate::operation::create_cluster_security_group::CreateClusterSecurityGroupOutput {
         crate::operation::create_cluster_security_group::CreateClusterSecurityGroupOutput {
-            cluster_security_group: self.cluster_security_group
-            ,
+            cluster_security_group: self.cluster_security_group,
             _request_id: self._request_id,
         }
     }
 }
-

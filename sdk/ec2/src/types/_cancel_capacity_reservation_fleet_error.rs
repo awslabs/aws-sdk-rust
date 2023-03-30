@@ -3,7 +3,7 @@
 /// <p>Describes a Capacity Reservation Fleet cancellation error.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CancelCapacityReservationFleetError  {
+pub struct CancelCapacityReservationFleetError {
     /// <p>The error code.</p>
     #[doc(hidden)]
     pub code: std::option::Option<std::string::String>,
@@ -13,11 +13,11 @@ pub struct CancelCapacityReservationFleetError  {
 }
 impl CancelCapacityReservationFleetError {
     /// <p>The error code.</p>
-    pub fn code(&self) -> std::option::Option<& str> {
+    pub fn code(&self) -> std::option::Option<&str> {
         self.code.as_deref()
     }
     /// <p>The error message.</p>
-    pub fn message(&self) -> std::option::Option<& str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -43,7 +43,8 @@ impl CancelCapacityReservationFleetErrorBuilder {
     }
     /// <p>The error code.</p>
     pub fn set_code(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.code = input; self
+        self.code = input;
+        self
     }
     /// <p>The error message.</p>
     pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
@@ -52,16 +53,14 @@ impl CancelCapacityReservationFleetErrorBuilder {
     }
     /// <p>The error message.</p>
     pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.message = input; self
+        self.message = input;
+        self
     }
     /// Consumes the builder and constructs a [`CancelCapacityReservationFleetError`](crate::types::CancelCapacityReservationFleetError).
     pub fn build(self) -> crate::types::CancelCapacityReservationFleetError {
         crate::types::CancelCapacityReservationFleetError {
-            code: self.code
-            ,
-            message: self.message
-            ,
+            code: self.code,
+            message: self.message,
         }
     }
 }
-

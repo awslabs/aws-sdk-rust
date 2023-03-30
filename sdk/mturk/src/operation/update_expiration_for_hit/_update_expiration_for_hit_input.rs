@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateExpirationForHitInput  {
+pub struct UpdateExpirationForHitInput {
     /// <p> The HIT to update. </p>
     #[doc(hidden)]
     pub hit_id: std::option::Option<std::string::String>,
@@ -12,17 +12,19 @@ pub struct UpdateExpirationForHitInput  {
 }
 impl UpdateExpirationForHitInput {
     /// <p> The HIT to update. </p>
-    pub fn hit_id(&self) -> std::option::Option<& str> {
+    pub fn hit_id(&self) -> std::option::Option<&str> {
         self.hit_id.as_deref()
     }
     /// <p> The date and time at which you want the HIT to expire </p>
-    pub fn expire_at(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
+    pub fn expire_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.expire_at.as_ref()
     }
 }
 impl UpdateExpirationForHitInput {
     /// Creates a new builder-style object to manufacture [`UpdateExpirationForHitInput`](crate::operation::update_expiration_for_hit::UpdateExpirationForHitInput).
-    pub fn builder() -> crate::operation::update_expiration_for_hit::builders::UpdateExpirationForHitInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::update_expiration_for_hit::builders::UpdateExpirationForHitInputBuilder
+    {
         crate::operation::update_expiration_for_hit::builders::UpdateExpirationForHitInputBuilder::default()
     }
 }
@@ -42,7 +44,8 @@ impl UpdateExpirationForHitInputBuilder {
     }
     /// <p> The HIT to update. </p>
     pub fn set_hit_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.hit_id = input; self
+        self.hit_id = input;
+        self
     }
     /// <p> The date and time at which you want the HIT to expire </p>
     pub fn expire_at(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -51,18 +54,21 @@ impl UpdateExpirationForHitInputBuilder {
     }
     /// <p> The date and time at which you want the HIT to expire </p>
     pub fn set_expire_at(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.expire_at = input; self
+        self.expire_at = input;
+        self
     }
     /// Consumes the builder and constructs a [`UpdateExpirationForHitInput`](crate::operation::update_expiration_for_hit::UpdateExpirationForHitInput).
-    pub fn build(self) -> Result<crate::operation::update_expiration_for_hit::UpdateExpirationForHitInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::update_expiration_for_hit::UpdateExpirationForHitInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::update_expiration_for_hit::UpdateExpirationForHitInput {
-                hit_id: self.hit_id
-                ,
-                expire_at: self.expire_at
-                ,
-            }
+                hit_id: self.hit_id,
+                expire_at: self.expire_at,
+            },
         )
     }
 }
-

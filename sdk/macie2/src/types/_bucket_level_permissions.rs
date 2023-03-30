@@ -3,7 +3,7 @@
 /// <p>Provides information about the bucket-level permissions settings for an S3 bucket.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct BucketLevelPermissions  {
+pub struct BucketLevelPermissions {
     /// <p>The permissions settings of the access control list (ACL) for the bucket. This value is null if an ACL hasn't been defined for the bucket.</p>
     #[doc(hidden)]
     pub access_control_list: std::option::Option<crate::types::AccessControlList>,
@@ -16,15 +16,15 @@ pub struct BucketLevelPermissions  {
 }
 impl BucketLevelPermissions {
     /// <p>The permissions settings of the access control list (ACL) for the bucket. This value is null if an ACL hasn't been defined for the bucket.</p>
-    pub fn access_control_list(&self) -> std::option::Option<& crate::types::AccessControlList> {
+    pub fn access_control_list(&self) -> std::option::Option<&crate::types::AccessControlList> {
         self.access_control_list.as_ref()
     }
     /// <p>The block public access settings for the bucket.</p>
-    pub fn block_public_access(&self) -> std::option::Option<& crate::types::BlockPublicAccess> {
+    pub fn block_public_access(&self) -> std::option::Option<&crate::types::BlockPublicAccess> {
         self.block_public_access.as_ref()
     }
     /// <p>The permissions settings of the bucket policy for the bucket. This value is null if a bucket policy hasn't been defined for the bucket.</p>
-    pub fn bucket_policy(&self) -> std::option::Option<& crate::types::BucketPolicy> {
+    pub fn bucket_policy(&self) -> std::option::Option<&crate::types::BucketPolicy> {
         self.bucket_policy.as_ref()
     }
 }
@@ -50,8 +50,12 @@ impl BucketLevelPermissionsBuilder {
         self
     }
     /// <p>The permissions settings of the access control list (ACL) for the bucket. This value is null if an ACL hasn't been defined for the bucket.</p>
-    pub fn set_access_control_list(mut self, input: std::option::Option<crate::types::AccessControlList>) -> Self {
-        self.access_control_list = input; self
+    pub fn set_access_control_list(
+        mut self,
+        input: std::option::Option<crate::types::AccessControlList>,
+    ) -> Self {
+        self.access_control_list = input;
+        self
     }
     /// <p>The block public access settings for the bucket.</p>
     pub fn block_public_access(mut self, input: crate::types::BlockPublicAccess) -> Self {
@@ -59,8 +63,12 @@ impl BucketLevelPermissionsBuilder {
         self
     }
     /// <p>The block public access settings for the bucket.</p>
-    pub fn set_block_public_access(mut self, input: std::option::Option<crate::types::BlockPublicAccess>) -> Self {
-        self.block_public_access = input; self
+    pub fn set_block_public_access(
+        mut self,
+        input: std::option::Option<crate::types::BlockPublicAccess>,
+    ) -> Self {
+        self.block_public_access = input;
+        self
     }
     /// <p>The permissions settings of the bucket policy for the bucket. This value is null if a bucket policy hasn't been defined for the bucket.</p>
     pub fn bucket_policy(mut self, input: crate::types::BucketPolicy) -> Self {
@@ -68,19 +76,19 @@ impl BucketLevelPermissionsBuilder {
         self
     }
     /// <p>The permissions settings of the bucket policy for the bucket. This value is null if a bucket policy hasn't been defined for the bucket.</p>
-    pub fn set_bucket_policy(mut self, input: std::option::Option<crate::types::BucketPolicy>) -> Self {
-        self.bucket_policy = input; self
+    pub fn set_bucket_policy(
+        mut self,
+        input: std::option::Option<crate::types::BucketPolicy>,
+    ) -> Self {
+        self.bucket_policy = input;
+        self
     }
     /// Consumes the builder and constructs a [`BucketLevelPermissions`](crate::types::BucketLevelPermissions).
     pub fn build(self) -> crate::types::BucketLevelPermissions {
         crate::types::BucketLevelPermissions {
-            access_control_list: self.access_control_list
-            ,
-            block_public_access: self.block_public_access
-            ,
-            bucket_policy: self.bucket_policy
-            ,
+            access_control_list: self.access_control_list,
+            block_public_access: self.block_public_access,
+            bucket_policy: self.bucket_policy,
         }
     }
 }
-

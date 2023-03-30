@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-/// 
+///
 /// Here is an example of how you can make a match expression forward-compatible:
-/// 
+///
 /// ```text
 /// # let ipamscopestate = unimplemented!();
 /// match ipamscopestate {
@@ -40,14 +40,22 @@
 /// Specifically, when `ipamscopestate` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `IpamScopeState::NewFeature` also yielding `"NewFeature"`.
-/// 
+///
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
 pub enum IpamScopeState {
     #[allow(missing_docs)] // documentation missing in model
     CreateComplete,
@@ -74,61 +82,75 @@ pub enum IpamScopeState {
     #[allow(missing_docs)] // documentation missing in model
     RestoreInProgress,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::primitives::UnknownVariantValue)
+    Unknown(crate::primitives::UnknownVariantValue),
 }
 impl std::convert::From<&str> for IpamScopeState {
-                fn from(s: &str) -> Self {
-                    match s {
-                        "create-complete" => IpamScopeState::CreateComplete,
-"create-failed" => IpamScopeState::CreateFailed,
-"create-in-progress" => IpamScopeState::CreateInProgress,
-"delete-complete" => IpamScopeState::DeleteComplete,
-"delete-failed" => IpamScopeState::DeleteFailed,
-"delete-in-progress" => IpamScopeState::DeleteInProgress,
-"isolate-complete" => IpamScopeState::IsolateComplete,
-"isolate-in-progress" => IpamScopeState::IsolateInProgress,
-"modify-complete" => IpamScopeState::ModifyComplete,
-"modify-failed" => IpamScopeState::ModifyFailed,
-"modify-in-progress" => IpamScopeState::ModifyInProgress,
-"restore-in-progress" => IpamScopeState::RestoreInProgress,
-other => IpamScopeState::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
-                    }
-                }
+    fn from(s: &str) -> Self {
+        match s {
+            "create-complete" => IpamScopeState::CreateComplete,
+            "create-failed" => IpamScopeState::CreateFailed,
+            "create-in-progress" => IpamScopeState::CreateInProgress,
+            "delete-complete" => IpamScopeState::DeleteComplete,
+            "delete-failed" => IpamScopeState::DeleteFailed,
+            "delete-in-progress" => IpamScopeState::DeleteInProgress,
+            "isolate-complete" => IpamScopeState::IsolateComplete,
+            "isolate-in-progress" => IpamScopeState::IsolateInProgress,
+            "modify-complete" => IpamScopeState::ModifyComplete,
+            "modify-failed" => IpamScopeState::ModifyFailed,
+            "modify-in-progress" => IpamScopeState::ModifyInProgress,
+            "restore-in-progress" => IpamScopeState::RestoreInProgress,
+            other => {
+                IpamScopeState::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
             }
-impl std::str::FromStr for IpamScopeState {
-                type Err = std::convert::Infallible;
-
-                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-                    Ok(IpamScopeState::from(s))
-                }
-            }
-impl IpamScopeState {
-                /// Returns the `&str` value of the enum member.
-                pub fn as_str(&self) -> &str {
-                    match self {
-    IpamScopeState::CreateComplete => "create-complete",
-    IpamScopeState::CreateFailed => "create-failed",
-    IpamScopeState::CreateInProgress => "create-in-progress",
-    IpamScopeState::DeleteComplete => "delete-complete",
-    IpamScopeState::DeleteFailed => "delete-failed",
-    IpamScopeState::DeleteInProgress => "delete-in-progress",
-    IpamScopeState::IsolateComplete => "isolate-complete",
-    IpamScopeState::IsolateInProgress => "isolate-in-progress",
-    IpamScopeState::ModifyComplete => "modify-complete",
-    IpamScopeState::ModifyFailed => "modify-failed",
-    IpamScopeState::ModifyInProgress => "modify-in-progress",
-    IpamScopeState::RestoreInProgress => "restore-in-progress",
-    IpamScopeState::Unknown(value) => value.as_str()
+        }
+    }
 }
-                }
-                /// Returns all the `&str` representations of the enum members.
-                pub const fn values() -> &'static [&'static str] {
-                    &["create-complete", "create-failed", "create-in-progress", "delete-complete", "delete-failed", "delete-in-progress", "isolate-complete", "isolate-in-progress", "modify-complete", "modify-failed", "modify-in-progress", "restore-in-progress"]
-                }
-            }
-impl AsRef<str> for IpamScopeState {
-                fn as_ref(&self) -> &str {
-                    self.as_str()
-                }
-            }
+impl std::str::FromStr for IpamScopeState {
+    type Err = std::convert::Infallible;
 
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(IpamScopeState::from(s))
+    }
+}
+impl IpamScopeState {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            IpamScopeState::CreateComplete => "create-complete",
+            IpamScopeState::CreateFailed => "create-failed",
+            IpamScopeState::CreateInProgress => "create-in-progress",
+            IpamScopeState::DeleteComplete => "delete-complete",
+            IpamScopeState::DeleteFailed => "delete-failed",
+            IpamScopeState::DeleteInProgress => "delete-in-progress",
+            IpamScopeState::IsolateComplete => "isolate-complete",
+            IpamScopeState::IsolateInProgress => "isolate-in-progress",
+            IpamScopeState::ModifyComplete => "modify-complete",
+            IpamScopeState::ModifyFailed => "modify-failed",
+            IpamScopeState::ModifyInProgress => "modify-in-progress",
+            IpamScopeState::RestoreInProgress => "restore-in-progress",
+            IpamScopeState::Unknown(value) => value.as_str(),
+        }
+    }
+    /// Returns all the `&str` representations of the enum members.
+    pub const fn values() -> &'static [&'static str] {
+        &[
+            "create-complete",
+            "create-failed",
+            "create-in-progress",
+            "delete-complete",
+            "delete-failed",
+            "delete-in-progress",
+            "isolate-complete",
+            "isolate-in-progress",
+            "modify-complete",
+            "modify-failed",
+            "modify-in-progress",
+            "restore-in-progress",
+        ]
+    }
+}
+impl AsRef<str> for IpamScopeState {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}

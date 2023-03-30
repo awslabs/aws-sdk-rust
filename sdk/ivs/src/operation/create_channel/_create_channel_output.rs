@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateChannelOutput  {
+pub struct CreateChannelOutput {
     /// <p></p>
     #[doc(hidden)]
     pub channel: std::option::Option<crate::types::Channel>,
@@ -13,19 +13,19 @@ pub struct CreateChannelOutput  {
 }
 impl CreateChannelOutput {
     /// <p></p>
-    pub fn channel(&self) -> std::option::Option<& crate::types::Channel> {
+    pub fn channel(&self) -> std::option::Option<&crate::types::Channel> {
         self.channel.as_ref()
     }
     /// <p></p>
-    pub fn stream_key(&self) -> std::option::Option<& crate::types::StreamKey> {
+    pub fn stream_key(&self) -> std::option::Option<&crate::types::StreamKey> {
         self.stream_key.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for CreateChannelOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl CreateChannelOutput {
     /// Creates a new builder-style object to manufacture [`CreateChannelOutput`](crate::operation::create_channel::CreateChannelOutput).
     pub fn builder() -> crate::operation::create_channel::builders::CreateChannelOutputBuilder {
@@ -49,7 +49,8 @@ impl CreateChannelOutputBuilder {
     }
     /// <p></p>
     pub fn set_channel(mut self, input: std::option::Option<crate::types::Channel>) -> Self {
-        self.channel = input; self
+        self.channel = input;
+        self
     }
     /// <p></p>
     pub fn stream_key(mut self, input: crate::types::StreamKey) -> Self {
@@ -58,26 +59,24 @@ impl CreateChannelOutputBuilder {
     }
     /// <p></p>
     pub fn set_stream_key(mut self, input: std::option::Option<crate::types::StreamKey>) -> Self {
-        self.stream_key = input; self
+        self.stream_key = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`CreateChannelOutput`](crate::operation::create_channel::CreateChannelOutput).
     pub fn build(self) -> crate::operation::create_channel::CreateChannelOutput {
         crate::operation::create_channel::CreateChannelOutput {
-            channel: self.channel
-            ,
-            stream_key: self.stream_key
-            ,
+            channel: self.channel,
+            stream_key: self.stream_key,
             _request_id: self._request_id,
         }
     }
 }
-

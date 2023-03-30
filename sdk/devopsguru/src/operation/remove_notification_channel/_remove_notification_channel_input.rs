@@ -2,20 +2,20 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct RemoveNotificationChannelInput  {
+pub struct RemoveNotificationChannelInput {
     /// <p> The ID of the notification channel to be removed. </p>
     #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
 }
 impl RemoveNotificationChannelInput {
     /// <p> The ID of the notification channel to be removed. </p>
-    pub fn id(&self) -> std::option::Option<& str> {
+    pub fn id(&self) -> std::option::Option<&str> {
         self.id.as_deref()
     }
 }
 impl RemoveNotificationChannelInput {
     /// Creates a new builder-style object to manufacture [`RemoveNotificationChannelInput`](crate::operation::remove_notification_channel::RemoveNotificationChannelInput).
-    pub fn builder() -> crate::operation::remove_notification_channel::builders::RemoveNotificationChannelInputBuilder {
+    pub fn builder() -> crate::operation::remove_notification_channel::builders::RemoveNotificationChannelInputBuilder{
         crate::operation::remove_notification_channel::builders::RemoveNotificationChannelInputBuilder::default()
     }
 }
@@ -34,16 +34,20 @@ impl RemoveNotificationChannelInputBuilder {
     }
     /// <p> The ID of the notification channel to be removed. </p>
     pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.id = input; self
+        self.id = input;
+        self
     }
     /// Consumes the builder and constructs a [`RemoveNotificationChannelInput`](crate::operation::remove_notification_channel::RemoveNotificationChannelInput).
-    pub fn build(self) -> Result<crate::operation::remove_notification_channel::RemoveNotificationChannelInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::remove_notification_channel::RemoveNotificationChannelInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::remove_notification_channel::RemoveNotificationChannelInput {
-                id: self.id
-                ,
-            }
+                id: self.id,
+            },
         )
     }
 }
-

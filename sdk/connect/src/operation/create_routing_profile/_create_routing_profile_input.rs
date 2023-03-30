@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateRoutingProfileInput  {
+pub struct CreateRoutingProfileInput {
     /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
     #[doc(hidden)]
     pub instance_id: std::option::Option<std::string::String>,
@@ -23,41 +23,46 @@ pub struct CreateRoutingProfileInput  {
     pub media_concurrencies: std::option::Option<std::vec::Vec<crate::types::MediaConcurrency>>,
     /// <p>The tags used to organize, track, or control access for this resource. For example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
     #[doc(hidden)]
-    pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub tags:
+        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl CreateRoutingProfileInput {
     /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
-    pub fn instance_id(&self) -> std::option::Option<& str> {
+    pub fn instance_id(&self) -> std::option::Option<&str> {
         self.instance_id.as_deref()
     }
     /// <p>The name of the routing profile. Must not be more than 127 characters.</p>
-    pub fn name(&self) -> std::option::Option<& str> {
+    pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>Description of the routing profile. Must not be more than 250 characters.</p>
-    pub fn description(&self) -> std::option::Option<& str> {
+    pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
     /// <p>The default outbound queue for the routing profile.</p>
-    pub fn default_outbound_queue_id(&self) -> std::option::Option<& str> {
+    pub fn default_outbound_queue_id(&self) -> std::option::Option<&str> {
         self.default_outbound_queue_id.as_deref()
     }
     /// <p>The inbound queues associated with the routing profile. If no queue is added, the agent can make only outbound calls.</p>
-    pub fn queue_configs(&self) -> std::option::Option<& [crate::types::RoutingProfileQueueConfig]> {
+    pub fn queue_configs(&self) -> std::option::Option<&[crate::types::RoutingProfileQueueConfig]> {
         self.queue_configs.as_deref()
     }
     /// <p>The channels that agents can handle in the Contact Control Panel (CCP) for this routing profile.</p>
-    pub fn media_concurrencies(&self) -> std::option::Option<& [crate::types::MediaConcurrency]> {
+    pub fn media_concurrencies(&self) -> std::option::Option<&[crate::types::MediaConcurrency]> {
         self.media_concurrencies.as_deref()
     }
     /// <p>The tags used to organize, track, or control access for this resource. For example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
-    pub fn tags(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
         self.tags.as_ref()
     }
 }
 impl CreateRoutingProfileInput {
     /// Creates a new builder-style object to manufacture [`CreateRoutingProfileInput`](crate::operation::create_routing_profile::CreateRoutingProfileInput).
-    pub fn builder() -> crate::operation::create_routing_profile::builders::CreateRoutingProfileInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::create_routing_profile::builders::CreateRoutingProfileInputBuilder {
         crate::operation::create_routing_profile::builders::CreateRoutingProfileInputBuilder::default()
     }
 }
@@ -70,9 +75,12 @@ pub struct CreateRoutingProfileInputBuilder {
     pub(crate) name: std::option::Option<std::string::String>,
     pub(crate) description: std::option::Option<std::string::String>,
     pub(crate) default_outbound_queue_id: std::option::Option<std::string::String>,
-    pub(crate) queue_configs: std::option::Option<std::vec::Vec<crate::types::RoutingProfileQueueConfig>>,
-    pub(crate) media_concurrencies: std::option::Option<std::vec::Vec<crate::types::MediaConcurrency>>,
-    pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub(crate) queue_configs:
+        std::option::Option<std::vec::Vec<crate::types::RoutingProfileQueueConfig>>,
+    pub(crate) media_concurrencies:
+        std::option::Option<std::vec::Vec<crate::types::MediaConcurrency>>,
+    pub(crate) tags:
+        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl CreateRoutingProfileInputBuilder {
     /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
@@ -82,7 +90,8 @@ impl CreateRoutingProfileInputBuilder {
     }
     /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
     pub fn set_instance_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.instance_id = input; self
+        self.instance_id = input;
+        self
     }
     /// <p>The name of the routing profile. Must not be more than 127 characters.</p>
     pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -91,7 +100,8 @@ impl CreateRoutingProfileInputBuilder {
     }
     /// <p>The name of the routing profile. Must not be more than 127 characters.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input; self
+        self.name = input;
+        self
     }
     /// <p>Description of the routing profile. Must not be more than 250 characters.</p>
     pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -100,7 +110,8 @@ impl CreateRoutingProfileInputBuilder {
     }
     /// <p>Description of the routing profile. Must not be more than 250 characters.</p>
     pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.description = input; self
+        self.description = input;
+        self
     }
     /// <p>The default outbound queue for the routing profile.</p>
     pub fn default_outbound_queue_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -108,8 +119,12 @@ impl CreateRoutingProfileInputBuilder {
         self
     }
     /// <p>The default outbound queue for the routing profile.</p>
-    pub fn set_default_outbound_queue_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.default_outbound_queue_id = input; self
+    pub fn set_default_outbound_queue_id(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.default_outbound_queue_id = input;
+        self
     }
     /// Appends an item to `queue_configs`.
     ///
@@ -118,13 +133,17 @@ impl CreateRoutingProfileInputBuilder {
     /// <p>The inbound queues associated with the routing profile. If no queue is added, the agent can make only outbound calls.</p>
     pub fn queue_configs(mut self, input: crate::types::RoutingProfileQueueConfig) -> Self {
         let mut v = self.queue_configs.unwrap_or_default();
-                        v.push(input);
-                        self.queue_configs = Some(v);
-                        self
+        v.push(input);
+        self.queue_configs = Some(v);
+        self
     }
     /// <p>The inbound queues associated with the routing profile. If no queue is added, the agent can make only outbound calls.</p>
-    pub fn set_queue_configs(mut self, input: std::option::Option<std::vec::Vec<crate::types::RoutingProfileQueueConfig>>) -> Self {
-        self.queue_configs = input; self
+    pub fn set_queue_configs(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::RoutingProfileQueueConfig>>,
+    ) -> Self {
+        self.queue_configs = input;
+        self
     }
     /// Appends an item to `media_concurrencies`.
     ///
@@ -133,49 +152,60 @@ impl CreateRoutingProfileInputBuilder {
     /// <p>The channels that agents can handle in the Contact Control Panel (CCP) for this routing profile.</p>
     pub fn media_concurrencies(mut self, input: crate::types::MediaConcurrency) -> Self {
         let mut v = self.media_concurrencies.unwrap_or_default();
-                        v.push(input);
-                        self.media_concurrencies = Some(v);
-                        self
+        v.push(input);
+        self.media_concurrencies = Some(v);
+        self
     }
     /// <p>The channels that agents can handle in the Contact Control Panel (CCP) for this routing profile.</p>
-    pub fn set_media_concurrencies(mut self, input: std::option::Option<std::vec::Vec<crate::types::MediaConcurrency>>) -> Self {
-        self.media_concurrencies = input; self
+    pub fn set_media_concurrencies(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::MediaConcurrency>>,
+    ) -> Self {
+        self.media_concurrencies = input;
+        self
     }
     /// Adds a key-value pair to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// <p>The tags used to organize, track, or control access for this resource. For example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
-    pub fn tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
+    pub fn tags(
+        mut self,
+        k: impl Into<std::string::String>,
+        v: impl Into<std::string::String>,
+    ) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
-                        hash_map.insert(k.into(), v.into());
-                        self.tags = Some(hash_map);
-                        self
+        hash_map.insert(k.into(), v.into());
+        self.tags = Some(hash_map);
+        self
     }
     /// <p>The tags used to organize, track, or control access for this resource. For example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
-    pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
-        self.tags = input; self
+    pub fn set_tags(
+        mut self,
+        input: std::option::Option<
+            std::collections::HashMap<std::string::String, std::string::String>,
+        >,
+    ) -> Self {
+        self.tags = input;
+        self
     }
     /// Consumes the builder and constructs a [`CreateRoutingProfileInput`](crate::operation::create_routing_profile::CreateRoutingProfileInput).
-    pub fn build(self) -> Result<crate::operation::create_routing_profile::CreateRoutingProfileInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::create_routing_profile::CreateRoutingProfileInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::create_routing_profile::CreateRoutingProfileInput {
-                instance_id: self.instance_id
-                ,
-                name: self.name
-                ,
-                description: self.description
-                ,
-                default_outbound_queue_id: self.default_outbound_queue_id
-                ,
-                queue_configs: self.queue_configs
-                ,
-                media_concurrencies: self.media_concurrencies
-                ,
-                tags: self.tags
-                ,
-            }
+                instance_id: self.instance_id,
+                name: self.name,
+                description: self.description,
+                default_outbound_queue_id: self.default_outbound_queue_id,
+                queue_configs: self.queue_configs,
+                media_concurrencies: self.media_concurrencies,
+                tags: self.tags,
+            },
         )
     }
 }
-

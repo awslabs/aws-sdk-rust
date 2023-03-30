@@ -3,7 +3,7 @@
 /// <p>A trigger failed to run.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct RepositoryTriggerExecutionFailure  {
+pub struct RepositoryTriggerExecutionFailure {
     /// <p>The name of the trigger that did not run.</p>
     #[doc(hidden)]
     pub trigger: std::option::Option<std::string::String>,
@@ -13,11 +13,11 @@ pub struct RepositoryTriggerExecutionFailure  {
 }
 impl RepositoryTriggerExecutionFailure {
     /// <p>The name of the trigger that did not run.</p>
-    pub fn trigger(&self) -> std::option::Option<& str> {
+    pub fn trigger(&self) -> std::option::Option<&str> {
         self.trigger.as_deref()
     }
     /// <p>Message information about the trigger that did not run.</p>
-    pub fn failure_message(&self) -> std::option::Option<& str> {
+    pub fn failure_message(&self) -> std::option::Option<&str> {
         self.failure_message.as_deref()
     }
 }
@@ -43,7 +43,8 @@ impl RepositoryTriggerExecutionFailureBuilder {
     }
     /// <p>The name of the trigger that did not run.</p>
     pub fn set_trigger(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.trigger = input; self
+        self.trigger = input;
+        self
     }
     /// <p>Message information about the trigger that did not run.</p>
     pub fn failure_message(mut self, input: impl Into<std::string::String>) -> Self {
@@ -52,16 +53,14 @@ impl RepositoryTriggerExecutionFailureBuilder {
     }
     /// <p>Message information about the trigger that did not run.</p>
     pub fn set_failure_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.failure_message = input; self
+        self.failure_message = input;
+        self
     }
     /// Consumes the builder and constructs a [`RepositoryTriggerExecutionFailure`](crate::types::RepositoryTriggerExecutionFailure).
     pub fn build(self) -> crate::types::RepositoryTriggerExecutionFailure {
         crate::types::RepositoryTriggerExecutionFailure {
-            trigger: self.trigger
-            ,
-            failure_message: self.failure_message
-            ,
+            trigger: self.trigger,
+            failure_message: self.failure_message,
         }
     }
 }
-

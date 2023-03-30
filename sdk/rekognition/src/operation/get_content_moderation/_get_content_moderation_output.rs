@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetContentModerationOutput  {
+pub struct GetContentModerationOutput {
     /// <p>The current status of the content moderation analysis job.</p>
     #[doc(hidden)]
     pub job_status: std::option::Option<crate::types::VideoJobStatus>,
@@ -14,7 +14,8 @@ pub struct GetContentModerationOutput  {
     pub video_metadata: std::option::Option<crate::types::VideoMetadata>,
     /// <p>The detected inappropriate, unwanted, or offensive content moderation labels and the time(s) they were detected.</p>
     #[doc(hidden)]
-    pub moderation_labels: std::option::Option<std::vec::Vec<crate::types::ContentModerationDetection>>,
+    pub moderation_labels:
+        std::option::Option<std::vec::Vec<crate::types::ContentModerationDetection>>,
     /// <p>If the response is truncated, Amazon Rekognition Video returns this token that you can use in the subsequent request to retrieve the next set of content moderation labels. </p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
@@ -25,38 +26,41 @@ pub struct GetContentModerationOutput  {
 }
 impl GetContentModerationOutput {
     /// <p>The current status of the content moderation analysis job.</p>
-    pub fn job_status(&self) -> std::option::Option<& crate::types::VideoJobStatus> {
+    pub fn job_status(&self) -> std::option::Option<&crate::types::VideoJobStatus> {
         self.job_status.as_ref()
     }
     /// <p>If the job fails, <code>StatusMessage</code> provides a descriptive error message.</p>
-    pub fn status_message(&self) -> std::option::Option<& str> {
+    pub fn status_message(&self) -> std::option::Option<&str> {
         self.status_message.as_deref()
     }
     /// <p>Information about a video that Amazon Rekognition analyzed. <code>Videometadata</code> is returned in every page of paginated responses from <code>GetContentModeration</code>. </p>
-    pub fn video_metadata(&self) -> std::option::Option<& crate::types::VideoMetadata> {
+    pub fn video_metadata(&self) -> std::option::Option<&crate::types::VideoMetadata> {
         self.video_metadata.as_ref()
     }
     /// <p>The detected inappropriate, unwanted, or offensive content moderation labels and the time(s) they were detected.</p>
-    pub fn moderation_labels(&self) -> std::option::Option<& [crate::types::ContentModerationDetection]> {
+    pub fn moderation_labels(
+        &self,
+    ) -> std::option::Option<&[crate::types::ContentModerationDetection]> {
         self.moderation_labels.as_deref()
     }
     /// <p>If the response is truncated, Amazon Rekognition Video returns this token that you can use in the subsequent request to retrieve the next set of content moderation labels. </p>
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
     /// <p>Version number of the moderation detection model that was used to detect inappropriate, unwanted, or offensive content.</p>
-    pub fn moderation_model_version(&self) -> std::option::Option<& str> {
+    pub fn moderation_model_version(&self) -> std::option::Option<&str> {
         self.moderation_model_version.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for GetContentModerationOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl GetContentModerationOutput {
     /// Creates a new builder-style object to manufacture [`GetContentModerationOutput`](crate::operation::get_content_moderation::GetContentModerationOutput).
-    pub fn builder() -> crate::operation::get_content_moderation::builders::GetContentModerationOutputBuilder {
+    pub fn builder(
+    ) -> crate::operation::get_content_moderation::builders::GetContentModerationOutputBuilder {
         crate::operation::get_content_moderation::builders::GetContentModerationOutputBuilder::default()
     }
 }
@@ -68,7 +72,8 @@ pub struct GetContentModerationOutputBuilder {
     pub(crate) job_status: std::option::Option<crate::types::VideoJobStatus>,
     pub(crate) status_message: std::option::Option<std::string::String>,
     pub(crate) video_metadata: std::option::Option<crate::types::VideoMetadata>,
-    pub(crate) moderation_labels: std::option::Option<std::vec::Vec<crate::types::ContentModerationDetection>>,
+    pub(crate) moderation_labels:
+        std::option::Option<std::vec::Vec<crate::types::ContentModerationDetection>>,
     pub(crate) next_token: std::option::Option<std::string::String>,
     pub(crate) moderation_model_version: std::option::Option<std::string::String>,
     _request_id: Option<String>,
@@ -80,8 +85,12 @@ impl GetContentModerationOutputBuilder {
         self
     }
     /// <p>The current status of the content moderation analysis job.</p>
-    pub fn set_job_status(mut self, input: std::option::Option<crate::types::VideoJobStatus>) -> Self {
-        self.job_status = input; self
+    pub fn set_job_status(
+        mut self,
+        input: std::option::Option<crate::types::VideoJobStatus>,
+    ) -> Self {
+        self.job_status = input;
+        self
     }
     /// <p>If the job fails, <code>StatusMessage</code> provides a descriptive error message.</p>
     pub fn status_message(mut self, input: impl Into<std::string::String>) -> Self {
@@ -90,7 +99,8 @@ impl GetContentModerationOutputBuilder {
     }
     /// <p>If the job fails, <code>StatusMessage</code> provides a descriptive error message.</p>
     pub fn set_status_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.status_message = input; self
+        self.status_message = input;
+        self
     }
     /// <p>Information about a video that Amazon Rekognition analyzed. <code>Videometadata</code> is returned in every page of paginated responses from <code>GetContentModeration</code>. </p>
     pub fn video_metadata(mut self, input: crate::types::VideoMetadata) -> Self {
@@ -98,8 +108,12 @@ impl GetContentModerationOutputBuilder {
         self
     }
     /// <p>Information about a video that Amazon Rekognition analyzed. <code>Videometadata</code> is returned in every page of paginated responses from <code>GetContentModeration</code>. </p>
-    pub fn set_video_metadata(mut self, input: std::option::Option<crate::types::VideoMetadata>) -> Self {
-        self.video_metadata = input; self
+    pub fn set_video_metadata(
+        mut self,
+        input: std::option::Option<crate::types::VideoMetadata>,
+    ) -> Self {
+        self.video_metadata = input;
+        self
     }
     /// Appends an item to `moderation_labels`.
     ///
@@ -108,13 +122,17 @@ impl GetContentModerationOutputBuilder {
     /// <p>The detected inappropriate, unwanted, or offensive content moderation labels and the time(s) they were detected.</p>
     pub fn moderation_labels(mut self, input: crate::types::ContentModerationDetection) -> Self {
         let mut v = self.moderation_labels.unwrap_or_default();
-                        v.push(input);
-                        self.moderation_labels = Some(v);
-                        self
+        v.push(input);
+        self.moderation_labels = Some(v);
+        self
     }
     /// <p>The detected inappropriate, unwanted, or offensive content moderation labels and the time(s) they were detected.</p>
-    pub fn set_moderation_labels(mut self, input: std::option::Option<std::vec::Vec<crate::types::ContentModerationDetection>>) -> Self {
-        self.moderation_labels = input; self
+    pub fn set_moderation_labels(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::ContentModerationDetection>>,
+    ) -> Self {
+        self.moderation_labels = input;
+        self
     }
     /// <p>If the response is truncated, Amazon Rekognition Video returns this token that you can use in the subsequent request to retrieve the next set of content moderation labels. </p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -123,7 +141,8 @@ impl GetContentModerationOutputBuilder {
     }
     /// <p>If the response is truncated, Amazon Rekognition Video returns this token that you can use in the subsequent request to retrieve the next set of content moderation labels. </p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input; self
+        self.next_token = input;
+        self
     }
     /// <p>Version number of the moderation detection model that was used to detect inappropriate, unwanted, or offensive content.</p>
     pub fn moderation_model_version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -131,35 +150,32 @@ impl GetContentModerationOutputBuilder {
         self
     }
     /// <p>Version number of the moderation detection model that was used to detect inappropriate, unwanted, or offensive content.</p>
-    pub fn set_moderation_model_version(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.moderation_model_version = input; self
+    pub fn set_moderation_model_version(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.moderation_model_version = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`GetContentModerationOutput`](crate::operation::get_content_moderation::GetContentModerationOutput).
     pub fn build(self) -> crate::operation::get_content_moderation::GetContentModerationOutput {
         crate::operation::get_content_moderation::GetContentModerationOutput {
-            job_status: self.job_status
-            ,
-            status_message: self.status_message
-            ,
-            video_metadata: self.video_metadata
-            ,
-            moderation_labels: self.moderation_labels
-            ,
-            next_token: self.next_token
-            ,
-            moderation_model_version: self.moderation_model_version
-            ,
+            job_status: self.job_status,
+            status_message: self.status_message,
+            video_metadata: self.video_metadata,
+            moderation_labels: self.moderation_labels,
+            next_token: self.next_token,
+            moderation_model_version: self.moderation_model_version,
             _request_id: self._request_id,
         }
     }
 }
-

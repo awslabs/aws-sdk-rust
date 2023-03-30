@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct StartAppOutput  {
+pub struct StartAppOutput {
     /// <p>The name of the app.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -16,23 +16,23 @@ pub struct StartAppOutput  {
 }
 impl StartAppOutput {
     /// <p>The name of the app.</p>
-    pub fn name(&self) -> std::option::Option<& str> {
+    pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>The name of the domain of the app.</p>
-    pub fn domain(&self) -> std::option::Option<& str> {
+    pub fn domain(&self) -> std::option::Option<&str> {
         self.domain.as_deref()
     }
     /// <p>The name of the simulation of the app.</p>
-    pub fn simulation(&self) -> std::option::Option<& str> {
+    pub fn simulation(&self) -> std::option::Option<&str> {
         self.simulation.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for StartAppOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl StartAppOutput {
     /// Creates a new builder-style object to manufacture [`StartAppOutput`](crate::operation::start_app::StartAppOutput).
     pub fn builder() -> crate::operation::start_app::builders::StartAppOutputBuilder {
@@ -57,7 +57,8 @@ impl StartAppOutputBuilder {
     }
     /// <p>The name of the app.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input; self
+        self.name = input;
+        self
     }
     /// <p>The name of the domain of the app.</p>
     pub fn domain(mut self, input: impl Into<std::string::String>) -> Self {
@@ -66,7 +67,8 @@ impl StartAppOutputBuilder {
     }
     /// <p>The name of the domain of the app.</p>
     pub fn set_domain(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.domain = input; self
+        self.domain = input;
+        self
     }
     /// <p>The name of the simulation of the app.</p>
     pub fn simulation(mut self, input: impl Into<std::string::String>) -> Self {
@@ -75,28 +77,25 @@ impl StartAppOutputBuilder {
     }
     /// <p>The name of the simulation of the app.</p>
     pub fn set_simulation(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.simulation = input; self
+        self.simulation = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`StartAppOutput`](crate::operation::start_app::StartAppOutput).
     pub fn build(self) -> crate::operation::start_app::StartAppOutput {
         crate::operation::start_app::StartAppOutput {
-            name: self.name
-            ,
-            domain: self.domain
-            ,
-            simulation: self.simulation
-            ,
+            name: self.name,
+            domain: self.domain,
+            simulation: self.simulation,
             _request_id: self._request_id,
         }
     }
 }
-

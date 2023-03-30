@@ -68,4 +68,3 @@ pub mod builders;
 
 /// Error types that AWS RDS DataService can respond with.
 pub mod error;
-

@@ -3,7 +3,7 @@
 /// <p>A source for an import read set job.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ImportReadSetSourceItem  {
+pub struct ImportReadSetSourceItem {
     /// <p>The source files' location in Amazon S3.</p>
     #[doc(hidden)]
     pub source_files: std::option::Option<crate::types::SourceFiles>,
@@ -36,51 +36,55 @@ pub struct ImportReadSetSourceItem  {
     pub description: std::option::Option<std::string::String>,
     /// <p>The source's tags.</p>
     #[doc(hidden)]
-    pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub tags:
+        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl ImportReadSetSourceItem {
     /// <p>The source files' location in Amazon S3.</p>
-    pub fn source_files(&self) -> std::option::Option<& crate::types::SourceFiles> {
+    pub fn source_files(&self) -> std::option::Option<&crate::types::SourceFiles> {
         self.source_files.as_ref()
     }
     /// <p>The source's file type.</p>
-    pub fn source_file_type(&self) -> std::option::Option<& crate::types::FileType> {
+    pub fn source_file_type(&self) -> std::option::Option<&crate::types::FileType> {
         self.source_file_type.as_ref()
     }
     /// <p>The source's status.</p>
-    pub fn status(&self) -> std::option::Option<& crate::types::ReadSetImportJobItemStatus> {
+    pub fn status(&self) -> std::option::Option<&crate::types::ReadSetImportJobItemStatus> {
         self.status.as_ref()
     }
     /// <p>The source's status message.</p>
-    pub fn status_message(&self) -> std::option::Option<& str> {
+    pub fn status_message(&self) -> std::option::Option<&str> {
         self.status_message.as_deref()
     }
     /// <p>The source's subject ID.</p>
-    pub fn subject_id(&self) -> std::option::Option<& str> {
+    pub fn subject_id(&self) -> std::option::Option<&str> {
         self.subject_id.as_deref()
     }
     /// <p>The source's sample ID.</p>
-    pub fn sample_id(&self) -> std::option::Option<& str> {
+    pub fn sample_id(&self) -> std::option::Option<&str> {
         self.sample_id.as_deref()
     }
     /// <p>Where the source originated.</p>
-    pub fn generated_from(&self) -> std::option::Option<& str> {
+    pub fn generated_from(&self) -> std::option::Option<&str> {
         self.generated_from.as_deref()
     }
     /// <p>The source's genome reference ARN.</p>
-    pub fn reference_arn(&self) -> std::option::Option<& str> {
+    pub fn reference_arn(&self) -> std::option::Option<&str> {
         self.reference_arn.as_deref()
     }
     /// <p>The source's name.</p>
-    pub fn name(&self) -> std::option::Option<& str> {
+    pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>The source's description.</p>
-    pub fn description(&self) -> std::option::Option<& str> {
+    pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
     /// <p>The source's tags.</p>
-    pub fn tags(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
         self.tags.as_ref()
     }
 }
@@ -105,7 +109,8 @@ pub struct ImportReadSetSourceItemBuilder {
     pub(crate) reference_arn: std::option::Option<std::string::String>,
     pub(crate) name: std::option::Option<std::string::String>,
     pub(crate) description: std::option::Option<std::string::String>,
-    pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub(crate) tags:
+        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl ImportReadSetSourceItemBuilder {
     /// <p>The source files' location in Amazon S3.</p>
@@ -114,8 +119,12 @@ impl ImportReadSetSourceItemBuilder {
         self
     }
     /// <p>The source files' location in Amazon S3.</p>
-    pub fn set_source_files(mut self, input: std::option::Option<crate::types::SourceFiles>) -> Self {
-        self.source_files = input; self
+    pub fn set_source_files(
+        mut self,
+        input: std::option::Option<crate::types::SourceFiles>,
+    ) -> Self {
+        self.source_files = input;
+        self
     }
     /// <p>The source's file type.</p>
     pub fn source_file_type(mut self, input: crate::types::FileType) -> Self {
@@ -123,8 +132,12 @@ impl ImportReadSetSourceItemBuilder {
         self
     }
     /// <p>The source's file type.</p>
-    pub fn set_source_file_type(mut self, input: std::option::Option<crate::types::FileType>) -> Self {
-        self.source_file_type = input; self
+    pub fn set_source_file_type(
+        mut self,
+        input: std::option::Option<crate::types::FileType>,
+    ) -> Self {
+        self.source_file_type = input;
+        self
     }
     /// <p>The source's status.</p>
     pub fn status(mut self, input: crate::types::ReadSetImportJobItemStatus) -> Self {
@@ -132,8 +145,12 @@ impl ImportReadSetSourceItemBuilder {
         self
     }
     /// <p>The source's status.</p>
-    pub fn set_status(mut self, input: std::option::Option<crate::types::ReadSetImportJobItemStatus>) -> Self {
-        self.status = input; self
+    pub fn set_status(
+        mut self,
+        input: std::option::Option<crate::types::ReadSetImportJobItemStatus>,
+    ) -> Self {
+        self.status = input;
+        self
     }
     /// <p>The source's status message.</p>
     pub fn status_message(mut self, input: impl Into<std::string::String>) -> Self {
@@ -142,7 +159,8 @@ impl ImportReadSetSourceItemBuilder {
     }
     /// <p>The source's status message.</p>
     pub fn set_status_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.status_message = input; self
+        self.status_message = input;
+        self
     }
     /// <p>The source's subject ID.</p>
     pub fn subject_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -151,7 +169,8 @@ impl ImportReadSetSourceItemBuilder {
     }
     /// <p>The source's subject ID.</p>
     pub fn set_subject_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.subject_id = input; self
+        self.subject_id = input;
+        self
     }
     /// <p>The source's sample ID.</p>
     pub fn sample_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -160,7 +179,8 @@ impl ImportReadSetSourceItemBuilder {
     }
     /// <p>The source's sample ID.</p>
     pub fn set_sample_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.sample_id = input; self
+        self.sample_id = input;
+        self
     }
     /// <p>Where the source originated.</p>
     pub fn generated_from(mut self, input: impl Into<std::string::String>) -> Self {
@@ -169,7 +189,8 @@ impl ImportReadSetSourceItemBuilder {
     }
     /// <p>Where the source originated.</p>
     pub fn set_generated_from(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.generated_from = input; self
+        self.generated_from = input;
+        self
     }
     /// <p>The source's genome reference ARN.</p>
     pub fn reference_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -178,7 +199,8 @@ impl ImportReadSetSourceItemBuilder {
     }
     /// <p>The source's genome reference ARN.</p>
     pub fn set_reference_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.reference_arn = input; self
+        self.reference_arn = input;
+        self
     }
     /// <p>The source's name.</p>
     pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -187,7 +209,8 @@ impl ImportReadSetSourceItemBuilder {
     }
     /// <p>The source's name.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input; self
+        self.name = input;
+        self
     }
     /// <p>The source's description.</p>
     pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -196,49 +219,48 @@ impl ImportReadSetSourceItemBuilder {
     }
     /// <p>The source's description.</p>
     pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.description = input; self
+        self.description = input;
+        self
     }
     /// Adds a key-value pair to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// <p>The source's tags.</p>
-    pub fn tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
+    pub fn tags(
+        mut self,
+        k: impl Into<std::string::String>,
+        v: impl Into<std::string::String>,
+    ) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
-                        hash_map.insert(k.into(), v.into());
-                        self.tags = Some(hash_map);
-                        self
+        hash_map.insert(k.into(), v.into());
+        self.tags = Some(hash_map);
+        self
     }
     /// <p>The source's tags.</p>
-    pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
-        self.tags = input; self
+    pub fn set_tags(
+        mut self,
+        input: std::option::Option<
+            std::collections::HashMap<std::string::String, std::string::String>,
+        >,
+    ) -> Self {
+        self.tags = input;
+        self
     }
     /// Consumes the builder and constructs a [`ImportReadSetSourceItem`](crate::types::ImportReadSetSourceItem).
     pub fn build(self) -> crate::types::ImportReadSetSourceItem {
         crate::types::ImportReadSetSourceItem {
-            source_files: self.source_files
-            ,
-            source_file_type: self.source_file_type
-            ,
-            status: self.status
-            ,
-            status_message: self.status_message
-            ,
-            subject_id: self.subject_id
-            ,
-            sample_id: self.sample_id
-            ,
-            generated_from: self.generated_from
-            ,
-            reference_arn: self.reference_arn
-            ,
-            name: self.name
-            ,
-            description: self.description
-            ,
-            tags: self.tags
-            ,
+            source_files: self.source_files,
+            source_file_type: self.source_file_type,
+            status: self.status,
+            status_message: self.status_message,
+            subject_id: self.subject_id,
+            sample_id: self.sample_id,
+            generated_from: self.generated_from,
+            reference_arn: self.reference_arn,
+            name: self.name,
+            description: self.description,
+            tags: self.tags,
         }
     }
 }
-

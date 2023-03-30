@@ -3,14 +3,17 @@
 /// <p> The stream processor settings that you want to update. <code>ConnectedHome</code> settings can be updated to detect different labels with a different minimum confidence. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct StreamProcessorSettingsForUpdate  {
+pub struct StreamProcessorSettingsForUpdate {
     /// <p> The label detection settings you want to use for your stream processor. </p>
     #[doc(hidden)]
-    pub connected_home_for_update: std::option::Option<crate::types::ConnectedHomeSettingsForUpdate>,
+    pub connected_home_for_update:
+        std::option::Option<crate::types::ConnectedHomeSettingsForUpdate>,
 }
 impl StreamProcessorSettingsForUpdate {
     /// <p> The label detection settings you want to use for your stream processor. </p>
-    pub fn connected_home_for_update(&self) -> std::option::Option<& crate::types::ConnectedHomeSettingsForUpdate> {
+    pub fn connected_home_for_update(
+        &self,
+    ) -> std::option::Option<&crate::types::ConnectedHomeSettingsForUpdate> {
         self.connected_home_for_update.as_ref()
     }
 }
@@ -25,24 +28,30 @@ impl StreamProcessorSettingsForUpdate {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct StreamProcessorSettingsForUpdateBuilder {
-    pub(crate) connected_home_for_update: std::option::Option<crate::types::ConnectedHomeSettingsForUpdate>,
+    pub(crate) connected_home_for_update:
+        std::option::Option<crate::types::ConnectedHomeSettingsForUpdate>,
 }
 impl StreamProcessorSettingsForUpdateBuilder {
     /// <p> The label detection settings you want to use for your stream processor. </p>
-    pub fn connected_home_for_update(mut self, input: crate::types::ConnectedHomeSettingsForUpdate) -> Self {
+    pub fn connected_home_for_update(
+        mut self,
+        input: crate::types::ConnectedHomeSettingsForUpdate,
+    ) -> Self {
         self.connected_home_for_update = Some(input);
         self
     }
     /// <p> The label detection settings you want to use for your stream processor. </p>
-    pub fn set_connected_home_for_update(mut self, input: std::option::Option<crate::types::ConnectedHomeSettingsForUpdate>) -> Self {
-        self.connected_home_for_update = input; self
+    pub fn set_connected_home_for_update(
+        mut self,
+        input: std::option::Option<crate::types::ConnectedHomeSettingsForUpdate>,
+    ) -> Self {
+        self.connected_home_for_update = input;
+        self
     }
     /// Consumes the builder and constructs a [`StreamProcessorSettingsForUpdate`](crate::types::StreamProcessorSettingsForUpdate).
     pub fn build(self) -> crate::types::StreamProcessorSettingsForUpdate {
         crate::types::StreamProcessorSettingsForUpdate {
-            connected_home_for_update: self.connected_home_for_update
-            ,
+            connected_home_for_update: self.connected_home_for_update,
         }
     }
 }
-

@@ -4,49 +4,71 @@ pub use crate::operation::create_transit_gateway_peering::_create_transit_gatewa
 pub use crate::operation::create_transit_gateway_peering::_create_transit_gateway_peering_input::CreateTransitGatewayPeeringInputBuilder;
 
 /// Fluent builder constructing a request to `CreateTransitGatewayPeering`.
-/// 
+///
 /// <p>Creates a transit gateway peering connection.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct CreateTransitGatewayPeeringFluentBuilder {
                 handle: std::sync::Arc<crate::client::Handle>,
                 inner: crate::operation::create_transit_gateway_peering::builders::CreateTransitGatewayPeeringInputBuilder
             }
-impl CreateTransitGatewayPeeringFluentBuilder  {
+impl CreateTransitGatewayPeeringFluentBuilder {
     /// Creates a new `CreateTransitGatewayPeering`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
-                    /// sent. The operation's inner [http::Request] can be modified as well.
-                    pub async fn customize(self) -> std::result::Result<
-                        crate::client::customize::CustomizableOperation<crate::operation::create_transit_gateway_peering::CreateTransitGatewayPeering, aws_http::retry::AwsResponseRetryClassifier,>,
-                        aws_smithy_http::result::SdkError<crate::operation::create_transit_gateway_peering::CreateTransitGatewayPeeringError>
-                    >  {
-                        let handle = self.handle.clone();
-                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-                    }
-    
-                    /// Sends the request and returns the response.
-                    ///
-                    /// If an error occurs, an `SdkError` will be returned with additional details that
-                    /// can be matched against.
-                    ///
-                    /// By default, any retryable failures will be retried twice. Retry behavior
-                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                    /// set when configuring the client.
-                    pub async fn send(self) -> std::result::Result<crate::operation::create_transit_gateway_peering::CreateTransitGatewayPeeringOutput, aws_smithy_http::result::SdkError<crate::operation::create_transit_gateway_peering::CreateTransitGatewayPeeringError>>
-                     {
-                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&self.handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        self.handle.client.call(op).await
-                    }
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle,
+            inner: Default::default(),
+        }
+    }
+
+    /// Consume this builder, creating a customizable operation that can be modified before being
+    /// sent. The operation's inner [http::Request] can be modified as well.
+    pub async fn customize(
+        self,
+    ) -> std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::create_transit_gateway_peering::CreateTransitGatewayPeering,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::result::SdkError<
+            crate::operation::create_transit_gateway_peering::CreateTransitGatewayPeeringError,
+        >,
+    > {
+        let handle = self.handle.clone();
+        let operation = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+    }
+
+    /// Sends the request and returns the response.
+    ///
+    /// If an error occurs, an `SdkError` will be returned with additional details that
+    /// can be matched against.
+    ///
+    /// By default, any retryable failures will be retried twice. Retry behavior
+    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+    /// set when configuring the client.
+    pub async fn send(
+        self,
+    ) -> std::result::Result<
+        crate::operation::create_transit_gateway_peering::CreateTransitGatewayPeeringOutput,
+        aws_smithy_http::result::SdkError<
+            crate::operation::create_transit_gateway_peering::CreateTransitGatewayPeeringError,
+        >,
+    > {
+        let op = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&self.handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        self.handle.client.call(op).await
+    }
     /// <p>The ID of a core network.</p>
     pub fn core_network_id(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.core_network_id(input.into());
@@ -63,7 +85,10 @@ impl CreateTransitGatewayPeeringFluentBuilder  {
         self
     }
     /// <p>The ARN of the transit gateway for the peering request.</p>
-    pub fn set_transit_gateway_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_transit_gateway_arn(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_transit_gateway_arn(input);
         self
     }
@@ -77,7 +102,10 @@ impl CreateTransitGatewayPeeringFluentBuilder  {
         self
     }
     /// <p>The list of key-value tags associated with the request.</p>
-    pub fn set_tags(mut self, input: std::option::Option<std::vec::Vec<crate::types::Tag>>) -> Self {
+    pub fn set_tags(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::Tag>>,
+    ) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }
@@ -92,4 +120,3 @@ impl CreateTransitGatewayPeeringFluentBuilder  {
         self
     }
 }
-

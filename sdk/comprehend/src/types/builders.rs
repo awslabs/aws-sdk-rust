@@ -156,4 +156,3 @@ pub use crate::types::_batch_detect_key_phrases_item_result::BatchDetectKeyPhras
 pub use crate::types::_batch_detect_entities_item_result::BatchDetectEntitiesItemResultBuilder;
 
 pub use crate::types::_batch_detect_dominant_language_item_result::BatchDetectDominantLanguageItemResultBuilder;
-

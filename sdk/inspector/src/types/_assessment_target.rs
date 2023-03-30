@@ -3,7 +3,7 @@
 /// <p>Contains information about an Amazon Inspector application. This data type is used as the response element in the <code>DescribeAssessmentTargets</code> action.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AssessmentTarget  {
+pub struct AssessmentTarget {
     /// <p>The ARN that specifies the Amazon Inspector assessment target.</p>
     #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
@@ -22,23 +22,23 @@ pub struct AssessmentTarget  {
 }
 impl AssessmentTarget {
     /// <p>The ARN that specifies the Amazon Inspector assessment target.</p>
-    pub fn arn(&self) -> std::option::Option<& str> {
+    pub fn arn(&self) -> std::option::Option<&str> {
         self.arn.as_deref()
     }
     /// <p>The name of the Amazon Inspector assessment target.</p>
-    pub fn name(&self) -> std::option::Option<& str> {
+    pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>The ARN that specifies the resource group that is associated with the assessment target.</p>
-    pub fn resource_group_arn(&self) -> std::option::Option<& str> {
+    pub fn resource_group_arn(&self) -> std::option::Option<&str> {
         self.resource_group_arn.as_deref()
     }
     /// <p>The time at which the assessment target is created.</p>
-    pub fn created_at(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
+    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
     /// <p>The time at which <code>UpdateAssessmentTarget</code> is called.</p>
-    pub fn updated_at(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
+    pub fn updated_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.updated_at.as_ref()
     }
 }
@@ -67,7 +67,8 @@ impl AssessmentTargetBuilder {
     }
     /// <p>The ARN that specifies the Amazon Inspector assessment target.</p>
     pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.arn = input; self
+        self.arn = input;
+        self
     }
     /// <p>The name of the Amazon Inspector assessment target.</p>
     pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -76,7 +77,8 @@ impl AssessmentTargetBuilder {
     }
     /// <p>The name of the Amazon Inspector assessment target.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input; self
+        self.name = input;
+        self
     }
     /// <p>The ARN that specifies the resource group that is associated with the assessment target.</p>
     pub fn resource_group_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -84,8 +86,12 @@ impl AssessmentTargetBuilder {
         self
     }
     /// <p>The ARN that specifies the resource group that is associated with the assessment target.</p>
-    pub fn set_resource_group_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.resource_group_arn = input; self
+    pub fn set_resource_group_arn(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.resource_group_arn = input;
+        self
     }
     /// <p>The time at which the assessment target is created.</p>
     pub fn created_at(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -93,8 +99,12 @@ impl AssessmentTargetBuilder {
         self
     }
     /// <p>The time at which the assessment target is created.</p>
-    pub fn set_created_at(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.created_at = input; self
+    pub fn set_created_at(
+        mut self,
+        input: std::option::Option<aws_smithy_types::DateTime>,
+    ) -> Self {
+        self.created_at = input;
+        self
     }
     /// <p>The time at which <code>UpdateAssessmentTarget</code> is called.</p>
     pub fn updated_at(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -102,23 +112,21 @@ impl AssessmentTargetBuilder {
         self
     }
     /// <p>The time at which <code>UpdateAssessmentTarget</code> is called.</p>
-    pub fn set_updated_at(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.updated_at = input; self
+    pub fn set_updated_at(
+        mut self,
+        input: std::option::Option<aws_smithy_types::DateTime>,
+    ) -> Self {
+        self.updated_at = input;
+        self
     }
     /// Consumes the builder and constructs a [`AssessmentTarget`](crate::types::AssessmentTarget).
     pub fn build(self) -> crate::types::AssessmentTarget {
         crate::types::AssessmentTarget {
-            arn: self.arn
-            ,
-            name: self.name
-            ,
-            resource_group_arn: self.resource_group_arn
-            ,
-            created_at: self.created_at
-            ,
-            updated_at: self.updated_at
-            ,
+            arn: self.arn,
+            name: self.name,
+            resource_group_arn: self.resource_group_arn,
+            created_at: self.created_at,
+            updated_at: self.updated_at,
         }
     }
 }
-

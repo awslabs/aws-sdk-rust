@@ -18,4 +18,3 @@ pub use crate::types::_sentiment_response::SentimentResponseBuilder;
 pub use crate::types::_predicted_intent::PredictedIntentBuilder;
 
 pub use crate::types::_intent_confidence::IntentConfidenceBuilder;
-

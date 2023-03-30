@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CancelMlTaskRunOutput  {
+pub struct CancelMlTaskRunOutput {
     /// <p>The unique identifier of the machine learning transform.</p>
     #[doc(hidden)]
     pub transform_id: std::option::Option<std::string::String>,
@@ -16,26 +16,27 @@ pub struct CancelMlTaskRunOutput  {
 }
 impl CancelMlTaskRunOutput {
     /// <p>The unique identifier of the machine learning transform.</p>
-    pub fn transform_id(&self) -> std::option::Option<& str> {
+    pub fn transform_id(&self) -> std::option::Option<&str> {
         self.transform_id.as_deref()
     }
     /// <p>The unique identifier for the task run.</p>
-    pub fn task_run_id(&self) -> std::option::Option<& str> {
+    pub fn task_run_id(&self) -> std::option::Option<&str> {
         self.task_run_id.as_deref()
     }
     /// <p>The status for this run.</p>
-    pub fn status(&self) -> std::option::Option<& crate::types::TaskStatusType> {
+    pub fn status(&self) -> std::option::Option<&crate::types::TaskStatusType> {
         self.status.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for CancelMlTaskRunOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl CancelMlTaskRunOutput {
     /// Creates a new builder-style object to manufacture [`CancelMlTaskRunOutput`](crate::operation::cancel_ml_task_run::CancelMlTaskRunOutput).
-    pub fn builder() -> crate::operation::cancel_ml_task_run::builders::CancelMlTaskRunOutputBuilder {
+    pub fn builder() -> crate::operation::cancel_ml_task_run::builders::CancelMlTaskRunOutputBuilder
+    {
         crate::operation::cancel_ml_task_run::builders::CancelMlTaskRunOutputBuilder::default()
     }
 }
@@ -57,7 +58,8 @@ impl CancelMlTaskRunOutputBuilder {
     }
     /// <p>The unique identifier of the machine learning transform.</p>
     pub fn set_transform_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.transform_id = input; self
+        self.transform_id = input;
+        self
     }
     /// <p>The unique identifier for the task run.</p>
     pub fn task_run_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -66,7 +68,8 @@ impl CancelMlTaskRunOutputBuilder {
     }
     /// <p>The unique identifier for the task run.</p>
     pub fn set_task_run_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.task_run_id = input; self
+        self.task_run_id = input;
+        self
     }
     /// <p>The status for this run.</p>
     pub fn status(mut self, input: crate::types::TaskStatusType) -> Self {
@@ -75,28 +78,25 @@ impl CancelMlTaskRunOutputBuilder {
     }
     /// <p>The status for this run.</p>
     pub fn set_status(mut self, input: std::option::Option<crate::types::TaskStatusType>) -> Self {
-        self.status = input; self
+        self.status = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`CancelMlTaskRunOutput`](crate::operation::cancel_ml_task_run::CancelMlTaskRunOutput).
     pub fn build(self) -> crate::operation::cancel_ml_task_run::CancelMlTaskRunOutput {
         crate::operation::cancel_ml_task_run::CancelMlTaskRunOutput {
-            transform_id: self.transform_id
-            ,
-            task_run_id: self.task_run_id
-            ,
-            status: self.status
-            ,
+            transform_id: self.transform_id,
+            task_run_id: self.task_run_id,
+            status: self.status,
             _request_id: self._request_id,
         }
     }
 }
-

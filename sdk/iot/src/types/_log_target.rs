@@ -3,7 +3,7 @@
 /// <p>A log target.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct LogTarget  {
+pub struct LogTarget {
     /// <p>The target type.</p>
     #[doc(hidden)]
     pub target_type: std::option::Option<crate::types::LogTargetType>,
@@ -13,11 +13,11 @@ pub struct LogTarget  {
 }
 impl LogTarget {
     /// <p>The target type.</p>
-    pub fn target_type(&self) -> std::option::Option<& crate::types::LogTargetType> {
+    pub fn target_type(&self) -> std::option::Option<&crate::types::LogTargetType> {
         self.target_type.as_ref()
     }
     /// <p>The target name.</p>
-    pub fn target_name(&self) -> std::option::Option<& str> {
+    pub fn target_name(&self) -> std::option::Option<&str> {
         self.target_name.as_deref()
     }
 }
@@ -42,8 +42,12 @@ impl LogTargetBuilder {
         self
     }
     /// <p>The target type.</p>
-    pub fn set_target_type(mut self, input: std::option::Option<crate::types::LogTargetType>) -> Self {
-        self.target_type = input; self
+    pub fn set_target_type(
+        mut self,
+        input: std::option::Option<crate::types::LogTargetType>,
+    ) -> Self {
+        self.target_type = input;
+        self
     }
     /// <p>The target name.</p>
     pub fn target_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -52,16 +56,14 @@ impl LogTargetBuilder {
     }
     /// <p>The target name.</p>
     pub fn set_target_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.target_name = input; self
+        self.target_name = input;
+        self
     }
     /// Consumes the builder and constructs a [`LogTarget`](crate::types::LogTarget).
     pub fn build(self) -> crate::types::LogTarget {
         crate::types::LogTarget {
-            target_type: self.target_type
-            ,
-            target_name: self.target_name
-            ,
+            target_type: self.target_type,
+            target_name: self.target_name,
         }
     }
 }
-

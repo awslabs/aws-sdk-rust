@@ -2,14 +2,14 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteRuleInput  {
+pub struct DeleteRuleInput {
     /// <p>The Amazon Resource Name (ARN) of the rule.</p>
     #[doc(hidden)]
     pub rule_arn: std::option::Option<std::string::String>,
 }
 impl DeleteRuleInput {
     /// <p>The Amazon Resource Name (ARN) of the rule.</p>
-    pub fn rule_arn(&self) -> std::option::Option<& str> {
+    pub fn rule_arn(&self) -> std::option::Option<&str> {
         self.rule_arn.as_deref()
     }
 }
@@ -34,16 +34,18 @@ impl DeleteRuleInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the rule.</p>
     pub fn set_rule_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.rule_arn = input; self
+        self.rule_arn = input;
+        self
     }
     /// Consumes the builder and constructs a [`DeleteRuleInput`](crate::operation::delete_rule::DeleteRuleInput).
-    pub fn build(self) -> Result<crate::operation::delete_rule::DeleteRuleInput, aws_smithy_http::operation::error::BuildError> {
-        Ok(
-            crate::operation::delete_rule::DeleteRuleInput {
-                rule_arn: self.rule_arn
-                ,
-            }
-        )
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::delete_rule::DeleteRuleInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        Ok(crate::operation::delete_rule::DeleteRuleInput {
+            rule_arn: self.rule_arn,
+        })
     }
 }
-

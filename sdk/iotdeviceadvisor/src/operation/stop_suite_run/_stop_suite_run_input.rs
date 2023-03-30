@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct StopSuiteRunInput  {
+pub struct StopSuiteRunInput {
     /// <p>Suite definition ID of the test suite run to be stopped.</p>
     #[doc(hidden)]
     pub suite_definition_id: std::option::Option<std::string::String>,
@@ -12,11 +12,11 @@ pub struct StopSuiteRunInput  {
 }
 impl StopSuiteRunInput {
     /// <p>Suite definition ID of the test suite run to be stopped.</p>
-    pub fn suite_definition_id(&self) -> std::option::Option<& str> {
+    pub fn suite_definition_id(&self) -> std::option::Option<&str> {
         self.suite_definition_id.as_deref()
     }
     /// <p>Suite run ID of the test suite run to be stopped.</p>
-    pub fn suite_run_id(&self) -> std::option::Option<& str> {
+    pub fn suite_run_id(&self) -> std::option::Option<&str> {
         self.suite_run_id.as_deref()
     }
 }
@@ -41,8 +41,12 @@ impl StopSuiteRunInputBuilder {
         self
     }
     /// <p>Suite definition ID of the test suite run to be stopped.</p>
-    pub fn set_suite_definition_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.suite_definition_id = input; self
+    pub fn set_suite_definition_id(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.suite_definition_id = input;
+        self
     }
     /// <p>Suite run ID of the test suite run to be stopped.</p>
     pub fn suite_run_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -51,18 +55,19 @@ impl StopSuiteRunInputBuilder {
     }
     /// <p>Suite run ID of the test suite run to be stopped.</p>
     pub fn set_suite_run_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.suite_run_id = input; self
+        self.suite_run_id = input;
+        self
     }
     /// Consumes the builder and constructs a [`StopSuiteRunInput`](crate::operation::stop_suite_run::StopSuiteRunInput).
-    pub fn build(self) -> Result<crate::operation::stop_suite_run::StopSuiteRunInput, aws_smithy_http::operation::error::BuildError> {
-        Ok(
-            crate::operation::stop_suite_run::StopSuiteRunInput {
-                suite_definition_id: self.suite_definition_id
-                ,
-                suite_run_id: self.suite_run_id
-                ,
-            }
-        )
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::stop_suite_run::StopSuiteRunInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        Ok(crate::operation::stop_suite_run::StopSuiteRunInput {
+            suite_definition_id: self.suite_definition_id,
+            suite_run_id: self.suite_run_id,
+        })
     }
 }
-

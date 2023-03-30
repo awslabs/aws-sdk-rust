@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-/// 
+///
 /// Here is an example of how you can make a match expression forward-compatible:
-/// 
+///
 /// ```text
 /// # let sccdestinationframerate = unimplemented!();
 /// match sccdestinationframerate {
@@ -33,14 +33,22 @@
 /// Specifically, when `sccdestinationframerate` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `SccDestinationFramerate::NewFeature` also yielding `"NewFeature"`.
-/// 
+///
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 /// Set Framerate (SccDestinationFramerate) to make sure that the captions and the video are synchronized in the output. Specify a frame rate that matches the frame rate of the associated video. If the video frame rate is 29.97, choose 29.97 dropframe (FRAMERATE_29_97_DROPFRAME) only if the video has video_insertion=true and drop_frame_timecode=true; otherwise, choose 29.97 non-dropframe (FRAMERATE_29_97_NON_DROPFRAME).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
 pub enum SccDestinationFramerate {
     #[allow(missing_docs)] // documentation missing in model
     Framerate2397,
@@ -53,47 +61,54 @@ pub enum SccDestinationFramerate {
     #[allow(missing_docs)] // documentation missing in model
     Framerate2997NonDropframe,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::primitives::UnknownVariantValue)
+    Unknown(crate::primitives::UnknownVariantValue),
 }
 impl std::convert::From<&str> for SccDestinationFramerate {
-                fn from(s: &str) -> Self {
-                    match s {
-                        "FRAMERATE_23_97" => SccDestinationFramerate::Framerate2397,
-"FRAMERATE_24" => SccDestinationFramerate::Framerate24,
-"FRAMERATE_25" => SccDestinationFramerate::Framerate25,
-"FRAMERATE_29_97_DROPFRAME" => SccDestinationFramerate::Framerate2997Dropframe,
-"FRAMERATE_29_97_NON_DROPFRAME" => SccDestinationFramerate::Framerate2997NonDropframe,
-other => SccDestinationFramerate::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
-                    }
-                }
-            }
-impl std::str::FromStr for SccDestinationFramerate {
-                type Err = std::convert::Infallible;
-
-                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-                    Ok(SccDestinationFramerate::from(s))
-                }
-            }
-impl SccDestinationFramerate {
-                /// Returns the `&str` value of the enum member.
-                pub fn as_str(&self) -> &str {
-                    match self {
-    SccDestinationFramerate::Framerate2397 => "FRAMERATE_23_97",
-    SccDestinationFramerate::Framerate24 => "FRAMERATE_24",
-    SccDestinationFramerate::Framerate25 => "FRAMERATE_25",
-    SccDestinationFramerate::Framerate2997Dropframe => "FRAMERATE_29_97_DROPFRAME",
-    SccDestinationFramerate::Framerate2997NonDropframe => "FRAMERATE_29_97_NON_DROPFRAME",
-    SccDestinationFramerate::Unknown(value) => value.as_str()
+    fn from(s: &str) -> Self {
+        match s {
+            "FRAMERATE_23_97" => SccDestinationFramerate::Framerate2397,
+            "FRAMERATE_24" => SccDestinationFramerate::Framerate24,
+            "FRAMERATE_25" => SccDestinationFramerate::Framerate25,
+            "FRAMERATE_29_97_DROPFRAME" => SccDestinationFramerate::Framerate2997Dropframe,
+            "FRAMERATE_29_97_NON_DROPFRAME" => SccDestinationFramerate::Framerate2997NonDropframe,
+            other => SccDestinationFramerate::Unknown(crate::primitives::UnknownVariantValue(
+                other.to_owned(),
+            )),
+        }
+    }
 }
-                }
-                /// Returns all the `&str` representations of the enum members.
-                pub const fn values() -> &'static [&'static str] {
-                    &["FRAMERATE_23_97", "FRAMERATE_24", "FRAMERATE_25", "FRAMERATE_29_97_DROPFRAME", "FRAMERATE_29_97_NON_DROPFRAME"]
-                }
-            }
-impl AsRef<str> for SccDestinationFramerate {
-                fn as_ref(&self) -> &str {
-                    self.as_str()
-                }
-            }
+impl std::str::FromStr for SccDestinationFramerate {
+    type Err = std::convert::Infallible;
 
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(SccDestinationFramerate::from(s))
+    }
+}
+impl SccDestinationFramerate {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            SccDestinationFramerate::Framerate2397 => "FRAMERATE_23_97",
+            SccDestinationFramerate::Framerate24 => "FRAMERATE_24",
+            SccDestinationFramerate::Framerate25 => "FRAMERATE_25",
+            SccDestinationFramerate::Framerate2997Dropframe => "FRAMERATE_29_97_DROPFRAME",
+            SccDestinationFramerate::Framerate2997NonDropframe => "FRAMERATE_29_97_NON_DROPFRAME",
+            SccDestinationFramerate::Unknown(value) => value.as_str(),
+        }
+    }
+    /// Returns all the `&str` representations of the enum members.
+    pub const fn values() -> &'static [&'static str] {
+        &[
+            "FRAMERATE_23_97",
+            "FRAMERATE_24",
+            "FRAMERATE_25",
+            "FRAMERATE_29_97_DROPFRAME",
+            "FRAMERATE_29_97_NON_DROPFRAME",
+        ]
+    }
+}
+impl AsRef<str> for SccDestinationFramerate {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}

@@ -3,7 +3,7 @@
 /// <p>Represents a request to the list tests operation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListTestsInput  {
+pub struct ListTestsInput {
     /// <p>The test suite's Amazon Resource Name (ARN).</p>
     #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
@@ -13,11 +13,11 @@ pub struct ListTestsInput  {
 }
 impl ListTestsInput {
     /// <p>The test suite's Amazon Resource Name (ARN).</p>
-    pub fn arn(&self) -> std::option::Option<& str> {
+    pub fn arn(&self) -> std::option::Option<&str> {
         self.arn.as_deref()
     }
     /// <p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.</p>
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
 }
@@ -43,7 +43,8 @@ impl ListTestsInputBuilder {
     }
     /// <p>The test suite's Amazon Resource Name (ARN).</p>
     pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.arn = input; self
+        self.arn = input;
+        self
     }
     /// <p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -52,18 +53,19 @@ impl ListTestsInputBuilder {
     }
     /// <p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input; self
+        self.next_token = input;
+        self
     }
     /// Consumes the builder and constructs a [`ListTestsInput`](crate::operation::list_tests::ListTestsInput).
-    pub fn build(self) -> Result<crate::operation::list_tests::ListTestsInput, aws_smithy_http::operation::error::BuildError> {
-        Ok(
-            crate::operation::list_tests::ListTestsInput {
-                arn: self.arn
-                ,
-                next_token: self.next_token
-                ,
-            }
-        )
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::list_tests::ListTestsInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        Ok(crate::operation::list_tests::ListTestsInput {
+            arn: self.arn,
+            next_token: self.next_token,
+        })
     }
 }
-

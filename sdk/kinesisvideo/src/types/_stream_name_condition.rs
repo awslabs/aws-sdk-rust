@@ -3,7 +3,7 @@
 /// <p>Specifies the condition that streams must satisfy to be returned when you list streams (see the <code>ListStreams</code> API). A condition has a comparison operation and a value. Currently, you can specify only the <code>BEGINS_WITH</code> operator, which finds streams whose names start with a given prefix. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct StreamNameCondition  {
+pub struct StreamNameCondition {
     /// <p>A comparison operator. Currently, you can specify only the <code>BEGINS_WITH</code> operator, which finds streams whose names start with a given prefix.</p>
     #[doc(hidden)]
     pub comparison_operator: std::option::Option<crate::types::ComparisonOperator>,
@@ -13,11 +13,11 @@ pub struct StreamNameCondition  {
 }
 impl StreamNameCondition {
     /// <p>A comparison operator. Currently, you can specify only the <code>BEGINS_WITH</code> operator, which finds streams whose names start with a given prefix.</p>
-    pub fn comparison_operator(&self) -> std::option::Option<& crate::types::ComparisonOperator> {
+    pub fn comparison_operator(&self) -> std::option::Option<&crate::types::ComparisonOperator> {
         self.comparison_operator.as_ref()
     }
     /// <p>A value to compare.</p>
-    pub fn comparison_value(&self) -> std::option::Option<& str> {
+    pub fn comparison_value(&self) -> std::option::Option<&str> {
         self.comparison_value.as_deref()
     }
 }
@@ -42,8 +42,12 @@ impl StreamNameConditionBuilder {
         self
     }
     /// <p>A comparison operator. Currently, you can specify only the <code>BEGINS_WITH</code> operator, which finds streams whose names start with a given prefix.</p>
-    pub fn set_comparison_operator(mut self, input: std::option::Option<crate::types::ComparisonOperator>) -> Self {
-        self.comparison_operator = input; self
+    pub fn set_comparison_operator(
+        mut self,
+        input: std::option::Option<crate::types::ComparisonOperator>,
+    ) -> Self {
+        self.comparison_operator = input;
+        self
     }
     /// <p>A value to compare.</p>
     pub fn comparison_value(mut self, input: impl Into<std::string::String>) -> Self {
@@ -52,16 +56,14 @@ impl StreamNameConditionBuilder {
     }
     /// <p>A value to compare.</p>
     pub fn set_comparison_value(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.comparison_value = input; self
+        self.comparison_value = input;
+        self
     }
     /// Consumes the builder and constructs a [`StreamNameCondition`](crate::types::StreamNameCondition).
     pub fn build(self) -> crate::types::StreamNameCondition {
         crate::types::StreamNameCondition {
-            comparison_operator: self.comparison_operator
-            ,
-            comparison_value: self.comparison_value
-            ,
+            comparison_operator: self.comparison_operator,
+            comparison_value: self.comparison_value,
         }
     }
 }
-

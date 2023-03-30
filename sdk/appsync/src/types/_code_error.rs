@@ -3,12 +3,12 @@
 /// <p>Describes an AppSync error.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CodeError  {
-    /// <p>The type of code error. </p> 
+pub struct CodeError {
+    /// <p>The type of code error. </p>
     /// <p>Examples include, but aren't limited to: <code>LINT_ERROR</code>, <code>PARSER_ERROR</code>.</p>
     #[doc(hidden)]
     pub error_type: std::option::Option<std::string::String>,
-    /// <p>A user presentable error.</p> 
+    /// <p>A user presentable error.</p>
     /// <p>Examples include, but aren't limited to: <code>Parsing error: Unterminated string literal</code>.</p>
     #[doc(hidden)]
     pub value: std::option::Option<std::string::String>,
@@ -17,18 +17,18 @@ pub struct CodeError  {
     pub location: std::option::Option<crate::types::CodeErrorLocation>,
 }
 impl CodeError {
-    /// <p>The type of code error. </p> 
+    /// <p>The type of code error. </p>
     /// <p>Examples include, but aren't limited to: <code>LINT_ERROR</code>, <code>PARSER_ERROR</code>.</p>
-    pub fn error_type(&self) -> std::option::Option<& str> {
+    pub fn error_type(&self) -> std::option::Option<&str> {
         self.error_type.as_deref()
     }
-    /// <p>A user presentable error.</p> 
+    /// <p>A user presentable error.</p>
     /// <p>Examples include, but aren't limited to: <code>Parsing error: Unterminated string literal</code>.</p>
-    pub fn value(&self) -> std::option::Option<& str> {
+    pub fn value(&self) -> std::option::Option<&str> {
         self.value.as_deref()
     }
     /// <p>The line, column, and span location of the error in the code.</p>
-    pub fn location(&self) -> std::option::Option<& crate::types::CodeErrorLocation> {
+    pub fn location(&self) -> std::option::Option<&crate::types::CodeErrorLocation> {
         self.location.as_ref()
     }
 }
@@ -48,27 +48,29 @@ pub struct CodeErrorBuilder {
     pub(crate) location: std::option::Option<crate::types::CodeErrorLocation>,
 }
 impl CodeErrorBuilder {
-    /// <p>The type of code error. </p> 
+    /// <p>The type of code error. </p>
     /// <p>Examples include, but aren't limited to: <code>LINT_ERROR</code>, <code>PARSER_ERROR</code>.</p>
     pub fn error_type(mut self, input: impl Into<std::string::String>) -> Self {
         self.error_type = Some(input.into());
         self
     }
-    /// <p>The type of code error. </p> 
+    /// <p>The type of code error. </p>
     /// <p>Examples include, but aren't limited to: <code>LINT_ERROR</code>, <code>PARSER_ERROR</code>.</p>
     pub fn set_error_type(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.error_type = input; self
+        self.error_type = input;
+        self
     }
-    /// <p>A user presentable error.</p> 
+    /// <p>A user presentable error.</p>
     /// <p>Examples include, but aren't limited to: <code>Parsing error: Unterminated string literal</code>.</p>
     pub fn value(mut self, input: impl Into<std::string::String>) -> Self {
         self.value = Some(input.into());
         self
     }
-    /// <p>A user presentable error.</p> 
+    /// <p>A user presentable error.</p>
     /// <p>Examples include, but aren't limited to: <code>Parsing error: Unterminated string literal</code>.</p>
     pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.value = input; self
+        self.value = input;
+        self
     }
     /// <p>The line, column, and span location of the error in the code.</p>
     pub fn location(mut self, input: crate::types::CodeErrorLocation) -> Self {
@@ -76,19 +78,19 @@ impl CodeErrorBuilder {
         self
     }
     /// <p>The line, column, and span location of the error in the code.</p>
-    pub fn set_location(mut self, input: std::option::Option<crate::types::CodeErrorLocation>) -> Self {
-        self.location = input; self
+    pub fn set_location(
+        mut self,
+        input: std::option::Option<crate::types::CodeErrorLocation>,
+    ) -> Self {
+        self.location = input;
+        self
     }
     /// Consumes the builder and constructs a [`CodeError`](crate::types::CodeError).
     pub fn build(self) -> crate::types::CodeError {
         crate::types::CodeError {
-            error_type: self.error_type
-            ,
-            value: self.value
-            ,
-            location: self.location
-            ,
+            error_type: self.error_type,
+            value: self.value,
+            location: self.location,
         }
     }
 }
-

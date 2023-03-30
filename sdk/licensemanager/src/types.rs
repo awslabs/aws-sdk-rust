@@ -224,4 +224,3 @@ pub mod builders;
 
 /// Error types that AWS License Manager can respond with.
 pub mod error;
-

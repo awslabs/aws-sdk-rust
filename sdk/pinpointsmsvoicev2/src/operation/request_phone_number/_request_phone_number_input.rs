@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct RequestPhoneNumberInput  {
+pub struct RequestPhoneNumberInput {
     /// <p>The two-character code, in ISO 3166-1 alpha-2 format, for the country or region. </p>
     #[doc(hidden)]
     pub iso_country_code: std::option::Option<std::string::String>,
@@ -36,31 +36,31 @@ pub struct RequestPhoneNumberInput  {
 }
 impl RequestPhoneNumberInput {
     /// <p>The two-character code, in ISO 3166-1 alpha-2 format, for the country or region. </p>
-    pub fn iso_country_code(&self) -> std::option::Option<& str> {
+    pub fn iso_country_code(&self) -> std::option::Option<&str> {
         self.iso_country_code.as_deref()
     }
     /// <p>The type of message. Valid values are TRANSACTIONAL for messages that are critical or time-sensitive and PROMOTIONAL for messages that aren't critical or time-sensitive.</p>
-    pub fn message_type(&self) -> std::option::Option<& crate::types::MessageType> {
+    pub fn message_type(&self) -> std::option::Option<&crate::types::MessageType> {
         self.message_type.as_ref()
     }
     /// <p>Indicates if the phone number will be used for text messages, voice messages, or both. </p>
-    pub fn number_capabilities(&self) -> std::option::Option<& [crate::types::NumberCapability]> {
+    pub fn number_capabilities(&self) -> std::option::Option<&[crate::types::NumberCapability]> {
         self.number_capabilities.as_deref()
     }
     /// <p>The type of phone number to request.</p>
-    pub fn number_type(&self) -> std::option::Option<& crate::types::RequestableNumberType> {
+    pub fn number_type(&self) -> std::option::Option<&crate::types::RequestableNumberType> {
         self.number_type.as_ref()
     }
     /// <p>The name of the OptOutList to associate with the phone number. You can use the OutOutListName or OptPutListArn.</p>
-    pub fn opt_out_list_name(&self) -> std::option::Option<& str> {
+    pub fn opt_out_list_name(&self) -> std::option::Option<&str> {
         self.opt_out_list_name.as_deref()
     }
     /// <p>The pool to associated with the phone number. You can use the PoolId or PoolArn. </p>
-    pub fn pool_id(&self) -> std::option::Option<& str> {
+    pub fn pool_id(&self) -> std::option::Option<&str> {
         self.pool_id.as_deref()
     }
     /// <p>Use this field to attach your phone number for an external registration process.</p>
-    pub fn registration_id(&self) -> std::option::Option<& str> {
+    pub fn registration_id(&self) -> std::option::Option<&str> {
         self.registration_id.as_deref()
     }
     /// <p>By default this is set to false. When set to true the phone number can't be deleted.</p>
@@ -68,17 +68,18 @@ impl RequestPhoneNumberInput {
         self.deletion_protection_enabled
     }
     /// <p>An array of tags (key and value pairs) associate with the requested phone number. </p>
-    pub fn tags(&self) -> std::option::Option<& [crate::types::Tag]> {
+    pub fn tags(&self) -> std::option::Option<&[crate::types::Tag]> {
         self.tags.as_deref()
     }
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don't specify a client token, a randomly generated token is used for the request to ensure idempotency.</p>
-    pub fn client_token(&self) -> std::option::Option<& str> {
+    pub fn client_token(&self) -> std::option::Option<&str> {
         self.client_token.as_deref()
     }
 }
 impl RequestPhoneNumberInput {
     /// Creates a new builder-style object to manufacture [`RequestPhoneNumberInput`](crate::operation::request_phone_number::RequestPhoneNumberInput).
-    pub fn builder() -> crate::operation::request_phone_number::builders::RequestPhoneNumberInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::request_phone_number::builders::RequestPhoneNumberInputBuilder {
         crate::operation::request_phone_number::builders::RequestPhoneNumberInputBuilder::default()
     }
 }
@@ -89,7 +90,8 @@ impl RequestPhoneNumberInput {
 pub struct RequestPhoneNumberInputBuilder {
     pub(crate) iso_country_code: std::option::Option<std::string::String>,
     pub(crate) message_type: std::option::Option<crate::types::MessageType>,
-    pub(crate) number_capabilities: std::option::Option<std::vec::Vec<crate::types::NumberCapability>>,
+    pub(crate) number_capabilities:
+        std::option::Option<std::vec::Vec<crate::types::NumberCapability>>,
     pub(crate) number_type: std::option::Option<crate::types::RequestableNumberType>,
     pub(crate) opt_out_list_name: std::option::Option<std::string::String>,
     pub(crate) pool_id: std::option::Option<std::string::String>,
@@ -106,7 +108,8 @@ impl RequestPhoneNumberInputBuilder {
     }
     /// <p>The two-character code, in ISO 3166-1 alpha-2 format, for the country or region. </p>
     pub fn set_iso_country_code(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.iso_country_code = input; self
+        self.iso_country_code = input;
+        self
     }
     /// <p>The type of message. Valid values are TRANSACTIONAL for messages that are critical or time-sensitive and PROMOTIONAL for messages that aren't critical or time-sensitive.</p>
     pub fn message_type(mut self, input: crate::types::MessageType) -> Self {
@@ -114,8 +117,12 @@ impl RequestPhoneNumberInputBuilder {
         self
     }
     /// <p>The type of message. Valid values are TRANSACTIONAL for messages that are critical or time-sensitive and PROMOTIONAL for messages that aren't critical or time-sensitive.</p>
-    pub fn set_message_type(mut self, input: std::option::Option<crate::types::MessageType>) -> Self {
-        self.message_type = input; self
+    pub fn set_message_type(
+        mut self,
+        input: std::option::Option<crate::types::MessageType>,
+    ) -> Self {
+        self.message_type = input;
+        self
     }
     /// Appends an item to `number_capabilities`.
     ///
@@ -124,13 +131,17 @@ impl RequestPhoneNumberInputBuilder {
     /// <p>Indicates if the phone number will be used for text messages, voice messages, or both. </p>
     pub fn number_capabilities(mut self, input: crate::types::NumberCapability) -> Self {
         let mut v = self.number_capabilities.unwrap_or_default();
-                        v.push(input);
-                        self.number_capabilities = Some(v);
-                        self
+        v.push(input);
+        self.number_capabilities = Some(v);
+        self
     }
     /// <p>Indicates if the phone number will be used for text messages, voice messages, or both. </p>
-    pub fn set_number_capabilities(mut self, input: std::option::Option<std::vec::Vec<crate::types::NumberCapability>>) -> Self {
-        self.number_capabilities = input; self
+    pub fn set_number_capabilities(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::NumberCapability>>,
+    ) -> Self {
+        self.number_capabilities = input;
+        self
     }
     /// <p>The type of phone number to request.</p>
     pub fn number_type(mut self, input: crate::types::RequestableNumberType) -> Self {
@@ -138,8 +149,12 @@ impl RequestPhoneNumberInputBuilder {
         self
     }
     /// <p>The type of phone number to request.</p>
-    pub fn set_number_type(mut self, input: std::option::Option<crate::types::RequestableNumberType>) -> Self {
-        self.number_type = input; self
+    pub fn set_number_type(
+        mut self,
+        input: std::option::Option<crate::types::RequestableNumberType>,
+    ) -> Self {
+        self.number_type = input;
+        self
     }
     /// <p>The name of the OptOutList to associate with the phone number. You can use the OutOutListName or OptPutListArn.</p>
     pub fn opt_out_list_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -147,8 +162,12 @@ impl RequestPhoneNumberInputBuilder {
         self
     }
     /// <p>The name of the OptOutList to associate with the phone number. You can use the OutOutListName or OptPutListArn.</p>
-    pub fn set_opt_out_list_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.opt_out_list_name = input; self
+    pub fn set_opt_out_list_name(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.opt_out_list_name = input;
+        self
     }
     /// <p>The pool to associated with the phone number. You can use the PoolId or PoolArn. </p>
     pub fn pool_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -157,7 +176,8 @@ impl RequestPhoneNumberInputBuilder {
     }
     /// <p>The pool to associated with the phone number. You can use the PoolId or PoolArn. </p>
     pub fn set_pool_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.pool_id = input; self
+        self.pool_id = input;
+        self
     }
     /// <p>Use this field to attach your phone number for an external registration process.</p>
     pub fn registration_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -166,7 +186,8 @@ impl RequestPhoneNumberInputBuilder {
     }
     /// <p>Use this field to attach your phone number for an external registration process.</p>
     pub fn set_registration_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.registration_id = input; self
+        self.registration_id = input;
+        self
     }
     /// <p>By default this is set to false. When set to true the phone number can't be deleted.</p>
     pub fn deletion_protection_enabled(mut self, input: bool) -> Self {
@@ -175,7 +196,8 @@ impl RequestPhoneNumberInputBuilder {
     }
     /// <p>By default this is set to false. When set to true the phone number can't be deleted.</p>
     pub fn set_deletion_protection_enabled(mut self, input: std::option::Option<bool>) -> Self {
-        self.deletion_protection_enabled = input; self
+        self.deletion_protection_enabled = input;
+        self
     }
     /// Appends an item to `tags`.
     ///
@@ -184,13 +206,17 @@ impl RequestPhoneNumberInputBuilder {
     /// <p>An array of tags (key and value pairs) associate with the requested phone number. </p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
-                        v.push(input);
-                        self.tags = Some(v);
-                        self
+        v.push(input);
+        self.tags = Some(v);
+        self
     }
     /// <p>An array of tags (key and value pairs) associate with the requested phone number. </p>
-    pub fn set_tags(mut self, input: std::option::Option<std::vec::Vec<crate::types::Tag>>) -> Self {
-        self.tags = input; self
+    pub fn set_tags(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::Tag>>,
+    ) -> Self {
+        self.tags = input;
+        self
     }
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don't specify a client token, a randomly generated token is used for the request to ensure idempotency.</p>
     pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -199,34 +225,29 @@ impl RequestPhoneNumberInputBuilder {
     }
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don't specify a client token, a randomly generated token is used for the request to ensure idempotency.</p>
     pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.client_token = input; self
+        self.client_token = input;
+        self
     }
     /// Consumes the builder and constructs a [`RequestPhoneNumberInput`](crate::operation::request_phone_number::RequestPhoneNumberInput).
-    pub fn build(self) -> Result<crate::operation::request_phone_number::RequestPhoneNumberInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::request_phone_number::RequestPhoneNumberInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::request_phone_number::RequestPhoneNumberInput {
-                iso_country_code: self.iso_country_code
-                ,
-                message_type: self.message_type
-                ,
-                number_capabilities: self.number_capabilities
-                ,
-                number_type: self.number_type
-                ,
-                opt_out_list_name: self.opt_out_list_name
-                ,
-                pool_id: self.pool_id
-                ,
-                registration_id: self.registration_id
-                ,
-                deletion_protection_enabled: self.deletion_protection_enabled
-                ,
-                tags: self.tags
-                ,
-                client_token: self.client_token
-                ,
-            }
+                iso_country_code: self.iso_country_code,
+                message_type: self.message_type,
+                number_capabilities: self.number_capabilities,
+                number_type: self.number_type,
+                opt_out_list_name: self.opt_out_list_name,
+                pool_id: self.pool_id,
+                registration_id: self.registration_id,
+                deletion_protection_enabled: self.deletion_protection_enabled,
+                tags: self.tags,
+                client_token: self.client_token,
+            },
         )
     }
 }
-

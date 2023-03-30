@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListProposalsInput  {
+pub struct ListProposalsInput {
     /// <p> The unique identifier of the network. </p>
     #[doc(hidden)]
     pub network_id: std::option::Option<std::string::String>,
@@ -15,7 +15,7 @@ pub struct ListProposalsInput  {
 }
 impl ListProposalsInput {
     /// <p> The unique identifier of the network. </p>
-    pub fn network_id(&self) -> std::option::Option<& str> {
+    pub fn network_id(&self) -> std::option::Option<&str> {
         self.network_id.as_deref()
     }
     /// <p> The maximum number of proposals to return. </p>
@@ -23,7 +23,7 @@ impl ListProposalsInput {
         self.max_results
     }
     /// <p> The pagination token that indicates the next set of results to retrieve. </p>
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
 }
@@ -50,7 +50,8 @@ impl ListProposalsInputBuilder {
     }
     /// <p> The unique identifier of the network. </p>
     pub fn set_network_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.network_id = input; self
+        self.network_id = input;
+        self
     }
     /// <p> The maximum number of proposals to return. </p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -59,7 +60,8 @@ impl ListProposalsInputBuilder {
     }
     /// <p> The maximum number of proposals to return. </p>
     pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_results = input; self
+        self.max_results = input;
+        self
     }
     /// <p> The pagination token that indicates the next set of results to retrieve. </p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -68,20 +70,20 @@ impl ListProposalsInputBuilder {
     }
     /// <p> The pagination token that indicates the next set of results to retrieve. </p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input; self
+        self.next_token = input;
+        self
     }
     /// Consumes the builder and constructs a [`ListProposalsInput`](crate::operation::list_proposals::ListProposalsInput).
-    pub fn build(self) -> Result<crate::operation::list_proposals::ListProposalsInput, aws_smithy_http::operation::error::BuildError> {
-        Ok(
-            crate::operation::list_proposals::ListProposalsInput {
-                network_id: self.network_id
-                ,
-                max_results: self.max_results
-                ,
-                next_token: self.next_token
-                ,
-            }
-        )
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::list_proposals::ListProposalsInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        Ok(crate::operation::list_proposals::ListProposalsInput {
+            network_id: self.network_id,
+            max_results: self.max_results,
+            next_token: self.next_token,
+        })
     }
 }
-

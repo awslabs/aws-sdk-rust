@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct AdminAddUserToGroupInput  {
+pub struct AdminAddUserToGroupInput {
     /// <p>The user pool ID for the user pool.</p>
     #[doc(hidden)]
     pub user_pool_id: std::option::Option<std::string::String>,
@@ -15,19 +15,19 @@ pub struct AdminAddUserToGroupInput  {
 }
 impl AdminAddUserToGroupInput {
     /// <p>The user pool ID for the user pool.</p>
-    pub fn user_pool_id(&self) -> std::option::Option<& str> {
+    pub fn user_pool_id(&self) -> std::option::Option<&str> {
         self.user_pool_id.as_deref()
     }
     /// <p>The username for the user.</p>
-    pub fn username(&self) -> std::option::Option<& str> {
+    pub fn username(&self) -> std::option::Option<&str> {
         self.username.as_deref()
     }
     /// <p>The group name.</p>
-    pub fn group_name(&self) -> std::option::Option<& str> {
+    pub fn group_name(&self) -> std::option::Option<&str> {
         self.group_name.as_deref()
     }
 }
-impl  std::fmt::Debug for AdminAddUserToGroupInput  {
+impl std::fmt::Debug for AdminAddUserToGroupInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("AdminAddUserToGroupInput");
         formatter.field("user_pool_id", &self.user_pool_id);
@@ -38,7 +38,8 @@ impl  std::fmt::Debug for AdminAddUserToGroupInput  {
 }
 impl AdminAddUserToGroupInput {
     /// Creates a new builder-style object to manufacture [`AdminAddUserToGroupInput`](crate::operation::admin_add_user_to_group::AdminAddUserToGroupInput).
-    pub fn builder() -> crate::operation::admin_add_user_to_group::builders::AdminAddUserToGroupInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::admin_add_user_to_group::builders::AdminAddUserToGroupInputBuilder {
         crate::operation::admin_add_user_to_group::builders::AdminAddUserToGroupInputBuilder::default()
     }
 }
@@ -59,7 +60,8 @@ impl AdminAddUserToGroupInputBuilder {
     }
     /// <p>The user pool ID for the user pool.</p>
     pub fn set_user_pool_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.user_pool_id = input; self
+        self.user_pool_id = input;
+        self
     }
     /// <p>The username for the user.</p>
     pub fn username(mut self, input: impl Into<std::string::String>) -> Self {
@@ -68,7 +70,8 @@ impl AdminAddUserToGroupInputBuilder {
     }
     /// <p>The username for the user.</p>
     pub fn set_username(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.username = input; self
+        self.username = input;
+        self
     }
     /// <p>The group name.</p>
     pub fn group_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -77,19 +80,22 @@ impl AdminAddUserToGroupInputBuilder {
     }
     /// <p>The group name.</p>
     pub fn set_group_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.group_name = input; self
+        self.group_name = input;
+        self
     }
     /// Consumes the builder and constructs a [`AdminAddUserToGroupInput`](crate::operation::admin_add_user_to_group::AdminAddUserToGroupInput).
-    pub fn build(self) -> Result<crate::operation::admin_add_user_to_group::AdminAddUserToGroupInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::admin_add_user_to_group::AdminAddUserToGroupInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::admin_add_user_to_group::AdminAddUserToGroupInput {
-                user_pool_id: self.user_pool_id
-                ,
-                username: self.username
-                ,
-                group_name: self.group_name
-                ,
-            }
+                user_pool_id: self.user_pool_id,
+                username: self.username,
+                group_name: self.group_name,
+            },
         )
     }
 }
@@ -102,4 +108,3 @@ impl std::fmt::Debug for AdminAddUserToGroupInputBuilder {
         formatter.finish()
     }
 }
-

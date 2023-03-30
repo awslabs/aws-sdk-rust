@@ -2,20 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteNetworkSettingsInput  {
+pub struct DeleteNetworkSettingsInput {
     /// <p>The ARN of the network settings.</p>
     #[doc(hidden)]
     pub network_settings_arn: std::option::Option<std::string::String>,
 }
 impl DeleteNetworkSettingsInput {
     /// <p>The ARN of the network settings.</p>
-    pub fn network_settings_arn(&self) -> std::option::Option<& str> {
+    pub fn network_settings_arn(&self) -> std::option::Option<&str> {
         self.network_settings_arn.as_deref()
     }
 }
 impl DeleteNetworkSettingsInput {
     /// Creates a new builder-style object to manufacture [`DeleteNetworkSettingsInput`](crate::operation::delete_network_settings::DeleteNetworkSettingsInput).
-    pub fn builder() -> crate::operation::delete_network_settings::builders::DeleteNetworkSettingsInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::delete_network_settings::builders::DeleteNetworkSettingsInputBuilder
+    {
         crate::operation::delete_network_settings::builders::DeleteNetworkSettingsInputBuilder::default()
     }
 }
@@ -33,17 +35,24 @@ impl DeleteNetworkSettingsInputBuilder {
         self
     }
     /// <p>The ARN of the network settings.</p>
-    pub fn set_network_settings_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.network_settings_arn = input; self
+    pub fn set_network_settings_arn(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.network_settings_arn = input;
+        self
     }
     /// Consumes the builder and constructs a [`DeleteNetworkSettingsInput`](crate::operation::delete_network_settings::DeleteNetworkSettingsInput).
-    pub fn build(self) -> Result<crate::operation::delete_network_settings::DeleteNetworkSettingsInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::delete_network_settings::DeleteNetworkSettingsInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::delete_network_settings::DeleteNetworkSettingsInput {
-                network_settings_arn: self.network_settings_arn
-                ,
-            }
+                network_settings_arn: self.network_settings_arn,
+            },
         )
     }
 }
-

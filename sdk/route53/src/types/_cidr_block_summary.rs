@@ -3,7 +3,7 @@
 /// <p>A complex type that lists the CIDR blocks.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CidrBlockSummary  {
+pub struct CidrBlockSummary {
     /// <p>Value for the CIDR block.</p>
     #[doc(hidden)]
     pub cidr_block: std::option::Option<std::string::String>,
@@ -13,11 +13,11 @@ pub struct CidrBlockSummary  {
 }
 impl CidrBlockSummary {
     /// <p>Value for the CIDR block.</p>
-    pub fn cidr_block(&self) -> std::option::Option<& str> {
+    pub fn cidr_block(&self) -> std::option::Option<&str> {
         self.cidr_block.as_deref()
     }
     /// <p>The location name of the CIDR block.</p>
-    pub fn location_name(&self) -> std::option::Option<& str> {
+    pub fn location_name(&self) -> std::option::Option<&str> {
         self.location_name.as_deref()
     }
 }
@@ -43,7 +43,8 @@ impl CidrBlockSummaryBuilder {
     }
     /// <p>Value for the CIDR block.</p>
     pub fn set_cidr_block(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.cidr_block = input; self
+        self.cidr_block = input;
+        self
     }
     /// <p>The location name of the CIDR block.</p>
     pub fn location_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -52,16 +53,14 @@ impl CidrBlockSummaryBuilder {
     }
     /// <p>The location name of the CIDR block.</p>
     pub fn set_location_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.location_name = input; self
+        self.location_name = input;
+        self
     }
     /// Consumes the builder and constructs a [`CidrBlockSummary`](crate::types::CidrBlockSummary).
     pub fn build(self) -> crate::types::CidrBlockSummary {
         crate::types::CidrBlockSummary {
-            cidr_block: self.cidr_block
-            ,
-            location_name: self.location_name
-            ,
+            cidr_block: self.cidr_block,
+            location_name: self.location_name,
         }
     }
 }
-

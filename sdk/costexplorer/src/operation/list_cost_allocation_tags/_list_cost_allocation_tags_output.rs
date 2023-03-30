@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListCostAllocationTagsOutput  {
+pub struct ListCostAllocationTagsOutput {
     /// <p>A list of cost allocation tags that includes the detailed metadata for each one. </p>
     #[doc(hidden)]
     pub cost_allocation_tags: std::option::Option<std::vec::Vec<crate::types::CostAllocationTag>>,
@@ -13,22 +13,24 @@ pub struct ListCostAllocationTagsOutput  {
 }
 impl ListCostAllocationTagsOutput {
     /// <p>A list of cost allocation tags that includes the detailed metadata for each one. </p>
-    pub fn cost_allocation_tags(&self) -> std::option::Option<& [crate::types::CostAllocationTag]> {
+    pub fn cost_allocation_tags(&self) -> std::option::Option<&[crate::types::CostAllocationTag]> {
         self.cost_allocation_tags.as_deref()
     }
     /// <p>The token to retrieve the next set of results. Amazon Web Services provides the token when the response from a previous call has more results than the maximum page size. </p>
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for ListCostAllocationTagsOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl ListCostAllocationTagsOutput {
     /// Creates a new builder-style object to manufacture [`ListCostAllocationTagsOutput`](crate::operation::list_cost_allocation_tags::ListCostAllocationTagsOutput).
-    pub fn builder() -> crate::operation::list_cost_allocation_tags::builders::ListCostAllocationTagsOutputBuilder {
+    pub fn builder(
+    ) -> crate::operation::list_cost_allocation_tags::builders::ListCostAllocationTagsOutputBuilder
+    {
         crate::operation::list_cost_allocation_tags::builders::ListCostAllocationTagsOutputBuilder::default()
     }
 }
@@ -37,7 +39,8 @@ impl ListCostAllocationTagsOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct ListCostAllocationTagsOutputBuilder {
-    pub(crate) cost_allocation_tags: std::option::Option<std::vec::Vec<crate::types::CostAllocationTag>>,
+    pub(crate) cost_allocation_tags:
+        std::option::Option<std::vec::Vec<crate::types::CostAllocationTag>>,
     pub(crate) next_token: std::option::Option<std::string::String>,
     _request_id: Option<String>,
 }
@@ -49,13 +52,17 @@ impl ListCostAllocationTagsOutputBuilder {
     /// <p>A list of cost allocation tags that includes the detailed metadata for each one. </p>
     pub fn cost_allocation_tags(mut self, input: crate::types::CostAllocationTag) -> Self {
         let mut v = self.cost_allocation_tags.unwrap_or_default();
-                        v.push(input);
-                        self.cost_allocation_tags = Some(v);
-                        self
+        v.push(input);
+        self.cost_allocation_tags = Some(v);
+        self
     }
     /// <p>A list of cost allocation tags that includes the detailed metadata for each one. </p>
-    pub fn set_cost_allocation_tags(mut self, input: std::option::Option<std::vec::Vec<crate::types::CostAllocationTag>>) -> Self {
-        self.cost_allocation_tags = input; self
+    pub fn set_cost_allocation_tags(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::CostAllocationTag>>,
+    ) -> Self {
+        self.cost_allocation_tags = input;
+        self
     }
     /// <p>The token to retrieve the next set of results. Amazon Web Services provides the token when the response from a previous call has more results than the maximum page size. </p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -64,26 +71,26 @@ impl ListCostAllocationTagsOutputBuilder {
     }
     /// <p>The token to retrieve the next set of results. Amazon Web Services provides the token when the response from a previous call has more results than the maximum page size. </p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input; self
+        self.next_token = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`ListCostAllocationTagsOutput`](crate::operation::list_cost_allocation_tags::ListCostAllocationTagsOutput).
-    pub fn build(self) -> crate::operation::list_cost_allocation_tags::ListCostAllocationTagsOutput {
+    pub fn build(
+        self,
+    ) -> crate::operation::list_cost_allocation_tags::ListCostAllocationTagsOutput {
         crate::operation::list_cost_allocation_tags::ListCostAllocationTagsOutput {
-            cost_allocation_tags: self.cost_allocation_tags
-            ,
-            next_token: self.next_token
-            ,
+            cost_allocation_tags: self.cost_allocation_tags,
+            next_token: self.next_token,
             _request_id: self._request_id,
         }
     }
 }
-

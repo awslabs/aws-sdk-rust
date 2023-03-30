@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct Termination  {
+pub struct Termination {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub cps_limit: std::option::Option<i32>,
@@ -25,15 +25,15 @@ impl Termination {
         self.cps_limit
     }
     #[allow(missing_docs)] // documentation missing in model
-    pub fn default_phone_number(&self) -> std::option::Option<& str> {
+    pub fn default_phone_number(&self) -> std::option::Option<&str> {
         self.default_phone_number.as_deref()
     }
     #[allow(missing_docs)] // documentation missing in model
-    pub fn calling_regions(&self) -> std::option::Option<& [std::string::String]> {
+    pub fn calling_regions(&self) -> std::option::Option<&[std::string::String]> {
         self.calling_regions.as_deref()
     }
     #[allow(missing_docs)] // documentation missing in model
-    pub fn cidr_allowed_list(&self) -> std::option::Option<& [std::string::String]> {
+    pub fn cidr_allowed_list(&self) -> std::option::Option<&[std::string::String]> {
         self.cidr_allowed_list.as_deref()
     }
     #[allow(missing_docs)] // documentation missing in model
@@ -41,7 +41,7 @@ impl Termination {
         self.disabled
     }
 }
-impl  std::fmt::Debug for Termination  {
+impl std::fmt::Debug for Termination {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("Termination");
         formatter.field("cps_limit", &self.cps_limit);
@@ -77,7 +77,8 @@ impl TerminationBuilder {
     }
     #[allow(missing_docs)] // documentation missing in model
     pub fn set_cps_limit(mut self, input: std::option::Option<i32>) -> Self {
-        self.cps_limit = input; self
+        self.cps_limit = input;
+        self
     }
     #[allow(missing_docs)] // documentation missing in model
     pub fn default_phone_number(mut self, input: impl Into<std::string::String>) -> Self {
@@ -85,8 +86,12 @@ impl TerminationBuilder {
         self
     }
     #[allow(missing_docs)] // documentation missing in model
-    pub fn set_default_phone_number(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.default_phone_number = input; self
+    pub fn set_default_phone_number(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.default_phone_number = input;
+        self
     }
     /// Appends an item to `calling_regions`.
     ///
@@ -94,13 +99,17 @@ impl TerminationBuilder {
     ///
     pub fn calling_regions(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.calling_regions.unwrap_or_default();
-                        v.push(input.into());
-                        self.calling_regions = Some(v);
-                        self
+        v.push(input.into());
+        self.calling_regions = Some(v);
+        self
     }
     #[allow(missing_docs)] // documentation missing in model
-    pub fn set_calling_regions(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-        self.calling_regions = input; self
+    pub fn set_calling_regions(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
+        self.calling_regions = input;
+        self
     }
     /// Appends an item to `cidr_allowed_list`.
     ///
@@ -108,13 +117,17 @@ impl TerminationBuilder {
     ///
     pub fn cidr_allowed_list(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.cidr_allowed_list.unwrap_or_default();
-                        v.push(input.into());
-                        self.cidr_allowed_list = Some(v);
-                        self
+        v.push(input.into());
+        self.cidr_allowed_list = Some(v);
+        self
     }
     #[allow(missing_docs)] // documentation missing in model
-    pub fn set_cidr_allowed_list(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-        self.cidr_allowed_list = input; self
+    pub fn set_cidr_allowed_list(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
+        self.cidr_allowed_list = input;
+        self
     }
     #[allow(missing_docs)] // documentation missing in model
     pub fn disabled(mut self, input: bool) -> Self {
@@ -123,21 +136,17 @@ impl TerminationBuilder {
     }
     #[allow(missing_docs)] // documentation missing in model
     pub fn set_disabled(mut self, input: std::option::Option<bool>) -> Self {
-        self.disabled = input; self
+        self.disabled = input;
+        self
     }
     /// Consumes the builder and constructs a [`Termination`](crate::types::Termination).
     pub fn build(self) -> crate::types::Termination {
         crate::types::Termination {
-            cps_limit: self.cps_limit
-            ,
-            default_phone_number: self.default_phone_number
-            ,
-            calling_regions: self.calling_regions
-            ,
-            cidr_allowed_list: self.cidr_allowed_list
-            ,
-            disabled: self.disabled
-            ,
+            cps_limit: self.cps_limit,
+            default_phone_number: self.default_phone_number,
+            calling_regions: self.calling_regions,
+            cidr_allowed_list: self.cidr_allowed_list,
+            disabled: self.disabled,
         }
     }
 }
@@ -152,4 +161,3 @@ impl std::fmt::Debug for TerminationBuilder {
         formatter.finish()
     }
 }
-

@@ -76,7 +76,7 @@ path = "../aws-types"
 version = "0.0.0-smithy-rs-head"
 
 [dependencies.hyper]
-version = "0.14.12"
+version = "0.14.25"
 default-features = false
 
 [dependencies.time]

@@ -2,20 +2,20 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteCustomRoutingEndpointGroupInput  {
+pub struct DeleteCustomRoutingEndpointGroupInput {
     /// <p>The Amazon Resource Name (ARN) of the endpoint group to delete.</p>
     #[doc(hidden)]
     pub endpoint_group_arn: std::option::Option<std::string::String>,
 }
 impl DeleteCustomRoutingEndpointGroupInput {
     /// <p>The Amazon Resource Name (ARN) of the endpoint group to delete.</p>
-    pub fn endpoint_group_arn(&self) -> std::option::Option<& str> {
+    pub fn endpoint_group_arn(&self) -> std::option::Option<&str> {
         self.endpoint_group_arn.as_deref()
     }
 }
 impl DeleteCustomRoutingEndpointGroupInput {
     /// Creates a new builder-style object to manufacture [`DeleteCustomRoutingEndpointGroupInput`](crate::operation::delete_custom_routing_endpoint_group::DeleteCustomRoutingEndpointGroupInput).
-    pub fn builder() -> crate::operation::delete_custom_routing_endpoint_group::builders::DeleteCustomRoutingEndpointGroupInputBuilder {
+    pub fn builder() -> crate::operation::delete_custom_routing_endpoint_group::builders::DeleteCustomRoutingEndpointGroupInputBuilder{
         crate::operation::delete_custom_routing_endpoint_group::builders::DeleteCustomRoutingEndpointGroupInputBuilder::default()
     }
 }
@@ -33,11 +33,15 @@ impl DeleteCustomRoutingEndpointGroupInputBuilder {
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the endpoint group to delete.</p>
-    pub fn set_endpoint_group_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.endpoint_group_arn = input; self
+    pub fn set_endpoint_group_arn(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.endpoint_group_arn = input;
+        self
     }
     /// Consumes the builder and constructs a [`DeleteCustomRoutingEndpointGroupInput`](crate::operation::delete_custom_routing_endpoint_group::DeleteCustomRoutingEndpointGroupInput).
-    pub fn build(self) -> Result<crate::operation::delete_custom_routing_endpoint_group::DeleteCustomRoutingEndpointGroupInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> Result<crate::operation::delete_custom_routing_endpoint_group::DeleteCustomRoutingEndpointGroupInput, aws_smithy_http::operation::error::BuildError>{
         Ok(
             crate::operation::delete_custom_routing_endpoint_group::DeleteCustomRoutingEndpointGroupInput {
                 endpoint_group_arn: self.endpoint_group_arn
@@ -46,4 +50,3 @@ impl DeleteCustomRoutingEndpointGroupInputBuilder {
         )
     }
 }
-

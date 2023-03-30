@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ImportNotebookInput  {
+pub struct ImportNotebookInput {
     /// <p>The name of the Spark enabled workgroup to import the notebook to.</p>
     #[doc(hidden)]
     pub work_group: std::option::Option<std::string::String>,
@@ -15,33 +15,33 @@ pub struct ImportNotebookInput  {
     /// <p>The notebook content type. Currently, the only valid type is <code>IPYNB</code>.</p>
     #[doc(hidden)]
     pub r#type: std::option::Option<crate::types::NotebookType>,
-    /// <p>A unique case-sensitive string used to ensure the request to import the notebook is idempotent (executes only once).</p> <important> 
-    /// <p>This token is listed as not required because Amazon Web Services SDKs (for example the Amazon Web Services SDK for Java) auto-generate the token for you. If you are not using the Amazon Web Services SDK or the Amazon Web Services CLI, you must provide this token or the action will fail.</p> 
+    /// <p>A unique case-sensitive string used to ensure the request to import the notebook is idempotent (executes only once).</p> <important>
+    /// <p>This token is listed as not required because Amazon Web Services SDKs (for example the Amazon Web Services SDK for Java) auto-generate the token for you. If you are not using the Amazon Web Services SDK or the Amazon Web Services CLI, you must provide this token or the action will fail.</p>
     /// </important>
     #[doc(hidden)]
     pub client_request_token: std::option::Option<std::string::String>,
 }
 impl ImportNotebookInput {
     /// <p>The name of the Spark enabled workgroup to import the notebook to.</p>
-    pub fn work_group(&self) -> std::option::Option<& str> {
+    pub fn work_group(&self) -> std::option::Option<&str> {
         self.work_group.as_deref()
     }
     /// <p>The name of the notebook to import.</p>
-    pub fn name(&self) -> std::option::Option<& str> {
+    pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>The notebook content to be imported.</p>
-    pub fn payload(&self) -> std::option::Option<& str> {
+    pub fn payload(&self) -> std::option::Option<&str> {
         self.payload.as_deref()
     }
     /// <p>The notebook content type. Currently, the only valid type is <code>IPYNB</code>.</p>
-    pub fn r#type(&self) -> std::option::Option<& crate::types::NotebookType> {
+    pub fn r#type(&self) -> std::option::Option<&crate::types::NotebookType> {
         self.r#type.as_ref()
     }
-    /// <p>A unique case-sensitive string used to ensure the request to import the notebook is idempotent (executes only once).</p> <important> 
-    /// <p>This token is listed as not required because Amazon Web Services SDKs (for example the Amazon Web Services SDK for Java) auto-generate the token for you. If you are not using the Amazon Web Services SDK or the Amazon Web Services CLI, you must provide this token or the action will fail.</p> 
+    /// <p>A unique case-sensitive string used to ensure the request to import the notebook is idempotent (executes only once).</p> <important>
+    /// <p>This token is listed as not required because Amazon Web Services SDKs (for example the Amazon Web Services SDK for Java) auto-generate the token for you. If you are not using the Amazon Web Services SDK or the Amazon Web Services CLI, you must provide this token or the action will fail.</p>
     /// </important>
-    pub fn client_request_token(&self) -> std::option::Option<& str> {
+    pub fn client_request_token(&self) -> std::option::Option<&str> {
         self.client_request_token.as_deref()
     }
 }
@@ -70,7 +70,8 @@ impl ImportNotebookInputBuilder {
     }
     /// <p>The name of the Spark enabled workgroup to import the notebook to.</p>
     pub fn set_work_group(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.work_group = input; self
+        self.work_group = input;
+        self
     }
     /// <p>The name of the notebook to import.</p>
     pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -79,7 +80,8 @@ impl ImportNotebookInputBuilder {
     }
     /// <p>The name of the notebook to import.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input; self
+        self.name = input;
+        self
     }
     /// <p>The notebook content to be imported.</p>
     pub fn payload(mut self, input: impl Into<std::string::String>) -> Self {
@@ -88,7 +90,8 @@ impl ImportNotebookInputBuilder {
     }
     /// <p>The notebook content to be imported.</p>
     pub fn set_payload(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.payload = input; self
+        self.payload = input;
+        self
     }
     /// <p>The notebook content type. Currently, the only valid type is <code>IPYNB</code>.</p>
     pub fn r#type(mut self, input: crate::types::NotebookType) -> Self {
@@ -97,37 +100,39 @@ impl ImportNotebookInputBuilder {
     }
     /// <p>The notebook content type. Currently, the only valid type is <code>IPYNB</code>.</p>
     pub fn set_type(mut self, input: std::option::Option<crate::types::NotebookType>) -> Self {
-        self.r#type = input; self
+        self.r#type = input;
+        self
     }
-    /// <p>A unique case-sensitive string used to ensure the request to import the notebook is idempotent (executes only once).</p> <important> 
-    /// <p>This token is listed as not required because Amazon Web Services SDKs (for example the Amazon Web Services SDK for Java) auto-generate the token for you. If you are not using the Amazon Web Services SDK or the Amazon Web Services CLI, you must provide this token or the action will fail.</p> 
+    /// <p>A unique case-sensitive string used to ensure the request to import the notebook is idempotent (executes only once).</p> <important>
+    /// <p>This token is listed as not required because Amazon Web Services SDKs (for example the Amazon Web Services SDK for Java) auto-generate the token for you. If you are not using the Amazon Web Services SDK or the Amazon Web Services CLI, you must provide this token or the action will fail.</p>
     /// </important>
     pub fn client_request_token(mut self, input: impl Into<std::string::String>) -> Self {
         self.client_request_token = Some(input.into());
         self
     }
-    /// <p>A unique case-sensitive string used to ensure the request to import the notebook is idempotent (executes only once).</p> <important> 
-    /// <p>This token is listed as not required because Amazon Web Services SDKs (for example the Amazon Web Services SDK for Java) auto-generate the token for you. If you are not using the Amazon Web Services SDK or the Amazon Web Services CLI, you must provide this token or the action will fail.</p> 
+    /// <p>A unique case-sensitive string used to ensure the request to import the notebook is idempotent (executes only once).</p> <important>
+    /// <p>This token is listed as not required because Amazon Web Services SDKs (for example the Amazon Web Services SDK for Java) auto-generate the token for you. If you are not using the Amazon Web Services SDK or the Amazon Web Services CLI, you must provide this token or the action will fail.</p>
     /// </important>
-    pub fn set_client_request_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.client_request_token = input; self
+    pub fn set_client_request_token(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.client_request_token = input;
+        self
     }
     /// Consumes the builder and constructs a [`ImportNotebookInput`](crate::operation::import_notebook::ImportNotebookInput).
-    pub fn build(self) -> Result<crate::operation::import_notebook::ImportNotebookInput, aws_smithy_http::operation::error::BuildError> {
-        Ok(
-            crate::operation::import_notebook::ImportNotebookInput {
-                work_group: self.work_group
-                ,
-                name: self.name
-                ,
-                payload: self.payload
-                ,
-                r#type: self.r#type
-                ,
-                client_request_token: self.client_request_token
-                ,
-            }
-        )
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::import_notebook::ImportNotebookInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        Ok(crate::operation::import_notebook::ImportNotebookInput {
+            work_group: self.work_group,
+            name: self.name,
+            payload: self.payload,
+            r#type: self.r#type,
+            client_request_token: self.client_request_token,
+        })
     }
 }
-

@@ -2,20 +2,20 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DisassociateUserAccessLoggingSettingsInput  {
+pub struct DisassociateUserAccessLoggingSettingsInput {
     /// <p>The ARN of the web portal.</p>
     #[doc(hidden)]
     pub portal_arn: std::option::Option<std::string::String>,
 }
 impl DisassociateUserAccessLoggingSettingsInput {
     /// <p>The ARN of the web portal.</p>
-    pub fn portal_arn(&self) -> std::option::Option<& str> {
+    pub fn portal_arn(&self) -> std::option::Option<&str> {
         self.portal_arn.as_deref()
     }
 }
 impl DisassociateUserAccessLoggingSettingsInput {
     /// Creates a new builder-style object to manufacture [`DisassociateUserAccessLoggingSettingsInput`](crate::operation::disassociate_user_access_logging_settings::DisassociateUserAccessLoggingSettingsInput).
-    pub fn builder() -> crate::operation::disassociate_user_access_logging_settings::builders::DisassociateUserAccessLoggingSettingsInputBuilder {
+    pub fn builder() -> crate::operation::disassociate_user_access_logging_settings::builders::DisassociateUserAccessLoggingSettingsInputBuilder{
         crate::operation::disassociate_user_access_logging_settings::builders::DisassociateUserAccessLoggingSettingsInputBuilder::default()
     }
 }
@@ -34,10 +34,11 @@ impl DisassociateUserAccessLoggingSettingsInputBuilder {
     }
     /// <p>The ARN of the web portal.</p>
     pub fn set_portal_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.portal_arn = input; self
+        self.portal_arn = input;
+        self
     }
     /// Consumes the builder and constructs a [`DisassociateUserAccessLoggingSettingsInput`](crate::operation::disassociate_user_access_logging_settings::DisassociateUserAccessLoggingSettingsInput).
-    pub fn build(self) -> Result<crate::operation::disassociate_user_access_logging_settings::DisassociateUserAccessLoggingSettingsInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> Result<crate::operation::disassociate_user_access_logging_settings::DisassociateUserAccessLoggingSettingsInput, aws_smithy_http::operation::error::BuildError>{
         Ok(
             crate::operation::disassociate_user_access_logging_settings::DisassociateUserAccessLoggingSettingsInput {
                 portal_arn: self.portal_arn
@@ -46,4 +47,3 @@ impl DisassociateUserAccessLoggingSettingsInputBuilder {
         )
     }
 }
-

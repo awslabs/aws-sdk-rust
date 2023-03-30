@@ -2,47 +2,48 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateCertificateInput  {
+pub struct CreateCertificateInput {
     /// <p>The name for the certificate.</p>
     #[doc(hidden)]
     pub certificate_name: std::option::Option<std::string::String>,
     /// <p>The domain name (e.g., <code>example.com</code>) for the certificate.</p>
     #[doc(hidden)]
     pub domain_name: std::option::Option<std::string::String>,
-    /// <p>An array of strings that specify the alternate domains (e.g., <code>example2.com</code>) and subdomains (e.g., <code>blog.example.com</code>) for the certificate.</p> 
-    /// <p>You can specify a maximum of nine alternate domains (in addition to the primary domain name).</p> 
+    /// <p>An array of strings that specify the alternate domains (e.g., <code>example2.com</code>) and subdomains (e.g., <code>blog.example.com</code>) for the certificate.</p>
+    /// <p>You can specify a maximum of nine alternate domains (in addition to the primary domain name).</p>
     /// <p>Wildcard domain entries (e.g., <code>*.example.com</code>) are not supported.</p>
     #[doc(hidden)]
     pub subject_alternative_names: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>The tag keys and optional values to add to the certificate during create.</p> 
+    /// <p>The tag keys and optional values to add to the certificate during create.</p>
     /// <p>Use the <code>TagResource</code> action to tag a resource after it's created.</p>
     #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::types::Tag>>,
 }
 impl CreateCertificateInput {
     /// <p>The name for the certificate.</p>
-    pub fn certificate_name(&self) -> std::option::Option<& str> {
+    pub fn certificate_name(&self) -> std::option::Option<&str> {
         self.certificate_name.as_deref()
     }
     /// <p>The domain name (e.g., <code>example.com</code>) for the certificate.</p>
-    pub fn domain_name(&self) -> std::option::Option<& str> {
+    pub fn domain_name(&self) -> std::option::Option<&str> {
         self.domain_name.as_deref()
     }
-    /// <p>An array of strings that specify the alternate domains (e.g., <code>example2.com</code>) and subdomains (e.g., <code>blog.example.com</code>) for the certificate.</p> 
-    /// <p>You can specify a maximum of nine alternate domains (in addition to the primary domain name).</p> 
+    /// <p>An array of strings that specify the alternate domains (e.g., <code>example2.com</code>) and subdomains (e.g., <code>blog.example.com</code>) for the certificate.</p>
+    /// <p>You can specify a maximum of nine alternate domains (in addition to the primary domain name).</p>
     /// <p>Wildcard domain entries (e.g., <code>*.example.com</code>) are not supported.</p>
-    pub fn subject_alternative_names(&self) -> std::option::Option<& [std::string::String]> {
+    pub fn subject_alternative_names(&self) -> std::option::Option<&[std::string::String]> {
         self.subject_alternative_names.as_deref()
     }
-    /// <p>The tag keys and optional values to add to the certificate during create.</p> 
+    /// <p>The tag keys and optional values to add to the certificate during create.</p>
     /// <p>Use the <code>TagResource</code> action to tag a resource after it's created.</p>
-    pub fn tags(&self) -> std::option::Option<& [crate::types::Tag]> {
+    pub fn tags(&self) -> std::option::Option<&[crate::types::Tag]> {
         self.tags.as_deref()
     }
 }
 impl CreateCertificateInput {
     /// Creates a new builder-style object to manufacture [`CreateCertificateInput`](crate::operation::create_certificate::CreateCertificateInput).
-    pub fn builder() -> crate::operation::create_certificate::builders::CreateCertificateInputBuilder {
+    pub fn builder() -> crate::operation::create_certificate::builders::CreateCertificateInputBuilder
+    {
         crate::operation::create_certificate::builders::CreateCertificateInputBuilder::default()
     }
 }
@@ -64,7 +65,8 @@ impl CreateCertificateInputBuilder {
     }
     /// <p>The name for the certificate.</p>
     pub fn set_certificate_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.certificate_name = input; self
+        self.certificate_name = input;
+        self
     }
     /// <p>The domain name (e.g., <code>example.com</code>) for the certificate.</p>
     pub fn domain_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -73,58 +75,67 @@ impl CreateCertificateInputBuilder {
     }
     /// <p>The domain name (e.g., <code>example.com</code>) for the certificate.</p>
     pub fn set_domain_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.domain_name = input; self
+        self.domain_name = input;
+        self
     }
     /// Appends an item to `subject_alternative_names`.
     ///
     /// To override the contents of this collection use [`set_subject_alternative_names`](Self::set_subject_alternative_names).
     ///
-    /// <p>An array of strings that specify the alternate domains (e.g., <code>example2.com</code>) and subdomains (e.g., <code>blog.example.com</code>) for the certificate.</p> 
-    /// <p>You can specify a maximum of nine alternate domains (in addition to the primary domain name).</p> 
+    /// <p>An array of strings that specify the alternate domains (e.g., <code>example2.com</code>) and subdomains (e.g., <code>blog.example.com</code>) for the certificate.</p>
+    /// <p>You can specify a maximum of nine alternate domains (in addition to the primary domain name).</p>
     /// <p>Wildcard domain entries (e.g., <code>*.example.com</code>) are not supported.</p>
     pub fn subject_alternative_names(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.subject_alternative_names.unwrap_or_default();
-                        v.push(input.into());
-                        self.subject_alternative_names = Some(v);
-                        self
+        v.push(input.into());
+        self.subject_alternative_names = Some(v);
+        self
     }
-    /// <p>An array of strings that specify the alternate domains (e.g., <code>example2.com</code>) and subdomains (e.g., <code>blog.example.com</code>) for the certificate.</p> 
-    /// <p>You can specify a maximum of nine alternate domains (in addition to the primary domain name).</p> 
+    /// <p>An array of strings that specify the alternate domains (e.g., <code>example2.com</code>) and subdomains (e.g., <code>blog.example.com</code>) for the certificate.</p>
+    /// <p>You can specify a maximum of nine alternate domains (in addition to the primary domain name).</p>
     /// <p>Wildcard domain entries (e.g., <code>*.example.com</code>) are not supported.</p>
-    pub fn set_subject_alternative_names(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-        self.subject_alternative_names = input; self
+    pub fn set_subject_alternative_names(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
+        self.subject_alternative_names = input;
+        self
     }
     /// Appends an item to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
-    /// <p>The tag keys and optional values to add to the certificate during create.</p> 
+    /// <p>The tag keys and optional values to add to the certificate during create.</p>
     /// <p>Use the <code>TagResource</code> action to tag a resource after it's created.</p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
-                        v.push(input);
-                        self.tags = Some(v);
-                        self
+        v.push(input);
+        self.tags = Some(v);
+        self
     }
-    /// <p>The tag keys and optional values to add to the certificate during create.</p> 
+    /// <p>The tag keys and optional values to add to the certificate during create.</p>
     /// <p>Use the <code>TagResource</code> action to tag a resource after it's created.</p>
-    pub fn set_tags(mut self, input: std::option::Option<std::vec::Vec<crate::types::Tag>>) -> Self {
-        self.tags = input; self
+    pub fn set_tags(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::Tag>>,
+    ) -> Self {
+        self.tags = input;
+        self
     }
     /// Consumes the builder and constructs a [`CreateCertificateInput`](crate::operation::create_certificate::CreateCertificateInput).
-    pub fn build(self) -> Result<crate::operation::create_certificate::CreateCertificateInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::create_certificate::CreateCertificateInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::create_certificate::CreateCertificateInput {
-                certificate_name: self.certificate_name
-                ,
-                domain_name: self.domain_name
-                ,
-                subject_alternative_names: self.subject_alternative_names
-                ,
-                tags: self.tags
-                ,
-            }
+                certificate_name: self.certificate_name,
+                domain_name: self.domain_name,
+                subject_alternative_names: self.subject_alternative_names,
+                tags: self.tags,
+            },
         )
     }
 }
-

@@ -3,7 +3,7 @@
 /// <p>Contains information about a malware scan.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Scan  {
+pub struct Scan {
     /// <p>The unique ID of the detector that the request is associated with.</p>
     #[doc(hidden)]
     pub detector_id: std::option::Option<std::string::String>,
@@ -49,47 +49,47 @@ pub struct Scan  {
 }
 impl Scan {
     /// <p>The unique ID of the detector that the request is associated with.</p>
-    pub fn detector_id(&self) -> std::option::Option<& str> {
+    pub fn detector_id(&self) -> std::option::Option<&str> {
         self.detector_id.as_deref()
     }
     /// <p>The unique detector ID of the administrator account that the request is associated with. Note that this value will be the same as the one used for <code>DetectorId</code> if the account is an administrator.</p>
-    pub fn admin_detector_id(&self) -> std::option::Option<& str> {
+    pub fn admin_detector_id(&self) -> std::option::Option<&str> {
         self.admin_detector_id.as_deref()
     }
     /// <p>The unique scan ID associated with a scan entry.</p>
-    pub fn scan_id(&self) -> std::option::Option<& str> {
+    pub fn scan_id(&self) -> std::option::Option<&str> {
         self.scan_id.as_deref()
     }
     /// <p>An enum value representing possible scan statuses.</p>
-    pub fn scan_status(&self) -> std::option::Option<& crate::types::ScanStatus> {
+    pub fn scan_status(&self) -> std::option::Option<&crate::types::ScanStatus> {
         self.scan_status.as_ref()
     }
     /// <p>Represents the reason for FAILED scan status.</p>
-    pub fn failure_reason(&self) -> std::option::Option<& str> {
+    pub fn failure_reason(&self) -> std::option::Option<&str> {
         self.failure_reason.as_deref()
     }
     /// <p>The timestamp of when the scan was triggered.</p>
-    pub fn scan_start_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
+    pub fn scan_start_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.scan_start_time.as_ref()
     }
     /// <p>The timestamp of when the scan was finished.</p>
-    pub fn scan_end_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
+    pub fn scan_end_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.scan_end_time.as_ref()
     }
     /// <p>Specifies the reason why the scan was initiated.</p>
-    pub fn trigger_details(&self) -> std::option::Option<& crate::types::TriggerDetails> {
+    pub fn trigger_details(&self) -> std::option::Option<&crate::types::TriggerDetails> {
         self.trigger_details.as_ref()
     }
     /// <p>Represents the resources that were scanned in the scan entry.</p>
-    pub fn resource_details(&self) -> std::option::Option<& crate::types::ResourceDetails> {
+    pub fn resource_details(&self) -> std::option::Option<&crate::types::ResourceDetails> {
         self.resource_details.as_ref()
     }
     /// <p>Represents the result of the scan.</p>
-    pub fn scan_result_details(&self) -> std::option::Option<& crate::types::ScanResultDetails> {
+    pub fn scan_result_details(&self) -> std::option::Option<&crate::types::ScanResultDetails> {
         self.scan_result_details.as_ref()
     }
     /// <p>The ID for the account that belongs to the scan.</p>
-    pub fn account_id(&self) -> std::option::Option<& str> {
+    pub fn account_id(&self) -> std::option::Option<&str> {
         self.account_id.as_deref()
     }
     /// <p>Represents total bytes that were scanned.</p>
@@ -101,7 +101,7 @@ impl Scan {
         self.file_count
     }
     /// <p>List of volumes that were attached to the original instance to be scanned.</p>
-    pub fn attached_volumes(&self) -> std::option::Option<& [crate::types::VolumeDetail]> {
+    pub fn attached_volumes(&self) -> std::option::Option<&[crate::types::VolumeDetail]> {
         self.attached_volumes.as_deref()
     }
 }
@@ -139,7 +139,8 @@ impl ScanBuilder {
     }
     /// <p>The unique ID of the detector that the request is associated with.</p>
     pub fn set_detector_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.detector_id = input; self
+        self.detector_id = input;
+        self
     }
     /// <p>The unique detector ID of the administrator account that the request is associated with. Note that this value will be the same as the one used for <code>DetectorId</code> if the account is an administrator.</p>
     pub fn admin_detector_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -147,8 +148,12 @@ impl ScanBuilder {
         self
     }
     /// <p>The unique detector ID of the administrator account that the request is associated with. Note that this value will be the same as the one used for <code>DetectorId</code> if the account is an administrator.</p>
-    pub fn set_admin_detector_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.admin_detector_id = input; self
+    pub fn set_admin_detector_id(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.admin_detector_id = input;
+        self
     }
     /// <p>The unique scan ID associated with a scan entry.</p>
     pub fn scan_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -157,7 +162,8 @@ impl ScanBuilder {
     }
     /// <p>The unique scan ID associated with a scan entry.</p>
     pub fn set_scan_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.scan_id = input; self
+        self.scan_id = input;
+        self
     }
     /// <p>An enum value representing possible scan statuses.</p>
     pub fn scan_status(mut self, input: crate::types::ScanStatus) -> Self {
@@ -166,7 +172,8 @@ impl ScanBuilder {
     }
     /// <p>An enum value representing possible scan statuses.</p>
     pub fn set_scan_status(mut self, input: std::option::Option<crate::types::ScanStatus>) -> Self {
-        self.scan_status = input; self
+        self.scan_status = input;
+        self
     }
     /// <p>Represents the reason for FAILED scan status.</p>
     pub fn failure_reason(mut self, input: impl Into<std::string::String>) -> Self {
@@ -175,7 +182,8 @@ impl ScanBuilder {
     }
     /// <p>Represents the reason for FAILED scan status.</p>
     pub fn set_failure_reason(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.failure_reason = input; self
+        self.failure_reason = input;
+        self
     }
     /// <p>The timestamp of when the scan was triggered.</p>
     pub fn scan_start_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -183,8 +191,12 @@ impl ScanBuilder {
         self
     }
     /// <p>The timestamp of when the scan was triggered.</p>
-    pub fn set_scan_start_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.scan_start_time = input; self
+    pub fn set_scan_start_time(
+        mut self,
+        input: std::option::Option<aws_smithy_types::DateTime>,
+    ) -> Self {
+        self.scan_start_time = input;
+        self
     }
     /// <p>The timestamp of when the scan was finished.</p>
     pub fn scan_end_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -192,8 +204,12 @@ impl ScanBuilder {
         self
     }
     /// <p>The timestamp of when the scan was finished.</p>
-    pub fn set_scan_end_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.scan_end_time = input; self
+    pub fn set_scan_end_time(
+        mut self,
+        input: std::option::Option<aws_smithy_types::DateTime>,
+    ) -> Self {
+        self.scan_end_time = input;
+        self
     }
     /// <p>Specifies the reason why the scan was initiated.</p>
     pub fn trigger_details(mut self, input: crate::types::TriggerDetails) -> Self {
@@ -201,8 +217,12 @@ impl ScanBuilder {
         self
     }
     /// <p>Specifies the reason why the scan was initiated.</p>
-    pub fn set_trigger_details(mut self, input: std::option::Option<crate::types::TriggerDetails>) -> Self {
-        self.trigger_details = input; self
+    pub fn set_trigger_details(
+        mut self,
+        input: std::option::Option<crate::types::TriggerDetails>,
+    ) -> Self {
+        self.trigger_details = input;
+        self
     }
     /// <p>Represents the resources that were scanned in the scan entry.</p>
     pub fn resource_details(mut self, input: crate::types::ResourceDetails) -> Self {
@@ -210,8 +230,12 @@ impl ScanBuilder {
         self
     }
     /// <p>Represents the resources that were scanned in the scan entry.</p>
-    pub fn set_resource_details(mut self, input: std::option::Option<crate::types::ResourceDetails>) -> Self {
-        self.resource_details = input; self
+    pub fn set_resource_details(
+        mut self,
+        input: std::option::Option<crate::types::ResourceDetails>,
+    ) -> Self {
+        self.resource_details = input;
+        self
     }
     /// <p>Represents the result of the scan.</p>
     pub fn scan_result_details(mut self, input: crate::types::ScanResultDetails) -> Self {
@@ -219,8 +243,12 @@ impl ScanBuilder {
         self
     }
     /// <p>Represents the result of the scan.</p>
-    pub fn set_scan_result_details(mut self, input: std::option::Option<crate::types::ScanResultDetails>) -> Self {
-        self.scan_result_details = input; self
+    pub fn set_scan_result_details(
+        mut self,
+        input: std::option::Option<crate::types::ScanResultDetails>,
+    ) -> Self {
+        self.scan_result_details = input;
+        self
     }
     /// <p>The ID for the account that belongs to the scan.</p>
     pub fn account_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -229,7 +257,8 @@ impl ScanBuilder {
     }
     /// <p>The ID for the account that belongs to the scan.</p>
     pub fn set_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.account_id = input; self
+        self.account_id = input;
+        self
     }
     /// <p>Represents total bytes that were scanned.</p>
     pub fn total_bytes(mut self, input: i64) -> Self {
@@ -238,7 +267,8 @@ impl ScanBuilder {
     }
     /// <p>Represents total bytes that were scanned.</p>
     pub fn set_total_bytes(mut self, input: std::option::Option<i64>) -> Self {
-        self.total_bytes = input; self
+        self.total_bytes = input;
+        self
     }
     /// <p>Represents the number of files that were scanned.</p>
     pub fn file_count(mut self, input: i64) -> Self {
@@ -247,7 +277,8 @@ impl ScanBuilder {
     }
     /// <p>Represents the number of files that were scanned.</p>
     pub fn set_file_count(mut self, input: std::option::Option<i64>) -> Self {
-        self.file_count = input; self
+        self.file_count = input;
+        self
     }
     /// Appends an item to `attached_volumes`.
     ///
@@ -256,48 +287,35 @@ impl ScanBuilder {
     /// <p>List of volumes that were attached to the original instance to be scanned.</p>
     pub fn attached_volumes(mut self, input: crate::types::VolumeDetail) -> Self {
         let mut v = self.attached_volumes.unwrap_or_default();
-                        v.push(input);
-                        self.attached_volumes = Some(v);
-                        self
+        v.push(input);
+        self.attached_volumes = Some(v);
+        self
     }
     /// <p>List of volumes that were attached to the original instance to be scanned.</p>
-    pub fn set_attached_volumes(mut self, input: std::option::Option<std::vec::Vec<crate::types::VolumeDetail>>) -> Self {
-        self.attached_volumes = input; self
+    pub fn set_attached_volumes(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::VolumeDetail>>,
+    ) -> Self {
+        self.attached_volumes = input;
+        self
     }
     /// Consumes the builder and constructs a [`Scan`](crate::types::Scan).
     pub fn build(self) -> crate::types::Scan {
         crate::types::Scan {
-            detector_id: self.detector_id
-            ,
-            admin_detector_id: self.admin_detector_id
-            ,
-            scan_id: self.scan_id
-            ,
-            scan_status: self.scan_status
-            ,
-            failure_reason: self.failure_reason
-            ,
-            scan_start_time: self.scan_start_time
-            ,
-            scan_end_time: self.scan_end_time
-            ,
-            trigger_details: self.trigger_details
-            ,
-            resource_details: self.resource_details
-            ,
-            scan_result_details: self.scan_result_details
-            ,
-            account_id: self.account_id
-            ,
-            total_bytes: self.total_bytes
-                .unwrap_or_default()
-            ,
-            file_count: self.file_count
-                .unwrap_or_default()
-            ,
-            attached_volumes: self.attached_volumes
-            ,
+            detector_id: self.detector_id,
+            admin_detector_id: self.admin_detector_id,
+            scan_id: self.scan_id,
+            scan_status: self.scan_status,
+            failure_reason: self.failure_reason,
+            scan_start_time: self.scan_start_time,
+            scan_end_time: self.scan_end_time,
+            trigger_details: self.trigger_details,
+            resource_details: self.resource_details,
+            scan_result_details: self.scan_result_details,
+            account_id: self.account_id,
+            total_bytes: self.total_bytes.unwrap_or_default(),
+            file_count: self.file_count.unwrap_or_default(),
+            attached_volumes: self.attached_volumes,
         }
     }
 }
-

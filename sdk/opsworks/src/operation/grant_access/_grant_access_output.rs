@@ -3,7 +3,7 @@
 /// <p>Contains the response to a <code>GrantAccess</code> request.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GrantAccessOutput  {
+pub struct GrantAccessOutput {
     /// <p>A <code>TemporaryCredential</code> object that contains the data needed to log in to the instance by RDP clients, such as the Microsoft Remote Desktop Connection.</p>
     #[doc(hidden)]
     pub temporary_credential: std::option::Option<crate::types::TemporaryCredential>,
@@ -11,15 +11,15 @@ pub struct GrantAccessOutput  {
 }
 impl GrantAccessOutput {
     /// <p>A <code>TemporaryCredential</code> object that contains the data needed to log in to the instance by RDP clients, such as the Microsoft Remote Desktop Connection.</p>
-    pub fn temporary_credential(&self) -> std::option::Option<& crate::types::TemporaryCredential> {
+    pub fn temporary_credential(&self) -> std::option::Option<&crate::types::TemporaryCredential> {
         self.temporary_credential.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for GrantAccessOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl GrantAccessOutput {
     /// Creates a new builder-style object to manufacture [`GrantAccessOutput`](crate::operation::grant_access::GrantAccessOutput).
     pub fn builder() -> crate::operation::grant_access::builders::GrantAccessOutputBuilder {
@@ -41,25 +41,27 @@ impl GrantAccessOutputBuilder {
         self
     }
     /// <p>A <code>TemporaryCredential</code> object that contains the data needed to log in to the instance by RDP clients, such as the Microsoft Remote Desktop Connection.</p>
-    pub fn set_temporary_credential(mut self, input: std::option::Option<crate::types::TemporaryCredential>) -> Self {
-        self.temporary_credential = input; self
+    pub fn set_temporary_credential(
+        mut self,
+        input: std::option::Option<crate::types::TemporaryCredential>,
+    ) -> Self {
+        self.temporary_credential = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`GrantAccessOutput`](crate::operation::grant_access::GrantAccessOutput).
     pub fn build(self) -> crate::operation::grant_access::GrantAccessOutput {
         crate::operation::grant_access::GrantAccessOutput {
-            temporary_credential: self.temporary_credential
-            ,
+            temporary_credential: self.temporary_credential,
             _request_id: self._request_id,
         }
     }
 }
-

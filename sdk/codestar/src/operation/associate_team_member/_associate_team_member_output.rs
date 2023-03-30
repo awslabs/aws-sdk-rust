@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AssociateTeamMemberOutput  {
+pub struct AssociateTeamMemberOutput {
     /// <p>The user- or system-generated token from the initial request that can be used to repeat the request.</p>
     #[doc(hidden)]
     pub client_request_token: std::option::Option<std::string::String>,
@@ -10,19 +10,21 @@ pub struct AssociateTeamMemberOutput  {
 }
 impl AssociateTeamMemberOutput {
     /// <p>The user- or system-generated token from the initial request that can be used to repeat the request.</p>
-    pub fn client_request_token(&self) -> std::option::Option<& str> {
+    pub fn client_request_token(&self) -> std::option::Option<&str> {
         self.client_request_token.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for AssociateTeamMemberOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl AssociateTeamMemberOutput {
     /// Creates a new builder-style object to manufacture [`AssociateTeamMemberOutput`](crate::operation::associate_team_member::AssociateTeamMemberOutput).
-    pub fn builder() -> crate::operation::associate_team_member::builders::AssociateTeamMemberOutputBuilder {
-        crate::operation::associate_team_member::builders::AssociateTeamMemberOutputBuilder::default()
+    pub fn builder(
+    ) -> crate::operation::associate_team_member::builders::AssociateTeamMemberOutputBuilder {
+        crate::operation::associate_team_member::builders::AssociateTeamMemberOutputBuilder::default(
+        )
     }
 }
 
@@ -40,25 +42,27 @@ impl AssociateTeamMemberOutputBuilder {
         self
     }
     /// <p>The user- or system-generated token from the initial request that can be used to repeat the request.</p>
-    pub fn set_client_request_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.client_request_token = input; self
+    pub fn set_client_request_token(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.client_request_token = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`AssociateTeamMemberOutput`](crate::operation::associate_team_member::AssociateTeamMemberOutput).
     pub fn build(self) -> crate::operation::associate_team_member::AssociateTeamMemberOutput {
         crate::operation::associate_team_member::AssociateTeamMemberOutput {
-            client_request_token: self.client_request_token
-            ,
+            client_request_token: self.client_request_token,
             _request_id: self._request_id,
         }
     }
 }
-

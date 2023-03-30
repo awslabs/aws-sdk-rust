@@ -2,20 +2,20 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetFirewallRuleGroupPolicyInput  {
+pub struct GetFirewallRuleGroupPolicyInput {
     /// <p>The ARN (Amazon Resource Name) for the rule group.</p>
     #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
 }
 impl GetFirewallRuleGroupPolicyInput {
     /// <p>The ARN (Amazon Resource Name) for the rule group.</p>
-    pub fn arn(&self) -> std::option::Option<& str> {
+    pub fn arn(&self) -> std::option::Option<&str> {
         self.arn.as_deref()
     }
 }
 impl GetFirewallRuleGroupPolicyInput {
     /// Creates a new builder-style object to manufacture [`GetFirewallRuleGroupPolicyInput`](crate::operation::get_firewall_rule_group_policy::GetFirewallRuleGroupPolicyInput).
-    pub fn builder() -> crate::operation::get_firewall_rule_group_policy::builders::GetFirewallRuleGroupPolicyInputBuilder {
+    pub fn builder() -> crate::operation::get_firewall_rule_group_policy::builders::GetFirewallRuleGroupPolicyInputBuilder{
         crate::operation::get_firewall_rule_group_policy::builders::GetFirewallRuleGroupPolicyInputBuilder::default()
     }
 }
@@ -34,16 +34,20 @@ impl GetFirewallRuleGroupPolicyInputBuilder {
     }
     /// <p>The ARN (Amazon Resource Name) for the rule group.</p>
     pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.arn = input; self
+        self.arn = input;
+        self
     }
     /// Consumes the builder and constructs a [`GetFirewallRuleGroupPolicyInput`](crate::operation::get_firewall_rule_group_policy::GetFirewallRuleGroupPolicyInput).
-    pub fn build(self) -> Result<crate::operation::get_firewall_rule_group_policy::GetFirewallRuleGroupPolicyInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::get_firewall_rule_group_policy::GetFirewallRuleGroupPolicyInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::get_firewall_rule_group_policy::GetFirewallRuleGroupPolicyInput {
-                arn: self.arn
-                ,
-            }
+                arn: self.arn,
+            },
         )
     }
 }
-

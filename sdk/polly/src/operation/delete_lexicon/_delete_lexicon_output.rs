@@ -2,14 +2,14 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteLexiconOutput  {
+pub struct DeleteLexiconOutput {
     _request_id: Option<String>,
 }
 impl aws_http::request_id::RequestId for DeleteLexiconOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl DeleteLexiconOutput {
     /// Creates a new builder-style object to manufacture [`DeleteLexiconOutput`](crate::operation::delete_lexicon::DeleteLexiconOutput).
     pub fn builder() -> crate::operation::delete_lexicon::builders::DeleteLexiconOutputBuilder {
@@ -25,14 +25,14 @@ pub struct DeleteLexiconOutputBuilder {
 }
 impl DeleteLexiconOutputBuilder {
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`DeleteLexiconOutput`](crate::operation::delete_lexicon::DeleteLexiconOutput).
     pub fn build(self) -> crate::operation::delete_lexicon::DeleteLexiconOutput {
         crate::operation::delete_lexicon::DeleteLexiconOutput {
@@ -40,4 +40,3 @@ impl DeleteLexiconOutputBuilder {
         }
     }
 }
-

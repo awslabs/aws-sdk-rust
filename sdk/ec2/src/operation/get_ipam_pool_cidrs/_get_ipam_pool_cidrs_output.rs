@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetIpamPoolCidrsOutput  {
+pub struct GetIpamPoolCidrsOutput {
     /// <p>Information about the CIDRs provisioned to an IPAM pool.</p>
     #[doc(hidden)]
     pub ipam_pool_cidrs: std::option::Option<std::vec::Vec<crate::types::IpamPoolCidr>>,
@@ -13,22 +13,23 @@ pub struct GetIpamPoolCidrsOutput  {
 }
 impl GetIpamPoolCidrsOutput {
     /// <p>Information about the CIDRs provisioned to an IPAM pool.</p>
-    pub fn ipam_pool_cidrs(&self) -> std::option::Option<& [crate::types::IpamPoolCidr]> {
+    pub fn ipam_pool_cidrs(&self) -> std::option::Option<&[crate::types::IpamPoolCidr]> {
         self.ipam_pool_cidrs.as_deref()
     }
     /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for GetIpamPoolCidrsOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl GetIpamPoolCidrsOutput {
     /// Creates a new builder-style object to manufacture [`GetIpamPoolCidrsOutput`](crate::operation::get_ipam_pool_cidrs::GetIpamPoolCidrsOutput).
-    pub fn builder() -> crate::operation::get_ipam_pool_cidrs::builders::GetIpamPoolCidrsOutputBuilder {
+    pub fn builder(
+    ) -> crate::operation::get_ipam_pool_cidrs::builders::GetIpamPoolCidrsOutputBuilder {
         crate::operation::get_ipam_pool_cidrs::builders::GetIpamPoolCidrsOutputBuilder::default()
     }
 }
@@ -49,13 +50,17 @@ impl GetIpamPoolCidrsOutputBuilder {
     /// <p>Information about the CIDRs provisioned to an IPAM pool.</p>
     pub fn ipam_pool_cidrs(mut self, input: crate::types::IpamPoolCidr) -> Self {
         let mut v = self.ipam_pool_cidrs.unwrap_or_default();
-                        v.push(input);
-                        self.ipam_pool_cidrs = Some(v);
-                        self
+        v.push(input);
+        self.ipam_pool_cidrs = Some(v);
+        self
     }
     /// <p>Information about the CIDRs provisioned to an IPAM pool.</p>
-    pub fn set_ipam_pool_cidrs(mut self, input: std::option::Option<std::vec::Vec<crate::types::IpamPoolCidr>>) -> Self {
-        self.ipam_pool_cidrs = input; self
+    pub fn set_ipam_pool_cidrs(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::IpamPoolCidr>>,
+    ) -> Self {
+        self.ipam_pool_cidrs = input;
+        self
     }
     /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -64,26 +69,24 @@ impl GetIpamPoolCidrsOutputBuilder {
     }
     /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input; self
+        self.next_token = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`GetIpamPoolCidrsOutput`](crate::operation::get_ipam_pool_cidrs::GetIpamPoolCidrsOutput).
     pub fn build(self) -> crate::operation::get_ipam_pool_cidrs::GetIpamPoolCidrsOutput {
         crate::operation::get_ipam_pool_cidrs::GetIpamPoolCidrsOutput {
-            ipam_pool_cidrs: self.ipam_pool_cidrs
-            ,
-            next_token: self.next_token
-            ,
+            ipam_pool_cidrs: self.ipam_pool_cidrs,
+            next_token: self.next_token,
             _request_id: self._request_id,
         }
     }
 }
-

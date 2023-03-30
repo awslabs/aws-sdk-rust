@@ -3,7 +3,7 @@
 /// <p>An object representing the details of an update to a taints payload. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/node-taints-managed-node-groups.html">Node taints on managed node groups</a>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateTaintsPayload  {
+pub struct UpdateTaintsPayload {
     /// <p>Kubernetes taints to be added or updated.</p>
     #[doc(hidden)]
     pub add_or_update_taints: std::option::Option<std::vec::Vec<crate::types::Taint>>,
@@ -13,11 +13,11 @@ pub struct UpdateTaintsPayload  {
 }
 impl UpdateTaintsPayload {
     /// <p>Kubernetes taints to be added or updated.</p>
-    pub fn add_or_update_taints(&self) -> std::option::Option<& [crate::types::Taint]> {
+    pub fn add_or_update_taints(&self) -> std::option::Option<&[crate::types::Taint]> {
         self.add_or_update_taints.as_deref()
     }
     /// <p>Kubernetes taints to remove.</p>
-    pub fn remove_taints(&self) -> std::option::Option<& [crate::types::Taint]> {
+    pub fn remove_taints(&self) -> std::option::Option<&[crate::types::Taint]> {
         self.remove_taints.as_deref()
     }
 }
@@ -43,13 +43,17 @@ impl UpdateTaintsPayloadBuilder {
     /// <p>Kubernetes taints to be added or updated.</p>
     pub fn add_or_update_taints(mut self, input: crate::types::Taint) -> Self {
         let mut v = self.add_or_update_taints.unwrap_or_default();
-                        v.push(input);
-                        self.add_or_update_taints = Some(v);
-                        self
+        v.push(input);
+        self.add_or_update_taints = Some(v);
+        self
     }
     /// <p>Kubernetes taints to be added or updated.</p>
-    pub fn set_add_or_update_taints(mut self, input: std::option::Option<std::vec::Vec<crate::types::Taint>>) -> Self {
-        self.add_or_update_taints = input; self
+    pub fn set_add_or_update_taints(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::Taint>>,
+    ) -> Self {
+        self.add_or_update_taints = input;
+        self
     }
     /// Appends an item to `remove_taints`.
     ///
@@ -58,22 +62,23 @@ impl UpdateTaintsPayloadBuilder {
     /// <p>Kubernetes taints to remove.</p>
     pub fn remove_taints(mut self, input: crate::types::Taint) -> Self {
         let mut v = self.remove_taints.unwrap_or_default();
-                        v.push(input);
-                        self.remove_taints = Some(v);
-                        self
+        v.push(input);
+        self.remove_taints = Some(v);
+        self
     }
     /// <p>Kubernetes taints to remove.</p>
-    pub fn set_remove_taints(mut self, input: std::option::Option<std::vec::Vec<crate::types::Taint>>) -> Self {
-        self.remove_taints = input; self
+    pub fn set_remove_taints(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::Taint>>,
+    ) -> Self {
+        self.remove_taints = input;
+        self
     }
     /// Consumes the builder and constructs a [`UpdateTaintsPayload`](crate::types::UpdateTaintsPayload).
     pub fn build(self) -> crate::types::UpdateTaintsPayload {
         crate::types::UpdateTaintsPayload {
-            add_or_update_taints: self.add_or_update_taints
-            ,
-            remove_taints: self.remove_taints
-            ,
+            add_or_update_taints: self.add_or_update_taints,
+            remove_taints: self.remove_taints,
         }
     }
 }
-

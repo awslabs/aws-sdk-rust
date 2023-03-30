@@ -3,7 +3,7 @@
 /// <p>Specifies the class that categorizes the document being analyzed</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DocumentClass  {
+pub struct DocumentClass {
     /// <p>The name of the class.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -16,7 +16,7 @@ pub struct DocumentClass  {
 }
 impl DocumentClass {
     /// <p>The name of the class.</p>
-    pub fn name(&self) -> std::option::Option<& str> {
+    pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>The confidence score that Amazon Comprehend has this class correctly attributed.</p>
@@ -51,7 +51,8 @@ impl DocumentClassBuilder {
     }
     /// <p>The name of the class.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input; self
+        self.name = input;
+        self
     }
     /// <p>The confidence score that Amazon Comprehend has this class correctly attributed.</p>
     pub fn score(mut self, input: f32) -> Self {
@@ -60,7 +61,8 @@ impl DocumentClassBuilder {
     }
     /// <p>The confidence score that Amazon Comprehend has this class correctly attributed.</p>
     pub fn set_score(mut self, input: std::option::Option<f32>) -> Self {
-        self.score = input; self
+        self.score = input;
+        self
     }
     /// <p>Page number in the input document. This field is present in the response only if your request includes the <code>Byte</code> parameter. </p>
     pub fn page(mut self, input: i32) -> Self {
@@ -69,18 +71,15 @@ impl DocumentClassBuilder {
     }
     /// <p>Page number in the input document. This field is present in the response only if your request includes the <code>Byte</code> parameter. </p>
     pub fn set_page(mut self, input: std::option::Option<i32>) -> Self {
-        self.page = input; self
+        self.page = input;
+        self
     }
     /// Consumes the builder and constructs a [`DocumentClass`](crate::types::DocumentClass).
     pub fn build(self) -> crate::types::DocumentClass {
         crate::types::DocumentClass {
-            name: self.name
-            ,
-            score: self.score
-            ,
-            page: self.page
-            ,
+            name: self.name,
+            score: self.score,
+            page: self.page,
         }
     }
 }
-

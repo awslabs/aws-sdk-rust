@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PutVoiceConnectorProxyOutput  {
+pub struct PutVoiceConnectorProxyOutput {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub proxy: std::option::Option<crate::types::Proxy>,
@@ -10,18 +10,20 @@ pub struct PutVoiceConnectorProxyOutput  {
 }
 impl PutVoiceConnectorProxyOutput {
     #[allow(missing_docs)] // documentation missing in model
-    pub fn proxy(&self) -> std::option::Option<& crate::types::Proxy> {
+    pub fn proxy(&self) -> std::option::Option<&crate::types::Proxy> {
         self.proxy.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for PutVoiceConnectorProxyOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl PutVoiceConnectorProxyOutput {
     /// Creates a new builder-style object to manufacture [`PutVoiceConnectorProxyOutput`](crate::operation::put_voice_connector_proxy::PutVoiceConnectorProxyOutput).
-    pub fn builder() -> crate::operation::put_voice_connector_proxy::builders::PutVoiceConnectorProxyOutputBuilder {
+    pub fn builder(
+    ) -> crate::operation::put_voice_connector_proxy::builders::PutVoiceConnectorProxyOutputBuilder
+    {
         crate::operation::put_voice_connector_proxy::builders::PutVoiceConnectorProxyOutputBuilder::default()
     }
 }
@@ -41,24 +43,25 @@ impl PutVoiceConnectorProxyOutputBuilder {
     }
     #[allow(missing_docs)] // documentation missing in model
     pub fn set_proxy(mut self, input: std::option::Option<crate::types::Proxy>) -> Self {
-        self.proxy = input; self
+        self.proxy = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`PutVoiceConnectorProxyOutput`](crate::operation::put_voice_connector_proxy::PutVoiceConnectorProxyOutput).
-    pub fn build(self) -> crate::operation::put_voice_connector_proxy::PutVoiceConnectorProxyOutput {
+    pub fn build(
+        self,
+    ) -> crate::operation::put_voice_connector_proxy::PutVoiceConnectorProxyOutput {
         crate::operation::put_voice_connector_proxy::PutVoiceConnectorProxyOutput {
-            proxy: self.proxy
-            ,
+            proxy: self.proxy,
             _request_id: self._request_id,
         }
     }
 }
-

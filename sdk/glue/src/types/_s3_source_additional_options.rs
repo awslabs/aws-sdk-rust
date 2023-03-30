@@ -3,7 +3,7 @@
 /// <p>Specifies additional connection options for the Amazon S3 data store.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct S3SourceAdditionalOptions  {
+pub struct S3SourceAdditionalOptions {
     /// <p>Sets the upper limit for the target size of the dataset in bytes that will be processed.</p>
     #[doc(hidden)]
     pub bounded_size: std::option::Option<i64>,
@@ -43,7 +43,8 @@ impl S3SourceAdditionalOptionsBuilder {
     }
     /// <p>Sets the upper limit for the target size of the dataset in bytes that will be processed.</p>
     pub fn set_bounded_size(mut self, input: std::option::Option<i64>) -> Self {
-        self.bounded_size = input; self
+        self.bounded_size = input;
+        self
     }
     /// <p>Sets the upper limit for the target number of files that will be processed.</p>
     pub fn bounded_files(mut self, input: i64) -> Self {
@@ -52,16 +53,14 @@ impl S3SourceAdditionalOptionsBuilder {
     }
     /// <p>Sets the upper limit for the target number of files that will be processed.</p>
     pub fn set_bounded_files(mut self, input: std::option::Option<i64>) -> Self {
-        self.bounded_files = input; self
+        self.bounded_files = input;
+        self
     }
     /// Consumes the builder and constructs a [`S3SourceAdditionalOptions`](crate::types::S3SourceAdditionalOptions).
     pub fn build(self) -> crate::types::S3SourceAdditionalOptions {
         crate::types::S3SourceAdditionalOptions {
-            bounded_size: self.bounded_size
-            ,
-            bounded_files: self.bounded_files
-            ,
+            bounded_size: self.bounded_size,
+            bounded_files: self.bounded_files,
         }
     }
 }
-

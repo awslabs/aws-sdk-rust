@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetUnfilteredTableMetadataInput  {
+pub struct GetUnfilteredTableMetadataInput {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub catalog_id: std::option::Option<std::string::String>,
@@ -17,33 +17,36 @@ pub struct GetUnfilteredTableMetadataInput  {
     pub audit_context: std::option::Option<crate::types::AuditContext>,
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
-    pub supported_permission_types: std::option::Option<std::vec::Vec<crate::types::PermissionType>>,
+    pub supported_permission_types:
+        std::option::Option<std::vec::Vec<crate::types::PermissionType>>,
 }
 impl GetUnfilteredTableMetadataInput {
     #[allow(missing_docs)] // documentation missing in model
-    pub fn catalog_id(&self) -> std::option::Option<& str> {
+    pub fn catalog_id(&self) -> std::option::Option<&str> {
         self.catalog_id.as_deref()
     }
     #[allow(missing_docs)] // documentation missing in model
-    pub fn database_name(&self) -> std::option::Option<& str> {
+    pub fn database_name(&self) -> std::option::Option<&str> {
         self.database_name.as_deref()
     }
     #[allow(missing_docs)] // documentation missing in model
-    pub fn name(&self) -> std::option::Option<& str> {
+    pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>A structure containing information for audit.</p>
-    pub fn audit_context(&self) -> std::option::Option<& crate::types::AuditContext> {
+    pub fn audit_context(&self) -> std::option::Option<&crate::types::AuditContext> {
         self.audit_context.as_ref()
     }
     #[allow(missing_docs)] // documentation missing in model
-    pub fn supported_permission_types(&self) -> std::option::Option<& [crate::types::PermissionType]> {
+    pub fn supported_permission_types(
+        &self,
+    ) -> std::option::Option<&[crate::types::PermissionType]> {
         self.supported_permission_types.as_deref()
     }
 }
 impl GetUnfilteredTableMetadataInput {
     /// Creates a new builder-style object to manufacture [`GetUnfilteredTableMetadataInput`](crate::operation::get_unfiltered_table_metadata::GetUnfilteredTableMetadataInput).
-    pub fn builder() -> crate::operation::get_unfiltered_table_metadata::builders::GetUnfilteredTableMetadataInputBuilder {
+    pub fn builder() -> crate::operation::get_unfiltered_table_metadata::builders::GetUnfilteredTableMetadataInputBuilder{
         crate::operation::get_unfiltered_table_metadata::builders::GetUnfilteredTableMetadataInputBuilder::default()
     }
 }
@@ -56,7 +59,8 @@ pub struct GetUnfilteredTableMetadataInputBuilder {
     pub(crate) database_name: std::option::Option<std::string::String>,
     pub(crate) name: std::option::Option<std::string::String>,
     pub(crate) audit_context: std::option::Option<crate::types::AuditContext>,
-    pub(crate) supported_permission_types: std::option::Option<std::vec::Vec<crate::types::PermissionType>>,
+    pub(crate) supported_permission_types:
+        std::option::Option<std::vec::Vec<crate::types::PermissionType>>,
 }
 impl GetUnfilteredTableMetadataInputBuilder {
     #[allow(missing_docs)] // documentation missing in model
@@ -66,7 +70,8 @@ impl GetUnfilteredTableMetadataInputBuilder {
     }
     #[allow(missing_docs)] // documentation missing in model
     pub fn set_catalog_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.catalog_id = input; self
+        self.catalog_id = input;
+        self
     }
     #[allow(missing_docs)] // documentation missing in model
     pub fn database_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -75,7 +80,8 @@ impl GetUnfilteredTableMetadataInputBuilder {
     }
     #[allow(missing_docs)] // documentation missing in model
     pub fn set_database_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.database_name = input; self
+        self.database_name = input;
+        self
     }
     #[allow(missing_docs)] // documentation missing in model
     pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -84,7 +90,8 @@ impl GetUnfilteredTableMetadataInputBuilder {
     }
     #[allow(missing_docs)] // documentation missing in model
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input; self
+        self.name = input;
+        self
     }
     /// <p>A structure containing information for audit.</p>
     pub fn audit_context(mut self, input: crate::types::AuditContext) -> Self {
@@ -92,8 +99,12 @@ impl GetUnfilteredTableMetadataInputBuilder {
         self
     }
     /// <p>A structure containing information for audit.</p>
-    pub fn set_audit_context(mut self, input: std::option::Option<crate::types::AuditContext>) -> Self {
-        self.audit_context = input; self
+    pub fn set_audit_context(
+        mut self,
+        input: std::option::Option<crate::types::AuditContext>,
+    ) -> Self {
+        self.audit_context = input;
+        self
     }
     /// Appends an item to `supported_permission_types`.
     ///
@@ -101,30 +112,33 @@ impl GetUnfilteredTableMetadataInputBuilder {
     ///
     pub fn supported_permission_types(mut self, input: crate::types::PermissionType) -> Self {
         let mut v = self.supported_permission_types.unwrap_or_default();
-                        v.push(input);
-                        self.supported_permission_types = Some(v);
-                        self
+        v.push(input);
+        self.supported_permission_types = Some(v);
+        self
     }
     #[allow(missing_docs)] // documentation missing in model
-    pub fn set_supported_permission_types(mut self, input: std::option::Option<std::vec::Vec<crate::types::PermissionType>>) -> Self {
-        self.supported_permission_types = input; self
+    pub fn set_supported_permission_types(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::PermissionType>>,
+    ) -> Self {
+        self.supported_permission_types = input;
+        self
     }
     /// Consumes the builder and constructs a [`GetUnfilteredTableMetadataInput`](crate::operation::get_unfiltered_table_metadata::GetUnfilteredTableMetadataInput).
-    pub fn build(self) -> Result<crate::operation::get_unfiltered_table_metadata::GetUnfilteredTableMetadataInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::get_unfiltered_table_metadata::GetUnfilteredTableMetadataInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::get_unfiltered_table_metadata::GetUnfilteredTableMetadataInput {
-                catalog_id: self.catalog_id
-                ,
-                database_name: self.database_name
-                ,
-                name: self.name
-                ,
-                audit_context: self.audit_context
-                ,
-                supported_permission_types: self.supported_permission_types
-                ,
-            }
+                catalog_id: self.catalog_id,
+                database_name: self.database_name,
+                name: self.name,
+                audit_context: self.audit_context,
+                supported_permission_types: self.supported_permission_types,
+            },
         )
     }
 }
-

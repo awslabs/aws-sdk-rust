@@ -3,14 +3,14 @@
 /// Public access control for brokers.
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PublicAccess  {
+pub struct PublicAccess {
     /// <p>The value DISABLED indicates that public access is turned off. SERVICE_PROVIDED_EIPS indicates that public access is turned on.</p>
     #[doc(hidden)]
     pub r#type: std::option::Option<std::string::String>,
 }
 impl PublicAccess {
     /// <p>The value DISABLED indicates that public access is turned off. SERVICE_PROVIDED_EIPS indicates that public access is turned on.</p>
-    pub fn r#type(&self) -> std::option::Option<& str> {
+    pub fn r#type(&self) -> std::option::Option<&str> {
         self.r#type.as_deref()
     }
 }
@@ -35,14 +35,13 @@ impl PublicAccessBuilder {
     }
     /// <p>The value DISABLED indicates that public access is turned off. SERVICE_PROVIDED_EIPS indicates that public access is turned on.</p>
     pub fn set_type(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.r#type = input; self
+        self.r#type = input;
+        self
     }
     /// Consumes the builder and constructs a [`PublicAccess`](crate::types::PublicAccess).
     pub fn build(self) -> crate::types::PublicAccess {
         crate::types::PublicAccess {
-            r#type: self.r#type
-            ,
+            r#type: self.r#type,
         }
     }
 }
-

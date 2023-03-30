@@ -3,7 +3,7 @@
 /// <p>An object representing the properties of a table in a workbook.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Table  {
+pub struct Table {
     /// <p>The id of the table.</p>
     #[doc(hidden)]
     pub table_id: std::option::Option<std::string::String>,
@@ -13,11 +13,11 @@ pub struct Table  {
 }
 impl Table {
     /// <p>The id of the table.</p>
-    pub fn table_id(&self) -> std::option::Option<& str> {
+    pub fn table_id(&self) -> std::option::Option<&str> {
         self.table_id.as_deref()
     }
     /// <p>The name of the table.</p>
-    pub fn table_name(&self) -> std::option::Option<& str> {
+    pub fn table_name(&self) -> std::option::Option<&str> {
         self.table_name.as_deref()
     }
 }
@@ -43,7 +43,8 @@ impl TableBuilder {
     }
     /// <p>The id of the table.</p>
     pub fn set_table_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.table_id = input; self
+        self.table_id = input;
+        self
     }
     /// <p>The name of the table.</p>
     pub fn table_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -52,16 +53,14 @@ impl TableBuilder {
     }
     /// <p>The name of the table.</p>
     pub fn set_table_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.table_name = input; self
+        self.table_name = input;
+        self
     }
     /// Consumes the builder and constructs a [`Table`](crate::types::Table).
     pub fn build(self) -> crate::types::Table {
         crate::types::Table {
-            table_id: self.table_id
-            ,
-            table_name: self.table_name
-            ,
+            table_id: self.table_id,
+            table_name: self.table_name,
         }
     }
 }
-

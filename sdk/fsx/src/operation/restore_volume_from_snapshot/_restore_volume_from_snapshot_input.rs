@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct RestoreVolumeFromSnapshotInput  {
+pub struct RestoreVolumeFromSnapshotInput {
     /// <p>(Optional) An idempotency token for resource creation, in a string of up to 64 ASCII characters. This token is automatically filled on your behalf when you use the Command Line Interface (CLI) or an Amazon Web Services SDK.</p>
     #[doc(hidden)]
     pub client_request_token: std::option::Option<std::string::String>,
@@ -12,39 +12,39 @@ pub struct RestoreVolumeFromSnapshotInput  {
     /// <p>The ID of the source snapshot. Specifies the snapshot that you are restoring from.</p>
     #[doc(hidden)]
     pub snapshot_id: std::option::Option<std::string::String>,
-    /// <p>The settings used when restoring the specified volume from snapshot.</p> 
-    /// <ul> 
-    /// <li> <p> <code>DELETE_INTERMEDIATE_SNAPSHOTS</code> - Deletes snapshots between the current state and the specified snapshot. If there are intermediate snapshots and this option isn't used, <code>RestoreVolumeFromSnapshot</code> fails.</p> </li> 
-    /// <li> <p> <code>DELETE_CLONED_VOLUMES</code> - Deletes any dependent clone volumes created from intermediate snapshots. If there are any dependent clone volumes and this option isn't used, <code>RestoreVolumeFromSnapshot</code> fails.</p> </li> 
+    /// <p>The settings used when restoring the specified volume from snapshot.</p>
+    /// <ul>
+    /// <li> <p> <code>DELETE_INTERMEDIATE_SNAPSHOTS</code> - Deletes snapshots between the current state and the specified snapshot. If there are intermediate snapshots and this option isn't used, <code>RestoreVolumeFromSnapshot</code> fails.</p> </li>
+    /// <li> <p> <code>DELETE_CLONED_VOLUMES</code> - Deletes any dependent clone volumes created from intermediate snapshots. If there are any dependent clone volumes and this option isn't used, <code>RestoreVolumeFromSnapshot</code> fails.</p> </li>
     /// </ul>
     #[doc(hidden)]
     pub options: std::option::Option<std::vec::Vec<crate::types::RestoreOpenZfsVolumeOption>>,
 }
 impl RestoreVolumeFromSnapshotInput {
     /// <p>(Optional) An idempotency token for resource creation, in a string of up to 64 ASCII characters. This token is automatically filled on your behalf when you use the Command Line Interface (CLI) or an Amazon Web Services SDK.</p>
-    pub fn client_request_token(&self) -> std::option::Option<& str> {
+    pub fn client_request_token(&self) -> std::option::Option<&str> {
         self.client_request_token.as_deref()
     }
     /// <p>The ID of the volume that you are restoring.</p>
-    pub fn volume_id(&self) -> std::option::Option<& str> {
+    pub fn volume_id(&self) -> std::option::Option<&str> {
         self.volume_id.as_deref()
     }
     /// <p>The ID of the source snapshot. Specifies the snapshot that you are restoring from.</p>
-    pub fn snapshot_id(&self) -> std::option::Option<& str> {
+    pub fn snapshot_id(&self) -> std::option::Option<&str> {
         self.snapshot_id.as_deref()
     }
-    /// <p>The settings used when restoring the specified volume from snapshot.</p> 
-    /// <ul> 
-    /// <li> <p> <code>DELETE_INTERMEDIATE_SNAPSHOTS</code> - Deletes snapshots between the current state and the specified snapshot. If there are intermediate snapshots and this option isn't used, <code>RestoreVolumeFromSnapshot</code> fails.</p> </li> 
-    /// <li> <p> <code>DELETE_CLONED_VOLUMES</code> - Deletes any dependent clone volumes created from intermediate snapshots. If there are any dependent clone volumes and this option isn't used, <code>RestoreVolumeFromSnapshot</code> fails.</p> </li> 
+    /// <p>The settings used when restoring the specified volume from snapshot.</p>
+    /// <ul>
+    /// <li> <p> <code>DELETE_INTERMEDIATE_SNAPSHOTS</code> - Deletes snapshots between the current state and the specified snapshot. If there are intermediate snapshots and this option isn't used, <code>RestoreVolumeFromSnapshot</code> fails.</p> </li>
+    /// <li> <p> <code>DELETE_CLONED_VOLUMES</code> - Deletes any dependent clone volumes created from intermediate snapshots. If there are any dependent clone volumes and this option isn't used, <code>RestoreVolumeFromSnapshot</code> fails.</p> </li>
     /// </ul>
-    pub fn options(&self) -> std::option::Option<& [crate::types::RestoreOpenZfsVolumeOption]> {
+    pub fn options(&self) -> std::option::Option<&[crate::types::RestoreOpenZfsVolumeOption]> {
         self.options.as_deref()
     }
 }
 impl RestoreVolumeFromSnapshotInput {
     /// Creates a new builder-style object to manufacture [`RestoreVolumeFromSnapshotInput`](crate::operation::restore_volume_from_snapshot::RestoreVolumeFromSnapshotInput).
-    pub fn builder() -> crate::operation::restore_volume_from_snapshot::builders::RestoreVolumeFromSnapshotInputBuilder {
+    pub fn builder() -> crate::operation::restore_volume_from_snapshot::builders::RestoreVolumeFromSnapshotInputBuilder{
         crate::operation::restore_volume_from_snapshot::builders::RestoreVolumeFromSnapshotInputBuilder::default()
     }
 }
@@ -56,7 +56,8 @@ pub struct RestoreVolumeFromSnapshotInputBuilder {
     pub(crate) client_request_token: std::option::Option<std::string::String>,
     pub(crate) volume_id: std::option::Option<std::string::String>,
     pub(crate) snapshot_id: std::option::Option<std::string::String>,
-    pub(crate) options: std::option::Option<std::vec::Vec<crate::types::RestoreOpenZfsVolumeOption>>,
+    pub(crate) options:
+        std::option::Option<std::vec::Vec<crate::types::RestoreOpenZfsVolumeOption>>,
 }
 impl RestoreVolumeFromSnapshotInputBuilder {
     /// <p>(Optional) An idempotency token for resource creation, in a string of up to 64 ASCII characters. This token is automatically filled on your behalf when you use the Command Line Interface (CLI) or an Amazon Web Services SDK.</p>
@@ -65,8 +66,12 @@ impl RestoreVolumeFromSnapshotInputBuilder {
         self
     }
     /// <p>(Optional) An idempotency token for resource creation, in a string of up to 64 ASCII characters. This token is automatically filled on your behalf when you use the Command Line Interface (CLI) or an Amazon Web Services SDK.</p>
-    pub fn set_client_request_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.client_request_token = input; self
+    pub fn set_client_request_token(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.client_request_token = input;
+        self
     }
     /// <p>The ID of the volume that you are restoring.</p>
     pub fn volume_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -75,7 +80,8 @@ impl RestoreVolumeFromSnapshotInputBuilder {
     }
     /// <p>The ID of the volume that you are restoring.</p>
     pub fn set_volume_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.volume_id = input; self
+        self.volume_id = input;
+        self
     }
     /// <p>The ID of the source snapshot. Specifies the snapshot that you are restoring from.</p>
     pub fn snapshot_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -84,45 +90,50 @@ impl RestoreVolumeFromSnapshotInputBuilder {
     }
     /// <p>The ID of the source snapshot. Specifies the snapshot that you are restoring from.</p>
     pub fn set_snapshot_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.snapshot_id = input; self
+        self.snapshot_id = input;
+        self
     }
     /// Appends an item to `options`.
     ///
     /// To override the contents of this collection use [`set_options`](Self::set_options).
     ///
-    /// <p>The settings used when restoring the specified volume from snapshot.</p> 
-    /// <ul> 
-    /// <li> <p> <code>DELETE_INTERMEDIATE_SNAPSHOTS</code> - Deletes snapshots between the current state and the specified snapshot. If there are intermediate snapshots and this option isn't used, <code>RestoreVolumeFromSnapshot</code> fails.</p> </li> 
-    /// <li> <p> <code>DELETE_CLONED_VOLUMES</code> - Deletes any dependent clone volumes created from intermediate snapshots. If there are any dependent clone volumes and this option isn't used, <code>RestoreVolumeFromSnapshot</code> fails.</p> </li> 
+    /// <p>The settings used when restoring the specified volume from snapshot.</p>
+    /// <ul>
+    /// <li> <p> <code>DELETE_INTERMEDIATE_SNAPSHOTS</code> - Deletes snapshots between the current state and the specified snapshot. If there are intermediate snapshots and this option isn't used, <code>RestoreVolumeFromSnapshot</code> fails.</p> </li>
+    /// <li> <p> <code>DELETE_CLONED_VOLUMES</code> - Deletes any dependent clone volumes created from intermediate snapshots. If there are any dependent clone volumes and this option isn't used, <code>RestoreVolumeFromSnapshot</code> fails.</p> </li>
     /// </ul>
     pub fn options(mut self, input: crate::types::RestoreOpenZfsVolumeOption) -> Self {
         let mut v = self.options.unwrap_or_default();
-                        v.push(input);
-                        self.options = Some(v);
-                        self
+        v.push(input);
+        self.options = Some(v);
+        self
     }
-    /// <p>The settings used when restoring the specified volume from snapshot.</p> 
-    /// <ul> 
-    /// <li> <p> <code>DELETE_INTERMEDIATE_SNAPSHOTS</code> - Deletes snapshots between the current state and the specified snapshot. If there are intermediate snapshots and this option isn't used, <code>RestoreVolumeFromSnapshot</code> fails.</p> </li> 
-    /// <li> <p> <code>DELETE_CLONED_VOLUMES</code> - Deletes any dependent clone volumes created from intermediate snapshots. If there are any dependent clone volumes and this option isn't used, <code>RestoreVolumeFromSnapshot</code> fails.</p> </li> 
+    /// <p>The settings used when restoring the specified volume from snapshot.</p>
+    /// <ul>
+    /// <li> <p> <code>DELETE_INTERMEDIATE_SNAPSHOTS</code> - Deletes snapshots between the current state and the specified snapshot. If there are intermediate snapshots and this option isn't used, <code>RestoreVolumeFromSnapshot</code> fails.</p> </li>
+    /// <li> <p> <code>DELETE_CLONED_VOLUMES</code> - Deletes any dependent clone volumes created from intermediate snapshots. If there are any dependent clone volumes and this option isn't used, <code>RestoreVolumeFromSnapshot</code> fails.</p> </li>
     /// </ul>
-    pub fn set_options(mut self, input: std::option::Option<std::vec::Vec<crate::types::RestoreOpenZfsVolumeOption>>) -> Self {
-        self.options = input; self
+    pub fn set_options(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::RestoreOpenZfsVolumeOption>>,
+    ) -> Self {
+        self.options = input;
+        self
     }
     /// Consumes the builder and constructs a [`RestoreVolumeFromSnapshotInput`](crate::operation::restore_volume_from_snapshot::RestoreVolumeFromSnapshotInput).
-    pub fn build(self) -> Result<crate::operation::restore_volume_from_snapshot::RestoreVolumeFromSnapshotInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::restore_volume_from_snapshot::RestoreVolumeFromSnapshotInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::restore_volume_from_snapshot::RestoreVolumeFromSnapshotInput {
-                client_request_token: self.client_request_token
-                ,
-                volume_id: self.volume_id
-                ,
-                snapshot_id: self.snapshot_id
-                ,
-                options: self.options
-                ,
-            }
+                client_request_token: self.client_request_token,
+                volume_id: self.volume_id,
+                snapshot_id: self.snapshot_id,
+                options: self.options,
+            },
         )
     }
 }
-

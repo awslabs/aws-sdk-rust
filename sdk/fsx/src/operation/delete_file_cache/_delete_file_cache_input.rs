@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteFileCacheInput  {
+pub struct DeleteFileCacheInput {
     /// <p>The ID of the cache that's being deleted.</p>
     #[doc(hidden)]
     pub file_cache_id: std::option::Option<std::string::String>,
@@ -12,11 +12,11 @@ pub struct DeleteFileCacheInput  {
 }
 impl DeleteFileCacheInput {
     /// <p>The ID of the cache that's being deleted.</p>
-    pub fn file_cache_id(&self) -> std::option::Option<& str> {
+    pub fn file_cache_id(&self) -> std::option::Option<&str> {
         self.file_cache_id.as_deref()
     }
     /// <p>(Optional) An idempotency token for resource creation, in a string of up to 64 ASCII characters. This token is automatically filled on your behalf when you use the Command Line Interface (CLI) or an Amazon Web Services SDK.</p>
-    pub fn client_request_token(&self) -> std::option::Option<& str> {
+    pub fn client_request_token(&self) -> std::option::Option<&str> {
         self.client_request_token.as_deref()
     }
 }
@@ -42,7 +42,8 @@ impl DeleteFileCacheInputBuilder {
     }
     /// <p>The ID of the cache that's being deleted.</p>
     pub fn set_file_cache_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.file_cache_id = input; self
+        self.file_cache_id = input;
+        self
     }
     /// <p>(Optional) An idempotency token for resource creation, in a string of up to 64 ASCII characters. This token is automatically filled on your behalf when you use the Command Line Interface (CLI) or an Amazon Web Services SDK.</p>
     pub fn client_request_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -50,19 +51,23 @@ impl DeleteFileCacheInputBuilder {
         self
     }
     /// <p>(Optional) An idempotency token for resource creation, in a string of up to 64 ASCII characters. This token is automatically filled on your behalf when you use the Command Line Interface (CLI) or an Amazon Web Services SDK.</p>
-    pub fn set_client_request_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.client_request_token = input; self
+    pub fn set_client_request_token(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.client_request_token = input;
+        self
     }
     /// Consumes the builder and constructs a [`DeleteFileCacheInput`](crate::operation::delete_file_cache::DeleteFileCacheInput).
-    pub fn build(self) -> Result<crate::operation::delete_file_cache::DeleteFileCacheInput, aws_smithy_http::operation::error::BuildError> {
-        Ok(
-            crate::operation::delete_file_cache::DeleteFileCacheInput {
-                file_cache_id: self.file_cache_id
-                ,
-                client_request_token: self.client_request_token
-                ,
-            }
-        )
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::delete_file_cache::DeleteFileCacheInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        Ok(crate::operation::delete_file_cache::DeleteFileCacheInput {
+            file_cache_id: self.file_cache_id,
+            client_request_token: self.client_request_token,
+        })
     }
 }
-

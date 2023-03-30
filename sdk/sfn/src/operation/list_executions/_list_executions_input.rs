@@ -2,48 +2,48 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListExecutionsInput  {
-    /// <p>The Amazon Resource Name (ARN) of the state machine whose executions is listed.</p> 
+pub struct ListExecutionsInput {
+    /// <p>The Amazon Resource Name (ARN) of the state machine whose executions is listed.</p>
     /// <p>You can specify either a <code>mapRunArn</code> or a <code>stateMachineArn</code>, but not both.</p>
     #[doc(hidden)]
     pub state_machine_arn: std::option::Option<std::string::String>,
     /// <p>If specified, only list the executions whose current execution status matches the given filter.</p>
     #[doc(hidden)]
     pub status_filter: std::option::Option<crate::types::ExecutionStatus>,
-    /// <p>The maximum number of results that are returned per call. You can use <code>nextToken</code> to obtain further pages of results. The default is 100 and the maximum allowed page size is 1000. A value of 0 uses the default.</p> 
+    /// <p>The maximum number of results that are returned per call. You can use <code>nextToken</code> to obtain further pages of results. The default is 100 and the maximum allowed page size is 1000. A value of 0 uses the default.</p>
     /// <p>This is only an upper limit. The actual number of results returned per call might be fewer than the specified maximum.</p>
     #[doc(hidden)]
     pub max_results: i32,
     /// <p>If <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours. Using an expired pagination token will return an <i>HTTP 400 InvalidToken</i> error.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
-    /// <p>The Amazon Resource Name (ARN) of the Map Run that started the child workflow executions. If the <code>mapRunArn</code> field is specified, a list of all of the child workflow executions started by a Map Run is returned. For more information, see <a href="https://docs.aws.amazon.com/step-functions/latest/dg/concepts-examine-map-run.html">Examining Map Run</a> in the <i>Step Functions Developer Guide</i>.</p> 
+    /// <p>The Amazon Resource Name (ARN) of the Map Run that started the child workflow executions. If the <code>mapRunArn</code> field is specified, a list of all of the child workflow executions started by a Map Run is returned. For more information, see <a href="https://docs.aws.amazon.com/step-functions/latest/dg/concepts-examine-map-run.html">Examining Map Run</a> in the <i>Step Functions Developer Guide</i>.</p>
     /// <p>You can specify either a <code>mapRunArn</code> or a <code>stateMachineArn</code>, but not both.</p>
     #[doc(hidden)]
     pub map_run_arn: std::option::Option<std::string::String>,
 }
 impl ListExecutionsInput {
-    /// <p>The Amazon Resource Name (ARN) of the state machine whose executions is listed.</p> 
+    /// <p>The Amazon Resource Name (ARN) of the state machine whose executions is listed.</p>
     /// <p>You can specify either a <code>mapRunArn</code> or a <code>stateMachineArn</code>, but not both.</p>
-    pub fn state_machine_arn(&self) -> std::option::Option<& str> {
+    pub fn state_machine_arn(&self) -> std::option::Option<&str> {
         self.state_machine_arn.as_deref()
     }
     /// <p>If specified, only list the executions whose current execution status matches the given filter.</p>
-    pub fn status_filter(&self) -> std::option::Option<& crate::types::ExecutionStatus> {
+    pub fn status_filter(&self) -> std::option::Option<&crate::types::ExecutionStatus> {
         self.status_filter.as_ref()
     }
-    /// <p>The maximum number of results that are returned per call. You can use <code>nextToken</code> to obtain further pages of results. The default is 100 and the maximum allowed page size is 1000. A value of 0 uses the default.</p> 
+    /// <p>The maximum number of results that are returned per call. You can use <code>nextToken</code> to obtain further pages of results. The default is 100 and the maximum allowed page size is 1000. A value of 0 uses the default.</p>
     /// <p>This is only an upper limit. The actual number of results returned per call might be fewer than the specified maximum.</p>
     pub fn max_results(&self) -> i32 {
         self.max_results
     }
     /// <p>If <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours. Using an expired pagination token will return an <i>HTTP 400 InvalidToken</i> error.</p>
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// <p>The Amazon Resource Name (ARN) of the Map Run that started the child workflow executions. If the <code>mapRunArn</code> field is specified, a list of all of the child workflow executions started by a Map Run is returned. For more information, see <a href="https://docs.aws.amazon.com/step-functions/latest/dg/concepts-examine-map-run.html">Examining Map Run</a> in the <i>Step Functions Developer Guide</i>.</p> 
+    /// <p>The Amazon Resource Name (ARN) of the Map Run that started the child workflow executions. If the <code>mapRunArn</code> field is specified, a list of all of the child workflow executions started by a Map Run is returned. For more information, see <a href="https://docs.aws.amazon.com/step-functions/latest/dg/concepts-examine-map-run.html">Examining Map Run</a> in the <i>Step Functions Developer Guide</i>.</p>
     /// <p>You can specify either a <code>mapRunArn</code> or a <code>stateMachineArn</code>, but not both.</p>
-    pub fn map_run_arn(&self) -> std::option::Option<& str> {
+    pub fn map_run_arn(&self) -> std::option::Option<&str> {
         self.map_run_arn.as_deref()
     }
 }
@@ -65,16 +65,20 @@ pub struct ListExecutionsInputBuilder {
     pub(crate) map_run_arn: std::option::Option<std::string::String>,
 }
 impl ListExecutionsInputBuilder {
-    /// <p>The Amazon Resource Name (ARN) of the state machine whose executions is listed.</p> 
+    /// <p>The Amazon Resource Name (ARN) of the state machine whose executions is listed.</p>
     /// <p>You can specify either a <code>mapRunArn</code> or a <code>stateMachineArn</code>, but not both.</p>
     pub fn state_machine_arn(mut self, input: impl Into<std::string::String>) -> Self {
         self.state_machine_arn = Some(input.into());
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the state machine whose executions is listed.</p> 
+    /// <p>The Amazon Resource Name (ARN) of the state machine whose executions is listed.</p>
     /// <p>You can specify either a <code>mapRunArn</code> or a <code>stateMachineArn</code>, but not both.</p>
-    pub fn set_state_machine_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.state_machine_arn = input; self
+    pub fn set_state_machine_arn(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.state_machine_arn = input;
+        self
     }
     /// <p>If specified, only list the executions whose current execution status matches the given filter.</p>
     pub fn status_filter(mut self, input: crate::types::ExecutionStatus) -> Self {
@@ -82,19 +86,24 @@ impl ListExecutionsInputBuilder {
         self
     }
     /// <p>If specified, only list the executions whose current execution status matches the given filter.</p>
-    pub fn set_status_filter(mut self, input: std::option::Option<crate::types::ExecutionStatus>) -> Self {
-        self.status_filter = input; self
+    pub fn set_status_filter(
+        mut self,
+        input: std::option::Option<crate::types::ExecutionStatus>,
+    ) -> Self {
+        self.status_filter = input;
+        self
     }
-    /// <p>The maximum number of results that are returned per call. You can use <code>nextToken</code> to obtain further pages of results. The default is 100 and the maximum allowed page size is 1000. A value of 0 uses the default.</p> 
+    /// <p>The maximum number of results that are returned per call. You can use <code>nextToken</code> to obtain further pages of results. The default is 100 and the maximum allowed page size is 1000. A value of 0 uses the default.</p>
     /// <p>This is only an upper limit. The actual number of results returned per call might be fewer than the specified maximum.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.max_results = Some(input);
         self
     }
-    /// <p>The maximum number of results that are returned per call. You can use <code>nextToken</code> to obtain further pages of results. The default is 100 and the maximum allowed page size is 1000. A value of 0 uses the default.</p> 
+    /// <p>The maximum number of results that are returned per call. You can use <code>nextToken</code> to obtain further pages of results. The default is 100 and the maximum allowed page size is 1000. A value of 0 uses the default.</p>
     /// <p>This is only an upper limit. The actual number of results returned per call might be fewer than the specified maximum.</p>
     pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_results = input; self
+        self.max_results = input;
+        self
     }
     /// <p>If <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours. Using an expired pagination token will return an <i>HTTP 400 InvalidToken</i> error.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -103,36 +112,34 @@ impl ListExecutionsInputBuilder {
     }
     /// <p>If <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours. Using an expired pagination token will return an <i>HTTP 400 InvalidToken</i> error.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input; self
+        self.next_token = input;
+        self
     }
-    /// <p>The Amazon Resource Name (ARN) of the Map Run that started the child workflow executions. If the <code>mapRunArn</code> field is specified, a list of all of the child workflow executions started by a Map Run is returned. For more information, see <a href="https://docs.aws.amazon.com/step-functions/latest/dg/concepts-examine-map-run.html">Examining Map Run</a> in the <i>Step Functions Developer Guide</i>.</p> 
+    /// <p>The Amazon Resource Name (ARN) of the Map Run that started the child workflow executions. If the <code>mapRunArn</code> field is specified, a list of all of the child workflow executions started by a Map Run is returned. For more information, see <a href="https://docs.aws.amazon.com/step-functions/latest/dg/concepts-examine-map-run.html">Examining Map Run</a> in the <i>Step Functions Developer Guide</i>.</p>
     /// <p>You can specify either a <code>mapRunArn</code> or a <code>stateMachineArn</code>, but not both.</p>
     pub fn map_run_arn(mut self, input: impl Into<std::string::String>) -> Self {
         self.map_run_arn = Some(input.into());
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the Map Run that started the child workflow executions. If the <code>mapRunArn</code> field is specified, a list of all of the child workflow executions started by a Map Run is returned. For more information, see <a href="https://docs.aws.amazon.com/step-functions/latest/dg/concepts-examine-map-run.html">Examining Map Run</a> in the <i>Step Functions Developer Guide</i>.</p> 
+    /// <p>The Amazon Resource Name (ARN) of the Map Run that started the child workflow executions. If the <code>mapRunArn</code> field is specified, a list of all of the child workflow executions started by a Map Run is returned. For more information, see <a href="https://docs.aws.amazon.com/step-functions/latest/dg/concepts-examine-map-run.html">Examining Map Run</a> in the <i>Step Functions Developer Guide</i>.</p>
     /// <p>You can specify either a <code>mapRunArn</code> or a <code>stateMachineArn</code>, but not both.</p>
     pub fn set_map_run_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.map_run_arn = input; self
+        self.map_run_arn = input;
+        self
     }
     /// Consumes the builder and constructs a [`ListExecutionsInput`](crate::operation::list_executions::ListExecutionsInput).
-    pub fn build(self) -> Result<crate::operation::list_executions::ListExecutionsInput, aws_smithy_http::operation::error::BuildError> {
-        Ok(
-            crate::operation::list_executions::ListExecutionsInput {
-                state_machine_arn: self.state_machine_arn
-                ,
-                status_filter: self.status_filter
-                ,
-                max_results: self.max_results
-                    .unwrap_or_default()
-                ,
-                next_token: self.next_token
-                ,
-                map_run_arn: self.map_run_arn
-                ,
-            }
-        )
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::list_executions::ListExecutionsInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        Ok(crate::operation::list_executions::ListExecutionsInput {
+            state_machine_arn: self.state_machine_arn,
+            status_filter: self.status_filter,
+            max_results: self.max_results.unwrap_or_default(),
+            next_token: self.next_token,
+            map_run_arn: self.map_run_arn,
+        })
     }
 }
-

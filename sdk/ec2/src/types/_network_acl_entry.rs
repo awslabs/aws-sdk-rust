@@ -3,7 +3,7 @@
 /// <p>Describes an entry in a network ACL.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct NetworkAclEntry  {
+pub struct NetworkAclEntry {
     /// <p>The IPv4 network range to allow or deny, in CIDR notation.</p>
     #[doc(hidden)]
     pub cidr_block: std::option::Option<std::string::String>,
@@ -31,7 +31,7 @@ pub struct NetworkAclEntry  {
 }
 impl NetworkAclEntry {
     /// <p>The IPv4 network range to allow or deny, in CIDR notation.</p>
-    pub fn cidr_block(&self) -> std::option::Option<& str> {
+    pub fn cidr_block(&self) -> std::option::Option<&str> {
         self.cidr_block.as_deref()
     }
     /// <p>Indicates whether the rule is an egress rule (applied to traffic leaving the subnet).</p>
@@ -39,23 +39,23 @@ impl NetworkAclEntry {
         self.egress
     }
     /// <p>ICMP protocol: The ICMP type and code.</p>
-    pub fn icmp_type_code(&self) -> std::option::Option<& crate::types::IcmpTypeCode> {
+    pub fn icmp_type_code(&self) -> std::option::Option<&crate::types::IcmpTypeCode> {
         self.icmp_type_code.as_ref()
     }
     /// <p>The IPv6 network range to allow or deny, in CIDR notation.</p>
-    pub fn ipv6_cidr_block(&self) -> std::option::Option<& str> {
+    pub fn ipv6_cidr_block(&self) -> std::option::Option<&str> {
         self.ipv6_cidr_block.as_deref()
     }
     /// <p>TCP or UDP protocols: The range of ports the rule applies to.</p>
-    pub fn port_range(&self) -> std::option::Option<& crate::types::PortRange> {
+    pub fn port_range(&self) -> std::option::Option<&crate::types::PortRange> {
         self.port_range.as_ref()
     }
     /// <p>The protocol number. A value of "-1" means all protocols.</p>
-    pub fn protocol(&self) -> std::option::Option<& str> {
+    pub fn protocol(&self) -> std::option::Option<&str> {
         self.protocol.as_deref()
     }
     /// <p>Indicates whether to allow or deny the traffic that matches the rule.</p>
-    pub fn rule_action(&self) -> std::option::Option<& crate::types::RuleAction> {
+    pub fn rule_action(&self) -> std::option::Option<&crate::types::RuleAction> {
         self.rule_action.as_ref()
     }
     /// <p>The rule number for the entry. ACL entries are processed in ascending order by rule number.</p>
@@ -91,7 +91,8 @@ impl NetworkAclEntryBuilder {
     }
     /// <p>The IPv4 network range to allow or deny, in CIDR notation.</p>
     pub fn set_cidr_block(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.cidr_block = input; self
+        self.cidr_block = input;
+        self
     }
     /// <p>Indicates whether the rule is an egress rule (applied to traffic leaving the subnet).</p>
     pub fn egress(mut self, input: bool) -> Self {
@@ -100,7 +101,8 @@ impl NetworkAclEntryBuilder {
     }
     /// <p>Indicates whether the rule is an egress rule (applied to traffic leaving the subnet).</p>
     pub fn set_egress(mut self, input: std::option::Option<bool>) -> Self {
-        self.egress = input; self
+        self.egress = input;
+        self
     }
     /// <p>ICMP protocol: The ICMP type and code.</p>
     pub fn icmp_type_code(mut self, input: crate::types::IcmpTypeCode) -> Self {
@@ -108,8 +110,12 @@ impl NetworkAclEntryBuilder {
         self
     }
     /// <p>ICMP protocol: The ICMP type and code.</p>
-    pub fn set_icmp_type_code(mut self, input: std::option::Option<crate::types::IcmpTypeCode>) -> Self {
-        self.icmp_type_code = input; self
+    pub fn set_icmp_type_code(
+        mut self,
+        input: std::option::Option<crate::types::IcmpTypeCode>,
+    ) -> Self {
+        self.icmp_type_code = input;
+        self
     }
     /// <p>The IPv6 network range to allow or deny, in CIDR notation.</p>
     pub fn ipv6_cidr_block(mut self, input: impl Into<std::string::String>) -> Self {
@@ -118,7 +124,8 @@ impl NetworkAclEntryBuilder {
     }
     /// <p>The IPv6 network range to allow or deny, in CIDR notation.</p>
     pub fn set_ipv6_cidr_block(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.ipv6_cidr_block = input; self
+        self.ipv6_cidr_block = input;
+        self
     }
     /// <p>TCP or UDP protocols: The range of ports the rule applies to.</p>
     pub fn port_range(mut self, input: crate::types::PortRange) -> Self {
@@ -127,7 +134,8 @@ impl NetworkAclEntryBuilder {
     }
     /// <p>TCP or UDP protocols: The range of ports the rule applies to.</p>
     pub fn set_port_range(mut self, input: std::option::Option<crate::types::PortRange>) -> Self {
-        self.port_range = input; self
+        self.port_range = input;
+        self
     }
     /// <p>The protocol number. A value of "-1" means all protocols.</p>
     pub fn protocol(mut self, input: impl Into<std::string::String>) -> Self {
@@ -136,7 +144,8 @@ impl NetworkAclEntryBuilder {
     }
     /// <p>The protocol number. A value of "-1" means all protocols.</p>
     pub fn set_protocol(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.protocol = input; self
+        self.protocol = input;
+        self
     }
     /// <p>Indicates whether to allow or deny the traffic that matches the rule.</p>
     pub fn rule_action(mut self, input: crate::types::RuleAction) -> Self {
@@ -145,7 +154,8 @@ impl NetworkAclEntryBuilder {
     }
     /// <p>Indicates whether to allow or deny the traffic that matches the rule.</p>
     pub fn set_rule_action(mut self, input: std::option::Option<crate::types::RuleAction>) -> Self {
-        self.rule_action = input; self
+        self.rule_action = input;
+        self
     }
     /// <p>The rule number for the entry. ACL entries are processed in ascending order by rule number.</p>
     pub fn rule_number(mut self, input: i32) -> Self {
@@ -154,28 +164,20 @@ impl NetworkAclEntryBuilder {
     }
     /// <p>The rule number for the entry. ACL entries are processed in ascending order by rule number.</p>
     pub fn set_rule_number(mut self, input: std::option::Option<i32>) -> Self {
-        self.rule_number = input; self
+        self.rule_number = input;
+        self
     }
     /// Consumes the builder and constructs a [`NetworkAclEntry`](crate::types::NetworkAclEntry).
     pub fn build(self) -> crate::types::NetworkAclEntry {
         crate::types::NetworkAclEntry {
-            cidr_block: self.cidr_block
-            ,
-            egress: self.egress
-            ,
-            icmp_type_code: self.icmp_type_code
-            ,
-            ipv6_cidr_block: self.ipv6_cidr_block
-            ,
-            port_range: self.port_range
-            ,
-            protocol: self.protocol
-            ,
-            rule_action: self.rule_action
-            ,
-            rule_number: self.rule_number
-            ,
+            cidr_block: self.cidr_block,
+            egress: self.egress,
+            icmp_type_code: self.icmp_type_code,
+            ipv6_cidr_block: self.ipv6_cidr_block,
+            port_range: self.port_range,
+            protocol: self.protocol,
+            rule_action: self.rule_action,
+            rule_number: self.rule_number,
         }
     }
 }
-

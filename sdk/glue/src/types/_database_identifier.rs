@@ -3,7 +3,7 @@
 /// <p>A structure that describes a target database for resource linking.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DatabaseIdentifier  {
+pub struct DatabaseIdentifier {
     /// <p>The ID of the Data Catalog in which the database resides.</p>
     #[doc(hidden)]
     pub catalog_id: std::option::Option<std::string::String>,
@@ -13,11 +13,11 @@ pub struct DatabaseIdentifier  {
 }
 impl DatabaseIdentifier {
     /// <p>The ID of the Data Catalog in which the database resides.</p>
-    pub fn catalog_id(&self) -> std::option::Option<& str> {
+    pub fn catalog_id(&self) -> std::option::Option<&str> {
         self.catalog_id.as_deref()
     }
     /// <p>The name of the catalog database.</p>
-    pub fn database_name(&self) -> std::option::Option<& str> {
+    pub fn database_name(&self) -> std::option::Option<&str> {
         self.database_name.as_deref()
     }
 }
@@ -43,7 +43,8 @@ impl DatabaseIdentifierBuilder {
     }
     /// <p>The ID of the Data Catalog in which the database resides.</p>
     pub fn set_catalog_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.catalog_id = input; self
+        self.catalog_id = input;
+        self
     }
     /// <p>The name of the catalog database.</p>
     pub fn database_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -52,16 +53,14 @@ impl DatabaseIdentifierBuilder {
     }
     /// <p>The name of the catalog database.</p>
     pub fn set_database_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.database_name = input; self
+        self.database_name = input;
+        self
     }
     /// Consumes the builder and constructs a [`DatabaseIdentifier`](crate::types::DatabaseIdentifier).
     pub fn build(self) -> crate::types::DatabaseIdentifier {
         crate::types::DatabaseIdentifier {
-            catalog_id: self.catalog_id
-            ,
-            database_name: self.database_name
-            ,
+            catalog_id: self.catalog_id,
+            database_name: self.database_name,
         }
     }
 }
-

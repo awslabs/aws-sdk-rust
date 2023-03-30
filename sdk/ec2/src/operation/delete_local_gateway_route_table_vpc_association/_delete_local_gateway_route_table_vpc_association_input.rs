@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteLocalGatewayRouteTableVpcAssociationInput  {
+pub struct DeleteLocalGatewayRouteTableVpcAssociationInput {
     /// <p>The ID of the association.</p>
     #[doc(hidden)]
     pub local_gateway_route_table_vpc_association_id: std::option::Option<std::string::String>,
@@ -12,7 +12,7 @@ pub struct DeleteLocalGatewayRouteTableVpcAssociationInput  {
 }
 impl DeleteLocalGatewayRouteTableVpcAssociationInput {
     /// <p>The ID of the association.</p>
-    pub fn local_gateway_route_table_vpc_association_id(&self) -> std::option::Option<& str> {
+    pub fn local_gateway_route_table_vpc_association_id(&self) -> std::option::Option<&str> {
         self.local_gateway_route_table_vpc_association_id.as_deref()
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
@@ -22,7 +22,7 @@ impl DeleteLocalGatewayRouteTableVpcAssociationInput {
 }
 impl DeleteLocalGatewayRouteTableVpcAssociationInput {
     /// Creates a new builder-style object to manufacture [`DeleteLocalGatewayRouteTableVpcAssociationInput`](crate::operation::delete_local_gateway_route_table_vpc_association::DeleteLocalGatewayRouteTableVpcAssociationInput).
-    pub fn builder() -> crate::operation::delete_local_gateway_route_table_vpc_association::builders::DeleteLocalGatewayRouteTableVpcAssociationInputBuilder {
+    pub fn builder() -> crate::operation::delete_local_gateway_route_table_vpc_association::builders::DeleteLocalGatewayRouteTableVpcAssociationInputBuilder{
         crate::operation::delete_local_gateway_route_table_vpc_association::builders::DeleteLocalGatewayRouteTableVpcAssociationInputBuilder::default()
     }
 }
@@ -31,18 +31,26 @@ impl DeleteLocalGatewayRouteTableVpcAssociationInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct DeleteLocalGatewayRouteTableVpcAssociationInputBuilder {
-    pub(crate) local_gateway_route_table_vpc_association_id: std::option::Option<std::string::String>,
+    pub(crate) local_gateway_route_table_vpc_association_id:
+        std::option::Option<std::string::String>,
     pub(crate) dry_run: std::option::Option<bool>,
 }
 impl DeleteLocalGatewayRouteTableVpcAssociationInputBuilder {
     /// <p>The ID of the association.</p>
-    pub fn local_gateway_route_table_vpc_association_id(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn local_gateway_route_table_vpc_association_id(
+        mut self,
+        input: impl Into<std::string::String>,
+    ) -> Self {
         self.local_gateway_route_table_vpc_association_id = Some(input.into());
         self
     }
     /// <p>The ID of the association.</p>
-    pub fn set_local_gateway_route_table_vpc_association_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.local_gateway_route_table_vpc_association_id = input; self
+    pub fn set_local_gateway_route_table_vpc_association_id(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.local_gateway_route_table_vpc_association_id = input;
+        self
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn dry_run(mut self, input: bool) -> Self {
@@ -51,10 +59,11 @@ impl DeleteLocalGatewayRouteTableVpcAssociationInputBuilder {
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn set_dry_run(mut self, input: std::option::Option<bool>) -> Self {
-        self.dry_run = input; self
+        self.dry_run = input;
+        self
     }
     /// Consumes the builder and constructs a [`DeleteLocalGatewayRouteTableVpcAssociationInput`](crate::operation::delete_local_gateway_route_table_vpc_association::DeleteLocalGatewayRouteTableVpcAssociationInput).
-    pub fn build(self) -> Result<crate::operation::delete_local_gateway_route_table_vpc_association::DeleteLocalGatewayRouteTableVpcAssociationInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> Result<crate::operation::delete_local_gateway_route_table_vpc_association::DeleteLocalGatewayRouteTableVpcAssociationInput, aws_smithy_http::operation::error::BuildError>{
         Ok(
             crate::operation::delete_local_gateway_route_table_vpc_association::DeleteLocalGatewayRouteTableVpcAssociationInput {
                 local_gateway_route_table_vpc_association_id: self.local_gateway_route_table_vpc_association_id
@@ -65,4 +74,3 @@ impl DeleteLocalGatewayRouteTableVpcAssociationInputBuilder {
         )
     }
 }
-

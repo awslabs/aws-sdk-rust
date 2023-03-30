@@ -2,26 +2,29 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetVoiceConnectorEmergencyCallingConfigurationOutput  {
+pub struct GetVoiceConnectorEmergencyCallingConfigurationOutput {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
-    pub emergency_calling_configuration: std::option::Option<crate::types::EmergencyCallingConfiguration>,
+    pub emergency_calling_configuration:
+        std::option::Option<crate::types::EmergencyCallingConfiguration>,
     _request_id: Option<String>,
 }
 impl GetVoiceConnectorEmergencyCallingConfigurationOutput {
     #[allow(missing_docs)] // documentation missing in model
-    pub fn emergency_calling_configuration(&self) -> std::option::Option<& crate::types::EmergencyCallingConfiguration> {
+    pub fn emergency_calling_configuration(
+        &self,
+    ) -> std::option::Option<&crate::types::EmergencyCallingConfiguration> {
         self.emergency_calling_configuration.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for GetVoiceConnectorEmergencyCallingConfigurationOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl GetVoiceConnectorEmergencyCallingConfigurationOutput {
     /// Creates a new builder-style object to manufacture [`GetVoiceConnectorEmergencyCallingConfigurationOutput`](crate::operation::get_voice_connector_emergency_calling_configuration::GetVoiceConnectorEmergencyCallingConfigurationOutput).
-    pub fn builder() -> crate::operation::get_voice_connector_emergency_calling_configuration::builders::GetVoiceConnectorEmergencyCallingConfigurationOutputBuilder {
+    pub fn builder() -> crate::operation::get_voice_connector_emergency_calling_configuration::builders::GetVoiceConnectorEmergencyCallingConfigurationOutputBuilder{
         crate::operation::get_voice_connector_emergency_calling_configuration::builders::GetVoiceConnectorEmergencyCallingConfigurationOutputBuilder::default()
     }
 }
@@ -30,30 +33,38 @@ impl GetVoiceConnectorEmergencyCallingConfigurationOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct GetVoiceConnectorEmergencyCallingConfigurationOutputBuilder {
-    pub(crate) emergency_calling_configuration: std::option::Option<crate::types::EmergencyCallingConfiguration>,
+    pub(crate) emergency_calling_configuration:
+        std::option::Option<crate::types::EmergencyCallingConfiguration>,
     _request_id: Option<String>,
 }
 impl GetVoiceConnectorEmergencyCallingConfigurationOutputBuilder {
     #[allow(missing_docs)] // documentation missing in model
-    pub fn emergency_calling_configuration(mut self, input: crate::types::EmergencyCallingConfiguration) -> Self {
+    pub fn emergency_calling_configuration(
+        mut self,
+        input: crate::types::EmergencyCallingConfiguration,
+    ) -> Self {
         self.emergency_calling_configuration = Some(input);
         self
     }
     #[allow(missing_docs)] // documentation missing in model
-    pub fn set_emergency_calling_configuration(mut self, input: std::option::Option<crate::types::EmergencyCallingConfiguration>) -> Self {
-        self.emergency_calling_configuration = input; self
+    pub fn set_emergency_calling_configuration(
+        mut self,
+        input: std::option::Option<crate::types::EmergencyCallingConfiguration>,
+    ) -> Self {
+        self.emergency_calling_configuration = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`GetVoiceConnectorEmergencyCallingConfigurationOutput`](crate::operation::get_voice_connector_emergency_calling_configuration::GetVoiceConnectorEmergencyCallingConfigurationOutput).
-    pub fn build(self) -> crate::operation::get_voice_connector_emergency_calling_configuration::GetVoiceConnectorEmergencyCallingConfigurationOutput {
+    pub fn build(self) -> crate::operation::get_voice_connector_emergency_calling_configuration::GetVoiceConnectorEmergencyCallingConfigurationOutput{
         crate::operation::get_voice_connector_emergency_calling_configuration::GetVoiceConnectorEmergencyCallingConfigurationOutput {
             emergency_calling_configuration: self.emergency_calling_configuration
             ,
@@ -61,4 +72,3 @@ impl GetVoiceConnectorEmergencyCallingConfigurationOutputBuilder {
         }
     }
 }
-

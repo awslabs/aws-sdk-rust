@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateFhirDatastoreOutput  {
+pub struct CreateFhirDatastoreOutput {
     /// <p>The AWS-generated Data Store id. This id is in the output from the initial Data Store creation call.</p>
     #[doc(hidden)]
     pub datastore_id: std::option::Option<std::string::String>,
@@ -19,31 +19,33 @@ pub struct CreateFhirDatastoreOutput  {
 }
 impl CreateFhirDatastoreOutput {
     /// <p>The AWS-generated Data Store id. This id is in the output from the initial Data Store creation call.</p>
-    pub fn datastore_id(&self) -> std::option::Option<& str> {
+    pub fn datastore_id(&self) -> std::option::Option<&str> {
         self.datastore_id.as_deref()
     }
     /// <p>The datastore ARN is generated during the creation of the Data Store and can be found in the output from the initial Data Store creation call.</p>
-    pub fn datastore_arn(&self) -> std::option::Option<& str> {
+    pub fn datastore_arn(&self) -> std::option::Option<&str> {
         self.datastore_arn.as_deref()
     }
     /// <p>The status of the FHIR Data Store. Possible statuses are ‘CREATING’, ‘ACTIVE’, ‘DELETING’, ‘DELETED’.</p>
-    pub fn datastore_status(&self) -> std::option::Option<& crate::types::DatastoreStatus> {
+    pub fn datastore_status(&self) -> std::option::Option<&crate::types::DatastoreStatus> {
         self.datastore_status.as_ref()
     }
     /// <p>The AWS endpoint for the created Data Store. For preview, only US-east-1 endpoints are supported.</p>
-    pub fn datastore_endpoint(&self) -> std::option::Option<& str> {
+    pub fn datastore_endpoint(&self) -> std::option::Option<&str> {
         self.datastore_endpoint.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for CreateFhirDatastoreOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl CreateFhirDatastoreOutput {
     /// Creates a new builder-style object to manufacture [`CreateFhirDatastoreOutput`](crate::operation::create_fhir_datastore::CreateFhirDatastoreOutput).
-    pub fn builder() -> crate::operation::create_fhir_datastore::builders::CreateFhirDatastoreOutputBuilder {
-        crate::operation::create_fhir_datastore::builders::CreateFhirDatastoreOutputBuilder::default()
+    pub fn builder(
+    ) -> crate::operation::create_fhir_datastore::builders::CreateFhirDatastoreOutputBuilder {
+        crate::operation::create_fhir_datastore::builders::CreateFhirDatastoreOutputBuilder::default(
+        )
     }
 }
 
@@ -65,7 +67,8 @@ impl CreateFhirDatastoreOutputBuilder {
     }
     /// <p>The AWS-generated Data Store id. This id is in the output from the initial Data Store creation call.</p>
     pub fn set_datastore_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.datastore_id = input; self
+        self.datastore_id = input;
+        self
     }
     /// <p>The datastore ARN is generated during the creation of the Data Store and can be found in the output from the initial Data Store creation call.</p>
     pub fn datastore_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -74,7 +77,8 @@ impl CreateFhirDatastoreOutputBuilder {
     }
     /// <p>The datastore ARN is generated during the creation of the Data Store and can be found in the output from the initial Data Store creation call.</p>
     pub fn set_datastore_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.datastore_arn = input; self
+        self.datastore_arn = input;
+        self
     }
     /// <p>The status of the FHIR Data Store. Possible statuses are ‘CREATING’, ‘ACTIVE’, ‘DELETING’, ‘DELETED’.</p>
     pub fn datastore_status(mut self, input: crate::types::DatastoreStatus) -> Self {
@@ -82,8 +86,12 @@ impl CreateFhirDatastoreOutputBuilder {
         self
     }
     /// <p>The status of the FHIR Data Store. Possible statuses are ‘CREATING’, ‘ACTIVE’, ‘DELETING’, ‘DELETED’.</p>
-    pub fn set_datastore_status(mut self, input: std::option::Option<crate::types::DatastoreStatus>) -> Self {
-        self.datastore_status = input; self
+    pub fn set_datastore_status(
+        mut self,
+        input: std::option::Option<crate::types::DatastoreStatus>,
+    ) -> Self {
+        self.datastore_status = input;
+        self
     }
     /// <p>The AWS endpoint for the created Data Store. For preview, only US-east-1 endpoints are supported.</p>
     pub fn datastore_endpoint(mut self, input: impl Into<std::string::String>) -> Self {
@@ -91,31 +99,30 @@ impl CreateFhirDatastoreOutputBuilder {
         self
     }
     /// <p>The AWS endpoint for the created Data Store. For preview, only US-east-1 endpoints are supported.</p>
-    pub fn set_datastore_endpoint(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.datastore_endpoint = input; self
+    pub fn set_datastore_endpoint(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.datastore_endpoint = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`CreateFhirDatastoreOutput`](crate::operation::create_fhir_datastore::CreateFhirDatastoreOutput).
     pub fn build(self) -> crate::operation::create_fhir_datastore::CreateFhirDatastoreOutput {
         crate::operation::create_fhir_datastore::CreateFhirDatastoreOutput {
-            datastore_id: self.datastore_id
-            ,
-            datastore_arn: self.datastore_arn
-            ,
-            datastore_status: self.datastore_status
-            ,
-            datastore_endpoint: self.datastore_endpoint
-            ,
+            datastore_id: self.datastore_id,
+            datastore_arn: self.datastore_arn,
+            datastore_status: self.datastore_status,
+            datastore_endpoint: self.datastore_endpoint,
             _request_id: self._request_id,
         }
     }
 }
-

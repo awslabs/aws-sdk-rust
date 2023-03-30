@@ -4,68 +4,91 @@ pub use crate::operation::update_function_url_config::_update_function_url_confi
 pub use crate::operation::update_function_url_config::_update_function_url_config_input::UpdateFunctionUrlConfigInputBuilder;
 
 /// Fluent builder constructing a request to `UpdateFunctionUrlConfig`.
-/// 
+///
 /// <p>Updates the configuration for a Lambda function URL.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct UpdateFunctionUrlConfigFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::update_function_url_config::builders::UpdateFunctionUrlConfigInputBuilder
-            }
-impl UpdateFunctionUrlConfigFluentBuilder  {
+    handle: std::sync::Arc<crate::client::Handle>,
+    inner:
+        crate::operation::update_function_url_config::builders::UpdateFunctionUrlConfigInputBuilder,
+}
+impl UpdateFunctionUrlConfigFluentBuilder {
     /// Creates a new `UpdateFunctionUrlConfig`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
-                    /// sent. The operation's inner [http::Request] can be modified as well.
-                    pub async fn customize(self) -> std::result::Result<
-                        crate::client::customize::CustomizableOperation<crate::operation::update_function_url_config::UpdateFunctionUrlConfig, aws_http::retry::AwsResponseRetryClassifier,>,
-                        aws_smithy_http::result::SdkError<crate::operation::update_function_url_config::UpdateFunctionUrlConfigError>
-                    >  {
-                        let handle = self.handle.clone();
-                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-                    }
-    
-                    /// Sends the request and returns the response.
-                    ///
-                    /// If an error occurs, an `SdkError` will be returned with additional details that
-                    /// can be matched against.
-                    ///
-                    /// By default, any retryable failures will be retried twice. Retry behavior
-                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                    /// set when configuring the client.
-                    pub async fn send(self) -> std::result::Result<crate::operation::update_function_url_config::UpdateFunctionUrlConfigOutput, aws_smithy_http::result::SdkError<crate::operation::update_function_url_config::UpdateFunctionUrlConfigError>>
-                     {
-                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&self.handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        self.handle.client.call(op).await
-                    }
-    /// <p>The name of the Lambda function.</p> 
-    /// <p class="title"> <b>Name formats</b> </p> 
-    /// <ul> 
-    /// <li> <p> <b>Function name</b> – <code>my-function</code>.</p> </li> 
-    /// <li> <p> <b>Function ARN</b> – <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.</p> </li> 
-    /// <li> <p> <b>Partial ARN</b> – <code>123456789012:function:my-function</code>.</p> </li> 
-    /// </ul> 
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle,
+            inner: Default::default(),
+        }
+    }
+
+    /// Consume this builder, creating a customizable operation that can be modified before being
+    /// sent. The operation's inner [http::Request] can be modified as well.
+    pub async fn customize(
+        self,
+    ) -> std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::update_function_url_config::UpdateFunctionUrlConfig,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::result::SdkError<
+            crate::operation::update_function_url_config::UpdateFunctionUrlConfigError,
+        >,
+    > {
+        let handle = self.handle.clone();
+        let operation = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+    }
+
+    /// Sends the request and returns the response.
+    ///
+    /// If an error occurs, an `SdkError` will be returned with additional details that
+    /// can be matched against.
+    ///
+    /// By default, any retryable failures will be retried twice. Retry behavior
+    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+    /// set when configuring the client.
+    pub async fn send(
+        self,
+    ) -> std::result::Result<
+        crate::operation::update_function_url_config::UpdateFunctionUrlConfigOutput,
+        aws_smithy_http::result::SdkError<
+            crate::operation::update_function_url_config::UpdateFunctionUrlConfigError,
+        >,
+    > {
+        let op = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&self.handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        self.handle.client.call(op).await
+    }
+    /// <p>The name of the Lambda function.</p>
+    /// <p class="title"> <b>Name formats</b> </p>
+    /// <ul>
+    /// <li> <p> <b>Function name</b> – <code>my-function</code>.</p> </li>
+    /// <li> <p> <b>Function ARN</b> – <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.</p> </li>
+    /// <li> <p> <b>Partial ARN</b> – <code>123456789012:function:my-function</code>.</p> </li>
+    /// </ul>
     /// <p>The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64 characters in length.</p>
     pub fn function_name(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.function_name(input.into());
         self
     }
-    /// <p>The name of the Lambda function.</p> 
-    /// <p class="title"> <b>Name formats</b> </p> 
-    /// <ul> 
-    /// <li> <p> <b>Function name</b> – <code>my-function</code>.</p> </li> 
-    /// <li> <p> <b>Function ARN</b> – <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.</p> </li> 
-    /// <li> <p> <b>Partial ARN</b> – <code>123456789012:function:my-function</code>.</p> </li> 
-    /// </ul> 
+    /// <p>The name of the Lambda function.</p>
+    /// <p class="title"> <b>Name formats</b> </p>
+    /// <ul>
+    /// <li> <p> <b>Function name</b> – <code>my-function</code>.</p> </li>
+    /// <li> <p> <b>Function ARN</b> – <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.</p> </li>
+    /// <li> <p> <b>Partial ARN</b> – <code>123456789012:function:my-function</code>.</p> </li>
+    /// </ul>
     /// <p>The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64 characters in length.</p>
     pub fn set_function_name(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.inner = self.inner.set_function_name(input);
@@ -87,7 +110,10 @@ impl UpdateFunctionUrlConfigFluentBuilder  {
         self
     }
     /// <p>The type of authentication that your function URL uses. Set to <code>AWS_IAM</code> if you want to restrict access to authenticated IAM users only. Set to <code>NONE</code> if you want to bypass IAM authentication to create a public endpoint. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/urls-auth.html">Security and auth model for Lambda function URLs</a>.</p>
-    pub fn set_auth_type(mut self, input: std::option::Option<crate::types::FunctionUrlAuthType>) -> Self {
+    pub fn set_auth_type(
+        mut self,
+        input: std::option::Option<crate::types::FunctionUrlAuthType>,
+    ) -> Self {
         self.inner = self.inner.set_auth_type(input);
         self
     }
@@ -102,4 +128,3 @@ impl UpdateFunctionUrlConfigFluentBuilder  {
         self
     }
 }
-

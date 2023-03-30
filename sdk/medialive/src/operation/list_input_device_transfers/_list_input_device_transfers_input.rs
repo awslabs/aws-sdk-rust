@@ -3,7 +3,7 @@
 /// Placeholder documentation for ListInputDeviceTransfersRequest
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListInputDeviceTransfersInput  {
+pub struct ListInputDeviceTransfersInput {
     /// Placeholder documentation for MaxResults
     #[doc(hidden)]
     pub max_results: i32,
@@ -20,17 +20,19 @@ impl ListInputDeviceTransfersInput {
         self.max_results
     }
     /// Placeholder documentation for __string
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
     /// Placeholder documentation for __string
-    pub fn transfer_type(&self) -> std::option::Option<& str> {
+    pub fn transfer_type(&self) -> std::option::Option<&str> {
         self.transfer_type.as_deref()
     }
 }
 impl ListInputDeviceTransfersInput {
     /// Creates a new builder-style object to manufacture [`ListInputDeviceTransfersInput`](crate::operation::list_input_device_transfers::ListInputDeviceTransfersInput).
-    pub fn builder() -> crate::operation::list_input_device_transfers::builders::ListInputDeviceTransfersInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::list_input_device_transfers::builders::ListInputDeviceTransfersInputBuilder
+    {
         crate::operation::list_input_device_transfers::builders::ListInputDeviceTransfersInputBuilder::default()
     }
 }
@@ -51,7 +53,8 @@ impl ListInputDeviceTransfersInputBuilder {
     }
     /// Placeholder documentation for MaxResults
     pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_results = input; self
+        self.max_results = input;
+        self
     }
     /// Placeholder documentation for __string
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -60,7 +63,8 @@ impl ListInputDeviceTransfersInputBuilder {
     }
     /// Placeholder documentation for __string
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input; self
+        self.next_token = input;
+        self
     }
     /// Placeholder documentation for __string
     pub fn transfer_type(mut self, input: impl Into<std::string::String>) -> Self {
@@ -69,21 +73,22 @@ impl ListInputDeviceTransfersInputBuilder {
     }
     /// Placeholder documentation for __string
     pub fn set_transfer_type(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.transfer_type = input; self
+        self.transfer_type = input;
+        self
     }
     /// Consumes the builder and constructs a [`ListInputDeviceTransfersInput`](crate::operation::list_input_device_transfers::ListInputDeviceTransfersInput).
-    pub fn build(self) -> Result<crate::operation::list_input_device_transfers::ListInputDeviceTransfersInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::list_input_device_transfers::ListInputDeviceTransfersInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::list_input_device_transfers::ListInputDeviceTransfersInput {
-                max_results: self.max_results
-                    .unwrap_or_default()
-                ,
-                next_token: self.next_token
-                ,
-                transfer_type: self.transfer_type
-                ,
-            }
+                max_results: self.max_results.unwrap_or_default(),
+                next_token: self.next_token,
+                transfer_type: self.transfer_type,
+            },
         )
     }
 }
-

@@ -2,20 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteAppInstanceUserInput  {
+pub struct DeleteAppInstanceUserInput {
     /// <p>The ARN of the user request being deleted.</p>
     #[doc(hidden)]
     pub app_instance_user_arn: std::option::Option<std::string::String>,
 }
 impl DeleteAppInstanceUserInput {
     /// <p>The ARN of the user request being deleted.</p>
-    pub fn app_instance_user_arn(&self) -> std::option::Option<& str> {
+    pub fn app_instance_user_arn(&self) -> std::option::Option<&str> {
         self.app_instance_user_arn.as_deref()
     }
 }
 impl DeleteAppInstanceUserInput {
     /// Creates a new builder-style object to manufacture [`DeleteAppInstanceUserInput`](crate::operation::delete_app_instance_user::DeleteAppInstanceUserInput).
-    pub fn builder() -> crate::operation::delete_app_instance_user::builders::DeleteAppInstanceUserInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::delete_app_instance_user::builders::DeleteAppInstanceUserInputBuilder
+    {
         crate::operation::delete_app_instance_user::builders::DeleteAppInstanceUserInputBuilder::default()
     }
 }
@@ -33,17 +35,24 @@ impl DeleteAppInstanceUserInputBuilder {
         self
     }
     /// <p>The ARN of the user request being deleted.</p>
-    pub fn set_app_instance_user_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.app_instance_user_arn = input; self
+    pub fn set_app_instance_user_arn(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.app_instance_user_arn = input;
+        self
     }
     /// Consumes the builder and constructs a [`DeleteAppInstanceUserInput`](crate::operation::delete_app_instance_user::DeleteAppInstanceUserInput).
-    pub fn build(self) -> Result<crate::operation::delete_app_instance_user::DeleteAppInstanceUserInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::delete_app_instance_user::DeleteAppInstanceUserInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::delete_app_instance_user::DeleteAppInstanceUserInput {
-                app_instance_user_arn: self.app_instance_user_arn
-                ,
-            }
+                app_instance_user_arn: self.app_instance_user_arn,
+            },
         )
     }
 }
-

@@ -9,4 +9,3 @@ pub mod get_connection;
 
 /// Types for the `PostToConnection` operation.
 pub mod post_to_connection;
-

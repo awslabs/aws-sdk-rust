@@ -2,17 +2,17 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DisableAwsOrganizationsAccessOutput  {
+pub struct DisableAwsOrganizationsAccessOutput {
     _request_id: Option<String>,
 }
 impl aws_http::request_id::RequestId for DisableAwsOrganizationsAccessOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl DisableAwsOrganizationsAccessOutput {
     /// Creates a new builder-style object to manufacture [`DisableAwsOrganizationsAccessOutput`](crate::operation::disable_aws_organizations_access::DisableAwsOrganizationsAccessOutput).
-    pub fn builder() -> crate::operation::disable_aws_organizations_access::builders::DisableAwsOrganizationsAccessOutputBuilder {
+    pub fn builder() -> crate::operation::disable_aws_organizations_access::builders::DisableAwsOrganizationsAccessOutputBuilder{
         crate::operation::disable_aws_organizations_access::builders::DisableAwsOrganizationsAccessOutputBuilder::default()
     }
 }
@@ -25,19 +25,21 @@ pub struct DisableAwsOrganizationsAccessOutputBuilder {
 }
 impl DisableAwsOrganizationsAccessOutputBuilder {
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`DisableAwsOrganizationsAccessOutput`](crate::operation::disable_aws_organizations_access::DisableAwsOrganizationsAccessOutput).
-    pub fn build(self) -> crate::operation::disable_aws_organizations_access::DisableAwsOrganizationsAccessOutput {
+    pub fn build(
+        self,
+    ) -> crate::operation::disable_aws_organizations_access::DisableAwsOrganizationsAccessOutput
+    {
         crate::operation::disable_aws_organizations_access::DisableAwsOrganizationsAccessOutput {
             _request_id: self._request_id,
         }
     }
 }
-

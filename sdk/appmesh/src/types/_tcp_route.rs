@@ -3,7 +3,7 @@
 /// <p>An object that represents a TCP route type.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct TcpRoute  {
+pub struct TcpRoute {
     /// <p>The action to take if a match is determined.</p>
     #[doc(hidden)]
     pub action: std::option::Option<crate::types::TcpRouteAction>,
@@ -16,15 +16,15 @@ pub struct TcpRoute  {
 }
 impl TcpRoute {
     /// <p>The action to take if a match is determined.</p>
-    pub fn action(&self) -> std::option::Option<& crate::types::TcpRouteAction> {
+    pub fn action(&self) -> std::option::Option<&crate::types::TcpRouteAction> {
         self.action.as_ref()
     }
     /// <p>An object that represents types of timeouts. </p>
-    pub fn timeout(&self) -> std::option::Option<& crate::types::TcpTimeout> {
+    pub fn timeout(&self) -> std::option::Option<&crate::types::TcpTimeout> {
         self.timeout.as_ref()
     }
     /// <p>An object that represents the criteria for determining a request match.</p>
-    pub fn r#match(&self) -> std::option::Option<& crate::types::TcpRouteMatch> {
+    pub fn r#match(&self) -> std::option::Option<&crate::types::TcpRouteMatch> {
         self.r#match.as_ref()
     }
 }
@@ -51,7 +51,8 @@ impl TcpRouteBuilder {
     }
     /// <p>The action to take if a match is determined.</p>
     pub fn set_action(mut self, input: std::option::Option<crate::types::TcpRouteAction>) -> Self {
-        self.action = input; self
+        self.action = input;
+        self
     }
     /// <p>An object that represents types of timeouts. </p>
     pub fn timeout(mut self, input: crate::types::TcpTimeout) -> Self {
@@ -60,7 +61,8 @@ impl TcpRouteBuilder {
     }
     /// <p>An object that represents types of timeouts. </p>
     pub fn set_timeout(mut self, input: std::option::Option<crate::types::TcpTimeout>) -> Self {
-        self.timeout = input; self
+        self.timeout = input;
+        self
     }
     /// <p>An object that represents the criteria for determining a request match.</p>
     pub fn r#match(mut self, input: crate::types::TcpRouteMatch) -> Self {
@@ -69,18 +71,15 @@ impl TcpRouteBuilder {
     }
     /// <p>An object that represents the criteria for determining a request match.</p>
     pub fn set_match(mut self, input: std::option::Option<crate::types::TcpRouteMatch>) -> Self {
-        self.r#match = input; self
+        self.r#match = input;
+        self
     }
     /// Consumes the builder and constructs a [`TcpRoute`](crate::types::TcpRoute).
     pub fn build(self) -> crate::types::TcpRoute {
         crate::types::TcpRoute {
-            action: self.action
-            ,
-            timeout: self.timeout
-            ,
-            r#match: self.r#match
-            ,
+            action: self.action,
+            timeout: self.timeout,
+            r#match: self.r#match,
         }
     }
 }
-

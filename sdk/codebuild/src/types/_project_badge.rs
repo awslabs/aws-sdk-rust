@@ -3,7 +3,7 @@
 /// <p>Information about the build badge for the build project.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ProjectBadge  {
+pub struct ProjectBadge {
     /// <p>Set this to true to generate a publicly accessible URL for your project's build badge.</p>
     #[doc(hidden)]
     pub badge_enabled: bool,
@@ -17,7 +17,7 @@ impl ProjectBadge {
         self.badge_enabled
     }
     /// <p>The publicly-accessible URL through which you can access the build badge for your project. </p>
-    pub fn badge_request_url(&self) -> std::option::Option<& str> {
+    pub fn badge_request_url(&self) -> std::option::Option<&str> {
         self.badge_request_url.as_deref()
     }
 }
@@ -43,7 +43,8 @@ impl ProjectBadgeBuilder {
     }
     /// <p>Set this to true to generate a publicly accessible URL for your project's build badge.</p>
     pub fn set_badge_enabled(mut self, input: std::option::Option<bool>) -> Self {
-        self.badge_enabled = input; self
+        self.badge_enabled = input;
+        self
     }
     /// <p>The publicly-accessible URL through which you can access the build badge for your project. </p>
     pub fn badge_request_url(mut self, input: impl Into<std::string::String>) -> Self {
@@ -51,18 +52,18 @@ impl ProjectBadgeBuilder {
         self
     }
     /// <p>The publicly-accessible URL through which you can access the build badge for your project. </p>
-    pub fn set_badge_request_url(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.badge_request_url = input; self
+    pub fn set_badge_request_url(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.badge_request_url = input;
+        self
     }
     /// Consumes the builder and constructs a [`ProjectBadge`](crate::types::ProjectBadge).
     pub fn build(self) -> crate::types::ProjectBadge {
         crate::types::ProjectBadge {
-            badge_enabled: self.badge_enabled
-                .unwrap_or_default()
-            ,
-            badge_request_url: self.badge_request_url
-            ,
+            badge_enabled: self.badge_enabled.unwrap_or_default(),
+            badge_request_url: self.badge_request_url,
         }
     }
 }
-

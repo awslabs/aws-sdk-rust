@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-/// 
+///
 /// Here is an example of how you can make a match expression forward-compatible:
-/// 
+///
 /// ```text
 /// # let updateparamtype = unimplemented!();
 /// match updateparamtype {
@@ -51,14 +51,22 @@
 /// Specifically, when `updateparamtype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `UpdateParamType::NewFeature` also yielding `"NewFeature"`.
-/// 
+///
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
 pub enum UpdateParamType {
     #[allow(missing_docs)] // documentation missing in model
     AddonVersion,
@@ -107,83 +115,108 @@ pub enum UpdateParamType {
     #[allow(missing_docs)] // documentation missing in model
     Version,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::primitives::UnknownVariantValue)
+    Unknown(crate::primitives::UnknownVariantValue),
 }
 impl std::convert::From<&str> for UpdateParamType {
-                fn from(s: &str) -> Self {
-                    match s {
-                        "AddonVersion" => UpdateParamType::AddonVersion,
-"ClusterLogging" => UpdateParamType::ClusterLogging,
-"DesiredSize" => UpdateParamType::DesiredSize,
-"EncryptionConfig" => UpdateParamType::EncryptionConfig,
-"EndpointPrivateAccess" => UpdateParamType::EndpointPrivateAccess,
-"EndpointPublicAccess" => UpdateParamType::EndpointPublicAccess,
-"IdentityProviderConfig" => UpdateParamType::IdentityProviderConfig,
-"LabelsToAdd" => UpdateParamType::LabelsToAdd,
-"LabelsToRemove" => UpdateParamType::LabelsToRemove,
-"LaunchTemplateName" => UpdateParamType::LaunchTemplateName,
-"LaunchTemplateVersion" => UpdateParamType::LaunchTemplateVersion,
-"MaxSize" => UpdateParamType::MaxSize,
-"MaxUnavailable" => UpdateParamType::MaxUnavailable,
-"MaxUnavailablePercentage" => UpdateParamType::MaxUnavailablePercentage,
-"MinSize" => UpdateParamType::MinSize,
-"PlatformVersion" => UpdateParamType::PlatformVersion,
-"PublicAccessCidrs" => UpdateParamType::PublicAccessCidrs,
-"ReleaseVersion" => UpdateParamType::ReleaseVersion,
-"ResolveConflicts" => UpdateParamType::ResolveConflicts,
-"ServiceAccountRoleArn" => UpdateParamType::ServiceAccountRoleArn,
-"TaintsToAdd" => UpdateParamType::TaintsToAdd,
-"TaintsToRemove" => UpdateParamType::TaintsToRemove,
-"Version" => UpdateParamType::Version,
-other => UpdateParamType::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
-                    }
-                }
+    fn from(s: &str) -> Self {
+        match s {
+            "AddonVersion" => UpdateParamType::AddonVersion,
+            "ClusterLogging" => UpdateParamType::ClusterLogging,
+            "DesiredSize" => UpdateParamType::DesiredSize,
+            "EncryptionConfig" => UpdateParamType::EncryptionConfig,
+            "EndpointPrivateAccess" => UpdateParamType::EndpointPrivateAccess,
+            "EndpointPublicAccess" => UpdateParamType::EndpointPublicAccess,
+            "IdentityProviderConfig" => UpdateParamType::IdentityProviderConfig,
+            "LabelsToAdd" => UpdateParamType::LabelsToAdd,
+            "LabelsToRemove" => UpdateParamType::LabelsToRemove,
+            "LaunchTemplateName" => UpdateParamType::LaunchTemplateName,
+            "LaunchTemplateVersion" => UpdateParamType::LaunchTemplateVersion,
+            "MaxSize" => UpdateParamType::MaxSize,
+            "MaxUnavailable" => UpdateParamType::MaxUnavailable,
+            "MaxUnavailablePercentage" => UpdateParamType::MaxUnavailablePercentage,
+            "MinSize" => UpdateParamType::MinSize,
+            "PlatformVersion" => UpdateParamType::PlatformVersion,
+            "PublicAccessCidrs" => UpdateParamType::PublicAccessCidrs,
+            "ReleaseVersion" => UpdateParamType::ReleaseVersion,
+            "ResolveConflicts" => UpdateParamType::ResolveConflicts,
+            "ServiceAccountRoleArn" => UpdateParamType::ServiceAccountRoleArn,
+            "TaintsToAdd" => UpdateParamType::TaintsToAdd,
+            "TaintsToRemove" => UpdateParamType::TaintsToRemove,
+            "Version" => UpdateParamType::Version,
+            other => {
+                UpdateParamType::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
             }
-impl std::str::FromStr for UpdateParamType {
-                type Err = std::convert::Infallible;
-
-                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-                    Ok(UpdateParamType::from(s))
-                }
-            }
-impl UpdateParamType {
-                /// Returns the `&str` value of the enum member.
-                pub fn as_str(&self) -> &str {
-                    match self {
-    UpdateParamType::AddonVersion => "AddonVersion",
-    UpdateParamType::ClusterLogging => "ClusterLogging",
-    UpdateParamType::DesiredSize => "DesiredSize",
-    UpdateParamType::EncryptionConfig => "EncryptionConfig",
-    UpdateParamType::EndpointPrivateAccess => "EndpointPrivateAccess",
-    UpdateParamType::EndpointPublicAccess => "EndpointPublicAccess",
-    UpdateParamType::IdentityProviderConfig => "IdentityProviderConfig",
-    UpdateParamType::LabelsToAdd => "LabelsToAdd",
-    UpdateParamType::LabelsToRemove => "LabelsToRemove",
-    UpdateParamType::LaunchTemplateName => "LaunchTemplateName",
-    UpdateParamType::LaunchTemplateVersion => "LaunchTemplateVersion",
-    UpdateParamType::MaxSize => "MaxSize",
-    UpdateParamType::MaxUnavailable => "MaxUnavailable",
-    UpdateParamType::MaxUnavailablePercentage => "MaxUnavailablePercentage",
-    UpdateParamType::MinSize => "MinSize",
-    UpdateParamType::PlatformVersion => "PlatformVersion",
-    UpdateParamType::PublicAccessCidrs => "PublicAccessCidrs",
-    UpdateParamType::ReleaseVersion => "ReleaseVersion",
-    UpdateParamType::ResolveConflicts => "ResolveConflicts",
-    UpdateParamType::ServiceAccountRoleArn => "ServiceAccountRoleArn",
-    UpdateParamType::TaintsToAdd => "TaintsToAdd",
-    UpdateParamType::TaintsToRemove => "TaintsToRemove",
-    UpdateParamType::Version => "Version",
-    UpdateParamType::Unknown(value) => value.as_str()
+        }
+    }
 }
-                }
-                /// Returns all the `&str` representations of the enum members.
-                pub const fn values() -> &'static [&'static str] {
-                    &["AddonVersion", "ClusterLogging", "DesiredSize", "EncryptionConfig", "EndpointPrivateAccess", "EndpointPublicAccess", "IdentityProviderConfig", "LabelsToAdd", "LabelsToRemove", "LaunchTemplateName", "LaunchTemplateVersion", "MaxSize", "MaxUnavailable", "MaxUnavailablePercentage", "MinSize", "PlatformVersion", "PublicAccessCidrs", "ReleaseVersion", "ResolveConflicts", "ServiceAccountRoleArn", "TaintsToAdd", "TaintsToRemove", "Version"]
-                }
-            }
-impl AsRef<str> for UpdateParamType {
-                fn as_ref(&self) -> &str {
-                    self.as_str()
-                }
-            }
+impl std::str::FromStr for UpdateParamType {
+    type Err = std::convert::Infallible;
 
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(UpdateParamType::from(s))
+    }
+}
+impl UpdateParamType {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            UpdateParamType::AddonVersion => "AddonVersion",
+            UpdateParamType::ClusterLogging => "ClusterLogging",
+            UpdateParamType::DesiredSize => "DesiredSize",
+            UpdateParamType::EncryptionConfig => "EncryptionConfig",
+            UpdateParamType::EndpointPrivateAccess => "EndpointPrivateAccess",
+            UpdateParamType::EndpointPublicAccess => "EndpointPublicAccess",
+            UpdateParamType::IdentityProviderConfig => "IdentityProviderConfig",
+            UpdateParamType::LabelsToAdd => "LabelsToAdd",
+            UpdateParamType::LabelsToRemove => "LabelsToRemove",
+            UpdateParamType::LaunchTemplateName => "LaunchTemplateName",
+            UpdateParamType::LaunchTemplateVersion => "LaunchTemplateVersion",
+            UpdateParamType::MaxSize => "MaxSize",
+            UpdateParamType::MaxUnavailable => "MaxUnavailable",
+            UpdateParamType::MaxUnavailablePercentage => "MaxUnavailablePercentage",
+            UpdateParamType::MinSize => "MinSize",
+            UpdateParamType::PlatformVersion => "PlatformVersion",
+            UpdateParamType::PublicAccessCidrs => "PublicAccessCidrs",
+            UpdateParamType::ReleaseVersion => "ReleaseVersion",
+            UpdateParamType::ResolveConflicts => "ResolveConflicts",
+            UpdateParamType::ServiceAccountRoleArn => "ServiceAccountRoleArn",
+            UpdateParamType::TaintsToAdd => "TaintsToAdd",
+            UpdateParamType::TaintsToRemove => "TaintsToRemove",
+            UpdateParamType::Version => "Version",
+            UpdateParamType::Unknown(value) => value.as_str(),
+        }
+    }
+    /// Returns all the `&str` representations of the enum members.
+    pub const fn values() -> &'static [&'static str] {
+        &[
+            "AddonVersion",
+            "ClusterLogging",
+            "DesiredSize",
+            "EncryptionConfig",
+            "EndpointPrivateAccess",
+            "EndpointPublicAccess",
+            "IdentityProviderConfig",
+            "LabelsToAdd",
+            "LabelsToRemove",
+            "LaunchTemplateName",
+            "LaunchTemplateVersion",
+            "MaxSize",
+            "MaxUnavailable",
+            "MaxUnavailablePercentage",
+            "MinSize",
+            "PlatformVersion",
+            "PublicAccessCidrs",
+            "ReleaseVersion",
+            "ResolveConflicts",
+            "ServiceAccountRoleArn",
+            "TaintsToAdd",
+            "TaintsToRemove",
+            "Version",
+        ]
+    }
+}
+impl AsRef<str> for UpdateParamType {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}

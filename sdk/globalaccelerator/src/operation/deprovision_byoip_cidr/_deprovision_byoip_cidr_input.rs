@@ -2,20 +2,21 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeprovisionByoipCidrInput  {
+pub struct DeprovisionByoipCidrInput {
     /// <p>The address range, in CIDR notation. The prefix must be the same prefix that you specified when you provisioned the address range.</p>
     #[doc(hidden)]
     pub cidr: std::option::Option<std::string::String>,
 }
 impl DeprovisionByoipCidrInput {
     /// <p>The address range, in CIDR notation. The prefix must be the same prefix that you specified when you provisioned the address range.</p>
-    pub fn cidr(&self) -> std::option::Option<& str> {
+    pub fn cidr(&self) -> std::option::Option<&str> {
         self.cidr.as_deref()
     }
 }
 impl DeprovisionByoipCidrInput {
     /// Creates a new builder-style object to manufacture [`DeprovisionByoipCidrInput`](crate::operation::deprovision_byoip_cidr::DeprovisionByoipCidrInput).
-    pub fn builder() -> crate::operation::deprovision_byoip_cidr::builders::DeprovisionByoipCidrInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::deprovision_byoip_cidr::builders::DeprovisionByoipCidrInputBuilder {
         crate::operation::deprovision_byoip_cidr::builders::DeprovisionByoipCidrInputBuilder::default()
     }
 }
@@ -34,16 +35,16 @@ impl DeprovisionByoipCidrInputBuilder {
     }
     /// <p>The address range, in CIDR notation. The prefix must be the same prefix that you specified when you provisioned the address range.</p>
     pub fn set_cidr(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.cidr = input; self
+        self.cidr = input;
+        self
     }
     /// Consumes the builder and constructs a [`DeprovisionByoipCidrInput`](crate::operation::deprovision_byoip_cidr::DeprovisionByoipCidrInput).
-    pub fn build(self) -> Result<crate::operation::deprovision_byoip_cidr::DeprovisionByoipCidrInput, aws_smithy_http::operation::error::BuildError> {
-        Ok(
-            crate::operation::deprovision_byoip_cidr::DeprovisionByoipCidrInput {
-                cidr: self.cidr
-                ,
-            }
-        )
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::deprovision_byoip_cidr::DeprovisionByoipCidrInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        Ok(crate::operation::deprovision_byoip_cidr::DeprovisionByoipCidrInput { cidr: self.cidr })
     }
 }
-

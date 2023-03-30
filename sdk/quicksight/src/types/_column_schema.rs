@@ -3,7 +3,7 @@
 /// <p>The column schema.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ColumnSchema  {
+pub struct ColumnSchema {
     /// <p>The name of the column schema.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -16,15 +16,15 @@ pub struct ColumnSchema  {
 }
 impl ColumnSchema {
     /// <p>The name of the column schema.</p>
-    pub fn name(&self) -> std::option::Option<& str> {
+    pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>The data type of the column schema.</p>
-    pub fn data_type(&self) -> std::option::Option<& str> {
+    pub fn data_type(&self) -> std::option::Option<&str> {
         self.data_type.as_deref()
     }
     /// <p>The geographic role of the column schema.</p>
-    pub fn geographic_role(&self) -> std::option::Option<& str> {
+    pub fn geographic_role(&self) -> std::option::Option<&str> {
         self.geographic_role.as_deref()
     }
 }
@@ -51,7 +51,8 @@ impl ColumnSchemaBuilder {
     }
     /// <p>The name of the column schema.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input; self
+        self.name = input;
+        self
     }
     /// <p>The data type of the column schema.</p>
     pub fn data_type(mut self, input: impl Into<std::string::String>) -> Self {
@@ -60,7 +61,8 @@ impl ColumnSchemaBuilder {
     }
     /// <p>The data type of the column schema.</p>
     pub fn set_data_type(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.data_type = input; self
+        self.data_type = input;
+        self
     }
     /// <p>The geographic role of the column schema.</p>
     pub fn geographic_role(mut self, input: impl Into<std::string::String>) -> Self {
@@ -69,18 +71,15 @@ impl ColumnSchemaBuilder {
     }
     /// <p>The geographic role of the column schema.</p>
     pub fn set_geographic_role(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.geographic_role = input; self
+        self.geographic_role = input;
+        self
     }
     /// Consumes the builder and constructs a [`ColumnSchema`](crate::types::ColumnSchema).
     pub fn build(self) -> crate::types::ColumnSchema {
         crate::types::ColumnSchema {
-            name: self.name
-            ,
-            data_type: self.data_type
-            ,
-            geographic_role: self.geographic_role
-            ,
+            name: self.name,
+            data_type: self.data_type,
+            geographic_role: self.geographic_role,
         }
     }
 }
-

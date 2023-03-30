@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AnalyzeIdOutput  {
+pub struct AnalyzeIdOutput {
     /// <p>The list of documents processed by AnalyzeID. Includes a number denoting their place in the list and the response structure for the document.</p>
     #[doc(hidden)]
     pub identity_documents: std::option::Option<std::vec::Vec<crate::types::IdentityDocument>>,
@@ -16,23 +16,23 @@ pub struct AnalyzeIdOutput  {
 }
 impl AnalyzeIdOutput {
     /// <p>The list of documents processed by AnalyzeID. Includes a number denoting their place in the list and the response structure for the document.</p>
-    pub fn identity_documents(&self) -> std::option::Option<& [crate::types::IdentityDocument]> {
+    pub fn identity_documents(&self) -> std::option::Option<&[crate::types::IdentityDocument]> {
         self.identity_documents.as_deref()
     }
     /// <p>Information about the input document.</p>
-    pub fn document_metadata(&self) -> std::option::Option<& crate::types::DocumentMetadata> {
+    pub fn document_metadata(&self) -> std::option::Option<&crate::types::DocumentMetadata> {
         self.document_metadata.as_ref()
     }
     /// <p>The version of the AnalyzeIdentity API being used to process documents.</p>
-    pub fn analyze_id_model_version(&self) -> std::option::Option<& str> {
+    pub fn analyze_id_model_version(&self) -> std::option::Option<&str> {
         self.analyze_id_model_version.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for AnalyzeIdOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl AnalyzeIdOutput {
     /// Creates a new builder-style object to manufacture [`AnalyzeIdOutput`](crate::operation::analyze_id::AnalyzeIdOutput).
     pub fn builder() -> crate::operation::analyze_id::builders::AnalyzeIdOutputBuilder {
@@ -44,7 +44,8 @@ impl AnalyzeIdOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct AnalyzeIdOutputBuilder {
-    pub(crate) identity_documents: std::option::Option<std::vec::Vec<crate::types::IdentityDocument>>,
+    pub(crate) identity_documents:
+        std::option::Option<std::vec::Vec<crate::types::IdentityDocument>>,
     pub(crate) document_metadata: std::option::Option<crate::types::DocumentMetadata>,
     pub(crate) analyze_id_model_version: std::option::Option<std::string::String>,
     _request_id: Option<String>,
@@ -57,13 +58,17 @@ impl AnalyzeIdOutputBuilder {
     /// <p>The list of documents processed by AnalyzeID. Includes a number denoting their place in the list and the response structure for the document.</p>
     pub fn identity_documents(mut self, input: crate::types::IdentityDocument) -> Self {
         let mut v = self.identity_documents.unwrap_or_default();
-                        v.push(input);
-                        self.identity_documents = Some(v);
-                        self
+        v.push(input);
+        self.identity_documents = Some(v);
+        self
     }
     /// <p>The list of documents processed by AnalyzeID. Includes a number denoting their place in the list and the response structure for the document.</p>
-    pub fn set_identity_documents(mut self, input: std::option::Option<std::vec::Vec<crate::types::IdentityDocument>>) -> Self {
-        self.identity_documents = input; self
+    pub fn set_identity_documents(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::IdentityDocument>>,
+    ) -> Self {
+        self.identity_documents = input;
+        self
     }
     /// <p>Information about the input document.</p>
     pub fn document_metadata(mut self, input: crate::types::DocumentMetadata) -> Self {
@@ -71,8 +76,12 @@ impl AnalyzeIdOutputBuilder {
         self
     }
     /// <p>Information about the input document.</p>
-    pub fn set_document_metadata(mut self, input: std::option::Option<crate::types::DocumentMetadata>) -> Self {
-        self.document_metadata = input; self
+    pub fn set_document_metadata(
+        mut self,
+        input: std::option::Option<crate::types::DocumentMetadata>,
+    ) -> Self {
+        self.document_metadata = input;
+        self
     }
     /// <p>The version of the AnalyzeIdentity API being used to process documents.</p>
     pub fn analyze_id_model_version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -80,29 +89,29 @@ impl AnalyzeIdOutputBuilder {
         self
     }
     /// <p>The version of the AnalyzeIdentity API being used to process documents.</p>
-    pub fn set_analyze_id_model_version(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.analyze_id_model_version = input; self
+    pub fn set_analyze_id_model_version(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.analyze_id_model_version = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`AnalyzeIdOutput`](crate::operation::analyze_id::AnalyzeIdOutput).
     pub fn build(self) -> crate::operation::analyze_id::AnalyzeIdOutput {
         crate::operation::analyze_id::AnalyzeIdOutput {
-            identity_documents: self.identity_documents
-            ,
-            document_metadata: self.document_metadata
-            ,
-            analyze_id_model_version: self.analyze_id_model_version
-            ,
+            identity_documents: self.identity_documents,
+            document_metadata: self.document_metadata,
+            analyze_id_model_version: self.analyze_id_model_version,
             _request_id: self._request_id,
         }
     }
 }
-

@@ -2,17 +2,17 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AssociateConfigurationItemsToApplicationOutput  {
+pub struct AssociateConfigurationItemsToApplicationOutput {
     _request_id: Option<String>,
 }
 impl aws_http::request_id::RequestId for AssociateConfigurationItemsToApplicationOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl AssociateConfigurationItemsToApplicationOutput {
     /// Creates a new builder-style object to manufacture [`AssociateConfigurationItemsToApplicationOutput`](crate::operation::associate_configuration_items_to_application::AssociateConfigurationItemsToApplicationOutput).
-    pub fn builder() -> crate::operation::associate_configuration_items_to_application::builders::AssociateConfigurationItemsToApplicationOutputBuilder {
+    pub fn builder() -> crate::operation::associate_configuration_items_to_application::builders::AssociateConfigurationItemsToApplicationOutputBuilder{
         crate::operation::associate_configuration_items_to_application::builders::AssociateConfigurationItemsToApplicationOutputBuilder::default()
     }
 }
@@ -25,19 +25,18 @@ pub struct AssociateConfigurationItemsToApplicationOutputBuilder {
 }
 impl AssociateConfigurationItemsToApplicationOutputBuilder {
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`AssociateConfigurationItemsToApplicationOutput`](crate::operation::associate_configuration_items_to_application::AssociateConfigurationItemsToApplicationOutput).
-    pub fn build(self) -> crate::operation::associate_configuration_items_to_application::AssociateConfigurationItemsToApplicationOutput {
+    pub fn build(self) -> crate::operation::associate_configuration_items_to_application::AssociateConfigurationItemsToApplicationOutput{
         crate::operation::associate_configuration_items_to_application::AssociateConfigurationItemsToApplicationOutput {
             _request_id: self._request_id,
         }
     }
 }
-

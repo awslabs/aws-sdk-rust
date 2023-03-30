@@ -68,4 +68,3 @@ pub mod builders;
 
 /// Error types that AWS Performance Insights can respond with.
 pub mod error;
-

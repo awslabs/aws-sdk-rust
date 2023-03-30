@@ -3,7 +3,7 @@
 /// The request for a DeleteDataset operation.
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteDatasetInput  {
+pub struct DeleteDatasetInput {
     /// <p>A token that ensures idempotency. This token expires in 10 minutes.</p>
     #[doc(hidden)]
     pub client_token: std::option::Option<std::string::String>,
@@ -13,11 +13,11 @@ pub struct DeleteDatasetInput  {
 }
 impl DeleteDatasetInput {
     /// <p>A token that ensures idempotency. This token expires in 10 minutes.</p>
-    pub fn client_token(&self) -> std::option::Option<& str> {
+    pub fn client_token(&self) -> std::option::Option<&str> {
         self.client_token.as_deref()
     }
     /// <p>The unique identifier of the Dataset to be deleted.</p>
-    pub fn dataset_id(&self) -> std::option::Option<& str> {
+    pub fn dataset_id(&self) -> std::option::Option<&str> {
         self.dataset_id.as_deref()
     }
 }
@@ -43,7 +43,8 @@ impl DeleteDatasetInputBuilder {
     }
     /// <p>A token that ensures idempotency. This token expires in 10 minutes.</p>
     pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.client_token = input; self
+        self.client_token = input;
+        self
     }
     /// <p>The unique identifier of the Dataset to be deleted.</p>
     pub fn dataset_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -52,18 +53,19 @@ impl DeleteDatasetInputBuilder {
     }
     /// <p>The unique identifier of the Dataset to be deleted.</p>
     pub fn set_dataset_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.dataset_id = input; self
+        self.dataset_id = input;
+        self
     }
     /// Consumes the builder and constructs a [`DeleteDatasetInput`](crate::operation::delete_dataset::DeleteDatasetInput).
-    pub fn build(self) -> Result<crate::operation::delete_dataset::DeleteDatasetInput, aws_smithy_http::operation::error::BuildError> {
-        Ok(
-            crate::operation::delete_dataset::DeleteDatasetInput {
-                client_token: self.client_token
-                ,
-                dataset_id: self.dataset_id
-                ,
-            }
-        )
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::delete_dataset::DeleteDatasetInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        Ok(crate::operation::delete_dataset::DeleteDatasetInput {
+            client_token: self.client_token,
+            dataset_id: self.dataset_id,
+        })
     }
 }
-

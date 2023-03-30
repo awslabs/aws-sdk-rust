@@ -3,31 +3,34 @@
 /// <p>The parameters for using a Amazon SQS stream as a source.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct PipeTargetSqsQueueParameters  {
+pub struct PipeTargetSqsQueueParameters {
     /// <p>The FIFO message group ID to use as the target.</p>
     #[doc(hidden)]
     pub message_group_id: std::option::Option<std::string::String>,
-    /// <p>This parameter applies only to FIFO (first-in-first-out) queues.</p> 
+    /// <p>This parameter applies only to FIFO (first-in-first-out) queues.</p>
     /// <p>The token used for deduplication of sent messages.</p>
     #[doc(hidden)]
     pub message_deduplication_id: std::option::Option<std::string::String>,
 }
 impl PipeTargetSqsQueueParameters {
     /// <p>The FIFO message group ID to use as the target.</p>
-    pub fn message_group_id(&self) -> std::option::Option<& str> {
+    pub fn message_group_id(&self) -> std::option::Option<&str> {
         self.message_group_id.as_deref()
     }
-    /// <p>This parameter applies only to FIFO (first-in-first-out) queues.</p> 
+    /// <p>This parameter applies only to FIFO (first-in-first-out) queues.</p>
     /// <p>The token used for deduplication of sent messages.</p>
-    pub fn message_deduplication_id(&self) -> std::option::Option<& str> {
+    pub fn message_deduplication_id(&self) -> std::option::Option<&str> {
         self.message_deduplication_id.as_deref()
     }
 }
-impl  std::fmt::Debug for PipeTargetSqsQueueParameters  {
+impl std::fmt::Debug for PipeTargetSqsQueueParameters {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("PipeTargetSqsQueueParameters");
         formatter.field("message_group_id", &"*** Sensitive Data Redacted ***");
-        formatter.field("message_deduplication_id", &"*** Sensitive Data Redacted ***");
+        formatter.field(
+            "message_deduplication_id",
+            &"*** Sensitive Data Redacted ***",
+        );
         formatter.finish()
     }
 }
@@ -53,26 +56,29 @@ impl PipeTargetSqsQueueParametersBuilder {
     }
     /// <p>The FIFO message group ID to use as the target.</p>
     pub fn set_message_group_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.message_group_id = input; self
+        self.message_group_id = input;
+        self
     }
-    /// <p>This parameter applies only to FIFO (first-in-first-out) queues.</p> 
+    /// <p>This parameter applies only to FIFO (first-in-first-out) queues.</p>
     /// <p>The token used for deduplication of sent messages.</p>
     pub fn message_deduplication_id(mut self, input: impl Into<std::string::String>) -> Self {
         self.message_deduplication_id = Some(input.into());
         self
     }
-    /// <p>This parameter applies only to FIFO (first-in-first-out) queues.</p> 
+    /// <p>This parameter applies only to FIFO (first-in-first-out) queues.</p>
     /// <p>The token used for deduplication of sent messages.</p>
-    pub fn set_message_deduplication_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.message_deduplication_id = input; self
+    pub fn set_message_deduplication_id(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.message_deduplication_id = input;
+        self
     }
     /// Consumes the builder and constructs a [`PipeTargetSqsQueueParameters`](crate::types::PipeTargetSqsQueueParameters).
     pub fn build(self) -> crate::types::PipeTargetSqsQueueParameters {
         crate::types::PipeTargetSqsQueueParameters {
-            message_group_id: self.message_group_id
-            ,
-            message_deduplication_id: self.message_deduplication_id
-            ,
+            message_group_id: self.message_group_id,
+            message_deduplication_id: self.message_deduplication_id,
         }
     }
 }
@@ -80,8 +86,10 @@ impl std::fmt::Debug for PipeTargetSqsQueueParametersBuilder {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("PipeTargetSqsQueueParametersBuilder");
         formatter.field("message_group_id", &"*** Sensitive Data Redacted ***");
-        formatter.field("message_deduplication_id", &"*** Sensitive Data Redacted ***");
+        formatter.field(
+            "message_deduplication_id",
+            &"*** Sensitive Data Redacted ***",
+        );
         formatter.finish()
     }
 }
-

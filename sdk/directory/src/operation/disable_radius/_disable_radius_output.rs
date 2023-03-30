@@ -3,14 +3,14 @@
 /// <p>Contains the results of the <code>DisableRadius</code> operation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DisableRadiusOutput  {
+pub struct DisableRadiusOutput {
     _request_id: Option<String>,
 }
 impl aws_http::request_id::RequestId for DisableRadiusOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl DisableRadiusOutput {
     /// Creates a new builder-style object to manufacture [`DisableRadiusOutput`](crate::operation::disable_radius::DisableRadiusOutput).
     pub fn builder() -> crate::operation::disable_radius::builders::DisableRadiusOutputBuilder {
@@ -26,14 +26,14 @@ pub struct DisableRadiusOutputBuilder {
 }
 impl DisableRadiusOutputBuilder {
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`DisableRadiusOutput`](crate::operation::disable_radius::DisableRadiusOutput).
     pub fn build(self) -> crate::operation::disable_radius::DisableRadiusOutput {
         crate::operation::disable_radius::DisableRadiusOutput {
@@ -41,4 +41,3 @@ impl DisableRadiusOutputBuilder {
         }
     }
 }
-

@@ -3,7 +3,7 @@
 /// <p>Creates settings for the instant booking feature that are applied to a room profile. When users start their meeting with Alexa, Alexa automatically books the room for the configured duration if the room is available.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateInstantBooking  {
+pub struct CreateInstantBooking {
     /// <p>Duration between 15 and 240 minutes at increments of 15 that determines how long to book an available room when a meeting is started with Alexa.</p>
     #[doc(hidden)]
     pub duration_in_minutes: std::option::Option<i32>,
@@ -43,7 +43,8 @@ impl CreateInstantBookingBuilder {
     }
     /// <p>Duration between 15 and 240 minutes at increments of 15 that determines how long to book an available room when a meeting is started with Alexa.</p>
     pub fn set_duration_in_minutes(mut self, input: std::option::Option<i32>) -> Self {
-        self.duration_in_minutes = input; self
+        self.duration_in_minutes = input;
+        self
     }
     /// <p>Whether instant booking is enabled or not.</p>
     pub fn enabled(mut self, input: bool) -> Self {
@@ -52,16 +53,14 @@ impl CreateInstantBookingBuilder {
     }
     /// <p>Whether instant booking is enabled or not.</p>
     pub fn set_enabled(mut self, input: std::option::Option<bool>) -> Self {
-        self.enabled = input; self
+        self.enabled = input;
+        self
     }
     /// Consumes the builder and constructs a [`CreateInstantBooking`](crate::types::CreateInstantBooking).
     pub fn build(self) -> crate::types::CreateInstantBooking {
         crate::types::CreateInstantBooking {
-            duration_in_minutes: self.duration_in_minutes
-            ,
-            enabled: self.enabled
-            ,
+            duration_in_minutes: self.duration_in_minutes,
+            enabled: self.enabled,
         }
     }
 }
-

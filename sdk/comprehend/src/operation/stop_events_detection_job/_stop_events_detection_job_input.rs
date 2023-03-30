@@ -2,20 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct StopEventsDetectionJobInput  {
+pub struct StopEventsDetectionJobInput {
     /// <p>The identifier of the events detection job to stop.</p>
     #[doc(hidden)]
     pub job_id: std::option::Option<std::string::String>,
 }
 impl StopEventsDetectionJobInput {
     /// <p>The identifier of the events detection job to stop.</p>
-    pub fn job_id(&self) -> std::option::Option<& str> {
+    pub fn job_id(&self) -> std::option::Option<&str> {
         self.job_id.as_deref()
     }
 }
 impl StopEventsDetectionJobInput {
     /// Creates a new builder-style object to manufacture [`StopEventsDetectionJobInput`](crate::operation::stop_events_detection_job::StopEventsDetectionJobInput).
-    pub fn builder() -> crate::operation::stop_events_detection_job::builders::StopEventsDetectionJobInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::stop_events_detection_job::builders::StopEventsDetectionJobInputBuilder
+    {
         crate::operation::stop_events_detection_job::builders::StopEventsDetectionJobInputBuilder::default()
     }
 }
@@ -34,16 +36,20 @@ impl StopEventsDetectionJobInputBuilder {
     }
     /// <p>The identifier of the events detection job to stop.</p>
     pub fn set_job_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.job_id = input; self
+        self.job_id = input;
+        self
     }
     /// Consumes the builder and constructs a [`StopEventsDetectionJobInput`](crate::operation::stop_events_detection_job::StopEventsDetectionJobInput).
-    pub fn build(self) -> Result<crate::operation::stop_events_detection_job::StopEventsDetectionJobInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::stop_events_detection_job::StopEventsDetectionJobInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::stop_events_detection_job::StopEventsDetectionJobInput {
-                job_id: self.job_id
-                ,
-            }
+                job_id: self.job_id,
+            },
         )
     }
 }
-

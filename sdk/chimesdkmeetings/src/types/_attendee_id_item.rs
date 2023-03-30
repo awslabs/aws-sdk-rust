@@ -3,14 +3,14 @@
 /// <p>A structure that contains one or more attendee IDs.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AttendeeIdItem  {
+pub struct AttendeeIdItem {
     /// <p>A list of one or more attendee IDs.</p>
     #[doc(hidden)]
     pub attendee_id: std::option::Option<std::string::String>,
 }
 impl AttendeeIdItem {
     /// <p>A list of one or more attendee IDs.</p>
-    pub fn attendee_id(&self) -> std::option::Option<& str> {
+    pub fn attendee_id(&self) -> std::option::Option<&str> {
         self.attendee_id.as_deref()
     }
 }
@@ -35,14 +35,13 @@ impl AttendeeIdItemBuilder {
     }
     /// <p>A list of one or more attendee IDs.</p>
     pub fn set_attendee_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.attendee_id = input; self
+        self.attendee_id = input;
+        self
     }
     /// Consumes the builder and constructs a [`AttendeeIdItem`](crate::types::AttendeeIdItem).
     pub fn build(self) -> crate::types::AttendeeIdItem {
         crate::types::AttendeeIdItem {
-            attendee_id: self.attendee_id
-            ,
+            attendee_id: self.attendee_id,
         }
     }
 }
-

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetAssessmentReportUrlOutput  {
+pub struct GetAssessmentReportUrlOutput {
     /// <p> Short for uniform resource locator. A URL is used as a unique identifier to locate a resource on the internet. </p>
     #[doc(hidden)]
     pub pre_signed_url: std::option::Option<crate::types::Url>,
@@ -10,18 +10,20 @@ pub struct GetAssessmentReportUrlOutput  {
 }
 impl GetAssessmentReportUrlOutput {
     /// <p> Short for uniform resource locator. A URL is used as a unique identifier to locate a resource on the internet. </p>
-    pub fn pre_signed_url(&self) -> std::option::Option<& crate::types::Url> {
+    pub fn pre_signed_url(&self) -> std::option::Option<&crate::types::Url> {
         self.pre_signed_url.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for GetAssessmentReportUrlOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl GetAssessmentReportUrlOutput {
     /// Creates a new builder-style object to manufacture [`GetAssessmentReportUrlOutput`](crate::operation::get_assessment_report_url::GetAssessmentReportUrlOutput).
-    pub fn builder() -> crate::operation::get_assessment_report_url::builders::GetAssessmentReportUrlOutputBuilder {
+    pub fn builder(
+    ) -> crate::operation::get_assessment_report_url::builders::GetAssessmentReportUrlOutputBuilder
+    {
         crate::operation::get_assessment_report_url::builders::GetAssessmentReportUrlOutputBuilder::default()
     }
 }
@@ -41,24 +43,25 @@ impl GetAssessmentReportUrlOutputBuilder {
     }
     /// <p> Short for uniform resource locator. A URL is used as a unique identifier to locate a resource on the internet. </p>
     pub fn set_pre_signed_url(mut self, input: std::option::Option<crate::types::Url>) -> Self {
-        self.pre_signed_url = input; self
+        self.pre_signed_url = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`GetAssessmentReportUrlOutput`](crate::operation::get_assessment_report_url::GetAssessmentReportUrlOutput).
-    pub fn build(self) -> crate::operation::get_assessment_report_url::GetAssessmentReportUrlOutput {
+    pub fn build(
+        self,
+    ) -> crate::operation::get_assessment_report_url::GetAssessmentReportUrlOutput {
         crate::operation::get_assessment_report_url::GetAssessmentReportUrlOutput {
-            pre_signed_url: self.pre_signed_url
-            ,
+            pre_signed_url: self.pre_signed_url,
             _request_id: self._request_id,
         }
     }
 }
-

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListPublishedSchemaArnsInput  {
+pub struct ListPublishedSchemaArnsInput {
     /// <p>The response for <code>ListPublishedSchemaArns</code> when this parameter is used will list all minor version ARNs for a major version.</p>
     #[doc(hidden)]
     pub schema_arn: std::option::Option<std::string::String>,
@@ -15,11 +15,11 @@ pub struct ListPublishedSchemaArnsInput  {
 }
 impl ListPublishedSchemaArnsInput {
     /// <p>The response for <code>ListPublishedSchemaArns</code> when this parameter is used will list all minor version ARNs for a major version.</p>
-    pub fn schema_arn(&self) -> std::option::Option<& str> {
+    pub fn schema_arn(&self) -> std::option::Option<&str> {
         self.schema_arn.as_deref()
     }
     /// <p>The pagination token.</p>
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
     /// <p>The maximum number of results to retrieve.</p>
@@ -29,7 +29,9 @@ impl ListPublishedSchemaArnsInput {
 }
 impl ListPublishedSchemaArnsInput {
     /// Creates a new builder-style object to manufacture [`ListPublishedSchemaArnsInput`](crate::operation::list_published_schema_arns::ListPublishedSchemaArnsInput).
-    pub fn builder() -> crate::operation::list_published_schema_arns::builders::ListPublishedSchemaArnsInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::list_published_schema_arns::builders::ListPublishedSchemaArnsInputBuilder
+    {
         crate::operation::list_published_schema_arns::builders::ListPublishedSchemaArnsInputBuilder::default()
     }
 }
@@ -50,7 +52,8 @@ impl ListPublishedSchemaArnsInputBuilder {
     }
     /// <p>The response for <code>ListPublishedSchemaArns</code> when this parameter is used will list all minor version ARNs for a major version.</p>
     pub fn set_schema_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.schema_arn = input; self
+        self.schema_arn = input;
+        self
     }
     /// <p>The pagination token.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -59,7 +62,8 @@ impl ListPublishedSchemaArnsInputBuilder {
     }
     /// <p>The pagination token.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input; self
+        self.next_token = input;
+        self
     }
     /// <p>The maximum number of results to retrieve.</p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -68,20 +72,22 @@ impl ListPublishedSchemaArnsInputBuilder {
     }
     /// <p>The maximum number of results to retrieve.</p>
     pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_results = input; self
+        self.max_results = input;
+        self
     }
     /// Consumes the builder and constructs a [`ListPublishedSchemaArnsInput`](crate::operation::list_published_schema_arns::ListPublishedSchemaArnsInput).
-    pub fn build(self) -> Result<crate::operation::list_published_schema_arns::ListPublishedSchemaArnsInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::list_published_schema_arns::ListPublishedSchemaArnsInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::list_published_schema_arns::ListPublishedSchemaArnsInput {
-                schema_arn: self.schema_arn
-                ,
-                next_token: self.next_token
-                ,
-                max_results: self.max_results
-                ,
-            }
+                schema_arn: self.schema_arn,
+                next_token: self.next_token,
+                max_results: self.max_results,
+            },
         )
     }
 }
-

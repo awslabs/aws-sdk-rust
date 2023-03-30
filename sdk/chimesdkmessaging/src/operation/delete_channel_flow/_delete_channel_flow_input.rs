@@ -2,20 +2,21 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteChannelFlowInput  {
+pub struct DeleteChannelFlowInput {
     /// <p>The ARN of the channel flow.</p>
     #[doc(hidden)]
     pub channel_flow_arn: std::option::Option<std::string::String>,
 }
 impl DeleteChannelFlowInput {
     /// <p>The ARN of the channel flow.</p>
-    pub fn channel_flow_arn(&self) -> std::option::Option<& str> {
+    pub fn channel_flow_arn(&self) -> std::option::Option<&str> {
         self.channel_flow_arn.as_deref()
     }
 }
 impl DeleteChannelFlowInput {
     /// Creates a new builder-style object to manufacture [`DeleteChannelFlowInput`](crate::operation::delete_channel_flow::DeleteChannelFlowInput).
-    pub fn builder() -> crate::operation::delete_channel_flow::builders::DeleteChannelFlowInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::delete_channel_flow::builders::DeleteChannelFlowInputBuilder {
         crate::operation::delete_channel_flow::builders::DeleteChannelFlowInputBuilder::default()
     }
 }
@@ -34,16 +35,20 @@ impl DeleteChannelFlowInputBuilder {
     }
     /// <p>The ARN of the channel flow.</p>
     pub fn set_channel_flow_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.channel_flow_arn = input; self
+        self.channel_flow_arn = input;
+        self
     }
     /// Consumes the builder and constructs a [`DeleteChannelFlowInput`](crate::operation::delete_channel_flow::DeleteChannelFlowInput).
-    pub fn build(self) -> Result<crate::operation::delete_channel_flow::DeleteChannelFlowInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::delete_channel_flow::DeleteChannelFlowInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::delete_channel_flow::DeleteChannelFlowInput {
-                channel_flow_arn: self.channel_flow_arn
-                ,
-            }
+                channel_flow_arn: self.channel_flow_arn,
+            },
         )
     }
 }
-

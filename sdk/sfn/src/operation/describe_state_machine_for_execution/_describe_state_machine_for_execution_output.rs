@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct DescribeStateMachineForExecutionOutput  {
+pub struct DescribeStateMachineForExecutionOutput {
     /// <p>The Amazon Resource Name (ARN) of the state machine associated with the execution.</p>
     #[doc(hidden)]
     pub state_machine_arn: std::option::Option<std::string::String>,
@@ -34,43 +34,47 @@ pub struct DescribeStateMachineForExecutionOutput  {
 }
 impl DescribeStateMachineForExecutionOutput {
     /// <p>The Amazon Resource Name (ARN) of the state machine associated with the execution.</p>
-    pub fn state_machine_arn(&self) -> std::option::Option<& str> {
+    pub fn state_machine_arn(&self) -> std::option::Option<&str> {
         self.state_machine_arn.as_deref()
     }
     /// <p>The name of the state machine associated with the execution.</p>
-    pub fn name(&self) -> std::option::Option<& str> {
+    pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>The Amazon States Language definition of the state machine. See <a href="https://docs.aws.amazon.com/step-functions/latest/dg/concepts-amazon-states-language.html">Amazon States Language</a>.</p>
-    pub fn definition(&self) -> std::option::Option<& str> {
+    pub fn definition(&self) -> std::option::Option<&str> {
         self.definition.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the IAM role of the State Machine for the execution. </p>
-    pub fn role_arn(&self) -> std::option::Option<& str> {
+    pub fn role_arn(&self) -> std::option::Option<&str> {
         self.role_arn.as_deref()
     }
     /// <p>The date and time the state machine associated with an execution was updated. For a newly created state machine, this is the creation date.</p>
-    pub fn update_date(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
+    pub fn update_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.update_date.as_ref()
     }
     /// <p>The <code>LoggingConfiguration</code> data type is used to set CloudWatch Logs options.</p>
-    pub fn logging_configuration(&self) -> std::option::Option<& crate::types::LoggingConfiguration> {
+    pub fn logging_configuration(
+        &self,
+    ) -> std::option::Option<&crate::types::LoggingConfiguration> {
         self.logging_configuration.as_ref()
     }
     /// <p>Selects whether X-Ray tracing is enabled.</p>
-    pub fn tracing_configuration(&self) -> std::option::Option<& crate::types::TracingConfiguration> {
+    pub fn tracing_configuration(
+        &self,
+    ) -> std::option::Option<&crate::types::TracingConfiguration> {
         self.tracing_configuration.as_ref()
     }
     /// <p>The Amazon Resource Name (ARN) of the Map Run that started the child workflow execution. This field is returned only if the <code>executionArn</code> is a child workflow execution that was started by a Distributed Map state.</p>
-    pub fn map_run_arn(&self) -> std::option::Option<& str> {
+    pub fn map_run_arn(&self) -> std::option::Option<&str> {
         self.map_run_arn.as_deref()
     }
     /// <p>A user-defined or an auto-generated string that identifies a <code>Map</code> state. This ﬁeld is returned only if the <code>executionArn</code> is a child workflow execution that was started by a Distributed Map state.</p>
-    pub fn label(&self) -> std::option::Option<& str> {
+    pub fn label(&self) -> std::option::Option<&str> {
         self.label.as_deref()
     }
 }
-impl  std::fmt::Debug for DescribeStateMachineForExecutionOutput  {
+impl std::fmt::Debug for DescribeStateMachineForExecutionOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeStateMachineForExecutionOutput");
         formatter.field("state_machine_arn", &self.state_machine_arn);
@@ -87,13 +91,13 @@ impl  std::fmt::Debug for DescribeStateMachineForExecutionOutput  {
     }
 }
 impl aws_http::request_id::RequestId for DescribeStateMachineForExecutionOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl DescribeStateMachineForExecutionOutput {
     /// Creates a new builder-style object to manufacture [`DescribeStateMachineForExecutionOutput`](crate::operation::describe_state_machine_for_execution::DescribeStateMachineForExecutionOutput).
-    pub fn builder() -> crate::operation::describe_state_machine_for_execution::builders::DescribeStateMachineForExecutionOutputBuilder {
+    pub fn builder() -> crate::operation::describe_state_machine_for_execution::builders::DescribeStateMachineForExecutionOutputBuilder{
         crate::operation::describe_state_machine_for_execution::builders::DescribeStateMachineForExecutionOutputBuilder::default()
     }
 }
@@ -120,8 +124,12 @@ impl DescribeStateMachineForExecutionOutputBuilder {
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the state machine associated with the execution.</p>
-    pub fn set_state_machine_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.state_machine_arn = input; self
+    pub fn set_state_machine_arn(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.state_machine_arn = input;
+        self
     }
     /// <p>The name of the state machine associated with the execution.</p>
     pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -130,7 +138,8 @@ impl DescribeStateMachineForExecutionOutputBuilder {
     }
     /// <p>The name of the state machine associated with the execution.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input; self
+        self.name = input;
+        self
     }
     /// <p>The Amazon States Language definition of the state machine. See <a href="https://docs.aws.amazon.com/step-functions/latest/dg/concepts-amazon-states-language.html">Amazon States Language</a>.</p>
     pub fn definition(mut self, input: impl Into<std::string::String>) -> Self {
@@ -139,7 +148,8 @@ impl DescribeStateMachineForExecutionOutputBuilder {
     }
     /// <p>The Amazon States Language definition of the state machine. See <a href="https://docs.aws.amazon.com/step-functions/latest/dg/concepts-amazon-states-language.html">Amazon States Language</a>.</p>
     pub fn set_definition(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.definition = input; self
+        self.definition = input;
+        self
     }
     /// <p>The Amazon Resource Name (ARN) of the IAM role of the State Machine for the execution. </p>
     pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -148,7 +158,8 @@ impl DescribeStateMachineForExecutionOutputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the IAM role of the State Machine for the execution. </p>
     pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.role_arn = input; self
+        self.role_arn = input;
+        self
     }
     /// <p>The date and time the state machine associated with an execution was updated. For a newly created state machine, this is the creation date.</p>
     pub fn update_date(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -156,8 +167,12 @@ impl DescribeStateMachineForExecutionOutputBuilder {
         self
     }
     /// <p>The date and time the state machine associated with an execution was updated. For a newly created state machine, this is the creation date.</p>
-    pub fn set_update_date(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.update_date = input; self
+    pub fn set_update_date(
+        mut self,
+        input: std::option::Option<aws_smithy_types::DateTime>,
+    ) -> Self {
+        self.update_date = input;
+        self
     }
     /// <p>The <code>LoggingConfiguration</code> data type is used to set CloudWatch Logs options.</p>
     pub fn logging_configuration(mut self, input: crate::types::LoggingConfiguration) -> Self {
@@ -165,8 +180,12 @@ impl DescribeStateMachineForExecutionOutputBuilder {
         self
     }
     /// <p>The <code>LoggingConfiguration</code> data type is used to set CloudWatch Logs options.</p>
-    pub fn set_logging_configuration(mut self, input: std::option::Option<crate::types::LoggingConfiguration>) -> Self {
-        self.logging_configuration = input; self
+    pub fn set_logging_configuration(
+        mut self,
+        input: std::option::Option<crate::types::LoggingConfiguration>,
+    ) -> Self {
+        self.logging_configuration = input;
+        self
     }
     /// <p>Selects whether X-Ray tracing is enabled.</p>
     pub fn tracing_configuration(mut self, input: crate::types::TracingConfiguration) -> Self {
@@ -174,8 +193,12 @@ impl DescribeStateMachineForExecutionOutputBuilder {
         self
     }
     /// <p>Selects whether X-Ray tracing is enabled.</p>
-    pub fn set_tracing_configuration(mut self, input: std::option::Option<crate::types::TracingConfiguration>) -> Self {
-        self.tracing_configuration = input; self
+    pub fn set_tracing_configuration(
+        mut self,
+        input: std::option::Option<crate::types::TracingConfiguration>,
+    ) -> Self {
+        self.tracing_configuration = input;
+        self
     }
     /// <p>The Amazon Resource Name (ARN) of the Map Run that started the child workflow execution. This field is returned only if the <code>executionArn</code> is a child workflow execution that was started by a Distributed Map state.</p>
     pub fn map_run_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -184,7 +207,8 @@ impl DescribeStateMachineForExecutionOutputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the Map Run that started the child workflow execution. This field is returned only if the <code>executionArn</code> is a child workflow execution that was started by a Distributed Map state.</p>
     pub fn set_map_run_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.map_run_arn = input; self
+        self.map_run_arn = input;
+        self
     }
     /// <p>A user-defined or an auto-generated string that identifies a <code>Map</code> state. This ﬁeld is returned only if the <code>executionArn</code> is a child workflow execution that was started by a Distributed Map state.</p>
     pub fn label(mut self, input: impl Into<std::string::String>) -> Self {
@@ -193,19 +217,20 @@ impl DescribeStateMachineForExecutionOutputBuilder {
     }
     /// <p>A user-defined or an auto-generated string that identifies a <code>Map</code> state. This ﬁeld is returned only if the <code>executionArn</code> is a child workflow execution that was started by a Distributed Map state.</p>
     pub fn set_label(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.label = input; self
+        self.label = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`DescribeStateMachineForExecutionOutput`](crate::operation::describe_state_machine_for_execution::DescribeStateMachineForExecutionOutput).
-    pub fn build(self) -> crate::operation::describe_state_machine_for_execution::DescribeStateMachineForExecutionOutput {
+    pub fn build(self) -> crate::operation::describe_state_machine_for_execution::DescribeStateMachineForExecutionOutput{
         crate::operation::describe_state_machine_for_execution::DescribeStateMachineForExecutionOutput {
             state_machine_arn: self.state_machine_arn
             ,
@@ -245,4 +270,3 @@ impl std::fmt::Debug for DescribeStateMachineForExecutionOutputBuilder {
         formatter.finish()
     }
 }
-

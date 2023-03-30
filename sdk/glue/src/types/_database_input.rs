@@ -3,7 +3,7 @@
 /// <p>The structure used to create or update a database.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DatabaseInput  {
+pub struct DatabaseInput {
     /// <p>The name of the database. For Hive compatibility, this is folded to lowercase when it is stored.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -13,41 +13,48 @@ pub struct DatabaseInput  {
     /// <p>The location of the database (for example, an HDFS path). </p>
     #[doc(hidden)]
     pub location_uri: std::option::Option<std::string::String>,
-    /// <p>These key-value pairs define parameters and properties of the database.</p> 
+    /// <p>These key-value pairs define parameters and properties of the database.</p>
     /// <p>These key-value pairs define parameters and properties of the database.</p>
     #[doc(hidden)]
-    pub parameters: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub parameters:
+        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>Creates a set of default permissions on the table for principals. </p>
     #[doc(hidden)]
-    pub create_table_default_permissions: std::option::Option<std::vec::Vec<crate::types::PrincipalPermissions>>,
+    pub create_table_default_permissions:
+        std::option::Option<std::vec::Vec<crate::types::PrincipalPermissions>>,
     /// <p>A <code>DatabaseIdentifier</code> structure that describes a target database for resource linking.</p>
     #[doc(hidden)]
     pub target_database: std::option::Option<crate::types::DatabaseIdentifier>,
 }
 impl DatabaseInput {
     /// <p>The name of the database. For Hive compatibility, this is folded to lowercase when it is stored.</p>
-    pub fn name(&self) -> std::option::Option<& str> {
+    pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>A description of the database.</p>
-    pub fn description(&self) -> std::option::Option<& str> {
+    pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
     /// <p>The location of the database (for example, an HDFS path). </p>
-    pub fn location_uri(&self) -> std::option::Option<& str> {
+    pub fn location_uri(&self) -> std::option::Option<&str> {
         self.location_uri.as_deref()
     }
-    /// <p>These key-value pairs define parameters and properties of the database.</p> 
     /// <p>These key-value pairs define parameters and properties of the database.</p>
-    pub fn parameters(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
+    /// <p>These key-value pairs define parameters and properties of the database.</p>
+    pub fn parameters(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
         self.parameters.as_ref()
     }
     /// <p>Creates a set of default permissions on the table for principals. </p>
-    pub fn create_table_default_permissions(&self) -> std::option::Option<& [crate::types::PrincipalPermissions]> {
+    pub fn create_table_default_permissions(
+        &self,
+    ) -> std::option::Option<&[crate::types::PrincipalPermissions]> {
         self.create_table_default_permissions.as_deref()
     }
     /// <p>A <code>DatabaseIdentifier</code> structure that describes a target database for resource linking.</p>
-    pub fn target_database(&self) -> std::option::Option<& crate::types::DatabaseIdentifier> {
+    pub fn target_database(&self) -> std::option::Option<&crate::types::DatabaseIdentifier> {
         self.target_database.as_ref()
     }
 }
@@ -65,8 +72,10 @@ pub struct DatabaseInputBuilder {
     pub(crate) name: std::option::Option<std::string::String>,
     pub(crate) description: std::option::Option<std::string::String>,
     pub(crate) location_uri: std::option::Option<std::string::String>,
-    pub(crate) parameters: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
-    pub(crate) create_table_default_permissions: std::option::Option<std::vec::Vec<crate::types::PrincipalPermissions>>,
+    pub(crate) parameters:
+        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub(crate) create_table_default_permissions:
+        std::option::Option<std::vec::Vec<crate::types::PrincipalPermissions>>,
     pub(crate) target_database: std::option::Option<crate::types::DatabaseIdentifier>,
 }
 impl DatabaseInputBuilder {
@@ -77,7 +86,8 @@ impl DatabaseInputBuilder {
     }
     /// <p>The name of the database. For Hive compatibility, this is folded to lowercase when it is stored.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input; self
+        self.name = input;
+        self
     }
     /// <p>A description of the database.</p>
     pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -86,7 +96,8 @@ impl DatabaseInputBuilder {
     }
     /// <p>A description of the database.</p>
     pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.description = input; self
+        self.description = input;
+        self
     }
     /// <p>The location of the database (for example, an HDFS path). </p>
     pub fn location_uri(mut self, input: impl Into<std::string::String>) -> Self {
@@ -95,39 +106,57 @@ impl DatabaseInputBuilder {
     }
     /// <p>The location of the database (for example, an HDFS path). </p>
     pub fn set_location_uri(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.location_uri = input; self
+        self.location_uri = input;
+        self
     }
     /// Adds a key-value pair to `parameters`.
     ///
     /// To override the contents of this collection use [`set_parameters`](Self::set_parameters).
     ///
-    /// <p>These key-value pairs define parameters and properties of the database.</p> 
     /// <p>These key-value pairs define parameters and properties of the database.</p>
-    pub fn parameters(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
+    /// <p>These key-value pairs define parameters and properties of the database.</p>
+    pub fn parameters(
+        mut self,
+        k: impl Into<std::string::String>,
+        v: impl Into<std::string::String>,
+    ) -> Self {
         let mut hash_map = self.parameters.unwrap_or_default();
-                        hash_map.insert(k.into(), v.into());
-                        self.parameters = Some(hash_map);
-                        self
+        hash_map.insert(k.into(), v.into());
+        self.parameters = Some(hash_map);
+        self
     }
-    /// <p>These key-value pairs define parameters and properties of the database.</p> 
     /// <p>These key-value pairs define parameters and properties of the database.</p>
-    pub fn set_parameters(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
-        self.parameters = input; self
+    /// <p>These key-value pairs define parameters and properties of the database.</p>
+    pub fn set_parameters(
+        mut self,
+        input: std::option::Option<
+            std::collections::HashMap<std::string::String, std::string::String>,
+        >,
+    ) -> Self {
+        self.parameters = input;
+        self
     }
     /// Appends an item to `create_table_default_permissions`.
     ///
     /// To override the contents of this collection use [`set_create_table_default_permissions`](Self::set_create_table_default_permissions).
     ///
     /// <p>Creates a set of default permissions on the table for principals. </p>
-    pub fn create_table_default_permissions(mut self, input: crate::types::PrincipalPermissions) -> Self {
+    pub fn create_table_default_permissions(
+        mut self,
+        input: crate::types::PrincipalPermissions,
+    ) -> Self {
         let mut v = self.create_table_default_permissions.unwrap_or_default();
-                        v.push(input);
-                        self.create_table_default_permissions = Some(v);
-                        self
+        v.push(input);
+        self.create_table_default_permissions = Some(v);
+        self
     }
     /// <p>Creates a set of default permissions on the table for principals. </p>
-    pub fn set_create_table_default_permissions(mut self, input: std::option::Option<std::vec::Vec<crate::types::PrincipalPermissions>>) -> Self {
-        self.create_table_default_permissions = input; self
+    pub fn set_create_table_default_permissions(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::PrincipalPermissions>>,
+    ) -> Self {
+        self.create_table_default_permissions = input;
+        self
     }
     /// <p>A <code>DatabaseIdentifier</code> structure that describes a target database for resource linking.</p>
     pub fn target_database(mut self, input: crate::types::DatabaseIdentifier) -> Self {
@@ -135,25 +164,22 @@ impl DatabaseInputBuilder {
         self
     }
     /// <p>A <code>DatabaseIdentifier</code> structure that describes a target database for resource linking.</p>
-    pub fn set_target_database(mut self, input: std::option::Option<crate::types::DatabaseIdentifier>) -> Self {
-        self.target_database = input; self
+    pub fn set_target_database(
+        mut self,
+        input: std::option::Option<crate::types::DatabaseIdentifier>,
+    ) -> Self {
+        self.target_database = input;
+        self
     }
     /// Consumes the builder and constructs a [`DatabaseInput`](crate::types::DatabaseInput).
     pub fn build(self) -> crate::types::DatabaseInput {
         crate::types::DatabaseInput {
-            name: self.name
-            ,
-            description: self.description
-            ,
-            location_uri: self.location_uri
-            ,
-            parameters: self.parameters
-            ,
-            create_table_default_permissions: self.create_table_default_permissions
-            ,
-            target_database: self.target_database
-            ,
+            name: self.name,
+            description: self.description,
+            location_uri: self.location_uri,
+            parameters: self.parameters,
+            create_table_default_permissions: self.create_table_default_permissions,
+            target_database: self.target_database,
         }
     }
 }
-

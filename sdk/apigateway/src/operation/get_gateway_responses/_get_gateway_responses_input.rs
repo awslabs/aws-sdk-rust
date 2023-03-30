@@ -3,7 +3,7 @@
 /// <p>Gets the GatewayResponses collection on the given RestApi. If an API developer has not added any definitions for gateway responses, the result will be the API Gateway-generated default GatewayResponses collection for the supported response types.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetGatewayResponsesInput  {
+pub struct GetGatewayResponsesInput {
     /// <p>The string identifier of the associated RestApi.</p>
     #[doc(hidden)]
     pub rest_api_id: std::option::Option<std::string::String>,
@@ -16,11 +16,11 @@ pub struct GetGatewayResponsesInput  {
 }
 impl GetGatewayResponsesInput {
     /// <p>The string identifier of the associated RestApi.</p>
-    pub fn rest_api_id(&self) -> std::option::Option<& str> {
+    pub fn rest_api_id(&self) -> std::option::Option<&str> {
         self.rest_api_id.as_deref()
     }
     /// <p>The current pagination position in the paged result set. The GatewayResponse collection does not support pagination and the position does not apply here.</p>
-    pub fn position(&self) -> std::option::Option<& str> {
+    pub fn position(&self) -> std::option::Option<&str> {
         self.position.as_deref()
     }
     /// <p>The maximum number of returned results per page. The default value is 25 and the maximum value is 500. The GatewayResponses collection does not support pagination and the limit does not apply here.</p>
@@ -30,8 +30,10 @@ impl GetGatewayResponsesInput {
 }
 impl GetGatewayResponsesInput {
     /// Creates a new builder-style object to manufacture [`GetGatewayResponsesInput`](crate::operation::get_gateway_responses::GetGatewayResponsesInput).
-    pub fn builder() -> crate::operation::get_gateway_responses::builders::GetGatewayResponsesInputBuilder {
-        crate::operation::get_gateway_responses::builders::GetGatewayResponsesInputBuilder::default()
+    pub fn builder(
+    ) -> crate::operation::get_gateway_responses::builders::GetGatewayResponsesInputBuilder {
+        crate::operation::get_gateway_responses::builders::GetGatewayResponsesInputBuilder::default(
+        )
     }
 }
 
@@ -51,7 +53,8 @@ impl GetGatewayResponsesInputBuilder {
     }
     /// <p>The string identifier of the associated RestApi.</p>
     pub fn set_rest_api_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.rest_api_id = input; self
+        self.rest_api_id = input;
+        self
     }
     /// <p>The current pagination position in the paged result set. The GatewayResponse collection does not support pagination and the position does not apply here.</p>
     pub fn position(mut self, input: impl Into<std::string::String>) -> Self {
@@ -60,7 +63,8 @@ impl GetGatewayResponsesInputBuilder {
     }
     /// <p>The current pagination position in the paged result set. The GatewayResponse collection does not support pagination and the position does not apply here.</p>
     pub fn set_position(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.position = input; self
+        self.position = input;
+        self
     }
     /// <p>The maximum number of returned results per page. The default value is 25 and the maximum value is 500. The GatewayResponses collection does not support pagination and the limit does not apply here.</p>
     pub fn limit(mut self, input: i32) -> Self {
@@ -69,20 +73,22 @@ impl GetGatewayResponsesInputBuilder {
     }
     /// <p>The maximum number of returned results per page. The default value is 25 and the maximum value is 500. The GatewayResponses collection does not support pagination and the limit does not apply here.</p>
     pub fn set_limit(mut self, input: std::option::Option<i32>) -> Self {
-        self.limit = input; self
+        self.limit = input;
+        self
     }
     /// Consumes the builder and constructs a [`GetGatewayResponsesInput`](crate::operation::get_gateway_responses::GetGatewayResponsesInput).
-    pub fn build(self) -> Result<crate::operation::get_gateway_responses::GetGatewayResponsesInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::get_gateway_responses::GetGatewayResponsesInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::get_gateway_responses::GetGatewayResponsesInput {
-                rest_api_id: self.rest_api_id
-                ,
-                position: self.position
-                ,
-                limit: self.limit
-                ,
-            }
+                rest_api_id: self.rest_api_id,
+                position: self.position,
+                limit: self.limit,
+            },
         )
     }
 }
-

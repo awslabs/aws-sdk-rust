@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeOptOutListsInput  {
+pub struct DescribeOptOutListsInput {
     /// <p>The OptOutLists to show the details of. This is an array of strings that can be either the OptOutListName or OptOutListArn.</p>
     #[doc(hidden)]
     pub opt_out_list_names: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -15,11 +15,11 @@ pub struct DescribeOptOutListsInput  {
 }
 impl DescribeOptOutListsInput {
     /// <p>The OptOutLists to show the details of. This is an array of strings that can be either the OptOutListName or OptOutListArn.</p>
-    pub fn opt_out_list_names(&self) -> std::option::Option<& [std::string::String]> {
+    pub fn opt_out_list_names(&self) -> std::option::Option<&[std::string::String]> {
         self.opt_out_list_names.as_deref()
     }
     /// <p>The token to be used for the next set of paginated results. You don't need to supply a value for this field in the initial request.</p>
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
     /// <p>The maximum number of results to return per each request.</p>
@@ -29,8 +29,10 @@ impl DescribeOptOutListsInput {
 }
 impl DescribeOptOutListsInput {
     /// Creates a new builder-style object to manufacture [`DescribeOptOutListsInput`](crate::operation::describe_opt_out_lists::DescribeOptOutListsInput).
-    pub fn builder() -> crate::operation::describe_opt_out_lists::builders::DescribeOptOutListsInputBuilder {
-        crate::operation::describe_opt_out_lists::builders::DescribeOptOutListsInputBuilder::default()
+    pub fn builder(
+    ) -> crate::operation::describe_opt_out_lists::builders::DescribeOptOutListsInputBuilder {
+        crate::operation::describe_opt_out_lists::builders::DescribeOptOutListsInputBuilder::default(
+        )
     }
 }
 
@@ -50,13 +52,17 @@ impl DescribeOptOutListsInputBuilder {
     /// <p>The OptOutLists to show the details of. This is an array of strings that can be either the OptOutListName or OptOutListArn.</p>
     pub fn opt_out_list_names(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.opt_out_list_names.unwrap_or_default();
-                        v.push(input.into());
-                        self.opt_out_list_names = Some(v);
-                        self
+        v.push(input.into());
+        self.opt_out_list_names = Some(v);
+        self
     }
     /// <p>The OptOutLists to show the details of. This is an array of strings that can be either the OptOutListName or OptOutListArn.</p>
-    pub fn set_opt_out_list_names(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-        self.opt_out_list_names = input; self
+    pub fn set_opt_out_list_names(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
+        self.opt_out_list_names = input;
+        self
     }
     /// <p>The token to be used for the next set of paginated results. You don't need to supply a value for this field in the initial request.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -65,7 +71,8 @@ impl DescribeOptOutListsInputBuilder {
     }
     /// <p>The token to be used for the next set of paginated results. You don't need to supply a value for this field in the initial request.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input; self
+        self.next_token = input;
+        self
     }
     /// <p>The maximum number of results to return per each request.</p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -74,20 +81,22 @@ impl DescribeOptOutListsInputBuilder {
     }
     /// <p>The maximum number of results to return per each request.</p>
     pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_results = input; self
+        self.max_results = input;
+        self
     }
     /// Consumes the builder and constructs a [`DescribeOptOutListsInput`](crate::operation::describe_opt_out_lists::DescribeOptOutListsInput).
-    pub fn build(self) -> Result<crate::operation::describe_opt_out_lists::DescribeOptOutListsInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::describe_opt_out_lists::DescribeOptOutListsInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::describe_opt_out_lists::DescribeOptOutListsInput {
-                opt_out_list_names: self.opt_out_list_names
-                ,
-                next_token: self.next_token
-                ,
-                max_results: self.max_results
-                ,
-            }
+                opt_out_list_names: self.opt_out_list_names,
+                next_token: self.next_token,
+                max_results: self.max_results,
+            },
         )
     }
 }
-

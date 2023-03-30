@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-/// 
+///
 /// Here is an example of how you can make a match expression forward-compatible:
-/// 
+///
 /// ```text
 /// # let s3objectcannedacl = unimplemented!();
 /// match s3objectcannedacl {
@@ -32,14 +32,22 @@
 /// Specifically, when `s3objectcannedacl` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `S3ObjectCannedAcl::NewFeature` also yielding `"NewFeature"`.
-/// 
+///
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 /// Choose an Amazon S3 canned ACL for MediaConvert to apply to this output.
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
 pub enum S3ObjectCannedAcl {
     #[allow(missing_docs)] // documentation missing in model
     AuthenticatedRead,
@@ -50,45 +58,51 @@ pub enum S3ObjectCannedAcl {
     #[allow(missing_docs)] // documentation missing in model
     PublicRead,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::primitives::UnknownVariantValue)
+    Unknown(crate::primitives::UnknownVariantValue),
 }
 impl std::convert::From<&str> for S3ObjectCannedAcl {
-                fn from(s: &str) -> Self {
-                    match s {
-                        "AUTHENTICATED_READ" => S3ObjectCannedAcl::AuthenticatedRead,
-"BUCKET_OWNER_FULL_CONTROL" => S3ObjectCannedAcl::BucketOwnerFullControl,
-"BUCKET_OWNER_READ" => S3ObjectCannedAcl::BucketOwnerRead,
-"PUBLIC_READ" => S3ObjectCannedAcl::PublicRead,
-other => S3ObjectCannedAcl::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
-                    }
-                }
+    fn from(s: &str) -> Self {
+        match s {
+            "AUTHENTICATED_READ" => S3ObjectCannedAcl::AuthenticatedRead,
+            "BUCKET_OWNER_FULL_CONTROL" => S3ObjectCannedAcl::BucketOwnerFullControl,
+            "BUCKET_OWNER_READ" => S3ObjectCannedAcl::BucketOwnerRead,
+            "PUBLIC_READ" => S3ObjectCannedAcl::PublicRead,
+            other => {
+                S3ObjectCannedAcl::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
             }
-impl std::str::FromStr for S3ObjectCannedAcl {
-                type Err = std::convert::Infallible;
-
-                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-                    Ok(S3ObjectCannedAcl::from(s))
-                }
-            }
-impl S3ObjectCannedAcl {
-                /// Returns the `&str` value of the enum member.
-                pub fn as_str(&self) -> &str {
-                    match self {
-    S3ObjectCannedAcl::AuthenticatedRead => "AUTHENTICATED_READ",
-    S3ObjectCannedAcl::BucketOwnerFullControl => "BUCKET_OWNER_FULL_CONTROL",
-    S3ObjectCannedAcl::BucketOwnerRead => "BUCKET_OWNER_READ",
-    S3ObjectCannedAcl::PublicRead => "PUBLIC_READ",
-    S3ObjectCannedAcl::Unknown(value) => value.as_str()
+        }
+    }
 }
-                }
-                /// Returns all the `&str` representations of the enum members.
-                pub const fn values() -> &'static [&'static str] {
-                    &["AUTHENTICATED_READ", "BUCKET_OWNER_FULL_CONTROL", "BUCKET_OWNER_READ", "PUBLIC_READ"]
-                }
-            }
-impl AsRef<str> for S3ObjectCannedAcl {
-                fn as_ref(&self) -> &str {
-                    self.as_str()
-                }
-            }
+impl std::str::FromStr for S3ObjectCannedAcl {
+    type Err = std::convert::Infallible;
 
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(S3ObjectCannedAcl::from(s))
+    }
+}
+impl S3ObjectCannedAcl {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            S3ObjectCannedAcl::AuthenticatedRead => "AUTHENTICATED_READ",
+            S3ObjectCannedAcl::BucketOwnerFullControl => "BUCKET_OWNER_FULL_CONTROL",
+            S3ObjectCannedAcl::BucketOwnerRead => "BUCKET_OWNER_READ",
+            S3ObjectCannedAcl::PublicRead => "PUBLIC_READ",
+            S3ObjectCannedAcl::Unknown(value) => value.as_str(),
+        }
+    }
+    /// Returns all the `&str` representations of the enum members.
+    pub const fn values() -> &'static [&'static str] {
+        &[
+            "AUTHENTICATED_READ",
+            "BUCKET_OWNER_FULL_CONTROL",
+            "BUCKET_OWNER_READ",
+            "PUBLIC_READ",
+        ]
+    }
+}
+impl AsRef<str> for S3ObjectCannedAcl {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}

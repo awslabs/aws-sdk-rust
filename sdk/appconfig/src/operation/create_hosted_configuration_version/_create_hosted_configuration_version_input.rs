@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct CreateHostedConfigurationVersionInput  {
+pub struct CreateHostedConfigurationVersionInput {
     /// <p>The application ID.</p>
     #[doc(hidden)]
     pub application_id: std::option::Option<std::string::String>,
@@ -24,23 +24,23 @@ pub struct CreateHostedConfigurationVersionInput  {
 }
 impl CreateHostedConfigurationVersionInput {
     /// <p>The application ID.</p>
-    pub fn application_id(&self) -> std::option::Option<& str> {
+    pub fn application_id(&self) -> std::option::Option<&str> {
         self.application_id.as_deref()
     }
     /// <p>The configuration profile ID.</p>
-    pub fn configuration_profile_id(&self) -> std::option::Option<& str> {
+    pub fn configuration_profile_id(&self) -> std::option::Option<&str> {
         self.configuration_profile_id.as_deref()
     }
     /// <p>A description of the configuration.</p>
-    pub fn description(&self) -> std::option::Option<& str> {
+    pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
     /// <p>The content of the configuration or the configuration data.</p>
-    pub fn content(&self) -> std::option::Option<& aws_smithy_types::Blob> {
+    pub fn content(&self) -> std::option::Option<&aws_smithy_types::Blob> {
         self.content.as_ref()
     }
     /// <p>A standard MIME type describing the format of the configuration content. For more information, see <a href="https://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.17">Content-Type</a>.</p>
-    pub fn content_type(&self) -> std::option::Option<& str> {
+    pub fn content_type(&self) -> std::option::Option<&str> {
         self.content_type.as_deref()
     }
     /// <p>An optional locking token used to prevent race conditions from overwriting configuration updates when creating a new version. To ensure your data is not overwritten when creating multiple hosted configuration versions in rapid succession, specify the version number of the latest hosted configuration version.</p>
@@ -48,7 +48,7 @@ impl CreateHostedConfigurationVersionInput {
         self.latest_version_number
     }
 }
-impl  std::fmt::Debug for CreateHostedConfigurationVersionInput  {
+impl std::fmt::Debug for CreateHostedConfigurationVersionInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateHostedConfigurationVersionInput");
         formatter.field("application_id", &self.application_id);
@@ -62,7 +62,7 @@ impl  std::fmt::Debug for CreateHostedConfigurationVersionInput  {
 }
 impl CreateHostedConfigurationVersionInput {
     /// Creates a new builder-style object to manufacture [`CreateHostedConfigurationVersionInput`](crate::operation::create_hosted_configuration_version::CreateHostedConfigurationVersionInput).
-    pub fn builder() -> crate::operation::create_hosted_configuration_version::builders::CreateHostedConfigurationVersionInputBuilder {
+    pub fn builder() -> crate::operation::create_hosted_configuration_version::builders::CreateHostedConfigurationVersionInputBuilder{
         crate::operation::create_hosted_configuration_version::builders::CreateHostedConfigurationVersionInputBuilder::default()
     }
 }
@@ -86,7 +86,8 @@ impl CreateHostedConfigurationVersionInputBuilder {
     }
     /// <p>The application ID.</p>
     pub fn set_application_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.application_id = input; self
+        self.application_id = input;
+        self
     }
     /// <p>The configuration profile ID.</p>
     pub fn configuration_profile_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -94,8 +95,12 @@ impl CreateHostedConfigurationVersionInputBuilder {
         self
     }
     /// <p>The configuration profile ID.</p>
-    pub fn set_configuration_profile_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.configuration_profile_id = input; self
+    pub fn set_configuration_profile_id(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.configuration_profile_id = input;
+        self
     }
     /// <p>A description of the configuration.</p>
     pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -104,7 +109,8 @@ impl CreateHostedConfigurationVersionInputBuilder {
     }
     /// <p>A description of the configuration.</p>
     pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.description = input; self
+        self.description = input;
+        self
     }
     /// <p>The content of the configuration or the configuration data.</p>
     pub fn content(mut self, input: aws_smithy_types::Blob) -> Self {
@@ -113,7 +119,8 @@ impl CreateHostedConfigurationVersionInputBuilder {
     }
     /// <p>The content of the configuration or the configuration data.</p>
     pub fn set_content(mut self, input: std::option::Option<aws_smithy_types::Blob>) -> Self {
-        self.content = input; self
+        self.content = input;
+        self
     }
     /// <p>A standard MIME type describing the format of the configuration content. For more information, see <a href="https://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.17">Content-Type</a>.</p>
     pub fn content_type(mut self, input: impl Into<std::string::String>) -> Self {
@@ -122,7 +129,8 @@ impl CreateHostedConfigurationVersionInputBuilder {
     }
     /// <p>A standard MIME type describing the format of the configuration content. For more information, see <a href="https://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.17">Content-Type</a>.</p>
     pub fn set_content_type(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.content_type = input; self
+        self.content_type = input;
+        self
     }
     /// <p>An optional locking token used to prevent race conditions from overwriting configuration updates when creating a new version. To ensure your data is not overwritten when creating multiple hosted configuration versions in rapid succession, specify the version number of the latest hosted configuration version.</p>
     pub fn latest_version_number(mut self, input: i32) -> Self {
@@ -131,10 +139,11 @@ impl CreateHostedConfigurationVersionInputBuilder {
     }
     /// <p>An optional locking token used to prevent race conditions from overwriting configuration updates when creating a new version. To ensure your data is not overwritten when creating multiple hosted configuration versions in rapid succession, specify the version number of the latest hosted configuration version.</p>
     pub fn set_latest_version_number(mut self, input: std::option::Option<i32>) -> Self {
-        self.latest_version_number = input; self
+        self.latest_version_number = input;
+        self
     }
     /// Consumes the builder and constructs a [`CreateHostedConfigurationVersionInput`](crate::operation::create_hosted_configuration_version::CreateHostedConfigurationVersionInput).
-    pub fn build(self) -> Result<crate::operation::create_hosted_configuration_version::CreateHostedConfigurationVersionInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> Result<crate::operation::create_hosted_configuration_version::CreateHostedConfigurationVersionInput, aws_smithy_http::operation::error::BuildError>{
         Ok(
             crate::operation::create_hosted_configuration_version::CreateHostedConfigurationVersionInput {
                 application_id: self.application_id
@@ -165,4 +174,3 @@ impl std::fmt::Debug for CreateHostedConfigurationVersionInputBuilder {
         formatter.finish()
     }
 }
-

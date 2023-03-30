@@ -2,21 +2,25 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PhoneNumberValidateInput  {
+pub struct PhoneNumberValidateInput {
     /// <p>Specifies a phone number to validate and retrieve information about.</p>
     #[doc(hidden)]
     pub number_validate_request: std::option::Option<crate::types::NumberValidateRequest>,
 }
 impl PhoneNumberValidateInput {
     /// <p>Specifies a phone number to validate and retrieve information about.</p>
-    pub fn number_validate_request(&self) -> std::option::Option<& crate::types::NumberValidateRequest> {
+    pub fn number_validate_request(
+        &self,
+    ) -> std::option::Option<&crate::types::NumberValidateRequest> {
         self.number_validate_request.as_ref()
     }
 }
 impl PhoneNumberValidateInput {
     /// Creates a new builder-style object to manufacture [`PhoneNumberValidateInput`](crate::operation::phone_number_validate::PhoneNumberValidateInput).
-    pub fn builder() -> crate::operation::phone_number_validate::builders::PhoneNumberValidateInputBuilder {
-        crate::operation::phone_number_validate::builders::PhoneNumberValidateInputBuilder::default()
+    pub fn builder(
+    ) -> crate::operation::phone_number_validate::builders::PhoneNumberValidateInputBuilder {
+        crate::operation::phone_number_validate::builders::PhoneNumberValidateInputBuilder::default(
+        )
     }
 }
 
@@ -33,17 +37,24 @@ impl PhoneNumberValidateInputBuilder {
         self
     }
     /// <p>Specifies a phone number to validate and retrieve information about.</p>
-    pub fn set_number_validate_request(mut self, input: std::option::Option<crate::types::NumberValidateRequest>) -> Self {
-        self.number_validate_request = input; self
+    pub fn set_number_validate_request(
+        mut self,
+        input: std::option::Option<crate::types::NumberValidateRequest>,
+    ) -> Self {
+        self.number_validate_request = input;
+        self
     }
     /// Consumes the builder and constructs a [`PhoneNumberValidateInput`](crate::operation::phone_number_validate::PhoneNumberValidateInput).
-    pub fn build(self) -> Result<crate::operation::phone_number_validate::PhoneNumberValidateInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::phone_number_validate::PhoneNumberValidateInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::phone_number_validate::PhoneNumberValidateInput {
-                number_validate_request: self.number_validate_request
-                ,
-            }
+                number_validate_request: self.number_validate_request,
+            },
         )
     }
 }
-

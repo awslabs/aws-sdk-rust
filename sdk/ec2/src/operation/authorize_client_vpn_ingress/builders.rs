@@ -4,56 +4,81 @@ pub use crate::operation::authorize_client_vpn_ingress::_authorize_client_vpn_in
 pub use crate::operation::authorize_client_vpn_ingress::_authorize_client_vpn_ingress_input::AuthorizeClientVpnIngressInputBuilder;
 
 /// Fluent builder constructing a request to `AuthorizeClientVpnIngress`.
-/// 
+///
 /// <p>Adds an ingress authorization rule to a Client VPN endpoint. Ingress authorization rules act as firewall rules that grant access to networks. You must configure ingress authorization rules to enable clients to access resources in Amazon Web Services or on-premises networks.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct AuthorizeClientVpnIngressFluentBuilder {
                 handle: std::sync::Arc<crate::client::Handle>,
                 inner: crate::operation::authorize_client_vpn_ingress::builders::AuthorizeClientVpnIngressInputBuilder
             }
-impl AuthorizeClientVpnIngressFluentBuilder  {
+impl AuthorizeClientVpnIngressFluentBuilder {
     /// Creates a new `AuthorizeClientVpnIngress`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
-                    /// sent. The operation's inner [http::Request] can be modified as well.
-                    pub async fn customize(self) -> std::result::Result<
-                        crate::client::customize::CustomizableOperation<crate::operation::authorize_client_vpn_ingress::AuthorizeClientVpnIngress, aws_http::retry::AwsResponseRetryClassifier,>,
-                        aws_smithy_http::result::SdkError<crate::operation::authorize_client_vpn_ingress::AuthorizeClientVpnIngressError>
-                    >  {
-                        let handle = self.handle.clone();
-                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-                    }
-    
-                    /// Sends the request and returns the response.
-                    ///
-                    /// If an error occurs, an `SdkError` will be returned with additional details that
-                    /// can be matched against.
-                    ///
-                    /// By default, any retryable failures will be retried twice. Retry behavior
-                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                    /// set when configuring the client.
-                    pub async fn send(self) -> std::result::Result<crate::operation::authorize_client_vpn_ingress::AuthorizeClientVpnIngressOutput, aws_smithy_http::result::SdkError<crate::operation::authorize_client_vpn_ingress::AuthorizeClientVpnIngressError>>
-                     {
-                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&self.handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        self.handle.client.call(op).await
-                    }
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle,
+            inner: Default::default(),
+        }
+    }
+
+    /// Consume this builder, creating a customizable operation that can be modified before being
+    /// sent. The operation's inner [http::Request] can be modified as well.
+    pub async fn customize(
+        self,
+    ) -> std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::authorize_client_vpn_ingress::AuthorizeClientVpnIngress,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::result::SdkError<
+            crate::operation::authorize_client_vpn_ingress::AuthorizeClientVpnIngressError,
+        >,
+    > {
+        let handle = self.handle.clone();
+        let operation = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+    }
+
+    /// Sends the request and returns the response.
+    ///
+    /// If an error occurs, an `SdkError` will be returned with additional details that
+    /// can be matched against.
+    ///
+    /// By default, any retryable failures will be retried twice. Retry behavior
+    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+    /// set when configuring the client.
+    pub async fn send(
+        self,
+    ) -> std::result::Result<
+        crate::operation::authorize_client_vpn_ingress::AuthorizeClientVpnIngressOutput,
+        aws_smithy_http::result::SdkError<
+            crate::operation::authorize_client_vpn_ingress::AuthorizeClientVpnIngressError,
+        >,
+    > {
+        let op = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&self.handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        self.handle.client.call(op).await
+    }
     /// <p>The ID of the Client VPN endpoint.</p>
     pub fn client_vpn_endpoint_id(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.client_vpn_endpoint_id(input.into());
         self
     }
     /// <p>The ID of the Client VPN endpoint.</p>
-    pub fn set_client_vpn_endpoint_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_client_vpn_endpoint_id(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_client_vpn_endpoint_id(input);
         self
     }
@@ -63,7 +88,10 @@ impl AuthorizeClientVpnIngressFluentBuilder  {
         self
     }
     /// <p>The IPv4 address range, in CIDR notation, of the network for which access is being authorized.</p>
-    pub fn set_target_network_cidr(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_target_network_cidr(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_target_network_cidr(input);
         self
     }
@@ -118,4 +146,3 @@ impl AuthorizeClientVpnIngressFluentBuilder  {
         self
     }
 }
-

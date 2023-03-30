@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AssociateCreatedArtifactInput  {
+pub struct AssociateCreatedArtifactInput {
     /// <p>The name of the ProgressUpdateStream. </p>
     #[doc(hidden)]
     pub progress_update_stream: std::option::Option<std::string::String>,
@@ -18,15 +18,15 @@ pub struct AssociateCreatedArtifactInput  {
 }
 impl AssociateCreatedArtifactInput {
     /// <p>The name of the ProgressUpdateStream. </p>
-    pub fn progress_update_stream(&self) -> std::option::Option<& str> {
+    pub fn progress_update_stream(&self) -> std::option::Option<&str> {
         self.progress_update_stream.as_deref()
     }
     /// <p>Unique identifier that references the migration task. <i>Do not store personal data in this field.</i> </p>
-    pub fn migration_task_name(&self) -> std::option::Option<& str> {
+    pub fn migration_task_name(&self) -> std::option::Option<&str> {
         self.migration_task_name.as_deref()
     }
     /// <p>An ARN of the AWS resource related to the migration (e.g., AMI, EC2 instance, RDS instance, etc.) </p>
-    pub fn created_artifact(&self) -> std::option::Option<& crate::types::CreatedArtifact> {
+    pub fn created_artifact(&self) -> std::option::Option<&crate::types::CreatedArtifact> {
         self.created_artifact.as_ref()
     }
     /// <p>Optional boolean flag to indicate whether any effect should take place. Used to test if the caller has permission to make the call.</p>
@@ -36,7 +36,9 @@ impl AssociateCreatedArtifactInput {
 }
 impl AssociateCreatedArtifactInput {
     /// Creates a new builder-style object to manufacture [`AssociateCreatedArtifactInput`](crate::operation::associate_created_artifact::AssociateCreatedArtifactInput).
-    pub fn builder() -> crate::operation::associate_created_artifact::builders::AssociateCreatedArtifactInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::associate_created_artifact::builders::AssociateCreatedArtifactInputBuilder
+    {
         crate::operation::associate_created_artifact::builders::AssociateCreatedArtifactInputBuilder::default()
     }
 }
@@ -57,8 +59,12 @@ impl AssociateCreatedArtifactInputBuilder {
         self
     }
     /// <p>The name of the ProgressUpdateStream. </p>
-    pub fn set_progress_update_stream(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.progress_update_stream = input; self
+    pub fn set_progress_update_stream(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.progress_update_stream = input;
+        self
     }
     /// <p>Unique identifier that references the migration task. <i>Do not store personal data in this field.</i> </p>
     pub fn migration_task_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -66,8 +72,12 @@ impl AssociateCreatedArtifactInputBuilder {
         self
     }
     /// <p>Unique identifier that references the migration task. <i>Do not store personal data in this field.</i> </p>
-    pub fn set_migration_task_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.migration_task_name = input; self
+    pub fn set_migration_task_name(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.migration_task_name = input;
+        self
     }
     /// <p>An ARN of the AWS resource related to the migration (e.g., AMI, EC2 instance, RDS instance, etc.) </p>
     pub fn created_artifact(mut self, input: crate::types::CreatedArtifact) -> Self {
@@ -75,8 +85,12 @@ impl AssociateCreatedArtifactInputBuilder {
         self
     }
     /// <p>An ARN of the AWS resource related to the migration (e.g., AMI, EC2 instance, RDS instance, etc.) </p>
-    pub fn set_created_artifact(mut self, input: std::option::Option<crate::types::CreatedArtifact>) -> Self {
-        self.created_artifact = input; self
+    pub fn set_created_artifact(
+        mut self,
+        input: std::option::Option<crate::types::CreatedArtifact>,
+    ) -> Self {
+        self.created_artifact = input;
+        self
     }
     /// <p>Optional boolean flag to indicate whether any effect should take place. Used to test if the caller has permission to make the call.</p>
     pub fn dry_run(mut self, input: bool) -> Self {
@@ -85,23 +99,23 @@ impl AssociateCreatedArtifactInputBuilder {
     }
     /// <p>Optional boolean flag to indicate whether any effect should take place. Used to test if the caller has permission to make the call.</p>
     pub fn set_dry_run(mut self, input: std::option::Option<bool>) -> Self {
-        self.dry_run = input; self
+        self.dry_run = input;
+        self
     }
     /// Consumes the builder and constructs a [`AssociateCreatedArtifactInput`](crate::operation::associate_created_artifact::AssociateCreatedArtifactInput).
-    pub fn build(self) -> Result<crate::operation::associate_created_artifact::AssociateCreatedArtifactInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::associate_created_artifact::AssociateCreatedArtifactInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::associate_created_artifact::AssociateCreatedArtifactInput {
-                progress_update_stream: self.progress_update_stream
-                ,
-                migration_task_name: self.migration_task_name
-                ,
-                created_artifact: self.created_artifact
-                ,
-                dry_run: self.dry_run
-                    .unwrap_or_default()
-                ,
-            }
+                progress_update_stream: self.progress_update_stream,
+                migration_task_name: self.migration_task_name,
+                created_artifact: self.created_artifact,
+                dry_run: self.dry_run.unwrap_or_default(),
+            },
         )
     }
 }
-

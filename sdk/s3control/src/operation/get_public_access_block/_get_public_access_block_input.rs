@@ -2,20 +2,21 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetPublicAccessBlockInput  {
+pub struct GetPublicAccessBlockInput {
     /// <p>The account ID for the Amazon Web Services account whose <code>PublicAccessBlock</code> configuration you want to retrieve.</p>
     #[doc(hidden)]
     pub account_id: std::option::Option<std::string::String>,
 }
 impl GetPublicAccessBlockInput {
     /// <p>The account ID for the Amazon Web Services account whose <code>PublicAccessBlock</code> configuration you want to retrieve.</p>
-    pub fn account_id(&self) -> std::option::Option<& str> {
+    pub fn account_id(&self) -> std::option::Option<&str> {
         self.account_id.as_deref()
     }
 }
 impl GetPublicAccessBlockInput {
     /// Creates a new builder-style object to manufacture [`GetPublicAccessBlockInput`](crate::operation::get_public_access_block::GetPublicAccessBlockInput).
-    pub fn builder() -> crate::operation::get_public_access_block::builders::GetPublicAccessBlockInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::get_public_access_block::builders::GetPublicAccessBlockInputBuilder {
         crate::operation::get_public_access_block::builders::GetPublicAccessBlockInputBuilder::default()
     }
 }
@@ -34,16 +35,20 @@ impl GetPublicAccessBlockInputBuilder {
     }
     /// <p>The account ID for the Amazon Web Services account whose <code>PublicAccessBlock</code> configuration you want to retrieve.</p>
     pub fn set_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.account_id = input; self
+        self.account_id = input;
+        self
     }
     /// Consumes the builder and constructs a [`GetPublicAccessBlockInput`](crate::operation::get_public_access_block::GetPublicAccessBlockInput).
-    pub fn build(self) -> Result<crate::operation::get_public_access_block::GetPublicAccessBlockInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::get_public_access_block::GetPublicAccessBlockInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::get_public_access_block::GetPublicAccessBlockInput {
-                account_id: self.account_id
-                ,
-            }
+                account_id: self.account_id,
+            },
         )
     }
 }
-

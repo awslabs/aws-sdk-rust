@@ -3,7 +3,7 @@
 /// <p>The minimum and maximum number of network interfaces.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct NetworkInterfaceCount  {
+pub struct NetworkInterfaceCount {
     /// <p>The minimum number of network interfaces. If this parameter is not specified, there is no minimum limit.</p>
     #[doc(hidden)]
     pub min: std::option::Option<i32>,
@@ -43,7 +43,8 @@ impl NetworkInterfaceCountBuilder {
     }
     /// <p>The minimum number of network interfaces. If this parameter is not specified, there is no minimum limit.</p>
     pub fn set_min(mut self, input: std::option::Option<i32>) -> Self {
-        self.min = input; self
+        self.min = input;
+        self
     }
     /// <p>The maximum number of network interfaces. If this parameter is not specified, there is no maximum limit.</p>
     pub fn max(mut self, input: i32) -> Self {
@@ -52,16 +53,14 @@ impl NetworkInterfaceCountBuilder {
     }
     /// <p>The maximum number of network interfaces. If this parameter is not specified, there is no maximum limit.</p>
     pub fn set_max(mut self, input: std::option::Option<i32>) -> Self {
-        self.max = input; self
+        self.max = input;
+        self
     }
     /// Consumes the builder and constructs a [`NetworkInterfaceCount`](crate::types::NetworkInterfaceCount).
     pub fn build(self) -> crate::types::NetworkInterfaceCount {
         crate::types::NetworkInterfaceCount {
-            min: self.min
-            ,
-            max: self.max
-            ,
+            min: self.min,
+            max: self.max,
         }
     }
 }
-

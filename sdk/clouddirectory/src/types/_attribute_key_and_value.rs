@@ -3,7 +3,7 @@
 /// <p>The combination of an attribute key and an attribute value.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AttributeKeyAndValue  {
+pub struct AttributeKeyAndValue {
     /// <p>The key of the attribute.</p>
     #[doc(hidden)]
     pub key: std::option::Option<crate::types::AttributeKey>,
@@ -13,11 +13,11 @@ pub struct AttributeKeyAndValue  {
 }
 impl AttributeKeyAndValue {
     /// <p>The key of the attribute.</p>
-    pub fn key(&self) -> std::option::Option<& crate::types::AttributeKey> {
+    pub fn key(&self) -> std::option::Option<&crate::types::AttributeKey> {
         self.key.as_ref()
     }
     /// <p>The value of the attribute.</p>
-    pub fn value(&self) -> std::option::Option<& crate::types::TypedAttributeValue> {
+    pub fn value(&self) -> std::option::Option<&crate::types::TypedAttributeValue> {
         self.value.as_ref()
     }
 }
@@ -43,7 +43,8 @@ impl AttributeKeyAndValueBuilder {
     }
     /// <p>The key of the attribute.</p>
     pub fn set_key(mut self, input: std::option::Option<crate::types::AttributeKey>) -> Self {
-        self.key = input; self
+        self.key = input;
+        self
     }
     /// <p>The value of the attribute.</p>
     pub fn value(mut self, input: crate::types::TypedAttributeValue) -> Self {
@@ -51,17 +52,18 @@ impl AttributeKeyAndValueBuilder {
         self
     }
     /// <p>The value of the attribute.</p>
-    pub fn set_value(mut self, input: std::option::Option<crate::types::TypedAttributeValue>) -> Self {
-        self.value = input; self
+    pub fn set_value(
+        mut self,
+        input: std::option::Option<crate::types::TypedAttributeValue>,
+    ) -> Self {
+        self.value = input;
+        self
     }
     /// Consumes the builder and constructs a [`AttributeKeyAndValue`](crate::types::AttributeKeyAndValue).
     pub fn build(self) -> crate::types::AttributeKeyAndValue {
         crate::types::AttributeKeyAndValue {
-            key: self.key
-            ,
-            value: self.value
-            ,
+            key: self.key,
+            value: self.value,
         }
     }
 }
-

@@ -2,20 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteMetricAttributionInput  {
+pub struct DeleteMetricAttributionInput {
     /// <p>The metric attribution's Amazon Resource Name (ARN).</p>
     #[doc(hidden)]
     pub metric_attribution_arn: std::option::Option<std::string::String>,
 }
 impl DeleteMetricAttributionInput {
     /// <p>The metric attribution's Amazon Resource Name (ARN).</p>
-    pub fn metric_attribution_arn(&self) -> std::option::Option<& str> {
+    pub fn metric_attribution_arn(&self) -> std::option::Option<&str> {
         self.metric_attribution_arn.as_deref()
     }
 }
 impl DeleteMetricAttributionInput {
     /// Creates a new builder-style object to manufacture [`DeleteMetricAttributionInput`](crate::operation::delete_metric_attribution::DeleteMetricAttributionInput).
-    pub fn builder() -> crate::operation::delete_metric_attribution::builders::DeleteMetricAttributionInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::delete_metric_attribution::builders::DeleteMetricAttributionInputBuilder
+    {
         crate::operation::delete_metric_attribution::builders::DeleteMetricAttributionInputBuilder::default()
     }
 }
@@ -33,17 +35,24 @@ impl DeleteMetricAttributionInputBuilder {
         self
     }
     /// <p>The metric attribution's Amazon Resource Name (ARN).</p>
-    pub fn set_metric_attribution_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.metric_attribution_arn = input; self
+    pub fn set_metric_attribution_arn(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.metric_attribution_arn = input;
+        self
     }
     /// Consumes the builder and constructs a [`DeleteMetricAttributionInput`](crate::operation::delete_metric_attribution::DeleteMetricAttributionInput).
-    pub fn build(self) -> Result<crate::operation::delete_metric_attribution::DeleteMetricAttributionInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::delete_metric_attribution::DeleteMetricAttributionInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::delete_metric_attribution::DeleteMetricAttributionInput {
-                metric_attribution_arn: self.metric_attribution_arn
-                ,
-            }
+                metric_attribution_arn: self.metric_attribution_arn,
+            },
         )
     }
 }
-

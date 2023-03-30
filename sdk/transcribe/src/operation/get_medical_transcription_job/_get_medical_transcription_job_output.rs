@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetMedicalTranscriptionJobOutput  {
+pub struct GetMedicalTranscriptionJobOutput {
     /// <p>Provides detailed information about the specified medical transcription job, including job status and, if applicable, failure reason.</p>
     #[doc(hidden)]
     pub medical_transcription_job: std::option::Option<crate::types::MedicalTranscriptionJob>,
@@ -10,18 +10,20 @@ pub struct GetMedicalTranscriptionJobOutput  {
 }
 impl GetMedicalTranscriptionJobOutput {
     /// <p>Provides detailed information about the specified medical transcription job, including job status and, if applicable, failure reason.</p>
-    pub fn medical_transcription_job(&self) -> std::option::Option<& crate::types::MedicalTranscriptionJob> {
+    pub fn medical_transcription_job(
+        &self,
+    ) -> std::option::Option<&crate::types::MedicalTranscriptionJob> {
         self.medical_transcription_job.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for GetMedicalTranscriptionJobOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl GetMedicalTranscriptionJobOutput {
     /// Creates a new builder-style object to manufacture [`GetMedicalTranscriptionJobOutput`](crate::operation::get_medical_transcription_job::GetMedicalTranscriptionJobOutput).
-    pub fn builder() -> crate::operation::get_medical_transcription_job::builders::GetMedicalTranscriptionJobOutputBuilder {
+    pub fn builder() -> crate::operation::get_medical_transcription_job::builders::GetMedicalTranscriptionJobOutputBuilder{
         crate::operation::get_medical_transcription_job::builders::GetMedicalTranscriptionJobOutputBuilder::default()
     }
 }
@@ -30,35 +32,43 @@ impl GetMedicalTranscriptionJobOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct GetMedicalTranscriptionJobOutputBuilder {
-    pub(crate) medical_transcription_job: std::option::Option<crate::types::MedicalTranscriptionJob>,
+    pub(crate) medical_transcription_job:
+        std::option::Option<crate::types::MedicalTranscriptionJob>,
     _request_id: Option<String>,
 }
 impl GetMedicalTranscriptionJobOutputBuilder {
     /// <p>Provides detailed information about the specified medical transcription job, including job status and, if applicable, failure reason.</p>
-    pub fn medical_transcription_job(mut self, input: crate::types::MedicalTranscriptionJob) -> Self {
+    pub fn medical_transcription_job(
+        mut self,
+        input: crate::types::MedicalTranscriptionJob,
+    ) -> Self {
         self.medical_transcription_job = Some(input);
         self
     }
     /// <p>Provides detailed information about the specified medical transcription job, including job status and, if applicable, failure reason.</p>
-    pub fn set_medical_transcription_job(mut self, input: std::option::Option<crate::types::MedicalTranscriptionJob>) -> Self {
-        self.medical_transcription_job = input; self
+    pub fn set_medical_transcription_job(
+        mut self,
+        input: std::option::Option<crate::types::MedicalTranscriptionJob>,
+    ) -> Self {
+        self.medical_transcription_job = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`GetMedicalTranscriptionJobOutput`](crate::operation::get_medical_transcription_job::GetMedicalTranscriptionJobOutput).
-    pub fn build(self) -> crate::operation::get_medical_transcription_job::GetMedicalTranscriptionJobOutput {
+    pub fn build(
+        self,
+    ) -> crate::operation::get_medical_transcription_job::GetMedicalTranscriptionJobOutput {
         crate::operation::get_medical_transcription_job::GetMedicalTranscriptionJobOutput {
-            medical_transcription_job: self.medical_transcription_job
-            ,
+            medical_transcription_job: self.medical_transcription_job,
             _request_id: self._request_id,
         }
     }
 }
-

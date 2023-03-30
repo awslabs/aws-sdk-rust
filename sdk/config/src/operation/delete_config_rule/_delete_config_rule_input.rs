@@ -3,20 +3,21 @@
 /// <p></p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteConfigRuleInput  {
+pub struct DeleteConfigRuleInput {
     /// <p>The name of the Config rule that you want to delete.</p>
     #[doc(hidden)]
     pub config_rule_name: std::option::Option<std::string::String>,
 }
 impl DeleteConfigRuleInput {
     /// <p>The name of the Config rule that you want to delete.</p>
-    pub fn config_rule_name(&self) -> std::option::Option<& str> {
+    pub fn config_rule_name(&self) -> std::option::Option<&str> {
         self.config_rule_name.as_deref()
     }
 }
 impl DeleteConfigRuleInput {
     /// Creates a new builder-style object to manufacture [`DeleteConfigRuleInput`](crate::operation::delete_config_rule::DeleteConfigRuleInput).
-    pub fn builder() -> crate::operation::delete_config_rule::builders::DeleteConfigRuleInputBuilder {
+    pub fn builder() -> crate::operation::delete_config_rule::builders::DeleteConfigRuleInputBuilder
+    {
         crate::operation::delete_config_rule::builders::DeleteConfigRuleInputBuilder::default()
     }
 }
@@ -35,16 +36,20 @@ impl DeleteConfigRuleInputBuilder {
     }
     /// <p>The name of the Config rule that you want to delete.</p>
     pub fn set_config_rule_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.config_rule_name = input; self
+        self.config_rule_name = input;
+        self
     }
     /// Consumes the builder and constructs a [`DeleteConfigRuleInput`](crate::operation::delete_config_rule::DeleteConfigRuleInput).
-    pub fn build(self) -> Result<crate::operation::delete_config_rule::DeleteConfigRuleInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::delete_config_rule::DeleteConfigRuleInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::delete_config_rule::DeleteConfigRuleInput {
-                config_rule_name: self.config_rule_name
-                ,
-            }
+                config_rule_name: self.config_rule_name,
+            },
         )
     }
 }
-

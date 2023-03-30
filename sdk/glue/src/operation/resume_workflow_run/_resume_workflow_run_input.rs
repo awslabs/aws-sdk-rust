@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ResumeWorkflowRunInput  {
+pub struct ResumeWorkflowRunInput {
     /// <p>The name of the workflow to resume.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -15,21 +15,22 @@ pub struct ResumeWorkflowRunInput  {
 }
 impl ResumeWorkflowRunInput {
     /// <p>The name of the workflow to resume.</p>
-    pub fn name(&self) -> std::option::Option<& str> {
+    pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>The ID of the workflow run to resume.</p>
-    pub fn run_id(&self) -> std::option::Option<& str> {
+    pub fn run_id(&self) -> std::option::Option<&str> {
         self.run_id.as_deref()
     }
     /// <p>A list of the node IDs for the nodes you want to restart. The nodes that are to be restarted must have a run attempt in the original run.</p>
-    pub fn node_ids(&self) -> std::option::Option<& [std::string::String]> {
+    pub fn node_ids(&self) -> std::option::Option<&[std::string::String]> {
         self.node_ids.as_deref()
     }
 }
 impl ResumeWorkflowRunInput {
     /// Creates a new builder-style object to manufacture [`ResumeWorkflowRunInput`](crate::operation::resume_workflow_run::ResumeWorkflowRunInput).
-    pub fn builder() -> crate::operation::resume_workflow_run::builders::ResumeWorkflowRunInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::resume_workflow_run::builders::ResumeWorkflowRunInputBuilder {
         crate::operation::resume_workflow_run::builders::ResumeWorkflowRunInputBuilder::default()
     }
 }
@@ -50,7 +51,8 @@ impl ResumeWorkflowRunInputBuilder {
     }
     /// <p>The name of the workflow to resume.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input; self
+        self.name = input;
+        self
     }
     /// <p>The ID of the workflow run to resume.</p>
     pub fn run_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -59,7 +61,8 @@ impl ResumeWorkflowRunInputBuilder {
     }
     /// <p>The ID of the workflow run to resume.</p>
     pub fn set_run_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.run_id = input; self
+        self.run_id = input;
+        self
     }
     /// Appends an item to `node_ids`.
     ///
@@ -68,26 +71,31 @@ impl ResumeWorkflowRunInputBuilder {
     /// <p>A list of the node IDs for the nodes you want to restart. The nodes that are to be restarted must have a run attempt in the original run.</p>
     pub fn node_ids(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.node_ids.unwrap_or_default();
-                        v.push(input.into());
-                        self.node_ids = Some(v);
-                        self
+        v.push(input.into());
+        self.node_ids = Some(v);
+        self
     }
     /// <p>A list of the node IDs for the nodes you want to restart. The nodes that are to be restarted must have a run attempt in the original run.</p>
-    pub fn set_node_ids(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-        self.node_ids = input; self
+    pub fn set_node_ids(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
+        self.node_ids = input;
+        self
     }
     /// Consumes the builder and constructs a [`ResumeWorkflowRunInput`](crate::operation::resume_workflow_run::ResumeWorkflowRunInput).
-    pub fn build(self) -> Result<crate::operation::resume_workflow_run::ResumeWorkflowRunInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::resume_workflow_run::ResumeWorkflowRunInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::resume_workflow_run::ResumeWorkflowRunInput {
-                name: self.name
-                ,
-                run_id: self.run_id
-                ,
-                node_ids: self.node_ids
-                ,
-            }
+                name: self.name,
+                run_id: self.run_id,
+                node_ids: self.node_ids,
+            },
         )
     }
 }
-

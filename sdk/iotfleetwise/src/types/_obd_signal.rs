@@ -3,7 +3,7 @@
 /// <p>Information about signal messages using the on-board diagnostics (OBD) II protocol in a vehicle.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ObdSignal  {
+pub struct ObdSignal {
     /// <p>The length of the requested data.</p>
     #[doc(hidden)]
     pub pid_response_length: i32,
@@ -99,7 +99,8 @@ impl ObdSignalBuilder {
     }
     /// <p>The length of the requested data.</p>
     pub fn set_pid_response_length(mut self, input: std::option::Option<i32>) -> Self {
-        self.pid_response_length = input; self
+        self.pid_response_length = input;
+        self
     }
     /// <p>The mode of operation (diagnostic service) in a message.</p>
     pub fn service_mode(mut self, input: i32) -> Self {
@@ -108,7 +109,8 @@ impl ObdSignalBuilder {
     }
     /// <p>The mode of operation (diagnostic service) in a message.</p>
     pub fn set_service_mode(mut self, input: std::option::Option<i32>) -> Self {
-        self.service_mode = input; self
+        self.service_mode = input;
+        self
     }
     /// <p>The diagnostic code used to request data from a vehicle for this signal.</p>
     pub fn pid(mut self, input: i32) -> Self {
@@ -117,7 +119,8 @@ impl ObdSignalBuilder {
     }
     /// <p>The diagnostic code used to request data from a vehicle for this signal.</p>
     pub fn set_pid(mut self, input: std::option::Option<i32>) -> Self {
-        self.pid = input; self
+        self.pid = input;
+        self
     }
     /// <p>A multiplier used to decode the message.</p>
     pub fn scaling(mut self, input: f64) -> Self {
@@ -126,7 +129,8 @@ impl ObdSignalBuilder {
     }
     /// <p>A multiplier used to decode the message.</p>
     pub fn set_scaling(mut self, input: std::option::Option<f64>) -> Self {
-        self.scaling = input; self
+        self.scaling = input;
+        self
     }
     /// <p>Indicates where data appears in the message.</p>
     pub fn offset(mut self, input: f64) -> Self {
@@ -135,7 +139,8 @@ impl ObdSignalBuilder {
     }
     /// <p>Indicates where data appears in the message.</p>
     pub fn set_offset(mut self, input: std::option::Option<f64>) -> Self {
-        self.offset = input; self
+        self.offset = input;
+        self
     }
     /// <p>Indicates the beginning of the message.</p>
     pub fn start_byte(mut self, input: i32) -> Self {
@@ -144,7 +149,8 @@ impl ObdSignalBuilder {
     }
     /// <p>Indicates the beginning of the message.</p>
     pub fn set_start_byte(mut self, input: std::option::Option<i32>) -> Self {
-        self.start_byte = input; self
+        self.start_byte = input;
+        self
     }
     /// <p>The length of a message.</p>
     pub fn byte_length(mut self, input: i32) -> Self {
@@ -153,7 +159,8 @@ impl ObdSignalBuilder {
     }
     /// <p>The length of a message.</p>
     pub fn set_byte_length(mut self, input: std::option::Option<i32>) -> Self {
-        self.byte_length = input; self
+        self.byte_length = input;
+        self
     }
     /// <p>The number of positions to shift bits in the message.</p>
     pub fn bit_right_shift(mut self, input: i32) -> Self {
@@ -162,7 +169,8 @@ impl ObdSignalBuilder {
     }
     /// <p>The number of positions to shift bits in the message.</p>
     pub fn set_bit_right_shift(mut self, input: std::option::Option<i32>) -> Self {
-        self.bit_right_shift = input; self
+        self.bit_right_shift = input;
+        self
     }
     /// <p>The number of bits to mask in a message.</p>
     pub fn bit_mask_length(mut self, input: i32) -> Self {
@@ -171,35 +179,21 @@ impl ObdSignalBuilder {
     }
     /// <p>The number of bits to mask in a message.</p>
     pub fn set_bit_mask_length(mut self, input: std::option::Option<i32>) -> Self {
-        self.bit_mask_length = input; self
+        self.bit_mask_length = input;
+        self
     }
     /// Consumes the builder and constructs a [`ObdSignal`](crate::types::ObdSignal).
     pub fn build(self) -> crate::types::ObdSignal {
         crate::types::ObdSignal {
-            pid_response_length: self.pid_response_length
-                .unwrap_or_default()
-            ,
-            service_mode: self.service_mode
-                .unwrap_or_default()
-            ,
-            pid: self.pid
-                .unwrap_or_default()
-            ,
-            scaling: self.scaling
-            ,
-            offset: self.offset
-            ,
-            start_byte: self.start_byte
-                .unwrap_or_default()
-            ,
-            byte_length: self.byte_length
-            ,
-            bit_right_shift: self.bit_right_shift
-                .unwrap_or_default()
-            ,
-            bit_mask_length: self.bit_mask_length
-            ,
+            pid_response_length: self.pid_response_length.unwrap_or_default(),
+            service_mode: self.service_mode.unwrap_or_default(),
+            pid: self.pid.unwrap_or_default(),
+            scaling: self.scaling,
+            offset: self.offset,
+            start_byte: self.start_byte.unwrap_or_default(),
+            byte_length: self.byte_length,
+            bit_right_shift: self.bit_right_shift.unwrap_or_default(),
+            bit_mask_length: self.bit_mask_length,
         }
     }
 }
-

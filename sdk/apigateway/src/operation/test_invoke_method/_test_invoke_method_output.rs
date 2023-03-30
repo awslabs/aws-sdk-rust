@@ -3,7 +3,7 @@
 /// <p>Represents the response of the test invoke request in the HTTP method.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct TestInvokeMethodOutput  {
+pub struct TestInvokeMethodOutput {
     /// <p>The HTTP status code.</p>
     #[doc(hidden)]
     pub status: i32,
@@ -12,10 +12,13 @@ pub struct TestInvokeMethodOutput  {
     pub body: std::option::Option<std::string::String>,
     /// <p>The headers of the HTTP response.</p>
     #[doc(hidden)]
-    pub headers: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub headers:
+        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The headers of the HTTP response as a map from string to list of values.</p>
     #[doc(hidden)]
-    pub multi_value_headers: std::option::Option<std::collections::HashMap<std::string::String, std::vec::Vec<std::string::String>>>,
+    pub multi_value_headers: std::option::Option<
+        std::collections::HashMap<std::string::String, std::vec::Vec<std::string::String>>,
+    >,
     /// <p>The API Gateway execution log for the test invoke request.</p>
     #[doc(hidden)]
     pub log: std::option::Option<std::string::String>,
@@ -30,19 +33,26 @@ impl TestInvokeMethodOutput {
         self.status
     }
     /// <p>The body of the HTTP response.</p>
-    pub fn body(&self) -> std::option::Option<& str> {
+    pub fn body(&self) -> std::option::Option<&str> {
         self.body.as_deref()
     }
     /// <p>The headers of the HTTP response.</p>
-    pub fn headers(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
+    pub fn headers(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
         self.headers.as_ref()
     }
     /// <p>The headers of the HTTP response as a map from string to list of values.</p>
-    pub fn multi_value_headers(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::vec::Vec<std::string::String>>> {
+    pub fn multi_value_headers(
+        &self,
+    ) -> std::option::Option<
+        &std::collections::HashMap<std::string::String, std::vec::Vec<std::string::String>>,
+    > {
         self.multi_value_headers.as_ref()
     }
     /// <p>The API Gateway execution log for the test invoke request.</p>
-    pub fn log(&self) -> std::option::Option<& str> {
+    pub fn log(&self) -> std::option::Option<&str> {
         self.log.as_deref()
     }
     /// <p>The execution latency of the test invoke request.</p>
@@ -51,13 +61,14 @@ impl TestInvokeMethodOutput {
     }
 }
 impl aws_http::request_id::RequestId for TestInvokeMethodOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl TestInvokeMethodOutput {
     /// Creates a new builder-style object to manufacture [`TestInvokeMethodOutput`](crate::operation::test_invoke_method::TestInvokeMethodOutput).
-    pub fn builder() -> crate::operation::test_invoke_method::builders::TestInvokeMethodOutputBuilder {
+    pub fn builder() -> crate::operation::test_invoke_method::builders::TestInvokeMethodOutputBuilder
+    {
         crate::operation::test_invoke_method::builders::TestInvokeMethodOutputBuilder::default()
     }
 }
@@ -68,8 +79,11 @@ impl TestInvokeMethodOutput {
 pub struct TestInvokeMethodOutputBuilder {
     pub(crate) status: std::option::Option<i32>,
     pub(crate) body: std::option::Option<std::string::String>,
-    pub(crate) headers: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
-    pub(crate) multi_value_headers: std::option::Option<std::collections::HashMap<std::string::String, std::vec::Vec<std::string::String>>>,
+    pub(crate) headers:
+        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub(crate) multi_value_headers: std::option::Option<
+        std::collections::HashMap<std::string::String, std::vec::Vec<std::string::String>>,
+    >,
     pub(crate) log: std::option::Option<std::string::String>,
     pub(crate) latency: std::option::Option<i64>,
     _request_id: Option<String>,
@@ -82,7 +96,8 @@ impl TestInvokeMethodOutputBuilder {
     }
     /// <p>The HTTP status code.</p>
     pub fn set_status(mut self, input: std::option::Option<i32>) -> Self {
-        self.status = input; self
+        self.status = input;
+        self
     }
     /// <p>The body of the HTTP response.</p>
     pub fn body(mut self, input: impl Into<std::string::String>) -> Self {
@@ -91,37 +106,58 @@ impl TestInvokeMethodOutputBuilder {
     }
     /// <p>The body of the HTTP response.</p>
     pub fn set_body(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.body = input; self
+        self.body = input;
+        self
     }
     /// Adds a key-value pair to `headers`.
     ///
     /// To override the contents of this collection use [`set_headers`](Self::set_headers).
     ///
     /// <p>The headers of the HTTP response.</p>
-    pub fn headers(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
+    pub fn headers(
+        mut self,
+        k: impl Into<std::string::String>,
+        v: impl Into<std::string::String>,
+    ) -> Self {
         let mut hash_map = self.headers.unwrap_or_default();
-                        hash_map.insert(k.into(), v.into());
-                        self.headers = Some(hash_map);
-                        self
+        hash_map.insert(k.into(), v.into());
+        self.headers = Some(hash_map);
+        self
     }
     /// <p>The headers of the HTTP response.</p>
-    pub fn set_headers(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
-        self.headers = input; self
+    pub fn set_headers(
+        mut self,
+        input: std::option::Option<
+            std::collections::HashMap<std::string::String, std::string::String>,
+        >,
+    ) -> Self {
+        self.headers = input;
+        self
     }
     /// Adds a key-value pair to `multi_value_headers`.
     ///
     /// To override the contents of this collection use [`set_multi_value_headers`](Self::set_multi_value_headers).
     ///
     /// <p>The headers of the HTTP response as a map from string to list of values.</p>
-    pub fn multi_value_headers(mut self, k: impl Into<std::string::String>, v: std::vec::Vec<std::string::String>) -> Self {
+    pub fn multi_value_headers(
+        mut self,
+        k: impl Into<std::string::String>,
+        v: std::vec::Vec<std::string::String>,
+    ) -> Self {
         let mut hash_map = self.multi_value_headers.unwrap_or_default();
-                        hash_map.insert(k.into(), v);
-                        self.multi_value_headers = Some(hash_map);
-                        self
+        hash_map.insert(k.into(), v);
+        self.multi_value_headers = Some(hash_map);
+        self
     }
     /// <p>The headers of the HTTP response as a map from string to list of values.</p>
-    pub fn set_multi_value_headers(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::vec::Vec<std::string::String>>>) -> Self {
-        self.multi_value_headers = input; self
+    pub fn set_multi_value_headers(
+        mut self,
+        input: std::option::Option<
+            std::collections::HashMap<std::string::String, std::vec::Vec<std::string::String>>,
+        >,
+    ) -> Self {
+        self.multi_value_headers = input;
+        self
     }
     /// <p>The API Gateway execution log for the test invoke request.</p>
     pub fn log(mut self, input: impl Into<std::string::String>) -> Self {
@@ -130,7 +166,8 @@ impl TestInvokeMethodOutputBuilder {
     }
     /// <p>The API Gateway execution log for the test invoke request.</p>
     pub fn set_log(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.log = input; self
+        self.log = input;
+        self
     }
     /// <p>The execution latency of the test invoke request.</p>
     pub fn latency(mut self, input: i64) -> Self {
@@ -139,36 +176,28 @@ impl TestInvokeMethodOutputBuilder {
     }
     /// <p>The execution latency of the test invoke request.</p>
     pub fn set_latency(mut self, input: std::option::Option<i64>) -> Self {
-        self.latency = input; self
+        self.latency = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`TestInvokeMethodOutput`](crate::operation::test_invoke_method::TestInvokeMethodOutput).
     pub fn build(self) -> crate::operation::test_invoke_method::TestInvokeMethodOutput {
         crate::operation::test_invoke_method::TestInvokeMethodOutput {
-            status: self.status
-                .unwrap_or_default()
-            ,
-            body: self.body
-            ,
-            headers: self.headers
-            ,
-            multi_value_headers: self.multi_value_headers
-            ,
-            log: self.log
-            ,
-            latency: self.latency
-                .unwrap_or_default()
-            ,
+            status: self.status.unwrap_or_default(),
+            body: self.body,
+            headers: self.headers,
+            multi_value_headers: self.multi_value_headers,
+            log: self.log,
+            latency: self.latency.unwrap_or_default(),
             _request_id: self._request_id,
         }
     }
 }
-

@@ -3,20 +3,21 @@
 /// <p>Defines the input needed to run a transform job using the inference specification specified in the algorithm.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct TransformJobDefinition  {
+pub struct TransformJobDefinition {
     /// <p>The maximum number of parallel requests that can be sent to each instance in a transform job. The default value is 1.</p>
     #[doc(hidden)]
     pub max_concurrent_transforms: std::option::Option<i32>,
     /// <p>The maximum payload size allowed, in MB. A payload is the data portion of a record (without metadata).</p>
     #[doc(hidden)]
     pub max_payload_in_mb: std::option::Option<i32>,
-    /// <p>A string that determines the number of records included in a single mini-batch.</p> 
+    /// <p>A string that determines the number of records included in a single mini-batch.</p>
     /// <p> <code>SingleRecord</code> means only one record is used per mini-batch. <code>MultiRecord</code> means a mini-batch is set to contain as many records that can fit within the <code>MaxPayloadInMB</code> limit.</p>
     #[doc(hidden)]
     pub batch_strategy: std::option::Option<crate::types::BatchStrategy>,
     /// <p>The environment variables to set in the Docker container. We support up to 16 key and values entries in the map.</p>
     #[doc(hidden)]
-    pub environment: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub environment:
+        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>A description of the input source and the way the transform job consumes it.</p>
     #[doc(hidden)]
     pub transform_input: std::option::Option<crate::types::TransformInput>,
@@ -36,25 +37,28 @@ impl TransformJobDefinition {
     pub fn max_payload_in_mb(&self) -> std::option::Option<i32> {
         self.max_payload_in_mb
     }
-    /// <p>A string that determines the number of records included in a single mini-batch.</p> 
+    /// <p>A string that determines the number of records included in a single mini-batch.</p>
     /// <p> <code>SingleRecord</code> means only one record is used per mini-batch. <code>MultiRecord</code> means a mini-batch is set to contain as many records that can fit within the <code>MaxPayloadInMB</code> limit.</p>
-    pub fn batch_strategy(&self) -> std::option::Option<& crate::types::BatchStrategy> {
+    pub fn batch_strategy(&self) -> std::option::Option<&crate::types::BatchStrategy> {
         self.batch_strategy.as_ref()
     }
     /// <p>The environment variables to set in the Docker container. We support up to 16 key and values entries in the map.</p>
-    pub fn environment(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
+    pub fn environment(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
         self.environment.as_ref()
     }
     /// <p>A description of the input source and the way the transform job consumes it.</p>
-    pub fn transform_input(&self) -> std::option::Option<& crate::types::TransformInput> {
+    pub fn transform_input(&self) -> std::option::Option<&crate::types::TransformInput> {
         self.transform_input.as_ref()
     }
     /// <p>Identifies the Amazon S3 location where you want Amazon SageMaker to save the results from the transform job.</p>
-    pub fn transform_output(&self) -> std::option::Option<& crate::types::TransformOutput> {
+    pub fn transform_output(&self) -> std::option::Option<&crate::types::TransformOutput> {
         self.transform_output.as_ref()
     }
     /// <p>Identifies the ML compute instances for the transform job.</p>
-    pub fn transform_resources(&self) -> std::option::Option<& crate::types::TransformResources> {
+    pub fn transform_resources(&self) -> std::option::Option<&crate::types::TransformResources> {
         self.transform_resources.as_ref()
     }
 }
@@ -72,7 +76,8 @@ pub struct TransformJobDefinitionBuilder {
     pub(crate) max_concurrent_transforms: std::option::Option<i32>,
     pub(crate) max_payload_in_mb: std::option::Option<i32>,
     pub(crate) batch_strategy: std::option::Option<crate::types::BatchStrategy>,
-    pub(crate) environment: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub(crate) environment:
+        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     pub(crate) transform_input: std::option::Option<crate::types::TransformInput>,
     pub(crate) transform_output: std::option::Option<crate::types::TransformOutput>,
     pub(crate) transform_resources: std::option::Option<crate::types::TransformResources>,
@@ -85,7 +90,8 @@ impl TransformJobDefinitionBuilder {
     }
     /// <p>The maximum number of parallel requests that can be sent to each instance in a transform job. The default value is 1.</p>
     pub fn set_max_concurrent_transforms(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_concurrent_transforms = input; self
+        self.max_concurrent_transforms = input;
+        self
     }
     /// <p>The maximum payload size allowed, in MB. A payload is the data portion of a record (without metadata).</p>
     pub fn max_payload_in_mb(mut self, input: i32) -> Self {
@@ -94,33 +100,48 @@ impl TransformJobDefinitionBuilder {
     }
     /// <p>The maximum payload size allowed, in MB. A payload is the data portion of a record (without metadata).</p>
     pub fn set_max_payload_in_mb(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_payload_in_mb = input; self
+        self.max_payload_in_mb = input;
+        self
     }
-    /// <p>A string that determines the number of records included in a single mini-batch.</p> 
+    /// <p>A string that determines the number of records included in a single mini-batch.</p>
     /// <p> <code>SingleRecord</code> means only one record is used per mini-batch. <code>MultiRecord</code> means a mini-batch is set to contain as many records that can fit within the <code>MaxPayloadInMB</code> limit.</p>
     pub fn batch_strategy(mut self, input: crate::types::BatchStrategy) -> Self {
         self.batch_strategy = Some(input);
         self
     }
-    /// <p>A string that determines the number of records included in a single mini-batch.</p> 
+    /// <p>A string that determines the number of records included in a single mini-batch.</p>
     /// <p> <code>SingleRecord</code> means only one record is used per mini-batch. <code>MultiRecord</code> means a mini-batch is set to contain as many records that can fit within the <code>MaxPayloadInMB</code> limit.</p>
-    pub fn set_batch_strategy(mut self, input: std::option::Option<crate::types::BatchStrategy>) -> Self {
-        self.batch_strategy = input; self
+    pub fn set_batch_strategy(
+        mut self,
+        input: std::option::Option<crate::types::BatchStrategy>,
+    ) -> Self {
+        self.batch_strategy = input;
+        self
     }
     /// Adds a key-value pair to `environment`.
     ///
     /// To override the contents of this collection use [`set_environment`](Self::set_environment).
     ///
     /// <p>The environment variables to set in the Docker container. We support up to 16 key and values entries in the map.</p>
-    pub fn environment(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
+    pub fn environment(
+        mut self,
+        k: impl Into<std::string::String>,
+        v: impl Into<std::string::String>,
+    ) -> Self {
         let mut hash_map = self.environment.unwrap_or_default();
-                        hash_map.insert(k.into(), v.into());
-                        self.environment = Some(hash_map);
-                        self
+        hash_map.insert(k.into(), v.into());
+        self.environment = Some(hash_map);
+        self
     }
     /// <p>The environment variables to set in the Docker container. We support up to 16 key and values entries in the map.</p>
-    pub fn set_environment(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
-        self.environment = input; self
+    pub fn set_environment(
+        mut self,
+        input: std::option::Option<
+            std::collections::HashMap<std::string::String, std::string::String>,
+        >,
+    ) -> Self {
+        self.environment = input;
+        self
     }
     /// <p>A description of the input source and the way the transform job consumes it.</p>
     pub fn transform_input(mut self, input: crate::types::TransformInput) -> Self {
@@ -128,8 +149,12 @@ impl TransformJobDefinitionBuilder {
         self
     }
     /// <p>A description of the input source and the way the transform job consumes it.</p>
-    pub fn set_transform_input(mut self, input: std::option::Option<crate::types::TransformInput>) -> Self {
-        self.transform_input = input; self
+    pub fn set_transform_input(
+        mut self,
+        input: std::option::Option<crate::types::TransformInput>,
+    ) -> Self {
+        self.transform_input = input;
+        self
     }
     /// <p>Identifies the Amazon S3 location where you want Amazon SageMaker to save the results from the transform job.</p>
     pub fn transform_output(mut self, input: crate::types::TransformOutput) -> Self {
@@ -137,8 +162,12 @@ impl TransformJobDefinitionBuilder {
         self
     }
     /// <p>Identifies the Amazon S3 location where you want Amazon SageMaker to save the results from the transform job.</p>
-    pub fn set_transform_output(mut self, input: std::option::Option<crate::types::TransformOutput>) -> Self {
-        self.transform_output = input; self
+    pub fn set_transform_output(
+        mut self,
+        input: std::option::Option<crate::types::TransformOutput>,
+    ) -> Self {
+        self.transform_output = input;
+        self
     }
     /// <p>Identifies the ML compute instances for the transform job.</p>
     pub fn transform_resources(mut self, input: crate::types::TransformResources) -> Self {
@@ -146,27 +175,23 @@ impl TransformJobDefinitionBuilder {
         self
     }
     /// <p>Identifies the ML compute instances for the transform job.</p>
-    pub fn set_transform_resources(mut self, input: std::option::Option<crate::types::TransformResources>) -> Self {
-        self.transform_resources = input; self
+    pub fn set_transform_resources(
+        mut self,
+        input: std::option::Option<crate::types::TransformResources>,
+    ) -> Self {
+        self.transform_resources = input;
+        self
     }
     /// Consumes the builder and constructs a [`TransformJobDefinition`](crate::types::TransformJobDefinition).
     pub fn build(self) -> crate::types::TransformJobDefinition {
         crate::types::TransformJobDefinition {
-            max_concurrent_transforms: self.max_concurrent_transforms
-            ,
-            max_payload_in_mb: self.max_payload_in_mb
-            ,
-            batch_strategy: self.batch_strategy
-            ,
-            environment: self.environment
-            ,
-            transform_input: self.transform_input
-            ,
-            transform_output: self.transform_output
-            ,
-            transform_resources: self.transform_resources
-            ,
+            max_concurrent_transforms: self.max_concurrent_transforms,
+            max_payload_in_mb: self.max_payload_in_mb,
+            batch_strategy: self.batch_strategy,
+            environment: self.environment,
+            transform_input: self.transform_input,
+            transform_output: self.transform_output,
+            transform_resources: self.transform_resources,
         }
     }
 }
-

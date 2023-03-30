@@ -3,7 +3,7 @@
 /// <p>Specifies the configuration for notifications of inference results for asynchronous inference.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AsyncInferenceNotificationConfig  {
+pub struct AsyncInferenceNotificationConfig {
     /// <p>Amazon SNS topic to post a notification to when inference completes successfully. If no topic is provided, no notification is sent on success.</p>
     #[doc(hidden)]
     pub success_topic: std::option::Option<std::string::String>,
@@ -13,11 +13,11 @@ pub struct AsyncInferenceNotificationConfig  {
 }
 impl AsyncInferenceNotificationConfig {
     /// <p>Amazon SNS topic to post a notification to when inference completes successfully. If no topic is provided, no notification is sent on success.</p>
-    pub fn success_topic(&self) -> std::option::Option<& str> {
+    pub fn success_topic(&self) -> std::option::Option<&str> {
         self.success_topic.as_deref()
     }
     /// <p>Amazon SNS topic to post a notification to when inference fails. If no topic is provided, no notification is sent on failure.</p>
-    pub fn error_topic(&self) -> std::option::Option<& str> {
+    pub fn error_topic(&self) -> std::option::Option<&str> {
         self.error_topic.as_deref()
     }
 }
@@ -43,7 +43,8 @@ impl AsyncInferenceNotificationConfigBuilder {
     }
     /// <p>Amazon SNS topic to post a notification to when inference completes successfully. If no topic is provided, no notification is sent on success.</p>
     pub fn set_success_topic(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.success_topic = input; self
+        self.success_topic = input;
+        self
     }
     /// <p>Amazon SNS topic to post a notification to when inference fails. If no topic is provided, no notification is sent on failure.</p>
     pub fn error_topic(mut self, input: impl Into<std::string::String>) -> Self {
@@ -52,16 +53,14 @@ impl AsyncInferenceNotificationConfigBuilder {
     }
     /// <p>Amazon SNS topic to post a notification to when inference fails. If no topic is provided, no notification is sent on failure.</p>
     pub fn set_error_topic(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.error_topic = input; self
+        self.error_topic = input;
+        self
     }
     /// Consumes the builder and constructs a [`AsyncInferenceNotificationConfig`](crate::types::AsyncInferenceNotificationConfig).
     pub fn build(self) -> crate::types::AsyncInferenceNotificationConfig {
         crate::types::AsyncInferenceNotificationConfig {
-            success_topic: self.success_topic
-            ,
-            error_topic: self.error_topic
-            ,
+            success_topic: self.success_topic,
+            error_topic: self.error_topic,
         }
     }
 }
-

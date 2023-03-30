@@ -3,7 +3,7 @@
 /// <p>Contains asset property value notification information. When the notification state is enabled, IoT SiteWise publishes property value updates to a unique MQTT topic. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/interact-with-other-services.html">Interacting with other services</a> in the <i>IoT SiteWise User Guide</i>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PropertyNotification  {
+pub struct PropertyNotification {
     /// <p>The MQTT topic to which IoT SiteWise publishes property value update notifications.</p>
     #[doc(hidden)]
     pub topic: std::option::Option<std::string::String>,
@@ -13,11 +13,11 @@ pub struct PropertyNotification  {
 }
 impl PropertyNotification {
     /// <p>The MQTT topic to which IoT SiteWise publishes property value update notifications.</p>
-    pub fn topic(&self) -> std::option::Option<& str> {
+    pub fn topic(&self) -> std::option::Option<&str> {
         self.topic.as_deref()
     }
     /// <p>The current notification state.</p>
-    pub fn state(&self) -> std::option::Option<& crate::types::PropertyNotificationState> {
+    pub fn state(&self) -> std::option::Option<&crate::types::PropertyNotificationState> {
         self.state.as_ref()
     }
 }
@@ -43,7 +43,8 @@ impl PropertyNotificationBuilder {
     }
     /// <p>The MQTT topic to which IoT SiteWise publishes property value update notifications.</p>
     pub fn set_topic(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.topic = input; self
+        self.topic = input;
+        self
     }
     /// <p>The current notification state.</p>
     pub fn state(mut self, input: crate::types::PropertyNotificationState) -> Self {
@@ -51,17 +52,18 @@ impl PropertyNotificationBuilder {
         self
     }
     /// <p>The current notification state.</p>
-    pub fn set_state(mut self, input: std::option::Option<crate::types::PropertyNotificationState>) -> Self {
-        self.state = input; self
+    pub fn set_state(
+        mut self,
+        input: std::option::Option<crate::types::PropertyNotificationState>,
+    ) -> Self {
+        self.state = input;
+        self
     }
     /// Consumes the builder and constructs a [`PropertyNotification`](crate::types::PropertyNotification).
     pub fn build(self) -> crate::types::PropertyNotification {
         crate::types::PropertyNotification {
-            topic: self.topic
-            ,
-            state: self.state
-            ,
+            topic: self.topic,
+            state: self.state,
         }
     }
 }
-

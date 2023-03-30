@@ -28,4 +28,3 @@ pub mod builders;
 
 /// Error types that AWS IoT 1-Click Projects Service can respond with.
 pub mod error;
-

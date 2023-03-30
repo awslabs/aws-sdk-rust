@@ -3,7 +3,7 @@
 /// <p> The status of a managed Contributor Insights rule. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ManagedRuleState  {
+pub struct ManagedRuleState {
     /// <p> The name of the Contributor Insights rule that contains data for the specified Amazon Web Services resource. </p>
     #[doc(hidden)]
     pub rule_name: std::option::Option<std::string::String>,
@@ -13,11 +13,11 @@ pub struct ManagedRuleState  {
 }
 impl ManagedRuleState {
     /// <p> The name of the Contributor Insights rule that contains data for the specified Amazon Web Services resource. </p>
-    pub fn rule_name(&self) -> std::option::Option<& str> {
+    pub fn rule_name(&self) -> std::option::Option<&str> {
         self.rule_name.as_deref()
     }
     /// <p> Indicates whether the rule is enabled or disabled. </p>
-    pub fn state(&self) -> std::option::Option<& str> {
+    pub fn state(&self) -> std::option::Option<&str> {
         self.state.as_deref()
     }
 }
@@ -43,7 +43,8 @@ impl ManagedRuleStateBuilder {
     }
     /// <p> The name of the Contributor Insights rule that contains data for the specified Amazon Web Services resource. </p>
     pub fn set_rule_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.rule_name = input; self
+        self.rule_name = input;
+        self
     }
     /// <p> Indicates whether the rule is enabled or disabled. </p>
     pub fn state(mut self, input: impl Into<std::string::String>) -> Self {
@@ -52,16 +53,14 @@ impl ManagedRuleStateBuilder {
     }
     /// <p> Indicates whether the rule is enabled or disabled. </p>
     pub fn set_state(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.state = input; self
+        self.state = input;
+        self
     }
     /// Consumes the builder and constructs a [`ManagedRuleState`](crate::types::ManagedRuleState).
     pub fn build(self) -> crate::types::ManagedRuleState {
         crate::types::ManagedRuleState {
-            rule_name: self.rule_name
-            ,
-            state: self.state
-            ,
+            rule_name: self.rule_name,
+            state: self.state,
         }
     }
 }
-

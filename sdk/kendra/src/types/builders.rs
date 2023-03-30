@@ -268,4 +268,3 @@ pub use crate::types::_batch_delete_document_response_failed_document::BatchDele
 pub use crate::types::_data_source_sync_job_metric_target::DataSourceSyncJobMetricTargetBuilder;
 
 pub use crate::types::_entity_persona_configuration::EntityPersonaConfigurationBuilder;
-

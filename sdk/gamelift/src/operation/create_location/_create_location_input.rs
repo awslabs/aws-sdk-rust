@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateLocationInput  {
+pub struct CreateLocationInput {
     /// <p>A descriptive name for the custom location.</p>
     #[doc(hidden)]
     pub location_name: std::option::Option<std::string::String>,
@@ -12,11 +12,11 @@ pub struct CreateLocationInput  {
 }
 impl CreateLocationInput {
     /// <p>A descriptive name for the custom location.</p>
-    pub fn location_name(&self) -> std::option::Option<& str> {
+    pub fn location_name(&self) -> std::option::Option<&str> {
         self.location_name.as_deref()
     }
     /// <p>A list of labels to assign to the new matchmaking configuration resource. Tags are developer-defined key-value pairs. Tagging Amazon Web Services resources are useful for resource management, access management and cost allocation. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html"> Tagging Amazon Web Services Resources</a> in the <i>Amazon Web Services General Rareference</i>.</p>
-    pub fn tags(&self) -> std::option::Option<& [crate::types::Tag]> {
+    pub fn tags(&self) -> std::option::Option<&[crate::types::Tag]> {
         self.tags.as_deref()
     }
 }
@@ -42,7 +42,8 @@ impl CreateLocationInputBuilder {
     }
     /// <p>A descriptive name for the custom location.</p>
     pub fn set_location_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.location_name = input; self
+        self.location_name = input;
+        self
     }
     /// Appends an item to `tags`.
     ///
@@ -51,24 +52,28 @@ impl CreateLocationInputBuilder {
     /// <p>A list of labels to assign to the new matchmaking configuration resource. Tags are developer-defined key-value pairs. Tagging Amazon Web Services resources are useful for resource management, access management and cost allocation. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html"> Tagging Amazon Web Services Resources</a> in the <i>Amazon Web Services General Rareference</i>.</p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
-                        v.push(input);
-                        self.tags = Some(v);
-                        self
+        v.push(input);
+        self.tags = Some(v);
+        self
     }
     /// <p>A list of labels to assign to the new matchmaking configuration resource. Tags are developer-defined key-value pairs. Tagging Amazon Web Services resources are useful for resource management, access management and cost allocation. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html"> Tagging Amazon Web Services Resources</a> in the <i>Amazon Web Services General Rareference</i>.</p>
-    pub fn set_tags(mut self, input: std::option::Option<std::vec::Vec<crate::types::Tag>>) -> Self {
-        self.tags = input; self
+    pub fn set_tags(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::Tag>>,
+    ) -> Self {
+        self.tags = input;
+        self
     }
     /// Consumes the builder and constructs a [`CreateLocationInput`](crate::operation::create_location::CreateLocationInput).
-    pub fn build(self) -> Result<crate::operation::create_location::CreateLocationInput, aws_smithy_http::operation::error::BuildError> {
-        Ok(
-            crate::operation::create_location::CreateLocationInput {
-                location_name: self.location_name
-                ,
-                tags: self.tags
-                ,
-            }
-        )
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::create_location::CreateLocationInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        Ok(crate::operation::create_location::CreateLocationInput {
+            location_name: self.location_name,
+            tags: self.tags,
+        })
     }
 }
-

@@ -3,7 +3,7 @@
 /// <p>Update action that has been processed for the corresponding apply/stop request</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ProcessedUpdateAction  {
+pub struct ProcessedUpdateAction {
     /// <p>The ID of the replication group</p>
     #[doc(hidden)]
     pub replication_group_id: std::option::Option<std::string::String>,
@@ -19,19 +19,19 @@ pub struct ProcessedUpdateAction  {
 }
 impl ProcessedUpdateAction {
     /// <p>The ID of the replication group</p>
-    pub fn replication_group_id(&self) -> std::option::Option<& str> {
+    pub fn replication_group_id(&self) -> std::option::Option<&str> {
         self.replication_group_id.as_deref()
     }
     /// <p>The ID of the cache cluster</p>
-    pub fn cache_cluster_id(&self) -> std::option::Option<& str> {
+    pub fn cache_cluster_id(&self) -> std::option::Option<&str> {
         self.cache_cluster_id.as_deref()
     }
     /// <p>The unique ID of the service update</p>
-    pub fn service_update_name(&self) -> std::option::Option<& str> {
+    pub fn service_update_name(&self) -> std::option::Option<&str> {
         self.service_update_name.as_deref()
     }
     /// <p>The status of the update action on the Redis cluster</p>
-    pub fn update_action_status(&self) -> std::option::Option<& crate::types::UpdateActionStatus> {
+    pub fn update_action_status(&self) -> std::option::Option<&crate::types::UpdateActionStatus> {
         self.update_action_status.as_ref()
     }
 }
@@ -58,8 +58,12 @@ impl ProcessedUpdateActionBuilder {
         self
     }
     /// <p>The ID of the replication group</p>
-    pub fn set_replication_group_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.replication_group_id = input; self
+    pub fn set_replication_group_id(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.replication_group_id = input;
+        self
     }
     /// <p>The ID of the cache cluster</p>
     pub fn cache_cluster_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -68,7 +72,8 @@ impl ProcessedUpdateActionBuilder {
     }
     /// <p>The ID of the cache cluster</p>
     pub fn set_cache_cluster_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.cache_cluster_id = input; self
+        self.cache_cluster_id = input;
+        self
     }
     /// <p>The unique ID of the service update</p>
     pub fn service_update_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -76,8 +81,12 @@ impl ProcessedUpdateActionBuilder {
         self
     }
     /// <p>The unique ID of the service update</p>
-    pub fn set_service_update_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.service_update_name = input; self
+    pub fn set_service_update_name(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.service_update_name = input;
+        self
     }
     /// <p>The status of the update action on the Redis cluster</p>
     pub fn update_action_status(mut self, input: crate::types::UpdateActionStatus) -> Self {
@@ -85,21 +94,20 @@ impl ProcessedUpdateActionBuilder {
         self
     }
     /// <p>The status of the update action on the Redis cluster</p>
-    pub fn set_update_action_status(mut self, input: std::option::Option<crate::types::UpdateActionStatus>) -> Self {
-        self.update_action_status = input; self
+    pub fn set_update_action_status(
+        mut self,
+        input: std::option::Option<crate::types::UpdateActionStatus>,
+    ) -> Self {
+        self.update_action_status = input;
+        self
     }
     /// Consumes the builder and constructs a [`ProcessedUpdateAction`](crate::types::ProcessedUpdateAction).
     pub fn build(self) -> crate::types::ProcessedUpdateAction {
         crate::types::ProcessedUpdateAction {
-            replication_group_id: self.replication_group_id
-            ,
-            cache_cluster_id: self.cache_cluster_id
-            ,
-            service_update_name: self.service_update_name
-            ,
-            update_action_status: self.update_action_status
-            ,
+            replication_group_id: self.replication_group_id,
+            cache_cluster_id: self.cache_cluster_id,
+            service_update_name: self.service_update_name,
+            update_action_status: self.update_action_status,
         }
     }
 }
-

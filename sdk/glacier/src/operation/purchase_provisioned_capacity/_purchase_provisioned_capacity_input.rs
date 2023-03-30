@@ -2,20 +2,20 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PurchaseProvisionedCapacityInput  {
+pub struct PurchaseProvisionedCapacityInput {
     /// <p>The AWS account ID of the account that owns the vault. You can either specify an AWS account ID or optionally a single '-' (hyphen), in which case Amazon S3 Glacier uses the AWS account ID associated with the credentials used to sign the request. If you use an account ID, don't include any hyphens ('-') in the ID. </p>
     #[doc(hidden)]
     pub account_id: std::option::Option<std::string::String>,
 }
 impl PurchaseProvisionedCapacityInput {
     /// <p>The AWS account ID of the account that owns the vault. You can either specify an AWS account ID or optionally a single '-' (hyphen), in which case Amazon S3 Glacier uses the AWS account ID associated with the credentials used to sign the request. If you use an account ID, don't include any hyphens ('-') in the ID. </p>
-    pub fn account_id(&self) -> std::option::Option<& str> {
+    pub fn account_id(&self) -> std::option::Option<&str> {
         self.account_id.as_deref()
     }
 }
 impl PurchaseProvisionedCapacityInput {
     /// Creates a new builder-style object to manufacture [`PurchaseProvisionedCapacityInput`](crate::operation::purchase_provisioned_capacity::PurchaseProvisionedCapacityInput).
-    pub fn builder() -> crate::operation::purchase_provisioned_capacity::builders::PurchaseProvisionedCapacityInputBuilder {
+    pub fn builder() -> crate::operation::purchase_provisioned_capacity::builders::PurchaseProvisionedCapacityInputBuilder{
         crate::operation::purchase_provisioned_capacity::builders::PurchaseProvisionedCapacityInputBuilder::default()
     }
 }
@@ -34,16 +34,20 @@ impl PurchaseProvisionedCapacityInputBuilder {
     }
     /// <p>The AWS account ID of the account that owns the vault. You can either specify an AWS account ID or optionally a single '-' (hyphen), in which case Amazon S3 Glacier uses the AWS account ID associated with the credentials used to sign the request. If you use an account ID, don't include any hyphens ('-') in the ID. </p>
     pub fn set_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.account_id = input; self
+        self.account_id = input;
+        self
     }
     /// Consumes the builder and constructs a [`PurchaseProvisionedCapacityInput`](crate::operation::purchase_provisioned_capacity::PurchaseProvisionedCapacityInput).
-    pub fn build(self) -> Result<crate::operation::purchase_provisioned_capacity::PurchaseProvisionedCapacityInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::purchase_provisioned_capacity::PurchaseProvisionedCapacityInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::purchase_provisioned_capacity::PurchaseProvisionedCapacityInput {
-                account_id: self.account_id
-                ,
-            }
+                account_id: self.account_id,
+            },
         )
     }
 }
-

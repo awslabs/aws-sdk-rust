@@ -3,8 +3,8 @@
 /// <p>Contains the Amazon Resource Name (ARN) of the resource to publish to, such as an S3 bucket, and the ARN of the KMS key to use to encrypt published findings.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DestinationProperties  {
-    /// <p>The ARN of the resource to publish to.</p> 
+pub struct DestinationProperties {
+    /// <p>The ARN of the resource to publish to.</p>
     /// <p>To specify an S3 bucket folder use the following format: <code>arn:aws:s3:::DOC-EXAMPLE-BUCKET/myFolder/</code> </p>
     #[doc(hidden)]
     pub destination_arn: std::option::Option<std::string::String>,
@@ -13,13 +13,13 @@ pub struct DestinationProperties  {
     pub kms_key_arn: std::option::Option<std::string::String>,
 }
 impl DestinationProperties {
-    /// <p>The ARN of the resource to publish to.</p> 
+    /// <p>The ARN of the resource to publish to.</p>
     /// <p>To specify an S3 bucket folder use the following format: <code>arn:aws:s3:::DOC-EXAMPLE-BUCKET/myFolder/</code> </p>
-    pub fn destination_arn(&self) -> std::option::Option<& str> {
+    pub fn destination_arn(&self) -> std::option::Option<&str> {
         self.destination_arn.as_deref()
     }
     /// <p>The ARN of the KMS key to use for encryption.</p>
-    pub fn kms_key_arn(&self) -> std::option::Option<& str> {
+    pub fn kms_key_arn(&self) -> std::option::Option<&str> {
         self.kms_key_arn.as_deref()
     }
 }
@@ -38,16 +38,17 @@ pub struct DestinationPropertiesBuilder {
     pub(crate) kms_key_arn: std::option::Option<std::string::String>,
 }
 impl DestinationPropertiesBuilder {
-    /// <p>The ARN of the resource to publish to.</p> 
+    /// <p>The ARN of the resource to publish to.</p>
     /// <p>To specify an S3 bucket folder use the following format: <code>arn:aws:s3:::DOC-EXAMPLE-BUCKET/myFolder/</code> </p>
     pub fn destination_arn(mut self, input: impl Into<std::string::String>) -> Self {
         self.destination_arn = Some(input.into());
         self
     }
-    /// <p>The ARN of the resource to publish to.</p> 
+    /// <p>The ARN of the resource to publish to.</p>
     /// <p>To specify an S3 bucket folder use the following format: <code>arn:aws:s3:::DOC-EXAMPLE-BUCKET/myFolder/</code> </p>
     pub fn set_destination_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.destination_arn = input; self
+        self.destination_arn = input;
+        self
     }
     /// <p>The ARN of the KMS key to use for encryption.</p>
     pub fn kms_key_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -56,16 +57,14 @@ impl DestinationPropertiesBuilder {
     }
     /// <p>The ARN of the KMS key to use for encryption.</p>
     pub fn set_kms_key_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.kms_key_arn = input; self
+        self.kms_key_arn = input;
+        self
     }
     /// Consumes the builder and constructs a [`DestinationProperties`](crate::types::DestinationProperties).
     pub fn build(self) -> crate::types::DestinationProperties {
         crate::types::DestinationProperties {
-            destination_arn: self.destination_arn
-            ,
-            kms_key_arn: self.kms_key_arn
-            ,
+            destination_arn: self.destination_arn,
+            kms_key_arn: self.kms_key_arn,
         }
     }
 }
-

@@ -3,14 +3,14 @@
 /// <p></p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct StopApplicationInput  {
+pub struct StopApplicationInput {
     /// <p>Name of the running application to stop.</p>
     #[doc(hidden)]
     pub application_name: std::option::Option<std::string::String>,
 }
 impl StopApplicationInput {
     /// <p>Name of the running application to stop.</p>
-    pub fn application_name(&self) -> std::option::Option<& str> {
+    pub fn application_name(&self) -> std::option::Option<&str> {
         self.application_name.as_deref()
     }
 }
@@ -35,16 +35,18 @@ impl StopApplicationInputBuilder {
     }
     /// <p>Name of the running application to stop.</p>
     pub fn set_application_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.application_name = input; self
+        self.application_name = input;
+        self
     }
     /// Consumes the builder and constructs a [`StopApplicationInput`](crate::operation::stop_application::StopApplicationInput).
-    pub fn build(self) -> Result<crate::operation::stop_application::StopApplicationInput, aws_smithy_http::operation::error::BuildError> {
-        Ok(
-            crate::operation::stop_application::StopApplicationInput {
-                application_name: self.application_name
-                ,
-            }
-        )
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::stop_application::StopApplicationInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        Ok(crate::operation::stop_application::StopApplicationInput {
+            application_name: self.application_name,
+        })
     }
 }
-

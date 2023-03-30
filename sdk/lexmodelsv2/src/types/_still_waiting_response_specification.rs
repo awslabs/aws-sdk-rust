@@ -3,7 +3,7 @@
 /// <p>Defines the messages that Amazon Lex sends to a user to remind them that the bot is waiting for a response.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct StillWaitingResponseSpecification  {
+pub struct StillWaitingResponseSpecification {
     /// <p>One or more message groups, each containing one or more messages, that define the prompts that Amazon Lex sends to the user.</p>
     #[doc(hidden)]
     pub message_groups: std::option::Option<std::vec::Vec<crate::types::MessageGroup>>,
@@ -19,7 +19,7 @@ pub struct StillWaitingResponseSpecification  {
 }
 impl StillWaitingResponseSpecification {
     /// <p>One or more message groups, each containing one or more messages, that define the prompts that Amazon Lex sends to the user.</p>
-    pub fn message_groups(&self) -> std::option::Option<& [crate::types::MessageGroup]> {
+    pub fn message_groups(&self) -> std::option::Option<&[crate::types::MessageGroup]> {
         self.message_groups.as_deref()
     }
     /// <p>How often a message should be sent to the user. Minimum of 1 second, maximum of 5 minutes.</p>
@@ -59,13 +59,17 @@ impl StillWaitingResponseSpecificationBuilder {
     /// <p>One or more message groups, each containing one or more messages, that define the prompts that Amazon Lex sends to the user.</p>
     pub fn message_groups(mut self, input: crate::types::MessageGroup) -> Self {
         let mut v = self.message_groups.unwrap_or_default();
-                        v.push(input);
-                        self.message_groups = Some(v);
-                        self
+        v.push(input);
+        self.message_groups = Some(v);
+        self
     }
     /// <p>One or more message groups, each containing one or more messages, that define the prompts that Amazon Lex sends to the user.</p>
-    pub fn set_message_groups(mut self, input: std::option::Option<std::vec::Vec<crate::types::MessageGroup>>) -> Self {
-        self.message_groups = input; self
+    pub fn set_message_groups(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::MessageGroup>>,
+    ) -> Self {
+        self.message_groups = input;
+        self
     }
     /// <p>How often a message should be sent to the user. Minimum of 1 second, maximum of 5 minutes.</p>
     pub fn frequency_in_seconds(mut self, input: i32) -> Self {
@@ -74,7 +78,8 @@ impl StillWaitingResponseSpecificationBuilder {
     }
     /// <p>How often a message should be sent to the user. Minimum of 1 second, maximum of 5 minutes.</p>
     pub fn set_frequency_in_seconds(mut self, input: std::option::Option<i32>) -> Self {
-        self.frequency_in_seconds = input; self
+        self.frequency_in_seconds = input;
+        self
     }
     /// <p>If Amazon Lex waits longer than this length of time for a response, it will stop sending messages.</p>
     pub fn timeout_in_seconds(mut self, input: i32) -> Self {
@@ -83,7 +88,8 @@ impl StillWaitingResponseSpecificationBuilder {
     }
     /// <p>If Amazon Lex waits longer than this length of time for a response, it will stop sending messages.</p>
     pub fn set_timeout_in_seconds(mut self, input: std::option::Option<i32>) -> Self {
-        self.timeout_in_seconds = input; self
+        self.timeout_in_seconds = input;
+        self
     }
     /// <p>Indicates that the user can interrupt the response by speaking while the message is being played.</p>
     pub fn allow_interrupt(mut self, input: bool) -> Self {
@@ -92,20 +98,16 @@ impl StillWaitingResponseSpecificationBuilder {
     }
     /// <p>Indicates that the user can interrupt the response by speaking while the message is being played.</p>
     pub fn set_allow_interrupt(mut self, input: std::option::Option<bool>) -> Self {
-        self.allow_interrupt = input; self
+        self.allow_interrupt = input;
+        self
     }
     /// Consumes the builder and constructs a [`StillWaitingResponseSpecification`](crate::types::StillWaitingResponseSpecification).
     pub fn build(self) -> crate::types::StillWaitingResponseSpecification {
         crate::types::StillWaitingResponseSpecification {
-            message_groups: self.message_groups
-            ,
-            frequency_in_seconds: self.frequency_in_seconds
-            ,
-            timeout_in_seconds: self.timeout_in_seconds
-            ,
-            allow_interrupt: self.allow_interrupt
-            ,
+            message_groups: self.message_groups,
+            frequency_in_seconds: self.frequency_in_seconds,
+            timeout_in_seconds: self.timeout_in_seconds,
+            allow_interrupt: self.allow_interrupt,
         }
     }
 }
-

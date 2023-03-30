@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct EvaluateSessionInput  {
+pub struct EvaluateSessionInput {
     /// <p>The identifier of the domain where the session started.</p>
     #[doc(hidden)]
     pub domain_id: std::option::Option<std::string::String>,
@@ -12,11 +12,11 @@ pub struct EvaluateSessionInput  {
 }
 impl EvaluateSessionInput {
     /// <p>The identifier of the domain where the session started.</p>
-    pub fn domain_id(&self) -> std::option::Option<& str> {
+    pub fn domain_id(&self) -> std::option::Option<&str> {
         self.domain_id.as_deref()
     }
     /// <p>The session identifier, or name of the session, that you want to evaluate. In Voice ID integration, this is the Contact-Id.</p>
-    pub fn session_name_or_id(&self) -> std::option::Option<& str> {
+    pub fn session_name_or_id(&self) -> std::option::Option<&str> {
         self.session_name_or_id.as_deref()
     }
 }
@@ -42,7 +42,8 @@ impl EvaluateSessionInputBuilder {
     }
     /// <p>The identifier of the domain where the session started.</p>
     pub fn set_domain_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.domain_id = input; self
+        self.domain_id = input;
+        self
     }
     /// <p>The session identifier, or name of the session, that you want to evaluate. In Voice ID integration, this is the Contact-Id.</p>
     pub fn session_name_or_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -50,19 +51,23 @@ impl EvaluateSessionInputBuilder {
         self
     }
     /// <p>The session identifier, or name of the session, that you want to evaluate. In Voice ID integration, this is the Contact-Id.</p>
-    pub fn set_session_name_or_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.session_name_or_id = input; self
+    pub fn set_session_name_or_id(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.session_name_or_id = input;
+        self
     }
     /// Consumes the builder and constructs a [`EvaluateSessionInput`](crate::operation::evaluate_session::EvaluateSessionInput).
-    pub fn build(self) -> Result<crate::operation::evaluate_session::EvaluateSessionInput, aws_smithy_http::operation::error::BuildError> {
-        Ok(
-            crate::operation::evaluate_session::EvaluateSessionInput {
-                domain_id: self.domain_id
-                ,
-                session_name_or_id: self.session_name_or_id
-                ,
-            }
-        )
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::evaluate_session::EvaluateSessionInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        Ok(crate::operation::evaluate_session::EvaluateSessionInput {
+            domain_id: self.domain_id,
+            session_name_or_id: self.session_name_or_id,
+        })
     }
 }
-

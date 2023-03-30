@@ -3,7 +3,7 @@
 /// <p> The request structure for the delete domain association request. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteDomainAssociationInput  {
+pub struct DeleteDomainAssociationInput {
     /// <p> The unique id for an Amplify app. </p>
     #[doc(hidden)]
     pub app_id: std::option::Option<std::string::String>,
@@ -13,17 +13,19 @@ pub struct DeleteDomainAssociationInput  {
 }
 impl DeleteDomainAssociationInput {
     /// <p> The unique id for an Amplify app. </p>
-    pub fn app_id(&self) -> std::option::Option<& str> {
+    pub fn app_id(&self) -> std::option::Option<&str> {
         self.app_id.as_deref()
     }
     /// <p> The name of the domain. </p>
-    pub fn domain_name(&self) -> std::option::Option<& str> {
+    pub fn domain_name(&self) -> std::option::Option<&str> {
         self.domain_name.as_deref()
     }
 }
 impl DeleteDomainAssociationInput {
     /// Creates a new builder-style object to manufacture [`DeleteDomainAssociationInput`](crate::operation::delete_domain_association::DeleteDomainAssociationInput).
-    pub fn builder() -> crate::operation::delete_domain_association::builders::DeleteDomainAssociationInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::delete_domain_association::builders::DeleteDomainAssociationInputBuilder
+    {
         crate::operation::delete_domain_association::builders::DeleteDomainAssociationInputBuilder::default()
     }
 }
@@ -43,7 +45,8 @@ impl DeleteDomainAssociationInputBuilder {
     }
     /// <p> The unique id for an Amplify app. </p>
     pub fn set_app_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.app_id = input; self
+        self.app_id = input;
+        self
     }
     /// <p> The name of the domain. </p>
     pub fn domain_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -52,18 +55,21 @@ impl DeleteDomainAssociationInputBuilder {
     }
     /// <p> The name of the domain. </p>
     pub fn set_domain_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.domain_name = input; self
+        self.domain_name = input;
+        self
     }
     /// Consumes the builder and constructs a [`DeleteDomainAssociationInput`](crate::operation::delete_domain_association::DeleteDomainAssociationInput).
-    pub fn build(self) -> Result<crate::operation::delete_domain_association::DeleteDomainAssociationInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::delete_domain_association::DeleteDomainAssociationInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::delete_domain_association::DeleteDomainAssociationInput {
-                app_id: self.app_id
-                ,
-                domain_name: self.domain_name
-                ,
-            }
+                app_id: self.app_id,
+                domain_name: self.domain_name,
+            },
         )
     }
 }
-

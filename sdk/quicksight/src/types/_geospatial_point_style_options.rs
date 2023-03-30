@@ -3,7 +3,7 @@
 /// <p>The point style of the geospatial map.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GeospatialPointStyleOptions  {
+pub struct GeospatialPointStyleOptions {
     /// <p>The selected point styles (point, cluster) of the geospatial map.</p>
     #[doc(hidden)]
     pub selected_point_style: std::option::Option<crate::types::GeospatialSelectedPointStyle>,
@@ -13,11 +13,15 @@ pub struct GeospatialPointStyleOptions  {
 }
 impl GeospatialPointStyleOptions {
     /// <p>The selected point styles (point, cluster) of the geospatial map.</p>
-    pub fn selected_point_style(&self) -> std::option::Option<& crate::types::GeospatialSelectedPointStyle> {
+    pub fn selected_point_style(
+        &self,
+    ) -> std::option::Option<&crate::types::GeospatialSelectedPointStyle> {
         self.selected_point_style.as_ref()
     }
     /// <p>The cluster marker configuration of the geospatial point style.</p>
-    pub fn cluster_marker_configuration(&self) -> std::option::Option<& crate::types::ClusterMarkerConfiguration> {
+    pub fn cluster_marker_configuration(
+        &self,
+    ) -> std::option::Option<&crate::types::ClusterMarkerConfiguration> {
         self.cluster_marker_configuration.as_ref()
     }
 }
@@ -32,36 +36,49 @@ impl GeospatialPointStyleOptions {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct GeospatialPointStyleOptionsBuilder {
-    pub(crate) selected_point_style: std::option::Option<crate::types::GeospatialSelectedPointStyle>,
-    pub(crate) cluster_marker_configuration: std::option::Option<crate::types::ClusterMarkerConfiguration>,
+    pub(crate) selected_point_style:
+        std::option::Option<crate::types::GeospatialSelectedPointStyle>,
+    pub(crate) cluster_marker_configuration:
+        std::option::Option<crate::types::ClusterMarkerConfiguration>,
 }
 impl GeospatialPointStyleOptionsBuilder {
     /// <p>The selected point styles (point, cluster) of the geospatial map.</p>
-    pub fn selected_point_style(mut self, input: crate::types::GeospatialSelectedPointStyle) -> Self {
+    pub fn selected_point_style(
+        mut self,
+        input: crate::types::GeospatialSelectedPointStyle,
+    ) -> Self {
         self.selected_point_style = Some(input);
         self
     }
     /// <p>The selected point styles (point, cluster) of the geospatial map.</p>
-    pub fn set_selected_point_style(mut self, input: std::option::Option<crate::types::GeospatialSelectedPointStyle>) -> Self {
-        self.selected_point_style = input; self
+    pub fn set_selected_point_style(
+        mut self,
+        input: std::option::Option<crate::types::GeospatialSelectedPointStyle>,
+    ) -> Self {
+        self.selected_point_style = input;
+        self
     }
     /// <p>The cluster marker configuration of the geospatial point style.</p>
-    pub fn cluster_marker_configuration(mut self, input: crate::types::ClusterMarkerConfiguration) -> Self {
+    pub fn cluster_marker_configuration(
+        mut self,
+        input: crate::types::ClusterMarkerConfiguration,
+    ) -> Self {
         self.cluster_marker_configuration = Some(input);
         self
     }
     /// <p>The cluster marker configuration of the geospatial point style.</p>
-    pub fn set_cluster_marker_configuration(mut self, input: std::option::Option<crate::types::ClusterMarkerConfiguration>) -> Self {
-        self.cluster_marker_configuration = input; self
+    pub fn set_cluster_marker_configuration(
+        mut self,
+        input: std::option::Option<crate::types::ClusterMarkerConfiguration>,
+    ) -> Self {
+        self.cluster_marker_configuration = input;
+        self
     }
     /// Consumes the builder and constructs a [`GeospatialPointStyleOptions`](crate::types::GeospatialPointStyleOptions).
     pub fn build(self) -> crate::types::GeospatialPointStyleOptions {
         crate::types::GeospatialPointStyleOptions {
-            selected_point_style: self.selected_point_style
-            ,
-            cluster_marker_configuration: self.cluster_marker_configuration
-            ,
+            selected_point_style: self.selected_point_style,
+            cluster_marker_configuration: self.cluster_marker_configuration,
         }
     }
 }
-

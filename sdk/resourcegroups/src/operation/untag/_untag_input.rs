@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UntagInput  {
+pub struct UntagInput {
     /// <p>The ARN of the resource group from which to remove tags. The command removed both the specified keys and any values associated with those keys.</p>
     #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
@@ -12,11 +12,11 @@ pub struct UntagInput  {
 }
 impl UntagInput {
     /// <p>The ARN of the resource group from which to remove tags. The command removed both the specified keys and any values associated with those keys.</p>
-    pub fn arn(&self) -> std::option::Option<& str> {
+    pub fn arn(&self) -> std::option::Option<&str> {
         self.arn.as_deref()
     }
     /// <p>The keys of the tags to be removed.</p>
-    pub fn keys(&self) -> std::option::Option<& [std::string::String]> {
+    pub fn keys(&self) -> std::option::Option<&[std::string::String]> {
         self.keys.as_deref()
     }
 }
@@ -42,7 +42,8 @@ impl UntagInputBuilder {
     }
     /// <p>The ARN of the resource group from which to remove tags. The command removed both the specified keys and any values associated with those keys.</p>
     pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.arn = input; self
+        self.arn = input;
+        self
     }
     /// Appends an item to `keys`.
     ///
@@ -51,24 +52,26 @@ impl UntagInputBuilder {
     /// <p>The keys of the tags to be removed.</p>
     pub fn keys(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.keys.unwrap_or_default();
-                        v.push(input.into());
-                        self.keys = Some(v);
-                        self
+        v.push(input.into());
+        self.keys = Some(v);
+        self
     }
     /// <p>The keys of the tags to be removed.</p>
-    pub fn set_keys(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-        self.keys = input; self
+    pub fn set_keys(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
+        self.keys = input;
+        self
     }
     /// Consumes the builder and constructs a [`UntagInput`](crate::operation::untag::UntagInput).
-    pub fn build(self) -> Result<crate::operation::untag::UntagInput, aws_smithy_http::operation::error::BuildError> {
-        Ok(
-            crate::operation::untag::UntagInput {
-                arn: self.arn
-                ,
-                keys: self.keys
-                ,
-            }
-        )
+    pub fn build(
+        self,
+    ) -> Result<crate::operation::untag::UntagInput, aws_smithy_http::operation::error::BuildError>
+    {
+        Ok(crate::operation::untag::UntagInput {
+            arn: self.arn,
+            keys: self.keys,
+        })
     }
 }
-

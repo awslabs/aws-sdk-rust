@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteImpersonationRoleInput  {
+pub struct DeleteImpersonationRoleInput {
     /// <p>The WorkMail organization from which to delete the impersonation role.</p>
     #[doc(hidden)]
     pub organization_id: std::option::Option<std::string::String>,
@@ -12,17 +12,19 @@ pub struct DeleteImpersonationRoleInput  {
 }
 impl DeleteImpersonationRoleInput {
     /// <p>The WorkMail organization from which to delete the impersonation role.</p>
-    pub fn organization_id(&self) -> std::option::Option<& str> {
+    pub fn organization_id(&self) -> std::option::Option<&str> {
         self.organization_id.as_deref()
     }
     /// <p>The ID of the impersonation role to delete.</p>
-    pub fn impersonation_role_id(&self) -> std::option::Option<& str> {
+    pub fn impersonation_role_id(&self) -> std::option::Option<&str> {
         self.impersonation_role_id.as_deref()
     }
 }
 impl DeleteImpersonationRoleInput {
     /// Creates a new builder-style object to manufacture [`DeleteImpersonationRoleInput`](crate::operation::delete_impersonation_role::DeleteImpersonationRoleInput).
-    pub fn builder() -> crate::operation::delete_impersonation_role::builders::DeleteImpersonationRoleInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::delete_impersonation_role::builders::DeleteImpersonationRoleInputBuilder
+    {
         crate::operation::delete_impersonation_role::builders::DeleteImpersonationRoleInputBuilder::default()
     }
 }
@@ -42,7 +44,8 @@ impl DeleteImpersonationRoleInputBuilder {
     }
     /// <p>The WorkMail organization from which to delete the impersonation role.</p>
     pub fn set_organization_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.organization_id = input; self
+        self.organization_id = input;
+        self
     }
     /// <p>The ID of the impersonation role to delete.</p>
     pub fn impersonation_role_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -50,19 +53,25 @@ impl DeleteImpersonationRoleInputBuilder {
         self
     }
     /// <p>The ID of the impersonation role to delete.</p>
-    pub fn set_impersonation_role_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.impersonation_role_id = input; self
+    pub fn set_impersonation_role_id(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.impersonation_role_id = input;
+        self
     }
     /// Consumes the builder and constructs a [`DeleteImpersonationRoleInput`](crate::operation::delete_impersonation_role::DeleteImpersonationRoleInput).
-    pub fn build(self) -> Result<crate::operation::delete_impersonation_role::DeleteImpersonationRoleInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::delete_impersonation_role::DeleteImpersonationRoleInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::delete_impersonation_role::DeleteImpersonationRoleInput {
-                organization_id: self.organization_id
-                ,
-                impersonation_role_id: self.impersonation_role_id
-                ,
-            }
+                organization_id: self.organization_id,
+                impersonation_role_id: self.impersonation_role_id,
+            },
         )
     }
 }
-

@@ -3,14 +3,14 @@
 /// <p>A Region that supports a Multi-Region Access Point as well as the associated bucket for the Region.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Region  {
+pub struct Region {
     /// <p>The name of the associated bucket for the Region.</p>
     #[doc(hidden)]
     pub bucket: std::option::Option<std::string::String>,
 }
 impl Region {
     /// <p>The name of the associated bucket for the Region.</p>
-    pub fn bucket(&self) -> std::option::Option<& str> {
+    pub fn bucket(&self) -> std::option::Option<&str> {
         self.bucket.as_deref()
     }
 }
@@ -35,14 +35,13 @@ impl RegionBuilder {
     }
     /// <p>The name of the associated bucket for the Region.</p>
     pub fn set_bucket(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.bucket = input; self
+        self.bucket = input;
+        self
     }
     /// Consumes the builder and constructs a [`Region`](crate::types::Region).
     pub fn build(self) -> crate::types::Region {
         crate::types::Region {
-            bucket: self.bucket
-            ,
+            bucket: self.bucket,
         }
     }
 }
-

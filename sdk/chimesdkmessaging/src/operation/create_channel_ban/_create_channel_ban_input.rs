@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateChannelBanInput  {
+pub struct CreateChannelBanInput {
     /// <p>The ARN of the ban request.</p>
     #[doc(hidden)]
     pub channel_arn: std::option::Option<std::string::String>,
@@ -15,21 +15,22 @@ pub struct CreateChannelBanInput  {
 }
 impl CreateChannelBanInput {
     /// <p>The ARN of the ban request.</p>
-    pub fn channel_arn(&self) -> std::option::Option<& str> {
+    pub fn channel_arn(&self) -> std::option::Option<&str> {
         self.channel_arn.as_deref()
     }
     /// <p>The <code>AppInstanceUserArn</code> of the member being banned.</p>
-    pub fn member_arn(&self) -> std::option::Option<& str> {
+    pub fn member_arn(&self) -> std::option::Option<&str> {
         self.member_arn.as_deref()
     }
     /// <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
-    pub fn chime_bearer(&self) -> std::option::Option<& str> {
+    pub fn chime_bearer(&self) -> std::option::Option<&str> {
         self.chime_bearer.as_deref()
     }
 }
 impl CreateChannelBanInput {
     /// Creates a new builder-style object to manufacture [`CreateChannelBanInput`](crate::operation::create_channel_ban::CreateChannelBanInput).
-    pub fn builder() -> crate::operation::create_channel_ban::builders::CreateChannelBanInputBuilder {
+    pub fn builder() -> crate::operation::create_channel_ban::builders::CreateChannelBanInputBuilder
+    {
         crate::operation::create_channel_ban::builders::CreateChannelBanInputBuilder::default()
     }
 }
@@ -50,7 +51,8 @@ impl CreateChannelBanInputBuilder {
     }
     /// <p>The ARN of the ban request.</p>
     pub fn set_channel_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.channel_arn = input; self
+        self.channel_arn = input;
+        self
     }
     /// <p>The <code>AppInstanceUserArn</code> of the member being banned.</p>
     pub fn member_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -59,7 +61,8 @@ impl CreateChannelBanInputBuilder {
     }
     /// <p>The <code>AppInstanceUserArn</code> of the member being banned.</p>
     pub fn set_member_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.member_arn = input; self
+        self.member_arn = input;
+        self
     }
     /// <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
     pub fn chime_bearer(mut self, input: impl Into<std::string::String>) -> Self {
@@ -68,20 +71,22 @@ impl CreateChannelBanInputBuilder {
     }
     /// <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
     pub fn set_chime_bearer(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.chime_bearer = input; self
+        self.chime_bearer = input;
+        self
     }
     /// Consumes the builder and constructs a [`CreateChannelBanInput`](crate::operation::create_channel_ban::CreateChannelBanInput).
-    pub fn build(self) -> Result<crate::operation::create_channel_ban::CreateChannelBanInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::create_channel_ban::CreateChannelBanInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::create_channel_ban::CreateChannelBanInput {
-                channel_arn: self.channel_arn
-                ,
-                member_arn: self.member_arn
-                ,
-                chime_bearer: self.chime_bearer
-                ,
-            }
+                channel_arn: self.channel_arn,
+                member_arn: self.member_arn,
+                chime_bearer: self.chime_bearer,
+            },
         )
     }
 }
-

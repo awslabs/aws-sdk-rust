@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GenerateMobileSdkReleaseUrlOutput  {
+pub struct GenerateMobileSdkReleaseUrlOutput {
     /// <p>The presigned download URL for the specified SDK release.</p>
     #[doc(hidden)]
     pub url: std::option::Option<std::string::String>,
@@ -10,18 +10,18 @@ pub struct GenerateMobileSdkReleaseUrlOutput  {
 }
 impl GenerateMobileSdkReleaseUrlOutput {
     /// <p>The presigned download URL for the specified SDK release.</p>
-    pub fn url(&self) -> std::option::Option<& str> {
+    pub fn url(&self) -> std::option::Option<&str> {
         self.url.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for GenerateMobileSdkReleaseUrlOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl GenerateMobileSdkReleaseUrlOutput {
     /// Creates a new builder-style object to manufacture [`GenerateMobileSdkReleaseUrlOutput`](crate::operation::generate_mobile_sdk_release_url::GenerateMobileSdkReleaseUrlOutput).
-    pub fn builder() -> crate::operation::generate_mobile_sdk_release_url::builders::GenerateMobileSdkReleaseUrlOutputBuilder {
+    pub fn builder() -> crate::operation::generate_mobile_sdk_release_url::builders::GenerateMobileSdkReleaseUrlOutputBuilder{
         crate::operation::generate_mobile_sdk_release_url::builders::GenerateMobileSdkReleaseUrlOutputBuilder::default()
     }
 }
@@ -41,24 +41,25 @@ impl GenerateMobileSdkReleaseUrlOutputBuilder {
     }
     /// <p>The presigned download URL for the specified SDK release.</p>
     pub fn set_url(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.url = input; self
+        self.url = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`GenerateMobileSdkReleaseUrlOutput`](crate::operation::generate_mobile_sdk_release_url::GenerateMobileSdkReleaseUrlOutput).
-    pub fn build(self) -> crate::operation::generate_mobile_sdk_release_url::GenerateMobileSdkReleaseUrlOutput {
+    pub fn build(
+        self,
+    ) -> crate::operation::generate_mobile_sdk_release_url::GenerateMobileSdkReleaseUrlOutput {
         crate::operation::generate_mobile_sdk_release_url::GenerateMobileSdkReleaseUrlOutput {
-            url: self.url
-            ,
+            url: self.url,
             _request_id: self._request_id,
         }
     }
 }
-

@@ -4,51 +4,69 @@ pub use crate::operation::checkout_license::_checkout_license_output::CheckoutLi
 pub use crate::operation::checkout_license::_checkout_license_input::CheckoutLicenseInputBuilder;
 
 /// Fluent builder constructing a request to `CheckoutLicense`.
-/// 
-/// <p>Checks out the specified license.</p> <note> 
-/// <p>If the account that created the license is the same that is performing the check out, you must specify the account as the beneficiary.</p> 
+///
+/// <p>Checks out the specified license.</p> <note>
+/// <p>If the account that created the license is the same that is performing the check out, you must specify the account as the beneficiary.</p>
 /// </note>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct CheckoutLicenseFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::checkout_license::builders::CheckoutLicenseInputBuilder
-            }
-impl CheckoutLicenseFluentBuilder  {
+    handle: std::sync::Arc<crate::client::Handle>,
+    inner: crate::operation::checkout_license::builders::CheckoutLicenseInputBuilder,
+}
+impl CheckoutLicenseFluentBuilder {
     /// Creates a new `CheckoutLicense`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
-                    /// sent. The operation's inner [http::Request] can be modified as well.
-                    pub async fn customize(self) -> std::result::Result<
-                        crate::client::customize::CustomizableOperation<crate::operation::checkout_license::CheckoutLicense, aws_http::retry::AwsResponseRetryClassifier,>,
-                        aws_smithy_http::result::SdkError<crate::operation::checkout_license::CheckoutLicenseError>
-                    >  {
-                        let handle = self.handle.clone();
-                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-                    }
-    
-                    /// Sends the request and returns the response.
-                    ///
-                    /// If an error occurs, an `SdkError` will be returned with additional details that
-                    /// can be matched against.
-                    ///
-                    /// By default, any retryable failures will be retried twice. Retry behavior
-                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                    /// set when configuring the client.
-                    pub async fn send(self) -> std::result::Result<crate::operation::checkout_license::CheckoutLicenseOutput, aws_smithy_http::result::SdkError<crate::operation::checkout_license::CheckoutLicenseError>>
-                     {
-                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&self.handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        self.handle.client.call(op).await
-                    }
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle,
+            inner: Default::default(),
+        }
+    }
+
+    /// Consume this builder, creating a customizable operation that can be modified before being
+    /// sent. The operation's inner [http::Request] can be modified as well.
+    pub async fn customize(
+        self,
+    ) -> std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::checkout_license::CheckoutLicense,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::result::SdkError<crate::operation::checkout_license::CheckoutLicenseError>,
+    > {
+        let handle = self.handle.clone();
+        let operation = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+    }
+
+    /// Sends the request and returns the response.
+    ///
+    /// If an error occurs, an `SdkError` will be returned with additional details that
+    /// can be matched against.
+    ///
+    /// By default, any retryable failures will be retried twice. Retry behavior
+    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+    /// set when configuring the client.
+    pub async fn send(
+        self,
+    ) -> std::result::Result<
+        crate::operation::checkout_license::CheckoutLicenseOutput,
+        aws_smithy_http::result::SdkError<crate::operation::checkout_license::CheckoutLicenseError>,
+    > {
+        let op = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&self.handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        self.handle.client.call(op).await
+    }
     /// <p>Product SKU.</p>
     pub fn product_sku(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.product_sku(input.into());
@@ -65,7 +83,10 @@ impl CheckoutLicenseFluentBuilder  {
         self
     }
     /// <p>Checkout type.</p>
-    pub fn set_checkout_type(mut self, input: std::option::Option<crate::types::CheckoutType>) -> Self {
+    pub fn set_checkout_type(
+        mut self,
+        input: std::option::Option<crate::types::CheckoutType>,
+    ) -> Self {
         self.inner = self.inner.set_checkout_type(input);
         self
     }
@@ -89,7 +110,10 @@ impl CheckoutLicenseFluentBuilder  {
         self
     }
     /// <p>License entitlements.</p>
-    pub fn set_entitlements(mut self, input: std::option::Option<std::vec::Vec<crate::types::EntitlementData>>) -> Self {
+    pub fn set_entitlements(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::EntitlementData>>,
+    ) -> Self {
         self.inner = self.inner.set_entitlements(input);
         self
     }
@@ -124,4 +148,3 @@ impl CheckoutLicenseFluentBuilder  {
         self
     }
 }
-

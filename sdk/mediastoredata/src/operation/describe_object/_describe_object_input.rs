@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeObjectInput  {
+pub struct DescribeObjectInput {
     /// <p>The path (including the file name) where the object is stored in the container. Format: <folder name>
     /// /
     /// <folder name>
@@ -21,7 +21,7 @@ impl DescribeObjectInput {
     /// <file name></file>
     /// </folder>
     /// </folder></p>
-    pub fn path(&self) -> std::option::Option<& str> {
+    pub fn path(&self) -> std::option::Option<&str> {
         self.path.as_deref()
     }
 }
@@ -58,16 +58,16 @@ impl DescribeObjectInputBuilder {
     /// </folder>
     /// </folder></p>
     pub fn set_path(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.path = input; self
+        self.path = input;
+        self
     }
     /// Consumes the builder and constructs a [`DescribeObjectInput`](crate::operation::describe_object::DescribeObjectInput).
-    pub fn build(self) -> Result<crate::operation::describe_object::DescribeObjectInput, aws_smithy_http::operation::error::BuildError> {
-        Ok(
-            crate::operation::describe_object::DescribeObjectInput {
-                path: self.path
-                ,
-            }
-        )
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::describe_object::DescribeObjectInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        Ok(crate::operation::describe_object::DescribeObjectInput { path: self.path })
     }
 }
-

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeLifecycleHooksInput  {
+pub struct DescribeLifecycleHooksInput {
     /// <p>The name of the Auto Scaling group.</p>
     #[doc(hidden)]
     pub auto_scaling_group_name: std::option::Option<std::string::String>,
@@ -12,17 +12,19 @@ pub struct DescribeLifecycleHooksInput  {
 }
 impl DescribeLifecycleHooksInput {
     /// <p>The name of the Auto Scaling group.</p>
-    pub fn auto_scaling_group_name(&self) -> std::option::Option<& str> {
+    pub fn auto_scaling_group_name(&self) -> std::option::Option<&str> {
         self.auto_scaling_group_name.as_deref()
     }
     /// <p>The names of one or more lifecycle hooks. If you omit this property, all lifecycle hooks are described.</p>
-    pub fn lifecycle_hook_names(&self) -> std::option::Option<& [std::string::String]> {
+    pub fn lifecycle_hook_names(&self) -> std::option::Option<&[std::string::String]> {
         self.lifecycle_hook_names.as_deref()
     }
 }
 impl DescribeLifecycleHooksInput {
     /// Creates a new builder-style object to manufacture [`DescribeLifecycleHooksInput`](crate::operation::describe_lifecycle_hooks::DescribeLifecycleHooksInput).
-    pub fn builder() -> crate::operation::describe_lifecycle_hooks::builders::DescribeLifecycleHooksInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::describe_lifecycle_hooks::builders::DescribeLifecycleHooksInputBuilder
+    {
         crate::operation::describe_lifecycle_hooks::builders::DescribeLifecycleHooksInputBuilder::default()
     }
 }
@@ -41,8 +43,12 @@ impl DescribeLifecycleHooksInputBuilder {
         self
     }
     /// <p>The name of the Auto Scaling group.</p>
-    pub fn set_auto_scaling_group_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.auto_scaling_group_name = input; self
+    pub fn set_auto_scaling_group_name(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.auto_scaling_group_name = input;
+        self
     }
     /// Appends an item to `lifecycle_hook_names`.
     ///
@@ -51,24 +57,30 @@ impl DescribeLifecycleHooksInputBuilder {
     /// <p>The names of one or more lifecycle hooks. If you omit this property, all lifecycle hooks are described.</p>
     pub fn lifecycle_hook_names(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.lifecycle_hook_names.unwrap_or_default();
-                        v.push(input.into());
-                        self.lifecycle_hook_names = Some(v);
-                        self
+        v.push(input.into());
+        self.lifecycle_hook_names = Some(v);
+        self
     }
     /// <p>The names of one or more lifecycle hooks. If you omit this property, all lifecycle hooks are described.</p>
-    pub fn set_lifecycle_hook_names(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-        self.lifecycle_hook_names = input; self
+    pub fn set_lifecycle_hook_names(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
+        self.lifecycle_hook_names = input;
+        self
     }
     /// Consumes the builder and constructs a [`DescribeLifecycleHooksInput`](crate::operation::describe_lifecycle_hooks::DescribeLifecycleHooksInput).
-    pub fn build(self) -> Result<crate::operation::describe_lifecycle_hooks::DescribeLifecycleHooksInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::describe_lifecycle_hooks::DescribeLifecycleHooksInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::describe_lifecycle_hooks::DescribeLifecycleHooksInput {
-                auto_scaling_group_name: self.auto_scaling_group_name
-                ,
-                lifecycle_hook_names: self.lifecycle_hook_names
-                ,
-            }
+                auto_scaling_group_name: self.auto_scaling_group_name,
+                lifecycle_hook_names: self.lifecycle_hook_names,
+            },
         )
     }
 }
-

@@ -3,7 +3,7 @@
 /// <p>Describes a resource share in RAM.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ResourceShare  {
+pub struct ResourceShare {
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resoure Name (ARN)</a> of the resource share</p>
     #[doc(hidden)]
     pub resource_share_arn: std::option::Option<std::string::String>,
@@ -31,26 +31,26 @@ pub struct ResourceShare  {
     /// <p>The date and time when the resource share was last updated.</p>
     #[doc(hidden)]
     pub last_updated_time: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>Indicates how the resource share was created. Possible values include:</p> 
-    /// <ul> 
-    /// <li> <p> <code>CREATED_FROM_POLICY</code> - Indicates that the resource share was created from an Identity and Access Management (IAM) resource-based permission policy attached to the resource. This type of resource share is visible only to the Amazon Web Services account that created it. You can't modify it in RAM unless you promote it. For more information, see <code>PromoteResourceShareCreatedFromPolicy</code>.</p> </li> 
-    /// <li> <p> <code>PROMOTING_TO_STANDARD</code> - The resource share is in the process of being promoted. For more information, see <code>PromoteResourceShareCreatedFromPolicy</code>.</p> </li> 
-    /// <li> <p> <code>STANDARD</code> - Indicates that the resource share was created in RAM using the console or APIs. These resource shares are visible to all principals you share the resource share with. You can modify these resource shares in RAM using the console or APIs.</p> </li> 
+    /// <p>Indicates how the resource share was created. Possible values include:</p>
+    /// <ul>
+    /// <li> <p> <code>CREATED_FROM_POLICY</code> - Indicates that the resource share was created from an Identity and Access Management (IAM) resource-based permission policy attached to the resource. This type of resource share is visible only to the Amazon Web Services account that created it. You can't modify it in RAM unless you promote it. For more information, see <code>PromoteResourceShareCreatedFromPolicy</code>.</p> </li>
+    /// <li> <p> <code>PROMOTING_TO_STANDARD</code> - The resource share is in the process of being promoted. For more information, see <code>PromoteResourceShareCreatedFromPolicy</code>.</p> </li>
+    /// <li> <p> <code>STANDARD</code> - Indicates that the resource share was created in RAM using the console or APIs. These resource shares are visible to all principals you share the resource share with. You can modify these resource shares in RAM using the console or APIs.</p> </li>
     /// </ul>
     #[doc(hidden)]
     pub feature_set: std::option::Option<crate::types::ResourceShareFeatureSet>,
 }
 impl ResourceShare {
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resoure Name (ARN)</a> of the resource share</p>
-    pub fn resource_share_arn(&self) -> std::option::Option<& str> {
+    pub fn resource_share_arn(&self) -> std::option::Option<&str> {
         self.resource_share_arn.as_deref()
     }
     /// <p>The name of the resource share.</p>
-    pub fn name(&self) -> std::option::Option<& str> {
+    pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>The ID of the Amazon Web Services account that owns the resource share.</p>
-    pub fn owning_account_id(&self) -> std::option::Option<& str> {
+    pub fn owning_account_id(&self) -> std::option::Option<&str> {
         self.owning_account_id.as_deref()
     }
     /// <p>Indicates whether principals outside your organization in Organizations can be associated with a resource share.</p>
@@ -58,32 +58,32 @@ impl ResourceShare {
         self.allow_external_principals
     }
     /// <p>The current status of the resource share.</p>
-    pub fn status(&self) -> std::option::Option<& crate::types::ResourceShareStatus> {
+    pub fn status(&self) -> std::option::Option<&crate::types::ResourceShareStatus> {
         self.status.as_ref()
     }
     /// <p>A message about the status of the resource share.</p>
-    pub fn status_message(&self) -> std::option::Option<& str> {
+    pub fn status_message(&self) -> std::option::Option<&str> {
         self.status_message.as_deref()
     }
     /// <p>The tag key and value pairs attached to the resource share.</p>
-    pub fn tags(&self) -> std::option::Option<& [crate::types::Tag]> {
+    pub fn tags(&self) -> std::option::Option<&[crate::types::Tag]> {
         self.tags.as_deref()
     }
     /// <p>The date and time when the resource share was created.</p>
-    pub fn creation_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
+    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
     /// <p>The date and time when the resource share was last updated.</p>
-    pub fn last_updated_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
+    pub fn last_updated_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_updated_time.as_ref()
     }
-    /// <p>Indicates how the resource share was created. Possible values include:</p> 
-    /// <ul> 
-    /// <li> <p> <code>CREATED_FROM_POLICY</code> - Indicates that the resource share was created from an Identity and Access Management (IAM) resource-based permission policy attached to the resource. This type of resource share is visible only to the Amazon Web Services account that created it. You can't modify it in RAM unless you promote it. For more information, see <code>PromoteResourceShareCreatedFromPolicy</code>.</p> </li> 
-    /// <li> <p> <code>PROMOTING_TO_STANDARD</code> - The resource share is in the process of being promoted. For more information, see <code>PromoteResourceShareCreatedFromPolicy</code>.</p> </li> 
-    /// <li> <p> <code>STANDARD</code> - Indicates that the resource share was created in RAM using the console or APIs. These resource shares are visible to all principals you share the resource share with. You can modify these resource shares in RAM using the console or APIs.</p> </li> 
+    /// <p>Indicates how the resource share was created. Possible values include:</p>
+    /// <ul>
+    /// <li> <p> <code>CREATED_FROM_POLICY</code> - Indicates that the resource share was created from an Identity and Access Management (IAM) resource-based permission policy attached to the resource. This type of resource share is visible only to the Amazon Web Services account that created it. You can't modify it in RAM unless you promote it. For more information, see <code>PromoteResourceShareCreatedFromPolicy</code>.</p> </li>
+    /// <li> <p> <code>PROMOTING_TO_STANDARD</code> - The resource share is in the process of being promoted. For more information, see <code>PromoteResourceShareCreatedFromPolicy</code>.</p> </li>
+    /// <li> <p> <code>STANDARD</code> - Indicates that the resource share was created in RAM using the console or APIs. These resource shares are visible to all principals you share the resource share with. You can modify these resource shares in RAM using the console or APIs.</p> </li>
     /// </ul>
-    pub fn feature_set(&self) -> std::option::Option<& crate::types::ResourceShareFeatureSet> {
+    pub fn feature_set(&self) -> std::option::Option<&crate::types::ResourceShareFeatureSet> {
         self.feature_set.as_ref()
     }
 }
@@ -116,8 +116,12 @@ impl ResourceShareBuilder {
         self
     }
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resoure Name (ARN)</a> of the resource share</p>
-    pub fn set_resource_share_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.resource_share_arn = input; self
+    pub fn set_resource_share_arn(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.resource_share_arn = input;
+        self
     }
     /// <p>The name of the resource share.</p>
     pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -126,7 +130,8 @@ impl ResourceShareBuilder {
     }
     /// <p>The name of the resource share.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input; self
+        self.name = input;
+        self
     }
     /// <p>The ID of the Amazon Web Services account that owns the resource share.</p>
     pub fn owning_account_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -134,8 +139,12 @@ impl ResourceShareBuilder {
         self
     }
     /// <p>The ID of the Amazon Web Services account that owns the resource share.</p>
-    pub fn set_owning_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.owning_account_id = input; self
+    pub fn set_owning_account_id(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.owning_account_id = input;
+        self
     }
     /// <p>Indicates whether principals outside your organization in Organizations can be associated with a resource share.</p>
     pub fn allow_external_principals(mut self, input: bool) -> Self {
@@ -144,7 +153,8 @@ impl ResourceShareBuilder {
     }
     /// <p>Indicates whether principals outside your organization in Organizations can be associated with a resource share.</p>
     pub fn set_allow_external_principals(mut self, input: std::option::Option<bool>) -> Self {
-        self.allow_external_principals = input; self
+        self.allow_external_principals = input;
+        self
     }
     /// <p>The current status of the resource share.</p>
     pub fn status(mut self, input: crate::types::ResourceShareStatus) -> Self {
@@ -152,8 +162,12 @@ impl ResourceShareBuilder {
         self
     }
     /// <p>The current status of the resource share.</p>
-    pub fn set_status(mut self, input: std::option::Option<crate::types::ResourceShareStatus>) -> Self {
-        self.status = input; self
+    pub fn set_status(
+        mut self,
+        input: std::option::Option<crate::types::ResourceShareStatus>,
+    ) -> Self {
+        self.status = input;
+        self
     }
     /// <p>A message about the status of the resource share.</p>
     pub fn status_message(mut self, input: impl Into<std::string::String>) -> Self {
@@ -162,7 +176,8 @@ impl ResourceShareBuilder {
     }
     /// <p>A message about the status of the resource share.</p>
     pub fn set_status_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.status_message = input; self
+        self.status_message = input;
+        self
     }
     /// Appends an item to `tags`.
     ///
@@ -171,13 +186,17 @@ impl ResourceShareBuilder {
     /// <p>The tag key and value pairs attached to the resource share.</p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
-                        v.push(input);
-                        self.tags = Some(v);
-                        self
+        v.push(input);
+        self.tags = Some(v);
+        self
     }
     /// <p>The tag key and value pairs attached to the resource share.</p>
-    pub fn set_tags(mut self, input: std::option::Option<std::vec::Vec<crate::types::Tag>>) -> Self {
-        self.tags = input; self
+    pub fn set_tags(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::Tag>>,
+    ) -> Self {
+        self.tags = input;
+        self
     }
     /// <p>The date and time when the resource share was created.</p>
     pub fn creation_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -185,8 +204,12 @@ impl ResourceShareBuilder {
         self
     }
     /// <p>The date and time when the resource share was created.</p>
-    pub fn set_creation_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.creation_time = input; self
+    pub fn set_creation_time(
+        mut self,
+        input: std::option::Option<aws_smithy_types::DateTime>,
+    ) -> Self {
+        self.creation_time = input;
+        self
     }
     /// <p>The date and time when the resource share was last updated.</p>
     pub fn last_updated_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -194,52 +217,49 @@ impl ResourceShareBuilder {
         self
     }
     /// <p>The date and time when the resource share was last updated.</p>
-    pub fn set_last_updated_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.last_updated_time = input; self
+    pub fn set_last_updated_time(
+        mut self,
+        input: std::option::Option<aws_smithy_types::DateTime>,
+    ) -> Self {
+        self.last_updated_time = input;
+        self
     }
-    /// <p>Indicates how the resource share was created. Possible values include:</p> 
-    /// <ul> 
-    /// <li> <p> <code>CREATED_FROM_POLICY</code> - Indicates that the resource share was created from an Identity and Access Management (IAM) resource-based permission policy attached to the resource. This type of resource share is visible only to the Amazon Web Services account that created it. You can't modify it in RAM unless you promote it. For more information, see <code>PromoteResourceShareCreatedFromPolicy</code>.</p> </li> 
-    /// <li> <p> <code>PROMOTING_TO_STANDARD</code> - The resource share is in the process of being promoted. For more information, see <code>PromoteResourceShareCreatedFromPolicy</code>.</p> </li> 
-    /// <li> <p> <code>STANDARD</code> - Indicates that the resource share was created in RAM using the console or APIs. These resource shares are visible to all principals you share the resource share with. You can modify these resource shares in RAM using the console or APIs.</p> </li> 
+    /// <p>Indicates how the resource share was created. Possible values include:</p>
+    /// <ul>
+    /// <li> <p> <code>CREATED_FROM_POLICY</code> - Indicates that the resource share was created from an Identity and Access Management (IAM) resource-based permission policy attached to the resource. This type of resource share is visible only to the Amazon Web Services account that created it. You can't modify it in RAM unless you promote it. For more information, see <code>PromoteResourceShareCreatedFromPolicy</code>.</p> </li>
+    /// <li> <p> <code>PROMOTING_TO_STANDARD</code> - The resource share is in the process of being promoted. For more information, see <code>PromoteResourceShareCreatedFromPolicy</code>.</p> </li>
+    /// <li> <p> <code>STANDARD</code> - Indicates that the resource share was created in RAM using the console or APIs. These resource shares are visible to all principals you share the resource share with. You can modify these resource shares in RAM using the console or APIs.</p> </li>
     /// </ul>
     pub fn feature_set(mut self, input: crate::types::ResourceShareFeatureSet) -> Self {
         self.feature_set = Some(input);
         self
     }
-    /// <p>Indicates how the resource share was created. Possible values include:</p> 
-    /// <ul> 
-    /// <li> <p> <code>CREATED_FROM_POLICY</code> - Indicates that the resource share was created from an Identity and Access Management (IAM) resource-based permission policy attached to the resource. This type of resource share is visible only to the Amazon Web Services account that created it. You can't modify it in RAM unless you promote it. For more information, see <code>PromoteResourceShareCreatedFromPolicy</code>.</p> </li> 
-    /// <li> <p> <code>PROMOTING_TO_STANDARD</code> - The resource share is in the process of being promoted. For more information, see <code>PromoteResourceShareCreatedFromPolicy</code>.</p> </li> 
-    /// <li> <p> <code>STANDARD</code> - Indicates that the resource share was created in RAM using the console or APIs. These resource shares are visible to all principals you share the resource share with. You can modify these resource shares in RAM using the console or APIs.</p> </li> 
+    /// <p>Indicates how the resource share was created. Possible values include:</p>
+    /// <ul>
+    /// <li> <p> <code>CREATED_FROM_POLICY</code> - Indicates that the resource share was created from an Identity and Access Management (IAM) resource-based permission policy attached to the resource. This type of resource share is visible only to the Amazon Web Services account that created it. You can't modify it in RAM unless you promote it. For more information, see <code>PromoteResourceShareCreatedFromPolicy</code>.</p> </li>
+    /// <li> <p> <code>PROMOTING_TO_STANDARD</code> - The resource share is in the process of being promoted. For more information, see <code>PromoteResourceShareCreatedFromPolicy</code>.</p> </li>
+    /// <li> <p> <code>STANDARD</code> - Indicates that the resource share was created in RAM using the console or APIs. These resource shares are visible to all principals you share the resource share with. You can modify these resource shares in RAM using the console or APIs.</p> </li>
     /// </ul>
-    pub fn set_feature_set(mut self, input: std::option::Option<crate::types::ResourceShareFeatureSet>) -> Self {
-        self.feature_set = input; self
+    pub fn set_feature_set(
+        mut self,
+        input: std::option::Option<crate::types::ResourceShareFeatureSet>,
+    ) -> Self {
+        self.feature_set = input;
+        self
     }
     /// Consumes the builder and constructs a [`ResourceShare`](crate::types::ResourceShare).
     pub fn build(self) -> crate::types::ResourceShare {
         crate::types::ResourceShare {
-            resource_share_arn: self.resource_share_arn
-            ,
-            name: self.name
-            ,
-            owning_account_id: self.owning_account_id
-            ,
-            allow_external_principals: self.allow_external_principals
-            ,
-            status: self.status
-            ,
-            status_message: self.status_message
-            ,
-            tags: self.tags
-            ,
-            creation_time: self.creation_time
-            ,
-            last_updated_time: self.last_updated_time
-            ,
-            feature_set: self.feature_set
-            ,
+            resource_share_arn: self.resource_share_arn,
+            name: self.name,
+            owning_account_id: self.owning_account_id,
+            allow_external_principals: self.allow_external_principals,
+            status: self.status,
+            status_message: self.status_message,
+            tags: self.tags,
+            creation_time: self.creation_time,
+            last_updated_time: self.last_updated_time,
+            feature_set: self.feature_set,
         }
     }
 }
-

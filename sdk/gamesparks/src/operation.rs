@@ -99,4 +99,3 @@ pub mod update_snapshot;
 
 /// Types for the `UpdateStage` operation.
 pub mod update_stage;
-

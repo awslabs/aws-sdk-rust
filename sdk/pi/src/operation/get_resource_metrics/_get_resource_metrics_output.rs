@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetResourceMetricsOutput  {
+pub struct GetResourceMetricsOutput {
     /// <p>The start time for the returned metrics, after alignment to a granular boundary (as specified by <code>PeriodInSeconds</code>). <code>AlignedStartTime</code> will be less than or equal to the value of the user-specified <code>StartTime</code>.</p>
     #[doc(hidden)]
     pub aligned_start_time: std::option::Option<aws_smithy_types::DateTime>,
@@ -22,34 +22,35 @@ pub struct GetResourceMetricsOutput  {
 }
 impl GetResourceMetricsOutput {
     /// <p>The start time for the returned metrics, after alignment to a granular boundary (as specified by <code>PeriodInSeconds</code>). <code>AlignedStartTime</code> will be less than or equal to the value of the user-specified <code>StartTime</code>.</p>
-    pub fn aligned_start_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
+    pub fn aligned_start_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.aligned_start_time.as_ref()
     }
     /// <p>The end time for the returned metrics, after alignment to a granular boundary (as specified by <code>PeriodInSeconds</code>). <code>AlignedEndTime</code> will be greater than or equal to the value of the user-specified <code>Endtime</code>.</p>
-    pub fn aligned_end_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
+    pub fn aligned_end_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.aligned_end_time.as_ref()
     }
     /// <p>An immutable identifier for a data source that is unique for an Amazon Web Services Region. Performance Insights gathers metrics from this data source. In the console, the identifier is shown as <i>ResourceID</i>. When you call <code>DescribeDBInstances</code>, the identifier is returned as <code>DbiResourceId</code>.</p>
-    pub fn identifier(&self) -> std::option::Option<& str> {
+    pub fn identifier(&self) -> std::option::Option<&str> {
         self.identifier.as_deref()
     }
     /// <p>An array of metric results, where each array element contains all of the data points for a particular dimension.</p>
-    pub fn metric_list(&self) -> std::option::Option<& [crate::types::MetricKeyDataPoints]> {
+    pub fn metric_list(&self) -> std::option::Option<&[crate::types::MetricKeyDataPoints]> {
         self.metric_list.as_deref()
     }
     /// <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the token, up to the value specified by <code>MaxRecords</code>. </p>
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for GetResourceMetricsOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl GetResourceMetricsOutput {
     /// Creates a new builder-style object to manufacture [`GetResourceMetricsOutput`](crate::operation::get_resource_metrics::GetResourceMetricsOutput).
-    pub fn builder() -> crate::operation::get_resource_metrics::builders::GetResourceMetricsOutputBuilder {
+    pub fn builder(
+    ) -> crate::operation::get_resource_metrics::builders::GetResourceMetricsOutputBuilder {
         crate::operation::get_resource_metrics::builders::GetResourceMetricsOutputBuilder::default()
     }
 }
@@ -72,8 +73,12 @@ impl GetResourceMetricsOutputBuilder {
         self
     }
     /// <p>The start time for the returned metrics, after alignment to a granular boundary (as specified by <code>PeriodInSeconds</code>). <code>AlignedStartTime</code> will be less than or equal to the value of the user-specified <code>StartTime</code>.</p>
-    pub fn set_aligned_start_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.aligned_start_time = input; self
+    pub fn set_aligned_start_time(
+        mut self,
+        input: std::option::Option<aws_smithy_types::DateTime>,
+    ) -> Self {
+        self.aligned_start_time = input;
+        self
     }
     /// <p>The end time for the returned metrics, after alignment to a granular boundary (as specified by <code>PeriodInSeconds</code>). <code>AlignedEndTime</code> will be greater than or equal to the value of the user-specified <code>Endtime</code>.</p>
     pub fn aligned_end_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -81,8 +86,12 @@ impl GetResourceMetricsOutputBuilder {
         self
     }
     /// <p>The end time for the returned metrics, after alignment to a granular boundary (as specified by <code>PeriodInSeconds</code>). <code>AlignedEndTime</code> will be greater than or equal to the value of the user-specified <code>Endtime</code>.</p>
-    pub fn set_aligned_end_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.aligned_end_time = input; self
+    pub fn set_aligned_end_time(
+        mut self,
+        input: std::option::Option<aws_smithy_types::DateTime>,
+    ) -> Self {
+        self.aligned_end_time = input;
+        self
     }
     /// <p>An immutable identifier for a data source that is unique for an Amazon Web Services Region. Performance Insights gathers metrics from this data source. In the console, the identifier is shown as <i>ResourceID</i>. When you call <code>DescribeDBInstances</code>, the identifier is returned as <code>DbiResourceId</code>.</p>
     pub fn identifier(mut self, input: impl Into<std::string::String>) -> Self {
@@ -91,7 +100,8 @@ impl GetResourceMetricsOutputBuilder {
     }
     /// <p>An immutable identifier for a data source that is unique for an Amazon Web Services Region. Performance Insights gathers metrics from this data source. In the console, the identifier is shown as <i>ResourceID</i>. When you call <code>DescribeDBInstances</code>, the identifier is returned as <code>DbiResourceId</code>.</p>
     pub fn set_identifier(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.identifier = input; self
+        self.identifier = input;
+        self
     }
     /// Appends an item to `metric_list`.
     ///
@@ -100,13 +110,17 @@ impl GetResourceMetricsOutputBuilder {
     /// <p>An array of metric results, where each array element contains all of the data points for a particular dimension.</p>
     pub fn metric_list(mut self, input: crate::types::MetricKeyDataPoints) -> Self {
         let mut v = self.metric_list.unwrap_or_default();
-                        v.push(input);
-                        self.metric_list = Some(v);
-                        self
+        v.push(input);
+        self.metric_list = Some(v);
+        self
     }
     /// <p>An array of metric results, where each array element contains all of the data points for a particular dimension.</p>
-    pub fn set_metric_list(mut self, input: std::option::Option<std::vec::Vec<crate::types::MetricKeyDataPoints>>) -> Self {
-        self.metric_list = input; self
+    pub fn set_metric_list(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::MetricKeyDataPoints>>,
+    ) -> Self {
+        self.metric_list = input;
+        self
     }
     /// <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the token, up to the value specified by <code>MaxRecords</code>. </p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -115,32 +129,27 @@ impl GetResourceMetricsOutputBuilder {
     }
     /// <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the token, up to the value specified by <code>MaxRecords</code>. </p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input; self
+        self.next_token = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`GetResourceMetricsOutput`](crate::operation::get_resource_metrics::GetResourceMetricsOutput).
     pub fn build(self) -> crate::operation::get_resource_metrics::GetResourceMetricsOutput {
         crate::operation::get_resource_metrics::GetResourceMetricsOutput {
-            aligned_start_time: self.aligned_start_time
-            ,
-            aligned_end_time: self.aligned_end_time
-            ,
-            identifier: self.identifier
-            ,
-            metric_list: self.metric_list
-            ,
-            next_token: self.next_token
-            ,
+            aligned_start_time: self.aligned_start_time,
+            aligned_end_time: self.aligned_end_time,
+            identifier: self.identifier,
+            metric_list: self.metric_list,
+            next_token: self.next_token,
             _request_id: self._request_id,
         }
     }
 }
-

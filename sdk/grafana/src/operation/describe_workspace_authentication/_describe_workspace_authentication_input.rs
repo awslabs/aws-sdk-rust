@@ -2,20 +2,20 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeWorkspaceAuthenticationInput  {
+pub struct DescribeWorkspaceAuthenticationInput {
     /// <p>The ID of the workspace to return authentication information about.</p>
     #[doc(hidden)]
     pub workspace_id: std::option::Option<std::string::String>,
 }
 impl DescribeWorkspaceAuthenticationInput {
     /// <p>The ID of the workspace to return authentication information about.</p>
-    pub fn workspace_id(&self) -> std::option::Option<& str> {
+    pub fn workspace_id(&self) -> std::option::Option<&str> {
         self.workspace_id.as_deref()
     }
 }
 impl DescribeWorkspaceAuthenticationInput {
     /// Creates a new builder-style object to manufacture [`DescribeWorkspaceAuthenticationInput`](crate::operation::describe_workspace_authentication::DescribeWorkspaceAuthenticationInput).
-    pub fn builder() -> crate::operation::describe_workspace_authentication::builders::DescribeWorkspaceAuthenticationInputBuilder {
+    pub fn builder() -> crate::operation::describe_workspace_authentication::builders::DescribeWorkspaceAuthenticationInputBuilder{
         crate::operation::describe_workspace_authentication::builders::DescribeWorkspaceAuthenticationInputBuilder::default()
     }
 }
@@ -34,10 +34,16 @@ impl DescribeWorkspaceAuthenticationInputBuilder {
     }
     /// <p>The ID of the workspace to return authentication information about.</p>
     pub fn set_workspace_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.workspace_id = input; self
+        self.workspace_id = input;
+        self
     }
     /// Consumes the builder and constructs a [`DescribeWorkspaceAuthenticationInput`](crate::operation::describe_workspace_authentication::DescribeWorkspaceAuthenticationInput).
-    pub fn build(self) -> Result<crate::operation::describe_workspace_authentication::DescribeWorkspaceAuthenticationInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::describe_workspace_authentication::DescribeWorkspaceAuthenticationInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::describe_workspace_authentication::DescribeWorkspaceAuthenticationInput {
                 workspace_id: self.workspace_id
@@ -46,4 +52,3 @@ impl DescribeWorkspaceAuthenticationInputBuilder {
         )
     }
 }
-

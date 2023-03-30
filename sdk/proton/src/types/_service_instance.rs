@@ -3,7 +3,7 @@
 /// <p>Detailed data of an Proton service instance resource.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct ServiceInstance  {
+pub struct ServiceInstance {
     /// <p>The name of the service instance.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -46,73 +46,82 @@ pub struct ServiceInstance  {
 }
 impl ServiceInstance {
     /// <p>The name of the service instance.</p>
-    pub fn name(&self) -> std::option::Option<& str> {
+    pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the service instance.</p>
-    pub fn arn(&self) -> std::option::Option<& str> {
+    pub fn arn(&self) -> std::option::Option<&str> {
         self.arn.as_deref()
     }
     /// <p>The time when the service instance was created.</p>
-    pub fn created_at(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
+    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
     /// <p>The time when a deployment of the service instance was last attempted.</p>
-    pub fn last_deployment_attempted_at(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
+    pub fn last_deployment_attempted_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_deployment_attempted_at.as_ref()
     }
     /// <p>The time when the service instance was last deployed successfully.</p>
-    pub fn last_deployment_succeeded_at(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
+    pub fn last_deployment_succeeded_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_deployment_succeeded_at.as_ref()
     }
     /// <p>The name of the service that the service instance belongs to.</p>
-    pub fn service_name(&self) -> std::option::Option<& str> {
+    pub fn service_name(&self) -> std::option::Option<&str> {
         self.service_name.as_deref()
     }
     /// <p>The name of the environment that the service instance was deployed into.</p>
-    pub fn environment_name(&self) -> std::option::Option<& str> {
+    pub fn environment_name(&self) -> std::option::Option<&str> {
         self.environment_name.as_deref()
     }
     /// <p>The name of the service template that was used to create the service instance.</p>
-    pub fn template_name(&self) -> std::option::Option<& str> {
+    pub fn template_name(&self) -> std::option::Option<&str> {
         self.template_name.as_deref()
     }
     /// <p>The major version of the service template that was used to create the service instance.</p>
-    pub fn template_major_version(&self) -> std::option::Option<& str> {
+    pub fn template_major_version(&self) -> std::option::Option<&str> {
         self.template_major_version.as_deref()
     }
     /// <p>The minor version of the service template that was used to create the service instance.</p>
-    pub fn template_minor_version(&self) -> std::option::Option<& str> {
+    pub fn template_minor_version(&self) -> std::option::Option<&str> {
         self.template_minor_version.as_deref()
     }
     /// <p>The service instance deployment status.</p>
-    pub fn deployment_status(&self) -> std::option::Option<& crate::types::DeploymentStatus> {
+    pub fn deployment_status(&self) -> std::option::Option<&crate::types::DeploymentStatus> {
         self.deployment_status.as_ref()
     }
     /// <p>The message associated with the service instance deployment status.</p>
-    pub fn deployment_status_message(&self) -> std::option::Option<& str> {
+    pub fn deployment_status_message(&self) -> std::option::Option<&str> {
         self.deployment_status_message.as_deref()
     }
     /// <p>The service spec that was used to create the service instance.</p>
-    pub fn spec(&self) -> std::option::Option<& str> {
+    pub fn spec(&self) -> std::option::Option<&str> {
         self.spec.as_deref()
     }
 }
-impl  std::fmt::Debug for ServiceInstance  {
+impl std::fmt::Debug for ServiceInstance {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ServiceInstance");
         formatter.field("name", &self.name);
         formatter.field("arn", &self.arn);
         formatter.field("created_at", &self.created_at);
-        formatter.field("last_deployment_attempted_at", &self.last_deployment_attempted_at);
-        formatter.field("last_deployment_succeeded_at", &self.last_deployment_succeeded_at);
+        formatter.field(
+            "last_deployment_attempted_at",
+            &self.last_deployment_attempted_at,
+        );
+        formatter.field(
+            "last_deployment_succeeded_at",
+            &self.last_deployment_succeeded_at,
+        );
         formatter.field("service_name", &self.service_name);
         formatter.field("environment_name", &self.environment_name);
         formatter.field("template_name", &self.template_name);
         formatter.field("template_major_version", &self.template_major_version);
         formatter.field("template_minor_version", &self.template_minor_version);
         formatter.field("deployment_status", &self.deployment_status);
-        formatter.field("deployment_status_message", &"*** Sensitive Data Redacted ***");
+        formatter.field(
+            "deployment_status_message",
+            &"*** Sensitive Data Redacted ***",
+        );
         formatter.field("spec", &"*** Sensitive Data Redacted ***");
         formatter.finish()
     }
@@ -150,7 +159,8 @@ impl ServiceInstanceBuilder {
     }
     /// <p>The name of the service instance.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input; self
+        self.name = input;
+        self
     }
     /// <p>The Amazon Resource Name (ARN) of the service instance.</p>
     pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -159,7 +169,8 @@ impl ServiceInstanceBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the service instance.</p>
     pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.arn = input; self
+        self.arn = input;
+        self
     }
     /// <p>The time when the service instance was created.</p>
     pub fn created_at(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -167,8 +178,12 @@ impl ServiceInstanceBuilder {
         self
     }
     /// <p>The time when the service instance was created.</p>
-    pub fn set_created_at(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.created_at = input; self
+    pub fn set_created_at(
+        mut self,
+        input: std::option::Option<aws_smithy_types::DateTime>,
+    ) -> Self {
+        self.created_at = input;
+        self
     }
     /// <p>The time when a deployment of the service instance was last attempted.</p>
     pub fn last_deployment_attempted_at(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -176,8 +191,12 @@ impl ServiceInstanceBuilder {
         self
     }
     /// <p>The time when a deployment of the service instance was last attempted.</p>
-    pub fn set_last_deployment_attempted_at(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.last_deployment_attempted_at = input; self
+    pub fn set_last_deployment_attempted_at(
+        mut self,
+        input: std::option::Option<aws_smithy_types::DateTime>,
+    ) -> Self {
+        self.last_deployment_attempted_at = input;
+        self
     }
     /// <p>The time when the service instance was last deployed successfully.</p>
     pub fn last_deployment_succeeded_at(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -185,8 +204,12 @@ impl ServiceInstanceBuilder {
         self
     }
     /// <p>The time when the service instance was last deployed successfully.</p>
-    pub fn set_last_deployment_succeeded_at(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.last_deployment_succeeded_at = input; self
+    pub fn set_last_deployment_succeeded_at(
+        mut self,
+        input: std::option::Option<aws_smithy_types::DateTime>,
+    ) -> Self {
+        self.last_deployment_succeeded_at = input;
+        self
     }
     /// <p>The name of the service that the service instance belongs to.</p>
     pub fn service_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -195,7 +218,8 @@ impl ServiceInstanceBuilder {
     }
     /// <p>The name of the service that the service instance belongs to.</p>
     pub fn set_service_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.service_name = input; self
+        self.service_name = input;
+        self
     }
     /// <p>The name of the environment that the service instance was deployed into.</p>
     pub fn environment_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -204,7 +228,8 @@ impl ServiceInstanceBuilder {
     }
     /// <p>The name of the environment that the service instance was deployed into.</p>
     pub fn set_environment_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.environment_name = input; self
+        self.environment_name = input;
+        self
     }
     /// <p>The name of the service template that was used to create the service instance.</p>
     pub fn template_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -213,7 +238,8 @@ impl ServiceInstanceBuilder {
     }
     /// <p>The name of the service template that was used to create the service instance.</p>
     pub fn set_template_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.template_name = input; self
+        self.template_name = input;
+        self
     }
     /// <p>The major version of the service template that was used to create the service instance.</p>
     pub fn template_major_version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -221,8 +247,12 @@ impl ServiceInstanceBuilder {
         self
     }
     /// <p>The major version of the service template that was used to create the service instance.</p>
-    pub fn set_template_major_version(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.template_major_version = input; self
+    pub fn set_template_major_version(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.template_major_version = input;
+        self
     }
     /// <p>The minor version of the service template that was used to create the service instance.</p>
     pub fn template_minor_version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -230,8 +260,12 @@ impl ServiceInstanceBuilder {
         self
     }
     /// <p>The minor version of the service template that was used to create the service instance.</p>
-    pub fn set_template_minor_version(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.template_minor_version = input; self
+    pub fn set_template_minor_version(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.template_minor_version = input;
+        self
     }
     /// <p>The service instance deployment status.</p>
     pub fn deployment_status(mut self, input: crate::types::DeploymentStatus) -> Self {
@@ -239,8 +273,12 @@ impl ServiceInstanceBuilder {
         self
     }
     /// <p>The service instance deployment status.</p>
-    pub fn set_deployment_status(mut self, input: std::option::Option<crate::types::DeploymentStatus>) -> Self {
-        self.deployment_status = input; self
+    pub fn set_deployment_status(
+        mut self,
+        input: std::option::Option<crate::types::DeploymentStatus>,
+    ) -> Self {
+        self.deployment_status = input;
+        self
     }
     /// <p>The message associated with the service instance deployment status.</p>
     pub fn deployment_status_message(mut self, input: impl Into<std::string::String>) -> Self {
@@ -248,8 +286,12 @@ impl ServiceInstanceBuilder {
         self
     }
     /// <p>The message associated with the service instance deployment status.</p>
-    pub fn set_deployment_status_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.deployment_status_message = input; self
+    pub fn set_deployment_status_message(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.deployment_status_message = input;
+        self
     }
     /// <p>The service spec that was used to create the service instance.</p>
     pub fn spec(mut self, input: impl Into<std::string::String>) -> Self {
@@ -258,37 +300,25 @@ impl ServiceInstanceBuilder {
     }
     /// <p>The service spec that was used to create the service instance.</p>
     pub fn set_spec(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.spec = input; self
+        self.spec = input;
+        self
     }
     /// Consumes the builder and constructs a [`ServiceInstance`](crate::types::ServiceInstance).
     pub fn build(self) -> crate::types::ServiceInstance {
         crate::types::ServiceInstance {
-            name: self.name
-            ,
-            arn: self.arn
-            ,
-            created_at: self.created_at
-            ,
-            last_deployment_attempted_at: self.last_deployment_attempted_at
-            ,
-            last_deployment_succeeded_at: self.last_deployment_succeeded_at
-            ,
-            service_name: self.service_name
-            ,
-            environment_name: self.environment_name
-            ,
-            template_name: self.template_name
-            ,
-            template_major_version: self.template_major_version
-            ,
-            template_minor_version: self.template_minor_version
-            ,
-            deployment_status: self.deployment_status
-            ,
-            deployment_status_message: self.deployment_status_message
-            ,
-            spec: self.spec
-            ,
+            name: self.name,
+            arn: self.arn,
+            created_at: self.created_at,
+            last_deployment_attempted_at: self.last_deployment_attempted_at,
+            last_deployment_succeeded_at: self.last_deployment_succeeded_at,
+            service_name: self.service_name,
+            environment_name: self.environment_name,
+            template_name: self.template_name,
+            template_major_version: self.template_major_version,
+            template_minor_version: self.template_minor_version,
+            deployment_status: self.deployment_status,
+            deployment_status_message: self.deployment_status_message,
+            spec: self.spec,
         }
     }
 }
@@ -298,17 +328,25 @@ impl std::fmt::Debug for ServiceInstanceBuilder {
         formatter.field("name", &self.name);
         formatter.field("arn", &self.arn);
         formatter.field("created_at", &self.created_at);
-        formatter.field("last_deployment_attempted_at", &self.last_deployment_attempted_at);
-        formatter.field("last_deployment_succeeded_at", &self.last_deployment_succeeded_at);
+        formatter.field(
+            "last_deployment_attempted_at",
+            &self.last_deployment_attempted_at,
+        );
+        formatter.field(
+            "last_deployment_succeeded_at",
+            &self.last_deployment_succeeded_at,
+        );
         formatter.field("service_name", &self.service_name);
         formatter.field("environment_name", &self.environment_name);
         formatter.field("template_name", &self.template_name);
         formatter.field("template_major_version", &self.template_major_version);
         formatter.field("template_minor_version", &self.template_minor_version);
         formatter.field("deployment_status", &self.deployment_status);
-        formatter.field("deployment_status_message", &"*** Sensitive Data Redacted ***");
+        formatter.field(
+            "deployment_status_message",
+            &"*** Sensitive Data Redacted ***",
+        );
         formatter.field("spec", &"*** Sensitive Data Redacted ***");
         formatter.finish()
     }
 }
-

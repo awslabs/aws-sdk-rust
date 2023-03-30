@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetBotAliasesOutput  {
+pub struct GetBotAliasesOutput {
     /// <p>An array of <code>BotAliasMetadata</code> objects, each describing a bot alias.</p>
     #[doc(hidden)]
     pub bot_aliases: std::option::Option<std::vec::Vec<crate::types::BotAliasMetadata>>,
@@ -13,19 +13,19 @@ pub struct GetBotAliasesOutput  {
 }
 impl GetBotAliasesOutput {
     /// <p>An array of <code>BotAliasMetadata</code> objects, each describing a bot alias.</p>
-    pub fn bot_aliases(&self) -> std::option::Option<& [crate::types::BotAliasMetadata]> {
+    pub fn bot_aliases(&self) -> std::option::Option<&[crate::types::BotAliasMetadata]> {
         self.bot_aliases.as_deref()
     }
     /// <p>A pagination token for fetching next page of aliases. If the response to this call is truncated, Amazon Lex returns a pagination token in the response. To fetch the next page of aliases, specify the pagination token in the next request. </p>
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for GetBotAliasesOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl GetBotAliasesOutput {
     /// Creates a new builder-style object to manufacture [`GetBotAliasesOutput`](crate::operation::get_bot_aliases::GetBotAliasesOutput).
     pub fn builder() -> crate::operation::get_bot_aliases::builders::GetBotAliasesOutputBuilder {
@@ -49,13 +49,17 @@ impl GetBotAliasesOutputBuilder {
     /// <p>An array of <code>BotAliasMetadata</code> objects, each describing a bot alias.</p>
     pub fn bot_aliases(mut self, input: crate::types::BotAliasMetadata) -> Self {
         let mut v = self.bot_aliases.unwrap_or_default();
-                        v.push(input);
-                        self.bot_aliases = Some(v);
-                        self
+        v.push(input);
+        self.bot_aliases = Some(v);
+        self
     }
     /// <p>An array of <code>BotAliasMetadata</code> objects, each describing a bot alias.</p>
-    pub fn set_bot_aliases(mut self, input: std::option::Option<std::vec::Vec<crate::types::BotAliasMetadata>>) -> Self {
-        self.bot_aliases = input; self
+    pub fn set_bot_aliases(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::BotAliasMetadata>>,
+    ) -> Self {
+        self.bot_aliases = input;
+        self
     }
     /// <p>A pagination token for fetching next page of aliases. If the response to this call is truncated, Amazon Lex returns a pagination token in the response. To fetch the next page of aliases, specify the pagination token in the next request. </p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -64,26 +68,24 @@ impl GetBotAliasesOutputBuilder {
     }
     /// <p>A pagination token for fetching next page of aliases. If the response to this call is truncated, Amazon Lex returns a pagination token in the response. To fetch the next page of aliases, specify the pagination token in the next request. </p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input; self
+        self.next_token = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`GetBotAliasesOutput`](crate::operation::get_bot_aliases::GetBotAliasesOutput).
     pub fn build(self) -> crate::operation::get_bot_aliases::GetBotAliasesOutput {
         crate::operation::get_bot_aliases::GetBotAliasesOutput {
-            bot_aliases: self.bot_aliases
-            ,
-            next_token: self.next_token
-            ,
+            bot_aliases: self.bot_aliases,
+            next_token: self.next_token,
             _request_id: self._request_id,
         }
     }
 }
-

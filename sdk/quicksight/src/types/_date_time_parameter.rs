@@ -3,7 +3,7 @@
 /// <p>A date-time parameter.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DateTimeParameter  {
+pub struct DateTimeParameter {
     /// <p>A display name for the date-time parameter.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -13,11 +13,11 @@ pub struct DateTimeParameter  {
 }
 impl DateTimeParameter {
     /// <p>A display name for the date-time parameter.</p>
-    pub fn name(&self) -> std::option::Option<& str> {
+    pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>The values for the date-time parameter.</p>
-    pub fn values(&self) -> std::option::Option<& [aws_smithy_types::DateTime]> {
+    pub fn values(&self) -> std::option::Option<&[aws_smithy_types::DateTime]> {
         self.values.as_deref()
     }
 }
@@ -43,7 +43,8 @@ impl DateTimeParameterBuilder {
     }
     /// <p>A display name for the date-time parameter.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input; self
+        self.name = input;
+        self
     }
     /// Appends an item to `values`.
     ///
@@ -52,22 +53,23 @@ impl DateTimeParameterBuilder {
     /// <p>The values for the date-time parameter.</p>
     pub fn values(mut self, input: aws_smithy_types::DateTime) -> Self {
         let mut v = self.values.unwrap_or_default();
-                        v.push(input);
-                        self.values = Some(v);
-                        self
+        v.push(input);
+        self.values = Some(v);
+        self
     }
     /// <p>The values for the date-time parameter.</p>
-    pub fn set_values(mut self, input: std::option::Option<std::vec::Vec<aws_smithy_types::DateTime>>) -> Self {
-        self.values = input; self
+    pub fn set_values(
+        mut self,
+        input: std::option::Option<std::vec::Vec<aws_smithy_types::DateTime>>,
+    ) -> Self {
+        self.values = input;
+        self
     }
     /// Consumes the builder and constructs a [`DateTimeParameter`](crate::types::DateTimeParameter).
     pub fn build(self) -> crate::types::DateTimeParameter {
         crate::types::DateTimeParameter {
-            name: self.name
-            ,
-            values: self.values
-            ,
+            name: self.name,
+            values: self.values,
         }
     }
 }
-

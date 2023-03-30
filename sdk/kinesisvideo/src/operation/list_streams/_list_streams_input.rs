@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListStreamsInput  {
+pub struct ListStreamsInput {
     /// <p>The maximum number of streams to return in the response. The default is 10,000.</p>
     #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
@@ -19,11 +19,11 @@ impl ListStreamsInput {
         self.max_results
     }
     /// <p>If you specify this parameter, when the result of a <code>ListStreams</code> operation is truncated, the call returns the <code>NextToken</code> in the response. To get another batch of streams, provide this token in your next request.</p>
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
     /// <p>Optional: Returns only streams that satisfy a specific condition. Currently, you can specify only the prefix of a stream name as a condition. </p>
-    pub fn stream_name_condition(&self) -> std::option::Option<& crate::types::StreamNameCondition> {
+    pub fn stream_name_condition(&self) -> std::option::Option<&crate::types::StreamNameCondition> {
         self.stream_name_condition.as_ref()
     }
 }
@@ -50,7 +50,8 @@ impl ListStreamsInputBuilder {
     }
     /// <p>The maximum number of streams to return in the response. The default is 10,000.</p>
     pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_results = input; self
+        self.max_results = input;
+        self
     }
     /// <p>If you specify this parameter, when the result of a <code>ListStreams</code> operation is truncated, the call returns the <code>NextToken</code> in the response. To get another batch of streams, provide this token in your next request.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -59,7 +60,8 @@ impl ListStreamsInputBuilder {
     }
     /// <p>If you specify this parameter, when the result of a <code>ListStreams</code> operation is truncated, the call returns the <code>NextToken</code> in the response. To get another batch of streams, provide this token in your next request.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input; self
+        self.next_token = input;
+        self
     }
     /// <p>Optional: Returns only streams that satisfy a specific condition. Currently, you can specify only the prefix of a stream name as a condition. </p>
     pub fn stream_name_condition(mut self, input: crate::types::StreamNameCondition) -> Self {
@@ -67,21 +69,24 @@ impl ListStreamsInputBuilder {
         self
     }
     /// <p>Optional: Returns only streams that satisfy a specific condition. Currently, you can specify only the prefix of a stream name as a condition. </p>
-    pub fn set_stream_name_condition(mut self, input: std::option::Option<crate::types::StreamNameCondition>) -> Self {
-        self.stream_name_condition = input; self
+    pub fn set_stream_name_condition(
+        mut self,
+        input: std::option::Option<crate::types::StreamNameCondition>,
+    ) -> Self {
+        self.stream_name_condition = input;
+        self
     }
     /// Consumes the builder and constructs a [`ListStreamsInput`](crate::operation::list_streams::ListStreamsInput).
-    pub fn build(self) -> Result<crate::operation::list_streams::ListStreamsInput, aws_smithy_http::operation::error::BuildError> {
-        Ok(
-            crate::operation::list_streams::ListStreamsInput {
-                max_results: self.max_results
-                ,
-                next_token: self.next_token
-                ,
-                stream_name_condition: self.stream_name_condition
-                ,
-            }
-        )
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::list_streams::ListStreamsInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        Ok(crate::operation::list_streams::ListStreamsInput {
+            max_results: self.max_results,
+            next_token: self.next_token,
+            stream_name_condition: self.stream_name_condition,
+        })
     }
 }
-

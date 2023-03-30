@@ -3,7 +3,7 @@
 /// <p>Settings related to the Amazon Chime account. This includes settings that start or stop remote control of shared screens, or start or stop the dial-out option in the Amazon Chime web application. For more information about these settings, see <a href="https://docs.aws.amazon.com/chime/latest/ag/policies.html">Use the Policies Page</a> in the <i>Amazon Chime Administration Guide</i>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AccountSettings  {
+pub struct AccountSettings {
     /// <p>Setting that stops or starts remote control of shared screens during meetings.</p>
     #[doc(hidden)]
     pub disable_remote_control: std::option::Option<bool>,
@@ -43,7 +43,8 @@ impl AccountSettingsBuilder {
     }
     /// <p>Setting that stops or starts remote control of shared screens during meetings.</p>
     pub fn set_disable_remote_control(mut self, input: std::option::Option<bool>) -> Self {
-        self.disable_remote_control = input; self
+        self.disable_remote_control = input;
+        self
     }
     /// <p>Setting that allows meeting participants to choose the <b>Call me at a phone number</b> option. For more information, see <a href="https://docs.aws.amazon.com/chime/latest/ug/chime-join-meeting.html">Join a Meeting without the Amazon Chime App</a>.</p>
     pub fn enable_dial_out(mut self, input: bool) -> Self {
@@ -52,16 +53,14 @@ impl AccountSettingsBuilder {
     }
     /// <p>Setting that allows meeting participants to choose the <b>Call me at a phone number</b> option. For more information, see <a href="https://docs.aws.amazon.com/chime/latest/ug/chime-join-meeting.html">Join a Meeting without the Amazon Chime App</a>.</p>
     pub fn set_enable_dial_out(mut self, input: std::option::Option<bool>) -> Self {
-        self.enable_dial_out = input; self
+        self.enable_dial_out = input;
+        self
     }
     /// Consumes the builder and constructs a [`AccountSettings`](crate::types::AccountSettings).
     pub fn build(self) -> crate::types::AccountSettings {
         crate::types::AccountSettings {
-            disable_remote_control: self.disable_remote_control
-            ,
-            enable_dial_out: self.enable_dial_out
-            ,
+            disable_remote_control: self.disable_remote_control,
+            enable_dial_out: self.enable_dial_out,
         }
     }
 }
-

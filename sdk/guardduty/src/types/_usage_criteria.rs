@@ -3,7 +3,7 @@
 /// <p>Contains information about the criteria used to query usage statistics.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UsageCriteria  {
+pub struct UsageCriteria {
     /// <p>The account IDs to aggregate usage statistics from.</p>
     #[doc(hidden)]
     pub account_ids: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -16,15 +16,15 @@ pub struct UsageCriteria  {
 }
 impl UsageCriteria {
     /// <p>The account IDs to aggregate usage statistics from.</p>
-    pub fn account_ids(&self) -> std::option::Option<& [std::string::String]> {
+    pub fn account_ids(&self) -> std::option::Option<&[std::string::String]> {
         self.account_ids.as_deref()
     }
     /// <p>The data sources to aggregate usage statistics from.</p>
-    pub fn data_sources(&self) -> std::option::Option<& [crate::types::DataSource]> {
+    pub fn data_sources(&self) -> std::option::Option<&[crate::types::DataSource]> {
         self.data_sources.as_deref()
     }
     /// <p>The resources to aggregate usage statistics from. Only accepts exact resource names.</p>
-    pub fn resources(&self) -> std::option::Option<& [std::string::String]> {
+    pub fn resources(&self) -> std::option::Option<&[std::string::String]> {
         self.resources.as_deref()
     }
 }
@@ -51,13 +51,17 @@ impl UsageCriteriaBuilder {
     /// <p>The account IDs to aggregate usage statistics from.</p>
     pub fn account_ids(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.account_ids.unwrap_or_default();
-                        v.push(input.into());
-                        self.account_ids = Some(v);
-                        self
+        v.push(input.into());
+        self.account_ids = Some(v);
+        self
     }
     /// <p>The account IDs to aggregate usage statistics from.</p>
-    pub fn set_account_ids(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-        self.account_ids = input; self
+    pub fn set_account_ids(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
+        self.account_ids = input;
+        self
     }
     /// Appends an item to `data_sources`.
     ///
@@ -66,13 +70,17 @@ impl UsageCriteriaBuilder {
     /// <p>The data sources to aggregate usage statistics from.</p>
     pub fn data_sources(mut self, input: crate::types::DataSource) -> Self {
         let mut v = self.data_sources.unwrap_or_default();
-                        v.push(input);
-                        self.data_sources = Some(v);
-                        self
+        v.push(input);
+        self.data_sources = Some(v);
+        self
     }
     /// <p>The data sources to aggregate usage statistics from.</p>
-    pub fn set_data_sources(mut self, input: std::option::Option<std::vec::Vec<crate::types::DataSource>>) -> Self {
-        self.data_sources = input; self
+    pub fn set_data_sources(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::DataSource>>,
+    ) -> Self {
+        self.data_sources = input;
+        self
     }
     /// Appends an item to `resources`.
     ///
@@ -81,24 +89,24 @@ impl UsageCriteriaBuilder {
     /// <p>The resources to aggregate usage statistics from. Only accepts exact resource names.</p>
     pub fn resources(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.resources.unwrap_or_default();
-                        v.push(input.into());
-                        self.resources = Some(v);
-                        self
+        v.push(input.into());
+        self.resources = Some(v);
+        self
     }
     /// <p>The resources to aggregate usage statistics from. Only accepts exact resource names.</p>
-    pub fn set_resources(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-        self.resources = input; self
+    pub fn set_resources(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
+        self.resources = input;
+        self
     }
     /// Consumes the builder and constructs a [`UsageCriteria`](crate::types::UsageCriteria).
     pub fn build(self) -> crate::types::UsageCriteria {
         crate::types::UsageCriteria {
-            account_ids: self.account_ids
-            ,
-            data_sources: self.data_sources
-            ,
-            resources: self.resources
-            ,
+            account_ids: self.account_ids,
+            data_sources: self.data_sources,
+            resources: self.resources,
         }
     }
 }
-

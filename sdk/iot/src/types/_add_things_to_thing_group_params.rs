@@ -3,7 +3,7 @@
 /// <p>Parameters used when defining a mitigation action that move a set of things to a thing group.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AddThingsToThingGroupParams  {
+pub struct AddThingsToThingGroupParams {
     /// <p>The list of groups to which you want to add the things that triggered the mitigation action. You can add a thing to a maximum of 10 groups, but you can't add a thing to more than one group in the same hierarchy.</p>
     #[doc(hidden)]
     pub thing_group_names: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -13,7 +13,7 @@ pub struct AddThingsToThingGroupParams  {
 }
 impl AddThingsToThingGroupParams {
     /// <p>The list of groups to which you want to add the things that triggered the mitigation action. You can add a thing to a maximum of 10 groups, but you can't add a thing to more than one group in the same hierarchy.</p>
-    pub fn thing_group_names(&self) -> std::option::Option<& [std::string::String]> {
+    pub fn thing_group_names(&self) -> std::option::Option<&[std::string::String]> {
         self.thing_group_names.as_deref()
     }
     /// <p>Specifies if this mitigation action can move the things that triggered the mitigation action even if they are part of one or more dynamic thing groups.</p>
@@ -43,13 +43,17 @@ impl AddThingsToThingGroupParamsBuilder {
     /// <p>The list of groups to which you want to add the things that triggered the mitigation action. You can add a thing to a maximum of 10 groups, but you can't add a thing to more than one group in the same hierarchy.</p>
     pub fn thing_group_names(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.thing_group_names.unwrap_or_default();
-                        v.push(input.into());
-                        self.thing_group_names = Some(v);
-                        self
+        v.push(input.into());
+        self.thing_group_names = Some(v);
+        self
     }
     /// <p>The list of groups to which you want to add the things that triggered the mitigation action. You can add a thing to a maximum of 10 groups, but you can't add a thing to more than one group in the same hierarchy.</p>
-    pub fn set_thing_group_names(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-        self.thing_group_names = input; self
+    pub fn set_thing_group_names(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
+        self.thing_group_names = input;
+        self
     }
     /// <p>Specifies if this mitigation action can move the things that triggered the mitigation action even if they are part of one or more dynamic thing groups.</p>
     pub fn override_dynamic_groups(mut self, input: bool) -> Self {
@@ -58,16 +62,14 @@ impl AddThingsToThingGroupParamsBuilder {
     }
     /// <p>Specifies if this mitigation action can move the things that triggered the mitigation action even if they are part of one or more dynamic thing groups.</p>
     pub fn set_override_dynamic_groups(mut self, input: std::option::Option<bool>) -> Self {
-        self.override_dynamic_groups = input; self
+        self.override_dynamic_groups = input;
+        self
     }
     /// Consumes the builder and constructs a [`AddThingsToThingGroupParams`](crate::types::AddThingsToThingGroupParams).
     pub fn build(self) -> crate::types::AddThingsToThingGroupParams {
         crate::types::AddThingsToThingGroupParams {
-            thing_group_names: self.thing_group_names
-            ,
-            override_dynamic_groups: self.override_dynamic_groups
-            ,
+            thing_group_names: self.thing_group_names,
+            override_dynamic_groups: self.override_dynamic_groups,
         }
     }
 }
-

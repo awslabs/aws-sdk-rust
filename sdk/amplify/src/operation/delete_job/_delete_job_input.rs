@@ -3,7 +3,7 @@
 /// <p> The request structure for the delete job request. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteJobInput  {
+pub struct DeleteJobInput {
     /// <p> The unique ID for an Amplify app. </p>
     #[doc(hidden)]
     pub app_id: std::option::Option<std::string::String>,
@@ -16,15 +16,15 @@ pub struct DeleteJobInput  {
 }
 impl DeleteJobInput {
     /// <p> The unique ID for an Amplify app. </p>
-    pub fn app_id(&self) -> std::option::Option<& str> {
+    pub fn app_id(&self) -> std::option::Option<&str> {
         self.app_id.as_deref()
     }
     /// <p> The name for the branch, for the job. </p>
-    pub fn branch_name(&self) -> std::option::Option<& str> {
+    pub fn branch_name(&self) -> std::option::Option<&str> {
         self.branch_name.as_deref()
     }
     /// <p> The unique ID for the job. </p>
-    pub fn job_id(&self) -> std::option::Option<& str> {
+    pub fn job_id(&self) -> std::option::Option<&str> {
         self.job_id.as_deref()
     }
 }
@@ -51,7 +51,8 @@ impl DeleteJobInputBuilder {
     }
     /// <p> The unique ID for an Amplify app. </p>
     pub fn set_app_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.app_id = input; self
+        self.app_id = input;
+        self
     }
     /// <p> The name for the branch, for the job. </p>
     pub fn branch_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -60,7 +61,8 @@ impl DeleteJobInputBuilder {
     }
     /// <p> The name for the branch, for the job. </p>
     pub fn set_branch_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.branch_name = input; self
+        self.branch_name = input;
+        self
     }
     /// <p> The unique ID for the job. </p>
     pub fn job_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -69,20 +71,20 @@ impl DeleteJobInputBuilder {
     }
     /// <p> The unique ID for the job. </p>
     pub fn set_job_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.job_id = input; self
+        self.job_id = input;
+        self
     }
     /// Consumes the builder and constructs a [`DeleteJobInput`](crate::operation::delete_job::DeleteJobInput).
-    pub fn build(self) -> Result<crate::operation::delete_job::DeleteJobInput, aws_smithy_http::operation::error::BuildError> {
-        Ok(
-            crate::operation::delete_job::DeleteJobInput {
-                app_id: self.app_id
-                ,
-                branch_name: self.branch_name
-                ,
-                job_id: self.job_id
-                ,
-            }
-        )
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::delete_job::DeleteJobInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        Ok(crate::operation::delete_job::DeleteJobInput {
+            app_id: self.app_id,
+            branch_name: self.branch_name,
+            job_id: self.job_id,
+        })
     }
 }
-

@@ -3,14 +3,14 @@
 /// <p>The range options for the data zoom scroll bar.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct VisibleRangeOptions  {
+pub struct VisibleRangeOptions {
     /// <p>The percent range in the visible range.</p>
     #[doc(hidden)]
     pub percent_range: std::option::Option<crate::types::PercentVisibleRange>,
 }
 impl VisibleRangeOptions {
     /// <p>The percent range in the visible range.</p>
-    pub fn percent_range(&self) -> std::option::Option<& crate::types::PercentVisibleRange> {
+    pub fn percent_range(&self) -> std::option::Option<&crate::types::PercentVisibleRange> {
         self.percent_range.as_ref()
     }
 }
@@ -34,15 +34,17 @@ impl VisibleRangeOptionsBuilder {
         self
     }
     /// <p>The percent range in the visible range.</p>
-    pub fn set_percent_range(mut self, input: std::option::Option<crate::types::PercentVisibleRange>) -> Self {
-        self.percent_range = input; self
+    pub fn set_percent_range(
+        mut self,
+        input: std::option::Option<crate::types::PercentVisibleRange>,
+    ) -> Self {
+        self.percent_range = input;
+        self
     }
     /// Consumes the builder and constructs a [`VisibleRangeOptions`](crate::types::VisibleRangeOptions).
     pub fn build(self) -> crate::types::VisibleRangeOptions {
         crate::types::VisibleRangeOptions {
-            percent_range: self.percent_range
-            ,
+            percent_range: self.percent_range,
         }
     }
 }
-

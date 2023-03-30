@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetCustomDataIdentifierOutput  {
+pub struct GetCustomDataIdentifierOutput {
     /// <p>The Amazon Resource Name (ARN) of the custom data identifier.</p>
     #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
@@ -38,16 +38,17 @@ pub struct GetCustomDataIdentifierOutput  {
     pub severity_levels: std::option::Option<std::vec::Vec<crate::types::SeverityLevel>>,
     /// <p>A map of key-value pairs that identifies the tags (keys and values) that are associated with the custom data identifier.</p>
     #[doc(hidden)]
-    pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub tags:
+        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     _request_id: Option<String>,
 }
 impl GetCustomDataIdentifierOutput {
     /// <p>The Amazon Resource Name (ARN) of the custom data identifier.</p>
-    pub fn arn(&self) -> std::option::Option<& str> {
+    pub fn arn(&self) -> std::option::Option<&str> {
         self.arn.as_deref()
     }
     /// <p>The date and time, in UTC and extended ISO 8601 format, when the custom data identifier was created.</p>
-    pub fn created_at(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
+    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
     /// <p>Specifies whether the custom data identifier was deleted. If you delete a custom data identifier, Amazon Macie doesn't delete it permanently. Instead, it soft deletes the identifier.</p>
@@ -55,19 +56,19 @@ impl GetCustomDataIdentifierOutput {
         self.deleted
     }
     /// <p>The custom description of the custom data identifier.</p>
-    pub fn description(&self) -> std::option::Option<& str> {
+    pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
     /// <p>The unique identifier for the custom data identifier.</p>
-    pub fn id(&self) -> std::option::Option<& str> {
+    pub fn id(&self) -> std::option::Option<&str> {
         self.id.as_deref()
     }
     /// <p>An array that lists specific character sequences (<i>ignore words</i>) to exclude from the results. If the text matched by the regular expression contains any string in this array, Amazon Macie ignores it. Ignore words are case sensitive.</p>
-    pub fn ignore_words(&self) -> std::option::Option<& [std::string::String]> {
+    pub fn ignore_words(&self) -> std::option::Option<&[std::string::String]> {
         self.ignore_words.as_deref()
     }
     /// <p>An array that lists specific character sequences (<i>keywords</i>), one of which must precede and be within proximity (maximumMatchDistance) of the regular expression to match. Keywords aren't case sensitive.</p>
-    pub fn keywords(&self) -> std::option::Option<& [std::string::String]> {
+    pub fn keywords(&self) -> std::option::Option<&[std::string::String]> {
         self.keywords.as_deref()
     }
     /// <p>The maximum number of characters that can exist between the end of at least one complete character sequence specified by the keywords array and the end of the text that matches the regex pattern. If a complete keyword precedes all the text that matches the pattern and the keyword is within the specified distance, Amazon Macie includes the result. Otherwise, Macie excludes the result.</p>
@@ -75,30 +76,35 @@ impl GetCustomDataIdentifierOutput {
         self.maximum_match_distance
     }
     /// <p>The custom name of the custom data identifier.</p>
-    pub fn name(&self) -> std::option::Option<& str> {
+    pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>The regular expression (<i>regex</i>) that defines the pattern to match.</p>
-    pub fn regex(&self) -> std::option::Option<& str> {
+    pub fn regex(&self) -> std::option::Option<&str> {
         self.regex.as_deref()
     }
     /// <p>Specifies the severity that's assigned to findings that the custom data identifier produces, based on the number of occurrences of text that matches the custom data identifier's detection criteria. By default, Amazon Macie creates findings for S3 objects that contain at least one occurrence of text that matches the detection criteria, and Macie assigns the MEDIUM severity to those findings.</p>
-    pub fn severity_levels(&self) -> std::option::Option<& [crate::types::SeverityLevel]> {
+    pub fn severity_levels(&self) -> std::option::Option<&[crate::types::SeverityLevel]> {
         self.severity_levels.as_deref()
     }
     /// <p>A map of key-value pairs that identifies the tags (keys and values) that are associated with the custom data identifier.</p>
-    pub fn tags(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
         self.tags.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for GetCustomDataIdentifierOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl GetCustomDataIdentifierOutput {
     /// Creates a new builder-style object to manufacture [`GetCustomDataIdentifierOutput`](crate::operation::get_custom_data_identifier::GetCustomDataIdentifierOutput).
-    pub fn builder() -> crate::operation::get_custom_data_identifier::builders::GetCustomDataIdentifierOutputBuilder {
+    pub fn builder(
+    ) -> crate::operation::get_custom_data_identifier::builders::GetCustomDataIdentifierOutputBuilder
+    {
         crate::operation::get_custom_data_identifier::builders::GetCustomDataIdentifierOutputBuilder::default()
     }
 }
@@ -118,7 +124,8 @@ pub struct GetCustomDataIdentifierOutputBuilder {
     pub(crate) name: std::option::Option<std::string::String>,
     pub(crate) regex: std::option::Option<std::string::String>,
     pub(crate) severity_levels: std::option::Option<std::vec::Vec<crate::types::SeverityLevel>>,
-    pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub(crate) tags:
+        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     _request_id: Option<String>,
 }
 impl GetCustomDataIdentifierOutputBuilder {
@@ -129,7 +136,8 @@ impl GetCustomDataIdentifierOutputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the custom data identifier.</p>
     pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.arn = input; self
+        self.arn = input;
+        self
     }
     /// <p>The date and time, in UTC and extended ISO 8601 format, when the custom data identifier was created.</p>
     pub fn created_at(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -137,8 +145,12 @@ impl GetCustomDataIdentifierOutputBuilder {
         self
     }
     /// <p>The date and time, in UTC and extended ISO 8601 format, when the custom data identifier was created.</p>
-    pub fn set_created_at(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.created_at = input; self
+    pub fn set_created_at(
+        mut self,
+        input: std::option::Option<aws_smithy_types::DateTime>,
+    ) -> Self {
+        self.created_at = input;
+        self
     }
     /// <p>Specifies whether the custom data identifier was deleted. If you delete a custom data identifier, Amazon Macie doesn't delete it permanently. Instead, it soft deletes the identifier.</p>
     pub fn deleted(mut self, input: bool) -> Self {
@@ -147,7 +159,8 @@ impl GetCustomDataIdentifierOutputBuilder {
     }
     /// <p>Specifies whether the custom data identifier was deleted. If you delete a custom data identifier, Amazon Macie doesn't delete it permanently. Instead, it soft deletes the identifier.</p>
     pub fn set_deleted(mut self, input: std::option::Option<bool>) -> Self {
-        self.deleted = input; self
+        self.deleted = input;
+        self
     }
     /// <p>The custom description of the custom data identifier.</p>
     pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -156,7 +169,8 @@ impl GetCustomDataIdentifierOutputBuilder {
     }
     /// <p>The custom description of the custom data identifier.</p>
     pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.description = input; self
+        self.description = input;
+        self
     }
     /// <p>The unique identifier for the custom data identifier.</p>
     pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -165,7 +179,8 @@ impl GetCustomDataIdentifierOutputBuilder {
     }
     /// <p>The unique identifier for the custom data identifier.</p>
     pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.id = input; self
+        self.id = input;
+        self
     }
     /// Appends an item to `ignore_words`.
     ///
@@ -174,13 +189,17 @@ impl GetCustomDataIdentifierOutputBuilder {
     /// <p>An array that lists specific character sequences (<i>ignore words</i>) to exclude from the results. If the text matched by the regular expression contains any string in this array, Amazon Macie ignores it. Ignore words are case sensitive.</p>
     pub fn ignore_words(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.ignore_words.unwrap_or_default();
-                        v.push(input.into());
-                        self.ignore_words = Some(v);
-                        self
+        v.push(input.into());
+        self.ignore_words = Some(v);
+        self
     }
     /// <p>An array that lists specific character sequences (<i>ignore words</i>) to exclude from the results. If the text matched by the regular expression contains any string in this array, Amazon Macie ignores it. Ignore words are case sensitive.</p>
-    pub fn set_ignore_words(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-        self.ignore_words = input; self
+    pub fn set_ignore_words(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
+        self.ignore_words = input;
+        self
     }
     /// Appends an item to `keywords`.
     ///
@@ -189,13 +208,17 @@ impl GetCustomDataIdentifierOutputBuilder {
     /// <p>An array that lists specific character sequences (<i>keywords</i>), one of which must precede and be within proximity (maximumMatchDistance) of the regular expression to match. Keywords aren't case sensitive.</p>
     pub fn keywords(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.keywords.unwrap_or_default();
-                        v.push(input.into());
-                        self.keywords = Some(v);
-                        self
+        v.push(input.into());
+        self.keywords = Some(v);
+        self
     }
     /// <p>An array that lists specific character sequences (<i>keywords</i>), one of which must precede and be within proximity (maximumMatchDistance) of the regular expression to match. Keywords aren't case sensitive.</p>
-    pub fn set_keywords(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-        self.keywords = input; self
+    pub fn set_keywords(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
+        self.keywords = input;
+        self
     }
     /// <p>The maximum number of characters that can exist between the end of at least one complete character sequence specified by the keywords array and the end of the text that matches the regex pattern. If a complete keyword precedes all the text that matches the pattern and the keyword is within the specified distance, Amazon Macie includes the result. Otherwise, Macie excludes the result.</p>
     pub fn maximum_match_distance(mut self, input: i32) -> Self {
@@ -204,7 +227,8 @@ impl GetCustomDataIdentifierOutputBuilder {
     }
     /// <p>The maximum number of characters that can exist between the end of at least one complete character sequence specified by the keywords array and the end of the text that matches the regex pattern. If a complete keyword precedes all the text that matches the pattern and the keyword is within the specified distance, Amazon Macie includes the result. Otherwise, Macie excludes the result.</p>
     pub fn set_maximum_match_distance(mut self, input: std::option::Option<i32>) -> Self {
-        self.maximum_match_distance = input; self
+        self.maximum_match_distance = input;
+        self
     }
     /// <p>The custom name of the custom data identifier.</p>
     pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -213,7 +237,8 @@ impl GetCustomDataIdentifierOutputBuilder {
     }
     /// <p>The custom name of the custom data identifier.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input; self
+        self.name = input;
+        self
     }
     /// <p>The regular expression (<i>regex</i>) that defines the pattern to match.</p>
     pub fn regex(mut self, input: impl Into<std::string::String>) -> Self {
@@ -222,7 +247,8 @@ impl GetCustomDataIdentifierOutputBuilder {
     }
     /// <p>The regular expression (<i>regex</i>) that defines the pattern to match.</p>
     pub fn set_regex(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.regex = input; self
+        self.regex = input;
+        self
     }
     /// Appends an item to `severity_levels`.
     ///
@@ -231,69 +257,70 @@ impl GetCustomDataIdentifierOutputBuilder {
     /// <p>Specifies the severity that's assigned to findings that the custom data identifier produces, based on the number of occurrences of text that matches the custom data identifier's detection criteria. By default, Amazon Macie creates findings for S3 objects that contain at least one occurrence of text that matches the detection criteria, and Macie assigns the MEDIUM severity to those findings.</p>
     pub fn severity_levels(mut self, input: crate::types::SeverityLevel) -> Self {
         let mut v = self.severity_levels.unwrap_or_default();
-                        v.push(input);
-                        self.severity_levels = Some(v);
-                        self
+        v.push(input);
+        self.severity_levels = Some(v);
+        self
     }
     /// <p>Specifies the severity that's assigned to findings that the custom data identifier produces, based on the number of occurrences of text that matches the custom data identifier's detection criteria. By default, Amazon Macie creates findings for S3 objects that contain at least one occurrence of text that matches the detection criteria, and Macie assigns the MEDIUM severity to those findings.</p>
-    pub fn set_severity_levels(mut self, input: std::option::Option<std::vec::Vec<crate::types::SeverityLevel>>) -> Self {
-        self.severity_levels = input; self
+    pub fn set_severity_levels(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::SeverityLevel>>,
+    ) -> Self {
+        self.severity_levels = input;
+        self
     }
     /// Adds a key-value pair to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// <p>A map of key-value pairs that identifies the tags (keys and values) that are associated with the custom data identifier.</p>
-    pub fn tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
+    pub fn tags(
+        mut self,
+        k: impl Into<std::string::String>,
+        v: impl Into<std::string::String>,
+    ) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
-                        hash_map.insert(k.into(), v.into());
-                        self.tags = Some(hash_map);
-                        self
+        hash_map.insert(k.into(), v.into());
+        self.tags = Some(hash_map);
+        self
     }
     /// <p>A map of key-value pairs that identifies the tags (keys and values) that are associated with the custom data identifier.</p>
-    pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
-        self.tags = input; self
+    pub fn set_tags(
+        mut self,
+        input: std::option::Option<
+            std::collections::HashMap<std::string::String, std::string::String>,
+        >,
+    ) -> Self {
+        self.tags = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`GetCustomDataIdentifierOutput`](crate::operation::get_custom_data_identifier::GetCustomDataIdentifierOutput).
-    pub fn build(self) -> crate::operation::get_custom_data_identifier::GetCustomDataIdentifierOutput {
+    pub fn build(
+        self,
+    ) -> crate::operation::get_custom_data_identifier::GetCustomDataIdentifierOutput {
         crate::operation::get_custom_data_identifier::GetCustomDataIdentifierOutput {
-            arn: self.arn
-            ,
-            created_at: self.created_at
-            ,
-            deleted: self.deleted
-                .unwrap_or_default()
-            ,
-            description: self.description
-            ,
-            id: self.id
-            ,
-            ignore_words: self.ignore_words
-            ,
-            keywords: self.keywords
-            ,
-            maximum_match_distance: self.maximum_match_distance
-                .unwrap_or_default()
-            ,
-            name: self.name
-            ,
-            regex: self.regex
-            ,
-            severity_levels: self.severity_levels
-            ,
-            tags: self.tags
-            ,
+            arn: self.arn,
+            created_at: self.created_at,
+            deleted: self.deleted.unwrap_or_default(),
+            description: self.description,
+            id: self.id,
+            ignore_words: self.ignore_words,
+            keywords: self.keywords,
+            maximum_match_distance: self.maximum_match_distance.unwrap_or_default(),
+            name: self.name,
+            regex: self.regex,
+            severity_levels: self.severity_levels,
+            tags: self.tags,
             _request_id: self._request_id,
         }
     }
 }
-

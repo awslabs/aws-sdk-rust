@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetDataIntegrationOutput  {
+pub struct GetDataIntegrationOutput {
     /// <p>The Amazon Resource Name (ARN) for the DataIntegration.</p>
     #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
@@ -26,51 +26,58 @@ pub struct GetDataIntegrationOutput  {
     pub schedule_configuration: std::option::Option<crate::types::ScheduleConfiguration>,
     /// <p>One or more tags.</p>
     #[doc(hidden)]
-    pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub tags:
+        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     _request_id: Option<String>,
 }
 impl GetDataIntegrationOutput {
     /// <p>The Amazon Resource Name (ARN) for the DataIntegration.</p>
-    pub fn arn(&self) -> std::option::Option<& str> {
+    pub fn arn(&self) -> std::option::Option<&str> {
         self.arn.as_deref()
     }
     /// <p>A unique identifier.</p>
-    pub fn id(&self) -> std::option::Option<& str> {
+    pub fn id(&self) -> std::option::Option<&str> {
         self.id.as_deref()
     }
     /// <p>The name of the DataIntegration.</p>
-    pub fn name(&self) -> std::option::Option<& str> {
+    pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>The KMS key for the DataIntegration.</p>
-    pub fn description(&self) -> std::option::Option<& str> {
+    pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
     /// <p>The KMS key for the DataIntegration.</p>
-    pub fn kms_key(&self) -> std::option::Option<& str> {
+    pub fn kms_key(&self) -> std::option::Option<&str> {
         self.kms_key.as_deref()
     }
     /// <p>The URI of the data source.</p>
-    pub fn source_uri(&self) -> std::option::Option<& str> {
+    pub fn source_uri(&self) -> std::option::Option<&str> {
         self.source_uri.as_deref()
     }
     /// <p>The name of the data and how often it should be pulled from the source.</p>
-    pub fn schedule_configuration(&self) -> std::option::Option<& crate::types::ScheduleConfiguration> {
+    pub fn schedule_configuration(
+        &self,
+    ) -> std::option::Option<&crate::types::ScheduleConfiguration> {
         self.schedule_configuration.as_ref()
     }
     /// <p>One or more tags.</p>
-    pub fn tags(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
         self.tags.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for GetDataIntegrationOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl GetDataIntegrationOutput {
     /// Creates a new builder-style object to manufacture [`GetDataIntegrationOutput`](crate::operation::get_data_integration::GetDataIntegrationOutput).
-    pub fn builder() -> crate::operation::get_data_integration::builders::GetDataIntegrationOutputBuilder {
+    pub fn builder(
+    ) -> crate::operation::get_data_integration::builders::GetDataIntegrationOutputBuilder {
         crate::operation::get_data_integration::builders::GetDataIntegrationOutputBuilder::default()
     }
 }
@@ -86,7 +93,8 @@ pub struct GetDataIntegrationOutputBuilder {
     pub(crate) kms_key: std::option::Option<std::string::String>,
     pub(crate) source_uri: std::option::Option<std::string::String>,
     pub(crate) schedule_configuration: std::option::Option<crate::types::ScheduleConfiguration>,
-    pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub(crate) tags:
+        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     _request_id: Option<String>,
 }
 impl GetDataIntegrationOutputBuilder {
@@ -97,7 +105,8 @@ impl GetDataIntegrationOutputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) for the DataIntegration.</p>
     pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.arn = input; self
+        self.arn = input;
+        self
     }
     /// <p>A unique identifier.</p>
     pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -106,7 +115,8 @@ impl GetDataIntegrationOutputBuilder {
     }
     /// <p>A unique identifier.</p>
     pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.id = input; self
+        self.id = input;
+        self
     }
     /// <p>The name of the DataIntegration.</p>
     pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -115,7 +125,8 @@ impl GetDataIntegrationOutputBuilder {
     }
     /// <p>The name of the DataIntegration.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input; self
+        self.name = input;
+        self
     }
     /// <p>The KMS key for the DataIntegration.</p>
     pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -124,7 +135,8 @@ impl GetDataIntegrationOutputBuilder {
     }
     /// <p>The KMS key for the DataIntegration.</p>
     pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.description = input; self
+        self.description = input;
+        self
     }
     /// <p>The KMS key for the DataIntegration.</p>
     pub fn kms_key(mut self, input: impl Into<std::string::String>) -> Self {
@@ -133,7 +145,8 @@ impl GetDataIntegrationOutputBuilder {
     }
     /// <p>The KMS key for the DataIntegration.</p>
     pub fn set_kms_key(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.kms_key = input; self
+        self.kms_key = input;
+        self
     }
     /// <p>The URI of the data source.</p>
     pub fn source_uri(mut self, input: impl Into<std::string::String>) -> Self {
@@ -142,7 +155,8 @@ impl GetDataIntegrationOutputBuilder {
     }
     /// <p>The URI of the data source.</p>
     pub fn set_source_uri(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.source_uri = input; self
+        self.source_uri = input;
+        self
     }
     /// <p>The name of the data and how often it should be pulled from the source.</p>
     pub fn schedule_configuration(mut self, input: crate::types::ScheduleConfiguration) -> Self {
@@ -150,54 +164,59 @@ impl GetDataIntegrationOutputBuilder {
         self
     }
     /// <p>The name of the data and how often it should be pulled from the source.</p>
-    pub fn set_schedule_configuration(mut self, input: std::option::Option<crate::types::ScheduleConfiguration>) -> Self {
-        self.schedule_configuration = input; self
+    pub fn set_schedule_configuration(
+        mut self,
+        input: std::option::Option<crate::types::ScheduleConfiguration>,
+    ) -> Self {
+        self.schedule_configuration = input;
+        self
     }
     /// Adds a key-value pair to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// <p>One or more tags.</p>
-    pub fn tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
+    pub fn tags(
+        mut self,
+        k: impl Into<std::string::String>,
+        v: impl Into<std::string::String>,
+    ) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
-                        hash_map.insert(k.into(), v.into());
-                        self.tags = Some(hash_map);
-                        self
+        hash_map.insert(k.into(), v.into());
+        self.tags = Some(hash_map);
+        self
     }
     /// <p>One or more tags.</p>
-    pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
-        self.tags = input; self
+    pub fn set_tags(
+        mut self,
+        input: std::option::Option<
+            std::collections::HashMap<std::string::String, std::string::String>,
+        >,
+    ) -> Self {
+        self.tags = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`GetDataIntegrationOutput`](crate::operation::get_data_integration::GetDataIntegrationOutput).
     pub fn build(self) -> crate::operation::get_data_integration::GetDataIntegrationOutput {
         crate::operation::get_data_integration::GetDataIntegrationOutput {
-            arn: self.arn
-            ,
-            id: self.id
-            ,
-            name: self.name
-            ,
-            description: self.description
-            ,
-            kms_key: self.kms_key
-            ,
-            source_uri: self.source_uri
-            ,
-            schedule_configuration: self.schedule_configuration
-            ,
-            tags: self.tags
-            ,
+            arn: self.arn,
+            id: self.id,
+            name: self.name,
+            description: self.description,
+            kms_key: self.kms_key,
+            source_uri: self.source_uri,
+            schedule_configuration: self.schedule_configuration,
+            tags: self.tags,
             _request_id: self._request_id,
         }
     }
 }
-

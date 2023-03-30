@@ -3,7 +3,7 @@
 /// <p>Provides application summary information, including the application Amazon Resource Name (ARN), name, and status.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ApplicationSummary  {
+pub struct ApplicationSummary {
     /// <p>The name of the application.</p>
     #[doc(hidden)]
     pub application_name: std::option::Option<std::string::String>,
@@ -25,15 +25,15 @@ pub struct ApplicationSummary  {
 }
 impl ApplicationSummary {
     /// <p>The name of the application.</p>
-    pub fn application_name(&self) -> std::option::Option<& str> {
+    pub fn application_name(&self) -> std::option::Option<&str> {
         self.application_name.as_deref()
     }
     /// <p>The ARN of the application.</p>
-    pub fn application_arn(&self) -> std::option::Option<& str> {
+    pub fn application_arn(&self) -> std::option::Option<&str> {
         self.application_arn.as_deref()
     }
     /// <p>The status of the application.</p>
-    pub fn application_status(&self) -> std::option::Option<& crate::types::ApplicationStatus> {
+    pub fn application_status(&self) -> std::option::Option<&crate::types::ApplicationStatus> {
         self.application_status.as_ref()
     }
     /// <p>Provides the current application version.</p>
@@ -41,11 +41,11 @@ impl ApplicationSummary {
         self.application_version_id
     }
     /// <p>The runtime environment for the application.</p>
-    pub fn runtime_environment(&self) -> std::option::Option<& crate::types::RuntimeEnvironment> {
+    pub fn runtime_environment(&self) -> std::option::Option<&crate::types::RuntimeEnvironment> {
         self.runtime_environment.as_ref()
     }
     /// <p>For a Kinesis Data Analytics for Apache Flink application, the mode is <code>STREAMING</code>. For a Kinesis Data Analytics Studio notebook, it is <code>INTERACTIVE</code>.</p>
-    pub fn application_mode(&self) -> std::option::Option<& crate::types::ApplicationMode> {
+    pub fn application_mode(&self) -> std::option::Option<&crate::types::ApplicationMode> {
         self.application_mode.as_ref()
     }
 }
@@ -75,7 +75,8 @@ impl ApplicationSummaryBuilder {
     }
     /// <p>The name of the application.</p>
     pub fn set_application_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.application_name = input; self
+        self.application_name = input;
+        self
     }
     /// <p>The ARN of the application.</p>
     pub fn application_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -84,7 +85,8 @@ impl ApplicationSummaryBuilder {
     }
     /// <p>The ARN of the application.</p>
     pub fn set_application_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.application_arn = input; self
+        self.application_arn = input;
+        self
     }
     /// <p>The status of the application.</p>
     pub fn application_status(mut self, input: crate::types::ApplicationStatus) -> Self {
@@ -92,8 +94,12 @@ impl ApplicationSummaryBuilder {
         self
     }
     /// <p>The status of the application.</p>
-    pub fn set_application_status(mut self, input: std::option::Option<crate::types::ApplicationStatus>) -> Self {
-        self.application_status = input; self
+    pub fn set_application_status(
+        mut self,
+        input: std::option::Option<crate::types::ApplicationStatus>,
+    ) -> Self {
+        self.application_status = input;
+        self
     }
     /// <p>Provides the current application version.</p>
     pub fn application_version_id(mut self, input: i64) -> Self {
@@ -102,7 +108,8 @@ impl ApplicationSummaryBuilder {
     }
     /// <p>Provides the current application version.</p>
     pub fn set_application_version_id(mut self, input: std::option::Option<i64>) -> Self {
-        self.application_version_id = input; self
+        self.application_version_id = input;
+        self
     }
     /// <p>The runtime environment for the application.</p>
     pub fn runtime_environment(mut self, input: crate::types::RuntimeEnvironment) -> Self {
@@ -110,8 +117,12 @@ impl ApplicationSummaryBuilder {
         self
     }
     /// <p>The runtime environment for the application.</p>
-    pub fn set_runtime_environment(mut self, input: std::option::Option<crate::types::RuntimeEnvironment>) -> Self {
-        self.runtime_environment = input; self
+    pub fn set_runtime_environment(
+        mut self,
+        input: std::option::Option<crate::types::RuntimeEnvironment>,
+    ) -> Self {
+        self.runtime_environment = input;
+        self
     }
     /// <p>For a Kinesis Data Analytics for Apache Flink application, the mode is <code>STREAMING</code>. For a Kinesis Data Analytics Studio notebook, it is <code>INTERACTIVE</code>.</p>
     pub fn application_mode(mut self, input: crate::types::ApplicationMode) -> Self {
@@ -119,25 +130,22 @@ impl ApplicationSummaryBuilder {
         self
     }
     /// <p>For a Kinesis Data Analytics for Apache Flink application, the mode is <code>STREAMING</code>. For a Kinesis Data Analytics Studio notebook, it is <code>INTERACTIVE</code>.</p>
-    pub fn set_application_mode(mut self, input: std::option::Option<crate::types::ApplicationMode>) -> Self {
-        self.application_mode = input; self
+    pub fn set_application_mode(
+        mut self,
+        input: std::option::Option<crate::types::ApplicationMode>,
+    ) -> Self {
+        self.application_mode = input;
+        self
     }
     /// Consumes the builder and constructs a [`ApplicationSummary`](crate::types::ApplicationSummary).
     pub fn build(self) -> crate::types::ApplicationSummary {
         crate::types::ApplicationSummary {
-            application_name: self.application_name
-            ,
-            application_arn: self.application_arn
-            ,
-            application_status: self.application_status
-            ,
-            application_version_id: self.application_version_id
-            ,
-            runtime_environment: self.runtime_environment
-            ,
-            application_mode: self.application_mode
-            ,
+            application_name: self.application_name,
+            application_arn: self.application_arn,
+            application_status: self.application_status,
+            application_version_id: self.application_version_id,
+            runtime_environment: self.runtime_environment,
+            application_mode: self.application_mode,
         }
     }
 }
-

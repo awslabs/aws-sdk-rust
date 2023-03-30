@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct BatchCreateRoomMembershipInput  {
+pub struct BatchCreateRoomMembershipInput {
     /// <p>The Amazon Chime account ID.</p>
     #[doc(hidden)]
     pub account_id: std::option::Option<std::string::String>,
@@ -15,21 +15,21 @@ pub struct BatchCreateRoomMembershipInput  {
 }
 impl BatchCreateRoomMembershipInput {
     /// <p>The Amazon Chime account ID.</p>
-    pub fn account_id(&self) -> std::option::Option<& str> {
+    pub fn account_id(&self) -> std::option::Option<&str> {
         self.account_id.as_deref()
     }
     /// <p>The room ID.</p>
-    pub fn room_id(&self) -> std::option::Option<& str> {
+    pub fn room_id(&self) -> std::option::Option<&str> {
         self.room_id.as_deref()
     }
     /// <p>The list of membership items.</p>
-    pub fn membership_item_list(&self) -> std::option::Option<& [crate::types::MembershipItem]> {
+    pub fn membership_item_list(&self) -> std::option::Option<&[crate::types::MembershipItem]> {
         self.membership_item_list.as_deref()
     }
 }
 impl BatchCreateRoomMembershipInput {
     /// Creates a new builder-style object to manufacture [`BatchCreateRoomMembershipInput`](crate::operation::batch_create_room_membership::BatchCreateRoomMembershipInput).
-    pub fn builder() -> crate::operation::batch_create_room_membership::builders::BatchCreateRoomMembershipInputBuilder {
+    pub fn builder() -> crate::operation::batch_create_room_membership::builders::BatchCreateRoomMembershipInputBuilder{
         crate::operation::batch_create_room_membership::builders::BatchCreateRoomMembershipInputBuilder::default()
     }
 }
@@ -40,7 +40,8 @@ impl BatchCreateRoomMembershipInput {
 pub struct BatchCreateRoomMembershipInputBuilder {
     pub(crate) account_id: std::option::Option<std::string::String>,
     pub(crate) room_id: std::option::Option<std::string::String>,
-    pub(crate) membership_item_list: std::option::Option<std::vec::Vec<crate::types::MembershipItem>>,
+    pub(crate) membership_item_list:
+        std::option::Option<std::vec::Vec<crate::types::MembershipItem>>,
 }
 impl BatchCreateRoomMembershipInputBuilder {
     /// <p>The Amazon Chime account ID.</p>
@@ -50,7 +51,8 @@ impl BatchCreateRoomMembershipInputBuilder {
     }
     /// <p>The Amazon Chime account ID.</p>
     pub fn set_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.account_id = input; self
+        self.account_id = input;
+        self
     }
     /// <p>The room ID.</p>
     pub fn room_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -59,7 +61,8 @@ impl BatchCreateRoomMembershipInputBuilder {
     }
     /// <p>The room ID.</p>
     pub fn set_room_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.room_id = input; self
+        self.room_id = input;
+        self
     }
     /// Appends an item to `membership_item_list`.
     ///
@@ -68,26 +71,31 @@ impl BatchCreateRoomMembershipInputBuilder {
     /// <p>The list of membership items.</p>
     pub fn membership_item_list(mut self, input: crate::types::MembershipItem) -> Self {
         let mut v = self.membership_item_list.unwrap_or_default();
-                        v.push(input);
-                        self.membership_item_list = Some(v);
-                        self
+        v.push(input);
+        self.membership_item_list = Some(v);
+        self
     }
     /// <p>The list of membership items.</p>
-    pub fn set_membership_item_list(mut self, input: std::option::Option<std::vec::Vec<crate::types::MembershipItem>>) -> Self {
-        self.membership_item_list = input; self
+    pub fn set_membership_item_list(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::MembershipItem>>,
+    ) -> Self {
+        self.membership_item_list = input;
+        self
     }
     /// Consumes the builder and constructs a [`BatchCreateRoomMembershipInput`](crate::operation::batch_create_room_membership::BatchCreateRoomMembershipInput).
-    pub fn build(self) -> Result<crate::operation::batch_create_room_membership::BatchCreateRoomMembershipInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::batch_create_room_membership::BatchCreateRoomMembershipInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::batch_create_room_membership::BatchCreateRoomMembershipInput {
-                account_id: self.account_id
-                ,
-                room_id: self.room_id
-                ,
-                membership_item_list: self.membership_item_list
-                ,
-            }
+                account_id: self.account_id,
+                room_id: self.room_id,
+                membership_item_list: self.membership_item_list,
+            },
         )
     }
 }
-

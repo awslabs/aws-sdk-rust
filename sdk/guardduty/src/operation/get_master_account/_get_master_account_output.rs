@@ -3,7 +3,7 @@
 #[deprecated(note = "This output is deprecated, use GetAdministratorAccountResponse instead")]
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetMasterAccountOutput  {
+pub struct GetMasterAccountOutput {
     /// <p>The administrator account details.</p>
     #[doc(hidden)]
     pub master: std::option::Option<crate::types::Master>,
@@ -11,18 +11,19 @@ pub struct GetMasterAccountOutput  {
 }
 impl GetMasterAccountOutput {
     /// <p>The administrator account details.</p>
-    pub fn master(&self) -> std::option::Option<& crate::types::Master> {
+    pub fn master(&self) -> std::option::Option<&crate::types::Master> {
         self.master.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for GetMasterAccountOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl GetMasterAccountOutput {
     /// Creates a new builder-style object to manufacture [`GetMasterAccountOutput`](crate::operation::get_master_account::GetMasterAccountOutput).
-    pub fn builder() -> crate::operation::get_master_account::builders::GetMasterAccountOutputBuilder {
+    pub fn builder() -> crate::operation::get_master_account::builders::GetMasterAccountOutputBuilder
+    {
         crate::operation::get_master_account::builders::GetMasterAccountOutputBuilder::default()
     }
 }
@@ -42,24 +43,23 @@ impl GetMasterAccountOutputBuilder {
     }
     /// <p>The administrator account details.</p>
     pub fn set_master(mut self, input: std::option::Option<crate::types::Master>) -> Self {
-        self.master = input; self
+        self.master = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`GetMasterAccountOutput`](crate::operation::get_master_account::GetMasterAccountOutput).
     pub fn build(self) -> crate::operation::get_master_account::GetMasterAccountOutput {
         crate::operation::get_master_account::GetMasterAccountOutput {
-            master: self.master
-            ,
+            master: self.master,
             _request_id: self._request_id,
         }
     }
 }
-

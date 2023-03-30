@@ -2,17 +2,17 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteDatalakeDelegatedAdminOutput  {
+pub struct DeleteDatalakeDelegatedAdminOutput {
     _request_id: Option<String>,
 }
 impl aws_http::request_id::RequestId for DeleteDatalakeDelegatedAdminOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl DeleteDatalakeDelegatedAdminOutput {
     /// Creates a new builder-style object to manufacture [`DeleteDatalakeDelegatedAdminOutput`](crate::operation::delete_datalake_delegated_admin::DeleteDatalakeDelegatedAdminOutput).
-    pub fn builder() -> crate::operation::delete_datalake_delegated_admin::builders::DeleteDatalakeDelegatedAdminOutputBuilder {
+    pub fn builder() -> crate::operation::delete_datalake_delegated_admin::builders::DeleteDatalakeDelegatedAdminOutputBuilder{
         crate::operation::delete_datalake_delegated_admin::builders::DeleteDatalakeDelegatedAdminOutputBuilder::default()
     }
 }
@@ -25,19 +25,20 @@ pub struct DeleteDatalakeDelegatedAdminOutputBuilder {
 }
 impl DeleteDatalakeDelegatedAdminOutputBuilder {
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`DeleteDatalakeDelegatedAdminOutput`](crate::operation::delete_datalake_delegated_admin::DeleteDatalakeDelegatedAdminOutput).
-    pub fn build(self) -> crate::operation::delete_datalake_delegated_admin::DeleteDatalakeDelegatedAdminOutput {
+    pub fn build(
+        self,
+    ) -> crate::operation::delete_datalake_delegated_admin::DeleteDatalakeDelegatedAdminOutput {
         crate::operation::delete_datalake_delegated_admin::DeleteDatalakeDelegatedAdminOutput {
             _request_id: self._request_id,
         }
     }
 }
-

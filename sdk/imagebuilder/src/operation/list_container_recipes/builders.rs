@@ -4,55 +4,82 @@ pub use crate::operation::list_container_recipes::_list_container_recipes_output
 pub use crate::operation::list_container_recipes::_list_container_recipes_input::ListContainerRecipesInputBuilder;
 
 /// Fluent builder constructing a request to `ListContainerRecipes`.
-/// 
+///
 /// <p>Returns a list of container recipes.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListContainerRecipesFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::list_container_recipes::builders::ListContainerRecipesInputBuilder
-            }
-impl ListContainerRecipesFluentBuilder  {
+    handle: std::sync::Arc<crate::client::Handle>,
+    inner: crate::operation::list_container_recipes::builders::ListContainerRecipesInputBuilder,
+}
+impl ListContainerRecipesFluentBuilder {
     /// Creates a new `ListContainerRecipes`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
-                    /// sent. The operation's inner [http::Request] can be modified as well.
-                    pub async fn customize(self) -> std::result::Result<
-                        crate::client::customize::CustomizableOperation<crate::operation::list_container_recipes::ListContainerRecipes, aws_http::retry::AwsResponseRetryClassifier,>,
-                        aws_smithy_http::result::SdkError<crate::operation::list_container_recipes::ListContainerRecipesError>
-                    >  {
-                        let handle = self.handle.clone();
-                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-                    }
-    
-                    /// Sends the request and returns the response.
-                    ///
-                    /// If an error occurs, an `SdkError` will be returned with additional details that
-                    /// can be matched against.
-                    ///
-                    /// By default, any retryable failures will be retried twice. Retry behavior
-                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                    /// set when configuring the client.
-                    pub async fn send(self) -> std::result::Result<crate::operation::list_container_recipes::ListContainerRecipesOutput, aws_smithy_http::result::SdkError<crate::operation::list_container_recipes::ListContainerRecipesError>>
-                     {
-                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&self.handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        self.handle.client.call(op).await
-                    }
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle,
+            inner: Default::default(),
+        }
+    }
+
+    /// Consume this builder, creating a customizable operation that can be modified before being
+    /// sent. The operation's inner [http::Request] can be modified as well.
+    pub async fn customize(
+        self,
+    ) -> std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::list_container_recipes::ListContainerRecipes,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::result::SdkError<
+            crate::operation::list_container_recipes::ListContainerRecipesError,
+        >,
+    > {
+        let handle = self.handle.clone();
+        let operation = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+    }
+
+    /// Sends the request and returns the response.
+    ///
+    /// If an error occurs, an `SdkError` will be returned with additional details that
+    /// can be matched against.
+    ///
+    /// By default, any retryable failures will be retried twice. Retry behavior
+    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+    /// set when configuring the client.
+    pub async fn send(
+        self,
+    ) -> std::result::Result<
+        crate::operation::list_container_recipes::ListContainerRecipesOutput,
+        aws_smithy_http::result::SdkError<
+            crate::operation::list_container_recipes::ListContainerRecipesError,
+        >,
+    > {
+        let op = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&self.handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        self.handle.client.call(op).await
+    }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::list_container_recipes::paginator::ListContainerRecipesPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::list_container_recipes::paginator::ListContainerRecipesPaginator {
-                            crate::operation::list_container_recipes::paginator::ListContainerRecipesPaginator::new(self.handle, self.inner)
-                        }
+    ///
+    /// Paginators are used by calling [`send().await`](crate::operation::list_container_recipes::paginator::ListContainerRecipesPaginator::send) which returns a `Stream`.
+    pub fn into_paginator(
+        self,
+    ) -> crate::operation::list_container_recipes::paginator::ListContainerRecipesPaginator {
+        crate::operation::list_container_recipes::paginator::ListContainerRecipesPaginator::new(
+            self.handle,
+            self.inner,
+        )
+    }
     /// <p>Returns container recipes belonging to the specified owner, that have been shared with you. You can omit this field to return container recipes belonging to your account.</p>
     pub fn owner(mut self, input: crate::types::Ownership) -> Self {
         self.inner = self.inner.owner(input);
@@ -67,25 +94,28 @@ impl ListContainerRecipesFluentBuilder  {
     ///
     /// To override the contents of this collection use [`set_filters`](Self::set_filters).
     ///
-    /// <p>Use the following filters to streamline results:</p> 
-    /// <ul> 
-    /// <li> <p> <code>containerType</code> </p> </li> 
-    /// <li> <p> <code>name</code> </p> </li> 
-    /// <li> <p> <code>parentImage</code> </p> </li> 
-    /// <li> <p> <code>platform</code> </p> </li> 
+    /// <p>Use the following filters to streamline results:</p>
+    /// <ul>
+    /// <li> <p> <code>containerType</code> </p> </li>
+    /// <li> <p> <code>name</code> </p> </li>
+    /// <li> <p> <code>parentImage</code> </p> </li>
+    /// <li> <p> <code>platform</code> </p> </li>
     /// </ul>
     pub fn filters(mut self, input: crate::types::Filter) -> Self {
         self.inner = self.inner.filters(input);
         self
     }
-    /// <p>Use the following filters to streamline results:</p> 
-    /// <ul> 
-    /// <li> <p> <code>containerType</code> </p> </li> 
-    /// <li> <p> <code>name</code> </p> </li> 
-    /// <li> <p> <code>parentImage</code> </p> </li> 
-    /// <li> <p> <code>platform</code> </p> </li> 
+    /// <p>Use the following filters to streamline results:</p>
+    /// <ul>
+    /// <li> <p> <code>containerType</code> </p> </li>
+    /// <li> <p> <code>name</code> </p> </li>
+    /// <li> <p> <code>parentImage</code> </p> </li>
+    /// <li> <p> <code>platform</code> </p> </li>
     /// </ul>
-    pub fn set_filters(mut self, input: std::option::Option<std::vec::Vec<crate::types::Filter>>) -> Self {
+    pub fn set_filters(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::Filter>>,
+    ) -> Self {
         self.inner = self.inner.set_filters(input);
         self
     }
@@ -110,4 +140,3 @@ impl ListContainerRecipesFluentBuilder  {
         self
     }
 }
-

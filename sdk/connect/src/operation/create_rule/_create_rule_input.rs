@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateRuleInput  {
+pub struct CreateRuleInput {
     /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
     #[doc(hidden)]
     pub instance_id: std::option::Option<std::string::String>,
@@ -27,31 +27,33 @@ pub struct CreateRuleInput  {
 }
 impl CreateRuleInput {
     /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
-    pub fn instance_id(&self) -> std::option::Option<& str> {
+    pub fn instance_id(&self) -> std::option::Option<&str> {
         self.instance_id.as_deref()
     }
     /// <p>A unique name for the rule.</p>
-    pub fn name(&self) -> std::option::Option<& str> {
+    pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>The event source to trigger the rule.</p>
-    pub fn trigger_event_source(&self) -> std::option::Option<& crate::types::RuleTriggerEventSource> {
+    pub fn trigger_event_source(
+        &self,
+    ) -> std::option::Option<&crate::types::RuleTriggerEventSource> {
         self.trigger_event_source.as_ref()
     }
     /// <p>The conditions of the rule.</p>
-    pub fn function(&self) -> std::option::Option<& str> {
+    pub fn function(&self) -> std::option::Option<&str> {
         self.function.as_deref()
     }
     /// <p>A list of actions to be run when the rule is triggered.</p>
-    pub fn actions(&self) -> std::option::Option<& [crate::types::RuleAction]> {
+    pub fn actions(&self) -> std::option::Option<&[crate::types::RuleAction]> {
         self.actions.as_deref()
     }
     /// <p>The publish status of the rule.</p>
-    pub fn publish_status(&self) -> std::option::Option<& crate::types::RulePublishStatus> {
+    pub fn publish_status(&self) -> std::option::Option<&crate::types::RulePublishStatus> {
         self.publish_status.as_ref()
     }
     /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If not provided, the Amazon Web Services SDK populates this field. For more information about idempotency, see <a href="https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making retries safe with idempotent APIs</a>.</p>
-    pub fn client_token(&self) -> std::option::Option<& str> {
+    pub fn client_token(&self) -> std::option::Option<&str> {
         self.client_token.as_deref()
     }
 }
@@ -82,7 +84,8 @@ impl CreateRuleInputBuilder {
     }
     /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
     pub fn set_instance_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.instance_id = input; self
+        self.instance_id = input;
+        self
     }
     /// <p>A unique name for the rule.</p>
     pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -91,7 +94,8 @@ impl CreateRuleInputBuilder {
     }
     /// <p>A unique name for the rule.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input; self
+        self.name = input;
+        self
     }
     /// <p>The event source to trigger the rule.</p>
     pub fn trigger_event_source(mut self, input: crate::types::RuleTriggerEventSource) -> Self {
@@ -99,8 +103,12 @@ impl CreateRuleInputBuilder {
         self
     }
     /// <p>The event source to trigger the rule.</p>
-    pub fn set_trigger_event_source(mut self, input: std::option::Option<crate::types::RuleTriggerEventSource>) -> Self {
-        self.trigger_event_source = input; self
+    pub fn set_trigger_event_source(
+        mut self,
+        input: std::option::Option<crate::types::RuleTriggerEventSource>,
+    ) -> Self {
+        self.trigger_event_source = input;
+        self
     }
     /// <p>The conditions of the rule.</p>
     pub fn function(mut self, input: impl Into<std::string::String>) -> Self {
@@ -109,7 +117,8 @@ impl CreateRuleInputBuilder {
     }
     /// <p>The conditions of the rule.</p>
     pub fn set_function(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.function = input; self
+        self.function = input;
+        self
     }
     /// Appends an item to `actions`.
     ///
@@ -118,13 +127,17 @@ impl CreateRuleInputBuilder {
     /// <p>A list of actions to be run when the rule is triggered.</p>
     pub fn actions(mut self, input: crate::types::RuleAction) -> Self {
         let mut v = self.actions.unwrap_or_default();
-                        v.push(input);
-                        self.actions = Some(v);
-                        self
+        v.push(input);
+        self.actions = Some(v);
+        self
     }
     /// <p>A list of actions to be run when the rule is triggered.</p>
-    pub fn set_actions(mut self, input: std::option::Option<std::vec::Vec<crate::types::RuleAction>>) -> Self {
-        self.actions = input; self
+    pub fn set_actions(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::RuleAction>>,
+    ) -> Self {
+        self.actions = input;
+        self
     }
     /// <p>The publish status of the rule.</p>
     pub fn publish_status(mut self, input: crate::types::RulePublishStatus) -> Self {
@@ -132,8 +145,12 @@ impl CreateRuleInputBuilder {
         self
     }
     /// <p>The publish status of the rule.</p>
-    pub fn set_publish_status(mut self, input: std::option::Option<crate::types::RulePublishStatus>) -> Self {
-        self.publish_status = input; self
+    pub fn set_publish_status(
+        mut self,
+        input: std::option::Option<crate::types::RulePublishStatus>,
+    ) -> Self {
+        self.publish_status = input;
+        self
     }
     /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If not provided, the Amazon Web Services SDK populates this field. For more information about idempotency, see <a href="https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making retries safe with idempotent APIs</a>.</p>
     pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -142,28 +159,24 @@ impl CreateRuleInputBuilder {
     }
     /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If not provided, the Amazon Web Services SDK populates this field. For more information about idempotency, see <a href="https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making retries safe with idempotent APIs</a>.</p>
     pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.client_token = input; self
+        self.client_token = input;
+        self
     }
     /// Consumes the builder and constructs a [`CreateRuleInput`](crate::operation::create_rule::CreateRuleInput).
-    pub fn build(self) -> Result<crate::operation::create_rule::CreateRuleInput, aws_smithy_http::operation::error::BuildError> {
-        Ok(
-            crate::operation::create_rule::CreateRuleInput {
-                instance_id: self.instance_id
-                ,
-                name: self.name
-                ,
-                trigger_event_source: self.trigger_event_source
-                ,
-                function: self.function
-                ,
-                actions: self.actions
-                ,
-                publish_status: self.publish_status
-                ,
-                client_token: self.client_token
-                ,
-            }
-        )
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::create_rule::CreateRuleInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        Ok(crate::operation::create_rule::CreateRuleInput {
+            instance_id: self.instance_id,
+            name: self.name,
+            trigger_event_source: self.trigger_event_source,
+            function: self.function,
+            actions: self.actions,
+            publish_status: self.publish_status,
+            client_token: self.client_token,
+        })
     }
 }
-

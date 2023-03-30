@@ -63,4 +63,3 @@ pub mod update_parameter_group;
 
 /// Types for the `UpdateSubnetGroup` operation.
 pub mod update_subnet_group;
-

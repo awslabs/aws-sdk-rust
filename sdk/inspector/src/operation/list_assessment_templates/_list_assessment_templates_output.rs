@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListAssessmentTemplatesOutput  {
+pub struct ListAssessmentTemplatesOutput {
     /// <p>A list of ARNs that specifies the assessment templates returned by the action.</p>
     #[doc(hidden)]
     pub assessment_template_arns: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -13,22 +13,24 @@ pub struct ListAssessmentTemplatesOutput  {
 }
 impl ListAssessmentTemplatesOutput {
     /// <p>A list of ARNs that specifies the assessment templates returned by the action.</p>
-    pub fn assessment_template_arns(&self) -> std::option::Option<& [std::string::String]> {
+    pub fn assessment_template_arns(&self) -> std::option::Option<&[std::string::String]> {
         self.assessment_template_arns.as_deref()
     }
     /// <p> When a response is generated, if there is more data to be listed, this parameter is present in the response and contains the value to use for the <b>nextToken</b> parameter in a subsequent pagination request. If there is no more data to be listed, this parameter is set to null.</p>
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for ListAssessmentTemplatesOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl ListAssessmentTemplatesOutput {
     /// Creates a new builder-style object to manufacture [`ListAssessmentTemplatesOutput`](crate::operation::list_assessment_templates::ListAssessmentTemplatesOutput).
-    pub fn builder() -> crate::operation::list_assessment_templates::builders::ListAssessmentTemplatesOutputBuilder {
+    pub fn builder(
+    ) -> crate::operation::list_assessment_templates::builders::ListAssessmentTemplatesOutputBuilder
+    {
         crate::operation::list_assessment_templates::builders::ListAssessmentTemplatesOutputBuilder::default()
     }
 }
@@ -49,13 +51,17 @@ impl ListAssessmentTemplatesOutputBuilder {
     /// <p>A list of ARNs that specifies the assessment templates returned by the action.</p>
     pub fn assessment_template_arns(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.assessment_template_arns.unwrap_or_default();
-                        v.push(input.into());
-                        self.assessment_template_arns = Some(v);
-                        self
+        v.push(input.into());
+        self.assessment_template_arns = Some(v);
+        self
     }
     /// <p>A list of ARNs that specifies the assessment templates returned by the action.</p>
-    pub fn set_assessment_template_arns(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-        self.assessment_template_arns = input; self
+    pub fn set_assessment_template_arns(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
+        self.assessment_template_arns = input;
+        self
     }
     /// <p> When a response is generated, if there is more data to be listed, this parameter is present in the response and contains the value to use for the <b>nextToken</b> parameter in a subsequent pagination request. If there is no more data to be listed, this parameter is set to null.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -64,26 +70,26 @@ impl ListAssessmentTemplatesOutputBuilder {
     }
     /// <p> When a response is generated, if there is more data to be listed, this parameter is present in the response and contains the value to use for the <b>nextToken</b> parameter in a subsequent pagination request. If there is no more data to be listed, this parameter is set to null.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input; self
+        self.next_token = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`ListAssessmentTemplatesOutput`](crate::operation::list_assessment_templates::ListAssessmentTemplatesOutput).
-    pub fn build(self) -> crate::operation::list_assessment_templates::ListAssessmentTemplatesOutput {
+    pub fn build(
+        self,
+    ) -> crate::operation::list_assessment_templates::ListAssessmentTemplatesOutput {
         crate::operation::list_assessment_templates::ListAssessmentTemplatesOutput {
-            assessment_template_arns: self.assessment_template_arns
-            ,
-            next_token: self.next_token
-            ,
+            assessment_template_arns: self.assessment_template_arns,
+            next_token: self.next_token,
             _request_id: self._request_id,
         }
     }
 }
-

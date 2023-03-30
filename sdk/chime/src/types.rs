@@ -604,4 +604,3 @@ pub mod builders;
 
 /// Error types that Amazon Chime can respond with.
 pub mod error;
-

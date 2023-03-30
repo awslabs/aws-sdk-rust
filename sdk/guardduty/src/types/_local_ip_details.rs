@@ -3,14 +3,14 @@
 /// <p>Contains information about the local IP address of the connection.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct LocalIpDetails  {
+pub struct LocalIpDetails {
     /// <p>The IPv4 local address of the connection.</p>
     #[doc(hidden)]
     pub ip_address_v4: std::option::Option<std::string::String>,
 }
 impl LocalIpDetails {
     /// <p>The IPv4 local address of the connection.</p>
-    pub fn ip_address_v4(&self) -> std::option::Option<& str> {
+    pub fn ip_address_v4(&self) -> std::option::Option<&str> {
         self.ip_address_v4.as_deref()
     }
 }
@@ -35,14 +35,13 @@ impl LocalIpDetailsBuilder {
     }
     /// <p>The IPv4 local address of the connection.</p>
     pub fn set_ip_address_v4(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.ip_address_v4 = input; self
+        self.ip_address_v4 = input;
+        self
     }
     /// Consumes the builder and constructs a [`LocalIpDetails`](crate::types::LocalIpDetails).
     pub fn build(self) -> crate::types::LocalIpDetails {
         crate::types::LocalIpDetails {
-            ip_address_v4: self.ip_address_v4
-            ,
+            ip_address_v4: self.ip_address_v4,
         }
     }
 }
-

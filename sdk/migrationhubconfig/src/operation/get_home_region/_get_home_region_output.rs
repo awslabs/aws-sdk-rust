@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetHomeRegionOutput  {
+pub struct GetHomeRegionOutput {
     /// <p>The name of the home region of the calling account.</p>
     #[doc(hidden)]
     pub home_region: std::option::Option<std::string::String>,
@@ -10,15 +10,15 @@ pub struct GetHomeRegionOutput  {
 }
 impl GetHomeRegionOutput {
     /// <p>The name of the home region of the calling account.</p>
-    pub fn home_region(&self) -> std::option::Option<& str> {
+    pub fn home_region(&self) -> std::option::Option<&str> {
         self.home_region.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for GetHomeRegionOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl GetHomeRegionOutput {
     /// Creates a new builder-style object to manufacture [`GetHomeRegionOutput`](crate::operation::get_home_region::GetHomeRegionOutput).
     pub fn builder() -> crate::operation::get_home_region::builders::GetHomeRegionOutputBuilder {
@@ -41,24 +41,23 @@ impl GetHomeRegionOutputBuilder {
     }
     /// <p>The name of the home region of the calling account.</p>
     pub fn set_home_region(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.home_region = input; self
+        self.home_region = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`GetHomeRegionOutput`](crate::operation::get_home_region::GetHomeRegionOutput).
     pub fn build(self) -> crate::operation::get_home_region::GetHomeRegionOutput {
         crate::operation::get_home_region::GetHomeRegionOutput {
-            home_region: self.home_region
-            ,
+            home_region: self.home_region,
             _request_id: self._request_id,
         }
     }
 }
-

@@ -2,20 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeSimulationJobInput  {
+pub struct DescribeSimulationJobInput {
     /// <p>The Amazon Resource Name (ARN) of the simulation job to be described.</p>
     #[doc(hidden)]
     pub job: std::option::Option<std::string::String>,
 }
 impl DescribeSimulationJobInput {
     /// <p>The Amazon Resource Name (ARN) of the simulation job to be described.</p>
-    pub fn job(&self) -> std::option::Option<& str> {
+    pub fn job(&self) -> std::option::Option<&str> {
         self.job.as_deref()
     }
 }
 impl DescribeSimulationJobInput {
     /// Creates a new builder-style object to manufacture [`DescribeSimulationJobInput`](crate::operation::describe_simulation_job::DescribeSimulationJobInput).
-    pub fn builder() -> crate::operation::describe_simulation_job::builders::DescribeSimulationJobInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::describe_simulation_job::builders::DescribeSimulationJobInputBuilder
+    {
         crate::operation::describe_simulation_job::builders::DescribeSimulationJobInputBuilder::default()
     }
 }
@@ -34,16 +36,16 @@ impl DescribeSimulationJobInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the simulation job to be described.</p>
     pub fn set_job(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.job = input; self
+        self.job = input;
+        self
     }
     /// Consumes the builder and constructs a [`DescribeSimulationJobInput`](crate::operation::describe_simulation_job::DescribeSimulationJobInput).
-    pub fn build(self) -> Result<crate::operation::describe_simulation_job::DescribeSimulationJobInput, aws_smithy_http::operation::error::BuildError> {
-        Ok(
-            crate::operation::describe_simulation_job::DescribeSimulationJobInput {
-                job: self.job
-                ,
-            }
-        )
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::describe_simulation_job::DescribeSimulationJobInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        Ok(crate::operation::describe_simulation_job::DescribeSimulationJobInput { job: self.job })
     }
 }
-

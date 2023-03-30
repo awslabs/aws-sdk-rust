@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetBucketAnalyticsConfigurationInput  {
+pub struct GetBucketAnalyticsConfigurationInput {
     /// <p>The name of the bucket from which an analytics configuration is retrieved.</p>
     #[doc(hidden)]
     pub bucket: std::option::Option<std::string::String>,
@@ -15,21 +15,21 @@ pub struct GetBucketAnalyticsConfigurationInput  {
 }
 impl GetBucketAnalyticsConfigurationInput {
     /// <p>The name of the bucket from which an analytics configuration is retrieved.</p>
-    pub fn bucket(&self) -> std::option::Option<& str> {
+    pub fn bucket(&self) -> std::option::Option<&str> {
         self.bucket.as_deref()
     }
     /// <p>The ID that identifies the analytics configuration.</p>
-    pub fn id(&self) -> std::option::Option<& str> {
+    pub fn id(&self) -> std::option::Option<&str> {
         self.id.as_deref()
     }
     /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
-    pub fn expected_bucket_owner(&self) -> std::option::Option<& str> {
+    pub fn expected_bucket_owner(&self) -> std::option::Option<&str> {
         self.expected_bucket_owner.as_deref()
     }
 }
 impl GetBucketAnalyticsConfigurationInput {
     /// Creates a new builder-style object to manufacture [`GetBucketAnalyticsConfigurationInput`](crate::operation::get_bucket_analytics_configuration::GetBucketAnalyticsConfigurationInput).
-    pub fn builder() -> crate::operation::get_bucket_analytics_configuration::builders::GetBucketAnalyticsConfigurationInputBuilder {
+    pub fn builder() -> crate::operation::get_bucket_analytics_configuration::builders::GetBucketAnalyticsConfigurationInputBuilder{
         crate::operation::get_bucket_analytics_configuration::builders::GetBucketAnalyticsConfigurationInputBuilder::default()
     }
 }
@@ -50,7 +50,8 @@ impl GetBucketAnalyticsConfigurationInputBuilder {
     }
     /// <p>The name of the bucket from which an analytics configuration is retrieved.</p>
     pub fn set_bucket(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.bucket = input; self
+        self.bucket = input;
+        self
     }
     /// <p>The ID that identifies the analytics configuration.</p>
     pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -59,7 +60,8 @@ impl GetBucketAnalyticsConfigurationInputBuilder {
     }
     /// <p>The ID that identifies the analytics configuration.</p>
     pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.id = input; self
+        self.id = input;
+        self
     }
     /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
     pub fn expected_bucket_owner(mut self, input: impl Into<std::string::String>) -> Self {
@@ -67,11 +69,20 @@ impl GetBucketAnalyticsConfigurationInputBuilder {
         self
     }
     /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
-    pub fn set_expected_bucket_owner(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.expected_bucket_owner = input; self
+    pub fn set_expected_bucket_owner(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.expected_bucket_owner = input;
+        self
     }
     /// Consumes the builder and constructs a [`GetBucketAnalyticsConfigurationInput`](crate::operation::get_bucket_analytics_configuration::GetBucketAnalyticsConfigurationInput).
-    pub fn build(self) -> Result<crate::operation::get_bucket_analytics_configuration::GetBucketAnalyticsConfigurationInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::get_bucket_analytics_configuration::GetBucketAnalyticsConfigurationInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::get_bucket_analytics_configuration::GetBucketAnalyticsConfigurationInput {
                 bucket: self.bucket
@@ -84,4 +95,3 @@ impl GetBucketAnalyticsConfigurationInputBuilder {
         )
     }
 }
-

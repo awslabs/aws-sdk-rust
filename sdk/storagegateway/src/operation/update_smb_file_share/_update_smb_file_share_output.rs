@@ -3,7 +3,7 @@
 /// <p>UpdateSMBFileShareOutput</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateSmbFileShareOutput  {
+pub struct UpdateSmbFileShareOutput {
     /// <p>The Amazon Resource Name (ARN) of the updated SMB file share.</p>
     #[doc(hidden)]
     pub file_share_arn: std::option::Option<std::string::String>,
@@ -11,19 +11,21 @@ pub struct UpdateSmbFileShareOutput  {
 }
 impl UpdateSmbFileShareOutput {
     /// <p>The Amazon Resource Name (ARN) of the updated SMB file share.</p>
-    pub fn file_share_arn(&self) -> std::option::Option<& str> {
+    pub fn file_share_arn(&self) -> std::option::Option<&str> {
         self.file_share_arn.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for UpdateSmbFileShareOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl UpdateSmbFileShareOutput {
     /// Creates a new builder-style object to manufacture [`UpdateSmbFileShareOutput`](crate::operation::update_smb_file_share::UpdateSmbFileShareOutput).
-    pub fn builder() -> crate::operation::update_smb_file_share::builders::UpdateSmbFileShareOutputBuilder {
-        crate::operation::update_smb_file_share::builders::UpdateSmbFileShareOutputBuilder::default()
+    pub fn builder(
+    ) -> crate::operation::update_smb_file_share::builders::UpdateSmbFileShareOutputBuilder {
+        crate::operation::update_smb_file_share::builders::UpdateSmbFileShareOutputBuilder::default(
+        )
     }
 }
 
@@ -42,24 +44,23 @@ impl UpdateSmbFileShareOutputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the updated SMB file share.</p>
     pub fn set_file_share_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.file_share_arn = input; self
+        self.file_share_arn = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`UpdateSmbFileShareOutput`](crate::operation::update_smb_file_share::UpdateSmbFileShareOutput).
     pub fn build(self) -> crate::operation::update_smb_file_share::UpdateSmbFileShareOutput {
         crate::operation::update_smb_file_share::UpdateSmbFileShareOutput {
-            file_share_arn: self.file_share_arn
-            ,
+            file_share_arn: self.file_share_arn,
             _request_id: self._request_id,
         }
     }
 }
-

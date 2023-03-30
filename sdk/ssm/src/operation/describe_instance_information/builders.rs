@@ -4,73 +4,101 @@ pub use crate::operation::describe_instance_information::_describe_instance_info
 pub use crate::operation::describe_instance_information::_describe_instance_information_input::DescribeInstanceInformationInputBuilder;
 
 /// Fluent builder constructing a request to `DescribeInstanceInformation`.
-/// 
-/// <p>Describes one or more of your managed nodes, including information about the operating system platform, the version of SSM Agent installed on the managed node, node status, and so on.</p> 
-/// <p>If you specify one or more managed node IDs, it returns information for those managed nodes. If you don't specify node IDs, it returns information for all your managed nodes. If you specify a node ID that isn't valid or a node that you don't own, you receive an error.</p> <note> 
-/// <p>The <code>IamRole</code> field for this API operation is the Identity and Access Management (IAM) role assigned to on-premises managed nodes. This call doesn't return the IAM role for EC2 instances.</p> 
+///
+/// <p>Describes one or more of your managed nodes, including information about the operating system platform, the version of SSM Agent installed on the managed node, node status, and so on.</p>
+/// <p>If you specify one or more managed node IDs, it returns information for those managed nodes. If you don't specify node IDs, it returns information for all your managed nodes. If you specify a node ID that isn't valid or a node that you don't own, you receive an error.</p> <note>
+/// <p>The <code>IamRole</code> field for this API operation is the Identity and Access Management (IAM) role assigned to on-premises managed nodes. This call doesn't return the IAM role for EC2 instances.</p>
 /// </note>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeInstanceInformationFluentBuilder {
                 handle: std::sync::Arc<crate::client::Handle>,
                 inner: crate::operation::describe_instance_information::builders::DescribeInstanceInformationInputBuilder
             }
-impl DescribeInstanceInformationFluentBuilder  {
+impl DescribeInstanceInformationFluentBuilder {
     /// Creates a new `DescribeInstanceInformation`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
-                    /// sent. The operation's inner [http::Request] can be modified as well.
-                    pub async fn customize(self) -> std::result::Result<
-                        crate::client::customize::CustomizableOperation<crate::operation::describe_instance_information::DescribeInstanceInformation, aws_http::retry::AwsResponseRetryClassifier,>,
-                        aws_smithy_http::result::SdkError<crate::operation::describe_instance_information::DescribeInstanceInformationError>
-                    >  {
-                        let handle = self.handle.clone();
-                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-                    }
-    
-                    /// Sends the request and returns the response.
-                    ///
-                    /// If an error occurs, an `SdkError` will be returned with additional details that
-                    /// can be matched against.
-                    ///
-                    /// By default, any retryable failures will be retried twice. Retry behavior
-                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                    /// set when configuring the client.
-                    pub async fn send(self) -> std::result::Result<crate::operation::describe_instance_information::DescribeInstanceInformationOutput, aws_smithy_http::result::SdkError<crate::operation::describe_instance_information::DescribeInstanceInformationError>>
-                     {
-                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&self.handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        self.handle.client.call(op).await
-                    }
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle,
+            inner: Default::default(),
+        }
+    }
+
+    /// Consume this builder, creating a customizable operation that can be modified before being
+    /// sent. The operation's inner [http::Request] can be modified as well.
+    pub async fn customize(
+        self,
+    ) -> std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::describe_instance_information::DescribeInstanceInformation,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::result::SdkError<
+            crate::operation::describe_instance_information::DescribeInstanceInformationError,
+        >,
+    > {
+        let handle = self.handle.clone();
+        let operation = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+    }
+
+    /// Sends the request and returns the response.
+    ///
+    /// If an error occurs, an `SdkError` will be returned with additional details that
+    /// can be matched against.
+    ///
+    /// By default, any retryable failures will be retried twice. Retry behavior
+    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+    /// set when configuring the client.
+    pub async fn send(
+        self,
+    ) -> std::result::Result<
+        crate::operation::describe_instance_information::DescribeInstanceInformationOutput,
+        aws_smithy_http::result::SdkError<
+            crate::operation::describe_instance_information::DescribeInstanceInformationError,
+        >,
+    > {
+        let op = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&self.handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        self.handle.client.call(op).await
+    }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::describe_instance_information::paginator::DescribeInstanceInformationPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::describe_instance_information::paginator::DescribeInstanceInformationPaginator {
-                            crate::operation::describe_instance_information::paginator::DescribeInstanceInformationPaginator::new(self.handle, self.inner)
-                        }
+    ///
+    /// Paginators are used by calling [`send().await`](crate::operation::describe_instance_information::paginator::DescribeInstanceInformationPaginator::send) which returns a `Stream`.
+    pub fn into_paginator(self) -> crate::operation::describe_instance_information::paginator::DescribeInstanceInformationPaginator{
+        crate::operation::describe_instance_information::paginator::DescribeInstanceInformationPaginator::new(self.handle, self.inner)
+    }
     /// Appends an item to `InstanceInformationFilterList`.
     ///
     /// To override the contents of this collection use [`set_instance_information_filter_list`](Self::set_instance_information_filter_list).
     ///
-    /// <p>This is a legacy method. We recommend that you don't use this method. Instead, use the <code>Filters</code> data type. <code>Filters</code> enables you to return node information by filtering based on tags applied to managed nodes.</p> <note> 
-    /// <p>Attempting to use <code>InstanceInformationFilterList</code> and <code>Filters</code> leads to an exception error. </p> 
+    /// <p>This is a legacy method. We recommend that you don't use this method. Instead, use the <code>Filters</code> data type. <code>Filters</code> enables you to return node information by filtering based on tags applied to managed nodes.</p> <note>
+    /// <p>Attempting to use <code>InstanceInformationFilterList</code> and <code>Filters</code> leads to an exception error. </p>
     /// </note>
-    pub fn instance_information_filter_list(mut self, input: crate::types::InstanceInformationFilter) -> Self {
+    pub fn instance_information_filter_list(
+        mut self,
+        input: crate::types::InstanceInformationFilter,
+    ) -> Self {
         self.inner = self.inner.instance_information_filter_list(input);
         self
     }
-    /// <p>This is a legacy method. We recommend that you don't use this method. Instead, use the <code>Filters</code> data type. <code>Filters</code> enables you to return node information by filtering based on tags applied to managed nodes.</p> <note> 
-    /// <p>Attempting to use <code>InstanceInformationFilterList</code> and <code>Filters</code> leads to an exception error. </p> 
+    /// <p>This is a legacy method. We recommend that you don't use this method. Instead, use the <code>Filters</code> data type. <code>Filters</code> enables you to return node information by filtering based on tags applied to managed nodes.</p> <note>
+    /// <p>Attempting to use <code>InstanceInformationFilterList</code> and <code>Filters</code> leads to an exception error. </p>
     /// </note>
-    pub fn set_instance_information_filter_list(mut self, input: std::option::Option<std::vec::Vec<crate::types::InstanceInformationFilter>>) -> Self {
+    pub fn set_instance_information_filter_list(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::InstanceInformationFilter>>,
+    ) -> Self {
         self.inner = self.inner.set_instance_information_filter_list(input);
         self
     }
@@ -84,7 +112,10 @@ impl DescribeInstanceInformationFluentBuilder  {
         self
     }
     /// <p>One or more filters. Use a filter to return a more specific list of managed nodes. You can filter based on tags applied to your managed nodes. Use this <code>Filters</code> data type instead of <code>InstanceInformationFilterList</code>, which is deprecated.</p>
-    pub fn set_filters(mut self, input: std::option::Option<std::vec::Vec<crate::types::InstanceInformationStringFilter>>) -> Self {
+    pub fn set_filters(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::InstanceInformationStringFilter>>,
+    ) -> Self {
         self.inner = self.inner.set_filters(input);
         self
     }
@@ -109,4 +140,3 @@ impl DescribeInstanceInformationFluentBuilder  {
         self
     }
 }
-

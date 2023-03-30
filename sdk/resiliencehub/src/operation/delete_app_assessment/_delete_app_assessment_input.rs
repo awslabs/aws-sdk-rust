@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteAppAssessmentInput  {
+pub struct DeleteAppAssessmentInput {
     /// <p>The Amazon Resource Name (ARN) of the assessment. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app-assessment/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
     #[doc(hidden)]
     pub assessment_arn: std::option::Option<std::string::String>,
@@ -12,18 +12,20 @@ pub struct DeleteAppAssessmentInput  {
 }
 impl DeleteAppAssessmentInput {
     /// <p>The Amazon Resource Name (ARN) of the assessment. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app-assessment/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
-    pub fn assessment_arn(&self) -> std::option::Option<& str> {
+    pub fn assessment_arn(&self) -> std::option::Option<&str> {
         self.assessment_arn.as_deref()
     }
     /// <p>Used for an idempotency token. A client token is a unique, case-sensitive string of up to 64 ASCII characters. You should not reuse the same client token for other API requests.</p>
-    pub fn client_token(&self) -> std::option::Option<& str> {
+    pub fn client_token(&self) -> std::option::Option<&str> {
         self.client_token.as_deref()
     }
 }
 impl DeleteAppAssessmentInput {
     /// Creates a new builder-style object to manufacture [`DeleteAppAssessmentInput`](crate::operation::delete_app_assessment::DeleteAppAssessmentInput).
-    pub fn builder() -> crate::operation::delete_app_assessment::builders::DeleteAppAssessmentInputBuilder {
-        crate::operation::delete_app_assessment::builders::DeleteAppAssessmentInputBuilder::default()
+    pub fn builder(
+    ) -> crate::operation::delete_app_assessment::builders::DeleteAppAssessmentInputBuilder {
+        crate::operation::delete_app_assessment::builders::DeleteAppAssessmentInputBuilder::default(
+        )
     }
 }
 
@@ -42,7 +44,8 @@ impl DeleteAppAssessmentInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the assessment. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app-assessment/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
     pub fn set_assessment_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.assessment_arn = input; self
+        self.assessment_arn = input;
+        self
     }
     /// <p>Used for an idempotency token. A client token is a unique, case-sensitive string of up to 64 ASCII characters. You should not reuse the same client token for other API requests.</p>
     pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -51,18 +54,21 @@ impl DeleteAppAssessmentInputBuilder {
     }
     /// <p>Used for an idempotency token. A client token is a unique, case-sensitive string of up to 64 ASCII characters. You should not reuse the same client token for other API requests.</p>
     pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.client_token = input; self
+        self.client_token = input;
+        self
     }
     /// Consumes the builder and constructs a [`DeleteAppAssessmentInput`](crate::operation::delete_app_assessment::DeleteAppAssessmentInput).
-    pub fn build(self) -> Result<crate::operation::delete_app_assessment::DeleteAppAssessmentInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::delete_app_assessment::DeleteAppAssessmentInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::delete_app_assessment::DeleteAppAssessmentInput {
-                assessment_arn: self.assessment_arn
-                ,
-                client_token: self.client_token
-                ,
-            }
+                assessment_arn: self.assessment_arn,
+                client_token: self.client_token,
+            },
         )
     }
 }
-

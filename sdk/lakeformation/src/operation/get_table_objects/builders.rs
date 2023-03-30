@@ -4,55 +4,82 @@ pub use crate::operation::get_table_objects::_get_table_objects_output::GetTable
 pub use crate::operation::get_table_objects::_get_table_objects_input::GetTableObjectsInputBuilder;
 
 /// Fluent builder constructing a request to `GetTableObjects`.
-/// 
+///
 /// <p>Returns the set of Amazon S3 objects that make up the specified governed table. A transaction ID or timestamp can be specified for time-travel queries.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct GetTableObjectsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::get_table_objects::builders::GetTableObjectsInputBuilder
-            }
-impl GetTableObjectsFluentBuilder  {
+    handle: std::sync::Arc<crate::client::Handle>,
+    inner: crate::operation::get_table_objects::builders::GetTableObjectsInputBuilder,
+}
+impl GetTableObjectsFluentBuilder {
     /// Creates a new `GetTableObjects`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
-                    /// sent. The operation's inner [http::Request] can be modified as well.
-                    pub async fn customize(self) -> std::result::Result<
-                        crate::client::customize::CustomizableOperation<crate::operation::get_table_objects::GetTableObjects, aws_http::retry::AwsResponseRetryClassifier,>,
-                        aws_smithy_http::result::SdkError<crate::operation::get_table_objects::GetTableObjectsError>
-                    >  {
-                        let handle = self.handle.clone();
-                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-                    }
-    
-                    /// Sends the request and returns the response.
-                    ///
-                    /// If an error occurs, an `SdkError` will be returned with additional details that
-                    /// can be matched against.
-                    ///
-                    /// By default, any retryable failures will be retried twice. Retry behavior
-                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                    /// set when configuring the client.
-                    pub async fn send(self) -> std::result::Result<crate::operation::get_table_objects::GetTableObjectsOutput, aws_smithy_http::result::SdkError<crate::operation::get_table_objects::GetTableObjectsError>>
-                     {
-                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&self.handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        self.handle.client.call(op).await
-                    }
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle,
+            inner: Default::default(),
+        }
+    }
+
+    /// Consume this builder, creating a customizable operation that can be modified before being
+    /// sent. The operation's inner [http::Request] can be modified as well.
+    pub async fn customize(
+        self,
+    ) -> std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::get_table_objects::GetTableObjects,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::result::SdkError<
+            crate::operation::get_table_objects::GetTableObjectsError,
+        >,
+    > {
+        let handle = self.handle.clone();
+        let operation = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+    }
+
+    /// Sends the request and returns the response.
+    ///
+    /// If an error occurs, an `SdkError` will be returned with additional details that
+    /// can be matched against.
+    ///
+    /// By default, any retryable failures will be retried twice. Retry behavior
+    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+    /// set when configuring the client.
+    pub async fn send(
+        self,
+    ) -> std::result::Result<
+        crate::operation::get_table_objects::GetTableObjectsOutput,
+        aws_smithy_http::result::SdkError<
+            crate::operation::get_table_objects::GetTableObjectsError,
+        >,
+    > {
+        let op = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&self.handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        self.handle.client.call(op).await
+    }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::get_table_objects::paginator::GetTableObjectsPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::get_table_objects::paginator::GetTableObjectsPaginator {
-                            crate::operation::get_table_objects::paginator::GetTableObjectsPaginator::new(self.handle, self.inner)
-                        }
+    ///
+    /// Paginators are used by calling [`send().await`](crate::operation::get_table_objects::paginator::GetTableObjectsPaginator::send) which returns a `Stream`.
+    pub fn into_paginator(
+        self,
+    ) -> crate::operation::get_table_objects::paginator::GetTableObjectsPaginator {
+        crate::operation::get_table_objects::paginator::GetTableObjectsPaginator::new(
+            self.handle,
+            self.inner,
+        )
+    }
     /// <p>The catalog containing the governed table. Defaults to the caller’s account.</p>
     pub fn catalog_id(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.catalog_id(input.into());
@@ -99,27 +126,33 @@ impl GetTableObjectsFluentBuilder  {
         self
     }
     /// <p>The time as of when to read the governed table contents. If not set, the most recent transaction commit time is used. Cannot be specified along with <code>TransactionId</code>.</p>
-    pub fn set_query_as_of_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+    pub fn set_query_as_of_time(
+        mut self,
+        input: std::option::Option<aws_smithy_types::DateTime>,
+    ) -> Self {
         self.inner = self.inner.set_query_as_of_time(input);
         self
     }
-    /// <p>A predicate to filter the objects returned based on the partition keys defined in the governed table.</p> 
-    /// <ul> 
-    /// <li> <p>The comparison operators supported are: =, &gt;, &lt;, &gt;=, &lt;=</p> </li> 
-    /// <li> <p>The logical operators supported are: AND</p> </li> 
-    /// <li> <p>The data types supported are integer, long, date(yyyy-MM-dd), timestamp(yyyy-MM-dd HH:mm:ssXXX or yyyy-MM-dd HH:mm:ss"), string and decimal.</p> </li> 
+    /// <p>A predicate to filter the objects returned based on the partition keys defined in the governed table.</p>
+    /// <ul>
+    /// <li> <p>The comparison operators supported are: =, &gt;, &lt;, &gt;=, &lt;=</p> </li>
+    /// <li> <p>The logical operators supported are: AND</p> </li>
+    /// <li> <p>The data types supported are integer, long, date(yyyy-MM-dd), timestamp(yyyy-MM-dd HH:mm:ssXXX or yyyy-MM-dd HH:mm:ss"), string and decimal.</p> </li>
     /// </ul>
     pub fn partition_predicate(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.partition_predicate(input.into());
         self
     }
-    /// <p>A predicate to filter the objects returned based on the partition keys defined in the governed table.</p> 
-    /// <ul> 
-    /// <li> <p>The comparison operators supported are: =, &gt;, &lt;, &gt;=, &lt;=</p> </li> 
-    /// <li> <p>The logical operators supported are: AND</p> </li> 
-    /// <li> <p>The data types supported are integer, long, date(yyyy-MM-dd), timestamp(yyyy-MM-dd HH:mm:ssXXX or yyyy-MM-dd HH:mm:ss"), string and decimal.</p> </li> 
+    /// <p>A predicate to filter the objects returned based on the partition keys defined in the governed table.</p>
+    /// <ul>
+    /// <li> <p>The comparison operators supported are: =, &gt;, &lt;, &gt;=, &lt;=</p> </li>
+    /// <li> <p>The logical operators supported are: AND</p> </li>
+    /// <li> <p>The data types supported are integer, long, date(yyyy-MM-dd), timestamp(yyyy-MM-dd HH:mm:ssXXX or yyyy-MM-dd HH:mm:ss"), string and decimal.</p> </li>
     /// </ul>
-    pub fn set_partition_predicate(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_partition_predicate(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_partition_predicate(input);
         self
     }
@@ -144,4 +177,3 @@ impl GetTableObjectsFluentBuilder  {
         self
     }
 }
-

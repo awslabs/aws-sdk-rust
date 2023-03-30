@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-/// 
+///
 /// Here is an example of how you can make a match expression forward-compatible:
-/// 
+///
 /// ```text
 /// # let worldgenerationjoberrorcode = unimplemented!();
 /// match worldgenerationjoberrorcode {
@@ -34,14 +34,22 @@
 /// Specifically, when `worldgenerationjoberrorcode` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `WorldGenerationJobErrorCode::NewFeature` also yielding `"NewFeature"`.
-/// 
+///
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
 pub enum WorldGenerationJobErrorCode {
     #[allow(missing_docs)] // documentation missing in model
     AllWorldGenerationFailed,
@@ -56,49 +64,57 @@ pub enum WorldGenerationJobErrorCode {
     #[allow(missing_docs)] // documentation missing in model
     ResourceNotFound,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::primitives::UnknownVariantValue)
+    Unknown(crate::primitives::UnknownVariantValue),
 }
 impl std::convert::From<&str> for WorldGenerationJobErrorCode {
-                fn from(s: &str) -> Self {
-                    match s {
-                        "AllWorldGenerationFailed" => WorldGenerationJobErrorCode::AllWorldGenerationFailed,
-"InternalServiceError" => WorldGenerationJobErrorCode::InternalServiceError,
-"InvalidInput" => WorldGenerationJobErrorCode::InvalidInput,
-"LimitExceeded" => WorldGenerationJobErrorCode::LimitExceeded,
-"RequestThrottled" => WorldGenerationJobErrorCode::RequestThrottled,
-"ResourceNotFound" => WorldGenerationJobErrorCode::ResourceNotFound,
-other => WorldGenerationJobErrorCode::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
-                    }
-                }
-            }
-impl std::str::FromStr for WorldGenerationJobErrorCode {
-                type Err = std::convert::Infallible;
-
-                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-                    Ok(WorldGenerationJobErrorCode::from(s))
-                }
-            }
-impl WorldGenerationJobErrorCode {
-                /// Returns the `&str` value of the enum member.
-                pub fn as_str(&self) -> &str {
-                    match self {
-    WorldGenerationJobErrorCode::AllWorldGenerationFailed => "AllWorldGenerationFailed",
-    WorldGenerationJobErrorCode::InternalServiceError => "InternalServiceError",
-    WorldGenerationJobErrorCode::InvalidInput => "InvalidInput",
-    WorldGenerationJobErrorCode::LimitExceeded => "LimitExceeded",
-    WorldGenerationJobErrorCode::RequestThrottled => "RequestThrottled",
-    WorldGenerationJobErrorCode::ResourceNotFound => "ResourceNotFound",
-    WorldGenerationJobErrorCode::Unknown(value) => value.as_str()
+    fn from(s: &str) -> Self {
+        match s {
+            "AllWorldGenerationFailed" => WorldGenerationJobErrorCode::AllWorldGenerationFailed,
+            "InternalServiceError" => WorldGenerationJobErrorCode::InternalServiceError,
+            "InvalidInput" => WorldGenerationJobErrorCode::InvalidInput,
+            "LimitExceeded" => WorldGenerationJobErrorCode::LimitExceeded,
+            "RequestThrottled" => WorldGenerationJobErrorCode::RequestThrottled,
+            "ResourceNotFound" => WorldGenerationJobErrorCode::ResourceNotFound,
+            other => WorldGenerationJobErrorCode::Unknown(crate::primitives::UnknownVariantValue(
+                other.to_owned(),
+            )),
+        }
+    }
 }
-                }
-                /// Returns all the `&str` representations of the enum members.
-                pub const fn values() -> &'static [&'static str] {
-                    &["AllWorldGenerationFailed", "InternalServiceError", "InvalidInput", "LimitExceeded", "RequestThrottled", "ResourceNotFound"]
-                }
-            }
-impl AsRef<str> for WorldGenerationJobErrorCode {
-                fn as_ref(&self) -> &str {
-                    self.as_str()
-                }
-            }
+impl std::str::FromStr for WorldGenerationJobErrorCode {
+    type Err = std::convert::Infallible;
 
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(WorldGenerationJobErrorCode::from(s))
+    }
+}
+impl WorldGenerationJobErrorCode {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            WorldGenerationJobErrorCode::AllWorldGenerationFailed => "AllWorldGenerationFailed",
+            WorldGenerationJobErrorCode::InternalServiceError => "InternalServiceError",
+            WorldGenerationJobErrorCode::InvalidInput => "InvalidInput",
+            WorldGenerationJobErrorCode::LimitExceeded => "LimitExceeded",
+            WorldGenerationJobErrorCode::RequestThrottled => "RequestThrottled",
+            WorldGenerationJobErrorCode::ResourceNotFound => "ResourceNotFound",
+            WorldGenerationJobErrorCode::Unknown(value) => value.as_str(),
+        }
+    }
+    /// Returns all the `&str` representations of the enum members.
+    pub const fn values() -> &'static [&'static str] {
+        &[
+            "AllWorldGenerationFailed",
+            "InternalServiceError",
+            "InvalidInput",
+            "LimitExceeded",
+            "RequestThrottled",
+            "ResourceNotFound",
+        ]
+    }
+}
+impl AsRef<str> for WorldGenerationJobErrorCode {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}

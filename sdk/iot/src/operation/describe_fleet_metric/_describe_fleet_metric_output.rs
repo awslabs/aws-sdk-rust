@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeFleetMetricOutput  {
+pub struct DescribeFleetMetricOutput {
     /// <p>The name of the fleet metric to describe.</p>
     #[doc(hidden)]
     pub metric_name: std::option::Option<std::string::String>,
@@ -46,15 +46,15 @@ pub struct DescribeFleetMetricOutput  {
 }
 impl DescribeFleetMetricOutput {
     /// <p>The name of the fleet metric to describe.</p>
-    pub fn metric_name(&self) -> std::option::Option<& str> {
+    pub fn metric_name(&self) -> std::option::Option<&str> {
         self.metric_name.as_deref()
     }
     /// <p>The search query string.</p>
-    pub fn query_string(&self) -> std::option::Option<& str> {
+    pub fn query_string(&self) -> std::option::Option<&str> {
         self.query_string.as_deref()
     }
     /// <p>The type of the aggregation query.</p>
-    pub fn aggregation_type(&self) -> std::option::Option<& crate::types::AggregationType> {
+    pub fn aggregation_type(&self) -> std::option::Option<&crate::types::AggregationType> {
         self.aggregation_type.as_ref()
     }
     /// <p>The time in seconds between fleet metric emissions. Range [60(1 min), 86400(1 day)] and must be multiple of 60.</p>
@@ -62,31 +62,31 @@ impl DescribeFleetMetricOutput {
         self.period
     }
     /// <p>The field to aggregate.</p>
-    pub fn aggregation_field(&self) -> std::option::Option<& str> {
+    pub fn aggregation_field(&self) -> std::option::Option<&str> {
         self.aggregation_field.as_deref()
     }
     /// <p>The fleet metric description.</p>
-    pub fn description(&self) -> std::option::Option<& str> {
+    pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
     /// <p>The query version.</p>
-    pub fn query_version(&self) -> std::option::Option<& str> {
+    pub fn query_version(&self) -> std::option::Option<&str> {
         self.query_version.as_deref()
     }
     /// <p>The name of the index to search.</p>
-    pub fn index_name(&self) -> std::option::Option<& str> {
+    pub fn index_name(&self) -> std::option::Option<&str> {
         self.index_name.as_deref()
     }
     /// <p>The date when the fleet metric is created.</p>
-    pub fn creation_date(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
+    pub fn creation_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.creation_date.as_ref()
     }
     /// <p>The date when the fleet metric is last modified.</p>
-    pub fn last_modified_date(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
+    pub fn last_modified_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_modified_date.as_ref()
     }
     /// <p>Used to support unit transformation such as milliseconds to seconds. The unit must be supported by <a href="https://docs.aws.amazon.com/https:/docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_MetricDatum.html">CW metric</a>.</p>
-    pub fn unit(&self) -> std::option::Option<& crate::types::FleetMetricUnit> {
+    pub fn unit(&self) -> std::option::Option<&crate::types::FleetMetricUnit> {
         self.unit.as_ref()
     }
     /// <p>The version of the fleet metric.</p>
@@ -94,19 +94,21 @@ impl DescribeFleetMetricOutput {
         self.version
     }
     /// <p>The ARN of the fleet metric to describe.</p>
-    pub fn metric_arn(&self) -> std::option::Option<& str> {
+    pub fn metric_arn(&self) -> std::option::Option<&str> {
         self.metric_arn.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for DescribeFleetMetricOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl DescribeFleetMetricOutput {
     /// Creates a new builder-style object to manufacture [`DescribeFleetMetricOutput`](crate::operation::describe_fleet_metric::DescribeFleetMetricOutput).
-    pub fn builder() -> crate::operation::describe_fleet_metric::builders::DescribeFleetMetricOutputBuilder {
-        crate::operation::describe_fleet_metric::builders::DescribeFleetMetricOutputBuilder::default()
+    pub fn builder(
+    ) -> crate::operation::describe_fleet_metric::builders::DescribeFleetMetricOutputBuilder {
+        crate::operation::describe_fleet_metric::builders::DescribeFleetMetricOutputBuilder::default(
+        )
     }
 }
 
@@ -137,7 +139,8 @@ impl DescribeFleetMetricOutputBuilder {
     }
     /// <p>The name of the fleet metric to describe.</p>
     pub fn set_metric_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.metric_name = input; self
+        self.metric_name = input;
+        self
     }
     /// <p>The search query string.</p>
     pub fn query_string(mut self, input: impl Into<std::string::String>) -> Self {
@@ -146,7 +149,8 @@ impl DescribeFleetMetricOutputBuilder {
     }
     /// <p>The search query string.</p>
     pub fn set_query_string(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.query_string = input; self
+        self.query_string = input;
+        self
     }
     /// <p>The type of the aggregation query.</p>
     pub fn aggregation_type(mut self, input: crate::types::AggregationType) -> Self {
@@ -154,8 +158,12 @@ impl DescribeFleetMetricOutputBuilder {
         self
     }
     /// <p>The type of the aggregation query.</p>
-    pub fn set_aggregation_type(mut self, input: std::option::Option<crate::types::AggregationType>) -> Self {
-        self.aggregation_type = input; self
+    pub fn set_aggregation_type(
+        mut self,
+        input: std::option::Option<crate::types::AggregationType>,
+    ) -> Self {
+        self.aggregation_type = input;
+        self
     }
     /// <p>The time in seconds between fleet metric emissions. Range [60(1 min), 86400(1 day)] and must be multiple of 60.</p>
     pub fn period(mut self, input: i32) -> Self {
@@ -164,7 +172,8 @@ impl DescribeFleetMetricOutputBuilder {
     }
     /// <p>The time in seconds between fleet metric emissions. Range [60(1 min), 86400(1 day)] and must be multiple of 60.</p>
     pub fn set_period(mut self, input: std::option::Option<i32>) -> Self {
-        self.period = input; self
+        self.period = input;
+        self
     }
     /// <p>The field to aggregate.</p>
     pub fn aggregation_field(mut self, input: impl Into<std::string::String>) -> Self {
@@ -172,8 +181,12 @@ impl DescribeFleetMetricOutputBuilder {
         self
     }
     /// <p>The field to aggregate.</p>
-    pub fn set_aggregation_field(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.aggregation_field = input; self
+    pub fn set_aggregation_field(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.aggregation_field = input;
+        self
     }
     /// <p>The fleet metric description.</p>
     pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -182,7 +195,8 @@ impl DescribeFleetMetricOutputBuilder {
     }
     /// <p>The fleet metric description.</p>
     pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.description = input; self
+        self.description = input;
+        self
     }
     /// <p>The query version.</p>
     pub fn query_version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -191,7 +205,8 @@ impl DescribeFleetMetricOutputBuilder {
     }
     /// <p>The query version.</p>
     pub fn set_query_version(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.query_version = input; self
+        self.query_version = input;
+        self
     }
     /// <p>The name of the index to search.</p>
     pub fn index_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -200,7 +215,8 @@ impl DescribeFleetMetricOutputBuilder {
     }
     /// <p>The name of the index to search.</p>
     pub fn set_index_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.index_name = input; self
+        self.index_name = input;
+        self
     }
     /// <p>The date when the fleet metric is created.</p>
     pub fn creation_date(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -208,8 +224,12 @@ impl DescribeFleetMetricOutputBuilder {
         self
     }
     /// <p>The date when the fleet metric is created.</p>
-    pub fn set_creation_date(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.creation_date = input; self
+    pub fn set_creation_date(
+        mut self,
+        input: std::option::Option<aws_smithy_types::DateTime>,
+    ) -> Self {
+        self.creation_date = input;
+        self
     }
     /// <p>The date when the fleet metric is last modified.</p>
     pub fn last_modified_date(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -217,8 +237,12 @@ impl DescribeFleetMetricOutputBuilder {
         self
     }
     /// <p>The date when the fleet metric is last modified.</p>
-    pub fn set_last_modified_date(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.last_modified_date = input; self
+    pub fn set_last_modified_date(
+        mut self,
+        input: std::option::Option<aws_smithy_types::DateTime>,
+    ) -> Self {
+        self.last_modified_date = input;
+        self
     }
     /// <p>Used to support unit transformation such as milliseconds to seconds. The unit must be supported by <a href="https://docs.aws.amazon.com/https:/docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_MetricDatum.html">CW metric</a>.</p>
     pub fn unit(mut self, input: crate::types::FleetMetricUnit) -> Self {
@@ -227,7 +251,8 @@ impl DescribeFleetMetricOutputBuilder {
     }
     /// <p>Used to support unit transformation such as milliseconds to seconds. The unit must be supported by <a href="https://docs.aws.amazon.com/https:/docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_MetricDatum.html">CW metric</a>.</p>
     pub fn set_unit(mut self, input: std::option::Option<crate::types::FleetMetricUnit>) -> Self {
-        self.unit = input; self
+        self.unit = input;
+        self
     }
     /// <p>The version of the fleet metric.</p>
     pub fn version(mut self, input: i64) -> Self {
@@ -236,7 +261,8 @@ impl DescribeFleetMetricOutputBuilder {
     }
     /// <p>The version of the fleet metric.</p>
     pub fn set_version(mut self, input: std::option::Option<i64>) -> Self {
-        self.version = input; self
+        self.version = input;
+        self
     }
     /// <p>The ARN of the fleet metric to describe.</p>
     pub fn metric_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -245,49 +271,35 @@ impl DescribeFleetMetricOutputBuilder {
     }
     /// <p>The ARN of the fleet metric to describe.</p>
     pub fn set_metric_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.metric_arn = input; self
+        self.metric_arn = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`DescribeFleetMetricOutput`](crate::operation::describe_fleet_metric::DescribeFleetMetricOutput).
     pub fn build(self) -> crate::operation::describe_fleet_metric::DescribeFleetMetricOutput {
         crate::operation::describe_fleet_metric::DescribeFleetMetricOutput {
-            metric_name: self.metric_name
-            ,
-            query_string: self.query_string
-            ,
-            aggregation_type: self.aggregation_type
-            ,
-            period: self.period
-            ,
-            aggregation_field: self.aggregation_field
-            ,
-            description: self.description
-            ,
-            query_version: self.query_version
-            ,
-            index_name: self.index_name
-            ,
-            creation_date: self.creation_date
-            ,
-            last_modified_date: self.last_modified_date
-            ,
-            unit: self.unit
-            ,
-            version: self.version
-                .unwrap_or_default()
-            ,
-            metric_arn: self.metric_arn
-            ,
+            metric_name: self.metric_name,
+            query_string: self.query_string,
+            aggregation_type: self.aggregation_type,
+            period: self.period,
+            aggregation_field: self.aggregation_field,
+            description: self.description,
+            query_version: self.query_version,
+            index_name: self.index_name,
+            creation_date: self.creation_date,
+            last_modified_date: self.last_modified_date,
+            unit: self.unit,
+            version: self.version.unwrap_or_default(),
+            metric_arn: self.metric_arn,
             _request_id: self._request_id,
         }
     }
 }
-

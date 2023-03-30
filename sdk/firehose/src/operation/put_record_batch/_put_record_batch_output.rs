@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PutRecordBatchOutput  {
+pub struct PutRecordBatchOutput {
     /// <p>The number of records that might have failed processing. This number might be greater than 0 even if the <code>PutRecordBatch</code> call succeeds. Check <code>FailedPutCount</code> to determine whether there are records that you need to resend.</p>
     #[doc(hidden)]
     pub failed_put_count: std::option::Option<i32>,
@@ -11,7 +11,8 @@ pub struct PutRecordBatchOutput  {
     pub encrypted: std::option::Option<bool>,
     /// <p>The results array. For each record, the index of the response element is the same as the index used in the request array.</p>
     #[doc(hidden)]
-    pub request_responses: std::option::Option<std::vec::Vec<crate::types::PutRecordBatchResponseEntry>>,
+    pub request_responses:
+        std::option::Option<std::vec::Vec<crate::types::PutRecordBatchResponseEntry>>,
     _request_id: Option<String>,
 }
 impl PutRecordBatchOutput {
@@ -24,15 +25,17 @@ impl PutRecordBatchOutput {
         self.encrypted
     }
     /// <p>The results array. For each record, the index of the response element is the same as the index used in the request array.</p>
-    pub fn request_responses(&self) -> std::option::Option<& [crate::types::PutRecordBatchResponseEntry]> {
+    pub fn request_responses(
+        &self,
+    ) -> std::option::Option<&[crate::types::PutRecordBatchResponseEntry]> {
         self.request_responses.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for PutRecordBatchOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl PutRecordBatchOutput {
     /// Creates a new builder-style object to manufacture [`PutRecordBatchOutput`](crate::operation::put_record_batch::PutRecordBatchOutput).
     pub fn builder() -> crate::operation::put_record_batch::builders::PutRecordBatchOutputBuilder {
@@ -46,7 +49,8 @@ impl PutRecordBatchOutput {
 pub struct PutRecordBatchOutputBuilder {
     pub(crate) failed_put_count: std::option::Option<i32>,
     pub(crate) encrypted: std::option::Option<bool>,
-    pub(crate) request_responses: std::option::Option<std::vec::Vec<crate::types::PutRecordBatchResponseEntry>>,
+    pub(crate) request_responses:
+        std::option::Option<std::vec::Vec<crate::types::PutRecordBatchResponseEntry>>,
     _request_id: Option<String>,
 }
 impl PutRecordBatchOutputBuilder {
@@ -57,7 +61,8 @@ impl PutRecordBatchOutputBuilder {
     }
     /// <p>The number of records that might have failed processing. This number might be greater than 0 even if the <code>PutRecordBatch</code> call succeeds. Check <code>FailedPutCount</code> to determine whether there are records that you need to resend.</p>
     pub fn set_failed_put_count(mut self, input: std::option::Option<i32>) -> Self {
-        self.failed_put_count = input; self
+        self.failed_put_count = input;
+        self
     }
     /// <p>Indicates whether server-side encryption (SSE) was enabled during this operation.</p>
     pub fn encrypted(mut self, input: bool) -> Self {
@@ -66,7 +71,8 @@ impl PutRecordBatchOutputBuilder {
     }
     /// <p>Indicates whether server-side encryption (SSE) was enabled during this operation.</p>
     pub fn set_encrypted(mut self, input: std::option::Option<bool>) -> Self {
-        self.encrypted = input; self
+        self.encrypted = input;
+        self
     }
     /// Appends an item to `request_responses`.
     ///
@@ -75,34 +81,34 @@ impl PutRecordBatchOutputBuilder {
     /// <p>The results array. For each record, the index of the response element is the same as the index used in the request array.</p>
     pub fn request_responses(mut self, input: crate::types::PutRecordBatchResponseEntry) -> Self {
         let mut v = self.request_responses.unwrap_or_default();
-                        v.push(input);
-                        self.request_responses = Some(v);
-                        self
+        v.push(input);
+        self.request_responses = Some(v);
+        self
     }
     /// <p>The results array. For each record, the index of the response element is the same as the index used in the request array.</p>
-    pub fn set_request_responses(mut self, input: std::option::Option<std::vec::Vec<crate::types::PutRecordBatchResponseEntry>>) -> Self {
-        self.request_responses = input; self
+    pub fn set_request_responses(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::PutRecordBatchResponseEntry>>,
+    ) -> Self {
+        self.request_responses = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`PutRecordBatchOutput`](crate::operation::put_record_batch::PutRecordBatchOutput).
     pub fn build(self) -> crate::operation::put_record_batch::PutRecordBatchOutput {
         crate::operation::put_record_batch::PutRecordBatchOutput {
-            failed_put_count: self.failed_put_count
-            ,
-            encrypted: self.encrypted
-            ,
-            request_responses: self.request_responses
-            ,
+            failed_put_count: self.failed_put_count,
+            encrypted: self.encrypted,
+            request_responses: self.request_responses,
             _request_id: self._request_id,
         }
     }
 }
-

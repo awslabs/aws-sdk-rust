@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetAccountSettingsOutput  {
+pub struct GetAccountSettingsOutput {
     /// <p>OpenSearch Serverless-related details for the current account.</p>
     #[doc(hidden)]
     pub account_settings_detail: std::option::Option<crate::types::AccountSettingsDetail>,
@@ -10,18 +10,21 @@ pub struct GetAccountSettingsOutput  {
 }
 impl GetAccountSettingsOutput {
     /// <p>OpenSearch Serverless-related details for the current account.</p>
-    pub fn account_settings_detail(&self) -> std::option::Option<& crate::types::AccountSettingsDetail> {
+    pub fn account_settings_detail(
+        &self,
+    ) -> std::option::Option<&crate::types::AccountSettingsDetail> {
         self.account_settings_detail.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for GetAccountSettingsOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl GetAccountSettingsOutput {
     /// Creates a new builder-style object to manufacture [`GetAccountSettingsOutput`](crate::operation::get_account_settings::GetAccountSettingsOutput).
-    pub fn builder() -> crate::operation::get_account_settings::builders::GetAccountSettingsOutputBuilder {
+    pub fn builder(
+    ) -> crate::operation::get_account_settings::builders::GetAccountSettingsOutputBuilder {
         crate::operation::get_account_settings::builders::GetAccountSettingsOutputBuilder::default()
     }
 }
@@ -40,25 +43,27 @@ impl GetAccountSettingsOutputBuilder {
         self
     }
     /// <p>OpenSearch Serverless-related details for the current account.</p>
-    pub fn set_account_settings_detail(mut self, input: std::option::Option<crate::types::AccountSettingsDetail>) -> Self {
-        self.account_settings_detail = input; self
+    pub fn set_account_settings_detail(
+        mut self,
+        input: std::option::Option<crate::types::AccountSettingsDetail>,
+    ) -> Self {
+        self.account_settings_detail = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`GetAccountSettingsOutput`](crate::operation::get_account_settings::GetAccountSettingsOutput).
     pub fn build(self) -> crate::operation::get_account_settings::GetAccountSettingsOutput {
         crate::operation::get_account_settings::GetAccountSettingsOutput {
-            account_settings_detail: self.account_settings_detail
-            ,
+            account_settings_detail: self.account_settings_detail,
             _request_id: self._request_id,
         }
     }
 }
-

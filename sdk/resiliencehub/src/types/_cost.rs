@@ -3,7 +3,7 @@
 /// <p>Defines a cost object.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Cost  {
+pub struct Cost {
     /// <p>The cost amount.</p>
     #[doc(hidden)]
     pub amount: f64,
@@ -20,11 +20,11 @@ impl Cost {
         self.amount
     }
     /// <p>The cost currency, for example <code>USD</code>.</p>
-    pub fn currency(&self) -> std::option::Option<& str> {
+    pub fn currency(&self) -> std::option::Option<&str> {
         self.currency.as_deref()
     }
     /// <p>The cost frequency.</p>
-    pub fn frequency(&self) -> std::option::Option<& crate::types::CostFrequency> {
+    pub fn frequency(&self) -> std::option::Option<&crate::types::CostFrequency> {
         self.frequency.as_ref()
     }
 }
@@ -51,7 +51,8 @@ impl CostBuilder {
     }
     /// <p>The cost amount.</p>
     pub fn set_amount(mut self, input: std::option::Option<f64>) -> Self {
-        self.amount = input; self
+        self.amount = input;
+        self
     }
     /// <p>The cost currency, for example <code>USD</code>.</p>
     pub fn currency(mut self, input: impl Into<std::string::String>) -> Self {
@@ -60,7 +61,8 @@ impl CostBuilder {
     }
     /// <p>The cost currency, for example <code>USD</code>.</p>
     pub fn set_currency(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.currency = input; self
+        self.currency = input;
+        self
     }
     /// <p>The cost frequency.</p>
     pub fn frequency(mut self, input: crate::types::CostFrequency) -> Self {
@@ -68,20 +70,19 @@ impl CostBuilder {
         self
     }
     /// <p>The cost frequency.</p>
-    pub fn set_frequency(mut self, input: std::option::Option<crate::types::CostFrequency>) -> Self {
-        self.frequency = input; self
+    pub fn set_frequency(
+        mut self,
+        input: std::option::Option<crate::types::CostFrequency>,
+    ) -> Self {
+        self.frequency = input;
+        self
     }
     /// Consumes the builder and constructs a [`Cost`](crate::types::Cost).
     pub fn build(self) -> crate::types::Cost {
         crate::types::Cost {
-            amount: self.amount
-                .unwrap_or_default()
-            ,
-            currency: self.currency
-            ,
-            frequency: self.frequency
-            ,
+            amount: self.amount.unwrap_or_default(),
+            currency: self.currency,
+            frequency: self.frequency,
         }
     }
 }
-

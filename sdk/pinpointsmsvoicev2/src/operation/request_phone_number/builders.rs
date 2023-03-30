@@ -4,49 +4,71 @@ pub use crate::operation::request_phone_number::_request_phone_number_output::Re
 pub use crate::operation::request_phone_number::_request_phone_number_input::RequestPhoneNumberInputBuilder;
 
 /// Fluent builder constructing a request to `RequestPhoneNumber`.
-/// 
+///
 /// <p>Request an origination phone number for use in your account. For more information on phone number request see <a href="https://docs.aws.amazon.com/pinpoint/latest/userguide/settings-sms-request-number.html"> Requesting a number </a> in the <i>Amazon Pinpoint User Guide</i>.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct RequestPhoneNumberFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::request_phone_number::builders::RequestPhoneNumberInputBuilder
-            }
-impl RequestPhoneNumberFluentBuilder  {
+    handle: std::sync::Arc<crate::client::Handle>,
+    inner: crate::operation::request_phone_number::builders::RequestPhoneNumberInputBuilder,
+}
+impl RequestPhoneNumberFluentBuilder {
     /// Creates a new `RequestPhoneNumber`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
-                    /// sent. The operation's inner [http::Request] can be modified as well.
-                    pub async fn customize(self) -> std::result::Result<
-                        crate::client::customize::CustomizableOperation<crate::operation::request_phone_number::RequestPhoneNumber, aws_http::retry::AwsResponseRetryClassifier,>,
-                        aws_smithy_http::result::SdkError<crate::operation::request_phone_number::RequestPhoneNumberError>
-                    >  {
-                        let handle = self.handle.clone();
-                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-                    }
-    
-                    /// Sends the request and returns the response.
-                    ///
-                    /// If an error occurs, an `SdkError` will be returned with additional details that
-                    /// can be matched against.
-                    ///
-                    /// By default, any retryable failures will be retried twice. Retry behavior
-                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                    /// set when configuring the client.
-                    pub async fn send(self) -> std::result::Result<crate::operation::request_phone_number::RequestPhoneNumberOutput, aws_smithy_http::result::SdkError<crate::operation::request_phone_number::RequestPhoneNumberError>>
-                     {
-                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&self.handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        self.handle.client.call(op).await
-                    }
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle,
+            inner: Default::default(),
+        }
+    }
+
+    /// Consume this builder, creating a customizable operation that can be modified before being
+    /// sent. The operation's inner [http::Request] can be modified as well.
+    pub async fn customize(
+        self,
+    ) -> std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::request_phone_number::RequestPhoneNumber,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::result::SdkError<
+            crate::operation::request_phone_number::RequestPhoneNumberError,
+        >,
+    > {
+        let handle = self.handle.clone();
+        let operation = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+    }
+
+    /// Sends the request and returns the response.
+    ///
+    /// If an error occurs, an `SdkError` will be returned with additional details that
+    /// can be matched against.
+    ///
+    /// By default, any retryable failures will be retried twice. Retry behavior
+    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+    /// set when configuring the client.
+    pub async fn send(
+        self,
+    ) -> std::result::Result<
+        crate::operation::request_phone_number::RequestPhoneNumberOutput,
+        aws_smithy_http::result::SdkError<
+            crate::operation::request_phone_number::RequestPhoneNumberError,
+        >,
+    > {
+        let op = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&self.handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        self.handle.client.call(op).await
+    }
     /// <p>The two-character code, in ISO 3166-1 alpha-2 format, for the country or region. </p>
     pub fn iso_country_code(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.iso_country_code(input.into());
@@ -63,7 +85,10 @@ impl RequestPhoneNumberFluentBuilder  {
         self
     }
     /// <p>The type of message. Valid values are TRANSACTIONAL for messages that are critical or time-sensitive and PROMOTIONAL for messages that aren't critical or time-sensitive.</p>
-    pub fn set_message_type(mut self, input: std::option::Option<crate::types::MessageType>) -> Self {
+    pub fn set_message_type(
+        mut self,
+        input: std::option::Option<crate::types::MessageType>,
+    ) -> Self {
         self.inner = self.inner.set_message_type(input);
         self
     }
@@ -77,7 +102,10 @@ impl RequestPhoneNumberFluentBuilder  {
         self
     }
     /// <p>Indicates if the phone number will be used for text messages, voice messages, or both. </p>
-    pub fn set_number_capabilities(mut self, input: std::option::Option<std::vec::Vec<crate::types::NumberCapability>>) -> Self {
+    pub fn set_number_capabilities(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::NumberCapability>>,
+    ) -> Self {
         self.inner = self.inner.set_number_capabilities(input);
         self
     }
@@ -87,7 +115,10 @@ impl RequestPhoneNumberFluentBuilder  {
         self
     }
     /// <p>The type of phone number to request.</p>
-    pub fn set_number_type(mut self, input: std::option::Option<crate::types::RequestableNumberType>) -> Self {
+    pub fn set_number_type(
+        mut self,
+        input: std::option::Option<crate::types::RequestableNumberType>,
+    ) -> Self {
         self.inner = self.inner.set_number_type(input);
         self
     }
@@ -97,7 +128,10 @@ impl RequestPhoneNumberFluentBuilder  {
         self
     }
     /// <p>The name of the OptOutList to associate with the phone number. You can use the OutOutListName or OptPutListArn.</p>
-    pub fn set_opt_out_list_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_opt_out_list_name(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_opt_out_list_name(input);
         self
     }
@@ -141,7 +175,10 @@ impl RequestPhoneNumberFluentBuilder  {
         self
     }
     /// <p>An array of tags (key and value pairs) associate with the requested phone number. </p>
-    pub fn set_tags(mut self, input: std::option::Option<std::vec::Vec<crate::types::Tag>>) -> Self {
+    pub fn set_tags(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::Tag>>,
+    ) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }
@@ -156,4 +193,3 @@ impl RequestPhoneNumberFluentBuilder  {
         self
     }
 }
-

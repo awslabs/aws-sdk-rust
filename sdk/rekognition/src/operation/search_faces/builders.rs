@@ -4,54 +4,72 @@ pub use crate::operation::search_faces::_search_faces_output::SearchFacesOutputB
 pub use crate::operation::search_faces::_search_faces_input::SearchFacesInputBuilder;
 
 /// Fluent builder constructing a request to `SearchFaces`.
-/// 
-/// <p>For a given input face ID, searches for matching faces in the collection the face belongs to. You get a face ID when you add a face to the collection using the <code>IndexFaces</code> operation. The operation compares the features of the input face with faces in the specified collection. </p> <note> 
-/// <p>You can also search faces without indexing faces by using the <code>SearchFacesByImage</code> operation.</p> 
-/// </note> 
-/// <p> The operation response returns an array of faces that match, ordered by similarity score with the highest similarity first. More specifically, it is an array of metadata for each face match that is found. Along with the metadata, the response also includes a <code>confidence</code> value for each face match, indicating the confidence that the specific face matches the input face. </p> 
-/// <p>For an example, see Searching for a face using its face ID in the Amazon Rekognition Developer Guide.</p> 
+///
+/// <p>For a given input face ID, searches for matching faces in the collection the face belongs to. You get a face ID when you add a face to the collection using the <code>IndexFaces</code> operation. The operation compares the features of the input face with faces in the specified collection. </p> <note>
+/// <p>You can also search faces without indexing faces by using the <code>SearchFacesByImage</code> operation.</p>
+/// </note>
+/// <p> The operation response returns an array of faces that match, ordered by similarity score with the highest similarity first. More specifically, it is an array of metadata for each face match that is found. Along with the metadata, the response also includes a <code>confidence</code> value for each face match, indicating the confidence that the specific face matches the input face. </p>
+/// <p>For an example, see Searching for a face using its face ID in the Amazon Rekognition Developer Guide.</p>
 /// <p>This operation requires permissions to perform the <code>rekognition:SearchFaces</code> action.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct SearchFacesFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::search_faces::builders::SearchFacesInputBuilder
-            }
-impl SearchFacesFluentBuilder  {
+    handle: std::sync::Arc<crate::client::Handle>,
+    inner: crate::operation::search_faces::builders::SearchFacesInputBuilder,
+}
+impl SearchFacesFluentBuilder {
     /// Creates a new `SearchFaces`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
-                    /// sent. The operation's inner [http::Request] can be modified as well.
-                    pub async fn customize(self) -> std::result::Result<
-                        crate::client::customize::CustomizableOperation<crate::operation::search_faces::SearchFaces, aws_http::retry::AwsResponseRetryClassifier,>,
-                        aws_smithy_http::result::SdkError<crate::operation::search_faces::SearchFacesError>
-                    >  {
-                        let handle = self.handle.clone();
-                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-                    }
-    
-                    /// Sends the request and returns the response.
-                    ///
-                    /// If an error occurs, an `SdkError` will be returned with additional details that
-                    /// can be matched against.
-                    ///
-                    /// By default, any retryable failures will be retried twice. Retry behavior
-                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                    /// set when configuring the client.
-                    pub async fn send(self) -> std::result::Result<crate::operation::search_faces::SearchFacesOutput, aws_smithy_http::result::SdkError<crate::operation::search_faces::SearchFacesError>>
-                     {
-                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&self.handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        self.handle.client.call(op).await
-                    }
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle,
+            inner: Default::default(),
+        }
+    }
+
+    /// Consume this builder, creating a customizable operation that can be modified before being
+    /// sent. The operation's inner [http::Request] can be modified as well.
+    pub async fn customize(
+        self,
+    ) -> std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::search_faces::SearchFaces,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::result::SdkError<crate::operation::search_faces::SearchFacesError>,
+    > {
+        let handle = self.handle.clone();
+        let operation = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+    }
+
+    /// Sends the request and returns the response.
+    ///
+    /// If an error occurs, an `SdkError` will be returned with additional details that
+    /// can be matched against.
+    ///
+    /// By default, any retryable failures will be retried twice. Retry behavior
+    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+    /// set when configuring the client.
+    pub async fn send(
+        self,
+    ) -> std::result::Result<
+        crate::operation::search_faces::SearchFacesOutput,
+        aws_smithy_http::result::SdkError<crate::operation::search_faces::SearchFacesError>,
+    > {
+        let op = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&self.handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        self.handle.client.call(op).await
+    }
     /// <p>ID of the collection the face belongs to.</p>
     pub fn collection_id(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.collection_id(input.into());
@@ -93,4 +111,3 @@ impl SearchFacesFluentBuilder  {
         self
     }
 }
-

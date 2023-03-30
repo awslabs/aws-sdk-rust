@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CountPendingDecisionTasksInput  {
+pub struct CountPendingDecisionTasksInput {
     /// <p>The name of the domain that contains the task list.</p>
     #[doc(hidden)]
     pub domain: std::option::Option<std::string::String>,
@@ -12,17 +12,17 @@ pub struct CountPendingDecisionTasksInput  {
 }
 impl CountPendingDecisionTasksInput {
     /// <p>The name of the domain that contains the task list.</p>
-    pub fn domain(&self) -> std::option::Option<& str> {
+    pub fn domain(&self) -> std::option::Option<&str> {
         self.domain.as_deref()
     }
     /// <p>The name of the task list.</p>
-    pub fn task_list(&self) -> std::option::Option<& crate::types::TaskList> {
+    pub fn task_list(&self) -> std::option::Option<&crate::types::TaskList> {
         self.task_list.as_ref()
     }
 }
 impl CountPendingDecisionTasksInput {
     /// Creates a new builder-style object to manufacture [`CountPendingDecisionTasksInput`](crate::operation::count_pending_decision_tasks::CountPendingDecisionTasksInput).
-    pub fn builder() -> crate::operation::count_pending_decision_tasks::builders::CountPendingDecisionTasksInputBuilder {
+    pub fn builder() -> crate::operation::count_pending_decision_tasks::builders::CountPendingDecisionTasksInputBuilder{
         crate::operation::count_pending_decision_tasks::builders::CountPendingDecisionTasksInputBuilder::default()
     }
 }
@@ -42,7 +42,8 @@ impl CountPendingDecisionTasksInputBuilder {
     }
     /// <p>The name of the domain that contains the task list.</p>
     pub fn set_domain(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.domain = input; self
+        self.domain = input;
+        self
     }
     /// <p>The name of the task list.</p>
     pub fn task_list(mut self, input: crate::types::TaskList) -> Self {
@@ -51,18 +52,21 @@ impl CountPendingDecisionTasksInputBuilder {
     }
     /// <p>The name of the task list.</p>
     pub fn set_task_list(mut self, input: std::option::Option<crate::types::TaskList>) -> Self {
-        self.task_list = input; self
+        self.task_list = input;
+        self
     }
     /// Consumes the builder and constructs a [`CountPendingDecisionTasksInput`](crate::operation::count_pending_decision_tasks::CountPendingDecisionTasksInput).
-    pub fn build(self) -> Result<crate::operation::count_pending_decision_tasks::CountPendingDecisionTasksInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::count_pending_decision_tasks::CountPendingDecisionTasksInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::count_pending_decision_tasks::CountPendingDecisionTasksInput {
-                domain: self.domain
-                ,
-                task_list: self.task_list
-                ,
-            }
+                domain: self.domain,
+                task_list: self.task_list,
+            },
         )
     }
 }
-

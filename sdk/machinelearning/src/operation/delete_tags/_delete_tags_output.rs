@@ -3,7 +3,7 @@
 /// <p>Amazon ML returns the following elements.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteTagsOutput  {
+pub struct DeleteTagsOutput {
     /// <p>The ID of the ML object from which tags were deleted.</p>
     #[doc(hidden)]
     pub resource_id: std::option::Option<std::string::String>,
@@ -14,19 +14,19 @@ pub struct DeleteTagsOutput  {
 }
 impl DeleteTagsOutput {
     /// <p>The ID of the ML object from which tags were deleted.</p>
-    pub fn resource_id(&self) -> std::option::Option<& str> {
+    pub fn resource_id(&self) -> std::option::Option<&str> {
         self.resource_id.as_deref()
     }
     /// <p>The type of the ML object from which tags were deleted.</p>
-    pub fn resource_type(&self) -> std::option::Option<& crate::types::TaggableResourceType> {
+    pub fn resource_type(&self) -> std::option::Option<&crate::types::TaggableResourceType> {
         self.resource_type.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for DeleteTagsOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl DeleteTagsOutput {
     /// Creates a new builder-style object to manufacture [`DeleteTagsOutput`](crate::operation::delete_tags::DeleteTagsOutput).
     pub fn builder() -> crate::operation::delete_tags::builders::DeleteTagsOutputBuilder {
@@ -50,7 +50,8 @@ impl DeleteTagsOutputBuilder {
     }
     /// <p>The ID of the ML object from which tags were deleted.</p>
     pub fn set_resource_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.resource_id = input; self
+        self.resource_id = input;
+        self
     }
     /// <p>The type of the ML object from which tags were deleted.</p>
     pub fn resource_type(mut self, input: crate::types::TaggableResourceType) -> Self {
@@ -58,27 +59,28 @@ impl DeleteTagsOutputBuilder {
         self
     }
     /// <p>The type of the ML object from which tags were deleted.</p>
-    pub fn set_resource_type(mut self, input: std::option::Option<crate::types::TaggableResourceType>) -> Self {
-        self.resource_type = input; self
+    pub fn set_resource_type(
+        mut self,
+        input: std::option::Option<crate::types::TaggableResourceType>,
+    ) -> Self {
+        self.resource_type = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`DeleteTagsOutput`](crate::operation::delete_tags::DeleteTagsOutput).
     pub fn build(self) -> crate::operation::delete_tags::DeleteTagsOutput {
         crate::operation::delete_tags::DeleteTagsOutput {
-            resource_id: self.resource_id
-            ,
-            resource_type: self.resource_type
-            ,
+            resource_id: self.resource_id,
+            resource_type: self.resource_type,
             _request_id: self._request_id,
         }
     }
 }
-

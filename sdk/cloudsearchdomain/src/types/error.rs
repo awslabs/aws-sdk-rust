@@ -9,4 +9,3 @@ mod _search_exception;
 
 /// Builders
 pub mod builders;
-

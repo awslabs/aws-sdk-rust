@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PostCommentForPullRequestOutput  {
+pub struct PostCommentForPullRequestOutput {
     /// <p>The name of the repository where you posted a comment on a pull request.</p>
     #[doc(hidden)]
     pub repository_name: std::option::Option<std::string::String>,
@@ -31,46 +31,46 @@ pub struct PostCommentForPullRequestOutput  {
 }
 impl PostCommentForPullRequestOutput {
     /// <p>The name of the repository where you posted a comment on a pull request.</p>
-    pub fn repository_name(&self) -> std::option::Option<& str> {
+    pub fn repository_name(&self) -> std::option::Option<&str> {
         self.repository_name.as_deref()
     }
     /// <p>The system-generated ID of the pull request. </p>
-    pub fn pull_request_id(&self) -> std::option::Option<& str> {
+    pub fn pull_request_id(&self) -> std::option::Option<&str> {
         self.pull_request_id.as_deref()
     }
     /// <p>The full commit ID of the commit in the source branch used to create the pull request, or in the case of an updated pull request, the full commit ID of the commit used to update the pull request.</p>
-    pub fn before_commit_id(&self) -> std::option::Option<& str> {
+    pub fn before_commit_id(&self) -> std::option::Option<&str> {
         self.before_commit_id.as_deref()
     }
     /// <p>The full commit ID of the commit in the destination branch where the pull request is merged.</p>
-    pub fn after_commit_id(&self) -> std::option::Option<& str> {
+    pub fn after_commit_id(&self) -> std::option::Option<&str> {
         self.after_commit_id.as_deref()
     }
     /// <p>In the directionality of the pull request, the blob ID of the before blob.</p>
-    pub fn before_blob_id(&self) -> std::option::Option<& str> {
+    pub fn before_blob_id(&self) -> std::option::Option<&str> {
         self.before_blob_id.as_deref()
     }
     /// <p>In the directionality of the pull request, the blob ID of the after blob.</p>
-    pub fn after_blob_id(&self) -> std::option::Option<& str> {
+    pub fn after_blob_id(&self) -> std::option::Option<&str> {
         self.after_blob_id.as_deref()
     }
     /// <p>The location of the change where you posted your comment.</p>
-    pub fn location(&self) -> std::option::Option<& crate::types::Location> {
+    pub fn location(&self) -> std::option::Option<&crate::types::Location> {
         self.location.as_ref()
     }
     /// <p>The content of the comment you posted.</p>
-    pub fn comment(&self) -> std::option::Option<& crate::types::Comment> {
+    pub fn comment(&self) -> std::option::Option<&crate::types::Comment> {
         self.comment.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for PostCommentForPullRequestOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl PostCommentForPullRequestOutput {
     /// Creates a new builder-style object to manufacture [`PostCommentForPullRequestOutput`](crate::operation::post_comment_for_pull_request::PostCommentForPullRequestOutput).
-    pub fn builder() -> crate::operation::post_comment_for_pull_request::builders::PostCommentForPullRequestOutputBuilder {
+    pub fn builder() -> crate::operation::post_comment_for_pull_request::builders::PostCommentForPullRequestOutputBuilder{
         crate::operation::post_comment_for_pull_request::builders::PostCommentForPullRequestOutputBuilder::default()
     }
 }
@@ -97,7 +97,8 @@ impl PostCommentForPullRequestOutputBuilder {
     }
     /// <p>The name of the repository where you posted a comment on a pull request.</p>
     pub fn set_repository_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.repository_name = input; self
+        self.repository_name = input;
+        self
     }
     /// <p>The system-generated ID of the pull request. </p>
     pub fn pull_request_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -106,7 +107,8 @@ impl PostCommentForPullRequestOutputBuilder {
     }
     /// <p>The system-generated ID of the pull request. </p>
     pub fn set_pull_request_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.pull_request_id = input; self
+        self.pull_request_id = input;
+        self
     }
     /// <p>The full commit ID of the commit in the source branch used to create the pull request, or in the case of an updated pull request, the full commit ID of the commit used to update the pull request.</p>
     pub fn before_commit_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -115,7 +117,8 @@ impl PostCommentForPullRequestOutputBuilder {
     }
     /// <p>The full commit ID of the commit in the source branch used to create the pull request, or in the case of an updated pull request, the full commit ID of the commit used to update the pull request.</p>
     pub fn set_before_commit_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.before_commit_id = input; self
+        self.before_commit_id = input;
+        self
     }
     /// <p>The full commit ID of the commit in the destination branch where the pull request is merged.</p>
     pub fn after_commit_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -124,7 +127,8 @@ impl PostCommentForPullRequestOutputBuilder {
     }
     /// <p>The full commit ID of the commit in the destination branch where the pull request is merged.</p>
     pub fn set_after_commit_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.after_commit_id = input; self
+        self.after_commit_id = input;
+        self
     }
     /// <p>In the directionality of the pull request, the blob ID of the before blob.</p>
     pub fn before_blob_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -133,7 +137,8 @@ impl PostCommentForPullRequestOutputBuilder {
     }
     /// <p>In the directionality of the pull request, the blob ID of the before blob.</p>
     pub fn set_before_blob_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.before_blob_id = input; self
+        self.before_blob_id = input;
+        self
     }
     /// <p>In the directionality of the pull request, the blob ID of the after blob.</p>
     pub fn after_blob_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -142,7 +147,8 @@ impl PostCommentForPullRequestOutputBuilder {
     }
     /// <p>In the directionality of the pull request, the blob ID of the after blob.</p>
     pub fn set_after_blob_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.after_blob_id = input; self
+        self.after_blob_id = input;
+        self
     }
     /// <p>The location of the change where you posted your comment.</p>
     pub fn location(mut self, input: crate::types::Location) -> Self {
@@ -151,7 +157,8 @@ impl PostCommentForPullRequestOutputBuilder {
     }
     /// <p>The location of the change where you posted your comment.</p>
     pub fn set_location(mut self, input: std::option::Option<crate::types::Location>) -> Self {
-        self.location = input; self
+        self.location = input;
+        self
     }
     /// <p>The content of the comment you posted.</p>
     pub fn comment(mut self, input: crate::types::Comment) -> Self {
@@ -160,38 +167,32 @@ impl PostCommentForPullRequestOutputBuilder {
     }
     /// <p>The content of the comment you posted.</p>
     pub fn set_comment(mut self, input: std::option::Option<crate::types::Comment>) -> Self {
-        self.comment = input; self
+        self.comment = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`PostCommentForPullRequestOutput`](crate::operation::post_comment_for_pull_request::PostCommentForPullRequestOutput).
-    pub fn build(self) -> crate::operation::post_comment_for_pull_request::PostCommentForPullRequestOutput {
+    pub fn build(
+        self,
+    ) -> crate::operation::post_comment_for_pull_request::PostCommentForPullRequestOutput {
         crate::operation::post_comment_for_pull_request::PostCommentForPullRequestOutput {
-            repository_name: self.repository_name
-            ,
-            pull_request_id: self.pull_request_id
-            ,
-            before_commit_id: self.before_commit_id
-            ,
-            after_commit_id: self.after_commit_id
-            ,
-            before_blob_id: self.before_blob_id
-            ,
-            after_blob_id: self.after_blob_id
-            ,
-            location: self.location
-            ,
-            comment: self.comment
-            ,
+            repository_name: self.repository_name,
+            pull_request_id: self.pull_request_id,
+            before_commit_id: self.before_commit_id,
+            after_commit_id: self.after_commit_id,
+            before_blob_id: self.before_blob_id,
+            after_blob_id: self.after_blob_id,
+            location: self.location,
+            comment: self.comment,
             _request_id: self._request_id,
         }
     }
 }
-

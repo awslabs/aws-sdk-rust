@@ -12,4 +12,3 @@ pub mod get_record;
 
 /// Types for the `PutRecord` operation.
 pub mod put_record;
-

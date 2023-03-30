@@ -3,7 +3,7 @@
 /// <p>Identifies the launch template to use for faster launching of the Windows AMI.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct FastLaunchLaunchTemplateSpecificationResponse  {
+pub struct FastLaunchLaunchTemplateSpecificationResponse {
     /// <p>The ID of the launch template for faster launching of the associated Windows AMI.</p>
     #[doc(hidden)]
     pub launch_template_id: std::option::Option<std::string::String>,
@@ -16,21 +16,22 @@ pub struct FastLaunchLaunchTemplateSpecificationResponse  {
 }
 impl FastLaunchLaunchTemplateSpecificationResponse {
     /// <p>The ID of the launch template for faster launching of the associated Windows AMI.</p>
-    pub fn launch_template_id(&self) -> std::option::Option<& str> {
+    pub fn launch_template_id(&self) -> std::option::Option<&str> {
         self.launch_template_id.as_deref()
     }
     /// <p>The name of the launch template for faster launching of the associated Windows AMI.</p>
-    pub fn launch_template_name(&self) -> std::option::Option<& str> {
+    pub fn launch_template_name(&self) -> std::option::Option<&str> {
         self.launch_template_name.as_deref()
     }
     /// <p>The version of the launch template for faster launching of the associated Windows AMI.</p>
-    pub fn version(&self) -> std::option::Option<& str> {
+    pub fn version(&self) -> std::option::Option<&str> {
         self.version.as_deref()
     }
 }
 impl FastLaunchLaunchTemplateSpecificationResponse {
     /// Creates a new builder-style object to manufacture [`FastLaunchLaunchTemplateSpecificationResponse`](crate::types::FastLaunchLaunchTemplateSpecificationResponse).
-    pub fn builder() -> crate::types::builders::FastLaunchLaunchTemplateSpecificationResponseBuilder {
+    pub fn builder() -> crate::types::builders::FastLaunchLaunchTemplateSpecificationResponseBuilder
+    {
         crate::types::builders::FastLaunchLaunchTemplateSpecificationResponseBuilder::default()
     }
 }
@@ -50,8 +51,12 @@ impl FastLaunchLaunchTemplateSpecificationResponseBuilder {
         self
     }
     /// <p>The ID of the launch template for faster launching of the associated Windows AMI.</p>
-    pub fn set_launch_template_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.launch_template_id = input; self
+    pub fn set_launch_template_id(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.launch_template_id = input;
+        self
     }
     /// <p>The name of the launch template for faster launching of the associated Windows AMI.</p>
     pub fn launch_template_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -59,8 +64,12 @@ impl FastLaunchLaunchTemplateSpecificationResponseBuilder {
         self
     }
     /// <p>The name of the launch template for faster launching of the associated Windows AMI.</p>
-    pub fn set_launch_template_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.launch_template_name = input; self
+    pub fn set_launch_template_name(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.launch_template_name = input;
+        self
     }
     /// <p>The version of the launch template for faster launching of the associated Windows AMI.</p>
     pub fn version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -69,18 +78,15 @@ impl FastLaunchLaunchTemplateSpecificationResponseBuilder {
     }
     /// <p>The version of the launch template for faster launching of the associated Windows AMI.</p>
     pub fn set_version(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.version = input; self
+        self.version = input;
+        self
     }
     /// Consumes the builder and constructs a [`FastLaunchLaunchTemplateSpecificationResponse`](crate::types::FastLaunchLaunchTemplateSpecificationResponse).
     pub fn build(self) -> crate::types::FastLaunchLaunchTemplateSpecificationResponse {
         crate::types::FastLaunchLaunchTemplateSpecificationResponse {
-            launch_template_id: self.launch_template_id
-            ,
-            launch_template_name: self.launch_template_name
-            ,
-            version: self.version
-            ,
+            launch_template_id: self.launch_template_id,
+            launch_template_name: self.launch_template_name,
+            version: self.version,
         }
     }
 }
-

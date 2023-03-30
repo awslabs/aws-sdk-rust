@@ -3,7 +3,7 @@
 /// <p>Metadata for this recommendation set.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct RightsizingRecommendationMetadata  {
+pub struct RightsizingRecommendationMetadata {
     /// <p>The ID for this specific recommendation.</p>
     #[doc(hidden)]
     pub recommendation_id: std::option::Option<std::string::String>,
@@ -19,19 +19,21 @@ pub struct RightsizingRecommendationMetadata  {
 }
 impl RightsizingRecommendationMetadata {
     /// <p>The ID for this specific recommendation.</p>
-    pub fn recommendation_id(&self) -> std::option::Option<& str> {
+    pub fn recommendation_id(&self) -> std::option::Option<&str> {
         self.recommendation_id.as_deref()
     }
     /// <p>The timestamp for when Amazon Web Services made this recommendation.</p>
-    pub fn generation_timestamp(&self) -> std::option::Option<& str> {
+    pub fn generation_timestamp(&self) -> std::option::Option<&str> {
         self.generation_timestamp.as_deref()
     }
     /// <p>The number of days of previous usage that Amazon Web Services considers when making this recommendation.</p>
-    pub fn lookback_period_in_days(&self) -> std::option::Option<& crate::types::LookbackPeriodInDays> {
+    pub fn lookback_period_in_days(
+        &self,
+    ) -> std::option::Option<&crate::types::LookbackPeriodInDays> {
         self.lookback_period_in_days.as_ref()
     }
     /// <p>Additional metadata that might be applicable to the recommendation.</p>
-    pub fn additional_metadata(&self) -> std::option::Option<& str> {
+    pub fn additional_metadata(&self) -> std::option::Option<&str> {
         self.additional_metadata.as_deref()
     }
 }
@@ -58,8 +60,12 @@ impl RightsizingRecommendationMetadataBuilder {
         self
     }
     /// <p>The ID for this specific recommendation.</p>
-    pub fn set_recommendation_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.recommendation_id = input; self
+    pub fn set_recommendation_id(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.recommendation_id = input;
+        self
     }
     /// <p>The timestamp for when Amazon Web Services made this recommendation.</p>
     pub fn generation_timestamp(mut self, input: impl Into<std::string::String>) -> Self {
@@ -67,8 +73,12 @@ impl RightsizingRecommendationMetadataBuilder {
         self
     }
     /// <p>The timestamp for when Amazon Web Services made this recommendation.</p>
-    pub fn set_generation_timestamp(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.generation_timestamp = input; self
+    pub fn set_generation_timestamp(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.generation_timestamp = input;
+        self
     }
     /// <p>The number of days of previous usage that Amazon Web Services considers when making this recommendation.</p>
     pub fn lookback_period_in_days(mut self, input: crate::types::LookbackPeriodInDays) -> Self {
@@ -76,8 +86,12 @@ impl RightsizingRecommendationMetadataBuilder {
         self
     }
     /// <p>The number of days of previous usage that Amazon Web Services considers when making this recommendation.</p>
-    pub fn set_lookback_period_in_days(mut self, input: std::option::Option<crate::types::LookbackPeriodInDays>) -> Self {
-        self.lookback_period_in_days = input; self
+    pub fn set_lookback_period_in_days(
+        mut self,
+        input: std::option::Option<crate::types::LookbackPeriodInDays>,
+    ) -> Self {
+        self.lookback_period_in_days = input;
+        self
     }
     /// <p>Additional metadata that might be applicable to the recommendation.</p>
     pub fn additional_metadata(mut self, input: impl Into<std::string::String>) -> Self {
@@ -85,21 +99,20 @@ impl RightsizingRecommendationMetadataBuilder {
         self
     }
     /// <p>Additional metadata that might be applicable to the recommendation.</p>
-    pub fn set_additional_metadata(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.additional_metadata = input; self
+    pub fn set_additional_metadata(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.additional_metadata = input;
+        self
     }
     /// Consumes the builder and constructs a [`RightsizingRecommendationMetadata`](crate::types::RightsizingRecommendationMetadata).
     pub fn build(self) -> crate::types::RightsizingRecommendationMetadata {
         crate::types::RightsizingRecommendationMetadata {
-            recommendation_id: self.recommendation_id
-            ,
-            generation_timestamp: self.generation_timestamp
-            ,
-            lookback_period_in_days: self.lookback_period_in_days
-            ,
-            additional_metadata: self.additional_metadata
-            ,
+            recommendation_id: self.recommendation_id,
+            generation_timestamp: self.generation_timestamp,
+            lookback_period_in_days: self.lookback_period_in_days,
+            additional_metadata: self.additional_metadata,
         }
     }
 }
-

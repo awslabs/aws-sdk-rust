@@ -3,7 +3,7 @@
 /// The entitlement fields that you want to update.
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateFlowEntitlementInput  {
+pub struct UpdateFlowEntitlementInput {
     /// A description of the entitlement. This description appears only on the AWS Elemental MediaConnect console and will not be seen by the subscriber or end user.
     #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
@@ -25,33 +25,35 @@ pub struct UpdateFlowEntitlementInput  {
 }
 impl UpdateFlowEntitlementInput {
     /// A description of the entitlement. This description appears only on the AWS Elemental MediaConnect console and will not be seen by the subscriber or end user.
-    pub fn description(&self) -> std::option::Option<& str> {
+    pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
     /// The type of encryption that will be used on the output associated with this entitlement.
-    pub fn encryption(&self) -> std::option::Option<& crate::types::UpdateEncryption> {
+    pub fn encryption(&self) -> std::option::Option<&crate::types::UpdateEncryption> {
         self.encryption.as_ref()
     }
     /// The ARN of the entitlement that you want to update.
-    pub fn entitlement_arn(&self) -> std::option::Option<& str> {
+    pub fn entitlement_arn(&self) -> std::option::Option<&str> {
         self.entitlement_arn.as_deref()
     }
     /// An indication of whether you want to enable the entitlement to allow access, or disable it to stop streaming content to the subscriber’s flow temporarily. If you don’t specify the entitlementStatus field in your request, MediaConnect leaves the value unchanged.
-    pub fn entitlement_status(&self) -> std::option::Option<& crate::types::EntitlementStatus> {
+    pub fn entitlement_status(&self) -> std::option::Option<&crate::types::EntitlementStatus> {
         self.entitlement_status.as_ref()
     }
     /// The flow that is associated with the entitlement that you want to update.
-    pub fn flow_arn(&self) -> std::option::Option<& str> {
+    pub fn flow_arn(&self) -> std::option::Option<&str> {
         self.flow_arn.as_deref()
     }
     /// The AWS account IDs that you want to share your content with. The receiving accounts (subscribers) will be allowed to create their own flow using your content as the source.
-    pub fn subscribers(&self) -> std::option::Option<& [std::string::String]> {
+    pub fn subscribers(&self) -> std::option::Option<&[std::string::String]> {
         self.subscribers.as_deref()
     }
 }
 impl UpdateFlowEntitlementInput {
     /// Creates a new builder-style object to manufacture [`UpdateFlowEntitlementInput`](crate::operation::update_flow_entitlement::UpdateFlowEntitlementInput).
-    pub fn builder() -> crate::operation::update_flow_entitlement::builders::UpdateFlowEntitlementInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::update_flow_entitlement::builders::UpdateFlowEntitlementInputBuilder
+    {
         crate::operation::update_flow_entitlement::builders::UpdateFlowEntitlementInputBuilder::default()
     }
 }
@@ -75,7 +77,8 @@ impl UpdateFlowEntitlementInputBuilder {
     }
     /// A description of the entitlement. This description appears only on the AWS Elemental MediaConnect console and will not be seen by the subscriber or end user.
     pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.description = input; self
+        self.description = input;
+        self
     }
     /// The type of encryption that will be used on the output associated with this entitlement.
     pub fn encryption(mut self, input: crate::types::UpdateEncryption) -> Self {
@@ -83,8 +86,12 @@ impl UpdateFlowEntitlementInputBuilder {
         self
     }
     /// The type of encryption that will be used on the output associated with this entitlement.
-    pub fn set_encryption(mut self, input: std::option::Option<crate::types::UpdateEncryption>) -> Self {
-        self.encryption = input; self
+    pub fn set_encryption(
+        mut self,
+        input: std::option::Option<crate::types::UpdateEncryption>,
+    ) -> Self {
+        self.encryption = input;
+        self
     }
     /// The ARN of the entitlement that you want to update.
     pub fn entitlement_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -93,7 +100,8 @@ impl UpdateFlowEntitlementInputBuilder {
     }
     /// The ARN of the entitlement that you want to update.
     pub fn set_entitlement_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.entitlement_arn = input; self
+        self.entitlement_arn = input;
+        self
     }
     /// An indication of whether you want to enable the entitlement to allow access, or disable it to stop streaming content to the subscriber’s flow temporarily. If you don’t specify the entitlementStatus field in your request, MediaConnect leaves the value unchanged.
     pub fn entitlement_status(mut self, input: crate::types::EntitlementStatus) -> Self {
@@ -101,8 +109,12 @@ impl UpdateFlowEntitlementInputBuilder {
         self
     }
     /// An indication of whether you want to enable the entitlement to allow access, or disable it to stop streaming content to the subscriber’s flow temporarily. If you don’t specify the entitlementStatus field in your request, MediaConnect leaves the value unchanged.
-    pub fn set_entitlement_status(mut self, input: std::option::Option<crate::types::EntitlementStatus>) -> Self {
-        self.entitlement_status = input; self
+    pub fn set_entitlement_status(
+        mut self,
+        input: std::option::Option<crate::types::EntitlementStatus>,
+    ) -> Self {
+        self.entitlement_status = input;
+        self
     }
     /// The flow that is associated with the entitlement that you want to update.
     pub fn flow_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -111,7 +123,8 @@ impl UpdateFlowEntitlementInputBuilder {
     }
     /// The flow that is associated with the entitlement that you want to update.
     pub fn set_flow_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.flow_arn = input; self
+        self.flow_arn = input;
+        self
     }
     /// Appends an item to `subscribers`.
     ///
@@ -120,32 +133,34 @@ impl UpdateFlowEntitlementInputBuilder {
     /// The AWS account IDs that you want to share your content with. The receiving accounts (subscribers) will be allowed to create their own flow using your content as the source.
     pub fn subscribers(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.subscribers.unwrap_or_default();
-                        v.push(input.into());
-                        self.subscribers = Some(v);
-                        self
+        v.push(input.into());
+        self.subscribers = Some(v);
+        self
     }
     /// The AWS account IDs that you want to share your content with. The receiving accounts (subscribers) will be allowed to create their own flow using your content as the source.
-    pub fn set_subscribers(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-        self.subscribers = input; self
+    pub fn set_subscribers(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
+        self.subscribers = input;
+        self
     }
     /// Consumes the builder and constructs a [`UpdateFlowEntitlementInput`](crate::operation::update_flow_entitlement::UpdateFlowEntitlementInput).
-    pub fn build(self) -> Result<crate::operation::update_flow_entitlement::UpdateFlowEntitlementInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::update_flow_entitlement::UpdateFlowEntitlementInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::update_flow_entitlement::UpdateFlowEntitlementInput {
-                description: self.description
-                ,
-                encryption: self.encryption
-                ,
-                entitlement_arn: self.entitlement_arn
-                ,
-                entitlement_status: self.entitlement_status
-                ,
-                flow_arn: self.flow_arn
-                ,
-                subscribers: self.subscribers
-                ,
-            }
+                description: self.description,
+                encryption: self.encryption,
+                entitlement_arn: self.entitlement_arn,
+                entitlement_status: self.entitlement_status,
+                flow_arn: self.flow_arn,
+                subscribers: self.subscribers,
+            },
         )
     }
 }
-

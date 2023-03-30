@@ -3,7 +3,7 @@
 /// <p>The description and metadata for a Trusted Advisor check.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct TrustedAdvisorCheckDescription  {
+pub struct TrustedAdvisorCheckDescription {
     /// <p>The unique identifier for the Trusted Advisor check.</p>
     #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
@@ -22,23 +22,23 @@ pub struct TrustedAdvisorCheckDescription  {
 }
 impl TrustedAdvisorCheckDescription {
     /// <p>The unique identifier for the Trusted Advisor check.</p>
-    pub fn id(&self) -> std::option::Option<& str> {
+    pub fn id(&self) -> std::option::Option<&str> {
         self.id.as_deref()
     }
     /// <p>The display name for the Trusted Advisor check.</p>
-    pub fn name(&self) -> std::option::Option<& str> {
+    pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>The description of the Trusted Advisor check, which includes the alert criteria and recommended operations (contains HTML markup).</p>
-    pub fn description(&self) -> std::option::Option<& str> {
+    pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
     /// <p>The category of the Trusted Advisor check.</p>
-    pub fn category(&self) -> std::option::Option<& str> {
+    pub fn category(&self) -> std::option::Option<&str> {
         self.category.as_deref()
     }
     /// <p>The column headings for the data returned by the Trusted Advisor check. The order of the headings corresponds to the order of the data in the <b>Metadata</b> element of the <code>TrustedAdvisorResourceDetail</code> for the check. <b>Metadata</b> contains all the data that is shown in the Excel download, even in those cases where the UI shows just summary data. </p>
-    pub fn metadata(&self) -> std::option::Option<& [std::string::String]> {
+    pub fn metadata(&self) -> std::option::Option<&[std::string::String]> {
         self.metadata.as_deref()
     }
 }
@@ -67,7 +67,8 @@ impl TrustedAdvisorCheckDescriptionBuilder {
     }
     /// <p>The unique identifier for the Trusted Advisor check.</p>
     pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.id = input; self
+        self.id = input;
+        self
     }
     /// <p>The display name for the Trusted Advisor check.</p>
     pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -76,7 +77,8 @@ impl TrustedAdvisorCheckDescriptionBuilder {
     }
     /// <p>The display name for the Trusted Advisor check.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input; self
+        self.name = input;
+        self
     }
     /// <p>The description of the Trusted Advisor check, which includes the alert criteria and recommended operations (contains HTML markup).</p>
     pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -85,7 +87,8 @@ impl TrustedAdvisorCheckDescriptionBuilder {
     }
     /// <p>The description of the Trusted Advisor check, which includes the alert criteria and recommended operations (contains HTML markup).</p>
     pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.description = input; self
+        self.description = input;
+        self
     }
     /// <p>The category of the Trusted Advisor check.</p>
     pub fn category(mut self, input: impl Into<std::string::String>) -> Self {
@@ -94,7 +97,8 @@ impl TrustedAdvisorCheckDescriptionBuilder {
     }
     /// <p>The category of the Trusted Advisor check.</p>
     pub fn set_category(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.category = input; self
+        self.category = input;
+        self
     }
     /// Appends an item to `metadata`.
     ///
@@ -103,28 +107,26 @@ impl TrustedAdvisorCheckDescriptionBuilder {
     /// <p>The column headings for the data returned by the Trusted Advisor check. The order of the headings corresponds to the order of the data in the <b>Metadata</b> element of the <code>TrustedAdvisorResourceDetail</code> for the check. <b>Metadata</b> contains all the data that is shown in the Excel download, even in those cases where the UI shows just summary data. </p>
     pub fn metadata(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.metadata.unwrap_or_default();
-                        v.push(input.into());
-                        self.metadata = Some(v);
-                        self
+        v.push(input.into());
+        self.metadata = Some(v);
+        self
     }
     /// <p>The column headings for the data returned by the Trusted Advisor check. The order of the headings corresponds to the order of the data in the <b>Metadata</b> element of the <code>TrustedAdvisorResourceDetail</code> for the check. <b>Metadata</b> contains all the data that is shown in the Excel download, even in those cases where the UI shows just summary data. </p>
-    pub fn set_metadata(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-        self.metadata = input; self
+    pub fn set_metadata(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
+        self.metadata = input;
+        self
     }
     /// Consumes the builder and constructs a [`TrustedAdvisorCheckDescription`](crate::types::TrustedAdvisorCheckDescription).
     pub fn build(self) -> crate::types::TrustedAdvisorCheckDescription {
         crate::types::TrustedAdvisorCheckDescription {
-            id: self.id
-            ,
-            name: self.name
-            ,
-            description: self.description
-            ,
-            category: self.category
-            ,
-            metadata: self.metadata
-            ,
+            id: self.id,
+            name: self.name,
+            description: self.description,
+            category: self.category,
+            metadata: self.metadata,
         }
     }
 }
-

@@ -3,7 +3,7 @@
 /// <p>Represents the usage data of a usage plan.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateUsageOutput  {
+pub struct UpdateUsageOutput {
     /// <p>The plan Id associated with this usage data.</p>
     #[doc(hidden)]
     pub usage_plan_id: std::option::Option<std::string::String>,
@@ -15,7 +15,9 @@ pub struct UpdateUsageOutput  {
     pub end_date: std::option::Option<std::string::String>,
     /// <p>The usage data, as daily logs of used and remaining quotas, over the specified time interval indexed over the API keys in a usage plan. For example, <code>{..., "values" : { "{api_key}" : [ [0, 100], [10, 90], [100, 10]]}</code>, where <code>{api_key}</code> stands for an API key value and the daily log entry is of the format <code>[used quota, remaining quota]</code>.</p>
     #[doc(hidden)]
-    pub items: std::option::Option<std::collections::HashMap<std::string::String, std::vec::Vec<std::vec::Vec<i64>>>>,
+    pub items: std::option::Option<
+        std::collections::HashMap<std::string::String, std::vec::Vec<std::vec::Vec<i64>>>,
+    >,
     /// <p>The current pagination position in the paged result set.</p>
     #[doc(hidden)]
     pub position: std::option::Option<std::string::String>,
@@ -23,31 +25,35 @@ pub struct UpdateUsageOutput  {
 }
 impl UpdateUsageOutput {
     /// <p>The plan Id associated with this usage data.</p>
-    pub fn usage_plan_id(&self) -> std::option::Option<& str> {
+    pub fn usage_plan_id(&self) -> std::option::Option<&str> {
         self.usage_plan_id.as_deref()
     }
     /// <p>The starting date of the usage data.</p>
-    pub fn start_date(&self) -> std::option::Option<& str> {
+    pub fn start_date(&self) -> std::option::Option<&str> {
         self.start_date.as_deref()
     }
     /// <p>The ending date of the usage data.</p>
-    pub fn end_date(&self) -> std::option::Option<& str> {
+    pub fn end_date(&self) -> std::option::Option<&str> {
         self.end_date.as_deref()
     }
     /// <p>The usage data, as daily logs of used and remaining quotas, over the specified time interval indexed over the API keys in a usage plan. For example, <code>{..., "values" : { "{api_key}" : [ [0, 100], [10, 90], [100, 10]]}</code>, where <code>{api_key}</code> stands for an API key value and the daily log entry is of the format <code>[used quota, remaining quota]</code>.</p>
-    pub fn items(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::vec::Vec<std::vec::Vec<i64>>>> {
+    pub fn items(
+        &self,
+    ) -> std::option::Option<
+        &std::collections::HashMap<std::string::String, std::vec::Vec<std::vec::Vec<i64>>>,
+    > {
         self.items.as_ref()
     }
     /// <p>The current pagination position in the paged result set.</p>
-    pub fn position(&self) -> std::option::Option<& str> {
+    pub fn position(&self) -> std::option::Option<&str> {
         self.position.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for UpdateUsageOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl UpdateUsageOutput {
     /// Creates a new builder-style object to manufacture [`UpdateUsageOutput`](crate::operation::update_usage::UpdateUsageOutput).
     pub fn builder() -> crate::operation::update_usage::builders::UpdateUsageOutputBuilder {
@@ -62,7 +68,9 @@ pub struct UpdateUsageOutputBuilder {
     pub(crate) usage_plan_id: std::option::Option<std::string::String>,
     pub(crate) start_date: std::option::Option<std::string::String>,
     pub(crate) end_date: std::option::Option<std::string::String>,
-    pub(crate) items: std::option::Option<std::collections::HashMap<std::string::String, std::vec::Vec<std::vec::Vec<i64>>>>,
+    pub(crate) items: std::option::Option<
+        std::collections::HashMap<std::string::String, std::vec::Vec<std::vec::Vec<i64>>>,
+    >,
     pub(crate) position: std::option::Option<std::string::String>,
     _request_id: Option<String>,
 }
@@ -74,7 +82,8 @@ impl UpdateUsageOutputBuilder {
     }
     /// <p>The plan Id associated with this usage data.</p>
     pub fn set_usage_plan_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.usage_plan_id = input; self
+        self.usage_plan_id = input;
+        self
     }
     /// <p>The starting date of the usage data.</p>
     pub fn start_date(mut self, input: impl Into<std::string::String>) -> Self {
@@ -83,7 +92,8 @@ impl UpdateUsageOutputBuilder {
     }
     /// <p>The starting date of the usage data.</p>
     pub fn set_start_date(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.start_date = input; self
+        self.start_date = input;
+        self
     }
     /// <p>The ending date of the usage data.</p>
     pub fn end_date(mut self, input: impl Into<std::string::String>) -> Self {
@@ -92,22 +102,33 @@ impl UpdateUsageOutputBuilder {
     }
     /// <p>The ending date of the usage data.</p>
     pub fn set_end_date(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.end_date = input; self
+        self.end_date = input;
+        self
     }
     /// Adds a key-value pair to `items`.
     ///
     /// To override the contents of this collection use [`set_items`](Self::set_items).
     ///
     /// <p>The usage data, as daily logs of used and remaining quotas, over the specified time interval indexed over the API keys in a usage plan. For example, <code>{..., "values" : { "{api_key}" : [ [0, 100], [10, 90], [100, 10]]}</code>, where <code>{api_key}</code> stands for an API key value and the daily log entry is of the format <code>[used quota, remaining quota]</code>.</p>
-    pub fn items(mut self, k: impl Into<std::string::String>, v: std::vec::Vec<std::vec::Vec<i64>>) -> Self {
+    pub fn items(
+        mut self,
+        k: impl Into<std::string::String>,
+        v: std::vec::Vec<std::vec::Vec<i64>>,
+    ) -> Self {
         let mut hash_map = self.items.unwrap_or_default();
-                        hash_map.insert(k.into(), v);
-                        self.items = Some(hash_map);
-                        self
+        hash_map.insert(k.into(), v);
+        self.items = Some(hash_map);
+        self
     }
     /// <p>The usage data, as daily logs of used and remaining quotas, over the specified time interval indexed over the API keys in a usage plan. For example, <code>{..., "values" : { "{api_key}" : [ [0, 100], [10, 90], [100, 10]]}</code>, where <code>{api_key}</code> stands for an API key value and the daily log entry is of the format <code>[used quota, remaining quota]</code>.</p>
-    pub fn set_items(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::vec::Vec<std::vec::Vec<i64>>>>) -> Self {
-        self.items = input; self
+    pub fn set_items(
+        mut self,
+        input: std::option::Option<
+            std::collections::HashMap<std::string::String, std::vec::Vec<std::vec::Vec<i64>>>,
+        >,
+    ) -> Self {
+        self.items = input;
+        self
     }
     /// <p>The current pagination position in the paged result set.</p>
     pub fn position(mut self, input: impl Into<std::string::String>) -> Self {
@@ -116,32 +137,27 @@ impl UpdateUsageOutputBuilder {
     }
     /// <p>The current pagination position in the paged result set.</p>
     pub fn set_position(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.position = input; self
+        self.position = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`UpdateUsageOutput`](crate::operation::update_usage::UpdateUsageOutput).
     pub fn build(self) -> crate::operation::update_usage::UpdateUsageOutput {
         crate::operation::update_usage::UpdateUsageOutput {
-            usage_plan_id: self.usage_plan_id
-            ,
-            start_date: self.start_date
-            ,
-            end_date: self.end_date
-            ,
-            items: self.items
-            ,
-            position: self.position
-            ,
+            usage_plan_id: self.usage_plan_id,
+            start_date: self.start_date,
+            end_date: self.end_date,
+            items: self.items,
+            position: self.position,
             _request_id: self._request_id,
         }
     }
 }
-

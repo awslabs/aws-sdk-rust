@@ -3,7 +3,7 @@
 /// <p>The filter that specifies the billing groups and pricing plans to retrieve billing group information. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListBillingGroupsFilter  {
+pub struct ListBillingGroupsFilter {
     /// <p>The list of billing group Amazon Resource Names (ARNs) to retrieve information. </p>
     #[doc(hidden)]
     pub arns: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -13,11 +13,11 @@ pub struct ListBillingGroupsFilter  {
 }
 impl ListBillingGroupsFilter {
     /// <p>The list of billing group Amazon Resource Names (ARNs) to retrieve information. </p>
-    pub fn arns(&self) -> std::option::Option<& [std::string::String]> {
+    pub fn arns(&self) -> std::option::Option<&[std::string::String]> {
         self.arns.as_deref()
     }
     /// <p>The pricing plan Amazon Resource Names (ARNs) to retrieve information. </p>
-    pub fn pricing_plan(&self) -> std::option::Option<& str> {
+    pub fn pricing_plan(&self) -> std::option::Option<&str> {
         self.pricing_plan.as_deref()
     }
 }
@@ -43,13 +43,17 @@ impl ListBillingGroupsFilterBuilder {
     /// <p>The list of billing group Amazon Resource Names (ARNs) to retrieve information. </p>
     pub fn arns(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.arns.unwrap_or_default();
-                        v.push(input.into());
-                        self.arns = Some(v);
-                        self
+        v.push(input.into());
+        self.arns = Some(v);
+        self
     }
     /// <p>The list of billing group Amazon Resource Names (ARNs) to retrieve information. </p>
-    pub fn set_arns(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-        self.arns = input; self
+    pub fn set_arns(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
+        self.arns = input;
+        self
     }
     /// <p>The pricing plan Amazon Resource Names (ARNs) to retrieve information. </p>
     pub fn pricing_plan(mut self, input: impl Into<std::string::String>) -> Self {
@@ -58,16 +62,14 @@ impl ListBillingGroupsFilterBuilder {
     }
     /// <p>The pricing plan Amazon Resource Names (ARNs) to retrieve information. </p>
     pub fn set_pricing_plan(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.pricing_plan = input; self
+        self.pricing_plan = input;
+        self
     }
     /// Consumes the builder and constructs a [`ListBillingGroupsFilter`](crate::types::ListBillingGroupsFilter).
     pub fn build(self) -> crate::types::ListBillingGroupsFilter {
         crate::types::ListBillingGroupsFilter {
-            arns: self.arns
-            ,
-            pricing_plan: self.pricing_plan
-            ,
+            arns: self.arns,
+            pricing_plan: self.pricing_plan,
         }
     }
 }
-

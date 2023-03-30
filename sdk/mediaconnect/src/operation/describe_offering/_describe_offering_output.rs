@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeOfferingOutput  {
+pub struct DescribeOfferingOutput {
     /// A savings plan that reserves a certain amount of outbound bandwidth usage at a discounted rate each month over a period of time.
     #[doc(hidden)]
     pub offering: std::option::Option<crate::types::Offering>,
@@ -10,18 +10,19 @@ pub struct DescribeOfferingOutput  {
 }
 impl DescribeOfferingOutput {
     /// A savings plan that reserves a certain amount of outbound bandwidth usage at a discounted rate each month over a period of time.
-    pub fn offering(&self) -> std::option::Option<& crate::types::Offering> {
+    pub fn offering(&self) -> std::option::Option<&crate::types::Offering> {
         self.offering.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for DescribeOfferingOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl DescribeOfferingOutput {
     /// Creates a new builder-style object to manufacture [`DescribeOfferingOutput`](crate::operation::describe_offering::DescribeOfferingOutput).
-    pub fn builder() -> crate::operation::describe_offering::builders::DescribeOfferingOutputBuilder {
+    pub fn builder() -> crate::operation::describe_offering::builders::DescribeOfferingOutputBuilder
+    {
         crate::operation::describe_offering::builders::DescribeOfferingOutputBuilder::default()
     }
 }
@@ -41,24 +42,23 @@ impl DescribeOfferingOutputBuilder {
     }
     /// A savings plan that reserves a certain amount of outbound bandwidth usage at a discounted rate each month over a period of time.
     pub fn set_offering(mut self, input: std::option::Option<crate::types::Offering>) -> Self {
-        self.offering = input; self
+        self.offering = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`DescribeOfferingOutput`](crate::operation::describe_offering::DescribeOfferingOutput).
     pub fn build(self) -> crate::operation::describe_offering::DescribeOfferingOutput {
         crate::operation::describe_offering::DescribeOfferingOutput {
-            offering: self.offering
-            ,
+            offering: self.offering,
             _request_id: self._request_id,
         }
     }
 }
-

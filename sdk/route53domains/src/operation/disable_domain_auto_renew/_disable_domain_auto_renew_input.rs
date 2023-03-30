@@ -2,20 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DisableDomainAutoRenewInput  {
+pub struct DisableDomainAutoRenewInput {
     /// <p>The name of the domain that you want to disable automatic renewal for.</p>
     #[doc(hidden)]
     pub domain_name: std::option::Option<std::string::String>,
 }
 impl DisableDomainAutoRenewInput {
     /// <p>The name of the domain that you want to disable automatic renewal for.</p>
-    pub fn domain_name(&self) -> std::option::Option<& str> {
+    pub fn domain_name(&self) -> std::option::Option<&str> {
         self.domain_name.as_deref()
     }
 }
 impl DisableDomainAutoRenewInput {
     /// Creates a new builder-style object to manufacture [`DisableDomainAutoRenewInput`](crate::operation::disable_domain_auto_renew::DisableDomainAutoRenewInput).
-    pub fn builder() -> crate::operation::disable_domain_auto_renew::builders::DisableDomainAutoRenewInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::disable_domain_auto_renew::builders::DisableDomainAutoRenewInputBuilder
+    {
         crate::operation::disable_domain_auto_renew::builders::DisableDomainAutoRenewInputBuilder::default()
     }
 }
@@ -34,16 +36,20 @@ impl DisableDomainAutoRenewInputBuilder {
     }
     /// <p>The name of the domain that you want to disable automatic renewal for.</p>
     pub fn set_domain_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.domain_name = input; self
+        self.domain_name = input;
+        self
     }
     /// Consumes the builder and constructs a [`DisableDomainAutoRenewInput`](crate::operation::disable_domain_auto_renew::DisableDomainAutoRenewInput).
-    pub fn build(self) -> Result<crate::operation::disable_domain_auto_renew::DisableDomainAutoRenewInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::disable_domain_auto_renew::DisableDomainAutoRenewInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::disable_domain_auto_renew::DisableDomainAutoRenewInput {
-                domain_name: self.domain_name
-                ,
-            }
+                domain_name: self.domain_name,
+            },
         )
     }
 }
-

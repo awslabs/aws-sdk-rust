@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PutLabelInput  {
+pub struct PutLabelInput {
     /// <p>The label name.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -15,15 +15,15 @@ pub struct PutLabelInput  {
 }
 impl PutLabelInput {
     /// <p>The label name.</p>
-    pub fn name(&self) -> std::option::Option<& str> {
+    pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>The label description.</p>
-    pub fn description(&self) -> std::option::Option<& str> {
+    pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
     /// <p></p>
-    pub fn tags(&self) -> std::option::Option<& [crate::types::Tag]> {
+    pub fn tags(&self) -> std::option::Option<&[crate::types::Tag]> {
         self.tags.as_deref()
     }
 }
@@ -50,7 +50,8 @@ impl PutLabelInputBuilder {
     }
     /// <p>The label name.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input; self
+        self.name = input;
+        self
     }
     /// <p>The label description.</p>
     pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -59,7 +60,8 @@ impl PutLabelInputBuilder {
     }
     /// <p>The label description.</p>
     pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.description = input; self
+        self.description = input;
+        self
     }
     /// Appends an item to `tags`.
     ///
@@ -68,26 +70,29 @@ impl PutLabelInputBuilder {
     /// <p></p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
-                        v.push(input);
-                        self.tags = Some(v);
-                        self
+        v.push(input);
+        self.tags = Some(v);
+        self
     }
     /// <p></p>
-    pub fn set_tags(mut self, input: std::option::Option<std::vec::Vec<crate::types::Tag>>) -> Self {
-        self.tags = input; self
+    pub fn set_tags(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::Tag>>,
+    ) -> Self {
+        self.tags = input;
+        self
     }
     /// Consumes the builder and constructs a [`PutLabelInput`](crate::operation::put_label::PutLabelInput).
-    pub fn build(self) -> Result<crate::operation::put_label::PutLabelInput, aws_smithy_http::operation::error::BuildError> {
-        Ok(
-            crate::operation::put_label::PutLabelInput {
-                name: self.name
-                ,
-                description: self.description
-                ,
-                tags: self.tags
-                ,
-            }
-        )
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::put_label::PutLabelInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        Ok(crate::operation::put_label::PutLabelInput {
+            name: self.name,
+            description: self.description,
+            tags: self.tags,
+        })
     }
 }
-

@@ -3,7 +3,7 @@
 /// <p>Information about a Sidewalk account.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct SidewalkAccountInfo  {
+pub struct SidewalkAccountInfo {
     /// <p>The Sidewalk Amazon ID.</p>
     #[doc(hidden)]
     pub amazon_id: std::option::Option<std::string::String>,
@@ -13,15 +13,15 @@ pub struct SidewalkAccountInfo  {
 }
 impl SidewalkAccountInfo {
     /// <p>The Sidewalk Amazon ID.</p>
-    pub fn amazon_id(&self) -> std::option::Option<& str> {
+    pub fn amazon_id(&self) -> std::option::Option<&str> {
         self.amazon_id.as_deref()
     }
     /// <p>The Sidewalk application server private key.</p>
-    pub fn app_server_private_key(&self) -> std::option::Option<& str> {
+    pub fn app_server_private_key(&self) -> std::option::Option<&str> {
         self.app_server_private_key.as_deref()
     }
 }
-impl  std::fmt::Debug for SidewalkAccountInfo  {
+impl std::fmt::Debug for SidewalkAccountInfo {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("SidewalkAccountInfo");
         formatter.field("amazon_id", &self.amazon_id);
@@ -51,7 +51,8 @@ impl SidewalkAccountInfoBuilder {
     }
     /// <p>The Sidewalk Amazon ID.</p>
     pub fn set_amazon_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.amazon_id = input; self
+        self.amazon_id = input;
+        self
     }
     /// <p>The Sidewalk application server private key.</p>
     pub fn app_server_private_key(mut self, input: impl Into<std::string::String>) -> Self {
@@ -59,16 +60,18 @@ impl SidewalkAccountInfoBuilder {
         self
     }
     /// <p>The Sidewalk application server private key.</p>
-    pub fn set_app_server_private_key(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.app_server_private_key = input; self
+    pub fn set_app_server_private_key(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.app_server_private_key = input;
+        self
     }
     /// Consumes the builder and constructs a [`SidewalkAccountInfo`](crate::types::SidewalkAccountInfo).
     pub fn build(self) -> crate::types::SidewalkAccountInfo {
         crate::types::SidewalkAccountInfo {
-            amazon_id: self.amazon_id
-            ,
-            app_server_private_key: self.app_server_private_key
-            ,
+            amazon_id: self.amazon_id,
+            app_server_private_key: self.app_server_private_key,
         }
     }
 }
@@ -80,4 +83,3 @@ impl std::fmt::Debug for SidewalkAccountInfoBuilder {
         formatter.finish()
     }
 }
-

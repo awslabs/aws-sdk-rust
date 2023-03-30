@@ -2,22 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetEc2InstanceRecommendationsInput  {
+pub struct GetEc2InstanceRecommendationsInput {
     /// <p>The Amazon Resource Name (ARN) of the instances for which to return recommendations.</p>
     #[doc(hidden)]
     pub instance_arns: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The token to advance to the next page of instance recommendations.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
-    /// <p>The maximum number of instance recommendations to return with a single request.</p> 
+    /// <p>The maximum number of instance recommendations to return with a single request.</p>
     /// <p>To retrieve the remaining results, make another request with the returned <code>nextToken</code> value.</p>
     #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p>An array of objects to specify a filter that returns a more specific list of instance recommendations.</p>
     #[doc(hidden)]
     pub filters: std::option::Option<std::vec::Vec<crate::types::Filter>>,
-    /// <p>The ID of the Amazon Web Services account for which to return instance recommendations.</p> 
-    /// <p>If your account is the management account of an organization, use this parameter to specify the member account for which you want to return instance recommendations.</p> 
+    /// <p>The ID of the Amazon Web Services account for which to return instance recommendations.</p>
+    /// <p>If your account is the management account of an organization, use this parameter to specify the member account for which you want to return instance recommendations.</p>
     /// <p>Only one account ID can be specified per request.</p>
     #[doc(hidden)]
     pub account_ids: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -27,36 +27,38 @@ pub struct GetEc2InstanceRecommendationsInput  {
 }
 impl GetEc2InstanceRecommendationsInput {
     /// <p>The Amazon Resource Name (ARN) of the instances for which to return recommendations.</p>
-    pub fn instance_arns(&self) -> std::option::Option<& [std::string::String]> {
+    pub fn instance_arns(&self) -> std::option::Option<&[std::string::String]> {
         self.instance_arns.as_deref()
     }
     /// <p>The token to advance to the next page of instance recommendations.</p>
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// <p>The maximum number of instance recommendations to return with a single request.</p> 
+    /// <p>The maximum number of instance recommendations to return with a single request.</p>
     /// <p>To retrieve the remaining results, make another request with the returned <code>nextToken</code> value.</p>
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
     /// <p>An array of objects to specify a filter that returns a more specific list of instance recommendations.</p>
-    pub fn filters(&self) -> std::option::Option<& [crate::types::Filter]> {
+    pub fn filters(&self) -> std::option::Option<&[crate::types::Filter]> {
         self.filters.as_deref()
     }
-    /// <p>The ID of the Amazon Web Services account for which to return instance recommendations.</p> 
-    /// <p>If your account is the management account of an organization, use this parameter to specify the member account for which you want to return instance recommendations.</p> 
+    /// <p>The ID of the Amazon Web Services account for which to return instance recommendations.</p>
+    /// <p>If your account is the management account of an organization, use this parameter to specify the member account for which you want to return instance recommendations.</p>
     /// <p>Only one account ID can be specified per request.</p>
-    pub fn account_ids(&self) -> std::option::Option<& [std::string::String]> {
+    pub fn account_ids(&self) -> std::option::Option<&[std::string::String]> {
         self.account_ids.as_deref()
     }
     /// <p>An object to specify the preferences for the Amazon EC2 instance recommendations to return in the response.</p>
-    pub fn recommendation_preferences(&self) -> std::option::Option<& crate::types::RecommendationPreferences> {
+    pub fn recommendation_preferences(
+        &self,
+    ) -> std::option::Option<&crate::types::RecommendationPreferences> {
         self.recommendation_preferences.as_ref()
     }
 }
 impl GetEc2InstanceRecommendationsInput {
     /// Creates a new builder-style object to manufacture [`GetEc2InstanceRecommendationsInput`](crate::operation::get_ec2_instance_recommendations::GetEc2InstanceRecommendationsInput).
-    pub fn builder() -> crate::operation::get_ec2_instance_recommendations::builders::GetEc2InstanceRecommendationsInputBuilder {
+    pub fn builder() -> crate::operation::get_ec2_instance_recommendations::builders::GetEc2InstanceRecommendationsInputBuilder{
         crate::operation::get_ec2_instance_recommendations::builders::GetEc2InstanceRecommendationsInputBuilder::default()
     }
 }
@@ -70,7 +72,8 @@ pub struct GetEc2InstanceRecommendationsInputBuilder {
     pub(crate) max_results: std::option::Option<i32>,
     pub(crate) filters: std::option::Option<std::vec::Vec<crate::types::Filter>>,
     pub(crate) account_ids: std::option::Option<std::vec::Vec<std::string::String>>,
-    pub(crate) recommendation_preferences: std::option::Option<crate::types::RecommendationPreferences>,
+    pub(crate) recommendation_preferences:
+        std::option::Option<crate::types::RecommendationPreferences>,
 }
 impl GetEc2InstanceRecommendationsInputBuilder {
     /// Appends an item to `instance_arns`.
@@ -80,13 +83,17 @@ impl GetEc2InstanceRecommendationsInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the instances for which to return recommendations.</p>
     pub fn instance_arns(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.instance_arns.unwrap_or_default();
-                        v.push(input.into());
-                        self.instance_arns = Some(v);
-                        self
+        v.push(input.into());
+        self.instance_arns = Some(v);
+        self
     }
     /// <p>The Amazon Resource Name (ARN) of the instances for which to return recommendations.</p>
-    pub fn set_instance_arns(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-        self.instance_arns = input; self
+    pub fn set_instance_arns(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
+        self.instance_arns = input;
+        self
     }
     /// <p>The token to advance to the next page of instance recommendations.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -95,18 +102,20 @@ impl GetEc2InstanceRecommendationsInputBuilder {
     }
     /// <p>The token to advance to the next page of instance recommendations.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input; self
+        self.next_token = input;
+        self
     }
-    /// <p>The maximum number of instance recommendations to return with a single request.</p> 
+    /// <p>The maximum number of instance recommendations to return with a single request.</p>
     /// <p>To retrieve the remaining results, make another request with the returned <code>nextToken</code> value.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.max_results = Some(input);
         self
     }
-    /// <p>The maximum number of instance recommendations to return with a single request.</p> 
+    /// <p>The maximum number of instance recommendations to return with a single request.</p>
     /// <p>To retrieve the remaining results, make another request with the returned <code>nextToken</code> value.</p>
     pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_results = input; self
+        self.max_results = input;
+        self
     }
     /// Appends an item to `filters`.
     ///
@@ -115,44 +124,64 @@ impl GetEc2InstanceRecommendationsInputBuilder {
     /// <p>An array of objects to specify a filter that returns a more specific list of instance recommendations.</p>
     pub fn filters(mut self, input: crate::types::Filter) -> Self {
         let mut v = self.filters.unwrap_or_default();
-                        v.push(input);
-                        self.filters = Some(v);
-                        self
+        v.push(input);
+        self.filters = Some(v);
+        self
     }
     /// <p>An array of objects to specify a filter that returns a more specific list of instance recommendations.</p>
-    pub fn set_filters(mut self, input: std::option::Option<std::vec::Vec<crate::types::Filter>>) -> Self {
-        self.filters = input; self
+    pub fn set_filters(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::Filter>>,
+    ) -> Self {
+        self.filters = input;
+        self
     }
     /// Appends an item to `account_ids`.
     ///
     /// To override the contents of this collection use [`set_account_ids`](Self::set_account_ids).
     ///
-    /// <p>The ID of the Amazon Web Services account for which to return instance recommendations.</p> 
-    /// <p>If your account is the management account of an organization, use this parameter to specify the member account for which you want to return instance recommendations.</p> 
+    /// <p>The ID of the Amazon Web Services account for which to return instance recommendations.</p>
+    /// <p>If your account is the management account of an organization, use this parameter to specify the member account for which you want to return instance recommendations.</p>
     /// <p>Only one account ID can be specified per request.</p>
     pub fn account_ids(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.account_ids.unwrap_or_default();
-                        v.push(input.into());
-                        self.account_ids = Some(v);
-                        self
+        v.push(input.into());
+        self.account_ids = Some(v);
+        self
     }
-    /// <p>The ID of the Amazon Web Services account for which to return instance recommendations.</p> 
-    /// <p>If your account is the management account of an organization, use this parameter to specify the member account for which you want to return instance recommendations.</p> 
+    /// <p>The ID of the Amazon Web Services account for which to return instance recommendations.</p>
+    /// <p>If your account is the management account of an organization, use this parameter to specify the member account for which you want to return instance recommendations.</p>
     /// <p>Only one account ID can be specified per request.</p>
-    pub fn set_account_ids(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-        self.account_ids = input; self
+    pub fn set_account_ids(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
+        self.account_ids = input;
+        self
     }
     /// <p>An object to specify the preferences for the Amazon EC2 instance recommendations to return in the response.</p>
-    pub fn recommendation_preferences(mut self, input: crate::types::RecommendationPreferences) -> Self {
+    pub fn recommendation_preferences(
+        mut self,
+        input: crate::types::RecommendationPreferences,
+    ) -> Self {
         self.recommendation_preferences = Some(input);
         self
     }
     /// <p>An object to specify the preferences for the Amazon EC2 instance recommendations to return in the response.</p>
-    pub fn set_recommendation_preferences(mut self, input: std::option::Option<crate::types::RecommendationPreferences>) -> Self {
-        self.recommendation_preferences = input; self
+    pub fn set_recommendation_preferences(
+        mut self,
+        input: std::option::Option<crate::types::RecommendationPreferences>,
+    ) -> Self {
+        self.recommendation_preferences = input;
+        self
     }
     /// Consumes the builder and constructs a [`GetEc2InstanceRecommendationsInput`](crate::operation::get_ec2_instance_recommendations::GetEc2InstanceRecommendationsInput).
-    pub fn build(self) -> Result<crate::operation::get_ec2_instance_recommendations::GetEc2InstanceRecommendationsInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::get_ec2_instance_recommendations::GetEc2InstanceRecommendationsInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::get_ec2_instance_recommendations::GetEc2InstanceRecommendationsInput {
                 instance_arns: self.instance_arns
@@ -171,4 +200,3 @@ impl GetEc2InstanceRecommendationsInputBuilder {
         )
     }
 }
-

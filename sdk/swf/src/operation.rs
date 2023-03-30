@@ -111,4 +111,3 @@ pub mod undeprecate_workflow_type;
 
 /// Types for the `UntagResource` operation.
 pub mod untag_resource;
-

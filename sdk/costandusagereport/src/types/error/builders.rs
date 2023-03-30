@@ -6,4 +6,3 @@ pub use crate::types::error::_report_limit_reached_exception::ReportLimitReached
 pub use crate::types::error::_internal_error_exception::InternalErrorExceptionBuilder;
 
 pub use crate::types::error::_duplicate_report_name_exception::DuplicateReportNameExceptionBuilder;
-

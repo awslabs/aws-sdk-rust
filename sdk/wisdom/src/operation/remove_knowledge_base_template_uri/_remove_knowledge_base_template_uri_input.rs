@@ -2,20 +2,20 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct RemoveKnowledgeBaseTemplateUriInput  {
+pub struct RemoveKnowledgeBaseTemplateUriInput {
     /// <p>The identifier of the knowledge base. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
     #[doc(hidden)]
     pub knowledge_base_id: std::option::Option<std::string::String>,
 }
 impl RemoveKnowledgeBaseTemplateUriInput {
     /// <p>The identifier of the knowledge base. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
-    pub fn knowledge_base_id(&self) -> std::option::Option<& str> {
+    pub fn knowledge_base_id(&self) -> std::option::Option<&str> {
         self.knowledge_base_id.as_deref()
     }
 }
 impl RemoveKnowledgeBaseTemplateUriInput {
     /// Creates a new builder-style object to manufacture [`RemoveKnowledgeBaseTemplateUriInput`](crate::operation::remove_knowledge_base_template_uri::RemoveKnowledgeBaseTemplateUriInput).
-    pub fn builder() -> crate::operation::remove_knowledge_base_template_uri::builders::RemoveKnowledgeBaseTemplateUriInputBuilder {
+    pub fn builder() -> crate::operation::remove_knowledge_base_template_uri::builders::RemoveKnowledgeBaseTemplateUriInputBuilder{
         crate::operation::remove_knowledge_base_template_uri::builders::RemoveKnowledgeBaseTemplateUriInputBuilder::default()
     }
 }
@@ -33,11 +33,20 @@ impl RemoveKnowledgeBaseTemplateUriInputBuilder {
         self
     }
     /// <p>The identifier of the knowledge base. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
-    pub fn set_knowledge_base_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.knowledge_base_id = input; self
+    pub fn set_knowledge_base_id(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.knowledge_base_id = input;
+        self
     }
     /// Consumes the builder and constructs a [`RemoveKnowledgeBaseTemplateUriInput`](crate::operation::remove_knowledge_base_template_uri::RemoveKnowledgeBaseTemplateUriInput).
-    pub fn build(self) -> Result<crate::operation::remove_knowledge_base_template_uri::RemoveKnowledgeBaseTemplateUriInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::remove_knowledge_base_template_uri::RemoveKnowledgeBaseTemplateUriInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::remove_knowledge_base_template_uri::RemoveKnowledgeBaseTemplateUriInput {
                 knowledge_base_id: self.knowledge_base_id
@@ -46,4 +55,3 @@ impl RemoveKnowledgeBaseTemplateUriInputBuilder {
         )
     }
 }
-

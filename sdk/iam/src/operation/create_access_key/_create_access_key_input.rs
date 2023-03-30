@@ -2,16 +2,16 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateAccessKeyInput  {
-    /// <p>The name of the IAM user that the new key will belong to.</p> 
+pub struct CreateAccessKeyInput {
+    /// <p>The name of the IAM user that the new key will belong to.</p>
     /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
     #[doc(hidden)]
     pub user_name: std::option::Option<std::string::String>,
 }
 impl CreateAccessKeyInput {
-    /// <p>The name of the IAM user that the new key will belong to.</p> 
+    /// <p>The name of the IAM user that the new key will belong to.</p>
     /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
-    pub fn user_name(&self) -> std::option::Option<& str> {
+    pub fn user_name(&self) -> std::option::Option<&str> {
         self.user_name.as_deref()
     }
 }
@@ -29,25 +29,27 @@ pub struct CreateAccessKeyInputBuilder {
     pub(crate) user_name: std::option::Option<std::string::String>,
 }
 impl CreateAccessKeyInputBuilder {
-    /// <p>The name of the IAM user that the new key will belong to.</p> 
+    /// <p>The name of the IAM user that the new key will belong to.</p>
     /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
     pub fn user_name(mut self, input: impl Into<std::string::String>) -> Self {
         self.user_name = Some(input.into());
         self
     }
-    /// <p>The name of the IAM user that the new key will belong to.</p> 
+    /// <p>The name of the IAM user that the new key will belong to.</p>
     /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
     pub fn set_user_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.user_name = input; self
+        self.user_name = input;
+        self
     }
     /// Consumes the builder and constructs a [`CreateAccessKeyInput`](crate::operation::create_access_key::CreateAccessKeyInput).
-    pub fn build(self) -> Result<crate::operation::create_access_key::CreateAccessKeyInput, aws_smithy_http::operation::error::BuildError> {
-        Ok(
-            crate::operation::create_access_key::CreateAccessKeyInput {
-                user_name: self.user_name
-                ,
-            }
-        )
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::create_access_key::CreateAccessKeyInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        Ok(crate::operation::create_access_key::CreateAccessKeyInput {
+            user_name: self.user_name,
+        })
     }
 }
-

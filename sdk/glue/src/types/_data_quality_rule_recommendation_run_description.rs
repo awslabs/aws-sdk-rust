@@ -3,7 +3,7 @@
 /// <p>Describes the result of a data quality rule recommendation run.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DataQualityRuleRecommendationRunDescription  {
+pub struct DataQualityRuleRecommendationRunDescription {
     /// <p>The unique run identifier associated with this run.</p>
     #[doc(hidden)]
     pub run_id: std::option::Option<std::string::String>,
@@ -19,19 +19,19 @@ pub struct DataQualityRuleRecommendationRunDescription  {
 }
 impl DataQualityRuleRecommendationRunDescription {
     /// <p>The unique run identifier associated with this run.</p>
-    pub fn run_id(&self) -> std::option::Option<& str> {
+    pub fn run_id(&self) -> std::option::Option<&str> {
         self.run_id.as_deref()
     }
     /// <p>The status for this run.</p>
-    pub fn status(&self) -> std::option::Option<& crate::types::TaskStatusType> {
+    pub fn status(&self) -> std::option::Option<&crate::types::TaskStatusType> {
         self.status.as_ref()
     }
     /// <p>The date and time when this run started.</p>
-    pub fn started_on(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
+    pub fn started_on(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.started_on.as_ref()
     }
     /// <p>The data source (Glue table) associated with the recommendation run.</p>
-    pub fn data_source(&self) -> std::option::Option<& crate::types::DataSource> {
+    pub fn data_source(&self) -> std::option::Option<&crate::types::DataSource> {
         self.data_source.as_ref()
     }
 }
@@ -59,7 +59,8 @@ impl DataQualityRuleRecommendationRunDescriptionBuilder {
     }
     /// <p>The unique run identifier associated with this run.</p>
     pub fn set_run_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.run_id = input; self
+        self.run_id = input;
+        self
     }
     /// <p>The status for this run.</p>
     pub fn status(mut self, input: crate::types::TaskStatusType) -> Self {
@@ -68,7 +69,8 @@ impl DataQualityRuleRecommendationRunDescriptionBuilder {
     }
     /// <p>The status for this run.</p>
     pub fn set_status(mut self, input: std::option::Option<crate::types::TaskStatusType>) -> Self {
-        self.status = input; self
+        self.status = input;
+        self
     }
     /// <p>The date and time when this run started.</p>
     pub fn started_on(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -76,8 +78,12 @@ impl DataQualityRuleRecommendationRunDescriptionBuilder {
         self
     }
     /// <p>The date and time when this run started.</p>
-    pub fn set_started_on(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.started_on = input; self
+    pub fn set_started_on(
+        mut self,
+        input: std::option::Option<aws_smithy_types::DateTime>,
+    ) -> Self {
+        self.started_on = input;
+        self
     }
     /// <p>The data source (Glue table) associated with the recommendation run.</p>
     pub fn data_source(mut self, input: crate::types::DataSource) -> Self {
@@ -86,20 +92,16 @@ impl DataQualityRuleRecommendationRunDescriptionBuilder {
     }
     /// <p>The data source (Glue table) associated with the recommendation run.</p>
     pub fn set_data_source(mut self, input: std::option::Option<crate::types::DataSource>) -> Self {
-        self.data_source = input; self
+        self.data_source = input;
+        self
     }
     /// Consumes the builder and constructs a [`DataQualityRuleRecommendationRunDescription`](crate::types::DataQualityRuleRecommendationRunDescription).
     pub fn build(self) -> crate::types::DataQualityRuleRecommendationRunDescription {
         crate::types::DataQualityRuleRecommendationRunDescription {
-            run_id: self.run_id
-            ,
-            status: self.status
-            ,
-            started_on: self.started_on
-            ,
-            data_source: self.data_source
-            ,
+            run_id: self.run_id,
+            status: self.status,
+            started_on: self.started_on,
+            data_source: self.data_source,
         }
     }
 }
-

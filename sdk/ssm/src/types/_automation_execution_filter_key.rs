@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-/// 
+///
 /// Here is an example of how you can make a match expression forward-compatible:
-/// 
+///
 /// ```text
 /// # let automationexecutionfilterkey = unimplemented!();
 /// match automationexecutionfilterkey {
@@ -40,14 +40,22 @@
 /// Specifically, when `automationexecutionfilterkey` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `AutomationExecutionFilterKey::NewFeature` also yielding `"NewFeature"`.
-/// 
+///
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
 pub enum AutomationExecutionFilterKey {
     #[allow(missing_docs)] // documentation missing in model
     AutomationSubtype,
@@ -74,61 +82,75 @@ pub enum AutomationExecutionFilterKey {
     #[allow(missing_docs)] // documentation missing in model
     TargetResourceGroup,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::primitives::UnknownVariantValue)
+    Unknown(crate::primitives::UnknownVariantValue),
 }
 impl std::convert::From<&str> for AutomationExecutionFilterKey {
-                fn from(s: &str) -> Self {
-                    match s {
-                        "AutomationSubtype" => AutomationExecutionFilterKey::AutomationSubtype,
-"AutomationType" => AutomationExecutionFilterKey::AutomationType,
-"CurrentAction" => AutomationExecutionFilterKey::CurrentAction,
-"DocumentNamePrefix" => AutomationExecutionFilterKey::DocumentNamePrefix,
-"ExecutionId" => AutomationExecutionFilterKey::ExecutionId,
-"ExecutionStatus" => AutomationExecutionFilterKey::ExecutionStatus,
-"OpsItemId" => AutomationExecutionFilterKey::OpsItemId,
-"ParentExecutionId" => AutomationExecutionFilterKey::ParentExecutionId,
-"StartTimeAfter" => AutomationExecutionFilterKey::StartTimeAfter,
-"StartTimeBefore" => AutomationExecutionFilterKey::StartTimeBefore,
-"TagKey" => AutomationExecutionFilterKey::TagKey,
-"TargetResourceGroup" => AutomationExecutionFilterKey::TargetResourceGroup,
-other => AutomationExecutionFilterKey::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
-                    }
-                }
-            }
-impl std::str::FromStr for AutomationExecutionFilterKey {
-                type Err = std::convert::Infallible;
-
-                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-                    Ok(AutomationExecutionFilterKey::from(s))
-                }
-            }
-impl AutomationExecutionFilterKey {
-                /// Returns the `&str` value of the enum member.
-                pub fn as_str(&self) -> &str {
-                    match self {
-    AutomationExecutionFilterKey::AutomationSubtype => "AutomationSubtype",
-    AutomationExecutionFilterKey::AutomationType => "AutomationType",
-    AutomationExecutionFilterKey::CurrentAction => "CurrentAction",
-    AutomationExecutionFilterKey::DocumentNamePrefix => "DocumentNamePrefix",
-    AutomationExecutionFilterKey::ExecutionId => "ExecutionId",
-    AutomationExecutionFilterKey::ExecutionStatus => "ExecutionStatus",
-    AutomationExecutionFilterKey::OpsItemId => "OpsItemId",
-    AutomationExecutionFilterKey::ParentExecutionId => "ParentExecutionId",
-    AutomationExecutionFilterKey::StartTimeAfter => "StartTimeAfter",
-    AutomationExecutionFilterKey::StartTimeBefore => "StartTimeBefore",
-    AutomationExecutionFilterKey::TagKey => "TagKey",
-    AutomationExecutionFilterKey::TargetResourceGroup => "TargetResourceGroup",
-    AutomationExecutionFilterKey::Unknown(value) => value.as_str()
+    fn from(s: &str) -> Self {
+        match s {
+            "AutomationSubtype" => AutomationExecutionFilterKey::AutomationSubtype,
+            "AutomationType" => AutomationExecutionFilterKey::AutomationType,
+            "CurrentAction" => AutomationExecutionFilterKey::CurrentAction,
+            "DocumentNamePrefix" => AutomationExecutionFilterKey::DocumentNamePrefix,
+            "ExecutionId" => AutomationExecutionFilterKey::ExecutionId,
+            "ExecutionStatus" => AutomationExecutionFilterKey::ExecutionStatus,
+            "OpsItemId" => AutomationExecutionFilterKey::OpsItemId,
+            "ParentExecutionId" => AutomationExecutionFilterKey::ParentExecutionId,
+            "StartTimeAfter" => AutomationExecutionFilterKey::StartTimeAfter,
+            "StartTimeBefore" => AutomationExecutionFilterKey::StartTimeBefore,
+            "TagKey" => AutomationExecutionFilterKey::TagKey,
+            "TargetResourceGroup" => AutomationExecutionFilterKey::TargetResourceGroup,
+            other => AutomationExecutionFilterKey::Unknown(crate::primitives::UnknownVariantValue(
+                other.to_owned(),
+            )),
+        }
+    }
 }
-                }
-                /// Returns all the `&str` representations of the enum members.
-                pub const fn values() -> &'static [&'static str] {
-                    &["AutomationSubtype", "AutomationType", "CurrentAction", "DocumentNamePrefix", "ExecutionId", "ExecutionStatus", "OpsItemId", "ParentExecutionId", "StartTimeAfter", "StartTimeBefore", "TagKey", "TargetResourceGroup"]
-                }
-            }
-impl AsRef<str> for AutomationExecutionFilterKey {
-                fn as_ref(&self) -> &str {
-                    self.as_str()
-                }
-            }
+impl std::str::FromStr for AutomationExecutionFilterKey {
+    type Err = std::convert::Infallible;
 
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(AutomationExecutionFilterKey::from(s))
+    }
+}
+impl AutomationExecutionFilterKey {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            AutomationExecutionFilterKey::AutomationSubtype => "AutomationSubtype",
+            AutomationExecutionFilterKey::AutomationType => "AutomationType",
+            AutomationExecutionFilterKey::CurrentAction => "CurrentAction",
+            AutomationExecutionFilterKey::DocumentNamePrefix => "DocumentNamePrefix",
+            AutomationExecutionFilterKey::ExecutionId => "ExecutionId",
+            AutomationExecutionFilterKey::ExecutionStatus => "ExecutionStatus",
+            AutomationExecutionFilterKey::OpsItemId => "OpsItemId",
+            AutomationExecutionFilterKey::ParentExecutionId => "ParentExecutionId",
+            AutomationExecutionFilterKey::StartTimeAfter => "StartTimeAfter",
+            AutomationExecutionFilterKey::StartTimeBefore => "StartTimeBefore",
+            AutomationExecutionFilterKey::TagKey => "TagKey",
+            AutomationExecutionFilterKey::TargetResourceGroup => "TargetResourceGroup",
+            AutomationExecutionFilterKey::Unknown(value) => value.as_str(),
+        }
+    }
+    /// Returns all the `&str` representations of the enum members.
+    pub const fn values() -> &'static [&'static str] {
+        &[
+            "AutomationSubtype",
+            "AutomationType",
+            "CurrentAction",
+            "DocumentNamePrefix",
+            "ExecutionId",
+            "ExecutionStatus",
+            "OpsItemId",
+            "ParentExecutionId",
+            "StartTimeAfter",
+            "StartTimeBefore",
+            "TagKey",
+            "TargetResourceGroup",
+        ]
+    }
+}
+impl AsRef<str> for AutomationExecutionFilterKey {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}

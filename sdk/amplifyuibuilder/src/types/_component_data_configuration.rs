@@ -3,7 +3,7 @@
 /// <p>Describes the configuration for binding a component's properties to data.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ComponentDataConfiguration  {
+pub struct ComponentDataConfiguration {
     /// <p>The name of the data model to use to bind data to a component.</p>
     #[doc(hidden)]
     pub model: std::option::Option<std::string::String>,
@@ -19,19 +19,19 @@ pub struct ComponentDataConfiguration  {
 }
 impl ComponentDataConfiguration {
     /// <p>The name of the data model to use to bind data to a component.</p>
-    pub fn model(&self) -> std::option::Option<& str> {
+    pub fn model(&self) -> std::option::Option<&str> {
         self.model.as_deref()
     }
     /// <p>Describes how to sort the component's properties.</p>
-    pub fn sort(&self) -> std::option::Option<& [crate::types::SortProperty]> {
+    pub fn sort(&self) -> std::option::Option<&[crate::types::SortProperty]> {
         self.sort.as_deref()
     }
     /// <p>Represents the conditional logic to use when binding data to a component. Use this property to retrieve only a subset of the data in a collection.</p>
-    pub fn predicate(&self) -> std::option::Option<& crate::types::Predicate> {
+    pub fn predicate(&self) -> std::option::Option<&crate::types::Predicate> {
         self.predicate.as_ref()
     }
     /// <p>A list of IDs to use to bind data to a component. Use this property to bind specifically chosen data, rather than data retrieved from a query.</p>
-    pub fn identifiers(&self) -> std::option::Option<& [std::string::String]> {
+    pub fn identifiers(&self) -> std::option::Option<&[std::string::String]> {
         self.identifiers.as_deref()
     }
 }
@@ -59,7 +59,8 @@ impl ComponentDataConfigurationBuilder {
     }
     /// <p>The name of the data model to use to bind data to a component.</p>
     pub fn set_model(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.model = input; self
+        self.model = input;
+        self
     }
     /// Appends an item to `sort`.
     ///
@@ -68,13 +69,17 @@ impl ComponentDataConfigurationBuilder {
     /// <p>Describes how to sort the component's properties.</p>
     pub fn sort(mut self, input: crate::types::SortProperty) -> Self {
         let mut v = self.sort.unwrap_or_default();
-                        v.push(input);
-                        self.sort = Some(v);
-                        self
+        v.push(input);
+        self.sort = Some(v);
+        self
     }
     /// <p>Describes how to sort the component's properties.</p>
-    pub fn set_sort(mut self, input: std::option::Option<std::vec::Vec<crate::types::SortProperty>>) -> Self {
-        self.sort = input; self
+    pub fn set_sort(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::SortProperty>>,
+    ) -> Self {
+        self.sort = input;
+        self
     }
     /// <p>Represents the conditional logic to use when binding data to a component. Use this property to retrieve only a subset of the data in a collection.</p>
     pub fn predicate(mut self, input: crate::types::Predicate) -> Self {
@@ -83,7 +88,8 @@ impl ComponentDataConfigurationBuilder {
     }
     /// <p>Represents the conditional logic to use when binding data to a component. Use this property to retrieve only a subset of the data in a collection.</p>
     pub fn set_predicate(mut self, input: std::option::Option<crate::types::Predicate>) -> Self {
-        self.predicate = input; self
+        self.predicate = input;
+        self
     }
     /// Appends an item to `identifiers`.
     ///
@@ -92,26 +98,25 @@ impl ComponentDataConfigurationBuilder {
     /// <p>A list of IDs to use to bind data to a component. Use this property to bind specifically chosen data, rather than data retrieved from a query.</p>
     pub fn identifiers(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.identifiers.unwrap_or_default();
-                        v.push(input.into());
-                        self.identifiers = Some(v);
-                        self
+        v.push(input.into());
+        self.identifiers = Some(v);
+        self
     }
     /// <p>A list of IDs to use to bind data to a component. Use this property to bind specifically chosen data, rather than data retrieved from a query.</p>
-    pub fn set_identifiers(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-        self.identifiers = input; self
+    pub fn set_identifiers(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
+        self.identifiers = input;
+        self
     }
     /// Consumes the builder and constructs a [`ComponentDataConfiguration`](crate::types::ComponentDataConfiguration).
     pub fn build(self) -> crate::types::ComponentDataConfiguration {
         crate::types::ComponentDataConfiguration {
-            model: self.model
-            ,
-            sort: self.sort
-            ,
-            predicate: self.predicate
-            ,
-            identifiers: self.identifiers
-            ,
+            model: self.model,
+            sort: self.sort,
+            predicate: self.predicate,
+            identifiers: self.identifiers,
         }
     }
 }
-

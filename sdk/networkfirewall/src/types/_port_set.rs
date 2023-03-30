@@ -3,14 +3,14 @@
 /// <p>A set of port ranges for use in the rules in a rule group. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PortSet  {
+pub struct PortSet {
     /// <p>The set of port ranges. </p>
     #[doc(hidden)]
     pub definition: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl PortSet {
     /// <p>The set of port ranges. </p>
-    pub fn definition(&self) -> std::option::Option<& [std::string::String]> {
+    pub fn definition(&self) -> std::option::Option<&[std::string::String]> {
         self.definition.as_deref()
     }
 }
@@ -35,20 +35,22 @@ impl PortSetBuilder {
     /// <p>The set of port ranges. </p>
     pub fn definition(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.definition.unwrap_or_default();
-                        v.push(input.into());
-                        self.definition = Some(v);
-                        self
+        v.push(input.into());
+        self.definition = Some(v);
+        self
     }
     /// <p>The set of port ranges. </p>
-    pub fn set_definition(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-        self.definition = input; self
+    pub fn set_definition(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
+        self.definition = input;
+        self
     }
     /// Consumes the builder and constructs a [`PortSet`](crate::types::PortSet).
     pub fn build(self) -> crate::types::PortSet {
         crate::types::PortSet {
-            definition: self.definition
-            ,
+            definition: self.definition,
         }
     }
 }
-

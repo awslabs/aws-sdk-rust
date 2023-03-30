@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateCapacityProviderOutput  {
+pub struct CreateCapacityProviderOutput {
     /// <p>The full description of the new capacity provider.</p>
     #[doc(hidden)]
     pub capacity_provider: std::option::Option<crate::types::CapacityProvider>,
@@ -10,18 +10,20 @@ pub struct CreateCapacityProviderOutput  {
 }
 impl CreateCapacityProviderOutput {
     /// <p>The full description of the new capacity provider.</p>
-    pub fn capacity_provider(&self) -> std::option::Option<& crate::types::CapacityProvider> {
+    pub fn capacity_provider(&self) -> std::option::Option<&crate::types::CapacityProvider> {
         self.capacity_provider.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for CreateCapacityProviderOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl CreateCapacityProviderOutput {
     /// Creates a new builder-style object to manufacture [`CreateCapacityProviderOutput`](crate::operation::create_capacity_provider::CreateCapacityProviderOutput).
-    pub fn builder() -> crate::operation::create_capacity_provider::builders::CreateCapacityProviderOutputBuilder {
+    pub fn builder(
+    ) -> crate::operation::create_capacity_provider::builders::CreateCapacityProviderOutputBuilder
+    {
         crate::operation::create_capacity_provider::builders::CreateCapacityProviderOutputBuilder::default()
     }
 }
@@ -40,25 +42,27 @@ impl CreateCapacityProviderOutputBuilder {
         self
     }
     /// <p>The full description of the new capacity provider.</p>
-    pub fn set_capacity_provider(mut self, input: std::option::Option<crate::types::CapacityProvider>) -> Self {
-        self.capacity_provider = input; self
+    pub fn set_capacity_provider(
+        mut self,
+        input: std::option::Option<crate::types::CapacityProvider>,
+    ) -> Self {
+        self.capacity_provider = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`CreateCapacityProviderOutput`](crate::operation::create_capacity_provider::CreateCapacityProviderOutput).
     pub fn build(self) -> crate::operation::create_capacity_provider::CreateCapacityProviderOutput {
         crate::operation::create_capacity_provider::CreateCapacityProviderOutput {
-            capacity_provider: self.capacity_provider
-            ,
+            capacity_provider: self.capacity_provider,
             _request_id: self._request_id,
         }
     }
 }
-

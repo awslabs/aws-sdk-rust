@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-/// 
+///
 /// Here is an example of how you can make a match expression forward-compatible:
-/// 
+///
 /// ```text
 /// # let categoricalaggregationfunction = unimplemented!();
 /// match categoricalaggregationfunction {
@@ -30,55 +30,64 @@
 /// Specifically, when `categoricalaggregationfunction` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `CategoricalAggregationFunction::NewFeature` also yielding `"NewFeature"`.
-/// 
+///
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
 pub enum CategoricalAggregationFunction {
     #[allow(missing_docs)] // documentation missing in model
     Count,
     #[allow(missing_docs)] // documentation missing in model
     DistinctCount,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::primitives::UnknownVariantValue)
+    Unknown(crate::primitives::UnknownVariantValue),
 }
 impl std::convert::From<&str> for CategoricalAggregationFunction {
-                fn from(s: &str) -> Self {
-                    match s {
-                        "COUNT" => CategoricalAggregationFunction::Count,
-"DISTINCT_COUNT" => CategoricalAggregationFunction::DistinctCount,
-other => CategoricalAggregationFunction::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
-                    }
-                }
-            }
-impl std::str::FromStr for CategoricalAggregationFunction {
-                type Err = std::convert::Infallible;
-
-                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-                    Ok(CategoricalAggregationFunction::from(s))
-                }
-            }
-impl CategoricalAggregationFunction {
-                /// Returns the `&str` value of the enum member.
-                pub fn as_str(&self) -> &str {
-                    match self {
-    CategoricalAggregationFunction::Count => "COUNT",
-    CategoricalAggregationFunction::DistinctCount => "DISTINCT_COUNT",
-    CategoricalAggregationFunction::Unknown(value) => value.as_str()
+    fn from(s: &str) -> Self {
+        match s {
+            "COUNT" => CategoricalAggregationFunction::Count,
+            "DISTINCT_COUNT" => CategoricalAggregationFunction::DistinctCount,
+            other => CategoricalAggregationFunction::Unknown(
+                crate::primitives::UnknownVariantValue(other.to_owned()),
+            ),
+        }
+    }
 }
-                }
-                /// Returns all the `&str` representations of the enum members.
-                pub const fn values() -> &'static [&'static str] {
-                    &["COUNT", "DISTINCT_COUNT"]
-                }
-            }
-impl AsRef<str> for CategoricalAggregationFunction {
-                fn as_ref(&self) -> &str {
-                    self.as_str()
-                }
-            }
+impl std::str::FromStr for CategoricalAggregationFunction {
+    type Err = std::convert::Infallible;
 
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(CategoricalAggregationFunction::from(s))
+    }
+}
+impl CategoricalAggregationFunction {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            CategoricalAggregationFunction::Count => "COUNT",
+            CategoricalAggregationFunction::DistinctCount => "DISTINCT_COUNT",
+            CategoricalAggregationFunction::Unknown(value) => value.as_str(),
+        }
+    }
+    /// Returns all the `&str` representations of the enum members.
+    pub const fn values() -> &'static [&'static str] {
+        &["COUNT", "DISTINCT_COUNT"]
+    }
+}
+impl AsRef<str> for CategoricalAggregationFunction {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeUsersInput  {
+pub struct DescribeUsersInput {
     /// <p>The authentication type for the users in the user pool to describe. You must specify USERPOOL.</p>
     #[doc(hidden)]
     pub authentication_type: std::option::Option<crate::types::AuthenticationType>,
@@ -15,7 +15,7 @@ pub struct DescribeUsersInput  {
 }
 impl DescribeUsersInput {
     /// <p>The authentication type for the users in the user pool to describe. You must specify USERPOOL.</p>
-    pub fn authentication_type(&self) -> std::option::Option<& crate::types::AuthenticationType> {
+    pub fn authentication_type(&self) -> std::option::Option<&crate::types::AuthenticationType> {
         self.authentication_type.as_ref()
     }
     /// <p>The maximum size of each page of results.</p>
@@ -23,7 +23,7 @@ impl DescribeUsersInput {
         self.max_results
     }
     /// <p>The pagination token to use to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.</p>
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
 }
@@ -49,8 +49,12 @@ impl DescribeUsersInputBuilder {
         self
     }
     /// <p>The authentication type for the users in the user pool to describe. You must specify USERPOOL.</p>
-    pub fn set_authentication_type(mut self, input: std::option::Option<crate::types::AuthenticationType>) -> Self {
-        self.authentication_type = input; self
+    pub fn set_authentication_type(
+        mut self,
+        input: std::option::Option<crate::types::AuthenticationType>,
+    ) -> Self {
+        self.authentication_type = input;
+        self
     }
     /// <p>The maximum size of each page of results.</p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -59,7 +63,8 @@ impl DescribeUsersInputBuilder {
     }
     /// <p>The maximum size of each page of results.</p>
     pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_results = input; self
+        self.max_results = input;
+        self
     }
     /// <p>The pagination token to use to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -68,20 +73,20 @@ impl DescribeUsersInputBuilder {
     }
     /// <p>The pagination token to use to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input; self
+        self.next_token = input;
+        self
     }
     /// Consumes the builder and constructs a [`DescribeUsersInput`](crate::operation::describe_users::DescribeUsersInput).
-    pub fn build(self) -> Result<crate::operation::describe_users::DescribeUsersInput, aws_smithy_http::operation::error::BuildError> {
-        Ok(
-            crate::operation::describe_users::DescribeUsersInput {
-                authentication_type: self.authentication_type
-                ,
-                max_results: self.max_results
-                ,
-                next_token: self.next_token
-                ,
-            }
-        )
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::describe_users::DescribeUsersInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        Ok(crate::operation::describe_users::DescribeUsersInput {
+            authentication_type: self.authentication_type,
+            max_results: self.max_results,
+            next_token: self.next_token,
+        })
     }
 }
-

@@ -3,14 +3,14 @@
 /// <p>This is a recovery point which is a child (nested) recovery point of a parent (composite) recovery point. These recovery points can be disassociated from their parent (composite) recovery point, in which case they will no longer be a member.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct RecoveryPointMember  {
+pub struct RecoveryPointMember {
     /// <p>This is the Amazon Resource Name (ARN) of the parent (composite) recovery point.</p>
     #[doc(hidden)]
     pub recovery_point_arn: std::option::Option<std::string::String>,
 }
 impl RecoveryPointMember {
     /// <p>This is the Amazon Resource Name (ARN) of the parent (composite) recovery point.</p>
-    pub fn recovery_point_arn(&self) -> std::option::Option<& str> {
+    pub fn recovery_point_arn(&self) -> std::option::Option<&str> {
         self.recovery_point_arn.as_deref()
     }
 }
@@ -34,15 +34,17 @@ impl RecoveryPointMemberBuilder {
         self
     }
     /// <p>This is the Amazon Resource Name (ARN) of the parent (composite) recovery point.</p>
-    pub fn set_recovery_point_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.recovery_point_arn = input; self
+    pub fn set_recovery_point_arn(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.recovery_point_arn = input;
+        self
     }
     /// Consumes the builder and constructs a [`RecoveryPointMember`](crate::types::RecoveryPointMember).
     pub fn build(self) -> crate::types::RecoveryPointMember {
         crate::types::RecoveryPointMember {
-            recovery_point_arn: self.recovery_point_arn
-            ,
+            recovery_point_arn: self.recovery_point_arn,
         }
     }
 }
-

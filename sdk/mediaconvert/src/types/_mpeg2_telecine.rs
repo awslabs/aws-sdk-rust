@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-/// 
+///
 /// Here is an example of how you can make a match expression forward-compatible:
-/// 
+///
 /// ```text
 /// # let mpeg2telecine = unimplemented!();
 /// match mpeg2telecine {
@@ -31,14 +31,22 @@
 /// Specifically, when `mpeg2telecine` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `Mpeg2Telecine::NewFeature` also yielding `"NewFeature"`.
-/// 
+///
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 /// When you do frame rate conversion from 23.976 frames per second (fps) to 29.97 fps, and your output scan type is interlaced, you can optionally enable hard or soft telecine to create a smoother picture. Hard telecine (HARD) produces a 29.97i output. Soft telecine (SOFT) produces an output with a 23.976 output that signals to the video player device to do the conversion during play back. When you keep the default value, None (NONE), MediaConvert does a standard frame rate conversion to 29.97 without doing anything with the field polarity to create a smoother picture.
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
 pub enum Mpeg2Telecine {
     #[allow(missing_docs)] // documentation missing in model
     Hard,
@@ -47,43 +55,44 @@ pub enum Mpeg2Telecine {
     #[allow(missing_docs)] // documentation missing in model
     Soft,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::primitives::UnknownVariantValue)
+    Unknown(crate::primitives::UnknownVariantValue),
 }
 impl std::convert::From<&str> for Mpeg2Telecine {
-                fn from(s: &str) -> Self {
-                    match s {
-                        "HARD" => Mpeg2Telecine::Hard,
-"NONE" => Mpeg2Telecine::None,
-"SOFT" => Mpeg2Telecine::Soft,
-other => Mpeg2Telecine::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
-                    }
-                }
+    fn from(s: &str) -> Self {
+        match s {
+            "HARD" => Mpeg2Telecine::Hard,
+            "NONE" => Mpeg2Telecine::None,
+            "SOFT" => Mpeg2Telecine::Soft,
+            other => {
+                Mpeg2Telecine::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
             }
-impl std::str::FromStr for Mpeg2Telecine {
-                type Err = std::convert::Infallible;
-
-                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-                    Ok(Mpeg2Telecine::from(s))
-                }
-            }
-impl Mpeg2Telecine {
-                /// Returns the `&str` value of the enum member.
-                pub fn as_str(&self) -> &str {
-                    match self {
-    Mpeg2Telecine::Hard => "HARD",
-    Mpeg2Telecine::None => "NONE",
-    Mpeg2Telecine::Soft => "SOFT",
-    Mpeg2Telecine::Unknown(value) => value.as_str()
+        }
+    }
 }
-                }
-                /// Returns all the `&str` representations of the enum members.
-                pub const fn values() -> &'static [&'static str] {
-                    &["HARD", "NONE", "SOFT"]
-                }
-            }
-impl AsRef<str> for Mpeg2Telecine {
-                fn as_ref(&self) -> &str {
-                    self.as_str()
-                }
-            }
+impl std::str::FromStr for Mpeg2Telecine {
+    type Err = std::convert::Infallible;
 
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(Mpeg2Telecine::from(s))
+    }
+}
+impl Mpeg2Telecine {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            Mpeg2Telecine::Hard => "HARD",
+            Mpeg2Telecine::None => "NONE",
+            Mpeg2Telecine::Soft => "SOFT",
+            Mpeg2Telecine::Unknown(value) => value.as_str(),
+        }
+    }
+    /// Returns all the `&str` representations of the enum members.
+    pub const fn values() -> &'static [&'static str] {
+        &["HARD", "NONE", "SOFT"]
+    }
+}
+impl AsRef<str> for Mpeg2Telecine {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}

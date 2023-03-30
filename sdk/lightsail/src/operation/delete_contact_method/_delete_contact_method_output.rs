@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteContactMethodOutput  {
+pub struct DeleteContactMethodOutput {
     /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
     #[doc(hidden)]
     pub operations: std::option::Option<std::vec::Vec<crate::types::Operation>>,
@@ -10,19 +10,21 @@ pub struct DeleteContactMethodOutput  {
 }
 impl DeleteContactMethodOutput {
     /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
-    pub fn operations(&self) -> std::option::Option<& [crate::types::Operation]> {
+    pub fn operations(&self) -> std::option::Option<&[crate::types::Operation]> {
         self.operations.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for DeleteContactMethodOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl DeleteContactMethodOutput {
     /// Creates a new builder-style object to manufacture [`DeleteContactMethodOutput`](crate::operation::delete_contact_method::DeleteContactMethodOutput).
-    pub fn builder() -> crate::operation::delete_contact_method::builders::DeleteContactMethodOutputBuilder {
-        crate::operation::delete_contact_method::builders::DeleteContactMethodOutputBuilder::default()
+    pub fn builder(
+    ) -> crate::operation::delete_contact_method::builders::DeleteContactMethodOutputBuilder {
+        crate::operation::delete_contact_method::builders::DeleteContactMethodOutputBuilder::default(
+        )
     }
 }
 
@@ -41,30 +43,32 @@ impl DeleteContactMethodOutputBuilder {
     /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
     pub fn operations(mut self, input: crate::types::Operation) -> Self {
         let mut v = self.operations.unwrap_or_default();
-                        v.push(input);
-                        self.operations = Some(v);
-                        self
+        v.push(input);
+        self.operations = Some(v);
+        self
     }
     /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
-    pub fn set_operations(mut self, input: std::option::Option<std::vec::Vec<crate::types::Operation>>) -> Self {
-        self.operations = input; self
+    pub fn set_operations(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::Operation>>,
+    ) -> Self {
+        self.operations = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`DeleteContactMethodOutput`](crate::operation::delete_contact_method::DeleteContactMethodOutput).
     pub fn build(self) -> crate::operation::delete_contact_method::DeleteContactMethodOutput {
         crate::operation::delete_contact_method::DeleteContactMethodOutput {
-            operations: self.operations
-            ,
+            operations: self.operations,
             _request_id: self._request_id,
         }
     }
 }
-

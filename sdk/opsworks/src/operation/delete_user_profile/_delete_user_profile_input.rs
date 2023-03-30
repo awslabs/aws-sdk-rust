@@ -2,20 +2,21 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteUserProfileInput  {
+pub struct DeleteUserProfileInput {
     /// <p>The user's IAM ARN. This can also be a federated user's ARN.</p>
     #[doc(hidden)]
     pub iam_user_arn: std::option::Option<std::string::String>,
 }
 impl DeleteUserProfileInput {
     /// <p>The user's IAM ARN. This can also be a federated user's ARN.</p>
-    pub fn iam_user_arn(&self) -> std::option::Option<& str> {
+    pub fn iam_user_arn(&self) -> std::option::Option<&str> {
         self.iam_user_arn.as_deref()
     }
 }
 impl DeleteUserProfileInput {
     /// Creates a new builder-style object to manufacture [`DeleteUserProfileInput`](crate::operation::delete_user_profile::DeleteUserProfileInput).
-    pub fn builder() -> crate::operation::delete_user_profile::builders::DeleteUserProfileInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::delete_user_profile::builders::DeleteUserProfileInputBuilder {
         crate::operation::delete_user_profile::builders::DeleteUserProfileInputBuilder::default()
     }
 }
@@ -34,16 +35,20 @@ impl DeleteUserProfileInputBuilder {
     }
     /// <p>The user's IAM ARN. This can also be a federated user's ARN.</p>
     pub fn set_iam_user_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.iam_user_arn = input; self
+        self.iam_user_arn = input;
+        self
     }
     /// Consumes the builder and constructs a [`DeleteUserProfileInput`](crate::operation::delete_user_profile::DeleteUserProfileInput).
-    pub fn build(self) -> Result<crate::operation::delete_user_profile::DeleteUserProfileInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::delete_user_profile::DeleteUserProfileInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::delete_user_profile::DeleteUserProfileInput {
-                iam_user_arn: self.iam_user_arn
-                ,
-            }
+                iam_user_arn: self.iam_user_arn,
+            },
         )
     }
 }
-

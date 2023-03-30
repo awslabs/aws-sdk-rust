@@ -3,7 +3,7 @@
 /// <p>Provides a single value and metadata about that value as part of an array of query results for a standard metric that applies to an application, campaign, or journey.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ResultRowValue  {
+pub struct ResultRowValue {
     /// <p>The friendly name of the metric whose value is specified by the Value property.</p>
     #[doc(hidden)]
     pub key: std::option::Option<std::string::String>,
@@ -16,15 +16,15 @@ pub struct ResultRowValue  {
 }
 impl ResultRowValue {
     /// <p>The friendly name of the metric whose value is specified by the Value property.</p>
-    pub fn key(&self) -> std::option::Option<& str> {
+    pub fn key(&self) -> std::option::Option<&str> {
         self.key.as_deref()
     }
     /// <p>The data type of the value specified by the Value property.</p>
-    pub fn r#type(&self) -> std::option::Option<& str> {
+    pub fn r#type(&self) -> std::option::Option<&str> {
         self.r#type.as_deref()
     }
     /// <p>In a Values object, the value for the metric that the query retrieved data for. In a GroupedBys object, the value for the field that was used to group data in a result set that contains multiple results (Values objects).</p>
-    pub fn value(&self) -> std::option::Option<& str> {
+    pub fn value(&self) -> std::option::Option<&str> {
         self.value.as_deref()
     }
 }
@@ -51,7 +51,8 @@ impl ResultRowValueBuilder {
     }
     /// <p>The friendly name of the metric whose value is specified by the Value property.</p>
     pub fn set_key(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.key = input; self
+        self.key = input;
+        self
     }
     /// <p>The data type of the value specified by the Value property.</p>
     pub fn r#type(mut self, input: impl Into<std::string::String>) -> Self {
@@ -60,7 +61,8 @@ impl ResultRowValueBuilder {
     }
     /// <p>The data type of the value specified by the Value property.</p>
     pub fn set_type(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.r#type = input; self
+        self.r#type = input;
+        self
     }
     /// <p>In a Values object, the value for the metric that the query retrieved data for. In a GroupedBys object, the value for the field that was used to group data in a result set that contains multiple results (Values objects).</p>
     pub fn value(mut self, input: impl Into<std::string::String>) -> Self {
@@ -69,18 +71,15 @@ impl ResultRowValueBuilder {
     }
     /// <p>In a Values object, the value for the metric that the query retrieved data for. In a GroupedBys object, the value for the field that was used to group data in a result set that contains multiple results (Values objects).</p>
     pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.value = input; self
+        self.value = input;
+        self
     }
     /// Consumes the builder and constructs a [`ResultRowValue`](crate::types::ResultRowValue).
     pub fn build(self) -> crate::types::ResultRowValue {
         crate::types::ResultRowValue {
-            key: self.key
-            ,
-            r#type: self.r#type
-            ,
-            value: self.value
-            ,
+            key: self.key,
+            r#type: self.r#type,
+            value: self.value,
         }
     }
 }
-

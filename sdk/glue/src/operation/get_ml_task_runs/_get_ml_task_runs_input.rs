@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetMlTaskRunsInput  {
+pub struct GetMlTaskRunsInput {
     /// <p>The unique identifier of the machine learning transform.</p>
     #[doc(hidden)]
     pub transform_id: std::option::Option<std::string::String>,
@@ -21,11 +21,11 @@ pub struct GetMlTaskRunsInput  {
 }
 impl GetMlTaskRunsInput {
     /// <p>The unique identifier of the machine learning transform.</p>
-    pub fn transform_id(&self) -> std::option::Option<& str> {
+    pub fn transform_id(&self) -> std::option::Option<&str> {
         self.transform_id.as_deref()
     }
     /// <p>A token for pagination of the results. The default is empty.</p>
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
     /// <p>The maximum number of results to return. </p>
@@ -33,11 +33,11 @@ impl GetMlTaskRunsInput {
         self.max_results
     }
     /// <p>The filter criteria, in the <code>TaskRunFilterCriteria</code> structure, for the task run.</p>
-    pub fn filter(&self) -> std::option::Option<& crate::types::TaskRunFilterCriteria> {
+    pub fn filter(&self) -> std::option::Option<&crate::types::TaskRunFilterCriteria> {
         self.filter.as_ref()
     }
     /// <p>The sorting criteria, in the <code>TaskRunSortCriteria</code> structure, for the task run.</p>
-    pub fn sort(&self) -> std::option::Option<& crate::types::TaskRunSortCriteria> {
+    pub fn sort(&self) -> std::option::Option<&crate::types::TaskRunSortCriteria> {
         self.sort.as_ref()
     }
 }
@@ -66,7 +66,8 @@ impl GetMlTaskRunsInputBuilder {
     }
     /// <p>The unique identifier of the machine learning transform.</p>
     pub fn set_transform_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.transform_id = input; self
+        self.transform_id = input;
+        self
     }
     /// <p>A token for pagination of the results. The default is empty.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -75,7 +76,8 @@ impl GetMlTaskRunsInputBuilder {
     }
     /// <p>A token for pagination of the results. The default is empty.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input; self
+        self.next_token = input;
+        self
     }
     /// <p>The maximum number of results to return. </p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -84,7 +86,8 @@ impl GetMlTaskRunsInputBuilder {
     }
     /// <p>The maximum number of results to return. </p>
     pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_results = input; self
+        self.max_results = input;
+        self
     }
     /// <p>The filter criteria, in the <code>TaskRunFilterCriteria</code> structure, for the task run.</p>
     pub fn filter(mut self, input: crate::types::TaskRunFilterCriteria) -> Self {
@@ -92,8 +95,12 @@ impl GetMlTaskRunsInputBuilder {
         self
     }
     /// <p>The filter criteria, in the <code>TaskRunFilterCriteria</code> structure, for the task run.</p>
-    pub fn set_filter(mut self, input: std::option::Option<crate::types::TaskRunFilterCriteria>) -> Self {
-        self.filter = input; self
+    pub fn set_filter(
+        mut self,
+        input: std::option::Option<crate::types::TaskRunFilterCriteria>,
+    ) -> Self {
+        self.filter = input;
+        self
     }
     /// <p>The sorting criteria, in the <code>TaskRunSortCriteria</code> structure, for the task run.</p>
     pub fn sort(mut self, input: crate::types::TaskRunSortCriteria) -> Self {
@@ -101,25 +108,26 @@ impl GetMlTaskRunsInputBuilder {
         self
     }
     /// <p>The sorting criteria, in the <code>TaskRunSortCriteria</code> structure, for the task run.</p>
-    pub fn set_sort(mut self, input: std::option::Option<crate::types::TaskRunSortCriteria>) -> Self {
-        self.sort = input; self
+    pub fn set_sort(
+        mut self,
+        input: std::option::Option<crate::types::TaskRunSortCriteria>,
+    ) -> Self {
+        self.sort = input;
+        self
     }
     /// Consumes the builder and constructs a [`GetMlTaskRunsInput`](crate::operation::get_ml_task_runs::GetMlTaskRunsInput).
-    pub fn build(self) -> Result<crate::operation::get_ml_task_runs::GetMlTaskRunsInput, aws_smithy_http::operation::error::BuildError> {
-        Ok(
-            crate::operation::get_ml_task_runs::GetMlTaskRunsInput {
-                transform_id: self.transform_id
-                ,
-                next_token: self.next_token
-                ,
-                max_results: self.max_results
-                ,
-                filter: self.filter
-                ,
-                sort: self.sort
-                ,
-            }
-        )
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::get_ml_task_runs::GetMlTaskRunsInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        Ok(crate::operation::get_ml_task_runs::GetMlTaskRunsInput {
+            transform_id: self.transform_id,
+            next_token: self.next_token,
+            max_results: self.max_results,
+            filter: self.filter,
+            sort: self.sort,
+        })
     }
 }
-

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateAddressBookOutput  {
+pub struct CreateAddressBookOutput {
     /// <p>The ARN of the newly created address book.</p>
     #[doc(hidden)]
     pub address_book_arn: std::option::Option<std::string::String>,
@@ -10,18 +10,19 @@ pub struct CreateAddressBookOutput  {
 }
 impl CreateAddressBookOutput {
     /// <p>The ARN of the newly created address book.</p>
-    pub fn address_book_arn(&self) -> std::option::Option<& str> {
+    pub fn address_book_arn(&self) -> std::option::Option<&str> {
         self.address_book_arn.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for CreateAddressBookOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl CreateAddressBookOutput {
     /// Creates a new builder-style object to manufacture [`CreateAddressBookOutput`](crate::operation::create_address_book::CreateAddressBookOutput).
-    pub fn builder() -> crate::operation::create_address_book::builders::CreateAddressBookOutputBuilder {
+    pub fn builder(
+    ) -> crate::operation::create_address_book::builders::CreateAddressBookOutputBuilder {
         crate::operation::create_address_book::builders::CreateAddressBookOutputBuilder::default()
     }
 }
@@ -41,24 +42,23 @@ impl CreateAddressBookOutputBuilder {
     }
     /// <p>The ARN of the newly created address book.</p>
     pub fn set_address_book_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.address_book_arn = input; self
+        self.address_book_arn = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`CreateAddressBookOutput`](crate::operation::create_address_book::CreateAddressBookOutput).
     pub fn build(self) -> crate::operation::create_address_book::CreateAddressBookOutput {
         crate::operation::create_address_book::CreateAddressBookOutput {
-            address_book_arn: self.address_book_arn
-            ,
+            address_book_arn: self.address_book_arn,
             _request_id: self._request_id,
         }
     }
 }
-

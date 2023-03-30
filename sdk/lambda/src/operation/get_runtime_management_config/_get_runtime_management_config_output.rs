@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetRuntimeManagementConfigOutput  {
+pub struct GetRuntimeManagementConfigOutput {
     /// <p>The current runtime update mode of the function.</p>
     #[doc(hidden)]
     pub update_runtime_on: std::option::Option<crate::types::UpdateRuntimeOn>,
@@ -13,22 +13,22 @@ pub struct GetRuntimeManagementConfigOutput  {
 }
 impl GetRuntimeManagementConfigOutput {
     /// <p>The current runtime update mode of the function.</p>
-    pub fn update_runtime_on(&self) -> std::option::Option<& crate::types::UpdateRuntimeOn> {
+    pub fn update_runtime_on(&self) -> std::option::Option<&crate::types::UpdateRuntimeOn> {
         self.update_runtime_on.as_ref()
     }
     /// <p>The ARN of the runtime the function is configured to use. If the runtime update mode is <b>Manual</b>, the ARN is returned, otherwise <code>null</code> is returned.</p>
-    pub fn runtime_version_arn(&self) -> std::option::Option<& str> {
+    pub fn runtime_version_arn(&self) -> std::option::Option<&str> {
         self.runtime_version_arn.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for GetRuntimeManagementConfigOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl GetRuntimeManagementConfigOutput {
     /// Creates a new builder-style object to manufacture [`GetRuntimeManagementConfigOutput`](crate::operation::get_runtime_management_config::GetRuntimeManagementConfigOutput).
-    pub fn builder() -> crate::operation::get_runtime_management_config::builders::GetRuntimeManagementConfigOutputBuilder {
+    pub fn builder() -> crate::operation::get_runtime_management_config::builders::GetRuntimeManagementConfigOutputBuilder{
         crate::operation::get_runtime_management_config::builders::GetRuntimeManagementConfigOutputBuilder::default()
     }
 }
@@ -48,8 +48,12 @@ impl GetRuntimeManagementConfigOutputBuilder {
         self
     }
     /// <p>The current runtime update mode of the function.</p>
-    pub fn set_update_runtime_on(mut self, input: std::option::Option<crate::types::UpdateRuntimeOn>) -> Self {
-        self.update_runtime_on = input; self
+    pub fn set_update_runtime_on(
+        mut self,
+        input: std::option::Option<crate::types::UpdateRuntimeOn>,
+    ) -> Self {
+        self.update_runtime_on = input;
+        self
     }
     /// <p>The ARN of the runtime the function is configured to use. If the runtime update mode is <b>Manual</b>, the ARN is returned, otherwise <code>null</code> is returned.</p>
     pub fn runtime_version_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -57,27 +61,30 @@ impl GetRuntimeManagementConfigOutputBuilder {
         self
     }
     /// <p>The ARN of the runtime the function is configured to use. If the runtime update mode is <b>Manual</b>, the ARN is returned, otherwise <code>null</code> is returned.</p>
-    pub fn set_runtime_version_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.runtime_version_arn = input; self
+    pub fn set_runtime_version_arn(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.runtime_version_arn = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`GetRuntimeManagementConfigOutput`](crate::operation::get_runtime_management_config::GetRuntimeManagementConfigOutput).
-    pub fn build(self) -> crate::operation::get_runtime_management_config::GetRuntimeManagementConfigOutput {
+    pub fn build(
+        self,
+    ) -> crate::operation::get_runtime_management_config::GetRuntimeManagementConfigOutput {
         crate::operation::get_runtime_management_config::GetRuntimeManagementConfigOutput {
-            update_runtime_on: self.update_runtime_on
-            ,
-            runtime_version_arn: self.runtime_version_arn
-            ,
+            update_runtime_on: self.update_runtime_on,
+            runtime_version_arn: self.runtime_version_arn,
             _request_id: self._request_id,
         }
     }
 }
-

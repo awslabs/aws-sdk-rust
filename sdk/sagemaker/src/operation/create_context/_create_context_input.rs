@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateContextInput  {
+pub struct CreateContextInput {
     /// <p>The name of the context. Must be unique to your account in an Amazon Web Services Region.</p>
     #[doc(hidden)]
     pub context_name: std::option::Option<std::string::String>,
@@ -17,34 +17,38 @@ pub struct CreateContextInput  {
     pub description: std::option::Option<std::string::String>,
     /// <p>A list of properties to add to the context.</p>
     #[doc(hidden)]
-    pub properties: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub properties:
+        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>A list of tags to apply to the context.</p>
     #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::types::Tag>>,
 }
 impl CreateContextInput {
     /// <p>The name of the context. Must be unique to your account in an Amazon Web Services Region.</p>
-    pub fn context_name(&self) -> std::option::Option<& str> {
+    pub fn context_name(&self) -> std::option::Option<&str> {
         self.context_name.as_deref()
     }
     /// <p>The source type, ID, and URI.</p>
-    pub fn source(&self) -> std::option::Option<& crate::types::ContextSource> {
+    pub fn source(&self) -> std::option::Option<&crate::types::ContextSource> {
         self.source.as_ref()
     }
     /// <p>The context type.</p>
-    pub fn context_type(&self) -> std::option::Option<& str> {
+    pub fn context_type(&self) -> std::option::Option<&str> {
         self.context_type.as_deref()
     }
     /// <p>The description of the context.</p>
-    pub fn description(&self) -> std::option::Option<& str> {
+    pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
     /// <p>A list of properties to add to the context.</p>
-    pub fn properties(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
+    pub fn properties(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
         self.properties.as_ref()
     }
     /// <p>A list of tags to apply to the context.</p>
-    pub fn tags(&self) -> std::option::Option<& [crate::types::Tag]> {
+    pub fn tags(&self) -> std::option::Option<&[crate::types::Tag]> {
         self.tags.as_deref()
     }
 }
@@ -63,7 +67,8 @@ pub struct CreateContextInputBuilder {
     pub(crate) source: std::option::Option<crate::types::ContextSource>,
     pub(crate) context_type: std::option::Option<std::string::String>,
     pub(crate) description: std::option::Option<std::string::String>,
-    pub(crate) properties: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub(crate) properties:
+        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     pub(crate) tags: std::option::Option<std::vec::Vec<crate::types::Tag>>,
 }
 impl CreateContextInputBuilder {
@@ -74,7 +79,8 @@ impl CreateContextInputBuilder {
     }
     /// <p>The name of the context. Must be unique to your account in an Amazon Web Services Region.</p>
     pub fn set_context_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.context_name = input; self
+        self.context_name = input;
+        self
     }
     /// <p>The source type, ID, and URI.</p>
     pub fn source(mut self, input: crate::types::ContextSource) -> Self {
@@ -83,7 +89,8 @@ impl CreateContextInputBuilder {
     }
     /// <p>The source type, ID, and URI.</p>
     pub fn set_source(mut self, input: std::option::Option<crate::types::ContextSource>) -> Self {
-        self.source = input; self
+        self.source = input;
+        self
     }
     /// <p>The context type.</p>
     pub fn context_type(mut self, input: impl Into<std::string::String>) -> Self {
@@ -92,7 +99,8 @@ impl CreateContextInputBuilder {
     }
     /// <p>The context type.</p>
     pub fn set_context_type(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.context_type = input; self
+        self.context_type = input;
+        self
     }
     /// <p>The description of the context.</p>
     pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -101,22 +109,33 @@ impl CreateContextInputBuilder {
     }
     /// <p>The description of the context.</p>
     pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.description = input; self
+        self.description = input;
+        self
     }
     /// Adds a key-value pair to `properties`.
     ///
     /// To override the contents of this collection use [`set_properties`](Self::set_properties).
     ///
     /// <p>A list of properties to add to the context.</p>
-    pub fn properties(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
+    pub fn properties(
+        mut self,
+        k: impl Into<std::string::String>,
+        v: impl Into<std::string::String>,
+    ) -> Self {
         let mut hash_map = self.properties.unwrap_or_default();
-                        hash_map.insert(k.into(), v.into());
-                        self.properties = Some(hash_map);
-                        self
+        hash_map.insert(k.into(), v.into());
+        self.properties = Some(hash_map);
+        self
     }
     /// <p>A list of properties to add to the context.</p>
-    pub fn set_properties(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
-        self.properties = input; self
+    pub fn set_properties(
+        mut self,
+        input: std::option::Option<
+            std::collections::HashMap<std::string::String, std::string::String>,
+        >,
+    ) -> Self {
+        self.properties = input;
+        self
     }
     /// Appends an item to `tags`.
     ///
@@ -125,32 +144,32 @@ impl CreateContextInputBuilder {
     /// <p>A list of tags to apply to the context.</p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
-                        v.push(input);
-                        self.tags = Some(v);
-                        self
+        v.push(input);
+        self.tags = Some(v);
+        self
     }
     /// <p>A list of tags to apply to the context.</p>
-    pub fn set_tags(mut self, input: std::option::Option<std::vec::Vec<crate::types::Tag>>) -> Self {
-        self.tags = input; self
+    pub fn set_tags(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::Tag>>,
+    ) -> Self {
+        self.tags = input;
+        self
     }
     /// Consumes the builder and constructs a [`CreateContextInput`](crate::operation::create_context::CreateContextInput).
-    pub fn build(self) -> Result<crate::operation::create_context::CreateContextInput, aws_smithy_http::operation::error::BuildError> {
-        Ok(
-            crate::operation::create_context::CreateContextInput {
-                context_name: self.context_name
-                ,
-                source: self.source
-                ,
-                context_type: self.context_type
-                ,
-                description: self.description
-                ,
-                properties: self.properties
-                ,
-                tags: self.tags
-                ,
-            }
-        )
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::create_context::CreateContextInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        Ok(crate::operation::create_context::CreateContextInput {
+            context_name: self.context_name,
+            source: self.source,
+            context_type: self.context_type,
+            description: self.description,
+            properties: self.properties,
+            tags: self.tags,
+        })
     }
 }
-

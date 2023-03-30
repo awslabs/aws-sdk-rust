@@ -244,4 +244,3 @@ pub mod builders;
 
 /// Error types that EC2 Image Builder can respond with.
 pub mod error;
-

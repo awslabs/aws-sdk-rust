@@ -3,7 +3,7 @@
 /// <p>Provides information about a detection job.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ComprehendMedicalAsyncJobProperties  {
+pub struct ComprehendMedicalAsyncJobProperties {
     /// <p>The identifier assigned to the detection job.</p>
     #[doc(hidden)]
     pub job_id: std::option::Option<std::string::String>,
@@ -49,59 +49,59 @@ pub struct ComprehendMedicalAsyncJobProperties  {
 }
 impl ComprehendMedicalAsyncJobProperties {
     /// <p>The identifier assigned to the detection job.</p>
-    pub fn job_id(&self) -> std::option::Option<& str> {
+    pub fn job_id(&self) -> std::option::Option<&str> {
         self.job_id.as_deref()
     }
     /// <p>The name that you assigned to the detection job.</p>
-    pub fn job_name(&self) -> std::option::Option<& str> {
+    pub fn job_name(&self) -> std::option::Option<&str> {
         self.job_name.as_deref()
     }
     /// <p>The current status of the detection job. If the status is <code>FAILED</code>, the <code>Message</code> field shows the reason for the failure.</p>
-    pub fn job_status(&self) -> std::option::Option<& crate::types::JobStatus> {
+    pub fn job_status(&self) -> std::option::Option<&crate::types::JobStatus> {
         self.job_status.as_ref()
     }
     /// <p>A description of the status of a job.</p>
-    pub fn message(&self) -> std::option::Option<& str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
     /// <p>The time that the detection job was submitted for processing.</p>
-    pub fn submit_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
+    pub fn submit_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.submit_time.as_ref()
     }
     /// <p>The time that the detection job completed.</p>
-    pub fn end_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
+    pub fn end_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.end_time.as_ref()
     }
     /// <p>The date and time that job metadata is deleted from the server. Output files in your S3 bucket will not be deleted. After the metadata is deleted, the job will no longer appear in the results of the <code>ListEntitiesDetectionV2Job</code> or the <code>ListPHIDetectionJobs</code> operation.</p>
-    pub fn expiration_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
+    pub fn expiration_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.expiration_time.as_ref()
     }
     /// <p>The input data configuration that you supplied when you created the detection job.</p>
-    pub fn input_data_config(&self) -> std::option::Option<& crate::types::InputDataConfig> {
+    pub fn input_data_config(&self) -> std::option::Option<&crate::types::InputDataConfig> {
         self.input_data_config.as_ref()
     }
     /// <p>The output data configuration that you supplied when you created the detection job.</p>
-    pub fn output_data_config(&self) -> std::option::Option<& crate::types::OutputDataConfig> {
+    pub fn output_data_config(&self) -> std::option::Option<&crate::types::OutputDataConfig> {
         self.output_data_config.as_ref()
     }
     /// <p>The language code of the input documents.</p>
-    pub fn language_code(&self) -> std::option::Option<& crate::types::LanguageCode> {
+    pub fn language_code(&self) -> std::option::Option<&crate::types::LanguageCode> {
         self.language_code.as_ref()
     }
     /// <p>The Amazon Resource Name (ARN) that gives Comprehend Medical; read access to your input data.</p>
-    pub fn data_access_role_arn(&self) -> std::option::Option<& str> {
+    pub fn data_access_role_arn(&self) -> std::option::Option<&str> {
         self.data_access_role_arn.as_deref()
     }
     /// <p>The path to the file that describes the results of a batch job.</p>
-    pub fn manifest_file_path(&self) -> std::option::Option<& str> {
+    pub fn manifest_file_path(&self) -> std::option::Option<&str> {
         self.manifest_file_path.as_deref()
     }
     /// <p>The AWS Key Management Service key, if any, used to encrypt the output files. </p>
-    pub fn kms_key(&self) -> std::option::Option<& str> {
+    pub fn kms_key(&self) -> std::option::Option<&str> {
         self.kms_key.as_deref()
     }
     /// <p>The version of the model used to analyze the documents. The version number looks like X.X.X. You can use this information to track the model used for a particular batch of documents.</p>
-    pub fn model_version(&self) -> std::option::Option<& str> {
+    pub fn model_version(&self) -> std::option::Option<&str> {
         self.model_version.as_deref()
     }
 }
@@ -139,7 +139,8 @@ impl ComprehendMedicalAsyncJobPropertiesBuilder {
     }
     /// <p>The identifier assigned to the detection job.</p>
     pub fn set_job_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.job_id = input; self
+        self.job_id = input;
+        self
     }
     /// <p>The name that you assigned to the detection job.</p>
     pub fn job_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -148,7 +149,8 @@ impl ComprehendMedicalAsyncJobPropertiesBuilder {
     }
     /// <p>The name that you assigned to the detection job.</p>
     pub fn set_job_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.job_name = input; self
+        self.job_name = input;
+        self
     }
     /// <p>The current status of the detection job. If the status is <code>FAILED</code>, the <code>Message</code> field shows the reason for the failure.</p>
     pub fn job_status(mut self, input: crate::types::JobStatus) -> Self {
@@ -157,7 +159,8 @@ impl ComprehendMedicalAsyncJobPropertiesBuilder {
     }
     /// <p>The current status of the detection job. If the status is <code>FAILED</code>, the <code>Message</code> field shows the reason for the failure.</p>
     pub fn set_job_status(mut self, input: std::option::Option<crate::types::JobStatus>) -> Self {
-        self.job_status = input; self
+        self.job_status = input;
+        self
     }
     /// <p>A description of the status of a job.</p>
     pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
@@ -166,7 +169,8 @@ impl ComprehendMedicalAsyncJobPropertiesBuilder {
     }
     /// <p>A description of the status of a job.</p>
     pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.message = input; self
+        self.message = input;
+        self
     }
     /// <p>The time that the detection job was submitted for processing.</p>
     pub fn submit_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -174,8 +178,12 @@ impl ComprehendMedicalAsyncJobPropertiesBuilder {
         self
     }
     /// <p>The time that the detection job was submitted for processing.</p>
-    pub fn set_submit_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.submit_time = input; self
+    pub fn set_submit_time(
+        mut self,
+        input: std::option::Option<aws_smithy_types::DateTime>,
+    ) -> Self {
+        self.submit_time = input;
+        self
     }
     /// <p>The time that the detection job completed.</p>
     pub fn end_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -184,7 +192,8 @@ impl ComprehendMedicalAsyncJobPropertiesBuilder {
     }
     /// <p>The time that the detection job completed.</p>
     pub fn set_end_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.end_time = input; self
+        self.end_time = input;
+        self
     }
     /// <p>The date and time that job metadata is deleted from the server. Output files in your S3 bucket will not be deleted. After the metadata is deleted, the job will no longer appear in the results of the <code>ListEntitiesDetectionV2Job</code> or the <code>ListPHIDetectionJobs</code> operation.</p>
     pub fn expiration_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -192,8 +201,12 @@ impl ComprehendMedicalAsyncJobPropertiesBuilder {
         self
     }
     /// <p>The date and time that job metadata is deleted from the server. Output files in your S3 bucket will not be deleted. After the metadata is deleted, the job will no longer appear in the results of the <code>ListEntitiesDetectionV2Job</code> or the <code>ListPHIDetectionJobs</code> operation.</p>
-    pub fn set_expiration_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.expiration_time = input; self
+    pub fn set_expiration_time(
+        mut self,
+        input: std::option::Option<aws_smithy_types::DateTime>,
+    ) -> Self {
+        self.expiration_time = input;
+        self
     }
     /// <p>The input data configuration that you supplied when you created the detection job.</p>
     pub fn input_data_config(mut self, input: crate::types::InputDataConfig) -> Self {
@@ -201,8 +214,12 @@ impl ComprehendMedicalAsyncJobPropertiesBuilder {
         self
     }
     /// <p>The input data configuration that you supplied when you created the detection job.</p>
-    pub fn set_input_data_config(mut self, input: std::option::Option<crate::types::InputDataConfig>) -> Self {
-        self.input_data_config = input; self
+    pub fn set_input_data_config(
+        mut self,
+        input: std::option::Option<crate::types::InputDataConfig>,
+    ) -> Self {
+        self.input_data_config = input;
+        self
     }
     /// <p>The output data configuration that you supplied when you created the detection job.</p>
     pub fn output_data_config(mut self, input: crate::types::OutputDataConfig) -> Self {
@@ -210,8 +227,12 @@ impl ComprehendMedicalAsyncJobPropertiesBuilder {
         self
     }
     /// <p>The output data configuration that you supplied when you created the detection job.</p>
-    pub fn set_output_data_config(mut self, input: std::option::Option<crate::types::OutputDataConfig>) -> Self {
-        self.output_data_config = input; self
+    pub fn set_output_data_config(
+        mut self,
+        input: std::option::Option<crate::types::OutputDataConfig>,
+    ) -> Self {
+        self.output_data_config = input;
+        self
     }
     /// <p>The language code of the input documents.</p>
     pub fn language_code(mut self, input: crate::types::LanguageCode) -> Self {
@@ -219,8 +240,12 @@ impl ComprehendMedicalAsyncJobPropertiesBuilder {
         self
     }
     /// <p>The language code of the input documents.</p>
-    pub fn set_language_code(mut self, input: std::option::Option<crate::types::LanguageCode>) -> Self {
-        self.language_code = input; self
+    pub fn set_language_code(
+        mut self,
+        input: std::option::Option<crate::types::LanguageCode>,
+    ) -> Self {
+        self.language_code = input;
+        self
     }
     /// <p>The Amazon Resource Name (ARN) that gives Comprehend Medical; read access to your input data.</p>
     pub fn data_access_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -228,8 +253,12 @@ impl ComprehendMedicalAsyncJobPropertiesBuilder {
         self
     }
     /// <p>The Amazon Resource Name (ARN) that gives Comprehend Medical; read access to your input data.</p>
-    pub fn set_data_access_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.data_access_role_arn = input; self
+    pub fn set_data_access_role_arn(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.data_access_role_arn = input;
+        self
     }
     /// <p>The path to the file that describes the results of a batch job.</p>
     pub fn manifest_file_path(mut self, input: impl Into<std::string::String>) -> Self {
@@ -237,8 +266,12 @@ impl ComprehendMedicalAsyncJobPropertiesBuilder {
         self
     }
     /// <p>The path to the file that describes the results of a batch job.</p>
-    pub fn set_manifest_file_path(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.manifest_file_path = input; self
+    pub fn set_manifest_file_path(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.manifest_file_path = input;
+        self
     }
     /// <p>The AWS Key Management Service key, if any, used to encrypt the output files. </p>
     pub fn kms_key(mut self, input: impl Into<std::string::String>) -> Self {
@@ -247,7 +280,8 @@ impl ComprehendMedicalAsyncJobPropertiesBuilder {
     }
     /// <p>The AWS Key Management Service key, if any, used to encrypt the output files. </p>
     pub fn set_kms_key(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.kms_key = input; self
+        self.kms_key = input;
+        self
     }
     /// <p>The version of the model used to analyze the documents. The version number looks like X.X.X. You can use this information to track the model used for a particular batch of documents.</p>
     pub fn model_version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -256,40 +290,26 @@ impl ComprehendMedicalAsyncJobPropertiesBuilder {
     }
     /// <p>The version of the model used to analyze the documents. The version number looks like X.X.X. You can use this information to track the model used for a particular batch of documents.</p>
     pub fn set_model_version(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.model_version = input; self
+        self.model_version = input;
+        self
     }
     /// Consumes the builder and constructs a [`ComprehendMedicalAsyncJobProperties`](crate::types::ComprehendMedicalAsyncJobProperties).
     pub fn build(self) -> crate::types::ComprehendMedicalAsyncJobProperties {
         crate::types::ComprehendMedicalAsyncJobProperties {
-            job_id: self.job_id
-            ,
-            job_name: self.job_name
-            ,
-            job_status: self.job_status
-            ,
-            message: self.message
-            ,
-            submit_time: self.submit_time
-            ,
-            end_time: self.end_time
-            ,
-            expiration_time: self.expiration_time
-            ,
-            input_data_config: self.input_data_config
-            ,
-            output_data_config: self.output_data_config
-            ,
-            language_code: self.language_code
-            ,
-            data_access_role_arn: self.data_access_role_arn
-            ,
-            manifest_file_path: self.manifest_file_path
-            ,
-            kms_key: self.kms_key
-            ,
-            model_version: self.model_version
-            ,
+            job_id: self.job_id,
+            job_name: self.job_name,
+            job_status: self.job_status,
+            message: self.message,
+            submit_time: self.submit_time,
+            end_time: self.end_time,
+            expiration_time: self.expiration_time,
+            input_data_config: self.input_data_config,
+            output_data_config: self.output_data_config,
+            language_code: self.language_code,
+            data_access_role_arn: self.data_access_role_arn,
+            manifest_file_path: self.manifest_file_path,
+            kms_key: self.kms_key,
+            model_version: self.model_version,
         }
     }
 }
-

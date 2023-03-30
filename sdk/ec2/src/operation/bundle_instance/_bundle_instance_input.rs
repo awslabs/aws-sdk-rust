@@ -3,10 +3,10 @@
 /// <p>Contains the parameters for BundleInstance.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct BundleInstanceInput  {
-    /// <p>The ID of the instance to bundle.</p> 
-    /// <p>Type: String</p> 
-    /// <p>Default: None</p> 
+pub struct BundleInstanceInput {
+    /// <p>The ID of the instance to bundle.</p>
+    /// <p>Type: String</p>
+    /// <p>Default: None</p>
     /// <p>Required: Yes</p>
     #[doc(hidden)]
     pub instance_id: std::option::Option<std::string::String>,
@@ -18,15 +18,15 @@ pub struct BundleInstanceInput  {
     pub dry_run: std::option::Option<bool>,
 }
 impl BundleInstanceInput {
-    /// <p>The ID of the instance to bundle.</p> 
-    /// <p>Type: String</p> 
-    /// <p>Default: None</p> 
+    /// <p>The ID of the instance to bundle.</p>
+    /// <p>Type: String</p>
+    /// <p>Default: None</p>
     /// <p>Required: Yes</p>
-    pub fn instance_id(&self) -> std::option::Option<& str> {
+    pub fn instance_id(&self) -> std::option::Option<&str> {
         self.instance_id.as_deref()
     }
     /// <p>The bucket in which to store the AMI. You can specify a bucket that you already own or a new bucket that Amazon EC2 creates on your behalf. If you specify a bucket that belongs to someone else, Amazon EC2 returns an error.</p>
-    pub fn storage(&self) -> std::option::Option<& crate::types::Storage> {
+    pub fn storage(&self) -> std::option::Option<&crate::types::Storage> {
         self.storage.as_ref()
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
@@ -50,20 +50,21 @@ pub struct BundleInstanceInputBuilder {
     pub(crate) dry_run: std::option::Option<bool>,
 }
 impl BundleInstanceInputBuilder {
-    /// <p>The ID of the instance to bundle.</p> 
-    /// <p>Type: String</p> 
-    /// <p>Default: None</p> 
+    /// <p>The ID of the instance to bundle.</p>
+    /// <p>Type: String</p>
+    /// <p>Default: None</p>
     /// <p>Required: Yes</p>
     pub fn instance_id(mut self, input: impl Into<std::string::String>) -> Self {
         self.instance_id = Some(input.into());
         self
     }
-    /// <p>The ID of the instance to bundle.</p> 
-    /// <p>Type: String</p> 
-    /// <p>Default: None</p> 
+    /// <p>The ID of the instance to bundle.</p>
+    /// <p>Type: String</p>
+    /// <p>Default: None</p>
     /// <p>Required: Yes</p>
     pub fn set_instance_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.instance_id = input; self
+        self.instance_id = input;
+        self
     }
     /// <p>The bucket in which to store the AMI. You can specify a bucket that you already own or a new bucket that Amazon EC2 creates on your behalf. If you specify a bucket that belongs to someone else, Amazon EC2 returns an error.</p>
     pub fn storage(mut self, input: crate::types::Storage) -> Self {
@@ -72,7 +73,8 @@ impl BundleInstanceInputBuilder {
     }
     /// <p>The bucket in which to store the AMI. You can specify a bucket that you already own or a new bucket that Amazon EC2 creates on your behalf. If you specify a bucket that belongs to someone else, Amazon EC2 returns an error.</p>
     pub fn set_storage(mut self, input: std::option::Option<crate::types::Storage>) -> Self {
-        self.storage = input; self
+        self.storage = input;
+        self
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn dry_run(mut self, input: bool) -> Self {
@@ -81,20 +83,20 @@ impl BundleInstanceInputBuilder {
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn set_dry_run(mut self, input: std::option::Option<bool>) -> Self {
-        self.dry_run = input; self
+        self.dry_run = input;
+        self
     }
     /// Consumes the builder and constructs a [`BundleInstanceInput`](crate::operation::bundle_instance::BundleInstanceInput).
-    pub fn build(self) -> Result<crate::operation::bundle_instance::BundleInstanceInput, aws_smithy_http::operation::error::BuildError> {
-        Ok(
-            crate::operation::bundle_instance::BundleInstanceInput {
-                instance_id: self.instance_id
-                ,
-                storage: self.storage
-                ,
-                dry_run: self.dry_run
-                ,
-            }
-        )
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::bundle_instance::BundleInstanceInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        Ok(crate::operation::bundle_instance::BundleInstanceInput {
+            instance_id: self.instance_id,
+            storage: self.storage,
+            dry_run: self.dry_run,
+        })
     }
 }
-

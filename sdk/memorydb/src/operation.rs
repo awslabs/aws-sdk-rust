@@ -114,4 +114,3 @@ pub mod update_subnet_group;
 
 /// Types for the `UpdateUser` operation.
 pub mod update_user;
-

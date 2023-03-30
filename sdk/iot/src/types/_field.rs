@@ -3,7 +3,7 @@
 /// <p>Describes the name and data type at a field.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Field  {
+pub struct Field {
     /// <p>The name of the field.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -13,11 +13,11 @@ pub struct Field  {
 }
 impl Field {
     /// <p>The name of the field.</p>
-    pub fn name(&self) -> std::option::Option<& str> {
+    pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>The data type of the field.</p>
-    pub fn r#type(&self) -> std::option::Option<& crate::types::FieldType> {
+    pub fn r#type(&self) -> std::option::Option<&crate::types::FieldType> {
         self.r#type.as_ref()
     }
 }
@@ -43,7 +43,8 @@ impl FieldBuilder {
     }
     /// <p>The name of the field.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input; self
+        self.name = input;
+        self
     }
     /// <p>The data type of the field.</p>
     pub fn r#type(mut self, input: crate::types::FieldType) -> Self {
@@ -52,16 +53,14 @@ impl FieldBuilder {
     }
     /// <p>The data type of the field.</p>
     pub fn set_type(mut self, input: std::option::Option<crate::types::FieldType>) -> Self {
-        self.r#type = input; self
+        self.r#type = input;
+        self
     }
     /// Consumes the builder and constructs a [`Field`](crate::types::Field).
     pub fn build(self) -> crate::types::Field {
         crate::types::Field {
-            name: self.name
-            ,
-            r#type: self.r#type
-            ,
+            name: self.name,
+            r#type: self.r#type,
         }
     }
 }
-

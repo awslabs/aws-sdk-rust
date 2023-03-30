@@ -3,7 +3,7 @@
 /// <p>The way to sort the resulting response based on metrics. By default resources are sorted based on <code>AGENTS_ONLINE</code>, <code>DESCENDING</code>. The metric collection is sorted based on the input metrics.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CurrentMetricSortCriteria  {
+pub struct CurrentMetricSortCriteria {
     /// <p>The current metric names.</p>
     #[doc(hidden)]
     pub sort_by_metric: std::option::Option<crate::types::CurrentMetricName>,
@@ -13,11 +13,11 @@ pub struct CurrentMetricSortCriteria  {
 }
 impl CurrentMetricSortCriteria {
     /// <p>The current metric names.</p>
-    pub fn sort_by_metric(&self) -> std::option::Option<& crate::types::CurrentMetricName> {
+    pub fn sort_by_metric(&self) -> std::option::Option<&crate::types::CurrentMetricName> {
         self.sort_by_metric.as_ref()
     }
     /// <p>The way to sort.</p>
-    pub fn sort_order(&self) -> std::option::Option<& crate::types::SortOrder> {
+    pub fn sort_order(&self) -> std::option::Option<&crate::types::SortOrder> {
         self.sort_order.as_ref()
     }
 }
@@ -42,8 +42,12 @@ impl CurrentMetricSortCriteriaBuilder {
         self
     }
     /// <p>The current metric names.</p>
-    pub fn set_sort_by_metric(mut self, input: std::option::Option<crate::types::CurrentMetricName>) -> Self {
-        self.sort_by_metric = input; self
+    pub fn set_sort_by_metric(
+        mut self,
+        input: std::option::Option<crate::types::CurrentMetricName>,
+    ) -> Self {
+        self.sort_by_metric = input;
+        self
     }
     /// <p>The way to sort.</p>
     pub fn sort_order(mut self, input: crate::types::SortOrder) -> Self {
@@ -52,16 +56,14 @@ impl CurrentMetricSortCriteriaBuilder {
     }
     /// <p>The way to sort.</p>
     pub fn set_sort_order(mut self, input: std::option::Option<crate::types::SortOrder>) -> Self {
-        self.sort_order = input; self
+        self.sort_order = input;
+        self
     }
     /// Consumes the builder and constructs a [`CurrentMetricSortCriteria`](crate::types::CurrentMetricSortCriteria).
     pub fn build(self) -> crate::types::CurrentMetricSortCriteria {
         crate::types::CurrentMetricSortCriteria {
-            sort_by_metric: self.sort_by_metric
-            ,
-            sort_order: self.sort_order
-            ,
+            sort_by_metric: self.sort_by_metric,
+            sort_order: self.sort_order,
         }
     }
 }
-

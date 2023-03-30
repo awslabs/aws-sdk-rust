@@ -3,14 +3,16 @@
 /// <p>The options that determine the presentation of the arc of a <code>GaugeChartVisual</code>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GaugeChartArcConditionalFormatting  {
+pub struct GaugeChartArcConditionalFormatting {
     /// <p>The conditional formatting of the arc foreground color.</p>
     #[doc(hidden)]
     pub foreground_color: std::option::Option<crate::types::ConditionalFormattingColor>,
 }
 impl GaugeChartArcConditionalFormatting {
     /// <p>The conditional formatting of the arc foreground color.</p>
-    pub fn foreground_color(&self) -> std::option::Option<& crate::types::ConditionalFormattingColor> {
+    pub fn foreground_color(
+        &self,
+    ) -> std::option::Option<&crate::types::ConditionalFormattingColor> {
         self.foreground_color.as_ref()
     }
 }
@@ -34,15 +36,17 @@ impl GaugeChartArcConditionalFormattingBuilder {
         self
     }
     /// <p>The conditional formatting of the arc foreground color.</p>
-    pub fn set_foreground_color(mut self, input: std::option::Option<crate::types::ConditionalFormattingColor>) -> Self {
-        self.foreground_color = input; self
+    pub fn set_foreground_color(
+        mut self,
+        input: std::option::Option<crate::types::ConditionalFormattingColor>,
+    ) -> Self {
+        self.foreground_color = input;
+        self
     }
     /// Consumes the builder and constructs a [`GaugeChartArcConditionalFormatting`](crate::types::GaugeChartArcConditionalFormatting).
     pub fn build(self) -> crate::types::GaugeChartArcConditionalFormatting {
         crate::types::GaugeChartArcConditionalFormatting {
-            foreground_color: self.foreground_color
-            ,
+            foreground_color: self.foreground_color,
         }
     }
 }
-

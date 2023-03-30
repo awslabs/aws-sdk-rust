@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateWorldTemplateOutput  {
+pub struct CreateWorldTemplateOutput {
     /// <p>The Amazon Resource Name (ARN) of the world template.</p>
     #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
@@ -17,40 +17,46 @@ pub struct CreateWorldTemplateOutput  {
     pub name: std::option::Option<std::string::String>,
     /// <p>A map that contains tag keys and tag values that are attached to the world template.</p>
     #[doc(hidden)]
-    pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub tags:
+        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     _request_id: Option<String>,
 }
 impl CreateWorldTemplateOutput {
     /// <p>The Amazon Resource Name (ARN) of the world template.</p>
-    pub fn arn(&self) -> std::option::Option<& str> {
+    pub fn arn(&self) -> std::option::Option<&str> {
         self.arn.as_deref()
     }
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
-    pub fn client_request_token(&self) -> std::option::Option<& str> {
+    pub fn client_request_token(&self) -> std::option::Option<&str> {
         self.client_request_token.as_deref()
     }
     /// <p>The time, in milliseconds since the epoch, when the world template was created.</p>
-    pub fn created_at(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
+    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
     /// <p>The name of the world template.</p>
-    pub fn name(&self) -> std::option::Option<& str> {
+    pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>A map that contains tag keys and tag values that are attached to the world template.</p>
-    pub fn tags(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
         self.tags.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for CreateWorldTemplateOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl CreateWorldTemplateOutput {
     /// Creates a new builder-style object to manufacture [`CreateWorldTemplateOutput`](crate::operation::create_world_template::CreateWorldTemplateOutput).
-    pub fn builder() -> crate::operation::create_world_template::builders::CreateWorldTemplateOutputBuilder {
-        crate::operation::create_world_template::builders::CreateWorldTemplateOutputBuilder::default()
+    pub fn builder(
+    ) -> crate::operation::create_world_template::builders::CreateWorldTemplateOutputBuilder {
+        crate::operation::create_world_template::builders::CreateWorldTemplateOutputBuilder::default(
+        )
     }
 }
 
@@ -62,7 +68,8 @@ pub struct CreateWorldTemplateOutputBuilder {
     pub(crate) client_request_token: std::option::Option<std::string::String>,
     pub(crate) created_at: std::option::Option<aws_smithy_types::DateTime>,
     pub(crate) name: std::option::Option<std::string::String>,
-    pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub(crate) tags:
+        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     _request_id: Option<String>,
 }
 impl CreateWorldTemplateOutputBuilder {
@@ -73,7 +80,8 @@ impl CreateWorldTemplateOutputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the world template.</p>
     pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.arn = input; self
+        self.arn = input;
+        self
     }
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
     pub fn client_request_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -81,8 +89,12 @@ impl CreateWorldTemplateOutputBuilder {
         self
     }
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
-    pub fn set_client_request_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.client_request_token = input; self
+    pub fn set_client_request_token(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.client_request_token = input;
+        self
     }
     /// <p>The time, in milliseconds since the epoch, when the world template was created.</p>
     pub fn created_at(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -90,8 +102,12 @@ impl CreateWorldTemplateOutputBuilder {
         self
     }
     /// <p>The time, in milliseconds since the epoch, when the world template was created.</p>
-    pub fn set_created_at(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.created_at = input; self
+    pub fn set_created_at(
+        mut self,
+        input: std::option::Option<aws_smithy_types::DateTime>,
+    ) -> Self {
+        self.created_at = input;
+        self
     }
     /// <p>The name of the world template.</p>
     pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -100,47 +116,52 @@ impl CreateWorldTemplateOutputBuilder {
     }
     /// <p>The name of the world template.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input; self
+        self.name = input;
+        self
     }
     /// Adds a key-value pair to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// <p>A map that contains tag keys and tag values that are attached to the world template.</p>
-    pub fn tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
+    pub fn tags(
+        mut self,
+        k: impl Into<std::string::String>,
+        v: impl Into<std::string::String>,
+    ) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
-                        hash_map.insert(k.into(), v.into());
-                        self.tags = Some(hash_map);
-                        self
+        hash_map.insert(k.into(), v.into());
+        self.tags = Some(hash_map);
+        self
     }
     /// <p>A map that contains tag keys and tag values that are attached to the world template.</p>
-    pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
-        self.tags = input; self
+    pub fn set_tags(
+        mut self,
+        input: std::option::Option<
+            std::collections::HashMap<std::string::String, std::string::String>,
+        >,
+    ) -> Self {
+        self.tags = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`CreateWorldTemplateOutput`](crate::operation::create_world_template::CreateWorldTemplateOutput).
     pub fn build(self) -> crate::operation::create_world_template::CreateWorldTemplateOutput {
         crate::operation::create_world_template::CreateWorldTemplateOutput {
-            arn: self.arn
-            ,
-            client_request_token: self.client_request_token
-            ,
-            created_at: self.created_at
-            ,
-            name: self.name
-            ,
-            tags: self.tags
-            ,
+            arn: self.arn,
+            client_request_token: self.client_request_token,
+            created_at: self.created_at,
+            name: self.name,
+            tags: self.tags,
             _request_id: self._request_id,
         }
     }
 }
-

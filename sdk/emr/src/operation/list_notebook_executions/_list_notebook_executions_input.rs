@@ -2,22 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListNotebookExecutionsInput  {
+pub struct ListNotebookExecutionsInput {
     /// <p>The unique ID of the editor associated with the notebook execution.</p>
     #[doc(hidden)]
     pub editor_id: std::option::Option<std::string::String>,
-    /// <p>The status filter for listing notebook executions.</p> 
-    /// <ul> 
-    /// <li> <p> <code>START_PENDING</code> indicates that the cluster has received the execution request but execution has not begun.</p> </li> 
-    /// <li> <p> <code>STARTING</code> indicates that the execution is starting on the cluster.</p> </li> 
-    /// <li> <p> <code>RUNNING</code> indicates that the execution is being processed by the cluster.</p> </li> 
-    /// <li> <p> <code>FINISHING</code> indicates that execution processing is in the final stages.</p> </li> 
-    /// <li> <p> <code>FINISHED</code> indicates that the execution has completed without error.</p> </li> 
-    /// <li> <p> <code>FAILING</code> indicates that the execution is failing and will not finish successfully.</p> </li> 
-    /// <li> <p> <code>FAILED</code> indicates that the execution failed.</p> </li> 
-    /// <li> <p> <code>STOP_PENDING</code> indicates that the cluster has received a <code>StopNotebookExecution</code> request and the stop is pending.</p> </li> 
-    /// <li> <p> <code>STOPPING</code> indicates that the cluster is in the process of stopping the execution as a result of a <code>StopNotebookExecution</code> request.</p> </li> 
-    /// <li> <p> <code>STOPPED</code> indicates that the execution stopped because of a <code>StopNotebookExecution</code> request.</p> </li> 
+    /// <p>The status filter for listing notebook executions.</p>
+    /// <ul>
+    /// <li> <p> <code>START_PENDING</code> indicates that the cluster has received the execution request but execution has not begun.</p> </li>
+    /// <li> <p> <code>STARTING</code> indicates that the execution is starting on the cluster.</p> </li>
+    /// <li> <p> <code>RUNNING</code> indicates that the execution is being processed by the cluster.</p> </li>
+    /// <li> <p> <code>FINISHING</code> indicates that execution processing is in the final stages.</p> </li>
+    /// <li> <p> <code>FINISHED</code> indicates that the execution has completed without error.</p> </li>
+    /// <li> <p> <code>FAILING</code> indicates that the execution is failing and will not finish successfully.</p> </li>
+    /// <li> <p> <code>FAILED</code> indicates that the execution failed.</p> </li>
+    /// <li> <p> <code>STOP_PENDING</code> indicates that the cluster has received a <code>StopNotebookExecution</code> request and the stop is pending.</p> </li>
+    /// <li> <p> <code>STOPPING</code> indicates that the cluster is in the process of stopping the execution as a result of a <code>StopNotebookExecution</code> request.</p> </li>
+    /// <li> <p> <code>STOPPED</code> indicates that the execution stopped because of a <code>StopNotebookExecution</code> request.</p> </li>
     /// </ul>
     #[doc(hidden)]
     pub status: std::option::Option<crate::types::NotebookExecutionStatus>,
@@ -33,41 +33,43 @@ pub struct ListNotebookExecutionsInput  {
 }
 impl ListNotebookExecutionsInput {
     /// <p>The unique ID of the editor associated with the notebook execution.</p>
-    pub fn editor_id(&self) -> std::option::Option<& str> {
+    pub fn editor_id(&self) -> std::option::Option<&str> {
         self.editor_id.as_deref()
     }
-    /// <p>The status filter for listing notebook executions.</p> 
-    /// <ul> 
-    /// <li> <p> <code>START_PENDING</code> indicates that the cluster has received the execution request but execution has not begun.</p> </li> 
-    /// <li> <p> <code>STARTING</code> indicates that the execution is starting on the cluster.</p> </li> 
-    /// <li> <p> <code>RUNNING</code> indicates that the execution is being processed by the cluster.</p> </li> 
-    /// <li> <p> <code>FINISHING</code> indicates that execution processing is in the final stages.</p> </li> 
-    /// <li> <p> <code>FINISHED</code> indicates that the execution has completed without error.</p> </li> 
-    /// <li> <p> <code>FAILING</code> indicates that the execution is failing and will not finish successfully.</p> </li> 
-    /// <li> <p> <code>FAILED</code> indicates that the execution failed.</p> </li> 
-    /// <li> <p> <code>STOP_PENDING</code> indicates that the cluster has received a <code>StopNotebookExecution</code> request and the stop is pending.</p> </li> 
-    /// <li> <p> <code>STOPPING</code> indicates that the cluster is in the process of stopping the execution as a result of a <code>StopNotebookExecution</code> request.</p> </li> 
-    /// <li> <p> <code>STOPPED</code> indicates that the execution stopped because of a <code>StopNotebookExecution</code> request.</p> </li> 
+    /// <p>The status filter for listing notebook executions.</p>
+    /// <ul>
+    /// <li> <p> <code>START_PENDING</code> indicates that the cluster has received the execution request but execution has not begun.</p> </li>
+    /// <li> <p> <code>STARTING</code> indicates that the execution is starting on the cluster.</p> </li>
+    /// <li> <p> <code>RUNNING</code> indicates that the execution is being processed by the cluster.</p> </li>
+    /// <li> <p> <code>FINISHING</code> indicates that execution processing is in the final stages.</p> </li>
+    /// <li> <p> <code>FINISHED</code> indicates that the execution has completed without error.</p> </li>
+    /// <li> <p> <code>FAILING</code> indicates that the execution is failing and will not finish successfully.</p> </li>
+    /// <li> <p> <code>FAILED</code> indicates that the execution failed.</p> </li>
+    /// <li> <p> <code>STOP_PENDING</code> indicates that the cluster has received a <code>StopNotebookExecution</code> request and the stop is pending.</p> </li>
+    /// <li> <p> <code>STOPPING</code> indicates that the cluster is in the process of stopping the execution as a result of a <code>StopNotebookExecution</code> request.</p> </li>
+    /// <li> <p> <code>STOPPED</code> indicates that the execution stopped because of a <code>StopNotebookExecution</code> request.</p> </li>
     /// </ul>
-    pub fn status(&self) -> std::option::Option<& crate::types::NotebookExecutionStatus> {
+    pub fn status(&self) -> std::option::Option<&crate::types::NotebookExecutionStatus> {
         self.status.as_ref()
     }
     /// <p>The beginning of time range filter for listing notebook executions. The default is the timestamp of 30 days ago.</p>
-    pub fn from(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
+    pub fn from(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.from.as_ref()
     }
     /// <p>The end of time range filter for listing notebook executions. The default is the current timestamp.</p>
-    pub fn to(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
+    pub fn to(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.to.as_ref()
     }
     /// <p>The pagination token, returned by a previous <code>ListNotebookExecutions</code> call, that indicates the start of the list for this <code>ListNotebookExecutions</code> call.</p>
-    pub fn marker(&self) -> std::option::Option<& str> {
+    pub fn marker(&self) -> std::option::Option<&str> {
         self.marker.as_deref()
     }
 }
 impl ListNotebookExecutionsInput {
     /// Creates a new builder-style object to manufacture [`ListNotebookExecutionsInput`](crate::operation::list_notebook_executions::ListNotebookExecutionsInput).
-    pub fn builder() -> crate::operation::list_notebook_executions::builders::ListNotebookExecutionsInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::list_notebook_executions::builders::ListNotebookExecutionsInputBuilder
+    {
         crate::operation::list_notebook_executions::builders::ListNotebookExecutionsInputBuilder::default()
     }
 }
@@ -90,40 +92,45 @@ impl ListNotebookExecutionsInputBuilder {
     }
     /// <p>The unique ID of the editor associated with the notebook execution.</p>
     pub fn set_editor_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.editor_id = input; self
+        self.editor_id = input;
+        self
     }
-    /// <p>The status filter for listing notebook executions.</p> 
-    /// <ul> 
-    /// <li> <p> <code>START_PENDING</code> indicates that the cluster has received the execution request but execution has not begun.</p> </li> 
-    /// <li> <p> <code>STARTING</code> indicates that the execution is starting on the cluster.</p> </li> 
-    /// <li> <p> <code>RUNNING</code> indicates that the execution is being processed by the cluster.</p> </li> 
-    /// <li> <p> <code>FINISHING</code> indicates that execution processing is in the final stages.</p> </li> 
-    /// <li> <p> <code>FINISHED</code> indicates that the execution has completed without error.</p> </li> 
-    /// <li> <p> <code>FAILING</code> indicates that the execution is failing and will not finish successfully.</p> </li> 
-    /// <li> <p> <code>FAILED</code> indicates that the execution failed.</p> </li> 
-    /// <li> <p> <code>STOP_PENDING</code> indicates that the cluster has received a <code>StopNotebookExecution</code> request and the stop is pending.</p> </li> 
-    /// <li> <p> <code>STOPPING</code> indicates that the cluster is in the process of stopping the execution as a result of a <code>StopNotebookExecution</code> request.</p> </li> 
-    /// <li> <p> <code>STOPPED</code> indicates that the execution stopped because of a <code>StopNotebookExecution</code> request.</p> </li> 
+    /// <p>The status filter for listing notebook executions.</p>
+    /// <ul>
+    /// <li> <p> <code>START_PENDING</code> indicates that the cluster has received the execution request but execution has not begun.</p> </li>
+    /// <li> <p> <code>STARTING</code> indicates that the execution is starting on the cluster.</p> </li>
+    /// <li> <p> <code>RUNNING</code> indicates that the execution is being processed by the cluster.</p> </li>
+    /// <li> <p> <code>FINISHING</code> indicates that execution processing is in the final stages.</p> </li>
+    /// <li> <p> <code>FINISHED</code> indicates that the execution has completed without error.</p> </li>
+    /// <li> <p> <code>FAILING</code> indicates that the execution is failing and will not finish successfully.</p> </li>
+    /// <li> <p> <code>FAILED</code> indicates that the execution failed.</p> </li>
+    /// <li> <p> <code>STOP_PENDING</code> indicates that the cluster has received a <code>StopNotebookExecution</code> request and the stop is pending.</p> </li>
+    /// <li> <p> <code>STOPPING</code> indicates that the cluster is in the process of stopping the execution as a result of a <code>StopNotebookExecution</code> request.</p> </li>
+    /// <li> <p> <code>STOPPED</code> indicates that the execution stopped because of a <code>StopNotebookExecution</code> request.</p> </li>
     /// </ul>
     pub fn status(mut self, input: crate::types::NotebookExecutionStatus) -> Self {
         self.status = Some(input);
         self
     }
-    /// <p>The status filter for listing notebook executions.</p> 
-    /// <ul> 
-    /// <li> <p> <code>START_PENDING</code> indicates that the cluster has received the execution request but execution has not begun.</p> </li> 
-    /// <li> <p> <code>STARTING</code> indicates that the execution is starting on the cluster.</p> </li> 
-    /// <li> <p> <code>RUNNING</code> indicates that the execution is being processed by the cluster.</p> </li> 
-    /// <li> <p> <code>FINISHING</code> indicates that execution processing is in the final stages.</p> </li> 
-    /// <li> <p> <code>FINISHED</code> indicates that the execution has completed without error.</p> </li> 
-    /// <li> <p> <code>FAILING</code> indicates that the execution is failing and will not finish successfully.</p> </li> 
-    /// <li> <p> <code>FAILED</code> indicates that the execution failed.</p> </li> 
-    /// <li> <p> <code>STOP_PENDING</code> indicates that the cluster has received a <code>StopNotebookExecution</code> request and the stop is pending.</p> </li> 
-    /// <li> <p> <code>STOPPING</code> indicates that the cluster is in the process of stopping the execution as a result of a <code>StopNotebookExecution</code> request.</p> </li> 
-    /// <li> <p> <code>STOPPED</code> indicates that the execution stopped because of a <code>StopNotebookExecution</code> request.</p> </li> 
+    /// <p>The status filter for listing notebook executions.</p>
+    /// <ul>
+    /// <li> <p> <code>START_PENDING</code> indicates that the cluster has received the execution request but execution has not begun.</p> </li>
+    /// <li> <p> <code>STARTING</code> indicates that the execution is starting on the cluster.</p> </li>
+    /// <li> <p> <code>RUNNING</code> indicates that the execution is being processed by the cluster.</p> </li>
+    /// <li> <p> <code>FINISHING</code> indicates that execution processing is in the final stages.</p> </li>
+    /// <li> <p> <code>FINISHED</code> indicates that the execution has completed without error.</p> </li>
+    /// <li> <p> <code>FAILING</code> indicates that the execution is failing and will not finish successfully.</p> </li>
+    /// <li> <p> <code>FAILED</code> indicates that the execution failed.</p> </li>
+    /// <li> <p> <code>STOP_PENDING</code> indicates that the cluster has received a <code>StopNotebookExecution</code> request and the stop is pending.</p> </li>
+    /// <li> <p> <code>STOPPING</code> indicates that the cluster is in the process of stopping the execution as a result of a <code>StopNotebookExecution</code> request.</p> </li>
+    /// <li> <p> <code>STOPPED</code> indicates that the execution stopped because of a <code>StopNotebookExecution</code> request.</p> </li>
     /// </ul>
-    pub fn set_status(mut self, input: std::option::Option<crate::types::NotebookExecutionStatus>) -> Self {
-        self.status = input; self
+    pub fn set_status(
+        mut self,
+        input: std::option::Option<crate::types::NotebookExecutionStatus>,
+    ) -> Self {
+        self.status = input;
+        self
     }
     /// <p>The beginning of time range filter for listing notebook executions. The default is the timestamp of 30 days ago.</p>
     pub fn from(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -132,7 +139,8 @@ impl ListNotebookExecutionsInputBuilder {
     }
     /// <p>The beginning of time range filter for listing notebook executions. The default is the timestamp of 30 days ago.</p>
     pub fn set_from(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.from = input; self
+        self.from = input;
+        self
     }
     /// <p>The end of time range filter for listing notebook executions. The default is the current timestamp.</p>
     pub fn to(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -141,7 +149,8 @@ impl ListNotebookExecutionsInputBuilder {
     }
     /// <p>The end of time range filter for listing notebook executions. The default is the current timestamp.</p>
     pub fn set_to(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.to = input; self
+        self.to = input;
+        self
     }
     /// <p>The pagination token, returned by a previous <code>ListNotebookExecutions</code> call, that indicates the start of the list for this <code>ListNotebookExecutions</code> call.</p>
     pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
@@ -150,24 +159,24 @@ impl ListNotebookExecutionsInputBuilder {
     }
     /// <p>The pagination token, returned by a previous <code>ListNotebookExecutions</code> call, that indicates the start of the list for this <code>ListNotebookExecutions</code> call.</p>
     pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.marker = input; self
+        self.marker = input;
+        self
     }
     /// Consumes the builder and constructs a [`ListNotebookExecutionsInput`](crate::operation::list_notebook_executions::ListNotebookExecutionsInput).
-    pub fn build(self) -> Result<crate::operation::list_notebook_executions::ListNotebookExecutionsInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::list_notebook_executions::ListNotebookExecutionsInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::list_notebook_executions::ListNotebookExecutionsInput {
-                editor_id: self.editor_id
-                ,
-                status: self.status
-                ,
-                from: self.from
-                ,
-                to: self.to
-                ,
-                marker: self.marker
-                ,
-            }
+                editor_id: self.editor_id,
+                status: self.status,
+                from: self.from,
+                to: self.to,
+                marker: self.marker,
+            },
         )
     }
 }
-

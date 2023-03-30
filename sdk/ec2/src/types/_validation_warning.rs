@@ -3,14 +3,14 @@
 /// <p>The error codes and error messages that are returned for the parameters or parameter combinations that are not valid when a new launch template or new version of a launch template is created.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ValidationWarning  {
+pub struct ValidationWarning {
     /// <p>The error codes and error messages.</p>
     #[doc(hidden)]
     pub errors: std::option::Option<std::vec::Vec<crate::types::ValidationError>>,
 }
 impl ValidationWarning {
     /// <p>The error codes and error messages.</p>
-    pub fn errors(&self) -> std::option::Option<& [crate::types::ValidationError]> {
+    pub fn errors(&self) -> std::option::Option<&[crate::types::ValidationError]> {
         self.errors.as_deref()
     }
 }
@@ -35,20 +35,22 @@ impl ValidationWarningBuilder {
     /// <p>The error codes and error messages.</p>
     pub fn errors(mut self, input: crate::types::ValidationError) -> Self {
         let mut v = self.errors.unwrap_or_default();
-                        v.push(input);
-                        self.errors = Some(v);
-                        self
+        v.push(input);
+        self.errors = Some(v);
+        self
     }
     /// <p>The error codes and error messages.</p>
-    pub fn set_errors(mut self, input: std::option::Option<std::vec::Vec<crate::types::ValidationError>>) -> Self {
-        self.errors = input; self
+    pub fn set_errors(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::ValidationError>>,
+    ) -> Self {
+        self.errors = input;
+        self
     }
     /// Consumes the builder and constructs a [`ValidationWarning`](crate::types::ValidationWarning).
     pub fn build(self) -> crate::types::ValidationWarning {
         crate::types::ValidationWarning {
-            errors: self.errors
-            ,
+            errors: self.errors,
         }
     }
 }
-

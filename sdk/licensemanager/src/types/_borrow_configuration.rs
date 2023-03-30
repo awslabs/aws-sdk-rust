@@ -3,7 +3,7 @@
 /// <p>Details about a borrow configuration.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct BorrowConfiguration  {
+pub struct BorrowConfiguration {
     /// <p>Indicates whether early check-ins are allowed.</p>
     #[doc(hidden)]
     pub allow_early_check_in: std::option::Option<bool>,
@@ -43,7 +43,8 @@ impl BorrowConfigurationBuilder {
     }
     /// <p>Indicates whether early check-ins are allowed.</p>
     pub fn set_allow_early_check_in(mut self, input: std::option::Option<bool>) -> Self {
-        self.allow_early_check_in = input; self
+        self.allow_early_check_in = input;
+        self
     }
     /// <p>Maximum time for the borrow configuration, in minutes.</p>
     pub fn max_time_to_live_in_minutes(mut self, input: i32) -> Self {
@@ -52,16 +53,14 @@ impl BorrowConfigurationBuilder {
     }
     /// <p>Maximum time for the borrow configuration, in minutes.</p>
     pub fn set_max_time_to_live_in_minutes(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_time_to_live_in_minutes = input; self
+        self.max_time_to_live_in_minutes = input;
+        self
     }
     /// Consumes the builder and constructs a [`BorrowConfiguration`](crate::types::BorrowConfiguration).
     pub fn build(self) -> crate::types::BorrowConfiguration {
         crate::types::BorrowConfiguration {
-            allow_early_check_in: self.allow_early_check_in
-            ,
-            max_time_to_live_in_minutes: self.max_time_to_live_in_minutes
-            ,
+            allow_early_check_in: self.allow_early_check_in,
+            max_time_to_live_in_minutes: self.max_time_to_live_in_minutes,
         }
     }
 }
-

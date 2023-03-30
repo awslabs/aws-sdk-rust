@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateWorkspaceBundleInput  {
+pub struct CreateWorkspaceBundleInput {
     /// <p>The name of the bundle.</p>
     #[doc(hidden)]
     pub bundle_name: std::option::Option<std::string::String>,
@@ -21,47 +21,49 @@ pub struct CreateWorkspaceBundleInput  {
     /// <p>Describes the root volume for a WorkSpace bundle.</p>
     #[doc(hidden)]
     pub root_storage: std::option::Option<crate::types::RootStorage>,
-    /// <p>The tags associated with the bundle.</p> <note> 
-    /// <p>To add tags at the same time when you're creating the bundle, you must create an IAM policy that grants your IAM user permissions to use <code>workspaces:CreateTags</code>. </p> 
+    /// <p>The tags associated with the bundle.</p> <note>
+    /// <p>To add tags at the same time when you're creating the bundle, you must create an IAM policy that grants your IAM user permissions to use <code>workspaces:CreateTags</code>. </p>
     /// </note>
     #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::types::Tag>>,
 }
 impl CreateWorkspaceBundleInput {
     /// <p>The name of the bundle.</p>
-    pub fn bundle_name(&self) -> std::option::Option<& str> {
+    pub fn bundle_name(&self) -> std::option::Option<&str> {
         self.bundle_name.as_deref()
     }
     /// <p>The description of the bundle.</p>
-    pub fn bundle_description(&self) -> std::option::Option<& str> {
+    pub fn bundle_description(&self) -> std::option::Option<&str> {
         self.bundle_description.as_deref()
     }
     /// <p>The identifier of the image that is used to create the bundle.</p>
-    pub fn image_id(&self) -> std::option::Option<& str> {
+    pub fn image_id(&self) -> std::option::Option<&str> {
         self.image_id.as_deref()
     }
     /// <p>Describes the compute type of the bundle.</p>
-    pub fn compute_type(&self) -> std::option::Option<& crate::types::ComputeType> {
+    pub fn compute_type(&self) -> std::option::Option<&crate::types::ComputeType> {
         self.compute_type.as_ref()
     }
     /// <p>Describes the user volume for a WorkSpace bundle.</p>
-    pub fn user_storage(&self) -> std::option::Option<& crate::types::UserStorage> {
+    pub fn user_storage(&self) -> std::option::Option<&crate::types::UserStorage> {
         self.user_storage.as_ref()
     }
     /// <p>Describes the root volume for a WorkSpace bundle.</p>
-    pub fn root_storage(&self) -> std::option::Option<& crate::types::RootStorage> {
+    pub fn root_storage(&self) -> std::option::Option<&crate::types::RootStorage> {
         self.root_storage.as_ref()
     }
-    /// <p>The tags associated with the bundle.</p> <note> 
-    /// <p>To add tags at the same time when you're creating the bundle, you must create an IAM policy that grants your IAM user permissions to use <code>workspaces:CreateTags</code>. </p> 
+    /// <p>The tags associated with the bundle.</p> <note>
+    /// <p>To add tags at the same time when you're creating the bundle, you must create an IAM policy that grants your IAM user permissions to use <code>workspaces:CreateTags</code>. </p>
     /// </note>
-    pub fn tags(&self) -> std::option::Option<& [crate::types::Tag]> {
+    pub fn tags(&self) -> std::option::Option<&[crate::types::Tag]> {
         self.tags.as_deref()
     }
 }
 impl CreateWorkspaceBundleInput {
     /// Creates a new builder-style object to manufacture [`CreateWorkspaceBundleInput`](crate::operation::create_workspace_bundle::CreateWorkspaceBundleInput).
-    pub fn builder() -> crate::operation::create_workspace_bundle::builders::CreateWorkspaceBundleInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::create_workspace_bundle::builders::CreateWorkspaceBundleInputBuilder
+    {
         crate::operation::create_workspace_bundle::builders::CreateWorkspaceBundleInputBuilder::default()
     }
 }
@@ -86,7 +88,8 @@ impl CreateWorkspaceBundleInputBuilder {
     }
     /// <p>The name of the bundle.</p>
     pub fn set_bundle_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.bundle_name = input; self
+        self.bundle_name = input;
+        self
     }
     /// <p>The description of the bundle.</p>
     pub fn bundle_description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -94,8 +97,12 @@ impl CreateWorkspaceBundleInputBuilder {
         self
     }
     /// <p>The description of the bundle.</p>
-    pub fn set_bundle_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.bundle_description = input; self
+    pub fn set_bundle_description(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.bundle_description = input;
+        self
     }
     /// <p>The identifier of the image that is used to create the bundle.</p>
     pub fn image_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -104,7 +111,8 @@ impl CreateWorkspaceBundleInputBuilder {
     }
     /// <p>The identifier of the image that is used to create the bundle.</p>
     pub fn set_image_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.image_id = input; self
+        self.image_id = input;
+        self
     }
     /// <p>Describes the compute type of the bundle.</p>
     pub fn compute_type(mut self, input: crate::types::ComputeType) -> Self {
@@ -112,8 +120,12 @@ impl CreateWorkspaceBundleInputBuilder {
         self
     }
     /// <p>Describes the compute type of the bundle.</p>
-    pub fn set_compute_type(mut self, input: std::option::Option<crate::types::ComputeType>) -> Self {
-        self.compute_type = input; self
+    pub fn set_compute_type(
+        mut self,
+        input: std::option::Option<crate::types::ComputeType>,
+    ) -> Self {
+        self.compute_type = input;
+        self
     }
     /// <p>Describes the user volume for a WorkSpace bundle.</p>
     pub fn user_storage(mut self, input: crate::types::UserStorage) -> Self {
@@ -121,8 +133,12 @@ impl CreateWorkspaceBundleInputBuilder {
         self
     }
     /// <p>Describes the user volume for a WorkSpace bundle.</p>
-    pub fn set_user_storage(mut self, input: std::option::Option<crate::types::UserStorage>) -> Self {
-        self.user_storage = input; self
+    pub fn set_user_storage(
+        mut self,
+        input: std::option::Option<crate::types::UserStorage>,
+    ) -> Self {
+        self.user_storage = input;
+        self
     }
     /// <p>Describes the root volume for a WorkSpace bundle.</p>
     pub fn root_storage(mut self, input: crate::types::RootStorage) -> Self {
@@ -130,48 +146,53 @@ impl CreateWorkspaceBundleInputBuilder {
         self
     }
     /// <p>Describes the root volume for a WorkSpace bundle.</p>
-    pub fn set_root_storage(mut self, input: std::option::Option<crate::types::RootStorage>) -> Self {
-        self.root_storage = input; self
+    pub fn set_root_storage(
+        mut self,
+        input: std::option::Option<crate::types::RootStorage>,
+    ) -> Self {
+        self.root_storage = input;
+        self
     }
     /// Appends an item to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
-    /// <p>The tags associated with the bundle.</p> <note> 
-    /// <p>To add tags at the same time when you're creating the bundle, you must create an IAM policy that grants your IAM user permissions to use <code>workspaces:CreateTags</code>. </p> 
+    /// <p>The tags associated with the bundle.</p> <note>
+    /// <p>To add tags at the same time when you're creating the bundle, you must create an IAM policy that grants your IAM user permissions to use <code>workspaces:CreateTags</code>. </p>
     /// </note>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
-                        v.push(input);
-                        self.tags = Some(v);
-                        self
+        v.push(input);
+        self.tags = Some(v);
+        self
     }
-    /// <p>The tags associated with the bundle.</p> <note> 
-    /// <p>To add tags at the same time when you're creating the bundle, you must create an IAM policy that grants your IAM user permissions to use <code>workspaces:CreateTags</code>. </p> 
+    /// <p>The tags associated with the bundle.</p> <note>
+    /// <p>To add tags at the same time when you're creating the bundle, you must create an IAM policy that grants your IAM user permissions to use <code>workspaces:CreateTags</code>. </p>
     /// </note>
-    pub fn set_tags(mut self, input: std::option::Option<std::vec::Vec<crate::types::Tag>>) -> Self {
-        self.tags = input; self
+    pub fn set_tags(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::Tag>>,
+    ) -> Self {
+        self.tags = input;
+        self
     }
     /// Consumes the builder and constructs a [`CreateWorkspaceBundleInput`](crate::operation::create_workspace_bundle::CreateWorkspaceBundleInput).
-    pub fn build(self) -> Result<crate::operation::create_workspace_bundle::CreateWorkspaceBundleInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::create_workspace_bundle::CreateWorkspaceBundleInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::create_workspace_bundle::CreateWorkspaceBundleInput {
-                bundle_name: self.bundle_name
-                ,
-                bundle_description: self.bundle_description
-                ,
-                image_id: self.image_id
-                ,
-                compute_type: self.compute_type
-                ,
-                user_storage: self.user_storage
-                ,
-                root_storage: self.root_storage
-                ,
-                tags: self.tags
-                ,
-            }
+                bundle_name: self.bundle_name,
+                bundle_description: self.bundle_description,
+                image_id: self.image_id,
+                compute_type: self.compute_type,
+                user_storage: self.user_storage,
+                root_storage: self.root_storage,
+                tags: self.tags,
+            },
         )
     }
 }
-

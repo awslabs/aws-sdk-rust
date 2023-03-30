@@ -3,7 +3,7 @@
 /// <p>Source details for an Amazon S3 data access asset.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct S3DataAccessAssetSourceEntry  {
+pub struct S3DataAccessAssetSourceEntry {
     /// <p>The Amazon S3 bucket used for hosting shared data in the Amazon S3 data access.</p>
     #[doc(hidden)]
     pub bucket: std::option::Option<std::string::String>,
@@ -16,15 +16,15 @@ pub struct S3DataAccessAssetSourceEntry  {
 }
 impl S3DataAccessAssetSourceEntry {
     /// <p>The Amazon S3 bucket used for hosting shared data in the Amazon S3 data access.</p>
-    pub fn bucket(&self) -> std::option::Option<& str> {
+    pub fn bucket(&self) -> std::option::Option<&str> {
         self.bucket.as_deref()
     }
     /// <p>Organizes Amazon S3 asset key prefixes stored in an Amazon S3 bucket.</p>
-    pub fn key_prefixes(&self) -> std::option::Option<& [std::string::String]> {
+    pub fn key_prefixes(&self) -> std::option::Option<&[std::string::String]> {
         self.key_prefixes.as_deref()
     }
     /// <p>The keys used to create the Amazon S3 data access.</p>
-    pub fn keys(&self) -> std::option::Option<& [std::string::String]> {
+    pub fn keys(&self) -> std::option::Option<&[std::string::String]> {
         self.keys.as_deref()
     }
 }
@@ -51,7 +51,8 @@ impl S3DataAccessAssetSourceEntryBuilder {
     }
     /// <p>The Amazon S3 bucket used for hosting shared data in the Amazon S3 data access.</p>
     pub fn set_bucket(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.bucket = input; self
+        self.bucket = input;
+        self
     }
     /// Appends an item to `key_prefixes`.
     ///
@@ -60,13 +61,17 @@ impl S3DataAccessAssetSourceEntryBuilder {
     /// <p>Organizes Amazon S3 asset key prefixes stored in an Amazon S3 bucket.</p>
     pub fn key_prefixes(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.key_prefixes.unwrap_or_default();
-                        v.push(input.into());
-                        self.key_prefixes = Some(v);
-                        self
+        v.push(input.into());
+        self.key_prefixes = Some(v);
+        self
     }
     /// <p>Organizes Amazon S3 asset key prefixes stored in an Amazon S3 bucket.</p>
-    pub fn set_key_prefixes(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-        self.key_prefixes = input; self
+    pub fn set_key_prefixes(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
+        self.key_prefixes = input;
+        self
     }
     /// Appends an item to `keys`.
     ///
@@ -75,24 +80,24 @@ impl S3DataAccessAssetSourceEntryBuilder {
     /// <p>The keys used to create the Amazon S3 data access.</p>
     pub fn keys(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.keys.unwrap_or_default();
-                        v.push(input.into());
-                        self.keys = Some(v);
-                        self
+        v.push(input.into());
+        self.keys = Some(v);
+        self
     }
     /// <p>The keys used to create the Amazon S3 data access.</p>
-    pub fn set_keys(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-        self.keys = input; self
+    pub fn set_keys(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
+        self.keys = input;
+        self
     }
     /// Consumes the builder and constructs a [`S3DataAccessAssetSourceEntry`](crate::types::S3DataAccessAssetSourceEntry).
     pub fn build(self) -> crate::types::S3DataAccessAssetSourceEntry {
         crate::types::S3DataAccessAssetSourceEntry {
-            bucket: self.bucket
-            ,
-            key_prefixes: self.key_prefixes
-            ,
-            keys: self.keys
-            ,
+            bucket: self.bucket,
+            key_prefixes: self.key_prefixes,
+            keys: self.keys,
         }
     }
 }
-

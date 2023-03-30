@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-/// 
+///
 /// Here is an example of how you can make a match expression forward-compatible:
-/// 
+///
 /// ```text
 /// # let ec2instancestate = unimplemented!();
 /// match ec2instancestate {
@@ -35,14 +35,22 @@
 /// Specifically, when `ec2instancestate` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `Ec2InstanceState::NewFeature` also yielding `"NewFeature"`.
-/// 
+///
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
 pub enum Ec2InstanceState {
     #[allow(missing_docs)] // documentation missing in model
     NotFound,
@@ -59,51 +67,60 @@ pub enum Ec2InstanceState {
     #[allow(missing_docs)] // documentation missing in model
     Terminated,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::primitives::UnknownVariantValue)
+    Unknown(crate::primitives::UnknownVariantValue),
 }
 impl std::convert::From<&str> for Ec2InstanceState {
-                fn from(s: &str) -> Self {
-                    match s {
-                        "NOT_FOUND" => Ec2InstanceState::NotFound,
-"PENDING" => Ec2InstanceState::Pending,
-"RUNNING" => Ec2InstanceState::Running,
-"SHUTTING-DOWN" => Ec2InstanceState::ShuttingDown,
-"STOPPED" => Ec2InstanceState::Stopped,
-"STOPPING" => Ec2InstanceState::Stopping,
-"TERMINATED" => Ec2InstanceState::Terminated,
-other => Ec2InstanceState::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
-                    }
-                }
+    fn from(s: &str) -> Self {
+        match s {
+            "NOT_FOUND" => Ec2InstanceState::NotFound,
+            "PENDING" => Ec2InstanceState::Pending,
+            "RUNNING" => Ec2InstanceState::Running,
+            "SHUTTING-DOWN" => Ec2InstanceState::ShuttingDown,
+            "STOPPED" => Ec2InstanceState::Stopped,
+            "STOPPING" => Ec2InstanceState::Stopping,
+            "TERMINATED" => Ec2InstanceState::Terminated,
+            other => {
+                Ec2InstanceState::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
             }
-impl std::str::FromStr for Ec2InstanceState {
-                type Err = std::convert::Infallible;
-
-                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-                    Ok(Ec2InstanceState::from(s))
-                }
-            }
-impl Ec2InstanceState {
-                /// Returns the `&str` value of the enum member.
-                pub fn as_str(&self) -> &str {
-                    match self {
-    Ec2InstanceState::NotFound => "NOT_FOUND",
-    Ec2InstanceState::Pending => "PENDING",
-    Ec2InstanceState::Running => "RUNNING",
-    Ec2InstanceState::ShuttingDown => "SHUTTING-DOWN",
-    Ec2InstanceState::Stopped => "STOPPED",
-    Ec2InstanceState::Stopping => "STOPPING",
-    Ec2InstanceState::Terminated => "TERMINATED",
-    Ec2InstanceState::Unknown(value) => value.as_str()
+        }
+    }
 }
-                }
-                /// Returns all the `&str` representations of the enum members.
-                pub const fn values() -> &'static [&'static str] {
-                    &["NOT_FOUND", "PENDING", "RUNNING", "SHUTTING-DOWN", "STOPPED", "STOPPING", "TERMINATED"]
-                }
-            }
-impl AsRef<str> for Ec2InstanceState {
-                fn as_ref(&self) -> &str {
-                    self.as_str()
-                }
-            }
+impl std::str::FromStr for Ec2InstanceState {
+    type Err = std::convert::Infallible;
 
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(Ec2InstanceState::from(s))
+    }
+}
+impl Ec2InstanceState {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            Ec2InstanceState::NotFound => "NOT_FOUND",
+            Ec2InstanceState::Pending => "PENDING",
+            Ec2InstanceState::Running => "RUNNING",
+            Ec2InstanceState::ShuttingDown => "SHUTTING-DOWN",
+            Ec2InstanceState::Stopped => "STOPPED",
+            Ec2InstanceState::Stopping => "STOPPING",
+            Ec2InstanceState::Terminated => "TERMINATED",
+            Ec2InstanceState::Unknown(value) => value.as_str(),
+        }
+    }
+    /// Returns all the `&str` representations of the enum members.
+    pub const fn values() -> &'static [&'static str] {
+        &[
+            "NOT_FOUND",
+            "PENDING",
+            "RUNNING",
+            "SHUTTING-DOWN",
+            "STOPPED",
+            "STOPPING",
+            "TERMINATED",
+        ]
+    }
+}
+impl AsRef<str> for Ec2InstanceState {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}

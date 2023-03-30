@@ -2,33 +2,36 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateApplicationResourceLifecycleOutput  {
+pub struct UpdateApplicationResourceLifecycleOutput {
     /// <p>The name of the application.</p>
     #[doc(hidden)]
     pub application_name: std::option::Option<std::string::String>,
     /// <p>The lifecycle configuration.</p>
     #[doc(hidden)]
-    pub resource_lifecycle_config: std::option::Option<crate::types::ApplicationResourceLifecycleConfig>,
+    pub resource_lifecycle_config:
+        std::option::Option<crate::types::ApplicationResourceLifecycleConfig>,
     _request_id: Option<String>,
 }
 impl UpdateApplicationResourceLifecycleOutput {
     /// <p>The name of the application.</p>
-    pub fn application_name(&self) -> std::option::Option<& str> {
+    pub fn application_name(&self) -> std::option::Option<&str> {
         self.application_name.as_deref()
     }
     /// <p>The lifecycle configuration.</p>
-    pub fn resource_lifecycle_config(&self) -> std::option::Option<& crate::types::ApplicationResourceLifecycleConfig> {
+    pub fn resource_lifecycle_config(
+        &self,
+    ) -> std::option::Option<&crate::types::ApplicationResourceLifecycleConfig> {
         self.resource_lifecycle_config.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for UpdateApplicationResourceLifecycleOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl UpdateApplicationResourceLifecycleOutput {
     /// Creates a new builder-style object to manufacture [`UpdateApplicationResourceLifecycleOutput`](crate::operation::update_application_resource_lifecycle::UpdateApplicationResourceLifecycleOutput).
-    pub fn builder() -> crate::operation::update_application_resource_lifecycle::builders::UpdateApplicationResourceLifecycleOutputBuilder {
+    pub fn builder() -> crate::operation::update_application_resource_lifecycle::builders::UpdateApplicationResourceLifecycleOutputBuilder{
         crate::operation::update_application_resource_lifecycle::builders::UpdateApplicationResourceLifecycleOutputBuilder::default()
     }
 }
@@ -38,7 +41,8 @@ impl UpdateApplicationResourceLifecycleOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct UpdateApplicationResourceLifecycleOutputBuilder {
     pub(crate) application_name: std::option::Option<std::string::String>,
-    pub(crate) resource_lifecycle_config: std::option::Option<crate::types::ApplicationResourceLifecycleConfig>,
+    pub(crate) resource_lifecycle_config:
+        std::option::Option<crate::types::ApplicationResourceLifecycleConfig>,
     _request_id: Option<String>,
 }
 impl UpdateApplicationResourceLifecycleOutputBuilder {
@@ -49,28 +53,36 @@ impl UpdateApplicationResourceLifecycleOutputBuilder {
     }
     /// <p>The name of the application.</p>
     pub fn set_application_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.application_name = input; self
+        self.application_name = input;
+        self
     }
     /// <p>The lifecycle configuration.</p>
-    pub fn resource_lifecycle_config(mut self, input: crate::types::ApplicationResourceLifecycleConfig) -> Self {
+    pub fn resource_lifecycle_config(
+        mut self,
+        input: crate::types::ApplicationResourceLifecycleConfig,
+    ) -> Self {
         self.resource_lifecycle_config = Some(input);
         self
     }
     /// <p>The lifecycle configuration.</p>
-    pub fn set_resource_lifecycle_config(mut self, input: std::option::Option<crate::types::ApplicationResourceLifecycleConfig>) -> Self {
-        self.resource_lifecycle_config = input; self
+    pub fn set_resource_lifecycle_config(
+        mut self,
+        input: std::option::Option<crate::types::ApplicationResourceLifecycleConfig>,
+    ) -> Self {
+        self.resource_lifecycle_config = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`UpdateApplicationResourceLifecycleOutput`](crate::operation::update_application_resource_lifecycle::UpdateApplicationResourceLifecycleOutput).
-    pub fn build(self) -> crate::operation::update_application_resource_lifecycle::UpdateApplicationResourceLifecycleOutput {
+    pub fn build(self) -> crate::operation::update_application_resource_lifecycle::UpdateApplicationResourceLifecycleOutput{
         crate::operation::update_application_resource_lifecycle::UpdateApplicationResourceLifecycleOutput {
             application_name: self.application_name
             ,
@@ -80,4 +92,3 @@ impl UpdateApplicationResourceLifecycleOutputBuilder {
         }
     }
 }
-

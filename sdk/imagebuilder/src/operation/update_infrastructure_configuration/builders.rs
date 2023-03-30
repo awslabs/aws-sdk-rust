@@ -4,56 +4,71 @@ pub use crate::operation::update_infrastructure_configuration::_update_infrastru
 pub use crate::operation::update_infrastructure_configuration::_update_infrastructure_configuration_input::UpdateInfrastructureConfigurationInputBuilder;
 
 /// Fluent builder constructing a request to `UpdateInfrastructureConfiguration`.
-/// 
+///
 /// <p> Updates a new infrastructure configuration. An infrastructure configuration defines the environment in which your image will be built and tested.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct UpdateInfrastructureConfigurationFluentBuilder {
                 handle: std::sync::Arc<crate::client::Handle>,
                 inner: crate::operation::update_infrastructure_configuration::builders::UpdateInfrastructureConfigurationInputBuilder
             }
-impl UpdateInfrastructureConfigurationFluentBuilder  {
+impl UpdateInfrastructureConfigurationFluentBuilder {
     /// Creates a new `UpdateInfrastructureConfiguration`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
-                    /// sent. The operation's inner [http::Request] can be modified as well.
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle,
+            inner: Default::default(),
+        }
+    }
+
+    /// Consume this builder, creating a customizable operation that can be modified before being
+    /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::update_infrastructure_configuration::UpdateInfrastructureConfiguration, aws_http::retry::AwsResponseRetryClassifier,>,
                         aws_smithy_http::result::SdkError<crate::operation::update_infrastructure_configuration::UpdateInfrastructureConfigurationError>
-                    >  {
-                        let handle = self.handle.clone();
-                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-                    }
-    
-                    /// Sends the request and returns the response.
-                    ///
-                    /// If an error occurs, an `SdkError` will be returned with additional details that
-                    /// can be matched against.
-                    ///
-                    /// By default, any retryable failures will be retried twice. Retry behavior
-                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                    /// set when configuring the client.
+    >{
+        let handle = self.handle.clone();
+        let operation = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+    }
+
+    /// Sends the request and returns the response.
+    ///
+    /// If an error occurs, an `SdkError` will be returned with additional details that
+    /// can be matched against.
+    ///
+    /// By default, any retryable failures will be retried twice. Retry behavior
+    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+    /// set when configuring the client.
                     pub async fn send(self) -> std::result::Result<crate::operation::update_infrastructure_configuration::UpdateInfrastructureConfigurationOutput, aws_smithy_http::result::SdkError<crate::operation::update_infrastructure_configuration::UpdateInfrastructureConfigurationError>>
                      {
-                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&self.handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        self.handle.client.call(op).await
-                    }
+        let op = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&self.handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        self.handle.client.call(op).await
+    }
     /// <p>The Amazon Resource Name (ARN) of the infrastructure configuration that you want to update.</p>
-    pub fn infrastructure_configuration_arn(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn infrastructure_configuration_arn(
+        mut self,
+        input: impl Into<std::string::String>,
+    ) -> Self {
         self.inner = self.inner.infrastructure_configuration_arn(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the infrastructure configuration that you want to update.</p>
-    pub fn set_infrastructure_configuration_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_infrastructure_configuration_arn(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_infrastructure_configuration_arn(input);
         self
     }
@@ -77,7 +92,10 @@ impl UpdateInfrastructureConfigurationFluentBuilder  {
         self
     }
     /// <p>The instance types of the infrastructure configuration. You can specify one or more instance types to use for this build. The service will pick one of these instance types based on availability.</p>
-    pub fn set_instance_types(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+    pub fn set_instance_types(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
         self.inner = self.inner.set_instance_types(input);
         self
     }
@@ -87,7 +105,10 @@ impl UpdateInfrastructureConfigurationFluentBuilder  {
         self
     }
     /// <p>The instance profile to associate with the instance used to customize your Amazon EC2 AMI.</p>
-    pub fn set_instance_profile_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_instance_profile_name(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_instance_profile_name(input);
         self
     }
@@ -101,7 +122,10 @@ impl UpdateInfrastructureConfigurationFluentBuilder  {
         self
     }
     /// <p>The security group IDs to associate with the instance used to customize your Amazon EC2 AMI.</p>
-    pub fn set_security_group_ids(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+    pub fn set_security_group_ids(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
         self.inner = self.inner.set_security_group_ids(input);
         self
     }
@@ -145,15 +169,15 @@ impl UpdateInfrastructureConfigurationFluentBuilder  {
         self.inner = self.inner.set_terminate_instance_on_failure(input);
         self
     }
-    /// <p>The Amazon Resource Name (ARN) for the SNS topic to which we send image build event notifications.</p> <note> 
-    /// <p>EC2 Image Builder is unable to send notifications to SNS topics that are encrypted using keys from other accounts. The key that is used to encrypt the SNS topic must reside in the account that the Image Builder service runs under.</p> 
+    /// <p>The Amazon Resource Name (ARN) for the SNS topic to which we send image build event notifications.</p> <note>
+    /// <p>EC2 Image Builder is unable to send notifications to SNS topics that are encrypted using keys from other accounts. The key that is used to encrypt the SNS topic must reside in the account that the Image Builder service runs under.</p>
     /// </note>
     pub fn sns_topic_arn(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.sns_topic_arn(input.into());
         self
     }
-    /// <p>The Amazon Resource Name (ARN) for the SNS topic to which we send image build event notifications.</p> <note> 
-    /// <p>EC2 Image Builder is unable to send notifications to SNS topics that are encrypted using keys from other accounts. The key that is used to encrypt the SNS topic must reside in the account that the Image Builder service runs under.</p> 
+    /// <p>The Amazon Resource Name (ARN) for the SNS topic to which we send image build event notifications.</p> <note>
+    /// <p>EC2 Image Builder is unable to send notifications to SNS topics that are encrypted using keys from other accounts. The key that is used to encrypt the SNS topic must reside in the account that the Image Builder service runs under.</p>
     /// </note>
     pub fn set_sns_topic_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.inner = self.inner.set_sns_topic_arn(input);
@@ -174,32 +198,46 @@ impl UpdateInfrastructureConfigurationFluentBuilder  {
     /// To override the contents of this collection use [`set_resource_tags`](Self::set_resource_tags).
     ///
     /// <p>The tags attached to the resource created by Image Builder.</p>
-    pub fn resource_tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
+    pub fn resource_tags(
+        mut self,
+        k: impl Into<std::string::String>,
+        v: impl Into<std::string::String>,
+    ) -> Self {
         self.inner = self.inner.resource_tags(k.into(), v.into());
         self
     }
     /// <p>The tags attached to the resource created by Image Builder.</p>
-    pub fn set_resource_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+    pub fn set_resource_tags(
+        mut self,
+        input: std::option::Option<
+            std::collections::HashMap<std::string::String, std::string::String>,
+        >,
+    ) -> Self {
         self.inner = self.inner.set_resource_tags(input);
         self
     }
-    /// <p>The instance metadata options that you can set for the HTTP requests that pipeline builds use to launch EC2 build and test instances. For more information about instance metadata options, see one of the following links:</p> 
-    /// <ul> 
-    /// <li> <p> <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/configuring-instance-metadata-options.html">Configure the instance metadata options</a> in the <i> <i>Amazon EC2 User Guide</i> </i> for Linux instances.</p> </li> 
-    /// <li> <p> <a href="https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/configuring-instance-metadata-options.html">Configure the instance metadata options</a> in the <i> <i>Amazon EC2 Windows Guide</i> </i> for Windows instances.</p> </li> 
+    /// <p>The instance metadata options that you can set for the HTTP requests that pipeline builds use to launch EC2 build and test instances. For more information about instance metadata options, see one of the following links:</p>
+    /// <ul>
+    /// <li> <p> <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/configuring-instance-metadata-options.html">Configure the instance metadata options</a> in the <i> <i>Amazon EC2 User Guide</i> </i> for Linux instances.</p> </li>
+    /// <li> <p> <a href="https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/configuring-instance-metadata-options.html">Configure the instance metadata options</a> in the <i> <i>Amazon EC2 Windows Guide</i> </i> for Windows instances.</p> </li>
     /// </ul>
-    pub fn instance_metadata_options(mut self, input: crate::types::InstanceMetadataOptions) -> Self {
+    pub fn instance_metadata_options(
+        mut self,
+        input: crate::types::InstanceMetadataOptions,
+    ) -> Self {
         self.inner = self.inner.instance_metadata_options(input);
         self
     }
-    /// <p>The instance metadata options that you can set for the HTTP requests that pipeline builds use to launch EC2 build and test instances. For more information about instance metadata options, see one of the following links:</p> 
-    /// <ul> 
-    /// <li> <p> <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/configuring-instance-metadata-options.html">Configure the instance metadata options</a> in the <i> <i>Amazon EC2 User Guide</i> </i> for Linux instances.</p> </li> 
-    /// <li> <p> <a href="https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/configuring-instance-metadata-options.html">Configure the instance metadata options</a> in the <i> <i>Amazon EC2 Windows Guide</i> </i> for Windows instances.</p> </li> 
+    /// <p>The instance metadata options that you can set for the HTTP requests that pipeline builds use to launch EC2 build and test instances. For more information about instance metadata options, see one of the following links:</p>
+    /// <ul>
+    /// <li> <p> <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/configuring-instance-metadata-options.html">Configure the instance metadata options</a> in the <i> <i>Amazon EC2 User Guide</i> </i> for Linux instances.</p> </li>
+    /// <li> <p> <a href="https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/configuring-instance-metadata-options.html">Configure the instance metadata options</a> in the <i> <i>Amazon EC2 Windows Guide</i> </i> for Windows instances.</p> </li>
     /// </ul>
-    pub fn set_instance_metadata_options(mut self, input: std::option::Option<crate::types::InstanceMetadataOptions>) -> Self {
+    pub fn set_instance_metadata_options(
+        mut self,
+        input: std::option::Option<crate::types::InstanceMetadataOptions>,
+    ) -> Self {
         self.inner = self.inner.set_instance_metadata_options(input);
         self
     }
 }
-

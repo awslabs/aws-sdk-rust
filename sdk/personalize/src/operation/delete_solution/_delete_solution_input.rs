@@ -2,14 +2,14 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteSolutionInput  {
+pub struct DeleteSolutionInput {
     /// <p>The ARN of the solution to delete.</p>
     #[doc(hidden)]
     pub solution_arn: std::option::Option<std::string::String>,
 }
 impl DeleteSolutionInput {
     /// <p>The ARN of the solution to delete.</p>
-    pub fn solution_arn(&self) -> std::option::Option<& str> {
+    pub fn solution_arn(&self) -> std::option::Option<&str> {
         self.solution_arn.as_deref()
     }
 }
@@ -34,16 +34,18 @@ impl DeleteSolutionInputBuilder {
     }
     /// <p>The ARN of the solution to delete.</p>
     pub fn set_solution_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.solution_arn = input; self
+        self.solution_arn = input;
+        self
     }
     /// Consumes the builder and constructs a [`DeleteSolutionInput`](crate::operation::delete_solution::DeleteSolutionInput).
-    pub fn build(self) -> Result<crate::operation::delete_solution::DeleteSolutionInput, aws_smithy_http::operation::error::BuildError> {
-        Ok(
-            crate::operation::delete_solution::DeleteSolutionInput {
-                solution_arn: self.solution_arn
-                ,
-            }
-        )
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::delete_solution::DeleteSolutionInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        Ok(crate::operation::delete_solution::DeleteSolutionInput {
+            solution_arn: self.solution_arn,
+        })
     }
 }
-

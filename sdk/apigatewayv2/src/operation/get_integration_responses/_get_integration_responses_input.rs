@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetIntegrationResponsesInput  {
+pub struct GetIntegrationResponsesInput {
     /// <p>The API identifier.</p>
     #[doc(hidden)]
     pub api_id: std::option::Option<std::string::String>,
@@ -18,25 +18,27 @@ pub struct GetIntegrationResponsesInput  {
 }
 impl GetIntegrationResponsesInput {
     /// <p>The API identifier.</p>
-    pub fn api_id(&self) -> std::option::Option<& str> {
+    pub fn api_id(&self) -> std::option::Option<&str> {
         self.api_id.as_deref()
     }
     /// <p>The integration ID.</p>
-    pub fn integration_id(&self) -> std::option::Option<& str> {
+    pub fn integration_id(&self) -> std::option::Option<&str> {
         self.integration_id.as_deref()
     }
     /// <p>The maximum number of elements to be returned for this resource.</p>
-    pub fn max_results(&self) -> std::option::Option<& str> {
+    pub fn max_results(&self) -> std::option::Option<&str> {
         self.max_results.as_deref()
     }
     /// <p>The next page of elements from this collection. Not valid for the last element of the collection.</p>
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
 }
 impl GetIntegrationResponsesInput {
     /// Creates a new builder-style object to manufacture [`GetIntegrationResponsesInput`](crate::operation::get_integration_responses::GetIntegrationResponsesInput).
-    pub fn builder() -> crate::operation::get_integration_responses::builders::GetIntegrationResponsesInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::get_integration_responses::builders::GetIntegrationResponsesInputBuilder
+    {
         crate::operation::get_integration_responses::builders::GetIntegrationResponsesInputBuilder::default()
     }
 }
@@ -58,7 +60,8 @@ impl GetIntegrationResponsesInputBuilder {
     }
     /// <p>The API identifier.</p>
     pub fn set_api_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.api_id = input; self
+        self.api_id = input;
+        self
     }
     /// <p>The integration ID.</p>
     pub fn integration_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -67,7 +70,8 @@ impl GetIntegrationResponsesInputBuilder {
     }
     /// <p>The integration ID.</p>
     pub fn set_integration_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.integration_id = input; self
+        self.integration_id = input;
+        self
     }
     /// <p>The maximum number of elements to be returned for this resource.</p>
     pub fn max_results(mut self, input: impl Into<std::string::String>) -> Self {
@@ -76,7 +80,8 @@ impl GetIntegrationResponsesInputBuilder {
     }
     /// <p>The maximum number of elements to be returned for this resource.</p>
     pub fn set_max_results(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.max_results = input; self
+        self.max_results = input;
+        self
     }
     /// <p>The next page of elements from this collection. Not valid for the last element of the collection.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -85,22 +90,23 @@ impl GetIntegrationResponsesInputBuilder {
     }
     /// <p>The next page of elements from this collection. Not valid for the last element of the collection.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input; self
+        self.next_token = input;
+        self
     }
     /// Consumes the builder and constructs a [`GetIntegrationResponsesInput`](crate::operation::get_integration_responses::GetIntegrationResponsesInput).
-    pub fn build(self) -> Result<crate::operation::get_integration_responses::GetIntegrationResponsesInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::get_integration_responses::GetIntegrationResponsesInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::get_integration_responses::GetIntegrationResponsesInput {
-                api_id: self.api_id
-                ,
-                integration_id: self.integration_id
-                ,
-                max_results: self.max_results
-                ,
-                next_token: self.next_token
-                ,
-            }
+                api_id: self.api_id,
+                integration_id: self.integration_id,
+                max_results: self.max_results,
+                next_token: self.next_token,
+            },
         )
     }
 }
-

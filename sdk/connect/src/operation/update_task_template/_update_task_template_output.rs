@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateTaskTemplateOutput  {
+pub struct UpdateTaskTemplateOutput {
     /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
     #[doc(hidden)]
     pub instance_id: std::option::Option<std::string::String>,
@@ -43,62 +43,63 @@ pub struct UpdateTaskTemplateOutput  {
 }
 impl UpdateTaskTemplateOutput {
     /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
-    pub fn instance_id(&self) -> std::option::Option<& str> {
+    pub fn instance_id(&self) -> std::option::Option<&str> {
         self.instance_id.as_deref()
     }
     /// <p>The identifier of the task template resource.</p>
-    pub fn id(&self) -> std::option::Option<& str> {
+    pub fn id(&self) -> std::option::Option<&str> {
         self.id.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) for the task template resource.</p>
-    pub fn arn(&self) -> std::option::Option<& str> {
+    pub fn arn(&self) -> std::option::Option<&str> {
         self.arn.as_deref()
     }
     /// <p>The name of the task template.</p>
-    pub fn name(&self) -> std::option::Option<& str> {
+    pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>The description of the task template.</p>
-    pub fn description(&self) -> std::option::Option<& str> {
+    pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
     /// <p>The identifier of the flow that runs by default when a task is created by referencing this template.</p>
-    pub fn contact_flow_id(&self) -> std::option::Option<& str> {
+    pub fn contact_flow_id(&self) -> std::option::Option<&str> {
         self.contact_flow_id.as_deref()
     }
     /// <p>Constraints that are applicable to the fields listed.</p>
-    pub fn constraints(&self) -> std::option::Option<& crate::types::TaskTemplateConstraints> {
+    pub fn constraints(&self) -> std::option::Option<&crate::types::TaskTemplateConstraints> {
         self.constraints.as_ref()
     }
     /// <p>The default values for fields when a task is created by referencing this template.</p>
-    pub fn defaults(&self) -> std::option::Option<& crate::types::TaskTemplateDefaults> {
+    pub fn defaults(&self) -> std::option::Option<&crate::types::TaskTemplateDefaults> {
         self.defaults.as_ref()
     }
     /// <p>Fields that are part of the template.</p>
-    pub fn fields(&self) -> std::option::Option<& [crate::types::TaskTemplateField]> {
+    pub fn fields(&self) -> std::option::Option<&[crate::types::TaskTemplateField]> {
         self.fields.as_deref()
     }
     /// <p>Marks a template as <code>ACTIVE</code> or <code>INACTIVE</code> for a task to refer to it. Tasks can only be created from <code>ACTIVE</code> templates. If a template is marked as <code>INACTIVE</code>, then a task that refers to this template cannot be created.</p>
-    pub fn status(&self) -> std::option::Option<& crate::types::TaskTemplateStatus> {
+    pub fn status(&self) -> std::option::Option<&crate::types::TaskTemplateStatus> {
         self.status.as_ref()
     }
     /// <p>The timestamp when the task template was last modified.</p>
-    pub fn last_modified_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
+    pub fn last_modified_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_modified_time.as_ref()
     }
     /// <p>The timestamp when the task template was created.</p>
-    pub fn created_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
+    pub fn created_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created_time.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for UpdateTaskTemplateOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl UpdateTaskTemplateOutput {
     /// Creates a new builder-style object to manufacture [`UpdateTaskTemplateOutput`](crate::operation::update_task_template::UpdateTaskTemplateOutput).
-    pub fn builder() -> crate::operation::update_task_template::builders::UpdateTaskTemplateOutputBuilder {
+    pub fn builder(
+    ) -> crate::operation::update_task_template::builders::UpdateTaskTemplateOutputBuilder {
         crate::operation::update_task_template::builders::UpdateTaskTemplateOutputBuilder::default()
     }
 }
@@ -129,7 +130,8 @@ impl UpdateTaskTemplateOutputBuilder {
     }
     /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
     pub fn set_instance_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.instance_id = input; self
+        self.instance_id = input;
+        self
     }
     /// <p>The identifier of the task template resource.</p>
     pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -138,7 +140,8 @@ impl UpdateTaskTemplateOutputBuilder {
     }
     /// <p>The identifier of the task template resource.</p>
     pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.id = input; self
+        self.id = input;
+        self
     }
     /// <p>The Amazon Resource Name (ARN) for the task template resource.</p>
     pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -147,7 +150,8 @@ impl UpdateTaskTemplateOutputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) for the task template resource.</p>
     pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.arn = input; self
+        self.arn = input;
+        self
     }
     /// <p>The name of the task template.</p>
     pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -156,7 +160,8 @@ impl UpdateTaskTemplateOutputBuilder {
     }
     /// <p>The name of the task template.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input; self
+        self.name = input;
+        self
     }
     /// <p>The description of the task template.</p>
     pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -165,7 +170,8 @@ impl UpdateTaskTemplateOutputBuilder {
     }
     /// <p>The description of the task template.</p>
     pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.description = input; self
+        self.description = input;
+        self
     }
     /// <p>The identifier of the flow that runs by default when a task is created by referencing this template.</p>
     pub fn contact_flow_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -174,7 +180,8 @@ impl UpdateTaskTemplateOutputBuilder {
     }
     /// <p>The identifier of the flow that runs by default when a task is created by referencing this template.</p>
     pub fn set_contact_flow_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.contact_flow_id = input; self
+        self.contact_flow_id = input;
+        self
     }
     /// <p>Constraints that are applicable to the fields listed.</p>
     pub fn constraints(mut self, input: crate::types::TaskTemplateConstraints) -> Self {
@@ -182,8 +189,12 @@ impl UpdateTaskTemplateOutputBuilder {
         self
     }
     /// <p>Constraints that are applicable to the fields listed.</p>
-    pub fn set_constraints(mut self, input: std::option::Option<crate::types::TaskTemplateConstraints>) -> Self {
-        self.constraints = input; self
+    pub fn set_constraints(
+        mut self,
+        input: std::option::Option<crate::types::TaskTemplateConstraints>,
+    ) -> Self {
+        self.constraints = input;
+        self
     }
     /// <p>The default values for fields when a task is created by referencing this template.</p>
     pub fn defaults(mut self, input: crate::types::TaskTemplateDefaults) -> Self {
@@ -191,8 +202,12 @@ impl UpdateTaskTemplateOutputBuilder {
         self
     }
     /// <p>The default values for fields when a task is created by referencing this template.</p>
-    pub fn set_defaults(mut self, input: std::option::Option<crate::types::TaskTemplateDefaults>) -> Self {
-        self.defaults = input; self
+    pub fn set_defaults(
+        mut self,
+        input: std::option::Option<crate::types::TaskTemplateDefaults>,
+    ) -> Self {
+        self.defaults = input;
+        self
     }
     /// Appends an item to `fields`.
     ///
@@ -201,13 +216,17 @@ impl UpdateTaskTemplateOutputBuilder {
     /// <p>Fields that are part of the template.</p>
     pub fn fields(mut self, input: crate::types::TaskTemplateField) -> Self {
         let mut v = self.fields.unwrap_or_default();
-                        v.push(input);
-                        self.fields = Some(v);
-                        self
+        v.push(input);
+        self.fields = Some(v);
+        self
     }
     /// <p>Fields that are part of the template.</p>
-    pub fn set_fields(mut self, input: std::option::Option<std::vec::Vec<crate::types::TaskTemplateField>>) -> Self {
-        self.fields = input; self
+    pub fn set_fields(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::TaskTemplateField>>,
+    ) -> Self {
+        self.fields = input;
+        self
     }
     /// <p>Marks a template as <code>ACTIVE</code> or <code>INACTIVE</code> for a task to refer to it. Tasks can only be created from <code>ACTIVE</code> templates. If a template is marked as <code>INACTIVE</code>, then a task that refers to this template cannot be created.</p>
     pub fn status(mut self, input: crate::types::TaskTemplateStatus) -> Self {
@@ -215,8 +234,12 @@ impl UpdateTaskTemplateOutputBuilder {
         self
     }
     /// <p>Marks a template as <code>ACTIVE</code> or <code>INACTIVE</code> for a task to refer to it. Tasks can only be created from <code>ACTIVE</code> templates. If a template is marked as <code>INACTIVE</code>, then a task that refers to this template cannot be created.</p>
-    pub fn set_status(mut self, input: std::option::Option<crate::types::TaskTemplateStatus>) -> Self {
-        self.status = input; self
+    pub fn set_status(
+        mut self,
+        input: std::option::Option<crate::types::TaskTemplateStatus>,
+    ) -> Self {
+        self.status = input;
+        self
     }
     /// <p>The timestamp when the task template was last modified.</p>
     pub fn last_modified_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -224,8 +247,12 @@ impl UpdateTaskTemplateOutputBuilder {
         self
     }
     /// <p>The timestamp when the task template was last modified.</p>
-    pub fn set_last_modified_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.last_modified_time = input; self
+    pub fn set_last_modified_time(
+        mut self,
+        input: std::option::Option<aws_smithy_types::DateTime>,
+    ) -> Self {
+        self.last_modified_time = input;
+        self
     }
     /// <p>The timestamp when the task template was created.</p>
     pub fn created_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -233,47 +260,38 @@ impl UpdateTaskTemplateOutputBuilder {
         self
     }
     /// <p>The timestamp when the task template was created.</p>
-    pub fn set_created_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.created_time = input; self
+    pub fn set_created_time(
+        mut self,
+        input: std::option::Option<aws_smithy_types::DateTime>,
+    ) -> Self {
+        self.created_time = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`UpdateTaskTemplateOutput`](crate::operation::update_task_template::UpdateTaskTemplateOutput).
     pub fn build(self) -> crate::operation::update_task_template::UpdateTaskTemplateOutput {
         crate::operation::update_task_template::UpdateTaskTemplateOutput {
-            instance_id: self.instance_id
-            ,
-            id: self.id
-            ,
-            arn: self.arn
-            ,
-            name: self.name
-            ,
-            description: self.description
-            ,
-            contact_flow_id: self.contact_flow_id
-            ,
-            constraints: self.constraints
-            ,
-            defaults: self.defaults
-            ,
-            fields: self.fields
-            ,
-            status: self.status
-            ,
-            last_modified_time: self.last_modified_time
-            ,
-            created_time: self.created_time
-            ,
+            instance_id: self.instance_id,
+            id: self.id,
+            arn: self.arn,
+            name: self.name,
+            description: self.description,
+            contact_flow_id: self.contact_flow_id,
+            constraints: self.constraints,
+            defaults: self.defaults,
+            fields: self.fields,
+            status: self.status,
+            last_modified_time: self.last_modified_time,
+            created_time: self.created_time,
             _request_id: self._request_id,
         }
     }
 }
-

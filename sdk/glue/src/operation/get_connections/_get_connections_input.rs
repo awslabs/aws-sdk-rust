@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetConnectionsInput  {
+pub struct GetConnectionsInput {
     /// <p>The ID of the Data Catalog in which the connections reside. If none is provided, the Amazon Web Services account ID is used by default.</p>
     #[doc(hidden)]
     pub catalog_id: std::option::Option<std::string::String>,
@@ -21,11 +21,11 @@ pub struct GetConnectionsInput  {
 }
 impl GetConnectionsInput {
     /// <p>The ID of the Data Catalog in which the connections reside. If none is provided, the Amazon Web Services account ID is used by default.</p>
-    pub fn catalog_id(&self) -> std::option::Option<& str> {
+    pub fn catalog_id(&self) -> std::option::Option<&str> {
         self.catalog_id.as_deref()
     }
     /// <p>A filter that controls which connections are returned.</p>
-    pub fn filter(&self) -> std::option::Option<& crate::types::GetConnectionsFilter> {
+    pub fn filter(&self) -> std::option::Option<&crate::types::GetConnectionsFilter> {
         self.filter.as_ref()
     }
     /// <p>Allows you to retrieve the connection metadata without returning the password. For instance, the Glue console uses this flag to retrieve the connection, and does not display the password. Set this parameter when the caller might not have permission to use the KMS key to decrypt the password, but it does have permission to access the rest of the connection properties.</p>
@@ -33,7 +33,7 @@ impl GetConnectionsInput {
         self.hide_password
     }
     /// <p>A continuation token, if this is a continuation call.</p>
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
     /// <p>The maximum number of connections to return in one response.</p>
@@ -66,7 +66,8 @@ impl GetConnectionsInputBuilder {
     }
     /// <p>The ID of the Data Catalog in which the connections reside. If none is provided, the Amazon Web Services account ID is used by default.</p>
     pub fn set_catalog_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.catalog_id = input; self
+        self.catalog_id = input;
+        self
     }
     /// <p>A filter that controls which connections are returned.</p>
     pub fn filter(mut self, input: crate::types::GetConnectionsFilter) -> Self {
@@ -74,8 +75,12 @@ impl GetConnectionsInputBuilder {
         self
     }
     /// <p>A filter that controls which connections are returned.</p>
-    pub fn set_filter(mut self, input: std::option::Option<crate::types::GetConnectionsFilter>) -> Self {
-        self.filter = input; self
+    pub fn set_filter(
+        mut self,
+        input: std::option::Option<crate::types::GetConnectionsFilter>,
+    ) -> Self {
+        self.filter = input;
+        self
     }
     /// <p>Allows you to retrieve the connection metadata without returning the password. For instance, the Glue console uses this flag to retrieve the connection, and does not display the password. Set this parameter when the caller might not have permission to use the KMS key to decrypt the password, but it does have permission to access the rest of the connection properties.</p>
     pub fn hide_password(mut self, input: bool) -> Self {
@@ -84,7 +89,8 @@ impl GetConnectionsInputBuilder {
     }
     /// <p>Allows you to retrieve the connection metadata without returning the password. For instance, the Glue console uses this flag to retrieve the connection, and does not display the password. Set this parameter when the caller might not have permission to use the KMS key to decrypt the password, but it does have permission to access the rest of the connection properties.</p>
     pub fn set_hide_password(mut self, input: std::option::Option<bool>) -> Self {
-        self.hide_password = input; self
+        self.hide_password = input;
+        self
     }
     /// <p>A continuation token, if this is a continuation call.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -93,7 +99,8 @@ impl GetConnectionsInputBuilder {
     }
     /// <p>A continuation token, if this is a continuation call.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input; self
+        self.next_token = input;
+        self
     }
     /// <p>The maximum number of connections to return in one response.</p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -102,25 +109,22 @@ impl GetConnectionsInputBuilder {
     }
     /// <p>The maximum number of connections to return in one response.</p>
     pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_results = input; self
+        self.max_results = input;
+        self
     }
     /// Consumes the builder and constructs a [`GetConnectionsInput`](crate::operation::get_connections::GetConnectionsInput).
-    pub fn build(self) -> Result<crate::operation::get_connections::GetConnectionsInput, aws_smithy_http::operation::error::BuildError> {
-        Ok(
-            crate::operation::get_connections::GetConnectionsInput {
-                catalog_id: self.catalog_id
-                ,
-                filter: self.filter
-                ,
-                hide_password: self.hide_password
-                    .unwrap_or_default()
-                ,
-                next_token: self.next_token
-                ,
-                max_results: self.max_results
-                ,
-            }
-        )
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::get_connections::GetConnectionsInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        Ok(crate::operation::get_connections::GetConnectionsInput {
+            catalog_id: self.catalog_id,
+            filter: self.filter,
+            hide_password: self.hide_password.unwrap_or_default(),
+            next_token: self.next_token,
+            max_results: self.max_results,
+        })
     }
 }
-

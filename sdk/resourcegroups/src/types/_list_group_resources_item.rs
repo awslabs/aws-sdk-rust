@@ -3,25 +3,25 @@
 /// <p>A structure returned by the <code>ListGroupResources</code> operation that contains identity and group membership status information for one of the resources in the group.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListGroupResourcesItem  {
+pub struct ListGroupResourcesItem {
     /// <p>A structure that contains the ARN of a resource and its resource type.</p>
     #[doc(hidden)]
     pub identifier: std::option::Option<crate::types::ResourceIdentifier>,
-    /// <p>A structure that contains the status of this resource's membership in the group.</p> <note> 
-    /// <p>This field is present in the response only if the group is of type <code>AWS::EC2::HostManagement</code>.</p> 
+    /// <p>A structure that contains the status of this resource's membership in the group.</p> <note>
+    /// <p>This field is present in the response only if the group is of type <code>AWS::EC2::HostManagement</code>.</p>
     /// </note>
     #[doc(hidden)]
     pub status: std::option::Option<crate::types::ResourceStatus>,
 }
 impl ListGroupResourcesItem {
     /// <p>A structure that contains the ARN of a resource and its resource type.</p>
-    pub fn identifier(&self) -> std::option::Option<& crate::types::ResourceIdentifier> {
+    pub fn identifier(&self) -> std::option::Option<&crate::types::ResourceIdentifier> {
         self.identifier.as_ref()
     }
-    /// <p>A structure that contains the status of this resource's membership in the group.</p> <note> 
-    /// <p>This field is present in the response only if the group is of type <code>AWS::EC2::HostManagement</code>.</p> 
+    /// <p>A structure that contains the status of this resource's membership in the group.</p> <note>
+    /// <p>This field is present in the response only if the group is of type <code>AWS::EC2::HostManagement</code>.</p>
     /// </note>
-    pub fn status(&self) -> std::option::Option<& crate::types::ResourceStatus> {
+    pub fn status(&self) -> std::option::Option<&crate::types::ResourceStatus> {
         self.status.as_ref()
     }
 }
@@ -46,30 +46,32 @@ impl ListGroupResourcesItemBuilder {
         self
     }
     /// <p>A structure that contains the ARN of a resource and its resource type.</p>
-    pub fn set_identifier(mut self, input: std::option::Option<crate::types::ResourceIdentifier>) -> Self {
-        self.identifier = input; self
+    pub fn set_identifier(
+        mut self,
+        input: std::option::Option<crate::types::ResourceIdentifier>,
+    ) -> Self {
+        self.identifier = input;
+        self
     }
-    /// <p>A structure that contains the status of this resource's membership in the group.</p> <note> 
-    /// <p>This field is present in the response only if the group is of type <code>AWS::EC2::HostManagement</code>.</p> 
+    /// <p>A structure that contains the status of this resource's membership in the group.</p> <note>
+    /// <p>This field is present in the response only if the group is of type <code>AWS::EC2::HostManagement</code>.</p>
     /// </note>
     pub fn status(mut self, input: crate::types::ResourceStatus) -> Self {
         self.status = Some(input);
         self
     }
-    /// <p>A structure that contains the status of this resource's membership in the group.</p> <note> 
-    /// <p>This field is present in the response only if the group is of type <code>AWS::EC2::HostManagement</code>.</p> 
+    /// <p>A structure that contains the status of this resource's membership in the group.</p> <note>
+    /// <p>This field is present in the response only if the group is of type <code>AWS::EC2::HostManagement</code>.</p>
     /// </note>
     pub fn set_status(mut self, input: std::option::Option<crate::types::ResourceStatus>) -> Self {
-        self.status = input; self
+        self.status = input;
+        self
     }
     /// Consumes the builder and constructs a [`ListGroupResourcesItem`](crate::types::ListGroupResourcesItem).
     pub fn build(self) -> crate::types::ListGroupResourcesItem {
         crate::types::ListGroupResourcesItem {
-            identifier: self.identifier
-            ,
-            status: self.status
-            ,
+            identifier: self.identifier,
+            status: self.status,
         }
     }
 }
-

@@ -3,7 +3,7 @@
 /// <p>Describes the status of a cluster while it is in the process of resizing with an incremental resize.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DataTransferProgress  {
+pub struct DataTransferProgress {
     /// <p>Describes the status of the cluster. While the transfer is in progress the status is <code>transferringdata</code>.</p>
     #[doc(hidden)]
     pub status: std::option::Option<std::string::String>,
@@ -25,7 +25,7 @@ pub struct DataTransferProgress  {
 }
 impl DataTransferProgress {
     /// <p>Describes the status of the cluster. While the transfer is in progress the status is <code>transferringdata</code>.</p>
-    pub fn status(&self) -> std::option::Option<& str> {
+    pub fn status(&self) -> std::option::Option<&str> {
         self.status.as_deref()
     }
     /// <p>Describes the data transfer rate in MB's per second.</p>
@@ -75,7 +75,8 @@ impl DataTransferProgressBuilder {
     }
     /// <p>Describes the status of the cluster. While the transfer is in progress the status is <code>transferringdata</code>.</p>
     pub fn set_status(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.status = input; self
+        self.status = input;
+        self
     }
     /// <p>Describes the data transfer rate in MB's per second.</p>
     pub fn current_rate_in_mega_bytes_per_second(mut self, input: f64) -> Self {
@@ -83,8 +84,12 @@ impl DataTransferProgressBuilder {
         self
     }
     /// <p>Describes the data transfer rate in MB's per second.</p>
-    pub fn set_current_rate_in_mega_bytes_per_second(mut self, input: std::option::Option<f64>) -> Self {
-        self.current_rate_in_mega_bytes_per_second = input; self
+    pub fn set_current_rate_in_mega_bytes_per_second(
+        mut self,
+        input: std::option::Option<f64>,
+    ) -> Self {
+        self.current_rate_in_mega_bytes_per_second = input;
+        self
     }
     /// <p>Describes the total amount of data to be transfered in megabytes.</p>
     pub fn total_data_in_mega_bytes(mut self, input: i64) -> Self {
@@ -93,7 +98,8 @@ impl DataTransferProgressBuilder {
     }
     /// <p>Describes the total amount of data to be transfered in megabytes.</p>
     pub fn set_total_data_in_mega_bytes(mut self, input: std::option::Option<i64>) -> Self {
-        self.total_data_in_mega_bytes = input; self
+        self.total_data_in_mega_bytes = input;
+        self
     }
     /// <p>Describes the total amount of data that has been transfered in MB's.</p>
     pub fn data_transferred_in_mega_bytes(mut self, input: i64) -> Self {
@@ -102,7 +108,8 @@ impl DataTransferProgressBuilder {
     }
     /// <p>Describes the total amount of data that has been transfered in MB's.</p>
     pub fn set_data_transferred_in_mega_bytes(mut self, input: std::option::Option<i64>) -> Self {
-        self.data_transferred_in_mega_bytes = input; self
+        self.data_transferred_in_mega_bytes = input;
+        self
     }
     /// <p>Describes the estimated number of seconds remaining to complete the transfer.</p>
     pub fn estimated_time_to_completion_in_seconds(mut self, input: i64) -> Self {
@@ -110,8 +117,12 @@ impl DataTransferProgressBuilder {
         self
     }
     /// <p>Describes the estimated number of seconds remaining to complete the transfer.</p>
-    pub fn set_estimated_time_to_completion_in_seconds(mut self, input: std::option::Option<i64>) -> Self {
-        self.estimated_time_to_completion_in_seconds = input; self
+    pub fn set_estimated_time_to_completion_in_seconds(
+        mut self,
+        input: std::option::Option<i64>,
+    ) -> Self {
+        self.estimated_time_to_completion_in_seconds = input;
+        self
     }
     /// <p>Describes the number of seconds that have elapsed during the data transfer.</p>
     pub fn elapsed_time_in_seconds(mut self, input: i64) -> Self {
@@ -120,26 +131,18 @@ impl DataTransferProgressBuilder {
     }
     /// <p>Describes the number of seconds that have elapsed during the data transfer.</p>
     pub fn set_elapsed_time_in_seconds(mut self, input: std::option::Option<i64>) -> Self {
-        self.elapsed_time_in_seconds = input; self
+        self.elapsed_time_in_seconds = input;
+        self
     }
     /// Consumes the builder and constructs a [`DataTransferProgress`](crate::types::DataTransferProgress).
     pub fn build(self) -> crate::types::DataTransferProgress {
         crate::types::DataTransferProgress {
-            status: self.status
-            ,
-            current_rate_in_mega_bytes_per_second: self.current_rate_in_mega_bytes_per_second
-            ,
-            total_data_in_mega_bytes: self.total_data_in_mega_bytes
-                .unwrap_or_default()
-            ,
-            data_transferred_in_mega_bytes: self.data_transferred_in_mega_bytes
-                .unwrap_or_default()
-            ,
-            estimated_time_to_completion_in_seconds: self.estimated_time_to_completion_in_seconds
-            ,
-            elapsed_time_in_seconds: self.elapsed_time_in_seconds
-            ,
+            status: self.status,
+            current_rate_in_mega_bytes_per_second: self.current_rate_in_mega_bytes_per_second,
+            total_data_in_mega_bytes: self.total_data_in_mega_bytes.unwrap_or_default(),
+            data_transferred_in_mega_bytes: self.data_transferred_in_mega_bytes.unwrap_or_default(),
+            estimated_time_to_completion_in_seconds: self.estimated_time_to_completion_in_seconds,
+            elapsed_time_in_seconds: self.elapsed_time_in_seconds,
         }
     }
 }
-

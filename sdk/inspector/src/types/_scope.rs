@@ -3,7 +3,7 @@
 /// <p>This data type contains key-value pairs that identify various Amazon resources.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Scope  {
+pub struct Scope {
     /// <p>The type of the scope.</p>
     #[doc(hidden)]
     pub key: std::option::Option<crate::types::ScopeType>,
@@ -13,11 +13,11 @@ pub struct Scope  {
 }
 impl Scope {
     /// <p>The type of the scope.</p>
-    pub fn key(&self) -> std::option::Option<& crate::types::ScopeType> {
+    pub fn key(&self) -> std::option::Option<&crate::types::ScopeType> {
         self.key.as_ref()
     }
     /// <p>The resource identifier for the specified scope type.</p>
-    pub fn value(&self) -> std::option::Option<& str> {
+    pub fn value(&self) -> std::option::Option<&str> {
         self.value.as_deref()
     }
 }
@@ -43,7 +43,8 @@ impl ScopeBuilder {
     }
     /// <p>The type of the scope.</p>
     pub fn set_key(mut self, input: std::option::Option<crate::types::ScopeType>) -> Self {
-        self.key = input; self
+        self.key = input;
+        self
     }
     /// <p>The resource identifier for the specified scope type.</p>
     pub fn value(mut self, input: impl Into<std::string::String>) -> Self {
@@ -52,16 +53,14 @@ impl ScopeBuilder {
     }
     /// <p>The resource identifier for the specified scope type.</p>
     pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.value = input; self
+        self.value = input;
+        self
     }
     /// Consumes the builder and constructs a [`Scope`](crate::types::Scope).
     pub fn build(self) -> crate::types::Scope {
         crate::types::Scope {
-            key: self.key
-            ,
-            value: self.value
-            ,
+            key: self.key,
+            value: self.value,
         }
     }
 }
-

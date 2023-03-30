@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateLoggerDefinitionOutput  {
+pub struct CreateLoggerDefinitionOutput {
     /// The ARN of the definition.
     #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
@@ -28,42 +28,44 @@ pub struct CreateLoggerDefinitionOutput  {
 }
 impl CreateLoggerDefinitionOutput {
     /// The ARN of the definition.
-    pub fn arn(&self) -> std::option::Option<& str> {
+    pub fn arn(&self) -> std::option::Option<&str> {
         self.arn.as_deref()
     }
     /// The time, in milliseconds since the epoch, when the definition was created.
-    pub fn creation_timestamp(&self) -> std::option::Option<& str> {
+    pub fn creation_timestamp(&self) -> std::option::Option<&str> {
         self.creation_timestamp.as_deref()
     }
     /// The ID of the definition.
-    pub fn id(&self) -> std::option::Option<& str> {
+    pub fn id(&self) -> std::option::Option<&str> {
         self.id.as_deref()
     }
     /// The time, in milliseconds since the epoch, when the definition was last updated.
-    pub fn last_updated_timestamp(&self) -> std::option::Option<& str> {
+    pub fn last_updated_timestamp(&self) -> std::option::Option<&str> {
         self.last_updated_timestamp.as_deref()
     }
     /// The ID of the latest version associated with the definition.
-    pub fn latest_version(&self) -> std::option::Option<& str> {
+    pub fn latest_version(&self) -> std::option::Option<&str> {
         self.latest_version.as_deref()
     }
     /// The ARN of the latest version associated with the definition.
-    pub fn latest_version_arn(&self) -> std::option::Option<& str> {
+    pub fn latest_version_arn(&self) -> std::option::Option<&str> {
         self.latest_version_arn.as_deref()
     }
     /// The name of the definition.
-    pub fn name(&self) -> std::option::Option<& str> {
+    pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for CreateLoggerDefinitionOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl CreateLoggerDefinitionOutput {
     /// Creates a new builder-style object to manufacture [`CreateLoggerDefinitionOutput`](crate::operation::create_logger_definition::CreateLoggerDefinitionOutput).
-    pub fn builder() -> crate::operation::create_logger_definition::builders::CreateLoggerDefinitionOutputBuilder {
+    pub fn builder(
+    ) -> crate::operation::create_logger_definition::builders::CreateLoggerDefinitionOutputBuilder
+    {
         crate::operation::create_logger_definition::builders::CreateLoggerDefinitionOutputBuilder::default()
     }
 }
@@ -89,7 +91,8 @@ impl CreateLoggerDefinitionOutputBuilder {
     }
     /// The ARN of the definition.
     pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.arn = input; self
+        self.arn = input;
+        self
     }
     /// The time, in milliseconds since the epoch, when the definition was created.
     pub fn creation_timestamp(mut self, input: impl Into<std::string::String>) -> Self {
@@ -97,8 +100,12 @@ impl CreateLoggerDefinitionOutputBuilder {
         self
     }
     /// The time, in milliseconds since the epoch, when the definition was created.
-    pub fn set_creation_timestamp(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.creation_timestamp = input; self
+    pub fn set_creation_timestamp(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.creation_timestamp = input;
+        self
     }
     /// The ID of the definition.
     pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -107,7 +114,8 @@ impl CreateLoggerDefinitionOutputBuilder {
     }
     /// The ID of the definition.
     pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.id = input; self
+        self.id = input;
+        self
     }
     /// The time, in milliseconds since the epoch, when the definition was last updated.
     pub fn last_updated_timestamp(mut self, input: impl Into<std::string::String>) -> Self {
@@ -115,8 +123,12 @@ impl CreateLoggerDefinitionOutputBuilder {
         self
     }
     /// The time, in milliseconds since the epoch, when the definition was last updated.
-    pub fn set_last_updated_timestamp(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.last_updated_timestamp = input; self
+    pub fn set_last_updated_timestamp(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.last_updated_timestamp = input;
+        self
     }
     /// The ID of the latest version associated with the definition.
     pub fn latest_version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -125,7 +137,8 @@ impl CreateLoggerDefinitionOutputBuilder {
     }
     /// The ID of the latest version associated with the definition.
     pub fn set_latest_version(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.latest_version = input; self
+        self.latest_version = input;
+        self
     }
     /// The ARN of the latest version associated with the definition.
     pub fn latest_version_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -133,8 +146,12 @@ impl CreateLoggerDefinitionOutputBuilder {
         self
     }
     /// The ARN of the latest version associated with the definition.
-    pub fn set_latest_version_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.latest_version_arn = input; self
+    pub fn set_latest_version_arn(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.latest_version_arn = input;
+        self
     }
     /// The name of the definition.
     pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -143,36 +160,29 @@ impl CreateLoggerDefinitionOutputBuilder {
     }
     /// The name of the definition.
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input; self
+        self.name = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`CreateLoggerDefinitionOutput`](crate::operation::create_logger_definition::CreateLoggerDefinitionOutput).
     pub fn build(self) -> crate::operation::create_logger_definition::CreateLoggerDefinitionOutput {
         crate::operation::create_logger_definition::CreateLoggerDefinitionOutput {
-            arn: self.arn
-            ,
-            creation_timestamp: self.creation_timestamp
-            ,
-            id: self.id
-            ,
-            last_updated_timestamp: self.last_updated_timestamp
-            ,
-            latest_version: self.latest_version
-            ,
-            latest_version_arn: self.latest_version_arn
-            ,
-            name: self.name
-            ,
+            arn: self.arn,
+            creation_timestamp: self.creation_timestamp,
+            id: self.id,
+            last_updated_timestamp: self.last_updated_timestamp,
+            latest_version: self.latest_version,
+            latest_version_arn: self.latest_version_arn,
+            name: self.name,
             _request_id: self._request_id,
         }
     }
 }
-

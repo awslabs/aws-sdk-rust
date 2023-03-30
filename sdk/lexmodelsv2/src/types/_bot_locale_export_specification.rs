@@ -3,7 +3,7 @@
 /// <p>Provides the bot locale parameters required for exporting a bot locale.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct BotLocaleExportSpecification  {
+pub struct BotLocaleExportSpecification {
     /// <p>The identifier of the bot to create the locale for.</p>
     #[doc(hidden)]
     pub bot_id: std::option::Option<std::string::String>,
@@ -16,15 +16,15 @@ pub struct BotLocaleExportSpecification  {
 }
 impl BotLocaleExportSpecification {
     /// <p>The identifier of the bot to create the locale for.</p>
-    pub fn bot_id(&self) -> std::option::Option<& str> {
+    pub fn bot_id(&self) -> std::option::Option<&str> {
         self.bot_id.as_deref()
     }
     /// <p>The version of the bot to export.</p>
-    pub fn bot_version(&self) -> std::option::Option<& str> {
+    pub fn bot_version(&self) -> std::option::Option<&str> {
         self.bot_version.as_deref()
     }
     /// <p>The identifier of the language and locale to export. The string must match one of the locales in the bot.</p>
-    pub fn locale_id(&self) -> std::option::Option<& str> {
+    pub fn locale_id(&self) -> std::option::Option<&str> {
         self.locale_id.as_deref()
     }
 }
@@ -51,7 +51,8 @@ impl BotLocaleExportSpecificationBuilder {
     }
     /// <p>The identifier of the bot to create the locale for.</p>
     pub fn set_bot_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.bot_id = input; self
+        self.bot_id = input;
+        self
     }
     /// <p>The version of the bot to export.</p>
     pub fn bot_version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -60,7 +61,8 @@ impl BotLocaleExportSpecificationBuilder {
     }
     /// <p>The version of the bot to export.</p>
     pub fn set_bot_version(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.bot_version = input; self
+        self.bot_version = input;
+        self
     }
     /// <p>The identifier of the language and locale to export. The string must match one of the locales in the bot.</p>
     pub fn locale_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -69,18 +71,15 @@ impl BotLocaleExportSpecificationBuilder {
     }
     /// <p>The identifier of the language and locale to export. The string must match one of the locales in the bot.</p>
     pub fn set_locale_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.locale_id = input; self
+        self.locale_id = input;
+        self
     }
     /// Consumes the builder and constructs a [`BotLocaleExportSpecification`](crate::types::BotLocaleExportSpecification).
     pub fn build(self) -> crate::types::BotLocaleExportSpecification {
         crate::types::BotLocaleExportSpecification {
-            bot_id: self.bot_id
-            ,
-            bot_version: self.bot_version
-            ,
-            locale_id: self.locale_id
-            ,
+            bot_id: self.bot_id,
+            bot_version: self.bot_version,
+            locale_id: self.locale_id,
         }
     }
 }
-

@@ -3,7 +3,7 @@
 /// <p>Maps a batch delete document request to a specific data source sync job. This is optional and should only be supplied when documents are deleted by a data source connector.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DataSourceSyncJobMetrics  {
+pub struct DataSourceSyncJobMetrics {
     /// <p>The number of documents added from the data source up to now in the data source sync.</p>
     #[doc(hidden)]
     pub documents_added: std::option::Option<std::string::String>,
@@ -22,23 +22,23 @@ pub struct DataSourceSyncJobMetrics  {
 }
 impl DataSourceSyncJobMetrics {
     /// <p>The number of documents added from the data source up to now in the data source sync.</p>
-    pub fn documents_added(&self) -> std::option::Option<& str> {
+    pub fn documents_added(&self) -> std::option::Option<&str> {
         self.documents_added.as_deref()
     }
     /// <p>The number of documents modified in the data source up to now in the data source sync run.</p>
-    pub fn documents_modified(&self) -> std::option::Option<& str> {
+    pub fn documents_modified(&self) -> std::option::Option<&str> {
         self.documents_modified.as_deref()
     }
     /// <p>The number of documents deleted from the data source up to now in the data source sync run.</p>
-    pub fn documents_deleted(&self) -> std::option::Option<& str> {
+    pub fn documents_deleted(&self) -> std::option::Option<&str> {
         self.documents_deleted.as_deref()
     }
     /// <p>The number of documents that failed to sync from the data source up to now in the data source sync run.</p>
-    pub fn documents_failed(&self) -> std::option::Option<& str> {
+    pub fn documents_failed(&self) -> std::option::Option<&str> {
         self.documents_failed.as_deref()
     }
     /// <p>The current number of documents crawled by the current sync job in the data source.</p>
-    pub fn documents_scanned(&self) -> std::option::Option<& str> {
+    pub fn documents_scanned(&self) -> std::option::Option<&str> {
         self.documents_scanned.as_deref()
     }
 }
@@ -67,7 +67,8 @@ impl DataSourceSyncJobMetricsBuilder {
     }
     /// <p>The number of documents added from the data source up to now in the data source sync.</p>
     pub fn set_documents_added(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.documents_added = input; self
+        self.documents_added = input;
+        self
     }
     /// <p>The number of documents modified in the data source up to now in the data source sync run.</p>
     pub fn documents_modified(mut self, input: impl Into<std::string::String>) -> Self {
@@ -75,8 +76,12 @@ impl DataSourceSyncJobMetricsBuilder {
         self
     }
     /// <p>The number of documents modified in the data source up to now in the data source sync run.</p>
-    pub fn set_documents_modified(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.documents_modified = input; self
+    pub fn set_documents_modified(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.documents_modified = input;
+        self
     }
     /// <p>The number of documents deleted from the data source up to now in the data source sync run.</p>
     pub fn documents_deleted(mut self, input: impl Into<std::string::String>) -> Self {
@@ -84,8 +89,12 @@ impl DataSourceSyncJobMetricsBuilder {
         self
     }
     /// <p>The number of documents deleted from the data source up to now in the data source sync run.</p>
-    pub fn set_documents_deleted(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.documents_deleted = input; self
+    pub fn set_documents_deleted(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.documents_deleted = input;
+        self
     }
     /// <p>The number of documents that failed to sync from the data source up to now in the data source sync run.</p>
     pub fn documents_failed(mut self, input: impl Into<std::string::String>) -> Self {
@@ -94,7 +103,8 @@ impl DataSourceSyncJobMetricsBuilder {
     }
     /// <p>The number of documents that failed to sync from the data source up to now in the data source sync run.</p>
     pub fn set_documents_failed(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.documents_failed = input; self
+        self.documents_failed = input;
+        self
     }
     /// <p>The current number of documents crawled by the current sync job in the data source.</p>
     pub fn documents_scanned(mut self, input: impl Into<std::string::String>) -> Self {
@@ -102,23 +112,21 @@ impl DataSourceSyncJobMetricsBuilder {
         self
     }
     /// <p>The current number of documents crawled by the current sync job in the data source.</p>
-    pub fn set_documents_scanned(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.documents_scanned = input; self
+    pub fn set_documents_scanned(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.documents_scanned = input;
+        self
     }
     /// Consumes the builder and constructs a [`DataSourceSyncJobMetrics`](crate::types::DataSourceSyncJobMetrics).
     pub fn build(self) -> crate::types::DataSourceSyncJobMetrics {
         crate::types::DataSourceSyncJobMetrics {
-            documents_added: self.documents_added
-            ,
-            documents_modified: self.documents_modified
-            ,
-            documents_deleted: self.documents_deleted
-            ,
-            documents_failed: self.documents_failed
-            ,
-            documents_scanned: self.documents_scanned
-            ,
+            documents_added: self.documents_added,
+            documents_modified: self.documents_modified,
+            documents_deleted: self.documents_deleted,
+            documents_failed: self.documents_failed,
+            documents_scanned: self.documents_scanned,
         }
     }
 }
-

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetInAppMessagesInput  {
+pub struct GetInAppMessagesInput {
     /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
     #[doc(hidden)]
     pub application_id: std::option::Option<std::string::String>,
@@ -12,17 +12,18 @@ pub struct GetInAppMessagesInput  {
 }
 impl GetInAppMessagesInput {
     /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
-    pub fn application_id(&self) -> std::option::Option<& str> {
+    pub fn application_id(&self) -> std::option::Option<&str> {
         self.application_id.as_deref()
     }
     /// <p>The unique identifier for the endpoint.</p>
-    pub fn endpoint_id(&self) -> std::option::Option<& str> {
+    pub fn endpoint_id(&self) -> std::option::Option<&str> {
         self.endpoint_id.as_deref()
     }
 }
 impl GetInAppMessagesInput {
     /// Creates a new builder-style object to manufacture [`GetInAppMessagesInput`](crate::operation::get_in_app_messages::GetInAppMessagesInput).
-    pub fn builder() -> crate::operation::get_in_app_messages::builders::GetInAppMessagesInputBuilder {
+    pub fn builder() -> crate::operation::get_in_app_messages::builders::GetInAppMessagesInputBuilder
+    {
         crate::operation::get_in_app_messages::builders::GetInAppMessagesInputBuilder::default()
     }
 }
@@ -42,7 +43,8 @@ impl GetInAppMessagesInputBuilder {
     }
     /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
     pub fn set_application_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.application_id = input; self
+        self.application_id = input;
+        self
     }
     /// <p>The unique identifier for the endpoint.</p>
     pub fn endpoint_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -51,18 +53,21 @@ impl GetInAppMessagesInputBuilder {
     }
     /// <p>The unique identifier for the endpoint.</p>
     pub fn set_endpoint_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.endpoint_id = input; self
+        self.endpoint_id = input;
+        self
     }
     /// Consumes the builder and constructs a [`GetInAppMessagesInput`](crate::operation::get_in_app_messages::GetInAppMessagesInput).
-    pub fn build(self) -> Result<crate::operation::get_in_app_messages::GetInAppMessagesInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::get_in_app_messages::GetInAppMessagesInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::get_in_app_messages::GetInAppMessagesInput {
-                application_id: self.application_id
-                ,
-                endpoint_id: self.endpoint_id
-                ,
-            }
+                application_id: self.application_id,
+                endpoint_id: self.endpoint_id,
+            },
         )
     }
 }
-

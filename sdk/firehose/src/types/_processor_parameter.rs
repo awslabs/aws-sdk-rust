@@ -3,7 +3,7 @@
 /// <p>Describes the processor parameter. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ProcessorParameter  {
+pub struct ProcessorParameter {
     /// <p>The name of the parameter. Currently the following default values are supported: 3 for <code>NumberOfRetries</code> and 60 for the <code>BufferIntervalInSeconds</code>. The <code>BufferSizeInMBs</code> ranges between 0.2 MB and up to 3MB. The default buffering hint is 1MB for all destinations, except Splunk. For Splunk, the default buffering hint is 256 KB. </p>
     #[doc(hidden)]
     pub parameter_name: std::option::Option<crate::types::ProcessorParameterName>,
@@ -13,11 +13,11 @@ pub struct ProcessorParameter  {
 }
 impl ProcessorParameter {
     /// <p>The name of the parameter. Currently the following default values are supported: 3 for <code>NumberOfRetries</code> and 60 for the <code>BufferIntervalInSeconds</code>. The <code>BufferSizeInMBs</code> ranges between 0.2 MB and up to 3MB. The default buffering hint is 1MB for all destinations, except Splunk. For Splunk, the default buffering hint is 256 KB. </p>
-    pub fn parameter_name(&self) -> std::option::Option<& crate::types::ProcessorParameterName> {
+    pub fn parameter_name(&self) -> std::option::Option<&crate::types::ProcessorParameterName> {
         self.parameter_name.as_ref()
     }
     /// <p>The parameter value.</p>
-    pub fn parameter_value(&self) -> std::option::Option<& str> {
+    pub fn parameter_value(&self) -> std::option::Option<&str> {
         self.parameter_value.as_deref()
     }
 }
@@ -42,8 +42,12 @@ impl ProcessorParameterBuilder {
         self
     }
     /// <p>The name of the parameter. Currently the following default values are supported: 3 for <code>NumberOfRetries</code> and 60 for the <code>BufferIntervalInSeconds</code>. The <code>BufferSizeInMBs</code> ranges between 0.2 MB and up to 3MB. The default buffering hint is 1MB for all destinations, except Splunk. For Splunk, the default buffering hint is 256 KB. </p>
-    pub fn set_parameter_name(mut self, input: std::option::Option<crate::types::ProcessorParameterName>) -> Self {
-        self.parameter_name = input; self
+    pub fn set_parameter_name(
+        mut self,
+        input: std::option::Option<crate::types::ProcessorParameterName>,
+    ) -> Self {
+        self.parameter_name = input;
+        self
     }
     /// <p>The parameter value.</p>
     pub fn parameter_value(mut self, input: impl Into<std::string::String>) -> Self {
@@ -52,16 +56,14 @@ impl ProcessorParameterBuilder {
     }
     /// <p>The parameter value.</p>
     pub fn set_parameter_value(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.parameter_value = input; self
+        self.parameter_value = input;
+        self
     }
     /// Consumes the builder and constructs a [`ProcessorParameter`](crate::types::ProcessorParameter).
     pub fn build(self) -> crate::types::ProcessorParameter {
         crate::types::ProcessorParameter {
-            parameter_name: self.parameter_name
-            ,
-            parameter_value: self.parameter_value
-            ,
+            parameter_name: self.parameter_name,
+            parameter_value: self.parameter_value,
         }
     }
 }
-

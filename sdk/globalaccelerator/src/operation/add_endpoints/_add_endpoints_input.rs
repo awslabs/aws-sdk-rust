@@ -2,21 +2,24 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AddEndpointsInput  {
+pub struct AddEndpointsInput {
     /// <p>The list of endpoint objects.</p>
     #[doc(hidden)]
-    pub endpoint_configurations: std::option::Option<std::vec::Vec<crate::types::EndpointConfiguration>>,
+    pub endpoint_configurations:
+        std::option::Option<std::vec::Vec<crate::types::EndpointConfiguration>>,
     /// <p>The Amazon Resource Name (ARN) of the endpoint group.</p>
     #[doc(hidden)]
     pub endpoint_group_arn: std::option::Option<std::string::String>,
 }
 impl AddEndpointsInput {
     /// <p>The list of endpoint objects.</p>
-    pub fn endpoint_configurations(&self) -> std::option::Option<& [crate::types::EndpointConfiguration]> {
+    pub fn endpoint_configurations(
+        &self,
+    ) -> std::option::Option<&[crate::types::EndpointConfiguration]> {
         self.endpoint_configurations.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the endpoint group.</p>
-    pub fn endpoint_group_arn(&self) -> std::option::Option<& str> {
+    pub fn endpoint_group_arn(&self) -> std::option::Option<&str> {
         self.endpoint_group_arn.as_deref()
     }
 }
@@ -31,7 +34,8 @@ impl AddEndpointsInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct AddEndpointsInputBuilder {
-    pub(crate) endpoint_configurations: std::option::Option<std::vec::Vec<crate::types::EndpointConfiguration>>,
+    pub(crate) endpoint_configurations:
+        std::option::Option<std::vec::Vec<crate::types::EndpointConfiguration>>,
     pub(crate) endpoint_group_arn: std::option::Option<std::string::String>,
 }
 impl AddEndpointsInputBuilder {
@@ -42,13 +46,17 @@ impl AddEndpointsInputBuilder {
     /// <p>The list of endpoint objects.</p>
     pub fn endpoint_configurations(mut self, input: crate::types::EndpointConfiguration) -> Self {
         let mut v = self.endpoint_configurations.unwrap_or_default();
-                        v.push(input);
-                        self.endpoint_configurations = Some(v);
-                        self
+        v.push(input);
+        self.endpoint_configurations = Some(v);
+        self
     }
     /// <p>The list of endpoint objects.</p>
-    pub fn set_endpoint_configurations(mut self, input: std::option::Option<std::vec::Vec<crate::types::EndpointConfiguration>>) -> Self {
-        self.endpoint_configurations = input; self
+    pub fn set_endpoint_configurations(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::EndpointConfiguration>>,
+    ) -> Self {
+        self.endpoint_configurations = input;
+        self
     }
     /// <p>The Amazon Resource Name (ARN) of the endpoint group.</p>
     pub fn endpoint_group_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -56,19 +64,23 @@ impl AddEndpointsInputBuilder {
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the endpoint group.</p>
-    pub fn set_endpoint_group_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.endpoint_group_arn = input; self
+    pub fn set_endpoint_group_arn(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.endpoint_group_arn = input;
+        self
     }
     /// Consumes the builder and constructs a [`AddEndpointsInput`](crate::operation::add_endpoints::AddEndpointsInput).
-    pub fn build(self) -> Result<crate::operation::add_endpoints::AddEndpointsInput, aws_smithy_http::operation::error::BuildError> {
-        Ok(
-            crate::operation::add_endpoints::AddEndpointsInput {
-                endpoint_configurations: self.endpoint_configurations
-                ,
-                endpoint_group_arn: self.endpoint_group_arn
-                ,
-            }
-        )
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::add_endpoints::AddEndpointsInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        Ok(crate::operation::add_endpoints::AddEndpointsInput {
+            endpoint_configurations: self.endpoint_configurations,
+            endpoint_group_arn: self.endpoint_group_arn,
+        })
     }
 }
-

@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-/// 
+///
 /// Here is an example of how you can make a match expression forward-compatible:
-/// 
+///
 /// ```text
 /// # let audiochanneltag = unimplemented!();
 /// match audiochanneltag {
@@ -43,14 +43,22 @@
 /// Specifically, when `audiochanneltag` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `AudioChannelTag::NewFeature` also yielding `"NewFeature"`.
-/// 
+///
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 /// You can add a tag for this mono-channel audio track to mimic its placement in a multi-channel layout.  For example, if this track is the left surround channel, choose Left surround (LS).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
 pub enum AudioChannelTag {
     #[allow(missing_docs)] // documentation missing in model
     C,
@@ -83,67 +91,71 @@ pub enum AudioChannelTag {
     #[allow(missing_docs)] // documentation missing in model
     Vhr,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::primitives::UnknownVariantValue)
+    Unknown(crate::primitives::UnknownVariantValue),
 }
 impl std::convert::From<&str> for AudioChannelTag {
-                fn from(s: &str) -> Self {
-                    match s {
-                        "C" => AudioChannelTag::C,
-"CS" => AudioChannelTag::Cs,
-"L" => AudioChannelTag::L,
-"LC" => AudioChannelTag::Lc,
-"LFE" => AudioChannelTag::Lfe,
-"LS" => AudioChannelTag::Ls,
-"LSD" => AudioChannelTag::Lsd,
-"R" => AudioChannelTag::R,
-"RC" => AudioChannelTag::Rc,
-"RS" => AudioChannelTag::Rs,
-"RSD" => AudioChannelTag::Rsd,
-"TCS" => AudioChannelTag::Tcs,
-"VHC" => AudioChannelTag::Vhc,
-"VHL" => AudioChannelTag::Vhl,
-"VHR" => AudioChannelTag::Vhr,
-other => AudioChannelTag::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
-                    }
-                }
+    fn from(s: &str) -> Self {
+        match s {
+            "C" => AudioChannelTag::C,
+            "CS" => AudioChannelTag::Cs,
+            "L" => AudioChannelTag::L,
+            "LC" => AudioChannelTag::Lc,
+            "LFE" => AudioChannelTag::Lfe,
+            "LS" => AudioChannelTag::Ls,
+            "LSD" => AudioChannelTag::Lsd,
+            "R" => AudioChannelTag::R,
+            "RC" => AudioChannelTag::Rc,
+            "RS" => AudioChannelTag::Rs,
+            "RSD" => AudioChannelTag::Rsd,
+            "TCS" => AudioChannelTag::Tcs,
+            "VHC" => AudioChannelTag::Vhc,
+            "VHL" => AudioChannelTag::Vhl,
+            "VHR" => AudioChannelTag::Vhr,
+            other => {
+                AudioChannelTag::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
             }
-impl std::str::FromStr for AudioChannelTag {
-                type Err = std::convert::Infallible;
-
-                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-                    Ok(AudioChannelTag::from(s))
-                }
-            }
-impl AudioChannelTag {
-                /// Returns the `&str` value of the enum member.
-                pub fn as_str(&self) -> &str {
-                    match self {
-    AudioChannelTag::C => "C",
-    AudioChannelTag::Cs => "CS",
-    AudioChannelTag::L => "L",
-    AudioChannelTag::Lc => "LC",
-    AudioChannelTag::Lfe => "LFE",
-    AudioChannelTag::Ls => "LS",
-    AudioChannelTag::Lsd => "LSD",
-    AudioChannelTag::R => "R",
-    AudioChannelTag::Rc => "RC",
-    AudioChannelTag::Rs => "RS",
-    AudioChannelTag::Rsd => "RSD",
-    AudioChannelTag::Tcs => "TCS",
-    AudioChannelTag::Vhc => "VHC",
-    AudioChannelTag::Vhl => "VHL",
-    AudioChannelTag::Vhr => "VHR",
-    AudioChannelTag::Unknown(value) => value.as_str()
+        }
+    }
 }
-                }
-                /// Returns all the `&str` representations of the enum members.
-                pub const fn values() -> &'static [&'static str] {
-                    &["C", "CS", "L", "LC", "LFE", "LS", "LSD", "R", "RC", "RS", "RSD", "TCS", "VHC", "VHL", "VHR"]
-                }
-            }
-impl AsRef<str> for AudioChannelTag {
-                fn as_ref(&self) -> &str {
-                    self.as_str()
-                }
-            }
+impl std::str::FromStr for AudioChannelTag {
+    type Err = std::convert::Infallible;
 
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(AudioChannelTag::from(s))
+    }
+}
+impl AudioChannelTag {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            AudioChannelTag::C => "C",
+            AudioChannelTag::Cs => "CS",
+            AudioChannelTag::L => "L",
+            AudioChannelTag::Lc => "LC",
+            AudioChannelTag::Lfe => "LFE",
+            AudioChannelTag::Ls => "LS",
+            AudioChannelTag::Lsd => "LSD",
+            AudioChannelTag::R => "R",
+            AudioChannelTag::Rc => "RC",
+            AudioChannelTag::Rs => "RS",
+            AudioChannelTag::Rsd => "RSD",
+            AudioChannelTag::Tcs => "TCS",
+            AudioChannelTag::Vhc => "VHC",
+            AudioChannelTag::Vhl => "VHL",
+            AudioChannelTag::Vhr => "VHR",
+            AudioChannelTag::Unknown(value) => value.as_str(),
+        }
+    }
+    /// Returns all the `&str` representations of the enum members.
+    pub const fn values() -> &'static [&'static str] {
+        &[
+            "C", "CS", "L", "LC", "LFE", "LS", "LSD", "R", "RC", "RS", "RSD", "TCS", "VHC", "VHL",
+            "VHR",
+        ]
+    }
+}
+impl AsRef<str> for AudioChannelTag {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}

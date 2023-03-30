@@ -4,58 +4,70 @@ pub use crate::operation::create_capacity_reservation_fleet::_create_capacity_re
 pub use crate::operation::create_capacity_reservation_fleet::_create_capacity_reservation_fleet_input::CreateCapacityReservationFleetInputBuilder;
 
 /// Fluent builder constructing a request to `CreateCapacityReservationFleet`.
-/// 
+///
 /// <p>Creates a Capacity Reservation Fleet. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/work-with-cr-fleets.html#create-crfleet">Create a Capacity Reservation Fleet</a> in the Amazon EC2 User Guide.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct CreateCapacityReservationFleetFluentBuilder {
                 handle: std::sync::Arc<crate::client::Handle>,
                 inner: crate::operation::create_capacity_reservation_fleet::builders::CreateCapacityReservationFleetInputBuilder
             }
-impl CreateCapacityReservationFleetFluentBuilder  {
+impl CreateCapacityReservationFleetFluentBuilder {
     /// Creates a new `CreateCapacityReservationFleet`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
-                    /// sent. The operation's inner [http::Request] can be modified as well.
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle,
+            inner: Default::default(),
+        }
+    }
+
+    /// Consume this builder, creating a customizable operation that can be modified before being
+    /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::create_capacity_reservation_fleet::CreateCapacityReservationFleet, aws_http::retry::AwsResponseRetryClassifier,>,
                         aws_smithy_http::result::SdkError<crate::operation::create_capacity_reservation_fleet::CreateCapacityReservationFleetError>
-                    >  {
-                        let handle = self.handle.clone();
-                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-                    }
-    
-                    /// Sends the request and returns the response.
-                    ///
-                    /// If an error occurs, an `SdkError` will be returned with additional details that
-                    /// can be matched against.
-                    ///
-                    /// By default, any retryable failures will be retried twice. Retry behavior
-                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                    /// set when configuring the client.
+    >{
+        let handle = self.handle.clone();
+        let operation = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+    }
+
+    /// Sends the request and returns the response.
+    ///
+    /// If an error occurs, an `SdkError` will be returned with additional details that
+    /// can be matched against.
+    ///
+    /// By default, any retryable failures will be retried twice. Retry behavior
+    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+    /// set when configuring the client.
                     pub async fn send(self) -> std::result::Result<crate::operation::create_capacity_reservation_fleet::CreateCapacityReservationFleetOutput, aws_smithy_http::result::SdkError<crate::operation::create_capacity_reservation_fleet::CreateCapacityReservationFleetError>>
                      {
-                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&self.handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        self.handle.client.call(op).await
-                    }
-    /// <p>The strategy used by the Capacity Reservation Fleet to determine which of the specified instance types to use. Currently, only the <code>prioritized</code> allocation strategy is supported. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/crfleet-concepts.html#allocation-strategy"> Allocation strategy</a> in the Amazon EC2 User Guide.</p> 
+        let op = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&self.handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        self.handle.client.call(op).await
+    }
+    /// <p>The strategy used by the Capacity Reservation Fleet to determine which of the specified instance types to use. Currently, only the <code>prioritized</code> allocation strategy is supported. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/crfleet-concepts.html#allocation-strategy"> Allocation strategy</a> in the Amazon EC2 User Guide.</p>
     /// <p>Valid values: <code>prioritized</code> </p>
     pub fn allocation_strategy(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.allocation_strategy(input.into());
         self
     }
-    /// <p>The strategy used by the Capacity Reservation Fleet to determine which of the specified instance types to use. Currently, only the <code>prioritized</code> allocation strategy is supported. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/crfleet-concepts.html#allocation-strategy"> Allocation strategy</a> in the Amazon EC2 User Guide.</p> 
+    /// <p>The strategy used by the Capacity Reservation Fleet to determine which of the specified instance types to use. Currently, only the <code>prioritized</code> allocation strategy is supported. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/crfleet-concepts.html#allocation-strategy"> Allocation strategy</a> in the Amazon EC2 User Guide.</p>
     /// <p>Valid values: <code>prioritized</code> </p>
-    pub fn set_allocation_strategy(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_allocation_strategy(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_allocation_strategy(input);
         self
     }
@@ -74,30 +86,41 @@ impl CreateCapacityReservationFleetFluentBuilder  {
     /// To override the contents of this collection use [`set_instance_type_specifications`](Self::set_instance_type_specifications).
     ///
     /// <p>Information about the instance types for which to reserve the capacity.</p>
-    pub fn instance_type_specifications(mut self, input: crate::types::ReservationFleetInstanceSpecification) -> Self {
+    pub fn instance_type_specifications(
+        mut self,
+        input: crate::types::ReservationFleetInstanceSpecification,
+    ) -> Self {
         self.inner = self.inner.instance_type_specifications(input);
         self
     }
     /// <p>Information about the instance types for which to reserve the capacity.</p>
-    pub fn set_instance_type_specifications(mut self, input: std::option::Option<std::vec::Vec<crate::types::ReservationFleetInstanceSpecification>>) -> Self {
+    pub fn set_instance_type_specifications(
+        mut self,
+        input: std::option::Option<
+            std::vec::Vec<crate::types::ReservationFleetInstanceSpecification>,
+        >,
+    ) -> Self {
         self.inner = self.inner.set_instance_type_specifications(input);
         self
     }
-    /// <p>Indicates the tenancy of the Capacity Reservation Fleet. All Capacity Reservations in the Fleet inherit this tenancy. The Capacity Reservation Fleet can have one of the following tenancy settings:</p> 
-    /// <ul> 
-    /// <li> <p> <code>default</code> - The Capacity Reservation Fleet is created on hardware that is shared with other Amazon Web Services accounts.</p> </li> 
-    /// <li> <p> <code>dedicated</code> - The Capacity Reservations are created on single-tenant hardware that is dedicated to a single Amazon Web Services account.</p> </li> 
+    /// <p>Indicates the tenancy of the Capacity Reservation Fleet. All Capacity Reservations in the Fleet inherit this tenancy. The Capacity Reservation Fleet can have one of the following tenancy settings:</p>
+    /// <ul>
+    /// <li> <p> <code>default</code> - The Capacity Reservation Fleet is created on hardware that is shared with other Amazon Web Services accounts.</p> </li>
+    /// <li> <p> <code>dedicated</code> - The Capacity Reservations are created on single-tenant hardware that is dedicated to a single Amazon Web Services account.</p> </li>
     /// </ul>
     pub fn tenancy(mut self, input: crate::types::FleetCapacityReservationTenancy) -> Self {
         self.inner = self.inner.tenancy(input);
         self
     }
-    /// <p>Indicates the tenancy of the Capacity Reservation Fleet. All Capacity Reservations in the Fleet inherit this tenancy. The Capacity Reservation Fleet can have one of the following tenancy settings:</p> 
-    /// <ul> 
-    /// <li> <p> <code>default</code> - The Capacity Reservation Fleet is created on hardware that is shared with other Amazon Web Services accounts.</p> </li> 
-    /// <li> <p> <code>dedicated</code> - The Capacity Reservations are created on single-tenant hardware that is dedicated to a single Amazon Web Services account.</p> </li> 
+    /// <p>Indicates the tenancy of the Capacity Reservation Fleet. All Capacity Reservations in the Fleet inherit this tenancy. The Capacity Reservation Fleet can have one of the following tenancy settings:</p>
+    /// <ul>
+    /// <li> <p> <code>default</code> - The Capacity Reservation Fleet is created on hardware that is shared with other Amazon Web Services accounts.</p> </li>
+    /// <li> <p> <code>dedicated</code> - The Capacity Reservations are created on single-tenant hardware that is dedicated to a single Amazon Web Services account.</p> </li>
     /// </ul>
-    pub fn set_tenancy(mut self, input: std::option::Option<crate::types::FleetCapacityReservationTenancy>) -> Self {
+    pub fn set_tenancy(
+        mut self,
+        input: std::option::Option<crate::types::FleetCapacityReservationTenancy>,
+    ) -> Self {
         self.inner = self.inner.set_tenancy(input);
         self
     }
@@ -111,27 +134,33 @@ impl CreateCapacityReservationFleetFluentBuilder  {
         self.inner = self.inner.set_total_target_capacity(input);
         self
     }
-    /// <p>The date and time at which the Capacity Reservation Fleet expires. When the Capacity Reservation Fleet expires, its state changes to <code>expired</code> and all of the Capacity Reservations in the Fleet expire.</p> 
+    /// <p>The date and time at which the Capacity Reservation Fleet expires. When the Capacity Reservation Fleet expires, its state changes to <code>expired</code> and all of the Capacity Reservations in the Fleet expire.</p>
     /// <p>The Capacity Reservation Fleet expires within an hour after the specified time. For example, if you specify <code>5/31/2019</code>, <code>13:30:55</code>, the Capacity Reservation Fleet is guaranteed to expire between <code>13:30:55</code> and <code>14:30:55</code> on <code>5/31/2019</code>. </p>
     pub fn end_date(mut self, input: aws_smithy_types::DateTime) -> Self {
         self.inner = self.inner.end_date(input);
         self
     }
-    /// <p>The date and time at which the Capacity Reservation Fleet expires. When the Capacity Reservation Fleet expires, its state changes to <code>expired</code> and all of the Capacity Reservations in the Fleet expire.</p> 
+    /// <p>The date and time at which the Capacity Reservation Fleet expires. When the Capacity Reservation Fleet expires, its state changes to <code>expired</code> and all of the Capacity Reservations in the Fleet expire.</p>
     /// <p>The Capacity Reservation Fleet expires within an hour after the specified time. For example, if you specify <code>5/31/2019</code>, <code>13:30:55</code>, the Capacity Reservation Fleet is guaranteed to expire between <code>13:30:55</code> and <code>14:30:55</code> on <code>5/31/2019</code>. </p>
     pub fn set_end_date(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
         self.inner = self.inner.set_end_date(input);
         self
     }
-    /// <p>Indicates the type of instance launches that the Capacity Reservation Fleet accepts. All Capacity Reservations in the Fleet inherit this instance matching criteria.</p> 
+    /// <p>Indicates the type of instance launches that the Capacity Reservation Fleet accepts. All Capacity Reservations in the Fleet inherit this instance matching criteria.</p>
     /// <p>Currently, Capacity Reservation Fleets support <code>open</code> instance matching criteria only. This means that instances that have matching attributes (instance type, platform, and Availability Zone) run in the Capacity Reservations automatically. Instances do not need to explicitly target a Capacity Reservation Fleet to use its reserved capacity.</p>
-    pub fn instance_match_criteria(mut self, input: crate::types::FleetInstanceMatchCriteria) -> Self {
+    pub fn instance_match_criteria(
+        mut self,
+        input: crate::types::FleetInstanceMatchCriteria,
+    ) -> Self {
         self.inner = self.inner.instance_match_criteria(input);
         self
     }
-    /// <p>Indicates the type of instance launches that the Capacity Reservation Fleet accepts. All Capacity Reservations in the Fleet inherit this instance matching criteria.</p> 
+    /// <p>Indicates the type of instance launches that the Capacity Reservation Fleet accepts. All Capacity Reservations in the Fleet inherit this instance matching criteria.</p>
     /// <p>Currently, Capacity Reservation Fleets support <code>open</code> instance matching criteria only. This means that instances that have matching attributes (instance type, platform, and Availability Zone) run in the Capacity Reservations automatically. Instances do not need to explicitly target a Capacity Reservation Fleet to use its reserved capacity.</p>
-    pub fn set_instance_match_criteria(mut self, input: std::option::Option<crate::types::FleetInstanceMatchCriteria>) -> Self {
+    pub fn set_instance_match_criteria(
+        mut self,
+        input: std::option::Option<crate::types::FleetInstanceMatchCriteria>,
+    ) -> Self {
         self.inner = self.inner.set_instance_match_criteria(input);
         self
     }
@@ -145,7 +174,10 @@ impl CreateCapacityReservationFleetFluentBuilder  {
         self
     }
     /// <p>The tags to assign to the Capacity Reservation Fleet. The tags are automatically assigned to the Capacity Reservations in the Fleet.</p>
-    pub fn set_tag_specifications(mut self, input: std::option::Option<std::vec::Vec<crate::types::TagSpecification>>) -> Self {
+    pub fn set_tag_specifications(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::TagSpecification>>,
+    ) -> Self {
         self.inner = self.inner.set_tag_specifications(input);
         self
     }
@@ -160,4 +192,3 @@ impl CreateCapacityReservationFleetFluentBuilder  {
         self
     }
 }
-

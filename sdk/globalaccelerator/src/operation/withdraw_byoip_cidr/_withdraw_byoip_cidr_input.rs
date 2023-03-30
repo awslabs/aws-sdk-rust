@@ -2,20 +2,21 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct WithdrawByoipCidrInput  {
+pub struct WithdrawByoipCidrInput {
     /// <p>The address range, in CIDR notation.</p>
     #[doc(hidden)]
     pub cidr: std::option::Option<std::string::String>,
 }
 impl WithdrawByoipCidrInput {
     /// <p>The address range, in CIDR notation.</p>
-    pub fn cidr(&self) -> std::option::Option<& str> {
+    pub fn cidr(&self) -> std::option::Option<&str> {
         self.cidr.as_deref()
     }
 }
 impl WithdrawByoipCidrInput {
     /// Creates a new builder-style object to manufacture [`WithdrawByoipCidrInput`](crate::operation::withdraw_byoip_cidr::WithdrawByoipCidrInput).
-    pub fn builder() -> crate::operation::withdraw_byoip_cidr::builders::WithdrawByoipCidrInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::withdraw_byoip_cidr::builders::WithdrawByoipCidrInputBuilder {
         crate::operation::withdraw_byoip_cidr::builders::WithdrawByoipCidrInputBuilder::default()
     }
 }
@@ -34,16 +35,16 @@ impl WithdrawByoipCidrInputBuilder {
     }
     /// <p>The address range, in CIDR notation.</p>
     pub fn set_cidr(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.cidr = input; self
+        self.cidr = input;
+        self
     }
     /// Consumes the builder and constructs a [`WithdrawByoipCidrInput`](crate::operation::withdraw_byoip_cidr::WithdrawByoipCidrInput).
-    pub fn build(self) -> Result<crate::operation::withdraw_byoip_cidr::WithdrawByoipCidrInput, aws_smithy_http::operation::error::BuildError> {
-        Ok(
-            crate::operation::withdraw_byoip_cidr::WithdrawByoipCidrInput {
-                cidr: self.cidr
-                ,
-            }
-        )
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::withdraw_byoip_cidr::WithdrawByoipCidrInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        Ok(crate::operation::withdraw_byoip_cidr::WithdrawByoipCidrInput { cidr: self.cidr })
     }
 }
-

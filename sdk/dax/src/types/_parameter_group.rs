@@ -3,7 +3,7 @@
 /// <p>A named set of parameters that are applied to all of the nodes in a DAX cluster.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ParameterGroup  {
+pub struct ParameterGroup {
     /// <p>The name of the parameter group.</p>
     #[doc(hidden)]
     pub parameter_group_name: std::option::Option<std::string::String>,
@@ -13,11 +13,11 @@ pub struct ParameterGroup  {
 }
 impl ParameterGroup {
     /// <p>The name of the parameter group.</p>
-    pub fn parameter_group_name(&self) -> std::option::Option<& str> {
+    pub fn parameter_group_name(&self) -> std::option::Option<&str> {
         self.parameter_group_name.as_deref()
     }
     /// <p>A description of the parameter group.</p>
-    pub fn description(&self) -> std::option::Option<& str> {
+    pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
 }
@@ -42,8 +42,12 @@ impl ParameterGroupBuilder {
         self
     }
     /// <p>The name of the parameter group.</p>
-    pub fn set_parameter_group_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.parameter_group_name = input; self
+    pub fn set_parameter_group_name(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.parameter_group_name = input;
+        self
     }
     /// <p>A description of the parameter group.</p>
     pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -52,16 +56,14 @@ impl ParameterGroupBuilder {
     }
     /// <p>A description of the parameter group.</p>
     pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.description = input; self
+        self.description = input;
+        self
     }
     /// Consumes the builder and constructs a [`ParameterGroup`](crate::types::ParameterGroup).
     pub fn build(self) -> crate::types::ParameterGroup {
         crate::types::ParameterGroup {
-            parameter_group_name: self.parameter_group_name
-            ,
-            description: self.description
-            ,
+            parameter_group_name: self.parameter_group_name,
+            description: self.description,
         }
     }
 }
-

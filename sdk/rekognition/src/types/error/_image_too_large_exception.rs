@@ -3,7 +3,7 @@
 /// <p>The input image size exceeds the allowed limit. If you are calling DetectProtectiveEquipment, the image size or resolution exceeds the allowed limit. For more information, see Guidelines and quotas in Amazon Rekognition in the Amazon Rekognition Developer Guide. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ImageTooLargeException  {
+pub struct ImageTooLargeException {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
@@ -17,23 +17,25 @@ pub struct ImageTooLargeException  {
 }
 impl ImageTooLargeException {
     #[allow(missing_docs)] // documentation missing in model
-    pub fn code(&self) -> std::option::Option<& str> {
+    pub fn code(&self) -> std::option::Option<&str> {
         self.code.as_deref()
     }
     /// <p>A universally unique identifier (UUID) for the request.</p>
-    pub fn logref(&self) -> std::option::Option<& str> {
+    pub fn logref(&self) -> std::option::Option<&str> {
         self.logref.as_deref()
     }
 }
 impl ImageTooLargeException {
     /// Returns the error message.
-                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
+    pub fn message(&self) -> std::option::Option<&str> {
+        self.message.as_deref()
+    }
 }
 impl std::fmt::Display for ImageTooLargeException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "ImageTooLargeException")?;
         if let Some(inner_1) = &self.message {
-             {
+            {
                 write!(f, ": {}", inner_1)?;
             }
         }
@@ -48,7 +50,9 @@ impl aws_http::request_id::RequestId for crate::types::error::ImageTooLargeExcep
     }
 }
 impl aws_smithy_types::error::metadata::ProvideErrorMetadata for ImageTooLargeException {
-    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata { &self.meta }
+    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
+        &self.meta
+    }
 }
 impl ImageTooLargeException {
     /// Creates a new builder-style object to manufacture [`ImageTooLargeException`](crate::types::error::ImageTooLargeException).
@@ -74,7 +78,8 @@ impl ImageTooLargeExceptionBuilder {
     }
     #[allow(missing_docs)] // documentation missing in model
     pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.message = input; self
+        self.message = input;
+        self
     }
     #[allow(missing_docs)] // documentation missing in model
     pub fn code(mut self, input: impl Into<std::string::String>) -> Self {
@@ -83,7 +88,8 @@ impl ImageTooLargeExceptionBuilder {
     }
     #[allow(missing_docs)] // documentation missing in model
     pub fn set_code(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.code = input; self
+        self.code = input;
+        self
     }
     /// <p>A universally unique identifier (UUID) for the request.</p>
     pub fn logref(mut self, input: impl Into<std::string::String>) -> Self {
@@ -92,30 +98,30 @@ impl ImageTooLargeExceptionBuilder {
     }
     /// <p>A universally unique identifier (UUID) for the request.</p>
     pub fn set_logref(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.logref = input; self
+        self.logref = input;
+        self
     }
     /// Sets error metadata
-                                            pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
-                                                self.meta = Some(meta);
-                                                self
-                                            }
-    
-                                            /// Sets error metadata
-                                            pub fn set_meta(&mut self, meta: std::option::Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
-                                                self.meta = meta;
-                                                self
-                                            }
+    pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
+        self.meta = Some(meta);
+        self
+    }
+
+    /// Sets error metadata
+    pub fn set_meta(
+        &mut self,
+        meta: std::option::Option<aws_smithy_types::error::ErrorMetadata>,
+    ) -> &mut Self {
+        self.meta = meta;
+        self
+    }
     /// Consumes the builder and constructs a [`ImageTooLargeException`](crate::types::error::ImageTooLargeException).
     pub fn build(self) -> crate::types::error::ImageTooLargeException {
         crate::types::error::ImageTooLargeException {
-            message: self.message
-            ,
-            code: self.code
-            ,
-            logref: self.logref
-            ,
+            message: self.message,
+            code: self.code,
+            logref: self.logref,
             meta: self.meta.unwrap_or_default(),
         }
     }
 }
-

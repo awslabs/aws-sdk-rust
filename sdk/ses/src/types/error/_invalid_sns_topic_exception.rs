@@ -3,7 +3,7 @@
 /// <p>Indicates that the provided Amazon SNS topic is invalid, or that Amazon SES could not publish to the topic, possibly due to permissions issues. For information about giving permissions, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-permissions.html">Amazon SES Developer Guide</a>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct InvalidSnsTopicException  {
+pub struct InvalidSnsTopicException {
     /// <p>Indicates that the topic does not exist.</p>
     #[doc(hidden)]
     pub topic: std::option::Option<std::string::String>,
@@ -14,19 +14,21 @@ pub struct InvalidSnsTopicException  {
 }
 impl InvalidSnsTopicException {
     /// <p>Indicates that the topic does not exist.</p>
-    pub fn topic(&self) -> std::option::Option<& str> {
+    pub fn topic(&self) -> std::option::Option<&str> {
         self.topic.as_deref()
     }
 }
 impl InvalidSnsTopicException {
     /// Returns the error message.
-                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
+    pub fn message(&self) -> std::option::Option<&str> {
+        self.message.as_deref()
+    }
 }
 impl std::fmt::Display for InvalidSnsTopicException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidSnsTopicException")?;
         if let Some(inner_1) = &self.message {
-             {
+            {
                 write!(f, ": {}", inner_1)?;
             }
         }
@@ -41,7 +43,9 @@ impl aws_http::request_id::RequestId for crate::types::error::InvalidSnsTopicExc
     }
 }
 impl aws_smithy_types::error::metadata::ProvideErrorMetadata for InvalidSnsTopicException {
-    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata { &self.meta }
+    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
+        &self.meta
+    }
 }
 impl InvalidSnsTopicException {
     /// Creates a new builder-style object to manufacture [`InvalidSnsTopicException`](crate::types::error::InvalidSnsTopicException).
@@ -66,7 +70,8 @@ impl InvalidSnsTopicExceptionBuilder {
     }
     /// <p>Indicates that the topic does not exist.</p>
     pub fn set_topic(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.topic = input; self
+        self.topic = input;
+        self
     }
     #[allow(missing_docs)] // documentation missing in model
     pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
@@ -75,28 +80,29 @@ impl InvalidSnsTopicExceptionBuilder {
     }
     #[allow(missing_docs)] // documentation missing in model
     pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.message = input; self
+        self.message = input;
+        self
     }
     /// Sets error metadata
-                                            pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
-                                                self.meta = Some(meta);
-                                                self
-                                            }
-    
-                                            /// Sets error metadata
-                                            pub fn set_meta(&mut self, meta: std::option::Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
-                                                self.meta = meta;
-                                                self
-                                            }
+    pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
+        self.meta = Some(meta);
+        self
+    }
+
+    /// Sets error metadata
+    pub fn set_meta(
+        &mut self,
+        meta: std::option::Option<aws_smithy_types::error::ErrorMetadata>,
+    ) -> &mut Self {
+        self.meta = meta;
+        self
+    }
     /// Consumes the builder and constructs a [`InvalidSnsTopicException`](crate::types::error::InvalidSnsTopicException).
     pub fn build(self) -> crate::types::error::InvalidSnsTopicException {
         crate::types::error::InvalidSnsTopicException {
-            topic: self.topic
-            ,
-            message: self.message
-            ,
+            topic: self.topic,
+            message: self.message,
             meta: self.meta.unwrap_or_default(),
         }
     }
 }
-

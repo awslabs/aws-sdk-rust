@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetAssociatedResourceOutput  {
+pub struct GetAssociatedResourceOutput {
     /// <p>The resource associated with the application.</p>
     #[doc(hidden)]
     pub resource: std::option::Option<crate::types::Resource>,
@@ -10,18 +10,20 @@ pub struct GetAssociatedResourceOutput  {
 }
 impl GetAssociatedResourceOutput {
     /// <p>The resource associated with the application.</p>
-    pub fn resource(&self) -> std::option::Option<& crate::types::Resource> {
+    pub fn resource(&self) -> std::option::Option<&crate::types::Resource> {
         self.resource.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for GetAssociatedResourceOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl GetAssociatedResourceOutput {
     /// Creates a new builder-style object to manufacture [`GetAssociatedResourceOutput`](crate::operation::get_associated_resource::GetAssociatedResourceOutput).
-    pub fn builder() -> crate::operation::get_associated_resource::builders::GetAssociatedResourceOutputBuilder {
+    pub fn builder(
+    ) -> crate::operation::get_associated_resource::builders::GetAssociatedResourceOutputBuilder
+    {
         crate::operation::get_associated_resource::builders::GetAssociatedResourceOutputBuilder::default()
     }
 }
@@ -41,24 +43,23 @@ impl GetAssociatedResourceOutputBuilder {
     }
     /// <p>The resource associated with the application.</p>
     pub fn set_resource(mut self, input: std::option::Option<crate::types::Resource>) -> Self {
-        self.resource = input; self
+        self.resource = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`GetAssociatedResourceOutput`](crate::operation::get_associated_resource::GetAssociatedResourceOutput).
     pub fn build(self) -> crate::operation::get_associated_resource::GetAssociatedResourceOutput {
         crate::operation::get_associated_resource::GetAssociatedResourceOutput {
-            resource: self.resource
-            ,
+            resource: self.resource,
             _request_id: self._request_id,
         }
     }
 }
-

@@ -2,20 +2,21 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ConfirmConnectionInput  {
+pub struct ConfirmConnectionInput {
     /// <p>The ID of the hosted connection.</p>
     #[doc(hidden)]
     pub connection_id: std::option::Option<std::string::String>,
 }
 impl ConfirmConnectionInput {
     /// <p>The ID of the hosted connection.</p>
-    pub fn connection_id(&self) -> std::option::Option<& str> {
+    pub fn connection_id(&self) -> std::option::Option<&str> {
         self.connection_id.as_deref()
     }
 }
 impl ConfirmConnectionInput {
     /// Creates a new builder-style object to manufacture [`ConfirmConnectionInput`](crate::operation::confirm_connection::ConfirmConnectionInput).
-    pub fn builder() -> crate::operation::confirm_connection::builders::ConfirmConnectionInputBuilder {
+    pub fn builder() -> crate::operation::confirm_connection::builders::ConfirmConnectionInputBuilder
+    {
         crate::operation::confirm_connection::builders::ConfirmConnectionInputBuilder::default()
     }
 }
@@ -34,16 +35,20 @@ impl ConfirmConnectionInputBuilder {
     }
     /// <p>The ID of the hosted connection.</p>
     pub fn set_connection_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.connection_id = input; self
+        self.connection_id = input;
+        self
     }
     /// Consumes the builder and constructs a [`ConfirmConnectionInput`](crate::operation::confirm_connection::ConfirmConnectionInput).
-    pub fn build(self) -> Result<crate::operation::confirm_connection::ConfirmConnectionInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::confirm_connection::ConfirmConnectionInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::confirm_connection::ConfirmConnectionInput {
-                connection_id: self.connection_id
-                ,
-            }
+                connection_id: self.connection_id,
+            },
         )
     }
 }
-

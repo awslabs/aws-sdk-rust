@@ -3,7 +3,7 @@
 /// <p>This structure contains the status information about a canary run.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CanaryRunStatus  {
+pub struct CanaryRunStatus {
     /// <p>The current state of the run.</p>
     #[doc(hidden)]
     pub state: std::option::Option<crate::types::CanaryRunState>,
@@ -16,15 +16,17 @@ pub struct CanaryRunStatus  {
 }
 impl CanaryRunStatus {
     /// <p>The current state of the run.</p>
-    pub fn state(&self) -> std::option::Option<& crate::types::CanaryRunState> {
+    pub fn state(&self) -> std::option::Option<&crate::types::CanaryRunState> {
         self.state.as_ref()
     }
     /// <p>If run of the canary failed, this field contains the reason for the error.</p>
-    pub fn state_reason(&self) -> std::option::Option<& str> {
+    pub fn state_reason(&self) -> std::option::Option<&str> {
         self.state_reason.as_deref()
     }
     /// <p>If this value is <code>CANARY_FAILURE</code>, an exception occurred in the canary code. If this value is <code>EXECUTION_FAILURE</code>, an exception occurred in CloudWatch Synthetics.</p>
-    pub fn state_reason_code(&self) -> std::option::Option<& crate::types::CanaryRunStateReasonCode> {
+    pub fn state_reason_code(
+        &self,
+    ) -> std::option::Option<&crate::types::CanaryRunStateReasonCode> {
         self.state_reason_code.as_ref()
     }
 }
@@ -51,7 +53,8 @@ impl CanaryRunStatusBuilder {
     }
     /// <p>The current state of the run.</p>
     pub fn set_state(mut self, input: std::option::Option<crate::types::CanaryRunState>) -> Self {
-        self.state = input; self
+        self.state = input;
+        self
     }
     /// <p>If run of the canary failed, this field contains the reason for the error.</p>
     pub fn state_reason(mut self, input: impl Into<std::string::String>) -> Self {
@@ -60,7 +63,8 @@ impl CanaryRunStatusBuilder {
     }
     /// <p>If run of the canary failed, this field contains the reason for the error.</p>
     pub fn set_state_reason(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.state_reason = input; self
+        self.state_reason = input;
+        self
     }
     /// <p>If this value is <code>CANARY_FAILURE</code>, an exception occurred in the canary code. If this value is <code>EXECUTION_FAILURE</code>, an exception occurred in CloudWatch Synthetics.</p>
     pub fn state_reason_code(mut self, input: crate::types::CanaryRunStateReasonCode) -> Self {
@@ -68,19 +72,19 @@ impl CanaryRunStatusBuilder {
         self
     }
     /// <p>If this value is <code>CANARY_FAILURE</code>, an exception occurred in the canary code. If this value is <code>EXECUTION_FAILURE</code>, an exception occurred in CloudWatch Synthetics.</p>
-    pub fn set_state_reason_code(mut self, input: std::option::Option<crate::types::CanaryRunStateReasonCode>) -> Self {
-        self.state_reason_code = input; self
+    pub fn set_state_reason_code(
+        mut self,
+        input: std::option::Option<crate::types::CanaryRunStateReasonCode>,
+    ) -> Self {
+        self.state_reason_code = input;
+        self
     }
     /// Consumes the builder and constructs a [`CanaryRunStatus`](crate::types::CanaryRunStatus).
     pub fn build(self) -> crate::types::CanaryRunStatus {
         crate::types::CanaryRunStatus {
-            state: self.state
-            ,
-            state_reason: self.state_reason
-            ,
-            state_reason_code: self.state_reason_code
-            ,
+            state: self.state,
+            state_reason: self.state_reason,
+            state_reason_code: self.state_reason_code,
         }
     }
 }
-

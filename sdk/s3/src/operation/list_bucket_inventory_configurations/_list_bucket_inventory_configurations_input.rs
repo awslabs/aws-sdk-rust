@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListBucketInventoryConfigurationsInput  {
+pub struct ListBucketInventoryConfigurationsInput {
     /// <p>The name of the bucket containing the inventory configurations to retrieve.</p>
     #[doc(hidden)]
     pub bucket: std::option::Option<std::string::String>,
@@ -15,21 +15,21 @@ pub struct ListBucketInventoryConfigurationsInput  {
 }
 impl ListBucketInventoryConfigurationsInput {
     /// <p>The name of the bucket containing the inventory configurations to retrieve.</p>
-    pub fn bucket(&self) -> std::option::Option<& str> {
+    pub fn bucket(&self) -> std::option::Option<&str> {
         self.bucket.as_deref()
     }
     /// <p>The marker used to continue an inventory configuration listing that has been truncated. Use the NextContinuationToken from a previously truncated list response to continue the listing. The continuation token is an opaque value that Amazon S3 understands.</p>
-    pub fn continuation_token(&self) -> std::option::Option<& str> {
+    pub fn continuation_token(&self) -> std::option::Option<&str> {
         self.continuation_token.as_deref()
     }
     /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
-    pub fn expected_bucket_owner(&self) -> std::option::Option<& str> {
+    pub fn expected_bucket_owner(&self) -> std::option::Option<&str> {
         self.expected_bucket_owner.as_deref()
     }
 }
 impl ListBucketInventoryConfigurationsInput {
     /// Creates a new builder-style object to manufacture [`ListBucketInventoryConfigurationsInput`](crate::operation::list_bucket_inventory_configurations::ListBucketInventoryConfigurationsInput).
-    pub fn builder() -> crate::operation::list_bucket_inventory_configurations::builders::ListBucketInventoryConfigurationsInputBuilder {
+    pub fn builder() -> crate::operation::list_bucket_inventory_configurations::builders::ListBucketInventoryConfigurationsInputBuilder{
         crate::operation::list_bucket_inventory_configurations::builders::ListBucketInventoryConfigurationsInputBuilder::default()
     }
 }
@@ -50,7 +50,8 @@ impl ListBucketInventoryConfigurationsInputBuilder {
     }
     /// <p>The name of the bucket containing the inventory configurations to retrieve.</p>
     pub fn set_bucket(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.bucket = input; self
+        self.bucket = input;
+        self
     }
     /// <p>The marker used to continue an inventory configuration listing that has been truncated. Use the NextContinuationToken from a previously truncated list response to continue the listing. The continuation token is an opaque value that Amazon S3 understands.</p>
     pub fn continuation_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -58,8 +59,12 @@ impl ListBucketInventoryConfigurationsInputBuilder {
         self
     }
     /// <p>The marker used to continue an inventory configuration listing that has been truncated. Use the NextContinuationToken from a previously truncated list response to continue the listing. The continuation token is an opaque value that Amazon S3 understands.</p>
-    pub fn set_continuation_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.continuation_token = input; self
+    pub fn set_continuation_token(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.continuation_token = input;
+        self
     }
     /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
     pub fn expected_bucket_owner(mut self, input: impl Into<std::string::String>) -> Self {
@@ -67,11 +72,15 @@ impl ListBucketInventoryConfigurationsInputBuilder {
         self
     }
     /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
-    pub fn set_expected_bucket_owner(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.expected_bucket_owner = input; self
+    pub fn set_expected_bucket_owner(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.expected_bucket_owner = input;
+        self
     }
     /// Consumes the builder and constructs a [`ListBucketInventoryConfigurationsInput`](crate::operation::list_bucket_inventory_configurations::ListBucketInventoryConfigurationsInput).
-    pub fn build(self) -> Result<crate::operation::list_bucket_inventory_configurations::ListBucketInventoryConfigurationsInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> Result<crate::operation::list_bucket_inventory_configurations::ListBucketInventoryConfigurationsInput, aws_smithy_http::operation::error::BuildError>{
         Ok(
             crate::operation::list_bucket_inventory_configurations::ListBucketInventoryConfigurationsInput {
                 bucket: self.bucket
@@ -84,4 +93,3 @@ impl ListBucketInventoryConfigurationsInputBuilder {
         )
     }
 }
-

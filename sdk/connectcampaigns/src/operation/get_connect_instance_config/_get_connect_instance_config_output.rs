@@ -3,7 +3,7 @@
 /// GetConnectInstanceConfigResponse
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetConnectInstanceConfigOutput  {
+pub struct GetConnectInstanceConfigOutput {
     /// Instance config object
     #[doc(hidden)]
     pub connect_instance_config: std::option::Option<crate::types::InstanceConfig>,
@@ -11,18 +11,18 @@ pub struct GetConnectInstanceConfigOutput  {
 }
 impl GetConnectInstanceConfigOutput {
     /// Instance config object
-    pub fn connect_instance_config(&self) -> std::option::Option<& crate::types::InstanceConfig> {
+    pub fn connect_instance_config(&self) -> std::option::Option<&crate::types::InstanceConfig> {
         self.connect_instance_config.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for GetConnectInstanceConfigOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl GetConnectInstanceConfigOutput {
     /// Creates a new builder-style object to manufacture [`GetConnectInstanceConfigOutput`](crate::operation::get_connect_instance_config::GetConnectInstanceConfigOutput).
-    pub fn builder() -> crate::operation::get_connect_instance_config::builders::GetConnectInstanceConfigOutputBuilder {
+    pub fn builder() -> crate::operation::get_connect_instance_config::builders::GetConnectInstanceConfigOutputBuilder{
         crate::operation::get_connect_instance_config::builders::GetConnectInstanceConfigOutputBuilder::default()
     }
 }
@@ -41,25 +41,29 @@ impl GetConnectInstanceConfigOutputBuilder {
         self
     }
     /// Instance config object
-    pub fn set_connect_instance_config(mut self, input: std::option::Option<crate::types::InstanceConfig>) -> Self {
-        self.connect_instance_config = input; self
+    pub fn set_connect_instance_config(
+        mut self,
+        input: std::option::Option<crate::types::InstanceConfig>,
+    ) -> Self {
+        self.connect_instance_config = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`GetConnectInstanceConfigOutput`](crate::operation::get_connect_instance_config::GetConnectInstanceConfigOutput).
-    pub fn build(self) -> crate::operation::get_connect_instance_config::GetConnectInstanceConfigOutput {
+    pub fn build(
+        self,
+    ) -> crate::operation::get_connect_instance_config::GetConnectInstanceConfigOutput {
         crate::operation::get_connect_instance_config::GetConnectInstanceConfigOutput {
-            connect_instance_config: self.connect_instance_config
-            ,
+            connect_instance_config: self.connect_instance_config,
             _request_id: self._request_id,
         }
     }
 }
-

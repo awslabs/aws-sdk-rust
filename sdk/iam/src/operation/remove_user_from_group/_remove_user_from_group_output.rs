@@ -2,17 +2,18 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct RemoveUserFromGroupOutput  {
+pub struct RemoveUserFromGroupOutput {
     _request_id: Option<String>,
 }
 impl aws_http::request_id::RequestId for RemoveUserFromGroupOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl RemoveUserFromGroupOutput {
     /// Creates a new builder-style object to manufacture [`RemoveUserFromGroupOutput`](crate::operation::remove_user_from_group::RemoveUserFromGroupOutput).
-    pub fn builder() -> crate::operation::remove_user_from_group::builders::RemoveUserFromGroupOutputBuilder {
+    pub fn builder(
+    ) -> crate::operation::remove_user_from_group::builders::RemoveUserFromGroupOutputBuilder {
         crate::operation::remove_user_from_group::builders::RemoveUserFromGroupOutputBuilder::default()
     }
 }
@@ -25,14 +26,14 @@ pub struct RemoveUserFromGroupOutputBuilder {
 }
 impl RemoveUserFromGroupOutputBuilder {
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`RemoveUserFromGroupOutput`](crate::operation::remove_user_from_group::RemoveUserFromGroupOutput).
     pub fn build(self) -> crate::operation::remove_user_from_group::RemoveUserFromGroupOutput {
         crate::operation::remove_user_from_group::RemoveUserFromGroupOutput {
@@ -40,4 +41,3 @@ impl RemoveUserFromGroupOutputBuilder {
         }
     }
 }
-

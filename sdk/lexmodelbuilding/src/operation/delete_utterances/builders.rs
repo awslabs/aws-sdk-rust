@@ -4,52 +4,74 @@ pub use crate::operation::delete_utterances::_delete_utterances_output::DeleteUt
 pub use crate::operation::delete_utterances::_delete_utterances_input::DeleteUtterancesInputBuilder;
 
 /// Fluent builder constructing a request to `DeleteUtterances`.
-/// 
-/// <p>Deletes stored utterances.</p> 
-/// <p>Amazon Lex stores the utterances that users send to your bot. Utterances are stored for 15 days for use with the <code>GetUtterancesView</code> operation, and then stored indefinitely for use in improving the ability of your bot to respond to user input.</p> 
-/// <p>Use the <code>DeleteUtterances</code> operation to manually delete stored utterances for a specific user. When you use the <code>DeleteUtterances</code> operation, utterances stored for improving your bot's ability to respond to user input are deleted immediately. Utterances stored for use with the <code>GetUtterancesView</code> operation are deleted after 15 days.</p> 
+///
+/// <p>Deletes stored utterances.</p>
+/// <p>Amazon Lex stores the utterances that users send to your bot. Utterances are stored for 15 days for use with the <code>GetUtterancesView</code> operation, and then stored indefinitely for use in improving the ability of your bot to respond to user input.</p>
+/// <p>Use the <code>DeleteUtterances</code> operation to manually delete stored utterances for a specific user. When you use the <code>DeleteUtterances</code> operation, utterances stored for improving your bot's ability to respond to user input are deleted immediately. Utterances stored for use with the <code>GetUtterancesView</code> operation are deleted after 15 days.</p>
 /// <p>This operation requires permissions for the <code>lex:DeleteUtterances</code> action.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DeleteUtterancesFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::delete_utterances::builders::DeleteUtterancesInputBuilder
-            }
-impl DeleteUtterancesFluentBuilder  {
+    handle: std::sync::Arc<crate::client::Handle>,
+    inner: crate::operation::delete_utterances::builders::DeleteUtterancesInputBuilder,
+}
+impl DeleteUtterancesFluentBuilder {
     /// Creates a new `DeleteUtterances`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
-                    /// sent. The operation's inner [http::Request] can be modified as well.
-                    pub async fn customize(self) -> std::result::Result<
-                        crate::client::customize::CustomizableOperation<crate::operation::delete_utterances::DeleteUtterances, aws_http::retry::AwsResponseRetryClassifier,>,
-                        aws_smithy_http::result::SdkError<crate::operation::delete_utterances::DeleteUtterancesError>
-                    >  {
-                        let handle = self.handle.clone();
-                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-                    }
-    
-                    /// Sends the request and returns the response.
-                    ///
-                    /// If an error occurs, an `SdkError` will be returned with additional details that
-                    /// can be matched against.
-                    ///
-                    /// By default, any retryable failures will be retried twice. Retry behavior
-                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                    /// set when configuring the client.
-                    pub async fn send(self) -> std::result::Result<crate::operation::delete_utterances::DeleteUtterancesOutput, aws_smithy_http::result::SdkError<crate::operation::delete_utterances::DeleteUtterancesError>>
-                     {
-                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&self.handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        self.handle.client.call(op).await
-                    }
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle,
+            inner: Default::default(),
+        }
+    }
+
+    /// Consume this builder, creating a customizable operation that can be modified before being
+    /// sent. The operation's inner [http::Request] can be modified as well.
+    pub async fn customize(
+        self,
+    ) -> std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::delete_utterances::DeleteUtterances,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::result::SdkError<
+            crate::operation::delete_utterances::DeleteUtterancesError,
+        >,
+    > {
+        let handle = self.handle.clone();
+        let operation = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+    }
+
+    /// Sends the request and returns the response.
+    ///
+    /// If an error occurs, an `SdkError` will be returned with additional details that
+    /// can be matched against.
+    ///
+    /// By default, any retryable failures will be retried twice. Retry behavior
+    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+    /// set when configuring the client.
+    pub async fn send(
+        self,
+    ) -> std::result::Result<
+        crate::operation::delete_utterances::DeleteUtterancesOutput,
+        aws_smithy_http::result::SdkError<
+            crate::operation::delete_utterances::DeleteUtterancesError,
+        >,
+    > {
+        let op = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&self.handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        self.handle.client.call(op).await
+    }
     /// <p>The name of the bot that stored the utterances.</p>
     pub fn bot_name(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.bot_name(input.into());
@@ -71,4 +93,3 @@ impl DeleteUtterancesFluentBuilder  {
         self
     }
 }
-

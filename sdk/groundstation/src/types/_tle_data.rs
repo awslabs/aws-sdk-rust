@@ -3,7 +3,7 @@
 /// <p>Two-line element set (TLE) data.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct TleData  {
+pub struct TleData {
     /// <p>First line of two-line element set (TLE) data.</p>
     #[doc(hidden)]
     pub tle_line1: std::option::Option<std::string::String>,
@@ -16,15 +16,15 @@ pub struct TleData  {
 }
 impl TleData {
     /// <p>First line of two-line element set (TLE) data.</p>
-    pub fn tle_line1(&self) -> std::option::Option<& str> {
+    pub fn tle_line1(&self) -> std::option::Option<&str> {
         self.tle_line1.as_deref()
     }
     /// <p>Second line of two-line element set (TLE) data.</p>
-    pub fn tle_line2(&self) -> std::option::Option<& str> {
+    pub fn tle_line2(&self) -> std::option::Option<&str> {
         self.tle_line2.as_deref()
     }
     /// <p>The valid time range for the TLE. Gaps or overlap are not permitted.</p>
-    pub fn valid_time_range(&self) -> std::option::Option<& crate::types::TimeRange> {
+    pub fn valid_time_range(&self) -> std::option::Option<&crate::types::TimeRange> {
         self.valid_time_range.as_ref()
     }
 }
@@ -51,7 +51,8 @@ impl TleDataBuilder {
     }
     /// <p>First line of two-line element set (TLE) data.</p>
     pub fn set_tle_line1(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.tle_line1 = input; self
+        self.tle_line1 = input;
+        self
     }
     /// <p>Second line of two-line element set (TLE) data.</p>
     pub fn tle_line2(mut self, input: impl Into<std::string::String>) -> Self {
@@ -60,7 +61,8 @@ impl TleDataBuilder {
     }
     /// <p>Second line of two-line element set (TLE) data.</p>
     pub fn set_tle_line2(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.tle_line2 = input; self
+        self.tle_line2 = input;
+        self
     }
     /// <p>The valid time range for the TLE. Gaps or overlap are not permitted.</p>
     pub fn valid_time_range(mut self, input: crate::types::TimeRange) -> Self {
@@ -68,19 +70,19 @@ impl TleDataBuilder {
         self
     }
     /// <p>The valid time range for the TLE. Gaps or overlap are not permitted.</p>
-    pub fn set_valid_time_range(mut self, input: std::option::Option<crate::types::TimeRange>) -> Self {
-        self.valid_time_range = input; self
+    pub fn set_valid_time_range(
+        mut self,
+        input: std::option::Option<crate::types::TimeRange>,
+    ) -> Self {
+        self.valid_time_range = input;
+        self
     }
     /// Consumes the builder and constructs a [`TleData`](crate::types::TleData).
     pub fn build(self) -> crate::types::TleData {
         crate::types::TleData {
-            tle_line1: self.tle_line1
-            ,
-            tle_line2: self.tle_line2
-            ,
-            valid_time_range: self.valid_time_range
-            ,
+            tle_line1: self.tle_line1,
+            tle_line2: self.tle_line2,
+            valid_time_range: self.valid_time_range,
         }
     }
 }
-

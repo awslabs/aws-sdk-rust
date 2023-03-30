@@ -3,7 +3,7 @@
 /// <p>Describes the serialization format of the object.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct InputSerialization  {
+pub struct InputSerialization {
     /// <p>Describes the serialization of a CSV-encoded object.</p>
     #[doc(hidden)]
     pub csv: std::option::Option<crate::types::CsvInput>,
@@ -19,19 +19,19 @@ pub struct InputSerialization  {
 }
 impl InputSerialization {
     /// <p>Describes the serialization of a CSV-encoded object.</p>
-    pub fn csv(&self) -> std::option::Option<& crate::types::CsvInput> {
+    pub fn csv(&self) -> std::option::Option<&crate::types::CsvInput> {
         self.csv.as_ref()
     }
     /// <p>Specifies object's compression format. Valid values: NONE, GZIP, BZIP2. Default Value: NONE.</p>
-    pub fn compression_type(&self) -> std::option::Option<& crate::types::CompressionType> {
+    pub fn compression_type(&self) -> std::option::Option<&crate::types::CompressionType> {
         self.compression_type.as_ref()
     }
     /// <p>Specifies JSON as object's input serialization format.</p>
-    pub fn json(&self) -> std::option::Option<& crate::types::JsonInput> {
+    pub fn json(&self) -> std::option::Option<&crate::types::JsonInput> {
         self.json.as_ref()
     }
     /// <p>Specifies Parquet as object's input serialization format.</p>
-    pub fn parquet(&self) -> std::option::Option<& crate::types::ParquetInput> {
+    pub fn parquet(&self) -> std::option::Option<&crate::types::ParquetInput> {
         self.parquet.as_ref()
     }
 }
@@ -59,7 +59,8 @@ impl InputSerializationBuilder {
     }
     /// <p>Describes the serialization of a CSV-encoded object.</p>
     pub fn set_csv(mut self, input: std::option::Option<crate::types::CsvInput>) -> Self {
-        self.csv = input; self
+        self.csv = input;
+        self
     }
     /// <p>Specifies object's compression format. Valid values: NONE, GZIP, BZIP2. Default Value: NONE.</p>
     pub fn compression_type(mut self, input: crate::types::CompressionType) -> Self {
@@ -67,8 +68,12 @@ impl InputSerializationBuilder {
         self
     }
     /// <p>Specifies object's compression format. Valid values: NONE, GZIP, BZIP2. Default Value: NONE.</p>
-    pub fn set_compression_type(mut self, input: std::option::Option<crate::types::CompressionType>) -> Self {
-        self.compression_type = input; self
+    pub fn set_compression_type(
+        mut self,
+        input: std::option::Option<crate::types::CompressionType>,
+    ) -> Self {
+        self.compression_type = input;
+        self
     }
     /// <p>Specifies JSON as object's input serialization format.</p>
     pub fn json(mut self, input: crate::types::JsonInput) -> Self {
@@ -77,7 +82,8 @@ impl InputSerializationBuilder {
     }
     /// <p>Specifies JSON as object's input serialization format.</p>
     pub fn set_json(mut self, input: std::option::Option<crate::types::JsonInput>) -> Self {
-        self.json = input; self
+        self.json = input;
+        self
     }
     /// <p>Specifies Parquet as object's input serialization format.</p>
     pub fn parquet(mut self, input: crate::types::ParquetInput) -> Self {
@@ -86,20 +92,16 @@ impl InputSerializationBuilder {
     }
     /// <p>Specifies Parquet as object's input serialization format.</p>
     pub fn set_parquet(mut self, input: std::option::Option<crate::types::ParquetInput>) -> Self {
-        self.parquet = input; self
+        self.parquet = input;
+        self
     }
     /// Consumes the builder and constructs a [`InputSerialization`](crate::types::InputSerialization).
     pub fn build(self) -> crate::types::InputSerialization {
         crate::types::InputSerialization {
-            csv: self.csv
-            ,
-            compression_type: self.compression_type
-            ,
-            json: self.json
-            ,
-            parquet: self.parquet
-            ,
+            csv: self.csv,
+            compression_type: self.compression_type,
+            json: self.json,
+            parquet: self.parquet,
         }
     }
 }
-

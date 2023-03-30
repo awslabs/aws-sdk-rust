@@ -3,20 +3,21 @@
 /// <p>Represents a request to begin Amazon SES domain verification and to generate the TXT records that you must publish to the DNS server of your domain to complete the verification. For information about domain verification, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/verify-domains.html">Amazon SES Developer Guide</a>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct VerifyDomainIdentityInput  {
+pub struct VerifyDomainIdentityInput {
     /// <p>The domain to be verified.</p>
     #[doc(hidden)]
     pub domain: std::option::Option<std::string::String>,
 }
 impl VerifyDomainIdentityInput {
     /// <p>The domain to be verified.</p>
-    pub fn domain(&self) -> std::option::Option<& str> {
+    pub fn domain(&self) -> std::option::Option<&str> {
         self.domain.as_deref()
     }
 }
 impl VerifyDomainIdentityInput {
     /// Creates a new builder-style object to manufacture [`VerifyDomainIdentityInput`](crate::operation::verify_domain_identity::VerifyDomainIdentityInput).
-    pub fn builder() -> crate::operation::verify_domain_identity::builders::VerifyDomainIdentityInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::verify_domain_identity::builders::VerifyDomainIdentityInputBuilder {
         crate::operation::verify_domain_identity::builders::VerifyDomainIdentityInputBuilder::default()
     }
 }
@@ -35,16 +36,20 @@ impl VerifyDomainIdentityInputBuilder {
     }
     /// <p>The domain to be verified.</p>
     pub fn set_domain(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.domain = input; self
+        self.domain = input;
+        self
     }
     /// Consumes the builder and constructs a [`VerifyDomainIdentityInput`](crate::operation::verify_domain_identity::VerifyDomainIdentityInput).
-    pub fn build(self) -> Result<crate::operation::verify_domain_identity::VerifyDomainIdentityInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::verify_domain_identity::VerifyDomainIdentityInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::verify_domain_identity::VerifyDomainIdentityInput {
-                domain: self.domain
-                ,
-            }
+                domain: self.domain,
+            },
         )
     }
 }
-

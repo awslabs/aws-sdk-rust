@@ -3,7 +3,7 @@
 /// <p>Details about the Amazon RDS instances that Amazon Web Services recommends that you purchase.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct RdsInstanceDetails  {
+pub struct RdsInstanceDetails {
     /// <p>The instance family of the recommended reservation.</p>
     #[doc(hidden)]
     pub family: std::option::Option<std::string::String>,
@@ -34,31 +34,31 @@ pub struct RdsInstanceDetails  {
 }
 impl RdsInstanceDetails {
     /// <p>The instance family of the recommended reservation.</p>
-    pub fn family(&self) -> std::option::Option<& str> {
+    pub fn family(&self) -> std::option::Option<&str> {
         self.family.as_deref()
     }
     /// <p>The type of instance that Amazon Web Services recommends.</p>
-    pub fn instance_type(&self) -> std::option::Option<& str> {
+    pub fn instance_type(&self) -> std::option::Option<&str> {
         self.instance_type.as_deref()
     }
     /// <p>The Amazon Web Services Region of the recommended reservation.</p>
-    pub fn region(&self) -> std::option::Option<& str> {
+    pub fn region(&self) -> std::option::Option<&str> {
         self.region.as_deref()
     }
     /// <p>The database engine that the recommended reservation supports.</p>
-    pub fn database_engine(&self) -> std::option::Option<& str> {
+    pub fn database_engine(&self) -> std::option::Option<&str> {
         self.database_engine.as_deref()
     }
     /// <p>The database edition that the recommended reservation supports.</p>
-    pub fn database_edition(&self) -> std::option::Option<& str> {
+    pub fn database_edition(&self) -> std::option::Option<&str> {
         self.database_edition.as_deref()
     }
     /// <p>Determines whether the recommendation is for a reservation in a single Availability Zone or a reservation with a backup in a second Availability Zone.</p>
-    pub fn deployment_option(&self) -> std::option::Option<& str> {
+    pub fn deployment_option(&self) -> std::option::Option<&str> {
         self.deployment_option.as_deref()
     }
     /// <p>The license model that the recommended reservation supports.</p>
-    pub fn license_model(&self) -> std::option::Option<& str> {
+    pub fn license_model(&self) -> std::option::Option<&str> {
         self.license_model.as_deref()
     }
     /// <p>Determines whether the recommendation is for a current-generation instance. </p>
@@ -99,7 +99,8 @@ impl RdsInstanceDetailsBuilder {
     }
     /// <p>The instance family of the recommended reservation.</p>
     pub fn set_family(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.family = input; self
+        self.family = input;
+        self
     }
     /// <p>The type of instance that Amazon Web Services recommends.</p>
     pub fn instance_type(mut self, input: impl Into<std::string::String>) -> Self {
@@ -108,7 +109,8 @@ impl RdsInstanceDetailsBuilder {
     }
     /// <p>The type of instance that Amazon Web Services recommends.</p>
     pub fn set_instance_type(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.instance_type = input; self
+        self.instance_type = input;
+        self
     }
     /// <p>The Amazon Web Services Region of the recommended reservation.</p>
     pub fn region(mut self, input: impl Into<std::string::String>) -> Self {
@@ -117,7 +119,8 @@ impl RdsInstanceDetailsBuilder {
     }
     /// <p>The Amazon Web Services Region of the recommended reservation.</p>
     pub fn set_region(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.region = input; self
+        self.region = input;
+        self
     }
     /// <p>The database engine that the recommended reservation supports.</p>
     pub fn database_engine(mut self, input: impl Into<std::string::String>) -> Self {
@@ -126,7 +129,8 @@ impl RdsInstanceDetailsBuilder {
     }
     /// <p>The database engine that the recommended reservation supports.</p>
     pub fn set_database_engine(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.database_engine = input; self
+        self.database_engine = input;
+        self
     }
     /// <p>The database edition that the recommended reservation supports.</p>
     pub fn database_edition(mut self, input: impl Into<std::string::String>) -> Self {
@@ -135,7 +139,8 @@ impl RdsInstanceDetailsBuilder {
     }
     /// <p>The database edition that the recommended reservation supports.</p>
     pub fn set_database_edition(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.database_edition = input; self
+        self.database_edition = input;
+        self
     }
     /// <p>Determines whether the recommendation is for a reservation in a single Availability Zone or a reservation with a backup in a second Availability Zone.</p>
     pub fn deployment_option(mut self, input: impl Into<std::string::String>) -> Self {
@@ -143,8 +148,12 @@ impl RdsInstanceDetailsBuilder {
         self
     }
     /// <p>Determines whether the recommendation is for a reservation in a single Availability Zone or a reservation with a backup in a second Availability Zone.</p>
-    pub fn set_deployment_option(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.deployment_option = input; self
+    pub fn set_deployment_option(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.deployment_option = input;
+        self
     }
     /// <p>The license model that the recommended reservation supports.</p>
     pub fn license_model(mut self, input: impl Into<std::string::String>) -> Self {
@@ -153,7 +162,8 @@ impl RdsInstanceDetailsBuilder {
     }
     /// <p>The license model that the recommended reservation supports.</p>
     pub fn set_license_model(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.license_model = input; self
+        self.license_model = input;
+        self
     }
     /// <p>Determines whether the recommendation is for a current-generation instance. </p>
     pub fn current_generation(mut self, input: bool) -> Self {
@@ -162,7 +172,8 @@ impl RdsInstanceDetailsBuilder {
     }
     /// <p>Determines whether the recommendation is for a current-generation instance. </p>
     pub fn set_current_generation(mut self, input: std::option::Option<bool>) -> Self {
-        self.current_generation = input; self
+        self.current_generation = input;
+        self
     }
     /// <p>Determines whether the recommended reservation is size flexible.</p>
     pub fn size_flex_eligible(mut self, input: bool) -> Self {
@@ -171,32 +182,21 @@ impl RdsInstanceDetailsBuilder {
     }
     /// <p>Determines whether the recommended reservation is size flexible.</p>
     pub fn set_size_flex_eligible(mut self, input: std::option::Option<bool>) -> Self {
-        self.size_flex_eligible = input; self
+        self.size_flex_eligible = input;
+        self
     }
     /// Consumes the builder and constructs a [`RdsInstanceDetails`](crate::types::RdsInstanceDetails).
     pub fn build(self) -> crate::types::RdsInstanceDetails {
         crate::types::RdsInstanceDetails {
-            family: self.family
-            ,
-            instance_type: self.instance_type
-            ,
-            region: self.region
-            ,
-            database_engine: self.database_engine
-            ,
-            database_edition: self.database_edition
-            ,
-            deployment_option: self.deployment_option
-            ,
-            license_model: self.license_model
-            ,
-            current_generation: self.current_generation
-                .unwrap_or_default()
-            ,
-            size_flex_eligible: self.size_flex_eligible
-                .unwrap_or_default()
-            ,
+            family: self.family,
+            instance_type: self.instance_type,
+            region: self.region,
+            database_engine: self.database_engine,
+            database_edition: self.database_edition,
+            deployment_option: self.deployment_option,
+            license_model: self.license_model,
+            current_generation: self.current_generation.unwrap_or_default(),
+            size_flex_eligible: self.size_flex_eligible.unwrap_or_default(),
         }
     }
 }
-

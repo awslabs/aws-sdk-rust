@@ -4,49 +4,71 @@ pub use crate::operation::create_recommendation_template::_create_recommendation
 pub use crate::operation::create_recommendation_template::_create_recommendation_template_input::CreateRecommendationTemplateInputBuilder;
 
 /// Fluent builder constructing a request to `CreateRecommendationTemplate`.
-/// 
+///
 /// <p>Creates a new recommendation template.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct CreateRecommendationTemplateFluentBuilder {
                 handle: std::sync::Arc<crate::client::Handle>,
                 inner: crate::operation::create_recommendation_template::builders::CreateRecommendationTemplateInputBuilder
             }
-impl CreateRecommendationTemplateFluentBuilder  {
+impl CreateRecommendationTemplateFluentBuilder {
     /// Creates a new `CreateRecommendationTemplate`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
-                    /// sent. The operation's inner [http::Request] can be modified as well.
-                    pub async fn customize(self) -> std::result::Result<
-                        crate::client::customize::CustomizableOperation<crate::operation::create_recommendation_template::CreateRecommendationTemplate, aws_http::retry::AwsResponseRetryClassifier,>,
-                        aws_smithy_http::result::SdkError<crate::operation::create_recommendation_template::CreateRecommendationTemplateError>
-                    >  {
-                        let handle = self.handle.clone();
-                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-                    }
-    
-                    /// Sends the request and returns the response.
-                    ///
-                    /// If an error occurs, an `SdkError` will be returned with additional details that
-                    /// can be matched against.
-                    ///
-                    /// By default, any retryable failures will be retried twice. Retry behavior
-                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                    /// set when configuring the client.
-                    pub async fn send(self) -> std::result::Result<crate::operation::create_recommendation_template::CreateRecommendationTemplateOutput, aws_smithy_http::result::SdkError<crate::operation::create_recommendation_template::CreateRecommendationTemplateError>>
-                     {
-                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&self.handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        self.handle.client.call(op).await
-                    }
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle,
+            inner: Default::default(),
+        }
+    }
+
+    /// Consume this builder, creating a customizable operation that can be modified before being
+    /// sent. The operation's inner [http::Request] can be modified as well.
+    pub async fn customize(
+        self,
+    ) -> std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::create_recommendation_template::CreateRecommendationTemplate,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::result::SdkError<
+            crate::operation::create_recommendation_template::CreateRecommendationTemplateError,
+        >,
+    > {
+        let handle = self.handle.clone();
+        let operation = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+    }
+
+    /// Sends the request and returns the response.
+    ///
+    /// If an error occurs, an `SdkError` will be returned with additional details that
+    /// can be matched against.
+    ///
+    /// By default, any retryable failures will be retried twice. Retry behavior
+    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+    /// set when configuring the client.
+    pub async fn send(
+        self,
+    ) -> std::result::Result<
+        crate::operation::create_recommendation_template::CreateRecommendationTemplateOutput,
+        aws_smithy_http::result::SdkError<
+            crate::operation::create_recommendation_template::CreateRecommendationTemplateError,
+        >,
+    > {
+        let op = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&self.handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        self.handle.client.call(op).await
+    }
     /// Appends an item to `recommendationIds`.
     ///
     /// To override the contents of this collection use [`set_recommendation_ids`](Self::set_recommendation_ids).
@@ -57,43 +79,46 @@ impl CreateRecommendationTemplateFluentBuilder  {
         self
     }
     /// <p>Identifiers for the recommendations used to create a recommendation template.</p>
-    pub fn set_recommendation_ids(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+    pub fn set_recommendation_ids(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
         self.inner = self.inner.set_recommendation_ids(input);
         self
     }
-    /// <p>The format for the recommendation template.</p> 
-    /// <dl> 
+    /// <p>The format for the recommendation template.</p>
+    /// <dl>
     /// <dt>
     /// CfnJson
-    /// </dt> 
-    /// <dd> 
-    /// <p>The template is CloudFormation JSON.</p> 
-    /// </dd> 
+    /// </dt>
+    /// <dd>
+    /// <p>The template is CloudFormation JSON.</p>
+    /// </dd>
     /// <dt>
     /// CfnYaml
-    /// </dt> 
-    /// <dd> 
-    /// <p>The template is CloudFormation YAML.</p> 
-    /// </dd> 
+    /// </dt>
+    /// <dd>
+    /// <p>The template is CloudFormation YAML.</p>
+    /// </dd>
     /// </dl>
     pub fn format(mut self, input: crate::types::TemplateFormat) -> Self {
         self.inner = self.inner.format(input);
         self
     }
-    /// <p>The format for the recommendation template.</p> 
-    /// <dl> 
+    /// <p>The format for the recommendation template.</p>
+    /// <dl>
     /// <dt>
     /// CfnJson
-    /// </dt> 
-    /// <dd> 
-    /// <p>The template is CloudFormation JSON.</p> 
-    /// </dd> 
+    /// </dt>
+    /// <dd>
+    /// <p>The template is CloudFormation JSON.</p>
+    /// </dd>
     /// <dt>
     /// CfnYaml
-    /// </dt> 
-    /// <dd> 
-    /// <p>The template is CloudFormation YAML.</p> 
-    /// </dd> 
+    /// </dt>
+    /// <dd>
+    /// <p>The template is CloudFormation YAML.</p>
+    /// </dd>
     /// </dl>
     pub fn set_format(mut self, input: std::option::Option<crate::types::TemplateFormat>) -> Self {
         self.inner = self.inner.set_format(input);
@@ -103,53 +128,56 @@ impl CreateRecommendationTemplateFluentBuilder  {
     ///
     /// To override the contents of this collection use [`set_recommendation_types`](Self::set_recommendation_types).
     ///
-    /// <p>An array of strings that specify the recommendation template type or types.</p> 
-    /// <dl> 
+    /// <p>An array of strings that specify the recommendation template type or types.</p>
+    /// <dl>
     /// <dt>
     /// Alarm
-    /// </dt> 
-    /// <dd> 
-    /// <p>The template is an <code>AlarmRecommendation</code> template.</p> 
-    /// </dd> 
+    /// </dt>
+    /// <dd>
+    /// <p>The template is an <code>AlarmRecommendation</code> template.</p>
+    /// </dd>
     /// <dt>
     /// Sop
-    /// </dt> 
-    /// <dd> 
-    /// <p>The template is a <code>SopRecommendation</code> template.</p> 
-    /// </dd> 
+    /// </dt>
+    /// <dd>
+    /// <p>The template is a <code>SopRecommendation</code> template.</p>
+    /// </dd>
     /// <dt>
     /// Test
-    /// </dt> 
-    /// <dd> 
-    /// <p>The template is a <code>TestRecommendation</code> template.</p> 
-    /// </dd> 
+    /// </dt>
+    /// <dd>
+    /// <p>The template is a <code>TestRecommendation</code> template.</p>
+    /// </dd>
     /// </dl>
     pub fn recommendation_types(mut self, input: crate::types::RenderRecommendationType) -> Self {
         self.inner = self.inner.recommendation_types(input);
         self
     }
-    /// <p>An array of strings that specify the recommendation template type or types.</p> 
-    /// <dl> 
+    /// <p>An array of strings that specify the recommendation template type or types.</p>
+    /// <dl>
     /// <dt>
     /// Alarm
-    /// </dt> 
-    /// <dd> 
-    /// <p>The template is an <code>AlarmRecommendation</code> template.</p> 
-    /// </dd> 
+    /// </dt>
+    /// <dd>
+    /// <p>The template is an <code>AlarmRecommendation</code> template.</p>
+    /// </dd>
     /// <dt>
     /// Sop
-    /// </dt> 
-    /// <dd> 
-    /// <p>The template is a <code>SopRecommendation</code> template.</p> 
-    /// </dd> 
+    /// </dt>
+    /// <dd>
+    /// <p>The template is a <code>SopRecommendation</code> template.</p>
+    /// </dd>
     /// <dt>
     /// Test
-    /// </dt> 
-    /// <dd> 
-    /// <p>The template is a <code>TestRecommendation</code> template.</p> 
-    /// </dd> 
+    /// </dt>
+    /// <dd>
+    /// <p>The template is a <code>TestRecommendation</code> template.</p>
+    /// </dd>
     /// </dl>
-    pub fn set_recommendation_types(mut self, input: std::option::Option<std::vec::Vec<crate::types::RenderRecommendationType>>) -> Self {
+    pub fn set_recommendation_types(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::RenderRecommendationType>>,
+    ) -> Self {
         self.inner = self.inner.set_recommendation_types(input);
         self
     }
@@ -188,12 +216,21 @@ impl CreateRecommendationTemplateFluentBuilder  {
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// <p>The tags assigned to the resource. A tag is a label that you assign to an Amazon Web Services resource. Each tag consists of a key/value pair.</p>
-    pub fn tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
+    pub fn tags(
+        mut self,
+        k: impl Into<std::string::String>,
+        v: impl Into<std::string::String>,
+    ) -> Self {
         self.inner = self.inner.tags(k.into(), v.into());
         self
     }
     /// <p>The tags assigned to the resource. A tag is a label that you assign to an Amazon Web Services resource. Each tag consists of a key/value pair.</p>
-    pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+    pub fn set_tags(
+        mut self,
+        input: std::option::Option<
+            std::collections::HashMap<std::string::String, std::string::String>,
+        >,
+    ) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }
@@ -208,4 +245,3 @@ impl CreateRecommendationTemplateFluentBuilder  {
         self
     }
 }
-

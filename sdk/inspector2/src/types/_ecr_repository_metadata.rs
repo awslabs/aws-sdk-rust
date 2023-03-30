@@ -3,7 +3,7 @@
 /// <p>Information on the Amazon ECR repository metadata associated with a finding.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct EcrRepositoryMetadata  {
+pub struct EcrRepositoryMetadata {
     /// <p>The name of the Amazon ECR repository.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -13,11 +13,11 @@ pub struct EcrRepositoryMetadata  {
 }
 impl EcrRepositoryMetadata {
     /// <p>The name of the Amazon ECR repository.</p>
-    pub fn name(&self) -> std::option::Option<& str> {
+    pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>The frequency of scans.</p>
-    pub fn scan_frequency(&self) -> std::option::Option<& crate::types::EcrScanFrequency> {
+    pub fn scan_frequency(&self) -> std::option::Option<&crate::types::EcrScanFrequency> {
         self.scan_frequency.as_ref()
     }
 }
@@ -43,7 +43,8 @@ impl EcrRepositoryMetadataBuilder {
     }
     /// <p>The name of the Amazon ECR repository.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input; self
+        self.name = input;
+        self
     }
     /// <p>The frequency of scans.</p>
     pub fn scan_frequency(mut self, input: crate::types::EcrScanFrequency) -> Self {
@@ -51,17 +52,18 @@ impl EcrRepositoryMetadataBuilder {
         self
     }
     /// <p>The frequency of scans.</p>
-    pub fn set_scan_frequency(mut self, input: std::option::Option<crate::types::EcrScanFrequency>) -> Self {
-        self.scan_frequency = input; self
+    pub fn set_scan_frequency(
+        mut self,
+        input: std::option::Option<crate::types::EcrScanFrequency>,
+    ) -> Self {
+        self.scan_frequency = input;
+        self
     }
     /// Consumes the builder and constructs a [`EcrRepositoryMetadata`](crate::types::EcrRepositoryMetadata).
     pub fn build(self) -> crate::types::EcrRepositoryMetadata {
         crate::types::EcrRepositoryMetadata {
-            name: self.name
-            ,
-            scan_frequency: self.scan_frequency
-            ,
+            name: self.name,
+            scan_frequency: self.scan_frequency,
         }
     }
 }
-

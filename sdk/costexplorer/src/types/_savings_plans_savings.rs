@@ -3,7 +3,7 @@
 /// <p>The amount of savings that you're accumulating, against the public On-Demand rate of the usage accrued in an account.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SavingsPlansSavings  {
+pub struct SavingsPlansSavings {
     /// <p>The savings amount that you're accumulating for the usage that's covered by a Savings Plans, when compared to the On-Demand equivalent of the same usage.</p>
     #[doc(hidden)]
     pub net_savings: std::option::Option<std::string::String>,
@@ -13,11 +13,11 @@ pub struct SavingsPlansSavings  {
 }
 impl SavingsPlansSavings {
     /// <p>The savings amount that you're accumulating for the usage that's covered by a Savings Plans, when compared to the On-Demand equivalent of the same usage.</p>
-    pub fn net_savings(&self) -> std::option::Option<& str> {
+    pub fn net_savings(&self) -> std::option::Option<&str> {
         self.net_savings.as_deref()
     }
     /// <p>How much the amount that the usage would have cost if it was accrued at the On-Demand rate.</p>
-    pub fn on_demand_cost_equivalent(&self) -> std::option::Option<& str> {
+    pub fn on_demand_cost_equivalent(&self) -> std::option::Option<&str> {
         self.on_demand_cost_equivalent.as_deref()
     }
 }
@@ -43,7 +43,8 @@ impl SavingsPlansSavingsBuilder {
     }
     /// <p>The savings amount that you're accumulating for the usage that's covered by a Savings Plans, when compared to the On-Demand equivalent of the same usage.</p>
     pub fn set_net_savings(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.net_savings = input; self
+        self.net_savings = input;
+        self
     }
     /// <p>How much the amount that the usage would have cost if it was accrued at the On-Demand rate.</p>
     pub fn on_demand_cost_equivalent(mut self, input: impl Into<std::string::String>) -> Self {
@@ -51,17 +52,18 @@ impl SavingsPlansSavingsBuilder {
         self
     }
     /// <p>How much the amount that the usage would have cost if it was accrued at the On-Demand rate.</p>
-    pub fn set_on_demand_cost_equivalent(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.on_demand_cost_equivalent = input; self
+    pub fn set_on_demand_cost_equivalent(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.on_demand_cost_equivalent = input;
+        self
     }
     /// Consumes the builder and constructs a [`SavingsPlansSavings`](crate::types::SavingsPlansSavings).
     pub fn build(self) -> crate::types::SavingsPlansSavings {
         crate::types::SavingsPlansSavings {
-            net_savings: self.net_savings
-            ,
-            on_demand_cost_equivalent: self.on_demand_cost_equivalent
-            ,
+            net_savings: self.net_savings,
+            on_demand_cost_equivalent: self.on_demand_cost_equivalent,
         }
     }
 }
-

@@ -2,26 +2,30 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct BatchPutMessageOutput  {
+pub struct BatchPutMessageOutput {
     /// <p>A list of any errors encountered when sending the messages.</p>
     #[doc(hidden)]
-    pub batch_put_message_error_entries: std::option::Option<std::vec::Vec<crate::types::BatchPutMessageErrorEntry>>,
+    pub batch_put_message_error_entries:
+        std::option::Option<std::vec::Vec<crate::types::BatchPutMessageErrorEntry>>,
     _request_id: Option<String>,
 }
 impl BatchPutMessageOutput {
     /// <p>A list of any errors encountered when sending the messages.</p>
-    pub fn batch_put_message_error_entries(&self) -> std::option::Option<& [crate::types::BatchPutMessageErrorEntry]> {
+    pub fn batch_put_message_error_entries(
+        &self,
+    ) -> std::option::Option<&[crate::types::BatchPutMessageErrorEntry]> {
         self.batch_put_message_error_entries.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for BatchPutMessageOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl BatchPutMessageOutput {
     /// Creates a new builder-style object to manufacture [`BatchPutMessageOutput`](crate::operation::batch_put_message::BatchPutMessageOutput).
-    pub fn builder() -> crate::operation::batch_put_message::builders::BatchPutMessageOutputBuilder {
+    pub fn builder() -> crate::operation::batch_put_message::builders::BatchPutMessageOutputBuilder
+    {
         crate::operation::batch_put_message::builders::BatchPutMessageOutputBuilder::default()
     }
 }
@@ -30,7 +34,8 @@ impl BatchPutMessageOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct BatchPutMessageOutputBuilder {
-    pub(crate) batch_put_message_error_entries: std::option::Option<std::vec::Vec<crate::types::BatchPutMessageErrorEntry>>,
+    pub(crate) batch_put_message_error_entries:
+        std::option::Option<std::vec::Vec<crate::types::BatchPutMessageErrorEntry>>,
     _request_id: Option<String>,
 }
 impl BatchPutMessageOutputBuilder {
@@ -39,32 +44,37 @@ impl BatchPutMessageOutputBuilder {
     /// To override the contents of this collection use [`set_batch_put_message_error_entries`](Self::set_batch_put_message_error_entries).
     ///
     /// <p>A list of any errors encountered when sending the messages.</p>
-    pub fn batch_put_message_error_entries(mut self, input: crate::types::BatchPutMessageErrorEntry) -> Self {
+    pub fn batch_put_message_error_entries(
+        mut self,
+        input: crate::types::BatchPutMessageErrorEntry,
+    ) -> Self {
         let mut v = self.batch_put_message_error_entries.unwrap_or_default();
-                        v.push(input);
-                        self.batch_put_message_error_entries = Some(v);
-                        self
+        v.push(input);
+        self.batch_put_message_error_entries = Some(v);
+        self
     }
     /// <p>A list of any errors encountered when sending the messages.</p>
-    pub fn set_batch_put_message_error_entries(mut self, input: std::option::Option<std::vec::Vec<crate::types::BatchPutMessageErrorEntry>>) -> Self {
-        self.batch_put_message_error_entries = input; self
+    pub fn set_batch_put_message_error_entries(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::BatchPutMessageErrorEntry>>,
+    ) -> Self {
+        self.batch_put_message_error_entries = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`BatchPutMessageOutput`](crate::operation::batch_put_message::BatchPutMessageOutput).
     pub fn build(self) -> crate::operation::batch_put_message::BatchPutMessageOutput {
         crate::operation::batch_put_message::BatchPutMessageOutput {
-            batch_put_message_error_entries: self.batch_put_message_error_entries
-            ,
+            batch_put_message_error_entries: self.batch_put_message_error_entries,
             _request_id: self._request_id,
         }
     }
 }
-

@@ -3,14 +3,14 @@
 /// <p>Details for your use of the Bot Control managed rule group, used in <code>ManagedRuleGroupConfig</code>. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AwsManagedRulesBotControlRuleSet  {
+pub struct AwsManagedRulesBotControlRuleSet {
     /// <p>The inspection level to use for the Bot Control rule group. The common level is the least expensive. The targeted level includes all common level rules and adds rules with more advanced inspection criteria. For details, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/aws-managed-rule-groups-bot.html">WAF Bot Control rule group</a>.</p>
     #[doc(hidden)]
     pub inspection_level: std::option::Option<crate::types::InspectionLevel>,
 }
 impl AwsManagedRulesBotControlRuleSet {
     /// <p>The inspection level to use for the Bot Control rule group. The common level is the least expensive. The targeted level includes all common level rules and adds rules with more advanced inspection criteria. For details, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/aws-managed-rule-groups-bot.html">WAF Bot Control rule group</a>.</p>
-    pub fn inspection_level(&self) -> std::option::Option<& crate::types::InspectionLevel> {
+    pub fn inspection_level(&self) -> std::option::Option<&crate::types::InspectionLevel> {
         self.inspection_level.as_ref()
     }
 }
@@ -34,15 +34,17 @@ impl AwsManagedRulesBotControlRuleSetBuilder {
         self
     }
     /// <p>The inspection level to use for the Bot Control rule group. The common level is the least expensive. The targeted level includes all common level rules and adds rules with more advanced inspection criteria. For details, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/aws-managed-rule-groups-bot.html">WAF Bot Control rule group</a>.</p>
-    pub fn set_inspection_level(mut self, input: std::option::Option<crate::types::InspectionLevel>) -> Self {
-        self.inspection_level = input; self
+    pub fn set_inspection_level(
+        mut self,
+        input: std::option::Option<crate::types::InspectionLevel>,
+    ) -> Self {
+        self.inspection_level = input;
+        self
     }
     /// Consumes the builder and constructs a [`AwsManagedRulesBotControlRuleSet`](crate::types::AwsManagedRulesBotControlRuleSet).
     pub fn build(self) -> crate::types::AwsManagedRulesBotControlRuleSet {
         crate::types::AwsManagedRulesBotControlRuleSet {
-            inspection_level: self.inspection_level
-            ,
+            inspection_level: self.inspection_level,
         }
     }
 }
-

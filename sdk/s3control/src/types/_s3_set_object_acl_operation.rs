@@ -3,14 +3,16 @@
 /// <p>Contains the configuration parameters for a Set Object ACL operation. S3 Batch Operations passes every object to the underlying <code>PutObjectAcl</code> API. For more information about the parameters for this operation, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/RESTObjectPUTacl.html"> <code>PutObjectAcl</code> </a>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct S3SetObjectAclOperation  {
+pub struct S3SetObjectAclOperation {
     /// <p></p>
     #[doc(hidden)]
     pub access_control_policy: std::option::Option<crate::types::S3AccessControlPolicy>,
 }
 impl S3SetObjectAclOperation {
     /// <p></p>
-    pub fn access_control_policy(&self) -> std::option::Option<& crate::types::S3AccessControlPolicy> {
+    pub fn access_control_policy(
+        &self,
+    ) -> std::option::Option<&crate::types::S3AccessControlPolicy> {
         self.access_control_policy.as_ref()
     }
 }
@@ -34,15 +36,17 @@ impl S3SetObjectAclOperationBuilder {
         self
     }
     /// <p></p>
-    pub fn set_access_control_policy(mut self, input: std::option::Option<crate::types::S3AccessControlPolicy>) -> Self {
-        self.access_control_policy = input; self
+    pub fn set_access_control_policy(
+        mut self,
+        input: std::option::Option<crate::types::S3AccessControlPolicy>,
+    ) -> Self {
+        self.access_control_policy = input;
+        self
     }
     /// Consumes the builder and constructs a [`S3SetObjectAclOperation`](crate::types::S3SetObjectAclOperation).
     pub fn build(self) -> crate::types::S3SetObjectAclOperation {
         crate::types::S3SetObjectAclOperation {
-            access_control_policy: self.access_control_policy
-            ,
+            access_control_policy: self.access_control_policy,
         }
     }
 }
-

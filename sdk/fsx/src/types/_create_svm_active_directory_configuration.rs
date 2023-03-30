@@ -3,21 +3,24 @@
 /// <p>The configuration that Amazon FSx uses to join the ONTAP storage virtual machine (SVM) to your self-managed (including on-premises) Microsoft Active Directory (AD) directory.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateSvmActiveDirectoryConfiguration  {
+pub struct CreateSvmActiveDirectoryConfiguration {
     /// <p>The NetBIOS name of the Active Directory computer object that will be created for your SVM.</p>
     #[doc(hidden)]
     pub net_bios_name: std::option::Option<std::string::String>,
     /// <p>The configuration that Amazon FSx uses to join a FSx for Windows File Server file system or an ONTAP storage virtual machine (SVM) to a self-managed (including on-premises) Microsoft Active Directory (AD) directory. For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/self-managed-AD.html"> Using Amazon FSx with your self-managed Microsoft Active Directory</a> or <a href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/managing-svms.html">Managing SVMs</a>.</p>
     #[doc(hidden)]
-    pub self_managed_active_directory_configuration: std::option::Option<crate::types::SelfManagedActiveDirectoryConfiguration>,
+    pub self_managed_active_directory_configuration:
+        std::option::Option<crate::types::SelfManagedActiveDirectoryConfiguration>,
 }
 impl CreateSvmActiveDirectoryConfiguration {
     /// <p>The NetBIOS name of the Active Directory computer object that will be created for your SVM.</p>
-    pub fn net_bios_name(&self) -> std::option::Option<& str> {
+    pub fn net_bios_name(&self) -> std::option::Option<&str> {
         self.net_bios_name.as_deref()
     }
     /// <p>The configuration that Amazon FSx uses to join a FSx for Windows File Server file system or an ONTAP storage virtual machine (SVM) to a self-managed (including on-premises) Microsoft Active Directory (AD) directory. For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/self-managed-AD.html"> Using Amazon FSx with your self-managed Microsoft Active Directory</a> or <a href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/managing-svms.html">Managing SVMs</a>.</p>
-    pub fn self_managed_active_directory_configuration(&self) -> std::option::Option<& crate::types::SelfManagedActiveDirectoryConfiguration> {
+    pub fn self_managed_active_directory_configuration(
+        &self,
+    ) -> std::option::Option<&crate::types::SelfManagedActiveDirectoryConfiguration> {
         self.self_managed_active_directory_configuration.as_ref()
     }
 }
@@ -33,7 +36,8 @@ impl CreateSvmActiveDirectoryConfiguration {
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct CreateSvmActiveDirectoryConfigurationBuilder {
     pub(crate) net_bios_name: std::option::Option<std::string::String>,
-    pub(crate) self_managed_active_directory_configuration: std::option::Option<crate::types::SelfManagedActiveDirectoryConfiguration>,
+    pub(crate) self_managed_active_directory_configuration:
+        std::option::Option<crate::types::SelfManagedActiveDirectoryConfiguration>,
 }
 impl CreateSvmActiveDirectoryConfigurationBuilder {
     /// <p>The NetBIOS name of the Active Directory computer object that will be created for your SVM.</p>
@@ -43,25 +47,31 @@ impl CreateSvmActiveDirectoryConfigurationBuilder {
     }
     /// <p>The NetBIOS name of the Active Directory computer object that will be created for your SVM.</p>
     pub fn set_net_bios_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.net_bios_name = input; self
+        self.net_bios_name = input;
+        self
     }
     /// <p>The configuration that Amazon FSx uses to join a FSx for Windows File Server file system or an ONTAP storage virtual machine (SVM) to a self-managed (including on-premises) Microsoft Active Directory (AD) directory. For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/self-managed-AD.html"> Using Amazon FSx with your self-managed Microsoft Active Directory</a> or <a href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/managing-svms.html">Managing SVMs</a>.</p>
-    pub fn self_managed_active_directory_configuration(mut self, input: crate::types::SelfManagedActiveDirectoryConfiguration) -> Self {
+    pub fn self_managed_active_directory_configuration(
+        mut self,
+        input: crate::types::SelfManagedActiveDirectoryConfiguration,
+    ) -> Self {
         self.self_managed_active_directory_configuration = Some(input);
         self
     }
     /// <p>The configuration that Amazon FSx uses to join a FSx for Windows File Server file system or an ONTAP storage virtual machine (SVM) to a self-managed (including on-premises) Microsoft Active Directory (AD) directory. For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/self-managed-AD.html"> Using Amazon FSx with your self-managed Microsoft Active Directory</a> or <a href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/managing-svms.html">Managing SVMs</a>.</p>
-    pub fn set_self_managed_active_directory_configuration(mut self, input: std::option::Option<crate::types::SelfManagedActiveDirectoryConfiguration>) -> Self {
-        self.self_managed_active_directory_configuration = input; self
+    pub fn set_self_managed_active_directory_configuration(
+        mut self,
+        input: std::option::Option<crate::types::SelfManagedActiveDirectoryConfiguration>,
+    ) -> Self {
+        self.self_managed_active_directory_configuration = input;
+        self
     }
     /// Consumes the builder and constructs a [`CreateSvmActiveDirectoryConfiguration`](crate::types::CreateSvmActiveDirectoryConfiguration).
     pub fn build(self) -> crate::types::CreateSvmActiveDirectoryConfiguration {
         crate::types::CreateSvmActiveDirectoryConfiguration {
-            net_bios_name: self.net_bios_name
-            ,
-            self_managed_active_directory_configuration: self.self_managed_active_directory_configuration
-            ,
+            net_bios_name: self.net_bios_name,
+            self_managed_active_directory_configuration: self
+                .self_managed_active_directory_configuration,
         }
     }
 }
-

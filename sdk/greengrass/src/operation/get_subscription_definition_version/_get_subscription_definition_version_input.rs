@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetSubscriptionDefinitionVersionInput  {
+pub struct GetSubscriptionDefinitionVersionInput {
     /// The token for the next set of results, or ''null'' if there are no additional results.
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
@@ -15,21 +15,21 @@ pub struct GetSubscriptionDefinitionVersionInput  {
 }
 impl GetSubscriptionDefinitionVersionInput {
     /// The token for the next set of results, or ''null'' if there are no additional results.
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
     /// The ID of the subscription definition.
-    pub fn subscription_definition_id(&self) -> std::option::Option<& str> {
+    pub fn subscription_definition_id(&self) -> std::option::Option<&str> {
         self.subscription_definition_id.as_deref()
     }
     /// The ID of the subscription definition version. This value maps to the ''Version'' property of the corresponding ''VersionInformation'' object, which is returned by ''ListSubscriptionDefinitionVersions'' requests. If the version is the last one that was associated with a subscription definition, the value also maps to the ''LatestVersion'' property of the corresponding ''DefinitionInformation'' object.
-    pub fn subscription_definition_version_id(&self) -> std::option::Option<& str> {
+    pub fn subscription_definition_version_id(&self) -> std::option::Option<&str> {
         self.subscription_definition_version_id.as_deref()
     }
 }
 impl GetSubscriptionDefinitionVersionInput {
     /// Creates a new builder-style object to manufacture [`GetSubscriptionDefinitionVersionInput`](crate::operation::get_subscription_definition_version::GetSubscriptionDefinitionVersionInput).
-    pub fn builder() -> crate::operation::get_subscription_definition_version::builders::GetSubscriptionDefinitionVersionInputBuilder {
+    pub fn builder() -> crate::operation::get_subscription_definition_version::builders::GetSubscriptionDefinitionVersionInputBuilder{
         crate::operation::get_subscription_definition_version::builders::GetSubscriptionDefinitionVersionInputBuilder::default()
     }
 }
@@ -50,7 +50,8 @@ impl GetSubscriptionDefinitionVersionInputBuilder {
     }
     /// The token for the next set of results, or ''null'' if there are no additional results.
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input; self
+        self.next_token = input;
+        self
     }
     /// The ID of the subscription definition.
     pub fn subscription_definition_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -58,20 +59,31 @@ impl GetSubscriptionDefinitionVersionInputBuilder {
         self
     }
     /// The ID of the subscription definition.
-    pub fn set_subscription_definition_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.subscription_definition_id = input; self
+    pub fn set_subscription_definition_id(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.subscription_definition_id = input;
+        self
     }
     /// The ID of the subscription definition version. This value maps to the ''Version'' property of the corresponding ''VersionInformation'' object, which is returned by ''ListSubscriptionDefinitionVersions'' requests. If the version is the last one that was associated with a subscription definition, the value also maps to the ''LatestVersion'' property of the corresponding ''DefinitionInformation'' object.
-    pub fn subscription_definition_version_id(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn subscription_definition_version_id(
+        mut self,
+        input: impl Into<std::string::String>,
+    ) -> Self {
         self.subscription_definition_version_id = Some(input.into());
         self
     }
     /// The ID of the subscription definition version. This value maps to the ''Version'' property of the corresponding ''VersionInformation'' object, which is returned by ''ListSubscriptionDefinitionVersions'' requests. If the version is the last one that was associated with a subscription definition, the value also maps to the ''LatestVersion'' property of the corresponding ''DefinitionInformation'' object.
-    pub fn set_subscription_definition_version_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.subscription_definition_version_id = input; self
+    pub fn set_subscription_definition_version_id(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.subscription_definition_version_id = input;
+        self
     }
     /// Consumes the builder and constructs a [`GetSubscriptionDefinitionVersionInput`](crate::operation::get_subscription_definition_version::GetSubscriptionDefinitionVersionInput).
-    pub fn build(self) -> Result<crate::operation::get_subscription_definition_version::GetSubscriptionDefinitionVersionInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> Result<crate::operation::get_subscription_definition_version::GetSubscriptionDefinitionVersionInput, aws_smithy_http::operation::error::BuildError>{
         Ok(
             crate::operation::get_subscription_definition_version::GetSubscriptionDefinitionVersionInput {
                 next_token: self.next_token
@@ -84,4 +96,3 @@ impl GetSubscriptionDefinitionVersionInputBuilder {
         )
     }
 }
-

@@ -2,11 +2,11 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteAccountAliasInput  {
-}
+pub struct DeleteAccountAliasInput {}
 impl DeleteAccountAliasInput {
     /// Creates a new builder-style object to manufacture [`DeleteAccountAliasInput`](crate::operation::delete_account_alias::DeleteAccountAliasInput).
-    pub fn builder() -> crate::operation::delete_account_alias::builders::DeleteAccountAliasInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::delete_account_alias::builders::DeleteAccountAliasInputBuilder {
         crate::operation::delete_account_alias::builders::DeleteAccountAliasInputBuilder::default()
     }
 }
@@ -14,15 +14,15 @@ impl DeleteAccountAliasInput {
 /// A builder for [`DeleteAccountAliasInput`](crate::operation::delete_account_alias::DeleteAccountAliasInput).
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-pub struct DeleteAccountAliasInputBuilder {
-}
+pub struct DeleteAccountAliasInputBuilder {}
 impl DeleteAccountAliasInputBuilder {
     /// Consumes the builder and constructs a [`DeleteAccountAliasInput`](crate::operation::delete_account_alias::DeleteAccountAliasInput).
-    pub fn build(self) -> Result<crate::operation::delete_account_alias::DeleteAccountAliasInput, aws_smithy_http::operation::error::BuildError> {
-        Ok(
-            crate::operation::delete_account_alias::DeleteAccountAliasInput {
-            }
-        )
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::delete_account_alias::DeleteAccountAliasInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        Ok(crate::operation::delete_account_alias::DeleteAccountAliasInput {})
     }
 }
-

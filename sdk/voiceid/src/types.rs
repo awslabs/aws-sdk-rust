@@ -164,4 +164,3 @@ pub mod builders;
 
 /// Error types that Amazon Voice ID can respond with.
 pub mod error;
-

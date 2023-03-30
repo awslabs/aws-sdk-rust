@@ -3,7 +3,7 @@
 /// <p>Describes an IPv6 address pool.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Ipv6Pool  {
+pub struct Ipv6Pool {
     /// <p>The ID of the address pool.</p>
     #[doc(hidden)]
     pub pool_id: std::option::Option<std::string::String>,
@@ -19,19 +19,19 @@ pub struct Ipv6Pool  {
 }
 impl Ipv6Pool {
     /// <p>The ID of the address pool.</p>
-    pub fn pool_id(&self) -> std::option::Option<& str> {
+    pub fn pool_id(&self) -> std::option::Option<&str> {
         self.pool_id.as_deref()
     }
     /// <p>The description for the address pool.</p>
-    pub fn description(&self) -> std::option::Option<& str> {
+    pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
     /// <p>The CIDR blocks for the address pool.</p>
-    pub fn pool_cidr_blocks(&self) -> std::option::Option<& [crate::types::PoolCidrBlock]> {
+    pub fn pool_cidr_blocks(&self) -> std::option::Option<&[crate::types::PoolCidrBlock]> {
         self.pool_cidr_blocks.as_deref()
     }
     /// <p>Any tags for the address pool.</p>
-    pub fn tags(&self) -> std::option::Option<& [crate::types::Tag]> {
+    pub fn tags(&self) -> std::option::Option<&[crate::types::Tag]> {
         self.tags.as_deref()
     }
 }
@@ -59,7 +59,8 @@ impl Ipv6PoolBuilder {
     }
     /// <p>The ID of the address pool.</p>
     pub fn set_pool_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.pool_id = input; self
+        self.pool_id = input;
+        self
     }
     /// <p>The description for the address pool.</p>
     pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -68,7 +69,8 @@ impl Ipv6PoolBuilder {
     }
     /// <p>The description for the address pool.</p>
     pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.description = input; self
+        self.description = input;
+        self
     }
     /// Appends an item to `pool_cidr_blocks`.
     ///
@@ -77,13 +79,17 @@ impl Ipv6PoolBuilder {
     /// <p>The CIDR blocks for the address pool.</p>
     pub fn pool_cidr_blocks(mut self, input: crate::types::PoolCidrBlock) -> Self {
         let mut v = self.pool_cidr_blocks.unwrap_or_default();
-                        v.push(input);
-                        self.pool_cidr_blocks = Some(v);
-                        self
+        v.push(input);
+        self.pool_cidr_blocks = Some(v);
+        self
     }
     /// <p>The CIDR blocks for the address pool.</p>
-    pub fn set_pool_cidr_blocks(mut self, input: std::option::Option<std::vec::Vec<crate::types::PoolCidrBlock>>) -> Self {
-        self.pool_cidr_blocks = input; self
+    pub fn set_pool_cidr_blocks(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::PoolCidrBlock>>,
+    ) -> Self {
+        self.pool_cidr_blocks = input;
+        self
     }
     /// Appends an item to `tags`.
     ///
@@ -92,26 +98,25 @@ impl Ipv6PoolBuilder {
     /// <p>Any tags for the address pool.</p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
-                        v.push(input);
-                        self.tags = Some(v);
-                        self
+        v.push(input);
+        self.tags = Some(v);
+        self
     }
     /// <p>Any tags for the address pool.</p>
-    pub fn set_tags(mut self, input: std::option::Option<std::vec::Vec<crate::types::Tag>>) -> Self {
-        self.tags = input; self
+    pub fn set_tags(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::Tag>>,
+    ) -> Self {
+        self.tags = input;
+        self
     }
     /// Consumes the builder and constructs a [`Ipv6Pool`](crate::types::Ipv6Pool).
     pub fn build(self) -> crate::types::Ipv6Pool {
         crate::types::Ipv6Pool {
-            pool_id: self.pool_id
-            ,
-            description: self.description
-            ,
-            pool_cidr_blocks: self.pool_cidr_blocks
-            ,
-            tags: self.tags
-            ,
+            pool_id: self.pool_id,
+            description: self.description,
+            pool_cidr_blocks: self.pool_cidr_blocks,
+            tags: self.tags,
         }
     }
 }
-

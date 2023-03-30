@@ -3,7 +3,7 @@
 /// <p>Contains information about the remote IP address of the connection.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct RemoteIpDetails  {
+pub struct RemoteIpDetails {
     /// <p>The city information of the remote IP address.</p>
     #[doc(hidden)]
     pub city: std::option::Option<crate::types::City>,
@@ -22,23 +22,23 @@ pub struct RemoteIpDetails  {
 }
 impl RemoteIpDetails {
     /// <p>The city information of the remote IP address.</p>
-    pub fn city(&self) -> std::option::Option<& crate::types::City> {
+    pub fn city(&self) -> std::option::Option<&crate::types::City> {
         self.city.as_ref()
     }
     /// <p>The country code of the remote IP address.</p>
-    pub fn country(&self) -> std::option::Option<& crate::types::Country> {
+    pub fn country(&self) -> std::option::Option<&crate::types::Country> {
         self.country.as_ref()
     }
     /// <p>The location information of the remote IP address.</p>
-    pub fn geo_location(&self) -> std::option::Option<& crate::types::GeoLocation> {
+    pub fn geo_location(&self) -> std::option::Option<&crate::types::GeoLocation> {
         self.geo_location.as_ref()
     }
     /// <p>The IPv4 remote address of the connection.</p>
-    pub fn ip_address_v4(&self) -> std::option::Option<& str> {
+    pub fn ip_address_v4(&self) -> std::option::Option<&str> {
         self.ip_address_v4.as_deref()
     }
     /// <p>The ISP organization information of the remote IP address.</p>
-    pub fn organization(&self) -> std::option::Option<& crate::types::Organization> {
+    pub fn organization(&self) -> std::option::Option<&crate::types::Organization> {
         self.organization.as_ref()
     }
 }
@@ -67,7 +67,8 @@ impl RemoteIpDetailsBuilder {
     }
     /// <p>The city information of the remote IP address.</p>
     pub fn set_city(mut self, input: std::option::Option<crate::types::City>) -> Self {
-        self.city = input; self
+        self.city = input;
+        self
     }
     /// <p>The country code of the remote IP address.</p>
     pub fn country(mut self, input: crate::types::Country) -> Self {
@@ -76,7 +77,8 @@ impl RemoteIpDetailsBuilder {
     }
     /// <p>The country code of the remote IP address.</p>
     pub fn set_country(mut self, input: std::option::Option<crate::types::Country>) -> Self {
-        self.country = input; self
+        self.country = input;
+        self
     }
     /// <p>The location information of the remote IP address.</p>
     pub fn geo_location(mut self, input: crate::types::GeoLocation) -> Self {
@@ -84,8 +86,12 @@ impl RemoteIpDetailsBuilder {
         self
     }
     /// <p>The location information of the remote IP address.</p>
-    pub fn set_geo_location(mut self, input: std::option::Option<crate::types::GeoLocation>) -> Self {
-        self.geo_location = input; self
+    pub fn set_geo_location(
+        mut self,
+        input: std::option::Option<crate::types::GeoLocation>,
+    ) -> Self {
+        self.geo_location = input;
+        self
     }
     /// <p>The IPv4 remote address of the connection.</p>
     pub fn ip_address_v4(mut self, input: impl Into<std::string::String>) -> Self {
@@ -94,7 +100,8 @@ impl RemoteIpDetailsBuilder {
     }
     /// <p>The IPv4 remote address of the connection.</p>
     pub fn set_ip_address_v4(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.ip_address_v4 = input; self
+        self.ip_address_v4 = input;
+        self
     }
     /// <p>The ISP organization information of the remote IP address.</p>
     pub fn organization(mut self, input: crate::types::Organization) -> Self {
@@ -102,23 +109,21 @@ impl RemoteIpDetailsBuilder {
         self
     }
     /// <p>The ISP organization information of the remote IP address.</p>
-    pub fn set_organization(mut self, input: std::option::Option<crate::types::Organization>) -> Self {
-        self.organization = input; self
+    pub fn set_organization(
+        mut self,
+        input: std::option::Option<crate::types::Organization>,
+    ) -> Self {
+        self.organization = input;
+        self
     }
     /// Consumes the builder and constructs a [`RemoteIpDetails`](crate::types::RemoteIpDetails).
     pub fn build(self) -> crate::types::RemoteIpDetails {
         crate::types::RemoteIpDetails {
-            city: self.city
-            ,
-            country: self.country
-            ,
-            geo_location: self.geo_location
-            ,
-            ip_address_v4: self.ip_address_v4
-            ,
-            organization: self.organization
-            ,
+            city: self.city,
+            country: self.country,
+            geo_location: self.geo_location,
+            ip_address_v4: self.ip_address_v4,
+            organization: self.organization,
         }
     }
 }
-

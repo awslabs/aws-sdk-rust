@@ -3,7 +3,7 @@
 /// <p>Contains a dashboard summary.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DashboardSummary  {
+pub struct DashboardSummary {
     /// <p>The ID of the dashboard.</p>
     #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
@@ -22,23 +22,23 @@ pub struct DashboardSummary  {
 }
 impl DashboardSummary {
     /// <p>The ID of the dashboard.</p>
-    pub fn id(&self) -> std::option::Option<& str> {
+    pub fn id(&self) -> std::option::Option<&str> {
         self.id.as_deref()
     }
     /// <p>The name of the dashboard</p>
-    pub fn name(&self) -> std::option::Option<& str> {
+    pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>The dashboard's description.</p>
-    pub fn description(&self) -> std::option::Option<& str> {
+    pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
     /// <p>The date the dashboard was created, in Unix epoch time.</p>
-    pub fn creation_date(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
+    pub fn creation_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.creation_date.as_ref()
     }
     /// <p>The date the dashboard was last updated, in Unix epoch time.</p>
-    pub fn last_update_date(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
+    pub fn last_update_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_update_date.as_ref()
     }
 }
@@ -67,7 +67,8 @@ impl DashboardSummaryBuilder {
     }
     /// <p>The ID of the dashboard.</p>
     pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.id = input; self
+        self.id = input;
+        self
     }
     /// <p>The name of the dashboard</p>
     pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -76,7 +77,8 @@ impl DashboardSummaryBuilder {
     }
     /// <p>The name of the dashboard</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input; self
+        self.name = input;
+        self
     }
     /// <p>The dashboard's description.</p>
     pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -85,7 +87,8 @@ impl DashboardSummaryBuilder {
     }
     /// <p>The dashboard's description.</p>
     pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.description = input; self
+        self.description = input;
+        self
     }
     /// <p>The date the dashboard was created, in Unix epoch time.</p>
     pub fn creation_date(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -93,8 +96,12 @@ impl DashboardSummaryBuilder {
         self
     }
     /// <p>The date the dashboard was created, in Unix epoch time.</p>
-    pub fn set_creation_date(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.creation_date = input; self
+    pub fn set_creation_date(
+        mut self,
+        input: std::option::Option<aws_smithy_types::DateTime>,
+    ) -> Self {
+        self.creation_date = input;
+        self
     }
     /// <p>The date the dashboard was last updated, in Unix epoch time.</p>
     pub fn last_update_date(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -102,23 +109,21 @@ impl DashboardSummaryBuilder {
         self
     }
     /// <p>The date the dashboard was last updated, in Unix epoch time.</p>
-    pub fn set_last_update_date(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.last_update_date = input; self
+    pub fn set_last_update_date(
+        mut self,
+        input: std::option::Option<aws_smithy_types::DateTime>,
+    ) -> Self {
+        self.last_update_date = input;
+        self
     }
     /// Consumes the builder and constructs a [`DashboardSummary`](crate::types::DashboardSummary).
     pub fn build(self) -> crate::types::DashboardSummary {
         crate::types::DashboardSummary {
-            id: self.id
-            ,
-            name: self.name
-            ,
-            description: self.description
-            ,
-            creation_date: self.creation_date
-            ,
-            last_update_date: self.last_update_date
-            ,
+            id: self.id,
+            name: self.name,
+            description: self.description,
+            creation_date: self.creation_date,
+            last_update_date: self.last_update_date,
         }
     }
 }
-

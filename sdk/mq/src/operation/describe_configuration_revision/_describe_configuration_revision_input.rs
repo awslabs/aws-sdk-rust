@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeConfigurationRevisionInput  {
+pub struct DescribeConfigurationRevisionInput {
     /// <p>The unique ID that Amazon MQ generates for the configuration.</p>
     #[doc(hidden)]
     pub configuration_id: std::option::Option<std::string::String>,
@@ -12,17 +12,17 @@ pub struct DescribeConfigurationRevisionInput  {
 }
 impl DescribeConfigurationRevisionInput {
     /// <p>The unique ID that Amazon MQ generates for the configuration.</p>
-    pub fn configuration_id(&self) -> std::option::Option<& str> {
+    pub fn configuration_id(&self) -> std::option::Option<&str> {
         self.configuration_id.as_deref()
     }
     /// <p>The revision of the configuration.</p>
-    pub fn configuration_revision(&self) -> std::option::Option<& str> {
+    pub fn configuration_revision(&self) -> std::option::Option<&str> {
         self.configuration_revision.as_deref()
     }
 }
 impl DescribeConfigurationRevisionInput {
     /// Creates a new builder-style object to manufacture [`DescribeConfigurationRevisionInput`](crate::operation::describe_configuration_revision::DescribeConfigurationRevisionInput).
-    pub fn builder() -> crate::operation::describe_configuration_revision::builders::DescribeConfigurationRevisionInputBuilder {
+    pub fn builder() -> crate::operation::describe_configuration_revision::builders::DescribeConfigurationRevisionInputBuilder{
         crate::operation::describe_configuration_revision::builders::DescribeConfigurationRevisionInputBuilder::default()
     }
 }
@@ -42,7 +42,8 @@ impl DescribeConfigurationRevisionInputBuilder {
     }
     /// <p>The unique ID that Amazon MQ generates for the configuration.</p>
     pub fn set_configuration_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.configuration_id = input; self
+        self.configuration_id = input;
+        self
     }
     /// <p>The revision of the configuration.</p>
     pub fn configuration_revision(mut self, input: impl Into<std::string::String>) -> Self {
@@ -50,19 +51,25 @@ impl DescribeConfigurationRevisionInputBuilder {
         self
     }
     /// <p>The revision of the configuration.</p>
-    pub fn set_configuration_revision(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.configuration_revision = input; self
+    pub fn set_configuration_revision(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.configuration_revision = input;
+        self
     }
     /// Consumes the builder and constructs a [`DescribeConfigurationRevisionInput`](crate::operation::describe_configuration_revision::DescribeConfigurationRevisionInput).
-    pub fn build(self) -> Result<crate::operation::describe_configuration_revision::DescribeConfigurationRevisionInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::describe_configuration_revision::DescribeConfigurationRevisionInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::describe_configuration_revision::DescribeConfigurationRevisionInput {
-                configuration_id: self.configuration_id
-                ,
-                configuration_revision: self.configuration_revision
-                ,
-            }
+                configuration_id: self.configuration_id,
+                configuration_revision: self.configuration_revision,
+            },
         )
     }
 }
-

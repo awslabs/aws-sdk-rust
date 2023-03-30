@@ -3,10 +3,11 @@
 /// <p>The returned result of the corresponding request.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateCloudFrontOriginAccessIdentityOutput  {
+pub struct CreateCloudFrontOriginAccessIdentityOutput {
     /// <p>The origin access identity's information.</p>
     #[doc(hidden)]
-    pub cloud_front_origin_access_identity: std::option::Option<crate::types::CloudFrontOriginAccessIdentity>,
+    pub cloud_front_origin_access_identity:
+        std::option::Option<crate::types::CloudFrontOriginAccessIdentity>,
     /// <p>The fully qualified URI of the new origin access identity just created.</p>
     #[doc(hidden)]
     pub location: std::option::Option<std::string::String>,
@@ -17,26 +18,28 @@ pub struct CreateCloudFrontOriginAccessIdentityOutput  {
 }
 impl CreateCloudFrontOriginAccessIdentityOutput {
     /// <p>The origin access identity's information.</p>
-    pub fn cloud_front_origin_access_identity(&self) -> std::option::Option<& crate::types::CloudFrontOriginAccessIdentity> {
+    pub fn cloud_front_origin_access_identity(
+        &self,
+    ) -> std::option::Option<&crate::types::CloudFrontOriginAccessIdentity> {
         self.cloud_front_origin_access_identity.as_ref()
     }
     /// <p>The fully qualified URI of the new origin access identity just created.</p>
-    pub fn location(&self) -> std::option::Option<& str> {
+    pub fn location(&self) -> std::option::Option<&str> {
         self.location.as_deref()
     }
     /// <p>The current version of the origin access identity created.</p>
-    pub fn e_tag(&self) -> std::option::Option<& str> {
+    pub fn e_tag(&self) -> std::option::Option<&str> {
         self.e_tag.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for CreateCloudFrontOriginAccessIdentityOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl CreateCloudFrontOriginAccessIdentityOutput {
     /// Creates a new builder-style object to manufacture [`CreateCloudFrontOriginAccessIdentityOutput`](crate::operation::create_cloud_front_origin_access_identity::CreateCloudFrontOriginAccessIdentityOutput).
-    pub fn builder() -> crate::operation::create_cloud_front_origin_access_identity::builders::CreateCloudFrontOriginAccessIdentityOutputBuilder {
+    pub fn builder() -> crate::operation::create_cloud_front_origin_access_identity::builders::CreateCloudFrontOriginAccessIdentityOutputBuilder{
         crate::operation::create_cloud_front_origin_access_identity::builders::CreateCloudFrontOriginAccessIdentityOutputBuilder::default()
     }
 }
@@ -45,20 +48,28 @@ impl CreateCloudFrontOriginAccessIdentityOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct CreateCloudFrontOriginAccessIdentityOutputBuilder {
-    pub(crate) cloud_front_origin_access_identity: std::option::Option<crate::types::CloudFrontOriginAccessIdentity>,
+    pub(crate) cloud_front_origin_access_identity:
+        std::option::Option<crate::types::CloudFrontOriginAccessIdentity>,
     pub(crate) location: std::option::Option<std::string::String>,
     pub(crate) e_tag: std::option::Option<std::string::String>,
     _request_id: Option<String>,
 }
 impl CreateCloudFrontOriginAccessIdentityOutputBuilder {
     /// <p>The origin access identity's information.</p>
-    pub fn cloud_front_origin_access_identity(mut self, input: crate::types::CloudFrontOriginAccessIdentity) -> Self {
+    pub fn cloud_front_origin_access_identity(
+        mut self,
+        input: crate::types::CloudFrontOriginAccessIdentity,
+    ) -> Self {
         self.cloud_front_origin_access_identity = Some(input);
         self
     }
     /// <p>The origin access identity's information.</p>
-    pub fn set_cloud_front_origin_access_identity(mut self, input: std::option::Option<crate::types::CloudFrontOriginAccessIdentity>) -> Self {
-        self.cloud_front_origin_access_identity = input; self
+    pub fn set_cloud_front_origin_access_identity(
+        mut self,
+        input: std::option::Option<crate::types::CloudFrontOriginAccessIdentity>,
+    ) -> Self {
+        self.cloud_front_origin_access_identity = input;
+        self
     }
     /// <p>The fully qualified URI of the new origin access identity just created.</p>
     pub fn location(mut self, input: impl Into<std::string::String>) -> Self {
@@ -67,7 +78,8 @@ impl CreateCloudFrontOriginAccessIdentityOutputBuilder {
     }
     /// <p>The fully qualified URI of the new origin access identity just created.</p>
     pub fn set_location(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.location = input; self
+        self.location = input;
+        self
     }
     /// <p>The current version of the origin access identity created.</p>
     pub fn e_tag(mut self, input: impl Into<std::string::String>) -> Self {
@@ -76,19 +88,20 @@ impl CreateCloudFrontOriginAccessIdentityOutputBuilder {
     }
     /// <p>The current version of the origin access identity created.</p>
     pub fn set_e_tag(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.e_tag = input; self
+        self.e_tag = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`CreateCloudFrontOriginAccessIdentityOutput`](crate::operation::create_cloud_front_origin_access_identity::CreateCloudFrontOriginAccessIdentityOutput).
-    pub fn build(self) -> crate::operation::create_cloud_front_origin_access_identity::CreateCloudFrontOriginAccessIdentityOutput {
+    pub fn build(self) -> crate::operation::create_cloud_front_origin_access_identity::CreateCloudFrontOriginAccessIdentityOutput{
         crate::operation::create_cloud_front_origin_access_identity::CreateCloudFrontOriginAccessIdentityOutput {
             cloud_front_origin_access_identity: self.cloud_front_origin_access_identity
             ,
@@ -100,4 +113,3 @@ impl CreateCloudFrontOriginAccessIdentityOutputBuilder {
         }
     }
 }
-

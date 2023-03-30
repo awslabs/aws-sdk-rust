@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateRdsDbInstanceInput  {
+pub struct UpdateRdsDbInstanceInput {
     /// <p>The Amazon RDS instance's ARN.</p>
     #[doc(hidden)]
     pub rds_db_instance_arn: std::option::Option<std::string::String>,
@@ -15,22 +15,24 @@ pub struct UpdateRdsDbInstanceInput  {
 }
 impl UpdateRdsDbInstanceInput {
     /// <p>The Amazon RDS instance's ARN.</p>
-    pub fn rds_db_instance_arn(&self) -> std::option::Option<& str> {
+    pub fn rds_db_instance_arn(&self) -> std::option::Option<&str> {
         self.rds_db_instance_arn.as_deref()
     }
     /// <p>The master user name.</p>
-    pub fn db_user(&self) -> std::option::Option<& str> {
+    pub fn db_user(&self) -> std::option::Option<&str> {
         self.db_user.as_deref()
     }
     /// <p>The database password.</p>
-    pub fn db_password(&self) -> std::option::Option<& str> {
+    pub fn db_password(&self) -> std::option::Option<&str> {
         self.db_password.as_deref()
     }
 }
 impl UpdateRdsDbInstanceInput {
     /// Creates a new builder-style object to manufacture [`UpdateRdsDbInstanceInput`](crate::operation::update_rds_db_instance::UpdateRdsDbInstanceInput).
-    pub fn builder() -> crate::operation::update_rds_db_instance::builders::UpdateRdsDbInstanceInputBuilder {
-        crate::operation::update_rds_db_instance::builders::UpdateRdsDbInstanceInputBuilder::default()
+    pub fn builder(
+    ) -> crate::operation::update_rds_db_instance::builders::UpdateRdsDbInstanceInputBuilder {
+        crate::operation::update_rds_db_instance::builders::UpdateRdsDbInstanceInputBuilder::default(
+        )
     }
 }
 
@@ -49,8 +51,12 @@ impl UpdateRdsDbInstanceInputBuilder {
         self
     }
     /// <p>The Amazon RDS instance's ARN.</p>
-    pub fn set_rds_db_instance_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.rds_db_instance_arn = input; self
+    pub fn set_rds_db_instance_arn(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.rds_db_instance_arn = input;
+        self
     }
     /// <p>The master user name.</p>
     pub fn db_user(mut self, input: impl Into<std::string::String>) -> Self {
@@ -59,7 +65,8 @@ impl UpdateRdsDbInstanceInputBuilder {
     }
     /// <p>The master user name.</p>
     pub fn set_db_user(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.db_user = input; self
+        self.db_user = input;
+        self
     }
     /// <p>The database password.</p>
     pub fn db_password(mut self, input: impl Into<std::string::String>) -> Self {
@@ -68,20 +75,22 @@ impl UpdateRdsDbInstanceInputBuilder {
     }
     /// <p>The database password.</p>
     pub fn set_db_password(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.db_password = input; self
+        self.db_password = input;
+        self
     }
     /// Consumes the builder and constructs a [`UpdateRdsDbInstanceInput`](crate::operation::update_rds_db_instance::UpdateRdsDbInstanceInput).
-    pub fn build(self) -> Result<crate::operation::update_rds_db_instance::UpdateRdsDbInstanceInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::update_rds_db_instance::UpdateRdsDbInstanceInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::update_rds_db_instance::UpdateRdsDbInstanceInput {
-                rds_db_instance_arn: self.rds_db_instance_arn
-                ,
-                db_user: self.db_user
-                ,
-                db_password: self.db_password
-                ,
-            }
+                rds_db_instance_arn: self.rds_db_instance_arn,
+                db_user: self.db_user,
+                db_password: self.db_password,
+            },
         )
     }
 }
-

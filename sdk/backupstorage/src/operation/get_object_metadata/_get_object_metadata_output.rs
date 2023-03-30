@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
-pub struct GetObjectMetadataOutput  {
+pub struct GetObjectMetadataOutput {
     /// Metadata string.
     #[doc(hidden)]
     pub metadata_string: std::option::Option<std::string::String>,
@@ -21,11 +21,11 @@ pub struct GetObjectMetadataOutput  {
 }
 impl GetObjectMetadataOutput {
     /// Metadata string.
-    pub fn metadata_string(&self) -> std::option::Option<& str> {
+    pub fn metadata_string(&self) -> std::option::Option<&str> {
         self.metadata_string.as_deref()
     }
     /// Metadata blob.
-    pub fn metadata_blob(&self) -> & aws_smithy_http::byte_stream::ByteStream {
+    pub fn metadata_blob(&self) -> &aws_smithy_http::byte_stream::ByteStream {
         &self.metadata_blob
     }
     /// The size of MetadataBlob.
@@ -33,22 +33,25 @@ impl GetObjectMetadataOutput {
         self.metadata_blob_length
     }
     /// MetadataBlob checksum.
-    pub fn metadata_blob_checksum(&self) -> std::option::Option<& str> {
+    pub fn metadata_blob_checksum(&self) -> std::option::Option<&str> {
         self.metadata_blob_checksum.as_deref()
     }
     /// Checksum algorithm.
-    pub fn metadata_blob_checksum_algorithm(&self) -> std::option::Option<& crate::types::DataChecksumAlgorithm> {
+    pub fn metadata_blob_checksum_algorithm(
+        &self,
+    ) -> std::option::Option<&crate::types::DataChecksumAlgorithm> {
         self.metadata_blob_checksum_algorithm.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for GetObjectMetadataOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl GetObjectMetadataOutput {
     /// Creates a new builder-style object to manufacture [`GetObjectMetadataOutput`](crate::operation::get_object_metadata::GetObjectMetadataOutput).
-    pub fn builder() -> crate::operation::get_object_metadata::builders::GetObjectMetadataOutputBuilder {
+    pub fn builder(
+    ) -> crate::operation::get_object_metadata::builders::GetObjectMetadataOutputBuilder {
         crate::operation::get_object_metadata::builders::GetObjectMetadataOutputBuilder::default()
     }
 }
@@ -61,7 +64,8 @@ pub struct GetObjectMetadataOutputBuilder {
     pub(crate) metadata_blob: std::option::Option<aws_smithy_http::byte_stream::ByteStream>,
     pub(crate) metadata_blob_length: std::option::Option<i64>,
     pub(crate) metadata_blob_checksum: std::option::Option<std::string::String>,
-    pub(crate) metadata_blob_checksum_algorithm: std::option::Option<crate::types::DataChecksumAlgorithm>,
+    pub(crate) metadata_blob_checksum_algorithm:
+        std::option::Option<crate::types::DataChecksumAlgorithm>,
     _request_id: Option<String>,
 }
 impl GetObjectMetadataOutputBuilder {
@@ -72,7 +76,8 @@ impl GetObjectMetadataOutputBuilder {
     }
     /// Metadata string.
     pub fn set_metadata_string(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.metadata_string = input; self
+        self.metadata_string = input;
+        self
     }
     /// Metadata blob.
     pub fn metadata_blob(mut self, input: aws_smithy_http::byte_stream::ByteStream) -> Self {
@@ -80,8 +85,12 @@ impl GetObjectMetadataOutputBuilder {
         self
     }
     /// Metadata blob.
-    pub fn set_metadata_blob(mut self, input: std::option::Option<aws_smithy_http::byte_stream::ByteStream>) -> Self {
-        self.metadata_blob = input; self
+    pub fn set_metadata_blob(
+        mut self,
+        input: std::option::Option<aws_smithy_http::byte_stream::ByteStream>,
+    ) -> Self {
+        self.metadata_blob = input;
+        self
     }
     /// The size of MetadataBlob.
     pub fn metadata_blob_length(mut self, input: i64) -> Self {
@@ -90,7 +99,8 @@ impl GetObjectMetadataOutputBuilder {
     }
     /// The size of MetadataBlob.
     pub fn set_metadata_blob_length(mut self, input: std::option::Option<i64>) -> Self {
-        self.metadata_blob_length = input; self
+        self.metadata_blob_length = input;
+        self
     }
     /// MetadataBlob checksum.
     pub fn metadata_blob_checksum(mut self, input: impl Into<std::string::String>) -> Self {
@@ -98,44 +108,47 @@ impl GetObjectMetadataOutputBuilder {
         self
     }
     /// MetadataBlob checksum.
-    pub fn set_metadata_blob_checksum(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.metadata_blob_checksum = input; self
+    pub fn set_metadata_blob_checksum(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.metadata_blob_checksum = input;
+        self
     }
     /// Checksum algorithm.
-    pub fn metadata_blob_checksum_algorithm(mut self, input: crate::types::DataChecksumAlgorithm) -> Self {
+    pub fn metadata_blob_checksum_algorithm(
+        mut self,
+        input: crate::types::DataChecksumAlgorithm,
+    ) -> Self {
         self.metadata_blob_checksum_algorithm = Some(input);
         self
     }
     /// Checksum algorithm.
-    pub fn set_metadata_blob_checksum_algorithm(mut self, input: std::option::Option<crate::types::DataChecksumAlgorithm>) -> Self {
-        self.metadata_blob_checksum_algorithm = input; self
+    pub fn set_metadata_blob_checksum_algorithm(
+        mut self,
+        input: std::option::Option<crate::types::DataChecksumAlgorithm>,
+    ) -> Self {
+        self.metadata_blob_checksum_algorithm = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`GetObjectMetadataOutput`](crate::operation::get_object_metadata::GetObjectMetadataOutput).
     pub fn build(self) -> crate::operation::get_object_metadata::GetObjectMetadataOutput {
         crate::operation::get_object_metadata::GetObjectMetadataOutput {
-            metadata_string: self.metadata_string
-            ,
-            metadata_blob: self.metadata_blob
-                .unwrap_or_default()
-            ,
-            metadata_blob_length: self.metadata_blob_length
-                .unwrap_or_default()
-            ,
-            metadata_blob_checksum: self.metadata_blob_checksum
-            ,
-            metadata_blob_checksum_algorithm: self.metadata_blob_checksum_algorithm
-            ,
+            metadata_string: self.metadata_string,
+            metadata_blob: self.metadata_blob.unwrap_or_default(),
+            metadata_blob_length: self.metadata_blob_length.unwrap_or_default(),
+            metadata_blob_checksum: self.metadata_blob_checksum,
+            metadata_blob_checksum_algorithm: self.metadata_blob_checksum_algorithm,
             _request_id: self._request_id,
         }
     }
 }
-

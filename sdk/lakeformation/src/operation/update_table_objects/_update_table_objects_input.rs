@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateTableObjectsInput  {
+pub struct UpdateTableObjectsInput {
     /// <p>The catalog containing the governed table to update. Defaults to the caller’s account ID.</p>
     #[doc(hidden)]
     pub catalog_id: std::option::Option<std::string::String>,
@@ -21,29 +21,30 @@ pub struct UpdateTableObjectsInput  {
 }
 impl UpdateTableObjectsInput {
     /// <p>The catalog containing the governed table to update. Defaults to the caller’s account ID.</p>
-    pub fn catalog_id(&self) -> std::option::Option<& str> {
+    pub fn catalog_id(&self) -> std::option::Option<&str> {
         self.catalog_id.as_deref()
     }
     /// <p>The database containing the governed table to update.</p>
-    pub fn database_name(&self) -> std::option::Option<& str> {
+    pub fn database_name(&self) -> std::option::Option<&str> {
         self.database_name.as_deref()
     }
     /// <p>The governed table to update.</p>
-    pub fn table_name(&self) -> std::option::Option<& str> {
+    pub fn table_name(&self) -> std::option::Option<&str> {
         self.table_name.as_deref()
     }
     /// <p>The transaction at which to do the write.</p>
-    pub fn transaction_id(&self) -> std::option::Option<& str> {
+    pub fn transaction_id(&self) -> std::option::Option<&str> {
         self.transaction_id.as_deref()
     }
     /// <p>A list of <code>WriteOperation</code> objects that define an object to add to or delete from the manifest for a governed table.</p>
-    pub fn write_operations(&self) -> std::option::Option<& [crate::types::WriteOperation]> {
+    pub fn write_operations(&self) -> std::option::Option<&[crate::types::WriteOperation]> {
         self.write_operations.as_deref()
     }
 }
 impl UpdateTableObjectsInput {
     /// Creates a new builder-style object to manufacture [`UpdateTableObjectsInput`](crate::operation::update_table_objects::UpdateTableObjectsInput).
-    pub fn builder() -> crate::operation::update_table_objects::builders::UpdateTableObjectsInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::update_table_objects::builders::UpdateTableObjectsInputBuilder {
         crate::operation::update_table_objects::builders::UpdateTableObjectsInputBuilder::default()
     }
 }
@@ -66,7 +67,8 @@ impl UpdateTableObjectsInputBuilder {
     }
     /// <p>The catalog containing the governed table to update. Defaults to the caller’s account ID.</p>
     pub fn set_catalog_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.catalog_id = input; self
+        self.catalog_id = input;
+        self
     }
     /// <p>The database containing the governed table to update.</p>
     pub fn database_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -75,7 +77,8 @@ impl UpdateTableObjectsInputBuilder {
     }
     /// <p>The database containing the governed table to update.</p>
     pub fn set_database_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.database_name = input; self
+        self.database_name = input;
+        self
     }
     /// <p>The governed table to update.</p>
     pub fn table_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -84,7 +87,8 @@ impl UpdateTableObjectsInputBuilder {
     }
     /// <p>The governed table to update.</p>
     pub fn set_table_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.table_name = input; self
+        self.table_name = input;
+        self
     }
     /// <p>The transaction at which to do the write.</p>
     pub fn transaction_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -93,7 +97,8 @@ impl UpdateTableObjectsInputBuilder {
     }
     /// <p>The transaction at which to do the write.</p>
     pub fn set_transaction_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.transaction_id = input; self
+        self.transaction_id = input;
+        self
     }
     /// Appends an item to `write_operations`.
     ///
@@ -102,30 +107,33 @@ impl UpdateTableObjectsInputBuilder {
     /// <p>A list of <code>WriteOperation</code> objects that define an object to add to or delete from the manifest for a governed table.</p>
     pub fn write_operations(mut self, input: crate::types::WriteOperation) -> Self {
         let mut v = self.write_operations.unwrap_or_default();
-                        v.push(input);
-                        self.write_operations = Some(v);
-                        self
+        v.push(input);
+        self.write_operations = Some(v);
+        self
     }
     /// <p>A list of <code>WriteOperation</code> objects that define an object to add to or delete from the manifest for a governed table.</p>
-    pub fn set_write_operations(mut self, input: std::option::Option<std::vec::Vec<crate::types::WriteOperation>>) -> Self {
-        self.write_operations = input; self
+    pub fn set_write_operations(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::WriteOperation>>,
+    ) -> Self {
+        self.write_operations = input;
+        self
     }
     /// Consumes the builder and constructs a [`UpdateTableObjectsInput`](crate::operation::update_table_objects::UpdateTableObjectsInput).
-    pub fn build(self) -> Result<crate::operation::update_table_objects::UpdateTableObjectsInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::update_table_objects::UpdateTableObjectsInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::update_table_objects::UpdateTableObjectsInput {
-                catalog_id: self.catalog_id
-                ,
-                database_name: self.database_name
-                ,
-                table_name: self.table_name
-                ,
-                transaction_id: self.transaction_id
-                ,
-                write_operations: self.write_operations
-                ,
-            }
+                catalog_id: self.catalog_id,
+                database_name: self.database_name,
+                table_name: self.table_name,
+                transaction_id: self.transaction_id,
+                write_operations: self.write_operations,
+            },
         )
     }
 }
-

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetSigningPlatformOutput  {
+pub struct GetSigningPlatformOutput {
     /// <p>The ID of the target signing platform.</p>
     #[doc(hidden)]
     pub platform_id: std::option::Option<std::string::String>,
@@ -34,31 +34,33 @@ pub struct GetSigningPlatformOutput  {
 }
 impl GetSigningPlatformOutput {
     /// <p>The ID of the target signing platform.</p>
-    pub fn platform_id(&self) -> std::option::Option<& str> {
+    pub fn platform_id(&self) -> std::option::Option<&str> {
         self.platform_id.as_deref()
     }
     /// <p>The display name of the target signing platform.</p>
-    pub fn display_name(&self) -> std::option::Option<& str> {
+    pub fn display_name(&self) -> std::option::Option<&str> {
         self.display_name.as_deref()
     }
     /// <p>A list of partner entities that use the target signing platform.</p>
-    pub fn partner(&self) -> std::option::Option<& str> {
+    pub fn partner(&self) -> std::option::Option<&str> {
         self.partner.as_deref()
     }
     /// <p>The validation template that is used by the target signing platform.</p>
-    pub fn target(&self) -> std::option::Option<& str> {
+    pub fn target(&self) -> std::option::Option<&str> {
         self.target.as_deref()
     }
     /// <p>The category type of the target signing platform.</p>
-    pub fn category(&self) -> std::option::Option<& crate::types::Category> {
+    pub fn category(&self) -> std::option::Option<&crate::types::Category> {
         self.category.as_ref()
     }
     /// <p>A list of configurations applied to the target platform at signing.</p>
-    pub fn signing_configuration(&self) -> std::option::Option<& crate::types::SigningConfiguration> {
+    pub fn signing_configuration(
+        &self,
+    ) -> std::option::Option<&crate::types::SigningConfiguration> {
         self.signing_configuration.as_ref()
     }
     /// <p>The format of the target platform's signing image.</p>
-    pub fn signing_image_format(&self) -> std::option::Option<& crate::types::SigningImageFormat> {
+    pub fn signing_image_format(&self) -> std::option::Option<&crate::types::SigningImageFormat> {
         self.signing_image_format.as_ref()
     }
     /// <p>The maximum size (in MB) of the payload that can be signed by the target platform.</p>
@@ -71,13 +73,14 @@ impl GetSigningPlatformOutput {
     }
 }
 impl aws_http::request_id::RequestId for GetSigningPlatformOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl GetSigningPlatformOutput {
     /// Creates a new builder-style object to manufacture [`GetSigningPlatformOutput`](crate::operation::get_signing_platform::GetSigningPlatformOutput).
-    pub fn builder() -> crate::operation::get_signing_platform::builders::GetSigningPlatformOutputBuilder {
+    pub fn builder(
+    ) -> crate::operation::get_signing_platform::builders::GetSigningPlatformOutputBuilder {
         crate::operation::get_signing_platform::builders::GetSigningPlatformOutputBuilder::default()
     }
 }
@@ -105,7 +108,8 @@ impl GetSigningPlatformOutputBuilder {
     }
     /// <p>The ID of the target signing platform.</p>
     pub fn set_platform_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.platform_id = input; self
+        self.platform_id = input;
+        self
     }
     /// <p>The display name of the target signing platform.</p>
     pub fn display_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -114,7 +118,8 @@ impl GetSigningPlatformOutputBuilder {
     }
     /// <p>The display name of the target signing platform.</p>
     pub fn set_display_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.display_name = input; self
+        self.display_name = input;
+        self
     }
     /// <p>A list of partner entities that use the target signing platform.</p>
     pub fn partner(mut self, input: impl Into<std::string::String>) -> Self {
@@ -123,7 +128,8 @@ impl GetSigningPlatformOutputBuilder {
     }
     /// <p>A list of partner entities that use the target signing platform.</p>
     pub fn set_partner(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.partner = input; self
+        self.partner = input;
+        self
     }
     /// <p>The validation template that is used by the target signing platform.</p>
     pub fn target(mut self, input: impl Into<std::string::String>) -> Self {
@@ -132,7 +138,8 @@ impl GetSigningPlatformOutputBuilder {
     }
     /// <p>The validation template that is used by the target signing platform.</p>
     pub fn set_target(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.target = input; self
+        self.target = input;
+        self
     }
     /// <p>The category type of the target signing platform.</p>
     pub fn category(mut self, input: crate::types::Category) -> Self {
@@ -141,7 +148,8 @@ impl GetSigningPlatformOutputBuilder {
     }
     /// <p>The category type of the target signing platform.</p>
     pub fn set_category(mut self, input: std::option::Option<crate::types::Category>) -> Self {
-        self.category = input; self
+        self.category = input;
+        self
     }
     /// <p>A list of configurations applied to the target platform at signing.</p>
     pub fn signing_configuration(mut self, input: crate::types::SigningConfiguration) -> Self {
@@ -149,8 +157,12 @@ impl GetSigningPlatformOutputBuilder {
         self
     }
     /// <p>A list of configurations applied to the target platform at signing.</p>
-    pub fn set_signing_configuration(mut self, input: std::option::Option<crate::types::SigningConfiguration>) -> Self {
-        self.signing_configuration = input; self
+    pub fn set_signing_configuration(
+        mut self,
+        input: std::option::Option<crate::types::SigningConfiguration>,
+    ) -> Self {
+        self.signing_configuration = input;
+        self
     }
     /// <p>The format of the target platform's signing image.</p>
     pub fn signing_image_format(mut self, input: crate::types::SigningImageFormat) -> Self {
@@ -158,8 +170,12 @@ impl GetSigningPlatformOutputBuilder {
         self
     }
     /// <p>The format of the target platform's signing image.</p>
-    pub fn set_signing_image_format(mut self, input: std::option::Option<crate::types::SigningImageFormat>) -> Self {
-        self.signing_image_format = input; self
+    pub fn set_signing_image_format(
+        mut self,
+        input: std::option::Option<crate::types::SigningImageFormat>,
+    ) -> Self {
+        self.signing_image_format = input;
+        self
     }
     /// <p>The maximum size (in MB) of the payload that can be signed by the target platform.</p>
     pub fn max_size_in_mb(mut self, input: i32) -> Self {
@@ -168,7 +184,8 @@ impl GetSigningPlatformOutputBuilder {
     }
     /// <p>The maximum size (in MB) of the payload that can be signed by the target platform.</p>
     pub fn set_max_size_in_mb(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_size_in_mb = input; self
+        self.max_size_in_mb = input;
+        self
     }
     /// <p>A flag indicating whether signatures generated for the signing platform can be revoked.</p>
     pub fn revocation_supported(mut self, input: bool) -> Self {
@@ -177,42 +194,31 @@ impl GetSigningPlatformOutputBuilder {
     }
     /// <p>A flag indicating whether signatures generated for the signing platform can be revoked.</p>
     pub fn set_revocation_supported(mut self, input: std::option::Option<bool>) -> Self {
-        self.revocation_supported = input; self
+        self.revocation_supported = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`GetSigningPlatformOutput`](crate::operation::get_signing_platform::GetSigningPlatformOutput).
     pub fn build(self) -> crate::operation::get_signing_platform::GetSigningPlatformOutput {
         crate::operation::get_signing_platform::GetSigningPlatformOutput {
-            platform_id: self.platform_id
-            ,
-            display_name: self.display_name
-            ,
-            partner: self.partner
-            ,
-            target: self.target
-            ,
-            category: self.category
-            ,
-            signing_configuration: self.signing_configuration
-            ,
-            signing_image_format: self.signing_image_format
-            ,
-            max_size_in_mb: self.max_size_in_mb
-                .unwrap_or_default()
-            ,
-            revocation_supported: self.revocation_supported
-                .unwrap_or_default()
-            ,
+            platform_id: self.platform_id,
+            display_name: self.display_name,
+            partner: self.partner,
+            target: self.target,
+            category: self.category,
+            signing_configuration: self.signing_configuration,
+            signing_image_format: self.signing_image_format,
+            max_size_in_mb: self.max_size_in_mb.unwrap_or_default(),
+            revocation_supported: self.revocation_supported.unwrap_or_default(),
             _request_id: self._request_id,
         }
     }
 }
-

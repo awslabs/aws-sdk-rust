@@ -3,7 +3,7 @@
 /// <p>The summary of the application version.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ApplicationVersionSummary  {
+pub struct ApplicationVersionSummary {
     /// <p>The ID of the application version. Kinesis Data Analytics updates the <code>ApplicationVersionId</code> each time you update the application.</p>
     #[doc(hidden)]
     pub application_version_id: std::option::Option<i64>,
@@ -17,7 +17,7 @@ impl ApplicationVersionSummary {
         self.application_version_id
     }
     /// <p>The status of the application.</p>
-    pub fn application_status(&self) -> std::option::Option<& crate::types::ApplicationStatus> {
+    pub fn application_status(&self) -> std::option::Option<&crate::types::ApplicationStatus> {
         self.application_status.as_ref()
     }
 }
@@ -43,7 +43,8 @@ impl ApplicationVersionSummaryBuilder {
     }
     /// <p>The ID of the application version. Kinesis Data Analytics updates the <code>ApplicationVersionId</code> each time you update the application.</p>
     pub fn set_application_version_id(mut self, input: std::option::Option<i64>) -> Self {
-        self.application_version_id = input; self
+        self.application_version_id = input;
+        self
     }
     /// <p>The status of the application.</p>
     pub fn application_status(mut self, input: crate::types::ApplicationStatus) -> Self {
@@ -51,17 +52,18 @@ impl ApplicationVersionSummaryBuilder {
         self
     }
     /// <p>The status of the application.</p>
-    pub fn set_application_status(mut self, input: std::option::Option<crate::types::ApplicationStatus>) -> Self {
-        self.application_status = input; self
+    pub fn set_application_status(
+        mut self,
+        input: std::option::Option<crate::types::ApplicationStatus>,
+    ) -> Self {
+        self.application_status = input;
+        self
     }
     /// Consumes the builder and constructs a [`ApplicationVersionSummary`](crate::types::ApplicationVersionSummary).
     pub fn build(self) -> crate::types::ApplicationVersionSummary {
         crate::types::ApplicationVersionSummary {
-            application_version_id: self.application_version_id
-            ,
-            application_status: self.application_status
-            ,
+            application_version_id: self.application_version_id,
+            application_status: self.application_status,
         }
     }
 }
-

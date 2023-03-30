@@ -3,7 +3,7 @@
 /// <p>Start of Authority (SOA) properties for a public or private DNS namespace.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Soa  {
+pub struct Soa {
     /// <p>The time to live (TTL) for purposes of negative caching.</p>
     #[doc(hidden)]
     pub ttl: std::option::Option<i64>,
@@ -35,14 +35,11 @@ impl SoaBuilder {
     }
     /// <p>The time to live (TTL) for purposes of negative caching.</p>
     pub fn set_ttl(mut self, input: std::option::Option<i64>) -> Self {
-        self.ttl = input; self
+        self.ttl = input;
+        self
     }
     /// Consumes the builder and constructs a [`Soa`](crate::types::Soa).
     pub fn build(self) -> crate::types::Soa {
-        crate::types::Soa {
-            ttl: self.ttl
-            ,
-        }
+        crate::types::Soa { ttl: self.ttl }
     }
 }
-

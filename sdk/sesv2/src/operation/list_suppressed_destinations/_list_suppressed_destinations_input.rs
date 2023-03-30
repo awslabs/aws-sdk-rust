@@ -3,7 +3,7 @@
 /// <p>A request to obtain a list of email destinations that are on the suppression list for your account.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListSuppressedDestinationsInput  {
+pub struct ListSuppressedDestinationsInput {
     /// <p>The factors that caused the email address to be added to .</p>
     #[doc(hidden)]
     pub reasons: std::option::Option<std::vec::Vec<crate::types::SuppressionListReason>>,
@@ -22,19 +22,19 @@ pub struct ListSuppressedDestinationsInput  {
 }
 impl ListSuppressedDestinationsInput {
     /// <p>The factors that caused the email address to be added to .</p>
-    pub fn reasons(&self) -> std::option::Option<& [crate::types::SuppressionListReason]> {
+    pub fn reasons(&self) -> std::option::Option<&[crate::types::SuppressionListReason]> {
         self.reasons.as_deref()
     }
     /// <p>Used to filter the list of suppressed email destinations so that it only includes addresses that were added to the list after a specific date.</p>
-    pub fn start_date(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
+    pub fn start_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.start_date.as_ref()
     }
     /// <p>Used to filter the list of suppressed email destinations so that it only includes addresses that were added to the list before a specific date.</p>
-    pub fn end_date(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
+    pub fn end_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.end_date.as_ref()
     }
     /// <p>A token returned from a previous call to <code>ListSuppressedDestinations</code> to indicate the position in the list of suppressed email addresses.</p>
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
     /// <p>The number of results to show in a single call to <code>ListSuppressedDestinations</code>. If the number of results is larger than the number you specified in this parameter, then the response includes a <code>NextToken</code> element, which you can use to obtain additional results.</p>
@@ -44,7 +44,7 @@ impl ListSuppressedDestinationsInput {
 }
 impl ListSuppressedDestinationsInput {
     /// Creates a new builder-style object to manufacture [`ListSuppressedDestinationsInput`](crate::operation::list_suppressed_destinations::ListSuppressedDestinationsInput).
-    pub fn builder() -> crate::operation::list_suppressed_destinations::builders::ListSuppressedDestinationsInputBuilder {
+    pub fn builder() -> crate::operation::list_suppressed_destinations::builders::ListSuppressedDestinationsInputBuilder{
         crate::operation::list_suppressed_destinations::builders::ListSuppressedDestinationsInputBuilder::default()
     }
 }
@@ -67,13 +67,17 @@ impl ListSuppressedDestinationsInputBuilder {
     /// <p>The factors that caused the email address to be added to .</p>
     pub fn reasons(mut self, input: crate::types::SuppressionListReason) -> Self {
         let mut v = self.reasons.unwrap_or_default();
-                        v.push(input);
-                        self.reasons = Some(v);
-                        self
+        v.push(input);
+        self.reasons = Some(v);
+        self
     }
     /// <p>The factors that caused the email address to be added to .</p>
-    pub fn set_reasons(mut self, input: std::option::Option<std::vec::Vec<crate::types::SuppressionListReason>>) -> Self {
-        self.reasons = input; self
+    pub fn set_reasons(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::SuppressionListReason>>,
+    ) -> Self {
+        self.reasons = input;
+        self
     }
     /// <p>Used to filter the list of suppressed email destinations so that it only includes addresses that were added to the list after a specific date.</p>
     pub fn start_date(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -81,8 +85,12 @@ impl ListSuppressedDestinationsInputBuilder {
         self
     }
     /// <p>Used to filter the list of suppressed email destinations so that it only includes addresses that were added to the list after a specific date.</p>
-    pub fn set_start_date(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.start_date = input; self
+    pub fn set_start_date(
+        mut self,
+        input: std::option::Option<aws_smithy_types::DateTime>,
+    ) -> Self {
+        self.start_date = input;
+        self
     }
     /// <p>Used to filter the list of suppressed email destinations so that it only includes addresses that were added to the list before a specific date.</p>
     pub fn end_date(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -91,7 +99,8 @@ impl ListSuppressedDestinationsInputBuilder {
     }
     /// <p>Used to filter the list of suppressed email destinations so that it only includes addresses that were added to the list before a specific date.</p>
     pub fn set_end_date(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.end_date = input; self
+        self.end_date = input;
+        self
     }
     /// <p>A token returned from a previous call to <code>ListSuppressedDestinations</code> to indicate the position in the list of suppressed email addresses.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -100,7 +109,8 @@ impl ListSuppressedDestinationsInputBuilder {
     }
     /// <p>A token returned from a previous call to <code>ListSuppressedDestinations</code> to indicate the position in the list of suppressed email addresses.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input; self
+        self.next_token = input;
+        self
     }
     /// <p>The number of results to show in a single call to <code>ListSuppressedDestinations</code>. If the number of results is larger than the number you specified in this parameter, then the response includes a <code>NextToken</code> element, which you can use to obtain additional results.</p>
     pub fn page_size(mut self, input: i32) -> Self {
@@ -109,24 +119,24 @@ impl ListSuppressedDestinationsInputBuilder {
     }
     /// <p>The number of results to show in a single call to <code>ListSuppressedDestinations</code>. If the number of results is larger than the number you specified in this parameter, then the response includes a <code>NextToken</code> element, which you can use to obtain additional results.</p>
     pub fn set_page_size(mut self, input: std::option::Option<i32>) -> Self {
-        self.page_size = input; self
+        self.page_size = input;
+        self
     }
     /// Consumes the builder and constructs a [`ListSuppressedDestinationsInput`](crate::operation::list_suppressed_destinations::ListSuppressedDestinationsInput).
-    pub fn build(self) -> Result<crate::operation::list_suppressed_destinations::ListSuppressedDestinationsInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::list_suppressed_destinations::ListSuppressedDestinationsInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::list_suppressed_destinations::ListSuppressedDestinationsInput {
-                reasons: self.reasons
-                ,
-                start_date: self.start_date
-                ,
-                end_date: self.end_date
-                ,
-                next_token: self.next_token
-                ,
-                page_size: self.page_size
-                ,
-            }
+                reasons: self.reasons,
+                start_date: self.start_date,
+                end_date: self.end_date,
+                next_token: self.next_token,
+                page_size: self.page_size,
+            },
         )
     }
 }
-

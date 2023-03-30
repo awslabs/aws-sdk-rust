@@ -3,7 +3,7 @@
 /// <p>Information about an Amazon Web Services service returned by the <code>DescribeServices</code> operation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Service  {
+pub struct Service {
     /// <p>The code for an Amazon Web Services service returned by the <code>DescribeServices</code> response. The <code>name</code> element contains the corresponding friendly name.</p>
     #[doc(hidden)]
     pub code: std::option::Option<std::string::String>,
@@ -16,15 +16,15 @@ pub struct Service  {
 }
 impl Service {
     /// <p>The code for an Amazon Web Services service returned by the <code>DescribeServices</code> response. The <code>name</code> element contains the corresponding friendly name.</p>
-    pub fn code(&self) -> std::option::Option<& str> {
+    pub fn code(&self) -> std::option::Option<&str> {
         self.code.as_deref()
     }
     /// <p>The friendly name for an Amazon Web Services service. The <code>code</code> element contains the corresponding code.</p>
-    pub fn name(&self) -> std::option::Option<& str> {
+    pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>A list of categories that describe the type of support issue a case describes. Categories consist of a category name and a category code. Category names and codes are passed to Amazon Web Services Support when you call <code>CreateCase</code>.</p>
-    pub fn categories(&self) -> std::option::Option<& [crate::types::Category]> {
+    pub fn categories(&self) -> std::option::Option<&[crate::types::Category]> {
         self.categories.as_deref()
     }
 }
@@ -51,7 +51,8 @@ impl ServiceBuilder {
     }
     /// <p>The code for an Amazon Web Services service returned by the <code>DescribeServices</code> response. The <code>name</code> element contains the corresponding friendly name.</p>
     pub fn set_code(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.code = input; self
+        self.code = input;
+        self
     }
     /// <p>The friendly name for an Amazon Web Services service. The <code>code</code> element contains the corresponding code.</p>
     pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -60,7 +61,8 @@ impl ServiceBuilder {
     }
     /// <p>The friendly name for an Amazon Web Services service. The <code>code</code> element contains the corresponding code.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input; self
+        self.name = input;
+        self
     }
     /// Appends an item to `categories`.
     ///
@@ -69,24 +71,24 @@ impl ServiceBuilder {
     /// <p>A list of categories that describe the type of support issue a case describes. Categories consist of a category name and a category code. Category names and codes are passed to Amazon Web Services Support when you call <code>CreateCase</code>.</p>
     pub fn categories(mut self, input: crate::types::Category) -> Self {
         let mut v = self.categories.unwrap_or_default();
-                        v.push(input);
-                        self.categories = Some(v);
-                        self
+        v.push(input);
+        self.categories = Some(v);
+        self
     }
     /// <p>A list of categories that describe the type of support issue a case describes. Categories consist of a category name and a category code. Category names and codes are passed to Amazon Web Services Support when you call <code>CreateCase</code>.</p>
-    pub fn set_categories(mut self, input: std::option::Option<std::vec::Vec<crate::types::Category>>) -> Self {
-        self.categories = input; self
+    pub fn set_categories(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::Category>>,
+    ) -> Self {
+        self.categories = input;
+        self
     }
     /// Consumes the builder and constructs a [`Service`](crate::types::Service).
     pub fn build(self) -> crate::types::Service {
         crate::types::Service {
-            code: self.code
-            ,
-            name: self.name
-            ,
-            categories: self.categories
-            ,
+            code: self.code,
+            name: self.name,
+            categories: self.categories,
         }
     }
 }
-

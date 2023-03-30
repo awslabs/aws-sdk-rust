@@ -2,21 +2,24 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PublishBatchInput  {
+pub struct PublishBatchInput {
     /// <p>The Amazon resource name (ARN) of the topic you want to batch publish to.</p>
     #[doc(hidden)]
     pub topic_arn: std::option::Option<std::string::String>,
     /// <p>A list of <code>PublishBatch</code> request entries to be sent to the SNS topic.</p>
     #[doc(hidden)]
-    pub publish_batch_request_entries: std::option::Option<std::vec::Vec<crate::types::PublishBatchRequestEntry>>,
+    pub publish_batch_request_entries:
+        std::option::Option<std::vec::Vec<crate::types::PublishBatchRequestEntry>>,
 }
 impl PublishBatchInput {
     /// <p>The Amazon resource name (ARN) of the topic you want to batch publish to.</p>
-    pub fn topic_arn(&self) -> std::option::Option<& str> {
+    pub fn topic_arn(&self) -> std::option::Option<&str> {
         self.topic_arn.as_deref()
     }
     /// <p>A list of <code>PublishBatch</code> request entries to be sent to the SNS topic.</p>
-    pub fn publish_batch_request_entries(&self) -> std::option::Option<& [crate::types::PublishBatchRequestEntry]> {
+    pub fn publish_batch_request_entries(
+        &self,
+    ) -> std::option::Option<&[crate::types::PublishBatchRequestEntry]> {
         self.publish_batch_request_entries.as_deref()
     }
 }
@@ -32,7 +35,8 @@ impl PublishBatchInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct PublishBatchInputBuilder {
     pub(crate) topic_arn: std::option::Option<std::string::String>,
-    pub(crate) publish_batch_request_entries: std::option::Option<std::vec::Vec<crate::types::PublishBatchRequestEntry>>,
+    pub(crate) publish_batch_request_entries:
+        std::option::Option<std::vec::Vec<crate::types::PublishBatchRequestEntry>>,
 }
 impl PublishBatchInputBuilder {
     /// <p>The Amazon resource name (ARN) of the topic you want to batch publish to.</p>
@@ -42,33 +46,41 @@ impl PublishBatchInputBuilder {
     }
     /// <p>The Amazon resource name (ARN) of the topic you want to batch publish to.</p>
     pub fn set_topic_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.topic_arn = input; self
+        self.topic_arn = input;
+        self
     }
     /// Appends an item to `publish_batch_request_entries`.
     ///
     /// To override the contents of this collection use [`set_publish_batch_request_entries`](Self::set_publish_batch_request_entries).
     ///
     /// <p>A list of <code>PublishBatch</code> request entries to be sent to the SNS topic.</p>
-    pub fn publish_batch_request_entries(mut self, input: crate::types::PublishBatchRequestEntry) -> Self {
+    pub fn publish_batch_request_entries(
+        mut self,
+        input: crate::types::PublishBatchRequestEntry,
+    ) -> Self {
         let mut v = self.publish_batch_request_entries.unwrap_or_default();
-                        v.push(input);
-                        self.publish_batch_request_entries = Some(v);
-                        self
+        v.push(input);
+        self.publish_batch_request_entries = Some(v);
+        self
     }
     /// <p>A list of <code>PublishBatch</code> request entries to be sent to the SNS topic.</p>
-    pub fn set_publish_batch_request_entries(mut self, input: std::option::Option<std::vec::Vec<crate::types::PublishBatchRequestEntry>>) -> Self {
-        self.publish_batch_request_entries = input; self
+    pub fn set_publish_batch_request_entries(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::PublishBatchRequestEntry>>,
+    ) -> Self {
+        self.publish_batch_request_entries = input;
+        self
     }
     /// Consumes the builder and constructs a [`PublishBatchInput`](crate::operation::publish_batch::PublishBatchInput).
-    pub fn build(self) -> Result<crate::operation::publish_batch::PublishBatchInput, aws_smithy_http::operation::error::BuildError> {
-        Ok(
-            crate::operation::publish_batch::PublishBatchInput {
-                topic_arn: self.topic_arn
-                ,
-                publish_batch_request_entries: self.publish_batch_request_entries
-                ,
-            }
-        )
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::publish_batch::PublishBatchInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        Ok(crate::operation::publish_batch::PublishBatchInput {
+            topic_arn: self.topic_arn,
+            publish_batch_request_entries: self.publish_batch_request_entries,
+        })
     }
 }
-

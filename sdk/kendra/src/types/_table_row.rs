@@ -3,14 +3,14 @@
 /// <p>Information about a row in a table excerpt.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct TableRow  {
+pub struct TableRow {
     /// <p>A list of table cells in a row.</p>
     #[doc(hidden)]
     pub cells: std::option::Option<std::vec::Vec<crate::types::TableCell>>,
 }
 impl TableRow {
     /// <p>A list of table cells in a row.</p>
-    pub fn cells(&self) -> std::option::Option<& [crate::types::TableCell]> {
+    pub fn cells(&self) -> std::option::Option<&[crate::types::TableCell]> {
         self.cells.as_deref()
     }
 }
@@ -35,20 +35,20 @@ impl TableRowBuilder {
     /// <p>A list of table cells in a row.</p>
     pub fn cells(mut self, input: crate::types::TableCell) -> Self {
         let mut v = self.cells.unwrap_or_default();
-                        v.push(input);
-                        self.cells = Some(v);
-                        self
+        v.push(input);
+        self.cells = Some(v);
+        self
     }
     /// <p>A list of table cells in a row.</p>
-    pub fn set_cells(mut self, input: std::option::Option<std::vec::Vec<crate::types::TableCell>>) -> Self {
-        self.cells = input; self
+    pub fn set_cells(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::TableCell>>,
+    ) -> Self {
+        self.cells = input;
+        self
     }
     /// Consumes the builder and constructs a [`TableRow`](crate::types::TableRow).
     pub fn build(self) -> crate::types::TableRow {
-        crate::types::TableRow {
-            cells: self.cells
-            ,
-        }
+        crate::types::TableRow { cells: self.cells }
     }
 }
-

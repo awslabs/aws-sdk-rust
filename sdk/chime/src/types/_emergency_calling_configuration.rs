@@ -3,14 +3,14 @@
 /// <p>The emergency calling configuration details associated with an Amazon Chime Voice Connector.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct EmergencyCallingConfiguration  {
+pub struct EmergencyCallingConfiguration {
     /// <p>The Dialed Number Identification Service (DNIS) emergency calling configuration details.</p>
     #[doc(hidden)]
     pub dnis: std::option::Option<std::vec::Vec<crate::types::DnisEmergencyCallingConfiguration>>,
 }
 impl EmergencyCallingConfiguration {
     /// <p>The Dialed Number Identification Service (DNIS) emergency calling configuration details.</p>
-    pub fn dnis(&self) -> std::option::Option<& [crate::types::DnisEmergencyCallingConfiguration]> {
+    pub fn dnis(&self) -> std::option::Option<&[crate::types::DnisEmergencyCallingConfiguration]> {
         self.dnis.as_deref()
     }
 }
@@ -25,7 +25,8 @@ impl EmergencyCallingConfiguration {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct EmergencyCallingConfigurationBuilder {
-    pub(crate) dnis: std::option::Option<std::vec::Vec<crate::types::DnisEmergencyCallingConfiguration>>,
+    pub(crate) dnis:
+        std::option::Option<std::vec::Vec<crate::types::DnisEmergencyCallingConfiguration>>,
 }
 impl EmergencyCallingConfigurationBuilder {
     /// Appends an item to `dnis`.
@@ -35,20 +36,20 @@ impl EmergencyCallingConfigurationBuilder {
     /// <p>The Dialed Number Identification Service (DNIS) emergency calling configuration details.</p>
     pub fn dnis(mut self, input: crate::types::DnisEmergencyCallingConfiguration) -> Self {
         let mut v = self.dnis.unwrap_or_default();
-                        v.push(input);
-                        self.dnis = Some(v);
-                        self
+        v.push(input);
+        self.dnis = Some(v);
+        self
     }
     /// <p>The Dialed Number Identification Service (DNIS) emergency calling configuration details.</p>
-    pub fn set_dnis(mut self, input: std::option::Option<std::vec::Vec<crate::types::DnisEmergencyCallingConfiguration>>) -> Self {
-        self.dnis = input; self
+    pub fn set_dnis(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::DnisEmergencyCallingConfiguration>>,
+    ) -> Self {
+        self.dnis = input;
+        self
     }
     /// Consumes the builder and constructs a [`EmergencyCallingConfiguration`](crate::types::EmergencyCallingConfiguration).
     pub fn build(self) -> crate::types::EmergencyCallingConfiguration {
-        crate::types::EmergencyCallingConfiguration {
-            dnis: self.dnis
-            ,
-        }
+        crate::types::EmergencyCallingConfiguration { dnis: self.dnis }
     }
 }
-

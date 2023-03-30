@@ -2,20 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetRasterDataCollectionInput  {
+pub struct GetRasterDataCollectionInput {
     /// <p>The Amazon Resource Name (ARN) of the raster data collection.</p>
     #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
 }
 impl GetRasterDataCollectionInput {
     /// <p>The Amazon Resource Name (ARN) of the raster data collection.</p>
-    pub fn arn(&self) -> std::option::Option<& str> {
+    pub fn arn(&self) -> std::option::Option<&str> {
         self.arn.as_deref()
     }
 }
 impl GetRasterDataCollectionInput {
     /// Creates a new builder-style object to manufacture [`GetRasterDataCollectionInput`](crate::operation::get_raster_data_collection::GetRasterDataCollectionInput).
-    pub fn builder() -> crate::operation::get_raster_data_collection::builders::GetRasterDataCollectionInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::get_raster_data_collection::builders::GetRasterDataCollectionInputBuilder
+    {
         crate::operation::get_raster_data_collection::builders::GetRasterDataCollectionInputBuilder::default()
     }
 }
@@ -34,16 +36,20 @@ impl GetRasterDataCollectionInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the raster data collection.</p>
     pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.arn = input; self
+        self.arn = input;
+        self
     }
     /// Consumes the builder and constructs a [`GetRasterDataCollectionInput`](crate::operation::get_raster_data_collection::GetRasterDataCollectionInput).
-    pub fn build(self) -> Result<crate::operation::get_raster_data_collection::GetRasterDataCollectionInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::get_raster_data_collection::GetRasterDataCollectionInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::get_raster_data_collection::GetRasterDataCollectionInput {
-                arn: self.arn
-                ,
-            }
+                arn: self.arn,
+            },
         )
     }
 }
-

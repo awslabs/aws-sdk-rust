@@ -3,7 +3,7 @@
 /// <p>The retry strategy to use for failed jobs, if the target is an Batch job. If you specify a retry strategy here, it overrides the retry strategy defined in the job definition.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct BatchRetryStrategy  {
+pub struct BatchRetryStrategy {
     /// <p>The number of times to attempt to retry, if the job fails. Valid values are 1–10.</p>
     #[doc(hidden)]
     pub attempts: i32,
@@ -35,15 +35,13 @@ impl BatchRetryStrategyBuilder {
     }
     /// <p>The number of times to attempt to retry, if the job fails. Valid values are 1–10.</p>
     pub fn set_attempts(mut self, input: std::option::Option<i32>) -> Self {
-        self.attempts = input; self
+        self.attempts = input;
+        self
     }
     /// Consumes the builder and constructs a [`BatchRetryStrategy`](crate::types::BatchRetryStrategy).
     pub fn build(self) -> crate::types::BatchRetryStrategy {
         crate::types::BatchRetryStrategy {
-            attempts: self.attempts
-                .unwrap_or_default()
-            ,
+            attempts: self.attempts.unwrap_or_default(),
         }
     }
 }
-

@@ -956,4 +956,3 @@ pub mod builders;
 
 /// Error types that Amazon Simple Systems Manager (SSM) can respond with.
 pub mod error;
-

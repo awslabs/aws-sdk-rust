@@ -4,55 +4,82 @@ pub use crate::operation::get_usage_statistics::_get_usage_statistics_output::Ge
 pub use crate::operation::get_usage_statistics::_get_usage_statistics_input::GetUsageStatisticsInputBuilder;
 
 /// Fluent builder constructing a request to `GetUsageStatistics`.
-/// 
+///
 /// <p>Retrieves (queries) quotas and aggregated usage data for one or more accounts.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct GetUsageStatisticsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::get_usage_statistics::builders::GetUsageStatisticsInputBuilder
-            }
-impl GetUsageStatisticsFluentBuilder  {
+    handle: std::sync::Arc<crate::client::Handle>,
+    inner: crate::operation::get_usage_statistics::builders::GetUsageStatisticsInputBuilder,
+}
+impl GetUsageStatisticsFluentBuilder {
     /// Creates a new `GetUsageStatistics`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
-                    /// sent. The operation's inner [http::Request] can be modified as well.
-                    pub async fn customize(self) -> std::result::Result<
-                        crate::client::customize::CustomizableOperation<crate::operation::get_usage_statistics::GetUsageStatistics, aws_http::retry::AwsResponseRetryClassifier,>,
-                        aws_smithy_http::result::SdkError<crate::operation::get_usage_statistics::GetUsageStatisticsError>
-                    >  {
-                        let handle = self.handle.clone();
-                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-                    }
-    
-                    /// Sends the request and returns the response.
-                    ///
-                    /// If an error occurs, an `SdkError` will be returned with additional details that
-                    /// can be matched against.
-                    ///
-                    /// By default, any retryable failures will be retried twice. Retry behavior
-                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                    /// set when configuring the client.
-                    pub async fn send(self) -> std::result::Result<crate::operation::get_usage_statistics::GetUsageStatisticsOutput, aws_smithy_http::result::SdkError<crate::operation::get_usage_statistics::GetUsageStatisticsError>>
-                     {
-                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&self.handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        self.handle.client.call(op).await
-                    }
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle,
+            inner: Default::default(),
+        }
+    }
+
+    /// Consume this builder, creating a customizable operation that can be modified before being
+    /// sent. The operation's inner [http::Request] can be modified as well.
+    pub async fn customize(
+        self,
+    ) -> std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::get_usage_statistics::GetUsageStatistics,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::result::SdkError<
+            crate::operation::get_usage_statistics::GetUsageStatisticsError,
+        >,
+    > {
+        let handle = self.handle.clone();
+        let operation = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+    }
+
+    /// Sends the request and returns the response.
+    ///
+    /// If an error occurs, an `SdkError` will be returned with additional details that
+    /// can be matched against.
+    ///
+    /// By default, any retryable failures will be retried twice. Retry behavior
+    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+    /// set when configuring the client.
+    pub async fn send(
+        self,
+    ) -> std::result::Result<
+        crate::operation::get_usage_statistics::GetUsageStatisticsOutput,
+        aws_smithy_http::result::SdkError<
+            crate::operation::get_usage_statistics::GetUsageStatisticsError,
+        >,
+    > {
+        let op = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&self.handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        self.handle.client.call(op).await
+    }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::get_usage_statistics::paginator::GetUsageStatisticsPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::get_usage_statistics::paginator::GetUsageStatisticsPaginator {
-                            crate::operation::get_usage_statistics::paginator::GetUsageStatisticsPaginator::new(self.handle, self.inner)
-                        }
+    ///
+    /// Paginators are used by calling [`send().await`](crate::operation::get_usage_statistics::paginator::GetUsageStatisticsPaginator::send) which returns a `Stream`.
+    pub fn into_paginator(
+        self,
+    ) -> crate::operation::get_usage_statistics::paginator::GetUsageStatisticsPaginator {
+        crate::operation::get_usage_statistics::paginator::GetUsageStatisticsPaginator::new(
+            self.handle,
+            self.inner,
+        )
+    }
     /// Appends an item to `filterBy`.
     ///
     /// To override the contents of this collection use [`set_filter_by`](Self::set_filter_by).
@@ -63,7 +90,10 @@ impl GetUsageStatisticsFluentBuilder  {
         self
     }
     /// <p>An array of objects, one for each condition to use to filter the query results. If you specify more than one condition, Amazon Macie uses an AND operator to join the conditions.</p>
-    pub fn set_filter_by(mut self, input: std::option::Option<std::vec::Vec<crate::types::UsageStatisticsFilter>>) -> Self {
+    pub fn set_filter_by(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::UsageStatisticsFilter>>,
+    ) -> Self {
         self.inner = self.inner.set_filter_by(input);
         self
     }
@@ -93,7 +123,10 @@ impl GetUsageStatisticsFluentBuilder  {
         self
     }
     /// <p>The criteria to use to sort the query results.</p>
-    pub fn set_sort_by(mut self, input: std::option::Option<crate::types::UsageStatisticsSortBy>) -> Self {
+    pub fn set_sort_by(
+        mut self,
+        input: std::option::Option<crate::types::UsageStatisticsSortBy>,
+    ) -> Self {
         self.inner = self.inner.set_sort_by(input);
         self
     }
@@ -108,4 +141,3 @@ impl GetUsageStatisticsFluentBuilder  {
         self
     }
 }
-

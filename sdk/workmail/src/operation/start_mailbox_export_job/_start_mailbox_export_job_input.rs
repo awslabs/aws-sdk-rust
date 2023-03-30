@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct StartMailboxExportJobInput  {
+pub struct StartMailboxExportJobInput {
     /// <p>The idempotency token for the client request.</p>
     #[doc(hidden)]
     pub client_token: std::option::Option<std::string::String>,
@@ -30,41 +30,43 @@ pub struct StartMailboxExportJobInput  {
 }
 impl StartMailboxExportJobInput {
     /// <p>The idempotency token for the client request.</p>
-    pub fn client_token(&self) -> std::option::Option<& str> {
+    pub fn client_token(&self) -> std::option::Option<&str> {
         self.client_token.as_deref()
     }
     /// <p>The identifier associated with the organization.</p>
-    pub fn organization_id(&self) -> std::option::Option<& str> {
+    pub fn organization_id(&self) -> std::option::Option<&str> {
         self.organization_id.as_deref()
     }
     /// <p>The identifier of the user or resource associated with the mailbox.</p>
-    pub fn entity_id(&self) -> std::option::Option<& str> {
+    pub fn entity_id(&self) -> std::option::Option<&str> {
         self.entity_id.as_deref()
     }
     /// <p>The mailbox export job description.</p>
-    pub fn description(&self) -> std::option::Option<& str> {
+    pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
     /// <p>The ARN of the AWS Identity and Access Management (IAM) role that grants write permission to the S3 bucket.</p>
-    pub fn role_arn(&self) -> std::option::Option<& str> {
+    pub fn role_arn(&self) -> std::option::Option<&str> {
         self.role_arn.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the symmetric AWS Key Management Service (AWS KMS) key that encrypts the exported mailbox content.</p>
-    pub fn kms_key_arn(&self) -> std::option::Option<& str> {
+    pub fn kms_key_arn(&self) -> std::option::Option<&str> {
         self.kms_key_arn.as_deref()
     }
     /// <p>The name of the S3 bucket.</p>
-    pub fn s3_bucket_name(&self) -> std::option::Option<& str> {
+    pub fn s3_bucket_name(&self) -> std::option::Option<&str> {
         self.s3_bucket_name.as_deref()
     }
     /// <p>The S3 bucket prefix.</p>
-    pub fn s3_prefix(&self) -> std::option::Option<& str> {
+    pub fn s3_prefix(&self) -> std::option::Option<&str> {
         self.s3_prefix.as_deref()
     }
 }
 impl StartMailboxExportJobInput {
     /// Creates a new builder-style object to manufacture [`StartMailboxExportJobInput`](crate::operation::start_mailbox_export_job::StartMailboxExportJobInput).
-    pub fn builder() -> crate::operation::start_mailbox_export_job::builders::StartMailboxExportJobInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::start_mailbox_export_job::builders::StartMailboxExportJobInputBuilder
+    {
         crate::operation::start_mailbox_export_job::builders::StartMailboxExportJobInputBuilder::default()
     }
 }
@@ -90,7 +92,8 @@ impl StartMailboxExportJobInputBuilder {
     }
     /// <p>The idempotency token for the client request.</p>
     pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.client_token = input; self
+        self.client_token = input;
+        self
     }
     /// <p>The identifier associated with the organization.</p>
     pub fn organization_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -99,7 +102,8 @@ impl StartMailboxExportJobInputBuilder {
     }
     /// <p>The identifier associated with the organization.</p>
     pub fn set_organization_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.organization_id = input; self
+        self.organization_id = input;
+        self
     }
     /// <p>The identifier of the user or resource associated with the mailbox.</p>
     pub fn entity_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -108,7 +112,8 @@ impl StartMailboxExportJobInputBuilder {
     }
     /// <p>The identifier of the user or resource associated with the mailbox.</p>
     pub fn set_entity_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.entity_id = input; self
+        self.entity_id = input;
+        self
     }
     /// <p>The mailbox export job description.</p>
     pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -117,7 +122,8 @@ impl StartMailboxExportJobInputBuilder {
     }
     /// <p>The mailbox export job description.</p>
     pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.description = input; self
+        self.description = input;
+        self
     }
     /// <p>The ARN of the AWS Identity and Access Management (IAM) role that grants write permission to the S3 bucket.</p>
     pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -126,7 +132,8 @@ impl StartMailboxExportJobInputBuilder {
     }
     /// <p>The ARN of the AWS Identity and Access Management (IAM) role that grants write permission to the S3 bucket.</p>
     pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.role_arn = input; self
+        self.role_arn = input;
+        self
     }
     /// <p>The Amazon Resource Name (ARN) of the symmetric AWS Key Management Service (AWS KMS) key that encrypts the exported mailbox content.</p>
     pub fn kms_key_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -135,7 +142,8 @@ impl StartMailboxExportJobInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the symmetric AWS Key Management Service (AWS KMS) key that encrypts the exported mailbox content.</p>
     pub fn set_kms_key_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.kms_key_arn = input; self
+        self.kms_key_arn = input;
+        self
     }
     /// <p>The name of the S3 bucket.</p>
     pub fn s3_bucket_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -144,7 +152,8 @@ impl StartMailboxExportJobInputBuilder {
     }
     /// <p>The name of the S3 bucket.</p>
     pub fn set_s3_bucket_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.s3_bucket_name = input; self
+        self.s3_bucket_name = input;
+        self
     }
     /// <p>The S3 bucket prefix.</p>
     pub fn s3_prefix(mut self, input: impl Into<std::string::String>) -> Self {
@@ -153,30 +162,27 @@ impl StartMailboxExportJobInputBuilder {
     }
     /// <p>The S3 bucket prefix.</p>
     pub fn set_s3_prefix(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.s3_prefix = input; self
+        self.s3_prefix = input;
+        self
     }
     /// Consumes the builder and constructs a [`StartMailboxExportJobInput`](crate::operation::start_mailbox_export_job::StartMailboxExportJobInput).
-    pub fn build(self) -> Result<crate::operation::start_mailbox_export_job::StartMailboxExportJobInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::start_mailbox_export_job::StartMailboxExportJobInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::start_mailbox_export_job::StartMailboxExportJobInput {
-                client_token: self.client_token
-                ,
-                organization_id: self.organization_id
-                ,
-                entity_id: self.entity_id
-                ,
-                description: self.description
-                ,
-                role_arn: self.role_arn
-                ,
-                kms_key_arn: self.kms_key_arn
-                ,
-                s3_bucket_name: self.s3_bucket_name
-                ,
-                s3_prefix: self.s3_prefix
-                ,
-            }
+                client_token: self.client_token,
+                organization_id: self.organization_id,
+                entity_id: self.entity_id,
+                description: self.description,
+                role_arn: self.role_arn,
+                kms_key_arn: self.kms_key_arn,
+                s3_bucket_name: self.s3_bucket_name,
+                s3_prefix: self.s3_prefix,
+            },
         )
     }
 }
-

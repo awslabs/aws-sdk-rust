@@ -3,14 +3,16 @@
 /// <p>The parameters for S3.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct S3Parameters  {
+pub struct S3Parameters {
     /// <p>Location of the Amazon S3 manifest file. This is NULL if the manifest file was uploaded into Amazon QuickSight.</p>
     #[doc(hidden)]
     pub manifest_file_location: std::option::Option<crate::types::ManifestFileLocation>,
 }
 impl S3Parameters {
     /// <p>Location of the Amazon S3 manifest file. This is NULL if the manifest file was uploaded into Amazon QuickSight.</p>
-    pub fn manifest_file_location(&self) -> std::option::Option<& crate::types::ManifestFileLocation> {
+    pub fn manifest_file_location(
+        &self,
+    ) -> std::option::Option<&crate::types::ManifestFileLocation> {
         self.manifest_file_location.as_ref()
     }
 }
@@ -34,15 +36,17 @@ impl S3ParametersBuilder {
         self
     }
     /// <p>Location of the Amazon S3 manifest file. This is NULL if the manifest file was uploaded into Amazon QuickSight.</p>
-    pub fn set_manifest_file_location(mut self, input: std::option::Option<crate::types::ManifestFileLocation>) -> Self {
-        self.manifest_file_location = input; self
+    pub fn set_manifest_file_location(
+        mut self,
+        input: std::option::Option<crate::types::ManifestFileLocation>,
+    ) -> Self {
+        self.manifest_file_location = input;
+        self
     }
     /// Consumes the builder and constructs a [`S3Parameters`](crate::types::S3Parameters).
     pub fn build(self) -> crate::types::S3Parameters {
         crate::types::S3Parameters {
-            manifest_file_location: self.manifest_file_location
-            ,
+            manifest_file_location: self.manifest_file_location,
         }
     }
 }
-

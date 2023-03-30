@@ -3,7 +3,7 @@
 /// <p>The HTTP header.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct HttpHeader  {
+pub struct HttpHeader {
     /// <p>The header name.</p>
     #[doc(hidden)]
     pub header_name: std::option::Option<std::string::String>,
@@ -13,11 +13,11 @@ pub struct HttpHeader  {
 }
 impl HttpHeader {
     /// <p>The header name.</p>
-    pub fn header_name(&self) -> std::option::Option<& str> {
+    pub fn header_name(&self) -> std::option::Option<&str> {
         self.header_name.as_deref()
     }
     /// <p>The header value.</p>
-    pub fn header_value(&self) -> std::option::Option<& str> {
+    pub fn header_value(&self) -> std::option::Option<&str> {
         self.header_value.as_deref()
     }
 }
@@ -43,7 +43,8 @@ impl HttpHeaderBuilder {
     }
     /// <p>The header name.</p>
     pub fn set_header_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.header_name = input; self
+        self.header_name = input;
+        self
     }
     /// <p>The header value.</p>
     pub fn header_value(mut self, input: impl Into<std::string::String>) -> Self {
@@ -52,16 +53,14 @@ impl HttpHeaderBuilder {
     }
     /// <p>The header value.</p>
     pub fn set_header_value(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.header_value = input; self
+        self.header_value = input;
+        self
     }
     /// Consumes the builder and constructs a [`HttpHeader`](crate::types::HttpHeader).
     pub fn build(self) -> crate::types::HttpHeader {
         crate::types::HttpHeader {
-            header_name: self.header_name
-            ,
-            header_value: self.header_value
-            ,
+            header_name: self.header_name,
+            header_value: self.header_value,
         }
     }
 }
-

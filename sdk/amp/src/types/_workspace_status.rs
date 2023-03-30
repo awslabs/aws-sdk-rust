@@ -3,14 +3,14 @@
 /// Represents the status of a workspace.
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct WorkspaceStatus  {
+pub struct WorkspaceStatus {
     /// Status code of this workspace.
     #[doc(hidden)]
     pub status_code: std::option::Option<crate::types::WorkspaceStatusCode>,
 }
 impl WorkspaceStatus {
     /// Status code of this workspace.
-    pub fn status_code(&self) -> std::option::Option<& crate::types::WorkspaceStatusCode> {
+    pub fn status_code(&self) -> std::option::Option<&crate::types::WorkspaceStatusCode> {
         self.status_code.as_ref()
     }
 }
@@ -34,15 +34,17 @@ impl WorkspaceStatusBuilder {
         self
     }
     /// Status code of this workspace.
-    pub fn set_status_code(mut self, input: std::option::Option<crate::types::WorkspaceStatusCode>) -> Self {
-        self.status_code = input; self
+    pub fn set_status_code(
+        mut self,
+        input: std::option::Option<crate::types::WorkspaceStatusCode>,
+    ) -> Self {
+        self.status_code = input;
+        self
     }
     /// Consumes the builder and constructs a [`WorkspaceStatus`](crate::types::WorkspaceStatus).
     pub fn build(self) -> crate::types::WorkspaceStatus {
         crate::types::WorkspaceStatus {
-            status_code: self.status_code
-            ,
+            status_code: self.status_code,
         }
     }
 }
-

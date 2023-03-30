@@ -3,7 +3,7 @@
 /// <p>This data type is used as a response element to <code>DescribeDBLogFiles</code>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeDbLogFilesDetails  {
+pub struct DescribeDbLogFilesDetails {
     /// <p>The name of the log file for the specified DB instance.</p>
     #[doc(hidden)]
     pub log_file_name: std::option::Option<std::string::String>,
@@ -16,7 +16,7 @@ pub struct DescribeDbLogFilesDetails  {
 }
 impl DescribeDbLogFilesDetails {
     /// <p>The name of the log file for the specified DB instance.</p>
-    pub fn log_file_name(&self) -> std::option::Option<& str> {
+    pub fn log_file_name(&self) -> std::option::Option<&str> {
         self.log_file_name.as_deref()
     }
     /// <p>A POSIX timestamp when the last log entry was written.</p>
@@ -51,7 +51,8 @@ impl DescribeDbLogFilesDetailsBuilder {
     }
     /// <p>The name of the log file for the specified DB instance.</p>
     pub fn set_log_file_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.log_file_name = input; self
+        self.log_file_name = input;
+        self
     }
     /// <p>A POSIX timestamp when the last log entry was written.</p>
     pub fn last_written(mut self, input: i64) -> Self {
@@ -60,7 +61,8 @@ impl DescribeDbLogFilesDetailsBuilder {
     }
     /// <p>A POSIX timestamp when the last log entry was written.</p>
     pub fn set_last_written(mut self, input: std::option::Option<i64>) -> Self {
-        self.last_written = input; self
+        self.last_written = input;
+        self
     }
     /// <p>The size, in bytes, of the log file for the specified DB instance.</p>
     pub fn size(mut self, input: i64) -> Self {
@@ -69,20 +71,15 @@ impl DescribeDbLogFilesDetailsBuilder {
     }
     /// <p>The size, in bytes, of the log file for the specified DB instance.</p>
     pub fn set_size(mut self, input: std::option::Option<i64>) -> Self {
-        self.size = input; self
+        self.size = input;
+        self
     }
     /// Consumes the builder and constructs a [`DescribeDbLogFilesDetails`](crate::types::DescribeDbLogFilesDetails).
     pub fn build(self) -> crate::types::DescribeDbLogFilesDetails {
         crate::types::DescribeDbLogFilesDetails {
-            log_file_name: self.log_file_name
-            ,
-            last_written: self.last_written
-                .unwrap_or_default()
-            ,
-            size: self.size
-                .unwrap_or_default()
-            ,
+            log_file_name: self.log_file_name,
+            last_written: self.last_written.unwrap_or_default(),
+            size: self.size.unwrap_or_default(),
         }
     }
 }
-

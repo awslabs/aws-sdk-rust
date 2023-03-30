@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ModifyVerifiedAccessEndpointPolicyInput  {
+pub struct ModifyVerifiedAccessEndpointPolicyInput {
     /// <p>The ID of the Amazon Web Services Verified Access endpoint.</p>
     #[doc(hidden)]
     pub verified_access_endpoint_id: std::option::Option<std::string::String>,
@@ -21,7 +21,7 @@ pub struct ModifyVerifiedAccessEndpointPolicyInput  {
 }
 impl ModifyVerifiedAccessEndpointPolicyInput {
     /// <p>The ID of the Amazon Web Services Verified Access endpoint.</p>
-    pub fn verified_access_endpoint_id(&self) -> std::option::Option<& str> {
+    pub fn verified_access_endpoint_id(&self) -> std::option::Option<&str> {
         self.verified_access_endpoint_id.as_deref()
     }
     /// <p>The status of the Verified Access policy.</p>
@@ -29,11 +29,11 @@ impl ModifyVerifiedAccessEndpointPolicyInput {
         self.policy_enabled
     }
     /// <p>The Amazon Web Services Verified Access policy document.</p>
-    pub fn policy_document(&self) -> std::option::Option<& str> {
+    pub fn policy_document(&self) -> std::option::Option<&str> {
         self.policy_document.as_deref()
     }
     /// <p>A unique, case-sensitive token that you provide to ensure idempotency of your modification request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring Idempotency</a>.</p>
-    pub fn client_token(&self) -> std::option::Option<& str> {
+    pub fn client_token(&self) -> std::option::Option<&str> {
         self.client_token.as_deref()
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
@@ -43,7 +43,7 @@ impl ModifyVerifiedAccessEndpointPolicyInput {
 }
 impl ModifyVerifiedAccessEndpointPolicyInput {
     /// Creates a new builder-style object to manufacture [`ModifyVerifiedAccessEndpointPolicyInput`](crate::operation::modify_verified_access_endpoint_policy::ModifyVerifiedAccessEndpointPolicyInput).
-    pub fn builder() -> crate::operation::modify_verified_access_endpoint_policy::builders::ModifyVerifiedAccessEndpointPolicyInputBuilder {
+    pub fn builder() -> crate::operation::modify_verified_access_endpoint_policy::builders::ModifyVerifiedAccessEndpointPolicyInputBuilder{
         crate::operation::modify_verified_access_endpoint_policy::builders::ModifyVerifiedAccessEndpointPolicyInputBuilder::default()
     }
 }
@@ -65,8 +65,12 @@ impl ModifyVerifiedAccessEndpointPolicyInputBuilder {
         self
     }
     /// <p>The ID of the Amazon Web Services Verified Access endpoint.</p>
-    pub fn set_verified_access_endpoint_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.verified_access_endpoint_id = input; self
+    pub fn set_verified_access_endpoint_id(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.verified_access_endpoint_id = input;
+        self
     }
     /// <p>The status of the Verified Access policy.</p>
     pub fn policy_enabled(mut self, input: bool) -> Self {
@@ -75,7 +79,8 @@ impl ModifyVerifiedAccessEndpointPolicyInputBuilder {
     }
     /// <p>The status of the Verified Access policy.</p>
     pub fn set_policy_enabled(mut self, input: std::option::Option<bool>) -> Self {
-        self.policy_enabled = input; self
+        self.policy_enabled = input;
+        self
     }
     /// <p>The Amazon Web Services Verified Access policy document.</p>
     pub fn policy_document(mut self, input: impl Into<std::string::String>) -> Self {
@@ -84,7 +89,8 @@ impl ModifyVerifiedAccessEndpointPolicyInputBuilder {
     }
     /// <p>The Amazon Web Services Verified Access policy document.</p>
     pub fn set_policy_document(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.policy_document = input; self
+        self.policy_document = input;
+        self
     }
     /// <p>A unique, case-sensitive token that you provide to ensure idempotency of your modification request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring Idempotency</a>.</p>
     pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -93,7 +99,8 @@ impl ModifyVerifiedAccessEndpointPolicyInputBuilder {
     }
     /// <p>A unique, case-sensitive token that you provide to ensure idempotency of your modification request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring Idempotency</a>.</p>
     pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.client_token = input; self
+        self.client_token = input;
+        self
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn dry_run(mut self, input: bool) -> Self {
@@ -102,10 +109,11 @@ impl ModifyVerifiedAccessEndpointPolicyInputBuilder {
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn set_dry_run(mut self, input: std::option::Option<bool>) -> Self {
-        self.dry_run = input; self
+        self.dry_run = input;
+        self
     }
     /// Consumes the builder and constructs a [`ModifyVerifiedAccessEndpointPolicyInput`](crate::operation::modify_verified_access_endpoint_policy::ModifyVerifiedAccessEndpointPolicyInput).
-    pub fn build(self) -> Result<crate::operation::modify_verified_access_endpoint_policy::ModifyVerifiedAccessEndpointPolicyInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> Result<crate::operation::modify_verified_access_endpoint_policy::ModifyVerifiedAccessEndpointPolicyInput, aws_smithy_http::operation::error::BuildError>{
         Ok(
             crate::operation::modify_verified_access_endpoint_policy::ModifyVerifiedAccessEndpointPolicyInput {
                 verified_access_endpoint_id: self.verified_access_endpoint_id
@@ -122,4 +130,3 @@ impl ModifyVerifiedAccessEndpointPolicyInputBuilder {
         )
     }
 }
-

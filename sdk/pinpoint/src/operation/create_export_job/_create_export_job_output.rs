@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateExportJobOutput  {
+pub struct CreateExportJobOutput {
     /// <p>Provides information about the status and settings of a job that exports endpoint definitions to a file. The file can be added directly to an Amazon Simple Storage Service (Amazon S3) bucket by using the Amazon Pinpoint API or downloaded directly to a computer by using the Amazon Pinpoint console.</p>
     #[doc(hidden)]
     pub export_job_response: std::option::Option<crate::types::ExportJobResponse>,
@@ -10,18 +10,19 @@ pub struct CreateExportJobOutput  {
 }
 impl CreateExportJobOutput {
     /// <p>Provides information about the status and settings of a job that exports endpoint definitions to a file. The file can be added directly to an Amazon Simple Storage Service (Amazon S3) bucket by using the Amazon Pinpoint API or downloaded directly to a computer by using the Amazon Pinpoint console.</p>
-    pub fn export_job_response(&self) -> std::option::Option<& crate::types::ExportJobResponse> {
+    pub fn export_job_response(&self) -> std::option::Option<&crate::types::ExportJobResponse> {
         self.export_job_response.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for CreateExportJobOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl CreateExportJobOutput {
     /// Creates a new builder-style object to manufacture [`CreateExportJobOutput`](crate::operation::create_export_job::CreateExportJobOutput).
-    pub fn builder() -> crate::operation::create_export_job::builders::CreateExportJobOutputBuilder {
+    pub fn builder() -> crate::operation::create_export_job::builders::CreateExportJobOutputBuilder
+    {
         crate::operation::create_export_job::builders::CreateExportJobOutputBuilder::default()
     }
 }
@@ -40,25 +41,27 @@ impl CreateExportJobOutputBuilder {
         self
     }
     /// <p>Provides information about the status and settings of a job that exports endpoint definitions to a file. The file can be added directly to an Amazon Simple Storage Service (Amazon S3) bucket by using the Amazon Pinpoint API or downloaded directly to a computer by using the Amazon Pinpoint console.</p>
-    pub fn set_export_job_response(mut self, input: std::option::Option<crate::types::ExportJobResponse>) -> Self {
-        self.export_job_response = input; self
+    pub fn set_export_job_response(
+        mut self,
+        input: std::option::Option<crate::types::ExportJobResponse>,
+    ) -> Self {
+        self.export_job_response = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`CreateExportJobOutput`](crate::operation::create_export_job::CreateExportJobOutput).
     pub fn build(self) -> crate::operation::create_export_job::CreateExportJobOutput {
         crate::operation::create_export_job::CreateExportJobOutput {
-            export_job_response: self.export_job_response
-            ,
+            export_job_response: self.export_job_response,
             _request_id: self._request_id,
         }
     }
 }
-

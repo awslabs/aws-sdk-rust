@@ -3,7 +3,7 @@
 /// <p>Retrieves a list of analyzers.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListAnalyzersInput  {
+pub struct ListAnalyzersInput {
     /// <p>A token used for pagination of results returned.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
@@ -16,7 +16,7 @@ pub struct ListAnalyzersInput  {
 }
 impl ListAnalyzersInput {
     /// <p>A token used for pagination of results returned.</p>
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
     /// <p>The maximum number of results to return in the response.</p>
@@ -24,7 +24,7 @@ impl ListAnalyzersInput {
         self.max_results
     }
     /// <p>The type of analyzer.</p>
-    pub fn r#type(&self) -> std::option::Option<& crate::types::Type> {
+    pub fn r#type(&self) -> std::option::Option<&crate::types::Type> {
         self.r#type.as_ref()
     }
 }
@@ -51,7 +51,8 @@ impl ListAnalyzersInputBuilder {
     }
     /// <p>A token used for pagination of results returned.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input; self
+        self.next_token = input;
+        self
     }
     /// <p>The maximum number of results to return in the response.</p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -60,7 +61,8 @@ impl ListAnalyzersInputBuilder {
     }
     /// <p>The maximum number of results to return in the response.</p>
     pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_results = input; self
+        self.max_results = input;
+        self
     }
     /// <p>The type of analyzer.</p>
     pub fn r#type(mut self, input: crate::types::Type) -> Self {
@@ -69,20 +71,20 @@ impl ListAnalyzersInputBuilder {
     }
     /// <p>The type of analyzer.</p>
     pub fn set_type(mut self, input: std::option::Option<crate::types::Type>) -> Self {
-        self.r#type = input; self
+        self.r#type = input;
+        self
     }
     /// Consumes the builder and constructs a [`ListAnalyzersInput`](crate::operation::list_analyzers::ListAnalyzersInput).
-    pub fn build(self) -> Result<crate::operation::list_analyzers::ListAnalyzersInput, aws_smithy_http::operation::error::BuildError> {
-        Ok(
-            crate::operation::list_analyzers::ListAnalyzersInput {
-                next_token: self.next_token
-                ,
-                max_results: self.max_results
-                ,
-                r#type: self.r#type
-                ,
-            }
-        )
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::list_analyzers::ListAnalyzersInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        Ok(crate::operation::list_analyzers::ListAnalyzersInput {
+            next_token: self.next_token,
+            max_results: self.max_results,
+            r#type: self.r#type,
+        })
     }
 }
-

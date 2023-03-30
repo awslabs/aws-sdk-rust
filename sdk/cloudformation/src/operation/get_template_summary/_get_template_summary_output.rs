@@ -3,14 +3,14 @@
 /// <p>The output for the <code>GetTemplateSummary</code> action.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetTemplateSummaryOutput  {
+pub struct GetTemplateSummaryOutput {
     /// <p>A list of parameter declarations that describe various properties for each parameter.</p>
     #[doc(hidden)]
     pub parameters: std::option::Option<std::vec::Vec<crate::types::ParameterDeclaration>>,
     /// <p>The value that's defined in the <code>Description</code> property of the template.</p>
     #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
-    /// <p>The capabilities found within the template. If your template contains IAM resources, you must specify the <code>CAPABILITY_IAM</code> or <code>CAPABILITY_NAMED_IAM</code> value for this parameter when you use the <code>CreateStack</code> or <code>UpdateStack</code> actions with your template; otherwise, those actions return an <code>InsufficientCapabilities</code> error.</p> 
+    /// <p>The capabilities found within the template. If your template contains IAM resources, you must specify the <code>CAPABILITY_IAM</code> or <code>CAPABILITY_NAMED_IAM</code> value for this parameter when you use the <code>CreateStack</code> or <code>UpdateStack</code> actions with your template; otherwise, those actions return an <code>InsufficientCapabilities</code> error.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html#capabilities">Acknowledging IAM Resources in CloudFormation Templates</a>.</p>
     #[doc(hidden)]
     pub capabilities: std::option::Option<std::vec::Vec<crate::types::Capability>>,
@@ -31,56 +31,60 @@ pub struct GetTemplateSummaryOutput  {
     pub declared_transforms: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>A list of resource identifier summaries that describe the target resources of an import operation and the properties you can provide during the import to identify the target resources. For example, <code>BucketName</code> is a possible identifier property for an <code>AWS::S3::Bucket</code> resource.</p>
     #[doc(hidden)]
-    pub resource_identifier_summaries: std::option::Option<std::vec::Vec<crate::types::ResourceIdentifierSummary>>,
+    pub resource_identifier_summaries:
+        std::option::Option<std::vec::Vec<crate::types::ResourceIdentifierSummary>>,
     _request_id: Option<String>,
 }
 impl GetTemplateSummaryOutput {
     /// <p>A list of parameter declarations that describe various properties for each parameter.</p>
-    pub fn parameters(&self) -> std::option::Option<& [crate::types::ParameterDeclaration]> {
+    pub fn parameters(&self) -> std::option::Option<&[crate::types::ParameterDeclaration]> {
         self.parameters.as_deref()
     }
     /// <p>The value that's defined in the <code>Description</code> property of the template.</p>
-    pub fn description(&self) -> std::option::Option<& str> {
+    pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
-    /// <p>The capabilities found within the template. If your template contains IAM resources, you must specify the <code>CAPABILITY_IAM</code> or <code>CAPABILITY_NAMED_IAM</code> value for this parameter when you use the <code>CreateStack</code> or <code>UpdateStack</code> actions with your template; otherwise, those actions return an <code>InsufficientCapabilities</code> error.</p> 
+    /// <p>The capabilities found within the template. If your template contains IAM resources, you must specify the <code>CAPABILITY_IAM</code> or <code>CAPABILITY_NAMED_IAM</code> value for this parameter when you use the <code>CreateStack</code> or <code>UpdateStack</code> actions with your template; otherwise, those actions return an <code>InsufficientCapabilities</code> error.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html#capabilities">Acknowledging IAM Resources in CloudFormation Templates</a>.</p>
-    pub fn capabilities(&self) -> std::option::Option<& [crate::types::Capability]> {
+    pub fn capabilities(&self) -> std::option::Option<&[crate::types::Capability]> {
         self.capabilities.as_deref()
     }
     /// <p>The list of resources that generated the values in the <code>Capabilities</code> response element.</p>
-    pub fn capabilities_reason(&self) -> std::option::Option<& str> {
+    pub fn capabilities_reason(&self) -> std::option::Option<&str> {
         self.capabilities_reason.as_deref()
     }
     /// <p>A list of all the template resource types that are defined in the template, such as <code>AWS::EC2::Instance</code>, <code>AWS::Dynamo::Table</code>, and <code>Custom::MyCustomInstance</code>.</p>
-    pub fn resource_types(&self) -> std::option::Option<& [std::string::String]> {
+    pub fn resource_types(&self) -> std::option::Option<&[std::string::String]> {
         self.resource_types.as_deref()
     }
     /// <p>The Amazon Web Services template format version, which identifies the capabilities of the template.</p>
-    pub fn version(&self) -> std::option::Option<& str> {
+    pub fn version(&self) -> std::option::Option<&str> {
         self.version.as_deref()
     }
     /// <p>The value that's defined for the <code>Metadata</code> property of the template.</p>
-    pub fn metadata(&self) -> std::option::Option<& str> {
+    pub fn metadata(&self) -> std::option::Option<&str> {
         self.metadata.as_deref()
     }
     /// <p>A list of the transforms that are declared in the template.</p>
-    pub fn declared_transforms(&self) -> std::option::Option<& [std::string::String]> {
+    pub fn declared_transforms(&self) -> std::option::Option<&[std::string::String]> {
         self.declared_transforms.as_deref()
     }
     /// <p>A list of resource identifier summaries that describe the target resources of an import operation and the properties you can provide during the import to identify the target resources. For example, <code>BucketName</code> is a possible identifier property for an <code>AWS::S3::Bucket</code> resource.</p>
-    pub fn resource_identifier_summaries(&self) -> std::option::Option<& [crate::types::ResourceIdentifierSummary]> {
+    pub fn resource_identifier_summaries(
+        &self,
+    ) -> std::option::Option<&[crate::types::ResourceIdentifierSummary]> {
         self.resource_identifier_summaries.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for GetTemplateSummaryOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl GetTemplateSummaryOutput {
     /// Creates a new builder-style object to manufacture [`GetTemplateSummaryOutput`](crate::operation::get_template_summary::GetTemplateSummaryOutput).
-    pub fn builder() -> crate::operation::get_template_summary::builders::GetTemplateSummaryOutputBuilder {
+    pub fn builder(
+    ) -> crate::operation::get_template_summary::builders::GetTemplateSummaryOutputBuilder {
         crate::operation::get_template_summary::builders::GetTemplateSummaryOutputBuilder::default()
     }
 }
@@ -97,7 +101,8 @@ pub struct GetTemplateSummaryOutputBuilder {
     pub(crate) version: std::option::Option<std::string::String>,
     pub(crate) metadata: std::option::Option<std::string::String>,
     pub(crate) declared_transforms: std::option::Option<std::vec::Vec<std::string::String>>,
-    pub(crate) resource_identifier_summaries: std::option::Option<std::vec::Vec<crate::types::ResourceIdentifierSummary>>,
+    pub(crate) resource_identifier_summaries:
+        std::option::Option<std::vec::Vec<crate::types::ResourceIdentifierSummary>>,
     _request_id: Option<String>,
 }
 impl GetTemplateSummaryOutputBuilder {
@@ -108,13 +113,17 @@ impl GetTemplateSummaryOutputBuilder {
     /// <p>A list of parameter declarations that describe various properties for each parameter.</p>
     pub fn parameters(mut self, input: crate::types::ParameterDeclaration) -> Self {
         let mut v = self.parameters.unwrap_or_default();
-                        v.push(input);
-                        self.parameters = Some(v);
-                        self
+        v.push(input);
+        self.parameters = Some(v);
+        self
     }
     /// <p>A list of parameter declarations that describe various properties for each parameter.</p>
-    pub fn set_parameters(mut self, input: std::option::Option<std::vec::Vec<crate::types::ParameterDeclaration>>) -> Self {
-        self.parameters = input; self
+    pub fn set_parameters(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::ParameterDeclaration>>,
+    ) -> Self {
+        self.parameters = input;
+        self
     }
     /// <p>The value that's defined in the <code>Description</code> property of the template.</p>
     pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -123,24 +132,29 @@ impl GetTemplateSummaryOutputBuilder {
     }
     /// <p>The value that's defined in the <code>Description</code> property of the template.</p>
     pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.description = input; self
+        self.description = input;
+        self
     }
     /// Appends an item to `capabilities`.
     ///
     /// To override the contents of this collection use [`set_capabilities`](Self::set_capabilities).
     ///
-    /// <p>The capabilities found within the template. If your template contains IAM resources, you must specify the <code>CAPABILITY_IAM</code> or <code>CAPABILITY_NAMED_IAM</code> value for this parameter when you use the <code>CreateStack</code> or <code>UpdateStack</code> actions with your template; otherwise, those actions return an <code>InsufficientCapabilities</code> error.</p> 
+    /// <p>The capabilities found within the template. If your template contains IAM resources, you must specify the <code>CAPABILITY_IAM</code> or <code>CAPABILITY_NAMED_IAM</code> value for this parameter when you use the <code>CreateStack</code> or <code>UpdateStack</code> actions with your template; otherwise, those actions return an <code>InsufficientCapabilities</code> error.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html#capabilities">Acknowledging IAM Resources in CloudFormation Templates</a>.</p>
     pub fn capabilities(mut self, input: crate::types::Capability) -> Self {
         let mut v = self.capabilities.unwrap_or_default();
-                        v.push(input);
-                        self.capabilities = Some(v);
-                        self
+        v.push(input);
+        self.capabilities = Some(v);
+        self
     }
-    /// <p>The capabilities found within the template. If your template contains IAM resources, you must specify the <code>CAPABILITY_IAM</code> or <code>CAPABILITY_NAMED_IAM</code> value for this parameter when you use the <code>CreateStack</code> or <code>UpdateStack</code> actions with your template; otherwise, those actions return an <code>InsufficientCapabilities</code> error.</p> 
+    /// <p>The capabilities found within the template. If your template contains IAM resources, you must specify the <code>CAPABILITY_IAM</code> or <code>CAPABILITY_NAMED_IAM</code> value for this parameter when you use the <code>CreateStack</code> or <code>UpdateStack</code> actions with your template; otherwise, those actions return an <code>InsufficientCapabilities</code> error.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html#capabilities">Acknowledging IAM Resources in CloudFormation Templates</a>.</p>
-    pub fn set_capabilities(mut self, input: std::option::Option<std::vec::Vec<crate::types::Capability>>) -> Self {
-        self.capabilities = input; self
+    pub fn set_capabilities(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::Capability>>,
+    ) -> Self {
+        self.capabilities = input;
+        self
     }
     /// <p>The list of resources that generated the values in the <code>Capabilities</code> response element.</p>
     pub fn capabilities_reason(mut self, input: impl Into<std::string::String>) -> Self {
@@ -148,8 +162,12 @@ impl GetTemplateSummaryOutputBuilder {
         self
     }
     /// <p>The list of resources that generated the values in the <code>Capabilities</code> response element.</p>
-    pub fn set_capabilities_reason(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.capabilities_reason = input; self
+    pub fn set_capabilities_reason(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.capabilities_reason = input;
+        self
     }
     /// Appends an item to `resource_types`.
     ///
@@ -158,13 +176,17 @@ impl GetTemplateSummaryOutputBuilder {
     /// <p>A list of all the template resource types that are defined in the template, such as <code>AWS::EC2::Instance</code>, <code>AWS::Dynamo::Table</code>, and <code>Custom::MyCustomInstance</code>.</p>
     pub fn resource_types(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.resource_types.unwrap_or_default();
-                        v.push(input.into());
-                        self.resource_types = Some(v);
-                        self
+        v.push(input.into());
+        self.resource_types = Some(v);
+        self
     }
     /// <p>A list of all the template resource types that are defined in the template, such as <code>AWS::EC2::Instance</code>, <code>AWS::Dynamo::Table</code>, and <code>Custom::MyCustomInstance</code>.</p>
-    pub fn set_resource_types(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-        self.resource_types = input; self
+    pub fn set_resource_types(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
+        self.resource_types = input;
+        self
     }
     /// <p>The Amazon Web Services template format version, which identifies the capabilities of the template.</p>
     pub fn version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -173,7 +195,8 @@ impl GetTemplateSummaryOutputBuilder {
     }
     /// <p>The Amazon Web Services template format version, which identifies the capabilities of the template.</p>
     pub fn set_version(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.version = input; self
+        self.version = input;
+        self
     }
     /// <p>The value that's defined for the <code>Metadata</code> property of the template.</p>
     pub fn metadata(mut self, input: impl Into<std::string::String>) -> Self {
@@ -182,7 +205,8 @@ impl GetTemplateSummaryOutputBuilder {
     }
     /// <p>The value that's defined for the <code>Metadata</code> property of the template.</p>
     pub fn set_metadata(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.metadata = input; self
+        self.metadata = input;
+        self
     }
     /// Appends an item to `declared_transforms`.
     ///
@@ -191,61 +215,62 @@ impl GetTemplateSummaryOutputBuilder {
     /// <p>A list of the transforms that are declared in the template.</p>
     pub fn declared_transforms(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.declared_transforms.unwrap_or_default();
-                        v.push(input.into());
-                        self.declared_transforms = Some(v);
-                        self
+        v.push(input.into());
+        self.declared_transforms = Some(v);
+        self
     }
     /// <p>A list of the transforms that are declared in the template.</p>
-    pub fn set_declared_transforms(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-        self.declared_transforms = input; self
+    pub fn set_declared_transforms(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
+        self.declared_transforms = input;
+        self
     }
     /// Appends an item to `resource_identifier_summaries`.
     ///
     /// To override the contents of this collection use [`set_resource_identifier_summaries`](Self::set_resource_identifier_summaries).
     ///
     /// <p>A list of resource identifier summaries that describe the target resources of an import operation and the properties you can provide during the import to identify the target resources. For example, <code>BucketName</code> is a possible identifier property for an <code>AWS::S3::Bucket</code> resource.</p>
-    pub fn resource_identifier_summaries(mut self, input: crate::types::ResourceIdentifierSummary) -> Self {
+    pub fn resource_identifier_summaries(
+        mut self,
+        input: crate::types::ResourceIdentifierSummary,
+    ) -> Self {
         let mut v = self.resource_identifier_summaries.unwrap_or_default();
-                        v.push(input);
-                        self.resource_identifier_summaries = Some(v);
-                        self
+        v.push(input);
+        self.resource_identifier_summaries = Some(v);
+        self
     }
     /// <p>A list of resource identifier summaries that describe the target resources of an import operation and the properties you can provide during the import to identify the target resources. For example, <code>BucketName</code> is a possible identifier property for an <code>AWS::S3::Bucket</code> resource.</p>
-    pub fn set_resource_identifier_summaries(mut self, input: std::option::Option<std::vec::Vec<crate::types::ResourceIdentifierSummary>>) -> Self {
-        self.resource_identifier_summaries = input; self
+    pub fn set_resource_identifier_summaries(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::ResourceIdentifierSummary>>,
+    ) -> Self {
+        self.resource_identifier_summaries = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`GetTemplateSummaryOutput`](crate::operation::get_template_summary::GetTemplateSummaryOutput).
     pub fn build(self) -> crate::operation::get_template_summary::GetTemplateSummaryOutput {
         crate::operation::get_template_summary::GetTemplateSummaryOutput {
-            parameters: self.parameters
-            ,
-            description: self.description
-            ,
-            capabilities: self.capabilities
-            ,
-            capabilities_reason: self.capabilities_reason
-            ,
-            resource_types: self.resource_types
-            ,
-            version: self.version
-            ,
-            metadata: self.metadata
-            ,
-            declared_transforms: self.declared_transforms
-            ,
-            resource_identifier_summaries: self.resource_identifier_summaries
-            ,
+            parameters: self.parameters,
+            description: self.description,
+            capabilities: self.capabilities,
+            capabilities_reason: self.capabilities_reason,
+            resource_types: self.resource_types,
+            version: self.version,
+            metadata: self.metadata,
+            declared_transforms: self.declared_transforms,
+            resource_identifier_summaries: self.resource_identifier_summaries,
             _request_id: self._request_id,
         }
     }
 }
-

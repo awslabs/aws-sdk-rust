@@ -10,4 +10,3 @@ pub use crate::types::_schema_summary::SchemaSummaryBuilder;
 pub use crate::types::_registry_summary::RegistrySummaryBuilder;
 
 pub use crate::types::_discoverer_summary::DiscovererSummaryBuilder;
-

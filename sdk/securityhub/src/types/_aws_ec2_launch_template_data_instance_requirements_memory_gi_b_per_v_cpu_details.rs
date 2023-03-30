@@ -3,7 +3,7 @@
 /// <p> The minimum and maximum amount of memory per vCPU, in GiB. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AwsEc2LaunchTemplateDataInstanceRequirementsMemoryGiBPerVCpuDetails  {
+pub struct AwsEc2LaunchTemplateDataInstanceRequirementsMemoryGiBPerVCpuDetails {
     /// <p> The maximum amount of memory per vCPU, in GiB. If this parameter is omitted, there's no maximum limit. </p>
     #[doc(hidden)]
     pub max: f64,
@@ -23,7 +23,7 @@ impl AwsEc2LaunchTemplateDataInstanceRequirementsMemoryGiBPerVCpuDetails {
 }
 impl AwsEc2LaunchTemplateDataInstanceRequirementsMemoryGiBPerVCpuDetails {
     /// Creates a new builder-style object to manufacture [`AwsEc2LaunchTemplateDataInstanceRequirementsMemoryGiBPerVCpuDetails`](crate::types::AwsEc2LaunchTemplateDataInstanceRequirementsMemoryGiBPerVCpuDetails).
-    pub fn builder() -> crate::types::builders::AwsEc2LaunchTemplateDataInstanceRequirementsMemoryGiBPerVCpuDetailsBuilder {
+    pub fn builder() -> crate::types::builders::AwsEc2LaunchTemplateDataInstanceRequirementsMemoryGiBPerVCpuDetailsBuilder{
         crate::types::builders::AwsEc2LaunchTemplateDataInstanceRequirementsMemoryGiBPerVCpuDetailsBuilder::default()
     }
 }
@@ -43,7 +43,8 @@ impl AwsEc2LaunchTemplateDataInstanceRequirementsMemoryGiBPerVCpuDetailsBuilder 
     }
     /// <p> The maximum amount of memory per vCPU, in GiB. If this parameter is omitted, there's no maximum limit. </p>
     pub fn set_max(mut self, input: std::option::Option<f64>) -> Self {
-        self.max = input; self
+        self.max = input;
+        self
     }
     /// <p> The minimum amount of memory per vCPU, in GiB. If this parameter is omitted, there's no maximum limit. </p>
     pub fn min(mut self, input: f64) -> Self {
@@ -52,18 +53,16 @@ impl AwsEc2LaunchTemplateDataInstanceRequirementsMemoryGiBPerVCpuDetailsBuilder 
     }
     /// <p> The minimum amount of memory per vCPU, in GiB. If this parameter is omitted, there's no maximum limit. </p>
     pub fn set_min(mut self, input: std::option::Option<f64>) -> Self {
-        self.min = input; self
+        self.min = input;
+        self
     }
     /// Consumes the builder and constructs a [`AwsEc2LaunchTemplateDataInstanceRequirementsMemoryGiBPerVCpuDetails`](crate::types::AwsEc2LaunchTemplateDataInstanceRequirementsMemoryGiBPerVCpuDetails).
-    pub fn build(self) -> crate::types::AwsEc2LaunchTemplateDataInstanceRequirementsMemoryGiBPerVCpuDetails {
+    pub fn build(
+        self,
+    ) -> crate::types::AwsEc2LaunchTemplateDataInstanceRequirementsMemoryGiBPerVCpuDetails {
         crate::types::AwsEc2LaunchTemplateDataInstanceRequirementsMemoryGiBPerVCpuDetails {
-            max: self.max
-                .unwrap_or_default()
-            ,
-            min: self.min
-                .unwrap_or_default()
-            ,
+            max: self.max.unwrap_or_default(),
+            min: self.min.unwrap_or_default(),
         }
     }
 }
-

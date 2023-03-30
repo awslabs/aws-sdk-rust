@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-/// 
+///
 /// Here is an example of how you can make a match expression forward-compatible:
-/// 
+///
 /// ```text
 /// # let timerange = unimplemented!();
 /// match timerange {
@@ -30,55 +30,62 @@
 /// Specifically, when `timerange` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `TimeRange::NewFeature` also yielding `"NewFeature"`.
-/// 
+///
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 /// <p>An inclusive time period that Amazon Macie usage data applies to. Possible values are:</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
 pub enum TimeRange {
     #[allow(missing_docs)] // documentation missing in model
     MonthToDate,
     #[allow(missing_docs)] // documentation missing in model
     Past30Days,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::primitives::UnknownVariantValue)
+    Unknown(crate::primitives::UnknownVariantValue),
 }
 impl std::convert::From<&str> for TimeRange {
-                fn from(s: &str) -> Self {
-                    match s {
-                        "MONTH_TO_DATE" => TimeRange::MonthToDate,
-"PAST_30_DAYS" => TimeRange::Past30Days,
-other => TimeRange::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
-                    }
-                }
-            }
-impl std::str::FromStr for TimeRange {
-                type Err = std::convert::Infallible;
-
-                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-                    Ok(TimeRange::from(s))
-                }
-            }
-impl TimeRange {
-                /// Returns the `&str` value of the enum member.
-                pub fn as_str(&self) -> &str {
-                    match self {
-    TimeRange::MonthToDate => "MONTH_TO_DATE",
-    TimeRange::Past30Days => "PAST_30_DAYS",
-    TimeRange::Unknown(value) => value.as_str()
+    fn from(s: &str) -> Self {
+        match s {
+            "MONTH_TO_DATE" => TimeRange::MonthToDate,
+            "PAST_30_DAYS" => TimeRange::Past30Days,
+            other => TimeRange::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
+        }
+    }
 }
-                }
-                /// Returns all the `&str` representations of the enum members.
-                pub const fn values() -> &'static [&'static str] {
-                    &["MONTH_TO_DATE", "PAST_30_DAYS"]
-                }
-            }
-impl AsRef<str> for TimeRange {
-                fn as_ref(&self) -> &str {
-                    self.as_str()
-                }
-            }
+impl std::str::FromStr for TimeRange {
+    type Err = std::convert::Infallible;
 
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(TimeRange::from(s))
+    }
+}
+impl TimeRange {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            TimeRange::MonthToDate => "MONTH_TO_DATE",
+            TimeRange::Past30Days => "PAST_30_DAYS",
+            TimeRange::Unknown(value) => value.as_str(),
+        }
+    }
+    /// Returns all the `&str` representations of the enum members.
+    pub const fn values() -> &'static [&'static str] {
+        &["MONTH_TO_DATE", "PAST_30_DAYS"]
+    }
+}
+impl AsRef<str> for TimeRange {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}

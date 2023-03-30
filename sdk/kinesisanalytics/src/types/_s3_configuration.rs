@@ -3,7 +3,7 @@
 /// <p>Provides a description of an Amazon S3 data source, including the Amazon Resource Name (ARN) of the S3 bucket, the ARN of the IAM role that is used to access the bucket, and the name of the Amazon S3 object that contains the data.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct S3Configuration  {
+pub struct S3Configuration {
     /// <p>IAM ARN of the role used to access the data.</p>
     #[doc(hidden)]
     pub role_arn: std::option::Option<std::string::String>,
@@ -16,15 +16,15 @@ pub struct S3Configuration  {
 }
 impl S3Configuration {
     /// <p>IAM ARN of the role used to access the data.</p>
-    pub fn role_arn(&self) -> std::option::Option<& str> {
+    pub fn role_arn(&self) -> std::option::Option<&str> {
         self.role_arn.as_deref()
     }
     /// <p>ARN of the S3 bucket that contains the data.</p>
-    pub fn bucket_arn(&self) -> std::option::Option<& str> {
+    pub fn bucket_arn(&self) -> std::option::Option<&str> {
         self.bucket_arn.as_deref()
     }
     /// <p>The name of the object that contains the data.</p>
-    pub fn file_key(&self) -> std::option::Option<& str> {
+    pub fn file_key(&self) -> std::option::Option<&str> {
         self.file_key.as_deref()
     }
 }
@@ -51,7 +51,8 @@ impl S3ConfigurationBuilder {
     }
     /// <p>IAM ARN of the role used to access the data.</p>
     pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.role_arn = input; self
+        self.role_arn = input;
+        self
     }
     /// <p>ARN of the S3 bucket that contains the data.</p>
     pub fn bucket_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -60,7 +61,8 @@ impl S3ConfigurationBuilder {
     }
     /// <p>ARN of the S3 bucket that contains the data.</p>
     pub fn set_bucket_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.bucket_arn = input; self
+        self.bucket_arn = input;
+        self
     }
     /// <p>The name of the object that contains the data.</p>
     pub fn file_key(mut self, input: impl Into<std::string::String>) -> Self {
@@ -69,18 +71,15 @@ impl S3ConfigurationBuilder {
     }
     /// <p>The name of the object that contains the data.</p>
     pub fn set_file_key(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.file_key = input; self
+        self.file_key = input;
+        self
     }
     /// Consumes the builder and constructs a [`S3Configuration`](crate::types::S3Configuration).
     pub fn build(self) -> crate::types::S3Configuration {
         crate::types::S3Configuration {
-            role_arn: self.role_arn
-            ,
-            bucket_arn: self.bucket_arn
-            ,
-            file_key: self.file_key
-            ,
+            role_arn: self.role_arn,
+            bucket_arn: self.bucket_arn,
+            file_key: self.file_key,
         }
     }
 }
-

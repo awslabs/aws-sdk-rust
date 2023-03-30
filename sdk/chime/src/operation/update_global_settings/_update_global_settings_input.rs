@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateGlobalSettingsInput  {
+pub struct UpdateGlobalSettingsInput {
     /// <p>The Amazon Chime Business Calling settings.</p>
     #[doc(hidden)]
     pub business_calling: std::option::Option<crate::types::BusinessCallingSettings>,
@@ -12,17 +12,18 @@ pub struct UpdateGlobalSettingsInput  {
 }
 impl UpdateGlobalSettingsInput {
     /// <p>The Amazon Chime Business Calling settings.</p>
-    pub fn business_calling(&self) -> std::option::Option<& crate::types::BusinessCallingSettings> {
+    pub fn business_calling(&self) -> std::option::Option<&crate::types::BusinessCallingSettings> {
         self.business_calling.as_ref()
     }
     /// <p>The Amazon Chime Voice Connector settings.</p>
-    pub fn voice_connector(&self) -> std::option::Option<& crate::types::VoiceConnectorSettings> {
+    pub fn voice_connector(&self) -> std::option::Option<&crate::types::VoiceConnectorSettings> {
         self.voice_connector.as_ref()
     }
 }
 impl UpdateGlobalSettingsInput {
     /// Creates a new builder-style object to manufacture [`UpdateGlobalSettingsInput`](crate::operation::update_global_settings::UpdateGlobalSettingsInput).
-    pub fn builder() -> crate::operation::update_global_settings::builders::UpdateGlobalSettingsInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::update_global_settings::builders::UpdateGlobalSettingsInputBuilder {
         crate::operation::update_global_settings::builders::UpdateGlobalSettingsInputBuilder::default()
     }
 }
@@ -41,8 +42,12 @@ impl UpdateGlobalSettingsInputBuilder {
         self
     }
     /// <p>The Amazon Chime Business Calling settings.</p>
-    pub fn set_business_calling(mut self, input: std::option::Option<crate::types::BusinessCallingSettings>) -> Self {
-        self.business_calling = input; self
+    pub fn set_business_calling(
+        mut self,
+        input: std::option::Option<crate::types::BusinessCallingSettings>,
+    ) -> Self {
+        self.business_calling = input;
+        self
     }
     /// <p>The Amazon Chime Voice Connector settings.</p>
     pub fn voice_connector(mut self, input: crate::types::VoiceConnectorSettings) -> Self {
@@ -50,19 +55,25 @@ impl UpdateGlobalSettingsInputBuilder {
         self
     }
     /// <p>The Amazon Chime Voice Connector settings.</p>
-    pub fn set_voice_connector(mut self, input: std::option::Option<crate::types::VoiceConnectorSettings>) -> Self {
-        self.voice_connector = input; self
+    pub fn set_voice_connector(
+        mut self,
+        input: std::option::Option<crate::types::VoiceConnectorSettings>,
+    ) -> Self {
+        self.voice_connector = input;
+        self
     }
     /// Consumes the builder and constructs a [`UpdateGlobalSettingsInput`](crate::operation::update_global_settings::UpdateGlobalSettingsInput).
-    pub fn build(self) -> Result<crate::operation::update_global_settings::UpdateGlobalSettingsInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::update_global_settings::UpdateGlobalSettingsInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::update_global_settings::UpdateGlobalSettingsInput {
-                business_calling: self.business_calling
-                ,
-                voice_connector: self.voice_connector
-                ,
-            }
+                business_calling: self.business_calling,
+                voice_connector: self.voice_connector,
+            },
         )
     }
 }
-

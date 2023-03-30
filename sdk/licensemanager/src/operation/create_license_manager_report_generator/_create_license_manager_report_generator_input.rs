@@ -2,14 +2,14 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateLicenseManagerReportGeneratorInput  {
+pub struct CreateLicenseManagerReportGeneratorInput {
     /// <p>Name of the report generator.</p>
     #[doc(hidden)]
     pub report_generator_name: std::option::Option<std::string::String>,
-    /// <p>Type of reports to generate. The following report types an be generated:</p> 
-    /// <ul> 
-    /// <li> <p>License configuration report - Reports the number and details of consumed licenses for a license configuration.</p> </li> 
-    /// <li> <p>Resource report - Reports the tracked licenses and resource consumption for a license configuration.</p> </li> 
+    /// <p>Type of reports to generate. The following report types an be generated:</p>
+    /// <ul>
+    /// <li> <p>License configuration report - Reports the number and details of consumed licenses for a license configuration.</p> </li>
+    /// <li> <p>Resource report - Reports the tracked licenses and resource consumption for a license configuration.</p> </li>
     /// </ul>
     #[doc(hidden)]
     pub r#type: std::option::Option<std::vec::Vec<crate::types::ReportType>>,
@@ -31,41 +31,41 @@ pub struct CreateLicenseManagerReportGeneratorInput  {
 }
 impl CreateLicenseManagerReportGeneratorInput {
     /// <p>Name of the report generator.</p>
-    pub fn report_generator_name(&self) -> std::option::Option<& str> {
+    pub fn report_generator_name(&self) -> std::option::Option<&str> {
         self.report_generator_name.as_deref()
     }
-    /// <p>Type of reports to generate. The following report types an be generated:</p> 
-    /// <ul> 
-    /// <li> <p>License configuration report - Reports the number and details of consumed licenses for a license configuration.</p> </li> 
-    /// <li> <p>Resource report - Reports the tracked licenses and resource consumption for a license configuration.</p> </li> 
+    /// <p>Type of reports to generate. The following report types an be generated:</p>
+    /// <ul>
+    /// <li> <p>License configuration report - Reports the number and details of consumed licenses for a license configuration.</p> </li>
+    /// <li> <p>Resource report - Reports the tracked licenses and resource consumption for a license configuration.</p> </li>
     /// </ul>
-    pub fn r#type(&self) -> std::option::Option<& [crate::types::ReportType]> {
+    pub fn r#type(&self) -> std::option::Option<&[crate::types::ReportType]> {
         self.r#type.as_deref()
     }
     /// <p>Defines the type of license configuration the report generator tracks.</p>
-    pub fn report_context(&self) -> std::option::Option<& crate::types::ReportContext> {
+    pub fn report_context(&self) -> std::option::Option<&crate::types::ReportContext> {
         self.report_context.as_ref()
     }
     /// <p>Frequency by which reports are generated. Reports can be generated daily, monthly, or weekly.</p>
-    pub fn report_frequency(&self) -> std::option::Option<& crate::types::ReportFrequency> {
+    pub fn report_frequency(&self) -> std::option::Option<&crate::types::ReportFrequency> {
         self.report_frequency.as_ref()
     }
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
-    pub fn client_token(&self) -> std::option::Option<& str> {
+    pub fn client_token(&self) -> std::option::Option<&str> {
         self.client_token.as_deref()
     }
     /// <p>Description of the report generator.</p>
-    pub fn description(&self) -> std::option::Option<& str> {
+    pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
     /// <p>Tags to add to the report generator.</p>
-    pub fn tags(&self) -> std::option::Option<& [crate::types::Tag]> {
+    pub fn tags(&self) -> std::option::Option<&[crate::types::Tag]> {
         self.tags.as_deref()
     }
 }
 impl CreateLicenseManagerReportGeneratorInput {
     /// Creates a new builder-style object to manufacture [`CreateLicenseManagerReportGeneratorInput`](crate::operation::create_license_manager_report_generator::CreateLicenseManagerReportGeneratorInput).
-    pub fn builder() -> crate::operation::create_license_manager_report_generator::builders::CreateLicenseManagerReportGeneratorInputBuilder {
+    pub fn builder() -> crate::operation::create_license_manager_report_generator::builders::CreateLicenseManagerReportGeneratorInputBuilder{
         crate::operation::create_license_manager_report_generator::builders::CreateLicenseManagerReportGeneratorInputBuilder::default()
     }
 }
@@ -89,31 +89,39 @@ impl CreateLicenseManagerReportGeneratorInputBuilder {
         self
     }
     /// <p>Name of the report generator.</p>
-    pub fn set_report_generator_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.report_generator_name = input; self
+    pub fn set_report_generator_name(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.report_generator_name = input;
+        self
     }
     /// Appends an item to `r#type`.
     ///
     /// To override the contents of this collection use [`set_type`](Self::set_type).
     ///
-    /// <p>Type of reports to generate. The following report types an be generated:</p> 
-    /// <ul> 
-    /// <li> <p>License configuration report - Reports the number and details of consumed licenses for a license configuration.</p> </li> 
-    /// <li> <p>Resource report - Reports the tracked licenses and resource consumption for a license configuration.</p> </li> 
+    /// <p>Type of reports to generate. The following report types an be generated:</p>
+    /// <ul>
+    /// <li> <p>License configuration report - Reports the number and details of consumed licenses for a license configuration.</p> </li>
+    /// <li> <p>Resource report - Reports the tracked licenses and resource consumption for a license configuration.</p> </li>
     /// </ul>
     pub fn r#type(mut self, input: crate::types::ReportType) -> Self {
         let mut v = self.r#type.unwrap_or_default();
-                        v.push(input);
-                        self.r#type = Some(v);
-                        self
+        v.push(input);
+        self.r#type = Some(v);
+        self
     }
-    /// <p>Type of reports to generate. The following report types an be generated:</p> 
-    /// <ul> 
-    /// <li> <p>License configuration report - Reports the number and details of consumed licenses for a license configuration.</p> </li> 
-    /// <li> <p>Resource report - Reports the tracked licenses and resource consumption for a license configuration.</p> </li> 
+    /// <p>Type of reports to generate. The following report types an be generated:</p>
+    /// <ul>
+    /// <li> <p>License configuration report - Reports the number and details of consumed licenses for a license configuration.</p> </li>
+    /// <li> <p>Resource report - Reports the tracked licenses and resource consumption for a license configuration.</p> </li>
     /// </ul>
-    pub fn set_type(mut self, input: std::option::Option<std::vec::Vec<crate::types::ReportType>>) -> Self {
-        self.r#type = input; self
+    pub fn set_type(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::ReportType>>,
+    ) -> Self {
+        self.r#type = input;
+        self
     }
     /// <p>Defines the type of license configuration the report generator tracks.</p>
     pub fn report_context(mut self, input: crate::types::ReportContext) -> Self {
@@ -121,8 +129,12 @@ impl CreateLicenseManagerReportGeneratorInputBuilder {
         self
     }
     /// <p>Defines the type of license configuration the report generator tracks.</p>
-    pub fn set_report_context(mut self, input: std::option::Option<crate::types::ReportContext>) -> Self {
-        self.report_context = input; self
+    pub fn set_report_context(
+        mut self,
+        input: std::option::Option<crate::types::ReportContext>,
+    ) -> Self {
+        self.report_context = input;
+        self
     }
     /// <p>Frequency by which reports are generated. Reports can be generated daily, monthly, or weekly.</p>
     pub fn report_frequency(mut self, input: crate::types::ReportFrequency) -> Self {
@@ -130,8 +142,12 @@ impl CreateLicenseManagerReportGeneratorInputBuilder {
         self
     }
     /// <p>Frequency by which reports are generated. Reports can be generated daily, monthly, or weekly.</p>
-    pub fn set_report_frequency(mut self, input: std::option::Option<crate::types::ReportFrequency>) -> Self {
-        self.report_frequency = input; self
+    pub fn set_report_frequency(
+        mut self,
+        input: std::option::Option<crate::types::ReportFrequency>,
+    ) -> Self {
+        self.report_frequency = input;
+        self
     }
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
     pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -140,7 +156,8 @@ impl CreateLicenseManagerReportGeneratorInputBuilder {
     }
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
     pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.client_token = input; self
+        self.client_token = input;
+        self
     }
     /// <p>Description of the report generator.</p>
     pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -149,7 +166,8 @@ impl CreateLicenseManagerReportGeneratorInputBuilder {
     }
     /// <p>Description of the report generator.</p>
     pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.description = input; self
+        self.description = input;
+        self
     }
     /// Appends an item to `tags`.
     ///
@@ -158,16 +176,20 @@ impl CreateLicenseManagerReportGeneratorInputBuilder {
     /// <p>Tags to add to the report generator.</p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
-                        v.push(input);
-                        self.tags = Some(v);
-                        self
+        v.push(input);
+        self.tags = Some(v);
+        self
     }
     /// <p>Tags to add to the report generator.</p>
-    pub fn set_tags(mut self, input: std::option::Option<std::vec::Vec<crate::types::Tag>>) -> Self {
-        self.tags = input; self
+    pub fn set_tags(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::Tag>>,
+    ) -> Self {
+        self.tags = input;
+        self
     }
     /// Consumes the builder and constructs a [`CreateLicenseManagerReportGeneratorInput`](crate::operation::create_license_manager_report_generator::CreateLicenseManagerReportGeneratorInput).
-    pub fn build(self) -> Result<crate::operation::create_license_manager_report_generator::CreateLicenseManagerReportGeneratorInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> Result<crate::operation::create_license_manager_report_generator::CreateLicenseManagerReportGeneratorInput, aws_smithy_http::operation::error::BuildError>{
         Ok(
             crate::operation::create_license_manager_report_generator::CreateLicenseManagerReportGeneratorInput {
                 report_generator_name: self.report_generator_name
@@ -188,4 +210,3 @@ impl CreateLicenseManagerReportGeneratorInputBuilder {
         )
     }
 }
-

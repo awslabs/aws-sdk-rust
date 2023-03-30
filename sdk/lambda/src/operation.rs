@@ -195,4 +195,3 @@ pub mod update_function_event_invoke_config;
 
 /// Types for the `UpdateFunctionUrlConfig` operation.
 pub mod update_function_url_config;
-

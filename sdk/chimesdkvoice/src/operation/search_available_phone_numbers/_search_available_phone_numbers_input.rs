@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SearchAvailablePhoneNumbersInput  {
+pub struct SearchAvailablePhoneNumbersInput {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub area_code: std::option::Option<std::string::String>,
@@ -30,27 +30,27 @@ pub struct SearchAvailablePhoneNumbersInput  {
 }
 impl SearchAvailablePhoneNumbersInput {
     #[allow(missing_docs)] // documentation missing in model
-    pub fn area_code(&self) -> std::option::Option<& str> {
+    pub fn area_code(&self) -> std::option::Option<&str> {
         self.area_code.as_deref()
     }
     #[allow(missing_docs)] // documentation missing in model
-    pub fn city(&self) -> std::option::Option<& str> {
+    pub fn city(&self) -> std::option::Option<&str> {
         self.city.as_deref()
     }
     #[allow(missing_docs)] // documentation missing in model
-    pub fn country(&self) -> std::option::Option<& str> {
+    pub fn country(&self) -> std::option::Option<&str> {
         self.country.as_deref()
     }
     #[allow(missing_docs)] // documentation missing in model
-    pub fn state(&self) -> std::option::Option<& str> {
+    pub fn state(&self) -> std::option::Option<&str> {
         self.state.as_deref()
     }
     #[allow(missing_docs)] // documentation missing in model
-    pub fn toll_free_prefix(&self) -> std::option::Option<& str> {
+    pub fn toll_free_prefix(&self) -> std::option::Option<&str> {
         self.toll_free_prefix.as_deref()
     }
     #[allow(missing_docs)] // documentation missing in model
-    pub fn phone_number_type(&self) -> std::option::Option<& crate::types::PhoneNumberType> {
+    pub fn phone_number_type(&self) -> std::option::Option<&crate::types::PhoneNumberType> {
         self.phone_number_type.as_ref()
     }
     #[allow(missing_docs)] // documentation missing in model
@@ -58,13 +58,13 @@ impl SearchAvailablePhoneNumbersInput {
         self.max_results
     }
     #[allow(missing_docs)] // documentation missing in model
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
 }
 impl SearchAvailablePhoneNumbersInput {
     /// Creates a new builder-style object to manufacture [`SearchAvailablePhoneNumbersInput`](crate::operation::search_available_phone_numbers::SearchAvailablePhoneNumbersInput).
-    pub fn builder() -> crate::operation::search_available_phone_numbers::builders::SearchAvailablePhoneNumbersInputBuilder {
+    pub fn builder() -> crate::operation::search_available_phone_numbers::builders::SearchAvailablePhoneNumbersInputBuilder{
         crate::operation::search_available_phone_numbers::builders::SearchAvailablePhoneNumbersInputBuilder::default()
     }
 }
@@ -90,7 +90,8 @@ impl SearchAvailablePhoneNumbersInputBuilder {
     }
     #[allow(missing_docs)] // documentation missing in model
     pub fn set_area_code(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.area_code = input; self
+        self.area_code = input;
+        self
     }
     #[allow(missing_docs)] // documentation missing in model
     pub fn city(mut self, input: impl Into<std::string::String>) -> Self {
@@ -99,7 +100,8 @@ impl SearchAvailablePhoneNumbersInputBuilder {
     }
     #[allow(missing_docs)] // documentation missing in model
     pub fn set_city(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.city = input; self
+        self.city = input;
+        self
     }
     #[allow(missing_docs)] // documentation missing in model
     pub fn country(mut self, input: impl Into<std::string::String>) -> Self {
@@ -108,7 +110,8 @@ impl SearchAvailablePhoneNumbersInputBuilder {
     }
     #[allow(missing_docs)] // documentation missing in model
     pub fn set_country(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.country = input; self
+        self.country = input;
+        self
     }
     #[allow(missing_docs)] // documentation missing in model
     pub fn state(mut self, input: impl Into<std::string::String>) -> Self {
@@ -117,7 +120,8 @@ impl SearchAvailablePhoneNumbersInputBuilder {
     }
     #[allow(missing_docs)] // documentation missing in model
     pub fn set_state(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.state = input; self
+        self.state = input;
+        self
     }
     #[allow(missing_docs)] // documentation missing in model
     pub fn toll_free_prefix(mut self, input: impl Into<std::string::String>) -> Self {
@@ -126,7 +130,8 @@ impl SearchAvailablePhoneNumbersInputBuilder {
     }
     #[allow(missing_docs)] // documentation missing in model
     pub fn set_toll_free_prefix(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.toll_free_prefix = input; self
+        self.toll_free_prefix = input;
+        self
     }
     #[allow(missing_docs)] // documentation missing in model
     pub fn phone_number_type(mut self, input: crate::types::PhoneNumberType) -> Self {
@@ -134,8 +139,12 @@ impl SearchAvailablePhoneNumbersInputBuilder {
         self
     }
     #[allow(missing_docs)] // documentation missing in model
-    pub fn set_phone_number_type(mut self, input: std::option::Option<crate::types::PhoneNumberType>) -> Self {
-        self.phone_number_type = input; self
+    pub fn set_phone_number_type(
+        mut self,
+        input: std::option::Option<crate::types::PhoneNumberType>,
+    ) -> Self {
+        self.phone_number_type = input;
+        self
     }
     #[allow(missing_docs)] // documentation missing in model
     pub fn max_results(mut self, input: i32) -> Self {
@@ -144,7 +153,8 @@ impl SearchAvailablePhoneNumbersInputBuilder {
     }
     #[allow(missing_docs)] // documentation missing in model
     pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_results = input; self
+        self.max_results = input;
+        self
     }
     #[allow(missing_docs)] // documentation missing in model
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -153,30 +163,27 @@ impl SearchAvailablePhoneNumbersInputBuilder {
     }
     #[allow(missing_docs)] // documentation missing in model
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input; self
+        self.next_token = input;
+        self
     }
     /// Consumes the builder and constructs a [`SearchAvailablePhoneNumbersInput`](crate::operation::search_available_phone_numbers::SearchAvailablePhoneNumbersInput).
-    pub fn build(self) -> Result<crate::operation::search_available_phone_numbers::SearchAvailablePhoneNumbersInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::search_available_phone_numbers::SearchAvailablePhoneNumbersInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::search_available_phone_numbers::SearchAvailablePhoneNumbersInput {
-                area_code: self.area_code
-                ,
-                city: self.city
-                ,
-                country: self.country
-                ,
-                state: self.state
-                ,
-                toll_free_prefix: self.toll_free_prefix
-                ,
-                phone_number_type: self.phone_number_type
-                ,
-                max_results: self.max_results
-                ,
-                next_token: self.next_token
-                ,
-            }
+                area_code: self.area_code,
+                city: self.city,
+                country: self.country,
+                state: self.state,
+                toll_free_prefix: self.toll_free_prefix,
+                phone_number_type: self.phone_number_type,
+                max_results: self.max_results,
+                next_token: self.next_token,
+            },
         )
     }
 }
-

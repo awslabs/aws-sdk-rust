@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct CreateModelCardInput  {
+pub struct CreateModelCardInput {
     /// <p>The unique name of the model card.</p>
     #[doc(hidden)]
     pub model_card_name: std::option::Option<std::string::String>,
@@ -12,12 +12,12 @@ pub struct CreateModelCardInput  {
     /// <p>The content of the model card. Content must be in <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/model-cards-api-json-schema.html">model card JSON schema</a> and provided as a string.</p>
     #[doc(hidden)]
     pub content: std::option::Option<std::string::String>,
-    /// <p>The approval status of the model card within your organization. Different organizations might have different criteria for model card review and approval.</p> 
-    /// <ul> 
-    /// <li> <p> <code>Draft</code>: The model card is a work in progress.</p> </li> 
-    /// <li> <p> <code>PendingReview</code>: The model card is pending review.</p> </li> 
-    /// <li> <p> <code>Approved</code>: The model card is approved.</p> </li> 
-    /// <li> <p> <code>Archived</code>: The model card is archived. No more updates should be made to the model card, but it can still be exported.</p> </li> 
+    /// <p>The approval status of the model card within your organization. Different organizations might have different criteria for model card review and approval.</p>
+    /// <ul>
+    /// <li> <p> <code>Draft</code>: The model card is a work in progress.</p> </li>
+    /// <li> <p> <code>PendingReview</code>: The model card is pending review.</p> </li>
+    /// <li> <p> <code>Approved</code>: The model card is approved.</p> </li>
+    /// <li> <p> <code>Archived</code>: The model card is archived. No more updates should be made to the model card, but it can still be exported.</p> </li>
     /// </ul>
     #[doc(hidden)]
     pub model_card_status: std::option::Option<crate::types::ModelCardStatus>,
@@ -27,33 +27,33 @@ pub struct CreateModelCardInput  {
 }
 impl CreateModelCardInput {
     /// <p>The unique name of the model card.</p>
-    pub fn model_card_name(&self) -> std::option::Option<& str> {
+    pub fn model_card_name(&self) -> std::option::Option<&str> {
         self.model_card_name.as_deref()
     }
     /// <p>An optional Key Management Service key to encrypt, decrypt, and re-encrypt model card content for regulated workloads with highly sensitive data.</p>
-    pub fn security_config(&self) -> std::option::Option<& crate::types::ModelCardSecurityConfig> {
+    pub fn security_config(&self) -> std::option::Option<&crate::types::ModelCardSecurityConfig> {
         self.security_config.as_ref()
     }
     /// <p>The content of the model card. Content must be in <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/model-cards-api-json-schema.html">model card JSON schema</a> and provided as a string.</p>
-    pub fn content(&self) -> std::option::Option<& str> {
+    pub fn content(&self) -> std::option::Option<&str> {
         self.content.as_deref()
     }
-    /// <p>The approval status of the model card within your organization. Different organizations might have different criteria for model card review and approval.</p> 
-    /// <ul> 
-    /// <li> <p> <code>Draft</code>: The model card is a work in progress.</p> </li> 
-    /// <li> <p> <code>PendingReview</code>: The model card is pending review.</p> </li> 
-    /// <li> <p> <code>Approved</code>: The model card is approved.</p> </li> 
-    /// <li> <p> <code>Archived</code>: The model card is archived. No more updates should be made to the model card, but it can still be exported.</p> </li> 
+    /// <p>The approval status of the model card within your organization. Different organizations might have different criteria for model card review and approval.</p>
+    /// <ul>
+    /// <li> <p> <code>Draft</code>: The model card is a work in progress.</p> </li>
+    /// <li> <p> <code>PendingReview</code>: The model card is pending review.</p> </li>
+    /// <li> <p> <code>Approved</code>: The model card is approved.</p> </li>
+    /// <li> <p> <code>Archived</code>: The model card is archived. No more updates should be made to the model card, but it can still be exported.</p> </li>
     /// </ul>
-    pub fn model_card_status(&self) -> std::option::Option<& crate::types::ModelCardStatus> {
+    pub fn model_card_status(&self) -> std::option::Option<&crate::types::ModelCardStatus> {
         self.model_card_status.as_ref()
     }
     /// <p>Key-value pairs used to manage metadata for model cards.</p>
-    pub fn tags(&self) -> std::option::Option<& [crate::types::Tag]> {
+    pub fn tags(&self) -> std::option::Option<&[crate::types::Tag]> {
         self.tags.as_deref()
     }
 }
-impl  std::fmt::Debug for CreateModelCardInput  {
+impl std::fmt::Debug for CreateModelCardInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateModelCardInput");
         formatter.field("model_card_name", &self.model_card_name);
@@ -89,7 +89,8 @@ impl CreateModelCardInputBuilder {
     }
     /// <p>The unique name of the model card.</p>
     pub fn set_model_card_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.model_card_name = input; self
+        self.model_card_name = input;
+        self
     }
     /// <p>An optional Key Management Service key to encrypt, decrypt, and re-encrypt model card content for regulated workloads with highly sensitive data.</p>
     pub fn security_config(mut self, input: crate::types::ModelCardSecurityConfig) -> Self {
@@ -97,8 +98,12 @@ impl CreateModelCardInputBuilder {
         self
     }
     /// <p>An optional Key Management Service key to encrypt, decrypt, and re-encrypt model card content for regulated workloads with highly sensitive data.</p>
-    pub fn set_security_config(mut self, input: std::option::Option<crate::types::ModelCardSecurityConfig>) -> Self {
-        self.security_config = input; self
+    pub fn set_security_config(
+        mut self,
+        input: std::option::Option<crate::types::ModelCardSecurityConfig>,
+    ) -> Self {
+        self.security_config = input;
+        self
     }
     /// <p>The content of the model card. Content must be in <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/model-cards-api-json-schema.html">model card JSON schema</a> and provided as a string.</p>
     pub fn content(mut self, input: impl Into<std::string::String>) -> Self {
@@ -107,28 +112,33 @@ impl CreateModelCardInputBuilder {
     }
     /// <p>The content of the model card. Content must be in <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/model-cards-api-json-schema.html">model card JSON schema</a> and provided as a string.</p>
     pub fn set_content(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.content = input; self
+        self.content = input;
+        self
     }
-    /// <p>The approval status of the model card within your organization. Different organizations might have different criteria for model card review and approval.</p> 
-    /// <ul> 
-    /// <li> <p> <code>Draft</code>: The model card is a work in progress.</p> </li> 
-    /// <li> <p> <code>PendingReview</code>: The model card is pending review.</p> </li> 
-    /// <li> <p> <code>Approved</code>: The model card is approved.</p> </li> 
-    /// <li> <p> <code>Archived</code>: The model card is archived. No more updates should be made to the model card, but it can still be exported.</p> </li> 
+    /// <p>The approval status of the model card within your organization. Different organizations might have different criteria for model card review and approval.</p>
+    /// <ul>
+    /// <li> <p> <code>Draft</code>: The model card is a work in progress.</p> </li>
+    /// <li> <p> <code>PendingReview</code>: The model card is pending review.</p> </li>
+    /// <li> <p> <code>Approved</code>: The model card is approved.</p> </li>
+    /// <li> <p> <code>Archived</code>: The model card is archived. No more updates should be made to the model card, but it can still be exported.</p> </li>
     /// </ul>
     pub fn model_card_status(mut self, input: crate::types::ModelCardStatus) -> Self {
         self.model_card_status = Some(input);
         self
     }
-    /// <p>The approval status of the model card within your organization. Different organizations might have different criteria for model card review and approval.</p> 
-    /// <ul> 
-    /// <li> <p> <code>Draft</code>: The model card is a work in progress.</p> </li> 
-    /// <li> <p> <code>PendingReview</code>: The model card is pending review.</p> </li> 
-    /// <li> <p> <code>Approved</code>: The model card is approved.</p> </li> 
-    /// <li> <p> <code>Archived</code>: The model card is archived. No more updates should be made to the model card, but it can still be exported.</p> </li> 
+    /// <p>The approval status of the model card within your organization. Different organizations might have different criteria for model card review and approval.</p>
+    /// <ul>
+    /// <li> <p> <code>Draft</code>: The model card is a work in progress.</p> </li>
+    /// <li> <p> <code>PendingReview</code>: The model card is pending review.</p> </li>
+    /// <li> <p> <code>Approved</code>: The model card is approved.</p> </li>
+    /// <li> <p> <code>Archived</code>: The model card is archived. No more updates should be made to the model card, but it can still be exported.</p> </li>
     /// </ul>
-    pub fn set_model_card_status(mut self, input: std::option::Option<crate::types::ModelCardStatus>) -> Self {
-        self.model_card_status = input; self
+    pub fn set_model_card_status(
+        mut self,
+        input: std::option::Option<crate::types::ModelCardStatus>,
+    ) -> Self {
+        self.model_card_status = input;
+        self
     }
     /// Appends an item to `tags`.
     ///
@@ -137,30 +147,32 @@ impl CreateModelCardInputBuilder {
     /// <p>Key-value pairs used to manage metadata for model cards.</p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
-                        v.push(input);
-                        self.tags = Some(v);
-                        self
+        v.push(input);
+        self.tags = Some(v);
+        self
     }
     /// <p>Key-value pairs used to manage metadata for model cards.</p>
-    pub fn set_tags(mut self, input: std::option::Option<std::vec::Vec<crate::types::Tag>>) -> Self {
-        self.tags = input; self
+    pub fn set_tags(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::Tag>>,
+    ) -> Self {
+        self.tags = input;
+        self
     }
     /// Consumes the builder and constructs a [`CreateModelCardInput`](crate::operation::create_model_card::CreateModelCardInput).
-    pub fn build(self) -> Result<crate::operation::create_model_card::CreateModelCardInput, aws_smithy_http::operation::error::BuildError> {
-        Ok(
-            crate::operation::create_model_card::CreateModelCardInput {
-                model_card_name: self.model_card_name
-                ,
-                security_config: self.security_config
-                ,
-                content: self.content
-                ,
-                model_card_status: self.model_card_status
-                ,
-                tags: self.tags
-                ,
-            }
-        )
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::create_model_card::CreateModelCardInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        Ok(crate::operation::create_model_card::CreateModelCardInput {
+            model_card_name: self.model_card_name,
+            security_config: self.security_config,
+            content: self.content,
+            model_card_status: self.model_card_status,
+            tags: self.tags,
+        })
     }
 }
 impl std::fmt::Debug for CreateModelCardInputBuilder {
@@ -174,4 +186,3 @@ impl std::fmt::Debug for CreateModelCardInputBuilder {
         formatter.finish()
     }
 }
-

@@ -3,14 +3,14 @@
 /// <p>Represents the data binding configuration for a value map.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ValueMappings  {
+pub struct ValueMappings {
     /// <p>The value and display value pairs.</p>
     #[doc(hidden)]
     pub values: std::option::Option<std::vec::Vec<crate::types::ValueMapping>>,
 }
 impl ValueMappings {
     /// <p>The value and display value pairs.</p>
-    pub fn values(&self) -> std::option::Option<& [crate::types::ValueMapping]> {
+    pub fn values(&self) -> std::option::Option<&[crate::types::ValueMapping]> {
         self.values.as_deref()
     }
 }
@@ -35,20 +35,22 @@ impl ValueMappingsBuilder {
     /// <p>The value and display value pairs.</p>
     pub fn values(mut self, input: crate::types::ValueMapping) -> Self {
         let mut v = self.values.unwrap_or_default();
-                        v.push(input);
-                        self.values = Some(v);
-                        self
+        v.push(input);
+        self.values = Some(v);
+        self
     }
     /// <p>The value and display value pairs.</p>
-    pub fn set_values(mut self, input: std::option::Option<std::vec::Vec<crate::types::ValueMapping>>) -> Self {
-        self.values = input; self
+    pub fn set_values(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::ValueMapping>>,
+    ) -> Self {
+        self.values = input;
+        self
     }
     /// Consumes the builder and constructs a [`ValueMappings`](crate::types::ValueMappings).
     pub fn build(self) -> crate::types::ValueMappings {
         crate::types::ValueMappings {
-            values: self.values
-            ,
+            values: self.values,
         }
     }
 }
-

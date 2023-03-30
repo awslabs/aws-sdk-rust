@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeConformancePacksInput  {
+pub struct DescribeConformancePacksInput {
     /// <p>Comma-separated list of conformance pack names for which you want details. If you do not specify any names, Config returns details for all your conformance packs. </p>
     #[doc(hidden)]
     pub conformance_pack_names: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -15,7 +15,7 @@ pub struct DescribeConformancePacksInput  {
 }
 impl DescribeConformancePacksInput {
     /// <p>Comma-separated list of conformance pack names for which you want details. If you do not specify any names, Config returns details for all your conformance packs. </p>
-    pub fn conformance_pack_names(&self) -> std::option::Option<& [std::string::String]> {
+    pub fn conformance_pack_names(&self) -> std::option::Option<&[std::string::String]> {
         self.conformance_pack_names.as_deref()
     }
     /// <p>The maximum number of conformance packs returned on each page.</p>
@@ -23,13 +23,15 @@ impl DescribeConformancePacksInput {
         self.limit
     }
     /// <p>The <code>nextToken</code> string returned in a previous request that you use to request the next page of results in a paginated response.</p>
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
 }
 impl DescribeConformancePacksInput {
     /// Creates a new builder-style object to manufacture [`DescribeConformancePacksInput`](crate::operation::describe_conformance_packs::DescribeConformancePacksInput).
-    pub fn builder() -> crate::operation::describe_conformance_packs::builders::DescribeConformancePacksInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::describe_conformance_packs::builders::DescribeConformancePacksInputBuilder
+    {
         crate::operation::describe_conformance_packs::builders::DescribeConformancePacksInputBuilder::default()
     }
 }
@@ -50,13 +52,17 @@ impl DescribeConformancePacksInputBuilder {
     /// <p>Comma-separated list of conformance pack names for which you want details. If you do not specify any names, Config returns details for all your conformance packs. </p>
     pub fn conformance_pack_names(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.conformance_pack_names.unwrap_or_default();
-                        v.push(input.into());
-                        self.conformance_pack_names = Some(v);
-                        self
+        v.push(input.into());
+        self.conformance_pack_names = Some(v);
+        self
     }
     /// <p>Comma-separated list of conformance pack names for which you want details. If you do not specify any names, Config returns details for all your conformance packs. </p>
-    pub fn set_conformance_pack_names(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-        self.conformance_pack_names = input; self
+    pub fn set_conformance_pack_names(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
+        self.conformance_pack_names = input;
+        self
     }
     /// <p>The maximum number of conformance packs returned on each page.</p>
     pub fn limit(mut self, input: i32) -> Self {
@@ -65,7 +71,8 @@ impl DescribeConformancePacksInputBuilder {
     }
     /// <p>The maximum number of conformance packs returned on each page.</p>
     pub fn set_limit(mut self, input: std::option::Option<i32>) -> Self {
-        self.limit = input; self
+        self.limit = input;
+        self
     }
     /// <p>The <code>nextToken</code> string returned in a previous request that you use to request the next page of results in a paginated response.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -74,21 +81,22 @@ impl DescribeConformancePacksInputBuilder {
     }
     /// <p>The <code>nextToken</code> string returned in a previous request that you use to request the next page of results in a paginated response.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input; self
+        self.next_token = input;
+        self
     }
     /// Consumes the builder and constructs a [`DescribeConformancePacksInput`](crate::operation::describe_conformance_packs::DescribeConformancePacksInput).
-    pub fn build(self) -> Result<crate::operation::describe_conformance_packs::DescribeConformancePacksInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::describe_conformance_packs::DescribeConformancePacksInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::describe_conformance_packs::DescribeConformancePacksInput {
-                conformance_pack_names: self.conformance_pack_names
-                ,
-                limit: self.limit
-                    .unwrap_or_default()
-                ,
-                next_token: self.next_token
-                ,
-            }
+                conformance_pack_names: self.conformance_pack_names,
+                limit: self.limit.unwrap_or_default(),
+                next_token: self.next_token,
+            },
         )
     }
 }
-

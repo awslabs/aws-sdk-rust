@@ -3,7 +3,7 @@
 /// <p> The connector-specific profile credentials required when using Zendesk. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct ZendeskConnectorProfileCredentials  {
+pub struct ZendeskConnectorProfileCredentials {
     /// <p> The identifier for the desired client. </p>
     #[doc(hidden)]
     pub client_id: std::option::Option<std::string::String>,
@@ -19,23 +19,23 @@ pub struct ZendeskConnectorProfileCredentials  {
 }
 impl ZendeskConnectorProfileCredentials {
     /// <p> The identifier for the desired client. </p>
-    pub fn client_id(&self) -> std::option::Option<& str> {
+    pub fn client_id(&self) -> std::option::Option<&str> {
         self.client_id.as_deref()
     }
     /// <p> The client secret used by the OAuth client to authenticate to the authorization server. </p>
-    pub fn client_secret(&self) -> std::option::Option<& str> {
+    pub fn client_secret(&self) -> std::option::Option<&str> {
         self.client_secret.as_deref()
     }
     /// <p> The credentials used to access protected Zendesk resources. </p>
-    pub fn access_token(&self) -> std::option::Option<& str> {
+    pub fn access_token(&self) -> std::option::Option<&str> {
         self.access_token.as_deref()
     }
     /// <p> The OAuth requirement needed to request security tokens from the connector endpoint. </p>
-    pub fn o_auth_request(&self) -> std::option::Option<& crate::types::ConnectorOAuthRequest> {
+    pub fn o_auth_request(&self) -> std::option::Option<&crate::types::ConnectorOAuthRequest> {
         self.o_auth_request.as_ref()
     }
 }
-impl  std::fmt::Debug for ZendeskConnectorProfileCredentials  {
+impl std::fmt::Debug for ZendeskConnectorProfileCredentials {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ZendeskConnectorProfileCredentials");
         formatter.field("client_id", &self.client_id);
@@ -69,7 +69,8 @@ impl ZendeskConnectorProfileCredentialsBuilder {
     }
     /// <p> The identifier for the desired client. </p>
     pub fn set_client_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.client_id = input; self
+        self.client_id = input;
+        self
     }
     /// <p> The client secret used by the OAuth client to authenticate to the authorization server. </p>
     pub fn client_secret(mut self, input: impl Into<std::string::String>) -> Self {
@@ -78,7 +79,8 @@ impl ZendeskConnectorProfileCredentialsBuilder {
     }
     /// <p> The client secret used by the OAuth client to authenticate to the authorization server. </p>
     pub fn set_client_secret(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.client_secret = input; self
+        self.client_secret = input;
+        self
     }
     /// <p> The credentials used to access protected Zendesk resources. </p>
     pub fn access_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -87,7 +89,8 @@ impl ZendeskConnectorProfileCredentialsBuilder {
     }
     /// <p> The credentials used to access protected Zendesk resources. </p>
     pub fn set_access_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.access_token = input; self
+        self.access_token = input;
+        self
     }
     /// <p> The OAuth requirement needed to request security tokens from the connector endpoint. </p>
     pub fn o_auth_request(mut self, input: crate::types::ConnectorOAuthRequest) -> Self {
@@ -95,20 +98,20 @@ impl ZendeskConnectorProfileCredentialsBuilder {
         self
     }
     /// <p> The OAuth requirement needed to request security tokens from the connector endpoint. </p>
-    pub fn set_o_auth_request(mut self, input: std::option::Option<crate::types::ConnectorOAuthRequest>) -> Self {
-        self.o_auth_request = input; self
+    pub fn set_o_auth_request(
+        mut self,
+        input: std::option::Option<crate::types::ConnectorOAuthRequest>,
+    ) -> Self {
+        self.o_auth_request = input;
+        self
     }
     /// Consumes the builder and constructs a [`ZendeskConnectorProfileCredentials`](crate::types::ZendeskConnectorProfileCredentials).
     pub fn build(self) -> crate::types::ZendeskConnectorProfileCredentials {
         crate::types::ZendeskConnectorProfileCredentials {
-            client_id: self.client_id
-            ,
-            client_secret: self.client_secret
-            ,
-            access_token: self.access_token
-            ,
-            o_auth_request: self.o_auth_request
-            ,
+            client_id: self.client_id,
+            client_secret: self.client_secret,
+            access_token: self.access_token,
+            o_auth_request: self.o_auth_request,
         }
     }
 }
@@ -122,4 +125,3 @@ impl std::fmt::Debug for ZendeskConnectorProfileCredentialsBuilder {
         formatter.finish()
     }
 }
-

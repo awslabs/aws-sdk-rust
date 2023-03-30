@@ -3,14 +3,14 @@
 /// A request to claim an AWS Elemental device that you have purchased from a third-party vendor.
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ClaimDeviceInput  {
+pub struct ClaimDeviceInput {
     /// The id of the device you want to claim.
     #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
 }
 impl ClaimDeviceInput {
     /// The id of the device you want to claim.
-    pub fn id(&self) -> std::option::Option<& str> {
+    pub fn id(&self) -> std::option::Option<&str> {
         self.id.as_deref()
     }
 }
@@ -35,16 +35,16 @@ impl ClaimDeviceInputBuilder {
     }
     /// The id of the device you want to claim.
     pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.id = input; self
+        self.id = input;
+        self
     }
     /// Consumes the builder and constructs a [`ClaimDeviceInput`](crate::operation::claim_device::ClaimDeviceInput).
-    pub fn build(self) -> Result<crate::operation::claim_device::ClaimDeviceInput, aws_smithy_http::operation::error::BuildError> {
-        Ok(
-            crate::operation::claim_device::ClaimDeviceInput {
-                id: self.id
-                ,
-            }
-        )
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::claim_device::ClaimDeviceInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        Ok(crate::operation::claim_device::ClaimDeviceInput { id: self.id })
     }
 }
-

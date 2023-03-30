@@ -42,4 +42,3 @@ pub use crate::types::error::_invalid_max_results_exception::InvalidMaxResultsEx
 pub use crate::types::error::_invalid_state_transition_exception::InvalidStateTransitionExceptionBuilder;
 
 pub use crate::types::error::_throttling_exception::ThrottlingExceptionBuilder;
-

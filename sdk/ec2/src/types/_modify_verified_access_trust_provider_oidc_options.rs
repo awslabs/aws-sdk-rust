@@ -3,20 +3,21 @@
 /// <p>OpenID Connect options for an <code>oidc</code>-type, user-identity based trust provider.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ModifyVerifiedAccessTrustProviderOidcOptions  {
+pub struct ModifyVerifiedAccessTrustProviderOidcOptions {
     /// <p>OpenID Connect (OIDC) scopes are used by an application during authentication to authorize access to a user's details. Each scope returns a specific set of user attributes.</p>
     #[doc(hidden)]
     pub scope: std::option::Option<std::string::String>,
 }
 impl ModifyVerifiedAccessTrustProviderOidcOptions {
     /// <p>OpenID Connect (OIDC) scopes are used by an application during authentication to authorize access to a user's details. Each scope returns a specific set of user attributes.</p>
-    pub fn scope(&self) -> std::option::Option<& str> {
+    pub fn scope(&self) -> std::option::Option<&str> {
         self.scope.as_deref()
     }
 }
 impl ModifyVerifiedAccessTrustProviderOidcOptions {
     /// Creates a new builder-style object to manufacture [`ModifyVerifiedAccessTrustProviderOidcOptions`](crate::types::ModifyVerifiedAccessTrustProviderOidcOptions).
-    pub fn builder() -> crate::types::builders::ModifyVerifiedAccessTrustProviderOidcOptionsBuilder {
+    pub fn builder() -> crate::types::builders::ModifyVerifiedAccessTrustProviderOidcOptionsBuilder
+    {
         crate::types::builders::ModifyVerifiedAccessTrustProviderOidcOptionsBuilder::default()
     }
 }
@@ -35,14 +36,11 @@ impl ModifyVerifiedAccessTrustProviderOidcOptionsBuilder {
     }
     /// <p>OpenID Connect (OIDC) scopes are used by an application during authentication to authorize access to a user's details. Each scope returns a specific set of user attributes.</p>
     pub fn set_scope(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.scope = input; self
+        self.scope = input;
+        self
     }
     /// Consumes the builder and constructs a [`ModifyVerifiedAccessTrustProviderOidcOptions`](crate::types::ModifyVerifiedAccessTrustProviderOidcOptions).
     pub fn build(self) -> crate::types::ModifyVerifiedAccessTrustProviderOidcOptions {
-        crate::types::ModifyVerifiedAccessTrustProviderOidcOptions {
-            scope: self.scope
-            ,
-        }
+        crate::types::ModifyVerifiedAccessTrustProviderOidcOptions { scope: self.scope }
     }
 }
-

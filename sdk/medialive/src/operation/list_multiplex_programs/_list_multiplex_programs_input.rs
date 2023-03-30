@@ -3,7 +3,7 @@
 /// Placeholder documentation for ListMultiplexProgramsRequest
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListMultiplexProgramsInput  {
+pub struct ListMultiplexProgramsInput {
     /// The maximum number of items to return.
     #[doc(hidden)]
     pub max_results: i32,
@@ -20,17 +20,19 @@ impl ListMultiplexProgramsInput {
         self.max_results
     }
     /// The ID of the multiplex that the programs belong to.
-    pub fn multiplex_id(&self) -> std::option::Option<& str> {
+    pub fn multiplex_id(&self) -> std::option::Option<&str> {
         self.multiplex_id.as_deref()
     }
     /// The token to retrieve the next page of results.
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
 }
 impl ListMultiplexProgramsInput {
     /// Creates a new builder-style object to manufacture [`ListMultiplexProgramsInput`](crate::operation::list_multiplex_programs::ListMultiplexProgramsInput).
-    pub fn builder() -> crate::operation::list_multiplex_programs::builders::ListMultiplexProgramsInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::list_multiplex_programs::builders::ListMultiplexProgramsInputBuilder
+    {
         crate::operation::list_multiplex_programs::builders::ListMultiplexProgramsInputBuilder::default()
     }
 }
@@ -51,7 +53,8 @@ impl ListMultiplexProgramsInputBuilder {
     }
     /// The maximum number of items to return.
     pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_results = input; self
+        self.max_results = input;
+        self
     }
     /// The ID of the multiplex that the programs belong to.
     pub fn multiplex_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -60,7 +63,8 @@ impl ListMultiplexProgramsInputBuilder {
     }
     /// The ID of the multiplex that the programs belong to.
     pub fn set_multiplex_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.multiplex_id = input; self
+        self.multiplex_id = input;
+        self
     }
     /// The token to retrieve the next page of results.
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -69,21 +73,22 @@ impl ListMultiplexProgramsInputBuilder {
     }
     /// The token to retrieve the next page of results.
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input; self
+        self.next_token = input;
+        self
     }
     /// Consumes the builder and constructs a [`ListMultiplexProgramsInput`](crate::operation::list_multiplex_programs::ListMultiplexProgramsInput).
-    pub fn build(self) -> Result<crate::operation::list_multiplex_programs::ListMultiplexProgramsInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::list_multiplex_programs::ListMultiplexProgramsInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::list_multiplex_programs::ListMultiplexProgramsInput {
-                max_results: self.max_results
-                    .unwrap_or_default()
-                ,
-                multiplex_id: self.multiplex_id
-                ,
-                next_token: self.next_token
-                ,
-            }
+                max_results: self.max_results.unwrap_or_default(),
+                multiplex_id: self.multiplex_id,
+                next_token: self.next_token,
+            },
         )
     }
 }
-

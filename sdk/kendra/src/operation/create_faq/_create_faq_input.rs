@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateFaqInput  {
+pub struct CreateFaqInput {
     /// <p>The identifier of the index for the FAQ.</p>
     #[doc(hidden)]
     pub index_id: std::option::Option<std::string::String>,
@@ -21,8 +21,8 @@ pub struct CreateFaqInput  {
     /// <p>A list of key-value pairs that identify the FAQ. You can use the tags to identify and organize your resources and to control access to resources.</p>
     #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::types::Tag>>,
-    /// <p>The format of the FAQ input file. You can choose between a basic CSV format, a CSV format that includes customs attributes in a header, and a JSON format that includes custom attributes.</p> 
-    /// <p>The format must match the format of the file stored in the S3 bucket identified in the <code>S3Path</code> parameter.</p> 
+    /// <p>The format of the FAQ input file. You can choose between a basic CSV format, a CSV format that includes customs attributes in a header, and a JSON format that includes custom attributes.</p>
+    /// <p>The format must match the format of the file stored in the S3 bucket identified in the <code>S3Path</code> parameter.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/in-creating-faq.html">Adding questions and answers</a>.</p>
     #[doc(hidden)]
     pub file_format: std::option::Option<crate::types::FaqFileFormat>,
@@ -35,41 +35,41 @@ pub struct CreateFaqInput  {
 }
 impl CreateFaqInput {
     /// <p>The identifier of the index for the FAQ.</p>
-    pub fn index_id(&self) -> std::option::Option<& str> {
+    pub fn index_id(&self) -> std::option::Option<&str> {
         self.index_id.as_deref()
     }
     /// <p>A name for the FAQ.</p>
-    pub fn name(&self) -> std::option::Option<& str> {
+    pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>A description for the FAQ.</p>
-    pub fn description(&self) -> std::option::Option<& str> {
+    pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
     /// <p>The path to the FAQ file in S3.</p>
-    pub fn s3_path(&self) -> std::option::Option<& crate::types::S3Path> {
+    pub fn s3_path(&self) -> std::option::Option<&crate::types::S3Path> {
         self.s3_path.as_ref()
     }
     /// <p>The Amazon Resource Name (ARN) of a role with permission to access the S3 bucket that contains the FAQs. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/iam-roles.html">IAM Roles for Amazon Kendra</a>.</p>
-    pub fn role_arn(&self) -> std::option::Option<& str> {
+    pub fn role_arn(&self) -> std::option::Option<&str> {
         self.role_arn.as_deref()
     }
     /// <p>A list of key-value pairs that identify the FAQ. You can use the tags to identify and organize your resources and to control access to resources.</p>
-    pub fn tags(&self) -> std::option::Option<& [crate::types::Tag]> {
+    pub fn tags(&self) -> std::option::Option<&[crate::types::Tag]> {
         self.tags.as_deref()
     }
-    /// <p>The format of the FAQ input file. You can choose between a basic CSV format, a CSV format that includes customs attributes in a header, and a JSON format that includes custom attributes.</p> 
-    /// <p>The format must match the format of the file stored in the S3 bucket identified in the <code>S3Path</code> parameter.</p> 
+    /// <p>The format of the FAQ input file. You can choose between a basic CSV format, a CSV format that includes customs attributes in a header, and a JSON format that includes custom attributes.</p>
+    /// <p>The format must match the format of the file stored in the S3 bucket identified in the <code>S3Path</code> parameter.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/in-creating-faq.html">Adding questions and answers</a>.</p>
-    pub fn file_format(&self) -> std::option::Option<& crate::types::FaqFileFormat> {
+    pub fn file_format(&self) -> std::option::Option<&crate::types::FaqFileFormat> {
         self.file_format.as_ref()
     }
     /// <p>A token that you provide to identify the request to create a FAQ. Multiple calls to the <code>CreateFaqRequest</code> API with the same client token will create only one FAQ. </p>
-    pub fn client_token(&self) -> std::option::Option<& str> {
+    pub fn client_token(&self) -> std::option::Option<&str> {
         self.client_token.as_deref()
     }
     /// <p>The code for a language. This allows you to support a language for the FAQ document. English is supported by default. For more information on supported languages, including their codes, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/in-adding-languages.html">Adding documents in languages other than English</a>.</p>
-    pub fn language_code(&self) -> std::option::Option<& str> {
+    pub fn language_code(&self) -> std::option::Option<&str> {
         self.language_code.as_deref()
     }
 }
@@ -102,7 +102,8 @@ impl CreateFaqInputBuilder {
     }
     /// <p>The identifier of the index for the FAQ.</p>
     pub fn set_index_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.index_id = input; self
+        self.index_id = input;
+        self
     }
     /// <p>A name for the FAQ.</p>
     pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -111,7 +112,8 @@ impl CreateFaqInputBuilder {
     }
     /// <p>A name for the FAQ.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input; self
+        self.name = input;
+        self
     }
     /// <p>A description for the FAQ.</p>
     pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -120,7 +122,8 @@ impl CreateFaqInputBuilder {
     }
     /// <p>A description for the FAQ.</p>
     pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.description = input; self
+        self.description = input;
+        self
     }
     /// <p>The path to the FAQ file in S3.</p>
     pub fn s3_path(mut self, input: crate::types::S3Path) -> Self {
@@ -129,7 +132,8 @@ impl CreateFaqInputBuilder {
     }
     /// <p>The path to the FAQ file in S3.</p>
     pub fn set_s3_path(mut self, input: std::option::Option<crate::types::S3Path>) -> Self {
-        self.s3_path = input; self
+        self.s3_path = input;
+        self
     }
     /// <p>The Amazon Resource Name (ARN) of a role with permission to access the S3 bucket that contains the FAQs. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/iam-roles.html">IAM Roles for Amazon Kendra</a>.</p>
     pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -138,7 +142,8 @@ impl CreateFaqInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of a role with permission to access the S3 bucket that contains the FAQs. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/iam-roles.html">IAM Roles for Amazon Kendra</a>.</p>
     pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.role_arn = input; self
+        self.role_arn = input;
+        self
     }
     /// Appends an item to `tags`.
     ///
@@ -147,26 +152,34 @@ impl CreateFaqInputBuilder {
     /// <p>A list of key-value pairs that identify the FAQ. You can use the tags to identify and organize your resources and to control access to resources.</p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
-                        v.push(input);
-                        self.tags = Some(v);
-                        self
+        v.push(input);
+        self.tags = Some(v);
+        self
     }
     /// <p>A list of key-value pairs that identify the FAQ. You can use the tags to identify and organize your resources and to control access to resources.</p>
-    pub fn set_tags(mut self, input: std::option::Option<std::vec::Vec<crate::types::Tag>>) -> Self {
-        self.tags = input; self
+    pub fn set_tags(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::Tag>>,
+    ) -> Self {
+        self.tags = input;
+        self
     }
-    /// <p>The format of the FAQ input file. You can choose between a basic CSV format, a CSV format that includes customs attributes in a header, and a JSON format that includes custom attributes.</p> 
-    /// <p>The format must match the format of the file stored in the S3 bucket identified in the <code>S3Path</code> parameter.</p> 
+    /// <p>The format of the FAQ input file. You can choose between a basic CSV format, a CSV format that includes customs attributes in a header, and a JSON format that includes custom attributes.</p>
+    /// <p>The format must match the format of the file stored in the S3 bucket identified in the <code>S3Path</code> parameter.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/in-creating-faq.html">Adding questions and answers</a>.</p>
     pub fn file_format(mut self, input: crate::types::FaqFileFormat) -> Self {
         self.file_format = Some(input);
         self
     }
-    /// <p>The format of the FAQ input file. You can choose between a basic CSV format, a CSV format that includes customs attributes in a header, and a JSON format that includes custom attributes.</p> 
-    /// <p>The format must match the format of the file stored in the S3 bucket identified in the <code>S3Path</code> parameter.</p> 
+    /// <p>The format of the FAQ input file. You can choose between a basic CSV format, a CSV format that includes customs attributes in a header, and a JSON format that includes custom attributes.</p>
+    /// <p>The format must match the format of the file stored in the S3 bucket identified in the <code>S3Path</code> parameter.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/in-creating-faq.html">Adding questions and answers</a>.</p>
-    pub fn set_file_format(mut self, input: std::option::Option<crate::types::FaqFileFormat>) -> Self {
-        self.file_format = input; self
+    pub fn set_file_format(
+        mut self,
+        input: std::option::Option<crate::types::FaqFileFormat>,
+    ) -> Self {
+        self.file_format = input;
+        self
     }
     /// <p>A token that you provide to identify the request to create a FAQ. Multiple calls to the <code>CreateFaqRequest</code> API with the same client token will create only one FAQ. </p>
     pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -175,7 +188,8 @@ impl CreateFaqInputBuilder {
     }
     /// <p>A token that you provide to identify the request to create a FAQ. Multiple calls to the <code>CreateFaqRequest</code> API with the same client token will create only one FAQ. </p>
     pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.client_token = input; self
+        self.client_token = input;
+        self
     }
     /// <p>The code for a language. This allows you to support a language for the FAQ document. English is supported by default. For more information on supported languages, including their codes, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/in-adding-languages.html">Adding documents in languages other than English</a>.</p>
     pub fn language_code(mut self, input: impl Into<std::string::String>) -> Self {
@@ -184,32 +198,26 @@ impl CreateFaqInputBuilder {
     }
     /// <p>The code for a language. This allows you to support a language for the FAQ document. English is supported by default. For more information on supported languages, including their codes, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/in-adding-languages.html">Adding documents in languages other than English</a>.</p>
     pub fn set_language_code(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.language_code = input; self
+        self.language_code = input;
+        self
     }
     /// Consumes the builder and constructs a [`CreateFaqInput`](crate::operation::create_faq::CreateFaqInput).
-    pub fn build(self) -> Result<crate::operation::create_faq::CreateFaqInput, aws_smithy_http::operation::error::BuildError> {
-        Ok(
-            crate::operation::create_faq::CreateFaqInput {
-                index_id: self.index_id
-                ,
-                name: self.name
-                ,
-                description: self.description
-                ,
-                s3_path: self.s3_path
-                ,
-                role_arn: self.role_arn
-                ,
-                tags: self.tags
-                ,
-                file_format: self.file_format
-                ,
-                client_token: self.client_token
-                ,
-                language_code: self.language_code
-                ,
-            }
-        )
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::create_faq::CreateFaqInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        Ok(crate::operation::create_faq::CreateFaqInput {
+            index_id: self.index_id,
+            name: self.name,
+            description: self.description,
+            s3_path: self.s3_path,
+            role_arn: self.role_arn,
+            tags: self.tags,
+            file_format: self.file_format,
+            client_token: self.client_token,
+            language_code: self.language_code,
+        })
     }
 }
-

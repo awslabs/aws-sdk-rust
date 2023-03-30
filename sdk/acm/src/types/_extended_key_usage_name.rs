@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-/// 
+///
 /// Here is an example of how you can make a match expression forward-compatible:
-/// 
+///
 /// ```text
 /// # let extendedkeyusagename = unimplemented!();
 /// match extendedkeyusagename {
@@ -40,14 +40,22 @@
 /// Specifically, when `extendedkeyusagename` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `ExtendedKeyUsageName::NewFeature` also yielding `"NewFeature"`.
-/// 
+///
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
 pub enum ExtendedKeyUsageName {
     #[allow(missing_docs)] // documentation missing in model
     Any,
@@ -74,61 +82,75 @@ pub enum ExtendedKeyUsageName {
     #[allow(missing_docs)] // documentation missing in model
     TlsWebServerAuthentication,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::primitives::UnknownVariantValue)
+    Unknown(crate::primitives::UnknownVariantValue),
 }
 impl std::convert::From<&str> for ExtendedKeyUsageName {
-                fn from(s: &str) -> Self {
-                    match s {
-                        "ANY" => ExtendedKeyUsageName::Any,
-"CODE_SIGNING" => ExtendedKeyUsageName::CodeSigning,
-"CUSTOM" => ExtendedKeyUsageName::Custom,
-"EMAIL_PROTECTION" => ExtendedKeyUsageName::EmailProtection,
-"IPSEC_END_SYSTEM" => ExtendedKeyUsageName::IpsecEndSystem,
-"IPSEC_TUNNEL" => ExtendedKeyUsageName::IpsecTunnel,
-"IPSEC_USER" => ExtendedKeyUsageName::IpsecUser,
-"NONE" => ExtendedKeyUsageName::None,
-"OCSP_SIGNING" => ExtendedKeyUsageName::OcspSigning,
-"TIME_STAMPING" => ExtendedKeyUsageName::TimeStamping,
-"TLS_WEB_CLIENT_AUTHENTICATION" => ExtendedKeyUsageName::TlsWebClientAuthentication,
-"TLS_WEB_SERVER_AUTHENTICATION" => ExtendedKeyUsageName::TlsWebServerAuthentication,
-other => ExtendedKeyUsageName::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
-                    }
-                }
-            }
-impl std::str::FromStr for ExtendedKeyUsageName {
-                type Err = std::convert::Infallible;
-
-                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-                    Ok(ExtendedKeyUsageName::from(s))
-                }
-            }
-impl ExtendedKeyUsageName {
-                /// Returns the `&str` value of the enum member.
-                pub fn as_str(&self) -> &str {
-                    match self {
-    ExtendedKeyUsageName::Any => "ANY",
-    ExtendedKeyUsageName::CodeSigning => "CODE_SIGNING",
-    ExtendedKeyUsageName::Custom => "CUSTOM",
-    ExtendedKeyUsageName::EmailProtection => "EMAIL_PROTECTION",
-    ExtendedKeyUsageName::IpsecEndSystem => "IPSEC_END_SYSTEM",
-    ExtendedKeyUsageName::IpsecTunnel => "IPSEC_TUNNEL",
-    ExtendedKeyUsageName::IpsecUser => "IPSEC_USER",
-    ExtendedKeyUsageName::None => "NONE",
-    ExtendedKeyUsageName::OcspSigning => "OCSP_SIGNING",
-    ExtendedKeyUsageName::TimeStamping => "TIME_STAMPING",
-    ExtendedKeyUsageName::TlsWebClientAuthentication => "TLS_WEB_CLIENT_AUTHENTICATION",
-    ExtendedKeyUsageName::TlsWebServerAuthentication => "TLS_WEB_SERVER_AUTHENTICATION",
-    ExtendedKeyUsageName::Unknown(value) => value.as_str()
+    fn from(s: &str) -> Self {
+        match s {
+            "ANY" => ExtendedKeyUsageName::Any,
+            "CODE_SIGNING" => ExtendedKeyUsageName::CodeSigning,
+            "CUSTOM" => ExtendedKeyUsageName::Custom,
+            "EMAIL_PROTECTION" => ExtendedKeyUsageName::EmailProtection,
+            "IPSEC_END_SYSTEM" => ExtendedKeyUsageName::IpsecEndSystem,
+            "IPSEC_TUNNEL" => ExtendedKeyUsageName::IpsecTunnel,
+            "IPSEC_USER" => ExtendedKeyUsageName::IpsecUser,
+            "NONE" => ExtendedKeyUsageName::None,
+            "OCSP_SIGNING" => ExtendedKeyUsageName::OcspSigning,
+            "TIME_STAMPING" => ExtendedKeyUsageName::TimeStamping,
+            "TLS_WEB_CLIENT_AUTHENTICATION" => ExtendedKeyUsageName::TlsWebClientAuthentication,
+            "TLS_WEB_SERVER_AUTHENTICATION" => ExtendedKeyUsageName::TlsWebServerAuthentication,
+            other => ExtendedKeyUsageName::Unknown(crate::primitives::UnknownVariantValue(
+                other.to_owned(),
+            )),
+        }
+    }
 }
-                }
-                /// Returns all the `&str` representations of the enum members.
-                pub const fn values() -> &'static [&'static str] {
-                    &["ANY", "CODE_SIGNING", "CUSTOM", "EMAIL_PROTECTION", "IPSEC_END_SYSTEM", "IPSEC_TUNNEL", "IPSEC_USER", "NONE", "OCSP_SIGNING", "TIME_STAMPING", "TLS_WEB_CLIENT_AUTHENTICATION", "TLS_WEB_SERVER_AUTHENTICATION"]
-                }
-            }
-impl AsRef<str> for ExtendedKeyUsageName {
-                fn as_ref(&self) -> &str {
-                    self.as_str()
-                }
-            }
+impl std::str::FromStr for ExtendedKeyUsageName {
+    type Err = std::convert::Infallible;
 
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(ExtendedKeyUsageName::from(s))
+    }
+}
+impl ExtendedKeyUsageName {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            ExtendedKeyUsageName::Any => "ANY",
+            ExtendedKeyUsageName::CodeSigning => "CODE_SIGNING",
+            ExtendedKeyUsageName::Custom => "CUSTOM",
+            ExtendedKeyUsageName::EmailProtection => "EMAIL_PROTECTION",
+            ExtendedKeyUsageName::IpsecEndSystem => "IPSEC_END_SYSTEM",
+            ExtendedKeyUsageName::IpsecTunnel => "IPSEC_TUNNEL",
+            ExtendedKeyUsageName::IpsecUser => "IPSEC_USER",
+            ExtendedKeyUsageName::None => "NONE",
+            ExtendedKeyUsageName::OcspSigning => "OCSP_SIGNING",
+            ExtendedKeyUsageName::TimeStamping => "TIME_STAMPING",
+            ExtendedKeyUsageName::TlsWebClientAuthentication => "TLS_WEB_CLIENT_AUTHENTICATION",
+            ExtendedKeyUsageName::TlsWebServerAuthentication => "TLS_WEB_SERVER_AUTHENTICATION",
+            ExtendedKeyUsageName::Unknown(value) => value.as_str(),
+        }
+    }
+    /// Returns all the `&str` representations of the enum members.
+    pub const fn values() -> &'static [&'static str] {
+        &[
+            "ANY",
+            "CODE_SIGNING",
+            "CUSTOM",
+            "EMAIL_PROTECTION",
+            "IPSEC_END_SYSTEM",
+            "IPSEC_TUNNEL",
+            "IPSEC_USER",
+            "NONE",
+            "OCSP_SIGNING",
+            "TIME_STAMPING",
+            "TLS_WEB_CLIENT_AUTHENTICATION",
+            "TLS_WEB_SERVER_AUTHENTICATION",
+        ]
+    }
+}
+impl AsRef<str> for ExtendedKeyUsageName {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}

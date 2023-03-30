@@ -2,16 +2,16 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateShardCountInput  {
+pub struct UpdateShardCountInput {
     /// <p>The name of the stream.</p>
     #[doc(hidden)]
     pub stream_name: std::option::Option<std::string::String>,
-    /// <p>The new number of shards. This value has the following default limits. By default, you cannot do the following: </p> 
-    /// <ul> 
-    /// <li> <p>Set this value to more than double your current shard count for a stream.</p> </li> 
-    /// <li> <p>Set this value below half your current shard count for a stream.</p> </li> 
-    /// <li> <p>Set this value to more than 10000 shards in a stream (the default limit for shard count per stream is 10000 per account per region), unless you request a limit increase.</p> </li> 
-    /// <li> <p>Scale a stream with more than 10000 shards down unless you set this value to less than 10000 shards.</p> </li> 
+    /// <p>The new number of shards. This value has the following default limits. By default, you cannot do the following: </p>
+    /// <ul>
+    /// <li> <p>Set this value to more than double your current shard count for a stream.</p> </li>
+    /// <li> <p>Set this value below half your current shard count for a stream.</p> </li>
+    /// <li> <p>Set this value to more than 10000 shards in a stream (the default limit for shard count per stream is 10000 per account per region), unless you request a limit increase.</p> </li>
+    /// <li> <p>Scale a stream with more than 10000 shards down unless you set this value to less than 10000 shards.</p> </li>
     /// </ul>
     #[doc(hidden)]
     pub target_shard_count: std::option::Option<i32>,
@@ -24,31 +24,32 @@ pub struct UpdateShardCountInput  {
 }
 impl UpdateShardCountInput {
     /// <p>The name of the stream.</p>
-    pub fn stream_name(&self) -> std::option::Option<& str> {
+    pub fn stream_name(&self) -> std::option::Option<&str> {
         self.stream_name.as_deref()
     }
-    /// <p>The new number of shards. This value has the following default limits. By default, you cannot do the following: </p> 
-    /// <ul> 
-    /// <li> <p>Set this value to more than double your current shard count for a stream.</p> </li> 
-    /// <li> <p>Set this value below half your current shard count for a stream.</p> </li> 
-    /// <li> <p>Set this value to more than 10000 shards in a stream (the default limit for shard count per stream is 10000 per account per region), unless you request a limit increase.</p> </li> 
-    /// <li> <p>Scale a stream with more than 10000 shards down unless you set this value to less than 10000 shards.</p> </li> 
+    /// <p>The new number of shards. This value has the following default limits. By default, you cannot do the following: </p>
+    /// <ul>
+    /// <li> <p>Set this value to more than double your current shard count for a stream.</p> </li>
+    /// <li> <p>Set this value below half your current shard count for a stream.</p> </li>
+    /// <li> <p>Set this value to more than 10000 shards in a stream (the default limit for shard count per stream is 10000 per account per region), unless you request a limit increase.</p> </li>
+    /// <li> <p>Scale a stream with more than 10000 shards down unless you set this value to less than 10000 shards.</p> </li>
     /// </ul>
     pub fn target_shard_count(&self) -> std::option::Option<i32> {
         self.target_shard_count
     }
     /// <p>The scaling type. Uniform scaling creates shards of equal size.</p>
-    pub fn scaling_type(&self) -> std::option::Option<& crate::types::ScalingType> {
+    pub fn scaling_type(&self) -> std::option::Option<&crate::types::ScalingType> {
         self.scaling_type.as_ref()
     }
     /// <p>The ARN of the stream.</p>
-    pub fn stream_arn(&self) -> std::option::Option<& str> {
+    pub fn stream_arn(&self) -> std::option::Option<&str> {
         self.stream_arn.as_deref()
     }
 }
 impl UpdateShardCountInput {
     /// Creates a new builder-style object to manufacture [`UpdateShardCountInput`](crate::operation::update_shard_count::UpdateShardCountInput).
-    pub fn builder() -> crate::operation::update_shard_count::builders::UpdateShardCountInputBuilder {
+    pub fn builder() -> crate::operation::update_shard_count::builders::UpdateShardCountInputBuilder
+    {
         crate::operation::update_shard_count::builders::UpdateShardCountInputBuilder::default()
     }
 }
@@ -70,28 +71,30 @@ impl UpdateShardCountInputBuilder {
     }
     /// <p>The name of the stream.</p>
     pub fn set_stream_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.stream_name = input; self
+        self.stream_name = input;
+        self
     }
-    /// <p>The new number of shards. This value has the following default limits. By default, you cannot do the following: </p> 
-    /// <ul> 
-    /// <li> <p>Set this value to more than double your current shard count for a stream.</p> </li> 
-    /// <li> <p>Set this value below half your current shard count for a stream.</p> </li> 
-    /// <li> <p>Set this value to more than 10000 shards in a stream (the default limit for shard count per stream is 10000 per account per region), unless you request a limit increase.</p> </li> 
-    /// <li> <p>Scale a stream with more than 10000 shards down unless you set this value to less than 10000 shards.</p> </li> 
+    /// <p>The new number of shards. This value has the following default limits. By default, you cannot do the following: </p>
+    /// <ul>
+    /// <li> <p>Set this value to more than double your current shard count for a stream.</p> </li>
+    /// <li> <p>Set this value below half your current shard count for a stream.</p> </li>
+    /// <li> <p>Set this value to more than 10000 shards in a stream (the default limit for shard count per stream is 10000 per account per region), unless you request a limit increase.</p> </li>
+    /// <li> <p>Scale a stream with more than 10000 shards down unless you set this value to less than 10000 shards.</p> </li>
     /// </ul>
     pub fn target_shard_count(mut self, input: i32) -> Self {
         self.target_shard_count = Some(input);
         self
     }
-    /// <p>The new number of shards. This value has the following default limits. By default, you cannot do the following: </p> 
-    /// <ul> 
-    /// <li> <p>Set this value to more than double your current shard count for a stream.</p> </li> 
-    /// <li> <p>Set this value below half your current shard count for a stream.</p> </li> 
-    /// <li> <p>Set this value to more than 10000 shards in a stream (the default limit for shard count per stream is 10000 per account per region), unless you request a limit increase.</p> </li> 
-    /// <li> <p>Scale a stream with more than 10000 shards down unless you set this value to less than 10000 shards.</p> </li> 
+    /// <p>The new number of shards. This value has the following default limits. By default, you cannot do the following: </p>
+    /// <ul>
+    /// <li> <p>Set this value to more than double your current shard count for a stream.</p> </li>
+    /// <li> <p>Set this value below half your current shard count for a stream.</p> </li>
+    /// <li> <p>Set this value to more than 10000 shards in a stream (the default limit for shard count per stream is 10000 per account per region), unless you request a limit increase.</p> </li>
+    /// <li> <p>Scale a stream with more than 10000 shards down unless you set this value to less than 10000 shards.</p> </li>
     /// </ul>
     pub fn set_target_shard_count(mut self, input: std::option::Option<i32>) -> Self {
-        self.target_shard_count = input; self
+        self.target_shard_count = input;
+        self
     }
     /// <p>The scaling type. Uniform scaling creates shards of equal size.</p>
     pub fn scaling_type(mut self, input: crate::types::ScalingType) -> Self {
@@ -99,8 +102,12 @@ impl UpdateShardCountInputBuilder {
         self
     }
     /// <p>The scaling type. Uniform scaling creates shards of equal size.</p>
-    pub fn set_scaling_type(mut self, input: std::option::Option<crate::types::ScalingType>) -> Self {
-        self.scaling_type = input; self
+    pub fn set_scaling_type(
+        mut self,
+        input: std::option::Option<crate::types::ScalingType>,
+    ) -> Self {
+        self.scaling_type = input;
+        self
     }
     /// <p>The ARN of the stream.</p>
     pub fn stream_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -109,22 +116,23 @@ impl UpdateShardCountInputBuilder {
     }
     /// <p>The ARN of the stream.</p>
     pub fn set_stream_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.stream_arn = input; self
+        self.stream_arn = input;
+        self
     }
     /// Consumes the builder and constructs a [`UpdateShardCountInput`](crate::operation::update_shard_count::UpdateShardCountInput).
-    pub fn build(self) -> Result<crate::operation::update_shard_count::UpdateShardCountInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::update_shard_count::UpdateShardCountInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::update_shard_count::UpdateShardCountInput {
-                stream_name: self.stream_name
-                ,
-                target_shard_count: self.target_shard_count
-                ,
-                scaling_type: self.scaling_type
-                ,
-                stream_arn: self.stream_arn
-                ,
-            }
+                stream_name: self.stream_name,
+                target_shard_count: self.target_shard_count,
+                scaling_type: self.scaling_type,
+                stream_arn: self.stream_arn,
+            },
         )
     }
 }
-

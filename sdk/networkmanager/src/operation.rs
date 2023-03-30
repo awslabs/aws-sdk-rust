@@ -255,4 +255,3 @@ pub mod update_site;
 
 /// Types for the `UpdateVpcAttachment` operation.
 pub mod update_vpc_attachment;
-

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateResolverEndpointInput  {
+pub struct UpdateResolverEndpointInput {
     /// <p>The ID of the Resolver endpoint that you want to update.</p>
     #[doc(hidden)]
     pub resolver_endpoint_id: std::option::Option<std::string::String>,
@@ -12,17 +12,19 @@ pub struct UpdateResolverEndpointInput  {
 }
 impl UpdateResolverEndpointInput {
     /// <p>The ID of the Resolver endpoint that you want to update.</p>
-    pub fn resolver_endpoint_id(&self) -> std::option::Option<& str> {
+    pub fn resolver_endpoint_id(&self) -> std::option::Option<&str> {
         self.resolver_endpoint_id.as_deref()
     }
     /// <p>The name of the Resolver endpoint that you want to update.</p>
-    pub fn name(&self) -> std::option::Option<& str> {
+    pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
 }
 impl UpdateResolverEndpointInput {
     /// Creates a new builder-style object to manufacture [`UpdateResolverEndpointInput`](crate::operation::update_resolver_endpoint::UpdateResolverEndpointInput).
-    pub fn builder() -> crate::operation::update_resolver_endpoint::builders::UpdateResolverEndpointInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::update_resolver_endpoint::builders::UpdateResolverEndpointInputBuilder
+    {
         crate::operation::update_resolver_endpoint::builders::UpdateResolverEndpointInputBuilder::default()
     }
 }
@@ -41,8 +43,12 @@ impl UpdateResolverEndpointInputBuilder {
         self
     }
     /// <p>The ID of the Resolver endpoint that you want to update.</p>
-    pub fn set_resolver_endpoint_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.resolver_endpoint_id = input; self
+    pub fn set_resolver_endpoint_id(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.resolver_endpoint_id = input;
+        self
     }
     /// <p>The name of the Resolver endpoint that you want to update.</p>
     pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -51,18 +57,21 @@ impl UpdateResolverEndpointInputBuilder {
     }
     /// <p>The name of the Resolver endpoint that you want to update.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input; self
+        self.name = input;
+        self
     }
     /// Consumes the builder and constructs a [`UpdateResolverEndpointInput`](crate::operation::update_resolver_endpoint::UpdateResolverEndpointInput).
-    pub fn build(self) -> Result<crate::operation::update_resolver_endpoint::UpdateResolverEndpointInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::update_resolver_endpoint::UpdateResolverEndpointInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::update_resolver_endpoint::UpdateResolverEndpointInput {
-                resolver_endpoint_id: self.resolver_endpoint_id
-                ,
-                name: self.name
-                ,
-            }
+                resolver_endpoint_id: self.resolver_endpoint_id,
+                name: self.name,
+            },
         )
     }
 }
-

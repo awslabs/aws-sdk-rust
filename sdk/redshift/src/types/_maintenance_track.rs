@@ -3,7 +3,7 @@
 /// <p>Defines a maintenance track that determines which Amazon Redshift version to apply during a maintenance window. If the value for <code>MaintenanceTrack</code> is <code>current</code>, the cluster is updated to the most recently certified maintenance release. If the value is <code>trailing</code>, the cluster is updated to the previously certified maintenance release. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct MaintenanceTrack  {
+pub struct MaintenanceTrack {
     /// <p>The name of the maintenance track. Possible values are <code>current</code> and <code>trailing</code>.</p>
     #[doc(hidden)]
     pub maintenance_track_name: std::option::Option<std::string::String>,
@@ -16,15 +16,15 @@ pub struct MaintenanceTrack  {
 }
 impl MaintenanceTrack {
     /// <p>The name of the maintenance track. Possible values are <code>current</code> and <code>trailing</code>.</p>
-    pub fn maintenance_track_name(&self) -> std::option::Option<& str> {
+    pub fn maintenance_track_name(&self) -> std::option::Option<&str> {
         self.maintenance_track_name.as_deref()
     }
     /// <p>The version number for the cluster release.</p>
-    pub fn database_version(&self) -> std::option::Option<& str> {
+    pub fn database_version(&self) -> std::option::Option<&str> {
         self.database_version.as_deref()
     }
     /// <p>An array of <code>UpdateTarget</code> objects to update with the maintenance track. </p>
-    pub fn update_targets(&self) -> std::option::Option<& [crate::types::UpdateTarget]> {
+    pub fn update_targets(&self) -> std::option::Option<&[crate::types::UpdateTarget]> {
         self.update_targets.as_deref()
     }
 }
@@ -50,8 +50,12 @@ impl MaintenanceTrackBuilder {
         self
     }
     /// <p>The name of the maintenance track. Possible values are <code>current</code> and <code>trailing</code>.</p>
-    pub fn set_maintenance_track_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.maintenance_track_name = input; self
+    pub fn set_maintenance_track_name(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.maintenance_track_name = input;
+        self
     }
     /// <p>The version number for the cluster release.</p>
     pub fn database_version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -60,7 +64,8 @@ impl MaintenanceTrackBuilder {
     }
     /// <p>The version number for the cluster release.</p>
     pub fn set_database_version(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.database_version = input; self
+        self.database_version = input;
+        self
     }
     /// Appends an item to `update_targets`.
     ///
@@ -69,24 +74,24 @@ impl MaintenanceTrackBuilder {
     /// <p>An array of <code>UpdateTarget</code> objects to update with the maintenance track. </p>
     pub fn update_targets(mut self, input: crate::types::UpdateTarget) -> Self {
         let mut v = self.update_targets.unwrap_or_default();
-                        v.push(input);
-                        self.update_targets = Some(v);
-                        self
+        v.push(input);
+        self.update_targets = Some(v);
+        self
     }
     /// <p>An array of <code>UpdateTarget</code> objects to update with the maintenance track. </p>
-    pub fn set_update_targets(mut self, input: std::option::Option<std::vec::Vec<crate::types::UpdateTarget>>) -> Self {
-        self.update_targets = input; self
+    pub fn set_update_targets(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::UpdateTarget>>,
+    ) -> Self {
+        self.update_targets = input;
+        self
     }
     /// Consumes the builder and constructs a [`MaintenanceTrack`](crate::types::MaintenanceTrack).
     pub fn build(self) -> crate::types::MaintenanceTrack {
         crate::types::MaintenanceTrack {
-            maintenance_track_name: self.maintenance_track_name
-            ,
-            database_version: self.database_version
-            ,
-            update_targets: self.update_targets
-            ,
+            maintenance_track_name: self.maintenance_track_name,
+            database_version: self.database_version,
+            update_targets: self.update_targets,
         }
     }
 }
-

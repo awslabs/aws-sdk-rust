@@ -3,7 +3,7 @@
 /// Output groups for this Live Event. Output groups contain information about where streams should be distributed.
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CaptionSelector  {
+pub struct CaptionSelector {
     /// When specified this field indicates the three letter language code of the caption track to extract from the source.
     #[doc(hidden)]
     pub language_code: std::option::Option<std::string::String>,
@@ -16,15 +16,15 @@ pub struct CaptionSelector  {
 }
 impl CaptionSelector {
     /// When specified this field indicates the three letter language code of the caption track to extract from the source.
-    pub fn language_code(&self) -> std::option::Option<& str> {
+    pub fn language_code(&self) -> std::option::Option<&str> {
         self.language_code.as_deref()
     }
     /// Name identifier for a caption selector. This name is used to associate this caption selector with one or more caption descriptions. Names must be unique within an event.
-    pub fn name(&self) -> std::option::Option<& str> {
+    pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
     /// Caption selector settings.
-    pub fn selector_settings(&self) -> std::option::Option<& crate::types::CaptionSelectorSettings> {
+    pub fn selector_settings(&self) -> std::option::Option<&crate::types::CaptionSelectorSettings> {
         self.selector_settings.as_ref()
     }
 }
@@ -51,7 +51,8 @@ impl CaptionSelectorBuilder {
     }
     /// When specified this field indicates the three letter language code of the caption track to extract from the source.
     pub fn set_language_code(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.language_code = input; self
+        self.language_code = input;
+        self
     }
     /// Name identifier for a caption selector. This name is used to associate this caption selector with one or more caption descriptions. Names must be unique within an event.
     pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -60,7 +61,8 @@ impl CaptionSelectorBuilder {
     }
     /// Name identifier for a caption selector. This name is used to associate this caption selector with one or more caption descriptions. Names must be unique within an event.
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input; self
+        self.name = input;
+        self
     }
     /// Caption selector settings.
     pub fn selector_settings(mut self, input: crate::types::CaptionSelectorSettings) -> Self {
@@ -68,19 +70,19 @@ impl CaptionSelectorBuilder {
         self
     }
     /// Caption selector settings.
-    pub fn set_selector_settings(mut self, input: std::option::Option<crate::types::CaptionSelectorSettings>) -> Self {
-        self.selector_settings = input; self
+    pub fn set_selector_settings(
+        mut self,
+        input: std::option::Option<crate::types::CaptionSelectorSettings>,
+    ) -> Self {
+        self.selector_settings = input;
+        self
     }
     /// Consumes the builder and constructs a [`CaptionSelector`](crate::types::CaptionSelector).
     pub fn build(self) -> crate::types::CaptionSelector {
         crate::types::CaptionSelector {
-            language_code: self.language_code
-            ,
-            name: self.name
-            ,
-            selector_settings: self.selector_settings
-            ,
+            language_code: self.language_code,
+            name: self.name,
+            selector_settings: self.selector_settings,
         }
     }
 }
-

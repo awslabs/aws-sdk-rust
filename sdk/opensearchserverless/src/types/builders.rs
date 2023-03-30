@@ -52,4 +52,3 @@ pub use crate::types::_vpc_endpoint_detail::VpcEndpointDetailBuilder;
 pub use crate::types::_collection_error_detail::CollectionErrorDetailBuilder;
 
 pub use crate::types::_collection_detail::CollectionDetailBuilder;
-

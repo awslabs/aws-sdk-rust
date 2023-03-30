@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct DescribeUserOutput  {
+pub struct DescribeUserOutput {
     /// <p>A unique string used to identify the user. The length limit is 128 characters. This value can consist of letters, accented characters, symbols, numbers, and punctuation. This value is specified at the time the user is created and stored as an attribute of the user object in the identity store.</p>
     #[doc(hidden)]
     pub user_name: std::option::Option<std::string::String>,
@@ -55,71 +55,71 @@ pub struct DescribeUserOutput  {
 }
 impl DescribeUserOutput {
     /// <p>A unique string used to identify the user. The length limit is 128 characters. This value can consist of letters, accented characters, symbols, numbers, and punctuation. This value is specified at the time the user is created and stored as an attribute of the user object in the identity store.</p>
-    pub fn user_name(&self) -> std::option::Option<& str> {
+    pub fn user_name(&self) -> std::option::Option<&str> {
         self.user_name.as_deref()
     }
     /// <p>The identifier for a user in the identity store.</p>
-    pub fn user_id(&self) -> std::option::Option<& str> {
+    pub fn user_id(&self) -> std::option::Option<&str> {
         self.user_id.as_deref()
     }
     /// <p>A list of <code>ExternalId</code> objects that contains the identifiers issued to this resource by an external identity provider.</p>
-    pub fn external_ids(&self) -> std::option::Option<& [crate::types::ExternalId]> {
+    pub fn external_ids(&self) -> std::option::Option<&[crate::types::ExternalId]> {
         self.external_ids.as_deref()
     }
     /// <p>The name of the user.</p>
-    pub fn name(&self) -> std::option::Option<& crate::types::Name> {
+    pub fn name(&self) -> std::option::Option<&crate::types::Name> {
         self.name.as_ref()
     }
     /// <p>The user's name value for display.</p>
-    pub fn display_name(&self) -> std::option::Option<& str> {
+    pub fn display_name(&self) -> std::option::Option<&str> {
         self.display_name.as_deref()
     }
     /// <p>An alternative descriptive name for the user.</p>
-    pub fn nick_name(&self) -> std::option::Option<& str> {
+    pub fn nick_name(&self) -> std::option::Option<&str> {
         self.nick_name.as_deref()
     }
     /// <p>A URL link for the user's profile.</p>
-    pub fn profile_url(&self) -> std::option::Option<& str> {
+    pub fn profile_url(&self) -> std::option::Option<&str> {
         self.profile_url.as_deref()
     }
     /// <p>The user's email value.</p>
-    pub fn emails(&self) -> std::option::Option<& [crate::types::Email]> {
+    pub fn emails(&self) -> std::option::Option<&[crate::types::Email]> {
         self.emails.as_deref()
     }
     /// <p>The user's physical address.</p>
-    pub fn addresses(&self) -> std::option::Option<& [crate::types::Address]> {
+    pub fn addresses(&self) -> std::option::Option<&[crate::types::Address]> {
         self.addresses.as_deref()
     }
     /// <p>A list of <code>PhoneNumber</code> objects associated with a user.</p>
-    pub fn phone_numbers(&self) -> std::option::Option<& [crate::types::PhoneNumber]> {
+    pub fn phone_numbers(&self) -> std::option::Option<&[crate::types::PhoneNumber]> {
         self.phone_numbers.as_deref()
     }
     /// <p>A string indicating the user's type.</p>
-    pub fn user_type(&self) -> std::option::Option<& str> {
+    pub fn user_type(&self) -> std::option::Option<&str> {
         self.user_type.as_deref()
     }
     /// <p>A string containing the user's title.</p>
-    pub fn title(&self) -> std::option::Option<& str> {
+    pub fn title(&self) -> std::option::Option<&str> {
         self.title.as_deref()
     }
     /// <p>The preferred language of the user.</p>
-    pub fn preferred_language(&self) -> std::option::Option<& str> {
+    pub fn preferred_language(&self) -> std::option::Option<&str> {
         self.preferred_language.as_deref()
     }
     /// <p>A string containing the user's geographical region or location.</p>
-    pub fn locale(&self) -> std::option::Option<& str> {
+    pub fn locale(&self) -> std::option::Option<&str> {
         self.locale.as_deref()
     }
     /// <p>The time zone for a user.</p>
-    pub fn timezone(&self) -> std::option::Option<& str> {
+    pub fn timezone(&self) -> std::option::Option<&str> {
         self.timezone.as_deref()
     }
     /// <p>The globally unique identifier for the identity store.</p>
-    pub fn identity_store_id(&self) -> std::option::Option<& str> {
+    pub fn identity_store_id(&self) -> std::option::Option<&str> {
         self.identity_store_id.as_deref()
     }
 }
-impl  std::fmt::Debug for DescribeUserOutput  {
+impl std::fmt::Debug for DescribeUserOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeUserOutput");
         formatter.field("user_name", &"*** Sensitive Data Redacted ***");
@@ -143,10 +143,10 @@ impl  std::fmt::Debug for DescribeUserOutput  {
     }
 }
 impl aws_http::request_id::RequestId for DescribeUserOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl DescribeUserOutput {
     /// Creates a new builder-style object to manufacture [`DescribeUserOutput`](crate::operation::describe_user::DescribeUserOutput).
     pub fn builder() -> crate::operation::describe_user::builders::DescribeUserOutputBuilder {
@@ -184,7 +184,8 @@ impl DescribeUserOutputBuilder {
     }
     /// <p>A unique string used to identify the user. The length limit is 128 characters. This value can consist of letters, accented characters, symbols, numbers, and punctuation. This value is specified at the time the user is created and stored as an attribute of the user object in the identity store.</p>
     pub fn set_user_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.user_name = input; self
+        self.user_name = input;
+        self
     }
     /// <p>The identifier for a user in the identity store.</p>
     pub fn user_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -193,7 +194,8 @@ impl DescribeUserOutputBuilder {
     }
     /// <p>The identifier for a user in the identity store.</p>
     pub fn set_user_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.user_id = input; self
+        self.user_id = input;
+        self
     }
     /// Appends an item to `external_ids`.
     ///
@@ -202,13 +204,17 @@ impl DescribeUserOutputBuilder {
     /// <p>A list of <code>ExternalId</code> objects that contains the identifiers issued to this resource by an external identity provider.</p>
     pub fn external_ids(mut self, input: crate::types::ExternalId) -> Self {
         let mut v = self.external_ids.unwrap_or_default();
-                        v.push(input);
-                        self.external_ids = Some(v);
-                        self
+        v.push(input);
+        self.external_ids = Some(v);
+        self
     }
     /// <p>A list of <code>ExternalId</code> objects that contains the identifiers issued to this resource by an external identity provider.</p>
-    pub fn set_external_ids(mut self, input: std::option::Option<std::vec::Vec<crate::types::ExternalId>>) -> Self {
-        self.external_ids = input; self
+    pub fn set_external_ids(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::ExternalId>>,
+    ) -> Self {
+        self.external_ids = input;
+        self
     }
     /// <p>The name of the user.</p>
     pub fn name(mut self, input: crate::types::Name) -> Self {
@@ -217,7 +223,8 @@ impl DescribeUserOutputBuilder {
     }
     /// <p>The name of the user.</p>
     pub fn set_name(mut self, input: std::option::Option<crate::types::Name>) -> Self {
-        self.name = input; self
+        self.name = input;
+        self
     }
     /// <p>The user's name value for display.</p>
     pub fn display_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -226,7 +233,8 @@ impl DescribeUserOutputBuilder {
     }
     /// <p>The user's name value for display.</p>
     pub fn set_display_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.display_name = input; self
+        self.display_name = input;
+        self
     }
     /// <p>An alternative descriptive name for the user.</p>
     pub fn nick_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -235,7 +243,8 @@ impl DescribeUserOutputBuilder {
     }
     /// <p>An alternative descriptive name for the user.</p>
     pub fn set_nick_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.nick_name = input; self
+        self.nick_name = input;
+        self
     }
     /// <p>A URL link for the user's profile.</p>
     pub fn profile_url(mut self, input: impl Into<std::string::String>) -> Self {
@@ -244,7 +253,8 @@ impl DescribeUserOutputBuilder {
     }
     /// <p>A URL link for the user's profile.</p>
     pub fn set_profile_url(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.profile_url = input; self
+        self.profile_url = input;
+        self
     }
     /// Appends an item to `emails`.
     ///
@@ -253,13 +263,17 @@ impl DescribeUserOutputBuilder {
     /// <p>The user's email value.</p>
     pub fn emails(mut self, input: crate::types::Email) -> Self {
         let mut v = self.emails.unwrap_or_default();
-                        v.push(input);
-                        self.emails = Some(v);
-                        self
+        v.push(input);
+        self.emails = Some(v);
+        self
     }
     /// <p>The user's email value.</p>
-    pub fn set_emails(mut self, input: std::option::Option<std::vec::Vec<crate::types::Email>>) -> Self {
-        self.emails = input; self
+    pub fn set_emails(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::Email>>,
+    ) -> Self {
+        self.emails = input;
+        self
     }
     /// Appends an item to `addresses`.
     ///
@@ -268,13 +282,17 @@ impl DescribeUserOutputBuilder {
     /// <p>The user's physical address.</p>
     pub fn addresses(mut self, input: crate::types::Address) -> Self {
         let mut v = self.addresses.unwrap_or_default();
-                        v.push(input);
-                        self.addresses = Some(v);
-                        self
+        v.push(input);
+        self.addresses = Some(v);
+        self
     }
     /// <p>The user's physical address.</p>
-    pub fn set_addresses(mut self, input: std::option::Option<std::vec::Vec<crate::types::Address>>) -> Self {
-        self.addresses = input; self
+    pub fn set_addresses(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::Address>>,
+    ) -> Self {
+        self.addresses = input;
+        self
     }
     /// Appends an item to `phone_numbers`.
     ///
@@ -283,13 +301,17 @@ impl DescribeUserOutputBuilder {
     /// <p>A list of <code>PhoneNumber</code> objects associated with a user.</p>
     pub fn phone_numbers(mut self, input: crate::types::PhoneNumber) -> Self {
         let mut v = self.phone_numbers.unwrap_or_default();
-                        v.push(input);
-                        self.phone_numbers = Some(v);
-                        self
+        v.push(input);
+        self.phone_numbers = Some(v);
+        self
     }
     /// <p>A list of <code>PhoneNumber</code> objects associated with a user.</p>
-    pub fn set_phone_numbers(mut self, input: std::option::Option<std::vec::Vec<crate::types::PhoneNumber>>) -> Self {
-        self.phone_numbers = input; self
+    pub fn set_phone_numbers(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::PhoneNumber>>,
+    ) -> Self {
+        self.phone_numbers = input;
+        self
     }
     /// <p>A string indicating the user's type.</p>
     pub fn user_type(mut self, input: impl Into<std::string::String>) -> Self {
@@ -298,7 +320,8 @@ impl DescribeUserOutputBuilder {
     }
     /// <p>A string indicating the user's type.</p>
     pub fn set_user_type(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.user_type = input; self
+        self.user_type = input;
+        self
     }
     /// <p>A string containing the user's title.</p>
     pub fn title(mut self, input: impl Into<std::string::String>) -> Self {
@@ -307,7 +330,8 @@ impl DescribeUserOutputBuilder {
     }
     /// <p>A string containing the user's title.</p>
     pub fn set_title(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.title = input; self
+        self.title = input;
+        self
     }
     /// <p>The preferred language of the user.</p>
     pub fn preferred_language(mut self, input: impl Into<std::string::String>) -> Self {
@@ -315,8 +339,12 @@ impl DescribeUserOutputBuilder {
         self
     }
     /// <p>The preferred language of the user.</p>
-    pub fn set_preferred_language(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.preferred_language = input; self
+    pub fn set_preferred_language(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.preferred_language = input;
+        self
     }
     /// <p>A string containing the user's geographical region or location.</p>
     pub fn locale(mut self, input: impl Into<std::string::String>) -> Self {
@@ -325,7 +353,8 @@ impl DescribeUserOutputBuilder {
     }
     /// <p>A string containing the user's geographical region or location.</p>
     pub fn set_locale(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.locale = input; self
+        self.locale = input;
+        self
     }
     /// <p>The time zone for a user.</p>
     pub fn timezone(mut self, input: impl Into<std::string::String>) -> Self {
@@ -334,7 +363,8 @@ impl DescribeUserOutputBuilder {
     }
     /// <p>The time zone for a user.</p>
     pub fn set_timezone(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.timezone = input; self
+        self.timezone = input;
+        self
     }
     /// <p>The globally unique identifier for the identity store.</p>
     pub fn identity_store_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -342,53 +372,41 @@ impl DescribeUserOutputBuilder {
         self
     }
     /// <p>The globally unique identifier for the identity store.</p>
-    pub fn set_identity_store_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.identity_store_id = input; self
+    pub fn set_identity_store_id(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.identity_store_id = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`DescribeUserOutput`](crate::operation::describe_user::DescribeUserOutput).
     pub fn build(self) -> crate::operation::describe_user::DescribeUserOutput {
         crate::operation::describe_user::DescribeUserOutput {
-            user_name: self.user_name
-            ,
-            user_id: self.user_id
-            ,
-            external_ids: self.external_ids
-            ,
-            name: self.name
-            ,
-            display_name: self.display_name
-            ,
-            nick_name: self.nick_name
-            ,
-            profile_url: self.profile_url
-            ,
-            emails: self.emails
-            ,
-            addresses: self.addresses
-            ,
-            phone_numbers: self.phone_numbers
-            ,
-            user_type: self.user_type
-            ,
-            title: self.title
-            ,
-            preferred_language: self.preferred_language
-            ,
-            locale: self.locale
-            ,
-            timezone: self.timezone
-            ,
-            identity_store_id: self.identity_store_id
-            ,
+            user_name: self.user_name,
+            user_id: self.user_id,
+            external_ids: self.external_ids,
+            name: self.name,
+            display_name: self.display_name,
+            nick_name: self.nick_name,
+            profile_url: self.profile_url,
+            emails: self.emails,
+            addresses: self.addresses,
+            phone_numbers: self.phone_numbers,
+            user_type: self.user_type,
+            title: self.title,
+            preferred_language: self.preferred_language,
+            locale: self.locale,
+            timezone: self.timezone,
+            identity_store_id: self.identity_store_id,
             _request_id: self._request_id,
         }
     }
@@ -416,4 +434,3 @@ impl std::fmt::Debug for DescribeUserOutputBuilder {
         formatter.finish()
     }
 }
-

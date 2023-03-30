@@ -2,27 +2,30 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateAutomaticTapeCreationPolicyInput  {
+pub struct UpdateAutomaticTapeCreationPolicyInput {
     /// <p>An automatic tape creation policy consists of a list of automatic tape creation rules. The rules determine when and how to automatically create new tapes.</p>
     #[doc(hidden)]
-    pub automatic_tape_creation_rules: std::option::Option<std::vec::Vec<crate::types::AutomaticTapeCreationRule>>,
+    pub automatic_tape_creation_rules:
+        std::option::Option<std::vec::Vec<crate::types::AutomaticTapeCreationRule>>,
     /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
     #[doc(hidden)]
     pub gateway_arn: std::option::Option<std::string::String>,
 }
 impl UpdateAutomaticTapeCreationPolicyInput {
     /// <p>An automatic tape creation policy consists of a list of automatic tape creation rules. The rules determine when and how to automatically create new tapes.</p>
-    pub fn automatic_tape_creation_rules(&self) -> std::option::Option<& [crate::types::AutomaticTapeCreationRule]> {
+    pub fn automatic_tape_creation_rules(
+        &self,
+    ) -> std::option::Option<&[crate::types::AutomaticTapeCreationRule]> {
         self.automatic_tape_creation_rules.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
-    pub fn gateway_arn(&self) -> std::option::Option<& str> {
+    pub fn gateway_arn(&self) -> std::option::Option<&str> {
         self.gateway_arn.as_deref()
     }
 }
 impl UpdateAutomaticTapeCreationPolicyInput {
     /// Creates a new builder-style object to manufacture [`UpdateAutomaticTapeCreationPolicyInput`](crate::operation::update_automatic_tape_creation_policy::UpdateAutomaticTapeCreationPolicyInput).
-    pub fn builder() -> crate::operation::update_automatic_tape_creation_policy::builders::UpdateAutomaticTapeCreationPolicyInputBuilder {
+    pub fn builder() -> crate::operation::update_automatic_tape_creation_policy::builders::UpdateAutomaticTapeCreationPolicyInputBuilder{
         crate::operation::update_automatic_tape_creation_policy::builders::UpdateAutomaticTapeCreationPolicyInputBuilder::default()
     }
 }
@@ -31,7 +34,8 @@ impl UpdateAutomaticTapeCreationPolicyInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct UpdateAutomaticTapeCreationPolicyInputBuilder {
-    pub(crate) automatic_tape_creation_rules: std::option::Option<std::vec::Vec<crate::types::AutomaticTapeCreationRule>>,
+    pub(crate) automatic_tape_creation_rules:
+        std::option::Option<std::vec::Vec<crate::types::AutomaticTapeCreationRule>>,
     pub(crate) gateway_arn: std::option::Option<std::string::String>,
 }
 impl UpdateAutomaticTapeCreationPolicyInputBuilder {
@@ -40,15 +44,22 @@ impl UpdateAutomaticTapeCreationPolicyInputBuilder {
     /// To override the contents of this collection use [`set_automatic_tape_creation_rules`](Self::set_automatic_tape_creation_rules).
     ///
     /// <p>An automatic tape creation policy consists of a list of automatic tape creation rules. The rules determine when and how to automatically create new tapes.</p>
-    pub fn automatic_tape_creation_rules(mut self, input: crate::types::AutomaticTapeCreationRule) -> Self {
+    pub fn automatic_tape_creation_rules(
+        mut self,
+        input: crate::types::AutomaticTapeCreationRule,
+    ) -> Self {
         let mut v = self.automatic_tape_creation_rules.unwrap_or_default();
-                        v.push(input);
-                        self.automatic_tape_creation_rules = Some(v);
-                        self
+        v.push(input);
+        self.automatic_tape_creation_rules = Some(v);
+        self
     }
     /// <p>An automatic tape creation policy consists of a list of automatic tape creation rules. The rules determine when and how to automatically create new tapes.</p>
-    pub fn set_automatic_tape_creation_rules(mut self, input: std::option::Option<std::vec::Vec<crate::types::AutomaticTapeCreationRule>>) -> Self {
-        self.automatic_tape_creation_rules = input; self
+    pub fn set_automatic_tape_creation_rules(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::AutomaticTapeCreationRule>>,
+    ) -> Self {
+        self.automatic_tape_creation_rules = input;
+        self
     }
     /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
     pub fn gateway_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -57,10 +68,11 @@ impl UpdateAutomaticTapeCreationPolicyInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
     pub fn set_gateway_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.gateway_arn = input; self
+        self.gateway_arn = input;
+        self
     }
     /// Consumes the builder and constructs a [`UpdateAutomaticTapeCreationPolicyInput`](crate::operation::update_automatic_tape_creation_policy::UpdateAutomaticTapeCreationPolicyInput).
-    pub fn build(self) -> Result<crate::operation::update_automatic_tape_creation_policy::UpdateAutomaticTapeCreationPolicyInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> Result<crate::operation::update_automatic_tape_creation_policy::UpdateAutomaticTapeCreationPolicyInput, aws_smithy_http::operation::error::BuildError>{
         Ok(
             crate::operation::update_automatic_tape_creation_policy::UpdateAutomaticTapeCreationPolicyInput {
                 automatic_tape_creation_rules: self.automatic_tape_creation_rules
@@ -71,4 +83,3 @@ impl UpdateAutomaticTapeCreationPolicyInputBuilder {
         )
     }
 }
-

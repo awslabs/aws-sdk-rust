@@ -2,21 +2,23 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetTranscriptionJobInput  {
+pub struct GetTranscriptionJobInput {
     /// <p>The name of the transcription job you want information about. Job names are case sensitive.</p>
     #[doc(hidden)]
     pub transcription_job_name: std::option::Option<std::string::String>,
 }
 impl GetTranscriptionJobInput {
     /// <p>The name of the transcription job you want information about. Job names are case sensitive.</p>
-    pub fn transcription_job_name(&self) -> std::option::Option<& str> {
+    pub fn transcription_job_name(&self) -> std::option::Option<&str> {
         self.transcription_job_name.as_deref()
     }
 }
 impl GetTranscriptionJobInput {
     /// Creates a new builder-style object to manufacture [`GetTranscriptionJobInput`](crate::operation::get_transcription_job::GetTranscriptionJobInput).
-    pub fn builder() -> crate::operation::get_transcription_job::builders::GetTranscriptionJobInputBuilder {
-        crate::operation::get_transcription_job::builders::GetTranscriptionJobInputBuilder::default()
+    pub fn builder(
+    ) -> crate::operation::get_transcription_job::builders::GetTranscriptionJobInputBuilder {
+        crate::operation::get_transcription_job::builders::GetTranscriptionJobInputBuilder::default(
+        )
     }
 }
 
@@ -33,17 +35,24 @@ impl GetTranscriptionJobInputBuilder {
         self
     }
     /// <p>The name of the transcription job you want information about. Job names are case sensitive.</p>
-    pub fn set_transcription_job_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.transcription_job_name = input; self
+    pub fn set_transcription_job_name(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.transcription_job_name = input;
+        self
     }
     /// Consumes the builder and constructs a [`GetTranscriptionJobInput`](crate::operation::get_transcription_job::GetTranscriptionJobInput).
-    pub fn build(self) -> Result<crate::operation::get_transcription_job::GetTranscriptionJobInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::get_transcription_job::GetTranscriptionJobInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::get_transcription_job::GetTranscriptionJobInput {
-                transcription_job_name: self.transcription_job_name
-                ,
-            }
+                transcription_job_name: self.transcription_job_name,
+            },
         )
     }
 }
-

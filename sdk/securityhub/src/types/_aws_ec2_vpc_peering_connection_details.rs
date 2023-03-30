@@ -3,16 +3,18 @@
 /// <p>Provides information about a VPC peering connection between two VPCs: a requester VPC that you own and an accepter VPC with which to create the connection. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AwsEc2VpcPeeringConnectionDetails  {
+pub struct AwsEc2VpcPeeringConnectionDetails {
     /// <p>Information about the accepter VPC. </p>
     #[doc(hidden)]
-    pub accepter_vpc_info: std::option::Option<crate::types::AwsEc2VpcPeeringConnectionVpcInfoDetails>,
+    pub accepter_vpc_info:
+        std::option::Option<crate::types::AwsEc2VpcPeeringConnectionVpcInfoDetails>,
     /// <p>The time at which an unaccepted VPC peering connection will expire. </p>
     #[doc(hidden)]
     pub expiration_time: std::option::Option<std::string::String>,
     /// <p>Information about the requester VPC. </p>
     #[doc(hidden)]
-    pub requester_vpc_info: std::option::Option<crate::types::AwsEc2VpcPeeringConnectionVpcInfoDetails>,
+    pub requester_vpc_info:
+        std::option::Option<crate::types::AwsEc2VpcPeeringConnectionVpcInfoDetails>,
     /// <p>The status of the VPC peering connection. </p>
     #[doc(hidden)]
     pub status: std::option::Option<crate::types::AwsEc2VpcPeeringConnectionStatusDetails>,
@@ -22,23 +24,29 @@ pub struct AwsEc2VpcPeeringConnectionDetails  {
 }
 impl AwsEc2VpcPeeringConnectionDetails {
     /// <p>Information about the accepter VPC. </p>
-    pub fn accepter_vpc_info(&self) -> std::option::Option<& crate::types::AwsEc2VpcPeeringConnectionVpcInfoDetails> {
+    pub fn accepter_vpc_info(
+        &self,
+    ) -> std::option::Option<&crate::types::AwsEc2VpcPeeringConnectionVpcInfoDetails> {
         self.accepter_vpc_info.as_ref()
     }
     /// <p>The time at which an unaccepted VPC peering connection will expire. </p>
-    pub fn expiration_time(&self) -> std::option::Option<& str> {
+    pub fn expiration_time(&self) -> std::option::Option<&str> {
         self.expiration_time.as_deref()
     }
     /// <p>Information about the requester VPC. </p>
-    pub fn requester_vpc_info(&self) -> std::option::Option<& crate::types::AwsEc2VpcPeeringConnectionVpcInfoDetails> {
+    pub fn requester_vpc_info(
+        &self,
+    ) -> std::option::Option<&crate::types::AwsEc2VpcPeeringConnectionVpcInfoDetails> {
         self.requester_vpc_info.as_ref()
     }
     /// <p>The status of the VPC peering connection. </p>
-    pub fn status(&self) -> std::option::Option<& crate::types::AwsEc2VpcPeeringConnectionStatusDetails> {
+    pub fn status(
+        &self,
+    ) -> std::option::Option<&crate::types::AwsEc2VpcPeeringConnectionStatusDetails> {
         self.status.as_ref()
     }
     /// <p>The ID of the VPC peering connection. </p>
-    pub fn vpc_peering_connection_id(&self) -> std::option::Option<& str> {
+    pub fn vpc_peering_connection_id(&self) -> std::option::Option<&str> {
         self.vpc_peering_connection_id.as_deref()
     }
 }
@@ -53,21 +61,30 @@ impl AwsEc2VpcPeeringConnectionDetails {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct AwsEc2VpcPeeringConnectionDetailsBuilder {
-    pub(crate) accepter_vpc_info: std::option::Option<crate::types::AwsEc2VpcPeeringConnectionVpcInfoDetails>,
+    pub(crate) accepter_vpc_info:
+        std::option::Option<crate::types::AwsEc2VpcPeeringConnectionVpcInfoDetails>,
     pub(crate) expiration_time: std::option::Option<std::string::String>,
-    pub(crate) requester_vpc_info: std::option::Option<crate::types::AwsEc2VpcPeeringConnectionVpcInfoDetails>,
+    pub(crate) requester_vpc_info:
+        std::option::Option<crate::types::AwsEc2VpcPeeringConnectionVpcInfoDetails>,
     pub(crate) status: std::option::Option<crate::types::AwsEc2VpcPeeringConnectionStatusDetails>,
     pub(crate) vpc_peering_connection_id: std::option::Option<std::string::String>,
 }
 impl AwsEc2VpcPeeringConnectionDetailsBuilder {
     /// <p>Information about the accepter VPC. </p>
-    pub fn accepter_vpc_info(mut self, input: crate::types::AwsEc2VpcPeeringConnectionVpcInfoDetails) -> Self {
+    pub fn accepter_vpc_info(
+        mut self,
+        input: crate::types::AwsEc2VpcPeeringConnectionVpcInfoDetails,
+    ) -> Self {
         self.accepter_vpc_info = Some(input);
         self
     }
     /// <p>Information about the accepter VPC. </p>
-    pub fn set_accepter_vpc_info(mut self, input: std::option::Option<crate::types::AwsEc2VpcPeeringConnectionVpcInfoDetails>) -> Self {
-        self.accepter_vpc_info = input; self
+    pub fn set_accepter_vpc_info(
+        mut self,
+        input: std::option::Option<crate::types::AwsEc2VpcPeeringConnectionVpcInfoDetails>,
+    ) -> Self {
+        self.accepter_vpc_info = input;
+        self
     }
     /// <p>The time at which an unaccepted VPC peering connection will expire. </p>
     pub fn expiration_time(mut self, input: impl Into<std::string::String>) -> Self {
@@ -76,16 +93,24 @@ impl AwsEc2VpcPeeringConnectionDetailsBuilder {
     }
     /// <p>The time at which an unaccepted VPC peering connection will expire. </p>
     pub fn set_expiration_time(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.expiration_time = input; self
+        self.expiration_time = input;
+        self
     }
     /// <p>Information about the requester VPC. </p>
-    pub fn requester_vpc_info(mut self, input: crate::types::AwsEc2VpcPeeringConnectionVpcInfoDetails) -> Self {
+    pub fn requester_vpc_info(
+        mut self,
+        input: crate::types::AwsEc2VpcPeeringConnectionVpcInfoDetails,
+    ) -> Self {
         self.requester_vpc_info = Some(input);
         self
     }
     /// <p>Information about the requester VPC. </p>
-    pub fn set_requester_vpc_info(mut self, input: std::option::Option<crate::types::AwsEc2VpcPeeringConnectionVpcInfoDetails>) -> Self {
-        self.requester_vpc_info = input; self
+    pub fn set_requester_vpc_info(
+        mut self,
+        input: std::option::Option<crate::types::AwsEc2VpcPeeringConnectionVpcInfoDetails>,
+    ) -> Self {
+        self.requester_vpc_info = input;
+        self
     }
     /// <p>The status of the VPC peering connection. </p>
     pub fn status(mut self, input: crate::types::AwsEc2VpcPeeringConnectionStatusDetails) -> Self {
@@ -93,8 +118,12 @@ impl AwsEc2VpcPeeringConnectionDetailsBuilder {
         self
     }
     /// <p>The status of the VPC peering connection. </p>
-    pub fn set_status(mut self, input: std::option::Option<crate::types::AwsEc2VpcPeeringConnectionStatusDetails>) -> Self {
-        self.status = input; self
+    pub fn set_status(
+        mut self,
+        input: std::option::Option<crate::types::AwsEc2VpcPeeringConnectionStatusDetails>,
+    ) -> Self {
+        self.status = input;
+        self
     }
     /// <p>The ID of the VPC peering connection. </p>
     pub fn vpc_peering_connection_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -102,23 +131,21 @@ impl AwsEc2VpcPeeringConnectionDetailsBuilder {
         self
     }
     /// <p>The ID of the VPC peering connection. </p>
-    pub fn set_vpc_peering_connection_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.vpc_peering_connection_id = input; self
+    pub fn set_vpc_peering_connection_id(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.vpc_peering_connection_id = input;
+        self
     }
     /// Consumes the builder and constructs a [`AwsEc2VpcPeeringConnectionDetails`](crate::types::AwsEc2VpcPeeringConnectionDetails).
     pub fn build(self) -> crate::types::AwsEc2VpcPeeringConnectionDetails {
         crate::types::AwsEc2VpcPeeringConnectionDetails {
-            accepter_vpc_info: self.accepter_vpc_info
-            ,
-            expiration_time: self.expiration_time
-            ,
-            requester_vpc_info: self.requester_vpc_info
-            ,
-            status: self.status
-            ,
-            vpc_peering_connection_id: self.vpc_peering_connection_id
-            ,
+            accepter_vpc_info: self.accepter_vpc_info,
+            expiration_time: self.expiration_time,
+            requester_vpc_info: self.requester_vpc_info,
+            status: self.status,
+            vpc_peering_connection_id: self.vpc_peering_connection_id,
         }
     }
 }
-

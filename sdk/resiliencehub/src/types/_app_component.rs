@@ -3,7 +3,7 @@
 /// <p>Defines an application component.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AppComponent  {
+pub struct AppComponent {
     /// <p>The name of the application component.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -13,11 +13,11 @@ pub struct AppComponent  {
 }
 impl AppComponent {
     /// <p>The name of the application component.</p>
-    pub fn name(&self) -> std::option::Option<& str> {
+    pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>The type of application component.</p>
-    pub fn r#type(&self) -> std::option::Option<& str> {
+    pub fn r#type(&self) -> std::option::Option<&str> {
         self.r#type.as_deref()
     }
 }
@@ -43,7 +43,8 @@ impl AppComponentBuilder {
     }
     /// <p>The name of the application component.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input; self
+        self.name = input;
+        self
     }
     /// <p>The type of application component.</p>
     pub fn r#type(mut self, input: impl Into<std::string::String>) -> Self {
@@ -52,16 +53,14 @@ impl AppComponentBuilder {
     }
     /// <p>The type of application component.</p>
     pub fn set_type(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.r#type = input; self
+        self.r#type = input;
+        self
     }
     /// Consumes the builder and constructs a [`AppComponent`](crate::types::AppComponent).
     pub fn build(self) -> crate::types::AppComponent {
         crate::types::AppComponent {
-            name: self.name
-            ,
-            r#type: self.r#type
-            ,
+            name: self.name,
+            r#type: self.r#type,
         }
     }
 }
-

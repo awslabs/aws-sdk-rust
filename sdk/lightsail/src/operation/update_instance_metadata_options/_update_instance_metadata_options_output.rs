@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateInstanceMetadataOptionsOutput  {
+pub struct UpdateInstanceMetadataOptionsOutput {
     /// <p>Describes the API operation.</p>
     #[doc(hidden)]
     pub operation: std::option::Option<crate::types::Operation>,
@@ -10,18 +10,18 @@ pub struct UpdateInstanceMetadataOptionsOutput  {
 }
 impl UpdateInstanceMetadataOptionsOutput {
     /// <p>Describes the API operation.</p>
-    pub fn operation(&self) -> std::option::Option<& crate::types::Operation> {
+    pub fn operation(&self) -> std::option::Option<&crate::types::Operation> {
         self.operation.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for UpdateInstanceMetadataOptionsOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl UpdateInstanceMetadataOptionsOutput {
     /// Creates a new builder-style object to manufacture [`UpdateInstanceMetadataOptionsOutput`](crate::operation::update_instance_metadata_options::UpdateInstanceMetadataOptionsOutput).
-    pub fn builder() -> crate::operation::update_instance_metadata_options::builders::UpdateInstanceMetadataOptionsOutputBuilder {
+    pub fn builder() -> crate::operation::update_instance_metadata_options::builders::UpdateInstanceMetadataOptionsOutputBuilder{
         crate::operation::update_instance_metadata_options::builders::UpdateInstanceMetadataOptionsOutputBuilder::default()
     }
 }
@@ -41,24 +41,26 @@ impl UpdateInstanceMetadataOptionsOutputBuilder {
     }
     /// <p>Describes the API operation.</p>
     pub fn set_operation(mut self, input: std::option::Option<crate::types::Operation>) -> Self {
-        self.operation = input; self
+        self.operation = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`UpdateInstanceMetadataOptionsOutput`](crate::operation::update_instance_metadata_options::UpdateInstanceMetadataOptionsOutput).
-    pub fn build(self) -> crate::operation::update_instance_metadata_options::UpdateInstanceMetadataOptionsOutput {
+    pub fn build(
+        self,
+    ) -> crate::operation::update_instance_metadata_options::UpdateInstanceMetadataOptionsOutput
+    {
         crate::operation::update_instance_metadata_options::UpdateInstanceMetadataOptionsOutput {
-            operation: self.operation
-            ,
+            operation: self.operation,
             _request_id: self._request_id,
         }
     }
 }
-

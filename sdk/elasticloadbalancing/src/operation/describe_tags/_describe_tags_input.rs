@@ -3,14 +3,14 @@
 /// <p>Contains the parameters for DescribeTags.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeTagsInput  {
+pub struct DescribeTagsInput {
     /// <p>The names of the load balancers.</p>
     #[doc(hidden)]
     pub load_balancer_names: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl DescribeTagsInput {
     /// <p>The names of the load balancers.</p>
-    pub fn load_balancer_names(&self) -> std::option::Option<& [std::string::String]> {
+    pub fn load_balancer_names(&self) -> std::option::Option<&[std::string::String]> {
         self.load_balancer_names.as_deref()
     }
 }
@@ -35,22 +35,27 @@ impl DescribeTagsInputBuilder {
     /// <p>The names of the load balancers.</p>
     pub fn load_balancer_names(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.load_balancer_names.unwrap_or_default();
-                        v.push(input.into());
-                        self.load_balancer_names = Some(v);
-                        self
+        v.push(input.into());
+        self.load_balancer_names = Some(v);
+        self
     }
     /// <p>The names of the load balancers.</p>
-    pub fn set_load_balancer_names(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-        self.load_balancer_names = input; self
+    pub fn set_load_balancer_names(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
+        self.load_balancer_names = input;
+        self
     }
     /// Consumes the builder and constructs a [`DescribeTagsInput`](crate::operation::describe_tags::DescribeTagsInput).
-    pub fn build(self) -> Result<crate::operation::describe_tags::DescribeTagsInput, aws_smithy_http::operation::error::BuildError> {
-        Ok(
-            crate::operation::describe_tags::DescribeTagsInput {
-                load_balancer_names: self.load_balancer_names
-                ,
-            }
-        )
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::describe_tags::DescribeTagsInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        Ok(crate::operation::describe_tags::DescribeTagsInput {
+            load_balancer_names: self.load_balancer_names,
+        })
     }
 }
-

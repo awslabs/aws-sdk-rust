@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateTemplateInput  {
+pub struct CreateTemplateInput {
     /// <p>The ID for the Amazon Web Services account that the group is in. You use the ID for the Amazon Web Services account that contains your Amazon QuickSight account.</p>
     #[doc(hidden)]
     pub aws_account_id: std::option::Option<std::string::String>,
@@ -15,7 +15,7 @@ pub struct CreateTemplateInput  {
     /// <p>A list of resource permissions to be set on the template. </p>
     #[doc(hidden)]
     pub permissions: std::option::Option<std::vec::Vec<crate::types::ResourcePermission>>,
-    /// <p>The entity that you are using as a source when you create the template. In <code>SourceEntity</code>, you specify the type of object you're using as source: <code>SourceTemplate</code> for a template or <code>SourceAnalysis</code> for an analysis. Both of these require an Amazon Resource Name (ARN). For <code>SourceTemplate</code>, specify the ARN of the source template. For <code>SourceAnalysis</code>, specify the ARN of the source analysis. The <code>SourceTemplate</code> ARN can contain any Amazon Web Services account and any Amazon QuickSight-supported Amazon Web Services Region. </p> 
+    /// <p>The entity that you are using as a source when you create the template. In <code>SourceEntity</code>, you specify the type of object you're using as source: <code>SourceTemplate</code> for a template or <code>SourceAnalysis</code> for an analysis. Both of these require an Amazon Resource Name (ARN). For <code>SourceTemplate</code>, specify the ARN of the source template. For <code>SourceAnalysis</code>, specify the ARN of the source analysis. The <code>SourceTemplate</code> ARN can contain any Amazon Web Services account and any Amazon QuickSight-supported Amazon Web Services Region. </p>
     /// <p>Use the <code>DataSetReferences</code> entity within <code>SourceTemplate</code> or <code>SourceAnalysis</code> to list the replacement datasets for the placeholders listed in the original. The schema in each dataset must match its placeholder. </p>
     #[doc(hidden)]
     pub source_entity: std::option::Option<crate::types::TemplateSourceEntity>,
@@ -25,44 +25,44 @@ pub struct CreateTemplateInput  {
     /// <p>A description of the current template version being created. This API operation creates the first version of the template. Every time <code>UpdateTemplate</code> is called, a new version is created. Each version of the template maintains a description of the version in the <code>VersionDescription</code> field.</p>
     #[doc(hidden)]
     pub version_description: std::option::Option<std::string::String>,
-    /// <p>The definition of a template.</p> 
+    /// <p>The definition of a template.</p>
     /// <p>A definition is the data model of all features in a Dashboard, Template, or Analysis.</p>
     #[doc(hidden)]
     pub definition: std::option::Option<crate::types::TemplateVersionDefinition>,
 }
 impl CreateTemplateInput {
     /// <p>The ID for the Amazon Web Services account that the group is in. You use the ID for the Amazon Web Services account that contains your Amazon QuickSight account.</p>
-    pub fn aws_account_id(&self) -> std::option::Option<& str> {
+    pub fn aws_account_id(&self) -> std::option::Option<&str> {
         self.aws_account_id.as_deref()
     }
     /// <p>An ID for the template that you want to create. This template is unique per Amazon Web Services Region; in each Amazon Web Services account.</p>
-    pub fn template_id(&self) -> std::option::Option<& str> {
+    pub fn template_id(&self) -> std::option::Option<&str> {
         self.template_id.as_deref()
     }
     /// <p>A display name for the template.</p>
-    pub fn name(&self) -> std::option::Option<& str> {
+    pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>A list of resource permissions to be set on the template. </p>
-    pub fn permissions(&self) -> std::option::Option<& [crate::types::ResourcePermission]> {
+    pub fn permissions(&self) -> std::option::Option<&[crate::types::ResourcePermission]> {
         self.permissions.as_deref()
     }
-    /// <p>The entity that you are using as a source when you create the template. In <code>SourceEntity</code>, you specify the type of object you're using as source: <code>SourceTemplate</code> for a template or <code>SourceAnalysis</code> for an analysis. Both of these require an Amazon Resource Name (ARN). For <code>SourceTemplate</code>, specify the ARN of the source template. For <code>SourceAnalysis</code>, specify the ARN of the source analysis. The <code>SourceTemplate</code> ARN can contain any Amazon Web Services account and any Amazon QuickSight-supported Amazon Web Services Region. </p> 
+    /// <p>The entity that you are using as a source when you create the template. In <code>SourceEntity</code>, you specify the type of object you're using as source: <code>SourceTemplate</code> for a template or <code>SourceAnalysis</code> for an analysis. Both of these require an Amazon Resource Name (ARN). For <code>SourceTemplate</code>, specify the ARN of the source template. For <code>SourceAnalysis</code>, specify the ARN of the source analysis. The <code>SourceTemplate</code> ARN can contain any Amazon Web Services account and any Amazon QuickSight-supported Amazon Web Services Region. </p>
     /// <p>Use the <code>DataSetReferences</code> entity within <code>SourceTemplate</code> or <code>SourceAnalysis</code> to list the replacement datasets for the placeholders listed in the original. The schema in each dataset must match its placeholder. </p>
-    pub fn source_entity(&self) -> std::option::Option<& crate::types::TemplateSourceEntity> {
+    pub fn source_entity(&self) -> std::option::Option<&crate::types::TemplateSourceEntity> {
         self.source_entity.as_ref()
     }
     /// <p>Contains a map of the key-value pairs for the resource tag or tags assigned to the resource.</p>
-    pub fn tags(&self) -> std::option::Option<& [crate::types::Tag]> {
+    pub fn tags(&self) -> std::option::Option<&[crate::types::Tag]> {
         self.tags.as_deref()
     }
     /// <p>A description of the current template version being created. This API operation creates the first version of the template. Every time <code>UpdateTemplate</code> is called, a new version is created. Each version of the template maintains a description of the version in the <code>VersionDescription</code> field.</p>
-    pub fn version_description(&self) -> std::option::Option<& str> {
+    pub fn version_description(&self) -> std::option::Option<&str> {
         self.version_description.as_deref()
     }
-    /// <p>The definition of a template.</p> 
+    /// <p>The definition of a template.</p>
     /// <p>A definition is the data model of all features in a Dashboard, Template, or Analysis.</p>
-    pub fn definition(&self) -> std::option::Option<& crate::types::TemplateVersionDefinition> {
+    pub fn definition(&self) -> std::option::Option<&crate::types::TemplateVersionDefinition> {
         self.definition.as_ref()
     }
 }
@@ -94,7 +94,8 @@ impl CreateTemplateInputBuilder {
     }
     /// <p>The ID for the Amazon Web Services account that the group is in. You use the ID for the Amazon Web Services account that contains your Amazon QuickSight account.</p>
     pub fn set_aws_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.aws_account_id = input; self
+        self.aws_account_id = input;
+        self
     }
     /// <p>An ID for the template that you want to create. This template is unique per Amazon Web Services Region; in each Amazon Web Services account.</p>
     pub fn template_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -103,7 +104,8 @@ impl CreateTemplateInputBuilder {
     }
     /// <p>An ID for the template that you want to create. This template is unique per Amazon Web Services Region; in each Amazon Web Services account.</p>
     pub fn set_template_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.template_id = input; self
+        self.template_id = input;
+        self
     }
     /// <p>A display name for the template.</p>
     pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -112,7 +114,8 @@ impl CreateTemplateInputBuilder {
     }
     /// <p>A display name for the template.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input; self
+        self.name = input;
+        self
     }
     /// Appends an item to `permissions`.
     ///
@@ -121,24 +124,32 @@ impl CreateTemplateInputBuilder {
     /// <p>A list of resource permissions to be set on the template. </p>
     pub fn permissions(mut self, input: crate::types::ResourcePermission) -> Self {
         let mut v = self.permissions.unwrap_or_default();
-                        v.push(input);
-                        self.permissions = Some(v);
-                        self
+        v.push(input);
+        self.permissions = Some(v);
+        self
     }
     /// <p>A list of resource permissions to be set on the template. </p>
-    pub fn set_permissions(mut self, input: std::option::Option<std::vec::Vec<crate::types::ResourcePermission>>) -> Self {
-        self.permissions = input; self
+    pub fn set_permissions(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::ResourcePermission>>,
+    ) -> Self {
+        self.permissions = input;
+        self
     }
-    /// <p>The entity that you are using as a source when you create the template. In <code>SourceEntity</code>, you specify the type of object you're using as source: <code>SourceTemplate</code> for a template or <code>SourceAnalysis</code> for an analysis. Both of these require an Amazon Resource Name (ARN). For <code>SourceTemplate</code>, specify the ARN of the source template. For <code>SourceAnalysis</code>, specify the ARN of the source analysis. The <code>SourceTemplate</code> ARN can contain any Amazon Web Services account and any Amazon QuickSight-supported Amazon Web Services Region. </p> 
+    /// <p>The entity that you are using as a source when you create the template. In <code>SourceEntity</code>, you specify the type of object you're using as source: <code>SourceTemplate</code> for a template or <code>SourceAnalysis</code> for an analysis. Both of these require an Amazon Resource Name (ARN). For <code>SourceTemplate</code>, specify the ARN of the source template. For <code>SourceAnalysis</code>, specify the ARN of the source analysis. The <code>SourceTemplate</code> ARN can contain any Amazon Web Services account and any Amazon QuickSight-supported Amazon Web Services Region. </p>
     /// <p>Use the <code>DataSetReferences</code> entity within <code>SourceTemplate</code> or <code>SourceAnalysis</code> to list the replacement datasets for the placeholders listed in the original. The schema in each dataset must match its placeholder. </p>
     pub fn source_entity(mut self, input: crate::types::TemplateSourceEntity) -> Self {
         self.source_entity = Some(input);
         self
     }
-    /// <p>The entity that you are using as a source when you create the template. In <code>SourceEntity</code>, you specify the type of object you're using as source: <code>SourceTemplate</code> for a template or <code>SourceAnalysis</code> for an analysis. Both of these require an Amazon Resource Name (ARN). For <code>SourceTemplate</code>, specify the ARN of the source template. For <code>SourceAnalysis</code>, specify the ARN of the source analysis. The <code>SourceTemplate</code> ARN can contain any Amazon Web Services account and any Amazon QuickSight-supported Amazon Web Services Region. </p> 
+    /// <p>The entity that you are using as a source when you create the template. In <code>SourceEntity</code>, you specify the type of object you're using as source: <code>SourceTemplate</code> for a template or <code>SourceAnalysis</code> for an analysis. Both of these require an Amazon Resource Name (ARN). For <code>SourceTemplate</code>, specify the ARN of the source template. For <code>SourceAnalysis</code>, specify the ARN of the source analysis. The <code>SourceTemplate</code> ARN can contain any Amazon Web Services account and any Amazon QuickSight-supported Amazon Web Services Region. </p>
     /// <p>Use the <code>DataSetReferences</code> entity within <code>SourceTemplate</code> or <code>SourceAnalysis</code> to list the replacement datasets for the placeholders listed in the original. The schema in each dataset must match its placeholder. </p>
-    pub fn set_source_entity(mut self, input: std::option::Option<crate::types::TemplateSourceEntity>) -> Self {
-        self.source_entity = input; self
+    pub fn set_source_entity(
+        mut self,
+        input: std::option::Option<crate::types::TemplateSourceEntity>,
+    ) -> Self {
+        self.source_entity = input;
+        self
     }
     /// Appends an item to `tags`.
     ///
@@ -147,13 +158,17 @@ impl CreateTemplateInputBuilder {
     /// <p>Contains a map of the key-value pairs for the resource tag or tags assigned to the resource.</p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
-                        v.push(input);
-                        self.tags = Some(v);
-                        self
+        v.push(input);
+        self.tags = Some(v);
+        self
     }
     /// <p>Contains a map of the key-value pairs for the resource tag or tags assigned to the resource.</p>
-    pub fn set_tags(mut self, input: std::option::Option<std::vec::Vec<crate::types::Tag>>) -> Self {
-        self.tags = input; self
+    pub fn set_tags(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::Tag>>,
+    ) -> Self {
+        self.tags = input;
+        self
     }
     /// <p>A description of the current template version being created. This API operation creates the first version of the template. Every time <code>UpdateTemplate</code> is called, a new version is created. Each version of the template maintains a description of the version in the <code>VersionDescription</code> field.</p>
     pub fn version_description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -161,42 +176,44 @@ impl CreateTemplateInputBuilder {
         self
     }
     /// <p>A description of the current template version being created. This API operation creates the first version of the template. Every time <code>UpdateTemplate</code> is called, a new version is created. Each version of the template maintains a description of the version in the <code>VersionDescription</code> field.</p>
-    pub fn set_version_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.version_description = input; self
+    pub fn set_version_description(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.version_description = input;
+        self
     }
-    /// <p>The definition of a template.</p> 
+    /// <p>The definition of a template.</p>
     /// <p>A definition is the data model of all features in a Dashboard, Template, or Analysis.</p>
     pub fn definition(mut self, input: crate::types::TemplateVersionDefinition) -> Self {
         self.definition = Some(input);
         self
     }
-    /// <p>The definition of a template.</p> 
+    /// <p>The definition of a template.</p>
     /// <p>A definition is the data model of all features in a Dashboard, Template, or Analysis.</p>
-    pub fn set_definition(mut self, input: std::option::Option<crate::types::TemplateVersionDefinition>) -> Self {
-        self.definition = input; self
+    pub fn set_definition(
+        mut self,
+        input: std::option::Option<crate::types::TemplateVersionDefinition>,
+    ) -> Self {
+        self.definition = input;
+        self
     }
     /// Consumes the builder and constructs a [`CreateTemplateInput`](crate::operation::create_template::CreateTemplateInput).
-    pub fn build(self) -> Result<crate::operation::create_template::CreateTemplateInput, aws_smithy_http::operation::error::BuildError> {
-        Ok(
-            crate::operation::create_template::CreateTemplateInput {
-                aws_account_id: self.aws_account_id
-                ,
-                template_id: self.template_id
-                ,
-                name: self.name
-                ,
-                permissions: self.permissions
-                ,
-                source_entity: self.source_entity
-                ,
-                tags: self.tags
-                ,
-                version_description: self.version_description
-                ,
-                definition: self.definition
-                ,
-            }
-        )
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::create_template::CreateTemplateInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        Ok(crate::operation::create_template::CreateTemplateInput {
+            aws_account_id: self.aws_account_id,
+            template_id: self.template_id,
+            name: self.name,
+            permissions: self.permissions,
+            source_entity: self.source_entity,
+            tags: self.tags,
+            version_description: self.version_description,
+            definition: self.definition,
+        })
     }
 }
-

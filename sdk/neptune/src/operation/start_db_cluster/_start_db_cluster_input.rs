@@ -2,14 +2,14 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct StartDbClusterInput  {
+pub struct StartDbClusterInput {
     /// <p>The DB cluster identifier of the Neptune DB cluster to be started. This parameter is stored as a lowercase string.</p>
     #[doc(hidden)]
     pub db_cluster_identifier: std::option::Option<std::string::String>,
 }
 impl StartDbClusterInput {
     /// <p>The DB cluster identifier of the Neptune DB cluster to be started. This parameter is stored as a lowercase string.</p>
-    pub fn db_cluster_identifier(&self) -> std::option::Option<& str> {
+    pub fn db_cluster_identifier(&self) -> std::option::Option<&str> {
         self.db_cluster_identifier.as_deref()
     }
 }
@@ -33,17 +33,22 @@ impl StartDbClusterInputBuilder {
         self
     }
     /// <p>The DB cluster identifier of the Neptune DB cluster to be started. This parameter is stored as a lowercase string.</p>
-    pub fn set_db_cluster_identifier(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.db_cluster_identifier = input; self
+    pub fn set_db_cluster_identifier(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.db_cluster_identifier = input;
+        self
     }
     /// Consumes the builder and constructs a [`StartDbClusterInput`](crate::operation::start_db_cluster::StartDbClusterInput).
-    pub fn build(self) -> Result<crate::operation::start_db_cluster::StartDbClusterInput, aws_smithy_http::operation::error::BuildError> {
-        Ok(
-            crate::operation::start_db_cluster::StartDbClusterInput {
-                db_cluster_identifier: self.db_cluster_identifier
-                ,
-            }
-        )
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::start_db_cluster::StartDbClusterInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        Ok(crate::operation::start_db_cluster::StartDbClusterInput {
+            db_cluster_identifier: self.db_cluster_identifier,
+        })
     }
 }
-

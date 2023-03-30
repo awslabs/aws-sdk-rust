@@ -2,10 +2,11 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListPermissionSetProvisioningStatusOutput  {
+pub struct ListPermissionSetProvisioningStatusOutput {
     /// <p>The status object for the permission set provisioning operation.</p>
     #[doc(hidden)]
-    pub permission_sets_provisioning_status: std::option::Option<std::vec::Vec<crate::types::PermissionSetProvisioningStatusMetadata>>,
+    pub permission_sets_provisioning_status:
+        std::option::Option<std::vec::Vec<crate::types::PermissionSetProvisioningStatusMetadata>>,
     /// <p>The pagination token for the list API. Initially the value is null. Use the output of previous API calls to make subsequent calls.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
@@ -13,22 +14,24 @@ pub struct ListPermissionSetProvisioningStatusOutput  {
 }
 impl ListPermissionSetProvisioningStatusOutput {
     /// <p>The status object for the permission set provisioning operation.</p>
-    pub fn permission_sets_provisioning_status(&self) -> std::option::Option<& [crate::types::PermissionSetProvisioningStatusMetadata]> {
+    pub fn permission_sets_provisioning_status(
+        &self,
+    ) -> std::option::Option<&[crate::types::PermissionSetProvisioningStatusMetadata]> {
         self.permission_sets_provisioning_status.as_deref()
     }
     /// <p>The pagination token for the list API. Initially the value is null. Use the output of previous API calls to make subsequent calls.</p>
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for ListPermissionSetProvisioningStatusOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl ListPermissionSetProvisioningStatusOutput {
     /// Creates a new builder-style object to manufacture [`ListPermissionSetProvisioningStatusOutput`](crate::operation::list_permission_set_provisioning_status::ListPermissionSetProvisioningStatusOutput).
-    pub fn builder() -> crate::operation::list_permission_set_provisioning_status::builders::ListPermissionSetProvisioningStatusOutputBuilder {
+    pub fn builder() -> crate::operation::list_permission_set_provisioning_status::builders::ListPermissionSetProvisioningStatusOutputBuilder{
         crate::operation::list_permission_set_provisioning_status::builders::ListPermissionSetProvisioningStatusOutputBuilder::default()
     }
 }
@@ -37,7 +40,8 @@ impl ListPermissionSetProvisioningStatusOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct ListPermissionSetProvisioningStatusOutputBuilder {
-    pub(crate) permission_sets_provisioning_status: std::option::Option<std::vec::Vec<crate::types::PermissionSetProvisioningStatusMetadata>>,
+    pub(crate) permission_sets_provisioning_status:
+        std::option::Option<std::vec::Vec<crate::types::PermissionSetProvisioningStatusMetadata>>,
     pub(crate) next_token: std::option::Option<std::string::String>,
     _request_id: Option<String>,
 }
@@ -47,15 +51,24 @@ impl ListPermissionSetProvisioningStatusOutputBuilder {
     /// To override the contents of this collection use [`set_permission_sets_provisioning_status`](Self::set_permission_sets_provisioning_status).
     ///
     /// <p>The status object for the permission set provisioning operation.</p>
-    pub fn permission_sets_provisioning_status(mut self, input: crate::types::PermissionSetProvisioningStatusMetadata) -> Self {
+    pub fn permission_sets_provisioning_status(
+        mut self,
+        input: crate::types::PermissionSetProvisioningStatusMetadata,
+    ) -> Self {
         let mut v = self.permission_sets_provisioning_status.unwrap_or_default();
-                        v.push(input);
-                        self.permission_sets_provisioning_status = Some(v);
-                        self
+        v.push(input);
+        self.permission_sets_provisioning_status = Some(v);
+        self
     }
     /// <p>The status object for the permission set provisioning operation.</p>
-    pub fn set_permission_sets_provisioning_status(mut self, input: std::option::Option<std::vec::Vec<crate::types::PermissionSetProvisioningStatusMetadata>>) -> Self {
-        self.permission_sets_provisioning_status = input; self
+    pub fn set_permission_sets_provisioning_status(
+        mut self,
+        input: std::option::Option<
+            std::vec::Vec<crate::types::PermissionSetProvisioningStatusMetadata>,
+        >,
+    ) -> Self {
+        self.permission_sets_provisioning_status = input;
+        self
     }
     /// <p>The pagination token for the list API. Initially the value is null. Use the output of previous API calls to make subsequent calls.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -64,19 +77,20 @@ impl ListPermissionSetProvisioningStatusOutputBuilder {
     }
     /// <p>The pagination token for the list API. Initially the value is null. Use the output of previous API calls to make subsequent calls.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input; self
+        self.next_token = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`ListPermissionSetProvisioningStatusOutput`](crate::operation::list_permission_set_provisioning_status::ListPermissionSetProvisioningStatusOutput).
-    pub fn build(self) -> crate::operation::list_permission_set_provisioning_status::ListPermissionSetProvisioningStatusOutput {
+    pub fn build(self) -> crate::operation::list_permission_set_provisioning_status::ListPermissionSetProvisioningStatusOutput{
         crate::operation::list_permission_set_provisioning_status::ListPermissionSetProvisioningStatusOutput {
             permission_sets_provisioning_status: self.permission_sets_provisioning_status
             ,
@@ -86,4 +100,3 @@ impl ListPermissionSetProvisioningStatusOutputBuilder {
         }
     }
 }
-

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct BatchGetSchemaOutput  {
+pub struct BatchGetSchemaOutput {
     /// <p>The retrieved list of schemas.</p>
     #[doc(hidden)]
     pub schemas: std::option::Option<std::vec::Vec<crate::types::Schema>>,
@@ -13,19 +13,19 @@ pub struct BatchGetSchemaOutput  {
 }
 impl BatchGetSchemaOutput {
     /// <p>The retrieved list of schemas.</p>
-    pub fn schemas(&self) -> std::option::Option<& [crate::types::Schema]> {
+    pub fn schemas(&self) -> std::option::Option<&[crate::types::Schema]> {
         self.schemas.as_deref()
     }
     /// <p>Error reasons for schemas that could not be retrieved. One error is returned for every schema that could not be retrieved.</p>
-    pub fn errors(&self) -> std::option::Option<& [crate::types::BatchGetSchemaError]> {
+    pub fn errors(&self) -> std::option::Option<&[crate::types::BatchGetSchemaError]> {
         self.errors.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for BatchGetSchemaOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl BatchGetSchemaOutput {
     /// Creates a new builder-style object to manufacture [`BatchGetSchemaOutput`](crate::operation::batch_get_schema::BatchGetSchemaOutput).
     pub fn builder() -> crate::operation::batch_get_schema::builders::BatchGetSchemaOutputBuilder {
@@ -49,13 +49,17 @@ impl BatchGetSchemaOutputBuilder {
     /// <p>The retrieved list of schemas.</p>
     pub fn schemas(mut self, input: crate::types::Schema) -> Self {
         let mut v = self.schemas.unwrap_or_default();
-                        v.push(input);
-                        self.schemas = Some(v);
-                        self
+        v.push(input);
+        self.schemas = Some(v);
+        self
     }
     /// <p>The retrieved list of schemas.</p>
-    pub fn set_schemas(mut self, input: std::option::Option<std::vec::Vec<crate::types::Schema>>) -> Self {
-        self.schemas = input; self
+    pub fn set_schemas(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::Schema>>,
+    ) -> Self {
+        self.schemas = input;
+        self
     }
     /// Appends an item to `errors`.
     ///
@@ -64,32 +68,33 @@ impl BatchGetSchemaOutputBuilder {
     /// <p>Error reasons for schemas that could not be retrieved. One error is returned for every schema that could not be retrieved.</p>
     pub fn errors(mut self, input: crate::types::BatchGetSchemaError) -> Self {
         let mut v = self.errors.unwrap_or_default();
-                        v.push(input);
-                        self.errors = Some(v);
-                        self
+        v.push(input);
+        self.errors = Some(v);
+        self
     }
     /// <p>Error reasons for schemas that could not be retrieved. One error is returned for every schema that could not be retrieved.</p>
-    pub fn set_errors(mut self, input: std::option::Option<std::vec::Vec<crate::types::BatchGetSchemaError>>) -> Self {
-        self.errors = input; self
+    pub fn set_errors(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::BatchGetSchemaError>>,
+    ) -> Self {
+        self.errors = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`BatchGetSchemaOutput`](crate::operation::batch_get_schema::BatchGetSchemaOutput).
     pub fn build(self) -> crate::operation::batch_get_schema::BatchGetSchemaOutput {
         crate::operation::batch_get_schema::BatchGetSchemaOutput {
-            schemas: self.schemas
-            ,
-            errors: self.errors
-            ,
+            schemas: self.schemas,
+            errors: self.errors,
             _request_id: self._request_id,
         }
     }
 }
-

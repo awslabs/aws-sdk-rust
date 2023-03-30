@@ -3,7 +3,7 @@
 /// <p> Detailed information about an assessment. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DataCollectionDetails  {
+pub struct DataCollectionDetails {
     /// <p> The status of the assessment. </p>
     #[doc(hidden)]
     pub status: std::option::Option<crate::types::AssessmentStatus>,
@@ -31,7 +31,7 @@ pub struct DataCollectionDetails  {
 }
 impl DataCollectionDetails {
     /// <p> The status of the assessment. </p>
-    pub fn status(&self) -> std::option::Option<& crate::types::AssessmentStatus> {
+    pub fn status(&self) -> std::option::Option<&crate::types::AssessmentStatus> {
         self.status.as_ref()
     }
     /// <p> The total number of servers in the assessment. </p>
@@ -51,15 +51,15 @@ impl DataCollectionDetails {
         self.in_progress
     }
     /// <p> The start time of assessment. </p>
-    pub fn start_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
+    pub fn start_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.start_time.as_ref()
     }
     /// <p> The time the assessment completes. </p>
-    pub fn completion_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
+    pub fn completion_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.completion_time.as_ref()
     }
     /// <p>The status message of the assessment.</p>
-    pub fn status_message(&self) -> std::option::Option<& str> {
+    pub fn status_message(&self) -> std::option::Option<&str> {
         self.status_message.as_deref()
     }
 }
@@ -90,8 +90,12 @@ impl DataCollectionDetailsBuilder {
         self
     }
     /// <p> The status of the assessment. </p>
-    pub fn set_status(mut self, input: std::option::Option<crate::types::AssessmentStatus>) -> Self {
-        self.status = input; self
+    pub fn set_status(
+        mut self,
+        input: std::option::Option<crate::types::AssessmentStatus>,
+    ) -> Self {
+        self.status = input;
+        self
     }
     /// <p> The total number of servers in the assessment. </p>
     pub fn servers(mut self, input: i32) -> Self {
@@ -100,7 +104,8 @@ impl DataCollectionDetailsBuilder {
     }
     /// <p> The total number of servers in the assessment. </p>
     pub fn set_servers(mut self, input: std::option::Option<i32>) -> Self {
-        self.servers = input; self
+        self.servers = input;
+        self
     }
     /// <p> The number of failed servers in the assessment. </p>
     pub fn failed(mut self, input: i32) -> Self {
@@ -109,7 +114,8 @@ impl DataCollectionDetailsBuilder {
     }
     /// <p> The number of failed servers in the assessment. </p>
     pub fn set_failed(mut self, input: std::option::Option<i32>) -> Self {
-        self.failed = input; self
+        self.failed = input;
+        self
     }
     /// <p> The number of successful servers in the assessment. </p>
     pub fn success(mut self, input: i32) -> Self {
@@ -118,7 +124,8 @@ impl DataCollectionDetailsBuilder {
     }
     /// <p> The number of successful servers in the assessment. </p>
     pub fn set_success(mut self, input: std::option::Option<i32>) -> Self {
-        self.success = input; self
+        self.success = input;
+        self
     }
     /// <p> The number of servers with the assessment status <code>IN_PROGESS</code>. </p>
     pub fn in_progress(mut self, input: i32) -> Self {
@@ -127,7 +134,8 @@ impl DataCollectionDetailsBuilder {
     }
     /// <p> The number of servers with the assessment status <code>IN_PROGESS</code>. </p>
     pub fn set_in_progress(mut self, input: std::option::Option<i32>) -> Self {
-        self.in_progress = input; self
+        self.in_progress = input;
+        self
     }
     /// <p> The start time of assessment. </p>
     pub fn start_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -135,8 +143,12 @@ impl DataCollectionDetailsBuilder {
         self
     }
     /// <p> The start time of assessment. </p>
-    pub fn set_start_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.start_time = input; self
+    pub fn set_start_time(
+        mut self,
+        input: std::option::Option<aws_smithy_types::DateTime>,
+    ) -> Self {
+        self.start_time = input;
+        self
     }
     /// <p> The time the assessment completes. </p>
     pub fn completion_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -144,8 +156,12 @@ impl DataCollectionDetailsBuilder {
         self
     }
     /// <p> The time the assessment completes. </p>
-    pub fn set_completion_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.completion_time = input; self
+    pub fn set_completion_time(
+        mut self,
+        input: std::option::Option<aws_smithy_types::DateTime>,
+    ) -> Self {
+        self.completion_time = input;
+        self
     }
     /// <p>The status message of the assessment.</p>
     pub fn status_message(mut self, input: impl Into<std::string::String>) -> Self {
@@ -154,28 +170,20 @@ impl DataCollectionDetailsBuilder {
     }
     /// <p>The status message of the assessment.</p>
     pub fn set_status_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.status_message = input; self
+        self.status_message = input;
+        self
     }
     /// Consumes the builder and constructs a [`DataCollectionDetails`](crate::types::DataCollectionDetails).
     pub fn build(self) -> crate::types::DataCollectionDetails {
         crate::types::DataCollectionDetails {
-            status: self.status
-            ,
-            servers: self.servers
-            ,
-            failed: self.failed
-            ,
-            success: self.success
-            ,
-            in_progress: self.in_progress
-            ,
-            start_time: self.start_time
-            ,
-            completion_time: self.completion_time
-            ,
-            status_message: self.status_message
-            ,
+            status: self.status,
+            servers: self.servers,
+            failed: self.failed,
+            success: self.success,
+            in_progress: self.in_progress,
+            start_time: self.start_time,
+            completion_time: self.completion_time,
+            status_message: self.status_message,
         }
     }
 }
-

@@ -2,14 +2,19 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListNetworkSitesInput  {
-    /// <p>The filters. Add filters to your request to return a more specific list of results. Use filters to match the status of the network sites.</p> 
-    /// <ul> 
-    /// <li> <p> <code>STATUS</code> - The status (<code>AVAILABLE</code> | <code>CREATED</code> | <code>DELETED</code> | <code>DEPROVISIONING</code> | <code>PROVISIONING</code>).</p> </li> 
-    /// </ul> 
+pub struct ListNetworkSitesInput {
+    /// <p>The filters. Add filters to your request to return a more specific list of results. Use filters to match the status of the network sites.</p>
+    /// <ul>
+    /// <li> <p> <code>STATUS</code> - The status (<code>AVAILABLE</code> | <code>CREATED</code> | <code>DELETED</code> | <code>DEPROVISIONING</code> | <code>PROVISIONING</code>).</p> </li>
+    /// </ul>
     /// <p>Filter values are case sensitive. If you specify multiple values for a filter, the values are joined with an <code>OR</code>, and the request returns all results that match any of the specified values.</p>
     #[doc(hidden)]
-    pub filters: std::option::Option<std::collections::HashMap<crate::types::NetworkSiteFilterKeys, std::vec::Vec<std::string::String>>>,
+    pub filters: std::option::Option<
+        std::collections::HashMap<
+            crate::types::NetworkSiteFilterKeys,
+            std::vec::Vec<std::string::String>,
+        >,
+    >,
     /// <p>The Amazon Resource Name (ARN) of the network.</p>
     #[doc(hidden)]
     pub network_arn: std::option::Option<std::string::String>,
@@ -21,20 +26,27 @@ pub struct ListNetworkSitesInput  {
     pub max_results: std::option::Option<i32>,
 }
 impl ListNetworkSitesInput {
-    /// <p>The filters. Add filters to your request to return a more specific list of results. Use filters to match the status of the network sites.</p> 
-    /// <ul> 
-    /// <li> <p> <code>STATUS</code> - The status (<code>AVAILABLE</code> | <code>CREATED</code> | <code>DELETED</code> | <code>DEPROVISIONING</code> | <code>PROVISIONING</code>).</p> </li> 
-    /// </ul> 
+    /// <p>The filters. Add filters to your request to return a more specific list of results. Use filters to match the status of the network sites.</p>
+    /// <ul>
+    /// <li> <p> <code>STATUS</code> - The status (<code>AVAILABLE</code> | <code>CREATED</code> | <code>DELETED</code> | <code>DEPROVISIONING</code> | <code>PROVISIONING</code>).</p> </li>
+    /// </ul>
     /// <p>Filter values are case sensitive. If you specify multiple values for a filter, the values are joined with an <code>OR</code>, and the request returns all results that match any of the specified values.</p>
-    pub fn filters(&self) -> std::option::Option<& std::collections::HashMap<crate::types::NetworkSiteFilterKeys, std::vec::Vec<std::string::String>>> {
+    pub fn filters(
+        &self,
+    ) -> std::option::Option<
+        &std::collections::HashMap<
+            crate::types::NetworkSiteFilterKeys,
+            std::vec::Vec<std::string::String>,
+        >,
+    > {
         self.filters.as_ref()
     }
     /// <p>The Amazon Resource Name (ARN) of the network.</p>
-    pub fn network_arn(&self) -> std::option::Option<& str> {
+    pub fn network_arn(&self) -> std::option::Option<&str> {
         self.network_arn.as_deref()
     }
     /// <p>The token for the next page of results.</p>
-    pub fn start_token(&self) -> std::option::Option<& str> {
+    pub fn start_token(&self) -> std::option::Option<&str> {
         self.start_token.as_deref()
     }
     /// <p>The maximum number of results to return.</p>
@@ -44,7 +56,8 @@ impl ListNetworkSitesInput {
 }
 impl ListNetworkSitesInput {
     /// Creates a new builder-style object to manufacture [`ListNetworkSitesInput`](crate::operation::list_network_sites::ListNetworkSitesInput).
-    pub fn builder() -> crate::operation::list_network_sites::builders::ListNetworkSitesInputBuilder {
+    pub fn builder() -> crate::operation::list_network_sites::builders::ListNetworkSitesInputBuilder
+    {
         crate::operation::list_network_sites::builders::ListNetworkSitesInputBuilder::default()
     }
 }
@@ -53,7 +66,12 @@ impl ListNetworkSitesInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct ListNetworkSitesInputBuilder {
-    pub(crate) filters: std::option::Option<std::collections::HashMap<crate::types::NetworkSiteFilterKeys, std::vec::Vec<std::string::String>>>,
+    pub(crate) filters: std::option::Option<
+        std::collections::HashMap<
+            crate::types::NetworkSiteFilterKeys,
+            std::vec::Vec<std::string::String>,
+        >,
+    >,
     pub(crate) network_arn: std::option::Option<std::string::String>,
     pub(crate) start_token: std::option::Option<std::string::String>,
     pub(crate) max_results: std::option::Option<i32>,
@@ -63,24 +81,37 @@ impl ListNetworkSitesInputBuilder {
     ///
     /// To override the contents of this collection use [`set_filters`](Self::set_filters).
     ///
-    /// <p>The filters. Add filters to your request to return a more specific list of results. Use filters to match the status of the network sites.</p> 
-    /// <ul> 
-    /// <li> <p> <code>STATUS</code> - The status (<code>AVAILABLE</code> | <code>CREATED</code> | <code>DELETED</code> | <code>DEPROVISIONING</code> | <code>PROVISIONING</code>).</p> </li> 
-    /// </ul> 
+    /// <p>The filters. Add filters to your request to return a more specific list of results. Use filters to match the status of the network sites.</p>
+    /// <ul>
+    /// <li> <p> <code>STATUS</code> - The status (<code>AVAILABLE</code> | <code>CREATED</code> | <code>DELETED</code> | <code>DEPROVISIONING</code> | <code>PROVISIONING</code>).</p> </li>
+    /// </ul>
     /// <p>Filter values are case sensitive. If you specify multiple values for a filter, the values are joined with an <code>OR</code>, and the request returns all results that match any of the specified values.</p>
-    pub fn filters(mut self, k: crate::types::NetworkSiteFilterKeys, v: std::vec::Vec<std::string::String>) -> Self {
+    pub fn filters(
+        mut self,
+        k: crate::types::NetworkSiteFilterKeys,
+        v: std::vec::Vec<std::string::String>,
+    ) -> Self {
         let mut hash_map = self.filters.unwrap_or_default();
-                        hash_map.insert(k, v);
-                        self.filters = Some(hash_map);
-                        self
+        hash_map.insert(k, v);
+        self.filters = Some(hash_map);
+        self
     }
-    /// <p>The filters. Add filters to your request to return a more specific list of results. Use filters to match the status of the network sites.</p> 
-    /// <ul> 
-    /// <li> <p> <code>STATUS</code> - The status (<code>AVAILABLE</code> | <code>CREATED</code> | <code>DELETED</code> | <code>DEPROVISIONING</code> | <code>PROVISIONING</code>).</p> </li> 
-    /// </ul> 
+    /// <p>The filters. Add filters to your request to return a more specific list of results. Use filters to match the status of the network sites.</p>
+    /// <ul>
+    /// <li> <p> <code>STATUS</code> - The status (<code>AVAILABLE</code> | <code>CREATED</code> | <code>DELETED</code> | <code>DEPROVISIONING</code> | <code>PROVISIONING</code>).</p> </li>
+    /// </ul>
     /// <p>Filter values are case sensitive. If you specify multiple values for a filter, the values are joined with an <code>OR</code>, and the request returns all results that match any of the specified values.</p>
-    pub fn set_filters(mut self, input: std::option::Option<std::collections::HashMap<crate::types::NetworkSiteFilterKeys, std::vec::Vec<std::string::String>>>) -> Self {
-        self.filters = input; self
+    pub fn set_filters(
+        mut self,
+        input: std::option::Option<
+            std::collections::HashMap<
+                crate::types::NetworkSiteFilterKeys,
+                std::vec::Vec<std::string::String>,
+            >,
+        >,
+    ) -> Self {
+        self.filters = input;
+        self
     }
     /// <p>The Amazon Resource Name (ARN) of the network.</p>
     pub fn network_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -89,7 +120,8 @@ impl ListNetworkSitesInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the network.</p>
     pub fn set_network_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.network_arn = input; self
+        self.network_arn = input;
+        self
     }
     /// <p>The token for the next page of results.</p>
     pub fn start_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -98,7 +130,8 @@ impl ListNetworkSitesInputBuilder {
     }
     /// <p>The token for the next page of results.</p>
     pub fn set_start_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.start_token = input; self
+        self.start_token = input;
+        self
     }
     /// <p>The maximum number of results to return.</p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -107,22 +140,23 @@ impl ListNetworkSitesInputBuilder {
     }
     /// <p>The maximum number of results to return.</p>
     pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_results = input; self
+        self.max_results = input;
+        self
     }
     /// Consumes the builder and constructs a [`ListNetworkSitesInput`](crate::operation::list_network_sites::ListNetworkSitesInput).
-    pub fn build(self) -> Result<crate::operation::list_network_sites::ListNetworkSitesInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::list_network_sites::ListNetworkSitesInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::list_network_sites::ListNetworkSitesInput {
-                filters: self.filters
-                ,
-                network_arn: self.network_arn
-                ,
-                start_token: self.start_token
-                ,
-                max_results: self.max_results
-                ,
-            }
+                filters: self.filters,
+                network_arn: self.network_arn,
+                start_token: self.start_token,
+                max_results: self.max_results,
+            },
         )
     }
 }
-

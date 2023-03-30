@@ -9,4 +9,3 @@ pub mod get_attribute_values;
 
 /// Types for the `GetProducts` operation.
 pub mod get_products;
-

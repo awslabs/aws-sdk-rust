@@ -3,7 +3,7 @@
 /// Use these settings to insert a DVB Service Description Table (SDT) in the transport stream of this output. When you work directly in your JSON job specification, include this object only when your job has a transport stream output and the container settings contain the object M2tsSettings.
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DvbSdtSettings  {
+pub struct DvbSdtSettings {
     /// Selects method of inserting SDT information into output stream. "Follow input SDT" copies SDT information from input stream to output stream. "Follow input SDT if present" copies SDT information from input stream to output stream if SDT information is present in the input, otherwise it will fall back on the user-defined values. Enter "SDT Manually" means user will enter the SDT information. "No SDT" means output stream will not contain SDT information.
     #[doc(hidden)]
     pub output_sdt: std::option::Option<crate::types::OutputSdt>,
@@ -19,7 +19,7 @@ pub struct DvbSdtSettings  {
 }
 impl DvbSdtSettings {
     /// Selects method of inserting SDT information into output stream. "Follow input SDT" copies SDT information from input stream to output stream. "Follow input SDT if present" copies SDT information from input stream to output stream if SDT information is present in the input, otherwise it will fall back on the user-defined values. Enter "SDT Manually" means user will enter the SDT information. "No SDT" means output stream will not contain SDT information.
-    pub fn output_sdt(&self) -> std::option::Option<& crate::types::OutputSdt> {
+    pub fn output_sdt(&self) -> std::option::Option<&crate::types::OutputSdt> {
         self.output_sdt.as_ref()
     }
     /// The number of milliseconds between instances of this table in the output transport stream.
@@ -27,11 +27,11 @@ impl DvbSdtSettings {
         self.sdt_interval
     }
     /// The service name placed in the service_descriptor in the Service Description Table. Maximum length is 256 characters.
-    pub fn service_name(&self) -> std::option::Option<& str> {
+    pub fn service_name(&self) -> std::option::Option<&str> {
         self.service_name.as_deref()
     }
     /// The service provider name placed in the service_descriptor in the Service Description Table. Maximum length is 256 characters.
-    pub fn service_provider_name(&self) -> std::option::Option<& str> {
+    pub fn service_provider_name(&self) -> std::option::Option<&str> {
         self.service_provider_name.as_deref()
     }
 }
@@ -59,7 +59,8 @@ impl DvbSdtSettingsBuilder {
     }
     /// Selects method of inserting SDT information into output stream. "Follow input SDT" copies SDT information from input stream to output stream. "Follow input SDT if present" copies SDT information from input stream to output stream if SDT information is present in the input, otherwise it will fall back on the user-defined values. Enter "SDT Manually" means user will enter the SDT information. "No SDT" means output stream will not contain SDT information.
     pub fn set_output_sdt(mut self, input: std::option::Option<crate::types::OutputSdt>) -> Self {
-        self.output_sdt = input; self
+        self.output_sdt = input;
+        self
     }
     /// The number of milliseconds between instances of this table in the output transport stream.
     pub fn sdt_interval(mut self, input: i32) -> Self {
@@ -68,7 +69,8 @@ impl DvbSdtSettingsBuilder {
     }
     /// The number of milliseconds between instances of this table in the output transport stream.
     pub fn set_sdt_interval(mut self, input: std::option::Option<i32>) -> Self {
-        self.sdt_interval = input; self
+        self.sdt_interval = input;
+        self
     }
     /// The service name placed in the service_descriptor in the Service Description Table. Maximum length is 256 characters.
     pub fn service_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -77,7 +79,8 @@ impl DvbSdtSettingsBuilder {
     }
     /// The service name placed in the service_descriptor in the Service Description Table. Maximum length is 256 characters.
     pub fn set_service_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.service_name = input; self
+        self.service_name = input;
+        self
     }
     /// The service provider name placed in the service_descriptor in the Service Description Table. Maximum length is 256 characters.
     pub fn service_provider_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -85,22 +88,20 @@ impl DvbSdtSettingsBuilder {
         self
     }
     /// The service provider name placed in the service_descriptor in the Service Description Table. Maximum length is 256 characters.
-    pub fn set_service_provider_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.service_provider_name = input; self
+    pub fn set_service_provider_name(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.service_provider_name = input;
+        self
     }
     /// Consumes the builder and constructs a [`DvbSdtSettings`](crate::types::DvbSdtSettings).
     pub fn build(self) -> crate::types::DvbSdtSettings {
         crate::types::DvbSdtSettings {
-            output_sdt: self.output_sdt
-            ,
-            sdt_interval: self.sdt_interval
-                .unwrap_or_default()
-            ,
-            service_name: self.service_name
-            ,
-            service_provider_name: self.service_provider_name
-            ,
+            output_sdt: self.output_sdt,
+            sdt_interval: self.sdt_interval.unwrap_or_default(),
+            service_name: self.service_name,
+            service_provider_name: self.service_provider_name,
         }
     }
 }
-

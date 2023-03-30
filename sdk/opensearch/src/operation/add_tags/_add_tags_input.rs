@@ -3,7 +3,7 @@
 /// <p>Container for the parameters to the <code>AddTags</code> operation. Specifies the tags to attach to the domain.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AddTagsInput  {
+pub struct AddTagsInput {
     /// <p>Amazon Resource Name (ARN) for the OpenSearch Service domain to which you want to attach resource tags.</p>
     #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
@@ -13,11 +13,11 @@ pub struct AddTagsInput  {
 }
 impl AddTagsInput {
     /// <p>Amazon Resource Name (ARN) for the OpenSearch Service domain to which you want to attach resource tags.</p>
-    pub fn arn(&self) -> std::option::Option<& str> {
+    pub fn arn(&self) -> std::option::Option<&str> {
         self.arn.as_deref()
     }
     /// <p>List of resource tags.</p>
-    pub fn tag_list(&self) -> std::option::Option<& [crate::types::Tag]> {
+    pub fn tag_list(&self) -> std::option::Option<&[crate::types::Tag]> {
         self.tag_list.as_deref()
     }
 }
@@ -43,7 +43,8 @@ impl AddTagsInputBuilder {
     }
     /// <p>Amazon Resource Name (ARN) for the OpenSearch Service domain to which you want to attach resource tags.</p>
     pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.arn = input; self
+        self.arn = input;
+        self
     }
     /// Appends an item to `tag_list`.
     ///
@@ -52,24 +53,28 @@ impl AddTagsInputBuilder {
     /// <p>List of resource tags.</p>
     pub fn tag_list(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tag_list.unwrap_or_default();
-                        v.push(input);
-                        self.tag_list = Some(v);
-                        self
+        v.push(input);
+        self.tag_list = Some(v);
+        self
     }
     /// <p>List of resource tags.</p>
-    pub fn set_tag_list(mut self, input: std::option::Option<std::vec::Vec<crate::types::Tag>>) -> Self {
-        self.tag_list = input; self
+    pub fn set_tag_list(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::Tag>>,
+    ) -> Self {
+        self.tag_list = input;
+        self
     }
     /// Consumes the builder and constructs a [`AddTagsInput`](crate::operation::add_tags::AddTagsInput).
-    pub fn build(self) -> Result<crate::operation::add_tags::AddTagsInput, aws_smithy_http::operation::error::BuildError> {
-        Ok(
-            crate::operation::add_tags::AddTagsInput {
-                arn: self.arn
-                ,
-                tag_list: self.tag_list
-                ,
-            }
-        )
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::add_tags::AddTagsInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        Ok(crate::operation::add_tags::AddTagsInput {
+            arn: self.arn,
+            tag_list: self.tag_list,
+        })
     }
 }
-

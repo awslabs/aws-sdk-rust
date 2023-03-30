@@ -3,7 +3,7 @@
 /// <p>Creates a new Deployment resource to represent a deployment.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateDeploymentInput  {
+pub struct CreateDeploymentInput {
     /// <p>The API identifier.</p>
     #[doc(hidden)]
     pub api_id: std::option::Option<std::string::String>,
@@ -16,21 +16,22 @@ pub struct CreateDeploymentInput  {
 }
 impl CreateDeploymentInput {
     /// <p>The API identifier.</p>
-    pub fn api_id(&self) -> std::option::Option<& str> {
+    pub fn api_id(&self) -> std::option::Option<&str> {
         self.api_id.as_deref()
     }
     /// <p>The description for the deployment resource.</p>
-    pub fn description(&self) -> std::option::Option<& str> {
+    pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
     /// <p>The name of the Stage resource for the Deployment resource to create.</p>
-    pub fn stage_name(&self) -> std::option::Option<& str> {
+    pub fn stage_name(&self) -> std::option::Option<&str> {
         self.stage_name.as_deref()
     }
 }
 impl CreateDeploymentInput {
     /// Creates a new builder-style object to manufacture [`CreateDeploymentInput`](crate::operation::create_deployment::CreateDeploymentInput).
-    pub fn builder() -> crate::operation::create_deployment::builders::CreateDeploymentInputBuilder {
+    pub fn builder() -> crate::operation::create_deployment::builders::CreateDeploymentInputBuilder
+    {
         crate::operation::create_deployment::builders::CreateDeploymentInputBuilder::default()
     }
 }
@@ -51,7 +52,8 @@ impl CreateDeploymentInputBuilder {
     }
     /// <p>The API identifier.</p>
     pub fn set_api_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.api_id = input; self
+        self.api_id = input;
+        self
     }
     /// <p>The description for the deployment resource.</p>
     pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -60,7 +62,8 @@ impl CreateDeploymentInputBuilder {
     }
     /// <p>The description for the deployment resource.</p>
     pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.description = input; self
+        self.description = input;
+        self
     }
     /// <p>The name of the Stage resource for the Deployment resource to create.</p>
     pub fn stage_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -69,20 +72,20 @@ impl CreateDeploymentInputBuilder {
     }
     /// <p>The name of the Stage resource for the Deployment resource to create.</p>
     pub fn set_stage_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.stage_name = input; self
+        self.stage_name = input;
+        self
     }
     /// Consumes the builder and constructs a [`CreateDeploymentInput`](crate::operation::create_deployment::CreateDeploymentInput).
-    pub fn build(self) -> Result<crate::operation::create_deployment::CreateDeploymentInput, aws_smithy_http::operation::error::BuildError> {
-        Ok(
-            crate::operation::create_deployment::CreateDeploymentInput {
-                api_id: self.api_id
-                ,
-                description: self.description
-                ,
-                stage_name: self.stage_name
-                ,
-            }
-        )
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::create_deployment::CreateDeploymentInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        Ok(crate::operation::create_deployment::CreateDeploymentInput {
+            api_id: self.api_id,
+            description: self.description,
+            stage_name: self.stage_name,
+        })
     }
 }
-

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteChannelMessageInput  {
+pub struct DeleteChannelMessageInput {
     /// <p>The ARN of the channel.</p>
     #[doc(hidden)]
     pub channel_arn: std::option::Option<std::string::String>,
@@ -12,35 +12,36 @@ pub struct DeleteChannelMessageInput  {
     /// <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
     #[doc(hidden)]
     pub chime_bearer: std::option::Option<std::string::String>,
-    /// <p>The ID of the SubChannel in the request.</p> <note> 
-    /// <p>Only required when deleting messages in a SubChannel that the user belongs to.</p> 
+    /// <p>The ID of the SubChannel in the request.</p> <note>
+    /// <p>Only required when deleting messages in a SubChannel that the user belongs to.</p>
     /// </note>
     #[doc(hidden)]
     pub sub_channel_id: std::option::Option<std::string::String>,
 }
 impl DeleteChannelMessageInput {
     /// <p>The ARN of the channel.</p>
-    pub fn channel_arn(&self) -> std::option::Option<& str> {
+    pub fn channel_arn(&self) -> std::option::Option<&str> {
         self.channel_arn.as_deref()
     }
     /// <p>The ID of the message being deleted.</p>
-    pub fn message_id(&self) -> std::option::Option<& str> {
+    pub fn message_id(&self) -> std::option::Option<&str> {
         self.message_id.as_deref()
     }
     /// <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
-    pub fn chime_bearer(&self) -> std::option::Option<& str> {
+    pub fn chime_bearer(&self) -> std::option::Option<&str> {
         self.chime_bearer.as_deref()
     }
-    /// <p>The ID of the SubChannel in the request.</p> <note> 
-    /// <p>Only required when deleting messages in a SubChannel that the user belongs to.</p> 
+    /// <p>The ID of the SubChannel in the request.</p> <note>
+    /// <p>Only required when deleting messages in a SubChannel that the user belongs to.</p>
     /// </note>
-    pub fn sub_channel_id(&self) -> std::option::Option<& str> {
+    pub fn sub_channel_id(&self) -> std::option::Option<&str> {
         self.sub_channel_id.as_deref()
     }
 }
 impl DeleteChannelMessageInput {
     /// Creates a new builder-style object to manufacture [`DeleteChannelMessageInput`](crate::operation::delete_channel_message::DeleteChannelMessageInput).
-    pub fn builder() -> crate::operation::delete_channel_message::builders::DeleteChannelMessageInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::delete_channel_message::builders::DeleteChannelMessageInputBuilder {
         crate::operation::delete_channel_message::builders::DeleteChannelMessageInputBuilder::default()
     }
 }
@@ -62,7 +63,8 @@ impl DeleteChannelMessageInputBuilder {
     }
     /// <p>The ARN of the channel.</p>
     pub fn set_channel_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.channel_arn = input; self
+        self.channel_arn = input;
+        self
     }
     /// <p>The ID of the message being deleted.</p>
     pub fn message_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -71,7 +73,8 @@ impl DeleteChannelMessageInputBuilder {
     }
     /// <p>The ID of the message being deleted.</p>
     pub fn set_message_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.message_id = input; self
+        self.message_id = input;
+        self
     }
     /// <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
     pub fn chime_bearer(mut self, input: impl Into<std::string::String>) -> Self {
@@ -80,35 +83,37 @@ impl DeleteChannelMessageInputBuilder {
     }
     /// <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
     pub fn set_chime_bearer(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.chime_bearer = input; self
+        self.chime_bearer = input;
+        self
     }
-    /// <p>The ID of the SubChannel in the request.</p> <note> 
-    /// <p>Only required when deleting messages in a SubChannel that the user belongs to.</p> 
+    /// <p>The ID of the SubChannel in the request.</p> <note>
+    /// <p>Only required when deleting messages in a SubChannel that the user belongs to.</p>
     /// </note>
     pub fn sub_channel_id(mut self, input: impl Into<std::string::String>) -> Self {
         self.sub_channel_id = Some(input.into());
         self
     }
-    /// <p>The ID of the SubChannel in the request.</p> <note> 
-    /// <p>Only required when deleting messages in a SubChannel that the user belongs to.</p> 
+    /// <p>The ID of the SubChannel in the request.</p> <note>
+    /// <p>Only required when deleting messages in a SubChannel that the user belongs to.</p>
     /// </note>
     pub fn set_sub_channel_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.sub_channel_id = input; self
+        self.sub_channel_id = input;
+        self
     }
     /// Consumes the builder and constructs a [`DeleteChannelMessageInput`](crate::operation::delete_channel_message::DeleteChannelMessageInput).
-    pub fn build(self) -> Result<crate::operation::delete_channel_message::DeleteChannelMessageInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::delete_channel_message::DeleteChannelMessageInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::delete_channel_message::DeleteChannelMessageInput {
-                channel_arn: self.channel_arn
-                ,
-                message_id: self.message_id
-                ,
-                chime_bearer: self.chime_bearer
-                ,
-                sub_channel_id: self.sub_channel_id
-                ,
-            }
+                channel_arn: self.channel_arn,
+                message_id: self.message_id,
+                chime_bearer: self.chime_bearer,
+                sub_channel_id: self.sub_channel_id,
+            },
         )
     }
 }
-

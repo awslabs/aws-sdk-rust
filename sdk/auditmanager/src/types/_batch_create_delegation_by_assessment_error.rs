@@ -3,7 +3,7 @@
 /// <p> An error entity for the <code>BatchCreateDelegationByAssessment</code> API. This is used to provide more meaningful errors than a simple string message. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct BatchCreateDelegationByAssessmentError  {
+pub struct BatchCreateDelegationByAssessmentError {
     /// <p> The API request to batch create delegations in Audit Manager. </p>
     #[doc(hidden)]
     pub create_delegation_request: std::option::Option<crate::types::CreateDelegationRequest>,
@@ -16,15 +16,17 @@ pub struct BatchCreateDelegationByAssessmentError  {
 }
 impl BatchCreateDelegationByAssessmentError {
     /// <p> The API request to batch create delegations in Audit Manager. </p>
-    pub fn create_delegation_request(&self) -> std::option::Option<& crate::types::CreateDelegationRequest> {
+    pub fn create_delegation_request(
+        &self,
+    ) -> std::option::Option<&crate::types::CreateDelegationRequest> {
         self.create_delegation_request.as_ref()
     }
     /// <p> The error code that the <code>BatchCreateDelegationByAssessment</code> API returned. </p>
-    pub fn error_code(&self) -> std::option::Option<& str> {
+    pub fn error_code(&self) -> std::option::Option<&str> {
         self.error_code.as_deref()
     }
     /// <p> The error message that the <code>BatchCreateDelegationByAssessment</code> API returned. </p>
-    pub fn error_message(&self) -> std::option::Option<& str> {
+    pub fn error_message(&self) -> std::option::Option<&str> {
         self.error_message.as_deref()
     }
 }
@@ -39,19 +41,27 @@ impl BatchCreateDelegationByAssessmentError {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct BatchCreateDelegationByAssessmentErrorBuilder {
-    pub(crate) create_delegation_request: std::option::Option<crate::types::CreateDelegationRequest>,
+    pub(crate) create_delegation_request:
+        std::option::Option<crate::types::CreateDelegationRequest>,
     pub(crate) error_code: std::option::Option<std::string::String>,
     pub(crate) error_message: std::option::Option<std::string::String>,
 }
 impl BatchCreateDelegationByAssessmentErrorBuilder {
     /// <p> The API request to batch create delegations in Audit Manager. </p>
-    pub fn create_delegation_request(mut self, input: crate::types::CreateDelegationRequest) -> Self {
+    pub fn create_delegation_request(
+        mut self,
+        input: crate::types::CreateDelegationRequest,
+    ) -> Self {
         self.create_delegation_request = Some(input);
         self
     }
     /// <p> The API request to batch create delegations in Audit Manager. </p>
-    pub fn set_create_delegation_request(mut self, input: std::option::Option<crate::types::CreateDelegationRequest>) -> Self {
-        self.create_delegation_request = input; self
+    pub fn set_create_delegation_request(
+        mut self,
+        input: std::option::Option<crate::types::CreateDelegationRequest>,
+    ) -> Self {
+        self.create_delegation_request = input;
+        self
     }
     /// <p> The error code that the <code>BatchCreateDelegationByAssessment</code> API returned. </p>
     pub fn error_code(mut self, input: impl Into<std::string::String>) -> Self {
@@ -60,7 +70,8 @@ impl BatchCreateDelegationByAssessmentErrorBuilder {
     }
     /// <p> The error code that the <code>BatchCreateDelegationByAssessment</code> API returned. </p>
     pub fn set_error_code(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.error_code = input; self
+        self.error_code = input;
+        self
     }
     /// <p> The error message that the <code>BatchCreateDelegationByAssessment</code> API returned. </p>
     pub fn error_message(mut self, input: impl Into<std::string::String>) -> Self {
@@ -69,18 +80,15 @@ impl BatchCreateDelegationByAssessmentErrorBuilder {
     }
     /// <p> The error message that the <code>BatchCreateDelegationByAssessment</code> API returned. </p>
     pub fn set_error_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.error_message = input; self
+        self.error_message = input;
+        self
     }
     /// Consumes the builder and constructs a [`BatchCreateDelegationByAssessmentError`](crate::types::BatchCreateDelegationByAssessmentError).
     pub fn build(self) -> crate::types::BatchCreateDelegationByAssessmentError {
         crate::types::BatchCreateDelegationByAssessmentError {
-            create_delegation_request: self.create_delegation_request
-            ,
-            error_code: self.error_code
-            ,
-            error_message: self.error_message
-            ,
+            create_delegation_request: self.create_delegation_request,
+            error_code: self.error_code,
+            error_message: self.error_message,
         }
     }
 }
-

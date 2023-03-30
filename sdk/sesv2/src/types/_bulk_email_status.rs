@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-/// 
+///
 /// Here is an example of how you can make a match expression forward-compatible:
-/// 
+///
 /// ```text
 /// # let bulkemailstatus = unimplemented!();
 /// match bulkemailstatus {
@@ -42,14 +42,22 @@
 /// Specifically, when `bulkemailstatus` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `BulkEmailStatus::NewFeature` also yielding `"NewFeature"`.
-/// 
+///
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
 pub enum BulkEmailStatus {
     #[allow(missing_docs)] // documentation missing in model
     AccountDailyQuotaExceeded,
@@ -80,65 +88,81 @@ pub enum BulkEmailStatus {
     #[allow(missing_docs)] // documentation missing in model
     TransientFailure,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::primitives::UnknownVariantValue)
+    Unknown(crate::primitives::UnknownVariantValue),
 }
 impl std::convert::From<&str> for BulkEmailStatus {
-                fn from(s: &str) -> Self {
-                    match s {
-                        "ACCOUNT_DAILY_QUOTA_EXCEEDED" => BulkEmailStatus::AccountDailyQuotaExceeded,
-"ACCOUNT_SENDING_PAUSED" => BulkEmailStatus::AccountSendingPaused,
-"ACCOUNT_SUSPENDED" => BulkEmailStatus::AccountSuspended,
-"ACCOUNT_THROTTLED" => BulkEmailStatus::AccountThrottled,
-"CONFIGURATION_SET_NOT_FOUND" => BulkEmailStatus::ConfigurationSetNotFound,
-"CONFIGURATION_SET_SENDING_PAUSED" => BulkEmailStatus::ConfigurationSetSendingPaused,
-"FAILED" => BulkEmailStatus::Failed,
-"INVALID_PARAMETER" => BulkEmailStatus::InvalidParameter,
-"INVALID_SENDING_POOL_NAME" => BulkEmailStatus::InvalidSendingPoolName,
-"MAIL_FROM_DOMAIN_NOT_VERIFIED" => BulkEmailStatus::MailFromDomainNotVerified,
-"MESSAGE_REJECTED" => BulkEmailStatus::MessageRejected,
-"SUCCESS" => BulkEmailStatus::Success,
-"TEMPLATE_NOT_FOUND" => BulkEmailStatus::TemplateNotFound,
-"TRANSIENT_FAILURE" => BulkEmailStatus::TransientFailure,
-other => BulkEmailStatus::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
-                    }
-                }
+    fn from(s: &str) -> Self {
+        match s {
+            "ACCOUNT_DAILY_QUOTA_EXCEEDED" => BulkEmailStatus::AccountDailyQuotaExceeded,
+            "ACCOUNT_SENDING_PAUSED" => BulkEmailStatus::AccountSendingPaused,
+            "ACCOUNT_SUSPENDED" => BulkEmailStatus::AccountSuspended,
+            "ACCOUNT_THROTTLED" => BulkEmailStatus::AccountThrottled,
+            "CONFIGURATION_SET_NOT_FOUND" => BulkEmailStatus::ConfigurationSetNotFound,
+            "CONFIGURATION_SET_SENDING_PAUSED" => BulkEmailStatus::ConfigurationSetSendingPaused,
+            "FAILED" => BulkEmailStatus::Failed,
+            "INVALID_PARAMETER" => BulkEmailStatus::InvalidParameter,
+            "INVALID_SENDING_POOL_NAME" => BulkEmailStatus::InvalidSendingPoolName,
+            "MAIL_FROM_DOMAIN_NOT_VERIFIED" => BulkEmailStatus::MailFromDomainNotVerified,
+            "MESSAGE_REJECTED" => BulkEmailStatus::MessageRejected,
+            "SUCCESS" => BulkEmailStatus::Success,
+            "TEMPLATE_NOT_FOUND" => BulkEmailStatus::TemplateNotFound,
+            "TRANSIENT_FAILURE" => BulkEmailStatus::TransientFailure,
+            other => {
+                BulkEmailStatus::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
             }
-impl std::str::FromStr for BulkEmailStatus {
-                type Err = std::convert::Infallible;
-
-                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-                    Ok(BulkEmailStatus::from(s))
-                }
-            }
-impl BulkEmailStatus {
-                /// Returns the `&str` value of the enum member.
-                pub fn as_str(&self) -> &str {
-                    match self {
-    BulkEmailStatus::AccountDailyQuotaExceeded => "ACCOUNT_DAILY_QUOTA_EXCEEDED",
-    BulkEmailStatus::AccountSendingPaused => "ACCOUNT_SENDING_PAUSED",
-    BulkEmailStatus::AccountSuspended => "ACCOUNT_SUSPENDED",
-    BulkEmailStatus::AccountThrottled => "ACCOUNT_THROTTLED",
-    BulkEmailStatus::ConfigurationSetNotFound => "CONFIGURATION_SET_NOT_FOUND",
-    BulkEmailStatus::ConfigurationSetSendingPaused => "CONFIGURATION_SET_SENDING_PAUSED",
-    BulkEmailStatus::Failed => "FAILED",
-    BulkEmailStatus::InvalidParameter => "INVALID_PARAMETER",
-    BulkEmailStatus::InvalidSendingPoolName => "INVALID_SENDING_POOL_NAME",
-    BulkEmailStatus::MailFromDomainNotVerified => "MAIL_FROM_DOMAIN_NOT_VERIFIED",
-    BulkEmailStatus::MessageRejected => "MESSAGE_REJECTED",
-    BulkEmailStatus::Success => "SUCCESS",
-    BulkEmailStatus::TemplateNotFound => "TEMPLATE_NOT_FOUND",
-    BulkEmailStatus::TransientFailure => "TRANSIENT_FAILURE",
-    BulkEmailStatus::Unknown(value) => value.as_str()
+        }
+    }
 }
-                }
-                /// Returns all the `&str` representations of the enum members.
-                pub const fn values() -> &'static [&'static str] {
-                    &["ACCOUNT_DAILY_QUOTA_EXCEEDED", "ACCOUNT_SENDING_PAUSED", "ACCOUNT_SUSPENDED", "ACCOUNT_THROTTLED", "CONFIGURATION_SET_NOT_FOUND", "CONFIGURATION_SET_SENDING_PAUSED", "FAILED", "INVALID_PARAMETER", "INVALID_SENDING_POOL_NAME", "MAIL_FROM_DOMAIN_NOT_VERIFIED", "MESSAGE_REJECTED", "SUCCESS", "TEMPLATE_NOT_FOUND", "TRANSIENT_FAILURE"]
-                }
-            }
-impl AsRef<str> for BulkEmailStatus {
-                fn as_ref(&self) -> &str {
-                    self.as_str()
-                }
-            }
+impl std::str::FromStr for BulkEmailStatus {
+    type Err = std::convert::Infallible;
 
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(BulkEmailStatus::from(s))
+    }
+}
+impl BulkEmailStatus {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            BulkEmailStatus::AccountDailyQuotaExceeded => "ACCOUNT_DAILY_QUOTA_EXCEEDED",
+            BulkEmailStatus::AccountSendingPaused => "ACCOUNT_SENDING_PAUSED",
+            BulkEmailStatus::AccountSuspended => "ACCOUNT_SUSPENDED",
+            BulkEmailStatus::AccountThrottled => "ACCOUNT_THROTTLED",
+            BulkEmailStatus::ConfigurationSetNotFound => "CONFIGURATION_SET_NOT_FOUND",
+            BulkEmailStatus::ConfigurationSetSendingPaused => "CONFIGURATION_SET_SENDING_PAUSED",
+            BulkEmailStatus::Failed => "FAILED",
+            BulkEmailStatus::InvalidParameter => "INVALID_PARAMETER",
+            BulkEmailStatus::InvalidSendingPoolName => "INVALID_SENDING_POOL_NAME",
+            BulkEmailStatus::MailFromDomainNotVerified => "MAIL_FROM_DOMAIN_NOT_VERIFIED",
+            BulkEmailStatus::MessageRejected => "MESSAGE_REJECTED",
+            BulkEmailStatus::Success => "SUCCESS",
+            BulkEmailStatus::TemplateNotFound => "TEMPLATE_NOT_FOUND",
+            BulkEmailStatus::TransientFailure => "TRANSIENT_FAILURE",
+            BulkEmailStatus::Unknown(value) => value.as_str(),
+        }
+    }
+    /// Returns all the `&str` representations of the enum members.
+    pub const fn values() -> &'static [&'static str] {
+        &[
+            "ACCOUNT_DAILY_QUOTA_EXCEEDED",
+            "ACCOUNT_SENDING_PAUSED",
+            "ACCOUNT_SUSPENDED",
+            "ACCOUNT_THROTTLED",
+            "CONFIGURATION_SET_NOT_FOUND",
+            "CONFIGURATION_SET_SENDING_PAUSED",
+            "FAILED",
+            "INVALID_PARAMETER",
+            "INVALID_SENDING_POOL_NAME",
+            "MAIL_FROM_DOMAIN_NOT_VERIFIED",
+            "MESSAGE_REJECTED",
+            "SUCCESS",
+            "TEMPLATE_NOT_FOUND",
+            "TRANSIENT_FAILURE",
+        ]
+    }
+}
+impl AsRef<str> for BulkEmailStatus {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}

@@ -4,49 +4,71 @@ pub use crate::operation::create_image_pipeline::_create_image_pipeline_output::
 pub use crate::operation::create_image_pipeline::_create_image_pipeline_input::CreateImagePipelineInputBuilder;
 
 /// Fluent builder constructing a request to `CreateImagePipeline`.
-/// 
+///
 /// <p> Creates a new image pipeline. Image pipelines enable you to automate the creation and distribution of images.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct CreateImagePipelineFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::create_image_pipeline::builders::CreateImagePipelineInputBuilder
-            }
-impl CreateImagePipelineFluentBuilder  {
+    handle: std::sync::Arc<crate::client::Handle>,
+    inner: crate::operation::create_image_pipeline::builders::CreateImagePipelineInputBuilder,
+}
+impl CreateImagePipelineFluentBuilder {
     /// Creates a new `CreateImagePipeline`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
-                    /// sent. The operation's inner [http::Request] can be modified as well.
-                    pub async fn customize(self) -> std::result::Result<
-                        crate::client::customize::CustomizableOperation<crate::operation::create_image_pipeline::CreateImagePipeline, aws_http::retry::AwsResponseRetryClassifier,>,
-                        aws_smithy_http::result::SdkError<crate::operation::create_image_pipeline::CreateImagePipelineError>
-                    >  {
-                        let handle = self.handle.clone();
-                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-                    }
-    
-                    /// Sends the request and returns the response.
-                    ///
-                    /// If an error occurs, an `SdkError` will be returned with additional details that
-                    /// can be matched against.
-                    ///
-                    /// By default, any retryable failures will be retried twice. Retry behavior
-                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                    /// set when configuring the client.
-                    pub async fn send(self) -> std::result::Result<crate::operation::create_image_pipeline::CreateImagePipelineOutput, aws_smithy_http::result::SdkError<crate::operation::create_image_pipeline::CreateImagePipelineError>>
-                     {
-                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&self.handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        self.handle.client.call(op).await
-                    }
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle,
+            inner: Default::default(),
+        }
+    }
+
+    /// Consume this builder, creating a customizable operation that can be modified before being
+    /// sent. The operation's inner [http::Request] can be modified as well.
+    pub async fn customize(
+        self,
+    ) -> std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::create_image_pipeline::CreateImagePipeline,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::result::SdkError<
+            crate::operation::create_image_pipeline::CreateImagePipelineError,
+        >,
+    > {
+        let handle = self.handle.clone();
+        let operation = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+    }
+
+    /// Sends the request and returns the response.
+    ///
+    /// If an error occurs, an `SdkError` will be returned with additional details that
+    /// can be matched against.
+    ///
+    /// By default, any retryable failures will be retried twice. Retry behavior
+    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+    /// set when configuring the client.
+    pub async fn send(
+        self,
+    ) -> std::result::Result<
+        crate::operation::create_image_pipeline::CreateImagePipelineOutput,
+        aws_smithy_http::result::SdkError<
+            crate::operation::create_image_pipeline::CreateImagePipelineError,
+        >,
+    > {
+        let op = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&self.handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        self.handle.client.call(op).await
+    }
     /// <p> The name of the image pipeline.</p>
     pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.name(input.into());
@@ -83,17 +105,26 @@ impl CreateImagePipelineFluentBuilder  {
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the container recipe that is used to configure images created by this container pipeline.</p>
-    pub fn set_container_recipe_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_container_recipe_arn(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_container_recipe_arn(input);
         self
     }
     /// <p> The Amazon Resource Name (ARN) of the infrastructure configuration that will be used to build images created by this image pipeline.</p>
-    pub fn infrastructure_configuration_arn(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn infrastructure_configuration_arn(
+        mut self,
+        input: impl Into<std::string::String>,
+    ) -> Self {
         self.inner = self.inner.infrastructure_configuration_arn(input.into());
         self
     }
     /// <p> The Amazon Resource Name (ARN) of the infrastructure configuration that will be used to build images created by this image pipeline.</p>
-    pub fn set_infrastructure_configuration_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_infrastructure_configuration_arn(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_infrastructure_configuration_arn(input);
         self
     }
@@ -103,17 +134,26 @@ impl CreateImagePipelineFluentBuilder  {
         self
     }
     /// <p> The Amazon Resource Name (ARN) of the distribution configuration that will be used to configure and distribute images created by this image pipeline.</p>
-    pub fn set_distribution_configuration_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_distribution_configuration_arn(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_distribution_configuration_arn(input);
         self
     }
     /// <p> The image test configuration of the image pipeline.</p>
-    pub fn image_tests_configuration(mut self, input: crate::types::ImageTestsConfiguration) -> Self {
+    pub fn image_tests_configuration(
+        mut self,
+        input: crate::types::ImageTestsConfiguration,
+    ) -> Self {
         self.inner = self.inner.image_tests_configuration(input);
         self
     }
     /// <p> The image test configuration of the image pipeline.</p>
-    pub fn set_image_tests_configuration(mut self, input: std::option::Option<crate::types::ImageTestsConfiguration>) -> Self {
+    pub fn set_image_tests_configuration(
+        mut self,
+        input: std::option::Option<crate::types::ImageTestsConfiguration>,
+    ) -> Self {
         self.inner = self.inner.set_image_tests_configuration(input);
         self
     }
@@ -152,12 +192,21 @@ impl CreateImagePipelineFluentBuilder  {
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// <p> The tags of the image pipeline.</p>
-    pub fn tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
+    pub fn tags(
+        mut self,
+        k: impl Into<std::string::String>,
+        v: impl Into<std::string::String>,
+    ) -> Self {
         self.inner = self.inner.tags(k.into(), v.into());
         self
     }
     /// <p> The tags of the image pipeline.</p>
-    pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+    pub fn set_tags(
+        mut self,
+        input: std::option::Option<
+            std::collections::HashMap<std::string::String, std::string::String>,
+        >,
+    ) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }
@@ -172,4 +221,3 @@ impl CreateImagePipelineFluentBuilder  {
         self
     }
 }
-

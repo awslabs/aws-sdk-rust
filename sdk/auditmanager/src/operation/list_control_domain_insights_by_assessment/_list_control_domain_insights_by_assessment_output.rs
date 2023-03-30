@@ -2,10 +2,11 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListControlDomainInsightsByAssessmentOutput  {
+pub struct ListControlDomainInsightsByAssessmentOutput {
     /// <p>The control domain analytics data that the <code>ListControlDomainInsightsByAssessment</code> API returned. </p>
     #[doc(hidden)]
-    pub control_domain_insights: std::option::Option<std::vec::Vec<crate::types::ControlDomainInsights>>,
+    pub control_domain_insights:
+        std::option::Option<std::vec::Vec<crate::types::ControlDomainInsights>>,
     /// <p>The pagination token that's used to fetch the next set of results. </p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
@@ -13,22 +14,24 @@ pub struct ListControlDomainInsightsByAssessmentOutput  {
 }
 impl ListControlDomainInsightsByAssessmentOutput {
     /// <p>The control domain analytics data that the <code>ListControlDomainInsightsByAssessment</code> API returned. </p>
-    pub fn control_domain_insights(&self) -> std::option::Option<& [crate::types::ControlDomainInsights]> {
+    pub fn control_domain_insights(
+        &self,
+    ) -> std::option::Option<&[crate::types::ControlDomainInsights]> {
         self.control_domain_insights.as_deref()
     }
     /// <p>The pagination token that's used to fetch the next set of results. </p>
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for ListControlDomainInsightsByAssessmentOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl ListControlDomainInsightsByAssessmentOutput {
     /// Creates a new builder-style object to manufacture [`ListControlDomainInsightsByAssessmentOutput`](crate::operation::list_control_domain_insights_by_assessment::ListControlDomainInsightsByAssessmentOutput).
-    pub fn builder() -> crate::operation::list_control_domain_insights_by_assessment::builders::ListControlDomainInsightsByAssessmentOutputBuilder {
+    pub fn builder() -> crate::operation::list_control_domain_insights_by_assessment::builders::ListControlDomainInsightsByAssessmentOutputBuilder{
         crate::operation::list_control_domain_insights_by_assessment::builders::ListControlDomainInsightsByAssessmentOutputBuilder::default()
     }
 }
@@ -37,7 +40,8 @@ impl ListControlDomainInsightsByAssessmentOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct ListControlDomainInsightsByAssessmentOutputBuilder {
-    pub(crate) control_domain_insights: std::option::Option<std::vec::Vec<crate::types::ControlDomainInsights>>,
+    pub(crate) control_domain_insights:
+        std::option::Option<std::vec::Vec<crate::types::ControlDomainInsights>>,
     pub(crate) next_token: std::option::Option<std::string::String>,
     _request_id: Option<String>,
 }
@@ -49,13 +53,17 @@ impl ListControlDomainInsightsByAssessmentOutputBuilder {
     /// <p>The control domain analytics data that the <code>ListControlDomainInsightsByAssessment</code> API returned. </p>
     pub fn control_domain_insights(mut self, input: crate::types::ControlDomainInsights) -> Self {
         let mut v = self.control_domain_insights.unwrap_or_default();
-                        v.push(input);
-                        self.control_domain_insights = Some(v);
-                        self
+        v.push(input);
+        self.control_domain_insights = Some(v);
+        self
     }
     /// <p>The control domain analytics data that the <code>ListControlDomainInsightsByAssessment</code> API returned. </p>
-    pub fn set_control_domain_insights(mut self, input: std::option::Option<std::vec::Vec<crate::types::ControlDomainInsights>>) -> Self {
-        self.control_domain_insights = input; self
+    pub fn set_control_domain_insights(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::ControlDomainInsights>>,
+    ) -> Self {
+        self.control_domain_insights = input;
+        self
     }
     /// <p>The pagination token that's used to fetch the next set of results. </p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -64,19 +72,20 @@ impl ListControlDomainInsightsByAssessmentOutputBuilder {
     }
     /// <p>The pagination token that's used to fetch the next set of results. </p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input; self
+        self.next_token = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`ListControlDomainInsightsByAssessmentOutput`](crate::operation::list_control_domain_insights_by_assessment::ListControlDomainInsightsByAssessmentOutput).
-    pub fn build(self) -> crate::operation::list_control_domain_insights_by_assessment::ListControlDomainInsightsByAssessmentOutput {
+    pub fn build(self) -> crate::operation::list_control_domain_insights_by_assessment::ListControlDomainInsightsByAssessmentOutput{
         crate::operation::list_control_domain_insights_by_assessment::ListControlDomainInsightsByAssessmentOutput {
             control_domain_insights: self.control_domain_insights
             ,
@@ -86,4 +95,3 @@ impl ListControlDomainInsightsByAssessmentOutputBuilder {
         }
     }
 }
-

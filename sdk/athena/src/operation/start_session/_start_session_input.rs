@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct StartSessionInput  {
+pub struct StartSessionInput {
     /// <p>The session description.</p>
     #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
@@ -18,37 +18,37 @@ pub struct StartSessionInput  {
     /// <p>The idle timeout in minutes for the session.</p>
     #[doc(hidden)]
     pub session_idle_timeout_in_minutes: std::option::Option<i32>,
-    /// <p>A unique case-sensitive string used to ensure the request to create the session is idempotent (executes only once). If another <code>StartSessionRequest</code> is received, the same response is returned and another session is not created. If a parameter has changed, an error is returned.</p> <important> 
-    /// <p>This token is listed as not required because Amazon Web Services SDKs (for example the Amazon Web Services SDK for Java) auto-generate the token for users. If you are not using the Amazon Web Services SDK or the Amazon Web Services CLI, you must provide this token or the action will fail.</p> 
+    /// <p>A unique case-sensitive string used to ensure the request to create the session is idempotent (executes only once). If another <code>StartSessionRequest</code> is received, the same response is returned and another session is not created. If a parameter has changed, an error is returned.</p> <important>
+    /// <p>This token is listed as not required because Amazon Web Services SDKs (for example the Amazon Web Services SDK for Java) auto-generate the token for users. If you are not using the Amazon Web Services SDK or the Amazon Web Services CLI, you must provide this token or the action will fail.</p>
     /// </important>
     #[doc(hidden)]
     pub client_request_token: std::option::Option<std::string::String>,
 }
 impl StartSessionInput {
     /// <p>The session description.</p>
-    pub fn description(&self) -> std::option::Option<& str> {
+    pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
     /// <p>The workgroup to which the session belongs.</p>
-    pub fn work_group(&self) -> std::option::Option<& str> {
+    pub fn work_group(&self) -> std::option::Option<&str> {
         self.work_group.as_deref()
     }
     /// <p>Contains engine data processing unit (DPU) configuration settings and parameter mappings.</p>
-    pub fn engine_configuration(&self) -> std::option::Option<& crate::types::EngineConfiguration> {
+    pub fn engine_configuration(&self) -> std::option::Option<&crate::types::EngineConfiguration> {
         self.engine_configuration.as_ref()
     }
     /// <p>The notebook version. This value is required only when requesting that a notebook server be started for the session. The only valid notebook version is <code>Jupyter1.0</code>.</p>
-    pub fn notebook_version(&self) -> std::option::Option<& str> {
+    pub fn notebook_version(&self) -> std::option::Option<&str> {
         self.notebook_version.as_deref()
     }
     /// <p>The idle timeout in minutes for the session.</p>
     pub fn session_idle_timeout_in_minutes(&self) -> std::option::Option<i32> {
         self.session_idle_timeout_in_minutes
     }
-    /// <p>A unique case-sensitive string used to ensure the request to create the session is idempotent (executes only once). If another <code>StartSessionRequest</code> is received, the same response is returned and another session is not created. If a parameter has changed, an error is returned.</p> <important> 
-    /// <p>This token is listed as not required because Amazon Web Services SDKs (for example the Amazon Web Services SDK for Java) auto-generate the token for users. If you are not using the Amazon Web Services SDK or the Amazon Web Services CLI, you must provide this token or the action will fail.</p> 
+    /// <p>A unique case-sensitive string used to ensure the request to create the session is idempotent (executes only once). If another <code>StartSessionRequest</code> is received, the same response is returned and another session is not created. If a parameter has changed, an error is returned.</p> <important>
+    /// <p>This token is listed as not required because Amazon Web Services SDKs (for example the Amazon Web Services SDK for Java) auto-generate the token for users. If you are not using the Amazon Web Services SDK or the Amazon Web Services CLI, you must provide this token or the action will fail.</p>
     /// </important>
-    pub fn client_request_token(&self) -> std::option::Option<& str> {
+    pub fn client_request_token(&self) -> std::option::Option<&str> {
         self.client_request_token.as_deref()
     }
 }
@@ -78,7 +78,8 @@ impl StartSessionInputBuilder {
     }
     /// <p>The session description.</p>
     pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.description = input; self
+        self.description = input;
+        self
     }
     /// <p>The workgroup to which the session belongs.</p>
     pub fn work_group(mut self, input: impl Into<std::string::String>) -> Self {
@@ -87,7 +88,8 @@ impl StartSessionInputBuilder {
     }
     /// <p>The workgroup to which the session belongs.</p>
     pub fn set_work_group(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.work_group = input; self
+        self.work_group = input;
+        self
     }
     /// <p>Contains engine data processing unit (DPU) configuration settings and parameter mappings.</p>
     pub fn engine_configuration(mut self, input: crate::types::EngineConfiguration) -> Self {
@@ -95,8 +97,12 @@ impl StartSessionInputBuilder {
         self
     }
     /// <p>Contains engine data processing unit (DPU) configuration settings and parameter mappings.</p>
-    pub fn set_engine_configuration(mut self, input: std::option::Option<crate::types::EngineConfiguration>) -> Self {
-        self.engine_configuration = input; self
+    pub fn set_engine_configuration(
+        mut self,
+        input: std::option::Option<crate::types::EngineConfiguration>,
+    ) -> Self {
+        self.engine_configuration = input;
+        self
     }
     /// <p>The notebook version. This value is required only when requesting that a notebook server be started for the session. The only valid notebook version is <code>Jupyter1.0</code>.</p>
     pub fn notebook_version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -105,7 +111,8 @@ impl StartSessionInputBuilder {
     }
     /// <p>The notebook version. This value is required only when requesting that a notebook server be started for the session. The only valid notebook version is <code>Jupyter1.0</code>.</p>
     pub fn set_notebook_version(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.notebook_version = input; self
+        self.notebook_version = input;
+        self
     }
     /// <p>The idle timeout in minutes for the session.</p>
     pub fn session_idle_timeout_in_minutes(mut self, input: i32) -> Self {
@@ -114,39 +121,40 @@ impl StartSessionInputBuilder {
     }
     /// <p>The idle timeout in minutes for the session.</p>
     pub fn set_session_idle_timeout_in_minutes(mut self, input: std::option::Option<i32>) -> Self {
-        self.session_idle_timeout_in_minutes = input; self
+        self.session_idle_timeout_in_minutes = input;
+        self
     }
-    /// <p>A unique case-sensitive string used to ensure the request to create the session is idempotent (executes only once). If another <code>StartSessionRequest</code> is received, the same response is returned and another session is not created. If a parameter has changed, an error is returned.</p> <important> 
-    /// <p>This token is listed as not required because Amazon Web Services SDKs (for example the Amazon Web Services SDK for Java) auto-generate the token for users. If you are not using the Amazon Web Services SDK or the Amazon Web Services CLI, you must provide this token or the action will fail.</p> 
+    /// <p>A unique case-sensitive string used to ensure the request to create the session is idempotent (executes only once). If another <code>StartSessionRequest</code> is received, the same response is returned and another session is not created. If a parameter has changed, an error is returned.</p> <important>
+    /// <p>This token is listed as not required because Amazon Web Services SDKs (for example the Amazon Web Services SDK for Java) auto-generate the token for users. If you are not using the Amazon Web Services SDK or the Amazon Web Services CLI, you must provide this token or the action will fail.</p>
     /// </important>
     pub fn client_request_token(mut self, input: impl Into<std::string::String>) -> Self {
         self.client_request_token = Some(input.into());
         self
     }
-    /// <p>A unique case-sensitive string used to ensure the request to create the session is idempotent (executes only once). If another <code>StartSessionRequest</code> is received, the same response is returned and another session is not created. If a parameter has changed, an error is returned.</p> <important> 
-    /// <p>This token is listed as not required because Amazon Web Services SDKs (for example the Amazon Web Services SDK for Java) auto-generate the token for users. If you are not using the Amazon Web Services SDK or the Amazon Web Services CLI, you must provide this token or the action will fail.</p> 
+    /// <p>A unique case-sensitive string used to ensure the request to create the session is idempotent (executes only once). If another <code>StartSessionRequest</code> is received, the same response is returned and another session is not created. If a parameter has changed, an error is returned.</p> <important>
+    /// <p>This token is listed as not required because Amazon Web Services SDKs (for example the Amazon Web Services SDK for Java) auto-generate the token for users. If you are not using the Amazon Web Services SDK or the Amazon Web Services CLI, you must provide this token or the action will fail.</p>
     /// </important>
-    pub fn set_client_request_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.client_request_token = input; self
+    pub fn set_client_request_token(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.client_request_token = input;
+        self
     }
     /// Consumes the builder and constructs a [`StartSessionInput`](crate::operation::start_session::StartSessionInput).
-    pub fn build(self) -> Result<crate::operation::start_session::StartSessionInput, aws_smithy_http::operation::error::BuildError> {
-        Ok(
-            crate::operation::start_session::StartSessionInput {
-                description: self.description
-                ,
-                work_group: self.work_group
-                ,
-                engine_configuration: self.engine_configuration
-                ,
-                notebook_version: self.notebook_version
-                ,
-                session_idle_timeout_in_minutes: self.session_idle_timeout_in_minutes
-                ,
-                client_request_token: self.client_request_token
-                ,
-            }
-        )
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::start_session::StartSessionInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        Ok(crate::operation::start_session::StartSessionInput {
+            description: self.description,
+            work_group: self.work_group,
+            engine_configuration: self.engine_configuration,
+            notebook_version: self.notebook_version,
+            session_idle_timeout_in_minutes: self.session_idle_timeout_in_minutes,
+            client_request_token: self.client_request_token,
+        })
     }
 }
-

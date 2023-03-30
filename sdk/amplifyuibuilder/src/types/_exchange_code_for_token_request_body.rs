@@ -3,7 +3,7 @@
 /// <p>Describes the configuration of a request to exchange an access code for a token.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct ExchangeCodeForTokenRequestBody  {
+pub struct ExchangeCodeForTokenRequestBody {
     /// <p>The access code to send in the request.</p>
     #[doc(hidden)]
     pub code: std::option::Option<std::string::String>,
@@ -13,15 +13,15 @@ pub struct ExchangeCodeForTokenRequestBody  {
 }
 impl ExchangeCodeForTokenRequestBody {
     /// <p>The access code to send in the request.</p>
-    pub fn code(&self) -> std::option::Option<& str> {
+    pub fn code(&self) -> std::option::Option<&str> {
         self.code.as_deref()
     }
     /// <p>The location of the application that will receive the access code.</p>
-    pub fn redirect_uri(&self) -> std::option::Option<& str> {
+    pub fn redirect_uri(&self) -> std::option::Option<&str> {
         self.redirect_uri.as_deref()
     }
 }
-impl  std::fmt::Debug for ExchangeCodeForTokenRequestBody  {
+impl std::fmt::Debug for ExchangeCodeForTokenRequestBody {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ExchangeCodeForTokenRequestBody");
         formatter.field("code", &"*** Sensitive Data Redacted ***");
@@ -51,7 +51,8 @@ impl ExchangeCodeForTokenRequestBodyBuilder {
     }
     /// <p>The access code to send in the request.</p>
     pub fn set_code(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.code = input; self
+        self.code = input;
+        self
     }
     /// <p>The location of the application that will receive the access code.</p>
     pub fn redirect_uri(mut self, input: impl Into<std::string::String>) -> Self {
@@ -60,15 +61,14 @@ impl ExchangeCodeForTokenRequestBodyBuilder {
     }
     /// <p>The location of the application that will receive the access code.</p>
     pub fn set_redirect_uri(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.redirect_uri = input; self
+        self.redirect_uri = input;
+        self
     }
     /// Consumes the builder and constructs a [`ExchangeCodeForTokenRequestBody`](crate::types::ExchangeCodeForTokenRequestBody).
     pub fn build(self) -> crate::types::ExchangeCodeForTokenRequestBody {
         crate::types::ExchangeCodeForTokenRequestBody {
-            code: self.code
-            ,
-            redirect_uri: self.redirect_uri
-            ,
+            code: self.code,
+            redirect_uri: self.redirect_uri,
         }
     }
 }
@@ -80,4 +80,3 @@ impl std::fmt::Debug for ExchangeCodeForTokenRequestBodyBuilder {
         formatter.finish()
     }
 }
-

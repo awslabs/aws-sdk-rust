@@ -3,7 +3,7 @@
 /// <p>Information about the configuration of an integrated development environment (IDE) for a Dev Environment.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct IdeConfiguration  {
+pub struct IdeConfiguration {
     /// <p>A link to the IDE runtime image.</p>
     #[doc(hidden)]
     pub runtime: std::option::Option<std::string::String>,
@@ -13,11 +13,11 @@ pub struct IdeConfiguration  {
 }
 impl IdeConfiguration {
     /// <p>A link to the IDE runtime image.</p>
-    pub fn runtime(&self) -> std::option::Option<& str> {
+    pub fn runtime(&self) -> std::option::Option<&str> {
         self.runtime.as_deref()
     }
     /// <p>The name of the IDE.</p>
-    pub fn name(&self) -> std::option::Option<& str> {
+    pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
 }
@@ -43,7 +43,8 @@ impl IdeConfigurationBuilder {
     }
     /// <p>A link to the IDE runtime image.</p>
     pub fn set_runtime(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.runtime = input; self
+        self.runtime = input;
+        self
     }
     /// <p>The name of the IDE.</p>
     pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -52,16 +53,14 @@ impl IdeConfigurationBuilder {
     }
     /// <p>The name of the IDE.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input; self
+        self.name = input;
+        self
     }
     /// Consumes the builder and constructs a [`IdeConfiguration`](crate::types::IdeConfiguration).
     pub fn build(self) -> crate::types::IdeConfiguration {
         crate::types::IdeConfiguration {
-            runtime: self.runtime
-            ,
-            name: self.name
-            ,
+            runtime: self.runtime,
+            name: self.name,
         }
     }
 }
-

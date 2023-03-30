@@ -3,7 +3,7 @@
 /// <p>The details of the control panel that you're updating.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateControlPanelInput  {
+pub struct UpdateControlPanelInput {
     /// <p>The Amazon Resource Name (ARN) of the control panel.</p>
     #[doc(hidden)]
     pub control_panel_arn: std::option::Option<std::string::String>,
@@ -13,17 +13,18 @@ pub struct UpdateControlPanelInput  {
 }
 impl UpdateControlPanelInput {
     /// <p>The Amazon Resource Name (ARN) of the control panel.</p>
-    pub fn control_panel_arn(&self) -> std::option::Option<& str> {
+    pub fn control_panel_arn(&self) -> std::option::Option<&str> {
         self.control_panel_arn.as_deref()
     }
     /// <p>The name of the control panel.</p>
-    pub fn control_panel_name(&self) -> std::option::Option<& str> {
+    pub fn control_panel_name(&self) -> std::option::Option<&str> {
         self.control_panel_name.as_deref()
     }
 }
 impl UpdateControlPanelInput {
     /// Creates a new builder-style object to manufacture [`UpdateControlPanelInput`](crate::operation::update_control_panel::UpdateControlPanelInput).
-    pub fn builder() -> crate::operation::update_control_panel::builders::UpdateControlPanelInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::update_control_panel::builders::UpdateControlPanelInputBuilder {
         crate::operation::update_control_panel::builders::UpdateControlPanelInputBuilder::default()
     }
 }
@@ -42,8 +43,12 @@ impl UpdateControlPanelInputBuilder {
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the control panel.</p>
-    pub fn set_control_panel_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.control_panel_arn = input; self
+    pub fn set_control_panel_arn(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.control_panel_arn = input;
+        self
     }
     /// <p>The name of the control panel.</p>
     pub fn control_panel_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -51,19 +56,25 @@ impl UpdateControlPanelInputBuilder {
         self
     }
     /// <p>The name of the control panel.</p>
-    pub fn set_control_panel_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.control_panel_name = input; self
+    pub fn set_control_panel_name(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.control_panel_name = input;
+        self
     }
     /// Consumes the builder and constructs a [`UpdateControlPanelInput`](crate::operation::update_control_panel::UpdateControlPanelInput).
-    pub fn build(self) -> Result<crate::operation::update_control_panel::UpdateControlPanelInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::update_control_panel::UpdateControlPanelInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::update_control_panel::UpdateControlPanelInput {
-                control_panel_arn: self.control_panel_arn
-                ,
-                control_panel_name: self.control_panel_name
-                ,
-            }
+                control_panel_arn: self.control_panel_arn,
+                control_panel_name: self.control_panel_name,
+            },
         )
     }
 }
-

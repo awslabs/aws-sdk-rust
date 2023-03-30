@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateTransitGatewayRouteTableAttachmentInput  {
+pub struct CreateTransitGatewayRouteTableAttachmentInput {
     /// <p>The ID of the peer for the </p>
     #[doc(hidden)]
     pub peering_id: std::option::Option<std::string::String>,
@@ -18,25 +18,25 @@ pub struct CreateTransitGatewayRouteTableAttachmentInput  {
 }
 impl CreateTransitGatewayRouteTableAttachmentInput {
     /// <p>The ID of the peer for the </p>
-    pub fn peering_id(&self) -> std::option::Option<& str> {
+    pub fn peering_id(&self) -> std::option::Option<&str> {
         self.peering_id.as_deref()
     }
     /// <p>The ARN of the transit gateway route table for the attachment request.</p>
-    pub fn transit_gateway_route_table_arn(&self) -> std::option::Option<& str> {
+    pub fn transit_gateway_route_table_arn(&self) -> std::option::Option<&str> {
         self.transit_gateway_route_table_arn.as_deref()
     }
     /// <p>The list of key-value tags associated with the request.</p>
-    pub fn tags(&self) -> std::option::Option<& [crate::types::Tag]> {
+    pub fn tags(&self) -> std::option::Option<&[crate::types::Tag]> {
         self.tags.as_deref()
     }
     /// <p>The client token associated with the request.</p>
-    pub fn client_token(&self) -> std::option::Option<& str> {
+    pub fn client_token(&self) -> std::option::Option<&str> {
         self.client_token.as_deref()
     }
 }
 impl CreateTransitGatewayRouteTableAttachmentInput {
     /// Creates a new builder-style object to manufacture [`CreateTransitGatewayRouteTableAttachmentInput`](crate::operation::create_transit_gateway_route_table_attachment::CreateTransitGatewayRouteTableAttachmentInput).
-    pub fn builder() -> crate::operation::create_transit_gateway_route_table_attachment::builders::CreateTransitGatewayRouteTableAttachmentInputBuilder {
+    pub fn builder() -> crate::operation::create_transit_gateway_route_table_attachment::builders::CreateTransitGatewayRouteTableAttachmentInputBuilder{
         crate::operation::create_transit_gateway_route_table_attachment::builders::CreateTransitGatewayRouteTableAttachmentInputBuilder::default()
     }
 }
@@ -58,16 +58,24 @@ impl CreateTransitGatewayRouteTableAttachmentInputBuilder {
     }
     /// <p>The ID of the peer for the </p>
     pub fn set_peering_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.peering_id = input; self
+        self.peering_id = input;
+        self
     }
     /// <p>The ARN of the transit gateway route table for the attachment request.</p>
-    pub fn transit_gateway_route_table_arn(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn transit_gateway_route_table_arn(
+        mut self,
+        input: impl Into<std::string::String>,
+    ) -> Self {
         self.transit_gateway_route_table_arn = Some(input.into());
         self
     }
     /// <p>The ARN of the transit gateway route table for the attachment request.</p>
-    pub fn set_transit_gateway_route_table_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.transit_gateway_route_table_arn = input; self
+    pub fn set_transit_gateway_route_table_arn(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.transit_gateway_route_table_arn = input;
+        self
     }
     /// Appends an item to `tags`.
     ///
@@ -76,13 +84,17 @@ impl CreateTransitGatewayRouteTableAttachmentInputBuilder {
     /// <p>The list of key-value tags associated with the request.</p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
-                        v.push(input);
-                        self.tags = Some(v);
-                        self
+        v.push(input);
+        self.tags = Some(v);
+        self
     }
     /// <p>The list of key-value tags associated with the request.</p>
-    pub fn set_tags(mut self, input: std::option::Option<std::vec::Vec<crate::types::Tag>>) -> Self {
-        self.tags = input; self
+    pub fn set_tags(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::Tag>>,
+    ) -> Self {
+        self.tags = input;
+        self
     }
     /// <p>The client token associated with the request.</p>
     pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -91,10 +103,11 @@ impl CreateTransitGatewayRouteTableAttachmentInputBuilder {
     }
     /// <p>The client token associated with the request.</p>
     pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.client_token = input; self
+        self.client_token = input;
+        self
     }
     /// Consumes the builder and constructs a [`CreateTransitGatewayRouteTableAttachmentInput`](crate::operation::create_transit_gateway_route_table_attachment::CreateTransitGatewayRouteTableAttachmentInput).
-    pub fn build(self) -> Result<crate::operation::create_transit_gateway_route_table_attachment::CreateTransitGatewayRouteTableAttachmentInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> Result<crate::operation::create_transit_gateway_route_table_attachment::CreateTransitGatewayRouteTableAttachmentInput, aws_smithy_http::operation::error::BuildError>{
         Ok(
             crate::operation::create_transit_gateway_route_table_attachment::CreateTransitGatewayRouteTableAttachmentInput {
                 peering_id: self.peering_id
@@ -109,4 +122,3 @@ impl CreateTransitGatewayRouteTableAttachmentInputBuilder {
         )
     }
 }
-

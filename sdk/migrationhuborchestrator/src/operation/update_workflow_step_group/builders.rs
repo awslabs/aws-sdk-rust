@@ -4,49 +4,72 @@ pub use crate::operation::update_workflow_step_group::_update_workflow_step_grou
 pub use crate::operation::update_workflow_step_group::_update_workflow_step_group_input::UpdateWorkflowStepGroupInputBuilder;
 
 /// Fluent builder constructing a request to `UpdateWorkflowStepGroup`.
-/// 
+///
 /// <p>Update the step group in a migration workflow.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct UpdateWorkflowStepGroupFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::update_workflow_step_group::builders::UpdateWorkflowStepGroupInputBuilder
-            }
-impl UpdateWorkflowStepGroupFluentBuilder  {
+    handle: std::sync::Arc<crate::client::Handle>,
+    inner:
+        crate::operation::update_workflow_step_group::builders::UpdateWorkflowStepGroupInputBuilder,
+}
+impl UpdateWorkflowStepGroupFluentBuilder {
     /// Creates a new `UpdateWorkflowStepGroup`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
-                    /// sent. The operation's inner [http::Request] can be modified as well.
-                    pub async fn customize(self) -> std::result::Result<
-                        crate::client::customize::CustomizableOperation<crate::operation::update_workflow_step_group::UpdateWorkflowStepGroup, aws_http::retry::AwsResponseRetryClassifier,>,
-                        aws_smithy_http::result::SdkError<crate::operation::update_workflow_step_group::UpdateWorkflowStepGroupError>
-                    >  {
-                        let handle = self.handle.clone();
-                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-                    }
-    
-                    /// Sends the request and returns the response.
-                    ///
-                    /// If an error occurs, an `SdkError` will be returned with additional details that
-                    /// can be matched against.
-                    ///
-                    /// By default, any retryable failures will be retried twice. Retry behavior
-                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                    /// set when configuring the client.
-                    pub async fn send(self) -> std::result::Result<crate::operation::update_workflow_step_group::UpdateWorkflowStepGroupOutput, aws_smithy_http::result::SdkError<crate::operation::update_workflow_step_group::UpdateWorkflowStepGroupError>>
-                     {
-                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&self.handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        self.handle.client.call(op).await
-                    }
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle,
+            inner: Default::default(),
+        }
+    }
+
+    /// Consume this builder, creating a customizable operation that can be modified before being
+    /// sent. The operation's inner [http::Request] can be modified as well.
+    pub async fn customize(
+        self,
+    ) -> std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::update_workflow_step_group::UpdateWorkflowStepGroup,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::result::SdkError<
+            crate::operation::update_workflow_step_group::UpdateWorkflowStepGroupError,
+        >,
+    > {
+        let handle = self.handle.clone();
+        let operation = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+    }
+
+    /// Sends the request and returns the response.
+    ///
+    /// If an error occurs, an `SdkError` will be returned with additional details that
+    /// can be matched against.
+    ///
+    /// By default, any retryable failures will be retried twice. Retry behavior
+    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+    /// set when configuring the client.
+    pub async fn send(
+        self,
+    ) -> std::result::Result<
+        crate::operation::update_workflow_step_group::UpdateWorkflowStepGroupOutput,
+        aws_smithy_http::result::SdkError<
+            crate::operation::update_workflow_step_group::UpdateWorkflowStepGroupError,
+        >,
+    > {
+        let op = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&self.handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        self.handle.client.call(op).await
+    }
     /// <p>The ID of the migration workflow.</p>
     pub fn workflow_id(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.workflow_id(input.into());
@@ -97,7 +120,10 @@ impl UpdateWorkflowStepGroupFluentBuilder  {
         self
     }
     /// <p>The next step group.</p>
-    pub fn set_next(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+    pub fn set_next(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
         self.inner = self.inner.set_next(input);
         self
     }
@@ -111,9 +137,11 @@ impl UpdateWorkflowStepGroupFluentBuilder  {
         self
     }
     /// <p>The previous step group.</p>
-    pub fn set_previous(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+    pub fn set_previous(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
         self.inner = self.inner.set_previous(input);
         self
     }
 }
-

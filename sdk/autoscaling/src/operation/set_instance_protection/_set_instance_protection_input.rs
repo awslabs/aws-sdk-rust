@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SetInstanceProtectionInput  {
+pub struct SetInstanceProtectionInput {
     /// <p>One or more instance IDs. You can specify up to 50 instances.</p>
     #[doc(hidden)]
     pub instance_ids: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -15,11 +15,11 @@ pub struct SetInstanceProtectionInput  {
 }
 impl SetInstanceProtectionInput {
     /// <p>One or more instance IDs. You can specify up to 50 instances.</p>
-    pub fn instance_ids(&self) -> std::option::Option<& [std::string::String]> {
+    pub fn instance_ids(&self) -> std::option::Option<&[std::string::String]> {
         self.instance_ids.as_deref()
     }
     /// <p>The name of the Auto Scaling group.</p>
-    pub fn auto_scaling_group_name(&self) -> std::option::Option<& str> {
+    pub fn auto_scaling_group_name(&self) -> std::option::Option<&str> {
         self.auto_scaling_group_name.as_deref()
     }
     /// <p>Indicates whether the instance is protected from termination by Amazon EC2 Auto Scaling when scaling in.</p>
@@ -29,7 +29,9 @@ impl SetInstanceProtectionInput {
 }
 impl SetInstanceProtectionInput {
     /// Creates a new builder-style object to manufacture [`SetInstanceProtectionInput`](crate::operation::set_instance_protection::SetInstanceProtectionInput).
-    pub fn builder() -> crate::operation::set_instance_protection::builders::SetInstanceProtectionInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::set_instance_protection::builders::SetInstanceProtectionInputBuilder
+    {
         crate::operation::set_instance_protection::builders::SetInstanceProtectionInputBuilder::default()
     }
 }
@@ -50,13 +52,17 @@ impl SetInstanceProtectionInputBuilder {
     /// <p>One or more instance IDs. You can specify up to 50 instances.</p>
     pub fn instance_ids(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.instance_ids.unwrap_or_default();
-                        v.push(input.into());
-                        self.instance_ids = Some(v);
-                        self
+        v.push(input.into());
+        self.instance_ids = Some(v);
+        self
     }
     /// <p>One or more instance IDs. You can specify up to 50 instances.</p>
-    pub fn set_instance_ids(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-        self.instance_ids = input; self
+    pub fn set_instance_ids(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
+        self.instance_ids = input;
+        self
     }
     /// <p>The name of the Auto Scaling group.</p>
     pub fn auto_scaling_group_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -64,8 +70,12 @@ impl SetInstanceProtectionInputBuilder {
         self
     }
     /// <p>The name of the Auto Scaling group.</p>
-    pub fn set_auto_scaling_group_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.auto_scaling_group_name = input; self
+    pub fn set_auto_scaling_group_name(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.auto_scaling_group_name = input;
+        self
     }
     /// <p>Indicates whether the instance is protected from termination by Amazon EC2 Auto Scaling when scaling in.</p>
     pub fn protected_from_scale_in(mut self, input: bool) -> Self {
@@ -74,20 +84,22 @@ impl SetInstanceProtectionInputBuilder {
     }
     /// <p>Indicates whether the instance is protected from termination by Amazon EC2 Auto Scaling when scaling in.</p>
     pub fn set_protected_from_scale_in(mut self, input: std::option::Option<bool>) -> Self {
-        self.protected_from_scale_in = input; self
+        self.protected_from_scale_in = input;
+        self
     }
     /// Consumes the builder and constructs a [`SetInstanceProtectionInput`](crate::operation::set_instance_protection::SetInstanceProtectionInput).
-    pub fn build(self) -> Result<crate::operation::set_instance_protection::SetInstanceProtectionInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::set_instance_protection::SetInstanceProtectionInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::set_instance_protection::SetInstanceProtectionInput {
-                instance_ids: self.instance_ids
-                ,
-                auto_scaling_group_name: self.auto_scaling_group_name
-                ,
-                protected_from_scale_in: self.protected_from_scale_in
-                ,
-            }
+                instance_ids: self.instance_ids,
+                auto_scaling_group_name: self.auto_scaling_group_name,
+                protected_from_scale_in: self.protected_from_scale_in,
+            },
         )
     }
 }
-

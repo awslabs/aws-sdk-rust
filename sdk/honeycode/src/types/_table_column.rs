@@ -3,7 +3,7 @@
 /// <p>An object that contains attributes about a single column in a table</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct TableColumn  {
+pub struct TableColumn {
     /// <p>The id of the column in the table.</p>
     #[doc(hidden)]
     pub table_column_id: std::option::Option<std::string::String>,
@@ -16,15 +16,15 @@ pub struct TableColumn  {
 }
 impl TableColumn {
     /// <p>The id of the column in the table.</p>
-    pub fn table_column_id(&self) -> std::option::Option<& str> {
+    pub fn table_column_id(&self) -> std::option::Option<&str> {
         self.table_column_id.as_deref()
     }
     /// <p>The name of the column in the table.</p>
-    pub fn table_column_name(&self) -> std::option::Option<& str> {
+    pub fn table_column_name(&self) -> std::option::Option<&str> {
         self.table_column_name.as_deref()
     }
     /// <p> The column level format that is applied in the table. An empty value in this field means that the column format is the default value 'AUTO'. </p>
-    pub fn format(&self) -> std::option::Option<& crate::types::Format> {
+    pub fn format(&self) -> std::option::Option<&crate::types::Format> {
         self.format.as_ref()
     }
 }
@@ -51,7 +51,8 @@ impl TableColumnBuilder {
     }
     /// <p>The id of the column in the table.</p>
     pub fn set_table_column_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.table_column_id = input; self
+        self.table_column_id = input;
+        self
     }
     /// <p>The name of the column in the table.</p>
     pub fn table_column_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -59,8 +60,12 @@ impl TableColumnBuilder {
         self
     }
     /// <p>The name of the column in the table.</p>
-    pub fn set_table_column_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.table_column_name = input; self
+    pub fn set_table_column_name(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.table_column_name = input;
+        self
     }
     /// <p> The column level format that is applied in the table. An empty value in this field means that the column format is the default value 'AUTO'. </p>
     pub fn format(mut self, input: crate::types::Format) -> Self {
@@ -69,18 +74,15 @@ impl TableColumnBuilder {
     }
     /// <p> The column level format that is applied in the table. An empty value in this field means that the column format is the default value 'AUTO'. </p>
     pub fn set_format(mut self, input: std::option::Option<crate::types::Format>) -> Self {
-        self.format = input; self
+        self.format = input;
+        self
     }
     /// Consumes the builder and constructs a [`TableColumn`](crate::types::TableColumn).
     pub fn build(self) -> crate::types::TableColumn {
         crate::types::TableColumn {
-            table_column_id: self.table_column_id
-            ,
-            table_column_name: self.table_column_name
-            ,
-            format: self.format
-            ,
+            table_column_id: self.table_column_id,
+            table_column_name: self.table_column_name,
+            format: self.format,
         }
     }
 }
-

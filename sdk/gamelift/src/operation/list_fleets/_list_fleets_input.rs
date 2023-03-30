@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListFleetsInput  {
+pub struct ListFleetsInput {
     /// <p>A unique identifier for the build to request fleets for. Use this parameter to return only fleets using a specified build. Use either the build ID or ARN value.</p>
     #[doc(hidden)]
     pub build_id: std::option::Option<std::string::String>,
@@ -18,11 +18,11 @@ pub struct ListFleetsInput  {
 }
 impl ListFleetsInput {
     /// <p>A unique identifier for the build to request fleets for. Use this parameter to return only fleets using a specified build. Use either the build ID or ARN value.</p>
-    pub fn build_id(&self) -> std::option::Option<& str> {
+    pub fn build_id(&self) -> std::option::Option<&str> {
         self.build_id.as_deref()
     }
     /// <p>A unique identifier for the Realtime script to request fleets for. Use this parameter to return only fleets using a specified script. Use either the script ID or ARN value.</p>
-    pub fn script_id(&self) -> std::option::Option<& str> {
+    pub fn script_id(&self) -> std::option::Option<&str> {
         self.script_id.as_deref()
     }
     /// <p>The maximum number of results to return. Use this parameter with <code>NextToken</code> to get results as a set of sequential pages.</p>
@@ -30,7 +30,7 @@ impl ListFleetsInput {
         self.limit
     }
     /// <p>A token that indicates the start of the next sequential page of results. Use the token that is returned with a previous call to this operation. To start at the beginning of the result set, do not specify a value.</p>
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
 }
@@ -58,7 +58,8 @@ impl ListFleetsInputBuilder {
     }
     /// <p>A unique identifier for the build to request fleets for. Use this parameter to return only fleets using a specified build. Use either the build ID or ARN value.</p>
     pub fn set_build_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.build_id = input; self
+        self.build_id = input;
+        self
     }
     /// <p>A unique identifier for the Realtime script to request fleets for. Use this parameter to return only fleets using a specified script. Use either the script ID or ARN value.</p>
     pub fn script_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -67,7 +68,8 @@ impl ListFleetsInputBuilder {
     }
     /// <p>A unique identifier for the Realtime script to request fleets for. Use this parameter to return only fleets using a specified script. Use either the script ID or ARN value.</p>
     pub fn set_script_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.script_id = input; self
+        self.script_id = input;
+        self
     }
     /// <p>The maximum number of results to return. Use this parameter with <code>NextToken</code> to get results as a set of sequential pages.</p>
     pub fn limit(mut self, input: i32) -> Self {
@@ -76,7 +78,8 @@ impl ListFleetsInputBuilder {
     }
     /// <p>The maximum number of results to return. Use this parameter with <code>NextToken</code> to get results as a set of sequential pages.</p>
     pub fn set_limit(mut self, input: std::option::Option<i32>) -> Self {
-        self.limit = input; self
+        self.limit = input;
+        self
     }
     /// <p>A token that indicates the start of the next sequential page of results. Use the token that is returned with a previous call to this operation. To start at the beginning of the result set, do not specify a value.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -85,22 +88,21 @@ impl ListFleetsInputBuilder {
     }
     /// <p>A token that indicates the start of the next sequential page of results. Use the token that is returned with a previous call to this operation. To start at the beginning of the result set, do not specify a value.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input; self
+        self.next_token = input;
+        self
     }
     /// Consumes the builder and constructs a [`ListFleetsInput`](crate::operation::list_fleets::ListFleetsInput).
-    pub fn build(self) -> Result<crate::operation::list_fleets::ListFleetsInput, aws_smithy_http::operation::error::BuildError> {
-        Ok(
-            crate::operation::list_fleets::ListFleetsInput {
-                build_id: self.build_id
-                ,
-                script_id: self.script_id
-                ,
-                limit: self.limit
-                ,
-                next_token: self.next_token
-                ,
-            }
-        )
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::list_fleets::ListFleetsInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        Ok(crate::operation::list_fleets::ListFleetsInput {
+            build_id: self.build_id,
+            script_id: self.script_id,
+            limit: self.limit,
+            next_token: self.next_token,
+        })
     }
 }
-

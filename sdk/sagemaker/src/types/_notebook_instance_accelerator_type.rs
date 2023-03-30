@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-/// 
+///
 /// Here is an example of how you can make a match expression forward-compatible:
-/// 
+///
 /// ```text
 /// # let notebookinstanceacceleratortype = unimplemented!();
 /// match notebookinstanceacceleratortype {
@@ -34,14 +34,22 @@
 /// Specifically, when `notebookinstanceacceleratortype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `NotebookInstanceAcceleratorType::NewFeature` also yielding `"NewFeature"`.
-/// 
+///
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
 pub enum NotebookInstanceAcceleratorType {
     #[allow(missing_docs)] // documentation missing in model
     MlEia1Large,
@@ -56,49 +64,57 @@ pub enum NotebookInstanceAcceleratorType {
     #[allow(missing_docs)] // documentation missing in model
     MlEia2Xlarge,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::primitives::UnknownVariantValue)
+    Unknown(crate::primitives::UnknownVariantValue),
 }
 impl std::convert::From<&str> for NotebookInstanceAcceleratorType {
-                fn from(s: &str) -> Self {
-                    match s {
-                        "ml.eia1.large" => NotebookInstanceAcceleratorType::MlEia1Large,
-"ml.eia1.medium" => NotebookInstanceAcceleratorType::MlEia1Medium,
-"ml.eia1.xlarge" => NotebookInstanceAcceleratorType::MlEia1Xlarge,
-"ml.eia2.large" => NotebookInstanceAcceleratorType::MlEia2Large,
-"ml.eia2.medium" => NotebookInstanceAcceleratorType::MlEia2Medium,
-"ml.eia2.xlarge" => NotebookInstanceAcceleratorType::MlEia2Xlarge,
-other => NotebookInstanceAcceleratorType::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
-                    }
-                }
-            }
-impl std::str::FromStr for NotebookInstanceAcceleratorType {
-                type Err = std::convert::Infallible;
-
-                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-                    Ok(NotebookInstanceAcceleratorType::from(s))
-                }
-            }
-impl NotebookInstanceAcceleratorType {
-                /// Returns the `&str` value of the enum member.
-                pub fn as_str(&self) -> &str {
-                    match self {
-    NotebookInstanceAcceleratorType::MlEia1Large => "ml.eia1.large",
-    NotebookInstanceAcceleratorType::MlEia1Medium => "ml.eia1.medium",
-    NotebookInstanceAcceleratorType::MlEia1Xlarge => "ml.eia1.xlarge",
-    NotebookInstanceAcceleratorType::MlEia2Large => "ml.eia2.large",
-    NotebookInstanceAcceleratorType::MlEia2Medium => "ml.eia2.medium",
-    NotebookInstanceAcceleratorType::MlEia2Xlarge => "ml.eia2.xlarge",
-    NotebookInstanceAcceleratorType::Unknown(value) => value.as_str()
+    fn from(s: &str) -> Self {
+        match s {
+            "ml.eia1.large" => NotebookInstanceAcceleratorType::MlEia1Large,
+            "ml.eia1.medium" => NotebookInstanceAcceleratorType::MlEia1Medium,
+            "ml.eia1.xlarge" => NotebookInstanceAcceleratorType::MlEia1Xlarge,
+            "ml.eia2.large" => NotebookInstanceAcceleratorType::MlEia2Large,
+            "ml.eia2.medium" => NotebookInstanceAcceleratorType::MlEia2Medium,
+            "ml.eia2.xlarge" => NotebookInstanceAcceleratorType::MlEia2Xlarge,
+            other => NotebookInstanceAcceleratorType::Unknown(
+                crate::primitives::UnknownVariantValue(other.to_owned()),
+            ),
+        }
+    }
 }
-                }
-                /// Returns all the `&str` representations of the enum members.
-                pub const fn values() -> &'static [&'static str] {
-                    &["ml.eia1.large", "ml.eia1.medium", "ml.eia1.xlarge", "ml.eia2.large", "ml.eia2.medium", "ml.eia2.xlarge"]
-                }
-            }
-impl AsRef<str> for NotebookInstanceAcceleratorType {
-                fn as_ref(&self) -> &str {
-                    self.as_str()
-                }
-            }
+impl std::str::FromStr for NotebookInstanceAcceleratorType {
+    type Err = std::convert::Infallible;
 
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(NotebookInstanceAcceleratorType::from(s))
+    }
+}
+impl NotebookInstanceAcceleratorType {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            NotebookInstanceAcceleratorType::MlEia1Large => "ml.eia1.large",
+            NotebookInstanceAcceleratorType::MlEia1Medium => "ml.eia1.medium",
+            NotebookInstanceAcceleratorType::MlEia1Xlarge => "ml.eia1.xlarge",
+            NotebookInstanceAcceleratorType::MlEia2Large => "ml.eia2.large",
+            NotebookInstanceAcceleratorType::MlEia2Medium => "ml.eia2.medium",
+            NotebookInstanceAcceleratorType::MlEia2Xlarge => "ml.eia2.xlarge",
+            NotebookInstanceAcceleratorType::Unknown(value) => value.as_str(),
+        }
+    }
+    /// Returns all the `&str` representations of the enum members.
+    pub const fn values() -> &'static [&'static str] {
+        &[
+            "ml.eia1.large",
+            "ml.eia1.medium",
+            "ml.eia1.xlarge",
+            "ml.eia2.large",
+            "ml.eia2.medium",
+            "ml.eia2.xlarge",
+        ]
+    }
+}
+impl AsRef<str> for NotebookInstanceAcceleratorType {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}

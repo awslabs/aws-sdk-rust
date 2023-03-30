@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct UpdateCustomLineItemOutput  {
+pub struct UpdateCustomLineItemOutput {
     /// <p> The ARN of the successfully updated custom line item. </p>
     #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
@@ -28,23 +28,25 @@ pub struct UpdateCustomLineItemOutput  {
 }
 impl UpdateCustomLineItemOutput {
     /// <p> The ARN of the successfully updated custom line item. </p>
-    pub fn arn(&self) -> std::option::Option<& str> {
+    pub fn arn(&self) -> std::option::Option<&str> {
         self.arn.as_deref()
     }
     /// <p> The ARN of the billing group that the custom line item is applied to. </p>
-    pub fn billing_group_arn(&self) -> std::option::Option<& str> {
+    pub fn billing_group_arn(&self) -> std::option::Option<&str> {
         self.billing_group_arn.as_deref()
     }
     /// <p> The name of the successfully updated custom line item. </p>
-    pub fn name(&self) -> std::option::Option<& str> {
+    pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p> The description of the successfully updated custom line item. </p>
-    pub fn description(&self) -> std::option::Option<& str> {
+    pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
     /// <p> A <code>ListCustomLineItemChargeDetails</code> containing the charge details of the successfully updated custom line item. </p>
-    pub fn charge_details(&self) -> std::option::Option<& crate::types::ListCustomLineItemChargeDetails> {
+    pub fn charge_details(
+        &self,
+    ) -> std::option::Option<&crate::types::ListCustomLineItemChargeDetails> {
         self.charge_details.as_ref()
     }
     /// <p> The most recent time when the custom line item was modified. </p>
@@ -56,7 +58,7 @@ impl UpdateCustomLineItemOutput {
         self.association_size
     }
 }
-impl  std::fmt::Debug for UpdateCustomLineItemOutput  {
+impl std::fmt::Debug for UpdateCustomLineItemOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateCustomLineItemOutput");
         formatter.field("arn", &self.arn);
@@ -71,13 +73,15 @@ impl  std::fmt::Debug for UpdateCustomLineItemOutput  {
     }
 }
 impl aws_http::request_id::RequestId for UpdateCustomLineItemOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl UpdateCustomLineItemOutput {
     /// Creates a new builder-style object to manufacture [`UpdateCustomLineItemOutput`](crate::operation::update_custom_line_item::UpdateCustomLineItemOutput).
-    pub fn builder() -> crate::operation::update_custom_line_item::builders::UpdateCustomLineItemOutputBuilder {
+    pub fn builder(
+    ) -> crate::operation::update_custom_line_item::builders::UpdateCustomLineItemOutputBuilder
+    {
         crate::operation::update_custom_line_item::builders::UpdateCustomLineItemOutputBuilder::default()
     }
 }
@@ -103,7 +107,8 @@ impl UpdateCustomLineItemOutputBuilder {
     }
     /// <p> The ARN of the successfully updated custom line item. </p>
     pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.arn = input; self
+        self.arn = input;
+        self
     }
     /// <p> The ARN of the billing group that the custom line item is applied to. </p>
     pub fn billing_group_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -111,8 +116,12 @@ impl UpdateCustomLineItemOutputBuilder {
         self
     }
     /// <p> The ARN of the billing group that the custom line item is applied to. </p>
-    pub fn set_billing_group_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.billing_group_arn = input; self
+    pub fn set_billing_group_arn(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.billing_group_arn = input;
+        self
     }
     /// <p> The name of the successfully updated custom line item. </p>
     pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -121,7 +130,8 @@ impl UpdateCustomLineItemOutputBuilder {
     }
     /// <p> The name of the successfully updated custom line item. </p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input; self
+        self.name = input;
+        self
     }
     /// <p> The description of the successfully updated custom line item. </p>
     pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -130,7 +140,8 @@ impl UpdateCustomLineItemOutputBuilder {
     }
     /// <p> The description of the successfully updated custom line item. </p>
     pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.description = input; self
+        self.description = input;
+        self
     }
     /// <p> A <code>ListCustomLineItemChargeDetails</code> containing the charge details of the successfully updated custom line item. </p>
     pub fn charge_details(mut self, input: crate::types::ListCustomLineItemChargeDetails) -> Self {
@@ -138,8 +149,12 @@ impl UpdateCustomLineItemOutputBuilder {
         self
     }
     /// <p> A <code>ListCustomLineItemChargeDetails</code> containing the charge details of the successfully updated custom line item. </p>
-    pub fn set_charge_details(mut self, input: std::option::Option<crate::types::ListCustomLineItemChargeDetails>) -> Self {
-        self.charge_details = input; self
+    pub fn set_charge_details(
+        mut self,
+        input: std::option::Option<crate::types::ListCustomLineItemChargeDetails>,
+    ) -> Self {
+        self.charge_details = input;
+        self
     }
     /// <p> The most recent time when the custom line item was modified. </p>
     pub fn last_modified_time(mut self, input: i64) -> Self {
@@ -148,7 +163,8 @@ impl UpdateCustomLineItemOutputBuilder {
     }
     /// <p> The most recent time when the custom line item was modified. </p>
     pub fn set_last_modified_time(mut self, input: std::option::Option<i64>) -> Self {
-        self.last_modified_time = input; self
+        self.last_modified_time = input;
+        self
     }
     /// <p> The number of resources that are associated to the custom line item. </p>
     pub fn association_size(mut self, input: i64) -> Self {
@@ -157,36 +173,28 @@ impl UpdateCustomLineItemOutputBuilder {
     }
     /// <p> The number of resources that are associated to the custom line item. </p>
     pub fn set_association_size(mut self, input: std::option::Option<i64>) -> Self {
-        self.association_size = input; self
+        self.association_size = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`UpdateCustomLineItemOutput`](crate::operation::update_custom_line_item::UpdateCustomLineItemOutput).
     pub fn build(self) -> crate::operation::update_custom_line_item::UpdateCustomLineItemOutput {
         crate::operation::update_custom_line_item::UpdateCustomLineItemOutput {
-            arn: self.arn
-            ,
-            billing_group_arn: self.billing_group_arn
-            ,
-            name: self.name
-            ,
-            description: self.description
-            ,
-            charge_details: self.charge_details
-            ,
-            last_modified_time: self.last_modified_time
-                .unwrap_or_default()
-            ,
-            association_size: self.association_size
-                .unwrap_or_default()
-            ,
+            arn: self.arn,
+            billing_group_arn: self.billing_group_arn,
+            name: self.name,
+            description: self.description,
+            charge_details: self.charge_details,
+            last_modified_time: self.last_modified_time.unwrap_or_default(),
+            association_size: self.association_size.unwrap_or_default(),
             _request_id: self._request_id,
         }
     }
@@ -205,4 +213,3 @@ impl std::fmt::Debug for UpdateCustomLineItemOutputBuilder {
         formatter.finish()
     }
 }
-

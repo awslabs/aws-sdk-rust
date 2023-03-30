@@ -3,23 +3,23 @@
 /// <p>A single query suggestion.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Suggestion  {
+pub struct Suggestion {
     /// <p>The UUID (universally unique identifier) of a single query suggestion.</p>
     #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
-    /// <p>The value for the UUID (universally unique identifier) of a single query suggestion.</p> 
+    /// <p>The value for the UUID (universally unique identifier) of a single query suggestion.</p>
     /// <p>The value is the text string of a suggestion.</p>
     #[doc(hidden)]
     pub value: std::option::Option<crate::types::SuggestionValue>,
 }
 impl Suggestion {
     /// <p>The UUID (universally unique identifier) of a single query suggestion.</p>
-    pub fn id(&self) -> std::option::Option<& str> {
+    pub fn id(&self) -> std::option::Option<&str> {
         self.id.as_deref()
     }
-    /// <p>The value for the UUID (universally unique identifier) of a single query suggestion.</p> 
+    /// <p>The value for the UUID (universally unique identifier) of a single query suggestion.</p>
     /// <p>The value is the text string of a suggestion.</p>
-    pub fn value(&self) -> std::option::Option<& crate::types::SuggestionValue> {
+    pub fn value(&self) -> std::option::Option<&crate::types::SuggestionValue> {
         self.value.as_ref()
     }
 }
@@ -45,27 +45,26 @@ impl SuggestionBuilder {
     }
     /// <p>The UUID (universally unique identifier) of a single query suggestion.</p>
     pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.id = input; self
+        self.id = input;
+        self
     }
-    /// <p>The value for the UUID (universally unique identifier) of a single query suggestion.</p> 
+    /// <p>The value for the UUID (universally unique identifier) of a single query suggestion.</p>
     /// <p>The value is the text string of a suggestion.</p>
     pub fn value(mut self, input: crate::types::SuggestionValue) -> Self {
         self.value = Some(input);
         self
     }
-    /// <p>The value for the UUID (universally unique identifier) of a single query suggestion.</p> 
+    /// <p>The value for the UUID (universally unique identifier) of a single query suggestion.</p>
     /// <p>The value is the text string of a suggestion.</p>
     pub fn set_value(mut self, input: std::option::Option<crate::types::SuggestionValue>) -> Self {
-        self.value = input; self
+        self.value = input;
+        self
     }
     /// Consumes the builder and constructs a [`Suggestion`](crate::types::Suggestion).
     pub fn build(self) -> crate::types::Suggestion {
         crate::types::Suggestion {
-            id: self.id
-            ,
-            value: self.value
-            ,
+            id: self.id,
+            value: self.value,
         }
     }
 }
-

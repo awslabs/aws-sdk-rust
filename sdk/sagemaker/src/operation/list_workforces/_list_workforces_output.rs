@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListWorkforcesOutput  {
+pub struct ListWorkforcesOutput {
     /// <p>A list containing information about your workforce.</p>
     #[doc(hidden)]
     pub workforces: std::option::Option<std::vec::Vec<crate::types::Workforce>>,
@@ -13,19 +13,19 @@ pub struct ListWorkforcesOutput  {
 }
 impl ListWorkforcesOutput {
     /// <p>A list containing information about your workforce.</p>
-    pub fn workforces(&self) -> std::option::Option<& [crate::types::Workforce]> {
+    pub fn workforces(&self) -> std::option::Option<&[crate::types::Workforce]> {
         self.workforces.as_deref()
     }
     /// <p>A token to resume pagination.</p>
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for ListWorkforcesOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl ListWorkforcesOutput {
     /// Creates a new builder-style object to manufacture [`ListWorkforcesOutput`](crate::operation::list_workforces::ListWorkforcesOutput).
     pub fn builder() -> crate::operation::list_workforces::builders::ListWorkforcesOutputBuilder {
@@ -49,13 +49,17 @@ impl ListWorkforcesOutputBuilder {
     /// <p>A list containing information about your workforce.</p>
     pub fn workforces(mut self, input: crate::types::Workforce) -> Self {
         let mut v = self.workforces.unwrap_or_default();
-                        v.push(input);
-                        self.workforces = Some(v);
-                        self
+        v.push(input);
+        self.workforces = Some(v);
+        self
     }
     /// <p>A list containing information about your workforce.</p>
-    pub fn set_workforces(mut self, input: std::option::Option<std::vec::Vec<crate::types::Workforce>>) -> Self {
-        self.workforces = input; self
+    pub fn set_workforces(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::Workforce>>,
+    ) -> Self {
+        self.workforces = input;
+        self
     }
     /// <p>A token to resume pagination.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -64,26 +68,24 @@ impl ListWorkforcesOutputBuilder {
     }
     /// <p>A token to resume pagination.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input; self
+        self.next_token = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`ListWorkforcesOutput`](crate::operation::list_workforces::ListWorkforcesOutput).
     pub fn build(self) -> crate::operation::list_workforces::ListWorkforcesOutput {
         crate::operation::list_workforces::ListWorkforcesOutput {
-            workforces: self.workforces
-            ,
-            next_token: self.next_token
-            ,
+            workforces: self.workforces,
+            next_token: self.next_token,
             _request_id: self._request_id,
         }
     }
 }
-

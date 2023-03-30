@@ -74,4 +74,3 @@ pub use crate::types::_dataflow_endpoint_config::DataflowEndpointConfigBuilder;
 pub use crate::types::_tracking_config::TrackingConfigBuilder;
 
 pub use crate::types::_antenna_downlink_config::AntennaDownlinkConfigBuilder;
-

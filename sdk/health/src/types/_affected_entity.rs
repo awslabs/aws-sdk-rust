@@ -3,12 +3,12 @@
 /// <p>Information about an entity that is affected by a Health event.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AffectedEntity  {
+pub struct AffectedEntity {
     /// <p>The unique identifier for the entity. Format: <code>arn:aws:health:<i>entity-region</i>:<i>aws-account</i>:entity/<i>entity-id</i> </code>. Example: <code>arn:aws:health:us-east-1:111222333444:entity/AVh5GGT7ul1arKr1sE1K</code> </p>
     #[doc(hidden)]
     pub entity_arn: std::option::Option<std::string::String>,
-    /// <p>The unique identifier for the event. The event ARN has the <code>arn:aws:health:<i>event-region</i>::event/<i>SERVICE</i>/<i>EVENT_TYPE_CODE</i>/<i>EVENT_TYPE_PLUS_ID</i> </code> format.</p> 
-    /// <p>For example, an event ARN might look like the following:</p> 
+    /// <p>The unique identifier for the event. The event ARN has the <code>arn:aws:health:<i>event-region</i>::event/<i>SERVICE</i>/<i>EVENT_TYPE_CODE</i>/<i>EVENT_TYPE_PLUS_ID</i> </code> format.</p>
+    /// <p>For example, an event ARN might look like the following:</p>
     /// <p> <code>arn:aws:health:us-east-1::event/EC2/EC2_INSTANCE_RETIREMENT_SCHEDULED/EC2_INSTANCE_RETIREMENT_SCHEDULED_ABC123-DEF456</code> </p>
     #[doc(hidden)]
     pub event_arn: std::option::Option<std::string::String>,
@@ -27,47 +27,51 @@ pub struct AffectedEntity  {
     /// <p>The most recent status of the entity affected by the event. The possible values are <code>IMPAIRED</code>, <code>UNIMPAIRED</code>, and <code>UNKNOWN</code>.</p>
     #[doc(hidden)]
     pub status_code: std::option::Option<crate::types::EntityStatusCode>,
-    /// <p>A map of entity tags attached to the affected entity.</p> <note> 
-    /// <p>Currently, the <code>tags</code> property isn't supported.</p> 
+    /// <p>A map of entity tags attached to the affected entity.</p> <note>
+    /// <p>Currently, the <code>tags</code> property isn't supported.</p>
     /// </note>
     #[doc(hidden)]
-    pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub tags:
+        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl AffectedEntity {
     /// <p>The unique identifier for the entity. Format: <code>arn:aws:health:<i>entity-region</i>:<i>aws-account</i>:entity/<i>entity-id</i> </code>. Example: <code>arn:aws:health:us-east-1:111222333444:entity/AVh5GGT7ul1arKr1sE1K</code> </p>
-    pub fn entity_arn(&self) -> std::option::Option<& str> {
+    pub fn entity_arn(&self) -> std::option::Option<&str> {
         self.entity_arn.as_deref()
     }
-    /// <p>The unique identifier for the event. The event ARN has the <code>arn:aws:health:<i>event-region</i>::event/<i>SERVICE</i>/<i>EVENT_TYPE_CODE</i>/<i>EVENT_TYPE_PLUS_ID</i> </code> format.</p> 
-    /// <p>For example, an event ARN might look like the following:</p> 
+    /// <p>The unique identifier for the event. The event ARN has the <code>arn:aws:health:<i>event-region</i>::event/<i>SERVICE</i>/<i>EVENT_TYPE_CODE</i>/<i>EVENT_TYPE_PLUS_ID</i> </code> format.</p>
+    /// <p>For example, an event ARN might look like the following:</p>
     /// <p> <code>arn:aws:health:us-east-1::event/EC2/EC2_INSTANCE_RETIREMENT_SCHEDULED/EC2_INSTANCE_RETIREMENT_SCHEDULED_ABC123-DEF456</code> </p>
-    pub fn event_arn(&self) -> std::option::Option<& str> {
+    pub fn event_arn(&self) -> std::option::Option<&str> {
         self.event_arn.as_deref()
     }
     /// <p>The ID of the affected entity.</p>
-    pub fn entity_value(&self) -> std::option::Option<& str> {
+    pub fn entity_value(&self) -> std::option::Option<&str> {
         self.entity_value.as_deref()
     }
     /// <p>The URL of the affected entity.</p>
-    pub fn entity_url(&self) -> std::option::Option<& str> {
+    pub fn entity_url(&self) -> std::option::Option<&str> {
         self.entity_url.as_deref()
     }
     /// <p>The 12-digit Amazon Web Services account number that contains the affected entity.</p>
-    pub fn aws_account_id(&self) -> std::option::Option<& str> {
+    pub fn aws_account_id(&self) -> std::option::Option<&str> {
         self.aws_account_id.as_deref()
     }
     /// <p>The most recent time that the entity was updated.</p>
-    pub fn last_updated_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
+    pub fn last_updated_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_updated_time.as_ref()
     }
     /// <p>The most recent status of the entity affected by the event. The possible values are <code>IMPAIRED</code>, <code>UNIMPAIRED</code>, and <code>UNKNOWN</code>.</p>
-    pub fn status_code(&self) -> std::option::Option<& crate::types::EntityStatusCode> {
+    pub fn status_code(&self) -> std::option::Option<&crate::types::EntityStatusCode> {
         self.status_code.as_ref()
     }
-    /// <p>A map of entity tags attached to the affected entity.</p> <note> 
-    /// <p>Currently, the <code>tags</code> property isn't supported.</p> 
+    /// <p>A map of entity tags attached to the affected entity.</p> <note>
+    /// <p>Currently, the <code>tags</code> property isn't supported.</p>
     /// </note>
-    pub fn tags(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
         self.tags.as_ref()
     }
 }
@@ -89,7 +93,8 @@ pub struct AffectedEntityBuilder {
     pub(crate) aws_account_id: std::option::Option<std::string::String>,
     pub(crate) last_updated_time: std::option::Option<aws_smithy_types::DateTime>,
     pub(crate) status_code: std::option::Option<crate::types::EntityStatusCode>,
-    pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub(crate) tags:
+        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl AffectedEntityBuilder {
     /// <p>The unique identifier for the entity. Format: <code>arn:aws:health:<i>entity-region</i>:<i>aws-account</i>:entity/<i>entity-id</i> </code>. Example: <code>arn:aws:health:us-east-1:111222333444:entity/AVh5GGT7ul1arKr1sE1K</code> </p>
@@ -99,20 +104,22 @@ impl AffectedEntityBuilder {
     }
     /// <p>The unique identifier for the entity. Format: <code>arn:aws:health:<i>entity-region</i>:<i>aws-account</i>:entity/<i>entity-id</i> </code>. Example: <code>arn:aws:health:us-east-1:111222333444:entity/AVh5GGT7ul1arKr1sE1K</code> </p>
     pub fn set_entity_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.entity_arn = input; self
+        self.entity_arn = input;
+        self
     }
-    /// <p>The unique identifier for the event. The event ARN has the <code>arn:aws:health:<i>event-region</i>::event/<i>SERVICE</i>/<i>EVENT_TYPE_CODE</i>/<i>EVENT_TYPE_PLUS_ID</i> </code> format.</p> 
-    /// <p>For example, an event ARN might look like the following:</p> 
+    /// <p>The unique identifier for the event. The event ARN has the <code>arn:aws:health:<i>event-region</i>::event/<i>SERVICE</i>/<i>EVENT_TYPE_CODE</i>/<i>EVENT_TYPE_PLUS_ID</i> </code> format.</p>
+    /// <p>For example, an event ARN might look like the following:</p>
     /// <p> <code>arn:aws:health:us-east-1::event/EC2/EC2_INSTANCE_RETIREMENT_SCHEDULED/EC2_INSTANCE_RETIREMENT_SCHEDULED_ABC123-DEF456</code> </p>
     pub fn event_arn(mut self, input: impl Into<std::string::String>) -> Self {
         self.event_arn = Some(input.into());
         self
     }
-    /// <p>The unique identifier for the event. The event ARN has the <code>arn:aws:health:<i>event-region</i>::event/<i>SERVICE</i>/<i>EVENT_TYPE_CODE</i>/<i>EVENT_TYPE_PLUS_ID</i> </code> format.</p> 
-    /// <p>For example, an event ARN might look like the following:</p> 
+    /// <p>The unique identifier for the event. The event ARN has the <code>arn:aws:health:<i>event-region</i>::event/<i>SERVICE</i>/<i>EVENT_TYPE_CODE</i>/<i>EVENT_TYPE_PLUS_ID</i> </code> format.</p>
+    /// <p>For example, an event ARN might look like the following:</p>
     /// <p> <code>arn:aws:health:us-east-1::event/EC2/EC2_INSTANCE_RETIREMENT_SCHEDULED/EC2_INSTANCE_RETIREMENT_SCHEDULED_ABC123-DEF456</code> </p>
     pub fn set_event_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.event_arn = input; self
+        self.event_arn = input;
+        self
     }
     /// <p>The ID of the affected entity.</p>
     pub fn entity_value(mut self, input: impl Into<std::string::String>) -> Self {
@@ -121,7 +128,8 @@ impl AffectedEntityBuilder {
     }
     /// <p>The ID of the affected entity.</p>
     pub fn set_entity_value(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.entity_value = input; self
+        self.entity_value = input;
+        self
     }
     /// <p>The URL of the affected entity.</p>
     pub fn entity_url(mut self, input: impl Into<std::string::String>) -> Self {
@@ -130,7 +138,8 @@ impl AffectedEntityBuilder {
     }
     /// <p>The URL of the affected entity.</p>
     pub fn set_entity_url(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.entity_url = input; self
+        self.entity_url = input;
+        self
     }
     /// <p>The 12-digit Amazon Web Services account number that contains the affected entity.</p>
     pub fn aws_account_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -139,7 +148,8 @@ impl AffectedEntityBuilder {
     }
     /// <p>The 12-digit Amazon Web Services account number that contains the affected entity.</p>
     pub fn set_aws_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.aws_account_id = input; self
+        self.aws_account_id = input;
+        self
     }
     /// <p>The most recent time that the entity was updated.</p>
     pub fn last_updated_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -147,8 +157,12 @@ impl AffectedEntityBuilder {
         self
     }
     /// <p>The most recent time that the entity was updated.</p>
-    pub fn set_last_updated_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.last_updated_time = input; self
+    pub fn set_last_updated_time(
+        mut self,
+        input: std::option::Option<aws_smithy_types::DateTime>,
+    ) -> Self {
+        self.last_updated_time = input;
+        self
     }
     /// <p>The most recent status of the entity affected by the event. The possible values are <code>IMPAIRED</code>, <code>UNIMPAIRED</code>, and <code>UNKNOWN</code>.</p>
     pub fn status_code(mut self, input: crate::types::EntityStatusCode) -> Self {
@@ -156,48 +170,53 @@ impl AffectedEntityBuilder {
         self
     }
     /// <p>The most recent status of the entity affected by the event. The possible values are <code>IMPAIRED</code>, <code>UNIMPAIRED</code>, and <code>UNKNOWN</code>.</p>
-    pub fn set_status_code(mut self, input: std::option::Option<crate::types::EntityStatusCode>) -> Self {
-        self.status_code = input; self
+    pub fn set_status_code(
+        mut self,
+        input: std::option::Option<crate::types::EntityStatusCode>,
+    ) -> Self {
+        self.status_code = input;
+        self
     }
     /// Adds a key-value pair to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
-    /// <p>A map of entity tags attached to the affected entity.</p> <note> 
-    /// <p>Currently, the <code>tags</code> property isn't supported.</p> 
+    /// <p>A map of entity tags attached to the affected entity.</p> <note>
+    /// <p>Currently, the <code>tags</code> property isn't supported.</p>
     /// </note>
-    pub fn tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
+    pub fn tags(
+        mut self,
+        k: impl Into<std::string::String>,
+        v: impl Into<std::string::String>,
+    ) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
-                        hash_map.insert(k.into(), v.into());
-                        self.tags = Some(hash_map);
-                        self
+        hash_map.insert(k.into(), v.into());
+        self.tags = Some(hash_map);
+        self
     }
-    /// <p>A map of entity tags attached to the affected entity.</p> <note> 
-    /// <p>Currently, the <code>tags</code> property isn't supported.</p> 
+    /// <p>A map of entity tags attached to the affected entity.</p> <note>
+    /// <p>Currently, the <code>tags</code> property isn't supported.</p>
     /// </note>
-    pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
-        self.tags = input; self
+    pub fn set_tags(
+        mut self,
+        input: std::option::Option<
+            std::collections::HashMap<std::string::String, std::string::String>,
+        >,
+    ) -> Self {
+        self.tags = input;
+        self
     }
     /// Consumes the builder and constructs a [`AffectedEntity`](crate::types::AffectedEntity).
     pub fn build(self) -> crate::types::AffectedEntity {
         crate::types::AffectedEntity {
-            entity_arn: self.entity_arn
-            ,
-            event_arn: self.event_arn
-            ,
-            entity_value: self.entity_value
-            ,
-            entity_url: self.entity_url
-            ,
-            aws_account_id: self.aws_account_id
-            ,
-            last_updated_time: self.last_updated_time
-            ,
-            status_code: self.status_code
-            ,
-            tags: self.tags
-            ,
+            entity_arn: self.entity_arn,
+            event_arn: self.event_arn,
+            entity_value: self.entity_value,
+            entity_url: self.entity_url,
+            aws_account_id: self.aws_account_id,
+            last_updated_time: self.last_updated_time,
+            status_code: self.status_code,
+            tags: self.tags,
         }
     }
 }
-

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct LookupPolicyOutput  {
+pub struct LookupPolicyOutput {
     /// <p>Provides list of path to policies. Policies contain <code>PolicyId</code>, <code>ObjectIdentifier</code>, and <code>PolicyType</code>. For more information, see <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/key_concepts_directory.html#key_concepts_policies">Policies</a>.</p>
     #[doc(hidden)]
     pub policy_to_path_list: std::option::Option<std::vec::Vec<crate::types::PolicyToPath>>,
@@ -13,19 +13,19 @@ pub struct LookupPolicyOutput  {
 }
 impl LookupPolicyOutput {
     /// <p>Provides list of path to policies. Policies contain <code>PolicyId</code>, <code>ObjectIdentifier</code>, and <code>PolicyType</code>. For more information, see <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/key_concepts_directory.html#key_concepts_policies">Policies</a>.</p>
-    pub fn policy_to_path_list(&self) -> std::option::Option<& [crate::types::PolicyToPath]> {
+    pub fn policy_to_path_list(&self) -> std::option::Option<&[crate::types::PolicyToPath]> {
         self.policy_to_path_list.as_deref()
     }
     /// <p>The pagination token.</p>
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for LookupPolicyOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl LookupPolicyOutput {
     /// Creates a new builder-style object to manufacture [`LookupPolicyOutput`](crate::operation::lookup_policy::LookupPolicyOutput).
     pub fn builder() -> crate::operation::lookup_policy::builders::LookupPolicyOutputBuilder {
@@ -49,13 +49,17 @@ impl LookupPolicyOutputBuilder {
     /// <p>Provides list of path to policies. Policies contain <code>PolicyId</code>, <code>ObjectIdentifier</code>, and <code>PolicyType</code>. For more information, see <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/key_concepts_directory.html#key_concepts_policies">Policies</a>.</p>
     pub fn policy_to_path_list(mut self, input: crate::types::PolicyToPath) -> Self {
         let mut v = self.policy_to_path_list.unwrap_or_default();
-                        v.push(input);
-                        self.policy_to_path_list = Some(v);
-                        self
+        v.push(input);
+        self.policy_to_path_list = Some(v);
+        self
     }
     /// <p>Provides list of path to policies. Policies contain <code>PolicyId</code>, <code>ObjectIdentifier</code>, and <code>PolicyType</code>. For more information, see <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/key_concepts_directory.html#key_concepts_policies">Policies</a>.</p>
-    pub fn set_policy_to_path_list(mut self, input: std::option::Option<std::vec::Vec<crate::types::PolicyToPath>>) -> Self {
-        self.policy_to_path_list = input; self
+    pub fn set_policy_to_path_list(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::PolicyToPath>>,
+    ) -> Self {
+        self.policy_to_path_list = input;
+        self
     }
     /// <p>The pagination token.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -64,26 +68,24 @@ impl LookupPolicyOutputBuilder {
     }
     /// <p>The pagination token.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input; self
+        self.next_token = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`LookupPolicyOutput`](crate::operation::lookup_policy::LookupPolicyOutput).
     pub fn build(self) -> crate::operation::lookup_policy::LookupPolicyOutput {
         crate::operation::lookup_policy::LookupPolicyOutput {
-            policy_to_path_list: self.policy_to_path_list
-            ,
-            next_token: self.next_token
-            ,
+            policy_to_path_list: self.policy_to_path_list,
+            next_token: self.next_token,
             _request_id: self._request_id,
         }
     }
 }
-

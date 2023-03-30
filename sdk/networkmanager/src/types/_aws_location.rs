@@ -3,7 +3,7 @@
 /// <p>Specifies a location in Amazon Web Services.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AwsLocation  {
+pub struct AwsLocation {
     /// <p>The Zone that the device is located in. Specify the ID of an Availability Zone, Local Zone, Wavelength Zone, or an Outpost.</p>
     #[doc(hidden)]
     pub zone: std::option::Option<std::string::String>,
@@ -13,11 +13,11 @@ pub struct AwsLocation  {
 }
 impl AwsLocation {
     /// <p>The Zone that the device is located in. Specify the ID of an Availability Zone, Local Zone, Wavelength Zone, or an Outpost.</p>
-    pub fn zone(&self) -> std::option::Option<& str> {
+    pub fn zone(&self) -> std::option::Option<&str> {
         self.zone.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the subnet that the device is located in.</p>
-    pub fn subnet_arn(&self) -> std::option::Option<& str> {
+    pub fn subnet_arn(&self) -> std::option::Option<&str> {
         self.subnet_arn.as_deref()
     }
 }
@@ -43,7 +43,8 @@ impl AwsLocationBuilder {
     }
     /// <p>The Zone that the device is located in. Specify the ID of an Availability Zone, Local Zone, Wavelength Zone, or an Outpost.</p>
     pub fn set_zone(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.zone = input; self
+        self.zone = input;
+        self
     }
     /// <p>The Amazon Resource Name (ARN) of the subnet that the device is located in.</p>
     pub fn subnet_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -52,16 +53,14 @@ impl AwsLocationBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the subnet that the device is located in.</p>
     pub fn set_subnet_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.subnet_arn = input; self
+        self.subnet_arn = input;
+        self
     }
     /// Consumes the builder and constructs a [`AwsLocation`](crate::types::AwsLocation).
     pub fn build(self) -> crate::types::AwsLocation {
         crate::types::AwsLocation {
-            zone: self.zone
-            ,
-            subnet_arn: self.subnet_arn
-            ,
+            zone: self.zone,
+            subnet_arn: self.subnet_arn,
         }
     }
 }
-

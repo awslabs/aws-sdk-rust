@@ -3,7 +3,7 @@
 /// <p>Automatically enable new organization accounts as member accounts from an Amazon Security Lake administrator account.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AutoEnableNewRegionConfiguration  {
+pub struct AutoEnableNewRegionConfiguration {
     /// <p>The Amazon Web Services Regions where Security Lake is automatically enabled.</p>
     #[doc(hidden)]
     pub region: std::option::Option<crate::types::Region>,
@@ -13,11 +13,11 @@ pub struct AutoEnableNewRegionConfiguration  {
 }
 impl AutoEnableNewRegionConfiguration {
     /// <p>The Amazon Web Services Regions where Security Lake is automatically enabled.</p>
-    pub fn region(&self) -> std::option::Option<& crate::types::Region> {
+    pub fn region(&self) -> std::option::Option<&crate::types::Region> {
         self.region.as_ref()
     }
     /// <p>The Amazon Web Services sources that are automatically enabled in Security Lake.</p>
-    pub fn sources(&self) -> std::option::Option<& [crate::types::AwsLogSourceType]> {
+    pub fn sources(&self) -> std::option::Option<&[crate::types::AwsLogSourceType]> {
         self.sources.as_deref()
     }
 }
@@ -43,7 +43,8 @@ impl AutoEnableNewRegionConfigurationBuilder {
     }
     /// <p>The Amazon Web Services Regions where Security Lake is automatically enabled.</p>
     pub fn set_region(mut self, input: std::option::Option<crate::types::Region>) -> Self {
-        self.region = input; self
+        self.region = input;
+        self
     }
     /// Appends an item to `sources`.
     ///
@@ -52,22 +53,23 @@ impl AutoEnableNewRegionConfigurationBuilder {
     /// <p>The Amazon Web Services sources that are automatically enabled in Security Lake.</p>
     pub fn sources(mut self, input: crate::types::AwsLogSourceType) -> Self {
         let mut v = self.sources.unwrap_or_default();
-                        v.push(input);
-                        self.sources = Some(v);
-                        self
+        v.push(input);
+        self.sources = Some(v);
+        self
     }
     /// <p>The Amazon Web Services sources that are automatically enabled in Security Lake.</p>
-    pub fn set_sources(mut self, input: std::option::Option<std::vec::Vec<crate::types::AwsLogSourceType>>) -> Self {
-        self.sources = input; self
+    pub fn set_sources(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::AwsLogSourceType>>,
+    ) -> Self {
+        self.sources = input;
+        self
     }
     /// Consumes the builder and constructs a [`AutoEnableNewRegionConfiguration`](crate::types::AutoEnableNewRegionConfiguration).
     pub fn build(self) -> crate::types::AutoEnableNewRegionConfiguration {
         crate::types::AutoEnableNewRegionConfiguration {
-            region: self.region
-            ,
-            sources: self.sources
-            ,
+            region: self.region,
+            sources: self.sources,
         }
     }
 }
-

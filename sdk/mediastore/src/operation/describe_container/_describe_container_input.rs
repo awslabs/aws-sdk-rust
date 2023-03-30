@@ -2,20 +2,21 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeContainerInput  {
+pub struct DescribeContainerInput {
     /// <p>The name of the container to query.</p>
     #[doc(hidden)]
     pub container_name: std::option::Option<std::string::String>,
 }
 impl DescribeContainerInput {
     /// <p>The name of the container to query.</p>
-    pub fn container_name(&self) -> std::option::Option<& str> {
+    pub fn container_name(&self) -> std::option::Option<&str> {
         self.container_name.as_deref()
     }
 }
 impl DescribeContainerInput {
     /// Creates a new builder-style object to manufacture [`DescribeContainerInput`](crate::operation::describe_container::DescribeContainerInput).
-    pub fn builder() -> crate::operation::describe_container::builders::DescribeContainerInputBuilder {
+    pub fn builder() -> crate::operation::describe_container::builders::DescribeContainerInputBuilder
+    {
         crate::operation::describe_container::builders::DescribeContainerInputBuilder::default()
     }
 }
@@ -34,16 +35,20 @@ impl DescribeContainerInputBuilder {
     }
     /// <p>The name of the container to query.</p>
     pub fn set_container_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.container_name = input; self
+        self.container_name = input;
+        self
     }
     /// Consumes the builder and constructs a [`DescribeContainerInput`](crate::operation::describe_container::DescribeContainerInput).
-    pub fn build(self) -> Result<crate::operation::describe_container::DescribeContainerInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::describe_container::DescribeContainerInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::describe_container::DescribeContainerInput {
-                container_name: self.container_name
-                ,
-            }
+                container_name: self.container_name,
+            },
         )
     }
 }
-

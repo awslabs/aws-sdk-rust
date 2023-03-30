@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeDimensionKeysOutput  {
+pub struct DescribeDimensionKeysOutput {
     /// <p>The start time for the returned dimension keys, after alignment to a granular boundary (as specified by <code>PeriodInSeconds</code>). <code>AlignedStartTime</code> will be less than or equal to the value of the user-specified <code>StartTime</code>. </p>
     #[doc(hidden)]
     pub aligned_start_time: std::option::Option<aws_smithy_types::DateTime>,
@@ -22,34 +22,36 @@ pub struct DescribeDimensionKeysOutput  {
 }
 impl DescribeDimensionKeysOutput {
     /// <p>The start time for the returned dimension keys, after alignment to a granular boundary (as specified by <code>PeriodInSeconds</code>). <code>AlignedStartTime</code> will be less than or equal to the value of the user-specified <code>StartTime</code>. </p>
-    pub fn aligned_start_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
+    pub fn aligned_start_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.aligned_start_time.as_ref()
     }
     /// <p>The end time for the returned dimension keys, after alignment to a granular boundary (as specified by <code>PeriodInSeconds</code>). <code>AlignedEndTime</code> will be greater than or equal to the value of the user-specified <code>Endtime</code>. </p>
-    pub fn aligned_end_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
+    pub fn aligned_end_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.aligned_end_time.as_ref()
     }
     /// <p>If <code>PartitionBy</code> was present in the request, <code>PartitionKeys</code> contains the breakdown of dimension keys by the specified partitions. </p>
-    pub fn partition_keys(&self) -> std::option::Option<& [crate::types::ResponsePartitionKey]> {
+    pub fn partition_keys(&self) -> std::option::Option<&[crate::types::ResponsePartitionKey]> {
         self.partition_keys.as_deref()
     }
     /// <p>The dimension keys that were requested.</p>
-    pub fn keys(&self) -> std::option::Option<& [crate::types::DimensionKeyDescription]> {
+    pub fn keys(&self) -> std::option::Option<&[crate::types::DimensionKeyDescription]> {
         self.keys.as_deref()
     }
     /// <p>A pagination token that indicates the response didn’t return all available records because <code>MaxRecords</code> was specified in the previous request. To get the remaining records, specify <code>NextToken</code> in a separate request with this value. </p>
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for DescribeDimensionKeysOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl DescribeDimensionKeysOutput {
     /// Creates a new builder-style object to manufacture [`DescribeDimensionKeysOutput`](crate::operation::describe_dimension_keys::DescribeDimensionKeysOutput).
-    pub fn builder() -> crate::operation::describe_dimension_keys::builders::DescribeDimensionKeysOutputBuilder {
+    pub fn builder(
+    ) -> crate::operation::describe_dimension_keys::builders::DescribeDimensionKeysOutputBuilder
+    {
         crate::operation::describe_dimension_keys::builders::DescribeDimensionKeysOutputBuilder::default()
     }
 }
@@ -60,7 +62,8 @@ impl DescribeDimensionKeysOutput {
 pub struct DescribeDimensionKeysOutputBuilder {
     pub(crate) aligned_start_time: std::option::Option<aws_smithy_types::DateTime>,
     pub(crate) aligned_end_time: std::option::Option<aws_smithy_types::DateTime>,
-    pub(crate) partition_keys: std::option::Option<std::vec::Vec<crate::types::ResponsePartitionKey>>,
+    pub(crate) partition_keys:
+        std::option::Option<std::vec::Vec<crate::types::ResponsePartitionKey>>,
     pub(crate) keys: std::option::Option<std::vec::Vec<crate::types::DimensionKeyDescription>>,
     pub(crate) next_token: std::option::Option<std::string::String>,
     _request_id: Option<String>,
@@ -72,8 +75,12 @@ impl DescribeDimensionKeysOutputBuilder {
         self
     }
     /// <p>The start time for the returned dimension keys, after alignment to a granular boundary (as specified by <code>PeriodInSeconds</code>). <code>AlignedStartTime</code> will be less than or equal to the value of the user-specified <code>StartTime</code>. </p>
-    pub fn set_aligned_start_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.aligned_start_time = input; self
+    pub fn set_aligned_start_time(
+        mut self,
+        input: std::option::Option<aws_smithy_types::DateTime>,
+    ) -> Self {
+        self.aligned_start_time = input;
+        self
     }
     /// <p>The end time for the returned dimension keys, after alignment to a granular boundary (as specified by <code>PeriodInSeconds</code>). <code>AlignedEndTime</code> will be greater than or equal to the value of the user-specified <code>Endtime</code>. </p>
     pub fn aligned_end_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -81,8 +88,12 @@ impl DescribeDimensionKeysOutputBuilder {
         self
     }
     /// <p>The end time for the returned dimension keys, after alignment to a granular boundary (as specified by <code>PeriodInSeconds</code>). <code>AlignedEndTime</code> will be greater than or equal to the value of the user-specified <code>Endtime</code>. </p>
-    pub fn set_aligned_end_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.aligned_end_time = input; self
+    pub fn set_aligned_end_time(
+        mut self,
+        input: std::option::Option<aws_smithy_types::DateTime>,
+    ) -> Self {
+        self.aligned_end_time = input;
+        self
     }
     /// Appends an item to `partition_keys`.
     ///
@@ -91,13 +102,17 @@ impl DescribeDimensionKeysOutputBuilder {
     /// <p>If <code>PartitionBy</code> was present in the request, <code>PartitionKeys</code> contains the breakdown of dimension keys by the specified partitions. </p>
     pub fn partition_keys(mut self, input: crate::types::ResponsePartitionKey) -> Self {
         let mut v = self.partition_keys.unwrap_or_default();
-                        v.push(input);
-                        self.partition_keys = Some(v);
-                        self
+        v.push(input);
+        self.partition_keys = Some(v);
+        self
     }
     /// <p>If <code>PartitionBy</code> was present in the request, <code>PartitionKeys</code> contains the breakdown of dimension keys by the specified partitions. </p>
-    pub fn set_partition_keys(mut self, input: std::option::Option<std::vec::Vec<crate::types::ResponsePartitionKey>>) -> Self {
-        self.partition_keys = input; self
+    pub fn set_partition_keys(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::ResponsePartitionKey>>,
+    ) -> Self {
+        self.partition_keys = input;
+        self
     }
     /// Appends an item to `keys`.
     ///
@@ -106,13 +121,17 @@ impl DescribeDimensionKeysOutputBuilder {
     /// <p>The dimension keys that were requested.</p>
     pub fn keys(mut self, input: crate::types::DimensionKeyDescription) -> Self {
         let mut v = self.keys.unwrap_or_default();
-                        v.push(input);
-                        self.keys = Some(v);
-                        self
+        v.push(input);
+        self.keys = Some(v);
+        self
     }
     /// <p>The dimension keys that were requested.</p>
-    pub fn set_keys(mut self, input: std::option::Option<std::vec::Vec<crate::types::DimensionKeyDescription>>) -> Self {
-        self.keys = input; self
+    pub fn set_keys(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::DimensionKeyDescription>>,
+    ) -> Self {
+        self.keys = input;
+        self
     }
     /// <p>A pagination token that indicates the response didn’t return all available records because <code>MaxRecords</code> was specified in the previous request. To get the remaining records, specify <code>NextToken</code> in a separate request with this value. </p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -121,32 +140,27 @@ impl DescribeDimensionKeysOutputBuilder {
     }
     /// <p>A pagination token that indicates the response didn’t return all available records because <code>MaxRecords</code> was specified in the previous request. To get the remaining records, specify <code>NextToken</code> in a separate request with this value. </p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input; self
+        self.next_token = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`DescribeDimensionKeysOutput`](crate::operation::describe_dimension_keys::DescribeDimensionKeysOutput).
     pub fn build(self) -> crate::operation::describe_dimension_keys::DescribeDimensionKeysOutput {
         crate::operation::describe_dimension_keys::DescribeDimensionKeysOutput {
-            aligned_start_time: self.aligned_start_time
-            ,
-            aligned_end_time: self.aligned_end_time
-            ,
-            partition_keys: self.partition_keys
-            ,
-            keys: self.keys
-            ,
-            next_token: self.next_token
-            ,
+            aligned_start_time: self.aligned_start_time,
+            aligned_end_time: self.aligned_end_time,
+            partition_keys: self.partition_keys,
+            keys: self.keys,
+            next_token: self.next_token,
             _request_id: self._request_id,
         }
     }
 }
-

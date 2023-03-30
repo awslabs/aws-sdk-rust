@@ -2,11 +2,11 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetEnrollmentStatusOutput  {
+pub struct GetEnrollmentStatusOutput {
     /// <p>The enrollment status of the account.</p>
     #[doc(hidden)]
     pub status: std::option::Option<crate::types::Status>,
-    /// <p>The reason for the enrollment status of the account.</p> 
+    /// <p>The reason for the enrollment status of the account.</p>
     /// <p>For example, an account might show a status of <code>Pending</code> because member accounts of an organization require more time to be enrolled in the service.</p>
     #[doc(hidden)]
     pub status_reason: std::option::Option<std::string::String>,
@@ -23,12 +23,12 @@ pub struct GetEnrollmentStatusOutput  {
 }
 impl GetEnrollmentStatusOutput {
     /// <p>The enrollment status of the account.</p>
-    pub fn status(&self) -> std::option::Option<& crate::types::Status> {
+    pub fn status(&self) -> std::option::Option<&crate::types::Status> {
         self.status.as_ref()
     }
-    /// <p>The reason for the enrollment status of the account.</p> 
+    /// <p>The reason for the enrollment status of the account.</p>
     /// <p>For example, an account might show a status of <code>Pending</code> because member accounts of an organization require more time to be enrolled in the service.</p>
-    pub fn status_reason(&self) -> std::option::Option<& str> {
+    pub fn status_reason(&self) -> std::option::Option<&str> {
         self.status_reason.as_deref()
     }
     /// <p>Confirms the enrollment status of member accounts of the organization, if the account is a management account of an organization.</p>
@@ -36,7 +36,7 @@ impl GetEnrollmentStatusOutput {
         self.member_accounts_enrolled
     }
     /// <p>The Unix epoch timestamp, in seconds, of when the account enrollment status was last updated.</p>
-    pub fn last_updated_timestamp(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
+    pub fn last_updated_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_updated_timestamp.as_ref()
     }
     /// <p>The count of organization member accounts that are opted in to the service, if your account is an organization management account.</p>
@@ -45,14 +45,16 @@ impl GetEnrollmentStatusOutput {
     }
 }
 impl aws_http::request_id::RequestId for GetEnrollmentStatusOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl GetEnrollmentStatusOutput {
     /// Creates a new builder-style object to manufacture [`GetEnrollmentStatusOutput`](crate::operation::get_enrollment_status::GetEnrollmentStatusOutput).
-    pub fn builder() -> crate::operation::get_enrollment_status::builders::GetEnrollmentStatusOutputBuilder {
-        crate::operation::get_enrollment_status::builders::GetEnrollmentStatusOutputBuilder::default()
+    pub fn builder(
+    ) -> crate::operation::get_enrollment_status::builders::GetEnrollmentStatusOutputBuilder {
+        crate::operation::get_enrollment_status::builders::GetEnrollmentStatusOutputBuilder::default(
+        )
     }
 }
 
@@ -75,18 +77,20 @@ impl GetEnrollmentStatusOutputBuilder {
     }
     /// <p>The enrollment status of the account.</p>
     pub fn set_status(mut self, input: std::option::Option<crate::types::Status>) -> Self {
-        self.status = input; self
+        self.status = input;
+        self
     }
-    /// <p>The reason for the enrollment status of the account.</p> 
+    /// <p>The reason for the enrollment status of the account.</p>
     /// <p>For example, an account might show a status of <code>Pending</code> because member accounts of an organization require more time to be enrolled in the service.</p>
     pub fn status_reason(mut self, input: impl Into<std::string::String>) -> Self {
         self.status_reason = Some(input.into());
         self
     }
-    /// <p>The reason for the enrollment status of the account.</p> 
+    /// <p>The reason for the enrollment status of the account.</p>
     /// <p>For example, an account might show a status of <code>Pending</code> because member accounts of an organization require more time to be enrolled in the service.</p>
     pub fn set_status_reason(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.status_reason = input; self
+        self.status_reason = input;
+        self
     }
     /// <p>Confirms the enrollment status of member accounts of the organization, if the account is a management account of an organization.</p>
     pub fn member_accounts_enrolled(mut self, input: bool) -> Self {
@@ -95,7 +99,8 @@ impl GetEnrollmentStatusOutputBuilder {
     }
     /// <p>Confirms the enrollment status of member accounts of the organization, if the account is a management account of an organization.</p>
     pub fn set_member_accounts_enrolled(mut self, input: std::option::Option<bool>) -> Self {
-        self.member_accounts_enrolled = input; self
+        self.member_accounts_enrolled = input;
+        self
     }
     /// <p>The Unix epoch timestamp, in seconds, of when the account enrollment status was last updated.</p>
     pub fn last_updated_timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -103,8 +108,12 @@ impl GetEnrollmentStatusOutputBuilder {
         self
     }
     /// <p>The Unix epoch timestamp, in seconds, of when the account enrollment status was last updated.</p>
-    pub fn set_last_updated_timestamp(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.last_updated_timestamp = input; self
+    pub fn set_last_updated_timestamp(
+        mut self,
+        input: std::option::Option<aws_smithy_types::DateTime>,
+    ) -> Self {
+        self.last_updated_timestamp = input;
+        self
     }
     /// <p>The count of organization member accounts that are opted in to the service, if your account is an organization management account.</p>
     pub fn number_of_member_accounts_opted_in(mut self, input: i32) -> Self {
@@ -112,34 +121,31 @@ impl GetEnrollmentStatusOutputBuilder {
         self
     }
     /// <p>The count of organization member accounts that are opted in to the service, if your account is an organization management account.</p>
-    pub fn set_number_of_member_accounts_opted_in(mut self, input: std::option::Option<i32>) -> Self {
-        self.number_of_member_accounts_opted_in = input; self
+    pub fn set_number_of_member_accounts_opted_in(
+        mut self,
+        input: std::option::Option<i32>,
+    ) -> Self {
+        self.number_of_member_accounts_opted_in = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`GetEnrollmentStatusOutput`](crate::operation::get_enrollment_status::GetEnrollmentStatusOutput).
     pub fn build(self) -> crate::operation::get_enrollment_status::GetEnrollmentStatusOutput {
         crate::operation::get_enrollment_status::GetEnrollmentStatusOutput {
-            status: self.status
-            ,
-            status_reason: self.status_reason
-            ,
-            member_accounts_enrolled: self.member_accounts_enrolled
-                .unwrap_or_default()
-            ,
-            last_updated_timestamp: self.last_updated_timestamp
-            ,
-            number_of_member_accounts_opted_in: self.number_of_member_accounts_opted_in
-            ,
+            status: self.status,
+            status_reason: self.status_reason,
+            member_accounts_enrolled: self.member_accounts_enrolled.unwrap_or_default(),
+            last_updated_timestamp: self.last_updated_timestamp,
+            number_of_member_accounts_opted_in: self.number_of_member_accounts_opted_in,
             _request_id: self._request_id,
         }
     }
 }
-

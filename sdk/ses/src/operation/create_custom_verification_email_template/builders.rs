@@ -4,51 +4,60 @@ pub use crate::operation::create_custom_verification_email_template::_create_cus
 pub use crate::operation::create_custom_verification_email_template::_create_custom_verification_email_template_input::CreateCustomVerificationEmailTemplateInputBuilder;
 
 /// Fluent builder constructing a request to `CreateCustomVerificationEmailTemplate`.
-/// 
-/// <p>Creates a new custom verification email template.</p> 
-/// <p>For more information about custom verification email templates, see <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/custom-verification-emails.html">Using Custom Verification Email Templates</a> in the <i>Amazon SES Developer Guide</i>.</p> 
+///
+/// <p>Creates a new custom verification email template.</p>
+/// <p>For more information about custom verification email templates, see <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/custom-verification-emails.html">Using Custom Verification Email Templates</a> in the <i>Amazon SES Developer Guide</i>.</p>
 /// <p>You can execute this operation no more than once per second.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct CreateCustomVerificationEmailTemplateFluentBuilder {
                 handle: std::sync::Arc<crate::client::Handle>,
                 inner: crate::operation::create_custom_verification_email_template::builders::CreateCustomVerificationEmailTemplateInputBuilder
             }
-impl CreateCustomVerificationEmailTemplateFluentBuilder  {
+impl CreateCustomVerificationEmailTemplateFluentBuilder {
     /// Creates a new `CreateCustomVerificationEmailTemplate`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
-                    /// sent. The operation's inner [http::Request] can be modified as well.
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle,
+            inner: Default::default(),
+        }
+    }
+
+    /// Consume this builder, creating a customizable operation that can be modified before being
+    /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::create_custom_verification_email_template::CreateCustomVerificationEmailTemplate, aws_http::retry::AwsResponseRetryClassifier,>,
                         aws_smithy_http::result::SdkError<crate::operation::create_custom_verification_email_template::CreateCustomVerificationEmailTemplateError>
-                    >  {
-                        let handle = self.handle.clone();
-                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-                    }
-    
-                    /// Sends the request and returns the response.
-                    ///
-                    /// If an error occurs, an `SdkError` will be returned with additional details that
-                    /// can be matched against.
-                    ///
-                    /// By default, any retryable failures will be retried twice. Retry behavior
-                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                    /// set when configuring the client.
+    >{
+        let handle = self.handle.clone();
+        let operation = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+    }
+
+    /// Sends the request and returns the response.
+    ///
+    /// If an error occurs, an `SdkError` will be returned with additional details that
+    /// can be matched against.
+    ///
+    /// By default, any retryable failures will be retried twice. Retry behavior
+    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+    /// set when configuring the client.
                     pub async fn send(self) -> std::result::Result<crate::operation::create_custom_verification_email_template::CreateCustomVerificationEmailTemplateOutput, aws_smithy_http::result::SdkError<crate::operation::create_custom_verification_email_template::CreateCustomVerificationEmailTemplateError>>
                      {
-                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&self.handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        self.handle.client.call(op).await
-                    }
+        let op = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&self.handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        self.handle.client.call(op).await
+    }
     /// <p>The name of the custom verification email template.</p>
     pub fn template_name(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.template_name(input.into());
@@ -65,7 +74,10 @@ impl CreateCustomVerificationEmailTemplateFluentBuilder  {
         self
     }
     /// <p>The email address that the custom verification email is sent from.</p>
-    pub fn set_from_email_address(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_from_email_address(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_from_email_address(input);
         self
     }
@@ -95,7 +107,10 @@ impl CreateCustomVerificationEmailTemplateFluentBuilder  {
         self
     }
     /// <p>The URL that the recipient of the verification email is sent to if his or her address is successfully verified.</p>
-    pub fn set_success_redirection_url(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_success_redirection_url(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_success_redirection_url(input);
         self
     }
@@ -105,9 +120,11 @@ impl CreateCustomVerificationEmailTemplateFluentBuilder  {
         self
     }
     /// <p>The URL that the recipient of the verification email is sent to if his or her address is not successfully verified.</p>
-    pub fn set_failure_redirection_url(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_failure_redirection_url(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_failure_redirection_url(input);
         self
     }
 }
-

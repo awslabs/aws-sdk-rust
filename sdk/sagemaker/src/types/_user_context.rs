@@ -3,7 +3,7 @@
 /// <p>Information about the user who created or modified an experiment, trial, trial component, lineage group, project, or model card.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UserContext  {
+pub struct UserContext {
     /// <p>The Amazon Resource Name (ARN) of the user's profile.</p>
     #[doc(hidden)]
     pub user_profile_arn: std::option::Option<std::string::String>,
@@ -16,15 +16,15 @@ pub struct UserContext  {
 }
 impl UserContext {
     /// <p>The Amazon Resource Name (ARN) of the user's profile.</p>
-    pub fn user_profile_arn(&self) -> std::option::Option<& str> {
+    pub fn user_profile_arn(&self) -> std::option::Option<&str> {
         self.user_profile_arn.as_deref()
     }
     /// <p>The name of the user's profile.</p>
-    pub fn user_profile_name(&self) -> std::option::Option<& str> {
+    pub fn user_profile_name(&self) -> std::option::Option<&str> {
         self.user_profile_name.as_deref()
     }
     /// <p>The domain associated with the user.</p>
-    pub fn domain_id(&self) -> std::option::Option<& str> {
+    pub fn domain_id(&self) -> std::option::Option<&str> {
         self.domain_id.as_deref()
     }
 }
@@ -51,7 +51,8 @@ impl UserContextBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the user's profile.</p>
     pub fn set_user_profile_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.user_profile_arn = input; self
+        self.user_profile_arn = input;
+        self
     }
     /// <p>The name of the user's profile.</p>
     pub fn user_profile_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -59,8 +60,12 @@ impl UserContextBuilder {
         self
     }
     /// <p>The name of the user's profile.</p>
-    pub fn set_user_profile_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.user_profile_name = input; self
+    pub fn set_user_profile_name(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.user_profile_name = input;
+        self
     }
     /// <p>The domain associated with the user.</p>
     pub fn domain_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -69,18 +74,15 @@ impl UserContextBuilder {
     }
     /// <p>The domain associated with the user.</p>
     pub fn set_domain_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.domain_id = input; self
+        self.domain_id = input;
+        self
     }
     /// Consumes the builder and constructs a [`UserContext`](crate::types::UserContext).
     pub fn build(self) -> crate::types::UserContext {
         crate::types::UserContext {
-            user_profile_arn: self.user_profile_arn
-            ,
-            user_profile_name: self.user_profile_name
-            ,
-            domain_id: self.domain_id
-            ,
+            user_profile_arn: self.user_profile_arn,
+            user_profile_name: self.user_profile_name,
+            domain_id: self.domain_id,
         }
     }
 }
-

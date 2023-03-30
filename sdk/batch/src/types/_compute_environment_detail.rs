@@ -3,7 +3,7 @@
 /// <p>An object that represents an Batch compute environment.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ComputeEnvironmentDetail  {
+pub struct ComputeEnvironmentDetail {
     /// <p>The name of the compute environment. It can be up to 128 characters long. It can contain uppercase and lowercase letters, numbers, hyphens (-), and underscores (_).</p>
     #[doc(hidden)]
     pub compute_environment_name: std::option::Option<std::string::String>,
@@ -18,12 +18,13 @@ pub struct ComputeEnvironmentDetail  {
     pub ecs_cluster_arn: std::option::Option<std::string::String>,
     /// <p>The tags applied to the compute environment.</p>
     #[doc(hidden)]
-    pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub tags:
+        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The type of the compute environment: <code>MANAGED</code> or <code>UNMANAGED</code>. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/compute_environments.html">Compute environments</a> in the <i>Batch User Guide</i>.</p>
     #[doc(hidden)]
     pub r#type: std::option::Option<crate::types::CeType>,
-    /// <p>The state of the compute environment. The valid values are <code>ENABLED</code> or <code>DISABLED</code>.</p> 
-    /// <p>If the state is <code>ENABLED</code>, then the Batch scheduler can attempt to place jobs from an associated job queue on the compute resources within the environment. If the compute environment is managed, then it can scale its instances out or in automatically based on the job queue demand.</p> 
+    /// <p>The state of the compute environment. The valid values are <code>ENABLED</code> or <code>DISABLED</code>.</p>
+    /// <p>If the state is <code>ENABLED</code>, then the Batch scheduler can attempt to place jobs from an associated job queue on the compute resources within the environment. If the compute environment is managed, then it can scale its instances out or in automatically based on the job queue demand.</p>
     /// <p>If the state is <code>DISABLED</code>, then the Batch scheduler doesn't attempt to place jobs within the environment. Jobs in a <code>STARTING</code> or <code>RUNNING</code> state continue to progress normally. Managed compute environments in the <code>DISABLED</code> state don't scale out. However, they scale in to <code>minvCpus</code> value after instances become idle.</p>
     #[doc(hidden)]
     pub state: std::option::Option<crate::types::CeState>,
@@ -54,11 +55,11 @@ pub struct ComputeEnvironmentDetail  {
 }
 impl ComputeEnvironmentDetail {
     /// <p>The name of the compute environment. It can be up to 128 characters long. It can contain uppercase and lowercase letters, numbers, hyphens (-), and underscores (_).</p>
-    pub fn compute_environment_name(&self) -> std::option::Option<& str> {
+    pub fn compute_environment_name(&self) -> std::option::Option<&str> {
         self.compute_environment_name.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the compute environment.</p>
-    pub fn compute_environment_arn(&self) -> std::option::Option<& str> {
+    pub fn compute_environment_arn(&self) -> std::option::Option<&str> {
         self.compute_environment_arn.as_deref()
     }
     /// <p>The maximum number of VCPUs expected to be used for an unmanaged compute environment.</p>
@@ -66,53 +67,58 @@ impl ComputeEnvironmentDetail {
         self.unmanagedv_cpus
     }
     /// <p>The Amazon Resource Name (ARN) of the underlying Amazon ECS cluster that the compute environment uses.</p>
-    pub fn ecs_cluster_arn(&self) -> std::option::Option<& str> {
+    pub fn ecs_cluster_arn(&self) -> std::option::Option<&str> {
         self.ecs_cluster_arn.as_deref()
     }
     /// <p>The tags applied to the compute environment.</p>
-    pub fn tags(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
         self.tags.as_ref()
     }
     /// <p>The type of the compute environment: <code>MANAGED</code> or <code>UNMANAGED</code>. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/compute_environments.html">Compute environments</a> in the <i>Batch User Guide</i>.</p>
-    pub fn r#type(&self) -> std::option::Option<& crate::types::CeType> {
+    pub fn r#type(&self) -> std::option::Option<&crate::types::CeType> {
         self.r#type.as_ref()
     }
-    /// <p>The state of the compute environment. The valid values are <code>ENABLED</code> or <code>DISABLED</code>.</p> 
-    /// <p>If the state is <code>ENABLED</code>, then the Batch scheduler can attempt to place jobs from an associated job queue on the compute resources within the environment. If the compute environment is managed, then it can scale its instances out or in automatically based on the job queue demand.</p> 
+    /// <p>The state of the compute environment. The valid values are <code>ENABLED</code> or <code>DISABLED</code>.</p>
+    /// <p>If the state is <code>ENABLED</code>, then the Batch scheduler can attempt to place jobs from an associated job queue on the compute resources within the environment. If the compute environment is managed, then it can scale its instances out or in automatically based on the job queue demand.</p>
     /// <p>If the state is <code>DISABLED</code>, then the Batch scheduler doesn't attempt to place jobs within the environment. Jobs in a <code>STARTING</code> or <code>RUNNING</code> state continue to progress normally. Managed compute environments in the <code>DISABLED</code> state don't scale out. However, they scale in to <code>minvCpus</code> value after instances become idle.</p>
-    pub fn state(&self) -> std::option::Option<& crate::types::CeState> {
+    pub fn state(&self) -> std::option::Option<&crate::types::CeState> {
         self.state.as_ref()
     }
     /// <p>The current status of the compute environment (for example, <code>CREATING</code> or <code>VALID</code>).</p>
-    pub fn status(&self) -> std::option::Option<& crate::types::CeStatus> {
+    pub fn status(&self) -> std::option::Option<&crate::types::CeStatus> {
         self.status.as_ref()
     }
     /// <p>A short, human-readable string to provide additional details for the current status of the compute environment.</p>
-    pub fn status_reason(&self) -> std::option::Option<& str> {
+    pub fn status_reason(&self) -> std::option::Option<&str> {
         self.status_reason.as_deref()
     }
     /// <p>The compute resources defined for the compute environment. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/compute_environments.html">Compute environments</a> in the <i>Batch User Guide</i>.</p>
-    pub fn compute_resources(&self) -> std::option::Option<& crate::types::ComputeResource> {
+    pub fn compute_resources(&self) -> std::option::Option<&crate::types::ComputeResource> {
         self.compute_resources.as_ref()
     }
     /// <p>The service role that's associated with the compute environment that allows Batch to make calls to Amazon Web Services API operations on your behalf. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/service_IAM_role.html">Batch service IAM role</a> in the <i>Batch User Guide</i>.</p>
-    pub fn service_role(&self) -> std::option::Option<& str> {
+    pub fn service_role(&self) -> std::option::Option<&str> {
         self.service_role.as_deref()
     }
     /// <p>Specifies the infrastructure update policy for the compute environment. For more information about infrastructure updates, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/updating-compute-environments.html">Updating compute environments</a> in the <i>Batch User Guide</i>.</p>
-    pub fn update_policy(&self) -> std::option::Option<& crate::types::UpdatePolicy> {
+    pub fn update_policy(&self) -> std::option::Option<&crate::types::UpdatePolicy> {
         self.update_policy.as_ref()
     }
     /// <p>The configuration for the Amazon EKS cluster that supports the Batch compute environment. Only specify this parameter if the <code>containerOrchestrationType</code> is <code>EKS</code>.</p>
-    pub fn eks_configuration(&self) -> std::option::Option<& crate::types::EksConfiguration> {
+    pub fn eks_configuration(&self) -> std::option::Option<&crate::types::EksConfiguration> {
         self.eks_configuration.as_ref()
     }
     /// <p>The orchestration type of the compute environment. The valid values are <code>ECS</code> (default) or <code>EKS</code>.</p>
-    pub fn container_orchestration_type(&self) -> std::option::Option<& crate::types::OrchestrationType> {
+    pub fn container_orchestration_type(
+        &self,
+    ) -> std::option::Option<&crate::types::OrchestrationType> {
         self.container_orchestration_type.as_ref()
     }
     /// <p>Unique identifier for the compute environment.</p>
-    pub fn uuid(&self) -> std::option::Option<& str> {
+    pub fn uuid(&self) -> std::option::Option<&str> {
         self.uuid.as_deref()
     }
 }
@@ -131,7 +137,8 @@ pub struct ComputeEnvironmentDetailBuilder {
     pub(crate) compute_environment_arn: std::option::Option<std::string::String>,
     pub(crate) unmanagedv_cpus: std::option::Option<i32>,
     pub(crate) ecs_cluster_arn: std::option::Option<std::string::String>,
-    pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub(crate) tags:
+        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     pub(crate) r#type: std::option::Option<crate::types::CeType>,
     pub(crate) state: std::option::Option<crate::types::CeState>,
     pub(crate) status: std::option::Option<crate::types::CeStatus>,
@@ -150,8 +157,12 @@ impl ComputeEnvironmentDetailBuilder {
         self
     }
     /// <p>The name of the compute environment. It can be up to 128 characters long. It can contain uppercase and lowercase letters, numbers, hyphens (-), and underscores (_).</p>
-    pub fn set_compute_environment_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.compute_environment_name = input; self
+    pub fn set_compute_environment_name(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.compute_environment_name = input;
+        self
     }
     /// <p>The Amazon Resource Name (ARN) of the compute environment.</p>
     pub fn compute_environment_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -159,8 +170,12 @@ impl ComputeEnvironmentDetailBuilder {
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the compute environment.</p>
-    pub fn set_compute_environment_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.compute_environment_arn = input; self
+    pub fn set_compute_environment_arn(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.compute_environment_arn = input;
+        self
     }
     /// <p>The maximum number of VCPUs expected to be used for an unmanaged compute environment.</p>
     pub fn unmanagedv_cpus(mut self, input: i32) -> Self {
@@ -169,7 +184,8 @@ impl ComputeEnvironmentDetailBuilder {
     }
     /// <p>The maximum number of VCPUs expected to be used for an unmanaged compute environment.</p>
     pub fn set_unmanagedv_cpus(mut self, input: std::option::Option<i32>) -> Self {
-        self.unmanagedv_cpus = input; self
+        self.unmanagedv_cpus = input;
+        self
     }
     /// <p>The Amazon Resource Name (ARN) of the underlying Amazon ECS cluster that the compute environment uses.</p>
     pub fn ecs_cluster_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -178,22 +194,33 @@ impl ComputeEnvironmentDetailBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the underlying Amazon ECS cluster that the compute environment uses.</p>
     pub fn set_ecs_cluster_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.ecs_cluster_arn = input; self
+        self.ecs_cluster_arn = input;
+        self
     }
     /// Adds a key-value pair to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// <p>The tags applied to the compute environment.</p>
-    pub fn tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
+    pub fn tags(
+        mut self,
+        k: impl Into<std::string::String>,
+        v: impl Into<std::string::String>,
+    ) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
-                        hash_map.insert(k.into(), v.into());
-                        self.tags = Some(hash_map);
-                        self
+        hash_map.insert(k.into(), v.into());
+        self.tags = Some(hash_map);
+        self
     }
     /// <p>The tags applied to the compute environment.</p>
-    pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
-        self.tags = input; self
+    pub fn set_tags(
+        mut self,
+        input: std::option::Option<
+            std::collections::HashMap<std::string::String, std::string::String>,
+        >,
+    ) -> Self {
+        self.tags = input;
+        self
     }
     /// <p>The type of the compute environment: <code>MANAGED</code> or <code>UNMANAGED</code>. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/compute_environments.html">Compute environments</a> in the <i>Batch User Guide</i>.</p>
     pub fn r#type(mut self, input: crate::types::CeType) -> Self {
@@ -202,20 +229,22 @@ impl ComputeEnvironmentDetailBuilder {
     }
     /// <p>The type of the compute environment: <code>MANAGED</code> or <code>UNMANAGED</code>. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/compute_environments.html">Compute environments</a> in the <i>Batch User Guide</i>.</p>
     pub fn set_type(mut self, input: std::option::Option<crate::types::CeType>) -> Self {
-        self.r#type = input; self
+        self.r#type = input;
+        self
     }
-    /// <p>The state of the compute environment. The valid values are <code>ENABLED</code> or <code>DISABLED</code>.</p> 
-    /// <p>If the state is <code>ENABLED</code>, then the Batch scheduler can attempt to place jobs from an associated job queue on the compute resources within the environment. If the compute environment is managed, then it can scale its instances out or in automatically based on the job queue demand.</p> 
+    /// <p>The state of the compute environment. The valid values are <code>ENABLED</code> or <code>DISABLED</code>.</p>
+    /// <p>If the state is <code>ENABLED</code>, then the Batch scheduler can attempt to place jobs from an associated job queue on the compute resources within the environment. If the compute environment is managed, then it can scale its instances out or in automatically based on the job queue demand.</p>
     /// <p>If the state is <code>DISABLED</code>, then the Batch scheduler doesn't attempt to place jobs within the environment. Jobs in a <code>STARTING</code> or <code>RUNNING</code> state continue to progress normally. Managed compute environments in the <code>DISABLED</code> state don't scale out. However, they scale in to <code>minvCpus</code> value after instances become idle.</p>
     pub fn state(mut self, input: crate::types::CeState) -> Self {
         self.state = Some(input);
         self
     }
-    /// <p>The state of the compute environment. The valid values are <code>ENABLED</code> or <code>DISABLED</code>.</p> 
-    /// <p>If the state is <code>ENABLED</code>, then the Batch scheduler can attempt to place jobs from an associated job queue on the compute resources within the environment. If the compute environment is managed, then it can scale its instances out or in automatically based on the job queue demand.</p> 
+    /// <p>The state of the compute environment. The valid values are <code>ENABLED</code> or <code>DISABLED</code>.</p>
+    /// <p>If the state is <code>ENABLED</code>, then the Batch scheduler can attempt to place jobs from an associated job queue on the compute resources within the environment. If the compute environment is managed, then it can scale its instances out or in automatically based on the job queue demand.</p>
     /// <p>If the state is <code>DISABLED</code>, then the Batch scheduler doesn't attempt to place jobs within the environment. Jobs in a <code>STARTING</code> or <code>RUNNING</code> state continue to progress normally. Managed compute environments in the <code>DISABLED</code> state don't scale out. However, they scale in to <code>minvCpus</code> value after instances become idle.</p>
     pub fn set_state(mut self, input: std::option::Option<crate::types::CeState>) -> Self {
-        self.state = input; self
+        self.state = input;
+        self
     }
     /// <p>The current status of the compute environment (for example, <code>CREATING</code> or <code>VALID</code>).</p>
     pub fn status(mut self, input: crate::types::CeStatus) -> Self {
@@ -224,7 +253,8 @@ impl ComputeEnvironmentDetailBuilder {
     }
     /// <p>The current status of the compute environment (for example, <code>CREATING</code> or <code>VALID</code>).</p>
     pub fn set_status(mut self, input: std::option::Option<crate::types::CeStatus>) -> Self {
-        self.status = input; self
+        self.status = input;
+        self
     }
     /// <p>A short, human-readable string to provide additional details for the current status of the compute environment.</p>
     pub fn status_reason(mut self, input: impl Into<std::string::String>) -> Self {
@@ -233,7 +263,8 @@ impl ComputeEnvironmentDetailBuilder {
     }
     /// <p>A short, human-readable string to provide additional details for the current status of the compute environment.</p>
     pub fn set_status_reason(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.status_reason = input; self
+        self.status_reason = input;
+        self
     }
     /// <p>The compute resources defined for the compute environment. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/compute_environments.html">Compute environments</a> in the <i>Batch User Guide</i>.</p>
     pub fn compute_resources(mut self, input: crate::types::ComputeResource) -> Self {
@@ -241,8 +272,12 @@ impl ComputeEnvironmentDetailBuilder {
         self
     }
     /// <p>The compute resources defined for the compute environment. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/compute_environments.html">Compute environments</a> in the <i>Batch User Guide</i>.</p>
-    pub fn set_compute_resources(mut self, input: std::option::Option<crate::types::ComputeResource>) -> Self {
-        self.compute_resources = input; self
+    pub fn set_compute_resources(
+        mut self,
+        input: std::option::Option<crate::types::ComputeResource>,
+    ) -> Self {
+        self.compute_resources = input;
+        self
     }
     /// <p>The service role that's associated with the compute environment that allows Batch to make calls to Amazon Web Services API operations on your behalf. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/service_IAM_role.html">Batch service IAM role</a> in the <i>Batch User Guide</i>.</p>
     pub fn service_role(mut self, input: impl Into<std::string::String>) -> Self {
@@ -251,7 +286,8 @@ impl ComputeEnvironmentDetailBuilder {
     }
     /// <p>The service role that's associated with the compute environment that allows Batch to make calls to Amazon Web Services API operations on your behalf. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/service_IAM_role.html">Batch service IAM role</a> in the <i>Batch User Guide</i>.</p>
     pub fn set_service_role(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.service_role = input; self
+        self.service_role = input;
+        self
     }
     /// <p>Specifies the infrastructure update policy for the compute environment. For more information about infrastructure updates, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/updating-compute-environments.html">Updating compute environments</a> in the <i>Batch User Guide</i>.</p>
     pub fn update_policy(mut self, input: crate::types::UpdatePolicy) -> Self {
@@ -259,8 +295,12 @@ impl ComputeEnvironmentDetailBuilder {
         self
     }
     /// <p>Specifies the infrastructure update policy for the compute environment. For more information about infrastructure updates, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/updating-compute-environments.html">Updating compute environments</a> in the <i>Batch User Guide</i>.</p>
-    pub fn set_update_policy(mut self, input: std::option::Option<crate::types::UpdatePolicy>) -> Self {
-        self.update_policy = input; self
+    pub fn set_update_policy(
+        mut self,
+        input: std::option::Option<crate::types::UpdatePolicy>,
+    ) -> Self {
+        self.update_policy = input;
+        self
     }
     /// <p>The configuration for the Amazon EKS cluster that supports the Batch compute environment. Only specify this parameter if the <code>containerOrchestrationType</code> is <code>EKS</code>.</p>
     pub fn eks_configuration(mut self, input: crate::types::EksConfiguration) -> Self {
@@ -268,8 +308,12 @@ impl ComputeEnvironmentDetailBuilder {
         self
     }
     /// <p>The configuration for the Amazon EKS cluster that supports the Batch compute environment. Only specify this parameter if the <code>containerOrchestrationType</code> is <code>EKS</code>.</p>
-    pub fn set_eks_configuration(mut self, input: std::option::Option<crate::types::EksConfiguration>) -> Self {
-        self.eks_configuration = input; self
+    pub fn set_eks_configuration(
+        mut self,
+        input: std::option::Option<crate::types::EksConfiguration>,
+    ) -> Self {
+        self.eks_configuration = input;
+        self
     }
     /// <p>The orchestration type of the compute environment. The valid values are <code>ECS</code> (default) or <code>EKS</code>.</p>
     pub fn container_orchestration_type(mut self, input: crate::types::OrchestrationType) -> Self {
@@ -277,8 +321,12 @@ impl ComputeEnvironmentDetailBuilder {
         self
     }
     /// <p>The orchestration type of the compute environment. The valid values are <code>ECS</code> (default) or <code>EKS</code>.</p>
-    pub fn set_container_orchestration_type(mut self, input: std::option::Option<crate::types::OrchestrationType>) -> Self {
-        self.container_orchestration_type = input; self
+    pub fn set_container_orchestration_type(
+        mut self,
+        input: std::option::Option<crate::types::OrchestrationType>,
+    ) -> Self {
+        self.container_orchestration_type = input;
+        self
     }
     /// <p>Unique identifier for the compute environment.</p>
     pub fn uuid(mut self, input: impl Into<std::string::String>) -> Self {
@@ -287,42 +335,27 @@ impl ComputeEnvironmentDetailBuilder {
     }
     /// <p>Unique identifier for the compute environment.</p>
     pub fn set_uuid(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.uuid = input; self
+        self.uuid = input;
+        self
     }
     /// Consumes the builder and constructs a [`ComputeEnvironmentDetail`](crate::types::ComputeEnvironmentDetail).
     pub fn build(self) -> crate::types::ComputeEnvironmentDetail {
         crate::types::ComputeEnvironmentDetail {
-            compute_environment_name: self.compute_environment_name
-            ,
-            compute_environment_arn: self.compute_environment_arn
-            ,
-            unmanagedv_cpus: self.unmanagedv_cpus
-            ,
-            ecs_cluster_arn: self.ecs_cluster_arn
-            ,
-            tags: self.tags
-            ,
-            r#type: self.r#type
-            ,
-            state: self.state
-            ,
-            status: self.status
-            ,
-            status_reason: self.status_reason
-            ,
-            compute_resources: self.compute_resources
-            ,
-            service_role: self.service_role
-            ,
-            update_policy: self.update_policy
-            ,
-            eks_configuration: self.eks_configuration
-            ,
-            container_orchestration_type: self.container_orchestration_type
-            ,
-            uuid: self.uuid
-            ,
+            compute_environment_name: self.compute_environment_name,
+            compute_environment_arn: self.compute_environment_arn,
+            unmanagedv_cpus: self.unmanagedv_cpus,
+            ecs_cluster_arn: self.ecs_cluster_arn,
+            tags: self.tags,
+            r#type: self.r#type,
+            state: self.state,
+            status: self.status,
+            status_reason: self.status_reason,
+            compute_resources: self.compute_resources,
+            service_role: self.service_role,
+            update_policy: self.update_policy,
+            eks_configuration: self.eks_configuration,
+            container_orchestration_type: self.container_orchestration_type,
+            uuid: self.uuid,
         }
     }
 }
-

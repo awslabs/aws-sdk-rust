@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateOrganizationInput  {
+pub struct CreateOrganizationInput {
     /// <p>The AWS Directory Service directory ID.</p>
     #[doc(hidden)]
     pub directory_id: std::option::Option<std::string::String>,
@@ -24,23 +24,23 @@ pub struct CreateOrganizationInput  {
 }
 impl CreateOrganizationInput {
     /// <p>The AWS Directory Service directory ID.</p>
-    pub fn directory_id(&self) -> std::option::Option<& str> {
+    pub fn directory_id(&self) -> std::option::Option<&str> {
         self.directory_id.as_deref()
     }
     /// <p>The organization alias.</p>
-    pub fn alias(&self) -> std::option::Option<& str> {
+    pub fn alias(&self) -> std::option::Option<&str> {
         self.alias.as_deref()
     }
     /// <p>The idempotency token associated with the request.</p>
-    pub fn client_token(&self) -> std::option::Option<& str> {
+    pub fn client_token(&self) -> std::option::Option<&str> {
         self.client_token.as_deref()
     }
     /// <p>The email domains to associate with the organization.</p>
-    pub fn domains(&self) -> std::option::Option<& [crate::types::Domain]> {
+    pub fn domains(&self) -> std::option::Option<&[crate::types::Domain]> {
         self.domains.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of a customer managed key from AWS KMS.</p>
-    pub fn kms_key_arn(&self) -> std::option::Option<& str> {
+    pub fn kms_key_arn(&self) -> std::option::Option<&str> {
         self.kms_key_arn.as_deref()
     }
     /// <p>When <code>true</code>, allows organization interoperability between WorkMail and Microsoft Exchange. If <code>true</code>, you must include a AD Connector directory ID in the request.</p>
@@ -50,7 +50,8 @@ impl CreateOrganizationInput {
 }
 impl CreateOrganizationInput {
     /// Creates a new builder-style object to manufacture [`CreateOrganizationInput`](crate::operation::create_organization::CreateOrganizationInput).
-    pub fn builder() -> crate::operation::create_organization::builders::CreateOrganizationInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::create_organization::builders::CreateOrganizationInputBuilder {
         crate::operation::create_organization::builders::CreateOrganizationInputBuilder::default()
     }
 }
@@ -74,7 +75,8 @@ impl CreateOrganizationInputBuilder {
     }
     /// <p>The AWS Directory Service directory ID.</p>
     pub fn set_directory_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.directory_id = input; self
+        self.directory_id = input;
+        self
     }
     /// <p>The organization alias.</p>
     pub fn alias(mut self, input: impl Into<std::string::String>) -> Self {
@@ -83,7 +85,8 @@ impl CreateOrganizationInputBuilder {
     }
     /// <p>The organization alias.</p>
     pub fn set_alias(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.alias = input; self
+        self.alias = input;
+        self
     }
     /// <p>The idempotency token associated with the request.</p>
     pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -92,7 +95,8 @@ impl CreateOrganizationInputBuilder {
     }
     /// <p>The idempotency token associated with the request.</p>
     pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.client_token = input; self
+        self.client_token = input;
+        self
     }
     /// Appends an item to `domains`.
     ///
@@ -101,13 +105,17 @@ impl CreateOrganizationInputBuilder {
     /// <p>The email domains to associate with the organization.</p>
     pub fn domains(mut self, input: crate::types::Domain) -> Self {
         let mut v = self.domains.unwrap_or_default();
-                        v.push(input);
-                        self.domains = Some(v);
-                        self
+        v.push(input);
+        self.domains = Some(v);
+        self
     }
     /// <p>The email domains to associate with the organization.</p>
-    pub fn set_domains(mut self, input: std::option::Option<std::vec::Vec<crate::types::Domain>>) -> Self {
-        self.domains = input; self
+    pub fn set_domains(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::Domain>>,
+    ) -> Self {
+        self.domains = input;
+        self
     }
     /// <p>The Amazon Resource Name (ARN) of a customer managed key from AWS KMS.</p>
     pub fn kms_key_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -116,7 +124,8 @@ impl CreateOrganizationInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of a customer managed key from AWS KMS.</p>
     pub fn set_kms_key_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.kms_key_arn = input; self
+        self.kms_key_arn = input;
+        self
     }
     /// <p>When <code>true</code>, allows organization interoperability between WorkMail and Microsoft Exchange. If <code>true</code>, you must include a AD Connector directory ID in the request.</p>
     pub fn enable_interoperability(mut self, input: bool) -> Self {
@@ -125,27 +134,25 @@ impl CreateOrganizationInputBuilder {
     }
     /// <p>When <code>true</code>, allows organization interoperability between WorkMail and Microsoft Exchange. If <code>true</code>, you must include a AD Connector directory ID in the request.</p>
     pub fn set_enable_interoperability(mut self, input: std::option::Option<bool>) -> Self {
-        self.enable_interoperability = input; self
+        self.enable_interoperability = input;
+        self
     }
     /// Consumes the builder and constructs a [`CreateOrganizationInput`](crate::operation::create_organization::CreateOrganizationInput).
-    pub fn build(self) -> Result<crate::operation::create_organization::CreateOrganizationInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::create_organization::CreateOrganizationInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::create_organization::CreateOrganizationInput {
-                directory_id: self.directory_id
-                ,
-                alias: self.alias
-                ,
-                client_token: self.client_token
-                ,
-                domains: self.domains
-                ,
-                kms_key_arn: self.kms_key_arn
-                ,
-                enable_interoperability: self.enable_interoperability
-                    .unwrap_or_default()
-                ,
-            }
+                directory_id: self.directory_id,
+                alias: self.alias,
+                client_token: self.client_token,
+                domains: self.domains,
+                kms_key_arn: self.kms_key_arn,
+                enable_interoperability: self.enable_interoperability.unwrap_or_default(),
+            },
         )
     }
 }
-

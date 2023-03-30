@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListPhiDetectionJobsInput  {
+pub struct ListPhiDetectionJobsInput {
     /// <p>Filters the jobs that are returned. You can filter jobs based on their names, status, or the date and time that they were submitted. You can only set one filter at a time.</p>
     #[doc(hidden)]
     pub filter: std::option::Option<crate::types::ComprehendMedicalAsyncJobFilter>,
@@ -15,11 +15,11 @@ pub struct ListPhiDetectionJobsInput  {
 }
 impl ListPhiDetectionJobsInput {
     /// <p>Filters the jobs that are returned. You can filter jobs based on their names, status, or the date and time that they were submitted. You can only set one filter at a time.</p>
-    pub fn filter(&self) -> std::option::Option<& crate::types::ComprehendMedicalAsyncJobFilter> {
+    pub fn filter(&self) -> std::option::Option<&crate::types::ComprehendMedicalAsyncJobFilter> {
         self.filter.as_ref()
     }
     /// <p>Identifies the next page of results to return.</p>
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
     /// <p>The maximum number of results to return in each page. The default is 100.</p>
@@ -29,7 +29,8 @@ impl ListPhiDetectionJobsInput {
 }
 impl ListPhiDetectionJobsInput {
     /// Creates a new builder-style object to manufacture [`ListPhiDetectionJobsInput`](crate::operation::list_phi_detection_jobs::ListPhiDetectionJobsInput).
-    pub fn builder() -> crate::operation::list_phi_detection_jobs::builders::ListPhiDetectionJobsInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::list_phi_detection_jobs::builders::ListPhiDetectionJobsInputBuilder {
         crate::operation::list_phi_detection_jobs::builders::ListPhiDetectionJobsInputBuilder::default()
     }
 }
@@ -49,8 +50,12 @@ impl ListPhiDetectionJobsInputBuilder {
         self
     }
     /// <p>Filters the jobs that are returned. You can filter jobs based on their names, status, or the date and time that they were submitted. You can only set one filter at a time.</p>
-    pub fn set_filter(mut self, input: std::option::Option<crate::types::ComprehendMedicalAsyncJobFilter>) -> Self {
-        self.filter = input; self
+    pub fn set_filter(
+        mut self,
+        input: std::option::Option<crate::types::ComprehendMedicalAsyncJobFilter>,
+    ) -> Self {
+        self.filter = input;
+        self
     }
     /// <p>Identifies the next page of results to return.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -59,7 +64,8 @@ impl ListPhiDetectionJobsInputBuilder {
     }
     /// <p>Identifies the next page of results to return.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input; self
+        self.next_token = input;
+        self
     }
     /// <p>The maximum number of results to return in each page. The default is 100.</p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -68,20 +74,22 @@ impl ListPhiDetectionJobsInputBuilder {
     }
     /// <p>The maximum number of results to return in each page. The default is 100.</p>
     pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_results = input; self
+        self.max_results = input;
+        self
     }
     /// Consumes the builder and constructs a [`ListPhiDetectionJobsInput`](crate::operation::list_phi_detection_jobs::ListPhiDetectionJobsInput).
-    pub fn build(self) -> Result<crate::operation::list_phi_detection_jobs::ListPhiDetectionJobsInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::list_phi_detection_jobs::ListPhiDetectionJobsInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::list_phi_detection_jobs::ListPhiDetectionJobsInput {
-                filter: self.filter
-                ,
-                next_token: self.next_token
-                ,
-                max_results: self.max_results
-                ,
-            }
+                filter: self.filter,
+                next_token: self.next_token,
+                max_results: self.max_results,
+            },
         )
     }
 }
-

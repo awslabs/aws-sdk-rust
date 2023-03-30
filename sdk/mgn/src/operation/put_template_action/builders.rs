@@ -4,56 +4,84 @@ pub use crate::operation::put_template_action::_put_template_action_output::PutT
 pub use crate::operation::put_template_action::_put_template_action_input::PutTemplateActionInputBuilder;
 
 /// Fluent builder constructing a request to `PutTemplateAction`.
-/// 
+///
 /// <p>Put template post migration custom action.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct PutTemplateActionFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::put_template_action::builders::PutTemplateActionInputBuilder
-            }
-impl PutTemplateActionFluentBuilder  {
+    handle: std::sync::Arc<crate::client::Handle>,
+    inner: crate::operation::put_template_action::builders::PutTemplateActionInputBuilder,
+}
+impl PutTemplateActionFluentBuilder {
     /// Creates a new `PutTemplateAction`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
-                    /// sent. The operation's inner [http::Request] can be modified as well.
-                    pub async fn customize(self) -> std::result::Result<
-                        crate::client::customize::CustomizableOperation<crate::operation::put_template_action::PutTemplateAction, aws_http::retry::AwsResponseRetryClassifier,>,
-                        aws_smithy_http::result::SdkError<crate::operation::put_template_action::PutTemplateActionError>
-                    >  {
-                        let handle = self.handle.clone();
-                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-                    }
-    
-                    /// Sends the request and returns the response.
-                    ///
-                    /// If an error occurs, an `SdkError` will be returned with additional details that
-                    /// can be matched against.
-                    ///
-                    /// By default, any retryable failures will be retried twice. Retry behavior
-                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                    /// set when configuring the client.
-                    pub async fn send(self) -> std::result::Result<crate::operation::put_template_action::PutTemplateActionOutput, aws_smithy_http::result::SdkError<crate::operation::put_template_action::PutTemplateActionError>>
-                     {
-                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&self.handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        self.handle.client.call(op).await
-                    }
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle,
+            inner: Default::default(),
+        }
+    }
+
+    /// Consume this builder, creating a customizable operation that can be modified before being
+    /// sent. The operation's inner [http::Request] can be modified as well.
+    pub async fn customize(
+        self,
+    ) -> std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::put_template_action::PutTemplateAction,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::result::SdkError<
+            crate::operation::put_template_action::PutTemplateActionError,
+        >,
+    > {
+        let handle = self.handle.clone();
+        let operation = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+    }
+
+    /// Sends the request and returns the response.
+    ///
+    /// If an error occurs, an `SdkError` will be returned with additional details that
+    /// can be matched against.
+    ///
+    /// By default, any retryable failures will be retried twice. Retry behavior
+    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+    /// set when configuring the client.
+    pub async fn send(
+        self,
+    ) -> std::result::Result<
+        crate::operation::put_template_action::PutTemplateActionOutput,
+        aws_smithy_http::result::SdkError<
+            crate::operation::put_template_action::PutTemplateActionError,
+        >,
+    > {
+        let op = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&self.handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        self.handle.client.call(op).await
+    }
     /// <p>Launch configuration template ID.</p>
-    pub fn launch_configuration_template_id(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn launch_configuration_template_id(
+        mut self,
+        input: impl Into<std::string::String>,
+    ) -> Self {
         self.inner = self.inner.launch_configuration_template_id(input.into());
         self
     }
     /// <p>Launch configuration template ID.</p>
-    pub fn set_launch_configuration_template_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_launch_configuration_template_id(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_launch_configuration_template_id(input);
         self
     }
@@ -73,7 +101,10 @@ impl PutTemplateActionFluentBuilder  {
         self
     }
     /// <p>Template post migration custom action document identifier.</p>
-    pub fn set_document_identifier(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_document_identifier(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_document_identifier(input);
         self
     }
@@ -142,12 +173,24 @@ impl PutTemplateActionFluentBuilder  {
     /// To override the contents of this collection use [`set_parameters`](Self::set_parameters).
     ///
     /// <p>Template post migration custom action parameters.</p>
-    pub fn parameters(mut self, k: impl Into<std::string::String>, v: std::vec::Vec<crate::types::SsmParameterStoreParameter>) -> Self {
+    pub fn parameters(
+        mut self,
+        k: impl Into<std::string::String>,
+        v: std::vec::Vec<crate::types::SsmParameterStoreParameter>,
+    ) -> Self {
         self.inner = self.inner.parameters(k.into(), v);
         self
     }
     /// <p>Template post migration custom action parameters.</p>
-    pub fn set_parameters(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::vec::Vec<crate::types::SsmParameterStoreParameter>>>) -> Self {
+    pub fn set_parameters(
+        mut self,
+        input: std::option::Option<
+            std::collections::HashMap<
+                std::string::String,
+                std::vec::Vec<crate::types::SsmParameterStoreParameter>,
+            >,
+        >,
+    ) -> Self {
         self.inner = self.inner.set_parameters(input);
         self
     }
@@ -162,4 +205,3 @@ impl PutTemplateActionFluentBuilder  {
         self
     }
 }
-

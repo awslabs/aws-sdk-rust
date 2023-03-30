@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListBatchJobDefinitionsInput  {
+pub struct ListBatchJobDefinitionsInput {
     /// <p>A pagination token returned from a previous call to this operation. This specifies the next item to return. To return to the beginning of the list, exclude this parameter.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
@@ -18,7 +18,7 @@ pub struct ListBatchJobDefinitionsInput  {
 }
 impl ListBatchJobDefinitionsInput {
     /// <p>A pagination token returned from a previous call to this operation. This specifies the next item to return. To return to the beginning of the list, exclude this parameter.</p>
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
     /// <p>The maximum number of batch job definitions to return.</p>
@@ -26,17 +26,19 @@ impl ListBatchJobDefinitionsInput {
         self.max_results
     }
     /// <p>The identifier of the application.</p>
-    pub fn application_id(&self) -> std::option::Option<& str> {
+    pub fn application_id(&self) -> std::option::Option<&str> {
         self.application_id.as_deref()
     }
     /// <p>If the batch job definition is a FileBatchJobDefinition, the prefix allows you to search on the file names of FileBatchJobDefinitions.</p>
-    pub fn prefix(&self) -> std::option::Option<& str> {
+    pub fn prefix(&self) -> std::option::Option<&str> {
         self.prefix.as_deref()
     }
 }
 impl ListBatchJobDefinitionsInput {
     /// Creates a new builder-style object to manufacture [`ListBatchJobDefinitionsInput`](crate::operation::list_batch_job_definitions::ListBatchJobDefinitionsInput).
-    pub fn builder() -> crate::operation::list_batch_job_definitions::builders::ListBatchJobDefinitionsInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::list_batch_job_definitions::builders::ListBatchJobDefinitionsInputBuilder
+    {
         crate::operation::list_batch_job_definitions::builders::ListBatchJobDefinitionsInputBuilder::default()
     }
 }
@@ -58,7 +60,8 @@ impl ListBatchJobDefinitionsInputBuilder {
     }
     /// <p>A pagination token returned from a previous call to this operation. This specifies the next item to return. To return to the beginning of the list, exclude this parameter.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input; self
+        self.next_token = input;
+        self
     }
     /// <p>The maximum number of batch job definitions to return.</p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -67,7 +70,8 @@ impl ListBatchJobDefinitionsInputBuilder {
     }
     /// <p>The maximum number of batch job definitions to return.</p>
     pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_results = input; self
+        self.max_results = input;
+        self
     }
     /// <p>The identifier of the application.</p>
     pub fn application_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -76,7 +80,8 @@ impl ListBatchJobDefinitionsInputBuilder {
     }
     /// <p>The identifier of the application.</p>
     pub fn set_application_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.application_id = input; self
+        self.application_id = input;
+        self
     }
     /// <p>If the batch job definition is a FileBatchJobDefinition, the prefix allows you to search on the file names of FileBatchJobDefinitions.</p>
     pub fn prefix(mut self, input: impl Into<std::string::String>) -> Self {
@@ -85,22 +90,23 @@ impl ListBatchJobDefinitionsInputBuilder {
     }
     /// <p>If the batch job definition is a FileBatchJobDefinition, the prefix allows you to search on the file names of FileBatchJobDefinitions.</p>
     pub fn set_prefix(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.prefix = input; self
+        self.prefix = input;
+        self
     }
     /// Consumes the builder and constructs a [`ListBatchJobDefinitionsInput`](crate::operation::list_batch_job_definitions::ListBatchJobDefinitionsInput).
-    pub fn build(self) -> Result<crate::operation::list_batch_job_definitions::ListBatchJobDefinitionsInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::list_batch_job_definitions::ListBatchJobDefinitionsInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::list_batch_job_definitions::ListBatchJobDefinitionsInput {
-                next_token: self.next_token
-                ,
-                max_results: self.max_results
-                ,
-                application_id: self.application_id
-                ,
-                prefix: self.prefix
-                ,
-            }
+                next_token: self.next_token,
+                max_results: self.max_results,
+                application_id: self.application_id,
+                prefix: self.prefix,
+            },
         )
     }
 }
-

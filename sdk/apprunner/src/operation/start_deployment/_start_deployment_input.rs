@@ -2,14 +2,14 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct StartDeploymentInput  {
+pub struct StartDeploymentInput {
     /// <p>The Amazon Resource Name (ARN) of the App Runner service that you want to manually deploy to.</p>
     #[doc(hidden)]
     pub service_arn: std::option::Option<std::string::String>,
 }
 impl StartDeploymentInput {
     /// <p>The Amazon Resource Name (ARN) of the App Runner service that you want to manually deploy to.</p>
-    pub fn service_arn(&self) -> std::option::Option<& str> {
+    pub fn service_arn(&self) -> std::option::Option<&str> {
         self.service_arn.as_deref()
     }
 }
@@ -34,16 +34,18 @@ impl StartDeploymentInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the App Runner service that you want to manually deploy to.</p>
     pub fn set_service_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.service_arn = input; self
+        self.service_arn = input;
+        self
     }
     /// Consumes the builder and constructs a [`StartDeploymentInput`](crate::operation::start_deployment::StartDeploymentInput).
-    pub fn build(self) -> Result<crate::operation::start_deployment::StartDeploymentInput, aws_smithy_http::operation::error::BuildError> {
-        Ok(
-            crate::operation::start_deployment::StartDeploymentInput {
-                service_arn: self.service_arn
-                ,
-            }
-        )
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::start_deployment::StartDeploymentInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        Ok(crate::operation::start_deployment::StartDeploymentInput {
+            service_arn: self.service_arn,
+        })
     }
 }
-

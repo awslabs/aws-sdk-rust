@@ -2,20 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeEdgePackagingJobInput  {
+pub struct DescribeEdgePackagingJobInput {
     /// <p>The name of the edge packaging job.</p>
     #[doc(hidden)]
     pub edge_packaging_job_name: std::option::Option<std::string::String>,
 }
 impl DescribeEdgePackagingJobInput {
     /// <p>The name of the edge packaging job.</p>
-    pub fn edge_packaging_job_name(&self) -> std::option::Option<& str> {
+    pub fn edge_packaging_job_name(&self) -> std::option::Option<&str> {
         self.edge_packaging_job_name.as_deref()
     }
 }
 impl DescribeEdgePackagingJobInput {
     /// Creates a new builder-style object to manufacture [`DescribeEdgePackagingJobInput`](crate::operation::describe_edge_packaging_job::DescribeEdgePackagingJobInput).
-    pub fn builder() -> crate::operation::describe_edge_packaging_job::builders::DescribeEdgePackagingJobInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::describe_edge_packaging_job::builders::DescribeEdgePackagingJobInputBuilder
+    {
         crate::operation::describe_edge_packaging_job::builders::DescribeEdgePackagingJobInputBuilder::default()
     }
 }
@@ -33,17 +35,24 @@ impl DescribeEdgePackagingJobInputBuilder {
         self
     }
     /// <p>The name of the edge packaging job.</p>
-    pub fn set_edge_packaging_job_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.edge_packaging_job_name = input; self
+    pub fn set_edge_packaging_job_name(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.edge_packaging_job_name = input;
+        self
     }
     /// Consumes the builder and constructs a [`DescribeEdgePackagingJobInput`](crate::operation::describe_edge_packaging_job::DescribeEdgePackagingJobInput).
-    pub fn build(self) -> Result<crate::operation::describe_edge_packaging_job::DescribeEdgePackagingJobInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::describe_edge_packaging_job::DescribeEdgePackagingJobInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::describe_edge_packaging_job::DescribeEdgePackagingJobInput {
-                edge_packaging_job_name: self.edge_packaging_job_name
-                ,
-            }
+                edge_packaging_job_name: self.edge_packaging_job_name,
+            },
         )
     }
 }
-

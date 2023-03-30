@@ -4,56 +4,77 @@ pub use crate::operation::update_channel::_update_channel_output::UpdateChannelO
 pub use crate::operation::update_channel::_update_channel_input::UpdateChannelInputBuilder;
 
 /// Fluent builder constructing a request to `UpdateChannel`.
-/// 
+///
 /// Updates a channel.
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct UpdateChannelFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::update_channel::builders::UpdateChannelInputBuilder
-            }
-impl UpdateChannelFluentBuilder  {
+    handle: std::sync::Arc<crate::client::Handle>,
+    inner: crate::operation::update_channel::builders::UpdateChannelInputBuilder,
+}
+impl UpdateChannelFluentBuilder {
     /// Creates a new `UpdateChannel`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
-                    /// sent. The operation's inner [http::Request] can be modified as well.
-                    pub async fn customize(self) -> std::result::Result<
-                        crate::client::customize::CustomizableOperation<crate::operation::update_channel::UpdateChannel, aws_http::retry::AwsResponseRetryClassifier,>,
-                        aws_smithy_http::result::SdkError<crate::operation::update_channel::UpdateChannelError>
-                    >  {
-                        let handle = self.handle.clone();
-                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-                    }
-    
-                    /// Sends the request and returns the response.
-                    ///
-                    /// If an error occurs, an `SdkError` will be returned with additional details that
-                    /// can be matched against.
-                    ///
-                    /// By default, any retryable failures will be retried twice. Retry behavior
-                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                    /// set when configuring the client.
-                    pub async fn send(self) -> std::result::Result<crate::operation::update_channel::UpdateChannelOutput, aws_smithy_http::result::SdkError<crate::operation::update_channel::UpdateChannelError>>
-                     {
-                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&self.handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        self.handle.client.call(op).await
-                    }
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle,
+            inner: Default::default(),
+        }
+    }
+
+    /// Consume this builder, creating a customizable operation that can be modified before being
+    /// sent. The operation's inner [http::Request] can be modified as well.
+    pub async fn customize(
+        self,
+    ) -> std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::update_channel::UpdateChannel,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::result::SdkError<crate::operation::update_channel::UpdateChannelError>,
+    > {
+        let handle = self.handle.clone();
+        let operation = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+    }
+
+    /// Sends the request and returns the response.
+    ///
+    /// If an error occurs, an `SdkError` will be returned with additional details that
+    /// can be matched against.
+    ///
+    /// By default, any retryable failures will be retried twice. Retry behavior
+    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+    /// set when configuring the client.
+    pub async fn send(
+        self,
+    ) -> std::result::Result<
+        crate::operation::update_channel::UpdateChannelOutput,
+        aws_smithy_http::result::SdkError<crate::operation::update_channel::UpdateChannelError>,
+    > {
+        let op = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&self.handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        self.handle.client.call(op).await
+    }
     /// Specification of CDI inputs for this channel
     pub fn cdi_input_specification(mut self, input: crate::types::CdiInputSpecification) -> Self {
         self.inner = self.inner.cdi_input_specification(input);
         self
     }
     /// Specification of CDI inputs for this channel
-    pub fn set_cdi_input_specification(mut self, input: std::option::Option<crate::types::CdiInputSpecification>) -> Self {
+    pub fn set_cdi_input_specification(
+        mut self,
+        input: std::option::Option<crate::types::CdiInputSpecification>,
+    ) -> Self {
         self.inner = self.inner.set_cdi_input_specification(input);
         self
     }
@@ -77,7 +98,10 @@ impl UpdateChannelFluentBuilder  {
         self
     }
     /// A list of output destinations for this channel.
-    pub fn set_destinations(mut self, input: std::option::Option<std::vec::Vec<crate::types::OutputDestination>>) -> Self {
+    pub fn set_destinations(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::OutputDestination>>,
+    ) -> Self {
         self.inner = self.inner.set_destinations(input);
         self
     }
@@ -87,7 +111,10 @@ impl UpdateChannelFluentBuilder  {
         self
     }
     /// The encoder settings for this channel.
-    pub fn set_encoder_settings(mut self, input: std::option::Option<crate::types::EncoderSettings>) -> Self {
+    pub fn set_encoder_settings(
+        mut self,
+        input: std::option::Option<crate::types::EncoderSettings>,
+    ) -> Self {
         self.inner = self.inner.set_encoder_settings(input);
         self
     }
@@ -101,7 +128,10 @@ impl UpdateChannelFluentBuilder  {
         self
     }
     /// Placeholder documentation for __listOfInputAttachment
-    pub fn set_input_attachments(mut self, input: std::option::Option<std::vec::Vec<crate::types::InputAttachment>>) -> Self {
+    pub fn set_input_attachments(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::InputAttachment>>,
+    ) -> Self {
         self.inner = self.inner.set_input_attachments(input);
         self
     }
@@ -111,7 +141,10 @@ impl UpdateChannelFluentBuilder  {
         self
     }
     /// Specification of network and file inputs for this channel
-    pub fn set_input_specification(mut self, input: std::option::Option<crate::types::InputSpecification>) -> Self {
+    pub fn set_input_specification(
+        mut self,
+        input: std::option::Option<crate::types::InputSpecification>,
+    ) -> Self {
         self.inner = self.inner.set_input_specification(input);
         self
     }
@@ -131,7 +164,10 @@ impl UpdateChannelFluentBuilder  {
         self
     }
     /// Maintenance settings for this channel.
-    pub fn set_maintenance(mut self, input: std::option::Option<crate::types::MaintenanceUpdateSettings>) -> Self {
+    pub fn set_maintenance(
+        mut self,
+        input: std::option::Option<crate::types::MaintenanceUpdateSettings>,
+    ) -> Self {
         self.inner = self.inner.set_maintenance(input);
         self
     }
@@ -156,4 +192,3 @@ impl UpdateChannelFluentBuilder  {
         self
     }
 }
-

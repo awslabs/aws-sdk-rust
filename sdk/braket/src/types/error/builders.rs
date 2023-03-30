@@ -16,4 +16,3 @@ pub use crate::types::error::_device_offline_exception::DeviceOfflineExceptionBu
 pub use crate::types::error::_resource_not_found_exception::ResourceNotFoundExceptionBuilder;
 
 pub use crate::types::error::_conflict_exception::ConflictExceptionBuilder;
-

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribePipelineDefinitionForExecutionOutput  {
+pub struct DescribePipelineDefinitionForExecutionOutput {
     /// <p>The JSON pipeline definition.</p>
     #[doc(hidden)]
     pub pipeline_definition: std::option::Option<std::string::String>,
@@ -13,22 +13,22 @@ pub struct DescribePipelineDefinitionForExecutionOutput  {
 }
 impl DescribePipelineDefinitionForExecutionOutput {
     /// <p>The JSON pipeline definition.</p>
-    pub fn pipeline_definition(&self) -> std::option::Option<& str> {
+    pub fn pipeline_definition(&self) -> std::option::Option<&str> {
         self.pipeline_definition.as_deref()
     }
     /// <p>The time when the pipeline was created.</p>
-    pub fn creation_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
+    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for DescribePipelineDefinitionForExecutionOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl DescribePipelineDefinitionForExecutionOutput {
     /// Creates a new builder-style object to manufacture [`DescribePipelineDefinitionForExecutionOutput`](crate::operation::describe_pipeline_definition_for_execution::DescribePipelineDefinitionForExecutionOutput).
-    pub fn builder() -> crate::operation::describe_pipeline_definition_for_execution::builders::DescribePipelineDefinitionForExecutionOutputBuilder {
+    pub fn builder() -> crate::operation::describe_pipeline_definition_for_execution::builders::DescribePipelineDefinitionForExecutionOutputBuilder{
         crate::operation::describe_pipeline_definition_for_execution::builders::DescribePipelineDefinitionForExecutionOutputBuilder::default()
     }
 }
@@ -48,8 +48,12 @@ impl DescribePipelineDefinitionForExecutionOutputBuilder {
         self
     }
     /// <p>The JSON pipeline definition.</p>
-    pub fn set_pipeline_definition(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.pipeline_definition = input; self
+    pub fn set_pipeline_definition(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.pipeline_definition = input;
+        self
     }
     /// <p>The time when the pipeline was created.</p>
     pub fn creation_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -57,20 +61,24 @@ impl DescribePipelineDefinitionForExecutionOutputBuilder {
         self
     }
     /// <p>The time when the pipeline was created.</p>
-    pub fn set_creation_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.creation_time = input; self
+    pub fn set_creation_time(
+        mut self,
+        input: std::option::Option<aws_smithy_types::DateTime>,
+    ) -> Self {
+        self.creation_time = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`DescribePipelineDefinitionForExecutionOutput`](crate::operation::describe_pipeline_definition_for_execution::DescribePipelineDefinitionForExecutionOutput).
-    pub fn build(self) -> crate::operation::describe_pipeline_definition_for_execution::DescribePipelineDefinitionForExecutionOutput {
+    pub fn build(self) -> crate::operation::describe_pipeline_definition_for_execution::DescribePipelineDefinitionForExecutionOutput{
         crate::operation::describe_pipeline_definition_for_execution::DescribePipelineDefinitionForExecutionOutput {
             pipeline_definition: self.pipeline_definition
             ,
@@ -80,4 +88,3 @@ impl DescribePipelineDefinitionForExecutionOutputBuilder {
         }
     }
 }
-

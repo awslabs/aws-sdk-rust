@@ -3,7 +3,7 @@
 /// <p>The communications returned by the <code>DescribeCommunications</code> operation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeCommunicationsOutput  {
+pub struct DescribeCommunicationsOutput {
     /// <p>The communications for the case.</p>
     #[doc(hidden)]
     pub communications: std::option::Option<std::vec::Vec<crate::types::Communication>>,
@@ -14,22 +14,24 @@ pub struct DescribeCommunicationsOutput  {
 }
 impl DescribeCommunicationsOutput {
     /// <p>The communications for the case.</p>
-    pub fn communications(&self) -> std::option::Option<& [crate::types::Communication]> {
+    pub fn communications(&self) -> std::option::Option<&[crate::types::Communication]> {
         self.communications.as_deref()
     }
     /// <p>A resumption point for pagination.</p>
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for DescribeCommunicationsOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl DescribeCommunicationsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeCommunicationsOutput`](crate::operation::describe_communications::DescribeCommunicationsOutput).
-    pub fn builder() -> crate::operation::describe_communications::builders::DescribeCommunicationsOutputBuilder {
+    pub fn builder(
+    ) -> crate::operation::describe_communications::builders::DescribeCommunicationsOutputBuilder
+    {
         crate::operation::describe_communications::builders::DescribeCommunicationsOutputBuilder::default()
     }
 }
@@ -50,13 +52,17 @@ impl DescribeCommunicationsOutputBuilder {
     /// <p>The communications for the case.</p>
     pub fn communications(mut self, input: crate::types::Communication) -> Self {
         let mut v = self.communications.unwrap_or_default();
-                        v.push(input);
-                        self.communications = Some(v);
-                        self
+        v.push(input);
+        self.communications = Some(v);
+        self
     }
     /// <p>The communications for the case.</p>
-    pub fn set_communications(mut self, input: std::option::Option<std::vec::Vec<crate::types::Communication>>) -> Self {
-        self.communications = input; self
+    pub fn set_communications(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::Communication>>,
+    ) -> Self {
+        self.communications = input;
+        self
     }
     /// <p>A resumption point for pagination.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -65,26 +71,24 @@ impl DescribeCommunicationsOutputBuilder {
     }
     /// <p>A resumption point for pagination.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input; self
+        self.next_token = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`DescribeCommunicationsOutput`](crate::operation::describe_communications::DescribeCommunicationsOutput).
     pub fn build(self) -> crate::operation::describe_communications::DescribeCommunicationsOutput {
         crate::operation::describe_communications::DescribeCommunicationsOutput {
-            communications: self.communications
-            ,
-            next_token: self.next_token
-            ,
+            communications: self.communications,
+            next_token: self.next_token,
             _request_id: self._request_id,
         }
     }
 }
-

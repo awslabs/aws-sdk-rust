@@ -3,12 +3,12 @@
 /// <p>Information about a cross-Region snapshot copy.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AwsRedshiftClusterClusterSnapshotCopyStatus  {
+pub struct AwsRedshiftClusterClusterSnapshotCopyStatus {
     /// <p>The destination Region that snapshots are automatically copied to when cross-Region snapshot copy is enabled.</p>
     #[doc(hidden)]
     pub destination_region: std::option::Option<std::string::String>,
-    /// <p>The number of days that manual snapshots are retained in the destination region after they are copied from a source region.</p> 
-    /// <p>If the value is <code>-1</code>, then the manual snapshot is retained indefinitely.</p> 
+    /// <p>The number of days that manual snapshots are retained in the destination region after they are copied from a source region.</p>
+    /// <p>If the value is <code>-1</code>, then the manual snapshot is retained indefinitely.</p>
     /// <p>Valid values: Either <code>-1</code> or an integer between 1 and 3,653</p>
     #[doc(hidden)]
     pub manual_snapshot_retention_period: i32,
@@ -21,11 +21,11 @@ pub struct AwsRedshiftClusterClusterSnapshotCopyStatus  {
 }
 impl AwsRedshiftClusterClusterSnapshotCopyStatus {
     /// <p>The destination Region that snapshots are automatically copied to when cross-Region snapshot copy is enabled.</p>
-    pub fn destination_region(&self) -> std::option::Option<& str> {
+    pub fn destination_region(&self) -> std::option::Option<&str> {
         self.destination_region.as_deref()
     }
-    /// <p>The number of days that manual snapshots are retained in the destination region after they are copied from a source region.</p> 
-    /// <p>If the value is <code>-1</code>, then the manual snapshot is retained indefinitely.</p> 
+    /// <p>The number of days that manual snapshots are retained in the destination region after they are copied from a source region.</p>
+    /// <p>If the value is <code>-1</code>, then the manual snapshot is retained indefinitely.</p>
     /// <p>Valid values: Either <code>-1</code> or an integer between 1 and 3,653</p>
     pub fn manual_snapshot_retention_period(&self) -> i32 {
         self.manual_snapshot_retention_period
@@ -35,7 +35,7 @@ impl AwsRedshiftClusterClusterSnapshotCopyStatus {
         self.retention_period
     }
     /// <p>The name of the snapshot copy grant.</p>
-    pub fn snapshot_copy_grant_name(&self) -> std::option::Option<& str> {
+    pub fn snapshot_copy_grant_name(&self) -> std::option::Option<&str> {
         self.snapshot_copy_grant_name.as_deref()
     }
 }
@@ -62,21 +62,26 @@ impl AwsRedshiftClusterClusterSnapshotCopyStatusBuilder {
         self
     }
     /// <p>The destination Region that snapshots are automatically copied to when cross-Region snapshot copy is enabled.</p>
-    pub fn set_destination_region(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.destination_region = input; self
+    pub fn set_destination_region(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.destination_region = input;
+        self
     }
-    /// <p>The number of days that manual snapshots are retained in the destination region after they are copied from a source region.</p> 
-    /// <p>If the value is <code>-1</code>, then the manual snapshot is retained indefinitely.</p> 
+    /// <p>The number of days that manual snapshots are retained in the destination region after they are copied from a source region.</p>
+    /// <p>If the value is <code>-1</code>, then the manual snapshot is retained indefinitely.</p>
     /// <p>Valid values: Either <code>-1</code> or an integer between 1 and 3,653</p>
     pub fn manual_snapshot_retention_period(mut self, input: i32) -> Self {
         self.manual_snapshot_retention_period = Some(input);
         self
     }
-    /// <p>The number of days that manual snapshots are retained in the destination region after they are copied from a source region.</p> 
-    /// <p>If the value is <code>-1</code>, then the manual snapshot is retained indefinitely.</p> 
+    /// <p>The number of days that manual snapshots are retained in the destination region after they are copied from a source region.</p>
+    /// <p>If the value is <code>-1</code>, then the manual snapshot is retained indefinitely.</p>
     /// <p>Valid values: Either <code>-1</code> or an integer between 1 and 3,653</p>
     pub fn set_manual_snapshot_retention_period(mut self, input: std::option::Option<i32>) -> Self {
-        self.manual_snapshot_retention_period = input; self
+        self.manual_snapshot_retention_period = input;
+        self
     }
     /// <p>The number of days to retain automated snapshots in the destination Region after they are copied from a source Region.</p>
     pub fn retention_period(mut self, input: i32) -> Self {
@@ -85,7 +90,8 @@ impl AwsRedshiftClusterClusterSnapshotCopyStatusBuilder {
     }
     /// <p>The number of days to retain automated snapshots in the destination Region after they are copied from a source Region.</p>
     pub fn set_retention_period(mut self, input: std::option::Option<i32>) -> Self {
-        self.retention_period = input; self
+        self.retention_period = input;
+        self
     }
     /// <p>The name of the snapshot copy grant.</p>
     pub fn snapshot_copy_grant_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -93,23 +99,22 @@ impl AwsRedshiftClusterClusterSnapshotCopyStatusBuilder {
         self
     }
     /// <p>The name of the snapshot copy grant.</p>
-    pub fn set_snapshot_copy_grant_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.snapshot_copy_grant_name = input; self
+    pub fn set_snapshot_copy_grant_name(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.snapshot_copy_grant_name = input;
+        self
     }
     /// Consumes the builder and constructs a [`AwsRedshiftClusterClusterSnapshotCopyStatus`](crate::types::AwsRedshiftClusterClusterSnapshotCopyStatus).
     pub fn build(self) -> crate::types::AwsRedshiftClusterClusterSnapshotCopyStatus {
         crate::types::AwsRedshiftClusterClusterSnapshotCopyStatus {
-            destination_region: self.destination_region
-            ,
-            manual_snapshot_retention_period: self.manual_snapshot_retention_period
-                .unwrap_or_default()
-            ,
-            retention_period: self.retention_period
-                .unwrap_or_default()
-            ,
-            snapshot_copy_grant_name: self.snapshot_copy_grant_name
-            ,
+            destination_region: self.destination_region,
+            manual_snapshot_retention_period: self
+                .manual_snapshot_retention_period
+                .unwrap_or_default(),
+            retention_period: self.retention_period.unwrap_or_default(),
+            snapshot_copy_grant_name: self.snapshot_copy_grant_name,
         }
     }
 }
-

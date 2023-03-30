@@ -2,14 +2,14 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AnalyzeIdInput  {
+pub struct AnalyzeIdInput {
     /// <p>The document being passed to AnalyzeID.</p>
     #[doc(hidden)]
     pub document_pages: std::option::Option<std::vec::Vec<crate::types::Document>>,
 }
 impl AnalyzeIdInput {
     /// <p>The document being passed to AnalyzeID.</p>
-    pub fn document_pages(&self) -> std::option::Option<& [crate::types::Document]> {
+    pub fn document_pages(&self) -> std::option::Option<&[crate::types::Document]> {
         self.document_pages.as_deref()
     }
 }
@@ -34,22 +34,27 @@ impl AnalyzeIdInputBuilder {
     /// <p>The document being passed to AnalyzeID.</p>
     pub fn document_pages(mut self, input: crate::types::Document) -> Self {
         let mut v = self.document_pages.unwrap_or_default();
-                        v.push(input);
-                        self.document_pages = Some(v);
-                        self
+        v.push(input);
+        self.document_pages = Some(v);
+        self
     }
     /// <p>The document being passed to AnalyzeID.</p>
-    pub fn set_document_pages(mut self, input: std::option::Option<std::vec::Vec<crate::types::Document>>) -> Self {
-        self.document_pages = input; self
+    pub fn set_document_pages(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::Document>>,
+    ) -> Self {
+        self.document_pages = input;
+        self
     }
     /// Consumes the builder and constructs a [`AnalyzeIdInput`](crate::operation::analyze_id::AnalyzeIdInput).
-    pub fn build(self) -> Result<crate::operation::analyze_id::AnalyzeIdInput, aws_smithy_http::operation::error::BuildError> {
-        Ok(
-            crate::operation::analyze_id::AnalyzeIdInput {
-                document_pages: self.document_pages
-                ,
-            }
-        )
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::analyze_id::AnalyzeIdInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        Ok(crate::operation::analyze_id::AnalyzeIdInput {
+            document_pages: self.document_pages,
+        })
     }
 }
-

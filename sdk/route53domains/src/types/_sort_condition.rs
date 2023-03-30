@@ -3,7 +3,7 @@
 /// <p>Information for sorting a list of domains.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SortCondition  {
+pub struct SortCondition {
     /// <p>Field to be used for sorting the list of domains. It can be either the name or the expiration for a domain. Note that if <code>filterCondition</code> is used in the same <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains__ListDomains.html">ListDomains</a> call, the field used for sorting has to be the same as the field used for filtering.</p>
     #[doc(hidden)]
     pub name: std::option::Option<crate::types::ListDomainsAttributeName>,
@@ -13,11 +13,11 @@ pub struct SortCondition  {
 }
 impl SortCondition {
     /// <p>Field to be used for sorting the list of domains. It can be either the name or the expiration for a domain. Note that if <code>filterCondition</code> is used in the same <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains__ListDomains.html">ListDomains</a> call, the field used for sorting has to be the same as the field used for filtering.</p>
-    pub fn name(&self) -> std::option::Option<& crate::types::ListDomainsAttributeName> {
+    pub fn name(&self) -> std::option::Option<&crate::types::ListDomainsAttributeName> {
         self.name.as_ref()
     }
     /// <p>The sort order for a list of domains. Either ascending (ASC) or descending (DES).</p>
-    pub fn sort_order(&self) -> std::option::Option<& crate::types::SortOrder> {
+    pub fn sort_order(&self) -> std::option::Option<&crate::types::SortOrder> {
         self.sort_order.as_ref()
     }
 }
@@ -42,8 +42,12 @@ impl SortConditionBuilder {
         self
     }
     /// <p>Field to be used for sorting the list of domains. It can be either the name or the expiration for a domain. Note that if <code>filterCondition</code> is used in the same <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains__ListDomains.html">ListDomains</a> call, the field used for sorting has to be the same as the field used for filtering.</p>
-    pub fn set_name(mut self, input: std::option::Option<crate::types::ListDomainsAttributeName>) -> Self {
-        self.name = input; self
+    pub fn set_name(
+        mut self,
+        input: std::option::Option<crate::types::ListDomainsAttributeName>,
+    ) -> Self {
+        self.name = input;
+        self
     }
     /// <p>The sort order for a list of domains. Either ascending (ASC) or descending (DES).</p>
     pub fn sort_order(mut self, input: crate::types::SortOrder) -> Self {
@@ -52,16 +56,14 @@ impl SortConditionBuilder {
     }
     /// <p>The sort order for a list of domains. Either ascending (ASC) or descending (DES).</p>
     pub fn set_sort_order(mut self, input: std::option::Option<crate::types::SortOrder>) -> Self {
-        self.sort_order = input; self
+        self.sort_order = input;
+        self
     }
     /// Consumes the builder and constructs a [`SortCondition`](crate::types::SortCondition).
     pub fn build(self) -> crate::types::SortCondition {
         crate::types::SortCondition {
-            name: self.name
-            ,
-            sort_order: self.sort_order
-            ,
+            name: self.name,
+            sort_order: self.sort_order,
         }
     }
 }
-

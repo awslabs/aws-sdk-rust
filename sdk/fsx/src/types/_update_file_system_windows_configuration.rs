@@ -3,7 +3,7 @@
 /// <p>Updates the configuration for an existing Amazon FSx for Windows File Server file system. Amazon FSx only overwrites existing properties with non-null values provided in the request.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateFileSystemWindowsConfiguration  {
+pub struct UpdateFileSystemWindowsConfiguration {
     /// <p>The preferred start time to perform weekly maintenance, formatted d:HH:MM in the UTC time zone. Where d is the weekday number, from 1 through 7, with 1 = Monday and 7 = Sunday.</p>
     #[doc(hidden)]
     pub weekly_maintenance_start_time: std::option::Option<std::string::String>,
@@ -18,18 +18,20 @@ pub struct UpdateFileSystemWindowsConfiguration  {
     pub throughput_capacity: std::option::Option<i32>,
     /// <p>The configuration Amazon FSx uses to join the Windows File Server instance to the self-managed Microsoft AD directory. You cannot make a self-managed Microsoft AD update request if there is an existing self-managed Microsoft AD update request in progress.</p>
     #[doc(hidden)]
-    pub self_managed_active_directory_configuration: std::option::Option<crate::types::SelfManagedActiveDirectoryConfigurationUpdates>,
+    pub self_managed_active_directory_configuration:
+        std::option::Option<crate::types::SelfManagedActiveDirectoryConfigurationUpdates>,
     /// <p>The configuration that Amazon FSx for Windows File Server uses to audit and log user accesses of files, folders, and file shares on the Amazon FSx for Windows File Server file system..</p>
     #[doc(hidden)]
-    pub audit_log_configuration: std::option::Option<crate::types::WindowsAuditLogCreateConfiguration>,
+    pub audit_log_configuration:
+        std::option::Option<crate::types::WindowsAuditLogCreateConfiguration>,
 }
 impl UpdateFileSystemWindowsConfiguration {
     /// <p>The preferred start time to perform weekly maintenance, formatted d:HH:MM in the UTC time zone. Where d is the weekday number, from 1 through 7, with 1 = Monday and 7 = Sunday.</p>
-    pub fn weekly_maintenance_start_time(&self) -> std::option::Option<& str> {
+    pub fn weekly_maintenance_start_time(&self) -> std::option::Option<&str> {
         self.weekly_maintenance_start_time.as_deref()
     }
     /// <p>The preferred time to start the daily automatic backup, in the UTC time zone, for example, <code>02:00</code> </p>
-    pub fn daily_automatic_backup_start_time(&self) -> std::option::Option<& str> {
+    pub fn daily_automatic_backup_start_time(&self) -> std::option::Option<&str> {
         self.daily_automatic_backup_start_time.as_deref()
     }
     /// <p>The number of days to retain automatic daily backups. Setting this to zero (0) disables automatic daily backups. You can retain automatic daily backups for a maximum of 90 days. For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/using-backups.html#automatic-backups">Working with Automatic Daily Backups</a>.</p>
@@ -41,11 +43,15 @@ impl UpdateFileSystemWindowsConfiguration {
         self.throughput_capacity
     }
     /// <p>The configuration Amazon FSx uses to join the Windows File Server instance to the self-managed Microsoft AD directory. You cannot make a self-managed Microsoft AD update request if there is an existing self-managed Microsoft AD update request in progress.</p>
-    pub fn self_managed_active_directory_configuration(&self) -> std::option::Option<& crate::types::SelfManagedActiveDirectoryConfigurationUpdates> {
+    pub fn self_managed_active_directory_configuration(
+        &self,
+    ) -> std::option::Option<&crate::types::SelfManagedActiveDirectoryConfigurationUpdates> {
         self.self_managed_active_directory_configuration.as_ref()
     }
     /// <p>The configuration that Amazon FSx for Windows File Server uses to audit and log user accesses of files, folders, and file shares on the Amazon FSx for Windows File Server file system..</p>
-    pub fn audit_log_configuration(&self) -> std::option::Option<& crate::types::WindowsAuditLogCreateConfiguration> {
+    pub fn audit_log_configuration(
+        &self,
+    ) -> std::option::Option<&crate::types::WindowsAuditLogCreateConfiguration> {
         self.audit_log_configuration.as_ref()
     }
 }
@@ -64,8 +70,10 @@ pub struct UpdateFileSystemWindowsConfigurationBuilder {
     pub(crate) daily_automatic_backup_start_time: std::option::Option<std::string::String>,
     pub(crate) automatic_backup_retention_days: std::option::Option<i32>,
     pub(crate) throughput_capacity: std::option::Option<i32>,
-    pub(crate) self_managed_active_directory_configuration: std::option::Option<crate::types::SelfManagedActiveDirectoryConfigurationUpdates>,
-    pub(crate) audit_log_configuration: std::option::Option<crate::types::WindowsAuditLogCreateConfiguration>,
+    pub(crate) self_managed_active_directory_configuration:
+        std::option::Option<crate::types::SelfManagedActiveDirectoryConfigurationUpdates>,
+    pub(crate) audit_log_configuration:
+        std::option::Option<crate::types::WindowsAuditLogCreateConfiguration>,
 }
 impl UpdateFileSystemWindowsConfigurationBuilder {
     /// <p>The preferred start time to perform weekly maintenance, formatted d:HH:MM in the UTC time zone. Where d is the weekday number, from 1 through 7, with 1 = Monday and 7 = Sunday.</p>
@@ -74,17 +82,28 @@ impl UpdateFileSystemWindowsConfigurationBuilder {
         self
     }
     /// <p>The preferred start time to perform weekly maintenance, formatted d:HH:MM in the UTC time zone. Where d is the weekday number, from 1 through 7, with 1 = Monday and 7 = Sunday.</p>
-    pub fn set_weekly_maintenance_start_time(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.weekly_maintenance_start_time = input; self
+    pub fn set_weekly_maintenance_start_time(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.weekly_maintenance_start_time = input;
+        self
     }
     /// <p>The preferred time to start the daily automatic backup, in the UTC time zone, for example, <code>02:00</code> </p>
-    pub fn daily_automatic_backup_start_time(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn daily_automatic_backup_start_time(
+        mut self,
+        input: impl Into<std::string::String>,
+    ) -> Self {
         self.daily_automatic_backup_start_time = Some(input.into());
         self
     }
     /// <p>The preferred time to start the daily automatic backup, in the UTC time zone, for example, <code>02:00</code> </p>
-    pub fn set_daily_automatic_backup_start_time(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.daily_automatic_backup_start_time = input; self
+    pub fn set_daily_automatic_backup_start_time(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.daily_automatic_backup_start_time = input;
+        self
     }
     /// <p>The number of days to retain automatic daily backups. Setting this to zero (0) disables automatic daily backups. You can retain automatic daily backups for a maximum of 90 days. For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/using-backups.html#automatic-backups">Working with Automatic Daily Backups</a>.</p>
     pub fn automatic_backup_retention_days(mut self, input: i32) -> Self {
@@ -93,7 +112,8 @@ impl UpdateFileSystemWindowsConfigurationBuilder {
     }
     /// <p>The number of days to retain automatic daily backups. Setting this to zero (0) disables automatic daily backups. You can retain automatic daily backups for a maximum of 90 days. For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/using-backups.html#automatic-backups">Working with Automatic Daily Backups</a>.</p>
     pub fn set_automatic_backup_retention_days(mut self, input: std::option::Option<i32>) -> Self {
-        self.automatic_backup_retention_days = input; self
+        self.automatic_backup_retention_days = input;
+        self
     }
     /// <p>Sets the target value for a file system's throughput capacity, in MB/s, that you are updating the file system to. Valid values are 8, 16, 32, 64, 128, 256, 512, 1024, 2048. You cannot make a throughput capacity update request if there is an existing throughput capacity update request in progress. For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/managing-throughput-capacity.html">Managing Throughput Capacity</a>.</p>
     pub fn throughput_capacity(mut self, input: i32) -> Self {
@@ -102,42 +122,51 @@ impl UpdateFileSystemWindowsConfigurationBuilder {
     }
     /// <p>Sets the target value for a file system's throughput capacity, in MB/s, that you are updating the file system to. Valid values are 8, 16, 32, 64, 128, 256, 512, 1024, 2048. You cannot make a throughput capacity update request if there is an existing throughput capacity update request in progress. For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/managing-throughput-capacity.html">Managing Throughput Capacity</a>.</p>
     pub fn set_throughput_capacity(mut self, input: std::option::Option<i32>) -> Self {
-        self.throughput_capacity = input; self
+        self.throughput_capacity = input;
+        self
     }
     /// <p>The configuration Amazon FSx uses to join the Windows File Server instance to the self-managed Microsoft AD directory. You cannot make a self-managed Microsoft AD update request if there is an existing self-managed Microsoft AD update request in progress.</p>
-    pub fn self_managed_active_directory_configuration(mut self, input: crate::types::SelfManagedActiveDirectoryConfigurationUpdates) -> Self {
+    pub fn self_managed_active_directory_configuration(
+        mut self,
+        input: crate::types::SelfManagedActiveDirectoryConfigurationUpdates,
+    ) -> Self {
         self.self_managed_active_directory_configuration = Some(input);
         self
     }
     /// <p>The configuration Amazon FSx uses to join the Windows File Server instance to the self-managed Microsoft AD directory. You cannot make a self-managed Microsoft AD update request if there is an existing self-managed Microsoft AD update request in progress.</p>
-    pub fn set_self_managed_active_directory_configuration(mut self, input: std::option::Option<crate::types::SelfManagedActiveDirectoryConfigurationUpdates>) -> Self {
-        self.self_managed_active_directory_configuration = input; self
+    pub fn set_self_managed_active_directory_configuration(
+        mut self,
+        input: std::option::Option<crate::types::SelfManagedActiveDirectoryConfigurationUpdates>,
+    ) -> Self {
+        self.self_managed_active_directory_configuration = input;
+        self
     }
     /// <p>The configuration that Amazon FSx for Windows File Server uses to audit and log user accesses of files, folders, and file shares on the Amazon FSx for Windows File Server file system..</p>
-    pub fn audit_log_configuration(mut self, input: crate::types::WindowsAuditLogCreateConfiguration) -> Self {
+    pub fn audit_log_configuration(
+        mut self,
+        input: crate::types::WindowsAuditLogCreateConfiguration,
+    ) -> Self {
         self.audit_log_configuration = Some(input);
         self
     }
     /// <p>The configuration that Amazon FSx for Windows File Server uses to audit and log user accesses of files, folders, and file shares on the Amazon FSx for Windows File Server file system..</p>
-    pub fn set_audit_log_configuration(mut self, input: std::option::Option<crate::types::WindowsAuditLogCreateConfiguration>) -> Self {
-        self.audit_log_configuration = input; self
+    pub fn set_audit_log_configuration(
+        mut self,
+        input: std::option::Option<crate::types::WindowsAuditLogCreateConfiguration>,
+    ) -> Self {
+        self.audit_log_configuration = input;
+        self
     }
     /// Consumes the builder and constructs a [`UpdateFileSystemWindowsConfiguration`](crate::types::UpdateFileSystemWindowsConfiguration).
     pub fn build(self) -> crate::types::UpdateFileSystemWindowsConfiguration {
         crate::types::UpdateFileSystemWindowsConfiguration {
-            weekly_maintenance_start_time: self.weekly_maintenance_start_time
-            ,
-            daily_automatic_backup_start_time: self.daily_automatic_backup_start_time
-            ,
-            automatic_backup_retention_days: self.automatic_backup_retention_days
-            ,
-            throughput_capacity: self.throughput_capacity
-            ,
-            self_managed_active_directory_configuration: self.self_managed_active_directory_configuration
-            ,
-            audit_log_configuration: self.audit_log_configuration
-            ,
+            weekly_maintenance_start_time: self.weekly_maintenance_start_time,
+            daily_automatic_backup_start_time: self.daily_automatic_backup_start_time,
+            automatic_backup_retention_days: self.automatic_backup_retention_days,
+            throughput_capacity: self.throughput_capacity,
+            self_managed_active_directory_configuration: self
+                .self_managed_active_directory_configuration,
+            audit_log_configuration: self.audit_log_configuration,
         }
     }
 }
-

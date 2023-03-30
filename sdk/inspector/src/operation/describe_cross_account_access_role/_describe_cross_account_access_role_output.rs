@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeCrossAccountAccessRoleOutput  {
+pub struct DescribeCrossAccountAccessRoleOutput {
     /// <p>The ARN that specifies the IAM role that Amazon Inspector uses to access your AWS account.</p>
     #[doc(hidden)]
     pub role_arn: std::option::Option<std::string::String>,
@@ -16,7 +16,7 @@ pub struct DescribeCrossAccountAccessRoleOutput  {
 }
 impl DescribeCrossAccountAccessRoleOutput {
     /// <p>The ARN that specifies the IAM role that Amazon Inspector uses to access your AWS account.</p>
-    pub fn role_arn(&self) -> std::option::Option<& str> {
+    pub fn role_arn(&self) -> std::option::Option<&str> {
         self.role_arn.as_deref()
     }
     /// <p>A Boolean value that specifies whether the IAM role has the necessary policies attached to enable Amazon Inspector to access your AWS account.</p>
@@ -24,18 +24,18 @@ impl DescribeCrossAccountAccessRoleOutput {
         self.valid
     }
     /// <p>The date when the cross-account access role was registered.</p>
-    pub fn registered_at(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
+    pub fn registered_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.registered_at.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for DescribeCrossAccountAccessRoleOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl DescribeCrossAccountAccessRoleOutput {
     /// Creates a new builder-style object to manufacture [`DescribeCrossAccountAccessRoleOutput`](crate::operation::describe_cross_account_access_role::DescribeCrossAccountAccessRoleOutput).
-    pub fn builder() -> crate::operation::describe_cross_account_access_role::builders::DescribeCrossAccountAccessRoleOutputBuilder {
+    pub fn builder() -> crate::operation::describe_cross_account_access_role::builders::DescribeCrossAccountAccessRoleOutputBuilder{
         crate::operation::describe_cross_account_access_role::builders::DescribeCrossAccountAccessRoleOutputBuilder::default()
     }
 }
@@ -57,7 +57,8 @@ impl DescribeCrossAccountAccessRoleOutputBuilder {
     }
     /// <p>The ARN that specifies the IAM role that Amazon Inspector uses to access your AWS account.</p>
     pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.role_arn = input; self
+        self.role_arn = input;
+        self
     }
     /// <p>A Boolean value that specifies whether the IAM role has the necessary policies attached to enable Amazon Inspector to access your AWS account.</p>
     pub fn valid(mut self, input: bool) -> Self {
@@ -66,7 +67,8 @@ impl DescribeCrossAccountAccessRoleOutputBuilder {
     }
     /// <p>A Boolean value that specifies whether the IAM role has the necessary policies attached to enable Amazon Inspector to access your AWS account.</p>
     pub fn set_valid(mut self, input: std::option::Option<bool>) -> Self {
-        self.valid = input; self
+        self.valid = input;
+        self
     }
     /// <p>The date when the cross-account access role was registered.</p>
     pub fn registered_at(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -74,29 +76,32 @@ impl DescribeCrossAccountAccessRoleOutputBuilder {
         self
     }
     /// <p>The date when the cross-account access role was registered.</p>
-    pub fn set_registered_at(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.registered_at = input; self
+    pub fn set_registered_at(
+        mut self,
+        input: std::option::Option<aws_smithy_types::DateTime>,
+    ) -> Self {
+        self.registered_at = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`DescribeCrossAccountAccessRoleOutput`](crate::operation::describe_cross_account_access_role::DescribeCrossAccountAccessRoleOutput).
-    pub fn build(self) -> crate::operation::describe_cross_account_access_role::DescribeCrossAccountAccessRoleOutput {
+    pub fn build(
+        self,
+    ) -> crate::operation::describe_cross_account_access_role::DescribeCrossAccountAccessRoleOutput
+    {
         crate::operation::describe_cross_account_access_role::DescribeCrossAccountAccessRoleOutput {
-            role_arn: self.role_arn
-            ,
-            valid: self.valid
-            ,
-            registered_at: self.registered_at
-            ,
+            role_arn: self.role_arn,
+            valid: self.valid,
+            registered_at: self.registered_at,
             _request_id: self._request_id,
         }
     }
 }
-

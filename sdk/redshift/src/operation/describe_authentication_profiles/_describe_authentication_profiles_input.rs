@@ -2,20 +2,20 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeAuthenticationProfilesInput  {
+pub struct DescribeAuthenticationProfilesInput {
     /// <p>The name of the authentication profile to describe. If not specified then all authentication profiles owned by the account are listed.</p>
     #[doc(hidden)]
     pub authentication_profile_name: std::option::Option<std::string::String>,
 }
 impl DescribeAuthenticationProfilesInput {
     /// <p>The name of the authentication profile to describe. If not specified then all authentication profiles owned by the account are listed.</p>
-    pub fn authentication_profile_name(&self) -> std::option::Option<& str> {
+    pub fn authentication_profile_name(&self) -> std::option::Option<&str> {
         self.authentication_profile_name.as_deref()
     }
 }
 impl DescribeAuthenticationProfilesInput {
     /// Creates a new builder-style object to manufacture [`DescribeAuthenticationProfilesInput`](crate::operation::describe_authentication_profiles::DescribeAuthenticationProfilesInput).
-    pub fn builder() -> crate::operation::describe_authentication_profiles::builders::DescribeAuthenticationProfilesInputBuilder {
+    pub fn builder() -> crate::operation::describe_authentication_profiles::builders::DescribeAuthenticationProfilesInputBuilder{
         crate::operation::describe_authentication_profiles::builders::DescribeAuthenticationProfilesInputBuilder::default()
     }
 }
@@ -33,11 +33,20 @@ impl DescribeAuthenticationProfilesInputBuilder {
         self
     }
     /// <p>The name of the authentication profile to describe. If not specified then all authentication profiles owned by the account are listed.</p>
-    pub fn set_authentication_profile_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.authentication_profile_name = input; self
+    pub fn set_authentication_profile_name(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.authentication_profile_name = input;
+        self
     }
     /// Consumes the builder and constructs a [`DescribeAuthenticationProfilesInput`](crate::operation::describe_authentication_profiles::DescribeAuthenticationProfilesInput).
-    pub fn build(self) -> Result<crate::operation::describe_authentication_profiles::DescribeAuthenticationProfilesInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::describe_authentication_profiles::DescribeAuthenticationProfilesInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::describe_authentication_profiles::DescribeAuthenticationProfilesInput {
                 authentication_profile_name: self.authentication_profile_name
@@ -46,4 +55,3 @@ impl DescribeAuthenticationProfilesInputBuilder {
         )
     }
 }
-

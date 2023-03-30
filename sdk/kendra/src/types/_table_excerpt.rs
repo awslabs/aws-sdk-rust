@@ -3,7 +3,7 @@
 /// <p>An excerpt from a table within a document. The table excerpt displays up to five columns and three rows, depending on how many table cells are relevant to the query and how many columns are available in the original table. The top most relevant cell is displayed in the table excerpt, along with the next most relevant cells.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct TableExcerpt  {
+pub struct TableExcerpt {
     /// <p>A list of rows in the table excerpt.</p>
     #[doc(hidden)]
     pub rows: std::option::Option<std::vec::Vec<crate::types::TableRow>>,
@@ -13,7 +13,7 @@ pub struct TableExcerpt  {
 }
 impl TableExcerpt {
     /// <p>A list of rows in the table excerpt.</p>
-    pub fn rows(&self) -> std::option::Option<& [crate::types::TableRow]> {
+    pub fn rows(&self) -> std::option::Option<&[crate::types::TableRow]> {
         self.rows.as_deref()
     }
     /// <p>A count of the number of rows in the original table within the document.</p>
@@ -43,13 +43,17 @@ impl TableExcerptBuilder {
     /// <p>A list of rows in the table excerpt.</p>
     pub fn rows(mut self, input: crate::types::TableRow) -> Self {
         let mut v = self.rows.unwrap_or_default();
-                        v.push(input);
-                        self.rows = Some(v);
-                        self
+        v.push(input);
+        self.rows = Some(v);
+        self
     }
     /// <p>A list of rows in the table excerpt.</p>
-    pub fn set_rows(mut self, input: std::option::Option<std::vec::Vec<crate::types::TableRow>>) -> Self {
-        self.rows = input; self
+    pub fn set_rows(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::TableRow>>,
+    ) -> Self {
+        self.rows = input;
+        self
     }
     /// <p>A count of the number of rows in the original table within the document.</p>
     pub fn total_number_of_rows(mut self, input: i32) -> Self {
@@ -58,16 +62,14 @@ impl TableExcerptBuilder {
     }
     /// <p>A count of the number of rows in the original table within the document.</p>
     pub fn set_total_number_of_rows(mut self, input: std::option::Option<i32>) -> Self {
-        self.total_number_of_rows = input; self
+        self.total_number_of_rows = input;
+        self
     }
     /// Consumes the builder and constructs a [`TableExcerpt`](crate::types::TableExcerpt).
     pub fn build(self) -> crate::types::TableExcerpt {
         crate::types::TableExcerpt {
-            rows: self.rows
-            ,
-            total_number_of_rows: self.total_number_of_rows
-            ,
+            rows: self.rows,
+            total_number_of_rows: self.total_number_of_rows,
         }
     }
 }
-

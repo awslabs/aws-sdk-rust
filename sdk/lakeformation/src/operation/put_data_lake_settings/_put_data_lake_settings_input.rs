@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PutDataLakeSettingsInput  {
+pub struct PutDataLakeSettingsInput {
     /// <p>The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your Lake Formation environment. </p>
     #[doc(hidden)]
     pub catalog_id: std::option::Option<std::string::String>,
@@ -12,18 +12,20 @@ pub struct PutDataLakeSettingsInput  {
 }
 impl PutDataLakeSettingsInput {
     /// <p>The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your Lake Formation environment. </p>
-    pub fn catalog_id(&self) -> std::option::Option<& str> {
+    pub fn catalog_id(&self) -> std::option::Option<&str> {
         self.catalog_id.as_deref()
     }
     /// <p>A structure representing a list of Lake Formation principals designated as data lake administrators.</p>
-    pub fn data_lake_settings(&self) -> std::option::Option<& crate::types::DataLakeSettings> {
+    pub fn data_lake_settings(&self) -> std::option::Option<&crate::types::DataLakeSettings> {
         self.data_lake_settings.as_ref()
     }
 }
 impl PutDataLakeSettingsInput {
     /// Creates a new builder-style object to manufacture [`PutDataLakeSettingsInput`](crate::operation::put_data_lake_settings::PutDataLakeSettingsInput).
-    pub fn builder() -> crate::operation::put_data_lake_settings::builders::PutDataLakeSettingsInputBuilder {
-        crate::operation::put_data_lake_settings::builders::PutDataLakeSettingsInputBuilder::default()
+    pub fn builder(
+    ) -> crate::operation::put_data_lake_settings::builders::PutDataLakeSettingsInputBuilder {
+        crate::operation::put_data_lake_settings::builders::PutDataLakeSettingsInputBuilder::default(
+        )
     }
 }
 
@@ -42,7 +44,8 @@ impl PutDataLakeSettingsInputBuilder {
     }
     /// <p>The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your Lake Formation environment. </p>
     pub fn set_catalog_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.catalog_id = input; self
+        self.catalog_id = input;
+        self
     }
     /// <p>A structure representing a list of Lake Formation principals designated as data lake administrators.</p>
     pub fn data_lake_settings(mut self, input: crate::types::DataLakeSettings) -> Self {
@@ -50,19 +53,25 @@ impl PutDataLakeSettingsInputBuilder {
         self
     }
     /// <p>A structure representing a list of Lake Formation principals designated as data lake administrators.</p>
-    pub fn set_data_lake_settings(mut self, input: std::option::Option<crate::types::DataLakeSettings>) -> Self {
-        self.data_lake_settings = input; self
+    pub fn set_data_lake_settings(
+        mut self,
+        input: std::option::Option<crate::types::DataLakeSettings>,
+    ) -> Self {
+        self.data_lake_settings = input;
+        self
     }
     /// Consumes the builder and constructs a [`PutDataLakeSettingsInput`](crate::operation::put_data_lake_settings::PutDataLakeSettingsInput).
-    pub fn build(self) -> Result<crate::operation::put_data_lake_settings::PutDataLakeSettingsInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::put_data_lake_settings::PutDataLakeSettingsInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::put_data_lake_settings::PutDataLakeSettingsInput {
-                catalog_id: self.catalog_id
-                ,
-                data_lake_settings: self.data_lake_settings
-                ,
-            }
+                catalog_id: self.catalog_id,
+                data_lake_settings: self.data_lake_settings,
+            },
         )
     }
 }
-

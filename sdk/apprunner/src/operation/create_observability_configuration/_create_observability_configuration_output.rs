@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateObservabilityConfigurationOutput  {
+pub struct CreateObservabilityConfigurationOutput {
     /// <p>A description of the App Runner observability configuration that's created by this request.</p>
     #[doc(hidden)]
     pub observability_configuration: std::option::Option<crate::types::ObservabilityConfiguration>,
@@ -10,18 +10,20 @@ pub struct CreateObservabilityConfigurationOutput  {
 }
 impl CreateObservabilityConfigurationOutput {
     /// <p>A description of the App Runner observability configuration that's created by this request.</p>
-    pub fn observability_configuration(&self) -> std::option::Option<& crate::types::ObservabilityConfiguration> {
+    pub fn observability_configuration(
+        &self,
+    ) -> std::option::Option<&crate::types::ObservabilityConfiguration> {
         self.observability_configuration.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for CreateObservabilityConfigurationOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl CreateObservabilityConfigurationOutput {
     /// Creates a new builder-style object to manufacture [`CreateObservabilityConfigurationOutput`](crate::operation::create_observability_configuration::CreateObservabilityConfigurationOutput).
-    pub fn builder() -> crate::operation::create_observability_configuration::builders::CreateObservabilityConfigurationOutputBuilder {
+    pub fn builder() -> crate::operation::create_observability_configuration::builders::CreateObservabilityConfigurationOutputBuilder{
         crate::operation::create_observability_configuration::builders::CreateObservabilityConfigurationOutputBuilder::default()
     }
 }
@@ -30,30 +32,41 @@ impl CreateObservabilityConfigurationOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct CreateObservabilityConfigurationOutputBuilder {
-    pub(crate) observability_configuration: std::option::Option<crate::types::ObservabilityConfiguration>,
+    pub(crate) observability_configuration:
+        std::option::Option<crate::types::ObservabilityConfiguration>,
     _request_id: Option<String>,
 }
 impl CreateObservabilityConfigurationOutputBuilder {
     /// <p>A description of the App Runner observability configuration that's created by this request.</p>
-    pub fn observability_configuration(mut self, input: crate::types::ObservabilityConfiguration) -> Self {
+    pub fn observability_configuration(
+        mut self,
+        input: crate::types::ObservabilityConfiguration,
+    ) -> Self {
         self.observability_configuration = Some(input);
         self
     }
     /// <p>A description of the App Runner observability configuration that's created by this request.</p>
-    pub fn set_observability_configuration(mut self, input: std::option::Option<crate::types::ObservabilityConfiguration>) -> Self {
-        self.observability_configuration = input; self
+    pub fn set_observability_configuration(
+        mut self,
+        input: std::option::Option<crate::types::ObservabilityConfiguration>,
+    ) -> Self {
+        self.observability_configuration = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`CreateObservabilityConfigurationOutput`](crate::operation::create_observability_configuration::CreateObservabilityConfigurationOutput).
-    pub fn build(self) -> crate::operation::create_observability_configuration::CreateObservabilityConfigurationOutput {
+    pub fn build(
+        self,
+    ) -> crate::operation::create_observability_configuration::CreateObservabilityConfigurationOutput
+    {
         crate::operation::create_observability_configuration::CreateObservabilityConfigurationOutput {
             observability_configuration: self.observability_configuration
             ,
@@ -61,4 +74,3 @@ impl CreateObservabilityConfigurationOutputBuilder {
         }
     }
 }
-

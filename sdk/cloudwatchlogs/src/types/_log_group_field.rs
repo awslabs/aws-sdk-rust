@@ -3,7 +3,7 @@
 /// <p>The fields contained in log events found by a <code>GetLogGroupFields</code> operation, along with the percentage of queried log events in which each field appears.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct LogGroupField  {
+pub struct LogGroupField {
     /// <p>The name of a log field.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -13,7 +13,7 @@ pub struct LogGroupField  {
 }
 impl LogGroupField {
     /// <p>The name of a log field.</p>
-    pub fn name(&self) -> std::option::Option<& str> {
+    pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>The percentage of log events queried that contained the field.</p>
@@ -43,7 +43,8 @@ impl LogGroupFieldBuilder {
     }
     /// <p>The name of a log field.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input; self
+        self.name = input;
+        self
     }
     /// <p>The percentage of log events queried that contained the field.</p>
     pub fn percent(mut self, input: i32) -> Self {
@@ -52,17 +53,14 @@ impl LogGroupFieldBuilder {
     }
     /// <p>The percentage of log events queried that contained the field.</p>
     pub fn set_percent(mut self, input: std::option::Option<i32>) -> Self {
-        self.percent = input; self
+        self.percent = input;
+        self
     }
     /// Consumes the builder and constructs a [`LogGroupField`](crate::types::LogGroupField).
     pub fn build(self) -> crate::types::LogGroupField {
         crate::types::LogGroupField {
-            name: self.name
-            ,
-            percent: self.percent
-                .unwrap_or_default()
-            ,
+            name: self.name,
+            percent: self.percent.unwrap_or_default(),
         }
     }
 }
-

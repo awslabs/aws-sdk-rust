@@ -6,4 +6,3 @@ pub mod get_latest_configuration;
 
 /// Types for the `StartConfigurationSession` operation.
 pub mod start_configuration_session;
-

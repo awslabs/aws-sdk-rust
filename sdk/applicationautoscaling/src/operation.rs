@@ -30,4 +30,3 @@ pub mod put_scheduled_action;
 
 /// Types for the `RegisterScalableTarget` operation.
 pub mod register_scalable_target;
-

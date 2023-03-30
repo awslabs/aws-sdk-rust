@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetLicenseUsageOutput  {
+pub struct GetLicenseUsageOutput {
     /// <p>License usage details.</p>
     #[doc(hidden)]
     pub license_usage: std::option::Option<crate::types::LicenseUsage>,
@@ -10,18 +10,19 @@ pub struct GetLicenseUsageOutput  {
 }
 impl GetLicenseUsageOutput {
     /// <p>License usage details.</p>
-    pub fn license_usage(&self) -> std::option::Option<& crate::types::LicenseUsage> {
+    pub fn license_usage(&self) -> std::option::Option<&crate::types::LicenseUsage> {
         self.license_usage.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for GetLicenseUsageOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl GetLicenseUsageOutput {
     /// Creates a new builder-style object to manufacture [`GetLicenseUsageOutput`](crate::operation::get_license_usage::GetLicenseUsageOutput).
-    pub fn builder() -> crate::operation::get_license_usage::builders::GetLicenseUsageOutputBuilder {
+    pub fn builder() -> crate::operation::get_license_usage::builders::GetLicenseUsageOutputBuilder
+    {
         crate::operation::get_license_usage::builders::GetLicenseUsageOutputBuilder::default()
     }
 }
@@ -40,25 +41,27 @@ impl GetLicenseUsageOutputBuilder {
         self
     }
     /// <p>License usage details.</p>
-    pub fn set_license_usage(mut self, input: std::option::Option<crate::types::LicenseUsage>) -> Self {
-        self.license_usage = input; self
+    pub fn set_license_usage(
+        mut self,
+        input: std::option::Option<crate::types::LicenseUsage>,
+    ) -> Self {
+        self.license_usage = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`GetLicenseUsageOutput`](crate::operation::get_license_usage::GetLicenseUsageOutput).
     pub fn build(self) -> crate::operation::get_license_usage::GetLicenseUsageOutput {
         crate::operation::get_license_usage::GetLicenseUsageOutput {
-            license_usage: self.license_usage
-            ,
+            license_usage: self.license_usage,
             _request_id: self._request_id,
         }
     }
 }
-

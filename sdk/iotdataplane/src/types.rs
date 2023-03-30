@@ -12,4 +12,3 @@ pub mod builders;
 
 /// Error types that AWS IoT Data Plane can respond with.
 pub mod error;
-

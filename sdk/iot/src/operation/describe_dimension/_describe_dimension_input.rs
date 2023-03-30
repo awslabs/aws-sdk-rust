@@ -2,20 +2,21 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeDimensionInput  {
+pub struct DescribeDimensionInput {
     /// <p>The unique identifier for the dimension.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
 }
 impl DescribeDimensionInput {
     /// <p>The unique identifier for the dimension.</p>
-    pub fn name(&self) -> std::option::Option<& str> {
+    pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
 }
 impl DescribeDimensionInput {
     /// Creates a new builder-style object to manufacture [`DescribeDimensionInput`](crate::operation::describe_dimension::DescribeDimensionInput).
-    pub fn builder() -> crate::operation::describe_dimension::builders::DescribeDimensionInputBuilder {
+    pub fn builder() -> crate::operation::describe_dimension::builders::DescribeDimensionInputBuilder
+    {
         crate::operation::describe_dimension::builders::DescribeDimensionInputBuilder::default()
     }
 }
@@ -34,16 +35,16 @@ impl DescribeDimensionInputBuilder {
     }
     /// <p>The unique identifier for the dimension.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input; self
+        self.name = input;
+        self
     }
     /// Consumes the builder and constructs a [`DescribeDimensionInput`](crate::operation::describe_dimension::DescribeDimensionInput).
-    pub fn build(self) -> Result<crate::operation::describe_dimension::DescribeDimensionInput, aws_smithy_http::operation::error::BuildError> {
-        Ok(
-            crate::operation::describe_dimension::DescribeDimensionInput {
-                name: self.name
-                ,
-            }
-        )
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::describe_dimension::DescribeDimensionInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        Ok(crate::operation::describe_dimension::DescribeDimensionInput { name: self.name })
     }
 }
-

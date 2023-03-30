@@ -3,7 +3,7 @@
 /// <p>Information about a cell.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CellOutput  {
+pub struct CellOutput {
     /// <p>The Amazon Resource Name (ARN) for the cell.</p>
     #[doc(hidden)]
     pub cell_arn: std::option::Option<std::string::String>,
@@ -18,27 +18,31 @@ pub struct CellOutput  {
     pub parent_readiness_scopes: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>Tags on the resources.</p>
     #[doc(hidden)]
-    pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub tags:
+        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl CellOutput {
     /// <p>The Amazon Resource Name (ARN) for the cell.</p>
-    pub fn cell_arn(&self) -> std::option::Option<& str> {
+    pub fn cell_arn(&self) -> std::option::Option<&str> {
         self.cell_arn.as_deref()
     }
     /// <p>The name of the cell.</p>
-    pub fn cell_name(&self) -> std::option::Option<& str> {
+    pub fn cell_name(&self) -> std::option::Option<&str> {
         self.cell_name.as_deref()
     }
     /// <p>A list of cell ARNs.</p>
-    pub fn cells(&self) -> std::option::Option<& [std::string::String]> {
+    pub fn cells(&self) -> std::option::Option<&[std::string::String]> {
         self.cells.as_deref()
     }
     /// <p>The readiness scope for the cell, which can be a cell Amazon Resource Name (ARN) or a recovery group ARN. This is a list but currently can have only one element.</p>
-    pub fn parent_readiness_scopes(&self) -> std::option::Option<& [std::string::String]> {
+    pub fn parent_readiness_scopes(&self) -> std::option::Option<&[std::string::String]> {
         self.parent_readiness_scopes.as_deref()
     }
     /// <p>Tags on the resources.</p>
-    pub fn tags(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
         self.tags.as_ref()
     }
 }
@@ -57,7 +61,8 @@ pub struct CellOutputBuilder {
     pub(crate) cell_name: std::option::Option<std::string::String>,
     pub(crate) cells: std::option::Option<std::vec::Vec<std::string::String>>,
     pub(crate) parent_readiness_scopes: std::option::Option<std::vec::Vec<std::string::String>>,
-    pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub(crate) tags:
+        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl CellOutputBuilder {
     /// <p>The Amazon Resource Name (ARN) for the cell.</p>
@@ -67,7 +72,8 @@ impl CellOutputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) for the cell.</p>
     pub fn set_cell_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.cell_arn = input; self
+        self.cell_arn = input;
+        self
     }
     /// <p>The name of the cell.</p>
     pub fn cell_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -76,7 +82,8 @@ impl CellOutputBuilder {
     }
     /// <p>The name of the cell.</p>
     pub fn set_cell_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.cell_name = input; self
+        self.cell_name = input;
+        self
     }
     /// Appends an item to `cells`.
     ///
@@ -85,13 +92,17 @@ impl CellOutputBuilder {
     /// <p>A list of cell ARNs.</p>
     pub fn cells(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.cells.unwrap_or_default();
-                        v.push(input.into());
-                        self.cells = Some(v);
-                        self
+        v.push(input.into());
+        self.cells = Some(v);
+        self
     }
     /// <p>A list of cell ARNs.</p>
-    pub fn set_cells(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-        self.cells = input; self
+    pub fn set_cells(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
+        self.cells = input;
+        self
     }
     /// Appends an item to `parent_readiness_scopes`.
     ///
@@ -100,43 +111,51 @@ impl CellOutputBuilder {
     /// <p>The readiness scope for the cell, which can be a cell Amazon Resource Name (ARN) or a recovery group ARN. This is a list but currently can have only one element.</p>
     pub fn parent_readiness_scopes(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.parent_readiness_scopes.unwrap_or_default();
-                        v.push(input.into());
-                        self.parent_readiness_scopes = Some(v);
-                        self
+        v.push(input.into());
+        self.parent_readiness_scopes = Some(v);
+        self
     }
     /// <p>The readiness scope for the cell, which can be a cell Amazon Resource Name (ARN) or a recovery group ARN. This is a list but currently can have only one element.</p>
-    pub fn set_parent_readiness_scopes(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-        self.parent_readiness_scopes = input; self
+    pub fn set_parent_readiness_scopes(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
+        self.parent_readiness_scopes = input;
+        self
     }
     /// Adds a key-value pair to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// <p>Tags on the resources.</p>
-    pub fn tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
+    pub fn tags(
+        mut self,
+        k: impl Into<std::string::String>,
+        v: impl Into<std::string::String>,
+    ) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
-                        hash_map.insert(k.into(), v.into());
-                        self.tags = Some(hash_map);
-                        self
+        hash_map.insert(k.into(), v.into());
+        self.tags = Some(hash_map);
+        self
     }
     /// <p>Tags on the resources.</p>
-    pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
-        self.tags = input; self
+    pub fn set_tags(
+        mut self,
+        input: std::option::Option<
+            std::collections::HashMap<std::string::String, std::string::String>,
+        >,
+    ) -> Self {
+        self.tags = input;
+        self
     }
     /// Consumes the builder and constructs a [`CellOutput`](crate::types::CellOutput).
     pub fn build(self) -> crate::types::CellOutput {
         crate::types::CellOutput {
-            cell_arn: self.cell_arn
-            ,
-            cell_name: self.cell_name
-            ,
-            cells: self.cells
-            ,
-            parent_readiness_scopes: self.parent_readiness_scopes
-            ,
-            tags: self.tags
-            ,
+            cell_arn: self.cell_arn,
+            cell_name: self.cell_name,
+            cells: self.cells,
+            parent_readiness_scopes: self.parent_readiness_scopes,
+            tags: self.tags,
         }
     }
 }
-

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateAgreementInput  {
+pub struct CreateAgreementInput {
     /// <p>A name or short description to identify the agreement. </p>
     #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
@@ -15,7 +15,7 @@ pub struct CreateAgreementInput  {
     /// <p>A unique identifier for the partner profile used in the agreement.</p>
     #[doc(hidden)]
     pub partner_profile_id: std::option::Option<std::string::String>,
-    /// <p>The landing directory (folder) for files transferred by using the AS2 protocol.</p> 
+    /// <p>The landing directory (folder) for files transferred by using the AS2 protocol.</p>
     /// <p>A <code>BaseDirectory</code> example is <i>DOC-EXAMPLE-BUCKET</i>/<i>home</i>/<i>mydirectory</i>.</p>
     #[doc(hidden)]
     pub base_directory: std::option::Option<std::string::String>,
@@ -31,36 +31,36 @@ pub struct CreateAgreementInput  {
 }
 impl CreateAgreementInput {
     /// <p>A name or short description to identify the agreement. </p>
-    pub fn description(&self) -> std::option::Option<& str> {
+    pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
     /// <p>A system-assigned unique identifier for a server instance. This is the specific server that the agreement uses.</p>
-    pub fn server_id(&self) -> std::option::Option<& str> {
+    pub fn server_id(&self) -> std::option::Option<&str> {
         self.server_id.as_deref()
     }
     /// <p>A unique identifier for the AS2 local profile.</p>
-    pub fn local_profile_id(&self) -> std::option::Option<& str> {
+    pub fn local_profile_id(&self) -> std::option::Option<&str> {
         self.local_profile_id.as_deref()
     }
     /// <p>A unique identifier for the partner profile used in the agreement.</p>
-    pub fn partner_profile_id(&self) -> std::option::Option<& str> {
+    pub fn partner_profile_id(&self) -> std::option::Option<&str> {
         self.partner_profile_id.as_deref()
     }
-    /// <p>The landing directory (folder) for files transferred by using the AS2 protocol.</p> 
+    /// <p>The landing directory (folder) for files transferred by using the AS2 protocol.</p>
     /// <p>A <code>BaseDirectory</code> example is <i>DOC-EXAMPLE-BUCKET</i>/<i>home</i>/<i>mydirectory</i>.</p>
-    pub fn base_directory(&self) -> std::option::Option<& str> {
+    pub fn base_directory(&self) -> std::option::Option<&str> {
         self.base_directory.as_deref()
     }
     /// <p>With AS2, you can send files by calling <code>StartFileTransfer</code> and specifying the file paths in the request parameter, <code>SendFilePaths</code>. We use the file’s parent directory (for example, for <code>--send-file-paths /bucket/dir/file.txt</code>, parent directory is <code>/bucket/dir/</code>) to temporarily store a processed AS2 message file, store the MDN when we receive them from the partner, and write a final JSON file containing relevant metadata of the transmission. So, the <code>AccessRole</code> needs to provide read and write access to the parent directory of the file location used in the <code>StartFileTransfer</code> request. Additionally, you need to provide read and write access to the parent directory of the files that you intend to send with <code>StartFileTransfer</code>.</p>
-    pub fn access_role(&self) -> std::option::Option<& str> {
+    pub fn access_role(&self) -> std::option::Option<&str> {
         self.access_role.as_deref()
     }
     /// <p>The status of the agreement. The agreement can be either <code>ACTIVE</code> or <code>INACTIVE</code>.</p>
-    pub fn status(&self) -> std::option::Option<& crate::types::AgreementStatusType> {
+    pub fn status(&self) -> std::option::Option<&crate::types::AgreementStatusType> {
         self.status.as_ref()
     }
     /// <p>Key-value pairs that can be used to group and search for agreements.</p>
-    pub fn tags(&self) -> std::option::Option<& [crate::types::Tag]> {
+    pub fn tags(&self) -> std::option::Option<&[crate::types::Tag]> {
         self.tags.as_deref()
     }
 }
@@ -92,7 +92,8 @@ impl CreateAgreementInputBuilder {
     }
     /// <p>A name or short description to identify the agreement. </p>
     pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.description = input; self
+        self.description = input;
+        self
     }
     /// <p>A system-assigned unique identifier for a server instance. This is the specific server that the agreement uses.</p>
     pub fn server_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -101,7 +102,8 @@ impl CreateAgreementInputBuilder {
     }
     /// <p>A system-assigned unique identifier for a server instance. This is the specific server that the agreement uses.</p>
     pub fn set_server_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.server_id = input; self
+        self.server_id = input;
+        self
     }
     /// <p>A unique identifier for the AS2 local profile.</p>
     pub fn local_profile_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -110,7 +112,8 @@ impl CreateAgreementInputBuilder {
     }
     /// <p>A unique identifier for the AS2 local profile.</p>
     pub fn set_local_profile_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.local_profile_id = input; self
+        self.local_profile_id = input;
+        self
     }
     /// <p>A unique identifier for the partner profile used in the agreement.</p>
     pub fn partner_profile_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -118,19 +121,24 @@ impl CreateAgreementInputBuilder {
         self
     }
     /// <p>A unique identifier for the partner profile used in the agreement.</p>
-    pub fn set_partner_profile_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.partner_profile_id = input; self
+    pub fn set_partner_profile_id(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.partner_profile_id = input;
+        self
     }
-    /// <p>The landing directory (folder) for files transferred by using the AS2 protocol.</p> 
+    /// <p>The landing directory (folder) for files transferred by using the AS2 protocol.</p>
     /// <p>A <code>BaseDirectory</code> example is <i>DOC-EXAMPLE-BUCKET</i>/<i>home</i>/<i>mydirectory</i>.</p>
     pub fn base_directory(mut self, input: impl Into<std::string::String>) -> Self {
         self.base_directory = Some(input.into());
         self
     }
-    /// <p>The landing directory (folder) for files transferred by using the AS2 protocol.</p> 
+    /// <p>The landing directory (folder) for files transferred by using the AS2 protocol.</p>
     /// <p>A <code>BaseDirectory</code> example is <i>DOC-EXAMPLE-BUCKET</i>/<i>home</i>/<i>mydirectory</i>.</p>
     pub fn set_base_directory(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.base_directory = input; self
+        self.base_directory = input;
+        self
     }
     /// <p>With AS2, you can send files by calling <code>StartFileTransfer</code> and specifying the file paths in the request parameter, <code>SendFilePaths</code>. We use the file’s parent directory (for example, for <code>--send-file-paths /bucket/dir/file.txt</code>, parent directory is <code>/bucket/dir/</code>) to temporarily store a processed AS2 message file, store the MDN when we receive them from the partner, and write a final JSON file containing relevant metadata of the transmission. So, the <code>AccessRole</code> needs to provide read and write access to the parent directory of the file location used in the <code>StartFileTransfer</code> request. Additionally, you need to provide read and write access to the parent directory of the files that you intend to send with <code>StartFileTransfer</code>.</p>
     pub fn access_role(mut self, input: impl Into<std::string::String>) -> Self {
@@ -139,7 +147,8 @@ impl CreateAgreementInputBuilder {
     }
     /// <p>With AS2, you can send files by calling <code>StartFileTransfer</code> and specifying the file paths in the request parameter, <code>SendFilePaths</code>. We use the file’s parent directory (for example, for <code>--send-file-paths /bucket/dir/file.txt</code>, parent directory is <code>/bucket/dir/</code>) to temporarily store a processed AS2 message file, store the MDN when we receive them from the partner, and write a final JSON file containing relevant metadata of the transmission. So, the <code>AccessRole</code> needs to provide read and write access to the parent directory of the file location used in the <code>StartFileTransfer</code> request. Additionally, you need to provide read and write access to the parent directory of the files that you intend to send with <code>StartFileTransfer</code>.</p>
     pub fn set_access_role(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.access_role = input; self
+        self.access_role = input;
+        self
     }
     /// <p>The status of the agreement. The agreement can be either <code>ACTIVE</code> or <code>INACTIVE</code>.</p>
     pub fn status(mut self, input: crate::types::AgreementStatusType) -> Self {
@@ -147,8 +156,12 @@ impl CreateAgreementInputBuilder {
         self
     }
     /// <p>The status of the agreement. The agreement can be either <code>ACTIVE</code> or <code>INACTIVE</code>.</p>
-    pub fn set_status(mut self, input: std::option::Option<crate::types::AgreementStatusType>) -> Self {
-        self.status = input; self
+    pub fn set_status(
+        mut self,
+        input: std::option::Option<crate::types::AgreementStatusType>,
+    ) -> Self {
+        self.status = input;
+        self
     }
     /// Appends an item to `tags`.
     ///
@@ -157,36 +170,34 @@ impl CreateAgreementInputBuilder {
     /// <p>Key-value pairs that can be used to group and search for agreements.</p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
-                        v.push(input);
-                        self.tags = Some(v);
-                        self
+        v.push(input);
+        self.tags = Some(v);
+        self
     }
     /// <p>Key-value pairs that can be used to group and search for agreements.</p>
-    pub fn set_tags(mut self, input: std::option::Option<std::vec::Vec<crate::types::Tag>>) -> Self {
-        self.tags = input; self
+    pub fn set_tags(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::Tag>>,
+    ) -> Self {
+        self.tags = input;
+        self
     }
     /// Consumes the builder and constructs a [`CreateAgreementInput`](crate::operation::create_agreement::CreateAgreementInput).
-    pub fn build(self) -> Result<crate::operation::create_agreement::CreateAgreementInput, aws_smithy_http::operation::error::BuildError> {
-        Ok(
-            crate::operation::create_agreement::CreateAgreementInput {
-                description: self.description
-                ,
-                server_id: self.server_id
-                ,
-                local_profile_id: self.local_profile_id
-                ,
-                partner_profile_id: self.partner_profile_id
-                ,
-                base_directory: self.base_directory
-                ,
-                access_role: self.access_role
-                ,
-                status: self.status
-                ,
-                tags: self.tags
-                ,
-            }
-        )
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::create_agreement::CreateAgreementInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        Ok(crate::operation::create_agreement::CreateAgreementInput {
+            description: self.description,
+            server_id: self.server_id,
+            local_profile_id: self.local_profile_id,
+            partner_profile_id: self.partner_profile_id,
+            base_directory: self.base_directory,
+            access_role: self.access_role,
+            status: self.status,
+            tags: self.tags,
+        })
     }
 }
-

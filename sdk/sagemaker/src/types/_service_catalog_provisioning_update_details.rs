@@ -3,21 +3,24 @@
 /// <p>Details that you specify to provision a service catalog product. For information about service catalog, see <a href="https://docs.aws.amazon.com/servicecatalog/latest/adminguide/introduction.html">What is Amazon Web Services Service Catalog</a>. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ServiceCatalogProvisioningUpdateDetails  {
+pub struct ServiceCatalogProvisioningUpdateDetails {
     /// <p>The ID of the provisioning artifact.</p>
     #[doc(hidden)]
     pub provisioning_artifact_id: std::option::Option<std::string::String>,
     /// <p>A list of key value pairs that you specify when you provision a product.</p>
     #[doc(hidden)]
-    pub provisioning_parameters: std::option::Option<std::vec::Vec<crate::types::ProvisioningParameter>>,
+    pub provisioning_parameters:
+        std::option::Option<std::vec::Vec<crate::types::ProvisioningParameter>>,
 }
 impl ServiceCatalogProvisioningUpdateDetails {
     /// <p>The ID of the provisioning artifact.</p>
-    pub fn provisioning_artifact_id(&self) -> std::option::Option<& str> {
+    pub fn provisioning_artifact_id(&self) -> std::option::Option<&str> {
         self.provisioning_artifact_id.as_deref()
     }
     /// <p>A list of key value pairs that you specify when you provision a product.</p>
-    pub fn provisioning_parameters(&self) -> std::option::Option<& [crate::types::ProvisioningParameter]> {
+    pub fn provisioning_parameters(
+        &self,
+    ) -> std::option::Option<&[crate::types::ProvisioningParameter]> {
         self.provisioning_parameters.as_deref()
     }
 }
@@ -33,7 +36,8 @@ impl ServiceCatalogProvisioningUpdateDetails {
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct ServiceCatalogProvisioningUpdateDetailsBuilder {
     pub(crate) provisioning_artifact_id: std::option::Option<std::string::String>,
-    pub(crate) provisioning_parameters: std::option::Option<std::vec::Vec<crate::types::ProvisioningParameter>>,
+    pub(crate) provisioning_parameters:
+        std::option::Option<std::vec::Vec<crate::types::ProvisioningParameter>>,
 }
 impl ServiceCatalogProvisioningUpdateDetailsBuilder {
     /// <p>The ID of the provisioning artifact.</p>
@@ -42,8 +46,12 @@ impl ServiceCatalogProvisioningUpdateDetailsBuilder {
         self
     }
     /// <p>The ID of the provisioning artifact.</p>
-    pub fn set_provisioning_artifact_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.provisioning_artifact_id = input; self
+    pub fn set_provisioning_artifact_id(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.provisioning_artifact_id = input;
+        self
     }
     /// Appends an item to `provisioning_parameters`.
     ///
@@ -52,22 +60,23 @@ impl ServiceCatalogProvisioningUpdateDetailsBuilder {
     /// <p>A list of key value pairs that you specify when you provision a product.</p>
     pub fn provisioning_parameters(mut self, input: crate::types::ProvisioningParameter) -> Self {
         let mut v = self.provisioning_parameters.unwrap_or_default();
-                        v.push(input);
-                        self.provisioning_parameters = Some(v);
-                        self
+        v.push(input);
+        self.provisioning_parameters = Some(v);
+        self
     }
     /// <p>A list of key value pairs that you specify when you provision a product.</p>
-    pub fn set_provisioning_parameters(mut self, input: std::option::Option<std::vec::Vec<crate::types::ProvisioningParameter>>) -> Self {
-        self.provisioning_parameters = input; self
+    pub fn set_provisioning_parameters(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::ProvisioningParameter>>,
+    ) -> Self {
+        self.provisioning_parameters = input;
+        self
     }
     /// Consumes the builder and constructs a [`ServiceCatalogProvisioningUpdateDetails`](crate::types::ServiceCatalogProvisioningUpdateDetails).
     pub fn build(self) -> crate::types::ServiceCatalogProvisioningUpdateDetails {
         crate::types::ServiceCatalogProvisioningUpdateDetails {
-            provisioning_artifact_id: self.provisioning_artifact_id
-            ,
-            provisioning_parameters: self.provisioning_parameters
-            ,
+            provisioning_artifact_id: self.provisioning_artifact_id,
+            provisioning_parameters: self.provisioning_parameters,
         }
     }
 }
-

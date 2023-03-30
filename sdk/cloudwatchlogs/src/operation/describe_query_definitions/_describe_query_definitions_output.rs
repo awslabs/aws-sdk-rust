@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeQueryDefinitionsOutput  {
+pub struct DescribeQueryDefinitionsOutput {
     /// <p>The list of query definitions that match your request.</p>
     #[doc(hidden)]
     pub query_definitions: std::option::Option<std::vec::Vec<crate::types::QueryDefinition>>,
@@ -13,22 +13,24 @@ pub struct DescribeQueryDefinitionsOutput  {
 }
 impl DescribeQueryDefinitionsOutput {
     /// <p>The list of query definitions that match your request.</p>
-    pub fn query_definitions(&self) -> std::option::Option<& [crate::types::QueryDefinition]> {
+    pub fn query_definitions(&self) -> std::option::Option<&[crate::types::QueryDefinition]> {
         self.query_definitions.as_deref()
     }
     /// <p>The token for the next set of items to return. The token expires after 24 hours.</p>
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for DescribeQueryDefinitionsOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl DescribeQueryDefinitionsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeQueryDefinitionsOutput`](crate::operation::describe_query_definitions::DescribeQueryDefinitionsOutput).
-    pub fn builder() -> crate::operation::describe_query_definitions::builders::DescribeQueryDefinitionsOutputBuilder {
+    pub fn builder(
+    ) -> crate::operation::describe_query_definitions::builders::DescribeQueryDefinitionsOutputBuilder
+    {
         crate::operation::describe_query_definitions::builders::DescribeQueryDefinitionsOutputBuilder::default()
     }
 }
@@ -49,13 +51,17 @@ impl DescribeQueryDefinitionsOutputBuilder {
     /// <p>The list of query definitions that match your request.</p>
     pub fn query_definitions(mut self, input: crate::types::QueryDefinition) -> Self {
         let mut v = self.query_definitions.unwrap_or_default();
-                        v.push(input);
-                        self.query_definitions = Some(v);
-                        self
+        v.push(input);
+        self.query_definitions = Some(v);
+        self
     }
     /// <p>The list of query definitions that match your request.</p>
-    pub fn set_query_definitions(mut self, input: std::option::Option<std::vec::Vec<crate::types::QueryDefinition>>) -> Self {
-        self.query_definitions = input; self
+    pub fn set_query_definitions(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::QueryDefinition>>,
+    ) -> Self {
+        self.query_definitions = input;
+        self
     }
     /// <p>The token for the next set of items to return. The token expires after 24 hours.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -64,26 +70,26 @@ impl DescribeQueryDefinitionsOutputBuilder {
     }
     /// <p>The token for the next set of items to return. The token expires after 24 hours.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input; self
+        self.next_token = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`DescribeQueryDefinitionsOutput`](crate::operation::describe_query_definitions::DescribeQueryDefinitionsOutput).
-    pub fn build(self) -> crate::operation::describe_query_definitions::DescribeQueryDefinitionsOutput {
+    pub fn build(
+        self,
+    ) -> crate::operation::describe_query_definitions::DescribeQueryDefinitionsOutput {
         crate::operation::describe_query_definitions::DescribeQueryDefinitionsOutput {
-            query_definitions: self.query_definitions
-            ,
-            next_token: self.next_token
-            ,
+            query_definitions: self.query_definitions,
+            next_token: self.next_token,
             _request_id: self._request_id,
         }
     }
 }
-

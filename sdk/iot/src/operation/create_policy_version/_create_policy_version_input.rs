@@ -3,7 +3,7 @@
 /// <p>The input for the CreatePolicyVersion operation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreatePolicyVersionInput  {
+pub struct CreatePolicyVersionInput {
     /// <p>The policy name.</p>
     #[doc(hidden)]
     pub policy_name: std::option::Option<std::string::String>,
@@ -16,11 +16,11 @@ pub struct CreatePolicyVersionInput  {
 }
 impl CreatePolicyVersionInput {
     /// <p>The policy name.</p>
-    pub fn policy_name(&self) -> std::option::Option<& str> {
+    pub fn policy_name(&self) -> std::option::Option<&str> {
         self.policy_name.as_deref()
     }
     /// <p>The JSON document that describes the policy. Minimum length of 1. Maximum length of 2048, excluding whitespace.</p>
-    pub fn policy_document(&self) -> std::option::Option<& str> {
+    pub fn policy_document(&self) -> std::option::Option<&str> {
         self.policy_document.as_deref()
     }
     /// <p>Specifies whether the policy version is set as the default. When this parameter is true, the new policy version becomes the operative version (that is, the version that is in effect for the certificates to which the policy is attached).</p>
@@ -30,8 +30,10 @@ impl CreatePolicyVersionInput {
 }
 impl CreatePolicyVersionInput {
     /// Creates a new builder-style object to manufacture [`CreatePolicyVersionInput`](crate::operation::create_policy_version::CreatePolicyVersionInput).
-    pub fn builder() -> crate::operation::create_policy_version::builders::CreatePolicyVersionInputBuilder {
-        crate::operation::create_policy_version::builders::CreatePolicyVersionInputBuilder::default()
+    pub fn builder(
+    ) -> crate::operation::create_policy_version::builders::CreatePolicyVersionInputBuilder {
+        crate::operation::create_policy_version::builders::CreatePolicyVersionInputBuilder::default(
+        )
     }
 }
 
@@ -51,7 +53,8 @@ impl CreatePolicyVersionInputBuilder {
     }
     /// <p>The policy name.</p>
     pub fn set_policy_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.policy_name = input; self
+        self.policy_name = input;
+        self
     }
     /// <p>The JSON document that describes the policy. Minimum length of 1. Maximum length of 2048, excluding whitespace.</p>
     pub fn policy_document(mut self, input: impl Into<std::string::String>) -> Self {
@@ -60,7 +63,8 @@ impl CreatePolicyVersionInputBuilder {
     }
     /// <p>The JSON document that describes the policy. Minimum length of 1. Maximum length of 2048, excluding whitespace.</p>
     pub fn set_policy_document(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.policy_document = input; self
+        self.policy_document = input;
+        self
     }
     /// <p>Specifies whether the policy version is set as the default. When this parameter is true, the new policy version becomes the operative version (that is, the version that is in effect for the certificates to which the policy is attached).</p>
     pub fn set_as_default(mut self, input: bool) -> Self {
@@ -69,21 +73,22 @@ impl CreatePolicyVersionInputBuilder {
     }
     /// <p>Specifies whether the policy version is set as the default. When this parameter is true, the new policy version becomes the operative version (that is, the version that is in effect for the certificates to which the policy is attached).</p>
     pub fn set_set_as_default(mut self, input: std::option::Option<bool>) -> Self {
-        self.set_as_default = input; self
+        self.set_as_default = input;
+        self
     }
     /// Consumes the builder and constructs a [`CreatePolicyVersionInput`](crate::operation::create_policy_version::CreatePolicyVersionInput).
-    pub fn build(self) -> Result<crate::operation::create_policy_version::CreatePolicyVersionInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::create_policy_version::CreatePolicyVersionInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::create_policy_version::CreatePolicyVersionInput {
-                policy_name: self.policy_name
-                ,
-                policy_document: self.policy_document
-                ,
-                set_as_default: self.set_as_default
-                    .unwrap_or_default()
-                ,
-            }
+                policy_name: self.policy_name,
+                policy_document: self.policy_document,
+                set_as_default: self.set_as_default.unwrap_or_default(),
+            },
         )
     }
 }
-

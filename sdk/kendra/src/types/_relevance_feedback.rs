@@ -3,7 +3,7 @@
 /// <p>Provides feedback on how relevant a document is to a search. Your application uses the <code>SubmitFeedback</code> API to provide relevance information.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct RelevanceFeedback  {
+pub struct RelevanceFeedback {
     /// <p>The identifier of the search result that the user provided relevance feedback for.</p>
     #[doc(hidden)]
     pub result_id: std::option::Option<std::string::String>,
@@ -13,11 +13,11 @@ pub struct RelevanceFeedback  {
 }
 impl RelevanceFeedback {
     /// <p>The identifier of the search result that the user provided relevance feedback for.</p>
-    pub fn result_id(&self) -> std::option::Option<& str> {
+    pub fn result_id(&self) -> std::option::Option<&str> {
         self.result_id.as_deref()
     }
     /// <p>Whether to document was relevant or not relevant to the search.</p>
-    pub fn relevance_value(&self) -> std::option::Option<& crate::types::RelevanceType> {
+    pub fn relevance_value(&self) -> std::option::Option<&crate::types::RelevanceType> {
         self.relevance_value.as_ref()
     }
 }
@@ -43,7 +43,8 @@ impl RelevanceFeedbackBuilder {
     }
     /// <p>The identifier of the search result that the user provided relevance feedback for.</p>
     pub fn set_result_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.result_id = input; self
+        self.result_id = input;
+        self
     }
     /// <p>Whether to document was relevant or not relevant to the search.</p>
     pub fn relevance_value(mut self, input: crate::types::RelevanceType) -> Self {
@@ -51,17 +52,18 @@ impl RelevanceFeedbackBuilder {
         self
     }
     /// <p>Whether to document was relevant or not relevant to the search.</p>
-    pub fn set_relevance_value(mut self, input: std::option::Option<crate::types::RelevanceType>) -> Self {
-        self.relevance_value = input; self
+    pub fn set_relevance_value(
+        mut self,
+        input: std::option::Option<crate::types::RelevanceType>,
+    ) -> Self {
+        self.relevance_value = input;
+        self
     }
     /// Consumes the builder and constructs a [`RelevanceFeedback`](crate::types::RelevanceFeedback).
     pub fn build(self) -> crate::types::RelevanceFeedback {
         crate::types::RelevanceFeedback {
-            result_id: self.result_id
-            ,
-            relevance_value: self.relevance_value
-            ,
+            result_id: self.result_id,
+            relevance_value: self.relevance_value,
         }
     }
 }
-

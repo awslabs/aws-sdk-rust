@@ -3,14 +3,14 @@
 /// <p>A legal hold configuration for an object.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ObjectLockLegalHold  {
+pub struct ObjectLockLegalHold {
     /// <p>Indicates whether the specified object has a legal hold in place.</p>
     #[doc(hidden)]
     pub status: std::option::Option<crate::types::ObjectLockLegalHoldStatus>,
 }
 impl ObjectLockLegalHold {
     /// <p>Indicates whether the specified object has a legal hold in place.</p>
-    pub fn status(&self) -> std::option::Option<& crate::types::ObjectLockLegalHoldStatus> {
+    pub fn status(&self) -> std::option::Option<&crate::types::ObjectLockLegalHoldStatus> {
         self.status.as_ref()
     }
 }
@@ -34,15 +34,17 @@ impl ObjectLockLegalHoldBuilder {
         self
     }
     /// <p>Indicates whether the specified object has a legal hold in place.</p>
-    pub fn set_status(mut self, input: std::option::Option<crate::types::ObjectLockLegalHoldStatus>) -> Self {
-        self.status = input; self
+    pub fn set_status(
+        mut self,
+        input: std::option::Option<crate::types::ObjectLockLegalHoldStatus>,
+    ) -> Self {
+        self.status = input;
+        self
     }
     /// Consumes the builder and constructs a [`ObjectLockLegalHold`](crate::types::ObjectLockLegalHold).
     pub fn build(self) -> crate::types::ObjectLockLegalHold {
         crate::types::ObjectLockLegalHold {
-            status: self.status
-            ,
+            status: self.status,
         }
     }
 }
-

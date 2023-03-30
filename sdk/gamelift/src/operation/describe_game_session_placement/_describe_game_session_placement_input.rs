@@ -2,20 +2,20 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeGameSessionPlacementInput  {
+pub struct DescribeGameSessionPlacementInput {
     /// <p>A unique identifier for a game session placement to retrieve.</p>
     #[doc(hidden)]
     pub placement_id: std::option::Option<std::string::String>,
 }
 impl DescribeGameSessionPlacementInput {
     /// <p>A unique identifier for a game session placement to retrieve.</p>
-    pub fn placement_id(&self) -> std::option::Option<& str> {
+    pub fn placement_id(&self) -> std::option::Option<&str> {
         self.placement_id.as_deref()
     }
 }
 impl DescribeGameSessionPlacementInput {
     /// Creates a new builder-style object to manufacture [`DescribeGameSessionPlacementInput`](crate::operation::describe_game_session_placement::DescribeGameSessionPlacementInput).
-    pub fn builder() -> crate::operation::describe_game_session_placement::builders::DescribeGameSessionPlacementInputBuilder {
+    pub fn builder() -> crate::operation::describe_game_session_placement::builders::DescribeGameSessionPlacementInputBuilder{
         crate::operation::describe_game_session_placement::builders::DescribeGameSessionPlacementInputBuilder::default()
     }
 }
@@ -34,16 +34,20 @@ impl DescribeGameSessionPlacementInputBuilder {
     }
     /// <p>A unique identifier for a game session placement to retrieve.</p>
     pub fn set_placement_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.placement_id = input; self
+        self.placement_id = input;
+        self
     }
     /// Consumes the builder and constructs a [`DescribeGameSessionPlacementInput`](crate::operation::describe_game_session_placement::DescribeGameSessionPlacementInput).
-    pub fn build(self) -> Result<crate::operation::describe_game_session_placement::DescribeGameSessionPlacementInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::describe_game_session_placement::DescribeGameSessionPlacementInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::describe_game_session_placement::DescribeGameSessionPlacementInput {
-                placement_id: self.placement_id
-                ,
-            }
+                placement_id: self.placement_id,
+            },
         )
     }
 }
-

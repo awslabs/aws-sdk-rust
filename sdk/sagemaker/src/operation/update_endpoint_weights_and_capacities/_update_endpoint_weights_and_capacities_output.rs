@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateEndpointWeightsAndCapacitiesOutput  {
+pub struct UpdateEndpointWeightsAndCapacitiesOutput {
     /// <p>The Amazon Resource Name (ARN) of the updated endpoint.</p>
     #[doc(hidden)]
     pub endpoint_arn: std::option::Option<std::string::String>,
@@ -10,18 +10,18 @@ pub struct UpdateEndpointWeightsAndCapacitiesOutput  {
 }
 impl UpdateEndpointWeightsAndCapacitiesOutput {
     /// <p>The Amazon Resource Name (ARN) of the updated endpoint.</p>
-    pub fn endpoint_arn(&self) -> std::option::Option<& str> {
+    pub fn endpoint_arn(&self) -> std::option::Option<&str> {
         self.endpoint_arn.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for UpdateEndpointWeightsAndCapacitiesOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl UpdateEndpointWeightsAndCapacitiesOutput {
     /// Creates a new builder-style object to manufacture [`UpdateEndpointWeightsAndCapacitiesOutput`](crate::operation::update_endpoint_weights_and_capacities::UpdateEndpointWeightsAndCapacitiesOutput).
-    pub fn builder() -> crate::operation::update_endpoint_weights_and_capacities::builders::UpdateEndpointWeightsAndCapacitiesOutputBuilder {
+    pub fn builder() -> crate::operation::update_endpoint_weights_and_capacities::builders::UpdateEndpointWeightsAndCapacitiesOutputBuilder{
         crate::operation::update_endpoint_weights_and_capacities::builders::UpdateEndpointWeightsAndCapacitiesOutputBuilder::default()
     }
 }
@@ -41,19 +41,20 @@ impl UpdateEndpointWeightsAndCapacitiesOutputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the updated endpoint.</p>
     pub fn set_endpoint_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.endpoint_arn = input; self
+        self.endpoint_arn = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`UpdateEndpointWeightsAndCapacitiesOutput`](crate::operation::update_endpoint_weights_and_capacities::UpdateEndpointWeightsAndCapacitiesOutput).
-    pub fn build(self) -> crate::operation::update_endpoint_weights_and_capacities::UpdateEndpointWeightsAndCapacitiesOutput {
+    pub fn build(self) -> crate::operation::update_endpoint_weights_and_capacities::UpdateEndpointWeightsAndCapacitiesOutput{
         crate::operation::update_endpoint_weights_and_capacities::UpdateEndpointWeightsAndCapacitiesOutput {
             endpoint_arn: self.endpoint_arn
             ,
@@ -61,4 +62,3 @@ impl UpdateEndpointWeightsAndCapacitiesOutputBuilder {
         }
     }
 }
-

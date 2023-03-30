@@ -2,20 +2,20 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteOrganizationConformancePackInput  {
+pub struct DeleteOrganizationConformancePackInput {
     /// <p>The name of organization conformance pack that you want to delete.</p>
     #[doc(hidden)]
     pub organization_conformance_pack_name: std::option::Option<std::string::String>,
 }
 impl DeleteOrganizationConformancePackInput {
     /// <p>The name of organization conformance pack that you want to delete.</p>
-    pub fn organization_conformance_pack_name(&self) -> std::option::Option<& str> {
+    pub fn organization_conformance_pack_name(&self) -> std::option::Option<&str> {
         self.organization_conformance_pack_name.as_deref()
     }
 }
 impl DeleteOrganizationConformancePackInput {
     /// Creates a new builder-style object to manufacture [`DeleteOrganizationConformancePackInput`](crate::operation::delete_organization_conformance_pack::DeleteOrganizationConformancePackInput).
-    pub fn builder() -> crate::operation::delete_organization_conformance_pack::builders::DeleteOrganizationConformancePackInputBuilder {
+    pub fn builder() -> crate::operation::delete_organization_conformance_pack::builders::DeleteOrganizationConformancePackInputBuilder{
         crate::operation::delete_organization_conformance_pack::builders::DeleteOrganizationConformancePackInputBuilder::default()
     }
 }
@@ -28,16 +28,23 @@ pub struct DeleteOrganizationConformancePackInputBuilder {
 }
 impl DeleteOrganizationConformancePackInputBuilder {
     /// <p>The name of organization conformance pack that you want to delete.</p>
-    pub fn organization_conformance_pack_name(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn organization_conformance_pack_name(
+        mut self,
+        input: impl Into<std::string::String>,
+    ) -> Self {
         self.organization_conformance_pack_name = Some(input.into());
         self
     }
     /// <p>The name of organization conformance pack that you want to delete.</p>
-    pub fn set_organization_conformance_pack_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.organization_conformance_pack_name = input; self
+    pub fn set_organization_conformance_pack_name(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.organization_conformance_pack_name = input;
+        self
     }
     /// Consumes the builder and constructs a [`DeleteOrganizationConformancePackInput`](crate::operation::delete_organization_conformance_pack::DeleteOrganizationConformancePackInput).
-    pub fn build(self) -> Result<crate::operation::delete_organization_conformance_pack::DeleteOrganizationConformancePackInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> Result<crate::operation::delete_organization_conformance_pack::DeleteOrganizationConformancePackInput, aws_smithy_http::operation::error::BuildError>{
         Ok(
             crate::operation::delete_organization_conformance_pack::DeleteOrganizationConformancePackInput {
                 organization_conformance_pack_name: self.organization_conformance_pack_name
@@ -46,4 +53,3 @@ impl DeleteOrganizationConformancePackInputBuilder {
         )
     }
 }
-

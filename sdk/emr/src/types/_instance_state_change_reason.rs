@@ -3,7 +3,7 @@
 /// <p>The details of the status change reason for the instance.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct InstanceStateChangeReason  {
+pub struct InstanceStateChangeReason {
     /// <p>The programmable code for the state change reason.</p>
     #[doc(hidden)]
     pub code: std::option::Option<crate::types::InstanceStateChangeReasonCode>,
@@ -13,11 +13,11 @@ pub struct InstanceStateChangeReason  {
 }
 impl InstanceStateChangeReason {
     /// <p>The programmable code for the state change reason.</p>
-    pub fn code(&self) -> std::option::Option<& crate::types::InstanceStateChangeReasonCode> {
+    pub fn code(&self) -> std::option::Option<&crate::types::InstanceStateChangeReasonCode> {
         self.code.as_ref()
     }
     /// <p>The status change reason description.</p>
-    pub fn message(&self) -> std::option::Option<& str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -42,8 +42,12 @@ impl InstanceStateChangeReasonBuilder {
         self
     }
     /// <p>The programmable code for the state change reason.</p>
-    pub fn set_code(mut self, input: std::option::Option<crate::types::InstanceStateChangeReasonCode>) -> Self {
-        self.code = input; self
+    pub fn set_code(
+        mut self,
+        input: std::option::Option<crate::types::InstanceStateChangeReasonCode>,
+    ) -> Self {
+        self.code = input;
+        self
     }
     /// <p>The status change reason description.</p>
     pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
@@ -52,16 +56,14 @@ impl InstanceStateChangeReasonBuilder {
     }
     /// <p>The status change reason description.</p>
     pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.message = input; self
+        self.message = input;
+        self
     }
     /// Consumes the builder and constructs a [`InstanceStateChangeReason`](crate::types::InstanceStateChangeReason).
     pub fn build(self) -> crate::types::InstanceStateChangeReason {
         crate::types::InstanceStateChangeReason {
-            code: self.code
-            ,
-            message: self.message
-            ,
+            code: self.code,
+            message: self.message,
         }
     }
 }
-

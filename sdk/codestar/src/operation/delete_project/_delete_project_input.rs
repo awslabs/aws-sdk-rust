@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteProjectInput  {
+pub struct DeleteProjectInput {
     /// <p>The ID of the project to be deleted in AWS CodeStar.</p>
     #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
@@ -15,11 +15,11 @@ pub struct DeleteProjectInput  {
 }
 impl DeleteProjectInput {
     /// <p>The ID of the project to be deleted in AWS CodeStar.</p>
-    pub fn id(&self) -> std::option::Option<& str> {
+    pub fn id(&self) -> std::option::Option<&str> {
         self.id.as_deref()
     }
     /// <p>A user- or system-generated token that identifies the entity that requested project deletion. This token can be used to repeat the request. </p>
-    pub fn client_request_token(&self) -> std::option::Option<& str> {
+    pub fn client_request_token(&self) -> std::option::Option<&str> {
         self.client_request_token.as_deref()
     }
     /// <p>Whether to send a delete request for the primary stack in AWS CloudFormation originally used to generate the project and its resources. This option will delete all AWS resources for the project (except for any buckets in Amazon S3) as well as deleting the project itself. Recommended for most use cases.</p>
@@ -50,7 +50,8 @@ impl DeleteProjectInputBuilder {
     }
     /// <p>The ID of the project to be deleted in AWS CodeStar.</p>
     pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.id = input; self
+        self.id = input;
+        self
     }
     /// <p>A user- or system-generated token that identifies the entity that requested project deletion. This token can be used to repeat the request. </p>
     pub fn client_request_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -58,8 +59,12 @@ impl DeleteProjectInputBuilder {
         self
     }
     /// <p>A user- or system-generated token that identifies the entity that requested project deletion. This token can be used to repeat the request. </p>
-    pub fn set_client_request_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.client_request_token = input; self
+    pub fn set_client_request_token(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.client_request_token = input;
+        self
     }
     /// <p>Whether to send a delete request for the primary stack in AWS CloudFormation originally used to generate the project and its resources. This option will delete all AWS resources for the project (except for any buckets in Amazon S3) as well as deleting the project itself. Recommended for most use cases.</p>
     pub fn delete_stack(mut self, input: bool) -> Self {
@@ -68,21 +73,20 @@ impl DeleteProjectInputBuilder {
     }
     /// <p>Whether to send a delete request for the primary stack in AWS CloudFormation originally used to generate the project and its resources. This option will delete all AWS resources for the project (except for any buckets in Amazon S3) as well as deleting the project itself. Recommended for most use cases.</p>
     pub fn set_delete_stack(mut self, input: std::option::Option<bool>) -> Self {
-        self.delete_stack = input; self
+        self.delete_stack = input;
+        self
     }
     /// Consumes the builder and constructs a [`DeleteProjectInput`](crate::operation::delete_project::DeleteProjectInput).
-    pub fn build(self) -> Result<crate::operation::delete_project::DeleteProjectInput, aws_smithy_http::operation::error::BuildError> {
-        Ok(
-            crate::operation::delete_project::DeleteProjectInput {
-                id: self.id
-                ,
-                client_request_token: self.client_request_token
-                ,
-                delete_stack: self.delete_stack
-                    .unwrap_or_default()
-                ,
-            }
-        )
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::delete_project::DeleteProjectInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        Ok(crate::operation::delete_project::DeleteProjectInput {
+            id: self.id,
+            client_request_token: self.client_request_token,
+            delete_stack: self.delete_stack.unwrap_or_default(),
+        })
     }
 }
-

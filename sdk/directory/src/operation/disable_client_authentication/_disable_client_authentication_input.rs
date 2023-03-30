@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DisableClientAuthenticationInput  {
+pub struct DisableClientAuthenticationInput {
     /// <p>The identifier of the directory </p>
     #[doc(hidden)]
     pub directory_id: std::option::Option<std::string::String>,
@@ -12,17 +12,17 @@ pub struct DisableClientAuthenticationInput  {
 }
 impl DisableClientAuthenticationInput {
     /// <p>The identifier of the directory </p>
-    pub fn directory_id(&self) -> std::option::Option<& str> {
+    pub fn directory_id(&self) -> std::option::Option<&str> {
         self.directory_id.as_deref()
     }
     /// <p>The type of client authentication to disable. Currently, only the parameter, <code>SmartCard</code> is supported.</p>
-    pub fn r#type(&self) -> std::option::Option<& crate::types::ClientAuthenticationType> {
+    pub fn r#type(&self) -> std::option::Option<&crate::types::ClientAuthenticationType> {
         self.r#type.as_ref()
     }
 }
 impl DisableClientAuthenticationInput {
     /// Creates a new builder-style object to manufacture [`DisableClientAuthenticationInput`](crate::operation::disable_client_authentication::DisableClientAuthenticationInput).
-    pub fn builder() -> crate::operation::disable_client_authentication::builders::DisableClientAuthenticationInputBuilder {
+    pub fn builder() -> crate::operation::disable_client_authentication::builders::DisableClientAuthenticationInputBuilder{
         crate::operation::disable_client_authentication::builders::DisableClientAuthenticationInputBuilder::default()
     }
 }
@@ -42,7 +42,8 @@ impl DisableClientAuthenticationInputBuilder {
     }
     /// <p>The identifier of the directory </p>
     pub fn set_directory_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.directory_id = input; self
+        self.directory_id = input;
+        self
     }
     /// <p>The type of client authentication to disable. Currently, only the parameter, <code>SmartCard</code> is supported.</p>
     pub fn r#type(mut self, input: crate::types::ClientAuthenticationType) -> Self {
@@ -50,19 +51,25 @@ impl DisableClientAuthenticationInputBuilder {
         self
     }
     /// <p>The type of client authentication to disable. Currently, only the parameter, <code>SmartCard</code> is supported.</p>
-    pub fn set_type(mut self, input: std::option::Option<crate::types::ClientAuthenticationType>) -> Self {
-        self.r#type = input; self
+    pub fn set_type(
+        mut self,
+        input: std::option::Option<crate::types::ClientAuthenticationType>,
+    ) -> Self {
+        self.r#type = input;
+        self
     }
     /// Consumes the builder and constructs a [`DisableClientAuthenticationInput`](crate::operation::disable_client_authentication::DisableClientAuthenticationInput).
-    pub fn build(self) -> Result<crate::operation::disable_client_authentication::DisableClientAuthenticationInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::disable_client_authentication::DisableClientAuthenticationInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::disable_client_authentication::DisableClientAuthenticationInput {
-                directory_id: self.directory_id
-                ,
-                r#type: self.r#type
-                ,
-            }
+                directory_id: self.directory_id,
+                r#type: self.r#type,
+            },
         )
     }
 }
-

@@ -2,20 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListProvisionedCapacityInput  {
+pub struct ListProvisionedCapacityInput {
     /// <p>The AWS account ID of the account that owns the vault. You can either specify an AWS account ID or optionally a single '-' (hyphen), in which case Amazon S3 Glacier uses the AWS account ID associated with the credentials used to sign the request. If you use an account ID, don't include any hyphens ('-') in the ID. </p>
     #[doc(hidden)]
     pub account_id: std::option::Option<std::string::String>,
 }
 impl ListProvisionedCapacityInput {
     /// <p>The AWS account ID of the account that owns the vault. You can either specify an AWS account ID or optionally a single '-' (hyphen), in which case Amazon S3 Glacier uses the AWS account ID associated with the credentials used to sign the request. If you use an account ID, don't include any hyphens ('-') in the ID. </p>
-    pub fn account_id(&self) -> std::option::Option<& str> {
+    pub fn account_id(&self) -> std::option::Option<&str> {
         self.account_id.as_deref()
     }
 }
 impl ListProvisionedCapacityInput {
     /// Creates a new builder-style object to manufacture [`ListProvisionedCapacityInput`](crate::operation::list_provisioned_capacity::ListProvisionedCapacityInput).
-    pub fn builder() -> crate::operation::list_provisioned_capacity::builders::ListProvisionedCapacityInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::list_provisioned_capacity::builders::ListProvisionedCapacityInputBuilder
+    {
         crate::operation::list_provisioned_capacity::builders::ListProvisionedCapacityInputBuilder::default()
     }
 }
@@ -34,16 +36,20 @@ impl ListProvisionedCapacityInputBuilder {
     }
     /// <p>The AWS account ID of the account that owns the vault. You can either specify an AWS account ID or optionally a single '-' (hyphen), in which case Amazon S3 Glacier uses the AWS account ID associated with the credentials used to sign the request. If you use an account ID, don't include any hyphens ('-') in the ID. </p>
     pub fn set_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.account_id = input; self
+        self.account_id = input;
+        self
     }
     /// Consumes the builder and constructs a [`ListProvisionedCapacityInput`](crate::operation::list_provisioned_capacity::ListProvisionedCapacityInput).
-    pub fn build(self) -> Result<crate::operation::list_provisioned_capacity::ListProvisionedCapacityInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::list_provisioned_capacity::ListProvisionedCapacityInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::list_provisioned_capacity::ListProvisionedCapacityInput {
-                account_id: self.account_id
-                ,
-            }
+                account_id: self.account_id,
+            },
         )
     }
 }
-

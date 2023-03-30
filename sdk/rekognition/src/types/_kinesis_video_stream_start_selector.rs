@@ -3,7 +3,7 @@
 /// <p>Specifies the starting point in a Kinesis stream to start processing. You can use the producer timestamp or the fragment number. One of either producer timestamp or fragment number is required. If you use the producer timestamp, you must put the time in milliseconds. For more information about fragment numbers, see <a href="https://docs.aws.amazon.com/kinesisvideostreams/latest/dg/API_reader_Fragment.html">Fragment</a>. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct KinesisVideoStreamStartSelector  {
+pub struct KinesisVideoStreamStartSelector {
     /// <p> The timestamp from the producer corresponding to the fragment, in milliseconds, expressed in unix time format. </p>
     #[doc(hidden)]
     pub producer_timestamp: std::option::Option<i64>,
@@ -17,7 +17,7 @@ impl KinesisVideoStreamStartSelector {
         self.producer_timestamp
     }
     /// <p> The unique identifier of the fragment. This value monotonically increases based on the ingestion order. </p>
-    pub fn fragment_number(&self) -> std::option::Option<& str> {
+    pub fn fragment_number(&self) -> std::option::Option<&str> {
         self.fragment_number.as_deref()
     }
 }
@@ -43,7 +43,8 @@ impl KinesisVideoStreamStartSelectorBuilder {
     }
     /// <p> The timestamp from the producer corresponding to the fragment, in milliseconds, expressed in unix time format. </p>
     pub fn set_producer_timestamp(mut self, input: std::option::Option<i64>) -> Self {
-        self.producer_timestamp = input; self
+        self.producer_timestamp = input;
+        self
     }
     /// <p> The unique identifier of the fragment. This value monotonically increases based on the ingestion order. </p>
     pub fn fragment_number(mut self, input: impl Into<std::string::String>) -> Self {
@@ -52,16 +53,14 @@ impl KinesisVideoStreamStartSelectorBuilder {
     }
     /// <p> The unique identifier of the fragment. This value monotonically increases based on the ingestion order. </p>
     pub fn set_fragment_number(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.fragment_number = input; self
+        self.fragment_number = input;
+        self
     }
     /// Consumes the builder and constructs a [`KinesisVideoStreamStartSelector`](crate::types::KinesisVideoStreamStartSelector).
     pub fn build(self) -> crate::types::KinesisVideoStreamStartSelector {
         crate::types::KinesisVideoStreamStartSelector {
-            producer_timestamp: self.producer_timestamp
-            ,
-            fragment_number: self.fragment_number
-            ,
+            producer_timestamp: self.producer_timestamp,
+            fragment_number: self.fragment_number,
         }
     }
 }
-

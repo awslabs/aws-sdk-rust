@@ -3,15 +3,15 @@
 /// <p>The CheckDomainAvailability request contains the following elements.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CheckDomainAvailabilityInput  {
-    /// <p>The name of the domain that you want to get availability for. The top-level domain (TLD), such as .com, must be a TLD that Route 53 supports. For a list of supported TLDs, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/registrar-tld-list.html">Domains that You Can Register with Amazon Route 53</a> in the <i>Amazon Route 53 Developer Guide</i>.</p> 
-    /// <p>The domain name can contain only the following characters:</p> 
-    /// <ul> 
-    /// <li> <p>Letters a through z. Domain names are not case sensitive.</p> </li> 
-    /// <li> <p>Numbers 0 through 9.</p> </li> 
-    /// <li> <p>Hyphen (-). You can't specify a hyphen at the beginning or end of a label. </p> </li> 
-    /// <li> <p>Period (.) to separate the labels in the name, such as the <code>.</code> in <code>example.com</code>.</p> </li> 
-    /// </ul> 
+pub struct CheckDomainAvailabilityInput {
+    /// <p>The name of the domain that you want to get availability for. The top-level domain (TLD), such as .com, must be a TLD that Route 53 supports. For a list of supported TLDs, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/registrar-tld-list.html">Domains that You Can Register with Amazon Route 53</a> in the <i>Amazon Route 53 Developer Guide</i>.</p>
+    /// <p>The domain name can contain only the following characters:</p>
+    /// <ul>
+    /// <li> <p>Letters a through z. Domain names are not case sensitive.</p> </li>
+    /// <li> <p>Numbers 0 through 9.</p> </li>
+    /// <li> <p>Hyphen (-). You can't specify a hyphen at the beginning or end of a label. </p> </li>
+    /// <li> <p>Period (.) to separate the labels in the name, such as the <code>.</code> in <code>example.com</code>.</p> </li>
+    /// </ul>
     /// <p>Internationalized domain names are not supported for some top-level domains. To determine whether the TLD that you want to use supports internationalized domain names, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/registrar-tld-list.html">Domains that You Can Register with Amazon Route 53</a>. For more information, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/DomainNameFormat.html#domain-name-format-idns">Formatting Internationalized Domain Names</a>. </p>
     #[doc(hidden)]
     pub domain_name: std::option::Option<std::string::String>,
@@ -20,26 +20,28 @@ pub struct CheckDomainAvailabilityInput  {
     pub idn_lang_code: std::option::Option<std::string::String>,
 }
 impl CheckDomainAvailabilityInput {
-    /// <p>The name of the domain that you want to get availability for. The top-level domain (TLD), such as .com, must be a TLD that Route 53 supports. For a list of supported TLDs, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/registrar-tld-list.html">Domains that You Can Register with Amazon Route 53</a> in the <i>Amazon Route 53 Developer Guide</i>.</p> 
-    /// <p>The domain name can contain only the following characters:</p> 
-    /// <ul> 
-    /// <li> <p>Letters a through z. Domain names are not case sensitive.</p> </li> 
-    /// <li> <p>Numbers 0 through 9.</p> </li> 
-    /// <li> <p>Hyphen (-). You can't specify a hyphen at the beginning or end of a label. </p> </li> 
-    /// <li> <p>Period (.) to separate the labels in the name, such as the <code>.</code> in <code>example.com</code>.</p> </li> 
-    /// </ul> 
+    /// <p>The name of the domain that you want to get availability for. The top-level domain (TLD), such as .com, must be a TLD that Route 53 supports. For a list of supported TLDs, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/registrar-tld-list.html">Domains that You Can Register with Amazon Route 53</a> in the <i>Amazon Route 53 Developer Guide</i>.</p>
+    /// <p>The domain name can contain only the following characters:</p>
+    /// <ul>
+    /// <li> <p>Letters a through z. Domain names are not case sensitive.</p> </li>
+    /// <li> <p>Numbers 0 through 9.</p> </li>
+    /// <li> <p>Hyphen (-). You can't specify a hyphen at the beginning or end of a label. </p> </li>
+    /// <li> <p>Period (.) to separate the labels in the name, such as the <code>.</code> in <code>example.com</code>.</p> </li>
+    /// </ul>
     /// <p>Internationalized domain names are not supported for some top-level domains. To determine whether the TLD that you want to use supports internationalized domain names, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/registrar-tld-list.html">Domains that You Can Register with Amazon Route 53</a>. For more information, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/DomainNameFormat.html#domain-name-format-idns">Formatting Internationalized Domain Names</a>. </p>
-    pub fn domain_name(&self) -> std::option::Option<& str> {
+    pub fn domain_name(&self) -> std::option::Option<&str> {
         self.domain_name.as_deref()
     }
     /// <p>Reserved for future use.</p>
-    pub fn idn_lang_code(&self) -> std::option::Option<& str> {
+    pub fn idn_lang_code(&self) -> std::option::Option<&str> {
         self.idn_lang_code.as_deref()
     }
 }
 impl CheckDomainAvailabilityInput {
     /// Creates a new builder-style object to manufacture [`CheckDomainAvailabilityInput`](crate::operation::check_domain_availability::CheckDomainAvailabilityInput).
-    pub fn builder() -> crate::operation::check_domain_availability::builders::CheckDomainAvailabilityInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::check_domain_availability::builders::CheckDomainAvailabilityInputBuilder
+    {
         crate::operation::check_domain_availability::builders::CheckDomainAvailabilityInputBuilder::default()
     }
 }
@@ -52,30 +54,31 @@ pub struct CheckDomainAvailabilityInputBuilder {
     pub(crate) idn_lang_code: std::option::Option<std::string::String>,
 }
 impl CheckDomainAvailabilityInputBuilder {
-    /// <p>The name of the domain that you want to get availability for. The top-level domain (TLD), such as .com, must be a TLD that Route 53 supports. For a list of supported TLDs, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/registrar-tld-list.html">Domains that You Can Register with Amazon Route 53</a> in the <i>Amazon Route 53 Developer Guide</i>.</p> 
-    /// <p>The domain name can contain only the following characters:</p> 
-    /// <ul> 
-    /// <li> <p>Letters a through z. Domain names are not case sensitive.</p> </li> 
-    /// <li> <p>Numbers 0 through 9.</p> </li> 
-    /// <li> <p>Hyphen (-). You can't specify a hyphen at the beginning or end of a label. </p> </li> 
-    /// <li> <p>Period (.) to separate the labels in the name, such as the <code>.</code> in <code>example.com</code>.</p> </li> 
-    /// </ul> 
+    /// <p>The name of the domain that you want to get availability for. The top-level domain (TLD), such as .com, must be a TLD that Route 53 supports. For a list of supported TLDs, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/registrar-tld-list.html">Domains that You Can Register with Amazon Route 53</a> in the <i>Amazon Route 53 Developer Guide</i>.</p>
+    /// <p>The domain name can contain only the following characters:</p>
+    /// <ul>
+    /// <li> <p>Letters a through z. Domain names are not case sensitive.</p> </li>
+    /// <li> <p>Numbers 0 through 9.</p> </li>
+    /// <li> <p>Hyphen (-). You can't specify a hyphen at the beginning or end of a label. </p> </li>
+    /// <li> <p>Period (.) to separate the labels in the name, such as the <code>.</code> in <code>example.com</code>.</p> </li>
+    /// </ul>
     /// <p>Internationalized domain names are not supported for some top-level domains. To determine whether the TLD that you want to use supports internationalized domain names, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/registrar-tld-list.html">Domains that You Can Register with Amazon Route 53</a>. For more information, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/DomainNameFormat.html#domain-name-format-idns">Formatting Internationalized Domain Names</a>. </p>
     pub fn domain_name(mut self, input: impl Into<std::string::String>) -> Self {
         self.domain_name = Some(input.into());
         self
     }
-    /// <p>The name of the domain that you want to get availability for. The top-level domain (TLD), such as .com, must be a TLD that Route 53 supports. For a list of supported TLDs, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/registrar-tld-list.html">Domains that You Can Register with Amazon Route 53</a> in the <i>Amazon Route 53 Developer Guide</i>.</p> 
-    /// <p>The domain name can contain only the following characters:</p> 
-    /// <ul> 
-    /// <li> <p>Letters a through z. Domain names are not case sensitive.</p> </li> 
-    /// <li> <p>Numbers 0 through 9.</p> </li> 
-    /// <li> <p>Hyphen (-). You can't specify a hyphen at the beginning or end of a label. </p> </li> 
-    /// <li> <p>Period (.) to separate the labels in the name, such as the <code>.</code> in <code>example.com</code>.</p> </li> 
-    /// </ul> 
+    /// <p>The name of the domain that you want to get availability for. The top-level domain (TLD), such as .com, must be a TLD that Route 53 supports. For a list of supported TLDs, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/registrar-tld-list.html">Domains that You Can Register with Amazon Route 53</a> in the <i>Amazon Route 53 Developer Guide</i>.</p>
+    /// <p>The domain name can contain only the following characters:</p>
+    /// <ul>
+    /// <li> <p>Letters a through z. Domain names are not case sensitive.</p> </li>
+    /// <li> <p>Numbers 0 through 9.</p> </li>
+    /// <li> <p>Hyphen (-). You can't specify a hyphen at the beginning or end of a label. </p> </li>
+    /// <li> <p>Period (.) to separate the labels in the name, such as the <code>.</code> in <code>example.com</code>.</p> </li>
+    /// </ul>
     /// <p>Internationalized domain names are not supported for some top-level domains. To determine whether the TLD that you want to use supports internationalized domain names, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/registrar-tld-list.html">Domains that You Can Register with Amazon Route 53</a>. For more information, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/DomainNameFormat.html#domain-name-format-idns">Formatting Internationalized Domain Names</a>. </p>
     pub fn set_domain_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.domain_name = input; self
+        self.domain_name = input;
+        self
     }
     /// <p>Reserved for future use.</p>
     pub fn idn_lang_code(mut self, input: impl Into<std::string::String>) -> Self {
@@ -84,18 +87,21 @@ impl CheckDomainAvailabilityInputBuilder {
     }
     /// <p>Reserved for future use.</p>
     pub fn set_idn_lang_code(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.idn_lang_code = input; self
+        self.idn_lang_code = input;
+        self
     }
     /// Consumes the builder and constructs a [`CheckDomainAvailabilityInput`](crate::operation::check_domain_availability::CheckDomainAvailabilityInput).
-    pub fn build(self) -> Result<crate::operation::check_domain_availability::CheckDomainAvailabilityInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::check_domain_availability::CheckDomainAvailabilityInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::check_domain_availability::CheckDomainAvailabilityInput {
-                domain_name: self.domain_name
-                ,
-                idn_lang_code: self.idn_lang_code
-                ,
-            }
+                domain_name: self.domain_name,
+                idn_lang_code: self.idn_lang_code,
+            },
         )
     }
 }
-

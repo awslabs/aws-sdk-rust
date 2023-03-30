@@ -3,7 +3,7 @@
 /// <p>Specifies additional purposes for which the certified public key may be used other than basic purposes indicated in the <code>KeyUsage</code> extension.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ExtendedKeyUsage  {
+pub struct ExtendedKeyUsage {
     /// <p>Specifies a standard <code>ExtendedKeyUsage</code> as defined as in <a href="https://datatracker.ietf.org/doc/html/rfc5280#section-4.2.1.12">RFC 5280</a>.</p>
     #[doc(hidden)]
     pub extended_key_usage_type: std::option::Option<crate::types::ExtendedKeyUsageType>,
@@ -13,11 +13,13 @@ pub struct ExtendedKeyUsage  {
 }
 impl ExtendedKeyUsage {
     /// <p>Specifies a standard <code>ExtendedKeyUsage</code> as defined as in <a href="https://datatracker.ietf.org/doc/html/rfc5280#section-4.2.1.12">RFC 5280</a>.</p>
-    pub fn extended_key_usage_type(&self) -> std::option::Option<& crate::types::ExtendedKeyUsageType> {
+    pub fn extended_key_usage_type(
+        &self,
+    ) -> std::option::Option<&crate::types::ExtendedKeyUsageType> {
         self.extended_key_usage_type.as_ref()
     }
     /// <p>Specifies a custom <code>ExtendedKeyUsage</code> with an object identifier (OID).</p>
-    pub fn extended_key_usage_object_identifier(&self) -> std::option::Option<& str> {
+    pub fn extended_key_usage_object_identifier(&self) -> std::option::Option<&str> {
         self.extended_key_usage_object_identifier.as_deref()
     }
 }
@@ -42,26 +44,34 @@ impl ExtendedKeyUsageBuilder {
         self
     }
     /// <p>Specifies a standard <code>ExtendedKeyUsage</code> as defined as in <a href="https://datatracker.ietf.org/doc/html/rfc5280#section-4.2.1.12">RFC 5280</a>.</p>
-    pub fn set_extended_key_usage_type(mut self, input: std::option::Option<crate::types::ExtendedKeyUsageType>) -> Self {
-        self.extended_key_usage_type = input; self
+    pub fn set_extended_key_usage_type(
+        mut self,
+        input: std::option::Option<crate::types::ExtendedKeyUsageType>,
+    ) -> Self {
+        self.extended_key_usage_type = input;
+        self
     }
     /// <p>Specifies a custom <code>ExtendedKeyUsage</code> with an object identifier (OID).</p>
-    pub fn extended_key_usage_object_identifier(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn extended_key_usage_object_identifier(
+        mut self,
+        input: impl Into<std::string::String>,
+    ) -> Self {
         self.extended_key_usage_object_identifier = Some(input.into());
         self
     }
     /// <p>Specifies a custom <code>ExtendedKeyUsage</code> with an object identifier (OID).</p>
-    pub fn set_extended_key_usage_object_identifier(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.extended_key_usage_object_identifier = input; self
+    pub fn set_extended_key_usage_object_identifier(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.extended_key_usage_object_identifier = input;
+        self
     }
     /// Consumes the builder and constructs a [`ExtendedKeyUsage`](crate::types::ExtendedKeyUsage).
     pub fn build(self) -> crate::types::ExtendedKeyUsage {
         crate::types::ExtendedKeyUsage {
-            extended_key_usage_type: self.extended_key_usage_type
-            ,
-            extended_key_usage_object_identifier: self.extended_key_usage_object_identifier
-            ,
+            extended_key_usage_type: self.extended_key_usage_type,
+            extended_key_usage_object_identifier: self.extended_key_usage_object_identifier,
         }
     }
 }
-

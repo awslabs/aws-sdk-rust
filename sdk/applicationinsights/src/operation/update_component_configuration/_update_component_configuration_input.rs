@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateComponentConfigurationInput  {
+pub struct UpdateComponentConfigurationInput {
     /// <p>The name of the resource group.</p>
     #[doc(hidden)]
     pub resource_group_name: std::option::Option<std::string::String>,
@@ -24,11 +24,11 @@ pub struct UpdateComponentConfigurationInput  {
 }
 impl UpdateComponentConfigurationInput {
     /// <p>The name of the resource group.</p>
-    pub fn resource_group_name(&self) -> std::option::Option<& str> {
+    pub fn resource_group_name(&self) -> std::option::Option<&str> {
         self.resource_group_name.as_deref()
     }
     /// <p>The name of the component.</p>
-    pub fn component_name(&self) -> std::option::Option<& str> {
+    pub fn component_name(&self) -> std::option::Option<&str> {
         self.component_name.as_deref()
     }
     /// <p>Indicates whether the application component is monitored.</p>
@@ -36,11 +36,11 @@ impl UpdateComponentConfigurationInput {
         self.monitor
     }
     /// <p>The tier of the application component.</p>
-    pub fn tier(&self) -> std::option::Option<& crate::types::Tier> {
+    pub fn tier(&self) -> std::option::Option<&crate::types::Tier> {
         self.tier.as_ref()
     }
     /// <p>The configuration settings of the component. The value is the escaped JSON of the configuration. For more information about the JSON format, see <a href="https://docs.aws.amazon.com/sdk-for-javascript/v2/developer-guide/working-with-json.html">Working with JSON</a>. You can send a request to <code>DescribeComponentConfigurationRecommendation</code> to see the recommended configuration for a component. For the complete format of the component configuration file, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/component-config.html">Component Configuration</a>.</p>
-    pub fn component_configuration(&self) -> std::option::Option<& str> {
+    pub fn component_configuration(&self) -> std::option::Option<&str> {
         self.component_configuration.as_deref()
     }
     /// <p> Automatically configures the component by applying the recommended configurations. </p>
@@ -50,7 +50,7 @@ impl UpdateComponentConfigurationInput {
 }
 impl UpdateComponentConfigurationInput {
     /// Creates a new builder-style object to manufacture [`UpdateComponentConfigurationInput`](crate::operation::update_component_configuration::UpdateComponentConfigurationInput).
-    pub fn builder() -> crate::operation::update_component_configuration::builders::UpdateComponentConfigurationInputBuilder {
+    pub fn builder() -> crate::operation::update_component_configuration::builders::UpdateComponentConfigurationInputBuilder{
         crate::operation::update_component_configuration::builders::UpdateComponentConfigurationInputBuilder::default()
     }
 }
@@ -73,8 +73,12 @@ impl UpdateComponentConfigurationInputBuilder {
         self
     }
     /// <p>The name of the resource group.</p>
-    pub fn set_resource_group_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.resource_group_name = input; self
+    pub fn set_resource_group_name(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.resource_group_name = input;
+        self
     }
     /// <p>The name of the component.</p>
     pub fn component_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -83,7 +87,8 @@ impl UpdateComponentConfigurationInputBuilder {
     }
     /// <p>The name of the component.</p>
     pub fn set_component_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.component_name = input; self
+        self.component_name = input;
+        self
     }
     /// <p>Indicates whether the application component is monitored.</p>
     pub fn monitor(mut self, input: bool) -> Self {
@@ -92,7 +97,8 @@ impl UpdateComponentConfigurationInputBuilder {
     }
     /// <p>Indicates whether the application component is monitored.</p>
     pub fn set_monitor(mut self, input: std::option::Option<bool>) -> Self {
-        self.monitor = input; self
+        self.monitor = input;
+        self
     }
     /// <p>The tier of the application component.</p>
     pub fn tier(mut self, input: crate::types::Tier) -> Self {
@@ -101,7 +107,8 @@ impl UpdateComponentConfigurationInputBuilder {
     }
     /// <p>The tier of the application component.</p>
     pub fn set_tier(mut self, input: std::option::Option<crate::types::Tier>) -> Self {
-        self.tier = input; self
+        self.tier = input;
+        self
     }
     /// <p>The configuration settings of the component. The value is the escaped JSON of the configuration. For more information about the JSON format, see <a href="https://docs.aws.amazon.com/sdk-for-javascript/v2/developer-guide/working-with-json.html">Working with JSON</a>. You can send a request to <code>DescribeComponentConfigurationRecommendation</code> to see the recommended configuration for a component. For the complete format of the component configuration file, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/component-config.html">Component Configuration</a>.</p>
     pub fn component_configuration(mut self, input: impl Into<std::string::String>) -> Self {
@@ -109,8 +116,12 @@ impl UpdateComponentConfigurationInputBuilder {
         self
     }
     /// <p>The configuration settings of the component. The value is the escaped JSON of the configuration. For more information about the JSON format, see <a href="https://docs.aws.amazon.com/sdk-for-javascript/v2/developer-guide/working-with-json.html">Working with JSON</a>. You can send a request to <code>DescribeComponentConfigurationRecommendation</code> to see the recommended configuration for a component. For the complete format of the component configuration file, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/component-config.html">Component Configuration</a>.</p>
-    pub fn set_component_configuration(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.component_configuration = input; self
+    pub fn set_component_configuration(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.component_configuration = input;
+        self
     }
     /// <p> Automatically configures the component by applying the recommended configurations. </p>
     pub fn auto_config_enabled(mut self, input: bool) -> Self {
@@ -119,26 +130,25 @@ impl UpdateComponentConfigurationInputBuilder {
     }
     /// <p> Automatically configures the component by applying the recommended configurations. </p>
     pub fn set_auto_config_enabled(mut self, input: std::option::Option<bool>) -> Self {
-        self.auto_config_enabled = input; self
+        self.auto_config_enabled = input;
+        self
     }
     /// Consumes the builder and constructs a [`UpdateComponentConfigurationInput`](crate::operation::update_component_configuration::UpdateComponentConfigurationInput).
-    pub fn build(self) -> Result<crate::operation::update_component_configuration::UpdateComponentConfigurationInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::update_component_configuration::UpdateComponentConfigurationInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::update_component_configuration::UpdateComponentConfigurationInput {
-                resource_group_name: self.resource_group_name
-                ,
-                component_name: self.component_name
-                ,
-                monitor: self.monitor
-                ,
-                tier: self.tier
-                ,
-                component_configuration: self.component_configuration
-                ,
-                auto_config_enabled: self.auto_config_enabled
-                ,
-            }
+                resource_group_name: self.resource_group_name,
+                component_name: self.component_name,
+                monitor: self.monitor,
+                tier: self.tier,
+                component_configuration: self.component_configuration,
+                auto_config_enabled: self.auto_config_enabled,
+            },
         )
     }
 }
-

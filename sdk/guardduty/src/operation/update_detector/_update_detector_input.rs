@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateDetectorInput  {
+pub struct UpdateDetectorInput {
     /// <p>The unique ID of the detector to update.</p>
     #[doc(hidden)]
     pub detector_id: std::option::Option<std::string::String>,
@@ -18,7 +18,7 @@ pub struct UpdateDetectorInput  {
 }
 impl UpdateDetectorInput {
     /// <p>The unique ID of the detector to update.</p>
-    pub fn detector_id(&self) -> std::option::Option<& str> {
+    pub fn detector_id(&self) -> std::option::Option<&str> {
         self.detector_id.as_deref()
     }
     /// <p>Specifies whether the detector is enabled or not enabled.</p>
@@ -26,11 +26,13 @@ impl UpdateDetectorInput {
         self.enable
     }
     /// <p>An enum value that specifies how frequently findings are exported, such as to CloudWatch Events.</p>
-    pub fn finding_publishing_frequency(&self) -> std::option::Option<& crate::types::FindingPublishingFrequency> {
+    pub fn finding_publishing_frequency(
+        &self,
+    ) -> std::option::Option<&crate::types::FindingPublishingFrequency> {
         self.finding_publishing_frequency.as_ref()
     }
     /// <p>Describes which data sources will be updated.</p>
-    pub fn data_sources(&self) -> std::option::Option<& crate::types::DataSourceConfigurations> {
+    pub fn data_sources(&self) -> std::option::Option<&crate::types::DataSourceConfigurations> {
         self.data_sources.as_ref()
     }
 }
@@ -47,7 +49,8 @@ impl UpdateDetectorInput {
 pub struct UpdateDetectorInputBuilder {
     pub(crate) detector_id: std::option::Option<std::string::String>,
     pub(crate) enable: std::option::Option<bool>,
-    pub(crate) finding_publishing_frequency: std::option::Option<crate::types::FindingPublishingFrequency>,
+    pub(crate) finding_publishing_frequency:
+        std::option::Option<crate::types::FindingPublishingFrequency>,
     pub(crate) data_sources: std::option::Option<crate::types::DataSourceConfigurations>,
 }
 impl UpdateDetectorInputBuilder {
@@ -58,7 +61,8 @@ impl UpdateDetectorInputBuilder {
     }
     /// <p>The unique ID of the detector to update.</p>
     pub fn set_detector_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.detector_id = input; self
+        self.detector_id = input;
+        self
     }
     /// <p>Specifies whether the detector is enabled or not enabled.</p>
     pub fn enable(mut self, input: bool) -> Self {
@@ -67,16 +71,24 @@ impl UpdateDetectorInputBuilder {
     }
     /// <p>Specifies whether the detector is enabled or not enabled.</p>
     pub fn set_enable(mut self, input: std::option::Option<bool>) -> Self {
-        self.enable = input; self
+        self.enable = input;
+        self
     }
     /// <p>An enum value that specifies how frequently findings are exported, such as to CloudWatch Events.</p>
-    pub fn finding_publishing_frequency(mut self, input: crate::types::FindingPublishingFrequency) -> Self {
+    pub fn finding_publishing_frequency(
+        mut self,
+        input: crate::types::FindingPublishingFrequency,
+    ) -> Self {
         self.finding_publishing_frequency = Some(input);
         self
     }
     /// <p>An enum value that specifies how frequently findings are exported, such as to CloudWatch Events.</p>
-    pub fn set_finding_publishing_frequency(mut self, input: std::option::Option<crate::types::FindingPublishingFrequency>) -> Self {
-        self.finding_publishing_frequency = input; self
+    pub fn set_finding_publishing_frequency(
+        mut self,
+        input: std::option::Option<crate::types::FindingPublishingFrequency>,
+    ) -> Self {
+        self.finding_publishing_frequency = input;
+        self
     }
     /// <p>Describes which data sources will be updated.</p>
     pub fn data_sources(mut self, input: crate::types::DataSourceConfigurations) -> Self {
@@ -84,24 +96,25 @@ impl UpdateDetectorInputBuilder {
         self
     }
     /// <p>Describes which data sources will be updated.</p>
-    pub fn set_data_sources(mut self, input: std::option::Option<crate::types::DataSourceConfigurations>) -> Self {
-        self.data_sources = input; self
+    pub fn set_data_sources(
+        mut self,
+        input: std::option::Option<crate::types::DataSourceConfigurations>,
+    ) -> Self {
+        self.data_sources = input;
+        self
     }
     /// Consumes the builder and constructs a [`UpdateDetectorInput`](crate::operation::update_detector::UpdateDetectorInput).
-    pub fn build(self) -> Result<crate::operation::update_detector::UpdateDetectorInput, aws_smithy_http::operation::error::BuildError> {
-        Ok(
-            crate::operation::update_detector::UpdateDetectorInput {
-                detector_id: self.detector_id
-                ,
-                enable: self.enable
-                    .unwrap_or_default()
-                ,
-                finding_publishing_frequency: self.finding_publishing_frequency
-                ,
-                data_sources: self.data_sources
-                ,
-            }
-        )
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::update_detector::UpdateDetectorInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        Ok(crate::operation::update_detector::UpdateDetectorInput {
+            detector_id: self.detector_id,
+            enable: self.enable.unwrap_or_default(),
+            finding_publishing_frequency: self.finding_publishing_frequency,
+            data_sources: self.data_sources,
+        })
     }
 }
-

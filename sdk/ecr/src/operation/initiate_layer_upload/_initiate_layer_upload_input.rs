@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct InitiateLayerUploadInput  {
+pub struct InitiateLayerUploadInput {
     /// <p>The Amazon Web Services account ID associated with the registry to which you intend to upload layers. If you do not specify a registry, the default registry is assumed.</p>
     #[doc(hidden)]
     pub registry_id: std::option::Option<std::string::String>,
@@ -12,18 +12,20 @@ pub struct InitiateLayerUploadInput  {
 }
 impl InitiateLayerUploadInput {
     /// <p>The Amazon Web Services account ID associated with the registry to which you intend to upload layers. If you do not specify a registry, the default registry is assumed.</p>
-    pub fn registry_id(&self) -> std::option::Option<& str> {
+    pub fn registry_id(&self) -> std::option::Option<&str> {
         self.registry_id.as_deref()
     }
     /// <p>The name of the repository to which you intend to upload layers.</p>
-    pub fn repository_name(&self) -> std::option::Option<& str> {
+    pub fn repository_name(&self) -> std::option::Option<&str> {
         self.repository_name.as_deref()
     }
 }
 impl InitiateLayerUploadInput {
     /// Creates a new builder-style object to manufacture [`InitiateLayerUploadInput`](crate::operation::initiate_layer_upload::InitiateLayerUploadInput).
-    pub fn builder() -> crate::operation::initiate_layer_upload::builders::InitiateLayerUploadInputBuilder {
-        crate::operation::initiate_layer_upload::builders::InitiateLayerUploadInputBuilder::default()
+    pub fn builder(
+    ) -> crate::operation::initiate_layer_upload::builders::InitiateLayerUploadInputBuilder {
+        crate::operation::initiate_layer_upload::builders::InitiateLayerUploadInputBuilder::default(
+        )
     }
 }
 
@@ -42,7 +44,8 @@ impl InitiateLayerUploadInputBuilder {
     }
     /// <p>The Amazon Web Services account ID associated with the registry to which you intend to upload layers. If you do not specify a registry, the default registry is assumed.</p>
     pub fn set_registry_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.registry_id = input; self
+        self.registry_id = input;
+        self
     }
     /// <p>The name of the repository to which you intend to upload layers.</p>
     pub fn repository_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -51,18 +54,21 @@ impl InitiateLayerUploadInputBuilder {
     }
     /// <p>The name of the repository to which you intend to upload layers.</p>
     pub fn set_repository_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.repository_name = input; self
+        self.repository_name = input;
+        self
     }
     /// Consumes the builder and constructs a [`InitiateLayerUploadInput`](crate::operation::initiate_layer_upload::InitiateLayerUploadInput).
-    pub fn build(self) -> Result<crate::operation::initiate_layer_upload::InitiateLayerUploadInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::initiate_layer_upload::InitiateLayerUploadInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::initiate_layer_upload::InitiateLayerUploadInput {
-                registry_id: self.registry_id
-                ,
-                repository_name: self.repository_name
-                ,
-            }
+                registry_id: self.registry_id,
+                repository_name: self.repository_name,
+            },
         )
     }
 }
-

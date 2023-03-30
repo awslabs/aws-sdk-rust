@@ -3,7 +3,7 @@
 /// <p>The VPC endpoint object.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Endpoint  {
+pub struct Endpoint {
     /// <p>The DNS address of the VPC endpoint.</p>
     #[doc(hidden)]
     pub address: std::option::Option<std::string::String>,
@@ -16,7 +16,7 @@ pub struct Endpoint  {
 }
 impl Endpoint {
     /// <p>The DNS address of the VPC endpoint.</p>
-    pub fn address(&self) -> std::option::Option<& str> {
+    pub fn address(&self) -> std::option::Option<&str> {
         self.address.as_deref()
     }
     /// <p>The port that Amazon Redshift Serverless listens on.</p>
@@ -24,7 +24,7 @@ impl Endpoint {
         self.port
     }
     /// <p>An array of <code>VpcEndpoint</code> objects.</p>
-    pub fn vpc_endpoints(&self) -> std::option::Option<& [crate::types::VpcEndpoint]> {
+    pub fn vpc_endpoints(&self) -> std::option::Option<&[crate::types::VpcEndpoint]> {
         self.vpc_endpoints.as_deref()
     }
 }
@@ -51,7 +51,8 @@ impl EndpointBuilder {
     }
     /// <p>The DNS address of the VPC endpoint.</p>
     pub fn set_address(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.address = input; self
+        self.address = input;
+        self
     }
     /// <p>The port that Amazon Redshift Serverless listens on.</p>
     pub fn port(mut self, input: i32) -> Self {
@@ -60,7 +61,8 @@ impl EndpointBuilder {
     }
     /// <p>The port that Amazon Redshift Serverless listens on.</p>
     pub fn set_port(mut self, input: std::option::Option<i32>) -> Self {
-        self.port = input; self
+        self.port = input;
+        self
     }
     /// Appends an item to `vpc_endpoints`.
     ///
@@ -69,24 +71,24 @@ impl EndpointBuilder {
     /// <p>An array of <code>VpcEndpoint</code> objects.</p>
     pub fn vpc_endpoints(mut self, input: crate::types::VpcEndpoint) -> Self {
         let mut v = self.vpc_endpoints.unwrap_or_default();
-                        v.push(input);
-                        self.vpc_endpoints = Some(v);
-                        self
+        v.push(input);
+        self.vpc_endpoints = Some(v);
+        self
     }
     /// <p>An array of <code>VpcEndpoint</code> objects.</p>
-    pub fn set_vpc_endpoints(mut self, input: std::option::Option<std::vec::Vec<crate::types::VpcEndpoint>>) -> Self {
-        self.vpc_endpoints = input; self
+    pub fn set_vpc_endpoints(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::VpcEndpoint>>,
+    ) -> Self {
+        self.vpc_endpoints = input;
+        self
     }
     /// Consumes the builder and constructs a [`Endpoint`](crate::types::Endpoint).
     pub fn build(self) -> crate::types::Endpoint {
         crate::types::Endpoint {
-            address: self.address
-            ,
-            port: self.port
-            ,
-            vpc_endpoints: self.vpc_endpoints
-            ,
+            address: self.address,
+            port: self.port,
+            vpc_endpoints: self.vpc_endpoints,
         }
     }
 }
-

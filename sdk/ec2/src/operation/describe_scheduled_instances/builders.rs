@@ -4,55 +4,77 @@ pub use crate::operation::describe_scheduled_instances::_describe_scheduled_inst
 pub use crate::operation::describe_scheduled_instances::_describe_scheduled_instances_input::DescribeScheduledInstancesInputBuilder;
 
 /// Fluent builder constructing a request to `DescribeScheduledInstances`.
-/// 
+///
 /// <p>Describes the specified Scheduled Instances or all your Scheduled Instances.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeScheduledInstancesFluentBuilder {
                 handle: std::sync::Arc<crate::client::Handle>,
                 inner: crate::operation::describe_scheduled_instances::builders::DescribeScheduledInstancesInputBuilder
             }
-impl DescribeScheduledInstancesFluentBuilder  {
+impl DescribeScheduledInstancesFluentBuilder {
     /// Creates a new `DescribeScheduledInstances`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
-                    /// sent. The operation's inner [http::Request] can be modified as well.
-                    pub async fn customize(self) -> std::result::Result<
-                        crate::client::customize::CustomizableOperation<crate::operation::describe_scheduled_instances::DescribeScheduledInstances, aws_http::retry::AwsResponseRetryClassifier,>,
-                        aws_smithy_http::result::SdkError<crate::operation::describe_scheduled_instances::DescribeScheduledInstancesError>
-                    >  {
-                        let handle = self.handle.clone();
-                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-                    }
-    
-                    /// Sends the request and returns the response.
-                    ///
-                    /// If an error occurs, an `SdkError` will be returned with additional details that
-                    /// can be matched against.
-                    ///
-                    /// By default, any retryable failures will be retried twice. Retry behavior
-                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                    /// set when configuring the client.
-                    pub async fn send(self) -> std::result::Result<crate::operation::describe_scheduled_instances::DescribeScheduledInstancesOutput, aws_smithy_http::result::SdkError<crate::operation::describe_scheduled_instances::DescribeScheduledInstancesError>>
-                     {
-                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&self.handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        self.handle.client.call(op).await
-                    }
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle,
+            inner: Default::default(),
+        }
+    }
+
+    /// Consume this builder, creating a customizable operation that can be modified before being
+    /// sent. The operation's inner [http::Request] can be modified as well.
+    pub async fn customize(
+        self,
+    ) -> std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::describe_scheduled_instances::DescribeScheduledInstances,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::result::SdkError<
+            crate::operation::describe_scheduled_instances::DescribeScheduledInstancesError,
+        >,
+    > {
+        let handle = self.handle.clone();
+        let operation = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+    }
+
+    /// Sends the request and returns the response.
+    ///
+    /// If an error occurs, an `SdkError` will be returned with additional details that
+    /// can be matched against.
+    ///
+    /// By default, any retryable failures will be retried twice. Retry behavior
+    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+    /// set when configuring the client.
+    pub async fn send(
+        self,
+    ) -> std::result::Result<
+        crate::operation::describe_scheduled_instances::DescribeScheduledInstancesOutput,
+        aws_smithy_http::result::SdkError<
+            crate::operation::describe_scheduled_instances::DescribeScheduledInstancesError,
+        >,
+    > {
+        let op = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&self.handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        self.handle.client.call(op).await
+    }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::describe_scheduled_instances::paginator::DescribeScheduledInstancesPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::describe_scheduled_instances::paginator::DescribeScheduledInstancesPaginator {
-                            crate::operation::describe_scheduled_instances::paginator::DescribeScheduledInstancesPaginator::new(self.handle, self.inner)
-                        }
+    ///
+    /// Paginators are used by calling [`send().await`](crate::operation::describe_scheduled_instances::paginator::DescribeScheduledInstancesPaginator::send) which returns a `Stream`.
+    pub fn into_paginator(self) -> crate::operation::describe_scheduled_instances::paginator::DescribeScheduledInstancesPaginator{
+        crate::operation::describe_scheduled_instances::paginator::DescribeScheduledInstancesPaginator::new(self.handle, self.inner)
+    }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn dry_run(mut self, input: bool) -> Self {
         self.inner = self.inner.dry_run(input);
@@ -67,25 +89,28 @@ impl DescribeScheduledInstancesFluentBuilder  {
     ///
     /// To override the contents of this collection use [`set_filters`](Self::set_filters).
     ///
-    /// <p>The filters.</p> 
-    /// <ul> 
-    /// <li> <p> <code>availability-zone</code> - The Availability Zone (for example, <code>us-west-2a</code>).</p> </li> 
-    /// <li> <p> <code>instance-type</code> - The instance type (for example, <code>c4.large</code>).</p> </li> 
-    /// <li> <p> <code>network-platform</code> - The network platform (<code>EC2-Classic</code> or <code>EC2-VPC</code>).</p> </li> 
-    /// <li> <p> <code>platform</code> - The platform (<code>Linux/UNIX</code> or <code>Windows</code>).</p> </li> 
+    /// <p>The filters.</p>
+    /// <ul>
+    /// <li> <p> <code>availability-zone</code> - The Availability Zone (for example, <code>us-west-2a</code>).</p> </li>
+    /// <li> <p> <code>instance-type</code> - The instance type (for example, <code>c4.large</code>).</p> </li>
+    /// <li> <p> <code>network-platform</code> - The network platform (<code>EC2-Classic</code> or <code>EC2-VPC</code>).</p> </li>
+    /// <li> <p> <code>platform</code> - The platform (<code>Linux/UNIX</code> or <code>Windows</code>).</p> </li>
     /// </ul>
     pub fn filters(mut self, input: crate::types::Filter) -> Self {
         self.inner = self.inner.filters(input);
         self
     }
-    /// <p>The filters.</p> 
-    /// <ul> 
-    /// <li> <p> <code>availability-zone</code> - The Availability Zone (for example, <code>us-west-2a</code>).</p> </li> 
-    /// <li> <p> <code>instance-type</code> - The instance type (for example, <code>c4.large</code>).</p> </li> 
-    /// <li> <p> <code>network-platform</code> - The network platform (<code>EC2-Classic</code> or <code>EC2-VPC</code>).</p> </li> 
-    /// <li> <p> <code>platform</code> - The platform (<code>Linux/UNIX</code> or <code>Windows</code>).</p> </li> 
+    /// <p>The filters.</p>
+    /// <ul>
+    /// <li> <p> <code>availability-zone</code> - The Availability Zone (for example, <code>us-west-2a</code>).</p> </li>
+    /// <li> <p> <code>instance-type</code> - The instance type (for example, <code>c4.large</code>).</p> </li>
+    /// <li> <p> <code>network-platform</code> - The network platform (<code>EC2-Classic</code> or <code>EC2-VPC</code>).</p> </li>
+    /// <li> <p> <code>platform</code> - The platform (<code>Linux/UNIX</code> or <code>Windows</code>).</p> </li>
     /// </ul>
-    pub fn set_filters(mut self, input: std::option::Option<std::vec::Vec<crate::types::Filter>>) -> Self {
+    pub fn set_filters(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::Filter>>,
+    ) -> Self {
         self.inner = self.inner.set_filters(input);
         self
     }
@@ -119,7 +144,10 @@ impl DescribeScheduledInstancesFluentBuilder  {
         self
     }
     /// <p>The Scheduled Instance IDs.</p>
-    pub fn set_scheduled_instance_ids(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+    pub fn set_scheduled_instance_ids(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
         self.inner = self.inner.set_scheduled_instance_ids(input);
         self
     }
@@ -129,9 +157,11 @@ impl DescribeScheduledInstancesFluentBuilder  {
         self
     }
     /// <p>The time period for the first schedule to start.</p>
-    pub fn set_slot_start_time_range(mut self, input: std::option::Option<crate::types::SlotStartTimeRangeRequest>) -> Self {
+    pub fn set_slot_start_time_range(
+        mut self,
+        input: std::option::Option<crate::types::SlotStartTimeRangeRequest>,
+    ) -> Self {
         self.inner = self.inner.set_slot_start_time_range(input);
         self
     }
 }
-

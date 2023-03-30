@@ -3,23 +3,25 @@
 /// <p>Filters the conformance pack by compliance types and Config rule names.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ConformancePackComplianceFilters  {
+pub struct ConformancePackComplianceFilters {
     /// <p>Filters the results by Config rule names.</p>
     #[doc(hidden)]
     pub config_rule_names: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>Filters the results by compliance.</p> 
+    /// <p>Filters the results by compliance.</p>
     /// <p>The allowed values are <code>COMPLIANT</code> and <code>NON_COMPLIANT</code>. <code>INSUFFICIENT_DATA</code> is not supported.</p>
     #[doc(hidden)]
     pub compliance_type: std::option::Option<crate::types::ConformancePackComplianceType>,
 }
 impl ConformancePackComplianceFilters {
     /// <p>Filters the results by Config rule names.</p>
-    pub fn config_rule_names(&self) -> std::option::Option<& [std::string::String]> {
+    pub fn config_rule_names(&self) -> std::option::Option<&[std::string::String]> {
         self.config_rule_names.as_deref()
     }
-    /// <p>Filters the results by compliance.</p> 
+    /// <p>Filters the results by compliance.</p>
     /// <p>The allowed values are <code>COMPLIANT</code> and <code>NON_COMPLIANT</code>. <code>INSUFFICIENT_DATA</code> is not supported.</p>
-    pub fn compliance_type(&self) -> std::option::Option<& crate::types::ConformancePackComplianceType> {
+    pub fn compliance_type(
+        &self,
+    ) -> std::option::Option<&crate::types::ConformancePackComplianceType> {
         self.compliance_type.as_ref()
     }
 }
@@ -45,33 +47,38 @@ impl ConformancePackComplianceFiltersBuilder {
     /// <p>Filters the results by Config rule names.</p>
     pub fn config_rule_names(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.config_rule_names.unwrap_or_default();
-                        v.push(input.into());
-                        self.config_rule_names = Some(v);
-                        self
+        v.push(input.into());
+        self.config_rule_names = Some(v);
+        self
     }
     /// <p>Filters the results by Config rule names.</p>
-    pub fn set_config_rule_names(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-        self.config_rule_names = input; self
+    pub fn set_config_rule_names(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
+        self.config_rule_names = input;
+        self
     }
-    /// <p>Filters the results by compliance.</p> 
+    /// <p>Filters the results by compliance.</p>
     /// <p>The allowed values are <code>COMPLIANT</code> and <code>NON_COMPLIANT</code>. <code>INSUFFICIENT_DATA</code> is not supported.</p>
     pub fn compliance_type(mut self, input: crate::types::ConformancePackComplianceType) -> Self {
         self.compliance_type = Some(input);
         self
     }
-    /// <p>Filters the results by compliance.</p> 
+    /// <p>Filters the results by compliance.</p>
     /// <p>The allowed values are <code>COMPLIANT</code> and <code>NON_COMPLIANT</code>. <code>INSUFFICIENT_DATA</code> is not supported.</p>
-    pub fn set_compliance_type(mut self, input: std::option::Option<crate::types::ConformancePackComplianceType>) -> Self {
-        self.compliance_type = input; self
+    pub fn set_compliance_type(
+        mut self,
+        input: std::option::Option<crate::types::ConformancePackComplianceType>,
+    ) -> Self {
+        self.compliance_type = input;
+        self
     }
     /// Consumes the builder and constructs a [`ConformancePackComplianceFilters`](crate::types::ConformancePackComplianceFilters).
     pub fn build(self) -> crate::types::ConformancePackComplianceFilters {
         crate::types::ConformancePackComplianceFilters {
-            config_rule_names: self.config_rule_names
-            ,
-            compliance_type: self.compliance_type
-            ,
+            config_rule_names: self.config_rule_names,
+            compliance_type: self.compliance_type,
         }
     }
 }
-

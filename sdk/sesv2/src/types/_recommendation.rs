@@ -3,7 +3,7 @@
 /// <p>A recommendation generated for your account.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Recommendation  {
+pub struct Recommendation {
     /// <p>The resource affected by the recommendation, with values like <code>arn:aws:ses:us-east-1:123456789012:identity/example.com</code>.</p>
     #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
@@ -28,31 +28,31 @@ pub struct Recommendation  {
 }
 impl Recommendation {
     /// <p>The resource affected by the recommendation, with values like <code>arn:aws:ses:us-east-1:123456789012:identity/example.com</code>.</p>
-    pub fn resource_arn(&self) -> std::option::Option<& str> {
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
         self.resource_arn.as_deref()
     }
     /// <p>The recommendation type, with values like <code>DKIM</code>, <code>SPF</code> or <code>DMARC</code>.</p>
-    pub fn r#type(&self) -> std::option::Option<& crate::types::RecommendationType> {
+    pub fn r#type(&self) -> std::option::Option<&crate::types::RecommendationType> {
         self.r#type.as_ref()
     }
     /// <p>The recommendation description / disambiguator - e.g. <code>DKIM1</code> and <code>DKIM2</code> are different recommendations about your DKIM setup.</p>
-    pub fn description(&self) -> std::option::Option<& str> {
+    pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
     /// <p>The recommendation status, with values like <code>OPEN</code> or <code>FIXED</code>.</p>
-    pub fn status(&self) -> std::option::Option<& crate::types::RecommendationStatus> {
+    pub fn status(&self) -> std::option::Option<&crate::types::RecommendationStatus> {
         self.status.as_ref()
     }
     /// <p>The first time this issue was encountered and the recommendation was generated.</p>
-    pub fn created_timestamp(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
+    pub fn created_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created_timestamp.as_ref()
     }
     /// <p>The last time the recommendation was updated.</p>
-    pub fn last_updated_timestamp(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
+    pub fn last_updated_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_updated_timestamp.as_ref()
     }
     /// <p>The recommendation impact, with values like <code>HIGH</code> or <code>LOW</code>.</p>
-    pub fn impact(&self) -> std::option::Option<& crate::types::RecommendationImpact> {
+    pub fn impact(&self) -> std::option::Option<&crate::types::RecommendationImpact> {
         self.impact.as_ref()
     }
 }
@@ -83,7 +83,8 @@ impl RecommendationBuilder {
     }
     /// <p>The resource affected by the recommendation, with values like <code>arn:aws:ses:us-east-1:123456789012:identity/example.com</code>.</p>
     pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.resource_arn = input; self
+        self.resource_arn = input;
+        self
     }
     /// <p>The recommendation type, with values like <code>DKIM</code>, <code>SPF</code> or <code>DMARC</code>.</p>
     pub fn r#type(mut self, input: crate::types::RecommendationType) -> Self {
@@ -91,8 +92,12 @@ impl RecommendationBuilder {
         self
     }
     /// <p>The recommendation type, with values like <code>DKIM</code>, <code>SPF</code> or <code>DMARC</code>.</p>
-    pub fn set_type(mut self, input: std::option::Option<crate::types::RecommendationType>) -> Self {
-        self.r#type = input; self
+    pub fn set_type(
+        mut self,
+        input: std::option::Option<crate::types::RecommendationType>,
+    ) -> Self {
+        self.r#type = input;
+        self
     }
     /// <p>The recommendation description / disambiguator - e.g. <code>DKIM1</code> and <code>DKIM2</code> are different recommendations about your DKIM setup.</p>
     pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -101,7 +106,8 @@ impl RecommendationBuilder {
     }
     /// <p>The recommendation description / disambiguator - e.g. <code>DKIM1</code> and <code>DKIM2</code> are different recommendations about your DKIM setup.</p>
     pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.description = input; self
+        self.description = input;
+        self
     }
     /// <p>The recommendation status, with values like <code>OPEN</code> or <code>FIXED</code>.</p>
     pub fn status(mut self, input: crate::types::RecommendationStatus) -> Self {
@@ -109,8 +115,12 @@ impl RecommendationBuilder {
         self
     }
     /// <p>The recommendation status, with values like <code>OPEN</code> or <code>FIXED</code>.</p>
-    pub fn set_status(mut self, input: std::option::Option<crate::types::RecommendationStatus>) -> Self {
-        self.status = input; self
+    pub fn set_status(
+        mut self,
+        input: std::option::Option<crate::types::RecommendationStatus>,
+    ) -> Self {
+        self.status = input;
+        self
     }
     /// <p>The first time this issue was encountered and the recommendation was generated.</p>
     pub fn created_timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -118,8 +128,12 @@ impl RecommendationBuilder {
         self
     }
     /// <p>The first time this issue was encountered and the recommendation was generated.</p>
-    pub fn set_created_timestamp(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.created_timestamp = input; self
+    pub fn set_created_timestamp(
+        mut self,
+        input: std::option::Option<aws_smithy_types::DateTime>,
+    ) -> Self {
+        self.created_timestamp = input;
+        self
     }
     /// <p>The last time the recommendation was updated.</p>
     pub fn last_updated_timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -127,8 +141,12 @@ impl RecommendationBuilder {
         self
     }
     /// <p>The last time the recommendation was updated.</p>
-    pub fn set_last_updated_timestamp(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.last_updated_timestamp = input; self
+    pub fn set_last_updated_timestamp(
+        mut self,
+        input: std::option::Option<aws_smithy_types::DateTime>,
+    ) -> Self {
+        self.last_updated_timestamp = input;
+        self
     }
     /// <p>The recommendation impact, with values like <code>HIGH</code> or <code>LOW</code>.</p>
     pub fn impact(mut self, input: crate::types::RecommendationImpact) -> Self {
@@ -136,27 +154,23 @@ impl RecommendationBuilder {
         self
     }
     /// <p>The recommendation impact, with values like <code>HIGH</code> or <code>LOW</code>.</p>
-    pub fn set_impact(mut self, input: std::option::Option<crate::types::RecommendationImpact>) -> Self {
-        self.impact = input; self
+    pub fn set_impact(
+        mut self,
+        input: std::option::Option<crate::types::RecommendationImpact>,
+    ) -> Self {
+        self.impact = input;
+        self
     }
     /// Consumes the builder and constructs a [`Recommendation`](crate::types::Recommendation).
     pub fn build(self) -> crate::types::Recommendation {
         crate::types::Recommendation {
-            resource_arn: self.resource_arn
-            ,
-            r#type: self.r#type
-            ,
-            description: self.description
-            ,
-            status: self.status
-            ,
-            created_timestamp: self.created_timestamp
-            ,
-            last_updated_timestamp: self.last_updated_timestamp
-            ,
-            impact: self.impact
-            ,
+            resource_arn: self.resource_arn,
+            r#type: self.r#type,
+            description: self.description,
+            status: self.status,
+            created_timestamp: self.created_timestamp,
+            last_updated_timestamp: self.last_updated_timestamp,
+            impact: self.impact,
         }
     }
 }
-

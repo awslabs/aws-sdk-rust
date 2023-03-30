@@ -2,20 +2,20 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeOrganizationConfigurationInput  {
+pub struct DescribeOrganizationConfigurationInput {
     /// <p>The ID of the detector to retrieve information about the delegated administrator from.</p>
     #[doc(hidden)]
     pub detector_id: std::option::Option<std::string::String>,
 }
 impl DescribeOrganizationConfigurationInput {
     /// <p>The ID of the detector to retrieve information about the delegated administrator from.</p>
-    pub fn detector_id(&self) -> std::option::Option<& str> {
+    pub fn detector_id(&self) -> std::option::Option<&str> {
         self.detector_id.as_deref()
     }
 }
 impl DescribeOrganizationConfigurationInput {
     /// Creates a new builder-style object to manufacture [`DescribeOrganizationConfigurationInput`](crate::operation::describe_organization_configuration::DescribeOrganizationConfigurationInput).
-    pub fn builder() -> crate::operation::describe_organization_configuration::builders::DescribeOrganizationConfigurationInputBuilder {
+    pub fn builder() -> crate::operation::describe_organization_configuration::builders::DescribeOrganizationConfigurationInputBuilder{
         crate::operation::describe_organization_configuration::builders::DescribeOrganizationConfigurationInputBuilder::default()
     }
 }
@@ -34,10 +34,11 @@ impl DescribeOrganizationConfigurationInputBuilder {
     }
     /// <p>The ID of the detector to retrieve information about the delegated administrator from.</p>
     pub fn set_detector_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.detector_id = input; self
+        self.detector_id = input;
+        self
     }
     /// Consumes the builder and constructs a [`DescribeOrganizationConfigurationInput`](crate::operation::describe_organization_configuration::DescribeOrganizationConfigurationInput).
-    pub fn build(self) -> Result<crate::operation::describe_organization_configuration::DescribeOrganizationConfigurationInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> Result<crate::operation::describe_organization_configuration::DescribeOrganizationConfigurationInput, aws_smithy_http::operation::error::BuildError>{
         Ok(
             crate::operation::describe_organization_configuration::DescribeOrganizationConfigurationInput {
                 detector_id: self.detector_id
@@ -46,4 +47,3 @@ impl DescribeOrganizationConfigurationInputBuilder {
         )
     }
 }
-

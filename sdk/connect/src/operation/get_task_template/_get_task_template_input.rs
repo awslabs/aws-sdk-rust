@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetTaskTemplateInput  {
+pub struct GetTaskTemplateInput {
     /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
     #[doc(hidden)]
     pub instance_id: std::option::Option<std::string::String>,
@@ -15,15 +15,15 @@ pub struct GetTaskTemplateInput  {
 }
 impl GetTaskTemplateInput {
     /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
-    pub fn instance_id(&self) -> std::option::Option<& str> {
+    pub fn instance_id(&self) -> std::option::Option<&str> {
         self.instance_id.as_deref()
     }
     /// <p>A unique identifier for the task template.</p>
-    pub fn task_template_id(&self) -> std::option::Option<& str> {
+    pub fn task_template_id(&self) -> std::option::Option<&str> {
         self.task_template_id.as_deref()
     }
     /// <p>The system generated version of a task template that is associated with a task, when the task is created.</p>
-    pub fn snapshot_version(&self) -> std::option::Option<& str> {
+    pub fn snapshot_version(&self) -> std::option::Option<&str> {
         self.snapshot_version.as_deref()
     }
 }
@@ -50,7 +50,8 @@ impl GetTaskTemplateInputBuilder {
     }
     /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
     pub fn set_instance_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.instance_id = input; self
+        self.instance_id = input;
+        self
     }
     /// <p>A unique identifier for the task template.</p>
     pub fn task_template_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -59,7 +60,8 @@ impl GetTaskTemplateInputBuilder {
     }
     /// <p>A unique identifier for the task template.</p>
     pub fn set_task_template_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.task_template_id = input; self
+        self.task_template_id = input;
+        self
     }
     /// <p>The system generated version of a task template that is associated with a task, when the task is created.</p>
     pub fn snapshot_version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -68,20 +70,20 @@ impl GetTaskTemplateInputBuilder {
     }
     /// <p>The system generated version of a task template that is associated with a task, when the task is created.</p>
     pub fn set_snapshot_version(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.snapshot_version = input; self
+        self.snapshot_version = input;
+        self
     }
     /// Consumes the builder and constructs a [`GetTaskTemplateInput`](crate::operation::get_task_template::GetTaskTemplateInput).
-    pub fn build(self) -> Result<crate::operation::get_task_template::GetTaskTemplateInput, aws_smithy_http::operation::error::BuildError> {
-        Ok(
-            crate::operation::get_task_template::GetTaskTemplateInput {
-                instance_id: self.instance_id
-                ,
-                task_template_id: self.task_template_id
-                ,
-                snapshot_version: self.snapshot_version
-                ,
-            }
-        )
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::get_task_template::GetTaskTemplateInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        Ok(crate::operation::get_task_template::GetTaskTemplateInput {
+            instance_id: self.instance_id,
+            task_template_id: self.task_template_id,
+            snapshot_version: self.snapshot_version,
+        })
     }
 }
-

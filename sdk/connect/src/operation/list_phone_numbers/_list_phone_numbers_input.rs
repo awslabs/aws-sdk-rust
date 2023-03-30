@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListPhoneNumbersInput  {
+pub struct ListPhoneNumbersInput {
     /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
     #[doc(hidden)]
     pub instance_id: std::option::Option<std::string::String>,
@@ -11,7 +11,8 @@ pub struct ListPhoneNumbersInput  {
     pub phone_number_types: std::option::Option<std::vec::Vec<crate::types::PhoneNumberType>>,
     /// <p>The ISO country code.</p>
     #[doc(hidden)]
-    pub phone_number_country_codes: std::option::Option<std::vec::Vec<crate::types::PhoneNumberCountryCode>>,
+    pub phone_number_country_codes:
+        std::option::Option<std::vec::Vec<crate::types::PhoneNumberCountryCode>>,
     /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
@@ -21,19 +22,21 @@ pub struct ListPhoneNumbersInput  {
 }
 impl ListPhoneNumbersInput {
     /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
-    pub fn instance_id(&self) -> std::option::Option<& str> {
+    pub fn instance_id(&self) -> std::option::Option<&str> {
         self.instance_id.as_deref()
     }
     /// <p>The type of phone number.</p>
-    pub fn phone_number_types(&self) -> std::option::Option<& [crate::types::PhoneNumberType]> {
+    pub fn phone_number_types(&self) -> std::option::Option<&[crate::types::PhoneNumberType]> {
         self.phone_number_types.as_deref()
     }
     /// <p>The ISO country code.</p>
-    pub fn phone_number_country_codes(&self) -> std::option::Option<& [crate::types::PhoneNumberCountryCode]> {
+    pub fn phone_number_country_codes(
+        &self,
+    ) -> std::option::Option<&[crate::types::PhoneNumberCountryCode]> {
         self.phone_number_country_codes.as_deref()
     }
     /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
     /// <p>The maximum number of results to return per page. The default MaxResult size is 100.</p>
@@ -43,7 +46,8 @@ impl ListPhoneNumbersInput {
 }
 impl ListPhoneNumbersInput {
     /// Creates a new builder-style object to manufacture [`ListPhoneNumbersInput`](crate::operation::list_phone_numbers::ListPhoneNumbersInput).
-    pub fn builder() -> crate::operation::list_phone_numbers::builders::ListPhoneNumbersInputBuilder {
+    pub fn builder() -> crate::operation::list_phone_numbers::builders::ListPhoneNumbersInputBuilder
+    {
         crate::operation::list_phone_numbers::builders::ListPhoneNumbersInputBuilder::default()
     }
 }
@@ -53,8 +57,10 @@ impl ListPhoneNumbersInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct ListPhoneNumbersInputBuilder {
     pub(crate) instance_id: std::option::Option<std::string::String>,
-    pub(crate) phone_number_types: std::option::Option<std::vec::Vec<crate::types::PhoneNumberType>>,
-    pub(crate) phone_number_country_codes: std::option::Option<std::vec::Vec<crate::types::PhoneNumberCountryCode>>,
+    pub(crate) phone_number_types:
+        std::option::Option<std::vec::Vec<crate::types::PhoneNumberType>>,
+    pub(crate) phone_number_country_codes:
+        std::option::Option<std::vec::Vec<crate::types::PhoneNumberCountryCode>>,
     pub(crate) next_token: std::option::Option<std::string::String>,
     pub(crate) max_results: std::option::Option<i32>,
 }
@@ -66,7 +72,8 @@ impl ListPhoneNumbersInputBuilder {
     }
     /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
     pub fn set_instance_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.instance_id = input; self
+        self.instance_id = input;
+        self
     }
     /// Appends an item to `phone_number_types`.
     ///
@@ -75,28 +82,39 @@ impl ListPhoneNumbersInputBuilder {
     /// <p>The type of phone number.</p>
     pub fn phone_number_types(mut self, input: crate::types::PhoneNumberType) -> Self {
         let mut v = self.phone_number_types.unwrap_or_default();
-                        v.push(input);
-                        self.phone_number_types = Some(v);
-                        self
+        v.push(input);
+        self.phone_number_types = Some(v);
+        self
     }
     /// <p>The type of phone number.</p>
-    pub fn set_phone_number_types(mut self, input: std::option::Option<std::vec::Vec<crate::types::PhoneNumberType>>) -> Self {
-        self.phone_number_types = input; self
+    pub fn set_phone_number_types(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::PhoneNumberType>>,
+    ) -> Self {
+        self.phone_number_types = input;
+        self
     }
     /// Appends an item to `phone_number_country_codes`.
     ///
     /// To override the contents of this collection use [`set_phone_number_country_codes`](Self::set_phone_number_country_codes).
     ///
     /// <p>The ISO country code.</p>
-    pub fn phone_number_country_codes(mut self, input: crate::types::PhoneNumberCountryCode) -> Self {
+    pub fn phone_number_country_codes(
+        mut self,
+        input: crate::types::PhoneNumberCountryCode,
+    ) -> Self {
         let mut v = self.phone_number_country_codes.unwrap_or_default();
-                        v.push(input);
-                        self.phone_number_country_codes = Some(v);
-                        self
+        v.push(input);
+        self.phone_number_country_codes = Some(v);
+        self
     }
     /// <p>The ISO country code.</p>
-    pub fn set_phone_number_country_codes(mut self, input: std::option::Option<std::vec::Vec<crate::types::PhoneNumberCountryCode>>) -> Self {
-        self.phone_number_country_codes = input; self
+    pub fn set_phone_number_country_codes(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::PhoneNumberCountryCode>>,
+    ) -> Self {
+        self.phone_number_country_codes = input;
+        self
     }
     /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -105,7 +123,8 @@ impl ListPhoneNumbersInputBuilder {
     }
     /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input; self
+        self.next_token = input;
+        self
     }
     /// <p>The maximum number of results to return per page. The default MaxResult size is 100.</p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -114,25 +133,24 @@ impl ListPhoneNumbersInputBuilder {
     }
     /// <p>The maximum number of results to return per page. The default MaxResult size is 100.</p>
     pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_results = input; self
+        self.max_results = input;
+        self
     }
     /// Consumes the builder and constructs a [`ListPhoneNumbersInput`](crate::operation::list_phone_numbers::ListPhoneNumbersInput).
-    pub fn build(self) -> Result<crate::operation::list_phone_numbers::ListPhoneNumbersInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::list_phone_numbers::ListPhoneNumbersInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::list_phone_numbers::ListPhoneNumbersInput {
-                instance_id: self.instance_id
-                ,
-                phone_number_types: self.phone_number_types
-                ,
-                phone_number_country_codes: self.phone_number_country_codes
-                ,
-                next_token: self.next_token
-                ,
-                max_results: self.max_results
-                    .unwrap_or_default()
-                ,
-            }
+                instance_id: self.instance_id,
+                phone_number_types: self.phone_number_types,
+                phone_number_country_codes: self.phone_number_country_codes,
+                next_token: self.next_token,
+                max_results: self.max_results.unwrap_or_default(),
+            },
         )
     }
 }
-

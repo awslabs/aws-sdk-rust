@@ -3,20 +3,20 @@
 /// <p>The RejectDomainTransferFromAnotherAwsAccount request includes the following element.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct RejectDomainTransferFromAnotherAwsAccountInput  {
+pub struct RejectDomainTransferFromAnotherAwsAccountInput {
     /// <p>The name of the domain that was specified when another Amazon Web Services account submitted a <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_TransferDomainToAnotherAwsAccount.html">TransferDomainToAnotherAwsAccount</a> request. </p>
     #[doc(hidden)]
     pub domain_name: std::option::Option<std::string::String>,
 }
 impl RejectDomainTransferFromAnotherAwsAccountInput {
     /// <p>The name of the domain that was specified when another Amazon Web Services account submitted a <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_TransferDomainToAnotherAwsAccount.html">TransferDomainToAnotherAwsAccount</a> request. </p>
-    pub fn domain_name(&self) -> std::option::Option<& str> {
+    pub fn domain_name(&self) -> std::option::Option<&str> {
         self.domain_name.as_deref()
     }
 }
 impl RejectDomainTransferFromAnotherAwsAccountInput {
     /// Creates a new builder-style object to manufacture [`RejectDomainTransferFromAnotherAwsAccountInput`](crate::operation::reject_domain_transfer_from_another_aws_account::RejectDomainTransferFromAnotherAwsAccountInput).
-    pub fn builder() -> crate::operation::reject_domain_transfer_from_another_aws_account::builders::RejectDomainTransferFromAnotherAwsAccountInputBuilder {
+    pub fn builder() -> crate::operation::reject_domain_transfer_from_another_aws_account::builders::RejectDomainTransferFromAnotherAwsAccountInputBuilder{
         crate::operation::reject_domain_transfer_from_another_aws_account::builders::RejectDomainTransferFromAnotherAwsAccountInputBuilder::default()
     }
 }
@@ -35,10 +35,11 @@ impl RejectDomainTransferFromAnotherAwsAccountInputBuilder {
     }
     /// <p>The name of the domain that was specified when another Amazon Web Services account submitted a <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_TransferDomainToAnotherAwsAccount.html">TransferDomainToAnotherAwsAccount</a> request. </p>
     pub fn set_domain_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.domain_name = input; self
+        self.domain_name = input;
+        self
     }
     /// Consumes the builder and constructs a [`RejectDomainTransferFromAnotherAwsAccountInput`](crate::operation::reject_domain_transfer_from_another_aws_account::RejectDomainTransferFromAnotherAwsAccountInput).
-    pub fn build(self) -> Result<crate::operation::reject_domain_transfer_from_another_aws_account::RejectDomainTransferFromAnotherAwsAccountInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> Result<crate::operation::reject_domain_transfer_from_another_aws_account::RejectDomainTransferFromAnotherAwsAccountInput, aws_smithy_http::operation::error::BuildError>{
         Ok(
             crate::operation::reject_domain_transfer_from_another_aws_account::RejectDomainTransferFromAnotherAwsAccountInput {
                 domain_name: self.domain_name
@@ -47,4 +48,3 @@ impl RejectDomainTransferFromAnotherAwsAccountInputBuilder {
         )
     }
 }
-

@@ -3,14 +3,14 @@
 /// <p>Describes the configuration for an input field on a form. Use <code>FormInputValueProperty</code> to specify the values to render or bind by default.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct FormInputValueProperty  {
+pub struct FormInputValueProperty {
     /// <p>The value to assign to the input field.</p>
     #[doc(hidden)]
     pub value: std::option::Option<std::string::String>,
 }
 impl FormInputValueProperty {
     /// <p>The value to assign to the input field.</p>
-    pub fn value(&self) -> std::option::Option<& str> {
+    pub fn value(&self) -> std::option::Option<&str> {
         self.value.as_deref()
     }
 }
@@ -35,14 +35,11 @@ impl FormInputValuePropertyBuilder {
     }
     /// <p>The value to assign to the input field.</p>
     pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.value = input; self
+        self.value = input;
+        self
     }
     /// Consumes the builder and constructs a [`FormInputValueProperty`](crate::types::FormInputValueProperty).
     pub fn build(self) -> crate::types::FormInputValueProperty {
-        crate::types::FormInputValueProperty {
-            value: self.value
-            ,
-        }
+        crate::types::FormInputValueProperty { value: self.value }
     }
 }
-

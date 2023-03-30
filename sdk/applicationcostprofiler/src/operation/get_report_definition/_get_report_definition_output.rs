@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetReportDefinitionOutput  {
+pub struct GetReportDefinitionOutput {
     /// <p>ID of the report retrieved.</p>
     #[doc(hidden)]
     pub report_id: std::option::Option<std::string::String>,
@@ -28,43 +28,45 @@ pub struct GetReportDefinitionOutput  {
 }
 impl GetReportDefinitionOutput {
     /// <p>ID of the report retrieved.</p>
-    pub fn report_id(&self) -> std::option::Option<& str> {
+    pub fn report_id(&self) -> std::option::Option<&str> {
         self.report_id.as_deref()
     }
     /// <p>Description of the report.</p>
-    pub fn report_description(&self) -> std::option::Option<& str> {
+    pub fn report_description(&self) -> std::option::Option<&str> {
         self.report_description.as_deref()
     }
     /// <p>Cadence used to generate the report.</p>
-    pub fn report_frequency(&self) -> std::option::Option<& crate::types::ReportFrequency> {
+    pub fn report_frequency(&self) -> std::option::Option<&crate::types::ReportFrequency> {
         self.report_frequency.as_ref()
     }
     /// <p>Format of the generated report.</p>
-    pub fn format(&self) -> std::option::Option<& crate::types::Format> {
+    pub fn format(&self) -> std::option::Option<&crate::types::Format> {
         self.format.as_ref()
     }
     /// <p>Amazon Simple Storage Service (Amazon S3) location where the report is uploaded.</p>
-    pub fn destination_s3_location(&self) -> std::option::Option<& crate::types::S3Location> {
+    pub fn destination_s3_location(&self) -> std::option::Option<&crate::types::S3Location> {
         self.destination_s3_location.as_ref()
     }
     /// <p>Timestamp (milliseconds) when this report definition was created.</p>
-    pub fn created_at(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
+    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
     /// <p>Timestamp (milliseconds) when this report definition was last updated.</p>
-    pub fn last_updated(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
+    pub fn last_updated(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_updated.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for GetReportDefinitionOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl GetReportDefinitionOutput {
     /// Creates a new builder-style object to manufacture [`GetReportDefinitionOutput`](crate::operation::get_report_definition::GetReportDefinitionOutput).
-    pub fn builder() -> crate::operation::get_report_definition::builders::GetReportDefinitionOutputBuilder {
-        crate::operation::get_report_definition::builders::GetReportDefinitionOutputBuilder::default()
+    pub fn builder(
+    ) -> crate::operation::get_report_definition::builders::GetReportDefinitionOutputBuilder {
+        crate::operation::get_report_definition::builders::GetReportDefinitionOutputBuilder::default(
+        )
     }
 }
 
@@ -89,7 +91,8 @@ impl GetReportDefinitionOutputBuilder {
     }
     /// <p>ID of the report retrieved.</p>
     pub fn set_report_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.report_id = input; self
+        self.report_id = input;
+        self
     }
     /// <p>Description of the report.</p>
     pub fn report_description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -97,8 +100,12 @@ impl GetReportDefinitionOutputBuilder {
         self
     }
     /// <p>Description of the report.</p>
-    pub fn set_report_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.report_description = input; self
+    pub fn set_report_description(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.report_description = input;
+        self
     }
     /// <p>Cadence used to generate the report.</p>
     pub fn report_frequency(mut self, input: crate::types::ReportFrequency) -> Self {
@@ -106,8 +113,12 @@ impl GetReportDefinitionOutputBuilder {
         self
     }
     /// <p>Cadence used to generate the report.</p>
-    pub fn set_report_frequency(mut self, input: std::option::Option<crate::types::ReportFrequency>) -> Self {
-        self.report_frequency = input; self
+    pub fn set_report_frequency(
+        mut self,
+        input: std::option::Option<crate::types::ReportFrequency>,
+    ) -> Self {
+        self.report_frequency = input;
+        self
     }
     /// <p>Format of the generated report.</p>
     pub fn format(mut self, input: crate::types::Format) -> Self {
@@ -116,7 +127,8 @@ impl GetReportDefinitionOutputBuilder {
     }
     /// <p>Format of the generated report.</p>
     pub fn set_format(mut self, input: std::option::Option<crate::types::Format>) -> Self {
-        self.format = input; self
+        self.format = input;
+        self
     }
     /// <p>Amazon Simple Storage Service (Amazon S3) location where the report is uploaded.</p>
     pub fn destination_s3_location(mut self, input: crate::types::S3Location) -> Self {
@@ -124,8 +136,12 @@ impl GetReportDefinitionOutputBuilder {
         self
     }
     /// <p>Amazon Simple Storage Service (Amazon S3) location where the report is uploaded.</p>
-    pub fn set_destination_s3_location(mut self, input: std::option::Option<crate::types::S3Location>) -> Self {
-        self.destination_s3_location = input; self
+    pub fn set_destination_s3_location(
+        mut self,
+        input: std::option::Option<crate::types::S3Location>,
+    ) -> Self {
+        self.destination_s3_location = input;
+        self
     }
     /// <p>Timestamp (milliseconds) when this report definition was created.</p>
     pub fn created_at(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -133,8 +149,12 @@ impl GetReportDefinitionOutputBuilder {
         self
     }
     /// <p>Timestamp (milliseconds) when this report definition was created.</p>
-    pub fn set_created_at(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.created_at = input; self
+    pub fn set_created_at(
+        mut self,
+        input: std::option::Option<aws_smithy_types::DateTime>,
+    ) -> Self {
+        self.created_at = input;
+        self
     }
     /// <p>Timestamp (milliseconds) when this report definition was last updated.</p>
     pub fn last_updated(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -142,37 +162,33 @@ impl GetReportDefinitionOutputBuilder {
         self
     }
     /// <p>Timestamp (milliseconds) when this report definition was last updated.</p>
-    pub fn set_last_updated(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.last_updated = input; self
+    pub fn set_last_updated(
+        mut self,
+        input: std::option::Option<aws_smithy_types::DateTime>,
+    ) -> Self {
+        self.last_updated = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`GetReportDefinitionOutput`](crate::operation::get_report_definition::GetReportDefinitionOutput).
     pub fn build(self) -> crate::operation::get_report_definition::GetReportDefinitionOutput {
         crate::operation::get_report_definition::GetReportDefinitionOutput {
-            report_id: self.report_id
-            ,
-            report_description: self.report_description
-            ,
-            report_frequency: self.report_frequency
-            ,
-            format: self.format
-            ,
-            destination_s3_location: self.destination_s3_location
-            ,
-            created_at: self.created_at
-            ,
-            last_updated: self.last_updated
-            ,
+            report_id: self.report_id,
+            report_description: self.report_description,
+            report_frequency: self.report_frequency,
+            format: self.format,
+            destination_s3_location: self.destination_s3_location,
+            created_at: self.created_at,
+            last_updated: self.last_updated,
             _request_id: self._request_id,
         }
     }
 }
-

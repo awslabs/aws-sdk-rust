@@ -2,20 +2,21 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeCodeReviewInput  {
+pub struct DescribeCodeReviewInput {
     /// <p>The Amazon Resource Name (ARN) of the <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_CodeReview.html">CodeReview</a> object. </p>
     #[doc(hidden)]
     pub code_review_arn: std::option::Option<std::string::String>,
 }
 impl DescribeCodeReviewInput {
     /// <p>The Amazon Resource Name (ARN) of the <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_CodeReview.html">CodeReview</a> object. </p>
-    pub fn code_review_arn(&self) -> std::option::Option<& str> {
+    pub fn code_review_arn(&self) -> std::option::Option<&str> {
         self.code_review_arn.as_deref()
     }
 }
 impl DescribeCodeReviewInput {
     /// Creates a new builder-style object to manufacture [`DescribeCodeReviewInput`](crate::operation::describe_code_review::DescribeCodeReviewInput).
-    pub fn builder() -> crate::operation::describe_code_review::builders::DescribeCodeReviewInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::describe_code_review::builders::DescribeCodeReviewInputBuilder {
         crate::operation::describe_code_review::builders::DescribeCodeReviewInputBuilder::default()
     }
 }
@@ -34,16 +35,20 @@ impl DescribeCodeReviewInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_CodeReview.html">CodeReview</a> object. </p>
     pub fn set_code_review_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.code_review_arn = input; self
+        self.code_review_arn = input;
+        self
     }
     /// Consumes the builder and constructs a [`DescribeCodeReviewInput`](crate::operation::describe_code_review::DescribeCodeReviewInput).
-    pub fn build(self) -> Result<crate::operation::describe_code_review::DescribeCodeReviewInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::describe_code_review::DescribeCodeReviewInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::describe_code_review::DescribeCodeReviewInput {
-                code_review_arn: self.code_review_arn
-                ,
-            }
+                code_review_arn: self.code_review_arn,
+            },
         )
     }
 }
-

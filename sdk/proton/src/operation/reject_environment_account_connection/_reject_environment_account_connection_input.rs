@@ -2,20 +2,20 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct RejectEnvironmentAccountConnectionInput  {
+pub struct RejectEnvironmentAccountConnectionInput {
     /// <p>The ID of the environment account connection to reject.</p>
     #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
 }
 impl RejectEnvironmentAccountConnectionInput {
     /// <p>The ID of the environment account connection to reject.</p>
-    pub fn id(&self) -> std::option::Option<& str> {
+    pub fn id(&self) -> std::option::Option<&str> {
         self.id.as_deref()
     }
 }
 impl RejectEnvironmentAccountConnectionInput {
     /// Creates a new builder-style object to manufacture [`RejectEnvironmentAccountConnectionInput`](crate::operation::reject_environment_account_connection::RejectEnvironmentAccountConnectionInput).
-    pub fn builder() -> crate::operation::reject_environment_account_connection::builders::RejectEnvironmentAccountConnectionInputBuilder {
+    pub fn builder() -> crate::operation::reject_environment_account_connection::builders::RejectEnvironmentAccountConnectionInputBuilder{
         crate::operation::reject_environment_account_connection::builders::RejectEnvironmentAccountConnectionInputBuilder::default()
     }
 }
@@ -34,10 +34,11 @@ impl RejectEnvironmentAccountConnectionInputBuilder {
     }
     /// <p>The ID of the environment account connection to reject.</p>
     pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.id = input; self
+        self.id = input;
+        self
     }
     /// Consumes the builder and constructs a [`RejectEnvironmentAccountConnectionInput`](crate::operation::reject_environment_account_connection::RejectEnvironmentAccountConnectionInput).
-    pub fn build(self) -> Result<crate::operation::reject_environment_account_connection::RejectEnvironmentAccountConnectionInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> Result<crate::operation::reject_environment_account_connection::RejectEnvironmentAccountConnectionInput, aws_smithy_http::operation::error::BuildError>{
         Ok(
             crate::operation::reject_environment_account_connection::RejectEnvironmentAccountConnectionInput {
                 id: self.id
@@ -46,4 +47,3 @@ impl RejectEnvironmentAccountConnectionInputBuilder {
         )
     }
 }
-

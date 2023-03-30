@@ -3,7 +3,7 @@
 /// <p>Contains details about the analyzed resource.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AnalyzedResource  {
+pub struct AnalyzedResource {
     /// <p>The ARN of the resource that was analyzed.</p>
     #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
@@ -40,23 +40,23 @@ pub struct AnalyzedResource  {
 }
 impl AnalyzedResource {
     /// <p>The ARN of the resource that was analyzed.</p>
-    pub fn resource_arn(&self) -> std::option::Option<& str> {
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
         self.resource_arn.as_deref()
     }
     /// <p>The type of the resource that was analyzed.</p>
-    pub fn resource_type(&self) -> std::option::Option<& crate::types::ResourceType> {
+    pub fn resource_type(&self) -> std::option::Option<&crate::types::ResourceType> {
         self.resource_type.as_ref()
     }
     /// <p>The time at which the finding was created.</p>
-    pub fn created_at(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
+    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
     /// <p>The time at which the resource was analyzed.</p>
-    pub fn analyzed_at(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
+    pub fn analyzed_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.analyzed_at.as_ref()
     }
     /// <p>The time at which the finding was updated.</p>
-    pub fn updated_at(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
+    pub fn updated_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.updated_at.as_ref()
     }
     /// <p>Indicates whether the policy that generated the finding grants public access to the resource.</p>
@@ -64,23 +64,23 @@ impl AnalyzedResource {
         self.is_public
     }
     /// <p>The actions that an external principal is granted permission to use by the policy that generated the finding.</p>
-    pub fn actions(&self) -> std::option::Option<& [std::string::String]> {
+    pub fn actions(&self) -> std::option::Option<&[std::string::String]> {
         self.actions.as_deref()
     }
     /// <p>Indicates how the access that generated the finding is granted. This is populated for Amazon S3 bucket findings.</p>
-    pub fn shared_via(&self) -> std::option::Option<& [std::string::String]> {
+    pub fn shared_via(&self) -> std::option::Option<&[std::string::String]> {
         self.shared_via.as_deref()
     }
     /// <p>The current status of the finding generated from the analyzed resource.</p>
-    pub fn status(&self) -> std::option::Option<& crate::types::FindingStatus> {
+    pub fn status(&self) -> std::option::Option<&crate::types::FindingStatus> {
         self.status.as_ref()
     }
     /// <p>The Amazon Web Services account ID that owns the resource.</p>
-    pub fn resource_owner_account(&self) -> std::option::Option<& str> {
+    pub fn resource_owner_account(&self) -> std::option::Option<&str> {
         self.resource_owner_account.as_deref()
     }
     /// <p>An error message.</p>
-    pub fn error(&self) -> std::option::Option<& str> {
+    pub fn error(&self) -> std::option::Option<&str> {
         self.error.as_deref()
     }
 }
@@ -115,7 +115,8 @@ impl AnalyzedResourceBuilder {
     }
     /// <p>The ARN of the resource that was analyzed.</p>
     pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.resource_arn = input; self
+        self.resource_arn = input;
+        self
     }
     /// <p>The type of the resource that was analyzed.</p>
     pub fn resource_type(mut self, input: crate::types::ResourceType) -> Self {
@@ -123,8 +124,12 @@ impl AnalyzedResourceBuilder {
         self
     }
     /// <p>The type of the resource that was analyzed.</p>
-    pub fn set_resource_type(mut self, input: std::option::Option<crate::types::ResourceType>) -> Self {
-        self.resource_type = input; self
+    pub fn set_resource_type(
+        mut self,
+        input: std::option::Option<crate::types::ResourceType>,
+    ) -> Self {
+        self.resource_type = input;
+        self
     }
     /// <p>The time at which the finding was created.</p>
     pub fn created_at(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -132,8 +137,12 @@ impl AnalyzedResourceBuilder {
         self
     }
     /// <p>The time at which the finding was created.</p>
-    pub fn set_created_at(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.created_at = input; self
+    pub fn set_created_at(
+        mut self,
+        input: std::option::Option<aws_smithy_types::DateTime>,
+    ) -> Self {
+        self.created_at = input;
+        self
     }
     /// <p>The time at which the resource was analyzed.</p>
     pub fn analyzed_at(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -141,8 +150,12 @@ impl AnalyzedResourceBuilder {
         self
     }
     /// <p>The time at which the resource was analyzed.</p>
-    pub fn set_analyzed_at(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.analyzed_at = input; self
+    pub fn set_analyzed_at(
+        mut self,
+        input: std::option::Option<aws_smithy_types::DateTime>,
+    ) -> Self {
+        self.analyzed_at = input;
+        self
     }
     /// <p>The time at which the finding was updated.</p>
     pub fn updated_at(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -150,8 +163,12 @@ impl AnalyzedResourceBuilder {
         self
     }
     /// <p>The time at which the finding was updated.</p>
-    pub fn set_updated_at(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.updated_at = input; self
+    pub fn set_updated_at(
+        mut self,
+        input: std::option::Option<aws_smithy_types::DateTime>,
+    ) -> Self {
+        self.updated_at = input;
+        self
     }
     /// <p>Indicates whether the policy that generated the finding grants public access to the resource.</p>
     pub fn is_public(mut self, input: bool) -> Self {
@@ -160,7 +177,8 @@ impl AnalyzedResourceBuilder {
     }
     /// <p>Indicates whether the policy that generated the finding grants public access to the resource.</p>
     pub fn set_is_public(mut self, input: std::option::Option<bool>) -> Self {
-        self.is_public = input; self
+        self.is_public = input;
+        self
     }
     /// Appends an item to `actions`.
     ///
@@ -169,13 +187,17 @@ impl AnalyzedResourceBuilder {
     /// <p>The actions that an external principal is granted permission to use by the policy that generated the finding.</p>
     pub fn actions(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.actions.unwrap_or_default();
-                        v.push(input.into());
-                        self.actions = Some(v);
-                        self
+        v.push(input.into());
+        self.actions = Some(v);
+        self
     }
     /// <p>The actions that an external principal is granted permission to use by the policy that generated the finding.</p>
-    pub fn set_actions(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-        self.actions = input; self
+    pub fn set_actions(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
+        self.actions = input;
+        self
     }
     /// Appends an item to `shared_via`.
     ///
@@ -184,13 +206,17 @@ impl AnalyzedResourceBuilder {
     /// <p>Indicates how the access that generated the finding is granted. This is populated for Amazon S3 bucket findings.</p>
     pub fn shared_via(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.shared_via.unwrap_or_default();
-                        v.push(input.into());
-                        self.shared_via = Some(v);
-                        self
+        v.push(input.into());
+        self.shared_via = Some(v);
+        self
     }
     /// <p>Indicates how the access that generated the finding is granted. This is populated for Amazon S3 bucket findings.</p>
-    pub fn set_shared_via(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-        self.shared_via = input; self
+    pub fn set_shared_via(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
+        self.shared_via = input;
+        self
     }
     /// <p>The current status of the finding generated from the analyzed resource.</p>
     pub fn status(mut self, input: crate::types::FindingStatus) -> Self {
@@ -199,7 +225,8 @@ impl AnalyzedResourceBuilder {
     }
     /// <p>The current status of the finding generated from the analyzed resource.</p>
     pub fn set_status(mut self, input: std::option::Option<crate::types::FindingStatus>) -> Self {
-        self.status = input; self
+        self.status = input;
+        self
     }
     /// <p>The Amazon Web Services account ID that owns the resource.</p>
     pub fn resource_owner_account(mut self, input: impl Into<std::string::String>) -> Self {
@@ -207,8 +234,12 @@ impl AnalyzedResourceBuilder {
         self
     }
     /// <p>The Amazon Web Services account ID that owns the resource.</p>
-    pub fn set_resource_owner_account(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.resource_owner_account = input; self
+    pub fn set_resource_owner_account(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.resource_owner_account = input;
+        self
     }
     /// <p>An error message.</p>
     pub fn error(mut self, input: impl Into<std::string::String>) -> Self {
@@ -217,34 +248,23 @@ impl AnalyzedResourceBuilder {
     }
     /// <p>An error message.</p>
     pub fn set_error(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.error = input; self
+        self.error = input;
+        self
     }
     /// Consumes the builder and constructs a [`AnalyzedResource`](crate::types::AnalyzedResource).
     pub fn build(self) -> crate::types::AnalyzedResource {
         crate::types::AnalyzedResource {
-            resource_arn: self.resource_arn
-            ,
-            resource_type: self.resource_type
-            ,
-            created_at: self.created_at
-            ,
-            analyzed_at: self.analyzed_at
-            ,
-            updated_at: self.updated_at
-            ,
-            is_public: self.is_public
-            ,
-            actions: self.actions
-            ,
-            shared_via: self.shared_via
-            ,
-            status: self.status
-            ,
-            resource_owner_account: self.resource_owner_account
-            ,
-            error: self.error
-            ,
+            resource_arn: self.resource_arn,
+            resource_type: self.resource_type,
+            created_at: self.created_at,
+            analyzed_at: self.analyzed_at,
+            updated_at: self.updated_at,
+            is_public: self.is_public,
+            actions: self.actions,
+            shared_via: self.shared_via,
+            status: self.status,
+            resource_owner_account: self.resource_owner_account,
+            error: self.error,
         }
     }
 }
-

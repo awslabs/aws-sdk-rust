@@ -3,7 +3,7 @@
 /// <p>The instructions associated with a join. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct JoinInstruction  {
+pub struct JoinInstruction {
     /// <p>The operand on the left side of a join.</p>
     #[doc(hidden)]
     pub left_operand: std::option::Option<std::string::String>,
@@ -25,27 +25,31 @@ pub struct JoinInstruction  {
 }
 impl JoinInstruction {
     /// <p>The operand on the left side of a join.</p>
-    pub fn left_operand(&self) -> std::option::Option<& str> {
+    pub fn left_operand(&self) -> std::option::Option<&str> {
         self.left_operand.as_deref()
     }
     /// <p>The operand on the right side of a join.</p>
-    pub fn right_operand(&self) -> std::option::Option<& str> {
+    pub fn right_operand(&self) -> std::option::Option<&str> {
         self.right_operand.as_deref()
     }
     /// <p>Join key properties of the left operand.</p>
-    pub fn left_join_key_properties(&self) -> std::option::Option<& crate::types::JoinKeyProperties> {
+    pub fn left_join_key_properties(
+        &self,
+    ) -> std::option::Option<&crate::types::JoinKeyProperties> {
         self.left_join_key_properties.as_ref()
     }
     /// <p>Join key properties of the right operand.</p>
-    pub fn right_join_key_properties(&self) -> std::option::Option<& crate::types::JoinKeyProperties> {
+    pub fn right_join_key_properties(
+        &self,
+    ) -> std::option::Option<&crate::types::JoinKeyProperties> {
         self.right_join_key_properties.as_ref()
     }
     /// <p>The type of join that it is.</p>
-    pub fn r#type(&self) -> std::option::Option<& crate::types::JoinType> {
+    pub fn r#type(&self) -> std::option::Option<&crate::types::JoinType> {
         self.r#type.as_ref()
     }
     /// <p>The join instructions provided in the <code>ON</code> clause of a join.</p>
-    pub fn on_clause(&self) -> std::option::Option<& str> {
+    pub fn on_clause(&self) -> std::option::Option<&str> {
         self.on_clause.as_deref()
     }
 }
@@ -75,7 +79,8 @@ impl JoinInstructionBuilder {
     }
     /// <p>The operand on the left side of a join.</p>
     pub fn set_left_operand(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.left_operand = input; self
+        self.left_operand = input;
+        self
     }
     /// <p>The operand on the right side of a join.</p>
     pub fn right_operand(mut self, input: impl Into<std::string::String>) -> Self {
@@ -84,7 +89,8 @@ impl JoinInstructionBuilder {
     }
     /// <p>The operand on the right side of a join.</p>
     pub fn set_right_operand(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.right_operand = input; self
+        self.right_operand = input;
+        self
     }
     /// <p>Join key properties of the left operand.</p>
     pub fn left_join_key_properties(mut self, input: crate::types::JoinKeyProperties) -> Self {
@@ -92,8 +98,12 @@ impl JoinInstructionBuilder {
         self
     }
     /// <p>Join key properties of the left operand.</p>
-    pub fn set_left_join_key_properties(mut self, input: std::option::Option<crate::types::JoinKeyProperties>) -> Self {
-        self.left_join_key_properties = input; self
+    pub fn set_left_join_key_properties(
+        mut self,
+        input: std::option::Option<crate::types::JoinKeyProperties>,
+    ) -> Self {
+        self.left_join_key_properties = input;
+        self
     }
     /// <p>Join key properties of the right operand.</p>
     pub fn right_join_key_properties(mut self, input: crate::types::JoinKeyProperties) -> Self {
@@ -101,8 +111,12 @@ impl JoinInstructionBuilder {
         self
     }
     /// <p>Join key properties of the right operand.</p>
-    pub fn set_right_join_key_properties(mut self, input: std::option::Option<crate::types::JoinKeyProperties>) -> Self {
-        self.right_join_key_properties = input; self
+    pub fn set_right_join_key_properties(
+        mut self,
+        input: std::option::Option<crate::types::JoinKeyProperties>,
+    ) -> Self {
+        self.right_join_key_properties = input;
+        self
     }
     /// <p>The type of join that it is.</p>
     pub fn r#type(mut self, input: crate::types::JoinType) -> Self {
@@ -111,7 +125,8 @@ impl JoinInstructionBuilder {
     }
     /// <p>The type of join that it is.</p>
     pub fn set_type(mut self, input: std::option::Option<crate::types::JoinType>) -> Self {
-        self.r#type = input; self
+        self.r#type = input;
+        self
     }
     /// <p>The join instructions provided in the <code>ON</code> clause of a join.</p>
     pub fn on_clause(mut self, input: impl Into<std::string::String>) -> Self {
@@ -120,24 +135,18 @@ impl JoinInstructionBuilder {
     }
     /// <p>The join instructions provided in the <code>ON</code> clause of a join.</p>
     pub fn set_on_clause(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.on_clause = input; self
+        self.on_clause = input;
+        self
     }
     /// Consumes the builder and constructs a [`JoinInstruction`](crate::types::JoinInstruction).
     pub fn build(self) -> crate::types::JoinInstruction {
         crate::types::JoinInstruction {
-            left_operand: self.left_operand
-            ,
-            right_operand: self.right_operand
-            ,
-            left_join_key_properties: self.left_join_key_properties
-            ,
-            right_join_key_properties: self.right_join_key_properties
-            ,
-            r#type: self.r#type
-            ,
-            on_clause: self.on_clause
-            ,
+            left_operand: self.left_operand,
+            right_operand: self.right_operand,
+            left_join_key_properties: self.left_join_key_properties,
+            right_join_key_properties: self.right_join_key_properties,
+            r#type: self.r#type,
+            on_clause: self.on_clause,
         }
     }
 }
-

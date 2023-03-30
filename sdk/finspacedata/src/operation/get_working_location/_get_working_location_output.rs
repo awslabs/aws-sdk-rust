@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetWorkingLocationOutput  {
+pub struct GetWorkingLocationOutput {
     /// <p>Returns the Amazon S3 URI for the working location.</p>
     #[doc(hidden)]
     pub s3_uri: std::option::Option<std::string::String>,
@@ -16,26 +16,27 @@ pub struct GetWorkingLocationOutput  {
 }
 impl GetWorkingLocationOutput {
     /// <p>Returns the Amazon S3 URI for the working location.</p>
-    pub fn s3_uri(&self) -> std::option::Option<& str> {
+    pub fn s3_uri(&self) -> std::option::Option<&str> {
         self.s3_uri.as_deref()
     }
     /// <p>Returns the Amazon S3 Path for the working location.</p>
-    pub fn s3_path(&self) -> std::option::Option<& str> {
+    pub fn s3_path(&self) -> std::option::Option<&str> {
         self.s3_path.as_deref()
     }
     /// <p>Returns the Amazon S3 bucket name for the working location.</p>
-    pub fn s3_bucket(&self) -> std::option::Option<& str> {
+    pub fn s3_bucket(&self) -> std::option::Option<&str> {
         self.s3_bucket.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for GetWorkingLocationOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl GetWorkingLocationOutput {
     /// Creates a new builder-style object to manufacture [`GetWorkingLocationOutput`](crate::operation::get_working_location::GetWorkingLocationOutput).
-    pub fn builder() -> crate::operation::get_working_location::builders::GetWorkingLocationOutputBuilder {
+    pub fn builder(
+    ) -> crate::operation::get_working_location::builders::GetWorkingLocationOutputBuilder {
         crate::operation::get_working_location::builders::GetWorkingLocationOutputBuilder::default()
     }
 }
@@ -57,7 +58,8 @@ impl GetWorkingLocationOutputBuilder {
     }
     /// <p>Returns the Amazon S3 URI for the working location.</p>
     pub fn set_s3_uri(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.s3_uri = input; self
+        self.s3_uri = input;
+        self
     }
     /// <p>Returns the Amazon S3 Path for the working location.</p>
     pub fn s3_path(mut self, input: impl Into<std::string::String>) -> Self {
@@ -66,7 +68,8 @@ impl GetWorkingLocationOutputBuilder {
     }
     /// <p>Returns the Amazon S3 Path for the working location.</p>
     pub fn set_s3_path(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.s3_path = input; self
+        self.s3_path = input;
+        self
     }
     /// <p>Returns the Amazon S3 bucket name for the working location.</p>
     pub fn s3_bucket(mut self, input: impl Into<std::string::String>) -> Self {
@@ -75,28 +78,25 @@ impl GetWorkingLocationOutputBuilder {
     }
     /// <p>Returns the Amazon S3 bucket name for the working location.</p>
     pub fn set_s3_bucket(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.s3_bucket = input; self
+        self.s3_bucket = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`GetWorkingLocationOutput`](crate::operation::get_working_location::GetWorkingLocationOutput).
     pub fn build(self) -> crate::operation::get_working_location::GetWorkingLocationOutput {
         crate::operation::get_working_location::GetWorkingLocationOutput {
-            s3_uri: self.s3_uri
-            ,
-            s3_path: self.s3_path
-            ,
-            s3_bucket: self.s3_bucket
-            ,
+            s3_uri: self.s3_uri,
+            s3_path: self.s3_path,
+            s3_bucket: self.s3_bucket,
             _request_id: self._request_id,
         }
     }
 }
-

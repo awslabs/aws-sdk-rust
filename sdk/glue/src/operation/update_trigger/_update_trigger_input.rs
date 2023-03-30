@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateTriggerInput  {
+pub struct UpdateTriggerInput {
     /// <p>The name of the trigger to update.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -12,11 +12,11 @@ pub struct UpdateTriggerInput  {
 }
 impl UpdateTriggerInput {
     /// <p>The name of the trigger to update.</p>
-    pub fn name(&self) -> std::option::Option<& str> {
+    pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>The new values with which to update the trigger.</p>
-    pub fn trigger_update(&self) -> std::option::Option<& crate::types::TriggerUpdate> {
+    pub fn trigger_update(&self) -> std::option::Option<&crate::types::TriggerUpdate> {
         self.trigger_update.as_ref()
     }
 }
@@ -42,7 +42,8 @@ impl UpdateTriggerInputBuilder {
     }
     /// <p>The name of the trigger to update.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input; self
+        self.name = input;
+        self
     }
     /// <p>The new values with which to update the trigger.</p>
     pub fn trigger_update(mut self, input: crate::types::TriggerUpdate) -> Self {
@@ -50,19 +51,23 @@ impl UpdateTriggerInputBuilder {
         self
     }
     /// <p>The new values with which to update the trigger.</p>
-    pub fn set_trigger_update(mut self, input: std::option::Option<crate::types::TriggerUpdate>) -> Self {
-        self.trigger_update = input; self
+    pub fn set_trigger_update(
+        mut self,
+        input: std::option::Option<crate::types::TriggerUpdate>,
+    ) -> Self {
+        self.trigger_update = input;
+        self
     }
     /// Consumes the builder and constructs a [`UpdateTriggerInput`](crate::operation::update_trigger::UpdateTriggerInput).
-    pub fn build(self) -> Result<crate::operation::update_trigger::UpdateTriggerInput, aws_smithy_http::operation::error::BuildError> {
-        Ok(
-            crate::operation::update_trigger::UpdateTriggerInput {
-                name: self.name
-                ,
-                trigger_update: self.trigger_update
-                ,
-            }
-        )
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::update_trigger::UpdateTriggerInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        Ok(crate::operation::update_trigger::UpdateTriggerInput {
+            name: self.name,
+            trigger_update: self.trigger_update,
+        })
     }
 }
-

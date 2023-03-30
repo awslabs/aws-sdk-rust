@@ -3,7 +3,7 @@
 /// <p>Provides information about the source and type of temporary security credentials that were issued to an entity.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SessionIssuer  {
+pub struct SessionIssuer {
     /// <p>The unique identifier for the Amazon Web Services account that owns the entity that was used to get the credentials.</p>
     #[doc(hidden)]
     pub account_id: std::option::Option<std::string::String>,
@@ -22,23 +22,23 @@ pub struct SessionIssuer  {
 }
 impl SessionIssuer {
     /// <p>The unique identifier for the Amazon Web Services account that owns the entity that was used to get the credentials.</p>
-    pub fn account_id(&self) -> std::option::Option<& str> {
+    pub fn account_id(&self) -> std::option::Option<&str> {
         self.account_id.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the source account, IAM user, or role that was used to get the credentials.</p>
-    pub fn arn(&self) -> std::option::Option<& str> {
+    pub fn arn(&self) -> std::option::Option<&str> {
         self.arn.as_deref()
     }
     /// <p>The unique identifier for the entity that was used to get the credentials.</p>
-    pub fn principal_id(&self) -> std::option::Option<& str> {
+    pub fn principal_id(&self) -> std::option::Option<&str> {
         self.principal_id.as_deref()
     }
     /// <p>The source of the temporary security credentials, such as Root, IAMUser, or Role.</p>
-    pub fn r#type(&self) -> std::option::Option<& str> {
+    pub fn r#type(&self) -> std::option::Option<&str> {
         self.r#type.as_deref()
     }
     /// <p>The name or alias of the user or role that issued the session. This value is null if the credentials were obtained from a root account that doesn't have an alias.</p>
-    pub fn user_name(&self) -> std::option::Option<& str> {
+    pub fn user_name(&self) -> std::option::Option<&str> {
         self.user_name.as_deref()
     }
 }
@@ -67,7 +67,8 @@ impl SessionIssuerBuilder {
     }
     /// <p>The unique identifier for the Amazon Web Services account that owns the entity that was used to get the credentials.</p>
     pub fn set_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.account_id = input; self
+        self.account_id = input;
+        self
     }
     /// <p>The Amazon Resource Name (ARN) of the source account, IAM user, or role that was used to get the credentials.</p>
     pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -76,7 +77,8 @@ impl SessionIssuerBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the source account, IAM user, or role that was used to get the credentials.</p>
     pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.arn = input; self
+        self.arn = input;
+        self
     }
     /// <p>The unique identifier for the entity that was used to get the credentials.</p>
     pub fn principal_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -85,7 +87,8 @@ impl SessionIssuerBuilder {
     }
     /// <p>The unique identifier for the entity that was used to get the credentials.</p>
     pub fn set_principal_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.principal_id = input; self
+        self.principal_id = input;
+        self
     }
     /// <p>The source of the temporary security credentials, such as Root, IAMUser, or Role.</p>
     pub fn r#type(mut self, input: impl Into<std::string::String>) -> Self {
@@ -94,7 +97,8 @@ impl SessionIssuerBuilder {
     }
     /// <p>The source of the temporary security credentials, such as Root, IAMUser, or Role.</p>
     pub fn set_type(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.r#type = input; self
+        self.r#type = input;
+        self
     }
     /// <p>The name or alias of the user or role that issued the session. This value is null if the credentials were obtained from a root account that doesn't have an alias.</p>
     pub fn user_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -103,22 +107,17 @@ impl SessionIssuerBuilder {
     }
     /// <p>The name or alias of the user or role that issued the session. This value is null if the credentials were obtained from a root account that doesn't have an alias.</p>
     pub fn set_user_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.user_name = input; self
+        self.user_name = input;
+        self
     }
     /// Consumes the builder and constructs a [`SessionIssuer`](crate::types::SessionIssuer).
     pub fn build(self) -> crate::types::SessionIssuer {
         crate::types::SessionIssuer {
-            account_id: self.account_id
-            ,
-            arn: self.arn
-            ,
-            principal_id: self.principal_id
-            ,
-            r#type: self.r#type
-            ,
-            user_name: self.user_name
-            ,
+            account_id: self.account_id,
+            arn: self.arn,
+            principal_id: self.principal_id,
+            r#type: self.r#type,
+            user_name: self.user_name,
         }
     }
 }
-

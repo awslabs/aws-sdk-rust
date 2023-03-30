@@ -4,57 +4,66 @@ pub use crate::operation::describe_maintenance_window_tasks::_describe_maintenan
 pub use crate::operation::describe_maintenance_window_tasks::_describe_maintenance_window_tasks_input::DescribeMaintenanceWindowTasksInputBuilder;
 
 /// Fluent builder constructing a request to `DescribeMaintenanceWindowTasks`.
-/// 
-/// <p>Lists the tasks in a maintenance window.</p> <note> 
-/// <p>For maintenance window tasks without a specified target, you can't supply values for <code>--max-errors</code> and <code>--max-concurrency</code>. Instead, the system inserts a placeholder value of <code>1</code>, which may be reported in the response to this command. These values don't affect the running of your task and can be ignored.</p> 
+///
+/// <p>Lists the tasks in a maintenance window.</p> <note>
+/// <p>For maintenance window tasks without a specified target, you can't supply values for <code>--max-errors</code> and <code>--max-concurrency</code>. Instead, the system inserts a placeholder value of <code>1</code>, which may be reported in the response to this command. These values don't affect the running of your task and can be ignored.</p>
 /// </note>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeMaintenanceWindowTasksFluentBuilder {
                 handle: std::sync::Arc<crate::client::Handle>,
                 inner: crate::operation::describe_maintenance_window_tasks::builders::DescribeMaintenanceWindowTasksInputBuilder
             }
-impl DescribeMaintenanceWindowTasksFluentBuilder  {
+impl DescribeMaintenanceWindowTasksFluentBuilder {
     /// Creates a new `DescribeMaintenanceWindowTasks`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
-                    /// sent. The operation's inner [http::Request] can be modified as well.
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle,
+            inner: Default::default(),
+        }
+    }
+
+    /// Consume this builder, creating a customizable operation that can be modified before being
+    /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::describe_maintenance_window_tasks::DescribeMaintenanceWindowTasks, aws_http::retry::AwsResponseRetryClassifier,>,
                         aws_smithy_http::result::SdkError<crate::operation::describe_maintenance_window_tasks::DescribeMaintenanceWindowTasksError>
-                    >  {
-                        let handle = self.handle.clone();
-                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-                    }
-    
-                    /// Sends the request and returns the response.
-                    ///
-                    /// If an error occurs, an `SdkError` will be returned with additional details that
-                    /// can be matched against.
-                    ///
-                    /// By default, any retryable failures will be retried twice. Retry behavior
-                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                    /// set when configuring the client.
+    >{
+        let handle = self.handle.clone();
+        let operation = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+    }
+
+    /// Sends the request and returns the response.
+    ///
+    /// If an error occurs, an `SdkError` will be returned with additional details that
+    /// can be matched against.
+    ///
+    /// By default, any retryable failures will be retried twice. Retry behavior
+    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+    /// set when configuring the client.
                     pub async fn send(self) -> std::result::Result<crate::operation::describe_maintenance_window_tasks::DescribeMaintenanceWindowTasksOutput, aws_smithy_http::result::SdkError<crate::operation::describe_maintenance_window_tasks::DescribeMaintenanceWindowTasksError>>
                      {
-                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&self.handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        self.handle.client.call(op).await
-                    }
+        let op = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&self.handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        self.handle.client.call(op).await
+    }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::describe_maintenance_window_tasks::paginator::DescribeMaintenanceWindowTasksPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::describe_maintenance_window_tasks::paginator::DescribeMaintenanceWindowTasksPaginator {
-                            crate::operation::describe_maintenance_window_tasks::paginator::DescribeMaintenanceWindowTasksPaginator::new(self.handle, self.inner)
-                        }
+    ///
+    /// Paginators are used by calling [`send().await`](crate::operation::describe_maintenance_window_tasks::paginator::DescribeMaintenanceWindowTasksPaginator::send) which returns a `Stream`.
+    pub fn into_paginator(self) -> crate::operation::describe_maintenance_window_tasks::paginator::DescribeMaintenanceWindowTasksPaginator{
+        crate::operation::describe_maintenance_window_tasks::paginator::DescribeMaintenanceWindowTasksPaginator::new(self.handle, self.inner)
+    }
     /// <p>The ID of the maintenance window whose tasks should be retrieved.</p>
     pub fn window_id(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.window_id(input.into());
@@ -75,7 +84,10 @@ impl DescribeMaintenanceWindowTasksFluentBuilder  {
         self
     }
     /// <p>Optional filters used to narrow down the scope of the returned tasks. The supported filter keys are <code>WindowTaskId</code>, <code>TaskArn</code>, <code>Priority</code>, and <code>TaskType</code>.</p>
-    pub fn set_filters(mut self, input: std::option::Option<std::vec::Vec<crate::types::MaintenanceWindowFilter>>) -> Self {
+    pub fn set_filters(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::MaintenanceWindowFilter>>,
+    ) -> Self {
         self.inner = self.inner.set_filters(input);
         self
     }
@@ -100,4 +112,3 @@ impl DescribeMaintenanceWindowTasksFluentBuilder  {
         self
     }
 }
-

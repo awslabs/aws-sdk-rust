@@ -3,14 +3,14 @@
 /// <p>The unit of data in a delivery stream.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Record  {
+pub struct Record {
     /// <p>The data blob, which is base64-encoded when the blob is serialized. The maximum size of the data blob, before base64-encoding, is 1,000 KiB.</p>
     #[doc(hidden)]
     pub data: std::option::Option<aws_smithy_types::Blob>,
 }
 impl Record {
     /// <p>The data blob, which is base64-encoded when the blob is serialized. The maximum size of the data blob, before base64-encoding, is 1,000 KiB.</p>
-    pub fn data(&self) -> std::option::Option<& aws_smithy_types::Blob> {
+    pub fn data(&self) -> std::option::Option<&aws_smithy_types::Blob> {
         self.data.as_ref()
     }
 }
@@ -35,14 +35,11 @@ impl RecordBuilder {
     }
     /// <p>The data blob, which is base64-encoded when the blob is serialized. The maximum size of the data blob, before base64-encoding, is 1,000 KiB.</p>
     pub fn set_data(mut self, input: std::option::Option<aws_smithy_types::Blob>) -> Self {
-        self.data = input; self
+        self.data = input;
+        self
     }
     /// Consumes the builder and constructs a [`Record`](crate::types::Record).
     pub fn build(self) -> crate::types::Record {
-        crate::types::Record {
-            data: self.data
-            ,
-        }
+        crate::types::Record { data: self.data }
     }
 }
-

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct StartContentUploadInput  {
+pub struct StartContentUploadInput {
     /// <p>The identifier of the knowledge base. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
     #[doc(hidden)]
     pub knowledge_base_id: std::option::Option<std::string::String>,
@@ -12,17 +12,18 @@ pub struct StartContentUploadInput  {
 }
 impl StartContentUploadInput {
     /// <p>The identifier of the knowledge base. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
-    pub fn knowledge_base_id(&self) -> std::option::Option<& str> {
+    pub fn knowledge_base_id(&self) -> std::option::Option<&str> {
         self.knowledge_base_id.as_deref()
     }
     /// <p>The type of content to upload.</p>
-    pub fn content_type(&self) -> std::option::Option<& str> {
+    pub fn content_type(&self) -> std::option::Option<&str> {
         self.content_type.as_deref()
     }
 }
 impl StartContentUploadInput {
     /// Creates a new builder-style object to manufacture [`StartContentUploadInput`](crate::operation::start_content_upload::StartContentUploadInput).
-    pub fn builder() -> crate::operation::start_content_upload::builders::StartContentUploadInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::start_content_upload::builders::StartContentUploadInputBuilder {
         crate::operation::start_content_upload::builders::StartContentUploadInputBuilder::default()
     }
 }
@@ -41,8 +42,12 @@ impl StartContentUploadInputBuilder {
         self
     }
     /// <p>The identifier of the knowledge base. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
-    pub fn set_knowledge_base_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.knowledge_base_id = input; self
+    pub fn set_knowledge_base_id(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.knowledge_base_id = input;
+        self
     }
     /// <p>The type of content to upload.</p>
     pub fn content_type(mut self, input: impl Into<std::string::String>) -> Self {
@@ -51,18 +56,21 @@ impl StartContentUploadInputBuilder {
     }
     /// <p>The type of content to upload.</p>
     pub fn set_content_type(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.content_type = input; self
+        self.content_type = input;
+        self
     }
     /// Consumes the builder and constructs a [`StartContentUploadInput`](crate::operation::start_content_upload::StartContentUploadInput).
-    pub fn build(self) -> Result<crate::operation::start_content_upload::StartContentUploadInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::start_content_upload::StartContentUploadInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::start_content_upload::StartContentUploadInput {
-                knowledge_base_id: self.knowledge_base_id
-                ,
-                content_type: self.content_type
-                ,
-            }
+                knowledge_base_id: self.knowledge_base_id,
+                content_type: self.content_type,
+            },
         )
     }
 }
-

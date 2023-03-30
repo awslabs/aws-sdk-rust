@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeAppVersionTemplateOutput  {
+pub struct DescribeAppVersionTemplateOutput {
     /// <p>The Amazon Resource Name (ARN) of the application. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
     #[doc(hidden)]
     pub app_arn: std::option::Option<std::string::String>,
@@ -16,26 +16,26 @@ pub struct DescribeAppVersionTemplateOutput  {
 }
 impl DescribeAppVersionTemplateOutput {
     /// <p>The Amazon Resource Name (ARN) of the application. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
-    pub fn app_arn(&self) -> std::option::Option<& str> {
+    pub fn app_arn(&self) -> std::option::Option<&str> {
         self.app_arn.as_deref()
     }
     /// <p>The version of the application.</p>
-    pub fn app_version(&self) -> std::option::Option<& str> {
+    pub fn app_version(&self) -> std::option::Option<&str> {
         self.app_version.as_deref()
     }
     /// <p>The body of the template.</p>
-    pub fn app_template_body(&self) -> std::option::Option<& str> {
+    pub fn app_template_body(&self) -> std::option::Option<&str> {
         self.app_template_body.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for DescribeAppVersionTemplateOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl DescribeAppVersionTemplateOutput {
     /// Creates a new builder-style object to manufacture [`DescribeAppVersionTemplateOutput`](crate::operation::describe_app_version_template::DescribeAppVersionTemplateOutput).
-    pub fn builder() -> crate::operation::describe_app_version_template::builders::DescribeAppVersionTemplateOutputBuilder {
+    pub fn builder() -> crate::operation::describe_app_version_template::builders::DescribeAppVersionTemplateOutputBuilder{
         crate::operation::describe_app_version_template::builders::DescribeAppVersionTemplateOutputBuilder::default()
     }
 }
@@ -57,7 +57,8 @@ impl DescribeAppVersionTemplateOutputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the application. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
     pub fn set_app_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.app_arn = input; self
+        self.app_arn = input;
+        self
     }
     /// <p>The version of the application.</p>
     pub fn app_version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -66,7 +67,8 @@ impl DescribeAppVersionTemplateOutputBuilder {
     }
     /// <p>The version of the application.</p>
     pub fn set_app_version(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.app_version = input; self
+        self.app_version = input;
+        self
     }
     /// <p>The body of the template.</p>
     pub fn app_template_body(mut self, input: impl Into<std::string::String>) -> Self {
@@ -74,29 +76,31 @@ impl DescribeAppVersionTemplateOutputBuilder {
         self
     }
     /// <p>The body of the template.</p>
-    pub fn set_app_template_body(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.app_template_body = input; self
+    pub fn set_app_template_body(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.app_template_body = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`DescribeAppVersionTemplateOutput`](crate::operation::describe_app_version_template::DescribeAppVersionTemplateOutput).
-    pub fn build(self) -> crate::operation::describe_app_version_template::DescribeAppVersionTemplateOutput {
+    pub fn build(
+        self,
+    ) -> crate::operation::describe_app_version_template::DescribeAppVersionTemplateOutput {
         crate::operation::describe_app_version_template::DescribeAppVersionTemplateOutput {
-            app_arn: self.app_arn
-            ,
-            app_version: self.app_version
-            ,
-            app_template_body: self.app_template_body
-            ,
+            app_arn: self.app_arn,
+            app_version: self.app_version,
+            app_template_body: self.app_template_body,
             _request_id: self._request_id,
         }
     }
 }
-

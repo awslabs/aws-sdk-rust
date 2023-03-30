@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateRoomInput  {
+pub struct UpdateRoomInput {
     /// <p>Identifier of the room to be updated. Currently this must be an ARN.</p>
     #[doc(hidden)]
     pub identifier: std::option::Option<std::string::String>,
@@ -24,11 +24,11 @@ pub struct UpdateRoomInput  {
 }
 impl UpdateRoomInput {
     /// <p>Identifier of the room to be updated. Currently this must be an ARN.</p>
-    pub fn identifier(&self) -> std::option::Option<& str> {
+    pub fn identifier(&self) -> std::option::Option<&str> {
         self.identifier.as_deref()
     }
     /// <p>Room name. The value does not need to be unique.</p>
-    pub fn name(&self) -> std::option::Option<& str> {
+    pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>Maximum number of messages per second that can be sent to the room (by all clients). Default: 10.</p>
@@ -40,11 +40,13 @@ impl UpdateRoomInput {
         self.maximum_message_length
     }
     /// <p>Configuration information for optional review of messages. Specify an empty <code>uri</code> string to disassociate a message review handler from the specified room.</p>
-    pub fn message_review_handler(&self) -> std::option::Option<& crate::types::MessageReviewHandler> {
+    pub fn message_review_handler(
+        &self,
+    ) -> std::option::Option<&crate::types::MessageReviewHandler> {
         self.message_review_handler.as_ref()
     }
     /// <p>Array of logging-configuration identifiers attached to the room.</p>
-    pub fn logging_configuration_identifiers(&self) -> std::option::Option<& [std::string::String]> {
+    pub fn logging_configuration_identifiers(&self) -> std::option::Option<&[std::string::String]> {
         self.logging_configuration_identifiers.as_deref()
     }
 }
@@ -64,7 +66,8 @@ pub struct UpdateRoomInputBuilder {
     pub(crate) maximum_message_rate_per_second: std::option::Option<i32>,
     pub(crate) maximum_message_length: std::option::Option<i32>,
     pub(crate) message_review_handler: std::option::Option<crate::types::MessageReviewHandler>,
-    pub(crate) logging_configuration_identifiers: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub(crate) logging_configuration_identifiers:
+        std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl UpdateRoomInputBuilder {
     /// <p>Identifier of the room to be updated. Currently this must be an ARN.</p>
@@ -74,7 +77,8 @@ impl UpdateRoomInputBuilder {
     }
     /// <p>Identifier of the room to be updated. Currently this must be an ARN.</p>
     pub fn set_identifier(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.identifier = input; self
+        self.identifier = input;
+        self
     }
     /// <p>Room name. The value does not need to be unique.</p>
     pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -83,7 +87,8 @@ impl UpdateRoomInputBuilder {
     }
     /// <p>Room name. The value does not need to be unique.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input; self
+        self.name = input;
+        self
     }
     /// <p>Maximum number of messages per second that can be sent to the room (by all clients). Default: 10.</p>
     pub fn maximum_message_rate_per_second(mut self, input: i32) -> Self {
@@ -92,7 +97,8 @@ impl UpdateRoomInputBuilder {
     }
     /// <p>Maximum number of messages per second that can be sent to the room (by all clients). Default: 10.</p>
     pub fn set_maximum_message_rate_per_second(mut self, input: std::option::Option<i32>) -> Self {
-        self.maximum_message_rate_per_second = input; self
+        self.maximum_message_rate_per_second = input;
+        self
     }
     /// <p>The maximum number of characters in a single message. Messages are expected to be UTF-8 encoded and this limit applies specifically to rune/code-point count, not number of bytes. Default: 500.</p>
     pub fn maximum_message_length(mut self, input: i32) -> Self {
@@ -101,7 +107,8 @@ impl UpdateRoomInputBuilder {
     }
     /// <p>The maximum number of characters in a single message. Messages are expected to be UTF-8 encoded and this limit applies specifically to rune/code-point count, not number of bytes. Default: 500.</p>
     pub fn set_maximum_message_length(mut self, input: std::option::Option<i32>) -> Self {
-        self.maximum_message_length = input; self
+        self.maximum_message_length = input;
+        self
     }
     /// <p>Configuration information for optional review of messages. Specify an empty <code>uri</code> string to disassociate a message review handler from the specified room.</p>
     pub fn message_review_handler(mut self, input: crate::types::MessageReviewHandler) -> Self {
@@ -109,44 +116,51 @@ impl UpdateRoomInputBuilder {
         self
     }
     /// <p>Configuration information for optional review of messages. Specify an empty <code>uri</code> string to disassociate a message review handler from the specified room.</p>
-    pub fn set_message_review_handler(mut self, input: std::option::Option<crate::types::MessageReviewHandler>) -> Self {
-        self.message_review_handler = input; self
+    pub fn set_message_review_handler(
+        mut self,
+        input: std::option::Option<crate::types::MessageReviewHandler>,
+    ) -> Self {
+        self.message_review_handler = input;
+        self
     }
     /// Appends an item to `logging_configuration_identifiers`.
     ///
     /// To override the contents of this collection use [`set_logging_configuration_identifiers`](Self::set_logging_configuration_identifiers).
     ///
     /// <p>Array of logging-configuration identifiers attached to the room.</p>
-    pub fn logging_configuration_identifiers(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn logging_configuration_identifiers(
+        mut self,
+        input: impl Into<std::string::String>,
+    ) -> Self {
         let mut v = self.logging_configuration_identifiers.unwrap_or_default();
-                        v.push(input.into());
-                        self.logging_configuration_identifiers = Some(v);
-                        self
+        v.push(input.into());
+        self.logging_configuration_identifiers = Some(v);
+        self
     }
     /// <p>Array of logging-configuration identifiers attached to the room.</p>
-    pub fn set_logging_configuration_identifiers(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-        self.logging_configuration_identifiers = input; self
+    pub fn set_logging_configuration_identifiers(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
+        self.logging_configuration_identifiers = input;
+        self
     }
     /// Consumes the builder and constructs a [`UpdateRoomInput`](crate::operation::update_room::UpdateRoomInput).
-    pub fn build(self) -> Result<crate::operation::update_room::UpdateRoomInput, aws_smithy_http::operation::error::BuildError> {
-        Ok(
-            crate::operation::update_room::UpdateRoomInput {
-                identifier: self.identifier
-                ,
-                name: self.name
-                ,
-                maximum_message_rate_per_second: self.maximum_message_rate_per_second
-                    .unwrap_or_default()
-                ,
-                maximum_message_length: self.maximum_message_length
-                    .unwrap_or_default()
-                ,
-                message_review_handler: self.message_review_handler
-                ,
-                logging_configuration_identifiers: self.logging_configuration_identifiers
-                ,
-            }
-        )
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::update_room::UpdateRoomInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        Ok(crate::operation::update_room::UpdateRoomInput {
+            identifier: self.identifier,
+            name: self.name,
+            maximum_message_rate_per_second: self
+                .maximum_message_rate_per_second
+                .unwrap_or_default(),
+            maximum_message_length: self.maximum_message_length.unwrap_or_default(),
+            message_review_handler: self.message_review_handler,
+            logging_configuration_identifiers: self.logging_configuration_identifiers,
+        })
     }
 }
-

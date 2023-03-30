@@ -3,7 +3,7 @@
 /// <p>Information about an associated repository in an S3 bucket. The associated repository contains a source code .zip file and a build artifacts .zip file that contains .jar or .class files.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct S3BucketRepository  {
+pub struct S3BucketRepository {
     /// <p>The name of the repository when the <code>ProviderType</code> is <code>S3Bucket</code>.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -13,11 +13,11 @@ pub struct S3BucketRepository  {
 }
 impl S3BucketRepository {
     /// <p>The name of the repository when the <code>ProviderType</code> is <code>S3Bucket</code>.</p>
-    pub fn name(&self) -> std::option::Option<& str> {
+    pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>An <code>S3RepositoryDetails</code> object that specifies the name of an S3 bucket and a <code>CodeArtifacts</code> object. The <code>CodeArtifacts</code> object includes the S3 object keys for a source code .zip file and for a build artifacts .zip file.</p>
-    pub fn details(&self) -> std::option::Option<& crate::types::S3RepositoryDetails> {
+    pub fn details(&self) -> std::option::Option<&crate::types::S3RepositoryDetails> {
         self.details.as_ref()
     }
 }
@@ -43,7 +43,8 @@ impl S3BucketRepositoryBuilder {
     }
     /// <p>The name of the repository when the <code>ProviderType</code> is <code>S3Bucket</code>.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input; self
+        self.name = input;
+        self
     }
     /// <p>An <code>S3RepositoryDetails</code> object that specifies the name of an S3 bucket and a <code>CodeArtifacts</code> object. The <code>CodeArtifacts</code> object includes the S3 object keys for a source code .zip file and for a build artifacts .zip file.</p>
     pub fn details(mut self, input: crate::types::S3RepositoryDetails) -> Self {
@@ -51,17 +52,18 @@ impl S3BucketRepositoryBuilder {
         self
     }
     /// <p>An <code>S3RepositoryDetails</code> object that specifies the name of an S3 bucket and a <code>CodeArtifacts</code> object. The <code>CodeArtifacts</code> object includes the S3 object keys for a source code .zip file and for a build artifacts .zip file.</p>
-    pub fn set_details(mut self, input: std::option::Option<crate::types::S3RepositoryDetails>) -> Self {
-        self.details = input; self
+    pub fn set_details(
+        mut self,
+        input: std::option::Option<crate::types::S3RepositoryDetails>,
+    ) -> Self {
+        self.details = input;
+        self
     }
     /// Consumes the builder and constructs a [`S3BucketRepository`](crate::types::S3BucketRepository).
     pub fn build(self) -> crate::types::S3BucketRepository {
         crate::types::S3BucketRepository {
-            name: self.name
-            ,
-            details: self.details
-            ,
+            name: self.name,
+            details: self.details,
         }
     }
 }
-

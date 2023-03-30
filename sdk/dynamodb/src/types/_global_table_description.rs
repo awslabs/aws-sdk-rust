@@ -3,7 +3,7 @@
 /// <p>Contains details about the global table.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GlobalTableDescription  {
+pub struct GlobalTableDescription {
     /// <p>The Regions where the global table has replicas.</p>
     #[doc(hidden)]
     pub replication_group: std::option::Option<std::vec::Vec<crate::types::ReplicaDescription>>,
@@ -13,12 +13,12 @@ pub struct GlobalTableDescription  {
     /// <p>The creation time of the global table.</p>
     #[doc(hidden)]
     pub creation_date_time: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>The current state of the global table:</p> 
-    /// <ul> 
-    /// <li> <p> <code>CREATING</code> - The global table is being created.</p> </li> 
-    /// <li> <p> <code>UPDATING</code> - The global table is being updated.</p> </li> 
-    /// <li> <p> <code>DELETING</code> - The global table is being deleted.</p> </li> 
-    /// <li> <p> <code>ACTIVE</code> - The global table is ready for use.</p> </li> 
+    /// <p>The current state of the global table:</p>
+    /// <ul>
+    /// <li> <p> <code>CREATING</code> - The global table is being created.</p> </li>
+    /// <li> <p> <code>UPDATING</code> - The global table is being updated.</p> </li>
+    /// <li> <p> <code>DELETING</code> - The global table is being deleted.</p> </li>
+    /// <li> <p> <code>ACTIVE</code> - The global table is ready for use.</p> </li>
     /// </ul>
     #[doc(hidden)]
     pub global_table_status: std::option::Option<crate::types::GlobalTableStatus>,
@@ -28,29 +28,29 @@ pub struct GlobalTableDescription  {
 }
 impl GlobalTableDescription {
     /// <p>The Regions where the global table has replicas.</p>
-    pub fn replication_group(&self) -> std::option::Option<& [crate::types::ReplicaDescription]> {
+    pub fn replication_group(&self) -> std::option::Option<&[crate::types::ReplicaDescription]> {
         self.replication_group.as_deref()
     }
     /// <p>The unique identifier of the global table.</p>
-    pub fn global_table_arn(&self) -> std::option::Option<& str> {
+    pub fn global_table_arn(&self) -> std::option::Option<&str> {
         self.global_table_arn.as_deref()
     }
     /// <p>The creation time of the global table.</p>
-    pub fn creation_date_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
+    pub fn creation_date_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.creation_date_time.as_ref()
     }
-    /// <p>The current state of the global table:</p> 
-    /// <ul> 
-    /// <li> <p> <code>CREATING</code> - The global table is being created.</p> </li> 
-    /// <li> <p> <code>UPDATING</code> - The global table is being updated.</p> </li> 
-    /// <li> <p> <code>DELETING</code> - The global table is being deleted.</p> </li> 
-    /// <li> <p> <code>ACTIVE</code> - The global table is ready for use.</p> </li> 
+    /// <p>The current state of the global table:</p>
+    /// <ul>
+    /// <li> <p> <code>CREATING</code> - The global table is being created.</p> </li>
+    /// <li> <p> <code>UPDATING</code> - The global table is being updated.</p> </li>
+    /// <li> <p> <code>DELETING</code> - The global table is being deleted.</p> </li>
+    /// <li> <p> <code>ACTIVE</code> - The global table is ready for use.</p> </li>
     /// </ul>
-    pub fn global_table_status(&self) -> std::option::Option<& crate::types::GlobalTableStatus> {
+    pub fn global_table_status(&self) -> std::option::Option<&crate::types::GlobalTableStatus> {
         self.global_table_status.as_ref()
     }
     /// <p>The global table name.</p>
-    pub fn global_table_name(&self) -> std::option::Option<& str> {
+    pub fn global_table_name(&self) -> std::option::Option<&str> {
         self.global_table_name.as_deref()
     }
 }
@@ -65,7 +65,8 @@ impl GlobalTableDescription {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct GlobalTableDescriptionBuilder {
-    pub(crate) replication_group: std::option::Option<std::vec::Vec<crate::types::ReplicaDescription>>,
+    pub(crate) replication_group:
+        std::option::Option<std::vec::Vec<crate::types::ReplicaDescription>>,
     pub(crate) global_table_arn: std::option::Option<std::string::String>,
     pub(crate) creation_date_time: std::option::Option<aws_smithy_types::DateTime>,
     pub(crate) global_table_status: std::option::Option<crate::types::GlobalTableStatus>,
@@ -79,13 +80,17 @@ impl GlobalTableDescriptionBuilder {
     /// <p>The Regions where the global table has replicas.</p>
     pub fn replication_group(mut self, input: crate::types::ReplicaDescription) -> Self {
         let mut v = self.replication_group.unwrap_or_default();
-                        v.push(input);
-                        self.replication_group = Some(v);
-                        self
+        v.push(input);
+        self.replication_group = Some(v);
+        self
     }
     /// <p>The Regions where the global table has replicas.</p>
-    pub fn set_replication_group(mut self, input: std::option::Option<std::vec::Vec<crate::types::ReplicaDescription>>) -> Self {
-        self.replication_group = input; self
+    pub fn set_replication_group(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::ReplicaDescription>>,
+    ) -> Self {
+        self.replication_group = input;
+        self
     }
     /// <p>The unique identifier of the global table.</p>
     pub fn global_table_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -94,7 +99,8 @@ impl GlobalTableDescriptionBuilder {
     }
     /// <p>The unique identifier of the global table.</p>
     pub fn set_global_table_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.global_table_arn = input; self
+        self.global_table_arn = input;
+        self
     }
     /// <p>The creation time of the global table.</p>
     pub fn creation_date_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -102,29 +108,37 @@ impl GlobalTableDescriptionBuilder {
         self
     }
     /// <p>The creation time of the global table.</p>
-    pub fn set_creation_date_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.creation_date_time = input; self
+    pub fn set_creation_date_time(
+        mut self,
+        input: std::option::Option<aws_smithy_types::DateTime>,
+    ) -> Self {
+        self.creation_date_time = input;
+        self
     }
-    /// <p>The current state of the global table:</p> 
-    /// <ul> 
-    /// <li> <p> <code>CREATING</code> - The global table is being created.</p> </li> 
-    /// <li> <p> <code>UPDATING</code> - The global table is being updated.</p> </li> 
-    /// <li> <p> <code>DELETING</code> - The global table is being deleted.</p> </li> 
-    /// <li> <p> <code>ACTIVE</code> - The global table is ready for use.</p> </li> 
+    /// <p>The current state of the global table:</p>
+    /// <ul>
+    /// <li> <p> <code>CREATING</code> - The global table is being created.</p> </li>
+    /// <li> <p> <code>UPDATING</code> - The global table is being updated.</p> </li>
+    /// <li> <p> <code>DELETING</code> - The global table is being deleted.</p> </li>
+    /// <li> <p> <code>ACTIVE</code> - The global table is ready for use.</p> </li>
     /// </ul>
     pub fn global_table_status(mut self, input: crate::types::GlobalTableStatus) -> Self {
         self.global_table_status = Some(input);
         self
     }
-    /// <p>The current state of the global table:</p> 
-    /// <ul> 
-    /// <li> <p> <code>CREATING</code> - The global table is being created.</p> </li> 
-    /// <li> <p> <code>UPDATING</code> - The global table is being updated.</p> </li> 
-    /// <li> <p> <code>DELETING</code> - The global table is being deleted.</p> </li> 
-    /// <li> <p> <code>ACTIVE</code> - The global table is ready for use.</p> </li> 
+    /// <p>The current state of the global table:</p>
+    /// <ul>
+    /// <li> <p> <code>CREATING</code> - The global table is being created.</p> </li>
+    /// <li> <p> <code>UPDATING</code> - The global table is being updated.</p> </li>
+    /// <li> <p> <code>DELETING</code> - The global table is being deleted.</p> </li>
+    /// <li> <p> <code>ACTIVE</code> - The global table is ready for use.</p> </li>
     /// </ul>
-    pub fn set_global_table_status(mut self, input: std::option::Option<crate::types::GlobalTableStatus>) -> Self {
-        self.global_table_status = input; self
+    pub fn set_global_table_status(
+        mut self,
+        input: std::option::Option<crate::types::GlobalTableStatus>,
+    ) -> Self {
+        self.global_table_status = input;
+        self
     }
     /// <p>The global table name.</p>
     pub fn global_table_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -132,23 +146,21 @@ impl GlobalTableDescriptionBuilder {
         self
     }
     /// <p>The global table name.</p>
-    pub fn set_global_table_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.global_table_name = input; self
+    pub fn set_global_table_name(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.global_table_name = input;
+        self
     }
     /// Consumes the builder and constructs a [`GlobalTableDescription`](crate::types::GlobalTableDescription).
     pub fn build(self) -> crate::types::GlobalTableDescription {
         crate::types::GlobalTableDescription {
-            replication_group: self.replication_group
-            ,
-            global_table_arn: self.global_table_arn
-            ,
-            creation_date_time: self.creation_date_time
-            ,
-            global_table_status: self.global_table_status
-            ,
-            global_table_name: self.global_table_name
-            ,
+            replication_group: self.replication_group,
+            global_table_arn: self.global_table_arn,
+            creation_date_time: self.creation_date_time,
+            global_table_status: self.global_table_status,
+            global_table_name: self.global_table_name,
         }
     }
 }
-

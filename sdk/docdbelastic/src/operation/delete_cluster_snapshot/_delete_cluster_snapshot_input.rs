@@ -2,20 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteClusterSnapshotInput  {
+pub struct DeleteClusterSnapshotInput {
     /// <p>The arn of the Elastic DocumentDB snapshot that is to be deleted.</p>
     #[doc(hidden)]
     pub snapshot_arn: std::option::Option<std::string::String>,
 }
 impl DeleteClusterSnapshotInput {
     /// <p>The arn of the Elastic DocumentDB snapshot that is to be deleted.</p>
-    pub fn snapshot_arn(&self) -> std::option::Option<& str> {
+    pub fn snapshot_arn(&self) -> std::option::Option<&str> {
         self.snapshot_arn.as_deref()
     }
 }
 impl DeleteClusterSnapshotInput {
     /// Creates a new builder-style object to manufacture [`DeleteClusterSnapshotInput`](crate::operation::delete_cluster_snapshot::DeleteClusterSnapshotInput).
-    pub fn builder() -> crate::operation::delete_cluster_snapshot::builders::DeleteClusterSnapshotInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::delete_cluster_snapshot::builders::DeleteClusterSnapshotInputBuilder
+    {
         crate::operation::delete_cluster_snapshot::builders::DeleteClusterSnapshotInputBuilder::default()
     }
 }
@@ -34,16 +36,20 @@ impl DeleteClusterSnapshotInputBuilder {
     }
     /// <p>The arn of the Elastic DocumentDB snapshot that is to be deleted.</p>
     pub fn set_snapshot_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.snapshot_arn = input; self
+        self.snapshot_arn = input;
+        self
     }
     /// Consumes the builder and constructs a [`DeleteClusterSnapshotInput`](crate::operation::delete_cluster_snapshot::DeleteClusterSnapshotInput).
-    pub fn build(self) -> Result<crate::operation::delete_cluster_snapshot::DeleteClusterSnapshotInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::delete_cluster_snapshot::DeleteClusterSnapshotInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::delete_cluster_snapshot::DeleteClusterSnapshotInput {
-                snapshot_arn: self.snapshot_arn
-                ,
-            }
+                snapshot_arn: self.snapshot_arn,
+            },
         )
     }
 }
-

@@ -3,7 +3,7 @@
 /// <p>Encapsulates the information sent to either create a metric or add new values to be aggregated into an existing metric.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct MetricDatum  {
+pub struct MetricDatum {
     /// <p>The name of the metric.</p>
     #[doc(hidden)]
     pub metric_name: std::option::Option<std::string::String>,
@@ -13,68 +13,68 @@ pub struct MetricDatum  {
     /// <p>The time the metric data was received, expressed as the number of milliseconds since Jan 1, 1970 00:00:00 UTC.</p>
     #[doc(hidden)]
     pub timestamp: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>The value for the metric.</p> 
+    /// <p>The value for the metric.</p>
     /// <p>Although the parameter accepts numbers of type Double, CloudWatch rejects values that are either too small or too large. Values must be in the range of -2^360 to 2^360. In addition, special values (for example, NaN, +Infinity, -Infinity) are not supported.</p>
     #[doc(hidden)]
     pub value: std::option::Option<f64>,
     /// <p>The statistical values for the metric.</p>
     #[doc(hidden)]
     pub statistic_values: std::option::Option<crate::types::StatisticSet>,
-    /// <p>Array of numbers representing the values for the metric during the period. Each unique value is listed just once in this array, and the corresponding number in the <code>Counts</code> array specifies the number of times that value occurred during the period. You can include up to 150 unique values in each <code>PutMetricData</code> action that specifies a <code>Values</code> array.</p> 
+    /// <p>Array of numbers representing the values for the metric during the period. Each unique value is listed just once in this array, and the corresponding number in the <code>Counts</code> array specifies the number of times that value occurred during the period. You can include up to 150 unique values in each <code>PutMetricData</code> action that specifies a <code>Values</code> array.</p>
     /// <p>Although the <code>Values</code> array accepts numbers of type <code>Double</code>, CloudWatch rejects values that are either too small or too large. Values must be in the range of -2^360 to 2^360. In addition, special values (for example, NaN, +Infinity, -Infinity) are not supported.</p>
     #[doc(hidden)]
     pub values: std::option::Option<std::vec::Vec<f64>>,
-    /// <p>Array of numbers that is used along with the <code>Values</code> array. Each number in the <code>Count</code> array is the number of times the corresponding value in the <code>Values</code> array occurred during the period. </p> 
+    /// <p>Array of numbers that is used along with the <code>Values</code> array. Each number in the <code>Count</code> array is the number of times the corresponding value in the <code>Values</code> array occurred during the period. </p>
     /// <p>If you omit the <code>Counts</code> array, the default of 1 is used as the value for each count. If you include a <code>Counts</code> array, it must include the same amount of values as the <code>Values</code> array.</p>
     #[doc(hidden)]
     pub counts: std::option::Option<std::vec::Vec<f64>>,
-    /// <p>When you are using a <code>Put</code> operation, this defines what unit you want to use when storing the metric.</p> 
+    /// <p>When you are using a <code>Put</code> operation, this defines what unit you want to use when storing the metric.</p>
     /// <p>In a <code>Get</code> operation, this displays the unit that is used for the metric.</p>
     #[doc(hidden)]
     pub unit: std::option::Option<crate::types::StandardUnit>,
-    /// <p>Valid values are 1 and 60. Setting this to 1 specifies this metric as a high-resolution metric, so that CloudWatch stores the metric with sub-minute resolution down to one second. Setting this to 60 specifies this metric as a regular-resolution metric, which CloudWatch stores at 1-minute resolution. Currently, high resolution is available only for custom metrics. For more information about high-resolution metrics, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/publishingMetrics.html#high-resolution-metrics">High-Resolution Metrics</a> in the <i>Amazon CloudWatch User Guide</i>. </p> 
+    /// <p>Valid values are 1 and 60. Setting this to 1 specifies this metric as a high-resolution metric, so that CloudWatch stores the metric with sub-minute resolution down to one second. Setting this to 60 specifies this metric as a regular-resolution metric, which CloudWatch stores at 1-minute resolution. Currently, high resolution is available only for custom metrics. For more information about high-resolution metrics, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/publishingMetrics.html#high-resolution-metrics">High-Resolution Metrics</a> in the <i>Amazon CloudWatch User Guide</i>. </p>
     /// <p>This field is optional, if you do not specify it the default of 60 is used.</p>
     #[doc(hidden)]
     pub storage_resolution: std::option::Option<i32>,
 }
 impl MetricDatum {
     /// <p>The name of the metric.</p>
-    pub fn metric_name(&self) -> std::option::Option<& str> {
+    pub fn metric_name(&self) -> std::option::Option<&str> {
         self.metric_name.as_deref()
     }
     /// <p>The dimensions associated with the metric.</p>
-    pub fn dimensions(&self) -> std::option::Option<& [crate::types::Dimension]> {
+    pub fn dimensions(&self) -> std::option::Option<&[crate::types::Dimension]> {
         self.dimensions.as_deref()
     }
     /// <p>The time the metric data was received, expressed as the number of milliseconds since Jan 1, 1970 00:00:00 UTC.</p>
-    pub fn timestamp(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
+    pub fn timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.timestamp.as_ref()
     }
-    /// <p>The value for the metric.</p> 
+    /// <p>The value for the metric.</p>
     /// <p>Although the parameter accepts numbers of type Double, CloudWatch rejects values that are either too small or too large. Values must be in the range of -2^360 to 2^360. In addition, special values (for example, NaN, +Infinity, -Infinity) are not supported.</p>
     pub fn value(&self) -> std::option::Option<f64> {
         self.value
     }
     /// <p>The statistical values for the metric.</p>
-    pub fn statistic_values(&self) -> std::option::Option<& crate::types::StatisticSet> {
+    pub fn statistic_values(&self) -> std::option::Option<&crate::types::StatisticSet> {
         self.statistic_values.as_ref()
     }
-    /// <p>Array of numbers representing the values for the metric during the period. Each unique value is listed just once in this array, and the corresponding number in the <code>Counts</code> array specifies the number of times that value occurred during the period. You can include up to 150 unique values in each <code>PutMetricData</code> action that specifies a <code>Values</code> array.</p> 
+    /// <p>Array of numbers representing the values for the metric during the period. Each unique value is listed just once in this array, and the corresponding number in the <code>Counts</code> array specifies the number of times that value occurred during the period. You can include up to 150 unique values in each <code>PutMetricData</code> action that specifies a <code>Values</code> array.</p>
     /// <p>Although the <code>Values</code> array accepts numbers of type <code>Double</code>, CloudWatch rejects values that are either too small or too large. Values must be in the range of -2^360 to 2^360. In addition, special values (for example, NaN, +Infinity, -Infinity) are not supported.</p>
-    pub fn values(&self) -> std::option::Option<& [f64]> {
+    pub fn values(&self) -> std::option::Option<&[f64]> {
         self.values.as_deref()
     }
-    /// <p>Array of numbers that is used along with the <code>Values</code> array. Each number in the <code>Count</code> array is the number of times the corresponding value in the <code>Values</code> array occurred during the period. </p> 
+    /// <p>Array of numbers that is used along with the <code>Values</code> array. Each number in the <code>Count</code> array is the number of times the corresponding value in the <code>Values</code> array occurred during the period. </p>
     /// <p>If you omit the <code>Counts</code> array, the default of 1 is used as the value for each count. If you include a <code>Counts</code> array, it must include the same amount of values as the <code>Values</code> array.</p>
-    pub fn counts(&self) -> std::option::Option<& [f64]> {
+    pub fn counts(&self) -> std::option::Option<&[f64]> {
         self.counts.as_deref()
     }
-    /// <p>When you are using a <code>Put</code> operation, this defines what unit you want to use when storing the metric.</p> 
+    /// <p>When you are using a <code>Put</code> operation, this defines what unit you want to use when storing the metric.</p>
     /// <p>In a <code>Get</code> operation, this displays the unit that is used for the metric.</p>
-    pub fn unit(&self) -> std::option::Option<& crate::types::StandardUnit> {
+    pub fn unit(&self) -> std::option::Option<&crate::types::StandardUnit> {
         self.unit.as_ref()
     }
-    /// <p>Valid values are 1 and 60. Setting this to 1 specifies this metric as a high-resolution metric, so that CloudWatch stores the metric with sub-minute resolution down to one second. Setting this to 60 specifies this metric as a regular-resolution metric, which CloudWatch stores at 1-minute resolution. Currently, high resolution is available only for custom metrics. For more information about high-resolution metrics, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/publishingMetrics.html#high-resolution-metrics">High-Resolution Metrics</a> in the <i>Amazon CloudWatch User Guide</i>. </p> 
+    /// <p>Valid values are 1 and 60. Setting this to 1 specifies this metric as a high-resolution metric, so that CloudWatch stores the metric with sub-minute resolution down to one second. Setting this to 60 specifies this metric as a regular-resolution metric, which CloudWatch stores at 1-minute resolution. Currently, high resolution is available only for custom metrics. For more information about high-resolution metrics, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/publishingMetrics.html#high-resolution-metrics">High-Resolution Metrics</a> in the <i>Amazon CloudWatch User Guide</i>. </p>
     /// <p>This field is optional, if you do not specify it the default of 60 is used.</p>
     pub fn storage_resolution(&self) -> std::option::Option<i32> {
         self.storage_resolution
@@ -109,7 +109,8 @@ impl MetricDatumBuilder {
     }
     /// <p>The name of the metric.</p>
     pub fn set_metric_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.metric_name = input; self
+        self.metric_name = input;
+        self
     }
     /// Appends an item to `dimensions`.
     ///
@@ -118,13 +119,17 @@ impl MetricDatumBuilder {
     /// <p>The dimensions associated with the metric.</p>
     pub fn dimensions(mut self, input: crate::types::Dimension) -> Self {
         let mut v = self.dimensions.unwrap_or_default();
-                        v.push(input);
-                        self.dimensions = Some(v);
-                        self
+        v.push(input);
+        self.dimensions = Some(v);
+        self
     }
     /// <p>The dimensions associated with the metric.</p>
-    pub fn set_dimensions(mut self, input: std::option::Option<std::vec::Vec<crate::types::Dimension>>) -> Self {
-        self.dimensions = input; self
+    pub fn set_dimensions(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::Dimension>>,
+    ) -> Self {
+        self.dimensions = input;
+        self
     }
     /// <p>The time the metric data was received, expressed as the number of milliseconds since Jan 1, 1970 00:00:00 UTC.</p>
     pub fn timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -133,18 +138,20 @@ impl MetricDatumBuilder {
     }
     /// <p>The time the metric data was received, expressed as the number of milliseconds since Jan 1, 1970 00:00:00 UTC.</p>
     pub fn set_timestamp(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.timestamp = input; self
+        self.timestamp = input;
+        self
     }
-    /// <p>The value for the metric.</p> 
+    /// <p>The value for the metric.</p>
     /// <p>Although the parameter accepts numbers of type Double, CloudWatch rejects values that are either too small or too large. Values must be in the range of -2^360 to 2^360. In addition, special values (for example, NaN, +Infinity, -Infinity) are not supported.</p>
     pub fn value(mut self, input: f64) -> Self {
         self.value = Some(input);
         self
     }
-    /// <p>The value for the metric.</p> 
+    /// <p>The value for the metric.</p>
     /// <p>Although the parameter accepts numbers of type Double, CloudWatch rejects values that are either too small or too large. Values must be in the range of -2^360 to 2^360. In addition, special values (for example, NaN, +Infinity, -Infinity) are not supported.</p>
     pub fn set_value(mut self, input: std::option::Option<f64>) -> Self {
-        self.value = input; self
+        self.value = input;
+        self
     }
     /// <p>The statistical values for the metric.</p>
     pub fn statistic_values(mut self, input: crate::types::StatisticSet) -> Self {
@@ -152,87 +159,85 @@ impl MetricDatumBuilder {
         self
     }
     /// <p>The statistical values for the metric.</p>
-    pub fn set_statistic_values(mut self, input: std::option::Option<crate::types::StatisticSet>) -> Self {
-        self.statistic_values = input; self
+    pub fn set_statistic_values(
+        mut self,
+        input: std::option::Option<crate::types::StatisticSet>,
+    ) -> Self {
+        self.statistic_values = input;
+        self
     }
     /// Appends an item to `values`.
     ///
     /// To override the contents of this collection use [`set_values`](Self::set_values).
     ///
-    /// <p>Array of numbers representing the values for the metric during the period. Each unique value is listed just once in this array, and the corresponding number in the <code>Counts</code> array specifies the number of times that value occurred during the period. You can include up to 150 unique values in each <code>PutMetricData</code> action that specifies a <code>Values</code> array.</p> 
+    /// <p>Array of numbers representing the values for the metric during the period. Each unique value is listed just once in this array, and the corresponding number in the <code>Counts</code> array specifies the number of times that value occurred during the period. You can include up to 150 unique values in each <code>PutMetricData</code> action that specifies a <code>Values</code> array.</p>
     /// <p>Although the <code>Values</code> array accepts numbers of type <code>Double</code>, CloudWatch rejects values that are either too small or too large. Values must be in the range of -2^360 to 2^360. In addition, special values (for example, NaN, +Infinity, -Infinity) are not supported.</p>
     pub fn values(mut self, input: f64) -> Self {
         let mut v = self.values.unwrap_or_default();
-                        v.push(input);
-                        self.values = Some(v);
-                        self
+        v.push(input);
+        self.values = Some(v);
+        self
     }
-    /// <p>Array of numbers representing the values for the metric during the period. Each unique value is listed just once in this array, and the corresponding number in the <code>Counts</code> array specifies the number of times that value occurred during the period. You can include up to 150 unique values in each <code>PutMetricData</code> action that specifies a <code>Values</code> array.</p> 
+    /// <p>Array of numbers representing the values for the metric during the period. Each unique value is listed just once in this array, and the corresponding number in the <code>Counts</code> array specifies the number of times that value occurred during the period. You can include up to 150 unique values in each <code>PutMetricData</code> action that specifies a <code>Values</code> array.</p>
     /// <p>Although the <code>Values</code> array accepts numbers of type <code>Double</code>, CloudWatch rejects values that are either too small or too large. Values must be in the range of -2^360 to 2^360. In addition, special values (for example, NaN, +Infinity, -Infinity) are not supported.</p>
     pub fn set_values(mut self, input: std::option::Option<std::vec::Vec<f64>>) -> Self {
-        self.values = input; self
+        self.values = input;
+        self
     }
     /// Appends an item to `counts`.
     ///
     /// To override the contents of this collection use [`set_counts`](Self::set_counts).
     ///
-    /// <p>Array of numbers that is used along with the <code>Values</code> array. Each number in the <code>Count</code> array is the number of times the corresponding value in the <code>Values</code> array occurred during the period. </p> 
+    /// <p>Array of numbers that is used along with the <code>Values</code> array. Each number in the <code>Count</code> array is the number of times the corresponding value in the <code>Values</code> array occurred during the period. </p>
     /// <p>If you omit the <code>Counts</code> array, the default of 1 is used as the value for each count. If you include a <code>Counts</code> array, it must include the same amount of values as the <code>Values</code> array.</p>
     pub fn counts(mut self, input: f64) -> Self {
         let mut v = self.counts.unwrap_or_default();
-                        v.push(input);
-                        self.counts = Some(v);
-                        self
+        v.push(input);
+        self.counts = Some(v);
+        self
     }
-    /// <p>Array of numbers that is used along with the <code>Values</code> array. Each number in the <code>Count</code> array is the number of times the corresponding value in the <code>Values</code> array occurred during the period. </p> 
+    /// <p>Array of numbers that is used along with the <code>Values</code> array. Each number in the <code>Count</code> array is the number of times the corresponding value in the <code>Values</code> array occurred during the period. </p>
     /// <p>If you omit the <code>Counts</code> array, the default of 1 is used as the value for each count. If you include a <code>Counts</code> array, it must include the same amount of values as the <code>Values</code> array.</p>
     pub fn set_counts(mut self, input: std::option::Option<std::vec::Vec<f64>>) -> Self {
-        self.counts = input; self
+        self.counts = input;
+        self
     }
-    /// <p>When you are using a <code>Put</code> operation, this defines what unit you want to use when storing the metric.</p> 
+    /// <p>When you are using a <code>Put</code> operation, this defines what unit you want to use when storing the metric.</p>
     /// <p>In a <code>Get</code> operation, this displays the unit that is used for the metric.</p>
     pub fn unit(mut self, input: crate::types::StandardUnit) -> Self {
         self.unit = Some(input);
         self
     }
-    /// <p>When you are using a <code>Put</code> operation, this defines what unit you want to use when storing the metric.</p> 
+    /// <p>When you are using a <code>Put</code> operation, this defines what unit you want to use when storing the metric.</p>
     /// <p>In a <code>Get</code> operation, this displays the unit that is used for the metric.</p>
     pub fn set_unit(mut self, input: std::option::Option<crate::types::StandardUnit>) -> Self {
-        self.unit = input; self
+        self.unit = input;
+        self
     }
-    /// <p>Valid values are 1 and 60. Setting this to 1 specifies this metric as a high-resolution metric, so that CloudWatch stores the metric with sub-minute resolution down to one second. Setting this to 60 specifies this metric as a regular-resolution metric, which CloudWatch stores at 1-minute resolution. Currently, high resolution is available only for custom metrics. For more information about high-resolution metrics, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/publishingMetrics.html#high-resolution-metrics">High-Resolution Metrics</a> in the <i>Amazon CloudWatch User Guide</i>. </p> 
+    /// <p>Valid values are 1 and 60. Setting this to 1 specifies this metric as a high-resolution metric, so that CloudWatch stores the metric with sub-minute resolution down to one second. Setting this to 60 specifies this metric as a regular-resolution metric, which CloudWatch stores at 1-minute resolution. Currently, high resolution is available only for custom metrics. For more information about high-resolution metrics, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/publishingMetrics.html#high-resolution-metrics">High-Resolution Metrics</a> in the <i>Amazon CloudWatch User Guide</i>. </p>
     /// <p>This field is optional, if you do not specify it the default of 60 is used.</p>
     pub fn storage_resolution(mut self, input: i32) -> Self {
         self.storage_resolution = Some(input);
         self
     }
-    /// <p>Valid values are 1 and 60. Setting this to 1 specifies this metric as a high-resolution metric, so that CloudWatch stores the metric with sub-minute resolution down to one second. Setting this to 60 specifies this metric as a regular-resolution metric, which CloudWatch stores at 1-minute resolution. Currently, high resolution is available only for custom metrics. For more information about high-resolution metrics, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/publishingMetrics.html#high-resolution-metrics">High-Resolution Metrics</a> in the <i>Amazon CloudWatch User Guide</i>. </p> 
+    /// <p>Valid values are 1 and 60. Setting this to 1 specifies this metric as a high-resolution metric, so that CloudWatch stores the metric with sub-minute resolution down to one second. Setting this to 60 specifies this metric as a regular-resolution metric, which CloudWatch stores at 1-minute resolution. Currently, high resolution is available only for custom metrics. For more information about high-resolution metrics, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/publishingMetrics.html#high-resolution-metrics">High-Resolution Metrics</a> in the <i>Amazon CloudWatch User Guide</i>. </p>
     /// <p>This field is optional, if you do not specify it the default of 60 is used.</p>
     pub fn set_storage_resolution(mut self, input: std::option::Option<i32>) -> Self {
-        self.storage_resolution = input; self
+        self.storage_resolution = input;
+        self
     }
     /// Consumes the builder and constructs a [`MetricDatum`](crate::types::MetricDatum).
     pub fn build(self) -> crate::types::MetricDatum {
         crate::types::MetricDatum {
-            metric_name: self.metric_name
-            ,
-            dimensions: self.dimensions
-            ,
-            timestamp: self.timestamp
-            ,
-            value: self.value
-            ,
-            statistic_values: self.statistic_values
-            ,
-            values: self.values
-            ,
-            counts: self.counts
-            ,
-            unit: self.unit
-            ,
-            storage_resolution: self.storage_resolution
-            ,
+            metric_name: self.metric_name,
+            dimensions: self.dimensions,
+            timestamp: self.timestamp,
+            value: self.value,
+            statistic_values: self.statistic_values,
+            values: self.values,
+            counts: self.counts,
+            unit: self.unit,
+            storage_resolution: self.storage_resolution,
         }
     }
 }
-

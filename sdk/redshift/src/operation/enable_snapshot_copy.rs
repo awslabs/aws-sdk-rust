@@ -6,33 +6,62 @@ impl EnableSnapshotCopyInput {
     #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::enable_snapshot_copy::EnableSnapshotCopy, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::error::BuildError> {
-        let params_result = crate::endpoint::Params::builder().set_region(_config.region.as_ref().map(|r|r.as_ref().to_owned()))
-        .set_use_dual_stack(_config.use_dual_stack)
-        .set_use_fips(_config.use_fips)
-        .set_endpoint(_config.endpoint_url
-        .clone()).build()
-                                    .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
-                                let (endpoint_result, params) = match params_result {
-                                    Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
-                                    Err(e) => (Err(e), None)
-                                };
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::enable_snapshot_copy::EnableSnapshotCopy,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        let params_result = crate::endpoint::Params::builder()
+            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
+            .set_use_dual_stack(_config.use_dual_stack)
+            .set_use_fips(_config.use_fips)
+            .set_endpoint(_config.endpoint_url.clone())
+            .build()
+            .map_err(|err| {
+                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
+                    "could not construct endpoint parameters",
+                    err,
+                )
+            });
+        let (endpoint_result, params) = match params_result {
+            Ok(params) => (
+                _config.endpoint_resolver.resolve_endpoint(&params),
+                Some(params),
+            ),
+            Err(e) => (Err(e), None),
+        };
         let mut request = {
-            fn uri_base(_input: &crate::operation::enable_snapshot_copy::EnableSnapshotCopyInput, output: &mut String) -> std::result::Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_base(
+                _input: &crate::operation::enable_snapshot_copy::EnableSnapshotCopyInput,
+                output: &mut String,
+            ) -> std::result::Result<(), aws_smithy_http::operation::error::BuildError>
+            {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
-                            input: &crate::operation::enable_snapshot_copy::EnableSnapshotCopyInput,
-                            builder: http::request::Builder
-                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
+                input: &crate::operation::enable_snapshot_copy::EnableSnapshotCopyInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-www-form-urlencoded");
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/x-www-form-urlencoded",
+            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
@@ -41,33 +70,56 @@ impl EnableSnapshotCopyInput {
             crate::protocol_serde::shape_enable_snapshot_copy_input::ser_enable_snapshot_copy_input_input(&self)?
         );
         if let Some(content_length) = body.content_length() {
-                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
-                            }
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request.properties_mut().insert(endpoint_result);
-        if let Some(params) = params { request.properties_mut().insert(params); }
-        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        if let Some(params) = params {
+            request.properties_mut().insert(params);
+        }
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-                                aws_types::os_shim_internal::Env::real(),
-                                crate::meta::API_METADATA.clone(),
-                            );
-                            if let Some(app_name) = _config.app_name() {
-                                user_agent = user_agent.with_app_name(app_name.clone());
-                            }
-                            request.properties_mut().insert(user_agent);
+            aws_types::os_shim_internal::Env::real(),
+            crate::meta::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
-                            if let Some(region) = &_config.region {
-                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
-                            }
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
         if let Some(region) = &_config.region {
-                                request.properties_mut().insert(region.clone());
-                            }
-        aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
-        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::enable_snapshot_copy::EnableSnapshotCopy::new())
-                            .with_metadata(aws_smithy_http::operation::Metadata::new("EnableSnapshotCopy", "redshift"));
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_credentials_cache(
+            &mut request.properties_mut(),
+            _config.credentials_cache.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::enable_snapshot_copy::EnableSnapshotCopy::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "EnableSnapshotCopy",
+            "redshift",
+        ));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -84,22 +136,31 @@ impl EnableSnapshotCopy {
     }
 }
 impl aws_smithy_http::response::ParseStrictResponse for EnableSnapshotCopy {
-                type Output = std::result::Result<crate::operation::enable_snapshot_copy::EnableSnapshotCopyOutput, crate::operation::enable_snapshot_copy::EnableSnapshotCopyError>;
-                fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
-                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
-                     if !response.status().is_success() && response.status().as_u16() != 200 {
-                        crate::protocol_serde::shape_enable_snapshot_copy::de_enable_snapshot_copy_http_error(response)
-                     } else {
-                        crate::protocol_serde::shape_enable_snapshot_copy::de_enable_snapshot_copy_http_response(response)
-                     }
-                }
-            }
+    type Output = std::result::Result<
+        crate::operation::enable_snapshot_copy::EnableSnapshotCopyOutput,
+        crate::operation::enable_snapshot_copy::EnableSnapshotCopyError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::protocol_serde::shape_enable_snapshot_copy::de_enable_snapshot_copy_http_error(
+                response,
+            )
+        } else {
+            crate::protocol_serde::shape_enable_snapshot_copy::de_enable_snapshot_copy_http_response(
+                response,
+            )
+        }
+    }
+}
 
 /// Do not use this.
-            ///
-            /// Operation `*Error/*ErrorKind` types were combined into a single `*Error` enum. The `.kind` field on `*Error` no longer exists and isn't needed anymore (you can just match on the error directly since it's an enum now).
-            #[deprecated(note = "Operation `*Error/*ErrorKind` types were combined into a single `*Error` enum. The `.kind` field on `*Error` no longer exists and isn't needed anymore (you can just match on the error directly since it's an enum now).")]
-            pub type EnableSnapshotCopyErrorKind = EnableSnapshotCopyError;
+///
+/// Operation `*Error/*ErrorKind` types were combined into a single `*Error` enum. The `.kind` field on `*Error` no longer exists and isn't needed anymore (you can just match on the error directly since it's an enum now).
+#[deprecated(
+    note = "Operation `*Error/*ErrorKind` types were combined into a single `*Error` enum. The `.kind` field on `*Error` no longer exists and isn't needed anymore (you can just match on the error directly since it's an enum now)."
+)]
+pub type EnableSnapshotCopyErrorKind = EnableSnapshotCopyError;
 /// Error type for the `EnableSnapshotCopyError` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -109,12 +170,14 @@ pub enum EnableSnapshotCopyError {
     /// <p>Cross-region snapshot copy was temporarily disabled. Try your request again.</p>
     CopyToRegionDisabledFault(crate::types::error::CopyToRegionDisabledFault),
     /// <p>The request cannot be completed because a dependent service is throttling requests made by Amazon Redshift on your behalf. Wait and retry the request.</p>
-    DependentServiceRequestThrottlingFault(crate::types::error::DependentServiceRequestThrottlingFault),
+    DependentServiceRequestThrottlingFault(
+        crate::types::error::DependentServiceRequestThrottlingFault,
+    ),
     /// <p>The specified options are incompatible.</p>
     IncompatibleOrderableOptions(crate::types::error::IncompatibleOrderableOptions),
     /// <p>The specified cluster is not in the <code>available</code> state. </p>
     InvalidClusterStateFault(crate::types::error::InvalidClusterStateFault),
-    /// <p>The retention period specified is either in the past or is not a valid value.</p> 
+    /// <p>The retention period specified is either in the past or is not a valid value.</p>
     /// <p>The value must be either -1 or an integer between 1 and 3,653.</p>
     InvalidRetentionPeriodFault(crate::types::error::InvalidRetentionPeriodFault),
     /// <p>The encryption key has exceeded its grant limit in Amazon Web Services KMS.</p>
@@ -128,111 +191,87 @@ pub enum EnableSnapshotCopyError {
     /// <p>The specified region is incorrect or does not exist.</p>
     UnknownSnapshotCopyRegionFault(crate::types::error::UnknownSnapshotCopyRegionFault),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-                    Unhandled(aws_smithy_types::error::Unhandled),
+    Unhandled(aws_smithy_types::error::Unhandled),
 }
 impl aws_smithy_http::result::CreateUnhandledError for EnableSnapshotCopyError {
-    
-                    fn create_unhandled_error(
-                        source: Box<dyn std::error::Error + Send + Sync + 'static>,
-                        meta: std::option::Option<aws_smithy_types::error::ErrorMetadata>
-                    ) -> Self
-                     {
+    fn create_unhandled_error(
+        source: Box<dyn std::error::Error + Send + Sync + 'static>,
+        meta: std::option::Option<aws_smithy_types::error::ErrorMetadata>,
+    ) -> Self {
         Self::Unhandled({
-                                let mut builder = aws_smithy_types::error::Unhandled::builder().source(source);
-                                builder.set_meta(meta);
-                                builder.build()
-                            })
+            let mut builder = aws_smithy_types::error::Unhandled::builder().source(source);
+            builder.set_meta(meta);
+            builder.build()
+        })
     }
 }
 impl std::fmt::Display for EnableSnapshotCopyError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match self {
-            Self::ClusterNotFoundFault(_inner) =>
-            _inner.fmt(f)
-            ,
-            Self::CopyToRegionDisabledFault(_inner) =>
-            _inner.fmt(f)
-            ,
-            Self::DependentServiceRequestThrottlingFault(_inner) =>
-            _inner.fmt(f)
-            ,
-            Self::IncompatibleOrderableOptions(_inner) =>
-            _inner.fmt(f)
-            ,
-            Self::InvalidClusterStateFault(_inner) =>
-            _inner.fmt(f)
-            ,
-            Self::InvalidRetentionPeriodFault(_inner) =>
-            _inner.fmt(f)
-            ,
-            Self::LimitExceededFault(_inner) =>
-            _inner.fmt(f)
-            ,
-            Self::SnapshotCopyAlreadyEnabledFault(_inner) =>
-            _inner.fmt(f)
-            ,
-            Self::SnapshotCopyGrantNotFoundFault(_inner) =>
-            _inner.fmt(f)
-            ,
-            Self::UnauthorizedOperation(_inner) =>
-            _inner.fmt(f)
-            ,
-            Self::UnknownSnapshotCopyRegionFault(_inner) =>
-            _inner.fmt(f)
-            ,
-            Self::Unhandled(_inner) => {
-                _inner.fmt(f)
-            }
+            Self::ClusterNotFoundFault(_inner) => _inner.fmt(f),
+            Self::CopyToRegionDisabledFault(_inner) => _inner.fmt(f),
+            Self::DependentServiceRequestThrottlingFault(_inner) => _inner.fmt(f),
+            Self::IncompatibleOrderableOptions(_inner) => _inner.fmt(f),
+            Self::InvalidClusterStateFault(_inner) => _inner.fmt(f),
+            Self::InvalidRetentionPeriodFault(_inner) => _inner.fmt(f),
+            Self::LimitExceededFault(_inner) => _inner.fmt(f),
+            Self::SnapshotCopyAlreadyEnabledFault(_inner) => _inner.fmt(f),
+            Self::SnapshotCopyGrantNotFoundFault(_inner) => _inner.fmt(f),
+            Self::UnauthorizedOperation(_inner) => _inner.fmt(f),
+            Self::UnknownSnapshotCopyRegionFault(_inner) => _inner.fmt(f),
+            Self::Unhandled(_inner) => _inner.fmt(f),
         }
     }
 }
 impl aws_smithy_types::error::metadata::ProvideErrorMetadata for EnableSnapshotCopyError {
     fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
         match self {
-            Self::ClusterNotFoundFault(_inner) =>
-            aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
-            ,
-            Self::CopyToRegionDisabledFault(_inner) =>
-            aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
-            ,
-            Self::DependentServiceRequestThrottlingFault(_inner) =>
-            aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
-            ,
-            Self::IncompatibleOrderableOptions(_inner) =>
-            aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
-            ,
-            Self::InvalidClusterStateFault(_inner) =>
-            aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
-            ,
-            Self::InvalidRetentionPeriodFault(_inner) =>
-            aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
-            ,
-            Self::LimitExceededFault(_inner) =>
-            aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
-            ,
-            Self::SnapshotCopyAlreadyEnabledFault(_inner) =>
-            aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
-            ,
-            Self::SnapshotCopyGrantNotFoundFault(_inner) =>
-            aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
-            ,
-            Self::UnauthorizedOperation(_inner) =>
-            aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
-            ,
-            Self::UnknownSnapshotCopyRegionFault(_inner) =>
-            aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
-            ,
+            Self::ClusterNotFoundFault(_inner) => {
+                aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
+            }
+            Self::CopyToRegionDisabledFault(_inner) => {
+                aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
+            }
+            Self::DependentServiceRequestThrottlingFault(_inner) => {
+                aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
+            }
+            Self::IncompatibleOrderableOptions(_inner) => {
+                aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
+            }
+            Self::InvalidClusterStateFault(_inner) => {
+                aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
+            }
+            Self::InvalidRetentionPeriodFault(_inner) => {
+                aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
+            }
+            Self::LimitExceededFault(_inner) => {
+                aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
+            }
+            Self::SnapshotCopyAlreadyEnabledFault(_inner) => {
+                aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
+            }
+            Self::SnapshotCopyGrantNotFoundFault(_inner) => {
+                aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
+            }
+            Self::UnauthorizedOperation(_inner) => {
+                aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
+            }
+            Self::UnknownSnapshotCopyRegionFault(_inner) => {
+                aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
+            }
             Self::Unhandled(_inner) => {
                 aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
             }
         }
     }
 }
-impl aws_http::request_id::RequestId for crate::operation::enable_snapshot_copy::EnableSnapshotCopyError {
-                            fn request_id(&self) -> Option<&str> {
-                                self.meta().request_id()
-                            }
-                        }
+impl aws_http::request_id::RequestId
+    for crate::operation::enable_snapshot_copy::EnableSnapshotCopyError
+{
+    fn request_id(&self) -> Option<&str> {
+        self.meta().request_id()
+    }
+}
 impl aws_smithy_types::retry::ProvideErrorKind for EnableSnapshotCopyError {
     fn code(&self) -> std::option::Option<&str> {
         aws_smithy_types::error::metadata::ProvideErrorMetadata::code(self)
@@ -243,18 +282,27 @@ impl aws_smithy_types::retry::ProvideErrorKind for EnableSnapshotCopyError {
 }
 impl EnableSnapshotCopyError {
     /// Creates the `EnableSnapshotCopyError::Unhandled` variant from any error type.
-                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-                        Self::Unhandled(aws_smithy_types::error::Unhandled::builder().source(err).build())
-                    }
-    
-                    /// Creates the `EnableSnapshotCopyError::Unhandled` variant from a `aws_smithy_types::error::ErrorMetadata`.
-                    pub fn generic(err: aws_smithy_types::error::ErrorMetadata) -> Self {
-                        Self::Unhandled(aws_smithy_types::error::Unhandled::builder().source(err.clone()).meta(err).build())
-                    }
-    /// 
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self::Unhandled(
+            aws_smithy_types::error::Unhandled::builder()
+                .source(err)
+                .build(),
+        )
+    }
+
+    /// Creates the `EnableSnapshotCopyError::Unhandled` variant from a `aws_smithy_types::error::ErrorMetadata`.
+    pub fn generic(err: aws_smithy_types::error::ErrorMetadata) -> Self {
+        Self::Unhandled(
+            aws_smithy_types::error::Unhandled::builder()
+                .source(err.clone())
+                .meta(err)
+                .build(),
+        )
+    }
+    ///
     /// Returns error metadata, which includes the error code, message,
     /// request ID, and potentially additional information.
-    /// 
+    ///
     pub fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
         use aws_smithy_types::error::metadata::ProvideErrorMetadata;
         match self {
@@ -320,42 +368,18 @@ impl EnableSnapshotCopyError {
 impl std::error::Error for EnableSnapshotCopyError {
     fn source(&self) -> std::option::Option<&(dyn std::error::Error + 'static)> {
         match self {
-            Self::ClusterNotFoundFault(_inner) =>
-            Some(_inner)
-            ,
-            Self::CopyToRegionDisabledFault(_inner) =>
-            Some(_inner)
-            ,
-            Self::DependentServiceRequestThrottlingFault(_inner) =>
-            Some(_inner)
-            ,
-            Self::IncompatibleOrderableOptions(_inner) =>
-            Some(_inner)
-            ,
-            Self::InvalidClusterStateFault(_inner) =>
-            Some(_inner)
-            ,
-            Self::InvalidRetentionPeriodFault(_inner) =>
-            Some(_inner)
-            ,
-            Self::LimitExceededFault(_inner) =>
-            Some(_inner)
-            ,
-            Self::SnapshotCopyAlreadyEnabledFault(_inner) =>
-            Some(_inner)
-            ,
-            Self::SnapshotCopyGrantNotFoundFault(_inner) =>
-            Some(_inner)
-            ,
-            Self::UnauthorizedOperation(_inner) =>
-            Some(_inner)
-            ,
-            Self::UnknownSnapshotCopyRegionFault(_inner) =>
-            Some(_inner)
-            ,
-            Self::Unhandled(_inner) => {
-                Some(_inner)
-            }
+            Self::ClusterNotFoundFault(_inner) => Some(_inner),
+            Self::CopyToRegionDisabledFault(_inner) => Some(_inner),
+            Self::DependentServiceRequestThrottlingFault(_inner) => Some(_inner),
+            Self::IncompatibleOrderableOptions(_inner) => Some(_inner),
+            Self::InvalidClusterStateFault(_inner) => Some(_inner),
+            Self::InvalidRetentionPeriodFault(_inner) => Some(_inner),
+            Self::LimitExceededFault(_inner) => Some(_inner),
+            Self::SnapshotCopyAlreadyEnabledFault(_inner) => Some(_inner),
+            Self::SnapshotCopyGrantNotFoundFault(_inner) => Some(_inner),
+            Self::UnauthorizedOperation(_inner) => Some(_inner),
+            Self::UnknownSnapshotCopyRegionFault(_inner) => Some(_inner),
+            Self::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -370,4 +394,3 @@ mod _enable_snapshot_copy_output;
 
 /// Builders
 pub mod builders;
-

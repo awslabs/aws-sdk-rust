@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct TestWirelessDeviceOutput  {
+pub struct TestWirelessDeviceOutput {
     /// <p>The result returned by the test.</p>
     #[doc(hidden)]
     pub result: std::option::Option<std::string::String>,
@@ -10,18 +10,19 @@ pub struct TestWirelessDeviceOutput  {
 }
 impl TestWirelessDeviceOutput {
     /// <p>The result returned by the test.</p>
-    pub fn result(&self) -> std::option::Option<& str> {
+    pub fn result(&self) -> std::option::Option<&str> {
         self.result.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for TestWirelessDeviceOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl TestWirelessDeviceOutput {
     /// Creates a new builder-style object to manufacture [`TestWirelessDeviceOutput`](crate::operation::test_wireless_device::TestWirelessDeviceOutput).
-    pub fn builder() -> crate::operation::test_wireless_device::builders::TestWirelessDeviceOutputBuilder {
+    pub fn builder(
+    ) -> crate::operation::test_wireless_device::builders::TestWirelessDeviceOutputBuilder {
         crate::operation::test_wireless_device::builders::TestWirelessDeviceOutputBuilder::default()
     }
 }
@@ -41,24 +42,23 @@ impl TestWirelessDeviceOutputBuilder {
     }
     /// <p>The result returned by the test.</p>
     pub fn set_result(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.result = input; self
+        self.result = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`TestWirelessDeviceOutput`](crate::operation::test_wireless_device::TestWirelessDeviceOutput).
     pub fn build(self) -> crate::operation::test_wireless_device::TestWirelessDeviceOutput {
         crate::operation::test_wireless_device::TestWirelessDeviceOutput {
-            result: self.result
-            ,
+            result: self.result,
             _request_id: self._request_id,
         }
     }
 }
-

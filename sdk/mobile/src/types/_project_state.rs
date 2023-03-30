@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-/// 
+///
 /// Here is an example of how you can make a match expression forward-compatible:
-/// 
+///
 /// ```text
 /// # let projectstate = unimplemented!();
 /// match projectstate {
@@ -31,7 +31,7 @@
 /// Specifically, when `projectstate` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `ProjectState::NewFeature` also yielding `"NewFeature"`.
-/// 
+///
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
@@ -40,7 +40,15 @@
 /// Synchronization state for a project.
 /// </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
 pub enum ProjectState {
     #[allow(missing_docs)] // documentation missing in model
     Importing,
@@ -49,43 +57,44 @@ pub enum ProjectState {
     #[allow(missing_docs)] // documentation missing in model
     Syncing,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::primitives::UnknownVariantValue)
+    Unknown(crate::primitives::UnknownVariantValue),
 }
 impl std::convert::From<&str> for ProjectState {
-                fn from(s: &str) -> Self {
-                    match s {
-                        "IMPORTING" => ProjectState::Importing,
-"NORMAL" => ProjectState::Normal,
-"SYNCING" => ProjectState::Syncing,
-other => ProjectState::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
-                    }
-                }
+    fn from(s: &str) -> Self {
+        match s {
+            "IMPORTING" => ProjectState::Importing,
+            "NORMAL" => ProjectState::Normal,
+            "SYNCING" => ProjectState::Syncing,
+            other => {
+                ProjectState::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
             }
-impl std::str::FromStr for ProjectState {
-                type Err = std::convert::Infallible;
-
-                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-                    Ok(ProjectState::from(s))
-                }
-            }
-impl ProjectState {
-                /// Returns the `&str` value of the enum member.
-                pub fn as_str(&self) -> &str {
-                    match self {
-    ProjectState::Importing => "IMPORTING",
-    ProjectState::Normal => "NORMAL",
-    ProjectState::Syncing => "SYNCING",
-    ProjectState::Unknown(value) => value.as_str()
+        }
+    }
 }
-                }
-                /// Returns all the `&str` representations of the enum members.
-                pub const fn values() -> &'static [&'static str] {
-                    &["IMPORTING", "NORMAL", "SYNCING"]
-                }
-            }
-impl AsRef<str> for ProjectState {
-                fn as_ref(&self) -> &str {
-                    self.as_str()
-                }
-            }
+impl std::str::FromStr for ProjectState {
+    type Err = std::convert::Infallible;
 
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(ProjectState::from(s))
+    }
+}
+impl ProjectState {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            ProjectState::Importing => "IMPORTING",
+            ProjectState::Normal => "NORMAL",
+            ProjectState::Syncing => "SYNCING",
+            ProjectState::Unknown(value) => value.as_str(),
+        }
+    }
+    /// Returns all the `&str` representations of the enum members.
+    pub const fn values() -> &'static [&'static str] {
+        &["IMPORTING", "NORMAL", "SYNCING"]
+    }
+}
+impl AsRef<str> for ProjectState {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}

@@ -3,7 +3,7 @@
 /// <p>Returns properties of the execution that is specified.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListedExecution  {
+pub struct ListedExecution {
     /// <p>A unique identifier for the execution of a workflow.</p>
     #[doc(hidden)]
     pub execution_id: std::option::Option<std::string::String>,
@@ -19,19 +19,19 @@ pub struct ListedExecution  {
 }
 impl ListedExecution {
     /// <p>A unique identifier for the execution of a workflow.</p>
-    pub fn execution_id(&self) -> std::option::Option<& str> {
+    pub fn execution_id(&self) -> std::option::Option<&str> {
         self.execution_id.as_deref()
     }
     /// <p>A structure that describes the Amazon S3 or EFS file location. This is the file location when the execution begins: if the file is being copied, this is the initial (as opposed to destination) file location.</p>
-    pub fn initial_file_location(&self) -> std::option::Option<& crate::types::FileLocation> {
+    pub fn initial_file_location(&self) -> std::option::Option<&crate::types::FileLocation> {
         self.initial_file_location.as_ref()
     }
     /// <p>A container object for the session details that are associated with a workflow.</p>
-    pub fn service_metadata(&self) -> std::option::Option<& crate::types::ServiceMetadata> {
+    pub fn service_metadata(&self) -> std::option::Option<&crate::types::ServiceMetadata> {
         self.service_metadata.as_ref()
     }
     /// <p>The status is one of the execution. Can be in progress, completed, exception encountered, or handling the exception.</p>
-    pub fn status(&self) -> std::option::Option<& crate::types::ExecutionStatus> {
+    pub fn status(&self) -> std::option::Option<&crate::types::ExecutionStatus> {
         self.status.as_ref()
     }
 }
@@ -59,7 +59,8 @@ impl ListedExecutionBuilder {
     }
     /// <p>A unique identifier for the execution of a workflow.</p>
     pub fn set_execution_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.execution_id = input; self
+        self.execution_id = input;
+        self
     }
     /// <p>A structure that describes the Amazon S3 or EFS file location. This is the file location when the execution begins: if the file is being copied, this is the initial (as opposed to destination) file location.</p>
     pub fn initial_file_location(mut self, input: crate::types::FileLocation) -> Self {
@@ -67,8 +68,12 @@ impl ListedExecutionBuilder {
         self
     }
     /// <p>A structure that describes the Amazon S3 or EFS file location. This is the file location when the execution begins: if the file is being copied, this is the initial (as opposed to destination) file location.</p>
-    pub fn set_initial_file_location(mut self, input: std::option::Option<crate::types::FileLocation>) -> Self {
-        self.initial_file_location = input; self
+    pub fn set_initial_file_location(
+        mut self,
+        input: std::option::Option<crate::types::FileLocation>,
+    ) -> Self {
+        self.initial_file_location = input;
+        self
     }
     /// <p>A container object for the session details that are associated with a workflow.</p>
     pub fn service_metadata(mut self, input: crate::types::ServiceMetadata) -> Self {
@@ -76,8 +81,12 @@ impl ListedExecutionBuilder {
         self
     }
     /// <p>A container object for the session details that are associated with a workflow.</p>
-    pub fn set_service_metadata(mut self, input: std::option::Option<crate::types::ServiceMetadata>) -> Self {
-        self.service_metadata = input; self
+    pub fn set_service_metadata(
+        mut self,
+        input: std::option::Option<crate::types::ServiceMetadata>,
+    ) -> Self {
+        self.service_metadata = input;
+        self
     }
     /// <p>The status is one of the execution. Can be in progress, completed, exception encountered, or handling the exception.</p>
     pub fn status(mut self, input: crate::types::ExecutionStatus) -> Self {
@@ -86,20 +95,16 @@ impl ListedExecutionBuilder {
     }
     /// <p>The status is one of the execution. Can be in progress, completed, exception encountered, or handling the exception.</p>
     pub fn set_status(mut self, input: std::option::Option<crate::types::ExecutionStatus>) -> Self {
-        self.status = input; self
+        self.status = input;
+        self
     }
     /// Consumes the builder and constructs a [`ListedExecution`](crate::types::ListedExecution).
     pub fn build(self) -> crate::types::ListedExecution {
         crate::types::ListedExecution {
-            execution_id: self.execution_id
-            ,
-            initial_file_location: self.initial_file_location
-            ,
-            service_metadata: self.service_metadata
-            ,
-            status: self.status
-            ,
+            execution_id: self.execution_id,
+            initial_file_location: self.initial_file_location,
+            service_metadata: self.service_metadata,
+            status: self.status,
         }
     }
 }
-

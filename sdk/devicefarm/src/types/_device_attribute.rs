@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-/// 
+///
 /// Here is an example of how you can make a match expression forward-compatible:
-/// 
+///
 /// ```text
 /// # let deviceattribute = unimplemented!();
 /// match deviceattribute {
@@ -41,14 +41,22 @@
 /// Specifically, when `deviceattribute` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `DeviceAttribute::NewFeature` also yielding `"NewFeature"`.
-/// 
+///
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
 pub enum DeviceAttribute {
     #[allow(missing_docs)] // documentation missing in model
     AppiumVersion,
@@ -77,63 +85,78 @@ pub enum DeviceAttribute {
     #[allow(missing_docs)] // documentation missing in model
     RemoteDebugEnabled,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::primitives::UnknownVariantValue)
+    Unknown(crate::primitives::UnknownVariantValue),
 }
 impl std::convert::From<&str> for DeviceAttribute {
-                fn from(s: &str) -> Self {
-                    match s {
-                        "APPIUM_VERSION" => DeviceAttribute::AppiumVersion,
-"ARN" => DeviceAttribute::Arn,
-"AVAILABILITY" => DeviceAttribute::Availability,
-"FLEET_TYPE" => DeviceAttribute::FleetType,
-"FORM_FACTOR" => DeviceAttribute::FormFactor,
-"INSTANCE_ARN" => DeviceAttribute::InstanceArn,
-"INSTANCE_LABELS" => DeviceAttribute::InstanceLabels,
-"MANUFACTURER" => DeviceAttribute::Manufacturer,
-"MODEL" => DeviceAttribute::Model,
-"OS_VERSION" => DeviceAttribute::OsVersion,
-"PLATFORM" => DeviceAttribute::Platform,
-"REMOTE_ACCESS_ENABLED" => DeviceAttribute::RemoteAccessEnabled,
-"REMOTE_DEBUG_ENABLED" => DeviceAttribute::RemoteDebugEnabled,
-other => DeviceAttribute::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
-                    }
-                }
+    fn from(s: &str) -> Self {
+        match s {
+            "APPIUM_VERSION" => DeviceAttribute::AppiumVersion,
+            "ARN" => DeviceAttribute::Arn,
+            "AVAILABILITY" => DeviceAttribute::Availability,
+            "FLEET_TYPE" => DeviceAttribute::FleetType,
+            "FORM_FACTOR" => DeviceAttribute::FormFactor,
+            "INSTANCE_ARN" => DeviceAttribute::InstanceArn,
+            "INSTANCE_LABELS" => DeviceAttribute::InstanceLabels,
+            "MANUFACTURER" => DeviceAttribute::Manufacturer,
+            "MODEL" => DeviceAttribute::Model,
+            "OS_VERSION" => DeviceAttribute::OsVersion,
+            "PLATFORM" => DeviceAttribute::Platform,
+            "REMOTE_ACCESS_ENABLED" => DeviceAttribute::RemoteAccessEnabled,
+            "REMOTE_DEBUG_ENABLED" => DeviceAttribute::RemoteDebugEnabled,
+            other => {
+                DeviceAttribute::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
             }
-impl std::str::FromStr for DeviceAttribute {
-                type Err = std::convert::Infallible;
-
-                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-                    Ok(DeviceAttribute::from(s))
-                }
-            }
-impl DeviceAttribute {
-                /// Returns the `&str` value of the enum member.
-                pub fn as_str(&self) -> &str {
-                    match self {
-    DeviceAttribute::AppiumVersion => "APPIUM_VERSION",
-    DeviceAttribute::Arn => "ARN",
-    DeviceAttribute::Availability => "AVAILABILITY",
-    DeviceAttribute::FleetType => "FLEET_TYPE",
-    DeviceAttribute::FormFactor => "FORM_FACTOR",
-    DeviceAttribute::InstanceArn => "INSTANCE_ARN",
-    DeviceAttribute::InstanceLabels => "INSTANCE_LABELS",
-    DeviceAttribute::Manufacturer => "MANUFACTURER",
-    DeviceAttribute::Model => "MODEL",
-    DeviceAttribute::OsVersion => "OS_VERSION",
-    DeviceAttribute::Platform => "PLATFORM",
-    DeviceAttribute::RemoteAccessEnabled => "REMOTE_ACCESS_ENABLED",
-    DeviceAttribute::RemoteDebugEnabled => "REMOTE_DEBUG_ENABLED",
-    DeviceAttribute::Unknown(value) => value.as_str()
+        }
+    }
 }
-                }
-                /// Returns all the `&str` representations of the enum members.
-                pub const fn values() -> &'static [&'static str] {
-                    &["APPIUM_VERSION", "ARN", "AVAILABILITY", "FLEET_TYPE", "FORM_FACTOR", "INSTANCE_ARN", "INSTANCE_LABELS", "MANUFACTURER", "MODEL", "OS_VERSION", "PLATFORM", "REMOTE_ACCESS_ENABLED", "REMOTE_DEBUG_ENABLED"]
-                }
-            }
-impl AsRef<str> for DeviceAttribute {
-                fn as_ref(&self) -> &str {
-                    self.as_str()
-                }
-            }
+impl std::str::FromStr for DeviceAttribute {
+    type Err = std::convert::Infallible;
 
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(DeviceAttribute::from(s))
+    }
+}
+impl DeviceAttribute {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            DeviceAttribute::AppiumVersion => "APPIUM_VERSION",
+            DeviceAttribute::Arn => "ARN",
+            DeviceAttribute::Availability => "AVAILABILITY",
+            DeviceAttribute::FleetType => "FLEET_TYPE",
+            DeviceAttribute::FormFactor => "FORM_FACTOR",
+            DeviceAttribute::InstanceArn => "INSTANCE_ARN",
+            DeviceAttribute::InstanceLabels => "INSTANCE_LABELS",
+            DeviceAttribute::Manufacturer => "MANUFACTURER",
+            DeviceAttribute::Model => "MODEL",
+            DeviceAttribute::OsVersion => "OS_VERSION",
+            DeviceAttribute::Platform => "PLATFORM",
+            DeviceAttribute::RemoteAccessEnabled => "REMOTE_ACCESS_ENABLED",
+            DeviceAttribute::RemoteDebugEnabled => "REMOTE_DEBUG_ENABLED",
+            DeviceAttribute::Unknown(value) => value.as_str(),
+        }
+    }
+    /// Returns all the `&str` representations of the enum members.
+    pub const fn values() -> &'static [&'static str] {
+        &[
+            "APPIUM_VERSION",
+            "ARN",
+            "AVAILABILITY",
+            "FLEET_TYPE",
+            "FORM_FACTOR",
+            "INSTANCE_ARN",
+            "INSTANCE_LABELS",
+            "MANUFACTURER",
+            "MODEL",
+            "OS_VERSION",
+            "PLATFORM",
+            "REMOTE_ACCESS_ENABLED",
+            "REMOTE_DEBUG_ENABLED",
+        ]
+    }
+}
+impl AsRef<str> for DeviceAttribute {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}

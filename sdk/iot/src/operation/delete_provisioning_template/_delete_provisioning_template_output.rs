@@ -2,17 +2,17 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteProvisioningTemplateOutput  {
+pub struct DeleteProvisioningTemplateOutput {
     _request_id: Option<String>,
 }
 impl aws_http::request_id::RequestId for DeleteProvisioningTemplateOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl DeleteProvisioningTemplateOutput {
     /// Creates a new builder-style object to manufacture [`DeleteProvisioningTemplateOutput`](crate::operation::delete_provisioning_template::DeleteProvisioningTemplateOutput).
-    pub fn builder() -> crate::operation::delete_provisioning_template::builders::DeleteProvisioningTemplateOutputBuilder {
+    pub fn builder() -> crate::operation::delete_provisioning_template::builders::DeleteProvisioningTemplateOutputBuilder{
         crate::operation::delete_provisioning_template::builders::DeleteProvisioningTemplateOutputBuilder::default()
     }
 }
@@ -25,19 +25,20 @@ pub struct DeleteProvisioningTemplateOutputBuilder {
 }
 impl DeleteProvisioningTemplateOutputBuilder {
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`DeleteProvisioningTemplateOutput`](crate::operation::delete_provisioning_template::DeleteProvisioningTemplateOutput).
-    pub fn build(self) -> crate::operation::delete_provisioning_template::DeleteProvisioningTemplateOutput {
+    pub fn build(
+        self,
+    ) -> crate::operation::delete_provisioning_template::DeleteProvisioningTemplateOutput {
         crate::operation::delete_provisioning_template::DeleteProvisioningTemplateOutput {
             _request_id: self._request_id,
         }
     }
 }
-

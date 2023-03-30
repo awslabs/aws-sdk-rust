@@ -3,7 +3,7 @@
 /// <p>The current resource quotas associated with an Amazon Web Services account.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AccountLimit  {
+pub struct AccountLimit {
     /// <p>The name of the attribute to apply the account limit to.</p>
     #[doc(hidden)]
     pub name: std::option::Option<crate::types::AccountLimitName>,
@@ -16,7 +16,7 @@ pub struct AccountLimit  {
 }
 impl AccountLimit {
     /// <p>The name of the attribute to apply the account limit to.</p>
-    pub fn name(&self) -> std::option::Option<& crate::types::AccountLimitName> {
+    pub fn name(&self) -> std::option::Option<&crate::types::AccountLimitName> {
         self.name.as_ref()
     }
     /// <p>The current amount that has been spent, in US dollars.</p>
@@ -51,7 +51,8 @@ impl AccountLimitBuilder {
     }
     /// <p>The name of the attribute to apply the account limit to.</p>
     pub fn set_name(mut self, input: std::option::Option<crate::types::AccountLimitName>) -> Self {
-        self.name = input; self
+        self.name = input;
+        self
     }
     /// <p>The current amount that has been spent, in US dollars.</p>
     pub fn used(mut self, input: i64) -> Self {
@@ -60,7 +61,8 @@ impl AccountLimitBuilder {
     }
     /// <p>The current amount that has been spent, in US dollars.</p>
     pub fn set_used(mut self, input: std::option::Option<i64>) -> Self {
-        self.used = input; self
+        self.used = input;
+        self
     }
     /// <p>The Amazon Web Services set limit for that resource type, in US dollars.</p>
     pub fn max(mut self, input: i64) -> Self {
@@ -69,20 +71,15 @@ impl AccountLimitBuilder {
     }
     /// <p>The Amazon Web Services set limit for that resource type, in US dollars.</p>
     pub fn set_max(mut self, input: std::option::Option<i64>) -> Self {
-        self.max = input; self
+        self.max = input;
+        self
     }
     /// Consumes the builder and constructs a [`AccountLimit`](crate::types::AccountLimit).
     pub fn build(self) -> crate::types::AccountLimit {
         crate::types::AccountLimit {
-            name: self.name
-            ,
-            used: self.used
-                .unwrap_or_default()
-            ,
-            max: self.max
-                .unwrap_or_default()
-            ,
+            name: self.name,
+            used: self.used.unwrap_or_default(),
+            max: self.max.unwrap_or_default(),
         }
     }
 }
-

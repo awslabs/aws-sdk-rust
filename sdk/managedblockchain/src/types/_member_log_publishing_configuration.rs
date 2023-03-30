@@ -3,14 +3,16 @@
 /// <p>Configuration properties for logging events associated with a member of a Managed Blockchain network.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct MemberLogPublishingConfiguration  {
+pub struct MemberLogPublishingConfiguration {
     /// <p>Configuration properties for logging events associated with a member of a Managed Blockchain network using the Hyperledger Fabric framework.</p>
     #[doc(hidden)]
     pub fabric: std::option::Option<crate::types::MemberFabricLogPublishingConfiguration>,
 }
 impl MemberLogPublishingConfiguration {
     /// <p>Configuration properties for logging events associated with a member of a Managed Blockchain network using the Hyperledger Fabric framework.</p>
-    pub fn fabric(&self) -> std::option::Option<& crate::types::MemberFabricLogPublishingConfiguration> {
+    pub fn fabric(
+        &self,
+    ) -> std::option::Option<&crate::types::MemberFabricLogPublishingConfiguration> {
         self.fabric.as_ref()
     }
 }
@@ -34,15 +36,17 @@ impl MemberLogPublishingConfigurationBuilder {
         self
     }
     /// <p>Configuration properties for logging events associated with a member of a Managed Blockchain network using the Hyperledger Fabric framework.</p>
-    pub fn set_fabric(mut self, input: std::option::Option<crate::types::MemberFabricLogPublishingConfiguration>) -> Self {
-        self.fabric = input; self
+    pub fn set_fabric(
+        mut self,
+        input: std::option::Option<crate::types::MemberFabricLogPublishingConfiguration>,
+    ) -> Self {
+        self.fabric = input;
+        self
     }
     /// Consumes the builder and constructs a [`MemberLogPublishingConfiguration`](crate::types::MemberLogPublishingConfiguration).
     pub fn build(self) -> crate::types::MemberLogPublishingConfiguration {
         crate::types::MemberLogPublishingConfiguration {
-            fabric: self.fabric
-            ,
+            fabric: self.fabric,
         }
     }
 }
-

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetDocumentOutput  {
+pub struct GetDocumentOutput {
     /// <p>The name of the SSM document.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -39,8 +39,8 @@ pub struct GetDocumentOutput  {
     /// <p>A description of the document attachments, including names, locations, sizes, and so on.</p>
     #[doc(hidden)]
     pub attachments_content: std::option::Option<std::vec::Vec<crate::types::AttachmentContent>>,
-    /// <p>The current review status of a new custom Systems Manager document (SSM document) created by a member of your organization, or of the latest version of an existing SSM document.</p> 
-    /// <p>Only one version of an SSM document can be in the APPROVED state at a time. When a new version is approved, the status of the previous version changes to REJECTED.</p> 
+    /// <p>The current review status of a new custom Systems Manager document (SSM document) created by a member of your organization, or of the latest version of an existing SSM document.</p>
+    /// <p>Only one version of an SSM document can be in the APPROVED state at a time. When a new version is approved, the status of the previous version changes to REJECTED.</p>
     /// <p>Only one version of an SSM document can be in review, or PENDING, at a time.</p>
     #[doc(hidden)]
     pub review_status: std::option::Option<crate::types::ReviewStatus>,
@@ -48,65 +48,65 @@ pub struct GetDocumentOutput  {
 }
 impl GetDocumentOutput {
     /// <p>The name of the SSM document.</p>
-    pub fn name(&self) -> std::option::Option<& str> {
+    pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>The date the SSM document was created.</p>
-    pub fn created_date(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
+    pub fn created_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created_date.as_ref()
     }
     /// <p>The friendly name of the SSM document. This value can differ for each version of the document. If you want to update this value, see <code>UpdateDocument</code>.</p>
-    pub fn display_name(&self) -> std::option::Option<& str> {
+    pub fn display_name(&self) -> std::option::Option<&str> {
         self.display_name.as_deref()
     }
     /// <p>The version of the artifact associated with the document. For example, "Release 12, Update 6". This value is unique across all versions of a document, and can't be changed.</p>
-    pub fn version_name(&self) -> std::option::Option<& str> {
+    pub fn version_name(&self) -> std::option::Option<&str> {
         self.version_name.as_deref()
     }
     /// <p>The document version.</p>
-    pub fn document_version(&self) -> std::option::Option<& str> {
+    pub fn document_version(&self) -> std::option::Option<&str> {
         self.document_version.as_deref()
     }
     /// <p>The status of the SSM document, such as <code>Creating</code>, <code>Active</code>, <code>Updating</code>, <code>Failed</code>, and <code>Deleting</code>.</p>
-    pub fn status(&self) -> std::option::Option<& crate::types::DocumentStatus> {
+    pub fn status(&self) -> std::option::Option<&crate::types::DocumentStatus> {
         self.status.as_ref()
     }
     /// <p>A message returned by Amazon Web Services Systems Manager that explains the <code>Status</code> value. For example, a <code>Failed</code> status might be explained by the <code>StatusInformation</code> message, "The specified S3 bucket doesn't exist. Verify that the URL of the S3 bucket is correct."</p>
-    pub fn status_information(&self) -> std::option::Option<& str> {
+    pub fn status_information(&self) -> std::option::Option<&str> {
         self.status_information.as_deref()
     }
     /// <p>The contents of the SSM document.</p>
-    pub fn content(&self) -> std::option::Option<& str> {
+    pub fn content(&self) -> std::option::Option<&str> {
         self.content.as_deref()
     }
     /// <p>The document type.</p>
-    pub fn document_type(&self) -> std::option::Option<& crate::types::DocumentType> {
+    pub fn document_type(&self) -> std::option::Option<&crate::types::DocumentType> {
         self.document_type.as_ref()
     }
     /// <p>The document format, either JSON or YAML.</p>
-    pub fn document_format(&self) -> std::option::Option<& crate::types::DocumentFormat> {
+    pub fn document_format(&self) -> std::option::Option<&crate::types::DocumentFormat> {
         self.document_format.as_ref()
     }
     /// <p>A list of SSM documents required by a document. For example, an <code>ApplicationConfiguration</code> document requires an <code>ApplicationConfigurationSchema</code> document.</p>
-    pub fn requires(&self) -> std::option::Option<& [crate::types::DocumentRequires]> {
+    pub fn requires(&self) -> std::option::Option<&[crate::types::DocumentRequires]> {
         self.requires.as_deref()
     }
     /// <p>A description of the document attachments, including names, locations, sizes, and so on.</p>
-    pub fn attachments_content(&self) -> std::option::Option<& [crate::types::AttachmentContent]> {
+    pub fn attachments_content(&self) -> std::option::Option<&[crate::types::AttachmentContent]> {
         self.attachments_content.as_deref()
     }
-    /// <p>The current review status of a new custom Systems Manager document (SSM document) created by a member of your organization, or of the latest version of an existing SSM document.</p> 
-    /// <p>Only one version of an SSM document can be in the APPROVED state at a time. When a new version is approved, the status of the previous version changes to REJECTED.</p> 
+    /// <p>The current review status of a new custom Systems Manager document (SSM document) created by a member of your organization, or of the latest version of an existing SSM document.</p>
+    /// <p>Only one version of an SSM document can be in the APPROVED state at a time. When a new version is approved, the status of the previous version changes to REJECTED.</p>
     /// <p>Only one version of an SSM document can be in review, or PENDING, at a time.</p>
-    pub fn review_status(&self) -> std::option::Option<& crate::types::ReviewStatus> {
+    pub fn review_status(&self) -> std::option::Option<&crate::types::ReviewStatus> {
         self.review_status.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for GetDocumentOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl GetDocumentOutput {
     /// Creates a new builder-style object to manufacture [`GetDocumentOutput`](crate::operation::get_document::GetDocumentOutput).
     pub fn builder() -> crate::operation::get_document::builders::GetDocumentOutputBuilder {
@@ -129,7 +129,8 @@ pub struct GetDocumentOutputBuilder {
     pub(crate) document_type: std::option::Option<crate::types::DocumentType>,
     pub(crate) document_format: std::option::Option<crate::types::DocumentFormat>,
     pub(crate) requires: std::option::Option<std::vec::Vec<crate::types::DocumentRequires>>,
-    pub(crate) attachments_content: std::option::Option<std::vec::Vec<crate::types::AttachmentContent>>,
+    pub(crate) attachments_content:
+        std::option::Option<std::vec::Vec<crate::types::AttachmentContent>>,
     pub(crate) review_status: std::option::Option<crate::types::ReviewStatus>,
     _request_id: Option<String>,
 }
@@ -141,7 +142,8 @@ impl GetDocumentOutputBuilder {
     }
     /// <p>The name of the SSM document.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input; self
+        self.name = input;
+        self
     }
     /// <p>The date the SSM document was created.</p>
     pub fn created_date(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -149,8 +151,12 @@ impl GetDocumentOutputBuilder {
         self
     }
     /// <p>The date the SSM document was created.</p>
-    pub fn set_created_date(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.created_date = input; self
+    pub fn set_created_date(
+        mut self,
+        input: std::option::Option<aws_smithy_types::DateTime>,
+    ) -> Self {
+        self.created_date = input;
+        self
     }
     /// <p>The friendly name of the SSM document. This value can differ for each version of the document. If you want to update this value, see <code>UpdateDocument</code>.</p>
     pub fn display_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -159,7 +165,8 @@ impl GetDocumentOutputBuilder {
     }
     /// <p>The friendly name of the SSM document. This value can differ for each version of the document. If you want to update this value, see <code>UpdateDocument</code>.</p>
     pub fn set_display_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.display_name = input; self
+        self.display_name = input;
+        self
     }
     /// <p>The version of the artifact associated with the document. For example, "Release 12, Update 6". This value is unique across all versions of a document, and can't be changed.</p>
     pub fn version_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -168,7 +175,8 @@ impl GetDocumentOutputBuilder {
     }
     /// <p>The version of the artifact associated with the document. For example, "Release 12, Update 6". This value is unique across all versions of a document, and can't be changed.</p>
     pub fn set_version_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.version_name = input; self
+        self.version_name = input;
+        self
     }
     /// <p>The document version.</p>
     pub fn document_version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -177,7 +185,8 @@ impl GetDocumentOutputBuilder {
     }
     /// <p>The document version.</p>
     pub fn set_document_version(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.document_version = input; self
+        self.document_version = input;
+        self
     }
     /// <p>The status of the SSM document, such as <code>Creating</code>, <code>Active</code>, <code>Updating</code>, <code>Failed</code>, and <code>Deleting</code>.</p>
     pub fn status(mut self, input: crate::types::DocumentStatus) -> Self {
@@ -186,7 +195,8 @@ impl GetDocumentOutputBuilder {
     }
     /// <p>The status of the SSM document, such as <code>Creating</code>, <code>Active</code>, <code>Updating</code>, <code>Failed</code>, and <code>Deleting</code>.</p>
     pub fn set_status(mut self, input: std::option::Option<crate::types::DocumentStatus>) -> Self {
-        self.status = input; self
+        self.status = input;
+        self
     }
     /// <p>A message returned by Amazon Web Services Systems Manager that explains the <code>Status</code> value. For example, a <code>Failed</code> status might be explained by the <code>StatusInformation</code> message, "The specified S3 bucket doesn't exist. Verify that the URL of the S3 bucket is correct."</p>
     pub fn status_information(mut self, input: impl Into<std::string::String>) -> Self {
@@ -194,8 +204,12 @@ impl GetDocumentOutputBuilder {
         self
     }
     /// <p>A message returned by Amazon Web Services Systems Manager that explains the <code>Status</code> value. For example, a <code>Failed</code> status might be explained by the <code>StatusInformation</code> message, "The specified S3 bucket doesn't exist. Verify that the URL of the S3 bucket is correct."</p>
-    pub fn set_status_information(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.status_information = input; self
+    pub fn set_status_information(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.status_information = input;
+        self
     }
     /// <p>The contents of the SSM document.</p>
     pub fn content(mut self, input: impl Into<std::string::String>) -> Self {
@@ -204,7 +218,8 @@ impl GetDocumentOutputBuilder {
     }
     /// <p>The contents of the SSM document.</p>
     pub fn set_content(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.content = input; self
+        self.content = input;
+        self
     }
     /// <p>The document type.</p>
     pub fn document_type(mut self, input: crate::types::DocumentType) -> Self {
@@ -212,8 +227,12 @@ impl GetDocumentOutputBuilder {
         self
     }
     /// <p>The document type.</p>
-    pub fn set_document_type(mut self, input: std::option::Option<crate::types::DocumentType>) -> Self {
-        self.document_type = input; self
+    pub fn set_document_type(
+        mut self,
+        input: std::option::Option<crate::types::DocumentType>,
+    ) -> Self {
+        self.document_type = input;
+        self
     }
     /// <p>The document format, either JSON or YAML.</p>
     pub fn document_format(mut self, input: crate::types::DocumentFormat) -> Self {
@@ -221,8 +240,12 @@ impl GetDocumentOutputBuilder {
         self
     }
     /// <p>The document format, either JSON or YAML.</p>
-    pub fn set_document_format(mut self, input: std::option::Option<crate::types::DocumentFormat>) -> Self {
-        self.document_format = input; self
+    pub fn set_document_format(
+        mut self,
+        input: std::option::Option<crate::types::DocumentFormat>,
+    ) -> Self {
+        self.document_format = input;
+        self
     }
     /// Appends an item to `requires`.
     ///
@@ -231,13 +254,17 @@ impl GetDocumentOutputBuilder {
     /// <p>A list of SSM documents required by a document. For example, an <code>ApplicationConfiguration</code> document requires an <code>ApplicationConfigurationSchema</code> document.</p>
     pub fn requires(mut self, input: crate::types::DocumentRequires) -> Self {
         let mut v = self.requires.unwrap_or_default();
-                        v.push(input);
-                        self.requires = Some(v);
-                        self
+        v.push(input);
+        self.requires = Some(v);
+        self
     }
     /// <p>A list of SSM documents required by a document. For example, an <code>ApplicationConfiguration</code> document requires an <code>ApplicationConfigurationSchema</code> document.</p>
-    pub fn set_requires(mut self, input: std::option::Option<std::vec::Vec<crate::types::DocumentRequires>>) -> Self {
-        self.requires = input; self
+    pub fn set_requires(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::DocumentRequires>>,
+    ) -> Self {
+        self.requires = input;
+        self
     }
     /// Appends an item to `attachments_content`.
     ///
@@ -246,67 +273,61 @@ impl GetDocumentOutputBuilder {
     /// <p>A description of the document attachments, including names, locations, sizes, and so on.</p>
     pub fn attachments_content(mut self, input: crate::types::AttachmentContent) -> Self {
         let mut v = self.attachments_content.unwrap_or_default();
-                        v.push(input);
-                        self.attachments_content = Some(v);
-                        self
+        v.push(input);
+        self.attachments_content = Some(v);
+        self
     }
     /// <p>A description of the document attachments, including names, locations, sizes, and so on.</p>
-    pub fn set_attachments_content(mut self, input: std::option::Option<std::vec::Vec<crate::types::AttachmentContent>>) -> Self {
-        self.attachments_content = input; self
+    pub fn set_attachments_content(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::AttachmentContent>>,
+    ) -> Self {
+        self.attachments_content = input;
+        self
     }
-    /// <p>The current review status of a new custom Systems Manager document (SSM document) created by a member of your organization, or of the latest version of an existing SSM document.</p> 
-    /// <p>Only one version of an SSM document can be in the APPROVED state at a time. When a new version is approved, the status of the previous version changes to REJECTED.</p> 
+    /// <p>The current review status of a new custom Systems Manager document (SSM document) created by a member of your organization, or of the latest version of an existing SSM document.</p>
+    /// <p>Only one version of an SSM document can be in the APPROVED state at a time. When a new version is approved, the status of the previous version changes to REJECTED.</p>
     /// <p>Only one version of an SSM document can be in review, or PENDING, at a time.</p>
     pub fn review_status(mut self, input: crate::types::ReviewStatus) -> Self {
         self.review_status = Some(input);
         self
     }
-    /// <p>The current review status of a new custom Systems Manager document (SSM document) created by a member of your organization, or of the latest version of an existing SSM document.</p> 
-    /// <p>Only one version of an SSM document can be in the APPROVED state at a time. When a new version is approved, the status of the previous version changes to REJECTED.</p> 
+    /// <p>The current review status of a new custom Systems Manager document (SSM document) created by a member of your organization, or of the latest version of an existing SSM document.</p>
+    /// <p>Only one version of an SSM document can be in the APPROVED state at a time. When a new version is approved, the status of the previous version changes to REJECTED.</p>
     /// <p>Only one version of an SSM document can be in review, or PENDING, at a time.</p>
-    pub fn set_review_status(mut self, input: std::option::Option<crate::types::ReviewStatus>) -> Self {
-        self.review_status = input; self
+    pub fn set_review_status(
+        mut self,
+        input: std::option::Option<crate::types::ReviewStatus>,
+    ) -> Self {
+        self.review_status = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`GetDocumentOutput`](crate::operation::get_document::GetDocumentOutput).
     pub fn build(self) -> crate::operation::get_document::GetDocumentOutput {
         crate::operation::get_document::GetDocumentOutput {
-            name: self.name
-            ,
-            created_date: self.created_date
-            ,
-            display_name: self.display_name
-            ,
-            version_name: self.version_name
-            ,
-            document_version: self.document_version
-            ,
-            status: self.status
-            ,
-            status_information: self.status_information
-            ,
-            content: self.content
-            ,
-            document_type: self.document_type
-            ,
-            document_format: self.document_format
-            ,
-            requires: self.requires
-            ,
-            attachments_content: self.attachments_content
-            ,
-            review_status: self.review_status
-            ,
+            name: self.name,
+            created_date: self.created_date,
+            display_name: self.display_name,
+            version_name: self.version_name,
+            document_version: self.document_version,
+            status: self.status,
+            status_information: self.status_information,
+            content: self.content,
+            document_type: self.document_type,
+            document_format: self.document_format,
+            requires: self.requires,
+            attachments_content: self.attachments_content,
+            review_status: self.review_status,
             _request_id: self._request_id,
         }
     }
 }
-

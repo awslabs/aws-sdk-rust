@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-/// 
+///
 /// Here is an example of how you can make a match expression forward-compatible:
-/// 
+///
 /// ```text
 /// # let automljobsecondarystatus = unimplemented!();
 /// match automljobsecondarystatus {
@@ -45,14 +45,22 @@
 /// Specifically, when `automljobsecondarystatus` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `AutoMlJobSecondaryStatus::NewFeature` also yielding `"NewFeature"`.
-/// 
+///
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
 pub enum AutoMlJobSecondaryStatus {
     #[allow(missing_docs)] // documentation missing in model
     AnalyzingData,
@@ -89,71 +97,102 @@ pub enum AutoMlJobSecondaryStatus {
     #[allow(missing_docs)] // documentation missing in model
     Stopping,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::primitives::UnknownVariantValue)
+    Unknown(crate::primitives::UnknownVariantValue),
 }
 impl std::convert::From<&str> for AutoMlJobSecondaryStatus {
-                fn from(s: &str) -> Self {
-                    match s {
-                        "AnalyzingData" => AutoMlJobSecondaryStatus::AnalyzingData,
-"CandidateDefinitionsGenerated" => AutoMlJobSecondaryStatus::CandidateDefinitionsGenerated,
-"Completed" => AutoMlJobSecondaryStatus::Completed,
-"DeployingModel" => AutoMlJobSecondaryStatus::DeployingModel,
-"ExplainabilityError" => AutoMlJobSecondaryStatus::ExplainabilityError,
-"Failed" => AutoMlJobSecondaryStatus::Failed,
-"FeatureEngineering" => AutoMlJobSecondaryStatus::FeatureEngineering,
-"GeneratingExplainabilityReport" => AutoMlJobSecondaryStatus::GeneratingExplainabilityReport,
-"GeneratingModelInsightsReport" => AutoMlJobSecondaryStatus::GeneratingModelInsightsReport,
-"MaxAutoMLJobRuntimeReached" => AutoMlJobSecondaryStatus::MaxAutoMlJobRuntimeReached,
-"MaxCandidatesReached" => AutoMlJobSecondaryStatus::MaxCandidatesReached,
-"ModelDeploymentError" => AutoMlJobSecondaryStatus::ModelDeploymentError,
-"ModelInsightsError" => AutoMlJobSecondaryStatus::ModelInsightsError,
-"ModelTuning" => AutoMlJobSecondaryStatus::ModelTuning,
-"Starting" => AutoMlJobSecondaryStatus::Starting,
-"Stopped" => AutoMlJobSecondaryStatus::Stopped,
-"Stopping" => AutoMlJobSecondaryStatus::Stopping,
-other => AutoMlJobSecondaryStatus::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
-                    }
-                }
+    fn from(s: &str) -> Self {
+        match s {
+            "AnalyzingData" => AutoMlJobSecondaryStatus::AnalyzingData,
+            "CandidateDefinitionsGenerated" => {
+                AutoMlJobSecondaryStatus::CandidateDefinitionsGenerated
             }
-impl std::str::FromStr for AutoMlJobSecondaryStatus {
-                type Err = std::convert::Infallible;
-
-                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-                    Ok(AutoMlJobSecondaryStatus::from(s))
-                }
+            "Completed" => AutoMlJobSecondaryStatus::Completed,
+            "DeployingModel" => AutoMlJobSecondaryStatus::DeployingModel,
+            "ExplainabilityError" => AutoMlJobSecondaryStatus::ExplainabilityError,
+            "Failed" => AutoMlJobSecondaryStatus::Failed,
+            "FeatureEngineering" => AutoMlJobSecondaryStatus::FeatureEngineering,
+            "GeneratingExplainabilityReport" => {
+                AutoMlJobSecondaryStatus::GeneratingExplainabilityReport
             }
-impl AutoMlJobSecondaryStatus {
-                /// Returns the `&str` value of the enum member.
-                pub fn as_str(&self) -> &str {
-                    match self {
-    AutoMlJobSecondaryStatus::AnalyzingData => "AnalyzingData",
-    AutoMlJobSecondaryStatus::CandidateDefinitionsGenerated => "CandidateDefinitionsGenerated",
-    AutoMlJobSecondaryStatus::Completed => "Completed",
-    AutoMlJobSecondaryStatus::DeployingModel => "DeployingModel",
-    AutoMlJobSecondaryStatus::ExplainabilityError => "ExplainabilityError",
-    AutoMlJobSecondaryStatus::Failed => "Failed",
-    AutoMlJobSecondaryStatus::FeatureEngineering => "FeatureEngineering",
-    AutoMlJobSecondaryStatus::GeneratingExplainabilityReport => "GeneratingExplainabilityReport",
-    AutoMlJobSecondaryStatus::GeneratingModelInsightsReport => "GeneratingModelInsightsReport",
-    AutoMlJobSecondaryStatus::MaxAutoMlJobRuntimeReached => "MaxAutoMLJobRuntimeReached",
-    AutoMlJobSecondaryStatus::MaxCandidatesReached => "MaxCandidatesReached",
-    AutoMlJobSecondaryStatus::ModelDeploymentError => "ModelDeploymentError",
-    AutoMlJobSecondaryStatus::ModelInsightsError => "ModelInsightsError",
-    AutoMlJobSecondaryStatus::ModelTuning => "ModelTuning",
-    AutoMlJobSecondaryStatus::Starting => "Starting",
-    AutoMlJobSecondaryStatus::Stopped => "Stopped",
-    AutoMlJobSecondaryStatus::Stopping => "Stopping",
-    AutoMlJobSecondaryStatus::Unknown(value) => value.as_str()
+            "GeneratingModelInsightsReport" => {
+                AutoMlJobSecondaryStatus::GeneratingModelInsightsReport
+            }
+            "MaxAutoMLJobRuntimeReached" => AutoMlJobSecondaryStatus::MaxAutoMlJobRuntimeReached,
+            "MaxCandidatesReached" => AutoMlJobSecondaryStatus::MaxCandidatesReached,
+            "ModelDeploymentError" => AutoMlJobSecondaryStatus::ModelDeploymentError,
+            "ModelInsightsError" => AutoMlJobSecondaryStatus::ModelInsightsError,
+            "ModelTuning" => AutoMlJobSecondaryStatus::ModelTuning,
+            "Starting" => AutoMlJobSecondaryStatus::Starting,
+            "Stopped" => AutoMlJobSecondaryStatus::Stopped,
+            "Stopping" => AutoMlJobSecondaryStatus::Stopping,
+            other => AutoMlJobSecondaryStatus::Unknown(crate::primitives::UnknownVariantValue(
+                other.to_owned(),
+            )),
+        }
+    }
 }
-                }
-                /// Returns all the `&str` representations of the enum members.
-                pub const fn values() -> &'static [&'static str] {
-                    &["AnalyzingData", "CandidateDefinitionsGenerated", "Completed", "DeployingModel", "ExplainabilityError", "Failed", "FeatureEngineering", "GeneratingExplainabilityReport", "GeneratingModelInsightsReport", "MaxAutoMLJobRuntimeReached", "MaxCandidatesReached", "ModelDeploymentError", "ModelInsightsError", "ModelTuning", "Starting", "Stopped", "Stopping"]
-                }
-            }
-impl AsRef<str> for AutoMlJobSecondaryStatus {
-                fn as_ref(&self) -> &str {
-                    self.as_str()
-                }
-            }
+impl std::str::FromStr for AutoMlJobSecondaryStatus {
+    type Err = std::convert::Infallible;
 
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(AutoMlJobSecondaryStatus::from(s))
+    }
+}
+impl AutoMlJobSecondaryStatus {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            AutoMlJobSecondaryStatus::AnalyzingData => "AnalyzingData",
+            AutoMlJobSecondaryStatus::CandidateDefinitionsGenerated => {
+                "CandidateDefinitionsGenerated"
+            }
+            AutoMlJobSecondaryStatus::Completed => "Completed",
+            AutoMlJobSecondaryStatus::DeployingModel => "DeployingModel",
+            AutoMlJobSecondaryStatus::ExplainabilityError => "ExplainabilityError",
+            AutoMlJobSecondaryStatus::Failed => "Failed",
+            AutoMlJobSecondaryStatus::FeatureEngineering => "FeatureEngineering",
+            AutoMlJobSecondaryStatus::GeneratingExplainabilityReport => {
+                "GeneratingExplainabilityReport"
+            }
+            AutoMlJobSecondaryStatus::GeneratingModelInsightsReport => {
+                "GeneratingModelInsightsReport"
+            }
+            AutoMlJobSecondaryStatus::MaxAutoMlJobRuntimeReached => "MaxAutoMLJobRuntimeReached",
+            AutoMlJobSecondaryStatus::MaxCandidatesReached => "MaxCandidatesReached",
+            AutoMlJobSecondaryStatus::ModelDeploymentError => "ModelDeploymentError",
+            AutoMlJobSecondaryStatus::ModelInsightsError => "ModelInsightsError",
+            AutoMlJobSecondaryStatus::ModelTuning => "ModelTuning",
+            AutoMlJobSecondaryStatus::Starting => "Starting",
+            AutoMlJobSecondaryStatus::Stopped => "Stopped",
+            AutoMlJobSecondaryStatus::Stopping => "Stopping",
+            AutoMlJobSecondaryStatus::Unknown(value) => value.as_str(),
+        }
+    }
+    /// Returns all the `&str` representations of the enum members.
+    pub const fn values() -> &'static [&'static str] {
+        &[
+            "AnalyzingData",
+            "CandidateDefinitionsGenerated",
+            "Completed",
+            "DeployingModel",
+            "ExplainabilityError",
+            "Failed",
+            "FeatureEngineering",
+            "GeneratingExplainabilityReport",
+            "GeneratingModelInsightsReport",
+            "MaxAutoMLJobRuntimeReached",
+            "MaxCandidatesReached",
+            "ModelDeploymentError",
+            "ModelInsightsError",
+            "ModelTuning",
+            "Starting",
+            "Stopped",
+            "Stopping",
+        ]
+    }
+}
+impl AsRef<str> for AutoMlJobSecondaryStatus {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}

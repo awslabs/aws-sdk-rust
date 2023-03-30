@@ -3,7 +3,7 @@
 /// <p>A skill group with attributes.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SkillGroup  {
+pub struct SkillGroup {
     /// <p>The ARN of a skill group.</p>
     #[doc(hidden)]
     pub skill_group_arn: std::option::Option<std::string::String>,
@@ -16,15 +16,15 @@ pub struct SkillGroup  {
 }
 impl SkillGroup {
     /// <p>The ARN of a skill group.</p>
-    pub fn skill_group_arn(&self) -> std::option::Option<& str> {
+    pub fn skill_group_arn(&self) -> std::option::Option<&str> {
         self.skill_group_arn.as_deref()
     }
     /// <p>The name of a skill group.</p>
-    pub fn skill_group_name(&self) -> std::option::Option<& str> {
+    pub fn skill_group_name(&self) -> std::option::Option<&str> {
         self.skill_group_name.as_deref()
     }
     /// <p>The description of a skill group.</p>
-    pub fn description(&self) -> std::option::Option<& str> {
+    pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
 }
@@ -51,7 +51,8 @@ impl SkillGroupBuilder {
     }
     /// <p>The ARN of a skill group.</p>
     pub fn set_skill_group_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.skill_group_arn = input; self
+        self.skill_group_arn = input;
+        self
     }
     /// <p>The name of a skill group.</p>
     pub fn skill_group_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -60,7 +61,8 @@ impl SkillGroupBuilder {
     }
     /// <p>The name of a skill group.</p>
     pub fn set_skill_group_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.skill_group_name = input; self
+        self.skill_group_name = input;
+        self
     }
     /// <p>The description of a skill group.</p>
     pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -69,18 +71,15 @@ impl SkillGroupBuilder {
     }
     /// <p>The description of a skill group.</p>
     pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.description = input; self
+        self.description = input;
+        self
     }
     /// Consumes the builder and constructs a [`SkillGroup`](crate::types::SkillGroup).
     pub fn build(self) -> crate::types::SkillGroup {
         crate::types::SkillGroup {
-            skill_group_arn: self.skill_group_arn
-            ,
-            skill_group_name: self.skill_group_name
-            ,
-            description: self.description
-            ,
+            skill_group_arn: self.skill_group_arn,
+            skill_group_name: self.skill_group_name,
+            description: self.description,
         }
     }
 }
-

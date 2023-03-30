@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-/// 
+///
 /// Here is an example of how you can make a match expression forward-compatible:
-/// 
+///
 /// ```text
 /// # let updatereason = unimplemented!();
 /// match updatereason {
@@ -33,14 +33,22 @@
 /// Specifically, when `updatereason` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `UpdateReason::NewFeature` also yielding `"NewFeature"`.
-/// 
+///
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
 pub enum UpdateReason {
     #[allow(missing_docs)] // documentation missing in model
     Default,
@@ -53,47 +61,54 @@ pub enum UpdateReason {
     #[allow(missing_docs)] // documentation missing in model
     PricingTierUpdate,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::primitives::UnknownVariantValue)
+    Unknown(crate::primitives::UnknownVariantValue),
 }
 impl std::convert::From<&str> for UpdateReason {
-                fn from(s: &str) -> Self {
-                    match s {
-                        "DEFAULT" => UpdateReason::Default,
-"ENTITY_COUNT_UPDATE" => UpdateReason::EntityCountUpdate,
-"OVERWRITTEN" => UpdateReason::Overwritten,
-"PRICING_MODE_UPDATE" => UpdateReason::PricingModeUpdate,
-"PRICING_TIER_UPDATE" => UpdateReason::PricingTierUpdate,
-other => UpdateReason::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
-                    }
-                }
+    fn from(s: &str) -> Self {
+        match s {
+            "DEFAULT" => UpdateReason::Default,
+            "ENTITY_COUNT_UPDATE" => UpdateReason::EntityCountUpdate,
+            "OVERWRITTEN" => UpdateReason::Overwritten,
+            "PRICING_MODE_UPDATE" => UpdateReason::PricingModeUpdate,
+            "PRICING_TIER_UPDATE" => UpdateReason::PricingTierUpdate,
+            other => {
+                UpdateReason::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
             }
-impl std::str::FromStr for UpdateReason {
-                type Err = std::convert::Infallible;
-
-                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-                    Ok(UpdateReason::from(s))
-                }
-            }
-impl UpdateReason {
-                /// Returns the `&str` value of the enum member.
-                pub fn as_str(&self) -> &str {
-                    match self {
-    UpdateReason::Default => "DEFAULT",
-    UpdateReason::EntityCountUpdate => "ENTITY_COUNT_UPDATE",
-    UpdateReason::Overwritten => "OVERWRITTEN",
-    UpdateReason::PricingModeUpdate => "PRICING_MODE_UPDATE",
-    UpdateReason::PricingTierUpdate => "PRICING_TIER_UPDATE",
-    UpdateReason::Unknown(value) => value.as_str()
+        }
+    }
 }
-                }
-                /// Returns all the `&str` representations of the enum members.
-                pub const fn values() -> &'static [&'static str] {
-                    &["DEFAULT", "ENTITY_COUNT_UPDATE", "OVERWRITTEN", "PRICING_MODE_UPDATE", "PRICING_TIER_UPDATE"]
-                }
-            }
-impl AsRef<str> for UpdateReason {
-                fn as_ref(&self) -> &str {
-                    self.as_str()
-                }
-            }
+impl std::str::FromStr for UpdateReason {
+    type Err = std::convert::Infallible;
 
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(UpdateReason::from(s))
+    }
+}
+impl UpdateReason {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            UpdateReason::Default => "DEFAULT",
+            UpdateReason::EntityCountUpdate => "ENTITY_COUNT_UPDATE",
+            UpdateReason::Overwritten => "OVERWRITTEN",
+            UpdateReason::PricingModeUpdate => "PRICING_MODE_UPDATE",
+            UpdateReason::PricingTierUpdate => "PRICING_TIER_UPDATE",
+            UpdateReason::Unknown(value) => value.as_str(),
+        }
+    }
+    /// Returns all the `&str` representations of the enum members.
+    pub const fn values() -> &'static [&'static str] {
+        &[
+            "DEFAULT",
+            "ENTITY_COUNT_UPDATE",
+            "OVERWRITTEN",
+            "PRICING_MODE_UPDATE",
+            "PRICING_TIER_UPDATE",
+        ]
+    }
+}
+impl AsRef<str> for UpdateReason {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}

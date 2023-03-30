@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteIntegrationResponseInput  {
+pub struct DeleteIntegrationResponseInput {
     /// <p>The API identifier.</p>
     #[doc(hidden)]
     pub api_id: std::option::Option<std::string::String>,
@@ -15,21 +15,21 @@ pub struct DeleteIntegrationResponseInput  {
 }
 impl DeleteIntegrationResponseInput {
     /// <p>The API identifier.</p>
-    pub fn api_id(&self) -> std::option::Option<& str> {
+    pub fn api_id(&self) -> std::option::Option<&str> {
         self.api_id.as_deref()
     }
     /// <p>The integration ID.</p>
-    pub fn integration_id(&self) -> std::option::Option<& str> {
+    pub fn integration_id(&self) -> std::option::Option<&str> {
         self.integration_id.as_deref()
     }
     /// <p>The integration response ID.</p>
-    pub fn integration_response_id(&self) -> std::option::Option<& str> {
+    pub fn integration_response_id(&self) -> std::option::Option<&str> {
         self.integration_response_id.as_deref()
     }
 }
 impl DeleteIntegrationResponseInput {
     /// Creates a new builder-style object to manufacture [`DeleteIntegrationResponseInput`](crate::operation::delete_integration_response::DeleteIntegrationResponseInput).
-    pub fn builder() -> crate::operation::delete_integration_response::builders::DeleteIntegrationResponseInputBuilder {
+    pub fn builder() -> crate::operation::delete_integration_response::builders::DeleteIntegrationResponseInputBuilder{
         crate::operation::delete_integration_response::builders::DeleteIntegrationResponseInputBuilder::default()
     }
 }
@@ -50,7 +50,8 @@ impl DeleteIntegrationResponseInputBuilder {
     }
     /// <p>The API identifier.</p>
     pub fn set_api_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.api_id = input; self
+        self.api_id = input;
+        self
     }
     /// <p>The integration ID.</p>
     pub fn integration_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -59,7 +60,8 @@ impl DeleteIntegrationResponseInputBuilder {
     }
     /// <p>The integration ID.</p>
     pub fn set_integration_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.integration_id = input; self
+        self.integration_id = input;
+        self
     }
     /// <p>The integration response ID.</p>
     pub fn integration_response_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -67,21 +69,26 @@ impl DeleteIntegrationResponseInputBuilder {
         self
     }
     /// <p>The integration response ID.</p>
-    pub fn set_integration_response_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.integration_response_id = input; self
+    pub fn set_integration_response_id(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.integration_response_id = input;
+        self
     }
     /// Consumes the builder and constructs a [`DeleteIntegrationResponseInput`](crate::operation::delete_integration_response::DeleteIntegrationResponseInput).
-    pub fn build(self) -> Result<crate::operation::delete_integration_response::DeleteIntegrationResponseInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::delete_integration_response::DeleteIntegrationResponseInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::delete_integration_response::DeleteIntegrationResponseInput {
-                api_id: self.api_id
-                ,
-                integration_id: self.integration_id
-                ,
-                integration_response_id: self.integration_response_id
-                ,
-            }
+                api_id: self.api_id,
+                integration_id: self.integration_id,
+                integration_response_id: self.integration_response_id,
+            },
         )
     }
 }
-

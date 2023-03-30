@@ -3,13 +3,14 @@
 /// <p>Settings specific to the Amazon Transcribe engine.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct EngineTranscribeSettings  {
+pub struct EngineTranscribeSettings {
     /// <p>The language code specified for the Amazon Transcribe engine.</p>
     #[doc(hidden)]
     pub language_code: std::option::Option<crate::types::TranscribeLanguageCode>,
     /// <p>The filtering method passed to Amazon Transcribe.</p>
     #[doc(hidden)]
-    pub vocabulary_filter_method: std::option::Option<crate::types::TranscribeVocabularyFilterMethod>,
+    pub vocabulary_filter_method:
+        std::option::Option<crate::types::TranscribeVocabularyFilterMethod>,
     /// <p>The name of the vocabulary filter passed to Amazon Transcribe.</p>
     #[doc(hidden)]
     pub vocabulary_filter_name: std::option::Option<std::string::String>,
@@ -24,15 +25,17 @@ pub struct EngineTranscribeSettings  {
     pub enable_partial_results_stabilization: std::option::Option<bool>,
     /// <p>The stabity level of a partial results transcription. Determines how stable you want the transcription results to be. A higher level means the transcription results are less likely to change.</p>
     #[doc(hidden)]
-    pub partial_results_stability: std::option::Option<crate::types::TranscribePartialResultsStability>,
+    pub partial_results_stability:
+        std::option::Option<crate::types::TranscribePartialResultsStability>,
     /// <p>Set this field to <code>PII</code> to identify personally identifiable information in the transcription output.</p>
     #[doc(hidden)]
-    pub content_identification_type: std::option::Option<crate::types::TranscribeContentIdentificationType>,
+    pub content_identification_type:
+        std::option::Option<crate::types::TranscribeContentIdentificationType>,
     /// <p>Set this field to <code>PII</code> to redact personally identifiable information in the transcription output. Content redaction is performed only upon complete transcription of the audio segments.</p>
     #[doc(hidden)]
     pub content_redaction_type: std::option::Option<crate::types::TranscribeContentRedactionType>,
-    /// <p>Lists the PII entity types you want to identify or redact. To specify entity types, you must enable <code>ContentIdentificationType</code> or <code>ContentRedactionType</code>.</p> 
-    /// <p> <code>PIIEntityTypes</code> must be comma-separated. The available values are: <code>BANK_ACCOUNT_NUMBER</code>, <code>BANK_ROUTING, CREDIT_DEBIT_NUMBER</code>, <code>CREDIT_DEBIT_CVV</code>, <code>CREDIT_DEBIT_EXPIRY</code>, <code>PIN</code>, <code>EMAIL</code>, <code>ADDRESS</code>, <code>NAME</code>, <code>PHONE</code>, <code>SSN</code>, and <code>ALL</code>.</p> 
+    /// <p>Lists the PII entity types you want to identify or redact. To specify entity types, you must enable <code>ContentIdentificationType</code> or <code>ContentRedactionType</code>.</p>
+    /// <p> <code>PIIEntityTypes</code> must be comma-separated. The available values are: <code>BANK_ACCOUNT_NUMBER</code>, <code>BANK_ROUTING, CREDIT_DEBIT_NUMBER</code>, <code>CREDIT_DEBIT_CVV</code>, <code>CREDIT_DEBIT_EXPIRY</code>, <code>PIN</code>, <code>EMAIL</code>, <code>ADDRESS</code>, <code>NAME</code>, <code>PHONE</code>, <code>SSN</code>, and <code>ALL</code>.</p>
     /// <p> <code>PiiEntityTypes</code> is an optional parameter with a default value of <code>ALL</code>.</p>
     #[doc(hidden)]
     pub pii_entity_types: std::option::Option<std::string::String>,
@@ -42,23 +45,25 @@ pub struct EngineTranscribeSettings  {
 }
 impl EngineTranscribeSettings {
     /// <p>The language code specified for the Amazon Transcribe engine.</p>
-    pub fn language_code(&self) -> std::option::Option<& crate::types::TranscribeLanguageCode> {
+    pub fn language_code(&self) -> std::option::Option<&crate::types::TranscribeLanguageCode> {
         self.language_code.as_ref()
     }
     /// <p>The filtering method passed to Amazon Transcribe.</p>
-    pub fn vocabulary_filter_method(&self) -> std::option::Option<& crate::types::TranscribeVocabularyFilterMethod> {
+    pub fn vocabulary_filter_method(
+        &self,
+    ) -> std::option::Option<&crate::types::TranscribeVocabularyFilterMethod> {
         self.vocabulary_filter_method.as_ref()
     }
     /// <p>The name of the vocabulary filter passed to Amazon Transcribe.</p>
-    pub fn vocabulary_filter_name(&self) -> std::option::Option<& str> {
+    pub fn vocabulary_filter_name(&self) -> std::option::Option<&str> {
         self.vocabulary_filter_name.as_deref()
     }
     /// <p>The name of the vocabulary passed to Amazon Transcribe.</p>
-    pub fn vocabulary_name(&self) -> std::option::Option<& str> {
+    pub fn vocabulary_name(&self) -> std::option::Option<&str> {
         self.vocabulary_name.as_deref()
     }
     /// <p>The AWS Region passed to Amazon Transcribe. If you don't specify a Region, Amazon Chime uses the meeting's Region.</p>
-    pub fn region(&self) -> std::option::Option<& crate::types::TranscribeRegion> {
+    pub fn region(&self) -> std::option::Option<&crate::types::TranscribeRegion> {
         self.region.as_ref()
     }
     /// <p>Generates partial transcription results that are less likely to change as meeting attendees speak. It does so by only allowing the last few words from the partial results to change.</p>
@@ -66,25 +71,31 @@ impl EngineTranscribeSettings {
         self.enable_partial_results_stabilization
     }
     /// <p>The stabity level of a partial results transcription. Determines how stable you want the transcription results to be. A higher level means the transcription results are less likely to change.</p>
-    pub fn partial_results_stability(&self) -> std::option::Option<& crate::types::TranscribePartialResultsStability> {
+    pub fn partial_results_stability(
+        &self,
+    ) -> std::option::Option<&crate::types::TranscribePartialResultsStability> {
         self.partial_results_stability.as_ref()
     }
     /// <p>Set this field to <code>PII</code> to identify personally identifiable information in the transcription output.</p>
-    pub fn content_identification_type(&self) -> std::option::Option<& crate::types::TranscribeContentIdentificationType> {
+    pub fn content_identification_type(
+        &self,
+    ) -> std::option::Option<&crate::types::TranscribeContentIdentificationType> {
         self.content_identification_type.as_ref()
     }
     /// <p>Set this field to <code>PII</code> to redact personally identifiable information in the transcription output. Content redaction is performed only upon complete transcription of the audio segments.</p>
-    pub fn content_redaction_type(&self) -> std::option::Option<& crate::types::TranscribeContentRedactionType> {
+    pub fn content_redaction_type(
+        &self,
+    ) -> std::option::Option<&crate::types::TranscribeContentRedactionType> {
         self.content_redaction_type.as_ref()
     }
-    /// <p>Lists the PII entity types you want to identify or redact. To specify entity types, you must enable <code>ContentIdentificationType</code> or <code>ContentRedactionType</code>.</p> 
-    /// <p> <code>PIIEntityTypes</code> must be comma-separated. The available values are: <code>BANK_ACCOUNT_NUMBER</code>, <code>BANK_ROUTING, CREDIT_DEBIT_NUMBER</code>, <code>CREDIT_DEBIT_CVV</code>, <code>CREDIT_DEBIT_EXPIRY</code>, <code>PIN</code>, <code>EMAIL</code>, <code>ADDRESS</code>, <code>NAME</code>, <code>PHONE</code>, <code>SSN</code>, and <code>ALL</code>.</p> 
+    /// <p>Lists the PII entity types you want to identify or redact. To specify entity types, you must enable <code>ContentIdentificationType</code> or <code>ContentRedactionType</code>.</p>
+    /// <p> <code>PIIEntityTypes</code> must be comma-separated. The available values are: <code>BANK_ACCOUNT_NUMBER</code>, <code>BANK_ROUTING, CREDIT_DEBIT_NUMBER</code>, <code>CREDIT_DEBIT_CVV</code>, <code>CREDIT_DEBIT_EXPIRY</code>, <code>PIN</code>, <code>EMAIL</code>, <code>ADDRESS</code>, <code>NAME</code>, <code>PHONE</code>, <code>SSN</code>, and <code>ALL</code>.</p>
     /// <p> <code>PiiEntityTypes</code> is an optional parameter with a default value of <code>ALL</code>.</p>
-    pub fn pii_entity_types(&self) -> std::option::Option<& str> {
+    pub fn pii_entity_types(&self) -> std::option::Option<&str> {
         self.pii_entity_types.as_deref()
     }
     /// <p>The name of the language model used during transcription.</p>
-    pub fn language_model_name(&self) -> std::option::Option<& str> {
+    pub fn language_model_name(&self) -> std::option::Option<&str> {
         self.language_model_name.as_deref()
     }
 }
@@ -100,14 +111,18 @@ impl EngineTranscribeSettings {
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct EngineTranscribeSettingsBuilder {
     pub(crate) language_code: std::option::Option<crate::types::TranscribeLanguageCode>,
-    pub(crate) vocabulary_filter_method: std::option::Option<crate::types::TranscribeVocabularyFilterMethod>,
+    pub(crate) vocabulary_filter_method:
+        std::option::Option<crate::types::TranscribeVocabularyFilterMethod>,
     pub(crate) vocabulary_filter_name: std::option::Option<std::string::String>,
     pub(crate) vocabulary_name: std::option::Option<std::string::String>,
     pub(crate) region: std::option::Option<crate::types::TranscribeRegion>,
     pub(crate) enable_partial_results_stabilization: std::option::Option<bool>,
-    pub(crate) partial_results_stability: std::option::Option<crate::types::TranscribePartialResultsStability>,
-    pub(crate) content_identification_type: std::option::Option<crate::types::TranscribeContentIdentificationType>,
-    pub(crate) content_redaction_type: std::option::Option<crate::types::TranscribeContentRedactionType>,
+    pub(crate) partial_results_stability:
+        std::option::Option<crate::types::TranscribePartialResultsStability>,
+    pub(crate) content_identification_type:
+        std::option::Option<crate::types::TranscribeContentIdentificationType>,
+    pub(crate) content_redaction_type:
+        std::option::Option<crate::types::TranscribeContentRedactionType>,
     pub(crate) pii_entity_types: std::option::Option<std::string::String>,
     pub(crate) language_model_name: std::option::Option<std::string::String>,
 }
@@ -118,17 +133,28 @@ impl EngineTranscribeSettingsBuilder {
         self
     }
     /// <p>The language code specified for the Amazon Transcribe engine.</p>
-    pub fn set_language_code(mut self, input: std::option::Option<crate::types::TranscribeLanguageCode>) -> Self {
-        self.language_code = input; self
+    pub fn set_language_code(
+        mut self,
+        input: std::option::Option<crate::types::TranscribeLanguageCode>,
+    ) -> Self {
+        self.language_code = input;
+        self
     }
     /// <p>The filtering method passed to Amazon Transcribe.</p>
-    pub fn vocabulary_filter_method(mut self, input: crate::types::TranscribeVocabularyFilterMethod) -> Self {
+    pub fn vocabulary_filter_method(
+        mut self,
+        input: crate::types::TranscribeVocabularyFilterMethod,
+    ) -> Self {
         self.vocabulary_filter_method = Some(input);
         self
     }
     /// <p>The filtering method passed to Amazon Transcribe.</p>
-    pub fn set_vocabulary_filter_method(mut self, input: std::option::Option<crate::types::TranscribeVocabularyFilterMethod>) -> Self {
-        self.vocabulary_filter_method = input; self
+    pub fn set_vocabulary_filter_method(
+        mut self,
+        input: std::option::Option<crate::types::TranscribeVocabularyFilterMethod>,
+    ) -> Self {
+        self.vocabulary_filter_method = input;
+        self
     }
     /// <p>The name of the vocabulary filter passed to Amazon Transcribe.</p>
     pub fn vocabulary_filter_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -136,8 +162,12 @@ impl EngineTranscribeSettingsBuilder {
         self
     }
     /// <p>The name of the vocabulary filter passed to Amazon Transcribe.</p>
-    pub fn set_vocabulary_filter_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.vocabulary_filter_name = input; self
+    pub fn set_vocabulary_filter_name(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.vocabulary_filter_name = input;
+        self
     }
     /// <p>The name of the vocabulary passed to Amazon Transcribe.</p>
     pub fn vocabulary_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -146,7 +176,8 @@ impl EngineTranscribeSettingsBuilder {
     }
     /// <p>The name of the vocabulary passed to Amazon Transcribe.</p>
     pub fn set_vocabulary_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.vocabulary_name = input; self
+        self.vocabulary_name = input;
+        self
     }
     /// <p>The AWS Region passed to Amazon Transcribe. If you don't specify a Region, Amazon Chime uses the meeting's Region.</p>
     pub fn region(mut self, input: crate::types::TranscribeRegion) -> Self {
@@ -154,8 +185,12 @@ impl EngineTranscribeSettingsBuilder {
         self
     }
     /// <p>The AWS Region passed to Amazon Transcribe. If you don't specify a Region, Amazon Chime uses the meeting's Region.</p>
-    pub fn set_region(mut self, input: std::option::Option<crate::types::TranscribeRegion>) -> Self {
-        self.region = input; self
+    pub fn set_region(
+        mut self,
+        input: std::option::Option<crate::types::TranscribeRegion>,
+    ) -> Self {
+        self.region = input;
+        self
     }
     /// <p>Generates partial transcription results that are less likely to change as meeting attendees speak. It does so by only allowing the last few words from the partial results to change.</p>
     pub fn enable_partial_results_stabilization(mut self, input: bool) -> Self {
@@ -163,48 +198,74 @@ impl EngineTranscribeSettingsBuilder {
         self
     }
     /// <p>Generates partial transcription results that are less likely to change as meeting attendees speak. It does so by only allowing the last few words from the partial results to change.</p>
-    pub fn set_enable_partial_results_stabilization(mut self, input: std::option::Option<bool>) -> Self {
-        self.enable_partial_results_stabilization = input; self
+    pub fn set_enable_partial_results_stabilization(
+        mut self,
+        input: std::option::Option<bool>,
+    ) -> Self {
+        self.enable_partial_results_stabilization = input;
+        self
     }
     /// <p>The stabity level of a partial results transcription. Determines how stable you want the transcription results to be. A higher level means the transcription results are less likely to change.</p>
-    pub fn partial_results_stability(mut self, input: crate::types::TranscribePartialResultsStability) -> Self {
+    pub fn partial_results_stability(
+        mut self,
+        input: crate::types::TranscribePartialResultsStability,
+    ) -> Self {
         self.partial_results_stability = Some(input);
         self
     }
     /// <p>The stabity level of a partial results transcription. Determines how stable you want the transcription results to be. A higher level means the transcription results are less likely to change.</p>
-    pub fn set_partial_results_stability(mut self, input: std::option::Option<crate::types::TranscribePartialResultsStability>) -> Self {
-        self.partial_results_stability = input; self
+    pub fn set_partial_results_stability(
+        mut self,
+        input: std::option::Option<crate::types::TranscribePartialResultsStability>,
+    ) -> Self {
+        self.partial_results_stability = input;
+        self
     }
     /// <p>Set this field to <code>PII</code> to identify personally identifiable information in the transcription output.</p>
-    pub fn content_identification_type(mut self, input: crate::types::TranscribeContentIdentificationType) -> Self {
+    pub fn content_identification_type(
+        mut self,
+        input: crate::types::TranscribeContentIdentificationType,
+    ) -> Self {
         self.content_identification_type = Some(input);
         self
     }
     /// <p>Set this field to <code>PII</code> to identify personally identifiable information in the transcription output.</p>
-    pub fn set_content_identification_type(mut self, input: std::option::Option<crate::types::TranscribeContentIdentificationType>) -> Self {
-        self.content_identification_type = input; self
+    pub fn set_content_identification_type(
+        mut self,
+        input: std::option::Option<crate::types::TranscribeContentIdentificationType>,
+    ) -> Self {
+        self.content_identification_type = input;
+        self
     }
     /// <p>Set this field to <code>PII</code> to redact personally identifiable information in the transcription output. Content redaction is performed only upon complete transcription of the audio segments.</p>
-    pub fn content_redaction_type(mut self, input: crate::types::TranscribeContentRedactionType) -> Self {
+    pub fn content_redaction_type(
+        mut self,
+        input: crate::types::TranscribeContentRedactionType,
+    ) -> Self {
         self.content_redaction_type = Some(input);
         self
     }
     /// <p>Set this field to <code>PII</code> to redact personally identifiable information in the transcription output. Content redaction is performed only upon complete transcription of the audio segments.</p>
-    pub fn set_content_redaction_type(mut self, input: std::option::Option<crate::types::TranscribeContentRedactionType>) -> Self {
-        self.content_redaction_type = input; self
+    pub fn set_content_redaction_type(
+        mut self,
+        input: std::option::Option<crate::types::TranscribeContentRedactionType>,
+    ) -> Self {
+        self.content_redaction_type = input;
+        self
     }
-    /// <p>Lists the PII entity types you want to identify or redact. To specify entity types, you must enable <code>ContentIdentificationType</code> or <code>ContentRedactionType</code>.</p> 
-    /// <p> <code>PIIEntityTypes</code> must be comma-separated. The available values are: <code>BANK_ACCOUNT_NUMBER</code>, <code>BANK_ROUTING, CREDIT_DEBIT_NUMBER</code>, <code>CREDIT_DEBIT_CVV</code>, <code>CREDIT_DEBIT_EXPIRY</code>, <code>PIN</code>, <code>EMAIL</code>, <code>ADDRESS</code>, <code>NAME</code>, <code>PHONE</code>, <code>SSN</code>, and <code>ALL</code>.</p> 
+    /// <p>Lists the PII entity types you want to identify or redact. To specify entity types, you must enable <code>ContentIdentificationType</code> or <code>ContentRedactionType</code>.</p>
+    /// <p> <code>PIIEntityTypes</code> must be comma-separated. The available values are: <code>BANK_ACCOUNT_NUMBER</code>, <code>BANK_ROUTING, CREDIT_DEBIT_NUMBER</code>, <code>CREDIT_DEBIT_CVV</code>, <code>CREDIT_DEBIT_EXPIRY</code>, <code>PIN</code>, <code>EMAIL</code>, <code>ADDRESS</code>, <code>NAME</code>, <code>PHONE</code>, <code>SSN</code>, and <code>ALL</code>.</p>
     /// <p> <code>PiiEntityTypes</code> is an optional parameter with a default value of <code>ALL</code>.</p>
     pub fn pii_entity_types(mut self, input: impl Into<std::string::String>) -> Self {
         self.pii_entity_types = Some(input.into());
         self
     }
-    /// <p>Lists the PII entity types you want to identify or redact. To specify entity types, you must enable <code>ContentIdentificationType</code> or <code>ContentRedactionType</code>.</p> 
-    /// <p> <code>PIIEntityTypes</code> must be comma-separated. The available values are: <code>BANK_ACCOUNT_NUMBER</code>, <code>BANK_ROUTING, CREDIT_DEBIT_NUMBER</code>, <code>CREDIT_DEBIT_CVV</code>, <code>CREDIT_DEBIT_EXPIRY</code>, <code>PIN</code>, <code>EMAIL</code>, <code>ADDRESS</code>, <code>NAME</code>, <code>PHONE</code>, <code>SSN</code>, and <code>ALL</code>.</p> 
+    /// <p>Lists the PII entity types you want to identify or redact. To specify entity types, you must enable <code>ContentIdentificationType</code> or <code>ContentRedactionType</code>.</p>
+    /// <p> <code>PIIEntityTypes</code> must be comma-separated. The available values are: <code>BANK_ACCOUNT_NUMBER</code>, <code>BANK_ROUTING, CREDIT_DEBIT_NUMBER</code>, <code>CREDIT_DEBIT_CVV</code>, <code>CREDIT_DEBIT_EXPIRY</code>, <code>PIN</code>, <code>EMAIL</code>, <code>ADDRESS</code>, <code>NAME</code>, <code>PHONE</code>, <code>SSN</code>, and <code>ALL</code>.</p>
     /// <p> <code>PiiEntityTypes</code> is an optional parameter with a default value of <code>ALL</code>.</p>
     pub fn set_pii_entity_types(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.pii_entity_types = input; self
+        self.pii_entity_types = input;
+        self
     }
     /// <p>The name of the language model used during transcription.</p>
     pub fn language_model_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -212,35 +273,27 @@ impl EngineTranscribeSettingsBuilder {
         self
     }
     /// <p>The name of the language model used during transcription.</p>
-    pub fn set_language_model_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.language_model_name = input; self
+    pub fn set_language_model_name(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.language_model_name = input;
+        self
     }
     /// Consumes the builder and constructs a [`EngineTranscribeSettings`](crate::types::EngineTranscribeSettings).
     pub fn build(self) -> crate::types::EngineTranscribeSettings {
         crate::types::EngineTranscribeSettings {
-            language_code: self.language_code
-            ,
-            vocabulary_filter_method: self.vocabulary_filter_method
-            ,
-            vocabulary_filter_name: self.vocabulary_filter_name
-            ,
-            vocabulary_name: self.vocabulary_name
-            ,
-            region: self.region
-            ,
-            enable_partial_results_stabilization: self.enable_partial_results_stabilization
-            ,
-            partial_results_stability: self.partial_results_stability
-            ,
-            content_identification_type: self.content_identification_type
-            ,
-            content_redaction_type: self.content_redaction_type
-            ,
-            pii_entity_types: self.pii_entity_types
-            ,
-            language_model_name: self.language_model_name
-            ,
+            language_code: self.language_code,
+            vocabulary_filter_method: self.vocabulary_filter_method,
+            vocabulary_filter_name: self.vocabulary_filter_name,
+            vocabulary_name: self.vocabulary_name,
+            region: self.region,
+            enable_partial_results_stabilization: self.enable_partial_results_stabilization,
+            partial_results_stability: self.partial_results_stability,
+            content_identification_type: self.content_identification_type,
+            content_redaction_type: self.content_redaction_type,
+            pii_entity_types: self.pii_entity_types,
+            language_model_name: self.language_model_name,
         }
     }
 }
-

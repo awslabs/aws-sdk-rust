@@ -3,7 +3,7 @@
 /// <p>Specifies the user name, server ID, and session ID for a workflow.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UserDetails  {
+pub struct UserDetails {
     /// <p>A unique string that identifies a user account associated with a server.</p>
     #[doc(hidden)]
     pub user_name: std::option::Option<std::string::String>,
@@ -16,15 +16,15 @@ pub struct UserDetails  {
 }
 impl UserDetails {
     /// <p>A unique string that identifies a user account associated with a server.</p>
-    pub fn user_name(&self) -> std::option::Option<& str> {
+    pub fn user_name(&self) -> std::option::Option<&str> {
         self.user_name.as_deref()
     }
     /// <p>The system-assigned unique identifier for a Transfer server instance. </p>
-    pub fn server_id(&self) -> std::option::Option<& str> {
+    pub fn server_id(&self) -> std::option::Option<&str> {
         self.server_id.as_deref()
     }
     /// <p>The system-assigned unique identifier for a session that corresponds to the workflow.</p>
-    pub fn session_id(&self) -> std::option::Option<& str> {
+    pub fn session_id(&self) -> std::option::Option<&str> {
         self.session_id.as_deref()
     }
 }
@@ -51,7 +51,8 @@ impl UserDetailsBuilder {
     }
     /// <p>A unique string that identifies a user account associated with a server.</p>
     pub fn set_user_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.user_name = input; self
+        self.user_name = input;
+        self
     }
     /// <p>The system-assigned unique identifier for a Transfer server instance. </p>
     pub fn server_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -60,7 +61,8 @@ impl UserDetailsBuilder {
     }
     /// <p>The system-assigned unique identifier for a Transfer server instance. </p>
     pub fn set_server_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.server_id = input; self
+        self.server_id = input;
+        self
     }
     /// <p>The system-assigned unique identifier for a session that corresponds to the workflow.</p>
     pub fn session_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -69,18 +71,15 @@ impl UserDetailsBuilder {
     }
     /// <p>The system-assigned unique identifier for a session that corresponds to the workflow.</p>
     pub fn set_session_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.session_id = input; self
+        self.session_id = input;
+        self
     }
     /// Consumes the builder and constructs a [`UserDetails`](crate::types::UserDetails).
     pub fn build(self) -> crate::types::UserDetails {
         crate::types::UserDetails {
-            user_name: self.user_name
-            ,
-            server_id: self.server_id
-            ,
-            session_id: self.session_id
-            ,
+            user_name: self.user_name,
+            server_id: self.server_id,
+            session_id: self.session_id,
         }
     }
 }
-

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AssociateDataShareConsumerInput  {
+pub struct AssociateDataShareConsumerInput {
     /// <p>The Amazon Resource Name (ARN) of the datashare that the consumer is to use with the account or the namespace.</p>
     #[doc(hidden)]
     pub data_share_arn: std::option::Option<std::string::String>,
@@ -18,7 +18,7 @@ pub struct AssociateDataShareConsumerInput  {
 }
 impl AssociateDataShareConsumerInput {
     /// <p>The Amazon Resource Name (ARN) of the datashare that the consumer is to use with the account or the namespace.</p>
-    pub fn data_share_arn(&self) -> std::option::Option<& str> {
+    pub fn data_share_arn(&self) -> std::option::Option<&str> {
         self.data_share_arn.as_deref()
     }
     /// <p>A value that specifies whether the datashare is associated with the entire account.</p>
@@ -26,17 +26,17 @@ impl AssociateDataShareConsumerInput {
         self.associate_entire_account
     }
     /// <p>The Amazon Resource Name (ARN) of the consumer that is associated with the datashare.</p>
-    pub fn consumer_arn(&self) -> std::option::Option<& str> {
+    pub fn consumer_arn(&self) -> std::option::Option<&str> {
         self.consumer_arn.as_deref()
     }
     /// <p>From a datashare consumer account, associates a datashare with all existing and future namespaces in the specified Amazon Web Services Region.</p>
-    pub fn consumer_region(&self) -> std::option::Option<& str> {
+    pub fn consumer_region(&self) -> std::option::Option<&str> {
         self.consumer_region.as_deref()
     }
 }
 impl AssociateDataShareConsumerInput {
     /// Creates a new builder-style object to manufacture [`AssociateDataShareConsumerInput`](crate::operation::associate_data_share_consumer::AssociateDataShareConsumerInput).
-    pub fn builder() -> crate::operation::associate_data_share_consumer::builders::AssociateDataShareConsumerInputBuilder {
+    pub fn builder() -> crate::operation::associate_data_share_consumer::builders::AssociateDataShareConsumerInputBuilder{
         crate::operation::associate_data_share_consumer::builders::AssociateDataShareConsumerInputBuilder::default()
     }
 }
@@ -58,7 +58,8 @@ impl AssociateDataShareConsumerInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the datashare that the consumer is to use with the account or the namespace.</p>
     pub fn set_data_share_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.data_share_arn = input; self
+        self.data_share_arn = input;
+        self
     }
     /// <p>A value that specifies whether the datashare is associated with the entire account.</p>
     pub fn associate_entire_account(mut self, input: bool) -> Self {
@@ -67,7 +68,8 @@ impl AssociateDataShareConsumerInputBuilder {
     }
     /// <p>A value that specifies whether the datashare is associated with the entire account.</p>
     pub fn set_associate_entire_account(mut self, input: std::option::Option<bool>) -> Self {
-        self.associate_entire_account = input; self
+        self.associate_entire_account = input;
+        self
     }
     /// <p>The Amazon Resource Name (ARN) of the consumer that is associated with the datashare.</p>
     pub fn consumer_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -76,7 +78,8 @@ impl AssociateDataShareConsumerInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the consumer that is associated with the datashare.</p>
     pub fn set_consumer_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.consumer_arn = input; self
+        self.consumer_arn = input;
+        self
     }
     /// <p>From a datashare consumer account, associates a datashare with all existing and future namespaces in the specified Amazon Web Services Region.</p>
     pub fn consumer_region(mut self, input: impl Into<std::string::String>) -> Self {
@@ -85,22 +88,23 @@ impl AssociateDataShareConsumerInputBuilder {
     }
     /// <p>From a datashare consumer account, associates a datashare with all existing and future namespaces in the specified Amazon Web Services Region.</p>
     pub fn set_consumer_region(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.consumer_region = input; self
+        self.consumer_region = input;
+        self
     }
     /// Consumes the builder and constructs a [`AssociateDataShareConsumerInput`](crate::operation::associate_data_share_consumer::AssociateDataShareConsumerInput).
-    pub fn build(self) -> Result<crate::operation::associate_data_share_consumer::AssociateDataShareConsumerInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::associate_data_share_consumer::AssociateDataShareConsumerInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::associate_data_share_consumer::AssociateDataShareConsumerInput {
-                data_share_arn: self.data_share_arn
-                ,
-                associate_entire_account: self.associate_entire_account
-                ,
-                consumer_arn: self.consumer_arn
-                ,
-                consumer_region: self.consumer_region
-                ,
-            }
+                data_share_arn: self.data_share_arn,
+                associate_entire_account: self.associate_entire_account,
+                consumer_arn: self.consumer_arn,
+                consumer_region: self.consumer_region,
+            },
         )
     }
 }
-

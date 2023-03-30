@@ -3,14 +3,14 @@
 /// Start time for the action.
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct FixedModeScheduleActionStartSettings  {
+pub struct FixedModeScheduleActionStartSettings {
     /// Start time for the action to start in the channel. (Not the time for the action to be added to the schedule: actions are always added to the schedule immediately.) UTC format: yyyy-mm-ddThh:mm:ss.nnnZ. All the letters are digits (for example, mm might be 01) except for the two constants "T" for time and "Z" for "UTC format".
     #[doc(hidden)]
     pub time: std::option::Option<std::string::String>,
 }
 impl FixedModeScheduleActionStartSettings {
     /// Start time for the action to start in the channel. (Not the time for the action to be added to the schedule: actions are always added to the schedule immediately.) UTC format: yyyy-mm-ddThh:mm:ss.nnnZ. All the letters are digits (for example, mm might be 01) except for the two constants "T" for time and "Z" for "UTC format".
-    pub fn time(&self) -> std::option::Option<& str> {
+    pub fn time(&self) -> std::option::Option<&str> {
         self.time.as_deref()
     }
 }
@@ -35,14 +35,11 @@ impl FixedModeScheduleActionStartSettingsBuilder {
     }
     /// Start time for the action to start in the channel. (Not the time for the action to be added to the schedule: actions are always added to the schedule immediately.) UTC format: yyyy-mm-ddThh:mm:ss.nnnZ. All the letters are digits (for example, mm might be 01) except for the two constants "T" for time and "Z" for "UTC format".
     pub fn set_time(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.time = input; self
+        self.time = input;
+        self
     }
     /// Consumes the builder and constructs a [`FixedModeScheduleActionStartSettings`](crate::types::FixedModeScheduleActionStartSettings).
     pub fn build(self) -> crate::types::FixedModeScheduleActionStartSettings {
-        crate::types::FixedModeScheduleActionStartSettings {
-            time: self.time
-            ,
-        }
+        crate::types::FixedModeScheduleActionStartSettings { time: self.time }
     }
 }
-

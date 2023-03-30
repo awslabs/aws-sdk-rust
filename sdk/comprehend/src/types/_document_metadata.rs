@@ -3,13 +3,14 @@
 /// <p>Information about the document, discovered during text extraction.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DocumentMetadata  {
+pub struct DocumentMetadata {
     /// <p>Number of pages in the document.</p>
     #[doc(hidden)]
     pub pages: std::option::Option<i32>,
     /// <p>List of pages in the document, with the number of characters extracted from each page.</p>
     #[doc(hidden)]
-    pub extracted_characters: std::option::Option<std::vec::Vec<crate::types::ExtractedCharactersListItem>>,
+    pub extracted_characters:
+        std::option::Option<std::vec::Vec<crate::types::ExtractedCharactersListItem>>,
 }
 impl DocumentMetadata {
     /// <p>Number of pages in the document.</p>
@@ -17,7 +18,9 @@ impl DocumentMetadata {
         self.pages
     }
     /// <p>List of pages in the document, with the number of characters extracted from each page.</p>
-    pub fn extracted_characters(&self) -> std::option::Option<& [crate::types::ExtractedCharactersListItem]> {
+    pub fn extracted_characters(
+        &self,
+    ) -> std::option::Option<&[crate::types::ExtractedCharactersListItem]> {
         self.extracted_characters.as_deref()
     }
 }
@@ -33,7 +36,8 @@ impl DocumentMetadata {
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct DocumentMetadataBuilder {
     pub(crate) pages: std::option::Option<i32>,
-    pub(crate) extracted_characters: std::option::Option<std::vec::Vec<crate::types::ExtractedCharactersListItem>>,
+    pub(crate) extracted_characters:
+        std::option::Option<std::vec::Vec<crate::types::ExtractedCharactersListItem>>,
 }
 impl DocumentMetadataBuilder {
     /// <p>Number of pages in the document.</p>
@@ -43,31 +47,36 @@ impl DocumentMetadataBuilder {
     }
     /// <p>Number of pages in the document.</p>
     pub fn set_pages(mut self, input: std::option::Option<i32>) -> Self {
-        self.pages = input; self
+        self.pages = input;
+        self
     }
     /// Appends an item to `extracted_characters`.
     ///
     /// To override the contents of this collection use [`set_extracted_characters`](Self::set_extracted_characters).
     ///
     /// <p>List of pages in the document, with the number of characters extracted from each page.</p>
-    pub fn extracted_characters(mut self, input: crate::types::ExtractedCharactersListItem) -> Self {
+    pub fn extracted_characters(
+        mut self,
+        input: crate::types::ExtractedCharactersListItem,
+    ) -> Self {
         let mut v = self.extracted_characters.unwrap_or_default();
-                        v.push(input);
-                        self.extracted_characters = Some(v);
-                        self
+        v.push(input);
+        self.extracted_characters = Some(v);
+        self
     }
     /// <p>List of pages in the document, with the number of characters extracted from each page.</p>
-    pub fn set_extracted_characters(mut self, input: std::option::Option<std::vec::Vec<crate::types::ExtractedCharactersListItem>>) -> Self {
-        self.extracted_characters = input; self
+    pub fn set_extracted_characters(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::ExtractedCharactersListItem>>,
+    ) -> Self {
+        self.extracted_characters = input;
+        self
     }
     /// Consumes the builder and constructs a [`DocumentMetadata`](crate::types::DocumentMetadata).
     pub fn build(self) -> crate::types::DocumentMetadata {
         crate::types::DocumentMetadata {
-            pages: self.pages
-            ,
-            extracted_characters: self.extracted_characters
-            ,
+            pages: self.pages,
+            extracted_characters: self.extracted_characters,
         }
     }
 }
-

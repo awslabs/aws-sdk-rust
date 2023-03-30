@@ -3,7 +3,7 @@
 /// <p>Information about a network resource definition.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct NetworkResourceDefinition  {
+pub struct NetworkResourceDefinition {
     /// <p>The type in the network resource definition.</p>
     #[doc(hidden)]
     pub r#type: std::option::Option<crate::types::NetworkResourceDefinitionType>,
@@ -16,11 +16,11 @@ pub struct NetworkResourceDefinition  {
 }
 impl NetworkResourceDefinition {
     /// <p>The type in the network resource definition.</p>
-    pub fn r#type(&self) -> std::option::Option<& crate::types::NetworkResourceDefinitionType> {
+    pub fn r#type(&self) -> std::option::Option<&crate::types::NetworkResourceDefinitionType> {
         self.r#type.as_ref()
     }
     /// <p>The options in the network resource definition.</p>
-    pub fn options(&self) -> std::option::Option<& [crate::types::NameValuePair]> {
+    pub fn options(&self) -> std::option::Option<&[crate::types::NameValuePair]> {
         self.options.as_deref()
     }
     /// <p>The count in the network resource definition.</p>
@@ -50,8 +50,12 @@ impl NetworkResourceDefinitionBuilder {
         self
     }
     /// <p>The type in the network resource definition.</p>
-    pub fn set_type(mut self, input: std::option::Option<crate::types::NetworkResourceDefinitionType>) -> Self {
-        self.r#type = input; self
+    pub fn set_type(
+        mut self,
+        input: std::option::Option<crate::types::NetworkResourceDefinitionType>,
+    ) -> Self {
+        self.r#type = input;
+        self
     }
     /// Appends an item to `options`.
     ///
@@ -60,13 +64,17 @@ impl NetworkResourceDefinitionBuilder {
     /// <p>The options in the network resource definition.</p>
     pub fn options(mut self, input: crate::types::NameValuePair) -> Self {
         let mut v = self.options.unwrap_or_default();
-                        v.push(input);
-                        self.options = Some(v);
-                        self
+        v.push(input);
+        self.options = Some(v);
+        self
     }
     /// <p>The options in the network resource definition.</p>
-    pub fn set_options(mut self, input: std::option::Option<std::vec::Vec<crate::types::NameValuePair>>) -> Self {
-        self.options = input; self
+    pub fn set_options(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::NameValuePair>>,
+    ) -> Self {
+        self.options = input;
+        self
     }
     /// <p>The count in the network resource definition.</p>
     pub fn count(mut self, input: i32) -> Self {
@@ -75,18 +83,15 @@ impl NetworkResourceDefinitionBuilder {
     }
     /// <p>The count in the network resource definition.</p>
     pub fn set_count(mut self, input: std::option::Option<i32>) -> Self {
-        self.count = input; self
+        self.count = input;
+        self
     }
     /// Consumes the builder and constructs a [`NetworkResourceDefinition`](crate::types::NetworkResourceDefinition).
     pub fn build(self) -> crate::types::NetworkResourceDefinition {
         crate::types::NetworkResourceDefinition {
-            r#type: self.r#type
-            ,
-            options: self.options
-            ,
-            count: self.count
-            ,
+            r#type: self.r#type,
+            options: self.options,
+            count: self.count,
         }
     }
 }
-

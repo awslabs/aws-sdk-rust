@@ -2,9 +2,9 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreatePublicDnsNamespaceInput  {
-    /// <p>The name that you want to assign to this namespace.</p> <note> 
-    /// <p>Do not include sensitive information in the name. The name is publicly available using DNS queries.</p> 
+pub struct CreatePublicDnsNamespaceInput {
+    /// <p>The name that you want to assign to this namespace.</p> <note>
+    /// <p>Do not include sensitive information in the name. The name is publicly available using DNS queries.</p>
     /// </note>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -22,32 +22,34 @@ pub struct CreatePublicDnsNamespaceInput  {
     pub properties: std::option::Option<crate::types::PublicDnsNamespaceProperties>,
 }
 impl CreatePublicDnsNamespaceInput {
-    /// <p>The name that you want to assign to this namespace.</p> <note> 
-    /// <p>Do not include sensitive information in the name. The name is publicly available using DNS queries.</p> 
+    /// <p>The name that you want to assign to this namespace.</p> <note>
+    /// <p>Do not include sensitive information in the name. The name is publicly available using DNS queries.</p>
     /// </note>
-    pub fn name(&self) -> std::option::Option<& str> {
+    pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>A unique string that identifies the request and that allows failed <code>CreatePublicDnsNamespace</code> requests to be retried without the risk of running the operation twice. <code>CreatorRequestId</code> can be any unique string (for example, a date/timestamp).</p>
-    pub fn creator_request_id(&self) -> std::option::Option<& str> {
+    pub fn creator_request_id(&self) -> std::option::Option<&str> {
         self.creator_request_id.as_deref()
     }
     /// <p>A description for the namespace.</p>
-    pub fn description(&self) -> std::option::Option<& str> {
+    pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
     /// <p>The tags to add to the namespace. Each tag consists of a key and an optional value that you define. Tags keys can be up to 128 characters in length, and tag values can be up to 256 characters in length.</p>
-    pub fn tags(&self) -> std::option::Option<& [crate::types::Tag]> {
+    pub fn tags(&self) -> std::option::Option<&[crate::types::Tag]> {
         self.tags.as_deref()
     }
     /// <p>Properties for the public DNS namespace.</p>
-    pub fn properties(&self) -> std::option::Option<& crate::types::PublicDnsNamespaceProperties> {
+    pub fn properties(&self) -> std::option::Option<&crate::types::PublicDnsNamespaceProperties> {
         self.properties.as_ref()
     }
 }
 impl CreatePublicDnsNamespaceInput {
     /// Creates a new builder-style object to manufacture [`CreatePublicDnsNamespaceInput`](crate::operation::create_public_dns_namespace::CreatePublicDnsNamespaceInput).
-    pub fn builder() -> crate::operation::create_public_dns_namespace::builders::CreatePublicDnsNamespaceInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::create_public_dns_namespace::builders::CreatePublicDnsNamespaceInputBuilder
+    {
         crate::operation::create_public_dns_namespace::builders::CreatePublicDnsNamespaceInputBuilder::default()
     }
 }
@@ -63,18 +65,19 @@ pub struct CreatePublicDnsNamespaceInputBuilder {
     pub(crate) properties: std::option::Option<crate::types::PublicDnsNamespaceProperties>,
 }
 impl CreatePublicDnsNamespaceInputBuilder {
-    /// <p>The name that you want to assign to this namespace.</p> <note> 
-    /// <p>Do not include sensitive information in the name. The name is publicly available using DNS queries.</p> 
+    /// <p>The name that you want to assign to this namespace.</p> <note>
+    /// <p>Do not include sensitive information in the name. The name is publicly available using DNS queries.</p>
     /// </note>
     pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
         self.name = Some(input.into());
         self
     }
-    /// <p>The name that you want to assign to this namespace.</p> <note> 
-    /// <p>Do not include sensitive information in the name. The name is publicly available using DNS queries.</p> 
+    /// <p>The name that you want to assign to this namespace.</p> <note>
+    /// <p>Do not include sensitive information in the name. The name is publicly available using DNS queries.</p>
     /// </note>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input; self
+        self.name = input;
+        self
     }
     /// <p>A unique string that identifies the request and that allows failed <code>CreatePublicDnsNamespace</code> requests to be retried without the risk of running the operation twice. <code>CreatorRequestId</code> can be any unique string (for example, a date/timestamp).</p>
     pub fn creator_request_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -82,8 +85,12 @@ impl CreatePublicDnsNamespaceInputBuilder {
         self
     }
     /// <p>A unique string that identifies the request and that allows failed <code>CreatePublicDnsNamespace</code> requests to be retried without the risk of running the operation twice. <code>CreatorRequestId</code> can be any unique string (for example, a date/timestamp).</p>
-    pub fn set_creator_request_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.creator_request_id = input; self
+    pub fn set_creator_request_id(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.creator_request_id = input;
+        self
     }
     /// <p>A description for the namespace.</p>
     pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -92,7 +99,8 @@ impl CreatePublicDnsNamespaceInputBuilder {
     }
     /// <p>A description for the namespace.</p>
     pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.description = input; self
+        self.description = input;
+        self
     }
     /// Appends an item to `tags`.
     ///
@@ -101,13 +109,17 @@ impl CreatePublicDnsNamespaceInputBuilder {
     /// <p>The tags to add to the namespace. Each tag consists of a key and an optional value that you define. Tags keys can be up to 128 characters in length, and tag values can be up to 256 characters in length.</p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
-                        v.push(input);
-                        self.tags = Some(v);
-                        self
+        v.push(input);
+        self.tags = Some(v);
+        self
     }
     /// <p>The tags to add to the namespace. Each tag consists of a key and an optional value that you define. Tags keys can be up to 128 characters in length, and tag values can be up to 256 characters in length.</p>
-    pub fn set_tags(mut self, input: std::option::Option<std::vec::Vec<crate::types::Tag>>) -> Self {
-        self.tags = input; self
+    pub fn set_tags(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::Tag>>,
+    ) -> Self {
+        self.tags = input;
+        self
     }
     /// <p>Properties for the public DNS namespace.</p>
     pub fn properties(mut self, input: crate::types::PublicDnsNamespaceProperties) -> Self {
@@ -115,25 +127,28 @@ impl CreatePublicDnsNamespaceInputBuilder {
         self
     }
     /// <p>Properties for the public DNS namespace.</p>
-    pub fn set_properties(mut self, input: std::option::Option<crate::types::PublicDnsNamespaceProperties>) -> Self {
-        self.properties = input; self
+    pub fn set_properties(
+        mut self,
+        input: std::option::Option<crate::types::PublicDnsNamespaceProperties>,
+    ) -> Self {
+        self.properties = input;
+        self
     }
     /// Consumes the builder and constructs a [`CreatePublicDnsNamespaceInput`](crate::operation::create_public_dns_namespace::CreatePublicDnsNamespaceInput).
-    pub fn build(self) -> Result<crate::operation::create_public_dns_namespace::CreatePublicDnsNamespaceInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::create_public_dns_namespace::CreatePublicDnsNamespaceInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::create_public_dns_namespace::CreatePublicDnsNamespaceInput {
-                name: self.name
-                ,
-                creator_request_id: self.creator_request_id
-                ,
-                description: self.description
-                ,
-                tags: self.tags
-                ,
-                properties: self.properties
-                ,
-            }
+                name: self.name,
+                creator_request_id: self.creator_request_id,
+                description: self.description,
+                tags: self.tags,
+                properties: self.properties,
+            },
         )
     }
 }
-

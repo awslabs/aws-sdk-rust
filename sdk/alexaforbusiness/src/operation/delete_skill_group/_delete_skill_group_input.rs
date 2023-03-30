@@ -2,20 +2,21 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteSkillGroupInput  {
+pub struct DeleteSkillGroupInput {
     /// <p>The ARN of the skill group to delete. Required.</p>
     #[doc(hidden)]
     pub skill_group_arn: std::option::Option<std::string::String>,
 }
 impl DeleteSkillGroupInput {
     /// <p>The ARN of the skill group to delete. Required.</p>
-    pub fn skill_group_arn(&self) -> std::option::Option<& str> {
+    pub fn skill_group_arn(&self) -> std::option::Option<&str> {
         self.skill_group_arn.as_deref()
     }
 }
 impl DeleteSkillGroupInput {
     /// Creates a new builder-style object to manufacture [`DeleteSkillGroupInput`](crate::operation::delete_skill_group::DeleteSkillGroupInput).
-    pub fn builder() -> crate::operation::delete_skill_group::builders::DeleteSkillGroupInputBuilder {
+    pub fn builder() -> crate::operation::delete_skill_group::builders::DeleteSkillGroupInputBuilder
+    {
         crate::operation::delete_skill_group::builders::DeleteSkillGroupInputBuilder::default()
     }
 }
@@ -34,16 +35,20 @@ impl DeleteSkillGroupInputBuilder {
     }
     /// <p>The ARN of the skill group to delete. Required.</p>
     pub fn set_skill_group_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.skill_group_arn = input; self
+        self.skill_group_arn = input;
+        self
     }
     /// Consumes the builder and constructs a [`DeleteSkillGroupInput`](crate::operation::delete_skill_group::DeleteSkillGroupInput).
-    pub fn build(self) -> Result<crate::operation::delete_skill_group::DeleteSkillGroupInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::delete_skill_group::DeleteSkillGroupInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::delete_skill_group::DeleteSkillGroupInput {
-                skill_group_arn: self.skill_group_arn
-                ,
-            }
+                skill_group_arn: self.skill_group_arn,
+            },
         )
     }
 }
-

@@ -3,7 +3,7 @@
 /// <p>Contains details about an iteration of a Map state.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct MapIterationEventDetails  {
+pub struct MapIterationEventDetails {
     /// <p>The name of the iteration’s parent Map state.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -13,7 +13,7 @@ pub struct MapIterationEventDetails  {
 }
 impl MapIterationEventDetails {
     /// <p>The name of the iteration’s parent Map state.</p>
-    pub fn name(&self) -> std::option::Option<& str> {
+    pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>The index of the array belonging to the Map state iteration.</p>
@@ -43,7 +43,8 @@ impl MapIterationEventDetailsBuilder {
     }
     /// <p>The name of the iteration’s parent Map state.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input; self
+        self.name = input;
+        self
     }
     /// <p>The index of the array belonging to the Map state iteration.</p>
     pub fn index(mut self, input: i32) -> Self {
@@ -52,17 +53,14 @@ impl MapIterationEventDetailsBuilder {
     }
     /// <p>The index of the array belonging to the Map state iteration.</p>
     pub fn set_index(mut self, input: std::option::Option<i32>) -> Self {
-        self.index = input; self
+        self.index = input;
+        self
     }
     /// Consumes the builder and constructs a [`MapIterationEventDetails`](crate::types::MapIterationEventDetails).
     pub fn build(self) -> crate::types::MapIterationEventDetails {
         crate::types::MapIterationEventDetails {
-            name: self.name
-            ,
-            index: self.index
-                .unwrap_or_default()
-            ,
+            name: self.name,
+            index: self.index.unwrap_or_default(),
         }
     }
 }
-

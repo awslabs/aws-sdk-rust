@@ -3,7 +3,7 @@
 /// <p>Details of a resource that failed when trying to update it's association to a resource set.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct FailedItem  {
+pub struct FailedItem {
     /// <p>The univeral resource indicator (URI) of the resource that failed.</p>
     #[doc(hidden)]
     pub uri: std::option::Option<std::string::String>,
@@ -13,11 +13,11 @@ pub struct FailedItem  {
 }
 impl FailedItem {
     /// <p>The univeral resource indicator (URI) of the resource that failed.</p>
-    pub fn uri(&self) -> std::option::Option<& str> {
+    pub fn uri(&self) -> std::option::Option<&str> {
         self.uri.as_deref()
     }
     /// <p>The reason the resource's association could not be updated.</p>
-    pub fn reason(&self) -> std::option::Option<& crate::types::FailedItemReason> {
+    pub fn reason(&self) -> std::option::Option<&crate::types::FailedItemReason> {
         self.reason.as_ref()
     }
 }
@@ -43,7 +43,8 @@ impl FailedItemBuilder {
     }
     /// <p>The univeral resource indicator (URI) of the resource that failed.</p>
     pub fn set_uri(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.uri = input; self
+        self.uri = input;
+        self
     }
     /// <p>The reason the resource's association could not be updated.</p>
     pub fn reason(mut self, input: crate::types::FailedItemReason) -> Self {
@@ -51,17 +52,18 @@ impl FailedItemBuilder {
         self
     }
     /// <p>The reason the resource's association could not be updated.</p>
-    pub fn set_reason(mut self, input: std::option::Option<crate::types::FailedItemReason>) -> Self {
-        self.reason = input; self
+    pub fn set_reason(
+        mut self,
+        input: std::option::Option<crate::types::FailedItemReason>,
+    ) -> Self {
+        self.reason = input;
+        self
     }
     /// Consumes the builder and constructs a [`FailedItem`](crate::types::FailedItem).
     pub fn build(self) -> crate::types::FailedItem {
         crate::types::FailedItem {
-            uri: self.uri
-            ,
-            reason: self.reason
-            ,
+            uri: self.uri,
+            reason: self.reason,
         }
     }
 }
-

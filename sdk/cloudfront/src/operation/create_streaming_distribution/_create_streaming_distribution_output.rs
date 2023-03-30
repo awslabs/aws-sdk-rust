@@ -3,7 +3,7 @@
 /// <p>The returned result of the corresponding request.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateStreamingDistributionOutput  {
+pub struct CreateStreamingDistributionOutput {
     /// <p>The streaming distribution's information.</p>
     #[doc(hidden)]
     pub streaming_distribution: std::option::Option<crate::types::StreamingDistribution>,
@@ -17,26 +17,28 @@ pub struct CreateStreamingDistributionOutput  {
 }
 impl CreateStreamingDistributionOutput {
     /// <p>The streaming distribution's information.</p>
-    pub fn streaming_distribution(&self) -> std::option::Option<& crate::types::StreamingDistribution> {
+    pub fn streaming_distribution(
+        &self,
+    ) -> std::option::Option<&crate::types::StreamingDistribution> {
         self.streaming_distribution.as_ref()
     }
     /// <p>The fully qualified URI of the new streaming distribution resource just created.</p>
-    pub fn location(&self) -> std::option::Option<& str> {
+    pub fn location(&self) -> std::option::Option<&str> {
         self.location.as_deref()
     }
     /// <p>The current version of the streaming distribution created.</p>
-    pub fn e_tag(&self) -> std::option::Option<& str> {
+    pub fn e_tag(&self) -> std::option::Option<&str> {
         self.e_tag.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for CreateStreamingDistributionOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl CreateStreamingDistributionOutput {
     /// Creates a new builder-style object to manufacture [`CreateStreamingDistributionOutput`](crate::operation::create_streaming_distribution::CreateStreamingDistributionOutput).
-    pub fn builder() -> crate::operation::create_streaming_distribution::builders::CreateStreamingDistributionOutputBuilder {
+    pub fn builder() -> crate::operation::create_streaming_distribution::builders::CreateStreamingDistributionOutputBuilder{
         crate::operation::create_streaming_distribution::builders::CreateStreamingDistributionOutputBuilder::default()
     }
 }
@@ -57,8 +59,12 @@ impl CreateStreamingDistributionOutputBuilder {
         self
     }
     /// <p>The streaming distribution's information.</p>
-    pub fn set_streaming_distribution(mut self, input: std::option::Option<crate::types::StreamingDistribution>) -> Self {
-        self.streaming_distribution = input; self
+    pub fn set_streaming_distribution(
+        mut self,
+        input: std::option::Option<crate::types::StreamingDistribution>,
+    ) -> Self {
+        self.streaming_distribution = input;
+        self
     }
     /// <p>The fully qualified URI of the new streaming distribution resource just created.</p>
     pub fn location(mut self, input: impl Into<std::string::String>) -> Self {
@@ -67,7 +73,8 @@ impl CreateStreamingDistributionOutputBuilder {
     }
     /// <p>The fully qualified URI of the new streaming distribution resource just created.</p>
     pub fn set_location(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.location = input; self
+        self.location = input;
+        self
     }
     /// <p>The current version of the streaming distribution created.</p>
     pub fn e_tag(mut self, input: impl Into<std::string::String>) -> Self {
@@ -76,28 +83,27 @@ impl CreateStreamingDistributionOutputBuilder {
     }
     /// <p>The current version of the streaming distribution created.</p>
     pub fn set_e_tag(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.e_tag = input; self
+        self.e_tag = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`CreateStreamingDistributionOutput`](crate::operation::create_streaming_distribution::CreateStreamingDistributionOutput).
-    pub fn build(self) -> crate::operation::create_streaming_distribution::CreateStreamingDistributionOutput {
+    pub fn build(
+        self,
+    ) -> crate::operation::create_streaming_distribution::CreateStreamingDistributionOutput {
         crate::operation::create_streaming_distribution::CreateStreamingDistributionOutput {
-            streaming_distribution: self.streaming_distribution
-            ,
-            location: self.location
-            ,
-            e_tag: self.e_tag
-            ,
+            streaming_distribution: self.streaming_distribution,
+            location: self.location,
+            e_tag: self.e_tag,
             _request_id: self._request_id,
         }
     }
 }
-

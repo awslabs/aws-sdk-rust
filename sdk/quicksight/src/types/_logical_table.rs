@@ -3,7 +3,7 @@
 /// <p>A <i>logical table</i> is a unit that joins and that data transformations operate on. A logical table has a source, which can be either a physical table or result of a join. When a logical table points to a physical table, the logical table acts as a mutable copy of that physical table through transform operations.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct LogicalTable  {
+pub struct LogicalTable {
     /// <p>A display name for the logical table.</p>
     #[doc(hidden)]
     pub alias: std::option::Option<std::string::String>,
@@ -16,15 +16,15 @@ pub struct LogicalTable  {
 }
 impl LogicalTable {
     /// <p>A display name for the logical table.</p>
-    pub fn alias(&self) -> std::option::Option<& str> {
+    pub fn alias(&self) -> std::option::Option<&str> {
         self.alias.as_deref()
     }
     /// <p>Transform operations that act on this logical table. For this structure to be valid, only one of the attributes can be non-null. </p>
-    pub fn data_transforms(&self) -> std::option::Option<& [crate::types::TransformOperation]> {
+    pub fn data_transforms(&self) -> std::option::Option<&[crate::types::TransformOperation]> {
         self.data_transforms.as_deref()
     }
     /// <p>Source of this logical table.</p>
-    pub fn source(&self) -> std::option::Option<& crate::types::LogicalTableSource> {
+    pub fn source(&self) -> std::option::Option<&crate::types::LogicalTableSource> {
         self.source.as_ref()
     }
 }
@@ -40,7 +40,8 @@ impl LogicalTable {
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct LogicalTableBuilder {
     pub(crate) alias: std::option::Option<std::string::String>,
-    pub(crate) data_transforms: std::option::Option<std::vec::Vec<crate::types::TransformOperation>>,
+    pub(crate) data_transforms:
+        std::option::Option<std::vec::Vec<crate::types::TransformOperation>>,
     pub(crate) source: std::option::Option<crate::types::LogicalTableSource>,
 }
 impl LogicalTableBuilder {
@@ -51,7 +52,8 @@ impl LogicalTableBuilder {
     }
     /// <p>A display name for the logical table.</p>
     pub fn set_alias(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.alias = input; self
+        self.alias = input;
+        self
     }
     /// Appends an item to `data_transforms`.
     ///
@@ -60,13 +62,17 @@ impl LogicalTableBuilder {
     /// <p>Transform operations that act on this logical table. For this structure to be valid, only one of the attributes can be non-null. </p>
     pub fn data_transforms(mut self, input: crate::types::TransformOperation) -> Self {
         let mut v = self.data_transforms.unwrap_or_default();
-                        v.push(input);
-                        self.data_transforms = Some(v);
-                        self
+        v.push(input);
+        self.data_transforms = Some(v);
+        self
     }
     /// <p>Transform operations that act on this logical table. For this structure to be valid, only one of the attributes can be non-null. </p>
-    pub fn set_data_transforms(mut self, input: std::option::Option<std::vec::Vec<crate::types::TransformOperation>>) -> Self {
-        self.data_transforms = input; self
+    pub fn set_data_transforms(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::TransformOperation>>,
+    ) -> Self {
+        self.data_transforms = input;
+        self
     }
     /// <p>Source of this logical table.</p>
     pub fn source(mut self, input: crate::types::LogicalTableSource) -> Self {
@@ -74,19 +80,19 @@ impl LogicalTableBuilder {
         self
     }
     /// <p>Source of this logical table.</p>
-    pub fn set_source(mut self, input: std::option::Option<crate::types::LogicalTableSource>) -> Self {
-        self.source = input; self
+    pub fn set_source(
+        mut self,
+        input: std::option::Option<crate::types::LogicalTableSource>,
+    ) -> Self {
+        self.source = input;
+        self
     }
     /// Consumes the builder and constructs a [`LogicalTable`](crate::types::LogicalTable).
     pub fn build(self) -> crate::types::LogicalTable {
         crate::types::LogicalTable {
-            alias: self.alias
-            ,
-            data_transforms: self.data_transforms
-            ,
-            source: self.source
-            ,
+            alias: self.alias,
+            data_transforms: self.data_transforms,
+            source: self.source,
         }
     }
 }
-

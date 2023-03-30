@@ -21,7 +21,11 @@ impl TemplateVersionSourceInput {
     /// Tries to convert the enum instance into [`S3`](crate::types::TemplateVersionSourceInput::S3), extracting the inner [`S3ObjectSource`](crate::types::S3ObjectSource).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_s3(&self) -> std::result::Result<&crate::types::S3ObjectSource, &Self> {
-        if let TemplateVersionSourceInput::S3(val) = &self { Ok(val) } else { Err(self) }
+        if let TemplateVersionSourceInput::S3(val) = &self {
+            Ok(val)
+        } else {
+            Err(self)
+        }
     }
     /// Returns true if this is a [`S3`](crate::types::TemplateVersionSourceInput::S3).
     pub fn is_s3(&self) -> bool {
@@ -32,4 +36,3 @@ impl TemplateVersionSourceInput {
         matches!(self, Self::Unknown)
     }
 }
-

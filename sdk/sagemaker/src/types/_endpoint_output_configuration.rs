@@ -3,7 +3,7 @@
 /// <p>The endpoint configuration made by Inference Recommender during a recommendation job.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct EndpointOutputConfiguration  {
+pub struct EndpointOutputConfiguration {
     /// <p>The name of the endpoint made during a recommendation job.</p>
     #[doc(hidden)]
     pub endpoint_name: std::option::Option<std::string::String>,
@@ -19,15 +19,17 @@ pub struct EndpointOutputConfiguration  {
 }
 impl EndpointOutputConfiguration {
     /// <p>The name of the endpoint made during a recommendation job.</p>
-    pub fn endpoint_name(&self) -> std::option::Option<& str> {
+    pub fn endpoint_name(&self) -> std::option::Option<&str> {
         self.endpoint_name.as_deref()
     }
     /// <p>The name of the production variant (deployed model) made during a recommendation job.</p>
-    pub fn variant_name(&self) -> std::option::Option<& str> {
+    pub fn variant_name(&self) -> std::option::Option<&str> {
         self.variant_name.as_deref()
     }
     /// <p>The instance type recommended by Amazon SageMaker Inference Recommender.</p>
-    pub fn instance_type(&self) -> std::option::Option<& crate::types::ProductionVariantInstanceType> {
+    pub fn instance_type(
+        &self,
+    ) -> std::option::Option<&crate::types::ProductionVariantInstanceType> {
         self.instance_type.as_ref()
     }
     /// <p>The number of instances recommended to launch initially.</p>
@@ -59,7 +61,8 @@ impl EndpointOutputConfigurationBuilder {
     }
     /// <p>The name of the endpoint made during a recommendation job.</p>
     pub fn set_endpoint_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.endpoint_name = input; self
+        self.endpoint_name = input;
+        self
     }
     /// <p>The name of the production variant (deployed model) made during a recommendation job.</p>
     pub fn variant_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -68,7 +71,8 @@ impl EndpointOutputConfigurationBuilder {
     }
     /// <p>The name of the production variant (deployed model) made during a recommendation job.</p>
     pub fn set_variant_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.variant_name = input; self
+        self.variant_name = input;
+        self
     }
     /// <p>The instance type recommended by Amazon SageMaker Inference Recommender.</p>
     pub fn instance_type(mut self, input: crate::types::ProductionVariantInstanceType) -> Self {
@@ -76,8 +80,12 @@ impl EndpointOutputConfigurationBuilder {
         self
     }
     /// <p>The instance type recommended by Amazon SageMaker Inference Recommender.</p>
-    pub fn set_instance_type(mut self, input: std::option::Option<crate::types::ProductionVariantInstanceType>) -> Self {
-        self.instance_type = input; self
+    pub fn set_instance_type(
+        mut self,
+        input: std::option::Option<crate::types::ProductionVariantInstanceType>,
+    ) -> Self {
+        self.instance_type = input;
+        self
     }
     /// <p>The number of instances recommended to launch initially.</p>
     pub fn initial_instance_count(mut self, input: i32) -> Self {
@@ -86,21 +94,16 @@ impl EndpointOutputConfigurationBuilder {
     }
     /// <p>The number of instances recommended to launch initially.</p>
     pub fn set_initial_instance_count(mut self, input: std::option::Option<i32>) -> Self {
-        self.initial_instance_count = input; self
+        self.initial_instance_count = input;
+        self
     }
     /// Consumes the builder and constructs a [`EndpointOutputConfiguration`](crate::types::EndpointOutputConfiguration).
     pub fn build(self) -> crate::types::EndpointOutputConfiguration {
         crate::types::EndpointOutputConfiguration {
-            endpoint_name: self.endpoint_name
-            ,
-            variant_name: self.variant_name
-            ,
-            instance_type: self.instance_type
-            ,
-            initial_instance_count: self.initial_instance_count
-                .unwrap_or_default()
-            ,
+            endpoint_name: self.endpoint_name,
+            variant_name: self.variant_name,
+            instance_type: self.instance_type,
+            initial_instance_count: self.initial_instance_count.unwrap_or_default(),
         }
     }
 }
-

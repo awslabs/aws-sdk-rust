@@ -4,49 +4,71 @@ pub use crate::operation::create_environment::_create_environment_output::Create
 pub use crate::operation::create_environment::_create_environment_input::CreateEnvironmentInputBuilder;
 
 /// Fluent builder constructing a request to `CreateEnvironment`.
-/// 
+///
 /// <p>Creates a runtime environment for a given runtime engine.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct CreateEnvironmentFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::create_environment::builders::CreateEnvironmentInputBuilder
-            }
-impl CreateEnvironmentFluentBuilder  {
+    handle: std::sync::Arc<crate::client::Handle>,
+    inner: crate::operation::create_environment::builders::CreateEnvironmentInputBuilder,
+}
+impl CreateEnvironmentFluentBuilder {
     /// Creates a new `CreateEnvironment`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
-                    /// sent. The operation's inner [http::Request] can be modified as well.
-                    pub async fn customize(self) -> std::result::Result<
-                        crate::client::customize::CustomizableOperation<crate::operation::create_environment::CreateEnvironment, aws_http::retry::AwsResponseRetryClassifier,>,
-                        aws_smithy_http::result::SdkError<crate::operation::create_environment::CreateEnvironmentError>
-                    >  {
-                        let handle = self.handle.clone();
-                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-                    }
-    
-                    /// Sends the request and returns the response.
-                    ///
-                    /// If an error occurs, an `SdkError` will be returned with additional details that
-                    /// can be matched against.
-                    ///
-                    /// By default, any retryable failures will be retried twice. Retry behavior
-                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                    /// set when configuring the client.
-                    pub async fn send(self) -> std::result::Result<crate::operation::create_environment::CreateEnvironmentOutput, aws_smithy_http::result::SdkError<crate::operation::create_environment::CreateEnvironmentError>>
-                     {
-                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&self.handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        self.handle.client.call(op).await
-                    }
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle,
+            inner: Default::default(),
+        }
+    }
+
+    /// Consume this builder, creating a customizable operation that can be modified before being
+    /// sent. The operation's inner [http::Request] can be modified as well.
+    pub async fn customize(
+        self,
+    ) -> std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::create_environment::CreateEnvironment,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::result::SdkError<
+            crate::operation::create_environment::CreateEnvironmentError,
+        >,
+    > {
+        let handle = self.handle.clone();
+        let operation = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+    }
+
+    /// Sends the request and returns the response.
+    ///
+    /// If an error occurs, an `SdkError` will be returned with additional details that
+    /// can be matched against.
+    ///
+    /// By default, any retryable failures will be retried twice. Retry behavior
+    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+    /// set when configuring the client.
+    pub async fn send(
+        self,
+    ) -> std::result::Result<
+        crate::operation::create_environment::CreateEnvironmentOutput,
+        aws_smithy_http::result::SdkError<
+            crate::operation::create_environment::CreateEnvironmentError,
+        >,
+    > {
+        let op = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&self.handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        self.handle.client.call(op).await
+    }
     /// <p>The name of the runtime environment. Must be unique within the account.</p>
     pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.name(input.into());
@@ -107,7 +129,10 @@ impl CreateEnvironmentFluentBuilder  {
         self
     }
     /// <p>The list of subnets associated with the VPC for this runtime environment.</p>
-    pub fn set_subnet_ids(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+    pub fn set_subnet_ids(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
         self.inner = self.inner.set_subnet_ids(input);
         self
     }
@@ -121,7 +146,10 @@ impl CreateEnvironmentFluentBuilder  {
         self
     }
     /// <p>The list of security groups for the VPC associated with this runtime environment.</p>
-    pub fn set_security_group_ids(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+    pub fn set_security_group_ids(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
         self.inner = self.inner.set_security_group_ids(input);
         self
     }
@@ -135,7 +163,10 @@ impl CreateEnvironmentFluentBuilder  {
         self
     }
     /// <p>Optional. The storage configurations for this runtime environment.</p>
-    pub fn set_storage_configurations(mut self, input: std::option::Option<std::vec::Vec<crate::types::StorageConfiguration>>) -> Self {
+    pub fn set_storage_configurations(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::StorageConfiguration>>,
+    ) -> Self {
         self.inner = self.inner.set_storage_configurations(input);
         self
     }
@@ -155,7 +186,10 @@ impl CreateEnvironmentFluentBuilder  {
         self
     }
     /// <p>The details of a high availability configuration for this runtime environment.</p>
-    pub fn set_high_availability_config(mut self, input: std::option::Option<crate::types::HighAvailabilityConfig>) -> Self {
+    pub fn set_high_availability_config(
+        mut self,
+        input: std::option::Option<crate::types::HighAvailabilityConfig>,
+    ) -> Self {
         self.inner = self.inner.set_high_availability_config(input);
         self
     }
@@ -164,12 +198,21 @@ impl CreateEnvironmentFluentBuilder  {
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// <p>The tags for the runtime environment.</p>
-    pub fn tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
+    pub fn tags(
+        mut self,
+        k: impl Into<std::string::String>,
+        v: impl Into<std::string::String>,
+    ) -> Self {
         self.inner = self.inner.tags(k.into(), v.into());
         self
     }
     /// <p>The tags for the runtime environment.</p>
-    pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+    pub fn set_tags(
+        mut self,
+        input: std::option::Option<
+            std::collections::HashMap<std::string::String, std::string::String>,
+        >,
+    ) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }
@@ -179,7 +222,10 @@ impl CreateEnvironmentFluentBuilder  {
         self
     }
     /// <p>Configures the maintenance window you want for the runtime environment. If you do not provide a value, a random system-generated value will be assigned.</p>
-    pub fn set_preferred_maintenance_window(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_preferred_maintenance_window(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_preferred_maintenance_window(input);
         self
     }
@@ -204,4 +250,3 @@ impl CreateEnvironmentFluentBuilder  {
         self
     }
 }
-

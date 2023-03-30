@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-/// 
+///
 /// Here is an example of how you can make a match expression forward-compatible:
-/// 
+///
 /// ```text
 /// # let actionstatus = unimplemented!();
 /// match actionstatus {
@@ -38,14 +38,22 @@
 /// Specifically, when `actionstatus` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `ActionStatus::NewFeature` also yielding `"NewFeature"`.
-/// 
+///
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
 pub enum ActionStatus {
     #[allow(missing_docs)] // documentation missing in model
     ExecutionFailure,
@@ -68,57 +76,69 @@ pub enum ActionStatus {
     #[allow(missing_docs)] // documentation missing in model
     Standby,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::primitives::UnknownVariantValue)
+    Unknown(crate::primitives::UnknownVariantValue),
 }
 impl std::convert::From<&str> for ActionStatus {
-                fn from(s: &str) -> Self {
-                    match s {
-                        "EXECUTION_FAILURE" => ActionStatus::ExecutionFailure,
-"EXECUTION_IN_PROGRESS" => ActionStatus::ExecutionInProgress,
-"EXECUTION_SUCCESS" => ActionStatus::ExecutionSuccess,
-"PENDING" => ActionStatus::Pending,
-"RESET_FAILURE" => ActionStatus::ResetFailure,
-"RESET_IN_PROGRESS" => ActionStatus::ResetInProgress,
-"REVERSE_FAILURE" => ActionStatus::ReverseFailure,
-"REVERSE_IN_PROGRESS" => ActionStatus::ReverseInProgress,
-"REVERSE_SUCCESS" => ActionStatus::ReverseSuccess,
-"STANDBY" => ActionStatus::Standby,
-other => ActionStatus::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
-                    }
-                }
+    fn from(s: &str) -> Self {
+        match s {
+            "EXECUTION_FAILURE" => ActionStatus::ExecutionFailure,
+            "EXECUTION_IN_PROGRESS" => ActionStatus::ExecutionInProgress,
+            "EXECUTION_SUCCESS" => ActionStatus::ExecutionSuccess,
+            "PENDING" => ActionStatus::Pending,
+            "RESET_FAILURE" => ActionStatus::ResetFailure,
+            "RESET_IN_PROGRESS" => ActionStatus::ResetInProgress,
+            "REVERSE_FAILURE" => ActionStatus::ReverseFailure,
+            "REVERSE_IN_PROGRESS" => ActionStatus::ReverseInProgress,
+            "REVERSE_SUCCESS" => ActionStatus::ReverseSuccess,
+            "STANDBY" => ActionStatus::Standby,
+            other => {
+                ActionStatus::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
             }
-impl std::str::FromStr for ActionStatus {
-                type Err = std::convert::Infallible;
-
-                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-                    Ok(ActionStatus::from(s))
-                }
-            }
-impl ActionStatus {
-                /// Returns the `&str` value of the enum member.
-                pub fn as_str(&self) -> &str {
-                    match self {
-    ActionStatus::ExecutionFailure => "EXECUTION_FAILURE",
-    ActionStatus::ExecutionInProgress => "EXECUTION_IN_PROGRESS",
-    ActionStatus::ExecutionSuccess => "EXECUTION_SUCCESS",
-    ActionStatus::Pending => "PENDING",
-    ActionStatus::ResetFailure => "RESET_FAILURE",
-    ActionStatus::ResetInProgress => "RESET_IN_PROGRESS",
-    ActionStatus::ReverseFailure => "REVERSE_FAILURE",
-    ActionStatus::ReverseInProgress => "REVERSE_IN_PROGRESS",
-    ActionStatus::ReverseSuccess => "REVERSE_SUCCESS",
-    ActionStatus::Standby => "STANDBY",
-    ActionStatus::Unknown(value) => value.as_str()
+        }
+    }
 }
-                }
-                /// Returns all the `&str` representations of the enum members.
-                pub const fn values() -> &'static [&'static str] {
-                    &["EXECUTION_FAILURE", "EXECUTION_IN_PROGRESS", "EXECUTION_SUCCESS", "PENDING", "RESET_FAILURE", "RESET_IN_PROGRESS", "REVERSE_FAILURE", "REVERSE_IN_PROGRESS", "REVERSE_SUCCESS", "STANDBY"]
-                }
-            }
-impl AsRef<str> for ActionStatus {
-                fn as_ref(&self) -> &str {
-                    self.as_str()
-                }
-            }
+impl std::str::FromStr for ActionStatus {
+    type Err = std::convert::Infallible;
 
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(ActionStatus::from(s))
+    }
+}
+impl ActionStatus {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            ActionStatus::ExecutionFailure => "EXECUTION_FAILURE",
+            ActionStatus::ExecutionInProgress => "EXECUTION_IN_PROGRESS",
+            ActionStatus::ExecutionSuccess => "EXECUTION_SUCCESS",
+            ActionStatus::Pending => "PENDING",
+            ActionStatus::ResetFailure => "RESET_FAILURE",
+            ActionStatus::ResetInProgress => "RESET_IN_PROGRESS",
+            ActionStatus::ReverseFailure => "REVERSE_FAILURE",
+            ActionStatus::ReverseInProgress => "REVERSE_IN_PROGRESS",
+            ActionStatus::ReverseSuccess => "REVERSE_SUCCESS",
+            ActionStatus::Standby => "STANDBY",
+            ActionStatus::Unknown(value) => value.as_str(),
+        }
+    }
+    /// Returns all the `&str` representations of the enum members.
+    pub const fn values() -> &'static [&'static str] {
+        &[
+            "EXECUTION_FAILURE",
+            "EXECUTION_IN_PROGRESS",
+            "EXECUTION_SUCCESS",
+            "PENDING",
+            "RESET_FAILURE",
+            "RESET_IN_PROGRESS",
+            "REVERSE_FAILURE",
+            "REVERSE_IN_PROGRESS",
+            "REVERSE_SUCCESS",
+            "STANDBY",
+        ]
+    }
+}
+impl AsRef<str> for ActionStatus {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}

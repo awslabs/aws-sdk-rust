@@ -3,7 +3,7 @@
 /// <p>An execution property of a job.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ExecutionProperty  {
+pub struct ExecutionProperty {
     /// <p>The maximum number of concurrent runs allowed for the job. The default is 1. An error is returned when this threshold is reached. The maximum value you can specify is controlled by a service limit.</p>
     #[doc(hidden)]
     pub max_concurrent_runs: i32,
@@ -35,15 +35,13 @@ impl ExecutionPropertyBuilder {
     }
     /// <p>The maximum number of concurrent runs allowed for the job. The default is 1. An error is returned when this threshold is reached. The maximum value you can specify is controlled by a service limit.</p>
     pub fn set_max_concurrent_runs(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_concurrent_runs = input; self
+        self.max_concurrent_runs = input;
+        self
     }
     /// Consumes the builder and constructs a [`ExecutionProperty`](crate::types::ExecutionProperty).
     pub fn build(self) -> crate::types::ExecutionProperty {
         crate::types::ExecutionProperty {
-            max_concurrent_runs: self.max_concurrent_runs
-                .unwrap_or_default()
-            ,
+            max_concurrent_runs: self.max_concurrent_runs.unwrap_or_default(),
         }
     }
 }
-

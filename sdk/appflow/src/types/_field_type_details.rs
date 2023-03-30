@@ -3,7 +3,7 @@
 /// <p> Contains details regarding the supported field type and the operators that can be applied for filtering. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct FieldTypeDetails  {
+pub struct FieldTypeDetails {
     /// <p> The type of field, such as string, integer, date, and so on. </p>
     #[doc(hidden)]
     pub field_type: std::option::Option<std::string::String>,
@@ -28,31 +28,31 @@ pub struct FieldTypeDetails  {
 }
 impl FieldTypeDetails {
     /// <p> The type of field, such as string, integer, date, and so on. </p>
-    pub fn field_type(&self) -> std::option::Option<& str> {
+    pub fn field_type(&self) -> std::option::Option<&str> {
         self.field_type.as_deref()
     }
     /// <p> The list of operators supported by a field. </p>
-    pub fn filter_operators(&self) -> std::option::Option<& [crate::types::Operator]> {
+    pub fn filter_operators(&self) -> std::option::Option<&[crate::types::Operator]> {
         self.filter_operators.as_deref()
     }
     /// <p> The list of values that a field can contain. For example, a Boolean <code>fieldType</code> can have two values: "true" and "false". </p>
-    pub fn supported_values(&self) -> std::option::Option<& [std::string::String]> {
+    pub fn supported_values(&self) -> std::option::Option<&[std::string::String]> {
         self.supported_values.as_deref()
     }
     /// <p>The regular expression pattern for the field name.</p>
-    pub fn value_regex_pattern(&self) -> std::option::Option<& str> {
+    pub fn value_regex_pattern(&self) -> std::option::Option<&str> {
         self.value_regex_pattern.as_deref()
     }
     /// <p>The date format that the field supports.</p>
-    pub fn supported_date_format(&self) -> std::option::Option<& str> {
+    pub fn supported_date_format(&self) -> std::option::Option<&str> {
         self.supported_date_format.as_deref()
     }
     /// <p>The range of values this field can hold.</p>
-    pub fn field_value_range(&self) -> std::option::Option<& crate::types::Range> {
+    pub fn field_value_range(&self) -> std::option::Option<&crate::types::Range> {
         self.field_value_range.as_ref()
     }
     /// <p>This is the allowable length range for this field's value.</p>
-    pub fn field_length_range(&self) -> std::option::Option<& crate::types::Range> {
+    pub fn field_length_range(&self) -> std::option::Option<&crate::types::Range> {
         self.field_length_range.as_ref()
     }
 }
@@ -83,7 +83,8 @@ impl FieldTypeDetailsBuilder {
     }
     /// <p> The type of field, such as string, integer, date, and so on. </p>
     pub fn set_field_type(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.field_type = input; self
+        self.field_type = input;
+        self
     }
     /// Appends an item to `filter_operators`.
     ///
@@ -92,13 +93,17 @@ impl FieldTypeDetailsBuilder {
     /// <p> The list of operators supported by a field. </p>
     pub fn filter_operators(mut self, input: crate::types::Operator) -> Self {
         let mut v = self.filter_operators.unwrap_or_default();
-                        v.push(input);
-                        self.filter_operators = Some(v);
-                        self
+        v.push(input);
+        self.filter_operators = Some(v);
+        self
     }
     /// <p> The list of operators supported by a field. </p>
-    pub fn set_filter_operators(mut self, input: std::option::Option<std::vec::Vec<crate::types::Operator>>) -> Self {
-        self.filter_operators = input; self
+    pub fn set_filter_operators(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::Operator>>,
+    ) -> Self {
+        self.filter_operators = input;
+        self
     }
     /// Appends an item to `supported_values`.
     ///
@@ -107,13 +112,17 @@ impl FieldTypeDetailsBuilder {
     /// <p> The list of values that a field can contain. For example, a Boolean <code>fieldType</code> can have two values: "true" and "false". </p>
     pub fn supported_values(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.supported_values.unwrap_or_default();
-                        v.push(input.into());
-                        self.supported_values = Some(v);
-                        self
+        v.push(input.into());
+        self.supported_values = Some(v);
+        self
     }
     /// <p> The list of values that a field can contain. For example, a Boolean <code>fieldType</code> can have two values: "true" and "false". </p>
-    pub fn set_supported_values(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-        self.supported_values = input; self
+    pub fn set_supported_values(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
+        self.supported_values = input;
+        self
     }
     /// <p>The regular expression pattern for the field name.</p>
     pub fn value_regex_pattern(mut self, input: impl Into<std::string::String>) -> Self {
@@ -121,8 +130,12 @@ impl FieldTypeDetailsBuilder {
         self
     }
     /// <p>The regular expression pattern for the field name.</p>
-    pub fn set_value_regex_pattern(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.value_regex_pattern = input; self
+    pub fn set_value_regex_pattern(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.value_regex_pattern = input;
+        self
     }
     /// <p>The date format that the field supports.</p>
     pub fn supported_date_format(mut self, input: impl Into<std::string::String>) -> Self {
@@ -130,8 +143,12 @@ impl FieldTypeDetailsBuilder {
         self
     }
     /// <p>The date format that the field supports.</p>
-    pub fn set_supported_date_format(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.supported_date_format = input; self
+    pub fn set_supported_date_format(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.supported_date_format = input;
+        self
     }
     /// <p>The range of values this field can hold.</p>
     pub fn field_value_range(mut self, input: crate::types::Range) -> Self {
@@ -139,8 +156,12 @@ impl FieldTypeDetailsBuilder {
         self
     }
     /// <p>The range of values this field can hold.</p>
-    pub fn set_field_value_range(mut self, input: std::option::Option<crate::types::Range>) -> Self {
-        self.field_value_range = input; self
+    pub fn set_field_value_range(
+        mut self,
+        input: std::option::Option<crate::types::Range>,
+    ) -> Self {
+        self.field_value_range = input;
+        self
     }
     /// <p>This is the allowable length range for this field's value.</p>
     pub fn field_length_range(mut self, input: crate::types::Range) -> Self {
@@ -148,27 +169,23 @@ impl FieldTypeDetailsBuilder {
         self
     }
     /// <p>This is the allowable length range for this field's value.</p>
-    pub fn set_field_length_range(mut self, input: std::option::Option<crate::types::Range>) -> Self {
-        self.field_length_range = input; self
+    pub fn set_field_length_range(
+        mut self,
+        input: std::option::Option<crate::types::Range>,
+    ) -> Self {
+        self.field_length_range = input;
+        self
     }
     /// Consumes the builder and constructs a [`FieldTypeDetails`](crate::types::FieldTypeDetails).
     pub fn build(self) -> crate::types::FieldTypeDetails {
         crate::types::FieldTypeDetails {
-            field_type: self.field_type
-            ,
-            filter_operators: self.filter_operators
-            ,
-            supported_values: self.supported_values
-            ,
-            value_regex_pattern: self.value_regex_pattern
-            ,
-            supported_date_format: self.supported_date_format
-            ,
-            field_value_range: self.field_value_range
-            ,
-            field_length_range: self.field_length_range
-            ,
+            field_type: self.field_type,
+            filter_operators: self.filter_operators,
+            supported_values: self.supported_values,
+            value_regex_pattern: self.value_regex_pattern,
+            supported_date_format: self.supported_date_format,
+            field_value_range: self.field_value_range,
+            field_length_range: self.field_length_range,
         }
     }
 }
-

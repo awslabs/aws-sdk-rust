@@ -3,7 +3,7 @@
 /// <p>The details about any failures associated with the scanning configuration of a repository.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct RepositoryScanningConfigurationFailure  {
+pub struct RepositoryScanningConfigurationFailure {
     /// <p>The name of the repository.</p>
     #[doc(hidden)]
     pub repository_name: std::option::Option<std::string::String>,
@@ -16,15 +16,17 @@ pub struct RepositoryScanningConfigurationFailure  {
 }
 impl RepositoryScanningConfigurationFailure {
     /// <p>The name of the repository.</p>
-    pub fn repository_name(&self) -> std::option::Option<& str> {
+    pub fn repository_name(&self) -> std::option::Option<&str> {
         self.repository_name.as_deref()
     }
     /// <p>The failure code.</p>
-    pub fn failure_code(&self) -> std::option::Option<& crate::types::ScanningConfigurationFailureCode> {
+    pub fn failure_code(
+        &self,
+    ) -> std::option::Option<&crate::types::ScanningConfigurationFailureCode> {
         self.failure_code.as_ref()
     }
     /// <p>The reason for the failure.</p>
-    pub fn failure_reason(&self) -> std::option::Option<& str> {
+    pub fn failure_reason(&self) -> std::option::Option<&str> {
         self.failure_reason.as_deref()
     }
 }
@@ -51,7 +53,8 @@ impl RepositoryScanningConfigurationFailureBuilder {
     }
     /// <p>The name of the repository.</p>
     pub fn set_repository_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.repository_name = input; self
+        self.repository_name = input;
+        self
     }
     /// <p>The failure code.</p>
     pub fn failure_code(mut self, input: crate::types::ScanningConfigurationFailureCode) -> Self {
@@ -59,8 +62,12 @@ impl RepositoryScanningConfigurationFailureBuilder {
         self
     }
     /// <p>The failure code.</p>
-    pub fn set_failure_code(mut self, input: std::option::Option<crate::types::ScanningConfigurationFailureCode>) -> Self {
-        self.failure_code = input; self
+    pub fn set_failure_code(
+        mut self,
+        input: std::option::Option<crate::types::ScanningConfigurationFailureCode>,
+    ) -> Self {
+        self.failure_code = input;
+        self
     }
     /// <p>The reason for the failure.</p>
     pub fn failure_reason(mut self, input: impl Into<std::string::String>) -> Self {
@@ -69,18 +76,15 @@ impl RepositoryScanningConfigurationFailureBuilder {
     }
     /// <p>The reason for the failure.</p>
     pub fn set_failure_reason(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.failure_reason = input; self
+        self.failure_reason = input;
+        self
     }
     /// Consumes the builder and constructs a [`RepositoryScanningConfigurationFailure`](crate::types::RepositoryScanningConfigurationFailure).
     pub fn build(self) -> crate::types::RepositoryScanningConfigurationFailure {
         crate::types::RepositoryScanningConfigurationFailure {
-            repository_name: self.repository_name
-            ,
-            failure_code: self.failure_code
-            ,
-            failure_reason: self.failure_reason
-            ,
+            repository_name: self.repository_name,
+            failure_code: self.failure_code,
+            failure_reason: self.failure_reason,
         }
     }
 }
-

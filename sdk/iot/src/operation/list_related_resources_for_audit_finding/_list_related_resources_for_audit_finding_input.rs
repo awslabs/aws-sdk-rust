@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListRelatedResourcesForAuditFindingInput  {
+pub struct ListRelatedResourcesForAuditFindingInput {
     /// <p>The finding Id.</p>
     #[doc(hidden)]
     pub finding_id: std::option::Option<std::string::String>,
@@ -15,11 +15,11 @@ pub struct ListRelatedResourcesForAuditFindingInput  {
 }
 impl ListRelatedResourcesForAuditFindingInput {
     /// <p>The finding Id.</p>
-    pub fn finding_id(&self) -> std::option::Option<& str> {
+    pub fn finding_id(&self) -> std::option::Option<&str> {
         self.finding_id.as_deref()
     }
     /// <p>A token that can be used to retrieve the next set of results, or <code>null</code> if there are no additional results.</p>
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
     /// <p>The maximum number of results to return at one time.</p>
@@ -29,7 +29,7 @@ impl ListRelatedResourcesForAuditFindingInput {
 }
 impl ListRelatedResourcesForAuditFindingInput {
     /// Creates a new builder-style object to manufacture [`ListRelatedResourcesForAuditFindingInput`](crate::operation::list_related_resources_for_audit_finding::ListRelatedResourcesForAuditFindingInput).
-    pub fn builder() -> crate::operation::list_related_resources_for_audit_finding::builders::ListRelatedResourcesForAuditFindingInputBuilder {
+    pub fn builder() -> crate::operation::list_related_resources_for_audit_finding::builders::ListRelatedResourcesForAuditFindingInputBuilder{
         crate::operation::list_related_resources_for_audit_finding::builders::ListRelatedResourcesForAuditFindingInputBuilder::default()
     }
 }
@@ -50,7 +50,8 @@ impl ListRelatedResourcesForAuditFindingInputBuilder {
     }
     /// <p>The finding Id.</p>
     pub fn set_finding_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.finding_id = input; self
+        self.finding_id = input;
+        self
     }
     /// <p>A token that can be used to retrieve the next set of results, or <code>null</code> if there are no additional results.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -59,7 +60,8 @@ impl ListRelatedResourcesForAuditFindingInputBuilder {
     }
     /// <p>A token that can be used to retrieve the next set of results, or <code>null</code> if there are no additional results.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input; self
+        self.next_token = input;
+        self
     }
     /// <p>The maximum number of results to return at one time.</p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -68,10 +70,11 @@ impl ListRelatedResourcesForAuditFindingInputBuilder {
     }
     /// <p>The maximum number of results to return at one time.</p>
     pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_results = input; self
+        self.max_results = input;
+        self
     }
     /// Consumes the builder and constructs a [`ListRelatedResourcesForAuditFindingInput`](crate::operation::list_related_resources_for_audit_finding::ListRelatedResourcesForAuditFindingInput).
-    pub fn build(self) -> Result<crate::operation::list_related_resources_for_audit_finding::ListRelatedResourcesForAuditFindingInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> Result<crate::operation::list_related_resources_for_audit_finding::ListRelatedResourcesForAuditFindingInput, aws_smithy_http::operation::error::BuildError>{
         Ok(
             crate::operation::list_related_resources_for_audit_finding::ListRelatedResourcesForAuditFindingInput {
                 finding_id: self.finding_id
@@ -84,4 +87,3 @@ impl ListRelatedResourcesForAuditFindingInputBuilder {
         )
     }
 }
-

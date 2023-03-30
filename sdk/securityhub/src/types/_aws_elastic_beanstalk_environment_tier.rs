@@ -3,7 +3,7 @@
 /// <p>Contains information about the tier of the environment.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AwsElasticBeanstalkEnvironmentTier  {
+pub struct AwsElasticBeanstalkEnvironmentTier {
     /// <p>The name of the environment tier. Valid values are <code>WebServer</code> or <code>Worker</code>.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -16,15 +16,15 @@ pub struct AwsElasticBeanstalkEnvironmentTier  {
 }
 impl AwsElasticBeanstalkEnvironmentTier {
     /// <p>The name of the environment tier. Valid values are <code>WebServer</code> or <code>Worker</code>.</p>
-    pub fn name(&self) -> std::option::Option<& str> {
+    pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>The type of environment tier. Valid values are <code>Standard</code> or <code>SQS/HTTP</code>.</p>
-    pub fn r#type(&self) -> std::option::Option<& str> {
+    pub fn r#type(&self) -> std::option::Option<&str> {
         self.r#type.as_deref()
     }
     /// <p>The version of the environment tier.</p>
-    pub fn version(&self) -> std::option::Option<& str> {
+    pub fn version(&self) -> std::option::Option<&str> {
         self.version.as_deref()
     }
 }
@@ -51,7 +51,8 @@ impl AwsElasticBeanstalkEnvironmentTierBuilder {
     }
     /// <p>The name of the environment tier. Valid values are <code>WebServer</code> or <code>Worker</code>.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input; self
+        self.name = input;
+        self
     }
     /// <p>The type of environment tier. Valid values are <code>Standard</code> or <code>SQS/HTTP</code>.</p>
     pub fn r#type(mut self, input: impl Into<std::string::String>) -> Self {
@@ -60,7 +61,8 @@ impl AwsElasticBeanstalkEnvironmentTierBuilder {
     }
     /// <p>The type of environment tier. Valid values are <code>Standard</code> or <code>SQS/HTTP</code>.</p>
     pub fn set_type(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.r#type = input; self
+        self.r#type = input;
+        self
     }
     /// <p>The version of the environment tier.</p>
     pub fn version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -69,18 +71,15 @@ impl AwsElasticBeanstalkEnvironmentTierBuilder {
     }
     /// <p>The version of the environment tier.</p>
     pub fn set_version(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.version = input; self
+        self.version = input;
+        self
     }
     /// Consumes the builder and constructs a [`AwsElasticBeanstalkEnvironmentTier`](crate::types::AwsElasticBeanstalkEnvironmentTier).
     pub fn build(self) -> crate::types::AwsElasticBeanstalkEnvironmentTier {
         crate::types::AwsElasticBeanstalkEnvironmentTier {
-            name: self.name
-            ,
-            r#type: self.r#type
-            ,
-            version: self.version
-            ,
+            name: self.name,
+            r#type: self.r#type,
+            version: self.version,
         }
     }
 }
-

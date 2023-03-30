@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateDataSourceInput  {
+pub struct UpdateDataSourceInput {
     /// <p>The API ID.</p>
     #[doc(hidden)]
     pub api_id: std::option::Option<std::string::String>,
@@ -24,70 +24,79 @@ pub struct UpdateDataSourceInput  {
     /// <p>The new Lambda configuration.</p>
     #[doc(hidden)]
     pub lambda_config: std::option::Option<crate::types::LambdaDataSourceConfig>,
-    /// <p>The new OpenSearch configuration.</p> 
+    /// <p>The new OpenSearch configuration.</p>
     /// <p>As of September 2021, Amazon Elasticsearch service is Amazon OpenSearch Service. This configuration is deprecated. Instead, use <code>UpdateDataSourceRequest$openSearchServiceConfig</code> to update an OpenSearch data source.</p>
     #[doc(hidden)]
     pub elasticsearch_config: std::option::Option<crate::types::ElasticsearchDataSourceConfig>,
     /// <p>The new OpenSearch configuration.</p>
     #[doc(hidden)]
-    pub open_search_service_config: std::option::Option<crate::types::OpenSearchServiceDataSourceConfig>,
+    pub open_search_service_config:
+        std::option::Option<crate::types::OpenSearchServiceDataSourceConfig>,
     /// <p>The new HTTP endpoint configuration.</p>
     #[doc(hidden)]
     pub http_config: std::option::Option<crate::types::HttpDataSourceConfig>,
     /// <p>The new relational database configuration.</p>
     #[doc(hidden)]
-    pub relational_database_config: std::option::Option<crate::types::RelationalDatabaseDataSourceConfig>,
+    pub relational_database_config:
+        std::option::Option<crate::types::RelationalDatabaseDataSourceConfig>,
 }
 impl UpdateDataSourceInput {
     /// <p>The API ID.</p>
-    pub fn api_id(&self) -> std::option::Option<& str> {
+    pub fn api_id(&self) -> std::option::Option<&str> {
         self.api_id.as_deref()
     }
     /// <p>The new name for the data source.</p>
-    pub fn name(&self) -> std::option::Option<& str> {
+    pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>The new description for the data source.</p>
-    pub fn description(&self) -> std::option::Option<& str> {
+    pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
     /// <p>The new data source type.</p>
-    pub fn r#type(&self) -> std::option::Option<& crate::types::DataSourceType> {
+    pub fn r#type(&self) -> std::option::Option<&crate::types::DataSourceType> {
         self.r#type.as_ref()
     }
     /// <p>The new service role Amazon Resource Name (ARN) for the data source.</p>
-    pub fn service_role_arn(&self) -> std::option::Option<& str> {
+    pub fn service_role_arn(&self) -> std::option::Option<&str> {
         self.service_role_arn.as_deref()
     }
     /// <p>The new Amazon DynamoDB configuration.</p>
-    pub fn dynamodb_config(&self) -> std::option::Option<& crate::types::DynamodbDataSourceConfig> {
+    pub fn dynamodb_config(&self) -> std::option::Option<&crate::types::DynamodbDataSourceConfig> {
         self.dynamodb_config.as_ref()
     }
     /// <p>The new Lambda configuration.</p>
-    pub fn lambda_config(&self) -> std::option::Option<& crate::types::LambdaDataSourceConfig> {
+    pub fn lambda_config(&self) -> std::option::Option<&crate::types::LambdaDataSourceConfig> {
         self.lambda_config.as_ref()
     }
-    /// <p>The new OpenSearch configuration.</p> 
+    /// <p>The new OpenSearch configuration.</p>
     /// <p>As of September 2021, Amazon Elasticsearch service is Amazon OpenSearch Service. This configuration is deprecated. Instead, use <code>UpdateDataSourceRequest$openSearchServiceConfig</code> to update an OpenSearch data source.</p>
-    pub fn elasticsearch_config(&self) -> std::option::Option<& crate::types::ElasticsearchDataSourceConfig> {
+    pub fn elasticsearch_config(
+        &self,
+    ) -> std::option::Option<&crate::types::ElasticsearchDataSourceConfig> {
         self.elasticsearch_config.as_ref()
     }
     /// <p>The new OpenSearch configuration.</p>
-    pub fn open_search_service_config(&self) -> std::option::Option<& crate::types::OpenSearchServiceDataSourceConfig> {
+    pub fn open_search_service_config(
+        &self,
+    ) -> std::option::Option<&crate::types::OpenSearchServiceDataSourceConfig> {
         self.open_search_service_config.as_ref()
     }
     /// <p>The new HTTP endpoint configuration.</p>
-    pub fn http_config(&self) -> std::option::Option<& crate::types::HttpDataSourceConfig> {
+    pub fn http_config(&self) -> std::option::Option<&crate::types::HttpDataSourceConfig> {
         self.http_config.as_ref()
     }
     /// <p>The new relational database configuration.</p>
-    pub fn relational_database_config(&self) -> std::option::Option<& crate::types::RelationalDatabaseDataSourceConfig> {
+    pub fn relational_database_config(
+        &self,
+    ) -> std::option::Option<&crate::types::RelationalDatabaseDataSourceConfig> {
         self.relational_database_config.as_ref()
     }
 }
 impl UpdateDataSourceInput {
     /// Creates a new builder-style object to manufacture [`UpdateDataSourceInput`](crate::operation::update_data_source::UpdateDataSourceInput).
-    pub fn builder() -> crate::operation::update_data_source::builders::UpdateDataSourceInputBuilder {
+    pub fn builder() -> crate::operation::update_data_source::builders::UpdateDataSourceInputBuilder
+    {
         crate::operation::update_data_source::builders::UpdateDataSourceInputBuilder::default()
     }
 }
@@ -103,10 +112,13 @@ pub struct UpdateDataSourceInputBuilder {
     pub(crate) service_role_arn: std::option::Option<std::string::String>,
     pub(crate) dynamodb_config: std::option::Option<crate::types::DynamodbDataSourceConfig>,
     pub(crate) lambda_config: std::option::Option<crate::types::LambdaDataSourceConfig>,
-    pub(crate) elasticsearch_config: std::option::Option<crate::types::ElasticsearchDataSourceConfig>,
-    pub(crate) open_search_service_config: std::option::Option<crate::types::OpenSearchServiceDataSourceConfig>,
+    pub(crate) elasticsearch_config:
+        std::option::Option<crate::types::ElasticsearchDataSourceConfig>,
+    pub(crate) open_search_service_config:
+        std::option::Option<crate::types::OpenSearchServiceDataSourceConfig>,
     pub(crate) http_config: std::option::Option<crate::types::HttpDataSourceConfig>,
-    pub(crate) relational_database_config: std::option::Option<crate::types::RelationalDatabaseDataSourceConfig>,
+    pub(crate) relational_database_config:
+        std::option::Option<crate::types::RelationalDatabaseDataSourceConfig>,
 }
 impl UpdateDataSourceInputBuilder {
     /// <p>The API ID.</p>
@@ -116,7 +128,8 @@ impl UpdateDataSourceInputBuilder {
     }
     /// <p>The API ID.</p>
     pub fn set_api_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.api_id = input; self
+        self.api_id = input;
+        self
     }
     /// <p>The new name for the data source.</p>
     pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -125,7 +138,8 @@ impl UpdateDataSourceInputBuilder {
     }
     /// <p>The new name for the data source.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input; self
+        self.name = input;
+        self
     }
     /// <p>The new description for the data source.</p>
     pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -134,7 +148,8 @@ impl UpdateDataSourceInputBuilder {
     }
     /// <p>The new description for the data source.</p>
     pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.description = input; self
+        self.description = input;
+        self
     }
     /// <p>The new data source type.</p>
     pub fn r#type(mut self, input: crate::types::DataSourceType) -> Self {
@@ -143,7 +158,8 @@ impl UpdateDataSourceInputBuilder {
     }
     /// <p>The new data source type.</p>
     pub fn set_type(mut self, input: std::option::Option<crate::types::DataSourceType>) -> Self {
-        self.r#type = input; self
+        self.r#type = input;
+        self
     }
     /// <p>The new service role Amazon Resource Name (ARN) for the data source.</p>
     pub fn service_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -152,7 +168,8 @@ impl UpdateDataSourceInputBuilder {
     }
     /// <p>The new service role Amazon Resource Name (ARN) for the data source.</p>
     pub fn set_service_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.service_role_arn = input; self
+        self.service_role_arn = input;
+        self
     }
     /// <p>The new Amazon DynamoDB configuration.</p>
     pub fn dynamodb_config(mut self, input: crate::types::DynamodbDataSourceConfig) -> Self {
@@ -160,8 +177,12 @@ impl UpdateDataSourceInputBuilder {
         self
     }
     /// <p>The new Amazon DynamoDB configuration.</p>
-    pub fn set_dynamodb_config(mut self, input: std::option::Option<crate::types::DynamodbDataSourceConfig>) -> Self {
-        self.dynamodb_config = input; self
+    pub fn set_dynamodb_config(
+        mut self,
+        input: std::option::Option<crate::types::DynamodbDataSourceConfig>,
+    ) -> Self {
+        self.dynamodb_config = input;
+        self
     }
     /// <p>The new Lambda configuration.</p>
     pub fn lambda_config(mut self, input: crate::types::LambdaDataSourceConfig) -> Self {
@@ -169,28 +190,46 @@ impl UpdateDataSourceInputBuilder {
         self
     }
     /// <p>The new Lambda configuration.</p>
-    pub fn set_lambda_config(mut self, input: std::option::Option<crate::types::LambdaDataSourceConfig>) -> Self {
-        self.lambda_config = input; self
+    pub fn set_lambda_config(
+        mut self,
+        input: std::option::Option<crate::types::LambdaDataSourceConfig>,
+    ) -> Self {
+        self.lambda_config = input;
+        self
     }
-    /// <p>The new OpenSearch configuration.</p> 
+    /// <p>The new OpenSearch configuration.</p>
     /// <p>As of September 2021, Amazon Elasticsearch service is Amazon OpenSearch Service. This configuration is deprecated. Instead, use <code>UpdateDataSourceRequest$openSearchServiceConfig</code> to update an OpenSearch data source.</p>
-    pub fn elasticsearch_config(mut self, input: crate::types::ElasticsearchDataSourceConfig) -> Self {
+    pub fn elasticsearch_config(
+        mut self,
+        input: crate::types::ElasticsearchDataSourceConfig,
+    ) -> Self {
         self.elasticsearch_config = Some(input);
         self
     }
-    /// <p>The new OpenSearch configuration.</p> 
+    /// <p>The new OpenSearch configuration.</p>
     /// <p>As of September 2021, Amazon Elasticsearch service is Amazon OpenSearch Service. This configuration is deprecated. Instead, use <code>UpdateDataSourceRequest$openSearchServiceConfig</code> to update an OpenSearch data source.</p>
-    pub fn set_elasticsearch_config(mut self, input: std::option::Option<crate::types::ElasticsearchDataSourceConfig>) -> Self {
-        self.elasticsearch_config = input; self
+    pub fn set_elasticsearch_config(
+        mut self,
+        input: std::option::Option<crate::types::ElasticsearchDataSourceConfig>,
+    ) -> Self {
+        self.elasticsearch_config = input;
+        self
     }
     /// <p>The new OpenSearch configuration.</p>
-    pub fn open_search_service_config(mut self, input: crate::types::OpenSearchServiceDataSourceConfig) -> Self {
+    pub fn open_search_service_config(
+        mut self,
+        input: crate::types::OpenSearchServiceDataSourceConfig,
+    ) -> Self {
         self.open_search_service_config = Some(input);
         self
     }
     /// <p>The new OpenSearch configuration.</p>
-    pub fn set_open_search_service_config(mut self, input: std::option::Option<crate::types::OpenSearchServiceDataSourceConfig>) -> Self {
-        self.open_search_service_config = input; self
+    pub fn set_open_search_service_config(
+        mut self,
+        input: std::option::Option<crate::types::OpenSearchServiceDataSourceConfig>,
+    ) -> Self {
+        self.open_search_service_config = input;
+        self
     }
     /// <p>The new HTTP endpoint configuration.</p>
     pub fn http_config(mut self, input: crate::types::HttpDataSourceConfig) -> Self {
@@ -198,46 +237,50 @@ impl UpdateDataSourceInputBuilder {
         self
     }
     /// <p>The new HTTP endpoint configuration.</p>
-    pub fn set_http_config(mut self, input: std::option::Option<crate::types::HttpDataSourceConfig>) -> Self {
-        self.http_config = input; self
+    pub fn set_http_config(
+        mut self,
+        input: std::option::Option<crate::types::HttpDataSourceConfig>,
+    ) -> Self {
+        self.http_config = input;
+        self
     }
     /// <p>The new relational database configuration.</p>
-    pub fn relational_database_config(mut self, input: crate::types::RelationalDatabaseDataSourceConfig) -> Self {
+    pub fn relational_database_config(
+        mut self,
+        input: crate::types::RelationalDatabaseDataSourceConfig,
+    ) -> Self {
         self.relational_database_config = Some(input);
         self
     }
     /// <p>The new relational database configuration.</p>
-    pub fn set_relational_database_config(mut self, input: std::option::Option<crate::types::RelationalDatabaseDataSourceConfig>) -> Self {
-        self.relational_database_config = input; self
+    pub fn set_relational_database_config(
+        mut self,
+        input: std::option::Option<crate::types::RelationalDatabaseDataSourceConfig>,
+    ) -> Self {
+        self.relational_database_config = input;
+        self
     }
     /// Consumes the builder and constructs a [`UpdateDataSourceInput`](crate::operation::update_data_source::UpdateDataSourceInput).
-    pub fn build(self) -> Result<crate::operation::update_data_source::UpdateDataSourceInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::update_data_source::UpdateDataSourceInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::update_data_source::UpdateDataSourceInput {
-                api_id: self.api_id
-                ,
-                name: self.name
-                ,
-                description: self.description
-                ,
-                r#type: self.r#type
-                ,
-                service_role_arn: self.service_role_arn
-                ,
-                dynamodb_config: self.dynamodb_config
-                ,
-                lambda_config: self.lambda_config
-                ,
-                elasticsearch_config: self.elasticsearch_config
-                ,
-                open_search_service_config: self.open_search_service_config
-                ,
-                http_config: self.http_config
-                ,
-                relational_database_config: self.relational_database_config
-                ,
-            }
+                api_id: self.api_id,
+                name: self.name,
+                description: self.description,
+                r#type: self.r#type,
+                service_role_arn: self.service_role_arn,
+                dynamodb_config: self.dynamodb_config,
+                lambda_config: self.lambda_config,
+                elasticsearch_config: self.elasticsearch_config,
+                open_search_service_config: self.open_search_service_config,
+                http_config: self.http_config,
+                relational_database_config: self.relational_database_config,
+            },
         )
     }
 }
-

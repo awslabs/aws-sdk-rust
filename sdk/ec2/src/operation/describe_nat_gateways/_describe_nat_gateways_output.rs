@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeNatGatewaysOutput  {
+pub struct DescribeNatGatewaysOutput {
     /// <p>Information about the NAT gateways.</p>
     #[doc(hidden)]
     pub nat_gateways: std::option::Option<std::vec::Vec<crate::types::NatGateway>>,
@@ -13,23 +13,25 @@ pub struct DescribeNatGatewaysOutput  {
 }
 impl DescribeNatGatewaysOutput {
     /// <p>Information about the NAT gateways.</p>
-    pub fn nat_gateways(&self) -> std::option::Option<& [crate::types::NatGateway]> {
+    pub fn nat_gateways(&self) -> std::option::Option<&[crate::types::NatGateway]> {
         self.nat_gateways.as_deref()
     }
     /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for DescribeNatGatewaysOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl DescribeNatGatewaysOutput {
     /// Creates a new builder-style object to manufacture [`DescribeNatGatewaysOutput`](crate::operation::describe_nat_gateways::DescribeNatGatewaysOutput).
-    pub fn builder() -> crate::operation::describe_nat_gateways::builders::DescribeNatGatewaysOutputBuilder {
-        crate::operation::describe_nat_gateways::builders::DescribeNatGatewaysOutputBuilder::default()
+    pub fn builder(
+    ) -> crate::operation::describe_nat_gateways::builders::DescribeNatGatewaysOutputBuilder {
+        crate::operation::describe_nat_gateways::builders::DescribeNatGatewaysOutputBuilder::default(
+        )
     }
 }
 
@@ -49,13 +51,17 @@ impl DescribeNatGatewaysOutputBuilder {
     /// <p>Information about the NAT gateways.</p>
     pub fn nat_gateways(mut self, input: crate::types::NatGateway) -> Self {
         let mut v = self.nat_gateways.unwrap_or_default();
-                        v.push(input);
-                        self.nat_gateways = Some(v);
-                        self
+        v.push(input);
+        self.nat_gateways = Some(v);
+        self
     }
     /// <p>Information about the NAT gateways.</p>
-    pub fn set_nat_gateways(mut self, input: std::option::Option<std::vec::Vec<crate::types::NatGateway>>) -> Self {
-        self.nat_gateways = input; self
+    pub fn set_nat_gateways(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::NatGateway>>,
+    ) -> Self {
+        self.nat_gateways = input;
+        self
     }
     /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -64,26 +70,24 @@ impl DescribeNatGatewaysOutputBuilder {
     }
     /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input; self
+        self.next_token = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`DescribeNatGatewaysOutput`](crate::operation::describe_nat_gateways::DescribeNatGatewaysOutput).
     pub fn build(self) -> crate::operation::describe_nat_gateways::DescribeNatGatewaysOutput {
         crate::operation::describe_nat_gateways::DescribeNatGatewaysOutput {
-            nat_gateways: self.nat_gateways
-            ,
-            next_token: self.next_token
-            ,
+            nat_gateways: self.nat_gateways,
+            next_token: self.next_token,
             _request_id: self._request_id,
         }
     }
 }
-

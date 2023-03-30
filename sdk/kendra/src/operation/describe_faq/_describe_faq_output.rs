@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeFaqOutput  {
+pub struct DescribeFaqOutput {
     /// <p>The identifier of the FAQ.</p>
     #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
@@ -43,59 +43,59 @@ pub struct DescribeFaqOutput  {
 }
 impl DescribeFaqOutput {
     /// <p>The identifier of the FAQ.</p>
-    pub fn id(&self) -> std::option::Option<& str> {
+    pub fn id(&self) -> std::option::Option<&str> {
         self.id.as_deref()
     }
     /// <p>The identifier of the index for the FAQ.</p>
-    pub fn index_id(&self) -> std::option::Option<& str> {
+    pub fn index_id(&self) -> std::option::Option<&str> {
         self.index_id.as_deref()
     }
     /// <p>The name that you gave the FAQ when it was created.</p>
-    pub fn name(&self) -> std::option::Option<& str> {
+    pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>The description of the FAQ that you provided when it was created.</p>
-    pub fn description(&self) -> std::option::Option<& str> {
+    pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
     /// <p>The date and time that the FAQ was created.</p>
-    pub fn created_at(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
+    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
     /// <p>The date and time that the FAQ was last updated.</p>
-    pub fn updated_at(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
+    pub fn updated_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.updated_at.as_ref()
     }
     /// <p>Information required to find a specific file in an Amazon S3 bucket.</p>
-    pub fn s3_path(&self) -> std::option::Option<& crate::types::S3Path> {
+    pub fn s3_path(&self) -> std::option::Option<&crate::types::S3Path> {
         self.s3_path.as_ref()
     }
     /// <p>The status of the FAQ. It is ready to use when the status is <code>ACTIVE</code>.</p>
-    pub fn status(&self) -> std::option::Option<& crate::types::FaqStatus> {
+    pub fn status(&self) -> std::option::Option<&crate::types::FaqStatus> {
         self.status.as_ref()
     }
     /// <p>The Amazon Resource Name (ARN) of the role that provides access to the S3 bucket containing the input files for the FAQ.</p>
-    pub fn role_arn(&self) -> std::option::Option<& str> {
+    pub fn role_arn(&self) -> std::option::Option<&str> {
         self.role_arn.as_deref()
     }
     /// <p>If the <code>Status</code> field is <code>FAILED</code>, the <code>ErrorMessage</code> field contains the reason why the FAQ failed.</p>
-    pub fn error_message(&self) -> std::option::Option<& str> {
+    pub fn error_message(&self) -> std::option::Option<&str> {
         self.error_message.as_deref()
     }
     /// <p>The file format used by the input files for the FAQ.</p>
-    pub fn file_format(&self) -> std::option::Option<& crate::types::FaqFileFormat> {
+    pub fn file_format(&self) -> std::option::Option<&crate::types::FaqFileFormat> {
         self.file_format.as_ref()
     }
     /// <p>The code for a language. This shows a supported language for the FAQ document. English is supported by default. For more information on supported languages, including their codes, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/in-adding-languages.html">Adding documents in languages other than English</a>.</p>
-    pub fn language_code(&self) -> std::option::Option<& str> {
+    pub fn language_code(&self) -> std::option::Option<&str> {
         self.language_code.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for DescribeFaqOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl DescribeFaqOutput {
     /// Creates a new builder-style object to manufacture [`DescribeFaqOutput`](crate::operation::describe_faq::DescribeFaqOutput).
     pub fn builder() -> crate::operation::describe_faq::builders::DescribeFaqOutputBuilder {
@@ -129,7 +129,8 @@ impl DescribeFaqOutputBuilder {
     }
     /// <p>The identifier of the FAQ.</p>
     pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.id = input; self
+        self.id = input;
+        self
     }
     /// <p>The identifier of the index for the FAQ.</p>
     pub fn index_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -138,7 +139,8 @@ impl DescribeFaqOutputBuilder {
     }
     /// <p>The identifier of the index for the FAQ.</p>
     pub fn set_index_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.index_id = input; self
+        self.index_id = input;
+        self
     }
     /// <p>The name that you gave the FAQ when it was created.</p>
     pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -147,7 +149,8 @@ impl DescribeFaqOutputBuilder {
     }
     /// <p>The name that you gave the FAQ when it was created.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input; self
+        self.name = input;
+        self
     }
     /// <p>The description of the FAQ that you provided when it was created.</p>
     pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -156,7 +159,8 @@ impl DescribeFaqOutputBuilder {
     }
     /// <p>The description of the FAQ that you provided when it was created.</p>
     pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.description = input; self
+        self.description = input;
+        self
     }
     /// <p>The date and time that the FAQ was created.</p>
     pub fn created_at(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -164,8 +168,12 @@ impl DescribeFaqOutputBuilder {
         self
     }
     /// <p>The date and time that the FAQ was created.</p>
-    pub fn set_created_at(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.created_at = input; self
+    pub fn set_created_at(
+        mut self,
+        input: std::option::Option<aws_smithy_types::DateTime>,
+    ) -> Self {
+        self.created_at = input;
+        self
     }
     /// <p>The date and time that the FAQ was last updated.</p>
     pub fn updated_at(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -173,8 +181,12 @@ impl DescribeFaqOutputBuilder {
         self
     }
     /// <p>The date and time that the FAQ was last updated.</p>
-    pub fn set_updated_at(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.updated_at = input; self
+    pub fn set_updated_at(
+        mut self,
+        input: std::option::Option<aws_smithy_types::DateTime>,
+    ) -> Self {
+        self.updated_at = input;
+        self
     }
     /// <p>Information required to find a specific file in an Amazon S3 bucket.</p>
     pub fn s3_path(mut self, input: crate::types::S3Path) -> Self {
@@ -183,7 +195,8 @@ impl DescribeFaqOutputBuilder {
     }
     /// <p>Information required to find a specific file in an Amazon S3 bucket.</p>
     pub fn set_s3_path(mut self, input: std::option::Option<crate::types::S3Path>) -> Self {
-        self.s3_path = input; self
+        self.s3_path = input;
+        self
     }
     /// <p>The status of the FAQ. It is ready to use when the status is <code>ACTIVE</code>.</p>
     pub fn status(mut self, input: crate::types::FaqStatus) -> Self {
@@ -192,7 +205,8 @@ impl DescribeFaqOutputBuilder {
     }
     /// <p>The status of the FAQ. It is ready to use when the status is <code>ACTIVE</code>.</p>
     pub fn set_status(mut self, input: std::option::Option<crate::types::FaqStatus>) -> Self {
-        self.status = input; self
+        self.status = input;
+        self
     }
     /// <p>The Amazon Resource Name (ARN) of the role that provides access to the S3 bucket containing the input files for the FAQ.</p>
     pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -201,7 +215,8 @@ impl DescribeFaqOutputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the role that provides access to the S3 bucket containing the input files for the FAQ.</p>
     pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.role_arn = input; self
+        self.role_arn = input;
+        self
     }
     /// <p>If the <code>Status</code> field is <code>FAILED</code>, the <code>ErrorMessage</code> field contains the reason why the FAQ failed.</p>
     pub fn error_message(mut self, input: impl Into<std::string::String>) -> Self {
@@ -210,7 +225,8 @@ impl DescribeFaqOutputBuilder {
     }
     /// <p>If the <code>Status</code> field is <code>FAILED</code>, the <code>ErrorMessage</code> field contains the reason why the FAQ failed.</p>
     pub fn set_error_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.error_message = input; self
+        self.error_message = input;
+        self
     }
     /// <p>The file format used by the input files for the FAQ.</p>
     pub fn file_format(mut self, input: crate::types::FaqFileFormat) -> Self {
@@ -218,8 +234,12 @@ impl DescribeFaqOutputBuilder {
         self
     }
     /// <p>The file format used by the input files for the FAQ.</p>
-    pub fn set_file_format(mut self, input: std::option::Option<crate::types::FaqFileFormat>) -> Self {
-        self.file_format = input; self
+    pub fn set_file_format(
+        mut self,
+        input: std::option::Option<crate::types::FaqFileFormat>,
+    ) -> Self {
+        self.file_format = input;
+        self
     }
     /// <p>The code for a language. This shows a supported language for the FAQ document. English is supported by default. For more information on supported languages, including their codes, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/in-adding-languages.html">Adding documents in languages other than English</a>.</p>
     pub fn language_code(mut self, input: impl Into<std::string::String>) -> Self {
@@ -228,46 +248,34 @@ impl DescribeFaqOutputBuilder {
     }
     /// <p>The code for a language. This shows a supported language for the FAQ document. English is supported by default. For more information on supported languages, including their codes, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/in-adding-languages.html">Adding documents in languages other than English</a>.</p>
     pub fn set_language_code(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.language_code = input; self
+        self.language_code = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`DescribeFaqOutput`](crate::operation::describe_faq::DescribeFaqOutput).
     pub fn build(self) -> crate::operation::describe_faq::DescribeFaqOutput {
         crate::operation::describe_faq::DescribeFaqOutput {
-            id: self.id
-            ,
-            index_id: self.index_id
-            ,
-            name: self.name
-            ,
-            description: self.description
-            ,
-            created_at: self.created_at
-            ,
-            updated_at: self.updated_at
-            ,
-            s3_path: self.s3_path
-            ,
-            status: self.status
-            ,
-            role_arn: self.role_arn
-            ,
-            error_message: self.error_message
-            ,
-            file_format: self.file_format
-            ,
-            language_code: self.language_code
-            ,
+            id: self.id,
+            index_id: self.index_id,
+            name: self.name,
+            description: self.description,
+            created_at: self.created_at,
+            updated_at: self.updated_at,
+            s3_path: self.s3_path,
+            status: self.status,
+            role_arn: self.role_arn,
+            error_message: self.error_message,
+            file_format: self.file_format,
+            language_code: self.language_code,
             _request_id: self._request_id,
         }
     }
 }
-

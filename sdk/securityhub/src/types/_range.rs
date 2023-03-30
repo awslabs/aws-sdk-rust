@@ -3,7 +3,7 @@
 /// <p>Identifies where the sensitive data begins and ends.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Range  {
+pub struct Range {
     /// <p>The number of lines (for a line range) or characters (for an offset range) from the beginning of the file to the end of the sensitive data.</p>
     #[doc(hidden)]
     pub start: i64,
@@ -51,7 +51,8 @@ impl RangeBuilder {
     }
     /// <p>The number of lines (for a line range) or characters (for an offset range) from the beginning of the file to the end of the sensitive data.</p>
     pub fn set_start(mut self, input: std::option::Option<i64>) -> Self {
-        self.start = input; self
+        self.start = input;
+        self
     }
     /// <p>The number of lines (for a line range) or characters (for an offset range) from the beginning of the file to the end of the sensitive data.</p>
     pub fn end(mut self, input: i64) -> Self {
@@ -60,7 +61,8 @@ impl RangeBuilder {
     }
     /// <p>The number of lines (for a line range) or characters (for an offset range) from the beginning of the file to the end of the sensitive data.</p>
     pub fn set_end(mut self, input: std::option::Option<i64>) -> Self {
-        self.end = input; self
+        self.end = input;
+        self
     }
     /// <p>In the line where the sensitive data starts, the column within the line where the sensitive data starts.</p>
     pub fn start_column(mut self, input: i64) -> Self {
@@ -69,21 +71,15 @@ impl RangeBuilder {
     }
     /// <p>In the line where the sensitive data starts, the column within the line where the sensitive data starts.</p>
     pub fn set_start_column(mut self, input: std::option::Option<i64>) -> Self {
-        self.start_column = input; self
+        self.start_column = input;
+        self
     }
     /// Consumes the builder and constructs a [`Range`](crate::types::Range).
     pub fn build(self) -> crate::types::Range {
         crate::types::Range {
-            start: self.start
-                .unwrap_or_default()
-            ,
-            end: self.end
-                .unwrap_or_default()
-            ,
-            start_column: self.start_column
-                .unwrap_or_default()
-            ,
+            start: self.start.unwrap_or_default(),
+            end: self.end.unwrap_or_default(),
+            start_column: self.start_column.unwrap_or_default(),
         }
     }
 }
-

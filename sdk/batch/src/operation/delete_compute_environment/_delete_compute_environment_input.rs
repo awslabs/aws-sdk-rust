@@ -3,20 +3,22 @@
 /// <p>Contains the parameters for <code>DeleteComputeEnvironment</code>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteComputeEnvironmentInput  {
+pub struct DeleteComputeEnvironmentInput {
     /// <p>The name or Amazon Resource Name (ARN) of the compute environment to delete.</p>
     #[doc(hidden)]
     pub compute_environment: std::option::Option<std::string::String>,
 }
 impl DeleteComputeEnvironmentInput {
     /// <p>The name or Amazon Resource Name (ARN) of the compute environment to delete.</p>
-    pub fn compute_environment(&self) -> std::option::Option<& str> {
+    pub fn compute_environment(&self) -> std::option::Option<&str> {
         self.compute_environment.as_deref()
     }
 }
 impl DeleteComputeEnvironmentInput {
     /// Creates a new builder-style object to manufacture [`DeleteComputeEnvironmentInput`](crate::operation::delete_compute_environment::DeleteComputeEnvironmentInput).
-    pub fn builder() -> crate::operation::delete_compute_environment::builders::DeleteComputeEnvironmentInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::delete_compute_environment::builders::DeleteComputeEnvironmentInputBuilder
+    {
         crate::operation::delete_compute_environment::builders::DeleteComputeEnvironmentInputBuilder::default()
     }
 }
@@ -34,17 +36,24 @@ impl DeleteComputeEnvironmentInputBuilder {
         self
     }
     /// <p>The name or Amazon Resource Name (ARN) of the compute environment to delete.</p>
-    pub fn set_compute_environment(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.compute_environment = input; self
+    pub fn set_compute_environment(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.compute_environment = input;
+        self
     }
     /// Consumes the builder and constructs a [`DeleteComputeEnvironmentInput`](crate::operation::delete_compute_environment::DeleteComputeEnvironmentInput).
-    pub fn build(self) -> Result<crate::operation::delete_compute_environment::DeleteComputeEnvironmentInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::delete_compute_environment::DeleteComputeEnvironmentInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::delete_compute_environment::DeleteComputeEnvironmentInput {
-                compute_environment: self.compute_environment
-                ,
-            }
+                compute_environment: self.compute_environment,
+            },
         )
     }
 }
-

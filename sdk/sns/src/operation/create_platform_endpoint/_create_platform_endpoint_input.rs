@@ -3,7 +3,7 @@
 /// <p>Input for CreatePlatformEndpoint action.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreatePlatformEndpointInput  {
+pub struct CreatePlatformEndpointInput {
     /// <p>PlatformApplicationArn returned from CreatePlatformApplication is used to create a an endpoint.</p>
     #[doc(hidden)]
     pub platform_application_arn: std::option::Option<std::string::String>,
@@ -15,29 +15,35 @@ pub struct CreatePlatformEndpointInput  {
     pub custom_user_data: std::option::Option<std::string::String>,
     /// <p>For a list of attributes, see <a href="https://docs.aws.amazon.com/sns/latest/api/API_SetEndpointAttributes.html">SetEndpointAttributes</a>.</p>
     #[doc(hidden)]
-    pub attributes: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub attributes:
+        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl CreatePlatformEndpointInput {
     /// <p>PlatformApplicationArn returned from CreatePlatformApplication is used to create a an endpoint.</p>
-    pub fn platform_application_arn(&self) -> std::option::Option<& str> {
+    pub fn platform_application_arn(&self) -> std::option::Option<&str> {
         self.platform_application_arn.as_deref()
     }
     /// <p>Unique identifier created by the notification service for an app on a device. The specific name for Token will vary, depending on which notification service is being used. For example, when using APNS as the notification service, you need the device token. Alternatively, when using GCM (Firebase Cloud Messaging) or ADM, the device token equivalent is called the registration ID.</p>
-    pub fn token(&self) -> std::option::Option<& str> {
+    pub fn token(&self) -> std::option::Option<&str> {
         self.token.as_deref()
     }
     /// <p>Arbitrary user data to associate with the endpoint. Amazon SNS does not use this data. The data must be in UTF-8 format and less than 2KB.</p>
-    pub fn custom_user_data(&self) -> std::option::Option<& str> {
+    pub fn custom_user_data(&self) -> std::option::Option<&str> {
         self.custom_user_data.as_deref()
     }
     /// <p>For a list of attributes, see <a href="https://docs.aws.amazon.com/sns/latest/api/API_SetEndpointAttributes.html">SetEndpointAttributes</a>.</p>
-    pub fn attributes(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
+    pub fn attributes(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
         self.attributes.as_ref()
     }
 }
 impl CreatePlatformEndpointInput {
     /// Creates a new builder-style object to manufacture [`CreatePlatformEndpointInput`](crate::operation::create_platform_endpoint::CreatePlatformEndpointInput).
-    pub fn builder() -> crate::operation::create_platform_endpoint::builders::CreatePlatformEndpointInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::create_platform_endpoint::builders::CreatePlatformEndpointInputBuilder
+    {
         crate::operation::create_platform_endpoint::builders::CreatePlatformEndpointInputBuilder::default()
     }
 }
@@ -49,7 +55,8 @@ pub struct CreatePlatformEndpointInputBuilder {
     pub(crate) platform_application_arn: std::option::Option<std::string::String>,
     pub(crate) token: std::option::Option<std::string::String>,
     pub(crate) custom_user_data: std::option::Option<std::string::String>,
-    pub(crate) attributes: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub(crate) attributes:
+        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl CreatePlatformEndpointInputBuilder {
     /// <p>PlatformApplicationArn returned from CreatePlatformApplication is used to create a an endpoint.</p>
@@ -58,8 +65,12 @@ impl CreatePlatformEndpointInputBuilder {
         self
     }
     /// <p>PlatformApplicationArn returned from CreatePlatformApplication is used to create a an endpoint.</p>
-    pub fn set_platform_application_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.platform_application_arn = input; self
+    pub fn set_platform_application_arn(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.platform_application_arn = input;
+        self
     }
     /// <p>Unique identifier created by the notification service for an app on a device. The specific name for Token will vary, depending on which notification service is being used. For example, when using APNS as the notification service, you need the device token. Alternatively, when using GCM (Firebase Cloud Messaging) or ADM, the device token equivalent is called the registration ID.</p>
     pub fn token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -68,7 +79,8 @@ impl CreatePlatformEndpointInputBuilder {
     }
     /// <p>Unique identifier created by the notification service for an app on a device. The specific name for Token will vary, depending on which notification service is being used. For example, when using APNS as the notification service, you need the device token. Alternatively, when using GCM (Firebase Cloud Messaging) or ADM, the device token equivalent is called the registration ID.</p>
     pub fn set_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.token = input; self
+        self.token = input;
+        self
     }
     /// <p>Arbitrary user data to associate with the endpoint. Amazon SNS does not use this data. The data must be in UTF-8 format and less than 2KB.</p>
     pub fn custom_user_data(mut self, input: impl Into<std::string::String>) -> Self {
@@ -77,37 +89,48 @@ impl CreatePlatformEndpointInputBuilder {
     }
     /// <p>Arbitrary user data to associate with the endpoint. Amazon SNS does not use this data. The data must be in UTF-8 format and less than 2KB.</p>
     pub fn set_custom_user_data(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.custom_user_data = input; self
+        self.custom_user_data = input;
+        self
     }
     /// Adds a key-value pair to `attributes`.
     ///
     /// To override the contents of this collection use [`set_attributes`](Self::set_attributes).
     ///
     /// <p>For a list of attributes, see <a href="https://docs.aws.amazon.com/sns/latest/api/API_SetEndpointAttributes.html">SetEndpointAttributes</a>.</p>
-    pub fn attributes(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
+    pub fn attributes(
+        mut self,
+        k: impl Into<std::string::String>,
+        v: impl Into<std::string::String>,
+    ) -> Self {
         let mut hash_map = self.attributes.unwrap_or_default();
-                        hash_map.insert(k.into(), v.into());
-                        self.attributes = Some(hash_map);
-                        self
+        hash_map.insert(k.into(), v.into());
+        self.attributes = Some(hash_map);
+        self
     }
     /// <p>For a list of attributes, see <a href="https://docs.aws.amazon.com/sns/latest/api/API_SetEndpointAttributes.html">SetEndpointAttributes</a>.</p>
-    pub fn set_attributes(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
-        self.attributes = input; self
+    pub fn set_attributes(
+        mut self,
+        input: std::option::Option<
+            std::collections::HashMap<std::string::String, std::string::String>,
+        >,
+    ) -> Self {
+        self.attributes = input;
+        self
     }
     /// Consumes the builder and constructs a [`CreatePlatformEndpointInput`](crate::operation::create_platform_endpoint::CreatePlatformEndpointInput).
-    pub fn build(self) -> Result<crate::operation::create_platform_endpoint::CreatePlatformEndpointInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::create_platform_endpoint::CreatePlatformEndpointInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::create_platform_endpoint::CreatePlatformEndpointInput {
-                platform_application_arn: self.platform_application_arn
-                ,
-                token: self.token
-                ,
-                custom_user_data: self.custom_user_data
-                ,
-                attributes: self.attributes
-                ,
-            }
+                platform_application_arn: self.platform_application_arn,
+                token: self.token,
+                custom_user_data: self.custom_user_data,
+                attributes: self.attributes,
+            },
         )
     }
 }
-

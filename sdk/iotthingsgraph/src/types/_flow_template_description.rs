@@ -3,7 +3,7 @@
 /// <p>An object that contains a workflow's definition and summary information.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct FlowTemplateDescription  {
+pub struct FlowTemplateDescription {
     /// <p>An object that contains summary information about a workflow.</p>
     #[doc(hidden)]
     pub summary: std::option::Option<crate::types::FlowTemplateSummary>,
@@ -16,11 +16,11 @@ pub struct FlowTemplateDescription  {
 }
 impl FlowTemplateDescription {
     /// <p>An object that contains summary information about a workflow.</p>
-    pub fn summary(&self) -> std::option::Option<& crate::types::FlowTemplateSummary> {
+    pub fn summary(&self) -> std::option::Option<&crate::types::FlowTemplateSummary> {
         self.summary.as_ref()
     }
     /// <p>A workflow's definition document.</p>
-    pub fn definition(&self) -> std::option::Option<& crate::types::DefinitionDocument> {
+    pub fn definition(&self) -> std::option::Option<&crate::types::DefinitionDocument> {
         self.definition.as_ref()
     }
     /// <p>The version of the user's namespace against which the workflow was validated. Use this value in your system instance.</p>
@@ -50,8 +50,12 @@ impl FlowTemplateDescriptionBuilder {
         self
     }
     /// <p>An object that contains summary information about a workflow.</p>
-    pub fn set_summary(mut self, input: std::option::Option<crate::types::FlowTemplateSummary>) -> Self {
-        self.summary = input; self
+    pub fn set_summary(
+        mut self,
+        input: std::option::Option<crate::types::FlowTemplateSummary>,
+    ) -> Self {
+        self.summary = input;
+        self
     }
     /// <p>A workflow's definition document.</p>
     pub fn definition(mut self, input: crate::types::DefinitionDocument) -> Self {
@@ -59,8 +63,12 @@ impl FlowTemplateDescriptionBuilder {
         self
     }
     /// <p>A workflow's definition document.</p>
-    pub fn set_definition(mut self, input: std::option::Option<crate::types::DefinitionDocument>) -> Self {
-        self.definition = input; self
+    pub fn set_definition(
+        mut self,
+        input: std::option::Option<crate::types::DefinitionDocument>,
+    ) -> Self {
+        self.definition = input;
+        self
     }
     /// <p>The version of the user's namespace against which the workflow was validated. Use this value in your system instance.</p>
     pub fn validated_namespace_version(mut self, input: i64) -> Self {
@@ -69,18 +77,15 @@ impl FlowTemplateDescriptionBuilder {
     }
     /// <p>The version of the user's namespace against which the workflow was validated. Use this value in your system instance.</p>
     pub fn set_validated_namespace_version(mut self, input: std::option::Option<i64>) -> Self {
-        self.validated_namespace_version = input; self
+        self.validated_namespace_version = input;
+        self
     }
     /// Consumes the builder and constructs a [`FlowTemplateDescription`](crate::types::FlowTemplateDescription).
     pub fn build(self) -> crate::types::FlowTemplateDescription {
         crate::types::FlowTemplateDescription {
-            summary: self.summary
-            ,
-            definition: self.definition
-            ,
-            validated_namespace_version: self.validated_namespace_version
-            ,
+            summary: self.summary,
+            definition: self.definition,
+            validated_namespace_version: self.validated_namespace_version,
         }
     }
 }
-

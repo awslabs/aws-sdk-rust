@@ -2,10 +2,11 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DisassociateResourceShareOutput  {
+pub struct DisassociateResourceShareOutput {
     /// <p>An array of objects that contain information about the updated associations for this resource share.</p>
     #[doc(hidden)]
-    pub resource_share_associations: std::option::Option<std::vec::Vec<crate::types::ResourceShareAssociation>>,
+    pub resource_share_associations:
+        std::option::Option<std::vec::Vec<crate::types::ResourceShareAssociation>>,
     /// <p>The idempotency identifier associated with this request. If you want to repeat the same operation in an idempotent manner then you must include this value in the <code>clientToken</code> request parameter of that later call. All other parameters must also have the same values that you used in the first call.</p>
     #[doc(hidden)]
     pub client_token: std::option::Option<std::string::String>,
@@ -13,22 +14,24 @@ pub struct DisassociateResourceShareOutput  {
 }
 impl DisassociateResourceShareOutput {
     /// <p>An array of objects that contain information about the updated associations for this resource share.</p>
-    pub fn resource_share_associations(&self) -> std::option::Option<& [crate::types::ResourceShareAssociation]> {
+    pub fn resource_share_associations(
+        &self,
+    ) -> std::option::Option<&[crate::types::ResourceShareAssociation]> {
         self.resource_share_associations.as_deref()
     }
     /// <p>The idempotency identifier associated with this request. If you want to repeat the same operation in an idempotent manner then you must include this value in the <code>clientToken</code> request parameter of that later call. All other parameters must also have the same values that you used in the first call.</p>
-    pub fn client_token(&self) -> std::option::Option<& str> {
+    pub fn client_token(&self) -> std::option::Option<&str> {
         self.client_token.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for DisassociateResourceShareOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl DisassociateResourceShareOutput {
     /// Creates a new builder-style object to manufacture [`DisassociateResourceShareOutput`](crate::operation::disassociate_resource_share::DisassociateResourceShareOutput).
-    pub fn builder() -> crate::operation::disassociate_resource_share::builders::DisassociateResourceShareOutputBuilder {
+    pub fn builder() -> crate::operation::disassociate_resource_share::builders::DisassociateResourceShareOutputBuilder{
         crate::operation::disassociate_resource_share::builders::DisassociateResourceShareOutputBuilder::default()
     }
 }
@@ -37,7 +40,8 @@ impl DisassociateResourceShareOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct DisassociateResourceShareOutputBuilder {
-    pub(crate) resource_share_associations: std::option::Option<std::vec::Vec<crate::types::ResourceShareAssociation>>,
+    pub(crate) resource_share_associations:
+        std::option::Option<std::vec::Vec<crate::types::ResourceShareAssociation>>,
     pub(crate) client_token: std::option::Option<std::string::String>,
     _request_id: Option<String>,
 }
@@ -47,15 +51,22 @@ impl DisassociateResourceShareOutputBuilder {
     /// To override the contents of this collection use [`set_resource_share_associations`](Self::set_resource_share_associations).
     ///
     /// <p>An array of objects that contain information about the updated associations for this resource share.</p>
-    pub fn resource_share_associations(mut self, input: crate::types::ResourceShareAssociation) -> Self {
+    pub fn resource_share_associations(
+        mut self,
+        input: crate::types::ResourceShareAssociation,
+    ) -> Self {
         let mut v = self.resource_share_associations.unwrap_or_default();
-                        v.push(input);
-                        self.resource_share_associations = Some(v);
-                        self
+        v.push(input);
+        self.resource_share_associations = Some(v);
+        self
     }
     /// <p>An array of objects that contain information about the updated associations for this resource share.</p>
-    pub fn set_resource_share_associations(mut self, input: std::option::Option<std::vec::Vec<crate::types::ResourceShareAssociation>>) -> Self {
-        self.resource_share_associations = input; self
+    pub fn set_resource_share_associations(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::ResourceShareAssociation>>,
+    ) -> Self {
+        self.resource_share_associations = input;
+        self
     }
     /// <p>The idempotency identifier associated with this request. If you want to repeat the same operation in an idempotent manner then you must include this value in the <code>clientToken</code> request parameter of that later call. All other parameters must also have the same values that you used in the first call.</p>
     pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -64,26 +75,26 @@ impl DisassociateResourceShareOutputBuilder {
     }
     /// <p>The idempotency identifier associated with this request. If you want to repeat the same operation in an idempotent manner then you must include this value in the <code>clientToken</code> request parameter of that later call. All other parameters must also have the same values that you used in the first call.</p>
     pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.client_token = input; self
+        self.client_token = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`DisassociateResourceShareOutput`](crate::operation::disassociate_resource_share::DisassociateResourceShareOutput).
-    pub fn build(self) -> crate::operation::disassociate_resource_share::DisassociateResourceShareOutput {
+    pub fn build(
+        self,
+    ) -> crate::operation::disassociate_resource_share::DisassociateResourceShareOutput {
         crate::operation::disassociate_resource_share::DisassociateResourceShareOutput {
-            resource_share_associations: self.resource_share_associations
-            ,
-            client_token: self.client_token
-            ,
+            resource_share_associations: self.resource_share_associations,
+            client_token: self.client_token,
             _request_id: self._request_id,
         }
     }
 }
-

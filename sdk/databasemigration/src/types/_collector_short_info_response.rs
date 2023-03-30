@@ -3,7 +3,7 @@
 /// <p>Briefly describes a Fleet Advisor collector.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CollectorShortInfoResponse  {
+pub struct CollectorShortInfoResponse {
     /// <p>The reference ID of the Fleet Advisor collector.</p>
     #[doc(hidden)]
     pub collector_referenced_id: std::option::Option<std::string::String>,
@@ -13,11 +13,11 @@ pub struct CollectorShortInfoResponse  {
 }
 impl CollectorShortInfoResponse {
     /// <p>The reference ID of the Fleet Advisor collector.</p>
-    pub fn collector_referenced_id(&self) -> std::option::Option<& str> {
+    pub fn collector_referenced_id(&self) -> std::option::Option<&str> {
         self.collector_referenced_id.as_deref()
     }
     /// <p>The name of the Fleet Advisor collector.</p>
-    pub fn collector_name(&self) -> std::option::Option<& str> {
+    pub fn collector_name(&self) -> std::option::Option<&str> {
         self.collector_name.as_deref()
     }
 }
@@ -42,8 +42,12 @@ impl CollectorShortInfoResponseBuilder {
         self
     }
     /// <p>The reference ID of the Fleet Advisor collector.</p>
-    pub fn set_collector_referenced_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.collector_referenced_id = input; self
+    pub fn set_collector_referenced_id(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.collector_referenced_id = input;
+        self
     }
     /// <p>The name of the Fleet Advisor collector.</p>
     pub fn collector_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -52,16 +56,14 @@ impl CollectorShortInfoResponseBuilder {
     }
     /// <p>The name of the Fleet Advisor collector.</p>
     pub fn set_collector_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.collector_name = input; self
+        self.collector_name = input;
+        self
     }
     /// Consumes the builder and constructs a [`CollectorShortInfoResponse`](crate::types::CollectorShortInfoResponse).
     pub fn build(self) -> crate::types::CollectorShortInfoResponse {
         crate::types::CollectorShortInfoResponse {
-            collector_referenced_id: self.collector_referenced_id
-            ,
-            collector_name: self.collector_name
-            ,
+            collector_referenced_id: self.collector_referenced_id,
+            collector_name: self.collector_name,
         }
     }
 }
-

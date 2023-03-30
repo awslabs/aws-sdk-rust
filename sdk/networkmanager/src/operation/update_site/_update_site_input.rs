@@ -2,51 +2,51 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct UpdateSiteInput  {
+pub struct UpdateSiteInput {
     /// <p>The ID of the global network.</p>
     #[doc(hidden)]
     pub global_network_id: std::option::Option<std::string::String>,
     /// <p>The ID of your site.</p>
     #[doc(hidden)]
     pub site_id: std::option::Option<std::string::String>,
-    /// <p>A description of your site.</p> 
+    /// <p>A description of your site.</p>
     /// <p>Constraints: Maximum length of 256 characters.</p>
     #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
-    /// <p>The site location:</p> 
-    /// <ul> 
-    /// <li> <p> <code>Address</code>: The physical address of the site.</p> </li> 
-    /// <li> <p> <code>Latitude</code>: The latitude of the site. </p> </li> 
-    /// <li> <p> <code>Longitude</code>: The longitude of the site.</p> </li> 
+    /// <p>The site location:</p>
+    /// <ul>
+    /// <li> <p> <code>Address</code>: The physical address of the site.</p> </li>
+    /// <li> <p> <code>Latitude</code>: The latitude of the site. </p> </li>
+    /// <li> <p> <code>Longitude</code>: The longitude of the site.</p> </li>
     /// </ul>
     #[doc(hidden)]
     pub location: std::option::Option<crate::types::Location>,
 }
 impl UpdateSiteInput {
     /// <p>The ID of the global network.</p>
-    pub fn global_network_id(&self) -> std::option::Option<& str> {
+    pub fn global_network_id(&self) -> std::option::Option<&str> {
         self.global_network_id.as_deref()
     }
     /// <p>The ID of your site.</p>
-    pub fn site_id(&self) -> std::option::Option<& str> {
+    pub fn site_id(&self) -> std::option::Option<&str> {
         self.site_id.as_deref()
     }
-    /// <p>A description of your site.</p> 
+    /// <p>A description of your site.</p>
     /// <p>Constraints: Maximum length of 256 characters.</p>
-    pub fn description(&self) -> std::option::Option<& str> {
+    pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
-    /// <p>The site location:</p> 
-    /// <ul> 
-    /// <li> <p> <code>Address</code>: The physical address of the site.</p> </li> 
-    /// <li> <p> <code>Latitude</code>: The latitude of the site. </p> </li> 
-    /// <li> <p> <code>Longitude</code>: The longitude of the site.</p> </li> 
+    /// <p>The site location:</p>
+    /// <ul>
+    /// <li> <p> <code>Address</code>: The physical address of the site.</p> </li>
+    /// <li> <p> <code>Latitude</code>: The latitude of the site. </p> </li>
+    /// <li> <p> <code>Longitude</code>: The longitude of the site.</p> </li>
     /// </ul>
-    pub fn location(&self) -> std::option::Option<& crate::types::Location> {
+    pub fn location(&self) -> std::option::Option<&crate::types::Location> {
         self.location.as_ref()
     }
 }
-impl  std::fmt::Debug for UpdateSiteInput  {
+impl std::fmt::Debug for UpdateSiteInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateSiteInput");
         formatter.field("global_network_id", &self.global_network_id);
@@ -79,8 +79,12 @@ impl UpdateSiteInputBuilder {
         self
     }
     /// <p>The ID of the global network.</p>
-    pub fn set_global_network_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.global_network_id = input; self
+    pub fn set_global_network_id(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.global_network_id = input;
+        self
     }
     /// <p>The ID of your site.</p>
     pub fn site_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -89,52 +93,54 @@ impl UpdateSiteInputBuilder {
     }
     /// <p>The ID of your site.</p>
     pub fn set_site_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.site_id = input; self
+        self.site_id = input;
+        self
     }
-    /// <p>A description of your site.</p> 
+    /// <p>A description of your site.</p>
     /// <p>Constraints: Maximum length of 256 characters.</p>
     pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
         self.description = Some(input.into());
         self
     }
-    /// <p>A description of your site.</p> 
+    /// <p>A description of your site.</p>
     /// <p>Constraints: Maximum length of 256 characters.</p>
     pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.description = input; self
+        self.description = input;
+        self
     }
-    /// <p>The site location:</p> 
-    /// <ul> 
-    /// <li> <p> <code>Address</code>: The physical address of the site.</p> </li> 
-    /// <li> <p> <code>Latitude</code>: The latitude of the site. </p> </li> 
-    /// <li> <p> <code>Longitude</code>: The longitude of the site.</p> </li> 
+    /// <p>The site location:</p>
+    /// <ul>
+    /// <li> <p> <code>Address</code>: The physical address of the site.</p> </li>
+    /// <li> <p> <code>Latitude</code>: The latitude of the site. </p> </li>
+    /// <li> <p> <code>Longitude</code>: The longitude of the site.</p> </li>
     /// </ul>
     pub fn location(mut self, input: crate::types::Location) -> Self {
         self.location = Some(input);
         self
     }
-    /// <p>The site location:</p> 
-    /// <ul> 
-    /// <li> <p> <code>Address</code>: The physical address of the site.</p> </li> 
-    /// <li> <p> <code>Latitude</code>: The latitude of the site. </p> </li> 
-    /// <li> <p> <code>Longitude</code>: The longitude of the site.</p> </li> 
+    /// <p>The site location:</p>
+    /// <ul>
+    /// <li> <p> <code>Address</code>: The physical address of the site.</p> </li>
+    /// <li> <p> <code>Latitude</code>: The latitude of the site. </p> </li>
+    /// <li> <p> <code>Longitude</code>: The longitude of the site.</p> </li>
     /// </ul>
     pub fn set_location(mut self, input: std::option::Option<crate::types::Location>) -> Self {
-        self.location = input; self
+        self.location = input;
+        self
     }
     /// Consumes the builder and constructs a [`UpdateSiteInput`](crate::operation::update_site::UpdateSiteInput).
-    pub fn build(self) -> Result<crate::operation::update_site::UpdateSiteInput, aws_smithy_http::operation::error::BuildError> {
-        Ok(
-            crate::operation::update_site::UpdateSiteInput {
-                global_network_id: self.global_network_id
-                ,
-                site_id: self.site_id
-                ,
-                description: self.description
-                ,
-                location: self.location
-                ,
-            }
-        )
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::update_site::UpdateSiteInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        Ok(crate::operation::update_site::UpdateSiteInput {
+            global_network_id: self.global_network_id,
+            site_id: self.site_id,
+            description: self.description,
+            location: self.location,
+        })
     }
 }
 impl std::fmt::Debug for UpdateSiteInputBuilder {
@@ -147,4 +153,3 @@ impl std::fmt::Debug for UpdateSiteInputBuilder {
         formatter.finish()
     }
 }
-

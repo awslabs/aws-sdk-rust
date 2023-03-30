@@ -3,27 +3,33 @@
 /// <p>Represents the requested sending authorization policies.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetIdentityPoliciesOutput  {
+pub struct GetIdentityPoliciesOutput {
     /// <p>A map of policy names to policies.</p>
     #[doc(hidden)]
-    pub policies: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub policies:
+        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     _request_id: Option<String>,
 }
 impl GetIdentityPoliciesOutput {
     /// <p>A map of policy names to policies.</p>
-    pub fn policies(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
+    pub fn policies(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
         self.policies.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for GetIdentityPoliciesOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl GetIdentityPoliciesOutput {
     /// Creates a new builder-style object to manufacture [`GetIdentityPoliciesOutput`](crate::operation::get_identity_policies::GetIdentityPoliciesOutput).
-    pub fn builder() -> crate::operation::get_identity_policies::builders::GetIdentityPoliciesOutputBuilder {
-        crate::operation::get_identity_policies::builders::GetIdentityPoliciesOutputBuilder::default()
+    pub fn builder(
+    ) -> crate::operation::get_identity_policies::builders::GetIdentityPoliciesOutputBuilder {
+        crate::operation::get_identity_policies::builders::GetIdentityPoliciesOutputBuilder::default(
+        )
     }
 }
 
@@ -31,7 +37,8 @@ impl GetIdentityPoliciesOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct GetIdentityPoliciesOutputBuilder {
-    pub(crate) policies: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub(crate) policies:
+        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     _request_id: Option<String>,
 }
 impl GetIdentityPoliciesOutputBuilder {
@@ -40,32 +47,40 @@ impl GetIdentityPoliciesOutputBuilder {
     /// To override the contents of this collection use [`set_policies`](Self::set_policies).
     ///
     /// <p>A map of policy names to policies.</p>
-    pub fn policies(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
+    pub fn policies(
+        mut self,
+        k: impl Into<std::string::String>,
+        v: impl Into<std::string::String>,
+    ) -> Self {
         let mut hash_map = self.policies.unwrap_or_default();
-                        hash_map.insert(k.into(), v.into());
-                        self.policies = Some(hash_map);
-                        self
+        hash_map.insert(k.into(), v.into());
+        self.policies = Some(hash_map);
+        self
     }
     /// <p>A map of policy names to policies.</p>
-    pub fn set_policies(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
-        self.policies = input; self
+    pub fn set_policies(
+        mut self,
+        input: std::option::Option<
+            std::collections::HashMap<std::string::String, std::string::String>,
+        >,
+    ) -> Self {
+        self.policies = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`GetIdentityPoliciesOutput`](crate::operation::get_identity_policies::GetIdentityPoliciesOutput).
     pub fn build(self) -> crate::operation::get_identity_policies::GetIdentityPoliciesOutput {
         crate::operation::get_identity_policies::GetIdentityPoliciesOutput {
-            policies: self.policies
-            ,
+            policies: self.policies,
             _request_id: self._request_id,
         }
     }
 }
-

@@ -4,67 +4,85 @@ pub use crate::operation::list_fleets::_list_fleets_output::ListFleetsOutputBuil
 pub use crate::operation::list_fleets::_list_fleets_input::ListFleetsInputBuilder;
 
 /// Fluent builder constructing a request to `ListFleets`.
-/// 
-/// <p>Retrieves a collection of fleet resources in an Amazon Web Services Region. You can call this operation to get fleets in a previously selected default Region (see <a href="https://docs.aws.amazon.com/credref/latest/refdocs/setting-global-region.html">https://docs.aws.amazon.com/credref/latest/refdocs/setting-global-region.html</a>or specify a Region in your request. You can filter the result set to find only those fleets that are deployed with a specific build or script. For fleets that have multiple locations, this operation retrieves fleets based on their home Region only.</p> 
-/// <p>This operation can be used in the following ways: </p> 
-/// <ul> 
-/// <li> <p>To get a list of all fleets in a Region, don't provide a build or script identifier. </p> </li> 
-/// <li> <p>To get a list of all fleets where a specific custom game build is deployed, provide the build ID.</p> </li> 
-/// <li> <p>To get a list of all Realtime Servers fleets with a specific configuration script, provide the script ID. </p> </li> 
-/// </ul> 
-/// <p>Use the pagination parameters to retrieve results as a set of sequential pages. </p> 
-/// <p>If successful, a list of fleet IDs that match the request parameters is returned. A NextToken value is also returned if there are more result pages to retrieve.</p> <note> 
-/// <p>Fleet resources are not listed in a particular order.</p> 
-/// </note> 
-/// <p> <b>Learn more</b> </p> 
+///
+/// <p>Retrieves a collection of fleet resources in an Amazon Web Services Region. You can call this operation to get fleets in a previously selected default Region (see <a href="https://docs.aws.amazon.com/credref/latest/refdocs/setting-global-region.html">https://docs.aws.amazon.com/credref/latest/refdocs/setting-global-region.html</a>or specify a Region in your request. You can filter the result set to find only those fleets that are deployed with a specific build or script. For fleets that have multiple locations, this operation retrieves fleets based on their home Region only.</p>
+/// <p>This operation can be used in the following ways: </p>
+/// <ul>
+/// <li> <p>To get a list of all fleets in a Region, don't provide a build or script identifier. </p> </li>
+/// <li> <p>To get a list of all fleets where a specific custom game build is deployed, provide the build ID.</p> </li>
+/// <li> <p>To get a list of all Realtime Servers fleets with a specific configuration script, provide the script ID. </p> </li>
+/// </ul>
+/// <p>Use the pagination parameters to retrieve results as a set of sequential pages. </p>
+/// <p>If successful, a list of fleet IDs that match the request parameters is returned. A NextToken value is also returned if there are more result pages to retrieve.</p> <note>
+/// <p>Fleet resources are not listed in a particular order.</p>
+/// </note>
+/// <p> <b>Learn more</b> </p>
 /// <p> <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/fleets-intro.html">Setting up GameLift fleets</a> </p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListFleetsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::list_fleets::builders::ListFleetsInputBuilder
-            }
-impl ListFleetsFluentBuilder  {
+    handle: std::sync::Arc<crate::client::Handle>,
+    inner: crate::operation::list_fleets::builders::ListFleetsInputBuilder,
+}
+impl ListFleetsFluentBuilder {
     /// Creates a new `ListFleets`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
-                    /// sent. The operation's inner [http::Request] can be modified as well.
-                    pub async fn customize(self) -> std::result::Result<
-                        crate::client::customize::CustomizableOperation<crate::operation::list_fleets::ListFleets, aws_http::retry::AwsResponseRetryClassifier,>,
-                        aws_smithy_http::result::SdkError<crate::operation::list_fleets::ListFleetsError>
-                    >  {
-                        let handle = self.handle.clone();
-                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-                    }
-    
-                    /// Sends the request and returns the response.
-                    ///
-                    /// If an error occurs, an `SdkError` will be returned with additional details that
-                    /// can be matched against.
-                    ///
-                    /// By default, any retryable failures will be retried twice. Retry behavior
-                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                    /// set when configuring the client.
-                    pub async fn send(self) -> std::result::Result<crate::operation::list_fleets::ListFleetsOutput, aws_smithy_http::result::SdkError<crate::operation::list_fleets::ListFleetsError>>
-                     {
-                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&self.handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        self.handle.client.call(op).await
-                    }
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle,
+            inner: Default::default(),
+        }
+    }
+
+    /// Consume this builder, creating a customizable operation that can be modified before being
+    /// sent. The operation's inner [http::Request] can be modified as well.
+    pub async fn customize(
+        self,
+    ) -> std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::list_fleets::ListFleets,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::result::SdkError<crate::operation::list_fleets::ListFleetsError>,
+    > {
+        let handle = self.handle.clone();
+        let operation = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+    }
+
+    /// Sends the request and returns the response.
+    ///
+    /// If an error occurs, an `SdkError` will be returned with additional details that
+    /// can be matched against.
+    ///
+    /// By default, any retryable failures will be retried twice. Retry behavior
+    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+    /// set when configuring the client.
+    pub async fn send(
+        self,
+    ) -> std::result::Result<
+        crate::operation::list_fleets::ListFleetsOutput,
+        aws_smithy_http::result::SdkError<crate::operation::list_fleets::ListFleetsError>,
+    > {
+        let op = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&self.handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        self.handle.client.call(op).await
+    }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::list_fleets::paginator::ListFleetsPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::list_fleets::paginator::ListFleetsPaginator {
-                            crate::operation::list_fleets::paginator::ListFleetsPaginator::new(self.handle, self.inner)
-                        }
+    ///
+    /// Paginators are used by calling [`send().await`](crate::operation::list_fleets::paginator::ListFleetsPaginator::send) which returns a `Stream`.
+    pub fn into_paginator(self) -> crate::operation::list_fleets::paginator::ListFleetsPaginator {
+        crate::operation::list_fleets::paginator::ListFleetsPaginator::new(self.handle, self.inner)
+    }
     /// <p>A unique identifier for the build to request fleets for. Use this parameter to return only fleets using a specified build. Use either the build ID or ARN value.</p>
     pub fn build_id(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.build_id(input.into());
@@ -106,4 +124,3 @@ impl ListFleetsFluentBuilder  {
         self
     }
 }
-

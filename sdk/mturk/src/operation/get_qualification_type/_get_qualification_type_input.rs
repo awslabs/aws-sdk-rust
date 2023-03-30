@@ -2,20 +2,21 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetQualificationTypeInput  {
+pub struct GetQualificationTypeInput {
     /// <p>The ID of the QualificationType.</p>
     #[doc(hidden)]
     pub qualification_type_id: std::option::Option<std::string::String>,
 }
 impl GetQualificationTypeInput {
     /// <p>The ID of the QualificationType.</p>
-    pub fn qualification_type_id(&self) -> std::option::Option<& str> {
+    pub fn qualification_type_id(&self) -> std::option::Option<&str> {
         self.qualification_type_id.as_deref()
     }
 }
 impl GetQualificationTypeInput {
     /// Creates a new builder-style object to manufacture [`GetQualificationTypeInput`](crate::operation::get_qualification_type::GetQualificationTypeInput).
-    pub fn builder() -> crate::operation::get_qualification_type::builders::GetQualificationTypeInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::get_qualification_type::builders::GetQualificationTypeInputBuilder {
         crate::operation::get_qualification_type::builders::GetQualificationTypeInputBuilder::default()
     }
 }
@@ -33,17 +34,24 @@ impl GetQualificationTypeInputBuilder {
         self
     }
     /// <p>The ID of the QualificationType.</p>
-    pub fn set_qualification_type_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.qualification_type_id = input; self
+    pub fn set_qualification_type_id(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.qualification_type_id = input;
+        self
     }
     /// Consumes the builder and constructs a [`GetQualificationTypeInput`](crate::operation::get_qualification_type::GetQualificationTypeInput).
-    pub fn build(self) -> Result<crate::operation::get_qualification_type::GetQualificationTypeInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::get_qualification_type::GetQualificationTypeInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::get_qualification_type::GetQualificationTypeInput {
-                qualification_type_id: self.qualification_type_id
-                ,
-            }
+                qualification_type_id: self.qualification_type_id,
+            },
         )
     }
 }
-

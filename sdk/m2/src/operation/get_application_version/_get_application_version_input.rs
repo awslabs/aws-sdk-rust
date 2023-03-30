@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetApplicationVersionInput  {
+pub struct GetApplicationVersionInput {
     /// <p>The unique identifier of the application.</p>
     #[doc(hidden)]
     pub application_id: std::option::Option<std::string::String>,
@@ -12,7 +12,7 @@ pub struct GetApplicationVersionInput  {
 }
 impl GetApplicationVersionInput {
     /// <p>The unique identifier of the application.</p>
-    pub fn application_id(&self) -> std::option::Option<& str> {
+    pub fn application_id(&self) -> std::option::Option<&str> {
         self.application_id.as_deref()
     }
     /// <p>The specific version of the application.</p>
@@ -22,7 +22,9 @@ impl GetApplicationVersionInput {
 }
 impl GetApplicationVersionInput {
     /// Creates a new builder-style object to manufacture [`GetApplicationVersionInput`](crate::operation::get_application_version::GetApplicationVersionInput).
-    pub fn builder() -> crate::operation::get_application_version::builders::GetApplicationVersionInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::get_application_version::builders::GetApplicationVersionInputBuilder
+    {
         crate::operation::get_application_version::builders::GetApplicationVersionInputBuilder::default()
     }
 }
@@ -42,7 +44,8 @@ impl GetApplicationVersionInputBuilder {
     }
     /// <p>The unique identifier of the application.</p>
     pub fn set_application_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.application_id = input; self
+        self.application_id = input;
+        self
     }
     /// <p>The specific version of the application.</p>
     pub fn application_version(mut self, input: i32) -> Self {
@@ -51,18 +54,21 @@ impl GetApplicationVersionInputBuilder {
     }
     /// <p>The specific version of the application.</p>
     pub fn set_application_version(mut self, input: std::option::Option<i32>) -> Self {
-        self.application_version = input; self
+        self.application_version = input;
+        self
     }
     /// Consumes the builder and constructs a [`GetApplicationVersionInput`](crate::operation::get_application_version::GetApplicationVersionInput).
-    pub fn build(self) -> Result<crate::operation::get_application_version::GetApplicationVersionInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::get_application_version::GetApplicationVersionInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::get_application_version::GetApplicationVersionInput {
-                application_id: self.application_id
-                ,
-                application_version: self.application_version
-                ,
-            }
+                application_id: self.application_id,
+                application_version: self.application_version,
+            },
         )
     }
 }
-

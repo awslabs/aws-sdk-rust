@@ -2,11 +2,11 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateTypeInput  {
+pub struct CreateTypeInput {
     /// <p>The API ID.</p>
     #[doc(hidden)]
     pub api_id: std::option::Option<std::string::String>,
-    /// <p>The type definition, in GraphQL Schema Definition Language (SDL) format.</p> 
+    /// <p>The type definition, in GraphQL Schema Definition Language (SDL) format.</p>
     /// <p>For more information, see the <a href="http://graphql.org/learn/schema/">GraphQL SDL documentation</a>.</p>
     #[doc(hidden)]
     pub definition: std::option::Option<std::string::String>,
@@ -16,16 +16,16 @@ pub struct CreateTypeInput  {
 }
 impl CreateTypeInput {
     /// <p>The API ID.</p>
-    pub fn api_id(&self) -> std::option::Option<& str> {
+    pub fn api_id(&self) -> std::option::Option<&str> {
         self.api_id.as_deref()
     }
-    /// <p>The type definition, in GraphQL Schema Definition Language (SDL) format.</p> 
+    /// <p>The type definition, in GraphQL Schema Definition Language (SDL) format.</p>
     /// <p>For more information, see the <a href="http://graphql.org/learn/schema/">GraphQL SDL documentation</a>.</p>
-    pub fn definition(&self) -> std::option::Option<& str> {
+    pub fn definition(&self) -> std::option::Option<&str> {
         self.definition.as_deref()
     }
     /// <p>The type format: SDL or JSON.</p>
-    pub fn format(&self) -> std::option::Option<& crate::types::TypeDefinitionFormat> {
+    pub fn format(&self) -> std::option::Option<&crate::types::TypeDefinitionFormat> {
         self.format.as_ref()
     }
 }
@@ -52,18 +52,20 @@ impl CreateTypeInputBuilder {
     }
     /// <p>The API ID.</p>
     pub fn set_api_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.api_id = input; self
+        self.api_id = input;
+        self
     }
-    /// <p>The type definition, in GraphQL Schema Definition Language (SDL) format.</p> 
+    /// <p>The type definition, in GraphQL Schema Definition Language (SDL) format.</p>
     /// <p>For more information, see the <a href="http://graphql.org/learn/schema/">GraphQL SDL documentation</a>.</p>
     pub fn definition(mut self, input: impl Into<std::string::String>) -> Self {
         self.definition = Some(input.into());
         self
     }
-    /// <p>The type definition, in GraphQL Schema Definition Language (SDL) format.</p> 
+    /// <p>The type definition, in GraphQL Schema Definition Language (SDL) format.</p>
     /// <p>For more information, see the <a href="http://graphql.org/learn/schema/">GraphQL SDL documentation</a>.</p>
     pub fn set_definition(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.definition = input; self
+        self.definition = input;
+        self
     }
     /// <p>The type format: SDL or JSON.</p>
     pub fn format(mut self, input: crate::types::TypeDefinitionFormat) -> Self {
@@ -71,21 +73,24 @@ impl CreateTypeInputBuilder {
         self
     }
     /// <p>The type format: SDL or JSON.</p>
-    pub fn set_format(mut self, input: std::option::Option<crate::types::TypeDefinitionFormat>) -> Self {
-        self.format = input; self
+    pub fn set_format(
+        mut self,
+        input: std::option::Option<crate::types::TypeDefinitionFormat>,
+    ) -> Self {
+        self.format = input;
+        self
     }
     /// Consumes the builder and constructs a [`CreateTypeInput`](crate::operation::create_type::CreateTypeInput).
-    pub fn build(self) -> Result<crate::operation::create_type::CreateTypeInput, aws_smithy_http::operation::error::BuildError> {
-        Ok(
-            crate::operation::create_type::CreateTypeInput {
-                api_id: self.api_id
-                ,
-                definition: self.definition
-                ,
-                format: self.format
-                ,
-            }
-        )
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::create_type::CreateTypeInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        Ok(crate::operation::create_type::CreateTypeInput {
+            api_id: self.api_id,
+            definition: self.definition,
+            format: self.format,
+        })
     }
 }
-

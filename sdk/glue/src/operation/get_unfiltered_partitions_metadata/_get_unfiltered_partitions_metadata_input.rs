@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetUnfilteredPartitionsMetadataInput  {
+pub struct GetUnfilteredPartitionsMetadataInput {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub catalog_id: std::option::Option<std::string::String>,
@@ -20,7 +20,8 @@ pub struct GetUnfilteredPartitionsMetadataInput  {
     pub audit_context: std::option::Option<crate::types::AuditContext>,
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
-    pub supported_permission_types: std::option::Option<std::vec::Vec<crate::types::PermissionType>>,
+    pub supported_permission_types:
+        std::option::Option<std::vec::Vec<crate::types::PermissionType>>,
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
@@ -33,35 +34,37 @@ pub struct GetUnfilteredPartitionsMetadataInput  {
 }
 impl GetUnfilteredPartitionsMetadataInput {
     #[allow(missing_docs)] // documentation missing in model
-    pub fn catalog_id(&self) -> std::option::Option<& str> {
+    pub fn catalog_id(&self) -> std::option::Option<&str> {
         self.catalog_id.as_deref()
     }
     #[allow(missing_docs)] // documentation missing in model
-    pub fn database_name(&self) -> std::option::Option<& str> {
+    pub fn database_name(&self) -> std::option::Option<&str> {
         self.database_name.as_deref()
     }
     #[allow(missing_docs)] // documentation missing in model
-    pub fn table_name(&self) -> std::option::Option<& str> {
+    pub fn table_name(&self) -> std::option::Option<&str> {
         self.table_name.as_deref()
     }
     #[allow(missing_docs)] // documentation missing in model
-    pub fn expression(&self) -> std::option::Option<& str> {
+    pub fn expression(&self) -> std::option::Option<&str> {
         self.expression.as_deref()
     }
     /// <p>A structure containing information for audit.</p>
-    pub fn audit_context(&self) -> std::option::Option<& crate::types::AuditContext> {
+    pub fn audit_context(&self) -> std::option::Option<&crate::types::AuditContext> {
         self.audit_context.as_ref()
     }
     #[allow(missing_docs)] // documentation missing in model
-    pub fn supported_permission_types(&self) -> std::option::Option<& [crate::types::PermissionType]> {
+    pub fn supported_permission_types(
+        &self,
+    ) -> std::option::Option<&[crate::types::PermissionType]> {
         self.supported_permission_types.as_deref()
     }
     #[allow(missing_docs)] // documentation missing in model
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
     /// <p>Defines a non-overlapping region of a table's partitions, allowing multiple requests to be run in parallel.</p>
-    pub fn segment(&self) -> std::option::Option<& crate::types::Segment> {
+    pub fn segment(&self) -> std::option::Option<&crate::types::Segment> {
         self.segment.as_ref()
     }
     #[allow(missing_docs)] // documentation missing in model
@@ -71,7 +74,7 @@ impl GetUnfilteredPartitionsMetadataInput {
 }
 impl GetUnfilteredPartitionsMetadataInput {
     /// Creates a new builder-style object to manufacture [`GetUnfilteredPartitionsMetadataInput`](crate::operation::get_unfiltered_partitions_metadata::GetUnfilteredPartitionsMetadataInput).
-    pub fn builder() -> crate::operation::get_unfiltered_partitions_metadata::builders::GetUnfilteredPartitionsMetadataInputBuilder {
+    pub fn builder() -> crate::operation::get_unfiltered_partitions_metadata::builders::GetUnfilteredPartitionsMetadataInputBuilder{
         crate::operation::get_unfiltered_partitions_metadata::builders::GetUnfilteredPartitionsMetadataInputBuilder::default()
     }
 }
@@ -85,7 +88,8 @@ pub struct GetUnfilteredPartitionsMetadataInputBuilder {
     pub(crate) table_name: std::option::Option<std::string::String>,
     pub(crate) expression: std::option::Option<std::string::String>,
     pub(crate) audit_context: std::option::Option<crate::types::AuditContext>,
-    pub(crate) supported_permission_types: std::option::Option<std::vec::Vec<crate::types::PermissionType>>,
+    pub(crate) supported_permission_types:
+        std::option::Option<std::vec::Vec<crate::types::PermissionType>>,
     pub(crate) next_token: std::option::Option<std::string::String>,
     pub(crate) segment: std::option::Option<crate::types::Segment>,
     pub(crate) max_results: std::option::Option<i32>,
@@ -98,7 +102,8 @@ impl GetUnfilteredPartitionsMetadataInputBuilder {
     }
     #[allow(missing_docs)] // documentation missing in model
     pub fn set_catalog_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.catalog_id = input; self
+        self.catalog_id = input;
+        self
     }
     #[allow(missing_docs)] // documentation missing in model
     pub fn database_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -107,7 +112,8 @@ impl GetUnfilteredPartitionsMetadataInputBuilder {
     }
     #[allow(missing_docs)] // documentation missing in model
     pub fn set_database_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.database_name = input; self
+        self.database_name = input;
+        self
     }
     #[allow(missing_docs)] // documentation missing in model
     pub fn table_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -116,7 +122,8 @@ impl GetUnfilteredPartitionsMetadataInputBuilder {
     }
     #[allow(missing_docs)] // documentation missing in model
     pub fn set_table_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.table_name = input; self
+        self.table_name = input;
+        self
     }
     #[allow(missing_docs)] // documentation missing in model
     pub fn expression(mut self, input: impl Into<std::string::String>) -> Self {
@@ -125,7 +132,8 @@ impl GetUnfilteredPartitionsMetadataInputBuilder {
     }
     #[allow(missing_docs)] // documentation missing in model
     pub fn set_expression(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.expression = input; self
+        self.expression = input;
+        self
     }
     /// <p>A structure containing information for audit.</p>
     pub fn audit_context(mut self, input: crate::types::AuditContext) -> Self {
@@ -133,8 +141,12 @@ impl GetUnfilteredPartitionsMetadataInputBuilder {
         self
     }
     /// <p>A structure containing information for audit.</p>
-    pub fn set_audit_context(mut self, input: std::option::Option<crate::types::AuditContext>) -> Self {
-        self.audit_context = input; self
+    pub fn set_audit_context(
+        mut self,
+        input: std::option::Option<crate::types::AuditContext>,
+    ) -> Self {
+        self.audit_context = input;
+        self
     }
     /// Appends an item to `supported_permission_types`.
     ///
@@ -142,13 +154,17 @@ impl GetUnfilteredPartitionsMetadataInputBuilder {
     ///
     pub fn supported_permission_types(mut self, input: crate::types::PermissionType) -> Self {
         let mut v = self.supported_permission_types.unwrap_or_default();
-                        v.push(input);
-                        self.supported_permission_types = Some(v);
-                        self
+        v.push(input);
+        self.supported_permission_types = Some(v);
+        self
     }
     #[allow(missing_docs)] // documentation missing in model
-    pub fn set_supported_permission_types(mut self, input: std::option::Option<std::vec::Vec<crate::types::PermissionType>>) -> Self {
-        self.supported_permission_types = input; self
+    pub fn set_supported_permission_types(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::PermissionType>>,
+    ) -> Self {
+        self.supported_permission_types = input;
+        self
     }
     #[allow(missing_docs)] // documentation missing in model
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -157,7 +173,8 @@ impl GetUnfilteredPartitionsMetadataInputBuilder {
     }
     #[allow(missing_docs)] // documentation missing in model
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input; self
+        self.next_token = input;
+        self
     }
     /// <p>Defines a non-overlapping region of a table's partitions, allowing multiple requests to be run in parallel.</p>
     pub fn segment(mut self, input: crate::types::Segment) -> Self {
@@ -166,7 +183,8 @@ impl GetUnfilteredPartitionsMetadataInputBuilder {
     }
     /// <p>Defines a non-overlapping region of a table's partitions, allowing multiple requests to be run in parallel.</p>
     pub fn set_segment(mut self, input: std::option::Option<crate::types::Segment>) -> Self {
-        self.segment = input; self
+        self.segment = input;
+        self
     }
     #[allow(missing_docs)] // documentation missing in model
     pub fn max_results(mut self, input: i32) -> Self {
@@ -175,10 +193,16 @@ impl GetUnfilteredPartitionsMetadataInputBuilder {
     }
     #[allow(missing_docs)] // documentation missing in model
     pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_results = input; self
+        self.max_results = input;
+        self
     }
     /// Consumes the builder and constructs a [`GetUnfilteredPartitionsMetadataInput`](crate::operation::get_unfiltered_partitions_metadata::GetUnfilteredPartitionsMetadataInput).
-    pub fn build(self) -> Result<crate::operation::get_unfiltered_partitions_metadata::GetUnfilteredPartitionsMetadataInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::get_unfiltered_partitions_metadata::GetUnfilteredPartitionsMetadataInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::get_unfiltered_partitions_metadata::GetUnfilteredPartitionsMetadataInput {
                 catalog_id: self.catalog_id
@@ -203,4 +227,3 @@ impl GetUnfilteredPartitionsMetadataInputBuilder {
         )
     }
 }
-

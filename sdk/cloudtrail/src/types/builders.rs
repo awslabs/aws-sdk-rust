@@ -48,4 +48,3 @@ pub use crate::types::_destination::DestinationBuilder;
 pub use crate::types::_source_config::SourceConfigBuilder;
 
 pub use crate::types::_query_statistics_for_describe_query::QueryStatisticsForDescribeQueryBuilder;
-

@@ -3,7 +3,7 @@
 /// <p>A single attack statistics data record. This is returned by <code>DescribeAttackStatistics</code> along with a time range indicating the time period that the attack statistics apply to. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AttackStatisticsDataItem  {
+pub struct AttackStatisticsDataItem {
     /// <p>Information about the volume of attacks during the time period. If the accompanying <code>AttackCount</code> is zero, this setting might be empty.</p>
     #[doc(hidden)]
     pub attack_volume: std::option::Option<crate::types::AttackVolume>,
@@ -13,7 +13,7 @@ pub struct AttackStatisticsDataItem  {
 }
 impl AttackStatisticsDataItem {
     /// <p>Information about the volume of attacks during the time period. If the accompanying <code>AttackCount</code> is zero, this setting might be empty.</p>
-    pub fn attack_volume(&self) -> std::option::Option<& crate::types::AttackVolume> {
+    pub fn attack_volume(&self) -> std::option::Option<&crate::types::AttackVolume> {
         self.attack_volume.as_ref()
     }
     /// <p>The number of attacks detected during the time period. This is always present, but might be zero. </p>
@@ -42,8 +42,12 @@ impl AttackStatisticsDataItemBuilder {
         self
     }
     /// <p>Information about the volume of attacks during the time period. If the accompanying <code>AttackCount</code> is zero, this setting might be empty.</p>
-    pub fn set_attack_volume(mut self, input: std::option::Option<crate::types::AttackVolume>) -> Self {
-        self.attack_volume = input; self
+    pub fn set_attack_volume(
+        mut self,
+        input: std::option::Option<crate::types::AttackVolume>,
+    ) -> Self {
+        self.attack_volume = input;
+        self
     }
     /// <p>The number of attacks detected during the time period. This is always present, but might be zero. </p>
     pub fn attack_count(mut self, input: i64) -> Self {
@@ -52,17 +56,14 @@ impl AttackStatisticsDataItemBuilder {
     }
     /// <p>The number of attacks detected during the time period. This is always present, but might be zero. </p>
     pub fn set_attack_count(mut self, input: std::option::Option<i64>) -> Self {
-        self.attack_count = input; self
+        self.attack_count = input;
+        self
     }
     /// Consumes the builder and constructs a [`AttackStatisticsDataItem`](crate::types::AttackStatisticsDataItem).
     pub fn build(self) -> crate::types::AttackStatisticsDataItem {
         crate::types::AttackStatisticsDataItem {
-            attack_volume: self.attack_volume
-            ,
-            attack_count: self.attack_count
-                .unwrap_or_default()
-            ,
+            attack_volume: self.attack_volume,
+            attack_count: self.attack_count.unwrap_or_default(),
         }
     }
 }
-

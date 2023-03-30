@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-/// 
+///
 /// Here is an example of how you can make a match expression forward-compatible:
-/// 
+///
 /// ```text
 /// # let agentupdatestatus = unimplemented!();
 /// match agentupdatestatus {
@@ -34,14 +34,22 @@
 /// Specifically, when `agentupdatestatus` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `AgentUpdateStatus::NewFeature` also yielding `"NewFeature"`.
-/// 
+///
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
 pub enum AgentUpdateStatus {
     #[allow(missing_docs)] // documentation missing in model
     Failed,
@@ -56,49 +64,52 @@ pub enum AgentUpdateStatus {
     #[allow(missing_docs)] // documentation missing in model
     Updating,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::primitives::UnknownVariantValue)
+    Unknown(crate::primitives::UnknownVariantValue),
 }
 impl std::convert::From<&str> for AgentUpdateStatus {
-                fn from(s: &str) -> Self {
-                    match s {
-                        "FAILED" => AgentUpdateStatus::Failed,
-"PENDING" => AgentUpdateStatus::Pending,
-"STAGED" => AgentUpdateStatus::Staged,
-"STAGING" => AgentUpdateStatus::Staging,
-"UPDATED" => AgentUpdateStatus::Updated,
-"UPDATING" => AgentUpdateStatus::Updating,
-other => AgentUpdateStatus::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
-                    }
-                }
+    fn from(s: &str) -> Self {
+        match s {
+            "FAILED" => AgentUpdateStatus::Failed,
+            "PENDING" => AgentUpdateStatus::Pending,
+            "STAGED" => AgentUpdateStatus::Staged,
+            "STAGING" => AgentUpdateStatus::Staging,
+            "UPDATED" => AgentUpdateStatus::Updated,
+            "UPDATING" => AgentUpdateStatus::Updating,
+            other => {
+                AgentUpdateStatus::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
             }
-impl std::str::FromStr for AgentUpdateStatus {
-                type Err = std::convert::Infallible;
-
-                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-                    Ok(AgentUpdateStatus::from(s))
-                }
-            }
-impl AgentUpdateStatus {
-                /// Returns the `&str` value of the enum member.
-                pub fn as_str(&self) -> &str {
-                    match self {
-    AgentUpdateStatus::Failed => "FAILED",
-    AgentUpdateStatus::Pending => "PENDING",
-    AgentUpdateStatus::Staged => "STAGED",
-    AgentUpdateStatus::Staging => "STAGING",
-    AgentUpdateStatus::Updated => "UPDATED",
-    AgentUpdateStatus::Updating => "UPDATING",
-    AgentUpdateStatus::Unknown(value) => value.as_str()
+        }
+    }
 }
-                }
-                /// Returns all the `&str` representations of the enum members.
-                pub const fn values() -> &'static [&'static str] {
-                    &["FAILED", "PENDING", "STAGED", "STAGING", "UPDATED", "UPDATING"]
-                }
-            }
-impl AsRef<str> for AgentUpdateStatus {
-                fn as_ref(&self) -> &str {
-                    self.as_str()
-                }
-            }
+impl std::str::FromStr for AgentUpdateStatus {
+    type Err = std::convert::Infallible;
 
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(AgentUpdateStatus::from(s))
+    }
+}
+impl AgentUpdateStatus {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            AgentUpdateStatus::Failed => "FAILED",
+            AgentUpdateStatus::Pending => "PENDING",
+            AgentUpdateStatus::Staged => "STAGED",
+            AgentUpdateStatus::Staging => "STAGING",
+            AgentUpdateStatus::Updated => "UPDATED",
+            AgentUpdateStatus::Updating => "UPDATING",
+            AgentUpdateStatus::Unknown(value) => value.as_str(),
+        }
+    }
+    /// Returns all the `&str` representations of the enum members.
+    pub const fn values() -> &'static [&'static str] {
+        &[
+            "FAILED", "PENDING", "STAGED", "STAGING", "UPDATED", "UPDATING",
+        ]
+    }
+}
+impl AsRef<str> for AgentUpdateStatus {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}

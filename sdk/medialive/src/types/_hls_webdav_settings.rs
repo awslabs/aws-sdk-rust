@@ -3,7 +3,7 @@
 /// Hls Webdav Settings
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct HlsWebdavSettings  {
+pub struct HlsWebdavSettings {
     /// Number of seconds to wait before retrying connection to the CDN if the connection is lost.
     #[doc(hidden)]
     pub connection_retry_interval: i32,
@@ -30,7 +30,9 @@ impl HlsWebdavSettings {
         self.filecache_duration
     }
     /// Specify whether or not to use chunked transfer encoding to WebDAV.
-    pub fn http_transfer_mode(&self) -> std::option::Option<& crate::types::HlsWebdavHttpTransferMode> {
+    pub fn http_transfer_mode(
+        &self,
+    ) -> std::option::Option<&crate::types::HlsWebdavHttpTransferMode> {
         self.http_transfer_mode.as_ref()
     }
     /// Number of retry attempts that will be made before the Live Event is put into an error state.
@@ -67,7 +69,8 @@ impl HlsWebdavSettingsBuilder {
     }
     /// Number of seconds to wait before retrying connection to the CDN if the connection is lost.
     pub fn set_connection_retry_interval(mut self, input: std::option::Option<i32>) -> Self {
-        self.connection_retry_interval = input; self
+        self.connection_retry_interval = input;
+        self
     }
     /// Size in seconds of file cache for streaming outputs.
     pub fn filecache_duration(mut self, input: i32) -> Self {
@@ -76,7 +79,8 @@ impl HlsWebdavSettingsBuilder {
     }
     /// Size in seconds of file cache for streaming outputs.
     pub fn set_filecache_duration(mut self, input: std::option::Option<i32>) -> Self {
-        self.filecache_duration = input; self
+        self.filecache_duration = input;
+        self
     }
     /// Specify whether or not to use chunked transfer encoding to WebDAV.
     pub fn http_transfer_mode(mut self, input: crate::types::HlsWebdavHttpTransferMode) -> Self {
@@ -84,8 +88,12 @@ impl HlsWebdavSettingsBuilder {
         self
     }
     /// Specify whether or not to use chunked transfer encoding to WebDAV.
-    pub fn set_http_transfer_mode(mut self, input: std::option::Option<crate::types::HlsWebdavHttpTransferMode>) -> Self {
-        self.http_transfer_mode = input; self
+    pub fn set_http_transfer_mode(
+        mut self,
+        input: std::option::Option<crate::types::HlsWebdavHttpTransferMode>,
+    ) -> Self {
+        self.http_transfer_mode = input;
+        self
     }
     /// Number of retry attempts that will be made before the Live Event is put into an error state.
     pub fn num_retries(mut self, input: i32) -> Self {
@@ -94,7 +102,8 @@ impl HlsWebdavSettingsBuilder {
     }
     /// Number of retry attempts that will be made before the Live Event is put into an error state.
     pub fn set_num_retries(mut self, input: std::option::Option<i32>) -> Self {
-        self.num_retries = input; self
+        self.num_retries = input;
+        self
     }
     /// If a streaming output fails, number of seconds to wait until a restart is initiated. A value of 0 means never restart.
     pub fn restart_delay(mut self, input: i32) -> Self {
@@ -103,26 +112,17 @@ impl HlsWebdavSettingsBuilder {
     }
     /// If a streaming output fails, number of seconds to wait until a restart is initiated. A value of 0 means never restart.
     pub fn set_restart_delay(mut self, input: std::option::Option<i32>) -> Self {
-        self.restart_delay = input; self
+        self.restart_delay = input;
+        self
     }
     /// Consumes the builder and constructs a [`HlsWebdavSettings`](crate::types::HlsWebdavSettings).
     pub fn build(self) -> crate::types::HlsWebdavSettings {
         crate::types::HlsWebdavSettings {
-            connection_retry_interval: self.connection_retry_interval
-                .unwrap_or_default()
-            ,
-            filecache_duration: self.filecache_duration
-                .unwrap_or_default()
-            ,
-            http_transfer_mode: self.http_transfer_mode
-            ,
-            num_retries: self.num_retries
-                .unwrap_or_default()
-            ,
-            restart_delay: self.restart_delay
-                .unwrap_or_default()
-            ,
+            connection_retry_interval: self.connection_retry_interval.unwrap_or_default(),
+            filecache_duration: self.filecache_duration.unwrap_or_default(),
+            http_transfer_mode: self.http_transfer_mode,
+            num_retries: self.num_retries.unwrap_or_default(),
+            restart_delay: self.restart_delay.unwrap_or_default(),
         }
     }
 }
-

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ModifyInstanceMaintenanceOptionsOutput  {
+pub struct ModifyInstanceMaintenanceOptionsOutput {
     /// <p>The ID of the instance.</p>
     #[doc(hidden)]
     pub instance_id: std::option::Option<std::string::String>,
@@ -13,22 +13,22 @@ pub struct ModifyInstanceMaintenanceOptionsOutput  {
 }
 impl ModifyInstanceMaintenanceOptionsOutput {
     /// <p>The ID of the instance.</p>
-    pub fn instance_id(&self) -> std::option::Option<& str> {
+    pub fn instance_id(&self) -> std::option::Option<&str> {
         self.instance_id.as_deref()
     }
     /// <p>Provides information on the current automatic recovery behavior of your instance.</p>
-    pub fn auto_recovery(&self) -> std::option::Option<& crate::types::InstanceAutoRecoveryState> {
+    pub fn auto_recovery(&self) -> std::option::Option<&crate::types::InstanceAutoRecoveryState> {
         self.auto_recovery.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for ModifyInstanceMaintenanceOptionsOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl ModifyInstanceMaintenanceOptionsOutput {
     /// Creates a new builder-style object to manufacture [`ModifyInstanceMaintenanceOptionsOutput`](crate::operation::modify_instance_maintenance_options::ModifyInstanceMaintenanceOptionsOutput).
-    pub fn builder() -> crate::operation::modify_instance_maintenance_options::builders::ModifyInstanceMaintenanceOptionsOutputBuilder {
+    pub fn builder() -> crate::operation::modify_instance_maintenance_options::builders::ModifyInstanceMaintenanceOptionsOutputBuilder{
         crate::operation::modify_instance_maintenance_options::builders::ModifyInstanceMaintenanceOptionsOutputBuilder::default()
     }
 }
@@ -49,7 +49,8 @@ impl ModifyInstanceMaintenanceOptionsOutputBuilder {
     }
     /// <p>The ID of the instance.</p>
     pub fn set_instance_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.instance_id = input; self
+        self.instance_id = input;
+        self
     }
     /// <p>Provides information on the current automatic recovery behavior of your instance.</p>
     pub fn auto_recovery(mut self, input: crate::types::InstanceAutoRecoveryState) -> Self {
@@ -57,20 +58,27 @@ impl ModifyInstanceMaintenanceOptionsOutputBuilder {
         self
     }
     /// <p>Provides information on the current automatic recovery behavior of your instance.</p>
-    pub fn set_auto_recovery(mut self, input: std::option::Option<crate::types::InstanceAutoRecoveryState>) -> Self {
-        self.auto_recovery = input; self
+    pub fn set_auto_recovery(
+        mut self,
+        input: std::option::Option<crate::types::InstanceAutoRecoveryState>,
+    ) -> Self {
+        self.auto_recovery = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`ModifyInstanceMaintenanceOptionsOutput`](crate::operation::modify_instance_maintenance_options::ModifyInstanceMaintenanceOptionsOutput).
-    pub fn build(self) -> crate::operation::modify_instance_maintenance_options::ModifyInstanceMaintenanceOptionsOutput {
+    pub fn build(
+        self,
+    ) -> crate::operation::modify_instance_maintenance_options::ModifyInstanceMaintenanceOptionsOutput
+    {
         crate::operation::modify_instance_maintenance_options::ModifyInstanceMaintenanceOptionsOutput {
             instance_id: self.instance_id
             ,
@@ -80,4 +88,3 @@ impl ModifyInstanceMaintenanceOptionsOutputBuilder {
         }
     }
 }
-

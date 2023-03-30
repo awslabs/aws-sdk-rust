@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetDashboardForJobRunInput  {
+pub struct GetDashboardForJobRunInput {
     /// <p>The ID of the application.</p>
     #[doc(hidden)]
     pub application_id: std::option::Option<std::string::String>,
@@ -12,17 +12,19 @@ pub struct GetDashboardForJobRunInput  {
 }
 impl GetDashboardForJobRunInput {
     /// <p>The ID of the application.</p>
-    pub fn application_id(&self) -> std::option::Option<& str> {
+    pub fn application_id(&self) -> std::option::Option<&str> {
         self.application_id.as_deref()
     }
     /// <p>The ID of the job run.</p>
-    pub fn job_run_id(&self) -> std::option::Option<& str> {
+    pub fn job_run_id(&self) -> std::option::Option<&str> {
         self.job_run_id.as_deref()
     }
 }
 impl GetDashboardForJobRunInput {
     /// Creates a new builder-style object to manufacture [`GetDashboardForJobRunInput`](crate::operation::get_dashboard_for_job_run::GetDashboardForJobRunInput).
-    pub fn builder() -> crate::operation::get_dashboard_for_job_run::builders::GetDashboardForJobRunInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::get_dashboard_for_job_run::builders::GetDashboardForJobRunInputBuilder
+    {
         crate::operation::get_dashboard_for_job_run::builders::GetDashboardForJobRunInputBuilder::default()
     }
 }
@@ -42,7 +44,8 @@ impl GetDashboardForJobRunInputBuilder {
     }
     /// <p>The ID of the application.</p>
     pub fn set_application_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.application_id = input; self
+        self.application_id = input;
+        self
     }
     /// <p>The ID of the job run.</p>
     pub fn job_run_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -51,18 +54,21 @@ impl GetDashboardForJobRunInputBuilder {
     }
     /// <p>The ID of the job run.</p>
     pub fn set_job_run_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.job_run_id = input; self
+        self.job_run_id = input;
+        self
     }
     /// Consumes the builder and constructs a [`GetDashboardForJobRunInput`](crate::operation::get_dashboard_for_job_run::GetDashboardForJobRunInput).
-    pub fn build(self) -> Result<crate::operation::get_dashboard_for_job_run::GetDashboardForJobRunInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::get_dashboard_for_job_run::GetDashboardForJobRunInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::get_dashboard_for_job_run::GetDashboardForJobRunInput {
-                application_id: self.application_id
-                ,
-                job_run_id: self.job_run_id
-                ,
-            }
+                application_id: self.application_id,
+                job_run_id: self.job_run_id,
+            },
         )
     }
 }
-

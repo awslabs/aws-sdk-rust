@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetResponsePlanOutput  {
+pub struct GetResponsePlanOutput {
     /// <p>The ARN of the response plan.</p>
     #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
@@ -31,46 +31,47 @@ pub struct GetResponsePlanOutput  {
 }
 impl GetResponsePlanOutput {
     /// <p>The ARN of the response plan.</p>
-    pub fn arn(&self) -> std::option::Option<& str> {
+    pub fn arn(&self) -> std::option::Option<&str> {
         self.arn.as_deref()
     }
     /// <p>The short format name of the response plan. The name can't contain spaces.</p>
-    pub fn name(&self) -> std::option::Option<& str> {
+    pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>The long format name of the response plan. Can contain spaces.</p>
-    pub fn display_name(&self) -> std::option::Option<& str> {
+    pub fn display_name(&self) -> std::option::Option<&str> {
         self.display_name.as_deref()
     }
     /// <p>Details used to create the incident when using this response plan.</p>
-    pub fn incident_template(&self) -> std::option::Option<& crate::types::IncidentTemplate> {
+    pub fn incident_template(&self) -> std::option::Option<&crate::types::IncidentTemplate> {
         self.incident_template.as_ref()
     }
     /// <p>The Chatbot chat channel used for collaboration during an incident.</p>
-    pub fn chat_channel(&self) -> std::option::Option<& crate::types::ChatChannel> {
+    pub fn chat_channel(&self) -> std::option::Option<&crate::types::ChatChannel> {
         self.chat_channel.as_ref()
     }
     /// <p>The Amazon Resource Name (ARN) for the contacts and escalation plans that the response plan engages during an incident.</p>
-    pub fn engagements(&self) -> std::option::Option<& [std::string::String]> {
+    pub fn engagements(&self) -> std::option::Option<&[std::string::String]> {
         self.engagements.as_deref()
     }
     /// <p>The actions that this response plan takes at the beginning of the incident.</p>
-    pub fn actions(&self) -> std::option::Option<& [crate::types::Action]> {
+    pub fn actions(&self) -> std::option::Option<&[crate::types::Action]> {
         self.actions.as_deref()
     }
     /// <p>Information about third-party services integrated into the Incident Manager response plan.</p>
-    pub fn integrations(&self) -> std::option::Option<& [crate::types::Integration]> {
+    pub fn integrations(&self) -> std::option::Option<&[crate::types::Integration]> {
         self.integrations.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for GetResponsePlanOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl GetResponsePlanOutput {
     /// Creates a new builder-style object to manufacture [`GetResponsePlanOutput`](crate::operation::get_response_plan::GetResponsePlanOutput).
-    pub fn builder() -> crate::operation::get_response_plan::builders::GetResponsePlanOutputBuilder {
+    pub fn builder() -> crate::operation::get_response_plan::builders::GetResponsePlanOutputBuilder
+    {
         crate::operation::get_response_plan::builders::GetResponsePlanOutputBuilder::default()
     }
 }
@@ -97,7 +98,8 @@ impl GetResponsePlanOutputBuilder {
     }
     /// <p>The ARN of the response plan.</p>
     pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.arn = input; self
+        self.arn = input;
+        self
     }
     /// <p>The short format name of the response plan. The name can't contain spaces.</p>
     pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -106,7 +108,8 @@ impl GetResponsePlanOutputBuilder {
     }
     /// <p>The short format name of the response plan. The name can't contain spaces.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input; self
+        self.name = input;
+        self
     }
     /// <p>The long format name of the response plan. Can contain spaces.</p>
     pub fn display_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -115,7 +118,8 @@ impl GetResponsePlanOutputBuilder {
     }
     /// <p>The long format name of the response plan. Can contain spaces.</p>
     pub fn set_display_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.display_name = input; self
+        self.display_name = input;
+        self
     }
     /// <p>Details used to create the incident when using this response plan.</p>
     pub fn incident_template(mut self, input: crate::types::IncidentTemplate) -> Self {
@@ -123,8 +127,12 @@ impl GetResponsePlanOutputBuilder {
         self
     }
     /// <p>Details used to create the incident when using this response plan.</p>
-    pub fn set_incident_template(mut self, input: std::option::Option<crate::types::IncidentTemplate>) -> Self {
-        self.incident_template = input; self
+    pub fn set_incident_template(
+        mut self,
+        input: std::option::Option<crate::types::IncidentTemplate>,
+    ) -> Self {
+        self.incident_template = input;
+        self
     }
     /// <p>The Chatbot chat channel used for collaboration during an incident.</p>
     pub fn chat_channel(mut self, input: crate::types::ChatChannel) -> Self {
@@ -132,8 +140,12 @@ impl GetResponsePlanOutputBuilder {
         self
     }
     /// <p>The Chatbot chat channel used for collaboration during an incident.</p>
-    pub fn set_chat_channel(mut self, input: std::option::Option<crate::types::ChatChannel>) -> Self {
-        self.chat_channel = input; self
+    pub fn set_chat_channel(
+        mut self,
+        input: std::option::Option<crate::types::ChatChannel>,
+    ) -> Self {
+        self.chat_channel = input;
+        self
     }
     /// Appends an item to `engagements`.
     ///
@@ -142,13 +154,17 @@ impl GetResponsePlanOutputBuilder {
     /// <p>The Amazon Resource Name (ARN) for the contacts and escalation plans that the response plan engages during an incident.</p>
     pub fn engagements(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.engagements.unwrap_or_default();
-                        v.push(input.into());
-                        self.engagements = Some(v);
-                        self
+        v.push(input.into());
+        self.engagements = Some(v);
+        self
     }
     /// <p>The Amazon Resource Name (ARN) for the contacts and escalation plans that the response plan engages during an incident.</p>
-    pub fn set_engagements(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-        self.engagements = input; self
+    pub fn set_engagements(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
+        self.engagements = input;
+        self
     }
     /// Appends an item to `actions`.
     ///
@@ -157,13 +173,17 @@ impl GetResponsePlanOutputBuilder {
     /// <p>The actions that this response plan takes at the beginning of the incident.</p>
     pub fn actions(mut self, input: crate::types::Action) -> Self {
         let mut v = self.actions.unwrap_or_default();
-                        v.push(input);
-                        self.actions = Some(v);
-                        self
+        v.push(input);
+        self.actions = Some(v);
+        self
     }
     /// <p>The actions that this response plan takes at the beginning of the incident.</p>
-    pub fn set_actions(mut self, input: std::option::Option<std::vec::Vec<crate::types::Action>>) -> Self {
-        self.actions = input; self
+    pub fn set_actions(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::Action>>,
+    ) -> Self {
+        self.actions = input;
+        self
     }
     /// Appends an item to `integrations`.
     ///
@@ -172,44 +192,39 @@ impl GetResponsePlanOutputBuilder {
     /// <p>Information about third-party services integrated into the Incident Manager response plan.</p>
     pub fn integrations(mut self, input: crate::types::Integration) -> Self {
         let mut v = self.integrations.unwrap_or_default();
-                        v.push(input);
-                        self.integrations = Some(v);
-                        self
+        v.push(input);
+        self.integrations = Some(v);
+        self
     }
     /// <p>Information about third-party services integrated into the Incident Manager response plan.</p>
-    pub fn set_integrations(mut self, input: std::option::Option<std::vec::Vec<crate::types::Integration>>) -> Self {
-        self.integrations = input; self
+    pub fn set_integrations(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::Integration>>,
+    ) -> Self {
+        self.integrations = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`GetResponsePlanOutput`](crate::operation::get_response_plan::GetResponsePlanOutput).
     pub fn build(self) -> crate::operation::get_response_plan::GetResponsePlanOutput {
         crate::operation::get_response_plan::GetResponsePlanOutput {
-            arn: self.arn
-            ,
-            name: self.name
-            ,
-            display_name: self.display_name
-            ,
-            incident_template: self.incident_template
-            ,
-            chat_channel: self.chat_channel
-            ,
-            engagements: self.engagements
-            ,
-            actions: self.actions
-            ,
-            integrations: self.integrations
-            ,
+            arn: self.arn,
+            name: self.name,
+            display_name: self.display_name,
+            incident_template: self.incident_template,
+            chat_channel: self.chat_channel,
+            engagements: self.engagements,
+            actions: self.actions,
+            integrations: self.integrations,
             _request_id: self._request_id,
         }
     }
 }
-

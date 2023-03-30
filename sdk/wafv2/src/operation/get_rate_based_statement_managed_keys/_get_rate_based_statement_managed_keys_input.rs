@@ -2,12 +2,12 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetRateBasedStatementManagedKeysInput  {
-    /// <p>Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, an AppSync GraphQL API, or an Amazon Cognito user pool. </p> 
-    /// <p>To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows: </p> 
-    /// <ul> 
-    /// <li> <p>CLI - Specify the Region when you use the CloudFront scope: <code>--scope=CLOUDFRONT --region=us-east-1</code>. </p> </li> 
-    /// <li> <p>API and SDKs - For all calls, use the Region endpoint us-east-1. </p> </li> 
+pub struct GetRateBasedStatementManagedKeysInput {
+    /// <p>Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, an AppSync GraphQL API, or an Amazon Cognito user pool. </p>
+    /// <p>To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows: </p>
+    /// <ul>
+    /// <li> <p>CLI - Specify the Region when you use the CloudFront scope: <code>--scope=CLOUDFRONT --region=us-east-1</code>. </p> </li>
+    /// <li> <p>API and SDKs - For all calls, use the Region endpoint us-east-1. </p> </li>
     /// </ul>
     #[doc(hidden)]
     pub scope: std::option::Option<crate::types::Scope>,
@@ -25,35 +25,35 @@ pub struct GetRateBasedStatementManagedKeysInput  {
     pub rule_name: std::option::Option<std::string::String>,
 }
 impl GetRateBasedStatementManagedKeysInput {
-    /// <p>Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, an AppSync GraphQL API, or an Amazon Cognito user pool. </p> 
-    /// <p>To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows: </p> 
-    /// <ul> 
-    /// <li> <p>CLI - Specify the Region when you use the CloudFront scope: <code>--scope=CLOUDFRONT --region=us-east-1</code>. </p> </li> 
-    /// <li> <p>API and SDKs - For all calls, use the Region endpoint us-east-1. </p> </li> 
+    /// <p>Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, an AppSync GraphQL API, or an Amazon Cognito user pool. </p>
+    /// <p>To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows: </p>
+    /// <ul>
+    /// <li> <p>CLI - Specify the Region when you use the CloudFront scope: <code>--scope=CLOUDFRONT --region=us-east-1</code>. </p> </li>
+    /// <li> <p>API and SDKs - For all calls, use the Region endpoint us-east-1. </p> </li>
     /// </ul>
-    pub fn scope(&self) -> std::option::Option<& crate::types::Scope> {
+    pub fn scope(&self) -> std::option::Option<&crate::types::Scope> {
         self.scope.as_ref()
     }
     /// <p>The name of the web ACL. You cannot change the name of a web ACL after you create it.</p>
-    pub fn web_acl_name(&self) -> std::option::Option<& str> {
+    pub fn web_acl_name(&self) -> std::option::Option<&str> {
         self.web_acl_name.as_deref()
     }
     /// <p>The unique identifier for the web ACL. This ID is returned in the responses to create and list commands. You provide it to operations like update and delete.</p>
-    pub fn web_acl_id(&self) -> std::option::Option<& str> {
+    pub fn web_acl_id(&self) -> std::option::Option<&str> {
         self.web_acl_id.as_deref()
     }
     /// <p>The name of the rule group reference statement in your web ACL. This is required only when you have the rate-based rule nested inside a rule group. </p>
-    pub fn rule_group_rule_name(&self) -> std::option::Option<& str> {
+    pub fn rule_group_rule_name(&self) -> std::option::Option<&str> {
         self.rule_group_rule_name.as_deref()
     }
     /// <p>The name of the rate-based rule to get the keys for. If you have the rule defined inside a rule group that you're using in your web ACL, also provide the name of the rule group reference statement in the request parameter <code>RuleGroupRuleName</code>.</p>
-    pub fn rule_name(&self) -> std::option::Option<& str> {
+    pub fn rule_name(&self) -> std::option::Option<&str> {
         self.rule_name.as_deref()
     }
 }
 impl GetRateBasedStatementManagedKeysInput {
     /// Creates a new builder-style object to manufacture [`GetRateBasedStatementManagedKeysInput`](crate::operation::get_rate_based_statement_managed_keys::GetRateBasedStatementManagedKeysInput).
-    pub fn builder() -> crate::operation::get_rate_based_statement_managed_keys::builders::GetRateBasedStatementManagedKeysInputBuilder {
+    pub fn builder() -> crate::operation::get_rate_based_statement_managed_keys::builders::GetRateBasedStatementManagedKeysInputBuilder{
         crate::operation::get_rate_based_statement_managed_keys::builders::GetRateBasedStatementManagedKeysInputBuilder::default()
     }
 }
@@ -69,24 +69,25 @@ pub struct GetRateBasedStatementManagedKeysInputBuilder {
     pub(crate) rule_name: std::option::Option<std::string::String>,
 }
 impl GetRateBasedStatementManagedKeysInputBuilder {
-    /// <p>Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, an AppSync GraphQL API, or an Amazon Cognito user pool. </p> 
-    /// <p>To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows: </p> 
-    /// <ul> 
-    /// <li> <p>CLI - Specify the Region when you use the CloudFront scope: <code>--scope=CLOUDFRONT --region=us-east-1</code>. </p> </li> 
-    /// <li> <p>API and SDKs - For all calls, use the Region endpoint us-east-1. </p> </li> 
+    /// <p>Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, an AppSync GraphQL API, or an Amazon Cognito user pool. </p>
+    /// <p>To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows: </p>
+    /// <ul>
+    /// <li> <p>CLI - Specify the Region when you use the CloudFront scope: <code>--scope=CLOUDFRONT --region=us-east-1</code>. </p> </li>
+    /// <li> <p>API and SDKs - For all calls, use the Region endpoint us-east-1. </p> </li>
     /// </ul>
     pub fn scope(mut self, input: crate::types::Scope) -> Self {
         self.scope = Some(input);
         self
     }
-    /// <p>Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, an AppSync GraphQL API, or an Amazon Cognito user pool. </p> 
-    /// <p>To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows: </p> 
-    /// <ul> 
-    /// <li> <p>CLI - Specify the Region when you use the CloudFront scope: <code>--scope=CLOUDFRONT --region=us-east-1</code>. </p> </li> 
-    /// <li> <p>API and SDKs - For all calls, use the Region endpoint us-east-1. </p> </li> 
+    /// <p>Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, an AppSync GraphQL API, or an Amazon Cognito user pool. </p>
+    /// <p>To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows: </p>
+    /// <ul>
+    /// <li> <p>CLI - Specify the Region when you use the CloudFront scope: <code>--scope=CLOUDFRONT --region=us-east-1</code>. </p> </li>
+    /// <li> <p>API and SDKs - For all calls, use the Region endpoint us-east-1. </p> </li>
     /// </ul>
     pub fn set_scope(mut self, input: std::option::Option<crate::types::Scope>) -> Self {
-        self.scope = input; self
+        self.scope = input;
+        self
     }
     /// <p>The name of the web ACL. You cannot change the name of a web ACL after you create it.</p>
     pub fn web_acl_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -95,7 +96,8 @@ impl GetRateBasedStatementManagedKeysInputBuilder {
     }
     /// <p>The name of the web ACL. You cannot change the name of a web ACL after you create it.</p>
     pub fn set_web_acl_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.web_acl_name = input; self
+        self.web_acl_name = input;
+        self
     }
     /// <p>The unique identifier for the web ACL. This ID is returned in the responses to create and list commands. You provide it to operations like update and delete.</p>
     pub fn web_acl_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -104,7 +106,8 @@ impl GetRateBasedStatementManagedKeysInputBuilder {
     }
     /// <p>The unique identifier for the web ACL. This ID is returned in the responses to create and list commands. You provide it to operations like update and delete.</p>
     pub fn set_web_acl_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.web_acl_id = input; self
+        self.web_acl_id = input;
+        self
     }
     /// <p>The name of the rule group reference statement in your web ACL. This is required only when you have the rate-based rule nested inside a rule group. </p>
     pub fn rule_group_rule_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -112,8 +115,12 @@ impl GetRateBasedStatementManagedKeysInputBuilder {
         self
     }
     /// <p>The name of the rule group reference statement in your web ACL. This is required only when you have the rate-based rule nested inside a rule group. </p>
-    pub fn set_rule_group_rule_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.rule_group_rule_name = input; self
+    pub fn set_rule_group_rule_name(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.rule_group_rule_name = input;
+        self
     }
     /// <p>The name of the rate-based rule to get the keys for. If you have the rule defined inside a rule group that you're using in your web ACL, also provide the name of the rule group reference statement in the request parameter <code>RuleGroupRuleName</code>.</p>
     pub fn rule_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -122,10 +129,11 @@ impl GetRateBasedStatementManagedKeysInputBuilder {
     }
     /// <p>The name of the rate-based rule to get the keys for. If you have the rule defined inside a rule group that you're using in your web ACL, also provide the name of the rule group reference statement in the request parameter <code>RuleGroupRuleName</code>.</p>
     pub fn set_rule_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.rule_name = input; self
+        self.rule_name = input;
+        self
     }
     /// Consumes the builder and constructs a [`GetRateBasedStatementManagedKeysInput`](crate::operation::get_rate_based_statement_managed_keys::GetRateBasedStatementManagedKeysInput).
-    pub fn build(self) -> Result<crate::operation::get_rate_based_statement_managed_keys::GetRateBasedStatementManagedKeysInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> Result<crate::operation::get_rate_based_statement_managed_keys::GetRateBasedStatementManagedKeysInput, aws_smithy_http::operation::error::BuildError>{
         Ok(
             crate::operation::get_rate_based_statement_managed_keys::GetRateBasedStatementManagedKeysInput {
                 scope: self.scope
@@ -142,4 +150,3 @@ impl GetRateBasedStatementManagedKeysInputBuilder {
         )
     }
 }
-

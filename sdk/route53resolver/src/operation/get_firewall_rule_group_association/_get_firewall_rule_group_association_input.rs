@@ -2,20 +2,20 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetFirewallRuleGroupAssociationInput  {
+pub struct GetFirewallRuleGroupAssociationInput {
     /// <p>The identifier of the <code>FirewallRuleGroupAssociation</code>. </p>
     #[doc(hidden)]
     pub firewall_rule_group_association_id: std::option::Option<std::string::String>,
 }
 impl GetFirewallRuleGroupAssociationInput {
     /// <p>The identifier of the <code>FirewallRuleGroupAssociation</code>. </p>
-    pub fn firewall_rule_group_association_id(&self) -> std::option::Option<& str> {
+    pub fn firewall_rule_group_association_id(&self) -> std::option::Option<&str> {
         self.firewall_rule_group_association_id.as_deref()
     }
 }
 impl GetFirewallRuleGroupAssociationInput {
     /// Creates a new builder-style object to manufacture [`GetFirewallRuleGroupAssociationInput`](crate::operation::get_firewall_rule_group_association::GetFirewallRuleGroupAssociationInput).
-    pub fn builder() -> crate::operation::get_firewall_rule_group_association::builders::GetFirewallRuleGroupAssociationInputBuilder {
+    pub fn builder() -> crate::operation::get_firewall_rule_group_association::builders::GetFirewallRuleGroupAssociationInputBuilder{
         crate::operation::get_firewall_rule_group_association::builders::GetFirewallRuleGroupAssociationInputBuilder::default()
     }
 }
@@ -28,16 +28,28 @@ pub struct GetFirewallRuleGroupAssociationInputBuilder {
 }
 impl GetFirewallRuleGroupAssociationInputBuilder {
     /// <p>The identifier of the <code>FirewallRuleGroupAssociation</code>. </p>
-    pub fn firewall_rule_group_association_id(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn firewall_rule_group_association_id(
+        mut self,
+        input: impl Into<std::string::String>,
+    ) -> Self {
         self.firewall_rule_group_association_id = Some(input.into());
         self
     }
     /// <p>The identifier of the <code>FirewallRuleGroupAssociation</code>. </p>
-    pub fn set_firewall_rule_group_association_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.firewall_rule_group_association_id = input; self
+    pub fn set_firewall_rule_group_association_id(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.firewall_rule_group_association_id = input;
+        self
     }
     /// Consumes the builder and constructs a [`GetFirewallRuleGroupAssociationInput`](crate::operation::get_firewall_rule_group_association::GetFirewallRuleGroupAssociationInput).
-    pub fn build(self) -> Result<crate::operation::get_firewall_rule_group_association::GetFirewallRuleGroupAssociationInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::get_firewall_rule_group_association::GetFirewallRuleGroupAssociationInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::get_firewall_rule_group_association::GetFirewallRuleGroupAssociationInput {
                 firewall_rule_group_association_id: self.firewall_rule_group_association_id
@@ -46,4 +58,3 @@ impl GetFirewallRuleGroupAssociationInputBuilder {
         )
     }
 }
-

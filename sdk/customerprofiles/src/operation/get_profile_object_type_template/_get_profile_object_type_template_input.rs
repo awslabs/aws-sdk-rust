@@ -2,20 +2,20 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetProfileObjectTypeTemplateInput  {
+pub struct GetProfileObjectTypeTemplateInput {
     /// <p>A unique identifier for the object template.</p>
     #[doc(hidden)]
     pub template_id: std::option::Option<std::string::String>,
 }
 impl GetProfileObjectTypeTemplateInput {
     /// <p>A unique identifier for the object template.</p>
-    pub fn template_id(&self) -> std::option::Option<& str> {
+    pub fn template_id(&self) -> std::option::Option<&str> {
         self.template_id.as_deref()
     }
 }
 impl GetProfileObjectTypeTemplateInput {
     /// Creates a new builder-style object to manufacture [`GetProfileObjectTypeTemplateInput`](crate::operation::get_profile_object_type_template::GetProfileObjectTypeTemplateInput).
-    pub fn builder() -> crate::operation::get_profile_object_type_template::builders::GetProfileObjectTypeTemplateInputBuilder {
+    pub fn builder() -> crate::operation::get_profile_object_type_template::builders::GetProfileObjectTypeTemplateInputBuilder{
         crate::operation::get_profile_object_type_template::builders::GetProfileObjectTypeTemplateInputBuilder::default()
     }
 }
@@ -34,16 +34,20 @@ impl GetProfileObjectTypeTemplateInputBuilder {
     }
     /// <p>A unique identifier for the object template.</p>
     pub fn set_template_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.template_id = input; self
+        self.template_id = input;
+        self
     }
     /// Consumes the builder and constructs a [`GetProfileObjectTypeTemplateInput`](crate::operation::get_profile_object_type_template::GetProfileObjectTypeTemplateInput).
-    pub fn build(self) -> Result<crate::operation::get_profile_object_type_template::GetProfileObjectTypeTemplateInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::get_profile_object_type_template::GetProfileObjectTypeTemplateInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::get_profile_object_type_template::GetProfileObjectTypeTemplateInput {
-                template_id: self.template_id
-                ,
-            }
+                template_id: self.template_id,
+            },
         )
     }
 }
-

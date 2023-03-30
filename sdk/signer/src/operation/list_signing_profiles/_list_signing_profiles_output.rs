@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListSigningProfilesOutput  {
+pub struct ListSigningProfilesOutput {
     /// <p>A list of profiles that are available in the AWS account. This includes profiles with the status of <code>CANCELED</code> if the <code>includeCanceled</code> parameter is set to <code>true</code>.</p>
     #[doc(hidden)]
     pub profiles: std::option::Option<std::vec::Vec<crate::types::SigningProfile>>,
@@ -13,23 +13,25 @@ pub struct ListSigningProfilesOutput  {
 }
 impl ListSigningProfilesOutput {
     /// <p>A list of profiles that are available in the AWS account. This includes profiles with the status of <code>CANCELED</code> if the <code>includeCanceled</code> parameter is set to <code>true</code>.</p>
-    pub fn profiles(&self) -> std::option::Option<& [crate::types::SigningProfile]> {
+    pub fn profiles(&self) -> std::option::Option<&[crate::types::SigningProfile]> {
         self.profiles.as_deref()
     }
     /// <p>Value for specifying the next set of paginated results to return.</p>
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for ListSigningProfilesOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl ListSigningProfilesOutput {
     /// Creates a new builder-style object to manufacture [`ListSigningProfilesOutput`](crate::operation::list_signing_profiles::ListSigningProfilesOutput).
-    pub fn builder() -> crate::operation::list_signing_profiles::builders::ListSigningProfilesOutputBuilder {
-        crate::operation::list_signing_profiles::builders::ListSigningProfilesOutputBuilder::default()
+    pub fn builder(
+    ) -> crate::operation::list_signing_profiles::builders::ListSigningProfilesOutputBuilder {
+        crate::operation::list_signing_profiles::builders::ListSigningProfilesOutputBuilder::default(
+        )
     }
 }
 
@@ -49,13 +51,17 @@ impl ListSigningProfilesOutputBuilder {
     /// <p>A list of profiles that are available in the AWS account. This includes profiles with the status of <code>CANCELED</code> if the <code>includeCanceled</code> parameter is set to <code>true</code>.</p>
     pub fn profiles(mut self, input: crate::types::SigningProfile) -> Self {
         let mut v = self.profiles.unwrap_or_default();
-                        v.push(input);
-                        self.profiles = Some(v);
-                        self
+        v.push(input);
+        self.profiles = Some(v);
+        self
     }
     /// <p>A list of profiles that are available in the AWS account. This includes profiles with the status of <code>CANCELED</code> if the <code>includeCanceled</code> parameter is set to <code>true</code>.</p>
-    pub fn set_profiles(mut self, input: std::option::Option<std::vec::Vec<crate::types::SigningProfile>>) -> Self {
-        self.profiles = input; self
+    pub fn set_profiles(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::SigningProfile>>,
+    ) -> Self {
+        self.profiles = input;
+        self
     }
     /// <p>Value for specifying the next set of paginated results to return.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -64,26 +70,24 @@ impl ListSigningProfilesOutputBuilder {
     }
     /// <p>Value for specifying the next set of paginated results to return.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input; self
+        self.next_token = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`ListSigningProfilesOutput`](crate::operation::list_signing_profiles::ListSigningProfilesOutput).
     pub fn build(self) -> crate::operation::list_signing_profiles::ListSigningProfilesOutput {
         crate::operation::list_signing_profiles::ListSigningProfilesOutput {
-            profiles: self.profiles
-            ,
-            next_token: self.next_token
-            ,
+            profiles: self.profiles,
+            next_token: self.next_token,
             _request_id: self._request_id,
         }
     }
 }
-

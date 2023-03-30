@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateGroupMembershipInput  {
+pub struct CreateGroupMembershipInput {
     /// <p>The name of the user that you want to add to the group membership.</p>
     #[doc(hidden)]
     pub member_name: std::option::Option<std::string::String>,
@@ -18,25 +18,27 @@ pub struct CreateGroupMembershipInput  {
 }
 impl CreateGroupMembershipInput {
     /// <p>The name of the user that you want to add to the group membership.</p>
-    pub fn member_name(&self) -> std::option::Option<& str> {
+    pub fn member_name(&self) -> std::option::Option<&str> {
         self.member_name.as_deref()
     }
     /// <p>The name of the group that you want to add the user to.</p>
-    pub fn group_name(&self) -> std::option::Option<& str> {
+    pub fn group_name(&self) -> std::option::Option<&str> {
         self.group_name.as_deref()
     }
     /// <p>The ID for the Amazon Web Services account that the group is in. Currently, you use the ID for the Amazon Web Services account that contains your Amazon QuickSight account.</p>
-    pub fn aws_account_id(&self) -> std::option::Option<& str> {
+    pub fn aws_account_id(&self) -> std::option::Option<&str> {
         self.aws_account_id.as_deref()
     }
     /// <p>The namespace that you want the user to be a part of.</p>
-    pub fn namespace(&self) -> std::option::Option<& str> {
+    pub fn namespace(&self) -> std::option::Option<&str> {
         self.namespace.as_deref()
     }
 }
 impl CreateGroupMembershipInput {
     /// Creates a new builder-style object to manufacture [`CreateGroupMembershipInput`](crate::operation::create_group_membership::CreateGroupMembershipInput).
-    pub fn builder() -> crate::operation::create_group_membership::builders::CreateGroupMembershipInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::create_group_membership::builders::CreateGroupMembershipInputBuilder
+    {
         crate::operation::create_group_membership::builders::CreateGroupMembershipInputBuilder::default()
     }
 }
@@ -58,7 +60,8 @@ impl CreateGroupMembershipInputBuilder {
     }
     /// <p>The name of the user that you want to add to the group membership.</p>
     pub fn set_member_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.member_name = input; self
+        self.member_name = input;
+        self
     }
     /// <p>The name of the group that you want to add the user to.</p>
     pub fn group_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -67,7 +70,8 @@ impl CreateGroupMembershipInputBuilder {
     }
     /// <p>The name of the group that you want to add the user to.</p>
     pub fn set_group_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.group_name = input; self
+        self.group_name = input;
+        self
     }
     /// <p>The ID for the Amazon Web Services account that the group is in. Currently, you use the ID for the Amazon Web Services account that contains your Amazon QuickSight account.</p>
     pub fn aws_account_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -76,7 +80,8 @@ impl CreateGroupMembershipInputBuilder {
     }
     /// <p>The ID for the Amazon Web Services account that the group is in. Currently, you use the ID for the Amazon Web Services account that contains your Amazon QuickSight account.</p>
     pub fn set_aws_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.aws_account_id = input; self
+        self.aws_account_id = input;
+        self
     }
     /// <p>The namespace that you want the user to be a part of.</p>
     pub fn namespace(mut self, input: impl Into<std::string::String>) -> Self {
@@ -85,22 +90,23 @@ impl CreateGroupMembershipInputBuilder {
     }
     /// <p>The namespace that you want the user to be a part of.</p>
     pub fn set_namespace(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.namespace = input; self
+        self.namespace = input;
+        self
     }
     /// Consumes the builder and constructs a [`CreateGroupMembershipInput`](crate::operation::create_group_membership::CreateGroupMembershipInput).
-    pub fn build(self) -> Result<crate::operation::create_group_membership::CreateGroupMembershipInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::create_group_membership::CreateGroupMembershipInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::create_group_membership::CreateGroupMembershipInput {
-                member_name: self.member_name
-                ,
-                group_name: self.group_name
-                ,
-                aws_account_id: self.aws_account_id
-                ,
-                namespace: self.namespace
-                ,
-            }
+                member_name: self.member_name,
+                group_name: self.group_name,
+                aws_account_id: self.aws_account_id,
+                namespace: self.namespace,
+            },
         )
     }
 }
-

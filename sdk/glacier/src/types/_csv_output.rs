@@ -3,7 +3,7 @@
 /// <p>Contains information about the comma-separated value (CSV) file that the job results are stored in.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CsvOutput  {
+pub struct CsvOutput {
     /// <p>A value that indicates whether all output fields should be contained within quotation marks.</p>
     #[doc(hidden)]
     pub quote_fields: std::option::Option<crate::types::QuoteFields>,
@@ -22,23 +22,23 @@ pub struct CsvOutput  {
 }
 impl CsvOutput {
     /// <p>A value that indicates whether all output fields should be contained within quotation marks.</p>
-    pub fn quote_fields(&self) -> std::option::Option<& crate::types::QuoteFields> {
+    pub fn quote_fields(&self) -> std::option::Option<&crate::types::QuoteFields> {
         self.quote_fields.as_ref()
     }
     /// <p>A single character used for escaping the quotation-mark character inside an already escaped value.</p>
-    pub fn quote_escape_character(&self) -> std::option::Option<& str> {
+    pub fn quote_escape_character(&self) -> std::option::Option<&str> {
         self.quote_escape_character.as_deref()
     }
     /// <p>A value used to separate individual records from each other.</p>
-    pub fn record_delimiter(&self) -> std::option::Option<& str> {
+    pub fn record_delimiter(&self) -> std::option::Option<&str> {
         self.record_delimiter.as_deref()
     }
     /// <p>A value used to separate individual fields from each other within a record.</p>
-    pub fn field_delimiter(&self) -> std::option::Option<& str> {
+    pub fn field_delimiter(&self) -> std::option::Option<&str> {
         self.field_delimiter.as_deref()
     }
     /// <p>A value used as an escape character where the field delimiter is part of the value.</p>
-    pub fn quote_character(&self) -> std::option::Option<& str> {
+    pub fn quote_character(&self) -> std::option::Option<&str> {
         self.quote_character.as_deref()
     }
 }
@@ -66,8 +66,12 @@ impl CsvOutputBuilder {
         self
     }
     /// <p>A value that indicates whether all output fields should be contained within quotation marks.</p>
-    pub fn set_quote_fields(mut self, input: std::option::Option<crate::types::QuoteFields>) -> Self {
-        self.quote_fields = input; self
+    pub fn set_quote_fields(
+        mut self,
+        input: std::option::Option<crate::types::QuoteFields>,
+    ) -> Self {
+        self.quote_fields = input;
+        self
     }
     /// <p>A single character used for escaping the quotation-mark character inside an already escaped value.</p>
     pub fn quote_escape_character(mut self, input: impl Into<std::string::String>) -> Self {
@@ -75,8 +79,12 @@ impl CsvOutputBuilder {
         self
     }
     /// <p>A single character used for escaping the quotation-mark character inside an already escaped value.</p>
-    pub fn set_quote_escape_character(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.quote_escape_character = input; self
+    pub fn set_quote_escape_character(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.quote_escape_character = input;
+        self
     }
     /// <p>A value used to separate individual records from each other.</p>
     pub fn record_delimiter(mut self, input: impl Into<std::string::String>) -> Self {
@@ -85,7 +93,8 @@ impl CsvOutputBuilder {
     }
     /// <p>A value used to separate individual records from each other.</p>
     pub fn set_record_delimiter(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.record_delimiter = input; self
+        self.record_delimiter = input;
+        self
     }
     /// <p>A value used to separate individual fields from each other within a record.</p>
     pub fn field_delimiter(mut self, input: impl Into<std::string::String>) -> Self {
@@ -94,7 +103,8 @@ impl CsvOutputBuilder {
     }
     /// <p>A value used to separate individual fields from each other within a record.</p>
     pub fn set_field_delimiter(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.field_delimiter = input; self
+        self.field_delimiter = input;
+        self
     }
     /// <p>A value used as an escape character where the field delimiter is part of the value.</p>
     pub fn quote_character(mut self, input: impl Into<std::string::String>) -> Self {
@@ -103,22 +113,17 @@ impl CsvOutputBuilder {
     }
     /// <p>A value used as an escape character where the field delimiter is part of the value.</p>
     pub fn set_quote_character(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.quote_character = input; self
+        self.quote_character = input;
+        self
     }
     /// Consumes the builder and constructs a [`CsvOutput`](crate::types::CsvOutput).
     pub fn build(self) -> crate::types::CsvOutput {
         crate::types::CsvOutput {
-            quote_fields: self.quote_fields
-            ,
-            quote_escape_character: self.quote_escape_character
-            ,
-            record_delimiter: self.record_delimiter
-            ,
-            field_delimiter: self.field_delimiter
-            ,
-            quote_character: self.quote_character
-            ,
+            quote_fields: self.quote_fields,
+            quote_escape_character: self.quote_escape_character,
+            record_delimiter: self.record_delimiter,
+            field_delimiter: self.field_delimiter,
+            quote_character: self.quote_character,
         }
     }
 }
-

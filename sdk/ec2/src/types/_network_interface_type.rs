@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-/// 
+///
 /// Here is an example of how you can make a match expression forward-compatible:
-/// 
+///
 /// ```text
 /// # let networkinterfacetype = unimplemented!();
 /// match networkinterfacetype {
@@ -45,14 +45,22 @@
 /// Specifically, when `networkinterfacetype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `NetworkInterfaceType::NewFeature` also yielding `"NewFeature"`.
-/// 
+///
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
 pub enum NetworkInterfaceType {
     #[allow(missing_docs)] // documentation missing in model
     ApiGatewayManaged,
@@ -89,71 +97,94 @@ pub enum NetworkInterfaceType {
     #[allow(missing_docs)] // documentation missing in model
     VpcEndpoint,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::primitives::UnknownVariantValue)
+    Unknown(crate::primitives::UnknownVariantValue),
 }
 impl std::convert::From<&str> for NetworkInterfaceType {
-                fn from(s: &str) -> Self {
-                    match s {
-                        "api_gateway_managed" => NetworkInterfaceType::ApiGatewayManaged,
-"aws_codestar_connections_managed" => NetworkInterfaceType::AwsCodestarConnectionsManaged,
-"branch" => NetworkInterfaceType::Branch,
-"efa" => NetworkInterfaceType::Efa,
-"gateway_load_balancer" => NetworkInterfaceType::GatewayLoadBalancer,
-"gateway_load_balancer_endpoint" => NetworkInterfaceType::GatewayLoadBalancerEndpoint,
-"global_accelerator_managed" => NetworkInterfaceType::GlobalAcceleratorManaged,
-"interface" => NetworkInterfaceType::Interface,
-"iot_rules_managed" => NetworkInterfaceType::IotRulesManaged,
-"lambda" => NetworkInterfaceType::Lambda,
-"load_balancer" => NetworkInterfaceType::LoadBalancer,
-"natGateway" => NetworkInterfaceType::NatGateway,
-"network_load_balancer" => NetworkInterfaceType::NetworkLoadBalancer,
-"quicksight" => NetworkInterfaceType::Quicksight,
-"transit_gateway" => NetworkInterfaceType::TransitGateway,
-"trunk" => NetworkInterfaceType::Trunk,
-"vpc_endpoint" => NetworkInterfaceType::VpcEndpoint,
-other => NetworkInterfaceType::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
-                    }
-                }
+    fn from(s: &str) -> Self {
+        match s {
+            "api_gateway_managed" => NetworkInterfaceType::ApiGatewayManaged,
+            "aws_codestar_connections_managed" => {
+                NetworkInterfaceType::AwsCodestarConnectionsManaged
             }
-impl std::str::FromStr for NetworkInterfaceType {
-                type Err = std::convert::Infallible;
-
-                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-                    Ok(NetworkInterfaceType::from(s))
-                }
-            }
-impl NetworkInterfaceType {
-                /// Returns the `&str` value of the enum member.
-                pub fn as_str(&self) -> &str {
-                    match self {
-    NetworkInterfaceType::ApiGatewayManaged => "api_gateway_managed",
-    NetworkInterfaceType::AwsCodestarConnectionsManaged => "aws_codestar_connections_managed",
-    NetworkInterfaceType::Branch => "branch",
-    NetworkInterfaceType::Efa => "efa",
-    NetworkInterfaceType::GatewayLoadBalancer => "gateway_load_balancer",
-    NetworkInterfaceType::GatewayLoadBalancerEndpoint => "gateway_load_balancer_endpoint",
-    NetworkInterfaceType::GlobalAcceleratorManaged => "global_accelerator_managed",
-    NetworkInterfaceType::Interface => "interface",
-    NetworkInterfaceType::IotRulesManaged => "iot_rules_managed",
-    NetworkInterfaceType::Lambda => "lambda",
-    NetworkInterfaceType::LoadBalancer => "load_balancer",
-    NetworkInterfaceType::NatGateway => "natGateway",
-    NetworkInterfaceType::NetworkLoadBalancer => "network_load_balancer",
-    NetworkInterfaceType::Quicksight => "quicksight",
-    NetworkInterfaceType::TransitGateway => "transit_gateway",
-    NetworkInterfaceType::Trunk => "trunk",
-    NetworkInterfaceType::VpcEndpoint => "vpc_endpoint",
-    NetworkInterfaceType::Unknown(value) => value.as_str()
+            "branch" => NetworkInterfaceType::Branch,
+            "efa" => NetworkInterfaceType::Efa,
+            "gateway_load_balancer" => NetworkInterfaceType::GatewayLoadBalancer,
+            "gateway_load_balancer_endpoint" => NetworkInterfaceType::GatewayLoadBalancerEndpoint,
+            "global_accelerator_managed" => NetworkInterfaceType::GlobalAcceleratorManaged,
+            "interface" => NetworkInterfaceType::Interface,
+            "iot_rules_managed" => NetworkInterfaceType::IotRulesManaged,
+            "lambda" => NetworkInterfaceType::Lambda,
+            "load_balancer" => NetworkInterfaceType::LoadBalancer,
+            "natGateway" => NetworkInterfaceType::NatGateway,
+            "network_load_balancer" => NetworkInterfaceType::NetworkLoadBalancer,
+            "quicksight" => NetworkInterfaceType::Quicksight,
+            "transit_gateway" => NetworkInterfaceType::TransitGateway,
+            "trunk" => NetworkInterfaceType::Trunk,
+            "vpc_endpoint" => NetworkInterfaceType::VpcEndpoint,
+            other => NetworkInterfaceType::Unknown(crate::primitives::UnknownVariantValue(
+                other.to_owned(),
+            )),
+        }
+    }
 }
-                }
-                /// Returns all the `&str` representations of the enum members.
-                pub const fn values() -> &'static [&'static str] {
-                    &["api_gateway_managed", "aws_codestar_connections_managed", "branch", "efa", "gateway_load_balancer", "gateway_load_balancer_endpoint", "global_accelerator_managed", "interface", "iot_rules_managed", "lambda", "load_balancer", "natGateway", "network_load_balancer", "quicksight", "transit_gateway", "trunk", "vpc_endpoint"]
-                }
-            }
-impl AsRef<str> for NetworkInterfaceType {
-                fn as_ref(&self) -> &str {
-                    self.as_str()
-                }
-            }
+impl std::str::FromStr for NetworkInterfaceType {
+    type Err = std::convert::Infallible;
 
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(NetworkInterfaceType::from(s))
+    }
+}
+impl NetworkInterfaceType {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            NetworkInterfaceType::ApiGatewayManaged => "api_gateway_managed",
+            NetworkInterfaceType::AwsCodestarConnectionsManaged => {
+                "aws_codestar_connections_managed"
+            }
+            NetworkInterfaceType::Branch => "branch",
+            NetworkInterfaceType::Efa => "efa",
+            NetworkInterfaceType::GatewayLoadBalancer => "gateway_load_balancer",
+            NetworkInterfaceType::GatewayLoadBalancerEndpoint => "gateway_load_balancer_endpoint",
+            NetworkInterfaceType::GlobalAcceleratorManaged => "global_accelerator_managed",
+            NetworkInterfaceType::Interface => "interface",
+            NetworkInterfaceType::IotRulesManaged => "iot_rules_managed",
+            NetworkInterfaceType::Lambda => "lambda",
+            NetworkInterfaceType::LoadBalancer => "load_balancer",
+            NetworkInterfaceType::NatGateway => "natGateway",
+            NetworkInterfaceType::NetworkLoadBalancer => "network_load_balancer",
+            NetworkInterfaceType::Quicksight => "quicksight",
+            NetworkInterfaceType::TransitGateway => "transit_gateway",
+            NetworkInterfaceType::Trunk => "trunk",
+            NetworkInterfaceType::VpcEndpoint => "vpc_endpoint",
+            NetworkInterfaceType::Unknown(value) => value.as_str(),
+        }
+    }
+    /// Returns all the `&str` representations of the enum members.
+    pub const fn values() -> &'static [&'static str] {
+        &[
+            "api_gateway_managed",
+            "aws_codestar_connections_managed",
+            "branch",
+            "efa",
+            "gateway_load_balancer",
+            "gateway_load_balancer_endpoint",
+            "global_accelerator_managed",
+            "interface",
+            "iot_rules_managed",
+            "lambda",
+            "load_balancer",
+            "natGateway",
+            "network_load_balancer",
+            "quicksight",
+            "transit_gateway",
+            "trunk",
+            "vpc_endpoint",
+        ]
+    }
+}
+impl AsRef<str> for NetworkInterfaceType {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}

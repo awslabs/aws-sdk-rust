@@ -3,7 +3,7 @@
 /// <p>Information about a tool. Tools are used in a simulation job.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Tool  {
+pub struct Tool {
     /// <p>Boolean indicating whether a streaming session will be configured for the tool. If <code>True</code>, AWS RoboMaker will configure a connection so you can interact with the tool as it is running in the simulation. It must have a graphical user interface. The default is <code>False</code>. </p>
     #[doc(hidden)]
     pub stream_ui: std::option::Option<bool>,
@@ -26,11 +26,11 @@ impl Tool {
         self.stream_ui
     }
     /// <p>The name of the tool.</p>
-    pub fn name(&self) -> std::option::Option<& str> {
+    pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>Command-line arguments for the tool. It must include the tool executable name.</p>
-    pub fn command(&self) -> std::option::Option<& str> {
+    pub fn command(&self) -> std::option::Option<&str> {
         self.command.as_deref()
     }
     /// <p>Boolean indicating whether logs will be recorded in CloudWatch for the tool. The default is <code>False</code>. </p>
@@ -38,7 +38,7 @@ impl Tool {
         self.stream_output_to_cloud_watch
     }
     /// <p>Exit behavior determines what happens when your tool quits running. <code>RESTART</code> will cause your tool to be restarted. <code>FAIL</code> will cause your job to exit. The default is <code>RESTART</code>. </p>
-    pub fn exit_behavior(&self) -> std::option::Option<& crate::types::ExitBehavior> {
+    pub fn exit_behavior(&self) -> std::option::Option<&crate::types::ExitBehavior> {
         self.exit_behavior.as_ref()
     }
 }
@@ -67,7 +67,8 @@ impl ToolBuilder {
     }
     /// <p>Boolean indicating whether a streaming session will be configured for the tool. If <code>True</code>, AWS RoboMaker will configure a connection so you can interact with the tool as it is running in the simulation. It must have a graphical user interface. The default is <code>False</code>. </p>
     pub fn set_stream_ui(mut self, input: std::option::Option<bool>) -> Self {
-        self.stream_ui = input; self
+        self.stream_ui = input;
+        self
     }
     /// <p>The name of the tool.</p>
     pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -76,7 +77,8 @@ impl ToolBuilder {
     }
     /// <p>The name of the tool.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input; self
+        self.name = input;
+        self
     }
     /// <p>Command-line arguments for the tool. It must include the tool executable name.</p>
     pub fn command(mut self, input: impl Into<std::string::String>) -> Self {
@@ -85,7 +87,8 @@ impl ToolBuilder {
     }
     /// <p>Command-line arguments for the tool. It must include the tool executable name.</p>
     pub fn set_command(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.command = input; self
+        self.command = input;
+        self
     }
     /// <p>Boolean indicating whether logs will be recorded in CloudWatch for the tool. The default is <code>False</code>. </p>
     pub fn stream_output_to_cloud_watch(mut self, input: bool) -> Self {
@@ -94,7 +97,8 @@ impl ToolBuilder {
     }
     /// <p>Boolean indicating whether logs will be recorded in CloudWatch for the tool. The default is <code>False</code>. </p>
     pub fn set_stream_output_to_cloud_watch(mut self, input: std::option::Option<bool>) -> Self {
-        self.stream_output_to_cloud_watch = input; self
+        self.stream_output_to_cloud_watch = input;
+        self
     }
     /// <p>Exit behavior determines what happens when your tool quits running. <code>RESTART</code> will cause your tool to be restarted. <code>FAIL</code> will cause your job to exit. The default is <code>RESTART</code>. </p>
     pub fn exit_behavior(mut self, input: crate::types::ExitBehavior) -> Self {
@@ -102,23 +106,21 @@ impl ToolBuilder {
         self
     }
     /// <p>Exit behavior determines what happens when your tool quits running. <code>RESTART</code> will cause your tool to be restarted. <code>FAIL</code> will cause your job to exit. The default is <code>RESTART</code>. </p>
-    pub fn set_exit_behavior(mut self, input: std::option::Option<crate::types::ExitBehavior>) -> Self {
-        self.exit_behavior = input; self
+    pub fn set_exit_behavior(
+        mut self,
+        input: std::option::Option<crate::types::ExitBehavior>,
+    ) -> Self {
+        self.exit_behavior = input;
+        self
     }
     /// Consumes the builder and constructs a [`Tool`](crate::types::Tool).
     pub fn build(self) -> crate::types::Tool {
         crate::types::Tool {
-            stream_ui: self.stream_ui
-            ,
-            name: self.name
-            ,
-            command: self.command
-            ,
-            stream_output_to_cloud_watch: self.stream_output_to_cloud_watch
-            ,
-            exit_behavior: self.exit_behavior
-            ,
+            stream_ui: self.stream_ui,
+            name: self.name,
+            command: self.command,
+            stream_output_to_cloud_watch: self.stream_output_to_cloud_watch,
+            exit_behavior: self.exit_behavior,
         }
     }
 }
-

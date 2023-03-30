@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeFhirDatastoreOutput  {
+pub struct DescribeFhirDatastoreOutput {
     /// <p>All properties associated with a Data Store, including the Data Store ID, Data Store ARN, Data Store name, Data Store status, created at, Data Store type version, and Data Store endpoint.</p>
     #[doc(hidden)]
     pub datastore_properties: std::option::Option<crate::types::DatastoreProperties>,
@@ -10,18 +10,20 @@ pub struct DescribeFhirDatastoreOutput  {
 }
 impl DescribeFhirDatastoreOutput {
     /// <p>All properties associated with a Data Store, including the Data Store ID, Data Store ARN, Data Store name, Data Store status, created at, Data Store type version, and Data Store endpoint.</p>
-    pub fn datastore_properties(&self) -> std::option::Option<& crate::types::DatastoreProperties> {
+    pub fn datastore_properties(&self) -> std::option::Option<&crate::types::DatastoreProperties> {
         self.datastore_properties.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for DescribeFhirDatastoreOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl DescribeFhirDatastoreOutput {
     /// Creates a new builder-style object to manufacture [`DescribeFhirDatastoreOutput`](crate::operation::describe_fhir_datastore::DescribeFhirDatastoreOutput).
-    pub fn builder() -> crate::operation::describe_fhir_datastore::builders::DescribeFhirDatastoreOutputBuilder {
+    pub fn builder(
+    ) -> crate::operation::describe_fhir_datastore::builders::DescribeFhirDatastoreOutputBuilder
+    {
         crate::operation::describe_fhir_datastore::builders::DescribeFhirDatastoreOutputBuilder::default()
     }
 }
@@ -40,25 +42,27 @@ impl DescribeFhirDatastoreOutputBuilder {
         self
     }
     /// <p>All properties associated with a Data Store, including the Data Store ID, Data Store ARN, Data Store name, Data Store status, created at, Data Store type version, and Data Store endpoint.</p>
-    pub fn set_datastore_properties(mut self, input: std::option::Option<crate::types::DatastoreProperties>) -> Self {
-        self.datastore_properties = input; self
+    pub fn set_datastore_properties(
+        mut self,
+        input: std::option::Option<crate::types::DatastoreProperties>,
+    ) -> Self {
+        self.datastore_properties = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`DescribeFhirDatastoreOutput`](crate::operation::describe_fhir_datastore::DescribeFhirDatastoreOutput).
     pub fn build(self) -> crate::operation::describe_fhir_datastore::DescribeFhirDatastoreOutput {
         crate::operation::describe_fhir_datastore::DescribeFhirDatastoreOutput {
-            datastore_properties: self.datastore_properties
-            ,
+            datastore_properties: self.datastore_properties,
             _request_id: self._request_id,
         }
     }
 }
-

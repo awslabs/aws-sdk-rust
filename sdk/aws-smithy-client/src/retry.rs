@@ -198,7 +198,7 @@ impl Default for RequestLocalRetryState {
 }
 
 impl RequestLocalRetryState {
-    pub fn new() -> Self {
+    fn new() -> Self {
         Self::default()
     }
 }
@@ -219,7 +219,7 @@ struct CrossRequestRetryState {
 // significantly more complicated for negligible benefit.
 #[allow(clippy::mutex_atomic)]
 impl CrossRequestRetryState {
-    pub fn new(initial_quota: usize) -> Self {
+    fn new(initial_quota: usize) -> Self {
         Self {
             quota_available: Arc::new(Mutex::new(initial_quota)),
         }

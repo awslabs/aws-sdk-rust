@@ -3,7 +3,7 @@
 /// <p>Contains information about a timestamp.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct TimestampValue  {
+pub struct TimestampValue {
     /// <p>The value of the timestamp, in the Unix epoch format.</p>
     #[doc(hidden)]
     pub time_in_millis: std::option::Option<i64>,
@@ -35,14 +35,13 @@ impl TimestampValueBuilder {
     }
     /// <p>The value of the timestamp, in the Unix epoch format.</p>
     pub fn set_time_in_millis(mut self, input: std::option::Option<i64>) -> Self {
-        self.time_in_millis = input; self
+        self.time_in_millis = input;
+        self
     }
     /// Consumes the builder and constructs a [`TimestampValue`](crate::types::TimestampValue).
     pub fn build(self) -> crate::types::TimestampValue {
         crate::types::TimestampValue {
-            time_in_millis: self.time_in_millis
-            ,
+            time_in_millis: self.time_in_millis,
         }
     }
 }
-

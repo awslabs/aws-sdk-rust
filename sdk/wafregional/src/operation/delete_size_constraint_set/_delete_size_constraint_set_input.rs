@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteSizeConstraintSetInput  {
+pub struct DeleteSizeConstraintSetInput {
     /// <p>The <code>SizeConstraintSetId</code> of the <code>SizeConstraintSet</code> that you want to delete. <code>SizeConstraintSetId</code> is returned by <code>CreateSizeConstraintSet</code> and by <code>ListSizeConstraintSets</code>.</p>
     #[doc(hidden)]
     pub size_constraint_set_id: std::option::Option<std::string::String>,
@@ -12,17 +12,19 @@ pub struct DeleteSizeConstraintSetInput  {
 }
 impl DeleteSizeConstraintSetInput {
     /// <p>The <code>SizeConstraintSetId</code> of the <code>SizeConstraintSet</code> that you want to delete. <code>SizeConstraintSetId</code> is returned by <code>CreateSizeConstraintSet</code> and by <code>ListSizeConstraintSets</code>.</p>
-    pub fn size_constraint_set_id(&self) -> std::option::Option<& str> {
+    pub fn size_constraint_set_id(&self) -> std::option::Option<&str> {
         self.size_constraint_set_id.as_deref()
     }
     /// <p>The value returned by the most recent call to <code>GetChangeToken</code>.</p>
-    pub fn change_token(&self) -> std::option::Option<& str> {
+    pub fn change_token(&self) -> std::option::Option<&str> {
         self.change_token.as_deref()
     }
 }
 impl DeleteSizeConstraintSetInput {
     /// Creates a new builder-style object to manufacture [`DeleteSizeConstraintSetInput`](crate::operation::delete_size_constraint_set::DeleteSizeConstraintSetInput).
-    pub fn builder() -> crate::operation::delete_size_constraint_set::builders::DeleteSizeConstraintSetInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::delete_size_constraint_set::builders::DeleteSizeConstraintSetInputBuilder
+    {
         crate::operation::delete_size_constraint_set::builders::DeleteSizeConstraintSetInputBuilder::default()
     }
 }
@@ -41,8 +43,12 @@ impl DeleteSizeConstraintSetInputBuilder {
         self
     }
     /// <p>The <code>SizeConstraintSetId</code> of the <code>SizeConstraintSet</code> that you want to delete. <code>SizeConstraintSetId</code> is returned by <code>CreateSizeConstraintSet</code> and by <code>ListSizeConstraintSets</code>.</p>
-    pub fn set_size_constraint_set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.size_constraint_set_id = input; self
+    pub fn set_size_constraint_set_id(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.size_constraint_set_id = input;
+        self
     }
     /// <p>The value returned by the most recent call to <code>GetChangeToken</code>.</p>
     pub fn change_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -51,18 +57,21 @@ impl DeleteSizeConstraintSetInputBuilder {
     }
     /// <p>The value returned by the most recent call to <code>GetChangeToken</code>.</p>
     pub fn set_change_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.change_token = input; self
+        self.change_token = input;
+        self
     }
     /// Consumes the builder and constructs a [`DeleteSizeConstraintSetInput`](crate::operation::delete_size_constraint_set::DeleteSizeConstraintSetInput).
-    pub fn build(self) -> Result<crate::operation::delete_size_constraint_set::DeleteSizeConstraintSetInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::delete_size_constraint_set::DeleteSizeConstraintSetInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::delete_size_constraint_set::DeleteSizeConstraintSetInput {
-                size_constraint_set_id: self.size_constraint_set_id
-                ,
-                change_token: self.change_token
-                ,
-            }
+                size_constraint_set_id: self.size_constraint_set_id,
+                change_token: self.change_token,
+            },
         )
     }
 }
-

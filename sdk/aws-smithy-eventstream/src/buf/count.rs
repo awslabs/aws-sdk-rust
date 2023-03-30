@@ -8,7 +8,7 @@
 use bytes::Buf;
 
 /// A [`Buf`] implementation that counts bytes read.
-pub struct CountBuf<'a, B>
+pub(crate) struct CountBuf<'a, B>
 where
     B: Buf,
 {
@@ -21,12 +21,12 @@ where
     B: Buf,
 {
     /// Creates a new `CountBuf` by wrapping the given `buffer`.
-    pub fn new(buffer: &'a mut B) -> Self {
+    pub(crate) fn new(buffer: &'a mut B) -> Self {
         CountBuf { buffer, count: 0 }
     }
 
     /// Consumes the `CountBuf` and returns the number of bytes read.
-    pub fn into_count(self) -> usize {
+    pub(crate) fn into_count(self) -> usize {
         self.count
     }
 }

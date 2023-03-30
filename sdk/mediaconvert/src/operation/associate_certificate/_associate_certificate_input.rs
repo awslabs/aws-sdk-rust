@@ -2,21 +2,23 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AssociateCertificateInput  {
+pub struct AssociateCertificateInput {
     /// The ARN of the ACM certificate that you want to associate with your MediaConvert resource.
     #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
 }
 impl AssociateCertificateInput {
     /// The ARN of the ACM certificate that you want to associate with your MediaConvert resource.
-    pub fn arn(&self) -> std::option::Option<& str> {
+    pub fn arn(&self) -> std::option::Option<&str> {
         self.arn.as_deref()
     }
 }
 impl AssociateCertificateInput {
     /// Creates a new builder-style object to manufacture [`AssociateCertificateInput`](crate::operation::associate_certificate::AssociateCertificateInput).
-    pub fn builder() -> crate::operation::associate_certificate::builders::AssociateCertificateInputBuilder {
-        crate::operation::associate_certificate::builders::AssociateCertificateInputBuilder::default()
+    pub fn builder(
+    ) -> crate::operation::associate_certificate::builders::AssociateCertificateInputBuilder {
+        crate::operation::associate_certificate::builders::AssociateCertificateInputBuilder::default(
+        )
     }
 }
 
@@ -34,16 +36,16 @@ impl AssociateCertificateInputBuilder {
     }
     /// The ARN of the ACM certificate that you want to associate with your MediaConvert resource.
     pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.arn = input; self
+        self.arn = input;
+        self
     }
     /// Consumes the builder and constructs a [`AssociateCertificateInput`](crate::operation::associate_certificate::AssociateCertificateInput).
-    pub fn build(self) -> Result<crate::operation::associate_certificate::AssociateCertificateInput, aws_smithy_http::operation::error::BuildError> {
-        Ok(
-            crate::operation::associate_certificate::AssociateCertificateInput {
-                arn: self.arn
-                ,
-            }
-        )
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::associate_certificate::AssociateCertificateInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        Ok(crate::operation::associate_certificate::AssociateCertificateInput { arn: self.arn })
     }
 }
-

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeactivateKeySigningKeyInput  {
+pub struct DeactivateKeySigningKeyInput {
     /// <p>A unique string used to identify a hosted zone.</p>
     #[doc(hidden)]
     pub hosted_zone_id: std::option::Option<std::string::String>,
@@ -12,17 +12,19 @@ pub struct DeactivateKeySigningKeyInput  {
 }
 impl DeactivateKeySigningKeyInput {
     /// <p>A unique string used to identify a hosted zone.</p>
-    pub fn hosted_zone_id(&self) -> std::option::Option<& str> {
+    pub fn hosted_zone_id(&self) -> std::option::Option<&str> {
         self.hosted_zone_id.as_deref()
     }
     /// <p>A string used to identify a key-signing key (KSK).</p>
-    pub fn name(&self) -> std::option::Option<& str> {
+    pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
 }
 impl DeactivateKeySigningKeyInput {
     /// Creates a new builder-style object to manufacture [`DeactivateKeySigningKeyInput`](crate::operation::deactivate_key_signing_key::DeactivateKeySigningKeyInput).
-    pub fn builder() -> crate::operation::deactivate_key_signing_key::builders::DeactivateKeySigningKeyInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::deactivate_key_signing_key::builders::DeactivateKeySigningKeyInputBuilder
+    {
         crate::operation::deactivate_key_signing_key::builders::DeactivateKeySigningKeyInputBuilder::default()
     }
 }
@@ -42,7 +44,8 @@ impl DeactivateKeySigningKeyInputBuilder {
     }
     /// <p>A unique string used to identify a hosted zone.</p>
     pub fn set_hosted_zone_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.hosted_zone_id = input; self
+        self.hosted_zone_id = input;
+        self
     }
     /// <p>A string used to identify a key-signing key (KSK).</p>
     pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -51,18 +54,21 @@ impl DeactivateKeySigningKeyInputBuilder {
     }
     /// <p>A string used to identify a key-signing key (KSK).</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input; self
+        self.name = input;
+        self
     }
     /// Consumes the builder and constructs a [`DeactivateKeySigningKeyInput`](crate::operation::deactivate_key_signing_key::DeactivateKeySigningKeyInput).
-    pub fn build(self) -> Result<crate::operation::deactivate_key_signing_key::DeactivateKeySigningKeyInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::deactivate_key_signing_key::DeactivateKeySigningKeyInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::deactivate_key_signing_key::DeactivateKeySigningKeyInput {
-                hosted_zone_id: self.hosted_zone_id
-                ,
-                name: self.name
-                ,
-            }
+                hosted_zone_id: self.hosted_zone_id,
+                name: self.name,
+            },
         )
     }
 }
-

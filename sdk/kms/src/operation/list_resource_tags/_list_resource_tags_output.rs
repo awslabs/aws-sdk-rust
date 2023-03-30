@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListResourceTagsOutput  {
-    /// <p>A list of tags. Each tag consists of a tag key and a tag value.</p> <note> 
-    /// <p>Tagging or untagging a KMS key can allow or deny permission to the KMS key. For details, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/abac.html">ABAC for KMS</a> in the <i>Key Management Service Developer Guide</i>.</p> 
+pub struct ListResourceTagsOutput {
+    /// <p>A list of tags. Each tag consists of a tag key and a tag value.</p> <note>
+    /// <p>Tagging or untagging a KMS key can allow or deny permission to the KMS key. For details, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/abac.html">ABAC for KMS</a> in the <i>Key Management Service Developer Guide</i>.</p>
     /// </note>
     #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::types::Tag>>,
-    /// <p>When <code>Truncated</code> is true, this element is present and contains the value to use for the <code>Marker</code> parameter in a subsequent request.</p> 
+    /// <p>When <code>Truncated</code> is true, this element is present and contains the value to use for the <code>Marker</code> parameter in a subsequent request.</p>
     /// <p>Do not assume or infer any information from this value.</p>
     #[doc(hidden)]
     pub next_marker: std::option::Option<std::string::String>,
@@ -18,15 +18,15 @@ pub struct ListResourceTagsOutput  {
     _request_id: Option<String>,
 }
 impl ListResourceTagsOutput {
-    /// <p>A list of tags. Each tag consists of a tag key and a tag value.</p> <note> 
-    /// <p>Tagging or untagging a KMS key can allow or deny permission to the KMS key. For details, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/abac.html">ABAC for KMS</a> in the <i>Key Management Service Developer Guide</i>.</p> 
+    /// <p>A list of tags. Each tag consists of a tag key and a tag value.</p> <note>
+    /// <p>Tagging or untagging a KMS key can allow or deny permission to the KMS key. For details, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/abac.html">ABAC for KMS</a> in the <i>Key Management Service Developer Guide</i>.</p>
     /// </note>
-    pub fn tags(&self) -> std::option::Option<& [crate::types::Tag]> {
+    pub fn tags(&self) -> std::option::Option<&[crate::types::Tag]> {
         self.tags.as_deref()
     }
-    /// <p>When <code>Truncated</code> is true, this element is present and contains the value to use for the <code>Marker</code> parameter in a subsequent request.</p> 
+    /// <p>When <code>Truncated</code> is true, this element is present and contains the value to use for the <code>Marker</code> parameter in a subsequent request.</p>
     /// <p>Do not assume or infer any information from this value.</p>
-    pub fn next_marker(&self) -> std::option::Option<& str> {
+    pub fn next_marker(&self) -> std::option::Option<&str> {
         self.next_marker.as_deref()
     }
     /// <p>A flag that indicates whether there are more items in the list. When this value is true, the list in this response is truncated. To get more items, pass the value of the <code>NextMarker</code> element in thisresponse to the <code>Marker</code> parameter in a subsequent request.</p>
@@ -35,13 +35,14 @@ impl ListResourceTagsOutput {
     }
 }
 impl aws_http::request_id::RequestId for ListResourceTagsOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl ListResourceTagsOutput {
     /// Creates a new builder-style object to manufacture [`ListResourceTagsOutput`](crate::operation::list_resource_tags::ListResourceTagsOutput).
-    pub fn builder() -> crate::operation::list_resource_tags::builders::ListResourceTagsOutputBuilder {
+    pub fn builder() -> crate::operation::list_resource_tags::builders::ListResourceTagsOutputBuilder
+    {
         crate::operation::list_resource_tags::builders::ListResourceTagsOutputBuilder::default()
     }
 }
@@ -60,31 +61,36 @@ impl ListResourceTagsOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
-    /// <p>A list of tags. Each tag consists of a tag key and a tag value.</p> <note> 
-    /// <p>Tagging or untagging a KMS key can allow or deny permission to the KMS key. For details, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/abac.html">ABAC for KMS</a> in the <i>Key Management Service Developer Guide</i>.</p> 
+    /// <p>A list of tags. Each tag consists of a tag key and a tag value.</p> <note>
+    /// <p>Tagging or untagging a KMS key can allow or deny permission to the KMS key. For details, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/abac.html">ABAC for KMS</a> in the <i>Key Management Service Developer Guide</i>.</p>
     /// </note>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
-                        v.push(input);
-                        self.tags = Some(v);
-                        self
+        v.push(input);
+        self.tags = Some(v);
+        self
     }
-    /// <p>A list of tags. Each tag consists of a tag key and a tag value.</p> <note> 
-    /// <p>Tagging or untagging a KMS key can allow or deny permission to the KMS key. For details, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/abac.html">ABAC for KMS</a> in the <i>Key Management Service Developer Guide</i>.</p> 
+    /// <p>A list of tags. Each tag consists of a tag key and a tag value.</p> <note>
+    /// <p>Tagging or untagging a KMS key can allow or deny permission to the KMS key. For details, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/abac.html">ABAC for KMS</a> in the <i>Key Management Service Developer Guide</i>.</p>
     /// </note>
-    pub fn set_tags(mut self, input: std::option::Option<std::vec::Vec<crate::types::Tag>>) -> Self {
-        self.tags = input; self
+    pub fn set_tags(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::Tag>>,
+    ) -> Self {
+        self.tags = input;
+        self
     }
-    /// <p>When <code>Truncated</code> is true, this element is present and contains the value to use for the <code>Marker</code> parameter in a subsequent request.</p> 
+    /// <p>When <code>Truncated</code> is true, this element is present and contains the value to use for the <code>Marker</code> parameter in a subsequent request.</p>
     /// <p>Do not assume or infer any information from this value.</p>
     pub fn next_marker(mut self, input: impl Into<std::string::String>) -> Self {
         self.next_marker = Some(input.into());
         self
     }
-    /// <p>When <code>Truncated</code> is true, this element is present and contains the value to use for the <code>Marker</code> parameter in a subsequent request.</p> 
+    /// <p>When <code>Truncated</code> is true, this element is present and contains the value to use for the <code>Marker</code> parameter in a subsequent request.</p>
     /// <p>Do not assume or infer any information from this value.</p>
     pub fn set_next_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_marker = input; self
+        self.next_marker = input;
+        self
     }
     /// <p>A flag that indicates whether there are more items in the list. When this value is true, the list in this response is truncated. To get more items, pass the value of the <code>NextMarker</code> element in thisresponse to the <code>Marker</code> parameter in a subsequent request.</p>
     pub fn truncated(mut self, input: bool) -> Self {
@@ -93,29 +99,25 @@ impl ListResourceTagsOutputBuilder {
     }
     /// <p>A flag that indicates whether there are more items in the list. When this value is true, the list in this response is truncated. To get more items, pass the value of the <code>NextMarker</code> element in thisresponse to the <code>Marker</code> parameter in a subsequent request.</p>
     pub fn set_truncated(mut self, input: std::option::Option<bool>) -> Self {
-        self.truncated = input; self
+        self.truncated = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`ListResourceTagsOutput`](crate::operation::list_resource_tags::ListResourceTagsOutput).
     pub fn build(self) -> crate::operation::list_resource_tags::ListResourceTagsOutput {
         crate::operation::list_resource_tags::ListResourceTagsOutput {
-            tags: self.tags
-            ,
-            next_marker: self.next_marker
-            ,
-            truncated: self.truncated
-                .unwrap_or_default()
-            ,
+            tags: self.tags,
+            next_marker: self.next_marker,
+            truncated: self.truncated.unwrap_or_default(),
             _request_id: self._request_id,
         }
     }
 }
-

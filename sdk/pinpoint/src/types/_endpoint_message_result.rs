@@ -3,19 +3,19 @@
 /// <p>Provides information about the delivery status and results of sending a message directly to an endpoint.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct EndpointMessageResult  {
+pub struct EndpointMessageResult {
     /// <p>The endpoint address that the message was delivered to.</p>
     #[doc(hidden)]
     pub address: std::option::Option<std::string::String>,
-    /// <p>The delivery status of the message. Possible values are:</p> 
-    /// <ul> 
-    /// <li><p>DUPLICATE - The endpoint address is a duplicate of another endpoint address. Amazon Pinpoint won't attempt to send the message again.</p></li> 
-    /// <li><p>OPT_OUT - The user who's associated with the endpoint has opted out of receiving messages from you. Amazon Pinpoint won't attempt to send the message again.</p></li> 
-    /// <li><p>PERMANENT_FAILURE - An error occurred when delivering the message to the endpoint. Amazon Pinpoint won't attempt to send the message again.</p></li> 
-    /// <li><p>SUCCESSFUL - The message was successfully delivered to the endpoint.</p></li> 
-    /// <li><p>TEMPORARY_FAILURE - A temporary error occurred. Amazon Pinpoint won't attempt to send the message again.</p></li> 
-    /// <li><p>THROTTLED - Amazon Pinpoint throttled the operation to send the message to the endpoint.</p></li> 
-    /// <li><p>TIMEOUT - The message couldn't be sent within the timeout period.</p></li> 
+    /// <p>The delivery status of the message. Possible values are:</p>
+    /// <ul>
+    /// <li><p>DUPLICATE - The endpoint address is a duplicate of another endpoint address. Amazon Pinpoint won't attempt to send the message again.</p></li>
+    /// <li><p>OPT_OUT - The user who's associated with the endpoint has opted out of receiving messages from you. Amazon Pinpoint won't attempt to send the message again.</p></li>
+    /// <li><p>PERMANENT_FAILURE - An error occurred when delivering the message to the endpoint. Amazon Pinpoint won't attempt to send the message again.</p></li>
+    /// <li><p>SUCCESSFUL - The message was successfully delivered to the endpoint.</p></li>
+    /// <li><p>TEMPORARY_FAILURE - A temporary error occurred. Amazon Pinpoint won't attempt to send the message again.</p></li>
+    /// <li><p>THROTTLED - Amazon Pinpoint throttled the operation to send the message to the endpoint.</p></li>
+    /// <li><p>TIMEOUT - The message couldn't be sent within the timeout period.</p></li>
     /// <li><p>UNKNOWN_FAILURE - An unknown error occurred.</p></li>
     /// </ul>
     #[doc(hidden)]
@@ -35,25 +35,25 @@ pub struct EndpointMessageResult  {
 }
 impl EndpointMessageResult {
     /// <p>The endpoint address that the message was delivered to.</p>
-    pub fn address(&self) -> std::option::Option<& str> {
+    pub fn address(&self) -> std::option::Option<&str> {
         self.address.as_deref()
     }
-    /// <p>The delivery status of the message. Possible values are:</p> 
-    /// <ul> 
-    /// <li><p>DUPLICATE - The endpoint address is a duplicate of another endpoint address. Amazon Pinpoint won't attempt to send the message again.</p></li> 
-    /// <li><p>OPT_OUT - The user who's associated with the endpoint has opted out of receiving messages from you. Amazon Pinpoint won't attempt to send the message again.</p></li> 
-    /// <li><p>PERMANENT_FAILURE - An error occurred when delivering the message to the endpoint. Amazon Pinpoint won't attempt to send the message again.</p></li> 
-    /// <li><p>SUCCESSFUL - The message was successfully delivered to the endpoint.</p></li> 
-    /// <li><p>TEMPORARY_FAILURE - A temporary error occurred. Amazon Pinpoint won't attempt to send the message again.</p></li> 
-    /// <li><p>THROTTLED - Amazon Pinpoint throttled the operation to send the message to the endpoint.</p></li> 
-    /// <li><p>TIMEOUT - The message couldn't be sent within the timeout period.</p></li> 
+    /// <p>The delivery status of the message. Possible values are:</p>
+    /// <ul>
+    /// <li><p>DUPLICATE - The endpoint address is a duplicate of another endpoint address. Amazon Pinpoint won't attempt to send the message again.</p></li>
+    /// <li><p>OPT_OUT - The user who's associated with the endpoint has opted out of receiving messages from you. Amazon Pinpoint won't attempt to send the message again.</p></li>
+    /// <li><p>PERMANENT_FAILURE - An error occurred when delivering the message to the endpoint. Amazon Pinpoint won't attempt to send the message again.</p></li>
+    /// <li><p>SUCCESSFUL - The message was successfully delivered to the endpoint.</p></li>
+    /// <li><p>TEMPORARY_FAILURE - A temporary error occurred. Amazon Pinpoint won't attempt to send the message again.</p></li>
+    /// <li><p>THROTTLED - Amazon Pinpoint throttled the operation to send the message to the endpoint.</p></li>
+    /// <li><p>TIMEOUT - The message couldn't be sent within the timeout period.</p></li>
     /// <li><p>UNKNOWN_FAILURE - An unknown error occurred.</p></li>
     /// </ul>
-    pub fn delivery_status(&self) -> std::option::Option<& crate::types::DeliveryStatus> {
+    pub fn delivery_status(&self) -> std::option::Option<&crate::types::DeliveryStatus> {
         self.delivery_status.as_ref()
     }
     /// <p>The unique identifier for the message that was sent.</p>
-    pub fn message_id(&self) -> std::option::Option<& str> {
+    pub fn message_id(&self) -> std::option::Option<&str> {
         self.message_id.as_deref()
     }
     /// <p>The downstream service status code for delivering the message.</p>
@@ -61,11 +61,11 @@ impl EndpointMessageResult {
         self.status_code
     }
     /// <p>The status message for delivering the message.</p>
-    pub fn status_message(&self) -> std::option::Option<& str> {
+    pub fn status_message(&self) -> std::option::Option<&str> {
         self.status_message.as_deref()
     }
     /// <p>For push notifications that are sent through the GCM channel, specifies whether the endpoint's device registration token was updated as part of delivering the message.</p>
-    pub fn updated_token(&self) -> std::option::Option<& str> {
+    pub fn updated_token(&self) -> std::option::Option<&str> {
         self.updated_token.as_deref()
     }
 }
@@ -95,36 +95,41 @@ impl EndpointMessageResultBuilder {
     }
     /// <p>The endpoint address that the message was delivered to.</p>
     pub fn set_address(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.address = input; self
+        self.address = input;
+        self
     }
-    /// <p>The delivery status of the message. Possible values are:</p> 
-    /// <ul> 
-    /// <li><p>DUPLICATE - The endpoint address is a duplicate of another endpoint address. Amazon Pinpoint won't attempt to send the message again.</p></li> 
-    /// <li><p>OPT_OUT - The user who's associated with the endpoint has opted out of receiving messages from you. Amazon Pinpoint won't attempt to send the message again.</p></li> 
-    /// <li><p>PERMANENT_FAILURE - An error occurred when delivering the message to the endpoint. Amazon Pinpoint won't attempt to send the message again.</p></li> 
-    /// <li><p>SUCCESSFUL - The message was successfully delivered to the endpoint.</p></li> 
-    /// <li><p>TEMPORARY_FAILURE - A temporary error occurred. Amazon Pinpoint won't attempt to send the message again.</p></li> 
-    /// <li><p>THROTTLED - Amazon Pinpoint throttled the operation to send the message to the endpoint.</p></li> 
-    /// <li><p>TIMEOUT - The message couldn't be sent within the timeout period.</p></li> 
+    /// <p>The delivery status of the message. Possible values are:</p>
+    /// <ul>
+    /// <li><p>DUPLICATE - The endpoint address is a duplicate of another endpoint address. Amazon Pinpoint won't attempt to send the message again.</p></li>
+    /// <li><p>OPT_OUT - The user who's associated with the endpoint has opted out of receiving messages from you. Amazon Pinpoint won't attempt to send the message again.</p></li>
+    /// <li><p>PERMANENT_FAILURE - An error occurred when delivering the message to the endpoint. Amazon Pinpoint won't attempt to send the message again.</p></li>
+    /// <li><p>SUCCESSFUL - The message was successfully delivered to the endpoint.</p></li>
+    /// <li><p>TEMPORARY_FAILURE - A temporary error occurred. Amazon Pinpoint won't attempt to send the message again.</p></li>
+    /// <li><p>THROTTLED - Amazon Pinpoint throttled the operation to send the message to the endpoint.</p></li>
+    /// <li><p>TIMEOUT - The message couldn't be sent within the timeout period.</p></li>
     /// <li><p>UNKNOWN_FAILURE - An unknown error occurred.</p></li>
     /// </ul>
     pub fn delivery_status(mut self, input: crate::types::DeliveryStatus) -> Self {
         self.delivery_status = Some(input);
         self
     }
-    /// <p>The delivery status of the message. Possible values are:</p> 
-    /// <ul> 
-    /// <li><p>DUPLICATE - The endpoint address is a duplicate of another endpoint address. Amazon Pinpoint won't attempt to send the message again.</p></li> 
-    /// <li><p>OPT_OUT - The user who's associated with the endpoint has opted out of receiving messages from you. Amazon Pinpoint won't attempt to send the message again.</p></li> 
-    /// <li><p>PERMANENT_FAILURE - An error occurred when delivering the message to the endpoint. Amazon Pinpoint won't attempt to send the message again.</p></li> 
-    /// <li><p>SUCCESSFUL - The message was successfully delivered to the endpoint.</p></li> 
-    /// <li><p>TEMPORARY_FAILURE - A temporary error occurred. Amazon Pinpoint won't attempt to send the message again.</p></li> 
-    /// <li><p>THROTTLED - Amazon Pinpoint throttled the operation to send the message to the endpoint.</p></li> 
-    /// <li><p>TIMEOUT - The message couldn't be sent within the timeout period.</p></li> 
+    /// <p>The delivery status of the message. Possible values are:</p>
+    /// <ul>
+    /// <li><p>DUPLICATE - The endpoint address is a duplicate of another endpoint address. Amazon Pinpoint won't attempt to send the message again.</p></li>
+    /// <li><p>OPT_OUT - The user who's associated with the endpoint has opted out of receiving messages from you. Amazon Pinpoint won't attempt to send the message again.</p></li>
+    /// <li><p>PERMANENT_FAILURE - An error occurred when delivering the message to the endpoint. Amazon Pinpoint won't attempt to send the message again.</p></li>
+    /// <li><p>SUCCESSFUL - The message was successfully delivered to the endpoint.</p></li>
+    /// <li><p>TEMPORARY_FAILURE - A temporary error occurred. Amazon Pinpoint won't attempt to send the message again.</p></li>
+    /// <li><p>THROTTLED - Amazon Pinpoint throttled the operation to send the message to the endpoint.</p></li>
+    /// <li><p>TIMEOUT - The message couldn't be sent within the timeout period.</p></li>
     /// <li><p>UNKNOWN_FAILURE - An unknown error occurred.</p></li>
     /// </ul>
-    pub fn set_delivery_status(mut self, input: std::option::Option<crate::types::DeliveryStatus>) -> Self {
-        self.delivery_status = input; self
+    pub fn set_delivery_status(
+        mut self,
+        input: std::option::Option<crate::types::DeliveryStatus>,
+    ) -> Self {
+        self.delivery_status = input;
+        self
     }
     /// <p>The unique identifier for the message that was sent.</p>
     pub fn message_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -133,7 +138,8 @@ impl EndpointMessageResultBuilder {
     }
     /// <p>The unique identifier for the message that was sent.</p>
     pub fn set_message_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.message_id = input; self
+        self.message_id = input;
+        self
     }
     /// <p>The downstream service status code for delivering the message.</p>
     pub fn status_code(mut self, input: i32) -> Self {
@@ -142,7 +148,8 @@ impl EndpointMessageResultBuilder {
     }
     /// <p>The downstream service status code for delivering the message.</p>
     pub fn set_status_code(mut self, input: std::option::Option<i32>) -> Self {
-        self.status_code = input; self
+        self.status_code = input;
+        self
     }
     /// <p>The status message for delivering the message.</p>
     pub fn status_message(mut self, input: impl Into<std::string::String>) -> Self {
@@ -151,7 +158,8 @@ impl EndpointMessageResultBuilder {
     }
     /// <p>The status message for delivering the message.</p>
     pub fn set_status_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.status_message = input; self
+        self.status_message = input;
+        self
     }
     /// <p>For push notifications that are sent through the GCM channel, specifies whether the endpoint's device registration token was updated as part of delivering the message.</p>
     pub fn updated_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -160,25 +168,18 @@ impl EndpointMessageResultBuilder {
     }
     /// <p>For push notifications that are sent through the GCM channel, specifies whether the endpoint's device registration token was updated as part of delivering the message.</p>
     pub fn set_updated_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.updated_token = input; self
+        self.updated_token = input;
+        self
     }
     /// Consumes the builder and constructs a [`EndpointMessageResult`](crate::types::EndpointMessageResult).
     pub fn build(self) -> crate::types::EndpointMessageResult {
         crate::types::EndpointMessageResult {
-            address: self.address
-            ,
-            delivery_status: self.delivery_status
-            ,
-            message_id: self.message_id
-            ,
-            status_code: self.status_code
-                .unwrap_or_default()
-            ,
-            status_message: self.status_message
-            ,
-            updated_token: self.updated_token
-            ,
+            address: self.address,
+            delivery_status: self.delivery_status,
+            message_id: self.message_id,
+            status_code: self.status_code.unwrap_or_default(),
+            status_message: self.status_message,
+            updated_token: self.updated_token,
         }
     }
 }
-

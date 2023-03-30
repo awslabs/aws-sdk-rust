@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PutDraftAppVersionTemplateInput  {
+pub struct PutDraftAppVersionTemplateInput {
     /// <p>The Amazon Resource Name (ARN) of the application. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
     #[doc(hidden)]
     pub app_arn: std::option::Option<std::string::String>,
@@ -12,17 +12,17 @@ pub struct PutDraftAppVersionTemplateInput  {
 }
 impl PutDraftAppVersionTemplateInput {
     /// <p>The Amazon Resource Name (ARN) of the application. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
-    pub fn app_arn(&self) -> std::option::Option<& str> {
+    pub fn app_arn(&self) -> std::option::Option<&str> {
         self.app_arn.as_deref()
     }
     /// <p>A JSON string that contains the body of the app template.</p>
-    pub fn app_template_body(&self) -> std::option::Option<& str> {
+    pub fn app_template_body(&self) -> std::option::Option<&str> {
         self.app_template_body.as_deref()
     }
 }
 impl PutDraftAppVersionTemplateInput {
     /// Creates a new builder-style object to manufacture [`PutDraftAppVersionTemplateInput`](crate::operation::put_draft_app_version_template::PutDraftAppVersionTemplateInput).
-    pub fn builder() -> crate::operation::put_draft_app_version_template::builders::PutDraftAppVersionTemplateInputBuilder {
+    pub fn builder() -> crate::operation::put_draft_app_version_template::builders::PutDraftAppVersionTemplateInputBuilder{
         crate::operation::put_draft_app_version_template::builders::PutDraftAppVersionTemplateInputBuilder::default()
     }
 }
@@ -42,7 +42,8 @@ impl PutDraftAppVersionTemplateInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the application. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
     pub fn set_app_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.app_arn = input; self
+        self.app_arn = input;
+        self
     }
     /// <p>A JSON string that contains the body of the app template.</p>
     pub fn app_template_body(mut self, input: impl Into<std::string::String>) -> Self {
@@ -50,19 +51,25 @@ impl PutDraftAppVersionTemplateInputBuilder {
         self
     }
     /// <p>A JSON string that contains the body of the app template.</p>
-    pub fn set_app_template_body(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.app_template_body = input; self
+    pub fn set_app_template_body(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.app_template_body = input;
+        self
     }
     /// Consumes the builder and constructs a [`PutDraftAppVersionTemplateInput`](crate::operation::put_draft_app_version_template::PutDraftAppVersionTemplateInput).
-    pub fn build(self) -> Result<crate::operation::put_draft_app_version_template::PutDraftAppVersionTemplateInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::put_draft_app_version_template::PutDraftAppVersionTemplateInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::put_draft_app_version_template::PutDraftAppVersionTemplateInput {
-                app_arn: self.app_arn
-                ,
-                app_template_body: self.app_template_body
-                ,
-            }
+                app_arn: self.app_arn,
+                app_template_body: self.app_template_body,
+            },
         )
     }
 }
-

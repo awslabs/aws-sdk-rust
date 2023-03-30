@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct StartDataQualityRuleRecommendationRunInput  {
+pub struct StartDataQualityRuleRecommendationRunInput {
     /// <p>The data source (Glue table) associated with this run.</p>
     #[doc(hidden)]
     pub data_source: std::option::Option<crate::types::DataSource>,
@@ -24,11 +24,11 @@ pub struct StartDataQualityRuleRecommendationRunInput  {
 }
 impl StartDataQualityRuleRecommendationRunInput {
     /// <p>The data source (Glue table) associated with this run.</p>
-    pub fn data_source(&self) -> std::option::Option<& crate::types::DataSource> {
+    pub fn data_source(&self) -> std::option::Option<&crate::types::DataSource> {
         self.data_source.as_ref()
     }
     /// <p>An IAM role supplied to encrypt the results of the run.</p>
-    pub fn role(&self) -> std::option::Option<& str> {
+    pub fn role(&self) -> std::option::Option<&str> {
         self.role.as_deref()
     }
     /// <p>The number of <code>G.1X</code> workers to be used in the run. The default is 5.</p>
@@ -40,17 +40,17 @@ impl StartDataQualityRuleRecommendationRunInput {
         self.timeout
     }
     /// <p>A name for the ruleset.</p>
-    pub fn created_ruleset_name(&self) -> std::option::Option<& str> {
+    pub fn created_ruleset_name(&self) -> std::option::Option<&str> {
         self.created_ruleset_name.as_deref()
     }
     /// <p>Used for idempotency and is recommended to be set to a random ID (such as a UUID) to avoid creating or starting multiple instances of the same resource.</p>
-    pub fn client_token(&self) -> std::option::Option<& str> {
+    pub fn client_token(&self) -> std::option::Option<&str> {
         self.client_token.as_deref()
     }
 }
 impl StartDataQualityRuleRecommendationRunInput {
     /// Creates a new builder-style object to manufacture [`StartDataQualityRuleRecommendationRunInput`](crate::operation::start_data_quality_rule_recommendation_run::StartDataQualityRuleRecommendationRunInput).
-    pub fn builder() -> crate::operation::start_data_quality_rule_recommendation_run::builders::StartDataQualityRuleRecommendationRunInputBuilder {
+    pub fn builder() -> crate::operation::start_data_quality_rule_recommendation_run::builders::StartDataQualityRuleRecommendationRunInputBuilder{
         crate::operation::start_data_quality_rule_recommendation_run::builders::StartDataQualityRuleRecommendationRunInputBuilder::default()
     }
 }
@@ -74,7 +74,8 @@ impl StartDataQualityRuleRecommendationRunInputBuilder {
     }
     /// <p>The data source (Glue table) associated with this run.</p>
     pub fn set_data_source(mut self, input: std::option::Option<crate::types::DataSource>) -> Self {
-        self.data_source = input; self
+        self.data_source = input;
+        self
     }
     /// <p>An IAM role supplied to encrypt the results of the run.</p>
     pub fn role(mut self, input: impl Into<std::string::String>) -> Self {
@@ -83,7 +84,8 @@ impl StartDataQualityRuleRecommendationRunInputBuilder {
     }
     /// <p>An IAM role supplied to encrypt the results of the run.</p>
     pub fn set_role(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.role = input; self
+        self.role = input;
+        self
     }
     /// <p>The number of <code>G.1X</code> workers to be used in the run. The default is 5.</p>
     pub fn number_of_workers(mut self, input: i32) -> Self {
@@ -92,7 +94,8 @@ impl StartDataQualityRuleRecommendationRunInputBuilder {
     }
     /// <p>The number of <code>G.1X</code> workers to be used in the run. The default is 5.</p>
     pub fn set_number_of_workers(mut self, input: std::option::Option<i32>) -> Self {
-        self.number_of_workers = input; self
+        self.number_of_workers = input;
+        self
     }
     /// <p>The timeout for a run in minutes. This is the maximum time that a run can consume resources before it is terminated and enters <code>TIMEOUT</code> status. The default is 2,880 minutes (48 hours).</p>
     pub fn timeout(mut self, input: i32) -> Self {
@@ -101,7 +104,8 @@ impl StartDataQualityRuleRecommendationRunInputBuilder {
     }
     /// <p>The timeout for a run in minutes. This is the maximum time that a run can consume resources before it is terminated and enters <code>TIMEOUT</code> status. The default is 2,880 minutes (48 hours).</p>
     pub fn set_timeout(mut self, input: std::option::Option<i32>) -> Self {
-        self.timeout = input; self
+        self.timeout = input;
+        self
     }
     /// <p>A name for the ruleset.</p>
     pub fn created_ruleset_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -109,8 +113,12 @@ impl StartDataQualityRuleRecommendationRunInputBuilder {
         self
     }
     /// <p>A name for the ruleset.</p>
-    pub fn set_created_ruleset_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.created_ruleset_name = input; self
+    pub fn set_created_ruleset_name(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.created_ruleset_name = input;
+        self
     }
     /// <p>Used for idempotency and is recommended to be set to a random ID (such as a UUID) to avoid creating or starting multiple instances of the same resource.</p>
     pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -119,10 +127,11 @@ impl StartDataQualityRuleRecommendationRunInputBuilder {
     }
     /// <p>Used for idempotency and is recommended to be set to a random ID (such as a UUID) to avoid creating or starting multiple instances of the same resource.</p>
     pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.client_token = input; self
+        self.client_token = input;
+        self
     }
     /// Consumes the builder and constructs a [`StartDataQualityRuleRecommendationRunInput`](crate::operation::start_data_quality_rule_recommendation_run::StartDataQualityRuleRecommendationRunInput).
-    pub fn build(self) -> Result<crate::operation::start_data_quality_rule_recommendation_run::StartDataQualityRuleRecommendationRunInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> Result<crate::operation::start_data_quality_rule_recommendation_run::StartDataQualityRuleRecommendationRunInput, aws_smithy_http::operation::error::BuildError>{
         Ok(
             crate::operation::start_data_quality_rule_recommendation_run::StartDataQualityRuleRecommendationRunInput {
                 data_source: self.data_source
@@ -141,4 +150,3 @@ impl StartDataQualityRuleRecommendationRunInputBuilder {
         )
     }
 }
-

@@ -3,7 +3,7 @@
 /// <p>A complex type that contains the requested limit. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetReusableDelegationSetLimitOutput  {
+pub struct GetReusableDelegationSetLimitOutput {
     /// <p>The current setting for the limit on hosted zones that you can associate with the specified reusable delegation set.</p>
     #[doc(hidden)]
     pub limit: std::option::Option<crate::types::ReusableDelegationSetLimit>,
@@ -14,7 +14,7 @@ pub struct GetReusableDelegationSetLimitOutput  {
 }
 impl GetReusableDelegationSetLimitOutput {
     /// <p>The current setting for the limit on hosted zones that you can associate with the specified reusable delegation set.</p>
-    pub fn limit(&self) -> std::option::Option<& crate::types::ReusableDelegationSetLimit> {
+    pub fn limit(&self) -> std::option::Option<&crate::types::ReusableDelegationSetLimit> {
         self.limit.as_ref()
     }
     /// <p>The current number of hosted zones that you can associate with the specified reusable delegation set.</p>
@@ -23,13 +23,13 @@ impl GetReusableDelegationSetLimitOutput {
     }
 }
 impl aws_http::request_id::RequestId for GetReusableDelegationSetLimitOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl GetReusableDelegationSetLimitOutput {
     /// Creates a new builder-style object to manufacture [`GetReusableDelegationSetLimitOutput`](crate::operation::get_reusable_delegation_set_limit::GetReusableDelegationSetLimitOutput).
-    pub fn builder() -> crate::operation::get_reusable_delegation_set_limit::builders::GetReusableDelegationSetLimitOutputBuilder {
+    pub fn builder() -> crate::operation::get_reusable_delegation_set_limit::builders::GetReusableDelegationSetLimitOutputBuilder{
         crate::operation::get_reusable_delegation_set_limit::builders::GetReusableDelegationSetLimitOutputBuilder::default()
     }
 }
@@ -49,8 +49,12 @@ impl GetReusableDelegationSetLimitOutputBuilder {
         self
     }
     /// <p>The current setting for the limit on hosted zones that you can associate with the specified reusable delegation set.</p>
-    pub fn set_limit(mut self, input: std::option::Option<crate::types::ReusableDelegationSetLimit>) -> Self {
-        self.limit = input; self
+    pub fn set_limit(
+        mut self,
+        input: std::option::Option<crate::types::ReusableDelegationSetLimit>,
+    ) -> Self {
+        self.limit = input;
+        self
     }
     /// <p>The current number of hosted zones that you can associate with the specified reusable delegation set.</p>
     pub fn count(mut self, input: i64) -> Self {
@@ -59,27 +63,27 @@ impl GetReusableDelegationSetLimitOutputBuilder {
     }
     /// <p>The current number of hosted zones that you can associate with the specified reusable delegation set.</p>
     pub fn set_count(mut self, input: std::option::Option<i64>) -> Self {
-        self.count = input; self
+        self.count = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`GetReusableDelegationSetLimitOutput`](crate::operation::get_reusable_delegation_set_limit::GetReusableDelegationSetLimitOutput).
-    pub fn build(self) -> crate::operation::get_reusable_delegation_set_limit::GetReusableDelegationSetLimitOutput {
+    pub fn build(
+        self,
+    ) -> crate::operation::get_reusable_delegation_set_limit::GetReusableDelegationSetLimitOutput
+    {
         crate::operation::get_reusable_delegation_set_limit::GetReusableDelegationSetLimitOutput {
-            limit: self.limit
-            ,
-            count: self.count
-                .unwrap_or_default()
-            ,
+            limit: self.limit,
+            count: self.count.unwrap_or_default(),
             _request_id: self._request_id,
         }
     }
 }
-

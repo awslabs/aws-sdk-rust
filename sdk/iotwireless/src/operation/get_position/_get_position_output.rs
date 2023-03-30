@@ -3,7 +3,7 @@
 #[deprecated(note = "This operation is no longer supported.")]
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetPositionOutput  {
+pub struct GetPositionOutput {
     /// <p>The position information of the resource.</p>
     #[doc(hidden)]
     pub position: std::option::Option<std::vec::Vec<f32>>,
@@ -26,35 +26,35 @@ pub struct GetPositionOutput  {
 }
 impl GetPositionOutput {
     /// <p>The position information of the resource.</p>
-    pub fn position(&self) -> std::option::Option<& [f32]> {
+    pub fn position(&self) -> std::option::Option<&[f32]> {
         self.position.as_deref()
     }
     /// <p>The accuracy of the estimated position in meters. An empty value indicates that no position data is available. A value of ‘0.0’ value indicates that position data is available. This data corresponds to the position information that you specified instead of the position computed by solver.</p>
-    pub fn accuracy(&self) -> std::option::Option<& crate::types::Accuracy> {
+    pub fn accuracy(&self) -> std::option::Option<&crate::types::Accuracy> {
         self.accuracy.as_ref()
     }
     /// <p>The type of solver used to identify the position of the resource.</p>
-    pub fn solver_type(&self) -> std::option::Option<& crate::types::PositionSolverType> {
+    pub fn solver_type(&self) -> std::option::Option<&crate::types::PositionSolverType> {
         self.solver_type.as_ref()
     }
     /// <p>The vendor of the positioning solver.</p>
-    pub fn solver_provider(&self) -> std::option::Option<& crate::types::PositionSolverProvider> {
+    pub fn solver_provider(&self) -> std::option::Option<&crate::types::PositionSolverProvider> {
         self.solver_provider.as_ref()
     }
     /// <p>The version of the positioning solver.</p>
-    pub fn solver_version(&self) -> std::option::Option<& str> {
+    pub fn solver_version(&self) -> std::option::Option<&str> {
         self.solver_version.as_deref()
     }
     /// <p>The timestamp at which the device's position was determined.</p>
-    pub fn timestamp(&self) -> std::option::Option<& str> {
+    pub fn timestamp(&self) -> std::option::Option<&str> {
         self.timestamp.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for GetPositionOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl GetPositionOutput {
     /// Creates a new builder-style object to manufacture [`GetPositionOutput`](crate::operation::get_position::GetPositionOutput).
     pub fn builder() -> crate::operation::get_position::builders::GetPositionOutputBuilder {
@@ -82,13 +82,14 @@ impl GetPositionOutputBuilder {
     /// <p>The position information of the resource.</p>
     pub fn position(mut self, input: f32) -> Self {
         let mut v = self.position.unwrap_or_default();
-                        v.push(input);
-                        self.position = Some(v);
-                        self
+        v.push(input);
+        self.position = Some(v);
+        self
     }
     /// <p>The position information of the resource.</p>
     pub fn set_position(mut self, input: std::option::Option<std::vec::Vec<f32>>) -> Self {
-        self.position = input; self
+        self.position = input;
+        self
     }
     /// <p>The accuracy of the estimated position in meters. An empty value indicates that no position data is available. A value of ‘0.0’ value indicates that position data is available. This data corresponds to the position information that you specified instead of the position computed by solver.</p>
     pub fn accuracy(mut self, input: crate::types::Accuracy) -> Self {
@@ -97,7 +98,8 @@ impl GetPositionOutputBuilder {
     }
     /// <p>The accuracy of the estimated position in meters. An empty value indicates that no position data is available. A value of ‘0.0’ value indicates that position data is available. This data corresponds to the position information that you specified instead of the position computed by solver.</p>
     pub fn set_accuracy(mut self, input: std::option::Option<crate::types::Accuracy>) -> Self {
-        self.accuracy = input; self
+        self.accuracy = input;
+        self
     }
     /// <p>The type of solver used to identify the position of the resource.</p>
     pub fn solver_type(mut self, input: crate::types::PositionSolverType) -> Self {
@@ -105,8 +107,12 @@ impl GetPositionOutputBuilder {
         self
     }
     /// <p>The type of solver used to identify the position of the resource.</p>
-    pub fn set_solver_type(mut self, input: std::option::Option<crate::types::PositionSolverType>) -> Self {
-        self.solver_type = input; self
+    pub fn set_solver_type(
+        mut self,
+        input: std::option::Option<crate::types::PositionSolverType>,
+    ) -> Self {
+        self.solver_type = input;
+        self
     }
     /// <p>The vendor of the positioning solver.</p>
     pub fn solver_provider(mut self, input: crate::types::PositionSolverProvider) -> Self {
@@ -114,8 +120,12 @@ impl GetPositionOutputBuilder {
         self
     }
     /// <p>The vendor of the positioning solver.</p>
-    pub fn set_solver_provider(mut self, input: std::option::Option<crate::types::PositionSolverProvider>) -> Self {
-        self.solver_provider = input; self
+    pub fn set_solver_provider(
+        mut self,
+        input: std::option::Option<crate::types::PositionSolverProvider>,
+    ) -> Self {
+        self.solver_provider = input;
+        self
     }
     /// <p>The version of the positioning solver.</p>
     pub fn solver_version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -124,7 +134,8 @@ impl GetPositionOutputBuilder {
     }
     /// <p>The version of the positioning solver.</p>
     pub fn set_solver_version(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.solver_version = input; self
+        self.solver_version = input;
+        self
     }
     /// <p>The timestamp at which the device's position was determined.</p>
     pub fn timestamp(mut self, input: impl Into<std::string::String>) -> Self {
@@ -133,34 +144,28 @@ impl GetPositionOutputBuilder {
     }
     /// <p>The timestamp at which the device's position was determined.</p>
     pub fn set_timestamp(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.timestamp = input; self
+        self.timestamp = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`GetPositionOutput`](crate::operation::get_position::GetPositionOutput).
     pub fn build(self) -> crate::operation::get_position::GetPositionOutput {
         crate::operation::get_position::GetPositionOutput {
-            position: self.position
-            ,
-            accuracy: self.accuracy
-            ,
-            solver_type: self.solver_type
-            ,
-            solver_provider: self.solver_provider
-            ,
-            solver_version: self.solver_version
-            ,
-            timestamp: self.timestamp
-            ,
+            position: self.position,
+            accuracy: self.accuracy,
+            solver_type: self.solver_type,
+            solver_provider: self.solver_provider,
+            solver_version: self.solver_version,
+            timestamp: self.timestamp,
             _request_id: self._request_id,
         }
     }
 }
-

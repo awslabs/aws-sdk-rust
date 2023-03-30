@@ -2,9 +2,9 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetSystemTemplateRevisionsInput  {
-    /// <p>The ID of the system template.</p> 
-    /// <p>The ID should be in the following format.</p> 
+pub struct GetSystemTemplateRevisionsInput {
+    /// <p>The ID of the system template.</p>
+    /// <p>The ID should be in the following format.</p>
     /// <p> <code>urn:tdm:REGION/ACCOUNT ID/default:system:SYSTEMNAME</code> </p>
     #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
@@ -16,14 +16,14 @@ pub struct GetSystemTemplateRevisionsInput  {
     pub max_results: std::option::Option<i32>,
 }
 impl GetSystemTemplateRevisionsInput {
-    /// <p>The ID of the system template.</p> 
-    /// <p>The ID should be in the following format.</p> 
+    /// <p>The ID of the system template.</p>
+    /// <p>The ID should be in the following format.</p>
     /// <p> <code>urn:tdm:REGION/ACCOUNT ID/default:system:SYSTEMNAME</code> </p>
-    pub fn id(&self) -> std::option::Option<& str> {
+    pub fn id(&self) -> std::option::Option<&str> {
         self.id.as_deref()
     }
     /// <p>The string that specifies the next page of results. Use this when you're paginating results.</p>
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
     /// <p>The maximum number of results to return in the response.</p>
@@ -33,7 +33,7 @@ impl GetSystemTemplateRevisionsInput {
 }
 impl GetSystemTemplateRevisionsInput {
     /// Creates a new builder-style object to manufacture [`GetSystemTemplateRevisionsInput`](crate::operation::get_system_template_revisions::GetSystemTemplateRevisionsInput).
-    pub fn builder() -> crate::operation::get_system_template_revisions::builders::GetSystemTemplateRevisionsInputBuilder {
+    pub fn builder() -> crate::operation::get_system_template_revisions::builders::GetSystemTemplateRevisionsInputBuilder{
         crate::operation::get_system_template_revisions::builders::GetSystemTemplateRevisionsInputBuilder::default()
     }
 }
@@ -47,18 +47,19 @@ pub struct GetSystemTemplateRevisionsInputBuilder {
     pub(crate) max_results: std::option::Option<i32>,
 }
 impl GetSystemTemplateRevisionsInputBuilder {
-    /// <p>The ID of the system template.</p> 
-    /// <p>The ID should be in the following format.</p> 
+    /// <p>The ID of the system template.</p>
+    /// <p>The ID should be in the following format.</p>
     /// <p> <code>urn:tdm:REGION/ACCOUNT ID/default:system:SYSTEMNAME</code> </p>
     pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
         self.id = Some(input.into());
         self
     }
-    /// <p>The ID of the system template.</p> 
-    /// <p>The ID should be in the following format.</p> 
+    /// <p>The ID of the system template.</p>
+    /// <p>The ID should be in the following format.</p>
     /// <p> <code>urn:tdm:REGION/ACCOUNT ID/default:system:SYSTEMNAME</code> </p>
     pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.id = input; self
+        self.id = input;
+        self
     }
     /// <p>The string that specifies the next page of results. Use this when you're paginating results.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -67,7 +68,8 @@ impl GetSystemTemplateRevisionsInputBuilder {
     }
     /// <p>The string that specifies the next page of results. Use this when you're paginating results.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input; self
+        self.next_token = input;
+        self
     }
     /// <p>The maximum number of results to return in the response.</p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -76,20 +78,22 @@ impl GetSystemTemplateRevisionsInputBuilder {
     }
     /// <p>The maximum number of results to return in the response.</p>
     pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_results = input; self
+        self.max_results = input;
+        self
     }
     /// Consumes the builder and constructs a [`GetSystemTemplateRevisionsInput`](crate::operation::get_system_template_revisions::GetSystemTemplateRevisionsInput).
-    pub fn build(self) -> Result<crate::operation::get_system_template_revisions::GetSystemTemplateRevisionsInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::get_system_template_revisions::GetSystemTemplateRevisionsInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::get_system_template_revisions::GetSystemTemplateRevisionsInput {
-                id: self.id
-                ,
-                next_token: self.next_token
-                ,
-                max_results: self.max_results
-                ,
-            }
+                id: self.id,
+                next_token: self.next_token,
+                max_results: self.max_results,
+            },
         )
     }
 }
-

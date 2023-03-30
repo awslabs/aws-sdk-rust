@@ -3,16 +3,16 @@
 /// <p></p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PurchaseReservedDbInstancesOfferingInput  {
-    /// <p>The ID of the Reserved DB instance offering to purchase.</p> 
+pub struct PurchaseReservedDbInstancesOfferingInput {
+    /// <p>The ID of the Reserved DB instance offering to purchase.</p>
     /// <p>Example: 438012d3-4052-4cc7-b2e3-8d3372e0e706</p>
     #[doc(hidden)]
     pub reserved_db_instances_offering_id: std::option::Option<std::string::String>,
-    /// <p>Customer-specified identifier to track this reservation.</p> 
+    /// <p>Customer-specified identifier to track this reservation.</p>
     /// <p>Example: myreservationID</p>
     #[doc(hidden)]
     pub reserved_db_instance_id: std::option::Option<std::string::String>,
-    /// <p>The number of instances to reserve.</p> 
+    /// <p>The number of instances to reserve.</p>
     /// <p>Default: <code>1</code> </p>
     #[doc(hidden)]
     pub db_instance_count: std::option::Option<i32>,
@@ -21,29 +21,29 @@ pub struct PurchaseReservedDbInstancesOfferingInput  {
     pub tags: std::option::Option<std::vec::Vec<crate::types::Tag>>,
 }
 impl PurchaseReservedDbInstancesOfferingInput {
-    /// <p>The ID of the Reserved DB instance offering to purchase.</p> 
+    /// <p>The ID of the Reserved DB instance offering to purchase.</p>
     /// <p>Example: 438012d3-4052-4cc7-b2e3-8d3372e0e706</p>
-    pub fn reserved_db_instances_offering_id(&self) -> std::option::Option<& str> {
+    pub fn reserved_db_instances_offering_id(&self) -> std::option::Option<&str> {
         self.reserved_db_instances_offering_id.as_deref()
     }
-    /// <p>Customer-specified identifier to track this reservation.</p> 
+    /// <p>Customer-specified identifier to track this reservation.</p>
     /// <p>Example: myreservationID</p>
-    pub fn reserved_db_instance_id(&self) -> std::option::Option<& str> {
+    pub fn reserved_db_instance_id(&self) -> std::option::Option<&str> {
         self.reserved_db_instance_id.as_deref()
     }
-    /// <p>The number of instances to reserve.</p> 
+    /// <p>The number of instances to reserve.</p>
     /// <p>Default: <code>1</code> </p>
     pub fn db_instance_count(&self) -> std::option::Option<i32> {
         self.db_instance_count
     }
     /// <p>A list of tags. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html">Tagging Amazon RDS Resources</a> in the <i>Amazon RDS User Guide.</i> </p>
-    pub fn tags(&self) -> std::option::Option<& [crate::types::Tag]> {
+    pub fn tags(&self) -> std::option::Option<&[crate::types::Tag]> {
         self.tags.as_deref()
     }
 }
 impl PurchaseReservedDbInstancesOfferingInput {
     /// Creates a new builder-style object to manufacture [`PurchaseReservedDbInstancesOfferingInput`](crate::operation::purchase_reserved_db_instances_offering::PurchaseReservedDbInstancesOfferingInput).
-    pub fn builder() -> crate::operation::purchase_reserved_db_instances_offering::builders::PurchaseReservedDbInstancesOfferingInputBuilder {
+    pub fn builder() -> crate::operation::purchase_reserved_db_instances_offering::builders::PurchaseReservedDbInstancesOfferingInputBuilder{
         crate::operation::purchase_reserved_db_instances_offering::builders::PurchaseReservedDbInstancesOfferingInputBuilder::default()
     }
 }
@@ -58,38 +58,50 @@ pub struct PurchaseReservedDbInstancesOfferingInputBuilder {
     pub(crate) tags: std::option::Option<std::vec::Vec<crate::types::Tag>>,
 }
 impl PurchaseReservedDbInstancesOfferingInputBuilder {
-    /// <p>The ID of the Reserved DB instance offering to purchase.</p> 
+    /// <p>The ID of the Reserved DB instance offering to purchase.</p>
     /// <p>Example: 438012d3-4052-4cc7-b2e3-8d3372e0e706</p>
-    pub fn reserved_db_instances_offering_id(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn reserved_db_instances_offering_id(
+        mut self,
+        input: impl Into<std::string::String>,
+    ) -> Self {
         self.reserved_db_instances_offering_id = Some(input.into());
         self
     }
-    /// <p>The ID of the Reserved DB instance offering to purchase.</p> 
+    /// <p>The ID of the Reserved DB instance offering to purchase.</p>
     /// <p>Example: 438012d3-4052-4cc7-b2e3-8d3372e0e706</p>
-    pub fn set_reserved_db_instances_offering_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.reserved_db_instances_offering_id = input; self
+    pub fn set_reserved_db_instances_offering_id(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.reserved_db_instances_offering_id = input;
+        self
     }
-    /// <p>Customer-specified identifier to track this reservation.</p> 
+    /// <p>Customer-specified identifier to track this reservation.</p>
     /// <p>Example: myreservationID</p>
     pub fn reserved_db_instance_id(mut self, input: impl Into<std::string::String>) -> Self {
         self.reserved_db_instance_id = Some(input.into());
         self
     }
-    /// <p>Customer-specified identifier to track this reservation.</p> 
+    /// <p>Customer-specified identifier to track this reservation.</p>
     /// <p>Example: myreservationID</p>
-    pub fn set_reserved_db_instance_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.reserved_db_instance_id = input; self
+    pub fn set_reserved_db_instance_id(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.reserved_db_instance_id = input;
+        self
     }
-    /// <p>The number of instances to reserve.</p> 
+    /// <p>The number of instances to reserve.</p>
     /// <p>Default: <code>1</code> </p>
     pub fn db_instance_count(mut self, input: i32) -> Self {
         self.db_instance_count = Some(input);
         self
     }
-    /// <p>The number of instances to reserve.</p> 
+    /// <p>The number of instances to reserve.</p>
     /// <p>Default: <code>1</code> </p>
     pub fn set_db_instance_count(mut self, input: std::option::Option<i32>) -> Self {
-        self.db_instance_count = input; self
+        self.db_instance_count = input;
+        self
     }
     /// Appends an item to `tags`.
     ///
@@ -98,16 +110,20 @@ impl PurchaseReservedDbInstancesOfferingInputBuilder {
     /// <p>A list of tags. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html">Tagging Amazon RDS Resources</a> in the <i>Amazon RDS User Guide.</i> </p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
-                        v.push(input);
-                        self.tags = Some(v);
-                        self
+        v.push(input);
+        self.tags = Some(v);
+        self
     }
     /// <p>A list of tags. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html">Tagging Amazon RDS Resources</a> in the <i>Amazon RDS User Guide.</i> </p>
-    pub fn set_tags(mut self, input: std::option::Option<std::vec::Vec<crate::types::Tag>>) -> Self {
-        self.tags = input; self
+    pub fn set_tags(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::Tag>>,
+    ) -> Self {
+        self.tags = input;
+        self
     }
     /// Consumes the builder and constructs a [`PurchaseReservedDbInstancesOfferingInput`](crate::operation::purchase_reserved_db_instances_offering::PurchaseReservedDbInstancesOfferingInput).
-    pub fn build(self) -> Result<crate::operation::purchase_reserved_db_instances_offering::PurchaseReservedDbInstancesOfferingInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> Result<crate::operation::purchase_reserved_db_instances_offering::PurchaseReservedDbInstancesOfferingInput, aws_smithy_http::operation::error::BuildError>{
         Ok(
             crate::operation::purchase_reserved_db_instances_offering::PurchaseReservedDbInstancesOfferingInput {
                 reserved_db_instances_offering_id: self.reserved_db_instances_offering_id
@@ -122,4 +138,3 @@ impl PurchaseReservedDbInstancesOfferingInputBuilder {
         )
     }
 }
-

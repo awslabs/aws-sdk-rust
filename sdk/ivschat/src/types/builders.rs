@@ -12,4 +12,3 @@ pub use crate::types::_s3_destination_configuration::S3DestinationConfigurationB
 pub use crate::types::_room_summary::RoomSummaryBuilder;
 
 pub use crate::types::_logging_configuration_summary::LoggingConfigurationSummaryBuilder;
-

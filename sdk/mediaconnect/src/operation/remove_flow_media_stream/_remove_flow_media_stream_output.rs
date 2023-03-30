@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct RemoveFlowMediaStreamOutput  {
+pub struct RemoveFlowMediaStreamOutput {
     /// The Amazon Resource Name (ARN) of the flow.
     #[doc(hidden)]
     pub flow_arn: std::option::Option<std::string::String>,
@@ -13,22 +13,24 @@ pub struct RemoveFlowMediaStreamOutput  {
 }
 impl RemoveFlowMediaStreamOutput {
     /// The Amazon Resource Name (ARN) of the flow.
-    pub fn flow_arn(&self) -> std::option::Option<& str> {
+    pub fn flow_arn(&self) -> std::option::Option<&str> {
         self.flow_arn.as_deref()
     }
     /// The name of the media stream that was removed.
-    pub fn media_stream_name(&self) -> std::option::Option<& str> {
+    pub fn media_stream_name(&self) -> std::option::Option<&str> {
         self.media_stream_name.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for RemoveFlowMediaStreamOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl RemoveFlowMediaStreamOutput {
     /// Creates a new builder-style object to manufacture [`RemoveFlowMediaStreamOutput`](crate::operation::remove_flow_media_stream::RemoveFlowMediaStreamOutput).
-    pub fn builder() -> crate::operation::remove_flow_media_stream::builders::RemoveFlowMediaStreamOutputBuilder {
+    pub fn builder(
+    ) -> crate::operation::remove_flow_media_stream::builders::RemoveFlowMediaStreamOutputBuilder
+    {
         crate::operation::remove_flow_media_stream::builders::RemoveFlowMediaStreamOutputBuilder::default()
     }
 }
@@ -49,7 +51,8 @@ impl RemoveFlowMediaStreamOutputBuilder {
     }
     /// The Amazon Resource Name (ARN) of the flow.
     pub fn set_flow_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.flow_arn = input; self
+        self.flow_arn = input;
+        self
     }
     /// The name of the media stream that was removed.
     pub fn media_stream_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -57,27 +60,28 @@ impl RemoveFlowMediaStreamOutputBuilder {
         self
     }
     /// The name of the media stream that was removed.
-    pub fn set_media_stream_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.media_stream_name = input; self
+    pub fn set_media_stream_name(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.media_stream_name = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`RemoveFlowMediaStreamOutput`](crate::operation::remove_flow_media_stream::RemoveFlowMediaStreamOutput).
     pub fn build(self) -> crate::operation::remove_flow_media_stream::RemoveFlowMediaStreamOutput {
         crate::operation::remove_flow_media_stream::RemoveFlowMediaStreamOutput {
-            flow_arn: self.flow_arn
-            ,
-            media_stream_name: self.media_stream_name
-            ,
+            flow_arn: self.flow_arn,
+            media_stream_name: self.media_stream_name,
             _request_id: self._request_id,
         }
     }
 }
-

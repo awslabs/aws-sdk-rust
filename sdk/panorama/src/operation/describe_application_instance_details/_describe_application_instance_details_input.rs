@@ -2,20 +2,20 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeApplicationInstanceDetailsInput  {
+pub struct DescribeApplicationInstanceDetailsInput {
     /// <p>The application instance's ID.</p>
     #[doc(hidden)]
     pub application_instance_id: std::option::Option<std::string::String>,
 }
 impl DescribeApplicationInstanceDetailsInput {
     /// <p>The application instance's ID.</p>
-    pub fn application_instance_id(&self) -> std::option::Option<& str> {
+    pub fn application_instance_id(&self) -> std::option::Option<&str> {
         self.application_instance_id.as_deref()
     }
 }
 impl DescribeApplicationInstanceDetailsInput {
     /// Creates a new builder-style object to manufacture [`DescribeApplicationInstanceDetailsInput`](crate::operation::describe_application_instance_details::DescribeApplicationInstanceDetailsInput).
-    pub fn builder() -> crate::operation::describe_application_instance_details::builders::DescribeApplicationInstanceDetailsInputBuilder {
+    pub fn builder() -> crate::operation::describe_application_instance_details::builders::DescribeApplicationInstanceDetailsInputBuilder{
         crate::operation::describe_application_instance_details::builders::DescribeApplicationInstanceDetailsInputBuilder::default()
     }
 }
@@ -33,11 +33,15 @@ impl DescribeApplicationInstanceDetailsInputBuilder {
         self
     }
     /// <p>The application instance's ID.</p>
-    pub fn set_application_instance_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.application_instance_id = input; self
+    pub fn set_application_instance_id(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.application_instance_id = input;
+        self
     }
     /// Consumes the builder and constructs a [`DescribeApplicationInstanceDetailsInput`](crate::operation::describe_application_instance_details::DescribeApplicationInstanceDetailsInput).
-    pub fn build(self) -> Result<crate::operation::describe_application_instance_details::DescribeApplicationInstanceDetailsInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> Result<crate::operation::describe_application_instance_details::DescribeApplicationInstanceDetailsInput, aws_smithy_http::operation::error::BuildError>{
         Ok(
             crate::operation::describe_application_instance_details::DescribeApplicationInstanceDetailsInput {
                 application_instance_id: self.application_instance_id
@@ -46,4 +50,3 @@ impl DescribeApplicationInstanceDetailsInputBuilder {
         )
     }
 }
-

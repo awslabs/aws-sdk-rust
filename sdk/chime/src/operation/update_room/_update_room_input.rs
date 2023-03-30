@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct UpdateRoomInput  {
+pub struct UpdateRoomInput {
     /// <p>The Amazon Chime account ID.</p>
     #[doc(hidden)]
     pub account_id: std::option::Option<std::string::String>,
@@ -15,19 +15,19 @@ pub struct UpdateRoomInput  {
 }
 impl UpdateRoomInput {
     /// <p>The Amazon Chime account ID.</p>
-    pub fn account_id(&self) -> std::option::Option<& str> {
+    pub fn account_id(&self) -> std::option::Option<&str> {
         self.account_id.as_deref()
     }
     /// <p>The room ID.</p>
-    pub fn room_id(&self) -> std::option::Option<& str> {
+    pub fn room_id(&self) -> std::option::Option<&str> {
         self.room_id.as_deref()
     }
     /// <p>The room name.</p>
-    pub fn name(&self) -> std::option::Option<& str> {
+    pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
 }
-impl  std::fmt::Debug for UpdateRoomInput  {
+impl std::fmt::Debug for UpdateRoomInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateRoomInput");
         formatter.field("account_id", &self.account_id);
@@ -59,7 +59,8 @@ impl UpdateRoomInputBuilder {
     }
     /// <p>The Amazon Chime account ID.</p>
     pub fn set_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.account_id = input; self
+        self.account_id = input;
+        self
     }
     /// <p>The room ID.</p>
     pub fn room_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -68,7 +69,8 @@ impl UpdateRoomInputBuilder {
     }
     /// <p>The room ID.</p>
     pub fn set_room_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.room_id = input; self
+        self.room_id = input;
+        self
     }
     /// <p>The room name.</p>
     pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -77,20 +79,21 @@ impl UpdateRoomInputBuilder {
     }
     /// <p>The room name.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input; self
+        self.name = input;
+        self
     }
     /// Consumes the builder and constructs a [`UpdateRoomInput`](crate::operation::update_room::UpdateRoomInput).
-    pub fn build(self) -> Result<crate::operation::update_room::UpdateRoomInput, aws_smithy_http::operation::error::BuildError> {
-        Ok(
-            crate::operation::update_room::UpdateRoomInput {
-                account_id: self.account_id
-                ,
-                room_id: self.room_id
-                ,
-                name: self.name
-                ,
-            }
-        )
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::update_room::UpdateRoomInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        Ok(crate::operation::update_room::UpdateRoomInput {
+            account_id: self.account_id,
+            room_id: self.room_id,
+            name: self.name,
+        })
     }
 }
 impl std::fmt::Debug for UpdateRoomInputBuilder {
@@ -102,4 +105,3 @@ impl std::fmt::Debug for UpdateRoomInputBuilder {
         formatter.finish()
     }
 }
-

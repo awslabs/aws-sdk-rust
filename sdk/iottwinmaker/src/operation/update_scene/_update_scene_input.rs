@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateSceneInput  {
+pub struct UpdateSceneInput {
     /// <p>The ID of the workspace that contains the scene.</p>
     #[doc(hidden)]
     pub workspace_id: std::option::Option<std::string::String>,
@@ -21,23 +21,23 @@ pub struct UpdateSceneInput  {
 }
 impl UpdateSceneInput {
     /// <p>The ID of the workspace that contains the scene.</p>
-    pub fn workspace_id(&self) -> std::option::Option<& str> {
+    pub fn workspace_id(&self) -> std::option::Option<&str> {
         self.workspace_id.as_deref()
     }
     /// <p>The ID of the scene.</p>
-    pub fn scene_id(&self) -> std::option::Option<& str> {
+    pub fn scene_id(&self) -> std::option::Option<&str> {
         self.scene_id.as_deref()
     }
     /// <p>The relative path that specifies the location of the content definition file.</p>
-    pub fn content_location(&self) -> std::option::Option<& str> {
+    pub fn content_location(&self) -> std::option::Option<&str> {
         self.content_location.as_deref()
     }
     /// <p>The description of this scene.</p>
-    pub fn description(&self) -> std::option::Option<& str> {
+    pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
     /// <p>A list of capabilities that the scene uses to render.</p>
-    pub fn capabilities(&self) -> std::option::Option<& [std::string::String]> {
+    pub fn capabilities(&self) -> std::option::Option<&[std::string::String]> {
         self.capabilities.as_deref()
     }
 }
@@ -66,7 +66,8 @@ impl UpdateSceneInputBuilder {
     }
     /// <p>The ID of the workspace that contains the scene.</p>
     pub fn set_workspace_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.workspace_id = input; self
+        self.workspace_id = input;
+        self
     }
     /// <p>The ID of the scene.</p>
     pub fn scene_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -75,7 +76,8 @@ impl UpdateSceneInputBuilder {
     }
     /// <p>The ID of the scene.</p>
     pub fn set_scene_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.scene_id = input; self
+        self.scene_id = input;
+        self
     }
     /// <p>The relative path that specifies the location of the content definition file.</p>
     pub fn content_location(mut self, input: impl Into<std::string::String>) -> Self {
@@ -84,7 +86,8 @@ impl UpdateSceneInputBuilder {
     }
     /// <p>The relative path that specifies the location of the content definition file.</p>
     pub fn set_content_location(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.content_location = input; self
+        self.content_location = input;
+        self
     }
     /// <p>The description of this scene.</p>
     pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -93,7 +96,8 @@ impl UpdateSceneInputBuilder {
     }
     /// <p>The description of this scene.</p>
     pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.description = input; self
+        self.description = input;
+        self
     }
     /// Appends an item to `capabilities`.
     ///
@@ -102,30 +106,31 @@ impl UpdateSceneInputBuilder {
     /// <p>A list of capabilities that the scene uses to render.</p>
     pub fn capabilities(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.capabilities.unwrap_or_default();
-                        v.push(input.into());
-                        self.capabilities = Some(v);
-                        self
+        v.push(input.into());
+        self.capabilities = Some(v);
+        self
     }
     /// <p>A list of capabilities that the scene uses to render.</p>
-    pub fn set_capabilities(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-        self.capabilities = input; self
+    pub fn set_capabilities(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
+        self.capabilities = input;
+        self
     }
     /// Consumes the builder and constructs a [`UpdateSceneInput`](crate::operation::update_scene::UpdateSceneInput).
-    pub fn build(self) -> Result<crate::operation::update_scene::UpdateSceneInput, aws_smithy_http::operation::error::BuildError> {
-        Ok(
-            crate::operation::update_scene::UpdateSceneInput {
-                workspace_id: self.workspace_id
-                ,
-                scene_id: self.scene_id
-                ,
-                content_location: self.content_location
-                ,
-                description: self.description
-                ,
-                capabilities: self.capabilities
-                ,
-            }
-        )
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::update_scene::UpdateSceneInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        Ok(crate::operation::update_scene::UpdateSceneInput {
+            workspace_id: self.workspace_id,
+            scene_id: self.scene_id,
+            content_location: self.content_location,
+            description: self.description,
+            capabilities: self.capabilities,
+        })
     }
 }
-

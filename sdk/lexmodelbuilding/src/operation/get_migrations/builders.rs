@@ -4,62 +4,88 @@ pub use crate::operation::get_migrations::_get_migrations_output::GetMigrationsO
 pub use crate::operation::get_migrations::_get_migrations_input::GetMigrationsInputBuilder;
 
 /// Fluent builder constructing a request to `GetMigrations`.
-/// 
+///
 /// <p>Gets a list of migrations between Amazon Lex V1 and Amazon Lex V2.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct GetMigrationsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::get_migrations::builders::GetMigrationsInputBuilder
-            }
-impl GetMigrationsFluentBuilder  {
+    handle: std::sync::Arc<crate::client::Handle>,
+    inner: crate::operation::get_migrations::builders::GetMigrationsInputBuilder,
+}
+impl GetMigrationsFluentBuilder {
     /// Creates a new `GetMigrations`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
-                    /// sent. The operation's inner [http::Request] can be modified as well.
-                    pub async fn customize(self) -> std::result::Result<
-                        crate::client::customize::CustomizableOperation<crate::operation::get_migrations::GetMigrations, aws_http::retry::AwsResponseRetryClassifier,>,
-                        aws_smithy_http::result::SdkError<crate::operation::get_migrations::GetMigrationsError>
-                    >  {
-                        let handle = self.handle.clone();
-                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-                    }
-    
-                    /// Sends the request and returns the response.
-                    ///
-                    /// If an error occurs, an `SdkError` will be returned with additional details that
-                    /// can be matched against.
-                    ///
-                    /// By default, any retryable failures will be retried twice. Retry behavior
-                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                    /// set when configuring the client.
-                    pub async fn send(self) -> std::result::Result<crate::operation::get_migrations::GetMigrationsOutput, aws_smithy_http::result::SdkError<crate::operation::get_migrations::GetMigrationsError>>
-                     {
-                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&self.handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        self.handle.client.call(op).await
-                    }
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle,
+            inner: Default::default(),
+        }
+    }
+
+    /// Consume this builder, creating a customizable operation that can be modified before being
+    /// sent. The operation's inner [http::Request] can be modified as well.
+    pub async fn customize(
+        self,
+    ) -> std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::get_migrations::GetMigrations,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::result::SdkError<crate::operation::get_migrations::GetMigrationsError>,
+    > {
+        let handle = self.handle.clone();
+        let operation = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+    }
+
+    /// Sends the request and returns the response.
+    ///
+    /// If an error occurs, an `SdkError` will be returned with additional details that
+    /// can be matched against.
+    ///
+    /// By default, any retryable failures will be retried twice. Retry behavior
+    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+    /// set when configuring the client.
+    pub async fn send(
+        self,
+    ) -> std::result::Result<
+        crate::operation::get_migrations::GetMigrationsOutput,
+        aws_smithy_http::result::SdkError<crate::operation::get_migrations::GetMigrationsError>,
+    > {
+        let op = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&self.handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        self.handle.client.call(op).await
+    }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::get_migrations::paginator::GetMigrationsPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::get_migrations::paginator::GetMigrationsPaginator {
-                            crate::operation::get_migrations::paginator::GetMigrationsPaginator::new(self.handle, self.inner)
-                        }
+    ///
+    /// Paginators are used by calling [`send().await`](crate::operation::get_migrations::paginator::GetMigrationsPaginator::send) which returns a `Stream`.
+    pub fn into_paginator(
+        self,
+    ) -> crate::operation::get_migrations::paginator::GetMigrationsPaginator {
+        crate::operation::get_migrations::paginator::GetMigrationsPaginator::new(
+            self.handle,
+            self.inner,
+        )
+    }
     /// <p>The field to sort the list of migrations by. You can sort by the Amazon Lex V1 bot name or the date and time that the migration was started.</p>
     pub fn sort_by_attribute(mut self, input: crate::types::MigrationSortAttribute) -> Self {
         self.inner = self.inner.sort_by_attribute(input);
         self
     }
     /// <p>The field to sort the list of migrations by. You can sort by the Amazon Lex V1 bot name or the date and time that the migration was started.</p>
-    pub fn set_sort_by_attribute(mut self, input: std::option::Option<crate::types::MigrationSortAttribute>) -> Self {
+    pub fn set_sort_by_attribute(
+        mut self,
+        input: std::option::Option<crate::types::MigrationSortAttribute>,
+    ) -> Self {
         self.inner = self.inner.set_sort_by_attribute(input);
         self
     }
@@ -69,7 +95,10 @@ impl GetMigrationsFluentBuilder  {
         self
     }
     /// <p>The order so sort the list.</p>
-    pub fn set_sort_by_order(mut self, input: std::option::Option<crate::types::SortOrder>) -> Self {
+    pub fn set_sort_by_order(
+        mut self,
+        input: std::option::Option<crate::types::SortOrder>,
+    ) -> Self {
         self.inner = self.inner.set_sort_by_order(input);
         self
     }
@@ -79,7 +108,10 @@ impl GetMigrationsFluentBuilder  {
         self
     }
     /// <p>Filters the list to contain only bots whose name contains the specified string. The string is matched anywhere in bot name.</p>
-    pub fn set_v1_bot_name_contains(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_v1_bot_name_contains(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_v1_bot_name_contains(input);
         self
     }
@@ -89,7 +121,10 @@ impl GetMigrationsFluentBuilder  {
         self
     }
     /// <p>Filters the list to contain only migrations in the specified state.</p>
-    pub fn set_migration_status_equals(mut self, input: std::option::Option<crate::types::MigrationStatus>) -> Self {
+    pub fn set_migration_status_equals(
+        mut self,
+        input: std::option::Option<crate::types::MigrationStatus>,
+    ) -> Self {
         self.inner = self.inner.set_migration_status_equals(input);
         self
     }
@@ -114,4 +149,3 @@ impl GetMigrationsFluentBuilder  {
         self
     }
 }
-

@@ -3,7 +3,7 @@
 /// <p>The SQL query to modify the message.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SqlQueryDatasetAction  {
+pub struct SqlQueryDatasetAction {
     /// <p>A SQL query string.</p>
     #[doc(hidden)]
     pub sql_query: std::option::Option<std::string::String>,
@@ -13,11 +13,11 @@ pub struct SqlQueryDatasetAction  {
 }
 impl SqlQueryDatasetAction {
     /// <p>A SQL query string.</p>
-    pub fn sql_query(&self) -> std::option::Option<& str> {
+    pub fn sql_query(&self) -> std::option::Option<&str> {
         self.sql_query.as_deref()
     }
     /// <p>Prefilters applied to message data.</p>
-    pub fn filters(&self) -> std::option::Option<& [crate::types::QueryFilter]> {
+    pub fn filters(&self) -> std::option::Option<&[crate::types::QueryFilter]> {
         self.filters.as_deref()
     }
 }
@@ -43,7 +43,8 @@ impl SqlQueryDatasetActionBuilder {
     }
     /// <p>A SQL query string.</p>
     pub fn set_sql_query(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.sql_query = input; self
+        self.sql_query = input;
+        self
     }
     /// Appends an item to `filters`.
     ///
@@ -52,22 +53,23 @@ impl SqlQueryDatasetActionBuilder {
     /// <p>Prefilters applied to message data.</p>
     pub fn filters(mut self, input: crate::types::QueryFilter) -> Self {
         let mut v = self.filters.unwrap_or_default();
-                        v.push(input);
-                        self.filters = Some(v);
-                        self
+        v.push(input);
+        self.filters = Some(v);
+        self
     }
     /// <p>Prefilters applied to message data.</p>
-    pub fn set_filters(mut self, input: std::option::Option<std::vec::Vec<crate::types::QueryFilter>>) -> Self {
-        self.filters = input; self
+    pub fn set_filters(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::QueryFilter>>,
+    ) -> Self {
+        self.filters = input;
+        self
     }
     /// Consumes the builder and constructs a [`SqlQueryDatasetAction`](crate::types::SqlQueryDatasetAction).
     pub fn build(self) -> crate::types::SqlQueryDatasetAction {
         crate::types::SqlQueryDatasetAction {
-            sql_query: self.sql_query
-            ,
-            filters: self.filters
-            ,
+            sql_query: self.sql_query,
+            filters: self.filters,
         }
     }
 }
-

@@ -28,4 +28,3 @@ pub use crate::types::_static_column::StaticColumnBuilder;
 pub use crate::types::_clustering_key::ClusteringKeyBuilder;
 
 pub use crate::types::_partition_key::PartitionKeyBuilder;
-

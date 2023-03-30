@@ -3,7 +3,7 @@
 /// <p>Represents the request to get the specified user as an administrator.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct AdminGetUserInput  {
+pub struct AdminGetUserInput {
     /// <p>The user pool ID for the user pool where you want to get information about the user.</p>
     #[doc(hidden)]
     pub user_pool_id: std::option::Option<std::string::String>,
@@ -13,15 +13,15 @@ pub struct AdminGetUserInput  {
 }
 impl AdminGetUserInput {
     /// <p>The user pool ID for the user pool where you want to get information about the user.</p>
-    pub fn user_pool_id(&self) -> std::option::Option<& str> {
+    pub fn user_pool_id(&self) -> std::option::Option<&str> {
         self.user_pool_id.as_deref()
     }
     /// <p>The user name of the user you want to retrieve.</p>
-    pub fn username(&self) -> std::option::Option<& str> {
+    pub fn username(&self) -> std::option::Option<&str> {
         self.username.as_deref()
     }
 }
-impl  std::fmt::Debug for AdminGetUserInput  {
+impl std::fmt::Debug for AdminGetUserInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("AdminGetUserInput");
         formatter.field("user_pool_id", &self.user_pool_id);
@@ -51,7 +51,8 @@ impl AdminGetUserInputBuilder {
     }
     /// <p>The user pool ID for the user pool where you want to get information about the user.</p>
     pub fn set_user_pool_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.user_pool_id = input; self
+        self.user_pool_id = input;
+        self
     }
     /// <p>The user name of the user you want to retrieve.</p>
     pub fn username(mut self, input: impl Into<std::string::String>) -> Self {
@@ -60,18 +61,20 @@ impl AdminGetUserInputBuilder {
     }
     /// <p>The user name of the user you want to retrieve.</p>
     pub fn set_username(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.username = input; self
+        self.username = input;
+        self
     }
     /// Consumes the builder and constructs a [`AdminGetUserInput`](crate::operation::admin_get_user::AdminGetUserInput).
-    pub fn build(self) -> Result<crate::operation::admin_get_user::AdminGetUserInput, aws_smithy_http::operation::error::BuildError> {
-        Ok(
-            crate::operation::admin_get_user::AdminGetUserInput {
-                user_pool_id: self.user_pool_id
-                ,
-                username: self.username
-                ,
-            }
-        )
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::admin_get_user::AdminGetUserInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        Ok(crate::operation::admin_get_user::AdminGetUserInput {
+            user_pool_id: self.user_pool_id,
+            username: self.username,
+        })
     }
 }
 impl std::fmt::Debug for AdminGetUserInputBuilder {
@@ -82,4 +85,3 @@ impl std::fmt::Debug for AdminGetUserInputBuilder {
         formatter.finish()
     }
 }
-

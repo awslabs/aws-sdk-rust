@@ -3,7 +3,7 @@
 /// <p>Represents the input of a get branch operation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetBranchInput  {
+pub struct GetBranchInput {
     /// <p>The name of the repository that contains the branch for which you want to retrieve information.</p>
     #[doc(hidden)]
     pub repository_name: std::option::Option<std::string::String>,
@@ -13,11 +13,11 @@ pub struct GetBranchInput  {
 }
 impl GetBranchInput {
     /// <p>The name of the repository that contains the branch for which you want to retrieve information.</p>
-    pub fn repository_name(&self) -> std::option::Option<& str> {
+    pub fn repository_name(&self) -> std::option::Option<&str> {
         self.repository_name.as_deref()
     }
     /// <p>The name of the branch for which you want to retrieve information.</p>
-    pub fn branch_name(&self) -> std::option::Option<& str> {
+    pub fn branch_name(&self) -> std::option::Option<&str> {
         self.branch_name.as_deref()
     }
 }
@@ -43,7 +43,8 @@ impl GetBranchInputBuilder {
     }
     /// <p>The name of the repository that contains the branch for which you want to retrieve information.</p>
     pub fn set_repository_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.repository_name = input; self
+        self.repository_name = input;
+        self
     }
     /// <p>The name of the branch for which you want to retrieve information.</p>
     pub fn branch_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -52,18 +53,19 @@ impl GetBranchInputBuilder {
     }
     /// <p>The name of the branch for which you want to retrieve information.</p>
     pub fn set_branch_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.branch_name = input; self
+        self.branch_name = input;
+        self
     }
     /// Consumes the builder and constructs a [`GetBranchInput`](crate::operation::get_branch::GetBranchInput).
-    pub fn build(self) -> Result<crate::operation::get_branch::GetBranchInput, aws_smithy_http::operation::error::BuildError> {
-        Ok(
-            crate::operation::get_branch::GetBranchInput {
-                repository_name: self.repository_name
-                ,
-                branch_name: self.branch_name
-                ,
-            }
-        )
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::get_branch::GetBranchInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        Ok(crate::operation::get_branch::GetBranchInput {
+            repository_name: self.repository_name,
+            branch_name: self.branch_name,
+        })
     }
 }
-

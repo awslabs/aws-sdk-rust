@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateWorkflowStepGroupOutput  {
+pub struct CreateWorkflowStepGroupOutput {
     /// <p>The ID of the migration workflow that contains the step group.</p>
     #[doc(hidden)]
     pub workflow_id: std::option::Option<std::string::String>,
@@ -31,46 +31,48 @@ pub struct CreateWorkflowStepGroupOutput  {
 }
 impl CreateWorkflowStepGroupOutput {
     /// <p>The ID of the migration workflow that contains the step group.</p>
-    pub fn workflow_id(&self) -> std::option::Option<& str> {
+    pub fn workflow_id(&self) -> std::option::Option<&str> {
         self.workflow_id.as_deref()
     }
     /// <p>The name of the step group.</p>
-    pub fn name(&self) -> std::option::Option<& str> {
+    pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>The ID of the step group.</p>
-    pub fn id(&self) -> std::option::Option<& str> {
+    pub fn id(&self) -> std::option::Option<&str> {
         self.id.as_deref()
     }
     /// <p>The description of the step group.</p>
-    pub fn description(&self) -> std::option::Option<& str> {
+    pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
     /// <p>List of AWS services utilized in a migration workflow.</p>
-    pub fn tools(&self) -> std::option::Option<& [crate::types::Tool]> {
+    pub fn tools(&self) -> std::option::Option<&[crate::types::Tool]> {
         self.tools.as_deref()
     }
     /// <p>The next step group.</p>
-    pub fn next(&self) -> std::option::Option<& [std::string::String]> {
+    pub fn next(&self) -> std::option::Option<&[std::string::String]> {
         self.next.as_deref()
     }
     /// <p>The previous step group.</p>
-    pub fn previous(&self) -> std::option::Option<& [std::string::String]> {
+    pub fn previous(&self) -> std::option::Option<&[std::string::String]> {
         self.previous.as_deref()
     }
     /// <p>The time at which the step group is created.</p>
-    pub fn creation_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
+    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for CreateWorkflowStepGroupOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl CreateWorkflowStepGroupOutput {
     /// Creates a new builder-style object to manufacture [`CreateWorkflowStepGroupOutput`](crate::operation::create_workflow_step_group::CreateWorkflowStepGroupOutput).
-    pub fn builder() -> crate::operation::create_workflow_step_group::builders::CreateWorkflowStepGroupOutputBuilder {
+    pub fn builder(
+    ) -> crate::operation::create_workflow_step_group::builders::CreateWorkflowStepGroupOutputBuilder
+    {
         crate::operation::create_workflow_step_group::builders::CreateWorkflowStepGroupOutputBuilder::default()
     }
 }
@@ -97,7 +99,8 @@ impl CreateWorkflowStepGroupOutputBuilder {
     }
     /// <p>The ID of the migration workflow that contains the step group.</p>
     pub fn set_workflow_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.workflow_id = input; self
+        self.workflow_id = input;
+        self
     }
     /// <p>The name of the step group.</p>
     pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -106,7 +109,8 @@ impl CreateWorkflowStepGroupOutputBuilder {
     }
     /// <p>The name of the step group.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input; self
+        self.name = input;
+        self
     }
     /// <p>The ID of the step group.</p>
     pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -115,7 +119,8 @@ impl CreateWorkflowStepGroupOutputBuilder {
     }
     /// <p>The ID of the step group.</p>
     pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.id = input; self
+        self.id = input;
+        self
     }
     /// <p>The description of the step group.</p>
     pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -124,7 +129,8 @@ impl CreateWorkflowStepGroupOutputBuilder {
     }
     /// <p>The description of the step group.</p>
     pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.description = input; self
+        self.description = input;
+        self
     }
     /// Appends an item to `tools`.
     ///
@@ -133,13 +139,17 @@ impl CreateWorkflowStepGroupOutputBuilder {
     /// <p>List of AWS services utilized in a migration workflow.</p>
     pub fn tools(mut self, input: crate::types::Tool) -> Self {
         let mut v = self.tools.unwrap_or_default();
-                        v.push(input);
-                        self.tools = Some(v);
-                        self
+        v.push(input);
+        self.tools = Some(v);
+        self
     }
     /// <p>List of AWS services utilized in a migration workflow.</p>
-    pub fn set_tools(mut self, input: std::option::Option<std::vec::Vec<crate::types::Tool>>) -> Self {
-        self.tools = input; self
+    pub fn set_tools(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::Tool>>,
+    ) -> Self {
+        self.tools = input;
+        self
     }
     /// Appends an item to `next`.
     ///
@@ -148,13 +158,17 @@ impl CreateWorkflowStepGroupOutputBuilder {
     /// <p>The next step group.</p>
     pub fn next(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.next.unwrap_or_default();
-                        v.push(input.into());
-                        self.next = Some(v);
-                        self
+        v.push(input.into());
+        self.next = Some(v);
+        self
     }
     /// <p>The next step group.</p>
-    pub fn set_next(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-        self.next = input; self
+    pub fn set_next(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
+        self.next = input;
+        self
     }
     /// Appends an item to `previous`.
     ///
@@ -163,13 +177,17 @@ impl CreateWorkflowStepGroupOutputBuilder {
     /// <p>The previous step group.</p>
     pub fn previous(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.previous.unwrap_or_default();
-                        v.push(input.into());
-                        self.previous = Some(v);
-                        self
+        v.push(input.into());
+        self.previous = Some(v);
+        self
     }
     /// <p>The previous step group.</p>
-    pub fn set_previous(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-        self.previous = input; self
+    pub fn set_previous(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
+        self.previous = input;
+        self
     }
     /// <p>The time at which the step group is created.</p>
     pub fn creation_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -177,39 +195,36 @@ impl CreateWorkflowStepGroupOutputBuilder {
         self
     }
     /// <p>The time at which the step group is created.</p>
-    pub fn set_creation_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.creation_time = input; self
+    pub fn set_creation_time(
+        mut self,
+        input: std::option::Option<aws_smithy_types::DateTime>,
+    ) -> Self {
+        self.creation_time = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`CreateWorkflowStepGroupOutput`](crate::operation::create_workflow_step_group::CreateWorkflowStepGroupOutput).
-    pub fn build(self) -> crate::operation::create_workflow_step_group::CreateWorkflowStepGroupOutput {
+    pub fn build(
+        self,
+    ) -> crate::operation::create_workflow_step_group::CreateWorkflowStepGroupOutput {
         crate::operation::create_workflow_step_group::CreateWorkflowStepGroupOutput {
-            workflow_id: self.workflow_id
-            ,
-            name: self.name
-            ,
-            id: self.id
-            ,
-            description: self.description
-            ,
-            tools: self.tools
-            ,
-            next: self.next
-            ,
-            previous: self.previous
-            ,
-            creation_time: self.creation_time
-            ,
+            workflow_id: self.workflow_id,
+            name: self.name,
+            id: self.id,
+            description: self.description,
+            tools: self.tools,
+            next: self.next,
+            previous: self.previous,
+            creation_time: self.creation_time,
             _request_id: self._request_id,
         }
     }
 }
-

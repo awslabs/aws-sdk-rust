@@ -8,4 +8,3 @@ pub mod builders;
 
 /// Error types that AmazonApiGatewayManagementApi can respond with.
 pub mod error;
-

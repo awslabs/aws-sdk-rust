@@ -3,7 +3,7 @@
 /// <p>A classifier for custom <code>CSV</code> content.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CsvClassifier  {
+pub struct CsvClassifier {
     /// <p>The name of the classifier.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -43,15 +43,15 @@ pub struct CsvClassifier  {
 }
 impl CsvClassifier {
     /// <p>The name of the classifier.</p>
-    pub fn name(&self) -> std::option::Option<& str> {
+    pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>The time that this classifier was registered.</p>
-    pub fn creation_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
+    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
     /// <p>The time that this classifier was last updated.</p>
-    pub fn last_updated(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
+    pub fn last_updated(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_updated.as_ref()
     }
     /// <p>The version of this classifier.</p>
@@ -59,19 +59,19 @@ impl CsvClassifier {
         self.version
     }
     /// <p>A custom symbol to denote what separates each column entry in the row.</p>
-    pub fn delimiter(&self) -> std::option::Option<& str> {
+    pub fn delimiter(&self) -> std::option::Option<&str> {
         self.delimiter.as_deref()
     }
     /// <p>A custom symbol to denote what combines content into a single column value. It must be different from the column delimiter.</p>
-    pub fn quote_symbol(&self) -> std::option::Option<& str> {
+    pub fn quote_symbol(&self) -> std::option::Option<&str> {
         self.quote_symbol.as_deref()
     }
     /// <p>Indicates whether the CSV file contains a header.</p>
-    pub fn contains_header(&self) -> std::option::Option<& crate::types::CsvHeaderOption> {
+    pub fn contains_header(&self) -> std::option::Option<&crate::types::CsvHeaderOption> {
         self.contains_header.as_ref()
     }
     /// <p>A list of strings representing column names.</p>
-    pub fn header(&self) -> std::option::Option<& [std::string::String]> {
+    pub fn header(&self) -> std::option::Option<&[std::string::String]> {
         self.header.as_deref()
     }
     /// <p>Specifies not to trim values before identifying the type of column values. The default value is <code>true</code>.</p>
@@ -87,7 +87,7 @@ impl CsvClassifier {
         self.custom_datatype_configured
     }
     /// <p>A list of custom datatypes including "BINARY", "BOOLEAN", "DATE", "DECIMAL", "DOUBLE", "FLOAT", "INT", "LONG", "SHORT", "STRING", "TIMESTAMP".</p>
-    pub fn custom_datatypes(&self) -> std::option::Option<& [std::string::String]> {
+    pub fn custom_datatypes(&self) -> std::option::Option<&[std::string::String]> {
         self.custom_datatypes.as_deref()
     }
 }
@@ -123,7 +123,8 @@ impl CsvClassifierBuilder {
     }
     /// <p>The name of the classifier.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input; self
+        self.name = input;
+        self
     }
     /// <p>The time that this classifier was registered.</p>
     pub fn creation_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -131,8 +132,12 @@ impl CsvClassifierBuilder {
         self
     }
     /// <p>The time that this classifier was registered.</p>
-    pub fn set_creation_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.creation_time = input; self
+    pub fn set_creation_time(
+        mut self,
+        input: std::option::Option<aws_smithy_types::DateTime>,
+    ) -> Self {
+        self.creation_time = input;
+        self
     }
     /// <p>The time that this classifier was last updated.</p>
     pub fn last_updated(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -140,8 +145,12 @@ impl CsvClassifierBuilder {
         self
     }
     /// <p>The time that this classifier was last updated.</p>
-    pub fn set_last_updated(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.last_updated = input; self
+    pub fn set_last_updated(
+        mut self,
+        input: std::option::Option<aws_smithy_types::DateTime>,
+    ) -> Self {
+        self.last_updated = input;
+        self
     }
     /// <p>The version of this classifier.</p>
     pub fn version(mut self, input: i64) -> Self {
@@ -150,7 +159,8 @@ impl CsvClassifierBuilder {
     }
     /// <p>The version of this classifier.</p>
     pub fn set_version(mut self, input: std::option::Option<i64>) -> Self {
-        self.version = input; self
+        self.version = input;
+        self
     }
     /// <p>A custom symbol to denote what separates each column entry in the row.</p>
     pub fn delimiter(mut self, input: impl Into<std::string::String>) -> Self {
@@ -159,7 +169,8 @@ impl CsvClassifierBuilder {
     }
     /// <p>A custom symbol to denote what separates each column entry in the row.</p>
     pub fn set_delimiter(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.delimiter = input; self
+        self.delimiter = input;
+        self
     }
     /// <p>A custom symbol to denote what combines content into a single column value. It must be different from the column delimiter.</p>
     pub fn quote_symbol(mut self, input: impl Into<std::string::String>) -> Self {
@@ -168,7 +179,8 @@ impl CsvClassifierBuilder {
     }
     /// <p>A custom symbol to denote what combines content into a single column value. It must be different from the column delimiter.</p>
     pub fn set_quote_symbol(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.quote_symbol = input; self
+        self.quote_symbol = input;
+        self
     }
     /// <p>Indicates whether the CSV file contains a header.</p>
     pub fn contains_header(mut self, input: crate::types::CsvHeaderOption) -> Self {
@@ -176,8 +188,12 @@ impl CsvClassifierBuilder {
         self
     }
     /// <p>Indicates whether the CSV file contains a header.</p>
-    pub fn set_contains_header(mut self, input: std::option::Option<crate::types::CsvHeaderOption>) -> Self {
-        self.contains_header = input; self
+    pub fn set_contains_header(
+        mut self,
+        input: std::option::Option<crate::types::CsvHeaderOption>,
+    ) -> Self {
+        self.contains_header = input;
+        self
     }
     /// Appends an item to `header`.
     ///
@@ -186,13 +202,17 @@ impl CsvClassifierBuilder {
     /// <p>A list of strings representing column names.</p>
     pub fn header(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.header.unwrap_or_default();
-                        v.push(input.into());
-                        self.header = Some(v);
-                        self
+        v.push(input.into());
+        self.header = Some(v);
+        self
     }
     /// <p>A list of strings representing column names.</p>
-    pub fn set_header(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-        self.header = input; self
+    pub fn set_header(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
+        self.header = input;
+        self
     }
     /// <p>Specifies not to trim values before identifying the type of column values. The default value is <code>true</code>.</p>
     pub fn disable_value_trimming(mut self, input: bool) -> Self {
@@ -201,7 +221,8 @@ impl CsvClassifierBuilder {
     }
     /// <p>Specifies not to trim values before identifying the type of column values. The default value is <code>true</code>.</p>
     pub fn set_disable_value_trimming(mut self, input: std::option::Option<bool>) -> Self {
-        self.disable_value_trimming = input; self
+        self.disable_value_trimming = input;
+        self
     }
     /// <p>Enables the processing of files that contain only one column.</p>
     pub fn allow_single_column(mut self, input: bool) -> Self {
@@ -210,7 +231,8 @@ impl CsvClassifierBuilder {
     }
     /// <p>Enables the processing of files that contain only one column.</p>
     pub fn set_allow_single_column(mut self, input: std::option::Option<bool>) -> Self {
-        self.allow_single_column = input; self
+        self.allow_single_column = input;
+        self
     }
     /// <p>Enables the custom datatype to be configured.</p>
     pub fn custom_datatype_configured(mut self, input: bool) -> Self {
@@ -219,7 +241,8 @@ impl CsvClassifierBuilder {
     }
     /// <p>Enables the custom datatype to be configured.</p>
     pub fn set_custom_datatype_configured(mut self, input: std::option::Option<bool>) -> Self {
-        self.custom_datatype_configured = input; self
+        self.custom_datatype_configured = input;
+        self
     }
     /// Appends an item to `custom_datatypes`.
     ///
@@ -228,43 +251,33 @@ impl CsvClassifierBuilder {
     /// <p>A list of custom datatypes including "BINARY", "BOOLEAN", "DATE", "DECIMAL", "DOUBLE", "FLOAT", "INT", "LONG", "SHORT", "STRING", "TIMESTAMP".</p>
     pub fn custom_datatypes(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.custom_datatypes.unwrap_or_default();
-                        v.push(input.into());
-                        self.custom_datatypes = Some(v);
-                        self
+        v.push(input.into());
+        self.custom_datatypes = Some(v);
+        self
     }
     /// <p>A list of custom datatypes including "BINARY", "BOOLEAN", "DATE", "DECIMAL", "DOUBLE", "FLOAT", "INT", "LONG", "SHORT", "STRING", "TIMESTAMP".</p>
-    pub fn set_custom_datatypes(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-        self.custom_datatypes = input; self
+    pub fn set_custom_datatypes(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
+        self.custom_datatypes = input;
+        self
     }
     /// Consumes the builder and constructs a [`CsvClassifier`](crate::types::CsvClassifier).
     pub fn build(self) -> crate::types::CsvClassifier {
         crate::types::CsvClassifier {
-            name: self.name
-            ,
-            creation_time: self.creation_time
-            ,
-            last_updated: self.last_updated
-            ,
-            version: self.version
-                .unwrap_or_default()
-            ,
-            delimiter: self.delimiter
-            ,
-            quote_symbol: self.quote_symbol
-            ,
-            contains_header: self.contains_header
-            ,
-            header: self.header
-            ,
-            disable_value_trimming: self.disable_value_trimming
-            ,
-            allow_single_column: self.allow_single_column
-            ,
-            custom_datatype_configured: self.custom_datatype_configured
-            ,
-            custom_datatypes: self.custom_datatypes
-            ,
+            name: self.name,
+            creation_time: self.creation_time,
+            last_updated: self.last_updated,
+            version: self.version.unwrap_or_default(),
+            delimiter: self.delimiter,
+            quote_symbol: self.quote_symbol,
+            contains_header: self.contains_header,
+            header: self.header,
+            disable_value_trimming: self.disable_value_trimming,
+            allow_single_column: self.allow_single_column,
+            custom_datatype_configured: self.custom_datatype_configured,
+            custom_datatypes: self.custom_datatypes,
         }
     }
 }
-

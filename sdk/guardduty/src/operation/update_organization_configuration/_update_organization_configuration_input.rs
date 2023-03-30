@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateOrganizationConfigurationInput  {
+pub struct UpdateOrganizationConfigurationInput {
     /// <p>The ID of the detector to update the delegated administrator for.</p>
     #[doc(hidden)]
     pub detector_id: std::option::Option<std::string::String>,
@@ -15,7 +15,7 @@ pub struct UpdateOrganizationConfigurationInput  {
 }
 impl UpdateOrganizationConfigurationInput {
     /// <p>The ID of the detector to update the delegated administrator for.</p>
-    pub fn detector_id(&self) -> std::option::Option<& str> {
+    pub fn detector_id(&self) -> std::option::Option<&str> {
         self.detector_id.as_deref()
     }
     /// <p>Indicates whether to automatically enable member accounts in the organization.</p>
@@ -23,13 +23,15 @@ impl UpdateOrganizationConfigurationInput {
         self.auto_enable
     }
     /// <p>Describes which data sources will be updated.</p>
-    pub fn data_sources(&self) -> std::option::Option<& crate::types::OrganizationDataSourceConfigurations> {
+    pub fn data_sources(
+        &self,
+    ) -> std::option::Option<&crate::types::OrganizationDataSourceConfigurations> {
         self.data_sources.as_ref()
     }
 }
 impl UpdateOrganizationConfigurationInput {
     /// Creates a new builder-style object to manufacture [`UpdateOrganizationConfigurationInput`](crate::operation::update_organization_configuration::UpdateOrganizationConfigurationInput).
-    pub fn builder() -> crate::operation::update_organization_configuration::builders::UpdateOrganizationConfigurationInputBuilder {
+    pub fn builder() -> crate::operation::update_organization_configuration::builders::UpdateOrganizationConfigurationInputBuilder{
         crate::operation::update_organization_configuration::builders::UpdateOrganizationConfigurationInputBuilder::default()
     }
 }
@@ -40,7 +42,8 @@ impl UpdateOrganizationConfigurationInput {
 pub struct UpdateOrganizationConfigurationInputBuilder {
     pub(crate) detector_id: std::option::Option<std::string::String>,
     pub(crate) auto_enable: std::option::Option<bool>,
-    pub(crate) data_sources: std::option::Option<crate::types::OrganizationDataSourceConfigurations>,
+    pub(crate) data_sources:
+        std::option::Option<crate::types::OrganizationDataSourceConfigurations>,
 }
 impl UpdateOrganizationConfigurationInputBuilder {
     /// <p>The ID of the detector to update the delegated administrator for.</p>
@@ -50,7 +53,8 @@ impl UpdateOrganizationConfigurationInputBuilder {
     }
     /// <p>The ID of the detector to update the delegated administrator for.</p>
     pub fn set_detector_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.detector_id = input; self
+        self.detector_id = input;
+        self
     }
     /// <p>Indicates whether to automatically enable member accounts in the organization.</p>
     pub fn auto_enable(mut self, input: bool) -> Self {
@@ -59,19 +63,32 @@ impl UpdateOrganizationConfigurationInputBuilder {
     }
     /// <p>Indicates whether to automatically enable member accounts in the organization.</p>
     pub fn set_auto_enable(mut self, input: std::option::Option<bool>) -> Self {
-        self.auto_enable = input; self
+        self.auto_enable = input;
+        self
     }
     /// <p>Describes which data sources will be updated.</p>
-    pub fn data_sources(mut self, input: crate::types::OrganizationDataSourceConfigurations) -> Self {
+    pub fn data_sources(
+        mut self,
+        input: crate::types::OrganizationDataSourceConfigurations,
+    ) -> Self {
         self.data_sources = Some(input);
         self
     }
     /// <p>Describes which data sources will be updated.</p>
-    pub fn set_data_sources(mut self, input: std::option::Option<crate::types::OrganizationDataSourceConfigurations>) -> Self {
-        self.data_sources = input; self
+    pub fn set_data_sources(
+        mut self,
+        input: std::option::Option<crate::types::OrganizationDataSourceConfigurations>,
+    ) -> Self {
+        self.data_sources = input;
+        self
     }
     /// Consumes the builder and constructs a [`UpdateOrganizationConfigurationInput`](crate::operation::update_organization_configuration::UpdateOrganizationConfigurationInput).
-    pub fn build(self) -> Result<crate::operation::update_organization_configuration::UpdateOrganizationConfigurationInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::update_organization_configuration::UpdateOrganizationConfigurationInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::update_organization_configuration::UpdateOrganizationConfigurationInput {
                 detector_id: self.detector_id
@@ -85,4 +102,3 @@ impl UpdateOrganizationConfigurationInputBuilder {
         )
     }
 }
-

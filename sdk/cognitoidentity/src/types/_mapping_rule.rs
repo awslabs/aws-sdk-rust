@@ -3,7 +3,7 @@
 /// <p>A rule that maps a claim name, a claim value, and a match type to a role ARN.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct MappingRule  {
+pub struct MappingRule {
     /// <p>The claim name that must be present in the token, for example, "isAdmin" or "paid".</p>
     #[doc(hidden)]
     pub claim: std::option::Option<std::string::String>,
@@ -19,19 +19,19 @@ pub struct MappingRule  {
 }
 impl MappingRule {
     /// <p>The claim name that must be present in the token, for example, "isAdmin" or "paid".</p>
-    pub fn claim(&self) -> std::option::Option<& str> {
+    pub fn claim(&self) -> std::option::Option<&str> {
         self.claim.as_deref()
     }
     /// <p>The match condition that specifies how closely the claim value in the IdP token must match <code>Value</code>.</p>
-    pub fn match_type(&self) -> std::option::Option<& crate::types::MappingRuleMatchType> {
+    pub fn match_type(&self) -> std::option::Option<&crate::types::MappingRuleMatchType> {
         self.match_type.as_ref()
     }
     /// <p>A brief string that the claim must match, for example, "paid" or "yes".</p>
-    pub fn value(&self) -> std::option::Option<& str> {
+    pub fn value(&self) -> std::option::Option<&str> {
         self.value.as_deref()
     }
     /// <p>The role ARN.</p>
-    pub fn role_arn(&self) -> std::option::Option<& str> {
+    pub fn role_arn(&self) -> std::option::Option<&str> {
         self.role_arn.as_deref()
     }
 }
@@ -59,7 +59,8 @@ impl MappingRuleBuilder {
     }
     /// <p>The claim name that must be present in the token, for example, "isAdmin" or "paid".</p>
     pub fn set_claim(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.claim = input; self
+        self.claim = input;
+        self
     }
     /// <p>The match condition that specifies how closely the claim value in the IdP token must match <code>Value</code>.</p>
     pub fn match_type(mut self, input: crate::types::MappingRuleMatchType) -> Self {
@@ -67,8 +68,12 @@ impl MappingRuleBuilder {
         self
     }
     /// <p>The match condition that specifies how closely the claim value in the IdP token must match <code>Value</code>.</p>
-    pub fn set_match_type(mut self, input: std::option::Option<crate::types::MappingRuleMatchType>) -> Self {
-        self.match_type = input; self
+    pub fn set_match_type(
+        mut self,
+        input: std::option::Option<crate::types::MappingRuleMatchType>,
+    ) -> Self {
+        self.match_type = input;
+        self
     }
     /// <p>A brief string that the claim must match, for example, "paid" or "yes".</p>
     pub fn value(mut self, input: impl Into<std::string::String>) -> Self {
@@ -77,7 +82,8 @@ impl MappingRuleBuilder {
     }
     /// <p>A brief string that the claim must match, for example, "paid" or "yes".</p>
     pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.value = input; self
+        self.value = input;
+        self
     }
     /// <p>The role ARN.</p>
     pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -86,20 +92,16 @@ impl MappingRuleBuilder {
     }
     /// <p>The role ARN.</p>
     pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.role_arn = input; self
+        self.role_arn = input;
+        self
     }
     /// Consumes the builder and constructs a [`MappingRule`](crate::types::MappingRule).
     pub fn build(self) -> crate::types::MappingRule {
         crate::types::MappingRule {
-            claim: self.claim
-            ,
-            match_type: self.match_type
-            ,
-            value: self.value
-            ,
-            role_arn: self.role_arn
-            ,
+            claim: self.claim,
+            match_type: self.match_type,
+            value: self.value,
+            role_arn: self.role_arn,
         }
     }
 }
-

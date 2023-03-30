@@ -3,7 +3,7 @@
 /// <p>Container for the owner's display name and ID.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Owner  {
+pub struct Owner {
     /// <p>Container for the display name of the owner.</p>
     #[doc(hidden)]
     pub display_name: std::option::Option<std::string::String>,
@@ -13,11 +13,11 @@ pub struct Owner  {
 }
 impl Owner {
     /// <p>Container for the display name of the owner.</p>
-    pub fn display_name(&self) -> std::option::Option<& str> {
+    pub fn display_name(&self) -> std::option::Option<&str> {
         self.display_name.as_deref()
     }
     /// <p>Container for the ID of the owner.</p>
-    pub fn id(&self) -> std::option::Option<& str> {
+    pub fn id(&self) -> std::option::Option<&str> {
         self.id.as_deref()
     }
 }
@@ -43,7 +43,8 @@ impl OwnerBuilder {
     }
     /// <p>Container for the display name of the owner.</p>
     pub fn set_display_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.display_name = input; self
+        self.display_name = input;
+        self
     }
     /// <p>Container for the ID of the owner.</p>
     pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -52,16 +53,14 @@ impl OwnerBuilder {
     }
     /// <p>Container for the ID of the owner.</p>
     pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.id = input; self
+        self.id = input;
+        self
     }
     /// Consumes the builder and constructs a [`Owner`](crate::types::Owner).
     pub fn build(self) -> crate::types::Owner {
         crate::types::Owner {
-            display_name: self.display_name
-            ,
-            id: self.id
-            ,
+            display_name: self.display_name,
+            id: self.id,
         }
     }
 }
-

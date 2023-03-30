@@ -3,18 +3,18 @@
 /// <p>Contains additional data that is needed to process a handshake.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct HandshakeResource  {
+pub struct HandshakeResource {
     /// <p>The information that is passed to the other party in the handshake. The format of the value string must match the requirements of the specified type.</p>
     #[doc(hidden)]
     pub value: std::option::Option<std::string::String>,
-    /// <p>The type of information being passed, specifying how the value is to be interpreted by the other party:</p> 
-    /// <ul> 
-    /// <li> <p> <code>ACCOUNT</code> - Specifies an Amazon Web Services account ID number.</p> </li> 
-    /// <li> <p> <code>ORGANIZATION</code> - Specifies an organization ID number.</p> </li> 
-    /// <li> <p> <code>EMAIL</code> - Specifies the email address that is associated with the account that receives the handshake. </p> </li> 
-    /// <li> <p> <code>OWNER_EMAIL</code> - Specifies the email address associated with the management account. Included as information about an organization. </p> </li> 
-    /// <li> <p> <code>OWNER_NAME</code> - Specifies the name associated with the management account. Included as information about an organization. </p> </li> 
-    /// <li> <p> <code>NOTES</code> - Additional text provided by the handshake initiator and intended for the recipient to read.</p> </li> 
+    /// <p>The type of information being passed, specifying how the value is to be interpreted by the other party:</p>
+    /// <ul>
+    /// <li> <p> <code>ACCOUNT</code> - Specifies an Amazon Web Services account ID number.</p> </li>
+    /// <li> <p> <code>ORGANIZATION</code> - Specifies an organization ID number.</p> </li>
+    /// <li> <p> <code>EMAIL</code> - Specifies the email address that is associated with the account that receives the handshake. </p> </li>
+    /// <li> <p> <code>OWNER_EMAIL</code> - Specifies the email address associated with the management account. Included as information about an organization. </p> </li>
+    /// <li> <p> <code>OWNER_NAME</code> - Specifies the name associated with the management account. Included as information about an organization. </p> </li>
+    /// <li> <p> <code>NOTES</code> - Additional text provided by the handshake initiator and intended for the recipient to read.</p> </li>
     /// </ul>
     #[doc(hidden)]
     pub r#type: std::option::Option<crate::types::HandshakeResourceType>,
@@ -24,27 +24,27 @@ pub struct HandshakeResource  {
 }
 impl HandshakeResource {
     /// <p>The information that is passed to the other party in the handshake. The format of the value string must match the requirements of the specified type.</p>
-    pub fn value(&self) -> std::option::Option<& str> {
+    pub fn value(&self) -> std::option::Option<&str> {
         self.value.as_deref()
     }
-    /// <p>The type of information being passed, specifying how the value is to be interpreted by the other party:</p> 
-    /// <ul> 
-    /// <li> <p> <code>ACCOUNT</code> - Specifies an Amazon Web Services account ID number.</p> </li> 
-    /// <li> <p> <code>ORGANIZATION</code> - Specifies an organization ID number.</p> </li> 
-    /// <li> <p> <code>EMAIL</code> - Specifies the email address that is associated with the account that receives the handshake. </p> </li> 
-    /// <li> <p> <code>OWNER_EMAIL</code> - Specifies the email address associated with the management account. Included as information about an organization. </p> </li> 
-    /// <li> <p> <code>OWNER_NAME</code> - Specifies the name associated with the management account. Included as information about an organization. </p> </li> 
-    /// <li> <p> <code>NOTES</code> - Additional text provided by the handshake initiator and intended for the recipient to read.</p> </li> 
+    /// <p>The type of information being passed, specifying how the value is to be interpreted by the other party:</p>
+    /// <ul>
+    /// <li> <p> <code>ACCOUNT</code> - Specifies an Amazon Web Services account ID number.</p> </li>
+    /// <li> <p> <code>ORGANIZATION</code> - Specifies an organization ID number.</p> </li>
+    /// <li> <p> <code>EMAIL</code> - Specifies the email address that is associated with the account that receives the handshake. </p> </li>
+    /// <li> <p> <code>OWNER_EMAIL</code> - Specifies the email address associated with the management account. Included as information about an organization. </p> </li>
+    /// <li> <p> <code>OWNER_NAME</code> - Specifies the name associated with the management account. Included as information about an organization. </p> </li>
+    /// <li> <p> <code>NOTES</code> - Additional text provided by the handshake initiator and intended for the recipient to read.</p> </li>
     /// </ul>
-    pub fn r#type(&self) -> std::option::Option<& crate::types::HandshakeResourceType> {
+    pub fn r#type(&self) -> std::option::Option<&crate::types::HandshakeResourceType> {
         self.r#type.as_ref()
     }
     /// <p>When needed, contains an additional array of <code>HandshakeResource</code> objects.</p>
-    pub fn resources(&self) -> std::option::Option<& [crate::types::HandshakeResource]> {
+    pub fn resources(&self) -> std::option::Option<&[crate::types::HandshakeResource]> {
         self.resources.as_deref()
     }
 }
-impl  std::fmt::Debug for HandshakeResource  {
+impl std::fmt::Debug for HandshakeResource {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("HandshakeResource");
         formatter.field("value", &"*** Sensitive Data Redacted ***");
@@ -76,32 +76,37 @@ impl HandshakeResourceBuilder {
     }
     /// <p>The information that is passed to the other party in the handshake. The format of the value string must match the requirements of the specified type.</p>
     pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.value = input; self
+        self.value = input;
+        self
     }
-    /// <p>The type of information being passed, specifying how the value is to be interpreted by the other party:</p> 
-    /// <ul> 
-    /// <li> <p> <code>ACCOUNT</code> - Specifies an Amazon Web Services account ID number.</p> </li> 
-    /// <li> <p> <code>ORGANIZATION</code> - Specifies an organization ID number.</p> </li> 
-    /// <li> <p> <code>EMAIL</code> - Specifies the email address that is associated with the account that receives the handshake. </p> </li> 
-    /// <li> <p> <code>OWNER_EMAIL</code> - Specifies the email address associated with the management account. Included as information about an organization. </p> </li> 
-    /// <li> <p> <code>OWNER_NAME</code> - Specifies the name associated with the management account. Included as information about an organization. </p> </li> 
-    /// <li> <p> <code>NOTES</code> - Additional text provided by the handshake initiator and intended for the recipient to read.</p> </li> 
+    /// <p>The type of information being passed, specifying how the value is to be interpreted by the other party:</p>
+    /// <ul>
+    /// <li> <p> <code>ACCOUNT</code> - Specifies an Amazon Web Services account ID number.</p> </li>
+    /// <li> <p> <code>ORGANIZATION</code> - Specifies an organization ID number.</p> </li>
+    /// <li> <p> <code>EMAIL</code> - Specifies the email address that is associated with the account that receives the handshake. </p> </li>
+    /// <li> <p> <code>OWNER_EMAIL</code> - Specifies the email address associated with the management account. Included as information about an organization. </p> </li>
+    /// <li> <p> <code>OWNER_NAME</code> - Specifies the name associated with the management account. Included as information about an organization. </p> </li>
+    /// <li> <p> <code>NOTES</code> - Additional text provided by the handshake initiator and intended for the recipient to read.</p> </li>
     /// </ul>
     pub fn r#type(mut self, input: crate::types::HandshakeResourceType) -> Self {
         self.r#type = Some(input);
         self
     }
-    /// <p>The type of information being passed, specifying how the value is to be interpreted by the other party:</p> 
-    /// <ul> 
-    /// <li> <p> <code>ACCOUNT</code> - Specifies an Amazon Web Services account ID number.</p> </li> 
-    /// <li> <p> <code>ORGANIZATION</code> - Specifies an organization ID number.</p> </li> 
-    /// <li> <p> <code>EMAIL</code> - Specifies the email address that is associated with the account that receives the handshake. </p> </li> 
-    /// <li> <p> <code>OWNER_EMAIL</code> - Specifies the email address associated with the management account. Included as information about an organization. </p> </li> 
-    /// <li> <p> <code>OWNER_NAME</code> - Specifies the name associated with the management account. Included as information about an organization. </p> </li> 
-    /// <li> <p> <code>NOTES</code> - Additional text provided by the handshake initiator and intended for the recipient to read.</p> </li> 
+    /// <p>The type of information being passed, specifying how the value is to be interpreted by the other party:</p>
+    /// <ul>
+    /// <li> <p> <code>ACCOUNT</code> - Specifies an Amazon Web Services account ID number.</p> </li>
+    /// <li> <p> <code>ORGANIZATION</code> - Specifies an organization ID number.</p> </li>
+    /// <li> <p> <code>EMAIL</code> - Specifies the email address that is associated with the account that receives the handshake. </p> </li>
+    /// <li> <p> <code>OWNER_EMAIL</code> - Specifies the email address associated with the management account. Included as information about an organization. </p> </li>
+    /// <li> <p> <code>OWNER_NAME</code> - Specifies the name associated with the management account. Included as information about an organization. </p> </li>
+    /// <li> <p> <code>NOTES</code> - Additional text provided by the handshake initiator and intended for the recipient to read.</p> </li>
     /// </ul>
-    pub fn set_type(mut self, input: std::option::Option<crate::types::HandshakeResourceType>) -> Self {
-        self.r#type = input; self
+    pub fn set_type(
+        mut self,
+        input: std::option::Option<crate::types::HandshakeResourceType>,
+    ) -> Self {
+        self.r#type = input;
+        self
     }
     /// Appends an item to `resources`.
     ///
@@ -110,23 +115,24 @@ impl HandshakeResourceBuilder {
     /// <p>When needed, contains an additional array of <code>HandshakeResource</code> objects.</p>
     pub fn resources(mut self, input: crate::types::HandshakeResource) -> Self {
         let mut v = self.resources.unwrap_or_default();
-                        v.push(input);
-                        self.resources = Some(v);
-                        self
+        v.push(input);
+        self.resources = Some(v);
+        self
     }
     /// <p>When needed, contains an additional array of <code>HandshakeResource</code> objects.</p>
-    pub fn set_resources(mut self, input: std::option::Option<std::vec::Vec<crate::types::HandshakeResource>>) -> Self {
-        self.resources = input; self
+    pub fn set_resources(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::HandshakeResource>>,
+    ) -> Self {
+        self.resources = input;
+        self
     }
     /// Consumes the builder and constructs a [`HandshakeResource`](crate::types::HandshakeResource).
     pub fn build(self) -> crate::types::HandshakeResource {
         crate::types::HandshakeResource {
-            value: self.value
-            ,
-            r#type: self.r#type
-            ,
-            resources: self.resources
-            ,
+            value: self.value,
+            r#type: self.r#type,
+            resources: self.resources,
         }
     }
 }
@@ -139,4 +145,3 @@ impl std::fmt::Debug for HandshakeResourceBuilder {
         formatter.finish()
     }
 }
-

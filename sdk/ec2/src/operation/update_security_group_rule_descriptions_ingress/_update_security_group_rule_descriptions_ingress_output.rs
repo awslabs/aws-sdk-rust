@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateSecurityGroupRuleDescriptionsIngressOutput  {
+pub struct UpdateSecurityGroupRuleDescriptionsIngressOutput {
     /// <p>Returns <code>true</code> if the request succeeds; otherwise, returns an error.</p>
     #[doc(hidden)]
     pub r#return: std::option::Option<bool>,
@@ -15,13 +15,13 @@ impl UpdateSecurityGroupRuleDescriptionsIngressOutput {
     }
 }
 impl aws_http::request_id::RequestId for UpdateSecurityGroupRuleDescriptionsIngressOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl UpdateSecurityGroupRuleDescriptionsIngressOutput {
     /// Creates a new builder-style object to manufacture [`UpdateSecurityGroupRuleDescriptionsIngressOutput`](crate::operation::update_security_group_rule_descriptions_ingress::UpdateSecurityGroupRuleDescriptionsIngressOutput).
-    pub fn builder() -> crate::operation::update_security_group_rule_descriptions_ingress::builders::UpdateSecurityGroupRuleDescriptionsIngressOutputBuilder {
+    pub fn builder() -> crate::operation::update_security_group_rule_descriptions_ingress::builders::UpdateSecurityGroupRuleDescriptionsIngressOutputBuilder{
         crate::operation::update_security_group_rule_descriptions_ingress::builders::UpdateSecurityGroupRuleDescriptionsIngressOutputBuilder::default()
     }
 }
@@ -41,19 +41,20 @@ impl UpdateSecurityGroupRuleDescriptionsIngressOutputBuilder {
     }
     /// <p>Returns <code>true</code> if the request succeeds; otherwise, returns an error.</p>
     pub fn set_return(mut self, input: std::option::Option<bool>) -> Self {
-        self.r#return = input; self
+        self.r#return = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`UpdateSecurityGroupRuleDescriptionsIngressOutput`](crate::operation::update_security_group_rule_descriptions_ingress::UpdateSecurityGroupRuleDescriptionsIngressOutput).
-    pub fn build(self) -> crate::operation::update_security_group_rule_descriptions_ingress::UpdateSecurityGroupRuleDescriptionsIngressOutput {
+    pub fn build(self) -> crate::operation::update_security_group_rule_descriptions_ingress::UpdateSecurityGroupRuleDescriptionsIngressOutput{
         crate::operation::update_security_group_rule_descriptions_ingress::UpdateSecurityGroupRuleDescriptionsIngressOutput {
             r#return: self.r#return
             ,
@@ -61,4 +62,3 @@ impl UpdateSecurityGroupRuleDescriptionsIngressOutputBuilder {
         }
     }
 }
-

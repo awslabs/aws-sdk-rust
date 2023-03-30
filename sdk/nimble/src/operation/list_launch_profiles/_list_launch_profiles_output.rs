@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListLaunchProfilesOutput  {
+pub struct ListLaunchProfilesOutput {
     /// <p>A collection of launch profiles.</p>
     #[doc(hidden)]
     pub launch_profiles: std::option::Option<std::vec::Vec<crate::types::LaunchProfile>>,
@@ -13,22 +13,23 @@ pub struct ListLaunchProfilesOutput  {
 }
 impl ListLaunchProfilesOutput {
     /// <p>A collection of launch profiles.</p>
-    pub fn launch_profiles(&self) -> std::option::Option<& [crate::types::LaunchProfile]> {
+    pub fn launch_profiles(&self) -> std::option::Option<&[crate::types::LaunchProfile]> {
         self.launch_profiles.as_deref()
     }
     /// <p>The token for the next set of results, or null if there are no more results.</p>
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for ListLaunchProfilesOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl ListLaunchProfilesOutput {
     /// Creates a new builder-style object to manufacture [`ListLaunchProfilesOutput`](crate::operation::list_launch_profiles::ListLaunchProfilesOutput).
-    pub fn builder() -> crate::operation::list_launch_profiles::builders::ListLaunchProfilesOutputBuilder {
+    pub fn builder(
+    ) -> crate::operation::list_launch_profiles::builders::ListLaunchProfilesOutputBuilder {
         crate::operation::list_launch_profiles::builders::ListLaunchProfilesOutputBuilder::default()
     }
 }
@@ -49,13 +50,17 @@ impl ListLaunchProfilesOutputBuilder {
     /// <p>A collection of launch profiles.</p>
     pub fn launch_profiles(mut self, input: crate::types::LaunchProfile) -> Self {
         let mut v = self.launch_profiles.unwrap_or_default();
-                        v.push(input);
-                        self.launch_profiles = Some(v);
-                        self
+        v.push(input);
+        self.launch_profiles = Some(v);
+        self
     }
     /// <p>A collection of launch profiles.</p>
-    pub fn set_launch_profiles(mut self, input: std::option::Option<std::vec::Vec<crate::types::LaunchProfile>>) -> Self {
-        self.launch_profiles = input; self
+    pub fn set_launch_profiles(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::LaunchProfile>>,
+    ) -> Self {
+        self.launch_profiles = input;
+        self
     }
     /// <p>The token for the next set of results, or null if there are no more results.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -64,26 +69,24 @@ impl ListLaunchProfilesOutputBuilder {
     }
     /// <p>The token for the next set of results, or null if there are no more results.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input; self
+        self.next_token = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`ListLaunchProfilesOutput`](crate::operation::list_launch_profiles::ListLaunchProfilesOutput).
     pub fn build(self) -> crate::operation::list_launch_profiles::ListLaunchProfilesOutput {
         crate::operation::list_launch_profiles::ListLaunchProfilesOutput {
-            launch_profiles: self.launch_profiles
-            ,
-            next_token: self.next_token
-            ,
+            launch_profiles: self.launch_profiles,
+            next_token: self.next_token,
             _request_id: self._request_id,
         }
     }
 }
-

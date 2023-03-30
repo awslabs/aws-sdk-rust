@@ -3,7 +3,7 @@
 /// <p>Configuration settings for a remote access session, including billing method.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateRemoteAccessSessionConfiguration  {
+pub struct CreateRemoteAccessSessionConfiguration {
     /// <p>The billing method for the remote access session.</p>
     #[doc(hidden)]
     pub billing_method: std::option::Option<crate::types::BillingMethod>,
@@ -13,11 +13,11 @@ pub struct CreateRemoteAccessSessionConfiguration  {
 }
 impl CreateRemoteAccessSessionConfiguration {
     /// <p>The billing method for the remote access session.</p>
-    pub fn billing_method(&self) -> std::option::Option<& crate::types::BillingMethod> {
+    pub fn billing_method(&self) -> std::option::Option<&crate::types::BillingMethod> {
         self.billing_method.as_ref()
     }
     /// <p>An array of ARNs included in the VPC endpoint configuration.</p>
-    pub fn vpce_configuration_arns(&self) -> std::option::Option<& [std::string::String]> {
+    pub fn vpce_configuration_arns(&self) -> std::option::Option<&[std::string::String]> {
         self.vpce_configuration_arns.as_deref()
     }
 }
@@ -42,8 +42,12 @@ impl CreateRemoteAccessSessionConfigurationBuilder {
         self
     }
     /// <p>The billing method for the remote access session.</p>
-    pub fn set_billing_method(mut self, input: std::option::Option<crate::types::BillingMethod>) -> Self {
-        self.billing_method = input; self
+    pub fn set_billing_method(
+        mut self,
+        input: std::option::Option<crate::types::BillingMethod>,
+    ) -> Self {
+        self.billing_method = input;
+        self
     }
     /// Appends an item to `vpce_configuration_arns`.
     ///
@@ -52,22 +56,23 @@ impl CreateRemoteAccessSessionConfigurationBuilder {
     /// <p>An array of ARNs included in the VPC endpoint configuration.</p>
     pub fn vpce_configuration_arns(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.vpce_configuration_arns.unwrap_or_default();
-                        v.push(input.into());
-                        self.vpce_configuration_arns = Some(v);
-                        self
+        v.push(input.into());
+        self.vpce_configuration_arns = Some(v);
+        self
     }
     /// <p>An array of ARNs included in the VPC endpoint configuration.</p>
-    pub fn set_vpce_configuration_arns(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-        self.vpce_configuration_arns = input; self
+    pub fn set_vpce_configuration_arns(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
+        self.vpce_configuration_arns = input;
+        self
     }
     /// Consumes the builder and constructs a [`CreateRemoteAccessSessionConfiguration`](crate::types::CreateRemoteAccessSessionConfiguration).
     pub fn build(self) -> crate::types::CreateRemoteAccessSessionConfiguration {
         crate::types::CreateRemoteAccessSessionConfiguration {
-            billing_method: self.billing_method
-            ,
-            vpce_configuration_arns: self.vpce_configuration_arns
-            ,
+            billing_method: self.billing_method,
+            vpce_configuration_arns: self.vpce_configuration_arns,
         }
     }
 }
-

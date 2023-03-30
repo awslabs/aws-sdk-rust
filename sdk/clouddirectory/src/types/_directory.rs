@@ -3,7 +3,7 @@
 /// <p>Directory structure that includes the directory name and directory ARN.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Directory  {
+pub struct Directory {
     /// <p>The name of the directory.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -19,19 +19,19 @@ pub struct Directory  {
 }
 impl Directory {
     /// <p>The name of the directory.</p>
-    pub fn name(&self) -> std::option::Option<& str> {
+    pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) that is associated with the directory. For more information, see <code>arns</code>.</p>
-    pub fn directory_arn(&self) -> std::option::Option<& str> {
+    pub fn directory_arn(&self) -> std::option::Option<&str> {
         self.directory_arn.as_deref()
     }
     /// <p>The state of the directory. Can be either <code>Enabled</code>, <code>Disabled</code>, or <code>Deleted</code>.</p>
-    pub fn state(&self) -> std::option::Option<& crate::types::DirectoryState> {
+    pub fn state(&self) -> std::option::Option<&crate::types::DirectoryState> {
         self.state.as_ref()
     }
     /// <p>The date and time when the directory was created.</p>
-    pub fn creation_date_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
+    pub fn creation_date_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.creation_date_time.as_ref()
     }
 }
@@ -59,7 +59,8 @@ impl DirectoryBuilder {
     }
     /// <p>The name of the directory.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input; self
+        self.name = input;
+        self
     }
     /// <p>The Amazon Resource Name (ARN) that is associated with the directory. For more information, see <code>arns</code>.</p>
     pub fn directory_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -68,7 +69,8 @@ impl DirectoryBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) that is associated with the directory. For more information, see <code>arns</code>.</p>
     pub fn set_directory_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.directory_arn = input; self
+        self.directory_arn = input;
+        self
     }
     /// <p>The state of the directory. Can be either <code>Enabled</code>, <code>Disabled</code>, or <code>Deleted</code>.</p>
     pub fn state(mut self, input: crate::types::DirectoryState) -> Self {
@@ -77,7 +79,8 @@ impl DirectoryBuilder {
     }
     /// <p>The state of the directory. Can be either <code>Enabled</code>, <code>Disabled</code>, or <code>Deleted</code>.</p>
     pub fn set_state(mut self, input: std::option::Option<crate::types::DirectoryState>) -> Self {
-        self.state = input; self
+        self.state = input;
+        self
     }
     /// <p>The date and time when the directory was created.</p>
     pub fn creation_date_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -85,21 +88,20 @@ impl DirectoryBuilder {
         self
     }
     /// <p>The date and time when the directory was created.</p>
-    pub fn set_creation_date_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.creation_date_time = input; self
+    pub fn set_creation_date_time(
+        mut self,
+        input: std::option::Option<aws_smithy_types::DateTime>,
+    ) -> Self {
+        self.creation_date_time = input;
+        self
     }
     /// Consumes the builder and constructs a [`Directory`](crate::types::Directory).
     pub fn build(self) -> crate::types::Directory {
         crate::types::Directory {
-            name: self.name
-            ,
-            directory_arn: self.directory_arn
-            ,
-            state: self.state
-            ,
-            creation_date_time: self.creation_date_time
-            ,
+            name: self.name,
+            directory_arn: self.directory_arn,
+            state: self.state,
+            creation_date_time: self.creation_date_time,
         }
     }
 }
-

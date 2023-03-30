@@ -3,7 +3,7 @@
 /// <p>The parameters for using a self-managed Apache Kafka stream as a source.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct PipeSourceSelfManagedKafkaParameters  {
+pub struct PipeSourceSelfManagedKafkaParameters {
     /// <p>The name of the topic that the pipe will read from.</p>
     #[doc(hidden)]
     pub topic_name: std::option::Option<std::string::String>,
@@ -24,7 +24,8 @@ pub struct PipeSourceSelfManagedKafkaParameters  {
     pub consumer_group_id: std::option::Option<std::string::String>,
     /// <p>The credentials needed to access the resource.</p>
     #[doc(hidden)]
-    pub credentials: std::option::Option<crate::types::SelfManagedKafkaAccessConfigurationCredentials>,
+    pub credentials:
+        std::option::Option<crate::types::SelfManagedKafkaAccessConfigurationCredentials>,
     /// <p>The ARN of the Secrets Manager secret used for certification.</p>
     #[doc(hidden)]
     pub server_root_ca_certificate: std::option::Option<std::string::String>,
@@ -34,15 +35,17 @@ pub struct PipeSourceSelfManagedKafkaParameters  {
 }
 impl PipeSourceSelfManagedKafkaParameters {
     /// <p>The name of the topic that the pipe will read from.</p>
-    pub fn topic_name(&self) -> std::option::Option<& str> {
+    pub fn topic_name(&self) -> std::option::Option<&str> {
         self.topic_name.as_deref()
     }
     /// <p>(Streams only) The position in a stream from which to start reading.</p>
-    pub fn starting_position(&self) -> std::option::Option<& crate::types::SelfManagedKafkaStartPosition> {
+    pub fn starting_position(
+        &self,
+    ) -> std::option::Option<&crate::types::SelfManagedKafkaStartPosition> {
         self.starting_position.as_ref()
     }
     /// <p>An array of server URLs.</p>
-    pub fn additional_bootstrap_servers(&self) -> std::option::Option<& [std::string::String]> {
+    pub fn additional_bootstrap_servers(&self) -> std::option::Option<&[std::string::String]> {
         self.additional_bootstrap_servers.as_deref()
     }
     /// <p>The maximum number of records to include in each batch.</p>
@@ -54,33 +57,46 @@ impl PipeSourceSelfManagedKafkaParameters {
         self.maximum_batching_window_in_seconds
     }
     /// <p>The name of the destination queue to consume.</p>
-    pub fn consumer_group_id(&self) -> std::option::Option<& str> {
+    pub fn consumer_group_id(&self) -> std::option::Option<&str> {
         self.consumer_group_id.as_deref()
     }
     /// <p>The credentials needed to access the resource.</p>
-    pub fn credentials(&self) -> std::option::Option<& crate::types::SelfManagedKafkaAccessConfigurationCredentials> {
+    pub fn credentials(
+        &self,
+    ) -> std::option::Option<&crate::types::SelfManagedKafkaAccessConfigurationCredentials> {
         self.credentials.as_ref()
     }
     /// <p>The ARN of the Secrets Manager secret used for certification.</p>
-    pub fn server_root_ca_certificate(&self) -> std::option::Option<& str> {
+    pub fn server_root_ca_certificate(&self) -> std::option::Option<&str> {
         self.server_root_ca_certificate.as_deref()
     }
     /// <p>This structure specifies the VPC subnets and security groups for the stream, and whether a public IP address is to be used.</p>
-    pub fn vpc(&self) -> std::option::Option<& crate::types::SelfManagedKafkaAccessConfigurationVpc> {
+    pub fn vpc(
+        &self,
+    ) -> std::option::Option<&crate::types::SelfManagedKafkaAccessConfigurationVpc> {
         self.vpc.as_ref()
     }
 }
-impl  std::fmt::Debug for PipeSourceSelfManagedKafkaParameters  {
+impl std::fmt::Debug for PipeSourceSelfManagedKafkaParameters {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("PipeSourceSelfManagedKafkaParameters");
         formatter.field("topic_name", &"*** Sensitive Data Redacted ***");
         formatter.field("starting_position", &self.starting_position);
-        formatter.field("additional_bootstrap_servers", &self.additional_bootstrap_servers);
+        formatter.field(
+            "additional_bootstrap_servers",
+            &self.additional_bootstrap_servers,
+        );
         formatter.field("batch_size", &self.batch_size);
-        formatter.field("maximum_batching_window_in_seconds", &self.maximum_batching_window_in_seconds);
+        formatter.field(
+            "maximum_batching_window_in_seconds",
+            &self.maximum_batching_window_in_seconds,
+        );
         formatter.field("consumer_group_id", &"*** Sensitive Data Redacted ***");
         formatter.field("credentials", &self.credentials);
-        formatter.field("server_root_ca_certificate", &self.server_root_ca_certificate);
+        formatter.field(
+            "server_root_ca_certificate",
+            &self.server_root_ca_certificate,
+        );
         formatter.field("vpc", &self.vpc);
         formatter.finish()
     }
@@ -98,11 +114,13 @@ impl PipeSourceSelfManagedKafkaParameters {
 pub struct PipeSourceSelfManagedKafkaParametersBuilder {
     pub(crate) topic_name: std::option::Option<std::string::String>,
     pub(crate) starting_position: std::option::Option<crate::types::SelfManagedKafkaStartPosition>,
-    pub(crate) additional_bootstrap_servers: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub(crate) additional_bootstrap_servers:
+        std::option::Option<std::vec::Vec<std::string::String>>,
     pub(crate) batch_size: std::option::Option<i32>,
     pub(crate) maximum_batching_window_in_seconds: std::option::Option<i32>,
     pub(crate) consumer_group_id: std::option::Option<std::string::String>,
-    pub(crate) credentials: std::option::Option<crate::types::SelfManagedKafkaAccessConfigurationCredentials>,
+    pub(crate) credentials:
+        std::option::Option<crate::types::SelfManagedKafkaAccessConfigurationCredentials>,
     pub(crate) server_root_ca_certificate: std::option::Option<std::string::String>,
     pub(crate) vpc: std::option::Option<crate::types::SelfManagedKafkaAccessConfigurationVpc>,
 }
@@ -114,7 +132,8 @@ impl PipeSourceSelfManagedKafkaParametersBuilder {
     }
     /// <p>The name of the topic that the pipe will read from.</p>
     pub fn set_topic_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.topic_name = input; self
+        self.topic_name = input;
+        self
     }
     /// <p>(Streams only) The position in a stream from which to start reading.</p>
     pub fn starting_position(mut self, input: crate::types::SelfManagedKafkaStartPosition) -> Self {
@@ -122,8 +141,12 @@ impl PipeSourceSelfManagedKafkaParametersBuilder {
         self
     }
     /// <p>(Streams only) The position in a stream from which to start reading.</p>
-    pub fn set_starting_position(mut self, input: std::option::Option<crate::types::SelfManagedKafkaStartPosition>) -> Self {
-        self.starting_position = input; self
+    pub fn set_starting_position(
+        mut self,
+        input: std::option::Option<crate::types::SelfManagedKafkaStartPosition>,
+    ) -> Self {
+        self.starting_position = input;
+        self
     }
     /// Appends an item to `additional_bootstrap_servers`.
     ///
@@ -132,13 +155,17 @@ impl PipeSourceSelfManagedKafkaParametersBuilder {
     /// <p>An array of server URLs.</p>
     pub fn additional_bootstrap_servers(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.additional_bootstrap_servers.unwrap_or_default();
-                        v.push(input.into());
-                        self.additional_bootstrap_servers = Some(v);
-                        self
+        v.push(input.into());
+        self.additional_bootstrap_servers = Some(v);
+        self
     }
     /// <p>An array of server URLs.</p>
-    pub fn set_additional_bootstrap_servers(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-        self.additional_bootstrap_servers = input; self
+    pub fn set_additional_bootstrap_servers(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
+        self.additional_bootstrap_servers = input;
+        self
     }
     /// <p>The maximum number of records to include in each batch.</p>
     pub fn batch_size(mut self, input: i32) -> Self {
@@ -147,7 +174,8 @@ impl PipeSourceSelfManagedKafkaParametersBuilder {
     }
     /// <p>The maximum number of records to include in each batch.</p>
     pub fn set_batch_size(mut self, input: std::option::Option<i32>) -> Self {
-        self.batch_size = input; self
+        self.batch_size = input;
+        self
     }
     /// <p>The maximum length of a time to wait for events.</p>
     pub fn maximum_batching_window_in_seconds(mut self, input: i32) -> Self {
@@ -155,8 +183,12 @@ impl PipeSourceSelfManagedKafkaParametersBuilder {
         self
     }
     /// <p>The maximum length of a time to wait for events.</p>
-    pub fn set_maximum_batching_window_in_seconds(mut self, input: std::option::Option<i32>) -> Self {
-        self.maximum_batching_window_in_seconds = input; self
+    pub fn set_maximum_batching_window_in_seconds(
+        mut self,
+        input: std::option::Option<i32>,
+    ) -> Self {
+        self.maximum_batching_window_in_seconds = input;
+        self
     }
     /// <p>The name of the destination queue to consume.</p>
     pub fn consumer_group_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -164,17 +196,28 @@ impl PipeSourceSelfManagedKafkaParametersBuilder {
         self
     }
     /// <p>The name of the destination queue to consume.</p>
-    pub fn set_consumer_group_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.consumer_group_id = input; self
+    pub fn set_consumer_group_id(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.consumer_group_id = input;
+        self
     }
     /// <p>The credentials needed to access the resource.</p>
-    pub fn credentials(mut self, input: crate::types::SelfManagedKafkaAccessConfigurationCredentials) -> Self {
+    pub fn credentials(
+        mut self,
+        input: crate::types::SelfManagedKafkaAccessConfigurationCredentials,
+    ) -> Self {
         self.credentials = Some(input);
         self
     }
     /// <p>The credentials needed to access the resource.</p>
-    pub fn set_credentials(mut self, input: std::option::Option<crate::types::SelfManagedKafkaAccessConfigurationCredentials>) -> Self {
-        self.credentials = input; self
+    pub fn set_credentials(
+        mut self,
+        input: std::option::Option<crate::types::SelfManagedKafkaAccessConfigurationCredentials>,
+    ) -> Self {
+        self.credentials = input;
+        self
     }
     /// <p>The ARN of the Secrets Manager secret used for certification.</p>
     pub fn server_root_ca_certificate(mut self, input: impl Into<std::string::String>) -> Self {
@@ -182,8 +225,12 @@ impl PipeSourceSelfManagedKafkaParametersBuilder {
         self
     }
     /// <p>The ARN of the Secrets Manager secret used for certification.</p>
-    pub fn set_server_root_ca_certificate(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.server_root_ca_certificate = input; self
+    pub fn set_server_root_ca_certificate(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.server_root_ca_certificate = input;
+        self
     }
     /// <p>This structure specifies the VPC subnets and security groups for the stream, and whether a public IP address is to be used.</p>
     pub fn vpc(mut self, input: crate::types::SelfManagedKafkaAccessConfigurationVpc) -> Self {
@@ -191,30 +238,25 @@ impl PipeSourceSelfManagedKafkaParametersBuilder {
         self
     }
     /// <p>This structure specifies the VPC subnets and security groups for the stream, and whether a public IP address is to be used.</p>
-    pub fn set_vpc(mut self, input: std::option::Option<crate::types::SelfManagedKafkaAccessConfigurationVpc>) -> Self {
-        self.vpc = input; self
+    pub fn set_vpc(
+        mut self,
+        input: std::option::Option<crate::types::SelfManagedKafkaAccessConfigurationVpc>,
+    ) -> Self {
+        self.vpc = input;
+        self
     }
     /// Consumes the builder and constructs a [`PipeSourceSelfManagedKafkaParameters`](crate::types::PipeSourceSelfManagedKafkaParameters).
     pub fn build(self) -> crate::types::PipeSourceSelfManagedKafkaParameters {
         crate::types::PipeSourceSelfManagedKafkaParameters {
-            topic_name: self.topic_name
-            ,
-            starting_position: self.starting_position
-            ,
-            additional_bootstrap_servers: self.additional_bootstrap_servers
-            ,
-            batch_size: self.batch_size
-            ,
-            maximum_batching_window_in_seconds: self.maximum_batching_window_in_seconds
-            ,
-            consumer_group_id: self.consumer_group_id
-            ,
-            credentials: self.credentials
-            ,
-            server_root_ca_certificate: self.server_root_ca_certificate
-            ,
-            vpc: self.vpc
-            ,
+            topic_name: self.topic_name,
+            starting_position: self.starting_position,
+            additional_bootstrap_servers: self.additional_bootstrap_servers,
+            batch_size: self.batch_size,
+            maximum_batching_window_in_seconds: self.maximum_batching_window_in_seconds,
+            consumer_group_id: self.consumer_group_id,
+            credentials: self.credentials,
+            server_root_ca_certificate: self.server_root_ca_certificate,
+            vpc: self.vpc,
         }
     }
 }
@@ -223,14 +265,22 @@ impl std::fmt::Debug for PipeSourceSelfManagedKafkaParametersBuilder {
         let mut formatter = f.debug_struct("PipeSourceSelfManagedKafkaParametersBuilder");
         formatter.field("topic_name", &"*** Sensitive Data Redacted ***");
         formatter.field("starting_position", &self.starting_position);
-        formatter.field("additional_bootstrap_servers", &self.additional_bootstrap_servers);
+        formatter.field(
+            "additional_bootstrap_servers",
+            &self.additional_bootstrap_servers,
+        );
         formatter.field("batch_size", &self.batch_size);
-        formatter.field("maximum_batching_window_in_seconds", &self.maximum_batching_window_in_seconds);
+        formatter.field(
+            "maximum_batching_window_in_seconds",
+            &self.maximum_batching_window_in_seconds,
+        );
         formatter.field("consumer_group_id", &"*** Sensitive Data Redacted ***");
         formatter.field("credentials", &self.credentials);
-        formatter.field("server_root_ca_certificate", &self.server_root_ca_certificate);
+        formatter.field(
+            "server_root_ca_certificate",
+            &self.server_root_ca_certificate,
+        );
         formatter.field("vpc", &self.vpc);
         formatter.finish()
     }
 }
-

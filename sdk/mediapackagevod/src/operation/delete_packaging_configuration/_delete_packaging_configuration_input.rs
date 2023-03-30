@@ -2,20 +2,20 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeletePackagingConfigurationInput  {
+pub struct DeletePackagingConfigurationInput {
     /// The ID of the MediaPackage VOD PackagingConfiguration resource to delete.
     #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
 }
 impl DeletePackagingConfigurationInput {
     /// The ID of the MediaPackage VOD PackagingConfiguration resource to delete.
-    pub fn id(&self) -> std::option::Option<& str> {
+    pub fn id(&self) -> std::option::Option<&str> {
         self.id.as_deref()
     }
 }
 impl DeletePackagingConfigurationInput {
     /// Creates a new builder-style object to manufacture [`DeletePackagingConfigurationInput`](crate::operation::delete_packaging_configuration::DeletePackagingConfigurationInput).
-    pub fn builder() -> crate::operation::delete_packaging_configuration::builders::DeletePackagingConfigurationInputBuilder {
+    pub fn builder() -> crate::operation::delete_packaging_configuration::builders::DeletePackagingConfigurationInputBuilder{
         crate::operation::delete_packaging_configuration::builders::DeletePackagingConfigurationInputBuilder::default()
     }
 }
@@ -34,16 +34,20 @@ impl DeletePackagingConfigurationInputBuilder {
     }
     /// The ID of the MediaPackage VOD PackagingConfiguration resource to delete.
     pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.id = input; self
+        self.id = input;
+        self
     }
     /// Consumes the builder and constructs a [`DeletePackagingConfigurationInput`](crate::operation::delete_packaging_configuration::DeletePackagingConfigurationInput).
-    pub fn build(self) -> Result<crate::operation::delete_packaging_configuration::DeletePackagingConfigurationInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::delete_packaging_configuration::DeletePackagingConfigurationInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::delete_packaging_configuration::DeletePackagingConfigurationInput {
-                id: self.id
-                ,
-            }
+                id: self.id,
+            },
         )
     }
 }
-

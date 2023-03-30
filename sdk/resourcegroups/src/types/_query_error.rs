@@ -3,7 +3,7 @@
 /// <p>A two-part error structure that can occur in <code>ListGroupResources</code> or <code>SearchResources</code> operations on CloudFront stack-based queries. The error occurs if the CloudFront stack on which the query is based either does not exist, or has a status that renders the stack inactive. A <code>QueryError</code> occurrence does not necessarily mean that Resource Groups could not complete the operation, but the resulting group might have no member resources.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct QueryError  {
+pub struct QueryError {
     /// <p>Specifies the error code that was raised.</p>
     #[doc(hidden)]
     pub error_code: std::option::Option<crate::types::QueryErrorCode>,
@@ -13,11 +13,11 @@ pub struct QueryError  {
 }
 impl QueryError {
     /// <p>Specifies the error code that was raised.</p>
-    pub fn error_code(&self) -> std::option::Option<& crate::types::QueryErrorCode> {
+    pub fn error_code(&self) -> std::option::Option<&crate::types::QueryErrorCode> {
         self.error_code.as_ref()
     }
     /// <p>A message that explains the <code>ErrorCode</code> value. Messages might state that the specified CloudFront stack does not exist (or no longer exists). For <code>CLOUDFORMATION_STACK_INACTIVE</code>, the message typically states that the CloudFront stack has a status that is not (or no longer) active, such as <code>CREATE_FAILED</code>.</p>
-    pub fn message(&self) -> std::option::Option<& str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -42,8 +42,12 @@ impl QueryErrorBuilder {
         self
     }
     /// <p>Specifies the error code that was raised.</p>
-    pub fn set_error_code(mut self, input: std::option::Option<crate::types::QueryErrorCode>) -> Self {
-        self.error_code = input; self
+    pub fn set_error_code(
+        mut self,
+        input: std::option::Option<crate::types::QueryErrorCode>,
+    ) -> Self {
+        self.error_code = input;
+        self
     }
     /// <p>A message that explains the <code>ErrorCode</code> value. Messages might state that the specified CloudFront stack does not exist (or no longer exists). For <code>CLOUDFORMATION_STACK_INACTIVE</code>, the message typically states that the CloudFront stack has a status that is not (or no longer) active, such as <code>CREATE_FAILED</code>.</p>
     pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
@@ -52,16 +56,14 @@ impl QueryErrorBuilder {
     }
     /// <p>A message that explains the <code>ErrorCode</code> value. Messages might state that the specified CloudFront stack does not exist (or no longer exists). For <code>CLOUDFORMATION_STACK_INACTIVE</code>, the message typically states that the CloudFront stack has a status that is not (or no longer) active, such as <code>CREATE_FAILED</code>.</p>
     pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.message = input; self
+        self.message = input;
+        self
     }
     /// Consumes the builder and constructs a [`QueryError`](crate::types::QueryError).
     pub fn build(self) -> crate::types::QueryError {
         crate::types::QueryError {
-            error_code: self.error_code
-            ,
-            message: self.message
-            ,
+            error_code: self.error_code,
+            message: self.message,
         }
     }
 }
-

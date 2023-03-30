@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PutRuleOutput  {
+pub struct PutRuleOutput {
     /// <p>The Amazon Resource Name (ARN) of the rule.</p>
     #[doc(hidden)]
     pub rule_arn: std::option::Option<std::string::String>,
@@ -10,15 +10,15 @@ pub struct PutRuleOutput  {
 }
 impl PutRuleOutput {
     /// <p>The Amazon Resource Name (ARN) of the rule.</p>
-    pub fn rule_arn(&self) -> std::option::Option<& str> {
+    pub fn rule_arn(&self) -> std::option::Option<&str> {
         self.rule_arn.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for PutRuleOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl PutRuleOutput {
     /// Creates a new builder-style object to manufacture [`PutRuleOutput`](crate::operation::put_rule::PutRuleOutput).
     pub fn builder() -> crate::operation::put_rule::builders::PutRuleOutputBuilder {
@@ -41,24 +41,23 @@ impl PutRuleOutputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the rule.</p>
     pub fn set_rule_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.rule_arn = input; self
+        self.rule_arn = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`PutRuleOutput`](crate::operation::put_rule::PutRuleOutput).
     pub fn build(self) -> crate::operation::put_rule::PutRuleOutput {
         crate::operation::put_rule::PutRuleOutput {
-            rule_arn: self.rule_arn
-            ,
+            rule_arn: self.rule_arn,
             _request_id: self._request_id,
         }
     }
 }
-

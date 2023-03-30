@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetProxySessionOutput  {
+pub struct GetProxySessionOutput {
     /// <p>The proxy session details.</p>
     #[doc(hidden)]
     pub proxy_session: std::option::Option<crate::types::ProxySession>,
@@ -10,18 +10,19 @@ pub struct GetProxySessionOutput  {
 }
 impl GetProxySessionOutput {
     /// <p>The proxy session details.</p>
-    pub fn proxy_session(&self) -> std::option::Option<& crate::types::ProxySession> {
+    pub fn proxy_session(&self) -> std::option::Option<&crate::types::ProxySession> {
         self.proxy_session.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for GetProxySessionOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl GetProxySessionOutput {
     /// Creates a new builder-style object to manufacture [`GetProxySessionOutput`](crate::operation::get_proxy_session::GetProxySessionOutput).
-    pub fn builder() -> crate::operation::get_proxy_session::builders::GetProxySessionOutputBuilder {
+    pub fn builder() -> crate::operation::get_proxy_session::builders::GetProxySessionOutputBuilder
+    {
         crate::operation::get_proxy_session::builders::GetProxySessionOutputBuilder::default()
     }
 }
@@ -40,25 +41,27 @@ impl GetProxySessionOutputBuilder {
         self
     }
     /// <p>The proxy session details.</p>
-    pub fn set_proxy_session(mut self, input: std::option::Option<crate::types::ProxySession>) -> Self {
-        self.proxy_session = input; self
+    pub fn set_proxy_session(
+        mut self,
+        input: std::option::Option<crate::types::ProxySession>,
+    ) -> Self {
+        self.proxy_session = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`GetProxySessionOutput`](crate::operation::get_proxy_session::GetProxySessionOutput).
     pub fn build(self) -> crate::operation::get_proxy_session::GetProxySessionOutput {
         crate::operation::get_proxy_session::GetProxySessionOutput {
-            proxy_session: self.proxy_session
-            ,
+            proxy_session: self.proxy_session,
             _request_id: self._request_id,
         }
     }
 }
-

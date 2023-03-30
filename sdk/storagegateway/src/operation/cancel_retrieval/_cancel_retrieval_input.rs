@@ -3,7 +3,7 @@
 /// <p>CancelRetrievalInput</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CancelRetrievalInput  {
+pub struct CancelRetrievalInput {
     /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
     #[doc(hidden)]
     pub gateway_arn: std::option::Option<std::string::String>,
@@ -13,11 +13,11 @@ pub struct CancelRetrievalInput  {
 }
 impl CancelRetrievalInput {
     /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
-    pub fn gateway_arn(&self) -> std::option::Option<& str> {
+    pub fn gateway_arn(&self) -> std::option::Option<&str> {
         self.gateway_arn.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the virtual tape you want to cancel retrieval for.</p>
-    pub fn tape_arn(&self) -> std::option::Option<& str> {
+    pub fn tape_arn(&self) -> std::option::Option<&str> {
         self.tape_arn.as_deref()
     }
 }
@@ -43,7 +43,8 @@ impl CancelRetrievalInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
     pub fn set_gateway_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.gateway_arn = input; self
+        self.gateway_arn = input;
+        self
     }
     /// <p>The Amazon Resource Name (ARN) of the virtual tape you want to cancel retrieval for.</p>
     pub fn tape_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -52,18 +53,19 @@ impl CancelRetrievalInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the virtual tape you want to cancel retrieval for.</p>
     pub fn set_tape_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.tape_arn = input; self
+        self.tape_arn = input;
+        self
     }
     /// Consumes the builder and constructs a [`CancelRetrievalInput`](crate::operation::cancel_retrieval::CancelRetrievalInput).
-    pub fn build(self) -> Result<crate::operation::cancel_retrieval::CancelRetrievalInput, aws_smithy_http::operation::error::BuildError> {
-        Ok(
-            crate::operation::cancel_retrieval::CancelRetrievalInput {
-                gateway_arn: self.gateway_arn
-                ,
-                tape_arn: self.tape_arn
-                ,
-            }
-        )
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::cancel_retrieval::CancelRetrievalInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        Ok(crate::operation::cancel_retrieval::CancelRetrievalInput {
+            gateway_arn: self.gateway_arn,
+            tape_arn: self.tape_arn,
+        })
     }
 }
-

@@ -129,4 +129,3 @@ pub mod update_folder;
 
 /// Types for the `UpdateUser` operation.
 pub mod update_user;
-

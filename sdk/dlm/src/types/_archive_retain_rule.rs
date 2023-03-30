@@ -3,14 +3,16 @@
 /// <p> <b>[Snapshot policies only]</b> Specifies information about the archive storage tier retention period.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ArchiveRetainRule  {
+pub struct ArchiveRetainRule {
     /// <p>Information about retention period in the Amazon EBS Snapshots Archive. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/snapshot-archive.html">Archive Amazon EBS snapshots</a>.</p>
     #[doc(hidden)]
     pub retention_archive_tier: std::option::Option<crate::types::RetentionArchiveTier>,
 }
 impl ArchiveRetainRule {
     /// <p>Information about retention period in the Amazon EBS Snapshots Archive. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/snapshot-archive.html">Archive Amazon EBS snapshots</a>.</p>
-    pub fn retention_archive_tier(&self) -> std::option::Option<& crate::types::RetentionArchiveTier> {
+    pub fn retention_archive_tier(
+        &self,
+    ) -> std::option::Option<&crate::types::RetentionArchiveTier> {
         self.retention_archive_tier.as_ref()
     }
 }
@@ -34,15 +36,17 @@ impl ArchiveRetainRuleBuilder {
         self
     }
     /// <p>Information about retention period in the Amazon EBS Snapshots Archive. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/snapshot-archive.html">Archive Amazon EBS snapshots</a>.</p>
-    pub fn set_retention_archive_tier(mut self, input: std::option::Option<crate::types::RetentionArchiveTier>) -> Self {
-        self.retention_archive_tier = input; self
+    pub fn set_retention_archive_tier(
+        mut self,
+        input: std::option::Option<crate::types::RetentionArchiveTier>,
+    ) -> Self {
+        self.retention_archive_tier = input;
+        self
     }
     /// Consumes the builder and constructs a [`ArchiveRetainRule`](crate::types::ArchiveRetainRule).
     pub fn build(self) -> crate::types::ArchiveRetainRule {
         crate::types::ArchiveRetainRule {
-            retention_archive_tier: self.retention_archive_tier
-            ,
+            retention_archive_tier: self.retention_archive_tier,
         }
     }
 }
-

@@ -2,10 +2,11 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListRecommendationsOutput  {
+pub struct ListRecommendationsOutput {
     /// <p>List of recommendations for the requested code review.</p>
     #[doc(hidden)]
-    pub recommendation_summaries: std::option::Option<std::vec::Vec<crate::types::RecommendationSummary>>,
+    pub recommendation_summaries:
+        std::option::Option<std::vec::Vec<crate::types::RecommendationSummary>>,
     /// <p>Pagination token.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
@@ -13,23 +14,27 @@ pub struct ListRecommendationsOutput  {
 }
 impl ListRecommendationsOutput {
     /// <p>List of recommendations for the requested code review.</p>
-    pub fn recommendation_summaries(&self) -> std::option::Option<& [crate::types::RecommendationSummary]> {
+    pub fn recommendation_summaries(
+        &self,
+    ) -> std::option::Option<&[crate::types::RecommendationSummary]> {
         self.recommendation_summaries.as_deref()
     }
     /// <p>Pagination token.</p>
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for ListRecommendationsOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl ListRecommendationsOutput {
     /// Creates a new builder-style object to manufacture [`ListRecommendationsOutput`](crate::operation::list_recommendations::ListRecommendationsOutput).
-    pub fn builder() -> crate::operation::list_recommendations::builders::ListRecommendationsOutputBuilder {
-        crate::operation::list_recommendations::builders::ListRecommendationsOutputBuilder::default()
+    pub fn builder(
+    ) -> crate::operation::list_recommendations::builders::ListRecommendationsOutputBuilder {
+        crate::operation::list_recommendations::builders::ListRecommendationsOutputBuilder::default(
+        )
     }
 }
 
@@ -37,7 +42,8 @@ impl ListRecommendationsOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct ListRecommendationsOutputBuilder {
-    pub(crate) recommendation_summaries: std::option::Option<std::vec::Vec<crate::types::RecommendationSummary>>,
+    pub(crate) recommendation_summaries:
+        std::option::Option<std::vec::Vec<crate::types::RecommendationSummary>>,
     pub(crate) next_token: std::option::Option<std::string::String>,
     _request_id: Option<String>,
 }
@@ -49,13 +55,17 @@ impl ListRecommendationsOutputBuilder {
     /// <p>List of recommendations for the requested code review.</p>
     pub fn recommendation_summaries(mut self, input: crate::types::RecommendationSummary) -> Self {
         let mut v = self.recommendation_summaries.unwrap_or_default();
-                        v.push(input);
-                        self.recommendation_summaries = Some(v);
-                        self
+        v.push(input);
+        self.recommendation_summaries = Some(v);
+        self
     }
     /// <p>List of recommendations for the requested code review.</p>
-    pub fn set_recommendation_summaries(mut self, input: std::option::Option<std::vec::Vec<crate::types::RecommendationSummary>>) -> Self {
-        self.recommendation_summaries = input; self
+    pub fn set_recommendation_summaries(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::RecommendationSummary>>,
+    ) -> Self {
+        self.recommendation_summaries = input;
+        self
     }
     /// <p>Pagination token.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -64,26 +74,24 @@ impl ListRecommendationsOutputBuilder {
     }
     /// <p>Pagination token.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input; self
+        self.next_token = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`ListRecommendationsOutput`](crate::operation::list_recommendations::ListRecommendationsOutput).
     pub fn build(self) -> crate::operation::list_recommendations::ListRecommendationsOutput {
         crate::operation::list_recommendations::ListRecommendationsOutput {
-            recommendation_summaries: self.recommendation_summaries
-            ,
-            next_token: self.next_token
-            ,
+            recommendation_summaries: self.recommendation_summaries,
+            next_token: self.next_token,
             _request_id: self._request_id,
         }
     }
 }
-

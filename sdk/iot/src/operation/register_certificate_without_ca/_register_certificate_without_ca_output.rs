@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct RegisterCertificateWithoutCaOutput  {
+pub struct RegisterCertificateWithoutCaOutput {
     /// <p>The Amazon Resource Name (ARN) of the registered certificate.</p>
     #[doc(hidden)]
     pub certificate_arn: std::option::Option<std::string::String>,
@@ -13,22 +13,22 @@ pub struct RegisterCertificateWithoutCaOutput  {
 }
 impl RegisterCertificateWithoutCaOutput {
     /// <p>The Amazon Resource Name (ARN) of the registered certificate.</p>
-    pub fn certificate_arn(&self) -> std::option::Option<& str> {
+    pub fn certificate_arn(&self) -> std::option::Option<&str> {
         self.certificate_arn.as_deref()
     }
     /// <p>The ID of the registered certificate. (The last part of the certificate ARN contains the certificate ID.</p>
-    pub fn certificate_id(&self) -> std::option::Option<& str> {
+    pub fn certificate_id(&self) -> std::option::Option<&str> {
         self.certificate_id.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for RegisterCertificateWithoutCaOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl RegisterCertificateWithoutCaOutput {
     /// Creates a new builder-style object to manufacture [`RegisterCertificateWithoutCaOutput`](crate::operation::register_certificate_without_ca::RegisterCertificateWithoutCaOutput).
-    pub fn builder() -> crate::operation::register_certificate_without_ca::builders::RegisterCertificateWithoutCaOutputBuilder {
+    pub fn builder() -> crate::operation::register_certificate_without_ca::builders::RegisterCertificateWithoutCaOutputBuilder{
         crate::operation::register_certificate_without_ca::builders::RegisterCertificateWithoutCaOutputBuilder::default()
     }
 }
@@ -49,7 +49,8 @@ impl RegisterCertificateWithoutCaOutputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the registered certificate.</p>
     pub fn set_certificate_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.certificate_arn = input; self
+        self.certificate_arn = input;
+        self
     }
     /// <p>The ID of the registered certificate. (The last part of the certificate ARN contains the certificate ID.</p>
     pub fn certificate_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -58,26 +59,26 @@ impl RegisterCertificateWithoutCaOutputBuilder {
     }
     /// <p>The ID of the registered certificate. (The last part of the certificate ARN contains the certificate ID.</p>
     pub fn set_certificate_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.certificate_id = input; self
+        self.certificate_id = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`RegisterCertificateWithoutCaOutput`](crate::operation::register_certificate_without_ca::RegisterCertificateWithoutCaOutput).
-    pub fn build(self) -> crate::operation::register_certificate_without_ca::RegisterCertificateWithoutCaOutput {
+    pub fn build(
+        self,
+    ) -> crate::operation::register_certificate_without_ca::RegisterCertificateWithoutCaOutput {
         crate::operation::register_certificate_without_ca::RegisterCertificateWithoutCaOutput {
-            certificate_arn: self.certificate_arn
-            ,
-            certificate_id: self.certificate_id
-            ,
+            certificate_arn: self.certificate_arn,
+            certificate_id: self.certificate_id,
             _request_id: self._request_id,
         }
     }
 }
-

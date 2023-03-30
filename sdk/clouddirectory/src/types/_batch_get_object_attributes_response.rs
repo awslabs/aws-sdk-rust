@@ -3,14 +3,14 @@
 /// <p>Represents the output of a <code>GetObjectAttributes</code> response operation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct BatchGetObjectAttributesResponse  {
+pub struct BatchGetObjectAttributesResponse {
     /// <p>The attribute values that are associated with an object.</p>
     #[doc(hidden)]
     pub attributes: std::option::Option<std::vec::Vec<crate::types::AttributeKeyAndValue>>,
 }
 impl BatchGetObjectAttributesResponse {
     /// <p>The attribute values that are associated with an object.</p>
-    pub fn attributes(&self) -> std::option::Option<& [crate::types::AttributeKeyAndValue]> {
+    pub fn attributes(&self) -> std::option::Option<&[crate::types::AttributeKeyAndValue]> {
         self.attributes.as_deref()
     }
 }
@@ -35,20 +35,22 @@ impl BatchGetObjectAttributesResponseBuilder {
     /// <p>The attribute values that are associated with an object.</p>
     pub fn attributes(mut self, input: crate::types::AttributeKeyAndValue) -> Self {
         let mut v = self.attributes.unwrap_or_default();
-                        v.push(input);
-                        self.attributes = Some(v);
-                        self
+        v.push(input);
+        self.attributes = Some(v);
+        self
     }
     /// <p>The attribute values that are associated with an object.</p>
-    pub fn set_attributes(mut self, input: std::option::Option<std::vec::Vec<crate::types::AttributeKeyAndValue>>) -> Self {
-        self.attributes = input; self
+    pub fn set_attributes(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::AttributeKeyAndValue>>,
+    ) -> Self {
+        self.attributes = input;
+        self
     }
     /// Consumes the builder and constructs a [`BatchGetObjectAttributesResponse`](crate::types::BatchGetObjectAttributesResponse).
     pub fn build(self) -> crate::types::BatchGetObjectAttributesResponse {
         crate::types::BatchGetObjectAttributesResponse {
-            attributes: self.attributes
-            ,
+            attributes: self.attributes,
         }
     }
 }
-

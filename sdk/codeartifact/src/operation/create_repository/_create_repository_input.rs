@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateRepositoryInput  {
+pub struct CreateRepositoryInput {
     /// <p> The name of the domain that contains the created repository. </p>
     #[doc(hidden)]
     pub domain: std::option::Option<std::string::String>,
@@ -24,33 +24,34 @@ pub struct CreateRepositoryInput  {
 }
 impl CreateRepositoryInput {
     /// <p> The name of the domain that contains the created repository. </p>
-    pub fn domain(&self) -> std::option::Option<& str> {
+    pub fn domain(&self) -> std::option::Option<&str> {
         self.domain.as_deref()
     }
     /// <p> The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. </p>
-    pub fn domain_owner(&self) -> std::option::Option<& str> {
+    pub fn domain_owner(&self) -> std::option::Option<&str> {
         self.domain_owner.as_deref()
     }
     /// <p> The name of the repository to create. </p>
-    pub fn repository(&self) -> std::option::Option<& str> {
+    pub fn repository(&self) -> std::option::Option<&str> {
         self.repository.as_deref()
     }
     /// <p> A description of the created repository. </p>
-    pub fn description(&self) -> std::option::Option<& str> {
+    pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
     /// <p> A list of upstream repositories to associate with the repository. The order of the upstream repositories in the list determines their priority order when CodeArtifact looks for a requested package version. For more information, see <a href="https://docs.aws.amazon.com/codeartifact/latest/ug/repos-upstream.html">Working with upstream repositories</a>. </p>
-    pub fn upstreams(&self) -> std::option::Option<& [crate::types::UpstreamRepository]> {
+    pub fn upstreams(&self) -> std::option::Option<&[crate::types::UpstreamRepository]> {
         self.upstreams.as_deref()
     }
     /// <p>One or more tag key-value pairs for the repository.</p>
-    pub fn tags(&self) -> std::option::Option<& [crate::types::Tag]> {
+    pub fn tags(&self) -> std::option::Option<&[crate::types::Tag]> {
         self.tags.as_deref()
     }
 }
 impl CreateRepositoryInput {
     /// Creates a new builder-style object to manufacture [`CreateRepositoryInput`](crate::operation::create_repository::CreateRepositoryInput).
-    pub fn builder() -> crate::operation::create_repository::builders::CreateRepositoryInputBuilder {
+    pub fn builder() -> crate::operation::create_repository::builders::CreateRepositoryInputBuilder
+    {
         crate::operation::create_repository::builders::CreateRepositoryInputBuilder::default()
     }
 }
@@ -74,7 +75,8 @@ impl CreateRepositoryInputBuilder {
     }
     /// <p> The name of the domain that contains the created repository. </p>
     pub fn set_domain(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.domain = input; self
+        self.domain = input;
+        self
     }
     /// <p> The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. </p>
     pub fn domain_owner(mut self, input: impl Into<std::string::String>) -> Self {
@@ -83,7 +85,8 @@ impl CreateRepositoryInputBuilder {
     }
     /// <p> The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. </p>
     pub fn set_domain_owner(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.domain_owner = input; self
+        self.domain_owner = input;
+        self
     }
     /// <p> The name of the repository to create. </p>
     pub fn repository(mut self, input: impl Into<std::string::String>) -> Self {
@@ -92,7 +95,8 @@ impl CreateRepositoryInputBuilder {
     }
     /// <p> The name of the repository to create. </p>
     pub fn set_repository(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.repository = input; self
+        self.repository = input;
+        self
     }
     /// <p> A description of the created repository. </p>
     pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -101,7 +105,8 @@ impl CreateRepositoryInputBuilder {
     }
     /// <p> A description of the created repository. </p>
     pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.description = input; self
+        self.description = input;
+        self
     }
     /// Appends an item to `upstreams`.
     ///
@@ -110,13 +115,17 @@ impl CreateRepositoryInputBuilder {
     /// <p> A list of upstream repositories to associate with the repository. The order of the upstream repositories in the list determines their priority order when CodeArtifact looks for a requested package version. For more information, see <a href="https://docs.aws.amazon.com/codeartifact/latest/ug/repos-upstream.html">Working with upstream repositories</a>. </p>
     pub fn upstreams(mut self, input: crate::types::UpstreamRepository) -> Self {
         let mut v = self.upstreams.unwrap_or_default();
-                        v.push(input);
-                        self.upstreams = Some(v);
-                        self
+        v.push(input);
+        self.upstreams = Some(v);
+        self
     }
     /// <p> A list of upstream repositories to associate with the repository. The order of the upstream repositories in the list determines their priority order when CodeArtifact looks for a requested package version. For more information, see <a href="https://docs.aws.amazon.com/codeartifact/latest/ug/repos-upstream.html">Working with upstream repositories</a>. </p>
-    pub fn set_upstreams(mut self, input: std::option::Option<std::vec::Vec<crate::types::UpstreamRepository>>) -> Self {
-        self.upstreams = input; self
+    pub fn set_upstreams(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::UpstreamRepository>>,
+    ) -> Self {
+        self.upstreams = input;
+        self
     }
     /// Appends an item to `tags`.
     ///
@@ -125,32 +134,32 @@ impl CreateRepositoryInputBuilder {
     /// <p>One or more tag key-value pairs for the repository.</p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
-                        v.push(input);
-                        self.tags = Some(v);
-                        self
+        v.push(input);
+        self.tags = Some(v);
+        self
     }
     /// <p>One or more tag key-value pairs for the repository.</p>
-    pub fn set_tags(mut self, input: std::option::Option<std::vec::Vec<crate::types::Tag>>) -> Self {
-        self.tags = input; self
+    pub fn set_tags(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::Tag>>,
+    ) -> Self {
+        self.tags = input;
+        self
     }
     /// Consumes the builder and constructs a [`CreateRepositoryInput`](crate::operation::create_repository::CreateRepositoryInput).
-    pub fn build(self) -> Result<crate::operation::create_repository::CreateRepositoryInput, aws_smithy_http::operation::error::BuildError> {
-        Ok(
-            crate::operation::create_repository::CreateRepositoryInput {
-                domain: self.domain
-                ,
-                domain_owner: self.domain_owner
-                ,
-                repository: self.repository
-                ,
-                description: self.description
-                ,
-                upstreams: self.upstreams
-                ,
-                tags: self.tags
-                ,
-            }
-        )
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::create_repository::CreateRepositoryInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        Ok(crate::operation::create_repository::CreateRepositoryInput {
+            domain: self.domain,
+            domain_owner: self.domain_owner,
+            repository: self.repository,
+            description: self.description,
+            upstreams: self.upstreams,
+            tags: self.tags,
+        })
     }
 }
-

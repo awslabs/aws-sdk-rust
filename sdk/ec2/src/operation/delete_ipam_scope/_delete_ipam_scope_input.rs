@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteIpamScopeInput  {
+pub struct DeleteIpamScopeInput {
     /// <p>A check for whether you have the required permissions for the action without actually making the request and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     #[doc(hidden)]
     pub dry_run: std::option::Option<bool>,
@@ -16,7 +16,7 @@ impl DeleteIpamScopeInput {
         self.dry_run
     }
     /// <p>The ID of the scope to delete.</p>
-    pub fn ipam_scope_id(&self) -> std::option::Option<& str> {
+    pub fn ipam_scope_id(&self) -> std::option::Option<&str> {
         self.ipam_scope_id.as_deref()
     }
 }
@@ -42,7 +42,8 @@ impl DeleteIpamScopeInputBuilder {
     }
     /// <p>A check for whether you have the required permissions for the action without actually making the request and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn set_dry_run(mut self, input: std::option::Option<bool>) -> Self {
-        self.dry_run = input; self
+        self.dry_run = input;
+        self
     }
     /// <p>The ID of the scope to delete.</p>
     pub fn ipam_scope_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -51,18 +52,19 @@ impl DeleteIpamScopeInputBuilder {
     }
     /// <p>The ID of the scope to delete.</p>
     pub fn set_ipam_scope_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.ipam_scope_id = input; self
+        self.ipam_scope_id = input;
+        self
     }
     /// Consumes the builder and constructs a [`DeleteIpamScopeInput`](crate::operation::delete_ipam_scope::DeleteIpamScopeInput).
-    pub fn build(self) -> Result<crate::operation::delete_ipam_scope::DeleteIpamScopeInput, aws_smithy_http::operation::error::BuildError> {
-        Ok(
-            crate::operation::delete_ipam_scope::DeleteIpamScopeInput {
-                dry_run: self.dry_run
-                ,
-                ipam_scope_id: self.ipam_scope_id
-                ,
-            }
-        )
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::delete_ipam_scope::DeleteIpamScopeInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        Ok(crate::operation::delete_ipam_scope::DeleteIpamScopeInput {
+            dry_run: self.dry_run,
+            ipam_scope_id: self.ipam_scope_id,
+        })
     }
 }
-

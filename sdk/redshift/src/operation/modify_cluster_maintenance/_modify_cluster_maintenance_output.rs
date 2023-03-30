@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ModifyClusterMaintenanceOutput  {
+pub struct ModifyClusterMaintenanceOutput {
     /// <p>Describes a cluster.</p>
     #[doc(hidden)]
     pub cluster: std::option::Option<crate::types::Cluster>,
@@ -10,18 +10,20 @@ pub struct ModifyClusterMaintenanceOutput  {
 }
 impl ModifyClusterMaintenanceOutput {
     /// <p>Describes a cluster.</p>
-    pub fn cluster(&self) -> std::option::Option<& crate::types::Cluster> {
+    pub fn cluster(&self) -> std::option::Option<&crate::types::Cluster> {
         self.cluster.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for ModifyClusterMaintenanceOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl ModifyClusterMaintenanceOutput {
     /// Creates a new builder-style object to manufacture [`ModifyClusterMaintenanceOutput`](crate::operation::modify_cluster_maintenance::ModifyClusterMaintenanceOutput).
-    pub fn builder() -> crate::operation::modify_cluster_maintenance::builders::ModifyClusterMaintenanceOutputBuilder {
+    pub fn builder(
+    ) -> crate::operation::modify_cluster_maintenance::builders::ModifyClusterMaintenanceOutputBuilder
+    {
         crate::operation::modify_cluster_maintenance::builders::ModifyClusterMaintenanceOutputBuilder::default()
     }
 }
@@ -41,24 +43,25 @@ impl ModifyClusterMaintenanceOutputBuilder {
     }
     /// <p>Describes a cluster.</p>
     pub fn set_cluster(mut self, input: std::option::Option<crate::types::Cluster>) -> Self {
-        self.cluster = input; self
+        self.cluster = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`ModifyClusterMaintenanceOutput`](crate::operation::modify_cluster_maintenance::ModifyClusterMaintenanceOutput).
-    pub fn build(self) -> crate::operation::modify_cluster_maintenance::ModifyClusterMaintenanceOutput {
+    pub fn build(
+        self,
+    ) -> crate::operation::modify_cluster_maintenance::ModifyClusterMaintenanceOutput {
         crate::operation::modify_cluster_maintenance::ModifyClusterMaintenanceOutput {
-            cluster: self.cluster
-            ,
+            cluster: self.cluster,
             _request_id: self._request_id,
         }
     }
 }
-

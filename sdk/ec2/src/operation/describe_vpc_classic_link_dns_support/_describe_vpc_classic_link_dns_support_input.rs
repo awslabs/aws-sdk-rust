@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeVpcClassicLinkDnsSupportInput  {
+pub struct DescribeVpcClassicLinkDnsSupportInput {
     /// <p>The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
     #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
@@ -19,17 +19,17 @@ impl DescribeVpcClassicLinkDnsSupportInput {
         self.max_results
     }
     /// <p>The token for the next page of results.</p>
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
     /// <p>One or more VPC IDs.</p>
-    pub fn vpc_ids(&self) -> std::option::Option<& [std::string::String]> {
+    pub fn vpc_ids(&self) -> std::option::Option<&[std::string::String]> {
         self.vpc_ids.as_deref()
     }
 }
 impl DescribeVpcClassicLinkDnsSupportInput {
     /// Creates a new builder-style object to manufacture [`DescribeVpcClassicLinkDnsSupportInput`](crate::operation::describe_vpc_classic_link_dns_support::DescribeVpcClassicLinkDnsSupportInput).
-    pub fn builder() -> crate::operation::describe_vpc_classic_link_dns_support::builders::DescribeVpcClassicLinkDnsSupportInputBuilder {
+    pub fn builder() -> crate::operation::describe_vpc_classic_link_dns_support::builders::DescribeVpcClassicLinkDnsSupportInputBuilder{
         crate::operation::describe_vpc_classic_link_dns_support::builders::DescribeVpcClassicLinkDnsSupportInputBuilder::default()
     }
 }
@@ -50,7 +50,8 @@ impl DescribeVpcClassicLinkDnsSupportInputBuilder {
     }
     /// <p>The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
     pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_results = input; self
+        self.max_results = input;
+        self
     }
     /// <p>The token for the next page of results.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -59,7 +60,8 @@ impl DescribeVpcClassicLinkDnsSupportInputBuilder {
     }
     /// <p>The token for the next page of results.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input; self
+        self.next_token = input;
+        self
     }
     /// Appends an item to `vpc_ids`.
     ///
@@ -68,16 +70,20 @@ impl DescribeVpcClassicLinkDnsSupportInputBuilder {
     /// <p>One or more VPC IDs.</p>
     pub fn vpc_ids(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.vpc_ids.unwrap_or_default();
-                        v.push(input.into());
-                        self.vpc_ids = Some(v);
-                        self
+        v.push(input.into());
+        self.vpc_ids = Some(v);
+        self
     }
     /// <p>One or more VPC IDs.</p>
-    pub fn set_vpc_ids(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-        self.vpc_ids = input; self
+    pub fn set_vpc_ids(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
+        self.vpc_ids = input;
+        self
     }
     /// Consumes the builder and constructs a [`DescribeVpcClassicLinkDnsSupportInput`](crate::operation::describe_vpc_classic_link_dns_support::DescribeVpcClassicLinkDnsSupportInput).
-    pub fn build(self) -> Result<crate::operation::describe_vpc_classic_link_dns_support::DescribeVpcClassicLinkDnsSupportInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> Result<crate::operation::describe_vpc_classic_link_dns_support::DescribeVpcClassicLinkDnsSupportInput, aws_smithy_http::operation::error::BuildError>{
         Ok(
             crate::operation::describe_vpc_classic_link_dns_support::DescribeVpcClassicLinkDnsSupportInput {
                 max_results: self.max_results
@@ -90,4 +96,3 @@ impl DescribeVpcClassicLinkDnsSupportInputBuilder {
         )
     }
 }
-

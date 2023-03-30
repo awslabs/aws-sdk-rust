@@ -90,4 +90,3 @@ pub mod update_ephemeris;
 
 /// Types for the `UpdateMissionProfile` operation.
 pub mod update_mission_profile;
-

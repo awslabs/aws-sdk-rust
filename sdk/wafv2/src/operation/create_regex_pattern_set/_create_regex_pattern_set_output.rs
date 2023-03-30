@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateRegexPatternSetOutput  {
+pub struct CreateRegexPatternSetOutput {
     /// <p>High-level information about a <code>RegexPatternSet</code>, returned by operations like create and list. This provides information like the ID, that you can use to retrieve and manage a <code>RegexPatternSet</code>, and the ARN, that you provide to the <code>RegexPatternSetReferenceStatement</code> to use the pattern set in a <code>Rule</code>.</p>
     #[doc(hidden)]
     pub summary: std::option::Option<crate::types::RegexPatternSetSummary>,
@@ -10,18 +10,20 @@ pub struct CreateRegexPatternSetOutput  {
 }
 impl CreateRegexPatternSetOutput {
     /// <p>High-level information about a <code>RegexPatternSet</code>, returned by operations like create and list. This provides information like the ID, that you can use to retrieve and manage a <code>RegexPatternSet</code>, and the ARN, that you provide to the <code>RegexPatternSetReferenceStatement</code> to use the pattern set in a <code>Rule</code>.</p>
-    pub fn summary(&self) -> std::option::Option<& crate::types::RegexPatternSetSummary> {
+    pub fn summary(&self) -> std::option::Option<&crate::types::RegexPatternSetSummary> {
         self.summary.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for CreateRegexPatternSetOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl CreateRegexPatternSetOutput {
     /// Creates a new builder-style object to manufacture [`CreateRegexPatternSetOutput`](crate::operation::create_regex_pattern_set::CreateRegexPatternSetOutput).
-    pub fn builder() -> crate::operation::create_regex_pattern_set::builders::CreateRegexPatternSetOutputBuilder {
+    pub fn builder(
+    ) -> crate::operation::create_regex_pattern_set::builders::CreateRegexPatternSetOutputBuilder
+    {
         crate::operation::create_regex_pattern_set::builders::CreateRegexPatternSetOutputBuilder::default()
     }
 }
@@ -40,25 +42,27 @@ impl CreateRegexPatternSetOutputBuilder {
         self
     }
     /// <p>High-level information about a <code>RegexPatternSet</code>, returned by operations like create and list. This provides information like the ID, that you can use to retrieve and manage a <code>RegexPatternSet</code>, and the ARN, that you provide to the <code>RegexPatternSetReferenceStatement</code> to use the pattern set in a <code>Rule</code>.</p>
-    pub fn set_summary(mut self, input: std::option::Option<crate::types::RegexPatternSetSummary>) -> Self {
-        self.summary = input; self
+    pub fn set_summary(
+        mut self,
+        input: std::option::Option<crate::types::RegexPatternSetSummary>,
+    ) -> Self {
+        self.summary = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`CreateRegexPatternSetOutput`](crate::operation::create_regex_pattern_set::CreateRegexPatternSetOutput).
     pub fn build(self) -> crate::operation::create_regex_pattern_set::CreateRegexPatternSetOutput {
         crate::operation::create_regex_pattern_set::CreateRegexPatternSetOutput {
-            summary: self.summary
-            ,
+            summary: self.summary,
             _request_id: self._request_id,
         }
     }
 }
-

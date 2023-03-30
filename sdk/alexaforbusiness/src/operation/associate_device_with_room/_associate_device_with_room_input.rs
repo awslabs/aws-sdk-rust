@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AssociateDeviceWithRoomInput  {
+pub struct AssociateDeviceWithRoomInput {
     /// <p>The ARN of the device to associate to a room. Required.</p>
     #[doc(hidden)]
     pub device_arn: std::option::Option<std::string::String>,
@@ -12,17 +12,19 @@ pub struct AssociateDeviceWithRoomInput  {
 }
 impl AssociateDeviceWithRoomInput {
     /// <p>The ARN of the device to associate to a room. Required.</p>
-    pub fn device_arn(&self) -> std::option::Option<& str> {
+    pub fn device_arn(&self) -> std::option::Option<&str> {
         self.device_arn.as_deref()
     }
     /// <p>The ARN of the room with which to associate the device. Required.</p>
-    pub fn room_arn(&self) -> std::option::Option<& str> {
+    pub fn room_arn(&self) -> std::option::Option<&str> {
         self.room_arn.as_deref()
     }
 }
 impl AssociateDeviceWithRoomInput {
     /// Creates a new builder-style object to manufacture [`AssociateDeviceWithRoomInput`](crate::operation::associate_device_with_room::AssociateDeviceWithRoomInput).
-    pub fn builder() -> crate::operation::associate_device_with_room::builders::AssociateDeviceWithRoomInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::associate_device_with_room::builders::AssociateDeviceWithRoomInputBuilder
+    {
         crate::operation::associate_device_with_room::builders::AssociateDeviceWithRoomInputBuilder::default()
     }
 }
@@ -42,7 +44,8 @@ impl AssociateDeviceWithRoomInputBuilder {
     }
     /// <p>The ARN of the device to associate to a room. Required.</p>
     pub fn set_device_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.device_arn = input; self
+        self.device_arn = input;
+        self
     }
     /// <p>The ARN of the room with which to associate the device. Required.</p>
     pub fn room_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -51,18 +54,21 @@ impl AssociateDeviceWithRoomInputBuilder {
     }
     /// <p>The ARN of the room with which to associate the device. Required.</p>
     pub fn set_room_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.room_arn = input; self
+        self.room_arn = input;
+        self
     }
     /// Consumes the builder and constructs a [`AssociateDeviceWithRoomInput`](crate::operation::associate_device_with_room::AssociateDeviceWithRoomInput).
-    pub fn build(self) -> Result<crate::operation::associate_device_with_room::AssociateDeviceWithRoomInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::associate_device_with_room::AssociateDeviceWithRoomInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::associate_device_with_room::AssociateDeviceWithRoomInput {
-                device_arn: self.device_arn
-                ,
-                room_arn: self.room_arn
-                ,
-            }
+                device_arn: self.device_arn,
+                room_arn: self.room_arn,
+            },
         )
     }
 }
-

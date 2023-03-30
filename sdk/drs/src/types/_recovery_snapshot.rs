@@ -3,7 +3,7 @@
 /// <p>A snapshot of a Source Server used during recovery.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct RecoverySnapshot  {
+pub struct RecoverySnapshot {
     /// <p>The ID of the Recovery Snapshot.</p>
     #[doc(hidden)]
     pub snapshot_id: std::option::Option<std::string::String>,
@@ -22,23 +22,23 @@ pub struct RecoverySnapshot  {
 }
 impl RecoverySnapshot {
     /// <p>The ID of the Recovery Snapshot.</p>
-    pub fn snapshot_id(&self) -> std::option::Option<& str> {
+    pub fn snapshot_id(&self) -> std::option::Option<&str> {
         self.snapshot_id.as_deref()
     }
     /// <p>The ID of the Source Server that the snapshot was taken for.</p>
-    pub fn source_server_id(&self) -> std::option::Option<& str> {
+    pub fn source_server_id(&self) -> std::option::Option<&str> {
         self.source_server_id.as_deref()
     }
     /// <p>The timestamp of when we expect the snapshot to be taken.</p>
-    pub fn expected_timestamp(&self) -> std::option::Option<& str> {
+    pub fn expected_timestamp(&self) -> std::option::Option<&str> {
         self.expected_timestamp.as_deref()
     }
     /// <p>The actual timestamp that the snapshot was taken.</p>
-    pub fn timestamp(&self) -> std::option::Option<& str> {
+    pub fn timestamp(&self) -> std::option::Option<&str> {
         self.timestamp.as_deref()
     }
     /// <p>A list of EBS snapshots.</p>
-    pub fn ebs_snapshots(&self) -> std::option::Option<& [std::string::String]> {
+    pub fn ebs_snapshots(&self) -> std::option::Option<&[std::string::String]> {
         self.ebs_snapshots.as_deref()
     }
 }
@@ -67,7 +67,8 @@ impl RecoverySnapshotBuilder {
     }
     /// <p>The ID of the Recovery Snapshot.</p>
     pub fn set_snapshot_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.snapshot_id = input; self
+        self.snapshot_id = input;
+        self
     }
     /// <p>The ID of the Source Server that the snapshot was taken for.</p>
     pub fn source_server_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -76,7 +77,8 @@ impl RecoverySnapshotBuilder {
     }
     /// <p>The ID of the Source Server that the snapshot was taken for.</p>
     pub fn set_source_server_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.source_server_id = input; self
+        self.source_server_id = input;
+        self
     }
     /// <p>The timestamp of when we expect the snapshot to be taken.</p>
     pub fn expected_timestamp(mut self, input: impl Into<std::string::String>) -> Self {
@@ -84,8 +86,12 @@ impl RecoverySnapshotBuilder {
         self
     }
     /// <p>The timestamp of when we expect the snapshot to be taken.</p>
-    pub fn set_expected_timestamp(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.expected_timestamp = input; self
+    pub fn set_expected_timestamp(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.expected_timestamp = input;
+        self
     }
     /// <p>The actual timestamp that the snapshot was taken.</p>
     pub fn timestamp(mut self, input: impl Into<std::string::String>) -> Self {
@@ -94,7 +100,8 @@ impl RecoverySnapshotBuilder {
     }
     /// <p>The actual timestamp that the snapshot was taken.</p>
     pub fn set_timestamp(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.timestamp = input; self
+        self.timestamp = input;
+        self
     }
     /// Appends an item to `ebs_snapshots`.
     ///
@@ -103,28 +110,26 @@ impl RecoverySnapshotBuilder {
     /// <p>A list of EBS snapshots.</p>
     pub fn ebs_snapshots(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.ebs_snapshots.unwrap_or_default();
-                        v.push(input.into());
-                        self.ebs_snapshots = Some(v);
-                        self
+        v.push(input.into());
+        self.ebs_snapshots = Some(v);
+        self
     }
     /// <p>A list of EBS snapshots.</p>
-    pub fn set_ebs_snapshots(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-        self.ebs_snapshots = input; self
+    pub fn set_ebs_snapshots(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
+        self.ebs_snapshots = input;
+        self
     }
     /// Consumes the builder and constructs a [`RecoverySnapshot`](crate::types::RecoverySnapshot).
     pub fn build(self) -> crate::types::RecoverySnapshot {
         crate::types::RecoverySnapshot {
-            snapshot_id: self.snapshot_id
-            ,
-            source_server_id: self.source_server_id
-            ,
-            expected_timestamp: self.expected_timestamp
-            ,
-            timestamp: self.timestamp
-            ,
-            ebs_snapshots: self.ebs_snapshots
-            ,
+            snapshot_id: self.snapshot_id,
+            source_server_id: self.source_server_id,
+            expected_timestamp: self.expected_timestamp,
+            timestamp: self.timestamp,
+            ebs_snapshots: self.ebs_snapshots,
         }
     }
 }
-

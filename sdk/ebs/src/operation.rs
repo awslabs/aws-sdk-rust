@@ -18,4 +18,3 @@ pub mod put_snapshot_block;
 
 /// Types for the `StartSnapshot` operation.
 pub mod start_snapshot;
-

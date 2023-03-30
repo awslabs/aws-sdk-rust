@@ -3,7 +3,7 @@
 /// <p> A container specifying replication metrics-related settings enabling replication metrics and events.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Metrics  {
+pub struct Metrics {
     /// <p> Specifies whether the replication metrics are enabled. </p>
     #[doc(hidden)]
     pub status: std::option::Option<crate::types::MetricsStatus>,
@@ -13,11 +13,11 @@ pub struct Metrics  {
 }
 impl Metrics {
     /// <p> Specifies whether the replication metrics are enabled. </p>
-    pub fn status(&self) -> std::option::Option<& crate::types::MetricsStatus> {
+    pub fn status(&self) -> std::option::Option<&crate::types::MetricsStatus> {
         self.status.as_ref()
     }
     /// <p> A container specifying the time threshold for emitting the <code>s3:Replication:OperationMissedThreshold</code> event. </p>
-    pub fn event_threshold(&self) -> std::option::Option<& crate::types::ReplicationTimeValue> {
+    pub fn event_threshold(&self) -> std::option::Option<&crate::types::ReplicationTimeValue> {
         self.event_threshold.as_ref()
     }
 }
@@ -43,7 +43,8 @@ impl MetricsBuilder {
     }
     /// <p> Specifies whether the replication metrics are enabled. </p>
     pub fn set_status(mut self, input: std::option::Option<crate::types::MetricsStatus>) -> Self {
-        self.status = input; self
+        self.status = input;
+        self
     }
     /// <p> A container specifying the time threshold for emitting the <code>s3:Replication:OperationMissedThreshold</code> event. </p>
     pub fn event_threshold(mut self, input: crate::types::ReplicationTimeValue) -> Self {
@@ -51,17 +52,18 @@ impl MetricsBuilder {
         self
     }
     /// <p> A container specifying the time threshold for emitting the <code>s3:Replication:OperationMissedThreshold</code> event. </p>
-    pub fn set_event_threshold(mut self, input: std::option::Option<crate::types::ReplicationTimeValue>) -> Self {
-        self.event_threshold = input; self
+    pub fn set_event_threshold(
+        mut self,
+        input: std::option::Option<crate::types::ReplicationTimeValue>,
+    ) -> Self {
+        self.event_threshold = input;
+        self
     }
     /// Consumes the builder and constructs a [`Metrics`](crate::types::Metrics).
     pub fn build(self) -> crate::types::Metrics {
         crate::types::Metrics {
-            status: self.status
-            ,
-            event_threshold: self.event_threshold
-            ,
+            status: self.status,
+            event_threshold: self.event_threshold,
         }
     }
 }
-

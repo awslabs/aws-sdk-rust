@@ -3,7 +3,7 @@
 /// <p>Describes the HTTP endpoint selected as the destination. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct HttpEndpointDescription  {
+pub struct HttpEndpointDescription {
     /// <p>The URL of the HTTP endpoint selected as the destination.</p>
     #[doc(hidden)]
     pub url: std::option::Option<std::string::String>,
@@ -13,15 +13,15 @@ pub struct HttpEndpointDescription  {
 }
 impl HttpEndpointDescription {
     /// <p>The URL of the HTTP endpoint selected as the destination.</p>
-    pub fn url(&self) -> std::option::Option<& str> {
+    pub fn url(&self) -> std::option::Option<&str> {
         self.url.as_deref()
     }
     /// <p>The name of the HTTP endpoint selected as the destination.</p>
-    pub fn name(&self) -> std::option::Option<& str> {
+    pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
 }
-impl  std::fmt::Debug for HttpEndpointDescription  {
+impl std::fmt::Debug for HttpEndpointDescription {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("HttpEndpointDescription");
         formatter.field("url", &"*** Sensitive Data Redacted ***");
@@ -51,7 +51,8 @@ impl HttpEndpointDescriptionBuilder {
     }
     /// <p>The URL of the HTTP endpoint selected as the destination.</p>
     pub fn set_url(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.url = input; self
+        self.url = input;
+        self
     }
     /// <p>The name of the HTTP endpoint selected as the destination.</p>
     pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -60,15 +61,14 @@ impl HttpEndpointDescriptionBuilder {
     }
     /// <p>The name of the HTTP endpoint selected as the destination.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input; self
+        self.name = input;
+        self
     }
     /// Consumes the builder and constructs a [`HttpEndpointDescription`](crate::types::HttpEndpointDescription).
     pub fn build(self) -> crate::types::HttpEndpointDescription {
         crate::types::HttpEndpointDescription {
-            url: self.url
-            ,
-            name: self.name
-            ,
+            url: self.url,
+            name: self.name,
         }
     }
 }
@@ -80,4 +80,3 @@ impl std::fmt::Debug for HttpEndpointDescriptionBuilder {
         formatter.finish()
     }
 }
-

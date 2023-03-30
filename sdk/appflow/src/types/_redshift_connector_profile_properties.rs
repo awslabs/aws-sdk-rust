@@ -3,7 +3,7 @@
 /// <p> The connector-specific profile properties when using Amazon Redshift. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct RedshiftConnectorProfileProperties  {
+pub struct RedshiftConnectorProfileProperties {
     /// <p> The JDBC URL of the Amazon Redshift cluster. </p>
     #[doc(hidden)]
     pub database_url: std::option::Option<std::string::String>,
@@ -34,23 +34,23 @@ pub struct RedshiftConnectorProfileProperties  {
 }
 impl RedshiftConnectorProfileProperties {
     /// <p> The JDBC URL of the Amazon Redshift cluster. </p>
-    pub fn database_url(&self) -> std::option::Option<& str> {
+    pub fn database_url(&self) -> std::option::Option<&str> {
         self.database_url.as_deref()
     }
     /// <p> A name for the associated Amazon S3 bucket. </p>
-    pub fn bucket_name(&self) -> std::option::Option<& str> {
+    pub fn bucket_name(&self) -> std::option::Option<&str> {
         self.bucket_name.as_deref()
     }
     /// <p> The object key for the destination bucket in which Amazon AppFlow places the files. </p>
-    pub fn bucket_prefix(&self) -> std::option::Option<& str> {
+    pub fn bucket_prefix(&self) -> std::option::Option<&str> {
         self.bucket_prefix.as_deref()
     }
     /// <p> The Amazon Resource Name (ARN) of IAM role that grants Amazon Redshift read-only access to Amazon S3. For more information, and for the polices that you attach to this role, see <a href="https://docs.aws.amazon.com/appflow/latest/userguide/security_iam_service-role-policies.html#redshift-access-s3">Allow Amazon Redshift to access your Amazon AppFlow data in Amazon S3</a>.</p>
-    pub fn role_arn(&self) -> std::option::Option<& str> {
+    pub fn role_arn(&self) -> std::option::Option<&str> {
         self.role_arn.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of an IAM role that permits Amazon AppFlow to access your Amazon Redshift database through the Data API. For more information, and for the polices that you attach to this role, see <a href="https://docs.aws.amazon.com/appflow/latest/userguide/security_iam_service-role-policies.html#access-redshift">Allow Amazon AppFlow to access Amazon Redshift databases with the Data API</a>.</p>
-    pub fn data_api_role_arn(&self) -> std::option::Option<& str> {
+    pub fn data_api_role_arn(&self) -> std::option::Option<&str> {
         self.data_api_role_arn.as_deref()
     }
     /// <p>Indicates whether the connector profile defines a connection to an Amazon Redshift Serverless data warehouse.</p>
@@ -58,15 +58,15 @@ impl RedshiftConnectorProfileProperties {
         self.is_redshift_serverless
     }
     /// <p>The unique ID that's assigned to an Amazon Redshift cluster.</p>
-    pub fn cluster_identifier(&self) -> std::option::Option<& str> {
+    pub fn cluster_identifier(&self) -> std::option::Option<&str> {
         self.cluster_identifier.as_deref()
     }
     /// <p>The name of an Amazon Redshift workgroup.</p>
-    pub fn workgroup_name(&self) -> std::option::Option<& str> {
+    pub fn workgroup_name(&self) -> std::option::Option<&str> {
         self.workgroup_name.as_deref()
     }
     /// <p>The name of an Amazon Redshift database.</p>
-    pub fn database_name(&self) -> std::option::Option<& str> {
+    pub fn database_name(&self) -> std::option::Option<&str> {
         self.database_name.as_deref()
     }
 }
@@ -99,7 +99,8 @@ impl RedshiftConnectorProfilePropertiesBuilder {
     }
     /// <p> The JDBC URL of the Amazon Redshift cluster. </p>
     pub fn set_database_url(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.database_url = input; self
+        self.database_url = input;
+        self
     }
     /// <p> A name for the associated Amazon S3 bucket. </p>
     pub fn bucket_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -108,7 +109,8 @@ impl RedshiftConnectorProfilePropertiesBuilder {
     }
     /// <p> A name for the associated Amazon S3 bucket. </p>
     pub fn set_bucket_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.bucket_name = input; self
+        self.bucket_name = input;
+        self
     }
     /// <p> The object key for the destination bucket in which Amazon AppFlow places the files. </p>
     pub fn bucket_prefix(mut self, input: impl Into<std::string::String>) -> Self {
@@ -117,7 +119,8 @@ impl RedshiftConnectorProfilePropertiesBuilder {
     }
     /// <p> The object key for the destination bucket in which Amazon AppFlow places the files. </p>
     pub fn set_bucket_prefix(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.bucket_prefix = input; self
+        self.bucket_prefix = input;
+        self
     }
     /// <p> The Amazon Resource Name (ARN) of IAM role that grants Amazon Redshift read-only access to Amazon S3. For more information, and for the polices that you attach to this role, see <a href="https://docs.aws.amazon.com/appflow/latest/userguide/security_iam_service-role-policies.html#redshift-access-s3">Allow Amazon Redshift to access your Amazon AppFlow data in Amazon S3</a>.</p>
     pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -126,7 +129,8 @@ impl RedshiftConnectorProfilePropertiesBuilder {
     }
     /// <p> The Amazon Resource Name (ARN) of IAM role that grants Amazon Redshift read-only access to Amazon S3. For more information, and for the polices that you attach to this role, see <a href="https://docs.aws.amazon.com/appflow/latest/userguide/security_iam_service-role-policies.html#redshift-access-s3">Allow Amazon Redshift to access your Amazon AppFlow data in Amazon S3</a>.</p>
     pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.role_arn = input; self
+        self.role_arn = input;
+        self
     }
     /// <p>The Amazon Resource Name (ARN) of an IAM role that permits Amazon AppFlow to access your Amazon Redshift database through the Data API. For more information, and for the polices that you attach to this role, see <a href="https://docs.aws.amazon.com/appflow/latest/userguide/security_iam_service-role-policies.html#access-redshift">Allow Amazon AppFlow to access Amazon Redshift databases with the Data API</a>.</p>
     pub fn data_api_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -134,8 +138,12 @@ impl RedshiftConnectorProfilePropertiesBuilder {
         self
     }
     /// <p>The Amazon Resource Name (ARN) of an IAM role that permits Amazon AppFlow to access your Amazon Redshift database through the Data API. For more information, and for the polices that you attach to this role, see <a href="https://docs.aws.amazon.com/appflow/latest/userguide/security_iam_service-role-policies.html#access-redshift">Allow Amazon AppFlow to access Amazon Redshift databases with the Data API</a>.</p>
-    pub fn set_data_api_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.data_api_role_arn = input; self
+    pub fn set_data_api_role_arn(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.data_api_role_arn = input;
+        self
     }
     /// <p>Indicates whether the connector profile defines a connection to an Amazon Redshift Serverless data warehouse.</p>
     pub fn is_redshift_serverless(mut self, input: bool) -> Self {
@@ -144,7 +152,8 @@ impl RedshiftConnectorProfilePropertiesBuilder {
     }
     /// <p>Indicates whether the connector profile defines a connection to an Amazon Redshift Serverless data warehouse.</p>
     pub fn set_is_redshift_serverless(mut self, input: std::option::Option<bool>) -> Self {
-        self.is_redshift_serverless = input; self
+        self.is_redshift_serverless = input;
+        self
     }
     /// <p>The unique ID that's assigned to an Amazon Redshift cluster.</p>
     pub fn cluster_identifier(mut self, input: impl Into<std::string::String>) -> Self {
@@ -152,8 +161,12 @@ impl RedshiftConnectorProfilePropertiesBuilder {
         self
     }
     /// <p>The unique ID that's assigned to an Amazon Redshift cluster.</p>
-    pub fn set_cluster_identifier(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.cluster_identifier = input; self
+    pub fn set_cluster_identifier(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.cluster_identifier = input;
+        self
     }
     /// <p>The name of an Amazon Redshift workgroup.</p>
     pub fn workgroup_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -162,7 +175,8 @@ impl RedshiftConnectorProfilePropertiesBuilder {
     }
     /// <p>The name of an Amazon Redshift workgroup.</p>
     pub fn set_workgroup_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.workgroup_name = input; self
+        self.workgroup_name = input;
+        self
     }
     /// <p>The name of an Amazon Redshift database.</p>
     pub fn database_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -171,31 +185,21 @@ impl RedshiftConnectorProfilePropertiesBuilder {
     }
     /// <p>The name of an Amazon Redshift database.</p>
     pub fn set_database_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.database_name = input; self
+        self.database_name = input;
+        self
     }
     /// Consumes the builder and constructs a [`RedshiftConnectorProfileProperties`](crate::types::RedshiftConnectorProfileProperties).
     pub fn build(self) -> crate::types::RedshiftConnectorProfileProperties {
         crate::types::RedshiftConnectorProfileProperties {
-            database_url: self.database_url
-            ,
-            bucket_name: self.bucket_name
-            ,
-            bucket_prefix: self.bucket_prefix
-            ,
-            role_arn: self.role_arn
-            ,
-            data_api_role_arn: self.data_api_role_arn
-            ,
-            is_redshift_serverless: self.is_redshift_serverless
-                .unwrap_or_default()
-            ,
-            cluster_identifier: self.cluster_identifier
-            ,
-            workgroup_name: self.workgroup_name
-            ,
-            database_name: self.database_name
-            ,
+            database_url: self.database_url,
+            bucket_name: self.bucket_name,
+            bucket_prefix: self.bucket_prefix,
+            role_arn: self.role_arn,
+            data_api_role_arn: self.data_api_role_arn,
+            is_redshift_serverless: self.is_redshift_serverless.unwrap_or_default(),
+            cluster_identifier: self.cluster_identifier,
+            workgroup_name: self.workgroup_name,
+            database_name: self.database_name,
         }
     }
 }
-

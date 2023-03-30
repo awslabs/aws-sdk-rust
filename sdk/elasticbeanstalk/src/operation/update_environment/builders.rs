@@ -4,51 +4,73 @@ pub use crate::operation::update_environment::_update_environment_output::Update
 pub use crate::operation::update_environment::_update_environment_input::UpdateEnvironmentInputBuilder;
 
 /// Fluent builder constructing a request to `UpdateEnvironment`.
-/// 
-/// <p>Updates the environment description, deploys a new application version, updates the configuration settings to an entirely new configuration template, or updates select configuration option values in the running environment.</p> 
-/// <p> Attempting to update both the release and configuration is not allowed and AWS Elastic Beanstalk returns an <code>InvalidParameterCombination</code> error. </p> 
+///
+/// <p>Updates the environment description, deploys a new application version, updates the configuration settings to an entirely new configuration template, or updates select configuration option values in the running environment.</p>
+/// <p> Attempting to update both the release and configuration is not allowed and AWS Elastic Beanstalk returns an <code>InvalidParameterCombination</code> error. </p>
 /// <p> When updating the configuration settings to a new template or individual settings, a draft configuration is created and <code>DescribeConfigurationSettings</code> for this environment returns two setting descriptions with different <code>DeploymentStatus</code> values. </p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct UpdateEnvironmentFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::update_environment::builders::UpdateEnvironmentInputBuilder
-            }
-impl UpdateEnvironmentFluentBuilder  {
+    handle: std::sync::Arc<crate::client::Handle>,
+    inner: crate::operation::update_environment::builders::UpdateEnvironmentInputBuilder,
+}
+impl UpdateEnvironmentFluentBuilder {
     /// Creates a new `UpdateEnvironment`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
-                    /// sent. The operation's inner [http::Request] can be modified as well.
-                    pub async fn customize(self) -> std::result::Result<
-                        crate::client::customize::CustomizableOperation<crate::operation::update_environment::UpdateEnvironment, aws_http::retry::AwsResponseRetryClassifier,>,
-                        aws_smithy_http::result::SdkError<crate::operation::update_environment::UpdateEnvironmentError>
-                    >  {
-                        let handle = self.handle.clone();
-                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-                    }
-    
-                    /// Sends the request and returns the response.
-                    ///
-                    /// If an error occurs, an `SdkError` will be returned with additional details that
-                    /// can be matched against.
-                    ///
-                    /// By default, any retryable failures will be retried twice. Retry behavior
-                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                    /// set when configuring the client.
-                    pub async fn send(self) -> std::result::Result<crate::operation::update_environment::UpdateEnvironmentOutput, aws_smithy_http::result::SdkError<crate::operation::update_environment::UpdateEnvironmentError>>
-                     {
-                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&self.handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        self.handle.client.call(op).await
-                    }
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle,
+            inner: Default::default(),
+        }
+    }
+
+    /// Consume this builder, creating a customizable operation that can be modified before being
+    /// sent. The operation's inner [http::Request] can be modified as well.
+    pub async fn customize(
+        self,
+    ) -> std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::update_environment::UpdateEnvironment,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::result::SdkError<
+            crate::operation::update_environment::UpdateEnvironmentError,
+        >,
+    > {
+        let handle = self.handle.clone();
+        let operation = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+    }
+
+    /// Sends the request and returns the response.
+    ///
+    /// If an error occurs, an `SdkError` will be returned with additional details that
+    /// can be matched against.
+    ///
+    /// By default, any retryable failures will be retried twice. Retry behavior
+    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+    /// set when configuring the client.
+    pub async fn send(
+        self,
+    ) -> std::result::Result<
+        crate::operation::update_environment::UpdateEnvironmentOutput,
+        aws_smithy_http::result::SdkError<
+            crate::operation::update_environment::UpdateEnvironmentError,
+        >,
+    > {
+        let op = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&self.handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        self.handle.client.call(op).await
+    }
     /// <p>The name of the application with which the environment is associated.</p>
     pub fn application_name(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.application_name(input.into());
@@ -59,27 +81,27 @@ impl UpdateEnvironmentFluentBuilder  {
         self.inner = self.inner.set_application_name(input);
         self
     }
-    /// <p>The ID of the environment to update.</p> 
-    /// <p>If no environment with this ID exists, AWS Elastic Beanstalk returns an <code>InvalidParameterValue</code> error.</p> 
+    /// <p>The ID of the environment to update.</p>
+    /// <p>If no environment with this ID exists, AWS Elastic Beanstalk returns an <code>InvalidParameterValue</code> error.</p>
     /// <p>Condition: You must specify either this or an EnvironmentName, or both. If you do not specify either, AWS Elastic Beanstalk returns <code>MissingRequiredParameter</code> error. </p>
     pub fn environment_id(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.environment_id(input.into());
         self
     }
-    /// <p>The ID of the environment to update.</p> 
-    /// <p>If no environment with this ID exists, AWS Elastic Beanstalk returns an <code>InvalidParameterValue</code> error.</p> 
+    /// <p>The ID of the environment to update.</p>
+    /// <p>If no environment with this ID exists, AWS Elastic Beanstalk returns an <code>InvalidParameterValue</code> error.</p>
     /// <p>Condition: You must specify either this or an EnvironmentName, or both. If you do not specify either, AWS Elastic Beanstalk returns <code>MissingRequiredParameter</code> error. </p>
     pub fn set_environment_id(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.inner = self.inner.set_environment_id(input);
         self
     }
-    /// <p>The name of the environment to update. If no environment with this name exists, AWS Elastic Beanstalk returns an <code>InvalidParameterValue</code> error. </p> 
+    /// <p>The name of the environment to update. If no environment with this name exists, AWS Elastic Beanstalk returns an <code>InvalidParameterValue</code> error. </p>
     /// <p>Condition: You must specify either this or an EnvironmentId, or both. If you do not specify either, AWS Elastic Beanstalk returns <code>MissingRequiredParameter</code> error. </p>
     pub fn environment_name(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.environment_name(input.into());
         self
     }
-    /// <p>The name of the environment to update. If no environment with this name exists, AWS Elastic Beanstalk returns an <code>InvalidParameterValue</code> error. </p> 
+    /// <p>The name of the environment to update. If no environment with this name exists, AWS Elastic Beanstalk returns an <code>InvalidParameterValue</code> error. </p>
     /// <p>Condition: You must specify either this or an EnvironmentId, or both. If you do not specify either, AWS Elastic Beanstalk returns <code>MissingRequiredParameter</code> error. </p>
     pub fn set_environment_name(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.inner = self.inner.set_environment_name(input);
@@ -105,13 +127,13 @@ impl UpdateEnvironmentFluentBuilder  {
         self.inner = self.inner.set_description(input);
         self
     }
-    /// <p>This specifies the tier to use to update the environment.</p> 
+    /// <p>This specifies the tier to use to update the environment.</p>
     /// <p>Condition: At this time, if you change the tier version, name, or type, AWS Elastic Beanstalk returns <code>InvalidParameterValue</code> error. </p>
     pub fn tier(mut self, input: crate::types::EnvironmentTier) -> Self {
         self.inner = self.inner.tier(input);
         self
     }
-    /// <p>This specifies the tier to use to update the environment.</p> 
+    /// <p>This specifies the tier to use to update the environment.</p>
     /// <p>Condition: At this time, if you change the tier version, name, or type, AWS Elastic Beanstalk returns <code>InvalidParameterValue</code> error. </p>
     pub fn set_tier(mut self, input: std::option::Option<crate::types::EnvironmentTier>) -> Self {
         self.inner = self.inner.set_tier(input);
@@ -143,7 +165,10 @@ impl UpdateEnvironmentFluentBuilder  {
         self
     }
     /// <p>This specifies the platform version that the environment will run after the environment is updated.</p>
-    pub fn set_solution_stack_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_solution_stack_name(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_solution_stack_name(input);
         self
     }
@@ -167,7 +192,10 @@ impl UpdateEnvironmentFluentBuilder  {
         self
     }
     /// <p>If specified, AWS Elastic Beanstalk updates the configuration set associated with the running environment and sets the specified configuration options to the requested value.</p>
-    pub fn set_option_settings(mut self, input: std::option::Option<std::vec::Vec<crate::types::ConfigurationOptionSetting>>) -> Self {
+    pub fn set_option_settings(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::ConfigurationOptionSetting>>,
+    ) -> Self {
         self.inner = self.inner.set_option_settings(input);
         self
     }
@@ -181,9 +209,11 @@ impl UpdateEnvironmentFluentBuilder  {
         self
     }
     /// <p>A list of custom user-defined configuration options to remove from the configuration set for this environment.</p>
-    pub fn set_options_to_remove(mut self, input: std::option::Option<std::vec::Vec<crate::types::OptionSpecification>>) -> Self {
+    pub fn set_options_to_remove(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::OptionSpecification>>,
+    ) -> Self {
         self.inner = self.inner.set_options_to_remove(input);
         self
     }
 }
-

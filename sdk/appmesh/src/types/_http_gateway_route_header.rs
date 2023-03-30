@@ -3,7 +3,7 @@
 /// <p>An object that represents the HTTP header in the gateway route.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct HttpGatewayRouteHeader  {
+pub struct HttpGatewayRouteHeader {
     /// <p>A name for the HTTP header in the gateway route that will be matched on.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -16,7 +16,7 @@ pub struct HttpGatewayRouteHeader  {
 }
 impl HttpGatewayRouteHeader {
     /// <p>A name for the HTTP header in the gateway route that will be matched on.</p>
-    pub fn name(&self) -> std::option::Option<& str> {
+    pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>Specify <code>True</code> to match anything except the match criteria. The default value is <code>False</code>.</p>
@@ -24,7 +24,7 @@ impl HttpGatewayRouteHeader {
         self.invert
     }
     /// <p>An object that represents the method and value to match with the header value sent in a request. Specify one match method.</p>
-    pub fn r#match(&self) -> std::option::Option<& crate::types::HeaderMatchMethod> {
+    pub fn r#match(&self) -> std::option::Option<&crate::types::HeaderMatchMethod> {
         self.r#match.as_ref()
     }
 }
@@ -51,7 +51,8 @@ impl HttpGatewayRouteHeaderBuilder {
     }
     /// <p>A name for the HTTP header in the gateway route that will be matched on.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input; self
+        self.name = input;
+        self
     }
     /// <p>Specify <code>True</code> to match anything except the match criteria. The default value is <code>False</code>.</p>
     pub fn invert(mut self, input: bool) -> Self {
@@ -60,7 +61,8 @@ impl HttpGatewayRouteHeaderBuilder {
     }
     /// <p>Specify <code>True</code> to match anything except the match criteria. The default value is <code>False</code>.</p>
     pub fn set_invert(mut self, input: std::option::Option<bool>) -> Self {
-        self.invert = input; self
+        self.invert = input;
+        self
     }
     /// <p>An object that represents the method and value to match with the header value sent in a request. Specify one match method.</p>
     pub fn r#match(mut self, input: crate::types::HeaderMatchMethod) -> Self {
@@ -68,19 +70,19 @@ impl HttpGatewayRouteHeaderBuilder {
         self
     }
     /// <p>An object that represents the method and value to match with the header value sent in a request. Specify one match method.</p>
-    pub fn set_match(mut self, input: std::option::Option<crate::types::HeaderMatchMethod>) -> Self {
-        self.r#match = input; self
+    pub fn set_match(
+        mut self,
+        input: std::option::Option<crate::types::HeaderMatchMethod>,
+    ) -> Self {
+        self.r#match = input;
+        self
     }
     /// Consumes the builder and constructs a [`HttpGatewayRouteHeader`](crate::types::HttpGatewayRouteHeader).
     pub fn build(self) -> crate::types::HttpGatewayRouteHeader {
         crate::types::HttpGatewayRouteHeader {
-            name: self.name
-            ,
-            invert: self.invert
-            ,
-            r#match: self.r#match
-            ,
+            name: self.name,
+            invert: self.invert,
+            r#match: self.r#match,
         }
     }
 }
-

@@ -3,7 +3,7 @@
 /// <p>The output from the DescribeEndpoint operation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeEndpointOutput  {
+pub struct DescribeEndpointOutput {
     /// <p>The endpoint. The format of the endpoint is as follows: <i>identifier</i>.iot.<i>region</i>.amazonaws.com.</p>
     #[doc(hidden)]
     pub endpoint_address: std::option::Option<std::string::String>,
@@ -11,18 +11,19 @@ pub struct DescribeEndpointOutput  {
 }
 impl DescribeEndpointOutput {
     /// <p>The endpoint. The format of the endpoint is as follows: <i>identifier</i>.iot.<i>region</i>.amazonaws.com.</p>
-    pub fn endpoint_address(&self) -> std::option::Option<& str> {
+    pub fn endpoint_address(&self) -> std::option::Option<&str> {
         self.endpoint_address.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for DescribeEndpointOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl DescribeEndpointOutput {
     /// Creates a new builder-style object to manufacture [`DescribeEndpointOutput`](crate::operation::describe_endpoint::DescribeEndpointOutput).
-    pub fn builder() -> crate::operation::describe_endpoint::builders::DescribeEndpointOutputBuilder {
+    pub fn builder() -> crate::operation::describe_endpoint::builders::DescribeEndpointOutputBuilder
+    {
         crate::operation::describe_endpoint::builders::DescribeEndpointOutputBuilder::default()
     }
 }
@@ -42,24 +43,23 @@ impl DescribeEndpointOutputBuilder {
     }
     /// <p>The endpoint. The format of the endpoint is as follows: <i>identifier</i>.iot.<i>region</i>.amazonaws.com.</p>
     pub fn set_endpoint_address(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.endpoint_address = input; self
+        self.endpoint_address = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`DescribeEndpointOutput`](crate::operation::describe_endpoint::DescribeEndpointOutput).
     pub fn build(self) -> crate::operation::describe_endpoint::DescribeEndpointOutput {
         crate::operation::describe_endpoint::DescribeEndpointOutput {
-            endpoint_address: self.endpoint_address
-            ,
+            endpoint_address: self.endpoint_address,
             _request_id: self._request_id,
         }
     }
 }
-

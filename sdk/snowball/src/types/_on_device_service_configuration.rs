@@ -3,7 +3,7 @@
 /// <p>An object that represents the metadata and configuration settings for services on an Amazon Web Services Snow Family device.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct OnDeviceServiceConfiguration  {
+pub struct OnDeviceServiceConfiguration {
     /// <p>Represents the NFS (Network File System) service on a Snow Family device.</p>
     #[doc(hidden)]
     pub nfs_on_device_service: std::option::Option<crate::types::NfsOnDeviceServiceConfiguration>,
@@ -13,11 +13,15 @@ pub struct OnDeviceServiceConfiguration  {
 }
 impl OnDeviceServiceConfiguration {
     /// <p>Represents the NFS (Network File System) service on a Snow Family device.</p>
-    pub fn nfs_on_device_service(&self) -> std::option::Option<& crate::types::NfsOnDeviceServiceConfiguration> {
+    pub fn nfs_on_device_service(
+        &self,
+    ) -> std::option::Option<&crate::types::NfsOnDeviceServiceConfiguration> {
         self.nfs_on_device_service.as_ref()
     }
     /// <p>Represents the Storage Gateway service Tape Gateway type on a Snow Family device.</p>
-    pub fn tgw_on_device_service(&self) -> std::option::Option<& crate::types::TgwOnDeviceServiceConfiguration> {
+    pub fn tgw_on_device_service(
+        &self,
+    ) -> std::option::Option<&crate::types::TgwOnDeviceServiceConfiguration> {
         self.tgw_on_device_service.as_ref()
     }
 }
@@ -32,36 +36,49 @@ impl OnDeviceServiceConfiguration {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct OnDeviceServiceConfigurationBuilder {
-    pub(crate) nfs_on_device_service: std::option::Option<crate::types::NfsOnDeviceServiceConfiguration>,
-    pub(crate) tgw_on_device_service: std::option::Option<crate::types::TgwOnDeviceServiceConfiguration>,
+    pub(crate) nfs_on_device_service:
+        std::option::Option<crate::types::NfsOnDeviceServiceConfiguration>,
+    pub(crate) tgw_on_device_service:
+        std::option::Option<crate::types::TgwOnDeviceServiceConfiguration>,
 }
 impl OnDeviceServiceConfigurationBuilder {
     /// <p>Represents the NFS (Network File System) service on a Snow Family device.</p>
-    pub fn nfs_on_device_service(mut self, input: crate::types::NfsOnDeviceServiceConfiguration) -> Self {
+    pub fn nfs_on_device_service(
+        mut self,
+        input: crate::types::NfsOnDeviceServiceConfiguration,
+    ) -> Self {
         self.nfs_on_device_service = Some(input);
         self
     }
     /// <p>Represents the NFS (Network File System) service on a Snow Family device.</p>
-    pub fn set_nfs_on_device_service(mut self, input: std::option::Option<crate::types::NfsOnDeviceServiceConfiguration>) -> Self {
-        self.nfs_on_device_service = input; self
+    pub fn set_nfs_on_device_service(
+        mut self,
+        input: std::option::Option<crate::types::NfsOnDeviceServiceConfiguration>,
+    ) -> Self {
+        self.nfs_on_device_service = input;
+        self
     }
     /// <p>Represents the Storage Gateway service Tape Gateway type on a Snow Family device.</p>
-    pub fn tgw_on_device_service(mut self, input: crate::types::TgwOnDeviceServiceConfiguration) -> Self {
+    pub fn tgw_on_device_service(
+        mut self,
+        input: crate::types::TgwOnDeviceServiceConfiguration,
+    ) -> Self {
         self.tgw_on_device_service = Some(input);
         self
     }
     /// <p>Represents the Storage Gateway service Tape Gateway type on a Snow Family device.</p>
-    pub fn set_tgw_on_device_service(mut self, input: std::option::Option<crate::types::TgwOnDeviceServiceConfiguration>) -> Self {
-        self.tgw_on_device_service = input; self
+    pub fn set_tgw_on_device_service(
+        mut self,
+        input: std::option::Option<crate::types::TgwOnDeviceServiceConfiguration>,
+    ) -> Self {
+        self.tgw_on_device_service = input;
+        self
     }
     /// Consumes the builder and constructs a [`OnDeviceServiceConfiguration`](crate::types::OnDeviceServiceConfiguration).
     pub fn build(self) -> crate::types::OnDeviceServiceConfiguration {
         crate::types::OnDeviceServiceConfiguration {
-            nfs_on_device_service: self.nfs_on_device_service
-            ,
-            tgw_on_device_service: self.tgw_on_device_service
-            ,
+            nfs_on_device_service: self.nfs_on_device_service,
+            tgw_on_device_service: self.tgw_on_device_service,
         }
     }
 }
-

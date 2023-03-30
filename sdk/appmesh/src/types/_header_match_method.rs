@@ -28,7 +28,11 @@ impl HeaderMatchMethod {
     /// Tries to convert the enum instance into [`Exact`](crate::types::HeaderMatchMethod::Exact), extracting the inner [`String`](std::string::String).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_exact(&self) -> std::result::Result<&std::string::String, &Self> {
-        if let HeaderMatchMethod::Exact(val) = &self { Ok(val) } else { Err(self) }
+        if let HeaderMatchMethod::Exact(val) = &self {
+            Ok(val)
+        } else {
+            Err(self)
+        }
     }
     /// Returns true if this is a [`Exact`](crate::types::HeaderMatchMethod::Exact).
     pub fn is_exact(&self) -> bool {
@@ -37,7 +41,11 @@ impl HeaderMatchMethod {
     /// Tries to convert the enum instance into [`Prefix`](crate::types::HeaderMatchMethod::Prefix), extracting the inner [`String`](std::string::String).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_prefix(&self) -> std::result::Result<&std::string::String, &Self> {
-        if let HeaderMatchMethod::Prefix(val) = &self { Ok(val) } else { Err(self) }
+        if let HeaderMatchMethod::Prefix(val) = &self {
+            Ok(val)
+        } else {
+            Err(self)
+        }
     }
     /// Returns true if this is a [`Prefix`](crate::types::HeaderMatchMethod::Prefix).
     pub fn is_prefix(&self) -> bool {
@@ -46,7 +54,11 @@ impl HeaderMatchMethod {
     /// Tries to convert the enum instance into [`Range`](crate::types::HeaderMatchMethod::Range), extracting the inner [`MatchRange`](crate::types::MatchRange).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_range(&self) -> std::result::Result<&crate::types::MatchRange, &Self> {
-        if let HeaderMatchMethod::Range(val) = &self { Ok(val) } else { Err(self) }
+        if let HeaderMatchMethod::Range(val) = &self {
+            Ok(val)
+        } else {
+            Err(self)
+        }
     }
     /// Returns true if this is a [`Range`](crate::types::HeaderMatchMethod::Range).
     pub fn is_range(&self) -> bool {
@@ -55,7 +67,11 @@ impl HeaderMatchMethod {
     /// Tries to convert the enum instance into [`Regex`](crate::types::HeaderMatchMethod::Regex), extracting the inner [`String`](std::string::String).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_regex(&self) -> std::result::Result<&std::string::String, &Self> {
-        if let HeaderMatchMethod::Regex(val) = &self { Ok(val) } else { Err(self) }
+        if let HeaderMatchMethod::Regex(val) = &self {
+            Ok(val)
+        } else {
+            Err(self)
+        }
     }
     /// Returns true if this is a [`Regex`](crate::types::HeaderMatchMethod::Regex).
     pub fn is_regex(&self) -> bool {
@@ -64,7 +80,11 @@ impl HeaderMatchMethod {
     /// Tries to convert the enum instance into [`Suffix`](crate::types::HeaderMatchMethod::Suffix), extracting the inner [`String`](std::string::String).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_suffix(&self) -> std::result::Result<&std::string::String, &Self> {
-        if let HeaderMatchMethod::Suffix(val) = &self { Ok(val) } else { Err(self) }
+        if let HeaderMatchMethod::Suffix(val) = &self {
+            Ok(val)
+        } else {
+            Err(self)
+        }
     }
     /// Returns true if this is a [`Suffix`](crate::types::HeaderMatchMethod::Suffix).
     pub fn is_suffix(&self) -> bool {
@@ -75,4 +95,3 @@ impl HeaderMatchMethod {
         matches!(self, Self::Unknown)
     }
 }
-

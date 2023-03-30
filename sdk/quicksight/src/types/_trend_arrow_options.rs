@@ -3,14 +3,14 @@
 /// <p>The options that determine the presentation of trend arrows in a KPI visual.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct TrendArrowOptions  {
+pub struct TrendArrowOptions {
     /// <p>The visibility of the trend arrows.</p>
     #[doc(hidden)]
     pub visibility: std::option::Option<crate::types::Visibility>,
 }
 impl TrendArrowOptions {
     /// <p>The visibility of the trend arrows.</p>
-    pub fn visibility(&self) -> std::option::Option<& crate::types::Visibility> {
+    pub fn visibility(&self) -> std::option::Option<&crate::types::Visibility> {
         self.visibility.as_ref()
     }
 }
@@ -35,14 +35,13 @@ impl TrendArrowOptionsBuilder {
     }
     /// <p>The visibility of the trend arrows.</p>
     pub fn set_visibility(mut self, input: std::option::Option<crate::types::Visibility>) -> Self {
-        self.visibility = input; self
+        self.visibility = input;
+        self
     }
     /// Consumes the builder and constructs a [`TrendArrowOptions`](crate::types::TrendArrowOptions).
     pub fn build(self) -> crate::types::TrendArrowOptions {
         crate::types::TrendArrowOptions {
-            visibility: self.visibility
-            ,
+            visibility: self.visibility,
         }
     }
 }
-

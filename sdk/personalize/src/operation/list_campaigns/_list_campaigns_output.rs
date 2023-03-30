@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListCampaignsOutput  {
+pub struct ListCampaignsOutput {
     /// <p>A list of the campaigns.</p>
     #[doc(hidden)]
     pub campaigns: std::option::Option<std::vec::Vec<crate::types::CampaignSummary>>,
@@ -13,19 +13,19 @@ pub struct ListCampaignsOutput  {
 }
 impl ListCampaignsOutput {
     /// <p>A list of the campaigns.</p>
-    pub fn campaigns(&self) -> std::option::Option<& [crate::types::CampaignSummary]> {
+    pub fn campaigns(&self) -> std::option::Option<&[crate::types::CampaignSummary]> {
         self.campaigns.as_deref()
     }
     /// <p>A token for getting the next set of campaigns (if they exist).</p>
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for ListCampaignsOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl ListCampaignsOutput {
     /// Creates a new builder-style object to manufacture [`ListCampaignsOutput`](crate::operation::list_campaigns::ListCampaignsOutput).
     pub fn builder() -> crate::operation::list_campaigns::builders::ListCampaignsOutputBuilder {
@@ -49,13 +49,17 @@ impl ListCampaignsOutputBuilder {
     /// <p>A list of the campaigns.</p>
     pub fn campaigns(mut self, input: crate::types::CampaignSummary) -> Self {
         let mut v = self.campaigns.unwrap_or_default();
-                        v.push(input);
-                        self.campaigns = Some(v);
-                        self
+        v.push(input);
+        self.campaigns = Some(v);
+        self
     }
     /// <p>A list of the campaigns.</p>
-    pub fn set_campaigns(mut self, input: std::option::Option<std::vec::Vec<crate::types::CampaignSummary>>) -> Self {
-        self.campaigns = input; self
+    pub fn set_campaigns(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::CampaignSummary>>,
+    ) -> Self {
+        self.campaigns = input;
+        self
     }
     /// <p>A token for getting the next set of campaigns (if they exist).</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -64,26 +68,24 @@ impl ListCampaignsOutputBuilder {
     }
     /// <p>A token for getting the next set of campaigns (if they exist).</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input; self
+        self.next_token = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`ListCampaignsOutput`](crate::operation::list_campaigns::ListCampaignsOutput).
     pub fn build(self) -> crate::operation::list_campaigns::ListCampaignsOutput {
         crate::operation::list_campaigns::ListCampaignsOutput {
-            campaigns: self.campaigns
-            ,
-            next_token: self.next_token
-            ,
+            campaigns: self.campaigns,
+            next_token: self.next_token,
             _request_id: self._request_id,
         }
     }
 }
-

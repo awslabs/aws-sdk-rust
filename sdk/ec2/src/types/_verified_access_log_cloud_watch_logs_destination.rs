@@ -3,7 +3,7 @@
 /// <p>Options for CloudWatch Logs as a logging destination.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct VerifiedAccessLogCloudWatchLogsDestination  {
+pub struct VerifiedAccessLogCloudWatchLogsDestination {
     /// <p>Indicates whether logging is enabled.</p>
     #[doc(hidden)]
     pub enabled: std::option::Option<bool>,
@@ -20,11 +20,13 @@ impl VerifiedAccessLogCloudWatchLogsDestination {
         self.enabled
     }
     /// <p>The delivery status for access logs.</p>
-    pub fn delivery_status(&self) -> std::option::Option<& crate::types::VerifiedAccessLogDeliveryStatus> {
+    pub fn delivery_status(
+        &self,
+    ) -> std::option::Option<&crate::types::VerifiedAccessLogDeliveryStatus> {
         self.delivery_status.as_ref()
     }
     /// <p>The ID of the CloudWatch Logs log group.</p>
-    pub fn log_group(&self) -> std::option::Option<& str> {
+    pub fn log_group(&self) -> std::option::Option<&str> {
         self.log_group.as_deref()
     }
 }
@@ -51,7 +53,8 @@ impl VerifiedAccessLogCloudWatchLogsDestinationBuilder {
     }
     /// <p>Indicates whether logging is enabled.</p>
     pub fn set_enabled(mut self, input: std::option::Option<bool>) -> Self {
-        self.enabled = input; self
+        self.enabled = input;
+        self
     }
     /// <p>The delivery status for access logs.</p>
     pub fn delivery_status(mut self, input: crate::types::VerifiedAccessLogDeliveryStatus) -> Self {
@@ -59,8 +62,12 @@ impl VerifiedAccessLogCloudWatchLogsDestinationBuilder {
         self
     }
     /// <p>The delivery status for access logs.</p>
-    pub fn set_delivery_status(mut self, input: std::option::Option<crate::types::VerifiedAccessLogDeliveryStatus>) -> Self {
-        self.delivery_status = input; self
+    pub fn set_delivery_status(
+        mut self,
+        input: std::option::Option<crate::types::VerifiedAccessLogDeliveryStatus>,
+    ) -> Self {
+        self.delivery_status = input;
+        self
     }
     /// <p>The ID of the CloudWatch Logs log group.</p>
     pub fn log_group(mut self, input: impl Into<std::string::String>) -> Self {
@@ -69,18 +76,15 @@ impl VerifiedAccessLogCloudWatchLogsDestinationBuilder {
     }
     /// <p>The ID of the CloudWatch Logs log group.</p>
     pub fn set_log_group(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.log_group = input; self
+        self.log_group = input;
+        self
     }
     /// Consumes the builder and constructs a [`VerifiedAccessLogCloudWatchLogsDestination`](crate::types::VerifiedAccessLogCloudWatchLogsDestination).
     pub fn build(self) -> crate::types::VerifiedAccessLogCloudWatchLogsDestination {
         crate::types::VerifiedAccessLogCloudWatchLogsDestination {
-            enabled: self.enabled
-            ,
-            delivery_status: self.delivery_status
-            ,
-            log_group: self.log_group
-            ,
+            enabled: self.enabled,
+            delivery_status: self.delivery_status,
+            log_group: self.log_group,
         }
     }
 }
-

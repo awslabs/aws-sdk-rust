@@ -3,7 +3,7 @@
 /// <p>Represents a request to create a configuration set event destination. A configuration set event destination, which can be either Amazon CloudWatch or Amazon Kinesis Firehose, describes an AWS service in which Amazon SES publishes the email sending events associated with a configuration set. For information about using configuration sets, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/monitor-sending-activity.html">Amazon SES Developer Guide</a>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateConfigurationSetEventDestinationInput  {
+pub struct CreateConfigurationSetEventDestinationInput {
     /// <p>The name of the configuration set that the event destination should be associated with.</p>
     #[doc(hidden)]
     pub configuration_set_name: std::option::Option<std::string::String>,
@@ -13,17 +13,17 @@ pub struct CreateConfigurationSetEventDestinationInput  {
 }
 impl CreateConfigurationSetEventDestinationInput {
     /// <p>The name of the configuration set that the event destination should be associated with.</p>
-    pub fn configuration_set_name(&self) -> std::option::Option<& str> {
+    pub fn configuration_set_name(&self) -> std::option::Option<&str> {
         self.configuration_set_name.as_deref()
     }
     /// <p>An object that describes the AWS service that email sending event information will be published to.</p>
-    pub fn event_destination(&self) -> std::option::Option<& crate::types::EventDestination> {
+    pub fn event_destination(&self) -> std::option::Option<&crate::types::EventDestination> {
         self.event_destination.as_ref()
     }
 }
 impl CreateConfigurationSetEventDestinationInput {
     /// Creates a new builder-style object to manufacture [`CreateConfigurationSetEventDestinationInput`](crate::operation::create_configuration_set_event_destination::CreateConfigurationSetEventDestinationInput).
-    pub fn builder() -> crate::operation::create_configuration_set_event_destination::builders::CreateConfigurationSetEventDestinationInputBuilder {
+    pub fn builder() -> crate::operation::create_configuration_set_event_destination::builders::CreateConfigurationSetEventDestinationInputBuilder{
         crate::operation::create_configuration_set_event_destination::builders::CreateConfigurationSetEventDestinationInputBuilder::default()
     }
 }
@@ -42,8 +42,12 @@ impl CreateConfigurationSetEventDestinationInputBuilder {
         self
     }
     /// <p>The name of the configuration set that the event destination should be associated with.</p>
-    pub fn set_configuration_set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.configuration_set_name = input; self
+    pub fn set_configuration_set_name(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.configuration_set_name = input;
+        self
     }
     /// <p>An object that describes the AWS service that email sending event information will be published to.</p>
     pub fn event_destination(mut self, input: crate::types::EventDestination) -> Self {
@@ -51,11 +55,15 @@ impl CreateConfigurationSetEventDestinationInputBuilder {
         self
     }
     /// <p>An object that describes the AWS service that email sending event information will be published to.</p>
-    pub fn set_event_destination(mut self, input: std::option::Option<crate::types::EventDestination>) -> Self {
-        self.event_destination = input; self
+    pub fn set_event_destination(
+        mut self,
+        input: std::option::Option<crate::types::EventDestination>,
+    ) -> Self {
+        self.event_destination = input;
+        self
     }
     /// Consumes the builder and constructs a [`CreateConfigurationSetEventDestinationInput`](crate::operation::create_configuration_set_event_destination::CreateConfigurationSetEventDestinationInput).
-    pub fn build(self) -> Result<crate::operation::create_configuration_set_event_destination::CreateConfigurationSetEventDestinationInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> Result<crate::operation::create_configuration_set_event_destination::CreateConfigurationSetEventDestinationInput, aws_smithy_http::operation::error::BuildError>{
         Ok(
             crate::operation::create_configuration_set_event_destination::CreateConfigurationSetEventDestinationInput {
                 configuration_set_name: self.configuration_set_name
@@ -66,4 +74,3 @@ impl CreateConfigurationSetEventDestinationInputBuilder {
         )
     }
 }
-

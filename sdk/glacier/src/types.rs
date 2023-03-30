@@ -136,4 +136,3 @@ pub mod builders;
 
 /// Error types that Amazon Glacier can respond with.
 pub mod error;
-

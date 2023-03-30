@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-/// 
+///
 /// Here is an example of how you can make a match expression forward-compatible:
-/// 
+///
 /// ```text
 /// # let validatepolicyresourcetype = unimplemented!();
 /// match validatepolicyresourcetype {
@@ -33,14 +33,22 @@
 /// Specifically, when `validatepolicyresourcetype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `ValidatePolicyResourceType::NewFeature` also yielding `"NewFeature"`.
-/// 
+///
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
 pub enum ValidatePolicyResourceType {
     #[allow(missing_docs)] // documentation missing in model
     RoleTrust,
@@ -53,47 +61,62 @@ pub enum ValidatePolicyResourceType {
     #[allow(missing_docs)] // documentation missing in model
     S3ObjectLambdaAccessPoint,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::primitives::UnknownVariantValue)
+    Unknown(crate::primitives::UnknownVariantValue),
 }
 impl std::convert::From<&str> for ValidatePolicyResourceType {
-                fn from(s: &str) -> Self {
-                    match s {
-                        "AWS::IAM::AssumeRolePolicyDocument" => ValidatePolicyResourceType::RoleTrust,
-"AWS::S3::AccessPoint" => ValidatePolicyResourceType::S3AccessPoint,
-"AWS::S3::Bucket" => ValidatePolicyResourceType::S3Bucket,
-"AWS::S3::MultiRegionAccessPoint" => ValidatePolicyResourceType::S3MultiRegionAccessPoint,
-"AWS::S3ObjectLambda::AccessPoint" => ValidatePolicyResourceType::S3ObjectLambdaAccessPoint,
-other => ValidatePolicyResourceType::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
-                    }
-                }
+    fn from(s: &str) -> Self {
+        match s {
+            "AWS::IAM::AssumeRolePolicyDocument" => ValidatePolicyResourceType::RoleTrust,
+            "AWS::S3::AccessPoint" => ValidatePolicyResourceType::S3AccessPoint,
+            "AWS::S3::Bucket" => ValidatePolicyResourceType::S3Bucket,
+            "AWS::S3::MultiRegionAccessPoint" => {
+                ValidatePolicyResourceType::S3MultiRegionAccessPoint
             }
-impl std::str::FromStr for ValidatePolicyResourceType {
-                type Err = std::convert::Infallible;
-
-                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-                    Ok(ValidatePolicyResourceType::from(s))
-                }
+            "AWS::S3ObjectLambda::AccessPoint" => {
+                ValidatePolicyResourceType::S3ObjectLambdaAccessPoint
             }
-impl ValidatePolicyResourceType {
-                /// Returns the `&str` value of the enum member.
-                pub fn as_str(&self) -> &str {
-                    match self {
-    ValidatePolicyResourceType::RoleTrust => "AWS::IAM::AssumeRolePolicyDocument",
-    ValidatePolicyResourceType::S3AccessPoint => "AWS::S3::AccessPoint",
-    ValidatePolicyResourceType::S3Bucket => "AWS::S3::Bucket",
-    ValidatePolicyResourceType::S3MultiRegionAccessPoint => "AWS::S3::MultiRegionAccessPoint",
-    ValidatePolicyResourceType::S3ObjectLambdaAccessPoint => "AWS::S3ObjectLambda::AccessPoint",
-    ValidatePolicyResourceType::Unknown(value) => value.as_str()
+            other => ValidatePolicyResourceType::Unknown(crate::primitives::UnknownVariantValue(
+                other.to_owned(),
+            )),
+        }
+    }
 }
-                }
-                /// Returns all the `&str` representations of the enum members.
-                pub const fn values() -> &'static [&'static str] {
-                    &["AWS::IAM::AssumeRolePolicyDocument", "AWS::S3::AccessPoint", "AWS::S3::Bucket", "AWS::S3::MultiRegionAccessPoint", "AWS::S3ObjectLambda::AccessPoint"]
-                }
-            }
-impl AsRef<str> for ValidatePolicyResourceType {
-                fn as_ref(&self) -> &str {
-                    self.as_str()
-                }
-            }
+impl std::str::FromStr for ValidatePolicyResourceType {
+    type Err = std::convert::Infallible;
 
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(ValidatePolicyResourceType::from(s))
+    }
+}
+impl ValidatePolicyResourceType {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            ValidatePolicyResourceType::RoleTrust => "AWS::IAM::AssumeRolePolicyDocument",
+            ValidatePolicyResourceType::S3AccessPoint => "AWS::S3::AccessPoint",
+            ValidatePolicyResourceType::S3Bucket => "AWS::S3::Bucket",
+            ValidatePolicyResourceType::S3MultiRegionAccessPoint => {
+                "AWS::S3::MultiRegionAccessPoint"
+            }
+            ValidatePolicyResourceType::S3ObjectLambdaAccessPoint => {
+                "AWS::S3ObjectLambda::AccessPoint"
+            }
+            ValidatePolicyResourceType::Unknown(value) => value.as_str(),
+        }
+    }
+    /// Returns all the `&str` representations of the enum members.
+    pub const fn values() -> &'static [&'static str] {
+        &[
+            "AWS::IAM::AssumeRolePolicyDocument",
+            "AWS::S3::AccessPoint",
+            "AWS::S3::Bucket",
+            "AWS::S3::MultiRegionAccessPoint",
+            "AWS::S3ObjectLambda::AccessPoint",
+        ]
+    }
+}
+impl AsRef<str> for ValidatePolicyResourceType {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}

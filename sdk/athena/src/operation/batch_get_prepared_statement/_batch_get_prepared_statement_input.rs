@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct BatchGetPreparedStatementInput  {
+pub struct BatchGetPreparedStatementInput {
     /// <p>A list of prepared statement names to return.</p>
     #[doc(hidden)]
     pub prepared_statement_names: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -12,17 +12,17 @@ pub struct BatchGetPreparedStatementInput  {
 }
 impl BatchGetPreparedStatementInput {
     /// <p>A list of prepared statement names to return.</p>
-    pub fn prepared_statement_names(&self) -> std::option::Option<& [std::string::String]> {
+    pub fn prepared_statement_names(&self) -> std::option::Option<&[std::string::String]> {
         self.prepared_statement_names.as_deref()
     }
     /// <p>The name of the workgroup to which the prepared statements belong.</p>
-    pub fn work_group(&self) -> std::option::Option<& str> {
+    pub fn work_group(&self) -> std::option::Option<&str> {
         self.work_group.as_deref()
     }
 }
 impl BatchGetPreparedStatementInput {
     /// Creates a new builder-style object to manufacture [`BatchGetPreparedStatementInput`](crate::operation::batch_get_prepared_statement::BatchGetPreparedStatementInput).
-    pub fn builder() -> crate::operation::batch_get_prepared_statement::builders::BatchGetPreparedStatementInputBuilder {
+    pub fn builder() -> crate::operation::batch_get_prepared_statement::builders::BatchGetPreparedStatementInputBuilder{
         crate::operation::batch_get_prepared_statement::builders::BatchGetPreparedStatementInputBuilder::default()
     }
 }
@@ -42,13 +42,17 @@ impl BatchGetPreparedStatementInputBuilder {
     /// <p>A list of prepared statement names to return.</p>
     pub fn prepared_statement_names(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.prepared_statement_names.unwrap_or_default();
-                        v.push(input.into());
-                        self.prepared_statement_names = Some(v);
-                        self
+        v.push(input.into());
+        self.prepared_statement_names = Some(v);
+        self
     }
     /// <p>A list of prepared statement names to return.</p>
-    pub fn set_prepared_statement_names(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-        self.prepared_statement_names = input; self
+    pub fn set_prepared_statement_names(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
+        self.prepared_statement_names = input;
+        self
     }
     /// <p>The name of the workgroup to which the prepared statements belong.</p>
     pub fn work_group(mut self, input: impl Into<std::string::String>) -> Self {
@@ -57,18 +61,21 @@ impl BatchGetPreparedStatementInputBuilder {
     }
     /// <p>The name of the workgroup to which the prepared statements belong.</p>
     pub fn set_work_group(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.work_group = input; self
+        self.work_group = input;
+        self
     }
     /// Consumes the builder and constructs a [`BatchGetPreparedStatementInput`](crate::operation::batch_get_prepared_statement::BatchGetPreparedStatementInput).
-    pub fn build(self) -> Result<crate::operation::batch_get_prepared_statement::BatchGetPreparedStatementInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::batch_get_prepared_statement::BatchGetPreparedStatementInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::batch_get_prepared_statement::BatchGetPreparedStatementInput {
-                prepared_statement_names: self.prepared_statement_names
-                ,
-                work_group: self.work_group
-                ,
-            }
+                prepared_statement_names: self.prepared_statement_names,
+                work_group: self.work_group,
+            },
         )
     }
 }
-

@@ -3,7 +3,7 @@
 /// <p>The response elements represent the output of a SQL statement over an array of data.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct BatchExecuteStatementOutput  {
+pub struct BatchExecuteStatementOutput {
     /// <p>The execution results of each batch entry.</p>
     #[doc(hidden)]
     pub update_results: std::option::Option<std::vec::Vec<crate::types::UpdateResult>>,
@@ -11,18 +11,20 @@ pub struct BatchExecuteStatementOutput  {
 }
 impl BatchExecuteStatementOutput {
     /// <p>The execution results of each batch entry.</p>
-    pub fn update_results(&self) -> std::option::Option<& [crate::types::UpdateResult]> {
+    pub fn update_results(&self) -> std::option::Option<&[crate::types::UpdateResult]> {
         self.update_results.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for BatchExecuteStatementOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl BatchExecuteStatementOutput {
     /// Creates a new builder-style object to manufacture [`BatchExecuteStatementOutput`](crate::operation::batch_execute_statement::BatchExecuteStatementOutput).
-    pub fn builder() -> crate::operation::batch_execute_statement::builders::BatchExecuteStatementOutputBuilder {
+    pub fn builder(
+    ) -> crate::operation::batch_execute_statement::builders::BatchExecuteStatementOutputBuilder
+    {
         crate::operation::batch_execute_statement::builders::BatchExecuteStatementOutputBuilder::default()
     }
 }
@@ -42,30 +44,32 @@ impl BatchExecuteStatementOutputBuilder {
     /// <p>The execution results of each batch entry.</p>
     pub fn update_results(mut self, input: crate::types::UpdateResult) -> Self {
         let mut v = self.update_results.unwrap_or_default();
-                        v.push(input);
-                        self.update_results = Some(v);
-                        self
+        v.push(input);
+        self.update_results = Some(v);
+        self
     }
     /// <p>The execution results of each batch entry.</p>
-    pub fn set_update_results(mut self, input: std::option::Option<std::vec::Vec<crate::types::UpdateResult>>) -> Self {
-        self.update_results = input; self
+    pub fn set_update_results(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::UpdateResult>>,
+    ) -> Self {
+        self.update_results = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`BatchExecuteStatementOutput`](crate::operation::batch_execute_statement::BatchExecuteStatementOutput).
     pub fn build(self) -> crate::operation::batch_execute_statement::BatchExecuteStatementOutput {
         crate::operation::batch_execute_statement::BatchExecuteStatementOutput {
-            update_results: self.update_results
-            ,
+            update_results: self.update_results,
             _request_id: self._request_id,
         }
     }
 }
-

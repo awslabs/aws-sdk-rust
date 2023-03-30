@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AssociateMemberToGroupInput  {
+pub struct AssociateMemberToGroupInput {
     /// <p>The organization under which the group exists.</p>
     #[doc(hidden)]
     pub organization_id: std::option::Option<std::string::String>,
@@ -15,21 +15,23 @@ pub struct AssociateMemberToGroupInput  {
 }
 impl AssociateMemberToGroupInput {
     /// <p>The organization under which the group exists.</p>
-    pub fn organization_id(&self) -> std::option::Option<& str> {
+    pub fn organization_id(&self) -> std::option::Option<&str> {
         self.organization_id.as_deref()
     }
     /// <p>The group to which the member (user or group) is associated.</p>
-    pub fn group_id(&self) -> std::option::Option<& str> {
+    pub fn group_id(&self) -> std::option::Option<&str> {
         self.group_id.as_deref()
     }
     /// <p>The member (user or group) to associate to the group.</p>
-    pub fn member_id(&self) -> std::option::Option<& str> {
+    pub fn member_id(&self) -> std::option::Option<&str> {
         self.member_id.as_deref()
     }
 }
 impl AssociateMemberToGroupInput {
     /// Creates a new builder-style object to manufacture [`AssociateMemberToGroupInput`](crate::operation::associate_member_to_group::AssociateMemberToGroupInput).
-    pub fn builder() -> crate::operation::associate_member_to_group::builders::AssociateMemberToGroupInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::associate_member_to_group::builders::AssociateMemberToGroupInputBuilder
+    {
         crate::operation::associate_member_to_group::builders::AssociateMemberToGroupInputBuilder::default()
     }
 }
@@ -50,7 +52,8 @@ impl AssociateMemberToGroupInputBuilder {
     }
     /// <p>The organization under which the group exists.</p>
     pub fn set_organization_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.organization_id = input; self
+        self.organization_id = input;
+        self
     }
     /// <p>The group to which the member (user or group) is associated.</p>
     pub fn group_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -59,7 +62,8 @@ impl AssociateMemberToGroupInputBuilder {
     }
     /// <p>The group to which the member (user or group) is associated.</p>
     pub fn set_group_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.group_id = input; self
+        self.group_id = input;
+        self
     }
     /// <p>The member (user or group) to associate to the group.</p>
     pub fn member_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -68,20 +72,22 @@ impl AssociateMemberToGroupInputBuilder {
     }
     /// <p>The member (user or group) to associate to the group.</p>
     pub fn set_member_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.member_id = input; self
+        self.member_id = input;
+        self
     }
     /// Consumes the builder and constructs a [`AssociateMemberToGroupInput`](crate::operation::associate_member_to_group::AssociateMemberToGroupInput).
-    pub fn build(self) -> Result<crate::operation::associate_member_to_group::AssociateMemberToGroupInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::associate_member_to_group::AssociateMemberToGroupInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::associate_member_to_group::AssociateMemberToGroupInput {
-                organization_id: self.organization_id
-                ,
-                group_id: self.group_id
-                ,
-                member_id: self.member_id
-                ,
-            }
+                organization_id: self.organization_id,
+                group_id: self.group_id,
+                member_id: self.member_id,
+            },
         )
     }
 }
-

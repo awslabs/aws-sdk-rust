@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateThingRuntimeConfigurationInput  {
+pub struct UpdateThingRuntimeConfigurationInput {
     /// Configuration for telemetry service.
     #[doc(hidden)]
     pub telemetry_configuration: std::option::Option<crate::types::TelemetryConfigurationUpdate>,
@@ -12,17 +12,19 @@ pub struct UpdateThingRuntimeConfigurationInput  {
 }
 impl UpdateThingRuntimeConfigurationInput {
     /// Configuration for telemetry service.
-    pub fn telemetry_configuration(&self) -> std::option::Option<& crate::types::TelemetryConfigurationUpdate> {
+    pub fn telemetry_configuration(
+        &self,
+    ) -> std::option::Option<&crate::types::TelemetryConfigurationUpdate> {
         self.telemetry_configuration.as_ref()
     }
     /// The thing name.
-    pub fn thing_name(&self) -> std::option::Option<& str> {
+    pub fn thing_name(&self) -> std::option::Option<&str> {
         self.thing_name.as_deref()
     }
 }
 impl UpdateThingRuntimeConfigurationInput {
     /// Creates a new builder-style object to manufacture [`UpdateThingRuntimeConfigurationInput`](crate::operation::update_thing_runtime_configuration::UpdateThingRuntimeConfigurationInput).
-    pub fn builder() -> crate::operation::update_thing_runtime_configuration::builders::UpdateThingRuntimeConfigurationInputBuilder {
+    pub fn builder() -> crate::operation::update_thing_runtime_configuration::builders::UpdateThingRuntimeConfigurationInputBuilder{
         crate::operation::update_thing_runtime_configuration::builders::UpdateThingRuntimeConfigurationInputBuilder::default()
     }
 }
@@ -31,18 +33,26 @@ impl UpdateThingRuntimeConfigurationInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct UpdateThingRuntimeConfigurationInputBuilder {
-    pub(crate) telemetry_configuration: std::option::Option<crate::types::TelemetryConfigurationUpdate>,
+    pub(crate) telemetry_configuration:
+        std::option::Option<crate::types::TelemetryConfigurationUpdate>,
     pub(crate) thing_name: std::option::Option<std::string::String>,
 }
 impl UpdateThingRuntimeConfigurationInputBuilder {
     /// Configuration for telemetry service.
-    pub fn telemetry_configuration(mut self, input: crate::types::TelemetryConfigurationUpdate) -> Self {
+    pub fn telemetry_configuration(
+        mut self,
+        input: crate::types::TelemetryConfigurationUpdate,
+    ) -> Self {
         self.telemetry_configuration = Some(input);
         self
     }
     /// Configuration for telemetry service.
-    pub fn set_telemetry_configuration(mut self, input: std::option::Option<crate::types::TelemetryConfigurationUpdate>) -> Self {
-        self.telemetry_configuration = input; self
+    pub fn set_telemetry_configuration(
+        mut self,
+        input: std::option::Option<crate::types::TelemetryConfigurationUpdate>,
+    ) -> Self {
+        self.telemetry_configuration = input;
+        self
     }
     /// The thing name.
     pub fn thing_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -51,10 +61,16 @@ impl UpdateThingRuntimeConfigurationInputBuilder {
     }
     /// The thing name.
     pub fn set_thing_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.thing_name = input; self
+        self.thing_name = input;
+        self
     }
     /// Consumes the builder and constructs a [`UpdateThingRuntimeConfigurationInput`](crate::operation::update_thing_runtime_configuration::UpdateThingRuntimeConfigurationInput).
-    pub fn build(self) -> Result<crate::operation::update_thing_runtime_configuration::UpdateThingRuntimeConfigurationInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::update_thing_runtime_configuration::UpdateThingRuntimeConfigurationInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::update_thing_runtime_configuration::UpdateThingRuntimeConfigurationInput {
                 telemetry_configuration: self.telemetry_configuration
@@ -65,4 +81,3 @@ impl UpdateThingRuntimeConfigurationInputBuilder {
         )
     }
 }
-

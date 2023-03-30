@@ -60,4 +60,3 @@ pub mod builders;
 
 /// Error types that AWS Backup Gateway can respond with.
 pub mod error;
-

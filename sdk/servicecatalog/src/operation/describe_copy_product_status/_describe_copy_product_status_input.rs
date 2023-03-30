@@ -2,12 +2,12 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeCopyProductStatusInput  {
-    /// <p>The language code.</p> 
-    /// <ul> 
-    /// <li> <p> <code>en</code> - English (default)</p> </li> 
-    /// <li> <p> <code>jp</code> - Japanese</p> </li> 
-    /// <li> <p> <code>zh</code> - Chinese</p> </li> 
+pub struct DescribeCopyProductStatusInput {
+    /// <p>The language code.</p>
+    /// <ul>
+    /// <li> <p> <code>en</code> - English (default)</p> </li>
+    /// <li> <p> <code>jp</code> - Japanese</p> </li>
+    /// <li> <p> <code>zh</code> - Chinese</p> </li>
     /// </ul>
     #[doc(hidden)]
     pub accept_language: std::option::Option<std::string::String>,
@@ -16,23 +16,23 @@ pub struct DescribeCopyProductStatusInput  {
     pub copy_product_token: std::option::Option<std::string::String>,
 }
 impl DescribeCopyProductStatusInput {
-    /// <p>The language code.</p> 
-    /// <ul> 
-    /// <li> <p> <code>en</code> - English (default)</p> </li> 
-    /// <li> <p> <code>jp</code> - Japanese</p> </li> 
-    /// <li> <p> <code>zh</code> - Chinese</p> </li> 
+    /// <p>The language code.</p>
+    /// <ul>
+    /// <li> <p> <code>en</code> - English (default)</p> </li>
+    /// <li> <p> <code>jp</code> - Japanese</p> </li>
+    /// <li> <p> <code>zh</code> - Chinese</p> </li>
     /// </ul>
-    pub fn accept_language(&self) -> std::option::Option<& str> {
+    pub fn accept_language(&self) -> std::option::Option<&str> {
         self.accept_language.as_deref()
     }
     /// <p>The token for the copy product operation. This token is returned by <code>CopyProduct</code>.</p>
-    pub fn copy_product_token(&self) -> std::option::Option<& str> {
+    pub fn copy_product_token(&self) -> std::option::Option<&str> {
         self.copy_product_token.as_deref()
     }
 }
 impl DescribeCopyProductStatusInput {
     /// Creates a new builder-style object to manufacture [`DescribeCopyProductStatusInput`](crate::operation::describe_copy_product_status::DescribeCopyProductStatusInput).
-    pub fn builder() -> crate::operation::describe_copy_product_status::builders::DescribeCopyProductStatusInputBuilder {
+    pub fn builder() -> crate::operation::describe_copy_product_status::builders::DescribeCopyProductStatusInputBuilder{
         crate::operation::describe_copy_product_status::builders::DescribeCopyProductStatusInputBuilder::default()
     }
 }
@@ -45,24 +45,25 @@ pub struct DescribeCopyProductStatusInputBuilder {
     pub(crate) copy_product_token: std::option::Option<std::string::String>,
 }
 impl DescribeCopyProductStatusInputBuilder {
-    /// <p>The language code.</p> 
-    /// <ul> 
-    /// <li> <p> <code>en</code> - English (default)</p> </li> 
-    /// <li> <p> <code>jp</code> - Japanese</p> </li> 
-    /// <li> <p> <code>zh</code> - Chinese</p> </li> 
+    /// <p>The language code.</p>
+    /// <ul>
+    /// <li> <p> <code>en</code> - English (default)</p> </li>
+    /// <li> <p> <code>jp</code> - Japanese</p> </li>
+    /// <li> <p> <code>zh</code> - Chinese</p> </li>
     /// </ul>
     pub fn accept_language(mut self, input: impl Into<std::string::String>) -> Self {
         self.accept_language = Some(input.into());
         self
     }
-    /// <p>The language code.</p> 
-    /// <ul> 
-    /// <li> <p> <code>en</code> - English (default)</p> </li> 
-    /// <li> <p> <code>jp</code> - Japanese</p> </li> 
-    /// <li> <p> <code>zh</code> - Chinese</p> </li> 
+    /// <p>The language code.</p>
+    /// <ul>
+    /// <li> <p> <code>en</code> - English (default)</p> </li>
+    /// <li> <p> <code>jp</code> - Japanese</p> </li>
+    /// <li> <p> <code>zh</code> - Chinese</p> </li>
     /// </ul>
     pub fn set_accept_language(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.accept_language = input; self
+        self.accept_language = input;
+        self
     }
     /// <p>The token for the copy product operation. This token is returned by <code>CopyProduct</code>.</p>
     pub fn copy_product_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -70,19 +71,25 @@ impl DescribeCopyProductStatusInputBuilder {
         self
     }
     /// <p>The token for the copy product operation. This token is returned by <code>CopyProduct</code>.</p>
-    pub fn set_copy_product_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.copy_product_token = input; self
+    pub fn set_copy_product_token(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.copy_product_token = input;
+        self
     }
     /// Consumes the builder and constructs a [`DescribeCopyProductStatusInput`](crate::operation::describe_copy_product_status::DescribeCopyProductStatusInput).
-    pub fn build(self) -> Result<crate::operation::describe_copy_product_status::DescribeCopyProductStatusInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::describe_copy_product_status::DescribeCopyProductStatusInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::describe_copy_product_status::DescribeCopyProductStatusInput {
-                accept_language: self.accept_language
-                ,
-                copy_product_token: self.copy_product_token
-                ,
-            }
+                accept_language: self.accept_language,
+                copy_product_token: self.copy_product_token,
+            },
         )
     }
 }
-

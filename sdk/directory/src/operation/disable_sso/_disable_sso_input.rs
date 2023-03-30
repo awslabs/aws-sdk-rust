@@ -3,11 +3,11 @@
 /// <p>Contains the inputs for the <code>DisableSso</code> operation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct DisableSsoInput  {
+pub struct DisableSsoInput {
     /// <p>The identifier of the directory for which to disable single-sign on.</p>
     #[doc(hidden)]
     pub directory_id: std::option::Option<std::string::String>,
-    /// <p>The username of an alternate account to use to disable single-sign on. This is only used for AD Connector directories. This account must have privileges to remove a service principal name.</p> 
+    /// <p>The username of an alternate account to use to disable single-sign on. This is only used for AD Connector directories. This account must have privileges to remove a service principal name.</p>
     /// <p>If the AD Connector service account does not have privileges to remove a service principal name, you can specify an alternate account with the <i>UserName</i> and <i>Password</i> parameters. These credentials are only used to disable single sign-on and are not stored by the service. The AD Connector service account is not changed.</p>
     #[doc(hidden)]
     pub user_name: std::option::Option<std::string::String>,
@@ -17,20 +17,20 @@ pub struct DisableSsoInput  {
 }
 impl DisableSsoInput {
     /// <p>The identifier of the directory for which to disable single-sign on.</p>
-    pub fn directory_id(&self) -> std::option::Option<& str> {
+    pub fn directory_id(&self) -> std::option::Option<&str> {
         self.directory_id.as_deref()
     }
-    /// <p>The username of an alternate account to use to disable single-sign on. This is only used for AD Connector directories. This account must have privileges to remove a service principal name.</p> 
+    /// <p>The username of an alternate account to use to disable single-sign on. This is only used for AD Connector directories. This account must have privileges to remove a service principal name.</p>
     /// <p>If the AD Connector service account does not have privileges to remove a service principal name, you can specify an alternate account with the <i>UserName</i> and <i>Password</i> parameters. These credentials are only used to disable single sign-on and are not stored by the service. The AD Connector service account is not changed.</p>
-    pub fn user_name(&self) -> std::option::Option<& str> {
+    pub fn user_name(&self) -> std::option::Option<&str> {
         self.user_name.as_deref()
     }
     /// <p>The password of an alternate account to use to disable single-sign on. This is only used for AD Connector directories. For more information, see the <i>UserName</i> parameter.</p>
-    pub fn password(&self) -> std::option::Option<& str> {
+    pub fn password(&self) -> std::option::Option<&str> {
         self.password.as_deref()
     }
 }
-impl  std::fmt::Debug for DisableSsoInput  {
+impl std::fmt::Debug for DisableSsoInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DisableSsoInput");
         formatter.field("directory_id", &self.directory_id);
@@ -62,18 +62,20 @@ impl DisableSsoInputBuilder {
     }
     /// <p>The identifier of the directory for which to disable single-sign on.</p>
     pub fn set_directory_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.directory_id = input; self
+        self.directory_id = input;
+        self
     }
-    /// <p>The username of an alternate account to use to disable single-sign on. This is only used for AD Connector directories. This account must have privileges to remove a service principal name.</p> 
+    /// <p>The username of an alternate account to use to disable single-sign on. This is only used for AD Connector directories. This account must have privileges to remove a service principal name.</p>
     /// <p>If the AD Connector service account does not have privileges to remove a service principal name, you can specify an alternate account with the <i>UserName</i> and <i>Password</i> parameters. These credentials are only used to disable single sign-on and are not stored by the service. The AD Connector service account is not changed.</p>
     pub fn user_name(mut self, input: impl Into<std::string::String>) -> Self {
         self.user_name = Some(input.into());
         self
     }
-    /// <p>The username of an alternate account to use to disable single-sign on. This is only used for AD Connector directories. This account must have privileges to remove a service principal name.</p> 
+    /// <p>The username of an alternate account to use to disable single-sign on. This is only used for AD Connector directories. This account must have privileges to remove a service principal name.</p>
     /// <p>If the AD Connector service account does not have privileges to remove a service principal name, you can specify an alternate account with the <i>UserName</i> and <i>Password</i> parameters. These credentials are only used to disable single sign-on and are not stored by the service. The AD Connector service account is not changed.</p>
     pub fn set_user_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.user_name = input; self
+        self.user_name = input;
+        self
     }
     /// <p>The password of an alternate account to use to disable single-sign on. This is only used for AD Connector directories. For more information, see the <i>UserName</i> parameter.</p>
     pub fn password(mut self, input: impl Into<std::string::String>) -> Self {
@@ -82,20 +84,21 @@ impl DisableSsoInputBuilder {
     }
     /// <p>The password of an alternate account to use to disable single-sign on. This is only used for AD Connector directories. For more information, see the <i>UserName</i> parameter.</p>
     pub fn set_password(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.password = input; self
+        self.password = input;
+        self
     }
     /// Consumes the builder and constructs a [`DisableSsoInput`](crate::operation::disable_sso::DisableSsoInput).
-    pub fn build(self) -> Result<crate::operation::disable_sso::DisableSsoInput, aws_smithy_http::operation::error::BuildError> {
-        Ok(
-            crate::operation::disable_sso::DisableSsoInput {
-                directory_id: self.directory_id
-                ,
-                user_name: self.user_name
-                ,
-                password: self.password
-                ,
-            }
-        )
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::disable_sso::DisableSsoInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        Ok(crate::operation::disable_sso::DisableSsoInput {
+            directory_id: self.directory_id,
+            user_name: self.user_name,
+            password: self.password,
+        })
     }
 }
 impl std::fmt::Debug for DisableSsoInputBuilder {
@@ -107,4 +110,3 @@ impl std::fmt::Debug for DisableSsoInputBuilder {
         formatter.finish()
     }
 }
-

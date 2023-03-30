@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PutFunctionEventInvokeConfigOutput  {
+pub struct PutFunctionEventInvokeConfigOutput {
     /// <p>The date and time that the configuration was last updated.</p>
     #[doc(hidden)]
     pub last_modified: std::option::Option<aws_smithy_types::DateTime>,
@@ -15,13 +15,13 @@ pub struct PutFunctionEventInvokeConfigOutput  {
     /// <p>The maximum age of a request that Lambda sends to a function for processing.</p>
     #[doc(hidden)]
     pub maximum_event_age_in_seconds: std::option::Option<i32>,
-    /// <p>A destination for events after they have been sent to a function for processing.</p> 
-    /// <p class="title"> <b>Destinations</b> </p> 
-    /// <ul> 
-    /// <li> <p> <b>Function</b> - The Amazon Resource Name (ARN) of a Lambda function.</p> </li> 
-    /// <li> <p> <b>Queue</b> - The ARN of an SQS queue.</p> </li> 
-    /// <li> <p> <b>Topic</b> - The ARN of an SNS topic.</p> </li> 
-    /// <li> <p> <b>Event Bus</b> - The ARN of an Amazon EventBridge event bus.</p> </li> 
+    /// <p>A destination for events after they have been sent to a function for processing.</p>
+    /// <p class="title"> <b>Destinations</b> </p>
+    /// <ul>
+    /// <li> <p> <b>Function</b> - The Amazon Resource Name (ARN) of a Lambda function.</p> </li>
+    /// <li> <p> <b>Queue</b> - The ARN of an SQS queue.</p> </li>
+    /// <li> <p> <b>Topic</b> - The ARN of an SNS topic.</p> </li>
+    /// <li> <p> <b>Event Bus</b> - The ARN of an Amazon EventBridge event bus.</p> </li>
     /// </ul>
     #[doc(hidden)]
     pub destination_config: std::option::Option<crate::types::DestinationConfig>,
@@ -29,11 +29,11 @@ pub struct PutFunctionEventInvokeConfigOutput  {
 }
 impl PutFunctionEventInvokeConfigOutput {
     /// <p>The date and time that the configuration was last updated.</p>
-    pub fn last_modified(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
+    pub fn last_modified(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_modified.as_ref()
     }
     /// <p>The Amazon Resource Name (ARN) of the function.</p>
-    pub fn function_arn(&self) -> std::option::Option<& str> {
+    pub fn function_arn(&self) -> std::option::Option<&str> {
         self.function_arn.as_deref()
     }
     /// <p>The maximum number of times to retry when the function returns an error.</p>
@@ -44,26 +44,26 @@ impl PutFunctionEventInvokeConfigOutput {
     pub fn maximum_event_age_in_seconds(&self) -> std::option::Option<i32> {
         self.maximum_event_age_in_seconds
     }
-    /// <p>A destination for events after they have been sent to a function for processing.</p> 
-    /// <p class="title"> <b>Destinations</b> </p> 
-    /// <ul> 
-    /// <li> <p> <b>Function</b> - The Amazon Resource Name (ARN) of a Lambda function.</p> </li> 
-    /// <li> <p> <b>Queue</b> - The ARN of an SQS queue.</p> </li> 
-    /// <li> <p> <b>Topic</b> - The ARN of an SNS topic.</p> </li> 
-    /// <li> <p> <b>Event Bus</b> - The ARN of an Amazon EventBridge event bus.</p> </li> 
+    /// <p>A destination for events after they have been sent to a function for processing.</p>
+    /// <p class="title"> <b>Destinations</b> </p>
+    /// <ul>
+    /// <li> <p> <b>Function</b> - The Amazon Resource Name (ARN) of a Lambda function.</p> </li>
+    /// <li> <p> <b>Queue</b> - The ARN of an SQS queue.</p> </li>
+    /// <li> <p> <b>Topic</b> - The ARN of an SNS topic.</p> </li>
+    /// <li> <p> <b>Event Bus</b> - The ARN of an Amazon EventBridge event bus.</p> </li>
     /// </ul>
-    pub fn destination_config(&self) -> std::option::Option<& crate::types::DestinationConfig> {
+    pub fn destination_config(&self) -> std::option::Option<&crate::types::DestinationConfig> {
         self.destination_config.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for PutFunctionEventInvokeConfigOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl PutFunctionEventInvokeConfigOutput {
     /// Creates a new builder-style object to manufacture [`PutFunctionEventInvokeConfigOutput`](crate::operation::put_function_event_invoke_config::PutFunctionEventInvokeConfigOutput).
-    pub fn builder() -> crate::operation::put_function_event_invoke_config::builders::PutFunctionEventInvokeConfigOutputBuilder {
+    pub fn builder() -> crate::operation::put_function_event_invoke_config::builders::PutFunctionEventInvokeConfigOutputBuilder{
         crate::operation::put_function_event_invoke_config::builders::PutFunctionEventInvokeConfigOutputBuilder::default()
     }
 }
@@ -86,8 +86,12 @@ impl PutFunctionEventInvokeConfigOutputBuilder {
         self
     }
     /// <p>The date and time that the configuration was last updated.</p>
-    pub fn set_last_modified(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.last_modified = input; self
+    pub fn set_last_modified(
+        mut self,
+        input: std::option::Option<aws_smithy_types::DateTime>,
+    ) -> Self {
+        self.last_modified = input;
+        self
     }
     /// <p>The Amazon Resource Name (ARN) of the function.</p>
     pub fn function_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -96,7 +100,8 @@ impl PutFunctionEventInvokeConfigOutputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the function.</p>
     pub fn set_function_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.function_arn = input; self
+        self.function_arn = input;
+        self
     }
     /// <p>The maximum number of times to retry when the function returns an error.</p>
     pub fn maximum_retry_attempts(mut self, input: i32) -> Self {
@@ -105,7 +110,8 @@ impl PutFunctionEventInvokeConfigOutputBuilder {
     }
     /// <p>The maximum number of times to retry when the function returns an error.</p>
     pub fn set_maximum_retry_attempts(mut self, input: std::option::Option<i32>) -> Self {
-        self.maximum_retry_attempts = input; self
+        self.maximum_retry_attempts = input;
+        self
     }
     /// <p>The maximum age of a request that Lambda sends to a function for processing.</p>
     pub fn maximum_event_age_in_seconds(mut self, input: i32) -> Self {
@@ -114,55 +120,57 @@ impl PutFunctionEventInvokeConfigOutputBuilder {
     }
     /// <p>The maximum age of a request that Lambda sends to a function for processing.</p>
     pub fn set_maximum_event_age_in_seconds(mut self, input: std::option::Option<i32>) -> Self {
-        self.maximum_event_age_in_seconds = input; self
+        self.maximum_event_age_in_seconds = input;
+        self
     }
-    /// <p>A destination for events after they have been sent to a function for processing.</p> 
-    /// <p class="title"> <b>Destinations</b> </p> 
-    /// <ul> 
-    /// <li> <p> <b>Function</b> - The Amazon Resource Name (ARN) of a Lambda function.</p> </li> 
-    /// <li> <p> <b>Queue</b> - The ARN of an SQS queue.</p> </li> 
-    /// <li> <p> <b>Topic</b> - The ARN of an SNS topic.</p> </li> 
-    /// <li> <p> <b>Event Bus</b> - The ARN of an Amazon EventBridge event bus.</p> </li> 
+    /// <p>A destination for events after they have been sent to a function for processing.</p>
+    /// <p class="title"> <b>Destinations</b> </p>
+    /// <ul>
+    /// <li> <p> <b>Function</b> - The Amazon Resource Name (ARN) of a Lambda function.</p> </li>
+    /// <li> <p> <b>Queue</b> - The ARN of an SQS queue.</p> </li>
+    /// <li> <p> <b>Topic</b> - The ARN of an SNS topic.</p> </li>
+    /// <li> <p> <b>Event Bus</b> - The ARN of an Amazon EventBridge event bus.</p> </li>
     /// </ul>
     pub fn destination_config(mut self, input: crate::types::DestinationConfig) -> Self {
         self.destination_config = Some(input);
         self
     }
-    /// <p>A destination for events after they have been sent to a function for processing.</p> 
-    /// <p class="title"> <b>Destinations</b> </p> 
-    /// <ul> 
-    /// <li> <p> <b>Function</b> - The Amazon Resource Name (ARN) of a Lambda function.</p> </li> 
-    /// <li> <p> <b>Queue</b> - The ARN of an SQS queue.</p> </li> 
-    /// <li> <p> <b>Topic</b> - The ARN of an SNS topic.</p> </li> 
-    /// <li> <p> <b>Event Bus</b> - The ARN of an Amazon EventBridge event bus.</p> </li> 
+    /// <p>A destination for events after they have been sent to a function for processing.</p>
+    /// <p class="title"> <b>Destinations</b> </p>
+    /// <ul>
+    /// <li> <p> <b>Function</b> - The Amazon Resource Name (ARN) of a Lambda function.</p> </li>
+    /// <li> <p> <b>Queue</b> - The ARN of an SQS queue.</p> </li>
+    /// <li> <p> <b>Topic</b> - The ARN of an SNS topic.</p> </li>
+    /// <li> <p> <b>Event Bus</b> - The ARN of an Amazon EventBridge event bus.</p> </li>
     /// </ul>
-    pub fn set_destination_config(mut self, input: std::option::Option<crate::types::DestinationConfig>) -> Self {
-        self.destination_config = input; self
+    pub fn set_destination_config(
+        mut self,
+        input: std::option::Option<crate::types::DestinationConfig>,
+    ) -> Self {
+        self.destination_config = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`PutFunctionEventInvokeConfigOutput`](crate::operation::put_function_event_invoke_config::PutFunctionEventInvokeConfigOutput).
-    pub fn build(self) -> crate::operation::put_function_event_invoke_config::PutFunctionEventInvokeConfigOutput {
+    pub fn build(
+        self,
+    ) -> crate::operation::put_function_event_invoke_config::PutFunctionEventInvokeConfigOutput
+    {
         crate::operation::put_function_event_invoke_config::PutFunctionEventInvokeConfigOutput {
-            last_modified: self.last_modified
-            ,
-            function_arn: self.function_arn
-            ,
-            maximum_retry_attempts: self.maximum_retry_attempts
-            ,
-            maximum_event_age_in_seconds: self.maximum_event_age_in_seconds
-            ,
-            destination_config: self.destination_config
-            ,
+            last_modified: self.last_modified,
+            function_arn: self.function_arn,
+            maximum_retry_attempts: self.maximum_retry_attempts,
+            maximum_event_age_in_seconds: self.maximum_event_age_in_seconds,
+            destination_config: self.destination_config,
             _request_id: self._request_id,
         }
     }
 }
-

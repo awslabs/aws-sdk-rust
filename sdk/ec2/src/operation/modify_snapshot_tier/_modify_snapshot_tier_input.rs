@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ModifySnapshotTierInput  {
+pub struct ModifySnapshotTierInput {
     /// <p>The ID of the snapshot.</p>
     #[doc(hidden)]
     pub snapshot_id: std::option::Option<std::string::String>,
@@ -15,11 +15,11 @@ pub struct ModifySnapshotTierInput  {
 }
 impl ModifySnapshotTierInput {
     /// <p>The ID of the snapshot.</p>
-    pub fn snapshot_id(&self) -> std::option::Option<& str> {
+    pub fn snapshot_id(&self) -> std::option::Option<&str> {
         self.snapshot_id.as_deref()
     }
     /// <p>The name of the storage tier. You must specify <code>archive</code>.</p>
-    pub fn storage_tier(&self) -> std::option::Option<& crate::types::TargetStorageTier> {
+    pub fn storage_tier(&self) -> std::option::Option<&crate::types::TargetStorageTier> {
         self.storage_tier.as_ref()
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
@@ -29,7 +29,8 @@ impl ModifySnapshotTierInput {
 }
 impl ModifySnapshotTierInput {
     /// Creates a new builder-style object to manufacture [`ModifySnapshotTierInput`](crate::operation::modify_snapshot_tier::ModifySnapshotTierInput).
-    pub fn builder() -> crate::operation::modify_snapshot_tier::builders::ModifySnapshotTierInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::modify_snapshot_tier::builders::ModifySnapshotTierInputBuilder {
         crate::operation::modify_snapshot_tier::builders::ModifySnapshotTierInputBuilder::default()
     }
 }
@@ -50,7 +51,8 @@ impl ModifySnapshotTierInputBuilder {
     }
     /// <p>The ID of the snapshot.</p>
     pub fn set_snapshot_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.snapshot_id = input; self
+        self.snapshot_id = input;
+        self
     }
     /// <p>The name of the storage tier. You must specify <code>archive</code>.</p>
     pub fn storage_tier(mut self, input: crate::types::TargetStorageTier) -> Self {
@@ -58,8 +60,12 @@ impl ModifySnapshotTierInputBuilder {
         self
     }
     /// <p>The name of the storage tier. You must specify <code>archive</code>.</p>
-    pub fn set_storage_tier(mut self, input: std::option::Option<crate::types::TargetStorageTier>) -> Self {
-        self.storage_tier = input; self
+    pub fn set_storage_tier(
+        mut self,
+        input: std::option::Option<crate::types::TargetStorageTier>,
+    ) -> Self {
+        self.storage_tier = input;
+        self
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn dry_run(mut self, input: bool) -> Self {
@@ -68,20 +74,22 @@ impl ModifySnapshotTierInputBuilder {
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn set_dry_run(mut self, input: std::option::Option<bool>) -> Self {
-        self.dry_run = input; self
+        self.dry_run = input;
+        self
     }
     /// Consumes the builder and constructs a [`ModifySnapshotTierInput`](crate::operation::modify_snapshot_tier::ModifySnapshotTierInput).
-    pub fn build(self) -> Result<crate::operation::modify_snapshot_tier::ModifySnapshotTierInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::modify_snapshot_tier::ModifySnapshotTierInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::modify_snapshot_tier::ModifySnapshotTierInput {
-                snapshot_id: self.snapshot_id
-                ,
-                storage_tier: self.storage_tier
-                ,
-                dry_run: self.dry_run
-                ,
-            }
+                snapshot_id: self.snapshot_id,
+                storage_tier: self.storage_tier,
+                dry_run: self.dry_run,
+            },
         )
     }
 }
-

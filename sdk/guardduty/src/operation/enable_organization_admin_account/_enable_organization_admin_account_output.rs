@@ -2,17 +2,17 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct EnableOrganizationAdminAccountOutput  {
+pub struct EnableOrganizationAdminAccountOutput {
     _request_id: Option<String>,
 }
 impl aws_http::request_id::RequestId for EnableOrganizationAdminAccountOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl EnableOrganizationAdminAccountOutput {
     /// Creates a new builder-style object to manufacture [`EnableOrganizationAdminAccountOutput`](crate::operation::enable_organization_admin_account::EnableOrganizationAdminAccountOutput).
-    pub fn builder() -> crate::operation::enable_organization_admin_account::builders::EnableOrganizationAdminAccountOutputBuilder {
+    pub fn builder() -> crate::operation::enable_organization_admin_account::builders::EnableOrganizationAdminAccountOutputBuilder{
         crate::operation::enable_organization_admin_account::builders::EnableOrganizationAdminAccountOutputBuilder::default()
     }
 }
@@ -25,19 +25,21 @@ pub struct EnableOrganizationAdminAccountOutputBuilder {
 }
 impl EnableOrganizationAdminAccountOutputBuilder {
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`EnableOrganizationAdminAccountOutput`](crate::operation::enable_organization_admin_account::EnableOrganizationAdminAccountOutput).
-    pub fn build(self) -> crate::operation::enable_organization_admin_account::EnableOrganizationAdminAccountOutput {
+    pub fn build(
+        self,
+    ) -> crate::operation::enable_organization_admin_account::EnableOrganizationAdminAccountOutput
+    {
         crate::operation::enable_organization_admin_account::EnableOrganizationAdminAccountOutput {
             _request_id: self._request_id,
         }
     }
 }
-

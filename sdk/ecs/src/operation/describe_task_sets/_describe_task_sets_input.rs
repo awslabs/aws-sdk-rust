@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeTaskSetsInput  {
+pub struct DescribeTaskSetsInput {
     /// <p>The short name or full Amazon Resource Name (ARN) of the cluster that hosts the service that the task sets exist in.</p>
     #[doc(hidden)]
     pub cluster: std::option::Option<std::string::String>,
@@ -18,25 +18,26 @@ pub struct DescribeTaskSetsInput  {
 }
 impl DescribeTaskSetsInput {
     /// <p>The short name or full Amazon Resource Name (ARN) of the cluster that hosts the service that the task sets exist in.</p>
-    pub fn cluster(&self) -> std::option::Option<& str> {
+    pub fn cluster(&self) -> std::option::Option<&str> {
         self.cluster.as_deref()
     }
     /// <p>The short name or full Amazon Resource Name (ARN) of the service that the task sets exist in.</p>
-    pub fn service(&self) -> std::option::Option<& str> {
+    pub fn service(&self) -> std::option::Option<&str> {
         self.service.as_deref()
     }
     /// <p>The ID or full Amazon Resource Name (ARN) of task sets to describe.</p>
-    pub fn task_sets(&self) -> std::option::Option<& [std::string::String]> {
+    pub fn task_sets(&self) -> std::option::Option<&[std::string::String]> {
         self.task_sets.as_deref()
     }
     /// <p>Specifies whether to see the resource tags for the task set. If <code>TAGS</code> is specified, the tags are included in the response. If this field is omitted, tags aren't included in the response.</p>
-    pub fn include(&self) -> std::option::Option<& [crate::types::TaskSetField]> {
+    pub fn include(&self) -> std::option::Option<&[crate::types::TaskSetField]> {
         self.include.as_deref()
     }
 }
 impl DescribeTaskSetsInput {
     /// Creates a new builder-style object to manufacture [`DescribeTaskSetsInput`](crate::operation::describe_task_sets::DescribeTaskSetsInput).
-    pub fn builder() -> crate::operation::describe_task_sets::builders::DescribeTaskSetsInputBuilder {
+    pub fn builder() -> crate::operation::describe_task_sets::builders::DescribeTaskSetsInputBuilder
+    {
         crate::operation::describe_task_sets::builders::DescribeTaskSetsInputBuilder::default()
     }
 }
@@ -58,7 +59,8 @@ impl DescribeTaskSetsInputBuilder {
     }
     /// <p>The short name or full Amazon Resource Name (ARN) of the cluster that hosts the service that the task sets exist in.</p>
     pub fn set_cluster(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.cluster = input; self
+        self.cluster = input;
+        self
     }
     /// <p>The short name or full Amazon Resource Name (ARN) of the service that the task sets exist in.</p>
     pub fn service(mut self, input: impl Into<std::string::String>) -> Self {
@@ -67,7 +69,8 @@ impl DescribeTaskSetsInputBuilder {
     }
     /// <p>The short name or full Amazon Resource Name (ARN) of the service that the task sets exist in.</p>
     pub fn set_service(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.service = input; self
+        self.service = input;
+        self
     }
     /// Appends an item to `task_sets`.
     ///
@@ -76,13 +79,17 @@ impl DescribeTaskSetsInputBuilder {
     /// <p>The ID or full Amazon Resource Name (ARN) of task sets to describe.</p>
     pub fn task_sets(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.task_sets.unwrap_or_default();
-                        v.push(input.into());
-                        self.task_sets = Some(v);
-                        self
+        v.push(input.into());
+        self.task_sets = Some(v);
+        self
     }
     /// <p>The ID or full Amazon Resource Name (ARN) of task sets to describe.</p>
-    pub fn set_task_sets(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-        self.task_sets = input; self
+    pub fn set_task_sets(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
+        self.task_sets = input;
+        self
     }
     /// Appends an item to `include`.
     ///
@@ -91,28 +98,32 @@ impl DescribeTaskSetsInputBuilder {
     /// <p>Specifies whether to see the resource tags for the task set. If <code>TAGS</code> is specified, the tags are included in the response. If this field is omitted, tags aren't included in the response.</p>
     pub fn include(mut self, input: crate::types::TaskSetField) -> Self {
         let mut v = self.include.unwrap_or_default();
-                        v.push(input);
-                        self.include = Some(v);
-                        self
+        v.push(input);
+        self.include = Some(v);
+        self
     }
     /// <p>Specifies whether to see the resource tags for the task set. If <code>TAGS</code> is specified, the tags are included in the response. If this field is omitted, tags aren't included in the response.</p>
-    pub fn set_include(mut self, input: std::option::Option<std::vec::Vec<crate::types::TaskSetField>>) -> Self {
-        self.include = input; self
+    pub fn set_include(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::TaskSetField>>,
+    ) -> Self {
+        self.include = input;
+        self
     }
     /// Consumes the builder and constructs a [`DescribeTaskSetsInput`](crate::operation::describe_task_sets::DescribeTaskSetsInput).
-    pub fn build(self) -> Result<crate::operation::describe_task_sets::DescribeTaskSetsInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::describe_task_sets::DescribeTaskSetsInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::describe_task_sets::DescribeTaskSetsInput {
-                cluster: self.cluster
-                ,
-                service: self.service
-                ,
-                task_sets: self.task_sets
-                ,
-                include: self.include
-                ,
-            }
+                cluster: self.cluster,
+                service: self.service,
+                task_sets: self.task_sets,
+                include: self.include,
+            },
         )
     }
 }
-

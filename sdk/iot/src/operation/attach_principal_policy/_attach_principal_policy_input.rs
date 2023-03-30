@@ -3,7 +3,7 @@
 /// <p>The input for the AttachPrincipalPolicy operation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AttachPrincipalPolicyInput  {
+pub struct AttachPrincipalPolicyInput {
     /// <p>The policy name.</p>
     #[doc(hidden)]
     pub policy_name: std::option::Option<std::string::String>,
@@ -13,17 +13,19 @@ pub struct AttachPrincipalPolicyInput  {
 }
 impl AttachPrincipalPolicyInput {
     /// <p>The policy name.</p>
-    pub fn policy_name(&self) -> std::option::Option<& str> {
+    pub fn policy_name(&self) -> std::option::Option<&str> {
         self.policy_name.as_deref()
     }
     /// <p>The principal, which can be a certificate ARN (as returned from the CreateCertificate operation) or an Amazon Cognito ID.</p>
-    pub fn principal(&self) -> std::option::Option<& str> {
+    pub fn principal(&self) -> std::option::Option<&str> {
         self.principal.as_deref()
     }
 }
 impl AttachPrincipalPolicyInput {
     /// Creates a new builder-style object to manufacture [`AttachPrincipalPolicyInput`](crate::operation::attach_principal_policy::AttachPrincipalPolicyInput).
-    pub fn builder() -> crate::operation::attach_principal_policy::builders::AttachPrincipalPolicyInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::attach_principal_policy::builders::AttachPrincipalPolicyInputBuilder
+    {
         crate::operation::attach_principal_policy::builders::AttachPrincipalPolicyInputBuilder::default()
     }
 }
@@ -43,7 +45,8 @@ impl AttachPrincipalPolicyInputBuilder {
     }
     /// <p>The policy name.</p>
     pub fn set_policy_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.policy_name = input; self
+        self.policy_name = input;
+        self
     }
     /// <p>The principal, which can be a certificate ARN (as returned from the CreateCertificate operation) or an Amazon Cognito ID.</p>
     pub fn principal(mut self, input: impl Into<std::string::String>) -> Self {
@@ -52,18 +55,21 @@ impl AttachPrincipalPolicyInputBuilder {
     }
     /// <p>The principal, which can be a certificate ARN (as returned from the CreateCertificate operation) or an Amazon Cognito ID.</p>
     pub fn set_principal(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.principal = input; self
+        self.principal = input;
+        self
     }
     /// Consumes the builder and constructs a [`AttachPrincipalPolicyInput`](crate::operation::attach_principal_policy::AttachPrincipalPolicyInput).
-    pub fn build(self) -> Result<crate::operation::attach_principal_policy::AttachPrincipalPolicyInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::attach_principal_policy::AttachPrincipalPolicyInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::attach_principal_policy::AttachPrincipalPolicyInput {
-                policy_name: self.policy_name
-                ,
-                principal: self.principal
-                ,
-            }
+                policy_name: self.policy_name,
+                principal: self.principal,
+            },
         )
     }
 }
-

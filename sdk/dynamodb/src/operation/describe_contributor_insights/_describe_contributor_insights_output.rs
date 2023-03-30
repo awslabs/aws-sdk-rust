@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeContributorInsightsOutput  {
+pub struct DescribeContributorInsightsOutput {
     /// <p>The name of the table being described.</p>
     #[doc(hidden)]
     pub table_name: std::option::Option<std::string::String>,
@@ -18,13 +18,13 @@ pub struct DescribeContributorInsightsOutput  {
     /// <p>Timestamp of the last time the status was changed.</p>
     #[doc(hidden)]
     pub last_update_date_time: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>Returns information about the last failure that was encountered.</p> 
-    /// <p>The most common exceptions for a FAILED status are:</p> 
-    /// <ul> 
-    /// <li> <p>LimitExceededException - Per-account Amazon CloudWatch Contributor Insights rule limit reached. Please disable Contributor Insights for other tables/indexes OR disable Contributor Insights rules before retrying.</p> </li> 
-    /// <li> <p>AccessDeniedException - Amazon CloudWatch Contributor Insights rules cannot be modified due to insufficient permissions.</p> </li> 
-    /// <li> <p>AccessDeniedException - Failed to create service-linked role for Contributor Insights due to insufficient permissions.</p> </li> 
-    /// <li> <p>InternalServerError - Failed to create Amazon CloudWatch Contributor Insights rules. Please retry request.</p> </li> 
+    /// <p>Returns information about the last failure that was encountered.</p>
+    /// <p>The most common exceptions for a FAILED status are:</p>
+    /// <ul>
+    /// <li> <p>LimitExceededException - Per-account Amazon CloudWatch Contributor Insights rule limit reached. Please disable Contributor Insights for other tables/indexes OR disable Contributor Insights rules before retrying.</p> </li>
+    /// <li> <p>AccessDeniedException - Amazon CloudWatch Contributor Insights rules cannot be modified due to insufficient permissions.</p> </li>
+    /// <li> <p>AccessDeniedException - Failed to create service-linked role for Contributor Insights due to insufficient permissions.</p> </li>
+    /// <li> <p>InternalServerError - Failed to create Amazon CloudWatch Contributor Insights rules. Please retry request.</p> </li>
     /// </ul>
     #[doc(hidden)]
     pub failure_exception: std::option::Option<crate::types::FailureException>,
@@ -32,45 +32,47 @@ pub struct DescribeContributorInsightsOutput  {
 }
 impl DescribeContributorInsightsOutput {
     /// <p>The name of the table being described.</p>
-    pub fn table_name(&self) -> std::option::Option<& str> {
+    pub fn table_name(&self) -> std::option::Option<&str> {
         self.table_name.as_deref()
     }
     /// <p>The name of the global secondary index being described.</p>
-    pub fn index_name(&self) -> std::option::Option<& str> {
+    pub fn index_name(&self) -> std::option::Option<&str> {
         self.index_name.as_deref()
     }
     /// <p>List of names of the associated contributor insights rules.</p>
-    pub fn contributor_insights_rule_list(&self) -> std::option::Option<& [std::string::String]> {
+    pub fn contributor_insights_rule_list(&self) -> std::option::Option<&[std::string::String]> {
         self.contributor_insights_rule_list.as_deref()
     }
     /// <p>Current status of contributor insights.</p>
-    pub fn contributor_insights_status(&self) -> std::option::Option<& crate::types::ContributorInsightsStatus> {
+    pub fn contributor_insights_status(
+        &self,
+    ) -> std::option::Option<&crate::types::ContributorInsightsStatus> {
         self.contributor_insights_status.as_ref()
     }
     /// <p>Timestamp of the last time the status was changed.</p>
-    pub fn last_update_date_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
+    pub fn last_update_date_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_update_date_time.as_ref()
     }
-    /// <p>Returns information about the last failure that was encountered.</p> 
-    /// <p>The most common exceptions for a FAILED status are:</p> 
-    /// <ul> 
-    /// <li> <p>LimitExceededException - Per-account Amazon CloudWatch Contributor Insights rule limit reached. Please disable Contributor Insights for other tables/indexes OR disable Contributor Insights rules before retrying.</p> </li> 
-    /// <li> <p>AccessDeniedException - Amazon CloudWatch Contributor Insights rules cannot be modified due to insufficient permissions.</p> </li> 
-    /// <li> <p>AccessDeniedException - Failed to create service-linked role for Contributor Insights due to insufficient permissions.</p> </li> 
-    /// <li> <p>InternalServerError - Failed to create Amazon CloudWatch Contributor Insights rules. Please retry request.</p> </li> 
+    /// <p>Returns information about the last failure that was encountered.</p>
+    /// <p>The most common exceptions for a FAILED status are:</p>
+    /// <ul>
+    /// <li> <p>LimitExceededException - Per-account Amazon CloudWatch Contributor Insights rule limit reached. Please disable Contributor Insights for other tables/indexes OR disable Contributor Insights rules before retrying.</p> </li>
+    /// <li> <p>AccessDeniedException - Amazon CloudWatch Contributor Insights rules cannot be modified due to insufficient permissions.</p> </li>
+    /// <li> <p>AccessDeniedException - Failed to create service-linked role for Contributor Insights due to insufficient permissions.</p> </li>
+    /// <li> <p>InternalServerError - Failed to create Amazon CloudWatch Contributor Insights rules. Please retry request.</p> </li>
     /// </ul>
-    pub fn failure_exception(&self) -> std::option::Option<& crate::types::FailureException> {
+    pub fn failure_exception(&self) -> std::option::Option<&crate::types::FailureException> {
         self.failure_exception.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for DescribeContributorInsightsOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl DescribeContributorInsightsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeContributorInsightsOutput`](crate::operation::describe_contributor_insights::DescribeContributorInsightsOutput).
-    pub fn builder() -> crate::operation::describe_contributor_insights::builders::DescribeContributorInsightsOutputBuilder {
+    pub fn builder() -> crate::operation::describe_contributor_insights::builders::DescribeContributorInsightsOutputBuilder{
         crate::operation::describe_contributor_insights::builders::DescribeContributorInsightsOutputBuilder::default()
     }
 }
@@ -81,8 +83,10 @@ impl DescribeContributorInsightsOutput {
 pub struct DescribeContributorInsightsOutputBuilder {
     pub(crate) table_name: std::option::Option<std::string::String>,
     pub(crate) index_name: std::option::Option<std::string::String>,
-    pub(crate) contributor_insights_rule_list: std::option::Option<std::vec::Vec<std::string::String>>,
-    pub(crate) contributor_insights_status: std::option::Option<crate::types::ContributorInsightsStatus>,
+    pub(crate) contributor_insights_rule_list:
+        std::option::Option<std::vec::Vec<std::string::String>>,
+    pub(crate) contributor_insights_status:
+        std::option::Option<crate::types::ContributorInsightsStatus>,
     pub(crate) last_update_date_time: std::option::Option<aws_smithy_types::DateTime>,
     pub(crate) failure_exception: std::option::Option<crate::types::FailureException>,
     _request_id: Option<String>,
@@ -95,7 +99,8 @@ impl DescribeContributorInsightsOutputBuilder {
     }
     /// <p>The name of the table being described.</p>
     pub fn set_table_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.table_name = input; self
+        self.table_name = input;
+        self
     }
     /// <p>The name of the global secondary index being described.</p>
     pub fn index_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -104,7 +109,8 @@ impl DescribeContributorInsightsOutputBuilder {
     }
     /// <p>The name of the global secondary index being described.</p>
     pub fn set_index_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.index_name = input; self
+        self.index_name = input;
+        self
     }
     /// Appends an item to `contributor_insights_rule_list`.
     ///
@@ -113,22 +119,33 @@ impl DescribeContributorInsightsOutputBuilder {
     /// <p>List of names of the associated contributor insights rules.</p>
     pub fn contributor_insights_rule_list(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.contributor_insights_rule_list.unwrap_or_default();
-                        v.push(input.into());
-                        self.contributor_insights_rule_list = Some(v);
-                        self
+        v.push(input.into());
+        self.contributor_insights_rule_list = Some(v);
+        self
     }
     /// <p>List of names of the associated contributor insights rules.</p>
-    pub fn set_contributor_insights_rule_list(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-        self.contributor_insights_rule_list = input; self
+    pub fn set_contributor_insights_rule_list(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
+        self.contributor_insights_rule_list = input;
+        self
     }
     /// <p>Current status of contributor insights.</p>
-    pub fn contributor_insights_status(mut self, input: crate::types::ContributorInsightsStatus) -> Self {
+    pub fn contributor_insights_status(
+        mut self,
+        input: crate::types::ContributorInsightsStatus,
+    ) -> Self {
         self.contributor_insights_status = Some(input);
         self
     }
     /// <p>Current status of contributor insights.</p>
-    pub fn set_contributor_insights_status(mut self, input: std::option::Option<crate::types::ContributorInsightsStatus>) -> Self {
-        self.contributor_insights_status = input; self
+    pub fn set_contributor_insights_status(
+        mut self,
+        input: std::option::Option<crate::types::ContributorInsightsStatus>,
+    ) -> Self {
+        self.contributor_insights_status = input;
+        self
     }
     /// <p>Timestamp of the last time the status was changed.</p>
     pub fn last_update_date_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -136,58 +153,61 @@ impl DescribeContributorInsightsOutputBuilder {
         self
     }
     /// <p>Timestamp of the last time the status was changed.</p>
-    pub fn set_last_update_date_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.last_update_date_time = input; self
+    pub fn set_last_update_date_time(
+        mut self,
+        input: std::option::Option<aws_smithy_types::DateTime>,
+    ) -> Self {
+        self.last_update_date_time = input;
+        self
     }
-    /// <p>Returns information about the last failure that was encountered.</p> 
-    /// <p>The most common exceptions for a FAILED status are:</p> 
-    /// <ul> 
-    /// <li> <p>LimitExceededException - Per-account Amazon CloudWatch Contributor Insights rule limit reached. Please disable Contributor Insights for other tables/indexes OR disable Contributor Insights rules before retrying.</p> </li> 
-    /// <li> <p>AccessDeniedException - Amazon CloudWatch Contributor Insights rules cannot be modified due to insufficient permissions.</p> </li> 
-    /// <li> <p>AccessDeniedException - Failed to create service-linked role for Contributor Insights due to insufficient permissions.</p> </li> 
-    /// <li> <p>InternalServerError - Failed to create Amazon CloudWatch Contributor Insights rules. Please retry request.</p> </li> 
+    /// <p>Returns information about the last failure that was encountered.</p>
+    /// <p>The most common exceptions for a FAILED status are:</p>
+    /// <ul>
+    /// <li> <p>LimitExceededException - Per-account Amazon CloudWatch Contributor Insights rule limit reached. Please disable Contributor Insights for other tables/indexes OR disable Contributor Insights rules before retrying.</p> </li>
+    /// <li> <p>AccessDeniedException - Amazon CloudWatch Contributor Insights rules cannot be modified due to insufficient permissions.</p> </li>
+    /// <li> <p>AccessDeniedException - Failed to create service-linked role for Contributor Insights due to insufficient permissions.</p> </li>
+    /// <li> <p>InternalServerError - Failed to create Amazon CloudWatch Contributor Insights rules. Please retry request.</p> </li>
     /// </ul>
     pub fn failure_exception(mut self, input: crate::types::FailureException) -> Self {
         self.failure_exception = Some(input);
         self
     }
-    /// <p>Returns information about the last failure that was encountered.</p> 
-    /// <p>The most common exceptions for a FAILED status are:</p> 
-    /// <ul> 
-    /// <li> <p>LimitExceededException - Per-account Amazon CloudWatch Contributor Insights rule limit reached. Please disable Contributor Insights for other tables/indexes OR disable Contributor Insights rules before retrying.</p> </li> 
-    /// <li> <p>AccessDeniedException - Amazon CloudWatch Contributor Insights rules cannot be modified due to insufficient permissions.</p> </li> 
-    /// <li> <p>AccessDeniedException - Failed to create service-linked role for Contributor Insights due to insufficient permissions.</p> </li> 
-    /// <li> <p>InternalServerError - Failed to create Amazon CloudWatch Contributor Insights rules. Please retry request.</p> </li> 
+    /// <p>Returns information about the last failure that was encountered.</p>
+    /// <p>The most common exceptions for a FAILED status are:</p>
+    /// <ul>
+    /// <li> <p>LimitExceededException - Per-account Amazon CloudWatch Contributor Insights rule limit reached. Please disable Contributor Insights for other tables/indexes OR disable Contributor Insights rules before retrying.</p> </li>
+    /// <li> <p>AccessDeniedException - Amazon CloudWatch Contributor Insights rules cannot be modified due to insufficient permissions.</p> </li>
+    /// <li> <p>AccessDeniedException - Failed to create service-linked role for Contributor Insights due to insufficient permissions.</p> </li>
+    /// <li> <p>InternalServerError - Failed to create Amazon CloudWatch Contributor Insights rules. Please retry request.</p> </li>
     /// </ul>
-    pub fn set_failure_exception(mut self, input: std::option::Option<crate::types::FailureException>) -> Self {
-        self.failure_exception = input; self
+    pub fn set_failure_exception(
+        mut self,
+        input: std::option::Option<crate::types::FailureException>,
+    ) -> Self {
+        self.failure_exception = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`DescribeContributorInsightsOutput`](crate::operation::describe_contributor_insights::DescribeContributorInsightsOutput).
-    pub fn build(self) -> crate::operation::describe_contributor_insights::DescribeContributorInsightsOutput {
+    pub fn build(
+        self,
+    ) -> crate::operation::describe_contributor_insights::DescribeContributorInsightsOutput {
         crate::operation::describe_contributor_insights::DescribeContributorInsightsOutput {
-            table_name: self.table_name
-            ,
-            index_name: self.index_name
-            ,
-            contributor_insights_rule_list: self.contributor_insights_rule_list
-            ,
-            contributor_insights_status: self.contributor_insights_status
-            ,
-            last_update_date_time: self.last_update_date_time
-            ,
-            failure_exception: self.failure_exception
-            ,
+            table_name: self.table_name,
+            index_name: self.index_name,
+            contributor_insights_rule_list: self.contributor_insights_rule_list,
+            contributor_insights_status: self.contributor_insights_status,
+            last_update_date_time: self.last_update_date_time,
+            failure_exception: self.failure_exception,
             _request_id: self._request_id,
         }
     }
 }
-

@@ -2,17 +2,17 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AssociatePhoneNumberWithUserOutput  {
+pub struct AssociatePhoneNumberWithUserOutput {
     _request_id: Option<String>,
 }
 impl aws_http::request_id::RequestId for AssociatePhoneNumberWithUserOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl AssociatePhoneNumberWithUserOutput {
     /// Creates a new builder-style object to manufacture [`AssociatePhoneNumberWithUserOutput`](crate::operation::associate_phone_number_with_user::AssociatePhoneNumberWithUserOutput).
-    pub fn builder() -> crate::operation::associate_phone_number_with_user::builders::AssociatePhoneNumberWithUserOutputBuilder {
+    pub fn builder() -> crate::operation::associate_phone_number_with_user::builders::AssociatePhoneNumberWithUserOutputBuilder{
         crate::operation::associate_phone_number_with_user::builders::AssociatePhoneNumberWithUserOutputBuilder::default()
     }
 }
@@ -25,19 +25,21 @@ pub struct AssociatePhoneNumberWithUserOutputBuilder {
 }
 impl AssociatePhoneNumberWithUserOutputBuilder {
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`AssociatePhoneNumberWithUserOutput`](crate::operation::associate_phone_number_with_user::AssociatePhoneNumberWithUserOutput).
-    pub fn build(self) -> crate::operation::associate_phone_number_with_user::AssociatePhoneNumberWithUserOutput {
+    pub fn build(
+        self,
+    ) -> crate::operation::associate_phone_number_with_user::AssociatePhoneNumberWithUserOutput
+    {
         crate::operation::associate_phone_number_with_user::AssociatePhoneNumberWithUserOutput {
             _request_id: self._request_id,
         }
     }
 }
-

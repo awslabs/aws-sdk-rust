@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeJobDefinitionsOutput  {
+pub struct DescribeJobDefinitionsOutput {
     /// <p>The list of job definitions.</p>
     #[doc(hidden)]
     pub job_definitions: std::option::Option<std::vec::Vec<crate::types::JobDefinition>>,
@@ -13,22 +13,24 @@ pub struct DescribeJobDefinitionsOutput  {
 }
 impl DescribeJobDefinitionsOutput {
     /// <p>The list of job definitions.</p>
-    pub fn job_definitions(&self) -> std::option::Option<& [crate::types::JobDefinition]> {
+    pub fn job_definitions(&self) -> std::option::Option<&[crate::types::JobDefinition]> {
         self.job_definitions.as_deref()
     }
     /// <p>The <code>nextToken</code> value to include in a future <code>DescribeJobDefinitions</code> request. When the results of a <code>DescribeJobDefinitions</code> request exceed <code>maxResults</code>, this value can be used to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for DescribeJobDefinitionsOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl DescribeJobDefinitionsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeJobDefinitionsOutput`](crate::operation::describe_job_definitions::DescribeJobDefinitionsOutput).
-    pub fn builder() -> crate::operation::describe_job_definitions::builders::DescribeJobDefinitionsOutputBuilder {
+    pub fn builder(
+    ) -> crate::operation::describe_job_definitions::builders::DescribeJobDefinitionsOutputBuilder
+    {
         crate::operation::describe_job_definitions::builders::DescribeJobDefinitionsOutputBuilder::default()
     }
 }
@@ -49,13 +51,17 @@ impl DescribeJobDefinitionsOutputBuilder {
     /// <p>The list of job definitions.</p>
     pub fn job_definitions(mut self, input: crate::types::JobDefinition) -> Self {
         let mut v = self.job_definitions.unwrap_or_default();
-                        v.push(input);
-                        self.job_definitions = Some(v);
-                        self
+        v.push(input);
+        self.job_definitions = Some(v);
+        self
     }
     /// <p>The list of job definitions.</p>
-    pub fn set_job_definitions(mut self, input: std::option::Option<std::vec::Vec<crate::types::JobDefinition>>) -> Self {
-        self.job_definitions = input; self
+    pub fn set_job_definitions(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::JobDefinition>>,
+    ) -> Self {
+        self.job_definitions = input;
+        self
     }
     /// <p>The <code>nextToken</code> value to include in a future <code>DescribeJobDefinitions</code> request. When the results of a <code>DescribeJobDefinitions</code> request exceed <code>maxResults</code>, this value can be used to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -64,26 +70,24 @@ impl DescribeJobDefinitionsOutputBuilder {
     }
     /// <p>The <code>nextToken</code> value to include in a future <code>DescribeJobDefinitions</code> request. When the results of a <code>DescribeJobDefinitions</code> request exceed <code>maxResults</code>, this value can be used to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input; self
+        self.next_token = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`DescribeJobDefinitionsOutput`](crate::operation::describe_job_definitions::DescribeJobDefinitionsOutput).
     pub fn build(self) -> crate::operation::describe_job_definitions::DescribeJobDefinitionsOutput {
         crate::operation::describe_job_definitions::DescribeJobDefinitionsOutput {
-            job_definitions: self.job_definitions
-            ,
-            next_token: self.next_token
-            ,
+            job_definitions: self.job_definitions,
+            next_token: self.next_token,
             _request_id: self._request_id,
         }
     }
 }
-

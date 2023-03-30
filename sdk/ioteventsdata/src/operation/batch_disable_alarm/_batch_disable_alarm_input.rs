@@ -2,20 +2,24 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct BatchDisableAlarmInput  {
+pub struct BatchDisableAlarmInput {
     /// <p>The list of disable action requests. You can specify up to 10 requests per operation.</p>
     #[doc(hidden)]
-    pub disable_action_requests: std::option::Option<std::vec::Vec<crate::types::DisableAlarmActionRequest>>,
+    pub disable_action_requests:
+        std::option::Option<std::vec::Vec<crate::types::DisableAlarmActionRequest>>,
 }
 impl BatchDisableAlarmInput {
     /// <p>The list of disable action requests. You can specify up to 10 requests per operation.</p>
-    pub fn disable_action_requests(&self) -> std::option::Option<& [crate::types::DisableAlarmActionRequest]> {
+    pub fn disable_action_requests(
+        &self,
+    ) -> std::option::Option<&[crate::types::DisableAlarmActionRequest]> {
         self.disable_action_requests.as_deref()
     }
 }
 impl BatchDisableAlarmInput {
     /// Creates a new builder-style object to manufacture [`BatchDisableAlarmInput`](crate::operation::batch_disable_alarm::BatchDisableAlarmInput).
-    pub fn builder() -> crate::operation::batch_disable_alarm::builders::BatchDisableAlarmInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::batch_disable_alarm::builders::BatchDisableAlarmInputBuilder {
         crate::operation::batch_disable_alarm::builders::BatchDisableAlarmInputBuilder::default()
     }
 }
@@ -24,7 +28,8 @@ impl BatchDisableAlarmInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct BatchDisableAlarmInputBuilder {
-    pub(crate) disable_action_requests: std::option::Option<std::vec::Vec<crate::types::DisableAlarmActionRequest>>,
+    pub(crate) disable_action_requests:
+        std::option::Option<std::vec::Vec<crate::types::DisableAlarmActionRequest>>,
 }
 impl BatchDisableAlarmInputBuilder {
     /// Appends an item to `disable_action_requests`.
@@ -32,24 +37,34 @@ impl BatchDisableAlarmInputBuilder {
     /// To override the contents of this collection use [`set_disable_action_requests`](Self::set_disable_action_requests).
     ///
     /// <p>The list of disable action requests. You can specify up to 10 requests per operation.</p>
-    pub fn disable_action_requests(mut self, input: crate::types::DisableAlarmActionRequest) -> Self {
+    pub fn disable_action_requests(
+        mut self,
+        input: crate::types::DisableAlarmActionRequest,
+    ) -> Self {
         let mut v = self.disable_action_requests.unwrap_or_default();
-                        v.push(input);
-                        self.disable_action_requests = Some(v);
-                        self
+        v.push(input);
+        self.disable_action_requests = Some(v);
+        self
     }
     /// <p>The list of disable action requests. You can specify up to 10 requests per operation.</p>
-    pub fn set_disable_action_requests(mut self, input: std::option::Option<std::vec::Vec<crate::types::DisableAlarmActionRequest>>) -> Self {
-        self.disable_action_requests = input; self
+    pub fn set_disable_action_requests(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::DisableAlarmActionRequest>>,
+    ) -> Self {
+        self.disable_action_requests = input;
+        self
     }
     /// Consumes the builder and constructs a [`BatchDisableAlarmInput`](crate::operation::batch_disable_alarm::BatchDisableAlarmInput).
-    pub fn build(self) -> Result<crate::operation::batch_disable_alarm::BatchDisableAlarmInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::batch_disable_alarm::BatchDisableAlarmInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::batch_disable_alarm::BatchDisableAlarmInput {
-                disable_action_requests: self.disable_action_requests
-                ,
-            }
+                disable_action_requests: self.disable_action_requests,
+            },
         )
     }
 }
-

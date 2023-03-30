@@ -3,7 +3,7 @@
 /// <p>Describes the Inference accelerators for the instance type.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct InferenceDeviceInfo  {
+pub struct InferenceDeviceInfo {
     /// <p>The number of Inference accelerators for the instance type.</p>
     #[doc(hidden)]
     pub count: std::option::Option<i32>,
@@ -20,11 +20,11 @@ impl InferenceDeviceInfo {
         self.count
     }
     /// <p>The name of the Inference accelerator.</p>
-    pub fn name(&self) -> std::option::Option<& str> {
+    pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>The manufacturer of the Inference accelerator.</p>
-    pub fn manufacturer(&self) -> std::option::Option<& str> {
+    pub fn manufacturer(&self) -> std::option::Option<&str> {
         self.manufacturer.as_deref()
     }
 }
@@ -51,7 +51,8 @@ impl InferenceDeviceInfoBuilder {
     }
     /// <p>The number of Inference accelerators for the instance type.</p>
     pub fn set_count(mut self, input: std::option::Option<i32>) -> Self {
-        self.count = input; self
+        self.count = input;
+        self
     }
     /// <p>The name of the Inference accelerator.</p>
     pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -60,7 +61,8 @@ impl InferenceDeviceInfoBuilder {
     }
     /// <p>The name of the Inference accelerator.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input; self
+        self.name = input;
+        self
     }
     /// <p>The manufacturer of the Inference accelerator.</p>
     pub fn manufacturer(mut self, input: impl Into<std::string::String>) -> Self {
@@ -69,18 +71,15 @@ impl InferenceDeviceInfoBuilder {
     }
     /// <p>The manufacturer of the Inference accelerator.</p>
     pub fn set_manufacturer(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.manufacturer = input; self
+        self.manufacturer = input;
+        self
     }
     /// Consumes the builder and constructs a [`InferenceDeviceInfo`](crate::types::InferenceDeviceInfo).
     pub fn build(self) -> crate::types::InferenceDeviceInfo {
         crate::types::InferenceDeviceInfo {
-            count: self.count
-            ,
-            name: self.name
-            ,
-            manufacturer: self.manufacturer
-            ,
+            count: self.count,
+            name: self.name,
+            manufacturer: self.manufacturer,
         }
     }
 }
-

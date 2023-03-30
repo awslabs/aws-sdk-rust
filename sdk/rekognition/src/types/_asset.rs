@@ -3,14 +3,14 @@
 /// <p>Assets are the images that you use to train and evaluate a model version. Assets can also contain validation information that you use to debug a failed model training. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Asset  {
+pub struct Asset {
     /// <p>The S3 bucket that contains an Amazon Sagemaker Ground Truth format manifest file. </p>
     #[doc(hidden)]
     pub ground_truth_manifest: std::option::Option<crate::types::GroundTruthManifest>,
 }
 impl Asset {
     /// <p>The S3 bucket that contains an Amazon Sagemaker Ground Truth format manifest file. </p>
-    pub fn ground_truth_manifest(&self) -> std::option::Option<& crate::types::GroundTruthManifest> {
+    pub fn ground_truth_manifest(&self) -> std::option::Option<&crate::types::GroundTruthManifest> {
         self.ground_truth_manifest.as_ref()
     }
 }
@@ -34,15 +34,17 @@ impl AssetBuilder {
         self
     }
     /// <p>The S3 bucket that contains an Amazon Sagemaker Ground Truth format manifest file. </p>
-    pub fn set_ground_truth_manifest(mut self, input: std::option::Option<crate::types::GroundTruthManifest>) -> Self {
-        self.ground_truth_manifest = input; self
+    pub fn set_ground_truth_manifest(
+        mut self,
+        input: std::option::Option<crate::types::GroundTruthManifest>,
+    ) -> Self {
+        self.ground_truth_manifest = input;
+        self
     }
     /// Consumes the builder and constructs a [`Asset`](crate::types::Asset).
     pub fn build(self) -> crate::types::Asset {
         crate::types::Asset {
-            ground_truth_manifest: self.ground_truth_manifest
-            ,
+            ground_truth_manifest: self.ground_truth_manifest,
         }
     }
 }
-

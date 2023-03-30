@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdatePipelineExecutionOutput  {
+pub struct UpdatePipelineExecutionOutput {
     /// <p>The Amazon Resource Name (ARN) of the updated pipeline execution.</p>
     #[doc(hidden)]
     pub pipeline_execution_arn: std::option::Option<std::string::String>,
@@ -10,18 +10,20 @@ pub struct UpdatePipelineExecutionOutput  {
 }
 impl UpdatePipelineExecutionOutput {
     /// <p>The Amazon Resource Name (ARN) of the updated pipeline execution.</p>
-    pub fn pipeline_execution_arn(&self) -> std::option::Option<& str> {
+    pub fn pipeline_execution_arn(&self) -> std::option::Option<&str> {
         self.pipeline_execution_arn.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for UpdatePipelineExecutionOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl UpdatePipelineExecutionOutput {
     /// Creates a new builder-style object to manufacture [`UpdatePipelineExecutionOutput`](crate::operation::update_pipeline_execution::UpdatePipelineExecutionOutput).
-    pub fn builder() -> crate::operation::update_pipeline_execution::builders::UpdatePipelineExecutionOutputBuilder {
+    pub fn builder(
+    ) -> crate::operation::update_pipeline_execution::builders::UpdatePipelineExecutionOutputBuilder
+    {
         crate::operation::update_pipeline_execution::builders::UpdatePipelineExecutionOutputBuilder::default()
     }
 }
@@ -40,25 +42,29 @@ impl UpdatePipelineExecutionOutputBuilder {
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the updated pipeline execution.</p>
-    pub fn set_pipeline_execution_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.pipeline_execution_arn = input; self
+    pub fn set_pipeline_execution_arn(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.pipeline_execution_arn = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`UpdatePipelineExecutionOutput`](crate::operation::update_pipeline_execution::UpdatePipelineExecutionOutput).
-    pub fn build(self) -> crate::operation::update_pipeline_execution::UpdatePipelineExecutionOutput {
+    pub fn build(
+        self,
+    ) -> crate::operation::update_pipeline_execution::UpdatePipelineExecutionOutput {
         crate::operation::update_pipeline_execution::UpdatePipelineExecutionOutput {
-            pipeline_execution_arn: self.pipeline_execution_arn
-            ,
+            pipeline_execution_arn: self.pipeline_execution_arn,
             _request_id: self._request_id,
         }
     }
 }
-

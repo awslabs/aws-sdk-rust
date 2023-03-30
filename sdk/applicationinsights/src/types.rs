@@ -84,4 +84,3 @@ pub mod builders;
 
 /// Error types that Amazon CloudWatch Application Insights can respond with.
 pub mod error;
-

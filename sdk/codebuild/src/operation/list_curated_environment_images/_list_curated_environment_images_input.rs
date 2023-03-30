@@ -2,11 +2,10 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListCuratedEnvironmentImagesInput  {
-}
+pub struct ListCuratedEnvironmentImagesInput {}
 impl ListCuratedEnvironmentImagesInput {
     /// Creates a new builder-style object to manufacture [`ListCuratedEnvironmentImagesInput`](crate::operation::list_curated_environment_images::ListCuratedEnvironmentImagesInput).
-    pub fn builder() -> crate::operation::list_curated_environment_images::builders::ListCuratedEnvironmentImagesInputBuilder {
+    pub fn builder() -> crate::operation::list_curated_environment_images::builders::ListCuratedEnvironmentImagesInputBuilder{
         crate::operation::list_curated_environment_images::builders::ListCuratedEnvironmentImagesInputBuilder::default()
     }
 }
@@ -14,15 +13,15 @@ impl ListCuratedEnvironmentImagesInput {
 /// A builder for [`ListCuratedEnvironmentImagesInput`](crate::operation::list_curated_environment_images::ListCuratedEnvironmentImagesInput).
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-pub struct ListCuratedEnvironmentImagesInputBuilder {
-}
+pub struct ListCuratedEnvironmentImagesInputBuilder {}
 impl ListCuratedEnvironmentImagesInputBuilder {
     /// Consumes the builder and constructs a [`ListCuratedEnvironmentImagesInput`](crate::operation::list_curated_environment_images::ListCuratedEnvironmentImagesInput).
-    pub fn build(self) -> Result<crate::operation::list_curated_environment_images::ListCuratedEnvironmentImagesInput, aws_smithy_http::operation::error::BuildError> {
-        Ok(
-            crate::operation::list_curated_environment_images::ListCuratedEnvironmentImagesInput {
-            }
-        )
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::list_curated_environment_images::ListCuratedEnvironmentImagesInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        Ok(crate::operation::list_curated_environment_images::ListCuratedEnvironmentImagesInput {})
     }
 }
-

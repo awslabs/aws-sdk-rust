@@ -3,14 +3,14 @@
 /// <p>Details about the package origin configuration of a package.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PackageOriginConfiguration  {
+pub struct PackageOriginConfiguration {
     /// <p>A <code>PackageOriginRestrictions</code> object that contains information about the upstream and publish package origin configuration for the package.</p>
     #[doc(hidden)]
     pub restrictions: std::option::Option<crate::types::PackageOriginRestrictions>,
 }
 impl PackageOriginConfiguration {
     /// <p>A <code>PackageOriginRestrictions</code> object that contains information about the upstream and publish package origin configuration for the package.</p>
-    pub fn restrictions(&self) -> std::option::Option<& crate::types::PackageOriginRestrictions> {
+    pub fn restrictions(&self) -> std::option::Option<&crate::types::PackageOriginRestrictions> {
         self.restrictions.as_ref()
     }
 }
@@ -34,15 +34,17 @@ impl PackageOriginConfigurationBuilder {
         self
     }
     /// <p>A <code>PackageOriginRestrictions</code> object that contains information about the upstream and publish package origin configuration for the package.</p>
-    pub fn set_restrictions(mut self, input: std::option::Option<crate::types::PackageOriginRestrictions>) -> Self {
-        self.restrictions = input; self
+    pub fn set_restrictions(
+        mut self,
+        input: std::option::Option<crate::types::PackageOriginRestrictions>,
+    ) -> Self {
+        self.restrictions = input;
+        self
     }
     /// Consumes the builder and constructs a [`PackageOriginConfiguration`](crate::types::PackageOriginConfiguration).
     pub fn build(self) -> crate::types::PackageOriginConfiguration {
         crate::types::PackageOriginConfiguration {
-            restrictions: self.restrictions
-            ,
+            restrictions: self.restrictions,
         }
     }
 }
-

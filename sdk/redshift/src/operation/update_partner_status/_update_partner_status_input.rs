@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdatePartnerStatusInput  {
+pub struct UpdatePartnerStatusInput {
     /// <p>The Amazon Web Services account ID that owns the cluster.</p>
     #[doc(hidden)]
     pub account_id: std::option::Option<std::string::String>,
@@ -24,34 +24,36 @@ pub struct UpdatePartnerStatusInput  {
 }
 impl UpdatePartnerStatusInput {
     /// <p>The Amazon Web Services account ID that owns the cluster.</p>
-    pub fn account_id(&self) -> std::option::Option<& str> {
+    pub fn account_id(&self) -> std::option::Option<&str> {
         self.account_id.as_deref()
     }
     /// <p>The cluster identifier of the cluster whose partner integration status is being updated.</p>
-    pub fn cluster_identifier(&self) -> std::option::Option<& str> {
+    pub fn cluster_identifier(&self) -> std::option::Option<&str> {
         self.cluster_identifier.as_deref()
     }
     /// <p>The name of the database whose partner integration status is being updated.</p>
-    pub fn database_name(&self) -> std::option::Option<& str> {
+    pub fn database_name(&self) -> std::option::Option<&str> {
         self.database_name.as_deref()
     }
     /// <p>The name of the partner whose integration status is being updated.</p>
-    pub fn partner_name(&self) -> std::option::Option<& str> {
+    pub fn partner_name(&self) -> std::option::Option<&str> {
         self.partner_name.as_deref()
     }
     /// <p>The value of the updated status.</p>
-    pub fn status(&self) -> std::option::Option<& crate::types::PartnerIntegrationStatus> {
+    pub fn status(&self) -> std::option::Option<&crate::types::PartnerIntegrationStatus> {
         self.status.as_ref()
     }
     /// <p>The status message provided by the partner.</p>
-    pub fn status_message(&self) -> std::option::Option<& str> {
+    pub fn status_message(&self) -> std::option::Option<&str> {
         self.status_message.as_deref()
     }
 }
 impl UpdatePartnerStatusInput {
     /// Creates a new builder-style object to manufacture [`UpdatePartnerStatusInput`](crate::operation::update_partner_status::UpdatePartnerStatusInput).
-    pub fn builder() -> crate::operation::update_partner_status::builders::UpdatePartnerStatusInputBuilder {
-        crate::operation::update_partner_status::builders::UpdatePartnerStatusInputBuilder::default()
+    pub fn builder(
+    ) -> crate::operation::update_partner_status::builders::UpdatePartnerStatusInputBuilder {
+        crate::operation::update_partner_status::builders::UpdatePartnerStatusInputBuilder::default(
+        )
     }
 }
 
@@ -74,7 +76,8 @@ impl UpdatePartnerStatusInputBuilder {
     }
     /// <p>The Amazon Web Services account ID that owns the cluster.</p>
     pub fn set_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.account_id = input; self
+        self.account_id = input;
+        self
     }
     /// <p>The cluster identifier of the cluster whose partner integration status is being updated.</p>
     pub fn cluster_identifier(mut self, input: impl Into<std::string::String>) -> Self {
@@ -82,8 +85,12 @@ impl UpdatePartnerStatusInputBuilder {
         self
     }
     /// <p>The cluster identifier of the cluster whose partner integration status is being updated.</p>
-    pub fn set_cluster_identifier(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.cluster_identifier = input; self
+    pub fn set_cluster_identifier(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.cluster_identifier = input;
+        self
     }
     /// <p>The name of the database whose partner integration status is being updated.</p>
     pub fn database_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -92,7 +99,8 @@ impl UpdatePartnerStatusInputBuilder {
     }
     /// <p>The name of the database whose partner integration status is being updated.</p>
     pub fn set_database_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.database_name = input; self
+        self.database_name = input;
+        self
     }
     /// <p>The name of the partner whose integration status is being updated.</p>
     pub fn partner_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -101,7 +109,8 @@ impl UpdatePartnerStatusInputBuilder {
     }
     /// <p>The name of the partner whose integration status is being updated.</p>
     pub fn set_partner_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.partner_name = input; self
+        self.partner_name = input;
+        self
     }
     /// <p>The value of the updated status.</p>
     pub fn status(mut self, input: crate::types::PartnerIntegrationStatus) -> Self {
@@ -109,8 +118,12 @@ impl UpdatePartnerStatusInputBuilder {
         self
     }
     /// <p>The value of the updated status.</p>
-    pub fn set_status(mut self, input: std::option::Option<crate::types::PartnerIntegrationStatus>) -> Self {
-        self.status = input; self
+    pub fn set_status(
+        mut self,
+        input: std::option::Option<crate::types::PartnerIntegrationStatus>,
+    ) -> Self {
+        self.status = input;
+        self
     }
     /// <p>The status message provided by the partner.</p>
     pub fn status_message(mut self, input: impl Into<std::string::String>) -> Self {
@@ -119,26 +132,25 @@ impl UpdatePartnerStatusInputBuilder {
     }
     /// <p>The status message provided by the partner.</p>
     pub fn set_status_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.status_message = input; self
+        self.status_message = input;
+        self
     }
     /// Consumes the builder and constructs a [`UpdatePartnerStatusInput`](crate::operation::update_partner_status::UpdatePartnerStatusInput).
-    pub fn build(self) -> Result<crate::operation::update_partner_status::UpdatePartnerStatusInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::update_partner_status::UpdatePartnerStatusInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::update_partner_status::UpdatePartnerStatusInput {
-                account_id: self.account_id
-                ,
-                cluster_identifier: self.cluster_identifier
-                ,
-                database_name: self.database_name
-                ,
-                partner_name: self.partner_name
-                ,
-                status: self.status
-                ,
-                status_message: self.status_message
-                ,
-            }
+                account_id: self.account_id,
+                cluster_identifier: self.cluster_identifier,
+                database_name: self.database_name,
+                partner_name: self.partner_name,
+                status: self.status,
+                status_message: self.status_message,
+            },
         )
     }
 }
-

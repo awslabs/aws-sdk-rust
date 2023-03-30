@@ -3,7 +3,7 @@
 /// <p>A potential improvement that was found from analyzing the profiling data.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Recommendation  {
+pub struct Recommendation {
     /// <p>How many different places in the profile graph triggered a match.</p>
     #[doc(hidden)]
     pub all_matches_count: std::option::Option<i32>,
@@ -33,19 +33,19 @@ impl Recommendation {
         self.all_matches_sum
     }
     /// <p>The pattern that analysis recognized in the profile to make this recommendation.</p>
-    pub fn pattern(&self) -> std::option::Option<& crate::types::Pattern> {
+    pub fn pattern(&self) -> std::option::Option<&crate::types::Pattern> {
         self.pattern.as_ref()
     }
     /// <p>List of the matches with most impact. </p>
-    pub fn top_matches(&self) -> std::option::Option<& [crate::types::Match]> {
+    pub fn top_matches(&self) -> std::option::Option<&[crate::types::Match]> {
         self.top_matches.as_deref()
     }
     /// <p>The start time of the profile that was used by this analysis. This is specified using the ISO 8601 format. For example, 2020-06-01T13:15:02.001Z represents 1 millisecond past June 1, 2020 1:15:02 PM UTC.</p>
-    pub fn start_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
+    pub fn start_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.start_time.as_ref()
     }
     /// <p>End time of the profile that was used by this analysis. This is specified using the ISO 8601 format. For example, 2020-06-01T13:15:02.001Z represents 1 millisecond past June 1, 2020 1:15:02 PM UTC.</p>
-    pub fn end_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
+    pub fn end_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.end_time.as_ref()
     }
 }
@@ -75,7 +75,8 @@ impl RecommendationBuilder {
     }
     /// <p>How many different places in the profile graph triggered a match.</p>
     pub fn set_all_matches_count(mut self, input: std::option::Option<i32>) -> Self {
-        self.all_matches_count = input; self
+        self.all_matches_count = input;
+        self
     }
     /// <p>How much of the total sample count is potentially affected.</p>
     pub fn all_matches_sum(mut self, input: f64) -> Self {
@@ -84,7 +85,8 @@ impl RecommendationBuilder {
     }
     /// <p>How much of the total sample count is potentially affected.</p>
     pub fn set_all_matches_sum(mut self, input: std::option::Option<f64>) -> Self {
-        self.all_matches_sum = input; self
+        self.all_matches_sum = input;
+        self
     }
     /// <p>The pattern that analysis recognized in the profile to make this recommendation.</p>
     pub fn pattern(mut self, input: crate::types::Pattern) -> Self {
@@ -93,7 +95,8 @@ impl RecommendationBuilder {
     }
     /// <p>The pattern that analysis recognized in the profile to make this recommendation.</p>
     pub fn set_pattern(mut self, input: std::option::Option<crate::types::Pattern>) -> Self {
-        self.pattern = input; self
+        self.pattern = input;
+        self
     }
     /// Appends an item to `top_matches`.
     ///
@@ -102,13 +105,17 @@ impl RecommendationBuilder {
     /// <p>List of the matches with most impact. </p>
     pub fn top_matches(mut self, input: crate::types::Match) -> Self {
         let mut v = self.top_matches.unwrap_or_default();
-                        v.push(input);
-                        self.top_matches = Some(v);
-                        self
+        v.push(input);
+        self.top_matches = Some(v);
+        self
     }
     /// <p>List of the matches with most impact. </p>
-    pub fn set_top_matches(mut self, input: std::option::Option<std::vec::Vec<crate::types::Match>>) -> Self {
-        self.top_matches = input; self
+    pub fn set_top_matches(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::Match>>,
+    ) -> Self {
+        self.top_matches = input;
+        self
     }
     /// <p>The start time of the profile that was used by this analysis. This is specified using the ISO 8601 format. For example, 2020-06-01T13:15:02.001Z represents 1 millisecond past June 1, 2020 1:15:02 PM UTC.</p>
     pub fn start_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -116,8 +123,12 @@ impl RecommendationBuilder {
         self
     }
     /// <p>The start time of the profile that was used by this analysis. This is specified using the ISO 8601 format. For example, 2020-06-01T13:15:02.001Z represents 1 millisecond past June 1, 2020 1:15:02 PM UTC.</p>
-    pub fn set_start_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.start_time = input; self
+    pub fn set_start_time(
+        mut self,
+        input: std::option::Option<aws_smithy_types::DateTime>,
+    ) -> Self {
+        self.start_time = input;
+        self
     }
     /// <p>End time of the profile that was used by this analysis. This is specified using the ISO 8601 format. For example, 2020-06-01T13:15:02.001Z represents 1 millisecond past June 1, 2020 1:15:02 PM UTC.</p>
     pub fn end_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -126,24 +137,18 @@ impl RecommendationBuilder {
     }
     /// <p>End time of the profile that was used by this analysis. This is specified using the ISO 8601 format. For example, 2020-06-01T13:15:02.001Z represents 1 millisecond past June 1, 2020 1:15:02 PM UTC.</p>
     pub fn set_end_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.end_time = input; self
+        self.end_time = input;
+        self
     }
     /// Consumes the builder and constructs a [`Recommendation`](crate::types::Recommendation).
     pub fn build(self) -> crate::types::Recommendation {
         crate::types::Recommendation {
-            all_matches_count: self.all_matches_count
-            ,
-            all_matches_sum: self.all_matches_sum
-            ,
-            pattern: self.pattern
-            ,
-            top_matches: self.top_matches
-            ,
-            start_time: self.start_time
-            ,
-            end_time: self.end_time
-            ,
+            all_matches_count: self.all_matches_count,
+            all_matches_sum: self.all_matches_sum,
+            pattern: self.pattern,
+            top_matches: self.top_matches,
+            start_time: self.start_time,
+            end_time: self.end_time,
         }
     }
 }
-

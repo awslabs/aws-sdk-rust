@@ -4,56 +4,68 @@ pub use crate::operation::get_vpn_connection_device_sample_configuration::_get_v
 pub use crate::operation::get_vpn_connection_device_sample_configuration::_get_vpn_connection_device_sample_configuration_input::GetVpnConnectionDeviceSampleConfigurationInputBuilder;
 
 /// Fluent builder constructing a request to `GetVpnConnectionDeviceSampleConfiguration`.
-/// 
+///
 /// <p>Download an Amazon Web Services-provided sample configuration file to be used with the customer gateway device specified for your Site-to-Site VPN connection.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct GetVpnConnectionDeviceSampleConfigurationFluentBuilder {
                 handle: std::sync::Arc<crate::client::Handle>,
                 inner: crate::operation::get_vpn_connection_device_sample_configuration::builders::GetVpnConnectionDeviceSampleConfigurationInputBuilder
             }
-impl GetVpnConnectionDeviceSampleConfigurationFluentBuilder  {
+impl GetVpnConnectionDeviceSampleConfigurationFluentBuilder {
     /// Creates a new `GetVpnConnectionDeviceSampleConfiguration`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
-                    /// sent. The operation's inner [http::Request] can be modified as well.
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle,
+            inner: Default::default(),
+        }
+    }
+
+    /// Consume this builder, creating a customizable operation that can be modified before being
+    /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::get_vpn_connection_device_sample_configuration::GetVpnConnectionDeviceSampleConfiguration, aws_http::retry::AwsResponseRetryClassifier,>,
                         aws_smithy_http::result::SdkError<crate::operation::get_vpn_connection_device_sample_configuration::GetVpnConnectionDeviceSampleConfigurationError>
-                    >  {
-                        let handle = self.handle.clone();
-                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-                    }
-    
-                    /// Sends the request and returns the response.
-                    ///
-                    /// If an error occurs, an `SdkError` will be returned with additional details that
-                    /// can be matched against.
-                    ///
-                    /// By default, any retryable failures will be retried twice. Retry behavior
-                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                    /// set when configuring the client.
+    >{
+        let handle = self.handle.clone();
+        let operation = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+    }
+
+    /// Sends the request and returns the response.
+    ///
+    /// If an error occurs, an `SdkError` will be returned with additional details that
+    /// can be matched against.
+    ///
+    /// By default, any retryable failures will be retried twice. Retry behavior
+    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+    /// set when configuring the client.
                     pub async fn send(self) -> std::result::Result<crate::operation::get_vpn_connection_device_sample_configuration::GetVpnConnectionDeviceSampleConfigurationOutput, aws_smithy_http::result::SdkError<crate::operation::get_vpn_connection_device_sample_configuration::GetVpnConnectionDeviceSampleConfigurationError>>
                      {
-                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&self.handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        self.handle.client.call(op).await
-                    }
+        let op = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&self.handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        self.handle.client.call(op).await
+    }
     /// <p>The <code>VpnConnectionId</code> specifies the Site-to-Site VPN connection used for the sample configuration.</p>
     pub fn vpn_connection_id(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.vpn_connection_id(input.into());
         self
     }
     /// <p>The <code>VpnConnectionId</code> specifies the Site-to-Site VPN connection used for the sample configuration.</p>
-    pub fn set_vpn_connection_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_vpn_connection_id(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_vpn_connection_id(input);
         self
     }
@@ -63,7 +75,10 @@ impl GetVpnConnectionDeviceSampleConfigurationFluentBuilder  {
         self
     }
     /// <p>Device identifier provided by the <code>GetVpnConnectionDeviceTypes</code> API.</p>
-    pub fn set_vpn_connection_device_type_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_vpn_connection_device_type_id(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_vpn_connection_device_type_id(input);
         self
     }
@@ -73,7 +88,10 @@ impl GetVpnConnectionDeviceSampleConfigurationFluentBuilder  {
         self
     }
     /// <p>The IKE version to be used in the sample configuration file for your customer gateway device. You can specify one of the following versions: <code>ikev1</code> or <code>ikev2</code>.</p>
-    pub fn set_internet_key_exchange_version(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_internet_key_exchange_version(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_internet_key_exchange_version(input);
         self
     }
@@ -88,4 +106,3 @@ impl GetVpnConnectionDeviceSampleConfigurationFluentBuilder  {
         self
     }
 }
-

@@ -3,7 +3,7 @@
 /// <p>Contains the parameters for CreateAppCookieStickinessPolicy.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateAppCookieStickinessPolicyInput  {
+pub struct CreateAppCookieStickinessPolicyInput {
     /// <p>The name of the load balancer.</p>
     #[doc(hidden)]
     pub load_balancer_name: std::option::Option<std::string::String>,
@@ -16,21 +16,21 @@ pub struct CreateAppCookieStickinessPolicyInput  {
 }
 impl CreateAppCookieStickinessPolicyInput {
     /// <p>The name of the load balancer.</p>
-    pub fn load_balancer_name(&self) -> std::option::Option<& str> {
+    pub fn load_balancer_name(&self) -> std::option::Option<&str> {
         self.load_balancer_name.as_deref()
     }
     /// <p>The name of the policy being created. Policy names must consist of alphanumeric characters and dashes (-). This name must be unique within the set of policies for this load balancer.</p>
-    pub fn policy_name(&self) -> std::option::Option<& str> {
+    pub fn policy_name(&self) -> std::option::Option<&str> {
         self.policy_name.as_deref()
     }
     /// <p>The name of the application cookie used for stickiness.</p>
-    pub fn cookie_name(&self) -> std::option::Option<& str> {
+    pub fn cookie_name(&self) -> std::option::Option<&str> {
         self.cookie_name.as_deref()
     }
 }
 impl CreateAppCookieStickinessPolicyInput {
     /// Creates a new builder-style object to manufacture [`CreateAppCookieStickinessPolicyInput`](crate::operation::create_app_cookie_stickiness_policy::CreateAppCookieStickinessPolicyInput).
-    pub fn builder() -> crate::operation::create_app_cookie_stickiness_policy::builders::CreateAppCookieStickinessPolicyInputBuilder {
+    pub fn builder() -> crate::operation::create_app_cookie_stickiness_policy::builders::CreateAppCookieStickinessPolicyInputBuilder{
         crate::operation::create_app_cookie_stickiness_policy::builders::CreateAppCookieStickinessPolicyInputBuilder::default()
     }
 }
@@ -50,8 +50,12 @@ impl CreateAppCookieStickinessPolicyInputBuilder {
         self
     }
     /// <p>The name of the load balancer.</p>
-    pub fn set_load_balancer_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.load_balancer_name = input; self
+    pub fn set_load_balancer_name(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.load_balancer_name = input;
+        self
     }
     /// <p>The name of the policy being created. Policy names must consist of alphanumeric characters and dashes (-). This name must be unique within the set of policies for this load balancer.</p>
     pub fn policy_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -60,7 +64,8 @@ impl CreateAppCookieStickinessPolicyInputBuilder {
     }
     /// <p>The name of the policy being created. Policy names must consist of alphanumeric characters and dashes (-). This name must be unique within the set of policies for this load balancer.</p>
     pub fn set_policy_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.policy_name = input; self
+        self.policy_name = input;
+        self
     }
     /// <p>The name of the application cookie used for stickiness.</p>
     pub fn cookie_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -69,10 +74,16 @@ impl CreateAppCookieStickinessPolicyInputBuilder {
     }
     /// <p>The name of the application cookie used for stickiness.</p>
     pub fn set_cookie_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.cookie_name = input; self
+        self.cookie_name = input;
+        self
     }
     /// Consumes the builder and constructs a [`CreateAppCookieStickinessPolicyInput`](crate::operation::create_app_cookie_stickiness_policy::CreateAppCookieStickinessPolicyInput).
-    pub fn build(self) -> Result<crate::operation::create_app_cookie_stickiness_policy::CreateAppCookieStickinessPolicyInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::create_app_cookie_stickiness_policy::CreateAppCookieStickinessPolicyInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::create_app_cookie_stickiness_policy::CreateAppCookieStickinessPolicyInput {
                 load_balancer_name: self.load_balancer_name
@@ -85,4 +96,3 @@ impl CreateAppCookieStickinessPolicyInputBuilder {
         )
     }
 }
-

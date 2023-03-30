@@ -3,14 +3,14 @@
 /// <p>The structure that contains the information required to deliver a notification to a customer.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct NotificationDestinationConfig  {
+pub struct NotificationDestinationConfig {
     /// <p>The Uniform Resource Identifier (URI) that identifies where the images will be delivered.</p>
     #[doc(hidden)]
     pub uri: std::option::Option<std::string::String>,
 }
 impl NotificationDestinationConfig {
     /// <p>The Uniform Resource Identifier (URI) that identifies where the images will be delivered.</p>
-    pub fn uri(&self) -> std::option::Option<& str> {
+    pub fn uri(&self) -> std::option::Option<&str> {
         self.uri.as_deref()
     }
 }
@@ -35,14 +35,11 @@ impl NotificationDestinationConfigBuilder {
     }
     /// <p>The Uniform Resource Identifier (URI) that identifies where the images will be delivered.</p>
     pub fn set_uri(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.uri = input; self
+        self.uri = input;
+        self
     }
     /// Consumes the builder and constructs a [`NotificationDestinationConfig`](crate::types::NotificationDestinationConfig).
     pub fn build(self) -> crate::types::NotificationDestinationConfig {
-        crate::types::NotificationDestinationConfig {
-            uri: self.uri
-            ,
-        }
+        crate::types::NotificationDestinationConfig { uri: self.uri }
     }
 }
-

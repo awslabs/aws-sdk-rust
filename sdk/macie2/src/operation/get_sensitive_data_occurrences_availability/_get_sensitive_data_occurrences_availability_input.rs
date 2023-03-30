@@ -2,20 +2,20 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetSensitiveDataOccurrencesAvailabilityInput  {
+pub struct GetSensitiveDataOccurrencesAvailabilityInput {
     /// <p>The unique identifier for the finding.</p>
     #[doc(hidden)]
     pub finding_id: std::option::Option<std::string::String>,
 }
 impl GetSensitiveDataOccurrencesAvailabilityInput {
     /// <p>The unique identifier for the finding.</p>
-    pub fn finding_id(&self) -> std::option::Option<& str> {
+    pub fn finding_id(&self) -> std::option::Option<&str> {
         self.finding_id.as_deref()
     }
 }
 impl GetSensitiveDataOccurrencesAvailabilityInput {
     /// Creates a new builder-style object to manufacture [`GetSensitiveDataOccurrencesAvailabilityInput`](crate::operation::get_sensitive_data_occurrences_availability::GetSensitiveDataOccurrencesAvailabilityInput).
-    pub fn builder() -> crate::operation::get_sensitive_data_occurrences_availability::builders::GetSensitiveDataOccurrencesAvailabilityInputBuilder {
+    pub fn builder() -> crate::operation::get_sensitive_data_occurrences_availability::builders::GetSensitiveDataOccurrencesAvailabilityInputBuilder{
         crate::operation::get_sensitive_data_occurrences_availability::builders::GetSensitiveDataOccurrencesAvailabilityInputBuilder::default()
     }
 }
@@ -34,10 +34,11 @@ impl GetSensitiveDataOccurrencesAvailabilityInputBuilder {
     }
     /// <p>The unique identifier for the finding.</p>
     pub fn set_finding_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.finding_id = input; self
+        self.finding_id = input;
+        self
     }
     /// Consumes the builder and constructs a [`GetSensitiveDataOccurrencesAvailabilityInput`](crate::operation::get_sensitive_data_occurrences_availability::GetSensitiveDataOccurrencesAvailabilityInput).
-    pub fn build(self) -> Result<crate::operation::get_sensitive_data_occurrences_availability::GetSensitiveDataOccurrencesAvailabilityInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> Result<crate::operation::get_sensitive_data_occurrences_availability::GetSensitiveDataOccurrencesAvailabilityInput, aws_smithy_http::operation::error::BuildError>{
         Ok(
             crate::operation::get_sensitive_data_occurrences_availability::GetSensitiveDataOccurrencesAvailabilityInput {
                 finding_id: self.finding_id
@@ -46,4 +47,3 @@ impl GetSensitiveDataOccurrencesAvailabilityInputBuilder {
         )
     }
 }
-

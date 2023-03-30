@@ -3,7 +3,7 @@
 /// <p>Describes a reserved node. You can call the <code>DescribeReservedNodeOfferings</code> API to obtain the available reserved node offerings. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ReservedNode  {
+pub struct ReservedNode {
     /// <p>The unique identifier for the reservation.</p>
     #[doc(hidden)]
     pub reserved_node_id: std::option::Option<std::string::String>,
@@ -31,14 +31,14 @@ pub struct ReservedNode  {
     /// <p>The number of reserved compute nodes.</p>
     #[doc(hidden)]
     pub node_count: i32,
-    /// <p>The state of the reserved compute node.</p> 
-    /// <p>Possible Values:</p> 
-    /// <ul> 
-    /// <li> <p>pending-payment-This reserved node has recently been purchased, and the sale has been approved, but payment has not yet been confirmed.</p> </li> 
-    /// <li> <p>active-This reserved node is owned by the caller and is available for use.</p> </li> 
-    /// <li> <p>payment-failed-Payment failed for the purchase attempt.</p> </li> 
-    /// <li> <p>retired-The reserved node is no longer available. </p> </li> 
-    /// <li> <p>exchanging-The owner is exchanging the reserved node for another reserved node.</p> </li> 
+    /// <p>The state of the reserved compute node.</p>
+    /// <p>Possible Values:</p>
+    /// <ul>
+    /// <li> <p>pending-payment-This reserved node has recently been purchased, and the sale has been approved, but payment has not yet been confirmed.</p> </li>
+    /// <li> <p>active-This reserved node is owned by the caller and is available for use.</p> </li>
+    /// <li> <p>payment-failed-Payment failed for the purchase attempt.</p> </li>
+    /// <li> <p>retired-The reserved node is no longer available. </p> </li>
+    /// <li> <p>exchanging-The owner is exchanging the reserved node for another reserved node.</p> </li>
     /// </ul>
     #[doc(hidden)]
     pub state: std::option::Option<std::string::String>,
@@ -54,19 +54,19 @@ pub struct ReservedNode  {
 }
 impl ReservedNode {
     /// <p>The unique identifier for the reservation.</p>
-    pub fn reserved_node_id(&self) -> std::option::Option<& str> {
+    pub fn reserved_node_id(&self) -> std::option::Option<&str> {
         self.reserved_node_id.as_deref()
     }
     /// <p>The identifier for the reserved node offering.</p>
-    pub fn reserved_node_offering_id(&self) -> std::option::Option<& str> {
+    pub fn reserved_node_offering_id(&self) -> std::option::Option<&str> {
         self.reserved_node_offering_id.as_deref()
     }
     /// <p>The node type of the reserved node.</p>
-    pub fn node_type(&self) -> std::option::Option<& str> {
+    pub fn node_type(&self) -> std::option::Option<&str> {
         self.node_type.as_deref()
     }
     /// <p>The time the reservation started. You purchase a reserved node offering for a duration. This is the start time of that duration.</p>
-    pub fn start_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
+    pub fn start_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.start_time.as_ref()
     }
     /// <p>The duration of the node reservation in seconds.</p>
@@ -82,35 +82,37 @@ impl ReservedNode {
         self.usage_price
     }
     /// <p>The currency code for the reserved cluster.</p>
-    pub fn currency_code(&self) -> std::option::Option<& str> {
+    pub fn currency_code(&self) -> std::option::Option<&str> {
         self.currency_code.as_deref()
     }
     /// <p>The number of reserved compute nodes.</p>
     pub fn node_count(&self) -> i32 {
         self.node_count
     }
-    /// <p>The state of the reserved compute node.</p> 
-    /// <p>Possible Values:</p> 
-    /// <ul> 
-    /// <li> <p>pending-payment-This reserved node has recently been purchased, and the sale has been approved, but payment has not yet been confirmed.</p> </li> 
-    /// <li> <p>active-This reserved node is owned by the caller and is available for use.</p> </li> 
-    /// <li> <p>payment-failed-Payment failed for the purchase attempt.</p> </li> 
-    /// <li> <p>retired-The reserved node is no longer available. </p> </li> 
-    /// <li> <p>exchanging-The owner is exchanging the reserved node for another reserved node.</p> </li> 
+    /// <p>The state of the reserved compute node.</p>
+    /// <p>Possible Values:</p>
+    /// <ul>
+    /// <li> <p>pending-payment-This reserved node has recently been purchased, and the sale has been approved, but payment has not yet been confirmed.</p> </li>
+    /// <li> <p>active-This reserved node is owned by the caller and is available for use.</p> </li>
+    /// <li> <p>payment-failed-Payment failed for the purchase attempt.</p> </li>
+    /// <li> <p>retired-The reserved node is no longer available. </p> </li>
+    /// <li> <p>exchanging-The owner is exchanging the reserved node for another reserved node.</p> </li>
     /// </ul>
-    pub fn state(&self) -> std::option::Option<& str> {
+    pub fn state(&self) -> std::option::Option<&str> {
         self.state.as_deref()
     }
     /// <p>The anticipated utilization of the reserved node, as defined in the reserved node offering.</p>
-    pub fn offering_type(&self) -> std::option::Option<& str> {
+    pub fn offering_type(&self) -> std::option::Option<&str> {
         self.offering_type.as_deref()
     }
     /// <p>The recurring charges for the reserved node.</p>
-    pub fn recurring_charges(&self) -> std::option::Option<& [crate::types::RecurringCharge]> {
+    pub fn recurring_charges(&self) -> std::option::Option<&[crate::types::RecurringCharge]> {
         self.recurring_charges.as_deref()
     }
     /// <p></p>
-    pub fn reserved_node_offering_type(&self) -> std::option::Option<& crate::types::ReservedNodeOfferingType> {
+    pub fn reserved_node_offering_type(
+        &self,
+    ) -> std::option::Option<&crate::types::ReservedNodeOfferingType> {
         self.reserved_node_offering_type.as_ref()
     }
 }
@@ -137,7 +139,8 @@ pub struct ReservedNodeBuilder {
     pub(crate) state: std::option::Option<std::string::String>,
     pub(crate) offering_type: std::option::Option<std::string::String>,
     pub(crate) recurring_charges: std::option::Option<std::vec::Vec<crate::types::RecurringCharge>>,
-    pub(crate) reserved_node_offering_type: std::option::Option<crate::types::ReservedNodeOfferingType>,
+    pub(crate) reserved_node_offering_type:
+        std::option::Option<crate::types::ReservedNodeOfferingType>,
 }
 impl ReservedNodeBuilder {
     /// <p>The unique identifier for the reservation.</p>
@@ -147,7 +150,8 @@ impl ReservedNodeBuilder {
     }
     /// <p>The unique identifier for the reservation.</p>
     pub fn set_reserved_node_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.reserved_node_id = input; self
+        self.reserved_node_id = input;
+        self
     }
     /// <p>The identifier for the reserved node offering.</p>
     pub fn reserved_node_offering_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -155,8 +159,12 @@ impl ReservedNodeBuilder {
         self
     }
     /// <p>The identifier for the reserved node offering.</p>
-    pub fn set_reserved_node_offering_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.reserved_node_offering_id = input; self
+    pub fn set_reserved_node_offering_id(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.reserved_node_offering_id = input;
+        self
     }
     /// <p>The node type of the reserved node.</p>
     pub fn node_type(mut self, input: impl Into<std::string::String>) -> Self {
@@ -165,7 +173,8 @@ impl ReservedNodeBuilder {
     }
     /// <p>The node type of the reserved node.</p>
     pub fn set_node_type(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.node_type = input; self
+        self.node_type = input;
+        self
     }
     /// <p>The time the reservation started. You purchase a reserved node offering for a duration. This is the start time of that duration.</p>
     pub fn start_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -173,8 +182,12 @@ impl ReservedNodeBuilder {
         self
     }
     /// <p>The time the reservation started. You purchase a reserved node offering for a duration. This is the start time of that duration.</p>
-    pub fn set_start_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.start_time = input; self
+    pub fn set_start_time(
+        mut self,
+        input: std::option::Option<aws_smithy_types::DateTime>,
+    ) -> Self {
+        self.start_time = input;
+        self
     }
     /// <p>The duration of the node reservation in seconds.</p>
     pub fn duration(mut self, input: i32) -> Self {
@@ -183,7 +196,8 @@ impl ReservedNodeBuilder {
     }
     /// <p>The duration of the node reservation in seconds.</p>
     pub fn set_duration(mut self, input: std::option::Option<i32>) -> Self {
-        self.duration = input; self
+        self.duration = input;
+        self
     }
     /// <p>The fixed cost Amazon Redshift charges you for this reserved node.</p>
     pub fn fixed_price(mut self, input: f64) -> Self {
@@ -192,7 +206,8 @@ impl ReservedNodeBuilder {
     }
     /// <p>The fixed cost Amazon Redshift charges you for this reserved node.</p>
     pub fn set_fixed_price(mut self, input: std::option::Option<f64>) -> Self {
-        self.fixed_price = input; self
+        self.fixed_price = input;
+        self
     }
     /// <p>The hourly rate Amazon Redshift charges you for this reserved node.</p>
     pub fn usage_price(mut self, input: f64) -> Self {
@@ -201,7 +216,8 @@ impl ReservedNodeBuilder {
     }
     /// <p>The hourly rate Amazon Redshift charges you for this reserved node.</p>
     pub fn set_usage_price(mut self, input: std::option::Option<f64>) -> Self {
-        self.usage_price = input; self
+        self.usage_price = input;
+        self
     }
     /// <p>The currency code for the reserved cluster.</p>
     pub fn currency_code(mut self, input: impl Into<std::string::String>) -> Self {
@@ -210,7 +226,8 @@ impl ReservedNodeBuilder {
     }
     /// <p>The currency code for the reserved cluster.</p>
     pub fn set_currency_code(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.currency_code = input; self
+        self.currency_code = input;
+        self
     }
     /// <p>The number of reserved compute nodes.</p>
     pub fn node_count(mut self, input: i32) -> Self {
@@ -219,32 +236,34 @@ impl ReservedNodeBuilder {
     }
     /// <p>The number of reserved compute nodes.</p>
     pub fn set_node_count(mut self, input: std::option::Option<i32>) -> Self {
-        self.node_count = input; self
+        self.node_count = input;
+        self
     }
-    /// <p>The state of the reserved compute node.</p> 
-    /// <p>Possible Values:</p> 
-    /// <ul> 
-    /// <li> <p>pending-payment-This reserved node has recently been purchased, and the sale has been approved, but payment has not yet been confirmed.</p> </li> 
-    /// <li> <p>active-This reserved node is owned by the caller and is available for use.</p> </li> 
-    /// <li> <p>payment-failed-Payment failed for the purchase attempt.</p> </li> 
-    /// <li> <p>retired-The reserved node is no longer available. </p> </li> 
-    /// <li> <p>exchanging-The owner is exchanging the reserved node for another reserved node.</p> </li> 
+    /// <p>The state of the reserved compute node.</p>
+    /// <p>Possible Values:</p>
+    /// <ul>
+    /// <li> <p>pending-payment-This reserved node has recently been purchased, and the sale has been approved, but payment has not yet been confirmed.</p> </li>
+    /// <li> <p>active-This reserved node is owned by the caller and is available for use.</p> </li>
+    /// <li> <p>payment-failed-Payment failed for the purchase attempt.</p> </li>
+    /// <li> <p>retired-The reserved node is no longer available. </p> </li>
+    /// <li> <p>exchanging-The owner is exchanging the reserved node for another reserved node.</p> </li>
     /// </ul>
     pub fn state(mut self, input: impl Into<std::string::String>) -> Self {
         self.state = Some(input.into());
         self
     }
-    /// <p>The state of the reserved compute node.</p> 
-    /// <p>Possible Values:</p> 
-    /// <ul> 
-    /// <li> <p>pending-payment-This reserved node has recently been purchased, and the sale has been approved, but payment has not yet been confirmed.</p> </li> 
-    /// <li> <p>active-This reserved node is owned by the caller and is available for use.</p> </li> 
-    /// <li> <p>payment-failed-Payment failed for the purchase attempt.</p> </li> 
-    /// <li> <p>retired-The reserved node is no longer available. </p> </li> 
-    /// <li> <p>exchanging-The owner is exchanging the reserved node for another reserved node.</p> </li> 
+    /// <p>The state of the reserved compute node.</p>
+    /// <p>Possible Values:</p>
+    /// <ul>
+    /// <li> <p>pending-payment-This reserved node has recently been purchased, and the sale has been approved, but payment has not yet been confirmed.</p> </li>
+    /// <li> <p>active-This reserved node is owned by the caller and is available for use.</p> </li>
+    /// <li> <p>payment-failed-Payment failed for the purchase attempt.</p> </li>
+    /// <li> <p>retired-The reserved node is no longer available. </p> </li>
+    /// <li> <p>exchanging-The owner is exchanging the reserved node for another reserved node.</p> </li>
     /// </ul>
     pub fn set_state(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.state = input; self
+        self.state = input;
+        self
     }
     /// <p>The anticipated utilization of the reserved node, as defined in the reserved node offering.</p>
     pub fn offering_type(mut self, input: impl Into<std::string::String>) -> Self {
@@ -253,7 +272,8 @@ impl ReservedNodeBuilder {
     }
     /// <p>The anticipated utilization of the reserved node, as defined in the reserved node offering.</p>
     pub fn set_offering_type(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.offering_type = input; self
+        self.offering_type = input;
+        self
     }
     /// Appends an item to `recurring_charges`.
     ///
@@ -262,57 +282,50 @@ impl ReservedNodeBuilder {
     /// <p>The recurring charges for the reserved node.</p>
     pub fn recurring_charges(mut self, input: crate::types::RecurringCharge) -> Self {
         let mut v = self.recurring_charges.unwrap_or_default();
-                        v.push(input);
-                        self.recurring_charges = Some(v);
-                        self
+        v.push(input);
+        self.recurring_charges = Some(v);
+        self
     }
     /// <p>The recurring charges for the reserved node.</p>
-    pub fn set_recurring_charges(mut self, input: std::option::Option<std::vec::Vec<crate::types::RecurringCharge>>) -> Self {
-        self.recurring_charges = input; self
+    pub fn set_recurring_charges(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::RecurringCharge>>,
+    ) -> Self {
+        self.recurring_charges = input;
+        self
     }
     /// <p></p>
-    pub fn reserved_node_offering_type(mut self, input: crate::types::ReservedNodeOfferingType) -> Self {
+    pub fn reserved_node_offering_type(
+        mut self,
+        input: crate::types::ReservedNodeOfferingType,
+    ) -> Self {
         self.reserved_node_offering_type = Some(input);
         self
     }
     /// <p></p>
-    pub fn set_reserved_node_offering_type(mut self, input: std::option::Option<crate::types::ReservedNodeOfferingType>) -> Self {
-        self.reserved_node_offering_type = input; self
+    pub fn set_reserved_node_offering_type(
+        mut self,
+        input: std::option::Option<crate::types::ReservedNodeOfferingType>,
+    ) -> Self {
+        self.reserved_node_offering_type = input;
+        self
     }
     /// Consumes the builder and constructs a [`ReservedNode`](crate::types::ReservedNode).
     pub fn build(self) -> crate::types::ReservedNode {
         crate::types::ReservedNode {
-            reserved_node_id: self.reserved_node_id
-            ,
-            reserved_node_offering_id: self.reserved_node_offering_id
-            ,
-            node_type: self.node_type
-            ,
-            start_time: self.start_time
-            ,
-            duration: self.duration
-                .unwrap_or_default()
-            ,
-            fixed_price: self.fixed_price
-                .unwrap_or_default()
-            ,
-            usage_price: self.usage_price
-                .unwrap_or_default()
-            ,
-            currency_code: self.currency_code
-            ,
-            node_count: self.node_count
-                .unwrap_or_default()
-            ,
-            state: self.state
-            ,
-            offering_type: self.offering_type
-            ,
-            recurring_charges: self.recurring_charges
-            ,
-            reserved_node_offering_type: self.reserved_node_offering_type
-            ,
+            reserved_node_id: self.reserved_node_id,
+            reserved_node_offering_id: self.reserved_node_offering_id,
+            node_type: self.node_type,
+            start_time: self.start_time,
+            duration: self.duration.unwrap_or_default(),
+            fixed_price: self.fixed_price.unwrap_or_default(),
+            usage_price: self.usage_price.unwrap_or_default(),
+            currency_code: self.currency_code,
+            node_count: self.node_count.unwrap_or_default(),
+            state: self.state,
+            offering_type: self.offering_type,
+            recurring_charges: self.recurring_charges,
+            reserved_node_offering_type: self.reserved_node_offering_type,
         }
     }
 }
-

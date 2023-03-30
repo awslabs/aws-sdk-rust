@@ -3,9 +3,9 @@
 /// <p>The container for the filter of the lifecycle rule.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct LifecycleRuleFilter  {
-    /// <p>Prefix identifying one or more objects to which the rule applies.</p> <important> 
-    /// <p>Replacement must be made for object keys containing special characters (such as carriage returns) when using XML requests. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-keys.html#object-key-xml-related-constraints"> XML related object key constraints</a>.</p> 
+pub struct LifecycleRuleFilter {
+    /// <p>Prefix identifying one or more objects to which the rule applies.</p> <important>
+    /// <p>Replacement must be made for object keys containing special characters (such as carriage returns) when using XML requests. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-keys.html#object-key-xml-related-constraints"> XML related object key constraints</a>.</p>
     /// </important>
     #[doc(hidden)]
     pub prefix: std::option::Option<std::string::String>,
@@ -23,18 +23,18 @@ pub struct LifecycleRuleFilter  {
     pub object_size_less_than: std::option::Option<i64>,
 }
 impl LifecycleRuleFilter {
-    /// <p>Prefix identifying one or more objects to which the rule applies.</p> <important> 
-    /// <p>Replacement must be made for object keys containing special characters (such as carriage returns) when using XML requests. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-keys.html#object-key-xml-related-constraints"> XML related object key constraints</a>.</p> 
+    /// <p>Prefix identifying one or more objects to which the rule applies.</p> <important>
+    /// <p>Replacement must be made for object keys containing special characters (such as carriage returns) when using XML requests. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-keys.html#object-key-xml-related-constraints"> XML related object key constraints</a>.</p>
     /// </important>
-    pub fn prefix(&self) -> std::option::Option<& str> {
+    pub fn prefix(&self) -> std::option::Option<&str> {
         self.prefix.as_deref()
     }
     /// <p>A container for a key-value name pair.</p>
-    pub fn tag(&self) -> std::option::Option<& crate::types::S3Tag> {
+    pub fn tag(&self) -> std::option::Option<&crate::types::S3Tag> {
         self.tag.as_ref()
     }
     /// <p>The container for the <code>AND</code> condition for the lifecycle rule.</p>
-    pub fn and(&self) -> std::option::Option<& crate::types::LifecycleRuleAndOperator> {
+    pub fn and(&self) -> std::option::Option<&crate::types::LifecycleRuleAndOperator> {
         self.and.as_ref()
     }
     /// <p>Minimum object size to which the rule applies.</p>
@@ -64,18 +64,19 @@ pub struct LifecycleRuleFilterBuilder {
     pub(crate) object_size_less_than: std::option::Option<i64>,
 }
 impl LifecycleRuleFilterBuilder {
-    /// <p>Prefix identifying one or more objects to which the rule applies.</p> <important> 
-    /// <p>Replacement must be made for object keys containing special characters (such as carriage returns) when using XML requests. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-keys.html#object-key-xml-related-constraints"> XML related object key constraints</a>.</p> 
+    /// <p>Prefix identifying one or more objects to which the rule applies.</p> <important>
+    /// <p>Replacement must be made for object keys containing special characters (such as carriage returns) when using XML requests. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-keys.html#object-key-xml-related-constraints"> XML related object key constraints</a>.</p>
     /// </important>
     pub fn prefix(mut self, input: impl Into<std::string::String>) -> Self {
         self.prefix = Some(input.into());
         self
     }
-    /// <p>Prefix identifying one or more objects to which the rule applies.</p> <important> 
-    /// <p>Replacement must be made for object keys containing special characters (such as carriage returns) when using XML requests. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-keys.html#object-key-xml-related-constraints"> XML related object key constraints</a>.</p> 
+    /// <p>Prefix identifying one or more objects to which the rule applies.</p> <important>
+    /// <p>Replacement must be made for object keys containing special characters (such as carriage returns) when using XML requests. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-keys.html#object-key-xml-related-constraints"> XML related object key constraints</a>.</p>
     /// </important>
     pub fn set_prefix(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.prefix = input; self
+        self.prefix = input;
+        self
     }
     /// <p>A container for a key-value name pair.</p>
     pub fn tag(mut self, input: crate::types::S3Tag) -> Self {
@@ -84,7 +85,8 @@ impl LifecycleRuleFilterBuilder {
     }
     /// <p>A container for a key-value name pair.</p>
     pub fn set_tag(mut self, input: std::option::Option<crate::types::S3Tag>) -> Self {
-        self.tag = input; self
+        self.tag = input;
+        self
     }
     /// <p>The container for the <code>AND</code> condition for the lifecycle rule.</p>
     pub fn and(mut self, input: crate::types::LifecycleRuleAndOperator) -> Self {
@@ -92,8 +94,12 @@ impl LifecycleRuleFilterBuilder {
         self
     }
     /// <p>The container for the <code>AND</code> condition for the lifecycle rule.</p>
-    pub fn set_and(mut self, input: std::option::Option<crate::types::LifecycleRuleAndOperator>) -> Self {
-        self.and = input; self
+    pub fn set_and(
+        mut self,
+        input: std::option::Option<crate::types::LifecycleRuleAndOperator>,
+    ) -> Self {
+        self.and = input;
+        self
     }
     /// <p>Minimum object size to which the rule applies.</p>
     pub fn object_size_greater_than(mut self, input: i64) -> Self {
@@ -102,7 +108,8 @@ impl LifecycleRuleFilterBuilder {
     }
     /// <p>Minimum object size to which the rule applies.</p>
     pub fn set_object_size_greater_than(mut self, input: std::option::Option<i64>) -> Self {
-        self.object_size_greater_than = input; self
+        self.object_size_greater_than = input;
+        self
     }
     /// <p>Maximum object size to which the rule applies.</p>
     pub fn object_size_less_than(mut self, input: i64) -> Self {
@@ -111,22 +118,17 @@ impl LifecycleRuleFilterBuilder {
     }
     /// <p>Maximum object size to which the rule applies.</p>
     pub fn set_object_size_less_than(mut self, input: std::option::Option<i64>) -> Self {
-        self.object_size_less_than = input; self
+        self.object_size_less_than = input;
+        self
     }
     /// Consumes the builder and constructs a [`LifecycleRuleFilter`](crate::types::LifecycleRuleFilter).
     pub fn build(self) -> crate::types::LifecycleRuleFilter {
         crate::types::LifecycleRuleFilter {
-            prefix: self.prefix
-            ,
-            tag: self.tag
-            ,
-            and: self.and
-            ,
-            object_size_greater_than: self.object_size_greater_than
-            ,
-            object_size_less_than: self.object_size_less_than
-            ,
+            prefix: self.prefix,
+            tag: self.tag,
+            and: self.and,
+            object_size_greater_than: self.object_size_greater_than,
+            object_size_less_than: self.object_size_less_than,
         }
     }
 }
-

@@ -3,7 +3,7 @@
 /// <p>The input for <code>ListStacks</code> action.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListStacksInput  {
+pub struct ListStacksInput {
     /// <p>A string that identifies the next page of stacks that you want to retrieve.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
@@ -13,11 +13,11 @@ pub struct ListStacksInput  {
 }
 impl ListStacksInput {
     /// <p>A string that identifies the next page of stacks that you want to retrieve.</p>
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
     /// <p>Stack status to use as a filter. Specify one or more stack status codes to list only stacks with the specified status codes. For a complete list of stack status codes, see the <code>StackStatus</code> parameter of the <code>Stack</code> data type.</p>
-    pub fn stack_status_filter(&self) -> std::option::Option<& [crate::types::StackStatus]> {
+    pub fn stack_status_filter(&self) -> std::option::Option<&[crate::types::StackStatus]> {
         self.stack_status_filter.as_deref()
     }
 }
@@ -43,7 +43,8 @@ impl ListStacksInputBuilder {
     }
     /// <p>A string that identifies the next page of stacks that you want to retrieve.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input; self
+        self.next_token = input;
+        self
     }
     /// Appends an item to `stack_status_filter`.
     ///
@@ -52,24 +53,28 @@ impl ListStacksInputBuilder {
     /// <p>Stack status to use as a filter. Specify one or more stack status codes to list only stacks with the specified status codes. For a complete list of stack status codes, see the <code>StackStatus</code> parameter of the <code>Stack</code> data type.</p>
     pub fn stack_status_filter(mut self, input: crate::types::StackStatus) -> Self {
         let mut v = self.stack_status_filter.unwrap_or_default();
-                        v.push(input);
-                        self.stack_status_filter = Some(v);
-                        self
+        v.push(input);
+        self.stack_status_filter = Some(v);
+        self
     }
     /// <p>Stack status to use as a filter. Specify one or more stack status codes to list only stacks with the specified status codes. For a complete list of stack status codes, see the <code>StackStatus</code> parameter of the <code>Stack</code> data type.</p>
-    pub fn set_stack_status_filter(mut self, input: std::option::Option<std::vec::Vec<crate::types::StackStatus>>) -> Self {
-        self.stack_status_filter = input; self
+    pub fn set_stack_status_filter(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::StackStatus>>,
+    ) -> Self {
+        self.stack_status_filter = input;
+        self
     }
     /// Consumes the builder and constructs a [`ListStacksInput`](crate::operation::list_stacks::ListStacksInput).
-    pub fn build(self) -> Result<crate::operation::list_stacks::ListStacksInput, aws_smithy_http::operation::error::BuildError> {
-        Ok(
-            crate::operation::list_stacks::ListStacksInput {
-                next_token: self.next_token
-                ,
-                stack_status_filter: self.stack_status_filter
-                ,
-            }
-        )
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::list_stacks::ListStacksInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        Ok(crate::operation::list_stacks::ListStacksInput {
+            next_token: self.next_token,
+            stack_status_filter: self.stack_status_filter,
+        })
     }
 }
-

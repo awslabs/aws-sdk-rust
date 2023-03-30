@@ -2,20 +2,20 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateCrossAccountAuthorizationInput  {
+pub struct CreateCrossAccountAuthorizationInput {
     /// <p>The cross-account authorization.</p>
     #[doc(hidden)]
     pub cross_account_authorization: std::option::Option<std::string::String>,
 }
 impl CreateCrossAccountAuthorizationInput {
     /// <p>The cross-account authorization.</p>
-    pub fn cross_account_authorization(&self) -> std::option::Option<& str> {
+    pub fn cross_account_authorization(&self) -> std::option::Option<&str> {
         self.cross_account_authorization.as_deref()
     }
 }
 impl CreateCrossAccountAuthorizationInput {
     /// Creates a new builder-style object to manufacture [`CreateCrossAccountAuthorizationInput`](crate::operation::create_cross_account_authorization::CreateCrossAccountAuthorizationInput).
-    pub fn builder() -> crate::operation::create_cross_account_authorization::builders::CreateCrossAccountAuthorizationInputBuilder {
+    pub fn builder() -> crate::operation::create_cross_account_authorization::builders::CreateCrossAccountAuthorizationInputBuilder{
         crate::operation::create_cross_account_authorization::builders::CreateCrossAccountAuthorizationInputBuilder::default()
     }
 }
@@ -33,11 +33,20 @@ impl CreateCrossAccountAuthorizationInputBuilder {
         self
     }
     /// <p>The cross-account authorization.</p>
-    pub fn set_cross_account_authorization(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.cross_account_authorization = input; self
+    pub fn set_cross_account_authorization(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.cross_account_authorization = input;
+        self
     }
     /// Consumes the builder and constructs a [`CreateCrossAccountAuthorizationInput`](crate::operation::create_cross_account_authorization::CreateCrossAccountAuthorizationInput).
-    pub fn build(self) -> Result<crate::operation::create_cross_account_authorization::CreateCrossAccountAuthorizationInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::create_cross_account_authorization::CreateCrossAccountAuthorizationInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::create_cross_account_authorization::CreateCrossAccountAuthorizationInput {
                 cross_account_authorization: self.cross_account_authorization
@@ -46,4 +55,3 @@ impl CreateCrossAccountAuthorizationInputBuilder {
         )
     }
 }
-

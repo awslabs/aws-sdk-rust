@@ -3,7 +3,7 @@
 /// <p>Defines the valid range of work unit IDs for querying the execution service.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct WorkUnitRange  {
+pub struct WorkUnitRange {
     /// <p>Defines the maximum work unit ID in the range. The maximum value is inclusive.</p>
     #[doc(hidden)]
     pub work_unit_id_max: i64,
@@ -24,7 +24,7 @@ impl WorkUnitRange {
         self.work_unit_id_min
     }
     /// <p>A work token used to query the execution service.</p>
-    pub fn work_unit_token(&self) -> std::option::Option<& str> {
+    pub fn work_unit_token(&self) -> std::option::Option<&str> {
         self.work_unit_token.as_deref()
     }
 }
@@ -51,7 +51,8 @@ impl WorkUnitRangeBuilder {
     }
     /// <p>Defines the maximum work unit ID in the range. The maximum value is inclusive.</p>
     pub fn set_work_unit_id_max(mut self, input: std::option::Option<i64>) -> Self {
-        self.work_unit_id_max = input; self
+        self.work_unit_id_max = input;
+        self
     }
     /// <p>Defines the minimum work unit ID in the range.</p>
     pub fn work_unit_id_min(mut self, input: i64) -> Self {
@@ -60,7 +61,8 @@ impl WorkUnitRangeBuilder {
     }
     /// <p>Defines the minimum work unit ID in the range.</p>
     pub fn set_work_unit_id_min(mut self, input: std::option::Option<i64>) -> Self {
-        self.work_unit_id_min = input; self
+        self.work_unit_id_min = input;
+        self
     }
     /// <p>A work token used to query the execution service.</p>
     pub fn work_unit_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -69,20 +71,15 @@ impl WorkUnitRangeBuilder {
     }
     /// <p>A work token used to query the execution service.</p>
     pub fn set_work_unit_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.work_unit_token = input; self
+        self.work_unit_token = input;
+        self
     }
     /// Consumes the builder and constructs a [`WorkUnitRange`](crate::types::WorkUnitRange).
     pub fn build(self) -> crate::types::WorkUnitRange {
         crate::types::WorkUnitRange {
-            work_unit_id_max: self.work_unit_id_max
-                .unwrap_or_default()
-            ,
-            work_unit_id_min: self.work_unit_id_min
-                .unwrap_or_default()
-            ,
-            work_unit_token: self.work_unit_token
-            ,
+            work_unit_id_max: self.work_unit_id_max.unwrap_or_default(),
+            work_unit_id_min: self.work_unit_id_min.unwrap_or_default(),
+            work_unit_token: self.work_unit_token,
         }
     }
 }
-

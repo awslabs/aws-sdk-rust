@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeDatasetImportJobOutput  {
+pub struct DescribeDatasetImportJobOutput {
     /// <p>The name of the dataset import job.</p>
     #[doc(hidden)]
     pub dataset_import_job_name: std::option::Option<std::string::String>,
@@ -12,10 +12,10 @@ pub struct DescribeDatasetImportJobOutput  {
     /// <p>The Amazon Resource Name (ARN) of the dataset that the training data was imported to.</p>
     #[doc(hidden)]
     pub dataset_arn: std::option::Option<std::string::String>,
-    /// <p>The format of timestamps in the dataset. The format that you specify depends on the <code>DataFrequency</code> specified when the dataset was created. The following formats are supported</p> 
-    /// <ul> 
-    /// <li> <p>"yyyy-MM-dd"</p> <p>For the following data frequencies: Y, M, W, and D</p> </li> 
-    /// <li> <p>"yyyy-MM-dd HH:mm:ss"</p> <p>For the following data frequencies: H, 30min, 15min, and 1min; and optionally, for: Y, M, W, and D</p> </li> 
+    /// <p>The format of timestamps in the dataset. The format that you specify depends on the <code>DataFrequency</code> specified when the dataset was created. The following formats are supported</p>
+    /// <ul>
+    /// <li> <p>"yyyy-MM-dd"</p> <p>For the following data frequencies: Y, M, W, and D</p> </li>
+    /// <li> <p>"yyyy-MM-dd HH:mm:ss"</p> <p>For the following data frequencies: H, 30min, 15min, and 1min; and optionally, for: Y, M, W, and D</p> </li>
     /// </ul>
     #[doc(hidden)]
     pub timestamp_format: std::option::Option<std::string::String>,
@@ -28,7 +28,7 @@ pub struct DescribeDatasetImportJobOutput  {
     /// <p>The format of the geolocation attribute. Valid Values:<code>"LAT_LONG"</code> and <code>"CC_POSTALCODE"</code>.</p>
     #[doc(hidden)]
     pub geolocation_format: std::option::Option<std::string::String>,
-    /// <p>The location of the training data to import and an AWS Identity and Access Management (IAM) role that Amazon Forecast can assume to access the data.</p> 
+    /// <p>The location of the training data to import and an AWS Identity and Access Management (IAM) role that Amazon Forecast can assume to access the data.</p>
     /// <p>If encryption is used, <code>DataSource</code> includes an AWS Key Management Service (KMS) key.</p>
     #[doc(hidden)]
     pub data_source: std::option::Option<crate::types::DataSource>,
@@ -37,16 +37,18 @@ pub struct DescribeDatasetImportJobOutput  {
     pub estimated_time_remaining_in_minutes: std::option::Option<i64>,
     /// <p>Statistical information about each field in the input data.</p>
     #[doc(hidden)]
-    pub field_statistics: std::option::Option<std::collections::HashMap<std::string::String, crate::types::Statistics>>,
+    pub field_statistics: std::option::Option<
+        std::collections::HashMap<std::string::String, crate::types::Statistics>,
+    >,
     /// <p>The size of the dataset in gigabytes (GB) after the import job has finished.</p>
     #[doc(hidden)]
     pub data_size: std::option::Option<f64>,
-    /// <p>The status of the dataset import job. States include:</p> 
-    /// <ul> 
-    /// <li> <p> <code>ACTIVE</code> </p> </li> 
-    /// <li> <p> <code>CREATE_PENDING</code>, <code>CREATE_IN_PROGRESS</code>, <code>CREATE_FAILED</code> </p> </li> 
-    /// <li> <p> <code>DELETE_PENDING</code>, <code>DELETE_IN_PROGRESS</code>, <code>DELETE_FAILED</code> </p> </li> 
-    /// <li> <p> <code>CREATE_STOPPING</code>, <code>CREATE_STOPPED</code> </p> </li> 
+    /// <p>The status of the dataset import job. States include:</p>
+    /// <ul>
+    /// <li> <p> <code>ACTIVE</code> </p> </li>
+    /// <li> <p> <code>CREATE_PENDING</code>, <code>CREATE_IN_PROGRESS</code>, <code>CREATE_FAILED</code> </p> </li>
+    /// <li> <p> <code>DELETE_PENDING</code>, <code>DELETE_IN_PROGRESS</code>, <code>DELETE_FAILED</code> </p> </li>
+    /// <li> <p> <code>CREATE_STOPPING</code>, <code>CREATE_STOPPED</code> </p> </li>
     /// </ul>
     #[doc(hidden)]
     pub status: std::option::Option<std::string::String>,
@@ -56,13 +58,13 @@ pub struct DescribeDatasetImportJobOutput  {
     /// <p>When the dataset import job was created.</p>
     #[doc(hidden)]
     pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>The last time the resource was modified. The timestamp depends on the status of the job:</p> 
-    /// <ul> 
-    /// <li> <p> <code>CREATE_PENDING</code> - The <code>CreationTime</code>.</p> </li> 
-    /// <li> <p> <code>CREATE_IN_PROGRESS</code> - The current timestamp.</p> </li> 
-    /// <li> <p> <code>CREATE_STOPPING</code> - The current timestamp.</p> </li> 
-    /// <li> <p> <code>CREATE_STOPPED</code> - When the job stopped.</p> </li> 
-    /// <li> <p> <code>ACTIVE</code> or <code>CREATE_FAILED</code> - When the job finished or failed.</p> </li> 
+    /// <p>The last time the resource was modified. The timestamp depends on the status of the job:</p>
+    /// <ul>
+    /// <li> <p> <code>CREATE_PENDING</code> - The <code>CreationTime</code>.</p> </li>
+    /// <li> <p> <code>CREATE_IN_PROGRESS</code> - The current timestamp.</p> </li>
+    /// <li> <p> <code>CREATE_STOPPING</code> - The current timestamp.</p> </li>
+    /// <li> <p> <code>CREATE_STOPPED</code> - When the job stopped.</p> </li>
+    /// <li> <p> <code>ACTIVE</code> or <code>CREATE_FAILED</code> - When the job finished or failed.</p> </li>
     /// </ul>
     #[doc(hidden)]
     pub last_modification_time: std::option::Option<aws_smithy_types::DateTime>,
@@ -73,27 +75,27 @@ pub struct DescribeDatasetImportJobOutput  {
 }
 impl DescribeDatasetImportJobOutput {
     /// <p>The name of the dataset import job.</p>
-    pub fn dataset_import_job_name(&self) -> std::option::Option<& str> {
+    pub fn dataset_import_job_name(&self) -> std::option::Option<&str> {
         self.dataset_import_job_name.as_deref()
     }
     /// <p>The ARN of the dataset import job.</p>
-    pub fn dataset_import_job_arn(&self) -> std::option::Option<& str> {
+    pub fn dataset_import_job_arn(&self) -> std::option::Option<&str> {
         self.dataset_import_job_arn.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the dataset that the training data was imported to.</p>
-    pub fn dataset_arn(&self) -> std::option::Option<& str> {
+    pub fn dataset_arn(&self) -> std::option::Option<&str> {
         self.dataset_arn.as_deref()
     }
-    /// <p>The format of timestamps in the dataset. The format that you specify depends on the <code>DataFrequency</code> specified when the dataset was created. The following formats are supported</p> 
-    /// <ul> 
-    /// <li> <p>"yyyy-MM-dd"</p> <p>For the following data frequencies: Y, M, W, and D</p> </li> 
-    /// <li> <p>"yyyy-MM-dd HH:mm:ss"</p> <p>For the following data frequencies: H, 30min, 15min, and 1min; and optionally, for: Y, M, W, and D</p> </li> 
+    /// <p>The format of timestamps in the dataset. The format that you specify depends on the <code>DataFrequency</code> specified when the dataset was created. The following formats are supported</p>
+    /// <ul>
+    /// <li> <p>"yyyy-MM-dd"</p> <p>For the following data frequencies: Y, M, W, and D</p> </li>
+    /// <li> <p>"yyyy-MM-dd HH:mm:ss"</p> <p>For the following data frequencies: H, 30min, 15min, and 1min; and optionally, for: Y, M, W, and D</p> </li>
     /// </ul>
-    pub fn timestamp_format(&self) -> std::option::Option<& str> {
+    pub fn timestamp_format(&self) -> std::option::Option<&str> {
         self.timestamp_format.as_deref()
     }
     /// <p>The single time zone applied to every item in the dataset</p>
-    pub fn time_zone(&self) -> std::option::Option<& str> {
+    pub fn time_zone(&self) -> std::option::Option<&str> {
         self.time_zone.as_deref()
     }
     /// <p>Whether <code>TimeZone</code> is automatically derived from the geolocation attribute.</p>
@@ -101,12 +103,12 @@ impl DescribeDatasetImportJobOutput {
         self.use_geolocation_for_time_zone
     }
     /// <p>The format of the geolocation attribute. Valid Values:<code>"LAT_LONG"</code> and <code>"CC_POSTALCODE"</code>.</p>
-    pub fn geolocation_format(&self) -> std::option::Option<& str> {
+    pub fn geolocation_format(&self) -> std::option::Option<&str> {
         self.geolocation_format.as_deref()
     }
-    /// <p>The location of the training data to import and an AWS Identity and Access Management (IAM) role that Amazon Forecast can assume to access the data.</p> 
+    /// <p>The location of the training data to import and an AWS Identity and Access Management (IAM) role that Amazon Forecast can assume to access the data.</p>
     /// <p>If encryption is used, <code>DataSource</code> includes an AWS Key Management Service (KMS) key.</p>
-    pub fn data_source(&self) -> std::option::Option<& crate::types::DataSource> {
+    pub fn data_source(&self) -> std::option::Option<&crate::types::DataSource> {
         self.data_source.as_ref()
     }
     /// <p>The estimated time remaining in minutes for the dataset import job to complete.</p>
@@ -114,55 +116,59 @@ impl DescribeDatasetImportJobOutput {
         self.estimated_time_remaining_in_minutes
     }
     /// <p>Statistical information about each field in the input data.</p>
-    pub fn field_statistics(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, crate::types::Statistics>> {
+    pub fn field_statistics(
+        &self,
+    ) -> std::option::Option<
+        &std::collections::HashMap<std::string::String, crate::types::Statistics>,
+    > {
         self.field_statistics.as_ref()
     }
     /// <p>The size of the dataset in gigabytes (GB) after the import job has finished.</p>
     pub fn data_size(&self) -> std::option::Option<f64> {
         self.data_size
     }
-    /// <p>The status of the dataset import job. States include:</p> 
-    /// <ul> 
-    /// <li> <p> <code>ACTIVE</code> </p> </li> 
-    /// <li> <p> <code>CREATE_PENDING</code>, <code>CREATE_IN_PROGRESS</code>, <code>CREATE_FAILED</code> </p> </li> 
-    /// <li> <p> <code>DELETE_PENDING</code>, <code>DELETE_IN_PROGRESS</code>, <code>DELETE_FAILED</code> </p> </li> 
-    /// <li> <p> <code>CREATE_STOPPING</code>, <code>CREATE_STOPPED</code> </p> </li> 
+    /// <p>The status of the dataset import job. States include:</p>
+    /// <ul>
+    /// <li> <p> <code>ACTIVE</code> </p> </li>
+    /// <li> <p> <code>CREATE_PENDING</code>, <code>CREATE_IN_PROGRESS</code>, <code>CREATE_FAILED</code> </p> </li>
+    /// <li> <p> <code>DELETE_PENDING</code>, <code>DELETE_IN_PROGRESS</code>, <code>DELETE_FAILED</code> </p> </li>
+    /// <li> <p> <code>CREATE_STOPPING</code>, <code>CREATE_STOPPED</code> </p> </li>
     /// </ul>
-    pub fn status(&self) -> std::option::Option<& str> {
+    pub fn status(&self) -> std::option::Option<&str> {
         self.status.as_deref()
     }
     /// <p>If an error occurred, an informational message about the error.</p>
-    pub fn message(&self) -> std::option::Option<& str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
     /// <p>When the dataset import job was created.</p>
-    pub fn creation_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
+    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
-    /// <p>The last time the resource was modified. The timestamp depends on the status of the job:</p> 
-    /// <ul> 
-    /// <li> <p> <code>CREATE_PENDING</code> - The <code>CreationTime</code>.</p> </li> 
-    /// <li> <p> <code>CREATE_IN_PROGRESS</code> - The current timestamp.</p> </li> 
-    /// <li> <p> <code>CREATE_STOPPING</code> - The current timestamp.</p> </li> 
-    /// <li> <p> <code>CREATE_STOPPED</code> - When the job stopped.</p> </li> 
-    /// <li> <p> <code>ACTIVE</code> or <code>CREATE_FAILED</code> - When the job finished or failed.</p> </li> 
+    /// <p>The last time the resource was modified. The timestamp depends on the status of the job:</p>
+    /// <ul>
+    /// <li> <p> <code>CREATE_PENDING</code> - The <code>CreationTime</code>.</p> </li>
+    /// <li> <p> <code>CREATE_IN_PROGRESS</code> - The current timestamp.</p> </li>
+    /// <li> <p> <code>CREATE_STOPPING</code> - The current timestamp.</p> </li>
+    /// <li> <p> <code>CREATE_STOPPED</code> - When the job stopped.</p> </li>
+    /// <li> <p> <code>ACTIVE</code> or <code>CREATE_FAILED</code> - When the job finished or failed.</p> </li>
     /// </ul>
-    pub fn last_modification_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
+    pub fn last_modification_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_modification_time.as_ref()
     }
     /// <p>The format of the imported data, CSV or PARQUET.</p>
-    pub fn format(&self) -> std::option::Option<& str> {
+    pub fn format(&self) -> std::option::Option<&str> {
         self.format.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for DescribeDatasetImportJobOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl DescribeDatasetImportJobOutput {
     /// Creates a new builder-style object to manufacture [`DescribeDatasetImportJobOutput`](crate::operation::describe_dataset_import_job::DescribeDatasetImportJobOutput).
-    pub fn builder() -> crate::operation::describe_dataset_import_job::builders::DescribeDatasetImportJobOutputBuilder {
+    pub fn builder() -> crate::operation::describe_dataset_import_job::builders::DescribeDatasetImportJobOutputBuilder{
         crate::operation::describe_dataset_import_job::builders::DescribeDatasetImportJobOutputBuilder::default()
     }
 }
@@ -180,7 +186,9 @@ pub struct DescribeDatasetImportJobOutputBuilder {
     pub(crate) geolocation_format: std::option::Option<std::string::String>,
     pub(crate) data_source: std::option::Option<crate::types::DataSource>,
     pub(crate) estimated_time_remaining_in_minutes: std::option::Option<i64>,
-    pub(crate) field_statistics: std::option::Option<std::collections::HashMap<std::string::String, crate::types::Statistics>>,
+    pub(crate) field_statistics: std::option::Option<
+        std::collections::HashMap<std::string::String, crate::types::Statistics>,
+    >,
     pub(crate) data_size: std::option::Option<f64>,
     pub(crate) status: std::option::Option<std::string::String>,
     pub(crate) message: std::option::Option<std::string::String>,
@@ -196,8 +204,12 @@ impl DescribeDatasetImportJobOutputBuilder {
         self
     }
     /// <p>The name of the dataset import job.</p>
-    pub fn set_dataset_import_job_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.dataset_import_job_name = input; self
+    pub fn set_dataset_import_job_name(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.dataset_import_job_name = input;
+        self
     }
     /// <p>The ARN of the dataset import job.</p>
     pub fn dataset_import_job_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -205,8 +217,12 @@ impl DescribeDatasetImportJobOutputBuilder {
         self
     }
     /// <p>The ARN of the dataset import job.</p>
-    pub fn set_dataset_import_job_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.dataset_import_job_arn = input; self
+    pub fn set_dataset_import_job_arn(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.dataset_import_job_arn = input;
+        self
     }
     /// <p>The Amazon Resource Name (ARN) of the dataset that the training data was imported to.</p>
     pub fn dataset_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -215,24 +231,26 @@ impl DescribeDatasetImportJobOutputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the dataset that the training data was imported to.</p>
     pub fn set_dataset_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.dataset_arn = input; self
+        self.dataset_arn = input;
+        self
     }
-    /// <p>The format of timestamps in the dataset. The format that you specify depends on the <code>DataFrequency</code> specified when the dataset was created. The following formats are supported</p> 
-    /// <ul> 
-    /// <li> <p>"yyyy-MM-dd"</p> <p>For the following data frequencies: Y, M, W, and D</p> </li> 
-    /// <li> <p>"yyyy-MM-dd HH:mm:ss"</p> <p>For the following data frequencies: H, 30min, 15min, and 1min; and optionally, for: Y, M, W, and D</p> </li> 
+    /// <p>The format of timestamps in the dataset. The format that you specify depends on the <code>DataFrequency</code> specified when the dataset was created. The following formats are supported</p>
+    /// <ul>
+    /// <li> <p>"yyyy-MM-dd"</p> <p>For the following data frequencies: Y, M, W, and D</p> </li>
+    /// <li> <p>"yyyy-MM-dd HH:mm:ss"</p> <p>For the following data frequencies: H, 30min, 15min, and 1min; and optionally, for: Y, M, W, and D</p> </li>
     /// </ul>
     pub fn timestamp_format(mut self, input: impl Into<std::string::String>) -> Self {
         self.timestamp_format = Some(input.into());
         self
     }
-    /// <p>The format of timestamps in the dataset. The format that you specify depends on the <code>DataFrequency</code> specified when the dataset was created. The following formats are supported</p> 
-    /// <ul> 
-    /// <li> <p>"yyyy-MM-dd"</p> <p>For the following data frequencies: Y, M, W, and D</p> </li> 
-    /// <li> <p>"yyyy-MM-dd HH:mm:ss"</p> <p>For the following data frequencies: H, 30min, 15min, and 1min; and optionally, for: Y, M, W, and D</p> </li> 
+    /// <p>The format of timestamps in the dataset. The format that you specify depends on the <code>DataFrequency</code> specified when the dataset was created. The following formats are supported</p>
+    /// <ul>
+    /// <li> <p>"yyyy-MM-dd"</p> <p>For the following data frequencies: Y, M, W, and D</p> </li>
+    /// <li> <p>"yyyy-MM-dd HH:mm:ss"</p> <p>For the following data frequencies: H, 30min, 15min, and 1min; and optionally, for: Y, M, W, and D</p> </li>
     /// </ul>
     pub fn set_timestamp_format(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.timestamp_format = input; self
+        self.timestamp_format = input;
+        self
     }
     /// <p>The single time zone applied to every item in the dataset</p>
     pub fn time_zone(mut self, input: impl Into<std::string::String>) -> Self {
@@ -241,7 +259,8 @@ impl DescribeDatasetImportJobOutputBuilder {
     }
     /// <p>The single time zone applied to every item in the dataset</p>
     pub fn set_time_zone(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.time_zone = input; self
+        self.time_zone = input;
+        self
     }
     /// <p>Whether <code>TimeZone</code> is automatically derived from the geolocation attribute.</p>
     pub fn use_geolocation_for_time_zone(mut self, input: bool) -> Self {
@@ -250,7 +269,8 @@ impl DescribeDatasetImportJobOutputBuilder {
     }
     /// <p>Whether <code>TimeZone</code> is automatically derived from the geolocation attribute.</p>
     pub fn set_use_geolocation_for_time_zone(mut self, input: std::option::Option<bool>) -> Self {
-        self.use_geolocation_for_time_zone = input; self
+        self.use_geolocation_for_time_zone = input;
+        self
     }
     /// <p>The format of the geolocation attribute. Valid Values:<code>"LAT_LONG"</code> and <code>"CC_POSTALCODE"</code>.</p>
     pub fn geolocation_format(mut self, input: impl Into<std::string::String>) -> Self {
@@ -258,19 +278,24 @@ impl DescribeDatasetImportJobOutputBuilder {
         self
     }
     /// <p>The format of the geolocation attribute. Valid Values:<code>"LAT_LONG"</code> and <code>"CC_POSTALCODE"</code>.</p>
-    pub fn set_geolocation_format(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.geolocation_format = input; self
+    pub fn set_geolocation_format(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.geolocation_format = input;
+        self
     }
-    /// <p>The location of the training data to import and an AWS Identity and Access Management (IAM) role that Amazon Forecast can assume to access the data.</p> 
+    /// <p>The location of the training data to import and an AWS Identity and Access Management (IAM) role that Amazon Forecast can assume to access the data.</p>
     /// <p>If encryption is used, <code>DataSource</code> includes an AWS Key Management Service (KMS) key.</p>
     pub fn data_source(mut self, input: crate::types::DataSource) -> Self {
         self.data_source = Some(input);
         self
     }
-    /// <p>The location of the training data to import and an AWS Identity and Access Management (IAM) role that Amazon Forecast can assume to access the data.</p> 
+    /// <p>The location of the training data to import and an AWS Identity and Access Management (IAM) role that Amazon Forecast can assume to access the data.</p>
     /// <p>If encryption is used, <code>DataSource</code> includes an AWS Key Management Service (KMS) key.</p>
     pub fn set_data_source(mut self, input: std::option::Option<crate::types::DataSource>) -> Self {
-        self.data_source = input; self
+        self.data_source = input;
+        self
     }
     /// <p>The estimated time remaining in minutes for the dataset import job to complete.</p>
     pub fn estimated_time_remaining_in_minutes(mut self, input: i64) -> Self {
@@ -278,23 +303,37 @@ impl DescribeDatasetImportJobOutputBuilder {
         self
     }
     /// <p>The estimated time remaining in minutes for the dataset import job to complete.</p>
-    pub fn set_estimated_time_remaining_in_minutes(mut self, input: std::option::Option<i64>) -> Self {
-        self.estimated_time_remaining_in_minutes = input; self
+    pub fn set_estimated_time_remaining_in_minutes(
+        mut self,
+        input: std::option::Option<i64>,
+    ) -> Self {
+        self.estimated_time_remaining_in_minutes = input;
+        self
     }
     /// Adds a key-value pair to `field_statistics`.
     ///
     /// To override the contents of this collection use [`set_field_statistics`](Self::set_field_statistics).
     ///
     /// <p>Statistical information about each field in the input data.</p>
-    pub fn field_statistics(mut self, k: impl Into<std::string::String>, v: crate::types::Statistics) -> Self {
+    pub fn field_statistics(
+        mut self,
+        k: impl Into<std::string::String>,
+        v: crate::types::Statistics,
+    ) -> Self {
         let mut hash_map = self.field_statistics.unwrap_or_default();
-                        hash_map.insert(k.into(), v);
-                        self.field_statistics = Some(hash_map);
-                        self
+        hash_map.insert(k.into(), v);
+        self.field_statistics = Some(hash_map);
+        self
     }
     /// <p>Statistical information about each field in the input data.</p>
-    pub fn set_field_statistics(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, crate::types::Statistics>>) -> Self {
-        self.field_statistics = input; self
+    pub fn set_field_statistics(
+        mut self,
+        input: std::option::Option<
+            std::collections::HashMap<std::string::String, crate::types::Statistics>,
+        >,
+    ) -> Self {
+        self.field_statistics = input;
+        self
     }
     /// <p>The size of the dataset in gigabytes (GB) after the import job has finished.</p>
     pub fn data_size(mut self, input: f64) -> Self {
@@ -303,28 +342,30 @@ impl DescribeDatasetImportJobOutputBuilder {
     }
     /// <p>The size of the dataset in gigabytes (GB) after the import job has finished.</p>
     pub fn set_data_size(mut self, input: std::option::Option<f64>) -> Self {
-        self.data_size = input; self
+        self.data_size = input;
+        self
     }
-    /// <p>The status of the dataset import job. States include:</p> 
-    /// <ul> 
-    /// <li> <p> <code>ACTIVE</code> </p> </li> 
-    /// <li> <p> <code>CREATE_PENDING</code>, <code>CREATE_IN_PROGRESS</code>, <code>CREATE_FAILED</code> </p> </li> 
-    /// <li> <p> <code>DELETE_PENDING</code>, <code>DELETE_IN_PROGRESS</code>, <code>DELETE_FAILED</code> </p> </li> 
-    /// <li> <p> <code>CREATE_STOPPING</code>, <code>CREATE_STOPPED</code> </p> </li> 
+    /// <p>The status of the dataset import job. States include:</p>
+    /// <ul>
+    /// <li> <p> <code>ACTIVE</code> </p> </li>
+    /// <li> <p> <code>CREATE_PENDING</code>, <code>CREATE_IN_PROGRESS</code>, <code>CREATE_FAILED</code> </p> </li>
+    /// <li> <p> <code>DELETE_PENDING</code>, <code>DELETE_IN_PROGRESS</code>, <code>DELETE_FAILED</code> </p> </li>
+    /// <li> <p> <code>CREATE_STOPPING</code>, <code>CREATE_STOPPED</code> </p> </li>
     /// </ul>
     pub fn status(mut self, input: impl Into<std::string::String>) -> Self {
         self.status = Some(input.into());
         self
     }
-    /// <p>The status of the dataset import job. States include:</p> 
-    /// <ul> 
-    /// <li> <p> <code>ACTIVE</code> </p> </li> 
-    /// <li> <p> <code>CREATE_PENDING</code>, <code>CREATE_IN_PROGRESS</code>, <code>CREATE_FAILED</code> </p> </li> 
-    /// <li> <p> <code>DELETE_PENDING</code>, <code>DELETE_IN_PROGRESS</code>, <code>DELETE_FAILED</code> </p> </li> 
-    /// <li> <p> <code>CREATE_STOPPING</code>, <code>CREATE_STOPPED</code> </p> </li> 
+    /// <p>The status of the dataset import job. States include:</p>
+    /// <ul>
+    /// <li> <p> <code>ACTIVE</code> </p> </li>
+    /// <li> <p> <code>CREATE_PENDING</code>, <code>CREATE_IN_PROGRESS</code>, <code>CREATE_FAILED</code> </p> </li>
+    /// <li> <p> <code>DELETE_PENDING</code>, <code>DELETE_IN_PROGRESS</code>, <code>DELETE_FAILED</code> </p> </li>
+    /// <li> <p> <code>CREATE_STOPPING</code>, <code>CREATE_STOPPED</code> </p> </li>
     /// </ul>
     pub fn set_status(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.status = input; self
+        self.status = input;
+        self
     }
     /// <p>If an error occurred, an informational message about the error.</p>
     pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
@@ -333,7 +374,8 @@ impl DescribeDatasetImportJobOutputBuilder {
     }
     /// <p>If an error occurred, an informational message about the error.</p>
     pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.message = input; self
+        self.message = input;
+        self
     }
     /// <p>When the dataset import job was created.</p>
     pub fn creation_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -341,31 +383,39 @@ impl DescribeDatasetImportJobOutputBuilder {
         self
     }
     /// <p>When the dataset import job was created.</p>
-    pub fn set_creation_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.creation_time = input; self
+    pub fn set_creation_time(
+        mut self,
+        input: std::option::Option<aws_smithy_types::DateTime>,
+    ) -> Self {
+        self.creation_time = input;
+        self
     }
-    /// <p>The last time the resource was modified. The timestamp depends on the status of the job:</p> 
-    /// <ul> 
-    /// <li> <p> <code>CREATE_PENDING</code> - The <code>CreationTime</code>.</p> </li> 
-    /// <li> <p> <code>CREATE_IN_PROGRESS</code> - The current timestamp.</p> </li> 
-    /// <li> <p> <code>CREATE_STOPPING</code> - The current timestamp.</p> </li> 
-    /// <li> <p> <code>CREATE_STOPPED</code> - When the job stopped.</p> </li> 
-    /// <li> <p> <code>ACTIVE</code> or <code>CREATE_FAILED</code> - When the job finished or failed.</p> </li> 
+    /// <p>The last time the resource was modified. The timestamp depends on the status of the job:</p>
+    /// <ul>
+    /// <li> <p> <code>CREATE_PENDING</code> - The <code>CreationTime</code>.</p> </li>
+    /// <li> <p> <code>CREATE_IN_PROGRESS</code> - The current timestamp.</p> </li>
+    /// <li> <p> <code>CREATE_STOPPING</code> - The current timestamp.</p> </li>
+    /// <li> <p> <code>CREATE_STOPPED</code> - When the job stopped.</p> </li>
+    /// <li> <p> <code>ACTIVE</code> or <code>CREATE_FAILED</code> - When the job finished or failed.</p> </li>
     /// </ul>
     pub fn last_modification_time(mut self, input: aws_smithy_types::DateTime) -> Self {
         self.last_modification_time = Some(input);
         self
     }
-    /// <p>The last time the resource was modified. The timestamp depends on the status of the job:</p> 
-    /// <ul> 
-    /// <li> <p> <code>CREATE_PENDING</code> - The <code>CreationTime</code>.</p> </li> 
-    /// <li> <p> <code>CREATE_IN_PROGRESS</code> - The current timestamp.</p> </li> 
-    /// <li> <p> <code>CREATE_STOPPING</code> - The current timestamp.</p> </li> 
-    /// <li> <p> <code>CREATE_STOPPED</code> - When the job stopped.</p> </li> 
-    /// <li> <p> <code>ACTIVE</code> or <code>CREATE_FAILED</code> - When the job finished or failed.</p> </li> 
+    /// <p>The last time the resource was modified. The timestamp depends on the status of the job:</p>
+    /// <ul>
+    /// <li> <p> <code>CREATE_PENDING</code> - The <code>CreationTime</code>.</p> </li>
+    /// <li> <p> <code>CREATE_IN_PROGRESS</code> - The current timestamp.</p> </li>
+    /// <li> <p> <code>CREATE_STOPPING</code> - The current timestamp.</p> </li>
+    /// <li> <p> <code>CREATE_STOPPED</code> - When the job stopped.</p> </li>
+    /// <li> <p> <code>ACTIVE</code> or <code>CREATE_FAILED</code> - When the job finished or failed.</p> </li>
     /// </ul>
-    pub fn set_last_modification_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.last_modification_time = input; self
+    pub fn set_last_modification_time(
+        mut self,
+        input: std::option::Option<aws_smithy_types::DateTime>,
+    ) -> Self {
+        self.last_modification_time = input;
+        self
     }
     /// <p>The format of the imported data, CSV or PARQUET.</p>
     pub fn format(mut self, input: impl Into<std::string::String>) -> Self {
@@ -374,55 +424,40 @@ impl DescribeDatasetImportJobOutputBuilder {
     }
     /// <p>The format of the imported data, CSV or PARQUET.</p>
     pub fn set_format(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.format = input; self
+        self.format = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`DescribeDatasetImportJobOutput`](crate::operation::describe_dataset_import_job::DescribeDatasetImportJobOutput).
-    pub fn build(self) -> crate::operation::describe_dataset_import_job::DescribeDatasetImportJobOutput {
+    pub fn build(
+        self,
+    ) -> crate::operation::describe_dataset_import_job::DescribeDatasetImportJobOutput {
         crate::operation::describe_dataset_import_job::DescribeDatasetImportJobOutput {
-            dataset_import_job_name: self.dataset_import_job_name
-            ,
-            dataset_import_job_arn: self.dataset_import_job_arn
-            ,
-            dataset_arn: self.dataset_arn
-            ,
-            timestamp_format: self.timestamp_format
-            ,
-            time_zone: self.time_zone
-            ,
-            use_geolocation_for_time_zone: self.use_geolocation_for_time_zone
-                .unwrap_or_default()
-            ,
-            geolocation_format: self.geolocation_format
-            ,
-            data_source: self.data_source
-            ,
-            estimated_time_remaining_in_minutes: self.estimated_time_remaining_in_minutes
-            ,
-            field_statistics: self.field_statistics
-            ,
-            data_size: self.data_size
-            ,
-            status: self.status
-            ,
-            message: self.message
-            ,
-            creation_time: self.creation_time
-            ,
-            last_modification_time: self.last_modification_time
-            ,
-            format: self.format
-            ,
+            dataset_import_job_name: self.dataset_import_job_name,
+            dataset_import_job_arn: self.dataset_import_job_arn,
+            dataset_arn: self.dataset_arn,
+            timestamp_format: self.timestamp_format,
+            time_zone: self.time_zone,
+            use_geolocation_for_time_zone: self.use_geolocation_for_time_zone.unwrap_or_default(),
+            geolocation_format: self.geolocation_format,
+            data_source: self.data_source,
+            estimated_time_remaining_in_minutes: self.estimated_time_remaining_in_minutes,
+            field_statistics: self.field_statistics,
+            data_size: self.data_size,
+            status: self.status,
+            message: self.message,
+            creation_time: self.creation_time,
+            last_modification_time: self.last_modification_time,
+            format: self.format,
             _request_id: self._request_id,
         }
     }
 }
-

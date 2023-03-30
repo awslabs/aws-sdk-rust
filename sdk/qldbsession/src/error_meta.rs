@@ -16,7 +16,7 @@ pub enum Error {
     /// <p>Returned when the rate of requests exceeds the allowed throughput.</p>
     RateExceededException(crate::types::error::RateExceededException),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    Unhandled(aws_smithy_types::error::Unhandled)
+    Unhandled(aws_smithy_types::error::Unhandled),
 }
 impl std::fmt::Display for Error {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -27,33 +27,57 @@ impl std::fmt::Display for Error {
             Error::LimitExceededException(inner) => inner.fmt(f),
             Error::OccConflictException(inner) => inner.fmt(f),
             Error::RateExceededException(inner) => inner.fmt(f),
-            Error::Unhandled(inner) => inner.fmt(f)
+            Error::Unhandled(inner) => inner.fmt(f),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::operation::send_command::SendCommandError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::operation::send_command::SendCommandError, R>) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::send_command::SendCommandError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<crate::operation::send_command::SendCommandError, R>,
+    ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
             _ => Error::Unhandled(
-                                            aws_smithy_types::error::Unhandled::builder()
-                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
-                                                .source(err)
-                                                .build()
-                                        ),
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::operation::send_command::SendCommandError> for Error {
     fn from(err: crate::operation::send_command::SendCommandError) -> Self {
         match err {
-            crate::operation::send_command::SendCommandError::BadRequestException(inner) => Error::BadRequestException(inner),
-            crate::operation::send_command::SendCommandError::CapacityExceededException(inner) => Error::CapacityExceededException(inner),
-            crate::operation::send_command::SendCommandError::InvalidSessionException(inner) => Error::InvalidSessionException(inner),
-            crate::operation::send_command::SendCommandError::LimitExceededException(inner) => Error::LimitExceededException(inner),
-            crate::operation::send_command::SendCommandError::OccConflictException(inner) => Error::OccConflictException(inner),
-            crate::operation::send_command::SendCommandError::RateExceededException(inner) => Error::RateExceededException(inner),
-            crate::operation::send_command::SendCommandError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::send_command::SendCommandError::BadRequestException(inner) => {
+                Error::BadRequestException(inner)
+            }
+            crate::operation::send_command::SendCommandError::CapacityExceededException(inner) => {
+                Error::CapacityExceededException(inner)
+            }
+            crate::operation::send_command::SendCommandError::InvalidSessionException(inner) => {
+                Error::InvalidSessionException(inner)
+            }
+            crate::operation::send_command::SendCommandError::LimitExceededException(inner) => {
+                Error::LimitExceededException(inner)
+            }
+            crate::operation::send_command::SendCommandError::OccConflictException(inner) => {
+                Error::OccConflictException(inner)
+            }
+            crate::operation::send_command::SendCommandError::RateExceededException(inner) => {
+                Error::RateExceededException(inner)
+            }
+            crate::operation::send_command::SendCommandError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
         }
     }
 }
@@ -71,4 +95,3 @@ impl aws_http::request_id::RequestId for Error {
         }
     }
 }
-

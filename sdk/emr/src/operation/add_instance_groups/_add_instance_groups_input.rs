@@ -3,7 +3,7 @@
 /// <p>Input to an AddInstanceGroups call.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AddInstanceGroupsInput  {
+pub struct AddInstanceGroupsInput {
     /// <p>Instance groups to add.</p>
     #[doc(hidden)]
     pub instance_groups: std::option::Option<std::vec::Vec<crate::types::InstanceGroupConfig>>,
@@ -13,17 +13,18 @@ pub struct AddInstanceGroupsInput  {
 }
 impl AddInstanceGroupsInput {
     /// <p>Instance groups to add.</p>
-    pub fn instance_groups(&self) -> std::option::Option<& [crate::types::InstanceGroupConfig]> {
+    pub fn instance_groups(&self) -> std::option::Option<&[crate::types::InstanceGroupConfig]> {
         self.instance_groups.as_deref()
     }
     /// <p>Job flow in which to add the instance groups.</p>
-    pub fn job_flow_id(&self) -> std::option::Option<& str> {
+    pub fn job_flow_id(&self) -> std::option::Option<&str> {
         self.job_flow_id.as_deref()
     }
 }
 impl AddInstanceGroupsInput {
     /// Creates a new builder-style object to manufacture [`AddInstanceGroupsInput`](crate::operation::add_instance_groups::AddInstanceGroupsInput).
-    pub fn builder() -> crate::operation::add_instance_groups::builders::AddInstanceGroupsInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::add_instance_groups::builders::AddInstanceGroupsInputBuilder {
         crate::operation::add_instance_groups::builders::AddInstanceGroupsInputBuilder::default()
     }
 }
@@ -32,7 +33,8 @@ impl AddInstanceGroupsInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct AddInstanceGroupsInputBuilder {
-    pub(crate) instance_groups: std::option::Option<std::vec::Vec<crate::types::InstanceGroupConfig>>,
+    pub(crate) instance_groups:
+        std::option::Option<std::vec::Vec<crate::types::InstanceGroupConfig>>,
     pub(crate) job_flow_id: std::option::Option<std::string::String>,
 }
 impl AddInstanceGroupsInputBuilder {
@@ -43,13 +45,17 @@ impl AddInstanceGroupsInputBuilder {
     /// <p>Instance groups to add.</p>
     pub fn instance_groups(mut self, input: crate::types::InstanceGroupConfig) -> Self {
         let mut v = self.instance_groups.unwrap_or_default();
-                        v.push(input);
-                        self.instance_groups = Some(v);
-                        self
+        v.push(input);
+        self.instance_groups = Some(v);
+        self
     }
     /// <p>Instance groups to add.</p>
-    pub fn set_instance_groups(mut self, input: std::option::Option<std::vec::Vec<crate::types::InstanceGroupConfig>>) -> Self {
-        self.instance_groups = input; self
+    pub fn set_instance_groups(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::InstanceGroupConfig>>,
+    ) -> Self {
+        self.instance_groups = input;
+        self
     }
     /// <p>Job flow in which to add the instance groups.</p>
     pub fn job_flow_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -58,18 +64,21 @@ impl AddInstanceGroupsInputBuilder {
     }
     /// <p>Job flow in which to add the instance groups.</p>
     pub fn set_job_flow_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.job_flow_id = input; self
+        self.job_flow_id = input;
+        self
     }
     /// Consumes the builder and constructs a [`AddInstanceGroupsInput`](crate::operation::add_instance_groups::AddInstanceGroupsInput).
-    pub fn build(self) -> Result<crate::operation::add_instance_groups::AddInstanceGroupsInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::add_instance_groups::AddInstanceGroupsInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::add_instance_groups::AddInstanceGroupsInput {
-                instance_groups: self.instance_groups
-                ,
-                job_flow_id: self.job_flow_id
-                ,
-            }
+                instance_groups: self.instance_groups,
+                job_flow_id: self.job_flow_id,
+            },
         )
     }
 }
-

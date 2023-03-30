@@ -3,7 +3,7 @@
 /// <p>A choice available to answer question.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Choice  {
+pub struct Choice {
     /// <p>The ID of a choice.</p>
     #[doc(hidden)]
     pub choice_id: std::option::Option<std::string::String>,
@@ -25,27 +25,29 @@ pub struct Choice  {
 }
 impl Choice {
     /// <p>The ID of a choice.</p>
-    pub fn choice_id(&self) -> std::option::Option<& str> {
+    pub fn choice_id(&self) -> std::option::Option<&str> {
         self.choice_id.as_deref()
     }
     /// <p>The title of a choice.</p>
-    pub fn title(&self) -> std::option::Option<& str> {
+    pub fn title(&self) -> std::option::Option<&str> {
         self.title.as_deref()
     }
     /// <p>The description of a choice.</p>
-    pub fn description(&self) -> std::option::Option<& str> {
+    pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
     /// <p>The choice level helpful resource.</p>
-    pub fn helpful_resource(&self) -> std::option::Option<& crate::types::ChoiceContent> {
+    pub fn helpful_resource(&self) -> std::option::Option<&crate::types::ChoiceContent> {
         self.helpful_resource.as_ref()
     }
     /// <p>The choice level improvement plan.</p>
-    pub fn improvement_plan(&self) -> std::option::Option<& crate::types::ChoiceContent> {
+    pub fn improvement_plan(&self) -> std::option::Option<&crate::types::ChoiceContent> {
         self.improvement_plan.as_ref()
     }
     /// <p>The additional resources for a choice. A choice can have up to two additional resources: one of type <code>HELPFUL_RESOURCE</code>, one of type <code>IMPROVEMENT_PLAN</code>, or both.</p>
-    pub fn additional_resources(&self) -> std::option::Option<& [crate::types::AdditionalResources]> {
+    pub fn additional_resources(
+        &self,
+    ) -> std::option::Option<&[crate::types::AdditionalResources]> {
         self.additional_resources.as_deref()
     }
 }
@@ -65,7 +67,8 @@ pub struct ChoiceBuilder {
     pub(crate) description: std::option::Option<std::string::String>,
     pub(crate) helpful_resource: std::option::Option<crate::types::ChoiceContent>,
     pub(crate) improvement_plan: std::option::Option<crate::types::ChoiceContent>,
-    pub(crate) additional_resources: std::option::Option<std::vec::Vec<crate::types::AdditionalResources>>,
+    pub(crate) additional_resources:
+        std::option::Option<std::vec::Vec<crate::types::AdditionalResources>>,
 }
 impl ChoiceBuilder {
     /// <p>The ID of a choice.</p>
@@ -75,7 +78,8 @@ impl ChoiceBuilder {
     }
     /// <p>The ID of a choice.</p>
     pub fn set_choice_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.choice_id = input; self
+        self.choice_id = input;
+        self
     }
     /// <p>The title of a choice.</p>
     pub fn title(mut self, input: impl Into<std::string::String>) -> Self {
@@ -84,7 +88,8 @@ impl ChoiceBuilder {
     }
     /// <p>The title of a choice.</p>
     pub fn set_title(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.title = input; self
+        self.title = input;
+        self
     }
     /// <p>The description of a choice.</p>
     pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -93,7 +98,8 @@ impl ChoiceBuilder {
     }
     /// <p>The description of a choice.</p>
     pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.description = input; self
+        self.description = input;
+        self
     }
     /// <p>The choice level helpful resource.</p>
     pub fn helpful_resource(mut self, input: crate::types::ChoiceContent) -> Self {
@@ -101,8 +107,12 @@ impl ChoiceBuilder {
         self
     }
     /// <p>The choice level helpful resource.</p>
-    pub fn set_helpful_resource(mut self, input: std::option::Option<crate::types::ChoiceContent>) -> Self {
-        self.helpful_resource = input; self
+    pub fn set_helpful_resource(
+        mut self,
+        input: std::option::Option<crate::types::ChoiceContent>,
+    ) -> Self {
+        self.helpful_resource = input;
+        self
     }
     /// <p>The choice level improvement plan.</p>
     pub fn improvement_plan(mut self, input: crate::types::ChoiceContent) -> Self {
@@ -110,8 +120,12 @@ impl ChoiceBuilder {
         self
     }
     /// <p>The choice level improvement plan.</p>
-    pub fn set_improvement_plan(mut self, input: std::option::Option<crate::types::ChoiceContent>) -> Self {
-        self.improvement_plan = input; self
+    pub fn set_improvement_plan(
+        mut self,
+        input: std::option::Option<crate::types::ChoiceContent>,
+    ) -> Self {
+        self.improvement_plan = input;
+        self
     }
     /// Appends an item to `additional_resources`.
     ///
@@ -120,30 +134,27 @@ impl ChoiceBuilder {
     /// <p>The additional resources for a choice. A choice can have up to two additional resources: one of type <code>HELPFUL_RESOURCE</code>, one of type <code>IMPROVEMENT_PLAN</code>, or both.</p>
     pub fn additional_resources(mut self, input: crate::types::AdditionalResources) -> Self {
         let mut v = self.additional_resources.unwrap_or_default();
-                        v.push(input);
-                        self.additional_resources = Some(v);
-                        self
+        v.push(input);
+        self.additional_resources = Some(v);
+        self
     }
     /// <p>The additional resources for a choice. A choice can have up to two additional resources: one of type <code>HELPFUL_RESOURCE</code>, one of type <code>IMPROVEMENT_PLAN</code>, or both.</p>
-    pub fn set_additional_resources(mut self, input: std::option::Option<std::vec::Vec<crate::types::AdditionalResources>>) -> Self {
-        self.additional_resources = input; self
+    pub fn set_additional_resources(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::AdditionalResources>>,
+    ) -> Self {
+        self.additional_resources = input;
+        self
     }
     /// Consumes the builder and constructs a [`Choice`](crate::types::Choice).
     pub fn build(self) -> crate::types::Choice {
         crate::types::Choice {
-            choice_id: self.choice_id
-            ,
-            title: self.title
-            ,
-            description: self.description
-            ,
-            helpful_resource: self.helpful_resource
-            ,
-            improvement_plan: self.improvement_plan
-            ,
-            additional_resources: self.additional_resources
-            ,
+            choice_id: self.choice_id,
+            title: self.title,
+            description: self.description,
+            helpful_resource: self.helpful_resource,
+            improvement_plan: self.improvement_plan,
+            additional_resources: self.additional_resources,
         }
     }
 }
-

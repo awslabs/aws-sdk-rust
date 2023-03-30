@@ -3,7 +3,7 @@
 /// <p>Information about the endpoint details.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct EndpointDetails  {
+pub struct EndpointDetails {
     /// <p>Endpoint security details including a list of subnets, a list of security groups and a role to connect streams to instances.</p>
     #[doc(hidden)]
     pub security_details: std::option::Option<crate::types::SecurityDetails>,
@@ -13,11 +13,11 @@ pub struct EndpointDetails  {
 }
 impl EndpointDetails {
     /// <p>Endpoint security details including a list of subnets, a list of security groups and a role to connect streams to instances.</p>
-    pub fn security_details(&self) -> std::option::Option<& crate::types::SecurityDetails> {
+    pub fn security_details(&self) -> std::option::Option<&crate::types::SecurityDetails> {
         self.security_details.as_ref()
     }
     /// <p>A dataflow endpoint.</p>
-    pub fn endpoint(&self) -> std::option::Option<& crate::types::DataflowEndpoint> {
+    pub fn endpoint(&self) -> std::option::Option<&crate::types::DataflowEndpoint> {
         self.endpoint.as_ref()
     }
 }
@@ -42,8 +42,12 @@ impl EndpointDetailsBuilder {
         self
     }
     /// <p>Endpoint security details including a list of subnets, a list of security groups and a role to connect streams to instances.</p>
-    pub fn set_security_details(mut self, input: std::option::Option<crate::types::SecurityDetails>) -> Self {
-        self.security_details = input; self
+    pub fn set_security_details(
+        mut self,
+        input: std::option::Option<crate::types::SecurityDetails>,
+    ) -> Self {
+        self.security_details = input;
+        self
     }
     /// <p>A dataflow endpoint.</p>
     pub fn endpoint(mut self, input: crate::types::DataflowEndpoint) -> Self {
@@ -51,17 +55,18 @@ impl EndpointDetailsBuilder {
         self
     }
     /// <p>A dataflow endpoint.</p>
-    pub fn set_endpoint(mut self, input: std::option::Option<crate::types::DataflowEndpoint>) -> Self {
-        self.endpoint = input; self
+    pub fn set_endpoint(
+        mut self,
+        input: std::option::Option<crate::types::DataflowEndpoint>,
+    ) -> Self {
+        self.endpoint = input;
+        self
     }
     /// Consumes the builder and constructs a [`EndpointDetails`](crate::types::EndpointDetails).
     pub fn build(self) -> crate::types::EndpointDetails {
         crate::types::EndpointDetails {
-            security_details: self.security_details
-            ,
-            endpoint: self.endpoint
-            ,
+            security_details: self.security_details,
+            endpoint: self.endpoint,
         }
     }
 }
-

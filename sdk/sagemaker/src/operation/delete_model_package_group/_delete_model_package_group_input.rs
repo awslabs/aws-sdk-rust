@@ -2,20 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteModelPackageGroupInput  {
+pub struct DeleteModelPackageGroupInput {
     /// <p>The name of the model group to delete.</p>
     #[doc(hidden)]
     pub model_package_group_name: std::option::Option<std::string::String>,
 }
 impl DeleteModelPackageGroupInput {
     /// <p>The name of the model group to delete.</p>
-    pub fn model_package_group_name(&self) -> std::option::Option<& str> {
+    pub fn model_package_group_name(&self) -> std::option::Option<&str> {
         self.model_package_group_name.as_deref()
     }
 }
 impl DeleteModelPackageGroupInput {
     /// Creates a new builder-style object to manufacture [`DeleteModelPackageGroupInput`](crate::operation::delete_model_package_group::DeleteModelPackageGroupInput).
-    pub fn builder() -> crate::operation::delete_model_package_group::builders::DeleteModelPackageGroupInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::delete_model_package_group::builders::DeleteModelPackageGroupInputBuilder
+    {
         crate::operation::delete_model_package_group::builders::DeleteModelPackageGroupInputBuilder::default()
     }
 }
@@ -33,17 +35,24 @@ impl DeleteModelPackageGroupInputBuilder {
         self
     }
     /// <p>The name of the model group to delete.</p>
-    pub fn set_model_package_group_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.model_package_group_name = input; self
+    pub fn set_model_package_group_name(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.model_package_group_name = input;
+        self
     }
     /// Consumes the builder and constructs a [`DeleteModelPackageGroupInput`](crate::operation::delete_model_package_group::DeleteModelPackageGroupInput).
-    pub fn build(self) -> Result<crate::operation::delete_model_package_group::DeleteModelPackageGroupInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::delete_model_package_group::DeleteModelPackageGroupInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::delete_model_package_group::DeleteModelPackageGroupInput {
-                model_package_group_name: self.model_package_group_name
-                ,
-            }
+                model_package_group_name: self.model_package_group_name,
+            },
         )
     }
 }
-

@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-/// 
+///
 /// Here is an example of how you can make a match expression forward-compatible:
-/// 
+///
 /// ```text
 /// # let contactinitiationmethod = unimplemented!();
 /// match contactinitiationmethod {
@@ -36,14 +36,22 @@
 /// Specifically, when `contactinitiationmethod` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `ContactInitiationMethod::NewFeature` also yielding `"NewFeature"`.
-/// 
+///
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
 pub enum ContactInitiationMethod {
     #[allow(missing_docs)] // documentation missing in model
     Api,
@@ -62,53 +70,63 @@ pub enum ContactInitiationMethod {
     #[allow(missing_docs)] // documentation missing in model
     Transfer,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::primitives::UnknownVariantValue)
+    Unknown(crate::primitives::UnknownVariantValue),
 }
 impl std::convert::From<&str> for ContactInitiationMethod {
-                fn from(s: &str) -> Self {
-                    match s {
-                        "API" => ContactInitiationMethod::Api,
-"CALLBACK" => ContactInitiationMethod::Callback,
-"DISCONNECT" => ContactInitiationMethod::Disconnect,
-"INBOUND" => ContactInitiationMethod::Inbound,
-"MONITOR" => ContactInitiationMethod::Monitor,
-"OUTBOUND" => ContactInitiationMethod::Outbound,
-"QUEUE_TRANSFER" => ContactInitiationMethod::QueueTransfer,
-"TRANSFER" => ContactInitiationMethod::Transfer,
-other => ContactInitiationMethod::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
-                    }
-                }
-            }
-impl std::str::FromStr for ContactInitiationMethod {
-                type Err = std::convert::Infallible;
-
-                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-                    Ok(ContactInitiationMethod::from(s))
-                }
-            }
-impl ContactInitiationMethod {
-                /// Returns the `&str` value of the enum member.
-                pub fn as_str(&self) -> &str {
-                    match self {
-    ContactInitiationMethod::Api => "API",
-    ContactInitiationMethod::Callback => "CALLBACK",
-    ContactInitiationMethod::Disconnect => "DISCONNECT",
-    ContactInitiationMethod::Inbound => "INBOUND",
-    ContactInitiationMethod::Monitor => "MONITOR",
-    ContactInitiationMethod::Outbound => "OUTBOUND",
-    ContactInitiationMethod::QueueTransfer => "QUEUE_TRANSFER",
-    ContactInitiationMethod::Transfer => "TRANSFER",
-    ContactInitiationMethod::Unknown(value) => value.as_str()
+    fn from(s: &str) -> Self {
+        match s {
+            "API" => ContactInitiationMethod::Api,
+            "CALLBACK" => ContactInitiationMethod::Callback,
+            "DISCONNECT" => ContactInitiationMethod::Disconnect,
+            "INBOUND" => ContactInitiationMethod::Inbound,
+            "MONITOR" => ContactInitiationMethod::Monitor,
+            "OUTBOUND" => ContactInitiationMethod::Outbound,
+            "QUEUE_TRANSFER" => ContactInitiationMethod::QueueTransfer,
+            "TRANSFER" => ContactInitiationMethod::Transfer,
+            other => ContactInitiationMethod::Unknown(crate::primitives::UnknownVariantValue(
+                other.to_owned(),
+            )),
+        }
+    }
 }
-                }
-                /// Returns all the `&str` representations of the enum members.
-                pub const fn values() -> &'static [&'static str] {
-                    &["API", "CALLBACK", "DISCONNECT", "INBOUND", "MONITOR", "OUTBOUND", "QUEUE_TRANSFER", "TRANSFER"]
-                }
-            }
-impl AsRef<str> for ContactInitiationMethod {
-                fn as_ref(&self) -> &str {
-                    self.as_str()
-                }
-            }
+impl std::str::FromStr for ContactInitiationMethod {
+    type Err = std::convert::Infallible;
 
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(ContactInitiationMethod::from(s))
+    }
+}
+impl ContactInitiationMethod {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            ContactInitiationMethod::Api => "API",
+            ContactInitiationMethod::Callback => "CALLBACK",
+            ContactInitiationMethod::Disconnect => "DISCONNECT",
+            ContactInitiationMethod::Inbound => "INBOUND",
+            ContactInitiationMethod::Monitor => "MONITOR",
+            ContactInitiationMethod::Outbound => "OUTBOUND",
+            ContactInitiationMethod::QueueTransfer => "QUEUE_TRANSFER",
+            ContactInitiationMethod::Transfer => "TRANSFER",
+            ContactInitiationMethod::Unknown(value) => value.as_str(),
+        }
+    }
+    /// Returns all the `&str` representations of the enum members.
+    pub const fn values() -> &'static [&'static str] {
+        &[
+            "API",
+            "CALLBACK",
+            "DISCONNECT",
+            "INBOUND",
+            "MONITOR",
+            "OUTBOUND",
+            "QUEUE_TRANSFER",
+            "TRANSFER",
+        ]
+    }
+}
+impl AsRef<str> for ContactInitiationMethod {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}

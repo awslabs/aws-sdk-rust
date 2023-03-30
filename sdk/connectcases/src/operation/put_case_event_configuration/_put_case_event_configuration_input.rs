@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PutCaseEventConfigurationInput  {
+pub struct PutCaseEventConfigurationInput {
     /// <p>The unique identifier of the Cases domain. </p>
     #[doc(hidden)]
     pub domain_id: std::option::Option<std::string::String>,
@@ -12,17 +12,17 @@ pub struct PutCaseEventConfigurationInput  {
 }
 impl PutCaseEventConfigurationInput {
     /// <p>The unique identifier of the Cases domain. </p>
-    pub fn domain_id(&self) -> std::option::Option<& str> {
+    pub fn domain_id(&self) -> std::option::Option<&str> {
         self.domain_id.as_deref()
     }
     /// <p>Configuration to enable EventBridge case event delivery and determine what data is delivered.</p>
-    pub fn event_bridge(&self) -> std::option::Option<& crate::types::EventBridgeConfiguration> {
+    pub fn event_bridge(&self) -> std::option::Option<&crate::types::EventBridgeConfiguration> {
         self.event_bridge.as_ref()
     }
 }
 impl PutCaseEventConfigurationInput {
     /// Creates a new builder-style object to manufacture [`PutCaseEventConfigurationInput`](crate::operation::put_case_event_configuration::PutCaseEventConfigurationInput).
-    pub fn builder() -> crate::operation::put_case_event_configuration::builders::PutCaseEventConfigurationInputBuilder {
+    pub fn builder() -> crate::operation::put_case_event_configuration::builders::PutCaseEventConfigurationInputBuilder{
         crate::operation::put_case_event_configuration::builders::PutCaseEventConfigurationInputBuilder::default()
     }
 }
@@ -42,7 +42,8 @@ impl PutCaseEventConfigurationInputBuilder {
     }
     /// <p>The unique identifier of the Cases domain. </p>
     pub fn set_domain_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.domain_id = input; self
+        self.domain_id = input;
+        self
     }
     /// <p>Configuration to enable EventBridge case event delivery and determine what data is delivered.</p>
     pub fn event_bridge(mut self, input: crate::types::EventBridgeConfiguration) -> Self {
@@ -50,19 +51,25 @@ impl PutCaseEventConfigurationInputBuilder {
         self
     }
     /// <p>Configuration to enable EventBridge case event delivery and determine what data is delivered.</p>
-    pub fn set_event_bridge(mut self, input: std::option::Option<crate::types::EventBridgeConfiguration>) -> Self {
-        self.event_bridge = input; self
+    pub fn set_event_bridge(
+        mut self,
+        input: std::option::Option<crate::types::EventBridgeConfiguration>,
+    ) -> Self {
+        self.event_bridge = input;
+        self
     }
     /// Consumes the builder and constructs a [`PutCaseEventConfigurationInput`](crate::operation::put_case_event_configuration::PutCaseEventConfigurationInput).
-    pub fn build(self) -> Result<crate::operation::put_case_event_configuration::PutCaseEventConfigurationInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::put_case_event_configuration::PutCaseEventConfigurationInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::put_case_event_configuration::PutCaseEventConfigurationInput {
-                domain_id: self.domain_id
-                ,
-                event_bridge: self.event_bridge
-                ,
-            }
+                domain_id: self.domain_id,
+                event_bridge: self.event_bridge,
+            },
         )
     }
 }
-

@@ -2,14 +2,14 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteAssetInput  {
+pub struct DeleteAssetInput {
     /// The ID of the MediaPackage VOD Asset resource to delete.
     #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
 }
 impl DeleteAssetInput {
     /// The ID of the MediaPackage VOD Asset resource to delete.
-    pub fn id(&self) -> std::option::Option<& str> {
+    pub fn id(&self) -> std::option::Option<&str> {
         self.id.as_deref()
     }
 }
@@ -34,16 +34,16 @@ impl DeleteAssetInputBuilder {
     }
     /// The ID of the MediaPackage VOD Asset resource to delete.
     pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.id = input; self
+        self.id = input;
+        self
     }
     /// Consumes the builder and constructs a [`DeleteAssetInput`](crate::operation::delete_asset::DeleteAssetInput).
-    pub fn build(self) -> Result<crate::operation::delete_asset::DeleteAssetInput, aws_smithy_http::operation::error::BuildError> {
-        Ok(
-            crate::operation::delete_asset::DeleteAssetInput {
-                id: self.id
-                ,
-            }
-        )
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::delete_asset::DeleteAssetInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        Ok(crate::operation::delete_asset::DeleteAssetInput { id: self.id })
     }
 }
-

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct PutLexiconInput  {
+pub struct PutLexiconInput {
     /// <p>Name of the lexicon. The name must follow the regular express format [0-9A-Za-z]{1,20}. That is, the name is a case-sensitive alphanumeric string up to 20 characters long. </p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -12,15 +12,15 @@ pub struct PutLexiconInput  {
 }
 impl PutLexiconInput {
     /// <p>Name of the lexicon. The name must follow the regular express format [0-9A-Za-z]{1,20}. That is, the name is a case-sensitive alphanumeric string up to 20 characters long. </p>
-    pub fn name(&self) -> std::option::Option<& str> {
+    pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>Content of the PLS lexicon as string data.</p>
-    pub fn content(&self) -> std::option::Option<& str> {
+    pub fn content(&self) -> std::option::Option<&str> {
         self.content.as_deref()
     }
 }
-impl  std::fmt::Debug for PutLexiconInput  {
+impl std::fmt::Debug for PutLexiconInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("PutLexiconInput");
         formatter.field("name", &self.name);
@@ -50,7 +50,8 @@ impl PutLexiconInputBuilder {
     }
     /// <p>Name of the lexicon. The name must follow the regular express format [0-9A-Za-z]{1,20}. That is, the name is a case-sensitive alphanumeric string up to 20 characters long. </p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input; self
+        self.name = input;
+        self
     }
     /// <p>Content of the PLS lexicon as string data.</p>
     pub fn content(mut self, input: impl Into<std::string::String>) -> Self {
@@ -59,18 +60,20 @@ impl PutLexiconInputBuilder {
     }
     /// <p>Content of the PLS lexicon as string data.</p>
     pub fn set_content(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.content = input; self
+        self.content = input;
+        self
     }
     /// Consumes the builder and constructs a [`PutLexiconInput`](crate::operation::put_lexicon::PutLexiconInput).
-    pub fn build(self) -> Result<crate::operation::put_lexicon::PutLexiconInput, aws_smithy_http::operation::error::BuildError> {
-        Ok(
-            crate::operation::put_lexicon::PutLexiconInput {
-                name: self.name
-                ,
-                content: self.content
-                ,
-            }
-        )
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::put_lexicon::PutLexiconInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        Ok(crate::operation::put_lexicon::PutLexiconInput {
+            name: self.name,
+            content: self.content,
+        })
     }
 }
 impl std::fmt::Debug for PutLexiconInputBuilder {
@@ -81,4 +84,3 @@ impl std::fmt::Debug for PutLexiconInputBuilder {
         formatter.finish()
     }
 }
-

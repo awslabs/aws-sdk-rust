@@ -84,4 +84,3 @@ pub mod builders;
 
 /// Error types that Amazon Elastic Container Registry Public can respond with.
 pub mod error;
-

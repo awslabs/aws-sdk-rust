@@ -3,14 +3,14 @@
 /// <p> The connector-specific profile properties required by Dynatrace. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DynatraceConnectorProfileProperties  {
+pub struct DynatraceConnectorProfileProperties {
     /// <p> The location of the Dynatrace resource. </p>
     #[doc(hidden)]
     pub instance_url: std::option::Option<std::string::String>,
 }
 impl DynatraceConnectorProfileProperties {
     /// <p> The location of the Dynatrace resource. </p>
-    pub fn instance_url(&self) -> std::option::Option<& str> {
+    pub fn instance_url(&self) -> std::option::Option<&str> {
         self.instance_url.as_deref()
     }
 }
@@ -35,14 +35,13 @@ impl DynatraceConnectorProfilePropertiesBuilder {
     }
     /// <p> The location of the Dynatrace resource. </p>
     pub fn set_instance_url(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.instance_url = input; self
+        self.instance_url = input;
+        self
     }
     /// Consumes the builder and constructs a [`DynatraceConnectorProfileProperties`](crate::types::DynatraceConnectorProfileProperties).
     pub fn build(self) -> crate::types::DynatraceConnectorProfileProperties {
         crate::types::DynatraceConnectorProfileProperties {
-            instance_url: self.instance_url
-            ,
+            instance_url: self.instance_url,
         }
     }
 }
-

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct StartEventsDetectionJobInput  {
+pub struct StartEventsDetectionJobInput {
     /// <p>Specifies the format and location of the input data for the job.</p>
     #[doc(hidden)]
     pub input_data_config: std::option::Option<crate::types::InputDataConfig>,
@@ -30,41 +30,43 @@ pub struct StartEventsDetectionJobInput  {
 }
 impl StartEventsDetectionJobInput {
     /// <p>Specifies the format and location of the input data for the job.</p>
-    pub fn input_data_config(&self) -> std::option::Option<& crate::types::InputDataConfig> {
+    pub fn input_data_config(&self) -> std::option::Option<&crate::types::InputDataConfig> {
         self.input_data_config.as_ref()
     }
     /// <p>Specifies where to send the output files.</p>
-    pub fn output_data_config(&self) -> std::option::Option<& crate::types::OutputDataConfig> {
+    pub fn output_data_config(&self) -> std::option::Option<&crate::types::OutputDataConfig> {
         self.output_data_config.as_ref()
     }
     /// <p>The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role that grants Amazon Comprehend read access to your input data.</p>
-    pub fn data_access_role_arn(&self) -> std::option::Option<& str> {
+    pub fn data_access_role_arn(&self) -> std::option::Option<&str> {
         self.data_access_role_arn.as_deref()
     }
     /// <p>The identifier of the events detection job.</p>
-    pub fn job_name(&self) -> std::option::Option<& str> {
+    pub fn job_name(&self) -> std::option::Option<&str> {
         self.job_name.as_deref()
     }
     /// <p>The language code of the input documents.</p>
-    pub fn language_code(&self) -> std::option::Option<& crate::types::LanguageCode> {
+    pub fn language_code(&self) -> std::option::Option<&crate::types::LanguageCode> {
         self.language_code.as_ref()
     }
     /// <p>An unique identifier for the request. If you don't set the client request token, Amazon Comprehend generates one.</p>
-    pub fn client_request_token(&self) -> std::option::Option<& str> {
+    pub fn client_request_token(&self) -> std::option::Option<&str> {
         self.client_request_token.as_deref()
     }
     /// <p>The types of events to detect in the input documents.</p>
-    pub fn target_event_types(&self) -> std::option::Option<& [std::string::String]> {
+    pub fn target_event_types(&self) -> std::option::Option<&[std::string::String]> {
         self.target_event_types.as_deref()
     }
     /// <p>Tags to be associated with the events detection job. A tag is a key-value pair that adds metadata to a resource used by Amazon Comprehend. For example, a tag with "Sales" as the key might be added to a resource to indicate its use by the sales department.</p>
-    pub fn tags(&self) -> std::option::Option<& [crate::types::Tag]> {
+    pub fn tags(&self) -> std::option::Option<&[crate::types::Tag]> {
         self.tags.as_deref()
     }
 }
 impl StartEventsDetectionJobInput {
     /// Creates a new builder-style object to manufacture [`StartEventsDetectionJobInput`](crate::operation::start_events_detection_job::StartEventsDetectionJobInput).
-    pub fn builder() -> crate::operation::start_events_detection_job::builders::StartEventsDetectionJobInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::start_events_detection_job::builders::StartEventsDetectionJobInputBuilder
+    {
         crate::operation::start_events_detection_job::builders::StartEventsDetectionJobInputBuilder::default()
     }
 }
@@ -89,8 +91,12 @@ impl StartEventsDetectionJobInputBuilder {
         self
     }
     /// <p>Specifies the format and location of the input data for the job.</p>
-    pub fn set_input_data_config(mut self, input: std::option::Option<crate::types::InputDataConfig>) -> Self {
-        self.input_data_config = input; self
+    pub fn set_input_data_config(
+        mut self,
+        input: std::option::Option<crate::types::InputDataConfig>,
+    ) -> Self {
+        self.input_data_config = input;
+        self
     }
     /// <p>Specifies where to send the output files.</p>
     pub fn output_data_config(mut self, input: crate::types::OutputDataConfig) -> Self {
@@ -98,8 +104,12 @@ impl StartEventsDetectionJobInputBuilder {
         self
     }
     /// <p>Specifies where to send the output files.</p>
-    pub fn set_output_data_config(mut self, input: std::option::Option<crate::types::OutputDataConfig>) -> Self {
-        self.output_data_config = input; self
+    pub fn set_output_data_config(
+        mut self,
+        input: std::option::Option<crate::types::OutputDataConfig>,
+    ) -> Self {
+        self.output_data_config = input;
+        self
     }
     /// <p>The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role that grants Amazon Comprehend read access to your input data.</p>
     pub fn data_access_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -107,8 +117,12 @@ impl StartEventsDetectionJobInputBuilder {
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role that grants Amazon Comprehend read access to your input data.</p>
-    pub fn set_data_access_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.data_access_role_arn = input; self
+    pub fn set_data_access_role_arn(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.data_access_role_arn = input;
+        self
     }
     /// <p>The identifier of the events detection job.</p>
     pub fn job_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -117,7 +131,8 @@ impl StartEventsDetectionJobInputBuilder {
     }
     /// <p>The identifier of the events detection job.</p>
     pub fn set_job_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.job_name = input; self
+        self.job_name = input;
+        self
     }
     /// <p>The language code of the input documents.</p>
     pub fn language_code(mut self, input: crate::types::LanguageCode) -> Self {
@@ -125,8 +140,12 @@ impl StartEventsDetectionJobInputBuilder {
         self
     }
     /// <p>The language code of the input documents.</p>
-    pub fn set_language_code(mut self, input: std::option::Option<crate::types::LanguageCode>) -> Self {
-        self.language_code = input; self
+    pub fn set_language_code(
+        mut self,
+        input: std::option::Option<crate::types::LanguageCode>,
+    ) -> Self {
+        self.language_code = input;
+        self
     }
     /// <p>An unique identifier for the request. If you don't set the client request token, Amazon Comprehend generates one.</p>
     pub fn client_request_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -134,8 +153,12 @@ impl StartEventsDetectionJobInputBuilder {
         self
     }
     /// <p>An unique identifier for the request. If you don't set the client request token, Amazon Comprehend generates one.</p>
-    pub fn set_client_request_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.client_request_token = input; self
+    pub fn set_client_request_token(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.client_request_token = input;
+        self
     }
     /// Appends an item to `target_event_types`.
     ///
@@ -144,13 +167,17 @@ impl StartEventsDetectionJobInputBuilder {
     /// <p>The types of events to detect in the input documents.</p>
     pub fn target_event_types(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.target_event_types.unwrap_or_default();
-                        v.push(input.into());
-                        self.target_event_types = Some(v);
-                        self
+        v.push(input.into());
+        self.target_event_types = Some(v);
+        self
     }
     /// <p>The types of events to detect in the input documents.</p>
-    pub fn set_target_event_types(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-        self.target_event_types = input; self
+    pub fn set_target_event_types(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
+        self.target_event_types = input;
+        self
     }
     /// Appends an item to `tags`.
     ///
@@ -159,36 +186,36 @@ impl StartEventsDetectionJobInputBuilder {
     /// <p>Tags to be associated with the events detection job. A tag is a key-value pair that adds metadata to a resource used by Amazon Comprehend. For example, a tag with "Sales" as the key might be added to a resource to indicate its use by the sales department.</p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
-                        v.push(input);
-                        self.tags = Some(v);
-                        self
+        v.push(input);
+        self.tags = Some(v);
+        self
     }
     /// <p>Tags to be associated with the events detection job. A tag is a key-value pair that adds metadata to a resource used by Amazon Comprehend. For example, a tag with "Sales" as the key might be added to a resource to indicate its use by the sales department.</p>
-    pub fn set_tags(mut self, input: std::option::Option<std::vec::Vec<crate::types::Tag>>) -> Self {
-        self.tags = input; self
+    pub fn set_tags(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::Tag>>,
+    ) -> Self {
+        self.tags = input;
+        self
     }
     /// Consumes the builder and constructs a [`StartEventsDetectionJobInput`](crate::operation::start_events_detection_job::StartEventsDetectionJobInput).
-    pub fn build(self) -> Result<crate::operation::start_events_detection_job::StartEventsDetectionJobInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::start_events_detection_job::StartEventsDetectionJobInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::start_events_detection_job::StartEventsDetectionJobInput {
-                input_data_config: self.input_data_config
-                ,
-                output_data_config: self.output_data_config
-                ,
-                data_access_role_arn: self.data_access_role_arn
-                ,
-                job_name: self.job_name
-                ,
-                language_code: self.language_code
-                ,
-                client_request_token: self.client_request_token
-                ,
-                target_event_types: self.target_event_types
-                ,
-                tags: self.tags
-                ,
-            }
+                input_data_config: self.input_data_config,
+                output_data_config: self.output_data_config,
+                data_access_role_arn: self.data_access_role_arn,
+                job_name: self.job_name,
+                language_code: self.language_code,
+                client_request_token: self.client_request_token,
+                target_event_types: self.target_event_types,
+                tags: self.tags,
+            },
         )
     }
 }
-

@@ -3,7 +3,7 @@
 /// <p>Contains the output of DescribeSpotPriceHistory.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeSpotPriceHistoryOutput  {
+pub struct DescribeSpotPriceHistoryOutput {
     /// <p>The token required to retrieve the next set of results. This value is null or an empty string when there are no more results to return.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
@@ -14,22 +14,22 @@ pub struct DescribeSpotPriceHistoryOutput  {
 }
 impl DescribeSpotPriceHistoryOutput {
     /// <p>The token required to retrieve the next set of results. This value is null or an empty string when there are no more results to return.</p>
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
     /// <p>The historical Spot prices.</p>
-    pub fn spot_price_history(&self) -> std::option::Option<& [crate::types::SpotPrice]> {
+    pub fn spot_price_history(&self) -> std::option::Option<&[crate::types::SpotPrice]> {
         self.spot_price_history.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for DescribeSpotPriceHistoryOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl DescribeSpotPriceHistoryOutput {
     /// Creates a new builder-style object to manufacture [`DescribeSpotPriceHistoryOutput`](crate::operation::describe_spot_price_history::DescribeSpotPriceHistoryOutput).
-    pub fn builder() -> crate::operation::describe_spot_price_history::builders::DescribeSpotPriceHistoryOutputBuilder {
+    pub fn builder() -> crate::operation::describe_spot_price_history::builders::DescribeSpotPriceHistoryOutputBuilder{
         crate::operation::describe_spot_price_history::builders::DescribeSpotPriceHistoryOutputBuilder::default()
     }
 }
@@ -50,7 +50,8 @@ impl DescribeSpotPriceHistoryOutputBuilder {
     }
     /// <p>The token required to retrieve the next set of results. This value is null or an empty string when there are no more results to return.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input; self
+        self.next_token = input;
+        self
     }
     /// Appends an item to `spot_price_history`.
     ///
@@ -59,32 +60,35 @@ impl DescribeSpotPriceHistoryOutputBuilder {
     /// <p>The historical Spot prices.</p>
     pub fn spot_price_history(mut self, input: crate::types::SpotPrice) -> Self {
         let mut v = self.spot_price_history.unwrap_or_default();
-                        v.push(input);
-                        self.spot_price_history = Some(v);
-                        self
+        v.push(input);
+        self.spot_price_history = Some(v);
+        self
     }
     /// <p>The historical Spot prices.</p>
-    pub fn set_spot_price_history(mut self, input: std::option::Option<std::vec::Vec<crate::types::SpotPrice>>) -> Self {
-        self.spot_price_history = input; self
+    pub fn set_spot_price_history(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::SpotPrice>>,
+    ) -> Self {
+        self.spot_price_history = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`DescribeSpotPriceHistoryOutput`](crate::operation::describe_spot_price_history::DescribeSpotPriceHistoryOutput).
-    pub fn build(self) -> crate::operation::describe_spot_price_history::DescribeSpotPriceHistoryOutput {
+    pub fn build(
+        self,
+    ) -> crate::operation::describe_spot_price_history::DescribeSpotPriceHistoryOutput {
         crate::operation::describe_spot_price_history::DescribeSpotPriceHistoryOutput {
-            next_token: self.next_token
-            ,
-            spot_price_history: self.spot_price_history
-            ,
+            next_token: self.next_token,
+            spot_price_history: self.spot_price_history,
             _request_id: self._request_id,
         }
     }
 }
-

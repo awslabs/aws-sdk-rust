@@ -4,53 +4,75 @@ pub use crate::operation::describe_user_stack_associations::_describe_user_stack
 pub use crate::operation::describe_user_stack_associations::_describe_user_stack_associations_input::DescribeUserStackAssociationsInputBuilder;
 
 /// Fluent builder constructing a request to `DescribeUserStackAssociations`.
-/// 
-/// <p>Retrieves a list that describes the UserStackAssociation objects. You must specify either or both of the following:</p> 
-/// <ul> 
-/// <li> <p>The stack name</p> </li> 
-/// <li> <p>The user name (email address of the user associated with the stack) and the authentication type for the user</p> </li> 
+///
+/// <p>Retrieves a list that describes the UserStackAssociation objects. You must specify either or both of the following:</p>
+/// <ul>
+/// <li> <p>The stack name</p> </li>
+/// <li> <p>The user name (email address of the user associated with the stack) and the authentication type for the user</p> </li>
 /// </ul>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeUserStackAssociationsFluentBuilder {
                 handle: std::sync::Arc<crate::client::Handle>,
                 inner: crate::operation::describe_user_stack_associations::builders::DescribeUserStackAssociationsInputBuilder
             }
-impl DescribeUserStackAssociationsFluentBuilder  {
+impl DescribeUserStackAssociationsFluentBuilder {
     /// Creates a new `DescribeUserStackAssociations`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
-                    /// sent. The operation's inner [http::Request] can be modified as well.
-                    pub async fn customize(self) -> std::result::Result<
-                        crate::client::customize::CustomizableOperation<crate::operation::describe_user_stack_associations::DescribeUserStackAssociations, aws_http::retry::AwsResponseRetryClassifier,>,
-                        aws_smithy_http::result::SdkError<crate::operation::describe_user_stack_associations::DescribeUserStackAssociationsError>
-                    >  {
-                        let handle = self.handle.clone();
-                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-                    }
-    
-                    /// Sends the request and returns the response.
-                    ///
-                    /// If an error occurs, an `SdkError` will be returned with additional details that
-                    /// can be matched against.
-                    ///
-                    /// By default, any retryable failures will be retried twice. Retry behavior
-                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                    /// set when configuring the client.
-                    pub async fn send(self) -> std::result::Result<crate::operation::describe_user_stack_associations::DescribeUserStackAssociationsOutput, aws_smithy_http::result::SdkError<crate::operation::describe_user_stack_associations::DescribeUserStackAssociationsError>>
-                     {
-                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&self.handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        self.handle.client.call(op).await
-                    }
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle,
+            inner: Default::default(),
+        }
+    }
+
+    /// Consume this builder, creating a customizable operation that can be modified before being
+    /// sent. The operation's inner [http::Request] can be modified as well.
+    pub async fn customize(
+        self,
+    ) -> std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::describe_user_stack_associations::DescribeUserStackAssociations,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::result::SdkError<
+            crate::operation::describe_user_stack_associations::DescribeUserStackAssociationsError,
+        >,
+    > {
+        let handle = self.handle.clone();
+        let operation = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+    }
+
+    /// Sends the request and returns the response.
+    ///
+    /// If an error occurs, an `SdkError` will be returned with additional details that
+    /// can be matched against.
+    ///
+    /// By default, any retryable failures will be retried twice. Retry behavior
+    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+    /// set when configuring the client.
+    pub async fn send(
+        self,
+    ) -> std::result::Result<
+        crate::operation::describe_user_stack_associations::DescribeUserStackAssociationsOutput,
+        aws_smithy_http::result::SdkError<
+            crate::operation::describe_user_stack_associations::DescribeUserStackAssociationsError,
+        >,
+    > {
+        let op = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&self.handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        self.handle.client.call(op).await
+    }
     /// <p>The name of the stack that is associated with the user.</p>
     pub fn stack_name(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.stack_name(input.into());
@@ -61,15 +83,15 @@ impl DescribeUserStackAssociationsFluentBuilder  {
         self.inner = self.inner.set_stack_name(input);
         self
     }
-    /// <p>The email address of the user who is associated with the stack.</p> <note> 
-    /// <p>Users' email addresses are case-sensitive.</p> 
+    /// <p>The email address of the user who is associated with the stack.</p> <note>
+    /// <p>Users' email addresses are case-sensitive.</p>
     /// </note>
     pub fn user_name(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.user_name(input.into());
         self
     }
-    /// <p>The email address of the user who is associated with the stack.</p> <note> 
-    /// <p>Users' email addresses are case-sensitive.</p> 
+    /// <p>The email address of the user who is associated with the stack.</p> <note>
+    /// <p>Users' email addresses are case-sensitive.</p>
     /// </note>
     pub fn set_user_name(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.inner = self.inner.set_user_name(input);
@@ -81,7 +103,10 @@ impl DescribeUserStackAssociationsFluentBuilder  {
         self
     }
     /// <p>The authentication type for the user who is associated with the stack. You must specify USERPOOL.</p>
-    pub fn set_authentication_type(mut self, input: std::option::Option<crate::types::AuthenticationType>) -> Self {
+    pub fn set_authentication_type(
+        mut self,
+        input: std::option::Option<crate::types::AuthenticationType>,
+    ) -> Self {
         self.inner = self.inner.set_authentication_type(input);
         self
     }
@@ -106,4 +131,3 @@ impl DescribeUserStackAssociationsFluentBuilder  {
         self
     }
 }
-

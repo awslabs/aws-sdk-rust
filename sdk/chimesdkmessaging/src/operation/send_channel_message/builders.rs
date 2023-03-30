@@ -4,52 +4,74 @@ pub use crate::operation::send_channel_message::_send_channel_message_output::Se
 pub use crate::operation::send_channel_message::_send_channel_message_input::SendChannelMessageInputBuilder;
 
 /// Fluent builder constructing a request to `SendChannelMessage`.
-/// 
-/// <p>Sends a message to a particular channel that the member is a part of.</p> <note> 
-/// <p>The <code>x-amz-chime-bearer</code> request header is mandatory. Use the <code>AppInstanceUserArn</code> of the user that makes the API call as the value in the header.</p> 
-/// <p>Also, <code>STANDARD</code> messages can contain 4KB of data and the 1KB of metadata. <code>CONTROL</code> messages can contain 30 bytes of data and no metadata.</p> 
+///
+/// <p>Sends a message to a particular channel that the member is a part of.</p> <note>
+/// <p>The <code>x-amz-chime-bearer</code> request header is mandatory. Use the <code>AppInstanceUserArn</code> of the user that makes the API call as the value in the header.</p>
+/// <p>Also, <code>STANDARD</code> messages can contain 4KB of data and the 1KB of metadata. <code>CONTROL</code> messages can contain 30 bytes of data and no metadata.</p>
 /// </note>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct SendChannelMessageFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::send_channel_message::builders::SendChannelMessageInputBuilder
-            }
-impl SendChannelMessageFluentBuilder  {
+    handle: std::sync::Arc<crate::client::Handle>,
+    inner: crate::operation::send_channel_message::builders::SendChannelMessageInputBuilder,
+}
+impl SendChannelMessageFluentBuilder {
     /// Creates a new `SendChannelMessage`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
-                    /// sent. The operation's inner [http::Request] can be modified as well.
-                    pub async fn customize(self) -> std::result::Result<
-                        crate::client::customize::CustomizableOperation<crate::operation::send_channel_message::SendChannelMessage, aws_http::retry::AwsResponseRetryClassifier,>,
-                        aws_smithy_http::result::SdkError<crate::operation::send_channel_message::SendChannelMessageError>
-                    >  {
-                        let handle = self.handle.clone();
-                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-                    }
-    
-                    /// Sends the request and returns the response.
-                    ///
-                    /// If an error occurs, an `SdkError` will be returned with additional details that
-                    /// can be matched against.
-                    ///
-                    /// By default, any retryable failures will be retried twice. Retry behavior
-                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                    /// set when configuring the client.
-                    pub async fn send(self) -> std::result::Result<crate::operation::send_channel_message::SendChannelMessageOutput, aws_smithy_http::result::SdkError<crate::operation::send_channel_message::SendChannelMessageError>>
-                     {
-                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&self.handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        self.handle.client.call(op).await
-                    }
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle,
+            inner: Default::default(),
+        }
+    }
+
+    /// Consume this builder, creating a customizable operation that can be modified before being
+    /// sent. The operation's inner [http::Request] can be modified as well.
+    pub async fn customize(
+        self,
+    ) -> std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::send_channel_message::SendChannelMessage,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::result::SdkError<
+            crate::operation::send_channel_message::SendChannelMessageError,
+        >,
+    > {
+        let handle = self.handle.clone();
+        let operation = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+    }
+
+    /// Sends the request and returns the response.
+    ///
+    /// If an error occurs, an `SdkError` will be returned with additional details that
+    /// can be matched against.
+    ///
+    /// By default, any retryable failures will be retried twice. Retry behavior
+    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+    /// set when configuring the client.
+    pub async fn send(
+        self,
+    ) -> std::result::Result<
+        crate::operation::send_channel_message::SendChannelMessageOutput,
+        aws_smithy_http::result::SdkError<
+            crate::operation::send_channel_message::SendChannelMessageError,
+        >,
+    > {
+        let op = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&self.handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        self.handle.client.call(op).await
+    }
     /// <p>The ARN of the channel.</p>
     pub fn channel_arn(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.channel_arn(input.into());
@@ -76,7 +98,10 @@ impl SendChannelMessageFluentBuilder  {
         self
     }
     /// <p>The type of message, <code>STANDARD</code> or <code>CONTROL</code>.</p>
-    pub fn set_type(mut self, input: std::option::Option<crate::types::ChannelMessageType>) -> Self {
+    pub fn set_type(
+        mut self,
+        input: std::option::Option<crate::types::ChannelMessageType>,
+    ) -> Self {
         self.inner = self.inner.set_type(input);
         self
     }
@@ -86,7 +111,10 @@ impl SendChannelMessageFluentBuilder  {
         self
     }
     /// <p>Boolean that controls whether the message is persisted on the back end. Required.</p>
-    pub fn set_persistence(mut self, input: std::option::Option<crate::types::ChannelMessagePersistenceType>) -> Self {
+    pub fn set_persistence(
+        mut self,
+        input: std::option::Option<crate::types::ChannelMessagePersistenceType>,
+    ) -> Self {
         self.inner = self.inner.set_persistence(input);
         self
     }
@@ -106,7 +134,10 @@ impl SendChannelMessageFluentBuilder  {
         self
     }
     /// <p>The <code>Idempotency</code> token for each client request.</p>
-    pub fn set_client_request_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_client_request_token(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_client_request_token(input);
         self
     }
@@ -126,7 +157,10 @@ impl SendChannelMessageFluentBuilder  {
         self
     }
     /// <p>The push notification configuration of the message.</p>
-    pub fn set_push_notification(mut self, input: std::option::Option<crate::types::PushNotificationConfiguration>) -> Self {
+    pub fn set_push_notification(
+        mut self,
+        input: std::option::Option<crate::types::PushNotificationConfiguration>,
+    ) -> Self {
         self.inner = self.inner.set_push_notification(input);
         self
     }
@@ -135,12 +169,21 @@ impl SendChannelMessageFluentBuilder  {
     /// To override the contents of this collection use [`set_message_attributes`](Self::set_message_attributes).
     ///
     /// <p>The attributes for the message, used for message filtering along with a <code>FilterRule</code> defined in the <code>PushNotificationPreferences</code>.</p>
-    pub fn message_attributes(mut self, k: impl Into<std::string::String>, v: crate::types::MessageAttributeValue) -> Self {
+    pub fn message_attributes(
+        mut self,
+        k: impl Into<std::string::String>,
+        v: crate::types::MessageAttributeValue,
+    ) -> Self {
         self.inner = self.inner.message_attributes(k.into(), v);
         self
     }
     /// <p>The attributes for the message, used for message filtering along with a <code>FilterRule</code> defined in the <code>PushNotificationPreferences</code>.</p>
-    pub fn set_message_attributes(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, crate::types::MessageAttributeValue>>) -> Self {
+    pub fn set_message_attributes(
+        mut self,
+        input: std::option::Option<
+            std::collections::HashMap<std::string::String, crate::types::MessageAttributeValue>,
+        >,
+    ) -> Self {
         self.inner = self.inner.set_message_attributes(input);
         self
     }
@@ -155,4 +198,3 @@ impl SendChannelMessageFluentBuilder  {
         self
     }
 }
-

@@ -3,14 +3,17 @@
 /// <p>The client authentication information used in order to authenticate with the Apache Kafka cluster.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct KafkaClusterClientAuthenticationDescription  {
+pub struct KafkaClusterClientAuthenticationDescription {
     /// <p>The type of client authentication used to connect to the Apache Kafka cluster. Value NONE means that no client authentication is used.</p>
     #[doc(hidden)]
-    pub authentication_type: std::option::Option<crate::types::KafkaClusterClientAuthenticationType>,
+    pub authentication_type:
+        std::option::Option<crate::types::KafkaClusterClientAuthenticationType>,
 }
 impl KafkaClusterClientAuthenticationDescription {
     /// <p>The type of client authentication used to connect to the Apache Kafka cluster. Value NONE means that no client authentication is used.</p>
-    pub fn authentication_type(&self) -> std::option::Option<& crate::types::KafkaClusterClientAuthenticationType> {
+    pub fn authentication_type(
+        &self,
+    ) -> std::option::Option<&crate::types::KafkaClusterClientAuthenticationType> {
         self.authentication_type.as_ref()
     }
 }
@@ -25,24 +28,30 @@ impl KafkaClusterClientAuthenticationDescription {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct KafkaClusterClientAuthenticationDescriptionBuilder {
-    pub(crate) authentication_type: std::option::Option<crate::types::KafkaClusterClientAuthenticationType>,
+    pub(crate) authentication_type:
+        std::option::Option<crate::types::KafkaClusterClientAuthenticationType>,
 }
 impl KafkaClusterClientAuthenticationDescriptionBuilder {
     /// <p>The type of client authentication used to connect to the Apache Kafka cluster. Value NONE means that no client authentication is used.</p>
-    pub fn authentication_type(mut self, input: crate::types::KafkaClusterClientAuthenticationType) -> Self {
+    pub fn authentication_type(
+        mut self,
+        input: crate::types::KafkaClusterClientAuthenticationType,
+    ) -> Self {
         self.authentication_type = Some(input);
         self
     }
     /// <p>The type of client authentication used to connect to the Apache Kafka cluster. Value NONE means that no client authentication is used.</p>
-    pub fn set_authentication_type(mut self, input: std::option::Option<crate::types::KafkaClusterClientAuthenticationType>) -> Self {
-        self.authentication_type = input; self
+    pub fn set_authentication_type(
+        mut self,
+        input: std::option::Option<crate::types::KafkaClusterClientAuthenticationType>,
+    ) -> Self {
+        self.authentication_type = input;
+        self
     }
     /// Consumes the builder and constructs a [`KafkaClusterClientAuthenticationDescription`](crate::types::KafkaClusterClientAuthenticationDescription).
     pub fn build(self) -> crate::types::KafkaClusterClientAuthenticationDescription {
         crate::types::KafkaClusterClientAuthenticationDescription {
-            authentication_type: self.authentication_type
-            ,
+            authentication_type: self.authentication_type,
         }
     }
 }
-

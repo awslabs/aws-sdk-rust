@@ -13,15 +13,17 @@ use aws_smithy_types::date_time::{DateTimeFormatError, Format};
 use aws_smithy_types::DateTime;
 use percent_encoding::utf8_percent_encode;
 
+/// Format a given string as a query string.
 pub fn fmt_string<T: AsRef<str>>(t: T) -> String {
     utf8_percent_encode(t.as_ref(), BASE_SET).to_string()
 }
 
+/// Format a given [`DateTime`] as a query string.
 pub fn fmt_timestamp(t: &DateTime, format: Format) -> Result<String, DateTimeFormatError> {
     Ok(fmt_string(t.fmt(format)?))
 }
 
-/// Simple abstraction to enable appending params to a string as query params
+/// Simple abstraction to enable appending params to a string as query params.
 ///
 /// ```rust
 /// use aws_smithy_http::query::Writer;
@@ -31,16 +33,19 @@ pub fn fmt_timestamp(t: &DateTime, format: Format) -> Result<String, DateTimeFor
 /// q.push_v("another_value");
 /// assert_eq!(s, "www.example.com?key=value&another_value");
 /// ```
+#[allow(missing_debug_implementations)]
 pub struct Writer<'a> {
     out: &'a mut String,
     prefix: char,
 }
 
 impl<'a> Writer<'a> {
+    /// Create a new query string writer.
     pub fn new(out: &'a mut String) -> Self {
         Writer { out, prefix: '?' }
     }
 
+    /// Add a new key and value pair to this writer.
     pub fn push_kv(&mut self, k: &str, v: &str) {
         self.out.push(self.prefix);
         self.out.push_str(k);
@@ -49,6 +54,7 @@ impl<'a> Writer<'a> {
         self.prefix = '&';
     }
 
+    /// Add a new value (which is its own key) to this writer.
     pub fn push_v(&mut self, v: &str) {
         self.out.push(self.prefix);
         self.out.push_str(v);
@@ -85,7 +91,7 @@ mod test {
     proptest! {
         #[test]
         fn test_encode_request(s: String) {
-            let _: Uri = format!("http://host.example.com/?{}", fmt_string(&s)).parse().expect("all strings should be encoded properly");
+            let _: Uri = format!("http://host.example.com/?{}", fmt_string(s)).parse().expect("all strings should be encoded properly");
         }
     }
 }

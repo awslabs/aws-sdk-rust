@@ -3,7 +3,7 @@
 /// <p>The identifier issued to this resource by an external identity provider.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct ExternalId  {
+pub struct ExternalId {
     /// <p>The issuer for an external identifier.</p>
     #[doc(hidden)]
     pub issuer: std::option::Option<std::string::String>,
@@ -13,15 +13,15 @@ pub struct ExternalId  {
 }
 impl ExternalId {
     /// <p>The issuer for an external identifier.</p>
-    pub fn issuer(&self) -> std::option::Option<& str> {
+    pub fn issuer(&self) -> std::option::Option<&str> {
         self.issuer.as_deref()
     }
     /// <p>The identifier issued to this resource by an external identity provider.</p>
-    pub fn id(&self) -> std::option::Option<& str> {
+    pub fn id(&self) -> std::option::Option<&str> {
         self.id.as_deref()
     }
 }
-impl  std::fmt::Debug for ExternalId  {
+impl std::fmt::Debug for ExternalId {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ExternalId");
         formatter.field("issuer", &"*** Sensitive Data Redacted ***");
@@ -51,7 +51,8 @@ impl ExternalIdBuilder {
     }
     /// <p>The issuer for an external identifier.</p>
     pub fn set_issuer(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.issuer = input; self
+        self.issuer = input;
+        self
     }
     /// <p>The identifier issued to this resource by an external identity provider.</p>
     pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -60,15 +61,14 @@ impl ExternalIdBuilder {
     }
     /// <p>The identifier issued to this resource by an external identity provider.</p>
     pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.id = input; self
+        self.id = input;
+        self
     }
     /// Consumes the builder and constructs a [`ExternalId`](crate::types::ExternalId).
     pub fn build(self) -> crate::types::ExternalId {
         crate::types::ExternalId {
-            issuer: self.issuer
-            ,
-            id: self.id
-            ,
+            issuer: self.issuer,
+            id: self.id,
         }
     }
 }
@@ -80,4 +80,3 @@ impl std::fmt::Debug for ExternalIdBuilder {
         formatter.finish()
     }
 }
-

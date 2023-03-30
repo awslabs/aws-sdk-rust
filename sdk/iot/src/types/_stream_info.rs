@@ -3,7 +3,7 @@
 /// <p>Information about a stream.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct StreamInfo  {
+pub struct StreamInfo {
     /// <p>The stream ID.</p>
     #[doc(hidden)]
     pub stream_id: std::option::Option<std::string::String>,
@@ -31,11 +31,11 @@ pub struct StreamInfo  {
 }
 impl StreamInfo {
     /// <p>The stream ID.</p>
-    pub fn stream_id(&self) -> std::option::Option<& str> {
+    pub fn stream_id(&self) -> std::option::Option<&str> {
         self.stream_id.as_deref()
     }
     /// <p>The stream ARN.</p>
-    pub fn stream_arn(&self) -> std::option::Option<& str> {
+    pub fn stream_arn(&self) -> std::option::Option<&str> {
         self.stream_arn.as_deref()
     }
     /// <p>The stream version.</p>
@@ -43,23 +43,23 @@ impl StreamInfo {
         self.stream_version
     }
     /// <p>The description of the stream.</p>
-    pub fn description(&self) -> std::option::Option<& str> {
+    pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
     /// <p>The files to stream.</p>
-    pub fn files(&self) -> std::option::Option<& [crate::types::StreamFile]> {
+    pub fn files(&self) -> std::option::Option<&[crate::types::StreamFile]> {
         self.files.as_deref()
     }
     /// <p>The date when the stream was created.</p>
-    pub fn created_at(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
+    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
     /// <p>The date when the stream was last updated.</p>
-    pub fn last_updated_at(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
+    pub fn last_updated_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_updated_at.as_ref()
     }
     /// <p>An IAM role IoT assumes to access your S3 files.</p>
-    pub fn role_arn(&self) -> std::option::Option<& str> {
+    pub fn role_arn(&self) -> std::option::Option<&str> {
         self.role_arn.as_deref()
     }
 }
@@ -91,7 +91,8 @@ impl StreamInfoBuilder {
     }
     /// <p>The stream ID.</p>
     pub fn set_stream_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.stream_id = input; self
+        self.stream_id = input;
+        self
     }
     /// <p>The stream ARN.</p>
     pub fn stream_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -100,7 +101,8 @@ impl StreamInfoBuilder {
     }
     /// <p>The stream ARN.</p>
     pub fn set_stream_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.stream_arn = input; self
+        self.stream_arn = input;
+        self
     }
     /// <p>The stream version.</p>
     pub fn stream_version(mut self, input: i32) -> Self {
@@ -109,7 +111,8 @@ impl StreamInfoBuilder {
     }
     /// <p>The stream version.</p>
     pub fn set_stream_version(mut self, input: std::option::Option<i32>) -> Self {
-        self.stream_version = input; self
+        self.stream_version = input;
+        self
     }
     /// <p>The description of the stream.</p>
     pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -118,7 +121,8 @@ impl StreamInfoBuilder {
     }
     /// <p>The description of the stream.</p>
     pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.description = input; self
+        self.description = input;
+        self
     }
     /// Appends an item to `files`.
     ///
@@ -127,13 +131,17 @@ impl StreamInfoBuilder {
     /// <p>The files to stream.</p>
     pub fn files(mut self, input: crate::types::StreamFile) -> Self {
         let mut v = self.files.unwrap_or_default();
-                        v.push(input);
-                        self.files = Some(v);
-                        self
+        v.push(input);
+        self.files = Some(v);
+        self
     }
     /// <p>The files to stream.</p>
-    pub fn set_files(mut self, input: std::option::Option<std::vec::Vec<crate::types::StreamFile>>) -> Self {
-        self.files = input; self
+    pub fn set_files(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::StreamFile>>,
+    ) -> Self {
+        self.files = input;
+        self
     }
     /// <p>The date when the stream was created.</p>
     pub fn created_at(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -141,8 +149,12 @@ impl StreamInfoBuilder {
         self
     }
     /// <p>The date when the stream was created.</p>
-    pub fn set_created_at(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.created_at = input; self
+    pub fn set_created_at(
+        mut self,
+        input: std::option::Option<aws_smithy_types::DateTime>,
+    ) -> Self {
+        self.created_at = input;
+        self
     }
     /// <p>The date when the stream was last updated.</p>
     pub fn last_updated_at(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -150,8 +162,12 @@ impl StreamInfoBuilder {
         self
     }
     /// <p>The date when the stream was last updated.</p>
-    pub fn set_last_updated_at(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.last_updated_at = input; self
+    pub fn set_last_updated_at(
+        mut self,
+        input: std::option::Option<aws_smithy_types::DateTime>,
+    ) -> Self {
+        self.last_updated_at = input;
+        self
     }
     /// <p>An IAM role IoT assumes to access your S3 files.</p>
     pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -160,28 +176,20 @@ impl StreamInfoBuilder {
     }
     /// <p>An IAM role IoT assumes to access your S3 files.</p>
     pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.role_arn = input; self
+        self.role_arn = input;
+        self
     }
     /// Consumes the builder and constructs a [`StreamInfo`](crate::types::StreamInfo).
     pub fn build(self) -> crate::types::StreamInfo {
         crate::types::StreamInfo {
-            stream_id: self.stream_id
-            ,
-            stream_arn: self.stream_arn
-            ,
-            stream_version: self.stream_version
-            ,
-            description: self.description
-            ,
-            files: self.files
-            ,
-            created_at: self.created_at
-            ,
-            last_updated_at: self.last_updated_at
-            ,
-            role_arn: self.role_arn
-            ,
+            stream_id: self.stream_id,
+            stream_arn: self.stream_arn,
+            stream_version: self.stream_version,
+            description: self.description,
+            files: self.files,
+            created_at: self.created_at,
+            last_updated_at: self.last_updated_at,
+            role_arn: self.role_arn,
         }
     }
 }
-

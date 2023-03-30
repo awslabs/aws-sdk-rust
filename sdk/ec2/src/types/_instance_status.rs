@@ -3,7 +3,7 @@
 /// <p>Describes the status of an instance.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct InstanceStatus  {
+pub struct InstanceStatus {
     /// <p>The Availability Zone of the instance.</p>
     #[doc(hidden)]
     pub availability_zone: std::option::Option<std::string::String>,
@@ -28,31 +28,31 @@ pub struct InstanceStatus  {
 }
 impl InstanceStatus {
     /// <p>The Availability Zone of the instance.</p>
-    pub fn availability_zone(&self) -> std::option::Option<& str> {
+    pub fn availability_zone(&self) -> std::option::Option<&str> {
         self.availability_zone.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the Outpost.</p>
-    pub fn outpost_arn(&self) -> std::option::Option<& str> {
+    pub fn outpost_arn(&self) -> std::option::Option<&str> {
         self.outpost_arn.as_deref()
     }
     /// <p>Any scheduled events associated with the instance.</p>
-    pub fn events(&self) -> std::option::Option<& [crate::types::InstanceStatusEvent]> {
+    pub fn events(&self) -> std::option::Option<&[crate::types::InstanceStatusEvent]> {
         self.events.as_deref()
     }
     /// <p>The ID of the instance.</p>
-    pub fn instance_id(&self) -> std::option::Option<& str> {
+    pub fn instance_id(&self) -> std::option::Option<&str> {
         self.instance_id.as_deref()
     }
     /// <p>The intended state of the instance. <code>DescribeInstanceStatus</code> requires that an instance be in the <code>running</code> state.</p>
-    pub fn instance_state(&self) -> std::option::Option<& crate::types::InstanceState> {
+    pub fn instance_state(&self) -> std::option::Option<&crate::types::InstanceState> {
         self.instance_state.as_ref()
     }
     /// <p>Reports impaired functionality that stems from issues internal to the instance, such as impaired reachability.</p>
-    pub fn instance_status(&self) -> std::option::Option<& crate::types::InstanceStatusSummary> {
+    pub fn instance_status(&self) -> std::option::Option<&crate::types::InstanceStatusSummary> {
         self.instance_status.as_ref()
     }
     /// <p>Reports impaired functionality that stems from issues related to the systems that support an instance, such as hardware failures and network connectivity problems.</p>
-    pub fn system_status(&self) -> std::option::Option<& crate::types::InstanceStatusSummary> {
+    pub fn system_status(&self) -> std::option::Option<&crate::types::InstanceStatusSummary> {
         self.system_status.as_ref()
     }
 }
@@ -82,8 +82,12 @@ impl InstanceStatusBuilder {
         self
     }
     /// <p>The Availability Zone of the instance.</p>
-    pub fn set_availability_zone(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.availability_zone = input; self
+    pub fn set_availability_zone(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.availability_zone = input;
+        self
     }
     /// <p>The Amazon Resource Name (ARN) of the Outpost.</p>
     pub fn outpost_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -92,7 +96,8 @@ impl InstanceStatusBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the Outpost.</p>
     pub fn set_outpost_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.outpost_arn = input; self
+        self.outpost_arn = input;
+        self
     }
     /// Appends an item to `events`.
     ///
@@ -101,13 +106,17 @@ impl InstanceStatusBuilder {
     /// <p>Any scheduled events associated with the instance.</p>
     pub fn events(mut self, input: crate::types::InstanceStatusEvent) -> Self {
         let mut v = self.events.unwrap_or_default();
-                        v.push(input);
-                        self.events = Some(v);
-                        self
+        v.push(input);
+        self.events = Some(v);
+        self
     }
     /// <p>Any scheduled events associated with the instance.</p>
-    pub fn set_events(mut self, input: std::option::Option<std::vec::Vec<crate::types::InstanceStatusEvent>>) -> Self {
-        self.events = input; self
+    pub fn set_events(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::InstanceStatusEvent>>,
+    ) -> Self {
+        self.events = input;
+        self
     }
     /// <p>The ID of the instance.</p>
     pub fn instance_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -116,7 +125,8 @@ impl InstanceStatusBuilder {
     }
     /// <p>The ID of the instance.</p>
     pub fn set_instance_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.instance_id = input; self
+        self.instance_id = input;
+        self
     }
     /// <p>The intended state of the instance. <code>DescribeInstanceStatus</code> requires that an instance be in the <code>running</code> state.</p>
     pub fn instance_state(mut self, input: crate::types::InstanceState) -> Self {
@@ -124,8 +134,12 @@ impl InstanceStatusBuilder {
         self
     }
     /// <p>The intended state of the instance. <code>DescribeInstanceStatus</code> requires that an instance be in the <code>running</code> state.</p>
-    pub fn set_instance_state(mut self, input: std::option::Option<crate::types::InstanceState>) -> Self {
-        self.instance_state = input; self
+    pub fn set_instance_state(
+        mut self,
+        input: std::option::Option<crate::types::InstanceState>,
+    ) -> Self {
+        self.instance_state = input;
+        self
     }
     /// <p>Reports impaired functionality that stems from issues internal to the instance, such as impaired reachability.</p>
     pub fn instance_status(mut self, input: crate::types::InstanceStatusSummary) -> Self {
@@ -133,8 +147,12 @@ impl InstanceStatusBuilder {
         self
     }
     /// <p>Reports impaired functionality that stems from issues internal to the instance, such as impaired reachability.</p>
-    pub fn set_instance_status(mut self, input: std::option::Option<crate::types::InstanceStatusSummary>) -> Self {
-        self.instance_status = input; self
+    pub fn set_instance_status(
+        mut self,
+        input: std::option::Option<crate::types::InstanceStatusSummary>,
+    ) -> Self {
+        self.instance_status = input;
+        self
     }
     /// <p>Reports impaired functionality that stems from issues related to the systems that support an instance, such as hardware failures and network connectivity problems.</p>
     pub fn system_status(mut self, input: crate::types::InstanceStatusSummary) -> Self {
@@ -142,27 +160,23 @@ impl InstanceStatusBuilder {
         self
     }
     /// <p>Reports impaired functionality that stems from issues related to the systems that support an instance, such as hardware failures and network connectivity problems.</p>
-    pub fn set_system_status(mut self, input: std::option::Option<crate::types::InstanceStatusSummary>) -> Self {
-        self.system_status = input; self
+    pub fn set_system_status(
+        mut self,
+        input: std::option::Option<crate::types::InstanceStatusSummary>,
+    ) -> Self {
+        self.system_status = input;
+        self
     }
     /// Consumes the builder and constructs a [`InstanceStatus`](crate::types::InstanceStatus).
     pub fn build(self) -> crate::types::InstanceStatus {
         crate::types::InstanceStatus {
-            availability_zone: self.availability_zone
-            ,
-            outpost_arn: self.outpost_arn
-            ,
-            events: self.events
-            ,
-            instance_id: self.instance_id
-            ,
-            instance_state: self.instance_state
-            ,
-            instance_status: self.instance_status
-            ,
-            system_status: self.system_status
-            ,
+            availability_zone: self.availability_zone,
+            outpost_arn: self.outpost_arn,
+            events: self.events,
+            instance_id: self.instance_id,
+            instance_state: self.instance_state,
+            instance_status: self.instance_status,
+            system_status: self.system_status,
         }
     }
 }
-

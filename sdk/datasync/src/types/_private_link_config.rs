@@ -3,7 +3,7 @@
 /// <p>The VPC endpoint, subnet, and security group that an agent uses to access IP addresses in a VPC (Virtual Private Cloud).</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PrivateLinkConfig  {
+pub struct PrivateLinkConfig {
     /// <p>The ID of the VPC endpoint that is configured for an agent. An agent that is configured with a VPC endpoint will not be accessible over the public internet.</p>
     #[doc(hidden)]
     pub vpc_endpoint_id: std::option::Option<std::string::String>,
@@ -19,19 +19,19 @@ pub struct PrivateLinkConfig  {
 }
 impl PrivateLinkConfig {
     /// <p>The ID of the VPC endpoint that is configured for an agent. An agent that is configured with a VPC endpoint will not be accessible over the public internet.</p>
-    pub fn vpc_endpoint_id(&self) -> std::option::Option<& str> {
+    pub fn vpc_endpoint_id(&self) -> std::option::Option<&str> {
         self.vpc_endpoint_id.as_deref()
     }
     /// <p>The private endpoint that is configured for an agent that has access to IP addresses in a <a href="https://docs.aws.amazon.com/vpc/latest/userguide/endpoint-service.html">PrivateLink</a>. An agent that is configured with this endpoint will not be accessible over the public internet.</p>
-    pub fn private_link_endpoint(&self) -> std::option::Option<& str> {
+    pub fn private_link_endpoint(&self) -> std::option::Option<&str> {
         self.private_link_endpoint.as_deref()
     }
     /// <p>The Amazon Resource Names (ARNs) of the subnets that are configured for an agent activated in a VPC or an agent that has access to a VPC endpoint.</p>
-    pub fn subnet_arns(&self) -> std::option::Option<& [std::string::String]> {
+    pub fn subnet_arns(&self) -> std::option::Option<&[std::string::String]> {
         self.subnet_arns.as_deref()
     }
     /// <p>The Amazon Resource Names (ARNs) of the security groups that are configured for the EC2 resource that hosts an agent activated in a VPC or an agent that has access to a VPC endpoint.</p>
-    pub fn security_group_arns(&self) -> std::option::Option<& [std::string::String]> {
+    pub fn security_group_arns(&self) -> std::option::Option<&[std::string::String]> {
         self.security_group_arns.as_deref()
     }
 }
@@ -59,7 +59,8 @@ impl PrivateLinkConfigBuilder {
     }
     /// <p>The ID of the VPC endpoint that is configured for an agent. An agent that is configured with a VPC endpoint will not be accessible over the public internet.</p>
     pub fn set_vpc_endpoint_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.vpc_endpoint_id = input; self
+        self.vpc_endpoint_id = input;
+        self
     }
     /// <p>The private endpoint that is configured for an agent that has access to IP addresses in a <a href="https://docs.aws.amazon.com/vpc/latest/userguide/endpoint-service.html">PrivateLink</a>. An agent that is configured with this endpoint will not be accessible over the public internet.</p>
     pub fn private_link_endpoint(mut self, input: impl Into<std::string::String>) -> Self {
@@ -67,8 +68,12 @@ impl PrivateLinkConfigBuilder {
         self
     }
     /// <p>The private endpoint that is configured for an agent that has access to IP addresses in a <a href="https://docs.aws.amazon.com/vpc/latest/userguide/endpoint-service.html">PrivateLink</a>. An agent that is configured with this endpoint will not be accessible over the public internet.</p>
-    pub fn set_private_link_endpoint(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.private_link_endpoint = input; self
+    pub fn set_private_link_endpoint(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.private_link_endpoint = input;
+        self
     }
     /// Appends an item to `subnet_arns`.
     ///
@@ -77,13 +82,17 @@ impl PrivateLinkConfigBuilder {
     /// <p>The Amazon Resource Names (ARNs) of the subnets that are configured for an agent activated in a VPC or an agent that has access to a VPC endpoint.</p>
     pub fn subnet_arns(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.subnet_arns.unwrap_or_default();
-                        v.push(input.into());
-                        self.subnet_arns = Some(v);
-                        self
+        v.push(input.into());
+        self.subnet_arns = Some(v);
+        self
     }
     /// <p>The Amazon Resource Names (ARNs) of the subnets that are configured for an agent activated in a VPC or an agent that has access to a VPC endpoint.</p>
-    pub fn set_subnet_arns(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-        self.subnet_arns = input; self
+    pub fn set_subnet_arns(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
+        self.subnet_arns = input;
+        self
     }
     /// Appends an item to `security_group_arns`.
     ///
@@ -92,26 +101,25 @@ impl PrivateLinkConfigBuilder {
     /// <p>The Amazon Resource Names (ARNs) of the security groups that are configured for the EC2 resource that hosts an agent activated in a VPC or an agent that has access to a VPC endpoint.</p>
     pub fn security_group_arns(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.security_group_arns.unwrap_or_default();
-                        v.push(input.into());
-                        self.security_group_arns = Some(v);
-                        self
+        v.push(input.into());
+        self.security_group_arns = Some(v);
+        self
     }
     /// <p>The Amazon Resource Names (ARNs) of the security groups that are configured for the EC2 resource that hosts an agent activated in a VPC or an agent that has access to a VPC endpoint.</p>
-    pub fn set_security_group_arns(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-        self.security_group_arns = input; self
+    pub fn set_security_group_arns(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
+        self.security_group_arns = input;
+        self
     }
     /// Consumes the builder and constructs a [`PrivateLinkConfig`](crate::types::PrivateLinkConfig).
     pub fn build(self) -> crate::types::PrivateLinkConfig {
         crate::types::PrivateLinkConfig {
-            vpc_endpoint_id: self.vpc_endpoint_id
-            ,
-            private_link_endpoint: self.private_link_endpoint
-            ,
-            subnet_arns: self.subnet_arns
-            ,
-            security_group_arns: self.security_group_arns
-            ,
+            vpc_endpoint_id: self.vpc_endpoint_id,
+            private_link_endpoint: self.private_link_endpoint,
+            subnet_arns: self.subnet_arns,
+            security_group_arns: self.security_group_arns,
         }
     }
 }
-

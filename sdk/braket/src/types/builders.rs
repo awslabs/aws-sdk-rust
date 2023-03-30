@@ -34,4 +34,3 @@ pub use crate::types::_job_event_details::JobEventDetailsBuilder;
 pub use crate::types::_device_summary::DeviceSummaryBuilder;
 
 pub use crate::types::_search_devices_filter::SearchDevicesFilterBuilder;
-

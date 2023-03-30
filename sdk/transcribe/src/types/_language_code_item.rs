@@ -3,7 +3,7 @@
 /// <p>Provides information on the speech contained in a discreet utterance when multi-language identification is enabled in your request. This utterance represents a block of speech consisting of one language, preceded or followed by a block of speech in a different language.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct LanguageCodeItem  {
+pub struct LanguageCodeItem {
     /// <p>Provides the language code for each language identified in your media.</p>
     #[doc(hidden)]
     pub language_code: std::option::Option<crate::types::LanguageCode>,
@@ -13,7 +13,7 @@ pub struct LanguageCodeItem  {
 }
 impl LanguageCodeItem {
     /// <p>Provides the language code for each language identified in your media.</p>
-    pub fn language_code(&self) -> std::option::Option<& crate::types::LanguageCode> {
+    pub fn language_code(&self) -> std::option::Option<&crate::types::LanguageCode> {
         self.language_code.as_ref()
     }
     /// <p>Provides the total time, in seconds, each identified language is spoken in your media.</p>
@@ -42,8 +42,12 @@ impl LanguageCodeItemBuilder {
         self
     }
     /// <p>Provides the language code for each language identified in your media.</p>
-    pub fn set_language_code(mut self, input: std::option::Option<crate::types::LanguageCode>) -> Self {
-        self.language_code = input; self
+    pub fn set_language_code(
+        mut self,
+        input: std::option::Option<crate::types::LanguageCode>,
+    ) -> Self {
+        self.language_code = input;
+        self
     }
     /// <p>Provides the total time, in seconds, each identified language is spoken in your media.</p>
     pub fn duration_in_seconds(mut self, input: f32) -> Self {
@@ -52,16 +56,14 @@ impl LanguageCodeItemBuilder {
     }
     /// <p>Provides the total time, in seconds, each identified language is spoken in your media.</p>
     pub fn set_duration_in_seconds(mut self, input: std::option::Option<f32>) -> Self {
-        self.duration_in_seconds = input; self
+        self.duration_in_seconds = input;
+        self
     }
     /// Consumes the builder and constructs a [`LanguageCodeItem`](crate::types::LanguageCodeItem).
     pub fn build(self) -> crate::types::LanguageCodeItem {
         crate::types::LanguageCodeItem {
-            language_code: self.language_code
-            ,
-            duration_in_seconds: self.duration_in_seconds
-            ,
+            language_code: self.language_code,
+            duration_in_seconds: self.duration_in_seconds,
         }
     }
 }
-

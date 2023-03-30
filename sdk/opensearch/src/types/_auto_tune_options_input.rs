@@ -3,21 +3,24 @@
 /// <p>Options for configuring Auto-Tune. For more information, see <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/auto-tune.html">Auto-Tune for Amazon OpenSearch Service</a>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AutoTuneOptionsInput  {
+pub struct AutoTuneOptionsInput {
     /// <p>Whether Auto-Tune is enabled or disabled.</p>
     #[doc(hidden)]
     pub desired_state: std::option::Option<crate::types::AutoTuneDesiredState>,
     /// <p>A list of maintenance schedules during which Auto-Tune can deploy changes. Maintenance schedules are overwrite, not append. If your request includes no schedules, the request deletes all existing schedules. To preserve existing schedules, make a call to <code>DescribeDomainConfig</code> first and use the <code>MaintenanceSchedules</code> portion of the response as the basis for this section.</p>
     #[doc(hidden)]
-    pub maintenance_schedules: std::option::Option<std::vec::Vec<crate::types::AutoTuneMaintenanceSchedule>>,
+    pub maintenance_schedules:
+        std::option::Option<std::vec::Vec<crate::types::AutoTuneMaintenanceSchedule>>,
 }
 impl AutoTuneOptionsInput {
     /// <p>Whether Auto-Tune is enabled or disabled.</p>
-    pub fn desired_state(&self) -> std::option::Option<& crate::types::AutoTuneDesiredState> {
+    pub fn desired_state(&self) -> std::option::Option<&crate::types::AutoTuneDesiredState> {
         self.desired_state.as_ref()
     }
     /// <p>A list of maintenance schedules during which Auto-Tune can deploy changes. Maintenance schedules are overwrite, not append. If your request includes no schedules, the request deletes all existing schedules. To preserve existing schedules, make a call to <code>DescribeDomainConfig</code> first and use the <code>MaintenanceSchedules</code> portion of the response as the basis for this section.</p>
-    pub fn maintenance_schedules(&self) -> std::option::Option<& [crate::types::AutoTuneMaintenanceSchedule]> {
+    pub fn maintenance_schedules(
+        &self,
+    ) -> std::option::Option<&[crate::types::AutoTuneMaintenanceSchedule]> {
         self.maintenance_schedules.as_deref()
     }
 }
@@ -33,7 +36,8 @@ impl AutoTuneOptionsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct AutoTuneOptionsInputBuilder {
     pub(crate) desired_state: std::option::Option<crate::types::AutoTuneDesiredState>,
-    pub(crate) maintenance_schedules: std::option::Option<std::vec::Vec<crate::types::AutoTuneMaintenanceSchedule>>,
+    pub(crate) maintenance_schedules:
+        std::option::Option<std::vec::Vec<crate::types::AutoTuneMaintenanceSchedule>>,
 }
 impl AutoTuneOptionsInputBuilder {
     /// <p>Whether Auto-Tune is enabled or disabled.</p>
@@ -42,32 +46,40 @@ impl AutoTuneOptionsInputBuilder {
         self
     }
     /// <p>Whether Auto-Tune is enabled or disabled.</p>
-    pub fn set_desired_state(mut self, input: std::option::Option<crate::types::AutoTuneDesiredState>) -> Self {
-        self.desired_state = input; self
+    pub fn set_desired_state(
+        mut self,
+        input: std::option::Option<crate::types::AutoTuneDesiredState>,
+    ) -> Self {
+        self.desired_state = input;
+        self
     }
     /// Appends an item to `maintenance_schedules`.
     ///
     /// To override the contents of this collection use [`set_maintenance_schedules`](Self::set_maintenance_schedules).
     ///
     /// <p>A list of maintenance schedules during which Auto-Tune can deploy changes. Maintenance schedules are overwrite, not append. If your request includes no schedules, the request deletes all existing schedules. To preserve existing schedules, make a call to <code>DescribeDomainConfig</code> first and use the <code>MaintenanceSchedules</code> portion of the response as the basis for this section.</p>
-    pub fn maintenance_schedules(mut self, input: crate::types::AutoTuneMaintenanceSchedule) -> Self {
+    pub fn maintenance_schedules(
+        mut self,
+        input: crate::types::AutoTuneMaintenanceSchedule,
+    ) -> Self {
         let mut v = self.maintenance_schedules.unwrap_or_default();
-                        v.push(input);
-                        self.maintenance_schedules = Some(v);
-                        self
+        v.push(input);
+        self.maintenance_schedules = Some(v);
+        self
     }
     /// <p>A list of maintenance schedules during which Auto-Tune can deploy changes. Maintenance schedules are overwrite, not append. If your request includes no schedules, the request deletes all existing schedules. To preserve existing schedules, make a call to <code>DescribeDomainConfig</code> first and use the <code>MaintenanceSchedules</code> portion of the response as the basis for this section.</p>
-    pub fn set_maintenance_schedules(mut self, input: std::option::Option<std::vec::Vec<crate::types::AutoTuneMaintenanceSchedule>>) -> Self {
-        self.maintenance_schedules = input; self
+    pub fn set_maintenance_schedules(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::AutoTuneMaintenanceSchedule>>,
+    ) -> Self {
+        self.maintenance_schedules = input;
+        self
     }
     /// Consumes the builder and constructs a [`AutoTuneOptionsInput`](crate::types::AutoTuneOptionsInput).
     pub fn build(self) -> crate::types::AutoTuneOptionsInput {
         crate::types::AutoTuneOptionsInput {
-            desired_state: self.desired_state
-            ,
-            maintenance_schedules: self.maintenance_schedules
-            ,
+            desired_state: self.desired_state,
+            maintenance_schedules: self.maintenance_schedules,
         }
     }
 }
-

@@ -2,20 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateRealtimeEndpointInput  {
+pub struct CreateRealtimeEndpointInput {
     /// <p>The ID assigned to the <code>MLModel</code> during creation.</p>
     #[doc(hidden)]
     pub ml_model_id: std::option::Option<std::string::String>,
 }
 impl CreateRealtimeEndpointInput {
     /// <p>The ID assigned to the <code>MLModel</code> during creation.</p>
-    pub fn ml_model_id(&self) -> std::option::Option<& str> {
+    pub fn ml_model_id(&self) -> std::option::Option<&str> {
         self.ml_model_id.as_deref()
     }
 }
 impl CreateRealtimeEndpointInput {
     /// Creates a new builder-style object to manufacture [`CreateRealtimeEndpointInput`](crate::operation::create_realtime_endpoint::CreateRealtimeEndpointInput).
-    pub fn builder() -> crate::operation::create_realtime_endpoint::builders::CreateRealtimeEndpointInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::create_realtime_endpoint::builders::CreateRealtimeEndpointInputBuilder
+    {
         crate::operation::create_realtime_endpoint::builders::CreateRealtimeEndpointInputBuilder::default()
     }
 }
@@ -34,16 +36,20 @@ impl CreateRealtimeEndpointInputBuilder {
     }
     /// <p>The ID assigned to the <code>MLModel</code> during creation.</p>
     pub fn set_ml_model_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.ml_model_id = input; self
+        self.ml_model_id = input;
+        self
     }
     /// Consumes the builder and constructs a [`CreateRealtimeEndpointInput`](crate::operation::create_realtime_endpoint::CreateRealtimeEndpointInput).
-    pub fn build(self) -> Result<crate::operation::create_realtime_endpoint::CreateRealtimeEndpointInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::create_realtime_endpoint::CreateRealtimeEndpointInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::create_realtime_endpoint::CreateRealtimeEndpointInput {
-                ml_model_id: self.ml_model_id
-                ,
-            }
+                ml_model_id: self.ml_model_id,
+            },
         )
     }
 }
-

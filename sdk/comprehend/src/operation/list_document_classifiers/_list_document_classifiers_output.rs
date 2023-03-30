@@ -2,10 +2,11 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListDocumentClassifiersOutput  {
+pub struct ListDocumentClassifiersOutput {
     /// <p>A list containing the properties of each job returned.</p>
     #[doc(hidden)]
-    pub document_classifier_properties_list: std::option::Option<std::vec::Vec<crate::types::DocumentClassifierProperties>>,
+    pub document_classifier_properties_list:
+        std::option::Option<std::vec::Vec<crate::types::DocumentClassifierProperties>>,
     /// <p>Identifies the next page of results to return.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
@@ -13,22 +14,26 @@ pub struct ListDocumentClassifiersOutput  {
 }
 impl ListDocumentClassifiersOutput {
     /// <p>A list containing the properties of each job returned.</p>
-    pub fn document_classifier_properties_list(&self) -> std::option::Option<& [crate::types::DocumentClassifierProperties]> {
+    pub fn document_classifier_properties_list(
+        &self,
+    ) -> std::option::Option<&[crate::types::DocumentClassifierProperties]> {
         self.document_classifier_properties_list.as_deref()
     }
     /// <p>Identifies the next page of results to return.</p>
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for ListDocumentClassifiersOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl ListDocumentClassifiersOutput {
     /// Creates a new builder-style object to manufacture [`ListDocumentClassifiersOutput`](crate::operation::list_document_classifiers::ListDocumentClassifiersOutput).
-    pub fn builder() -> crate::operation::list_document_classifiers::builders::ListDocumentClassifiersOutputBuilder {
+    pub fn builder(
+    ) -> crate::operation::list_document_classifiers::builders::ListDocumentClassifiersOutputBuilder
+    {
         crate::operation::list_document_classifiers::builders::ListDocumentClassifiersOutputBuilder::default()
     }
 }
@@ -37,7 +42,8 @@ impl ListDocumentClassifiersOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct ListDocumentClassifiersOutputBuilder {
-    pub(crate) document_classifier_properties_list: std::option::Option<std::vec::Vec<crate::types::DocumentClassifierProperties>>,
+    pub(crate) document_classifier_properties_list:
+        std::option::Option<std::vec::Vec<crate::types::DocumentClassifierProperties>>,
     pub(crate) next_token: std::option::Option<std::string::String>,
     _request_id: Option<String>,
 }
@@ -47,15 +53,22 @@ impl ListDocumentClassifiersOutputBuilder {
     /// To override the contents of this collection use [`set_document_classifier_properties_list`](Self::set_document_classifier_properties_list).
     ///
     /// <p>A list containing the properties of each job returned.</p>
-    pub fn document_classifier_properties_list(mut self, input: crate::types::DocumentClassifierProperties) -> Self {
+    pub fn document_classifier_properties_list(
+        mut self,
+        input: crate::types::DocumentClassifierProperties,
+    ) -> Self {
         let mut v = self.document_classifier_properties_list.unwrap_or_default();
-                        v.push(input);
-                        self.document_classifier_properties_list = Some(v);
-                        self
+        v.push(input);
+        self.document_classifier_properties_list = Some(v);
+        self
     }
     /// <p>A list containing the properties of each job returned.</p>
-    pub fn set_document_classifier_properties_list(mut self, input: std::option::Option<std::vec::Vec<crate::types::DocumentClassifierProperties>>) -> Self {
-        self.document_classifier_properties_list = input; self
+    pub fn set_document_classifier_properties_list(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::DocumentClassifierProperties>>,
+    ) -> Self {
+        self.document_classifier_properties_list = input;
+        self
     }
     /// <p>Identifies the next page of results to return.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -64,26 +77,26 @@ impl ListDocumentClassifiersOutputBuilder {
     }
     /// <p>Identifies the next page of results to return.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input; self
+        self.next_token = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`ListDocumentClassifiersOutput`](crate::operation::list_document_classifiers::ListDocumentClassifiersOutput).
-    pub fn build(self) -> crate::operation::list_document_classifiers::ListDocumentClassifiersOutput {
+    pub fn build(
+        self,
+    ) -> crate::operation::list_document_classifiers::ListDocumentClassifiersOutput {
         crate::operation::list_document_classifiers::ListDocumentClassifiersOutput {
-            document_classifier_properties_list: self.document_classifier_properties_list
-            ,
-            next_token: self.next_token
-            ,
+            document_classifier_properties_list: self.document_classifier_properties_list,
+            next_token: self.next_token,
             _request_id: self._request_id,
         }
     }
 }
-

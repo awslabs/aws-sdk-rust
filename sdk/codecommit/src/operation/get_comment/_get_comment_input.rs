@@ -2,14 +2,14 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetCommentInput  {
+pub struct GetCommentInput {
     /// <p>The unique, system-generated ID of the comment. To get this ID, use <code>GetCommentsForComparedCommit</code> or <code>GetCommentsForPullRequest</code>.</p>
     #[doc(hidden)]
     pub comment_id: std::option::Option<std::string::String>,
 }
 impl GetCommentInput {
     /// <p>The unique, system-generated ID of the comment. To get this ID, use <code>GetCommentsForComparedCommit</code> or <code>GetCommentsForPullRequest</code>.</p>
-    pub fn comment_id(&self) -> std::option::Option<& str> {
+    pub fn comment_id(&self) -> std::option::Option<&str> {
         self.comment_id.as_deref()
     }
 }
@@ -34,16 +34,18 @@ impl GetCommentInputBuilder {
     }
     /// <p>The unique, system-generated ID of the comment. To get this ID, use <code>GetCommentsForComparedCommit</code> or <code>GetCommentsForPullRequest</code>.</p>
     pub fn set_comment_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.comment_id = input; self
+        self.comment_id = input;
+        self
     }
     /// Consumes the builder and constructs a [`GetCommentInput`](crate::operation::get_comment::GetCommentInput).
-    pub fn build(self) -> Result<crate::operation::get_comment::GetCommentInput, aws_smithy_http::operation::error::BuildError> {
-        Ok(
-            crate::operation::get_comment::GetCommentInput {
-                comment_id: self.comment_id
-                ,
-            }
-        )
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::get_comment::GetCommentInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        Ok(crate::operation::get_comment::GetCommentInput {
+            comment_id: self.comment_id,
+        })
     }
 }
-

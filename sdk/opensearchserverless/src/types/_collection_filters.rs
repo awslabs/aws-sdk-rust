@@ -3,7 +3,7 @@
 /// <p>List of filter keys that you can use for LIST, UPDATE, and DELETE requests to OpenSearch Serverless collections.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CollectionFilters  {
+pub struct CollectionFilters {
     /// <p>The name of the collection.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -13,11 +13,11 @@ pub struct CollectionFilters  {
 }
 impl CollectionFilters {
     /// <p>The name of the collection.</p>
-    pub fn name(&self) -> std::option::Option<& str> {
+    pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>The current status of the collection.</p>
-    pub fn status(&self) -> std::option::Option<& crate::types::CollectionStatus> {
+    pub fn status(&self) -> std::option::Option<&crate::types::CollectionStatus> {
         self.status.as_ref()
     }
 }
@@ -43,7 +43,8 @@ impl CollectionFiltersBuilder {
     }
     /// <p>The name of the collection.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input; self
+        self.name = input;
+        self
     }
     /// <p>The current status of the collection.</p>
     pub fn status(mut self, input: crate::types::CollectionStatus) -> Self {
@@ -51,17 +52,18 @@ impl CollectionFiltersBuilder {
         self
     }
     /// <p>The current status of the collection.</p>
-    pub fn set_status(mut self, input: std::option::Option<crate::types::CollectionStatus>) -> Self {
-        self.status = input; self
+    pub fn set_status(
+        mut self,
+        input: std::option::Option<crate::types::CollectionStatus>,
+    ) -> Self {
+        self.status = input;
+        self
     }
     /// Consumes the builder and constructs a [`CollectionFilters`](crate::types::CollectionFilters).
     pub fn build(self) -> crate::types::CollectionFilters {
         crate::types::CollectionFilters {
-            name: self.name
-            ,
-            status: self.status
-            ,
+            name: self.name,
+            status: self.status,
         }
     }
 }
-

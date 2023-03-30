@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateModelCardExportJobInput  {
+pub struct CreateModelCardExportJobInput {
     /// <p>The name of the model card to export.</p>
     #[doc(hidden)]
     pub model_card_name: std::option::Option<std::string::String>,
@@ -18,7 +18,7 @@ pub struct CreateModelCardExportJobInput  {
 }
 impl CreateModelCardExportJobInput {
     /// <p>The name of the model card to export.</p>
-    pub fn model_card_name(&self) -> std::option::Option<& str> {
+    pub fn model_card_name(&self) -> std::option::Option<&str> {
         self.model_card_name.as_deref()
     }
     /// <p>The version of the model card to export. If a version is not provided, then the latest version of the model card is exported.</p>
@@ -26,17 +26,17 @@ impl CreateModelCardExportJobInput {
         self.model_card_version
     }
     /// <p>The name of the model card export job.</p>
-    pub fn model_card_export_job_name(&self) -> std::option::Option<& str> {
+    pub fn model_card_export_job_name(&self) -> std::option::Option<&str> {
         self.model_card_export_job_name.as_deref()
     }
     /// <p>The model card output configuration that specifies the Amazon S3 path for exporting.</p>
-    pub fn output_config(&self) -> std::option::Option<& crate::types::ModelCardExportOutputConfig> {
+    pub fn output_config(&self) -> std::option::Option<&crate::types::ModelCardExportOutputConfig> {
         self.output_config.as_ref()
     }
 }
 impl CreateModelCardExportJobInput {
     /// Creates a new builder-style object to manufacture [`CreateModelCardExportJobInput`](crate::operation::create_model_card_export_job::CreateModelCardExportJobInput).
-    pub fn builder() -> crate::operation::create_model_card_export_job::builders::CreateModelCardExportJobInputBuilder {
+    pub fn builder() -> crate::operation::create_model_card_export_job::builders::CreateModelCardExportJobInputBuilder{
         crate::operation::create_model_card_export_job::builders::CreateModelCardExportJobInputBuilder::default()
     }
 }
@@ -58,7 +58,8 @@ impl CreateModelCardExportJobInputBuilder {
     }
     /// <p>The name of the model card to export.</p>
     pub fn set_model_card_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.model_card_name = input; self
+        self.model_card_name = input;
+        self
     }
     /// <p>The version of the model card to export. If a version is not provided, then the latest version of the model card is exported.</p>
     pub fn model_card_version(mut self, input: i32) -> Self {
@@ -67,7 +68,8 @@ impl CreateModelCardExportJobInputBuilder {
     }
     /// <p>The version of the model card to export. If a version is not provided, then the latest version of the model card is exported.</p>
     pub fn set_model_card_version(mut self, input: std::option::Option<i32>) -> Self {
-        self.model_card_version = input; self
+        self.model_card_version = input;
+        self
     }
     /// <p>The name of the model card export job.</p>
     pub fn model_card_export_job_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -75,8 +77,12 @@ impl CreateModelCardExportJobInputBuilder {
         self
     }
     /// <p>The name of the model card export job.</p>
-    pub fn set_model_card_export_job_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.model_card_export_job_name = input; self
+    pub fn set_model_card_export_job_name(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.model_card_export_job_name = input;
+        self
     }
     /// <p>The model card output configuration that specifies the Amazon S3 path for exporting.</p>
     pub fn output_config(mut self, input: crate::types::ModelCardExportOutputConfig) -> Self {
@@ -84,24 +90,27 @@ impl CreateModelCardExportJobInputBuilder {
         self
     }
     /// <p>The model card output configuration that specifies the Amazon S3 path for exporting.</p>
-    pub fn set_output_config(mut self, input: std::option::Option<crate::types::ModelCardExportOutputConfig>) -> Self {
-        self.output_config = input; self
+    pub fn set_output_config(
+        mut self,
+        input: std::option::Option<crate::types::ModelCardExportOutputConfig>,
+    ) -> Self {
+        self.output_config = input;
+        self
     }
     /// Consumes the builder and constructs a [`CreateModelCardExportJobInput`](crate::operation::create_model_card_export_job::CreateModelCardExportJobInput).
-    pub fn build(self) -> Result<crate::operation::create_model_card_export_job::CreateModelCardExportJobInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::create_model_card_export_job::CreateModelCardExportJobInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::create_model_card_export_job::CreateModelCardExportJobInput {
-                model_card_name: self.model_card_name
-                ,
-                model_card_version: self.model_card_version
-                    .unwrap_or_default()
-                ,
-                model_card_export_job_name: self.model_card_export_job_name
-                ,
-                output_config: self.output_config
-                ,
-            }
+                model_card_name: self.model_card_name,
+                model_card_version: self.model_card_version.unwrap_or_default(),
+                model_card_export_job_name: self.model_card_export_job_name,
+                output_config: self.output_config,
+            },
         )
     }
 }
-

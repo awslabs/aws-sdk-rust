@@ -4,55 +4,78 @@ pub use crate::operation::get_change_logs::_get_change_logs_output::GetChangeLog
 pub use crate::operation::get_change_logs::_get_change_logs_input::GetChangeLogsInputBuilder;
 
 /// Fluent builder constructing a request to `GetChangeLogs`.
-/// 
+///
 /// <p> Returns a list of changelogs from Audit Manager. </p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct GetChangeLogsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::get_change_logs::builders::GetChangeLogsInputBuilder
-            }
-impl GetChangeLogsFluentBuilder  {
+    handle: std::sync::Arc<crate::client::Handle>,
+    inner: crate::operation::get_change_logs::builders::GetChangeLogsInputBuilder,
+}
+impl GetChangeLogsFluentBuilder {
     /// Creates a new `GetChangeLogs`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
-                    /// sent. The operation's inner [http::Request] can be modified as well.
-                    pub async fn customize(self) -> std::result::Result<
-                        crate::client::customize::CustomizableOperation<crate::operation::get_change_logs::GetChangeLogs, aws_http::retry::AwsResponseRetryClassifier,>,
-                        aws_smithy_http::result::SdkError<crate::operation::get_change_logs::GetChangeLogsError>
-                    >  {
-                        let handle = self.handle.clone();
-                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-                    }
-    
-                    /// Sends the request and returns the response.
-                    ///
-                    /// If an error occurs, an `SdkError` will be returned with additional details that
-                    /// can be matched against.
-                    ///
-                    /// By default, any retryable failures will be retried twice. Retry behavior
-                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                    /// set when configuring the client.
-                    pub async fn send(self) -> std::result::Result<crate::operation::get_change_logs::GetChangeLogsOutput, aws_smithy_http::result::SdkError<crate::operation::get_change_logs::GetChangeLogsError>>
-                     {
-                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&self.handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        self.handle.client.call(op).await
-                    }
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle,
+            inner: Default::default(),
+        }
+    }
+
+    /// Consume this builder, creating a customizable operation that can be modified before being
+    /// sent. The operation's inner [http::Request] can be modified as well.
+    pub async fn customize(
+        self,
+    ) -> std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::get_change_logs::GetChangeLogs,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::result::SdkError<crate::operation::get_change_logs::GetChangeLogsError>,
+    > {
+        let handle = self.handle.clone();
+        let operation = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+    }
+
+    /// Sends the request and returns the response.
+    ///
+    /// If an error occurs, an `SdkError` will be returned with additional details that
+    /// can be matched against.
+    ///
+    /// By default, any retryable failures will be retried twice. Retry behavior
+    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+    /// set when configuring the client.
+    pub async fn send(
+        self,
+    ) -> std::result::Result<
+        crate::operation::get_change_logs::GetChangeLogsOutput,
+        aws_smithy_http::result::SdkError<crate::operation::get_change_logs::GetChangeLogsError>,
+    > {
+        let op = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&self.handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        self.handle.client.call(op).await
+    }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::get_change_logs::paginator::GetChangeLogsPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::get_change_logs::paginator::GetChangeLogsPaginator {
-                            crate::operation::get_change_logs::paginator::GetChangeLogsPaginator::new(self.handle, self.inner)
-                        }
+    ///
+    /// Paginators are used by calling [`send().await`](crate::operation::get_change_logs::paginator::GetChangeLogsPaginator::send) which returns a `Stream`.
+    pub fn into_paginator(
+        self,
+    ) -> crate::operation::get_change_logs::paginator::GetChangeLogsPaginator {
+        crate::operation::get_change_logs::paginator::GetChangeLogsPaginator::new(
+            self.handle,
+            self.inner,
+        )
+    }
     /// <p>The unique identifier for the assessment. </p>
     pub fn assessment_id(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.assessment_id(input.into());
@@ -104,4 +127,3 @@ impl GetChangeLogsFluentBuilder  {
         self
     }
 }
-

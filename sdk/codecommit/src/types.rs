@@ -288,4 +288,3 @@ pub mod builders;
 
 /// Error types that AWS CodeCommit can respond with.
 pub mod error;
-

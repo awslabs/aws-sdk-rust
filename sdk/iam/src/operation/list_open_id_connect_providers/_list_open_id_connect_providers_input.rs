@@ -2,11 +2,10 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListOpenIdConnectProvidersInput  {
-}
+pub struct ListOpenIdConnectProvidersInput {}
 impl ListOpenIdConnectProvidersInput {
     /// Creates a new builder-style object to manufacture [`ListOpenIdConnectProvidersInput`](crate::operation::list_open_id_connect_providers::ListOpenIdConnectProvidersInput).
-    pub fn builder() -> crate::operation::list_open_id_connect_providers::builders::ListOpenIdConnectProvidersInputBuilder {
+    pub fn builder() -> crate::operation::list_open_id_connect_providers::builders::ListOpenIdConnectProvidersInputBuilder{
         crate::operation::list_open_id_connect_providers::builders::ListOpenIdConnectProvidersInputBuilder::default()
     }
 }
@@ -14,15 +13,15 @@ impl ListOpenIdConnectProvidersInput {
 /// A builder for [`ListOpenIdConnectProvidersInput`](crate::operation::list_open_id_connect_providers::ListOpenIdConnectProvidersInput).
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-pub struct ListOpenIdConnectProvidersInputBuilder {
-}
+pub struct ListOpenIdConnectProvidersInputBuilder {}
 impl ListOpenIdConnectProvidersInputBuilder {
     /// Consumes the builder and constructs a [`ListOpenIdConnectProvidersInput`](crate::operation::list_open_id_connect_providers::ListOpenIdConnectProvidersInput).
-    pub fn build(self) -> Result<crate::operation::list_open_id_connect_providers::ListOpenIdConnectProvidersInput, aws_smithy_http::operation::error::BuildError> {
-        Ok(
-            crate::operation::list_open_id_connect_providers::ListOpenIdConnectProvidersInput {
-            }
-        )
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::list_open_id_connect_providers::ListOpenIdConnectProvidersInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        Ok(crate::operation::list_open_id_connect_providers::ListOpenIdConnectProvidersInput {})
     }
 }
-

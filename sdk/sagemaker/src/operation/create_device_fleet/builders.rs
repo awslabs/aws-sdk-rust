@@ -4,56 +4,81 @@ pub use crate::operation::create_device_fleet::_create_device_fleet_output::Crea
 pub use crate::operation::create_device_fleet::_create_device_fleet_input::CreateDeviceFleetInputBuilder;
 
 /// Fluent builder constructing a request to `CreateDeviceFleet`.
-/// 
+///
 /// <p>Creates a device fleet.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct CreateDeviceFleetFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::create_device_fleet::builders::CreateDeviceFleetInputBuilder
-            }
-impl CreateDeviceFleetFluentBuilder  {
+    handle: std::sync::Arc<crate::client::Handle>,
+    inner: crate::operation::create_device_fleet::builders::CreateDeviceFleetInputBuilder,
+}
+impl CreateDeviceFleetFluentBuilder {
     /// Creates a new `CreateDeviceFleet`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
-                    /// sent. The operation's inner [http::Request] can be modified as well.
-                    pub async fn customize(self) -> std::result::Result<
-                        crate::client::customize::CustomizableOperation<crate::operation::create_device_fleet::CreateDeviceFleet, aws_http::retry::AwsResponseRetryClassifier,>,
-                        aws_smithy_http::result::SdkError<crate::operation::create_device_fleet::CreateDeviceFleetError>
-                    >  {
-                        let handle = self.handle.clone();
-                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-                    }
-    
-                    /// Sends the request and returns the response.
-                    ///
-                    /// If an error occurs, an `SdkError` will be returned with additional details that
-                    /// can be matched against.
-                    ///
-                    /// By default, any retryable failures will be retried twice. Retry behavior
-                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                    /// set when configuring the client.
-                    pub async fn send(self) -> std::result::Result<crate::operation::create_device_fleet::CreateDeviceFleetOutput, aws_smithy_http::result::SdkError<crate::operation::create_device_fleet::CreateDeviceFleetError>>
-                     {
-                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&self.handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        self.handle.client.call(op).await
-                    }
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle,
+            inner: Default::default(),
+        }
+    }
+
+    /// Consume this builder, creating a customizable operation that can be modified before being
+    /// sent. The operation's inner [http::Request] can be modified as well.
+    pub async fn customize(
+        self,
+    ) -> std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::create_device_fleet::CreateDeviceFleet,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::result::SdkError<
+            crate::operation::create_device_fleet::CreateDeviceFleetError,
+        >,
+    > {
+        let handle = self.handle.clone();
+        let operation = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+    }
+
+    /// Sends the request and returns the response.
+    ///
+    /// If an error occurs, an `SdkError` will be returned with additional details that
+    /// can be matched against.
+    ///
+    /// By default, any retryable failures will be retried twice. Retry behavior
+    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+    /// set when configuring the client.
+    pub async fn send(
+        self,
+    ) -> std::result::Result<
+        crate::operation::create_device_fleet::CreateDeviceFleetOutput,
+        aws_smithy_http::result::SdkError<
+            crate::operation::create_device_fleet::CreateDeviceFleetError,
+        >,
+    > {
+        let op = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&self.handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        self.handle.client.call(op).await
+    }
     /// <p>The name of the fleet that the device belongs to.</p>
     pub fn device_fleet_name(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.device_fleet_name(input.into());
         self
     }
     /// <p>The name of the fleet that the device belongs to.</p>
-    pub fn set_device_fleet_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_device_fleet_name(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_device_fleet_name(input);
         self
     }
@@ -83,7 +108,10 @@ impl CreateDeviceFleetFluentBuilder  {
         self
     }
     /// <p>The output configuration for storing sample data collected by the fleet.</p>
-    pub fn set_output_config(mut self, input: std::option::Option<crate::types::EdgeOutputConfig>) -> Self {
+    pub fn set_output_config(
+        mut self,
+        input: std::option::Option<crate::types::EdgeOutputConfig>,
+    ) -> Self {
         self.inner = self.inner.set_output_config(input);
         self
     }
@@ -97,21 +125,23 @@ impl CreateDeviceFleetFluentBuilder  {
         self
     }
     /// <p>Creates tags for the specified fleet.</p>
-    pub fn set_tags(mut self, input: std::option::Option<std::vec::Vec<crate::types::Tag>>) -> Self {
+    pub fn set_tags(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::Tag>>,
+    ) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }
-    /// <p>Whether to create an Amazon Web Services IoT Role Alias during device fleet creation. The name of the role alias generated will match this pattern: "SageMakerEdge-{DeviceFleetName}".</p> 
+    /// <p>Whether to create an Amazon Web Services IoT Role Alias during device fleet creation. The name of the role alias generated will match this pattern: "SageMakerEdge-{DeviceFleetName}".</p>
     /// <p>For example, if your device fleet is called "demo-fleet", the name of the role alias will be "SageMakerEdge-demo-fleet".</p>
     pub fn enable_iot_role_alias(mut self, input: bool) -> Self {
         self.inner = self.inner.enable_iot_role_alias(input);
         self
     }
-    /// <p>Whether to create an Amazon Web Services IoT Role Alias during device fleet creation. The name of the role alias generated will match this pattern: "SageMakerEdge-{DeviceFleetName}".</p> 
+    /// <p>Whether to create an Amazon Web Services IoT Role Alias during device fleet creation. The name of the role alias generated will match this pattern: "SageMakerEdge-{DeviceFleetName}".</p>
     /// <p>For example, if your device fleet is called "demo-fleet", the name of the role alias will be "SageMakerEdge-demo-fleet".</p>
     pub fn set_enable_iot_role_alias(mut self, input: std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_enable_iot_role_alias(input);
         self
     }
 }
-

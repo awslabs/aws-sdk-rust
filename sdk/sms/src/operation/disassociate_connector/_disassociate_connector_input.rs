@@ -2,20 +2,21 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DisassociateConnectorInput  {
+pub struct DisassociateConnectorInput {
     /// <p>The ID of the connector.</p>
     #[doc(hidden)]
     pub connector_id: std::option::Option<std::string::String>,
 }
 impl DisassociateConnectorInput {
     /// <p>The ID of the connector.</p>
-    pub fn connector_id(&self) -> std::option::Option<& str> {
+    pub fn connector_id(&self) -> std::option::Option<&str> {
         self.connector_id.as_deref()
     }
 }
 impl DisassociateConnectorInput {
     /// Creates a new builder-style object to manufacture [`DisassociateConnectorInput`](crate::operation::disassociate_connector::DisassociateConnectorInput).
-    pub fn builder() -> crate::operation::disassociate_connector::builders::DisassociateConnectorInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::disassociate_connector::builders::DisassociateConnectorInputBuilder {
         crate::operation::disassociate_connector::builders::DisassociateConnectorInputBuilder::default()
     }
 }
@@ -34,16 +35,20 @@ impl DisassociateConnectorInputBuilder {
     }
     /// <p>The ID of the connector.</p>
     pub fn set_connector_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.connector_id = input; self
+        self.connector_id = input;
+        self
     }
     /// Consumes the builder and constructs a [`DisassociateConnectorInput`](crate::operation::disassociate_connector::DisassociateConnectorInput).
-    pub fn build(self) -> Result<crate::operation::disassociate_connector::DisassociateConnectorInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::disassociate_connector::DisassociateConnectorInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::disassociate_connector::DisassociateConnectorInput {
-                connector_id: self.connector_id
-                ,
-            }
+                connector_id: self.connector_id,
+            },
         )
     }
 }
-

@@ -12,4 +12,3 @@ pub mod list_endpoints;
 
 /// Types for the `ListSharedEndpoints` operation.
 pub mod list_shared_endpoints;
-

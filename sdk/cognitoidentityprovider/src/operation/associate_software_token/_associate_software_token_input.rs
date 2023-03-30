@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct AssociateSoftwareTokenInput  {
+pub struct AssociateSoftwareTokenInput {
     /// <p>A valid access token that Amazon Cognito issued to the user whose software token you want to generate.</p>
     #[doc(hidden)]
     pub access_token: std::option::Option<std::string::String>,
@@ -12,15 +12,15 @@ pub struct AssociateSoftwareTokenInput  {
 }
 impl AssociateSoftwareTokenInput {
     /// <p>A valid access token that Amazon Cognito issued to the user whose software token you want to generate.</p>
-    pub fn access_token(&self) -> std::option::Option<& str> {
+    pub fn access_token(&self) -> std::option::Option<&str> {
         self.access_token.as_deref()
     }
     /// <p>The session that should be passed both ways in challenge-response calls to the service. This allows authentication of the user as part of the MFA setup process.</p>
-    pub fn session(&self) -> std::option::Option<& str> {
+    pub fn session(&self) -> std::option::Option<&str> {
         self.session.as_deref()
     }
 }
-impl  std::fmt::Debug for AssociateSoftwareTokenInput  {
+impl std::fmt::Debug for AssociateSoftwareTokenInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("AssociateSoftwareTokenInput");
         formatter.field("access_token", &"*** Sensitive Data Redacted ***");
@@ -30,7 +30,9 @@ impl  std::fmt::Debug for AssociateSoftwareTokenInput  {
 }
 impl AssociateSoftwareTokenInput {
     /// Creates a new builder-style object to manufacture [`AssociateSoftwareTokenInput`](crate::operation::associate_software_token::AssociateSoftwareTokenInput).
-    pub fn builder() -> crate::operation::associate_software_token::builders::AssociateSoftwareTokenInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::associate_software_token::builders::AssociateSoftwareTokenInputBuilder
+    {
         crate::operation::associate_software_token::builders::AssociateSoftwareTokenInputBuilder::default()
     }
 }
@@ -50,7 +52,8 @@ impl AssociateSoftwareTokenInputBuilder {
     }
     /// <p>A valid access token that Amazon Cognito issued to the user whose software token you want to generate.</p>
     pub fn set_access_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.access_token = input; self
+        self.access_token = input;
+        self
     }
     /// <p>The session that should be passed both ways in challenge-response calls to the service. This allows authentication of the user as part of the MFA setup process.</p>
     pub fn session(mut self, input: impl Into<std::string::String>) -> Self {
@@ -59,17 +62,21 @@ impl AssociateSoftwareTokenInputBuilder {
     }
     /// <p>The session that should be passed both ways in challenge-response calls to the service. This allows authentication of the user as part of the MFA setup process.</p>
     pub fn set_session(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.session = input; self
+        self.session = input;
+        self
     }
     /// Consumes the builder and constructs a [`AssociateSoftwareTokenInput`](crate::operation::associate_software_token::AssociateSoftwareTokenInput).
-    pub fn build(self) -> Result<crate::operation::associate_software_token::AssociateSoftwareTokenInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::associate_software_token::AssociateSoftwareTokenInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::associate_software_token::AssociateSoftwareTokenInput {
-                access_token: self.access_token
-                ,
-                session: self.session
-                ,
-            }
+                access_token: self.access_token,
+                session: self.session,
+            },
         )
     }
 }
@@ -81,4 +88,3 @@ impl std::fmt::Debug for AssociateSoftwareTokenInputBuilder {
         formatter.finish()
     }
 }
-

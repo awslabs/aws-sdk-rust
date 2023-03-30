@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct BatchGetRumMetricDefinitionsOutput  {
+pub struct BatchGetRumMetricDefinitionsOutput {
     /// <p>An array of structures that display information about the metrics that are sent by the specified app monitor to the specified destination.</p>
     #[doc(hidden)]
     pub metric_definitions: std::option::Option<std::vec::Vec<crate::types::MetricDefinition>>,
@@ -13,22 +13,22 @@ pub struct BatchGetRumMetricDefinitionsOutput  {
 }
 impl BatchGetRumMetricDefinitionsOutput {
     /// <p>An array of structures that display information about the metrics that are sent by the specified app monitor to the specified destination.</p>
-    pub fn metric_definitions(&self) -> std::option::Option<& [crate::types::MetricDefinition]> {
+    pub fn metric_definitions(&self) -> std::option::Option<&[crate::types::MetricDefinition]> {
         self.metric_definitions.as_deref()
     }
     /// <p>A token that you can use in a subsequent operation to retrieve the next set of results.</p>
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for BatchGetRumMetricDefinitionsOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl BatchGetRumMetricDefinitionsOutput {
     /// Creates a new builder-style object to manufacture [`BatchGetRumMetricDefinitionsOutput`](crate::operation::batch_get_rum_metric_definitions::BatchGetRumMetricDefinitionsOutput).
-    pub fn builder() -> crate::operation::batch_get_rum_metric_definitions::builders::BatchGetRumMetricDefinitionsOutputBuilder {
+    pub fn builder() -> crate::operation::batch_get_rum_metric_definitions::builders::BatchGetRumMetricDefinitionsOutputBuilder{
         crate::operation::batch_get_rum_metric_definitions::builders::BatchGetRumMetricDefinitionsOutputBuilder::default()
     }
 }
@@ -37,7 +37,8 @@ impl BatchGetRumMetricDefinitionsOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct BatchGetRumMetricDefinitionsOutputBuilder {
-    pub(crate) metric_definitions: std::option::Option<std::vec::Vec<crate::types::MetricDefinition>>,
+    pub(crate) metric_definitions:
+        std::option::Option<std::vec::Vec<crate::types::MetricDefinition>>,
     pub(crate) next_token: std::option::Option<std::string::String>,
     _request_id: Option<String>,
 }
@@ -49,13 +50,17 @@ impl BatchGetRumMetricDefinitionsOutputBuilder {
     /// <p>An array of structures that display information about the metrics that are sent by the specified app monitor to the specified destination.</p>
     pub fn metric_definitions(mut self, input: crate::types::MetricDefinition) -> Self {
         let mut v = self.metric_definitions.unwrap_or_default();
-                        v.push(input);
-                        self.metric_definitions = Some(v);
-                        self
+        v.push(input);
+        self.metric_definitions = Some(v);
+        self
     }
     /// <p>An array of structures that display information about the metrics that are sent by the specified app monitor to the specified destination.</p>
-    pub fn set_metric_definitions(mut self, input: std::option::Option<std::vec::Vec<crate::types::MetricDefinition>>) -> Self {
-        self.metric_definitions = input; self
+    pub fn set_metric_definitions(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::MetricDefinition>>,
+    ) -> Self {
+        self.metric_definitions = input;
+        self
     }
     /// <p>A token that you can use in a subsequent operation to retrieve the next set of results.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -64,26 +69,27 @@ impl BatchGetRumMetricDefinitionsOutputBuilder {
     }
     /// <p>A token that you can use in a subsequent operation to retrieve the next set of results.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input; self
+        self.next_token = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`BatchGetRumMetricDefinitionsOutput`](crate::operation::batch_get_rum_metric_definitions::BatchGetRumMetricDefinitionsOutput).
-    pub fn build(self) -> crate::operation::batch_get_rum_metric_definitions::BatchGetRumMetricDefinitionsOutput {
+    pub fn build(
+        self,
+    ) -> crate::operation::batch_get_rum_metric_definitions::BatchGetRumMetricDefinitionsOutput
+    {
         crate::operation::batch_get_rum_metric_definitions::BatchGetRumMetricDefinitionsOutput {
-            metric_definitions: self.metric_definitions
-            ,
-            next_token: self.next_token
-            ,
+            metric_definitions: self.metric_definitions,
+            next_token: self.next_token,
             _request_id: self._request_id,
         }
     }
 }
-

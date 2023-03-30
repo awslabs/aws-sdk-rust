@@ -2,10 +2,11 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateFieldLevelEncryptionConfigInput  {
+pub struct UpdateFieldLevelEncryptionConfigInput {
     /// <p>Request to update a field-level encryption configuration.</p>
     #[doc(hidden)]
-    pub field_level_encryption_config: std::option::Option<crate::types::FieldLevelEncryptionConfig>,
+    pub field_level_encryption_config:
+        std::option::Option<crate::types::FieldLevelEncryptionConfig>,
     /// <p>The ID of the configuration you want to update.</p>
     #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
@@ -15,21 +16,23 @@ pub struct UpdateFieldLevelEncryptionConfigInput  {
 }
 impl UpdateFieldLevelEncryptionConfigInput {
     /// <p>Request to update a field-level encryption configuration.</p>
-    pub fn field_level_encryption_config(&self) -> std::option::Option<& crate::types::FieldLevelEncryptionConfig> {
+    pub fn field_level_encryption_config(
+        &self,
+    ) -> std::option::Option<&crate::types::FieldLevelEncryptionConfig> {
         self.field_level_encryption_config.as_ref()
     }
     /// <p>The ID of the configuration you want to update.</p>
-    pub fn id(&self) -> std::option::Option<& str> {
+    pub fn id(&self) -> std::option::Option<&str> {
         self.id.as_deref()
     }
     /// <p>The value of the <code>ETag</code> header that you received when retrieving the configuration identity to update. For example: <code>E2QWRUHAPOMQZL</code>.</p>
-    pub fn if_match(&self) -> std::option::Option<& str> {
+    pub fn if_match(&self) -> std::option::Option<&str> {
         self.if_match.as_deref()
     }
 }
 impl UpdateFieldLevelEncryptionConfigInput {
     /// Creates a new builder-style object to manufacture [`UpdateFieldLevelEncryptionConfigInput`](crate::operation::update_field_level_encryption_config::UpdateFieldLevelEncryptionConfigInput).
-    pub fn builder() -> crate::operation::update_field_level_encryption_config::builders::UpdateFieldLevelEncryptionConfigInputBuilder {
+    pub fn builder() -> crate::operation::update_field_level_encryption_config::builders::UpdateFieldLevelEncryptionConfigInputBuilder{
         crate::operation::update_field_level_encryption_config::builders::UpdateFieldLevelEncryptionConfigInputBuilder::default()
     }
 }
@@ -38,19 +41,27 @@ impl UpdateFieldLevelEncryptionConfigInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct UpdateFieldLevelEncryptionConfigInputBuilder {
-    pub(crate) field_level_encryption_config: std::option::Option<crate::types::FieldLevelEncryptionConfig>,
+    pub(crate) field_level_encryption_config:
+        std::option::Option<crate::types::FieldLevelEncryptionConfig>,
     pub(crate) id: std::option::Option<std::string::String>,
     pub(crate) if_match: std::option::Option<std::string::String>,
 }
 impl UpdateFieldLevelEncryptionConfigInputBuilder {
     /// <p>Request to update a field-level encryption configuration.</p>
-    pub fn field_level_encryption_config(mut self, input: crate::types::FieldLevelEncryptionConfig) -> Self {
+    pub fn field_level_encryption_config(
+        mut self,
+        input: crate::types::FieldLevelEncryptionConfig,
+    ) -> Self {
         self.field_level_encryption_config = Some(input);
         self
     }
     /// <p>Request to update a field-level encryption configuration.</p>
-    pub fn set_field_level_encryption_config(mut self, input: std::option::Option<crate::types::FieldLevelEncryptionConfig>) -> Self {
-        self.field_level_encryption_config = input; self
+    pub fn set_field_level_encryption_config(
+        mut self,
+        input: std::option::Option<crate::types::FieldLevelEncryptionConfig>,
+    ) -> Self {
+        self.field_level_encryption_config = input;
+        self
     }
     /// <p>The ID of the configuration you want to update.</p>
     pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -59,7 +70,8 @@ impl UpdateFieldLevelEncryptionConfigInputBuilder {
     }
     /// <p>The ID of the configuration you want to update.</p>
     pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.id = input; self
+        self.id = input;
+        self
     }
     /// <p>The value of the <code>ETag</code> header that you received when retrieving the configuration identity to update. For example: <code>E2QWRUHAPOMQZL</code>.</p>
     pub fn if_match(mut self, input: impl Into<std::string::String>) -> Self {
@@ -68,10 +80,11 @@ impl UpdateFieldLevelEncryptionConfigInputBuilder {
     }
     /// <p>The value of the <code>ETag</code> header that you received when retrieving the configuration identity to update. For example: <code>E2QWRUHAPOMQZL</code>.</p>
     pub fn set_if_match(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.if_match = input; self
+        self.if_match = input;
+        self
     }
     /// Consumes the builder and constructs a [`UpdateFieldLevelEncryptionConfigInput`](crate::operation::update_field_level_encryption_config::UpdateFieldLevelEncryptionConfigInput).
-    pub fn build(self) -> Result<crate::operation::update_field_level_encryption_config::UpdateFieldLevelEncryptionConfigInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> Result<crate::operation::update_field_level_encryption_config::UpdateFieldLevelEncryptionConfigInput, aws_smithy_http::operation::error::BuildError>{
         Ok(
             crate::operation::update_field_level_encryption_config::UpdateFieldLevelEncryptionConfigInput {
                 field_level_encryption_config: self.field_level_encryption_config
@@ -84,4 +97,3 @@ impl UpdateFieldLevelEncryptionConfigInputBuilder {
         )
     }
 }
-

@@ -2,33 +2,36 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListAvailableManagedRuleGroupsOutput  {
+pub struct ListAvailableManagedRuleGroupsOutput {
     /// <p>When you request a list of objects with a <code>Limit</code> setting, if the number of objects that are still available for retrieval exceeds the limit, WAF returns a <code>NextMarker</code> value in the response. To retrieve the next batch of objects, provide the marker from the prior call in your next request.</p>
     #[doc(hidden)]
     pub next_marker: std::option::Option<std::string::String>,
     /// <p></p>
     #[doc(hidden)]
-    pub managed_rule_groups: std::option::Option<std::vec::Vec<crate::types::ManagedRuleGroupSummary>>,
+    pub managed_rule_groups:
+        std::option::Option<std::vec::Vec<crate::types::ManagedRuleGroupSummary>>,
     _request_id: Option<String>,
 }
 impl ListAvailableManagedRuleGroupsOutput {
     /// <p>When you request a list of objects with a <code>Limit</code> setting, if the number of objects that are still available for retrieval exceeds the limit, WAF returns a <code>NextMarker</code> value in the response. To retrieve the next batch of objects, provide the marker from the prior call in your next request.</p>
-    pub fn next_marker(&self) -> std::option::Option<& str> {
+    pub fn next_marker(&self) -> std::option::Option<&str> {
         self.next_marker.as_deref()
     }
     /// <p></p>
-    pub fn managed_rule_groups(&self) -> std::option::Option<& [crate::types::ManagedRuleGroupSummary]> {
+    pub fn managed_rule_groups(
+        &self,
+    ) -> std::option::Option<&[crate::types::ManagedRuleGroupSummary]> {
         self.managed_rule_groups.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for ListAvailableManagedRuleGroupsOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl ListAvailableManagedRuleGroupsOutput {
     /// Creates a new builder-style object to manufacture [`ListAvailableManagedRuleGroupsOutput`](crate::operation::list_available_managed_rule_groups::ListAvailableManagedRuleGroupsOutput).
-    pub fn builder() -> crate::operation::list_available_managed_rule_groups::builders::ListAvailableManagedRuleGroupsOutputBuilder {
+    pub fn builder() -> crate::operation::list_available_managed_rule_groups::builders::ListAvailableManagedRuleGroupsOutputBuilder{
         crate::operation::list_available_managed_rule_groups::builders::ListAvailableManagedRuleGroupsOutputBuilder::default()
     }
 }
@@ -38,7 +41,8 @@ impl ListAvailableManagedRuleGroupsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct ListAvailableManagedRuleGroupsOutputBuilder {
     pub(crate) next_marker: std::option::Option<std::string::String>,
-    pub(crate) managed_rule_groups: std::option::Option<std::vec::Vec<crate::types::ManagedRuleGroupSummary>>,
+    pub(crate) managed_rule_groups:
+        std::option::Option<std::vec::Vec<crate::types::ManagedRuleGroupSummary>>,
     _request_id: Option<String>,
 }
 impl ListAvailableManagedRuleGroupsOutputBuilder {
@@ -49,7 +53,8 @@ impl ListAvailableManagedRuleGroupsOutputBuilder {
     }
     /// <p>When you request a list of objects with a <code>Limit</code> setting, if the number of objects that are still available for retrieval exceeds the limit, WAF returns a <code>NextMarker</code> value in the response. To retrieve the next batch of objects, provide the marker from the prior call in your next request.</p>
     pub fn set_next_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_marker = input; self
+        self.next_marker = input;
+        self
     }
     /// Appends an item to `managed_rule_groups`.
     ///
@@ -58,32 +63,36 @@ impl ListAvailableManagedRuleGroupsOutputBuilder {
     /// <p></p>
     pub fn managed_rule_groups(mut self, input: crate::types::ManagedRuleGroupSummary) -> Self {
         let mut v = self.managed_rule_groups.unwrap_or_default();
-                        v.push(input);
-                        self.managed_rule_groups = Some(v);
-                        self
+        v.push(input);
+        self.managed_rule_groups = Some(v);
+        self
     }
     /// <p></p>
-    pub fn set_managed_rule_groups(mut self, input: std::option::Option<std::vec::Vec<crate::types::ManagedRuleGroupSummary>>) -> Self {
-        self.managed_rule_groups = input; self
+    pub fn set_managed_rule_groups(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::ManagedRuleGroupSummary>>,
+    ) -> Self {
+        self.managed_rule_groups = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`ListAvailableManagedRuleGroupsOutput`](crate::operation::list_available_managed_rule_groups::ListAvailableManagedRuleGroupsOutput).
-    pub fn build(self) -> crate::operation::list_available_managed_rule_groups::ListAvailableManagedRuleGroupsOutput {
+    pub fn build(
+        self,
+    ) -> crate::operation::list_available_managed_rule_groups::ListAvailableManagedRuleGroupsOutput
+    {
         crate::operation::list_available_managed_rule_groups::ListAvailableManagedRuleGroupsOutput {
-            next_marker: self.next_marker
-            ,
-            managed_rule_groups: self.managed_rule_groups
-            ,
+            next_marker: self.next_marker,
+            managed_rule_groups: self.managed_rule_groups,
             _request_id: self._request_id,
         }
     }
 }
-

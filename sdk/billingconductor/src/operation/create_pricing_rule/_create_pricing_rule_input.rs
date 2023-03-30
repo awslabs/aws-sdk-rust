@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct CreatePricingRuleInput  {
+pub struct CreatePricingRuleInput {
     /// <p> The token that's needed to support idempotency. Idempotency isn't currently supported, but will be implemented in a future update. </p>
     #[doc(hidden)]
     pub client_token: std::option::Option<std::string::String>,
@@ -26,41 +26,42 @@ pub struct CreatePricingRuleInput  {
     pub service: std::option::Option<std::string::String>,
     /// <p> A map that contains tag keys and tag values that are attached to a pricing rule. </p>
     #[doc(hidden)]
-    pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub tags:
+        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p> The seller of services provided by Amazon Web Services, their affiliates, or third-party providers selling services via Amazon Web Services Marketplace. </p>
     #[doc(hidden)]
     pub billing_entity: std::option::Option<std::string::String>,
     /// <p> The set of tiering configurations for the pricing rule. </p>
     #[doc(hidden)]
     pub tiering: std::option::Option<crate::types::CreateTieringInput>,
-    /// <p> Usage type is the unit that each service uses to measure the usage of a specific type of resource.</p> 
+    /// <p> Usage type is the unit that each service uses to measure the usage of a specific type of resource.</p>
     /// <p>If the <code>Scope</code> attribute is set to <code>SKU</code>, this attribute indicates which usage type the <code>PricingRule</code> is modifying. For example, <code>USW2-BoxUsage:m2.2xlarge</code> describes an<code> M2 High Memory Double Extra Large</code> instance in the US West (Oregon) Region. </p>
     #[doc(hidden)]
     pub usage_type: std::option::Option<std::string::String>,
-    /// <p> Operation is the specific Amazon Web Services action covered by this line item. This describes the specific usage of the line item.</p> 
+    /// <p> Operation is the specific Amazon Web Services action covered by this line item. This describes the specific usage of the line item.</p>
     /// <p> If the <code>Scope</code> attribute is set to <code>SKU</code>, this attribute indicates which operation the <code>PricingRule</code> is modifying. For example, a value of <code>RunInstances:0202</code> indicates the operation of running an Amazon EC2 instance.</p>
     #[doc(hidden)]
     pub operation: std::option::Option<std::string::String>,
 }
 impl CreatePricingRuleInput {
     /// <p> The token that's needed to support idempotency. Idempotency isn't currently supported, but will be implemented in a future update. </p>
-    pub fn client_token(&self) -> std::option::Option<& str> {
+    pub fn client_token(&self) -> std::option::Option<&str> {
         self.client_token.as_deref()
     }
     /// <p> The pricing rule name. The names must be unique to each pricing rule. </p>
-    pub fn name(&self) -> std::option::Option<& str> {
+    pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p> The pricing rule description. </p>
-    pub fn description(&self) -> std::option::Option<& str> {
+    pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
     /// <p> The scope of pricing rule that indicates if it's globally applicable, or it's service-specific. </p>
-    pub fn scope(&self) -> std::option::Option<& crate::types::PricingRuleScope> {
+    pub fn scope(&self) -> std::option::Option<&crate::types::PricingRuleScope> {
         self.scope.as_ref()
     }
     /// <p> The type of pricing rule. </p>
-    pub fn r#type(&self) -> std::option::Option<& crate::types::PricingRuleType> {
+    pub fn r#type(&self) -> std::option::Option<&crate::types::PricingRuleType> {
         self.r#type.as_ref()
     }
     /// <p> A percentage modifier that's applied on the public pricing rates. </p>
@@ -68,33 +69,36 @@ impl CreatePricingRuleInput {
         self.modifier_percentage
     }
     /// <p> If the <code>Scope</code> attribute is set to <code>SERVICE</code> or <code>SKU</code>, the attribute indicates which service the <code>PricingRule</code> is applicable for. </p>
-    pub fn service(&self) -> std::option::Option<& str> {
+    pub fn service(&self) -> std::option::Option<&str> {
         self.service.as_deref()
     }
     /// <p> A map that contains tag keys and tag values that are attached to a pricing rule. </p>
-    pub fn tags(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
         self.tags.as_ref()
     }
     /// <p> The seller of services provided by Amazon Web Services, their affiliates, or third-party providers selling services via Amazon Web Services Marketplace. </p>
-    pub fn billing_entity(&self) -> std::option::Option<& str> {
+    pub fn billing_entity(&self) -> std::option::Option<&str> {
         self.billing_entity.as_deref()
     }
     /// <p> The set of tiering configurations for the pricing rule. </p>
-    pub fn tiering(&self) -> std::option::Option<& crate::types::CreateTieringInput> {
+    pub fn tiering(&self) -> std::option::Option<&crate::types::CreateTieringInput> {
         self.tiering.as_ref()
     }
-    /// <p> Usage type is the unit that each service uses to measure the usage of a specific type of resource.</p> 
+    /// <p> Usage type is the unit that each service uses to measure the usage of a specific type of resource.</p>
     /// <p>If the <code>Scope</code> attribute is set to <code>SKU</code>, this attribute indicates which usage type the <code>PricingRule</code> is modifying. For example, <code>USW2-BoxUsage:m2.2xlarge</code> describes an<code> M2 High Memory Double Extra Large</code> instance in the US West (Oregon) Region. </p>
-    pub fn usage_type(&self) -> std::option::Option<& str> {
+    pub fn usage_type(&self) -> std::option::Option<&str> {
         self.usage_type.as_deref()
     }
-    /// <p> Operation is the specific Amazon Web Services action covered by this line item. This describes the specific usage of the line item.</p> 
+    /// <p> Operation is the specific Amazon Web Services action covered by this line item. This describes the specific usage of the line item.</p>
     /// <p> If the <code>Scope</code> attribute is set to <code>SKU</code>, this attribute indicates which operation the <code>PricingRule</code> is modifying. For example, a value of <code>RunInstances:0202</code> indicates the operation of running an Amazon EC2 instance.</p>
-    pub fn operation(&self) -> std::option::Option<& str> {
+    pub fn operation(&self) -> std::option::Option<&str> {
         self.operation.as_deref()
     }
 }
-impl  std::fmt::Debug for CreatePricingRuleInput  {
+impl std::fmt::Debug for CreatePricingRuleInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreatePricingRuleInput");
         formatter.field("client_token", &self.client_token);
@@ -114,7 +118,8 @@ impl  std::fmt::Debug for CreatePricingRuleInput  {
 }
 impl CreatePricingRuleInput {
     /// Creates a new builder-style object to manufacture [`CreatePricingRuleInput`](crate::operation::create_pricing_rule::CreatePricingRuleInput).
-    pub fn builder() -> crate::operation::create_pricing_rule::builders::CreatePricingRuleInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::create_pricing_rule::builders::CreatePricingRuleInputBuilder {
         crate::operation::create_pricing_rule::builders::CreatePricingRuleInputBuilder::default()
     }
 }
@@ -130,7 +135,8 @@ pub struct CreatePricingRuleInputBuilder {
     pub(crate) r#type: std::option::Option<crate::types::PricingRuleType>,
     pub(crate) modifier_percentage: std::option::Option<f64>,
     pub(crate) service: std::option::Option<std::string::String>,
-    pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub(crate) tags:
+        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     pub(crate) billing_entity: std::option::Option<std::string::String>,
     pub(crate) tiering: std::option::Option<crate::types::CreateTieringInput>,
     pub(crate) usage_type: std::option::Option<std::string::String>,
@@ -144,7 +150,8 @@ impl CreatePricingRuleInputBuilder {
     }
     /// <p> The token that's needed to support idempotency. Idempotency isn't currently supported, but will be implemented in a future update. </p>
     pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.client_token = input; self
+        self.client_token = input;
+        self
     }
     /// <p> The pricing rule name. The names must be unique to each pricing rule. </p>
     pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -153,7 +160,8 @@ impl CreatePricingRuleInputBuilder {
     }
     /// <p> The pricing rule name. The names must be unique to each pricing rule. </p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input; self
+        self.name = input;
+        self
     }
     /// <p> The pricing rule description. </p>
     pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -162,7 +170,8 @@ impl CreatePricingRuleInputBuilder {
     }
     /// <p> The pricing rule description. </p>
     pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.description = input; self
+        self.description = input;
+        self
     }
     /// <p> The scope of pricing rule that indicates if it's globally applicable, or it's service-specific. </p>
     pub fn scope(mut self, input: crate::types::PricingRuleScope) -> Self {
@@ -171,7 +180,8 @@ impl CreatePricingRuleInputBuilder {
     }
     /// <p> The scope of pricing rule that indicates if it's globally applicable, or it's service-specific. </p>
     pub fn set_scope(mut self, input: std::option::Option<crate::types::PricingRuleScope>) -> Self {
-        self.scope = input; self
+        self.scope = input;
+        self
     }
     /// <p> The type of pricing rule. </p>
     pub fn r#type(mut self, input: crate::types::PricingRuleType) -> Self {
@@ -180,7 +190,8 @@ impl CreatePricingRuleInputBuilder {
     }
     /// <p> The type of pricing rule. </p>
     pub fn set_type(mut self, input: std::option::Option<crate::types::PricingRuleType>) -> Self {
-        self.r#type = input; self
+        self.r#type = input;
+        self
     }
     /// <p> A percentage modifier that's applied on the public pricing rates. </p>
     pub fn modifier_percentage(mut self, input: f64) -> Self {
@@ -189,7 +200,8 @@ impl CreatePricingRuleInputBuilder {
     }
     /// <p> A percentage modifier that's applied on the public pricing rates. </p>
     pub fn set_modifier_percentage(mut self, input: std::option::Option<f64>) -> Self {
-        self.modifier_percentage = input; self
+        self.modifier_percentage = input;
+        self
     }
     /// <p> If the <code>Scope</code> attribute is set to <code>SERVICE</code> or <code>SKU</code>, the attribute indicates which service the <code>PricingRule</code> is applicable for. </p>
     pub fn service(mut self, input: impl Into<std::string::String>) -> Self {
@@ -198,22 +210,33 @@ impl CreatePricingRuleInputBuilder {
     }
     /// <p> If the <code>Scope</code> attribute is set to <code>SERVICE</code> or <code>SKU</code>, the attribute indicates which service the <code>PricingRule</code> is applicable for. </p>
     pub fn set_service(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.service = input; self
+        self.service = input;
+        self
     }
     /// Adds a key-value pair to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// <p> A map that contains tag keys and tag values that are attached to a pricing rule. </p>
-    pub fn tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
+    pub fn tags(
+        mut self,
+        k: impl Into<std::string::String>,
+        v: impl Into<std::string::String>,
+    ) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
-                        hash_map.insert(k.into(), v.into());
-                        self.tags = Some(hash_map);
-                        self
+        hash_map.insert(k.into(), v.into());
+        self.tags = Some(hash_map);
+        self
     }
     /// <p> A map that contains tag keys and tag values that are attached to a pricing rule. </p>
-    pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
-        self.tags = input; self
+    pub fn set_tags(
+        mut self,
+        input: std::option::Option<
+            std::collections::HashMap<std::string::String, std::string::String>,
+        >,
+    ) -> Self {
+        self.tags = input;
+        self
     }
     /// <p> The seller of services provided by Amazon Web Services, their affiliates, or third-party providers selling services via Amazon Web Services Marketplace. </p>
     pub fn billing_entity(mut self, input: impl Into<std::string::String>) -> Self {
@@ -222,7 +245,8 @@ impl CreatePricingRuleInputBuilder {
     }
     /// <p> The seller of services provided by Amazon Web Services, their affiliates, or third-party providers selling services via Amazon Web Services Marketplace. </p>
     pub fn set_billing_entity(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.billing_entity = input; self
+        self.billing_entity = input;
+        self
     }
     /// <p> The set of tiering configurations for the pricing rule. </p>
     pub fn tiering(mut self, input: crate::types::CreateTieringInput) -> Self {
@@ -230,60 +254,59 @@ impl CreatePricingRuleInputBuilder {
         self
     }
     /// <p> The set of tiering configurations for the pricing rule. </p>
-    pub fn set_tiering(mut self, input: std::option::Option<crate::types::CreateTieringInput>) -> Self {
-        self.tiering = input; self
+    pub fn set_tiering(
+        mut self,
+        input: std::option::Option<crate::types::CreateTieringInput>,
+    ) -> Self {
+        self.tiering = input;
+        self
     }
-    /// <p> Usage type is the unit that each service uses to measure the usage of a specific type of resource.</p> 
+    /// <p> Usage type is the unit that each service uses to measure the usage of a specific type of resource.</p>
     /// <p>If the <code>Scope</code> attribute is set to <code>SKU</code>, this attribute indicates which usage type the <code>PricingRule</code> is modifying. For example, <code>USW2-BoxUsage:m2.2xlarge</code> describes an<code> M2 High Memory Double Extra Large</code> instance in the US West (Oregon) Region. </p>
     pub fn usage_type(mut self, input: impl Into<std::string::String>) -> Self {
         self.usage_type = Some(input.into());
         self
     }
-    /// <p> Usage type is the unit that each service uses to measure the usage of a specific type of resource.</p> 
+    /// <p> Usage type is the unit that each service uses to measure the usage of a specific type of resource.</p>
     /// <p>If the <code>Scope</code> attribute is set to <code>SKU</code>, this attribute indicates which usage type the <code>PricingRule</code> is modifying. For example, <code>USW2-BoxUsage:m2.2xlarge</code> describes an<code> M2 High Memory Double Extra Large</code> instance in the US West (Oregon) Region. </p>
     pub fn set_usage_type(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.usage_type = input; self
+        self.usage_type = input;
+        self
     }
-    /// <p> Operation is the specific Amazon Web Services action covered by this line item. This describes the specific usage of the line item.</p> 
+    /// <p> Operation is the specific Amazon Web Services action covered by this line item. This describes the specific usage of the line item.</p>
     /// <p> If the <code>Scope</code> attribute is set to <code>SKU</code>, this attribute indicates which operation the <code>PricingRule</code> is modifying. For example, a value of <code>RunInstances:0202</code> indicates the operation of running an Amazon EC2 instance.</p>
     pub fn operation(mut self, input: impl Into<std::string::String>) -> Self {
         self.operation = Some(input.into());
         self
     }
-    /// <p> Operation is the specific Amazon Web Services action covered by this line item. This describes the specific usage of the line item.</p> 
+    /// <p> Operation is the specific Amazon Web Services action covered by this line item. This describes the specific usage of the line item.</p>
     /// <p> If the <code>Scope</code> attribute is set to <code>SKU</code>, this attribute indicates which operation the <code>PricingRule</code> is modifying. For example, a value of <code>RunInstances:0202</code> indicates the operation of running an Amazon EC2 instance.</p>
     pub fn set_operation(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.operation = input; self
+        self.operation = input;
+        self
     }
     /// Consumes the builder and constructs a [`CreatePricingRuleInput`](crate::operation::create_pricing_rule::CreatePricingRuleInput).
-    pub fn build(self) -> Result<crate::operation::create_pricing_rule::CreatePricingRuleInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::create_pricing_rule::CreatePricingRuleInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::create_pricing_rule::CreatePricingRuleInput {
-                client_token: self.client_token
-                ,
-                name: self.name
-                ,
-                description: self.description
-                ,
-                scope: self.scope
-                ,
-                r#type: self.r#type
-                ,
-                modifier_percentage: self.modifier_percentage
-                ,
-                service: self.service
-                ,
-                tags: self.tags
-                ,
-                billing_entity: self.billing_entity
-                ,
-                tiering: self.tiering
-                ,
-                usage_type: self.usage_type
-                ,
-                operation: self.operation
-                ,
-            }
+                client_token: self.client_token,
+                name: self.name,
+                description: self.description,
+                scope: self.scope,
+                r#type: self.r#type,
+                modifier_percentage: self.modifier_percentage,
+                service: self.service,
+                tags: self.tags,
+                billing_entity: self.billing_entity,
+                tiering: self.tiering,
+                usage_type: self.usage_type,
+                operation: self.operation,
+            },
         )
     }
 }
@@ -305,4 +328,3 @@ impl std::fmt::Debug for CreatePricingRuleInputBuilder {
         formatter.finish()
     }
 }
-

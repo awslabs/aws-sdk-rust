@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListJobsOutput  {
+pub struct ListJobsOutput {
     /// <p>Each <code>JobListEntry</code> object contains a job's state, a job's ID, and a value that indicates whether the job is a job part, in the case of export jobs. </p>
     #[doc(hidden)]
     pub job_list_entries: std::option::Option<std::vec::Vec<crate::types::JobListEntry>>,
@@ -13,19 +13,19 @@ pub struct ListJobsOutput  {
 }
 impl ListJobsOutput {
     /// <p>Each <code>JobListEntry</code> object contains a job's state, a job's ID, and a value that indicates whether the job is a job part, in the case of export jobs. </p>
-    pub fn job_list_entries(&self) -> std::option::Option<& [crate::types::JobListEntry]> {
+    pub fn job_list_entries(&self) -> std::option::Option<&[crate::types::JobListEntry]> {
         self.job_list_entries.as_deref()
     }
     /// <p>HTTP requests are stateless. If you use this automatically generated <code>NextToken</code> value in your next <code>ListJobs</code> call, your returned <code>JobListEntry</code> objects will start from this point in the array.</p>
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for ListJobsOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl ListJobsOutput {
     /// Creates a new builder-style object to manufacture [`ListJobsOutput`](crate::operation::list_jobs::ListJobsOutput).
     pub fn builder() -> crate::operation::list_jobs::builders::ListJobsOutputBuilder {
@@ -49,13 +49,17 @@ impl ListJobsOutputBuilder {
     /// <p>Each <code>JobListEntry</code> object contains a job's state, a job's ID, and a value that indicates whether the job is a job part, in the case of export jobs. </p>
     pub fn job_list_entries(mut self, input: crate::types::JobListEntry) -> Self {
         let mut v = self.job_list_entries.unwrap_or_default();
-                        v.push(input);
-                        self.job_list_entries = Some(v);
-                        self
+        v.push(input);
+        self.job_list_entries = Some(v);
+        self
     }
     /// <p>Each <code>JobListEntry</code> object contains a job's state, a job's ID, and a value that indicates whether the job is a job part, in the case of export jobs. </p>
-    pub fn set_job_list_entries(mut self, input: std::option::Option<std::vec::Vec<crate::types::JobListEntry>>) -> Self {
-        self.job_list_entries = input; self
+    pub fn set_job_list_entries(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::JobListEntry>>,
+    ) -> Self {
+        self.job_list_entries = input;
+        self
     }
     /// <p>HTTP requests are stateless. If you use this automatically generated <code>NextToken</code> value in your next <code>ListJobs</code> call, your returned <code>JobListEntry</code> objects will start from this point in the array.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -64,26 +68,24 @@ impl ListJobsOutputBuilder {
     }
     /// <p>HTTP requests are stateless. If you use this automatically generated <code>NextToken</code> value in your next <code>ListJobs</code> call, your returned <code>JobListEntry</code> objects will start from this point in the array.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input; self
+        self.next_token = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`ListJobsOutput`](crate::operation::list_jobs::ListJobsOutput).
     pub fn build(self) -> crate::operation::list_jobs::ListJobsOutput {
         crate::operation::list_jobs::ListJobsOutput {
-            job_list_entries: self.job_list_entries
-            ,
-            next_token: self.next_token
-            ,
+            job_list_entries: self.job_list_entries,
+            next_token: self.next_token,
             _request_id: self._request_id,
         }
     }
 }
-

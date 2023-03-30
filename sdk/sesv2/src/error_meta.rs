@@ -30,7 +30,7 @@ pub enum Error {
     /// <p>Too many requests have been made to the operation.</p>
     TooManyRequestsException(crate::types::error::TooManyRequestsException),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    Unhandled(aws_smithy_types::error::Unhandled)
+    Unhandled(aws_smithy_types::error::Unhandled),
 }
 impl std::fmt::Display for Error {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -48,20 +48,38 @@ impl std::fmt::Display for Error {
             Error::NotFoundException(inner) => inner.fmt(f),
             Error::SendingPausedException(inner) => inner.fmt(f),
             Error::TooManyRequestsException(inner) => inner.fmt(f),
-            Error::Unhandled(inner) => inner.fmt(f)
+            Error::Unhandled(inner) => inner.fmt(f),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::operation::batch_get_metric_data::BatchGetMetricDataError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::operation::batch_get_metric_data::BatchGetMetricDataError, R>) -> Self {
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::batch_get_metric_data::BatchGetMetricDataError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::batch_get_metric_data::BatchGetMetricDataError,
+            R,
+        >,
+    ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
             _ => Error::Unhandled(
-                                            aws_smithy_types::error::Unhandled::builder()
-                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
-                                                .source(err)
-                                                .build()
-                                        ),
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
@@ -76,16 +94,34 @@ impl From<crate::operation::batch_get_metric_data::BatchGetMetricDataError> for 
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::operation::create_configuration_set::CreateConfigurationSetError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::operation::create_configuration_set::CreateConfigurationSetError, R>) -> Self {
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::create_configuration_set::CreateConfigurationSetError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::create_configuration_set::CreateConfigurationSetError,
+            R,
+        >,
+    ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
             _ => Error::Unhandled(
-                                            aws_smithy_types::error::Unhandled::builder()
-                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
-                                                .source(err)
-                                                .build()
-                                        ),
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
@@ -127,40 +163,82 @@ impl From<crate::operation::create_configuration_set_event_destination::CreateCo
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::operation::create_contact::CreateContactError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::operation::create_contact::CreateContactError, R>) -> Self {
+impl<R>
+    From<aws_smithy_http::result::SdkError<crate::operation::create_contact::CreateContactError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::create_contact::CreateContactError,
+            R,
+        >,
+    ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
             _ => Error::Unhandled(
-                                            aws_smithy_types::error::Unhandled::builder()
-                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
-                                                .source(err)
-                                                .build()
-                                        ),
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::operation::create_contact::CreateContactError> for Error {
     fn from(err: crate::operation::create_contact::CreateContactError) -> Self {
         match err {
-            crate::operation::create_contact::CreateContactError::AlreadyExistsException(inner) => Error::AlreadyExistsException(inner),
-            crate::operation::create_contact::CreateContactError::BadRequestException(inner) => Error::BadRequestException(inner),
-            crate::operation::create_contact::CreateContactError::NotFoundException(inner) => Error::NotFoundException(inner),
-            crate::operation::create_contact::CreateContactError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
-            crate::operation::create_contact::CreateContactError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::create_contact::CreateContactError::AlreadyExistsException(inner) => {
+                Error::AlreadyExistsException(inner)
+            }
+            crate::operation::create_contact::CreateContactError::BadRequestException(inner) => {
+                Error::BadRequestException(inner)
+            }
+            crate::operation::create_contact::CreateContactError::NotFoundException(inner) => {
+                Error::NotFoundException(inner)
+            }
+            crate::operation::create_contact::CreateContactError::TooManyRequestsException(
+                inner,
+            ) => Error::TooManyRequestsException(inner),
+            crate::operation::create_contact::CreateContactError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::operation::create_contact_list::CreateContactListError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::operation::create_contact_list::CreateContactListError, R>) -> Self {
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::create_contact_list::CreateContactListError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::create_contact_list::CreateContactListError,
+            R,
+        >,
+    ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
             _ => Error::Unhandled(
-                                            aws_smithy_types::error::Unhandled::builder()
-                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
-                                                .source(err)
-                                                .build()
-                                        ),
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
@@ -200,16 +278,34 @@ impl From<crate::operation::create_custom_verification_email_template::CreateCus
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::operation::create_dedicated_ip_pool::CreateDedicatedIpPoolError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::operation::create_dedicated_ip_pool::CreateDedicatedIpPoolError, R>) -> Self {
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::create_dedicated_ip_pool::CreateDedicatedIpPoolError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::create_dedicated_ip_pool::CreateDedicatedIpPoolError,
+            R,
+        >,
+    ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
             _ => Error::Unhandled(
-                                            aws_smithy_types::error::Unhandled::builder()
-                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
-                                                .source(err)
-                                                .build()
-                                        ),
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
@@ -238,8 +334,12 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::operation::create_delivera
         }
     }
 }
-impl From<crate::operation::create_deliverability_test_report::CreateDeliverabilityTestReportError> for Error {
-    fn from(err: crate::operation::create_deliverability_test_report::CreateDeliverabilityTestReportError) -> Self {
+impl From<crate::operation::create_deliverability_test_report::CreateDeliverabilityTestReportError>
+    for Error
+{
+    fn from(
+        err: crate::operation::create_deliverability_test_report::CreateDeliverabilityTestReportError,
+    ) -> Self {
         match err {
             crate::operation::create_deliverability_test_report::CreateDeliverabilityTestReportError::AccountSuspendedException(inner) => Error::AccountSuspendedException(inner),
             crate::operation::create_deliverability_test_report::CreateDeliverabilityTestReportError::BadRequestException(inner) => Error::BadRequestException(inner),
@@ -254,16 +354,34 @@ impl From<crate::operation::create_deliverability_test_report::CreateDeliverabil
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::operation::create_email_identity::CreateEmailIdentityError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::operation::create_email_identity::CreateEmailIdentityError, R>) -> Self {
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::create_email_identity::CreateEmailIdentityError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::create_email_identity::CreateEmailIdentityError,
+            R,
+        >,
+    ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
             _ => Error::Unhandled(
-                                            aws_smithy_types::error::Unhandled::builder()
-                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
-                                                .source(err)
-                                                .build()
-                                        ),
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
@@ -280,21 +398,43 @@ impl From<crate::operation::create_email_identity::CreateEmailIdentityError> for
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::operation::create_email_identity_policy::CreateEmailIdentityPolicyError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::operation::create_email_identity_policy::CreateEmailIdentityPolicyError, R>) -> Self {
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::create_email_identity_policy::CreateEmailIdentityPolicyError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::create_email_identity_policy::CreateEmailIdentityPolicyError,
+            R,
+        >,
+    ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
             _ => Error::Unhandled(
-                                            aws_smithy_types::error::Unhandled::builder()
-                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
-                                                .source(err)
-                                                .build()
-                                        ),
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
-impl From<crate::operation::create_email_identity_policy::CreateEmailIdentityPolicyError> for Error {
-    fn from(err: crate::operation::create_email_identity_policy::CreateEmailIdentityPolicyError) -> Self {
+impl From<crate::operation::create_email_identity_policy::CreateEmailIdentityPolicyError>
+    for Error
+{
+    fn from(
+        err: crate::operation::create_email_identity_policy::CreateEmailIdentityPolicyError,
+    ) -> Self {
         match err {
             crate::operation::create_email_identity_policy::CreateEmailIdentityPolicyError::AlreadyExistsException(inner) => Error::AlreadyExistsException(inner),
             crate::operation::create_email_identity_policy::CreateEmailIdentityPolicyError::BadRequestException(inner) => Error::BadRequestException(inner),
@@ -305,16 +445,34 @@ impl From<crate::operation::create_email_identity_policy::CreateEmailIdentityPol
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::operation::create_email_template::CreateEmailTemplateError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::operation::create_email_template::CreateEmailTemplateError, R>) -> Self {
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::create_email_template::CreateEmailTemplateError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::create_email_template::CreateEmailTemplateError,
+            R,
+        >,
+    ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
             _ => Error::Unhandled(
-                                            aws_smithy_types::error::Unhandled::builder()
-                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
-                                                .source(err)
-                                                .build()
-                                        ),
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
@@ -329,39 +487,83 @@ impl From<crate::operation::create_email_template::CreateEmailTemplateError> for
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::operation::create_import_job::CreateImportJobError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::operation::create_import_job::CreateImportJobError, R>) -> Self {
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::create_import_job::CreateImportJobError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::create_import_job::CreateImportJobError,
+            R,
+        >,
+    ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
             _ => Error::Unhandled(
-                                            aws_smithy_types::error::Unhandled::builder()
-                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
-                                                .source(err)
-                                                .build()
-                                        ),
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::operation::create_import_job::CreateImportJobError> for Error {
     fn from(err: crate::operation::create_import_job::CreateImportJobError) -> Self {
         match err {
-            crate::operation::create_import_job::CreateImportJobError::BadRequestException(inner) => Error::BadRequestException(inner),
-            crate::operation::create_import_job::CreateImportJobError::LimitExceededException(inner) => Error::LimitExceededException(inner),
-            crate::operation::create_import_job::CreateImportJobError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
-            crate::operation::create_import_job::CreateImportJobError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::create_import_job::CreateImportJobError::BadRequestException(
+                inner,
+            ) => Error::BadRequestException(inner),
+            crate::operation::create_import_job::CreateImportJobError::LimitExceededException(
+                inner,
+            ) => Error::LimitExceededException(inner),
+            crate::operation::create_import_job::CreateImportJobError::TooManyRequestsException(
+                inner,
+            ) => Error::TooManyRequestsException(inner),
+            crate::operation::create_import_job::CreateImportJobError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::operation::delete_configuration_set::DeleteConfigurationSetError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::operation::delete_configuration_set::DeleteConfigurationSetError, R>) -> Self {
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::delete_configuration_set::DeleteConfigurationSetError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::delete_configuration_set::DeleteConfigurationSetError,
+            R,
+        >,
+    ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
             _ => Error::Unhandled(
-                                            aws_smithy_types::error::Unhandled::builder()
-                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
-                                                .source(err)
-                                                .build()
-                                        ),
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
@@ -399,39 +601,79 @@ impl From<crate::operation::delete_configuration_set_event_destination::DeleteCo
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::operation::delete_contact::DeleteContactError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::operation::delete_contact::DeleteContactError, R>) -> Self {
+impl<R>
+    From<aws_smithy_http::result::SdkError<crate::operation::delete_contact::DeleteContactError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::delete_contact::DeleteContactError,
+            R,
+        >,
+    ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
             _ => Error::Unhandled(
-                                            aws_smithy_types::error::Unhandled::builder()
-                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
-                                                .source(err)
-                                                .build()
-                                        ),
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::operation::delete_contact::DeleteContactError> for Error {
     fn from(err: crate::operation::delete_contact::DeleteContactError) -> Self {
         match err {
-            crate::operation::delete_contact::DeleteContactError::BadRequestException(inner) => Error::BadRequestException(inner),
-            crate::operation::delete_contact::DeleteContactError::NotFoundException(inner) => Error::NotFoundException(inner),
-            crate::operation::delete_contact::DeleteContactError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
-            crate::operation::delete_contact::DeleteContactError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::delete_contact::DeleteContactError::BadRequestException(inner) => {
+                Error::BadRequestException(inner)
+            }
+            crate::operation::delete_contact::DeleteContactError::NotFoundException(inner) => {
+                Error::NotFoundException(inner)
+            }
+            crate::operation::delete_contact::DeleteContactError::TooManyRequestsException(
+                inner,
+            ) => Error::TooManyRequestsException(inner),
+            crate::operation::delete_contact::DeleteContactError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::operation::delete_contact_list::DeleteContactListError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::operation::delete_contact_list::DeleteContactListError, R>) -> Self {
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::delete_contact_list::DeleteContactListError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::delete_contact_list::DeleteContactListError,
+            R,
+        >,
+    ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
             _ => Error::Unhandled(
-                                            aws_smithy_types::error::Unhandled::builder()
-                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
-                                                .source(err)
-                                                .build()
-                                        ),
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
@@ -469,16 +711,34 @@ impl From<crate::operation::delete_custom_verification_email_template::DeleteCus
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::operation::delete_dedicated_ip_pool::DeleteDedicatedIpPoolError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::operation::delete_dedicated_ip_pool::DeleteDedicatedIpPoolError, R>) -> Self {
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::delete_dedicated_ip_pool::DeleteDedicatedIpPoolError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::delete_dedicated_ip_pool::DeleteDedicatedIpPoolError,
+            R,
+        >,
+    ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
             _ => Error::Unhandled(
-                                            aws_smithy_types::error::Unhandled::builder()
-                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
-                                                .source(err)
-                                                .build()
-                                        ),
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
@@ -493,16 +753,34 @@ impl From<crate::operation::delete_dedicated_ip_pool::DeleteDedicatedIpPoolError
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::operation::delete_email_identity::DeleteEmailIdentityError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::operation::delete_email_identity::DeleteEmailIdentityError, R>) -> Self {
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::delete_email_identity::DeleteEmailIdentityError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::delete_email_identity::DeleteEmailIdentityError,
+            R,
+        >,
+    ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
             _ => Error::Unhandled(
-                                            aws_smithy_types::error::Unhandled::builder()
-                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
-                                                .source(err)
-                                                .build()
-                                        ),
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
@@ -517,21 +795,43 @@ impl From<crate::operation::delete_email_identity::DeleteEmailIdentityError> for
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::operation::delete_email_identity_policy::DeleteEmailIdentityPolicyError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::operation::delete_email_identity_policy::DeleteEmailIdentityPolicyError, R>) -> Self {
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::delete_email_identity_policy::DeleteEmailIdentityPolicyError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::delete_email_identity_policy::DeleteEmailIdentityPolicyError,
+            R,
+        >,
+    ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
             _ => Error::Unhandled(
-                                            aws_smithy_types::error::Unhandled::builder()
-                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
-                                                .source(err)
-                                                .build()
-                                        ),
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
-impl From<crate::operation::delete_email_identity_policy::DeleteEmailIdentityPolicyError> for Error {
-    fn from(err: crate::operation::delete_email_identity_policy::DeleteEmailIdentityPolicyError) -> Self {
+impl From<crate::operation::delete_email_identity_policy::DeleteEmailIdentityPolicyError>
+    for Error
+{
+    fn from(
+        err: crate::operation::delete_email_identity_policy::DeleteEmailIdentityPolicyError,
+    ) -> Self {
         match err {
             crate::operation::delete_email_identity_policy::DeleteEmailIdentityPolicyError::BadRequestException(inner) => Error::BadRequestException(inner),
             crate::operation::delete_email_identity_policy::DeleteEmailIdentityPolicyError::NotFoundException(inner) => Error::NotFoundException(inner),
@@ -540,16 +840,34 @@ impl From<crate::operation::delete_email_identity_policy::DeleteEmailIdentityPol
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::operation::delete_email_template::DeleteEmailTemplateError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::operation::delete_email_template::DeleteEmailTemplateError, R>) -> Self {
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::delete_email_template::DeleteEmailTemplateError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::delete_email_template::DeleteEmailTemplateError,
+            R,
+        >,
+    ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
             _ => Error::Unhandled(
-                                            aws_smithy_types::error::Unhandled::builder()
-                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
-                                                .source(err)
-                                                .build()
-                                        ),
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
@@ -563,21 +881,43 @@ impl From<crate::operation::delete_email_template::DeleteEmailTemplateError> for
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::operation::delete_suppressed_destination::DeleteSuppressedDestinationError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::operation::delete_suppressed_destination::DeleteSuppressedDestinationError, R>) -> Self {
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::delete_suppressed_destination::DeleteSuppressedDestinationError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::delete_suppressed_destination::DeleteSuppressedDestinationError,
+            R,
+        >,
+    ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
             _ => Error::Unhandled(
-                                            aws_smithy_types::error::Unhandled::builder()
-                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
-                                                .source(err)
-                                                .build()
-                                        ),
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
-impl From<crate::operation::delete_suppressed_destination::DeleteSuppressedDestinationError> for Error {
-    fn from(err: crate::operation::delete_suppressed_destination::DeleteSuppressedDestinationError) -> Self {
+impl From<crate::operation::delete_suppressed_destination::DeleteSuppressedDestinationError>
+    for Error
+{
+    fn from(
+        err: crate::operation::delete_suppressed_destination::DeleteSuppressedDestinationError,
+    ) -> Self {
         match err {
             crate::operation::delete_suppressed_destination::DeleteSuppressedDestinationError::BadRequestException(inner) => Error::BadRequestException(inner),
             crate::operation::delete_suppressed_destination::DeleteSuppressedDestinationError::NotFoundException(inner) => Error::NotFoundException(inner),
@@ -586,38 +926,72 @@ impl From<crate::operation::delete_suppressed_destination::DeleteSuppressedDesti
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::operation::get_account::GetAccountError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::operation::get_account::GetAccountError, R>) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::get_account::GetAccountError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<crate::operation::get_account::GetAccountError, R>,
+    ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
             _ => Error::Unhandled(
-                                            aws_smithy_types::error::Unhandled::builder()
-                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
-                                                .source(err)
-                                                .build()
-                                        ),
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::operation::get_account::GetAccountError> for Error {
     fn from(err: crate::operation::get_account::GetAccountError) -> Self {
         match err {
-            crate::operation::get_account::GetAccountError::BadRequestException(inner) => Error::BadRequestException(inner),
-            crate::operation::get_account::GetAccountError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
-            crate::operation::get_account::GetAccountError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::get_account::GetAccountError::BadRequestException(inner) => {
+                Error::BadRequestException(inner)
+            }
+            crate::operation::get_account::GetAccountError::TooManyRequestsException(inner) => {
+                Error::TooManyRequestsException(inner)
+            }
+            crate::operation::get_account::GetAccountError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::operation::get_blacklist_reports::GetBlacklistReportsError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::operation::get_blacklist_reports::GetBlacklistReportsError, R>) -> Self {
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::get_blacklist_reports::GetBlacklistReportsError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::get_blacklist_reports::GetBlacklistReportsError,
+            R,
+        >,
+    ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
             _ => Error::Unhandled(
-                                            aws_smithy_types::error::Unhandled::builder()
-                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
-                                                .source(err)
-                                                .build()
-                                        ),
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
@@ -631,16 +1005,34 @@ impl From<crate::operation::get_blacklist_reports::GetBlacklistReportsError> for
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::operation::get_configuration_set::GetConfigurationSetError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::operation::get_configuration_set::GetConfigurationSetError, R>) -> Self {
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::get_configuration_set::GetConfigurationSetError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::get_configuration_set::GetConfigurationSetError,
+            R,
+        >,
+    ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
             _ => Error::Unhandled(
-                                            aws_smithy_types::error::Unhandled::builder()
-                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
-                                                .source(err)
-                                                .build()
-                                        ),
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
@@ -677,49 +1069,93 @@ impl From<crate::operation::get_configuration_set_event_destinations::GetConfigu
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::operation::get_contact::GetContactError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::operation::get_contact::GetContactError, R>) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::get_contact::GetContactError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<crate::operation::get_contact::GetContactError, R>,
+    ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
             _ => Error::Unhandled(
-                                            aws_smithy_types::error::Unhandled::builder()
-                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
-                                                .source(err)
-                                                .build()
-                                        ),
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::operation::get_contact::GetContactError> for Error {
     fn from(err: crate::operation::get_contact::GetContactError) -> Self {
         match err {
-            crate::operation::get_contact::GetContactError::BadRequestException(inner) => Error::BadRequestException(inner),
-            crate::operation::get_contact::GetContactError::NotFoundException(inner) => Error::NotFoundException(inner),
-            crate::operation::get_contact::GetContactError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
-            crate::operation::get_contact::GetContactError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::get_contact::GetContactError::BadRequestException(inner) => {
+                Error::BadRequestException(inner)
+            }
+            crate::operation::get_contact::GetContactError::NotFoundException(inner) => {
+                Error::NotFoundException(inner)
+            }
+            crate::operation::get_contact::GetContactError::TooManyRequestsException(inner) => {
+                Error::TooManyRequestsException(inner)
+            }
+            crate::operation::get_contact::GetContactError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::operation::get_contact_list::GetContactListError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::operation::get_contact_list::GetContactListError, R>) -> Self {
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::get_contact_list::GetContactListError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::get_contact_list::GetContactListError,
+            R,
+        >,
+    ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
             _ => Error::Unhandled(
-                                            aws_smithy_types::error::Unhandled::builder()
-                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
-                                                .source(err)
-                                                .build()
-                                        ),
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::operation::get_contact_list::GetContactListError> for Error {
     fn from(err: crate::operation::get_contact_list::GetContactListError) -> Self {
         match err {
-            crate::operation::get_contact_list::GetContactListError::BadRequestException(inner) => Error::BadRequestException(inner),
-            crate::operation::get_contact_list::GetContactListError::NotFoundException(inner) => Error::NotFoundException(inner),
-            crate::operation::get_contact_list::GetContactListError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
-            crate::operation::get_contact_list::GetContactListError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::get_contact_list::GetContactListError::BadRequestException(inner) => {
+                Error::BadRequestException(inner)
+            }
+            crate::operation::get_contact_list::GetContactListError::NotFoundException(inner) => {
+                Error::NotFoundException(inner)
+            }
+            crate::operation::get_contact_list::GetContactListError::TooManyRequestsException(
+                inner,
+            ) => Error::TooManyRequestsException(inner),
+            crate::operation::get_contact_list::GetContactListError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
         }
     }
 }
@@ -746,39 +1182,83 @@ impl From<crate::operation::get_custom_verification_email_template::GetCustomVer
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::operation::get_dedicated_ip::GetDedicatedIpError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::operation::get_dedicated_ip::GetDedicatedIpError, R>) -> Self {
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::get_dedicated_ip::GetDedicatedIpError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::get_dedicated_ip::GetDedicatedIpError,
+            R,
+        >,
+    ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
             _ => Error::Unhandled(
-                                            aws_smithy_types::error::Unhandled::builder()
-                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
-                                                .source(err)
-                                                .build()
-                                        ),
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::operation::get_dedicated_ip::GetDedicatedIpError> for Error {
     fn from(err: crate::operation::get_dedicated_ip::GetDedicatedIpError) -> Self {
         match err {
-            crate::operation::get_dedicated_ip::GetDedicatedIpError::BadRequestException(inner) => Error::BadRequestException(inner),
-            crate::operation::get_dedicated_ip::GetDedicatedIpError::NotFoundException(inner) => Error::NotFoundException(inner),
-            crate::operation::get_dedicated_ip::GetDedicatedIpError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
-            crate::operation::get_dedicated_ip::GetDedicatedIpError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::get_dedicated_ip::GetDedicatedIpError::BadRequestException(inner) => {
+                Error::BadRequestException(inner)
+            }
+            crate::operation::get_dedicated_ip::GetDedicatedIpError::NotFoundException(inner) => {
+                Error::NotFoundException(inner)
+            }
+            crate::operation::get_dedicated_ip::GetDedicatedIpError::TooManyRequestsException(
+                inner,
+            ) => Error::TooManyRequestsException(inner),
+            crate::operation::get_dedicated_ip::GetDedicatedIpError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::operation::get_dedicated_ip_pool::GetDedicatedIpPoolError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::operation::get_dedicated_ip_pool::GetDedicatedIpPoolError, R>) -> Self {
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::get_dedicated_ip_pool::GetDedicatedIpPoolError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::get_dedicated_ip_pool::GetDedicatedIpPoolError,
+            R,
+        >,
+    ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
             _ => Error::Unhandled(
-                                            aws_smithy_types::error::Unhandled::builder()
-                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
-                                                .source(err)
-                                                .build()
-                                        ),
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
@@ -792,26 +1272,52 @@ impl From<crate::operation::get_dedicated_ip_pool::GetDedicatedIpPoolError> for 
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::operation::get_dedicated_ips::GetDedicatedIpsError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::operation::get_dedicated_ips::GetDedicatedIpsError, R>) -> Self {
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::get_dedicated_ips::GetDedicatedIpsError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::get_dedicated_ips::GetDedicatedIpsError,
+            R,
+        >,
+    ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
             _ => Error::Unhandled(
-                                            aws_smithy_types::error::Unhandled::builder()
-                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
-                                                .source(err)
-                                                .build()
-                                        ),
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::operation::get_dedicated_ips::GetDedicatedIpsError> for Error {
     fn from(err: crate::operation::get_dedicated_ips::GetDedicatedIpsError) -> Self {
         match err {
-            crate::operation::get_dedicated_ips::GetDedicatedIpsError::BadRequestException(inner) => Error::BadRequestException(inner),
-            crate::operation::get_dedicated_ips::GetDedicatedIpsError::NotFoundException(inner) => Error::NotFoundException(inner),
-            crate::operation::get_dedicated_ips::GetDedicatedIpsError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
-            crate::operation::get_dedicated_ips::GetDedicatedIpsError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::get_dedicated_ips::GetDedicatedIpsError::BadRequestException(
+                inner,
+            ) => Error::BadRequestException(inner),
+            crate::operation::get_dedicated_ips::GetDedicatedIpsError::NotFoundException(inner) => {
+                Error::NotFoundException(inner)
+            }
+            crate::operation::get_dedicated_ips::GetDedicatedIpsError::TooManyRequestsException(
+                inner,
+            ) => Error::TooManyRequestsException(inner),
+            crate::operation::get_dedicated_ips::GetDedicatedIpsError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
         }
     }
 }
@@ -838,21 +1344,43 @@ impl From<crate::operation::get_deliverability_dashboard_options::GetDeliverabil
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::operation::get_deliverability_test_report::GetDeliverabilityTestReportError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::operation::get_deliverability_test_report::GetDeliverabilityTestReportError, R>) -> Self {
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::get_deliverability_test_report::GetDeliverabilityTestReportError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::get_deliverability_test_report::GetDeliverabilityTestReportError,
+            R,
+        >,
+    ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
             _ => Error::Unhandled(
-                                            aws_smithy_types::error::Unhandled::builder()
-                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
-                                                .source(err)
-                                                .build()
-                                        ),
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
-impl From<crate::operation::get_deliverability_test_report::GetDeliverabilityTestReportError> for Error {
-    fn from(err: crate::operation::get_deliverability_test_report::GetDeliverabilityTestReportError) -> Self {
+impl From<crate::operation::get_deliverability_test_report::GetDeliverabilityTestReportError>
+    for Error
+{
+    fn from(
+        err: crate::operation::get_deliverability_test_report::GetDeliverabilityTestReportError,
+    ) -> Self {
         match err {
             crate::operation::get_deliverability_test_report::GetDeliverabilityTestReportError::BadRequestException(inner) => Error::BadRequestException(inner),
             crate::operation::get_deliverability_test_report::GetDeliverabilityTestReportError::NotFoundException(inner) => Error::NotFoundException(inner),
@@ -874,8 +1402,13 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::operation::get_domain_deli
         }
     }
 }
-impl From<crate::operation::get_domain_deliverability_campaign::GetDomainDeliverabilityCampaignError> for Error {
-    fn from(err: crate::operation::get_domain_deliverability_campaign::GetDomainDeliverabilityCampaignError) -> Self {
+impl
+    From<crate::operation::get_domain_deliverability_campaign::GetDomainDeliverabilityCampaignError>
+    for Error
+{
+    fn from(
+        err: crate::operation::get_domain_deliverability_campaign::GetDomainDeliverabilityCampaignError,
+    ) -> Self {
         match err {
             crate::operation::get_domain_deliverability_campaign::GetDomainDeliverabilityCampaignError::BadRequestException(inner) => Error::BadRequestException(inner),
             crate::operation::get_domain_deliverability_campaign::GetDomainDeliverabilityCampaignError::NotFoundException(inner) => Error::NotFoundException(inner),
@@ -884,21 +1417,43 @@ impl From<crate::operation::get_domain_deliverability_campaign::GetDomainDeliver
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::operation::get_domain_statistics_report::GetDomainStatisticsReportError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::operation::get_domain_statistics_report::GetDomainStatisticsReportError, R>) -> Self {
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::get_domain_statistics_report::GetDomainStatisticsReportError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::get_domain_statistics_report::GetDomainStatisticsReportError,
+            R,
+        >,
+    ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
             _ => Error::Unhandled(
-                                            aws_smithy_types::error::Unhandled::builder()
-                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
-                                                .source(err)
-                                                .build()
-                                        ),
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
-impl From<crate::operation::get_domain_statistics_report::GetDomainStatisticsReportError> for Error {
-    fn from(err: crate::operation::get_domain_statistics_report::GetDomainStatisticsReportError) -> Self {
+impl From<crate::operation::get_domain_statistics_report::GetDomainStatisticsReportError>
+    for Error
+{
+    fn from(
+        err: crate::operation::get_domain_statistics_report::GetDomainStatisticsReportError,
+    ) -> Self {
         match err {
             crate::operation::get_domain_statistics_report::GetDomainStatisticsReportError::BadRequestException(inner) => Error::BadRequestException(inner),
             crate::operation::get_domain_statistics_report::GetDomainStatisticsReportError::NotFoundException(inner) => Error::NotFoundException(inner),
@@ -907,16 +1462,34 @@ impl From<crate::operation::get_domain_statistics_report::GetDomainStatisticsRep
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::operation::get_email_identity::GetEmailIdentityError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::operation::get_email_identity::GetEmailIdentityError, R>) -> Self {
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::get_email_identity::GetEmailIdentityError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::get_email_identity::GetEmailIdentityError,
+            R,
+        >,
+    ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
             _ => Error::Unhandled(
-                                            aws_smithy_types::error::Unhandled::builder()
-                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
-                                                .source(err)
-                                                .build()
-                                        ),
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
@@ -930,21 +1503,41 @@ impl From<crate::operation::get_email_identity::GetEmailIdentityError> for Error
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::operation::get_email_identity_policies::GetEmailIdentityPoliciesError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::operation::get_email_identity_policies::GetEmailIdentityPoliciesError, R>) -> Self {
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::get_email_identity_policies::GetEmailIdentityPoliciesError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::get_email_identity_policies::GetEmailIdentityPoliciesError,
+            R,
+        >,
+    ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
             _ => Error::Unhandled(
-                                            aws_smithy_types::error::Unhandled::builder()
-                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
-                                                .source(err)
-                                                .build()
-                                        ),
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::operation::get_email_identity_policies::GetEmailIdentityPoliciesError> for Error {
-    fn from(err: crate::operation::get_email_identity_policies::GetEmailIdentityPoliciesError) -> Self {
+    fn from(
+        err: crate::operation::get_email_identity_policies::GetEmailIdentityPoliciesError,
+    ) -> Self {
         match err {
             crate::operation::get_email_identity_policies::GetEmailIdentityPoliciesError::BadRequestException(inner) => Error::BadRequestException(inner),
             crate::operation::get_email_identity_policies::GetEmailIdentityPoliciesError::NotFoundException(inner) => Error::NotFoundException(inner),
@@ -953,16 +1546,34 @@ impl From<crate::operation::get_email_identity_policies::GetEmailIdentityPolicie
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::operation::get_email_template::GetEmailTemplateError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::operation::get_email_template::GetEmailTemplateError, R>) -> Self {
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::get_email_template::GetEmailTemplateError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::get_email_template::GetEmailTemplateError,
+            R,
+        >,
+    ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
             _ => Error::Unhandled(
-                                            aws_smithy_types::error::Unhandled::builder()
-                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
-                                                .source(err)
-                                                .build()
-                                        ),
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
@@ -976,44 +1587,86 @@ impl From<crate::operation::get_email_template::GetEmailTemplateError> for Error
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::operation::get_import_job::GetImportJobError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::operation::get_import_job::GetImportJobError, R>) -> Self {
+impl<R>
+    From<aws_smithy_http::result::SdkError<crate::operation::get_import_job::GetImportJobError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::get_import_job::GetImportJobError,
+            R,
+        >,
+    ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
             _ => Error::Unhandled(
-                                            aws_smithy_types::error::Unhandled::builder()
-                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
-                                                .source(err)
-                                                .build()
-                                        ),
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::operation::get_import_job::GetImportJobError> for Error {
     fn from(err: crate::operation::get_import_job::GetImportJobError) -> Self {
         match err {
-            crate::operation::get_import_job::GetImportJobError::BadRequestException(inner) => Error::BadRequestException(inner),
-            crate::operation::get_import_job::GetImportJobError::NotFoundException(inner) => Error::NotFoundException(inner),
-            crate::operation::get_import_job::GetImportJobError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
-            crate::operation::get_import_job::GetImportJobError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::get_import_job::GetImportJobError::BadRequestException(inner) => {
+                Error::BadRequestException(inner)
+            }
+            crate::operation::get_import_job::GetImportJobError::NotFoundException(inner) => {
+                Error::NotFoundException(inner)
+            }
+            crate::operation::get_import_job::GetImportJobError::TooManyRequestsException(
+                inner,
+            ) => Error::TooManyRequestsException(inner),
+            crate::operation::get_import_job::GetImportJobError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::operation::get_suppressed_destination::GetSuppressedDestinationError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::operation::get_suppressed_destination::GetSuppressedDestinationError, R>) -> Self {
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::get_suppressed_destination::GetSuppressedDestinationError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::get_suppressed_destination::GetSuppressedDestinationError,
+            R,
+        >,
+    ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
             _ => Error::Unhandled(
-                                            aws_smithy_types::error::Unhandled::builder()
-                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
-                                                .source(err)
-                                                .build()
-                                        ),
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::operation::get_suppressed_destination::GetSuppressedDestinationError> for Error {
-    fn from(err: crate::operation::get_suppressed_destination::GetSuppressedDestinationError) -> Self {
+    fn from(
+        err: crate::operation::get_suppressed_destination::GetSuppressedDestinationError,
+    ) -> Self {
         match err {
             crate::operation::get_suppressed_destination::GetSuppressedDestinationError::BadRequestException(inner) => Error::BadRequestException(inner),
             crate::operation::get_suppressed_destination::GetSuppressedDestinationError::NotFoundException(inner) => Error::NotFoundException(inner),
@@ -1022,16 +1675,34 @@ impl From<crate::operation::get_suppressed_destination::GetSuppressedDestination
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::operation::list_configuration_sets::ListConfigurationSetsError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::operation::list_configuration_sets::ListConfigurationSetsError, R>) -> Self {
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::list_configuration_sets::ListConfigurationSetsError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::list_configuration_sets::ListConfigurationSetsError,
+            R,
+        >,
+    ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
             _ => Error::Unhandled(
-                                            aws_smithy_types::error::Unhandled::builder()
-                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
-                                                .source(err)
-                                                .build()
-                                        ),
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
@@ -1044,16 +1715,34 @@ impl From<crate::operation::list_configuration_sets::ListConfigurationSetsError>
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::operation::list_contact_lists::ListContactListsError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::operation::list_contact_lists::ListContactListsError, R>) -> Self {
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::list_contact_lists::ListContactListsError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::list_contact_lists::ListContactListsError,
+            R,
+        >,
+    ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
             _ => Error::Unhandled(
-                                            aws_smithy_types::error::Unhandled::builder()
-                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
-                                                .source(err)
-                                                .build()
-                                        ),
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
@@ -1066,26 +1755,48 @@ impl From<crate::operation::list_contact_lists::ListContactListsError> for Error
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::operation::list_contacts::ListContactsError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::operation::list_contacts::ListContactsError, R>) -> Self {
+impl<R>
+    From<aws_smithy_http::result::SdkError<crate::operation::list_contacts::ListContactsError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::list_contacts::ListContactsError,
+            R,
+        >,
+    ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
             _ => Error::Unhandled(
-                                            aws_smithy_types::error::Unhandled::builder()
-                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
-                                                .source(err)
-                                                .build()
-                                        ),
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::operation::list_contacts::ListContactsError> for Error {
     fn from(err: crate::operation::list_contacts::ListContactsError) -> Self {
         match err {
-            crate::operation::list_contacts::ListContactsError::BadRequestException(inner) => Error::BadRequestException(inner),
-            crate::operation::list_contacts::ListContactsError::NotFoundException(inner) => Error::NotFoundException(inner),
-            crate::operation::list_contacts::ListContactsError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
-            crate::operation::list_contacts::ListContactsError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::list_contacts::ListContactsError::BadRequestException(inner) => {
+                Error::BadRequestException(inner)
+            }
+            crate::operation::list_contacts::ListContactsError::NotFoundException(inner) => {
+                Error::NotFoundException(inner)
+            }
+            crate::operation::list_contacts::ListContactsError::TooManyRequestsException(inner) => {
+                Error::TooManyRequestsException(inner)
+            }
+            crate::operation::list_contacts::ListContactsError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
         }
     }
 }
@@ -1111,16 +1822,34 @@ impl From<crate::operation::list_custom_verification_email_templates::ListCustom
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::operation::list_dedicated_ip_pools::ListDedicatedIpPoolsError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::operation::list_dedicated_ip_pools::ListDedicatedIpPoolsError, R>) -> Self {
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::list_dedicated_ip_pools::ListDedicatedIpPoolsError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::list_dedicated_ip_pools::ListDedicatedIpPoolsError,
+            R,
+        >,
+    ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
             _ => Error::Unhandled(
-                                            aws_smithy_types::error::Unhandled::builder()
-                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
-                                                .source(err)
-                                                .build()
-                                        ),
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
@@ -1133,21 +1862,43 @@ impl From<crate::operation::list_dedicated_ip_pools::ListDedicatedIpPoolsError> 
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::operation::list_deliverability_test_reports::ListDeliverabilityTestReportsError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::operation::list_deliverability_test_reports::ListDeliverabilityTestReportsError, R>) -> Self {
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::list_deliverability_test_reports::ListDeliverabilityTestReportsError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::list_deliverability_test_reports::ListDeliverabilityTestReportsError,
+            R,
+        >,
+    ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
             _ => Error::Unhandled(
-                                            aws_smithy_types::error::Unhandled::builder()
-                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
-                                                .source(err)
-                                                .build()
-                                        ),
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
-impl From<crate::operation::list_deliverability_test_reports::ListDeliverabilityTestReportsError> for Error {
-    fn from(err: crate::operation::list_deliverability_test_reports::ListDeliverabilityTestReportsError) -> Self {
+impl From<crate::operation::list_deliverability_test_reports::ListDeliverabilityTestReportsError>
+    for Error
+{
+    fn from(
+        err: crate::operation::list_deliverability_test_reports::ListDeliverabilityTestReportsError,
+    ) -> Self {
         match err {
             crate::operation::list_deliverability_test_reports::ListDeliverabilityTestReportsError::BadRequestException(inner) => Error::BadRequestException(inner),
             crate::operation::list_deliverability_test_reports::ListDeliverabilityTestReportsError::NotFoundException(inner) => Error::NotFoundException(inner),
@@ -1179,16 +1930,34 @@ impl From<crate::operation::list_domain_deliverability_campaigns::ListDomainDeli
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::operation::list_email_identities::ListEmailIdentitiesError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::operation::list_email_identities::ListEmailIdentitiesError, R>) -> Self {
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::list_email_identities::ListEmailIdentitiesError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::list_email_identities::ListEmailIdentitiesError,
+            R,
+        >,
+    ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
             _ => Error::Unhandled(
-                                            aws_smithy_types::error::Unhandled::builder()
-                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
-                                                .source(err)
-                                                .build()
-                                        ),
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
@@ -1201,16 +1970,34 @@ impl From<crate::operation::list_email_identities::ListEmailIdentitiesError> for
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::operation::list_email_templates::ListEmailTemplatesError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::operation::list_email_templates::ListEmailTemplatesError, R>) -> Self {
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::list_email_templates::ListEmailTemplatesError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::list_email_templates::ListEmailTemplatesError,
+            R,
+        >,
+    ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
             _ => Error::Unhandled(
-                                            aws_smithy_types::error::Unhandled::builder()
-                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
-                                                .source(err)
-                                                .build()
-                                        ),
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
@@ -1223,38 +2010,80 @@ impl From<crate::operation::list_email_templates::ListEmailTemplatesError> for E
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::operation::list_import_jobs::ListImportJobsError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::operation::list_import_jobs::ListImportJobsError, R>) -> Self {
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::list_import_jobs::ListImportJobsError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::list_import_jobs::ListImportJobsError,
+            R,
+        >,
+    ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
             _ => Error::Unhandled(
-                                            aws_smithy_types::error::Unhandled::builder()
-                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
-                                                .source(err)
-                                                .build()
-                                        ),
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::operation::list_import_jobs::ListImportJobsError> for Error {
     fn from(err: crate::operation::list_import_jobs::ListImportJobsError) -> Self {
         match err {
-            crate::operation::list_import_jobs::ListImportJobsError::BadRequestException(inner) => Error::BadRequestException(inner),
-            crate::operation::list_import_jobs::ListImportJobsError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
-            crate::operation::list_import_jobs::ListImportJobsError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::list_import_jobs::ListImportJobsError::BadRequestException(inner) => {
+                Error::BadRequestException(inner)
+            }
+            crate::operation::list_import_jobs::ListImportJobsError::TooManyRequestsException(
+                inner,
+            ) => Error::TooManyRequestsException(inner),
+            crate::operation::list_import_jobs::ListImportJobsError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::operation::list_recommendations::ListRecommendationsError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::operation::list_recommendations::ListRecommendationsError, R>) -> Self {
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::list_recommendations::ListRecommendationsError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::list_recommendations::ListRecommendationsError,
+            R,
+        >,
+    ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
             _ => Error::Unhandled(
-                                            aws_smithy_types::error::Unhandled::builder()
-                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
-                                                .source(err)
-                                                .build()
-                                        ),
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
@@ -1268,21 +2097,43 @@ impl From<crate::operation::list_recommendations::ListRecommendationsError> for 
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::operation::list_suppressed_destinations::ListSuppressedDestinationsError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::operation::list_suppressed_destinations::ListSuppressedDestinationsError, R>) -> Self {
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::list_suppressed_destinations::ListSuppressedDestinationsError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::list_suppressed_destinations::ListSuppressedDestinationsError,
+            R,
+        >,
+    ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
             _ => Error::Unhandled(
-                                            aws_smithy_types::error::Unhandled::builder()
-                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
-                                                .source(err)
-                                                .build()
-                                        ),
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
-impl From<crate::operation::list_suppressed_destinations::ListSuppressedDestinationsError> for Error {
-    fn from(err: crate::operation::list_suppressed_destinations::ListSuppressedDestinationsError) -> Self {
+impl From<crate::operation::list_suppressed_destinations::ListSuppressedDestinationsError>
+    for Error
+{
+    fn from(
+        err: crate::operation::list_suppressed_destinations::ListSuppressedDestinationsError,
+    ) -> Self {
         match err {
             crate::operation::list_suppressed_destinations::ListSuppressedDestinationsError::BadRequestException(inner) => Error::BadRequestException(inner),
             crate::operation::list_suppressed_destinations::ListSuppressedDestinationsError::InvalidNextTokenException(inner) => Error::InvalidNextTokenException(inner),
@@ -1291,16 +2142,34 @@ impl From<crate::operation::list_suppressed_destinations::ListSuppressedDestinat
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::operation::list_tags_for_resource::ListTagsForResourceError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::operation::list_tags_for_resource::ListTagsForResourceError, R>) -> Self {
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::list_tags_for_resource::ListTagsForResourceError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::list_tags_for_resource::ListTagsForResourceError,
+            R,
+        >,
+    ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
             _ => Error::Unhandled(
-                                            aws_smithy_types::error::Unhandled::builder()
-                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
-                                                .source(err)
-                                                .build()
-                                        ),
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
@@ -1336,16 +2205,34 @@ impl From<crate::operation::put_account_dedicated_ip_warmup_attributes::PutAccou
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::operation::put_account_details::PutAccountDetailsError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::operation::put_account_details::PutAccountDetailsError, R>) -> Self {
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::put_account_details::PutAccountDetailsError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::put_account_details::PutAccountDetailsError,
+            R,
+        >,
+    ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
             _ => Error::Unhandled(
-                                            aws_smithy_types::error::Unhandled::builder()
-                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
-                                                .source(err)
-                                                .build()
-                                        ),
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
@@ -1359,21 +2246,43 @@ impl From<crate::operation::put_account_details::PutAccountDetailsError> for Err
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::operation::put_account_sending_attributes::PutAccountSendingAttributesError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::operation::put_account_sending_attributes::PutAccountSendingAttributesError, R>) -> Self {
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::put_account_sending_attributes::PutAccountSendingAttributesError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::put_account_sending_attributes::PutAccountSendingAttributesError,
+            R,
+        >,
+    ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
             _ => Error::Unhandled(
-                                            aws_smithy_types::error::Unhandled::builder()
-                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
-                                                .source(err)
-                                                .build()
-                                        ),
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
-impl From<crate::operation::put_account_sending_attributes::PutAccountSendingAttributesError> for Error {
-    fn from(err: crate::operation::put_account_sending_attributes::PutAccountSendingAttributesError) -> Self {
+impl From<crate::operation::put_account_sending_attributes::PutAccountSendingAttributesError>
+    for Error
+{
+    fn from(
+        err: crate::operation::put_account_sending_attributes::PutAccountSendingAttributesError,
+    ) -> Self {
         match err {
             crate::operation::put_account_sending_attributes::PutAccountSendingAttributesError::BadRequestException(inner) => Error::BadRequestException(inner),
             crate::operation::put_account_sending_attributes::PutAccountSendingAttributesError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
@@ -1394,8 +2303,13 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::operation::put_account_sup
         }
     }
 }
-impl From<crate::operation::put_account_suppression_attributes::PutAccountSuppressionAttributesError> for Error {
-    fn from(err: crate::operation::put_account_suppression_attributes::PutAccountSuppressionAttributesError) -> Self {
+impl
+    From<crate::operation::put_account_suppression_attributes::PutAccountSuppressionAttributesError>
+    for Error
+{
+    fn from(
+        err: crate::operation::put_account_suppression_attributes::PutAccountSuppressionAttributesError,
+    ) -> Self {
         match err {
             crate::operation::put_account_suppression_attributes::PutAccountSuppressionAttributesError::BadRequestException(inner) => Error::BadRequestException(inner),
             crate::operation::put_account_suppression_attributes::PutAccountSuppressionAttributesError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
@@ -1403,21 +2317,41 @@ impl From<crate::operation::put_account_suppression_attributes::PutAccountSuppre
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::operation::put_account_vdm_attributes::PutAccountVdmAttributesError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::operation::put_account_vdm_attributes::PutAccountVdmAttributesError, R>) -> Self {
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::put_account_vdm_attributes::PutAccountVdmAttributesError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::put_account_vdm_attributes::PutAccountVdmAttributesError,
+            R,
+        >,
+    ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
             _ => Error::Unhandled(
-                                            aws_smithy_types::error::Unhandled::builder()
-                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
-                                                .source(err)
-                                                .build()
-                                        ),
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::operation::put_account_vdm_attributes::PutAccountVdmAttributesError> for Error {
-    fn from(err: crate::operation::put_account_vdm_attributes::PutAccountVdmAttributesError) -> Self {
+    fn from(
+        err: crate::operation::put_account_vdm_attributes::PutAccountVdmAttributesError,
+    ) -> Self {
         match err {
             crate::operation::put_account_vdm_attributes::PutAccountVdmAttributesError::BadRequestException(inner) => Error::BadRequestException(inner),
             crate::operation::put_account_vdm_attributes::PutAccountVdmAttributesError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
@@ -1540,21 +2474,43 @@ impl From<crate::operation::put_configuration_set_tracking_options::PutConfigura
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::operation::put_configuration_set_vdm_options::PutConfigurationSetVdmOptionsError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::operation::put_configuration_set_vdm_options::PutConfigurationSetVdmOptionsError, R>) -> Self {
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::put_configuration_set_vdm_options::PutConfigurationSetVdmOptionsError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::put_configuration_set_vdm_options::PutConfigurationSetVdmOptionsError,
+            R,
+        >,
+    ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
             _ => Error::Unhandled(
-                                            aws_smithy_types::error::Unhandled::builder()
-                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
-                                                .source(err)
-                                                .build()
-                                        ),
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
-impl From<crate::operation::put_configuration_set_vdm_options::PutConfigurationSetVdmOptionsError> for Error {
-    fn from(err: crate::operation::put_configuration_set_vdm_options::PutConfigurationSetVdmOptionsError) -> Self {
+impl From<crate::operation::put_configuration_set_vdm_options::PutConfigurationSetVdmOptionsError>
+    for Error
+{
+    fn from(
+        err: crate::operation::put_configuration_set_vdm_options::PutConfigurationSetVdmOptionsError,
+    ) -> Self {
         match err {
             crate::operation::put_configuration_set_vdm_options::PutConfigurationSetVdmOptionsError::BadRequestException(inner) => Error::BadRequestException(inner),
             crate::operation::put_configuration_set_vdm_options::PutConfigurationSetVdmOptionsError::NotFoundException(inner) => Error::NotFoundException(inner),
@@ -1563,16 +2519,34 @@ impl From<crate::operation::put_configuration_set_vdm_options::PutConfigurationS
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::operation::put_dedicated_ip_in_pool::PutDedicatedIpInPoolError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::operation::put_dedicated_ip_in_pool::PutDedicatedIpInPoolError, R>) -> Self {
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::put_dedicated_ip_in_pool::PutDedicatedIpInPoolError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::put_dedicated_ip_in_pool::PutDedicatedIpInPoolError,
+            R,
+        >,
+    ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
             _ => Error::Unhandled(
-                                            aws_smithy_types::error::Unhandled::builder()
-                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
-                                                .source(err)
-                                                .build()
-                                        ),
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
@@ -1599,8 +2573,12 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::operation::put_dedicated_i
         }
     }
 }
-impl From<crate::operation::put_dedicated_ip_warmup_attributes::PutDedicatedIpWarmupAttributesError> for Error {
-    fn from(err: crate::operation::put_dedicated_ip_warmup_attributes::PutDedicatedIpWarmupAttributesError) -> Self {
+impl From<crate::operation::put_dedicated_ip_warmup_attributes::PutDedicatedIpWarmupAttributesError>
+    for Error
+{
+    fn from(
+        err: crate::operation::put_dedicated_ip_warmup_attributes::PutDedicatedIpWarmupAttributesError,
+    ) -> Self {
         match err {
             crate::operation::put_dedicated_ip_warmup_attributes::PutDedicatedIpWarmupAttributesError::BadRequestException(inner) => Error::BadRequestException(inner),
             crate::operation::put_dedicated_ip_warmup_attributes::PutDedicatedIpWarmupAttributesError::NotFoundException(inner) => Error::NotFoundException(inner),
@@ -1670,8 +2648,12 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::operation::put_email_ident
         }
     }
 }
-impl From<crate::operation::put_email_identity_dkim_attributes::PutEmailIdentityDkimAttributesError> for Error {
-    fn from(err: crate::operation::put_email_identity_dkim_attributes::PutEmailIdentityDkimAttributesError) -> Self {
+impl From<crate::operation::put_email_identity_dkim_attributes::PutEmailIdentityDkimAttributesError>
+    for Error
+{
+    fn from(
+        err: crate::operation::put_email_identity_dkim_attributes::PutEmailIdentityDkimAttributesError,
+    ) -> Self {
         match err {
             crate::operation::put_email_identity_dkim_attributes::PutEmailIdentityDkimAttributesError::BadRequestException(inner) => Error::BadRequestException(inner),
             crate::operation::put_email_identity_dkim_attributes::PutEmailIdentityDkimAttributesError::NotFoundException(inner) => Error::NotFoundException(inner),
@@ -1749,21 +2731,41 @@ impl From<crate::operation::put_email_identity_mail_from_attributes::PutEmailIde
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::operation::put_suppressed_destination::PutSuppressedDestinationError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::operation::put_suppressed_destination::PutSuppressedDestinationError, R>) -> Self {
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::put_suppressed_destination::PutSuppressedDestinationError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::put_suppressed_destination::PutSuppressedDestinationError,
+            R,
+        >,
+    ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
             _ => Error::Unhandled(
-                                            aws_smithy_types::error::Unhandled::builder()
-                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
-                                                .source(err)
-                                                .build()
-                                        ),
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::operation::put_suppressed_destination::PutSuppressedDestinationError> for Error {
-    fn from(err: crate::operation::put_suppressed_destination::PutSuppressedDestinationError) -> Self {
+    fn from(
+        err: crate::operation::put_suppressed_destination::PutSuppressedDestinationError,
+    ) -> Self {
         match err {
             crate::operation::put_suppressed_destination::PutSuppressedDestinationError::BadRequestException(inner) => Error::BadRequestException(inner),
             crate::operation::put_suppressed_destination::PutSuppressedDestinationError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
@@ -1771,16 +2773,31 @@ impl From<crate::operation::put_suppressed_destination::PutSuppressedDestination
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::operation::send_bulk_email::SendBulkEmailError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::operation::send_bulk_email::SendBulkEmailError, R>) -> Self {
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<crate::operation::send_bulk_email::SendBulkEmailError, R>,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::send_bulk_email::SendBulkEmailError,
+            R,
+        >,
+    ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
             _ => Error::Unhandled(
-                                            aws_smithy_types::error::Unhandled::builder()
-                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
-                                                .source(err)
-                                                .build()
-                                        ),
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
@@ -1799,21 +2816,43 @@ impl From<crate::operation::send_bulk_email::SendBulkEmailError> for Error {
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::operation::send_custom_verification_email::SendCustomVerificationEmailError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::operation::send_custom_verification_email::SendCustomVerificationEmailError, R>) -> Self {
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::send_custom_verification_email::SendCustomVerificationEmailError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::send_custom_verification_email::SendCustomVerificationEmailError,
+            R,
+        >,
+    ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
             _ => Error::Unhandled(
-                                            aws_smithy_types::error::Unhandled::builder()
-                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
-                                                .source(err)
-                                                .build()
-                                        ),
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
-impl From<crate::operation::send_custom_verification_email::SendCustomVerificationEmailError> for Error {
-    fn from(err: crate::operation::send_custom_verification_email::SendCustomVerificationEmailError) -> Self {
+impl From<crate::operation::send_custom_verification_email::SendCustomVerificationEmailError>
+    for Error
+{
+    fn from(
+        err: crate::operation::send_custom_verification_email::SendCustomVerificationEmailError,
+    ) -> Self {
         match err {
             crate::operation::send_custom_verification_email::SendCustomVerificationEmailError::BadRequestException(inner) => Error::BadRequestException(inner),
             crate::operation::send_custom_verification_email::SendCustomVerificationEmailError::LimitExceededException(inner) => Error::LimitExceededException(inner),
@@ -1826,73 +2865,141 @@ impl From<crate::operation::send_custom_verification_email::SendCustomVerificati
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::operation::send_email::SendEmailError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::operation::send_email::SendEmailError, R>) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::send_email::SendEmailError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<crate::operation::send_email::SendEmailError, R>,
+    ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
             _ => Error::Unhandled(
-                                            aws_smithy_types::error::Unhandled::builder()
-                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
-                                                .source(err)
-                                                .build()
-                                        ),
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::operation::send_email::SendEmailError> for Error {
     fn from(err: crate::operation::send_email::SendEmailError) -> Self {
         match err {
-            crate::operation::send_email::SendEmailError::AccountSuspendedException(inner) => Error::AccountSuspendedException(inner),
-            crate::operation::send_email::SendEmailError::BadRequestException(inner) => Error::BadRequestException(inner),
-            crate::operation::send_email::SendEmailError::LimitExceededException(inner) => Error::LimitExceededException(inner),
-            crate::operation::send_email::SendEmailError::MailFromDomainNotVerifiedException(inner) => Error::MailFromDomainNotVerifiedException(inner),
-            crate::operation::send_email::SendEmailError::MessageRejected(inner) => Error::MessageRejected(inner),
-            crate::operation::send_email::SendEmailError::NotFoundException(inner) => Error::NotFoundException(inner),
-            crate::operation::send_email::SendEmailError::SendingPausedException(inner) => Error::SendingPausedException(inner),
-            crate::operation::send_email::SendEmailError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
-            crate::operation::send_email::SendEmailError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::send_email::SendEmailError::AccountSuspendedException(inner) => {
+                Error::AccountSuspendedException(inner)
+            }
+            crate::operation::send_email::SendEmailError::BadRequestException(inner) => {
+                Error::BadRequestException(inner)
+            }
+            crate::operation::send_email::SendEmailError::LimitExceededException(inner) => {
+                Error::LimitExceededException(inner)
+            }
+            crate::operation::send_email::SendEmailError::MailFromDomainNotVerifiedException(
+                inner,
+            ) => Error::MailFromDomainNotVerifiedException(inner),
+            crate::operation::send_email::SendEmailError::MessageRejected(inner) => {
+                Error::MessageRejected(inner)
+            }
+            crate::operation::send_email::SendEmailError::NotFoundException(inner) => {
+                Error::NotFoundException(inner)
+            }
+            crate::operation::send_email::SendEmailError::SendingPausedException(inner) => {
+                Error::SendingPausedException(inner)
+            }
+            crate::operation::send_email::SendEmailError::TooManyRequestsException(inner) => {
+                Error::TooManyRequestsException(inner)
+            }
+            crate::operation::send_email::SendEmailError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::operation::tag_resource::TagResourceError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::operation::tag_resource::TagResourceError, R>) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::tag_resource::TagResourceError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<crate::operation::tag_resource::TagResourceError, R>,
+    ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
             _ => Error::Unhandled(
-                                            aws_smithy_types::error::Unhandled::builder()
-                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
-                                                .source(err)
-                                                .build()
-                                        ),
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::operation::tag_resource::TagResourceError> for Error {
     fn from(err: crate::operation::tag_resource::TagResourceError) -> Self {
         match err {
-            crate::operation::tag_resource::TagResourceError::BadRequestException(inner) => Error::BadRequestException(inner),
-            crate::operation::tag_resource::TagResourceError::ConcurrentModificationException(inner) => Error::ConcurrentModificationException(inner),
-            crate::operation::tag_resource::TagResourceError::NotFoundException(inner) => Error::NotFoundException(inner),
-            crate::operation::tag_resource::TagResourceError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
-            crate::operation::tag_resource::TagResourceError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::tag_resource::TagResourceError::BadRequestException(inner) => {
+                Error::BadRequestException(inner)
+            }
+            crate::operation::tag_resource::TagResourceError::ConcurrentModificationException(
+                inner,
+            ) => Error::ConcurrentModificationException(inner),
+            crate::operation::tag_resource::TagResourceError::NotFoundException(inner) => {
+                Error::NotFoundException(inner)
+            }
+            crate::operation::tag_resource::TagResourceError::TooManyRequestsException(inner) => {
+                Error::TooManyRequestsException(inner)
+            }
+            crate::operation::tag_resource::TagResourceError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::operation::test_render_email_template::TestRenderEmailTemplateError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::operation::test_render_email_template::TestRenderEmailTemplateError, R>) -> Self {
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::test_render_email_template::TestRenderEmailTemplateError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::test_render_email_template::TestRenderEmailTemplateError,
+            R,
+        >,
+    ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
             _ => Error::Unhandled(
-                                            aws_smithy_types::error::Unhandled::builder()
-                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
-                                                .source(err)
-                                                .build()
-                                        ),
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::operation::test_render_email_template::TestRenderEmailTemplateError> for Error {
-    fn from(err: crate::operation::test_render_email_template::TestRenderEmailTemplateError) -> Self {
+    fn from(
+        err: crate::operation::test_render_email_template::TestRenderEmailTemplateError,
+    ) -> Self {
         match err {
             crate::operation::test_render_email_template::TestRenderEmailTemplateError::BadRequestException(inner) => Error::BadRequestException(inner),
             crate::operation::test_render_email_template::TestRenderEmailTemplateError::NotFoundException(inner) => Error::NotFoundException(inner),
@@ -1901,16 +3008,30 @@ impl From<crate::operation::test_render_email_template::TestRenderEmailTemplateE
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::operation::untag_resource::UntagResourceError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::operation::untag_resource::UntagResourceError, R>) -> Self {
+impl<R>
+    From<aws_smithy_http::result::SdkError<crate::operation::untag_resource::UntagResourceError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::untag_resource::UntagResourceError,
+            R,
+        >,
+    ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
             _ => Error::Unhandled(
-                                            aws_smithy_types::error::Unhandled::builder()
-                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
-                                                .source(err)
-                                                .build()
-                                        ),
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
@@ -1948,16 +3069,30 @@ impl From<crate::operation::update_configuration_set_event_destination::UpdateCo
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::operation::update_contact::UpdateContactError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::operation::update_contact::UpdateContactError, R>) -> Self {
+impl<R>
+    From<aws_smithy_http::result::SdkError<crate::operation::update_contact::UpdateContactError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::update_contact::UpdateContactError,
+            R,
+        >,
+    ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
             _ => Error::Unhandled(
-                                            aws_smithy_types::error::Unhandled::builder()
-                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
-                                                .source(err)
-                                                .build()
-                                        ),
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
@@ -1972,16 +3107,34 @@ impl From<crate::operation::update_contact::UpdateContactError> for Error {
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::operation::update_contact_list::UpdateContactListError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::operation::update_contact_list::UpdateContactListError, R>) -> Self {
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::update_contact_list::UpdateContactListError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::update_contact_list::UpdateContactListError,
+            R,
+        >,
+    ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
             _ => Error::Unhandled(
-                                            aws_smithy_types::error::Unhandled::builder()
-                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
-                                                .source(err)
-                                                .build()
-                                        ),
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
@@ -2019,21 +3172,43 @@ impl From<crate::operation::update_custom_verification_email_template::UpdateCus
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::operation::update_email_identity_policy::UpdateEmailIdentityPolicyError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::operation::update_email_identity_policy::UpdateEmailIdentityPolicyError, R>) -> Self {
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::update_email_identity_policy::UpdateEmailIdentityPolicyError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::update_email_identity_policy::UpdateEmailIdentityPolicyError,
+            R,
+        >,
+    ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
             _ => Error::Unhandled(
-                                            aws_smithy_types::error::Unhandled::builder()
-                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
-                                                .source(err)
-                                                .build()
-                                        ),
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
-impl From<crate::operation::update_email_identity_policy::UpdateEmailIdentityPolicyError> for Error {
-    fn from(err: crate::operation::update_email_identity_policy::UpdateEmailIdentityPolicyError) -> Self {
+impl From<crate::operation::update_email_identity_policy::UpdateEmailIdentityPolicyError>
+    for Error
+{
+    fn from(
+        err: crate::operation::update_email_identity_policy::UpdateEmailIdentityPolicyError,
+    ) -> Self {
         match err {
             crate::operation::update_email_identity_policy::UpdateEmailIdentityPolicyError::BadRequestException(inner) => Error::BadRequestException(inner),
             crate::operation::update_email_identity_policy::UpdateEmailIdentityPolicyError::NotFoundException(inner) => Error::NotFoundException(inner),
@@ -2042,16 +3217,34 @@ impl From<crate::operation::update_email_identity_policy::UpdateEmailIdentityPol
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::operation::update_email_template::UpdateEmailTemplateError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::operation::update_email_template::UpdateEmailTemplateError, R>) -> Self {
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::update_email_template::UpdateEmailTemplateError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::update_email_template::UpdateEmailTemplateError,
+            R,
+        >,
+    ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
             _ => Error::Unhandled(
-                                            aws_smithy_types::error::Unhandled::builder()
-                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
-                                                .source(err)
-                                                .build()
-                                        ),
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
@@ -2086,4 +3279,3 @@ impl aws_http::request_id::RequestId for Error {
         }
     }
 }
-

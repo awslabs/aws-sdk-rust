@@ -3,7 +3,7 @@
 /// <p> The Online Fraud Insights (OFI) model performance score. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct OfiModelPerformance  {
+pub struct OfiModelPerformance {
     /// <p> The area under the curve (auc). This summarizes the total positive rate (tpr) and false positive rate (FPR) across all possible model score thresholds. </p>
     #[doc(hidden)]
     pub auc: std::option::Option<f32>,
@@ -35,14 +35,11 @@ impl OfiModelPerformanceBuilder {
     }
     /// <p> The area under the curve (auc). This summarizes the total positive rate (tpr) and false positive rate (FPR) across all possible model score thresholds. </p>
     pub fn set_auc(mut self, input: std::option::Option<f32>) -> Self {
-        self.auc = input; self
+        self.auc = input;
+        self
     }
     /// Consumes the builder and constructs a [`OfiModelPerformance`](crate::types::OfiModelPerformance).
     pub fn build(self) -> crate::types::OfiModelPerformance {
-        crate::types::OfiModelPerformance {
-            auc: self.auc
-            ,
-        }
+        crate::types::OfiModelPerformance { auc: self.auc }
     }
 }
-

@@ -3,7 +3,7 @@
 /// <p>Configuration information for a search suggester. Each suggester has a unique name and specifies the text field you want to use for suggestions. The following options can be configured for a suggester: <code>FuzzyMatching</code>, <code>SortExpression</code>. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Suggester  {
+pub struct Suggester {
     /// <p>Names must begin with a letter and can contain the following characters: a-z (lowercase), 0-9, and _ (underscore).</p>
     #[doc(hidden)]
     pub suggester_name: std::option::Option<std::string::String>,
@@ -13,11 +13,13 @@ pub struct Suggester  {
 }
 impl Suggester {
     /// <p>Names must begin with a letter and can contain the following characters: a-z (lowercase), 0-9, and _ (underscore).</p>
-    pub fn suggester_name(&self) -> std::option::Option<& str> {
+    pub fn suggester_name(&self) -> std::option::Option<&str> {
         self.suggester_name.as_deref()
     }
     /// <p>Options for a search suggester.</p>
-    pub fn document_suggester_options(&self) -> std::option::Option<& crate::types::DocumentSuggesterOptions> {
+    pub fn document_suggester_options(
+        &self,
+    ) -> std::option::Option<&crate::types::DocumentSuggesterOptions> {
         self.document_suggester_options.as_ref()
     }
 }
@@ -33,7 +35,8 @@ impl Suggester {
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct SuggesterBuilder {
     pub(crate) suggester_name: std::option::Option<std::string::String>,
-    pub(crate) document_suggester_options: std::option::Option<crate::types::DocumentSuggesterOptions>,
+    pub(crate) document_suggester_options:
+        std::option::Option<crate::types::DocumentSuggesterOptions>,
 }
 impl SuggesterBuilder {
     /// <p>Names must begin with a letter and can contain the following characters: a-z (lowercase), 0-9, and _ (underscore).</p>
@@ -43,25 +46,30 @@ impl SuggesterBuilder {
     }
     /// <p>Names must begin with a letter and can contain the following characters: a-z (lowercase), 0-9, and _ (underscore).</p>
     pub fn set_suggester_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.suggester_name = input; self
+        self.suggester_name = input;
+        self
     }
     /// <p>Options for a search suggester.</p>
-    pub fn document_suggester_options(mut self, input: crate::types::DocumentSuggesterOptions) -> Self {
+    pub fn document_suggester_options(
+        mut self,
+        input: crate::types::DocumentSuggesterOptions,
+    ) -> Self {
         self.document_suggester_options = Some(input);
         self
     }
     /// <p>Options for a search suggester.</p>
-    pub fn set_document_suggester_options(mut self, input: std::option::Option<crate::types::DocumentSuggesterOptions>) -> Self {
-        self.document_suggester_options = input; self
+    pub fn set_document_suggester_options(
+        mut self,
+        input: std::option::Option<crate::types::DocumentSuggesterOptions>,
+    ) -> Self {
+        self.document_suggester_options = input;
+        self
     }
     /// Consumes the builder and constructs a [`Suggester`](crate::types::Suggester).
     pub fn build(self) -> crate::types::Suggester {
         crate::types::Suggester {
-            suggester_name: self.suggester_name
-            ,
-            document_suggester_options: self.document_suggester_options
-            ,
+            suggester_name: self.suggester_name,
+            document_suggester_options: self.document_suggester_options,
         }
     }
 }
-

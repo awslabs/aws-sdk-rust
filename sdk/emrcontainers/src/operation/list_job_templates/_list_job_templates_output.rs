@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListJobTemplatesOutput  {
+pub struct ListJobTemplatesOutput {
     /// <p>This output lists information about the specified job templates.</p>
     #[doc(hidden)]
     pub templates: std::option::Option<std::vec::Vec<crate::types::JobTemplate>>,
@@ -13,22 +13,23 @@ pub struct ListJobTemplatesOutput  {
 }
 impl ListJobTemplatesOutput {
     /// <p>This output lists information about the specified job templates.</p>
-    pub fn templates(&self) -> std::option::Option<& [crate::types::JobTemplate]> {
+    pub fn templates(&self) -> std::option::Option<&[crate::types::JobTemplate]> {
         self.templates.as_deref()
     }
     /// <p> This output displays the token for the next set of job templates.</p>
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for ListJobTemplatesOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl ListJobTemplatesOutput {
     /// Creates a new builder-style object to manufacture [`ListJobTemplatesOutput`](crate::operation::list_job_templates::ListJobTemplatesOutput).
-    pub fn builder() -> crate::operation::list_job_templates::builders::ListJobTemplatesOutputBuilder {
+    pub fn builder() -> crate::operation::list_job_templates::builders::ListJobTemplatesOutputBuilder
+    {
         crate::operation::list_job_templates::builders::ListJobTemplatesOutputBuilder::default()
     }
 }
@@ -49,13 +50,17 @@ impl ListJobTemplatesOutputBuilder {
     /// <p>This output lists information about the specified job templates.</p>
     pub fn templates(mut self, input: crate::types::JobTemplate) -> Self {
         let mut v = self.templates.unwrap_or_default();
-                        v.push(input);
-                        self.templates = Some(v);
-                        self
+        v.push(input);
+        self.templates = Some(v);
+        self
     }
     /// <p>This output lists information about the specified job templates.</p>
-    pub fn set_templates(mut self, input: std::option::Option<std::vec::Vec<crate::types::JobTemplate>>) -> Self {
-        self.templates = input; self
+    pub fn set_templates(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::JobTemplate>>,
+    ) -> Self {
+        self.templates = input;
+        self
     }
     /// <p> This output displays the token for the next set of job templates.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -64,26 +69,24 @@ impl ListJobTemplatesOutputBuilder {
     }
     /// <p> This output displays the token for the next set of job templates.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input; self
+        self.next_token = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`ListJobTemplatesOutput`](crate::operation::list_job_templates::ListJobTemplatesOutput).
     pub fn build(self) -> crate::operation::list_job_templates::ListJobTemplatesOutput {
         crate::operation::list_job_templates::ListJobTemplatesOutput {
-            templates: self.templates
-            ,
-            next_token: self.next_token
-            ,
+            templates: self.templates,
+            next_token: self.next_token,
             _request_id: self._request_id,
         }
     }
 }
-

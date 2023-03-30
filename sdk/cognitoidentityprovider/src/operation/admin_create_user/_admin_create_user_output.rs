@@ -3,7 +3,7 @@
 /// <p>Represents the response from the server to the request to create the user.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AdminCreateUserOutput  {
+pub struct AdminCreateUserOutput {
     /// <p>The newly created user.</p>
     #[doc(hidden)]
     pub user: std::option::Option<crate::types::UserType>,
@@ -11,18 +11,19 @@ pub struct AdminCreateUserOutput  {
 }
 impl AdminCreateUserOutput {
     /// <p>The newly created user.</p>
-    pub fn user(&self) -> std::option::Option<& crate::types::UserType> {
+    pub fn user(&self) -> std::option::Option<&crate::types::UserType> {
         self.user.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for AdminCreateUserOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl AdminCreateUserOutput {
     /// Creates a new builder-style object to manufacture [`AdminCreateUserOutput`](crate::operation::admin_create_user::AdminCreateUserOutput).
-    pub fn builder() -> crate::operation::admin_create_user::builders::AdminCreateUserOutputBuilder {
+    pub fn builder() -> crate::operation::admin_create_user::builders::AdminCreateUserOutputBuilder
+    {
         crate::operation::admin_create_user::builders::AdminCreateUserOutputBuilder::default()
     }
 }
@@ -42,24 +43,23 @@ impl AdminCreateUserOutputBuilder {
     }
     /// <p>The newly created user.</p>
     pub fn set_user(mut self, input: std::option::Option<crate::types::UserType>) -> Self {
-        self.user = input; self
+        self.user = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`AdminCreateUserOutput`](crate::operation::admin_create_user::AdminCreateUserOutput).
     pub fn build(self) -> crate::operation::admin_create_user::AdminCreateUserOutput {
         crate::operation::admin_create_user::AdminCreateUserOutput {
-            user: self.user
-            ,
+            user: self.user,
             _request_id: self._request_id,
         }
     }
 }
-

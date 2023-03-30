@@ -3,7 +3,7 @@
 /// <p>Provides the status code and message that result from processing an event.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct EventItemResponse  {
+pub struct EventItemResponse {
     /// <p>A custom message that's returned in the response as a result of processing the event.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
@@ -13,7 +13,7 @@ pub struct EventItemResponse  {
 }
 impl EventItemResponse {
     /// <p>A custom message that's returned in the response as a result of processing the event.</p>
-    pub fn message(&self) -> std::option::Option<& str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
     /// <p>The status code that's returned in the response as a result of processing the event. Possible values are: 202, for events that were accepted; and, 400, for events that weren't valid.</p>
@@ -43,7 +43,8 @@ impl EventItemResponseBuilder {
     }
     /// <p>A custom message that's returned in the response as a result of processing the event.</p>
     pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.message = input; self
+        self.message = input;
+        self
     }
     /// <p>The status code that's returned in the response as a result of processing the event. Possible values are: 202, for events that were accepted; and, 400, for events that weren't valid.</p>
     pub fn status_code(mut self, input: i32) -> Self {
@@ -52,17 +53,14 @@ impl EventItemResponseBuilder {
     }
     /// <p>The status code that's returned in the response as a result of processing the event. Possible values are: 202, for events that were accepted; and, 400, for events that weren't valid.</p>
     pub fn set_status_code(mut self, input: std::option::Option<i32>) -> Self {
-        self.status_code = input; self
+        self.status_code = input;
+        self
     }
     /// Consumes the builder and constructs a [`EventItemResponse`](crate::types::EventItemResponse).
     pub fn build(self) -> crate::types::EventItemResponse {
         crate::types::EventItemResponse {
-            message: self.message
-            ,
-            status_code: self.status_code
-                .unwrap_or_default()
-            ,
+            message: self.message,
+            status_code: self.status_code.unwrap_or_default(),
         }
     }
 }
-

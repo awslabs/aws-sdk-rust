@@ -2,20 +2,21 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CancelExportTaskInput  {
+pub struct CancelExportTaskInput {
     /// <p>The ID of the export task. This is the ID returned by <code>CreateInstanceExportTask</code>.</p>
     #[doc(hidden)]
     pub export_task_id: std::option::Option<std::string::String>,
 }
 impl CancelExportTaskInput {
     /// <p>The ID of the export task. This is the ID returned by <code>CreateInstanceExportTask</code>.</p>
-    pub fn export_task_id(&self) -> std::option::Option<& str> {
+    pub fn export_task_id(&self) -> std::option::Option<&str> {
         self.export_task_id.as_deref()
     }
 }
 impl CancelExportTaskInput {
     /// Creates a new builder-style object to manufacture [`CancelExportTaskInput`](crate::operation::cancel_export_task::CancelExportTaskInput).
-    pub fn builder() -> crate::operation::cancel_export_task::builders::CancelExportTaskInputBuilder {
+    pub fn builder() -> crate::operation::cancel_export_task::builders::CancelExportTaskInputBuilder
+    {
         crate::operation::cancel_export_task::builders::CancelExportTaskInputBuilder::default()
     }
 }
@@ -34,16 +35,20 @@ impl CancelExportTaskInputBuilder {
     }
     /// <p>The ID of the export task. This is the ID returned by <code>CreateInstanceExportTask</code>.</p>
     pub fn set_export_task_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.export_task_id = input; self
+        self.export_task_id = input;
+        self
     }
     /// Consumes the builder and constructs a [`CancelExportTaskInput`](crate::operation::cancel_export_task::CancelExportTaskInput).
-    pub fn build(self) -> Result<crate::operation::cancel_export_task::CancelExportTaskInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::cancel_export_task::CancelExportTaskInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::cancel_export_task::CancelExportTaskInput {
-                export_task_id: self.export_task_id
-                ,
-            }
+                export_task_id: self.export_task_id,
+            },
         )
     }
 }
-

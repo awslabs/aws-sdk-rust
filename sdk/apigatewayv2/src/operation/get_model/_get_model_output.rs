@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetModelOutput  {
+pub struct GetModelOutput {
     /// <p>The content-type for the model, for example, "application/json".</p>
     #[doc(hidden)]
     pub content_type: std::option::Option<std::string::String>,
@@ -22,31 +22,31 @@ pub struct GetModelOutput  {
 }
 impl GetModelOutput {
     /// <p>The content-type for the model, for example, "application/json".</p>
-    pub fn content_type(&self) -> std::option::Option<& str> {
+    pub fn content_type(&self) -> std::option::Option<&str> {
         self.content_type.as_deref()
     }
     /// <p>The description of the model.</p>
-    pub fn description(&self) -> std::option::Option<& str> {
+    pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
     /// <p>The model identifier.</p>
-    pub fn model_id(&self) -> std::option::Option<& str> {
+    pub fn model_id(&self) -> std::option::Option<&str> {
         self.model_id.as_deref()
     }
     /// <p>The name of the model. Must be alphanumeric.</p>
-    pub fn name(&self) -> std::option::Option<& str> {
+    pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>The schema for the model. For application/json models, this should be JSON schema draft 4 model.</p>
-    pub fn schema(&self) -> std::option::Option<& str> {
+    pub fn schema(&self) -> std::option::Option<&str> {
         self.schema.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for GetModelOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl GetModelOutput {
     /// Creates a new builder-style object to manufacture [`GetModelOutput`](crate::operation::get_model::GetModelOutput).
     pub fn builder() -> crate::operation::get_model::builders::GetModelOutputBuilder {
@@ -73,7 +73,8 @@ impl GetModelOutputBuilder {
     }
     /// <p>The content-type for the model, for example, "application/json".</p>
     pub fn set_content_type(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.content_type = input; self
+        self.content_type = input;
+        self
     }
     /// <p>The description of the model.</p>
     pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -82,7 +83,8 @@ impl GetModelOutputBuilder {
     }
     /// <p>The description of the model.</p>
     pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.description = input; self
+        self.description = input;
+        self
     }
     /// <p>The model identifier.</p>
     pub fn model_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -91,7 +93,8 @@ impl GetModelOutputBuilder {
     }
     /// <p>The model identifier.</p>
     pub fn set_model_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.model_id = input; self
+        self.model_id = input;
+        self
     }
     /// <p>The name of the model. Must be alphanumeric.</p>
     pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -100,7 +103,8 @@ impl GetModelOutputBuilder {
     }
     /// <p>The name of the model. Must be alphanumeric.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input; self
+        self.name = input;
+        self
     }
     /// <p>The schema for the model. For application/json models, this should be JSON schema draft 4 model.</p>
     pub fn schema(mut self, input: impl Into<std::string::String>) -> Self {
@@ -109,32 +113,27 @@ impl GetModelOutputBuilder {
     }
     /// <p>The schema for the model. For application/json models, this should be JSON schema draft 4 model.</p>
     pub fn set_schema(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.schema = input; self
+        self.schema = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`GetModelOutput`](crate::operation::get_model::GetModelOutput).
     pub fn build(self) -> crate::operation::get_model::GetModelOutput {
         crate::operation::get_model::GetModelOutput {
-            content_type: self.content_type
-            ,
-            description: self.description
-            ,
-            model_id: self.model_id
-            ,
-            name: self.name
-            ,
-            schema: self.schema
-            ,
+            content_type: self.content_type,
+            description: self.description,
+            model_id: self.model_id,
+            name: self.name,
+            schema: self.schema,
             _request_id: self._request_id,
         }
     }
 }
-

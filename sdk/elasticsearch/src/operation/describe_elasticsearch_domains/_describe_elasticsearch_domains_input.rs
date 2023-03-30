@@ -3,20 +3,20 @@
 /// <p>Container for the parameters to the <code><code>DescribeElasticsearchDomains</code></code> operation. By default, the API returns the status of all Elasticsearch domains.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeElasticsearchDomainsInput  {
+pub struct DescribeElasticsearchDomainsInput {
     /// <p>The Elasticsearch domains for which you want information.</p>
     #[doc(hidden)]
     pub domain_names: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl DescribeElasticsearchDomainsInput {
     /// <p>The Elasticsearch domains for which you want information.</p>
-    pub fn domain_names(&self) -> std::option::Option<& [std::string::String]> {
+    pub fn domain_names(&self) -> std::option::Option<&[std::string::String]> {
         self.domain_names.as_deref()
     }
 }
 impl DescribeElasticsearchDomainsInput {
     /// Creates a new builder-style object to manufacture [`DescribeElasticsearchDomainsInput`](crate::operation::describe_elasticsearch_domains::DescribeElasticsearchDomainsInput).
-    pub fn builder() -> crate::operation::describe_elasticsearch_domains::builders::DescribeElasticsearchDomainsInputBuilder {
+    pub fn builder() -> crate::operation::describe_elasticsearch_domains::builders::DescribeElasticsearchDomainsInputBuilder{
         crate::operation::describe_elasticsearch_domains::builders::DescribeElasticsearchDomainsInputBuilder::default()
     }
 }
@@ -35,22 +35,29 @@ impl DescribeElasticsearchDomainsInputBuilder {
     /// <p>The Elasticsearch domains for which you want information.</p>
     pub fn domain_names(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.domain_names.unwrap_or_default();
-                        v.push(input.into());
-                        self.domain_names = Some(v);
-                        self
+        v.push(input.into());
+        self.domain_names = Some(v);
+        self
     }
     /// <p>The Elasticsearch domains for which you want information.</p>
-    pub fn set_domain_names(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-        self.domain_names = input; self
+    pub fn set_domain_names(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
+        self.domain_names = input;
+        self
     }
     /// Consumes the builder and constructs a [`DescribeElasticsearchDomainsInput`](crate::operation::describe_elasticsearch_domains::DescribeElasticsearchDomainsInput).
-    pub fn build(self) -> Result<crate::operation::describe_elasticsearch_domains::DescribeElasticsearchDomainsInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::describe_elasticsearch_domains::DescribeElasticsearchDomainsInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::describe_elasticsearch_domains::DescribeElasticsearchDomainsInput {
-                domain_names: self.domain_names
-                ,
-            }
+                domain_names: self.domain_names,
+            },
         )
     }
 }
-

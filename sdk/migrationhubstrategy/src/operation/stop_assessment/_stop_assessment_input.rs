@@ -2,14 +2,14 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct StopAssessmentInput  {
+pub struct StopAssessmentInput {
     /// <p> The <code>assessmentId</code> returned by <code>StartAssessment</code>. </p>
     #[doc(hidden)]
     pub assessment_id: std::option::Option<std::string::String>,
 }
 impl StopAssessmentInput {
     /// <p> The <code>assessmentId</code> returned by <code>StartAssessment</code>. </p>
-    pub fn assessment_id(&self) -> std::option::Option<& str> {
+    pub fn assessment_id(&self) -> std::option::Option<&str> {
         self.assessment_id.as_deref()
     }
 }
@@ -34,16 +34,18 @@ impl StopAssessmentInputBuilder {
     }
     /// <p> The <code>assessmentId</code> returned by <code>StartAssessment</code>. </p>
     pub fn set_assessment_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.assessment_id = input; self
+        self.assessment_id = input;
+        self
     }
     /// Consumes the builder and constructs a [`StopAssessmentInput`](crate::operation::stop_assessment::StopAssessmentInput).
-    pub fn build(self) -> Result<crate::operation::stop_assessment::StopAssessmentInput, aws_smithy_http::operation::error::BuildError> {
-        Ok(
-            crate::operation::stop_assessment::StopAssessmentInput {
-                assessment_id: self.assessment_id
-                ,
-            }
-        )
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::stop_assessment::StopAssessmentInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        Ok(crate::operation::stop_assessment::StopAssessmentInput {
+            assessment_id: self.assessment_id,
+        })
     }
 }
-

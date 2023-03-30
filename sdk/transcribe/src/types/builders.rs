@@ -62,4 +62,3 @@ pub use crate::types::_language_model::LanguageModelBuilder;
 pub use crate::types::_input_data_config::InputDataConfigBuilder;
 
 pub use crate::types::_call_analytics_job_summary::CallAnalyticsJobSummaryBuilder;
-

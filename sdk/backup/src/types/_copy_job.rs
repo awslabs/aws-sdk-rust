@@ -3,7 +3,7 @@
 /// <p>Contains detailed information about a copy job.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CopyJob  {
+pub struct CopyJob {
     /// <p>The account ID that owns the copy job.</p>
     #[doc(hidden)]
     pub account_id: std::option::Option<std::string::String>,
@@ -63,51 +63,52 @@ pub struct CopyJob  {
     pub number_of_child_jobs: std::option::Option<i64>,
     /// <p>This returns the statistics of the included child (nested) copy jobs.</p>
     #[doc(hidden)]
-    pub child_jobs_in_state: std::option::Option<std::collections::HashMap<crate::types::CopyJobState, i64>>,
+    pub child_jobs_in_state:
+        std::option::Option<std::collections::HashMap<crate::types::CopyJobState, i64>>,
 }
 impl CopyJob {
     /// <p>The account ID that owns the copy job.</p>
-    pub fn account_id(&self) -> std::option::Option<& str> {
+    pub fn account_id(&self) -> std::option::Option<&str> {
         self.account_id.as_deref()
     }
     /// <p>Uniquely identifies a copy job.</p>
-    pub fn copy_job_id(&self) -> std::option::Option<& str> {
+    pub fn copy_job_id(&self) -> std::option::Option<&str> {
         self.copy_job_id.as_deref()
     }
     /// <p>An Amazon Resource Name (ARN) that uniquely identifies a source copy vault; for example, <code>arn:aws:backup:us-east-1:123456789012:vault:aBackupVault</code>. </p>
-    pub fn source_backup_vault_arn(&self) -> std::option::Option<& str> {
+    pub fn source_backup_vault_arn(&self) -> std::option::Option<&str> {
         self.source_backup_vault_arn.as_deref()
     }
     /// <p>An ARN that uniquely identifies a source recovery point; for example, <code>arn:aws:backup:us-east-1:123456789012:recovery-point:1EB3B5E7-9EB0-435A-A80B-108B488B0D45</code>.</p>
-    pub fn source_recovery_point_arn(&self) -> std::option::Option<& str> {
+    pub fn source_recovery_point_arn(&self) -> std::option::Option<&str> {
         self.source_recovery_point_arn.as_deref()
     }
     /// <p>An Amazon Resource Name (ARN) that uniquely identifies a destination copy vault; for example, <code>arn:aws:backup:us-east-1:123456789012:vault:aBackupVault</code>.</p>
-    pub fn destination_backup_vault_arn(&self) -> std::option::Option<& str> {
+    pub fn destination_backup_vault_arn(&self) -> std::option::Option<&str> {
         self.destination_backup_vault_arn.as_deref()
     }
     /// <p>An ARN that uniquely identifies a destination recovery point; for example, <code>arn:aws:backup:us-east-1:123456789012:recovery-point:1EB3B5E7-9EB0-435A-A80B-108B488B0D45</code>.</p>
-    pub fn destination_recovery_point_arn(&self) -> std::option::Option<& str> {
+    pub fn destination_recovery_point_arn(&self) -> std::option::Option<&str> {
         self.destination_recovery_point_arn.as_deref()
     }
     /// <p>The Amazon Web Services resource to be copied; for example, an Amazon Elastic Block Store (Amazon EBS) volume or an Amazon Relational Database Service (Amazon RDS) database.</p>
-    pub fn resource_arn(&self) -> std::option::Option<& str> {
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
         self.resource_arn.as_deref()
     }
     /// <p>The date and time a copy job is created, in Unix format and Coordinated Universal Time (UTC). The value of <code>CreationDate</code> is accurate to milliseconds. For example, the value 1516925490.087 represents Friday, January 26, 2018 12:11:30.087 AM.</p>
-    pub fn creation_date(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
+    pub fn creation_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.creation_date.as_ref()
     }
     /// <p>The date and time a copy job is completed, in Unix format and Coordinated Universal Time (UTC). The value of <code>CompletionDate</code> is accurate to milliseconds. For example, the value 1516925490.087 represents Friday, January 26, 2018 12:11:30.087 AM.</p>
-    pub fn completion_date(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
+    pub fn completion_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.completion_date.as_ref()
     }
     /// <p>The current state of a copy job.</p>
-    pub fn state(&self) -> std::option::Option<& crate::types::CopyJobState> {
+    pub fn state(&self) -> std::option::Option<&crate::types::CopyJobState> {
         self.state.as_ref()
     }
     /// <p>A detailed message explaining the status of the job to copy a resource.</p>
-    pub fn status_message(&self) -> std::option::Option<& str> {
+    pub fn status_message(&self) -> std::option::Option<&str> {
         self.status_message.as_deref()
     }
     /// <p>The size, in bytes, of a copy job.</p>
@@ -115,19 +116,19 @@ impl CopyJob {
         self.backup_size_in_bytes
     }
     /// <p>Specifies the IAM role ARN used to copy the target recovery point; for example, <code>arn:aws:iam::123456789012:role/S3Access</code>.</p>
-    pub fn iam_role_arn(&self) -> std::option::Option<& str> {
+    pub fn iam_role_arn(&self) -> std::option::Option<&str> {
         self.iam_role_arn.as_deref()
     }
     /// <p>Contains information about the backup plan and rule that Backup used to initiate the recovery point backup.</p>
-    pub fn created_by(&self) -> std::option::Option<& crate::types::RecoveryPointCreator> {
+    pub fn created_by(&self) -> std::option::Option<&crate::types::RecoveryPointCreator> {
         self.created_by.as_ref()
     }
     /// <p>The type of Amazon Web Services resource to be copied; for example, an Amazon Elastic Block Store (Amazon EBS) volume or an Amazon Relational Database Service (Amazon RDS) database.</p>
-    pub fn resource_type(&self) -> std::option::Option<& str> {
+    pub fn resource_type(&self) -> std::option::Option<&str> {
         self.resource_type.as_deref()
     }
     /// <p>This uniquely identifies a request to Backup to copy a resource. The return will be the parent (composite) job ID.</p>
-    pub fn parent_job_id(&self) -> std::option::Option<& str> {
+    pub fn parent_job_id(&self) -> std::option::Option<&str> {
         self.parent_job_id.as_deref()
     }
     /// <p>This is a boolean value indicating this is a parent (composite) copy job.</p>
@@ -135,7 +136,7 @@ impl CopyJob {
         self.is_parent
     }
     /// <p>This is the identifier of a resource within a composite group, such as nested (child) recovery point belonging to a composite (parent) stack. The ID is transferred from the <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/resources-section-structure.html#resources-section-structure-syntax"> logical ID</a> within a stack.</p>
-    pub fn composite_member_identifier(&self) -> std::option::Option<& str> {
+    pub fn composite_member_identifier(&self) -> std::option::Option<&str> {
         self.composite_member_identifier.as_deref()
     }
     /// <p>This is the number of child (nested) copy jobs.</p>
@@ -143,7 +144,9 @@ impl CopyJob {
         self.number_of_child_jobs
     }
     /// <p>This returns the statistics of the included child (nested) copy jobs.</p>
-    pub fn child_jobs_in_state(&self) -> std::option::Option<& std::collections::HashMap<crate::types::CopyJobState, i64>> {
+    pub fn child_jobs_in_state(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<crate::types::CopyJobState, i64>> {
         self.child_jobs_in_state.as_ref()
     }
 }
@@ -177,7 +180,8 @@ pub struct CopyJobBuilder {
     pub(crate) is_parent: std::option::Option<bool>,
     pub(crate) composite_member_identifier: std::option::Option<std::string::String>,
     pub(crate) number_of_child_jobs: std::option::Option<i64>,
-    pub(crate) child_jobs_in_state: std::option::Option<std::collections::HashMap<crate::types::CopyJobState, i64>>,
+    pub(crate) child_jobs_in_state:
+        std::option::Option<std::collections::HashMap<crate::types::CopyJobState, i64>>,
 }
 impl CopyJobBuilder {
     /// <p>The account ID that owns the copy job.</p>
@@ -187,7 +191,8 @@ impl CopyJobBuilder {
     }
     /// <p>The account ID that owns the copy job.</p>
     pub fn set_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.account_id = input; self
+        self.account_id = input;
+        self
     }
     /// <p>Uniquely identifies a copy job.</p>
     pub fn copy_job_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -196,7 +201,8 @@ impl CopyJobBuilder {
     }
     /// <p>Uniquely identifies a copy job.</p>
     pub fn set_copy_job_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.copy_job_id = input; self
+        self.copy_job_id = input;
+        self
     }
     /// <p>An Amazon Resource Name (ARN) that uniquely identifies a source copy vault; for example, <code>arn:aws:backup:us-east-1:123456789012:vault:aBackupVault</code>. </p>
     pub fn source_backup_vault_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -204,8 +210,12 @@ impl CopyJobBuilder {
         self
     }
     /// <p>An Amazon Resource Name (ARN) that uniquely identifies a source copy vault; for example, <code>arn:aws:backup:us-east-1:123456789012:vault:aBackupVault</code>. </p>
-    pub fn set_source_backup_vault_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.source_backup_vault_arn = input; self
+    pub fn set_source_backup_vault_arn(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.source_backup_vault_arn = input;
+        self
     }
     /// <p>An ARN that uniquely identifies a source recovery point; for example, <code>arn:aws:backup:us-east-1:123456789012:recovery-point:1EB3B5E7-9EB0-435A-A80B-108B488B0D45</code>.</p>
     pub fn source_recovery_point_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -213,8 +223,12 @@ impl CopyJobBuilder {
         self
     }
     /// <p>An ARN that uniquely identifies a source recovery point; for example, <code>arn:aws:backup:us-east-1:123456789012:recovery-point:1EB3B5E7-9EB0-435A-A80B-108B488B0D45</code>.</p>
-    pub fn set_source_recovery_point_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.source_recovery_point_arn = input; self
+    pub fn set_source_recovery_point_arn(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.source_recovery_point_arn = input;
+        self
     }
     /// <p>An Amazon Resource Name (ARN) that uniquely identifies a destination copy vault; for example, <code>arn:aws:backup:us-east-1:123456789012:vault:aBackupVault</code>.</p>
     pub fn destination_backup_vault_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -222,8 +236,12 @@ impl CopyJobBuilder {
         self
     }
     /// <p>An Amazon Resource Name (ARN) that uniquely identifies a destination copy vault; for example, <code>arn:aws:backup:us-east-1:123456789012:vault:aBackupVault</code>.</p>
-    pub fn set_destination_backup_vault_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.destination_backup_vault_arn = input; self
+    pub fn set_destination_backup_vault_arn(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.destination_backup_vault_arn = input;
+        self
     }
     /// <p>An ARN that uniquely identifies a destination recovery point; for example, <code>arn:aws:backup:us-east-1:123456789012:recovery-point:1EB3B5E7-9EB0-435A-A80B-108B488B0D45</code>.</p>
     pub fn destination_recovery_point_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -231,8 +249,12 @@ impl CopyJobBuilder {
         self
     }
     /// <p>An ARN that uniquely identifies a destination recovery point; for example, <code>arn:aws:backup:us-east-1:123456789012:recovery-point:1EB3B5E7-9EB0-435A-A80B-108B488B0D45</code>.</p>
-    pub fn set_destination_recovery_point_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.destination_recovery_point_arn = input; self
+    pub fn set_destination_recovery_point_arn(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.destination_recovery_point_arn = input;
+        self
     }
     /// <p>The Amazon Web Services resource to be copied; for example, an Amazon Elastic Block Store (Amazon EBS) volume or an Amazon Relational Database Service (Amazon RDS) database.</p>
     pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -241,7 +263,8 @@ impl CopyJobBuilder {
     }
     /// <p>The Amazon Web Services resource to be copied; for example, an Amazon Elastic Block Store (Amazon EBS) volume or an Amazon Relational Database Service (Amazon RDS) database.</p>
     pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.resource_arn = input; self
+        self.resource_arn = input;
+        self
     }
     /// <p>The date and time a copy job is created, in Unix format and Coordinated Universal Time (UTC). The value of <code>CreationDate</code> is accurate to milliseconds. For example, the value 1516925490.087 represents Friday, January 26, 2018 12:11:30.087 AM.</p>
     pub fn creation_date(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -249,8 +272,12 @@ impl CopyJobBuilder {
         self
     }
     /// <p>The date and time a copy job is created, in Unix format and Coordinated Universal Time (UTC). The value of <code>CreationDate</code> is accurate to milliseconds. For example, the value 1516925490.087 represents Friday, January 26, 2018 12:11:30.087 AM.</p>
-    pub fn set_creation_date(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.creation_date = input; self
+    pub fn set_creation_date(
+        mut self,
+        input: std::option::Option<aws_smithy_types::DateTime>,
+    ) -> Self {
+        self.creation_date = input;
+        self
     }
     /// <p>The date and time a copy job is completed, in Unix format and Coordinated Universal Time (UTC). The value of <code>CompletionDate</code> is accurate to milliseconds. For example, the value 1516925490.087 represents Friday, January 26, 2018 12:11:30.087 AM.</p>
     pub fn completion_date(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -258,8 +285,12 @@ impl CopyJobBuilder {
         self
     }
     /// <p>The date and time a copy job is completed, in Unix format and Coordinated Universal Time (UTC). The value of <code>CompletionDate</code> is accurate to milliseconds. For example, the value 1516925490.087 represents Friday, January 26, 2018 12:11:30.087 AM.</p>
-    pub fn set_completion_date(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.completion_date = input; self
+    pub fn set_completion_date(
+        mut self,
+        input: std::option::Option<aws_smithy_types::DateTime>,
+    ) -> Self {
+        self.completion_date = input;
+        self
     }
     /// <p>The current state of a copy job.</p>
     pub fn state(mut self, input: crate::types::CopyJobState) -> Self {
@@ -268,7 +299,8 @@ impl CopyJobBuilder {
     }
     /// <p>The current state of a copy job.</p>
     pub fn set_state(mut self, input: std::option::Option<crate::types::CopyJobState>) -> Self {
-        self.state = input; self
+        self.state = input;
+        self
     }
     /// <p>A detailed message explaining the status of the job to copy a resource.</p>
     pub fn status_message(mut self, input: impl Into<std::string::String>) -> Self {
@@ -277,7 +309,8 @@ impl CopyJobBuilder {
     }
     /// <p>A detailed message explaining the status of the job to copy a resource.</p>
     pub fn set_status_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.status_message = input; self
+        self.status_message = input;
+        self
     }
     /// <p>The size, in bytes, of a copy job.</p>
     pub fn backup_size_in_bytes(mut self, input: i64) -> Self {
@@ -286,7 +319,8 @@ impl CopyJobBuilder {
     }
     /// <p>The size, in bytes, of a copy job.</p>
     pub fn set_backup_size_in_bytes(mut self, input: std::option::Option<i64>) -> Self {
-        self.backup_size_in_bytes = input; self
+        self.backup_size_in_bytes = input;
+        self
     }
     /// <p>Specifies the IAM role ARN used to copy the target recovery point; for example, <code>arn:aws:iam::123456789012:role/S3Access</code>.</p>
     pub fn iam_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -295,7 +329,8 @@ impl CopyJobBuilder {
     }
     /// <p>Specifies the IAM role ARN used to copy the target recovery point; for example, <code>arn:aws:iam::123456789012:role/S3Access</code>.</p>
     pub fn set_iam_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.iam_role_arn = input; self
+        self.iam_role_arn = input;
+        self
     }
     /// <p>Contains information about the backup plan and rule that Backup used to initiate the recovery point backup.</p>
     pub fn created_by(mut self, input: crate::types::RecoveryPointCreator) -> Self {
@@ -303,8 +338,12 @@ impl CopyJobBuilder {
         self
     }
     /// <p>Contains information about the backup plan and rule that Backup used to initiate the recovery point backup.</p>
-    pub fn set_created_by(mut self, input: std::option::Option<crate::types::RecoveryPointCreator>) -> Self {
-        self.created_by = input; self
+    pub fn set_created_by(
+        mut self,
+        input: std::option::Option<crate::types::RecoveryPointCreator>,
+    ) -> Self {
+        self.created_by = input;
+        self
     }
     /// <p>The type of Amazon Web Services resource to be copied; for example, an Amazon Elastic Block Store (Amazon EBS) volume or an Amazon Relational Database Service (Amazon RDS) database.</p>
     pub fn resource_type(mut self, input: impl Into<std::string::String>) -> Self {
@@ -313,7 +352,8 @@ impl CopyJobBuilder {
     }
     /// <p>The type of Amazon Web Services resource to be copied; for example, an Amazon Elastic Block Store (Amazon EBS) volume or an Amazon Relational Database Service (Amazon RDS) database.</p>
     pub fn set_resource_type(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.resource_type = input; self
+        self.resource_type = input;
+        self
     }
     /// <p>This uniquely identifies a request to Backup to copy a resource. The return will be the parent (composite) job ID.</p>
     pub fn parent_job_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -322,7 +362,8 @@ impl CopyJobBuilder {
     }
     /// <p>This uniquely identifies a request to Backup to copy a resource. The return will be the parent (composite) job ID.</p>
     pub fn set_parent_job_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.parent_job_id = input; self
+        self.parent_job_id = input;
+        self
     }
     /// <p>This is a boolean value indicating this is a parent (composite) copy job.</p>
     pub fn is_parent(mut self, input: bool) -> Self {
@@ -331,7 +372,8 @@ impl CopyJobBuilder {
     }
     /// <p>This is a boolean value indicating this is a parent (composite) copy job.</p>
     pub fn set_is_parent(mut self, input: std::option::Option<bool>) -> Self {
-        self.is_parent = input; self
+        self.is_parent = input;
+        self
     }
     /// <p>This is the identifier of a resource within a composite group, such as nested (child) recovery point belonging to a composite (parent) stack. The ID is transferred from the <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/resources-section-structure.html#resources-section-structure-syntax"> logical ID</a> within a stack.</p>
     pub fn composite_member_identifier(mut self, input: impl Into<std::string::String>) -> Self {
@@ -339,8 +381,12 @@ impl CopyJobBuilder {
         self
     }
     /// <p>This is the identifier of a resource within a composite group, such as nested (child) recovery point belonging to a composite (parent) stack. The ID is transferred from the <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/resources-section-structure.html#resources-section-structure-syntax"> logical ID</a> within a stack.</p>
-    pub fn set_composite_member_identifier(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.composite_member_identifier = input; self
+    pub fn set_composite_member_identifier(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.composite_member_identifier = input;
+        self
     }
     /// <p>This is the number of child (nested) copy jobs.</p>
     pub fn number_of_child_jobs(mut self, input: i64) -> Self {
@@ -349,7 +395,8 @@ impl CopyJobBuilder {
     }
     /// <p>This is the number of child (nested) copy jobs.</p>
     pub fn set_number_of_child_jobs(mut self, input: std::option::Option<i64>) -> Self {
-        self.number_of_child_jobs = input; self
+        self.number_of_child_jobs = input;
+        self
     }
     /// Adds a key-value pair to `child_jobs_in_state`.
     ///
@@ -358,59 +405,41 @@ impl CopyJobBuilder {
     /// <p>This returns the statistics of the included child (nested) copy jobs.</p>
     pub fn child_jobs_in_state(mut self, k: crate::types::CopyJobState, v: i64) -> Self {
         let mut hash_map = self.child_jobs_in_state.unwrap_or_default();
-                        hash_map.insert(k, v);
-                        self.child_jobs_in_state = Some(hash_map);
-                        self
+        hash_map.insert(k, v);
+        self.child_jobs_in_state = Some(hash_map);
+        self
     }
     /// <p>This returns the statistics of the included child (nested) copy jobs.</p>
-    pub fn set_child_jobs_in_state(mut self, input: std::option::Option<std::collections::HashMap<crate::types::CopyJobState, i64>>) -> Self {
-        self.child_jobs_in_state = input; self
+    pub fn set_child_jobs_in_state(
+        mut self,
+        input: std::option::Option<std::collections::HashMap<crate::types::CopyJobState, i64>>,
+    ) -> Self {
+        self.child_jobs_in_state = input;
+        self
     }
     /// Consumes the builder and constructs a [`CopyJob`](crate::types::CopyJob).
     pub fn build(self) -> crate::types::CopyJob {
         crate::types::CopyJob {
-            account_id: self.account_id
-            ,
-            copy_job_id: self.copy_job_id
-            ,
-            source_backup_vault_arn: self.source_backup_vault_arn
-            ,
-            source_recovery_point_arn: self.source_recovery_point_arn
-            ,
-            destination_backup_vault_arn: self.destination_backup_vault_arn
-            ,
-            destination_recovery_point_arn: self.destination_recovery_point_arn
-            ,
-            resource_arn: self.resource_arn
-            ,
-            creation_date: self.creation_date
-            ,
-            completion_date: self.completion_date
-            ,
-            state: self.state
-            ,
-            status_message: self.status_message
-            ,
-            backup_size_in_bytes: self.backup_size_in_bytes
-            ,
-            iam_role_arn: self.iam_role_arn
-            ,
-            created_by: self.created_by
-            ,
-            resource_type: self.resource_type
-            ,
-            parent_job_id: self.parent_job_id
-            ,
-            is_parent: self.is_parent
-                .unwrap_or_default()
-            ,
-            composite_member_identifier: self.composite_member_identifier
-            ,
-            number_of_child_jobs: self.number_of_child_jobs
-            ,
-            child_jobs_in_state: self.child_jobs_in_state
-            ,
+            account_id: self.account_id,
+            copy_job_id: self.copy_job_id,
+            source_backup_vault_arn: self.source_backup_vault_arn,
+            source_recovery_point_arn: self.source_recovery_point_arn,
+            destination_backup_vault_arn: self.destination_backup_vault_arn,
+            destination_recovery_point_arn: self.destination_recovery_point_arn,
+            resource_arn: self.resource_arn,
+            creation_date: self.creation_date,
+            completion_date: self.completion_date,
+            state: self.state,
+            status_message: self.status_message,
+            backup_size_in_bytes: self.backup_size_in_bytes,
+            iam_role_arn: self.iam_role_arn,
+            created_by: self.created_by,
+            resource_type: self.resource_type,
+            parent_job_id: self.parent_job_id,
+            is_parent: self.is_parent.unwrap_or_default(),
+            composite_member_identifier: self.composite_member_identifier,
+            number_of_child_jobs: self.number_of_child_jobs,
+            child_jobs_in_state: self.child_jobs_in_state,
         }
     }
 }
-

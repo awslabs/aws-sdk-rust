@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateEnvironmentMembershipOutput  {
+pub struct UpdateEnvironmentMembershipOutput {
     /// <p>Information about the environment member whose settings were changed.</p>
     #[doc(hidden)]
     pub membership: std::option::Option<crate::types::EnvironmentMember>,
@@ -10,18 +10,18 @@ pub struct UpdateEnvironmentMembershipOutput  {
 }
 impl UpdateEnvironmentMembershipOutput {
     /// <p>Information about the environment member whose settings were changed.</p>
-    pub fn membership(&self) -> std::option::Option<& crate::types::EnvironmentMember> {
+    pub fn membership(&self) -> std::option::Option<&crate::types::EnvironmentMember> {
         self.membership.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for UpdateEnvironmentMembershipOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl UpdateEnvironmentMembershipOutput {
     /// Creates a new builder-style object to manufacture [`UpdateEnvironmentMembershipOutput`](crate::operation::update_environment_membership::UpdateEnvironmentMembershipOutput).
-    pub fn builder() -> crate::operation::update_environment_membership::builders::UpdateEnvironmentMembershipOutputBuilder {
+    pub fn builder() -> crate::operation::update_environment_membership::builders::UpdateEnvironmentMembershipOutputBuilder{
         crate::operation::update_environment_membership::builders::UpdateEnvironmentMembershipOutputBuilder::default()
     }
 }
@@ -40,25 +40,29 @@ impl UpdateEnvironmentMembershipOutputBuilder {
         self
     }
     /// <p>Information about the environment member whose settings were changed.</p>
-    pub fn set_membership(mut self, input: std::option::Option<crate::types::EnvironmentMember>) -> Self {
-        self.membership = input; self
+    pub fn set_membership(
+        mut self,
+        input: std::option::Option<crate::types::EnvironmentMember>,
+    ) -> Self {
+        self.membership = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`UpdateEnvironmentMembershipOutput`](crate::operation::update_environment_membership::UpdateEnvironmentMembershipOutput).
-    pub fn build(self) -> crate::operation::update_environment_membership::UpdateEnvironmentMembershipOutput {
+    pub fn build(
+        self,
+    ) -> crate::operation::update_environment_membership::UpdateEnvironmentMembershipOutput {
         crate::operation::update_environment_membership::UpdateEnvironmentMembershipOutput {
-            membership: self.membership
-            ,
+            membership: self.membership,
             _request_id: self._request_id,
         }
     }
 }
-

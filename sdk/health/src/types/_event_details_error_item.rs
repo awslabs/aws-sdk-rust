@@ -3,9 +3,9 @@
 /// <p>Error information returned when a <a href="https://docs.aws.amazon.com/health/latest/APIReference/API_DescribeEventDetails.html">DescribeEventDetails</a> operation can't find a specified event.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct EventDetailsErrorItem  {
-    /// <p>The unique identifier for the event. The event ARN has the <code>arn:aws:health:<i>event-region</i>::event/<i>SERVICE</i>/<i>EVENT_TYPE_CODE</i>/<i>EVENT_TYPE_PLUS_ID</i> </code> format.</p> 
-    /// <p>For example, an event ARN might look like the following:</p> 
+pub struct EventDetailsErrorItem {
+    /// <p>The unique identifier for the event. The event ARN has the <code>arn:aws:health:<i>event-region</i>::event/<i>SERVICE</i>/<i>EVENT_TYPE_CODE</i>/<i>EVENT_TYPE_PLUS_ID</i> </code> format.</p>
+    /// <p>For example, an event ARN might look like the following:</p>
     /// <p> <code>arn:aws:health:us-east-1::event/EC2/EC2_INSTANCE_RETIREMENT_SCHEDULED/EC2_INSTANCE_RETIREMENT_SCHEDULED_ABC123-DEF456</code> </p>
     #[doc(hidden)]
     pub event_arn: std::option::Option<std::string::String>,
@@ -17,18 +17,18 @@ pub struct EventDetailsErrorItem  {
     pub error_message: std::option::Option<std::string::String>,
 }
 impl EventDetailsErrorItem {
-    /// <p>The unique identifier for the event. The event ARN has the <code>arn:aws:health:<i>event-region</i>::event/<i>SERVICE</i>/<i>EVENT_TYPE_CODE</i>/<i>EVENT_TYPE_PLUS_ID</i> </code> format.</p> 
-    /// <p>For example, an event ARN might look like the following:</p> 
+    /// <p>The unique identifier for the event. The event ARN has the <code>arn:aws:health:<i>event-region</i>::event/<i>SERVICE</i>/<i>EVENT_TYPE_CODE</i>/<i>EVENT_TYPE_PLUS_ID</i> </code> format.</p>
+    /// <p>For example, an event ARN might look like the following:</p>
     /// <p> <code>arn:aws:health:us-east-1::event/EC2/EC2_INSTANCE_RETIREMENT_SCHEDULED/EC2_INSTANCE_RETIREMENT_SCHEDULED_ABC123-DEF456</code> </p>
-    pub fn event_arn(&self) -> std::option::Option<& str> {
+    pub fn event_arn(&self) -> std::option::Option<&str> {
         self.event_arn.as_deref()
     }
     /// <p>The name of the error.</p>
-    pub fn error_name(&self) -> std::option::Option<& str> {
+    pub fn error_name(&self) -> std::option::Option<&str> {
         self.error_name.as_deref()
     }
     /// <p>A message that describes the error.</p>
-    pub fn error_message(&self) -> std::option::Option<& str> {
+    pub fn error_message(&self) -> std::option::Option<&str> {
         self.error_message.as_deref()
     }
 }
@@ -48,18 +48,19 @@ pub struct EventDetailsErrorItemBuilder {
     pub(crate) error_message: std::option::Option<std::string::String>,
 }
 impl EventDetailsErrorItemBuilder {
-    /// <p>The unique identifier for the event. The event ARN has the <code>arn:aws:health:<i>event-region</i>::event/<i>SERVICE</i>/<i>EVENT_TYPE_CODE</i>/<i>EVENT_TYPE_PLUS_ID</i> </code> format.</p> 
-    /// <p>For example, an event ARN might look like the following:</p> 
+    /// <p>The unique identifier for the event. The event ARN has the <code>arn:aws:health:<i>event-region</i>::event/<i>SERVICE</i>/<i>EVENT_TYPE_CODE</i>/<i>EVENT_TYPE_PLUS_ID</i> </code> format.</p>
+    /// <p>For example, an event ARN might look like the following:</p>
     /// <p> <code>arn:aws:health:us-east-1::event/EC2/EC2_INSTANCE_RETIREMENT_SCHEDULED/EC2_INSTANCE_RETIREMENT_SCHEDULED_ABC123-DEF456</code> </p>
     pub fn event_arn(mut self, input: impl Into<std::string::String>) -> Self {
         self.event_arn = Some(input.into());
         self
     }
-    /// <p>The unique identifier for the event. The event ARN has the <code>arn:aws:health:<i>event-region</i>::event/<i>SERVICE</i>/<i>EVENT_TYPE_CODE</i>/<i>EVENT_TYPE_PLUS_ID</i> </code> format.</p> 
-    /// <p>For example, an event ARN might look like the following:</p> 
+    /// <p>The unique identifier for the event. The event ARN has the <code>arn:aws:health:<i>event-region</i>::event/<i>SERVICE</i>/<i>EVENT_TYPE_CODE</i>/<i>EVENT_TYPE_PLUS_ID</i> </code> format.</p>
+    /// <p>For example, an event ARN might look like the following:</p>
     /// <p> <code>arn:aws:health:us-east-1::event/EC2/EC2_INSTANCE_RETIREMENT_SCHEDULED/EC2_INSTANCE_RETIREMENT_SCHEDULED_ABC123-DEF456</code> </p>
     pub fn set_event_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.event_arn = input; self
+        self.event_arn = input;
+        self
     }
     /// <p>The name of the error.</p>
     pub fn error_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -68,7 +69,8 @@ impl EventDetailsErrorItemBuilder {
     }
     /// <p>The name of the error.</p>
     pub fn set_error_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.error_name = input; self
+        self.error_name = input;
+        self
     }
     /// <p>A message that describes the error.</p>
     pub fn error_message(mut self, input: impl Into<std::string::String>) -> Self {
@@ -77,18 +79,15 @@ impl EventDetailsErrorItemBuilder {
     }
     /// <p>A message that describes the error.</p>
     pub fn set_error_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.error_message = input; self
+        self.error_message = input;
+        self
     }
     /// Consumes the builder and constructs a [`EventDetailsErrorItem`](crate::types::EventDetailsErrorItem).
     pub fn build(self) -> crate::types::EventDetailsErrorItem {
         crate::types::EventDetailsErrorItem {
-            event_arn: self.event_arn
-            ,
-            error_name: self.error_name
-            ,
-            error_message: self.error_message
-            ,
+            event_arn: self.event_arn,
+            error_name: self.error_name,
+            error_message: self.error_message,
         }
     }
 }
-

@@ -3,7 +3,7 @@
 /// <p>Describes configuration settings related to network traffic of an App Runner service. Consists of embedded objects for each configurable network feature.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct NetworkConfiguration  {
+pub struct NetworkConfiguration {
     /// <p>Network configuration settings for outbound message traffic.</p>
     #[doc(hidden)]
     pub egress_configuration: std::option::Option<crate::types::EgressConfiguration>,
@@ -13,11 +13,13 @@ pub struct NetworkConfiguration  {
 }
 impl NetworkConfiguration {
     /// <p>Network configuration settings for outbound message traffic.</p>
-    pub fn egress_configuration(&self) -> std::option::Option<& crate::types::EgressConfiguration> {
+    pub fn egress_configuration(&self) -> std::option::Option<&crate::types::EgressConfiguration> {
         self.egress_configuration.as_ref()
     }
     /// <p>Network configuration settings for inbound message traffic.</p>
-    pub fn ingress_configuration(&self) -> std::option::Option<& crate::types::IngressConfiguration> {
+    pub fn ingress_configuration(
+        &self,
+    ) -> std::option::Option<&crate::types::IngressConfiguration> {
         self.ingress_configuration.as_ref()
     }
 }
@@ -42,8 +44,12 @@ impl NetworkConfigurationBuilder {
         self
     }
     /// <p>Network configuration settings for outbound message traffic.</p>
-    pub fn set_egress_configuration(mut self, input: std::option::Option<crate::types::EgressConfiguration>) -> Self {
-        self.egress_configuration = input; self
+    pub fn set_egress_configuration(
+        mut self,
+        input: std::option::Option<crate::types::EgressConfiguration>,
+    ) -> Self {
+        self.egress_configuration = input;
+        self
     }
     /// <p>Network configuration settings for inbound message traffic.</p>
     pub fn ingress_configuration(mut self, input: crate::types::IngressConfiguration) -> Self {
@@ -51,17 +57,18 @@ impl NetworkConfigurationBuilder {
         self
     }
     /// <p>Network configuration settings for inbound message traffic.</p>
-    pub fn set_ingress_configuration(mut self, input: std::option::Option<crate::types::IngressConfiguration>) -> Self {
-        self.ingress_configuration = input; self
+    pub fn set_ingress_configuration(
+        mut self,
+        input: std::option::Option<crate::types::IngressConfiguration>,
+    ) -> Self {
+        self.ingress_configuration = input;
+        self
     }
     /// Consumes the builder and constructs a [`NetworkConfiguration`](crate::types::NetworkConfiguration).
     pub fn build(self) -> crate::types::NetworkConfiguration {
         crate::types::NetworkConfiguration {
-            egress_configuration: self.egress_configuration
-            ,
-            ingress_configuration: self.ingress_configuration
-            ,
+            egress_configuration: self.egress_configuration,
+            ingress_configuration: self.ingress_configuration,
         }
     }
 }
-

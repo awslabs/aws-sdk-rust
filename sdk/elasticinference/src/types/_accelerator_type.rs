@@ -3,7 +3,7 @@
 /// <p> The details of an Elastic Inference Accelerator type. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AcceleratorType  {
+pub struct AcceleratorType {
     /// <p> The name of the Elastic Inference Accelerator type. </p>
     #[doc(hidden)]
     pub accelerator_type_name: std::option::Option<std::string::String>,
@@ -16,15 +16,15 @@ pub struct AcceleratorType  {
 }
 impl AcceleratorType {
     /// <p> The name of the Elastic Inference Accelerator type. </p>
-    pub fn accelerator_type_name(&self) -> std::option::Option<& str> {
+    pub fn accelerator_type_name(&self) -> std::option::Option<&str> {
         self.accelerator_type_name.as_deref()
     }
     /// <p> The memory information of the Elastic Inference Accelerator type. </p>
-    pub fn memory_info(&self) -> std::option::Option<& crate::types::MemoryInfo> {
+    pub fn memory_info(&self) -> std::option::Option<&crate::types::MemoryInfo> {
         self.memory_info.as_ref()
     }
     /// <p> The throughput information of the Elastic Inference Accelerator type. </p>
-    pub fn throughput_info(&self) -> std::option::Option<& [crate::types::KeyValuePair]> {
+    pub fn throughput_info(&self) -> std::option::Option<&[crate::types::KeyValuePair]> {
         self.throughput_info.as_deref()
     }
 }
@@ -50,8 +50,12 @@ impl AcceleratorTypeBuilder {
         self
     }
     /// <p> The name of the Elastic Inference Accelerator type. </p>
-    pub fn set_accelerator_type_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.accelerator_type_name = input; self
+    pub fn set_accelerator_type_name(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.accelerator_type_name = input;
+        self
     }
     /// <p> The memory information of the Elastic Inference Accelerator type. </p>
     pub fn memory_info(mut self, input: crate::types::MemoryInfo) -> Self {
@@ -60,7 +64,8 @@ impl AcceleratorTypeBuilder {
     }
     /// <p> The memory information of the Elastic Inference Accelerator type. </p>
     pub fn set_memory_info(mut self, input: std::option::Option<crate::types::MemoryInfo>) -> Self {
-        self.memory_info = input; self
+        self.memory_info = input;
+        self
     }
     /// Appends an item to `throughput_info`.
     ///
@@ -69,24 +74,24 @@ impl AcceleratorTypeBuilder {
     /// <p> The throughput information of the Elastic Inference Accelerator type. </p>
     pub fn throughput_info(mut self, input: crate::types::KeyValuePair) -> Self {
         let mut v = self.throughput_info.unwrap_or_default();
-                        v.push(input);
-                        self.throughput_info = Some(v);
-                        self
+        v.push(input);
+        self.throughput_info = Some(v);
+        self
     }
     /// <p> The throughput information of the Elastic Inference Accelerator type. </p>
-    pub fn set_throughput_info(mut self, input: std::option::Option<std::vec::Vec<crate::types::KeyValuePair>>) -> Self {
-        self.throughput_info = input; self
+    pub fn set_throughput_info(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::KeyValuePair>>,
+    ) -> Self {
+        self.throughput_info = input;
+        self
     }
     /// Consumes the builder and constructs a [`AcceleratorType`](crate::types::AcceleratorType).
     pub fn build(self) -> crate::types::AcceleratorType {
         crate::types::AcceleratorType {
-            accelerator_type_name: self.accelerator_type_name
-            ,
-            memory_info: self.memory_info
-            ,
-            throughput_info: self.throughput_info
-            ,
+            accelerator_type_name: self.accelerator_type_name,
+            memory_info: self.memory_info,
+            throughput_info: self.throughput_info,
         }
     }
 }
-

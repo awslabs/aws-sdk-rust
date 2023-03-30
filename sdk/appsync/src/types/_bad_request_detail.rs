@@ -3,14 +3,14 @@
 /// <p>Provides further details for the reason behind the bad request. For reason type <code>CODE_ERROR</code>, the detail will contain a list of code errors.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct BadRequestDetail  {
+pub struct BadRequestDetail {
     /// <p>Contains the list of errors in the request.</p>
     #[doc(hidden)]
     pub code_errors: std::option::Option<std::vec::Vec<crate::types::CodeError>>,
 }
 impl BadRequestDetail {
     /// <p>Contains the list of errors in the request.</p>
-    pub fn code_errors(&self) -> std::option::Option<& [crate::types::CodeError]> {
+    pub fn code_errors(&self) -> std::option::Option<&[crate::types::CodeError]> {
         self.code_errors.as_deref()
     }
 }
@@ -35,20 +35,22 @@ impl BadRequestDetailBuilder {
     /// <p>Contains the list of errors in the request.</p>
     pub fn code_errors(mut self, input: crate::types::CodeError) -> Self {
         let mut v = self.code_errors.unwrap_or_default();
-                        v.push(input);
-                        self.code_errors = Some(v);
-                        self
+        v.push(input);
+        self.code_errors = Some(v);
+        self
     }
     /// <p>Contains the list of errors in the request.</p>
-    pub fn set_code_errors(mut self, input: std::option::Option<std::vec::Vec<crate::types::CodeError>>) -> Self {
-        self.code_errors = input; self
+    pub fn set_code_errors(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::CodeError>>,
+    ) -> Self {
+        self.code_errors = input;
+        self
     }
     /// Consumes the builder and constructs a [`BadRequestDetail`](crate::types::BadRequestDetail).
     pub fn build(self) -> crate::types::BadRequestDetail {
         crate::types::BadRequestDetail {
-            code_errors: self.code_errors
-            ,
+            code_errors: self.code_errors,
         }
     }
 }
-

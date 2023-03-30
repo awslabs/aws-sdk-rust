@@ -2,14 +2,14 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetApplicationInput  {
+pub struct GetApplicationInput {
     /// <p>The name or ID of the application.</p>
     #[doc(hidden)]
     pub application: std::option::Option<std::string::String>,
 }
 impl GetApplicationInput {
     /// <p>The name or ID of the application.</p>
-    pub fn application(&self) -> std::option::Option<& str> {
+    pub fn application(&self) -> std::option::Option<&str> {
         self.application.as_deref()
     }
 }
@@ -34,16 +34,18 @@ impl GetApplicationInputBuilder {
     }
     /// <p>The name or ID of the application.</p>
     pub fn set_application(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.application = input; self
+        self.application = input;
+        self
     }
     /// Consumes the builder and constructs a [`GetApplicationInput`](crate::operation::get_application::GetApplicationInput).
-    pub fn build(self) -> Result<crate::operation::get_application::GetApplicationInput, aws_smithy_http::operation::error::BuildError> {
-        Ok(
-            crate::operation::get_application::GetApplicationInput {
-                application: self.application
-                ,
-            }
-        )
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::get_application::GetApplicationInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        Ok(crate::operation::get_application::GetApplicationInput {
+            application: self.application,
+        })
     }
 }
-

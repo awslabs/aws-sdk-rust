@@ -3,7 +3,7 @@
 /// <p>In a <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_CreateResolverEndpoint.html">CreateResolverEndpoint</a> request, the IP address that DNS queries originate from (for outbound endpoints) or that you forward DNS queries to (for inbound endpoints). <code>IpAddressRequest</code> also includes the ID of the subnet that contains the IP address.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct IpAddressRequest  {
+pub struct IpAddressRequest {
     /// <p>The ID of the subnet that contains the IP address. </p>
     #[doc(hidden)]
     pub subnet_id: std::option::Option<std::string::String>,
@@ -13,11 +13,11 @@ pub struct IpAddressRequest  {
 }
 impl IpAddressRequest {
     /// <p>The ID of the subnet that contains the IP address. </p>
-    pub fn subnet_id(&self) -> std::option::Option<& str> {
+    pub fn subnet_id(&self) -> std::option::Option<&str> {
         self.subnet_id.as_deref()
     }
     /// <p>The IP address that you want to use for DNS queries.</p>
-    pub fn ip(&self) -> std::option::Option<& str> {
+    pub fn ip(&self) -> std::option::Option<&str> {
         self.ip.as_deref()
     }
 }
@@ -43,7 +43,8 @@ impl IpAddressRequestBuilder {
     }
     /// <p>The ID of the subnet that contains the IP address. </p>
     pub fn set_subnet_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.subnet_id = input; self
+        self.subnet_id = input;
+        self
     }
     /// <p>The IP address that you want to use for DNS queries.</p>
     pub fn ip(mut self, input: impl Into<std::string::String>) -> Self {
@@ -52,16 +53,14 @@ impl IpAddressRequestBuilder {
     }
     /// <p>The IP address that you want to use for DNS queries.</p>
     pub fn set_ip(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.ip = input; self
+        self.ip = input;
+        self
     }
     /// Consumes the builder and constructs a [`IpAddressRequest`](crate::types::IpAddressRequest).
     pub fn build(self) -> crate::types::IpAddressRequest {
         crate::types::IpAddressRequest {
-            subnet_id: self.subnet_id
-            ,
-            ip: self.ip
-            ,
+            subnet_id: self.subnet_id,
+            ip: self.ip,
         }
     }
 }
-

@@ -3,7 +3,7 @@
 /// <p>A complex type that contains the ID for the Route&nbsp;53 hosted zone that Cloud Map creates when you create a namespace.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DnsProperties  {
+pub struct DnsProperties {
     /// <p>The ID for the Route&nbsp;53 hosted zone that Cloud Map creates when you create a namespace.</p>
     #[doc(hidden)]
     pub hosted_zone_id: std::option::Option<std::string::String>,
@@ -13,11 +13,11 @@ pub struct DnsProperties  {
 }
 impl DnsProperties {
     /// <p>The ID for the Route&nbsp;53 hosted zone that Cloud Map creates when you create a namespace.</p>
-    pub fn hosted_zone_id(&self) -> std::option::Option<& str> {
+    pub fn hosted_zone_id(&self) -> std::option::Option<&str> {
         self.hosted_zone_id.as_deref()
     }
     /// <p>Start of Authority (SOA) record for the hosted zone.</p>
-    pub fn soa(&self) -> std::option::Option<& crate::types::Soa> {
+    pub fn soa(&self) -> std::option::Option<&crate::types::Soa> {
         self.soa.as_ref()
     }
 }
@@ -43,7 +43,8 @@ impl DnsPropertiesBuilder {
     }
     /// <p>The ID for the Route&nbsp;53 hosted zone that Cloud Map creates when you create a namespace.</p>
     pub fn set_hosted_zone_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.hosted_zone_id = input; self
+        self.hosted_zone_id = input;
+        self
     }
     /// <p>Start of Authority (SOA) record for the hosted zone.</p>
     pub fn soa(mut self, input: crate::types::Soa) -> Self {
@@ -52,16 +53,14 @@ impl DnsPropertiesBuilder {
     }
     /// <p>Start of Authority (SOA) record for the hosted zone.</p>
     pub fn set_soa(mut self, input: std::option::Option<crate::types::Soa>) -> Self {
-        self.soa = input; self
+        self.soa = input;
+        self
     }
     /// Consumes the builder and constructs a [`DnsProperties`](crate::types::DnsProperties).
     pub fn build(self) -> crate::types::DnsProperties {
         crate::types::DnsProperties {
-            hosted_zone_id: self.hosted_zone_id
-            ,
-            soa: self.soa
-            ,
+            hosted_zone_id: self.hosted_zone_id,
+            soa: self.soa,
         }
     }
 }
-

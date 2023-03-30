@@ -3,7 +3,7 @@
 /// <p> The Amazon ECS service is associated with more than one deployment groups. An Amazon ECS service can be associated with only one deployment group. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct EcsServiceMappingLimitExceededException  {
+pub struct EcsServiceMappingLimitExceededException {
     /// <p>The message that corresponds to the exception thrown by CodeDeploy.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
@@ -11,13 +11,18 @@ pub struct EcsServiceMappingLimitExceededException  {
 }
 impl EcsServiceMappingLimitExceededException {
     /// Returns the error message.
-                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
+    pub fn message(&self) -> std::option::Option<&str> {
+        self.message.as_deref()
+    }
 }
 impl std::fmt::Display for EcsServiceMappingLimitExceededException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "EcsServiceMappingLimitExceededException [ECSServiceMappingLimitExceededException]")?;
+        write!(
+            f,
+            "EcsServiceMappingLimitExceededException [ECSServiceMappingLimitExceededException]"
+        )?;
         if let Some(inner_1) = &self.message {
-             {
+            {
                 write!(f, ": {}", inner_1)?;
             }
         }
@@ -25,18 +30,25 @@ impl std::fmt::Display for EcsServiceMappingLimitExceededException {
     }
 }
 impl std::error::Error for EcsServiceMappingLimitExceededException {}
-impl aws_http::request_id::RequestId for crate::types::error::EcsServiceMappingLimitExceededException {
+impl aws_http::request_id::RequestId
+    for crate::types::error::EcsServiceMappingLimitExceededException
+{
     fn request_id(&self) -> Option<&str> {
         use aws_smithy_types::error::metadata::ProvideErrorMetadata;
         self.meta().request_id()
     }
 }
-impl aws_smithy_types::error::metadata::ProvideErrorMetadata for EcsServiceMappingLimitExceededException {
-    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata { &self.meta }
+impl aws_smithy_types::error::metadata::ProvideErrorMetadata
+    for EcsServiceMappingLimitExceededException
+{
+    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
+        &self.meta
+    }
 }
 impl EcsServiceMappingLimitExceededException {
     /// Creates a new builder-style object to manufacture [`EcsServiceMappingLimitExceededException`](crate::types::error::EcsServiceMappingLimitExceededException).
-    pub fn builder() -> crate::types::error::builders::EcsServiceMappingLimitExceededExceptionBuilder {
+    pub fn builder() -> crate::types::error::builders::EcsServiceMappingLimitExceededExceptionBuilder
+    {
         crate::types::error::builders::EcsServiceMappingLimitExceededExceptionBuilder::default()
     }
 }
@@ -56,26 +68,28 @@ impl EcsServiceMappingLimitExceededExceptionBuilder {
     }
     /// <p>The message that corresponds to the exception thrown by CodeDeploy.</p>
     pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.message = input; self
+        self.message = input;
+        self
     }
     /// Sets error metadata
-                                            pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
-                                                self.meta = Some(meta);
-                                                self
-                                            }
-    
-                                            /// Sets error metadata
-                                            pub fn set_meta(&mut self, meta: std::option::Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
-                                                self.meta = meta;
-                                                self
-                                            }
+    pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
+        self.meta = Some(meta);
+        self
+    }
+
+    /// Sets error metadata
+    pub fn set_meta(
+        &mut self,
+        meta: std::option::Option<aws_smithy_types::error::ErrorMetadata>,
+    ) -> &mut Self {
+        self.meta = meta;
+        self
+    }
     /// Consumes the builder and constructs a [`EcsServiceMappingLimitExceededException`](crate::types::error::EcsServiceMappingLimitExceededException).
     pub fn build(self) -> crate::types::error::EcsServiceMappingLimitExceededException {
         crate::types::error::EcsServiceMappingLimitExceededException {
-            message: self.message
-            ,
+            message: self.message,
             meta: self.meta.unwrap_or_default(),
         }
     }
 }
-

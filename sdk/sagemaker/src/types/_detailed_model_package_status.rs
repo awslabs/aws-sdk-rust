@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-/// 
+///
 /// Here is an example of how you can make a match expression forward-compatible:
-/// 
+///
 /// ```text
 /// # let detailedmodelpackagestatus = unimplemented!();
 /// match detailedmodelpackagestatus {
@@ -32,14 +32,22 @@
 /// Specifically, when `detailedmodelpackagestatus` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `DetailedModelPackageStatus::NewFeature` also yielding `"NewFeature"`.
-/// 
+///
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
 pub enum DetailedModelPackageStatus {
     #[allow(missing_docs)] // documentation missing in model
     Completed,
@@ -50,45 +58,46 @@ pub enum DetailedModelPackageStatus {
     #[allow(missing_docs)] // documentation missing in model
     NotStarted,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::primitives::UnknownVariantValue)
+    Unknown(crate::primitives::UnknownVariantValue),
 }
 impl std::convert::From<&str> for DetailedModelPackageStatus {
-                fn from(s: &str) -> Self {
-                    match s {
-                        "Completed" => DetailedModelPackageStatus::Completed,
-"Failed" => DetailedModelPackageStatus::Failed,
-"InProgress" => DetailedModelPackageStatus::InProgress,
-"NotStarted" => DetailedModelPackageStatus::NotStarted,
-other => DetailedModelPackageStatus::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
-                    }
-                }
-            }
-impl std::str::FromStr for DetailedModelPackageStatus {
-                type Err = std::convert::Infallible;
-
-                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-                    Ok(DetailedModelPackageStatus::from(s))
-                }
-            }
-impl DetailedModelPackageStatus {
-                /// Returns the `&str` value of the enum member.
-                pub fn as_str(&self) -> &str {
-                    match self {
-    DetailedModelPackageStatus::Completed => "Completed",
-    DetailedModelPackageStatus::Failed => "Failed",
-    DetailedModelPackageStatus::InProgress => "InProgress",
-    DetailedModelPackageStatus::NotStarted => "NotStarted",
-    DetailedModelPackageStatus::Unknown(value) => value.as_str()
+    fn from(s: &str) -> Self {
+        match s {
+            "Completed" => DetailedModelPackageStatus::Completed,
+            "Failed" => DetailedModelPackageStatus::Failed,
+            "InProgress" => DetailedModelPackageStatus::InProgress,
+            "NotStarted" => DetailedModelPackageStatus::NotStarted,
+            other => DetailedModelPackageStatus::Unknown(crate::primitives::UnknownVariantValue(
+                other.to_owned(),
+            )),
+        }
+    }
 }
-                }
-                /// Returns all the `&str` representations of the enum members.
-                pub const fn values() -> &'static [&'static str] {
-                    &["Completed", "Failed", "InProgress", "NotStarted"]
-                }
-            }
-impl AsRef<str> for DetailedModelPackageStatus {
-                fn as_ref(&self) -> &str {
-                    self.as_str()
-                }
-            }
+impl std::str::FromStr for DetailedModelPackageStatus {
+    type Err = std::convert::Infallible;
 
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(DetailedModelPackageStatus::from(s))
+    }
+}
+impl DetailedModelPackageStatus {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            DetailedModelPackageStatus::Completed => "Completed",
+            DetailedModelPackageStatus::Failed => "Failed",
+            DetailedModelPackageStatus::InProgress => "InProgress",
+            DetailedModelPackageStatus::NotStarted => "NotStarted",
+            DetailedModelPackageStatus::Unknown(value) => value.as_str(),
+        }
+    }
+    /// Returns all the `&str` representations of the enum members.
+    pub const fn values() -> &'static [&'static str] {
+        &["Completed", "Failed", "InProgress", "NotStarted"]
+    }
+}
+impl AsRef<str> for DetailedModelPackageStatus {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}

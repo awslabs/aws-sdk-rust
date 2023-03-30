@@ -3,7 +3,7 @@
 /// <p> Used to store data used by IoT SiteWise in an Amazon S3 bucket that you manage. You can't change the choice of Amazon S3 storage after your data store is created. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct IotSiteWiseCustomerManagedDatastoreS3Storage  {
+pub struct IotSiteWiseCustomerManagedDatastoreS3Storage {
     /// <p> The name of the Amazon S3 bucket where your data is stored. </p>
     #[doc(hidden)]
     pub bucket: std::option::Option<std::string::String>,
@@ -13,17 +13,18 @@ pub struct IotSiteWiseCustomerManagedDatastoreS3Storage  {
 }
 impl IotSiteWiseCustomerManagedDatastoreS3Storage {
     /// <p> The name of the Amazon S3 bucket where your data is stored. </p>
-    pub fn bucket(&self) -> std::option::Option<& str> {
+    pub fn bucket(&self) -> std::option::Option<&str> {
         self.bucket.as_deref()
     }
     /// <p> (Optional) The prefix used to create the keys of the data store data objects. Each object in an Amazon S3 bucket has a key that is its unique identifier in the bucket. Each object in a bucket has exactly one key. The prefix must end with a forward slash (/). </p>
-    pub fn key_prefix(&self) -> std::option::Option<& str> {
+    pub fn key_prefix(&self) -> std::option::Option<&str> {
         self.key_prefix.as_deref()
     }
 }
 impl IotSiteWiseCustomerManagedDatastoreS3Storage {
     /// Creates a new builder-style object to manufacture [`IotSiteWiseCustomerManagedDatastoreS3Storage`](crate::types::IotSiteWiseCustomerManagedDatastoreS3Storage).
-    pub fn builder() -> crate::types::builders::IotSiteWiseCustomerManagedDatastoreS3StorageBuilder {
+    pub fn builder() -> crate::types::builders::IotSiteWiseCustomerManagedDatastoreS3StorageBuilder
+    {
         crate::types::builders::IotSiteWiseCustomerManagedDatastoreS3StorageBuilder::default()
     }
 }
@@ -43,7 +44,8 @@ impl IotSiteWiseCustomerManagedDatastoreS3StorageBuilder {
     }
     /// <p> The name of the Amazon S3 bucket where your data is stored. </p>
     pub fn set_bucket(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.bucket = input; self
+        self.bucket = input;
+        self
     }
     /// <p> (Optional) The prefix used to create the keys of the data store data objects. Each object in an Amazon S3 bucket has a key that is its unique identifier in the bucket. Each object in a bucket has exactly one key. The prefix must end with a forward slash (/). </p>
     pub fn key_prefix(mut self, input: impl Into<std::string::String>) -> Self {
@@ -52,16 +54,14 @@ impl IotSiteWiseCustomerManagedDatastoreS3StorageBuilder {
     }
     /// <p> (Optional) The prefix used to create the keys of the data store data objects. Each object in an Amazon S3 bucket has a key that is its unique identifier in the bucket. Each object in a bucket has exactly one key. The prefix must end with a forward slash (/). </p>
     pub fn set_key_prefix(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.key_prefix = input; self
+        self.key_prefix = input;
+        self
     }
     /// Consumes the builder and constructs a [`IotSiteWiseCustomerManagedDatastoreS3Storage`](crate::types::IotSiteWiseCustomerManagedDatastoreS3Storage).
     pub fn build(self) -> crate::types::IotSiteWiseCustomerManagedDatastoreS3Storage {
         crate::types::IotSiteWiseCustomerManagedDatastoreS3Storage {
-            bucket: self.bucket
-            ,
-            key_prefix: self.key_prefix
-            ,
+            bucket: self.bucket,
+            key_prefix: self.key_prefix,
         }
     }
 }
-

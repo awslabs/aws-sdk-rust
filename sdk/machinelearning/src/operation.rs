@@ -84,4 +84,3 @@ pub mod update_evaluation;
 
 /// Types for the `UpdateMLModel` operation.
 pub mod update_ml_model;
-

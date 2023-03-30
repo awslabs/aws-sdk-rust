@@ -2,10 +2,11 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct BatchDetectDominantLanguageOutput  {
+pub struct BatchDetectDominantLanguageOutput {
     /// <p>A list of objects containing the results of the operation. The results are sorted in ascending order by the <code>Index</code> field and match the order of the documents in the input list. If all of the documents contain an error, the <code>ResultList</code> is empty.</p>
     #[doc(hidden)]
-    pub result_list: std::option::Option<std::vec::Vec<crate::types::BatchDetectDominantLanguageItemResult>>,
+    pub result_list:
+        std::option::Option<std::vec::Vec<crate::types::BatchDetectDominantLanguageItemResult>>,
     /// <p>A list containing one object for each document that contained an error. The results are sorted in ascending order by the <code>Index</code> field and match the order of the documents in the input list. If there are no errors in the batch, the <code>ErrorList</code> is empty.</p>
     #[doc(hidden)]
     pub error_list: std::option::Option<std::vec::Vec<crate::types::BatchItemError>>,
@@ -13,15 +14,17 @@ pub struct BatchDetectDominantLanguageOutput  {
 }
 impl BatchDetectDominantLanguageOutput {
     /// <p>A list of objects containing the results of the operation. The results are sorted in ascending order by the <code>Index</code> field and match the order of the documents in the input list. If all of the documents contain an error, the <code>ResultList</code> is empty.</p>
-    pub fn result_list(&self) -> std::option::Option<& [crate::types::BatchDetectDominantLanguageItemResult]> {
+    pub fn result_list(
+        &self,
+    ) -> std::option::Option<&[crate::types::BatchDetectDominantLanguageItemResult]> {
         self.result_list.as_deref()
     }
     /// <p>A list containing one object for each document that contained an error. The results are sorted in ascending order by the <code>Index</code> field and match the order of the documents in the input list. If there are no errors in the batch, the <code>ErrorList</code> is empty.</p>
-    pub fn error_list(&self) -> std::option::Option<& [crate::types::BatchItemError]> {
+    pub fn error_list(&self) -> std::option::Option<&[crate::types::BatchItemError]> {
         self.error_list.as_deref()
     }
 }
-impl  std::fmt::Debug for BatchDetectDominantLanguageOutput  {
+impl std::fmt::Debug for BatchDetectDominantLanguageOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("BatchDetectDominantLanguageOutput");
         formatter.field("result_list", &"*** Sensitive Data Redacted ***");
@@ -31,13 +34,13 @@ impl  std::fmt::Debug for BatchDetectDominantLanguageOutput  {
     }
 }
 impl aws_http::request_id::RequestId for BatchDetectDominantLanguageOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl BatchDetectDominantLanguageOutput {
     /// Creates a new builder-style object to manufacture [`BatchDetectDominantLanguageOutput`](crate::operation::batch_detect_dominant_language::BatchDetectDominantLanguageOutput).
-    pub fn builder() -> crate::operation::batch_detect_dominant_language::builders::BatchDetectDominantLanguageOutputBuilder {
+    pub fn builder() -> crate::operation::batch_detect_dominant_language::builders::BatchDetectDominantLanguageOutputBuilder{
         crate::operation::batch_detect_dominant_language::builders::BatchDetectDominantLanguageOutputBuilder::default()
     }
 }
@@ -46,7 +49,8 @@ impl BatchDetectDominantLanguageOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
 pub struct BatchDetectDominantLanguageOutputBuilder {
-    pub(crate) result_list: std::option::Option<std::vec::Vec<crate::types::BatchDetectDominantLanguageItemResult>>,
+    pub(crate) result_list:
+        std::option::Option<std::vec::Vec<crate::types::BatchDetectDominantLanguageItemResult>>,
     pub(crate) error_list: std::option::Option<std::vec::Vec<crate::types::BatchItemError>>,
     _request_id: Option<String>,
 }
@@ -56,15 +60,24 @@ impl BatchDetectDominantLanguageOutputBuilder {
     /// To override the contents of this collection use [`set_result_list`](Self::set_result_list).
     ///
     /// <p>A list of objects containing the results of the operation. The results are sorted in ascending order by the <code>Index</code> field and match the order of the documents in the input list. If all of the documents contain an error, the <code>ResultList</code> is empty.</p>
-    pub fn result_list(mut self, input: crate::types::BatchDetectDominantLanguageItemResult) -> Self {
+    pub fn result_list(
+        mut self,
+        input: crate::types::BatchDetectDominantLanguageItemResult,
+    ) -> Self {
         let mut v = self.result_list.unwrap_or_default();
-                        v.push(input);
-                        self.result_list = Some(v);
-                        self
+        v.push(input);
+        self.result_list = Some(v);
+        self
     }
     /// <p>A list of objects containing the results of the operation. The results are sorted in ascending order by the <code>Index</code> field and match the order of the documents in the input list. If all of the documents contain an error, the <code>ResultList</code> is empty.</p>
-    pub fn set_result_list(mut self, input: std::option::Option<std::vec::Vec<crate::types::BatchDetectDominantLanguageItemResult>>) -> Self {
-        self.result_list = input; self
+    pub fn set_result_list(
+        mut self,
+        input: std::option::Option<
+            std::vec::Vec<crate::types::BatchDetectDominantLanguageItemResult>,
+        >,
+    ) -> Self {
+        self.result_list = input;
+        self
     }
     /// Appends an item to `error_list`.
     ///
@@ -73,30 +86,34 @@ impl BatchDetectDominantLanguageOutputBuilder {
     /// <p>A list containing one object for each document that contained an error. The results are sorted in ascending order by the <code>Index</code> field and match the order of the documents in the input list. If there are no errors in the batch, the <code>ErrorList</code> is empty.</p>
     pub fn error_list(mut self, input: crate::types::BatchItemError) -> Self {
         let mut v = self.error_list.unwrap_or_default();
-                        v.push(input);
-                        self.error_list = Some(v);
-                        self
+        v.push(input);
+        self.error_list = Some(v);
+        self
     }
     /// <p>A list containing one object for each document that contained an error. The results are sorted in ascending order by the <code>Index</code> field and match the order of the documents in the input list. If there are no errors in the batch, the <code>ErrorList</code> is empty.</p>
-    pub fn set_error_list(mut self, input: std::option::Option<std::vec::Vec<crate::types::BatchItemError>>) -> Self {
-        self.error_list = input; self
+    pub fn set_error_list(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::BatchItemError>>,
+    ) -> Self {
+        self.error_list = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`BatchDetectDominantLanguageOutput`](crate::operation::batch_detect_dominant_language::BatchDetectDominantLanguageOutput).
-    pub fn build(self) -> crate::operation::batch_detect_dominant_language::BatchDetectDominantLanguageOutput {
+    pub fn build(
+        self,
+    ) -> crate::operation::batch_detect_dominant_language::BatchDetectDominantLanguageOutput {
         crate::operation::batch_detect_dominant_language::BatchDetectDominantLanguageOutput {
-            result_list: self.result_list
-            ,
-            error_list: self.error_list
-            ,
+            result_list: self.result_list,
+            error_list: self.error_list,
             _request_id: self._request_id,
         }
     }
@@ -110,4 +127,3 @@ impl std::fmt::Debug for BatchDetectDominantLanguageOutputBuilder {
         formatter.finish()
     }
 }
-

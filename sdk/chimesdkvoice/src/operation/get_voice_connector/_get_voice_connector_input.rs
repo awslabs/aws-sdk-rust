@@ -2,20 +2,21 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetVoiceConnectorInput  {
+pub struct GetVoiceConnectorInput {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub voice_connector_id: std::option::Option<std::string::String>,
 }
 impl GetVoiceConnectorInput {
     #[allow(missing_docs)] // documentation missing in model
-    pub fn voice_connector_id(&self) -> std::option::Option<& str> {
+    pub fn voice_connector_id(&self) -> std::option::Option<&str> {
         self.voice_connector_id.as_deref()
     }
 }
 impl GetVoiceConnectorInput {
     /// Creates a new builder-style object to manufacture [`GetVoiceConnectorInput`](crate::operation::get_voice_connector::GetVoiceConnectorInput).
-    pub fn builder() -> crate::operation::get_voice_connector::builders::GetVoiceConnectorInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::get_voice_connector::builders::GetVoiceConnectorInputBuilder {
         crate::operation::get_voice_connector::builders::GetVoiceConnectorInputBuilder::default()
     }
 }
@@ -33,17 +34,24 @@ impl GetVoiceConnectorInputBuilder {
         self
     }
     #[allow(missing_docs)] // documentation missing in model
-    pub fn set_voice_connector_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.voice_connector_id = input; self
+    pub fn set_voice_connector_id(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.voice_connector_id = input;
+        self
     }
     /// Consumes the builder and constructs a [`GetVoiceConnectorInput`](crate::operation::get_voice_connector::GetVoiceConnectorInput).
-    pub fn build(self) -> Result<crate::operation::get_voice_connector::GetVoiceConnectorInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::get_voice_connector::GetVoiceConnectorInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::get_voice_connector::GetVoiceConnectorInput {
-                voice_connector_id: self.voice_connector_id
-                ,
-            }
+                voice_connector_id: self.voice_connector_id,
+            },
         )
     }
 }
-

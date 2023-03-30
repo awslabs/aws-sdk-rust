@@ -4,49 +4,71 @@ pub use crate::operation::put_access_control_rule::_put_access_control_rule_outp
 pub use crate::operation::put_access_control_rule::_put_access_control_rule_input::PutAccessControlRuleInputBuilder;
 
 /// Fluent builder constructing a request to `PutAccessControlRule`.
-/// 
+///
 /// <p>Adds a new access control rule for the specified organization. The rule allows or denies access to the organization for the specified IPv4 addresses, access protocol actions, user IDs and impersonation IDs. Adding a new rule with the same name as an existing rule replaces the older rule.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct PutAccessControlRuleFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::put_access_control_rule::builders::PutAccessControlRuleInputBuilder
-            }
-impl PutAccessControlRuleFluentBuilder  {
+    handle: std::sync::Arc<crate::client::Handle>,
+    inner: crate::operation::put_access_control_rule::builders::PutAccessControlRuleInputBuilder,
+}
+impl PutAccessControlRuleFluentBuilder {
     /// Creates a new `PutAccessControlRule`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
-                    /// sent. The operation's inner [http::Request] can be modified as well.
-                    pub async fn customize(self) -> std::result::Result<
-                        crate::client::customize::CustomizableOperation<crate::operation::put_access_control_rule::PutAccessControlRule, aws_http::retry::AwsResponseRetryClassifier,>,
-                        aws_smithy_http::result::SdkError<crate::operation::put_access_control_rule::PutAccessControlRuleError>
-                    >  {
-                        let handle = self.handle.clone();
-                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-                    }
-    
-                    /// Sends the request and returns the response.
-                    ///
-                    /// If an error occurs, an `SdkError` will be returned with additional details that
-                    /// can be matched against.
-                    ///
-                    /// By default, any retryable failures will be retried twice. Retry behavior
-                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                    /// set when configuring the client.
-                    pub async fn send(self) -> std::result::Result<crate::operation::put_access_control_rule::PutAccessControlRuleOutput, aws_smithy_http::result::SdkError<crate::operation::put_access_control_rule::PutAccessControlRuleError>>
-                     {
-                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&self.handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        self.handle.client.call(op).await
-                    }
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle,
+            inner: Default::default(),
+        }
+    }
+
+    /// Consume this builder, creating a customizable operation that can be modified before being
+    /// sent. The operation's inner [http::Request] can be modified as well.
+    pub async fn customize(
+        self,
+    ) -> std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::put_access_control_rule::PutAccessControlRule,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::result::SdkError<
+            crate::operation::put_access_control_rule::PutAccessControlRuleError,
+        >,
+    > {
+        let handle = self.handle.clone();
+        let operation = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+    }
+
+    /// Sends the request and returns the response.
+    ///
+    /// If an error occurs, an `SdkError` will be returned with additional details that
+    /// can be matched against.
+    ///
+    /// By default, any retryable failures will be retried twice. Retry behavior
+    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+    /// set when configuring the client.
+    pub async fn send(
+        self,
+    ) -> std::result::Result<
+        crate::operation::put_access_control_rule::PutAccessControlRuleOutput,
+        aws_smithy_http::result::SdkError<
+            crate::operation::put_access_control_rule::PutAccessControlRuleError,
+        >,
+    > {
+        let op = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&self.handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        self.handle.client.call(op).await
+    }
     /// <p>The rule name.</p>
     pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.name(input.into());
@@ -63,7 +85,10 @@ impl PutAccessControlRuleFluentBuilder  {
         self
     }
     /// <p>The rule effect.</p>
-    pub fn set_effect(mut self, input: std::option::Option<crate::types::AccessControlRuleEffect>) -> Self {
+    pub fn set_effect(
+        mut self,
+        input: std::option::Option<crate::types::AccessControlRuleEffect>,
+    ) -> Self {
         self.inner = self.inner.set_effect(input);
         self
     }
@@ -87,7 +112,10 @@ impl PutAccessControlRuleFluentBuilder  {
         self
     }
     /// <p>IPv4 CIDR ranges to include in the rule.</p>
-    pub fn set_ip_ranges(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+    pub fn set_ip_ranges(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
         self.inner = self.inner.set_ip_ranges(input);
         self
     }
@@ -101,7 +129,10 @@ impl PutAccessControlRuleFluentBuilder  {
         self
     }
     /// <p>IPv4 CIDR ranges to exclude from the rule.</p>
-    pub fn set_not_ip_ranges(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+    pub fn set_not_ip_ranges(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
         self.inner = self.inner.set_not_ip_ranges(input);
         self
     }
@@ -115,7 +146,10 @@ impl PutAccessControlRuleFluentBuilder  {
         self
     }
     /// <p>Access protocol actions to include in the rule. Valid values include <code>ActiveSync</code>, <code>AutoDiscover</code>, <code>EWS</code>, <code>IMAP</code>, <code>SMTP</code>, <code>WindowsOutlook</code>, and <code>WebMail</code>.</p>
-    pub fn set_actions(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+    pub fn set_actions(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
         self.inner = self.inner.set_actions(input);
         self
     }
@@ -129,7 +163,10 @@ impl PutAccessControlRuleFluentBuilder  {
         self
     }
     /// <p>Access protocol actions to exclude from the rule. Valid values include <code>ActiveSync</code>, <code>AutoDiscover</code>, <code>EWS</code>, <code>IMAP</code>, <code>SMTP</code>, <code>WindowsOutlook</code>, and <code>WebMail</code>.</p>
-    pub fn set_not_actions(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+    pub fn set_not_actions(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
         self.inner = self.inner.set_not_actions(input);
         self
     }
@@ -143,7 +180,10 @@ impl PutAccessControlRuleFluentBuilder  {
         self
     }
     /// <p>User IDs to include in the rule.</p>
-    pub fn set_user_ids(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+    pub fn set_user_ids(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
         self.inner = self.inner.set_user_ids(input);
         self
     }
@@ -157,7 +197,10 @@ impl PutAccessControlRuleFluentBuilder  {
         self
     }
     /// <p>User IDs to exclude from the rule.</p>
-    pub fn set_not_user_ids(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+    pub fn set_not_user_ids(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
         self.inner = self.inner.set_not_user_ids(input);
         self
     }
@@ -181,7 +224,10 @@ impl PutAccessControlRuleFluentBuilder  {
         self
     }
     /// <p>Impersonation role IDs to include in the rule.</p>
-    pub fn set_impersonation_role_ids(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+    pub fn set_impersonation_role_ids(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
         self.inner = self.inner.set_impersonation_role_ids(input);
         self
     }
@@ -195,9 +241,11 @@ impl PutAccessControlRuleFluentBuilder  {
         self
     }
     /// <p>Impersonation role IDs to exclude from the rule.</p>
-    pub fn set_not_impersonation_role_ids(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+    pub fn set_not_impersonation_role_ids(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
         self.inner = self.inner.set_not_impersonation_role_ids(input);
         self
     }
 }
-

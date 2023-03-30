@@ -2,10 +2,10 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateObservabilityConfigurationInput  {
-    /// <p>A name for the observability configuration. When you use it for the first time in an Amazon Web Services Region, App Runner creates revision number <code>1</code> of this name. When you use the same name in subsequent calls, App Runner creates incremental revisions of the configuration.</p> <note> 
-    /// <p>The name <code>DefaultConfiguration</code> is reserved. You can't use it to create a new observability configuration, and you can't create a revision of it.</p> 
-    /// <p>When you want to use your own observability configuration for your App Runner service, <i>create a configuration with a different name</i>, and then provide it when you create or update your service.</p> 
+pub struct CreateObservabilityConfigurationInput {
+    /// <p>A name for the observability configuration. When you use it for the first time in an Amazon Web Services Region, App Runner creates revision number <code>1</code> of this name. When you use the same name in subsequent calls, App Runner creates incremental revisions of the configuration.</p> <note>
+    /// <p>The name <code>DefaultConfiguration</code> is reserved. You can't use it to create a new observability configuration, and you can't create a revision of it.</p>
+    /// <p>When you want to use your own observability configuration for your App Runner service, <i>create a configuration with a different name</i>, and then provide it when you create or update your service.</p>
     /// </note>
     #[doc(hidden)]
     pub observability_configuration_name: std::option::Option<std::string::String>,
@@ -17,25 +17,25 @@ pub struct CreateObservabilityConfigurationInput  {
     pub tags: std::option::Option<std::vec::Vec<crate::types::Tag>>,
 }
 impl CreateObservabilityConfigurationInput {
-    /// <p>A name for the observability configuration. When you use it for the first time in an Amazon Web Services Region, App Runner creates revision number <code>1</code> of this name. When you use the same name in subsequent calls, App Runner creates incremental revisions of the configuration.</p> <note> 
-    /// <p>The name <code>DefaultConfiguration</code> is reserved. You can't use it to create a new observability configuration, and you can't create a revision of it.</p> 
-    /// <p>When you want to use your own observability configuration for your App Runner service, <i>create a configuration with a different name</i>, and then provide it when you create or update your service.</p> 
+    /// <p>A name for the observability configuration. When you use it for the first time in an Amazon Web Services Region, App Runner creates revision number <code>1</code> of this name. When you use the same name in subsequent calls, App Runner creates incremental revisions of the configuration.</p> <note>
+    /// <p>The name <code>DefaultConfiguration</code> is reserved. You can't use it to create a new observability configuration, and you can't create a revision of it.</p>
+    /// <p>When you want to use your own observability configuration for your App Runner service, <i>create a configuration with a different name</i>, and then provide it when you create or update your service.</p>
     /// </note>
-    pub fn observability_configuration_name(&self) -> std::option::Option<& str> {
+    pub fn observability_configuration_name(&self) -> std::option::Option<&str> {
         self.observability_configuration_name.as_deref()
     }
     /// <p>The configuration of the tracing feature within this observability configuration. If you don't specify it, App Runner doesn't enable tracing.</p>
-    pub fn trace_configuration(&self) -> std::option::Option<& crate::types::TraceConfiguration> {
+    pub fn trace_configuration(&self) -> std::option::Option<&crate::types::TraceConfiguration> {
         self.trace_configuration.as_ref()
     }
     /// <p>A list of metadata items that you can associate with your observability configuration resource. A tag is a key-value pair.</p>
-    pub fn tags(&self) -> std::option::Option<& [crate::types::Tag]> {
+    pub fn tags(&self) -> std::option::Option<&[crate::types::Tag]> {
         self.tags.as_deref()
     }
 }
 impl CreateObservabilityConfigurationInput {
     /// Creates a new builder-style object to manufacture [`CreateObservabilityConfigurationInput`](crate::operation::create_observability_configuration::CreateObservabilityConfigurationInput).
-    pub fn builder() -> crate::operation::create_observability_configuration::builders::CreateObservabilityConfigurationInputBuilder {
+    pub fn builder() -> crate::operation::create_observability_configuration::builders::CreateObservabilityConfigurationInputBuilder{
         crate::operation::create_observability_configuration::builders::CreateObservabilityConfigurationInputBuilder::default()
     }
 }
@@ -49,20 +49,27 @@ pub struct CreateObservabilityConfigurationInputBuilder {
     pub(crate) tags: std::option::Option<std::vec::Vec<crate::types::Tag>>,
 }
 impl CreateObservabilityConfigurationInputBuilder {
-    /// <p>A name for the observability configuration. When you use it for the first time in an Amazon Web Services Region, App Runner creates revision number <code>1</code> of this name. When you use the same name in subsequent calls, App Runner creates incremental revisions of the configuration.</p> <note> 
-    /// <p>The name <code>DefaultConfiguration</code> is reserved. You can't use it to create a new observability configuration, and you can't create a revision of it.</p> 
-    /// <p>When you want to use your own observability configuration for your App Runner service, <i>create a configuration with a different name</i>, and then provide it when you create or update your service.</p> 
+    /// <p>A name for the observability configuration. When you use it for the first time in an Amazon Web Services Region, App Runner creates revision number <code>1</code> of this name. When you use the same name in subsequent calls, App Runner creates incremental revisions of the configuration.</p> <note>
+    /// <p>The name <code>DefaultConfiguration</code> is reserved. You can't use it to create a new observability configuration, and you can't create a revision of it.</p>
+    /// <p>When you want to use your own observability configuration for your App Runner service, <i>create a configuration with a different name</i>, and then provide it when you create or update your service.</p>
     /// </note>
-    pub fn observability_configuration_name(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn observability_configuration_name(
+        mut self,
+        input: impl Into<std::string::String>,
+    ) -> Self {
         self.observability_configuration_name = Some(input.into());
         self
     }
-    /// <p>A name for the observability configuration. When you use it for the first time in an Amazon Web Services Region, App Runner creates revision number <code>1</code> of this name. When you use the same name in subsequent calls, App Runner creates incremental revisions of the configuration.</p> <note> 
-    /// <p>The name <code>DefaultConfiguration</code> is reserved. You can't use it to create a new observability configuration, and you can't create a revision of it.</p> 
-    /// <p>When you want to use your own observability configuration for your App Runner service, <i>create a configuration with a different name</i>, and then provide it when you create or update your service.</p> 
+    /// <p>A name for the observability configuration. When you use it for the first time in an Amazon Web Services Region, App Runner creates revision number <code>1</code> of this name. When you use the same name in subsequent calls, App Runner creates incremental revisions of the configuration.</p> <note>
+    /// <p>The name <code>DefaultConfiguration</code> is reserved. You can't use it to create a new observability configuration, and you can't create a revision of it.</p>
+    /// <p>When you want to use your own observability configuration for your App Runner service, <i>create a configuration with a different name</i>, and then provide it when you create or update your service.</p>
     /// </note>
-    pub fn set_observability_configuration_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.observability_configuration_name = input; self
+    pub fn set_observability_configuration_name(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.observability_configuration_name = input;
+        self
     }
     /// <p>The configuration of the tracing feature within this observability configuration. If you don't specify it, App Runner doesn't enable tracing.</p>
     pub fn trace_configuration(mut self, input: crate::types::TraceConfiguration) -> Self {
@@ -70,8 +77,12 @@ impl CreateObservabilityConfigurationInputBuilder {
         self
     }
     /// <p>The configuration of the tracing feature within this observability configuration. If you don't specify it, App Runner doesn't enable tracing.</p>
-    pub fn set_trace_configuration(mut self, input: std::option::Option<crate::types::TraceConfiguration>) -> Self {
-        self.trace_configuration = input; self
+    pub fn set_trace_configuration(
+        mut self,
+        input: std::option::Option<crate::types::TraceConfiguration>,
+    ) -> Self {
+        self.trace_configuration = input;
+        self
     }
     /// Appends an item to `tags`.
     ///
@@ -80,16 +91,25 @@ impl CreateObservabilityConfigurationInputBuilder {
     /// <p>A list of metadata items that you can associate with your observability configuration resource. A tag is a key-value pair.</p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
-                        v.push(input);
-                        self.tags = Some(v);
-                        self
+        v.push(input);
+        self.tags = Some(v);
+        self
     }
     /// <p>A list of metadata items that you can associate with your observability configuration resource. A tag is a key-value pair.</p>
-    pub fn set_tags(mut self, input: std::option::Option<std::vec::Vec<crate::types::Tag>>) -> Self {
-        self.tags = input; self
+    pub fn set_tags(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::Tag>>,
+    ) -> Self {
+        self.tags = input;
+        self
     }
     /// Consumes the builder and constructs a [`CreateObservabilityConfigurationInput`](crate::operation::create_observability_configuration::CreateObservabilityConfigurationInput).
-    pub fn build(self) -> Result<crate::operation::create_observability_configuration::CreateObservabilityConfigurationInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::create_observability_configuration::CreateObservabilityConfigurationInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::create_observability_configuration::CreateObservabilityConfigurationInput {
                 observability_configuration_name: self.observability_configuration_name
@@ -102,4 +122,3 @@ impl CreateObservabilityConfigurationInputBuilder {
         )
     }
 }
-

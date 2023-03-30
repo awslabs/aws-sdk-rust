@@ -3,7 +3,7 @@
 /// <p>Properties that describe the Amazon Web Services principal that created the <code>BlockPublicAccessConfiguration</code> using the <code>PutBlockPublicAccessConfiguration</code> action as well as the date and time that the configuration was created. Each time a configuration for block public access is updated, Amazon EMR updates this metadata.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct BlockPublicAccessConfigurationMetadata  {
+pub struct BlockPublicAccessConfigurationMetadata {
     /// <p>The date and time that the configuration was created.</p>
     #[doc(hidden)]
     pub creation_date_time: std::option::Option<aws_smithy_types::DateTime>,
@@ -13,11 +13,11 @@ pub struct BlockPublicAccessConfigurationMetadata  {
 }
 impl BlockPublicAccessConfigurationMetadata {
     /// <p>The date and time that the configuration was created.</p>
-    pub fn creation_date_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
+    pub fn creation_date_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.creation_date_time.as_ref()
     }
     /// <p>The Amazon Resource Name that created or last modified the configuration.</p>
-    pub fn created_by_arn(&self) -> std::option::Option<& str> {
+    pub fn created_by_arn(&self) -> std::option::Option<&str> {
         self.created_by_arn.as_deref()
     }
 }
@@ -42,8 +42,12 @@ impl BlockPublicAccessConfigurationMetadataBuilder {
         self
     }
     /// <p>The date and time that the configuration was created.</p>
-    pub fn set_creation_date_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.creation_date_time = input; self
+    pub fn set_creation_date_time(
+        mut self,
+        input: std::option::Option<aws_smithy_types::DateTime>,
+    ) -> Self {
+        self.creation_date_time = input;
+        self
     }
     /// <p>The Amazon Resource Name that created or last modified the configuration.</p>
     pub fn created_by_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -52,16 +56,14 @@ impl BlockPublicAccessConfigurationMetadataBuilder {
     }
     /// <p>The Amazon Resource Name that created or last modified the configuration.</p>
     pub fn set_created_by_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.created_by_arn = input; self
+        self.created_by_arn = input;
+        self
     }
     /// Consumes the builder and constructs a [`BlockPublicAccessConfigurationMetadata`](crate::types::BlockPublicAccessConfigurationMetadata).
     pub fn build(self) -> crate::types::BlockPublicAccessConfigurationMetadata {
         crate::types::BlockPublicAccessConfigurationMetadata {
-            creation_date_time: self.creation_date_time
-            ,
-            created_by_arn: self.created_by_arn
-            ,
+            creation_date_time: self.creation_date_time,
+            created_by_arn: self.created_by_arn,
         }
     }
 }
-

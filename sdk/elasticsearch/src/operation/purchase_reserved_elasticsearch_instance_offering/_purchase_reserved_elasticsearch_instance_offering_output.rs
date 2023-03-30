@@ -3,7 +3,7 @@
 /// <p>Represents the output of a <code>PurchaseReservedElasticsearchInstanceOffering</code> operation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PurchaseReservedElasticsearchInstanceOfferingOutput  {
+pub struct PurchaseReservedElasticsearchInstanceOfferingOutput {
     /// <p>Details of the reserved Elasticsearch instance which was purchased.</p>
     #[doc(hidden)]
     pub reserved_elasticsearch_instance_id: std::option::Option<std::string::String>,
@@ -14,22 +14,22 @@ pub struct PurchaseReservedElasticsearchInstanceOfferingOutput  {
 }
 impl PurchaseReservedElasticsearchInstanceOfferingOutput {
     /// <p>Details of the reserved Elasticsearch instance which was purchased.</p>
-    pub fn reserved_elasticsearch_instance_id(&self) -> std::option::Option<& str> {
+    pub fn reserved_elasticsearch_instance_id(&self) -> std::option::Option<&str> {
         self.reserved_elasticsearch_instance_id.as_deref()
     }
     /// <p>The customer-specified identifier used to track this reservation.</p>
-    pub fn reservation_name(&self) -> std::option::Option<& str> {
+    pub fn reservation_name(&self) -> std::option::Option<&str> {
         self.reservation_name.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for PurchaseReservedElasticsearchInstanceOfferingOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl PurchaseReservedElasticsearchInstanceOfferingOutput {
     /// Creates a new builder-style object to manufacture [`PurchaseReservedElasticsearchInstanceOfferingOutput`](crate::operation::purchase_reserved_elasticsearch_instance_offering::PurchaseReservedElasticsearchInstanceOfferingOutput).
-    pub fn builder() -> crate::operation::purchase_reserved_elasticsearch_instance_offering::builders::PurchaseReservedElasticsearchInstanceOfferingOutputBuilder {
+    pub fn builder() -> crate::operation::purchase_reserved_elasticsearch_instance_offering::builders::PurchaseReservedElasticsearchInstanceOfferingOutputBuilder{
         crate::operation::purchase_reserved_elasticsearch_instance_offering::builders::PurchaseReservedElasticsearchInstanceOfferingOutputBuilder::default()
     }
 }
@@ -44,13 +44,20 @@ pub struct PurchaseReservedElasticsearchInstanceOfferingOutputBuilder {
 }
 impl PurchaseReservedElasticsearchInstanceOfferingOutputBuilder {
     /// <p>Details of the reserved Elasticsearch instance which was purchased.</p>
-    pub fn reserved_elasticsearch_instance_id(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn reserved_elasticsearch_instance_id(
+        mut self,
+        input: impl Into<std::string::String>,
+    ) -> Self {
         self.reserved_elasticsearch_instance_id = Some(input.into());
         self
     }
     /// <p>Details of the reserved Elasticsearch instance which was purchased.</p>
-    pub fn set_reserved_elasticsearch_instance_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.reserved_elasticsearch_instance_id = input; self
+    pub fn set_reserved_elasticsearch_instance_id(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.reserved_elasticsearch_instance_id = input;
+        self
     }
     /// <p>The customer-specified identifier used to track this reservation.</p>
     pub fn reservation_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -59,19 +66,20 @@ impl PurchaseReservedElasticsearchInstanceOfferingOutputBuilder {
     }
     /// <p>The customer-specified identifier used to track this reservation.</p>
     pub fn set_reservation_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.reservation_name = input; self
+        self.reservation_name = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`PurchaseReservedElasticsearchInstanceOfferingOutput`](crate::operation::purchase_reserved_elasticsearch_instance_offering::PurchaseReservedElasticsearchInstanceOfferingOutput).
-    pub fn build(self) -> crate::operation::purchase_reserved_elasticsearch_instance_offering::PurchaseReservedElasticsearchInstanceOfferingOutput {
+    pub fn build(self) -> crate::operation::purchase_reserved_elasticsearch_instance_offering::PurchaseReservedElasticsearchInstanceOfferingOutput{
         crate::operation::purchase_reserved_elasticsearch_instance_offering::PurchaseReservedElasticsearchInstanceOfferingOutput {
             reserved_elasticsearch_instance_id: self.reserved_elasticsearch_instance_id
             ,
@@ -81,4 +89,3 @@ impl PurchaseReservedElasticsearchInstanceOfferingOutputBuilder {
         }
     }
 }
-

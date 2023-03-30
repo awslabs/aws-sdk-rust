@@ -3,25 +3,25 @@
 /// <p>Contains information about which channels are supported, and how many contacts an agent can have on a channel simultaneously.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct MediaConcurrency  {
+pub struct MediaConcurrency {
     /// <p>The channels that agents can handle in the Contact Control Panel (CCP).</p>
     #[doc(hidden)]
     pub channel: std::option::Option<crate::types::Channel>,
-    /// <p>The number of contacts an agent can have on a channel simultaneously.</p> 
-    /// <p>Valid Range for <code>VOICE</code>: Minimum value of 1. Maximum value of 1.</p> 
-    /// <p>Valid Range for <code>CHAT</code>: Minimum value of 1. Maximum value of 10.</p> 
+    /// <p>The number of contacts an agent can have on a channel simultaneously.</p>
+    /// <p>Valid Range for <code>VOICE</code>: Minimum value of 1. Maximum value of 1.</p>
+    /// <p>Valid Range for <code>CHAT</code>: Minimum value of 1. Maximum value of 10.</p>
     /// <p>Valid Range for <code>TASK</code>: Minimum value of 1. Maximum value of 10.</p>
     #[doc(hidden)]
     pub concurrency: i32,
 }
 impl MediaConcurrency {
     /// <p>The channels that agents can handle in the Contact Control Panel (CCP).</p>
-    pub fn channel(&self) -> std::option::Option<& crate::types::Channel> {
+    pub fn channel(&self) -> std::option::Option<&crate::types::Channel> {
         self.channel.as_ref()
     }
-    /// <p>The number of contacts an agent can have on a channel simultaneously.</p> 
-    /// <p>Valid Range for <code>VOICE</code>: Minimum value of 1. Maximum value of 1.</p> 
-    /// <p>Valid Range for <code>CHAT</code>: Minimum value of 1. Maximum value of 10.</p> 
+    /// <p>The number of contacts an agent can have on a channel simultaneously.</p>
+    /// <p>Valid Range for <code>VOICE</code>: Minimum value of 1. Maximum value of 1.</p>
+    /// <p>Valid Range for <code>CHAT</code>: Minimum value of 1. Maximum value of 10.</p>
     /// <p>Valid Range for <code>TASK</code>: Minimum value of 1. Maximum value of 10.</p>
     pub fn concurrency(&self) -> i32 {
         self.concurrency
@@ -49,32 +49,30 @@ impl MediaConcurrencyBuilder {
     }
     /// <p>The channels that agents can handle in the Contact Control Panel (CCP).</p>
     pub fn set_channel(mut self, input: std::option::Option<crate::types::Channel>) -> Self {
-        self.channel = input; self
+        self.channel = input;
+        self
     }
-    /// <p>The number of contacts an agent can have on a channel simultaneously.</p> 
-    /// <p>Valid Range for <code>VOICE</code>: Minimum value of 1. Maximum value of 1.</p> 
-    /// <p>Valid Range for <code>CHAT</code>: Minimum value of 1. Maximum value of 10.</p> 
+    /// <p>The number of contacts an agent can have on a channel simultaneously.</p>
+    /// <p>Valid Range for <code>VOICE</code>: Minimum value of 1. Maximum value of 1.</p>
+    /// <p>Valid Range for <code>CHAT</code>: Minimum value of 1. Maximum value of 10.</p>
     /// <p>Valid Range for <code>TASK</code>: Minimum value of 1. Maximum value of 10.</p>
     pub fn concurrency(mut self, input: i32) -> Self {
         self.concurrency = Some(input);
         self
     }
-    /// <p>The number of contacts an agent can have on a channel simultaneously.</p> 
-    /// <p>Valid Range for <code>VOICE</code>: Minimum value of 1. Maximum value of 1.</p> 
-    /// <p>Valid Range for <code>CHAT</code>: Minimum value of 1. Maximum value of 10.</p> 
+    /// <p>The number of contacts an agent can have on a channel simultaneously.</p>
+    /// <p>Valid Range for <code>VOICE</code>: Minimum value of 1. Maximum value of 1.</p>
+    /// <p>Valid Range for <code>CHAT</code>: Minimum value of 1. Maximum value of 10.</p>
     /// <p>Valid Range for <code>TASK</code>: Minimum value of 1. Maximum value of 10.</p>
     pub fn set_concurrency(mut self, input: std::option::Option<i32>) -> Self {
-        self.concurrency = input; self
+        self.concurrency = input;
+        self
     }
     /// Consumes the builder and constructs a [`MediaConcurrency`](crate::types::MediaConcurrency).
     pub fn build(self) -> crate::types::MediaConcurrency {
         crate::types::MediaConcurrency {
-            channel: self.channel
-            ,
-            concurrency: self.concurrency
-                .unwrap_or_default()
-            ,
+            channel: self.channel,
+            concurrency: self.concurrency.unwrap_or_default(),
         }
     }
 }
-

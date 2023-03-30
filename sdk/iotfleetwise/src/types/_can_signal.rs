@@ -3,7 +3,7 @@
 /// <p>Information about a single controller area network (CAN) signal and the messages it receives and transmits.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CanSignal  {
+pub struct CanSignal {
     /// <p>The ID of the message.</p>
     #[doc(hidden)]
     pub message_id: i32,
@@ -59,7 +59,7 @@ impl CanSignal {
         self.length
     }
     /// <p>The name of the signal.</p>
-    pub fn name(&self) -> std::option::Option<& str> {
+    pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
 }
@@ -91,7 +91,8 @@ impl CanSignalBuilder {
     }
     /// <p>The ID of the message.</p>
     pub fn set_message_id(mut self, input: std::option::Option<i32>) -> Self {
-        self.message_id = input; self
+        self.message_id = input;
+        self
     }
     /// <p>Whether the byte ordering of a CAN message is big-endian.</p>
     pub fn is_big_endian(mut self, input: bool) -> Self {
@@ -100,7 +101,8 @@ impl CanSignalBuilder {
     }
     /// <p>Whether the byte ordering of a CAN message is big-endian.</p>
     pub fn set_is_big_endian(mut self, input: std::option::Option<bool>) -> Self {
-        self.is_big_endian = input; self
+        self.is_big_endian = input;
+        self
     }
     /// <p>Whether the message data is specified as a signed value.</p>
     pub fn is_signed(mut self, input: bool) -> Self {
@@ -109,7 +111,8 @@ impl CanSignalBuilder {
     }
     /// <p>Whether the message data is specified as a signed value.</p>
     pub fn set_is_signed(mut self, input: std::option::Option<bool>) -> Self {
-        self.is_signed = input; self
+        self.is_signed = input;
+        self
     }
     /// <p>Indicates the beginning of the CAN message.</p>
     pub fn start_bit(mut self, input: i32) -> Self {
@@ -118,7 +121,8 @@ impl CanSignalBuilder {
     }
     /// <p>Indicates the beginning of the CAN message.</p>
     pub fn set_start_bit(mut self, input: std::option::Option<i32>) -> Self {
-        self.start_bit = input; self
+        self.start_bit = input;
+        self
     }
     /// <p>Indicates where data appears in the CAN message.</p>
     pub fn offset(mut self, input: f64) -> Self {
@@ -127,7 +131,8 @@ impl CanSignalBuilder {
     }
     /// <p>Indicates where data appears in the CAN message.</p>
     pub fn set_offset(mut self, input: std::option::Option<f64>) -> Self {
-        self.offset = input; self
+        self.offset = input;
+        self
     }
     /// <p>A multiplier used to decode the CAN message.</p>
     pub fn factor(mut self, input: f64) -> Self {
@@ -136,7 +141,8 @@ impl CanSignalBuilder {
     }
     /// <p>A multiplier used to decode the CAN message.</p>
     pub fn set_factor(mut self, input: std::option::Option<f64>) -> Self {
-        self.factor = input; self
+        self.factor = input;
+        self
     }
     /// <p>How many bytes of data are in the message.</p>
     pub fn length(mut self, input: i32) -> Self {
@@ -145,7 +151,8 @@ impl CanSignalBuilder {
     }
     /// <p>How many bytes of data are in the message.</p>
     pub fn set_length(mut self, input: std::option::Option<i32>) -> Self {
-        self.length = input; self
+        self.length = input;
+        self
     }
     /// <p>The name of the signal.</p>
     pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -154,33 +161,20 @@ impl CanSignalBuilder {
     }
     /// <p>The name of the signal.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input; self
+        self.name = input;
+        self
     }
     /// Consumes the builder and constructs a [`CanSignal`](crate::types::CanSignal).
     pub fn build(self) -> crate::types::CanSignal {
         crate::types::CanSignal {
-            message_id: self.message_id
-                .unwrap_or_default()
-            ,
-            is_big_endian: self.is_big_endian
-                .unwrap_or_default()
-            ,
-            is_signed: self.is_signed
-                .unwrap_or_default()
-            ,
-            start_bit: self.start_bit
-                .unwrap_or_default()
-            ,
-            offset: self.offset
-            ,
-            factor: self.factor
-            ,
-            length: self.length
-                .unwrap_or_default()
-            ,
-            name: self.name
-            ,
+            message_id: self.message_id.unwrap_or_default(),
+            is_big_endian: self.is_big_endian.unwrap_or_default(),
+            is_signed: self.is_signed.unwrap_or_default(),
+            start_bit: self.start_bit.unwrap_or_default(),
+            offset: self.offset,
+            factor: self.factor,
+            length: self.length.unwrap_or_default(),
+            name: self.name,
         }
     }
 }
-

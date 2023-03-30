@@ -3,7 +3,7 @@
 /// <p>The configuration of tags on a dataset to set row-level security. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct RowLevelPermissionTagConfiguration  {
+pub struct RowLevelPermissionTagConfiguration {
     /// <p>The status of row-level security tags. If enabled, the status is <code>ENABLED</code>. If disabled, the status is <code>DISABLED</code>.</p>
     #[doc(hidden)]
     pub status: std::option::Option<crate::types::Status>,
@@ -13,11 +13,11 @@ pub struct RowLevelPermissionTagConfiguration  {
 }
 impl RowLevelPermissionTagConfiguration {
     /// <p>The status of row-level security tags. If enabled, the status is <code>ENABLED</code>. If disabled, the status is <code>DISABLED</code>.</p>
-    pub fn status(&self) -> std::option::Option<& crate::types::Status> {
+    pub fn status(&self) -> std::option::Option<&crate::types::Status> {
         self.status.as_ref()
     }
     /// <p>A set of rules associated with row-level security, such as the tag names and columns that they are assigned to.</p>
-    pub fn tag_rules(&self) -> std::option::Option<& [crate::types::RowLevelPermissionTagRule]> {
+    pub fn tag_rules(&self) -> std::option::Option<&[crate::types::RowLevelPermissionTagRule]> {
         self.tag_rules.as_deref()
     }
 }
@@ -33,7 +33,8 @@ impl RowLevelPermissionTagConfiguration {
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct RowLevelPermissionTagConfigurationBuilder {
     pub(crate) status: std::option::Option<crate::types::Status>,
-    pub(crate) tag_rules: std::option::Option<std::vec::Vec<crate::types::RowLevelPermissionTagRule>>,
+    pub(crate) tag_rules:
+        std::option::Option<std::vec::Vec<crate::types::RowLevelPermissionTagRule>>,
 }
 impl RowLevelPermissionTagConfigurationBuilder {
     /// <p>The status of row-level security tags. If enabled, the status is <code>ENABLED</code>. If disabled, the status is <code>DISABLED</code>.</p>
@@ -43,7 +44,8 @@ impl RowLevelPermissionTagConfigurationBuilder {
     }
     /// <p>The status of row-level security tags. If enabled, the status is <code>ENABLED</code>. If disabled, the status is <code>DISABLED</code>.</p>
     pub fn set_status(mut self, input: std::option::Option<crate::types::Status>) -> Self {
-        self.status = input; self
+        self.status = input;
+        self
     }
     /// Appends an item to `tag_rules`.
     ///
@@ -52,22 +54,23 @@ impl RowLevelPermissionTagConfigurationBuilder {
     /// <p>A set of rules associated with row-level security, such as the tag names and columns that they are assigned to.</p>
     pub fn tag_rules(mut self, input: crate::types::RowLevelPermissionTagRule) -> Self {
         let mut v = self.tag_rules.unwrap_or_default();
-                        v.push(input);
-                        self.tag_rules = Some(v);
-                        self
+        v.push(input);
+        self.tag_rules = Some(v);
+        self
     }
     /// <p>A set of rules associated with row-level security, such as the tag names and columns that they are assigned to.</p>
-    pub fn set_tag_rules(mut self, input: std::option::Option<std::vec::Vec<crate::types::RowLevelPermissionTagRule>>) -> Self {
-        self.tag_rules = input; self
+    pub fn set_tag_rules(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::RowLevelPermissionTagRule>>,
+    ) -> Self {
+        self.tag_rules = input;
+        self
     }
     /// Consumes the builder and constructs a [`RowLevelPermissionTagConfiguration`](crate::types::RowLevelPermissionTagConfiguration).
     pub fn build(self) -> crate::types::RowLevelPermissionTagConfiguration {
         crate::types::RowLevelPermissionTagConfiguration {
-            status: self.status
-            ,
-            tag_rules: self.tag_rules
-            ,
+            status: self.status,
+            tag_rules: self.tag_rules,
         }
     }
 }
-

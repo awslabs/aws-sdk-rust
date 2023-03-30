@@ -2,42 +2,42 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateEnvironmentMembershipInput  {
+pub struct UpdateEnvironmentMembershipInput {
     /// <p>The ID of the environment for the environment member whose settings you want to change.</p>
     #[doc(hidden)]
     pub environment_id: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the environment member whose settings you want to change.</p>
     #[doc(hidden)]
     pub user_arn: std::option::Option<std::string::String>,
-    /// <p>The replacement type of environment member permissions you want to associate with this environment member. Available values include:</p> 
-    /// <ul> 
-    /// <li> <p> <code>read-only</code>: Has read-only access to the environment.</p> </li> 
-    /// <li> <p> <code>read-write</code>: Has read-write access to the environment.</p> </li> 
+    /// <p>The replacement type of environment member permissions you want to associate with this environment member. Available values include:</p>
+    /// <ul>
+    /// <li> <p> <code>read-only</code>: Has read-only access to the environment.</p> </li>
+    /// <li> <p> <code>read-write</code>: Has read-write access to the environment.</p> </li>
     /// </ul>
     #[doc(hidden)]
     pub permissions: std::option::Option<crate::types::MemberPermissions>,
 }
 impl UpdateEnvironmentMembershipInput {
     /// <p>The ID of the environment for the environment member whose settings you want to change.</p>
-    pub fn environment_id(&self) -> std::option::Option<& str> {
+    pub fn environment_id(&self) -> std::option::Option<&str> {
         self.environment_id.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the environment member whose settings you want to change.</p>
-    pub fn user_arn(&self) -> std::option::Option<& str> {
+    pub fn user_arn(&self) -> std::option::Option<&str> {
         self.user_arn.as_deref()
     }
-    /// <p>The replacement type of environment member permissions you want to associate with this environment member. Available values include:</p> 
-    /// <ul> 
-    /// <li> <p> <code>read-only</code>: Has read-only access to the environment.</p> </li> 
-    /// <li> <p> <code>read-write</code>: Has read-write access to the environment.</p> </li> 
+    /// <p>The replacement type of environment member permissions you want to associate with this environment member. Available values include:</p>
+    /// <ul>
+    /// <li> <p> <code>read-only</code>: Has read-only access to the environment.</p> </li>
+    /// <li> <p> <code>read-write</code>: Has read-write access to the environment.</p> </li>
     /// </ul>
-    pub fn permissions(&self) -> std::option::Option<& crate::types::MemberPermissions> {
+    pub fn permissions(&self) -> std::option::Option<&crate::types::MemberPermissions> {
         self.permissions.as_ref()
     }
 }
 impl UpdateEnvironmentMembershipInput {
     /// Creates a new builder-style object to manufacture [`UpdateEnvironmentMembershipInput`](crate::operation::update_environment_membership::UpdateEnvironmentMembershipInput).
-    pub fn builder() -> crate::operation::update_environment_membership::builders::UpdateEnvironmentMembershipInputBuilder {
+    pub fn builder() -> crate::operation::update_environment_membership::builders::UpdateEnvironmentMembershipInputBuilder{
         crate::operation::update_environment_membership::builders::UpdateEnvironmentMembershipInputBuilder::default()
     }
 }
@@ -58,7 +58,8 @@ impl UpdateEnvironmentMembershipInputBuilder {
     }
     /// <p>The ID of the environment for the environment member whose settings you want to change.</p>
     pub fn set_environment_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.environment_id = input; self
+        self.environment_id = input;
+        self
     }
     /// <p>The Amazon Resource Name (ARN) of the environment member whose settings you want to change.</p>
     pub fn user_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -67,37 +68,43 @@ impl UpdateEnvironmentMembershipInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the environment member whose settings you want to change.</p>
     pub fn set_user_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.user_arn = input; self
+        self.user_arn = input;
+        self
     }
-    /// <p>The replacement type of environment member permissions you want to associate with this environment member. Available values include:</p> 
-    /// <ul> 
-    /// <li> <p> <code>read-only</code>: Has read-only access to the environment.</p> </li> 
-    /// <li> <p> <code>read-write</code>: Has read-write access to the environment.</p> </li> 
+    /// <p>The replacement type of environment member permissions you want to associate with this environment member. Available values include:</p>
+    /// <ul>
+    /// <li> <p> <code>read-only</code>: Has read-only access to the environment.</p> </li>
+    /// <li> <p> <code>read-write</code>: Has read-write access to the environment.</p> </li>
     /// </ul>
     pub fn permissions(mut self, input: crate::types::MemberPermissions) -> Self {
         self.permissions = Some(input);
         self
     }
-    /// <p>The replacement type of environment member permissions you want to associate with this environment member. Available values include:</p> 
-    /// <ul> 
-    /// <li> <p> <code>read-only</code>: Has read-only access to the environment.</p> </li> 
-    /// <li> <p> <code>read-write</code>: Has read-write access to the environment.</p> </li> 
+    /// <p>The replacement type of environment member permissions you want to associate with this environment member. Available values include:</p>
+    /// <ul>
+    /// <li> <p> <code>read-only</code>: Has read-only access to the environment.</p> </li>
+    /// <li> <p> <code>read-write</code>: Has read-write access to the environment.</p> </li>
     /// </ul>
-    pub fn set_permissions(mut self, input: std::option::Option<crate::types::MemberPermissions>) -> Self {
-        self.permissions = input; self
+    pub fn set_permissions(
+        mut self,
+        input: std::option::Option<crate::types::MemberPermissions>,
+    ) -> Self {
+        self.permissions = input;
+        self
     }
     /// Consumes the builder and constructs a [`UpdateEnvironmentMembershipInput`](crate::operation::update_environment_membership::UpdateEnvironmentMembershipInput).
-    pub fn build(self) -> Result<crate::operation::update_environment_membership::UpdateEnvironmentMembershipInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::update_environment_membership::UpdateEnvironmentMembershipInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::update_environment_membership::UpdateEnvironmentMembershipInput {
-                environment_id: self.environment_id
-                ,
-                user_arn: self.user_arn
-                ,
-                permissions: self.permissions
-                ,
-            }
+                environment_id: self.environment_id,
+                user_arn: self.user_arn,
+                permissions: self.permissions,
+            },
         )
     }
 }
-

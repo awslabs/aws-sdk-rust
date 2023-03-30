@@ -3,7 +3,7 @@
 /// <p>Details about a generated code job.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GeneratedCodeJobDetails  {
+pub struct GeneratedCodeJobDetails {
     /// <p>A presigned URL that can be used to download the generated code.</p>
     #[doc(hidden)]
     pub s3_url: std::option::Option<std::string::String>,
@@ -13,7 +13,7 @@ pub struct GeneratedCodeJobDetails  {
     /// <p>The description of the generated code job.</p>
     #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
-    /// <p>The expiration date and time for the download URL.</p> 
+    /// <p>The expiration date and time for the download URL.</p>
     /// <p> The download URL us guaranteed to be available until at least this time. </p>
     #[doc(hidden)]
     pub expiration_time: std::option::Option<aws_smithy_types::DateTime>,
@@ -23,24 +23,24 @@ pub struct GeneratedCodeJobDetails  {
 }
 impl GeneratedCodeJobDetails {
     /// <p>A presigned URL that can be used to download the generated code.</p>
-    pub fn s3_url(&self) -> std::option::Option<& str> {
+    pub fn s3_url(&self) -> std::option::Option<&str> {
         self.s3_url.as_deref()
     }
     /// <p>The status of the generated code job</p>
-    pub fn status(&self) -> std::option::Option<& crate::types::GeneratedCodeJobState> {
+    pub fn status(&self) -> std::option::Option<&crate::types::GeneratedCodeJobState> {
         self.status.as_ref()
     }
     /// <p>The description of the generated code job.</p>
-    pub fn description(&self) -> std::option::Option<& str> {
+    pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
-    /// <p>The expiration date and time for the download URL.</p> 
+    /// <p>The expiration date and time for the download URL.</p>
     /// <p> The download URL us guaranteed to be available until at least this time. </p>
-    pub fn expiration_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
+    pub fn expiration_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.expiration_time.as_ref()
     }
     /// <p>The identifier for the generated code job.</p>
-    pub fn generated_code_job_id(&self) -> std::option::Option<& str> {
+    pub fn generated_code_job_id(&self) -> std::option::Option<&str> {
         self.generated_code_job_id.as_deref()
     }
 }
@@ -69,7 +69,8 @@ impl GeneratedCodeJobDetailsBuilder {
     }
     /// <p>A presigned URL that can be used to download the generated code.</p>
     pub fn set_s3_url(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.s3_url = input; self
+        self.s3_url = input;
+        self
     }
     /// <p>The status of the generated code job</p>
     pub fn status(mut self, input: crate::types::GeneratedCodeJobState) -> Self {
@@ -77,8 +78,12 @@ impl GeneratedCodeJobDetailsBuilder {
         self
     }
     /// <p>The status of the generated code job</p>
-    pub fn set_status(mut self, input: std::option::Option<crate::types::GeneratedCodeJobState>) -> Self {
-        self.status = input; self
+    pub fn set_status(
+        mut self,
+        input: std::option::Option<crate::types::GeneratedCodeJobState>,
+    ) -> Self {
+        self.status = input;
+        self
     }
     /// <p>The description of the generated code job.</p>
     pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -87,18 +92,23 @@ impl GeneratedCodeJobDetailsBuilder {
     }
     /// <p>The description of the generated code job.</p>
     pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.description = input; self
+        self.description = input;
+        self
     }
-    /// <p>The expiration date and time for the download URL.</p> 
+    /// <p>The expiration date and time for the download URL.</p>
     /// <p> The download URL us guaranteed to be available until at least this time. </p>
     pub fn expiration_time(mut self, input: aws_smithy_types::DateTime) -> Self {
         self.expiration_time = Some(input);
         self
     }
-    /// <p>The expiration date and time for the download URL.</p> 
+    /// <p>The expiration date and time for the download URL.</p>
     /// <p> The download URL us guaranteed to be available until at least this time. </p>
-    pub fn set_expiration_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.expiration_time = input; self
+    pub fn set_expiration_time(
+        mut self,
+        input: std::option::Option<aws_smithy_types::DateTime>,
+    ) -> Self {
+        self.expiration_time = input;
+        self
     }
     /// <p>The identifier for the generated code job.</p>
     pub fn generated_code_job_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -106,23 +116,21 @@ impl GeneratedCodeJobDetailsBuilder {
         self
     }
     /// <p>The identifier for the generated code job.</p>
-    pub fn set_generated_code_job_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.generated_code_job_id = input; self
+    pub fn set_generated_code_job_id(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.generated_code_job_id = input;
+        self
     }
     /// Consumes the builder and constructs a [`GeneratedCodeJobDetails`](crate::types::GeneratedCodeJobDetails).
     pub fn build(self) -> crate::types::GeneratedCodeJobDetails {
         crate::types::GeneratedCodeJobDetails {
-            s3_url: self.s3_url
-            ,
-            status: self.status
-            ,
-            description: self.description
-            ,
-            expiration_time: self.expiration_time
-            ,
-            generated_code_job_id: self.generated_code_job_id
-            ,
+            s3_url: self.s3_url,
+            status: self.status,
+            description: self.description,
+            expiration_time: self.expiration_time,
+            generated_code_job_id: self.generated_code_job_id,
         }
     }
 }
-

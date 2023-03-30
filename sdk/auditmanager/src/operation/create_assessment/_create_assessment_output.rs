@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateAssessmentOutput  {
+pub struct CreateAssessmentOutput {
     /// <p> An entity that defines the scope of audit evidence collected by Audit Manager. An Audit Manager assessment is an implementation of an Audit Manager framework. </p>
     #[doc(hidden)]
     pub assessment: std::option::Option<crate::types::Assessment>,
@@ -10,18 +10,19 @@ pub struct CreateAssessmentOutput  {
 }
 impl CreateAssessmentOutput {
     /// <p> An entity that defines the scope of audit evidence collected by Audit Manager. An Audit Manager assessment is an implementation of an Audit Manager framework. </p>
-    pub fn assessment(&self) -> std::option::Option<& crate::types::Assessment> {
+    pub fn assessment(&self) -> std::option::Option<&crate::types::Assessment> {
         self.assessment.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for CreateAssessmentOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl CreateAssessmentOutput {
     /// Creates a new builder-style object to manufacture [`CreateAssessmentOutput`](crate::operation::create_assessment::CreateAssessmentOutput).
-    pub fn builder() -> crate::operation::create_assessment::builders::CreateAssessmentOutputBuilder {
+    pub fn builder() -> crate::operation::create_assessment::builders::CreateAssessmentOutputBuilder
+    {
         crate::operation::create_assessment::builders::CreateAssessmentOutputBuilder::default()
     }
 }
@@ -41,24 +42,23 @@ impl CreateAssessmentOutputBuilder {
     }
     /// <p> An entity that defines the scope of audit evidence collected by Audit Manager. An Audit Manager assessment is an implementation of an Audit Manager framework. </p>
     pub fn set_assessment(mut self, input: std::option::Option<crate::types::Assessment>) -> Self {
-        self.assessment = input; self
+        self.assessment = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`CreateAssessmentOutput`](crate::operation::create_assessment::CreateAssessmentOutput).
     pub fn build(self) -> crate::operation::create_assessment::CreateAssessmentOutput {
         crate::operation::create_assessment::CreateAssessmentOutput {
-            assessment: self.assessment
-            ,
+            assessment: self.assessment,
             _request_id: self._request_id,
         }
     }
 }
-

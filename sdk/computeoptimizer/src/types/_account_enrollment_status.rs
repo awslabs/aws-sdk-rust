@@ -3,14 +3,14 @@
 /// <p>Describes the enrollment status of an organization's member accounts in Compute Optimizer.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AccountEnrollmentStatus  {
+pub struct AccountEnrollmentStatus {
     /// <p>The Amazon Web Services account ID.</p>
     #[doc(hidden)]
     pub account_id: std::option::Option<std::string::String>,
     /// <p>The account enrollment status.</p>
     #[doc(hidden)]
     pub status: std::option::Option<crate::types::Status>,
-    /// <p>The reason for the account enrollment status.</p> 
+    /// <p>The reason for the account enrollment status.</p>
     /// <p>For example, an account might show a status of <code>Pending</code> because member accounts of an organization require more time to be enrolled in the service.</p>
     #[doc(hidden)]
     pub status_reason: std::option::Option<std::string::String>,
@@ -20,20 +20,20 @@ pub struct AccountEnrollmentStatus  {
 }
 impl AccountEnrollmentStatus {
     /// <p>The Amazon Web Services account ID.</p>
-    pub fn account_id(&self) -> std::option::Option<& str> {
+    pub fn account_id(&self) -> std::option::Option<&str> {
         self.account_id.as_deref()
     }
     /// <p>The account enrollment status.</p>
-    pub fn status(&self) -> std::option::Option<& crate::types::Status> {
+    pub fn status(&self) -> std::option::Option<&crate::types::Status> {
         self.status.as_ref()
     }
-    /// <p>The reason for the account enrollment status.</p> 
+    /// <p>The reason for the account enrollment status.</p>
     /// <p>For example, an account might show a status of <code>Pending</code> because member accounts of an organization require more time to be enrolled in the service.</p>
-    pub fn status_reason(&self) -> std::option::Option<& str> {
+    pub fn status_reason(&self) -> std::option::Option<&str> {
         self.status_reason.as_deref()
     }
     /// <p>The Unix epoch timestamp, in seconds, of when the account enrollment status was last updated.</p>
-    pub fn last_updated_timestamp(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
+    pub fn last_updated_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_updated_timestamp.as_ref()
     }
 }
@@ -61,7 +61,8 @@ impl AccountEnrollmentStatusBuilder {
     }
     /// <p>The Amazon Web Services account ID.</p>
     pub fn set_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.account_id = input; self
+        self.account_id = input;
+        self
     }
     /// <p>The account enrollment status.</p>
     pub fn status(mut self, input: crate::types::Status) -> Self {
@@ -70,18 +71,20 @@ impl AccountEnrollmentStatusBuilder {
     }
     /// <p>The account enrollment status.</p>
     pub fn set_status(mut self, input: std::option::Option<crate::types::Status>) -> Self {
-        self.status = input; self
+        self.status = input;
+        self
     }
-    /// <p>The reason for the account enrollment status.</p> 
+    /// <p>The reason for the account enrollment status.</p>
     /// <p>For example, an account might show a status of <code>Pending</code> because member accounts of an organization require more time to be enrolled in the service.</p>
     pub fn status_reason(mut self, input: impl Into<std::string::String>) -> Self {
         self.status_reason = Some(input.into());
         self
     }
-    /// <p>The reason for the account enrollment status.</p> 
+    /// <p>The reason for the account enrollment status.</p>
     /// <p>For example, an account might show a status of <code>Pending</code> because member accounts of an organization require more time to be enrolled in the service.</p>
     pub fn set_status_reason(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.status_reason = input; self
+        self.status_reason = input;
+        self
     }
     /// <p>The Unix epoch timestamp, in seconds, of when the account enrollment status was last updated.</p>
     pub fn last_updated_timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -89,21 +92,20 @@ impl AccountEnrollmentStatusBuilder {
         self
     }
     /// <p>The Unix epoch timestamp, in seconds, of when the account enrollment status was last updated.</p>
-    pub fn set_last_updated_timestamp(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.last_updated_timestamp = input; self
+    pub fn set_last_updated_timestamp(
+        mut self,
+        input: std::option::Option<aws_smithy_types::DateTime>,
+    ) -> Self {
+        self.last_updated_timestamp = input;
+        self
     }
     /// Consumes the builder and constructs a [`AccountEnrollmentStatus`](crate::types::AccountEnrollmentStatus).
     pub fn build(self) -> crate::types::AccountEnrollmentStatus {
         crate::types::AccountEnrollmentStatus {
-            account_id: self.account_id
-            ,
-            status: self.status
-            ,
-            status_reason: self.status_reason
-            ,
-            last_updated_timestamp: self.last_updated_timestamp
-            ,
+            account_id: self.account_id,
+            status: self.status,
+            status_reason: self.status_reason,
+            last_updated_timestamp: self.last_updated_timestamp,
         }
     }
 }
-

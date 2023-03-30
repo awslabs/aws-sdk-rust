@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct GetRevisionOutput  {
+pub struct GetRevisionOutput {
     /// <p>The proof object in Amazon Ion format returned by a <code>GetRevision</code> request. A proof contains the list of hash values that are required to recalculate the specified digest using a Merkle tree, starting with the specified document revision.</p>
     #[doc(hidden)]
     pub proof: std::option::Option<crate::types::ValueHolder>,
@@ -13,15 +13,15 @@ pub struct GetRevisionOutput  {
 }
 impl GetRevisionOutput {
     /// <p>The proof object in Amazon Ion format returned by a <code>GetRevision</code> request. A proof contains the list of hash values that are required to recalculate the specified digest using a Merkle tree, starting with the specified document revision.</p>
-    pub fn proof(&self) -> std::option::Option<& crate::types::ValueHolder> {
+    pub fn proof(&self) -> std::option::Option<&crate::types::ValueHolder> {
         self.proof.as_ref()
     }
     /// <p>The document revision data object in Amazon Ion format.</p>
-    pub fn revision(&self) -> std::option::Option<& crate::types::ValueHolder> {
+    pub fn revision(&self) -> std::option::Option<&crate::types::ValueHolder> {
         self.revision.as_ref()
     }
 }
-impl  std::fmt::Debug for GetRevisionOutput  {
+impl std::fmt::Debug for GetRevisionOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetRevisionOutput");
         formatter.field("proof", &"*** Sensitive Data Redacted ***");
@@ -31,10 +31,10 @@ impl  std::fmt::Debug for GetRevisionOutput  {
     }
 }
 impl aws_http::request_id::RequestId for GetRevisionOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl GetRevisionOutput {
     /// Creates a new builder-style object to manufacture [`GetRevisionOutput`](crate::operation::get_revision::GetRevisionOutput).
     pub fn builder() -> crate::operation::get_revision::builders::GetRevisionOutputBuilder {
@@ -58,7 +58,8 @@ impl GetRevisionOutputBuilder {
     }
     /// <p>The proof object in Amazon Ion format returned by a <code>GetRevision</code> request. A proof contains the list of hash values that are required to recalculate the specified digest using a Merkle tree, starting with the specified document revision.</p>
     pub fn set_proof(mut self, input: std::option::Option<crate::types::ValueHolder>) -> Self {
-        self.proof = input; self
+        self.proof = input;
+        self
     }
     /// <p>The document revision data object in Amazon Ion format.</p>
     pub fn revision(mut self, input: crate::types::ValueHolder) -> Self {
@@ -67,24 +68,23 @@ impl GetRevisionOutputBuilder {
     }
     /// <p>The document revision data object in Amazon Ion format.</p>
     pub fn set_revision(mut self, input: std::option::Option<crate::types::ValueHolder>) -> Self {
-        self.revision = input; self
+        self.revision = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`GetRevisionOutput`](crate::operation::get_revision::GetRevisionOutput).
     pub fn build(self) -> crate::operation::get_revision::GetRevisionOutput {
         crate::operation::get_revision::GetRevisionOutput {
-            proof: self.proof
-            ,
-            revision: self.revision
-            ,
+            proof: self.proof,
+            revision: self.revision,
             _request_id: self._request_id,
         }
     }
@@ -98,4 +98,3 @@ impl std::fmt::Debug for GetRevisionOutputBuilder {
         formatter.finish()
     }
 }
-

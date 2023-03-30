@@ -2,17 +2,18 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DismissUserContactOutput  {
+pub struct DismissUserContactOutput {
     _request_id: Option<String>,
 }
 impl aws_http::request_id::RequestId for DismissUserContactOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl DismissUserContactOutput {
     /// Creates a new builder-style object to manufacture [`DismissUserContactOutput`](crate::operation::dismiss_user_contact::DismissUserContactOutput).
-    pub fn builder() -> crate::operation::dismiss_user_contact::builders::DismissUserContactOutputBuilder {
+    pub fn builder(
+    ) -> crate::operation::dismiss_user_contact::builders::DismissUserContactOutputBuilder {
         crate::operation::dismiss_user_contact::builders::DismissUserContactOutputBuilder::default()
     }
 }
@@ -25,14 +26,14 @@ pub struct DismissUserContactOutputBuilder {
 }
 impl DismissUserContactOutputBuilder {
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`DismissUserContactOutput`](crate::operation::dismiss_user_contact::DismissUserContactOutput).
     pub fn build(self) -> crate::operation::dismiss_user_contact::DismissUserContactOutput {
         crate::operation::dismiss_user_contact::DismissUserContactOutput {
@@ -40,4 +41,3 @@ impl DismissUserContactOutputBuilder {
         }
     }
 }
-

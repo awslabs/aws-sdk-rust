@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateAppImageConfigInput  {
+pub struct CreateAppImageConfigInput {
     /// <p>The name of the AppImageConfig. Must be unique to your account.</p>
     #[doc(hidden)]
     pub app_image_config_name: std::option::Option<std::string::String>,
@@ -15,21 +15,24 @@ pub struct CreateAppImageConfigInput  {
 }
 impl CreateAppImageConfigInput {
     /// <p>The name of the AppImageConfig. Must be unique to your account.</p>
-    pub fn app_image_config_name(&self) -> std::option::Option<& str> {
+    pub fn app_image_config_name(&self) -> std::option::Option<&str> {
         self.app_image_config_name.as_deref()
     }
     /// <p>A list of tags to apply to the AppImageConfig.</p>
-    pub fn tags(&self) -> std::option::Option<& [crate::types::Tag]> {
+    pub fn tags(&self) -> std::option::Option<&[crate::types::Tag]> {
         self.tags.as_deref()
     }
     /// <p>The KernelGatewayImageConfig. You can only specify one image kernel in the AppImageConfig API. This kernel will be shown to users before the image starts. Once the image runs, all kernels are visible in JupyterLab.</p>
-    pub fn kernel_gateway_image_config(&self) -> std::option::Option<& crate::types::KernelGatewayImageConfig> {
+    pub fn kernel_gateway_image_config(
+        &self,
+    ) -> std::option::Option<&crate::types::KernelGatewayImageConfig> {
         self.kernel_gateway_image_config.as_ref()
     }
 }
 impl CreateAppImageConfigInput {
     /// Creates a new builder-style object to manufacture [`CreateAppImageConfigInput`](crate::operation::create_app_image_config::CreateAppImageConfigInput).
-    pub fn builder() -> crate::operation::create_app_image_config::builders::CreateAppImageConfigInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::create_app_image_config::builders::CreateAppImageConfigInputBuilder {
         crate::operation::create_app_image_config::builders::CreateAppImageConfigInputBuilder::default()
     }
 }
@@ -40,7 +43,8 @@ impl CreateAppImageConfigInput {
 pub struct CreateAppImageConfigInputBuilder {
     pub(crate) app_image_config_name: std::option::Option<std::string::String>,
     pub(crate) tags: std::option::Option<std::vec::Vec<crate::types::Tag>>,
-    pub(crate) kernel_gateway_image_config: std::option::Option<crate::types::KernelGatewayImageConfig>,
+    pub(crate) kernel_gateway_image_config:
+        std::option::Option<crate::types::KernelGatewayImageConfig>,
 }
 impl CreateAppImageConfigInputBuilder {
     /// <p>The name of the AppImageConfig. Must be unique to your account.</p>
@@ -49,8 +53,12 @@ impl CreateAppImageConfigInputBuilder {
         self
     }
     /// <p>The name of the AppImageConfig. Must be unique to your account.</p>
-    pub fn set_app_image_config_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.app_image_config_name = input; self
+    pub fn set_app_image_config_name(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.app_image_config_name = input;
+        self
     }
     /// Appends an item to `tags`.
     ///
@@ -59,35 +67,47 @@ impl CreateAppImageConfigInputBuilder {
     /// <p>A list of tags to apply to the AppImageConfig.</p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
-                        v.push(input);
-                        self.tags = Some(v);
-                        self
+        v.push(input);
+        self.tags = Some(v);
+        self
     }
     /// <p>A list of tags to apply to the AppImageConfig.</p>
-    pub fn set_tags(mut self, input: std::option::Option<std::vec::Vec<crate::types::Tag>>) -> Self {
-        self.tags = input; self
+    pub fn set_tags(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::Tag>>,
+    ) -> Self {
+        self.tags = input;
+        self
     }
     /// <p>The KernelGatewayImageConfig. You can only specify one image kernel in the AppImageConfig API. This kernel will be shown to users before the image starts. Once the image runs, all kernels are visible in JupyterLab.</p>
-    pub fn kernel_gateway_image_config(mut self, input: crate::types::KernelGatewayImageConfig) -> Self {
+    pub fn kernel_gateway_image_config(
+        mut self,
+        input: crate::types::KernelGatewayImageConfig,
+    ) -> Self {
         self.kernel_gateway_image_config = Some(input);
         self
     }
     /// <p>The KernelGatewayImageConfig. You can only specify one image kernel in the AppImageConfig API. This kernel will be shown to users before the image starts. Once the image runs, all kernels are visible in JupyterLab.</p>
-    pub fn set_kernel_gateway_image_config(mut self, input: std::option::Option<crate::types::KernelGatewayImageConfig>) -> Self {
-        self.kernel_gateway_image_config = input; self
+    pub fn set_kernel_gateway_image_config(
+        mut self,
+        input: std::option::Option<crate::types::KernelGatewayImageConfig>,
+    ) -> Self {
+        self.kernel_gateway_image_config = input;
+        self
     }
     /// Consumes the builder and constructs a [`CreateAppImageConfigInput`](crate::operation::create_app_image_config::CreateAppImageConfigInput).
-    pub fn build(self) -> Result<crate::operation::create_app_image_config::CreateAppImageConfigInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::create_app_image_config::CreateAppImageConfigInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::create_app_image_config::CreateAppImageConfigInput {
-                app_image_config_name: self.app_image_config_name
-                ,
-                tags: self.tags
-                ,
-                kernel_gateway_image_config: self.kernel_gateway_image_config
-                ,
-            }
+                app_image_config_name: self.app_image_config_name,
+                tags: self.tags,
+                kernel_gateway_image_config: self.kernel_gateway_image_config,
+            },
         )
     }
 }
-

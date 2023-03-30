@@ -2,20 +2,21 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteVoiceChannelInput  {
+pub struct DeleteVoiceChannelInput {
     /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
     #[doc(hidden)]
     pub application_id: std::option::Option<std::string::String>,
 }
 impl DeleteVoiceChannelInput {
     /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
-    pub fn application_id(&self) -> std::option::Option<& str> {
+    pub fn application_id(&self) -> std::option::Option<&str> {
         self.application_id.as_deref()
     }
 }
 impl DeleteVoiceChannelInput {
     /// Creates a new builder-style object to manufacture [`DeleteVoiceChannelInput`](crate::operation::delete_voice_channel::DeleteVoiceChannelInput).
-    pub fn builder() -> crate::operation::delete_voice_channel::builders::DeleteVoiceChannelInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::delete_voice_channel::builders::DeleteVoiceChannelInputBuilder {
         crate::operation::delete_voice_channel::builders::DeleteVoiceChannelInputBuilder::default()
     }
 }
@@ -34,16 +35,20 @@ impl DeleteVoiceChannelInputBuilder {
     }
     /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
     pub fn set_application_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.application_id = input; self
+        self.application_id = input;
+        self
     }
     /// Consumes the builder and constructs a [`DeleteVoiceChannelInput`](crate::operation::delete_voice_channel::DeleteVoiceChannelInput).
-    pub fn build(self) -> Result<crate::operation::delete_voice_channel::DeleteVoiceChannelInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::delete_voice_channel::DeleteVoiceChannelInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::delete_voice_channel::DeleteVoiceChannelInput {
-                application_id: self.application_id
-                ,
-            }
+                application_id: self.application_id,
+            },
         )
     }
 }
-

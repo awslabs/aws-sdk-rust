@@ -4,55 +4,64 @@ pub use crate::operation::describe_remediation_execution_status::_describe_remed
 pub use crate::operation::describe_remediation_execution_status::_describe_remediation_execution_status_input::DescribeRemediationExecutionStatusInputBuilder;
 
 /// Fluent builder constructing a request to `DescribeRemediationExecutionStatus`.
-/// 
+///
 /// <p>Provides a detailed view of a Remediation Execution for a set of resources including state, timestamps for when steps for the remediation execution occur, and any error messages for steps that have failed. When you specify the limit and the next token, you receive a paginated response.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeRemediationExecutionStatusFluentBuilder {
                 handle: std::sync::Arc<crate::client::Handle>,
                 inner: crate::operation::describe_remediation_execution_status::builders::DescribeRemediationExecutionStatusInputBuilder
             }
-impl DescribeRemediationExecutionStatusFluentBuilder  {
+impl DescribeRemediationExecutionStatusFluentBuilder {
     /// Creates a new `DescribeRemediationExecutionStatus`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
-                    /// sent. The operation's inner [http::Request] can be modified as well.
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle,
+            inner: Default::default(),
+        }
+    }
+
+    /// Consume this builder, creating a customizable operation that can be modified before being
+    /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::describe_remediation_execution_status::DescribeRemediationExecutionStatus, aws_http::retry::AwsResponseRetryClassifier,>,
                         aws_smithy_http::result::SdkError<crate::operation::describe_remediation_execution_status::DescribeRemediationExecutionStatusError>
-                    >  {
-                        let handle = self.handle.clone();
-                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-                    }
-    
-                    /// Sends the request and returns the response.
-                    ///
-                    /// If an error occurs, an `SdkError` will be returned with additional details that
-                    /// can be matched against.
-                    ///
-                    /// By default, any retryable failures will be retried twice. Retry behavior
-                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                    /// set when configuring the client.
+    >{
+        let handle = self.handle.clone();
+        let operation = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+    }
+
+    /// Sends the request and returns the response.
+    ///
+    /// If an error occurs, an `SdkError` will be returned with additional details that
+    /// can be matched against.
+    ///
+    /// By default, any retryable failures will be retried twice. Retry behavior
+    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+    /// set when configuring the client.
                     pub async fn send(self) -> std::result::Result<crate::operation::describe_remediation_execution_status::DescribeRemediationExecutionStatusOutput, aws_smithy_http::result::SdkError<crate::operation::describe_remediation_execution_status::DescribeRemediationExecutionStatusError>>
                      {
-                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&self.handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        self.handle.client.call(op).await
-                    }
+        let op = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&self.handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        self.handle.client.call(op).await
+    }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::describe_remediation_execution_status::paginator::DescribeRemediationExecutionStatusPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::describe_remediation_execution_status::paginator::DescribeRemediationExecutionStatusPaginator {
-                            crate::operation::describe_remediation_execution_status::paginator::DescribeRemediationExecutionStatusPaginator::new(self.handle, self.inner)
-                        }
+    ///
+    /// Paginators are used by calling [`send().await`](crate::operation::describe_remediation_execution_status::paginator::DescribeRemediationExecutionStatusPaginator::send) which returns a `Stream`.
+    pub fn into_paginator(self) -> crate::operation::describe_remediation_execution_status::paginator::DescribeRemediationExecutionStatusPaginator{
+        crate::operation::describe_remediation_execution_status::paginator::DescribeRemediationExecutionStatusPaginator::new(self.handle, self.inner)
+    }
     /// <p>A list of Config rule names.</p>
     pub fn config_rule_name(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.config_rule_name(input.into());
@@ -73,7 +82,10 @@ impl DescribeRemediationExecutionStatusFluentBuilder  {
         self
     }
     /// <p>A list of resource keys to be processed with the current request. Each element in the list consists of the resource type and resource ID. </p>
-    pub fn set_resource_keys(mut self, input: std::option::Option<std::vec::Vec<crate::types::ResourceKey>>) -> Self {
+    pub fn set_resource_keys(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::ResourceKey>>,
+    ) -> Self {
         self.inner = self.inner.set_resource_keys(input);
         self
     }
@@ -98,4 +110,3 @@ impl DescribeRemediationExecutionStatusFluentBuilder  {
         self
     }
 }
-

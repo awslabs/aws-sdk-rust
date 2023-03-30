@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-/// 
+///
 /// Here is an example of how you can make a match expression forward-compatible:
-/// 
+///
 /// ```text
 /// # let constraintviolationexceptionreason = unimplemented!();
 /// match constraintviolationexceptionreason {
@@ -61,14 +61,22 @@
 /// Specifically, when `constraintviolationexceptionreason` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `ConstraintViolationExceptionReason::NewFeature` also yielding `"NewFeature"`.
-/// 
+///
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
 pub enum ConstraintViolationExceptionReason {
     #[allow(missing_docs)] // documentation missing in model
     AccountCannotLeaveOrganization,
@@ -137,11 +145,11 @@ pub enum ConstraintViolationExceptionReason {
     #[allow(missing_docs)] // documentation missing in model
     WaitPeriodActive,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::primitives::UnknownVariantValue)
+    Unknown(crate::primitives::UnknownVariantValue),
 }
 impl std::convert::From<&str> for ConstraintViolationExceptionReason {
-                fn from(s: &str) -> Self {
-                    match s {
+    fn from(s: &str) -> Self {
+        match s {
                         "ACCOUNT_CANNOT_LEAVE_ORGANIZATION" => ConstraintViolationExceptionReason::AccountCannotLeaveOrganization,
 "ACCOUNT_CANNOT_LEAVE_WITHOUT_EULA" => ConstraintViolationExceptionReason::AccountCannotLeaveWithoutEula,
 "ACCOUNT_CANNOT_LEAVE_WITHOUT_PHONE_VERIFICATION" => ConstraintViolationExceptionReason::AccountCannotLeaveWithoutPhoneVerification,
@@ -177,19 +185,19 @@ impl std::convert::From<&str> for ConstraintViolationExceptionReason {
 "WAIT_PERIOD_ACTIVE" => ConstraintViolationExceptionReason::WaitPeriodActive,
 other => ConstraintViolationExceptionReason::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
                     }
-                }
-            }
+    }
+}
 impl std::str::FromStr for ConstraintViolationExceptionReason {
-                type Err = std::convert::Infallible;
+    type Err = std::convert::Infallible;
 
-                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-                    Ok(ConstraintViolationExceptionReason::from(s))
-                }
-            }
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(ConstraintViolationExceptionReason::from(s))
+    }
+}
 impl ConstraintViolationExceptionReason {
-                /// Returns the `&str` value of the enum member.
-                pub fn as_str(&self) -> &str {
-                    match self {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
     ConstraintViolationExceptionReason::AccountCannotLeaveOrganization => "ACCOUNT_CANNOT_LEAVE_ORGANIZATION",
     ConstraintViolationExceptionReason::AccountCannotLeaveWithoutEula => "ACCOUNT_CANNOT_LEAVE_WITHOUT_EULA",
     ConstraintViolationExceptionReason::AccountCannotLeaveWithoutPhoneVerification => "ACCOUNT_CANNOT_LEAVE_WITHOUT_PHONE_VERIFICATION",
@@ -225,15 +233,48 @@ impl ConstraintViolationExceptionReason {
     ConstraintViolationExceptionReason::WaitPeriodActive => "WAIT_PERIOD_ACTIVE",
     ConstraintViolationExceptionReason::Unknown(value) => value.as_str()
 }
-                }
-                /// Returns all the `&str` representations of the enum members.
-                pub const fn values() -> &'static [&'static str] {
-                    &["ACCOUNT_CANNOT_LEAVE_ORGANIZATION", "ACCOUNT_CANNOT_LEAVE_WITHOUT_EULA", "ACCOUNT_CANNOT_LEAVE_WITHOUT_PHONE_VERIFICATION", "ACCOUNT_CREATION_RATE_LIMIT_EXCEEDED", "ACCOUNT_NUMBER_LIMIT_EXCEEDED", "CANNOT_CLOSE_MANAGEMENT_ACCOUNT", "CANNOT_REGISTER_MASTER_AS_DELEGATED_ADMINISTRATOR", "CANNOT_REMOVE_DELEGATED_ADMINISTRATOR_FROM_ORG", "CLOSE_ACCOUNT_QUOTA_EXCEEDED", "CLOSE_ACCOUNT_REQUESTS_LIMIT_EXCEEDED", "CREATE_ORGANIZATION_IN_BILLING_MODE_UNSUPPORTED_REGION", "DELEGATED_ADMINISTRATOR_EXISTS_FOR_THIS_SERVICE", "EMAIL_VERIFICATION_CODE_EXPIRED", "HANDSHAKE_RATE_LIMIT_EXCEEDED", "INVALID_PAYMENT_INSTRUMENT", "MASTER_ACCOUNT_ADDRESS_DOES_NOT_MATCH_MARKETPLACE", "MASTER_ACCOUNT_MISSING_BUSINESS_LICENSE", "MASTER_ACCOUNT_MISSING_CONTACT_INFO", "MASTER_ACCOUNT_NOT_GOVCLOUD_ENABLED", "MASTER_ACCOUNT_PAYMENT_INSTRUMENT_REQUIRED", "MAX_DELEGATED_ADMINISTRATORS_FOR_SERVICE_LIMIT_EXCEEDED", "MAX_POLICY_TYPE_ATTACHMENT_LIMIT_EXCEEDED", "MAX_TAG_LIMIT_EXCEEDED", "MEMBER_ACCOUNT_PAYMENT_INSTRUMENT_REQUIRED", "MIN_POLICY_TYPE_ATTACHMENT_LIMIT_EXCEEDED", "ORGANIZATION_NOT_IN_ALL_FEATURES_MODE", "OU_DEPTH_LIMIT_EXCEEDED", "OU_NUMBER_LIMIT_EXCEEDED", "POLICY_CONTENT_LIMIT_EXCEEDED", "POLICY_NUMBER_LIMIT_EXCEEDED", "SERVICE_ACCESS_NOT_ENABLED", "TAG_POLICY_VIOLATION", "WAIT_PERIOD_ACTIVE"]
-                }
-            }
+    }
+    /// Returns all the `&str` representations of the enum members.
+    pub const fn values() -> &'static [&'static str] {
+        &[
+            "ACCOUNT_CANNOT_LEAVE_ORGANIZATION",
+            "ACCOUNT_CANNOT_LEAVE_WITHOUT_EULA",
+            "ACCOUNT_CANNOT_LEAVE_WITHOUT_PHONE_VERIFICATION",
+            "ACCOUNT_CREATION_RATE_LIMIT_EXCEEDED",
+            "ACCOUNT_NUMBER_LIMIT_EXCEEDED",
+            "CANNOT_CLOSE_MANAGEMENT_ACCOUNT",
+            "CANNOT_REGISTER_MASTER_AS_DELEGATED_ADMINISTRATOR",
+            "CANNOT_REMOVE_DELEGATED_ADMINISTRATOR_FROM_ORG",
+            "CLOSE_ACCOUNT_QUOTA_EXCEEDED",
+            "CLOSE_ACCOUNT_REQUESTS_LIMIT_EXCEEDED",
+            "CREATE_ORGANIZATION_IN_BILLING_MODE_UNSUPPORTED_REGION",
+            "DELEGATED_ADMINISTRATOR_EXISTS_FOR_THIS_SERVICE",
+            "EMAIL_VERIFICATION_CODE_EXPIRED",
+            "HANDSHAKE_RATE_LIMIT_EXCEEDED",
+            "INVALID_PAYMENT_INSTRUMENT",
+            "MASTER_ACCOUNT_ADDRESS_DOES_NOT_MATCH_MARKETPLACE",
+            "MASTER_ACCOUNT_MISSING_BUSINESS_LICENSE",
+            "MASTER_ACCOUNT_MISSING_CONTACT_INFO",
+            "MASTER_ACCOUNT_NOT_GOVCLOUD_ENABLED",
+            "MASTER_ACCOUNT_PAYMENT_INSTRUMENT_REQUIRED",
+            "MAX_DELEGATED_ADMINISTRATORS_FOR_SERVICE_LIMIT_EXCEEDED",
+            "MAX_POLICY_TYPE_ATTACHMENT_LIMIT_EXCEEDED",
+            "MAX_TAG_LIMIT_EXCEEDED",
+            "MEMBER_ACCOUNT_PAYMENT_INSTRUMENT_REQUIRED",
+            "MIN_POLICY_TYPE_ATTACHMENT_LIMIT_EXCEEDED",
+            "ORGANIZATION_NOT_IN_ALL_FEATURES_MODE",
+            "OU_DEPTH_LIMIT_EXCEEDED",
+            "OU_NUMBER_LIMIT_EXCEEDED",
+            "POLICY_CONTENT_LIMIT_EXCEEDED",
+            "POLICY_NUMBER_LIMIT_EXCEEDED",
+            "SERVICE_ACCESS_NOT_ENABLED",
+            "TAG_POLICY_VIOLATION",
+            "WAIT_PERIOD_ACTIVE",
+        ]
+    }
+}
 impl AsRef<str> for ConstraintViolationExceptionReason {
-                fn as_ref(&self) -> &str {
-                    self.as_str()
-                }
-            }
-
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}

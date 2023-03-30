@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct CreateRoomInput  {
+pub struct CreateRoomInput {
     /// <p>The Amazon Chime account ID.</p>
     #[doc(hidden)]
     pub account_id: std::option::Option<std::string::String>,
@@ -15,19 +15,19 @@ pub struct CreateRoomInput  {
 }
 impl CreateRoomInput {
     /// <p>The Amazon Chime account ID.</p>
-    pub fn account_id(&self) -> std::option::Option<& str> {
+    pub fn account_id(&self) -> std::option::Option<&str> {
         self.account_id.as_deref()
     }
     /// <p>The room name.</p>
-    pub fn name(&self) -> std::option::Option<& str> {
+    pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>The idempotency token for the request.</p>
-    pub fn client_request_token(&self) -> std::option::Option<& str> {
+    pub fn client_request_token(&self) -> std::option::Option<&str> {
         self.client_request_token.as_deref()
     }
 }
-impl  std::fmt::Debug for CreateRoomInput  {
+impl std::fmt::Debug for CreateRoomInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateRoomInput");
         formatter.field("account_id", &self.account_id);
@@ -59,7 +59,8 @@ impl CreateRoomInputBuilder {
     }
     /// <p>The Amazon Chime account ID.</p>
     pub fn set_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.account_id = input; self
+        self.account_id = input;
+        self
     }
     /// <p>The room name.</p>
     pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -68,7 +69,8 @@ impl CreateRoomInputBuilder {
     }
     /// <p>The room name.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input; self
+        self.name = input;
+        self
     }
     /// <p>The idempotency token for the request.</p>
     pub fn client_request_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -76,21 +78,25 @@ impl CreateRoomInputBuilder {
         self
     }
     /// <p>The idempotency token for the request.</p>
-    pub fn set_client_request_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.client_request_token = input; self
+    pub fn set_client_request_token(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.client_request_token = input;
+        self
     }
     /// Consumes the builder and constructs a [`CreateRoomInput`](crate::operation::create_room::CreateRoomInput).
-    pub fn build(self) -> Result<crate::operation::create_room::CreateRoomInput, aws_smithy_http::operation::error::BuildError> {
-        Ok(
-            crate::operation::create_room::CreateRoomInput {
-                account_id: self.account_id
-                ,
-                name: self.name
-                ,
-                client_request_token: self.client_request_token
-                ,
-            }
-        )
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::create_room::CreateRoomInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        Ok(crate::operation::create_room::CreateRoomInput {
+            account_id: self.account_id,
+            name: self.name,
+            client_request_token: self.client_request_token,
+        })
     }
 }
 impl std::fmt::Debug for CreateRoomInputBuilder {
@@ -102,4 +108,3 @@ impl std::fmt::Debug for CreateRoomInputBuilder {
         formatter.finish()
     }
 }
-

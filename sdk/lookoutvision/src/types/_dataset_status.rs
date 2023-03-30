@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-/// 
+///
 /// Here is an example of how you can make a match expression forward-compatible:
-/// 
+///
 /// ```text
 /// # let datasetstatus = unimplemented!();
 /// match datasetstatus {
@@ -38,14 +38,22 @@
 /// Specifically, when `datasetstatus` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `DatasetStatus::NewFeature` also yielding `"NewFeature"`.
-/// 
+///
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
 pub enum DatasetStatus {
     #[allow(missing_docs)] // documentation missing in model
     CreateComplete,
@@ -68,57 +76,69 @@ pub enum DatasetStatus {
     #[allow(missing_docs)] // documentation missing in model
     UpdateInProgress,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::primitives::UnknownVariantValue)
+    Unknown(crate::primitives::UnknownVariantValue),
 }
 impl std::convert::From<&str> for DatasetStatus {
-                fn from(s: &str) -> Self {
-                    match s {
-                        "CREATE_COMPLETE" => DatasetStatus::CreateComplete,
-"CREATE_FAILED" => DatasetStatus::CreateFailed,
-"CREATE_IN_PROGRESS" => DatasetStatus::CreateInProgress,
-"DELETE_COMPLETE" => DatasetStatus::DeleteComplete,
-"DELETE_FAILED" => DatasetStatus::DeleteFailed,
-"DELETE_IN_PROGRESS" => DatasetStatus::DeleteInProgress,
-"UPDATE_COMPLETE" => DatasetStatus::UpdateComplete,
-"UPDATE_FAILED_ROLLBACK_COMPLETE" => DatasetStatus::UpdateFailedRollbackComplete,
-"UPDATE_FAILED_ROLLBACK_IN_PROGRESS" => DatasetStatus::UpdateFailedRollbackInProgress,
-"UPDATE_IN_PROGRESS" => DatasetStatus::UpdateInProgress,
-other => DatasetStatus::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
-                    }
-                }
+    fn from(s: &str) -> Self {
+        match s {
+            "CREATE_COMPLETE" => DatasetStatus::CreateComplete,
+            "CREATE_FAILED" => DatasetStatus::CreateFailed,
+            "CREATE_IN_PROGRESS" => DatasetStatus::CreateInProgress,
+            "DELETE_COMPLETE" => DatasetStatus::DeleteComplete,
+            "DELETE_FAILED" => DatasetStatus::DeleteFailed,
+            "DELETE_IN_PROGRESS" => DatasetStatus::DeleteInProgress,
+            "UPDATE_COMPLETE" => DatasetStatus::UpdateComplete,
+            "UPDATE_FAILED_ROLLBACK_COMPLETE" => DatasetStatus::UpdateFailedRollbackComplete,
+            "UPDATE_FAILED_ROLLBACK_IN_PROGRESS" => DatasetStatus::UpdateFailedRollbackInProgress,
+            "UPDATE_IN_PROGRESS" => DatasetStatus::UpdateInProgress,
+            other => {
+                DatasetStatus::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
             }
-impl std::str::FromStr for DatasetStatus {
-                type Err = std::convert::Infallible;
-
-                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-                    Ok(DatasetStatus::from(s))
-                }
-            }
-impl DatasetStatus {
-                /// Returns the `&str` value of the enum member.
-                pub fn as_str(&self) -> &str {
-                    match self {
-    DatasetStatus::CreateComplete => "CREATE_COMPLETE",
-    DatasetStatus::CreateFailed => "CREATE_FAILED",
-    DatasetStatus::CreateInProgress => "CREATE_IN_PROGRESS",
-    DatasetStatus::DeleteComplete => "DELETE_COMPLETE",
-    DatasetStatus::DeleteFailed => "DELETE_FAILED",
-    DatasetStatus::DeleteInProgress => "DELETE_IN_PROGRESS",
-    DatasetStatus::UpdateComplete => "UPDATE_COMPLETE",
-    DatasetStatus::UpdateFailedRollbackComplete => "UPDATE_FAILED_ROLLBACK_COMPLETE",
-    DatasetStatus::UpdateFailedRollbackInProgress => "UPDATE_FAILED_ROLLBACK_IN_PROGRESS",
-    DatasetStatus::UpdateInProgress => "UPDATE_IN_PROGRESS",
-    DatasetStatus::Unknown(value) => value.as_str()
+        }
+    }
 }
-                }
-                /// Returns all the `&str` representations of the enum members.
-                pub const fn values() -> &'static [&'static str] {
-                    &["CREATE_COMPLETE", "CREATE_FAILED", "CREATE_IN_PROGRESS", "DELETE_COMPLETE", "DELETE_FAILED", "DELETE_IN_PROGRESS", "UPDATE_COMPLETE", "UPDATE_FAILED_ROLLBACK_COMPLETE", "UPDATE_FAILED_ROLLBACK_IN_PROGRESS", "UPDATE_IN_PROGRESS"]
-                }
-            }
-impl AsRef<str> for DatasetStatus {
-                fn as_ref(&self) -> &str {
-                    self.as_str()
-                }
-            }
+impl std::str::FromStr for DatasetStatus {
+    type Err = std::convert::Infallible;
 
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(DatasetStatus::from(s))
+    }
+}
+impl DatasetStatus {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            DatasetStatus::CreateComplete => "CREATE_COMPLETE",
+            DatasetStatus::CreateFailed => "CREATE_FAILED",
+            DatasetStatus::CreateInProgress => "CREATE_IN_PROGRESS",
+            DatasetStatus::DeleteComplete => "DELETE_COMPLETE",
+            DatasetStatus::DeleteFailed => "DELETE_FAILED",
+            DatasetStatus::DeleteInProgress => "DELETE_IN_PROGRESS",
+            DatasetStatus::UpdateComplete => "UPDATE_COMPLETE",
+            DatasetStatus::UpdateFailedRollbackComplete => "UPDATE_FAILED_ROLLBACK_COMPLETE",
+            DatasetStatus::UpdateFailedRollbackInProgress => "UPDATE_FAILED_ROLLBACK_IN_PROGRESS",
+            DatasetStatus::UpdateInProgress => "UPDATE_IN_PROGRESS",
+            DatasetStatus::Unknown(value) => value.as_str(),
+        }
+    }
+    /// Returns all the `&str` representations of the enum members.
+    pub const fn values() -> &'static [&'static str] {
+        &[
+            "CREATE_COMPLETE",
+            "CREATE_FAILED",
+            "CREATE_IN_PROGRESS",
+            "DELETE_COMPLETE",
+            "DELETE_FAILED",
+            "DELETE_IN_PROGRESS",
+            "UPDATE_COMPLETE",
+            "UPDATE_FAILED_ROLLBACK_COMPLETE",
+            "UPDATE_FAILED_ROLLBACK_IN_PROGRESS",
+            "UPDATE_IN_PROGRESS",
+        ]
+    }
+}
+impl AsRef<str> for DatasetStatus {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}

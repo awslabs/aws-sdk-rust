@@ -2,26 +2,29 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListAvailableVoiceConnectorRegionsOutput  {
+pub struct ListAvailableVoiceConnectorRegionsOutput {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
-    pub voice_connector_regions: std::option::Option<std::vec::Vec<crate::types::VoiceConnectorAwsRegion>>,
+    pub voice_connector_regions:
+        std::option::Option<std::vec::Vec<crate::types::VoiceConnectorAwsRegion>>,
     _request_id: Option<String>,
 }
 impl ListAvailableVoiceConnectorRegionsOutput {
     #[allow(missing_docs)] // documentation missing in model
-    pub fn voice_connector_regions(&self) -> std::option::Option<& [crate::types::VoiceConnectorAwsRegion]> {
+    pub fn voice_connector_regions(
+        &self,
+    ) -> std::option::Option<&[crate::types::VoiceConnectorAwsRegion]> {
         self.voice_connector_regions.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for ListAvailableVoiceConnectorRegionsOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl ListAvailableVoiceConnectorRegionsOutput {
     /// Creates a new builder-style object to manufacture [`ListAvailableVoiceConnectorRegionsOutput`](crate::operation::list_available_voice_connector_regions::ListAvailableVoiceConnectorRegionsOutput).
-    pub fn builder() -> crate::operation::list_available_voice_connector_regions::builders::ListAvailableVoiceConnectorRegionsOutputBuilder {
+    pub fn builder() -> crate::operation::list_available_voice_connector_regions::builders::ListAvailableVoiceConnectorRegionsOutputBuilder{
         crate::operation::list_available_voice_connector_regions::builders::ListAvailableVoiceConnectorRegionsOutputBuilder::default()
     }
 }
@@ -30,7 +33,8 @@ impl ListAvailableVoiceConnectorRegionsOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct ListAvailableVoiceConnectorRegionsOutputBuilder {
-    pub(crate) voice_connector_regions: std::option::Option<std::vec::Vec<crate::types::VoiceConnectorAwsRegion>>,
+    pub(crate) voice_connector_regions:
+        std::option::Option<std::vec::Vec<crate::types::VoiceConnectorAwsRegion>>,
     _request_id: Option<String>,
 }
 impl ListAvailableVoiceConnectorRegionsOutputBuilder {
@@ -40,25 +44,29 @@ impl ListAvailableVoiceConnectorRegionsOutputBuilder {
     ///
     pub fn voice_connector_regions(mut self, input: crate::types::VoiceConnectorAwsRegion) -> Self {
         let mut v = self.voice_connector_regions.unwrap_or_default();
-                        v.push(input);
-                        self.voice_connector_regions = Some(v);
-                        self
+        v.push(input);
+        self.voice_connector_regions = Some(v);
+        self
     }
     #[allow(missing_docs)] // documentation missing in model
-    pub fn set_voice_connector_regions(mut self, input: std::option::Option<std::vec::Vec<crate::types::VoiceConnectorAwsRegion>>) -> Self {
-        self.voice_connector_regions = input; self
+    pub fn set_voice_connector_regions(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::VoiceConnectorAwsRegion>>,
+    ) -> Self {
+        self.voice_connector_regions = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`ListAvailableVoiceConnectorRegionsOutput`](crate::operation::list_available_voice_connector_regions::ListAvailableVoiceConnectorRegionsOutput).
-    pub fn build(self) -> crate::operation::list_available_voice_connector_regions::ListAvailableVoiceConnectorRegionsOutput {
+    pub fn build(self) -> crate::operation::list_available_voice_connector_regions::ListAvailableVoiceConnectorRegionsOutput{
         crate::operation::list_available_voice_connector_regions::ListAvailableVoiceConnectorRegionsOutput {
             voice_connector_regions: self.voice_connector_regions
             ,
@@ -66,4 +74,3 @@ impl ListAvailableVoiceConnectorRegionsOutputBuilder {
         }
     }
 }
-

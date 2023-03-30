@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct MergePullRequestByThreeWayInput  {
+pub struct MergePullRequestByThreeWayInput {
     /// <p>The system-generated ID of the pull request. To get this ID, use <code>ListPullRequests</code>.</p>
     #[doc(hidden)]
     pub pull_request_id: std::option::Option<std::string::String>,
@@ -17,7 +17,8 @@ pub struct MergePullRequestByThreeWayInput  {
     pub conflict_detail_level: std::option::Option<crate::types::ConflictDetailLevelTypeEnum>,
     /// <p>Specifies which branch to use when resolving conflicts, or whether to attempt automatically merging two versions of a file. The default is NONE, which requires any conflicts to be resolved manually before the merge operation is successful.</p>
     #[doc(hidden)]
-    pub conflict_resolution_strategy: std::option::Option<crate::types::ConflictResolutionStrategyTypeEnum>,
+    pub conflict_resolution_strategy:
+        std::option::Option<crate::types::ConflictResolutionStrategyTypeEnum>,
     /// <p>The commit message to include in the commit information for the merge.</p>
     #[doc(hidden)]
     pub commit_message: std::option::Option<std::string::String>,
@@ -36,35 +37,39 @@ pub struct MergePullRequestByThreeWayInput  {
 }
 impl MergePullRequestByThreeWayInput {
     /// <p>The system-generated ID of the pull request. To get this ID, use <code>ListPullRequests</code>.</p>
-    pub fn pull_request_id(&self) -> std::option::Option<& str> {
+    pub fn pull_request_id(&self) -> std::option::Option<&str> {
         self.pull_request_id.as_deref()
     }
     /// <p>The name of the repository where the pull request was created.</p>
-    pub fn repository_name(&self) -> std::option::Option<& str> {
+    pub fn repository_name(&self) -> std::option::Option<&str> {
         self.repository_name.as_deref()
     }
     /// <p>The full commit ID of the original or updated commit in the pull request source branch. Pass this value if you want an exception thrown if the current commit ID of the tip of the source branch does not match this commit ID.</p>
-    pub fn source_commit_id(&self) -> std::option::Option<& str> {
+    pub fn source_commit_id(&self) -> std::option::Option<&str> {
         self.source_commit_id.as_deref()
     }
     /// <p>The level of conflict detail to use. If unspecified, the default FILE_LEVEL is used, which returns a not-mergeable result if the same file has differences in both branches. If LINE_LEVEL is specified, a conflict is considered not mergeable if the same file in both branches has differences on the same line.</p>
-    pub fn conflict_detail_level(&self) -> std::option::Option<& crate::types::ConflictDetailLevelTypeEnum> {
+    pub fn conflict_detail_level(
+        &self,
+    ) -> std::option::Option<&crate::types::ConflictDetailLevelTypeEnum> {
         self.conflict_detail_level.as_ref()
     }
     /// <p>Specifies which branch to use when resolving conflicts, or whether to attempt automatically merging two versions of a file. The default is NONE, which requires any conflicts to be resolved manually before the merge operation is successful.</p>
-    pub fn conflict_resolution_strategy(&self) -> std::option::Option<& crate::types::ConflictResolutionStrategyTypeEnum> {
+    pub fn conflict_resolution_strategy(
+        &self,
+    ) -> std::option::Option<&crate::types::ConflictResolutionStrategyTypeEnum> {
         self.conflict_resolution_strategy.as_ref()
     }
     /// <p>The commit message to include in the commit information for the merge.</p>
-    pub fn commit_message(&self) -> std::option::Option<& str> {
+    pub fn commit_message(&self) -> std::option::Option<&str> {
         self.commit_message.as_deref()
     }
     /// <p>The name of the author who created the commit. This information is used as both the author and committer for the commit.</p>
-    pub fn author_name(&self) -> std::option::Option<& str> {
+    pub fn author_name(&self) -> std::option::Option<&str> {
         self.author_name.as_deref()
     }
     /// <p>The email address of the person merging the branches. This information is used in the commit information for the merge.</p>
-    pub fn email(&self) -> std::option::Option<& str> {
+    pub fn email(&self) -> std::option::Option<&str> {
         self.email.as_deref()
     }
     /// <p>If the commit contains deletions, whether to keep a folder or folder structure if the changes leave the folders empty. If true, a .gitkeep file is created for empty folders. The default is false.</p>
@@ -72,13 +77,13 @@ impl MergePullRequestByThreeWayInput {
         self.keep_empty_folders
     }
     /// <p>If AUTOMERGE is the conflict resolution strategy, a list of inputs to use when resolving conflicts during a merge.</p>
-    pub fn conflict_resolution(&self) -> std::option::Option<& crate::types::ConflictResolution> {
+    pub fn conflict_resolution(&self) -> std::option::Option<&crate::types::ConflictResolution> {
         self.conflict_resolution.as_ref()
     }
 }
 impl MergePullRequestByThreeWayInput {
     /// Creates a new builder-style object to manufacture [`MergePullRequestByThreeWayInput`](crate::operation::merge_pull_request_by_three_way::MergePullRequestByThreeWayInput).
-    pub fn builder() -> crate::operation::merge_pull_request_by_three_way::builders::MergePullRequestByThreeWayInputBuilder {
+    pub fn builder() -> crate::operation::merge_pull_request_by_three_way::builders::MergePullRequestByThreeWayInputBuilder{
         crate::operation::merge_pull_request_by_three_way::builders::MergePullRequestByThreeWayInputBuilder::default()
     }
 }
@@ -90,8 +95,10 @@ pub struct MergePullRequestByThreeWayInputBuilder {
     pub(crate) pull_request_id: std::option::Option<std::string::String>,
     pub(crate) repository_name: std::option::Option<std::string::String>,
     pub(crate) source_commit_id: std::option::Option<std::string::String>,
-    pub(crate) conflict_detail_level: std::option::Option<crate::types::ConflictDetailLevelTypeEnum>,
-    pub(crate) conflict_resolution_strategy: std::option::Option<crate::types::ConflictResolutionStrategyTypeEnum>,
+    pub(crate) conflict_detail_level:
+        std::option::Option<crate::types::ConflictDetailLevelTypeEnum>,
+    pub(crate) conflict_resolution_strategy:
+        std::option::Option<crate::types::ConflictResolutionStrategyTypeEnum>,
     pub(crate) commit_message: std::option::Option<std::string::String>,
     pub(crate) author_name: std::option::Option<std::string::String>,
     pub(crate) email: std::option::Option<std::string::String>,
@@ -106,7 +113,8 @@ impl MergePullRequestByThreeWayInputBuilder {
     }
     /// <p>The system-generated ID of the pull request. To get this ID, use <code>ListPullRequests</code>.</p>
     pub fn set_pull_request_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.pull_request_id = input; self
+        self.pull_request_id = input;
+        self
     }
     /// <p>The name of the repository where the pull request was created.</p>
     pub fn repository_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -115,7 +123,8 @@ impl MergePullRequestByThreeWayInputBuilder {
     }
     /// <p>The name of the repository where the pull request was created.</p>
     pub fn set_repository_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.repository_name = input; self
+        self.repository_name = input;
+        self
     }
     /// <p>The full commit ID of the original or updated commit in the pull request source branch. Pass this value if you want an exception thrown if the current commit ID of the tip of the source branch does not match this commit ID.</p>
     pub fn source_commit_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -124,25 +133,40 @@ impl MergePullRequestByThreeWayInputBuilder {
     }
     /// <p>The full commit ID of the original or updated commit in the pull request source branch. Pass this value if you want an exception thrown if the current commit ID of the tip of the source branch does not match this commit ID.</p>
     pub fn set_source_commit_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.source_commit_id = input; self
+        self.source_commit_id = input;
+        self
     }
     /// <p>The level of conflict detail to use. If unspecified, the default FILE_LEVEL is used, which returns a not-mergeable result if the same file has differences in both branches. If LINE_LEVEL is specified, a conflict is considered not mergeable if the same file in both branches has differences on the same line.</p>
-    pub fn conflict_detail_level(mut self, input: crate::types::ConflictDetailLevelTypeEnum) -> Self {
+    pub fn conflict_detail_level(
+        mut self,
+        input: crate::types::ConflictDetailLevelTypeEnum,
+    ) -> Self {
         self.conflict_detail_level = Some(input);
         self
     }
     /// <p>The level of conflict detail to use. If unspecified, the default FILE_LEVEL is used, which returns a not-mergeable result if the same file has differences in both branches. If LINE_LEVEL is specified, a conflict is considered not mergeable if the same file in both branches has differences on the same line.</p>
-    pub fn set_conflict_detail_level(mut self, input: std::option::Option<crate::types::ConflictDetailLevelTypeEnum>) -> Self {
-        self.conflict_detail_level = input; self
+    pub fn set_conflict_detail_level(
+        mut self,
+        input: std::option::Option<crate::types::ConflictDetailLevelTypeEnum>,
+    ) -> Self {
+        self.conflict_detail_level = input;
+        self
     }
     /// <p>Specifies which branch to use when resolving conflicts, or whether to attempt automatically merging two versions of a file. The default is NONE, which requires any conflicts to be resolved manually before the merge operation is successful.</p>
-    pub fn conflict_resolution_strategy(mut self, input: crate::types::ConflictResolutionStrategyTypeEnum) -> Self {
+    pub fn conflict_resolution_strategy(
+        mut self,
+        input: crate::types::ConflictResolutionStrategyTypeEnum,
+    ) -> Self {
         self.conflict_resolution_strategy = Some(input);
         self
     }
     /// <p>Specifies which branch to use when resolving conflicts, or whether to attempt automatically merging two versions of a file. The default is NONE, which requires any conflicts to be resolved manually before the merge operation is successful.</p>
-    pub fn set_conflict_resolution_strategy(mut self, input: std::option::Option<crate::types::ConflictResolutionStrategyTypeEnum>) -> Self {
-        self.conflict_resolution_strategy = input; self
+    pub fn set_conflict_resolution_strategy(
+        mut self,
+        input: std::option::Option<crate::types::ConflictResolutionStrategyTypeEnum>,
+    ) -> Self {
+        self.conflict_resolution_strategy = input;
+        self
     }
     /// <p>The commit message to include in the commit information for the merge.</p>
     pub fn commit_message(mut self, input: impl Into<std::string::String>) -> Self {
@@ -151,7 +175,8 @@ impl MergePullRequestByThreeWayInputBuilder {
     }
     /// <p>The commit message to include in the commit information for the merge.</p>
     pub fn set_commit_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.commit_message = input; self
+        self.commit_message = input;
+        self
     }
     /// <p>The name of the author who created the commit. This information is used as both the author and committer for the commit.</p>
     pub fn author_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -160,7 +185,8 @@ impl MergePullRequestByThreeWayInputBuilder {
     }
     /// <p>The name of the author who created the commit. This information is used as both the author and committer for the commit.</p>
     pub fn set_author_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.author_name = input; self
+        self.author_name = input;
+        self
     }
     /// <p>The email address of the person merging the branches. This information is used in the commit information for the merge.</p>
     pub fn email(mut self, input: impl Into<std::string::String>) -> Self {
@@ -169,7 +195,8 @@ impl MergePullRequestByThreeWayInputBuilder {
     }
     /// <p>The email address of the person merging the branches. This information is used in the commit information for the merge.</p>
     pub fn set_email(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.email = input; self
+        self.email = input;
+        self
     }
     /// <p>If the commit contains deletions, whether to keep a folder or folder structure if the changes leave the folders empty. If true, a .gitkeep file is created for empty folders. The default is false.</p>
     pub fn keep_empty_folders(mut self, input: bool) -> Self {
@@ -178,7 +205,8 @@ impl MergePullRequestByThreeWayInputBuilder {
     }
     /// <p>If the commit contains deletions, whether to keep a folder or folder structure if the changes leave the folders empty. If true, a .gitkeep file is created for empty folders. The default is false.</p>
     pub fn set_keep_empty_folders(mut self, input: std::option::Option<bool>) -> Self {
-        self.keep_empty_folders = input; self
+        self.keep_empty_folders = input;
+        self
     }
     /// <p>If AUTOMERGE is the conflict resolution strategy, a list of inputs to use when resolving conflicts during a merge.</p>
     pub fn conflict_resolution(mut self, input: crate::types::ConflictResolution) -> Self {
@@ -186,36 +214,33 @@ impl MergePullRequestByThreeWayInputBuilder {
         self
     }
     /// <p>If AUTOMERGE is the conflict resolution strategy, a list of inputs to use when resolving conflicts during a merge.</p>
-    pub fn set_conflict_resolution(mut self, input: std::option::Option<crate::types::ConflictResolution>) -> Self {
-        self.conflict_resolution = input; self
+    pub fn set_conflict_resolution(
+        mut self,
+        input: std::option::Option<crate::types::ConflictResolution>,
+    ) -> Self {
+        self.conflict_resolution = input;
+        self
     }
     /// Consumes the builder and constructs a [`MergePullRequestByThreeWayInput`](crate::operation::merge_pull_request_by_three_way::MergePullRequestByThreeWayInput).
-    pub fn build(self) -> Result<crate::operation::merge_pull_request_by_three_way::MergePullRequestByThreeWayInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::merge_pull_request_by_three_way::MergePullRequestByThreeWayInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::merge_pull_request_by_three_way::MergePullRequestByThreeWayInput {
-                pull_request_id: self.pull_request_id
-                ,
-                repository_name: self.repository_name
-                ,
-                source_commit_id: self.source_commit_id
-                ,
-                conflict_detail_level: self.conflict_detail_level
-                ,
-                conflict_resolution_strategy: self.conflict_resolution_strategy
-                ,
-                commit_message: self.commit_message
-                ,
-                author_name: self.author_name
-                ,
-                email: self.email
-                ,
-                keep_empty_folders: self.keep_empty_folders
-                    .unwrap_or_default()
-                ,
-                conflict_resolution: self.conflict_resolution
-                ,
-            }
+                pull_request_id: self.pull_request_id,
+                repository_name: self.repository_name,
+                source_commit_id: self.source_commit_id,
+                conflict_detail_level: self.conflict_detail_level,
+                conflict_resolution_strategy: self.conflict_resolution_strategy,
+                commit_message: self.commit_message,
+                author_name: self.author_name,
+                email: self.email,
+                keep_empty_folders: self.keep_empty_folders.unwrap_or_default(),
+                conflict_resolution: self.conflict_resolution,
+            },
         )
     }
 }
-

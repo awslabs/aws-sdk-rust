@@ -4,127 +4,145 @@ pub use crate::operation::copy_object::_copy_object_output::CopyObjectOutputBuil
 pub use crate::operation::copy_object::_copy_object_input::CopyObjectInputBuilder;
 
 /// Fluent builder constructing a request to `CopyObject`.
-/// 
-/// <p>Creates a copy of an object that is already stored in Amazon S3.</p> <note> 
-/// <p>You can store individual objects of up to 5 TB in Amazon S3. You create a copy of your object up to 5 GB in size in a single atomic action using this API. However, to copy an object greater than 5 GB, you must use the multipart upload Upload Part - Copy (UploadPartCopy) API. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/CopyingObjctsUsingRESTMPUapi.html">Copy Object Using the REST Multipart Upload API</a>.</p> 
-/// </note> 
-/// <p>All copy requests must be authenticated. Additionally, you must have <i>read</i> access to the source object and <i>write</i> access to the destination bucket. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/RESTAuthentication.html">REST Authentication</a>. Both the Region that you want to copy the object from and the Region that you want to copy the object to must be enabled for your account.</p> 
-/// <p>A copy request might return an error when Amazon S3 receives the copy request or while Amazon S3 is copying the files. If the error occurs before the copy action starts, you receive a standard Amazon S3 error. If the error occurs during the copy operation, the error response is embedded in the <code>200 OK</code> response. This means that a <code>200 OK</code> response can contain either a success or an error. Design your application to parse the contents of the response and handle it appropriately.</p> 
-/// <p>If the copy is successful, you receive a response with information about the copied object.</p> <note> 
-/// <p>If the request is an HTTP 1.1 request, the response is chunk encoded. If it were not, it would not contain the content-length, and you would need to read the entire body.</p> 
-/// </note> 
-/// <p>The copy request charge is based on the storage class and Region that you specify for the destination object. For pricing information, see <a href="http://aws.amazon.com/s3/pricing/">Amazon S3 pricing</a>.</p> <important> 
-/// <p>Amazon S3 transfer acceleration does not support cross-Region copies. If you request a cross-Region copy using a transfer acceleration endpoint, you get a 400 <code>Bad Request</code> error. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/transfer-acceleration.html">Transfer Acceleration</a>.</p> 
-/// </important> 
-/// <p> <b>Metadata</b> </p> 
-/// <p>When copying an object, you can preserve all metadata (default) or specify new metadata. However, the ACL is not preserved and is set to private for the user making the request. To override the default ACL setting, specify a new ACL when generating a copy request. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/S3_ACLs_UsingACLs.html">Using ACLs</a>. </p> 
-/// <p>To specify whether you want the object metadata copied from the source object or replaced with metadata provided in the request, you can optionally add the <code>x-amz-metadata-directive</code> header. When you grant permissions, you can use the <code>s3:x-amz-metadata-directive</code> condition key to enforce certain metadata behavior when objects are uploaded. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/amazon-s3-policy-keys.html">Specifying Conditions in a Policy</a> in the <i>Amazon S3 User Guide</i>. For a complete list of Amazon S3-specific condition keys, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/list_amazons3.html">Actions, Resources, and Condition Keys for Amazon S3</a>.</p> 
-/// <p> <b>x-amz-copy-source-if Headers</b> </p> 
-/// <p>To only copy an object under certain conditions, such as whether the <code>Etag</code> matches or whether the object was modified before or after a specified date, use the following request parameters:</p> 
-/// <ul> 
-/// <li> <p> <code>x-amz-copy-source-if-match</code> </p> </li> 
-/// <li> <p> <code>x-amz-copy-source-if-none-match</code> </p> </li> 
-/// <li> <p> <code>x-amz-copy-source-if-unmodified-since</code> </p> </li> 
-/// <li> <p> <code>x-amz-copy-source-if-modified-since</code> </p> </li> 
-/// </ul> 
-/// <p> If both the <code>x-amz-copy-source-if-match</code> and <code>x-amz-copy-source-if-unmodified-since</code> headers are present in the request and evaluate as follows, Amazon S3 returns <code>200 OK</code> and copies the data:</p> 
-/// <ul> 
-/// <li> <p> <code>x-amz-copy-source-if-match</code> condition evaluates to true</p> </li> 
-/// <li> <p> <code>x-amz-copy-source-if-unmodified-since</code> condition evaluates to false</p> </li> 
-/// </ul> 
-/// <p>If both the <code>x-amz-copy-source-if-none-match</code> and <code>x-amz-copy-source-if-modified-since</code> headers are present in the request and evaluate as follows, Amazon S3 returns the <code>412 Precondition Failed</code> response code:</p> 
-/// <ul> 
-/// <li> <p> <code>x-amz-copy-source-if-none-match</code> condition evaluates to false</p> </li> 
-/// <li> <p> <code>x-amz-copy-source-if-modified-since</code> condition evaluates to true</p> </li> 
-/// </ul> <note> 
-/// <p>All headers with the <code>x-amz-</code> prefix, including <code>x-amz-copy-source</code>, must be signed.</p> 
-/// </note> 
-/// <p> <b>Server-side encryption</b> </p> 
-/// <p>When you perform a CopyObject operation, you can optionally use the appropriate encryption-related headers to encrypt the object using server-side encryption with Amazon Web Services managed encryption keys (SSE-S3 or SSE-KMS) or a customer-provided encryption key. With server-side encryption, Amazon S3 encrypts your data as it writes it to disks in its data centers and decrypts the data when you access it. For more information about server-side encryption, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/serv-side-encryption.html">Using Server-Side Encryption</a>.</p> 
-/// <p>If a target object uses SSE-KMS, you can enable an S3 Bucket Key for the object. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/bucket-key.html">Amazon S3 Bucket Keys</a> in the <i>Amazon S3 User Guide</i>.</p> 
-/// <p> <b>Access Control List (ACL)-Specific Request Headers</b> </p> 
-/// <p>When copying an object, you can optionally use headers to grant ACL-based permissions. By default, all objects are private. Only the owner has full access control. When adding a new object, you can grant permissions to individual Amazon Web Services accounts or to predefined groups defined by Amazon S3. These permissions are then added to the ACL on the object. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/acl-overview.html">Access Control List (ACL) Overview</a> and <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/acl-using-rest-api.html">Managing ACLs Using the REST API</a>. </p> 
-/// <p>If the bucket that you're copying objects to uses the bucket owner enforced setting for S3 Object Ownership, ACLs are disabled and no longer affect permissions. Buckets that use this setting only accept PUT requests that don't specify an ACL or PUT requests that specify bucket owner full control ACLs, such as the <code>bucket-owner-full-control</code> canned ACL or an equivalent form of this ACL expressed in the XML format.</p> 
-/// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/about-object-ownership.html"> Controlling ownership of objects and disabling ACLs</a> in the <i>Amazon S3 User Guide</i>.</p> <note> 
-/// <p>If your bucket uses the bucket owner enforced setting for Object Ownership, all objects written to the bucket by any account will be owned by the bucket owner.</p> 
-/// </note> 
-/// <p> <b>Checksums</b> </p> 
-/// <p>When copying an object, if it has a checksum, that checksum will be copied to the new object by default. When you copy the object over, you may optionally specify a different checksum algorithm to use with the <code>x-amz-checksum-algorithm</code> header.</p> 
-/// <p> <b>Storage Class Options</b> </p> 
-/// <p>You can use the <code>CopyObject</code> action to change the storage class of an object that is already stored in Amazon S3 using the <code>StorageClass</code> parameter. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/storage-class-intro.html">Storage Classes</a> in the <i>Amazon S3 User Guide</i>.</p> 
-/// <p> <b>Versioning</b> </p> 
-/// <p>By default, <code>x-amz-copy-source</code> identifies the current version of an object to copy. If the current version is a delete marker, Amazon S3 behaves as if the object was deleted. To copy a different version, use the <code>versionId</code> subresource.</p> 
-/// <p>If you enable versioning on the target bucket, Amazon S3 generates a unique version ID for the object being copied. This version ID is different from the version ID of the source object. Amazon S3 returns the version ID of the copied object in the <code>x-amz-version-id</code> response header in the response.</p> 
-/// <p>If you do not enable versioning or suspend it on the target bucket, the version ID that Amazon S3 generates is always null.</p> 
-/// <p>If the source object's storage class is GLACIER, you must restore a copy of this object before you can use it as a source object for the copy operation. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_RestoreObject.html">RestoreObject</a>.</p> 
-/// <p>The following operations are related to <code>CopyObject</code>:</p> 
-/// <ul> 
-/// <li> <p> <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutObject.html">PutObject</a> </p> </li> 
-/// <li> <p> <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetObject.html">GetObject</a> </p> </li> 
-/// </ul> 
+///
+/// <p>Creates a copy of an object that is already stored in Amazon S3.</p> <note>
+/// <p>You can store individual objects of up to 5 TB in Amazon S3. You create a copy of your object up to 5 GB in size in a single atomic action using this API. However, to copy an object greater than 5 GB, you must use the multipart upload Upload Part - Copy (UploadPartCopy) API. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/CopyingObjctsUsingRESTMPUapi.html">Copy Object Using the REST Multipart Upload API</a>.</p>
+/// </note>
+/// <p>All copy requests must be authenticated. Additionally, you must have <i>read</i> access to the source object and <i>write</i> access to the destination bucket. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/RESTAuthentication.html">REST Authentication</a>. Both the Region that you want to copy the object from and the Region that you want to copy the object to must be enabled for your account.</p>
+/// <p>A copy request might return an error when Amazon S3 receives the copy request or while Amazon S3 is copying the files. If the error occurs before the copy action starts, you receive a standard Amazon S3 error. If the error occurs during the copy operation, the error response is embedded in the <code>200 OK</code> response. This means that a <code>200 OK</code> response can contain either a success or an error. Design your application to parse the contents of the response and handle it appropriately.</p>
+/// <p>If the copy is successful, you receive a response with information about the copied object.</p> <note>
+/// <p>If the request is an HTTP 1.1 request, the response is chunk encoded. If it were not, it would not contain the content-length, and you would need to read the entire body.</p>
+/// </note>
+/// <p>The copy request charge is based on the storage class and Region that you specify for the destination object. For pricing information, see <a href="http://aws.amazon.com/s3/pricing/">Amazon S3 pricing</a>.</p> <important>
+/// <p>Amazon S3 transfer acceleration does not support cross-Region copies. If you request a cross-Region copy using a transfer acceleration endpoint, you get a 400 <code>Bad Request</code> error. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/transfer-acceleration.html">Transfer Acceleration</a>.</p>
+/// </important>
+/// <p> <b>Metadata</b> </p>
+/// <p>When copying an object, you can preserve all metadata (default) or specify new metadata. However, the ACL is not preserved and is set to private for the user making the request. To override the default ACL setting, specify a new ACL when generating a copy request. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/S3_ACLs_UsingACLs.html">Using ACLs</a>. </p>
+/// <p>To specify whether you want the object metadata copied from the source object or replaced with metadata provided in the request, you can optionally add the <code>x-amz-metadata-directive</code> header. When you grant permissions, you can use the <code>s3:x-amz-metadata-directive</code> condition key to enforce certain metadata behavior when objects are uploaded. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/amazon-s3-policy-keys.html">Specifying Conditions in a Policy</a> in the <i>Amazon S3 User Guide</i>. For a complete list of Amazon S3-specific condition keys, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/list_amazons3.html">Actions, Resources, and Condition Keys for Amazon S3</a>.</p>
+/// <p> <b>x-amz-copy-source-if Headers</b> </p>
+/// <p>To only copy an object under certain conditions, such as whether the <code>Etag</code> matches or whether the object was modified before or after a specified date, use the following request parameters:</p>
+/// <ul>
+/// <li> <p> <code>x-amz-copy-source-if-match</code> </p> </li>
+/// <li> <p> <code>x-amz-copy-source-if-none-match</code> </p> </li>
+/// <li> <p> <code>x-amz-copy-source-if-unmodified-since</code> </p> </li>
+/// <li> <p> <code>x-amz-copy-source-if-modified-since</code> </p> </li>
+/// </ul>
+/// <p> If both the <code>x-amz-copy-source-if-match</code> and <code>x-amz-copy-source-if-unmodified-since</code> headers are present in the request and evaluate as follows, Amazon S3 returns <code>200 OK</code> and copies the data:</p>
+/// <ul>
+/// <li> <p> <code>x-amz-copy-source-if-match</code> condition evaluates to true</p> </li>
+/// <li> <p> <code>x-amz-copy-source-if-unmodified-since</code> condition evaluates to false</p> </li>
+/// </ul>
+/// <p>If both the <code>x-amz-copy-source-if-none-match</code> and <code>x-amz-copy-source-if-modified-since</code> headers are present in the request and evaluate as follows, Amazon S3 returns the <code>412 Precondition Failed</code> response code:</p>
+/// <ul>
+/// <li> <p> <code>x-amz-copy-source-if-none-match</code> condition evaluates to false</p> </li>
+/// <li> <p> <code>x-amz-copy-source-if-modified-since</code> condition evaluates to true</p> </li>
+/// </ul> <note>
+/// <p>All headers with the <code>x-amz-</code> prefix, including <code>x-amz-copy-source</code>, must be signed.</p>
+/// </note>
+/// <p> <b>Server-side encryption</b> </p>
+/// <p>When you perform a CopyObject operation, you can optionally use the appropriate encryption-related headers to encrypt the object using server-side encryption with Amazon Web Services managed encryption keys (SSE-S3 or SSE-KMS) or a customer-provided encryption key. With server-side encryption, Amazon S3 encrypts your data as it writes it to disks in its data centers and decrypts the data when you access it. For more information about server-side encryption, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/serv-side-encryption.html">Using Server-Side Encryption</a>.</p>
+/// <p>If a target object uses SSE-KMS, you can enable an S3 Bucket Key for the object. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/bucket-key.html">Amazon S3 Bucket Keys</a> in the <i>Amazon S3 User Guide</i>.</p>
+/// <p> <b>Access Control List (ACL)-Specific Request Headers</b> </p>
+/// <p>When copying an object, you can optionally use headers to grant ACL-based permissions. By default, all objects are private. Only the owner has full access control. When adding a new object, you can grant permissions to individual Amazon Web Services accounts or to predefined groups defined by Amazon S3. These permissions are then added to the ACL on the object. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/acl-overview.html">Access Control List (ACL) Overview</a> and <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/acl-using-rest-api.html">Managing ACLs Using the REST API</a>. </p>
+/// <p>If the bucket that you're copying objects to uses the bucket owner enforced setting for S3 Object Ownership, ACLs are disabled and no longer affect permissions. Buckets that use this setting only accept PUT requests that don't specify an ACL or PUT requests that specify bucket owner full control ACLs, such as the <code>bucket-owner-full-control</code> canned ACL or an equivalent form of this ACL expressed in the XML format.</p>
+/// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/about-object-ownership.html"> Controlling ownership of objects and disabling ACLs</a> in the <i>Amazon S3 User Guide</i>.</p> <note>
+/// <p>If your bucket uses the bucket owner enforced setting for Object Ownership, all objects written to the bucket by any account will be owned by the bucket owner.</p>
+/// </note>
+/// <p> <b>Checksums</b> </p>
+/// <p>When copying an object, if it has a checksum, that checksum will be copied to the new object by default. When you copy the object over, you may optionally specify a different checksum algorithm to use with the <code>x-amz-checksum-algorithm</code> header.</p>
+/// <p> <b>Storage Class Options</b> </p>
+/// <p>You can use the <code>CopyObject</code> action to change the storage class of an object that is already stored in Amazon S3 using the <code>StorageClass</code> parameter. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/storage-class-intro.html">Storage Classes</a> in the <i>Amazon S3 User Guide</i>.</p>
+/// <p> <b>Versioning</b> </p>
+/// <p>By default, <code>x-amz-copy-source</code> identifies the current version of an object to copy. If the current version is a delete marker, Amazon S3 behaves as if the object was deleted. To copy a different version, use the <code>versionId</code> subresource.</p>
+/// <p>If you enable versioning on the target bucket, Amazon S3 generates a unique version ID for the object being copied. This version ID is different from the version ID of the source object. Amazon S3 returns the version ID of the copied object in the <code>x-amz-version-id</code> response header in the response.</p>
+/// <p>If you do not enable versioning or suspend it on the target bucket, the version ID that Amazon S3 generates is always null.</p>
+/// <p>If the source object's storage class is GLACIER, you must restore a copy of this object before you can use it as a source object for the copy operation. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_RestoreObject.html">RestoreObject</a>.</p>
+/// <p>The following operations are related to <code>CopyObject</code>:</p>
+/// <ul>
+/// <li> <p> <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutObject.html">PutObject</a> </p> </li>
+/// <li> <p> <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetObject.html">GetObject</a> </p> </li>
+/// </ul>
 /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/CopyingObjectsExamples.html">Copying Objects</a>.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct CopyObjectFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::copy_object::builders::CopyObjectInputBuilder
-            }
-impl CopyObjectFluentBuilder  {
+    handle: std::sync::Arc<crate::client::Handle>,
+    inner: crate::operation::copy_object::builders::CopyObjectInputBuilder,
+}
+impl CopyObjectFluentBuilder {
     /// Creates a new `CopyObject`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
-                    /// sent. The operation's inner [http::Request] can be modified as well.
-                    pub async fn customize(self) -> std::result::Result<
-                        crate::client::customize::CustomizableOperation<crate::operation::copy_object::CopyObject, aws_http::retry::AwsResponseRetryClassifier,>,
-                        aws_smithy_http::result::SdkError<crate::operation::copy_object::CopyObjectError>
-                    >  {
-                        let handle = self.handle.clone();
-                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-                    }
-    
-                    /// Sends the request and returns the response.
-                    ///
-                    /// If an error occurs, an `SdkError` will be returned with additional details that
-                    /// can be matched against.
-                    ///
-                    /// By default, any retryable failures will be retried twice. Retry behavior
-                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                    /// set when configuring the client.
-                    pub async fn send(self) -> std::result::Result<crate::operation::copy_object::CopyObjectOutput, aws_smithy_http::result::SdkError<crate::operation::copy_object::CopyObjectError>>
-                     {
-                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&self.handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        self.handle.client.call(op).await
-                    }
-    /// <p>The canned ACL to apply to the object.</p> 
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle,
+            inner: Default::default(),
+        }
+    }
+
+    /// Consume this builder, creating a customizable operation that can be modified before being
+    /// sent. The operation's inner [http::Request] can be modified as well.
+    pub async fn customize(
+        self,
+    ) -> std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::copy_object::CopyObject,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::result::SdkError<crate::operation::copy_object::CopyObjectError>,
+    > {
+        let handle = self.handle.clone();
+        let operation = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+    }
+
+    /// Sends the request and returns the response.
+    ///
+    /// If an error occurs, an `SdkError` will be returned with additional details that
+    /// can be matched against.
+    ///
+    /// By default, any retryable failures will be retried twice. Retry behavior
+    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+    /// set when configuring the client.
+    pub async fn send(
+        self,
+    ) -> std::result::Result<
+        crate::operation::copy_object::CopyObjectOutput,
+        aws_smithy_http::result::SdkError<crate::operation::copy_object::CopyObjectError>,
+    > {
+        let op = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&self.handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        self.handle.client.call(op).await
+    }
+    /// <p>The canned ACL to apply to the object.</p>
     /// <p>This action is not supported by Amazon S3 on Outposts.</p>
     pub fn acl(mut self, input: crate::types::ObjectCannedAcl) -> Self {
         self.inner = self.inner.acl(input);
         self
     }
-    /// <p>The canned ACL to apply to the object.</p> 
+    /// <p>The canned ACL to apply to the object.</p>
     /// <p>This action is not supported by Amazon S3 on Outposts.</p>
     pub fn set_acl(mut self, input: std::option::Option<crate::types::ObjectCannedAcl>) -> Self {
         self.inner = self.inner.set_acl(input);
         self
     }
-    /// <p>The name of the destination bucket.</p> 
-    /// <p>When using this action with an access point, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action with an access point through the Amazon Web Services SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <i>Amazon S3 User Guide</i>.</p> 
+    /// <p>The name of the destination bucket.</p>
+    /// <p>When using this action with an access point, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action with an access point through the Amazon Web Services SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <i>Amazon S3 User Guide</i>.</p>
     /// <p>When using this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <code> <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com</code>. When using this action with S3 on Outposts through the Amazon Web Services SDKs, you provide the Outposts bucket ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using Amazon S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.</p>
     pub fn bucket(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.bucket(input.into());
         self
     }
-    /// <p>The name of the destination bucket.</p> 
-    /// <p>When using this action with an access point, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action with an access point through the Amazon Web Services SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <i>Amazon S3 User Guide</i>.</p> 
+    /// <p>The name of the destination bucket.</p>
+    /// <p>When using this action with an access point, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action with an access point through the Amazon Web Services SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <i>Amazon S3 User Guide</i>.</p>
     /// <p>When using this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <code> <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com</code>. When using this action with S3 on Outposts through the Amazon Web Services SDKs, you provide the Outposts bucket ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using Amazon S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.</p>
     pub fn set_bucket(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.inner = self.inner.set_bucket(input);
@@ -146,7 +164,10 @@ impl CopyObjectFluentBuilder  {
         self
     }
     /// <p>Indicates the algorithm you want Amazon S3 to use to create the checksum for the object. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
-    pub fn set_checksum_algorithm(mut self, input: std::option::Option<crate::types::ChecksumAlgorithm>) -> Self {
+    pub fn set_checksum_algorithm(
+        mut self,
+        input: std::option::Option<crate::types::ChecksumAlgorithm>,
+    ) -> Self {
         self.inner = self.inner.set_checksum_algorithm(input);
         self
     }
@@ -156,7 +177,10 @@ impl CopyObjectFluentBuilder  {
         self
     }
     /// <p>Specifies presentational information for the object.</p>
-    pub fn set_content_disposition(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_content_disposition(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_content_disposition(input);
         self
     }
@@ -190,9 +214,9 @@ impl CopyObjectFluentBuilder  {
         self.inner = self.inner.set_content_type(input);
         self
     }
-    /// <p>Specifies the source object for the copy operation. You specify the value in one of two formats, depending on whether you want to access the source object through an <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/access-points.html">access point</a>:</p> 
-    /// <ul> 
-    /// <li> <p>For objects not accessed through an access point, specify the name of the source bucket and the key of the source object, separated by a slash (/). For example, to copy the object <code>reports/january.pdf</code> from the bucket <code>awsexamplebucket</code>, use <code>awsexamplebucket/reports/january.pdf</code>. The value must be URL-encoded.</p> </li> 
+    /// <p>Specifies the source object for the copy operation. You specify the value in one of two formats, depending on whether you want to access the source object through an <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/access-points.html">access point</a>:</p>
+    /// <ul>
+    /// <li> <p>For objects not accessed through an access point, specify the name of the source bucket and the key of the source object, separated by a slash (/). For example, to copy the object <code>reports/january.pdf</code> from the bucket <code>awsexamplebucket</code>, use <code>awsexamplebucket/reports/january.pdf</code>. The value must be URL-encoded.</p> </li>
     /// <li> <p>For objects accessed through access points, specify the Amazon Resource Name (ARN) of the object as accessed through the access point, in the format <code>arn:aws:s3:
     /// <region>
     /// :
@@ -203,8 +227,8 @@ impl CopyObjectFluentBuilder  {
     /// <key></key>
     /// </access-point-name>
     /// </account-id>
-    /// </region></code>. For example, to copy the object <code>reports/january.pdf</code> through access point <code>my-access-point</code> owned by account <code>123456789012</code> in Region <code>us-west-2</code>, use the URL encoding of <code>arn:aws:s3:us-west-2:123456789012:accesspoint/my-access-point/object/reports/january.pdf</code>. The value must be URL encoded.</p> <note> 
-    /// <p>Amazon S3 supports copy operations using access points only when the source and destination buckets are in the same Amazon Web Services Region.</p> 
+    /// </region></code>. For example, to copy the object <code>reports/january.pdf</code> through access point <code>my-access-point</code> owned by account <code>123456789012</code> in Region <code>us-west-2</code>, use the URL encoding of <code>arn:aws:s3:us-west-2:123456789012:accesspoint/my-access-point/object/reports/january.pdf</code>. The value must be URL encoded.</p> <note>
+    /// <p>Amazon S3 supports copy operations using access points only when the source and destination buckets are in the same Amazon Web Services Region.</p>
     /// </note> <p>Alternatively, for objects accessed through Amazon S3 on Outposts, specify the ARN of the object as accessed in the format <code>arn:aws:s3-outposts:
     /// <region>
     /// :
@@ -215,17 +239,17 @@ impl CopyObjectFluentBuilder  {
     /// <key></key>
     /// </outpost-id>
     /// </account-id>
-    /// </region></code>. For example, to copy the object <code>reports/january.pdf</code> through outpost <code>my-outpost</code> owned by account <code>123456789012</code> in Region <code>us-west-2</code>, use the URL encoding of <code>arn:aws:s3-outposts:us-west-2:123456789012:outpost/my-outpost/object/reports/january.pdf</code>. The value must be URL-encoded. </p> </li> 
-    /// </ul> 
+    /// </region></code>. For example, to copy the object <code>reports/january.pdf</code> through outpost <code>my-outpost</code> owned by account <code>123456789012</code> in Region <code>us-west-2</code>, use the URL encoding of <code>arn:aws:s3-outposts:us-west-2:123456789012:outpost/my-outpost/object/reports/january.pdf</code>. The value must be URL-encoded. </p> </li>
+    /// </ul>
     /// <p>To copy a specific version of an object, append <code>?versionId=
     /// <version-id></version-id></code> to the value (for example, <code>awsexamplebucket/reports/january.pdf?versionId=QUpfdndhfd8438MNFDN93jdnJFkdmqnh893</code>). If you don't specify a version ID, Amazon S3 copies the latest version of the source object.</p>
     pub fn copy_source(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.copy_source(input.into());
         self
     }
-    /// <p>Specifies the source object for the copy operation. You specify the value in one of two formats, depending on whether you want to access the source object through an <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/access-points.html">access point</a>:</p> 
-    /// <ul> 
-    /// <li> <p>For objects not accessed through an access point, specify the name of the source bucket and the key of the source object, separated by a slash (/). For example, to copy the object <code>reports/january.pdf</code> from the bucket <code>awsexamplebucket</code>, use <code>awsexamplebucket/reports/january.pdf</code>. The value must be URL-encoded.</p> </li> 
+    /// <p>Specifies the source object for the copy operation. You specify the value in one of two formats, depending on whether you want to access the source object through an <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/access-points.html">access point</a>:</p>
+    /// <ul>
+    /// <li> <p>For objects not accessed through an access point, specify the name of the source bucket and the key of the source object, separated by a slash (/). For example, to copy the object <code>reports/january.pdf</code> from the bucket <code>awsexamplebucket</code>, use <code>awsexamplebucket/reports/january.pdf</code>. The value must be URL-encoded.</p> </li>
     /// <li> <p>For objects accessed through access points, specify the Amazon Resource Name (ARN) of the object as accessed through the access point, in the format <code>arn:aws:s3:
     /// <region>
     /// :
@@ -236,8 +260,8 @@ impl CopyObjectFluentBuilder  {
     /// <key></key>
     /// </access-point-name>
     /// </account-id>
-    /// </region></code>. For example, to copy the object <code>reports/january.pdf</code> through access point <code>my-access-point</code> owned by account <code>123456789012</code> in Region <code>us-west-2</code>, use the URL encoding of <code>arn:aws:s3:us-west-2:123456789012:accesspoint/my-access-point/object/reports/january.pdf</code>. The value must be URL encoded.</p> <note> 
-    /// <p>Amazon S3 supports copy operations using access points only when the source and destination buckets are in the same Amazon Web Services Region.</p> 
+    /// </region></code>. For example, to copy the object <code>reports/january.pdf</code> through access point <code>my-access-point</code> owned by account <code>123456789012</code> in Region <code>us-west-2</code>, use the URL encoding of <code>arn:aws:s3:us-west-2:123456789012:accesspoint/my-access-point/object/reports/january.pdf</code>. The value must be URL encoded.</p> <note>
+    /// <p>Amazon S3 supports copy operations using access points only when the source and destination buckets are in the same Amazon Web Services Region.</p>
     /// </note> <p>Alternatively, for objects accessed through Amazon S3 on Outposts, specify the ARN of the object as accessed in the format <code>arn:aws:s3-outposts:
     /// <region>
     /// :
@@ -248,8 +272,8 @@ impl CopyObjectFluentBuilder  {
     /// <key></key>
     /// </outpost-id>
     /// </account-id>
-    /// </region></code>. For example, to copy the object <code>reports/january.pdf</code> through outpost <code>my-outpost</code> owned by account <code>123456789012</code> in Region <code>us-west-2</code>, use the URL encoding of <code>arn:aws:s3-outposts:us-west-2:123456789012:outpost/my-outpost/object/reports/january.pdf</code>. The value must be URL-encoded. </p> </li> 
-    /// </ul> 
+    /// </region></code>. For example, to copy the object <code>reports/january.pdf</code> through outpost <code>my-outpost</code> owned by account <code>123456789012</code> in Region <code>us-west-2</code>, use the URL encoding of <code>arn:aws:s3-outposts:us-west-2:123456789012:outpost/my-outpost/object/reports/january.pdf</code>. The value must be URL-encoded. </p> </li>
+    /// </ul>
     /// <p>To copy a specific version of an object, append <code>?versionId=
     /// <version-id></version-id></code> to the value (for example, <code>awsexamplebucket/reports/january.pdf?versionId=QUpfdndhfd8438MNFDN93jdnJFkdmqnh893</code>). If you don't specify a version ID, Amazon S3 copies the latest version of the source object.</p>
     pub fn set_copy_source(mut self, input: std::option::Option<std::string::String>) -> Self {
@@ -262,7 +286,10 @@ impl CopyObjectFluentBuilder  {
         self
     }
     /// <p>Copies the object if its entity tag (ETag) matches the specified tag.</p>
-    pub fn set_copy_source_if_match(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_copy_source_if_match(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_copy_source_if_match(input);
         self
     }
@@ -272,7 +299,10 @@ impl CopyObjectFluentBuilder  {
         self
     }
     /// <p>Copies the object if it has been modified since the specified time.</p>
-    pub fn set_copy_source_if_modified_since(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+    pub fn set_copy_source_if_modified_since(
+        mut self,
+        input: std::option::Option<aws_smithy_types::DateTime>,
+    ) -> Self {
         self.inner = self.inner.set_copy_source_if_modified_since(input);
         self
     }
@@ -282,7 +312,10 @@ impl CopyObjectFluentBuilder  {
         self
     }
     /// <p>Copies the object if its entity tag (ETag) is different than the specified ETag.</p>
-    pub fn set_copy_source_if_none_match(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_copy_source_if_none_match(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_copy_source_if_none_match(input);
         self
     }
@@ -292,7 +325,10 @@ impl CopyObjectFluentBuilder  {
         self
     }
     /// <p>Copies the object if it hasn't been modified since the specified time.</p>
-    pub fn set_copy_source_if_unmodified_since(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+    pub fn set_copy_source_if_unmodified_since(
+        mut self,
+        input: std::option::Option<aws_smithy_types::DateTime>,
+    ) -> Self {
         self.inner = self.inner.set_copy_source_if_unmodified_since(input);
         self
     }
@@ -306,49 +342,52 @@ impl CopyObjectFluentBuilder  {
         self.inner = self.inner.set_expires(input);
         self
     }
-    /// <p>Gives the grantee READ, READ_ACP, and WRITE_ACP permissions on the object.</p> 
+    /// <p>Gives the grantee READ, READ_ACP, and WRITE_ACP permissions on the object.</p>
     /// <p>This action is not supported by Amazon S3 on Outposts.</p>
     pub fn grant_full_control(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.grant_full_control(input.into());
         self
     }
-    /// <p>Gives the grantee READ, READ_ACP, and WRITE_ACP permissions on the object.</p> 
+    /// <p>Gives the grantee READ, READ_ACP, and WRITE_ACP permissions on the object.</p>
     /// <p>This action is not supported by Amazon S3 on Outposts.</p>
-    pub fn set_grant_full_control(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_grant_full_control(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_grant_full_control(input);
         self
     }
-    /// <p>Allows grantee to read the object data and its metadata.</p> 
+    /// <p>Allows grantee to read the object data and its metadata.</p>
     /// <p>This action is not supported by Amazon S3 on Outposts.</p>
     pub fn grant_read(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.grant_read(input.into());
         self
     }
-    /// <p>Allows grantee to read the object data and its metadata.</p> 
+    /// <p>Allows grantee to read the object data and its metadata.</p>
     /// <p>This action is not supported by Amazon S3 on Outposts.</p>
     pub fn set_grant_read(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.inner = self.inner.set_grant_read(input);
         self
     }
-    /// <p>Allows grantee to read the object ACL.</p> 
+    /// <p>Allows grantee to read the object ACL.</p>
     /// <p>This action is not supported by Amazon S3 on Outposts.</p>
     pub fn grant_read_acp(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.grant_read_acp(input.into());
         self
     }
-    /// <p>Allows grantee to read the object ACL.</p> 
+    /// <p>Allows grantee to read the object ACL.</p>
     /// <p>This action is not supported by Amazon S3 on Outposts.</p>
     pub fn set_grant_read_acp(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.inner = self.inner.set_grant_read_acp(input);
         self
     }
-    /// <p>Allows grantee to write the ACL for the applicable object.</p> 
+    /// <p>Allows grantee to write the ACL for the applicable object.</p>
     /// <p>This action is not supported by Amazon S3 on Outposts.</p>
     pub fn grant_write_acp(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.grant_write_acp(input.into());
         self
     }
-    /// <p>Allows grantee to write the ACL for the applicable object.</p> 
+    /// <p>Allows grantee to write the ACL for the applicable object.</p>
     /// <p>This action is not supported by Amazon S3 on Outposts.</p>
     pub fn set_grant_write_acp(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.inner = self.inner.set_grant_write_acp(input);
@@ -369,12 +408,21 @@ impl CopyObjectFluentBuilder  {
     /// To override the contents of this collection use [`set_metadata`](Self::set_metadata).
     ///
     /// <p>A map of metadata to store with the object in S3.</p>
-    pub fn metadata(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
+    pub fn metadata(
+        mut self,
+        k: impl Into<std::string::String>,
+        v: impl Into<std::string::String>,
+    ) -> Self {
         self.inner = self.inner.metadata(k.into(), v.into());
         self
     }
     /// <p>A map of metadata to store with the object in S3.</p>
-    pub fn set_metadata(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+    pub fn set_metadata(
+        mut self,
+        input: std::option::Option<
+            std::collections::HashMap<std::string::String, std::string::String>,
+        >,
+    ) -> Self {
         self.inner = self.inner.set_metadata(input);
         self
     }
@@ -384,7 +432,10 @@ impl CopyObjectFluentBuilder  {
         self
     }
     /// <p>Specifies whether the metadata is copied from the source object or replaced with metadata provided in the request.</p>
-    pub fn set_metadata_directive(mut self, input: std::option::Option<crate::types::MetadataDirective>) -> Self {
+    pub fn set_metadata_directive(
+        mut self,
+        input: std::option::Option<crate::types::MetadataDirective>,
+    ) -> Self {
         self.inner = self.inner.set_metadata_directive(input);
         self
     }
@@ -394,7 +445,10 @@ impl CopyObjectFluentBuilder  {
         self
     }
     /// <p>Specifies whether the object tag-set are copied from the source object or replaced with tag-set provided in the request.</p>
-    pub fn set_tagging_directive(mut self, input: std::option::Option<crate::types::TaggingDirective>) -> Self {
+    pub fn set_tagging_directive(
+        mut self,
+        input: std::option::Option<crate::types::TaggingDirective>,
+    ) -> Self {
         self.inner = self.inner.set_tagging_directive(input);
         self
     }
@@ -404,7 +458,10 @@ impl CopyObjectFluentBuilder  {
         self
     }
     /// <p>The server-side encryption algorithm used when storing this object in Amazon S3 (for example, AES256, aws:kms).</p>
-    pub fn set_server_side_encryption(mut self, input: std::option::Option<crate::types::ServerSideEncryption>) -> Self {
+    pub fn set_server_side_encryption(
+        mut self,
+        input: std::option::Option<crate::types::ServerSideEncryption>,
+    ) -> Self {
         self.inner = self.inner.set_server_side_encryption(input);
         self
     }
@@ -414,7 +471,10 @@ impl CopyObjectFluentBuilder  {
         self
     }
     /// <p>By default, Amazon S3 uses the STANDARD Storage Class to store newly created objects. The STANDARD storage class provides high durability and high availability. Depending on performance needs, you can specify a different Storage Class. Amazon S3 on Outposts only uses the OUTPOSTS Storage Class. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/storage-class-intro.html">Storage Classes</a> in the <i>Amazon S3 User Guide</i>.</p>
-    pub fn set_storage_class(mut self, input: std::option::Option<crate::types::StorageClass>) -> Self {
+    pub fn set_storage_class(
+        mut self,
+        input: std::option::Option<crate::types::StorageClass>,
+    ) -> Self {
         self.inner = self.inner.set_storage_class(input);
         self
     }
@@ -424,7 +484,10 @@ impl CopyObjectFluentBuilder  {
         self
     }
     /// <p>If the bucket is configured as a website, redirects requests for this object to another object in the same bucket or to an external URL. Amazon S3 stores the value of this header in the object metadata.</p>
-    pub fn set_website_redirect_location(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_website_redirect_location(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_website_redirect_location(input);
         self
     }
@@ -434,7 +497,10 @@ impl CopyObjectFluentBuilder  {
         self
     }
     /// <p>Specifies the algorithm to use to when encrypting the object (for example, AES256).</p>
-    pub fn set_sse_customer_algorithm(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_sse_customer_algorithm(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_sse_customer_algorithm(input);
         self
     }
@@ -454,7 +520,10 @@ impl CopyObjectFluentBuilder  {
         self
     }
     /// <p>Specifies the 128-bit MD5 digest of the encryption key according to RFC 1321. Amazon S3 uses this header for a message integrity check to ensure that the encryption key was transmitted without error.</p>
-    pub fn set_sse_customer_key_md5(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_sse_customer_key_md5(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_sse_customer_key_md5(input);
         self
     }
@@ -474,29 +543,38 @@ impl CopyObjectFluentBuilder  {
         self
     }
     /// <p>Specifies the Amazon Web Services KMS Encryption Context to use for object encryption. The value of this header is a base64-encoded UTF-8 string holding JSON with the encryption context key-value pairs.</p>
-    pub fn set_ssekms_encryption_context(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_ssekms_encryption_context(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_ssekms_encryption_context(input);
         self
     }
-    /// <p>Specifies whether Amazon S3 should use an S3 Bucket Key for object encryption with server-side encryption using AWS KMS (SSE-KMS). Setting this header to <code>true</code> causes Amazon S3 to use an S3 Bucket Key for object encryption with SSE-KMS. </p> 
+    /// <p>Specifies whether Amazon S3 should use an S3 Bucket Key for object encryption with server-side encryption using AWS KMS (SSE-KMS). Setting this header to <code>true</code> causes Amazon S3 to use an S3 Bucket Key for object encryption with SSE-KMS. </p>
     /// <p>Specifying this header with a COPY action doesn’t affect bucket-level settings for S3 Bucket Key.</p>
     pub fn bucket_key_enabled(mut self, input: bool) -> Self {
         self.inner = self.inner.bucket_key_enabled(input);
         self
     }
-    /// <p>Specifies whether Amazon S3 should use an S3 Bucket Key for object encryption with server-side encryption using AWS KMS (SSE-KMS). Setting this header to <code>true</code> causes Amazon S3 to use an S3 Bucket Key for object encryption with SSE-KMS. </p> 
+    /// <p>Specifies whether Amazon S3 should use an S3 Bucket Key for object encryption with server-side encryption using AWS KMS (SSE-KMS). Setting this header to <code>true</code> causes Amazon S3 to use an S3 Bucket Key for object encryption with SSE-KMS. </p>
     /// <p>Specifying this header with a COPY action doesn’t affect bucket-level settings for S3 Bucket Key.</p>
     pub fn set_bucket_key_enabled(mut self, input: std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_bucket_key_enabled(input);
         self
     }
     /// <p>Specifies the algorithm to use when decrypting the source object (for example, AES256).</p>
-    pub fn copy_source_sse_customer_algorithm(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn copy_source_sse_customer_algorithm(
+        mut self,
+        input: impl Into<std::string::String>,
+    ) -> Self {
         self.inner = self.inner.copy_source_sse_customer_algorithm(input.into());
         self
     }
     /// <p>Specifies the algorithm to use when decrypting the source object (for example, AES256).</p>
-    pub fn set_copy_source_sse_customer_algorithm(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_copy_source_sse_customer_algorithm(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_copy_source_sse_customer_algorithm(input);
         self
     }
@@ -506,17 +584,26 @@ impl CopyObjectFluentBuilder  {
         self
     }
     /// <p>Specifies the customer-provided encryption key for Amazon S3 to use to decrypt the source object. The encryption key provided in this header must be one that was used when the source object was created.</p>
-    pub fn set_copy_source_sse_customer_key(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_copy_source_sse_customer_key(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_copy_source_sse_customer_key(input);
         self
     }
     /// <p>Specifies the 128-bit MD5 digest of the encryption key according to RFC 1321. Amazon S3 uses this header for a message integrity check to ensure that the encryption key was transmitted without error.</p>
-    pub fn copy_source_sse_customer_key_md5(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn copy_source_sse_customer_key_md5(
+        mut self,
+        input: impl Into<std::string::String>,
+    ) -> Self {
         self.inner = self.inner.copy_source_sse_customer_key_md5(input.into());
         self
     }
     /// <p>Specifies the 128-bit MD5 digest of the encryption key according to RFC 1321. Amazon S3 uses this header for a message integrity check to ensure that the encryption key was transmitted without error.</p>
-    pub fn set_copy_source_sse_customer_key_md5(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_copy_source_sse_customer_key_md5(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_copy_source_sse_customer_key_md5(input);
         self
     }
@@ -526,7 +613,10 @@ impl CopyObjectFluentBuilder  {
         self
     }
     /// <p>Confirms that the requester knows that they will be charged for the request. Bucket owners need not specify this parameter in their requests. For information about downloading objects from Requester Pays buckets, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ObjectsinRequesterPaysBuckets.html">Downloading Objects in Requester Pays Buckets</a> in the <i>Amazon S3 User Guide</i>.</p>
-    pub fn set_request_payer(mut self, input: std::option::Option<crate::types::RequestPayer>) -> Self {
+    pub fn set_request_payer(
+        mut self,
+        input: std::option::Option<crate::types::RequestPayer>,
+    ) -> Self {
         self.inner = self.inner.set_request_payer(input);
         self
     }
@@ -546,7 +636,10 @@ impl CopyObjectFluentBuilder  {
         self
     }
     /// <p>The Object Lock mode that you want to apply to the copied object.</p>
-    pub fn set_object_lock_mode(mut self, input: std::option::Option<crate::types::ObjectLockMode>) -> Self {
+    pub fn set_object_lock_mode(
+        mut self,
+        input: std::option::Option<crate::types::ObjectLockMode>,
+    ) -> Self {
         self.inner = self.inner.set_object_lock_mode(input);
         self
     }
@@ -556,17 +649,26 @@ impl CopyObjectFluentBuilder  {
         self
     }
     /// <p>The date and time when you want the copied object's Object Lock to expire.</p>
-    pub fn set_object_lock_retain_until_date(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+    pub fn set_object_lock_retain_until_date(
+        mut self,
+        input: std::option::Option<aws_smithy_types::DateTime>,
+    ) -> Self {
         self.inner = self.inner.set_object_lock_retain_until_date(input);
         self
     }
     /// <p>Specifies whether you want to apply a legal hold to the copied object.</p>
-    pub fn object_lock_legal_hold_status(mut self, input: crate::types::ObjectLockLegalHoldStatus) -> Self {
+    pub fn object_lock_legal_hold_status(
+        mut self,
+        input: crate::types::ObjectLockLegalHoldStatus,
+    ) -> Self {
         self.inner = self.inner.object_lock_legal_hold_status(input);
         self
     }
     /// <p>Specifies whether you want to apply a legal hold to the copied object.</p>
-    pub fn set_object_lock_legal_hold_status(mut self, input: std::option::Option<crate::types::ObjectLockLegalHoldStatus>) -> Self {
+    pub fn set_object_lock_legal_hold_status(
+        mut self,
+        input: std::option::Option<crate::types::ObjectLockLegalHoldStatus>,
+    ) -> Self {
         self.inner = self.inner.set_object_lock_legal_hold_status(input);
         self
     }
@@ -576,7 +678,10 @@ impl CopyObjectFluentBuilder  {
         self
     }
     /// <p>The account ID of the expected destination bucket owner. If the destination bucket is owned by a different account, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
-    pub fn set_expected_bucket_owner(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_expected_bucket_owner(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_expected_bucket_owner(input);
         self
     }
@@ -586,9 +691,11 @@ impl CopyObjectFluentBuilder  {
         self
     }
     /// <p>The account ID of the expected source bucket owner. If the source bucket is owned by a different account, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
-    pub fn set_expected_source_bucket_owner(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_expected_source_bucket_owner(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_expected_source_bucket_owner(input);
         self
     }
 }
-

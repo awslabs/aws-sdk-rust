@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListSipRulesInput  {
+pub struct ListSipRulesInput {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub sip_media_application_id: std::option::Option<std::string::String>,
@@ -15,7 +15,7 @@ pub struct ListSipRulesInput  {
 }
 impl ListSipRulesInput {
     #[allow(missing_docs)] // documentation missing in model
-    pub fn sip_media_application_id(&self) -> std::option::Option<& str> {
+    pub fn sip_media_application_id(&self) -> std::option::Option<&str> {
         self.sip_media_application_id.as_deref()
     }
     #[allow(missing_docs)] // documentation missing in model
@@ -23,7 +23,7 @@ impl ListSipRulesInput {
         self.max_results
     }
     #[allow(missing_docs)] // documentation missing in model
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
 }
@@ -49,8 +49,12 @@ impl ListSipRulesInputBuilder {
         self
     }
     #[allow(missing_docs)] // documentation missing in model
-    pub fn set_sip_media_application_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.sip_media_application_id = input; self
+    pub fn set_sip_media_application_id(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.sip_media_application_id = input;
+        self
     }
     #[allow(missing_docs)] // documentation missing in model
     pub fn max_results(mut self, input: i32) -> Self {
@@ -59,7 +63,8 @@ impl ListSipRulesInputBuilder {
     }
     #[allow(missing_docs)] // documentation missing in model
     pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_results = input; self
+        self.max_results = input;
+        self
     }
     #[allow(missing_docs)] // documentation missing in model
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -68,20 +73,20 @@ impl ListSipRulesInputBuilder {
     }
     #[allow(missing_docs)] // documentation missing in model
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input; self
+        self.next_token = input;
+        self
     }
     /// Consumes the builder and constructs a [`ListSipRulesInput`](crate::operation::list_sip_rules::ListSipRulesInput).
-    pub fn build(self) -> Result<crate::operation::list_sip_rules::ListSipRulesInput, aws_smithy_http::operation::error::BuildError> {
-        Ok(
-            crate::operation::list_sip_rules::ListSipRulesInput {
-                sip_media_application_id: self.sip_media_application_id
-                ,
-                max_results: self.max_results
-                ,
-                next_token: self.next_token
-                ,
-            }
-        )
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::list_sip_rules::ListSipRulesInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        Ok(crate::operation::list_sip_rules::ListSipRulesInput {
+            sip_media_application_id: self.sip_media_application_id,
+            max_results: self.max_results,
+            next_token: self.next_token,
+        })
     }
 }
-

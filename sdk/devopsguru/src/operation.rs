@@ -93,4 +93,3 @@ pub mod update_resource_collection;
 
 /// Types for the `UpdateServiceIntegration` operation.
 pub mod update_service_integration;
-

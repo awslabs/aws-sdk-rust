@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct CreateServiceInput  {
+pub struct CreateServiceInput {
     /// <p>The service name.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -30,55 +30,55 @@ pub struct CreateServiceInput  {
     /// <p>The name of the code repository branch that holds the code that's deployed in Proton. <i>Don't</i> include this parameter if your service template <i>doesn't</i> include a service pipeline.</p>
     #[doc(hidden)]
     pub branch_name: std::option::Option<std::string::String>,
-    /// <p>An optional list of metadata items that you can associate with the Proton service. A tag is a key-value pair.</p> 
+    /// <p>An optional list of metadata items that you can associate with the Proton service. A tag is a key-value pair.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/resources.html">Proton resources and tagging</a> in the <i>Proton User Guide</i>.</p>
     #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::types::Tag>>,
 }
 impl CreateServiceInput {
     /// <p>The service name.</p>
-    pub fn name(&self) -> std::option::Option<& str> {
+    pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>A description of the Proton service.</p>
-    pub fn description(&self) -> std::option::Option<& str> {
+    pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
     /// <p>The name of the service template that's used to create the service.</p>
-    pub fn template_name(&self) -> std::option::Option<& str> {
+    pub fn template_name(&self) -> std::option::Option<&str> {
         self.template_name.as_deref()
     }
     /// <p>The major version of the service template that was used to create the service.</p>
-    pub fn template_major_version(&self) -> std::option::Option<& str> {
+    pub fn template_major_version(&self) -> std::option::Option<&str> {
         self.template_major_version.as_deref()
     }
     /// <p>The minor version of the service template that was used to create the service.</p>
-    pub fn template_minor_version(&self) -> std::option::Option<& str> {
+    pub fn template_minor_version(&self) -> std::option::Option<&str> {
         self.template_minor_version.as_deref()
     }
     /// <p>A link to a spec file that provides inputs as defined in the service template bundle schema file. The spec file is in YAML format. <i>Don’t</i> include pipeline inputs in the spec if your service template <i>doesn’t</i> include a service pipeline. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/ag-create-svc.html">Create a service</a> in the <i>Proton User Guide</i>.</p>
-    pub fn spec(&self) -> std::option::Option<& str> {
+    pub fn spec(&self) -> std::option::Option<&str> {
         self.spec.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the repository connection. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/setting-up-for-service.html#setting-up-vcontrol">Setting up an AWS CodeStar connection</a> in the <i>Proton User Guide</i>. <i>Don't</i> include this parameter if your service template <i>doesn't</i> include a service pipeline.</p>
-    pub fn repository_connection_arn(&self) -> std::option::Option<& str> {
+    pub fn repository_connection_arn(&self) -> std::option::Option<&str> {
         self.repository_connection_arn.as_deref()
     }
     /// <p>The ID of the code repository. <i>Don't</i> include this parameter if your service template <i>doesn't</i> include a service pipeline.</p>
-    pub fn repository_id(&self) -> std::option::Option<& str> {
+    pub fn repository_id(&self) -> std::option::Option<&str> {
         self.repository_id.as_deref()
     }
     /// <p>The name of the code repository branch that holds the code that's deployed in Proton. <i>Don't</i> include this parameter if your service template <i>doesn't</i> include a service pipeline.</p>
-    pub fn branch_name(&self) -> std::option::Option<& str> {
+    pub fn branch_name(&self) -> std::option::Option<&str> {
         self.branch_name.as_deref()
     }
-    /// <p>An optional list of metadata items that you can associate with the Proton service. A tag is a key-value pair.</p> 
+    /// <p>An optional list of metadata items that you can associate with the Proton service. A tag is a key-value pair.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/resources.html">Proton resources and tagging</a> in the <i>Proton User Guide</i>.</p>
-    pub fn tags(&self) -> std::option::Option<& [crate::types::Tag]> {
+    pub fn tags(&self) -> std::option::Option<&[crate::types::Tag]> {
         self.tags.as_deref()
     }
 }
-impl  std::fmt::Debug for CreateServiceInput  {
+impl std::fmt::Debug for CreateServiceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateServiceInput");
         formatter.field("name", &self.name);
@@ -124,7 +124,8 @@ impl CreateServiceInputBuilder {
     }
     /// <p>The service name.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input; self
+        self.name = input;
+        self
     }
     /// <p>A description of the Proton service.</p>
     pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -133,7 +134,8 @@ impl CreateServiceInputBuilder {
     }
     /// <p>A description of the Proton service.</p>
     pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.description = input; self
+        self.description = input;
+        self
     }
     /// <p>The name of the service template that's used to create the service.</p>
     pub fn template_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -142,7 +144,8 @@ impl CreateServiceInputBuilder {
     }
     /// <p>The name of the service template that's used to create the service.</p>
     pub fn set_template_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.template_name = input; self
+        self.template_name = input;
+        self
     }
     /// <p>The major version of the service template that was used to create the service.</p>
     pub fn template_major_version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -150,8 +153,12 @@ impl CreateServiceInputBuilder {
         self
     }
     /// <p>The major version of the service template that was used to create the service.</p>
-    pub fn set_template_major_version(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.template_major_version = input; self
+    pub fn set_template_major_version(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.template_major_version = input;
+        self
     }
     /// <p>The minor version of the service template that was used to create the service.</p>
     pub fn template_minor_version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -159,8 +166,12 @@ impl CreateServiceInputBuilder {
         self
     }
     /// <p>The minor version of the service template that was used to create the service.</p>
-    pub fn set_template_minor_version(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.template_minor_version = input; self
+    pub fn set_template_minor_version(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.template_minor_version = input;
+        self
     }
     /// <p>A link to a spec file that provides inputs as defined in the service template bundle schema file. The spec file is in YAML format. <i>Don’t</i> include pipeline inputs in the spec if your service template <i>doesn’t</i> include a service pipeline. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/ag-create-svc.html">Create a service</a> in the <i>Proton User Guide</i>.</p>
     pub fn spec(mut self, input: impl Into<std::string::String>) -> Self {
@@ -169,7 +180,8 @@ impl CreateServiceInputBuilder {
     }
     /// <p>A link to a spec file that provides inputs as defined in the service template bundle schema file. The spec file is in YAML format. <i>Don’t</i> include pipeline inputs in the spec if your service template <i>doesn’t</i> include a service pipeline. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/ag-create-svc.html">Create a service</a> in the <i>Proton User Guide</i>.</p>
     pub fn set_spec(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.spec = input; self
+        self.spec = input;
+        self
     }
     /// <p>The Amazon Resource Name (ARN) of the repository connection. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/setting-up-for-service.html#setting-up-vcontrol">Setting up an AWS CodeStar connection</a> in the <i>Proton User Guide</i>. <i>Don't</i> include this parameter if your service template <i>doesn't</i> include a service pipeline.</p>
     pub fn repository_connection_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -177,8 +189,12 @@ impl CreateServiceInputBuilder {
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the repository connection. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/setting-up-for-service.html#setting-up-vcontrol">Setting up an AWS CodeStar connection</a> in the <i>Proton User Guide</i>. <i>Don't</i> include this parameter if your service template <i>doesn't</i> include a service pipeline.</p>
-    pub fn set_repository_connection_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.repository_connection_arn = input; self
+    pub fn set_repository_connection_arn(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.repository_connection_arn = input;
+        self
     }
     /// <p>The ID of the code repository. <i>Don't</i> include this parameter if your service template <i>doesn't</i> include a service pipeline.</p>
     pub fn repository_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -187,7 +203,8 @@ impl CreateServiceInputBuilder {
     }
     /// <p>The ID of the code repository. <i>Don't</i> include this parameter if your service template <i>doesn't</i> include a service pipeline.</p>
     pub fn set_repository_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.repository_id = input; self
+        self.repository_id = input;
+        self
     }
     /// <p>The name of the code repository branch that holds the code that's deployed in Proton. <i>Don't</i> include this parameter if your service template <i>doesn't</i> include a service pipeline.</p>
     pub fn branch_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -196,51 +213,49 @@ impl CreateServiceInputBuilder {
     }
     /// <p>The name of the code repository branch that holds the code that's deployed in Proton. <i>Don't</i> include this parameter if your service template <i>doesn't</i> include a service pipeline.</p>
     pub fn set_branch_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.branch_name = input; self
+        self.branch_name = input;
+        self
     }
     /// Appends an item to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
-    /// <p>An optional list of metadata items that you can associate with the Proton service. A tag is a key-value pair.</p> 
+    /// <p>An optional list of metadata items that you can associate with the Proton service. A tag is a key-value pair.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/resources.html">Proton resources and tagging</a> in the <i>Proton User Guide</i>.</p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
-                        v.push(input);
-                        self.tags = Some(v);
-                        self
+        v.push(input);
+        self.tags = Some(v);
+        self
     }
-    /// <p>An optional list of metadata items that you can associate with the Proton service. A tag is a key-value pair.</p> 
+    /// <p>An optional list of metadata items that you can associate with the Proton service. A tag is a key-value pair.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/resources.html">Proton resources and tagging</a> in the <i>Proton User Guide</i>.</p>
-    pub fn set_tags(mut self, input: std::option::Option<std::vec::Vec<crate::types::Tag>>) -> Self {
-        self.tags = input; self
+    pub fn set_tags(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::Tag>>,
+    ) -> Self {
+        self.tags = input;
+        self
     }
     /// Consumes the builder and constructs a [`CreateServiceInput`](crate::operation::create_service::CreateServiceInput).
-    pub fn build(self) -> Result<crate::operation::create_service::CreateServiceInput, aws_smithy_http::operation::error::BuildError> {
-        Ok(
-            crate::operation::create_service::CreateServiceInput {
-                name: self.name
-                ,
-                description: self.description
-                ,
-                template_name: self.template_name
-                ,
-                template_major_version: self.template_major_version
-                ,
-                template_minor_version: self.template_minor_version
-                ,
-                spec: self.spec
-                ,
-                repository_connection_arn: self.repository_connection_arn
-                ,
-                repository_id: self.repository_id
-                ,
-                branch_name: self.branch_name
-                ,
-                tags: self.tags
-                ,
-            }
-        )
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::create_service::CreateServiceInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        Ok(crate::operation::create_service::CreateServiceInput {
+            name: self.name,
+            description: self.description,
+            template_name: self.template_name,
+            template_major_version: self.template_major_version,
+            template_minor_version: self.template_minor_version,
+            spec: self.spec,
+            repository_connection_arn: self.repository_connection_arn,
+            repository_id: self.repository_id,
+            branch_name: self.branch_name,
+            tags: self.tags,
+        })
     }
 }
 impl std::fmt::Debug for CreateServiceInputBuilder {
@@ -259,4 +274,3 @@ impl std::fmt::Debug for CreateServiceInputBuilder {
         formatter.finish()
     }
 }
-

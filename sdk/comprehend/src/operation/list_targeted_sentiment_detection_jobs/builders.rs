@@ -4,62 +4,74 @@ pub use crate::operation::list_targeted_sentiment_detection_jobs::_list_targeted
 pub use crate::operation::list_targeted_sentiment_detection_jobs::_list_targeted_sentiment_detection_jobs_input::ListTargetedSentimentDetectionJobsInputBuilder;
 
 /// Fluent builder constructing a request to `ListTargetedSentimentDetectionJobs`.
-/// 
+///
 /// <p>Gets a list of targeted sentiment detection jobs that you have submitted.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListTargetedSentimentDetectionJobsFluentBuilder {
                 handle: std::sync::Arc<crate::client::Handle>,
                 inner: crate::operation::list_targeted_sentiment_detection_jobs::builders::ListTargetedSentimentDetectionJobsInputBuilder
             }
-impl ListTargetedSentimentDetectionJobsFluentBuilder  {
+impl ListTargetedSentimentDetectionJobsFluentBuilder {
     /// Creates a new `ListTargetedSentimentDetectionJobs`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
-                    /// sent. The operation's inner [http::Request] can be modified as well.
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle,
+            inner: Default::default(),
+        }
+    }
+
+    /// Consume this builder, creating a customizable operation that can be modified before being
+    /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::list_targeted_sentiment_detection_jobs::ListTargetedSentimentDetectionJobs, aws_http::retry::AwsResponseRetryClassifier,>,
                         aws_smithy_http::result::SdkError<crate::operation::list_targeted_sentiment_detection_jobs::ListTargetedSentimentDetectionJobsError>
-                    >  {
-                        let handle = self.handle.clone();
-                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-                    }
-    
-                    /// Sends the request and returns the response.
-                    ///
-                    /// If an error occurs, an `SdkError` will be returned with additional details that
-                    /// can be matched against.
-                    ///
-                    /// By default, any retryable failures will be retried twice. Retry behavior
-                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                    /// set when configuring the client.
+    >{
+        let handle = self.handle.clone();
+        let operation = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+    }
+
+    /// Sends the request and returns the response.
+    ///
+    /// If an error occurs, an `SdkError` will be returned with additional details that
+    /// can be matched against.
+    ///
+    /// By default, any retryable failures will be retried twice. Retry behavior
+    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+    /// set when configuring the client.
                     pub async fn send(self) -> std::result::Result<crate::operation::list_targeted_sentiment_detection_jobs::ListTargetedSentimentDetectionJobsOutput, aws_smithy_http::result::SdkError<crate::operation::list_targeted_sentiment_detection_jobs::ListTargetedSentimentDetectionJobsError>>
                      {
-                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&self.handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        self.handle.client.call(op).await
-                    }
+        let op = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&self.handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        self.handle.client.call(op).await
+    }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::list_targeted_sentiment_detection_jobs::paginator::ListTargetedSentimentDetectionJobsPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::list_targeted_sentiment_detection_jobs::paginator::ListTargetedSentimentDetectionJobsPaginator {
-                            crate::operation::list_targeted_sentiment_detection_jobs::paginator::ListTargetedSentimentDetectionJobsPaginator::new(self.handle, self.inner)
-                        }
+    ///
+    /// Paginators are used by calling [`send().await`](crate::operation::list_targeted_sentiment_detection_jobs::paginator::ListTargetedSentimentDetectionJobsPaginator::send) which returns a `Stream`.
+    pub fn into_paginator(self) -> crate::operation::list_targeted_sentiment_detection_jobs::paginator::ListTargetedSentimentDetectionJobsPaginator{
+        crate::operation::list_targeted_sentiment_detection_jobs::paginator::ListTargetedSentimentDetectionJobsPaginator::new(self.handle, self.inner)
+    }
     /// <p>Filters the jobs that are returned. You can filter jobs on their name, status, or the date and time that they were submitted. You can only set one filter at a time.</p>
     pub fn filter(mut self, input: crate::types::TargetedSentimentDetectionJobFilter) -> Self {
         self.inner = self.inner.filter(input);
         self
     }
     /// <p>Filters the jobs that are returned. You can filter jobs on their name, status, or the date and time that they were submitted. You can only set one filter at a time.</p>
-    pub fn set_filter(mut self, input: std::option::Option<crate::types::TargetedSentimentDetectionJobFilter>) -> Self {
+    pub fn set_filter(
+        mut self,
+        input: std::option::Option<crate::types::TargetedSentimentDetectionJobFilter>,
+    ) -> Self {
         self.inner = self.inner.set_filter(input);
         self
     }
@@ -84,4 +96,3 @@ impl ListTargetedSentimentDetectionJobsFluentBuilder  {
         self
     }
 }
-

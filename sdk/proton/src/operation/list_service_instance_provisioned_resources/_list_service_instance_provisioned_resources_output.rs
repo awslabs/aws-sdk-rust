@@ -2,33 +2,36 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListServiceInstanceProvisionedResourcesOutput  {
+pub struct ListServiceInstanceProvisionedResourcesOutput {
     /// <p>A token that indicates the location of the next provisioned resource in the array of provisioned resources, after the current requested list of provisioned resources.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>An array of provisioned resources for a service instance.</p>
     #[doc(hidden)]
-    pub provisioned_resources: std::option::Option<std::vec::Vec<crate::types::ProvisionedResource>>,
+    pub provisioned_resources:
+        std::option::Option<std::vec::Vec<crate::types::ProvisionedResource>>,
     _request_id: Option<String>,
 }
 impl ListServiceInstanceProvisionedResourcesOutput {
     /// <p>A token that indicates the location of the next provisioned resource in the array of provisioned resources, after the current requested list of provisioned resources.</p>
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
     /// <p>An array of provisioned resources for a service instance.</p>
-    pub fn provisioned_resources(&self) -> std::option::Option<& [crate::types::ProvisionedResource]> {
+    pub fn provisioned_resources(
+        &self,
+    ) -> std::option::Option<&[crate::types::ProvisionedResource]> {
         self.provisioned_resources.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for ListServiceInstanceProvisionedResourcesOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl ListServiceInstanceProvisionedResourcesOutput {
     /// Creates a new builder-style object to manufacture [`ListServiceInstanceProvisionedResourcesOutput`](crate::operation::list_service_instance_provisioned_resources::ListServiceInstanceProvisionedResourcesOutput).
-    pub fn builder() -> crate::operation::list_service_instance_provisioned_resources::builders::ListServiceInstanceProvisionedResourcesOutputBuilder {
+    pub fn builder() -> crate::operation::list_service_instance_provisioned_resources::builders::ListServiceInstanceProvisionedResourcesOutputBuilder{
         crate::operation::list_service_instance_provisioned_resources::builders::ListServiceInstanceProvisionedResourcesOutputBuilder::default()
     }
 }
@@ -38,7 +41,8 @@ impl ListServiceInstanceProvisionedResourcesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct ListServiceInstanceProvisionedResourcesOutputBuilder {
     pub(crate) next_token: std::option::Option<std::string::String>,
-    pub(crate) provisioned_resources: std::option::Option<std::vec::Vec<crate::types::ProvisionedResource>>,
+    pub(crate) provisioned_resources:
+        std::option::Option<std::vec::Vec<crate::types::ProvisionedResource>>,
     _request_id: Option<String>,
 }
 impl ListServiceInstanceProvisionedResourcesOutputBuilder {
@@ -49,7 +53,8 @@ impl ListServiceInstanceProvisionedResourcesOutputBuilder {
     }
     /// <p>A token that indicates the location of the next provisioned resource in the array of provisioned resources, after the current requested list of provisioned resources.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input; self
+        self.next_token = input;
+        self
     }
     /// Appends an item to `provisioned_resources`.
     ///
@@ -58,25 +63,29 @@ impl ListServiceInstanceProvisionedResourcesOutputBuilder {
     /// <p>An array of provisioned resources for a service instance.</p>
     pub fn provisioned_resources(mut self, input: crate::types::ProvisionedResource) -> Self {
         let mut v = self.provisioned_resources.unwrap_or_default();
-                        v.push(input);
-                        self.provisioned_resources = Some(v);
-                        self
+        v.push(input);
+        self.provisioned_resources = Some(v);
+        self
     }
     /// <p>An array of provisioned resources for a service instance.</p>
-    pub fn set_provisioned_resources(mut self, input: std::option::Option<std::vec::Vec<crate::types::ProvisionedResource>>) -> Self {
-        self.provisioned_resources = input; self
+    pub fn set_provisioned_resources(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::ProvisionedResource>>,
+    ) -> Self {
+        self.provisioned_resources = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`ListServiceInstanceProvisionedResourcesOutput`](crate::operation::list_service_instance_provisioned_resources::ListServiceInstanceProvisionedResourcesOutput).
-    pub fn build(self) -> crate::operation::list_service_instance_provisioned_resources::ListServiceInstanceProvisionedResourcesOutput {
+    pub fn build(self) -> crate::operation::list_service_instance_provisioned_resources::ListServiceInstanceProvisionedResourcesOutput{
         crate::operation::list_service_instance_provisioned_resources::ListServiceInstanceProvisionedResourcesOutput {
             next_token: self.next_token
             ,
@@ -86,4 +95,3 @@ impl ListServiceInstanceProvisionedResourcesOutputBuilder {
         }
     }
 }
-

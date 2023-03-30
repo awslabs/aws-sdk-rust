@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListPrefetchSchedulesInput  {
+pub struct ListPrefetchSchedulesInput {
     /// <p>The maximum number of prefetch schedules that you want MediaTailor to return in response to the current request. If there are more than <code>MaxResults</code> prefetch schedules, use the value of <code>NextToken</code> in the response to get the next page of results.</p>
     #[doc(hidden)]
     pub max_results: i32,
-    /// <p>(Optional) If the playback configuration has more than <code>MaxResults</code> prefetch schedules, use <code>NextToken</code> to get the second and subsequent pages of results.</p> 
-    /// <p> For the first <code>ListPrefetchSchedulesRequest</code> request, omit this value.</p> 
-    /// <p> For the second and subsequent requests, get the value of <code>NextToken</code> from the previous response and specify that value for <code>NextToken</code> in the request.</p> 
+    /// <p>(Optional) If the playback configuration has more than <code>MaxResults</code> prefetch schedules, use <code>NextToken</code> to get the second and subsequent pages of results.</p>
+    /// <p> For the first <code>ListPrefetchSchedulesRequest</code> request, omit this value.</p>
+    /// <p> For the second and subsequent requests, get the value of <code>NextToken</code> from the previous response and specify that value for <code>NextToken</code> in the request.</p>
     /// <p> If the previous response didn't include a <code>NextToken</code> element, there are no more prefetch schedules to get.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
@@ -24,25 +24,27 @@ impl ListPrefetchSchedulesInput {
     pub fn max_results(&self) -> i32 {
         self.max_results
     }
-    /// <p>(Optional) If the playback configuration has more than <code>MaxResults</code> prefetch schedules, use <code>NextToken</code> to get the second and subsequent pages of results.</p> 
-    /// <p> For the first <code>ListPrefetchSchedulesRequest</code> request, omit this value.</p> 
-    /// <p> For the second and subsequent requests, get the value of <code>NextToken</code> from the previous response and specify that value for <code>NextToken</code> in the request.</p> 
+    /// <p>(Optional) If the playback configuration has more than <code>MaxResults</code> prefetch schedules, use <code>NextToken</code> to get the second and subsequent pages of results.</p>
+    /// <p> For the first <code>ListPrefetchSchedulesRequest</code> request, omit this value.</p>
+    /// <p> For the second and subsequent requests, get the value of <code>NextToken</code> from the previous response and specify that value for <code>NextToken</code> in the request.</p>
     /// <p> If the previous response didn't include a <code>NextToken</code> element, there are no more prefetch schedules to get.</p>
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
     /// <p>Retrieves the prefetch schedule(s) for a specific playback configuration.</p>
-    pub fn playback_configuration_name(&self) -> std::option::Option<& str> {
+    pub fn playback_configuration_name(&self) -> std::option::Option<&str> {
         self.playback_configuration_name.as_deref()
     }
     /// <p>An optional filtering parameter whereby MediaTailor filters the prefetch schedules to include only specific streams.</p>
-    pub fn stream_id(&self) -> std::option::Option<& str> {
+    pub fn stream_id(&self) -> std::option::Option<&str> {
         self.stream_id.as_deref()
     }
 }
 impl ListPrefetchSchedulesInput {
     /// Creates a new builder-style object to manufacture [`ListPrefetchSchedulesInput`](crate::operation::list_prefetch_schedules::ListPrefetchSchedulesInput).
-    pub fn builder() -> crate::operation::list_prefetch_schedules::builders::ListPrefetchSchedulesInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::list_prefetch_schedules::builders::ListPrefetchSchedulesInputBuilder
+    {
         crate::operation::list_prefetch_schedules::builders::ListPrefetchSchedulesInputBuilder::default()
     }
 }
@@ -64,22 +66,24 @@ impl ListPrefetchSchedulesInputBuilder {
     }
     /// <p>The maximum number of prefetch schedules that you want MediaTailor to return in response to the current request. If there are more than <code>MaxResults</code> prefetch schedules, use the value of <code>NextToken</code> in the response to get the next page of results.</p>
     pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_results = input; self
+        self.max_results = input;
+        self
     }
-    /// <p>(Optional) If the playback configuration has more than <code>MaxResults</code> prefetch schedules, use <code>NextToken</code> to get the second and subsequent pages of results.</p> 
-    /// <p> For the first <code>ListPrefetchSchedulesRequest</code> request, omit this value.</p> 
-    /// <p> For the second and subsequent requests, get the value of <code>NextToken</code> from the previous response and specify that value for <code>NextToken</code> in the request.</p> 
+    /// <p>(Optional) If the playback configuration has more than <code>MaxResults</code> prefetch schedules, use <code>NextToken</code> to get the second and subsequent pages of results.</p>
+    /// <p> For the first <code>ListPrefetchSchedulesRequest</code> request, omit this value.</p>
+    /// <p> For the second and subsequent requests, get the value of <code>NextToken</code> from the previous response and specify that value for <code>NextToken</code> in the request.</p>
     /// <p> If the previous response didn't include a <code>NextToken</code> element, there are no more prefetch schedules to get.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
         self.next_token = Some(input.into());
         self
     }
-    /// <p>(Optional) If the playback configuration has more than <code>MaxResults</code> prefetch schedules, use <code>NextToken</code> to get the second and subsequent pages of results.</p> 
-    /// <p> For the first <code>ListPrefetchSchedulesRequest</code> request, omit this value.</p> 
-    /// <p> For the second and subsequent requests, get the value of <code>NextToken</code> from the previous response and specify that value for <code>NextToken</code> in the request.</p> 
+    /// <p>(Optional) If the playback configuration has more than <code>MaxResults</code> prefetch schedules, use <code>NextToken</code> to get the second and subsequent pages of results.</p>
+    /// <p> For the first <code>ListPrefetchSchedulesRequest</code> request, omit this value.</p>
+    /// <p> For the second and subsequent requests, get the value of <code>NextToken</code> from the previous response and specify that value for <code>NextToken</code> in the request.</p>
     /// <p> If the previous response didn't include a <code>NextToken</code> element, there are no more prefetch schedules to get.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input; self
+        self.next_token = input;
+        self
     }
     /// <p>Retrieves the prefetch schedule(s) for a specific playback configuration.</p>
     pub fn playback_configuration_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -87,8 +91,12 @@ impl ListPrefetchSchedulesInputBuilder {
         self
     }
     /// <p>Retrieves the prefetch schedule(s) for a specific playback configuration.</p>
-    pub fn set_playback_configuration_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.playback_configuration_name = input; self
+    pub fn set_playback_configuration_name(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.playback_configuration_name = input;
+        self
     }
     /// <p>An optional filtering parameter whereby MediaTailor filters the prefetch schedules to include only specific streams.</p>
     pub fn stream_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -97,23 +105,23 @@ impl ListPrefetchSchedulesInputBuilder {
     }
     /// <p>An optional filtering parameter whereby MediaTailor filters the prefetch schedules to include only specific streams.</p>
     pub fn set_stream_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.stream_id = input; self
+        self.stream_id = input;
+        self
     }
     /// Consumes the builder and constructs a [`ListPrefetchSchedulesInput`](crate::operation::list_prefetch_schedules::ListPrefetchSchedulesInput).
-    pub fn build(self) -> Result<crate::operation::list_prefetch_schedules::ListPrefetchSchedulesInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::list_prefetch_schedules::ListPrefetchSchedulesInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::list_prefetch_schedules::ListPrefetchSchedulesInput {
-                max_results: self.max_results
-                    .unwrap_or_default()
-                ,
-                next_token: self.next_token
-                ,
-                playback_configuration_name: self.playback_configuration_name
-                ,
-                stream_id: self.stream_id
-                ,
-            }
+                max_results: self.max_results.unwrap_or_default(),
+                next_token: self.next_token,
+                playback_configuration_name: self.playback_configuration_name,
+                stream_id: self.stream_id,
+            },
         )
     }
 }
-

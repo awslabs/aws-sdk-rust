@@ -3,14 +3,14 @@
 /// <p>The primary Region of the endpoint.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Primary  {
+pub struct Primary {
     /// <p>The ARN of the health check used by the endpoint to determine whether failover is triggered.</p>
     #[doc(hidden)]
     pub health_check: std::option::Option<std::string::String>,
 }
 impl Primary {
     /// <p>The ARN of the health check used by the endpoint to determine whether failover is triggered.</p>
-    pub fn health_check(&self) -> std::option::Option<& str> {
+    pub fn health_check(&self) -> std::option::Option<&str> {
         self.health_check.as_deref()
     }
 }
@@ -35,14 +35,13 @@ impl PrimaryBuilder {
     }
     /// <p>The ARN of the health check used by the endpoint to determine whether failover is triggered.</p>
     pub fn set_health_check(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.health_check = input; self
+        self.health_check = input;
+        self
     }
     /// Consumes the builder and constructs a [`Primary`](crate::types::Primary).
     pub fn build(self) -> crate::types::Primary {
         crate::types::Primary {
-            health_check: self.health_check
-            ,
+            health_check: self.health_check,
         }
     }
 }
-

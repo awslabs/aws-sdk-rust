@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteEnvironmentOutput  {
+pub struct DeleteEnvironmentOutput {
     /// <p>The name of the environment.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -22,34 +22,35 @@ pub struct DeleteEnvironmentOutput  {
 }
 impl DeleteEnvironmentOutput {
     /// <p>The name of the environment.</p>
-    pub fn name(&self) -> std::option::Option<& str> {
+    pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the environment.</p>
-    pub fn arn(&self) -> std::option::Option<& str> {
+    pub fn arn(&self) -> std::option::Option<&str> {
         self.arn.as_deref()
     }
     /// <p>The unique identifier of the environment.</p>
-    pub fn environment_id(&self) -> std::option::Option<& str> {
+    pub fn environment_id(&self) -> std::option::Option<&str> {
         self.environment_id.as_deref()
     }
     /// <p>The current state of the environment. </p>
-    pub fn state(&self) -> std::option::Option<& crate::types::EnvironmentState> {
+    pub fn state(&self) -> std::option::Option<&crate::types::EnvironmentState> {
         self.state.as_ref()
     }
     /// <p>A timestamp that indicates when the environment was last updated. </p>
-    pub fn last_updated_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
+    pub fn last_updated_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_updated_time.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for DeleteEnvironmentOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl DeleteEnvironmentOutput {
     /// Creates a new builder-style object to manufacture [`DeleteEnvironmentOutput`](crate::operation::delete_environment::DeleteEnvironmentOutput).
-    pub fn builder() -> crate::operation::delete_environment::builders::DeleteEnvironmentOutputBuilder {
+    pub fn builder(
+    ) -> crate::operation::delete_environment::builders::DeleteEnvironmentOutputBuilder {
         crate::operation::delete_environment::builders::DeleteEnvironmentOutputBuilder::default()
     }
 }
@@ -73,7 +74,8 @@ impl DeleteEnvironmentOutputBuilder {
     }
     /// <p>The name of the environment.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input; self
+        self.name = input;
+        self
     }
     /// <p>The Amazon Resource Name (ARN) of the environment.</p>
     pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -82,7 +84,8 @@ impl DeleteEnvironmentOutputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the environment.</p>
     pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.arn = input; self
+        self.arn = input;
+        self
     }
     /// <p>The unique identifier of the environment.</p>
     pub fn environment_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -91,7 +94,8 @@ impl DeleteEnvironmentOutputBuilder {
     }
     /// <p>The unique identifier of the environment.</p>
     pub fn set_environment_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.environment_id = input; self
+        self.environment_id = input;
+        self
     }
     /// <p>The current state of the environment. </p>
     pub fn state(mut self, input: crate::types::EnvironmentState) -> Self {
@@ -100,7 +104,8 @@ impl DeleteEnvironmentOutputBuilder {
     }
     /// <p>The current state of the environment. </p>
     pub fn set_state(mut self, input: std::option::Option<crate::types::EnvironmentState>) -> Self {
-        self.state = input; self
+        self.state = input;
+        self
     }
     /// <p>A timestamp that indicates when the environment was last updated. </p>
     pub fn last_updated_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -108,33 +113,31 @@ impl DeleteEnvironmentOutputBuilder {
         self
     }
     /// <p>A timestamp that indicates when the environment was last updated. </p>
-    pub fn set_last_updated_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.last_updated_time = input; self
+    pub fn set_last_updated_time(
+        mut self,
+        input: std::option::Option<aws_smithy_types::DateTime>,
+    ) -> Self {
+        self.last_updated_time = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`DeleteEnvironmentOutput`](crate::operation::delete_environment::DeleteEnvironmentOutput).
     pub fn build(self) -> crate::operation::delete_environment::DeleteEnvironmentOutput {
         crate::operation::delete_environment::DeleteEnvironmentOutput {
-            name: self.name
-            ,
-            arn: self.arn
-            ,
-            environment_id: self.environment_id
-            ,
-            state: self.state
-            ,
-            last_updated_time: self.last_updated_time
-            ,
+            name: self.name,
+            arn: self.arn,
+            environment_id: self.environment_id,
+            state: self.state,
+            last_updated_time: self.last_updated_time,
             _request_id: self._request_id,
         }
     }
 }
-

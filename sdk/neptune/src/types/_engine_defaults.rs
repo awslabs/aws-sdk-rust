@@ -3,7 +3,7 @@
 /// <p> Contains the result of a successful invocation of the <code>DescribeEngineDefaultParameters</code> action.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct EngineDefaults  {
+pub struct EngineDefaults {
     /// <p>Specifies the name of the DB parameter group family that the engine default parameters apply to.</p>
     #[doc(hidden)]
     pub db_parameter_group_family: std::option::Option<std::string::String>,
@@ -16,15 +16,15 @@ pub struct EngineDefaults  {
 }
 impl EngineDefaults {
     /// <p>Specifies the name of the DB parameter group family that the engine default parameters apply to.</p>
-    pub fn db_parameter_group_family(&self) -> std::option::Option<& str> {
+    pub fn db_parameter_group_family(&self) -> std::option::Option<&str> {
         self.db_parameter_group_family.as_deref()
     }
     /// <p> An optional pagination token provided by a previous EngineDefaults request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code> .</p>
-    pub fn marker(&self) -> std::option::Option<& str> {
+    pub fn marker(&self) -> std::option::Option<&str> {
         self.marker.as_deref()
     }
     /// <p>Contains a list of engine default parameters.</p>
-    pub fn parameters(&self) -> std::option::Option<& [crate::types::Parameter]> {
+    pub fn parameters(&self) -> std::option::Option<&[crate::types::Parameter]> {
         self.parameters.as_deref()
     }
 }
@@ -50,8 +50,12 @@ impl EngineDefaultsBuilder {
         self
     }
     /// <p>Specifies the name of the DB parameter group family that the engine default parameters apply to.</p>
-    pub fn set_db_parameter_group_family(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.db_parameter_group_family = input; self
+    pub fn set_db_parameter_group_family(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.db_parameter_group_family = input;
+        self
     }
     /// <p> An optional pagination token provided by a previous EngineDefaults request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code> .</p>
     pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
@@ -60,7 +64,8 @@ impl EngineDefaultsBuilder {
     }
     /// <p> An optional pagination token provided by a previous EngineDefaults request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code> .</p>
     pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.marker = input; self
+        self.marker = input;
+        self
     }
     /// Appends an item to `parameters`.
     ///
@@ -69,24 +74,24 @@ impl EngineDefaultsBuilder {
     /// <p>Contains a list of engine default parameters.</p>
     pub fn parameters(mut self, input: crate::types::Parameter) -> Self {
         let mut v = self.parameters.unwrap_or_default();
-                        v.push(input);
-                        self.parameters = Some(v);
-                        self
+        v.push(input);
+        self.parameters = Some(v);
+        self
     }
     /// <p>Contains a list of engine default parameters.</p>
-    pub fn set_parameters(mut self, input: std::option::Option<std::vec::Vec<crate::types::Parameter>>) -> Self {
-        self.parameters = input; self
+    pub fn set_parameters(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::Parameter>>,
+    ) -> Self {
+        self.parameters = input;
+        self
     }
     /// Consumes the builder and constructs a [`EngineDefaults`](crate::types::EngineDefaults).
     pub fn build(self) -> crate::types::EngineDefaults {
         crate::types::EngineDefaults {
-            db_parameter_group_family: self.db_parameter_group_family
-            ,
-            marker: self.marker
-            ,
-            parameters: self.parameters
-            ,
+            db_parameter_group_family: self.db_parameter_group_family,
+            marker: self.marker,
+            parameters: self.parameters,
         }
     }
 }
-

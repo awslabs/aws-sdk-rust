@@ -2,20 +2,21 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetAccuracyMetricsInput  {
+pub struct GetAccuracyMetricsInput {
     /// <p>The Amazon Resource Name (ARN) of the predictor to get metrics for.</p>
     #[doc(hidden)]
     pub predictor_arn: std::option::Option<std::string::String>,
 }
 impl GetAccuracyMetricsInput {
     /// <p>The Amazon Resource Name (ARN) of the predictor to get metrics for.</p>
-    pub fn predictor_arn(&self) -> std::option::Option<& str> {
+    pub fn predictor_arn(&self) -> std::option::Option<&str> {
         self.predictor_arn.as_deref()
     }
 }
 impl GetAccuracyMetricsInput {
     /// Creates a new builder-style object to manufacture [`GetAccuracyMetricsInput`](crate::operation::get_accuracy_metrics::GetAccuracyMetricsInput).
-    pub fn builder() -> crate::operation::get_accuracy_metrics::builders::GetAccuracyMetricsInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::get_accuracy_metrics::builders::GetAccuracyMetricsInputBuilder {
         crate::operation::get_accuracy_metrics::builders::GetAccuracyMetricsInputBuilder::default()
     }
 }
@@ -34,16 +35,20 @@ impl GetAccuracyMetricsInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the predictor to get metrics for.</p>
     pub fn set_predictor_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.predictor_arn = input; self
+        self.predictor_arn = input;
+        self
     }
     /// Consumes the builder and constructs a [`GetAccuracyMetricsInput`](crate::operation::get_accuracy_metrics::GetAccuracyMetricsInput).
-    pub fn build(self) -> Result<crate::operation::get_accuracy_metrics::GetAccuracyMetricsInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::get_accuracy_metrics::GetAccuracyMetricsInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::get_accuracy_metrics::GetAccuracyMetricsInput {
-                predictor_arn: self.predictor_arn
-                ,
-            }
+                predictor_arn: self.predictor_arn,
+            },
         )
     }
 }
-

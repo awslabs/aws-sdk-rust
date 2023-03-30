@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateNetworkAnalyzerConfigurationOutput  {
+pub struct CreateNetworkAnalyzerConfigurationOutput {
     /// <p>The Amazon Resource Name of the new resource.</p>
     #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
@@ -13,22 +13,22 @@ pub struct CreateNetworkAnalyzerConfigurationOutput  {
 }
 impl CreateNetworkAnalyzerConfigurationOutput {
     /// <p>The Amazon Resource Name of the new resource.</p>
-    pub fn arn(&self) -> std::option::Option<& str> {
+    pub fn arn(&self) -> std::option::Option<&str> {
         self.arn.as_deref()
     }
     /// <p>Name of the network analyzer configuration.</p>
-    pub fn name(&self) -> std::option::Option<& str> {
+    pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for CreateNetworkAnalyzerConfigurationOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl CreateNetworkAnalyzerConfigurationOutput {
     /// Creates a new builder-style object to manufacture [`CreateNetworkAnalyzerConfigurationOutput`](crate::operation::create_network_analyzer_configuration::CreateNetworkAnalyzerConfigurationOutput).
-    pub fn builder() -> crate::operation::create_network_analyzer_configuration::builders::CreateNetworkAnalyzerConfigurationOutputBuilder {
+    pub fn builder() -> crate::operation::create_network_analyzer_configuration::builders::CreateNetworkAnalyzerConfigurationOutputBuilder{
         crate::operation::create_network_analyzer_configuration::builders::CreateNetworkAnalyzerConfigurationOutputBuilder::default()
     }
 }
@@ -49,7 +49,8 @@ impl CreateNetworkAnalyzerConfigurationOutputBuilder {
     }
     /// <p>The Amazon Resource Name of the new resource.</p>
     pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.arn = input; self
+        self.arn = input;
+        self
     }
     /// <p>Name of the network analyzer configuration.</p>
     pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -58,19 +59,20 @@ impl CreateNetworkAnalyzerConfigurationOutputBuilder {
     }
     /// <p>Name of the network analyzer configuration.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input; self
+        self.name = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`CreateNetworkAnalyzerConfigurationOutput`](crate::operation::create_network_analyzer_configuration::CreateNetworkAnalyzerConfigurationOutput).
-    pub fn build(self) -> crate::operation::create_network_analyzer_configuration::CreateNetworkAnalyzerConfigurationOutput {
+    pub fn build(self) -> crate::operation::create_network_analyzer_configuration::CreateNetworkAnalyzerConfigurationOutput{
         crate::operation::create_network_analyzer_configuration::CreateNetworkAnalyzerConfigurationOutput {
             arn: self.arn
             ,
@@ -80,4 +82,3 @@ impl CreateNetworkAnalyzerConfigurationOutputBuilder {
         }
     }
 }
-

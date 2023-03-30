@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-/// 
+///
 /// Here is an example of how you can make a match expression forward-compatible:
-/// 
+///
 /// ```text
 /// # let tier = unimplemented!();
 /// match tier {
@@ -46,14 +46,22 @@
 /// Specifically, when `tier` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `Tier::NewFeature` also yielding `"NewFeature"`.
-/// 
+///
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
 pub enum Tier {
     #[allow(missing_docs)] // documentation missing in model
     ActiveDirectory,
@@ -92,73 +100,91 @@ pub enum Tier {
     #[allow(missing_docs)] // documentation missing in model
     SqlServerFailoverClusterInstance,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::primitives::UnknownVariantValue)
+    Unknown(crate::primitives::UnknownVariantValue),
 }
 impl std::convert::From<&str> for Tier {
-                fn from(s: &str) -> Self {
-                    match s {
-                        "ACTIVE_DIRECTORY" => Tier::ActiveDirectory,
-"CUSTOM" => Tier::Custom,
-"DEFAULT" => Tier::Default,
-"DOT_NET_CORE" => Tier::DotNetCore,
-"DOT_NET_WEB" => Tier::DotNetWeb,
-"DOT_NET_WEB_TIER" => Tier::DotNetWebTier,
-"DOT_NET_WORKER" => Tier::DotNetWorker,
-"JAVA_JMX" => Tier::JavaJmx,
-"MYSQL" => Tier::Mysql,
-"ORACLE" => Tier::Oracle,
-"POSTGRESQL" => Tier::Postgresql,
-"SAP_HANA_HIGH_AVAILABILITY" => Tier::SapHanaHighAvailability,
-"SAP_HANA_MULTI_NODE" => Tier::SapHanaMultiNode,
-"SAP_HANA_SINGLE_NODE" => Tier::SapHanaSingleNode,
-"SHAREPOINT" => Tier::Sharepoint,
-"SQL_SERVER" => Tier::SqlServer,
-"SQL_SERVER_ALWAYSON_AVAILABILITY_GROUP" => Tier::SqlServerAlwaysonAvailabilityGroup,
-"SQL_SERVER_FAILOVER_CLUSTER_INSTANCE" => Tier::SqlServerFailoverClusterInstance,
-other => Tier::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
-                    }
-                }
-            }
-impl std::str::FromStr for Tier {
-                type Err = std::convert::Infallible;
-
-                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-                    Ok(Tier::from(s))
-                }
-            }
-impl Tier {
-                /// Returns the `&str` value of the enum member.
-                pub fn as_str(&self) -> &str {
-                    match self {
-    Tier::ActiveDirectory => "ACTIVE_DIRECTORY",
-    Tier::Custom => "CUSTOM",
-    Tier::Default => "DEFAULT",
-    Tier::DotNetCore => "DOT_NET_CORE",
-    Tier::DotNetWeb => "DOT_NET_WEB",
-    Tier::DotNetWebTier => "DOT_NET_WEB_TIER",
-    Tier::DotNetWorker => "DOT_NET_WORKER",
-    Tier::JavaJmx => "JAVA_JMX",
-    Tier::Mysql => "MYSQL",
-    Tier::Oracle => "ORACLE",
-    Tier::Postgresql => "POSTGRESQL",
-    Tier::SapHanaHighAvailability => "SAP_HANA_HIGH_AVAILABILITY",
-    Tier::SapHanaMultiNode => "SAP_HANA_MULTI_NODE",
-    Tier::SapHanaSingleNode => "SAP_HANA_SINGLE_NODE",
-    Tier::Sharepoint => "SHAREPOINT",
-    Tier::SqlServer => "SQL_SERVER",
-    Tier::SqlServerAlwaysonAvailabilityGroup => "SQL_SERVER_ALWAYSON_AVAILABILITY_GROUP",
-    Tier::SqlServerFailoverClusterInstance => "SQL_SERVER_FAILOVER_CLUSTER_INSTANCE",
-    Tier::Unknown(value) => value.as_str()
+    fn from(s: &str) -> Self {
+        match s {
+            "ACTIVE_DIRECTORY" => Tier::ActiveDirectory,
+            "CUSTOM" => Tier::Custom,
+            "DEFAULT" => Tier::Default,
+            "DOT_NET_CORE" => Tier::DotNetCore,
+            "DOT_NET_WEB" => Tier::DotNetWeb,
+            "DOT_NET_WEB_TIER" => Tier::DotNetWebTier,
+            "DOT_NET_WORKER" => Tier::DotNetWorker,
+            "JAVA_JMX" => Tier::JavaJmx,
+            "MYSQL" => Tier::Mysql,
+            "ORACLE" => Tier::Oracle,
+            "POSTGRESQL" => Tier::Postgresql,
+            "SAP_HANA_HIGH_AVAILABILITY" => Tier::SapHanaHighAvailability,
+            "SAP_HANA_MULTI_NODE" => Tier::SapHanaMultiNode,
+            "SAP_HANA_SINGLE_NODE" => Tier::SapHanaSingleNode,
+            "SHAREPOINT" => Tier::Sharepoint,
+            "SQL_SERVER" => Tier::SqlServer,
+            "SQL_SERVER_ALWAYSON_AVAILABILITY_GROUP" => Tier::SqlServerAlwaysonAvailabilityGroup,
+            "SQL_SERVER_FAILOVER_CLUSTER_INSTANCE" => Tier::SqlServerFailoverClusterInstance,
+            other => Tier::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
+        }
+    }
 }
-                }
-                /// Returns all the `&str` representations of the enum members.
-                pub const fn values() -> &'static [&'static str] {
-                    &["ACTIVE_DIRECTORY", "CUSTOM", "DEFAULT", "DOT_NET_CORE", "DOT_NET_WEB", "DOT_NET_WEB_TIER", "DOT_NET_WORKER", "JAVA_JMX", "MYSQL", "ORACLE", "POSTGRESQL", "SAP_HANA_HIGH_AVAILABILITY", "SAP_HANA_MULTI_NODE", "SAP_HANA_SINGLE_NODE", "SHAREPOINT", "SQL_SERVER", "SQL_SERVER_ALWAYSON_AVAILABILITY_GROUP", "SQL_SERVER_FAILOVER_CLUSTER_INSTANCE"]
-                }
-            }
-impl AsRef<str> for Tier {
-                fn as_ref(&self) -> &str {
-                    self.as_str()
-                }
-            }
+impl std::str::FromStr for Tier {
+    type Err = std::convert::Infallible;
 
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(Tier::from(s))
+    }
+}
+impl Tier {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            Tier::ActiveDirectory => "ACTIVE_DIRECTORY",
+            Tier::Custom => "CUSTOM",
+            Tier::Default => "DEFAULT",
+            Tier::DotNetCore => "DOT_NET_CORE",
+            Tier::DotNetWeb => "DOT_NET_WEB",
+            Tier::DotNetWebTier => "DOT_NET_WEB_TIER",
+            Tier::DotNetWorker => "DOT_NET_WORKER",
+            Tier::JavaJmx => "JAVA_JMX",
+            Tier::Mysql => "MYSQL",
+            Tier::Oracle => "ORACLE",
+            Tier::Postgresql => "POSTGRESQL",
+            Tier::SapHanaHighAvailability => "SAP_HANA_HIGH_AVAILABILITY",
+            Tier::SapHanaMultiNode => "SAP_HANA_MULTI_NODE",
+            Tier::SapHanaSingleNode => "SAP_HANA_SINGLE_NODE",
+            Tier::Sharepoint => "SHAREPOINT",
+            Tier::SqlServer => "SQL_SERVER",
+            Tier::SqlServerAlwaysonAvailabilityGroup => "SQL_SERVER_ALWAYSON_AVAILABILITY_GROUP",
+            Tier::SqlServerFailoverClusterInstance => "SQL_SERVER_FAILOVER_CLUSTER_INSTANCE",
+            Tier::Unknown(value) => value.as_str(),
+        }
+    }
+    /// Returns all the `&str` representations of the enum members.
+    pub const fn values() -> &'static [&'static str] {
+        &[
+            "ACTIVE_DIRECTORY",
+            "CUSTOM",
+            "DEFAULT",
+            "DOT_NET_CORE",
+            "DOT_NET_WEB",
+            "DOT_NET_WEB_TIER",
+            "DOT_NET_WORKER",
+            "JAVA_JMX",
+            "MYSQL",
+            "ORACLE",
+            "POSTGRESQL",
+            "SAP_HANA_HIGH_AVAILABILITY",
+            "SAP_HANA_MULTI_NODE",
+            "SAP_HANA_SINGLE_NODE",
+            "SHAREPOINT",
+            "SQL_SERVER",
+            "SQL_SERVER_ALWAYSON_AVAILABILITY_GROUP",
+            "SQL_SERVER_FAILOVER_CLUSTER_INSTANCE",
+        ]
+    }
+}
+impl AsRef<str> for Tier {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}

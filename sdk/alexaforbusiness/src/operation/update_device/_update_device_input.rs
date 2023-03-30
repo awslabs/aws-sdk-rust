@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateDeviceInput  {
+pub struct UpdateDeviceInput {
     /// <p>The ARN of the device to update. Required.</p>
     #[doc(hidden)]
     pub device_arn: std::option::Option<std::string::String>,
@@ -12,11 +12,11 @@ pub struct UpdateDeviceInput  {
 }
 impl UpdateDeviceInput {
     /// <p>The ARN of the device to update. Required.</p>
-    pub fn device_arn(&self) -> std::option::Option<& str> {
+    pub fn device_arn(&self) -> std::option::Option<&str> {
         self.device_arn.as_deref()
     }
     /// <p>The updated device name. Required.</p>
-    pub fn device_name(&self) -> std::option::Option<& str> {
+    pub fn device_name(&self) -> std::option::Option<&str> {
         self.device_name.as_deref()
     }
 }
@@ -42,7 +42,8 @@ impl UpdateDeviceInputBuilder {
     }
     /// <p>The ARN of the device to update. Required.</p>
     pub fn set_device_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.device_arn = input; self
+        self.device_arn = input;
+        self
     }
     /// <p>The updated device name. Required.</p>
     pub fn device_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -51,18 +52,19 @@ impl UpdateDeviceInputBuilder {
     }
     /// <p>The updated device name. Required.</p>
     pub fn set_device_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.device_name = input; self
+        self.device_name = input;
+        self
     }
     /// Consumes the builder and constructs a [`UpdateDeviceInput`](crate::operation::update_device::UpdateDeviceInput).
-    pub fn build(self) -> Result<crate::operation::update_device::UpdateDeviceInput, aws_smithy_http::operation::error::BuildError> {
-        Ok(
-            crate::operation::update_device::UpdateDeviceInput {
-                device_arn: self.device_arn
-                ,
-                device_name: self.device_name
-                ,
-            }
-        )
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::update_device::UpdateDeviceInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        Ok(crate::operation::update_device::UpdateDeviceInput {
+            device_arn: self.device_arn,
+            device_name: self.device_name,
+        })
     }
 }
-

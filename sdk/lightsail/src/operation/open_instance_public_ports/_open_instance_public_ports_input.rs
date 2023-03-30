@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct OpenInstancePublicPortsInput  {
+pub struct OpenInstancePublicPortsInput {
     /// <p>An object to describe the ports to open for the specified instance.</p>
     #[doc(hidden)]
     pub port_info: std::option::Option<crate::types::PortInfo>,
@@ -12,17 +12,19 @@ pub struct OpenInstancePublicPortsInput  {
 }
 impl OpenInstancePublicPortsInput {
     /// <p>An object to describe the ports to open for the specified instance.</p>
-    pub fn port_info(&self) -> std::option::Option<& crate::types::PortInfo> {
+    pub fn port_info(&self) -> std::option::Option<&crate::types::PortInfo> {
         self.port_info.as_ref()
     }
     /// <p>The name of the instance for which to open ports.</p>
-    pub fn instance_name(&self) -> std::option::Option<& str> {
+    pub fn instance_name(&self) -> std::option::Option<&str> {
         self.instance_name.as_deref()
     }
 }
 impl OpenInstancePublicPortsInput {
     /// Creates a new builder-style object to manufacture [`OpenInstancePublicPortsInput`](crate::operation::open_instance_public_ports::OpenInstancePublicPortsInput).
-    pub fn builder() -> crate::operation::open_instance_public_ports::builders::OpenInstancePublicPortsInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::open_instance_public_ports::builders::OpenInstancePublicPortsInputBuilder
+    {
         crate::operation::open_instance_public_ports::builders::OpenInstancePublicPortsInputBuilder::default()
     }
 }
@@ -42,7 +44,8 @@ impl OpenInstancePublicPortsInputBuilder {
     }
     /// <p>An object to describe the ports to open for the specified instance.</p>
     pub fn set_port_info(mut self, input: std::option::Option<crate::types::PortInfo>) -> Self {
-        self.port_info = input; self
+        self.port_info = input;
+        self
     }
     /// <p>The name of the instance for which to open ports.</p>
     pub fn instance_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -51,18 +54,21 @@ impl OpenInstancePublicPortsInputBuilder {
     }
     /// <p>The name of the instance for which to open ports.</p>
     pub fn set_instance_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.instance_name = input; self
+        self.instance_name = input;
+        self
     }
     /// Consumes the builder and constructs a [`OpenInstancePublicPortsInput`](crate::operation::open_instance_public_ports::OpenInstancePublicPortsInput).
-    pub fn build(self) -> Result<crate::operation::open_instance_public_ports::OpenInstancePublicPortsInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::open_instance_public_ports::OpenInstancePublicPortsInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::open_instance_public_ports::OpenInstancePublicPortsInput {
-                port_info: self.port_info
-                ,
-                instance_name: self.instance_name
-                ,
-            }
+                port_info: self.port_info,
+                instance_name: self.instance_name,
+            },
         )
     }
 }
-

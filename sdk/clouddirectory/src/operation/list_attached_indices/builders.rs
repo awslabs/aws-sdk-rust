@@ -4,55 +4,82 @@ pub use crate::operation::list_attached_indices::_list_attached_indices_output::
 pub use crate::operation::list_attached_indices::_list_attached_indices_input::ListAttachedIndicesInputBuilder;
 
 /// Fluent builder constructing a request to `ListAttachedIndices`.
-/// 
+///
 /// <p>Lists indices attached to the specified object.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListAttachedIndicesFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::list_attached_indices::builders::ListAttachedIndicesInputBuilder
-            }
-impl ListAttachedIndicesFluentBuilder  {
+    handle: std::sync::Arc<crate::client::Handle>,
+    inner: crate::operation::list_attached_indices::builders::ListAttachedIndicesInputBuilder,
+}
+impl ListAttachedIndicesFluentBuilder {
     /// Creates a new `ListAttachedIndices`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
-                    /// sent. The operation's inner [http::Request] can be modified as well.
-                    pub async fn customize(self) -> std::result::Result<
-                        crate::client::customize::CustomizableOperation<crate::operation::list_attached_indices::ListAttachedIndices, aws_http::retry::AwsResponseRetryClassifier,>,
-                        aws_smithy_http::result::SdkError<crate::operation::list_attached_indices::ListAttachedIndicesError>
-                    >  {
-                        let handle = self.handle.clone();
-                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-                    }
-    
-                    /// Sends the request and returns the response.
-                    ///
-                    /// If an error occurs, an `SdkError` will be returned with additional details that
-                    /// can be matched against.
-                    ///
-                    /// By default, any retryable failures will be retried twice. Retry behavior
-                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                    /// set when configuring the client.
-                    pub async fn send(self) -> std::result::Result<crate::operation::list_attached_indices::ListAttachedIndicesOutput, aws_smithy_http::result::SdkError<crate::operation::list_attached_indices::ListAttachedIndicesError>>
-                     {
-                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&self.handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        self.handle.client.call(op).await
-                    }
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle,
+            inner: Default::default(),
+        }
+    }
+
+    /// Consume this builder, creating a customizable operation that can be modified before being
+    /// sent. The operation's inner [http::Request] can be modified as well.
+    pub async fn customize(
+        self,
+    ) -> std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::list_attached_indices::ListAttachedIndices,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::result::SdkError<
+            crate::operation::list_attached_indices::ListAttachedIndicesError,
+        >,
+    > {
+        let handle = self.handle.clone();
+        let operation = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+    }
+
+    /// Sends the request and returns the response.
+    ///
+    /// If an error occurs, an `SdkError` will be returned with additional details that
+    /// can be matched against.
+    ///
+    /// By default, any retryable failures will be retried twice. Retry behavior
+    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+    /// set when configuring the client.
+    pub async fn send(
+        self,
+    ) -> std::result::Result<
+        crate::operation::list_attached_indices::ListAttachedIndicesOutput,
+        aws_smithy_http::result::SdkError<
+            crate::operation::list_attached_indices::ListAttachedIndicesError,
+        >,
+    > {
+        let op = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&self.handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        self.handle.client.call(op).await
+    }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::list_attached_indices::paginator::ListAttachedIndicesPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::list_attached_indices::paginator::ListAttachedIndicesPaginator {
-                            crate::operation::list_attached_indices::paginator::ListAttachedIndicesPaginator::new(self.handle, self.inner)
-                        }
+    ///
+    /// Paginators are used by calling [`send().await`](crate::operation::list_attached_indices::paginator::ListAttachedIndicesPaginator::send) which returns a `Stream`.
+    pub fn into_paginator(
+        self,
+    ) -> crate::operation::list_attached_indices::paginator::ListAttachedIndicesPaginator {
+        crate::operation::list_attached_indices::paginator::ListAttachedIndicesPaginator::new(
+            self.handle,
+            self.inner,
+        )
+    }
     /// <p>The ARN of the directory.</p>
     pub fn directory_arn(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.directory_arn(input.into());
@@ -69,7 +96,10 @@ impl ListAttachedIndicesFluentBuilder  {
         self
     }
     /// <p>A reference to the object that has indices attached.</p>
-    pub fn set_target_reference(mut self, input: std::option::Option<crate::types::ObjectReference>) -> Self {
+    pub fn set_target_reference(
+        mut self,
+        input: std::option::Option<crate::types::ObjectReference>,
+    ) -> Self {
         self.inner = self.inner.set_target_reference(input);
         self
     }
@@ -99,9 +129,11 @@ impl ListAttachedIndicesFluentBuilder  {
         self
     }
     /// <p>The consistency level to use for this operation.</p>
-    pub fn set_consistency_level(mut self, input: std::option::Option<crate::types::ConsistencyLevel>) -> Self {
+    pub fn set_consistency_level(
+        mut self,
+        input: std::option::Option<crate::types::ConsistencyLevel>,
+    ) -> Self {
         self.inner = self.inner.set_consistency_level(input);
         self
     }
 }
-

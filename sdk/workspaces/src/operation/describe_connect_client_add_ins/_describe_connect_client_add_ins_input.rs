@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeConnectClientAddInsInput  {
+pub struct DescribeConnectClientAddInsInput {
     /// <p>The directory identifier for which the client add-in is configured.</p>
     #[doc(hidden)]
     pub resource_id: std::option::Option<std::string::String>,
@@ -15,11 +15,11 @@ pub struct DescribeConnectClientAddInsInput  {
 }
 impl DescribeConnectClientAddInsInput {
     /// <p>The directory identifier for which the client add-in is configured.</p>
-    pub fn resource_id(&self) -> std::option::Option<& str> {
+    pub fn resource_id(&self) -> std::option::Option<&str> {
         self.resource_id.as_deref()
     }
     /// <p>If you received a <code>NextToken</code> from a previous call that was paginated, provide this token to receive the next set of results.</p>
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
     /// <p>The maximum number of items to return.</p>
@@ -29,7 +29,7 @@ impl DescribeConnectClientAddInsInput {
 }
 impl DescribeConnectClientAddInsInput {
     /// Creates a new builder-style object to manufacture [`DescribeConnectClientAddInsInput`](crate::operation::describe_connect_client_add_ins::DescribeConnectClientAddInsInput).
-    pub fn builder() -> crate::operation::describe_connect_client_add_ins::builders::DescribeConnectClientAddInsInputBuilder {
+    pub fn builder() -> crate::operation::describe_connect_client_add_ins::builders::DescribeConnectClientAddInsInputBuilder{
         crate::operation::describe_connect_client_add_ins::builders::DescribeConnectClientAddInsInputBuilder::default()
     }
 }
@@ -50,7 +50,8 @@ impl DescribeConnectClientAddInsInputBuilder {
     }
     /// <p>The directory identifier for which the client add-in is configured.</p>
     pub fn set_resource_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.resource_id = input; self
+        self.resource_id = input;
+        self
     }
     /// <p>If you received a <code>NextToken</code> from a previous call that was paginated, provide this token to receive the next set of results.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -59,7 +60,8 @@ impl DescribeConnectClientAddInsInputBuilder {
     }
     /// <p>If you received a <code>NextToken</code> from a previous call that was paginated, provide this token to receive the next set of results.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input; self
+        self.next_token = input;
+        self
     }
     /// <p>The maximum number of items to return.</p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -68,20 +70,22 @@ impl DescribeConnectClientAddInsInputBuilder {
     }
     /// <p>The maximum number of items to return.</p>
     pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_results = input; self
+        self.max_results = input;
+        self
     }
     /// Consumes the builder and constructs a [`DescribeConnectClientAddInsInput`](crate::operation::describe_connect_client_add_ins::DescribeConnectClientAddInsInput).
-    pub fn build(self) -> Result<crate::operation::describe_connect_client_add_ins::DescribeConnectClientAddInsInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::describe_connect_client_add_ins::DescribeConnectClientAddInsInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::describe_connect_client_add_ins::DescribeConnectClientAddInsInput {
-                resource_id: self.resource_id
-                ,
-                next_token: self.next_token
-                ,
-                max_results: self.max_results
-                ,
-            }
+                resource_id: self.resource_id,
+                next_token: self.next_token,
+                max_results: self.max_results,
+            },
         )
     }
 }
-

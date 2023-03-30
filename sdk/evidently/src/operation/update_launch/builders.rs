@@ -4,50 +4,68 @@ pub use crate::operation::update_launch::_update_launch_output::UpdateLaunchOutp
 pub use crate::operation::update_launch::_update_launch_input::UpdateLaunchInputBuilder;
 
 /// Fluent builder constructing a request to `UpdateLaunch`.
-/// 
-/// <p>Updates a launch of a given feature. </p> 
+///
+/// <p>Updates a launch of a given feature. </p>
 /// <p>Don't use this operation to update the tags of an existing launch. Instead, use <a href="https://docs.aws.amazon.com/cloudwatchevidently/latest/APIReference/API_TagResource.html">TagResource</a>. </p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct UpdateLaunchFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::update_launch::builders::UpdateLaunchInputBuilder
-            }
-impl UpdateLaunchFluentBuilder  {
+    handle: std::sync::Arc<crate::client::Handle>,
+    inner: crate::operation::update_launch::builders::UpdateLaunchInputBuilder,
+}
+impl UpdateLaunchFluentBuilder {
     /// Creates a new `UpdateLaunch`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
-                    /// sent. The operation's inner [http::Request] can be modified as well.
-                    pub async fn customize(self) -> std::result::Result<
-                        crate::client::customize::CustomizableOperation<crate::operation::update_launch::UpdateLaunch, aws_http::retry::AwsResponseRetryClassifier,>,
-                        aws_smithy_http::result::SdkError<crate::operation::update_launch::UpdateLaunchError>
-                    >  {
-                        let handle = self.handle.clone();
-                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-                    }
-    
-                    /// Sends the request and returns the response.
-                    ///
-                    /// If an error occurs, an `SdkError` will be returned with additional details that
-                    /// can be matched against.
-                    ///
-                    /// By default, any retryable failures will be retried twice. Retry behavior
-                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                    /// set when configuring the client.
-                    pub async fn send(self) -> std::result::Result<crate::operation::update_launch::UpdateLaunchOutput, aws_smithy_http::result::SdkError<crate::operation::update_launch::UpdateLaunchError>>
-                     {
-                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&self.handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        self.handle.client.call(op).await
-                    }
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle,
+            inner: Default::default(),
+        }
+    }
+
+    /// Consume this builder, creating a customizable operation that can be modified before being
+    /// sent. The operation's inner [http::Request] can be modified as well.
+    pub async fn customize(
+        self,
+    ) -> std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::update_launch::UpdateLaunch,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::result::SdkError<crate::operation::update_launch::UpdateLaunchError>,
+    > {
+        let handle = self.handle.clone();
+        let operation = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+    }
+
+    /// Sends the request and returns the response.
+    ///
+    /// If an error occurs, an `SdkError` will be returned with additional details that
+    /// can be matched against.
+    ///
+    /// By default, any retryable failures will be retried twice. Retry behavior
+    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+    /// set when configuring the client.
+    pub async fn send(
+        self,
+    ) -> std::result::Result<
+        crate::operation::update_launch::UpdateLaunchOutput,
+        aws_smithy_http::result::SdkError<crate::operation::update_launch::UpdateLaunchError>,
+    > {
+        let op = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&self.handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        self.handle.client.call(op).await
+    }
     /// <p>The name or ARN of the project that contains the launch that you want to update.</p>
     pub fn project(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.project(input.into());
@@ -88,7 +106,10 @@ impl UpdateLaunchFluentBuilder  {
         self
     }
     /// <p>An array of structures that contains the feature and variations that are to be used for the launch.</p>
-    pub fn set_groups(mut self, input: std::option::Option<std::vec::Vec<crate::types::LaunchGroupConfig>>) -> Self {
+    pub fn set_groups(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::LaunchGroupConfig>>,
+    ) -> Self {
         self.inner = self.inner.set_groups(input);
         self
     }
@@ -102,7 +123,10 @@ impl UpdateLaunchFluentBuilder  {
         self
     }
     /// <p>An array of structures that define the metrics that will be used to monitor the launch performance.</p>
-    pub fn set_metric_monitors(mut self, input: std::option::Option<std::vec::Vec<crate::types::MetricMonitorConfig>>) -> Self {
+    pub fn set_metric_monitors(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::MetricMonitorConfig>>,
+    ) -> Self {
         self.inner = self.inner.set_metric_monitors(input);
         self
     }
@@ -112,19 +136,27 @@ impl UpdateLaunchFluentBuilder  {
         self
     }
     /// <p>When Evidently assigns a particular user session to a launch, it must use a randomization ID to determine which variation the user session is served. This randomization ID is a combination of the entity ID and <code>randomizationSalt</code>. If you omit <code>randomizationSalt</code>, Evidently uses the launch name as the <code>randomizationSalt</code>.</p>
-    pub fn set_randomization_salt(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_randomization_salt(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_randomization_salt(input);
         self
     }
     /// <p>An array of structures that define the traffic allocation percentages among the feature variations during each step of the launch.</p>
-    pub fn scheduled_splits_config(mut self, input: crate::types::ScheduledSplitsLaunchConfig) -> Self {
+    pub fn scheduled_splits_config(
+        mut self,
+        input: crate::types::ScheduledSplitsLaunchConfig,
+    ) -> Self {
         self.inner = self.inner.scheduled_splits_config(input);
         self
     }
     /// <p>An array of structures that define the traffic allocation percentages among the feature variations during each step of the launch.</p>
-    pub fn set_scheduled_splits_config(mut self, input: std::option::Option<crate::types::ScheduledSplitsLaunchConfig>) -> Self {
+    pub fn set_scheduled_splits_config(
+        mut self,
+        input: std::option::Option<crate::types::ScheduledSplitsLaunchConfig>,
+    ) -> Self {
         self.inner = self.inner.set_scheduled_splits_config(input);
         self
     }
 }
-

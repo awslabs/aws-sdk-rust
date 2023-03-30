@@ -3,7 +3,7 @@
 /// <p>The configuration for running a SageMaker image as a KernelGateway app.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AppImageConfigDetails  {
+pub struct AppImageConfigDetails {
     /// <p>The Amazon Resource Name (ARN) of the AppImageConfig.</p>
     #[doc(hidden)]
     pub app_image_config_arn: std::option::Option<std::string::String>,
@@ -22,23 +22,25 @@ pub struct AppImageConfigDetails  {
 }
 impl AppImageConfigDetails {
     /// <p>The Amazon Resource Name (ARN) of the AppImageConfig.</p>
-    pub fn app_image_config_arn(&self) -> std::option::Option<& str> {
+    pub fn app_image_config_arn(&self) -> std::option::Option<&str> {
         self.app_image_config_arn.as_deref()
     }
     /// <p>The name of the AppImageConfig. Must be unique to your account.</p>
-    pub fn app_image_config_name(&self) -> std::option::Option<& str> {
+    pub fn app_image_config_name(&self) -> std::option::Option<&str> {
         self.app_image_config_name.as_deref()
     }
     /// <p>When the AppImageConfig was created.</p>
-    pub fn creation_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
+    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
     /// <p>When the AppImageConfig was last modified.</p>
-    pub fn last_modified_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
+    pub fn last_modified_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_modified_time.as_ref()
     }
     /// <p>The configuration for the file system and kernels in the SageMaker image.</p>
-    pub fn kernel_gateway_image_config(&self) -> std::option::Option<& crate::types::KernelGatewayImageConfig> {
+    pub fn kernel_gateway_image_config(
+        &self,
+    ) -> std::option::Option<&crate::types::KernelGatewayImageConfig> {
         self.kernel_gateway_image_config.as_ref()
     }
 }
@@ -57,7 +59,8 @@ pub struct AppImageConfigDetailsBuilder {
     pub(crate) app_image_config_name: std::option::Option<std::string::String>,
     pub(crate) creation_time: std::option::Option<aws_smithy_types::DateTime>,
     pub(crate) last_modified_time: std::option::Option<aws_smithy_types::DateTime>,
-    pub(crate) kernel_gateway_image_config: std::option::Option<crate::types::KernelGatewayImageConfig>,
+    pub(crate) kernel_gateway_image_config:
+        std::option::Option<crate::types::KernelGatewayImageConfig>,
 }
 impl AppImageConfigDetailsBuilder {
     /// <p>The Amazon Resource Name (ARN) of the AppImageConfig.</p>
@@ -66,8 +69,12 @@ impl AppImageConfigDetailsBuilder {
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the AppImageConfig.</p>
-    pub fn set_app_image_config_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.app_image_config_arn = input; self
+    pub fn set_app_image_config_arn(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.app_image_config_arn = input;
+        self
     }
     /// <p>The name of the AppImageConfig. Must be unique to your account.</p>
     pub fn app_image_config_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -75,8 +82,12 @@ impl AppImageConfigDetailsBuilder {
         self
     }
     /// <p>The name of the AppImageConfig. Must be unique to your account.</p>
-    pub fn set_app_image_config_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.app_image_config_name = input; self
+    pub fn set_app_image_config_name(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.app_image_config_name = input;
+        self
     }
     /// <p>When the AppImageConfig was created.</p>
     pub fn creation_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -84,8 +95,12 @@ impl AppImageConfigDetailsBuilder {
         self
     }
     /// <p>When the AppImageConfig was created.</p>
-    pub fn set_creation_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.creation_time = input; self
+    pub fn set_creation_time(
+        mut self,
+        input: std::option::Option<aws_smithy_types::DateTime>,
+    ) -> Self {
+        self.creation_time = input;
+        self
     }
     /// <p>When the AppImageConfig was last modified.</p>
     pub fn last_modified_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -93,32 +108,37 @@ impl AppImageConfigDetailsBuilder {
         self
     }
     /// <p>When the AppImageConfig was last modified.</p>
-    pub fn set_last_modified_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.last_modified_time = input; self
+    pub fn set_last_modified_time(
+        mut self,
+        input: std::option::Option<aws_smithy_types::DateTime>,
+    ) -> Self {
+        self.last_modified_time = input;
+        self
     }
     /// <p>The configuration for the file system and kernels in the SageMaker image.</p>
-    pub fn kernel_gateway_image_config(mut self, input: crate::types::KernelGatewayImageConfig) -> Self {
+    pub fn kernel_gateway_image_config(
+        mut self,
+        input: crate::types::KernelGatewayImageConfig,
+    ) -> Self {
         self.kernel_gateway_image_config = Some(input);
         self
     }
     /// <p>The configuration for the file system and kernels in the SageMaker image.</p>
-    pub fn set_kernel_gateway_image_config(mut self, input: std::option::Option<crate::types::KernelGatewayImageConfig>) -> Self {
-        self.kernel_gateway_image_config = input; self
+    pub fn set_kernel_gateway_image_config(
+        mut self,
+        input: std::option::Option<crate::types::KernelGatewayImageConfig>,
+    ) -> Self {
+        self.kernel_gateway_image_config = input;
+        self
     }
     /// Consumes the builder and constructs a [`AppImageConfigDetails`](crate::types::AppImageConfigDetails).
     pub fn build(self) -> crate::types::AppImageConfigDetails {
         crate::types::AppImageConfigDetails {
-            app_image_config_arn: self.app_image_config_arn
-            ,
-            app_image_config_name: self.app_image_config_name
-            ,
-            creation_time: self.creation_time
-            ,
-            last_modified_time: self.last_modified_time
-            ,
-            kernel_gateway_image_config: self.kernel_gateway_image_config
-            ,
+            app_image_config_arn: self.app_image_config_arn,
+            app_image_config_name: self.app_image_config_name,
+            creation_time: self.creation_time,
+            last_modified_time: self.last_modified_time,
+            kernel_gateway_image_config: self.kernel_gateway_image_config,
         }
     }
 }
-

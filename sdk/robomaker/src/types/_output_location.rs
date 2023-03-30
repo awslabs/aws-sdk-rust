@@ -3,7 +3,7 @@
 /// <p>The output location.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct OutputLocation  {
+pub struct OutputLocation {
     /// <p>The S3 bucket for output.</p>
     #[doc(hidden)]
     pub s3_bucket: std::option::Option<std::string::String>,
@@ -13,11 +13,11 @@ pub struct OutputLocation  {
 }
 impl OutputLocation {
     /// <p>The S3 bucket for output.</p>
-    pub fn s3_bucket(&self) -> std::option::Option<& str> {
+    pub fn s3_bucket(&self) -> std::option::Option<&str> {
         self.s3_bucket.as_deref()
     }
     /// <p>The S3 folder in the <code>s3Bucket</code> where output files will be placed.</p>
-    pub fn s3_prefix(&self) -> std::option::Option<& str> {
+    pub fn s3_prefix(&self) -> std::option::Option<&str> {
         self.s3_prefix.as_deref()
     }
 }
@@ -43,7 +43,8 @@ impl OutputLocationBuilder {
     }
     /// <p>The S3 bucket for output.</p>
     pub fn set_s3_bucket(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.s3_bucket = input; self
+        self.s3_bucket = input;
+        self
     }
     /// <p>The S3 folder in the <code>s3Bucket</code> where output files will be placed.</p>
     pub fn s3_prefix(mut self, input: impl Into<std::string::String>) -> Self {
@@ -52,16 +53,14 @@ impl OutputLocationBuilder {
     }
     /// <p>The S3 folder in the <code>s3Bucket</code> where output files will be placed.</p>
     pub fn set_s3_prefix(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.s3_prefix = input; self
+        self.s3_prefix = input;
+        self
     }
     /// Consumes the builder and constructs a [`OutputLocation`](crate::types::OutputLocation).
     pub fn build(self) -> crate::types::OutputLocation {
         crate::types::OutputLocation {
-            s3_bucket: self.s3_bucket
-            ,
-            s3_prefix: self.s3_prefix
-            ,
+            s3_bucket: self.s3_bucket,
+            s3_prefix: self.s3_prefix,
         }
     }
 }
-

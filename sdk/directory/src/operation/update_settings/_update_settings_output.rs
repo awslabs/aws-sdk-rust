@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateSettingsOutput  {
+pub struct UpdateSettingsOutput {
     /// <p>The identifier of the directory.</p>
     #[doc(hidden)]
     pub directory_id: std::option::Option<std::string::String>,
@@ -10,15 +10,15 @@ pub struct UpdateSettingsOutput  {
 }
 impl UpdateSettingsOutput {
     /// <p>The identifier of the directory.</p>
-    pub fn directory_id(&self) -> std::option::Option<& str> {
+    pub fn directory_id(&self) -> std::option::Option<&str> {
         self.directory_id.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for UpdateSettingsOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl UpdateSettingsOutput {
     /// Creates a new builder-style object to manufacture [`UpdateSettingsOutput`](crate::operation::update_settings::UpdateSettingsOutput).
     pub fn builder() -> crate::operation::update_settings::builders::UpdateSettingsOutputBuilder {
@@ -41,24 +41,23 @@ impl UpdateSettingsOutputBuilder {
     }
     /// <p>The identifier of the directory.</p>
     pub fn set_directory_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.directory_id = input; self
+        self.directory_id = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`UpdateSettingsOutput`](crate::operation::update_settings::UpdateSettingsOutput).
     pub fn build(self) -> crate::operation::update_settings::UpdateSettingsOutput {
         crate::operation::update_settings::UpdateSettingsOutput {
-            directory_id: self.directory_id
-            ,
+            directory_id: self.directory_id,
             _request_id: self._request_id,
         }
     }
 }
-

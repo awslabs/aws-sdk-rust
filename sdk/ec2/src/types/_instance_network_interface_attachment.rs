@@ -3,7 +3,7 @@
 /// <p>Describes a network interface attachment.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct InstanceNetworkInterfaceAttachment  {
+pub struct InstanceNetworkInterfaceAttachment {
     /// <p>The time stamp when the attachment initiated.</p>
     #[doc(hidden)]
     pub attach_time: std::option::Option<aws_smithy_types::DateTime>,
@@ -25,11 +25,11 @@ pub struct InstanceNetworkInterfaceAttachment  {
 }
 impl InstanceNetworkInterfaceAttachment {
     /// <p>The time stamp when the attachment initiated.</p>
-    pub fn attach_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
+    pub fn attach_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.attach_time.as_ref()
     }
     /// <p>The ID of the network interface attachment.</p>
-    pub fn attachment_id(&self) -> std::option::Option<& str> {
+    pub fn attachment_id(&self) -> std::option::Option<&str> {
         self.attachment_id.as_deref()
     }
     /// <p>Indicates whether the network interface is deleted when the instance is terminated.</p>
@@ -41,7 +41,7 @@ impl InstanceNetworkInterfaceAttachment {
         self.device_index
     }
     /// <p>The attachment state.</p>
-    pub fn status(&self) -> std::option::Option<& crate::types::AttachmentStatus> {
+    pub fn status(&self) -> std::option::Option<&crate::types::AttachmentStatus> {
         self.status.as_ref()
     }
     /// <p>The index of the network card.</p>
@@ -74,8 +74,12 @@ impl InstanceNetworkInterfaceAttachmentBuilder {
         self
     }
     /// <p>The time stamp when the attachment initiated.</p>
-    pub fn set_attach_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.attach_time = input; self
+    pub fn set_attach_time(
+        mut self,
+        input: std::option::Option<aws_smithy_types::DateTime>,
+    ) -> Self {
+        self.attach_time = input;
+        self
     }
     /// <p>The ID of the network interface attachment.</p>
     pub fn attachment_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -84,7 +88,8 @@ impl InstanceNetworkInterfaceAttachmentBuilder {
     }
     /// <p>The ID of the network interface attachment.</p>
     pub fn set_attachment_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.attachment_id = input; self
+        self.attachment_id = input;
+        self
     }
     /// <p>Indicates whether the network interface is deleted when the instance is terminated.</p>
     pub fn delete_on_termination(mut self, input: bool) -> Self {
@@ -93,7 +98,8 @@ impl InstanceNetworkInterfaceAttachmentBuilder {
     }
     /// <p>Indicates whether the network interface is deleted when the instance is terminated.</p>
     pub fn set_delete_on_termination(mut self, input: std::option::Option<bool>) -> Self {
-        self.delete_on_termination = input; self
+        self.delete_on_termination = input;
+        self
     }
     /// <p>The index of the device on the instance for the network interface attachment.</p>
     pub fn device_index(mut self, input: i32) -> Self {
@@ -102,7 +108,8 @@ impl InstanceNetworkInterfaceAttachmentBuilder {
     }
     /// <p>The index of the device on the instance for the network interface attachment.</p>
     pub fn set_device_index(mut self, input: std::option::Option<i32>) -> Self {
-        self.device_index = input; self
+        self.device_index = input;
+        self
     }
     /// <p>The attachment state.</p>
     pub fn status(mut self, input: crate::types::AttachmentStatus) -> Self {
@@ -110,8 +117,12 @@ impl InstanceNetworkInterfaceAttachmentBuilder {
         self
     }
     /// <p>The attachment state.</p>
-    pub fn set_status(mut self, input: std::option::Option<crate::types::AttachmentStatus>) -> Self {
-        self.status = input; self
+    pub fn set_status(
+        mut self,
+        input: std::option::Option<crate::types::AttachmentStatus>,
+    ) -> Self {
+        self.status = input;
+        self
     }
     /// <p>The index of the network card.</p>
     pub fn network_card_index(mut self, input: i32) -> Self {
@@ -120,24 +131,18 @@ impl InstanceNetworkInterfaceAttachmentBuilder {
     }
     /// <p>The index of the network card.</p>
     pub fn set_network_card_index(mut self, input: std::option::Option<i32>) -> Self {
-        self.network_card_index = input; self
+        self.network_card_index = input;
+        self
     }
     /// Consumes the builder and constructs a [`InstanceNetworkInterfaceAttachment`](crate::types::InstanceNetworkInterfaceAttachment).
     pub fn build(self) -> crate::types::InstanceNetworkInterfaceAttachment {
         crate::types::InstanceNetworkInterfaceAttachment {
-            attach_time: self.attach_time
-            ,
-            attachment_id: self.attachment_id
-            ,
-            delete_on_termination: self.delete_on_termination
-            ,
-            device_index: self.device_index
-            ,
-            status: self.status
-            ,
-            network_card_index: self.network_card_index
-            ,
+            attach_time: self.attach_time,
+            attachment_id: self.attachment_id,
+            delete_on_termination: self.delete_on_termination,
+            device_index: self.device_index,
+            status: self.status,
+            network_card_index: self.network_card_index,
         }
     }
 }
-

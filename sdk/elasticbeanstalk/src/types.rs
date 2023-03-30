@@ -300,4 +300,3 @@ pub mod builders;
 
 /// Error types that AWS Elastic Beanstalk can respond with.
 pub mod error;
-

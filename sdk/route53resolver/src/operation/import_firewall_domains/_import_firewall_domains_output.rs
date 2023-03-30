@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ImportFirewallDomainsOutput  {
+pub struct ImportFirewallDomainsOutput {
     /// <p>The Id of the firewall domain list that DNS Firewall just updated.</p>
     #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
@@ -19,30 +19,32 @@ pub struct ImportFirewallDomainsOutput  {
 }
 impl ImportFirewallDomainsOutput {
     /// <p>The Id of the firewall domain list that DNS Firewall just updated.</p>
-    pub fn id(&self) -> std::option::Option<& str> {
+    pub fn id(&self) -> std::option::Option<&str> {
         self.id.as_deref()
     }
     /// <p>The name of the domain list. </p>
-    pub fn name(&self) -> std::option::Option<& str> {
+    pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p> </p>
-    pub fn status(&self) -> std::option::Option<& crate::types::FirewallDomainListStatus> {
+    pub fn status(&self) -> std::option::Option<&crate::types::FirewallDomainListStatus> {
         self.status.as_ref()
     }
     /// <p>Additional information about the status of the list, if available.</p>
-    pub fn status_message(&self) -> std::option::Option<& str> {
+    pub fn status_message(&self) -> std::option::Option<&str> {
         self.status_message.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for ImportFirewallDomainsOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl ImportFirewallDomainsOutput {
     /// Creates a new builder-style object to manufacture [`ImportFirewallDomainsOutput`](crate::operation::import_firewall_domains::ImportFirewallDomainsOutput).
-    pub fn builder() -> crate::operation::import_firewall_domains::builders::ImportFirewallDomainsOutputBuilder {
+    pub fn builder(
+    ) -> crate::operation::import_firewall_domains::builders::ImportFirewallDomainsOutputBuilder
+    {
         crate::operation::import_firewall_domains::builders::ImportFirewallDomainsOutputBuilder::default()
     }
 }
@@ -65,7 +67,8 @@ impl ImportFirewallDomainsOutputBuilder {
     }
     /// <p>The Id of the firewall domain list that DNS Firewall just updated.</p>
     pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.id = input; self
+        self.id = input;
+        self
     }
     /// <p>The name of the domain list. </p>
     pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -74,7 +77,8 @@ impl ImportFirewallDomainsOutputBuilder {
     }
     /// <p>The name of the domain list. </p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input; self
+        self.name = input;
+        self
     }
     /// <p> </p>
     pub fn status(mut self, input: crate::types::FirewallDomainListStatus) -> Self {
@@ -82,8 +86,12 @@ impl ImportFirewallDomainsOutputBuilder {
         self
     }
     /// <p> </p>
-    pub fn set_status(mut self, input: std::option::Option<crate::types::FirewallDomainListStatus>) -> Self {
-        self.status = input; self
+    pub fn set_status(
+        mut self,
+        input: std::option::Option<crate::types::FirewallDomainListStatus>,
+    ) -> Self {
+        self.status = input;
+        self
     }
     /// <p>Additional information about the status of the list, if available.</p>
     pub fn status_message(mut self, input: impl Into<std::string::String>) -> Self {
@@ -92,30 +100,26 @@ impl ImportFirewallDomainsOutputBuilder {
     }
     /// <p>Additional information about the status of the list, if available.</p>
     pub fn set_status_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.status_message = input; self
+        self.status_message = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`ImportFirewallDomainsOutput`](crate::operation::import_firewall_domains::ImportFirewallDomainsOutput).
     pub fn build(self) -> crate::operation::import_firewall_domains::ImportFirewallDomainsOutput {
         crate::operation::import_firewall_domains::ImportFirewallDomainsOutput {
-            id: self.id
-            ,
-            name: self.name
-            ,
-            status: self.status
-            ,
-            status_message: self.status_message
-            ,
+            id: self.id,
+            name: self.name,
+            status: self.status,
+            status_message: self.status_message,
             _request_id: self._request_id,
         }
     }
 }
-

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeAppOutput  {
+pub struct DescribeAppOutput {
     /// <p>The specified application, returned as an object with details including compliance status, creation time, description, resiliency score, and more.</p>
     #[doc(hidden)]
     pub app: std::option::Option<crate::types::App>,
@@ -10,15 +10,15 @@ pub struct DescribeAppOutput  {
 }
 impl DescribeAppOutput {
     /// <p>The specified application, returned as an object with details including compliance status, creation time, description, resiliency score, and more.</p>
-    pub fn app(&self) -> std::option::Option<& crate::types::App> {
+    pub fn app(&self) -> std::option::Option<&crate::types::App> {
         self.app.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for DescribeAppOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl DescribeAppOutput {
     /// Creates a new builder-style object to manufacture [`DescribeAppOutput`](crate::operation::describe_app::DescribeAppOutput).
     pub fn builder() -> crate::operation::describe_app::builders::DescribeAppOutputBuilder {
@@ -41,24 +41,23 @@ impl DescribeAppOutputBuilder {
     }
     /// <p>The specified application, returned as an object with details including compliance status, creation time, description, resiliency score, and more.</p>
     pub fn set_app(mut self, input: std::option::Option<crate::types::App>) -> Self {
-        self.app = input; self
+        self.app = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`DescribeAppOutput`](crate::operation::describe_app::DescribeAppOutput).
     pub fn build(self) -> crate::operation::describe_app::DescribeAppOutput {
         crate::operation::describe_app::DescribeAppOutput {
-            app: self.app
-            ,
+            app: self.app,
             _request_id: self._request_id,
         }
     }
 }
-

@@ -2,20 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetMapStyleDescriptorInput  {
+pub struct GetMapStyleDescriptorInput {
     /// <p>The map resource to retrieve the style descriptor from.</p>
     #[doc(hidden)]
     pub map_name: std::option::Option<std::string::String>,
 }
 impl GetMapStyleDescriptorInput {
     /// <p>The map resource to retrieve the style descriptor from.</p>
-    pub fn map_name(&self) -> std::option::Option<& str> {
+    pub fn map_name(&self) -> std::option::Option<&str> {
         self.map_name.as_deref()
     }
 }
 impl GetMapStyleDescriptorInput {
     /// Creates a new builder-style object to manufacture [`GetMapStyleDescriptorInput`](crate::operation::get_map_style_descriptor::GetMapStyleDescriptorInput).
-    pub fn builder() -> crate::operation::get_map_style_descriptor::builders::GetMapStyleDescriptorInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::get_map_style_descriptor::builders::GetMapStyleDescriptorInputBuilder
+    {
         crate::operation::get_map_style_descriptor::builders::GetMapStyleDescriptorInputBuilder::default()
     }
 }
@@ -34,16 +36,20 @@ impl GetMapStyleDescriptorInputBuilder {
     }
     /// <p>The map resource to retrieve the style descriptor from.</p>
     pub fn set_map_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.map_name = input; self
+        self.map_name = input;
+        self
     }
     /// Consumes the builder and constructs a [`GetMapStyleDescriptorInput`](crate::operation::get_map_style_descriptor::GetMapStyleDescriptorInput).
-    pub fn build(self) -> Result<crate::operation::get_map_style_descriptor::GetMapStyleDescriptorInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::get_map_style_descriptor::GetMapStyleDescriptorInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::get_map_style_descriptor::GetMapStyleDescriptorInput {
-                map_name: self.map_name
-                ,
-            }
+                map_name: self.map_name,
+            },
         )
     }
 }
-

@@ -21,8 +21,15 @@ pub enum VirtualGatewayListenerTlsValidationContextTrust {
 impl VirtualGatewayListenerTlsValidationContextTrust {
     /// Tries to convert the enum instance into [`File`](crate::types::VirtualGatewayListenerTlsValidationContextTrust::File), extracting the inner [`VirtualGatewayTlsValidationContextFileTrust`](crate::types::VirtualGatewayTlsValidationContextFileTrust).
     /// Returns `Err(&Self)` if it can't be converted.
-    pub fn as_file(&self) -> std::result::Result<&crate::types::VirtualGatewayTlsValidationContextFileTrust, &Self> {
-        if let VirtualGatewayListenerTlsValidationContextTrust::File(val) = &self { Ok(val) } else { Err(self) }
+    pub fn as_file(
+        &self,
+    ) -> std::result::Result<&crate::types::VirtualGatewayTlsValidationContextFileTrust, &Self>
+    {
+        if let VirtualGatewayListenerTlsValidationContextTrust::File(val) = &self {
+            Ok(val)
+        } else {
+            Err(self)
+        }
     }
     /// Returns true if this is a [`File`](crate::types::VirtualGatewayListenerTlsValidationContextTrust::File).
     pub fn is_file(&self) -> bool {
@@ -30,8 +37,14 @@ impl VirtualGatewayListenerTlsValidationContextTrust {
     }
     /// Tries to convert the enum instance into [`Sds`](crate::types::VirtualGatewayListenerTlsValidationContextTrust::Sds), extracting the inner [`VirtualGatewayTlsValidationContextSdsTrust`](crate::types::VirtualGatewayTlsValidationContextSdsTrust).
     /// Returns `Err(&Self)` if it can't be converted.
-    pub fn as_sds(&self) -> std::result::Result<&crate::types::VirtualGatewayTlsValidationContextSdsTrust, &Self> {
-        if let VirtualGatewayListenerTlsValidationContextTrust::Sds(val) = &self { Ok(val) } else { Err(self) }
+    pub fn as_sds(
+        &self,
+    ) -> std::result::Result<&crate::types::VirtualGatewayTlsValidationContextSdsTrust, &Self> {
+        if let VirtualGatewayListenerTlsValidationContextTrust::Sds(val) = &self {
+            Ok(val)
+        } else {
+            Err(self)
+        }
     }
     /// Returns true if this is a [`Sds`](crate::types::VirtualGatewayListenerTlsValidationContextTrust::Sds).
     pub fn is_sds(&self) -> bool {
@@ -42,4 +55,3 @@ impl VirtualGatewayListenerTlsValidationContextTrust {
         matches!(self, Self::Unknown)
     }
 }
-

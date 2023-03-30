@@ -2,20 +2,20 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribePartnerEventSourceInput  {
+pub struct DescribePartnerEventSourceInput {
     /// <p>The name of the event source to display.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
 }
 impl DescribePartnerEventSourceInput {
     /// <p>The name of the event source to display.</p>
-    pub fn name(&self) -> std::option::Option<& str> {
+    pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
 }
 impl DescribePartnerEventSourceInput {
     /// Creates a new builder-style object to manufacture [`DescribePartnerEventSourceInput`](crate::operation::describe_partner_event_source::DescribePartnerEventSourceInput).
-    pub fn builder() -> crate::operation::describe_partner_event_source::builders::DescribePartnerEventSourceInputBuilder {
+    pub fn builder() -> crate::operation::describe_partner_event_source::builders::DescribePartnerEventSourceInputBuilder{
         crate::operation::describe_partner_event_source::builders::DescribePartnerEventSourceInputBuilder::default()
     }
 }
@@ -34,16 +34,20 @@ impl DescribePartnerEventSourceInputBuilder {
     }
     /// <p>The name of the event source to display.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input; self
+        self.name = input;
+        self
     }
     /// Consumes the builder and constructs a [`DescribePartnerEventSourceInput`](crate::operation::describe_partner_event_source::DescribePartnerEventSourceInput).
-    pub fn build(self) -> Result<crate::operation::describe_partner_event_source::DescribePartnerEventSourceInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::describe_partner_event_source::DescribePartnerEventSourceInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::describe_partner_event_source::DescribePartnerEventSourceInput {
-                name: self.name
-                ,
-            }
+                name: self.name,
+            },
         )
     }
 }
-

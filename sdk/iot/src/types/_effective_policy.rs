@@ -3,7 +3,7 @@
 /// <p>The policy that has the effect on the authorization results.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct EffectivePolicy  {
+pub struct EffectivePolicy {
     /// <p>The policy name.</p>
     #[doc(hidden)]
     pub policy_name: std::option::Option<std::string::String>,
@@ -16,15 +16,15 @@ pub struct EffectivePolicy  {
 }
 impl EffectivePolicy {
     /// <p>The policy name.</p>
-    pub fn policy_name(&self) -> std::option::Option<& str> {
+    pub fn policy_name(&self) -> std::option::Option<&str> {
         self.policy_name.as_deref()
     }
     /// <p>The policy ARN.</p>
-    pub fn policy_arn(&self) -> std::option::Option<& str> {
+    pub fn policy_arn(&self) -> std::option::Option<&str> {
         self.policy_arn.as_deref()
     }
     /// <p>The IAM policy document.</p>
-    pub fn policy_document(&self) -> std::option::Option<& str> {
+    pub fn policy_document(&self) -> std::option::Option<&str> {
         self.policy_document.as_deref()
     }
 }
@@ -51,7 +51,8 @@ impl EffectivePolicyBuilder {
     }
     /// <p>The policy name.</p>
     pub fn set_policy_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.policy_name = input; self
+        self.policy_name = input;
+        self
     }
     /// <p>The policy ARN.</p>
     pub fn policy_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -60,7 +61,8 @@ impl EffectivePolicyBuilder {
     }
     /// <p>The policy ARN.</p>
     pub fn set_policy_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.policy_arn = input; self
+        self.policy_arn = input;
+        self
     }
     /// <p>The IAM policy document.</p>
     pub fn policy_document(mut self, input: impl Into<std::string::String>) -> Self {
@@ -69,18 +71,15 @@ impl EffectivePolicyBuilder {
     }
     /// <p>The IAM policy document.</p>
     pub fn set_policy_document(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.policy_document = input; self
+        self.policy_document = input;
+        self
     }
     /// Consumes the builder and constructs a [`EffectivePolicy`](crate::types::EffectivePolicy).
     pub fn build(self) -> crate::types::EffectivePolicy {
         crate::types::EffectivePolicy {
-            policy_name: self.policy_name
-            ,
-            policy_arn: self.policy_arn
-            ,
-            policy_document: self.policy_document
-            ,
+            policy_name: self.policy_name,
+            policy_arn: self.policy_arn,
+            policy_document: self.policy_document,
         }
     }
 }
-

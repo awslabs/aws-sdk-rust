@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateMembershipInput  {
+pub struct CreateMembershipInput {
     /// <p>The unique ID for the associated collaboration.</p>
     #[doc(hidden)]
     pub collaboration_identifier: std::option::Option<std::string::String>,
@@ -12,17 +12,18 @@ pub struct CreateMembershipInput  {
 }
 impl CreateMembershipInput {
     /// <p>The unique ID for the associated collaboration.</p>
-    pub fn collaboration_identifier(&self) -> std::option::Option<& str> {
+    pub fn collaboration_identifier(&self) -> std::option::Option<&str> {
         self.collaboration_identifier.as_deref()
     }
     /// <p>An indicator as to whether query logging has been enabled or disabled for the collaboration.</p>
-    pub fn query_log_status(&self) -> std::option::Option<& crate::types::MembershipQueryLogStatus> {
+    pub fn query_log_status(&self) -> std::option::Option<&crate::types::MembershipQueryLogStatus> {
         self.query_log_status.as_ref()
     }
 }
 impl CreateMembershipInput {
     /// Creates a new builder-style object to manufacture [`CreateMembershipInput`](crate::operation::create_membership::CreateMembershipInput).
-    pub fn builder() -> crate::operation::create_membership::builders::CreateMembershipInputBuilder {
+    pub fn builder() -> crate::operation::create_membership::builders::CreateMembershipInputBuilder
+    {
         crate::operation::create_membership::builders::CreateMembershipInputBuilder::default()
     }
 }
@@ -41,8 +42,12 @@ impl CreateMembershipInputBuilder {
         self
     }
     /// <p>The unique ID for the associated collaboration.</p>
-    pub fn set_collaboration_identifier(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.collaboration_identifier = input; self
+    pub fn set_collaboration_identifier(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.collaboration_identifier = input;
+        self
     }
     /// <p>An indicator as to whether query logging has been enabled or disabled for the collaboration.</p>
     pub fn query_log_status(mut self, input: crate::types::MembershipQueryLogStatus) -> Self {
@@ -50,19 +55,23 @@ impl CreateMembershipInputBuilder {
         self
     }
     /// <p>An indicator as to whether query logging has been enabled or disabled for the collaboration.</p>
-    pub fn set_query_log_status(mut self, input: std::option::Option<crate::types::MembershipQueryLogStatus>) -> Self {
-        self.query_log_status = input; self
+    pub fn set_query_log_status(
+        mut self,
+        input: std::option::Option<crate::types::MembershipQueryLogStatus>,
+    ) -> Self {
+        self.query_log_status = input;
+        self
     }
     /// Consumes the builder and constructs a [`CreateMembershipInput`](crate::operation::create_membership::CreateMembershipInput).
-    pub fn build(self) -> Result<crate::operation::create_membership::CreateMembershipInput, aws_smithy_http::operation::error::BuildError> {
-        Ok(
-            crate::operation::create_membership::CreateMembershipInput {
-                collaboration_identifier: self.collaboration_identifier
-                ,
-                query_log_status: self.query_log_status
-                ,
-            }
-        )
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::create_membership::CreateMembershipInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        Ok(crate::operation::create_membership::CreateMembershipInput {
+            collaboration_identifier: self.collaboration_identifier,
+            query_log_status: self.query_log_status,
+        })
     }
 }
-

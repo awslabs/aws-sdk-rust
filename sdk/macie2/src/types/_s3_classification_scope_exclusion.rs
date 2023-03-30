@@ -3,14 +3,14 @@
 /// <p>Specifies the names of the S3 buckets that are excluded from automated sensitive data discovery.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct S3ClassificationScopeExclusion  {
+pub struct S3ClassificationScopeExclusion {
     /// <p>An array of strings, one for each S3 bucket that is excluded. Each string is the full name of an excluded bucket.</p>
     #[doc(hidden)]
     pub bucket_names: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl S3ClassificationScopeExclusion {
     /// <p>An array of strings, one for each S3 bucket that is excluded. Each string is the full name of an excluded bucket.</p>
-    pub fn bucket_names(&self) -> std::option::Option<& [std::string::String]> {
+    pub fn bucket_names(&self) -> std::option::Option<&[std::string::String]> {
         self.bucket_names.as_deref()
     }
 }
@@ -35,20 +35,22 @@ impl S3ClassificationScopeExclusionBuilder {
     /// <p>An array of strings, one for each S3 bucket that is excluded. Each string is the full name of an excluded bucket.</p>
     pub fn bucket_names(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.bucket_names.unwrap_or_default();
-                        v.push(input.into());
-                        self.bucket_names = Some(v);
-                        self
+        v.push(input.into());
+        self.bucket_names = Some(v);
+        self
     }
     /// <p>An array of strings, one for each S3 bucket that is excluded. Each string is the full name of an excluded bucket.</p>
-    pub fn set_bucket_names(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-        self.bucket_names = input; self
+    pub fn set_bucket_names(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
+        self.bucket_names = input;
+        self
     }
     /// Consumes the builder and constructs a [`S3ClassificationScopeExclusion`](crate::types::S3ClassificationScopeExclusion).
     pub fn build(self) -> crate::types::S3ClassificationScopeExclusion {
         crate::types::S3ClassificationScopeExclusion {
-            bucket_names: self.bucket_names
-            ,
+            bucket_names: self.bucket_names,
         }
     }
 }
-

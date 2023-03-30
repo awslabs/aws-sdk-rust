@@ -3,7 +3,7 @@
 /// <p> <b>[Snapshot and AMI policies only]</b> Specifies a schedule for a snapshot or AMI lifecycle policy.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Schedule  {
+pub struct Schedule {
     /// <p>The name of the schedule.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -25,25 +25,26 @@ pub struct Schedule  {
     /// <p> <b>[Snapshot policies only]</b> The rule for enabling fast snapshot restore.</p>
     #[doc(hidden)]
     pub fast_restore_rule: std::option::Option<crate::types::FastRestoreRule>,
-    /// <p>Specifies a rule for copying snapshots or AMIs across regions.</p> <note> 
-    /// <p>You can't specify cross-Region copy rules for policies that create snapshots on an Outpost. If the policy creates snapshots in a Region, then snapshots can be copied to up to three Regions or Outposts.</p> 
+    /// <p>Specifies a rule for copying snapshots or AMIs across regions.</p> <note>
+    /// <p>You can't specify cross-Region copy rules for policies that create snapshots on an Outpost. If the policy creates snapshots in a Region, then snapshots can be copied to up to three Regions or Outposts.</p>
     /// </note>
     #[doc(hidden)]
-    pub cross_region_copy_rules: std::option::Option<std::vec::Vec<crate::types::CrossRegionCopyRule>>,
+    pub cross_region_copy_rules:
+        std::option::Option<std::vec::Vec<crate::types::CrossRegionCopyRule>>,
     /// <p> <b>[Snapshot policies only]</b> The rule for sharing snapshots with other Amazon Web Services accounts.</p>
     #[doc(hidden)]
     pub share_rules: std::option::Option<std::vec::Vec<crate::types::ShareRule>>,
     /// <p> <b>[AMI policies only]</b> The AMI deprecation rule for the schedule.</p>
     #[doc(hidden)]
     pub deprecate_rule: std::option::Option<crate::types::DeprecateRule>,
-    /// <p> <b>[Snapshot policies that target volumes only]</b> The snapshot archiving rule for the schedule. When you specify an archiving rule, snapshots are automatically moved from the standard tier to the archive tier once the schedule's retention threshold is met. Snapshots are then retained in the archive tier for the archive retention period that you specify. </p> 
+    /// <p> <b>[Snapshot policies that target volumes only]</b> The snapshot archiving rule for the schedule. When you specify an archiving rule, snapshots are automatically moved from the standard tier to the archive tier once the schedule's retention threshold is met. Snapshots are then retained in the archive tier for the archive retention period that you specify. </p>
     /// <p>For more information about using snapshot archiving, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/snapshot-ami-policy.html#dlm-archive">Considerations for snapshot lifecycle policies</a>.</p>
     #[doc(hidden)]
     pub archive_rule: std::option::Option<crate::types::ArchiveRule>,
 }
 impl Schedule {
     /// <p>The name of the schedule.</p>
-    pub fn name(&self) -> std::option::Option<& str> {
+    pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>Copy all user-defined tags on a source volume to snapshots of the volume created by this policy.</p>
@@ -51,42 +52,44 @@ impl Schedule {
         self.copy_tags
     }
     /// <p>The tags to apply to policy-created resources. These user-defined tags are in addition to the Amazon Web Services-added lifecycle tags.</p>
-    pub fn tags_to_add(&self) -> std::option::Option<& [crate::types::Tag]> {
+    pub fn tags_to_add(&self) -> std::option::Option<&[crate::types::Tag]> {
         self.tags_to_add.as_deref()
     }
     /// <p> <b>[AMI policies and snapshot policies that target instances only]</b> A collection of key/value pairs with values determined dynamically when the policy is executed. Keys may be any valid Amazon EC2 tag key. Values must be in one of the two following formats: <code>$(instance-id)</code> or <code>$(timestamp)</code>. Variable tags are only valid for EBS Snapshot Management – Instance policies.</p>
-    pub fn variable_tags(&self) -> std::option::Option<& [crate::types::Tag]> {
+    pub fn variable_tags(&self) -> std::option::Option<&[crate::types::Tag]> {
         self.variable_tags.as_deref()
     }
     /// <p>The creation rule.</p>
-    pub fn create_rule(&self) -> std::option::Option<& crate::types::CreateRule> {
+    pub fn create_rule(&self) -> std::option::Option<&crate::types::CreateRule> {
         self.create_rule.as_ref()
     }
     /// <p>The retention rule for snapshots or AMIs created by the policy.</p>
-    pub fn retain_rule(&self) -> std::option::Option<& crate::types::RetainRule> {
+    pub fn retain_rule(&self) -> std::option::Option<&crate::types::RetainRule> {
         self.retain_rule.as_ref()
     }
     /// <p> <b>[Snapshot policies only]</b> The rule for enabling fast snapshot restore.</p>
-    pub fn fast_restore_rule(&self) -> std::option::Option<& crate::types::FastRestoreRule> {
+    pub fn fast_restore_rule(&self) -> std::option::Option<&crate::types::FastRestoreRule> {
         self.fast_restore_rule.as_ref()
     }
-    /// <p>Specifies a rule for copying snapshots or AMIs across regions.</p> <note> 
-    /// <p>You can't specify cross-Region copy rules for policies that create snapshots on an Outpost. If the policy creates snapshots in a Region, then snapshots can be copied to up to three Regions or Outposts.</p> 
+    /// <p>Specifies a rule for copying snapshots or AMIs across regions.</p> <note>
+    /// <p>You can't specify cross-Region copy rules for policies that create snapshots on an Outpost. If the policy creates snapshots in a Region, then snapshots can be copied to up to three Regions or Outposts.</p>
     /// </note>
-    pub fn cross_region_copy_rules(&self) -> std::option::Option<& [crate::types::CrossRegionCopyRule]> {
+    pub fn cross_region_copy_rules(
+        &self,
+    ) -> std::option::Option<&[crate::types::CrossRegionCopyRule]> {
         self.cross_region_copy_rules.as_deref()
     }
     /// <p> <b>[Snapshot policies only]</b> The rule for sharing snapshots with other Amazon Web Services accounts.</p>
-    pub fn share_rules(&self) -> std::option::Option<& [crate::types::ShareRule]> {
+    pub fn share_rules(&self) -> std::option::Option<&[crate::types::ShareRule]> {
         self.share_rules.as_deref()
     }
     /// <p> <b>[AMI policies only]</b> The AMI deprecation rule for the schedule.</p>
-    pub fn deprecate_rule(&self) -> std::option::Option<& crate::types::DeprecateRule> {
+    pub fn deprecate_rule(&self) -> std::option::Option<&crate::types::DeprecateRule> {
         self.deprecate_rule.as_ref()
     }
-    /// <p> <b>[Snapshot policies that target volumes only]</b> The snapshot archiving rule for the schedule. When you specify an archiving rule, snapshots are automatically moved from the standard tier to the archive tier once the schedule's retention threshold is met. Snapshots are then retained in the archive tier for the archive retention period that you specify. </p> 
+    /// <p> <b>[Snapshot policies that target volumes only]</b> The snapshot archiving rule for the schedule. When you specify an archiving rule, snapshots are automatically moved from the standard tier to the archive tier once the schedule's retention threshold is met. Snapshots are then retained in the archive tier for the archive retention period that you specify. </p>
     /// <p>For more information about using snapshot archiving, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/snapshot-ami-policy.html#dlm-archive">Considerations for snapshot lifecycle policies</a>.</p>
-    pub fn archive_rule(&self) -> std::option::Option<& crate::types::ArchiveRule> {
+    pub fn archive_rule(&self) -> std::option::Option<&crate::types::ArchiveRule> {
         self.archive_rule.as_ref()
     }
 }
@@ -108,7 +111,8 @@ pub struct ScheduleBuilder {
     pub(crate) create_rule: std::option::Option<crate::types::CreateRule>,
     pub(crate) retain_rule: std::option::Option<crate::types::RetainRule>,
     pub(crate) fast_restore_rule: std::option::Option<crate::types::FastRestoreRule>,
-    pub(crate) cross_region_copy_rules: std::option::Option<std::vec::Vec<crate::types::CrossRegionCopyRule>>,
+    pub(crate) cross_region_copy_rules:
+        std::option::Option<std::vec::Vec<crate::types::CrossRegionCopyRule>>,
     pub(crate) share_rules: std::option::Option<std::vec::Vec<crate::types::ShareRule>>,
     pub(crate) deprecate_rule: std::option::Option<crate::types::DeprecateRule>,
     pub(crate) archive_rule: std::option::Option<crate::types::ArchiveRule>,
@@ -121,7 +125,8 @@ impl ScheduleBuilder {
     }
     /// <p>The name of the schedule.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input; self
+        self.name = input;
+        self
     }
     /// <p>Copy all user-defined tags on a source volume to snapshots of the volume created by this policy.</p>
     pub fn copy_tags(mut self, input: bool) -> Self {
@@ -130,7 +135,8 @@ impl ScheduleBuilder {
     }
     /// <p>Copy all user-defined tags on a source volume to snapshots of the volume created by this policy.</p>
     pub fn set_copy_tags(mut self, input: std::option::Option<bool>) -> Self {
-        self.copy_tags = input; self
+        self.copy_tags = input;
+        self
     }
     /// Appends an item to `tags_to_add`.
     ///
@@ -139,13 +145,17 @@ impl ScheduleBuilder {
     /// <p>The tags to apply to policy-created resources. These user-defined tags are in addition to the Amazon Web Services-added lifecycle tags.</p>
     pub fn tags_to_add(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags_to_add.unwrap_or_default();
-                        v.push(input);
-                        self.tags_to_add = Some(v);
-                        self
+        v.push(input);
+        self.tags_to_add = Some(v);
+        self
     }
     /// <p>The tags to apply to policy-created resources. These user-defined tags are in addition to the Amazon Web Services-added lifecycle tags.</p>
-    pub fn set_tags_to_add(mut self, input: std::option::Option<std::vec::Vec<crate::types::Tag>>) -> Self {
-        self.tags_to_add = input; self
+    pub fn set_tags_to_add(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::Tag>>,
+    ) -> Self {
+        self.tags_to_add = input;
+        self
     }
     /// Appends an item to `variable_tags`.
     ///
@@ -154,13 +164,17 @@ impl ScheduleBuilder {
     /// <p> <b>[AMI policies and snapshot policies that target instances only]</b> A collection of key/value pairs with values determined dynamically when the policy is executed. Keys may be any valid Amazon EC2 tag key. Values must be in one of the two following formats: <code>$(instance-id)</code> or <code>$(timestamp)</code>. Variable tags are only valid for EBS Snapshot Management – Instance policies.</p>
     pub fn variable_tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.variable_tags.unwrap_or_default();
-                        v.push(input);
-                        self.variable_tags = Some(v);
-                        self
+        v.push(input);
+        self.variable_tags = Some(v);
+        self
     }
     /// <p> <b>[AMI policies and snapshot policies that target instances only]</b> A collection of key/value pairs with values determined dynamically when the policy is executed. Keys may be any valid Amazon EC2 tag key. Values must be in one of the two following formats: <code>$(instance-id)</code> or <code>$(timestamp)</code>. Variable tags are only valid for EBS Snapshot Management – Instance policies.</p>
-    pub fn set_variable_tags(mut self, input: std::option::Option<std::vec::Vec<crate::types::Tag>>) -> Self {
-        self.variable_tags = input; self
+    pub fn set_variable_tags(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::Tag>>,
+    ) -> Self {
+        self.variable_tags = input;
+        self
     }
     /// <p>The creation rule.</p>
     pub fn create_rule(mut self, input: crate::types::CreateRule) -> Self {
@@ -169,7 +183,8 @@ impl ScheduleBuilder {
     }
     /// <p>The creation rule.</p>
     pub fn set_create_rule(mut self, input: std::option::Option<crate::types::CreateRule>) -> Self {
-        self.create_rule = input; self
+        self.create_rule = input;
+        self
     }
     /// <p>The retention rule for snapshots or AMIs created by the policy.</p>
     pub fn retain_rule(mut self, input: crate::types::RetainRule) -> Self {
@@ -178,7 +193,8 @@ impl ScheduleBuilder {
     }
     /// <p>The retention rule for snapshots or AMIs created by the policy.</p>
     pub fn set_retain_rule(mut self, input: std::option::Option<crate::types::RetainRule>) -> Self {
-        self.retain_rule = input; self
+        self.retain_rule = input;
+        self
     }
     /// <p> <b>[Snapshot policies only]</b> The rule for enabling fast snapshot restore.</p>
     pub fn fast_restore_rule(mut self, input: crate::types::FastRestoreRule) -> Self {
@@ -186,27 +202,35 @@ impl ScheduleBuilder {
         self
     }
     /// <p> <b>[Snapshot policies only]</b> The rule for enabling fast snapshot restore.</p>
-    pub fn set_fast_restore_rule(mut self, input: std::option::Option<crate::types::FastRestoreRule>) -> Self {
-        self.fast_restore_rule = input; self
+    pub fn set_fast_restore_rule(
+        mut self,
+        input: std::option::Option<crate::types::FastRestoreRule>,
+    ) -> Self {
+        self.fast_restore_rule = input;
+        self
     }
     /// Appends an item to `cross_region_copy_rules`.
     ///
     /// To override the contents of this collection use [`set_cross_region_copy_rules`](Self::set_cross_region_copy_rules).
     ///
-    /// <p>Specifies a rule for copying snapshots or AMIs across regions.</p> <note> 
-    /// <p>You can't specify cross-Region copy rules for policies that create snapshots on an Outpost. If the policy creates snapshots in a Region, then snapshots can be copied to up to three Regions or Outposts.</p> 
+    /// <p>Specifies a rule for copying snapshots or AMIs across regions.</p> <note>
+    /// <p>You can't specify cross-Region copy rules for policies that create snapshots on an Outpost. If the policy creates snapshots in a Region, then snapshots can be copied to up to three Regions or Outposts.</p>
     /// </note>
     pub fn cross_region_copy_rules(mut self, input: crate::types::CrossRegionCopyRule) -> Self {
         let mut v = self.cross_region_copy_rules.unwrap_or_default();
-                        v.push(input);
-                        self.cross_region_copy_rules = Some(v);
-                        self
+        v.push(input);
+        self.cross_region_copy_rules = Some(v);
+        self
     }
-    /// <p>Specifies a rule for copying snapshots or AMIs across regions.</p> <note> 
-    /// <p>You can't specify cross-Region copy rules for policies that create snapshots on an Outpost. If the policy creates snapshots in a Region, then snapshots can be copied to up to three Regions or Outposts.</p> 
+    /// <p>Specifies a rule for copying snapshots or AMIs across regions.</p> <note>
+    /// <p>You can't specify cross-Region copy rules for policies that create snapshots on an Outpost. If the policy creates snapshots in a Region, then snapshots can be copied to up to three Regions or Outposts.</p>
     /// </note>
-    pub fn set_cross_region_copy_rules(mut self, input: std::option::Option<std::vec::Vec<crate::types::CrossRegionCopyRule>>) -> Self {
-        self.cross_region_copy_rules = input; self
+    pub fn set_cross_region_copy_rules(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::CrossRegionCopyRule>>,
+    ) -> Self {
+        self.cross_region_copy_rules = input;
+        self
     }
     /// Appends an item to `share_rules`.
     ///
@@ -215,13 +239,17 @@ impl ScheduleBuilder {
     /// <p> <b>[Snapshot policies only]</b> The rule for sharing snapshots with other Amazon Web Services accounts.</p>
     pub fn share_rules(mut self, input: crate::types::ShareRule) -> Self {
         let mut v = self.share_rules.unwrap_or_default();
-                        v.push(input);
-                        self.share_rules = Some(v);
-                        self
+        v.push(input);
+        self.share_rules = Some(v);
+        self
     }
     /// <p> <b>[Snapshot policies only]</b> The rule for sharing snapshots with other Amazon Web Services accounts.</p>
-    pub fn set_share_rules(mut self, input: std::option::Option<std::vec::Vec<crate::types::ShareRule>>) -> Self {
-        self.share_rules = input; self
+    pub fn set_share_rules(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::ShareRule>>,
+    ) -> Self {
+        self.share_rules = input;
+        self
     }
     /// <p> <b>[AMI policies only]</b> The AMI deprecation rule for the schedule.</p>
     pub fn deprecate_rule(mut self, input: crate::types::DeprecateRule) -> Self {
@@ -229,47 +257,42 @@ impl ScheduleBuilder {
         self
     }
     /// <p> <b>[AMI policies only]</b> The AMI deprecation rule for the schedule.</p>
-    pub fn set_deprecate_rule(mut self, input: std::option::Option<crate::types::DeprecateRule>) -> Self {
-        self.deprecate_rule = input; self
+    pub fn set_deprecate_rule(
+        mut self,
+        input: std::option::Option<crate::types::DeprecateRule>,
+    ) -> Self {
+        self.deprecate_rule = input;
+        self
     }
-    /// <p> <b>[Snapshot policies that target volumes only]</b> The snapshot archiving rule for the schedule. When you specify an archiving rule, snapshots are automatically moved from the standard tier to the archive tier once the schedule's retention threshold is met. Snapshots are then retained in the archive tier for the archive retention period that you specify. </p> 
+    /// <p> <b>[Snapshot policies that target volumes only]</b> The snapshot archiving rule for the schedule. When you specify an archiving rule, snapshots are automatically moved from the standard tier to the archive tier once the schedule's retention threshold is met. Snapshots are then retained in the archive tier for the archive retention period that you specify. </p>
     /// <p>For more information about using snapshot archiving, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/snapshot-ami-policy.html#dlm-archive">Considerations for snapshot lifecycle policies</a>.</p>
     pub fn archive_rule(mut self, input: crate::types::ArchiveRule) -> Self {
         self.archive_rule = Some(input);
         self
     }
-    /// <p> <b>[Snapshot policies that target volumes only]</b> The snapshot archiving rule for the schedule. When you specify an archiving rule, snapshots are automatically moved from the standard tier to the archive tier once the schedule's retention threshold is met. Snapshots are then retained in the archive tier for the archive retention period that you specify. </p> 
+    /// <p> <b>[Snapshot policies that target volumes only]</b> The snapshot archiving rule for the schedule. When you specify an archiving rule, snapshots are automatically moved from the standard tier to the archive tier once the schedule's retention threshold is met. Snapshots are then retained in the archive tier for the archive retention period that you specify. </p>
     /// <p>For more information about using snapshot archiving, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/snapshot-ami-policy.html#dlm-archive">Considerations for snapshot lifecycle policies</a>.</p>
-    pub fn set_archive_rule(mut self, input: std::option::Option<crate::types::ArchiveRule>) -> Self {
-        self.archive_rule = input; self
+    pub fn set_archive_rule(
+        mut self,
+        input: std::option::Option<crate::types::ArchiveRule>,
+    ) -> Self {
+        self.archive_rule = input;
+        self
     }
     /// Consumes the builder and constructs a [`Schedule`](crate::types::Schedule).
     pub fn build(self) -> crate::types::Schedule {
         crate::types::Schedule {
-            name: self.name
-            ,
-            copy_tags: self.copy_tags
-                .unwrap_or_default()
-            ,
-            tags_to_add: self.tags_to_add
-            ,
-            variable_tags: self.variable_tags
-            ,
-            create_rule: self.create_rule
-            ,
-            retain_rule: self.retain_rule
-            ,
-            fast_restore_rule: self.fast_restore_rule
-            ,
-            cross_region_copy_rules: self.cross_region_copy_rules
-            ,
-            share_rules: self.share_rules
-            ,
-            deprecate_rule: self.deprecate_rule
-            ,
-            archive_rule: self.archive_rule
-            ,
+            name: self.name,
+            copy_tags: self.copy_tags.unwrap_or_default(),
+            tags_to_add: self.tags_to_add,
+            variable_tags: self.variable_tags,
+            create_rule: self.create_rule,
+            retain_rule: self.retain_rule,
+            fast_restore_rule: self.fast_restore_rule,
+            cross_region_copy_rules: self.cross_region_copy_rules,
+            share_rules: self.share_rules,
+            deprecate_rule: self.deprecate_rule,
+            archive_rule: self.archive_rule,
         }
     }
 }
-

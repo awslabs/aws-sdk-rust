@@ -2,10 +2,11 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SearchVocabulariesOutput  {
+pub struct SearchVocabulariesOutput {
     /// <p>The list of the available custom vocabularies.</p>
     #[doc(hidden)]
-    pub vocabulary_summary_list: std::option::Option<std::vec::Vec<crate::types::VocabularySummary>>,
+    pub vocabulary_summary_list:
+        std::option::Option<std::vec::Vec<crate::types::VocabularySummary>>,
     /// <p>If there are additional results, this is the token for the next set of results.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
@@ -13,22 +14,25 @@ pub struct SearchVocabulariesOutput  {
 }
 impl SearchVocabulariesOutput {
     /// <p>The list of the available custom vocabularies.</p>
-    pub fn vocabulary_summary_list(&self) -> std::option::Option<& [crate::types::VocabularySummary]> {
+    pub fn vocabulary_summary_list(
+        &self,
+    ) -> std::option::Option<&[crate::types::VocabularySummary]> {
         self.vocabulary_summary_list.as_deref()
     }
     /// <p>If there are additional results, this is the token for the next set of results.</p>
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for SearchVocabulariesOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl SearchVocabulariesOutput {
     /// Creates a new builder-style object to manufacture [`SearchVocabulariesOutput`](crate::operation::search_vocabularies::SearchVocabulariesOutput).
-    pub fn builder() -> crate::operation::search_vocabularies::builders::SearchVocabulariesOutputBuilder {
+    pub fn builder(
+    ) -> crate::operation::search_vocabularies::builders::SearchVocabulariesOutputBuilder {
         crate::operation::search_vocabularies::builders::SearchVocabulariesOutputBuilder::default()
     }
 }
@@ -37,7 +41,8 @@ impl SearchVocabulariesOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct SearchVocabulariesOutputBuilder {
-    pub(crate) vocabulary_summary_list: std::option::Option<std::vec::Vec<crate::types::VocabularySummary>>,
+    pub(crate) vocabulary_summary_list:
+        std::option::Option<std::vec::Vec<crate::types::VocabularySummary>>,
     pub(crate) next_token: std::option::Option<std::string::String>,
     _request_id: Option<String>,
 }
@@ -49,13 +54,17 @@ impl SearchVocabulariesOutputBuilder {
     /// <p>The list of the available custom vocabularies.</p>
     pub fn vocabulary_summary_list(mut self, input: crate::types::VocabularySummary) -> Self {
         let mut v = self.vocabulary_summary_list.unwrap_or_default();
-                        v.push(input);
-                        self.vocabulary_summary_list = Some(v);
-                        self
+        v.push(input);
+        self.vocabulary_summary_list = Some(v);
+        self
     }
     /// <p>The list of the available custom vocabularies.</p>
-    pub fn set_vocabulary_summary_list(mut self, input: std::option::Option<std::vec::Vec<crate::types::VocabularySummary>>) -> Self {
-        self.vocabulary_summary_list = input; self
+    pub fn set_vocabulary_summary_list(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::VocabularySummary>>,
+    ) -> Self {
+        self.vocabulary_summary_list = input;
+        self
     }
     /// <p>If there are additional results, this is the token for the next set of results.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -64,26 +73,24 @@ impl SearchVocabulariesOutputBuilder {
     }
     /// <p>If there are additional results, this is the token for the next set of results.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input; self
+        self.next_token = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`SearchVocabulariesOutput`](crate::operation::search_vocabularies::SearchVocabulariesOutput).
     pub fn build(self) -> crate::operation::search_vocabularies::SearchVocabulariesOutput {
         crate::operation::search_vocabularies::SearchVocabulariesOutput {
-            vocabulary_summary_list: self.vocabulary_summary_list
-            ,
-            next_token: self.next_token
-            ,
+            vocabulary_summary_list: self.vocabulary_summary_list,
+            next_token: self.next_token,
             _request_id: self._request_id,
         }
     }
 }
-

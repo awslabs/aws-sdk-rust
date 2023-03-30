@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PutLaunchProfileMembersInput  {
+pub struct PutLaunchProfileMembersInput {
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the Amazon Web Services SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
     #[doc(hidden)]
     pub client_token: std::option::Option<std::string::String>,
@@ -21,29 +21,31 @@ pub struct PutLaunchProfileMembersInput  {
 }
 impl PutLaunchProfileMembersInput {
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the Amazon Web Services SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
-    pub fn client_token(&self) -> std::option::Option<& str> {
+    pub fn client_token(&self) -> std::option::Option<&str> {
         self.client_token.as_deref()
     }
     /// <p>The ID of the identity store.</p>
-    pub fn identity_store_id(&self) -> std::option::Option<& str> {
+    pub fn identity_store_id(&self) -> std::option::Option<&str> {
         self.identity_store_id.as_deref()
     }
     /// <p>The ID of the launch profile used to control access from the streaming session.</p>
-    pub fn launch_profile_id(&self) -> std::option::Option<& str> {
+    pub fn launch_profile_id(&self) -> std::option::Option<&str> {
         self.launch_profile_id.as_deref()
     }
     /// <p>A list of members.</p>
-    pub fn members(&self) -> std::option::Option<& [crate::types::NewLaunchProfileMember]> {
+    pub fn members(&self) -> std::option::Option<&[crate::types::NewLaunchProfileMember]> {
         self.members.as_deref()
     }
     /// <p>The studio ID. </p>
-    pub fn studio_id(&self) -> std::option::Option<& str> {
+    pub fn studio_id(&self) -> std::option::Option<&str> {
         self.studio_id.as_deref()
     }
 }
 impl PutLaunchProfileMembersInput {
     /// Creates a new builder-style object to manufacture [`PutLaunchProfileMembersInput`](crate::operation::put_launch_profile_members::PutLaunchProfileMembersInput).
-    pub fn builder() -> crate::operation::put_launch_profile_members::builders::PutLaunchProfileMembersInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::put_launch_profile_members::builders::PutLaunchProfileMembersInputBuilder
+    {
         crate::operation::put_launch_profile_members::builders::PutLaunchProfileMembersInputBuilder::default()
     }
 }
@@ -66,7 +68,8 @@ impl PutLaunchProfileMembersInputBuilder {
     }
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the Amazon Web Services SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
     pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.client_token = input; self
+        self.client_token = input;
+        self
     }
     /// <p>The ID of the identity store.</p>
     pub fn identity_store_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -74,8 +77,12 @@ impl PutLaunchProfileMembersInputBuilder {
         self
     }
     /// <p>The ID of the identity store.</p>
-    pub fn set_identity_store_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.identity_store_id = input; self
+    pub fn set_identity_store_id(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.identity_store_id = input;
+        self
     }
     /// <p>The ID of the launch profile used to control access from the streaming session.</p>
     pub fn launch_profile_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -83,8 +90,12 @@ impl PutLaunchProfileMembersInputBuilder {
         self
     }
     /// <p>The ID of the launch profile used to control access from the streaming session.</p>
-    pub fn set_launch_profile_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.launch_profile_id = input; self
+    pub fn set_launch_profile_id(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.launch_profile_id = input;
+        self
     }
     /// Appends an item to `members`.
     ///
@@ -93,13 +104,17 @@ impl PutLaunchProfileMembersInputBuilder {
     /// <p>A list of members.</p>
     pub fn members(mut self, input: crate::types::NewLaunchProfileMember) -> Self {
         let mut v = self.members.unwrap_or_default();
-                        v.push(input);
-                        self.members = Some(v);
-                        self
+        v.push(input);
+        self.members = Some(v);
+        self
     }
     /// <p>A list of members.</p>
-    pub fn set_members(mut self, input: std::option::Option<std::vec::Vec<crate::types::NewLaunchProfileMember>>) -> Self {
-        self.members = input; self
+    pub fn set_members(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::NewLaunchProfileMember>>,
+    ) -> Self {
+        self.members = input;
+        self
     }
     /// <p>The studio ID. </p>
     pub fn studio_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -108,24 +123,24 @@ impl PutLaunchProfileMembersInputBuilder {
     }
     /// <p>The studio ID. </p>
     pub fn set_studio_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.studio_id = input; self
+        self.studio_id = input;
+        self
     }
     /// Consumes the builder and constructs a [`PutLaunchProfileMembersInput`](crate::operation::put_launch_profile_members::PutLaunchProfileMembersInput).
-    pub fn build(self) -> Result<crate::operation::put_launch_profile_members::PutLaunchProfileMembersInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::put_launch_profile_members::PutLaunchProfileMembersInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::put_launch_profile_members::PutLaunchProfileMembersInput {
-                client_token: self.client_token
-                ,
-                identity_store_id: self.identity_store_id
-                ,
-                launch_profile_id: self.launch_profile_id
-                ,
-                members: self.members
-                ,
-                studio_id: self.studio_id
-                ,
-            }
+                client_token: self.client_token,
+                identity_store_id: self.identity_store_id,
+                launch_profile_id: self.launch_profile_id,
+                members: self.members,
+                studio_id: self.studio_id,
+            },
         )
     }
 }
-

@@ -2,17 +2,18 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteWorkGroupOutput  {
+pub struct DeleteWorkGroupOutput {
     _request_id: Option<String>,
 }
 impl aws_http::request_id::RequestId for DeleteWorkGroupOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl DeleteWorkGroupOutput {
     /// Creates a new builder-style object to manufacture [`DeleteWorkGroupOutput`](crate::operation::delete_work_group::DeleteWorkGroupOutput).
-    pub fn builder() -> crate::operation::delete_work_group::builders::DeleteWorkGroupOutputBuilder {
+    pub fn builder() -> crate::operation::delete_work_group::builders::DeleteWorkGroupOutputBuilder
+    {
         crate::operation::delete_work_group::builders::DeleteWorkGroupOutputBuilder::default()
     }
 }
@@ -25,14 +26,14 @@ pub struct DeleteWorkGroupOutputBuilder {
 }
 impl DeleteWorkGroupOutputBuilder {
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`DeleteWorkGroupOutput`](crate::operation::delete_work_group::DeleteWorkGroupOutput).
     pub fn build(self) -> crate::operation::delete_work_group::DeleteWorkGroupOutput {
         crate::operation::delete_work_group::DeleteWorkGroupOutput {
@@ -40,4 +41,3 @@ impl DeleteWorkGroupOutputBuilder {
         }
     }
 }
-

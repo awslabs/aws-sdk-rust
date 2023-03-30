@@ -3,7 +3,7 @@
 /// <p>Structure representing the items in the response for SearchRasterDataCollection.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ItemSource  {
+pub struct ItemSource {
     /// <p>A unique Id for the source item.</p>
     #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
@@ -12,7 +12,9 @@ pub struct ItemSource  {
     pub geometry: std::option::Option<crate::types::Geometry>,
     /// <p></p>
     #[doc(hidden)]
-    pub assets: std::option::Option<std::collections::HashMap<std::string::String, crate::types::AssetValue>>,
+    pub assets: std::option::Option<
+        std::collections::HashMap<std::string::String, crate::types::AssetValue>,
+    >,
     /// <p></p>
     #[doc(hidden)]
     pub date_time: std::option::Option<aws_smithy_types::DateTime>,
@@ -22,23 +24,27 @@ pub struct ItemSource  {
 }
 impl ItemSource {
     /// <p>A unique Id for the source item.</p>
-    pub fn id(&self) -> std::option::Option<& str> {
+    pub fn id(&self) -> std::option::Option<&str> {
         self.id.as_deref()
     }
     /// <p></p>
-    pub fn geometry(&self) -> std::option::Option<& crate::types::Geometry> {
+    pub fn geometry(&self) -> std::option::Option<&crate::types::Geometry> {
         self.geometry.as_ref()
     }
     /// <p></p>
-    pub fn assets(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, crate::types::AssetValue>> {
+    pub fn assets(
+        &self,
+    ) -> std::option::Option<
+        &std::collections::HashMap<std::string::String, crate::types::AssetValue>,
+    > {
         self.assets.as_ref()
     }
     /// <p></p>
-    pub fn date_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
+    pub fn date_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.date_time.as_ref()
     }
     /// <p></p>
-    pub fn properties(&self) -> std::option::Option<& crate::types::Properties> {
+    pub fn properties(&self) -> std::option::Option<&crate::types::Properties> {
         self.properties.as_ref()
     }
 }
@@ -55,7 +61,9 @@ impl ItemSource {
 pub struct ItemSourceBuilder {
     pub(crate) id: std::option::Option<std::string::String>,
     pub(crate) geometry: std::option::Option<crate::types::Geometry>,
-    pub(crate) assets: std::option::Option<std::collections::HashMap<std::string::String, crate::types::AssetValue>>,
+    pub(crate) assets: std::option::Option<
+        std::collections::HashMap<std::string::String, crate::types::AssetValue>,
+    >,
     pub(crate) date_time: std::option::Option<aws_smithy_types::DateTime>,
     pub(crate) properties: std::option::Option<crate::types::Properties>,
 }
@@ -67,7 +75,8 @@ impl ItemSourceBuilder {
     }
     /// <p>A unique Id for the source item.</p>
     pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.id = input; self
+        self.id = input;
+        self
     }
     /// <p></p>
     pub fn geometry(mut self, input: crate::types::Geometry) -> Self {
@@ -76,22 +85,33 @@ impl ItemSourceBuilder {
     }
     /// <p></p>
     pub fn set_geometry(mut self, input: std::option::Option<crate::types::Geometry>) -> Self {
-        self.geometry = input; self
+        self.geometry = input;
+        self
     }
     /// Adds a key-value pair to `assets`.
     ///
     /// To override the contents of this collection use [`set_assets`](Self::set_assets).
     ///
     /// <p></p>
-    pub fn assets(mut self, k: impl Into<std::string::String>, v: crate::types::AssetValue) -> Self {
+    pub fn assets(
+        mut self,
+        k: impl Into<std::string::String>,
+        v: crate::types::AssetValue,
+    ) -> Self {
         let mut hash_map = self.assets.unwrap_or_default();
-                        hash_map.insert(k.into(), v);
-                        self.assets = Some(hash_map);
-                        self
+        hash_map.insert(k.into(), v);
+        self.assets = Some(hash_map);
+        self
     }
     /// <p></p>
-    pub fn set_assets(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, crate::types::AssetValue>>) -> Self {
-        self.assets = input; self
+    pub fn set_assets(
+        mut self,
+        input: std::option::Option<
+            std::collections::HashMap<std::string::String, crate::types::AssetValue>,
+        >,
+    ) -> Self {
+        self.assets = input;
+        self
     }
     /// <p></p>
     pub fn date_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -100,7 +120,8 @@ impl ItemSourceBuilder {
     }
     /// <p></p>
     pub fn set_date_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.date_time = input; self
+        self.date_time = input;
+        self
     }
     /// <p></p>
     pub fn properties(mut self, input: crate::types::Properties) -> Self {
@@ -109,22 +130,17 @@ impl ItemSourceBuilder {
     }
     /// <p></p>
     pub fn set_properties(mut self, input: std::option::Option<crate::types::Properties>) -> Self {
-        self.properties = input; self
+        self.properties = input;
+        self
     }
     /// Consumes the builder and constructs a [`ItemSource`](crate::types::ItemSource).
     pub fn build(self) -> crate::types::ItemSource {
         crate::types::ItemSource {
-            id: self.id
-            ,
-            geometry: self.geometry
-            ,
-            assets: self.assets
-            ,
-            date_time: self.date_time
-            ,
-            properties: self.properties
-            ,
+            id: self.id,
+            geometry: self.geometry,
+            assets: self.assets,
+            date_time: self.date_time,
+            properties: self.properties,
         }
     }
 }
-

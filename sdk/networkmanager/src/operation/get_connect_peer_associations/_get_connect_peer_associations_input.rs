@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetConnectPeerAssociationsInput  {
+pub struct GetConnectPeerAssociationsInput {
     /// <p>The ID of the global network.</p>
     #[doc(hidden)]
     pub global_network_id: std::option::Option<std::string::String>,
@@ -18,11 +18,11 @@ pub struct GetConnectPeerAssociationsInput  {
 }
 impl GetConnectPeerAssociationsInput {
     /// <p>The ID of the global network.</p>
-    pub fn global_network_id(&self) -> std::option::Option<& str> {
+    pub fn global_network_id(&self) -> std::option::Option<&str> {
         self.global_network_id.as_deref()
     }
     /// <p>The IDs of the Connect peers.</p>
-    pub fn connect_peer_ids(&self) -> std::option::Option<& [std::string::String]> {
+    pub fn connect_peer_ids(&self) -> std::option::Option<&[std::string::String]> {
         self.connect_peer_ids.as_deref()
     }
     /// <p>The maximum number of results to return.</p>
@@ -30,13 +30,13 @@ impl GetConnectPeerAssociationsInput {
         self.max_results
     }
     /// <p>The token for the next page of results.</p>
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
 }
 impl GetConnectPeerAssociationsInput {
     /// Creates a new builder-style object to manufacture [`GetConnectPeerAssociationsInput`](crate::operation::get_connect_peer_associations::GetConnectPeerAssociationsInput).
-    pub fn builder() -> crate::operation::get_connect_peer_associations::builders::GetConnectPeerAssociationsInputBuilder {
+    pub fn builder() -> crate::operation::get_connect_peer_associations::builders::GetConnectPeerAssociationsInputBuilder{
         crate::operation::get_connect_peer_associations::builders::GetConnectPeerAssociationsInputBuilder::default()
     }
 }
@@ -57,8 +57,12 @@ impl GetConnectPeerAssociationsInputBuilder {
         self
     }
     /// <p>The ID of the global network.</p>
-    pub fn set_global_network_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.global_network_id = input; self
+    pub fn set_global_network_id(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.global_network_id = input;
+        self
     }
     /// Appends an item to `connect_peer_ids`.
     ///
@@ -67,13 +71,17 @@ impl GetConnectPeerAssociationsInputBuilder {
     /// <p>The IDs of the Connect peers.</p>
     pub fn connect_peer_ids(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.connect_peer_ids.unwrap_or_default();
-                        v.push(input.into());
-                        self.connect_peer_ids = Some(v);
-                        self
+        v.push(input.into());
+        self.connect_peer_ids = Some(v);
+        self
     }
     /// <p>The IDs of the Connect peers.</p>
-    pub fn set_connect_peer_ids(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-        self.connect_peer_ids = input; self
+    pub fn set_connect_peer_ids(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
+        self.connect_peer_ids = input;
+        self
     }
     /// <p>The maximum number of results to return.</p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -82,7 +90,8 @@ impl GetConnectPeerAssociationsInputBuilder {
     }
     /// <p>The maximum number of results to return.</p>
     pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_results = input; self
+        self.max_results = input;
+        self
     }
     /// <p>The token for the next page of results.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -91,22 +100,23 @@ impl GetConnectPeerAssociationsInputBuilder {
     }
     /// <p>The token for the next page of results.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input; self
+        self.next_token = input;
+        self
     }
     /// Consumes the builder and constructs a [`GetConnectPeerAssociationsInput`](crate::operation::get_connect_peer_associations::GetConnectPeerAssociationsInput).
-    pub fn build(self) -> Result<crate::operation::get_connect_peer_associations::GetConnectPeerAssociationsInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::get_connect_peer_associations::GetConnectPeerAssociationsInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::get_connect_peer_associations::GetConnectPeerAssociationsInput {
-                global_network_id: self.global_network_id
-                ,
-                connect_peer_ids: self.connect_peer_ids
-                ,
-                max_results: self.max_results
-                ,
-                next_token: self.next_token
-                ,
-            }
+                global_network_id: self.global_network_id,
+                connect_peer_ids: self.connect_peer_ids,
+                max_results: self.max_results,
+                next_token: self.next_token,
+            },
         )
     }
 }
-

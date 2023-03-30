@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-/// 
+///
 /// Here is an example of how you can make a match expression forward-compatible:
-/// 
+///
 /// ```text
 /// # let parameterexceptionfield = unimplemented!();
 /// match parameterexceptionfield {
@@ -46,14 +46,22 @@
 /// Specifically, when `parameterexceptionfield` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `ParameterExceptionField::NewFeature` also yielding `"NewFeature"`.
-/// 
+///
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
 pub enum ParameterExceptionField {
     #[allow(missing_docs)] // documentation missing in model
     ByteMatchFieldType,
@@ -92,73 +100,105 @@ pub enum ParameterExceptionField {
     #[allow(missing_docs)] // documentation missing in model
     WafOverrideAction,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::primitives::UnknownVariantValue)
+    Unknown(crate::primitives::UnknownVariantValue),
 }
 impl std::convert::From<&str> for ParameterExceptionField {
-                fn from(s: &str) -> Self {
-                    match s {
-                        "BYTE_MATCH_FIELD_TYPE" => ParameterExceptionField::ByteMatchFieldType,
-"BYTE_MATCH_POSITIONAL_CONSTRAINT" => ParameterExceptionField::ByteMatchPositionalConstraint,
-"BYTE_MATCH_TEXT_TRANSFORMATION" => ParameterExceptionField::ByteMatchTextTransformation,
-"CHANGE_ACTION" => ParameterExceptionField::ChangeAction,
-"GEO_MATCH_LOCATION_TYPE" => ParameterExceptionField::GeoMatchLocationType,
-"GEO_MATCH_LOCATION_VALUE" => ParameterExceptionField::GeoMatchLocationValue,
-"IPSET_TYPE" => ParameterExceptionField::IpsetType,
-"NEXT_MARKER" => ParameterExceptionField::NextMarker,
-"PREDICATE_TYPE" => ParameterExceptionField::PredicateType,
-"RATE_KEY" => ParameterExceptionField::RateKey,
-"RESOURCE_ARN" => ParameterExceptionField::ResourceArn,
-"RULE_TYPE" => ParameterExceptionField::RuleType,
-"SIZE_CONSTRAINT_COMPARISON_OPERATOR" => ParameterExceptionField::SizeConstraintComparisonOperator,
-"SQL_INJECTION_MATCH_FIELD_TYPE" => ParameterExceptionField::SqlInjectionMatchFieldType,
-"TAGS" => ParameterExceptionField::Tags,
-"TAG_KEYS" => ParameterExceptionField::TagKeys,
-"WAF_ACTION" => ParameterExceptionField::WafAction,
-"WAF_OVERRIDE_ACTION" => ParameterExceptionField::WafOverrideAction,
-other => ParameterExceptionField::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
-                    }
-                }
+    fn from(s: &str) -> Self {
+        match s {
+            "BYTE_MATCH_FIELD_TYPE" => ParameterExceptionField::ByteMatchFieldType,
+            "BYTE_MATCH_POSITIONAL_CONSTRAINT" => {
+                ParameterExceptionField::ByteMatchPositionalConstraint
             }
-impl std::str::FromStr for ParameterExceptionField {
-                type Err = std::convert::Infallible;
-
-                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-                    Ok(ParameterExceptionField::from(s))
-                }
+            "BYTE_MATCH_TEXT_TRANSFORMATION" => {
+                ParameterExceptionField::ByteMatchTextTransformation
             }
-impl ParameterExceptionField {
-                /// Returns the `&str` value of the enum member.
-                pub fn as_str(&self) -> &str {
-                    match self {
-    ParameterExceptionField::ByteMatchFieldType => "BYTE_MATCH_FIELD_TYPE",
-    ParameterExceptionField::ByteMatchPositionalConstraint => "BYTE_MATCH_POSITIONAL_CONSTRAINT",
-    ParameterExceptionField::ByteMatchTextTransformation => "BYTE_MATCH_TEXT_TRANSFORMATION",
-    ParameterExceptionField::ChangeAction => "CHANGE_ACTION",
-    ParameterExceptionField::GeoMatchLocationType => "GEO_MATCH_LOCATION_TYPE",
-    ParameterExceptionField::GeoMatchLocationValue => "GEO_MATCH_LOCATION_VALUE",
-    ParameterExceptionField::IpsetType => "IPSET_TYPE",
-    ParameterExceptionField::NextMarker => "NEXT_MARKER",
-    ParameterExceptionField::PredicateType => "PREDICATE_TYPE",
-    ParameterExceptionField::RateKey => "RATE_KEY",
-    ParameterExceptionField::ResourceArn => "RESOURCE_ARN",
-    ParameterExceptionField::RuleType => "RULE_TYPE",
-    ParameterExceptionField::SizeConstraintComparisonOperator => "SIZE_CONSTRAINT_COMPARISON_OPERATOR",
-    ParameterExceptionField::SqlInjectionMatchFieldType => "SQL_INJECTION_MATCH_FIELD_TYPE",
-    ParameterExceptionField::Tags => "TAGS",
-    ParameterExceptionField::TagKeys => "TAG_KEYS",
-    ParameterExceptionField::WafAction => "WAF_ACTION",
-    ParameterExceptionField::WafOverrideAction => "WAF_OVERRIDE_ACTION",
-    ParameterExceptionField::Unknown(value) => value.as_str()
+            "CHANGE_ACTION" => ParameterExceptionField::ChangeAction,
+            "GEO_MATCH_LOCATION_TYPE" => ParameterExceptionField::GeoMatchLocationType,
+            "GEO_MATCH_LOCATION_VALUE" => ParameterExceptionField::GeoMatchLocationValue,
+            "IPSET_TYPE" => ParameterExceptionField::IpsetType,
+            "NEXT_MARKER" => ParameterExceptionField::NextMarker,
+            "PREDICATE_TYPE" => ParameterExceptionField::PredicateType,
+            "RATE_KEY" => ParameterExceptionField::RateKey,
+            "RESOURCE_ARN" => ParameterExceptionField::ResourceArn,
+            "RULE_TYPE" => ParameterExceptionField::RuleType,
+            "SIZE_CONSTRAINT_COMPARISON_OPERATOR" => {
+                ParameterExceptionField::SizeConstraintComparisonOperator
+            }
+            "SQL_INJECTION_MATCH_FIELD_TYPE" => ParameterExceptionField::SqlInjectionMatchFieldType,
+            "TAGS" => ParameterExceptionField::Tags,
+            "TAG_KEYS" => ParameterExceptionField::TagKeys,
+            "WAF_ACTION" => ParameterExceptionField::WafAction,
+            "WAF_OVERRIDE_ACTION" => ParameterExceptionField::WafOverrideAction,
+            other => ParameterExceptionField::Unknown(crate::primitives::UnknownVariantValue(
+                other.to_owned(),
+            )),
+        }
+    }
 }
-                }
-                /// Returns all the `&str` representations of the enum members.
-                pub const fn values() -> &'static [&'static str] {
-                    &["BYTE_MATCH_FIELD_TYPE", "BYTE_MATCH_POSITIONAL_CONSTRAINT", "BYTE_MATCH_TEXT_TRANSFORMATION", "CHANGE_ACTION", "GEO_MATCH_LOCATION_TYPE", "GEO_MATCH_LOCATION_VALUE", "IPSET_TYPE", "NEXT_MARKER", "PREDICATE_TYPE", "RATE_KEY", "RESOURCE_ARN", "RULE_TYPE", "SIZE_CONSTRAINT_COMPARISON_OPERATOR", "SQL_INJECTION_MATCH_FIELD_TYPE", "TAGS", "TAG_KEYS", "WAF_ACTION", "WAF_OVERRIDE_ACTION"]
-                }
-            }
-impl AsRef<str> for ParameterExceptionField {
-                fn as_ref(&self) -> &str {
-                    self.as_str()
-                }
-            }
+impl std::str::FromStr for ParameterExceptionField {
+    type Err = std::convert::Infallible;
 
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(ParameterExceptionField::from(s))
+    }
+}
+impl ParameterExceptionField {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            ParameterExceptionField::ByteMatchFieldType => "BYTE_MATCH_FIELD_TYPE",
+            ParameterExceptionField::ByteMatchPositionalConstraint => {
+                "BYTE_MATCH_POSITIONAL_CONSTRAINT"
+            }
+            ParameterExceptionField::ByteMatchTextTransformation => {
+                "BYTE_MATCH_TEXT_TRANSFORMATION"
+            }
+            ParameterExceptionField::ChangeAction => "CHANGE_ACTION",
+            ParameterExceptionField::GeoMatchLocationType => "GEO_MATCH_LOCATION_TYPE",
+            ParameterExceptionField::GeoMatchLocationValue => "GEO_MATCH_LOCATION_VALUE",
+            ParameterExceptionField::IpsetType => "IPSET_TYPE",
+            ParameterExceptionField::NextMarker => "NEXT_MARKER",
+            ParameterExceptionField::PredicateType => "PREDICATE_TYPE",
+            ParameterExceptionField::RateKey => "RATE_KEY",
+            ParameterExceptionField::ResourceArn => "RESOURCE_ARN",
+            ParameterExceptionField::RuleType => "RULE_TYPE",
+            ParameterExceptionField::SizeConstraintComparisonOperator => {
+                "SIZE_CONSTRAINT_COMPARISON_OPERATOR"
+            }
+            ParameterExceptionField::SqlInjectionMatchFieldType => "SQL_INJECTION_MATCH_FIELD_TYPE",
+            ParameterExceptionField::Tags => "TAGS",
+            ParameterExceptionField::TagKeys => "TAG_KEYS",
+            ParameterExceptionField::WafAction => "WAF_ACTION",
+            ParameterExceptionField::WafOverrideAction => "WAF_OVERRIDE_ACTION",
+            ParameterExceptionField::Unknown(value) => value.as_str(),
+        }
+    }
+    /// Returns all the `&str` representations of the enum members.
+    pub const fn values() -> &'static [&'static str] {
+        &[
+            "BYTE_MATCH_FIELD_TYPE",
+            "BYTE_MATCH_POSITIONAL_CONSTRAINT",
+            "BYTE_MATCH_TEXT_TRANSFORMATION",
+            "CHANGE_ACTION",
+            "GEO_MATCH_LOCATION_TYPE",
+            "GEO_MATCH_LOCATION_VALUE",
+            "IPSET_TYPE",
+            "NEXT_MARKER",
+            "PREDICATE_TYPE",
+            "RATE_KEY",
+            "RESOURCE_ARN",
+            "RULE_TYPE",
+            "SIZE_CONSTRAINT_COMPARISON_OPERATOR",
+            "SQL_INJECTION_MATCH_FIELD_TYPE",
+            "TAGS",
+            "TAG_KEYS",
+            "WAF_ACTION",
+            "WAF_OVERRIDE_ACTION",
+        ]
+    }
+}
+impl AsRef<str> for ParameterExceptionField {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}

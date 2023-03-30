@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListContextsOutput  {
+pub struct ListContextsOutput {
     /// <p>A list of contexts and their properties.</p>
     #[doc(hidden)]
     pub context_summaries: std::option::Option<std::vec::Vec<crate::types::ContextSummary>>,
@@ -13,19 +13,19 @@ pub struct ListContextsOutput  {
 }
 impl ListContextsOutput {
     /// <p>A list of contexts and their properties.</p>
-    pub fn context_summaries(&self) -> std::option::Option<& [crate::types::ContextSummary]> {
+    pub fn context_summaries(&self) -> std::option::Option<&[crate::types::ContextSummary]> {
         self.context_summaries.as_deref()
     }
     /// <p>A token for getting the next set of contexts, if there are any.</p>
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for ListContextsOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl ListContextsOutput {
     /// Creates a new builder-style object to manufacture [`ListContextsOutput`](crate::operation::list_contexts::ListContextsOutput).
     pub fn builder() -> crate::operation::list_contexts::builders::ListContextsOutputBuilder {
@@ -49,13 +49,17 @@ impl ListContextsOutputBuilder {
     /// <p>A list of contexts and their properties.</p>
     pub fn context_summaries(mut self, input: crate::types::ContextSummary) -> Self {
         let mut v = self.context_summaries.unwrap_or_default();
-                        v.push(input);
-                        self.context_summaries = Some(v);
-                        self
+        v.push(input);
+        self.context_summaries = Some(v);
+        self
     }
     /// <p>A list of contexts and their properties.</p>
-    pub fn set_context_summaries(mut self, input: std::option::Option<std::vec::Vec<crate::types::ContextSummary>>) -> Self {
-        self.context_summaries = input; self
+    pub fn set_context_summaries(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::ContextSummary>>,
+    ) -> Self {
+        self.context_summaries = input;
+        self
     }
     /// <p>A token for getting the next set of contexts, if there are any.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -64,26 +68,24 @@ impl ListContextsOutputBuilder {
     }
     /// <p>A token for getting the next set of contexts, if there are any.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input; self
+        self.next_token = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`ListContextsOutput`](crate::operation::list_contexts::ListContextsOutput).
     pub fn build(self) -> crate::operation::list_contexts::ListContextsOutput {
         crate::operation::list_contexts::ListContextsOutput {
-            context_summaries: self.context_summaries
-            ,
-            next_token: self.next_token
-            ,
+            context_summaries: self.context_summaries,
+            next_token: self.next_token,
             _request_id: self._request_id,
         }
     }
 }
-

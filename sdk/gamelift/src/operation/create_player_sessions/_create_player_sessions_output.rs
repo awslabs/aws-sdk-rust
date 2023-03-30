@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreatePlayerSessionsOutput  {
+pub struct CreatePlayerSessionsOutput {
     /// <p>A collection of player session objects created for the added players.</p>
     #[doc(hidden)]
     pub player_sessions: std::option::Option<std::vec::Vec<crate::types::PlayerSession>>,
@@ -10,18 +10,19 @@ pub struct CreatePlayerSessionsOutput  {
 }
 impl CreatePlayerSessionsOutput {
     /// <p>A collection of player session objects created for the added players.</p>
-    pub fn player_sessions(&self) -> std::option::Option<& [crate::types::PlayerSession]> {
+    pub fn player_sessions(&self) -> std::option::Option<&[crate::types::PlayerSession]> {
         self.player_sessions.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for CreatePlayerSessionsOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl CreatePlayerSessionsOutput {
     /// Creates a new builder-style object to manufacture [`CreatePlayerSessionsOutput`](crate::operation::create_player_sessions::CreatePlayerSessionsOutput).
-    pub fn builder() -> crate::operation::create_player_sessions::builders::CreatePlayerSessionsOutputBuilder {
+    pub fn builder(
+    ) -> crate::operation::create_player_sessions::builders::CreatePlayerSessionsOutputBuilder {
         crate::operation::create_player_sessions::builders::CreatePlayerSessionsOutputBuilder::default()
     }
 }
@@ -41,30 +42,32 @@ impl CreatePlayerSessionsOutputBuilder {
     /// <p>A collection of player session objects created for the added players.</p>
     pub fn player_sessions(mut self, input: crate::types::PlayerSession) -> Self {
         let mut v = self.player_sessions.unwrap_or_default();
-                        v.push(input);
-                        self.player_sessions = Some(v);
-                        self
+        v.push(input);
+        self.player_sessions = Some(v);
+        self
     }
     /// <p>A collection of player session objects created for the added players.</p>
-    pub fn set_player_sessions(mut self, input: std::option::Option<std::vec::Vec<crate::types::PlayerSession>>) -> Self {
-        self.player_sessions = input; self
+    pub fn set_player_sessions(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::PlayerSession>>,
+    ) -> Self {
+        self.player_sessions = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`CreatePlayerSessionsOutput`](crate::operation::create_player_sessions::CreatePlayerSessionsOutput).
     pub fn build(self) -> crate::operation::create_player_sessions::CreatePlayerSessionsOutput {
         crate::operation::create_player_sessions::CreatePlayerSessionsOutput {
-            player_sessions: self.player_sessions
-            ,
+            player_sessions: self.player_sessions,
             _request_id: self._request_id,
         }
     }
 }
-

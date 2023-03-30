@@ -3,7 +3,7 @@
 /// <p>Used as one of the elements of the <code>AssessmentRun</code> data type.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AssessmentRunStateChange  {
+pub struct AssessmentRunStateChange {
     /// <p>The last time the assessment run state changed.</p>
     #[doc(hidden)]
     pub state_changed_at: std::option::Option<aws_smithy_types::DateTime>,
@@ -13,11 +13,11 @@ pub struct AssessmentRunStateChange  {
 }
 impl AssessmentRunStateChange {
     /// <p>The last time the assessment run state changed.</p>
-    pub fn state_changed_at(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
+    pub fn state_changed_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.state_changed_at.as_ref()
     }
     /// <p>The assessment run state.</p>
-    pub fn state(&self) -> std::option::Option<& crate::types::AssessmentRunState> {
+    pub fn state(&self) -> std::option::Option<&crate::types::AssessmentRunState> {
         self.state.as_ref()
     }
 }
@@ -42,8 +42,12 @@ impl AssessmentRunStateChangeBuilder {
         self
     }
     /// <p>The last time the assessment run state changed.</p>
-    pub fn set_state_changed_at(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.state_changed_at = input; self
+    pub fn set_state_changed_at(
+        mut self,
+        input: std::option::Option<aws_smithy_types::DateTime>,
+    ) -> Self {
+        self.state_changed_at = input;
+        self
     }
     /// <p>The assessment run state.</p>
     pub fn state(mut self, input: crate::types::AssessmentRunState) -> Self {
@@ -51,17 +55,18 @@ impl AssessmentRunStateChangeBuilder {
         self
     }
     /// <p>The assessment run state.</p>
-    pub fn set_state(mut self, input: std::option::Option<crate::types::AssessmentRunState>) -> Self {
-        self.state = input; self
+    pub fn set_state(
+        mut self,
+        input: std::option::Option<crate::types::AssessmentRunState>,
+    ) -> Self {
+        self.state = input;
+        self
     }
     /// Consumes the builder and constructs a [`AssessmentRunStateChange`](crate::types::AssessmentRunStateChange).
     pub fn build(self) -> crate::types::AssessmentRunStateChange {
         crate::types::AssessmentRunStateChange {
-            state_changed_at: self.state_changed_at
-            ,
-            state: self.state
-            ,
+            state_changed_at: self.state_changed_at,
+            state: self.state,
         }
     }
 }
-

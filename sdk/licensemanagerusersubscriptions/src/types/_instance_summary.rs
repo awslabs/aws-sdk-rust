@@ -3,7 +3,7 @@
 /// <p>Describes an EC2 instance providing user-based subscriptions.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct InstanceSummary  {
+pub struct InstanceSummary {
     /// <p>The ID of the EC2 instance, which provides user-based subscriptions.</p>
     #[doc(hidden)]
     pub instance_id: std::option::Option<std::string::String>,
@@ -22,23 +22,23 @@ pub struct InstanceSummary  {
 }
 impl InstanceSummary {
     /// <p>The ID of the EC2 instance, which provides user-based subscriptions.</p>
-    pub fn instance_id(&self) -> std::option::Option<& str> {
+    pub fn instance_id(&self) -> std::option::Option<&str> {
         self.instance_id.as_deref()
     }
     /// <p>The status of an EC2 instance resource.</p>
-    pub fn status(&self) -> std::option::Option<& str> {
+    pub fn status(&self) -> std::option::Option<&str> {
         self.status.as_deref()
     }
     /// <p>A list of provided user-based subscription products.</p>
-    pub fn products(&self) -> std::option::Option<& [std::string::String]> {
+    pub fn products(&self) -> std::option::Option<&[std::string::String]> {
         self.products.as_deref()
     }
     /// <p>The date of the last status check.</p>
-    pub fn last_status_check_date(&self) -> std::option::Option<& str> {
+    pub fn last_status_check_date(&self) -> std::option::Option<&str> {
         self.last_status_check_date.as_deref()
     }
     /// <p>The status message for an EC2 instance.</p>
-    pub fn status_message(&self) -> std::option::Option<& str> {
+    pub fn status_message(&self) -> std::option::Option<&str> {
         self.status_message.as_deref()
     }
 }
@@ -67,7 +67,8 @@ impl InstanceSummaryBuilder {
     }
     /// <p>The ID of the EC2 instance, which provides user-based subscriptions.</p>
     pub fn set_instance_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.instance_id = input; self
+        self.instance_id = input;
+        self
     }
     /// <p>The status of an EC2 instance resource.</p>
     pub fn status(mut self, input: impl Into<std::string::String>) -> Self {
@@ -76,7 +77,8 @@ impl InstanceSummaryBuilder {
     }
     /// <p>The status of an EC2 instance resource.</p>
     pub fn set_status(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.status = input; self
+        self.status = input;
+        self
     }
     /// Appends an item to `products`.
     ///
@@ -85,13 +87,17 @@ impl InstanceSummaryBuilder {
     /// <p>A list of provided user-based subscription products.</p>
     pub fn products(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.products.unwrap_or_default();
-                        v.push(input.into());
-                        self.products = Some(v);
-                        self
+        v.push(input.into());
+        self.products = Some(v);
+        self
     }
     /// <p>A list of provided user-based subscription products.</p>
-    pub fn set_products(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-        self.products = input; self
+    pub fn set_products(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
+        self.products = input;
+        self
     }
     /// <p>The date of the last status check.</p>
     pub fn last_status_check_date(mut self, input: impl Into<std::string::String>) -> Self {
@@ -99,8 +105,12 @@ impl InstanceSummaryBuilder {
         self
     }
     /// <p>The date of the last status check.</p>
-    pub fn set_last_status_check_date(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.last_status_check_date = input; self
+    pub fn set_last_status_check_date(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.last_status_check_date = input;
+        self
     }
     /// <p>The status message for an EC2 instance.</p>
     pub fn status_message(mut self, input: impl Into<std::string::String>) -> Self {
@@ -109,22 +119,17 @@ impl InstanceSummaryBuilder {
     }
     /// <p>The status message for an EC2 instance.</p>
     pub fn set_status_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.status_message = input; self
+        self.status_message = input;
+        self
     }
     /// Consumes the builder and constructs a [`InstanceSummary`](crate::types::InstanceSummary).
     pub fn build(self) -> crate::types::InstanceSummary {
         crate::types::InstanceSummary {
-            instance_id: self.instance_id
-            ,
-            status: self.status
-            ,
-            products: self.products
-            ,
-            last_status_check_date: self.last_status_check_date
-            ,
-            status_message: self.status_message
-            ,
+            instance_id: self.instance_id,
+            status: self.status,
+            products: self.products,
+            last_status_check_date: self.last_status_check_date,
+            status_message: self.status_message,
         }
     }
 }
-

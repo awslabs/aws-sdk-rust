@@ -2,14 +2,14 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteMlModelInput  {
+pub struct DeleteMlModelInput {
     /// <p>A user-supplied ID that uniquely identifies the <code>MLModel</code>.</p>
     #[doc(hidden)]
     pub ml_model_id: std::option::Option<std::string::String>,
 }
 impl DeleteMlModelInput {
     /// <p>A user-supplied ID that uniquely identifies the <code>MLModel</code>.</p>
-    pub fn ml_model_id(&self) -> std::option::Option<& str> {
+    pub fn ml_model_id(&self) -> std::option::Option<&str> {
         self.ml_model_id.as_deref()
     }
 }
@@ -34,16 +34,18 @@ impl DeleteMlModelInputBuilder {
     }
     /// <p>A user-supplied ID that uniquely identifies the <code>MLModel</code>.</p>
     pub fn set_ml_model_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.ml_model_id = input; self
+        self.ml_model_id = input;
+        self
     }
     /// Consumes the builder and constructs a [`DeleteMlModelInput`](crate::operation::delete_ml_model::DeleteMlModelInput).
-    pub fn build(self) -> Result<crate::operation::delete_ml_model::DeleteMlModelInput, aws_smithy_http::operation::error::BuildError> {
-        Ok(
-            crate::operation::delete_ml_model::DeleteMlModelInput {
-                ml_model_id: self.ml_model_id
-                ,
-            }
-        )
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::delete_ml_model::DeleteMlModelInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        Ok(crate::operation::delete_ml_model::DeleteMlModelInput {
+            ml_model_id: self.ml_model_id,
+        })
     }
 }
-

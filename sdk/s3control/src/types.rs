@@ -520,4 +520,3 @@ pub mod builders;
 
 /// Error types that AWS S3 Control can respond with.
 pub mod error;
-

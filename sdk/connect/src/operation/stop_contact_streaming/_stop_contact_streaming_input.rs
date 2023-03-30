@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct StopContactStreamingInput  {
+pub struct StopContactStreamingInput {
     /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
     #[doc(hidden)]
     pub instance_id: std::option::Option<std::string::String>,
@@ -15,21 +15,22 @@ pub struct StopContactStreamingInput  {
 }
 impl StopContactStreamingInput {
     /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
-    pub fn instance_id(&self) -> std::option::Option<& str> {
+    pub fn instance_id(&self) -> std::option::Option<&str> {
         self.instance_id.as_deref()
     }
     /// <p>The identifier of the contact. This is the identifier of the contact that is associated with the first interaction with the contact center.</p>
-    pub fn contact_id(&self) -> std::option::Option<& str> {
+    pub fn contact_id(&self) -> std::option::Option<&str> {
         self.contact_id.as_deref()
     }
     /// <p>The identifier of the streaming configuration enabled. </p>
-    pub fn streaming_id(&self) -> std::option::Option<& str> {
+    pub fn streaming_id(&self) -> std::option::Option<&str> {
         self.streaming_id.as_deref()
     }
 }
 impl StopContactStreamingInput {
     /// Creates a new builder-style object to manufacture [`StopContactStreamingInput`](crate::operation::stop_contact_streaming::StopContactStreamingInput).
-    pub fn builder() -> crate::operation::stop_contact_streaming::builders::StopContactStreamingInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::stop_contact_streaming::builders::StopContactStreamingInputBuilder {
         crate::operation::stop_contact_streaming::builders::StopContactStreamingInputBuilder::default()
     }
 }
@@ -50,7 +51,8 @@ impl StopContactStreamingInputBuilder {
     }
     /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
     pub fn set_instance_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.instance_id = input; self
+        self.instance_id = input;
+        self
     }
     /// <p>The identifier of the contact. This is the identifier of the contact that is associated with the first interaction with the contact center.</p>
     pub fn contact_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -59,7 +61,8 @@ impl StopContactStreamingInputBuilder {
     }
     /// <p>The identifier of the contact. This is the identifier of the contact that is associated with the first interaction with the contact center.</p>
     pub fn set_contact_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.contact_id = input; self
+        self.contact_id = input;
+        self
     }
     /// <p>The identifier of the streaming configuration enabled. </p>
     pub fn streaming_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -68,20 +71,22 @@ impl StopContactStreamingInputBuilder {
     }
     /// <p>The identifier of the streaming configuration enabled. </p>
     pub fn set_streaming_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.streaming_id = input; self
+        self.streaming_id = input;
+        self
     }
     /// Consumes the builder and constructs a [`StopContactStreamingInput`](crate::operation::stop_contact_streaming::StopContactStreamingInput).
-    pub fn build(self) -> Result<crate::operation::stop_contact_streaming::StopContactStreamingInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::stop_contact_streaming::StopContactStreamingInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::stop_contact_streaming::StopContactStreamingInput {
-                instance_id: self.instance_id
-                ,
-                contact_id: self.contact_id
-                ,
-                streaming_id: self.streaming_id
-                ,
-            }
+                instance_id: self.instance_id,
+                contact_id: self.contact_id,
+                streaming_id: self.streaming_id,
+            },
         )
     }
 }
-

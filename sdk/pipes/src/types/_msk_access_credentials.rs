@@ -21,8 +21,14 @@ pub enum MskAccessCredentials {
 impl MskAccessCredentials {
     /// Tries to convert the enum instance into [`ClientCertificateTlsAuth`](crate::types::MskAccessCredentials::ClientCertificateTlsAuth), extracting the inner [`String`](std::string::String).
     /// Returns `Err(&Self)` if it can't be converted.
-    pub fn as_client_certificate_tls_auth(&self) -> std::result::Result<&std::string::String, &Self> {
-        if let MskAccessCredentials::ClientCertificateTlsAuth(val) = &self { Ok(val) } else { Err(self) }
+    pub fn as_client_certificate_tls_auth(
+        &self,
+    ) -> std::result::Result<&std::string::String, &Self> {
+        if let MskAccessCredentials::ClientCertificateTlsAuth(val) = &self {
+            Ok(val)
+        } else {
+            Err(self)
+        }
     }
     /// Returns true if this is a [`ClientCertificateTlsAuth`](crate::types::MskAccessCredentials::ClientCertificateTlsAuth).
     pub fn is_client_certificate_tls_auth(&self) -> bool {
@@ -31,7 +37,11 @@ impl MskAccessCredentials {
     /// Tries to convert the enum instance into [`SaslScram512Auth`](crate::types::MskAccessCredentials::SaslScram512Auth), extracting the inner [`String`](std::string::String).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_sasl_scram512_auth(&self) -> std::result::Result<&std::string::String, &Self> {
-        if let MskAccessCredentials::SaslScram512Auth(val) = &self { Ok(val) } else { Err(self) }
+        if let MskAccessCredentials::SaslScram512Auth(val) = &self {
+            Ok(val)
+        } else {
+            Err(self)
+        }
     }
     /// Returns true if this is a [`SaslScram512Auth`](crate::types::MskAccessCredentials::SaslScram512Auth).
     pub fn is_sasl_scram512_auth(&self) -> bool {
@@ -42,4 +52,3 @@ impl MskAccessCredentials {
         matches!(self, Self::Unknown)
     }
 }
-

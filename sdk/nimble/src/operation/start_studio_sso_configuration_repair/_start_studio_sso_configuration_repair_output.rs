@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct StartStudioSsoConfigurationRepairOutput  {
+pub struct StartStudioSsoConfigurationRepairOutput {
     /// <p>Information about a studio.</p>
     #[doc(hidden)]
     pub studio: std::option::Option<crate::types::Studio>,
@@ -10,18 +10,18 @@ pub struct StartStudioSsoConfigurationRepairOutput  {
 }
 impl StartStudioSsoConfigurationRepairOutput {
     /// <p>Information about a studio.</p>
-    pub fn studio(&self) -> std::option::Option<& crate::types::Studio> {
+    pub fn studio(&self) -> std::option::Option<&crate::types::Studio> {
         self.studio.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for StartStudioSsoConfigurationRepairOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl StartStudioSsoConfigurationRepairOutput {
     /// Creates a new builder-style object to manufacture [`StartStudioSsoConfigurationRepairOutput`](crate::operation::start_studio_sso_configuration_repair::StartStudioSsoConfigurationRepairOutput).
-    pub fn builder() -> crate::operation::start_studio_sso_configuration_repair::builders::StartStudioSsoConfigurationRepairOutputBuilder {
+    pub fn builder() -> crate::operation::start_studio_sso_configuration_repair::builders::StartStudioSsoConfigurationRepairOutputBuilder{
         crate::operation::start_studio_sso_configuration_repair::builders::StartStudioSsoConfigurationRepairOutputBuilder::default()
     }
 }
@@ -41,19 +41,20 @@ impl StartStudioSsoConfigurationRepairOutputBuilder {
     }
     /// <p>Information about a studio.</p>
     pub fn set_studio(mut self, input: std::option::Option<crate::types::Studio>) -> Self {
-        self.studio = input; self
+        self.studio = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`StartStudioSsoConfigurationRepairOutput`](crate::operation::start_studio_sso_configuration_repair::StartStudioSsoConfigurationRepairOutput).
-    pub fn build(self) -> crate::operation::start_studio_sso_configuration_repair::StartStudioSsoConfigurationRepairOutput {
+    pub fn build(self) -> crate::operation::start_studio_sso_configuration_repair::StartStudioSsoConfigurationRepairOutput{
         crate::operation::start_studio_sso_configuration_repair::StartStudioSsoConfigurationRepairOutput {
             studio: self.studio
             ,
@@ -61,4 +62,3 @@ impl StartStudioSsoConfigurationRepairOutputBuilder {
         }
     }
 }
-

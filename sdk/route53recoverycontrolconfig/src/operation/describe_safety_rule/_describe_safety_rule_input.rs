@@ -2,20 +2,21 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeSafetyRuleInput  {
+pub struct DescribeSafetyRuleInput {
     /// <p>The ARN of the safety rule.</p>
     #[doc(hidden)]
     pub safety_rule_arn: std::option::Option<std::string::String>,
 }
 impl DescribeSafetyRuleInput {
     /// <p>The ARN of the safety rule.</p>
-    pub fn safety_rule_arn(&self) -> std::option::Option<& str> {
+    pub fn safety_rule_arn(&self) -> std::option::Option<&str> {
         self.safety_rule_arn.as_deref()
     }
 }
 impl DescribeSafetyRuleInput {
     /// Creates a new builder-style object to manufacture [`DescribeSafetyRuleInput`](crate::operation::describe_safety_rule::DescribeSafetyRuleInput).
-    pub fn builder() -> crate::operation::describe_safety_rule::builders::DescribeSafetyRuleInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::describe_safety_rule::builders::DescribeSafetyRuleInputBuilder {
         crate::operation::describe_safety_rule::builders::DescribeSafetyRuleInputBuilder::default()
     }
 }
@@ -34,16 +35,20 @@ impl DescribeSafetyRuleInputBuilder {
     }
     /// <p>The ARN of the safety rule.</p>
     pub fn set_safety_rule_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.safety_rule_arn = input; self
+        self.safety_rule_arn = input;
+        self
     }
     /// Consumes the builder and constructs a [`DescribeSafetyRuleInput`](crate::operation::describe_safety_rule::DescribeSafetyRuleInput).
-    pub fn build(self) -> Result<crate::operation::describe_safety_rule::DescribeSafetyRuleInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::describe_safety_rule::DescribeSafetyRuleInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::describe_safety_rule::DescribeSafetyRuleInput {
-                safety_rule_arn: self.safety_rule_arn
-                ,
-            }
+                safety_rule_arn: self.safety_rule_arn,
+            },
         )
     }
 }
-

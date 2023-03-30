@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetDeploymentOutput  {
+pub struct GetDeploymentOutput {
     /// <p>The unique identifier of the deployment.</p>
     #[doc(hidden)]
     pub deployment_id: std::option::Option<std::string::String>,
@@ -28,15 +28,15 @@ pub struct GetDeploymentOutput  {
 }
 impl GetDeploymentOutput {
     /// <p>The unique identifier of the deployment.</p>
-    pub fn deployment_id(&self) -> std::option::Option<& str> {
+    pub fn deployment_id(&self) -> std::option::Option<&str> {
         self.deployment_id.as_deref()
     }
     /// <p>The unique identifier of the application.</p>
-    pub fn application_id(&self) -> std::option::Option<& str> {
+    pub fn application_id(&self) -> std::option::Option<&str> {
         self.application_id.as_deref()
     }
     /// <p>The unique identifier of the runtime environment.</p>
-    pub fn environment_id(&self) -> std::option::Option<& str> {
+    pub fn environment_id(&self) -> std::option::Option<&str> {
         self.environment_id.as_deref()
     }
     /// <p>The application version.</p>
@@ -44,23 +44,23 @@ impl GetDeploymentOutput {
         self.application_version
     }
     /// <p>The status of the deployment.</p>
-    pub fn status(&self) -> std::option::Option<& crate::types::DeploymentLifecycle> {
+    pub fn status(&self) -> std::option::Option<&crate::types::DeploymentLifecycle> {
         self.status.as_ref()
     }
     /// <p>The timestamp when the deployment was created.</p>
-    pub fn creation_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
+    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
     /// <p>The reason for the reported status.</p>
-    pub fn status_reason(&self) -> std::option::Option<& str> {
+    pub fn status_reason(&self) -> std::option::Option<&str> {
         self.status_reason.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for GetDeploymentOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl GetDeploymentOutput {
     /// Creates a new builder-style object to manufacture [`GetDeploymentOutput`](crate::operation::get_deployment::GetDeploymentOutput).
     pub fn builder() -> crate::operation::get_deployment::builders::GetDeploymentOutputBuilder {
@@ -89,7 +89,8 @@ impl GetDeploymentOutputBuilder {
     }
     /// <p>The unique identifier of the deployment.</p>
     pub fn set_deployment_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.deployment_id = input; self
+        self.deployment_id = input;
+        self
     }
     /// <p>The unique identifier of the application.</p>
     pub fn application_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -98,7 +99,8 @@ impl GetDeploymentOutputBuilder {
     }
     /// <p>The unique identifier of the application.</p>
     pub fn set_application_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.application_id = input; self
+        self.application_id = input;
+        self
     }
     /// <p>The unique identifier of the runtime environment.</p>
     pub fn environment_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -107,7 +109,8 @@ impl GetDeploymentOutputBuilder {
     }
     /// <p>The unique identifier of the runtime environment.</p>
     pub fn set_environment_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.environment_id = input; self
+        self.environment_id = input;
+        self
     }
     /// <p>The application version.</p>
     pub fn application_version(mut self, input: i32) -> Self {
@@ -116,7 +119,8 @@ impl GetDeploymentOutputBuilder {
     }
     /// <p>The application version.</p>
     pub fn set_application_version(mut self, input: std::option::Option<i32>) -> Self {
-        self.application_version = input; self
+        self.application_version = input;
+        self
     }
     /// <p>The status of the deployment.</p>
     pub fn status(mut self, input: crate::types::DeploymentLifecycle) -> Self {
@@ -124,8 +128,12 @@ impl GetDeploymentOutputBuilder {
         self
     }
     /// <p>The status of the deployment.</p>
-    pub fn set_status(mut self, input: std::option::Option<crate::types::DeploymentLifecycle>) -> Self {
-        self.status = input; self
+    pub fn set_status(
+        mut self,
+        input: std::option::Option<crate::types::DeploymentLifecycle>,
+    ) -> Self {
+        self.status = input;
+        self
     }
     /// <p>The timestamp when the deployment was created.</p>
     pub fn creation_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -133,8 +141,12 @@ impl GetDeploymentOutputBuilder {
         self
     }
     /// <p>The timestamp when the deployment was created.</p>
-    pub fn set_creation_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.creation_time = input; self
+    pub fn set_creation_time(
+        mut self,
+        input: std::option::Option<aws_smithy_types::DateTime>,
+    ) -> Self {
+        self.creation_time = input;
+        self
     }
     /// <p>The reason for the reported status.</p>
     pub fn status_reason(mut self, input: impl Into<std::string::String>) -> Self {
@@ -143,36 +155,29 @@ impl GetDeploymentOutputBuilder {
     }
     /// <p>The reason for the reported status.</p>
     pub fn set_status_reason(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.status_reason = input; self
+        self.status_reason = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`GetDeploymentOutput`](crate::operation::get_deployment::GetDeploymentOutput).
     pub fn build(self) -> crate::operation::get_deployment::GetDeploymentOutput {
         crate::operation::get_deployment::GetDeploymentOutput {
-            deployment_id: self.deployment_id
-            ,
-            application_id: self.application_id
-            ,
-            environment_id: self.environment_id
-            ,
-            application_version: self.application_version
-            ,
-            status: self.status
-            ,
-            creation_time: self.creation_time
-            ,
-            status_reason: self.status_reason
-            ,
+            deployment_id: self.deployment_id,
+            application_id: self.application_id,
+            environment_id: self.environment_id,
+            application_version: self.application_version,
+            status: self.status,
+            creation_time: self.creation_time,
+            status_reason: self.status_reason,
             _request_id: self._request_id,
         }
     }
 }
-

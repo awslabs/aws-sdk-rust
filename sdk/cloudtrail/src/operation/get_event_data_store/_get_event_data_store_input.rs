@@ -2,20 +2,21 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetEventDataStoreInput  {
+pub struct GetEventDataStoreInput {
     /// <p>The ARN (or ID suffix of the ARN) of the event data store about which you want information.</p>
     #[doc(hidden)]
     pub event_data_store: std::option::Option<std::string::String>,
 }
 impl GetEventDataStoreInput {
     /// <p>The ARN (or ID suffix of the ARN) of the event data store about which you want information.</p>
-    pub fn event_data_store(&self) -> std::option::Option<& str> {
+    pub fn event_data_store(&self) -> std::option::Option<&str> {
         self.event_data_store.as_deref()
     }
 }
 impl GetEventDataStoreInput {
     /// Creates a new builder-style object to manufacture [`GetEventDataStoreInput`](crate::operation::get_event_data_store::GetEventDataStoreInput).
-    pub fn builder() -> crate::operation::get_event_data_store::builders::GetEventDataStoreInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::get_event_data_store::builders::GetEventDataStoreInputBuilder {
         crate::operation::get_event_data_store::builders::GetEventDataStoreInputBuilder::default()
     }
 }
@@ -34,16 +35,20 @@ impl GetEventDataStoreInputBuilder {
     }
     /// <p>The ARN (or ID suffix of the ARN) of the event data store about which you want information.</p>
     pub fn set_event_data_store(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.event_data_store = input; self
+        self.event_data_store = input;
+        self
     }
     /// Consumes the builder and constructs a [`GetEventDataStoreInput`](crate::operation::get_event_data_store::GetEventDataStoreInput).
-    pub fn build(self) -> Result<crate::operation::get_event_data_store::GetEventDataStoreInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::get_event_data_store::GetEventDataStoreInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::get_event_data_store::GetEventDataStoreInput {
-                event_data_store: self.event_data_store
-                ,
-            }
+                event_data_store: self.event_data_store,
+            },
         )
     }
 }
-

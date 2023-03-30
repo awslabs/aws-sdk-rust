@@ -3,7 +3,7 @@
 /// <p>A routing control, which is a simple on/off switch that you can use to route traffic to cells. When a routing control state is On, traffic flows to a cell. When the state is Off, traffic does not flow. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct RoutingControl  {
+pub struct RoutingControl {
     /// <p>The Amazon Resource Name (ARN) of the control panel where the routing control is located.</p>
     #[doc(hidden)]
     pub control_panel_arn: std::option::Option<std::string::String>,
@@ -22,23 +22,23 @@ pub struct RoutingControl  {
 }
 impl RoutingControl {
     /// <p>The Amazon Resource Name (ARN) of the control panel where the routing control is located.</p>
-    pub fn control_panel_arn(&self) -> std::option::Option<& str> {
+    pub fn control_panel_arn(&self) -> std::option::Option<&str> {
         self.control_panel_arn.as_deref()
     }
     /// <p>The name of the control panel where the routing control is located.</p>
-    pub fn control_panel_name(&self) -> std::option::Option<& str> {
+    pub fn control_panel_name(&self) -> std::option::Option<&str> {
         self.control_panel_name.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the routing control.</p>
-    pub fn routing_control_arn(&self) -> std::option::Option<& str> {
+    pub fn routing_control_arn(&self) -> std::option::Option<&str> {
         self.routing_control_arn.as_deref()
     }
     /// <p>The name of the routing control.</p>
-    pub fn routing_control_name(&self) -> std::option::Option<& str> {
+    pub fn routing_control_name(&self) -> std::option::Option<&str> {
         self.routing_control_name.as_deref()
     }
     /// <p>The current state of the routing control. When a routing control state is On, traffic flows to a cell. When the state is Off, traffic does not flow. </p>
-    pub fn routing_control_state(&self) -> std::option::Option<& crate::types::RoutingControlState> {
+    pub fn routing_control_state(&self) -> std::option::Option<&crate::types::RoutingControlState> {
         self.routing_control_state.as_ref()
     }
 }
@@ -66,8 +66,12 @@ impl RoutingControlBuilder {
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the control panel where the routing control is located.</p>
-    pub fn set_control_panel_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.control_panel_arn = input; self
+    pub fn set_control_panel_arn(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.control_panel_arn = input;
+        self
     }
     /// <p>The name of the control panel where the routing control is located.</p>
     pub fn control_panel_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -75,8 +79,12 @@ impl RoutingControlBuilder {
         self
     }
     /// <p>The name of the control panel where the routing control is located.</p>
-    pub fn set_control_panel_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.control_panel_name = input; self
+    pub fn set_control_panel_name(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.control_panel_name = input;
+        self
     }
     /// <p>The Amazon Resource Name (ARN) of the routing control.</p>
     pub fn routing_control_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -84,8 +92,12 @@ impl RoutingControlBuilder {
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the routing control.</p>
-    pub fn set_routing_control_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.routing_control_arn = input; self
+    pub fn set_routing_control_arn(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.routing_control_arn = input;
+        self
     }
     /// <p>The name of the routing control.</p>
     pub fn routing_control_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -93,8 +105,12 @@ impl RoutingControlBuilder {
         self
     }
     /// <p>The name of the routing control.</p>
-    pub fn set_routing_control_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.routing_control_name = input; self
+    pub fn set_routing_control_name(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.routing_control_name = input;
+        self
     }
     /// <p>The current state of the routing control. When a routing control state is On, traffic flows to a cell. When the state is Off, traffic does not flow. </p>
     pub fn routing_control_state(mut self, input: crate::types::RoutingControlState) -> Self {
@@ -102,23 +118,21 @@ impl RoutingControlBuilder {
         self
     }
     /// <p>The current state of the routing control. When a routing control state is On, traffic flows to a cell. When the state is Off, traffic does not flow. </p>
-    pub fn set_routing_control_state(mut self, input: std::option::Option<crate::types::RoutingControlState>) -> Self {
-        self.routing_control_state = input; self
+    pub fn set_routing_control_state(
+        mut self,
+        input: std::option::Option<crate::types::RoutingControlState>,
+    ) -> Self {
+        self.routing_control_state = input;
+        self
     }
     /// Consumes the builder and constructs a [`RoutingControl`](crate::types::RoutingControl).
     pub fn build(self) -> crate::types::RoutingControl {
         crate::types::RoutingControl {
-            control_panel_arn: self.control_panel_arn
-            ,
-            control_panel_name: self.control_panel_name
-            ,
-            routing_control_arn: self.routing_control_arn
-            ,
-            routing_control_name: self.routing_control_name
-            ,
-            routing_control_state: self.routing_control_state
-            ,
+            control_panel_arn: self.control_panel_arn,
+            control_panel_name: self.control_panel_name,
+            routing_control_arn: self.routing_control_arn,
+            routing_control_name: self.routing_control_name,
+            routing_control_state: self.routing_control_state,
         }
     }
 }
-

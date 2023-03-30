@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListUnsupportedAppVersionResourcesInput  {
+pub struct ListUnsupportedAppVersionResourcesInput {
     /// <p>The Amazon Resource Name (ARN) of the application. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
     #[doc(hidden)]
     pub app_arn: std::option::Option<std::string::String>,
@@ -21,19 +21,19 @@ pub struct ListUnsupportedAppVersionResourcesInput  {
 }
 impl ListUnsupportedAppVersionResourcesInput {
     /// <p>The Amazon Resource Name (ARN) of the application. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
-    pub fn app_arn(&self) -> std::option::Option<& str> {
+    pub fn app_arn(&self) -> std::option::Option<&str> {
         self.app_arn.as_deref()
     }
     /// <p>The version of the application.</p>
-    pub fn app_version(&self) -> std::option::Option<& str> {
+    pub fn app_version(&self) -> std::option::Option<&str> {
         self.app_version.as_deref()
     }
     /// <p>The identifier for a specific resolution.</p>
-    pub fn resolution_id(&self) -> std::option::Option<& str> {
+    pub fn resolution_id(&self) -> std::option::Option<&str> {
         self.resolution_id.as_deref()
     }
     /// <p>Null, or the token from a previous call to get the next set of results.</p>
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
     /// <p>The maximum number of results to include in the response. If more results exist than the specified <code>MaxResults</code> value, a token is included in the response so that the remaining results can be retrieved.</p>
@@ -43,7 +43,7 @@ impl ListUnsupportedAppVersionResourcesInput {
 }
 impl ListUnsupportedAppVersionResourcesInput {
     /// Creates a new builder-style object to manufacture [`ListUnsupportedAppVersionResourcesInput`](crate::operation::list_unsupported_app_version_resources::ListUnsupportedAppVersionResourcesInput).
-    pub fn builder() -> crate::operation::list_unsupported_app_version_resources::builders::ListUnsupportedAppVersionResourcesInputBuilder {
+    pub fn builder() -> crate::operation::list_unsupported_app_version_resources::builders::ListUnsupportedAppVersionResourcesInputBuilder{
         crate::operation::list_unsupported_app_version_resources::builders::ListUnsupportedAppVersionResourcesInputBuilder::default()
     }
 }
@@ -66,7 +66,8 @@ impl ListUnsupportedAppVersionResourcesInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the application. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
     pub fn set_app_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.app_arn = input; self
+        self.app_arn = input;
+        self
     }
     /// <p>The version of the application.</p>
     pub fn app_version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -75,7 +76,8 @@ impl ListUnsupportedAppVersionResourcesInputBuilder {
     }
     /// <p>The version of the application.</p>
     pub fn set_app_version(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.app_version = input; self
+        self.app_version = input;
+        self
     }
     /// <p>The identifier for a specific resolution.</p>
     pub fn resolution_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -84,7 +86,8 @@ impl ListUnsupportedAppVersionResourcesInputBuilder {
     }
     /// <p>The identifier for a specific resolution.</p>
     pub fn set_resolution_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.resolution_id = input; self
+        self.resolution_id = input;
+        self
     }
     /// <p>Null, or the token from a previous call to get the next set of results.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -93,7 +96,8 @@ impl ListUnsupportedAppVersionResourcesInputBuilder {
     }
     /// <p>Null, or the token from a previous call to get the next set of results.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input; self
+        self.next_token = input;
+        self
     }
     /// <p>The maximum number of results to include in the response. If more results exist than the specified <code>MaxResults</code> value, a token is included in the response so that the remaining results can be retrieved.</p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -102,10 +106,11 @@ impl ListUnsupportedAppVersionResourcesInputBuilder {
     }
     /// <p>The maximum number of results to include in the response. If more results exist than the specified <code>MaxResults</code> value, a token is included in the response so that the remaining results can be retrieved.</p>
     pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_results = input; self
+        self.max_results = input;
+        self
     }
     /// Consumes the builder and constructs a [`ListUnsupportedAppVersionResourcesInput`](crate::operation::list_unsupported_app_version_resources::ListUnsupportedAppVersionResourcesInput).
-    pub fn build(self) -> Result<crate::operation::list_unsupported_app_version_resources::ListUnsupportedAppVersionResourcesInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> Result<crate::operation::list_unsupported_app_version_resources::ListUnsupportedAppVersionResourcesInput, aws_smithy_http::operation::error::BuildError>{
         Ok(
             crate::operation::list_unsupported_app_version_resources::ListUnsupportedAppVersionResourcesInput {
                 app_arn: self.app_arn
@@ -122,4 +127,3 @@ impl ListUnsupportedAppVersionResourcesInputBuilder {
         )
     }
 }
-

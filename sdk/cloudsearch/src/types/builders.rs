@@ -60,4 +60,3 @@ pub use crate::types::_analysis_scheme_status::AnalysisSchemeStatusBuilder;
 pub use crate::types::_analysis_scheme::AnalysisSchemeBuilder;
 
 pub use crate::types::_analysis_options::AnalysisOptionsBuilder;
-

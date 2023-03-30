@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteAppInput  {
+pub struct DeleteAppInput {
     /// <p>The ID of the application.</p>
     #[doc(hidden)]
     pub app_id: std::option::Option<std::string::String>,
@@ -15,7 +15,7 @@ pub struct DeleteAppInput  {
 }
 impl DeleteAppInput {
     /// <p>The ID of the application.</p>
-    pub fn app_id(&self) -> std::option::Option<& str> {
+    pub fn app_id(&self) -> std::option::Option<&str> {
         self.app_id.as_deref()
     }
     /// <p>Indicates whether to stop all replication jobs corresponding to the servers in the application while deleting the application.</p>
@@ -50,7 +50,8 @@ impl DeleteAppInputBuilder {
     }
     /// <p>The ID of the application.</p>
     pub fn set_app_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.app_id = input; self
+        self.app_id = input;
+        self
     }
     /// <p>Indicates whether to stop all replication jobs corresponding to the servers in the application while deleting the application.</p>
     pub fn force_stop_app_replication(mut self, input: bool) -> Self {
@@ -59,7 +60,8 @@ impl DeleteAppInputBuilder {
     }
     /// <p>Indicates whether to stop all replication jobs corresponding to the servers in the application while deleting the application.</p>
     pub fn set_force_stop_app_replication(mut self, input: std::option::Option<bool>) -> Self {
-        self.force_stop_app_replication = input; self
+        self.force_stop_app_replication = input;
+        self
     }
     /// <p>Indicates whether to terminate the stack corresponding to the application while deleting the application.</p>
     pub fn force_terminate_app(mut self, input: bool) -> Self {
@@ -68,20 +70,20 @@ impl DeleteAppInputBuilder {
     }
     /// <p>Indicates whether to terminate the stack corresponding to the application while deleting the application.</p>
     pub fn set_force_terminate_app(mut self, input: std::option::Option<bool>) -> Self {
-        self.force_terminate_app = input; self
+        self.force_terminate_app = input;
+        self
     }
     /// Consumes the builder and constructs a [`DeleteAppInput`](crate::operation::delete_app::DeleteAppInput).
-    pub fn build(self) -> Result<crate::operation::delete_app::DeleteAppInput, aws_smithy_http::operation::error::BuildError> {
-        Ok(
-            crate::operation::delete_app::DeleteAppInput {
-                app_id: self.app_id
-                ,
-                force_stop_app_replication: self.force_stop_app_replication
-                ,
-                force_terminate_app: self.force_terminate_app
-                ,
-            }
-        )
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::delete_app::DeleteAppInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        Ok(crate::operation::delete_app::DeleteAppInput {
+            app_id: self.app_id,
+            force_stop_app_replication: self.force_stop_app_replication,
+            force_terminate_app: self.force_terminate_app,
+        })
     }
 }
-

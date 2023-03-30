@@ -4,65 +4,77 @@ pub use crate::operation::describe_applicable_individual_assessments::_describe_
 pub use crate::operation::describe_applicable_individual_assessments::_describe_applicable_individual_assessments_input::DescribeApplicableIndividualAssessmentsInputBuilder;
 
 /// Fluent builder constructing a request to `DescribeApplicableIndividualAssessments`.
-/// 
-/// <p>Provides a list of individual assessments that you can specify for a new premigration assessment run, given one or more parameters.</p> 
-/// <p>If you specify an existing migration task, this operation provides the default individual assessments you can specify for that task. Otherwise, the specified parameters model elements of a possible migration task on which to base a premigration assessment run.</p> 
-/// <p>To use these migration task modeling parameters, you must specify an existing replication instance, a source database engine, a target database engine, and a migration type. This combination of parameters potentially limits the default individual assessments available for an assessment run created for a corresponding migration task.</p> 
+///
+/// <p>Provides a list of individual assessments that you can specify for a new premigration assessment run, given one or more parameters.</p>
+/// <p>If you specify an existing migration task, this operation provides the default individual assessments you can specify for that task. Otherwise, the specified parameters model elements of a possible migration task on which to base a premigration assessment run.</p>
+/// <p>To use these migration task modeling parameters, you must specify an existing replication instance, a source database engine, a target database engine, and a migration type. This combination of parameters potentially limits the default individual assessments available for an assessment run created for a corresponding migration task.</p>
 /// <p>If you specify no parameters, this operation provides a list of all possible individual assessments that you can specify for an assessment run. If you specify any one of the task modeling parameters, you must specify all of them or the operation cannot provide a list of individual assessments. The only parameter that you can specify alone is for an existing migration task. The specified task definition then determines the default list of individual assessments that you can specify in an assessment run for the task.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeApplicableIndividualAssessmentsFluentBuilder {
                 handle: std::sync::Arc<crate::client::Handle>,
                 inner: crate::operation::describe_applicable_individual_assessments::builders::DescribeApplicableIndividualAssessmentsInputBuilder
             }
-impl DescribeApplicableIndividualAssessmentsFluentBuilder  {
+impl DescribeApplicableIndividualAssessmentsFluentBuilder {
     /// Creates a new `DescribeApplicableIndividualAssessments`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
-                    /// sent. The operation's inner [http::Request] can be modified as well.
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle,
+            inner: Default::default(),
+        }
+    }
+
+    /// Consume this builder, creating a customizable operation that can be modified before being
+    /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::describe_applicable_individual_assessments::DescribeApplicableIndividualAssessments, aws_http::retry::AwsResponseRetryClassifier,>,
                         aws_smithy_http::result::SdkError<crate::operation::describe_applicable_individual_assessments::DescribeApplicableIndividualAssessmentsError>
-                    >  {
-                        let handle = self.handle.clone();
-                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-                    }
-    
-                    /// Sends the request and returns the response.
-                    ///
-                    /// If an error occurs, an `SdkError` will be returned with additional details that
-                    /// can be matched against.
-                    ///
-                    /// By default, any retryable failures will be retried twice. Retry behavior
-                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                    /// set when configuring the client.
+    >{
+        let handle = self.handle.clone();
+        let operation = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+    }
+
+    /// Sends the request and returns the response.
+    ///
+    /// If an error occurs, an `SdkError` will be returned with additional details that
+    /// can be matched against.
+    ///
+    /// By default, any retryable failures will be retried twice. Retry behavior
+    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+    /// set when configuring the client.
                     pub async fn send(self) -> std::result::Result<crate::operation::describe_applicable_individual_assessments::DescribeApplicableIndividualAssessmentsOutput, aws_smithy_http::result::SdkError<crate::operation::describe_applicable_individual_assessments::DescribeApplicableIndividualAssessmentsError>>
                      {
-                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&self.handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        self.handle.client.call(op).await
-                    }
+        let op = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&self.handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        self.handle.client.call(op).await
+    }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::describe_applicable_individual_assessments::paginator::DescribeApplicableIndividualAssessmentsPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::describe_applicable_individual_assessments::paginator::DescribeApplicableIndividualAssessmentsPaginator {
-                            crate::operation::describe_applicable_individual_assessments::paginator::DescribeApplicableIndividualAssessmentsPaginator::new(self.handle, self.inner)
-                        }
+    ///
+    /// Paginators are used by calling [`send().await`](crate::operation::describe_applicable_individual_assessments::paginator::DescribeApplicableIndividualAssessmentsPaginator::send) which returns a `Stream`.
+    pub fn into_paginator(self) -> crate::operation::describe_applicable_individual_assessments::paginator::DescribeApplicableIndividualAssessmentsPaginator{
+        crate::operation::describe_applicable_individual_assessments::paginator::DescribeApplicableIndividualAssessmentsPaginator::new(self.handle, self.inner)
+    }
     /// <p>Amazon Resource Name (ARN) of a migration task on which you want to base the default list of individual assessments.</p>
     pub fn replication_task_arn(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.replication_task_arn(input.into());
         self
     }
     /// <p>Amazon Resource Name (ARN) of a migration task on which you want to base the default list of individual assessments.</p>
-    pub fn set_replication_task_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_replication_task_arn(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_replication_task_arn(input);
         self
     }
@@ -72,7 +84,10 @@ impl DescribeApplicableIndividualAssessmentsFluentBuilder  {
         self
     }
     /// <p>ARN of a replication instance on which you want to base the default list of individual assessments.</p>
-    pub fn set_replication_instance_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_replication_instance_arn(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_replication_instance_arn(input);
         self
     }
@@ -82,7 +97,10 @@ impl DescribeApplicableIndividualAssessmentsFluentBuilder  {
         self
     }
     /// <p>Name of a database engine that the specified replication instance supports as a source.</p>
-    pub fn set_source_engine_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_source_engine_name(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_source_engine_name(input);
         self
     }
@@ -92,7 +110,10 @@ impl DescribeApplicableIndividualAssessmentsFluentBuilder  {
         self
     }
     /// <p>Name of a database engine that the specified replication instance supports as a target.</p>
-    pub fn set_target_engine_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_target_engine_name(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_target_engine_name(input);
         self
     }
@@ -102,7 +123,10 @@ impl DescribeApplicableIndividualAssessmentsFluentBuilder  {
         self
     }
     /// <p>Name of the migration type that each provided individual assessment must support.</p>
-    pub fn set_migration_type(mut self, input: std::option::Option<crate::types::MigrationTypeValue>) -> Self {
+    pub fn set_migration_type(
+        mut self,
+        input: std::option::Option<crate::types::MigrationTypeValue>,
+    ) -> Self {
         self.inner = self.inner.set_migration_type(input);
         self
     }
@@ -127,4 +151,3 @@ impl DescribeApplicableIndividualAssessmentsFluentBuilder  {
         self
     }
 }
-

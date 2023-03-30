@@ -3,22 +3,22 @@
 /// <p>StorageTypes represents the list of storage related types and their attributes that are available for given InstanceType. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct StorageType  {
+pub struct StorageType {
     /// <p> Type of the storage. List of available storage options: </p>
-    /// <ol> 
-    /// <li>instance</li> Inbuilt storage available for the given Instance 
-    /// <li>ebs</li> Elastic block storage that would be attached to the given Instance 
-    /// </ol> 
+    /// <ol>
+    /// <li>instance</li> Inbuilt storage available for the given Instance
+    /// <li>ebs</li> Elastic block storage that would be attached to the given Instance
+    /// </ol>
     /// <p></p>
     #[doc(hidden)]
     pub storage_type_name: std::option::Option<std::string::String>,
     /// <p> SubType of the given storage type. List of available sub-storage options: For "instance" storageType we wont have any storageSubType, in case of "ebs" storageType we will have following valid storageSubTypes </p>
-    /// <ol> 
-    /// <li>standard</li> 
-    /// <li>gp2</li> 
-    /// <li>gp3</li> 
-    /// <li>io1</li> 
-    /// </ol> Refer <code><code>VolumeType</code></code> for more information regarding above EBS storage options. 
+    /// <ol>
+    /// <li>standard</li>
+    /// <li>gp2</li>
+    /// <li>gp3</li>
+    /// <li>io1</li>
+    /// </ol> Refer <code><code>VolumeType</code></code> for more information regarding above EBS storage options.
     /// <p></p>
     #[doc(hidden)]
     pub storage_sub_type_name: std::option::Option<std::string::String>,
@@ -28,27 +28,27 @@ pub struct StorageType  {
 }
 impl StorageType {
     /// <p> Type of the storage. List of available storage options: </p>
-    /// <ol> 
-    /// <li>instance</li> Inbuilt storage available for the given Instance 
-    /// <li>ebs</li> Elastic block storage that would be attached to the given Instance 
-    /// </ol> 
+    /// <ol>
+    /// <li>instance</li> Inbuilt storage available for the given Instance
+    /// <li>ebs</li> Elastic block storage that would be attached to the given Instance
+    /// </ol>
     /// <p></p>
-    pub fn storage_type_name(&self) -> std::option::Option<& str> {
+    pub fn storage_type_name(&self) -> std::option::Option<&str> {
         self.storage_type_name.as_deref()
     }
     /// <p> SubType of the given storage type. List of available sub-storage options: For "instance" storageType we wont have any storageSubType, in case of "ebs" storageType we will have following valid storageSubTypes </p>
-    /// <ol> 
-    /// <li>standard</li> 
-    /// <li>gp2</li> 
-    /// <li>gp3</li> 
-    /// <li>io1</li> 
-    /// </ol> Refer <code><code>VolumeType</code></code> for more information regarding above EBS storage options. 
+    /// <ol>
+    /// <li>standard</li>
+    /// <li>gp2</li>
+    /// <li>gp3</li>
+    /// <li>io1</li>
+    /// </ol> Refer <code><code>VolumeType</code></code> for more information regarding above EBS storage options.
     /// <p></p>
-    pub fn storage_sub_type_name(&self) -> std::option::Option<& str> {
+    pub fn storage_sub_type_name(&self) -> std::option::Option<&str> {
         self.storage_sub_type_name.as_deref()
     }
     /// <p>List of limits that are applicable for given storage type. </p>
-    pub fn storage_type_limits(&self) -> std::option::Option<& [crate::types::StorageTypeLimit]> {
+    pub fn storage_type_limits(&self) -> std::option::Option<&[crate::types::StorageTypeLimit]> {
         self.storage_type_limits.as_deref()
     }
 }
@@ -65,50 +65,59 @@ impl StorageType {
 pub struct StorageTypeBuilder {
     pub(crate) storage_type_name: std::option::Option<std::string::String>,
     pub(crate) storage_sub_type_name: std::option::Option<std::string::String>,
-    pub(crate) storage_type_limits: std::option::Option<std::vec::Vec<crate::types::StorageTypeLimit>>,
+    pub(crate) storage_type_limits:
+        std::option::Option<std::vec::Vec<crate::types::StorageTypeLimit>>,
 }
 impl StorageTypeBuilder {
     /// <p> Type of the storage. List of available storage options: </p>
-    /// <ol> 
-    /// <li>instance</li> Inbuilt storage available for the given Instance 
-    /// <li>ebs</li> Elastic block storage that would be attached to the given Instance 
-    /// </ol> 
+    /// <ol>
+    /// <li>instance</li> Inbuilt storage available for the given Instance
+    /// <li>ebs</li> Elastic block storage that would be attached to the given Instance
+    /// </ol>
     /// <p></p>
     pub fn storage_type_name(mut self, input: impl Into<std::string::String>) -> Self {
         self.storage_type_name = Some(input.into());
         self
     }
     /// <p> Type of the storage. List of available storage options: </p>
-    /// <ol> 
-    /// <li>instance</li> Inbuilt storage available for the given Instance 
-    /// <li>ebs</li> Elastic block storage that would be attached to the given Instance 
-    /// </ol> 
+    /// <ol>
+    /// <li>instance</li> Inbuilt storage available for the given Instance
+    /// <li>ebs</li> Elastic block storage that would be attached to the given Instance
+    /// </ol>
     /// <p></p>
-    pub fn set_storage_type_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.storage_type_name = input; self
+    pub fn set_storage_type_name(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.storage_type_name = input;
+        self
     }
     /// <p> SubType of the given storage type. List of available sub-storage options: For "instance" storageType we wont have any storageSubType, in case of "ebs" storageType we will have following valid storageSubTypes </p>
-    /// <ol> 
-    /// <li>standard</li> 
-    /// <li>gp2</li> 
-    /// <li>gp3</li> 
-    /// <li>io1</li> 
-    /// </ol> Refer <code><code>VolumeType</code></code> for more information regarding above EBS storage options. 
+    /// <ol>
+    /// <li>standard</li>
+    /// <li>gp2</li>
+    /// <li>gp3</li>
+    /// <li>io1</li>
+    /// </ol> Refer <code><code>VolumeType</code></code> for more information regarding above EBS storage options.
     /// <p></p>
     pub fn storage_sub_type_name(mut self, input: impl Into<std::string::String>) -> Self {
         self.storage_sub_type_name = Some(input.into());
         self
     }
     /// <p> SubType of the given storage type. List of available sub-storage options: For "instance" storageType we wont have any storageSubType, in case of "ebs" storageType we will have following valid storageSubTypes </p>
-    /// <ol> 
-    /// <li>standard</li> 
-    /// <li>gp2</li> 
-    /// <li>gp3</li> 
-    /// <li>io1</li> 
-    /// </ol> Refer <code><code>VolumeType</code></code> for more information regarding above EBS storage options. 
+    /// <ol>
+    /// <li>standard</li>
+    /// <li>gp2</li>
+    /// <li>gp3</li>
+    /// <li>io1</li>
+    /// </ol> Refer <code><code>VolumeType</code></code> for more information regarding above EBS storage options.
     /// <p></p>
-    pub fn set_storage_sub_type_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.storage_sub_type_name = input; self
+    pub fn set_storage_sub_type_name(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.storage_sub_type_name = input;
+        self
     }
     /// Appends an item to `storage_type_limits`.
     ///
@@ -117,24 +126,24 @@ impl StorageTypeBuilder {
     /// <p>List of limits that are applicable for given storage type. </p>
     pub fn storage_type_limits(mut self, input: crate::types::StorageTypeLimit) -> Self {
         let mut v = self.storage_type_limits.unwrap_or_default();
-                        v.push(input);
-                        self.storage_type_limits = Some(v);
-                        self
+        v.push(input);
+        self.storage_type_limits = Some(v);
+        self
     }
     /// <p>List of limits that are applicable for given storage type. </p>
-    pub fn set_storage_type_limits(mut self, input: std::option::Option<std::vec::Vec<crate::types::StorageTypeLimit>>) -> Self {
-        self.storage_type_limits = input; self
+    pub fn set_storage_type_limits(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::StorageTypeLimit>>,
+    ) -> Self {
+        self.storage_type_limits = input;
+        self
     }
     /// Consumes the builder and constructs a [`StorageType`](crate::types::StorageType).
     pub fn build(self) -> crate::types::StorageType {
         crate::types::StorageType {
-            storage_type_name: self.storage_type_name
-            ,
-            storage_sub_type_name: self.storage_sub_type_name
-            ,
-            storage_type_limits: self.storage_type_limits
-            ,
+            storage_type_name: self.storage_type_name,
+            storage_sub_type_name: self.storage_sub_type_name,
+            storage_type_limits: self.storage_type_limits,
         }
     }
 }
-

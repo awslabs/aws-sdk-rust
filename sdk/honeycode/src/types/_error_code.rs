@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-/// 
+///
 /// Here is an example of how you can make a match expression forward-compatible:
-/// 
+///
 /// ```text
 /// # let errorcode = unimplemented!();
 /// match errorcode {
@@ -42,14 +42,22 @@
 /// Specifically, when `errorcode` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `ErrorCode::NewFeature` also yielding `"NewFeature"`.
-/// 
+///
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
 pub enum ErrorCode {
     #[allow(missing_docs)] // documentation missing in model
     AccessDenied,
@@ -80,65 +88,79 @@ pub enum ErrorCode {
     #[allow(missing_docs)] // documentation missing in model
     UnknownError,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::primitives::UnknownVariantValue)
+    Unknown(crate::primitives::UnknownVariantValue),
 }
 impl std::convert::From<&str> for ErrorCode {
-                fn from(s: &str) -> Self {
-                    match s {
-                        "ACCESS_DENIED" => ErrorCode::AccessDenied,
-"FILE_EMPTY_ERROR" => ErrorCode::FileEmptyError,
-"FILE_NOT_FOUND_ERROR" => ErrorCode::FileNotFoundError,
-"FILE_PARSING_ERROR" => ErrorCode::FileParsingError,
-"FILE_SIZE_LIMIT_ERROR" => ErrorCode::FileSizeLimitError,
-"INVALID_FILE_TYPE_ERROR" => ErrorCode::InvalidFileTypeError,
-"INVALID_IMPORT_OPTIONS_ERROR" => ErrorCode::InvalidImportOptionsError,
-"INVALID_TABLE_COLUMN_ID_ERROR" => ErrorCode::InvalidTableColumnIdError,
-"INVALID_TABLE_ID_ERROR" => ErrorCode::InvalidTableIdError,
-"INVALID_URL_ERROR" => ErrorCode::InvalidUrlError,
-"RESOURCE_NOT_FOUND_ERROR" => ErrorCode::ResourceNotFoundError,
-"SYSTEM_LIMIT_ERROR" => ErrorCode::SystemLimitError,
-"TABLE_NOT_FOUND_ERROR" => ErrorCode::TableNotFoundError,
-"UNKNOWN_ERROR" => ErrorCode::UnknownError,
-other => ErrorCode::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
-                    }
-                }
-            }
-impl std::str::FromStr for ErrorCode {
-                type Err = std::convert::Infallible;
-
-                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-                    Ok(ErrorCode::from(s))
-                }
-            }
-impl ErrorCode {
-                /// Returns the `&str` value of the enum member.
-                pub fn as_str(&self) -> &str {
-                    match self {
-    ErrorCode::AccessDenied => "ACCESS_DENIED",
-    ErrorCode::FileEmptyError => "FILE_EMPTY_ERROR",
-    ErrorCode::FileNotFoundError => "FILE_NOT_FOUND_ERROR",
-    ErrorCode::FileParsingError => "FILE_PARSING_ERROR",
-    ErrorCode::FileSizeLimitError => "FILE_SIZE_LIMIT_ERROR",
-    ErrorCode::InvalidFileTypeError => "INVALID_FILE_TYPE_ERROR",
-    ErrorCode::InvalidImportOptionsError => "INVALID_IMPORT_OPTIONS_ERROR",
-    ErrorCode::InvalidTableColumnIdError => "INVALID_TABLE_COLUMN_ID_ERROR",
-    ErrorCode::InvalidTableIdError => "INVALID_TABLE_ID_ERROR",
-    ErrorCode::InvalidUrlError => "INVALID_URL_ERROR",
-    ErrorCode::ResourceNotFoundError => "RESOURCE_NOT_FOUND_ERROR",
-    ErrorCode::SystemLimitError => "SYSTEM_LIMIT_ERROR",
-    ErrorCode::TableNotFoundError => "TABLE_NOT_FOUND_ERROR",
-    ErrorCode::UnknownError => "UNKNOWN_ERROR",
-    ErrorCode::Unknown(value) => value.as_str()
+    fn from(s: &str) -> Self {
+        match s {
+            "ACCESS_DENIED" => ErrorCode::AccessDenied,
+            "FILE_EMPTY_ERROR" => ErrorCode::FileEmptyError,
+            "FILE_NOT_FOUND_ERROR" => ErrorCode::FileNotFoundError,
+            "FILE_PARSING_ERROR" => ErrorCode::FileParsingError,
+            "FILE_SIZE_LIMIT_ERROR" => ErrorCode::FileSizeLimitError,
+            "INVALID_FILE_TYPE_ERROR" => ErrorCode::InvalidFileTypeError,
+            "INVALID_IMPORT_OPTIONS_ERROR" => ErrorCode::InvalidImportOptionsError,
+            "INVALID_TABLE_COLUMN_ID_ERROR" => ErrorCode::InvalidTableColumnIdError,
+            "INVALID_TABLE_ID_ERROR" => ErrorCode::InvalidTableIdError,
+            "INVALID_URL_ERROR" => ErrorCode::InvalidUrlError,
+            "RESOURCE_NOT_FOUND_ERROR" => ErrorCode::ResourceNotFoundError,
+            "SYSTEM_LIMIT_ERROR" => ErrorCode::SystemLimitError,
+            "TABLE_NOT_FOUND_ERROR" => ErrorCode::TableNotFoundError,
+            "UNKNOWN_ERROR" => ErrorCode::UnknownError,
+            other => ErrorCode::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
+        }
+    }
 }
-                }
-                /// Returns all the `&str` representations of the enum members.
-                pub const fn values() -> &'static [&'static str] {
-                    &["ACCESS_DENIED", "FILE_EMPTY_ERROR", "FILE_NOT_FOUND_ERROR", "FILE_PARSING_ERROR", "FILE_SIZE_LIMIT_ERROR", "INVALID_FILE_TYPE_ERROR", "INVALID_IMPORT_OPTIONS_ERROR", "INVALID_TABLE_COLUMN_ID_ERROR", "INVALID_TABLE_ID_ERROR", "INVALID_URL_ERROR", "RESOURCE_NOT_FOUND_ERROR", "SYSTEM_LIMIT_ERROR", "TABLE_NOT_FOUND_ERROR", "UNKNOWN_ERROR"]
-                }
-            }
-impl AsRef<str> for ErrorCode {
-                fn as_ref(&self) -> &str {
-                    self.as_str()
-                }
-            }
+impl std::str::FromStr for ErrorCode {
+    type Err = std::convert::Infallible;
 
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(ErrorCode::from(s))
+    }
+}
+impl ErrorCode {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            ErrorCode::AccessDenied => "ACCESS_DENIED",
+            ErrorCode::FileEmptyError => "FILE_EMPTY_ERROR",
+            ErrorCode::FileNotFoundError => "FILE_NOT_FOUND_ERROR",
+            ErrorCode::FileParsingError => "FILE_PARSING_ERROR",
+            ErrorCode::FileSizeLimitError => "FILE_SIZE_LIMIT_ERROR",
+            ErrorCode::InvalidFileTypeError => "INVALID_FILE_TYPE_ERROR",
+            ErrorCode::InvalidImportOptionsError => "INVALID_IMPORT_OPTIONS_ERROR",
+            ErrorCode::InvalidTableColumnIdError => "INVALID_TABLE_COLUMN_ID_ERROR",
+            ErrorCode::InvalidTableIdError => "INVALID_TABLE_ID_ERROR",
+            ErrorCode::InvalidUrlError => "INVALID_URL_ERROR",
+            ErrorCode::ResourceNotFoundError => "RESOURCE_NOT_FOUND_ERROR",
+            ErrorCode::SystemLimitError => "SYSTEM_LIMIT_ERROR",
+            ErrorCode::TableNotFoundError => "TABLE_NOT_FOUND_ERROR",
+            ErrorCode::UnknownError => "UNKNOWN_ERROR",
+            ErrorCode::Unknown(value) => value.as_str(),
+        }
+    }
+    /// Returns all the `&str` representations of the enum members.
+    pub const fn values() -> &'static [&'static str] {
+        &[
+            "ACCESS_DENIED",
+            "FILE_EMPTY_ERROR",
+            "FILE_NOT_FOUND_ERROR",
+            "FILE_PARSING_ERROR",
+            "FILE_SIZE_LIMIT_ERROR",
+            "INVALID_FILE_TYPE_ERROR",
+            "INVALID_IMPORT_OPTIONS_ERROR",
+            "INVALID_TABLE_COLUMN_ID_ERROR",
+            "INVALID_TABLE_ID_ERROR",
+            "INVALID_URL_ERROR",
+            "RESOURCE_NOT_FOUND_ERROR",
+            "SYSTEM_LIMIT_ERROR",
+            "TABLE_NOT_FOUND_ERROR",
+            "UNKNOWN_ERROR",
+        ]
+    }
+}
+impl AsRef<str> for ErrorCode {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}

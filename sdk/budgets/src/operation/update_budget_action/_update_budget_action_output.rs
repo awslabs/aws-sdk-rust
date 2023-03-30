@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateBudgetActionOutput  {
+pub struct UpdateBudgetActionOutput {
     /// <p>The account ID of the user. It's a 12-digit number.</p>
     #[doc(hidden)]
     pub account_id: std::option::Option<std::string::String>,
@@ -19,30 +19,31 @@ pub struct UpdateBudgetActionOutput  {
 }
 impl UpdateBudgetActionOutput {
     /// <p>The account ID of the user. It's a 12-digit number.</p>
-    pub fn account_id(&self) -> std::option::Option<& str> {
+    pub fn account_id(&self) -> std::option::Option<&str> {
         self.account_id.as_deref()
     }
     /// <p> A string that represents the budget name. The ":" and "\" characters aren't allowed.</p>
-    pub fn budget_name(&self) -> std::option::Option<& str> {
+    pub fn budget_name(&self) -> std::option::Option<&str> {
         self.budget_name.as_deref()
     }
     /// <p> The previous action resource information. </p>
-    pub fn old_action(&self) -> std::option::Option<& crate::types::Action> {
+    pub fn old_action(&self) -> std::option::Option<&crate::types::Action> {
         self.old_action.as_ref()
     }
     /// <p> The updated action resource information. </p>
-    pub fn new_action(&self) -> std::option::Option<& crate::types::Action> {
+    pub fn new_action(&self) -> std::option::Option<&crate::types::Action> {
         self.new_action.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for UpdateBudgetActionOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl UpdateBudgetActionOutput {
     /// Creates a new builder-style object to manufacture [`UpdateBudgetActionOutput`](crate::operation::update_budget_action::UpdateBudgetActionOutput).
-    pub fn builder() -> crate::operation::update_budget_action::builders::UpdateBudgetActionOutputBuilder {
+    pub fn builder(
+    ) -> crate::operation::update_budget_action::builders::UpdateBudgetActionOutputBuilder {
         crate::operation::update_budget_action::builders::UpdateBudgetActionOutputBuilder::default()
     }
 }
@@ -65,7 +66,8 @@ impl UpdateBudgetActionOutputBuilder {
     }
     /// <p>The account ID of the user. It's a 12-digit number.</p>
     pub fn set_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.account_id = input; self
+        self.account_id = input;
+        self
     }
     /// <p> A string that represents the budget name. The ":" and "\" characters aren't allowed.</p>
     pub fn budget_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -74,7 +76,8 @@ impl UpdateBudgetActionOutputBuilder {
     }
     /// <p> A string that represents the budget name. The ":" and "\" characters aren't allowed.</p>
     pub fn set_budget_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.budget_name = input; self
+        self.budget_name = input;
+        self
     }
     /// <p> The previous action resource information. </p>
     pub fn old_action(mut self, input: crate::types::Action) -> Self {
@@ -83,7 +86,8 @@ impl UpdateBudgetActionOutputBuilder {
     }
     /// <p> The previous action resource information. </p>
     pub fn set_old_action(mut self, input: std::option::Option<crate::types::Action>) -> Self {
-        self.old_action = input; self
+        self.old_action = input;
+        self
     }
     /// <p> The updated action resource information. </p>
     pub fn new_action(mut self, input: crate::types::Action) -> Self {
@@ -92,30 +96,26 @@ impl UpdateBudgetActionOutputBuilder {
     }
     /// <p> The updated action resource information. </p>
     pub fn set_new_action(mut self, input: std::option::Option<crate::types::Action>) -> Self {
-        self.new_action = input; self
+        self.new_action = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`UpdateBudgetActionOutput`](crate::operation::update_budget_action::UpdateBudgetActionOutput).
     pub fn build(self) -> crate::operation::update_budget_action::UpdateBudgetActionOutput {
         crate::operation::update_budget_action::UpdateBudgetActionOutput {
-            account_id: self.account_id
-            ,
-            budget_name: self.budget_name
-            ,
-            old_action: self.old_action
-            ,
-            new_action: self.new_action
-            ,
+            account_id: self.account_id,
+            budget_name: self.budget_name,
+            old_action: self.old_action,
+            new_action: self.new_action,
             _request_id: self._request_id,
         }
     }
 }
-

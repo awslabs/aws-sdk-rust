@@ -4,50 +4,72 @@ pub use crate::operation::create_authorizer::_create_authorizer_output::CreateAu
 pub use crate::operation::create_authorizer::_create_authorizer_input::CreateAuthorizerInputBuilder;
 
 /// Fluent builder constructing a request to `CreateAuthorizer`.
-/// 
-/// <p>Creates an authorizer.</p> 
+///
+/// <p>Creates an authorizer.</p>
 /// <p>Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">CreateAuthorizer</a> action.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct CreateAuthorizerFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::create_authorizer::builders::CreateAuthorizerInputBuilder
-            }
-impl CreateAuthorizerFluentBuilder  {
+    handle: std::sync::Arc<crate::client::Handle>,
+    inner: crate::operation::create_authorizer::builders::CreateAuthorizerInputBuilder,
+}
+impl CreateAuthorizerFluentBuilder {
     /// Creates a new `CreateAuthorizer`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
-                    /// sent. The operation's inner [http::Request] can be modified as well.
-                    pub async fn customize(self) -> std::result::Result<
-                        crate::client::customize::CustomizableOperation<crate::operation::create_authorizer::CreateAuthorizer, aws_http::retry::AwsResponseRetryClassifier,>,
-                        aws_smithy_http::result::SdkError<crate::operation::create_authorizer::CreateAuthorizerError>
-                    >  {
-                        let handle = self.handle.clone();
-                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-                    }
-    
-                    /// Sends the request and returns the response.
-                    ///
-                    /// If an error occurs, an `SdkError` will be returned with additional details that
-                    /// can be matched against.
-                    ///
-                    /// By default, any retryable failures will be retried twice. Retry behavior
-                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                    /// set when configuring the client.
-                    pub async fn send(self) -> std::result::Result<crate::operation::create_authorizer::CreateAuthorizerOutput, aws_smithy_http::result::SdkError<crate::operation::create_authorizer::CreateAuthorizerError>>
-                     {
-                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&self.handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        self.handle.client.call(op).await
-                    }
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle,
+            inner: Default::default(),
+        }
+    }
+
+    /// Consume this builder, creating a customizable operation that can be modified before being
+    /// sent. The operation's inner [http::Request] can be modified as well.
+    pub async fn customize(
+        self,
+    ) -> std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::create_authorizer::CreateAuthorizer,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::result::SdkError<
+            crate::operation::create_authorizer::CreateAuthorizerError,
+        >,
+    > {
+        let handle = self.handle.clone();
+        let operation = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+    }
+
+    /// Sends the request and returns the response.
+    ///
+    /// If an error occurs, an `SdkError` will be returned with additional details that
+    /// can be matched against.
+    ///
+    /// By default, any retryable failures will be retried twice. Retry behavior
+    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+    /// set when configuring the client.
+    pub async fn send(
+        self,
+    ) -> std::result::Result<
+        crate::operation::create_authorizer::CreateAuthorizerOutput,
+        aws_smithy_http::result::SdkError<
+            crate::operation::create_authorizer::CreateAuthorizerError,
+        >,
+    > {
+        let op = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&self.handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        self.handle.client.call(op).await
+    }
     /// <p>The authorizer name.</p>
     pub fn authorizer_name(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.authorizer_name(input.into());
@@ -64,7 +86,10 @@ impl CreateAuthorizerFluentBuilder  {
         self
     }
     /// <p>The ARN of the authorizer's Lambda function.</p>
-    pub fn set_authorizer_function_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_authorizer_function_arn(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_authorizer_function_arn(input);
         self
     }
@@ -83,12 +108,21 @@ impl CreateAuthorizerFluentBuilder  {
     /// To override the contents of this collection use [`set_token_signing_public_keys`](Self::set_token_signing_public_keys).
     ///
     /// <p>The public keys used to verify the digital signature returned by your custom authentication service.</p>
-    pub fn token_signing_public_keys(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
+    pub fn token_signing_public_keys(
+        mut self,
+        k: impl Into<std::string::String>,
+        v: impl Into<std::string::String>,
+    ) -> Self {
         self.inner = self.inner.token_signing_public_keys(k.into(), v.into());
         self
     }
     /// <p>The public keys used to verify the digital signature returned by your custom authentication service.</p>
-    pub fn set_token_signing_public_keys(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+    pub fn set_token_signing_public_keys(
+        mut self,
+        input: std::option::Option<
+            std::collections::HashMap<std::string::String, std::string::String>,
+        >,
+    ) -> Self {
         self.inner = self.inner.set_token_signing_public_keys(input);
         self
     }
@@ -98,7 +132,10 @@ impl CreateAuthorizerFluentBuilder  {
         self
     }
     /// <p>The status of the create authorizer request.</p>
-    pub fn set_status(mut self, input: std::option::Option<crate::types::AuthorizerStatus>) -> Self {
+    pub fn set_status(
+        mut self,
+        input: std::option::Option<crate::types::AuthorizerStatus>,
+    ) -> Self {
         self.inner = self.inner.set_status(input);
         self
     }
@@ -106,21 +143,24 @@ impl CreateAuthorizerFluentBuilder  {
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
-    /// <p>Metadata which can be used to manage the custom authorizer.</p> <note> 
-    /// <p>For URI Request parameters use format: ...key1=value1&amp;key2=value2...</p> 
-    /// <p>For the CLI command-line parameter use format: &amp;&amp;tags "key1=value1&amp;key2=value2..."</p> 
-    /// <p>For the cli-input-json file use format: "tags": "key1=value1&amp;key2=value2..."</p> 
+    /// <p>Metadata which can be used to manage the custom authorizer.</p> <note>
+    /// <p>For URI Request parameters use format: ...key1=value1&amp;key2=value2...</p>
+    /// <p>For the CLI command-line parameter use format: &amp;&amp;tags "key1=value1&amp;key2=value2..."</p>
+    /// <p>For the cli-input-json file use format: "tags": "key1=value1&amp;key2=value2..."</p>
     /// </note>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         self.inner = self.inner.tags(input);
         self
     }
-    /// <p>Metadata which can be used to manage the custom authorizer.</p> <note> 
-    /// <p>For URI Request parameters use format: ...key1=value1&amp;key2=value2...</p> 
-    /// <p>For the CLI command-line parameter use format: &amp;&amp;tags "key1=value1&amp;key2=value2..."</p> 
-    /// <p>For the cli-input-json file use format: "tags": "key1=value1&amp;key2=value2..."</p> 
+    /// <p>Metadata which can be used to manage the custom authorizer.</p> <note>
+    /// <p>For URI Request parameters use format: ...key1=value1&amp;key2=value2...</p>
+    /// <p>For the CLI command-line parameter use format: &amp;&amp;tags "key1=value1&amp;key2=value2..."</p>
+    /// <p>For the cli-input-json file use format: "tags": "key1=value1&amp;key2=value2..."</p>
     /// </note>
-    pub fn set_tags(mut self, input: std::option::Option<std::vec::Vec<crate::types::Tag>>) -> Self {
+    pub fn set_tags(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::Tag>>,
+    ) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }
@@ -134,17 +174,16 @@ impl CreateAuthorizerFluentBuilder  {
         self.inner = self.inner.set_signing_disabled(input);
         self
     }
-    /// <p>When <code>true</code>, the result from the authorizer’s Lambda function is cached for clients that use persistent HTTP connections. The results are cached for the time specified by the Lambda function in <code>refreshAfterInSeconds</code>. This value does not affect authorization of clients that use MQTT connections.</p> 
+    /// <p>When <code>true</code>, the result from the authorizer’s Lambda function is cached for clients that use persistent HTTP connections. The results are cached for the time specified by the Lambda function in <code>refreshAfterInSeconds</code>. This value does not affect authorization of clients that use MQTT connections.</p>
     /// <p>The default value is <code>false</code>.</p>
     pub fn enable_caching_for_http(mut self, input: bool) -> Self {
         self.inner = self.inner.enable_caching_for_http(input);
         self
     }
-    /// <p>When <code>true</code>, the result from the authorizer’s Lambda function is cached for clients that use persistent HTTP connections. The results are cached for the time specified by the Lambda function in <code>refreshAfterInSeconds</code>. This value does not affect authorization of clients that use MQTT connections.</p> 
+    /// <p>When <code>true</code>, the result from the authorizer’s Lambda function is cached for clients that use persistent HTTP connections. The results are cached for the time specified by the Lambda function in <code>refreshAfterInSeconds</code>. This value does not affect authorization of clients that use MQTT connections.</p>
     /// <p>The default value is <code>false</code>.</p>
     pub fn set_enable_caching_for_http(mut self, input: std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_enable_caching_for_http(input);
         self
     }
 }
-

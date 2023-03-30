@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetStageDeploymentOutput  {
+pub struct GetStageDeploymentOutput {
     /// <p>Properties that provide details of the stage deployment.</p>
     #[doc(hidden)]
     pub stage_deployment: std::option::Option<crate::types::StageDeploymentDetails>,
@@ -10,18 +10,19 @@ pub struct GetStageDeploymentOutput  {
 }
 impl GetStageDeploymentOutput {
     /// <p>Properties that provide details of the stage deployment.</p>
-    pub fn stage_deployment(&self) -> std::option::Option<& crate::types::StageDeploymentDetails> {
+    pub fn stage_deployment(&self) -> std::option::Option<&crate::types::StageDeploymentDetails> {
         self.stage_deployment.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for GetStageDeploymentOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl GetStageDeploymentOutput {
     /// Creates a new builder-style object to manufacture [`GetStageDeploymentOutput`](crate::operation::get_stage_deployment::GetStageDeploymentOutput).
-    pub fn builder() -> crate::operation::get_stage_deployment::builders::GetStageDeploymentOutputBuilder {
+    pub fn builder(
+    ) -> crate::operation::get_stage_deployment::builders::GetStageDeploymentOutputBuilder {
         crate::operation::get_stage_deployment::builders::GetStageDeploymentOutputBuilder::default()
     }
 }
@@ -40,25 +41,27 @@ impl GetStageDeploymentOutputBuilder {
         self
     }
     /// <p>Properties that provide details of the stage deployment.</p>
-    pub fn set_stage_deployment(mut self, input: std::option::Option<crate::types::StageDeploymentDetails>) -> Self {
-        self.stage_deployment = input; self
+    pub fn set_stage_deployment(
+        mut self,
+        input: std::option::Option<crate::types::StageDeploymentDetails>,
+    ) -> Self {
+        self.stage_deployment = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`GetStageDeploymentOutput`](crate::operation::get_stage_deployment::GetStageDeploymentOutput).
     pub fn build(self) -> crate::operation::get_stage_deployment::GetStageDeploymentOutput {
         crate::operation::get_stage_deployment::GetStageDeploymentOutput {
-            stage_deployment: self.stage_deployment
-            ,
+            stage_deployment: self.stage_deployment,
             _request_id: self._request_id,
         }
     }
 }
-

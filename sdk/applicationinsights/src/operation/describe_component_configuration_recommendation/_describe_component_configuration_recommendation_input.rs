@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeComponentConfigurationRecommendationInput  {
+pub struct DescribeComponentConfigurationRecommendationInput {
     /// <p>The name of the resource group.</p>
     #[doc(hidden)]
     pub resource_group_name: std::option::Option<std::string::String>,
@@ -15,21 +15,21 @@ pub struct DescribeComponentConfigurationRecommendationInput  {
 }
 impl DescribeComponentConfigurationRecommendationInput {
     /// <p>The name of the resource group.</p>
-    pub fn resource_group_name(&self) -> std::option::Option<& str> {
+    pub fn resource_group_name(&self) -> std::option::Option<&str> {
         self.resource_group_name.as_deref()
     }
     /// <p>The name of the component.</p>
-    pub fn component_name(&self) -> std::option::Option<& str> {
+    pub fn component_name(&self) -> std::option::Option<&str> {
         self.component_name.as_deref()
     }
     /// <p>The tier of the application component.</p>
-    pub fn tier(&self) -> std::option::Option<& crate::types::Tier> {
+    pub fn tier(&self) -> std::option::Option<&crate::types::Tier> {
         self.tier.as_ref()
     }
 }
 impl DescribeComponentConfigurationRecommendationInput {
     /// Creates a new builder-style object to manufacture [`DescribeComponentConfigurationRecommendationInput`](crate::operation::describe_component_configuration_recommendation::DescribeComponentConfigurationRecommendationInput).
-    pub fn builder() -> crate::operation::describe_component_configuration_recommendation::builders::DescribeComponentConfigurationRecommendationInputBuilder {
+    pub fn builder() -> crate::operation::describe_component_configuration_recommendation::builders::DescribeComponentConfigurationRecommendationInputBuilder{
         crate::operation::describe_component_configuration_recommendation::builders::DescribeComponentConfigurationRecommendationInputBuilder::default()
     }
 }
@@ -49,8 +49,12 @@ impl DescribeComponentConfigurationRecommendationInputBuilder {
         self
     }
     /// <p>The name of the resource group.</p>
-    pub fn set_resource_group_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.resource_group_name = input; self
+    pub fn set_resource_group_name(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.resource_group_name = input;
+        self
     }
     /// <p>The name of the component.</p>
     pub fn component_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -59,7 +63,8 @@ impl DescribeComponentConfigurationRecommendationInputBuilder {
     }
     /// <p>The name of the component.</p>
     pub fn set_component_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.component_name = input; self
+        self.component_name = input;
+        self
     }
     /// <p>The tier of the application component.</p>
     pub fn tier(mut self, input: crate::types::Tier) -> Self {
@@ -68,10 +73,11 @@ impl DescribeComponentConfigurationRecommendationInputBuilder {
     }
     /// <p>The tier of the application component.</p>
     pub fn set_tier(mut self, input: std::option::Option<crate::types::Tier>) -> Self {
-        self.tier = input; self
+        self.tier = input;
+        self
     }
     /// Consumes the builder and constructs a [`DescribeComponentConfigurationRecommendationInput`](crate::operation::describe_component_configuration_recommendation::DescribeComponentConfigurationRecommendationInput).
-    pub fn build(self) -> Result<crate::operation::describe_component_configuration_recommendation::DescribeComponentConfigurationRecommendationInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> Result<crate::operation::describe_component_configuration_recommendation::DescribeComponentConfigurationRecommendationInput, aws_smithy_http::operation::error::BuildError>{
         Ok(
             crate::operation::describe_component_configuration_recommendation::DescribeComponentConfigurationRecommendationInput {
                 resource_group_name: self.resource_group_name
@@ -84,4 +90,3 @@ impl DescribeComponentConfigurationRecommendationInputBuilder {
         )
     }
 }
-

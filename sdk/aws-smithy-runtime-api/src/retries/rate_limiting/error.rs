@@ -3,6 +3,8 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
+//! Errors related to rate limiting
+
 use std::fmt;
 
 /// Errors related to a token bucket.
@@ -12,12 +14,14 @@ pub struct RateLimitingError {
 }
 
 impl RateLimitingError {
+    /// An error that occurs when no tokens are left in the bucket.
     pub fn no_tokens() -> Self {
         Self {
             kind: ErrorKind::NoTokens,
         }
     }
 
+    /// An error that occurs due to a bug in the code. Please report bugs you encounter.
     pub fn bug(s: impl ToString) -> Self {
         Self {
             kind: ErrorKind::Bug(s.to_string()),

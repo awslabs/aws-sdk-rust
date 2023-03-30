@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateStackOutput  {
+pub struct CreateStackOutput {
     /// <p>Information about the stack.</p>
     #[doc(hidden)]
     pub stack: std::option::Option<crate::types::Stack>,
@@ -10,15 +10,15 @@ pub struct CreateStackOutput  {
 }
 impl CreateStackOutput {
     /// <p>Information about the stack.</p>
-    pub fn stack(&self) -> std::option::Option<& crate::types::Stack> {
+    pub fn stack(&self) -> std::option::Option<&crate::types::Stack> {
         self.stack.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for CreateStackOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl CreateStackOutput {
     /// Creates a new builder-style object to manufacture [`CreateStackOutput`](crate::operation::create_stack::CreateStackOutput).
     pub fn builder() -> crate::operation::create_stack::builders::CreateStackOutputBuilder {
@@ -41,24 +41,23 @@ impl CreateStackOutputBuilder {
     }
     /// <p>Information about the stack.</p>
     pub fn set_stack(mut self, input: std::option::Option<crate::types::Stack>) -> Self {
-        self.stack = input; self
+        self.stack = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`CreateStackOutput`](crate::operation::create_stack::CreateStackOutput).
     pub fn build(self) -> crate::operation::create_stack::CreateStackOutput {
         crate::operation::create_stack::CreateStackOutput {
-            stack: self.stack
-            ,
+            stack: self.stack,
             _request_id: self._request_id,
         }
     }
 }
-

@@ -4,56 +4,81 @@ pub use crate::operation::update_app_instance_user_endpoint::_update_app_instanc
 pub use crate::operation::update_app_instance_user_endpoint::_update_app_instance_user_endpoint_input::UpdateAppInstanceUserEndpointInputBuilder;
 
 /// Fluent builder constructing a request to `UpdateAppInstanceUserEndpoint`.
-/// 
+///
 /// <p>Updates the details of an <code>AppInstanceUserEndpoint</code>. You can update the name and <code>AllowMessage</code> values.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct UpdateAppInstanceUserEndpointFluentBuilder {
                 handle: std::sync::Arc<crate::client::Handle>,
                 inner: crate::operation::update_app_instance_user_endpoint::builders::UpdateAppInstanceUserEndpointInputBuilder
             }
-impl UpdateAppInstanceUserEndpointFluentBuilder  {
+impl UpdateAppInstanceUserEndpointFluentBuilder {
     /// Creates a new `UpdateAppInstanceUserEndpoint`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
-                    /// sent. The operation's inner [http::Request] can be modified as well.
-                    pub async fn customize(self) -> std::result::Result<
-                        crate::client::customize::CustomizableOperation<crate::operation::update_app_instance_user_endpoint::UpdateAppInstanceUserEndpoint, aws_http::retry::AwsResponseRetryClassifier,>,
-                        aws_smithy_http::result::SdkError<crate::operation::update_app_instance_user_endpoint::UpdateAppInstanceUserEndpointError>
-                    >  {
-                        let handle = self.handle.clone();
-                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-                    }
-    
-                    /// Sends the request and returns the response.
-                    ///
-                    /// If an error occurs, an `SdkError` will be returned with additional details that
-                    /// can be matched against.
-                    ///
-                    /// By default, any retryable failures will be retried twice. Retry behavior
-                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                    /// set when configuring the client.
-                    pub async fn send(self) -> std::result::Result<crate::operation::update_app_instance_user_endpoint::UpdateAppInstanceUserEndpointOutput, aws_smithy_http::result::SdkError<crate::operation::update_app_instance_user_endpoint::UpdateAppInstanceUserEndpointError>>
-                     {
-                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&self.handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        self.handle.client.call(op).await
-                    }
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle,
+            inner: Default::default(),
+        }
+    }
+
+    /// Consume this builder, creating a customizable operation that can be modified before being
+    /// sent. The operation's inner [http::Request] can be modified as well.
+    pub async fn customize(
+        self,
+    ) -> std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::update_app_instance_user_endpoint::UpdateAppInstanceUserEndpoint,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::result::SdkError<
+            crate::operation::update_app_instance_user_endpoint::UpdateAppInstanceUserEndpointError,
+        >,
+    > {
+        let handle = self.handle.clone();
+        let operation = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+    }
+
+    /// Sends the request and returns the response.
+    ///
+    /// If an error occurs, an `SdkError` will be returned with additional details that
+    /// can be matched against.
+    ///
+    /// By default, any retryable failures will be retried twice. Retry behavior
+    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+    /// set when configuring the client.
+    pub async fn send(
+        self,
+    ) -> std::result::Result<
+        crate::operation::update_app_instance_user_endpoint::UpdateAppInstanceUserEndpointOutput,
+        aws_smithy_http::result::SdkError<
+            crate::operation::update_app_instance_user_endpoint::UpdateAppInstanceUserEndpointError,
+        >,
+    > {
+        let op = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&self.handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        self.handle.client.call(op).await
+    }
     /// <p>The ARN of the <code>AppInstanceUser</code>.</p>
     pub fn app_instance_user_arn(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.app_instance_user_arn(input.into());
         self
     }
     /// <p>The ARN of the <code>AppInstanceUser</code>.</p>
-    pub fn set_app_instance_user_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_app_instance_user_arn(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_app_instance_user_arn(input);
         self
     }
@@ -83,9 +108,11 @@ impl UpdateAppInstanceUserEndpointFluentBuilder  {
         self
     }
     /// <p>Boolean that controls whether the <code>AppInstanceUserEndpoint</code> is opted in to receive messages. <code>ALL</code> indicates the endpoint will receive all messages. <code>NONE</code> indicates the endpoint will receive no messages.</p>
-    pub fn set_allow_messages(mut self, input: std::option::Option<crate::types::AllowMessages>) -> Self {
+    pub fn set_allow_messages(
+        mut self,
+        input: std::option::Option<crate::types::AllowMessages>,
+    ) -> Self {
         self.inner = self.inner.set_allow_messages(input);
         self
     }
 }
-

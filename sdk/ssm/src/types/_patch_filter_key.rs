@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-/// 
+///
 /// Here is an example of how you can make a match expression forward-compatible:
-/// 
+///
 /// ```text
 /// # let patchfilterkey = unimplemented!();
 /// match patchfilterkey {
@@ -47,14 +47,22 @@
 /// Specifically, when `patchfilterkey` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `PatchFilterKey::NewFeature` also yielding `"NewFeature"`.
-/// 
+///
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
 pub enum PatchFilterKey {
     #[allow(missing_docs)] // documentation missing in model
     AdvisoryId,
@@ -95,75 +103,96 @@ pub enum PatchFilterKey {
     #[allow(missing_docs)] // documentation missing in model
     Version,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::primitives::UnknownVariantValue)
+    Unknown(crate::primitives::UnknownVariantValue),
 }
 impl std::convert::From<&str> for PatchFilterKey {
-                fn from(s: &str) -> Self {
-                    match s {
-                        "ADVISORY_ID" => PatchFilterKey::AdvisoryId,
-"ARCH" => PatchFilterKey::Arch,
-"BUGZILLA_ID" => PatchFilterKey::BugzillaId,
-"CLASSIFICATION" => PatchFilterKey::Classification,
-"CVE_ID" => PatchFilterKey::CveId,
-"EPOCH" => PatchFilterKey::Epoch,
-"MSRC_SEVERITY" => PatchFilterKey::MsrcSeverity,
-"NAME" => PatchFilterKey::Name,
-"PATCH_ID" => PatchFilterKey::PatchId,
-"PATCH_SET" => PatchFilterKey::PatchSet,
-"PRIORITY" => PatchFilterKey::Priority,
-"PRODUCT" => PatchFilterKey::Product,
-"PRODUCT_FAMILY" => PatchFilterKey::ProductFamily,
-"RELEASE" => PatchFilterKey::Release,
-"REPOSITORY" => PatchFilterKey::Repository,
-"SECTION" => PatchFilterKey::Section,
-"SECURITY" => PatchFilterKey::Security,
-"SEVERITY" => PatchFilterKey::Severity,
-"VERSION" => PatchFilterKey::Version,
-other => PatchFilterKey::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
-                    }
-                }
+    fn from(s: &str) -> Self {
+        match s {
+            "ADVISORY_ID" => PatchFilterKey::AdvisoryId,
+            "ARCH" => PatchFilterKey::Arch,
+            "BUGZILLA_ID" => PatchFilterKey::BugzillaId,
+            "CLASSIFICATION" => PatchFilterKey::Classification,
+            "CVE_ID" => PatchFilterKey::CveId,
+            "EPOCH" => PatchFilterKey::Epoch,
+            "MSRC_SEVERITY" => PatchFilterKey::MsrcSeverity,
+            "NAME" => PatchFilterKey::Name,
+            "PATCH_ID" => PatchFilterKey::PatchId,
+            "PATCH_SET" => PatchFilterKey::PatchSet,
+            "PRIORITY" => PatchFilterKey::Priority,
+            "PRODUCT" => PatchFilterKey::Product,
+            "PRODUCT_FAMILY" => PatchFilterKey::ProductFamily,
+            "RELEASE" => PatchFilterKey::Release,
+            "REPOSITORY" => PatchFilterKey::Repository,
+            "SECTION" => PatchFilterKey::Section,
+            "SECURITY" => PatchFilterKey::Security,
+            "SEVERITY" => PatchFilterKey::Severity,
+            "VERSION" => PatchFilterKey::Version,
+            other => {
+                PatchFilterKey::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
             }
-impl std::str::FromStr for PatchFilterKey {
-                type Err = std::convert::Infallible;
-
-                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-                    Ok(PatchFilterKey::from(s))
-                }
-            }
-impl PatchFilterKey {
-                /// Returns the `&str` value of the enum member.
-                pub fn as_str(&self) -> &str {
-                    match self {
-    PatchFilterKey::AdvisoryId => "ADVISORY_ID",
-    PatchFilterKey::Arch => "ARCH",
-    PatchFilterKey::BugzillaId => "BUGZILLA_ID",
-    PatchFilterKey::Classification => "CLASSIFICATION",
-    PatchFilterKey::CveId => "CVE_ID",
-    PatchFilterKey::Epoch => "EPOCH",
-    PatchFilterKey::MsrcSeverity => "MSRC_SEVERITY",
-    PatchFilterKey::Name => "NAME",
-    PatchFilterKey::PatchId => "PATCH_ID",
-    PatchFilterKey::PatchSet => "PATCH_SET",
-    PatchFilterKey::Priority => "PRIORITY",
-    PatchFilterKey::Product => "PRODUCT",
-    PatchFilterKey::ProductFamily => "PRODUCT_FAMILY",
-    PatchFilterKey::Release => "RELEASE",
-    PatchFilterKey::Repository => "REPOSITORY",
-    PatchFilterKey::Section => "SECTION",
-    PatchFilterKey::Security => "SECURITY",
-    PatchFilterKey::Severity => "SEVERITY",
-    PatchFilterKey::Version => "VERSION",
-    PatchFilterKey::Unknown(value) => value.as_str()
+        }
+    }
 }
-                }
-                /// Returns all the `&str` representations of the enum members.
-                pub const fn values() -> &'static [&'static str] {
-                    &["ADVISORY_ID", "ARCH", "BUGZILLA_ID", "CLASSIFICATION", "CVE_ID", "EPOCH", "MSRC_SEVERITY", "NAME", "PATCH_ID", "PATCH_SET", "PRIORITY", "PRODUCT", "PRODUCT_FAMILY", "RELEASE", "REPOSITORY", "SECTION", "SECURITY", "SEVERITY", "VERSION"]
-                }
-            }
-impl AsRef<str> for PatchFilterKey {
-                fn as_ref(&self) -> &str {
-                    self.as_str()
-                }
-            }
+impl std::str::FromStr for PatchFilterKey {
+    type Err = std::convert::Infallible;
 
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(PatchFilterKey::from(s))
+    }
+}
+impl PatchFilterKey {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            PatchFilterKey::AdvisoryId => "ADVISORY_ID",
+            PatchFilterKey::Arch => "ARCH",
+            PatchFilterKey::BugzillaId => "BUGZILLA_ID",
+            PatchFilterKey::Classification => "CLASSIFICATION",
+            PatchFilterKey::CveId => "CVE_ID",
+            PatchFilterKey::Epoch => "EPOCH",
+            PatchFilterKey::MsrcSeverity => "MSRC_SEVERITY",
+            PatchFilterKey::Name => "NAME",
+            PatchFilterKey::PatchId => "PATCH_ID",
+            PatchFilterKey::PatchSet => "PATCH_SET",
+            PatchFilterKey::Priority => "PRIORITY",
+            PatchFilterKey::Product => "PRODUCT",
+            PatchFilterKey::ProductFamily => "PRODUCT_FAMILY",
+            PatchFilterKey::Release => "RELEASE",
+            PatchFilterKey::Repository => "REPOSITORY",
+            PatchFilterKey::Section => "SECTION",
+            PatchFilterKey::Security => "SECURITY",
+            PatchFilterKey::Severity => "SEVERITY",
+            PatchFilterKey::Version => "VERSION",
+            PatchFilterKey::Unknown(value) => value.as_str(),
+        }
+    }
+    /// Returns all the `&str` representations of the enum members.
+    pub const fn values() -> &'static [&'static str] {
+        &[
+            "ADVISORY_ID",
+            "ARCH",
+            "BUGZILLA_ID",
+            "CLASSIFICATION",
+            "CVE_ID",
+            "EPOCH",
+            "MSRC_SEVERITY",
+            "NAME",
+            "PATCH_ID",
+            "PATCH_SET",
+            "PRIORITY",
+            "PRODUCT",
+            "PRODUCT_FAMILY",
+            "RELEASE",
+            "REPOSITORY",
+            "SECTION",
+            "SECURITY",
+            "SEVERITY",
+            "VERSION",
+        ]
+    }
+}
+impl AsRef<str> for PatchFilterKey {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}

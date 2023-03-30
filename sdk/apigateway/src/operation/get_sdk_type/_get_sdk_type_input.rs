@@ -3,14 +3,14 @@
 /// <p>Get an SdkType instance.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetSdkTypeInput  {
+pub struct GetSdkTypeInput {
     /// <p>The identifier of the queried SdkType instance.</p>
     #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
 }
 impl GetSdkTypeInput {
     /// <p>The identifier of the queried SdkType instance.</p>
-    pub fn id(&self) -> std::option::Option<& str> {
+    pub fn id(&self) -> std::option::Option<&str> {
         self.id.as_deref()
     }
 }
@@ -35,16 +35,16 @@ impl GetSdkTypeInputBuilder {
     }
     /// <p>The identifier of the queried SdkType instance.</p>
     pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.id = input; self
+        self.id = input;
+        self
     }
     /// Consumes the builder and constructs a [`GetSdkTypeInput`](crate::operation::get_sdk_type::GetSdkTypeInput).
-    pub fn build(self) -> Result<crate::operation::get_sdk_type::GetSdkTypeInput, aws_smithy_http::operation::error::BuildError> {
-        Ok(
-            crate::operation::get_sdk_type::GetSdkTypeInput {
-                id: self.id
-                ,
-            }
-        )
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::get_sdk_type::GetSdkTypeInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        Ok(crate::operation::get_sdk_type::GetSdkTypeInput { id: self.id })
     }
 }
-

@@ -2,17 +2,17 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct StopTrainingEntityRecognizerOutput  {
+pub struct StopTrainingEntityRecognizerOutput {
     _request_id: Option<String>,
 }
 impl aws_http::request_id::RequestId for StopTrainingEntityRecognizerOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl StopTrainingEntityRecognizerOutput {
     /// Creates a new builder-style object to manufacture [`StopTrainingEntityRecognizerOutput`](crate::operation::stop_training_entity_recognizer::StopTrainingEntityRecognizerOutput).
-    pub fn builder() -> crate::operation::stop_training_entity_recognizer::builders::StopTrainingEntityRecognizerOutputBuilder {
+    pub fn builder() -> crate::operation::stop_training_entity_recognizer::builders::StopTrainingEntityRecognizerOutputBuilder{
         crate::operation::stop_training_entity_recognizer::builders::StopTrainingEntityRecognizerOutputBuilder::default()
     }
 }
@@ -25,19 +25,20 @@ pub struct StopTrainingEntityRecognizerOutputBuilder {
 }
 impl StopTrainingEntityRecognizerOutputBuilder {
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`StopTrainingEntityRecognizerOutput`](crate::operation::stop_training_entity_recognizer::StopTrainingEntityRecognizerOutput).
-    pub fn build(self) -> crate::operation::stop_training_entity_recognizer::StopTrainingEntityRecognizerOutput {
+    pub fn build(
+        self,
+    ) -> crate::operation::stop_training_entity_recognizer::StopTrainingEntityRecognizerOutput {
         crate::operation::stop_training_entity_recognizer::StopTrainingEntityRecognizerOutput {
             _request_id: self._request_id,
         }
     }
 }
-

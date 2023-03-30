@@ -3,7 +3,7 @@
 /// These settings control how the service handles timecodes throughout the job. These settings don't affect input clipping.
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct TimecodeConfig  {
+pub struct TimecodeConfig {
     /// If you use an editing platform that relies on an anchor timecode, use Anchor Timecode (Anchor) to specify a timecode that will match the input video frame to the output video frame. Use 24-hour format with frame number, (HH:MM:SS:FF) or (HH:MM:SS;FF). This setting ignores frame rate conversion. System behavior for Anchor Timecode varies depending on your setting for Source (TimecodeSource). * If Source (TimecodeSource) is set to Specified Start (SPECIFIEDSTART), the first input frame is the specified value in Start Timecode (Start). Anchor Timecode (Anchor) and Start Timecode (Start) are used calculate output timecode. * If Source (TimecodeSource) is set to Start at 0 (ZEROBASED) the first frame is 00:00:00:00. * If Source (TimecodeSource) is set to Embedded (EMBEDDED), the first frame is the timecode value on the first input frame of the input.
     #[doc(hidden)]
     pub anchor: std::option::Option<std::string::String>,
@@ -19,19 +19,19 @@ pub struct TimecodeConfig  {
 }
 impl TimecodeConfig {
     /// If you use an editing platform that relies on an anchor timecode, use Anchor Timecode (Anchor) to specify a timecode that will match the input video frame to the output video frame. Use 24-hour format with frame number, (HH:MM:SS:FF) or (HH:MM:SS;FF). This setting ignores frame rate conversion. System behavior for Anchor Timecode varies depending on your setting for Source (TimecodeSource). * If Source (TimecodeSource) is set to Specified Start (SPECIFIEDSTART), the first input frame is the specified value in Start Timecode (Start). Anchor Timecode (Anchor) and Start Timecode (Start) are used calculate output timecode. * If Source (TimecodeSource) is set to Start at 0 (ZEROBASED) the first frame is 00:00:00:00. * If Source (TimecodeSource) is set to Embedded (EMBEDDED), the first frame is the timecode value on the first input frame of the input.
-    pub fn anchor(&self) -> std::option::Option<& str> {
+    pub fn anchor(&self) -> std::option::Option<&str> {
         self.anchor.as_deref()
     }
     /// Use Source (TimecodeSource) to set how timecodes are handled within this job. To make sure that your video, audio, captions, and markers are synchronized and that time-based features, such as image inserter, work correctly, choose the Timecode source option that matches your assets. All timecodes are in a 24-hour format with frame number (HH:MM:SS:FF). * Embedded (EMBEDDED) - Use the timecode that is in the input video. If no embedded timecode is in the source, the service will use Start at 0 (ZEROBASED) instead. * Start at 0 (ZEROBASED) - Set the timecode of the initial frame to 00:00:00:00. * Specified Start (SPECIFIEDSTART) - Set the timecode of the initial frame to a value other than zero. You use Start timecode (Start) to provide this value.
-    pub fn source(&self) -> std::option::Option<& crate::types::TimecodeSource> {
+    pub fn source(&self) -> std::option::Option<&crate::types::TimecodeSource> {
         self.source.as_ref()
     }
     /// Only use when you set Source (TimecodeSource) to Specified start (SPECIFIEDSTART). Use Start timecode (Start) to specify the timecode for the initial frame. Use 24-hour format with frame number, (HH:MM:SS:FF) or (HH:MM:SS;FF).
-    pub fn start(&self) -> std::option::Option<& str> {
+    pub fn start(&self) -> std::option::Option<&str> {
         self.start.as_deref()
     }
     /// Only applies to outputs that support program-date-time stamp. Use Timestamp offset (TimestampOffset) to overwrite the timecode date without affecting the time and frame number. Provide the new date as a string in the format "yyyy-mm-dd". To use Time stamp offset, you must also enable Insert program-date-time (InsertProgramDateTime) in the output settings. For example, if the date part of your timecodes is 2002-1-25 and you want to change it to one year later, set Timestamp offset (TimestampOffset) to 2003-1-25.
-    pub fn timestamp_offset(&self) -> std::option::Option<& str> {
+    pub fn timestamp_offset(&self) -> std::option::Option<&str> {
         self.timestamp_offset.as_deref()
     }
 }
@@ -59,7 +59,8 @@ impl TimecodeConfigBuilder {
     }
     /// If you use an editing platform that relies on an anchor timecode, use Anchor Timecode (Anchor) to specify a timecode that will match the input video frame to the output video frame. Use 24-hour format with frame number, (HH:MM:SS:FF) or (HH:MM:SS;FF). This setting ignores frame rate conversion. System behavior for Anchor Timecode varies depending on your setting for Source (TimecodeSource). * If Source (TimecodeSource) is set to Specified Start (SPECIFIEDSTART), the first input frame is the specified value in Start Timecode (Start). Anchor Timecode (Anchor) and Start Timecode (Start) are used calculate output timecode. * If Source (TimecodeSource) is set to Start at 0 (ZEROBASED) the first frame is 00:00:00:00. * If Source (TimecodeSource) is set to Embedded (EMBEDDED), the first frame is the timecode value on the first input frame of the input.
     pub fn set_anchor(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.anchor = input; self
+        self.anchor = input;
+        self
     }
     /// Use Source (TimecodeSource) to set how timecodes are handled within this job. To make sure that your video, audio, captions, and markers are synchronized and that time-based features, such as image inserter, work correctly, choose the Timecode source option that matches your assets. All timecodes are in a 24-hour format with frame number (HH:MM:SS:FF). * Embedded (EMBEDDED) - Use the timecode that is in the input video. If no embedded timecode is in the source, the service will use Start at 0 (ZEROBASED) instead. * Start at 0 (ZEROBASED) - Set the timecode of the initial frame to 00:00:00:00. * Specified Start (SPECIFIEDSTART) - Set the timecode of the initial frame to a value other than zero. You use Start timecode (Start) to provide this value.
     pub fn source(mut self, input: crate::types::TimecodeSource) -> Self {
@@ -68,7 +69,8 @@ impl TimecodeConfigBuilder {
     }
     /// Use Source (TimecodeSource) to set how timecodes are handled within this job. To make sure that your video, audio, captions, and markers are synchronized and that time-based features, such as image inserter, work correctly, choose the Timecode source option that matches your assets. All timecodes are in a 24-hour format with frame number (HH:MM:SS:FF). * Embedded (EMBEDDED) - Use the timecode that is in the input video. If no embedded timecode is in the source, the service will use Start at 0 (ZEROBASED) instead. * Start at 0 (ZEROBASED) - Set the timecode of the initial frame to 00:00:00:00. * Specified Start (SPECIFIEDSTART) - Set the timecode of the initial frame to a value other than zero. You use Start timecode (Start) to provide this value.
     pub fn set_source(mut self, input: std::option::Option<crate::types::TimecodeSource>) -> Self {
-        self.source = input; self
+        self.source = input;
+        self
     }
     /// Only use when you set Source (TimecodeSource) to Specified start (SPECIFIEDSTART). Use Start timecode (Start) to specify the timecode for the initial frame. Use 24-hour format with frame number, (HH:MM:SS:FF) or (HH:MM:SS;FF).
     pub fn start(mut self, input: impl Into<std::string::String>) -> Self {
@@ -77,7 +79,8 @@ impl TimecodeConfigBuilder {
     }
     /// Only use when you set Source (TimecodeSource) to Specified start (SPECIFIEDSTART). Use Start timecode (Start) to specify the timecode for the initial frame. Use 24-hour format with frame number, (HH:MM:SS:FF) or (HH:MM:SS;FF).
     pub fn set_start(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.start = input; self
+        self.start = input;
+        self
     }
     /// Only applies to outputs that support program-date-time stamp. Use Timestamp offset (TimestampOffset) to overwrite the timecode date without affecting the time and frame number. Provide the new date as a string in the format "yyyy-mm-dd". To use Time stamp offset, you must also enable Insert program-date-time (InsertProgramDateTime) in the output settings. For example, if the date part of your timecodes is 2002-1-25 and you want to change it to one year later, set Timestamp offset (TimestampOffset) to 2003-1-25.
     pub fn timestamp_offset(mut self, input: impl Into<std::string::String>) -> Self {
@@ -86,20 +89,16 @@ impl TimecodeConfigBuilder {
     }
     /// Only applies to outputs that support program-date-time stamp. Use Timestamp offset (TimestampOffset) to overwrite the timecode date without affecting the time and frame number. Provide the new date as a string in the format "yyyy-mm-dd". To use Time stamp offset, you must also enable Insert program-date-time (InsertProgramDateTime) in the output settings. For example, if the date part of your timecodes is 2002-1-25 and you want to change it to one year later, set Timestamp offset (TimestampOffset) to 2003-1-25.
     pub fn set_timestamp_offset(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.timestamp_offset = input; self
+        self.timestamp_offset = input;
+        self
     }
     /// Consumes the builder and constructs a [`TimecodeConfig`](crate::types::TimecodeConfig).
     pub fn build(self) -> crate::types::TimecodeConfig {
         crate::types::TimecodeConfig {
-            anchor: self.anchor
-            ,
-            source: self.source
-            ,
-            start: self.start
-            ,
-            timestamp_offset: self.timestamp_offset
-            ,
+            anchor: self.anchor,
+            source: self.source,
+            start: self.start,
+            timestamp_offset: self.timestamp_offset,
         }
     }
 }
-

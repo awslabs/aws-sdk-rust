@@ -3,14 +3,14 @@
 /// <p>A container object for the session details that are associated with a workflow.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ServiceMetadata  {
+pub struct ServiceMetadata {
     /// <p>The Server ID (<code>ServerId</code>), Session ID (<code>SessionId</code>) and user (<code>UserName</code>) make up the <code>UserDetails</code>.</p>
     #[doc(hidden)]
     pub user_details: std::option::Option<crate::types::UserDetails>,
 }
 impl ServiceMetadata {
     /// <p>The Server ID (<code>ServerId</code>), Session ID (<code>SessionId</code>) and user (<code>UserName</code>) make up the <code>UserDetails</code>.</p>
-    pub fn user_details(&self) -> std::option::Option<& crate::types::UserDetails> {
+    pub fn user_details(&self) -> std::option::Option<&crate::types::UserDetails> {
         self.user_details.as_ref()
     }
 }
@@ -34,15 +34,17 @@ impl ServiceMetadataBuilder {
         self
     }
     /// <p>The Server ID (<code>ServerId</code>), Session ID (<code>SessionId</code>) and user (<code>UserName</code>) make up the <code>UserDetails</code>.</p>
-    pub fn set_user_details(mut self, input: std::option::Option<crate::types::UserDetails>) -> Self {
-        self.user_details = input; self
+    pub fn set_user_details(
+        mut self,
+        input: std::option::Option<crate::types::UserDetails>,
+    ) -> Self {
+        self.user_details = input;
+        self
     }
     /// Consumes the builder and constructs a [`ServiceMetadata`](crate::types::ServiceMetadata).
     pub fn build(self) -> crate::types::ServiceMetadata {
         crate::types::ServiceMetadata {
-            user_details: self.user_details
-            ,
+            user_details: self.user_details,
         }
     }
 }
-

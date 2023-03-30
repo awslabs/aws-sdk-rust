@@ -3,14 +3,14 @@
 /// <p></p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CustomIndicesInput  {
+pub struct CustomIndicesInput {
     /// <p></p>
     #[doc(hidden)]
     pub operations: std::option::Option<std::vec::Vec<crate::types::Operation>>,
 }
 impl CustomIndicesInput {
     /// <p></p>
-    pub fn operations(&self) -> std::option::Option<& [crate::types::Operation]> {
+    pub fn operations(&self) -> std::option::Option<&[crate::types::Operation]> {
         self.operations.as_deref()
     }
 }
@@ -35,20 +35,22 @@ impl CustomIndicesInputBuilder {
     /// <p></p>
     pub fn operations(mut self, input: crate::types::Operation) -> Self {
         let mut v = self.operations.unwrap_or_default();
-                        v.push(input);
-                        self.operations = Some(v);
-                        self
+        v.push(input);
+        self.operations = Some(v);
+        self
     }
     /// <p></p>
-    pub fn set_operations(mut self, input: std::option::Option<std::vec::Vec<crate::types::Operation>>) -> Self {
-        self.operations = input; self
+    pub fn set_operations(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::Operation>>,
+    ) -> Self {
+        self.operations = input;
+        self
     }
     /// Consumes the builder and constructs a [`CustomIndicesInput`](crate::types::CustomIndicesInput).
     pub fn build(self) -> crate::types::CustomIndicesInput {
         crate::types::CustomIndicesInput {
-            operations: self.operations
-            ,
+            operations: self.operations,
         }
     }
 }
-

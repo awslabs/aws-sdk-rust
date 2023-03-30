@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreatePermissionSetOutput  {
+pub struct CreatePermissionSetOutput {
     /// <p>Defines the level of access on an AWS account.</p>
     #[doc(hidden)]
     pub permission_set: std::option::Option<crate::types::PermissionSet>,
@@ -10,19 +10,21 @@ pub struct CreatePermissionSetOutput  {
 }
 impl CreatePermissionSetOutput {
     /// <p>Defines the level of access on an AWS account.</p>
-    pub fn permission_set(&self) -> std::option::Option<& crate::types::PermissionSet> {
+    pub fn permission_set(&self) -> std::option::Option<&crate::types::PermissionSet> {
         self.permission_set.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for CreatePermissionSetOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl CreatePermissionSetOutput {
     /// Creates a new builder-style object to manufacture [`CreatePermissionSetOutput`](crate::operation::create_permission_set::CreatePermissionSetOutput).
-    pub fn builder() -> crate::operation::create_permission_set::builders::CreatePermissionSetOutputBuilder {
-        crate::operation::create_permission_set::builders::CreatePermissionSetOutputBuilder::default()
+    pub fn builder(
+    ) -> crate::operation::create_permission_set::builders::CreatePermissionSetOutputBuilder {
+        crate::operation::create_permission_set::builders::CreatePermissionSetOutputBuilder::default(
+        )
     }
 }
 
@@ -40,25 +42,27 @@ impl CreatePermissionSetOutputBuilder {
         self
     }
     /// <p>Defines the level of access on an AWS account.</p>
-    pub fn set_permission_set(mut self, input: std::option::Option<crate::types::PermissionSet>) -> Self {
-        self.permission_set = input; self
+    pub fn set_permission_set(
+        mut self,
+        input: std::option::Option<crate::types::PermissionSet>,
+    ) -> Self {
+        self.permission_set = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`CreatePermissionSetOutput`](crate::operation::create_permission_set::CreatePermissionSetOutput).
     pub fn build(self) -> crate::operation::create_permission_set::CreatePermissionSetOutput {
         crate::operation::create_permission_set::CreatePermissionSetOutput {
-            permission_set: self.permission_set
-            ,
+            permission_set: self.permission_set,
             _request_id: self._request_id,
         }
     }
 }
-

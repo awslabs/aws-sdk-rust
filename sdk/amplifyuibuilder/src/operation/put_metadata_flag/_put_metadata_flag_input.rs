@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PutMetadataFlagInput  {
+pub struct PutMetadataFlagInput {
     /// <p>The unique ID for the Amplify app.</p>
     #[doc(hidden)]
     pub app_id: std::option::Option<std::string::String>,
@@ -18,19 +18,19 @@ pub struct PutMetadataFlagInput  {
 }
 impl PutMetadataFlagInput {
     /// <p>The unique ID for the Amplify app.</p>
-    pub fn app_id(&self) -> std::option::Option<& str> {
+    pub fn app_id(&self) -> std::option::Option<&str> {
         self.app_id.as_deref()
     }
     /// <p>The name of the backend environment that is part of the Amplify app.</p>
-    pub fn environment_name(&self) -> std::option::Option<& str> {
+    pub fn environment_name(&self) -> std::option::Option<&str> {
         self.environment_name.as_deref()
     }
     /// <p>The name of the feature associated with the metadata.</p>
-    pub fn feature_name(&self) -> std::option::Option<& str> {
+    pub fn feature_name(&self) -> std::option::Option<&str> {
         self.feature_name.as_deref()
     }
     /// <p>The metadata information to store.</p>
-    pub fn body(&self) -> std::option::Option<& crate::types::PutMetadataFlagBody> {
+    pub fn body(&self) -> std::option::Option<&crate::types::PutMetadataFlagBody> {
         self.body.as_ref()
     }
 }
@@ -58,7 +58,8 @@ impl PutMetadataFlagInputBuilder {
     }
     /// <p>The unique ID for the Amplify app.</p>
     pub fn set_app_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.app_id = input; self
+        self.app_id = input;
+        self
     }
     /// <p>The name of the backend environment that is part of the Amplify app.</p>
     pub fn environment_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -67,7 +68,8 @@ impl PutMetadataFlagInputBuilder {
     }
     /// <p>The name of the backend environment that is part of the Amplify app.</p>
     pub fn set_environment_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.environment_name = input; self
+        self.environment_name = input;
+        self
     }
     /// <p>The name of the feature associated with the metadata.</p>
     pub fn feature_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -76,7 +78,8 @@ impl PutMetadataFlagInputBuilder {
     }
     /// <p>The name of the feature associated with the metadata.</p>
     pub fn set_feature_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.feature_name = input; self
+        self.feature_name = input;
+        self
     }
     /// <p>The metadata information to store.</p>
     pub fn body(mut self, input: crate::types::PutMetadataFlagBody) -> Self {
@@ -84,23 +87,25 @@ impl PutMetadataFlagInputBuilder {
         self
     }
     /// <p>The metadata information to store.</p>
-    pub fn set_body(mut self, input: std::option::Option<crate::types::PutMetadataFlagBody>) -> Self {
-        self.body = input; self
+    pub fn set_body(
+        mut self,
+        input: std::option::Option<crate::types::PutMetadataFlagBody>,
+    ) -> Self {
+        self.body = input;
+        self
     }
     /// Consumes the builder and constructs a [`PutMetadataFlagInput`](crate::operation::put_metadata_flag::PutMetadataFlagInput).
-    pub fn build(self) -> Result<crate::operation::put_metadata_flag::PutMetadataFlagInput, aws_smithy_http::operation::error::BuildError> {
-        Ok(
-            crate::operation::put_metadata_flag::PutMetadataFlagInput {
-                app_id: self.app_id
-                ,
-                environment_name: self.environment_name
-                ,
-                feature_name: self.feature_name
-                ,
-                body: self.body
-                ,
-            }
-        )
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::put_metadata_flag::PutMetadataFlagInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        Ok(crate::operation::put_metadata_flag::PutMetadataFlagInput {
+            app_id: self.app_id,
+            environment_name: self.environment_name,
+            feature_name: self.feature_name,
+            body: self.body,
+        })
     }
 }
-

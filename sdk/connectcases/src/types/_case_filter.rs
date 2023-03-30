@@ -23,8 +23,14 @@ pub enum CaseFilter {
 impl CaseFilter {
     /// Tries to convert the enum instance into [`AndAll`](crate::types::CaseFilter::AndAll), extracting the inner [`Vec`](std::vec::Vec).
     /// Returns `Err(&Self)` if it can't be converted.
-    pub fn as_and_all(&self) -> std::result::Result<&std::vec::Vec<crate::types::CaseFilter>, &Self> {
-        if let CaseFilter::AndAll(val) = &self { Ok(val) } else { Err(self) }
+    pub fn as_and_all(
+        &self,
+    ) -> std::result::Result<&std::vec::Vec<crate::types::CaseFilter>, &Self> {
+        if let CaseFilter::AndAll(val) = &self {
+            Ok(val)
+        } else {
+            Err(self)
+        }
     }
     /// Returns true if this is a [`AndAll`](crate::types::CaseFilter::AndAll).
     pub fn is_and_all(&self) -> bool {
@@ -33,7 +39,11 @@ impl CaseFilter {
     /// Tries to convert the enum instance into [`Field`](crate::types::CaseFilter::Field), extracting the inner [`FieldFilter`](crate::types::FieldFilter).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_field(&self) -> std::result::Result<&crate::types::FieldFilter, &Self> {
-        if let CaseFilter::Field(val) = &self { Ok(val) } else { Err(self) }
+        if let CaseFilter::Field(val) = &self {
+            Ok(val)
+        } else {
+            Err(self)
+        }
     }
     /// Returns true if this is a [`Field`](crate::types::CaseFilter::Field).
     pub fn is_field(&self) -> bool {
@@ -42,7 +52,11 @@ impl CaseFilter {
     /// Tries to convert the enum instance into [`Not`](crate::types::CaseFilter::Not), extracting the inner [`CaseFilter`](crate::types::CaseFilter).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_not(&self) -> std::result::Result<&std::boxed::Box<crate::types::CaseFilter>, &Self> {
-        if let CaseFilter::Not(val) = &self { Ok(val) } else { Err(self) }
+        if let CaseFilter::Not(val) = &self {
+            Ok(val)
+        } else {
+            Err(self)
+        }
     }
     /// Returns true if this is a [`Not`](crate::types::CaseFilter::Not).
     pub fn is_not(&self) -> bool {
@@ -53,4 +67,3 @@ impl CaseFilter {
         matches!(self, Self::Unknown)
     }
 }
-

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetSmsSandboxAccountStatusOutput  {
+pub struct GetSmsSandboxAccountStatusOutput {
     /// <p>Indicates whether the calling Amazon Web Services account is in the SMS sandbox.</p>
     #[doc(hidden)]
     pub is_in_sandbox: bool,
@@ -15,13 +15,13 @@ impl GetSmsSandboxAccountStatusOutput {
     }
 }
 impl aws_http::request_id::RequestId for GetSmsSandboxAccountStatusOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl GetSmsSandboxAccountStatusOutput {
     /// Creates a new builder-style object to manufacture [`GetSmsSandboxAccountStatusOutput`](crate::operation::get_sms_sandbox_account_status::GetSmsSandboxAccountStatusOutput).
-    pub fn builder() -> crate::operation::get_sms_sandbox_account_status::builders::GetSmsSandboxAccountStatusOutputBuilder {
+    pub fn builder() -> crate::operation::get_sms_sandbox_account_status::builders::GetSmsSandboxAccountStatusOutputBuilder{
         crate::operation::get_sms_sandbox_account_status::builders::GetSmsSandboxAccountStatusOutputBuilder::default()
     }
 }
@@ -41,25 +41,25 @@ impl GetSmsSandboxAccountStatusOutputBuilder {
     }
     /// <p>Indicates whether the calling Amazon Web Services account is in the SMS sandbox.</p>
     pub fn set_is_in_sandbox(mut self, input: std::option::Option<bool>) -> Self {
-        self.is_in_sandbox = input; self
+        self.is_in_sandbox = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`GetSmsSandboxAccountStatusOutput`](crate::operation::get_sms_sandbox_account_status::GetSmsSandboxAccountStatusOutput).
-    pub fn build(self) -> crate::operation::get_sms_sandbox_account_status::GetSmsSandboxAccountStatusOutput {
+    pub fn build(
+        self,
+    ) -> crate::operation::get_sms_sandbox_account_status::GetSmsSandboxAccountStatusOutput {
         crate::operation::get_sms_sandbox_account_status::GetSmsSandboxAccountStatusOutput {
-            is_in_sandbox: self.is_in_sandbox
-                .unwrap_or_default()
-            ,
+            is_in_sandbox: self.is_in_sandbox.unwrap_or_default(),
             _request_id: self._request_id,
         }
     }
 }
-

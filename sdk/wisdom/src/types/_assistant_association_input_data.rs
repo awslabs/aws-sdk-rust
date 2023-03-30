@@ -21,7 +21,11 @@ impl AssistantAssociationInputData {
     /// Tries to convert the enum instance into [`KnowledgeBaseId`](crate::types::AssistantAssociationInputData::KnowledgeBaseId), extracting the inner [`String`](std::string::String).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_knowledge_base_id(&self) -> std::result::Result<&std::string::String, &Self> {
-        if let AssistantAssociationInputData::KnowledgeBaseId(val) = &self { Ok(val) } else { Err(self) }
+        if let AssistantAssociationInputData::KnowledgeBaseId(val) = &self {
+            Ok(val)
+        } else {
+            Err(self)
+        }
     }
     /// Returns true if this is a [`KnowledgeBaseId`](crate::types::AssistantAssociationInputData::KnowledgeBaseId).
     pub fn is_knowledge_base_id(&self) -> bool {
@@ -32,4 +36,3 @@ impl AssistantAssociationInputData {
         matches!(self, Self::Unknown)
     }
 }
-

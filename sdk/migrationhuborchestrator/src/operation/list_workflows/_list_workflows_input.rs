@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListWorkflowsInput  {
+pub struct ListWorkflowsInput {
     /// <p>The maximum number of results that can be returned.</p>
     #[doc(hidden)]
     pub max_results: i32,
@@ -28,23 +28,23 @@ impl ListWorkflowsInput {
         self.max_results
     }
     /// <p>The pagination token.</p>
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
     /// <p>The ID of the template.</p>
-    pub fn template_id(&self) -> std::option::Option<& str> {
+    pub fn template_id(&self) -> std::option::Option<&str> {
         self.template_id.as_deref()
     }
     /// <p>The name of the application configured in Application Discovery Service.</p>
-    pub fn ads_application_configuration_name(&self) -> std::option::Option<& str> {
+    pub fn ads_application_configuration_name(&self) -> std::option::Option<&str> {
         self.ads_application_configuration_name.as_deref()
     }
     /// <p>The status of the migration workflow.</p>
-    pub fn status(&self) -> std::option::Option<& crate::types::MigrationWorkflowStatusEnum> {
+    pub fn status(&self) -> std::option::Option<&crate::types::MigrationWorkflowStatusEnum> {
         self.status.as_ref()
     }
     /// <p>The name of the migration workflow.</p>
-    pub fn name(&self) -> std::option::Option<& str> {
+    pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
 }
@@ -74,7 +74,8 @@ impl ListWorkflowsInputBuilder {
     }
     /// <p>The maximum number of results that can be returned.</p>
     pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_results = input; self
+        self.max_results = input;
+        self
     }
     /// <p>The pagination token.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -83,7 +84,8 @@ impl ListWorkflowsInputBuilder {
     }
     /// <p>The pagination token.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input; self
+        self.next_token = input;
+        self
     }
     /// <p>The ID of the template.</p>
     pub fn template_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -92,16 +94,24 @@ impl ListWorkflowsInputBuilder {
     }
     /// <p>The ID of the template.</p>
     pub fn set_template_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.template_id = input; self
+        self.template_id = input;
+        self
     }
     /// <p>The name of the application configured in Application Discovery Service.</p>
-    pub fn ads_application_configuration_name(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn ads_application_configuration_name(
+        mut self,
+        input: impl Into<std::string::String>,
+    ) -> Self {
         self.ads_application_configuration_name = Some(input.into());
         self
     }
     /// <p>The name of the application configured in Application Discovery Service.</p>
-    pub fn set_ads_application_configuration_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.ads_application_configuration_name = input; self
+    pub fn set_ads_application_configuration_name(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.ads_application_configuration_name = input;
+        self
     }
     /// <p>The status of the migration workflow.</p>
     pub fn status(mut self, input: crate::types::MigrationWorkflowStatusEnum) -> Self {
@@ -109,8 +119,12 @@ impl ListWorkflowsInputBuilder {
         self
     }
     /// <p>The status of the migration workflow.</p>
-    pub fn set_status(mut self, input: std::option::Option<crate::types::MigrationWorkflowStatusEnum>) -> Self {
-        self.status = input; self
+    pub fn set_status(
+        mut self,
+        input: std::option::Option<crate::types::MigrationWorkflowStatusEnum>,
+    ) -> Self {
+        self.status = input;
+        self
     }
     /// <p>The name of the migration workflow.</p>
     pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -119,27 +133,23 @@ impl ListWorkflowsInputBuilder {
     }
     /// <p>The name of the migration workflow.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input; self
+        self.name = input;
+        self
     }
     /// Consumes the builder and constructs a [`ListWorkflowsInput`](crate::operation::list_workflows::ListWorkflowsInput).
-    pub fn build(self) -> Result<crate::operation::list_workflows::ListWorkflowsInput, aws_smithy_http::operation::error::BuildError> {
-        Ok(
-            crate::operation::list_workflows::ListWorkflowsInput {
-                max_results: self.max_results
-                    .unwrap_or_default()
-                ,
-                next_token: self.next_token
-                ,
-                template_id: self.template_id
-                ,
-                ads_application_configuration_name: self.ads_application_configuration_name
-                ,
-                status: self.status
-                ,
-                name: self.name
-                ,
-            }
-        )
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::list_workflows::ListWorkflowsInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        Ok(crate::operation::list_workflows::ListWorkflowsInput {
+            max_results: self.max_results.unwrap_or_default(),
+            next_token: self.next_token,
+            template_id: self.template_id,
+            ads_application_configuration_name: self.ads_application_configuration_name,
+            status: self.status,
+            name: self.name,
+        })
     }
 }
-

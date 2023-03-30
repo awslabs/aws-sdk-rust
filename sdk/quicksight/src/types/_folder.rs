@@ -3,7 +3,7 @@
 /// <p>A folder in Amazon QuickSight.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Folder  {
+pub struct Folder {
     /// <p>The ID of the folder.</p>
     #[doc(hidden)]
     pub folder_id: std::option::Option<std::string::String>,
@@ -28,31 +28,31 @@ pub struct Folder  {
 }
 impl Folder {
     /// <p>The ID of the folder.</p>
-    pub fn folder_id(&self) -> std::option::Option<& str> {
+    pub fn folder_id(&self) -> std::option::Option<&str> {
         self.folder_id.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) for the folder.</p>
-    pub fn arn(&self) -> std::option::Option<& str> {
+    pub fn arn(&self) -> std::option::Option<&str> {
         self.arn.as_deref()
     }
     /// <p>A display name for the folder.</p>
-    pub fn name(&self) -> std::option::Option<& str> {
+    pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>The type of folder it is.</p>
-    pub fn folder_type(&self) -> std::option::Option<& crate::types::FolderType> {
+    pub fn folder_type(&self) -> std::option::Option<&crate::types::FolderType> {
         self.folder_type.as_ref()
     }
     /// <p>An array of ancestor ARN strings for the folder.</p>
-    pub fn folder_path(&self) -> std::option::Option<& [std::string::String]> {
+    pub fn folder_path(&self) -> std::option::Option<&[std::string::String]> {
         self.folder_path.as_deref()
     }
     /// <p>The time that the folder was created.</p>
-    pub fn created_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
+    pub fn created_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created_time.as_ref()
     }
     /// <p>The time that the folder was last updated.</p>
-    pub fn last_updated_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
+    pub fn last_updated_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_updated_time.as_ref()
     }
 }
@@ -83,7 +83,8 @@ impl FolderBuilder {
     }
     /// <p>The ID of the folder.</p>
     pub fn set_folder_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.folder_id = input; self
+        self.folder_id = input;
+        self
     }
     /// <p>The Amazon Resource Name (ARN) for the folder.</p>
     pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -92,7 +93,8 @@ impl FolderBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) for the folder.</p>
     pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.arn = input; self
+        self.arn = input;
+        self
     }
     /// <p>A display name for the folder.</p>
     pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -101,7 +103,8 @@ impl FolderBuilder {
     }
     /// <p>A display name for the folder.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input; self
+        self.name = input;
+        self
     }
     /// <p>The type of folder it is.</p>
     pub fn folder_type(mut self, input: crate::types::FolderType) -> Self {
@@ -110,7 +113,8 @@ impl FolderBuilder {
     }
     /// <p>The type of folder it is.</p>
     pub fn set_folder_type(mut self, input: std::option::Option<crate::types::FolderType>) -> Self {
-        self.folder_type = input; self
+        self.folder_type = input;
+        self
     }
     /// Appends an item to `folder_path`.
     ///
@@ -119,13 +123,17 @@ impl FolderBuilder {
     /// <p>An array of ancestor ARN strings for the folder.</p>
     pub fn folder_path(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.folder_path.unwrap_or_default();
-                        v.push(input.into());
-                        self.folder_path = Some(v);
-                        self
+        v.push(input.into());
+        self.folder_path = Some(v);
+        self
     }
     /// <p>An array of ancestor ARN strings for the folder.</p>
-    pub fn set_folder_path(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-        self.folder_path = input; self
+    pub fn set_folder_path(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
+        self.folder_path = input;
+        self
     }
     /// <p>The time that the folder was created.</p>
     pub fn created_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -133,8 +141,12 @@ impl FolderBuilder {
         self
     }
     /// <p>The time that the folder was created.</p>
-    pub fn set_created_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.created_time = input; self
+    pub fn set_created_time(
+        mut self,
+        input: std::option::Option<aws_smithy_types::DateTime>,
+    ) -> Self {
+        self.created_time = input;
+        self
     }
     /// <p>The time that the folder was last updated.</p>
     pub fn last_updated_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -142,27 +154,23 @@ impl FolderBuilder {
         self
     }
     /// <p>The time that the folder was last updated.</p>
-    pub fn set_last_updated_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.last_updated_time = input; self
+    pub fn set_last_updated_time(
+        mut self,
+        input: std::option::Option<aws_smithy_types::DateTime>,
+    ) -> Self {
+        self.last_updated_time = input;
+        self
     }
     /// Consumes the builder and constructs a [`Folder`](crate::types::Folder).
     pub fn build(self) -> crate::types::Folder {
         crate::types::Folder {
-            folder_id: self.folder_id
-            ,
-            arn: self.arn
-            ,
-            name: self.name
-            ,
-            folder_type: self.folder_type
-            ,
-            folder_path: self.folder_path
-            ,
-            created_time: self.created_time
-            ,
-            last_updated_time: self.last_updated_time
-            ,
+            folder_id: self.folder_id,
+            arn: self.arn,
+            name: self.name,
+            folder_type: self.folder_type,
+            folder_path: self.folder_path,
+            created_time: self.created_time,
+            last_updated_time: self.last_updated_time,
         }
     }
 }
-

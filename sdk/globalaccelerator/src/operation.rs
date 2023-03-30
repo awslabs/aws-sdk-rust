@@ -147,4 +147,3 @@ pub mod update_listener;
 
 /// Types for the `WithdrawByoipCidr` operation.
 pub mod withdraw_byoip_cidr;
-

@@ -3,14 +3,14 @@
 /// <p>Specifies the Network File System (NFS) protocol configuration that DataSync uses to access your Amazon FSx for OpenZFS or Amazon FSx for NetApp ONTAP file system.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct FsxProtocolNfs  {
+pub struct FsxProtocolNfs {
     /// <p>Specifies how DataSync can access a location using the NFS protocol.</p>
     #[doc(hidden)]
     pub mount_options: std::option::Option<crate::types::NfsMountOptions>,
 }
 impl FsxProtocolNfs {
     /// <p>Specifies how DataSync can access a location using the NFS protocol.</p>
-    pub fn mount_options(&self) -> std::option::Option<& crate::types::NfsMountOptions> {
+    pub fn mount_options(&self) -> std::option::Option<&crate::types::NfsMountOptions> {
         self.mount_options.as_ref()
     }
 }
@@ -34,15 +34,17 @@ impl FsxProtocolNfsBuilder {
         self
     }
     /// <p>Specifies how DataSync can access a location using the NFS protocol.</p>
-    pub fn set_mount_options(mut self, input: std::option::Option<crate::types::NfsMountOptions>) -> Self {
-        self.mount_options = input; self
+    pub fn set_mount_options(
+        mut self,
+        input: std::option::Option<crate::types::NfsMountOptions>,
+    ) -> Self {
+        self.mount_options = input;
+        self
     }
     /// Consumes the builder and constructs a [`FsxProtocolNfs`](crate::types::FsxProtocolNfs).
     pub fn build(self) -> crate::types::FsxProtocolNfs {
         crate::types::FsxProtocolNfs {
-            mount_options: self.mount_options
-            ,
+            mount_options: self.mount_options,
         }
     }
 }
-

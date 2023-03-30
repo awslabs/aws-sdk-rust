@@ -135,4 +135,3 @@ pub mod update_table_objects;
 
 /// Types for the `UpdateTableStorageOptimizer` operation.
 pub mod update_table_storage_optimizer;
-

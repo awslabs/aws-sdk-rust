@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetTemplateSyncConfigOutput  {
+pub struct GetTemplateSyncConfigOutput {
     /// <p>The template sync configuration detail data that's returned by Proton.</p>
     #[doc(hidden)]
     pub template_sync_config: std::option::Option<crate::types::TemplateSyncConfig>,
@@ -10,18 +10,20 @@ pub struct GetTemplateSyncConfigOutput  {
 }
 impl GetTemplateSyncConfigOutput {
     /// <p>The template sync configuration detail data that's returned by Proton.</p>
-    pub fn template_sync_config(&self) -> std::option::Option<& crate::types::TemplateSyncConfig> {
+    pub fn template_sync_config(&self) -> std::option::Option<&crate::types::TemplateSyncConfig> {
         self.template_sync_config.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for GetTemplateSyncConfigOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl GetTemplateSyncConfigOutput {
     /// Creates a new builder-style object to manufacture [`GetTemplateSyncConfigOutput`](crate::operation::get_template_sync_config::GetTemplateSyncConfigOutput).
-    pub fn builder() -> crate::operation::get_template_sync_config::builders::GetTemplateSyncConfigOutputBuilder {
+    pub fn builder(
+    ) -> crate::operation::get_template_sync_config::builders::GetTemplateSyncConfigOutputBuilder
+    {
         crate::operation::get_template_sync_config::builders::GetTemplateSyncConfigOutputBuilder::default()
     }
 }
@@ -40,25 +42,27 @@ impl GetTemplateSyncConfigOutputBuilder {
         self
     }
     /// <p>The template sync configuration detail data that's returned by Proton.</p>
-    pub fn set_template_sync_config(mut self, input: std::option::Option<crate::types::TemplateSyncConfig>) -> Self {
-        self.template_sync_config = input; self
+    pub fn set_template_sync_config(
+        mut self,
+        input: std::option::Option<crate::types::TemplateSyncConfig>,
+    ) -> Self {
+        self.template_sync_config = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`GetTemplateSyncConfigOutput`](crate::operation::get_template_sync_config::GetTemplateSyncConfigOutput).
     pub fn build(self) -> crate::operation::get_template_sync_config::GetTemplateSyncConfigOutput {
         crate::operation::get_template_sync_config::GetTemplateSyncConfigOutput {
-            template_sync_config: self.template_sync_config
-            ,
+            template_sync_config: self.template_sync_config,
             _request_id: self._request_id,
         }
     }
 }
-

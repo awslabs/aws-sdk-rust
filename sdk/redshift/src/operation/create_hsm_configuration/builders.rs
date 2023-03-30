@@ -4,57 +4,82 @@ pub use crate::operation::create_hsm_configuration::_create_hsm_configuration_ou
 pub use crate::operation::create_hsm_configuration::_create_hsm_configuration_input::CreateHsmConfigurationInputBuilder;
 
 /// Fluent builder constructing a request to `CreateHsmConfiguration`.
-/// 
-/// <p>Creates an HSM configuration that contains the information required by an Amazon Redshift cluster to store and use database encryption keys in a Hardware Security Module (HSM). After creating the HSM configuration, you can specify it as a parameter when creating a cluster. The cluster will then store its encryption keys in the HSM.</p> 
+///
+/// <p>Creates an HSM configuration that contains the information required by an Amazon Redshift cluster to store and use database encryption keys in a Hardware Security Module (HSM). After creating the HSM configuration, you can specify it as a parameter when creating a cluster. The cluster will then store its encryption keys in the HSM.</p>
 /// <p>In addition to creating an HSM configuration, you must also create an HSM client certificate. For more information, go to <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-HSM.html">Hardware Security Modules</a> in the Amazon Redshift Cluster Management Guide.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct CreateHsmConfigurationFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::create_hsm_configuration::builders::CreateHsmConfigurationInputBuilder
-            }
-impl CreateHsmConfigurationFluentBuilder  {
+    handle: std::sync::Arc<crate::client::Handle>,
+    inner: crate::operation::create_hsm_configuration::builders::CreateHsmConfigurationInputBuilder,
+}
+impl CreateHsmConfigurationFluentBuilder {
     /// Creates a new `CreateHsmConfiguration`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
-                    /// sent. The operation's inner [http::Request] can be modified as well.
-                    pub async fn customize(self) -> std::result::Result<
-                        crate::client::customize::CustomizableOperation<crate::operation::create_hsm_configuration::CreateHsmConfiguration, aws_http::retry::AwsResponseRetryClassifier,>,
-                        aws_smithy_http::result::SdkError<crate::operation::create_hsm_configuration::CreateHsmConfigurationError>
-                    >  {
-                        let handle = self.handle.clone();
-                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-                    }
-    
-                    /// Sends the request and returns the response.
-                    ///
-                    /// If an error occurs, an `SdkError` will be returned with additional details that
-                    /// can be matched against.
-                    ///
-                    /// By default, any retryable failures will be retried twice. Retry behavior
-                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                    /// set when configuring the client.
-                    pub async fn send(self) -> std::result::Result<crate::operation::create_hsm_configuration::CreateHsmConfigurationOutput, aws_smithy_http::result::SdkError<crate::operation::create_hsm_configuration::CreateHsmConfigurationError>>
-                     {
-                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&self.handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        self.handle.client.call(op).await
-                    }
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle,
+            inner: Default::default(),
+        }
+    }
+
+    /// Consume this builder, creating a customizable operation that can be modified before being
+    /// sent. The operation's inner [http::Request] can be modified as well.
+    pub async fn customize(
+        self,
+    ) -> std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::create_hsm_configuration::CreateHsmConfiguration,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::result::SdkError<
+            crate::operation::create_hsm_configuration::CreateHsmConfigurationError,
+        >,
+    > {
+        let handle = self.handle.clone();
+        let operation = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+    }
+
+    /// Sends the request and returns the response.
+    ///
+    /// If an error occurs, an `SdkError` will be returned with additional details that
+    /// can be matched against.
+    ///
+    /// By default, any retryable failures will be retried twice. Retry behavior
+    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+    /// set when configuring the client.
+    pub async fn send(
+        self,
+    ) -> std::result::Result<
+        crate::operation::create_hsm_configuration::CreateHsmConfigurationOutput,
+        aws_smithy_http::result::SdkError<
+            crate::operation::create_hsm_configuration::CreateHsmConfigurationError,
+        >,
+    > {
+        let op = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&self.handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        self.handle.client.call(op).await
+    }
     /// <p>The identifier to be assigned to the new Amazon Redshift HSM configuration.</p>
     pub fn hsm_configuration_identifier(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.hsm_configuration_identifier(input.into());
         self
     }
     /// <p>The identifier to be assigned to the new Amazon Redshift HSM configuration.</p>
-    pub fn set_hsm_configuration_identifier(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_hsm_configuration_identifier(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_hsm_configuration_identifier(input);
         self
     }
@@ -84,7 +109,10 @@ impl CreateHsmConfigurationFluentBuilder  {
         self
     }
     /// <p>The name of the partition in the HSM where the Amazon Redshift clusters will store their database encryption keys.</p>
-    pub fn set_hsm_partition_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_hsm_partition_name(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_hsm_partition_name(input);
         self
     }
@@ -94,7 +122,10 @@ impl CreateHsmConfigurationFluentBuilder  {
         self
     }
     /// <p>The password required to access the HSM partition.</p>
-    pub fn set_hsm_partition_password(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_hsm_partition_password(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_hsm_partition_password(input);
         self
     }
@@ -104,7 +135,10 @@ impl CreateHsmConfigurationFluentBuilder  {
         self
     }
     /// <p>The HSMs public certificate file. When using Cloud HSM, the file name is server.pem.</p>
-    pub fn set_hsm_server_public_certificate(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_hsm_server_public_certificate(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_hsm_server_public_certificate(input);
         self
     }
@@ -118,9 +152,11 @@ impl CreateHsmConfigurationFluentBuilder  {
         self
     }
     /// <p>A list of tag instances.</p>
-    pub fn set_tags(mut self, input: std::option::Option<std::vec::Vec<crate::types::Tag>>) -> Self {
+    pub fn set_tags(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::Tag>>,
+    ) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }
 }
-

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeAlgorithmOutput  {
+pub struct DescribeAlgorithmOutput {
     /// <p>The name of the algorithm being described.</p>
     #[doc(hidden)]
     pub algorithm_name: std::option::Option<std::string::String>,
@@ -23,7 +23,8 @@ pub struct DescribeAlgorithmOutput  {
     pub inference_specification: std::option::Option<crate::types::InferenceSpecification>,
     /// <p>Details about configurations for one or more training jobs that SageMaker runs to test the algorithm.</p>
     #[doc(hidden)]
-    pub validation_specification: std::option::Option<crate::types::AlgorithmValidationSpecification>,
+    pub validation_specification:
+        std::option::Option<crate::types::AlgorithmValidationSpecification>,
     /// <p>The current status of the algorithm.</p>
     #[doc(hidden)]
     pub algorithm_status: std::option::Option<crate::types::AlgorithmStatus>,
@@ -40,43 +41,51 @@ pub struct DescribeAlgorithmOutput  {
 }
 impl DescribeAlgorithmOutput {
     /// <p>The name of the algorithm being described.</p>
-    pub fn algorithm_name(&self) -> std::option::Option<& str> {
+    pub fn algorithm_name(&self) -> std::option::Option<&str> {
         self.algorithm_name.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the algorithm.</p>
-    pub fn algorithm_arn(&self) -> std::option::Option<& str> {
+    pub fn algorithm_arn(&self) -> std::option::Option<&str> {
         self.algorithm_arn.as_deref()
     }
     /// <p>A brief summary about the algorithm.</p>
-    pub fn algorithm_description(&self) -> std::option::Option<& str> {
+    pub fn algorithm_description(&self) -> std::option::Option<&str> {
         self.algorithm_description.as_deref()
     }
     /// <p>A timestamp specifying when the algorithm was created.</p>
-    pub fn creation_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
+    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
     /// <p>Details about training jobs run by this algorithm.</p>
-    pub fn training_specification(&self) -> std::option::Option<& crate::types::TrainingSpecification> {
+    pub fn training_specification(
+        &self,
+    ) -> std::option::Option<&crate::types::TrainingSpecification> {
         self.training_specification.as_ref()
     }
     /// <p>Details about inference jobs that the algorithm runs.</p>
-    pub fn inference_specification(&self) -> std::option::Option<& crate::types::InferenceSpecification> {
+    pub fn inference_specification(
+        &self,
+    ) -> std::option::Option<&crate::types::InferenceSpecification> {
         self.inference_specification.as_ref()
     }
     /// <p>Details about configurations for one or more training jobs that SageMaker runs to test the algorithm.</p>
-    pub fn validation_specification(&self) -> std::option::Option<& crate::types::AlgorithmValidationSpecification> {
+    pub fn validation_specification(
+        &self,
+    ) -> std::option::Option<&crate::types::AlgorithmValidationSpecification> {
         self.validation_specification.as_ref()
     }
     /// <p>The current status of the algorithm.</p>
-    pub fn algorithm_status(&self) -> std::option::Option<& crate::types::AlgorithmStatus> {
+    pub fn algorithm_status(&self) -> std::option::Option<&crate::types::AlgorithmStatus> {
         self.algorithm_status.as_ref()
     }
     /// <p>Details about the current status of the algorithm.</p>
-    pub fn algorithm_status_details(&self) -> std::option::Option<& crate::types::AlgorithmStatusDetails> {
+    pub fn algorithm_status_details(
+        &self,
+    ) -> std::option::Option<&crate::types::AlgorithmStatusDetails> {
         self.algorithm_status_details.as_ref()
     }
     /// <p>The product identifier of the algorithm.</p>
-    pub fn product_id(&self) -> std::option::Option<& str> {
+    pub fn product_id(&self) -> std::option::Option<&str> {
         self.product_id.as_deref()
     }
     /// <p>Whether the algorithm is certified to be listed in Amazon Web Services Marketplace.</p>
@@ -85,13 +94,14 @@ impl DescribeAlgorithmOutput {
     }
 }
 impl aws_http::request_id::RequestId for DescribeAlgorithmOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl DescribeAlgorithmOutput {
     /// Creates a new builder-style object to manufacture [`DescribeAlgorithmOutput`](crate::operation::describe_algorithm::DescribeAlgorithmOutput).
-    pub fn builder() -> crate::operation::describe_algorithm::builders::DescribeAlgorithmOutputBuilder {
+    pub fn builder(
+    ) -> crate::operation::describe_algorithm::builders::DescribeAlgorithmOutputBuilder {
         crate::operation::describe_algorithm::builders::DescribeAlgorithmOutputBuilder::default()
     }
 }
@@ -106,7 +116,8 @@ pub struct DescribeAlgorithmOutputBuilder {
     pub(crate) creation_time: std::option::Option<aws_smithy_types::DateTime>,
     pub(crate) training_specification: std::option::Option<crate::types::TrainingSpecification>,
     pub(crate) inference_specification: std::option::Option<crate::types::InferenceSpecification>,
-    pub(crate) validation_specification: std::option::Option<crate::types::AlgorithmValidationSpecification>,
+    pub(crate) validation_specification:
+        std::option::Option<crate::types::AlgorithmValidationSpecification>,
     pub(crate) algorithm_status: std::option::Option<crate::types::AlgorithmStatus>,
     pub(crate) algorithm_status_details: std::option::Option<crate::types::AlgorithmStatusDetails>,
     pub(crate) product_id: std::option::Option<std::string::String>,
@@ -121,7 +132,8 @@ impl DescribeAlgorithmOutputBuilder {
     }
     /// <p>The name of the algorithm being described.</p>
     pub fn set_algorithm_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.algorithm_name = input; self
+        self.algorithm_name = input;
+        self
     }
     /// <p>The Amazon Resource Name (ARN) of the algorithm.</p>
     pub fn algorithm_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -130,7 +142,8 @@ impl DescribeAlgorithmOutputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the algorithm.</p>
     pub fn set_algorithm_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.algorithm_arn = input; self
+        self.algorithm_arn = input;
+        self
     }
     /// <p>A brief summary about the algorithm.</p>
     pub fn algorithm_description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -138,8 +151,12 @@ impl DescribeAlgorithmOutputBuilder {
         self
     }
     /// <p>A brief summary about the algorithm.</p>
-    pub fn set_algorithm_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.algorithm_description = input; self
+    pub fn set_algorithm_description(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.algorithm_description = input;
+        self
     }
     /// <p>A timestamp specifying when the algorithm was created.</p>
     pub fn creation_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -147,8 +164,12 @@ impl DescribeAlgorithmOutputBuilder {
         self
     }
     /// <p>A timestamp specifying when the algorithm was created.</p>
-    pub fn set_creation_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.creation_time = input; self
+    pub fn set_creation_time(
+        mut self,
+        input: std::option::Option<aws_smithy_types::DateTime>,
+    ) -> Self {
+        self.creation_time = input;
+        self
     }
     /// <p>Details about training jobs run by this algorithm.</p>
     pub fn training_specification(mut self, input: crate::types::TrainingSpecification) -> Self {
@@ -156,8 +177,12 @@ impl DescribeAlgorithmOutputBuilder {
         self
     }
     /// <p>Details about training jobs run by this algorithm.</p>
-    pub fn set_training_specification(mut self, input: std::option::Option<crate::types::TrainingSpecification>) -> Self {
-        self.training_specification = input; self
+    pub fn set_training_specification(
+        mut self,
+        input: std::option::Option<crate::types::TrainingSpecification>,
+    ) -> Self {
+        self.training_specification = input;
+        self
     }
     /// <p>Details about inference jobs that the algorithm runs.</p>
     pub fn inference_specification(mut self, input: crate::types::InferenceSpecification) -> Self {
@@ -165,17 +190,28 @@ impl DescribeAlgorithmOutputBuilder {
         self
     }
     /// <p>Details about inference jobs that the algorithm runs.</p>
-    pub fn set_inference_specification(mut self, input: std::option::Option<crate::types::InferenceSpecification>) -> Self {
-        self.inference_specification = input; self
+    pub fn set_inference_specification(
+        mut self,
+        input: std::option::Option<crate::types::InferenceSpecification>,
+    ) -> Self {
+        self.inference_specification = input;
+        self
     }
     /// <p>Details about configurations for one or more training jobs that SageMaker runs to test the algorithm.</p>
-    pub fn validation_specification(mut self, input: crate::types::AlgorithmValidationSpecification) -> Self {
+    pub fn validation_specification(
+        mut self,
+        input: crate::types::AlgorithmValidationSpecification,
+    ) -> Self {
         self.validation_specification = Some(input);
         self
     }
     /// <p>Details about configurations for one or more training jobs that SageMaker runs to test the algorithm.</p>
-    pub fn set_validation_specification(mut self, input: std::option::Option<crate::types::AlgorithmValidationSpecification>) -> Self {
-        self.validation_specification = input; self
+    pub fn set_validation_specification(
+        mut self,
+        input: std::option::Option<crate::types::AlgorithmValidationSpecification>,
+    ) -> Self {
+        self.validation_specification = input;
+        self
     }
     /// <p>The current status of the algorithm.</p>
     pub fn algorithm_status(mut self, input: crate::types::AlgorithmStatus) -> Self {
@@ -183,8 +219,12 @@ impl DescribeAlgorithmOutputBuilder {
         self
     }
     /// <p>The current status of the algorithm.</p>
-    pub fn set_algorithm_status(mut self, input: std::option::Option<crate::types::AlgorithmStatus>) -> Self {
-        self.algorithm_status = input; self
+    pub fn set_algorithm_status(
+        mut self,
+        input: std::option::Option<crate::types::AlgorithmStatus>,
+    ) -> Self {
+        self.algorithm_status = input;
+        self
     }
     /// <p>Details about the current status of the algorithm.</p>
     pub fn algorithm_status_details(mut self, input: crate::types::AlgorithmStatusDetails) -> Self {
@@ -192,8 +232,12 @@ impl DescribeAlgorithmOutputBuilder {
         self
     }
     /// <p>Details about the current status of the algorithm.</p>
-    pub fn set_algorithm_status_details(mut self, input: std::option::Option<crate::types::AlgorithmStatusDetails>) -> Self {
-        self.algorithm_status_details = input; self
+    pub fn set_algorithm_status_details(
+        mut self,
+        input: std::option::Option<crate::types::AlgorithmStatusDetails>,
+    ) -> Self {
+        self.algorithm_status_details = input;
+        self
     }
     /// <p>The product identifier of the algorithm.</p>
     pub fn product_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -202,7 +246,8 @@ impl DescribeAlgorithmOutputBuilder {
     }
     /// <p>The product identifier of the algorithm.</p>
     pub fn set_product_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.product_id = input; self
+        self.product_id = input;
+        self
     }
     /// <p>Whether the algorithm is certified to be listed in Amazon Web Services Marketplace.</p>
     pub fn certify_for_marketplace(mut self, input: bool) -> Self {
@@ -211,45 +256,33 @@ impl DescribeAlgorithmOutputBuilder {
     }
     /// <p>Whether the algorithm is certified to be listed in Amazon Web Services Marketplace.</p>
     pub fn set_certify_for_marketplace(mut self, input: std::option::Option<bool>) -> Self {
-        self.certify_for_marketplace = input; self
+        self.certify_for_marketplace = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`DescribeAlgorithmOutput`](crate::operation::describe_algorithm::DescribeAlgorithmOutput).
     pub fn build(self) -> crate::operation::describe_algorithm::DescribeAlgorithmOutput {
         crate::operation::describe_algorithm::DescribeAlgorithmOutput {
-            algorithm_name: self.algorithm_name
-            ,
-            algorithm_arn: self.algorithm_arn
-            ,
-            algorithm_description: self.algorithm_description
-            ,
-            creation_time: self.creation_time
-            ,
-            training_specification: self.training_specification
-            ,
-            inference_specification: self.inference_specification
-            ,
-            validation_specification: self.validation_specification
-            ,
-            algorithm_status: self.algorithm_status
-            ,
-            algorithm_status_details: self.algorithm_status_details
-            ,
-            product_id: self.product_id
-            ,
-            certify_for_marketplace: self.certify_for_marketplace
-                .unwrap_or_default()
-            ,
+            algorithm_name: self.algorithm_name,
+            algorithm_arn: self.algorithm_arn,
+            algorithm_description: self.algorithm_description,
+            creation_time: self.creation_time,
+            training_specification: self.training_specification,
+            inference_specification: self.inference_specification,
+            validation_specification: self.validation_specification,
+            algorithm_status: self.algorithm_status,
+            algorithm_status_details: self.algorithm_status_details,
+            product_id: self.product_id,
+            certify_for_marketplace: self.certify_for_marketplace.unwrap_or_default(),
             _request_id: self._request_id,
         }
     }
 }
-

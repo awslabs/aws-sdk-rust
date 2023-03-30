@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetMapTileOutput  {
+pub struct GetMapTileOutput {
     /// <p>Contains Mapbox Vector Tile (MVT) data.</p>
     #[doc(hidden)]
     pub blob: std::option::Option<aws_smithy_types::Blob>,
@@ -13,19 +13,19 @@ pub struct GetMapTileOutput  {
 }
 impl GetMapTileOutput {
     /// <p>Contains Mapbox Vector Tile (MVT) data.</p>
-    pub fn blob(&self) -> std::option::Option<& aws_smithy_types::Blob> {
+    pub fn blob(&self) -> std::option::Option<&aws_smithy_types::Blob> {
         self.blob.as_ref()
     }
     /// <p>The map tile's content type. For example, <code>application/vnd.mapbox-vector-tile</code>.</p>
-    pub fn content_type(&self) -> std::option::Option<& str> {
+    pub fn content_type(&self) -> std::option::Option<&str> {
         self.content_type.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for GetMapTileOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl GetMapTileOutput {
     /// Creates a new builder-style object to manufacture [`GetMapTileOutput`](crate::operation::get_map_tile::GetMapTileOutput).
     pub fn builder() -> crate::operation::get_map_tile::builders::GetMapTileOutputBuilder {
@@ -49,7 +49,8 @@ impl GetMapTileOutputBuilder {
     }
     /// <p>Contains Mapbox Vector Tile (MVT) data.</p>
     pub fn set_blob(mut self, input: std::option::Option<aws_smithy_types::Blob>) -> Self {
-        self.blob = input; self
+        self.blob = input;
+        self
     }
     /// <p>The map tile's content type. For example, <code>application/vnd.mapbox-vector-tile</code>.</p>
     pub fn content_type(mut self, input: impl Into<std::string::String>) -> Self {
@@ -58,26 +59,24 @@ impl GetMapTileOutputBuilder {
     }
     /// <p>The map tile's content type. For example, <code>application/vnd.mapbox-vector-tile</code>.</p>
     pub fn set_content_type(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.content_type = input; self
+        self.content_type = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`GetMapTileOutput`](crate::operation::get_map_tile::GetMapTileOutput).
     pub fn build(self) -> crate::operation::get_map_tile::GetMapTileOutput {
         crate::operation::get_map_tile::GetMapTileOutput {
-            blob: self.blob
-            ,
-            content_type: self.content_type
-            ,
+            blob: self.blob,
+            content_type: self.content_type,
             _request_id: self._request_id,
         }
     }
 }
-

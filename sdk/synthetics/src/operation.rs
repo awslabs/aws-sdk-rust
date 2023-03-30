@@ -63,4 +63,3 @@ pub mod untag_resource;
 
 /// Types for the `UpdateCanary` operation.
 pub mod update_canary;
-

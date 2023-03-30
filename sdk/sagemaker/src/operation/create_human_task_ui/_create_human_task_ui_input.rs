@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateHumanTaskUiInput  {
+pub struct CreateHumanTaskUiInput {
     /// <p>The name of the user interface you are creating.</p>
     #[doc(hidden)]
     pub human_task_ui_name: std::option::Option<std::string::String>,
@@ -15,21 +15,22 @@ pub struct CreateHumanTaskUiInput  {
 }
 impl CreateHumanTaskUiInput {
     /// <p>The name of the user interface you are creating.</p>
-    pub fn human_task_ui_name(&self) -> std::option::Option<& str> {
+    pub fn human_task_ui_name(&self) -> std::option::Option<&str> {
         self.human_task_ui_name.as_deref()
     }
     /// <p>The Liquid template for the worker user interface.</p>
-    pub fn ui_template(&self) -> std::option::Option<& crate::types::UiTemplate> {
+    pub fn ui_template(&self) -> std::option::Option<&crate::types::UiTemplate> {
         self.ui_template.as_ref()
     }
     /// <p>An array of key-value pairs that contain metadata to help you categorize and organize a human review workflow user interface. Each tag consists of a key and a value, both of which you define.</p>
-    pub fn tags(&self) -> std::option::Option<& [crate::types::Tag]> {
+    pub fn tags(&self) -> std::option::Option<&[crate::types::Tag]> {
         self.tags.as_deref()
     }
 }
 impl CreateHumanTaskUiInput {
     /// Creates a new builder-style object to manufacture [`CreateHumanTaskUiInput`](crate::operation::create_human_task_ui::CreateHumanTaskUiInput).
-    pub fn builder() -> crate::operation::create_human_task_ui::builders::CreateHumanTaskUiInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::create_human_task_ui::builders::CreateHumanTaskUiInputBuilder {
         crate::operation::create_human_task_ui::builders::CreateHumanTaskUiInputBuilder::default()
     }
 }
@@ -49,8 +50,12 @@ impl CreateHumanTaskUiInputBuilder {
         self
     }
     /// <p>The name of the user interface you are creating.</p>
-    pub fn set_human_task_ui_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.human_task_ui_name = input; self
+    pub fn set_human_task_ui_name(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.human_task_ui_name = input;
+        self
     }
     /// <p>The Liquid template for the worker user interface.</p>
     pub fn ui_template(mut self, input: crate::types::UiTemplate) -> Self {
@@ -59,7 +64,8 @@ impl CreateHumanTaskUiInputBuilder {
     }
     /// <p>The Liquid template for the worker user interface.</p>
     pub fn set_ui_template(mut self, input: std::option::Option<crate::types::UiTemplate>) -> Self {
-        self.ui_template = input; self
+        self.ui_template = input;
+        self
     }
     /// Appends an item to `tags`.
     ///
@@ -68,26 +74,31 @@ impl CreateHumanTaskUiInputBuilder {
     /// <p>An array of key-value pairs that contain metadata to help you categorize and organize a human review workflow user interface. Each tag consists of a key and a value, both of which you define.</p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
-                        v.push(input);
-                        self.tags = Some(v);
-                        self
+        v.push(input);
+        self.tags = Some(v);
+        self
     }
     /// <p>An array of key-value pairs that contain metadata to help you categorize and organize a human review workflow user interface. Each tag consists of a key and a value, both of which you define.</p>
-    pub fn set_tags(mut self, input: std::option::Option<std::vec::Vec<crate::types::Tag>>) -> Self {
-        self.tags = input; self
+    pub fn set_tags(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::Tag>>,
+    ) -> Self {
+        self.tags = input;
+        self
     }
     /// Consumes the builder and constructs a [`CreateHumanTaskUiInput`](crate::operation::create_human_task_ui::CreateHumanTaskUiInput).
-    pub fn build(self) -> Result<crate::operation::create_human_task_ui::CreateHumanTaskUiInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::create_human_task_ui::CreateHumanTaskUiInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::create_human_task_ui::CreateHumanTaskUiInput {
-                human_task_ui_name: self.human_task_ui_name
-                ,
-                ui_template: self.ui_template
-                ,
-                tags: self.tags
-                ,
-            }
+                human_task_ui_name: self.human_task_ui_name,
+                ui_template: self.ui_template,
+                tags: self.tags,
+            },
         )
     }
 }
-

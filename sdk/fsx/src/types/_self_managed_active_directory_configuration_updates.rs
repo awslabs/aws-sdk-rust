@@ -3,7 +3,7 @@
 /// <p>The configuration that Amazon FSx uses to join the Windows File Server instance to a self-managed Microsoft Active Directory (AD) directory.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct SelfManagedActiveDirectoryConfigurationUpdates  {
+pub struct SelfManagedActiveDirectoryConfigurationUpdates {
     /// <p>The user name for the service account on your self-managed AD domain that Amazon FSx will use to join to your AD domain. This account must have the permission to join computers to the domain in the organizational unit provided in <code>OrganizationalUnitDistinguishedName</code>.</p>
     #[doc(hidden)]
     pub user_name: std::option::Option<std::string::String>,
@@ -16,19 +16,19 @@ pub struct SelfManagedActiveDirectoryConfigurationUpdates  {
 }
 impl SelfManagedActiveDirectoryConfigurationUpdates {
     /// <p>The user name for the service account on your self-managed AD domain that Amazon FSx will use to join to your AD domain. This account must have the permission to join computers to the domain in the organizational unit provided in <code>OrganizationalUnitDistinguishedName</code>.</p>
-    pub fn user_name(&self) -> std::option::Option<& str> {
+    pub fn user_name(&self) -> std::option::Option<&str> {
         self.user_name.as_deref()
     }
     /// <p>The password for the service account on your self-managed AD domain that Amazon FSx will use to join to your AD domain.</p>
-    pub fn password(&self) -> std::option::Option<& str> {
+    pub fn password(&self) -> std::option::Option<&str> {
         self.password.as_deref()
     }
     /// <p>A list of up to three IP addresses of DNS servers or domain controllers in the self-managed AD directory.</p>
-    pub fn dns_ips(&self) -> std::option::Option<& [std::string::String]> {
+    pub fn dns_ips(&self) -> std::option::Option<&[std::string::String]> {
         self.dns_ips.as_deref()
     }
 }
-impl  std::fmt::Debug for SelfManagedActiveDirectoryConfigurationUpdates  {
+impl std::fmt::Debug for SelfManagedActiveDirectoryConfigurationUpdates {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("SelfManagedActiveDirectoryConfigurationUpdates");
         formatter.field("user_name", &self.user_name);
@@ -39,7 +39,8 @@ impl  std::fmt::Debug for SelfManagedActiveDirectoryConfigurationUpdates  {
 }
 impl SelfManagedActiveDirectoryConfigurationUpdates {
     /// Creates a new builder-style object to manufacture [`SelfManagedActiveDirectoryConfigurationUpdates`](crate::types::SelfManagedActiveDirectoryConfigurationUpdates).
-    pub fn builder() -> crate::types::builders::SelfManagedActiveDirectoryConfigurationUpdatesBuilder {
+    pub fn builder() -> crate::types::builders::SelfManagedActiveDirectoryConfigurationUpdatesBuilder
+    {
         crate::types::builders::SelfManagedActiveDirectoryConfigurationUpdatesBuilder::default()
     }
 }
@@ -60,7 +61,8 @@ impl SelfManagedActiveDirectoryConfigurationUpdatesBuilder {
     }
     /// <p>The user name for the service account on your self-managed AD domain that Amazon FSx will use to join to your AD domain. This account must have the permission to join computers to the domain in the organizational unit provided in <code>OrganizationalUnitDistinguishedName</code>.</p>
     pub fn set_user_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.user_name = input; self
+        self.user_name = input;
+        self
     }
     /// <p>The password for the service account on your self-managed AD domain that Amazon FSx will use to join to your AD domain.</p>
     pub fn password(mut self, input: impl Into<std::string::String>) -> Self {
@@ -69,7 +71,8 @@ impl SelfManagedActiveDirectoryConfigurationUpdatesBuilder {
     }
     /// <p>The password for the service account on your self-managed AD domain that Amazon FSx will use to join to your AD domain.</p>
     pub fn set_password(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.password = input; self
+        self.password = input;
+        self
     }
     /// Appends an item to `dns_ips`.
     ///
@@ -78,23 +81,24 @@ impl SelfManagedActiveDirectoryConfigurationUpdatesBuilder {
     /// <p>A list of up to three IP addresses of DNS servers or domain controllers in the self-managed AD directory.</p>
     pub fn dns_ips(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.dns_ips.unwrap_or_default();
-                        v.push(input.into());
-                        self.dns_ips = Some(v);
-                        self
+        v.push(input.into());
+        self.dns_ips = Some(v);
+        self
     }
     /// <p>A list of up to three IP addresses of DNS servers or domain controllers in the self-managed AD directory.</p>
-    pub fn set_dns_ips(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-        self.dns_ips = input; self
+    pub fn set_dns_ips(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
+        self.dns_ips = input;
+        self
     }
     /// Consumes the builder and constructs a [`SelfManagedActiveDirectoryConfigurationUpdates`](crate::types::SelfManagedActiveDirectoryConfigurationUpdates).
     pub fn build(self) -> crate::types::SelfManagedActiveDirectoryConfigurationUpdates {
         crate::types::SelfManagedActiveDirectoryConfigurationUpdates {
-            user_name: self.user_name
-            ,
-            password: self.password
-            ,
-            dns_ips: self.dns_ips
-            ,
+            user_name: self.user_name,
+            password: self.password,
+            dns_ips: self.dns_ips,
         }
     }
 }
@@ -107,4 +111,3 @@ impl std::fmt::Debug for SelfManagedActiveDirectoryConfigurationUpdatesBuilder {
         formatter.finish()
     }
 }
-

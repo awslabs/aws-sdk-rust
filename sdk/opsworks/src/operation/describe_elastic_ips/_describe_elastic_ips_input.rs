@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeElasticIpsInput  {
+pub struct DescribeElasticIpsInput {
     /// <p>The instance ID. If you include this parameter, <code>DescribeElasticIps</code> returns a description of the Elastic IP addresses associated with the specified instance.</p>
     #[doc(hidden)]
     pub instance_id: std::option::Option<std::string::String>,
@@ -15,21 +15,22 @@ pub struct DescribeElasticIpsInput  {
 }
 impl DescribeElasticIpsInput {
     /// <p>The instance ID. If you include this parameter, <code>DescribeElasticIps</code> returns a description of the Elastic IP addresses associated with the specified instance.</p>
-    pub fn instance_id(&self) -> std::option::Option<& str> {
+    pub fn instance_id(&self) -> std::option::Option<&str> {
         self.instance_id.as_deref()
     }
     /// <p>A stack ID. If you include this parameter, <code>DescribeElasticIps</code> returns a description of the Elastic IP addresses that are registered with the specified stack.</p>
-    pub fn stack_id(&self) -> std::option::Option<& str> {
+    pub fn stack_id(&self) -> std::option::Option<&str> {
         self.stack_id.as_deref()
     }
     /// <p>An array of Elastic IP addresses to be described. If you include this parameter, <code>DescribeElasticIps</code> returns a description of the specified Elastic IP addresses. Otherwise, it returns a description of every Elastic IP address.</p>
-    pub fn ips(&self) -> std::option::Option<& [std::string::String]> {
+    pub fn ips(&self) -> std::option::Option<&[std::string::String]> {
         self.ips.as_deref()
     }
 }
 impl DescribeElasticIpsInput {
     /// Creates a new builder-style object to manufacture [`DescribeElasticIpsInput`](crate::operation::describe_elastic_ips::DescribeElasticIpsInput).
-    pub fn builder() -> crate::operation::describe_elastic_ips::builders::DescribeElasticIpsInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::describe_elastic_ips::builders::DescribeElasticIpsInputBuilder {
         crate::operation::describe_elastic_ips::builders::DescribeElasticIpsInputBuilder::default()
     }
 }
@@ -50,7 +51,8 @@ impl DescribeElasticIpsInputBuilder {
     }
     /// <p>The instance ID. If you include this parameter, <code>DescribeElasticIps</code> returns a description of the Elastic IP addresses associated with the specified instance.</p>
     pub fn set_instance_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.instance_id = input; self
+        self.instance_id = input;
+        self
     }
     /// <p>A stack ID. If you include this parameter, <code>DescribeElasticIps</code> returns a description of the Elastic IP addresses that are registered with the specified stack.</p>
     pub fn stack_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -59,7 +61,8 @@ impl DescribeElasticIpsInputBuilder {
     }
     /// <p>A stack ID. If you include this parameter, <code>DescribeElasticIps</code> returns a description of the Elastic IP addresses that are registered with the specified stack.</p>
     pub fn set_stack_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.stack_id = input; self
+        self.stack_id = input;
+        self
     }
     /// Appends an item to `ips`.
     ///
@@ -68,26 +71,31 @@ impl DescribeElasticIpsInputBuilder {
     /// <p>An array of Elastic IP addresses to be described. If you include this parameter, <code>DescribeElasticIps</code> returns a description of the specified Elastic IP addresses. Otherwise, it returns a description of every Elastic IP address.</p>
     pub fn ips(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.ips.unwrap_or_default();
-                        v.push(input.into());
-                        self.ips = Some(v);
-                        self
+        v.push(input.into());
+        self.ips = Some(v);
+        self
     }
     /// <p>An array of Elastic IP addresses to be described. If you include this parameter, <code>DescribeElasticIps</code> returns a description of the specified Elastic IP addresses. Otherwise, it returns a description of every Elastic IP address.</p>
-    pub fn set_ips(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-        self.ips = input; self
+    pub fn set_ips(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
+        self.ips = input;
+        self
     }
     /// Consumes the builder and constructs a [`DescribeElasticIpsInput`](crate::operation::describe_elastic_ips::DescribeElasticIpsInput).
-    pub fn build(self) -> Result<crate::operation::describe_elastic_ips::DescribeElasticIpsInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::describe_elastic_ips::DescribeElasticIpsInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::describe_elastic_ips::DescribeElasticIpsInput {
-                instance_id: self.instance_id
-                ,
-                stack_id: self.stack_id
-                ,
-                ips: self.ips
-                ,
-            }
+                instance_id: self.instance_id,
+                stack_id: self.stack_id,
+                ips: self.ips,
+            },
         )
     }
 }
-

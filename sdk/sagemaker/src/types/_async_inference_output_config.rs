@@ -3,8 +3,8 @@
 /// <p>Specifies the configuration for asynchronous inference invocation outputs.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AsyncInferenceOutputConfig  {
-    /// <p>The Amazon Web Services Key Management Service (Amazon Web Services KMS) key that SageMaker uses to encrypt the asynchronous inference output in Amazon S3.</p> 
+pub struct AsyncInferenceOutputConfig {
+    /// <p>The Amazon Web Services Key Management Service (Amazon Web Services KMS) key that SageMaker uses to encrypt the asynchronous inference output in Amazon S3.</p>
     /// <p></p>
     #[doc(hidden)]
     pub kms_key_id: std::option::Option<std::string::String>,
@@ -16,17 +16,19 @@ pub struct AsyncInferenceOutputConfig  {
     pub notification_config: std::option::Option<crate::types::AsyncInferenceNotificationConfig>,
 }
 impl AsyncInferenceOutputConfig {
-    /// <p>The Amazon Web Services Key Management Service (Amazon Web Services KMS) key that SageMaker uses to encrypt the asynchronous inference output in Amazon S3.</p> 
+    /// <p>The Amazon Web Services Key Management Service (Amazon Web Services KMS) key that SageMaker uses to encrypt the asynchronous inference output in Amazon S3.</p>
     /// <p></p>
-    pub fn kms_key_id(&self) -> std::option::Option<& str> {
+    pub fn kms_key_id(&self) -> std::option::Option<&str> {
         self.kms_key_id.as_deref()
     }
     /// <p>The Amazon S3 location to upload inference responses to.</p>
-    pub fn s3_output_path(&self) -> std::option::Option<& str> {
+    pub fn s3_output_path(&self) -> std::option::Option<&str> {
         self.s3_output_path.as_deref()
     }
     /// <p>Specifies the configuration for notifications of inference results for asynchronous inference.</p>
-    pub fn notification_config(&self) -> std::option::Option<& crate::types::AsyncInferenceNotificationConfig> {
+    pub fn notification_config(
+        &self,
+    ) -> std::option::Option<&crate::types::AsyncInferenceNotificationConfig> {
         self.notification_config.as_ref()
     }
 }
@@ -43,19 +45,21 @@ impl AsyncInferenceOutputConfig {
 pub struct AsyncInferenceOutputConfigBuilder {
     pub(crate) kms_key_id: std::option::Option<std::string::String>,
     pub(crate) s3_output_path: std::option::Option<std::string::String>,
-    pub(crate) notification_config: std::option::Option<crate::types::AsyncInferenceNotificationConfig>,
+    pub(crate) notification_config:
+        std::option::Option<crate::types::AsyncInferenceNotificationConfig>,
 }
 impl AsyncInferenceOutputConfigBuilder {
-    /// <p>The Amazon Web Services Key Management Service (Amazon Web Services KMS) key that SageMaker uses to encrypt the asynchronous inference output in Amazon S3.</p> 
+    /// <p>The Amazon Web Services Key Management Service (Amazon Web Services KMS) key that SageMaker uses to encrypt the asynchronous inference output in Amazon S3.</p>
     /// <p></p>
     pub fn kms_key_id(mut self, input: impl Into<std::string::String>) -> Self {
         self.kms_key_id = Some(input.into());
         self
     }
-    /// <p>The Amazon Web Services Key Management Service (Amazon Web Services KMS) key that SageMaker uses to encrypt the asynchronous inference output in Amazon S3.</p> 
+    /// <p>The Amazon Web Services Key Management Service (Amazon Web Services KMS) key that SageMaker uses to encrypt the asynchronous inference output in Amazon S3.</p>
     /// <p></p>
     pub fn set_kms_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.kms_key_id = input; self
+        self.kms_key_id = input;
+        self
     }
     /// <p>The Amazon S3 location to upload inference responses to.</p>
     pub fn s3_output_path(mut self, input: impl Into<std::string::String>) -> Self {
@@ -64,27 +68,31 @@ impl AsyncInferenceOutputConfigBuilder {
     }
     /// <p>The Amazon S3 location to upload inference responses to.</p>
     pub fn set_s3_output_path(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.s3_output_path = input; self
+        self.s3_output_path = input;
+        self
     }
     /// <p>Specifies the configuration for notifications of inference results for asynchronous inference.</p>
-    pub fn notification_config(mut self, input: crate::types::AsyncInferenceNotificationConfig) -> Self {
+    pub fn notification_config(
+        mut self,
+        input: crate::types::AsyncInferenceNotificationConfig,
+    ) -> Self {
         self.notification_config = Some(input);
         self
     }
     /// <p>Specifies the configuration for notifications of inference results for asynchronous inference.</p>
-    pub fn set_notification_config(mut self, input: std::option::Option<crate::types::AsyncInferenceNotificationConfig>) -> Self {
-        self.notification_config = input; self
+    pub fn set_notification_config(
+        mut self,
+        input: std::option::Option<crate::types::AsyncInferenceNotificationConfig>,
+    ) -> Self {
+        self.notification_config = input;
+        self
     }
     /// Consumes the builder and constructs a [`AsyncInferenceOutputConfig`](crate::types::AsyncInferenceOutputConfig).
     pub fn build(self) -> crate::types::AsyncInferenceOutputConfig {
         crate::types::AsyncInferenceOutputConfig {
-            kms_key_id: self.kms_key_id
-            ,
-            s3_output_path: self.s3_output_path
-            ,
-            notification_config: self.notification_config
-            ,
+            kms_key_id: self.kms_key_id,
+            s3_output_path: self.s3_output_path,
+            notification_config: self.notification_config,
         }
     }
 }
-

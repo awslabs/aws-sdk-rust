@@ -51,4 +51,3 @@ pub mod update_logging_configuration;
 
 /// Types for the `UpdateRoom` operation.
 pub mod update_room;
-

@@ -3,9 +3,9 @@
 /// <p>An automatic tape creation policy consists of automatic tape creation rules where each rule defines when and how to create new tapes. For more information about automatic tape creation, see <a href="https://docs.aws.amazon.com/storagegateway/latest/userguide/GettingStartedCreateTapes.html#CreateTapesAutomatically">Creating Tapes Automatically</a>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AutomaticTapeCreationRule  {
-    /// <p>A prefix that you append to the barcode of the virtual tape that you are creating. This prefix makes the barcode unique.</p> <note> 
-    /// <p>The prefix must be 1-4 characters in length and must be one of the uppercase letters from A to Z.</p> 
+pub struct AutomaticTapeCreationRule {
+    /// <p>A prefix that you append to the barcode of the virtual tape that you are creating. This prefix makes the barcode unique.</p> <note>
+    /// <p>The prefix must be 1-4 characters in length and must be one of the uppercase letters from A to Z.</p>
     /// </note>
     #[doc(hidden)]
     pub tape_barcode_prefix: std::option::Option<std::string::String>,
@@ -23,14 +23,14 @@ pub struct AutomaticTapeCreationRule  {
     pub worm: bool,
 }
 impl AutomaticTapeCreationRule {
-    /// <p>A prefix that you append to the barcode of the virtual tape that you are creating. This prefix makes the barcode unique.</p> <note> 
-    /// <p>The prefix must be 1-4 characters in length and must be one of the uppercase letters from A to Z.</p> 
+    /// <p>A prefix that you append to the barcode of the virtual tape that you are creating. This prefix makes the barcode unique.</p> <note>
+    /// <p>The prefix must be 1-4 characters in length and must be one of the uppercase letters from A to Z.</p>
     /// </note>
-    pub fn tape_barcode_prefix(&self) -> std::option::Option<& str> {
+    pub fn tape_barcode_prefix(&self) -> std::option::Option<&str> {
         self.tape_barcode_prefix.as_deref()
     }
     /// <p>The ID of the pool that you want to add your tape to for archiving. The tape in this pool is archived in the Amazon S3 storage class that is associated with the pool. When you use your backup application to eject the tape, the tape is archived directly into the storage class (S3 Glacier or S3 Glacier Deep Archive) that corresponds to the pool.</p>
-    pub fn pool_id(&self) -> std::option::Option<& str> {
+    pub fn pool_id(&self) -> std::option::Option<&str> {
         self.pool_id.as_deref()
     }
     /// <p>The size, in bytes, of the virtual tape capacity.</p>
@@ -64,18 +64,22 @@ pub struct AutomaticTapeCreationRuleBuilder {
     pub(crate) worm: std::option::Option<bool>,
 }
 impl AutomaticTapeCreationRuleBuilder {
-    /// <p>A prefix that you append to the barcode of the virtual tape that you are creating. This prefix makes the barcode unique.</p> <note> 
-    /// <p>The prefix must be 1-4 characters in length and must be one of the uppercase letters from A to Z.</p> 
+    /// <p>A prefix that you append to the barcode of the virtual tape that you are creating. This prefix makes the barcode unique.</p> <note>
+    /// <p>The prefix must be 1-4 characters in length and must be one of the uppercase letters from A to Z.</p>
     /// </note>
     pub fn tape_barcode_prefix(mut self, input: impl Into<std::string::String>) -> Self {
         self.tape_barcode_prefix = Some(input.into());
         self
     }
-    /// <p>A prefix that you append to the barcode of the virtual tape that you are creating. This prefix makes the barcode unique.</p> <note> 
-    /// <p>The prefix must be 1-4 characters in length and must be one of the uppercase letters from A to Z.</p> 
+    /// <p>A prefix that you append to the barcode of the virtual tape that you are creating. This prefix makes the barcode unique.</p> <note>
+    /// <p>The prefix must be 1-4 characters in length and must be one of the uppercase letters from A to Z.</p>
     /// </note>
-    pub fn set_tape_barcode_prefix(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.tape_barcode_prefix = input; self
+    pub fn set_tape_barcode_prefix(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.tape_barcode_prefix = input;
+        self
     }
     /// <p>The ID of the pool that you want to add your tape to for archiving. The tape in this pool is archived in the Amazon S3 storage class that is associated with the pool. When you use your backup application to eject the tape, the tape is archived directly into the storage class (S3 Glacier or S3 Glacier Deep Archive) that corresponds to the pool.</p>
     pub fn pool_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -84,7 +88,8 @@ impl AutomaticTapeCreationRuleBuilder {
     }
     /// <p>The ID of the pool that you want to add your tape to for archiving. The tape in this pool is archived in the Amazon S3 storage class that is associated with the pool. When you use your backup application to eject the tape, the tape is archived directly into the storage class (S3 Glacier or S3 Glacier Deep Archive) that corresponds to the pool.</p>
     pub fn set_pool_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.pool_id = input; self
+        self.pool_id = input;
+        self
     }
     /// <p>The size, in bytes, of the virtual tape capacity.</p>
     pub fn tape_size_in_bytes(mut self, input: i64) -> Self {
@@ -93,7 +98,8 @@ impl AutomaticTapeCreationRuleBuilder {
     }
     /// <p>The size, in bytes, of the virtual tape capacity.</p>
     pub fn set_tape_size_in_bytes(mut self, input: std::option::Option<i64>) -> Self {
-        self.tape_size_in_bytes = input; self
+        self.tape_size_in_bytes = input;
+        self
     }
     /// <p>The minimum number of available virtual tapes that the gateway maintains at all times. If the number of tapes on the gateway goes below this value, the gateway creates as many new tapes as are needed to have <code>MinimumNumTapes</code> on the gateway. For more information about automatic tape creation, see <a href="https://docs.aws.amazon.com/storagegateway/latest/userguide/GettingStartedCreateTapes.html#CreateTapesAutomatically">Creating Tapes Automatically</a>.</p>
     pub fn minimum_num_tapes(mut self, input: i32) -> Self {
@@ -102,7 +108,8 @@ impl AutomaticTapeCreationRuleBuilder {
     }
     /// <p>The minimum number of available virtual tapes that the gateway maintains at all times. If the number of tapes on the gateway goes below this value, the gateway creates as many new tapes as are needed to have <code>MinimumNumTapes</code> on the gateway. For more information about automatic tape creation, see <a href="https://docs.aws.amazon.com/storagegateway/latest/userguide/GettingStartedCreateTapes.html#CreateTapesAutomatically">Creating Tapes Automatically</a>.</p>
     pub fn set_minimum_num_tapes(mut self, input: std::option::Option<i32>) -> Self {
-        self.minimum_num_tapes = input; self
+        self.minimum_num_tapes = input;
+        self
     }
     /// <p>Set to <code>true</code> to indicate that tapes are to be archived as write-once-read-many (WORM). Set to <code>false</code> when WORM is not enabled for tapes.</p>
     pub fn worm(mut self, input: bool) -> Self {
@@ -111,23 +118,17 @@ impl AutomaticTapeCreationRuleBuilder {
     }
     /// <p>Set to <code>true</code> to indicate that tapes are to be archived as write-once-read-many (WORM). Set to <code>false</code> when WORM is not enabled for tapes.</p>
     pub fn set_worm(mut self, input: std::option::Option<bool>) -> Self {
-        self.worm = input; self
+        self.worm = input;
+        self
     }
     /// Consumes the builder and constructs a [`AutomaticTapeCreationRule`](crate::types::AutomaticTapeCreationRule).
     pub fn build(self) -> crate::types::AutomaticTapeCreationRule {
         crate::types::AutomaticTapeCreationRule {
-            tape_barcode_prefix: self.tape_barcode_prefix
-            ,
-            pool_id: self.pool_id
-            ,
-            tape_size_in_bytes: self.tape_size_in_bytes
-            ,
-            minimum_num_tapes: self.minimum_num_tapes
-            ,
-            worm: self.worm
-                .unwrap_or_default()
-            ,
+            tape_barcode_prefix: self.tape_barcode_prefix,
+            pool_id: self.pool_id,
+            tape_size_in_bytes: self.tape_size_in_bytes,
+            minimum_num_tapes: self.minimum_num_tapes,
+            worm: self.worm.unwrap_or_default(),
         }
     }
 }
-

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct RegenerateSecurityTokenInput  {
+pub struct RegenerateSecurityTokenInput {
     /// <p>The Amazon Chime account ID.</p>
     #[doc(hidden)]
     pub account_id: std::option::Option<std::string::String>,
@@ -12,17 +12,19 @@ pub struct RegenerateSecurityTokenInput  {
 }
 impl RegenerateSecurityTokenInput {
     /// <p>The Amazon Chime account ID.</p>
-    pub fn account_id(&self) -> std::option::Option<& str> {
+    pub fn account_id(&self) -> std::option::Option<&str> {
         self.account_id.as_deref()
     }
     /// <p>The bot ID.</p>
-    pub fn bot_id(&self) -> std::option::Option<& str> {
+    pub fn bot_id(&self) -> std::option::Option<&str> {
         self.bot_id.as_deref()
     }
 }
 impl RegenerateSecurityTokenInput {
     /// Creates a new builder-style object to manufacture [`RegenerateSecurityTokenInput`](crate::operation::regenerate_security_token::RegenerateSecurityTokenInput).
-    pub fn builder() -> crate::operation::regenerate_security_token::builders::RegenerateSecurityTokenInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::regenerate_security_token::builders::RegenerateSecurityTokenInputBuilder
+    {
         crate::operation::regenerate_security_token::builders::RegenerateSecurityTokenInputBuilder::default()
     }
 }
@@ -42,7 +44,8 @@ impl RegenerateSecurityTokenInputBuilder {
     }
     /// <p>The Amazon Chime account ID.</p>
     pub fn set_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.account_id = input; self
+        self.account_id = input;
+        self
     }
     /// <p>The bot ID.</p>
     pub fn bot_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -51,18 +54,21 @@ impl RegenerateSecurityTokenInputBuilder {
     }
     /// <p>The bot ID.</p>
     pub fn set_bot_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.bot_id = input; self
+        self.bot_id = input;
+        self
     }
     /// Consumes the builder and constructs a [`RegenerateSecurityTokenInput`](crate::operation::regenerate_security_token::RegenerateSecurityTokenInput).
-    pub fn build(self) -> Result<crate::operation::regenerate_security_token::RegenerateSecurityTokenInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::regenerate_security_token::RegenerateSecurityTokenInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::regenerate_security_token::RegenerateSecurityTokenInput {
-                account_id: self.account_id
-                ,
-                bot_id: self.bot_id
-                ,
-            }
+                account_id: self.account_id,
+                bot_id: self.bot_id,
+            },
         )
     }
 }
-

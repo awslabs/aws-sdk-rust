@@ -3,18 +3,18 @@
 /// <p>The options that determine the null value format configuration.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct NullValueFormatConfiguration  {
+pub struct NullValueFormatConfiguration {
     /// <p>Determines the null string of null values.</p>
     #[doc(hidden)]
     pub null_string: std::option::Option<std::string::String>,
 }
 impl NullValueFormatConfiguration {
     /// <p>Determines the null string of null values.</p>
-    pub fn null_string(&self) -> std::option::Option<& str> {
+    pub fn null_string(&self) -> std::option::Option<&str> {
         self.null_string.as_deref()
     }
 }
-impl  std::fmt::Debug for NullValueFormatConfiguration  {
+impl std::fmt::Debug for NullValueFormatConfiguration {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("NullValueFormatConfiguration");
         formatter.field("null_string", &"*** Sensitive Data Redacted ***");
@@ -42,13 +42,13 @@ impl NullValueFormatConfigurationBuilder {
     }
     /// <p>Determines the null string of null values.</p>
     pub fn set_null_string(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.null_string = input; self
+        self.null_string = input;
+        self
     }
     /// Consumes the builder and constructs a [`NullValueFormatConfiguration`](crate::types::NullValueFormatConfiguration).
     pub fn build(self) -> crate::types::NullValueFormatConfiguration {
         crate::types::NullValueFormatConfiguration {
-            null_string: self.null_string
-            ,
+            null_string: self.null_string,
         }
     }
 }
@@ -59,4 +59,3 @@ impl std::fmt::Debug for NullValueFormatConfigurationBuilder {
         formatter.finish()
     }
 }
-

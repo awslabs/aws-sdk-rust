@@ -3,7 +3,7 @@
 /// <p>Contains connection settings for the load balancer.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AwsElbLoadBalancerConnectionSettings  {
+pub struct AwsElbLoadBalancerConnectionSettings {
     /// <p>The time, in seconds, that the connection can be idle (no data is sent over the connection) before it is closed by the load balancer.</p>
     #[doc(hidden)]
     pub idle_timeout: i32,
@@ -35,15 +35,13 @@ impl AwsElbLoadBalancerConnectionSettingsBuilder {
     }
     /// <p>The time, in seconds, that the connection can be idle (no data is sent over the connection) before it is closed by the load balancer.</p>
     pub fn set_idle_timeout(mut self, input: std::option::Option<i32>) -> Self {
-        self.idle_timeout = input; self
+        self.idle_timeout = input;
+        self
     }
     /// Consumes the builder and constructs a [`AwsElbLoadBalancerConnectionSettings`](crate::types::AwsElbLoadBalancerConnectionSettings).
     pub fn build(self) -> crate::types::AwsElbLoadBalancerConnectionSettings {
         crate::types::AwsElbLoadBalancerConnectionSettings {
-            idle_timeout: self.idle_timeout
-                .unwrap_or_default()
-            ,
+            idle_timeout: self.idle_timeout.unwrap_or_default(),
         }
     }
 }
-

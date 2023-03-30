@@ -4,55 +4,82 @@ pub use crate::operation::get_ipam_resource_cidrs::_get_ipam_resource_cidrs_outp
 pub use crate::operation::get_ipam_resource_cidrs::_get_ipam_resource_cidrs_input::GetIpamResourceCidrsInputBuilder;
 
 /// Fluent builder constructing a request to `GetIpamResourceCidrs`.
-/// 
+///
 /// <p>Get information about the resources in a scope.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct GetIpamResourceCidrsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::get_ipam_resource_cidrs::builders::GetIpamResourceCidrsInputBuilder
-            }
-impl GetIpamResourceCidrsFluentBuilder  {
+    handle: std::sync::Arc<crate::client::Handle>,
+    inner: crate::operation::get_ipam_resource_cidrs::builders::GetIpamResourceCidrsInputBuilder,
+}
+impl GetIpamResourceCidrsFluentBuilder {
     /// Creates a new `GetIpamResourceCidrs`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
-                    /// sent. The operation's inner [http::Request] can be modified as well.
-                    pub async fn customize(self) -> std::result::Result<
-                        crate::client::customize::CustomizableOperation<crate::operation::get_ipam_resource_cidrs::GetIpamResourceCidrs, aws_http::retry::AwsResponseRetryClassifier,>,
-                        aws_smithy_http::result::SdkError<crate::operation::get_ipam_resource_cidrs::GetIpamResourceCidrsError>
-                    >  {
-                        let handle = self.handle.clone();
-                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-                    }
-    
-                    /// Sends the request and returns the response.
-                    ///
-                    /// If an error occurs, an `SdkError` will be returned with additional details that
-                    /// can be matched against.
-                    ///
-                    /// By default, any retryable failures will be retried twice. Retry behavior
-                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                    /// set when configuring the client.
-                    pub async fn send(self) -> std::result::Result<crate::operation::get_ipam_resource_cidrs::GetIpamResourceCidrsOutput, aws_smithy_http::result::SdkError<crate::operation::get_ipam_resource_cidrs::GetIpamResourceCidrsError>>
-                     {
-                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&self.handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        self.handle.client.call(op).await
-                    }
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle,
+            inner: Default::default(),
+        }
+    }
+
+    /// Consume this builder, creating a customizable operation that can be modified before being
+    /// sent. The operation's inner [http::Request] can be modified as well.
+    pub async fn customize(
+        self,
+    ) -> std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::get_ipam_resource_cidrs::GetIpamResourceCidrs,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::result::SdkError<
+            crate::operation::get_ipam_resource_cidrs::GetIpamResourceCidrsError,
+        >,
+    > {
+        let handle = self.handle.clone();
+        let operation = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+    }
+
+    /// Sends the request and returns the response.
+    ///
+    /// If an error occurs, an `SdkError` will be returned with additional details that
+    /// can be matched against.
+    ///
+    /// By default, any retryable failures will be retried twice. Retry behavior
+    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+    /// set when configuring the client.
+    pub async fn send(
+        self,
+    ) -> std::result::Result<
+        crate::operation::get_ipam_resource_cidrs::GetIpamResourceCidrsOutput,
+        aws_smithy_http::result::SdkError<
+            crate::operation::get_ipam_resource_cidrs::GetIpamResourceCidrsError,
+        >,
+    > {
+        let op = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&self.handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        self.handle.client.call(op).await
+    }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::get_ipam_resource_cidrs::paginator::GetIpamResourceCidrsPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::get_ipam_resource_cidrs::paginator::GetIpamResourceCidrsPaginator {
-                            crate::operation::get_ipam_resource_cidrs::paginator::GetIpamResourceCidrsPaginator::new(self.handle, self.inner)
-                        }
+    ///
+    /// Paginators are used by calling [`send().await`](crate::operation::get_ipam_resource_cidrs::paginator::GetIpamResourceCidrsPaginator::send) which returns a `Stream`.
+    pub fn into_paginator(
+        self,
+    ) -> crate::operation::get_ipam_resource_cidrs::paginator::GetIpamResourceCidrsPaginator {
+        crate::operation::get_ipam_resource_cidrs::paginator::GetIpamResourceCidrsPaginator::new(
+            self.handle,
+            self.inner,
+        )
+    }
     /// <p>A check for whether you have the required permissions for the action without actually making the request and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn dry_run(mut self, input: bool) -> Self {
         self.inner = self.inner.dry_run(input);
@@ -73,7 +100,10 @@ impl GetIpamResourceCidrsFluentBuilder  {
         self
     }
     /// <p>One or more filters for the request. For more information about filtering, see <a href="https://docs.aws.amazon.com/cli/latest/userguide/cli-usage-filter.html">Filtering CLI output</a>.</p>
-    pub fn set_filters(mut self, input: std::option::Option<std::vec::Vec<crate::types::Filter>>) -> Self {
+    pub fn set_filters(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::Filter>>,
+    ) -> Self {
         self.inner = self.inner.set_filters(input);
         self
     }
@@ -133,7 +163,10 @@ impl GetIpamResourceCidrsFluentBuilder  {
         self
     }
     /// <p>The resource type.</p>
-    pub fn set_resource_type(mut self, input: std::option::Option<crate::types::IpamResourceType>) -> Self {
+    pub fn set_resource_type(
+        mut self,
+        input: std::option::Option<crate::types::IpamResourceType>,
+    ) -> Self {
         self.inner = self.inner.set_resource_type(input);
         self
     }
@@ -143,7 +176,10 @@ impl GetIpamResourceCidrsFluentBuilder  {
         self
     }
     /// <p>The resource tag.</p>
-    pub fn set_resource_tag(mut self, input: std::option::Option<crate::types::RequestIpamResourceTag>) -> Self {
+    pub fn set_resource_tag(
+        mut self,
+        input: std::option::Option<crate::types::RequestIpamResourceTag>,
+    ) -> Self {
         self.inner = self.inner.set_resource_tag(input);
         self
     }
@@ -158,4 +194,3 @@ impl GetIpamResourceCidrsFluentBuilder  {
         self
     }
 }
-

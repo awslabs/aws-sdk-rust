@@ -3,7 +3,7 @@
 /// <p>Information about the format for a source file or files.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UploadSettings  {
+pub struct UploadSettings {
     /// <p>File format.</p>
     #[doc(hidden)]
     pub format: std::option::Option<crate::types::FileFormat>,
@@ -22,7 +22,7 @@ pub struct UploadSettings  {
 }
 impl UploadSettings {
     /// <p>File format.</p>
-    pub fn format(&self) -> std::option::Option<& crate::types::FileFormat> {
+    pub fn format(&self) -> std::option::Option<&crate::types::FileFormat> {
         self.format.as_ref()
     }
     /// <p>A row number to start reading data from.</p>
@@ -34,11 +34,11 @@ impl UploadSettings {
         self.contains_header
     }
     /// <p>Text qualifier.</p>
-    pub fn text_qualifier(&self) -> std::option::Option<& crate::types::TextQualifier> {
+    pub fn text_qualifier(&self) -> std::option::Option<&crate::types::TextQualifier> {
         self.text_qualifier.as_ref()
     }
     /// <p>The delimiter between values in the file.</p>
-    pub fn delimiter(&self) -> std::option::Option<& str> {
+    pub fn delimiter(&self) -> std::option::Option<&str> {
         self.delimiter.as_deref()
     }
 }
@@ -67,7 +67,8 @@ impl UploadSettingsBuilder {
     }
     /// <p>File format.</p>
     pub fn set_format(mut self, input: std::option::Option<crate::types::FileFormat>) -> Self {
-        self.format = input; self
+        self.format = input;
+        self
     }
     /// <p>A row number to start reading data from.</p>
     pub fn start_from_row(mut self, input: i32) -> Self {
@@ -76,7 +77,8 @@ impl UploadSettingsBuilder {
     }
     /// <p>A row number to start reading data from.</p>
     pub fn set_start_from_row(mut self, input: std::option::Option<i32>) -> Self {
-        self.start_from_row = input; self
+        self.start_from_row = input;
+        self
     }
     /// <p>Whether the file has a header row, or the files each have a header row.</p>
     pub fn contains_header(mut self, input: bool) -> Self {
@@ -85,7 +87,8 @@ impl UploadSettingsBuilder {
     }
     /// <p>Whether the file has a header row, or the files each have a header row.</p>
     pub fn set_contains_header(mut self, input: std::option::Option<bool>) -> Self {
-        self.contains_header = input; self
+        self.contains_header = input;
+        self
     }
     /// <p>Text qualifier.</p>
     pub fn text_qualifier(mut self, input: crate::types::TextQualifier) -> Self {
@@ -93,8 +96,12 @@ impl UploadSettingsBuilder {
         self
     }
     /// <p>Text qualifier.</p>
-    pub fn set_text_qualifier(mut self, input: std::option::Option<crate::types::TextQualifier>) -> Self {
-        self.text_qualifier = input; self
+    pub fn set_text_qualifier(
+        mut self,
+        input: std::option::Option<crate::types::TextQualifier>,
+    ) -> Self {
+        self.text_qualifier = input;
+        self
     }
     /// <p>The delimiter between values in the file.</p>
     pub fn delimiter(mut self, input: impl Into<std::string::String>) -> Self {
@@ -103,22 +110,17 @@ impl UploadSettingsBuilder {
     }
     /// <p>The delimiter between values in the file.</p>
     pub fn set_delimiter(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.delimiter = input; self
+        self.delimiter = input;
+        self
     }
     /// Consumes the builder and constructs a [`UploadSettings`](crate::types::UploadSettings).
     pub fn build(self) -> crate::types::UploadSettings {
         crate::types::UploadSettings {
-            format: self.format
-            ,
-            start_from_row: self.start_from_row
-            ,
-            contains_header: self.contains_header
-            ,
-            text_qualifier: self.text_qualifier
-            ,
-            delimiter: self.delimiter
-            ,
+            format: self.format,
+            start_from_row: self.start_from_row,
+            contains_header: self.contains_header,
+            text_qualifier: self.text_qualifier,
+            delimiter: self.delimiter,
         }
     }
 }
-

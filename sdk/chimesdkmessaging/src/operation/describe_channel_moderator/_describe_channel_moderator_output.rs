@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeChannelModeratorOutput  {
+pub struct DescribeChannelModeratorOutput {
     /// <p>The details of the channel moderator.</p>
     #[doc(hidden)]
     pub channel_moderator: std::option::Option<crate::types::ChannelModerator>,
@@ -10,18 +10,20 @@ pub struct DescribeChannelModeratorOutput  {
 }
 impl DescribeChannelModeratorOutput {
     /// <p>The details of the channel moderator.</p>
-    pub fn channel_moderator(&self) -> std::option::Option<& crate::types::ChannelModerator> {
+    pub fn channel_moderator(&self) -> std::option::Option<&crate::types::ChannelModerator> {
         self.channel_moderator.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for DescribeChannelModeratorOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl DescribeChannelModeratorOutput {
     /// Creates a new builder-style object to manufacture [`DescribeChannelModeratorOutput`](crate::operation::describe_channel_moderator::DescribeChannelModeratorOutput).
-    pub fn builder() -> crate::operation::describe_channel_moderator::builders::DescribeChannelModeratorOutputBuilder {
+    pub fn builder(
+    ) -> crate::operation::describe_channel_moderator::builders::DescribeChannelModeratorOutputBuilder
+    {
         crate::operation::describe_channel_moderator::builders::DescribeChannelModeratorOutputBuilder::default()
     }
 }
@@ -40,25 +42,29 @@ impl DescribeChannelModeratorOutputBuilder {
         self
     }
     /// <p>The details of the channel moderator.</p>
-    pub fn set_channel_moderator(mut self, input: std::option::Option<crate::types::ChannelModerator>) -> Self {
-        self.channel_moderator = input; self
+    pub fn set_channel_moderator(
+        mut self,
+        input: std::option::Option<crate::types::ChannelModerator>,
+    ) -> Self {
+        self.channel_moderator = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`DescribeChannelModeratorOutput`](crate::operation::describe_channel_moderator::DescribeChannelModeratorOutput).
-    pub fn build(self) -> crate::operation::describe_channel_moderator::DescribeChannelModeratorOutput {
+    pub fn build(
+        self,
+    ) -> crate::operation::describe_channel_moderator::DescribeChannelModeratorOutput {
         crate::operation::describe_channel_moderator::DescribeChannelModeratorOutput {
-            channel_moderator: self.channel_moderator
-            ,
+            channel_moderator: self.channel_moderator,
             _request_id: self._request_id,
         }
     }
 }
-

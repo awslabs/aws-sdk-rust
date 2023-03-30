@@ -3,7 +3,7 @@
 /// <p>The information required to specify a Maven reference. You can use Maven references to specify dependency JAR files.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct MavenReference  {
+pub struct MavenReference {
     /// <p>The group ID of the Maven reference.</p>
     #[doc(hidden)]
     pub group_id: std::option::Option<std::string::String>,
@@ -16,15 +16,15 @@ pub struct MavenReference  {
 }
 impl MavenReference {
     /// <p>The group ID of the Maven reference.</p>
-    pub fn group_id(&self) -> std::option::Option<& str> {
+    pub fn group_id(&self) -> std::option::Option<&str> {
         self.group_id.as_deref()
     }
     /// <p>The artifact ID of the Maven reference.</p>
-    pub fn artifact_id(&self) -> std::option::Option<& str> {
+    pub fn artifact_id(&self) -> std::option::Option<&str> {
         self.artifact_id.as_deref()
     }
     /// <p>The version of the Maven reference.</p>
-    pub fn version(&self) -> std::option::Option<& str> {
+    pub fn version(&self) -> std::option::Option<&str> {
         self.version.as_deref()
     }
 }
@@ -51,7 +51,8 @@ impl MavenReferenceBuilder {
     }
     /// <p>The group ID of the Maven reference.</p>
     pub fn set_group_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.group_id = input; self
+        self.group_id = input;
+        self
     }
     /// <p>The artifact ID of the Maven reference.</p>
     pub fn artifact_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -60,7 +61,8 @@ impl MavenReferenceBuilder {
     }
     /// <p>The artifact ID of the Maven reference.</p>
     pub fn set_artifact_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.artifact_id = input; self
+        self.artifact_id = input;
+        self
     }
     /// <p>The version of the Maven reference.</p>
     pub fn version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -69,18 +71,15 @@ impl MavenReferenceBuilder {
     }
     /// <p>The version of the Maven reference.</p>
     pub fn set_version(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.version = input; self
+        self.version = input;
+        self
     }
     /// Consumes the builder and constructs a [`MavenReference`](crate::types::MavenReference).
     pub fn build(self) -> crate::types::MavenReference {
         crate::types::MavenReference {
-            group_id: self.group_id
-            ,
-            artifact_id: self.artifact_id
-            ,
-            version: self.version
-            ,
+            group_id: self.group_id,
+            artifact_id: self.artifact_id,
+            version: self.version,
         }
     }
 }
-

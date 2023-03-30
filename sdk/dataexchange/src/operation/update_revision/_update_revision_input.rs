@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateRevisionInput  {
+pub struct UpdateRevisionInput {
     /// <p>An optional comment about the revision.</p>
     #[doc(hidden)]
     pub comment: std::option::Option<std::string::String>,
@@ -18,11 +18,11 @@ pub struct UpdateRevisionInput  {
 }
 impl UpdateRevisionInput {
     /// <p>An optional comment about the revision.</p>
-    pub fn comment(&self) -> std::option::Option<& str> {
+    pub fn comment(&self) -> std::option::Option<&str> {
         self.comment.as_deref()
     }
     /// <p>The unique identifier for a data set.</p>
-    pub fn data_set_id(&self) -> std::option::Option<& str> {
+    pub fn data_set_id(&self) -> std::option::Option<&str> {
         self.data_set_id.as_deref()
     }
     /// <p>Finalizing a revision tells AWS Data Exchange that your changes to the assets in the revision are complete. After it's in this read-only state, you can publish the revision to your products.</p>
@@ -30,7 +30,7 @@ impl UpdateRevisionInput {
         self.finalized
     }
     /// <p>The unique identifier for a revision.</p>
-    pub fn revision_id(&self) -> std::option::Option<& str> {
+    pub fn revision_id(&self) -> std::option::Option<&str> {
         self.revision_id.as_deref()
     }
 }
@@ -58,7 +58,8 @@ impl UpdateRevisionInputBuilder {
     }
     /// <p>An optional comment about the revision.</p>
     pub fn set_comment(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.comment = input; self
+        self.comment = input;
+        self
     }
     /// <p>The unique identifier for a data set.</p>
     pub fn data_set_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -67,7 +68,8 @@ impl UpdateRevisionInputBuilder {
     }
     /// <p>The unique identifier for a data set.</p>
     pub fn set_data_set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.data_set_id = input; self
+        self.data_set_id = input;
+        self
     }
     /// <p>Finalizing a revision tells AWS Data Exchange that your changes to the assets in the revision are complete. After it's in this read-only state, you can publish the revision to your products.</p>
     pub fn finalized(mut self, input: bool) -> Self {
@@ -76,7 +78,8 @@ impl UpdateRevisionInputBuilder {
     }
     /// <p>Finalizing a revision tells AWS Data Exchange that your changes to the assets in the revision are complete. After it's in this read-only state, you can publish the revision to your products.</p>
     pub fn set_finalized(mut self, input: std::option::Option<bool>) -> Self {
-        self.finalized = input; self
+        self.finalized = input;
+        self
     }
     /// <p>The unique identifier for a revision.</p>
     pub fn revision_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -85,23 +88,21 @@ impl UpdateRevisionInputBuilder {
     }
     /// <p>The unique identifier for a revision.</p>
     pub fn set_revision_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.revision_id = input; self
+        self.revision_id = input;
+        self
     }
     /// Consumes the builder and constructs a [`UpdateRevisionInput`](crate::operation::update_revision::UpdateRevisionInput).
-    pub fn build(self) -> Result<crate::operation::update_revision::UpdateRevisionInput, aws_smithy_http::operation::error::BuildError> {
-        Ok(
-            crate::operation::update_revision::UpdateRevisionInput {
-                comment: self.comment
-                ,
-                data_set_id: self.data_set_id
-                ,
-                finalized: self.finalized
-                    .unwrap_or_default()
-                ,
-                revision_id: self.revision_id
-                ,
-            }
-        )
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::update_revision::UpdateRevisionInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        Ok(crate::operation::update_revision::UpdateRevisionInput {
+            comment: self.comment,
+            data_set_id: self.data_set_id,
+            finalized: self.finalized.unwrap_or_default(),
+            revision_id: self.revision_id,
+        })
     }
 }
-

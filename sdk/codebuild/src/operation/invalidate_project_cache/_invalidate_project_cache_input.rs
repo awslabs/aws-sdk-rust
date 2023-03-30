@@ -2,20 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct InvalidateProjectCacheInput  {
+pub struct InvalidateProjectCacheInput {
     /// <p>The name of the CodeBuild build project that the cache is reset for.</p>
     #[doc(hidden)]
     pub project_name: std::option::Option<std::string::String>,
 }
 impl InvalidateProjectCacheInput {
     /// <p>The name of the CodeBuild build project that the cache is reset for.</p>
-    pub fn project_name(&self) -> std::option::Option<& str> {
+    pub fn project_name(&self) -> std::option::Option<&str> {
         self.project_name.as_deref()
     }
 }
 impl InvalidateProjectCacheInput {
     /// Creates a new builder-style object to manufacture [`InvalidateProjectCacheInput`](crate::operation::invalidate_project_cache::InvalidateProjectCacheInput).
-    pub fn builder() -> crate::operation::invalidate_project_cache::builders::InvalidateProjectCacheInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::invalidate_project_cache::builders::InvalidateProjectCacheInputBuilder
+    {
         crate::operation::invalidate_project_cache::builders::InvalidateProjectCacheInputBuilder::default()
     }
 }
@@ -34,16 +36,20 @@ impl InvalidateProjectCacheInputBuilder {
     }
     /// <p>The name of the CodeBuild build project that the cache is reset for.</p>
     pub fn set_project_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.project_name = input; self
+        self.project_name = input;
+        self
     }
     /// Consumes the builder and constructs a [`InvalidateProjectCacheInput`](crate::operation::invalidate_project_cache::InvalidateProjectCacheInput).
-    pub fn build(self) -> Result<crate::operation::invalidate_project_cache::InvalidateProjectCacheInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::invalidate_project_cache::InvalidateProjectCacheInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::invalidate_project_cache::InvalidateProjectCacheInput {
-                project_name: self.project_name
-                ,
-            }
+                project_name: self.project_name,
+            },
         )
     }
 }
-

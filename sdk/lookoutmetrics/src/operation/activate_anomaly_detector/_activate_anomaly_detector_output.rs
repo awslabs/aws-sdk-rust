@@ -2,17 +2,19 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ActivateAnomalyDetectorOutput  {
+pub struct ActivateAnomalyDetectorOutput {
     _request_id: Option<String>,
 }
 impl aws_http::request_id::RequestId for ActivateAnomalyDetectorOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl ActivateAnomalyDetectorOutput {
     /// Creates a new builder-style object to manufacture [`ActivateAnomalyDetectorOutput`](crate::operation::activate_anomaly_detector::ActivateAnomalyDetectorOutput).
-    pub fn builder() -> crate::operation::activate_anomaly_detector::builders::ActivateAnomalyDetectorOutputBuilder {
+    pub fn builder(
+    ) -> crate::operation::activate_anomaly_detector::builders::ActivateAnomalyDetectorOutputBuilder
+    {
         crate::operation::activate_anomaly_detector::builders::ActivateAnomalyDetectorOutputBuilder::default()
     }
 }
@@ -25,19 +27,20 @@ pub struct ActivateAnomalyDetectorOutputBuilder {
 }
 impl ActivateAnomalyDetectorOutputBuilder {
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`ActivateAnomalyDetectorOutput`](crate::operation::activate_anomaly_detector::ActivateAnomalyDetectorOutput).
-    pub fn build(self) -> crate::operation::activate_anomaly_detector::ActivateAnomalyDetectorOutput {
+    pub fn build(
+        self,
+    ) -> crate::operation::activate_anomaly_detector::ActivateAnomalyDetectorOutput {
         crate::operation::activate_anomaly_detector::ActivateAnomalyDetectorOutput {
             _request_id: self._request_id,
         }
     }
 }
-

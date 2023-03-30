@@ -3,25 +3,28 @@
 /// <p>Represents a single step from a DataBrew recipe to be performed.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct RecipeStep  {
+pub struct RecipeStep {
     /// <p>The particular action to be performed in the recipe step.</p>
     #[doc(hidden)]
     pub action: std::option::Option<crate::types::RecipeAction>,
-    /// <p>One or more conditions that must be met for the recipe step to succeed.</p> <note> 
-    /// <p>All of the conditions in the array must be met. In other words, all of the conditions must be combined using a logical AND operation.</p> 
+    /// <p>One or more conditions that must be met for the recipe step to succeed.</p> <note>
+    /// <p>All of the conditions in the array must be met. In other words, all of the conditions must be combined using a logical AND operation.</p>
     /// </note>
     #[doc(hidden)]
-    pub condition_expressions: std::option::Option<std::vec::Vec<crate::types::ConditionExpression>>,
+    pub condition_expressions:
+        std::option::Option<std::vec::Vec<crate::types::ConditionExpression>>,
 }
 impl RecipeStep {
     /// <p>The particular action to be performed in the recipe step.</p>
-    pub fn action(&self) -> std::option::Option<& crate::types::RecipeAction> {
+    pub fn action(&self) -> std::option::Option<&crate::types::RecipeAction> {
         self.action.as_ref()
     }
-    /// <p>One or more conditions that must be met for the recipe step to succeed.</p> <note> 
-    /// <p>All of the conditions in the array must be met. In other words, all of the conditions must be combined using a logical AND operation.</p> 
+    /// <p>One or more conditions that must be met for the recipe step to succeed.</p> <note>
+    /// <p>All of the conditions in the array must be met. In other words, all of the conditions must be combined using a logical AND operation.</p>
     /// </note>
-    pub fn condition_expressions(&self) -> std::option::Option<& [crate::types::ConditionExpression]> {
+    pub fn condition_expressions(
+        &self,
+    ) -> std::option::Option<&[crate::types::ConditionExpression]> {
         self.condition_expressions.as_deref()
     }
 }
@@ -37,7 +40,8 @@ impl RecipeStep {
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct RecipeStepBuilder {
     pub(crate) action: std::option::Option<crate::types::RecipeAction>,
-    pub(crate) condition_expressions: std::option::Option<std::vec::Vec<crate::types::ConditionExpression>>,
+    pub(crate) condition_expressions:
+        std::option::Option<std::vec::Vec<crate::types::ConditionExpression>>,
 }
 impl RecipeStepBuilder {
     /// <p>The particular action to be performed in the recipe step.</p>
@@ -47,35 +51,37 @@ impl RecipeStepBuilder {
     }
     /// <p>The particular action to be performed in the recipe step.</p>
     pub fn set_action(mut self, input: std::option::Option<crate::types::RecipeAction>) -> Self {
-        self.action = input; self
+        self.action = input;
+        self
     }
     /// Appends an item to `condition_expressions`.
     ///
     /// To override the contents of this collection use [`set_condition_expressions`](Self::set_condition_expressions).
     ///
-    /// <p>One or more conditions that must be met for the recipe step to succeed.</p> <note> 
-    /// <p>All of the conditions in the array must be met. In other words, all of the conditions must be combined using a logical AND operation.</p> 
+    /// <p>One or more conditions that must be met for the recipe step to succeed.</p> <note>
+    /// <p>All of the conditions in the array must be met. In other words, all of the conditions must be combined using a logical AND operation.</p>
     /// </note>
     pub fn condition_expressions(mut self, input: crate::types::ConditionExpression) -> Self {
         let mut v = self.condition_expressions.unwrap_or_default();
-                        v.push(input);
-                        self.condition_expressions = Some(v);
-                        self
+        v.push(input);
+        self.condition_expressions = Some(v);
+        self
     }
-    /// <p>One or more conditions that must be met for the recipe step to succeed.</p> <note> 
-    /// <p>All of the conditions in the array must be met. In other words, all of the conditions must be combined using a logical AND operation.</p> 
+    /// <p>One or more conditions that must be met for the recipe step to succeed.</p> <note>
+    /// <p>All of the conditions in the array must be met. In other words, all of the conditions must be combined using a logical AND operation.</p>
     /// </note>
-    pub fn set_condition_expressions(mut self, input: std::option::Option<std::vec::Vec<crate::types::ConditionExpression>>) -> Self {
-        self.condition_expressions = input; self
+    pub fn set_condition_expressions(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::ConditionExpression>>,
+    ) -> Self {
+        self.condition_expressions = input;
+        self
     }
     /// Consumes the builder and constructs a [`RecipeStep`](crate::types::RecipeStep).
     pub fn build(self) -> crate::types::RecipeStep {
         crate::types::RecipeStep {
-            action: self.action
-            ,
-            condition_expressions: self.condition_expressions
-            ,
+            action: self.action,
+            condition_expressions: self.condition_expressions,
         }
     }
 }
-

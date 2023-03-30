@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateMultiRegionAccessPointInput  {
+pub struct CreateMultiRegionAccessPointInput {
     /// <p>The Amazon Web Services account ID for the owner of the Multi-Region Access Point. The owner of the Multi-Region Access Point also must own the underlying buckets.</p>
     #[doc(hidden)]
     pub account_id: std::option::Option<std::string::String>,
@@ -15,21 +15,21 @@ pub struct CreateMultiRegionAccessPointInput  {
 }
 impl CreateMultiRegionAccessPointInput {
     /// <p>The Amazon Web Services account ID for the owner of the Multi-Region Access Point. The owner of the Multi-Region Access Point also must own the underlying buckets.</p>
-    pub fn account_id(&self) -> std::option::Option<& str> {
+    pub fn account_id(&self) -> std::option::Option<&str> {
         self.account_id.as_deref()
     }
     /// <p>An idempotency token used to identify the request and guarantee that requests are unique.</p>
-    pub fn client_token(&self) -> std::option::Option<& str> {
+    pub fn client_token(&self) -> std::option::Option<&str> {
         self.client_token.as_deref()
     }
     /// <p>A container element containing details about the Multi-Region Access Point.</p>
-    pub fn details(&self) -> std::option::Option<& crate::types::CreateMultiRegionAccessPointInput> {
+    pub fn details(&self) -> std::option::Option<&crate::types::CreateMultiRegionAccessPointInput> {
         self.details.as_ref()
     }
 }
 impl CreateMultiRegionAccessPointInput {
     /// Creates a new builder-style object to manufacture [`CreateMultiRegionAccessPointInput`](crate::operation::create_multi_region_access_point::CreateMultiRegionAccessPointInput).
-    pub fn builder() -> crate::operation::create_multi_region_access_point::builders::CreateMultiRegionAccessPointInputBuilder {
+    pub fn builder() -> crate::operation::create_multi_region_access_point::builders::CreateMultiRegionAccessPointInputBuilder{
         crate::operation::create_multi_region_access_point::builders::CreateMultiRegionAccessPointInputBuilder::default()
     }
 }
@@ -50,7 +50,8 @@ impl CreateMultiRegionAccessPointInputBuilder {
     }
     /// <p>The Amazon Web Services account ID for the owner of the Multi-Region Access Point. The owner of the Multi-Region Access Point also must own the underlying buckets.</p>
     pub fn set_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.account_id = input; self
+        self.account_id = input;
+        self
     }
     /// <p>An idempotency token used to identify the request and guarantee that requests are unique.</p>
     pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -59,7 +60,8 @@ impl CreateMultiRegionAccessPointInputBuilder {
     }
     /// <p>An idempotency token used to identify the request and guarantee that requests are unique.</p>
     pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.client_token = input; self
+        self.client_token = input;
+        self
     }
     /// <p>A container element containing details about the Multi-Region Access Point.</p>
     pub fn details(mut self, input: crate::types::CreateMultiRegionAccessPointInput) -> Self {
@@ -67,21 +69,26 @@ impl CreateMultiRegionAccessPointInputBuilder {
         self
     }
     /// <p>A container element containing details about the Multi-Region Access Point.</p>
-    pub fn set_details(mut self, input: std::option::Option<crate::types::CreateMultiRegionAccessPointInput>) -> Self {
-        self.details = input; self
+    pub fn set_details(
+        mut self,
+        input: std::option::Option<crate::types::CreateMultiRegionAccessPointInput>,
+    ) -> Self {
+        self.details = input;
+        self
     }
     /// Consumes the builder and constructs a [`CreateMultiRegionAccessPointInput`](crate::operation::create_multi_region_access_point::CreateMultiRegionAccessPointInput).
-    pub fn build(self) -> Result<crate::operation::create_multi_region_access_point::CreateMultiRegionAccessPointInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::create_multi_region_access_point::CreateMultiRegionAccessPointInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::create_multi_region_access_point::CreateMultiRegionAccessPointInput {
-                account_id: self.account_id
-                ,
-                client_token: self.client_token
-                ,
-                details: self.details
-                ,
-            }
+                account_id: self.account_id,
+                client_token: self.client_token,
+                details: self.details,
+            },
         )
     }
 }
-

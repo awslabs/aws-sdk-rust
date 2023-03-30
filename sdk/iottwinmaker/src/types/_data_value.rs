@@ -3,7 +3,7 @@
 /// <p>An object that specifies a value for a property.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DataValue  {
+pub struct DataValue {
     /// <p>A Boolean value.</p>
     #[doc(hidden)]
     pub boolean_value: std::option::Option<bool>,
@@ -24,7 +24,9 @@ pub struct DataValue  {
     pub list_value: std::option::Option<std::vec::Vec<crate::types::DataValue>>,
     /// <p>An object that maps strings to multiple <code>DataValue</code> objects.</p>
     #[doc(hidden)]
-    pub map_value: std::option::Option<std::collections::HashMap<std::string::String, crate::types::DataValue>>,
+    pub map_value: std::option::Option<
+        std::collections::HashMap<std::string::String, crate::types::DataValue>,
+    >,
     /// <p>A value that relates a component to another component.</p>
     #[doc(hidden)]
     pub relationship_value: std::option::Option<crate::types::RelationshipValue>,
@@ -50,23 +52,26 @@ impl DataValue {
         self.long_value
     }
     /// <p>A string value.</p>
-    pub fn string_value(&self) -> std::option::Option<& str> {
+    pub fn string_value(&self) -> std::option::Option<&str> {
         self.string_value.as_deref()
     }
     /// <p>A list of multiple values.</p>
-    pub fn list_value(&self) -> std::option::Option<& [crate::types::DataValue]> {
+    pub fn list_value(&self) -> std::option::Option<&[crate::types::DataValue]> {
         self.list_value.as_deref()
     }
     /// <p>An object that maps strings to multiple <code>DataValue</code> objects.</p>
-    pub fn map_value(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, crate::types::DataValue>> {
+    pub fn map_value(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, crate::types::DataValue>>
+    {
         self.map_value.as_ref()
     }
     /// <p>A value that relates a component to another component.</p>
-    pub fn relationship_value(&self) -> std::option::Option<& crate::types::RelationshipValue> {
+    pub fn relationship_value(&self) -> std::option::Option<&crate::types::RelationshipValue> {
         self.relationship_value.as_ref()
     }
     /// <p>An expression that produces the value.</p>
-    pub fn expression(&self) -> std::option::Option<& str> {
+    pub fn expression(&self) -> std::option::Option<&str> {
         self.expression.as_deref()
     }
 }
@@ -87,7 +92,9 @@ pub struct DataValueBuilder {
     pub(crate) long_value: std::option::Option<i64>,
     pub(crate) string_value: std::option::Option<std::string::String>,
     pub(crate) list_value: std::option::Option<std::vec::Vec<crate::types::DataValue>>,
-    pub(crate) map_value: std::option::Option<std::collections::HashMap<std::string::String, crate::types::DataValue>>,
+    pub(crate) map_value: std::option::Option<
+        std::collections::HashMap<std::string::String, crate::types::DataValue>,
+    >,
     pub(crate) relationship_value: std::option::Option<crate::types::RelationshipValue>,
     pub(crate) expression: std::option::Option<std::string::String>,
 }
@@ -99,7 +106,8 @@ impl DataValueBuilder {
     }
     /// <p>A Boolean value.</p>
     pub fn set_boolean_value(mut self, input: std::option::Option<bool>) -> Self {
-        self.boolean_value = input; self
+        self.boolean_value = input;
+        self
     }
     /// <p>A double value.</p>
     pub fn double_value(mut self, input: f64) -> Self {
@@ -108,7 +116,8 @@ impl DataValueBuilder {
     }
     /// <p>A double value.</p>
     pub fn set_double_value(mut self, input: std::option::Option<f64>) -> Self {
-        self.double_value = input; self
+        self.double_value = input;
+        self
     }
     /// <p>An integer value.</p>
     pub fn integer_value(mut self, input: i32) -> Self {
@@ -117,7 +126,8 @@ impl DataValueBuilder {
     }
     /// <p>An integer value.</p>
     pub fn set_integer_value(mut self, input: std::option::Option<i32>) -> Self {
-        self.integer_value = input; self
+        self.integer_value = input;
+        self
     }
     /// <p>A long value.</p>
     pub fn long_value(mut self, input: i64) -> Self {
@@ -126,7 +136,8 @@ impl DataValueBuilder {
     }
     /// <p>A long value.</p>
     pub fn set_long_value(mut self, input: std::option::Option<i64>) -> Self {
-        self.long_value = input; self
+        self.long_value = input;
+        self
     }
     /// <p>A string value.</p>
     pub fn string_value(mut self, input: impl Into<std::string::String>) -> Self {
@@ -135,7 +146,8 @@ impl DataValueBuilder {
     }
     /// <p>A string value.</p>
     pub fn set_string_value(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.string_value = input; self
+        self.string_value = input;
+        self
     }
     /// Appends an item to `list_value`.
     ///
@@ -144,28 +156,42 @@ impl DataValueBuilder {
     /// <p>A list of multiple values.</p>
     pub fn list_value(mut self, input: crate::types::DataValue) -> Self {
         let mut v = self.list_value.unwrap_or_default();
-                        v.push(input);
-                        self.list_value = Some(v);
-                        self
+        v.push(input);
+        self.list_value = Some(v);
+        self
     }
     /// <p>A list of multiple values.</p>
-    pub fn set_list_value(mut self, input: std::option::Option<std::vec::Vec<crate::types::DataValue>>) -> Self {
-        self.list_value = input; self
+    pub fn set_list_value(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::DataValue>>,
+    ) -> Self {
+        self.list_value = input;
+        self
     }
     /// Adds a key-value pair to `map_value`.
     ///
     /// To override the contents of this collection use [`set_map_value`](Self::set_map_value).
     ///
     /// <p>An object that maps strings to multiple <code>DataValue</code> objects.</p>
-    pub fn map_value(mut self, k: impl Into<std::string::String>, v: crate::types::DataValue) -> Self {
+    pub fn map_value(
+        mut self,
+        k: impl Into<std::string::String>,
+        v: crate::types::DataValue,
+    ) -> Self {
         let mut hash_map = self.map_value.unwrap_or_default();
-                        hash_map.insert(k.into(), v);
-                        self.map_value = Some(hash_map);
-                        self
+        hash_map.insert(k.into(), v);
+        self.map_value = Some(hash_map);
+        self
     }
     /// <p>An object that maps strings to multiple <code>DataValue</code> objects.</p>
-    pub fn set_map_value(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, crate::types::DataValue>>) -> Self {
-        self.map_value = input; self
+    pub fn set_map_value(
+        mut self,
+        input: std::option::Option<
+            std::collections::HashMap<std::string::String, crate::types::DataValue>,
+        >,
+    ) -> Self {
+        self.map_value = input;
+        self
     }
     /// <p>A value that relates a component to another component.</p>
     pub fn relationship_value(mut self, input: crate::types::RelationshipValue) -> Self {
@@ -173,8 +199,12 @@ impl DataValueBuilder {
         self
     }
     /// <p>A value that relates a component to another component.</p>
-    pub fn set_relationship_value(mut self, input: std::option::Option<crate::types::RelationshipValue>) -> Self {
-        self.relationship_value = input; self
+    pub fn set_relationship_value(
+        mut self,
+        input: std::option::Option<crate::types::RelationshipValue>,
+    ) -> Self {
+        self.relationship_value = input;
+        self
     }
     /// <p>An expression that produces the value.</p>
     pub fn expression(mut self, input: impl Into<std::string::String>) -> Self {
@@ -183,30 +213,21 @@ impl DataValueBuilder {
     }
     /// <p>An expression that produces the value.</p>
     pub fn set_expression(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.expression = input; self
+        self.expression = input;
+        self
     }
     /// Consumes the builder and constructs a [`DataValue`](crate::types::DataValue).
     pub fn build(self) -> crate::types::DataValue {
         crate::types::DataValue {
-            boolean_value: self.boolean_value
-            ,
-            double_value: self.double_value
-            ,
-            integer_value: self.integer_value
-            ,
-            long_value: self.long_value
-            ,
-            string_value: self.string_value
-            ,
-            list_value: self.list_value
-            ,
-            map_value: self.map_value
-            ,
-            relationship_value: self.relationship_value
-            ,
-            expression: self.expression
-            ,
+            boolean_value: self.boolean_value,
+            double_value: self.double_value,
+            integer_value: self.integer_value,
+            long_value: self.long_value,
+            string_value: self.string_value,
+            list_value: self.list_value,
+            map_value: self.map_value,
+            relationship_value: self.relationship_value,
+            expression: self.expression,
         }
     }
 }
-

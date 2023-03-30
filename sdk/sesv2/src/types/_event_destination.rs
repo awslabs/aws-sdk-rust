@@ -3,11 +3,11 @@
 /// <p>In the Amazon SES API v2, <i>events</i> include message sends, deliveries, opens, clicks, bounces, complaints and delivery delays. <i>Event destinations</i> are places that you can send information about these events to. For example, you can send event data to Amazon SNS to receive notifications when you receive bounces or complaints, or you can use Amazon Kinesis Data Firehose to stream data to Amazon S3 for long-term storage.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct EventDestination  {
+pub struct EventDestination {
     /// <p>A name that identifies the event destination.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
-    /// <p>If <code>true</code>, the event destination is enabled. When the event destination is enabled, the specified event types are sent to the destinations in this <code>EventDestinationDefinition</code>.</p> 
+    /// <p>If <code>true</code>, the event destination is enabled. When the event destination is enabled, the specified event types are sent to the destinations in this <code>EventDestinationDefinition</code>.</p>
     /// <p>If <code>false</code>, the event destination is disabled. When the event destination is disabled, events aren't sent to the specified destinations.</p>
     #[doc(hidden)]
     pub enabled: bool,
@@ -29,32 +29,36 @@ pub struct EventDestination  {
 }
 impl EventDestination {
     /// <p>A name that identifies the event destination.</p>
-    pub fn name(&self) -> std::option::Option<& str> {
+    pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
-    /// <p>If <code>true</code>, the event destination is enabled. When the event destination is enabled, the specified event types are sent to the destinations in this <code>EventDestinationDefinition</code>.</p> 
+    /// <p>If <code>true</code>, the event destination is enabled. When the event destination is enabled, the specified event types are sent to the destinations in this <code>EventDestinationDefinition</code>.</p>
     /// <p>If <code>false</code>, the event destination is disabled. When the event destination is disabled, events aren't sent to the specified destinations.</p>
     pub fn enabled(&self) -> bool {
         self.enabled
     }
     /// <p>The types of events that Amazon SES sends to the specified event destinations.</p>
-    pub fn matching_event_types(&self) -> std::option::Option<& [crate::types::EventType]> {
+    pub fn matching_event_types(&self) -> std::option::Option<&[crate::types::EventType]> {
         self.matching_event_types.as_deref()
     }
     /// <p>An object that defines an Amazon Kinesis Data Firehose destination for email events. You can use Amazon Kinesis Data Firehose to stream data to other services, such as Amazon S3 and Amazon Redshift.</p>
-    pub fn kinesis_firehose_destination(&self) -> std::option::Option<& crate::types::KinesisFirehoseDestination> {
+    pub fn kinesis_firehose_destination(
+        &self,
+    ) -> std::option::Option<&crate::types::KinesisFirehoseDestination> {
         self.kinesis_firehose_destination.as_ref()
     }
     /// <p>An object that defines an Amazon CloudWatch destination for email events. You can use Amazon CloudWatch to monitor and gain insights on your email sending metrics.</p>
-    pub fn cloud_watch_destination(&self) -> std::option::Option<& crate::types::CloudWatchDestination> {
+    pub fn cloud_watch_destination(
+        &self,
+    ) -> std::option::Option<&crate::types::CloudWatchDestination> {
         self.cloud_watch_destination.as_ref()
     }
     /// <p>An object that defines an Amazon SNS destination for email events. You can use Amazon SNS to send notification when certain email events occur.</p>
-    pub fn sns_destination(&self) -> std::option::Option<& crate::types::SnsDestination> {
+    pub fn sns_destination(&self) -> std::option::Option<&crate::types::SnsDestination> {
         self.sns_destination.as_ref()
     }
     /// <p>An object that defines an Amazon Pinpoint project destination for email events. You can send email event data to a Amazon Pinpoint project to view metrics using the Transactional Messaging dashboards that are built in to Amazon Pinpoint. For more information, see <a href="https://docs.aws.amazon.com/pinpoint/latest/userguide/analytics-transactional-messages.html">Transactional Messaging Charts</a> in the <i>Amazon Pinpoint User Guide</i>.</p>
-    pub fn pinpoint_destination(&self) -> std::option::Option<& crate::types::PinpointDestination> {
+    pub fn pinpoint_destination(&self) -> std::option::Option<&crate::types::PinpointDestination> {
         self.pinpoint_destination.as_ref()
     }
 }
@@ -72,7 +76,8 @@ pub struct EventDestinationBuilder {
     pub(crate) name: std::option::Option<std::string::String>,
     pub(crate) enabled: std::option::Option<bool>,
     pub(crate) matching_event_types: std::option::Option<std::vec::Vec<crate::types::EventType>>,
-    pub(crate) kinesis_firehose_destination: std::option::Option<crate::types::KinesisFirehoseDestination>,
+    pub(crate) kinesis_firehose_destination:
+        std::option::Option<crate::types::KinesisFirehoseDestination>,
     pub(crate) cloud_watch_destination: std::option::Option<crate::types::CloudWatchDestination>,
     pub(crate) sns_destination: std::option::Option<crate::types::SnsDestination>,
     pub(crate) pinpoint_destination: std::option::Option<crate::types::PinpointDestination>,
@@ -85,18 +90,20 @@ impl EventDestinationBuilder {
     }
     /// <p>A name that identifies the event destination.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input; self
+        self.name = input;
+        self
     }
-    /// <p>If <code>true</code>, the event destination is enabled. When the event destination is enabled, the specified event types are sent to the destinations in this <code>EventDestinationDefinition</code>.</p> 
+    /// <p>If <code>true</code>, the event destination is enabled. When the event destination is enabled, the specified event types are sent to the destinations in this <code>EventDestinationDefinition</code>.</p>
     /// <p>If <code>false</code>, the event destination is disabled. When the event destination is disabled, events aren't sent to the specified destinations.</p>
     pub fn enabled(mut self, input: bool) -> Self {
         self.enabled = Some(input);
         self
     }
-    /// <p>If <code>true</code>, the event destination is enabled. When the event destination is enabled, the specified event types are sent to the destinations in this <code>EventDestinationDefinition</code>.</p> 
+    /// <p>If <code>true</code>, the event destination is enabled. When the event destination is enabled, the specified event types are sent to the destinations in this <code>EventDestinationDefinition</code>.</p>
     /// <p>If <code>false</code>, the event destination is disabled. When the event destination is disabled, events aren't sent to the specified destinations.</p>
     pub fn set_enabled(mut self, input: std::option::Option<bool>) -> Self {
-        self.enabled = input; self
+        self.enabled = input;
+        self
     }
     /// Appends an item to `matching_event_types`.
     ///
@@ -105,22 +112,33 @@ impl EventDestinationBuilder {
     /// <p>The types of events that Amazon SES sends to the specified event destinations.</p>
     pub fn matching_event_types(mut self, input: crate::types::EventType) -> Self {
         let mut v = self.matching_event_types.unwrap_or_default();
-                        v.push(input);
-                        self.matching_event_types = Some(v);
-                        self
+        v.push(input);
+        self.matching_event_types = Some(v);
+        self
     }
     /// <p>The types of events that Amazon SES sends to the specified event destinations.</p>
-    pub fn set_matching_event_types(mut self, input: std::option::Option<std::vec::Vec<crate::types::EventType>>) -> Self {
-        self.matching_event_types = input; self
+    pub fn set_matching_event_types(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::EventType>>,
+    ) -> Self {
+        self.matching_event_types = input;
+        self
     }
     /// <p>An object that defines an Amazon Kinesis Data Firehose destination for email events. You can use Amazon Kinesis Data Firehose to stream data to other services, such as Amazon S3 and Amazon Redshift.</p>
-    pub fn kinesis_firehose_destination(mut self, input: crate::types::KinesisFirehoseDestination) -> Self {
+    pub fn kinesis_firehose_destination(
+        mut self,
+        input: crate::types::KinesisFirehoseDestination,
+    ) -> Self {
         self.kinesis_firehose_destination = Some(input);
         self
     }
     /// <p>An object that defines an Amazon Kinesis Data Firehose destination for email events. You can use Amazon Kinesis Data Firehose to stream data to other services, such as Amazon S3 and Amazon Redshift.</p>
-    pub fn set_kinesis_firehose_destination(mut self, input: std::option::Option<crate::types::KinesisFirehoseDestination>) -> Self {
-        self.kinesis_firehose_destination = input; self
+    pub fn set_kinesis_firehose_destination(
+        mut self,
+        input: std::option::Option<crate::types::KinesisFirehoseDestination>,
+    ) -> Self {
+        self.kinesis_firehose_destination = input;
+        self
     }
     /// <p>An object that defines an Amazon CloudWatch destination for email events. You can use Amazon CloudWatch to monitor and gain insights on your email sending metrics.</p>
     pub fn cloud_watch_destination(mut self, input: crate::types::CloudWatchDestination) -> Self {
@@ -128,8 +146,12 @@ impl EventDestinationBuilder {
         self
     }
     /// <p>An object that defines an Amazon CloudWatch destination for email events. You can use Amazon CloudWatch to monitor and gain insights on your email sending metrics.</p>
-    pub fn set_cloud_watch_destination(mut self, input: std::option::Option<crate::types::CloudWatchDestination>) -> Self {
-        self.cloud_watch_destination = input; self
+    pub fn set_cloud_watch_destination(
+        mut self,
+        input: std::option::Option<crate::types::CloudWatchDestination>,
+    ) -> Self {
+        self.cloud_watch_destination = input;
+        self
     }
     /// <p>An object that defines an Amazon SNS destination for email events. You can use Amazon SNS to send notification when certain email events occur.</p>
     pub fn sns_destination(mut self, input: crate::types::SnsDestination) -> Self {
@@ -137,8 +159,12 @@ impl EventDestinationBuilder {
         self
     }
     /// <p>An object that defines an Amazon SNS destination for email events. You can use Amazon SNS to send notification when certain email events occur.</p>
-    pub fn set_sns_destination(mut self, input: std::option::Option<crate::types::SnsDestination>) -> Self {
-        self.sns_destination = input; self
+    pub fn set_sns_destination(
+        mut self,
+        input: std::option::Option<crate::types::SnsDestination>,
+    ) -> Self {
+        self.sns_destination = input;
+        self
     }
     /// <p>An object that defines an Amazon Pinpoint project destination for email events. You can send email event data to a Amazon Pinpoint project to view metrics using the Transactional Messaging dashboards that are built in to Amazon Pinpoint. For more information, see <a href="https://docs.aws.amazon.com/pinpoint/latest/userguide/analytics-transactional-messages.html">Transactional Messaging Charts</a> in the <i>Amazon Pinpoint User Guide</i>.</p>
     pub fn pinpoint_destination(mut self, input: crate::types::PinpointDestination) -> Self {
@@ -146,28 +172,23 @@ impl EventDestinationBuilder {
         self
     }
     /// <p>An object that defines an Amazon Pinpoint project destination for email events. You can send email event data to a Amazon Pinpoint project to view metrics using the Transactional Messaging dashboards that are built in to Amazon Pinpoint. For more information, see <a href="https://docs.aws.amazon.com/pinpoint/latest/userguide/analytics-transactional-messages.html">Transactional Messaging Charts</a> in the <i>Amazon Pinpoint User Guide</i>.</p>
-    pub fn set_pinpoint_destination(mut self, input: std::option::Option<crate::types::PinpointDestination>) -> Self {
-        self.pinpoint_destination = input; self
+    pub fn set_pinpoint_destination(
+        mut self,
+        input: std::option::Option<crate::types::PinpointDestination>,
+    ) -> Self {
+        self.pinpoint_destination = input;
+        self
     }
     /// Consumes the builder and constructs a [`EventDestination`](crate::types::EventDestination).
     pub fn build(self) -> crate::types::EventDestination {
         crate::types::EventDestination {
-            name: self.name
-            ,
-            enabled: self.enabled
-                .unwrap_or_default()
-            ,
-            matching_event_types: self.matching_event_types
-            ,
-            kinesis_firehose_destination: self.kinesis_firehose_destination
-            ,
-            cloud_watch_destination: self.cloud_watch_destination
-            ,
-            sns_destination: self.sns_destination
-            ,
-            pinpoint_destination: self.pinpoint_destination
-            ,
+            name: self.name,
+            enabled: self.enabled.unwrap_or_default(),
+            matching_event_types: self.matching_event_types,
+            kinesis_firehose_destination: self.kinesis_firehose_destination,
+            cloud_watch_destination: self.cloud_watch_destination,
+            sns_destination: self.sns_destination,
+            pinpoint_destination: self.pinpoint_destination,
         }
     }
 }
-

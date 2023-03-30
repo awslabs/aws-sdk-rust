@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GeoMatchParams  {
+pub struct GeoMatchParams {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub country: std::option::Option<std::string::String>,
@@ -12,11 +12,11 @@ pub struct GeoMatchParams  {
 }
 impl GeoMatchParams {
     #[allow(missing_docs)] // documentation missing in model
-    pub fn country(&self) -> std::option::Option<& str> {
+    pub fn country(&self) -> std::option::Option<&str> {
         self.country.as_deref()
     }
     #[allow(missing_docs)] // documentation missing in model
-    pub fn area_code(&self) -> std::option::Option<& str> {
+    pub fn area_code(&self) -> std::option::Option<&str> {
         self.area_code.as_deref()
     }
 }
@@ -42,7 +42,8 @@ impl GeoMatchParamsBuilder {
     }
     #[allow(missing_docs)] // documentation missing in model
     pub fn set_country(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.country = input; self
+        self.country = input;
+        self
     }
     #[allow(missing_docs)] // documentation missing in model
     pub fn area_code(mut self, input: impl Into<std::string::String>) -> Self {
@@ -51,16 +52,14 @@ impl GeoMatchParamsBuilder {
     }
     #[allow(missing_docs)] // documentation missing in model
     pub fn set_area_code(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.area_code = input; self
+        self.area_code = input;
+        self
     }
     /// Consumes the builder and constructs a [`GeoMatchParams`](crate::types::GeoMatchParams).
     pub fn build(self) -> crate::types::GeoMatchParams {
         crate::types::GeoMatchParams {
-            country: self.country
-            ,
-            area_code: self.area_code
-            ,
+            country: self.country,
+            area_code: self.area_code,
         }
     }
 }
-

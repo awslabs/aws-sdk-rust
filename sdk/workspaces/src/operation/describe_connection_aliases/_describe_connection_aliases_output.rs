@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeConnectionAliasesOutput  {
+pub struct DescribeConnectionAliasesOutput {
     /// <p>Information about the specified connection aliases.</p>
     #[doc(hidden)]
     pub connection_aliases: std::option::Option<std::vec::Vec<crate::types::ConnectionAlias>>,
@@ -13,22 +13,22 @@ pub struct DescribeConnectionAliasesOutput  {
 }
 impl DescribeConnectionAliasesOutput {
     /// <p>Information about the specified connection aliases.</p>
-    pub fn connection_aliases(&self) -> std::option::Option<& [crate::types::ConnectionAlias]> {
+    pub fn connection_aliases(&self) -> std::option::Option<&[crate::types::ConnectionAlias]> {
         self.connection_aliases.as_deref()
     }
     /// <p>The token to use to retrieve the next page of results. This value is null when there are no more results to return. </p>
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for DescribeConnectionAliasesOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl DescribeConnectionAliasesOutput {
     /// Creates a new builder-style object to manufacture [`DescribeConnectionAliasesOutput`](crate::operation::describe_connection_aliases::DescribeConnectionAliasesOutput).
-    pub fn builder() -> crate::operation::describe_connection_aliases::builders::DescribeConnectionAliasesOutputBuilder {
+    pub fn builder() -> crate::operation::describe_connection_aliases::builders::DescribeConnectionAliasesOutputBuilder{
         crate::operation::describe_connection_aliases::builders::DescribeConnectionAliasesOutputBuilder::default()
     }
 }
@@ -37,7 +37,8 @@ impl DescribeConnectionAliasesOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct DescribeConnectionAliasesOutputBuilder {
-    pub(crate) connection_aliases: std::option::Option<std::vec::Vec<crate::types::ConnectionAlias>>,
+    pub(crate) connection_aliases:
+        std::option::Option<std::vec::Vec<crate::types::ConnectionAlias>>,
     pub(crate) next_token: std::option::Option<std::string::String>,
     _request_id: Option<String>,
 }
@@ -49,13 +50,17 @@ impl DescribeConnectionAliasesOutputBuilder {
     /// <p>Information about the specified connection aliases.</p>
     pub fn connection_aliases(mut self, input: crate::types::ConnectionAlias) -> Self {
         let mut v = self.connection_aliases.unwrap_or_default();
-                        v.push(input);
-                        self.connection_aliases = Some(v);
-                        self
+        v.push(input);
+        self.connection_aliases = Some(v);
+        self
     }
     /// <p>Information about the specified connection aliases.</p>
-    pub fn set_connection_aliases(mut self, input: std::option::Option<std::vec::Vec<crate::types::ConnectionAlias>>) -> Self {
-        self.connection_aliases = input; self
+    pub fn set_connection_aliases(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::ConnectionAlias>>,
+    ) -> Self {
+        self.connection_aliases = input;
+        self
     }
     /// <p>The token to use to retrieve the next page of results. This value is null when there are no more results to return. </p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -64,26 +69,26 @@ impl DescribeConnectionAliasesOutputBuilder {
     }
     /// <p>The token to use to retrieve the next page of results. This value is null when there are no more results to return. </p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input; self
+        self.next_token = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`DescribeConnectionAliasesOutput`](crate::operation::describe_connection_aliases::DescribeConnectionAliasesOutput).
-    pub fn build(self) -> crate::operation::describe_connection_aliases::DescribeConnectionAliasesOutput {
+    pub fn build(
+        self,
+    ) -> crate::operation::describe_connection_aliases::DescribeConnectionAliasesOutput {
         crate::operation::describe_connection_aliases::DescribeConnectionAliasesOutput {
-            connection_aliases: self.connection_aliases
-            ,
-            next_token: self.next_token
-            ,
+            connection_aliases: self.connection_aliases,
+            next_token: self.next_token,
             _request_id: self._request_id,
         }
     }
 }
-

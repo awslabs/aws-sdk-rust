@@ -4,63 +4,93 @@ pub use crate::operation::search_flow_executions::_search_flow_executions_output
 pub use crate::operation::search_flow_executions::_search_flow_executions_input::SearchFlowExecutionsInputBuilder;
 
 /// Fluent builder constructing a request to `SearchFlowExecutions`.
-/// 
+///
 /// <p>Searches for AWS IoT Things Graph workflow execution instances.</p>
 #[deprecated(note = "since: 2022-08-30")]
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct SearchFlowExecutionsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::search_flow_executions::builders::SearchFlowExecutionsInputBuilder
-            }
-impl SearchFlowExecutionsFluentBuilder  {
+    handle: std::sync::Arc<crate::client::Handle>,
+    inner: crate::operation::search_flow_executions::builders::SearchFlowExecutionsInputBuilder,
+}
+impl SearchFlowExecutionsFluentBuilder {
     /// Creates a new `SearchFlowExecutions`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
-                    /// sent. The operation's inner [http::Request] can be modified as well.
-                    pub async fn customize(self) -> std::result::Result<
-                        crate::client::customize::CustomizableOperation<crate::operation::search_flow_executions::SearchFlowExecutions, aws_http::retry::AwsResponseRetryClassifier,>,
-                        aws_smithy_http::result::SdkError<crate::operation::search_flow_executions::SearchFlowExecutionsError>
-                    >  {
-                        let handle = self.handle.clone();
-                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-                    }
-    
-                    /// Sends the request and returns the response.
-                    ///
-                    /// If an error occurs, an `SdkError` will be returned with additional details that
-                    /// can be matched against.
-                    ///
-                    /// By default, any retryable failures will be retried twice. Retry behavior
-                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                    /// set when configuring the client.
-                    pub async fn send(self) -> std::result::Result<crate::operation::search_flow_executions::SearchFlowExecutionsOutput, aws_smithy_http::result::SdkError<crate::operation::search_flow_executions::SearchFlowExecutionsError>>
-                     {
-                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&self.handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        self.handle.client.call(op).await
-                    }
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle,
+            inner: Default::default(),
+        }
+    }
+
+    /// Consume this builder, creating a customizable operation that can be modified before being
+    /// sent. The operation's inner [http::Request] can be modified as well.
+    pub async fn customize(
+        self,
+    ) -> std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::search_flow_executions::SearchFlowExecutions,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::result::SdkError<
+            crate::operation::search_flow_executions::SearchFlowExecutionsError,
+        >,
+    > {
+        let handle = self.handle.clone();
+        let operation = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+    }
+
+    /// Sends the request and returns the response.
+    ///
+    /// If an error occurs, an `SdkError` will be returned with additional details that
+    /// can be matched against.
+    ///
+    /// By default, any retryable failures will be retried twice. Retry behavior
+    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+    /// set when configuring the client.
+    pub async fn send(
+        self,
+    ) -> std::result::Result<
+        crate::operation::search_flow_executions::SearchFlowExecutionsOutput,
+        aws_smithy_http::result::SdkError<
+            crate::operation::search_flow_executions::SearchFlowExecutionsError,
+        >,
+    > {
+        let op = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&self.handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        self.handle.client.call(op).await
+    }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::search_flow_executions::paginator::SearchFlowExecutionsPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::search_flow_executions::paginator::SearchFlowExecutionsPaginator {
-                            crate::operation::search_flow_executions::paginator::SearchFlowExecutionsPaginator::new(self.handle, self.inner)
-                        }
+    ///
+    /// Paginators are used by calling [`send().await`](crate::operation::search_flow_executions::paginator::SearchFlowExecutionsPaginator::send) which returns a `Stream`.
+    pub fn into_paginator(
+        self,
+    ) -> crate::operation::search_flow_executions::paginator::SearchFlowExecutionsPaginator {
+        crate::operation::search_flow_executions::paginator::SearchFlowExecutionsPaginator::new(
+            self.handle,
+            self.inner,
+        )
+    }
     /// <p>The ID of the system instance that contains the flow.</p>
     pub fn system_instance_id(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.system_instance_id(input.into());
         self
     }
     /// <p>The ID of the system instance that contains the flow.</p>
-    pub fn set_system_instance_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_system_instance_id(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_system_instance_id(input);
         self
     }
@@ -70,7 +100,10 @@ impl SearchFlowExecutionsFluentBuilder  {
         self
     }
     /// <p>The ID of a flow execution.</p>
-    pub fn set_flow_execution_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_flow_execution_id(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_flow_execution_id(input);
         self
     }
@@ -80,7 +113,10 @@ impl SearchFlowExecutionsFluentBuilder  {
         self
     }
     /// <p>The date and time of the earliest flow execution to return.</p>
-    pub fn set_start_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+    pub fn set_start_time(
+        mut self,
+        input: std::option::Option<aws_smithy_types::DateTime>,
+    ) -> Self {
         self.inner = self.inner.set_start_time(input);
         self
     }
@@ -115,4 +151,3 @@ impl SearchFlowExecutionsFluentBuilder  {
         self
     }
 }
-

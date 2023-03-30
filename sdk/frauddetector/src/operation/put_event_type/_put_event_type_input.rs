@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PutEventTypeInput  {
+pub struct PutEventTypeInput {
     /// <p>The name.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -27,31 +27,31 @@ pub struct PutEventTypeInput  {
 }
 impl PutEventTypeInput {
     /// <p>The name.</p>
-    pub fn name(&self) -> std::option::Option<& str> {
+    pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>The description of the event type.</p>
-    pub fn description(&self) -> std::option::Option<& str> {
+    pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
     /// <p>The event type variables.</p>
-    pub fn event_variables(&self) -> std::option::Option<& [std::string::String]> {
+    pub fn event_variables(&self) -> std::option::Option<&[std::string::String]> {
         self.event_variables.as_deref()
     }
     /// <p>The event type labels.</p>
-    pub fn labels(&self) -> std::option::Option<& [std::string::String]> {
+    pub fn labels(&self) -> std::option::Option<&[std::string::String]> {
         self.labels.as_deref()
     }
     /// <p>The entity type for the event type. Example entity types: customer, merchant, account.</p>
-    pub fn entity_types(&self) -> std::option::Option<& [std::string::String]> {
+    pub fn entity_types(&self) -> std::option::Option<&[std::string::String]> {
         self.entity_types.as_deref()
     }
     /// <p>Specifies if ingenstion is enabled or disabled.</p>
-    pub fn event_ingestion(&self) -> std::option::Option<& crate::types::EventIngestion> {
+    pub fn event_ingestion(&self) -> std::option::Option<&crate::types::EventIngestion> {
         self.event_ingestion.as_ref()
     }
     /// <p>A collection of key and value pairs.</p>
-    pub fn tags(&self) -> std::option::Option<& [crate::types::Tag]> {
+    pub fn tags(&self) -> std::option::Option<&[crate::types::Tag]> {
         self.tags.as_deref()
     }
 }
@@ -82,7 +82,8 @@ impl PutEventTypeInputBuilder {
     }
     /// <p>The name.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input; self
+        self.name = input;
+        self
     }
     /// <p>The description of the event type.</p>
     pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -91,7 +92,8 @@ impl PutEventTypeInputBuilder {
     }
     /// <p>The description of the event type.</p>
     pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.description = input; self
+        self.description = input;
+        self
     }
     /// Appends an item to `event_variables`.
     ///
@@ -100,13 +102,17 @@ impl PutEventTypeInputBuilder {
     /// <p>The event type variables.</p>
     pub fn event_variables(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.event_variables.unwrap_or_default();
-                        v.push(input.into());
-                        self.event_variables = Some(v);
-                        self
+        v.push(input.into());
+        self.event_variables = Some(v);
+        self
     }
     /// <p>The event type variables.</p>
-    pub fn set_event_variables(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-        self.event_variables = input; self
+    pub fn set_event_variables(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
+        self.event_variables = input;
+        self
     }
     /// Appends an item to `labels`.
     ///
@@ -115,13 +121,17 @@ impl PutEventTypeInputBuilder {
     /// <p>The event type labels.</p>
     pub fn labels(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.labels.unwrap_or_default();
-                        v.push(input.into());
-                        self.labels = Some(v);
-                        self
+        v.push(input.into());
+        self.labels = Some(v);
+        self
     }
     /// <p>The event type labels.</p>
-    pub fn set_labels(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-        self.labels = input; self
+    pub fn set_labels(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
+        self.labels = input;
+        self
     }
     /// Appends an item to `entity_types`.
     ///
@@ -130,13 +140,17 @@ impl PutEventTypeInputBuilder {
     /// <p>The entity type for the event type. Example entity types: customer, merchant, account.</p>
     pub fn entity_types(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.entity_types.unwrap_or_default();
-                        v.push(input.into());
-                        self.entity_types = Some(v);
-                        self
+        v.push(input.into());
+        self.entity_types = Some(v);
+        self
     }
     /// <p>The entity type for the event type. Example entity types: customer, merchant, account.</p>
-    pub fn set_entity_types(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-        self.entity_types = input; self
+    pub fn set_entity_types(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
+        self.entity_types = input;
+        self
     }
     /// <p>Specifies if ingenstion is enabled or disabled.</p>
     pub fn event_ingestion(mut self, input: crate::types::EventIngestion) -> Self {
@@ -144,8 +158,12 @@ impl PutEventTypeInputBuilder {
         self
     }
     /// <p>Specifies if ingenstion is enabled or disabled.</p>
-    pub fn set_event_ingestion(mut self, input: std::option::Option<crate::types::EventIngestion>) -> Self {
-        self.event_ingestion = input; self
+    pub fn set_event_ingestion(
+        mut self,
+        input: std::option::Option<crate::types::EventIngestion>,
+    ) -> Self {
+        self.event_ingestion = input;
+        self
     }
     /// Appends an item to `tags`.
     ///
@@ -154,34 +172,33 @@ impl PutEventTypeInputBuilder {
     /// <p>A collection of key and value pairs.</p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
-                        v.push(input);
-                        self.tags = Some(v);
-                        self
+        v.push(input);
+        self.tags = Some(v);
+        self
     }
     /// <p>A collection of key and value pairs.</p>
-    pub fn set_tags(mut self, input: std::option::Option<std::vec::Vec<crate::types::Tag>>) -> Self {
-        self.tags = input; self
+    pub fn set_tags(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::Tag>>,
+    ) -> Self {
+        self.tags = input;
+        self
     }
     /// Consumes the builder and constructs a [`PutEventTypeInput`](crate::operation::put_event_type::PutEventTypeInput).
-    pub fn build(self) -> Result<crate::operation::put_event_type::PutEventTypeInput, aws_smithy_http::operation::error::BuildError> {
-        Ok(
-            crate::operation::put_event_type::PutEventTypeInput {
-                name: self.name
-                ,
-                description: self.description
-                ,
-                event_variables: self.event_variables
-                ,
-                labels: self.labels
-                ,
-                entity_types: self.entity_types
-                ,
-                event_ingestion: self.event_ingestion
-                ,
-                tags: self.tags
-                ,
-            }
-        )
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::put_event_type::PutEventTypeInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        Ok(crate::operation::put_event_type::PutEventTypeInput {
+            name: self.name,
+            description: self.description,
+            event_variables: self.event_variables,
+            labels: self.labels,
+            entity_types: self.entity_types,
+            event_ingestion: self.event_ingestion,
+            tags: self.tags,
+        })
     }
 }
-

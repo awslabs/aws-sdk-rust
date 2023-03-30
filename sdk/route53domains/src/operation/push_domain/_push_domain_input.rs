@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PushDomainInput  {
+pub struct PushDomainInput {
     /// <p> Name of the domain. </p>
     #[doc(hidden)]
     pub domain_name: std::option::Option<std::string::String>,
@@ -12,11 +12,11 @@ pub struct PushDomainInput  {
 }
 impl PushDomainInput {
     /// <p> Name of the domain. </p>
-    pub fn domain_name(&self) -> std::option::Option<& str> {
+    pub fn domain_name(&self) -> std::option::Option<&str> {
         self.domain_name.as_deref()
     }
     /// <p> New IPS tag for the domain. </p>
-    pub fn target(&self) -> std::option::Option<& str> {
+    pub fn target(&self) -> std::option::Option<&str> {
         self.target.as_deref()
     }
 }
@@ -42,7 +42,8 @@ impl PushDomainInputBuilder {
     }
     /// <p> Name of the domain. </p>
     pub fn set_domain_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.domain_name = input; self
+        self.domain_name = input;
+        self
     }
     /// <p> New IPS tag for the domain. </p>
     pub fn target(mut self, input: impl Into<std::string::String>) -> Self {
@@ -51,18 +52,19 @@ impl PushDomainInputBuilder {
     }
     /// <p> New IPS tag for the domain. </p>
     pub fn set_target(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.target = input; self
+        self.target = input;
+        self
     }
     /// Consumes the builder and constructs a [`PushDomainInput`](crate::operation::push_domain::PushDomainInput).
-    pub fn build(self) -> Result<crate::operation::push_domain::PushDomainInput, aws_smithy_http::operation::error::BuildError> {
-        Ok(
-            crate::operation::push_domain::PushDomainInput {
-                domain_name: self.domain_name
-                ,
-                target: self.target
-                ,
-            }
-        )
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::push_domain::PushDomainInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        Ok(crate::operation::push_domain::PushDomainInput {
+            domain_name: self.domain_name,
+            target: self.target,
+        })
     }
 }
-

@@ -3,7 +3,7 @@
 /// <p>Specifies settings that are unique to a locale. For example, you can use different Lambda function depending on the bot's locale.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct BotAliasLocaleSettings  {
+pub struct BotAliasLocaleSettings {
     /// <p>Determines whether the locale is enabled for the bot. If the value is <code>false</code>, the locale isn't available for use.</p>
     #[doc(hidden)]
     pub enabled: bool,
@@ -17,7 +17,9 @@ impl BotAliasLocaleSettings {
         self.enabled
     }
     /// <p>Specifies the Lambda function that should be used in the locale.</p>
-    pub fn code_hook_specification(&self) -> std::option::Option<& crate::types::CodeHookSpecification> {
+    pub fn code_hook_specification(
+        &self,
+    ) -> std::option::Option<&crate::types::CodeHookSpecification> {
         self.code_hook_specification.as_ref()
     }
 }
@@ -43,7 +45,8 @@ impl BotAliasLocaleSettingsBuilder {
     }
     /// <p>Determines whether the locale is enabled for the bot. If the value is <code>false</code>, the locale isn't available for use.</p>
     pub fn set_enabled(mut self, input: std::option::Option<bool>) -> Self {
-        self.enabled = input; self
+        self.enabled = input;
+        self
     }
     /// <p>Specifies the Lambda function that should be used in the locale.</p>
     pub fn code_hook_specification(mut self, input: crate::types::CodeHookSpecification) -> Self {
@@ -51,18 +54,18 @@ impl BotAliasLocaleSettingsBuilder {
         self
     }
     /// <p>Specifies the Lambda function that should be used in the locale.</p>
-    pub fn set_code_hook_specification(mut self, input: std::option::Option<crate::types::CodeHookSpecification>) -> Self {
-        self.code_hook_specification = input; self
+    pub fn set_code_hook_specification(
+        mut self,
+        input: std::option::Option<crate::types::CodeHookSpecification>,
+    ) -> Self {
+        self.code_hook_specification = input;
+        self
     }
     /// Consumes the builder and constructs a [`BotAliasLocaleSettings`](crate::types::BotAliasLocaleSettings).
     pub fn build(self) -> crate::types::BotAliasLocaleSettings {
         crate::types::BotAliasLocaleSettings {
-            enabled: self.enabled
-                .unwrap_or_default()
-            ,
-            code_hook_specification: self.code_hook_specification
-            ,
+            enabled: self.enabled.unwrap_or_default(),
+            code_hook_specification: self.code_hook_specification,
         }
     }
 }
-

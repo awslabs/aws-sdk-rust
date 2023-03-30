@@ -3,7 +3,7 @@
 /// <p>Returns information about the resource being evaluated. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ResourceDetails  {
+pub struct ResourceDetails {
     /// <p>A unique resource ID for an evaluation.</p>
     #[doc(hidden)]
     pub resource_id: std::option::Option<std::string::String>,
@@ -15,23 +15,26 @@ pub struct ResourceDetails  {
     pub resource_configuration: std::option::Option<std::string::String>,
     /// <p>The schema type of the resource configuration.</p>
     #[doc(hidden)]
-    pub resource_configuration_schema_type: std::option::Option<crate::types::ResourceConfigurationSchemaType>,
+    pub resource_configuration_schema_type:
+        std::option::Option<crate::types::ResourceConfigurationSchemaType>,
 }
 impl ResourceDetails {
     /// <p>A unique resource ID for an evaluation.</p>
-    pub fn resource_id(&self) -> std::option::Option<& str> {
+    pub fn resource_id(&self) -> std::option::Option<&str> {
         self.resource_id.as_deref()
     }
     /// <p>The type of resource being evaluated.</p>
-    pub fn resource_type(&self) -> std::option::Option<& str> {
+    pub fn resource_type(&self) -> std::option::Option<&str> {
         self.resource_type.as_deref()
     }
     /// <p>The resource definition to be evaluated as per the resource configuration schema type.</p>
-    pub fn resource_configuration(&self) -> std::option::Option<& str> {
+    pub fn resource_configuration(&self) -> std::option::Option<&str> {
         self.resource_configuration.as_deref()
     }
     /// <p>The schema type of the resource configuration.</p>
-    pub fn resource_configuration_schema_type(&self) -> std::option::Option<& crate::types::ResourceConfigurationSchemaType> {
+    pub fn resource_configuration_schema_type(
+        &self,
+    ) -> std::option::Option<&crate::types::ResourceConfigurationSchemaType> {
         self.resource_configuration_schema_type.as_ref()
     }
 }
@@ -49,7 +52,8 @@ pub struct ResourceDetailsBuilder {
     pub(crate) resource_id: std::option::Option<std::string::String>,
     pub(crate) resource_type: std::option::Option<std::string::String>,
     pub(crate) resource_configuration: std::option::Option<std::string::String>,
-    pub(crate) resource_configuration_schema_type: std::option::Option<crate::types::ResourceConfigurationSchemaType>,
+    pub(crate) resource_configuration_schema_type:
+        std::option::Option<crate::types::ResourceConfigurationSchemaType>,
 }
 impl ResourceDetailsBuilder {
     /// <p>A unique resource ID for an evaluation.</p>
@@ -59,7 +63,8 @@ impl ResourceDetailsBuilder {
     }
     /// <p>A unique resource ID for an evaluation.</p>
     pub fn set_resource_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.resource_id = input; self
+        self.resource_id = input;
+        self
     }
     /// <p>The type of resource being evaluated.</p>
     pub fn resource_type(mut self, input: impl Into<std::string::String>) -> Self {
@@ -68,7 +73,8 @@ impl ResourceDetailsBuilder {
     }
     /// <p>The type of resource being evaluated.</p>
     pub fn set_resource_type(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.resource_type = input; self
+        self.resource_type = input;
+        self
     }
     /// <p>The resource definition to be evaluated as per the resource configuration schema type.</p>
     pub fn resource_configuration(mut self, input: impl Into<std::string::String>) -> Self {
@@ -76,30 +82,36 @@ impl ResourceDetailsBuilder {
         self
     }
     /// <p>The resource definition to be evaluated as per the resource configuration schema type.</p>
-    pub fn set_resource_configuration(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.resource_configuration = input; self
+    pub fn set_resource_configuration(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.resource_configuration = input;
+        self
     }
     /// <p>The schema type of the resource configuration.</p>
-    pub fn resource_configuration_schema_type(mut self, input: crate::types::ResourceConfigurationSchemaType) -> Self {
+    pub fn resource_configuration_schema_type(
+        mut self,
+        input: crate::types::ResourceConfigurationSchemaType,
+    ) -> Self {
         self.resource_configuration_schema_type = Some(input);
         self
     }
     /// <p>The schema type of the resource configuration.</p>
-    pub fn set_resource_configuration_schema_type(mut self, input: std::option::Option<crate::types::ResourceConfigurationSchemaType>) -> Self {
-        self.resource_configuration_schema_type = input; self
+    pub fn set_resource_configuration_schema_type(
+        mut self,
+        input: std::option::Option<crate::types::ResourceConfigurationSchemaType>,
+    ) -> Self {
+        self.resource_configuration_schema_type = input;
+        self
     }
     /// Consumes the builder and constructs a [`ResourceDetails`](crate::types::ResourceDetails).
     pub fn build(self) -> crate::types::ResourceDetails {
         crate::types::ResourceDetails {
-            resource_id: self.resource_id
-            ,
-            resource_type: self.resource_type
-            ,
-            resource_configuration: self.resource_configuration
-            ,
-            resource_configuration_schema_type: self.resource_configuration_schema_type
-            ,
+            resource_id: self.resource_id,
+            resource_type: self.resource_type,
+            resource_configuration: self.resource_configuration,
+            resource_configuration_schema_type: self.resource_configuration_schema_type,
         }
     }
 }
-

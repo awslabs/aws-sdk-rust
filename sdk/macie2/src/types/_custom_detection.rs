@@ -3,7 +3,7 @@
 /// <p>Provides information about a custom data identifier that produced a sensitive data finding, and the sensitive data that it detected for the finding.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CustomDetection  {
+pub struct CustomDetection {
     /// <p>The Amazon Resource Name (ARN) of the custom data identifier.</p>
     #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
@@ -19,7 +19,7 @@ pub struct CustomDetection  {
 }
 impl CustomDetection {
     /// <p>The Amazon Resource Name (ARN) of the custom data identifier.</p>
-    pub fn arn(&self) -> std::option::Option<& str> {
+    pub fn arn(&self) -> std::option::Option<&str> {
         self.arn.as_deref()
     }
     /// <p>The total number of occurrences of the sensitive data that the custom data identifier detected.</p>
@@ -27,11 +27,11 @@ impl CustomDetection {
         self.count
     }
     /// <p>The name of the custom data identifier.</p>
-    pub fn name(&self) -> std::option::Option<& str> {
+    pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>The location of 1-15 occurrences of the sensitive data that the custom data identifier detected. A finding includes location data for a maximum of 15 occurrences of sensitive data.</p>
-    pub fn occurrences(&self) -> std::option::Option<& crate::types::Occurrences> {
+    pub fn occurrences(&self) -> std::option::Option<&crate::types::Occurrences> {
         self.occurrences.as_ref()
     }
 }
@@ -59,7 +59,8 @@ impl CustomDetectionBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the custom data identifier.</p>
     pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.arn = input; self
+        self.arn = input;
+        self
     }
     /// <p>The total number of occurrences of the sensitive data that the custom data identifier detected.</p>
     pub fn count(mut self, input: i64) -> Self {
@@ -68,7 +69,8 @@ impl CustomDetectionBuilder {
     }
     /// <p>The total number of occurrences of the sensitive data that the custom data identifier detected.</p>
     pub fn set_count(mut self, input: std::option::Option<i64>) -> Self {
-        self.count = input; self
+        self.count = input;
+        self
     }
     /// <p>The name of the custom data identifier.</p>
     pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -77,7 +79,8 @@ impl CustomDetectionBuilder {
     }
     /// <p>The name of the custom data identifier.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input; self
+        self.name = input;
+        self
     }
     /// <p>The location of 1-15 occurrences of the sensitive data that the custom data identifier detected. A finding includes location data for a maximum of 15 occurrences of sensitive data.</p>
     pub fn occurrences(mut self, input: crate::types::Occurrences) -> Self {
@@ -85,22 +88,20 @@ impl CustomDetectionBuilder {
         self
     }
     /// <p>The location of 1-15 occurrences of the sensitive data that the custom data identifier detected. A finding includes location data for a maximum of 15 occurrences of sensitive data.</p>
-    pub fn set_occurrences(mut self, input: std::option::Option<crate::types::Occurrences>) -> Self {
-        self.occurrences = input; self
+    pub fn set_occurrences(
+        mut self,
+        input: std::option::Option<crate::types::Occurrences>,
+    ) -> Self {
+        self.occurrences = input;
+        self
     }
     /// Consumes the builder and constructs a [`CustomDetection`](crate::types::CustomDetection).
     pub fn build(self) -> crate::types::CustomDetection {
         crate::types::CustomDetection {
-            arn: self.arn
-            ,
-            count: self.count
-                .unwrap_or_default()
-            ,
-            name: self.name
-            ,
-            occurrences: self.occurrences
-            ,
+            arn: self.arn,
+            count: self.count.unwrap_or_default(),
+            name: self.name,
+            occurrences: self.occurrences,
         }
     }
 }
-

@@ -153,4 +153,3 @@ pub mod update_archive;
 
 /// Types for the `UpdateConnection` operation.
 pub mod update_connection;
-

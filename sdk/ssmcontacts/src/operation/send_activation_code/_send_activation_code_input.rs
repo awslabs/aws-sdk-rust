@@ -2,20 +2,21 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SendActivationCodeInput  {
+pub struct SendActivationCodeInput {
     /// <p>The Amazon Resource Name (ARN) of the contact channel.</p>
     #[doc(hidden)]
     pub contact_channel_id: std::option::Option<std::string::String>,
 }
 impl SendActivationCodeInput {
     /// <p>The Amazon Resource Name (ARN) of the contact channel.</p>
-    pub fn contact_channel_id(&self) -> std::option::Option<& str> {
+    pub fn contact_channel_id(&self) -> std::option::Option<&str> {
         self.contact_channel_id.as_deref()
     }
 }
 impl SendActivationCodeInput {
     /// Creates a new builder-style object to manufacture [`SendActivationCodeInput`](crate::operation::send_activation_code::SendActivationCodeInput).
-    pub fn builder() -> crate::operation::send_activation_code::builders::SendActivationCodeInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::send_activation_code::builders::SendActivationCodeInputBuilder {
         crate::operation::send_activation_code::builders::SendActivationCodeInputBuilder::default()
     }
 }
@@ -33,17 +34,24 @@ impl SendActivationCodeInputBuilder {
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the contact channel.</p>
-    pub fn set_contact_channel_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.contact_channel_id = input; self
+    pub fn set_contact_channel_id(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.contact_channel_id = input;
+        self
     }
     /// Consumes the builder and constructs a [`SendActivationCodeInput`](crate::operation::send_activation_code::SendActivationCodeInput).
-    pub fn build(self) -> Result<crate::operation::send_activation_code::SendActivationCodeInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::send_activation_code::SendActivationCodeInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::send_activation_code::SendActivationCodeInput {
-                contact_channel_id: self.contact_channel_id
-                ,
-            }
+                contact_channel_id: self.contact_channel_id,
+            },
         )
     }
 }
-

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListAvailableResourceDimensionsInput  {
+pub struct ListAvailableResourceDimensionsInput {
     /// <p>The Amazon Web Services service for which Performance Insights returns metrics.</p>
     #[doc(hidden)]
     pub service_type: std::option::Option<crate::types::ServiceType>,
@@ -21,15 +21,15 @@ pub struct ListAvailableResourceDimensionsInput  {
 }
 impl ListAvailableResourceDimensionsInput {
     /// <p>The Amazon Web Services service for which Performance Insights returns metrics.</p>
-    pub fn service_type(&self) -> std::option::Option<& crate::types::ServiceType> {
+    pub fn service_type(&self) -> std::option::Option<&crate::types::ServiceType> {
         self.service_type.as_ref()
     }
     /// <p>An immutable identifier for a data source that is unique within an Amazon Web Services Region. Performance Insights gathers metrics from this data source. To use an Amazon RDS DB instance as a data source, specify its <code>DbiResourceId</code> value. For example, specify <code>db-ABCDEFGHIJKLMNOPQRSTU1VWZ</code>. </p>
-    pub fn identifier(&self) -> std::option::Option<& str> {
+    pub fn identifier(&self) -> std::option::Option<&str> {
         self.identifier.as_deref()
     }
     /// <p>The types of metrics for which to retrieve dimensions. Valid values include <code>db.load</code>.</p>
-    pub fn metrics(&self) -> std::option::Option<& [std::string::String]> {
+    pub fn metrics(&self) -> std::option::Option<&[std::string::String]> {
         self.metrics.as_deref()
     }
     /// <p>The maximum number of items to return in the response. If more items exist than the specified <code>MaxRecords</code> value, a pagination token is included in the response so that the remaining results can be retrieved.</p>
@@ -37,13 +37,13 @@ impl ListAvailableResourceDimensionsInput {
         self.max_results
     }
     /// <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the token, up to the value specified by <code>MaxRecords</code>. </p>
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
 }
 impl ListAvailableResourceDimensionsInput {
     /// Creates a new builder-style object to manufacture [`ListAvailableResourceDimensionsInput`](crate::operation::list_available_resource_dimensions::ListAvailableResourceDimensionsInput).
-    pub fn builder() -> crate::operation::list_available_resource_dimensions::builders::ListAvailableResourceDimensionsInputBuilder {
+    pub fn builder() -> crate::operation::list_available_resource_dimensions::builders::ListAvailableResourceDimensionsInputBuilder{
         crate::operation::list_available_resource_dimensions::builders::ListAvailableResourceDimensionsInputBuilder::default()
     }
 }
@@ -65,8 +65,12 @@ impl ListAvailableResourceDimensionsInputBuilder {
         self
     }
     /// <p>The Amazon Web Services service for which Performance Insights returns metrics.</p>
-    pub fn set_service_type(mut self, input: std::option::Option<crate::types::ServiceType>) -> Self {
-        self.service_type = input; self
+    pub fn set_service_type(
+        mut self,
+        input: std::option::Option<crate::types::ServiceType>,
+    ) -> Self {
+        self.service_type = input;
+        self
     }
     /// <p>An immutable identifier for a data source that is unique within an Amazon Web Services Region. Performance Insights gathers metrics from this data source. To use an Amazon RDS DB instance as a data source, specify its <code>DbiResourceId</code> value. For example, specify <code>db-ABCDEFGHIJKLMNOPQRSTU1VWZ</code>. </p>
     pub fn identifier(mut self, input: impl Into<std::string::String>) -> Self {
@@ -75,7 +79,8 @@ impl ListAvailableResourceDimensionsInputBuilder {
     }
     /// <p>An immutable identifier for a data source that is unique within an Amazon Web Services Region. Performance Insights gathers metrics from this data source. To use an Amazon RDS DB instance as a data source, specify its <code>DbiResourceId</code> value. For example, specify <code>db-ABCDEFGHIJKLMNOPQRSTU1VWZ</code>. </p>
     pub fn set_identifier(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.identifier = input; self
+        self.identifier = input;
+        self
     }
     /// Appends an item to `metrics`.
     ///
@@ -84,13 +89,17 @@ impl ListAvailableResourceDimensionsInputBuilder {
     /// <p>The types of metrics for which to retrieve dimensions. Valid values include <code>db.load</code>.</p>
     pub fn metrics(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.metrics.unwrap_or_default();
-                        v.push(input.into());
-                        self.metrics = Some(v);
-                        self
+        v.push(input.into());
+        self.metrics = Some(v);
+        self
     }
     /// <p>The types of metrics for which to retrieve dimensions. Valid values include <code>db.load</code>.</p>
-    pub fn set_metrics(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-        self.metrics = input; self
+    pub fn set_metrics(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
+        self.metrics = input;
+        self
     }
     /// <p>The maximum number of items to return in the response. If more items exist than the specified <code>MaxRecords</code> value, a pagination token is included in the response so that the remaining results can be retrieved.</p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -99,7 +108,8 @@ impl ListAvailableResourceDimensionsInputBuilder {
     }
     /// <p>The maximum number of items to return in the response. If more items exist than the specified <code>MaxRecords</code> value, a pagination token is included in the response so that the remaining results can be retrieved.</p>
     pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_results = input; self
+        self.max_results = input;
+        self
     }
     /// <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the token, up to the value specified by <code>MaxRecords</code>. </p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -108,10 +118,16 @@ impl ListAvailableResourceDimensionsInputBuilder {
     }
     /// <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the token, up to the value specified by <code>MaxRecords</code>. </p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input; self
+        self.next_token = input;
+        self
     }
     /// Consumes the builder and constructs a [`ListAvailableResourceDimensionsInput`](crate::operation::list_available_resource_dimensions::ListAvailableResourceDimensionsInput).
-    pub fn build(self) -> Result<crate::operation::list_available_resource_dimensions::ListAvailableResourceDimensionsInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::list_available_resource_dimensions::ListAvailableResourceDimensionsInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::list_available_resource_dimensions::ListAvailableResourceDimensionsInput {
                 service_type: self.service_type
@@ -128,4 +144,3 @@ impl ListAvailableResourceDimensionsInputBuilder {
         )
     }
 }
-

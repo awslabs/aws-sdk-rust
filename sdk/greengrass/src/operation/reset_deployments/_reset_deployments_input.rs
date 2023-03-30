@@ -3,7 +3,7 @@
 /// Information needed to reset deployments.
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ResetDeploymentsInput  {
+pub struct ResetDeploymentsInput {
     /// A client token used to correlate requests and responses.
     #[doc(hidden)]
     pub amzn_client_token: std::option::Option<std::string::String>,
@@ -16,7 +16,7 @@ pub struct ResetDeploymentsInput  {
 }
 impl ResetDeploymentsInput {
     /// A client token used to correlate requests and responses.
-    pub fn amzn_client_token(&self) -> std::option::Option<& str> {
+    pub fn amzn_client_token(&self) -> std::option::Option<&str> {
         self.amzn_client_token.as_deref()
     }
     /// If true, performs a best-effort only core reset.
@@ -24,13 +24,14 @@ impl ResetDeploymentsInput {
         self.force
     }
     /// The ID of the Greengrass group.
-    pub fn group_id(&self) -> std::option::Option<& str> {
+    pub fn group_id(&self) -> std::option::Option<&str> {
         self.group_id.as_deref()
     }
 }
 impl ResetDeploymentsInput {
     /// Creates a new builder-style object to manufacture [`ResetDeploymentsInput`](crate::operation::reset_deployments::ResetDeploymentsInput).
-    pub fn builder() -> crate::operation::reset_deployments::builders::ResetDeploymentsInputBuilder {
+    pub fn builder() -> crate::operation::reset_deployments::builders::ResetDeploymentsInputBuilder
+    {
         crate::operation::reset_deployments::builders::ResetDeploymentsInputBuilder::default()
     }
 }
@@ -50,8 +51,12 @@ impl ResetDeploymentsInputBuilder {
         self
     }
     /// A client token used to correlate requests and responses.
-    pub fn set_amzn_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.amzn_client_token = input; self
+    pub fn set_amzn_client_token(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.amzn_client_token = input;
+        self
     }
     /// If true, performs a best-effort only core reset.
     pub fn force(mut self, input: bool) -> Self {
@@ -60,7 +65,8 @@ impl ResetDeploymentsInputBuilder {
     }
     /// If true, performs a best-effort only core reset.
     pub fn set_force(mut self, input: std::option::Option<bool>) -> Self {
-        self.force = input; self
+        self.force = input;
+        self
     }
     /// The ID of the Greengrass group.
     pub fn group_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -69,21 +75,20 @@ impl ResetDeploymentsInputBuilder {
     }
     /// The ID of the Greengrass group.
     pub fn set_group_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.group_id = input; self
+        self.group_id = input;
+        self
     }
     /// Consumes the builder and constructs a [`ResetDeploymentsInput`](crate::operation::reset_deployments::ResetDeploymentsInput).
-    pub fn build(self) -> Result<crate::operation::reset_deployments::ResetDeploymentsInput, aws_smithy_http::operation::error::BuildError> {
-        Ok(
-            crate::operation::reset_deployments::ResetDeploymentsInput {
-                amzn_client_token: self.amzn_client_token
-                ,
-                force: self.force
-                    .unwrap_or_default()
-                ,
-                group_id: self.group_id
-                ,
-            }
-        )
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::reset_deployments::ResetDeploymentsInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        Ok(crate::operation::reset_deployments::ResetDeploymentsInput {
+            amzn_client_token: self.amzn_client_token,
+            force: self.force.unwrap_or_default(),
+            group_id: self.group_id,
+        })
     }
 }
-

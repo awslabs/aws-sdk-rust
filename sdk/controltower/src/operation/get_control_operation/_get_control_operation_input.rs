@@ -2,21 +2,23 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetControlOperationInput  {
+pub struct GetControlOperationInput {
     /// <p>The ID of the asynchronous operation, which is used to track status. The operation is available for 90 days.</p>
     #[doc(hidden)]
     pub operation_identifier: std::option::Option<std::string::String>,
 }
 impl GetControlOperationInput {
     /// <p>The ID of the asynchronous operation, which is used to track status. The operation is available for 90 days.</p>
-    pub fn operation_identifier(&self) -> std::option::Option<& str> {
+    pub fn operation_identifier(&self) -> std::option::Option<&str> {
         self.operation_identifier.as_deref()
     }
 }
 impl GetControlOperationInput {
     /// Creates a new builder-style object to manufacture [`GetControlOperationInput`](crate::operation::get_control_operation::GetControlOperationInput).
-    pub fn builder() -> crate::operation::get_control_operation::builders::GetControlOperationInputBuilder {
-        crate::operation::get_control_operation::builders::GetControlOperationInputBuilder::default()
+    pub fn builder(
+    ) -> crate::operation::get_control_operation::builders::GetControlOperationInputBuilder {
+        crate::operation::get_control_operation::builders::GetControlOperationInputBuilder::default(
+        )
     }
 }
 
@@ -33,17 +35,24 @@ impl GetControlOperationInputBuilder {
         self
     }
     /// <p>The ID of the asynchronous operation, which is used to track status. The operation is available for 90 days.</p>
-    pub fn set_operation_identifier(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.operation_identifier = input; self
+    pub fn set_operation_identifier(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.operation_identifier = input;
+        self
     }
     /// Consumes the builder and constructs a [`GetControlOperationInput`](crate::operation::get_control_operation::GetControlOperationInput).
-    pub fn build(self) -> Result<crate::operation::get_control_operation::GetControlOperationInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::get_control_operation::GetControlOperationInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::get_control_operation::GetControlOperationInput {
-                operation_identifier: self.operation_identifier
-                ,
-            }
+                operation_identifier: self.operation_identifier,
+            },
         )
     }
 }
-

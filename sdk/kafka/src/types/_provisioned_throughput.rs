@@ -3,7 +3,7 @@
 /// <p>Contains information about provisioned throughput for EBS storage volumes attached to kafka broker nodes.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ProvisionedThroughput  {
+pub struct ProvisionedThroughput {
     /// <p>Provisioned throughput is enabled or not.</p>
     #[doc(hidden)]
     pub enabled: bool,
@@ -43,7 +43,8 @@ impl ProvisionedThroughputBuilder {
     }
     /// <p>Provisioned throughput is enabled or not.</p>
     pub fn set_enabled(mut self, input: std::option::Option<bool>) -> Self {
-        self.enabled = input; self
+        self.enabled = input;
+        self
     }
     /// <p>Throughput value of the EBS volumes for the data drive on each kafka broker node in MiB per second.</p>
     pub fn volume_throughput(mut self, input: i32) -> Self {
@@ -52,18 +53,14 @@ impl ProvisionedThroughputBuilder {
     }
     /// <p>Throughput value of the EBS volumes for the data drive on each kafka broker node in MiB per second.</p>
     pub fn set_volume_throughput(mut self, input: std::option::Option<i32>) -> Self {
-        self.volume_throughput = input; self
+        self.volume_throughput = input;
+        self
     }
     /// Consumes the builder and constructs a [`ProvisionedThroughput`](crate::types::ProvisionedThroughput).
     pub fn build(self) -> crate::types::ProvisionedThroughput {
         crate::types::ProvisionedThroughput {
-            enabled: self.enabled
-                .unwrap_or_default()
-            ,
-            volume_throughput: self.volume_throughput
-                .unwrap_or_default()
-            ,
+            enabled: self.enabled.unwrap_or_default(),
+            volume_throughput: self.volume_throughput.unwrap_or_default(),
         }
     }
 }
-

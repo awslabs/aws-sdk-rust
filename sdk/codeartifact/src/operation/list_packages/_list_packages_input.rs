@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListPackagesInput  {
+pub struct ListPackagesInput {
     /// <p> The name of the domain that contains the repository that contains the requested packages. </p>
     #[doc(hidden)]
     pub domain: std::option::Option<std::string::String>,
@@ -15,12 +15,12 @@ pub struct ListPackagesInput  {
     /// <p>The format used to filter requested packages. Only packages from the provided format will be returned.</p>
     #[doc(hidden)]
     pub format: std::option::Option<crate::types::PackageFormat>,
-    /// <p>The namespace prefix used to filter requested packages. Only packages with a namespace that starts with the provided string value are returned. Note that although this option is called <code>--namespace</code> and not <code>--namespace-prefix</code>, it has prefix-matching behavior.</p> 
-    /// <p>Each package format uses namespace as follows:</p> 
-    /// <ul> 
-    /// <li> <p> The namespace of a Maven package is its <code>groupId</code>. </p> </li> 
-    /// <li> <p> The namespace of an npm package is its <code>scope</code>. </p> </li> 
-    /// <li> <p> Python and NuGet packages do not contain a corresponding component, packages of those formats do not have a namespace. </p> </li> 
+    /// <p>The namespace prefix used to filter requested packages. Only packages with a namespace that starts with the provided string value are returned. Note that although this option is called <code>--namespace</code> and not <code>--namespace-prefix</code>, it has prefix-matching behavior.</p>
+    /// <p>Each package format uses namespace as follows:</p>
+    /// <ul>
+    /// <li> <p> The namespace of a Maven package is its <code>groupId</code>. </p> </li>
+    /// <li> <p> The namespace of an npm package is its <code>scope</code>. </p> </li>
+    /// <li> <p> Python and NuGet packages do not contain a corresponding component, packages of those formats do not have a namespace. </p> </li>
     /// </ul>
     #[doc(hidden)]
     pub namespace: std::option::Option<std::string::String>,
@@ -42,33 +42,33 @@ pub struct ListPackagesInput  {
 }
 impl ListPackagesInput {
     /// <p> The name of the domain that contains the repository that contains the requested packages. </p>
-    pub fn domain(&self) -> std::option::Option<& str> {
+    pub fn domain(&self) -> std::option::Option<&str> {
         self.domain.as_deref()
     }
     /// <p> The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. </p>
-    pub fn domain_owner(&self) -> std::option::Option<& str> {
+    pub fn domain_owner(&self) -> std::option::Option<&str> {
         self.domain_owner.as_deref()
     }
     /// <p> The name of the repository that contains the requested packages. </p>
-    pub fn repository(&self) -> std::option::Option<& str> {
+    pub fn repository(&self) -> std::option::Option<&str> {
         self.repository.as_deref()
     }
     /// <p>The format used to filter requested packages. Only packages from the provided format will be returned.</p>
-    pub fn format(&self) -> std::option::Option<& crate::types::PackageFormat> {
+    pub fn format(&self) -> std::option::Option<&crate::types::PackageFormat> {
         self.format.as_ref()
     }
-    /// <p>The namespace prefix used to filter requested packages. Only packages with a namespace that starts with the provided string value are returned. Note that although this option is called <code>--namespace</code> and not <code>--namespace-prefix</code>, it has prefix-matching behavior.</p> 
-    /// <p>Each package format uses namespace as follows:</p> 
-    /// <ul> 
-    /// <li> <p> The namespace of a Maven package is its <code>groupId</code>. </p> </li> 
-    /// <li> <p> The namespace of an npm package is its <code>scope</code>. </p> </li> 
-    /// <li> <p> Python and NuGet packages do not contain a corresponding component, packages of those formats do not have a namespace. </p> </li> 
+    /// <p>The namespace prefix used to filter requested packages. Only packages with a namespace that starts with the provided string value are returned. Note that although this option is called <code>--namespace</code> and not <code>--namespace-prefix</code>, it has prefix-matching behavior.</p>
+    /// <p>Each package format uses namespace as follows:</p>
+    /// <ul>
+    /// <li> <p> The namespace of a Maven package is its <code>groupId</code>. </p> </li>
+    /// <li> <p> The namespace of an npm package is its <code>scope</code>. </p> </li>
+    /// <li> <p> Python and NuGet packages do not contain a corresponding component, packages of those formats do not have a namespace. </p> </li>
     /// </ul>
-    pub fn namespace(&self) -> std::option::Option<& str> {
+    pub fn namespace(&self) -> std::option::Option<&str> {
         self.namespace.as_deref()
     }
     /// <p> A prefix used to filter requested packages. Only packages with names that start with <code>packagePrefix</code> are returned. </p>
-    pub fn package_prefix(&self) -> std::option::Option<& str> {
+    pub fn package_prefix(&self) -> std::option::Option<&str> {
         self.package_prefix.as_deref()
     }
     /// <p> The maximum number of results to return per page. </p>
@@ -76,15 +76,15 @@ impl ListPackagesInput {
         self.max_results
     }
     /// <p> The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results. </p>
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
     /// <p>The value of the <code>Publish</code> package origin control restriction used to filter requested packages. Only packages with the provided restriction are returned. For more information, see <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageOriginRestrictions.html">PackageOriginRestrictions</a>.</p>
-    pub fn publish(&self) -> std::option::Option<& crate::types::AllowPublish> {
+    pub fn publish(&self) -> std::option::Option<&crate::types::AllowPublish> {
         self.publish.as_ref()
     }
     /// <p>The value of the <code>Upstream</code> package origin control restriction used to filter requested packages. Only packages with the provided restriction are returned. For more information, see <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageOriginRestrictions.html">PackageOriginRestrictions</a>.</p>
-    pub fn upstream(&self) -> std::option::Option<& crate::types::AllowUpstream> {
+    pub fn upstream(&self) -> std::option::Option<&crate::types::AllowUpstream> {
         self.upstream.as_ref()
     }
 }
@@ -118,7 +118,8 @@ impl ListPackagesInputBuilder {
     }
     /// <p> The name of the domain that contains the repository that contains the requested packages. </p>
     pub fn set_domain(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.domain = input; self
+        self.domain = input;
+        self
     }
     /// <p> The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. </p>
     pub fn domain_owner(mut self, input: impl Into<std::string::String>) -> Self {
@@ -127,7 +128,8 @@ impl ListPackagesInputBuilder {
     }
     /// <p> The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. </p>
     pub fn set_domain_owner(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.domain_owner = input; self
+        self.domain_owner = input;
+        self
     }
     /// <p> The name of the repository that contains the requested packages. </p>
     pub fn repository(mut self, input: impl Into<std::string::String>) -> Self {
@@ -136,7 +138,8 @@ impl ListPackagesInputBuilder {
     }
     /// <p> The name of the repository that contains the requested packages. </p>
     pub fn set_repository(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.repository = input; self
+        self.repository = input;
+        self
     }
     /// <p>The format used to filter requested packages. Only packages from the provided format will be returned.</p>
     pub fn format(mut self, input: crate::types::PackageFormat) -> Self {
@@ -145,28 +148,30 @@ impl ListPackagesInputBuilder {
     }
     /// <p>The format used to filter requested packages. Only packages from the provided format will be returned.</p>
     pub fn set_format(mut self, input: std::option::Option<crate::types::PackageFormat>) -> Self {
-        self.format = input; self
+        self.format = input;
+        self
     }
-    /// <p>The namespace prefix used to filter requested packages. Only packages with a namespace that starts with the provided string value are returned. Note that although this option is called <code>--namespace</code> and not <code>--namespace-prefix</code>, it has prefix-matching behavior.</p> 
-    /// <p>Each package format uses namespace as follows:</p> 
-    /// <ul> 
-    /// <li> <p> The namespace of a Maven package is its <code>groupId</code>. </p> </li> 
-    /// <li> <p> The namespace of an npm package is its <code>scope</code>. </p> </li> 
-    /// <li> <p> Python and NuGet packages do not contain a corresponding component, packages of those formats do not have a namespace. </p> </li> 
+    /// <p>The namespace prefix used to filter requested packages. Only packages with a namespace that starts with the provided string value are returned. Note that although this option is called <code>--namespace</code> and not <code>--namespace-prefix</code>, it has prefix-matching behavior.</p>
+    /// <p>Each package format uses namespace as follows:</p>
+    /// <ul>
+    /// <li> <p> The namespace of a Maven package is its <code>groupId</code>. </p> </li>
+    /// <li> <p> The namespace of an npm package is its <code>scope</code>. </p> </li>
+    /// <li> <p> Python and NuGet packages do not contain a corresponding component, packages of those formats do not have a namespace. </p> </li>
     /// </ul>
     pub fn namespace(mut self, input: impl Into<std::string::String>) -> Self {
         self.namespace = Some(input.into());
         self
     }
-    /// <p>The namespace prefix used to filter requested packages. Only packages with a namespace that starts with the provided string value are returned. Note that although this option is called <code>--namespace</code> and not <code>--namespace-prefix</code>, it has prefix-matching behavior.</p> 
-    /// <p>Each package format uses namespace as follows:</p> 
-    /// <ul> 
-    /// <li> <p> The namespace of a Maven package is its <code>groupId</code>. </p> </li> 
-    /// <li> <p> The namespace of an npm package is its <code>scope</code>. </p> </li> 
-    /// <li> <p> Python and NuGet packages do not contain a corresponding component, packages of those formats do not have a namespace. </p> </li> 
+    /// <p>The namespace prefix used to filter requested packages. Only packages with a namespace that starts with the provided string value are returned. Note that although this option is called <code>--namespace</code> and not <code>--namespace-prefix</code>, it has prefix-matching behavior.</p>
+    /// <p>Each package format uses namespace as follows:</p>
+    /// <ul>
+    /// <li> <p> The namespace of a Maven package is its <code>groupId</code>. </p> </li>
+    /// <li> <p> The namespace of an npm package is its <code>scope</code>. </p> </li>
+    /// <li> <p> Python and NuGet packages do not contain a corresponding component, packages of those formats do not have a namespace. </p> </li>
     /// </ul>
     pub fn set_namespace(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.namespace = input; self
+        self.namespace = input;
+        self
     }
     /// <p> A prefix used to filter requested packages. Only packages with names that start with <code>packagePrefix</code> are returned. </p>
     pub fn package_prefix(mut self, input: impl Into<std::string::String>) -> Self {
@@ -175,7 +180,8 @@ impl ListPackagesInputBuilder {
     }
     /// <p> A prefix used to filter requested packages. Only packages with names that start with <code>packagePrefix</code> are returned. </p>
     pub fn set_package_prefix(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.package_prefix = input; self
+        self.package_prefix = input;
+        self
     }
     /// <p> The maximum number of results to return per page. </p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -184,7 +190,8 @@ impl ListPackagesInputBuilder {
     }
     /// <p> The maximum number of results to return per page. </p>
     pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_results = input; self
+        self.max_results = input;
+        self
     }
     /// <p> The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results. </p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -193,7 +200,8 @@ impl ListPackagesInputBuilder {
     }
     /// <p> The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results. </p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input; self
+        self.next_token = input;
+        self
     }
     /// <p>The value of the <code>Publish</code> package origin control restriction used to filter requested packages. Only packages with the provided restriction are returned. For more information, see <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageOriginRestrictions.html">PackageOriginRestrictions</a>.</p>
     pub fn publish(mut self, input: crate::types::AllowPublish) -> Self {
@@ -202,7 +210,8 @@ impl ListPackagesInputBuilder {
     }
     /// <p>The value of the <code>Publish</code> package origin control restriction used to filter requested packages. Only packages with the provided restriction are returned. For more information, see <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageOriginRestrictions.html">PackageOriginRestrictions</a>.</p>
     pub fn set_publish(mut self, input: std::option::Option<crate::types::AllowPublish>) -> Self {
-        self.publish = input; self
+        self.publish = input;
+        self
     }
     /// <p>The value of the <code>Upstream</code> package origin control restriction used to filter requested packages. Only packages with the provided restriction are returned. For more information, see <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageOriginRestrictions.html">PackageOriginRestrictions</a>.</p>
     pub fn upstream(mut self, input: crate::types::AllowUpstream) -> Self {
@@ -211,34 +220,27 @@ impl ListPackagesInputBuilder {
     }
     /// <p>The value of the <code>Upstream</code> package origin control restriction used to filter requested packages. Only packages with the provided restriction are returned. For more information, see <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageOriginRestrictions.html">PackageOriginRestrictions</a>.</p>
     pub fn set_upstream(mut self, input: std::option::Option<crate::types::AllowUpstream>) -> Self {
-        self.upstream = input; self
+        self.upstream = input;
+        self
     }
     /// Consumes the builder and constructs a [`ListPackagesInput`](crate::operation::list_packages::ListPackagesInput).
-    pub fn build(self) -> Result<crate::operation::list_packages::ListPackagesInput, aws_smithy_http::operation::error::BuildError> {
-        Ok(
-            crate::operation::list_packages::ListPackagesInput {
-                domain: self.domain
-                ,
-                domain_owner: self.domain_owner
-                ,
-                repository: self.repository
-                ,
-                format: self.format
-                ,
-                namespace: self.namespace
-                ,
-                package_prefix: self.package_prefix
-                ,
-                max_results: self.max_results
-                ,
-                next_token: self.next_token
-                ,
-                publish: self.publish
-                ,
-                upstream: self.upstream
-                ,
-            }
-        )
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::list_packages::ListPackagesInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        Ok(crate::operation::list_packages::ListPackagesInput {
+            domain: self.domain,
+            domain_owner: self.domain_owner,
+            repository: self.repository,
+            format: self.format,
+            namespace: self.namespace,
+            package_prefix: self.package_prefix,
+            max_results: self.max_results,
+            next_token: self.next_token,
+            publish: self.publish,
+            upstream: self.upstream,
+        })
     }
 }
-

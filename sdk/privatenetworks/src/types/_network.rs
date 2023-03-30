@@ -3,7 +3,7 @@
 /// <p>Information about a network.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Network  {
+pub struct Network {
     /// <p>The Amazon Resource Name (ARN) of the network.</p>
     #[doc(hidden)]
     pub network_arn: std::option::Option<std::string::String>,
@@ -25,27 +25,27 @@ pub struct Network  {
 }
 impl Network {
     /// <p>The Amazon Resource Name (ARN) of the network.</p>
-    pub fn network_arn(&self) -> std::option::Option<& str> {
+    pub fn network_arn(&self) -> std::option::Option<&str> {
         self.network_arn.as_deref()
     }
     /// <p>The name of the network.</p>
-    pub fn network_name(&self) -> std::option::Option<& str> {
+    pub fn network_name(&self) -> std::option::Option<&str> {
         self.network_name.as_deref()
     }
     /// <p>The description of the network.</p>
-    pub fn description(&self) -> std::option::Option<& str> {
+    pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
     /// <p>The status of the network.</p>
-    pub fn status(&self) -> std::option::Option<& crate::types::NetworkStatus> {
+    pub fn status(&self) -> std::option::Option<&crate::types::NetworkStatus> {
         self.status.as_ref()
     }
     /// <p>The status reason of the network.</p>
-    pub fn status_reason(&self) -> std::option::Option<& str> {
+    pub fn status_reason(&self) -> std::option::Option<&str> {
         self.status_reason.as_deref()
     }
     /// <p>The creation time of the network.</p>
-    pub fn created_at(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
+    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
 }
@@ -75,7 +75,8 @@ impl NetworkBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the network.</p>
     pub fn set_network_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.network_arn = input; self
+        self.network_arn = input;
+        self
     }
     /// <p>The name of the network.</p>
     pub fn network_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -84,7 +85,8 @@ impl NetworkBuilder {
     }
     /// <p>The name of the network.</p>
     pub fn set_network_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.network_name = input; self
+        self.network_name = input;
+        self
     }
     /// <p>The description of the network.</p>
     pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -93,7 +95,8 @@ impl NetworkBuilder {
     }
     /// <p>The description of the network.</p>
     pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.description = input; self
+        self.description = input;
+        self
     }
     /// <p>The status of the network.</p>
     pub fn status(mut self, input: crate::types::NetworkStatus) -> Self {
@@ -102,7 +105,8 @@ impl NetworkBuilder {
     }
     /// <p>The status of the network.</p>
     pub fn set_status(mut self, input: std::option::Option<crate::types::NetworkStatus>) -> Self {
-        self.status = input; self
+        self.status = input;
+        self
     }
     /// <p>The status reason of the network.</p>
     pub fn status_reason(mut self, input: impl Into<std::string::String>) -> Self {
@@ -111,7 +115,8 @@ impl NetworkBuilder {
     }
     /// <p>The status reason of the network.</p>
     pub fn set_status_reason(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.status_reason = input; self
+        self.status_reason = input;
+        self
     }
     /// <p>The creation time of the network.</p>
     pub fn created_at(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -119,25 +124,22 @@ impl NetworkBuilder {
         self
     }
     /// <p>The creation time of the network.</p>
-    pub fn set_created_at(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.created_at = input; self
+    pub fn set_created_at(
+        mut self,
+        input: std::option::Option<aws_smithy_types::DateTime>,
+    ) -> Self {
+        self.created_at = input;
+        self
     }
     /// Consumes the builder and constructs a [`Network`](crate::types::Network).
     pub fn build(self) -> crate::types::Network {
         crate::types::Network {
-            network_arn: self.network_arn
-            ,
-            network_name: self.network_name
-            ,
-            description: self.description
-            ,
-            status: self.status
-            ,
-            status_reason: self.status_reason
-            ,
-            created_at: self.created_at
-            ,
+            network_arn: self.network_arn,
+            network_name: self.network_name,
+            description: self.description,
+            status: self.status,
+            status_reason: self.status_reason,
+            created_at: self.created_at,
         }
     }
 }
-

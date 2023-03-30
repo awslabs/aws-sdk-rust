@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateUserSecurityProfilesInput  {
+pub struct UpdateUserSecurityProfilesInput {
     /// <p>The identifiers of the security profiles for the user.</p>
     #[doc(hidden)]
     pub security_profile_ids: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -15,21 +15,21 @@ pub struct UpdateUserSecurityProfilesInput  {
 }
 impl UpdateUserSecurityProfilesInput {
     /// <p>The identifiers of the security profiles for the user.</p>
-    pub fn security_profile_ids(&self) -> std::option::Option<& [std::string::String]> {
+    pub fn security_profile_ids(&self) -> std::option::Option<&[std::string::String]> {
         self.security_profile_ids.as_deref()
     }
     /// <p>The identifier of the user account.</p>
-    pub fn user_id(&self) -> std::option::Option<& str> {
+    pub fn user_id(&self) -> std::option::Option<&str> {
         self.user_id.as_deref()
     }
     /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
-    pub fn instance_id(&self) -> std::option::Option<& str> {
+    pub fn instance_id(&self) -> std::option::Option<&str> {
         self.instance_id.as_deref()
     }
 }
 impl UpdateUserSecurityProfilesInput {
     /// Creates a new builder-style object to manufacture [`UpdateUserSecurityProfilesInput`](crate::operation::update_user_security_profiles::UpdateUserSecurityProfilesInput).
-    pub fn builder() -> crate::operation::update_user_security_profiles::builders::UpdateUserSecurityProfilesInputBuilder {
+    pub fn builder() -> crate::operation::update_user_security_profiles::builders::UpdateUserSecurityProfilesInputBuilder{
         crate::operation::update_user_security_profiles::builders::UpdateUserSecurityProfilesInputBuilder::default()
     }
 }
@@ -50,13 +50,17 @@ impl UpdateUserSecurityProfilesInputBuilder {
     /// <p>The identifiers of the security profiles for the user.</p>
     pub fn security_profile_ids(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.security_profile_ids.unwrap_or_default();
-                        v.push(input.into());
-                        self.security_profile_ids = Some(v);
-                        self
+        v.push(input.into());
+        self.security_profile_ids = Some(v);
+        self
     }
     /// <p>The identifiers of the security profiles for the user.</p>
-    pub fn set_security_profile_ids(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-        self.security_profile_ids = input; self
+    pub fn set_security_profile_ids(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
+        self.security_profile_ids = input;
+        self
     }
     /// <p>The identifier of the user account.</p>
     pub fn user_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -65,7 +69,8 @@ impl UpdateUserSecurityProfilesInputBuilder {
     }
     /// <p>The identifier of the user account.</p>
     pub fn set_user_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.user_id = input; self
+        self.user_id = input;
+        self
     }
     /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
     pub fn instance_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -74,20 +79,22 @@ impl UpdateUserSecurityProfilesInputBuilder {
     }
     /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
     pub fn set_instance_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.instance_id = input; self
+        self.instance_id = input;
+        self
     }
     /// Consumes the builder and constructs a [`UpdateUserSecurityProfilesInput`](crate::operation::update_user_security_profiles::UpdateUserSecurityProfilesInput).
-    pub fn build(self) -> Result<crate::operation::update_user_security_profiles::UpdateUserSecurityProfilesInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::update_user_security_profiles::UpdateUserSecurityProfilesInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::update_user_security_profiles::UpdateUserSecurityProfilesInput {
-                security_profile_ids: self.security_profile_ids
-                ,
-                user_id: self.user_id
-                ,
-                instance_id: self.instance_id
-                ,
-            }
+                security_profile_ids: self.security_profile_ids,
+                user_id: self.user_id,
+                instance_id: self.instance_id,
+            },
         )
     }
 }
-

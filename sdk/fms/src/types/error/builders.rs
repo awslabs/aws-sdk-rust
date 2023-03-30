@@ -10,4 +10,3 @@ pub use crate::types::error::_internal_error_exception::InternalErrorExceptionBu
 pub use crate::types::error::_limit_exceeded_exception::LimitExceededExceptionBuilder;
 
 pub use crate::types::error::_invalid_type_exception::InvalidTypeExceptionBuilder;
-

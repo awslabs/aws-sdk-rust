@@ -3,20 +3,22 @@
 /// <p>A request for the authorization code for the specified domain. To transfer a domain to another registrar, you provide this value to the new registrar.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct RetrieveDomainAuthCodeInput  {
+pub struct RetrieveDomainAuthCodeInput {
     /// <p>The name of the domain that you want to get an authorization code for.</p>
     #[doc(hidden)]
     pub domain_name: std::option::Option<std::string::String>,
 }
 impl RetrieveDomainAuthCodeInput {
     /// <p>The name of the domain that you want to get an authorization code for.</p>
-    pub fn domain_name(&self) -> std::option::Option<& str> {
+    pub fn domain_name(&self) -> std::option::Option<&str> {
         self.domain_name.as_deref()
     }
 }
 impl RetrieveDomainAuthCodeInput {
     /// Creates a new builder-style object to manufacture [`RetrieveDomainAuthCodeInput`](crate::operation::retrieve_domain_auth_code::RetrieveDomainAuthCodeInput).
-    pub fn builder() -> crate::operation::retrieve_domain_auth_code::builders::RetrieveDomainAuthCodeInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::retrieve_domain_auth_code::builders::RetrieveDomainAuthCodeInputBuilder
+    {
         crate::operation::retrieve_domain_auth_code::builders::RetrieveDomainAuthCodeInputBuilder::default()
     }
 }
@@ -35,16 +37,20 @@ impl RetrieveDomainAuthCodeInputBuilder {
     }
     /// <p>The name of the domain that you want to get an authorization code for.</p>
     pub fn set_domain_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.domain_name = input; self
+        self.domain_name = input;
+        self
     }
     /// Consumes the builder and constructs a [`RetrieveDomainAuthCodeInput`](crate::operation::retrieve_domain_auth_code::RetrieveDomainAuthCodeInput).
-    pub fn build(self) -> Result<crate::operation::retrieve_domain_auth_code::RetrieveDomainAuthCodeInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::retrieve_domain_auth_code::RetrieveDomainAuthCodeInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::retrieve_domain_auth_code::RetrieveDomainAuthCodeInput {
-                domain_name: self.domain_name
-                ,
-            }
+                domain_name: self.domain_name,
+            },
         )
     }
 }
-

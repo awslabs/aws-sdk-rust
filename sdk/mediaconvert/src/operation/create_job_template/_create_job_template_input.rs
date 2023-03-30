@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateJobTemplateInput  {
+pub struct CreateJobTemplateInput {
     /// Accelerated transcoding can significantly speed up jobs with long, visually complex content. Outputs that use this feature incur pro-tier pricing. For information about feature limitations, see the AWS Elemental MediaConvert User Guide.
     #[doc(hidden)]
     pub acceleration_settings: std::option::Option<crate::types::AccelerationSettings>,
@@ -32,27 +32,30 @@ pub struct CreateJobTemplateInput  {
     pub status_update_interval: std::option::Option<crate::types::StatusUpdateInterval>,
     /// The tags that you want to add to the resource. You can tag resources with a key-value pair or with only a key.
     #[doc(hidden)]
-    pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub tags:
+        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl CreateJobTemplateInput {
     /// Accelerated transcoding can significantly speed up jobs with long, visually complex content. Outputs that use this feature incur pro-tier pricing. For information about feature limitations, see the AWS Elemental MediaConvert User Guide.
-    pub fn acceleration_settings(&self) -> std::option::Option<& crate::types::AccelerationSettings> {
+    pub fn acceleration_settings(
+        &self,
+    ) -> std::option::Option<&crate::types::AccelerationSettings> {
         self.acceleration_settings.as_ref()
     }
     /// Optional. A category for the job template you are creating
-    pub fn category(&self) -> std::option::Option<& str> {
+    pub fn category(&self) -> std::option::Option<&str> {
         self.category.as_deref()
     }
     /// Optional. A description of the job template you are creating.
-    pub fn description(&self) -> std::option::Option<& str> {
+    pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
     /// Optional. Use queue hopping to avoid overly long waits in the backlog of the queue that you submit your job to. Specify an alternate queue and the maximum time that your job will wait in the initial queue before hopping. For more information about this feature, see the AWS Elemental MediaConvert User Guide.
-    pub fn hop_destinations(&self) -> std::option::Option<& [crate::types::HopDestination]> {
+    pub fn hop_destinations(&self) -> std::option::Option<&[crate::types::HopDestination]> {
         self.hop_destinations.as_deref()
     }
     /// The name of the job template you are creating.
-    pub fn name(&self) -> std::option::Option<& str> {
+    pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
     /// Specify the relative priority for this job. In any given queue, the service begins processing the job with the highest value first. When more than one job has the same priority, the service begins processing the job that you submitted first. If you don't specify a priority, the service uses the default value 0.
@@ -60,25 +63,31 @@ impl CreateJobTemplateInput {
         self.priority
     }
     /// Optional. The queue that jobs created from this template are assigned to. If you don't specify this, jobs will go to the default queue.
-    pub fn queue(&self) -> std::option::Option<& str> {
+    pub fn queue(&self) -> std::option::Option<&str> {
         self.queue.as_deref()
     }
     /// JobTemplateSettings contains all the transcode settings saved in the template that will be applied to jobs created from it.
-    pub fn settings(&self) -> std::option::Option<& crate::types::JobTemplateSettings> {
+    pub fn settings(&self) -> std::option::Option<&crate::types::JobTemplateSettings> {
         self.settings.as_ref()
     }
     /// Specify how often MediaConvert sends STATUS_UPDATE events to Amazon CloudWatch Events. Set the interval, in seconds, between status updates. MediaConvert sends an update at this interval from the time the service begins processing your job to the time it completes the transcode or encounters an error.
-    pub fn status_update_interval(&self) -> std::option::Option<& crate::types::StatusUpdateInterval> {
+    pub fn status_update_interval(
+        &self,
+    ) -> std::option::Option<&crate::types::StatusUpdateInterval> {
         self.status_update_interval.as_ref()
     }
     /// The tags that you want to add to the resource. You can tag resources with a key-value pair or with only a key.
-    pub fn tags(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
         self.tags.as_ref()
     }
 }
 impl CreateJobTemplateInput {
     /// Creates a new builder-style object to manufacture [`CreateJobTemplateInput`](crate::operation::create_job_template::CreateJobTemplateInput).
-    pub fn builder() -> crate::operation::create_job_template::builders::CreateJobTemplateInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::create_job_template::builders::CreateJobTemplateInputBuilder {
         crate::operation::create_job_template::builders::CreateJobTemplateInputBuilder::default()
     }
 }
@@ -96,7 +105,8 @@ pub struct CreateJobTemplateInputBuilder {
     pub(crate) queue: std::option::Option<std::string::String>,
     pub(crate) settings: std::option::Option<crate::types::JobTemplateSettings>,
     pub(crate) status_update_interval: std::option::Option<crate::types::StatusUpdateInterval>,
-    pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub(crate) tags:
+        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl CreateJobTemplateInputBuilder {
     /// Accelerated transcoding can significantly speed up jobs with long, visually complex content. Outputs that use this feature incur pro-tier pricing. For information about feature limitations, see the AWS Elemental MediaConvert User Guide.
@@ -105,8 +115,12 @@ impl CreateJobTemplateInputBuilder {
         self
     }
     /// Accelerated transcoding can significantly speed up jobs with long, visually complex content. Outputs that use this feature incur pro-tier pricing. For information about feature limitations, see the AWS Elemental MediaConvert User Guide.
-    pub fn set_acceleration_settings(mut self, input: std::option::Option<crate::types::AccelerationSettings>) -> Self {
-        self.acceleration_settings = input; self
+    pub fn set_acceleration_settings(
+        mut self,
+        input: std::option::Option<crate::types::AccelerationSettings>,
+    ) -> Self {
+        self.acceleration_settings = input;
+        self
     }
     /// Optional. A category for the job template you are creating
     pub fn category(mut self, input: impl Into<std::string::String>) -> Self {
@@ -115,7 +129,8 @@ impl CreateJobTemplateInputBuilder {
     }
     /// Optional. A category for the job template you are creating
     pub fn set_category(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.category = input; self
+        self.category = input;
+        self
     }
     /// Optional. A description of the job template you are creating.
     pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -124,7 +139,8 @@ impl CreateJobTemplateInputBuilder {
     }
     /// Optional. A description of the job template you are creating.
     pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.description = input; self
+        self.description = input;
+        self
     }
     /// Appends an item to `hop_destinations`.
     ///
@@ -133,13 +149,17 @@ impl CreateJobTemplateInputBuilder {
     /// Optional. Use queue hopping to avoid overly long waits in the backlog of the queue that you submit your job to. Specify an alternate queue and the maximum time that your job will wait in the initial queue before hopping. For more information about this feature, see the AWS Elemental MediaConvert User Guide.
     pub fn hop_destinations(mut self, input: crate::types::HopDestination) -> Self {
         let mut v = self.hop_destinations.unwrap_or_default();
-                        v.push(input);
-                        self.hop_destinations = Some(v);
-                        self
+        v.push(input);
+        self.hop_destinations = Some(v);
+        self
     }
     /// Optional. Use queue hopping to avoid overly long waits in the backlog of the queue that you submit your job to. Specify an alternate queue and the maximum time that your job will wait in the initial queue before hopping. For more information about this feature, see the AWS Elemental MediaConvert User Guide.
-    pub fn set_hop_destinations(mut self, input: std::option::Option<std::vec::Vec<crate::types::HopDestination>>) -> Self {
-        self.hop_destinations = input; self
+    pub fn set_hop_destinations(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::HopDestination>>,
+    ) -> Self {
+        self.hop_destinations = input;
+        self
     }
     /// The name of the job template you are creating.
     pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -148,7 +168,8 @@ impl CreateJobTemplateInputBuilder {
     }
     /// The name of the job template you are creating.
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input; self
+        self.name = input;
+        self
     }
     /// Specify the relative priority for this job. In any given queue, the service begins processing the job with the highest value first. When more than one job has the same priority, the service begins processing the job that you submitted first. If you don't specify a priority, the service uses the default value 0.
     pub fn priority(mut self, input: i32) -> Self {
@@ -157,7 +178,8 @@ impl CreateJobTemplateInputBuilder {
     }
     /// Specify the relative priority for this job. In any given queue, the service begins processing the job with the highest value first. When more than one job has the same priority, the service begins processing the job that you submitted first. If you don't specify a priority, the service uses the default value 0.
     pub fn set_priority(mut self, input: std::option::Option<i32>) -> Self {
-        self.priority = input; self
+        self.priority = input;
+        self
     }
     /// Optional. The queue that jobs created from this template are assigned to. If you don't specify this, jobs will go to the default queue.
     pub fn queue(mut self, input: impl Into<std::string::String>) -> Self {
@@ -166,7 +188,8 @@ impl CreateJobTemplateInputBuilder {
     }
     /// Optional. The queue that jobs created from this template are assigned to. If you don't specify this, jobs will go to the default queue.
     pub fn set_queue(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.queue = input; self
+        self.queue = input;
+        self
     }
     /// JobTemplateSettings contains all the transcode settings saved in the template that will be applied to jobs created from it.
     pub fn settings(mut self, input: crate::types::JobTemplateSettings) -> Self {
@@ -174,8 +197,12 @@ impl CreateJobTemplateInputBuilder {
         self
     }
     /// JobTemplateSettings contains all the transcode settings saved in the template that will be applied to jobs created from it.
-    pub fn set_settings(mut self, input: std::option::Option<crate::types::JobTemplateSettings>) -> Self {
-        self.settings = input; self
+    pub fn set_settings(
+        mut self,
+        input: std::option::Option<crate::types::JobTemplateSettings>,
+    ) -> Self {
+        self.settings = input;
+        self
     }
     /// Specify how often MediaConvert sends STATUS_UPDATE events to Amazon CloudWatch Events. Set the interval, in seconds, between status updates. MediaConvert sends an update at this interval from the time the service begins processing your job to the time it completes the transcode or encounters an error.
     pub fn status_update_interval(mut self, input: crate::types::StatusUpdateInterval) -> Self {
@@ -183,51 +210,58 @@ impl CreateJobTemplateInputBuilder {
         self
     }
     /// Specify how often MediaConvert sends STATUS_UPDATE events to Amazon CloudWatch Events. Set the interval, in seconds, between status updates. MediaConvert sends an update at this interval from the time the service begins processing your job to the time it completes the transcode or encounters an error.
-    pub fn set_status_update_interval(mut self, input: std::option::Option<crate::types::StatusUpdateInterval>) -> Self {
-        self.status_update_interval = input; self
+    pub fn set_status_update_interval(
+        mut self,
+        input: std::option::Option<crate::types::StatusUpdateInterval>,
+    ) -> Self {
+        self.status_update_interval = input;
+        self
     }
     /// Adds a key-value pair to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// The tags that you want to add to the resource. You can tag resources with a key-value pair or with only a key.
-    pub fn tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
+    pub fn tags(
+        mut self,
+        k: impl Into<std::string::String>,
+        v: impl Into<std::string::String>,
+    ) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
-                        hash_map.insert(k.into(), v.into());
-                        self.tags = Some(hash_map);
-                        self
+        hash_map.insert(k.into(), v.into());
+        self.tags = Some(hash_map);
+        self
     }
     /// The tags that you want to add to the resource. You can tag resources with a key-value pair or with only a key.
-    pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
-        self.tags = input; self
+    pub fn set_tags(
+        mut self,
+        input: std::option::Option<
+            std::collections::HashMap<std::string::String, std::string::String>,
+        >,
+    ) -> Self {
+        self.tags = input;
+        self
     }
     /// Consumes the builder and constructs a [`CreateJobTemplateInput`](crate::operation::create_job_template::CreateJobTemplateInput).
-    pub fn build(self) -> Result<crate::operation::create_job_template::CreateJobTemplateInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::create_job_template::CreateJobTemplateInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::create_job_template::CreateJobTemplateInput {
-                acceleration_settings: self.acceleration_settings
-                ,
-                category: self.category
-                ,
-                description: self.description
-                ,
-                hop_destinations: self.hop_destinations
-                ,
-                name: self.name
-                ,
-                priority: self.priority
-                    .unwrap_or_default()
-                ,
-                queue: self.queue
-                ,
-                settings: self.settings
-                ,
-                status_update_interval: self.status_update_interval
-                ,
-                tags: self.tags
-                ,
-            }
+                acceleration_settings: self.acceleration_settings,
+                category: self.category,
+                description: self.description,
+                hop_destinations: self.hop_destinations,
+                name: self.name,
+                priority: self.priority.unwrap_or_default(),
+                queue: self.queue,
+                settings: self.settings,
+                status_update_interval: self.status_update_interval,
+                tags: self.tags,
+            },
         )
     }
 }
-

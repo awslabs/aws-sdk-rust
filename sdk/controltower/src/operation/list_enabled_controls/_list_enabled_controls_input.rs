@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListEnabledControlsInput  {
+pub struct ListEnabledControlsInput {
     /// <p>The ARN of the organizational unit.</p>
     #[doc(hidden)]
     pub target_identifier: std::option::Option<std::string::String>,
@@ -15,11 +15,11 @@ pub struct ListEnabledControlsInput  {
 }
 impl ListEnabledControlsInput {
     /// <p>The ARN of the organizational unit.</p>
-    pub fn target_identifier(&self) -> std::option::Option<& str> {
+    pub fn target_identifier(&self) -> std::option::Option<&str> {
         self.target_identifier.as_deref()
     }
     /// <p>The token to continue the list from a previous API call with the same parameters.</p>
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
     /// <p>How many results to return per API call.</p>
@@ -29,8 +29,10 @@ impl ListEnabledControlsInput {
 }
 impl ListEnabledControlsInput {
     /// Creates a new builder-style object to manufacture [`ListEnabledControlsInput`](crate::operation::list_enabled_controls::ListEnabledControlsInput).
-    pub fn builder() -> crate::operation::list_enabled_controls::builders::ListEnabledControlsInputBuilder {
-        crate::operation::list_enabled_controls::builders::ListEnabledControlsInputBuilder::default()
+    pub fn builder(
+    ) -> crate::operation::list_enabled_controls::builders::ListEnabledControlsInputBuilder {
+        crate::operation::list_enabled_controls::builders::ListEnabledControlsInputBuilder::default(
+        )
     }
 }
 
@@ -49,8 +51,12 @@ impl ListEnabledControlsInputBuilder {
         self
     }
     /// <p>The ARN of the organizational unit.</p>
-    pub fn set_target_identifier(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.target_identifier = input; self
+    pub fn set_target_identifier(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.target_identifier = input;
+        self
     }
     /// <p>The token to continue the list from a previous API call with the same parameters.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -59,7 +65,8 @@ impl ListEnabledControlsInputBuilder {
     }
     /// <p>The token to continue the list from a previous API call with the same parameters.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input; self
+        self.next_token = input;
+        self
     }
     /// <p>How many results to return per API call.</p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -68,20 +75,22 @@ impl ListEnabledControlsInputBuilder {
     }
     /// <p>How many results to return per API call.</p>
     pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_results = input; self
+        self.max_results = input;
+        self
     }
     /// Consumes the builder and constructs a [`ListEnabledControlsInput`](crate::operation::list_enabled_controls::ListEnabledControlsInput).
-    pub fn build(self) -> Result<crate::operation::list_enabled_controls::ListEnabledControlsInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::list_enabled_controls::ListEnabledControlsInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::list_enabled_controls::ListEnabledControlsInput {
-                target_identifier: self.target_identifier
-                ,
-                next_token: self.next_token
-                ,
-                max_results: self.max_results
-                ,
-            }
+                target_identifier: self.target_identifier,
+                next_token: self.next_token,
+                max_results: self.max_results,
+            },
         )
     }
 }
-

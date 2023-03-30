@@ -2,17 +2,19 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteComputeEnvironmentOutput  {
+pub struct DeleteComputeEnvironmentOutput {
     _request_id: Option<String>,
 }
 impl aws_http::request_id::RequestId for DeleteComputeEnvironmentOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl DeleteComputeEnvironmentOutput {
     /// Creates a new builder-style object to manufacture [`DeleteComputeEnvironmentOutput`](crate::operation::delete_compute_environment::DeleteComputeEnvironmentOutput).
-    pub fn builder() -> crate::operation::delete_compute_environment::builders::DeleteComputeEnvironmentOutputBuilder {
+    pub fn builder(
+    ) -> crate::operation::delete_compute_environment::builders::DeleteComputeEnvironmentOutputBuilder
+    {
         crate::operation::delete_compute_environment::builders::DeleteComputeEnvironmentOutputBuilder::default()
     }
 }
@@ -25,19 +27,20 @@ pub struct DeleteComputeEnvironmentOutputBuilder {
 }
 impl DeleteComputeEnvironmentOutputBuilder {
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`DeleteComputeEnvironmentOutput`](crate::operation::delete_compute_environment::DeleteComputeEnvironmentOutput).
-    pub fn build(self) -> crate::operation::delete_compute_environment::DeleteComputeEnvironmentOutput {
+    pub fn build(
+        self,
+    ) -> crate::operation::delete_compute_environment::DeleteComputeEnvironmentOutput {
         crate::operation::delete_compute_environment::DeleteComputeEnvironmentOutput {
             _request_id: self._request_id,
         }
     }
 }
-

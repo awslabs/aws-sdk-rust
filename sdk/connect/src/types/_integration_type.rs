@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-/// 
+///
 /// Here is an example of how you can make a match expression forward-compatible:
-/// 
+///
 /// ```text
 /// # let integrationtype = unimplemented!();
 /// match integrationtype {
@@ -34,14 +34,22 @@
 /// Specifically, when `integrationtype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `IntegrationType::NewFeature` also yielding `"NewFeature"`.
-/// 
+///
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
 pub enum IntegrationType {
     #[allow(missing_docs)] // documentation missing in model
     CasesDomain,
@@ -56,49 +64,57 @@ pub enum IntegrationType {
     #[allow(missing_docs)] // documentation missing in model
     WisdomKnowledgeBase,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::primitives::UnknownVariantValue)
+    Unknown(crate::primitives::UnknownVariantValue),
 }
 impl std::convert::From<&str> for IntegrationType {
-                fn from(s: &str) -> Self {
-                    match s {
-                        "CASES_DOMAIN" => IntegrationType::CasesDomain,
-"EVENT" => IntegrationType::Event,
-"PINPOINT_APP" => IntegrationType::PinpointApp,
-"VOICE_ID" => IntegrationType::VoiceId,
-"WISDOM_ASSISTANT" => IntegrationType::WisdomAssistant,
-"WISDOM_KNOWLEDGE_BASE" => IntegrationType::WisdomKnowledgeBase,
-other => IntegrationType::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
-                    }
-                }
+    fn from(s: &str) -> Self {
+        match s {
+            "CASES_DOMAIN" => IntegrationType::CasesDomain,
+            "EVENT" => IntegrationType::Event,
+            "PINPOINT_APP" => IntegrationType::PinpointApp,
+            "VOICE_ID" => IntegrationType::VoiceId,
+            "WISDOM_ASSISTANT" => IntegrationType::WisdomAssistant,
+            "WISDOM_KNOWLEDGE_BASE" => IntegrationType::WisdomKnowledgeBase,
+            other => {
+                IntegrationType::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
             }
-impl std::str::FromStr for IntegrationType {
-                type Err = std::convert::Infallible;
-
-                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-                    Ok(IntegrationType::from(s))
-                }
-            }
-impl IntegrationType {
-                /// Returns the `&str` value of the enum member.
-                pub fn as_str(&self) -> &str {
-                    match self {
-    IntegrationType::CasesDomain => "CASES_DOMAIN",
-    IntegrationType::Event => "EVENT",
-    IntegrationType::PinpointApp => "PINPOINT_APP",
-    IntegrationType::VoiceId => "VOICE_ID",
-    IntegrationType::WisdomAssistant => "WISDOM_ASSISTANT",
-    IntegrationType::WisdomKnowledgeBase => "WISDOM_KNOWLEDGE_BASE",
-    IntegrationType::Unknown(value) => value.as_str()
+        }
+    }
 }
-                }
-                /// Returns all the `&str` representations of the enum members.
-                pub const fn values() -> &'static [&'static str] {
-                    &["CASES_DOMAIN", "EVENT", "PINPOINT_APP", "VOICE_ID", "WISDOM_ASSISTANT", "WISDOM_KNOWLEDGE_BASE"]
-                }
-            }
-impl AsRef<str> for IntegrationType {
-                fn as_ref(&self) -> &str {
-                    self.as_str()
-                }
-            }
+impl std::str::FromStr for IntegrationType {
+    type Err = std::convert::Infallible;
 
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(IntegrationType::from(s))
+    }
+}
+impl IntegrationType {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            IntegrationType::CasesDomain => "CASES_DOMAIN",
+            IntegrationType::Event => "EVENT",
+            IntegrationType::PinpointApp => "PINPOINT_APP",
+            IntegrationType::VoiceId => "VOICE_ID",
+            IntegrationType::WisdomAssistant => "WISDOM_ASSISTANT",
+            IntegrationType::WisdomKnowledgeBase => "WISDOM_KNOWLEDGE_BASE",
+            IntegrationType::Unknown(value) => value.as_str(),
+        }
+    }
+    /// Returns all the `&str` representations of the enum members.
+    pub const fn values() -> &'static [&'static str] {
+        &[
+            "CASES_DOMAIN",
+            "EVENT",
+            "PINPOINT_APP",
+            "VOICE_ID",
+            "WISDOM_ASSISTANT",
+            "WISDOM_KNOWLEDGE_BASE",
+        ]
+    }
+}
+impl AsRef<str> for IntegrationType {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateGroupMembershipInput  {
+pub struct CreateGroupMembershipInput {
     /// <p>The globally unique identifier for the identity store.</p>
     #[doc(hidden)]
     pub identity_store_id: std::option::Option<std::string::String>,
@@ -15,21 +15,23 @@ pub struct CreateGroupMembershipInput  {
 }
 impl CreateGroupMembershipInput {
     /// <p>The globally unique identifier for the identity store.</p>
-    pub fn identity_store_id(&self) -> std::option::Option<& str> {
+    pub fn identity_store_id(&self) -> std::option::Option<&str> {
         self.identity_store_id.as_deref()
     }
     /// <p>The identifier for a group in the identity store.</p>
-    pub fn group_id(&self) -> std::option::Option<& str> {
+    pub fn group_id(&self) -> std::option::Option<&str> {
         self.group_id.as_deref()
     }
     /// <p>An object that contains the identifier of a group member. Setting the <code>UserID</code> field to the specific identifier for a user indicates that the user is a member of the group.</p>
-    pub fn member_id(&self) -> std::option::Option<& crate::types::MemberId> {
+    pub fn member_id(&self) -> std::option::Option<&crate::types::MemberId> {
         self.member_id.as_ref()
     }
 }
 impl CreateGroupMembershipInput {
     /// Creates a new builder-style object to manufacture [`CreateGroupMembershipInput`](crate::operation::create_group_membership::CreateGroupMembershipInput).
-    pub fn builder() -> crate::operation::create_group_membership::builders::CreateGroupMembershipInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::create_group_membership::builders::CreateGroupMembershipInputBuilder
+    {
         crate::operation::create_group_membership::builders::CreateGroupMembershipInputBuilder::default()
     }
 }
@@ -49,8 +51,12 @@ impl CreateGroupMembershipInputBuilder {
         self
     }
     /// <p>The globally unique identifier for the identity store.</p>
-    pub fn set_identity_store_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.identity_store_id = input; self
+    pub fn set_identity_store_id(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.identity_store_id = input;
+        self
     }
     /// <p>The identifier for a group in the identity store.</p>
     pub fn group_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -59,7 +65,8 @@ impl CreateGroupMembershipInputBuilder {
     }
     /// <p>The identifier for a group in the identity store.</p>
     pub fn set_group_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.group_id = input; self
+        self.group_id = input;
+        self
     }
     /// <p>An object that contains the identifier of a group member. Setting the <code>UserID</code> field to the specific identifier for a user indicates that the user is a member of the group.</p>
     pub fn member_id(mut self, input: crate::types::MemberId) -> Self {
@@ -68,20 +75,22 @@ impl CreateGroupMembershipInputBuilder {
     }
     /// <p>An object that contains the identifier of a group member. Setting the <code>UserID</code> field to the specific identifier for a user indicates that the user is a member of the group.</p>
     pub fn set_member_id(mut self, input: std::option::Option<crate::types::MemberId>) -> Self {
-        self.member_id = input; self
+        self.member_id = input;
+        self
     }
     /// Consumes the builder and constructs a [`CreateGroupMembershipInput`](crate::operation::create_group_membership::CreateGroupMembershipInput).
-    pub fn build(self) -> Result<crate::operation::create_group_membership::CreateGroupMembershipInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::create_group_membership::CreateGroupMembershipInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::create_group_membership::CreateGroupMembershipInput {
-                identity_store_id: self.identity_store_id
-                ,
-                group_id: self.group_id
-                ,
-                member_id: self.member_id
-                ,
-            }
+                identity_store_id: self.identity_store_id,
+                group_id: self.group_id,
+                member_id: self.member_id,
+            },
         )
     }
 }
-

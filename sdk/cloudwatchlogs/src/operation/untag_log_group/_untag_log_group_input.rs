@@ -3,7 +3,7 @@
 #[deprecated(note = "Please use the generic tagging API model UntagResourceRequest")]
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UntagLogGroupInput  {
+pub struct UntagLogGroupInput {
     /// <p>The name of the log group.</p>
     #[doc(hidden)]
     pub log_group_name: std::option::Option<std::string::String>,
@@ -13,11 +13,11 @@ pub struct UntagLogGroupInput  {
 }
 impl UntagLogGroupInput {
     /// <p>The name of the log group.</p>
-    pub fn log_group_name(&self) -> std::option::Option<& str> {
+    pub fn log_group_name(&self) -> std::option::Option<&str> {
         self.log_group_name.as_deref()
     }
     /// <p>The tag keys. The corresponding tags are removed from the log group.</p>
-    pub fn tags(&self) -> std::option::Option<& [std::string::String]> {
+    pub fn tags(&self) -> std::option::Option<&[std::string::String]> {
         self.tags.as_deref()
     }
 }
@@ -43,7 +43,8 @@ impl UntagLogGroupInputBuilder {
     }
     /// <p>The name of the log group.</p>
     pub fn set_log_group_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.log_group_name = input; self
+        self.log_group_name = input;
+        self
     }
     /// Appends an item to `tags`.
     ///
@@ -52,24 +53,28 @@ impl UntagLogGroupInputBuilder {
     /// <p>The tag keys. The corresponding tags are removed from the log group.</p>
     pub fn tags(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.tags.unwrap_or_default();
-                        v.push(input.into());
-                        self.tags = Some(v);
-                        self
+        v.push(input.into());
+        self.tags = Some(v);
+        self
     }
     /// <p>The tag keys. The corresponding tags are removed from the log group.</p>
-    pub fn set_tags(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-        self.tags = input; self
+    pub fn set_tags(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
+        self.tags = input;
+        self
     }
     /// Consumes the builder and constructs a [`UntagLogGroupInput`](crate::operation::untag_log_group::UntagLogGroupInput).
-    pub fn build(self) -> Result<crate::operation::untag_log_group::UntagLogGroupInput, aws_smithy_http::operation::error::BuildError> {
-        Ok(
-            crate::operation::untag_log_group::UntagLogGroupInput {
-                log_group_name: self.log_group_name
-                ,
-                tags: self.tags
-                ,
-            }
-        )
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::untag_log_group::UntagLogGroupInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        Ok(crate::operation::untag_log_group::UntagLogGroupInput {
+            log_group_name: self.log_group_name,
+            tags: self.tags,
+        })
     }
 }
-

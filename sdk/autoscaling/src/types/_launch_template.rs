@@ -3,21 +3,24 @@
 /// <p>Use this structure to specify the launch templates and instance types (overrides) for a mixed instances policy.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct LaunchTemplate  {
+pub struct LaunchTemplate {
     /// <p>The launch template.</p>
     #[doc(hidden)]
-    pub launch_template_specification: std::option::Option<crate::types::LaunchTemplateSpecification>,
+    pub launch_template_specification:
+        std::option::Option<crate::types::LaunchTemplateSpecification>,
     /// <p>Any properties that you specify override the same properties in the launch template.</p>
     #[doc(hidden)]
     pub overrides: std::option::Option<std::vec::Vec<crate::types::LaunchTemplateOverrides>>,
 }
 impl LaunchTemplate {
     /// <p>The launch template.</p>
-    pub fn launch_template_specification(&self) -> std::option::Option<& crate::types::LaunchTemplateSpecification> {
+    pub fn launch_template_specification(
+        &self,
+    ) -> std::option::Option<&crate::types::LaunchTemplateSpecification> {
         self.launch_template_specification.as_ref()
     }
     /// <p>Any properties that you specify override the same properties in the launch template.</p>
-    pub fn overrides(&self) -> std::option::Option<& [crate::types::LaunchTemplateOverrides]> {
+    pub fn overrides(&self) -> std::option::Option<&[crate::types::LaunchTemplateOverrides]> {
         self.overrides.as_deref()
     }
 }
@@ -32,18 +35,26 @@ impl LaunchTemplate {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct LaunchTemplateBuilder {
-    pub(crate) launch_template_specification: std::option::Option<crate::types::LaunchTemplateSpecification>,
+    pub(crate) launch_template_specification:
+        std::option::Option<crate::types::LaunchTemplateSpecification>,
     pub(crate) overrides: std::option::Option<std::vec::Vec<crate::types::LaunchTemplateOverrides>>,
 }
 impl LaunchTemplateBuilder {
     /// <p>The launch template.</p>
-    pub fn launch_template_specification(mut self, input: crate::types::LaunchTemplateSpecification) -> Self {
+    pub fn launch_template_specification(
+        mut self,
+        input: crate::types::LaunchTemplateSpecification,
+    ) -> Self {
         self.launch_template_specification = Some(input);
         self
     }
     /// <p>The launch template.</p>
-    pub fn set_launch_template_specification(mut self, input: std::option::Option<crate::types::LaunchTemplateSpecification>) -> Self {
-        self.launch_template_specification = input; self
+    pub fn set_launch_template_specification(
+        mut self,
+        input: std::option::Option<crate::types::LaunchTemplateSpecification>,
+    ) -> Self {
+        self.launch_template_specification = input;
+        self
     }
     /// Appends an item to `overrides`.
     ///
@@ -52,22 +63,23 @@ impl LaunchTemplateBuilder {
     /// <p>Any properties that you specify override the same properties in the launch template.</p>
     pub fn overrides(mut self, input: crate::types::LaunchTemplateOverrides) -> Self {
         let mut v = self.overrides.unwrap_or_default();
-                        v.push(input);
-                        self.overrides = Some(v);
-                        self
+        v.push(input);
+        self.overrides = Some(v);
+        self
     }
     /// <p>Any properties that you specify override the same properties in the launch template.</p>
-    pub fn set_overrides(mut self, input: std::option::Option<std::vec::Vec<crate::types::LaunchTemplateOverrides>>) -> Self {
-        self.overrides = input; self
+    pub fn set_overrides(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::LaunchTemplateOverrides>>,
+    ) -> Self {
+        self.overrides = input;
+        self
     }
     /// Consumes the builder and constructs a [`LaunchTemplate`](crate::types::LaunchTemplate).
     pub fn build(self) -> crate::types::LaunchTemplate {
         crate::types::LaunchTemplate {
-            launch_template_specification: self.launch_template_specification
-            ,
-            overrides: self.overrides
-            ,
+            launch_template_specification: self.launch_template_specification,
+            overrides: self.overrides,
         }
     }
 }
-

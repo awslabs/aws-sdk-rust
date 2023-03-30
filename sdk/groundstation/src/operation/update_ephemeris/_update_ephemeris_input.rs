@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateEphemerisInput  {
+pub struct UpdateEphemerisInput {
     /// <p>The AWS Ground Station ephemeris ID.</p>
     #[doc(hidden)]
     pub ephemeris_id: std::option::Option<std::string::String>,
@@ -12,15 +12,15 @@ pub struct UpdateEphemerisInput  {
     /// <p>A name string associated with the ephemeris. Used as a human-readable identifier for the ephemeris.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
-    /// <p>Customer-provided priority score to establish the order in which overlapping ephemerides should be used.</p> 
-    /// <p>The default for customer-provided ephemeris priority is 1, and higher numbers take precedence.</p> 
+    /// <p>Customer-provided priority score to establish the order in which overlapping ephemerides should be used.</p>
+    /// <p>The default for customer-provided ephemeris priority is 1, and higher numbers take precedence.</p>
     /// <p>Priority must be 1 or greater</p>
     #[doc(hidden)]
     pub priority: std::option::Option<i32>,
 }
 impl UpdateEphemerisInput {
     /// <p>The AWS Ground Station ephemeris ID.</p>
-    pub fn ephemeris_id(&self) -> std::option::Option<& str> {
+    pub fn ephemeris_id(&self) -> std::option::Option<&str> {
         self.ephemeris_id.as_deref()
     }
     /// <p>Whether the ephemeris is enabled or not. Changing this value will not require the ephemeris to be re-validated.</p>
@@ -28,11 +28,11 @@ impl UpdateEphemerisInput {
         self.enabled
     }
     /// <p>A name string associated with the ephemeris. Used as a human-readable identifier for the ephemeris.</p>
-    pub fn name(&self) -> std::option::Option<& str> {
+    pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
-    /// <p>Customer-provided priority score to establish the order in which overlapping ephemerides should be used.</p> 
-    /// <p>The default for customer-provided ephemeris priority is 1, and higher numbers take precedence.</p> 
+    /// <p>Customer-provided priority score to establish the order in which overlapping ephemerides should be used.</p>
+    /// <p>The default for customer-provided ephemeris priority is 1, and higher numbers take precedence.</p>
     /// <p>Priority must be 1 or greater</p>
     pub fn priority(&self) -> std::option::Option<i32> {
         self.priority
@@ -62,7 +62,8 @@ impl UpdateEphemerisInputBuilder {
     }
     /// <p>The AWS Ground Station ephemeris ID.</p>
     pub fn set_ephemeris_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.ephemeris_id = input; self
+        self.ephemeris_id = input;
+        self
     }
     /// <p>Whether the ephemeris is enabled or not. Changing this value will not require the ephemeris to be re-validated.</p>
     pub fn enabled(mut self, input: bool) -> Self {
@@ -71,7 +72,8 @@ impl UpdateEphemerisInputBuilder {
     }
     /// <p>Whether the ephemeris is enabled or not. Changing this value will not require the ephemeris to be re-validated.</p>
     pub fn set_enabled(mut self, input: std::option::Option<bool>) -> Self {
-        self.enabled = input; self
+        self.enabled = input;
+        self
     }
     /// <p>A name string associated with the ephemeris. Used as a human-readable identifier for the ephemeris.</p>
     pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -80,35 +82,35 @@ impl UpdateEphemerisInputBuilder {
     }
     /// <p>A name string associated with the ephemeris. Used as a human-readable identifier for the ephemeris.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input; self
+        self.name = input;
+        self
     }
-    /// <p>Customer-provided priority score to establish the order in which overlapping ephemerides should be used.</p> 
-    /// <p>The default for customer-provided ephemeris priority is 1, and higher numbers take precedence.</p> 
+    /// <p>Customer-provided priority score to establish the order in which overlapping ephemerides should be used.</p>
+    /// <p>The default for customer-provided ephemeris priority is 1, and higher numbers take precedence.</p>
     /// <p>Priority must be 1 or greater</p>
     pub fn priority(mut self, input: i32) -> Self {
         self.priority = Some(input);
         self
     }
-    /// <p>Customer-provided priority score to establish the order in which overlapping ephemerides should be used.</p> 
-    /// <p>The default for customer-provided ephemeris priority is 1, and higher numbers take precedence.</p> 
+    /// <p>Customer-provided priority score to establish the order in which overlapping ephemerides should be used.</p>
+    /// <p>The default for customer-provided ephemeris priority is 1, and higher numbers take precedence.</p>
     /// <p>Priority must be 1 or greater</p>
     pub fn set_priority(mut self, input: std::option::Option<i32>) -> Self {
-        self.priority = input; self
+        self.priority = input;
+        self
     }
     /// Consumes the builder and constructs a [`UpdateEphemerisInput`](crate::operation::update_ephemeris::UpdateEphemerisInput).
-    pub fn build(self) -> Result<crate::operation::update_ephemeris::UpdateEphemerisInput, aws_smithy_http::operation::error::BuildError> {
-        Ok(
-            crate::operation::update_ephemeris::UpdateEphemerisInput {
-                ephemeris_id: self.ephemeris_id
-                ,
-                enabled: self.enabled
-                ,
-                name: self.name
-                ,
-                priority: self.priority
-                ,
-            }
-        )
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::update_ephemeris::UpdateEphemerisInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        Ok(crate::operation::update_ephemeris::UpdateEphemerisInput {
+            ephemeris_id: self.ephemeris_id,
+            enabled: self.enabled,
+            name: self.name,
+            priority: self.priority,
+        })
     }
 }
-

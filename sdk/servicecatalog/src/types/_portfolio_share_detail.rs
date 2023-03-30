@@ -3,11 +3,11 @@
 /// <p>Information about the portfolio share.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PortfolioShareDetail  {
-    /// <p>The identifier of the recipient entity that received the portfolio share. The recipient entity can be one of the following:</p> 
-    /// <p>1. An external account.</p> 
-    /// <p>2. An organziation member account.</p> 
-    /// <p>3. An organzational unit (OU).</p> 
+pub struct PortfolioShareDetail {
+    /// <p>The identifier of the recipient entity that received the portfolio share. The recipient entity can be one of the following:</p>
+    /// <p>1. An external account.</p>
+    /// <p>2. An organziation member account.</p>
+    /// <p>3. An organzational unit (OU).</p>
     /// <p>4. The organization itself. (This shares with every account in the organization).</p>
     #[doc(hidden)]
     pub principal_id: std::option::Option<std::string::String>,
@@ -25,16 +25,16 @@ pub struct PortfolioShareDetail  {
     pub share_principals: bool,
 }
 impl PortfolioShareDetail {
-    /// <p>The identifier of the recipient entity that received the portfolio share. The recipient entity can be one of the following:</p> 
-    /// <p>1. An external account.</p> 
-    /// <p>2. An organziation member account.</p> 
-    /// <p>3. An organzational unit (OU).</p> 
+    /// <p>The identifier of the recipient entity that received the portfolio share. The recipient entity can be one of the following:</p>
+    /// <p>1. An external account.</p>
+    /// <p>2. An organziation member account.</p>
+    /// <p>3. An organzational unit (OU).</p>
     /// <p>4. The organization itself. (This shares with every account in the organization).</p>
-    pub fn principal_id(&self) -> std::option::Option<& str> {
+    pub fn principal_id(&self) -> std::option::Option<&str> {
         self.principal_id.as_deref()
     }
     /// <p>The type of the portfolio share.</p>
-    pub fn r#type(&self) -> std::option::Option<& crate::types::DescribePortfolioShareType> {
+    pub fn r#type(&self) -> std::option::Option<&crate::types::DescribePortfolioShareType> {
         self.r#type.as_ref()
     }
     /// <p>Indicates whether the shared portfolio is imported by the recipient account. If the recipient is in an organization node, the share is automatically imported, and the field is always set to true.</p>
@@ -68,22 +68,23 @@ pub struct PortfolioShareDetailBuilder {
     pub(crate) share_principals: std::option::Option<bool>,
 }
 impl PortfolioShareDetailBuilder {
-    /// <p>The identifier of the recipient entity that received the portfolio share. The recipient entity can be one of the following:</p> 
-    /// <p>1. An external account.</p> 
-    /// <p>2. An organziation member account.</p> 
-    /// <p>3. An organzational unit (OU).</p> 
+    /// <p>The identifier of the recipient entity that received the portfolio share. The recipient entity can be one of the following:</p>
+    /// <p>1. An external account.</p>
+    /// <p>2. An organziation member account.</p>
+    /// <p>3. An organzational unit (OU).</p>
     /// <p>4. The organization itself. (This shares with every account in the organization).</p>
     pub fn principal_id(mut self, input: impl Into<std::string::String>) -> Self {
         self.principal_id = Some(input.into());
         self
     }
-    /// <p>The identifier of the recipient entity that received the portfolio share. The recipient entity can be one of the following:</p> 
-    /// <p>1. An external account.</p> 
-    /// <p>2. An organziation member account.</p> 
-    /// <p>3. An organzational unit (OU).</p> 
+    /// <p>The identifier of the recipient entity that received the portfolio share. The recipient entity can be one of the following:</p>
+    /// <p>1. An external account.</p>
+    /// <p>2. An organziation member account.</p>
+    /// <p>3. An organzational unit (OU).</p>
     /// <p>4. The organization itself. (This shares with every account in the organization).</p>
     pub fn set_principal_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.principal_id = input; self
+        self.principal_id = input;
+        self
     }
     /// <p>The type of the portfolio share.</p>
     pub fn r#type(mut self, input: crate::types::DescribePortfolioShareType) -> Self {
@@ -91,8 +92,12 @@ impl PortfolioShareDetailBuilder {
         self
     }
     /// <p>The type of the portfolio share.</p>
-    pub fn set_type(mut self, input: std::option::Option<crate::types::DescribePortfolioShareType>) -> Self {
-        self.r#type = input; self
+    pub fn set_type(
+        mut self,
+        input: std::option::Option<crate::types::DescribePortfolioShareType>,
+    ) -> Self {
+        self.r#type = input;
+        self
     }
     /// <p>Indicates whether the shared portfolio is imported by the recipient account. If the recipient is in an organization node, the share is automatically imported, and the field is always set to true.</p>
     pub fn accepted(mut self, input: bool) -> Self {
@@ -101,7 +106,8 @@ impl PortfolioShareDetailBuilder {
     }
     /// <p>Indicates whether the shared portfolio is imported by the recipient account. If the recipient is in an organization node, the share is automatically imported, and the field is always set to true.</p>
     pub fn set_accepted(mut self, input: std::option::Option<bool>) -> Self {
-        self.accepted = input; self
+        self.accepted = input;
+        self
     }
     /// <p>Indicates whether TagOptions sharing is enabled or disabled for the portfolio share.</p>
     pub fn share_tag_options(mut self, input: bool) -> Self {
@@ -110,7 +116,8 @@ impl PortfolioShareDetailBuilder {
     }
     /// <p>Indicates whether TagOptions sharing is enabled or disabled for the portfolio share.</p>
     pub fn set_share_tag_options(mut self, input: std::option::Option<bool>) -> Self {
-        self.share_tag_options = input; self
+        self.share_tag_options = input;
+        self
     }
     /// <p>Indicates if <code>Principal</code> sharing is enabled or disabled for the portfolio share. </p>
     pub fn share_principals(mut self, input: bool) -> Self {
@@ -119,25 +126,17 @@ impl PortfolioShareDetailBuilder {
     }
     /// <p>Indicates if <code>Principal</code> sharing is enabled or disabled for the portfolio share. </p>
     pub fn set_share_principals(mut self, input: std::option::Option<bool>) -> Self {
-        self.share_principals = input; self
+        self.share_principals = input;
+        self
     }
     /// Consumes the builder and constructs a [`PortfolioShareDetail`](crate::types::PortfolioShareDetail).
     pub fn build(self) -> crate::types::PortfolioShareDetail {
         crate::types::PortfolioShareDetail {
-            principal_id: self.principal_id
-            ,
-            r#type: self.r#type
-            ,
-            accepted: self.accepted
-                .unwrap_or_default()
-            ,
-            share_tag_options: self.share_tag_options
-                .unwrap_or_default()
-            ,
-            share_principals: self.share_principals
-                .unwrap_or_default()
-            ,
+            principal_id: self.principal_id,
+            r#type: self.r#type,
+            accepted: self.accepted.unwrap_or_default(),
+            share_tag_options: self.share_tag_options.unwrap_or_default(),
+            share_principals: self.share_principals.unwrap_or_default(),
         }
     }
 }
-

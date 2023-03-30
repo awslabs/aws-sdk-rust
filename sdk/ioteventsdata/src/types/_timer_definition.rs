@@ -3,7 +3,7 @@
 /// <p>The new setting of a timer.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct TimerDefinition  {
+pub struct TimerDefinition {
     /// <p>The name of the timer.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -13,7 +13,7 @@ pub struct TimerDefinition  {
 }
 impl TimerDefinition {
     /// <p>The name of the timer.</p>
-    pub fn name(&self) -> std::option::Option<& str> {
+    pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>The new setting of the timer (the number of seconds before the timer elapses).</p>
@@ -43,7 +43,8 @@ impl TimerDefinitionBuilder {
     }
     /// <p>The name of the timer.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input; self
+        self.name = input;
+        self
     }
     /// <p>The new setting of the timer (the number of seconds before the timer elapses).</p>
     pub fn seconds(mut self, input: i32) -> Self {
@@ -52,16 +53,14 @@ impl TimerDefinitionBuilder {
     }
     /// <p>The new setting of the timer (the number of seconds before the timer elapses).</p>
     pub fn set_seconds(mut self, input: std::option::Option<i32>) -> Self {
-        self.seconds = input; self
+        self.seconds = input;
+        self
     }
     /// Consumes the builder and constructs a [`TimerDefinition`](crate::types::TimerDefinition).
     pub fn build(self) -> crate::types::TimerDefinition {
         crate::types::TimerDefinition {
-            name: self.name
-            ,
-            seconds: self.seconds
-            ,
+            name: self.name,
+            seconds: self.seconds,
         }
     }
 }
-

@@ -3,7 +3,7 @@
 /// <p>Configuration information for pre-signed URLs. Valid when <code>protocols</code> contains HTTP.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AwsJobPresignedUrlConfig  {
+pub struct AwsJobPresignedUrlConfig {
     /// <p>How long (in seconds) pre-signed URLs are valid. Valid values are 60 - 3600, the default value is 1800 seconds. Pre-signed URLs are generated when a request for the job document is received.</p>
     #[doc(hidden)]
     pub expires_in_sec: std::option::Option<i64>,
@@ -35,14 +35,13 @@ impl AwsJobPresignedUrlConfigBuilder {
     }
     /// <p>How long (in seconds) pre-signed URLs are valid. Valid values are 60 - 3600, the default value is 1800 seconds. Pre-signed URLs are generated when a request for the job document is received.</p>
     pub fn set_expires_in_sec(mut self, input: std::option::Option<i64>) -> Self {
-        self.expires_in_sec = input; self
+        self.expires_in_sec = input;
+        self
     }
     /// Consumes the builder and constructs a [`AwsJobPresignedUrlConfig`](crate::types::AwsJobPresignedUrlConfig).
     pub fn build(self) -> crate::types::AwsJobPresignedUrlConfig {
         crate::types::AwsJobPresignedUrlConfig {
-            expires_in_sec: self.expires_in_sec
-            ,
+            expires_in_sec: self.expires_in_sec,
         }
     }
 }
-

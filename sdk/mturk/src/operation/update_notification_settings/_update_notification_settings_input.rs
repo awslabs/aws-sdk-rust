@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateNotificationSettingsInput  {
+pub struct UpdateNotificationSettingsInput {
     /// <p> The ID of the HIT type whose notification specification is being updated. </p>
     #[doc(hidden)]
     pub hit_type_id: std::option::Option<std::string::String>,
@@ -15,11 +15,11 @@ pub struct UpdateNotificationSettingsInput  {
 }
 impl UpdateNotificationSettingsInput {
     /// <p> The ID of the HIT type whose notification specification is being updated. </p>
-    pub fn hit_type_id(&self) -> std::option::Option<& str> {
+    pub fn hit_type_id(&self) -> std::option::Option<&str> {
         self.hit_type_id.as_deref()
     }
     /// <p> The notification specification for the HIT type. </p>
-    pub fn notification(&self) -> std::option::Option<& crate::types::NotificationSpecification> {
+    pub fn notification(&self) -> std::option::Option<&crate::types::NotificationSpecification> {
         self.notification.as_ref()
     }
     /// <p> Specifies whether notifications are sent for HITs of this HIT type, according to the notification specification. You must specify either the Notification parameter or the Active parameter for the call to UpdateNotificationSettings to succeed. </p>
@@ -29,7 +29,7 @@ impl UpdateNotificationSettingsInput {
 }
 impl UpdateNotificationSettingsInput {
     /// Creates a new builder-style object to manufacture [`UpdateNotificationSettingsInput`](crate::operation::update_notification_settings::UpdateNotificationSettingsInput).
-    pub fn builder() -> crate::operation::update_notification_settings::builders::UpdateNotificationSettingsInputBuilder {
+    pub fn builder() -> crate::operation::update_notification_settings::builders::UpdateNotificationSettingsInputBuilder{
         crate::operation::update_notification_settings::builders::UpdateNotificationSettingsInputBuilder::default()
     }
 }
@@ -50,7 +50,8 @@ impl UpdateNotificationSettingsInputBuilder {
     }
     /// <p> The ID of the HIT type whose notification specification is being updated. </p>
     pub fn set_hit_type_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.hit_type_id = input; self
+        self.hit_type_id = input;
+        self
     }
     /// <p> The notification specification for the HIT type. </p>
     pub fn notification(mut self, input: crate::types::NotificationSpecification) -> Self {
@@ -58,8 +59,12 @@ impl UpdateNotificationSettingsInputBuilder {
         self
     }
     /// <p> The notification specification for the HIT type. </p>
-    pub fn set_notification(mut self, input: std::option::Option<crate::types::NotificationSpecification>) -> Self {
-        self.notification = input; self
+    pub fn set_notification(
+        mut self,
+        input: std::option::Option<crate::types::NotificationSpecification>,
+    ) -> Self {
+        self.notification = input;
+        self
     }
     /// <p> Specifies whether notifications are sent for HITs of this HIT type, according to the notification specification. You must specify either the Notification parameter or the Active parameter for the call to UpdateNotificationSettings to succeed. </p>
     pub fn active(mut self, input: bool) -> Self {
@@ -68,20 +73,22 @@ impl UpdateNotificationSettingsInputBuilder {
     }
     /// <p> Specifies whether notifications are sent for HITs of this HIT type, according to the notification specification. You must specify either the Notification parameter or the Active parameter for the call to UpdateNotificationSettings to succeed. </p>
     pub fn set_active(mut self, input: std::option::Option<bool>) -> Self {
-        self.active = input; self
+        self.active = input;
+        self
     }
     /// Consumes the builder and constructs a [`UpdateNotificationSettingsInput`](crate::operation::update_notification_settings::UpdateNotificationSettingsInput).
-    pub fn build(self) -> Result<crate::operation::update_notification_settings::UpdateNotificationSettingsInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::update_notification_settings::UpdateNotificationSettingsInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::update_notification_settings::UpdateNotificationSettingsInput {
-                hit_type_id: self.hit_type_id
-                ,
-                notification: self.notification
-                ,
-                active: self.active
-                ,
-            }
+                hit_type_id: self.hit_type_id,
+                notification: self.notification,
+                active: self.active,
+            },
         )
     }
 }
-

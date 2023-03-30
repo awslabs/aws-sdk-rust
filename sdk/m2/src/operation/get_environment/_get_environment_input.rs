@@ -2,14 +2,14 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetEnvironmentInput  {
+pub struct GetEnvironmentInput {
     /// <p>The unique identifier of the runtime environment.</p>
     #[doc(hidden)]
     pub environment_id: std::option::Option<std::string::String>,
 }
 impl GetEnvironmentInput {
     /// <p>The unique identifier of the runtime environment.</p>
-    pub fn environment_id(&self) -> std::option::Option<& str> {
+    pub fn environment_id(&self) -> std::option::Option<&str> {
         self.environment_id.as_deref()
     }
 }
@@ -34,16 +34,18 @@ impl GetEnvironmentInputBuilder {
     }
     /// <p>The unique identifier of the runtime environment.</p>
     pub fn set_environment_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.environment_id = input; self
+        self.environment_id = input;
+        self
     }
     /// Consumes the builder and constructs a [`GetEnvironmentInput`](crate::operation::get_environment::GetEnvironmentInput).
-    pub fn build(self) -> Result<crate::operation::get_environment::GetEnvironmentInput, aws_smithy_http::operation::error::BuildError> {
-        Ok(
-            crate::operation::get_environment::GetEnvironmentInput {
-                environment_id: self.environment_id
-                ,
-            }
-        )
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::get_environment::GetEnvironmentInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        Ok(crate::operation::get_environment::GetEnvironmentInput {
+            environment_id: self.environment_id,
+        })
     }
 }
-

@@ -16,4 +16,3 @@ pub use crate::types::_plain_text_message_type::PlainTextMessageTypeBuilder;
 pub use crate::types::_call_instructions_message_type::CallInstructionsMessageTypeBuilder;
 
 pub use crate::types::_event_destination::EventDestinationBuilder;
-

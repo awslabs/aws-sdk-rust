@@ -2,17 +2,18 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PutScheduledActionOutput  {
+pub struct PutScheduledActionOutput {
     _request_id: Option<String>,
 }
 impl aws_http::request_id::RequestId for PutScheduledActionOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl PutScheduledActionOutput {
     /// Creates a new builder-style object to manufacture [`PutScheduledActionOutput`](crate::operation::put_scheduled_action::PutScheduledActionOutput).
-    pub fn builder() -> crate::operation::put_scheduled_action::builders::PutScheduledActionOutputBuilder {
+    pub fn builder(
+    ) -> crate::operation::put_scheduled_action::builders::PutScheduledActionOutputBuilder {
         crate::operation::put_scheduled_action::builders::PutScheduledActionOutputBuilder::default()
     }
 }
@@ -25,14 +26,14 @@ pub struct PutScheduledActionOutputBuilder {
 }
 impl PutScheduledActionOutputBuilder {
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`PutScheduledActionOutput`](crate::operation::put_scheduled_action::PutScheduledActionOutput).
     pub fn build(self) -> crate::operation::put_scheduled_action::PutScheduledActionOutput {
         crate::operation::put_scheduled_action::PutScheduledActionOutput {
@@ -40,4 +41,3 @@ impl PutScheduledActionOutputBuilder {
         }
     }
 }
-

@@ -3,18 +3,18 @@
 /// <p>Settings for an AWS CodeBuild build.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct BuildConfiguration  {
+pub struct BuildConfiguration {
     /// <p>The name of the artifact of the CodeBuild build. If provided, Elastic Beanstalk stores the build artifact in the S3 location <i>S3-bucket</i>/resources/<i>application-name</i>/codebuild/codebuild-<i>version-label</i>-<i>artifact-name</i>.zip. If not provided, Elastic Beanstalk stores the build artifact in the S3 location <i>S3-bucket</i>/resources/<i>application-name</i>/codebuild/codebuild-<i>version-label</i>.zip. </p>
     #[doc(hidden)]
     pub artifact_name: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role that enables AWS CodeBuild to interact with dependent AWS services on behalf of the AWS account.</p>
     #[doc(hidden)]
     pub code_build_service_role: std::option::Option<std::string::String>,
-    /// <p>Information about the compute resources the build project will use.</p> 
-    /// <ul> 
-    /// <li> <p> <code>BUILD_GENERAL1_SMALL: Use up to 3 GB memory and 2 vCPUs for builds</code> </p> </li> 
-    /// <li> <p> <code>BUILD_GENERAL1_MEDIUM: Use up to 7 GB memory and 4 vCPUs for builds</code> </p> </li> 
-    /// <li> <p> <code>BUILD_GENERAL1_LARGE: Use up to 15 GB memory and 8 vCPUs for builds</code> </p> </li> 
+    /// <p>Information about the compute resources the build project will use.</p>
+    /// <ul>
+    /// <li> <p> <code>BUILD_GENERAL1_SMALL: Use up to 3 GB memory and 2 vCPUs for builds</code> </p> </li>
+    /// <li> <p> <code>BUILD_GENERAL1_MEDIUM: Use up to 7 GB memory and 4 vCPUs for builds</code> </p> </li>
+    /// <li> <p> <code>BUILD_GENERAL1_LARGE: Use up to 15 GB memory and 8 vCPUs for builds</code> </p> </li>
     /// </ul>
     #[doc(hidden)]
     pub compute_type: std::option::Option<crate::types::ComputeType>,
@@ -27,24 +27,24 @@ pub struct BuildConfiguration  {
 }
 impl BuildConfiguration {
     /// <p>The name of the artifact of the CodeBuild build. If provided, Elastic Beanstalk stores the build artifact in the S3 location <i>S3-bucket</i>/resources/<i>application-name</i>/codebuild/codebuild-<i>version-label</i>-<i>artifact-name</i>.zip. If not provided, Elastic Beanstalk stores the build artifact in the S3 location <i>S3-bucket</i>/resources/<i>application-name</i>/codebuild/codebuild-<i>version-label</i>.zip. </p>
-    pub fn artifact_name(&self) -> std::option::Option<& str> {
+    pub fn artifact_name(&self) -> std::option::Option<&str> {
         self.artifact_name.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role that enables AWS CodeBuild to interact with dependent AWS services on behalf of the AWS account.</p>
-    pub fn code_build_service_role(&self) -> std::option::Option<& str> {
+    pub fn code_build_service_role(&self) -> std::option::Option<&str> {
         self.code_build_service_role.as_deref()
     }
-    /// <p>Information about the compute resources the build project will use.</p> 
-    /// <ul> 
-    /// <li> <p> <code>BUILD_GENERAL1_SMALL: Use up to 3 GB memory and 2 vCPUs for builds</code> </p> </li> 
-    /// <li> <p> <code>BUILD_GENERAL1_MEDIUM: Use up to 7 GB memory and 4 vCPUs for builds</code> </p> </li> 
-    /// <li> <p> <code>BUILD_GENERAL1_LARGE: Use up to 15 GB memory and 8 vCPUs for builds</code> </p> </li> 
+    /// <p>Information about the compute resources the build project will use.</p>
+    /// <ul>
+    /// <li> <p> <code>BUILD_GENERAL1_SMALL: Use up to 3 GB memory and 2 vCPUs for builds</code> </p> </li>
+    /// <li> <p> <code>BUILD_GENERAL1_MEDIUM: Use up to 7 GB memory and 4 vCPUs for builds</code> </p> </li>
+    /// <li> <p> <code>BUILD_GENERAL1_LARGE: Use up to 15 GB memory and 8 vCPUs for builds</code> </p> </li>
     /// </ul>
-    pub fn compute_type(&self) -> std::option::Option<& crate::types::ComputeType> {
+    pub fn compute_type(&self) -> std::option::Option<&crate::types::ComputeType> {
         self.compute_type.as_ref()
     }
     /// <p>The ID of the Docker image to use for this build project.</p>
-    pub fn image(&self) -> std::option::Option<& str> {
+    pub fn image(&self) -> std::option::Option<&str> {
         self.image.as_deref()
     }
     /// <p>How long in minutes, from 5 to 480 (8 hours), for AWS CodeBuild to wait until timing out any related build that does not get marked as completed. The default is 60 minutes.</p>
@@ -77,7 +77,8 @@ impl BuildConfigurationBuilder {
     }
     /// <p>The name of the artifact of the CodeBuild build. If provided, Elastic Beanstalk stores the build artifact in the S3 location <i>S3-bucket</i>/resources/<i>application-name</i>/codebuild/codebuild-<i>version-label</i>-<i>artifact-name</i>.zip. If not provided, Elastic Beanstalk stores the build artifact in the S3 location <i>S3-bucket</i>/resources/<i>application-name</i>/codebuild/codebuild-<i>version-label</i>.zip. </p>
     pub fn set_artifact_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.artifact_name = input; self
+        self.artifact_name = input;
+        self
     }
     /// <p>The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role that enables AWS CodeBuild to interact with dependent AWS services on behalf of the AWS account.</p>
     pub fn code_build_service_role(mut self, input: impl Into<std::string::String>) -> Self {
@@ -85,27 +86,35 @@ impl BuildConfigurationBuilder {
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role that enables AWS CodeBuild to interact with dependent AWS services on behalf of the AWS account.</p>
-    pub fn set_code_build_service_role(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.code_build_service_role = input; self
+    pub fn set_code_build_service_role(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.code_build_service_role = input;
+        self
     }
-    /// <p>Information about the compute resources the build project will use.</p> 
-    /// <ul> 
-    /// <li> <p> <code>BUILD_GENERAL1_SMALL: Use up to 3 GB memory and 2 vCPUs for builds</code> </p> </li> 
-    /// <li> <p> <code>BUILD_GENERAL1_MEDIUM: Use up to 7 GB memory and 4 vCPUs for builds</code> </p> </li> 
-    /// <li> <p> <code>BUILD_GENERAL1_LARGE: Use up to 15 GB memory and 8 vCPUs for builds</code> </p> </li> 
+    /// <p>Information about the compute resources the build project will use.</p>
+    /// <ul>
+    /// <li> <p> <code>BUILD_GENERAL1_SMALL: Use up to 3 GB memory and 2 vCPUs for builds</code> </p> </li>
+    /// <li> <p> <code>BUILD_GENERAL1_MEDIUM: Use up to 7 GB memory and 4 vCPUs for builds</code> </p> </li>
+    /// <li> <p> <code>BUILD_GENERAL1_LARGE: Use up to 15 GB memory and 8 vCPUs for builds</code> </p> </li>
     /// </ul>
     pub fn compute_type(mut self, input: crate::types::ComputeType) -> Self {
         self.compute_type = Some(input);
         self
     }
-    /// <p>Information about the compute resources the build project will use.</p> 
-    /// <ul> 
-    /// <li> <p> <code>BUILD_GENERAL1_SMALL: Use up to 3 GB memory and 2 vCPUs for builds</code> </p> </li> 
-    /// <li> <p> <code>BUILD_GENERAL1_MEDIUM: Use up to 7 GB memory and 4 vCPUs for builds</code> </p> </li> 
-    /// <li> <p> <code>BUILD_GENERAL1_LARGE: Use up to 15 GB memory and 8 vCPUs for builds</code> </p> </li> 
+    /// <p>Information about the compute resources the build project will use.</p>
+    /// <ul>
+    /// <li> <p> <code>BUILD_GENERAL1_SMALL: Use up to 3 GB memory and 2 vCPUs for builds</code> </p> </li>
+    /// <li> <p> <code>BUILD_GENERAL1_MEDIUM: Use up to 7 GB memory and 4 vCPUs for builds</code> </p> </li>
+    /// <li> <p> <code>BUILD_GENERAL1_LARGE: Use up to 15 GB memory and 8 vCPUs for builds</code> </p> </li>
     /// </ul>
-    pub fn set_compute_type(mut self, input: std::option::Option<crate::types::ComputeType>) -> Self {
-        self.compute_type = input; self
+    pub fn set_compute_type(
+        mut self,
+        input: std::option::Option<crate::types::ComputeType>,
+    ) -> Self {
+        self.compute_type = input;
+        self
     }
     /// <p>The ID of the Docker image to use for this build project.</p>
     pub fn image(mut self, input: impl Into<std::string::String>) -> Self {
@@ -114,7 +123,8 @@ impl BuildConfigurationBuilder {
     }
     /// <p>The ID of the Docker image to use for this build project.</p>
     pub fn set_image(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.image = input; self
+        self.image = input;
+        self
     }
     /// <p>How long in minutes, from 5 to 480 (8 hours), for AWS CodeBuild to wait until timing out any related build that does not get marked as completed. The default is 60 minutes.</p>
     pub fn timeout_in_minutes(mut self, input: i32) -> Self {
@@ -123,22 +133,17 @@ impl BuildConfigurationBuilder {
     }
     /// <p>How long in minutes, from 5 to 480 (8 hours), for AWS CodeBuild to wait until timing out any related build that does not get marked as completed. The default is 60 minutes.</p>
     pub fn set_timeout_in_minutes(mut self, input: std::option::Option<i32>) -> Self {
-        self.timeout_in_minutes = input; self
+        self.timeout_in_minutes = input;
+        self
     }
     /// Consumes the builder and constructs a [`BuildConfiguration`](crate::types::BuildConfiguration).
     pub fn build(self) -> crate::types::BuildConfiguration {
         crate::types::BuildConfiguration {
-            artifact_name: self.artifact_name
-            ,
-            code_build_service_role: self.code_build_service_role
-            ,
-            compute_type: self.compute_type
-            ,
-            image: self.image
-            ,
-            timeout_in_minutes: self.timeout_in_minutes
-            ,
+            artifact_name: self.artifact_name,
+            code_build_service_role: self.code_build_service_role,
+            compute_type: self.compute_type,
+            image: self.image,
+            timeout_in_minutes: self.timeout_in_minutes,
         }
     }
 }
-

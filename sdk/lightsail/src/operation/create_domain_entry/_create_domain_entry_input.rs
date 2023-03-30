@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateDomainEntryInput  {
+pub struct CreateDomainEntryInput {
     /// <p>The domain name (e.g., <code>example.com</code>) for which you want to create the domain entry.</p>
     #[doc(hidden)]
     pub domain_name: std::option::Option<std::string::String>,
@@ -12,17 +12,18 @@ pub struct CreateDomainEntryInput  {
 }
 impl CreateDomainEntryInput {
     /// <p>The domain name (e.g., <code>example.com</code>) for which you want to create the domain entry.</p>
-    pub fn domain_name(&self) -> std::option::Option<& str> {
+    pub fn domain_name(&self) -> std::option::Option<&str> {
         self.domain_name.as_deref()
     }
     /// <p>An array of key-value pairs containing information about the domain entry request.</p>
-    pub fn domain_entry(&self) -> std::option::Option<& crate::types::DomainEntry> {
+    pub fn domain_entry(&self) -> std::option::Option<&crate::types::DomainEntry> {
         self.domain_entry.as_ref()
     }
 }
 impl CreateDomainEntryInput {
     /// Creates a new builder-style object to manufacture [`CreateDomainEntryInput`](crate::operation::create_domain_entry::CreateDomainEntryInput).
-    pub fn builder() -> crate::operation::create_domain_entry::builders::CreateDomainEntryInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::create_domain_entry::builders::CreateDomainEntryInputBuilder {
         crate::operation::create_domain_entry::builders::CreateDomainEntryInputBuilder::default()
     }
 }
@@ -42,7 +43,8 @@ impl CreateDomainEntryInputBuilder {
     }
     /// <p>The domain name (e.g., <code>example.com</code>) for which you want to create the domain entry.</p>
     pub fn set_domain_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.domain_name = input; self
+        self.domain_name = input;
+        self
     }
     /// <p>An array of key-value pairs containing information about the domain entry request.</p>
     pub fn domain_entry(mut self, input: crate::types::DomainEntry) -> Self {
@@ -50,19 +52,25 @@ impl CreateDomainEntryInputBuilder {
         self
     }
     /// <p>An array of key-value pairs containing information about the domain entry request.</p>
-    pub fn set_domain_entry(mut self, input: std::option::Option<crate::types::DomainEntry>) -> Self {
-        self.domain_entry = input; self
+    pub fn set_domain_entry(
+        mut self,
+        input: std::option::Option<crate::types::DomainEntry>,
+    ) -> Self {
+        self.domain_entry = input;
+        self
     }
     /// Consumes the builder and constructs a [`CreateDomainEntryInput`](crate::operation::create_domain_entry::CreateDomainEntryInput).
-    pub fn build(self) -> Result<crate::operation::create_domain_entry::CreateDomainEntryInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::create_domain_entry::CreateDomainEntryInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::create_domain_entry::CreateDomainEntryInput {
-                domain_name: self.domain_name
-                ,
-                domain_entry: self.domain_entry
-                ,
-            }
+                domain_name: self.domain_name,
+                domain_entry: self.domain_entry,
+            },
         )
     }
 }
-

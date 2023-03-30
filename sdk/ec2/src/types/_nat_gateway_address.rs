@@ -3,7 +3,7 @@
 /// <p>Describes the IP addresses and network interface associated with a NAT gateway.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct NatGatewayAddress  {
+pub struct NatGatewayAddress {
     /// <p>[Public NAT gateway only] The allocation ID of the Elastic IP address that's associated with the NAT gateway.</p>
     #[doc(hidden)]
     pub allocation_id: std::option::Option<std::string::String>,
@@ -19,19 +19,19 @@ pub struct NatGatewayAddress  {
 }
 impl NatGatewayAddress {
     /// <p>[Public NAT gateway only] The allocation ID of the Elastic IP address that's associated with the NAT gateway.</p>
-    pub fn allocation_id(&self) -> std::option::Option<& str> {
+    pub fn allocation_id(&self) -> std::option::Option<&str> {
         self.allocation_id.as_deref()
     }
     /// <p>The ID of the network interface associated with the NAT gateway.</p>
-    pub fn network_interface_id(&self) -> std::option::Option<& str> {
+    pub fn network_interface_id(&self) -> std::option::Option<&str> {
         self.network_interface_id.as_deref()
     }
     /// <p>The private IP address associated with the NAT gateway.</p>
-    pub fn private_ip(&self) -> std::option::Option<& str> {
+    pub fn private_ip(&self) -> std::option::Option<&str> {
         self.private_ip.as_deref()
     }
     /// <p>[Public NAT gateway only] The Elastic IP address associated with the NAT gateway.</p>
-    pub fn public_ip(&self) -> std::option::Option<& str> {
+    pub fn public_ip(&self) -> std::option::Option<&str> {
         self.public_ip.as_deref()
     }
 }
@@ -59,7 +59,8 @@ impl NatGatewayAddressBuilder {
     }
     /// <p>[Public NAT gateway only] The allocation ID of the Elastic IP address that's associated with the NAT gateway.</p>
     pub fn set_allocation_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.allocation_id = input; self
+        self.allocation_id = input;
+        self
     }
     /// <p>The ID of the network interface associated with the NAT gateway.</p>
     pub fn network_interface_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -67,8 +68,12 @@ impl NatGatewayAddressBuilder {
         self
     }
     /// <p>The ID of the network interface associated with the NAT gateway.</p>
-    pub fn set_network_interface_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.network_interface_id = input; self
+    pub fn set_network_interface_id(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.network_interface_id = input;
+        self
     }
     /// <p>The private IP address associated with the NAT gateway.</p>
     pub fn private_ip(mut self, input: impl Into<std::string::String>) -> Self {
@@ -77,7 +82,8 @@ impl NatGatewayAddressBuilder {
     }
     /// <p>The private IP address associated with the NAT gateway.</p>
     pub fn set_private_ip(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.private_ip = input; self
+        self.private_ip = input;
+        self
     }
     /// <p>[Public NAT gateway only] The Elastic IP address associated with the NAT gateway.</p>
     pub fn public_ip(mut self, input: impl Into<std::string::String>) -> Self {
@@ -86,20 +92,16 @@ impl NatGatewayAddressBuilder {
     }
     /// <p>[Public NAT gateway only] The Elastic IP address associated with the NAT gateway.</p>
     pub fn set_public_ip(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.public_ip = input; self
+        self.public_ip = input;
+        self
     }
     /// Consumes the builder and constructs a [`NatGatewayAddress`](crate::types::NatGatewayAddress).
     pub fn build(self) -> crate::types::NatGatewayAddress {
         crate::types::NatGatewayAddress {
-            allocation_id: self.allocation_id
-            ,
-            network_interface_id: self.network_interface_id
-            ,
-            private_ip: self.private_ip
-            ,
-            public_ip: self.public_ip
-            ,
+            allocation_id: self.allocation_id,
+            network_interface_id: self.network_interface_id,
+            private_ip: self.private_ip,
+            public_ip: self.public_ip,
         }
     }
 }
-

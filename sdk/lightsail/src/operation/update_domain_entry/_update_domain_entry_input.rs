@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateDomainEntryInput  {
+pub struct UpdateDomainEntryInput {
     /// <p>The name of the domain recordset to update.</p>
     #[doc(hidden)]
     pub domain_name: std::option::Option<std::string::String>,
@@ -12,17 +12,18 @@ pub struct UpdateDomainEntryInput  {
 }
 impl UpdateDomainEntryInput {
     /// <p>The name of the domain recordset to update.</p>
-    pub fn domain_name(&self) -> std::option::Option<& str> {
+    pub fn domain_name(&self) -> std::option::Option<&str> {
         self.domain_name.as_deref()
     }
     /// <p>An array of key-value pairs containing information about the domain entry.</p>
-    pub fn domain_entry(&self) -> std::option::Option<& crate::types::DomainEntry> {
+    pub fn domain_entry(&self) -> std::option::Option<&crate::types::DomainEntry> {
         self.domain_entry.as_ref()
     }
 }
 impl UpdateDomainEntryInput {
     /// Creates a new builder-style object to manufacture [`UpdateDomainEntryInput`](crate::operation::update_domain_entry::UpdateDomainEntryInput).
-    pub fn builder() -> crate::operation::update_domain_entry::builders::UpdateDomainEntryInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::update_domain_entry::builders::UpdateDomainEntryInputBuilder {
         crate::operation::update_domain_entry::builders::UpdateDomainEntryInputBuilder::default()
     }
 }
@@ -42,7 +43,8 @@ impl UpdateDomainEntryInputBuilder {
     }
     /// <p>The name of the domain recordset to update.</p>
     pub fn set_domain_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.domain_name = input; self
+        self.domain_name = input;
+        self
     }
     /// <p>An array of key-value pairs containing information about the domain entry.</p>
     pub fn domain_entry(mut self, input: crate::types::DomainEntry) -> Self {
@@ -50,19 +52,25 @@ impl UpdateDomainEntryInputBuilder {
         self
     }
     /// <p>An array of key-value pairs containing information about the domain entry.</p>
-    pub fn set_domain_entry(mut self, input: std::option::Option<crate::types::DomainEntry>) -> Self {
-        self.domain_entry = input; self
+    pub fn set_domain_entry(
+        mut self,
+        input: std::option::Option<crate::types::DomainEntry>,
+    ) -> Self {
+        self.domain_entry = input;
+        self
     }
     /// Consumes the builder and constructs a [`UpdateDomainEntryInput`](crate::operation::update_domain_entry::UpdateDomainEntryInput).
-    pub fn build(self) -> Result<crate::operation::update_domain_entry::UpdateDomainEntryInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::update_domain_entry::UpdateDomainEntryInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::update_domain_entry::UpdateDomainEntryInput {
-                domain_name: self.domain_name
-                ,
-                domain_entry: self.domain_entry
-                ,
-            }
+                domain_name: self.domain_name,
+                domain_entry: self.domain_entry,
+            },
         )
     }
 }
-

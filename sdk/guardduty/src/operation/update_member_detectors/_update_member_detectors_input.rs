@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateMemberDetectorsInput  {
+pub struct UpdateMemberDetectorsInput {
     /// <p>The detector ID of the administrator account.</p>
     #[doc(hidden)]
     pub detector_id: std::option::Option<std::string::String>,
@@ -15,21 +15,23 @@ pub struct UpdateMemberDetectorsInput  {
 }
 impl UpdateMemberDetectorsInput {
     /// <p>The detector ID of the administrator account.</p>
-    pub fn detector_id(&self) -> std::option::Option<& str> {
+    pub fn detector_id(&self) -> std::option::Option<&str> {
         self.detector_id.as_deref()
     }
     /// <p>A list of member account IDs to be updated.</p>
-    pub fn account_ids(&self) -> std::option::Option<& [std::string::String]> {
+    pub fn account_ids(&self) -> std::option::Option<&[std::string::String]> {
         self.account_ids.as_deref()
     }
     /// <p>Describes which data sources will be updated.</p>
-    pub fn data_sources(&self) -> std::option::Option<& crate::types::DataSourceConfigurations> {
+    pub fn data_sources(&self) -> std::option::Option<&crate::types::DataSourceConfigurations> {
         self.data_sources.as_ref()
     }
 }
 impl UpdateMemberDetectorsInput {
     /// Creates a new builder-style object to manufacture [`UpdateMemberDetectorsInput`](crate::operation::update_member_detectors::UpdateMemberDetectorsInput).
-    pub fn builder() -> crate::operation::update_member_detectors::builders::UpdateMemberDetectorsInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::update_member_detectors::builders::UpdateMemberDetectorsInputBuilder
+    {
         crate::operation::update_member_detectors::builders::UpdateMemberDetectorsInputBuilder::default()
     }
 }
@@ -50,7 +52,8 @@ impl UpdateMemberDetectorsInputBuilder {
     }
     /// <p>The detector ID of the administrator account.</p>
     pub fn set_detector_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.detector_id = input; self
+        self.detector_id = input;
+        self
     }
     /// Appends an item to `account_ids`.
     ///
@@ -59,13 +62,17 @@ impl UpdateMemberDetectorsInputBuilder {
     /// <p>A list of member account IDs to be updated.</p>
     pub fn account_ids(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.account_ids.unwrap_or_default();
-                        v.push(input.into());
-                        self.account_ids = Some(v);
-                        self
+        v.push(input.into());
+        self.account_ids = Some(v);
+        self
     }
     /// <p>A list of member account IDs to be updated.</p>
-    pub fn set_account_ids(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-        self.account_ids = input; self
+    pub fn set_account_ids(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
+        self.account_ids = input;
+        self
     }
     /// <p>Describes which data sources will be updated.</p>
     pub fn data_sources(mut self, input: crate::types::DataSourceConfigurations) -> Self {
@@ -73,21 +80,26 @@ impl UpdateMemberDetectorsInputBuilder {
         self
     }
     /// <p>Describes which data sources will be updated.</p>
-    pub fn set_data_sources(mut self, input: std::option::Option<crate::types::DataSourceConfigurations>) -> Self {
-        self.data_sources = input; self
+    pub fn set_data_sources(
+        mut self,
+        input: std::option::Option<crate::types::DataSourceConfigurations>,
+    ) -> Self {
+        self.data_sources = input;
+        self
     }
     /// Consumes the builder and constructs a [`UpdateMemberDetectorsInput`](crate::operation::update_member_detectors::UpdateMemberDetectorsInput).
-    pub fn build(self) -> Result<crate::operation::update_member_detectors::UpdateMemberDetectorsInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::update_member_detectors::UpdateMemberDetectorsInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::update_member_detectors::UpdateMemberDetectorsInput {
-                detector_id: self.detector_id
-                ,
-                account_ids: self.account_ids
-                ,
-                data_sources: self.data_sources
-                ,
-            }
+                detector_id: self.detector_id,
+                account_ids: self.account_ids,
+                data_sources: self.data_sources,
+            },
         )
     }
 }
-

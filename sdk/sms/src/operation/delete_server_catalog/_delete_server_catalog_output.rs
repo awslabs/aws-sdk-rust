@@ -2,18 +2,20 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteServerCatalogOutput  {
+pub struct DeleteServerCatalogOutput {
     _request_id: Option<String>,
 }
 impl aws_http::request_id::RequestId for DeleteServerCatalogOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl DeleteServerCatalogOutput {
     /// Creates a new builder-style object to manufacture [`DeleteServerCatalogOutput`](crate::operation::delete_server_catalog::DeleteServerCatalogOutput).
-    pub fn builder() -> crate::operation::delete_server_catalog::builders::DeleteServerCatalogOutputBuilder {
-        crate::operation::delete_server_catalog::builders::DeleteServerCatalogOutputBuilder::default()
+    pub fn builder(
+    ) -> crate::operation::delete_server_catalog::builders::DeleteServerCatalogOutputBuilder {
+        crate::operation::delete_server_catalog::builders::DeleteServerCatalogOutputBuilder::default(
+        )
     }
 }
 
@@ -25,14 +27,14 @@ pub struct DeleteServerCatalogOutputBuilder {
 }
 impl DeleteServerCatalogOutputBuilder {
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`DeleteServerCatalogOutput`](crate::operation::delete_server_catalog::DeleteServerCatalogOutput).
     pub fn build(self) -> crate::operation::delete_server_catalog::DeleteServerCatalogOutput {
         crate::operation::delete_server_catalog::DeleteServerCatalogOutput {
@@ -40,4 +42,3 @@ impl DeleteServerCatalogOutputBuilder {
         }
     }
 }
-

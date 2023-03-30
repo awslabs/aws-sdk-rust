@@ -4,63 +4,91 @@ pub use crate::operation::describe_scheduled_actions::_describe_scheduled_action
 pub use crate::operation::describe_scheduled_actions::_describe_scheduled_actions_input::DescribeScheduledActionsInputBuilder;
 
 /// Fluent builder constructing a request to `DescribeScheduledActions`.
-/// 
-/// <p>Gets information about the scheduled actions that haven't run or that have not reached their end time.</p> 
+///
+/// <p>Gets information about the scheduled actions that haven't run or that have not reached their end time.</p>
 /// <p>To describe the scaling activities for scheduled actions that have already run, call the <code>DescribeScalingActivities</code> API.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeScheduledActionsFluentBuilder {
                 handle: std::sync::Arc<crate::client::Handle>,
                 inner: crate::operation::describe_scheduled_actions::builders::DescribeScheduledActionsInputBuilder
             }
-impl DescribeScheduledActionsFluentBuilder  {
+impl DescribeScheduledActionsFluentBuilder {
     /// Creates a new `DescribeScheduledActions`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
-                    /// sent. The operation's inner [http::Request] can be modified as well.
-                    pub async fn customize(self) -> std::result::Result<
-                        crate::client::customize::CustomizableOperation<crate::operation::describe_scheduled_actions::DescribeScheduledActions, aws_http::retry::AwsResponseRetryClassifier,>,
-                        aws_smithy_http::result::SdkError<crate::operation::describe_scheduled_actions::DescribeScheduledActionsError>
-                    >  {
-                        let handle = self.handle.clone();
-                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-                    }
-    
-                    /// Sends the request and returns the response.
-                    ///
-                    /// If an error occurs, an `SdkError` will be returned with additional details that
-                    /// can be matched against.
-                    ///
-                    /// By default, any retryable failures will be retried twice. Retry behavior
-                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                    /// set when configuring the client.
-                    pub async fn send(self) -> std::result::Result<crate::operation::describe_scheduled_actions::DescribeScheduledActionsOutput, aws_smithy_http::result::SdkError<crate::operation::describe_scheduled_actions::DescribeScheduledActionsError>>
-                     {
-                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&self.handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        self.handle.client.call(op).await
-                    }
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle,
+            inner: Default::default(),
+        }
+    }
+
+    /// Consume this builder, creating a customizable operation that can be modified before being
+    /// sent. The operation's inner [http::Request] can be modified as well.
+    pub async fn customize(
+        self,
+    ) -> std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::describe_scheduled_actions::DescribeScheduledActions,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::result::SdkError<
+            crate::operation::describe_scheduled_actions::DescribeScheduledActionsError,
+        >,
+    > {
+        let handle = self.handle.clone();
+        let operation = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+    }
+
+    /// Sends the request and returns the response.
+    ///
+    /// If an error occurs, an `SdkError` will be returned with additional details that
+    /// can be matched against.
+    ///
+    /// By default, any retryable failures will be retried twice. Retry behavior
+    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+    /// set when configuring the client.
+    pub async fn send(
+        self,
+    ) -> std::result::Result<
+        crate::operation::describe_scheduled_actions::DescribeScheduledActionsOutput,
+        aws_smithy_http::result::SdkError<
+            crate::operation::describe_scheduled_actions::DescribeScheduledActionsError,
+        >,
+    > {
+        let op = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&self.handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        self.handle.client.call(op).await
+    }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::describe_scheduled_actions::paginator::DescribeScheduledActionsPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::describe_scheduled_actions::paginator::DescribeScheduledActionsPaginator {
-                            crate::operation::describe_scheduled_actions::paginator::DescribeScheduledActionsPaginator::new(self.handle, self.inner)
-                        }
+    ///
+    /// Paginators are used by calling [`send().await`](crate::operation::describe_scheduled_actions::paginator::DescribeScheduledActionsPaginator::send) which returns a `Stream`.
+    pub fn into_paginator(
+        self,
+    ) -> crate::operation::describe_scheduled_actions::paginator::DescribeScheduledActionsPaginator
+    {
+        crate::operation::describe_scheduled_actions::paginator::DescribeScheduledActionsPaginator::new(self.handle, self.inner)
+    }
     /// <p>The name of the Auto Scaling group.</p>
     pub fn auto_scaling_group_name(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.auto_scaling_group_name(input.into());
         self
     }
     /// <p>The name of the Auto Scaling group.</p>
-    pub fn set_auto_scaling_group_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_auto_scaling_group_name(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_auto_scaling_group_name(input);
         self
     }
@@ -68,15 +96,18 @@ impl DescribeScheduledActionsFluentBuilder  {
     ///
     /// To override the contents of this collection use [`set_scheduled_action_names`](Self::set_scheduled_action_names).
     ///
-    /// <p>The names of one or more scheduled actions. If you omit this property, all scheduled actions are described. If you specify an unknown scheduled action, it is ignored with no error.</p> 
+    /// <p>The names of one or more scheduled actions. If you omit this property, all scheduled actions are described. If you specify an unknown scheduled action, it is ignored with no error.</p>
     /// <p>Array Members: Maximum number of 50 actions.</p>
     pub fn scheduled_action_names(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.scheduled_action_names(input.into());
         self
     }
-    /// <p>The names of one or more scheduled actions. If you omit this property, all scheduled actions are described. If you specify an unknown scheduled action, it is ignored with no error.</p> 
+    /// <p>The names of one or more scheduled actions. If you omit this property, all scheduled actions are described. If you specify an unknown scheduled action, it is ignored with no error.</p>
     /// <p>Array Members: Maximum number of 50 actions.</p>
-    pub fn set_scheduled_action_names(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+    pub fn set_scheduled_action_names(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
         self.inner = self.inner.set_scheduled_action_names(input);
         self
     }
@@ -86,7 +117,10 @@ impl DescribeScheduledActionsFluentBuilder  {
         self
     }
     /// <p>The earliest scheduled start time to return. If scheduled action names are provided, this property is ignored.</p>
-    pub fn set_start_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+    pub fn set_start_time(
+        mut self,
+        input: std::option::Option<aws_smithy_types::DateTime>,
+    ) -> Self {
         self.inner = self.inner.set_start_time(input);
         self
     }
@@ -121,4 +155,3 @@ impl DescribeScheduledActionsFluentBuilder  {
         self
     }
 }
-

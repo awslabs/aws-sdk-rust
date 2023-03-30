@@ -3,7 +3,7 @@
 /// <p>Information about the Semtech GNSS solver configuration.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SemtechGnssConfiguration  {
+pub struct SemtechGnssConfiguration {
     /// <p>The status indicating whether the solver is enabled.</p>
     #[doc(hidden)]
     pub status: std::option::Option<crate::types::PositionConfigurationStatus>,
@@ -13,11 +13,11 @@ pub struct SemtechGnssConfiguration  {
 }
 impl SemtechGnssConfiguration {
     /// <p>The status indicating whether the solver is enabled.</p>
-    pub fn status(&self) -> std::option::Option<& crate::types::PositionConfigurationStatus> {
+    pub fn status(&self) -> std::option::Option<&crate::types::PositionConfigurationStatus> {
         self.status.as_ref()
     }
     /// <p>Whether forward error correction is enabled.</p>
-    pub fn fec(&self) -> std::option::Option<& crate::types::PositionConfigurationFec> {
+    pub fn fec(&self) -> std::option::Option<&crate::types::PositionConfigurationFec> {
         self.fec.as_ref()
     }
 }
@@ -42,8 +42,12 @@ impl SemtechGnssConfigurationBuilder {
         self
     }
     /// <p>The status indicating whether the solver is enabled.</p>
-    pub fn set_status(mut self, input: std::option::Option<crate::types::PositionConfigurationStatus>) -> Self {
-        self.status = input; self
+    pub fn set_status(
+        mut self,
+        input: std::option::Option<crate::types::PositionConfigurationStatus>,
+    ) -> Self {
+        self.status = input;
+        self
     }
     /// <p>Whether forward error correction is enabled.</p>
     pub fn fec(mut self, input: crate::types::PositionConfigurationFec) -> Self {
@@ -51,17 +55,18 @@ impl SemtechGnssConfigurationBuilder {
         self
     }
     /// <p>Whether forward error correction is enabled.</p>
-    pub fn set_fec(mut self, input: std::option::Option<crate::types::PositionConfigurationFec>) -> Self {
-        self.fec = input; self
+    pub fn set_fec(
+        mut self,
+        input: std::option::Option<crate::types::PositionConfigurationFec>,
+    ) -> Self {
+        self.fec = input;
+        self
     }
     /// Consumes the builder and constructs a [`SemtechGnssConfiguration`](crate::types::SemtechGnssConfiguration).
     pub fn build(self) -> crate::types::SemtechGnssConfiguration {
         crate::types::SemtechGnssConfiguration {
-            status: self.status
-            ,
-            fec: self.fec
-            ,
+            status: self.status,
+            fec: self.fec,
         }
     }
 }
-

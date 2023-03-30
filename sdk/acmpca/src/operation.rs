@@ -69,4 +69,3 @@ pub mod untag_certificate_authority;
 
 /// Types for the `UpdateCertificateAuthority` operation.
 pub mod update_certificate_authority;
-

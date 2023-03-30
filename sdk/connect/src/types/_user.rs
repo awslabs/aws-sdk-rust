@@ -3,7 +3,7 @@
 /// <p>Contains information about a user account for an Amazon Connect instance.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct User  {
+pub struct User {
     /// <p>The identifier of the user account.</p>
     #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
@@ -33,47 +33,51 @@ pub struct User  {
     pub hierarchy_group_id: std::option::Option<std::string::String>,
     /// <p>The tags.</p>
     #[doc(hidden)]
-    pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub tags:
+        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl User {
     /// <p>The identifier of the user account.</p>
-    pub fn id(&self) -> std::option::Option<& str> {
+    pub fn id(&self) -> std::option::Option<&str> {
         self.id.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the user account.</p>
-    pub fn arn(&self) -> std::option::Option<& str> {
+    pub fn arn(&self) -> std::option::Option<&str> {
         self.arn.as_deref()
     }
     /// <p>The user name assigned to the user account.</p>
-    pub fn username(&self) -> std::option::Option<& str> {
+    pub fn username(&self) -> std::option::Option<&str> {
         self.username.as_deref()
     }
     /// <p>Information about the user identity.</p>
-    pub fn identity_info(&self) -> std::option::Option<& crate::types::UserIdentityInfo> {
+    pub fn identity_info(&self) -> std::option::Option<&crate::types::UserIdentityInfo> {
         self.identity_info.as_ref()
     }
     /// <p>Information about the phone configuration for the user.</p>
-    pub fn phone_config(&self) -> std::option::Option<& crate::types::UserPhoneConfig> {
+    pub fn phone_config(&self) -> std::option::Option<&crate::types::UserPhoneConfig> {
         self.phone_config.as_ref()
     }
     /// <p>The identifier of the user account in the directory used for identity management.</p>
-    pub fn directory_user_id(&self) -> std::option::Option<& str> {
+    pub fn directory_user_id(&self) -> std::option::Option<&str> {
         self.directory_user_id.as_deref()
     }
     /// <p>The identifiers of the security profiles for the user.</p>
-    pub fn security_profile_ids(&self) -> std::option::Option<& [std::string::String]> {
+    pub fn security_profile_ids(&self) -> std::option::Option<&[std::string::String]> {
         self.security_profile_ids.as_deref()
     }
     /// <p>The identifier of the routing profile for the user.</p>
-    pub fn routing_profile_id(&self) -> std::option::Option<& str> {
+    pub fn routing_profile_id(&self) -> std::option::Option<&str> {
         self.routing_profile_id.as_deref()
     }
     /// <p>The identifier of the hierarchy group for the user.</p>
-    pub fn hierarchy_group_id(&self) -> std::option::Option<& str> {
+    pub fn hierarchy_group_id(&self) -> std::option::Option<&str> {
         self.hierarchy_group_id.as_deref()
     }
     /// <p>The tags.</p>
-    pub fn tags(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
         self.tags.as_ref()
     }
 }
@@ -97,7 +101,8 @@ pub struct UserBuilder {
     pub(crate) security_profile_ids: std::option::Option<std::vec::Vec<std::string::String>>,
     pub(crate) routing_profile_id: std::option::Option<std::string::String>,
     pub(crate) hierarchy_group_id: std::option::Option<std::string::String>,
-    pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub(crate) tags:
+        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl UserBuilder {
     /// <p>The identifier of the user account.</p>
@@ -107,7 +112,8 @@ impl UserBuilder {
     }
     /// <p>The identifier of the user account.</p>
     pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.id = input; self
+        self.id = input;
+        self
     }
     /// <p>The Amazon Resource Name (ARN) of the user account.</p>
     pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -116,7 +122,8 @@ impl UserBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the user account.</p>
     pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.arn = input; self
+        self.arn = input;
+        self
     }
     /// <p>The user name assigned to the user account.</p>
     pub fn username(mut self, input: impl Into<std::string::String>) -> Self {
@@ -125,7 +132,8 @@ impl UserBuilder {
     }
     /// <p>The user name assigned to the user account.</p>
     pub fn set_username(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.username = input; self
+        self.username = input;
+        self
     }
     /// <p>Information about the user identity.</p>
     pub fn identity_info(mut self, input: crate::types::UserIdentityInfo) -> Self {
@@ -133,8 +141,12 @@ impl UserBuilder {
         self
     }
     /// <p>Information about the user identity.</p>
-    pub fn set_identity_info(mut self, input: std::option::Option<crate::types::UserIdentityInfo>) -> Self {
-        self.identity_info = input; self
+    pub fn set_identity_info(
+        mut self,
+        input: std::option::Option<crate::types::UserIdentityInfo>,
+    ) -> Self {
+        self.identity_info = input;
+        self
     }
     /// <p>Information about the phone configuration for the user.</p>
     pub fn phone_config(mut self, input: crate::types::UserPhoneConfig) -> Self {
@@ -142,8 +154,12 @@ impl UserBuilder {
         self
     }
     /// <p>Information about the phone configuration for the user.</p>
-    pub fn set_phone_config(mut self, input: std::option::Option<crate::types::UserPhoneConfig>) -> Self {
-        self.phone_config = input; self
+    pub fn set_phone_config(
+        mut self,
+        input: std::option::Option<crate::types::UserPhoneConfig>,
+    ) -> Self {
+        self.phone_config = input;
+        self
     }
     /// <p>The identifier of the user account in the directory used for identity management.</p>
     pub fn directory_user_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -151,8 +167,12 @@ impl UserBuilder {
         self
     }
     /// <p>The identifier of the user account in the directory used for identity management.</p>
-    pub fn set_directory_user_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.directory_user_id = input; self
+    pub fn set_directory_user_id(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.directory_user_id = input;
+        self
     }
     /// Appends an item to `security_profile_ids`.
     ///
@@ -161,13 +181,17 @@ impl UserBuilder {
     /// <p>The identifiers of the security profiles for the user.</p>
     pub fn security_profile_ids(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.security_profile_ids.unwrap_or_default();
-                        v.push(input.into());
-                        self.security_profile_ids = Some(v);
-                        self
+        v.push(input.into());
+        self.security_profile_ids = Some(v);
+        self
     }
     /// <p>The identifiers of the security profiles for the user.</p>
-    pub fn set_security_profile_ids(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-        self.security_profile_ids = input; self
+    pub fn set_security_profile_ids(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
+        self.security_profile_ids = input;
+        self
     }
     /// <p>The identifier of the routing profile for the user.</p>
     pub fn routing_profile_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -175,8 +199,12 @@ impl UserBuilder {
         self
     }
     /// <p>The identifier of the routing profile for the user.</p>
-    pub fn set_routing_profile_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.routing_profile_id = input; self
+    pub fn set_routing_profile_id(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.routing_profile_id = input;
+        self
     }
     /// <p>The identifier of the hierarchy group for the user.</p>
     pub fn hierarchy_group_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -184,48 +212,51 @@ impl UserBuilder {
         self
     }
     /// <p>The identifier of the hierarchy group for the user.</p>
-    pub fn set_hierarchy_group_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.hierarchy_group_id = input; self
+    pub fn set_hierarchy_group_id(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.hierarchy_group_id = input;
+        self
     }
     /// Adds a key-value pair to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// <p>The tags.</p>
-    pub fn tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
+    pub fn tags(
+        mut self,
+        k: impl Into<std::string::String>,
+        v: impl Into<std::string::String>,
+    ) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
-                        hash_map.insert(k.into(), v.into());
-                        self.tags = Some(hash_map);
-                        self
+        hash_map.insert(k.into(), v.into());
+        self.tags = Some(hash_map);
+        self
     }
     /// <p>The tags.</p>
-    pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
-        self.tags = input; self
+    pub fn set_tags(
+        mut self,
+        input: std::option::Option<
+            std::collections::HashMap<std::string::String, std::string::String>,
+        >,
+    ) -> Self {
+        self.tags = input;
+        self
     }
     /// Consumes the builder and constructs a [`User`](crate::types::User).
     pub fn build(self) -> crate::types::User {
         crate::types::User {
-            id: self.id
-            ,
-            arn: self.arn
-            ,
-            username: self.username
-            ,
-            identity_info: self.identity_info
-            ,
-            phone_config: self.phone_config
-            ,
-            directory_user_id: self.directory_user_id
-            ,
-            security_profile_ids: self.security_profile_ids
-            ,
-            routing_profile_id: self.routing_profile_id
-            ,
-            hierarchy_group_id: self.hierarchy_group_id
-            ,
-            tags: self.tags
-            ,
+            id: self.id,
+            arn: self.arn,
+            username: self.username,
+            identity_info: self.identity_info,
+            phone_config: self.phone_config,
+            directory_user_id: self.directory_user_id,
+            security_profile_ids: self.security_profile_ids,
+            routing_profile_id: self.routing_profile_id,
+            hierarchy_group_id: self.hierarchy_group_id,
+            tags: self.tags,
         }
     }
 }
-

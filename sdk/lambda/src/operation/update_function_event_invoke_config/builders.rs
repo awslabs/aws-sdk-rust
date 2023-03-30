@@ -4,69 +4,78 @@ pub use crate::operation::update_function_event_invoke_config::_update_function_
 pub use crate::operation::update_function_event_invoke_config::_update_function_event_invoke_config_input::UpdateFunctionEventInvokeConfigInputBuilder;
 
 /// Fluent builder constructing a request to `UpdateFunctionEventInvokeConfig`.
-/// 
-/// <p>Updates the configuration for asynchronous invocation for a function, version, or alias.</p> 
+///
+/// <p>Updates the configuration for asynchronous invocation for a function, version, or alias.</p>
 /// <p>To configure options for asynchronous invocation, use <code>PutFunctionEventInvokeConfig</code>.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct UpdateFunctionEventInvokeConfigFluentBuilder {
                 handle: std::sync::Arc<crate::client::Handle>,
                 inner: crate::operation::update_function_event_invoke_config::builders::UpdateFunctionEventInvokeConfigInputBuilder
             }
-impl UpdateFunctionEventInvokeConfigFluentBuilder  {
+impl UpdateFunctionEventInvokeConfigFluentBuilder {
     /// Creates a new `UpdateFunctionEventInvokeConfig`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
-                    /// sent. The operation's inner [http::Request] can be modified as well.
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle,
+            inner: Default::default(),
+        }
+    }
+
+    /// Consume this builder, creating a customizable operation that can be modified before being
+    /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::update_function_event_invoke_config::UpdateFunctionEventInvokeConfig, aws_http::retry::AwsResponseRetryClassifier,>,
                         aws_smithy_http::result::SdkError<crate::operation::update_function_event_invoke_config::UpdateFunctionEventInvokeConfigError>
-                    >  {
-                        let handle = self.handle.clone();
-                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-                    }
-    
-                    /// Sends the request and returns the response.
-                    ///
-                    /// If an error occurs, an `SdkError` will be returned with additional details that
-                    /// can be matched against.
-                    ///
-                    /// By default, any retryable failures will be retried twice. Retry behavior
-                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                    /// set when configuring the client.
+    >{
+        let handle = self.handle.clone();
+        let operation = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+    }
+
+    /// Sends the request and returns the response.
+    ///
+    /// If an error occurs, an `SdkError` will be returned with additional details that
+    /// can be matched against.
+    ///
+    /// By default, any retryable failures will be retried twice. Retry behavior
+    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+    /// set when configuring the client.
                     pub async fn send(self) -> std::result::Result<crate::operation::update_function_event_invoke_config::UpdateFunctionEventInvokeConfigOutput, aws_smithy_http::result::SdkError<crate::operation::update_function_event_invoke_config::UpdateFunctionEventInvokeConfigError>>
                      {
-                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&self.handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        self.handle.client.call(op).await
-                    }
-    /// <p>The name of the Lambda function, version, or alias.</p> 
-    /// <p class="title"> <b>Name formats</b> </p> 
-    /// <ul> 
-    /// <li> <p> <b>Function name</b> - <code>my-function</code> (name-only), <code>my-function:v1</code> (with alias).</p> </li> 
-    /// <li> <p> <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.</p> </li> 
-    /// <li> <p> <b>Partial ARN</b> - <code>123456789012:function:my-function</code>.</p> </li> 
-    /// </ul> 
+        let op = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&self.handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        self.handle.client.call(op).await
+    }
+    /// <p>The name of the Lambda function, version, or alias.</p>
+    /// <p class="title"> <b>Name formats</b> </p>
+    /// <ul>
+    /// <li> <p> <b>Function name</b> - <code>my-function</code> (name-only), <code>my-function:v1</code> (with alias).</p> </li>
+    /// <li> <p> <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.</p> </li>
+    /// <li> <p> <b>Partial ARN</b> - <code>123456789012:function:my-function</code>.</p> </li>
+    /// </ul>
     /// <p>You can append a version number or alias to any of the formats. The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64 characters in length.</p>
     pub fn function_name(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.function_name(input.into());
         self
     }
-    /// <p>The name of the Lambda function, version, or alias.</p> 
-    /// <p class="title"> <b>Name formats</b> </p> 
-    /// <ul> 
-    /// <li> <p> <b>Function name</b> - <code>my-function</code> (name-only), <code>my-function:v1</code> (with alias).</p> </li> 
-    /// <li> <p> <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.</p> </li> 
-    /// <li> <p> <b>Partial ARN</b> - <code>123456789012:function:my-function</code>.</p> </li> 
-    /// </ul> 
+    /// <p>The name of the Lambda function, version, or alias.</p>
+    /// <p class="title"> <b>Name formats</b> </p>
+    /// <ul>
+    /// <li> <p> <b>Function name</b> - <code>my-function</code> (name-only), <code>my-function:v1</code> (with alias).</p> </li>
+    /// <li> <p> <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.</p> </li>
+    /// <li> <p> <b>Partial ARN</b> - <code>123456789012:function:my-function</code>.</p> </li>
+    /// </ul>
     /// <p>You can append a version number or alias to any of the formats. The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64 characters in length.</p>
     pub fn set_function_name(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.inner = self.inner.set_function_name(input);
@@ -102,29 +111,31 @@ impl UpdateFunctionEventInvokeConfigFluentBuilder  {
         self.inner = self.inner.set_maximum_event_age_in_seconds(input);
         self
     }
-    /// <p>A destination for events after they have been sent to a function for processing.</p> 
-    /// <p class="title"> <b>Destinations</b> </p> 
-    /// <ul> 
-    /// <li> <p> <b>Function</b> - The Amazon Resource Name (ARN) of a Lambda function.</p> </li> 
-    /// <li> <p> <b>Queue</b> - The ARN of an SQS queue.</p> </li> 
-    /// <li> <p> <b>Topic</b> - The ARN of an SNS topic.</p> </li> 
-    /// <li> <p> <b>Event Bus</b> - The ARN of an Amazon EventBridge event bus.</p> </li> 
+    /// <p>A destination for events after they have been sent to a function for processing.</p>
+    /// <p class="title"> <b>Destinations</b> </p>
+    /// <ul>
+    /// <li> <p> <b>Function</b> - The Amazon Resource Name (ARN) of a Lambda function.</p> </li>
+    /// <li> <p> <b>Queue</b> - The ARN of an SQS queue.</p> </li>
+    /// <li> <p> <b>Topic</b> - The ARN of an SNS topic.</p> </li>
+    /// <li> <p> <b>Event Bus</b> - The ARN of an Amazon EventBridge event bus.</p> </li>
     /// </ul>
     pub fn destination_config(mut self, input: crate::types::DestinationConfig) -> Self {
         self.inner = self.inner.destination_config(input);
         self
     }
-    /// <p>A destination for events after they have been sent to a function for processing.</p> 
-    /// <p class="title"> <b>Destinations</b> </p> 
-    /// <ul> 
-    /// <li> <p> <b>Function</b> - The Amazon Resource Name (ARN) of a Lambda function.</p> </li> 
-    /// <li> <p> <b>Queue</b> - The ARN of an SQS queue.</p> </li> 
-    /// <li> <p> <b>Topic</b> - The ARN of an SNS topic.</p> </li> 
-    /// <li> <p> <b>Event Bus</b> - The ARN of an Amazon EventBridge event bus.</p> </li> 
+    /// <p>A destination for events after they have been sent to a function for processing.</p>
+    /// <p class="title"> <b>Destinations</b> </p>
+    /// <ul>
+    /// <li> <p> <b>Function</b> - The Amazon Resource Name (ARN) of a Lambda function.</p> </li>
+    /// <li> <p> <b>Queue</b> - The ARN of an SQS queue.</p> </li>
+    /// <li> <p> <b>Topic</b> - The ARN of an SNS topic.</p> </li>
+    /// <li> <p> <b>Event Bus</b> - The ARN of an Amazon EventBridge event bus.</p> </li>
     /// </ul>
-    pub fn set_destination_config(mut self, input: std::option::Option<crate::types::DestinationConfig>) -> Self {
+    pub fn set_destination_config(
+        mut self,
+        input: std::option::Option<crate::types::DestinationConfig>,
+    ) -> Self {
         self.inner = self.inner.set_destination_config(input);
         self
     }
 }
-

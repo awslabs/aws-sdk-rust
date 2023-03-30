@@ -3,13 +3,14 @@
 /// <p>The input configuration for a canary deployment.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeploymentCanarySettings  {
+pub struct DeploymentCanarySettings {
     /// <p>The percentage (0.0-100.0) of traffic routed to the canary deployment.</p>
     #[doc(hidden)]
     pub percent_traffic: f64,
     /// <p>A stage variable overrides used for the canary release deployment. They can override existing stage variables or add new stage variables for the canary release deployment. These stage variables are represented as a string-to-string map between stage variable names and their values.</p>
     #[doc(hidden)]
-    pub stage_variable_overrides: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub stage_variable_overrides:
+        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>A Boolean flag to indicate whether the canary release deployment uses the stage cache or not.</p>
     #[doc(hidden)]
     pub use_stage_cache: bool,
@@ -20,7 +21,10 @@ impl DeploymentCanarySettings {
         self.percent_traffic
     }
     /// <p>A stage variable overrides used for the canary release deployment. They can override existing stage variables or add new stage variables for the canary release deployment. These stage variables are represented as a string-to-string map between stage variable names and their values.</p>
-    pub fn stage_variable_overrides(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
+    pub fn stage_variable_overrides(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
         self.stage_variable_overrides.as_ref()
     }
     /// <p>A Boolean flag to indicate whether the canary release deployment uses the stage cache or not.</p>
@@ -40,7 +44,8 @@ impl DeploymentCanarySettings {
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct DeploymentCanarySettingsBuilder {
     pub(crate) percent_traffic: std::option::Option<f64>,
-    pub(crate) stage_variable_overrides: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub(crate) stage_variable_overrides:
+        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     pub(crate) use_stage_cache: std::option::Option<bool>,
 }
 impl DeploymentCanarySettingsBuilder {
@@ -51,22 +56,33 @@ impl DeploymentCanarySettingsBuilder {
     }
     /// <p>The percentage (0.0-100.0) of traffic routed to the canary deployment.</p>
     pub fn set_percent_traffic(mut self, input: std::option::Option<f64>) -> Self {
-        self.percent_traffic = input; self
+        self.percent_traffic = input;
+        self
     }
     /// Adds a key-value pair to `stage_variable_overrides`.
     ///
     /// To override the contents of this collection use [`set_stage_variable_overrides`](Self::set_stage_variable_overrides).
     ///
     /// <p>A stage variable overrides used for the canary release deployment. They can override existing stage variables or add new stage variables for the canary release deployment. These stage variables are represented as a string-to-string map between stage variable names and their values.</p>
-    pub fn stage_variable_overrides(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
+    pub fn stage_variable_overrides(
+        mut self,
+        k: impl Into<std::string::String>,
+        v: impl Into<std::string::String>,
+    ) -> Self {
         let mut hash_map = self.stage_variable_overrides.unwrap_or_default();
-                        hash_map.insert(k.into(), v.into());
-                        self.stage_variable_overrides = Some(hash_map);
-                        self
+        hash_map.insert(k.into(), v.into());
+        self.stage_variable_overrides = Some(hash_map);
+        self
     }
     /// <p>A stage variable overrides used for the canary release deployment. They can override existing stage variables or add new stage variables for the canary release deployment. These stage variables are represented as a string-to-string map between stage variable names and their values.</p>
-    pub fn set_stage_variable_overrides(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
-        self.stage_variable_overrides = input; self
+    pub fn set_stage_variable_overrides(
+        mut self,
+        input: std::option::Option<
+            std::collections::HashMap<std::string::String, std::string::String>,
+        >,
+    ) -> Self {
+        self.stage_variable_overrides = input;
+        self
     }
     /// <p>A Boolean flag to indicate whether the canary release deployment uses the stage cache or not.</p>
     pub fn use_stage_cache(mut self, input: bool) -> Self {
@@ -75,20 +91,15 @@ impl DeploymentCanarySettingsBuilder {
     }
     /// <p>A Boolean flag to indicate whether the canary release deployment uses the stage cache or not.</p>
     pub fn set_use_stage_cache(mut self, input: std::option::Option<bool>) -> Self {
-        self.use_stage_cache = input; self
+        self.use_stage_cache = input;
+        self
     }
     /// Consumes the builder and constructs a [`DeploymentCanarySettings`](crate::types::DeploymentCanarySettings).
     pub fn build(self) -> crate::types::DeploymentCanarySettings {
         crate::types::DeploymentCanarySettings {
-            percent_traffic: self.percent_traffic
-                .unwrap_or_default()
-            ,
-            stage_variable_overrides: self.stage_variable_overrides
-            ,
-            use_stage_cache: self.use_stage_cache
-                .unwrap_or_default()
-            ,
+            percent_traffic: self.percent_traffic.unwrap_or_default(),
+            stage_variable_overrides: self.stage_variable_overrides,
+            use_stage_cache: self.use_stage_cache.unwrap_or_default(),
         }
     }
 }
-

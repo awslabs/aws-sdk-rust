@@ -3,7 +3,7 @@
 /// <p> The request structure for the update webhook request. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateWebhookInput  {
+pub struct UpdateWebhookInput {
     /// <p> The unique ID for a webhook. </p>
     #[doc(hidden)]
     pub webhook_id: std::option::Option<std::string::String>,
@@ -16,15 +16,15 @@ pub struct UpdateWebhookInput  {
 }
 impl UpdateWebhookInput {
     /// <p> The unique ID for a webhook. </p>
-    pub fn webhook_id(&self) -> std::option::Option<& str> {
+    pub fn webhook_id(&self) -> std::option::Option<&str> {
         self.webhook_id.as_deref()
     }
     /// <p> The name for a branch that is part of an Amplify app. </p>
-    pub fn branch_name(&self) -> std::option::Option<& str> {
+    pub fn branch_name(&self) -> std::option::Option<&str> {
         self.branch_name.as_deref()
     }
     /// <p> The description for a webhook. </p>
-    pub fn description(&self) -> std::option::Option<& str> {
+    pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
 }
@@ -51,7 +51,8 @@ impl UpdateWebhookInputBuilder {
     }
     /// <p> The unique ID for a webhook. </p>
     pub fn set_webhook_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.webhook_id = input; self
+        self.webhook_id = input;
+        self
     }
     /// <p> The name for a branch that is part of an Amplify app. </p>
     pub fn branch_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -60,7 +61,8 @@ impl UpdateWebhookInputBuilder {
     }
     /// <p> The name for a branch that is part of an Amplify app. </p>
     pub fn set_branch_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.branch_name = input; self
+        self.branch_name = input;
+        self
     }
     /// <p> The description for a webhook. </p>
     pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -69,20 +71,20 @@ impl UpdateWebhookInputBuilder {
     }
     /// <p> The description for a webhook. </p>
     pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.description = input; self
+        self.description = input;
+        self
     }
     /// Consumes the builder and constructs a [`UpdateWebhookInput`](crate::operation::update_webhook::UpdateWebhookInput).
-    pub fn build(self) -> Result<crate::operation::update_webhook::UpdateWebhookInput, aws_smithy_http::operation::error::BuildError> {
-        Ok(
-            crate::operation::update_webhook::UpdateWebhookInput {
-                webhook_id: self.webhook_id
-                ,
-                branch_name: self.branch_name
-                ,
-                description: self.description
-                ,
-            }
-        )
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::update_webhook::UpdateWebhookInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        Ok(crate::operation::update_webhook::UpdateWebhookInput {
+            webhook_id: self.webhook_id,
+            branch_name: self.branch_name,
+            description: self.description,
+        })
     }
 }
-

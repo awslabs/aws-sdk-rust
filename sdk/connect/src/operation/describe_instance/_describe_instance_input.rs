@@ -2,20 +2,21 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeInstanceInput  {
+pub struct DescribeInstanceInput {
     /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
     #[doc(hidden)]
     pub instance_id: std::option::Option<std::string::String>,
 }
 impl DescribeInstanceInput {
     /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
-    pub fn instance_id(&self) -> std::option::Option<& str> {
+    pub fn instance_id(&self) -> std::option::Option<&str> {
         self.instance_id.as_deref()
     }
 }
 impl DescribeInstanceInput {
     /// Creates a new builder-style object to manufacture [`DescribeInstanceInput`](crate::operation::describe_instance::DescribeInstanceInput).
-    pub fn builder() -> crate::operation::describe_instance::builders::DescribeInstanceInputBuilder {
+    pub fn builder() -> crate::operation::describe_instance::builders::DescribeInstanceInputBuilder
+    {
         crate::operation::describe_instance::builders::DescribeInstanceInputBuilder::default()
     }
 }
@@ -34,16 +35,18 @@ impl DescribeInstanceInputBuilder {
     }
     /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
     pub fn set_instance_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.instance_id = input; self
+        self.instance_id = input;
+        self
     }
     /// Consumes the builder and constructs a [`DescribeInstanceInput`](crate::operation::describe_instance::DescribeInstanceInput).
-    pub fn build(self) -> Result<crate::operation::describe_instance::DescribeInstanceInput, aws_smithy_http::operation::error::BuildError> {
-        Ok(
-            crate::operation::describe_instance::DescribeInstanceInput {
-                instance_id: self.instance_id
-                ,
-            }
-        )
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::describe_instance::DescribeInstanceInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        Ok(crate::operation::describe_instance::DescribeInstanceInput {
+            instance_id: self.instance_id,
+        })
     }
 }
-

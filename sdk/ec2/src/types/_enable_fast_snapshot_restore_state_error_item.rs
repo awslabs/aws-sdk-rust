@@ -3,7 +3,7 @@
 /// <p>Contains information about an error that occurred when enabling fast snapshot restores.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct EnableFastSnapshotRestoreStateErrorItem  {
+pub struct EnableFastSnapshotRestoreStateErrorItem {
     /// <p>The Availability Zone.</p>
     #[doc(hidden)]
     pub availability_zone: std::option::Option<std::string::String>,
@@ -13,11 +13,11 @@ pub struct EnableFastSnapshotRestoreStateErrorItem  {
 }
 impl EnableFastSnapshotRestoreStateErrorItem {
     /// <p>The Availability Zone.</p>
-    pub fn availability_zone(&self) -> std::option::Option<& str> {
+    pub fn availability_zone(&self) -> std::option::Option<&str> {
         self.availability_zone.as_deref()
     }
     /// <p>The error.</p>
-    pub fn error(&self) -> std::option::Option<& crate::types::EnableFastSnapshotRestoreStateError> {
+    pub fn error(&self) -> std::option::Option<&crate::types::EnableFastSnapshotRestoreStateError> {
         self.error.as_ref()
     }
 }
@@ -42,8 +42,12 @@ impl EnableFastSnapshotRestoreStateErrorItemBuilder {
         self
     }
     /// <p>The Availability Zone.</p>
-    pub fn set_availability_zone(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.availability_zone = input; self
+    pub fn set_availability_zone(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.availability_zone = input;
+        self
     }
     /// <p>The error.</p>
     pub fn error(mut self, input: crate::types::EnableFastSnapshotRestoreStateError) -> Self {
@@ -51,17 +55,18 @@ impl EnableFastSnapshotRestoreStateErrorItemBuilder {
         self
     }
     /// <p>The error.</p>
-    pub fn set_error(mut self, input: std::option::Option<crate::types::EnableFastSnapshotRestoreStateError>) -> Self {
-        self.error = input; self
+    pub fn set_error(
+        mut self,
+        input: std::option::Option<crate::types::EnableFastSnapshotRestoreStateError>,
+    ) -> Self {
+        self.error = input;
+        self
     }
     /// Consumes the builder and constructs a [`EnableFastSnapshotRestoreStateErrorItem`](crate::types::EnableFastSnapshotRestoreStateErrorItem).
     pub fn build(self) -> crate::types::EnableFastSnapshotRestoreStateErrorItem {
         crate::types::EnableFastSnapshotRestoreStateErrorItem {
-            availability_zone: self.availability_zone
-            ,
-            error: self.error
-            ,
+            availability_zone: self.availability_zone,
+            error: self.error,
         }
     }
 }
-

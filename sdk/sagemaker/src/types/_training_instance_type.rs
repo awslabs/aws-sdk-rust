@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-/// 
+///
 /// Here is an example of how you can make a match expression forward-compatible:
-/// 
+///
 /// ```text
 /// # let traininginstancetype = unimplemented!();
 /// match traininginstancetype {
@@ -77,14 +77,22 @@
 /// Specifically, when `traininginstancetype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `TrainingInstanceType::NewFeature` also yielding `"NewFeature"`.
-/// 
+///
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
 pub enum TrainingInstanceType {
     #[allow(missing_docs)] // documentation missing in model
     MlC42Xlarge,
@@ -185,135 +193,186 @@ pub enum TrainingInstanceType {
     #[allow(missing_docs)] // documentation missing in model
     MlTrn132Xlarge,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::primitives::UnknownVariantValue)
+    Unknown(crate::primitives::UnknownVariantValue),
 }
 impl std::convert::From<&str> for TrainingInstanceType {
-                fn from(s: &str) -> Self {
-                    match s {
-                        "ml.c4.2xlarge" => TrainingInstanceType::MlC42Xlarge,
-"ml.c4.4xlarge" => TrainingInstanceType::MlC44Xlarge,
-"ml.c4.8xlarge" => TrainingInstanceType::MlC48Xlarge,
-"ml.c4.xlarge" => TrainingInstanceType::MlC4Xlarge,
-"ml.c5.18xlarge" => TrainingInstanceType::MlC518Xlarge,
-"ml.c5.2xlarge" => TrainingInstanceType::MlC52Xlarge,
-"ml.c5.4xlarge" => TrainingInstanceType::MlC54Xlarge,
-"ml.c5.9xlarge" => TrainingInstanceType::MlC59Xlarge,
-"ml.c5.xlarge" => TrainingInstanceType::MlC5Xlarge,
-"ml.c5n.18xlarge" => TrainingInstanceType::MlC5N18Xlarge,
-"ml.c5n.2xlarge" => TrainingInstanceType::MlC5N2Xlarge,
-"ml.c5n.4xlarge" => TrainingInstanceType::MlC5N4Xlarge,
-"ml.c5n.9xlarge" => TrainingInstanceType::MlC5N9Xlarge,
-"ml.c5n.xlarge" => TrainingInstanceType::MlC5NXlarge,
-"ml.g4dn.12xlarge" => TrainingInstanceType::MlG4Dn12Xlarge,
-"ml.g4dn.16xlarge" => TrainingInstanceType::MlG4Dn16Xlarge,
-"ml.g4dn.2xlarge" => TrainingInstanceType::MlG4Dn2Xlarge,
-"ml.g4dn.4xlarge" => TrainingInstanceType::MlG4Dn4Xlarge,
-"ml.g4dn.8xlarge" => TrainingInstanceType::MlG4Dn8Xlarge,
-"ml.g4dn.xlarge" => TrainingInstanceType::MlG4DnXlarge,
-"ml.g5.12xlarge" => TrainingInstanceType::MlG512Xlarge,
-"ml.g5.16xlarge" => TrainingInstanceType::MlG516Xlarge,
-"ml.g5.24xlarge" => TrainingInstanceType::MlG524Xlarge,
-"ml.g5.2xlarge" => TrainingInstanceType::MlG52Xlarge,
-"ml.g5.48xlarge" => TrainingInstanceType::MlG548Xlarge,
-"ml.g5.4xlarge" => TrainingInstanceType::MlG54Xlarge,
-"ml.g5.8xlarge" => TrainingInstanceType::MlG58Xlarge,
-"ml.g5.xlarge" => TrainingInstanceType::MlG5Xlarge,
-"ml.m4.10xlarge" => TrainingInstanceType::MlM410Xlarge,
-"ml.m4.16xlarge" => TrainingInstanceType::MlM416Xlarge,
-"ml.m4.2xlarge" => TrainingInstanceType::MlM42Xlarge,
-"ml.m4.4xlarge" => TrainingInstanceType::MlM44Xlarge,
-"ml.m4.xlarge" => TrainingInstanceType::MlM4Xlarge,
-"ml.m5.12xlarge" => TrainingInstanceType::MlM512Xlarge,
-"ml.m5.24xlarge" => TrainingInstanceType::MlM524Xlarge,
-"ml.m5.2xlarge" => TrainingInstanceType::MlM52Xlarge,
-"ml.m5.4xlarge" => TrainingInstanceType::MlM54Xlarge,
-"ml.m5.large" => TrainingInstanceType::MlM5Large,
-"ml.m5.xlarge" => TrainingInstanceType::MlM5Xlarge,
-"ml.p2.16xlarge" => TrainingInstanceType::MlP216Xlarge,
-"ml.p2.8xlarge" => TrainingInstanceType::MlP28Xlarge,
-"ml.p2.xlarge" => TrainingInstanceType::MlP2Xlarge,
-"ml.p3.16xlarge" => TrainingInstanceType::MlP316Xlarge,
-"ml.p3.2xlarge" => TrainingInstanceType::MlP32Xlarge,
-"ml.p3.8xlarge" => TrainingInstanceType::MlP38Xlarge,
-"ml.p3dn.24xlarge" => TrainingInstanceType::MlP3Dn24Xlarge,
-"ml.p4d.24xlarge" => TrainingInstanceType::MlP4D24Xlarge,
-"ml.trn1.2xlarge" => TrainingInstanceType::MlTrn12Xlarge,
-"ml.trn1.32xlarge" => TrainingInstanceType::MlTrn132Xlarge,
-other => TrainingInstanceType::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
-                    }
-                }
-            }
-impl std::str::FromStr for TrainingInstanceType {
-                type Err = std::convert::Infallible;
-
-                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-                    Ok(TrainingInstanceType::from(s))
-                }
-            }
-impl TrainingInstanceType {
-                /// Returns the `&str` value of the enum member.
-                pub fn as_str(&self) -> &str {
-                    match self {
-    TrainingInstanceType::MlC42Xlarge => "ml.c4.2xlarge",
-    TrainingInstanceType::MlC44Xlarge => "ml.c4.4xlarge",
-    TrainingInstanceType::MlC48Xlarge => "ml.c4.8xlarge",
-    TrainingInstanceType::MlC4Xlarge => "ml.c4.xlarge",
-    TrainingInstanceType::MlC518Xlarge => "ml.c5.18xlarge",
-    TrainingInstanceType::MlC52Xlarge => "ml.c5.2xlarge",
-    TrainingInstanceType::MlC54Xlarge => "ml.c5.4xlarge",
-    TrainingInstanceType::MlC59Xlarge => "ml.c5.9xlarge",
-    TrainingInstanceType::MlC5Xlarge => "ml.c5.xlarge",
-    TrainingInstanceType::MlC5N18Xlarge => "ml.c5n.18xlarge",
-    TrainingInstanceType::MlC5N2Xlarge => "ml.c5n.2xlarge",
-    TrainingInstanceType::MlC5N4Xlarge => "ml.c5n.4xlarge",
-    TrainingInstanceType::MlC5N9Xlarge => "ml.c5n.9xlarge",
-    TrainingInstanceType::MlC5NXlarge => "ml.c5n.xlarge",
-    TrainingInstanceType::MlG4Dn12Xlarge => "ml.g4dn.12xlarge",
-    TrainingInstanceType::MlG4Dn16Xlarge => "ml.g4dn.16xlarge",
-    TrainingInstanceType::MlG4Dn2Xlarge => "ml.g4dn.2xlarge",
-    TrainingInstanceType::MlG4Dn4Xlarge => "ml.g4dn.4xlarge",
-    TrainingInstanceType::MlG4Dn8Xlarge => "ml.g4dn.8xlarge",
-    TrainingInstanceType::MlG4DnXlarge => "ml.g4dn.xlarge",
-    TrainingInstanceType::MlG512Xlarge => "ml.g5.12xlarge",
-    TrainingInstanceType::MlG516Xlarge => "ml.g5.16xlarge",
-    TrainingInstanceType::MlG524Xlarge => "ml.g5.24xlarge",
-    TrainingInstanceType::MlG52Xlarge => "ml.g5.2xlarge",
-    TrainingInstanceType::MlG548Xlarge => "ml.g5.48xlarge",
-    TrainingInstanceType::MlG54Xlarge => "ml.g5.4xlarge",
-    TrainingInstanceType::MlG58Xlarge => "ml.g5.8xlarge",
-    TrainingInstanceType::MlG5Xlarge => "ml.g5.xlarge",
-    TrainingInstanceType::MlM410Xlarge => "ml.m4.10xlarge",
-    TrainingInstanceType::MlM416Xlarge => "ml.m4.16xlarge",
-    TrainingInstanceType::MlM42Xlarge => "ml.m4.2xlarge",
-    TrainingInstanceType::MlM44Xlarge => "ml.m4.4xlarge",
-    TrainingInstanceType::MlM4Xlarge => "ml.m4.xlarge",
-    TrainingInstanceType::MlM512Xlarge => "ml.m5.12xlarge",
-    TrainingInstanceType::MlM524Xlarge => "ml.m5.24xlarge",
-    TrainingInstanceType::MlM52Xlarge => "ml.m5.2xlarge",
-    TrainingInstanceType::MlM54Xlarge => "ml.m5.4xlarge",
-    TrainingInstanceType::MlM5Large => "ml.m5.large",
-    TrainingInstanceType::MlM5Xlarge => "ml.m5.xlarge",
-    TrainingInstanceType::MlP216Xlarge => "ml.p2.16xlarge",
-    TrainingInstanceType::MlP28Xlarge => "ml.p2.8xlarge",
-    TrainingInstanceType::MlP2Xlarge => "ml.p2.xlarge",
-    TrainingInstanceType::MlP316Xlarge => "ml.p3.16xlarge",
-    TrainingInstanceType::MlP32Xlarge => "ml.p3.2xlarge",
-    TrainingInstanceType::MlP38Xlarge => "ml.p3.8xlarge",
-    TrainingInstanceType::MlP3Dn24Xlarge => "ml.p3dn.24xlarge",
-    TrainingInstanceType::MlP4D24Xlarge => "ml.p4d.24xlarge",
-    TrainingInstanceType::MlTrn12Xlarge => "ml.trn1.2xlarge",
-    TrainingInstanceType::MlTrn132Xlarge => "ml.trn1.32xlarge",
-    TrainingInstanceType::Unknown(value) => value.as_str()
+    fn from(s: &str) -> Self {
+        match s {
+            "ml.c4.2xlarge" => TrainingInstanceType::MlC42Xlarge,
+            "ml.c4.4xlarge" => TrainingInstanceType::MlC44Xlarge,
+            "ml.c4.8xlarge" => TrainingInstanceType::MlC48Xlarge,
+            "ml.c4.xlarge" => TrainingInstanceType::MlC4Xlarge,
+            "ml.c5.18xlarge" => TrainingInstanceType::MlC518Xlarge,
+            "ml.c5.2xlarge" => TrainingInstanceType::MlC52Xlarge,
+            "ml.c5.4xlarge" => TrainingInstanceType::MlC54Xlarge,
+            "ml.c5.9xlarge" => TrainingInstanceType::MlC59Xlarge,
+            "ml.c5.xlarge" => TrainingInstanceType::MlC5Xlarge,
+            "ml.c5n.18xlarge" => TrainingInstanceType::MlC5N18Xlarge,
+            "ml.c5n.2xlarge" => TrainingInstanceType::MlC5N2Xlarge,
+            "ml.c5n.4xlarge" => TrainingInstanceType::MlC5N4Xlarge,
+            "ml.c5n.9xlarge" => TrainingInstanceType::MlC5N9Xlarge,
+            "ml.c5n.xlarge" => TrainingInstanceType::MlC5NXlarge,
+            "ml.g4dn.12xlarge" => TrainingInstanceType::MlG4Dn12Xlarge,
+            "ml.g4dn.16xlarge" => TrainingInstanceType::MlG4Dn16Xlarge,
+            "ml.g4dn.2xlarge" => TrainingInstanceType::MlG4Dn2Xlarge,
+            "ml.g4dn.4xlarge" => TrainingInstanceType::MlG4Dn4Xlarge,
+            "ml.g4dn.8xlarge" => TrainingInstanceType::MlG4Dn8Xlarge,
+            "ml.g4dn.xlarge" => TrainingInstanceType::MlG4DnXlarge,
+            "ml.g5.12xlarge" => TrainingInstanceType::MlG512Xlarge,
+            "ml.g5.16xlarge" => TrainingInstanceType::MlG516Xlarge,
+            "ml.g5.24xlarge" => TrainingInstanceType::MlG524Xlarge,
+            "ml.g5.2xlarge" => TrainingInstanceType::MlG52Xlarge,
+            "ml.g5.48xlarge" => TrainingInstanceType::MlG548Xlarge,
+            "ml.g5.4xlarge" => TrainingInstanceType::MlG54Xlarge,
+            "ml.g5.8xlarge" => TrainingInstanceType::MlG58Xlarge,
+            "ml.g5.xlarge" => TrainingInstanceType::MlG5Xlarge,
+            "ml.m4.10xlarge" => TrainingInstanceType::MlM410Xlarge,
+            "ml.m4.16xlarge" => TrainingInstanceType::MlM416Xlarge,
+            "ml.m4.2xlarge" => TrainingInstanceType::MlM42Xlarge,
+            "ml.m4.4xlarge" => TrainingInstanceType::MlM44Xlarge,
+            "ml.m4.xlarge" => TrainingInstanceType::MlM4Xlarge,
+            "ml.m5.12xlarge" => TrainingInstanceType::MlM512Xlarge,
+            "ml.m5.24xlarge" => TrainingInstanceType::MlM524Xlarge,
+            "ml.m5.2xlarge" => TrainingInstanceType::MlM52Xlarge,
+            "ml.m5.4xlarge" => TrainingInstanceType::MlM54Xlarge,
+            "ml.m5.large" => TrainingInstanceType::MlM5Large,
+            "ml.m5.xlarge" => TrainingInstanceType::MlM5Xlarge,
+            "ml.p2.16xlarge" => TrainingInstanceType::MlP216Xlarge,
+            "ml.p2.8xlarge" => TrainingInstanceType::MlP28Xlarge,
+            "ml.p2.xlarge" => TrainingInstanceType::MlP2Xlarge,
+            "ml.p3.16xlarge" => TrainingInstanceType::MlP316Xlarge,
+            "ml.p3.2xlarge" => TrainingInstanceType::MlP32Xlarge,
+            "ml.p3.8xlarge" => TrainingInstanceType::MlP38Xlarge,
+            "ml.p3dn.24xlarge" => TrainingInstanceType::MlP3Dn24Xlarge,
+            "ml.p4d.24xlarge" => TrainingInstanceType::MlP4D24Xlarge,
+            "ml.trn1.2xlarge" => TrainingInstanceType::MlTrn12Xlarge,
+            "ml.trn1.32xlarge" => TrainingInstanceType::MlTrn132Xlarge,
+            other => TrainingInstanceType::Unknown(crate::primitives::UnknownVariantValue(
+                other.to_owned(),
+            )),
+        }
+    }
 }
-                }
-                /// Returns all the `&str` representations of the enum members.
-                pub const fn values() -> &'static [&'static str] {
-                    &["ml.c4.2xlarge", "ml.c4.4xlarge", "ml.c4.8xlarge", "ml.c4.xlarge", "ml.c5.18xlarge", "ml.c5.2xlarge", "ml.c5.4xlarge", "ml.c5.9xlarge", "ml.c5.xlarge", "ml.c5n.18xlarge", "ml.c5n.2xlarge", "ml.c5n.4xlarge", "ml.c5n.9xlarge", "ml.c5n.xlarge", "ml.g4dn.12xlarge", "ml.g4dn.16xlarge", "ml.g4dn.2xlarge", "ml.g4dn.4xlarge", "ml.g4dn.8xlarge", "ml.g4dn.xlarge", "ml.g5.12xlarge", "ml.g5.16xlarge", "ml.g5.24xlarge", "ml.g5.2xlarge", "ml.g5.48xlarge", "ml.g5.4xlarge", "ml.g5.8xlarge", "ml.g5.xlarge", "ml.m4.10xlarge", "ml.m4.16xlarge", "ml.m4.2xlarge", "ml.m4.4xlarge", "ml.m4.xlarge", "ml.m5.12xlarge", "ml.m5.24xlarge", "ml.m5.2xlarge", "ml.m5.4xlarge", "ml.m5.large", "ml.m5.xlarge", "ml.p2.16xlarge", "ml.p2.8xlarge", "ml.p2.xlarge", "ml.p3.16xlarge", "ml.p3.2xlarge", "ml.p3.8xlarge", "ml.p3dn.24xlarge", "ml.p4d.24xlarge", "ml.trn1.2xlarge", "ml.trn1.32xlarge"]
-                }
-            }
-impl AsRef<str> for TrainingInstanceType {
-                fn as_ref(&self) -> &str {
-                    self.as_str()
-                }
-            }
+impl std::str::FromStr for TrainingInstanceType {
+    type Err = std::convert::Infallible;
 
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(TrainingInstanceType::from(s))
+    }
+}
+impl TrainingInstanceType {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            TrainingInstanceType::MlC42Xlarge => "ml.c4.2xlarge",
+            TrainingInstanceType::MlC44Xlarge => "ml.c4.4xlarge",
+            TrainingInstanceType::MlC48Xlarge => "ml.c4.8xlarge",
+            TrainingInstanceType::MlC4Xlarge => "ml.c4.xlarge",
+            TrainingInstanceType::MlC518Xlarge => "ml.c5.18xlarge",
+            TrainingInstanceType::MlC52Xlarge => "ml.c5.2xlarge",
+            TrainingInstanceType::MlC54Xlarge => "ml.c5.4xlarge",
+            TrainingInstanceType::MlC59Xlarge => "ml.c5.9xlarge",
+            TrainingInstanceType::MlC5Xlarge => "ml.c5.xlarge",
+            TrainingInstanceType::MlC5N18Xlarge => "ml.c5n.18xlarge",
+            TrainingInstanceType::MlC5N2Xlarge => "ml.c5n.2xlarge",
+            TrainingInstanceType::MlC5N4Xlarge => "ml.c5n.4xlarge",
+            TrainingInstanceType::MlC5N9Xlarge => "ml.c5n.9xlarge",
+            TrainingInstanceType::MlC5NXlarge => "ml.c5n.xlarge",
+            TrainingInstanceType::MlG4Dn12Xlarge => "ml.g4dn.12xlarge",
+            TrainingInstanceType::MlG4Dn16Xlarge => "ml.g4dn.16xlarge",
+            TrainingInstanceType::MlG4Dn2Xlarge => "ml.g4dn.2xlarge",
+            TrainingInstanceType::MlG4Dn4Xlarge => "ml.g4dn.4xlarge",
+            TrainingInstanceType::MlG4Dn8Xlarge => "ml.g4dn.8xlarge",
+            TrainingInstanceType::MlG4DnXlarge => "ml.g4dn.xlarge",
+            TrainingInstanceType::MlG512Xlarge => "ml.g5.12xlarge",
+            TrainingInstanceType::MlG516Xlarge => "ml.g5.16xlarge",
+            TrainingInstanceType::MlG524Xlarge => "ml.g5.24xlarge",
+            TrainingInstanceType::MlG52Xlarge => "ml.g5.2xlarge",
+            TrainingInstanceType::MlG548Xlarge => "ml.g5.48xlarge",
+            TrainingInstanceType::MlG54Xlarge => "ml.g5.4xlarge",
+            TrainingInstanceType::MlG58Xlarge => "ml.g5.8xlarge",
+            TrainingInstanceType::MlG5Xlarge => "ml.g5.xlarge",
+            TrainingInstanceType::MlM410Xlarge => "ml.m4.10xlarge",
+            TrainingInstanceType::MlM416Xlarge => "ml.m4.16xlarge",
+            TrainingInstanceType::MlM42Xlarge => "ml.m4.2xlarge",
+            TrainingInstanceType::MlM44Xlarge => "ml.m4.4xlarge",
+            TrainingInstanceType::MlM4Xlarge => "ml.m4.xlarge",
+            TrainingInstanceType::MlM512Xlarge => "ml.m5.12xlarge",
+            TrainingInstanceType::MlM524Xlarge => "ml.m5.24xlarge",
+            TrainingInstanceType::MlM52Xlarge => "ml.m5.2xlarge",
+            TrainingInstanceType::MlM54Xlarge => "ml.m5.4xlarge",
+            TrainingInstanceType::MlM5Large => "ml.m5.large",
+            TrainingInstanceType::MlM5Xlarge => "ml.m5.xlarge",
+            TrainingInstanceType::MlP216Xlarge => "ml.p2.16xlarge",
+            TrainingInstanceType::MlP28Xlarge => "ml.p2.8xlarge",
+            TrainingInstanceType::MlP2Xlarge => "ml.p2.xlarge",
+            TrainingInstanceType::MlP316Xlarge => "ml.p3.16xlarge",
+            TrainingInstanceType::MlP32Xlarge => "ml.p3.2xlarge",
+            TrainingInstanceType::MlP38Xlarge => "ml.p3.8xlarge",
+            TrainingInstanceType::MlP3Dn24Xlarge => "ml.p3dn.24xlarge",
+            TrainingInstanceType::MlP4D24Xlarge => "ml.p4d.24xlarge",
+            TrainingInstanceType::MlTrn12Xlarge => "ml.trn1.2xlarge",
+            TrainingInstanceType::MlTrn132Xlarge => "ml.trn1.32xlarge",
+            TrainingInstanceType::Unknown(value) => value.as_str(),
+        }
+    }
+    /// Returns all the `&str` representations of the enum members.
+    pub const fn values() -> &'static [&'static str] {
+        &[
+            "ml.c4.2xlarge",
+            "ml.c4.4xlarge",
+            "ml.c4.8xlarge",
+            "ml.c4.xlarge",
+            "ml.c5.18xlarge",
+            "ml.c5.2xlarge",
+            "ml.c5.4xlarge",
+            "ml.c5.9xlarge",
+            "ml.c5.xlarge",
+            "ml.c5n.18xlarge",
+            "ml.c5n.2xlarge",
+            "ml.c5n.4xlarge",
+            "ml.c5n.9xlarge",
+            "ml.c5n.xlarge",
+            "ml.g4dn.12xlarge",
+            "ml.g4dn.16xlarge",
+            "ml.g4dn.2xlarge",
+            "ml.g4dn.4xlarge",
+            "ml.g4dn.8xlarge",
+            "ml.g4dn.xlarge",
+            "ml.g5.12xlarge",
+            "ml.g5.16xlarge",
+            "ml.g5.24xlarge",
+            "ml.g5.2xlarge",
+            "ml.g5.48xlarge",
+            "ml.g5.4xlarge",
+            "ml.g5.8xlarge",
+            "ml.g5.xlarge",
+            "ml.m4.10xlarge",
+            "ml.m4.16xlarge",
+            "ml.m4.2xlarge",
+            "ml.m4.4xlarge",
+            "ml.m4.xlarge",
+            "ml.m5.12xlarge",
+            "ml.m5.24xlarge",
+            "ml.m5.2xlarge",
+            "ml.m5.4xlarge",
+            "ml.m5.large",
+            "ml.m5.xlarge",
+            "ml.p2.16xlarge",
+            "ml.p2.8xlarge",
+            "ml.p2.xlarge",
+            "ml.p3.16xlarge",
+            "ml.p3.2xlarge",
+            "ml.p3.8xlarge",
+            "ml.p3dn.24xlarge",
+            "ml.p4d.24xlarge",
+            "ml.trn1.2xlarge",
+            "ml.trn1.32xlarge",
+        ]
+    }
+}
+impl AsRef<str> for TrainingInstanceType {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}

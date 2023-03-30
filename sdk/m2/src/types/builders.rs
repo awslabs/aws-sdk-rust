@@ -58,4 +58,3 @@ pub use crate::types::_log_group_summary::LogGroupSummaryBuilder;
 pub use crate::types::_deployed_version_summary::DeployedVersionSummaryBuilder;
 
 pub use crate::types::_engine_versions_summary::EngineVersionsSummaryBuilder;
-

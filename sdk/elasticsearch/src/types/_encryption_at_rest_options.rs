@@ -3,7 +3,7 @@
 /// <p>Specifies the Encryption At Rest Options.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct EncryptionAtRestOptions  {
+pub struct EncryptionAtRestOptions {
     /// <p>Specifies the option to enable Encryption At Rest.</p>
     #[doc(hidden)]
     pub enabled: std::option::Option<bool>,
@@ -17,7 +17,7 @@ impl EncryptionAtRestOptions {
         self.enabled
     }
     /// <p> Specifies the KMS Key ID for Encryption At Rest options.</p>
-    pub fn kms_key_id(&self) -> std::option::Option<& str> {
+    pub fn kms_key_id(&self) -> std::option::Option<&str> {
         self.kms_key_id.as_deref()
     }
 }
@@ -43,7 +43,8 @@ impl EncryptionAtRestOptionsBuilder {
     }
     /// <p>Specifies the option to enable Encryption At Rest.</p>
     pub fn set_enabled(mut self, input: std::option::Option<bool>) -> Self {
-        self.enabled = input; self
+        self.enabled = input;
+        self
     }
     /// <p> Specifies the KMS Key ID for Encryption At Rest options.</p>
     pub fn kms_key_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -52,16 +53,14 @@ impl EncryptionAtRestOptionsBuilder {
     }
     /// <p> Specifies the KMS Key ID for Encryption At Rest options.</p>
     pub fn set_kms_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.kms_key_id = input; self
+        self.kms_key_id = input;
+        self
     }
     /// Consumes the builder and constructs a [`EncryptionAtRestOptions`](crate::types::EncryptionAtRestOptions).
     pub fn build(self) -> crate::types::EncryptionAtRestOptions {
         crate::types::EncryptionAtRestOptions {
-            enabled: self.enabled
-            ,
-            kms_key_id: self.kms_key_id
-            ,
+            enabled: self.enabled,
+            kms_key_id: self.kms_key_id,
         }
     }
 }
-

@@ -2,20 +2,21 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteBackupPlanInput  {
+pub struct DeleteBackupPlanInput {
     /// <p>Uniquely identifies a backup plan.</p>
     #[doc(hidden)]
     pub backup_plan_id: std::option::Option<std::string::String>,
 }
 impl DeleteBackupPlanInput {
     /// <p>Uniquely identifies a backup plan.</p>
-    pub fn backup_plan_id(&self) -> std::option::Option<& str> {
+    pub fn backup_plan_id(&self) -> std::option::Option<&str> {
         self.backup_plan_id.as_deref()
     }
 }
 impl DeleteBackupPlanInput {
     /// Creates a new builder-style object to manufacture [`DeleteBackupPlanInput`](crate::operation::delete_backup_plan::DeleteBackupPlanInput).
-    pub fn builder() -> crate::operation::delete_backup_plan::builders::DeleteBackupPlanInputBuilder {
+    pub fn builder() -> crate::operation::delete_backup_plan::builders::DeleteBackupPlanInputBuilder
+    {
         crate::operation::delete_backup_plan::builders::DeleteBackupPlanInputBuilder::default()
     }
 }
@@ -34,16 +35,20 @@ impl DeleteBackupPlanInputBuilder {
     }
     /// <p>Uniquely identifies a backup plan.</p>
     pub fn set_backup_plan_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.backup_plan_id = input; self
+        self.backup_plan_id = input;
+        self
     }
     /// Consumes the builder and constructs a [`DeleteBackupPlanInput`](crate::operation::delete_backup_plan::DeleteBackupPlanInput).
-    pub fn build(self) -> Result<crate::operation::delete_backup_plan::DeleteBackupPlanInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::delete_backup_plan::DeleteBackupPlanInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::delete_backup_plan::DeleteBackupPlanInput {
-                backup_plan_id: self.backup_plan_id
-                ,
-            }
+                backup_plan_id: self.backup_plan_id,
+            },
         )
     }
 }
-

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PostCommentForComparedCommitOutput  {
+pub struct PostCommentForComparedCommitOutput {
     /// <p>The name of the repository where you posted a comment on the comparison between commits.</p>
     #[doc(hidden)]
     pub repository_name: std::option::Option<std::string::String>,
@@ -28,42 +28,42 @@ pub struct PostCommentForComparedCommitOutput  {
 }
 impl PostCommentForComparedCommitOutput {
     /// <p>The name of the repository where you posted a comment on the comparison between commits.</p>
-    pub fn repository_name(&self) -> std::option::Option<& str> {
+    pub fn repository_name(&self) -> std::option::Option<&str> {
         self.repository_name.as_deref()
     }
     /// <p>In the directionality you established, the full commit ID of the before commit.</p>
-    pub fn before_commit_id(&self) -> std::option::Option<& str> {
+    pub fn before_commit_id(&self) -> std::option::Option<&str> {
         self.before_commit_id.as_deref()
     }
     /// <p>In the directionality you established, the full commit ID of the after commit.</p>
-    pub fn after_commit_id(&self) -> std::option::Option<& str> {
+    pub fn after_commit_id(&self) -> std::option::Option<&str> {
         self.after_commit_id.as_deref()
     }
     /// <p>In the directionality you established, the blob ID of the before blob.</p>
-    pub fn before_blob_id(&self) -> std::option::Option<& str> {
+    pub fn before_blob_id(&self) -> std::option::Option<&str> {
         self.before_blob_id.as_deref()
     }
     /// <p>In the directionality you established, the blob ID of the after blob.</p>
-    pub fn after_blob_id(&self) -> std::option::Option<& str> {
+    pub fn after_blob_id(&self) -> std::option::Option<&str> {
         self.after_blob_id.as_deref()
     }
     /// <p>The location of the comment in the comparison between the two commits.</p>
-    pub fn location(&self) -> std::option::Option<& crate::types::Location> {
+    pub fn location(&self) -> std::option::Option<&crate::types::Location> {
         self.location.as_ref()
     }
     /// <p>The content of the comment you posted.</p>
-    pub fn comment(&self) -> std::option::Option<& crate::types::Comment> {
+    pub fn comment(&self) -> std::option::Option<&crate::types::Comment> {
         self.comment.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for PostCommentForComparedCommitOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl PostCommentForComparedCommitOutput {
     /// Creates a new builder-style object to manufacture [`PostCommentForComparedCommitOutput`](crate::operation::post_comment_for_compared_commit::PostCommentForComparedCommitOutput).
-    pub fn builder() -> crate::operation::post_comment_for_compared_commit::builders::PostCommentForComparedCommitOutputBuilder {
+    pub fn builder() -> crate::operation::post_comment_for_compared_commit::builders::PostCommentForComparedCommitOutputBuilder{
         crate::operation::post_comment_for_compared_commit::builders::PostCommentForComparedCommitOutputBuilder::default()
     }
 }
@@ -89,7 +89,8 @@ impl PostCommentForComparedCommitOutputBuilder {
     }
     /// <p>The name of the repository where you posted a comment on the comparison between commits.</p>
     pub fn set_repository_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.repository_name = input; self
+        self.repository_name = input;
+        self
     }
     /// <p>In the directionality you established, the full commit ID of the before commit.</p>
     pub fn before_commit_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -98,7 +99,8 @@ impl PostCommentForComparedCommitOutputBuilder {
     }
     /// <p>In the directionality you established, the full commit ID of the before commit.</p>
     pub fn set_before_commit_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.before_commit_id = input; self
+        self.before_commit_id = input;
+        self
     }
     /// <p>In the directionality you established, the full commit ID of the after commit.</p>
     pub fn after_commit_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -107,7 +109,8 @@ impl PostCommentForComparedCommitOutputBuilder {
     }
     /// <p>In the directionality you established, the full commit ID of the after commit.</p>
     pub fn set_after_commit_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.after_commit_id = input; self
+        self.after_commit_id = input;
+        self
     }
     /// <p>In the directionality you established, the blob ID of the before blob.</p>
     pub fn before_blob_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -116,7 +119,8 @@ impl PostCommentForComparedCommitOutputBuilder {
     }
     /// <p>In the directionality you established, the blob ID of the before blob.</p>
     pub fn set_before_blob_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.before_blob_id = input; self
+        self.before_blob_id = input;
+        self
     }
     /// <p>In the directionality you established, the blob ID of the after blob.</p>
     pub fn after_blob_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -125,7 +129,8 @@ impl PostCommentForComparedCommitOutputBuilder {
     }
     /// <p>In the directionality you established, the blob ID of the after blob.</p>
     pub fn set_after_blob_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.after_blob_id = input; self
+        self.after_blob_id = input;
+        self
     }
     /// <p>The location of the comment in the comparison between the two commits.</p>
     pub fn location(mut self, input: crate::types::Location) -> Self {
@@ -134,7 +139,8 @@ impl PostCommentForComparedCommitOutputBuilder {
     }
     /// <p>The location of the comment in the comparison between the two commits.</p>
     pub fn set_location(mut self, input: std::option::Option<crate::types::Location>) -> Self {
-        self.location = input; self
+        self.location = input;
+        self
     }
     /// <p>The content of the comment you posted.</p>
     pub fn comment(mut self, input: crate::types::Comment) -> Self {
@@ -143,36 +149,32 @@ impl PostCommentForComparedCommitOutputBuilder {
     }
     /// <p>The content of the comment you posted.</p>
     pub fn set_comment(mut self, input: std::option::Option<crate::types::Comment>) -> Self {
-        self.comment = input; self
+        self.comment = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`PostCommentForComparedCommitOutput`](crate::operation::post_comment_for_compared_commit::PostCommentForComparedCommitOutput).
-    pub fn build(self) -> crate::operation::post_comment_for_compared_commit::PostCommentForComparedCommitOutput {
+    pub fn build(
+        self,
+    ) -> crate::operation::post_comment_for_compared_commit::PostCommentForComparedCommitOutput
+    {
         crate::operation::post_comment_for_compared_commit::PostCommentForComparedCommitOutput {
-            repository_name: self.repository_name
-            ,
-            before_commit_id: self.before_commit_id
-            ,
-            after_commit_id: self.after_commit_id
-            ,
-            before_blob_id: self.before_blob_id
-            ,
-            after_blob_id: self.after_blob_id
-            ,
-            location: self.location
-            ,
-            comment: self.comment
-            ,
+            repository_name: self.repository_name,
+            before_commit_id: self.before_commit_id,
+            after_commit_id: self.after_commit_id,
+            before_blob_id: self.before_blob_id,
+            after_blob_id: self.after_blob_id,
+            location: self.location,
+            comment: self.comment,
             _request_id: self._request_id,
         }
     }
 }
-

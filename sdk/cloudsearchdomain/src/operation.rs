@@ -9,4 +9,3 @@ pub mod suggest;
 
 /// Types for the `UploadDocuments` operation.
 pub mod upload_documents;
-

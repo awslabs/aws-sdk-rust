@@ -2,20 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteConnectionAliasInput  {
+pub struct DeleteConnectionAliasInput {
     /// <p>The identifier of the connection alias to delete.</p>
     #[doc(hidden)]
     pub alias_id: std::option::Option<std::string::String>,
 }
 impl DeleteConnectionAliasInput {
     /// <p>The identifier of the connection alias to delete.</p>
-    pub fn alias_id(&self) -> std::option::Option<& str> {
+    pub fn alias_id(&self) -> std::option::Option<&str> {
         self.alias_id.as_deref()
     }
 }
 impl DeleteConnectionAliasInput {
     /// Creates a new builder-style object to manufacture [`DeleteConnectionAliasInput`](crate::operation::delete_connection_alias::DeleteConnectionAliasInput).
-    pub fn builder() -> crate::operation::delete_connection_alias::builders::DeleteConnectionAliasInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::delete_connection_alias::builders::DeleteConnectionAliasInputBuilder
+    {
         crate::operation::delete_connection_alias::builders::DeleteConnectionAliasInputBuilder::default()
     }
 }
@@ -34,16 +36,20 @@ impl DeleteConnectionAliasInputBuilder {
     }
     /// <p>The identifier of the connection alias to delete.</p>
     pub fn set_alias_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.alias_id = input; self
+        self.alias_id = input;
+        self
     }
     /// Consumes the builder and constructs a [`DeleteConnectionAliasInput`](crate::operation::delete_connection_alias::DeleteConnectionAliasInput).
-    pub fn build(self) -> Result<crate::operation::delete_connection_alias::DeleteConnectionAliasInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::delete_connection_alias::DeleteConnectionAliasInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::delete_connection_alias::DeleteConnectionAliasInput {
-                alias_id: self.alias_id
-                ,
-            }
+                alias_id: self.alias_id,
+            },
         )
     }
 }
-

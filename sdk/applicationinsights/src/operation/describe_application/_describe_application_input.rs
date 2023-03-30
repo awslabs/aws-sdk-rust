@@ -2,20 +2,21 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeApplicationInput  {
+pub struct DescribeApplicationInput {
     /// <p>The name of the resource group.</p>
     #[doc(hidden)]
     pub resource_group_name: std::option::Option<std::string::String>,
 }
 impl DescribeApplicationInput {
     /// <p>The name of the resource group.</p>
-    pub fn resource_group_name(&self) -> std::option::Option<& str> {
+    pub fn resource_group_name(&self) -> std::option::Option<&str> {
         self.resource_group_name.as_deref()
     }
 }
 impl DescribeApplicationInput {
     /// Creates a new builder-style object to manufacture [`DescribeApplicationInput`](crate::operation::describe_application::DescribeApplicationInput).
-    pub fn builder() -> crate::operation::describe_application::builders::DescribeApplicationInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::describe_application::builders::DescribeApplicationInputBuilder {
         crate::operation::describe_application::builders::DescribeApplicationInputBuilder::default()
     }
 }
@@ -33,17 +34,24 @@ impl DescribeApplicationInputBuilder {
         self
     }
     /// <p>The name of the resource group.</p>
-    pub fn set_resource_group_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.resource_group_name = input; self
+    pub fn set_resource_group_name(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.resource_group_name = input;
+        self
     }
     /// Consumes the builder and constructs a [`DescribeApplicationInput`](crate::operation::describe_application::DescribeApplicationInput).
-    pub fn build(self) -> Result<crate::operation::describe_application::DescribeApplicationInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::describe_application::DescribeApplicationInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::describe_application::DescribeApplicationInput {
-                resource_group_name: self.resource_group_name
-                ,
-            }
+                resource_group_name: self.resource_group_name,
+            },
         )
     }
 }
-

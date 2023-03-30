@@ -2,20 +2,21 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetChannelPolicyInput  {
+pub struct GetChannelPolicyInput {
     /// <p>The name of the channel associated with this Channel Policy.</p>
     #[doc(hidden)]
     pub channel_name: std::option::Option<std::string::String>,
 }
 impl GetChannelPolicyInput {
     /// <p>The name of the channel associated with this Channel Policy.</p>
-    pub fn channel_name(&self) -> std::option::Option<& str> {
+    pub fn channel_name(&self) -> std::option::Option<&str> {
         self.channel_name.as_deref()
     }
 }
 impl GetChannelPolicyInput {
     /// Creates a new builder-style object to manufacture [`GetChannelPolicyInput`](crate::operation::get_channel_policy::GetChannelPolicyInput).
-    pub fn builder() -> crate::operation::get_channel_policy::builders::GetChannelPolicyInputBuilder {
+    pub fn builder() -> crate::operation::get_channel_policy::builders::GetChannelPolicyInputBuilder
+    {
         crate::operation::get_channel_policy::builders::GetChannelPolicyInputBuilder::default()
     }
 }
@@ -34,16 +35,20 @@ impl GetChannelPolicyInputBuilder {
     }
     /// <p>The name of the channel associated with this Channel Policy.</p>
     pub fn set_channel_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.channel_name = input; self
+        self.channel_name = input;
+        self
     }
     /// Consumes the builder and constructs a [`GetChannelPolicyInput`](crate::operation::get_channel_policy::GetChannelPolicyInput).
-    pub fn build(self) -> Result<crate::operation::get_channel_policy::GetChannelPolicyInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::get_channel_policy::GetChannelPolicyInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::get_channel_policy::GetChannelPolicyInput {
-                channel_name: self.channel_name
-                ,
-            }
+                channel_name: self.channel_name,
+            },
         )
     }
 }
-

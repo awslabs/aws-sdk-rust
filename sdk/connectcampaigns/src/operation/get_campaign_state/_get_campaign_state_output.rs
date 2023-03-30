@@ -3,7 +3,7 @@
 /// GetCampaignStateResponse
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetCampaignStateOutput  {
+pub struct GetCampaignStateOutput {
     /// State of a campaign
     #[doc(hidden)]
     pub state: std::option::Option<crate::types::CampaignState>,
@@ -11,18 +11,19 @@ pub struct GetCampaignStateOutput  {
 }
 impl GetCampaignStateOutput {
     /// State of a campaign
-    pub fn state(&self) -> std::option::Option<& crate::types::CampaignState> {
+    pub fn state(&self) -> std::option::Option<&crate::types::CampaignState> {
         self.state.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for GetCampaignStateOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl GetCampaignStateOutput {
     /// Creates a new builder-style object to manufacture [`GetCampaignStateOutput`](crate::operation::get_campaign_state::GetCampaignStateOutput).
-    pub fn builder() -> crate::operation::get_campaign_state::builders::GetCampaignStateOutputBuilder {
+    pub fn builder() -> crate::operation::get_campaign_state::builders::GetCampaignStateOutputBuilder
+    {
         crate::operation::get_campaign_state::builders::GetCampaignStateOutputBuilder::default()
     }
 }
@@ -42,24 +43,23 @@ impl GetCampaignStateOutputBuilder {
     }
     /// State of a campaign
     pub fn set_state(mut self, input: std::option::Option<crate::types::CampaignState>) -> Self {
-        self.state = input; self
+        self.state = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`GetCampaignStateOutput`](crate::operation::get_campaign_state::GetCampaignStateOutput).
     pub fn build(self) -> crate::operation::get_campaign_state::GetCampaignStateOutput {
         crate::operation::get_campaign_state::GetCampaignStateOutput {
-            state: self.state
-            ,
+            state: self.state,
             _request_id: self._request_id,
         }
     }
 }
-

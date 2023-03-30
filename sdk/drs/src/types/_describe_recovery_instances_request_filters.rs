@@ -3,7 +3,7 @@
 /// <p>A set of filters by which to return Recovery Instances.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeRecoveryInstancesRequestFilters  {
+pub struct DescribeRecoveryInstancesRequestFilters {
     /// <p>An array of Recovery Instance IDs that should be returned. An empty array means all Recovery Instances.</p>
     #[doc(hidden)]
     pub recovery_instance_i_ds: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -13,11 +13,11 @@ pub struct DescribeRecoveryInstancesRequestFilters  {
 }
 impl DescribeRecoveryInstancesRequestFilters {
     /// <p>An array of Recovery Instance IDs that should be returned. An empty array means all Recovery Instances.</p>
-    pub fn recovery_instance_i_ds(&self) -> std::option::Option<& [std::string::String]> {
+    pub fn recovery_instance_i_ds(&self) -> std::option::Option<&[std::string::String]> {
         self.recovery_instance_i_ds.as_deref()
     }
     /// <p>An array of Source Server IDs for which associated Recovery Instances should be returned.</p>
-    pub fn source_server_i_ds(&self) -> std::option::Option<& [std::string::String]> {
+    pub fn source_server_i_ds(&self) -> std::option::Option<&[std::string::String]> {
         self.source_server_i_ds.as_deref()
     }
 }
@@ -43,13 +43,17 @@ impl DescribeRecoveryInstancesRequestFiltersBuilder {
     /// <p>An array of Recovery Instance IDs that should be returned. An empty array means all Recovery Instances.</p>
     pub fn recovery_instance_i_ds(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.recovery_instance_i_ds.unwrap_or_default();
-                        v.push(input.into());
-                        self.recovery_instance_i_ds = Some(v);
-                        self
+        v.push(input.into());
+        self.recovery_instance_i_ds = Some(v);
+        self
     }
     /// <p>An array of Recovery Instance IDs that should be returned. An empty array means all Recovery Instances.</p>
-    pub fn set_recovery_instance_i_ds(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-        self.recovery_instance_i_ds = input; self
+    pub fn set_recovery_instance_i_ds(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
+        self.recovery_instance_i_ds = input;
+        self
     }
     /// Appends an item to `source_server_i_ds`.
     ///
@@ -58,22 +62,23 @@ impl DescribeRecoveryInstancesRequestFiltersBuilder {
     /// <p>An array of Source Server IDs for which associated Recovery Instances should be returned.</p>
     pub fn source_server_i_ds(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.source_server_i_ds.unwrap_or_default();
-                        v.push(input.into());
-                        self.source_server_i_ds = Some(v);
-                        self
+        v.push(input.into());
+        self.source_server_i_ds = Some(v);
+        self
     }
     /// <p>An array of Source Server IDs for which associated Recovery Instances should be returned.</p>
-    pub fn set_source_server_i_ds(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-        self.source_server_i_ds = input; self
+    pub fn set_source_server_i_ds(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
+        self.source_server_i_ds = input;
+        self
     }
     /// Consumes the builder and constructs a [`DescribeRecoveryInstancesRequestFilters`](crate::types::DescribeRecoveryInstancesRequestFilters).
     pub fn build(self) -> crate::types::DescribeRecoveryInstancesRequestFilters {
         crate::types::DescribeRecoveryInstancesRequestFilters {
-            recovery_instance_i_ds: self.recovery_instance_i_ds
-            ,
-            source_server_i_ds: self.source_server_i_ds
-            ,
+            recovery_instance_i_ds: self.recovery_instance_i_ds,
+            source_server_i_ds: self.source_server_i_ds,
         }
     }
 }
-

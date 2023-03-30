@@ -3,7 +3,7 @@
 /// <p>Details about a Lambda function URL.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct FunctionUrlConfig  {
+pub struct FunctionUrlConfig {
     /// <p>The HTTP URL endpoint for your function.</p>
     #[doc(hidden)]
     pub function_url: std::option::Option<std::string::String>,
@@ -25,27 +25,27 @@ pub struct FunctionUrlConfig  {
 }
 impl FunctionUrlConfig {
     /// <p>The HTTP URL endpoint for your function.</p>
-    pub fn function_url(&self) -> std::option::Option<& str> {
+    pub fn function_url(&self) -> std::option::Option<&str> {
         self.function_url.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of your function.</p>
-    pub fn function_arn(&self) -> std::option::Option<& str> {
+    pub fn function_arn(&self) -> std::option::Option<&str> {
         self.function_arn.as_deref()
     }
     /// <p>When the function URL was created, in <a href="https://www.w3.org/TR/NOTE-datetime">ISO-8601 format</a> (YYYY-MM-DDThh:mm:ss.sTZD).</p>
-    pub fn creation_time(&self) -> std::option::Option<& str> {
+    pub fn creation_time(&self) -> std::option::Option<&str> {
         self.creation_time.as_deref()
     }
     /// <p>When the function URL configuration was last updated, in <a href="https://www.w3.org/TR/NOTE-datetime">ISO-8601 format</a> (YYYY-MM-DDThh:mm:ss.sTZD).</p>
-    pub fn last_modified_time(&self) -> std::option::Option<& str> {
+    pub fn last_modified_time(&self) -> std::option::Option<&str> {
         self.last_modified_time.as_deref()
     }
     /// <p>The <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS">cross-origin resource sharing (CORS)</a> settings for your function URL.</p>
-    pub fn cors(&self) -> std::option::Option<& crate::types::Cors> {
+    pub fn cors(&self) -> std::option::Option<&crate::types::Cors> {
         self.cors.as_ref()
     }
     /// <p>The type of authentication that your function URL uses. Set to <code>AWS_IAM</code> if you want to restrict access to authenticated IAM users only. Set to <code>NONE</code> if you want to bypass IAM authentication to create a public endpoint. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/urls-auth.html">Security and auth model for Lambda function URLs</a>.</p>
-    pub fn auth_type(&self) -> std::option::Option<& crate::types::FunctionUrlAuthType> {
+    pub fn auth_type(&self) -> std::option::Option<&crate::types::FunctionUrlAuthType> {
         self.auth_type.as_ref()
     }
 }
@@ -75,7 +75,8 @@ impl FunctionUrlConfigBuilder {
     }
     /// <p>The HTTP URL endpoint for your function.</p>
     pub fn set_function_url(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.function_url = input; self
+        self.function_url = input;
+        self
     }
     /// <p>The Amazon Resource Name (ARN) of your function.</p>
     pub fn function_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -84,7 +85,8 @@ impl FunctionUrlConfigBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of your function.</p>
     pub fn set_function_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.function_arn = input; self
+        self.function_arn = input;
+        self
     }
     /// <p>When the function URL was created, in <a href="https://www.w3.org/TR/NOTE-datetime">ISO-8601 format</a> (YYYY-MM-DDThh:mm:ss.sTZD).</p>
     pub fn creation_time(mut self, input: impl Into<std::string::String>) -> Self {
@@ -93,7 +95,8 @@ impl FunctionUrlConfigBuilder {
     }
     /// <p>When the function URL was created, in <a href="https://www.w3.org/TR/NOTE-datetime">ISO-8601 format</a> (YYYY-MM-DDThh:mm:ss.sTZD).</p>
     pub fn set_creation_time(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.creation_time = input; self
+        self.creation_time = input;
+        self
     }
     /// <p>When the function URL configuration was last updated, in <a href="https://www.w3.org/TR/NOTE-datetime">ISO-8601 format</a> (YYYY-MM-DDThh:mm:ss.sTZD).</p>
     pub fn last_modified_time(mut self, input: impl Into<std::string::String>) -> Self {
@@ -101,8 +104,12 @@ impl FunctionUrlConfigBuilder {
         self
     }
     /// <p>When the function URL configuration was last updated, in <a href="https://www.w3.org/TR/NOTE-datetime">ISO-8601 format</a> (YYYY-MM-DDThh:mm:ss.sTZD).</p>
-    pub fn set_last_modified_time(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.last_modified_time = input; self
+    pub fn set_last_modified_time(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.last_modified_time = input;
+        self
     }
     /// <p>The <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS">cross-origin resource sharing (CORS)</a> settings for your function URL.</p>
     pub fn cors(mut self, input: crate::types::Cors) -> Self {
@@ -111,7 +118,8 @@ impl FunctionUrlConfigBuilder {
     }
     /// <p>The <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS">cross-origin resource sharing (CORS)</a> settings for your function URL.</p>
     pub fn set_cors(mut self, input: std::option::Option<crate::types::Cors>) -> Self {
-        self.cors = input; self
+        self.cors = input;
+        self
     }
     /// <p>The type of authentication that your function URL uses. Set to <code>AWS_IAM</code> if you want to restrict access to authenticated IAM users only. Set to <code>NONE</code> if you want to bypass IAM authentication to create a public endpoint. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/urls-auth.html">Security and auth model for Lambda function URLs</a>.</p>
     pub fn auth_type(mut self, input: crate::types::FunctionUrlAuthType) -> Self {
@@ -119,25 +127,22 @@ impl FunctionUrlConfigBuilder {
         self
     }
     /// <p>The type of authentication that your function URL uses. Set to <code>AWS_IAM</code> if you want to restrict access to authenticated IAM users only. Set to <code>NONE</code> if you want to bypass IAM authentication to create a public endpoint. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/urls-auth.html">Security and auth model for Lambda function URLs</a>.</p>
-    pub fn set_auth_type(mut self, input: std::option::Option<crate::types::FunctionUrlAuthType>) -> Self {
-        self.auth_type = input; self
+    pub fn set_auth_type(
+        mut self,
+        input: std::option::Option<crate::types::FunctionUrlAuthType>,
+    ) -> Self {
+        self.auth_type = input;
+        self
     }
     /// Consumes the builder and constructs a [`FunctionUrlConfig`](crate::types::FunctionUrlConfig).
     pub fn build(self) -> crate::types::FunctionUrlConfig {
         crate::types::FunctionUrlConfig {
-            function_url: self.function_url
-            ,
-            function_arn: self.function_arn
-            ,
-            creation_time: self.creation_time
-            ,
-            last_modified_time: self.last_modified_time
-            ,
-            cors: self.cors
-            ,
-            auth_type: self.auth_type
-            ,
+            function_url: self.function_url,
+            function_arn: self.function_arn,
+            creation_time: self.creation_time,
+            last_modified_time: self.last_modified_time,
+            cors: self.cors,
+            auth_type: self.auth_type,
         }
     }
 }
-

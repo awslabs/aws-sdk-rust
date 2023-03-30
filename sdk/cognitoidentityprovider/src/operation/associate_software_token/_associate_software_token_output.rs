@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct AssociateSoftwareTokenOutput  {
+pub struct AssociateSoftwareTokenOutput {
     /// <p>A unique generated shared secret code that is used in the TOTP algorithm to generate a one-time code.</p>
     #[doc(hidden)]
     pub secret_code: std::option::Option<std::string::String>,
@@ -13,15 +13,15 @@ pub struct AssociateSoftwareTokenOutput  {
 }
 impl AssociateSoftwareTokenOutput {
     /// <p>A unique generated shared secret code that is used in the TOTP algorithm to generate a one-time code.</p>
-    pub fn secret_code(&self) -> std::option::Option<& str> {
+    pub fn secret_code(&self) -> std::option::Option<&str> {
         self.secret_code.as_deref()
     }
     /// <p>The session that should be passed both ways in challenge-response calls to the service. This allows authentication of the user as part of the MFA setup process.</p>
-    pub fn session(&self) -> std::option::Option<& str> {
+    pub fn session(&self) -> std::option::Option<&str> {
         self.session.as_deref()
     }
 }
-impl  std::fmt::Debug for AssociateSoftwareTokenOutput  {
+impl std::fmt::Debug for AssociateSoftwareTokenOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("AssociateSoftwareTokenOutput");
         formatter.field("secret_code", &"*** Sensitive Data Redacted ***");
@@ -31,13 +31,15 @@ impl  std::fmt::Debug for AssociateSoftwareTokenOutput  {
     }
 }
 impl aws_http::request_id::RequestId for AssociateSoftwareTokenOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl AssociateSoftwareTokenOutput {
     /// Creates a new builder-style object to manufacture [`AssociateSoftwareTokenOutput`](crate::operation::associate_software_token::AssociateSoftwareTokenOutput).
-    pub fn builder() -> crate::operation::associate_software_token::builders::AssociateSoftwareTokenOutputBuilder {
+    pub fn builder(
+    ) -> crate::operation::associate_software_token::builders::AssociateSoftwareTokenOutputBuilder
+    {
         crate::operation::associate_software_token::builders::AssociateSoftwareTokenOutputBuilder::default()
     }
 }
@@ -58,7 +60,8 @@ impl AssociateSoftwareTokenOutputBuilder {
     }
     /// <p>A unique generated shared secret code that is used in the TOTP algorithm to generate a one-time code.</p>
     pub fn set_secret_code(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.secret_code = input; self
+        self.secret_code = input;
+        self
     }
     /// <p>The session that should be passed both ways in challenge-response calls to the service. This allows authentication of the user as part of the MFA setup process.</p>
     pub fn session(mut self, input: impl Into<std::string::String>) -> Self {
@@ -67,24 +70,23 @@ impl AssociateSoftwareTokenOutputBuilder {
     }
     /// <p>The session that should be passed both ways in challenge-response calls to the service. This allows authentication of the user as part of the MFA setup process.</p>
     pub fn set_session(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.session = input; self
+        self.session = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`AssociateSoftwareTokenOutput`](crate::operation::associate_software_token::AssociateSoftwareTokenOutput).
     pub fn build(self) -> crate::operation::associate_software_token::AssociateSoftwareTokenOutput {
         crate::operation::associate_software_token::AssociateSoftwareTokenOutput {
-            secret_code: self.secret_code
-            ,
-            session: self.session
-            ,
+            secret_code: self.secret_code,
+            session: self.session,
             _request_id: self._request_id,
         }
     }
@@ -98,4 +100,3 @@ impl std::fmt::Debug for AssociateSoftwareTokenOutputBuilder {
         formatter.finish()
     }
 }
-

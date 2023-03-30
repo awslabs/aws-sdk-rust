@@ -3,7 +3,7 @@
 /// <p>Points to a remote domain with which you are setting up a trust relationship. Conditional forwarders are required in order to set up a trust relationship with another domain.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ConditionalForwarder  {
+pub struct ConditionalForwarder {
     /// <p>The fully qualified domain name (FQDN) of the remote domains pointed to by the conditional forwarder.</p>
     #[doc(hidden)]
     pub remote_domain_name: std::option::Option<std::string::String>,
@@ -16,15 +16,15 @@ pub struct ConditionalForwarder  {
 }
 impl ConditionalForwarder {
     /// <p>The fully qualified domain name (FQDN) of the remote domains pointed to by the conditional forwarder.</p>
-    pub fn remote_domain_name(&self) -> std::option::Option<& str> {
+    pub fn remote_domain_name(&self) -> std::option::Option<&str> {
         self.remote_domain_name.as_deref()
     }
     /// <p>The IP addresses of the remote DNS server associated with RemoteDomainName. This is the IP address of the DNS server that your conditional forwarder points to.</p>
-    pub fn dns_ip_addrs(&self) -> std::option::Option<& [std::string::String]> {
+    pub fn dns_ip_addrs(&self) -> std::option::Option<&[std::string::String]> {
         self.dns_ip_addrs.as_deref()
     }
     /// <p>The replication scope of the conditional forwarder. The only allowed value is <code>Domain</code>, which will replicate the conditional forwarder to all of the domain controllers for your Amazon Web Services directory.</p>
-    pub fn replication_scope(&self) -> std::option::Option<& crate::types::ReplicationScope> {
+    pub fn replication_scope(&self) -> std::option::Option<&crate::types::ReplicationScope> {
         self.replication_scope.as_ref()
     }
 }
@@ -50,8 +50,12 @@ impl ConditionalForwarderBuilder {
         self
     }
     /// <p>The fully qualified domain name (FQDN) of the remote domains pointed to by the conditional forwarder.</p>
-    pub fn set_remote_domain_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.remote_domain_name = input; self
+    pub fn set_remote_domain_name(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.remote_domain_name = input;
+        self
     }
     /// Appends an item to `dns_ip_addrs`.
     ///
@@ -60,13 +64,17 @@ impl ConditionalForwarderBuilder {
     /// <p>The IP addresses of the remote DNS server associated with RemoteDomainName. This is the IP address of the DNS server that your conditional forwarder points to.</p>
     pub fn dns_ip_addrs(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.dns_ip_addrs.unwrap_or_default();
-                        v.push(input.into());
-                        self.dns_ip_addrs = Some(v);
-                        self
+        v.push(input.into());
+        self.dns_ip_addrs = Some(v);
+        self
     }
     /// <p>The IP addresses of the remote DNS server associated with RemoteDomainName. This is the IP address of the DNS server that your conditional forwarder points to.</p>
-    pub fn set_dns_ip_addrs(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-        self.dns_ip_addrs = input; self
+    pub fn set_dns_ip_addrs(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
+        self.dns_ip_addrs = input;
+        self
     }
     /// <p>The replication scope of the conditional forwarder. The only allowed value is <code>Domain</code>, which will replicate the conditional forwarder to all of the domain controllers for your Amazon Web Services directory.</p>
     pub fn replication_scope(mut self, input: crate::types::ReplicationScope) -> Self {
@@ -74,19 +82,19 @@ impl ConditionalForwarderBuilder {
         self
     }
     /// <p>The replication scope of the conditional forwarder. The only allowed value is <code>Domain</code>, which will replicate the conditional forwarder to all of the domain controllers for your Amazon Web Services directory.</p>
-    pub fn set_replication_scope(mut self, input: std::option::Option<crate::types::ReplicationScope>) -> Self {
-        self.replication_scope = input; self
+    pub fn set_replication_scope(
+        mut self,
+        input: std::option::Option<crate::types::ReplicationScope>,
+    ) -> Self {
+        self.replication_scope = input;
+        self
     }
     /// Consumes the builder and constructs a [`ConditionalForwarder`](crate::types::ConditionalForwarder).
     pub fn build(self) -> crate::types::ConditionalForwarder {
         crate::types::ConditionalForwarder {
-            remote_domain_name: self.remote_domain_name
-            ,
-            dns_ip_addrs: self.dns_ip_addrs
-            ,
-            replication_scope: self.replication_scope
-            ,
+            remote_domain_name: self.remote_domain_name,
+            dns_ip_addrs: self.dns_ip_addrs,
+            replication_scope: self.replication_scope,
         }
     }
 }
-

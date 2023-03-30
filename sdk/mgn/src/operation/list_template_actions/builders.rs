@@ -4,62 +4,95 @@ pub use crate::operation::list_template_actions::_list_template_actions_output::
 pub use crate::operation::list_template_actions::_list_template_actions_input::ListTemplateActionsInputBuilder;
 
 /// Fluent builder constructing a request to `ListTemplateActions`.
-/// 
+///
 /// <p>List template post migration custom actions.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListTemplateActionsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::list_template_actions::builders::ListTemplateActionsInputBuilder
-            }
-impl ListTemplateActionsFluentBuilder  {
+    handle: std::sync::Arc<crate::client::Handle>,
+    inner: crate::operation::list_template_actions::builders::ListTemplateActionsInputBuilder,
+}
+impl ListTemplateActionsFluentBuilder {
     /// Creates a new `ListTemplateActions`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
-                    /// sent. The operation's inner [http::Request] can be modified as well.
-                    pub async fn customize(self) -> std::result::Result<
-                        crate::client::customize::CustomizableOperation<crate::operation::list_template_actions::ListTemplateActions, aws_http::retry::AwsResponseRetryClassifier,>,
-                        aws_smithy_http::result::SdkError<crate::operation::list_template_actions::ListTemplateActionsError>
-                    >  {
-                        let handle = self.handle.clone();
-                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-                    }
-    
-                    /// Sends the request and returns the response.
-                    ///
-                    /// If an error occurs, an `SdkError` will be returned with additional details that
-                    /// can be matched against.
-                    ///
-                    /// By default, any retryable failures will be retried twice. Retry behavior
-                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                    /// set when configuring the client.
-                    pub async fn send(self) -> std::result::Result<crate::operation::list_template_actions::ListTemplateActionsOutput, aws_smithy_http::result::SdkError<crate::operation::list_template_actions::ListTemplateActionsError>>
-                     {
-                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&self.handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        self.handle.client.call(op).await
-                    }
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle,
+            inner: Default::default(),
+        }
+    }
+
+    /// Consume this builder, creating a customizable operation that can be modified before being
+    /// sent. The operation's inner [http::Request] can be modified as well.
+    pub async fn customize(
+        self,
+    ) -> std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::list_template_actions::ListTemplateActions,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::result::SdkError<
+            crate::operation::list_template_actions::ListTemplateActionsError,
+        >,
+    > {
+        let handle = self.handle.clone();
+        let operation = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+    }
+
+    /// Sends the request and returns the response.
+    ///
+    /// If an error occurs, an `SdkError` will be returned with additional details that
+    /// can be matched against.
+    ///
+    /// By default, any retryable failures will be retried twice. Retry behavior
+    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+    /// set when configuring the client.
+    pub async fn send(
+        self,
+    ) -> std::result::Result<
+        crate::operation::list_template_actions::ListTemplateActionsOutput,
+        aws_smithy_http::result::SdkError<
+            crate::operation::list_template_actions::ListTemplateActionsError,
+        >,
+    > {
+        let op = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&self.handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        self.handle.client.call(op).await
+    }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::list_template_actions::paginator::ListTemplateActionsPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::list_template_actions::paginator::ListTemplateActionsPaginator {
-                            crate::operation::list_template_actions::paginator::ListTemplateActionsPaginator::new(self.handle, self.inner)
-                        }
+    ///
+    /// Paginators are used by calling [`send().await`](crate::operation::list_template_actions::paginator::ListTemplateActionsPaginator::send) which returns a `Stream`.
+    pub fn into_paginator(
+        self,
+    ) -> crate::operation::list_template_actions::paginator::ListTemplateActionsPaginator {
+        crate::operation::list_template_actions::paginator::ListTemplateActionsPaginator::new(
+            self.handle,
+            self.inner,
+        )
+    }
     /// <p>Launch configuration template ID.</p>
-    pub fn launch_configuration_template_id(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn launch_configuration_template_id(
+        mut self,
+        input: impl Into<std::string::String>,
+    ) -> Self {
         self.inner = self.inner.launch_configuration_template_id(input.into());
         self
     }
     /// <p>Launch configuration template ID.</p>
-    pub fn set_launch_configuration_template_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_launch_configuration_template_id(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_launch_configuration_template_id(input);
         self
     }
@@ -69,7 +102,10 @@ impl ListTemplateActionsFluentBuilder  {
         self
     }
     /// <p>Filters to apply when listing template post migration custom actions.</p>
-    pub fn set_filters(mut self, input: std::option::Option<crate::types::TemplateActionsRequestFilters>) -> Self {
+    pub fn set_filters(
+        mut self,
+        input: std::option::Option<crate::types::TemplateActionsRequestFilters>,
+    ) -> Self {
         self.inner = self.inner.set_filters(input);
         self
     }
@@ -94,4 +130,3 @@ impl ListTemplateActionsFluentBuilder  {
         self
     }
 }
-

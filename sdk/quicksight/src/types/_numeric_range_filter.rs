@@ -3,7 +3,7 @@
 /// <p>A <code>NumericRangeFilter</code> filters values that are within the value range.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct NumericRangeFilter  {
+pub struct NumericRangeFilter {
     /// <p>An identifier that uniquely identifies a filter within a dashboard, analysis, or template.</p>
     #[doc(hidden)]
     pub filter_id: std::option::Option<std::string::String>,
@@ -22,31 +22,31 @@ pub struct NumericRangeFilter  {
     /// <p>The maximum value for the filter value range.</p>
     #[doc(hidden)]
     pub range_maximum: std::option::Option<crate::types::NumericRangeFilterValue>,
-    /// <p>Select all of the values. Null is not the assigned value of select all.</p> 
-    /// <ul> 
-    /// <li> <p> <code>FILTER_ALL_VALUES</code> </p> </li> 
+    /// <p>Select all of the values. Null is not the assigned value of select all.</p>
+    /// <ul>
+    /// <li> <p> <code>FILTER_ALL_VALUES</code> </p> </li>
     /// </ul>
     #[doc(hidden)]
     pub select_all_options: std::option::Option<crate::types::NumericFilterSelectAllOptions>,
     /// <p>The aggregation function of the filter.</p>
     #[doc(hidden)]
     pub aggregation_function: std::option::Option<crate::types::AggregationFunction>,
-    /// <p>This option determines how null values should be treated when filtering data.</p> 
-    /// <ul> 
-    /// <li> <p> <code>ALL_VALUES</code>: Include null values in filtered results.</p> </li> 
-    /// <li> <p> <code>NULLS_ONLY</code>: Only include null values in filtered results.</p> </li> 
-    /// <li> <p> <code>NON_NULLS_ONLY</code>: Exclude null values from filtered results.</p> </li> 
+    /// <p>This option determines how null values should be treated when filtering data.</p>
+    /// <ul>
+    /// <li> <p> <code>ALL_VALUES</code>: Include null values in filtered results.</p> </li>
+    /// <li> <p> <code>NULLS_ONLY</code>: Only include null values in filtered results.</p> </li>
+    /// <li> <p> <code>NON_NULLS_ONLY</code>: Exclude null values from filtered results.</p> </li>
     /// </ul>
     #[doc(hidden)]
     pub null_option: std::option::Option<crate::types::FilterNullOption>,
 }
 impl NumericRangeFilter {
     /// <p>An identifier that uniquely identifies a filter within a dashboard, analysis, or template.</p>
-    pub fn filter_id(&self) -> std::option::Option<& str> {
+    pub fn filter_id(&self) -> std::option::Option<&str> {
         self.filter_id.as_deref()
     }
     /// <p>The column that the filter is applied to.</p>
-    pub fn column(&self) -> std::option::Option<& crate::types::ColumnIdentifier> {
+    pub fn column(&self) -> std::option::Option<&crate::types::ColumnIdentifier> {
         self.column.as_ref()
     }
     /// <p>Determines whether the minimum value in the filter value range should be included in the filtered results.</p>
@@ -58,31 +58,33 @@ impl NumericRangeFilter {
         self.include_maximum
     }
     /// <p>The minimum value for the filter value range.</p>
-    pub fn range_minimum(&self) -> std::option::Option<& crate::types::NumericRangeFilterValue> {
+    pub fn range_minimum(&self) -> std::option::Option<&crate::types::NumericRangeFilterValue> {
         self.range_minimum.as_ref()
     }
     /// <p>The maximum value for the filter value range.</p>
-    pub fn range_maximum(&self) -> std::option::Option<& crate::types::NumericRangeFilterValue> {
+    pub fn range_maximum(&self) -> std::option::Option<&crate::types::NumericRangeFilterValue> {
         self.range_maximum.as_ref()
     }
-    /// <p>Select all of the values. Null is not the assigned value of select all.</p> 
-    /// <ul> 
-    /// <li> <p> <code>FILTER_ALL_VALUES</code> </p> </li> 
+    /// <p>Select all of the values. Null is not the assigned value of select all.</p>
+    /// <ul>
+    /// <li> <p> <code>FILTER_ALL_VALUES</code> </p> </li>
     /// </ul>
-    pub fn select_all_options(&self) -> std::option::Option<& crate::types::NumericFilterSelectAllOptions> {
+    pub fn select_all_options(
+        &self,
+    ) -> std::option::Option<&crate::types::NumericFilterSelectAllOptions> {
         self.select_all_options.as_ref()
     }
     /// <p>The aggregation function of the filter.</p>
-    pub fn aggregation_function(&self) -> std::option::Option<& crate::types::AggregationFunction> {
+    pub fn aggregation_function(&self) -> std::option::Option<&crate::types::AggregationFunction> {
         self.aggregation_function.as_ref()
     }
-    /// <p>This option determines how null values should be treated when filtering data.</p> 
-    /// <ul> 
-    /// <li> <p> <code>ALL_VALUES</code>: Include null values in filtered results.</p> </li> 
-    /// <li> <p> <code>NULLS_ONLY</code>: Only include null values in filtered results.</p> </li> 
-    /// <li> <p> <code>NON_NULLS_ONLY</code>: Exclude null values from filtered results.</p> </li> 
+    /// <p>This option determines how null values should be treated when filtering data.</p>
+    /// <ul>
+    /// <li> <p> <code>ALL_VALUES</code>: Include null values in filtered results.</p> </li>
+    /// <li> <p> <code>NULLS_ONLY</code>: Only include null values in filtered results.</p> </li>
+    /// <li> <p> <code>NON_NULLS_ONLY</code>: Exclude null values from filtered results.</p> </li>
     /// </ul>
-    pub fn null_option(&self) -> std::option::Option<& crate::types::FilterNullOption> {
+    pub fn null_option(&self) -> std::option::Option<&crate::types::FilterNullOption> {
         self.null_option.as_ref()
     }
 }
@@ -115,7 +117,8 @@ impl NumericRangeFilterBuilder {
     }
     /// <p>An identifier that uniquely identifies a filter within a dashboard, analysis, or template.</p>
     pub fn set_filter_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.filter_id = input; self
+        self.filter_id = input;
+        self
     }
     /// <p>The column that the filter is applied to.</p>
     pub fn column(mut self, input: crate::types::ColumnIdentifier) -> Self {
@@ -123,8 +126,12 @@ impl NumericRangeFilterBuilder {
         self
     }
     /// <p>The column that the filter is applied to.</p>
-    pub fn set_column(mut self, input: std::option::Option<crate::types::ColumnIdentifier>) -> Self {
-        self.column = input; self
+    pub fn set_column(
+        mut self,
+        input: std::option::Option<crate::types::ColumnIdentifier>,
+    ) -> Self {
+        self.column = input;
+        self
     }
     /// <p>Determines whether the minimum value in the filter value range should be included in the filtered results.</p>
     pub fn include_minimum(mut self, input: bool) -> Self {
@@ -133,7 +140,8 @@ impl NumericRangeFilterBuilder {
     }
     /// <p>Determines whether the minimum value in the filter value range should be included in the filtered results.</p>
     pub fn set_include_minimum(mut self, input: std::option::Option<bool>) -> Self {
-        self.include_minimum = input; self
+        self.include_minimum = input;
+        self
     }
     /// <p>Determines whether the maximum value in the filter value range should be included in the filtered results.</p>
     pub fn include_maximum(mut self, input: bool) -> Self {
@@ -142,7 +150,8 @@ impl NumericRangeFilterBuilder {
     }
     /// <p>Determines whether the maximum value in the filter value range should be included in the filtered results.</p>
     pub fn set_include_maximum(mut self, input: std::option::Option<bool>) -> Self {
-        self.include_maximum = input; self
+        self.include_maximum = input;
+        self
     }
     /// <p>The minimum value for the filter value range.</p>
     pub fn range_minimum(mut self, input: crate::types::NumericRangeFilterValue) -> Self {
@@ -150,8 +159,12 @@ impl NumericRangeFilterBuilder {
         self
     }
     /// <p>The minimum value for the filter value range.</p>
-    pub fn set_range_minimum(mut self, input: std::option::Option<crate::types::NumericRangeFilterValue>) -> Self {
-        self.range_minimum = input; self
+    pub fn set_range_minimum(
+        mut self,
+        input: std::option::Option<crate::types::NumericRangeFilterValue>,
+    ) -> Self {
+        self.range_minimum = input;
+        self
     }
     /// <p>The maximum value for the filter value range.</p>
     pub fn range_maximum(mut self, input: crate::types::NumericRangeFilterValue) -> Self {
@@ -159,23 +172,34 @@ impl NumericRangeFilterBuilder {
         self
     }
     /// <p>The maximum value for the filter value range.</p>
-    pub fn set_range_maximum(mut self, input: std::option::Option<crate::types::NumericRangeFilterValue>) -> Self {
-        self.range_maximum = input; self
+    pub fn set_range_maximum(
+        mut self,
+        input: std::option::Option<crate::types::NumericRangeFilterValue>,
+    ) -> Self {
+        self.range_maximum = input;
+        self
     }
-    /// <p>Select all of the values. Null is not the assigned value of select all.</p> 
-    /// <ul> 
-    /// <li> <p> <code>FILTER_ALL_VALUES</code> </p> </li> 
+    /// <p>Select all of the values. Null is not the assigned value of select all.</p>
+    /// <ul>
+    /// <li> <p> <code>FILTER_ALL_VALUES</code> </p> </li>
     /// </ul>
-    pub fn select_all_options(mut self, input: crate::types::NumericFilterSelectAllOptions) -> Self {
+    pub fn select_all_options(
+        mut self,
+        input: crate::types::NumericFilterSelectAllOptions,
+    ) -> Self {
         self.select_all_options = Some(input);
         self
     }
-    /// <p>Select all of the values. Null is not the assigned value of select all.</p> 
-    /// <ul> 
-    /// <li> <p> <code>FILTER_ALL_VALUES</code> </p> </li> 
+    /// <p>Select all of the values. Null is not the assigned value of select all.</p>
+    /// <ul>
+    /// <li> <p> <code>FILTER_ALL_VALUES</code> </p> </li>
     /// </ul>
-    pub fn set_select_all_options(mut self, input: std::option::Option<crate::types::NumericFilterSelectAllOptions>) -> Self {
-        self.select_all_options = input; self
+    pub fn set_select_all_options(
+        mut self,
+        input: std::option::Option<crate::types::NumericFilterSelectAllOptions>,
+    ) -> Self {
+        self.select_all_options = input;
+        self
     }
     /// <p>The aggregation function of the filter.</p>
     pub fn aggregation_function(mut self, input: crate::types::AggregationFunction) -> Self {
@@ -183,50 +207,48 @@ impl NumericRangeFilterBuilder {
         self
     }
     /// <p>The aggregation function of the filter.</p>
-    pub fn set_aggregation_function(mut self, input: std::option::Option<crate::types::AggregationFunction>) -> Self {
-        self.aggregation_function = input; self
+    pub fn set_aggregation_function(
+        mut self,
+        input: std::option::Option<crate::types::AggregationFunction>,
+    ) -> Self {
+        self.aggregation_function = input;
+        self
     }
-    /// <p>This option determines how null values should be treated when filtering data.</p> 
-    /// <ul> 
-    /// <li> <p> <code>ALL_VALUES</code>: Include null values in filtered results.</p> </li> 
-    /// <li> <p> <code>NULLS_ONLY</code>: Only include null values in filtered results.</p> </li> 
-    /// <li> <p> <code>NON_NULLS_ONLY</code>: Exclude null values from filtered results.</p> </li> 
+    /// <p>This option determines how null values should be treated when filtering data.</p>
+    /// <ul>
+    /// <li> <p> <code>ALL_VALUES</code>: Include null values in filtered results.</p> </li>
+    /// <li> <p> <code>NULLS_ONLY</code>: Only include null values in filtered results.</p> </li>
+    /// <li> <p> <code>NON_NULLS_ONLY</code>: Exclude null values from filtered results.</p> </li>
     /// </ul>
     pub fn null_option(mut self, input: crate::types::FilterNullOption) -> Self {
         self.null_option = Some(input);
         self
     }
-    /// <p>This option determines how null values should be treated when filtering data.</p> 
-    /// <ul> 
-    /// <li> <p> <code>ALL_VALUES</code>: Include null values in filtered results.</p> </li> 
-    /// <li> <p> <code>NULLS_ONLY</code>: Only include null values in filtered results.</p> </li> 
-    /// <li> <p> <code>NON_NULLS_ONLY</code>: Exclude null values from filtered results.</p> </li> 
+    /// <p>This option determines how null values should be treated when filtering data.</p>
+    /// <ul>
+    /// <li> <p> <code>ALL_VALUES</code>: Include null values in filtered results.</p> </li>
+    /// <li> <p> <code>NULLS_ONLY</code>: Only include null values in filtered results.</p> </li>
+    /// <li> <p> <code>NON_NULLS_ONLY</code>: Exclude null values from filtered results.</p> </li>
     /// </ul>
-    pub fn set_null_option(mut self, input: std::option::Option<crate::types::FilterNullOption>) -> Self {
-        self.null_option = input; self
+    pub fn set_null_option(
+        mut self,
+        input: std::option::Option<crate::types::FilterNullOption>,
+    ) -> Self {
+        self.null_option = input;
+        self
     }
     /// Consumes the builder and constructs a [`NumericRangeFilter`](crate::types::NumericRangeFilter).
     pub fn build(self) -> crate::types::NumericRangeFilter {
         crate::types::NumericRangeFilter {
-            filter_id: self.filter_id
-            ,
-            column: self.column
-            ,
-            include_minimum: self.include_minimum
-            ,
-            include_maximum: self.include_maximum
-            ,
-            range_minimum: self.range_minimum
-            ,
-            range_maximum: self.range_maximum
-            ,
-            select_all_options: self.select_all_options
-            ,
-            aggregation_function: self.aggregation_function
-            ,
-            null_option: self.null_option
-            ,
+            filter_id: self.filter_id,
+            column: self.column,
+            include_minimum: self.include_minimum,
+            include_maximum: self.include_maximum,
+            range_minimum: self.range_minimum,
+            range_maximum: self.range_maximum,
+            select_all_options: self.select_all_options,
+            aggregation_function: self.aggregation_function,
+            null_option: self.null_option,
         }
     }
 }
-

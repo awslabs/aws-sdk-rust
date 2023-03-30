@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DisableDirectoryOutput  {
+pub struct DisableDirectoryOutput {
     /// <p>The ARN of the directory that has been disabled.</p>
     #[doc(hidden)]
     pub directory_arn: std::option::Option<std::string::String>,
@@ -10,18 +10,19 @@ pub struct DisableDirectoryOutput  {
 }
 impl DisableDirectoryOutput {
     /// <p>The ARN of the directory that has been disabled.</p>
-    pub fn directory_arn(&self) -> std::option::Option<& str> {
+    pub fn directory_arn(&self) -> std::option::Option<&str> {
         self.directory_arn.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for DisableDirectoryOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl DisableDirectoryOutput {
     /// Creates a new builder-style object to manufacture [`DisableDirectoryOutput`](crate::operation::disable_directory::DisableDirectoryOutput).
-    pub fn builder() -> crate::operation::disable_directory::builders::DisableDirectoryOutputBuilder {
+    pub fn builder() -> crate::operation::disable_directory::builders::DisableDirectoryOutputBuilder
+    {
         crate::operation::disable_directory::builders::DisableDirectoryOutputBuilder::default()
     }
 }
@@ -41,24 +42,23 @@ impl DisableDirectoryOutputBuilder {
     }
     /// <p>The ARN of the directory that has been disabled.</p>
     pub fn set_directory_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.directory_arn = input; self
+        self.directory_arn = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`DisableDirectoryOutput`](crate::operation::disable_directory::DisableDirectoryOutput).
     pub fn build(self) -> crate::operation::disable_directory::DisableDirectoryOutput {
         crate::operation::disable_directory::DisableDirectoryOutput {
-            directory_arn: self.directory_arn
-            ,
+            directory_arn: self.directory_arn,
             _request_id: self._request_id,
         }
     }
 }
-

@@ -3,28 +3,36 @@
 /// <p> Provides details about the market (purchasing) option for an Amazon EC2 instance. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AwsEc2LaunchTemplateDataInstanceMarketOptionsDetails  {
+pub struct AwsEc2LaunchTemplateDataInstanceMarketOptionsDetails {
     /// <p> The market type. </p>
     #[doc(hidden)]
     pub market_type: std::option::Option<std::string::String>,
     /// <p> The options for Spot Instances. </p>
     #[doc(hidden)]
-    pub spot_options: std::option::Option<crate::types::AwsEc2LaunchTemplateDataInstanceMarketOptionsSpotOptionsDetails>,
+    pub spot_options: std::option::Option<
+        crate::types::AwsEc2LaunchTemplateDataInstanceMarketOptionsSpotOptionsDetails,
+    >,
 }
 impl AwsEc2LaunchTemplateDataInstanceMarketOptionsDetails {
     /// <p> The market type. </p>
-    pub fn market_type(&self) -> std::option::Option<& str> {
+    pub fn market_type(&self) -> std::option::Option<&str> {
         self.market_type.as_deref()
     }
     /// <p> The options for Spot Instances. </p>
-    pub fn spot_options(&self) -> std::option::Option<& crate::types::AwsEc2LaunchTemplateDataInstanceMarketOptionsSpotOptionsDetails> {
+    pub fn spot_options(
+        &self,
+    ) -> std::option::Option<
+        &crate::types::AwsEc2LaunchTemplateDataInstanceMarketOptionsSpotOptionsDetails,
+    > {
         self.spot_options.as_ref()
     }
 }
 impl AwsEc2LaunchTemplateDataInstanceMarketOptionsDetails {
     /// Creates a new builder-style object to manufacture [`AwsEc2LaunchTemplateDataInstanceMarketOptionsDetails`](crate::types::AwsEc2LaunchTemplateDataInstanceMarketOptionsDetails).
-    pub fn builder() -> crate::types::builders::AwsEc2LaunchTemplateDataInstanceMarketOptionsDetailsBuilder {
-        crate::types::builders::AwsEc2LaunchTemplateDataInstanceMarketOptionsDetailsBuilder::default()
+    pub fn builder(
+    ) -> crate::types::builders::AwsEc2LaunchTemplateDataInstanceMarketOptionsDetailsBuilder {
+        crate::types::builders::AwsEc2LaunchTemplateDataInstanceMarketOptionsDetailsBuilder::default(
+        )
     }
 }
 
@@ -33,7 +41,9 @@ impl AwsEc2LaunchTemplateDataInstanceMarketOptionsDetails {
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct AwsEc2LaunchTemplateDataInstanceMarketOptionsDetailsBuilder {
     pub(crate) market_type: std::option::Option<std::string::String>,
-    pub(crate) spot_options: std::option::Option<crate::types::AwsEc2LaunchTemplateDataInstanceMarketOptionsSpotOptionsDetails>,
+    pub(crate) spot_options: std::option::Option<
+        crate::types::AwsEc2LaunchTemplateDataInstanceMarketOptionsSpotOptionsDetails,
+    >,
 }
 impl AwsEc2LaunchTemplateDataInstanceMarketOptionsDetailsBuilder {
     /// <p> The market type. </p>
@@ -43,25 +53,32 @@ impl AwsEc2LaunchTemplateDataInstanceMarketOptionsDetailsBuilder {
     }
     /// <p> The market type. </p>
     pub fn set_market_type(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.market_type = input; self
+        self.market_type = input;
+        self
     }
     /// <p> The options for Spot Instances. </p>
-    pub fn spot_options(mut self, input: crate::types::AwsEc2LaunchTemplateDataInstanceMarketOptionsSpotOptionsDetails) -> Self {
+    pub fn spot_options(
+        mut self,
+        input: crate::types::AwsEc2LaunchTemplateDataInstanceMarketOptionsSpotOptionsDetails,
+    ) -> Self {
         self.spot_options = Some(input);
         self
     }
     /// <p> The options for Spot Instances. </p>
-    pub fn set_spot_options(mut self, input: std::option::Option<crate::types::AwsEc2LaunchTemplateDataInstanceMarketOptionsSpotOptionsDetails>) -> Self {
-        self.spot_options = input; self
+    pub fn set_spot_options(
+        mut self,
+        input: std::option::Option<
+            crate::types::AwsEc2LaunchTemplateDataInstanceMarketOptionsSpotOptionsDetails,
+        >,
+    ) -> Self {
+        self.spot_options = input;
+        self
     }
     /// Consumes the builder and constructs a [`AwsEc2LaunchTemplateDataInstanceMarketOptionsDetails`](crate::types::AwsEc2LaunchTemplateDataInstanceMarketOptionsDetails).
     pub fn build(self) -> crate::types::AwsEc2LaunchTemplateDataInstanceMarketOptionsDetails {
         crate::types::AwsEc2LaunchTemplateDataInstanceMarketOptionsDetails {
-            market_type: self.market_type
-            ,
-            spot_options: self.spot_options
-            ,
+            market_type: self.market_type,
+            spot_options: self.spot_options,
         }
     }
 }
-

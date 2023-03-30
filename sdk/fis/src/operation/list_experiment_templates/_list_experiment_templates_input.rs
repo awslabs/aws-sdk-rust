@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListExperimentTemplatesInput  {
+pub struct ListExperimentTemplatesInput {
     /// <p>The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
     #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
@@ -16,13 +16,15 @@ impl ListExperimentTemplatesInput {
         self.max_results
     }
     /// <p>The token for the next page of results.</p>
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
 }
 impl ListExperimentTemplatesInput {
     /// Creates a new builder-style object to manufacture [`ListExperimentTemplatesInput`](crate::operation::list_experiment_templates::ListExperimentTemplatesInput).
-    pub fn builder() -> crate::operation::list_experiment_templates::builders::ListExperimentTemplatesInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::list_experiment_templates::builders::ListExperimentTemplatesInputBuilder
+    {
         crate::operation::list_experiment_templates::builders::ListExperimentTemplatesInputBuilder::default()
     }
 }
@@ -42,7 +44,8 @@ impl ListExperimentTemplatesInputBuilder {
     }
     /// <p>The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
     pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_results = input; self
+        self.max_results = input;
+        self
     }
     /// <p>The token for the next page of results.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -51,18 +54,21 @@ impl ListExperimentTemplatesInputBuilder {
     }
     /// <p>The token for the next page of results.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input; self
+        self.next_token = input;
+        self
     }
     /// Consumes the builder and constructs a [`ListExperimentTemplatesInput`](crate::operation::list_experiment_templates::ListExperimentTemplatesInput).
-    pub fn build(self) -> Result<crate::operation::list_experiment_templates::ListExperimentTemplatesInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::list_experiment_templates::ListExperimentTemplatesInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::list_experiment_templates::ListExperimentTemplatesInput {
-                max_results: self.max_results
-                ,
-                next_token: self.next_token
-                ,
-            }
+                max_results: self.max_results,
+                next_token: self.next_token,
+            },
         )
     }
 }
-

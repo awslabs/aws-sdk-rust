@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateSpaceInput  {
+pub struct UpdateSpaceInput {
     /// <p>The ID of the associated Domain.</p>
     #[doc(hidden)]
     pub domain_id: std::option::Option<std::string::String>,
@@ -15,15 +15,15 @@ pub struct UpdateSpaceInput  {
 }
 impl UpdateSpaceInput {
     /// <p>The ID of the associated Domain.</p>
-    pub fn domain_id(&self) -> std::option::Option<& str> {
+    pub fn domain_id(&self) -> std::option::Option<&str> {
         self.domain_id.as_deref()
     }
     /// <p>The name of the space.</p>
-    pub fn space_name(&self) -> std::option::Option<& str> {
+    pub fn space_name(&self) -> std::option::Option<&str> {
         self.space_name.as_deref()
     }
     /// <p>A collection of space settings.</p>
-    pub fn space_settings(&self) -> std::option::Option<& crate::types::SpaceSettings> {
+    pub fn space_settings(&self) -> std::option::Option<&crate::types::SpaceSettings> {
         self.space_settings.as_ref()
     }
 }
@@ -50,7 +50,8 @@ impl UpdateSpaceInputBuilder {
     }
     /// <p>The ID of the associated Domain.</p>
     pub fn set_domain_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.domain_id = input; self
+        self.domain_id = input;
+        self
     }
     /// <p>The name of the space.</p>
     pub fn space_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -59,7 +60,8 @@ impl UpdateSpaceInputBuilder {
     }
     /// <p>The name of the space.</p>
     pub fn set_space_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.space_name = input; self
+        self.space_name = input;
+        self
     }
     /// <p>A collection of space settings.</p>
     pub fn space_settings(mut self, input: crate::types::SpaceSettings) -> Self {
@@ -67,21 +69,24 @@ impl UpdateSpaceInputBuilder {
         self
     }
     /// <p>A collection of space settings.</p>
-    pub fn set_space_settings(mut self, input: std::option::Option<crate::types::SpaceSettings>) -> Self {
-        self.space_settings = input; self
+    pub fn set_space_settings(
+        mut self,
+        input: std::option::Option<crate::types::SpaceSettings>,
+    ) -> Self {
+        self.space_settings = input;
+        self
     }
     /// Consumes the builder and constructs a [`UpdateSpaceInput`](crate::operation::update_space::UpdateSpaceInput).
-    pub fn build(self) -> Result<crate::operation::update_space::UpdateSpaceInput, aws_smithy_http::operation::error::BuildError> {
-        Ok(
-            crate::operation::update_space::UpdateSpaceInput {
-                domain_id: self.domain_id
-                ,
-                space_name: self.space_name
-                ,
-                space_settings: self.space_settings
-                ,
-            }
-        )
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::update_space::UpdateSpaceInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        Ok(crate::operation::update_space::UpdateSpaceInput {
+            domain_id: self.domain_id,
+            space_name: self.space_name,
+            space_settings: self.space_settings,
+        })
     }
 }
-

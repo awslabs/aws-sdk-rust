@@ -3,7 +3,7 @@
 /// <p>Contains settings for the Systems Manager agent on your build instance.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SystemsManagerAgent  {
+pub struct SystemsManagerAgent {
     /// <p>Controls whether the Systems Manager agent is removed from your final build image, prior to creating the new AMI. If this is set to true, then the agent is removed from the final image. If it's set to false, then the agent is left in, so that it is included in the new AMI. The default value is false.</p>
     #[doc(hidden)]
     pub uninstall_after_build: std::option::Option<bool>,
@@ -35,14 +35,13 @@ impl SystemsManagerAgentBuilder {
     }
     /// <p>Controls whether the Systems Manager agent is removed from your final build image, prior to creating the new AMI. If this is set to true, then the agent is removed from the final image. If it's set to false, then the agent is left in, so that it is included in the new AMI. The default value is false.</p>
     pub fn set_uninstall_after_build(mut self, input: std::option::Option<bool>) -> Self {
-        self.uninstall_after_build = input; self
+        self.uninstall_after_build = input;
+        self
     }
     /// Consumes the builder and constructs a [`SystemsManagerAgent`](crate::types::SystemsManagerAgent).
     pub fn build(self) -> crate::types::SystemsManagerAgent {
         crate::types::SystemsManagerAgent {
-            uninstall_after_build: self.uninstall_after_build
-            ,
+            uninstall_after_build: self.uninstall_after_build,
         }
     }
 }
-

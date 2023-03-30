@@ -3,7 +3,7 @@
 /// <p>Contains the output from the <code>DescribeClusterParameters</code> action. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeClusterParametersOutput  {
+pub struct DescribeClusterParametersOutput {
     /// <p>A list of <code>Parameter</code> instances. Each instance lists the parameters of one cluster parameter group. </p>
     #[doc(hidden)]
     pub parameters: std::option::Option<std::vec::Vec<crate::types::Parameter>>,
@@ -14,22 +14,22 @@ pub struct DescribeClusterParametersOutput  {
 }
 impl DescribeClusterParametersOutput {
     /// <p>A list of <code>Parameter</code> instances. Each instance lists the parameters of one cluster parameter group. </p>
-    pub fn parameters(&self) -> std::option::Option<& [crate::types::Parameter]> {
+    pub fn parameters(&self) -> std::option::Option<&[crate::types::Parameter]> {
         self.parameters.as_deref()
     }
     /// <p>A value that indicates the starting point for the next set of response records in a subsequent request. If a value is returned in a response, you can retrieve the next set of records by providing this returned marker value in the <code>Marker</code> parameter and retrying the command. If the <code>Marker</code> field is empty, all response records have been retrieved for the request. </p>
-    pub fn marker(&self) -> std::option::Option<& str> {
+    pub fn marker(&self) -> std::option::Option<&str> {
         self.marker.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for DescribeClusterParametersOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl DescribeClusterParametersOutput {
     /// Creates a new builder-style object to manufacture [`DescribeClusterParametersOutput`](crate::operation::describe_cluster_parameters::DescribeClusterParametersOutput).
-    pub fn builder() -> crate::operation::describe_cluster_parameters::builders::DescribeClusterParametersOutputBuilder {
+    pub fn builder() -> crate::operation::describe_cluster_parameters::builders::DescribeClusterParametersOutputBuilder{
         crate::operation::describe_cluster_parameters::builders::DescribeClusterParametersOutputBuilder::default()
     }
 }
@@ -50,13 +50,17 @@ impl DescribeClusterParametersOutputBuilder {
     /// <p>A list of <code>Parameter</code> instances. Each instance lists the parameters of one cluster parameter group. </p>
     pub fn parameters(mut self, input: crate::types::Parameter) -> Self {
         let mut v = self.parameters.unwrap_or_default();
-                        v.push(input);
-                        self.parameters = Some(v);
-                        self
+        v.push(input);
+        self.parameters = Some(v);
+        self
     }
     /// <p>A list of <code>Parameter</code> instances. Each instance lists the parameters of one cluster parameter group. </p>
-    pub fn set_parameters(mut self, input: std::option::Option<std::vec::Vec<crate::types::Parameter>>) -> Self {
-        self.parameters = input; self
+    pub fn set_parameters(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::Parameter>>,
+    ) -> Self {
+        self.parameters = input;
+        self
     }
     /// <p>A value that indicates the starting point for the next set of response records in a subsequent request. If a value is returned in a response, you can retrieve the next set of records by providing this returned marker value in the <code>Marker</code> parameter and retrying the command. If the <code>Marker</code> field is empty, all response records have been retrieved for the request. </p>
     pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
@@ -65,26 +69,26 @@ impl DescribeClusterParametersOutputBuilder {
     }
     /// <p>A value that indicates the starting point for the next set of response records in a subsequent request. If a value is returned in a response, you can retrieve the next set of records by providing this returned marker value in the <code>Marker</code> parameter and retrying the command. If the <code>Marker</code> field is empty, all response records have been retrieved for the request. </p>
     pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.marker = input; self
+        self.marker = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`DescribeClusterParametersOutput`](crate::operation::describe_cluster_parameters::DescribeClusterParametersOutput).
-    pub fn build(self) -> crate::operation::describe_cluster_parameters::DescribeClusterParametersOutput {
+    pub fn build(
+        self,
+    ) -> crate::operation::describe_cluster_parameters::DescribeClusterParametersOutput {
         crate::operation::describe_cluster_parameters::DescribeClusterParametersOutput {
-            parameters: self.parameters
-            ,
-            marker: self.marker
-            ,
+            parameters: self.parameters,
+            marker: self.marker,
             _request_id: self._request_id,
         }
     }
 }
-

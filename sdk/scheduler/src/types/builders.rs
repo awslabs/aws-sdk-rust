@@ -36,4 +36,3 @@ pub use crate::types::_aws_vpc_configuration::AwsVpcConfigurationBuilder;
 pub use crate::types::_retry_policy::RetryPolicyBuilder;
 
 pub use crate::types::_dead_letter_config::DeadLetterConfigBuilder;
-

@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-/// 
+///
 /// Here is an example of how you can make a match expression forward-compatible:
-/// 
+///
 /// ```text
 /// # let physicalconnectortype = unimplemented!();
 /// match physicalconnectortype {
@@ -33,14 +33,22 @@
 /// Specifically, when `physicalconnectortype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `PhysicalConnectorType::NewFeature` also yielding `"NewFeature"`.
-/// 
+///
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
 pub enum PhysicalConnectorType {
     #[allow(missing_docs)] // documentation missing in model
     Qsfp,
@@ -53,47 +61,48 @@ pub enum PhysicalConnectorType {
     #[allow(missing_docs)] // documentation missing in model
     Wifi,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::primitives::UnknownVariantValue)
+    Unknown(crate::primitives::UnknownVariantValue),
 }
 impl std::convert::From<&str> for PhysicalConnectorType {
-                fn from(s: &str) -> Self {
-                    match s {
-                        "QSFP" => PhysicalConnectorType::Qsfp,
-"RJ45" => PhysicalConnectorType::Rj45,
-"RJ45_2" => PhysicalConnectorType::Rj452,
-"SFP_PLUS" => PhysicalConnectorType::SfpPlus,
-"WIFI" => PhysicalConnectorType::Wifi,
-other => PhysicalConnectorType::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
-                    }
-                }
-            }
-impl std::str::FromStr for PhysicalConnectorType {
-                type Err = std::convert::Infallible;
-
-                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-                    Ok(PhysicalConnectorType::from(s))
-                }
-            }
-impl PhysicalConnectorType {
-                /// Returns the `&str` value of the enum member.
-                pub fn as_str(&self) -> &str {
-                    match self {
-    PhysicalConnectorType::Qsfp => "QSFP",
-    PhysicalConnectorType::Rj45 => "RJ45",
-    PhysicalConnectorType::Rj452 => "RJ45_2",
-    PhysicalConnectorType::SfpPlus => "SFP_PLUS",
-    PhysicalConnectorType::Wifi => "WIFI",
-    PhysicalConnectorType::Unknown(value) => value.as_str()
+    fn from(s: &str) -> Self {
+        match s {
+            "QSFP" => PhysicalConnectorType::Qsfp,
+            "RJ45" => PhysicalConnectorType::Rj45,
+            "RJ45_2" => PhysicalConnectorType::Rj452,
+            "SFP_PLUS" => PhysicalConnectorType::SfpPlus,
+            "WIFI" => PhysicalConnectorType::Wifi,
+            other => PhysicalConnectorType::Unknown(crate::primitives::UnknownVariantValue(
+                other.to_owned(),
+            )),
+        }
+    }
 }
-                }
-                /// Returns all the `&str` representations of the enum members.
-                pub const fn values() -> &'static [&'static str] {
-                    &["QSFP", "RJ45", "RJ45_2", "SFP_PLUS", "WIFI"]
-                }
-            }
-impl AsRef<str> for PhysicalConnectorType {
-                fn as_ref(&self) -> &str {
-                    self.as_str()
-                }
-            }
+impl std::str::FromStr for PhysicalConnectorType {
+    type Err = std::convert::Infallible;
 
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(PhysicalConnectorType::from(s))
+    }
+}
+impl PhysicalConnectorType {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            PhysicalConnectorType::Qsfp => "QSFP",
+            PhysicalConnectorType::Rj45 => "RJ45",
+            PhysicalConnectorType::Rj452 => "RJ45_2",
+            PhysicalConnectorType::SfpPlus => "SFP_PLUS",
+            PhysicalConnectorType::Wifi => "WIFI",
+            PhysicalConnectorType::Unknown(value) => value.as_str(),
+        }
+    }
+    /// Returns all the `&str` representations of the enum members.
+    pub const fn values() -> &'static [&'static str] {
+        &["QSFP", "RJ45", "RJ45_2", "SFP_PLUS", "WIFI"]
+    }
+}
+impl AsRef<str> for PhysicalConnectorType {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}

@@ -84,4 +84,3 @@ pub use crate::types::_connector_definition_version::ConnectorDefinitionVersionB
 pub use crate::types::_connector::ConnectorBuilder;
 
 pub use crate::types::_bulk_deployment_metrics::BulkDeploymentMetricsBuilder;
-

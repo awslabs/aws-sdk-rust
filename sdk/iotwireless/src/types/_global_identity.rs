@@ -3,7 +3,7 @@
 /// <p>Global identity information.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GlobalIdentity  {
+pub struct GlobalIdentity {
     /// <p>Location area code of the global identity.</p>
     #[doc(hidden)]
     pub lac: std::option::Option<i32>,
@@ -43,7 +43,8 @@ impl GlobalIdentityBuilder {
     }
     /// <p>Location area code of the global identity.</p>
     pub fn set_lac(mut self, input: std::option::Option<i32>) -> Self {
-        self.lac = input; self
+        self.lac = input;
+        self
     }
     /// <p>GERAN (GSM EDGE Radio Access Network) cell global identifier.</p>
     pub fn geran_cid(mut self, input: i32) -> Self {
@@ -52,16 +53,14 @@ impl GlobalIdentityBuilder {
     }
     /// <p>GERAN (GSM EDGE Radio Access Network) cell global identifier.</p>
     pub fn set_geran_cid(mut self, input: std::option::Option<i32>) -> Self {
-        self.geran_cid = input; self
+        self.geran_cid = input;
+        self
     }
     /// Consumes the builder and constructs a [`GlobalIdentity`](crate::types::GlobalIdentity).
     pub fn build(self) -> crate::types::GlobalIdentity {
         crate::types::GlobalIdentity {
-            lac: self.lac
-            ,
-            geran_cid: self.geran_cid
-            ,
+            lac: self.lac,
+            geran_cid: self.geran_cid,
         }
     }
 }
-
